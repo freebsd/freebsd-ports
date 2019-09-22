@@ -9,6 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/UFO_AI%202.x/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/$/-/}${PORTVERSION}-source
 DIST_SUBDIR=	${PORTNAME}
 
+PATCH_SITES=	https://github.com/ufoai/ufoai/commit/
+PATCHFILES=	163073ab9527cdaa33d77a713b8e46ff462a2b5c.patch:-p1
+
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Strategy game featuring tactical combat
 

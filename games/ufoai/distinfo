@@ -1,2 +1,5 @@
+TIMESTAMP = 1567963369
 SHA256 (ufoai/ufoai-2.5-source.tar.bz2) = 0c7cc3bc9efeb276f71cbe6ee8ff7c76f98d183de79f1a069fa63059cf182a8f
 SIZE (ufoai/ufoai-2.5-source.tar.bz2) = 24239539
+SHA256 (ufoai/163073ab9527cdaa33d77a713b8e46ff462a2b5c.patch) = 513963825a074dd7632321520ca92b23c3564e1e58d080dc03a6f4cea8191913
+SIZE (ufoai/163073ab9527cdaa33d77a713b8e46ff462a2b5c.patch) = 913
