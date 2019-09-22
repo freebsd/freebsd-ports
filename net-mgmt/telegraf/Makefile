@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.10.2
+DISTVERSION=	1.12.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -24,25 +24,25 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		cloudfoundry:clock:02e53af:clock/src/code.cloudfoundry.org/clock \
 		collectd:go-collectd:v0.3.0:collectd_org/src/collectd.org \
 		census-ecosystem:opencensus-go-exporter-stackdriver:v0.6.0:census_ecosystem/src/contrib.go.opencensus.io/exporter/stackdriver \
+		cisco-ie:nx-telemetry-proto:82441e2:nx_telemetry_proto/src/github.com/cisco-ie/nx-telemetry-proto \
 		Azure:go-autorest:v10.12.0:go_autorest/src/github.com/Azure/go-autorest \
 		Microsoft:ApplicationInsights-Go:d2df5d4:application_insights/src/github.com/Microsoft/ApplicationInsights-Go \
 		Microsoft:go-winio:v0.4.9:go_winio/src/github.com/Microsoft/go-winio \
-		Shopify:sarama:v1.18.0:sarama/src/github.com/Shopify/sarama \
+		influxdata:sarama:b12709e:sarama/src/github.com/Shopify/sarama \
 		StackExchange:wmi:1.0.0:wmi/src/github.com/StackExchange/wmi \
 		aerospike:aerospike-client-go:v1.27.0:aerospike_client_go/src/github.com/aerospike/aerospike-client-go \
 		alecthomas:units:2efee85:units/src/github.com/alecthomas/units \
 		amir:raidman:1ccc43b:raidman/src/github.com/amir/raidman \
 		apache:thrift:f2867c2:thrift/src/github.com/apache/thrift \
-		aws:aws-sdk-go:v1.15.54:aws_sdk_go/src/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.19.41:aws_sdk_go/src/github.com/aws/aws-sdk-go \
 		beorn7:perks:3a771d9:perks/src/github.com/beorn7/perks \
-		bsm:sarama-cluster:v2.1.13:sarama_cluster/src/github.com/bsm/sarama-cluster \
 		caio:go-tdigest:v2.3.0:go_tdigest/src/github.com/caio/go-tdigest \
 		cenkalti:backoff:v2.0.0:backoff/src/github.com/cenkalti/backoff \
 		couchbase:go-couchbase:16db1f1:go_couchbase/src/github.com/couchbase/go-couchbase \
 		couchbase:gomemcached:0da75df:gomemcached/src/github.com/couchbase/gomemcached \
 		couchbase:goutils:e865a14:goutils/src/github.com/couchbase/goutils \
 		davecgh:go-spew:v1.1.0:go_spew/src/github.com/davecgh/go-spew \
-		denisenkom:go-mssqldb:1eb28af:go_mssqldb/src/github.com/denisenkom/go-mssqldb \
+		denisenkom:go-mssqldb:2be1aa5:go_mssqldb/src/github.com/denisenkom/go-mssqldb \
 		dgrijalva:jwt-go:v3.2.0:jwt_go/src/github.com/dgrijalva/jwt-go \
 		dimchansky:utfbom:6c6132f:utfbom/src/github.com/dimchansky/utfbom \
 		docker:distribution:edc3ab2:distribution/src/github.com/docker/distribution \
@@ -56,16 +56,17 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		eclipse:paho.mqtt.golang:v1.1.1:paho_mqtt_golang/src/github.com/eclipse/paho.mqtt.golang \
 		ericchiang:k8s:v1.2.0:k8s/src/github.com/ericchiang/k8s \
 		ghodss:yaml:25d852a:yaml/src/github.com/ghodss/yaml \
-		go-ini:ini:v1.38.1:ini/src/github.com/go-ini/ini \
 		go-logfmt:logfmt:v0.4.0:go_logfmt/src/github.com/go-logfmt/logfmt \
 		go-ole:go-ole:v1.2.1:go_ole/src/github.com/go-ole/go-ole \
 		go-redis:redis:v6.12.0:redis/src/github.com/go-redis/redis \
-		go-sql-driver:mysql:v1.4.0:mysql/src/github.com/go-sql-driver/mysql \
+		go-sql-driver:mysql:v1.4.1:mysql/src/github.com/go-sql-driver/mysql \
 		gobwas:glob:v0.2.3:glob/src/github.com/gobwas/glob \
 		gogo:protobuf:v1.1.1:gogo_protobuf/src/github.com/gogo/protobuf \
 		golang:protobuf:v1.1.0:protobuf/src/github.com/golang/protobuf \
 		golang:snappy:2e65f85:snappy/src/github.com/golang/snappy \
+		google:go-github:v24.0.1:go_github/src/github.com/google/go-github \
 		google:go-cmp:v0.2.0:go_cmp/src/github.com/google/go-cmp \
+		google:go-querystring:v1.0.0:go_querystring/src/github.com/google/go-querystring \
 		google:uuid:0.2:uuid/src/github.com/google/uuid \
 		googleapis:gax-go:v2.0.0:gax_go/src/github.com/googleapis/gax-go \
 		gorilla:context:v1.1.1:context/src/github.com/gorilla/context \
@@ -75,13 +76,19 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		hashicorp:consul:v1.2.1:consul/src/github.com/hashicorp/consul \
 		hashicorp:go-cleanhttp:d5fe4b5:go_cleanhttp/src/github.com/hashicorp/go-cleanhttp \
 		hashicorp:go-rootcerts:6bb64b3:go_rootcerts/src/github.com/hashicorp/go-rootcerts \
+		hashicorp:go-uuid:v1.0.1:gouuid/src/github.com/hashicorp/go-uuid \
 		hashicorp:serf:v0.8.1:serf/src/github.com/hashicorp/serf \
 		influxdata:go-syslog:v2.0.0:go_syslog/src/github.com/influxdata/go-syslog \
 		influxdata:tail:c434825:tail/src/github.com/influxdata/tail \
-		influxdata:toml:2a2e301:toml/src/github.com/influxdata/toml \
+		influxdata:toml:270119a:toml/src/github.com/influxdata/toml \
 		influxdata:wlog:7c63b0a:wlog/src/github.com/influxdata/wlog \
 		jackc:pgx:v3.2.0:pgx/src/github.com/jackc/pgx \
-		jmespath:go-jmespath:0b12d6b:go_jmespath/src/github.com/jmespath/go-jmespath \
+		jcmturner:aescts:v1.0.1:aescts/src/gopkg.in/jcmturner/aescts.v1 \
+		jcmturner:dnsutils:v1.0.1:dnsutils/src/gopkg.in/jcmturner/dnsutils.v1 \
+		jcmturner:gofork:v1.0.0:gofork/src/github.com/jcmturner/gofork \
+		jcmturner:gokrb5:v7.3.0:gokrb5/src/gopkg.in/jcmturner/gokrb5.v7 \
+		jcmturner:rpc:v1.1.0:rpc/src/gopkg.in/jcmturner/rpc.v1 \
+		jmespath:go-jmespath:c2b33e84:go_jmespath/src/github.com/jmespath/go-jmespath \
 		kardianos:osext:ae77be6:osext/src/github.com/kardianos/osext \
 		kardianos:service:615a14e:service/src/github.com/kardianos/service \
 		karrick:godirwalk:v1.7.5:godirwalk/src/github.com/karrick/godirwalk \
@@ -91,6 +98,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		leodido:ragel-machinery:299bdde:ragel_machinery/src/github.com/leodido/ragel-machinery \
 		mailru:easyjson:efc7eb8:easyjson/src/github.com/mailru/easyjson \
 		matttproud:golang_protobuf_extensions:v1.0.1:golang_protobuf_extensions/src/github.com/matttproud/golang_protobuf_extensions \
+		mdlayher:apcupsd:2fe55d9:apcupsd/src/github.com/mdlayher/apcupsd \
 		miekg:dns:v1.0.8:dns/src/github.com/miekg/dns \
 		mitchellh:go-homedir:3864e76:go_homedir/src/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:f15292f:mapstructure/src/github.com/mitchellh/mapstructure \
@@ -100,11 +108,13 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		nats-io:go-nats:v1.5.0:nats/src/github.com/nats-io/go-nats \
 		nats-io:nuid:v1.0.0:nuid/src/github.com/nats-io/nuid \
 		nsqio:go-nsq:v1.0.7:go_nsq/src/github.com/nsqio/go-nsq \
+		openconfig:gnmi:33a1865:gnmi/src/github.com/openconfig/gnmi \
 		opencontainers:go-digest:v1.0.0-rc1:go_digest/src/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.0.1:image_spec/src/github.com/opencontainers/image-spec \
 		opentracing-contrib:go-observer:a52f234:go_observer/src/github.com/opentracing-contrib/go-observer \
 		opentracing:opentracing-go:v1.0.2:opentracing_go/src/github.com/opentracing/opentracing-go \
 		openzipkin:zipkin-go-opentracing:v0.3.4:zipkin_go_opentracing/src/github.com/openzipkin/zipkin-go-opentracing \
+		glinton:ping:v0.1.1:ping/src/github.com/glinton/ping \
 		pierrec:lz4:v2.0.3:lz4/src/github.com/pierrec/lz4 \
 		pkg:errors:v0.8.0:errors/src/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:go_difflib/src/github.com/pmezard/go-difflib \
@@ -115,15 +125,16 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		rcrowley:go-metrics:e2704e1:go_metrics/src/github.com/rcrowley/go-metrics \
 		samuel:go-zookeeper:c4fab1a:go_zookeeper/src/github.com/samuel/go-zookeeper \
 		satori:go.uuid:v1.2.0:go_uuid/src/github.com/satori/go.uuid \
-		shirou:gopsutil:v2.19.01:gopsutil/src/github.com/shirou/gopsutil \
+		shirou:gopsutil:v2.19.7:gopsutil/src/github.com/shirou/gopsutil \
 		shirou:w32:bb4de01:w32/src/github.com/shirou/w32 \
 		sirupsen:logrus:v1.0.5:logrus/src/github.com/sirupsen/logrus \
 		soniah:gosnmp:96b8622:gosnmp/src/github.com/soniah/gosnmp \
 		streadway:amqp:e5adc2a:amqp/src/github.com/streadway/amqp \
 		stretchr:objx:v0.1.1:objx/src/github.com/stretchr/objx \
 		stretchr:testify:v1.2.2:testify/src/github.com/stretchr/testify \
-		tidwall:gjson:v1.1.2:gjson/src/github.com/tidwall/gjson \
+		tidwall:gjson:v1.3.0:gjson/src/github.com/tidwall/gjson \
 		tidwall:match:1731857:match/src/github.com/tidwall/match \
+		tidwall:pretty:v1.0.0:pretty/src/github.com/tidwall/pretty \
 		vishvananda:netlink:b2de5d1:netlink/src/github.com/vishvananda/netlink \
 		vishvananda:netns:13995c7:netns/src/github.com/vishvananda/netns \
 		vjeantet:grok:v1.0.0:grok/src/github.com/vjeantet/grok \
@@ -137,7 +148,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		golang:net:a680a1e:net/src/golang.org/x/net \
 		golang:oauth2:d2e6202:oauth2/src/golang.org/x/oauth2 \
 		golang:sync:42b3178:sync/src/golang.org/x/sync \
-		golang:sys:7c4c994:sys/src/golang.org/x/sys \
+		golang:sys:51ab0e2:sys/src/golang.org/x/sys \
 		golang:text:v0.3.0:text/src/golang.org/x/text \
 		googleapis:google-api-go-client:19ff876:googleapis/src/google.golang.org/api \
 		golang:appengine:v1.1.0:appengine/src/google.golang.org/appengine \
