@@ -1,5 +1,5 @@
---- Makefile.orig	2014-06-26 23:11:34.738471328 +0800
-+++ Makefile	2014-06-26 23:11:57.588499251 +0800
+--- Makefile.orig	2019-09-19 13:32:10 UTC
++++ Makefile
 @@ -14,10 +14,10 @@ battmond: battmond.c
  	${CC} ${CFLAGS} battmond.c -o battmond -lutil
  

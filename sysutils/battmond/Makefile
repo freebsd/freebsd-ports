@@ -2,12 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	battmond
-PORTVERSION=	0.3
+DISTVERSION=	0.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ntarmos.dyndns.org/Software/FreeBSD/
 
-MAINTAINER=	ntarmos@cs.uoi.gr
+MAINTAINER=	ntarmos@gmail.com
 COMMENT=	Daemon monitoring the battery level of ACPI-enabled laptops
+
+LICENSE=	BSD2CLAUSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ntarmos
+GH_TAGNAME=	0.4
 
 PLIST_FILES=	sbin/battmond \
 		etc/rc.d/battmond \
