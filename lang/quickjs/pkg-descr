@@ -1,0 +1,7 @@
+QuickJS is a small and embeddable Javascript engine. It supports the ES2020
+specification including modules, asynchronous generators and proxies.
+
+It optionally supports mathematical extensions such as big integers (BigInt),
+big floating point numbers (BigFloat) and operator overloading.
+
+WWW: https://bellard.org/quickjs/
