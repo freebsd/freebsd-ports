@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvmod-dynamic
-PORTVERSION=	20190822
+PORTVERSION=	20190922
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -10,8 +10,6 @@ COMMENT=	Varnish Module (vmod) for dynamic backends
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		error: implicit declaration of function 'VRT_rel_vcl' is invalid in C99
 
 LIB_DEPENDS=	libgetdns.so:dns/getdns
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
@@ -29,7 +27,7 @@ CFLAGS+=	-I${WRKSRC}/src
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nigoroll
-GH_TAGNAME=	220fd64
+GH_TAGNAME=	ed45871
 
 OPTIONS_DEFINE=	DOCS
 
