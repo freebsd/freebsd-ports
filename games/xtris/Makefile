@@ -19,6 +19,7 @@ COMMENT=	Multi-player version of a popular game for the X Window system
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
 RESTRICTED=	Possible trademark infringement
 WRKSRC=		${WRKDIR}/xtris
 USE_XORG=	x11 xext
