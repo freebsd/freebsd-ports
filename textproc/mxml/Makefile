@@ -2,39 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	mxml
-PORTVERSION=	2.7
-PORTREVISION=	1
+DISTVERSION=	3.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.msweet.org/files/project3/
+MASTER_SITES=	https://github.com/michaelrsweet/mxml/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	hsmtkk@gmail.com
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Small XML parsing library
 
-LICENSE=	MXML
-LICENSE_NAME=	Mini-XML License
-LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GNU_CONFIGURE=	yes
-USES=		pathfix desthack
-CONFIGURE_ARGS=	--with-docdir=no
+USES=		desthack
 USE_LDCONFIG=	yes
 
-PORTDOCS=	*
-
-PLIST_FILES=	bin/mxmldoc include/mxml.h \
-		lib/libmxml.a \
-		lib/libmxml.so lib/libmxml.so.1 lib/libmxml.so.1.5 \
-		libdata/pkgconfig/mxml.pc \
-		man/man1/mxmldoc.1.gz \
-		man/man3/mxml.3.gz
+GNU_CONFIGURE=	yes
+MAKE_ARGS=	INSTALL_DATA="${INSTALL_DATA}" \
+		INSTALL_LIB="${INSTALL_LIB}" \
+		INSTALL_MAN="${INSTALL_MAN}"
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
+post-patch:
+	@${REINPLACE_CMD} -e '/^\.SILENT/d' -e '/(INSTALL_LIB) libmxml.a/ s/_LIB/_DATA/' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
