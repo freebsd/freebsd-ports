@@ -1,0 +1,14 @@
+include/mxml.h
+lib/libmxml.a
+lib/libmxml.so
+lib/libmxml.so.1
+lib/libmxml.so.1.6
+libdata/pkgconfig/mxml.pc
+man/man3/mxml.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+@comment %%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NOTICE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/mxml-cover.png
+%%PORTDOCS%%%%DOCSDIR%%/mxml.epub
+%%PORTDOCS%%%%DOCSDIR%%/mxml.html
