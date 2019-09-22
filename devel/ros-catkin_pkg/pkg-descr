@@ -1,0 +1,5 @@
+This is a Python library for working with the Catkin package system for ROS.
+
+Catkin is the main build system for the Robot Operating System.
+
+WWW: http://github.com/ros/catkin
