@@ -22,5 +22,6 @@ GH_PROJECT=	php-${PORTNAME}
 WRKSRC_SUBDIR=	mecab
 CONFIGURE_ARGS=	--with-mecab=${LOCALBASE}/bin/mecab-config
 USES=		php:ext
+IGNORE_WITH_PHP=	74
 
 .include <bsd.port.mk>

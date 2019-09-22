@@ -16,5 +16,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		php:pecl
 USE_PHP=	json:build
+IGNORE_WITH_PHP=	74
 
 .include <bsd.port.mk>

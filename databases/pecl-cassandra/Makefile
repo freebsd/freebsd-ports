@@ -15,5 +15,6 @@ LIB_DEPENDS=	libuv.so:devel/libuv \
 		libgmp.so:math/gmp
 
 USES=		php:pecl localbase
+IGNORE_WITH_PHP=	74
 
 .include <bsd.port.mk>

@@ -26,6 +26,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		php:pecl
 USE_PHP=	zlib:build
+IGNORE_WITH_PHP=	74
 
 CONFLICTS=	pecl-http[12]*
 

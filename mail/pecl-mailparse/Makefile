@@ -13,5 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:pecl
 USE_PHP=	mbstring:build
+IGNORE_WITH_PHP=	74
 
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre
 
 USES=		php:pecl
+IGNORE_WITH_PHP=	74
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
