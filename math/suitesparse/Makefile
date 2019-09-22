@@ -3,6 +3,7 @@
 
 PORTNAME=	suitesparse
 DISTVERSION=	5.4.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://faculty.cse.tamu.edu/davis/SuiteSparse/	\
 		https://mirror.sobukus.de/files/src/suitesparse/
@@ -15,6 +16,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libmetis.so:math/metis \
+		libomp.so:devel/openmp \
 		liblapack.so:math/lapack
 
 USES=		cmake:insource compiler:c++0x fortran gmake
