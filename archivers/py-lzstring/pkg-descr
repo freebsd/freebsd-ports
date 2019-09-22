@@ -1,0 +1,4 @@
+LZ-based, in-memory string compression module, based on the LZ-String
+javascript module.
+
+WWW: https://pypi.python.org/pypi/lzstring
