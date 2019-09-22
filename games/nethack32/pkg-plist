@@ -86,7 +86,7 @@
 %%DATADIR%%/juiblex.lev
 %%DATADIR%%/knox.lev
 %%DATADIR%%/license
-@(,,664) %%DATADIR%%/logfile
+@sample(games,games,664) %%DATADIR%%/logfile.sample
 %%DATADIR%%/medusa-1.lev
 %%DATADIR%%/medusa-2.lev
 %%DATADIR%%/minefill.lev
@@ -102,7 +102,7 @@
 %%DATADIR%%/perm
 %%DATADIR%%/pet_mark.xbm
 %%DATADIR%%/quest.dat
-@(,,664) %%DATADIR%%/record
+@sample(games,games,664) %%DATADIR%%/record.sample
 @(,,02755) %%DATADIR%%/recover
 %%DATADIR%%/rip.xpm
 %%DATADIR%%/rumors

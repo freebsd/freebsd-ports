@@ -65,6 +65,10 @@ pre-install:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/save
+	# Make "sample" files from records to prevent them being removed
+	# if they have been altered
+	@${CP} ${STAGEDIR}/${DATADIR}/logfile ${STAGEDIR}/${DATADIR}/logfile.sample
+	@${CP} ${STAGEDIR}/${DATADIR}/record ${STAGEDIR}/${DATADIR}/record.sample
 .if !exists(${PREFIX}/bin/${HACKLINK}) && ${HACKNAME} != ${HACKLINK}
 	@${LN} -s -f ${HACKNAME} ${STAGEDIR}${PREFIX}/bin/${HACKLINK}
 .endif
