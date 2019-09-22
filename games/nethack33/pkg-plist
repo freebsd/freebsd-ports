@@ -94,9 +94,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/juiblex.lev
 %%DATADIR%%/knox.lev
 %%DATADIR%%/license
-@mode 664
-%%DATADIR%%/logfile
-@mode
+@sample(games,games,664) %%DATADIR%%/logfile.sample
 %%DATADIR%%/mapbg.xpm
 %%DATADIR%%/medusa-1.lev
 %%DATADIR%%/medusa-2.lev
@@ -113,9 +111,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/perm
 %%DATADIR%%/pet_mark.xbm
 %%DATADIR%%/quest.dat
-@mode 664
-%%DATADIR%%/record
-@mode
+@sample(games,games,664) %%DATADIR%%/record.sample
 @mode 02755
 %%DATADIR%%/recover
 @mode
