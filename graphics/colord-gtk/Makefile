@@ -4,7 +4,7 @@
 PORTNAME=	colord-gtk
 PORTVERSION=	0.1.26
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
+MASTER_SITES=	https://www.freedesktop.org/software/colord/releases/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Manage color profiles to accurately color input/output devices
