@@ -11,6 +11,8 @@ COMMENT=	Varnish Module (vmod) for dynamic backends
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		error: implicit declaration of function 'VRT_rel_vcl' is invalid in C99
+
 LIB_DEPENDS=	libgetdns.so:dns/getdns
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 
