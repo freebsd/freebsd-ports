@@ -1,0 +1,5 @@
+Python library for working with catkinized rosdistro files for ROS.
+
+rosdistro is part of the package management system for ROS.
+
+WWW: http://github.com/ros-infrastructure/rosdistro
