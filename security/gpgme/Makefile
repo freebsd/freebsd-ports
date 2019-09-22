@@ -16,7 +16,7 @@ LICENSE_FILE?=	${WRKSRC}/COPYING.LESSER
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cpe gmake libtool localbase:ldflags tar:bzip2
+USES=		compiler:c11 cpe gmake libtool localbase:ldflags tar:bzip2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
