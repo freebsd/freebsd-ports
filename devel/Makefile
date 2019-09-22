@@ -5393,6 +5393,7 @@
     SUBDIR += roboctl
     SUBDIR += robodoc
     SUBDIR += root-doc
+    SUBDIR += ros-catkin_pkg
     SUBDIR += ros-rosinstall_generator
     SUBDIR += ros-vcstools
     SUBDIR += ros-wstool
