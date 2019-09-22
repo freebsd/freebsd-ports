@@ -1,0 +1,7 @@
+Command-line tools for maintaining a workspace from multiple
+version-control systems.
+
+This is primarily used as a tool for build a workspace for the Robot
+Operating System (ROS).
+
+WWW: https://github.com/vcstools/wstool

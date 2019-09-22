@@ -5395,6 +5395,7 @@
     SUBDIR += root-doc
     SUBDIR += ros-rosinstall_generator
     SUBDIR += ros-vcstools
+    SUBDIR += ros-wstool
     SUBDIR += rote
     SUBDIR += rpc2
     SUBDIR += rpclib
