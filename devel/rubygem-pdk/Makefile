@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdk
-PORTVERSION=	1.11.1
-PORTREVISION=	1
+PORTVERSION=	1.13.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -19,6 +18,7 @@ RUN_DEPENDS=    facter>=2.5.1:sysutils/facter \
 		rubygem-cri>=2.10.1:devel/rubygem-cri \
 		rubygem-deep_merge>=1.1:devel/rubygem-deep_merge \
 		rubygem-diff-lcs>=1.3:textproc/rubygem-diff-lcs \
+		rubygem-ffi>=1.9:devel/rubygem-ffi \
 		rubygem-gettext-setup>=0.24:devel/rubygem-gettext-setup \
 		rubygem-hitimes>=1.3.0:devel/rubygem-hitimes \
 		rubygem-httpclient>=2.8.3:www/rubygem-httpclient \
