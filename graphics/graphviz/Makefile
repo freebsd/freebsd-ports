@@ -2,26 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	graphviz
-PORTVERSION=	2.40.1
-PORTREVISION=	11
+PORTVERSION=	2.42.2
+PORTREVISION=	0
+MASTER_SITES=	https://gitlab.com/graphviz/graphviz/-/archive/${PORTVERSION}/
 CATEGORIES=	graphics tk
-MASTER_SITES=	https://graphviz.gitlab.io/pub/graphviz/stable/SOURCES/
-
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	tclsh${TCL_VER}:lang/tcl${_TCLTK_WANTED_VERSION}
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libpng.so:graphics/png \
+		libwebp.so:graphics/webp \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libexpat.so:textproc/expat2 \
 		libgd.so:${GD_PORT}
 
 USES=		cpe pathfix shebangfix gmake bison groff pkgconfig \
-		libtool:keepla localbase:ldflags jpeg compiler:c++11-lang
+		libtool:keepla autoreconf localbase:ldflags jpeg \
+		compiler:c++11-lang tcl:build
+
 GNU_CONFIGURE=	yes
 # sincos is broken on armv6, see ports/220591
 CFLAGS_armv6=	-fno-builtin-sincos -fno-builtin-sin -fno-builtin-cos \
@@ -30,31 +33,23 @@ CFLAGS_armv6=	-fno-builtin-sincos -fno-builtin-sin -fno-builtin-cos \
 CFLAGS_armv7=	-fno-builtin-sincos -fno-builtin-sin -fno-builtin-cos \
 		-fno-builtin-sincosf -fno-builtin-sinf -fno-builtin-cosf \
 		-fno-builtin-sincosl -fno-builtin-sinl -fno-builtin-cosl
+MAKE_ENV=	EXPR_COMPAT=yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
-MAKE_ENV=	EXPR_COMPAT=yes
-
-FIX_INCLUDE=	\
-		lib/cdt/dthdr.h \
-		lib/pathplan/tri.h lib/pathplan/pathplan.h \
+FIX_INCLUDE=	lib/cdt/dthdr.h lib/pathplan/tri.h \
 		lib/pathplan/pathutil.h lib/pathplan/solvers.h \
 		lib/pathplan/vis.h lib/pathplan/vispath.h \
-		lib/common/arith.h lib/common/logic.h \
-		lib/common/globals.h \
+		lib/common/logic.h lib/common/globals.h \
 		lib/gvc/gvcint.h
-
-PATCH_TCL_SCRIPTS=	tclpkg/gv/Makefile.in tclpkg/tcldot/demo/doted.tcl \
-			tclpkg/tclpathplan/demo/pathplan.tcl
-PATCH_TK_SCRIPTS=	${PATCH_TCL_SCRIPTS}
-
-PDOCS_TXT=	doc/Dot.ref doc/latex_suggestions.txt
-PDOCS_PDF=	doc/*.pdf */*/*.pdf
-PDOCS_HTML=	doc/*.html doc/info/*.gif
-
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+FIX_TCL_SCRIPT=	tclpkg/gdtclft/demo/entities.tcl \
+		tclpkg/tcldot/demo/gcat.tcl
+FIX_TK_SCRIPT=	tclpkg/tcldot/demo/doted.tcl \
+		tclpkg/tclpathplan/demo/pathplan.tcl
 
 OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO POPPLER \
-		ANN GTS GTK2 GDK GDK_PIXBUF GNOMEUI SMYRNA MING DEVIL \
+		ANN GTS GTK2 GDK GDK_PIXBUF GNOMEUI SMYRNA DEVIL \
 		GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL TK GUILE NVTHREADS \
 		DOCS EXAMPLES
 OPTIONS_DEFAULT=	XPM DIGCOLA IPSEPCOLA ICONV PANGOCAIRO NVTHREADS
@@ -70,7 +65,6 @@ GDK_DESC=	gdk library support (requires GTK2)
 GDK_PIXBUF_DESC=gdk pixbuf support (requires GDK)
 GNOMEUI_DESC=	libgnomeui support
 SMYRNA_DESC=	SMYRNA graph viewer (requires GTK2)
-MING_DESC=	ming plugin
 DEVIL_DESC=	devil plugin
 GHOSTSCRIPT_DESC=ghostscript plugin (requires PANGOCAIRO)
 PERL_DESC=	Perl bindings (swig)
@@ -96,15 +90,14 @@ PHP_USES=	php:build
 PYTHON_USES=	python:2.7,build
 RUBY_USE=	RUBY=yes
 LUA_USES=	lua
-TCL_USES=	tcl:build
 TK_USES=	tk:build
-TK_IMPLIES=	TCL
+DOCS_USES=	ghostscript:build
+
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 ANN_LIB_DEPENDS=	libann.so:math/ann
 GTS_LIB_DEPENDS=	libgts.so:graphics/gts
 SMYRNA_LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2 \
 			libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
-MING_LIB_DEPENDS=	libming.so:graphics/ming
 DEVIL_LIB_DEPENDS=	libIL.so:graphics/devil
 GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
 			libgc-threaded.so:devel/boehm-gc-threaded
@@ -126,9 +119,9 @@ GDK_PIXBUF_CONFIGURE_WITH=	gdk-pixbuf
 GDK_PIXBUF_IMPLIES=		GTK2 GDK
 GNOMEUI_CONFIGURE_WITH=		gnomeui
 GNOMEUI_IMPLIES=		GTK2
+SMYRNA_CONFIGURE_OFF=		--with-glut=no
 SMYRNA_CONFIGURE_WITH=		smyrna glade gtkgl gtkglext
 SMYRNA_IMPLIES=			GTK2 GTS
-MING_CONFIGURE_WITH=		ming
 DEVIL_CONFIGURE_WITH=		devil
 GHOSTSCRIPT_CONFIGURE_OFF=	--with-ghostscript=no
 GHOSTSCRIPT_IMPLIES=		PANGOCAIRO
@@ -150,14 +143,14 @@ LUA_CONFIGURE_ENV=	LUA="${LUA_BINDIR}/lua" \
 			LUA_INSTALL_DIR=${PREFIX}/lib/lua/${LUA_VER}
 LUA_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.lua
 TCL_CONFIGURE_ENABLE=		tcl
-TCL_CPPFLAGS=		-I${TK_INCLUDEDIR}
-TCL_CONFIGURE_ON=	--with-tclsh=${TCLSH} --enable-tcl=yes
+TCL_CPPFLAGS=		-I${TCL_INCLUDEDIR}
 TCL_CONFIGURE_ENV=	TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
 TCL_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.tcl \
 			PLIST_SUB+=TCL_VER="${TCL_VER}"
 TK_CPPFLAGS=		-I${TK_INCLUDEDIR}
 TK_CONFIGURE_ON=	--with-wish=${WISH}
 TK_CONFIGURE_ENV=	TKCONFIG="${TK_LIBDIR}/tkConfig.sh"
+TK_IMPLIES=	TCL
 GUILE_CONFIGURE_ENABLE=		guile
 NVTHREADS_LDFLAGS=	-lpthread
 
@@ -171,21 +164,14 @@ CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--enable-r=no \
 		--with-freetype2=yes \
 		--with-libgd \
+		--with-webp \
 		--with-fontconfigincludedir=${LOCALBASE}/include \
 		--with-fontconfiglibdir=${LOCALBASE}/lib \
+		--with-tclsh=${TCLSH} \
 		--without-rsvg \
 		--with-qt=no \
 		--disable-io --disable-ocaml --disable-java \
 		--disable-sharp
-
-.if ${PORT_OPTIONS:MMING}
-BROKEN=	Ming incomplete, uses removed libgraph
-.endif
-
-.if ${PORT_OPTIONS:MTK}
-# USES=tk:build is BROKEN: Does not allow to set both tcl and tk depedencies
-BUILD_DEPENDS+=	tclsh${TCL_VER}:lang/tcl${_TCLTK_WANTED_VERSION}
-.endif
 
 .if ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=	--with-iconvlibdir=${ICONV_PREFIX}/lib
@@ -208,90 +194,41 @@ CONFIGURE_ENV+=		SWIG="/nonexistent"
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MPHP}
-.if ${PHP_VER} < 70
-# force old PHP API
-MAKE_ARGS+=	SWIG_PHP_OPT=-php5
-.endif
-.endif
-
 post-patch:
-	${FIND} ${WRKSRC} -name Makefile.in | \
-		${XARGS} ${REINPLACE_CMD} \
-		-e "s|\([^:]*:.*\) install-pdfDATA\(.*\)|\1\2|g" \
-		-e "s|\([^:]*:.*\) install-htmlDATA\(.*\)|\1\2|g" \
-		-e "s|\([^:]*:.*\) install-txtDATA\(.*\)|\1\2|g" \
-		-e "s|\([^:]*:.*\) install-demoDATA\(.*\)|\1\2|g" \
-		-e "s|\([^:]*:.*\) install-demoSCRIPTS\(.*\)|\1\2|g" \
-		-e "s|\([^:]*:.*\) install-pathplanexampleDATA\(.*\)|\1\2|g" \
-		-e 's|txtdir = $$(pkgdatadir)/doc|txtdir = ${DOCSDIR}|' \
-		-e 's|demodir = $$(pkgdatadir)/demo|demodir = ${EXAMPLESDIR}|';
 	${REINPLACE_CMD} \
-		-e 's|^\.SUFFIXES: \(.*\)\.1\(.*\)|.SUFFIXES: \1 \2|' \
-		${WRKSRC}/cmd/tools/Makefile.in \
-		${WRKSRC}/cmd/gvpr/Makefile.in
-	${FIND} ${WRKSRC}/lib -name 'Makefile.in' | \
-		${XARGS} ${REINPLACE_CMD} \
-		-e 's|pkglibdir = $$(libdir)/@PACKAGE@|pkglibdir = $$(libdir)|g' \
-		-e 's|libdir = @libdir@|libdir = @libdir@/@PACKAGE@|g';
-	${FIND} ${WRKSRC}/lib -name '*.pc.in' | \
-		${XARGS} ${REINPLACE_CMD} \
-		-e 's|libdir=@libdir@|libdir=@libdir@/@PACKAGE@|';
-	${REINPLACE_CMD} -e "s|/usr/include/php|${LOCALBASE}/include/php|g" \
-		-e "s|vendorarchdir|sitearchdir|g" \
-		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" \
-		-e "s|ruby-1[.]9|ruby-${RUBY_VER}|g" \
-		-e 's|PHP_INSTALL_DIR=.*|PHP_INSTALL_DIR="${PREFIX}/lib/php/${PHP_EXT_DIR}"|' \
 		-e 's|PHP_INSTALL_DATADIR=.*|PHP_INSTALL_DATADIR="${PREFIX}/share/php"|' \
-		-e '/if test/ s| == | = |g' ${WRKSRC}/configure
+		-e 's|LUA_INSTALL_DIR=.*|LUA_INSTALL_DIR="${LUA_MODLIBDIR}"|' \
+		${WRKSRC}/configure.ac
 	${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
 		${WRKSRC}/cmd/smyrna/tvnodes.h
-	${REINPLACE_CMD} -e 's|GTS_LIBS)|GTS_LIBS) $$(MATH_LIBS)|' \
-		${WRKSRC}/cmd/smyrna/Makefile.in
-	${CP} ${WRKSRC}/lib/cgraph/cgraph.h ${WRKSRC}/plugin/ming/
 	${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' \
 		${WRKSRC}/lib/sfio/*.[ch]
+	${FIND} ${WRKSRC} -name Makefile.am | \
+		${XARGS} ${REINPLACE_CMD} \
+		-e 's| $$(pkgdatadir)/doc/pdf| ${DOCSDIR}/pdf|' \
+		-e 's| $$(pkgdatadir)/doc/html/schema| ${DOCSDIR}/html/schema|' \
+		-e 's| $$(pkgdatadir)/doc/html/info| ${DOCSDIR}/html/info|' \
+		-e 's| $$(pkgdatadir)/doc/html| ${DOCSDIR}/html|' \
+		-e 's| $$(pkgdatadir)/doc| ${DOCSDIR}|' \
+		-e 's| $$(pkgdatadir)/demo| ${EXAMPLESDIR}|' \
+		-e 's| $$(datadir)/@PACKAGE@/demo| ${EXAMPLESDIR}|';
+	${CP} ${FILESDIR}/version.m4 ${WRKSRC}/version.m4
+	cd ${WRKSRC} && ${REINPLACE_CMD} \
+		-e 's|exec tclsh |exec tclsh${TCL_VER} |' ${FIX_TCL_SCRIPT}
+	cd ${WRKSRC} && ${REINPLACE_CMD} \
+		-e 's|exec wish |exec wish${TCL_VER} |' ${FIX_TK_SCRIPT}
 
-post-patch-DOCS-off:
-	${REINPLACE_CMD} -e 's| install-txtDATA$$||' \
-		${WRKSRC}/Makefile.in
+pre-configure-DOCS-off:
+	${REINPLACE_CMD} -e 's| doc | |' ${WRKSRC}/Makefile.am
+	${FIND} ${WRKSRC} -name Makefile.am | \
+		${XARGS} ${REINPLACE_CMD} \
+		-e 's|^pdf_DATA|#pdf_DATA|';
 
 pre-install-PHP-on:
 	${MKDIR} "${STAGEDIR}/${PREFIX}/share/php"
 
 post-install: install-ldconfig-file
-	cd ${WRKSRC}/lib/expr && \
-		${MAKE_ENV} ${MAKE} ${MAKE_ARGS} ${INSTALL_TARGET}
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} ${FIX_INCLUDE} ${STAGEDIR}${PREFIX}/include/graphviz/
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/pdf
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} ${PDOCS_TXT} ${STAGEDIR}${DOCSDIR}/ && \
-		${INSTALL_DATA} ${PDOCS_PDF} ${STAGEDIR}${DOCSDIR}/pdf/ && \
-		${INSTALL_DATA} ${PDOCS_HTML} ${STAGEDIR}${DOCSDIR}/html/
-
-post-install-EXAMPLES-on:
-	@${ECHO_MSG} "Installing demo data..."
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/tclpkg/gdtclft/demo/entities.tcl \
-		${WRKSRC}/tclpkg/tcldot/demo/doted.tcl \
-		${WRKSRC}/tclpkg/tcldot/demo/gcat.tcl \
-		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan.tcl \
-		${STAGEDIR}${EXAMPLESDIR}/
-	${INSTALL_DATA} \
-		${WRKSRC}/tclpkg/gdtclft/demo/entities.tcl.README \
-		${WRKSRC}/tclpkg/tcldot/demo/doted.tcl.README \
-		${WRKSRC}/tclpkg/tcldot/demo/gcat.tcl.README \
-		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan.tcl.README \
-		${STAGEDIR}${EXAMPLESDIR}/
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/pathplan_data
-	${INSTALL_DATA} \
-		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan_data/*.dat \
-		${STAGEDIR}${EXAMPLESDIR}/pathplan_data/
 
 .include <bsd.port.post.mk>

@@ -1,4 +1,4 @@
---- lib/vmalloc/vmhdr.h.orig	2016-12-22 05:44:41 UTC
+--- lib/vmalloc/vmhdr.h.orig	2019-09-12 02:11:30 UTC
 +++ lib/vmalloc/vmhdr.h
 @@ -20,6 +20,10 @@ extern "C" {
  #ifndef _BLD_vmalloc
@@ -8,6 +8,6 @@
 +/* No sbrk on FreeBSD/AArch64 */
 +#define _std_malloc	1
 +#endif
- #ifdef WIN32
+ #ifdef _WIN32
  #include <io.h>
  #endif
