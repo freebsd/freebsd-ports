@@ -26,6 +26,7 @@ lib/libKF5ItemViews.so
 lib/libKF5ItemViews.so.5
 lib/libKF5ItemViews.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KItemViews.pri
+%%QT_PLUGINDIR%%/designer/kitemviews5widgets.so
 share/locale/af/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/ar/LC_MESSAGES/kitemviews5_qt.qm
 share/locale/as/LC_MESSAGES/kitemviews5_qt.qm

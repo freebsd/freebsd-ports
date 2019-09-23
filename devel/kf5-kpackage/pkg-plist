@@ -56,6 +56,7 @@ share/locale/it/LC_MESSAGES/libkpackage5.mo
 share/locale/ja/LC_MESSAGES/libkpackage5.mo
 share/locale/ko/LC_MESSAGES/libkpackage5.mo
 share/locale/lt/LC_MESSAGES/libkpackage5.mo
+share/locale/ml/LC_MESSAGES/libkpackage5.mo
 share/locale/mr/LC_MESSAGES/libkpackage5.mo
 share/locale/nb/LC_MESSAGES/libkpackage5.mo
 share/locale/nds/LC_MESSAGES/libkpackage5.mo
@@ -74,6 +75,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/libkpackage5.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkpackage5.mo
 share/locale/sr@latin/LC_MESSAGES/libkpackage5.mo
 share/locale/sv/LC_MESSAGES/libkpackage5.mo
+share/locale/tg/LC_MESSAGES/libkpackage5.mo
 share/locale/tr/LC_MESSAGES/libkpackage5.mo
 share/locale/ug/LC_MESSAGES/libkpackage5.mo
 share/locale/uk/LC_MESSAGES/libkpackage5.mo

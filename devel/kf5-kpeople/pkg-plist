@@ -8,6 +8,7 @@ include/KF5/KPeople/KPeople/Widgets/MergeDialog
 include/KF5/KPeople/KPeople/Widgets/PersonDetailsDialog
 include/KF5/KPeople/KPeople/Widgets/PersonDetailsView
 include/KF5/KPeople/KPeopleBackend/AbstractContact
+include/KF5/KPeople/KPeopleBackend/AbstractEditableContact
 include/KF5/KPeople/KPeopleBackend/AbstractPersonAction
 include/KF5/KPeople/KPeopleBackend/AllContactsMonitor
 include/KF5/KPeople/KPeopleBackend/BasePersonsDataSource
@@ -24,6 +25,7 @@ include/KF5/KPeople/kpeople/widgets/mergedialog.h
 include/KF5/KPeople/kpeople/widgets/persondetailsdialog.h
 include/KF5/KPeople/kpeople/widgets/persondetailsview.h
 include/KF5/KPeople/kpeoplebackend/abstractcontact.h
+include/KF5/KPeople/kpeoplebackend/abstracteditablecontact.h
 include/KF5/KPeople/kpeoplebackend/abstractpersonaction.h
 include/KF5/KPeople/kpeoplebackend/allcontactsmonitor.h
 include/KF5/KPeople/kpeoplebackend/basepersonsdatasource.h
@@ -74,6 +76,7 @@ share/locale/it/LC_MESSAGES/kpeople5.mo
 share/locale/ja/LC_MESSAGES/kpeople5.mo
 share/locale/ko/LC_MESSAGES/kpeople5.mo
 share/locale/lt/LC_MESSAGES/kpeople5.mo
+share/locale/ml/LC_MESSAGES/kpeople5.mo
 share/locale/nb/LC_MESSAGES/kpeople5.mo
 share/locale/nl/LC_MESSAGES/kpeople5.mo
 share/locale/nn/LC_MESSAGES/kpeople5.mo
@@ -89,6 +92,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kpeople5.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kpeople5.mo
 share/locale/sr@latin/LC_MESSAGES/kpeople5.mo
 share/locale/sv/LC_MESSAGES/kpeople5.mo
+share/locale/tg/LC_MESSAGES/kpeople5.mo
 share/locale/tr/LC_MESSAGES/kpeople5.mo
 share/locale/uk/LC_MESSAGES/kpeople5.mo
 share/locale/zh_CN/LC_MESSAGES/kpeople5.mo

@@ -24,6 +24,7 @@ man/es/man1/checkXML5.1.gz
 man/es/man7/kf5options.7.gz
 man/es/man7/qt5options.7.gz
 man/es/man1/meinproc5.1.gz
+man/id/man1/checkXML5.1.gz
 man/it/man1/checkXML5.1.gz
 man/it/man7/kf5options.7.gz
 man/it/man7/qt5options.7.gz
@@ -1030,6 +1031,7 @@ share/kf5/kdoctools/customization/zh-TW/lang.entities
 share/kf5/kdoctools/customization/zh-TW/strings.entities
 share/kf5/kdoctools/customization/zh-TW/user.entities
 share/locale/af/LC_MESSAGES/kdoctools5.mo
+share/locale/ast/LC_MESSAGES/kdoctools5.mo
 share/locale/ar/LC_MESSAGES/kdoctools5.mo
 share/locale/be/LC_MESSAGES/kdoctools5.mo
 share/locale/bg/LC_MESSAGES/kdoctools5.mo
@@ -1076,6 +1078,7 @@ share/locale/lt/LC_MESSAGES/kdoctools5.mo
 share/locale/lv/LC_MESSAGES/kdoctools5.mo
 share/locale/mai/LC_MESSAGES/kdoctools5.mo
 share/locale/mk/LC_MESSAGES/kdoctools5.mo
+share/locale/ml/LC_MESSAGES/kdoctools5.mo
 share/locale/mr/LC_MESSAGES/kdoctools5.mo
 share/locale/ms/LC_MESSAGES/kdoctools5.mo
 share/locale/nb/LC_MESSAGES/kdoctools5.mo

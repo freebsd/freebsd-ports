@@ -40,6 +40,7 @@ lib/libKF5ConfigWidgets.so
 lib/libKF5ConfigWidgets.so.5
 lib/libKF5ConfigWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KConfigWidgets.pri
+%%QT_PLUGINDIR%%/designer/kconfigwidgets5widgets.so
 man/ca/man1/preparetips5.1.gz
 man/de/man1/preparetips5.1.gz
 man/es/man1/preparetips5.1.gz

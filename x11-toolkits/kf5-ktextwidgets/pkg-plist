@@ -26,6 +26,7 @@ lib/libKF5TextWidgets.so
 lib/libKF5TextWidgets.so.5
 lib/libKF5TextWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KTextWidgets.pri
+%%QT_PLUGINDIR%%/designer/ktextwidgets5widgets.so
 share/kservicetypes5/kregexpeditor.desktop
 share/locale/af/LC_MESSAGES/ktextwidgets5.mo
 share/locale/ar/LC_MESSAGES/ktextwidgets5.mo
