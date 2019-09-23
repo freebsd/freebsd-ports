@@ -1,6 +1,8 @@
 bin/profanity
 include/profapi.h
 lib/libprofanity.so
+lib/libprofanity.so.0
+lib/libprofanity.so.0.0.0
 man/man1/profanity.1.gz
 %%DATADIR%%/themes/aqua
 %%DATADIR%%/themes/batman
