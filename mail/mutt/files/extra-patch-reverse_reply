@@ -1,8 +1,8 @@
---- PATCHES.orig	2019-06-15 21:17:02 UTC
+--- PATCHES.orig	2017-12-03 03:10:17 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.6.cb.reverse_reply.2
---- init.h.orig	2019-06-15 21:17:01 UTC
+--- init.h.orig	2019-09-21 19:18:34 UTC
 +++ init.h
 @@ -2966,6 +2966,13 @@ struct option_t MuttVars[] = {
    ** In either case, a missing real name will be filled in afterwards
@@ -18,7 +18,7 @@
    { "rfc2047_parameters", DT_BOOL, R_NONE, OPTRFC2047PARAMS, 0 },
    /*
    ** .pp
---- mutt.h.orig	2019-06-15 21:17:01 UTC
+--- mutt.h.orig	2019-09-21 19:18:34 UTC
 +++ mutt.h
 @@ -491,6 +491,7 @@ enum
    OPTREVALIAS,
@@ -28,7 +28,7 @@
    OPTRFC2047PARAMS,
    OPTSAVEADDRESS,
    OPTSAVEEMPTY,
---- protos.h.orig	2019-05-25 16:22:39 UTC
+--- protos.h.orig	2019-09-21 19:18:34 UTC
 +++ protos.h
 @@ -85,6 +85,7 @@ ADDRESS *mutt_get_address (ENVELOPE *, char **);
  ADDRESS *mutt_lookup_alias (const char *s);
@@ -38,7 +38,7 @@
  ADDRESS *mutt_expand_aliases (ADDRESS *);
  ADDRESS *mutt_parse_adrlist (ADDRESS *, const char *);
  
---- send.c.orig	2019-06-14 15:57:33 UTC
+--- send.c.orig	2019-09-21 19:18:34 UTC
 +++ send.c
 @@ -717,6 +717,10 @@ void mutt_fix_reply_recipients (ENVELOPE *env)
    /* the CC field can get cluttered, especially with lists */
@@ -51,9 +51,9 @@
    env->cc = mutt_remove_xrefs (env->to, env->cc);
  
    if (env->cc && !env->to)
---- sendlib.c.orig	2019-06-14 15:57:30 UTC
+--- sendlib.c.orig	2019-09-21 19:18:34 UTC
 +++ sendlib.c
-@@ -2764,6 +2764,35 @@ static void set_noconv_flags (BODY *b, short flag)
+@@ -2765,6 +2765,35 @@ static void set_noconv_flags (BODY *b, short flag)
    }
  }
  
