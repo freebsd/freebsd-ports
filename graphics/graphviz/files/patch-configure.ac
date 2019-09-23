@@ -1,0 +1,40 @@
+--- configure.ac.orig	2019-09-12 02:11:30 UTC
++++ configure.ac
+@@ -697,7 +697,7 @@ else
+       if test "x$GUILE" = "x"; then
+         use_guile="No (guile not available)"
+       else
+-        [GUILE_VERSION=`$GUILE --version | sed -n '1 s/^.* \+\([0-9\.]\+\)$/\1/ p'`]
++        [GUILE_VERSION=`$GUILE --version | sed -n '1 s/^.* \([0-9\.]*\)$/\1/ p'`]
+         GUILE_VERSION_MAJOR=`echo $GUILE_VERSION | cut -d '.' -f 1`
+         GUILE_VERSION_MINOR=`echo $GUILE_VERSION | cut -d '.' -f 2`
+         if test 0$GUILE_VERSION_MAJOR -lt 2; then
+@@ -882,17 +882,17 @@ else
+             if test "x$PKG_CONFIG" != "x"; then
+ 	        AC_MSG_CHECKING(for Lua headers and libraries with pkg-config)
+ 	        echo
+-	        for l in "$lua_suffix" "" "53" "5.3" "52" "5.2" "51" "5.1" "50" "5.0" ; do
++	        for l in "$lua_suffix" "" "53" "-5.3" "52" "-5.2" "51" "-5.1" "50" "5.0" ; do
+ 	            pkgconfig_lua_found=`$PKG_CONFIG --exists lua$l 2>/dev/null`
+ 	            if test "x$?" = "x0" ; then
+ 		        LUA_VERSION=`$PKG_CONFIG --modversion lua$l`
+-                        LUA_INCLUDES="$LUA_CFLAGS "`$PKG_CONFIG --cflags lua$l`
++                        LUA_INCLUDES="$LUA_CFLAGS "`$PKG_CONFIG --cflags-only-I lua$l`
+                         LUA_LIBS="$LUA_LFLAGS "`$PKG_CONFIG --libs lua$l`
+ 		        LUA_INSTALL_DIR="/usr/lib$LIBPOSTFIX/lua/`$PKG_CONFIG --variable=V lua`"
+ 
+ 		        pkgconfig_lualib_found=`$PKG_CONFIG --exists lualib$l 2>/dev/null`
+ 		        if test  "x$?" = "x0"; then
+-		           LUA_INCLUDES="$LUA_CFLAGS "`$PKG_CONFIG --cflags lualib$l`
++		           LUA_INCLUDES="$LUA_CFLAGS "`$PKG_CONFIG --cflags-only-I lualib$l`
+ 		           LUA_LIBS="$LUA_LFLAGS "`$PKG_CONFIG --libs lualib$l`
+ 		        fi
+                         break
+@@ -1412,6 +1412,7 @@ else
+ 	    use_ruby="No (ruby not available)"
+           else
+             RUBY_CFLAGS="-I`$RUBY $srcdir/config/config_ruby.rb archdir`"
++            RUBY_CFLAGS="${RUBY_CFLAGS} -I`$RUBY $srcdir/config/config_ruby.rb inc`"
+ 	    # hack for powerpc-darwin8 (10.4)
+ 	    if test "x$DARWIN" = "xyes"; then
+ 	      RUBY_CFLAGS=`echo $RUBY_CFLAGS | sed 's/powerpc/universal/'`
