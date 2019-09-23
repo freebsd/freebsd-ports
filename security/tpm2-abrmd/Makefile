@@ -2,6 +2,7 @@
 
 PORTNAME=	tpm2-abrmd
 DISTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-abrmd/releases/download/${DISTVERSION}/
 
