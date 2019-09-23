@@ -1,0 +1,32 @@
+--- scripts/multiqc.orig	2018-12-21 17:29:54 UTC
++++ scripts/multiqc
+@@ -6,18 +6,26 @@
+ from __future__ import print_function
+ 
+ import base64
+-import click
++import os
++import sys
++
++if 'LC_ALL' in os.environ and 'LANG' in os.environ:
++    import click
++else:
++    print('multiqc: LC_ALL and LANG must be set to a UTF-8 character set')
++    print('in your environment in order for the click module to function.')
++    print('E.g. export LC_ALL=en_US.UTF-8 or setenv LC_ALL en_US.UTF-8')
++    sys.exit()
++
+ from distutils import version
+ from distutils.dir_util import copy_tree
+ import errno
+ import io
+ import jinja2
+-import os
+ import pkg_resources
+ import re
+ import shutil
+ import subprocess
+-import sys
+ import tempfile
+ import traceback
+ 

@@ -1,0 +1,5 @@
+MultiQC searches a given directory for analysis logs and compiles an HTML
+report. It's a general use tool, perfect for summarising the output from
+numerous bioinformatics tools.
+
+WWW: https://pypi.python.org/pypi/multiqc
