@@ -6,7 +6,7 @@
      CONFIG="/etc/puppetlabs/puppetserver/conf.d"
 +elif [ `uname` == "FreeBSD" ] ; then
 +    JAVA_BIN="%%JAVA%%"
-+    JAVA_ARGS="-Xms2g -Xmx2g -XX:MaxPermSize=256m"
++    JAVA_ARGS="-Xms2g -Xmx2g"
 +    USER="puppet"
 +    INSTALL_DIR="%%DATADIR%%"
 +    CONFIG="%%ETCDIR%%/conf.d"
