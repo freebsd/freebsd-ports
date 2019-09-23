@@ -9,7 +9,7 @@ PORTREVISION=	0
 .else
 # XXX: correct version
 # dns/bind9xx here
-PORTREVISION=	1
+PORTREVISION=	0
 .endif
 CATEGORIES=	dns net ipv6
 # XXX: put the ISC master_site
@@ -41,13 +41,13 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 # XXX: remove tar:bz2
 USES=	compiler:c11 cpe libedit pkgconfig ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.15.3a0.2019.09.13
+ISCVERSION=	9.15.3a0.2019.09.17
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	3699545dace25859d5fe265cb9aeced22d883eb1
+GL_COMMIT=	6aec894c4c4ac708f94ef495a010862733f8e5af
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
