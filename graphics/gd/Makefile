@@ -35,7 +35,6 @@ JPEG_CPPFLAGS=		-I${LOCALBASE}/include
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CONFIGURE_OFF=	--without-webp
 WEBP_CPPFLAGS=		-I${LOCALBASE}/include
-WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_OFF=	--without-tiff
 TIFF_CPPFLAGS=		-I${LOCALBASE}/include
