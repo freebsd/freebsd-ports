@@ -44,6 +44,7 @@ share/locale/it/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/ja/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/ko/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/lt/LC_MESSAGES/kdbusaddons5_qt.qm
+share/locale/ml/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/nb/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/nds/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/nl/LC_MESSAGES/kdbusaddons5_qt.qm
@@ -62,6 +63,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/sr@latin/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/sv/LC_MESSAGES/kdbusaddons5_qt.qm
+share/locale/tg/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/tr/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/uk/LC_MESSAGES/kdbusaddons5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kdbusaddons5_qt.qm

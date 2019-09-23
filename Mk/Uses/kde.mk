@@ -58,7 +58,7 @@ KDE_PLASMA_VERSION?=		5.16.5
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
-KDE_FRAMEWORKS_VERSION?=	5.61.0
+KDE_FRAMEWORKS_VERSION?=	5.62.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
@@ -128,7 +128,7 @@ PORTVERSION?=		${KDE_FRAMEWORKS_VERSION}
 PKGNAMEPREFIX?=		kf5-
 # This is a slight duplication of _USE_FRAMEWORKS_PORTING -- it maybe would be
 # better to rely on ${_USE_FRAMEWORKS_PORTING:S/^/k/g}
-_PORTINGAIDS=		kjs kjsembed kdelibs4support kdewebkit khtml kmediaplayer kross
+_PORTINGAIDS=		kjs kjsembed kdelibs4support kdesignerplugin kdewebkit khtml kmediaplayer kross
 .        if ${_PORTINGAIDS:M*${PORTNAME}*}
 MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION:R}/portingAids
 .        else
@@ -297,7 +297,7 @@ kde-dbusaddons_PORT=		devel/kf5-kdbusaddons
 kde-dbusaddons_LIB=		libKF5DBusAddons.so
 
 kde-designerplugin_PORT=	x11-toolkits/kf5-kdesignerplugin
-kde-designerplugin_PATH=	${QT_PLUGINDIR}/designer/kf5widgets.so
+kde-designerplugin_PATH=	${KDE_PREFIX}/bin/kgendesignerplugin
 kde-designerplugin_TYPE=	run
 
 kde-dnssd_PORT=			dns/kf5-kdnssd

@@ -16,3 +16,4 @@ lib/libKF5Plotting.so
 lib/libKF5Plotting.so.5
 lib/libKF5Plotting.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KPlotting.pri
+%%QT_PLUGINDIR%%/designer/kplotting5widgets.so

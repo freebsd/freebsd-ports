@@ -26,6 +26,7 @@ lib/libKF5Completion.so
 lib/libKF5Completion.so.5
 lib/libKF5Completion.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KCompletion.pri
+%%QT_PLUGINDIR%%/designer/kcompletion5widgets.so
 share/locale/af/LC_MESSAGES/kcompletion5_qt.qm
 share/locale/ar/LC_MESSAGES/kcompletion5_qt.qm
 share/locale/as/LC_MESSAGES/kcompletion5_qt.qm

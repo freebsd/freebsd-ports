@@ -42,6 +42,7 @@ lib/libKF5Service.so.5
 lib/libKF5Service.so.%%KDE_FRAMEWORKS_VERSION%%
 man/ca/man8/desktoptojson.8.gz
 man/ca/man8/kbuildsycoca5.8.gz
+man/id/man8/desktoptojson.8.gz
 man/it/man8/desktoptojson.8.gz
 man/it/man8/kbuildsycoca5.8.gz
 man/de/man8/desktoptojson.8.gz

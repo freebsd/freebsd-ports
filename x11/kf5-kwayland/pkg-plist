@@ -70,6 +70,7 @@ include/KF5/KWayland/Server/idle_interface.h
 include/KF5/KWayland/Server/idleinhibit_interface.h
 include/KF5/KWayland/Server/keyboard_interface.h
 include/KF5/KWayland/Server/kwaylandserver_export.h
+include/KF5/KWayland/Server/linuxdmabuf_v1_interface.h
 include/KF5/KWayland/Server/output_interface.h
 include/KF5/KWayland/Server/outputchangeset.h
 include/KF5/KWayland/Server/outputconfiguration_interface.h

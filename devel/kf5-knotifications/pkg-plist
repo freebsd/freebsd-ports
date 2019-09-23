@@ -26,6 +26,7 @@ share/kservicetypes5/knotificationplugin.desktop
 share/locale/af/LC_MESSAGES/knotifications5_qt.qm
 share/locale/ar/LC_MESSAGES/knotifications5_qt.qm
 share/locale/as/LC_MESSAGES/knotifications5_qt.qm
+share/locale/ast/LC_MESSAGES/knotifications5_qt.qm
 share/locale/be/LC_MESSAGES/knotifications5_qt.qm
 share/locale/be@latin/LC_MESSAGES/knotifications5_qt.qm
 share/locale/bg/LC_MESSAGES/knotifications5_qt.qm

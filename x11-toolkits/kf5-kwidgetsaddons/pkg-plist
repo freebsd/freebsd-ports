@@ -153,6 +153,7 @@ lib/libKF5WidgetsAddons.so
 lib/libKF5WidgetsAddons.so.5
 lib/libKF5WidgetsAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KWidgetsAddons.pri
+%%QT_PLUGINDIR%%/designer/kwidgetsaddons5widgets.so
 share/kf5/kcharselect/kcharselect-data
 share/locale/af/LC_MESSAGES/kwidgetsaddons5_qt.qm
 share/locale/ar/LC_MESSAGES/kwidgetsaddons5_qt.qm

@@ -47,6 +47,7 @@ share/ECM/kde-modules/appstreamtest.cmake
 share/ECM/kde-modules/prefix.sh.cmake
 share/ECM/modules/ECMAddAppIcon.cmake
 share/ECM/modules/ECMAddQch.cmake
+share/ECM/modules/ECMAddQtDesignerPlugin.cmake
 share/ECM/modules/ECMAddTests.cmake
 share/ECM/modules/ECMCoverageOption.cmake
 share/ECM/modules/ECMCreateQmFromPoFiles.cmake
@@ -123,6 +124,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/manual/ecm.7.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMAddAppIcon.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMAddQch.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMAddQtDesignerPlugin.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMAddTests.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMCoverageOption.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMCreateQmFromPoFiles.rst.txt
@@ -209,6 +211,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/ecm.7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMAddAppIcon.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMAddQch.html
+%%PORTDOCS%%%%DOCSDIR%%/html/module/ECMAddQtDesignerPlugin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMAddTests.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMCoverageOption.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMCreateQmFromPoFiles.html

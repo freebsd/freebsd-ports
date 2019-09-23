@@ -41,6 +41,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/Label.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/LinkButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ListItemDragHandle.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/ListSectionHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/OverlayDrawer.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/OverlaySheet.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Page.qml
@@ -128,6 +129,7 @@ share/locale/it/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ja/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ko/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/lt/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/ml/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/nl/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/nn/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/pl/LC_MESSAGES/libkirigami2plugin_qt.qm
@@ -141,6 +143,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sr@latin/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/sv/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/tg/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/tr/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/uk/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/zh_CN/LC_MESSAGES/libkirigami2plugin_qt.qm

@@ -43,6 +43,7 @@ share/locale/km/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/ko/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/lt/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/lv/LC_MESSAGES/libkxmlrpcclient5.mo
+share/locale/ml/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/mr/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/nb/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/nds/LC_MESSAGES/libkxmlrpcclient5.mo
@@ -63,6 +64,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/sr@latin/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/sv/LC_MESSAGES/libkxmlrpcclient5.mo
+share/locale/tg/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/tr/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/ug/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/uk/LC_MESSAGES/libkxmlrpcclient5.mo
