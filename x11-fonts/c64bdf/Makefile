@@ -3,7 +3,7 @@
 
 PORTNAME=	c64bdf
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://beej.us/c64bdf/
 DISTNAME=	${PORTNAME}
@@ -13,6 +13,8 @@ MAINTAINER=	saper@saper.info
 COMMENT=	Commodore 64 X11 fonts
 
 NO_BUILD=	yes
+
+USES=		fonts
 
 FONTS=	c64 c64d
 FILES=	${FONTS:S,$,.bdf,}
