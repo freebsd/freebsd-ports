@@ -1,0 +1,17 @@
+Clang 9 no longer pretends to be GCC
+https://reviews.llvm.org/rL356931
+https://reviews.llvm.org/rL366091
+
+--- configure.orig	2019-09-08 15:43:06 UTC
++++ configure
+@@ -6464,8 +6464,8 @@ if test "$GCC" = yes && test "$ICC" = no ; then
+ 	""|2.*|3.*) ;;
+ 	4.*) gcc4=yes ;;
+     esac
+-    case "$CC" in
+-	*clang) gcc4=yes ;;
++    case `$CC --version 2>/dev/null` in
++	*clang*) gcc4=yes ;;
+     esac
+ fi
+  if test $gcc4 = yes; then
