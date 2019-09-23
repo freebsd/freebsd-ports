@@ -1,21 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	puppetserver
-PORTVERSION=	6.5.0
+PORTVERSION=	6.6.0
 CATEGORIES=	sysutils java
-MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
+MASTER_SITES=	https://downloads.puppetlabs.com/puppet/:upstream \
+		https://raw.githubusercontent.com/jruby/jruby/fb3ba4b3543b72e735ba53b51e6b7ec8a9916e1b/lib/ruby/stdlib/ffi/:ffi
 PKGNAMESUFFIX=	6
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:upstream \
+		ffi.rb:ffi
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Puppet Server running in the JVM
 
 LICENSE=	APACHE20
 
-BROKEN_FreeBSD_12=	Does not start. See PR 233766
-BROKEN_FreeBSD_13=	Does not start. See PR 233766
-
 RUN_DEPENDS=	bash>=0:shells/bash \
-		jruby>=9.1:lang/jruby \
 		puppet6>=0:sysutils/puppet6 \
 		rubygem-puppetserver-ca>=1:sysutils/rubygem-puppetserver-ca \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet \
@@ -40,6 +40,9 @@ GROUPS=		puppet
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 SUB_FILES=	pkg-message
 
+pre-patch:
+	${CP} ${_DISTDIR}/ffi.rb ${WRKSRC}
+
 post-patch:
 .for file in ext/config/logback.xml ext/config/request-logging.xml \
 	ext/config/conf.d/global.conf ext/config/conf.d/puppetserver.conf \
@@ -60,6 +63,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/cli/apps
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf.d
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/services.d
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/puppet/code
@@ -89,5 +93,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/start ${STAGEDIR}${DATADIR}/cli/apps/start
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/stop ${STAGEDIR}${DATADIR}/cli/apps/stop
 	${INSTALL_DATA} ${WRKSRC}/ext/cli_defaults/cli-defaults.sh ${STAGEDIR}${DATADIR}/cli/cli-defaults.sh
+	${INSTALL_DATA} ${WRKSRC}/ffi.rb ${STAGEDIR}${DATADIR}/lib
 
 .include <bsd.port.mk>

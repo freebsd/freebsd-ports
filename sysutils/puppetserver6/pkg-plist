@@ -21,6 +21,7 @@
 @(,,755) %%DATADIR%%/cli/apps/stop
 @(,,755) %%DATADIR%%/cli/cli-defaults.sh
 @(,,755) %%DATADIR%%/ezbake-functions.sh
+%%DATADIR%%/lib/ffi.rb
 @dir(puppet,puppet,750) /var/log/puppetserver
 @dir(puppet,puppet,755) /var/puppet
 @dir(puppet,puppet,750) /var/puppet/server

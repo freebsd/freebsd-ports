@@ -56,7 +56,7 @@ pidfile="/var/run/puppetserver/puppetserver.pid"
 command="/usr/sbin/daemon"
 java_cmd="${puppetserver_java_home}/bin/java"
 procname="${java_cmd}"
-command_args="-f -p ${pidfile} ${java_cmd} ${puppetserver_java_opts} -cp %%DATADIR%%/puppet-server-release.jar clojure.main -m puppetlabs.trapperkeeper.main ${puppetserver_args}"
+command_args="-f -p ${pidfile} ${java_cmd} ${puppetserver_java_opts} -cp %%DATADIR%%/puppet-server-release.jar:%%PREFIX%%/lib/ruby/vendor_ruby/facter.jar clojure.main -m puppetlabs.trapperkeeper.main ${puppetserver_args}"
 
 
 required_files="${java_cmd}"

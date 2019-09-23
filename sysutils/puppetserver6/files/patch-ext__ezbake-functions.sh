@@ -1,6 +1,6 @@
---- ext/ezbake-functions.sh.orig	2019-02-08 21:16:18.212575000 -0800
-+++ ext/ezbake-functions.sh	2019-02-08 21:16:49.208798000 -0800
-@@ -126,7 +126,7 @@
+--- ext/ezbake-functions.sh.orig	2019-09-17 14:05:56 UTC
++++ ext/ezbake-functions.sh
+@@ -126,7 +126,7 @@ init_restart_file()
      local group="${GROUP:-puppet}"
  
      if [ ! -e "$restartfile" ]; then
