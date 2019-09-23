@@ -27,7 +27,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
-BROKEN=		src/tcpkali_atomic.h unconditionally includes x86 assembler
+BROKEN=		is marked as broken with GCC: src/tcpkali_atomic.h unconditionally includes x86 assembler
 .endif
 
 .include <bsd.port.post.mk>
