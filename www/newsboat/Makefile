@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	newsboat
-PORTVERSION=	2.16.1
-PORTREVISION=	3
+PORTVERSION=	2.17
 CATEGORIES=	www
 MASTER_SITES=	https://newsboat.org/releases/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -68,6 +67,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		lock_api-0.1.5 \
 		matches-0.1.8 \
 		memchr-2.1.3 \
+		natord-1.0.9 \
 		nodrop-0.1.13 \
 		nom-4.2.3 \
 		num-integer-0.1.39 \
@@ -108,6 +108,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		rusty-fork-0.2.1 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-0.3.3 \
+		section_testing-0.0.4 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		smallvec-0.6.8 \
@@ -134,7 +135,8 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		winapi-0.3.6 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		xdg-2.2.0
 
 OPTIONS_DEFINE=	DOCS
 
@@ -144,9 +146,6 @@ post-patch:
 		${WRKSRC}/config.sh
 	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB} -lcrypto -lncursesw|;s|-Werror||' \
 		${WRKSRC}/Makefile
-# Tries to run git to export GIT_HASH env variable.  This is not
-# needed for release versions per rust/libnewsboat/src/utils.rs
-	@${RM} ${WRKSRC}/rust/libnewsboat/build.rs
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*boat
