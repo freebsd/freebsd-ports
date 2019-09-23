@@ -742,6 +742,7 @@
     SUBDIR += no-login
     SUBDIR += node_exporter
     SUBDIR += nomad
+    SUBDIR += nomad-pot-driver
     SUBDIR += npadmin
     SUBDIR += nq
     SUBDIR += nrg2iso
