@@ -29,7 +29,7 @@ LLVM_VER=	60
 MAKE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VER}
 
 post-patch:
-# Requried, because Makefile.freebsd does not see VARS from this Makefile
+# Required, because Makefile.freebsd does not see VARS from this Makefile
 	@${REINPLACE_CMD} -e "s|%%_GCC_VER%%|${_GCC_VER}|" \
 		${WRKSRC}/ffi/Makefile.freebsd
 
