@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-DISTVERSION=	1.12.1
+DISTVERSION=	1.12.2
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -182,8 +182,8 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 .include <bsd.port.options.mk>
 
 # un/comment as each VERSION is created for PORTVERSION
-#VVV_PATCH_VERSION=	1.12.1
-GREETING_PATCH_VERSION=	1.12.0
+VVV_PATCH_VERSION=	1.12.1
+GREETING_PATCH_VERSION=	1.12.1
 
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
