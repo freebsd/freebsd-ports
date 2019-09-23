@@ -2,7 +2,7 @@
 
 PORTNAME=	spotifyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.14
+DISTVERSION=	0.2.15
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -17,7 +17,7 @@ USES=		cargo ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	Spotifyd
 GH_TUPLE=	plietar:dns-parser:1d3e5a5591bc72eb061c23bd426c4a25f2f73791:dnsparser \
-		librespot-org:librespot:7cb551d66d3d195d04d7e247b3dc8d9f597a347c:librespot \
+		librespot-org:librespot:e1e8f60628f8e8fe0ad202d10ac4d8a231de27ed:librespot \
 		plietar:rust-mdns:66a74033da6c9f1a06e7b0a29f4544fd189d6479:mdns \
 		plietar:rust-tremor:5958cc302e78f535dad90e9665da981ddff4000a:tremor
 USE_RC_SUBR=	spotifyd
@@ -33,7 +33,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		alsa-0.2.2 \
 		alsa-sys-0.1.2 \
 		ansi_term-0.11.0 \
-		arc-swap-0.4.2 \
+		arc-swap-0.4.3 \
+		arrayref-0.3.5 \
 		arrayvec-0.4.11 \
 		atty-0.2.13 \
 		autocfg-0.1.6 \
@@ -45,24 +46,28 @@ CARGO_CRATES=	adler32-1.0.4 \
 		bit-set-0.5.1 \
 		bit-vec-0.5.1 \
 		bitflags-0.3.3 \
-		bitflags-0.7.0 \
 		bitflags-0.9.1 \
 		bitflags-1.1.0 \
+		blake2b_simd-0.5.8 \
 		block-buffer-0.7.3 \
 		block-cipher-trait-0.6.2 \
 		block-modes-0.3.3 \
 		block-padding-0.1.4 \
+		boxfnonce-0.1.1 \
 		byte-tools-0.3.1 \
+		bytecount-0.4.0 \
 		byteorder-0.5.3 \
 		byteorder-1.3.2 \
 		bytes-0.4.12 \
 		c2-chacha-0.2.2 \
 		c_linked_list-1.1.1 \
+		cargo_metadata-0.6.4 \
 		cc-1.0.45 \
 		cfg-if-0.1.9 \
 		chrono-0.4.9 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
+		constant_time_eq-0.1.4 \
 		cookie-0.12.0 \
 		cookie_store-0.7.0 \
 		core-foundation-0.6.4 \
@@ -74,7 +79,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		crossbeam-utils-0.6.6 \
 		crypto-mac-0.7.0 \
 		ctr-0.3.2 \
-		daemonize-0.3.0 \
+		daemonize-0.4.1 \
 		dbus-0.2.3 \
 		dbus-0.6.5 \
 		dbus-tokio-0.2.1 \
@@ -82,6 +87,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		derive_builder-0.5.1 \
 		derive_builder_core-0.2.0 \
 		digest-0.8.1 \
+		dirs-2.0.2 \
+		dirs-sys-0.3.4 \
 		dotenv-0.10.1 \
 		dtoa-0.4.4 \
 		either-1.5.3 \
@@ -111,9 +118,11 @@ CARGO_CRATES=	adler32-1.0.4 \
 		gethostname-0.2.0 \
 		getopts-0.2.21 \
 		getrandom-0.1.12 \
+		glob-0.2.11 \
 		h2-0.1.26 \
 		heck-0.3.1 \
 		hex-0.3.2 \
+		hkdf-0.7.1 \
 		hmac-0.7.1 \
 		http-0.1.18 \
 		http-body-0.1.0 \
@@ -130,7 +139,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		itertools-0.7.11 \
 		itoa-0.4.4 \
 		kernel32-sys-0.2.2 \
-		keyring-0.6.1 \
+		keyring-0.7.1 \
 		language-tags-0.2.2 \
 		lazy_static-1.4.0 \
 		lewton-0.9.4 \
@@ -158,13 +167,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		nix-0.11.1 \
 		nix-0.9.0 \
 		nodrop-0.1.13 \
-		num-0.1.42 \
-		num-bigint-0.1.44 \
+		num-0.2.0 \
 		num-bigint-0.2.3 \
-		num-complex-0.1.43 \
+		num-complex-0.2.3 \
 		num-integer-0.1.41 \
 		num-iter-0.1.39 \
-		num-rational-0.1.42 \
+		num-rational-0.2.2 \
 		num-traits-0.2.8 \
 		num_cpus-1.10.1 \
 		ogg-0.7.0 \
@@ -185,11 +193,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		ppv-lite86-0.2.5 \
 		proc-macro-error-0.2.6 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.3 \
+		proc-macro2-1.0.4 \
 		protobuf-2.8.1 \
 		protobuf-codegen-2.8.1 \
 		protobuf-codegen-pure-2.8.1 \
 		publicsuffix-1.5.3 \
+		pulldown-cmark-0.2.0 \
 		quick-error-1.2.2 \
 		quote-0.3.15 \
 		quote-0.6.13 \
@@ -214,6 +223,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		random-0.12.2 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
+		redox_users-0.3.1 \
 		regex-0.2.11 \
 		regex-1.3.1 \
 		regex-syntax-0.5.6 \
@@ -222,22 +232,21 @@ CARGO_CRATES=	adler32-1.0.4 \
 		remove_dir_all-0.5.2 \
 		reqwest-0.9.20 \
 		result-1.0.0 \
-		rpassword-2.1.0 \
 		rpassword-3.0.2 \
 		rspotify-0.2.5 \
-		rust-crypto-0.2.36 \
-		rust-gmp-0.3.2 \
+		rust-argon2-0.5.1 \
 		rustc-demangle-0.1.16 \
 		rustc-serialize-0.3.24 \
 		rustc_version-0.2.3 \
 		ryu-1.0.0 \
 		safemem-0.2.0 \
 		safemem-0.3.2 \
+		same-file-1.0.5 \
 		schannel-0.1.16 \
 		scoped-tls-0.1.2 \
 		scopeguard-0.3.3 \
 		scopeguard-1.0.0 \
-		secret-service-0.4.0 \
+		secret-service-1.0.0 \
 		security-framework-0.3.1 \
 		security-framework-sys-0.3.1 \
 		semver-0.9.0 \
@@ -252,7 +261,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		shannon-0.2.0 \
 		signal-hook-0.1.10 \
 		signal-hook-registry-1.1.1 \
-		simplelog-0.4.4 \
+		simplelog-0.7.3 \
+		skeptic-0.13.4 \
 		slab-0.3.0 \
 		slab-0.4.2 \
 		smallvec-0.2.1 \
@@ -273,8 +283,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		synstructure-0.10.2 \
 		syslog-4.0.1 \
 		take-0.1.0 \
+		tempdir-0.3.7 \
 		tempfile-3.1.0 \
-		term-0.4.6 \
+		term-0.6.1 \
 		termcolor-1.0.5 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
@@ -318,10 +329,10 @@ CARGO_CRATES=	adler32-1.0.4 \
 		uuid-0.7.4 \
 		vcpkg-0.2.7 \
 		vec_map-0.8.1 \
-		vergen-0.1.1 \
 		vergen-3.0.4 \
 		version_check-0.1.5 \
 		void-1.0.2 \
+		walkdir-2.2.9 \
 		want-0.0.4 \
 		want-0.2.0 \
 		wasi-0.7.0 \
