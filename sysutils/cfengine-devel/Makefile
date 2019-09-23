@@ -63,17 +63,15 @@ LIB_DEPENDS+=	libpcre.so:devel/pcre \
 OPTIONS_DEFINE=	PGSQL MYSQL LIBVIRT
 
 PGSQL_USES=		pgsql
-PGSQL_CONFIGURE_WITH=	--with-postgresql=${LOCALBASE}
-PGSQL_CONFIGURE_OFF=	--without-postgresql
+PGSQL_CONFIGURE_WITH=	postgresql=${LOCALBASE}
 
 MYSQL_USES=		mysql
 MYSQL_BROKEN=		configure: error: MySQL client library exports symbols (EVP_CIPHER_CTX_init) clashing with OpenSSL.
-MYSQL_CONFIGURE_WITH=	--with-mysql=${LOCALBASE}
-MYSQL_CONFIGURE_OFF=	--without-mysql
+MYSQL_CONFIGURE_WITH=	mysql=${LOCALBASE}
 MYSQL_LIB_DEPENDS=	libmysqlclient.so:${_MYSQL_CLIENT}
 MYSQL_LDFLAGS=		-L${LOCALBASE}/lib/mysql
 
-LIBVIRT_CONFIGURE_WITH=	--with-libvirt=${LOCALBASE}
+LIBVIRT_CONFIGURE_WITH=	libvirt=${LOCALBASE}
 LIBVIRT_LIB_DEPENDS+=	libvirt.so:devel/libvirt
 
 .include <bsd.port.mk>
