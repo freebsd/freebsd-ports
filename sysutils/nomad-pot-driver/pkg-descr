@@ -1,0 +1,7 @@
+This is a driver for nomad to interacto with the pot framework
+in order to be able to manage and schedule jails over a cluster
+of FreeBSD server
+
+WWW: https://www.nomadproject.io
+WWW: https://github.com/pizzamig/pot
+WWW: https://github.com/trivago/nomad-pot-driver
