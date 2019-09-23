@@ -30,4 +30,8 @@ PLIST_FILES=	include/cassandra.h \
 		libdata/pkgconfig/cassandra.pc \
 		libdata/pkgconfig/cassandra_static.pc
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/ -Werror//' \
+		${WRKSRC}/cmake/modules/CppDriver.cmake
+
 .include <bsd.port.mk>
