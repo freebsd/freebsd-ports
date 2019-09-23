@@ -106,9 +106,6 @@ GO_BUILDFLAGS=	-ldflags="\
 		-X github.com/gohugoio/hugo/hugolib.CommitHash=${COMMIT_ID}" \
 		${BUILD_TAGS}
 
-SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=	4aac02d49c2e2bab9f36f0caabbbd9f3cb4715cd
-
 OPTIONS_DEFINE=		MANPAGES EXTENDED
 OPTIONS_DEFAULT=	MANPAGES EXTENDED
 OPTIONS_SUB=		yes
@@ -127,6 +124,12 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 		hugo-new-site.1 hugo-new-theme.1 hugo-new.1 hugo-server.1 \
 		hugo-version.1 hugo.1
 
+# needed to get DISTINFO_FILE in scope for the shell command evaluation by go.mk
+.include <bsd.port.pre.mk>
+
+SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
+COMMIT_ID=	4aac02d49c2e2bab9f36f0caabbbd9f3cb4715cd
+
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
 
@@ -135,4 +138,4 @@ do-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/man/man1/$i ${STAGEDIR}/${PREFIX}/man/man1
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
