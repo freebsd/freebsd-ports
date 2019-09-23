@@ -1,5 +1,5 @@
 %%EXAMPLES%%bin/ns%%VERSION%%-80211n-mimo%%DEBUG_SUFX%%
-%%EXAMPLES%%bin/ns%%VERSION%%-80211e-txop
+%%EXAMPLES%%bin/ns%%VERSION%%-80211e-txop%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-adaptive-red-tests%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-adhoc-aloha-ideal-phy-matrix-propagation-loss-model%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-adhoc-aloha-ideal-phy-with-microwave-oven%%DEBUG_SUFX%%
@@ -10,6 +10,7 @@ bin/ns%%VERSION%%-bench-packets%%DEBUG_SUFX%%
 bin/ns%%VERSION%%-bench-simulator%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-bonnmotion-ns2-example%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-buildings-pathloss-profiler%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-cobalt-vs-codel%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-codel-vs-pfifo-asymmetric%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-codel-vs-pfifo-basic-test%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-colors-link-description%%DEBUG_SUFX%%
@@ -67,9 +68,11 @@ bin/ns%%VERSION%%-bench-simulator%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-ipv6-ue-ue%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-pathloss-traces%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-profiling%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-lena-radio-link-failure%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-rem-sector-antenna%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-rem%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-rlc-traces%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-lena-simple-epc-backhaul%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-simple-epc%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-simple%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-lena-uplink-power-control%%DEBUG_SUFX%%
@@ -113,13 +116,13 @@ bin/ns%%VERSION%%-bench-simulator%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-ofdm-vht-validation%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-olsr-hna%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-packet-socket-apps%%DEBUG_SUFX%%
-%%EXAMPLES%%bin/ns%%VERSION%%-pie-example
+%%EXAMPLES%%bin/ns%%VERSION%%-pie-example%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-pfifo-vs-red%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-ping6%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-power-adaptation-distance%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-power-adaptation-interference%%DEBUG_SUFX%%
 bin/ns%%VERSION%%-print-introspected-doxygen%%DEBUG_SUFX%%
-%%EXAMPLES%%bin/ns%%VERSION%%-queue-discs-benchmark
+%%EXAMPLES%%bin/ns%%VERSION%%-queue-discs-benchmark%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-radvd-two-prefix%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-radvd%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-rate-adaptation-distance%%DEBUG_SUFX%%
@@ -135,6 +138,7 @@ bin/ns%%VERSION%%-print-introspected-doxygen%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-sample-log-time-format%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-sample-random-variable-stream%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-sample-random-variable%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-sample-show-progress%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-sample-simulator%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-second%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-seventh%%DEBUG_SUFX%%
@@ -208,12 +212,14 @@ bin/ns%%VERSION%%-print-introspected-doxygen%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-simple-infra%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-simple-interference%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-sleep%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-wifi-spatial-reuse%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-spectrum-per-example%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-spectrum-per-interference%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-spectrum-saturation-example%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-tcp%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-timing-attributes%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-trans-example%%DEBUG_SUFX%%
+%%EXAMPLES%%bin/ns%%VERSION%%-wifi-txop-aggregation%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wifi-wired-bridging%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wimax-ipv4%%DEBUG_SUFX%%
 %%EXAMPLES%%bin/ns%%VERSION%%-wimax-multicast%%DEBUG_SUFX%%
@@ -329,6 +335,7 @@ include/ns%%VERSION%%/ns3/channel.h
 include/ns%%VERSION%%/ns3/chunk.h
 include/ns%%VERSION%%/ns3/cid-factory.h
 include/ns%%VERSION%%/ns3/cid.h
+include/ns%%VERSION%%/ns3/cobalt-queue-disc.h
 include/ns%%VERSION%%/ns3/codel-queue-disc.h
 include/ns%%VERSION%%/ns3/command-line.h
 include/ns%%VERSION%%/ns3/component-carrier-enb.h
@@ -340,6 +347,7 @@ include/ns%%VERSION%%/ns3/config-store.h
 include/ns%%VERSION%%/ns3/config.h
 include/ns%%VERSION%%/ns3/connection-manager.h
 include/ns%%VERSION%%/ns3/constant-acceleration-mobility-model.h
+include/ns%%VERSION%%/ns3/constant-obss-pd-algorithm.h
 include/ns%%VERSION%%/ns3/constant-position-mobility-model.h
 include/ns%%VERSION%%/ns3/constant-rate-wifi-manager.h
 include/ns%%VERSION%%/ns3/constant-spectrum-propagation-loss.h
@@ -419,12 +427,14 @@ include/ns%%VERSION%%/ns3/energy-source.h
 include/ns%%VERSION%%/ns3/enum.h
 include/ns%%VERSION%%/ns3/epc-enb-application.h
 include/ns%%VERSION%%/ns3/epc-enb-s1-sap.h
+include/ns%%VERSION%%/ns3/epc-gtpc-header.h
 include/ns%%VERSION%%/ns3/epc-gtpu-header.h
 include/ns%%VERSION%%/ns3/epc-helper.h
-include/ns%%VERSION%%/ns3/epc-mme.h
+include/ns%%VERSION%%/ns3/epc-mme-application.h
+include/ns%%VERSION%%/ns3/epc-pgw-application.h
 include/ns%%VERSION%%/ns3/epc-s11-sap.h
 include/ns%%VERSION%%/ns3/epc-s1ap-sap.h
-include/ns%%VERSION%%/ns3/epc-sgw-pgw-application.h
+include/ns%%VERSION%%/ns3/epc-sgw-application.h
 include/ns%%VERSION%%/ns3/epc-tft-classifier.h
 include/ns%%VERSION%%/ns3/epc-tft.h
 include/ns%%VERSION%%/ns3/epc-ue-nas.h
@@ -481,7 +491,6 @@ include/ns%%VERSION%%/ns3/global-value.h
 include/ns%%VERSION%%/ns3/gnuplot-aggregator.h
 include/ns%%VERSION%%/ns3/gnuplot-helper.h
 include/ns%%VERSION%%/ns3/gnuplot.h
-%%GTK2%%include/ns%%VERSION%%/ns3/gtk-config-store.h
 include/ns%%VERSION%%/ns3/half-duplex-ideal-phy-signal-parameters.h
 include/ns%%VERSION%%/ns3/half-duplex-ideal-phy.h
 include/ns%%VERSION%%/ns3/hash-fnv.h
@@ -489,6 +498,7 @@ include/ns%%VERSION%%/ns3/hash-function.h
 include/ns%%VERSION%%/ns3/hash-murmur3.h
 include/ns%%VERSION%%/ns3/hash.h
 include/ns%%VERSION%%/ns3/he-capabilities.h
+include/ns%%VERSION%%/ns3/he-configuration.h
 include/ns%%VERSION%%/ns3/he-operation.h
 include/ns%%VERSION%%/ns3/header.h
 include/ns%%VERSION%%/ns3/heap-scheduler.h
@@ -496,6 +506,7 @@ include/ns%%VERSION%%/ns3/hierarchical-mobility-model.h
 include/ns%%VERSION%%/ns3/higher-tx-tag.h
 include/ns%%VERSION%%/ns3/histogram.h
 include/ns%%VERSION%%/ns3/ht-capabilities.h
+include/ns%%VERSION%%/ns3/ht-configuration.h
 include/ns%%VERSION%%/ns3/ht-operation.h
 include/ns%%VERSION%%/ns3/hwmp-protocol.h
 include/ns%%VERSION%%/ns3/hwmp-rtable.h
@@ -535,6 +546,8 @@ include/ns%%VERSION%%/ns3/ipcs-classifier.h
 include/ns%%VERSION%%/ns3/ipv4-address-generator.h
 include/ns%%VERSION%%/ns3/ipv4-address-helper.h
 include/ns%%VERSION%%/ns3/ipv4-address.h
+include/ns%%VERSION%%/ns3/ipv4-end-point-demux.h
+include/ns%%VERSION%%/ns3/ipv4-end-point.h
 include/ns%%VERSION%%/ns3/ipv4-flow-classifier.h
 include/ns%%VERSION%%/ns3/ipv4-flow-probe.h
 include/ns%%VERSION%%/ns3/ipv4-global-routing-helper.h
@@ -564,6 +577,8 @@ include/ns%%VERSION%%/ns3/ipv4.h
 include/ns%%VERSION%%/ns3/ipv6-address-generator.h
 include/ns%%VERSION%%/ns3/ipv6-address-helper.h
 include/ns%%VERSION%%/ns3/ipv6-address.h
+include/ns%%VERSION%%/ns3/ipv6-end-point-demux.h
+include/ns%%VERSION%%/ns3/ipv6-end-point.h
 include/ns%%VERSION%%/ns3/ipv6-extension-demux.h
 include/ns%%VERSION%%/ns3/ipv6-extension-header.h
 include/ns%%VERSION%%/ns3/ipv6-extension.h
@@ -742,10 +757,12 @@ include/ns%%VERSION%%/ns3/network-module.h
 include/ns%%VERSION%%/ns3/nist-error-rate-model.h
 include/ns%%VERSION%%/ns3/nix-vector-routing-module.h
 include/ns%%VERSION%%/ns3/nix-vector.h
+include/ns%%VERSION%%/ns3/no-backhaul-epc-helper.h
 include/ns%%VERSION%%/ns3/no-op-component-carrier-manager.h
 include/ns%%VERSION%%/ns3/no-op-handover-algorithm.h
 include/ns%%VERSION%%/ns3/node-container.h
 include/ns%%VERSION%%/ns3/node-list.h
+include/ns%%VERSION%%/ns3/node-printer.h
 include/ns%%VERSION%%/ns3/node.h
 include/ns%%VERSION%%/ns3/non-communicating-net-device.h
 include/ns%%VERSION%%/ns3/non-copyable.h
@@ -757,6 +774,7 @@ include/ns%%VERSION%%/ns3/object-map.h
 include/ns%%VERSION%%/ns3/object-ptr-container.h
 include/ns%%VERSION%%/ns3/object-vector.h
 include/ns%%VERSION%%/ns3/object.h
+include/ns%%VERSION%%/ns3/obss-pd-algorithm.h
 include/ns%%VERSION%%/ns3/ocb-wifi-mac.h
 include/ns%%VERSION%%/ns3/ofdm-downlink-frame-prefix.h
 include/ns%%VERSION%%/ns3/oh-buildings-propagation-loss-model.h
@@ -821,6 +839,7 @@ include/ns%%VERSION%%/ns3/point-to-point-star.h
 include/ns%%VERSION%%/ns3/pointer.h
 include/ns%%VERSION%%/ns3/position-allocator.h
 include/ns%%VERSION%%/ns3/ppp-header.h
+include/ns%%VERSION%%/ns3/preamble-detection-model.h
 include/ns%%VERSION%%/ns3/prio-queue-disc.h
 include/ns%%VERSION%%/ns3/probe.h
 include/ns%%VERSION%%/ns3/propagation-cache.h
@@ -881,6 +900,7 @@ include/ns%%VERSION%%/ns3/service-flow-manager.h
 include/ns%%VERSION%%/ns3/service-flow-record.h
 include/ns%%VERSION%%/ns3/service-flow.h
 include/ns%%VERSION%%/ns3/sgi-hashmap.h
+include/ns%%VERSION%%/ns3/show-progress.h
 include/ns%%VERSION%%/ns3/simple-channel.h
 include/ns%%VERSION%%/ns3/simple-device-energy-model.h
 include/ns%%VERSION%%/ns3/simple-frame-capture-model.h
@@ -983,7 +1003,9 @@ include/ns%%VERSION%%/ns3/three-gpp-http-header.h
 include/ns%%VERSION%%/ns3/three-gpp-http-helper.h
 include/ns%%VERSION%%/ns3/three-gpp-http-server.h
 include/ns%%VERSION%%/ns3/three-gpp-http-variables.h
+include/ns%%VERSION%%/ns3/threshold-preamble-detection-model.h
 include/ns%%VERSION%%/ns3/time-data-calculators.h
+include/ns%%VERSION%%/ns3/time-printer.h
 include/ns%%VERSION%%/ns3/time-probe.h
 include/ns%%VERSION%%/ns3/time-series-adaptor.h
 include/ns%%VERSION%%/ns3/timer-impl.h
@@ -1003,6 +1025,7 @@ include/ns%%VERSION%%/ns3/trailer.h
 include/ns%%VERSION%%/ns3/tta-ff-mac-scheduler.h
 include/ns%%VERSION%%/ns3/tv-spectrum-transmitter-helper.h
 include/ns%%VERSION%%/ns3/tv-spectrum-transmitter.h
+include/ns%%VERSION%%/ns3/tx-vector-tag.h
 include/ns%%VERSION%%/ns3/txop.h
 include/ns%%VERSION%%/ns3/type-id.h
 include/ns%%VERSION%%/ns3/type-name.h
@@ -1054,6 +1077,7 @@ include/ns%%VERSION%%/ns3/valgrind.h
 include/ns%%VERSION%%/ns3/vector.h
 include/ns%%VERSION%%/ns3/vendor-specific-action.h
 include/ns%%VERSION%%/ns3/vht-capabilities.h
+include/ns%%VERSION%%/ns3/vht-configuration.h
 include/ns%%VERSION%%/ns3/vht-operation.h
 include/ns%%VERSION%%/ns3/virtual-net-device-module.h
 include/ns%%VERSION%%/ns3/virtual-net-device.h
@@ -1085,7 +1109,10 @@ include/ns%%VERSION%%/ns3/wifi-mode.h
 include/ns%%VERSION%%/ns3/wifi-module.h
 include/ns%%VERSION%%/ns3/wifi-mpdu-type.h
 include/ns%%VERSION%%/ns3/wifi-net-device.h
+include/ns%%VERSION%%/ns3/wifi-phy-header.h
 include/ns%%VERSION%%/ns3/wifi-phy-listener.h
+include/ns%%VERSION%%/ns3/wifi-psdu.h
+include/ns%%VERSION%%/ns3/wifi-remote-station-info.h
 include/ns%%VERSION%%/ns3/wifi-phy-standard.h
 include/ns%%VERSION%%/ns3/wifi-phy-state-helper.h
 include/ns%%VERSION%%/ns3/wifi-phy-state.h
