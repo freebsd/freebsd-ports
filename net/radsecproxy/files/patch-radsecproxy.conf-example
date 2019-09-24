@@ -1,0 +1,25 @@
+--- radsecproxy.conf-example.orig	2019-07-04 06:42:58 UTC
++++ radsecproxy.conf-example
+@@ -1,4 +1,4 @@
+-# Master config file, must be in /usr/local/etc/radsecproxy or specified with -c option
++# Master config file, /usr/local/etc/radsecproxy.conf or specified with -c option
+ #	All possible config options are listed below
+ 
+ # First you may define any global options, these are:
+@@ -91,12 +91,12 @@
+ tls default {
+     # You must specify at least one of CACertificateFile or CACertificatePath
+     # for TLS to work. We always verify peer certificate (client and server)
+-    # CACertificateFile    /etc/cacerts/CA.pem
+-    CACertificatePath	/etc/cacerts
++    # CACertificateFile    /usr/local/etc/ssl/CA.pem
++    CACertificatePath	/usr/local/etc/ssl/cacerts
+ 
+     # You must specify the below for TLS, we always present our certificate
+-    CertificateFile	/etc/hostcertkey/host.example.com.pem
+-    CertificateKeyFile	/etc/hostcertkey/host.example.com.key.pem
++    CertificateFile	/usr/local/etc/ssl/host.example.com.pem
++    CertificateKeyFile	/usr/local/etc/ssl/host.example.com.key.pem
+     # Optionally specify password if key is encrypted (not very secure)
+     CertificateKeyPassword	"follow the white rabbit"
+     # Optionally enable CRL checking

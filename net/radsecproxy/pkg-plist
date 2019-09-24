@@ -1,4 +1,5 @@
 bin/radsecproxy-conf
+bin/radsecproxy-hash
 etc/radsecproxy.conf-example
 man/man1/radsecproxy-hash.1.gz
 man/man1/radsecproxy.1.gz
