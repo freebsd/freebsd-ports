@@ -1378,10 +1378,10 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/python/helpers/pydev/_pydev_bundle/pydev_umd.py
 %%DATADIR%%/plugins/python/helpers/pydev/_pydev_bundle/pydev_versioncheck.py
 %%DATADIR%%/plugins/python/helpers/pydev/_pydev_comm/__init__.py
-%%DATADIR%%/plugins/python/helpers/pydev/_pydev_comm/io.py
-%%DATADIR%%/plugins/python/helpers/pydev/_pydev_comm/rpc.py
-%%DATADIR%%/plugins/python/helpers/pydev/_pydev_comm/server.py
-%%DATADIR%%/plugins/python/helpers/pydev/_pydev_comm/transport.py
+%%DATADIR%%/plugins/python/helpers/pydev/_pydev_comm/pydev_io.py
+%%DATADIR%%/plugins/python/helpers/pydev/_pydev_comm/pydev_rpc.py
+%%DATADIR%%/plugins/python/helpers/pydev/_pydev_comm/pydev_server.py
+%%DATADIR%%/plugins/python/helpers/pydev/_pydev_comm/pydev_transport.py
 %%DATADIR%%/plugins/python/helpers/pydev/_pydev_imps/__init__.py
 %%DATADIR%%/plugins/python/helpers/pydev/_pydev_imps/_pydev_BaseHTTPServer.py
 %%DATADIR%%/plugins/python/helpers/pydev/_pydev_imps/_pydev_SimpleXMLRPCServer.py
