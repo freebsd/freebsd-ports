@@ -1,0 +1,8 @@
+# $FreeBSD$
+
+SHLIB_NAME=	libnetty_transport_native_kqueue_%%NETTY_ARCH%%.so
+SRCS!=	ls *.c
+INCS!=	ls *.h
+CFLAGS+=	-I%%JAVA_HOME%%/include -I%%JAVA_HOME%%/include/freebsd
+
+.include <bsd.lib.mk>
