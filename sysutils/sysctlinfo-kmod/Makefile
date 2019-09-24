@@ -35,7 +35,7 @@ OPTIONS_DEFAULT=	EXAMPLES
 # Once the sysctlinfo interface (review D21700) lands into the base tree the
 # following statement needs to be expanded
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200019
-IGNORE=		oid_label was introduced in FreeBSD 1200019
+IGNORE=		needs oid_label constant in sysctl.h which was first introduced in FreeBSD 12
 .endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD
