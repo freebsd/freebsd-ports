@@ -1306,6 +1306,7 @@
     SUBDIR += synergy-1
     SUBDIR += sysadm
     SUBDIR += sysadm-client
+    SUBDIR += sysctlinfo-kmod
     SUBDIR += sysgather
     SUBDIR += sysinfo
     SUBDIR += syslinux

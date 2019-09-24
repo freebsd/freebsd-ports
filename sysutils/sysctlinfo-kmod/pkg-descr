@@ -1,0 +1,5 @@
+Kernel module to implement the sysctlinfo interface, it explores
+the sysctl tree to pass the info of the nodes to the userland;
+a header file with constants and helper macros is provided, too.
+
+WWW: https://gitlab.com/alfix/sysctlinfo
