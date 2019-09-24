@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--enable-ipv6 \
 
 CONFLICTS=	sylpheed-1.[0-8]* sylpheed-2.[0-9]* sylpheed-gtk2-[0-9]*
 
-OPTIONS_DEFINE=	CA_BUNDLE COMPFACE CURL DOCS GPGME GTKSPELL JPILOT LDAP \
+OPTIONS_DEFINE=	CA_BUNDLE COMPFACE CURL DOCS GPGME GTKSPELL LDAP \
 		ONIGURUMA SSL HIDE_OSSIG
 
 CA_BUNDLE_DESC=	Include CA bundle for certificate verification
@@ -43,7 +43,6 @@ CURL_DESC=	libcurl dependency (remote update check)
 GPGME_DESC=	GnuPG support using GPGME
 GTKSPELL_DESC=	Spell checking support
 HIDE_OSSIG_DESC=Hide OS and GTK signature in mail header
-JPILOT_DESC=	JPilot support
 ONIGURUMA_DESC=	Oniguruma support
 
 OPTIONS_DEFAULT=CA_BUNDLE CURL GTKSPELL GPGME SSL
@@ -68,10 +67,6 @@ GTKSPELL_LIB_DEPENDS=		libgtkspell.so:textproc/gtkspell \
 GTKSPELL_CONFIGURE_ENABLE=	gtkspell
 
 HIDE_OSSIG_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_main.c
-
-JPILOT_LIB_DEPENDS=		libpisock.so:palm/pilot-link
-JPILOT_RUN_DEPENDS=		jpilot:palm/jpilot
-JPILOT_CONFIGURE_ENABLE=	jpilot
 
 LDAP_CONFIGURE_ENABLE=		ldap
 LDAP_USE=			openldap=yes
