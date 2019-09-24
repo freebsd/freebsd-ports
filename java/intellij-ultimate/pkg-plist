@@ -124,6 +124,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/configuration-store-impl.jar
 %%DATADIR%%/lib/credential-store.jar
 %%DATADIR%%/lib/cucumber-java-1.2.5.jar
+%%DATADIR%%/lib/dbus-java-3.0.2.jar
 %%DATADIR%%/lib/delight-rhino-sandbox-0.0.10.jar
 %%DATADIR%%/lib/dexlib2-2.2.1.jar
 %%DATADIR%%/lib/eddsa-0.2.0.jar
@@ -162,6 +163,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/jackson-core-2.9.9.jar
 %%DATADIR%%/lib/jackson-databind-2.9.9.jar
 %%DATADIR%%/lib/java-compatibility-1.0.1.jar
+%%DATADIR%%/lib/java-utils-1.0.5.jar
 %%DATADIR%%/lib/javac2.jar
 %%DATADIR%%/lib/javassist-3.22.0-GA.jar
 %%DATADIR%%/lib/javax.activation-1.2.0.jar
@@ -205,6 +207,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/kotlin-test-common-1.3.31.jar
 %%DATADIR%%/lib/kotlinx-coroutines-core-1.2.1.jar
 %%DATADIR%%/lib/kotlinx-coroutines-jdk8-1.2.1.jar
+%%DATADIR%%/lib/kryo-2.24.0.jar
 %%DATADIR%%/lib/kxml2-2.3.0.jar
 %%DATADIR%%/lib/log4j.jar
 %%DATADIR%%/lib/lz4-java-1.6.0.jar
@@ -213,6 +216,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/microba.jar
 %%DATADIR%%/lib/miglayout-core-5.2.jar
 %%DATADIR%%/lib/miglayout-swing-5.2.jar
+%%DATADIR%%/lib/minlog-1.2.jar
 %%DATADIR%%/lib/nanoxml-2.2.3.jar
 %%DATADIR%%/lib/nekohtml-1.9.22.jar
 %%DATADIR%%/lib/netty-buffer-4.1.38.Final.jar
@@ -10159,8 +10163,6 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/gradle/lib/gradle-toolingLoaderRt.jar
 %%DATADIR%%/plugins/gradle/lib/gradle-wrapper-5.2.1-sp1.jar
 %%DATADIR%%/plugins/gradle/lib/gradle.jar
-%%DATADIR%%/plugins/gradle/lib/kryo-2.24.0.jar
-%%DATADIR%%/plugins/gradle/lib/minlog-1.2.jar
 %%DATADIR%%/plugins/haml/lib/haml.jar
 %%DATADIR%%/plugins/haml/lib/resources_en.jar
 %%DATADIR%%/plugins/herokuIntegration/lib/herokuIntegration.jar
