@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sccache
-DISTVERSION=	0.2.9
-PORTREVISION=	1
+DISTVERSION=	0.2.11
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -291,6 +291,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		uuid-0.7.1 \
 		vcpkg-0.2.6 \
 		vec_map-0.8.1 \
+		version-compare-0.0.8 \
 		version_check-0.1.5 \
 		void-1.0.2 \
 		vte-0.3.3 \
