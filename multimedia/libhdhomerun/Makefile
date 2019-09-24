@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	libhdhomerun
-PORTVERSION=	20180327
+PORTVERSION=	20190621
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.silicondust.com/hdhomerun/
+MASTER_SITES=	https://download.silicondust.com/hdhomerun/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	dor.bsd@xm0.uk
