@@ -1,0 +1,85 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: tusd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable tusd:
+#
+# tusd_enable (bool):           Set to "NO" by default.
+#                               Set it to "YES" to enable nginx
+# tusd_user (string):		Set to "%%TUSD_USER%%" by default.
+# tusd_group (string):		Set to "%%TUSD_GROUP%%" by default.
+# tusd_host (string):		Set to "" by default.
+# tusd_port (string):		Set to "" by default.
+# tusd_upload_dir (string):	Set to "%%TUSD_UPLOAD_DIR%% by default.
+
+. /etc/rc.subr
+
+name="tusd"
+rcvar=tusd_enable
+start_cmd="tusd_start"
+stop_cmd="tusd_stop"
+
+load_rc_config ${name}
+
+: ${tusd_enable="NO"}
+: ${tusd_user="%%TUSD_USER%%"}
+: ${tusd_group="%%TUSD_GROUP%%"}
+: ${tusd_host=""}
+: ${tusd_port=""}
+: ${tusd_upload_dir="%%TUSD_UPLOAD_DIR%%"}
+: ${tusd_flags=""}
+
+logfile=/var/log/tusd.log
+pidfile=/var/run/tusd.pid
+command="/usr/bin/true"
+procname="/usr/sbin/daemon"
+
+is_process_running() {
+  [ -f $pidfile ] && procstat $(cat $pidfile) >/dev/null 2>&1
+}
+
+tusd_start() {
+  if [ -n "$tusd_host" ]
+  then
+    _FLAGS="$_FLAGS -host $tusd_host"
+  fi
+  if [ -n "$tusd_port" ]
+  then
+    _FLAGS="$_FLAGS -port $tusd_port"
+  fi
+  if [ -n "$tusd_upload_dir" ]
+  then
+    _FLAGS="$_FLAGS -upload-dir $tusd_upload_dir"
+  fi
+  if [ -n "$tusd_flags" ]
+  then
+    _FLAGS="$_FLAGS $tusd_flags"
+  fi 
+
+  if is_process_running; then
+    echo "tusd is already running (pid=$(cat $pidfile))"
+    return 1
+  fi
+  /usr/sbin/daemon -P $pidfile -u $tusd_user %%PREFIX%%/bin/tusd $_FLAGS >>$logfile 2>&1
+  if is_process_running; then
+    echo "started tusd (pid=$(cat $pidfile))"
+  else
+    echo "failed to start tusd"
+  fi
+}
+
+tusd_stop() {
+  if is_process_running; then
+    local pid=$(cat $pidfile)
+    echo "stopping tusd (pid=$pid)"
+    kill -- -$pid
+  else
+    echo "tusd isn't running"
+  fi
+}
+
+run_rc_command "$1"

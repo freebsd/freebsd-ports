@@ -1,0 +1,7 @@
+tusd is the official reference implementation of the tus resumable upload
+protocol. The protocol specifies a flexible method to upload files to remote
+servers using HTTP. The special feature is the ability to pause and resume
+uploads at any moment allowing to continue seamlessly after e.g. network
+interruptions.
+
+WWW: https://github.com/tus/tusd
