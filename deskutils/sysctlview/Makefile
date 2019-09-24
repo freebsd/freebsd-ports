@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysctlview
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	alfix86@gmail.com
@@ -11,7 +10,9 @@ COMMENT=	Show sysctl MIB Tree
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${LOCALBASE}/include/sysctlinfo.h:sysutils/sysctlinfo-kmod
 LIB_DEPENDS=	libsysctlmibinfo.so:devel/libsysctlmibinfo
+RUN_DEPENDS=	${KMODDIR}/sysctlinfo.ko:sysutils/sysctlinfo-kmod
 
 USES=		compiler:c++11-lang gettext-runtime gnome pkgconfig
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glib20 glibmm glibmm \
@@ -19,7 +20,7 @@ USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glib20 glibmm glibmm \
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
-GL_COMMIT=	98f202bc1b6922e3b9011d56d7715cb4c3b098a9
+GL_COMMIT=	cdfd6669591497d9178ef3cca99ceb5b9bd9e670
 
 INSTALLS_ICONS=	yes
 
@@ -36,6 +37,15 @@ OPTIONS_SUB=	yes
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200019
+IGNORE=		needs oid_label constant in sysctl.h which was first introduced in FreeBSD 12
+.endif
+.if ${OPSYS} != FreeBSD
+IGNORE=		not supported on anything but FreeBSD
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sysctlview ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/sysctlview.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
@@ -48,4 +58,4 @@ do-install:
 	${MV} ${WRKSRC}/icon/sysctlview.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/sysctlview.svg
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
