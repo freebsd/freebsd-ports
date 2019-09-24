@@ -9,7 +9,7 @@ COMMENT=	Scientific calculator from the Lumina Desktop
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gl qmake qt:5 xorg
+USES=		compiler:c++11-lang gl qmake qt:5 xorg
 USE_GL=		gl
 USE_XORG=	x11
 USE_QT=		buildtools_build core gui svg widgets
