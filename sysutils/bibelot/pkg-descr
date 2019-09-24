@@ -1,6 +1,0 @@
-bibelot.pl is a Perl script that formats and converts text documents
-into compressed PalmDoc .pdb files, suitable for reading on a Palm
-or Handspring device with any standard PalmDoc reader (AportisDoc,
-CSpotRun, RichReader, TealDoc, etc.)
-
-WWW: https://sourceforge.net/projects/bibelot/

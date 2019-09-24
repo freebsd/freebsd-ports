@@ -12959,3 +12959,16 @@ java/openjdk6|java/openjdk8|2019-09-23|Has expired: EOLed upstream since Decembe
 java/openjdk6-jre|java/openjdk8-jre|2019-09-23|Has expired: EOLed upstream since December 2018
 deskutils/lumina-xdg-entry||2019-09-22|Deprecated, merged upstream with deskutils/lumina-fileinfo
 deskutils/lumina-notify||2019-09-22|Deprecated, removed upstream
+palm/pilot-link||2019-09-24|Has expired: obsolete technology
+graphics/pixmap||2019-09-24|Has expired: No longer maintained
+japanese/jpilot||2019-09-24|Has expired: obsolete technology
+palm/p5-Palm-PalmDoc||2019-09-24|Has expired: obsolete technology
+palm/pilot_makedoc||2019-09-24|Has expired: obsolete technology
+palm/jpilot||2019-09-24|Has expired: obsolete technology
+sysutils/bibelot||2019-09-24|Has expired: obsolete technology
+databases/mdbconv||2019-09-24|Has expired: obsolete technology
+sysutils/makeztxt||2019-09-24|Has expired: obsolete technology
+databases/palm-db-tools||2019-09-24|Has expired: obsolete technology
+comms/jpilot-picsnvideos||2019-09-24|Has expired: obsolete technology
+devel/libee||2019-09-24|Has expired: No longer required by rsyslog, which was its only consumer.  No longer maintained upstream
+devel/libmal||2019-09-24|Has expired: obsolete technology

@@ -777,7 +777,6 @@
     SUBDIR += pixelize
     SUBDIR += pixen
     SUBDIR += pixie
-    SUBDIR += pixmap
     SUBDIR += plasma-kmod
     SUBDIR += plotutils
     SUBDIR += png

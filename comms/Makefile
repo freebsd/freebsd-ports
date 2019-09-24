@@ -72,7 +72,6 @@
     SUBDIR += iwmbt-firmware
     SUBDIR += java-simple-serial-connector
     SUBDIR += jerm
-    SUBDIR += jpilot-picsnvideos
     SUBDIR += kb
     SUBDIR += kermit
     SUBDIR += klog

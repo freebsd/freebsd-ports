@@ -1,6 +1,0 @@
-makeztxt is a simple command line program that takes a plain ASCII text file
-and compresses it into a zTXT database.  makeztxt will remove newline
-characters at the end of lines that contain text so that the paragraphs flow
-better on the Palm screen.
-
-WWW: http://gutenpalm.sourceforge.net/

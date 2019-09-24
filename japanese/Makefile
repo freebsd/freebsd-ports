@@ -129,7 +129,6 @@
     SUBDIR += jed
     SUBDIR += jishyo
     SUBDIR += jls
-    SUBDIR += jpilot
     SUBDIR += jstrings
     SUBDIR += jvim3
     SUBDIR += kakasi
