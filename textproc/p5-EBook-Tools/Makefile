@@ -3,8 +3,8 @@
 
 PORTNAME=	EBook-Tools
 PORTVERSION=	0.5.4
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +13,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object class for manipulating and generating E-books
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Depends on expired palm/p5-Palm
+EXPIRATION_DATE=2019-11-01
 
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-Data-UUID>=0:devel/p5-Data-UUID \
