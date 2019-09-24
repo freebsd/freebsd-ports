@@ -3,4 +3,4 @@ UDP transport, also supports TLS (RadSec), as well as RADIUS over TCP and
 DTLS. The aim is for the proxy to have sufficient features to be flexible,
 while at the same time to be small, efficient and easy to configure.
 
-WWW: https://software.nordu.net/radsecproxy/
+WWW: https://radsecproxy.github.io
