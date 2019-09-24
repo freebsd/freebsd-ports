@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-XML-Parser>=2.44:textproc/p5-XML-Parser
 
-USES=		gettext-tools gmake gnome libtool pathfix perl5 pkgconfig \
-		tar:bzip2 xfce xorg
+USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix perl5 \
+		pkgconfig tar:bzip2 xfce xorg
 USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	yes
 USE_PERL5=	build
