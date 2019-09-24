@@ -1,5 +1,14 @@
 --- Makefile.orig	2019-03-31 19:01:16 UTC
 +++ Makefile
+@@ -12,7 +12,7 @@
+ # Otherwise you may do without to enable more aggressive optimizations
+ # for this machine only.
+ 
+-# GENERIC=1
++GENERIC=1
+ 
+ # Do you compile on Windows instead of Linux ?
+ # Please note that performance may not be optimal.
 @@ -105,8 +105,8 @@ DATADIR ?= $(PREFIX)/share/pachi
  # unless PROFILING=gprof.)
  OPT ?= -O3
