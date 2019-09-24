@@ -3,7 +3,7 @@
 PORTNAME=	qprint
 PORTVERSION=	1.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.fourmilab.ch/webtools/qprint/
+MASTER_SITES=	https://www.fourmilab.ch/webtools/qprint/
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Encode and decode Quoted-Printable files
