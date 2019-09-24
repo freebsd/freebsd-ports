@@ -1,0 +1,5 @@
+gllvm provides tools for building whole-program (or whole-library) LLVM bitcode
+files from an unmodified C or C++ source package.  It is a drop-in replacement
+for wllvm, that builds the bitcode in parallel, and is faster.
+
+WWW: https://github.com/SRI-CSL/gllvm
