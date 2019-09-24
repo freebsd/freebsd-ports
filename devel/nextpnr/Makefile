@@ -5,7 +5,7 @@ PORTVERSION=	g20190529
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	manu@FreeBSD.Org
+MAINTAINER=	manu@FreeBSD.org
 COMMENT=	Portable FPGA place and route tool
 
 LICENSE=	ISCL
