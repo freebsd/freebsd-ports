@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phplist
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.5
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
 
-USES=		cpe tar:tgz php:web,flavors
-USE_PHP=	hash iconv imap mysqli pcre session xml zlib
+USES=		cpe tar:tgz gettext php:web,flavors
+USE_PHP=	curl gd hash iconv imap json mbstring mysqli pcre session xml zlib
 
 NO_BUILD=	yes
 NO_ARCH=	yes
