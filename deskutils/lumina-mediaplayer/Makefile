@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-mediaplayer
-PORTVERSION=	1.4.1
-PORTREVISION=	4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.5.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	jt@ixsystems.com
@@ -15,28 +15,20 @@ LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 RUN_DEPENDS=	gstreamer1-qt5>=0:multimedia/gstreamer1-qt \
 		gstreamer1-plugins-gl>=0:graphics/gstreamer1-plugins-gl
 
-OPTIONS_DEFINE=	I18N
-OPTIONS_DEFAULT=	I18N
+USES=		compiler:c++11-lang qmake qt:5 gl
+USE_GL=		gl
+USE_QT=		buildtools_build core concurrent gui \
+		multimedia network svg widgets x11extras
+USE_GITHUB=	yes
+GH_ACCOUNT=	lumina-desktop
+GH_PROJECT=	lumina
+
+OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-I18N_DESC=	Install localization files
-
-.include <bsd.port.options.mk>
-
-MAKE_JOBS_UNSAFE=yes
-
-USES=		compiler:c++11-lang qmake qt:5
-USE_QT=		core gui widgets network svg \
-		buildtools_build x11extras multimedia concurrent
-USE_GITHUB=	yes
-GH_ACCOUNT=	trueos
-GH_PROJECT=	lumina
-GH_TAGNAME=	b6536c1547571ae8dd0618bed752e2e0025bf2a7
 WRKSRC_SUBDIR=	src-qt5/desktop-utils/${PORTNAME}
 
-.if${PORT_OPTIONS:MI18N}
-USE_QT+=	linguist_build
-QMAKE_ARGS+=CONFIG+=WITH_I18N
-.endif
+NLS_USE=	qt=linguist_build
+NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
 .include <bsd.port.mk>

@@ -1,48 +1,33 @@
-# Created by: Ken Moore <ken@pcbsd.org>
 # $FreeBSD$
 
 PORTNAME=	lumina-calculator
-PORTVERSION=	1.4.1
-PORTREVISION=	3
+DISTVERSION=	1.5.0
 CATEGORIES=	deskutils
 
-MAINTAINER=	jt@ixsystems.com
+MAINTAINER=	ken@project-trident.org
 COMMENT=	Scientific calculator from the Lumina Desktop
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 
-LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
-		libxcb-icccm.so:x11/xcb-util-wm \
-		libxcb-image.so:x11/xcb-util-image \
-		libxcb-util.so:x11/xcb-util
+USES=		gl qmake qt:5 xorg
+USE_GL=		gl
+USE_XORG=	x11
+USE_QT=		buildtools_build core gui svg widgets
+USE_GITHUB=	yes
+GH_ACCOUNT=	lumina-desktop
+GH_PROJECT=	lumina-calculator
+GH_TAGNAME=	ccb792fc713aa7163fffd37fc20c83ffe9ca7523
 
-CONFLICTS_INSTALL=	lumina-1.2.*
-
-OPTIONS_DEFINE=	I18N
-OPTIONS_DEFAULT=	I18N
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
 
 I18N_DESC=	Install localization files
 
-.include <bsd.port.options.mk>
+CONFLICTS_INSTALL=	lumina-1.2.*
 
-MAKE_JOBS_UNSAFE=yes
+WRKSRC_SUBDIR=	src-qt5
 
-USES=		compiler:c++11-lang gl qmake qt:5
-USE_GL=		gl
-USE_XORG=	x11 xdamage xcb
-USE_QT=		core gui widgets network svg \
-		buildtools_build x11extras concurrent multimedia
-USE_GITHUB=	yes
-GH_ACCOUNT=	trueos
-GH_PROJECT=	lumina
-GH_TAGNAME=	b6536c1547571ae8dd0618bed752e2e0025bf2a7
-WRKSRC_SUBDIR=	src-qt5/desktop-utils/${PORTNAME}
-
-.if${PORT_OPTIONS:MI18N}
-USE_QT+=	linguist_build
-QMAKE_ARGS+=CONFIG+=WITH_I18N
-.endif
+NLS_USE=	qt=linguist_build
+NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
 .include <bsd.port.mk>

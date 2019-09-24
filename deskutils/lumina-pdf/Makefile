@@ -1,42 +1,46 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-pdf
-PORTVERSION=	1.4.1
-PORTREVISION=	8
+DISTVERSION=	1.5.0
 CATEGORIES=	deskutils
 
-MAINTAINER=	jt@ixsystems.com
+MAINTAINER=	ken@ixsystems.com
 COMMENT=	PDF viewer from the Lumina Desktop
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 
-LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
+USES=		qmake qt:5
+USE_QT=		buildtools_build concurrent core gui \
+		multimedia network printsupport \
+		svg widgets x11extras
+USE_GITHUB=	yes
+GH_ACCOUNT=	lumina-desktop
+GH_PROJECT=	lumina-pdf
+GH_TAGNAME=	645ed591ef91c3607d3ab87dd86f7acfd08b05c9
+
+OPTIONS_DEFINE=	NLS
+
+OPTIONS_SINGLE=	RENDERER
+OPTIONS_SINGLE_RENDERER=	POPPLER MUPDF
+
+OPTIONS_DEFAULT=	POPPLER
+OPTIONS_SUB=		yes
+
+POPPLER_DESC=		Use Poppler-qt5 backend renderer
+MUPDF_DESC=		Use MuPDF backend renderer (broken)
+
+WRKSRC_SUBDIR=	src-qt5
 
 CONFLICTS_INSTALL=	lumina-1.2.*
 
-OPTIONS_DEFINE=	I18N
-OPTIONS_DEFAULT=	I18N
-OPTIONS_SUB=	yes
+MUPDF_BROKEN=		Does not build with MuPDF backend
+MUPDF_QMAKE_ON=		USE_MUPDF=true
+MUPDF_LIB_DEPENDS=	libmupdf.so:graphics/mupdf
 
-I18N_DESC=	Install localization files
+NLS_QMAKE_ON=		CONFIG+=WITH_I18N
+NLS_USE=		qt=linguist_build
 
-.include <bsd.port.options.mk>
-
-MAKE_JOBS_UNSAFE=yes
-
-USE_QT=		core gui widgets network svg multimedia \
-		buildtools_build x11extras concurrent printsupport
-USES=		compiler:c++11-lang qmake qt:5
-USE_GITHUB=	yes
-GH_ACCOUNT=	trueos
-GH_PROJECT=	lumina
-GH_TAGNAME=	b6536c1547571ae8dd0618bed752e2e0025bf2a7
-WRKSRC_SUBDIR=	src-qt5/desktop-utils/${PORTNAME}
-
-.if${PORT_OPTIONS:MI18N}
-USE_QT+=	linguist_build
-QMAKE_ARGS+=CONFIG+=WITH_I18N
-.endif
+POPPLER_QMAKE_ON=	USE_POPPLER=true
+POPPLER_LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
 .include <bsd.port.mk>

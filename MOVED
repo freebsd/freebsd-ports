@@ -12957,3 +12957,5 @@ devel/xfce4-vala||2019-09-20|Deprecated, functionality moved to xfce libraries w
 irc/iroffer-lamm||2019-09-23|obsolete
 java/openjdk6|java/openjdk8|2019-09-23|Has expired: EOLed upstream since December 2018
 java/openjdk6-jre|java/openjdk8-jre|2019-09-23|Has expired: EOLed upstream since December 2018
+deskutils/lumina-xdg-entry||2019-09-22|Deprecated, merged upstream with deskutils/lumina-fileinfo
+deskutils/lumina-notify||2019-09-22|Deprecated, removed upstream

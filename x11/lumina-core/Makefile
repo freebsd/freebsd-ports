@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-core
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.5.0
 CATEGORIES=	x11
 
 MAINTAINER=	jt@ixsystems.com
@@ -21,46 +21,35 @@ RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
 LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-image.so:x11/xcb-util-image \
-		libxcb-util.so:x11/xcb-util
+		libxcb-util.so:x11/xcb-util \
+		libXcursor.so:x11/libXcursor
 
-CONFLICTS_INSTALL=	lumina-1.2.*
-
-OPTIONS_DEFINE=	MULTIMEDIA TRUEOS I18N
-OPTIONS_DEFAULT=	MULTIMEDIA I18N
-OPTIONS_SUB=	yes
-
-MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
-TRUEOS_DESC=	Use the TrueOS system interface settings.
-I18N_DESC=	Install localization files
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMULTIMEDIA}
-RUN_DEPENDS+=	gstreamer1-plugins-core>=0:multimedia/gstreamer1-plugins-core
-.endif
-
-MAKE_JOBS_UNSAFE=yes
-
-USES=		compiler:c++11-lang gl qmake qt:5
+USES=		compiler:c++11-lang gl qmake qt:5 xorg
 USE_GL=		gl
 USE_XORG=	x11 xdamage xcb
 USE_LDCONFIG=	yes
-USE_QT=		core gui widgets network svg multimedia imageformats \
-		buildtools_build x11extras concurrent
+USE_QT=		buildtools_build concurrent core dbus gui imageformats \
+		multimedia network svg widgets x11extras
 USE_GITHUB=	yes
-GH_ACCOUNT=	trueos
+GH_ACCOUNT=	lumina-desktop
 GH_PROJECT=	lumina
-GH_TAGNAME=	b6536c1547571ae8dd0618bed752e2e0025bf2a7
+
+OPTIONS_DEFINE=		MULTIMEDIA TRUEOS NLS
+OPTIONS_DEFAULT=	MULTIMEDIA
+OPTIONS_SUB=		yes
+
+MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
+TRUEOS_DESC=		Use the TrueOS system interface settings.
+
 WRKSRC_SUBDIR=	src-qt5/core
 
-#Setup the qmake qt:5 configuration options
-.if ${PORT_OPTIONS:MTRUEOS}
-QMAKE_ARGS=	DEFAULT_SETTINGS=TrueOS
-.endif
+CONFLICTS_INSTALL=	lumina-1.2.*
 
-.if${PORT_OPTIONS:MI18N}
-USE_QT+=	linguist_build
-QMAKE_ARGS+=CONFIG+=WITH_I18N
-.endif
+TRUEOS_QMAKE_ON=	DEFAULT_SETTINGS=TrueOS
+
+MULTIMEDIA_RUN_DEPENDS=	gstreamer1-plugins-core>=0:multimedia/gstreamer1-plugins-core
+
+NLS_USE=	QT=linguist_build
+NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
 .include <bsd.port.mk>
