@@ -153,6 +153,7 @@
     SUBDIR += rubygem-lita
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-tinder
+    SUBDIR += ruqola
     SUBDIR += sayaka
     SUBDIR += scudcloud
     SUBDIR += sendxmpp

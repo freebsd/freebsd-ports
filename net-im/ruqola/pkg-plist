@@ -1,0 +1,14 @@
+bin/ruqola
+lib/librocketchatrestapi-qt5.so.0
+lib/librocketchatrestapi-qt5.so.1.0.42
+lib/libruqolacore.so.0
+lib/libruqolacore.so.1.0.42
+%%QT_PLUGINDIR%%/ruqolaplugins/ruqola_passwordauthenticationplugin.so
+share/applications/org.kde.ruqola.desktop
+share/doc/HTML/en/ruqola/index.cache.bz2
+share/doc/HTML/en/ruqola/index.docbook
+share/icons/hicolor/22x22/apps/ruqola.png
+share/icons/hicolor/32x32/apps/ruqola.png
+share/icons/hicolor/48x48/apps/ruqola.png
+share/metainfo/org.kde.ruqola.appdata.xml
+share/qlogging-categories5/ruqola.categories
