@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcrypt
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	security pear
 
 MAINTAINER=	pizzamig@FreeBSD.org
