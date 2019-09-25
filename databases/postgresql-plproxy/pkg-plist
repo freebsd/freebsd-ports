@@ -1,9 +1,10 @@
 lib/postgresql/plproxy.so
-share/postgresql/extension/plproxy--2.3.0--2.8.0.sql
-share/postgresql/extension/plproxy--2.4.0--2.8.0.sql
-share/postgresql/extension/plproxy--2.5.0--2.8.0.sql
-share/postgresql/extension/plproxy--2.6.0--2.8.0.sql
-share/postgresql/extension/plproxy--2.7.0--2.8.0.sql
-share/postgresql/extension/plproxy--2.8.0.sql
-share/postgresql/extension/plproxy--unpackaged--2.8.0.sql
+share/postgresql/extension/plproxy--2.3.0--2.9.0.sql
+share/postgresql/extension/plproxy--2.4.0--2.9.0.sql
+share/postgresql/extension/plproxy--2.5.0--2.9.0.sql
+share/postgresql/extension/plproxy--2.6.0--2.9.0.sql
+share/postgresql/extension/plproxy--2.7.0--2.9.0.sql
+share/postgresql/extension/plproxy--2.8.0--2.9.0.sql
+share/postgresql/extension/plproxy--2.9.0.sql
+share/postgresql/extension/plproxy--unpackaged--2.9.0.sql
 share/postgresql/extension/plproxy.control
