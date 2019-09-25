@@ -75,6 +75,8 @@ share/aclocal/bison-i18n.m4
 %%NLS%%share/locale/ast/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/be/LC_MESSAGES/bison-gnulib.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bison-gnulib.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/bison-runtime.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bison-gnulib.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bison.mo
