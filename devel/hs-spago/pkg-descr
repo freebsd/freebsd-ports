@@ -1,0 +1,5 @@
+Spago is a PureScript package manager and build tool powered by Dhall and
+package-sets, a curated list of PureScript packages. Spago focuses on great UX,
+assuring minimal dependencies and reproducible builds.
+
+WWW: https://github.com/spacchetti/spago
