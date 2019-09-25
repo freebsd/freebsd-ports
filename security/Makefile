@@ -9,6 +9,7 @@
     SUBDIR += ADMsmb
     SUBDIR += ADMsnmp
     SUBDIR += R-cran-ROAuth
+    SUBDIR += R-cran-askpass
     SUBDIR += R-cran-digest
     SUBDIR += R-cran-openssl
     SUBDIR += acme.sh
