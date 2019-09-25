@@ -9,7 +9,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helper to install native packages on "gem install"
 
 LICENSE=	LGPL3+
-LICENSE_FILE_LGPL3+ =	${WRKSRC}/doc/text/lgpl-3.txt
+LICENSE_FILE=	${WRKSRC}/doc/text/lgpl-3.txt
 
 USES=		gem
 USE_RUBY=	yes
