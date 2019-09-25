@@ -1,6 +1,6 @@
---- flowd.h.orig
+--- flowd.h.orig	2007-10-24 01:04:10 UTC
 +++ flowd.h
-@@ -34,7 +34,7 @@
+@@ -35,7 +35,7 @@
  
  #define DEFAULT_CONFIG			SYSCONFDIR "/flowd.conf"
  #define DEFAULT_PIDFILE			PIDFILEDIR "/flowd.pid"
