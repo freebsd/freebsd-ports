@@ -1,6 +1,6 @@
---- Makefile.in.orig
+--- Makefile.in.orig	2005-10-13 11:27:44 UTC
 +++ Makefile.in
-@@ -95,7 +95,7 @@
+@@ -96,7 +96,7 @@ install-bin: $(TARGETS)
  install-conf: flowd.conf
  	$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir)
  	test -f $(DESTDIR)$(sysconfdir)/flowd.conf || \

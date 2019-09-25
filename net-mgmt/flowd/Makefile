@@ -5,18 +5,14 @@ PORTNAME=	flowd
 PORTVERSION=	0.9.1
 PORTREVISION=	3
 CATEGORIES=	net-mgmt ipv6
-MASTER_SITES=	http://www2.mindrot.org/files/flowd/
+MASTER_SITES=	http://mindrot.org/files/flowd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Small, fast, and secure NetFlow collector
 
 LICENSE=	MIT BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		unfetchable
-DEPRECATED=	Unfetchable, unmaintained
-EXPIRATION_DATE=	2019-10-16
 
 USES=		gmake shebangfix
 SHEBANG_FILES=	tools/*.pl
