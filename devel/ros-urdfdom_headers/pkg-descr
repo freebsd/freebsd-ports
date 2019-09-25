@@ -1,0 +1,5 @@
+This package contains a the headers for the C++ parser for the Unified
+Robot Description Format (URDF), which is an XML format for
+representing a robot model in ROS.
+
+WWW: https://wiki.ros.org/urdf
