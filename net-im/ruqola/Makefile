@@ -11,7 +11,7 @@ COMMENT=	Rocketchat client
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain \
 		libsecret-1.so:security/libsecret
 
-USES=		cmake gnome localbase:ldflags kde:5 qt:5
+USES=		cmake compiler:c++11-lang gnome kde:5 localbase:ldflags qt:5
 USE_GNOME=	glib20
 USE_KDE=	ecm coreaddons crash i18n kirigami2 notifications syntaxhighlighting
 USE_QT=		core dbus declarative declarative gui network networkauth \
