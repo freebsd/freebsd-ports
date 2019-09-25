@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: pdns_server
-# REQUIRE: DAEMON SERVERS
+# REQUIRE: DAEMON SERVERS mysql postgresql slapd
 # KEYWORD: shutdown
 
 #
