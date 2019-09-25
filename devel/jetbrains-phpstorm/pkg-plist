@@ -546,7 +546,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/hg4idea/lib/resources_en.jar
 %%DATADIR%%/plugins/htmltools/lib/htmltools.jar
 %%DATADIR%%/plugins/htmltools/lib/resources_en.jar
-%%DATADIR%%/plugins/hunspell/lib/hunspell-1.7.0.jar
+%%DATADIR%%/plugins/hunspell/lib/hunspell-1.7.1.jar
 %%DATADIR%%/plugins/hunspell/lib/hunspell.jar
 %%DATADIR%%/plugins/hunspell/lib/resources_en.jar
 %%DATADIR%%/plugins/ini4idea/lib/ini4idea.jar
