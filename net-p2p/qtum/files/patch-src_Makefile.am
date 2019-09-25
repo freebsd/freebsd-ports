@@ -1,0 +1,14 @@
+--- src/Makefile.am.orig	2019-09-18 14:02:05 UTC
++++ src/Makefile.am
+@@ -19,9 +19,8 @@ else
+ LIBUNIVALUE = $(UNIVALUE_LIBS)
+ endif
+ 
+-BITCOIN_INCLUDES=-I$(builddir) $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS) -I$(srcdir)/cpp-ethereum/utils
+-
+-BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
++BITCOIN_INCLUDES= -I$(srcdir)/secp256k1/include
++BITCOIN_INCLUDES += -I$(builddir) $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS) -I$(srcdir)/cpp-ethereum/utils
+ BITCOIN_INCLUDES += -I$(srcdir)/libff/libff
+ BITCOIN_INCLUDES += -I$(srcdir)/libff
+ BITCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
