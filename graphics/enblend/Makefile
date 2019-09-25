@@ -14,8 +14,6 @@ COMMENT=	Tool for image blending with multiresolution splines
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to configure: libvigraimpex is required to compile Enblend
-
 BUILD_DEPENDS=	help2man:misc/help2man \
 		${LOCALBASE}/include/boost/version.hpp:devel/boost-libs
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
