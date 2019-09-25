@@ -17,3 +17,5 @@ SHA256 (rstudio-rsconnect-03c379b_GH0.tar.gz) = d24b6ee49f32f650f6d10bbfc7b2f61a
 SIZE (rstudio-rsconnect-03c379b_GH0.tar.gz) = 220711
 SHA256 (trestletech-plumber-v0.4.6_GH0.tar.gz) = 7bcbfdf5a8a2e3a051d2c673ac5ac51a483ed888afe73116cba7741dbb5f63a6
 SIZE (trestletech-plumber-v0.4.6_GH0.tar.gz) = 83332
+SHA256 (33c2c42d40ad.patch) = d252111e28a7de8602b4df1f66b36dded260061f094b504895e5c789f8681091
+SIZE (33c2c42d40ad.patch) = 4875
