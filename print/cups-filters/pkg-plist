@@ -129,6 +129,7 @@ share/cups/ppdc/escp.h
 %%BRAILLE%%share/cups/ppdc/liblouis4.defs
 %%BRAILLE%%share/cups/ppdc/media-braille.defs
 share/cups/ppdc/pcl.h
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
