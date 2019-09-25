@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/urdfdom_headers/cmake/urdfdom_headers-config.cma
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libconsole_bridge.so:devel/ros-console_bridge
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
