@@ -12972,3 +12972,4 @@ databases/palm-db-tools||2019-09-24|Has expired: obsolete technology
 comms/jpilot-picsnvideos||2019-09-24|Has expired: obsolete technology
 devel/libee||2019-09-24|Has expired: No longer required by rsyslog, which was its only consumer.  No longer maintained upstream
 devel/libmal||2019-09-24|Has expired: obsolete technology
+print/py-fonttools-lxml-ufo|print/py-fonttools|2019-09-25|Changed for new way for optional dependencies
