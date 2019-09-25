@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	noson-app
-DISTVERSION=	3.14.4
+DISTVERSION=	3.14.5
 CATEGORIES=	audio net
 
 MAINTAINER=	tcberner@FreeBSD.org
