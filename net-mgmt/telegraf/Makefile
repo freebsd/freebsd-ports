@@ -3,6 +3,7 @@
 
 PORTNAME=	telegraf
 DISTVERSION=	1.12.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -10,7 +11,7 @@ COMMENT=	Time-series data collection
 
 LICENSE=	MIT
 
-ONLY_FOR_ARCHS=	amd64 i386 armv6 armv7
+ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 
 USES=		go
 

@@ -13,12 +13,14 @@
 #				Default: NO
 # telegraf_conf (str):		telegraf configuration file
 #				Default: ${PREFIX}/etc/telegraf.conf
+# telegraf_confdir (str):	telegraf configuration directory
+#				Default: none
 # telegraf_user (str):		telegraf daemon user
 #				Default: %%TELEGRAF_USER%%
 # telegraf_group (str):		telegraf daemon group
 #				Default: %%TELEGRAF_GROUP%%
 # telegraf_flags (str):		Extra flags passed to telegraf
-#				Default: -quiet
+#				Default: --quiet
 
 . /etc/rc.subr
 
@@ -31,9 +33,14 @@ load_rc_config $name
 : ${telegraf_enable:="NO"}
 : ${telegraf_user:="%%TELEGRAF_USER%%"}
 : ${telegraf_group:="%%TELEGRAF_GROUP%%"}
-: ${telegraf_flags:="-quiet"}
+: ${telegraf_flags:="--quiet"}
 : ${telegraf_conf:="%%PREFIX%%/etc/${name}.conf"}
-: ${telegraf_options:="${telegraf_flags} -config=${telegraf_conf}"}
+: ${telegraph_confdir:=""}
+: ${telegraf_options:="${telegraf_flags} --config=${telegraf_conf}"}
+
+if [ -n "${telegraf_confdir}" ]; then
+	telegraf_options="${telegraf_options} --config-directory=${telegraf_confdir}"
+fi
 
 logfile="%%TELEGRAF_LOGDIR%%/${name}.log"
 pidfile="/var/run/${name}.pid"
