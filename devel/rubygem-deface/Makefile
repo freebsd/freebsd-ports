@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	deface
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel rubygems www
 MASTER_SITES=	RG
 
