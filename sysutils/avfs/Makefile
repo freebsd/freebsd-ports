@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	avfs
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/avf/${PORTNAME}/${PORTVERSION}
 
@@ -24,10 +24,22 @@ CONFIGURE_ENV=	PERL="${PERL}"
 
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	DEBUG FUSE
+OPTIONS_DEFINE=	DAV DEBUG FUSE ZSTD
 OPTIONS_SUB=	yes
+
+DAV_DESC=	Build the DAV module (requires libneon)
+DAV_LIB_DEPENDS=	libneon.so:www/neon
+DAV_CONFIGURE_ENABLE=	dav
+
 DEBUG_CONFIGURE_ENABLE=	debug
+
 FUSE_CONFIGURE_ENABLE=	fuse
 FUSE_USES=	fuse
+
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+ZSTD_CONFIGURE_WITH=	zstd
+
+post-patch:
+	@${REINPLACE_CMD} -e '/#include/s,neon/,,' ${WRKSRC}/modules/dav*.?
 
 .include <bsd.port.mk>

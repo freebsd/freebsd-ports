@@ -48,3 +48,4 @@ lib/libavfs.a
 lib/libavfs.so
 lib/libavfs.so.0
 lib/libavfs.so.0.0.2
+libdata/pkgconfig/avfs.pc
