@@ -977,6 +977,7 @@
     SUBDIR += hs-random
     SUBDIR += hs-setlocale
     SUBDIR += hs-shake
+    SUBDIR += hs-spago
     SUBDIR += hs-threadscope
     SUBDIR += hs-transformers-compat
     SUBDIR += hs-unordered-containers
@@ -4869,7 +4870,7 @@
     SUBDIR += py-pyinstaller
     SUBDIR += py-pyjsparser
     SUBDIR += py-pyke
-    SUBDIR += py-pylama 
+    SUBDIR += py-pylama
     SUBDIR += py-pylibsrtp
     SUBDIR += py-pylru
     SUBDIR += py-pylru-cache

@@ -275,6 +275,7 @@
     SUBDIR += perl5.30
     SUBDIR += petite-chez
     SUBDIR += pfe
+    SUBDIR += purescript
     SUBDIR += phantomjs
     SUBDIR += pharo
     SUBDIR += phc
