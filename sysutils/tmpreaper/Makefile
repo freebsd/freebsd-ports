@@ -22,6 +22,9 @@ OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+# contains systemd/linux specific changes
+PORTSCOUT=	skipv:1.6.14+nmu1
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
