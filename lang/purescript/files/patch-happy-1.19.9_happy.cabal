@@ -1,0 +1,11 @@
+--- happy-1.19.9/happy.cabal.orig	2018-02-04 16:17:42 UTC
++++ happy-1.19.9/happy.cabal
+@@ -129,7 +129,7 @@ extra-source-files:
+         tests/typeclass_monad_lexer.y
+ 
+ custom-setup
+-  setup-depends: Cabal <2.2,
++  setup-depends: Cabal <2.6,
+                  base <5,
+                  directory <1.4,
+                  filepath <1.5
