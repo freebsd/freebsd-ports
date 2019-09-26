@@ -1,6 +1,6 @@
---- Makefile.orig	1993-06-04 19:32:01.000000000 -0700
-+++ Makefile	2016-04-29 22:53:07.305978000 -0700
-@@ -18,17 +18,19 @@
+--- Makefile.orig	1993-06-05 02:32:01 UTC
++++ Makefile
+@@ -18,18 +18,20 @@
  # MANDIR is where the manual page will be installed.
  
  DESTDIR=
@@ -20,12 +20,13 @@
 +INCFLAGS= -I${LOCALBASE}/include
 +LDFLAGS= -L${LOCALBASE}/lib
 +LIBS= -lXm -lXt -lX11 -lXext
-+LIBS_STATIC= -lXm -lXmu -lXt -lXext -lSM -lICE -lpng16 -lz -lm -ljpeg -lXp -lXft -lfontconfig -lexpat -lfreetype -lbz2 -lX11 -lXau -lxcb -lXdmcp -lXau -lXft -lXrender
-+
++LIBS_STATIC= -lXm -lXmu -lXt -lXext -lSM -lICE -lpng16 -lz -lm -ljpeg -lXft -lfontconfig -lexpat -lfreetype -lbz2 -lX11 -lXau -lxcb -lXdmcp -lXau -lXft -lXrender
  
++
  CFLAGS= ${INCFLAGS} -O
  
-@@ -39,20 +41,30 @@
+ # For CenterLine CodeCenter
+@@ -39,20 +41,30 @@ SRCS= xforward.c
  AUXFILES= README NOTICE Makefile xforward.1
  
  PROGS = xforward
