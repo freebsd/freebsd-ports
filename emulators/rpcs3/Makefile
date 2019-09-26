@@ -2,12 +2,9 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.7-8760 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g5ec35c7da
+DISTVERSION=	0.0.7-8777 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g5ac631e03
 CATEGORIES=	emulators
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	0d9c9c4358e9.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
@@ -51,7 +48,9 @@ LLD_UNSAFE=	yes # XXX ports/219089
 .endif
 
 # XXX Remove after FreeBSD 11.2/12.0 reach EOL i.e., around 2020-02-01
+# XXX Switch to bundled libc++ to avoid error-prone reverts
 .if !exists(/usr/include/c++/v1/charconv) && exists(/usr/lib/libc++.so)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-9710473a2e3e
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-f9ad6358563b
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-4504ac2d1248
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-5bd17a44c972
