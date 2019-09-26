@@ -8,9 +8,9 @@ include/svt-av1/EbSvtAv1ExtFrameBuf.h
 include/svt-av1/EbSvtAv1Formats.h
 lib/libSvtAv1Dec.so
 lib/libSvtAv1Dec.so.0
-lib/libSvtAv1Dec.so.0.6.0
+lib/libSvtAv1Dec.so.0.7.0
 lib/libSvtAv1Enc.so
 lib/libSvtAv1Enc.so.0
-lib/libSvtAv1Enc.so.0.6.0
+lib/libSvtAv1Enc.so.0.7.0
 libdata/pkgconfig/SvtAv1Dec.pc
 libdata/pkgconfig/SvtAv1Enc.pc
