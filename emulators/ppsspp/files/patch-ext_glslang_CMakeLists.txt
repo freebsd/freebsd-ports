@@ -1,0 +1,26 @@
+CMake Error at /usr/local/share/cmake/Modules/FindPackageHandleStandardArgs.cmake:137 (message):
+  Could NOT find PythonInterp: Found unsuitable version "2.7.16", but
+  required is at least "3" (found /usr/local/bin/python)
+Call Stack (most recent call first):
+  /usr/local/share/cmake/Modules/FindPackageHandleStandardArgs.cmake:376 (_FPHSA_FAILURE_MESSAGE)
+  /usr/local/share/cmake/Modules/FindPythonInterp.cmake:160 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+  ext/glslang/CMakeLists.txt:120 (find_package)
+
+--- ext/glslang/CMakeLists.txt.orig	2019-06-18 08:00:46 UTC
++++ ext/glslang/CMakeLists.txt
+@@ -114,15 +114,6 @@ function(glslang_set_link_args TARGET)
+     endif()
+ endfunction(glslang_set_link_args)
+ 
+-# CMake needs to find the right version of python, right from the beginning,
+-# otherwise, it will find the wrong version and fail later
+-if(IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/External)
+-    find_package(PythonInterp 3 REQUIRED)
+-endif()
+-
+-# We depend on these for later projects, so they should come first.
+-add_subdirectory(External)
+-
+ if(NOT TARGET SPIRV-Tools-opt)
+     set(ENABLE_OPT OFF)
+ endif()
