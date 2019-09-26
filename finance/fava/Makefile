@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	fava
-PORTVERSION=	1.9
-PORTREVISION=	1
+PORTVERSION=	1.10
+PORTREVISION=	0
 CATEGORIES=	finance
 MASTER_SITES=	CHEESESHOP
 
@@ -12,6 +12,7 @@ COMMENT=	Web interface for Beancount
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	beancount>=2.1.2:finance/beancount \
 		${PYTHON_PKGNAMEPREFIX}Babel>0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cheroot>0:www/py-cheroot@${PY_FLAVOR} \
