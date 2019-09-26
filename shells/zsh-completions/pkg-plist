@@ -18,6 +18,7 @@ share/zsh/site-functions/_cmake
 share/zsh/site-functions/_coffee
 share/zsh/site-functions/_composer
 share/zsh/site-functions/_conan
+share/zsh/site-functions/_concourse
 share/zsh/site-functions/_console
 share/zsh/site-functions/_dad
 share/zsh/site-functions/_debuild
@@ -35,6 +36,7 @@ share/zsh/site-functions/_ffind
 share/zsh/site-functions/_fleetctl
 share/zsh/site-functions/_flutter
 share/zsh/site-functions/_force
+share/zsh/site-functions/_fwupdmgr
 share/zsh/site-functions/_gas
 share/zsh/site-functions/_ghc
 share/zsh/site-functions/_gist
@@ -51,6 +53,7 @@ share/zsh/site-functions/_homestead
 share/zsh/site-functions/_httpie
 share/zsh/site-functions/_ibus
 share/zsh/site-functions/_include-what-you-use
+share/zsh/site-functions/_inxi
 share/zsh/site-functions/_jmeter
 share/zsh/site-functions/_jmeter-plugins
 share/zsh/site-functions/_jonas
@@ -63,9 +66,9 @@ share/zsh/site-functions/_lunchy
 share/zsh/site-functions/_middleman
 share/zsh/site-functions/_mina
 share/zsh/site-functions/_mix
-share/zsh/site-functions/_multirust
 share/zsh/site-functions/_mussh
 share/zsh/site-functions/_mvn
+share/zsh/site-functions/_nano
 share/zsh/site-functions/_nftables
 share/zsh/site-functions/_node
 share/zsh/site-functions/_nvm
@@ -79,6 +82,7 @@ share/zsh/site-functions/_phing
 share/zsh/site-functions/_pixz
 share/zsh/site-functions/_pkcon
 share/zsh/site-functions/_play
+share/zsh/site-functions/_pm2
 share/zsh/site-functions/_port
 share/zsh/site-functions/_pygmentize
 share/zsh/site-functions/_rails
@@ -90,7 +94,6 @@ share/zsh/site-functions/_rslsync
 share/zsh/site-functions/_rspec
 share/zsh/site-functions/_rsvm
 share/zsh/site-functions/_rubocop
-share/zsh/site-functions/_rvm
 share/zsh/site-functions/_sbt
 share/zsh/site-functions/_scala
 share/zsh/site-functions/_scrub

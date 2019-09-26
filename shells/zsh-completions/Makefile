@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zsh-completions
-PORTVERSION=	0.30.0
+PORTVERSION=	0.31.0
 CATEGORIES=	shells
 
 MAINTAINER=	sunpoet@FreeBSD.org
