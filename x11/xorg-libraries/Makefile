@@ -3,7 +3,7 @@
 
 PORTNAME=	xorg-libraries
 PORTVERSION=	7.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -30,7 +30,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dmx.pc:x11/libdmx \
 		${LOCALBASE}/libdata/pkgconfig/xinerama.pc:x11/libXinerama \
 		${LOCALBASE}/libdata/pkgconfig/xkbfile.pc:x11/libxkbfile \
 		${LOCALBASE}/libdata/pkgconfig/xmu.pc:x11-toolkits/libXmu \
-		${LOCALBASE}/libdata/pkgconfig/xp.pc:x11/libXp \
 		${LOCALBASE}/libdata/pkgconfig/xpm.pc:x11/libXpm \
 		${LOCALBASE}/libdata/pkgconfig/xrandr.pc:x11/libXrandr \
 		${LOCALBASE}/libdata/pkgconfig/xrender.pc:x11/libXrender \
