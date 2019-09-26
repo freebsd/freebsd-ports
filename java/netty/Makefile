@@ -14,6 +14,8 @@ COMMENT=	Java NIO client server framework
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		fails to extract
+
 USES=		cpe tar:bzip2
 USE_JAVA=	yes
 
