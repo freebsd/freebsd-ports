@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	beancount
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.3
 CATEGORIES=	finance
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/
 DISTNAME=	${PORTVERSION}
@@ -33,9 +33,12 @@ USE_PYTHON=	autoplist distutils noflavors
 
 # Project hosted on Bitbucket
 BB_ACCOUNT=	blais
-BB_COMMIT=	fd27856ff2de
+BB_COMMIT=	ff1e2616b26a
 BB_PROJECT=	${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/parser/_parser.so
 
 .include <bsd.port.mk>
