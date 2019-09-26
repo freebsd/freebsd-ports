@@ -14,6 +14,9 @@ COMMENT=	Python library to read/write Excel 2007 xlsx/xlsm files
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE.rst
 
+DEPRECATED=	Use textproc/py-openpyxl instead
+EXPIRATION_DATE=2019-09-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}et_xmlfile>=0:textproc/py-et_xmlfile@${FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jdcal>=0:devel/py-jdcal@${FLAVOR}
 
