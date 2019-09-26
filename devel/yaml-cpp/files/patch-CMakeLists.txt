@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2016-01-10 18:11:40 UTC
+--- CMakeLists.txt.orig	2019-09-25 16:56:00 UTC
 +++ CMakeLists.txt
-@@ -276,7 +276,7 @@ set_target_properties(yaml-cpp PROPERTIE
+@@ -276,7 +276,7 @@ set_target_properties(yaml-cpp PROPERTIES
  
  set_target_properties(yaml-cpp PROPERTIES
  	VERSION "${YAML_CPP_VERSION}"
@@ -9,12 +9,12 @@
  	PROJECT_LABEL "yaml-cpp ${LABEL_SUFFIX}"
  )
  
-@@ -320,7 +320,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DI
- if(UNIX)
- 	set(PC_FILE ${CMAKE_BINARY_DIR}/yaml-cpp.pc)
- 	configure_file("yaml-cpp.pc.cmake" ${PC_FILE} @ONLY)
--	install(FILES ${PC_FILE} DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
-+	install(FILES ${PC_FILE} DESTINATION libdata/pkgconfig)
+@@ -342,7 +342,7 @@ if (YAML_CPP_INSTALL)
+ 	if(UNIX)
+ 		set(PC_FILE ${CMAKE_BINARY_DIR}/yaml-cpp.pc)
+ 		configure_file("yaml-cpp.pc.cmake" ${PC_FILE} @ONLY)
+-		install(FILES ${PC_FILE} DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
++		install(FILES ${PC_FILE} DESTINATION libdata/pkgconfig)
+ 	endif()
+ 
  endif()
- 
- 
