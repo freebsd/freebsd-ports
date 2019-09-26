@@ -71,20 +71,25 @@ rpcs3/util/atomic.cpp:307:5: error: use of undeclared identifier 'fallback_notif
  #ifdef _WIN32
  		LARGE_INTEGER qw;
  		qw.QuadPart = -static_cast<s64>(timeout / 100);
-@@ -260,13 +245,6 @@ void atomic_storage_futex::wait(const void* data, std:
+@@ -259,18 +244,6 @@ void atomic_storage_futex::wait(const void* data, std:
+ 		{
+ 			if (value & s_waiter_mask)
  			{
- 				value -= s_waiter_mask & -s_waiter_mask;
- 
 -#ifdef _WIN32
 -				if (!fallback)
 -				{
+-					if ((value & s_signal_mask) == 0)
+-					{
+-						return false;
+-					}
+-
 -					value -= s_signal_mask & -s_signal_mask;
 -				}
 -#endif
 -
+ 				value -= s_waiter_mask & -s_waiter_mask;
+ 
  				if ((value & s_waiter_mask) == 0)
- 				{
- 					// Reset on last waiter
 @@ -279,7 +257,7 @@ void atomic_storage_futex::wait(const void* data, std:
  			return false;
  		});

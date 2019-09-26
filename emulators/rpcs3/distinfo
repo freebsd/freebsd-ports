@@ -1,6 +1,6 @@
-TIMESTAMP = 1569197741
-SHA256 (RPCS3-rpcs3-v0.0.7-8760-g5ec35c7da_GH0.tar.gz) = 8be1b5ee89331f539e575d375fb094b3e1f8c11800afbd2f0e338a7f94f7d5b5
-SIZE (RPCS3-rpcs3-v0.0.7-8760-g5ec35c7da_GH0.tar.gz) = 5601486
+TIMESTAMP = 1569442852
+SHA256 (RPCS3-rpcs3-v0.0.7-8777-g5ac631e03_GH0.tar.gz) = 991dce4b8471b0252b12d8fd206dc94d1fdefa014d06ab773b01cc85a7a239ba
+SIZE (RPCS3-rpcs3-v0.0.7-8777-g5ac631e03_GH0.tar.gz) = 5599517
 SHA256 (RPCS3-hidapi-hidapi-0.8.0-rc1-27-g9220f5e_GH0.tar.gz) = 3120e0b701943f452760e45f9fc1ac50bab356ad4c807b4cac4598041c5ca1a5
 SIZE (RPCS3-hidapi-hidapi-0.8.0-rc1-27-g9220f5e_GH0.tar.gz) = 105400
 SHA256 (RPCS3-llvm-b860b5e8f4ee_GH0.tar.gz) = c151972a0c8ceac568c24b61e63d2ecbdac0f125185e23fc2238e0a14048256e
@@ -19,5 +19,3 @@ SHA256 (USCiLab-cereal-v1.2.0_GH0.tar.gz) = 1ccf3ed205a7a2f0d6a060415b123f1ae0d9
 SIZE (USCiLab-cereal-v1.2.0_GH0.tar.gz) = 299883
 SHA256 (zeux-pugixml-v1.9-51-g8bf806c_GH0.tar.gz) = 37bed90f3dadb642acca41508391d1409a75af05f34f13da56c866d5c3c4b00d
 SIZE (zeux-pugixml-v1.9-51-g8bf806c_GH0.tar.gz) = 560956
-SHA256 (0d9c9c4358e9.patch) = 10fbe5b4a92917ecceb0870c8c30a28fa518432ce2facee621cc8816e7e1c8b8
-SIZE (0d9c9c4358e9.patch) = 920
