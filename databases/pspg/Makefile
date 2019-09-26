@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pspg
-DISTVERSION=	2.0.4
+DISTVERSION=	2.1.2
 CATEGORIES=	databases
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -17,10 +17,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	okbob
 GNU_CONFIGURE=	yes
 
+SUB_FILES=	pkg-message
+
 PLIST_FILES=	bin/pspg
 PORTDOCS=	README.md
-
-SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 
