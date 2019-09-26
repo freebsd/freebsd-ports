@@ -1,12 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	yuzu
-PORTVERSION=	s20190922
+PORTVERSION=	s20190925
 PORTREVISION?=	0
 CATEGORIES=	emulators
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	6a21bc7eeb51.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
@@ -31,7 +28,7 @@ BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	2f5545f8d
+GH_TAGNAME=	da0737359
 GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
