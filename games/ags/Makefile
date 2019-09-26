@@ -19,7 +19,7 @@ LIB_DEPENDS=	liballeg.so:devel/allegro \
 		libvorbis.so:audio/libvorbis \
 		libfreetype.so:print/freetype2
 
-USES=		compiler:c++11-lang gmake localbase pkgconfig tar:xz
+USES=		compiler:c++11-lang gmake localbase pkgconfig tar:xz xorg
 USE_XORG=	x11
 
 MAKE_ARGS=	V=1
