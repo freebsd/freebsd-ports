@@ -2,8 +2,8 @@
 
 PORTNAME=	svt-av1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0-384
-DISTVERSIONSUFFIX=	-gef00d203
+DISTVERSION=	0.6.0-417
+DISTVERSIONSUFFIX=	-g1150460c
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,16 +26,6 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-AV1
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	NATIVE
-
-post-patch:
-# Keep using nasm and drop vendor -O/-g
-	@${REINPLACE_CMD} -e '/find_program.*yasm/d' \
-		-Ee '/set.*(release|debug)_flags_to_test/,/\)/d' \
-		${WRKSRC}/CMakeLists.txt
-# Avoid platform whitelists for generic non-Windows code
-# https://github.com/OpenVisualCloud/SVT-AV1/pull/162
-	@${GREP} --exclude='*/third_party/*' -Flr '__linux' ${WRKSRC} | ${XARGS} \
-		${REINPLACE_CMD} -i .opsys -E 's/__linux(__)?/__unix__/'
+CMAKE_OFF=	NATIVE YASM
 
 .include <bsd.port.mk>
