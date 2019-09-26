@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.54
+PORTVERSION=	1.55
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -18,7 +18,7 @@ USES=		python${PY_MYSQL} shebangfix
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-RELEASE_TIMESTAMP=	1564368454
+RELEASE_TIMESTAMP=	1567484342
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
@@ -77,7 +77,6 @@ SHEBANG_FILES=	scripts/auth_test.php scripts/deploy-docs.sh scripts/github-remov
 		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/flush-definition-cache.php \
 		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/old-remove-require-once.php \
 		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/config-scanner.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/flush.php \
 		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/add-vimline.php \
 		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/remove-trailing-whitespace.php \
 		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/merge-library.php \
@@ -87,7 +86,6 @@ SHEBANG_FILES=	scripts/auth_test.php scripts/deploy-docs.sh scripts/github-remov
 		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/generate-schema-cache.php \
 		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/old-remove-schema-def.php \
 		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/generate-entity-file.php \
-		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/update-config.php \
 		../${PORTNAME}-vendor-${PORTVERSION}/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
 		../${PORTNAME}-vendor-${PORTVERSION}/tecnickcom/tcpdf/tools/tcpdf_addfont.php
 
