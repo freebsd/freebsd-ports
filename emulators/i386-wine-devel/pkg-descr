@@ -5,6 +5,11 @@ without the performance or memory usage penalties of an emulator, with
 a similar look and feel to other applications on your desktop.
 
 Many applications already work, more or less, including versions of
-Microsoft Office and several games.
+Microsoft Office and many games.
+
+If you receive a message of "Did you reconfigure your kernel with
+"options USER_LDT"?" add the line
+    machdep.max_ldt_segment="2048"
+to /boot/loader.conf and reboot.
 
 WWW: http://www.winehq.org/
