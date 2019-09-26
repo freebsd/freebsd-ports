@@ -3,6 +3,7 @@
 
 PORTNAME=	intel-pcm
 PORTVERSION=	201902
+PORTREVISION=   1
 CATEGORIES=	sysutils
 
 MAINTAINER=	imp@FreeBSD.org
