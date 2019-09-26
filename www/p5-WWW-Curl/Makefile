@@ -14,6 +14,8 @@ COMMENT=	Perl extension interface for libcurl
 
 LICENSE=	MIT
 
+BROKEN=		non-void function 'constant' should return a value
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 TEST_DEPENDS=	p5-Test-CPAN-Meta>=0:devel/p5-Test-CPAN-Meta \
 		p5-Test-Pod>=1.14:devel/p5-Test-Pod \
