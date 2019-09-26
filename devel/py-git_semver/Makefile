@@ -12,6 +12,8 @@ COMMENT=	Semantic versions management integrated to git
 
 LICENSE=	APACHE20
 
+BROKEN=		py36-git_semver-0.3.1 depends on package: py36-semantic_version>=2.8<3 - not found
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GitPython>=2.1<3:devel/py-gitpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semantic_version>=2.8<3:devel/py-semantic_version@${PY_FLAVOR}
 
