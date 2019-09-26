@@ -4,7 +4,7 @@
      open (H, "<", $curl_h) or die ("Cannot open $curl_h: ".$!);
      while(<H>) {
          if (/^#define (CURL[A-Za-z0-9_]*)/) {
-+            next if ($1 eq 'CURL_DID_MEMORY_FUNC_TYPEDEFS' || $1 eq 'CURL_STRICTER' );
++            next if ($1 eq 'CURL_DID_MEMORY_FUNC_TYPEDEFS' || $1 eq 'CURL_STRICTER' || $1 eq 'CURLINC_CURL_H' );
              push @syms, $1;
          }
      }
