@@ -3,7 +3,7 @@
 
 PORTNAME=	xmbibtex
 PORTVERSION=	1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print databases
 MASTER_SITES=	SUNSITE/apps/tex
 
@@ -12,8 +12,8 @@ COMMENT=	Reference manager based on the BibTeX file format
 
 WRKSRC_SUBDIR=	src
 
-USES=		imake:noman motif
-USE_XORG=	ice sm x11 xext xmu xp xt xpm
+USES=		imake:noman motif xorg
+USE_XORG=	ice sm x11 xext xmu xt xpm
 
 PLIST_FILES=	bin/xmbibtex lib/X11/app-defaults/XmBibTeX
 
