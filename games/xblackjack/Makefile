@@ -3,7 +3,7 @@
 
 PORTNAME=	xblackjack
 PORTVERSION=	2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/games
 
@@ -12,8 +12,8 @@ COMMENT=	X11/Motif blackjack game
 
 LIB_DEPENDS=	libXm.so:x11-toolkits/lesstif
 
-USES=		imake tar:Z
-USE_XORG=	x11 xext xp xt xmu
+USES=		imake tar:Z xorg
+USE_XORG=	x11 xext xt xmu
 CFLAGS+=	-Wno-error=return-type
 
 .include <bsd.port.mk>
