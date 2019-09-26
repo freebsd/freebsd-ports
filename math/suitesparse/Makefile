@@ -16,10 +16,9 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libmetis.so:math/metis \
-		libomp.so:devel/openmp \
 		liblapack.so:math/lapack
 
-USES=		cmake:insource compiler:c++0x fortran gmake
+USES=		cmake:insource compiler:openmp fortran gmake
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/SuiteSparse
