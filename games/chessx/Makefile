@@ -1,19 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	chessx
-PORTVERSION=	1.4.6
-PORTREVISION=	2
+PORTVERSION=	1.5.0
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	phascolarctos@protonmail.ch
 COMMENT=	Qt 5 chess database application
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang desktop-file-utils qmake:outsource qt:5 \
-		shared-mime-info tar:tgz
+USES=		compiler:c++11-lang desktop-file-utils qmake qt:5 tar:tgz gl
+USE_GL=	gl
 USE_QT=		buildtools_build concurrent core gui linguisttools_build multimedia \
 		network opengl printsupport svg widgets xml
 
