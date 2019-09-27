@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chewy
-PORTVERSION=	5.0.0
+PORTVERSION=	5.1.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
