@@ -132,6 +132,9 @@ MAKE_ENV+=	USE_CLANG=true
 CONFIGURE_ARGS+=	--disable-warnings-as-errors \
 			--disable-dtrace
 .endif
+.if ${ARCH} != amd64
+CONFIGURE_ARGS+=	--enable-aot=no
+.endif
 
 .if empty(ICONV_LIB)
 ICONV_CFLAGS=	-DLIBICONV_PLUG
