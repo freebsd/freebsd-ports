@@ -1,0 +1,51 @@
+--- src/Makefile.in.orig	2016-02-24 03:08:32 UTC
++++ src/Makefile.in
+@@ -1207,10 +1207,15 @@ libgc.a: $(libgc_a_OBJECTS) $(libgc_a_DE
+ 	-rm -f libgc.a
+ 	$(libgc_a_AR) libgc.a $(libgc_a_OBJECTS) $(libgc_a_LIBADD)
+ 	$(RANLIB) libgc.a
++
++# $(SAMLIB) and $(SAMPROG) are being mysteriously deleted sometime after they
++# are copied to src.  The cp below is a hack to allow the port to build.
+ libtophat.a: $(libtophat_a_OBJECTS) $(libtophat_a_DEPENDENCIES) $(EXTRA_libtophat_a_DEPENDENCIES) 
+ 	-rm -f libtophat.a
+ 	$(libtophat_a_AR) libtophat.a $(libtophat_a_OBJECTS) $(libtophat_a_LIBADD)
+ 	$(RANLIB) libtophat.a
++	cp $(SAMDIR)/$(SAMLIB) $(SAMDIR)/$(SAMPROG) .
++
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+ 	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
+@@ -1281,9 +1286,11 @@ prep_reads$(EXEEXT): $(prep_reads_OBJECT
+ sam_juncs$(EXEEXT): $(sam_juncs_OBJECTS) $(sam_juncs_DEPENDENCIES) $(EXTRA_sam_juncs_DEPENDENCIES) 
+ 	@rm -f sam_juncs$(EXEEXT)
+ 	$(sam_juncs_LINK) $(sam_juncs_OBJECTS) $(sam_juncs_LDADD) $(LIBS)
++
+ samtools_0.1.18$(EXEEXT): $(samtools_0_1_18_OBJECTS) $(samtools_0_1_18_DEPENDENCIES) $(EXTRA_samtools_0_1_18_DEPENDENCIES) 
+-	@rm -f samtools_0.1.18$(EXEEXT)
+-	$(LINK) $(samtools_0_1_18_OBJECTS) $(samtools_0_1_18_LDADD) $(LIBS)
++	#rm -f samtools_0.1.18$(EXEEXT)
++	#$(LINK) $(samtools_0_1_18_OBJECTS) $(samtools_0_1_18_LDADD) $(LIBS)
++
+ segment_juncs$(EXEEXT): $(segment_juncs_OBJECTS) $(segment_juncs_DEPENDENCIES) $(EXTRA_segment_juncs_DEPENDENCIES) 
+ 	@rm -f segment_juncs$(EXEEXT)
+ 	$(segment_juncs_LINK) $(segment_juncs_OBJECTS) $(segment_juncs_LDADD) $(LIBS)
+@@ -1658,7 +1665,7 @@ uninstall-am: uninstall-binPROGRAMS unin
+ 
+ 
+ clean-local:
+-	cd $(SAMDIR) && make clean
++	cd $(SAMDIR) && ${MAKE} clean
+ 
+ tophat2: tophat2.sh
+ 	cp tophat2.sh tophat2 && chmod 755 tophat2
+@@ -1669,7 +1676,8 @@ tophat: tophat.py
+ $(SAMPROG): $(SAMLIB)
+ 
+ $(SAMLIB):
+-	cd $(SAMDIR) && make $(SAMPROG) && cp $(SAMLIB) $(SAMPROG) ..
++	cd $(SAMDIR) && ${MAKE} $(SAMPROG)
++	cp $(SAMDIR)/$(SAMLIB) $(SAMDIR)/$(SAMPROG) .
+ 
+ install-data-hook:
+ 	cp -r intervaltree sortedcontainers $(DESTDIR)$(bindir)

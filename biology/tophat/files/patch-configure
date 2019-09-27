@@ -1,0 +1,22 @@
+--- configure.orig	2016-02-24 02:55:11 UTC
++++ configure
+@@ -6886,7 +6886,7 @@ case $host_os in *\ *) host_os=`echo "$h
+ # set CFLAGS and CXXFLAGS
+ #user_CFLAGS="${CXXFLAGS}"
+ user_CFLAGS=${CFLAGS}
+-generic_CFLAGS="-Wall -Wno-strict-aliasing -g -gdwarf-2 -Wuninitialized"
++generic_CFLAGS="-Wno-strict-aliasing -g -gdwarf-2 -Wuninitialized"
+ ext_CFLAGS=""
+ debug_CFLAGS=""
+ user_LDFLAGS="$LDFLAGS"
+@@ -6922,8 +6922,8 @@ else
+ fi
+ 
+ CFLAGS="${generic_CFLAGS} ${ext_CFLAGS} ${user_CFLAGS} ${debug_CFLAGS}"
+-CXXFLAGS="$CFLAGS"
+-CXXFLAGS="$CXXFLAGS $BAM_CPPFLAGS $BOOST_CPPFLAGS -I./SeqAn-1.4.2"
++CXXFLAGS="-std=gnu++98 $CFLAGS"
++CXXFLAGS="-I./SeqAn-1.4.2 $CXXFLAGS $BAM_CPPFLAGS $BOOST_CPPFLAGS"
+ LDFLAGS="$BAM_LDFLAGS $BOOST_LDFLAGS $user_LDFLAGS"
+ 
+ if test "`cd $srcdir && pwd`" != "`pwd`"; then

@@ -1,0 +1,25 @@
+--- src/samtools-0.1.18/Makefile.orig	2016-02-14 18:21:17 UTC
++++ src/samtools-0.1.18/Makefile
+@@ -1,5 +1,10 @@
+-CC=			gcc
+-CFLAGS=		-g -Wall -O2 #-m64 #-arch ppc
++CC?=			gcc
++CFLAGS?=		-g -Wall -O2 #-m64 #-arch ppc
++CC?=           gcc
++CFLAGS?=       -g -Wall -O2
++# Link fails with clang on inlined functions with no -O
++CFLAGS+=       -O
++RANLIB?=       /usr/bin/ranlib
+ DFLAGS=		-D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=0
+ KNETFILE_O=	knetfile.o
+ LOBJS=		bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o	\
+@@ -38,7 +43,8 @@ all:$(PROG)
+ lib:libbam.a
+ 
+ libbam.a:$(LOBJS)
+-		$(AR) -csru $@ $(LOBJS)
++		$(AR) cr $@ $(LOBJS)
++		$(RANLIB) $@
+ 
+ samtools_0.1.18:lib-recur $(AOBJS)
+ 		$(CC) $(CFLAGS) -o $@ $(AOBJS) -Lbcftools $(LIBPATH) libbam.a -lbcf -lm -lz #$(LIBCURSES)

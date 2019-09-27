@@ -1,0 +1,16 @@
+#!/bin/sh -e
+
+if [ ! -e test_data.tar.gz ]; then
+    fetch https://ccb.jhu.edu/software/tophat/downloads/test_data.tar.gz
+fi
+if [ -e test_data ]; then
+    cat << EOM
+
+test_data already exists.  Remove it or run $0 from a different directory.
+
+EOM
+    exit 1
+fi
+tar zxvf test_data.tar.gz
+cd test_data
+tophat -r 20 test_ref reads_1.fq reads_2.fq
