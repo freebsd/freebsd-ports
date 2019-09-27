@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	uhd
-PORTVERSION=	3.14.1.0
+PORTVERSION=	3.14.1.1
 #PORTREVISION=	1
 CATEGORIES=	comms hamradio
 #MASTER_SITES=	http://files.ettus.com/binaries/images/
@@ -18,7 +18,6 @@ COMMENT=	Ettus Research UHD driver framework
 # is understood and if appropriate, we can add that license here.
 LICENSE=	GPLv3
 
-BROKEN=		fails to package
 BROKEN_powerpc64=	fails to link: undefined reference to boost function
 
 LIB_DEPENDS=	${PY_BOOST} \
@@ -32,7 +31,7 @@ USES=		compiler:c++14-lang cmake ncurses pkgconfig \
 		dos2unix python:2.7 shebangfix
 USE_GITHUB=     yes
 GH_ACCOUNT=     EttusResearch
-GH_TAGNAME=     bfb9c1c77ecd06120a16cebce9de2225d87e50f2
+GH_TAGNAME=     0347a6d81fd64800422ef1ed4dc634d8c480746f
 
 CONFLICTS=	usrp-[0-9]*
 
@@ -60,7 +59,7 @@ CMAKE_ARGS+=	-DPKG_LIB_DIR:STRING="share/uhd" -DUHD_TXRX_DEBUG_PRINTS="yes"
 IMAGE_FILE=	uhd-images_3.14.0.0-rc1.zip
 
 OPTIONS_DEFINE= DOCS DOXYGEN
-OPTIONS_DEFAULT= DOCS DOXYGEN
+OPTIONS_DEFAULT= DOCS
 
 OPTIONS_SUB=yes
 DOXYGEN_BUILD_DEPENDS=  doxygen:devel/doxygen
