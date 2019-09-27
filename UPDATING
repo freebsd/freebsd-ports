@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190927:
+  AFFECTS: users of XFCE desktop
+  AUTHOR: madpilot@FreeBSD.org
+
+  Due to changes in the XFCE 4.14 metaport, systems could end up with
+  both xscreensaver and xfce4-screensaver installed and enabled
+  simultaneously.
+
+  This can cause conflicts and problems unlocking the screen.
+
+  To avoid problems, please make sure to have only one enabled by
+  going to the Application Autostart tab of the Session and Startup
+  settings applet and enable only one Screensaver there.
+
+  Some further information can be found in the xfce4-session
+  pkg-message dispolayed on installation and upgrade.
+
 20190920:
   AFFECTS: users of net-mgmt/pushgateway
   AUTHOR: 0mp@FreeBSD.org

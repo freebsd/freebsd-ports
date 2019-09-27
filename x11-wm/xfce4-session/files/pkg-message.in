@@ -21,6 +21,35 @@ polkit.addRule(function (action, subject) {
     return polkit.Result.YES;
   }
 });
+
+
+This port installs a startup file for xscreensaver but it is
+didabled by default. This is so because the XFCE metaport
+installs xfce4-screensaver to autostart and having both enabled
+causes conflicts.
+
+If you want to change the screen saver being used and enable
+xscreensaver please go to the Session and Startup settings, and in
+the Aplication Autostart tab enable only the relevant screensaver:
+
+Screensaver -> to enable xscreensaver
+XFCE Screensaver -> to enable xfce4-screensaver
+EOM
+}
+{
+  type: upgrade
+  message: <<EOM
+This port installs a startup file for xscreensaver but it is
+didabled by default. This is so because the XFCE metaport
+installs xfce4-screensaver to autostart and having both enabled
+causes conflicts.
+
+If you want to change the screen saver being used and enable
+xscreensaver please go to the Session and Startup settings, and in
+the Aplication Autostart tab enable only the relevant screensaver:
+
+Screensaver -> to enable xscreensaver
+XFCE Screensaver -> to enable xfce4-screensaver
 EOM
 }
 ]
