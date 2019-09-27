@@ -12,7 +12,7 @@ COMMENT=	Destroy as many targets as possible
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake gnome sdl
+USES=		compiler:c11 gmake gnome sdl
 USE_SDL=	sdl mixer
 
 GNU_CONFIGURE=	yes
