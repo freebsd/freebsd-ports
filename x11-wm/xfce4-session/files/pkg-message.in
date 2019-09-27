@@ -24,7 +24,7 @@ polkit.addRule(function (action, subject) {
 
 
 This port installs a startup file for xscreensaver but it is
-didabled by default. This is so because the XFCE metaport
+disabled by default. This is so because the XFCE metaport
 installs xfce4-screensaver to autostart and having both enabled
 causes conflicts.
 
@@ -40,7 +40,7 @@ EOM
   type: upgrade
   message: <<EOM
 This port installs a startup file for xscreensaver but it is
-didabled by default. This is so because the XFCE metaport
+disabled by default. This is so because the XFCE metaport
 installs xfce4-screensaver to autostart and having both enabled
 causes conflicts.
 
