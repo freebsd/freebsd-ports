@@ -3,14 +3,12 @@
 
 PORTNAME=	xephem
 PORTVERSION=	3.7.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro
 MASTER_SITES=	http://www.clearskyinstitute.com/xephem/
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Interactive astronomical ephemeris program
-
-DEPRECATED=	Depends on deprecated libXp
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig
