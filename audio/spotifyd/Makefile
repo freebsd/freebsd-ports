@@ -2,8 +2,7 @@
 
 PORTNAME=	spotifyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.15
-PORTREVISION=	1
+DISTVERSION=	0.2.16
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -18,8 +17,9 @@ USES=		cargo ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	Spotifyd
 GH_TUPLE=	plietar:dns-parser:1d3e5a5591bc72eb061c23bd426c4a25f2f73791:dnsparser \
-		librespot-org:librespot:e1e8f60628f8e8fe0ad202d10ac4d8a231de27ed:librespot \
+		librespot-org:librespot:76088d0fc99501813e1a42b0acccb152fc0c7800:librespot \
 		plietar:rust-mdns:66a74033da6c9f1a06e7b0a29f4544fd189d6479:mdns \
+		TeXitoi:structopt:0c888e962d842f2c90c6c290d3a2a40947b37005:structopt \
 		plietar:rust-tremor:5958cc302e78f535dad90e9665da981ddff4000a:tremor
 USE_RC_SUBR=	spotifyd
 
@@ -39,7 +39,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		arrayvec-0.4.11 \
 		atty-0.2.13 \
 		autocfg-0.1.6 \
-		backtrace-0.3.37 \
+		backtrace-0.3.38 \
 		backtrace-sys-0.1.31 \
 		base64-0.10.1 \
 		base64-0.6.0 \
@@ -48,7 +48,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		bit-vec-0.5.1 \
 		bitflags-0.3.3 \
 		bitflags-0.9.1 \
-		bitflags-1.1.0 \
+		bitflags-1.2.0 \
 		blake2b_simd-0.5.8 \
 		block-buffer-0.7.3 \
 		block-cipher-trait-0.6.2 \
@@ -64,7 +64,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		c_linked_list-1.1.1 \
 		cargo_metadata-0.6.4 \
 		cc-1.0.45 \
-		cfg-if-0.1.9 \
+		cfg-if-0.1.10 \
 		chrono-0.4.9 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
@@ -274,8 +274,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		stream-cipher-0.3.2 \
 		string-0.2.1 \
 		strsim-0.8.0 \
-		structopt-0.3.2 \
-		structopt-derive-0.3.2 \
 		subtle-1.0.0 \
 		syn-0.11.11 \
 		syn-0.15.44 \
