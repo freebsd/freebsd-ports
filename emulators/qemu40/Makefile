@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	4.1.0
+PORTVERSION=	4.0.0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX=	40
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	QEMU CPU Emulator - development version
+COMMENT=	QEMU CPU Emulator - 4.0.X version
 
 LICENSE=	GPLv2
 
@@ -21,10 +21,9 @@ LIB_DEPENDS=	libnettle.so:security/nettle \
 		libepoxy.so:graphics/libepoxy \
 		libpcre2-8.so:devel/pcre2
 
-USES=		bison cpe gmake gnome iconv:wchar_t perl5 pkgconfig python:build tar:xz xorg
+USES=		bison cpe gmake gnome iconv:wchar_t perl5 pkgconfig python:build tar:xz
 USE_GNOME=	cairo glib20 libxml2
 USE_PERL5=	build
-USE_XORG=	pixman
 
 #BROKEN_powerpc64=	fails to compile: In function aio_bh_poll: internal compiler error: Segmentation fault
 
@@ -88,14 +87,16 @@ DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html \
 			sphinx-build:textproc/py-sphinx
 DOCS_USES=		makeinfo
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
+X86_TARGETS_USE_OFF=	XORG=pixman,x11
+X86_TARGETS_USES_OFF=	xorg
 
 PORTDOCS=	docs interop/.buildinfo interop/* qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
-	       	qemu-qmp-ref.html qemu-qmp-ref.txt specs/.buildinfo specs/*
+	       	qemu-qmp-ref.html qemu-qmp-ref.txt
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS=	--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
-		--extra-ldflags=-L\"${LOCALBASE}/lib\" --enable-debug \
+		--extra-ldflags=-L\"${LOCALBASE}/lib\" --disable-libssh2 --enable-debug \
 		--prefix=${PREFIX} --cc=${CC} --enable-netmap --enable-docs --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--enable-debug-info --python=${PYTHON_CMD} \

@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20190927:
+  AFFECTS: users of emulators/qemu-devel
+  AUTHOR: bofh@FreeBSD.org
+
+  qemu-devel has been updated to 4.1.0 and 4.0.0 has been merged into a new port
+  emulators/qemu40. If you want to stick with 4.0.X branch, simply use:
+  # portmaster -o emulators/qemu-devel emulators/qemu40
+
+20190927:
   AFFECTS: users of XFCE desktop
   AUTHOR: madpilot@FreeBSD.org
 
