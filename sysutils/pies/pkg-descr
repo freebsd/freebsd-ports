@@ -1,0 +1,17 @@
+GNU Pies (pronounced "p-yes") stands for the Program Invocation and
+Execution Supervisor.  This utility starts and controls execution of
+external programs, called "components".  Each component is a stand-alone
+program, designed to be executed in the foreground.  Upon startup pies
+reads the list of components from its configuration file, starts them,
+and remains in the background, controlling their execution.  When a
+component terminates, pies tries to restarts it.  Its configuration
+allows to specify actions other than simple restart, depending on the
+exit code of the component.
+
+GNU Pies supports a wide variety of component types and gives the user
+complete control over the execution environment of each component.  This
+includes modifying shell environment, running components with the given
+user privileges, etc.  The standard error and/or output of any component
+may be redirected either to a disk file or to syslog.
+
+WWW: https://puszcza.gnu.org.ua/projects/pies
