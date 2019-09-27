@@ -265,8 +265,8 @@
 %%WWWDIR%%/css/ace-skins.min.css
 %%WWWDIR%%/css/ace.css
 %%WWWDIR%%/css/ace.min.css
-%%WWWDIR%%/css/bootstrap-3.4.0.css
-%%WWWDIR%%/css/bootstrap-3.4.0.min.css
+%%WWWDIR%%/css/bootstrap-3.4.1.css
+%%WWWDIR%%/css/bootstrap-3.4.1.min.css
 %%WWWDIR%%/css/bootstrap-datetimepicker-4.17.47.min.css
 %%WWWDIR%%/css/default.css
 %%WWWDIR%%/css/dropzone-5.5.0.css
@@ -827,8 +827,8 @@
 %%WWWDIR%%/js/ace.js
 %%WWWDIR%%/js/ace.min.js
 %%WWWDIR%%/js/adm_config_report.js
-%%WWWDIR%%/js/bootstrap-3.4.0.js
-%%WWWDIR%%/js/bootstrap-3.4.0.min.js
+%%WWWDIR%%/js/bootstrap-3.4.1.js
+%%WWWDIR%%/js/bootstrap-3.4.1.min.js
 %%WWWDIR%%/js/bootstrap-datetimepicker-4.17.47.min.js
 %%WWWDIR%%/js/bugFilter.js
 %%WWWDIR%%/js/common.js
