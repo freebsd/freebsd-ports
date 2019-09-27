@@ -872,6 +872,7 @@
     SUBDIR += p5-Text-Hyphen
     SUBDIR += p5-Text-LTSV
     SUBDIR += p5-Text-Language-Guess
+    SUBDIR += p5-Text-Locus
     SUBDIR += p5-Text-Lorem
     SUBDIR += p5-Text-Markdown
     SUBDIR += p5-Text-MarkdownTable

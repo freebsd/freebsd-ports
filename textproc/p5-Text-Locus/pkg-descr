@@ -1,0 +1,9 @@
+Text::Locus provides a class for representing locations in text files.
+A simple location consists of file name and line number, e.g. file:10.
+In its more complex form, the location represents a text fragment
+spanning several lines, such as file:10-45.  Such a fragment need not
+be contiguous, a valid location can also look like this:
+file:10-35,40-48.  Moreover, it can span multiple files as well:
+foo:10-35,40-48;bar:15,18.
+
+WWW: https://metacpan.org/release/Text-Locus
