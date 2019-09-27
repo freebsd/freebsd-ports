@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2017-10-05 10:11:23 UTC
+--- CMakeLists.txt.orig	2019-09-24 12:55:55 UTC
 +++ CMakeLists.txt
-@@ -177,6 +177,11 @@ option (APPLE_MULTIPLE_ARCHITECTURES
+@@ -183,6 +183,11 @@ option (APPLE_MULTIPLE_ARCHITECTURES
  # directory is present you get this behavior regardless.
  option (CONVERT_WARNINGS_TO_ERRORS "Convert warnings into errors?" OFF)
  
@@ -12,7 +12,7 @@
  set (LIBNAME Geographic)
  if (MSVC OR CMAKE_CONFIGURATION_TYPES)
    # For multi-config systems and for Visual Studio, the debug version of
-@@ -450,7 +455,7 @@ endif ()
+@@ -475,7 +480,7 @@ endif ()
  # documentation files into the source tree.  Skip Apple here because
  # man/makeusage.sh uses "head --lines -4" to drop the last 4 lines of a
  # file and there's no simple equivalent for MacOSX

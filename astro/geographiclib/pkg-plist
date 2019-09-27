@@ -60,8 +60,8 @@ lib/cmake/GeographicLib/geographiclib-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/GeographicLib/geographiclib-targets.cmake
 lib/libGeographic.a
 lib/libGeographic.so
-lib/libGeographic.so.17
-lib/libGeographic.so.17.1.2
+lib/libGeographic.so.19
+lib/libGeographic.so.19.0.0
 lib/node_modules/geographiclib/LICENSE.txt
 lib/node_modules/geographiclib/README.md
 lib/node_modules/geographiclib/geographiclib.js
@@ -146,6 +146,8 @@ sbin/geographiclib-get-magnetic
 %%MAGNETIC_WMM2010%%%%DATADIR%%/magnetic/wmm2010.wmm.cof
 %%MAGNETIC_WMM2015%%%%DATADIR%%/magnetic/wmm2015.wmm
 %%MAGNETIC_WMM2015%%%%DATADIR%%/magnetic/wmm2015.wmm.cof
+%%MAGNETIC_WMM2015V2%%%%DATADIR%%/magnetic/wmm2015v2.wmm
+%%MAGNETIC_WMM2015V2%%%%DATADIR%%/magnetic/wmm2015v2.wmm.cof
 share/matlab/geographiclib-legacy/Contents.m
 share/matlab/geographiclib-legacy/geocentricforward.m
 share/matlab/geographiclib-legacy/geocentricreverse.m
@@ -214,6 +216,7 @@ share/matlab/geographiclib/private/eatanhe.m
 share/matlab/geographiclib/private/geoid_file.m
 share/matlab/geographiclib/private/geoid_load_file.m
 share/matlab/geographiclib/private/norm2.m
+share/matlab/geographiclib/private/remx.m
 share/matlab/geographiclib/private/sincosdx.m
 share/matlab/geographiclib/private/sumx.m
 share/matlab/geographiclib/private/swap.m
