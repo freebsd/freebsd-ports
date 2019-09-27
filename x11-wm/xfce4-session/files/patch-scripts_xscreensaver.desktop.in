@@ -1,0 +1,7 @@
+--- scripts/xscreensaver.desktop.in.orig	2019-08-11 20:11:06 UTC
++++ scripts/xscreensaver.desktop.in
+@@ -7,3 +7,4 @@ Icon=preferences-desktop-screensaver
+ Exec=xscreensaver -no-splash
+ TryExec=xscreensaver
+ OnlyShowIn=XFCE;
++Hidden=true

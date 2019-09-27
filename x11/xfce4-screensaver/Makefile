@@ -2,6 +2,7 @@
 
 PORTNAME=	xfce4-screensaver
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -65,6 +66,7 @@ post-patch-PAM-on:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${SCREENSAVER_DIR}
+	@${REINPLACE_CMD} 's/^\(Name[^=]*=\)\(.*\)/\1XFCE \2/' ${STAGEDIR}${PREFIX}/etc/xdg/autostart/xfce4-screensaver.desktop
 
 post-install-PAM-on:
 	${INSTALL_DATA} ${FILESDIR}/xfce-screensaver.pam ${STAGEDIR}${PREFIX}/etc/pam.d/xfce-screensaver
