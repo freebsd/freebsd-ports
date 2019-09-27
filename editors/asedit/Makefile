@@ -3,15 +3,15 @@
 
 PORTNAME=	asedit
 PORTVERSION=	1.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors
 MASTER_SITES=	XCONTRIB/editors
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text editor for X/Motif
 
-USES=		imake:notall motif tar:Z
-USE_XORG=	ice sm x11 xext xmu xp xt
+USES=		imake:notall motif tar:Z xorg
+USE_XORG=	ice sm x11 xext xmu xt
 
 PLIST_FILES=	bin/asedit \
 		lib/X11/app-defaults/Asedit \
