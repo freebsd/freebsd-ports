@@ -11,9 +11,11 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Graphical front end to the UNIX diff command
 
+DEPRECATED=	Depends on deprecated libXp
+
 LICENSE=	MIT
 
-USES=		imake motif
+USES=		imake motif xorg
 USE_XORG=	ice sm x11 xext xmu xp xt
 
 DESKTOP_ENTRIES=	"mgdiff" "GUI front end to the UNIX diff command" \

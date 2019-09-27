@@ -10,8 +10,10 @@ MASTER_SITES=	XCONTRIB/office
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Personal and group calendar utility
 
+DEPRECATED=	Depends on deprecated libXp
+
 NO_CDROM=	Do not sell for profit
-USES=		imake motif
+USES=		imake motif xorg
 USE_XORG=	x11 xext xp xpm xt
 
 post-patch:

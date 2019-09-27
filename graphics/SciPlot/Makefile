@@ -10,9 +10,11 @@ MASTER_SITES=	XCONTRIB/widgets
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Full-featured Xt widget to display 2D data in a graph
 
+DEPRECATED=	Depends on deprecated libXp
+
 LICENSE=	GPLv2
 
-USES=		imake motif
+USES=		imake motif xorg
 USE_XORG=	xp xt x11
 MAKE_ENV=	EXTRA_DEFINES="-fPIC" LIBNAME=${LIBNAME}
 USE_LDCONFIG=	yes

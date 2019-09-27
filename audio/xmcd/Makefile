@@ -10,11 +10,13 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif CD player
 
+DEPRECATED=	Depends on deprecated libXp
+
 LIB_DEPENDS+=	libvorbis.so:audio/libvorbis \
 		libFLAC.so:audio/flac
 RUN_DEPENDS+=	lame:audio/lame
 
-USES=		imake motif ncurses
+USES=		imake motif ncurses xorg
 USE_XORG=	x11 xext xaw xmu xp xpm xt sm ice
 PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH:S/powerpc64/powerpc/} OPSYS=${OPSYS}
 SUB_FILES=	pkg-message

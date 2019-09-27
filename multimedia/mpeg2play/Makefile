@@ -10,7 +10,9 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/graphics/packages/mpeg/mpeg2play/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to play mpeg-2 movies on X displays
 
-USES=		imake motif
+DEPRECATED=	Depends on deprecated libXp
+
+USES=		imake motif xorg
 USE_XORG=	x11 xext xp xt
 ALL_TARGET=	mpeg2play
 
