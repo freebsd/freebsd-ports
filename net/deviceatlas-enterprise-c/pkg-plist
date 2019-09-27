@@ -6,7 +6,7 @@ include/dac_json.h
 lib/libda.so
 lib/libda.so.%%PORTVERSION%%
 lib/libci.so
-lib/libci.so.1.1.0
+lib/libci.so.1.1.1
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ci-example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/daexutil.h
