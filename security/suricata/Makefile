@@ -33,7 +33,7 @@ CPE_VENDOR=	openinfosecfoundation
 INSTALL_TARGET=		install-strip
 TEST_TARGET=		check
 
-OPTIONS_DEFINE=		IPFW JSON NETMAP NSS PORTS_PCAP PRELUDE \
+OPTIONS_DEFINE=		GEOIP IPFW JSON NETMAP NSS PORTS_PCAP PRELUDE \
 			PYTHON REDIS RUST TESTS
 OPTIONS_DEFINE_amd64=	HYPERSCAN
 OPTIONS_DEFAULT=	IPFW JSON NETMAP PYTHON RUST
@@ -44,6 +44,7 @@ OPTIONS_RADIO_SCRIPTS=	LUA LUAJIT
 
 SCRIPTS_DESC=		Scripting
 
+GEOIP_DESC=		GeoIP support
 HYPERSCAN_DESC=		Hyperscan support
 IPFW_DESC=		IPFW and IP Divert support for inline IDP
 JSON_DESC=		JSON output support
@@ -57,6 +58,9 @@ PYTHON_DESC=		Python-based update and control utilities
 REDIS_DESC=		Redis output support
 RUST_DESC=		Rust parser support
 TESTS_DESC=		Unit tests in suricata binary
+
+GEOIP_LIB_DEPENDS=		libmaxminddb.so:net/libmaxminddb
+GEOIP_CONFIGURE_ON=		--enable-geoip
 
 HYPERSCAN_LIB_DEPENDS=		libhs.so:devel/hyperscan
 HYPERSCAN_CONFIGURE_ON=		--with-libhs-includes=${LOCALBASE}/include \
