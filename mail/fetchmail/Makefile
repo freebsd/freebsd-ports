@@ -5,7 +5,7 @@ PORTNAME?=	fetchmail
 PORTVERSION=	6.3.26
 PORTREVISION?=	11
 CATEGORIES=	mail ipv6
-MASTER_SITES=	SF/${PORTNAME}/branch_6.3/ \
+MASTER_SITES=	SF/${PORTNAME}/branch_6.3-obsolete/ \
 		http://mandree.home.pages.de/${PORTNAME}/
 
 PATCH_SITES=	https://src.fedoraproject.org/rpms/fetchmail/raw/master/f/:fedora
