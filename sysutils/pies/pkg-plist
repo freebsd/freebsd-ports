@@ -1,0 +1,12 @@
+bin/piesctl
+%%INETD%%sbin/inetd
+sbin/pies
+%%NLS%%share/locale/de/LC_MESSAGES/pies.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pies.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pies.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pies.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pies.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pies.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/pies.mo
+%%DATADIR%%/1.4/include/pp-setup
+@dir /var/pies
