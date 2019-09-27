@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone
 
-USES=		autoreconf localbase:ldflags
+USES=		autoreconf compiler:c++11-lang localbase:ldflags
 
 OPTIONS_DEFINE=	MQTT
 OPTIONS_DEFAULT=MQTT
