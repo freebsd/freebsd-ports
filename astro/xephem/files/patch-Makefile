@@ -23,7 +23,7 @@
 +CLDFLAGS+= -g
 +CFLAGS+= $(LIBINC) $(CLDFLAGS) -Wall -I$(MOTIFI) -I/usr/local/include
 +LDFLAGS+= $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L/usr/local/lib
-+XLIBS = -lXm -lXp -lXt -lXext -lXmu -lX11 -lXft
++XLIBS = -lXm -lXt -lXext -lXmu -lX11 -lXft
 +LIBS = $(XLIBS) $(LIBLIB) -lm -lssl
  
  # static linking on Apple using X11 libs from ports
