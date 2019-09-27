@@ -2,25 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	netty
-PORTVERSION=	4.1.41
+PORTVERSION=	4.1.42
 DISTVERSIONSUFFIX=	.Final
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://dl.bintray.com/netty/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java NIO client server framework
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-BROKEN=		fails to extract
 
 USES=		cpe tar:bzip2
 USE_JAVA=	yes
 
 CPE_VENDOR=	netty_project
 JAVA_VERSION=	8+
+JAVA_EXTRACT=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.Final
 
