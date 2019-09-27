@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-openstack
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
