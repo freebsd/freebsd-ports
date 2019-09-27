@@ -10,10 +10,12 @@ MASTER_SITES=	http://www.clearskyinstitute.com/xephem/
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Interactive astronomical ephemeris program
 
+DEPRECATED=	Depends on deprecated libXp
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gmake groff jpeg motif tar:tgz ssl
+USES=		gmake groff jpeg motif tar:tgz ssl xorg
 USE_XORG=	xp xt xext xmu x11 xft
 
 LDFLAGS+=	-lfontconfig

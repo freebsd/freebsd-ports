@@ -11,10 +11,12 @@ DISTNAME=	llnlxftp2.1
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Motif FTP client
 
+DEPRECATED=	Depends on deprecated libXp
+
 PLIST_FILES=	bin/xftp lib/X11/app-defaults/XFtp \
 		man/man1/xftp.1.gz
 WRKSRC=		${WRKDIR}/llnlxftp2.1/sources
-USES=		imake motif tar:Z
+USES=		imake motif tar:Z xorg
 USE_XORG=	ice sm x11 xext xp xt
 
 CFLAGS+=	-Wno-implicit-int \

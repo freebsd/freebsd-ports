@@ -9,6 +9,8 @@ CATEGORIES=		science biology graphics perl5 python
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
 
+DEPRECATED=	Depends on deprecated libXp
+
 LICENSE=	GPLv2
 
 BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
@@ -28,7 +30,7 @@ RUN_DEPENDS=	endian:sysutils/endian \
 		R:math/R
 
 USES=		compiler:openmp gettext gl gmake gnome iconv jpeg:run motif \
-		perl5 python shebangfix tar:xz
+		perl5 python shebangfix tar:xz xorg
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 

@@ -12,6 +12,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	NCBI development toolkit, including BLAST 2 and GenBank/Entrez support
 
+DEPRECATED=	Depends on deprecated libXp
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libgmp.so:math/gmp \
 		libgnutls.so:security/gnutls \
@@ -25,7 +27,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libunistring.so:devel/libunistring \
 		libXp.so:x11/libXp
 
-USES=		gettext-runtime iconv jpeg motif
+USES=		gettext-runtime iconv jpeg motif xorg
 USE_XORG=	x11 xau xext xft xmu xrender xt
 
 SUB_FILES=	pkg-message

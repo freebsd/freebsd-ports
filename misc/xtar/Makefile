@@ -10,7 +10,9 @@ MASTER_SITES=	XCONTRIB/utilities
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View and manipulate contents of a tar file
 
-USES=		motif
+DEPRECATED=	Depends on deprecated libXp
+
+USES=		motif xorg
 USE_XORG=	ice sm x11 xext xp xt
 MAKEFILE=	Makefile.noimake
 ALL_TARGET=	${PORTNAME}
