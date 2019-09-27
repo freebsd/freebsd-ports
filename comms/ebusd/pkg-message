@@ -1,0 +1,21 @@
+[
+{
+  type: install
+  message: <<EOD
+To start ebusd as a daemon during startup, add
+
+    ebusd_enable="YES"
+
+to your /etc/rc.conf.
+
+Extra options can be found in startup script.
+
+To be able to access serial port from the ebusd daemon, you might want to
+add the following line:
+
+	add path 'ttyU0' mode 0660 group ebusd
+
+to your local devfs.rules(5) configuration.
+EOD
+}
+]

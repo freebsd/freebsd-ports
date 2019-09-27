@@ -1,0 +1,8 @@
+ebusd is a daemon for handling communication with eBUS devices connected to a
+2-wire bus system ("energy bus" used by numerous heating systems).
+
+It is known to run fine on regular PC hardware as well as on smaller devices
+like Fritzbox and Raspberry Pi. In order to use it, a hardware interface is
+necessary.
+
+WWW: https://github.com/john30/ebusd/wiki

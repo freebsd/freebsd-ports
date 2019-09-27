@@ -799,7 +799,7 @@ qbittorrent:*:850:850::0:0:qBittorrent Daemon User:/var/db/qbittorrent/conf:/usr
 cassandra:*:851:851::0:0:Cassandra DB Daemon User:/var/db/cassandra:/usr/sbin/nologin
 p0f:*:852:852::0:0:p0f unprivileged user:/var/empty:/usr/sbin/nologin
 _geodns:*:853:853::0:0:GeoDNS User:/var/empty:/usr/sbin/nologin
-# free: 854
+ebusd:*:854:854::0:0:eBUS Daemon user:/nonexistent:/usr/sbin/nologin
 # free: 855
 # free: 856
 # free: 857

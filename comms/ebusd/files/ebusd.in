@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# $FreeBSD$
+# 
+# PROVIDE: ebusd
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable ebusd:
+#
+#ebusd_enable (bool): set to "YES" to start domotics at boot
+#ebusd_user (str):    Default to ebusd, user for starting ebusd
+#ebusd_group (str):   Default to ebusd, group for stating ebusd
+#ebusd_pidfile (str): Custum PID file path and name
+#                        Default to "/var/run/ebusd/${hostname}.pid".
+#ebusd_args (str):    Custom additional arguments to be passed
+#                        Default to "-d /dev/ttyU0 --scanconfig --localhost"
+
+. /etc/rc.subr
+
+name="ebusd"
+rcvar="ebusd_enable"
+
+load_rc_config $name
+
+: ${ebusd_user:=ebusd}
+: ${ebusd_group:=ebusd}
+: ${ebusd_enable:=NO}
+: ${ebusd_args:="-d /dev/ttyU0 --scanconfig --localhost"}
+
+pidfile=${ebusd_pidfile:-"/var/run/ebusd/${hostname}.pid"}
+
+command="%%PREFIX%%/bin/ebusd"
+command_args="--pidfile ${pidfile} ${ebusd_args}"
+
+run_rc_command "$1"
