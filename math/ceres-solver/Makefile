@@ -66,7 +66,7 @@ TBB_CMAKE_BOOL=		TBB
 
 # XXX Unbundle googletest/googlemock
 TEST_CMAKE_BOOL=	BUILD_TESTING
-TEST_TEST_TARGET=	test ARGS="-V"
+TEST_TEST_TARGET=	test
 TEST_IMPLIES=		GFLAGS
 
 LAPACK_DESC=		Linear Algebra PACKage
