@@ -1,3 +1,3 @@
-TIMESTAMP = 1568892935
-SHA256 (google-cloud-storage-1.19.1.tar.gz) = a82b5d60a2ec366a14746f17910dd8348c36a4aeec36da10021307e1951fcc7f
-SIZE (google-cloud-storage-1.19.1.tar.gz) = 5395947
+TIMESTAMP = 1569591530
+SHA256 (google-cloud-storage-1.20.0.tar.gz) = 2e7e2435978bda1c209b70a9a00b8cbc53c3b00d6f09eb2c991ebba857babf24
+SIZE (google-cloud-storage-1.20.0.tar.gz) = 5403047
