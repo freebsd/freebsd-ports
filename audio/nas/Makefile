@@ -3,7 +3,7 @@
 
 PORTNAME=	nas
 PORTVERSION=	1.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}%20%28stable%29
 EXTRACT_SUFX=	.src.tar.gz
@@ -11,11 +11,11 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Network Audio System
 
-USES=		imake perl5 shebangfix
+USES=		imake perl5 shebangfix xorg
 SHEBANG_FILES=	clients/audio/auscope/auscope
 USE_PERL5=	run
 USE_CSTD=	gnu89
-USE_XORG=	x11 xext xt xau sm ice xp xpm xmu xaw
+USE_XORG=	x11 xext xt xau sm ice xpm xmu xaw
 USE_LDCONFIG=	yes
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
 MAKE_JOBS_UNSAFE=	yes
