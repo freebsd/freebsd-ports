@@ -5,7 +5,6 @@ PORTNAME=	ocrad
 DISTVERSION=	0.27
 CATEGORIES=	graphics
 MASTER_SITES=	GNU
-EXTRACT_SUFX=	.tar.lz
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OCR program implemented as filter
@@ -13,6 +12,7 @@ COMMENT=	OCR program implemented as filter
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		tar:lz
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC" --mandir=${PREFIX}/man --infodir=${PREFIX}/info
 USE_LDCONFIG=	yes
