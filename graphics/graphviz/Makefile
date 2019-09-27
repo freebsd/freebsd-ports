@@ -3,7 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.42.2
-PORTREVISION=	0
+PORTREVISION=	1
 MASTER_SITES=	https://gitlab.com/graphviz/graphviz/-/archive/${PORTVERSION}/
 CATEGORIES=	graphics tk
 MAINTAINER=	dinoex@FreeBSD.org
@@ -77,7 +77,7 @@ GUILE_DESC=	Guile bindings (swig)
 TK_DESC=	TK toolkit support
 NVTHREADS_DESC=	Link with threads (needed for nvidia)
 
-XPM_USE=	XORG=xaw,xpm,xmu,xt,sm,ice,xext,x11,xau,xdmcp,xp
+XPM_USE=	XORG=xaw,xpm,xmu,xt,sm,ice,xext,x11,xau,xdmcp
 ICONV_USES=	iconv
 NLS_USES=	gettext
 PANGOCAIRO_USE=	GNOME=pango,cairo XORG=xrender,x11,xau,xdmcp
