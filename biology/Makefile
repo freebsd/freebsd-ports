@@ -158,6 +158,7 @@
     SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee
     SUBDIR += tabixpp
+    SUBDIR += tophat
     SUBDIR += treekin
     SUBDIR += treepuzzle
     SUBDIR += trimadap
