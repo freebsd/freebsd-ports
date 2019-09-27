@@ -1,24 +1,24 @@
---- Makefile.orig	2009-07-21 15:04:13 UTC
+--- Makefile.orig	2013-06-14 20:51:43 UTC
 +++ Makefile
-@@ -49,17 +49,17 @@ OBJECTS = \
+@@ -21,7 +21,7 @@
+ # Include machine/platform specific information
+ include machdef.mk
+ 
+-CFLAGS=-I. $(TCL_INCLUDE) $(X_INCLUDE) $(OPTIONS) $(MACHINESPEC)
++CFLAGS+=-I. $(TCL_INCLUDE) $(X_INCLUDE) $(OPTIONS) $(MACHINESPEC)
+ 
+ OBJECTS = \
+ 	e93.o \
+@@ -49,10 +49,10 @@ OBJECTS = \
  	abort.o \
  	errors.o
  
--all : libgui e93
+-all : xgui/libgui.a e93
 +all : e93
  
  e93 : $(OBJECTS) xgui/libgui.a
 -	$(CC) -O $(OBJECTS) -Lxgui -lgui -lstdc++ \
 +	$(CC) $(CFLAGS:N-D*:N-I*) $(OBJECTS) -Lxgui -lgui \
- 		$(X_LIB) -lX11 -lXinerama \
+ 		$(X_LIB) -lX11 -lXmu -lXinerama \
  		$(TCL_LIB) -ltcl$(TCL_VERSION) \
  		$(EXTRALIBS) \
- 		-o e93
- 
--libgui :
--	cd xgui;make
-+xgui/libgui.a :
-+	$(MAKE) -C xgui
- 
- clean :
- 	cd xgui;make clean
