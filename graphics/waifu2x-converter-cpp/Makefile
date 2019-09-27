@@ -27,7 +27,7 @@ CMAKE_ARGS=	-DOPENCV_PREFIX:PATH="${LOCALBASE}" \
 		-DOpenCL_LIBRARY:FILEPATH="${LOCALBASE}/lib/libOpenCL.so"
 CMAKE_ON=	INSTALL_MODELS
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (opencv deps)
-TEST_TARGET=	test ARGS="-V"
+TEST_TARGET=	test
 USE_LDCONFIG=	yes
 PLIST_FILES=	bin/${PORTNAME} \
 		include/w2xconv.h \
