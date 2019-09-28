@@ -1,5 +1,5 @@
-TIMESTAMP = 1568637383
-SHA256 (traefik-webui-static-1.7.16.tar.gz) = acb7f66955c86f590c8aa641b4d03cb87b2d52de5b010ca59db556a7c546884f
-SIZE (traefik-webui-static-1.7.16.tar.gz) = 921154
-SHA256 (containous-traefik-v1.7.16_GH0.tar.gz) = 88097a6f2a48fada5135adfd0e65ab9fa06d5e8221e5ecbfa319baf1cceebe3f
-SIZE (containous-traefik-v1.7.16_GH0.tar.gz) = 11366255
+TIMESTAMP = 1569675862
+SHA256 (traefik-webui-static-1.7.18.tar.gz) = 59c92fd26618a7d135f58b0041c41544624c36b33392a55cb2e8d6a770b604f0
+SIZE (traefik-webui-static-1.7.18.tar.gz) = 921733
+SHA256 (containous-traefik-v1.7.18_GH0.tar.gz) = 3c4951d98f32347c6b1ceeb2358ef3c5d7085a71b28580acf1e19622683c1b1d
+SIZE (containous-traefik-v1.7.18_GH0.tar.gz) = 11366814
