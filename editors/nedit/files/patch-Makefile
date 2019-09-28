@@ -1,6 +1,6 @@
---- Makefile.orig	2014-12-07 00:03:44.000000000 -0500
-+++ Makefile	2015-03-30 08:28:03.000000000 -0400
-@@ -17,6 +17,7 @@
+--- Makefile.orig	2017-02-04 18:14:54 UTC
++++ Makefile
+@@ -16,6 +16,7 @@ all:
  	@echo "Please specify target:"
  	@echo "(For example, type \"make linux\" for a Linux system.)"
  	@(cd makefiles && ls -C Makefile* | sed -e 's/Makefile.//g')
@@ -8,16 +8,16 @@
  
  .DEFAULT:
  	@- (cd Microline/XmL;   if [ -f ../../makefiles/Makefile.$@ -a ! -f ./Makefile.$@ ];\
-@@ -44,6 +45,12 @@
+@@ -42,6 +43,12 @@ docs:
+ # We need a "dev-all" target that builds the docs plus binaries, but
  # that doesn't work since we require the user to specify the target.  More
  # thought is needed
- 
++
 +install::
 +	(cd source; make -f Makefile.freebsd install)
 +	${INSTALL} ${COPY} -m 644 doc/nedit.man $(DESTDIR)${PREFIX}/man/man1/nedit.1
 +	${INSTALL} ${COPY} -m 644 doc/nc.man $(DESTDIR)${PREFIX}/man/man1/nclient.1
 +	${INSTALL} ${COPY} -m 644 NEdit.ad $(DESTDIR)${LOCALBASE}/lib/X11/app-defaults/NEdit.ad
-+
+ 
  clean:
  	(cd util;   $(MAKE) -f Makefile.common clean)
- 	(cd Xlt;    $(MAKE) -f Makefile.common clean)

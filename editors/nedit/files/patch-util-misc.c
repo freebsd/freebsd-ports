@@ -1,6 +1,6 @@
---- util/misc.c.orig	2004-08-09 18:20:00.000000000 -0400
-+++ util/misc.c	2012-02-03 02:54:30.000000000 -0500
-@@ -383,7 +383,10 @@
+--- util/misc.c.orig	2017-02-04 16:15:41 UTC
++++ util/misc.c
+@@ -400,7 +400,10 @@ Boolean FindBestVisual(Display *display, const char *a
  	*colormap = cachedColormap;
  	return (*visual == DefaultVisual(display, screen));
      }
