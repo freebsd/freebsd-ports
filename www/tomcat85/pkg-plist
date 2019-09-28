@@ -34,10 +34,13 @@
 %%T%%/lib/tomcat-api.jar
 %%T%%/lib/tomcat-coyote.jar
 %%T%%/lib/tomcat-dbcp.jar
+%%T%%/lib/tomcat-i18n-de.jar
 %%T%%/lib/tomcat-i18n-es.jar
 %%T%%/lib/tomcat-i18n-fr.jar
 %%T%%/lib/tomcat-i18n-ja.jar
+%%T%%/lib/tomcat-i18n-ko.jar
 %%T%%/lib/tomcat-i18n-ru.jar
+%%T%%/lib/tomcat-i18n-zh-CN.jar
 %%T%%/lib/tomcat-jdbc.jar
 %%T%%/lib/tomcat-jni.jar
 %%T%%/lib/tomcat-util-scan.jar
@@ -179,6 +182,7 @@
 %%DOCS%%%%T%%/webapps/docs/index.html
 %%DOCS%%%%T%%/webapps/docs/introduction.html
 %%DOCS%%%%T%%/webapps/docs/jasper-howto.html
+%%DOCS%%%%T%%/webapps/docs/jaspicapi/index.html
 %%DOCS%%%%T%%/webapps/docs/jdbc-pool.html
 %%DOCS%%%%T%%/webapps/docs/jndi-datasource-examples-howto.html
 %%DOCS%%%%T%%/webapps/docs/jndi-resources-howto.html
@@ -216,9 +220,14 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/HelloWorldExample.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/HelloWorldExample.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings.properties
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_de.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_es.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_fr.properties
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_ja.properties
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_ko.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_pt.properties
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_ru.properties
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_zh_CN.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/RequestHeaderExample.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/RequestHeaderExample.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/RequestInfoExample.class
