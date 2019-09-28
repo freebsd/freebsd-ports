@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190925
-PORTREVISION=	1
+PORTVERSION=	s20190928
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,13 +16,13 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	b074992e
+GH_TAGNAME=	4245f89e
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler32-1.0.4 \
 		aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
-		aom-sys-0.1.2 \
+		aom-sys-0.1.3 \
 		arbitrary-0.2.0 \
 		arc-swap-0.4.3 \
 		arg_enum_proc_macro-0.3.0 \
@@ -67,7 +66,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		either-1.5.3 \
 		encode_unicode-0.3.6 \
 		env_logger-0.6.2 \
-		err-derive-0.1.5 \
+		err-derive-0.1.6 \
 		error-chain-0.10.0 \
 		failure-0.1.5 \
 		failure_derive-0.1.5 \
@@ -107,6 +106,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		ppv-lite86-0.2.5 \
 		pretty_assertions-0.6.1 \
 		pretty_env_logger-0.3.1 \
+		proc-macro-error-0.2.6 \
 		proc-macro-hack-0.5.9 \
 		proc-macro2-0.4.30 \
 		proc-macro2-1.0.4 \
@@ -145,6 +145,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		syn-0.15.44 \
 		syn-1.0.5 \
 		synstructure-0.10.2 \
+		synstructure-0.12.0 \
 		termcolor-1.0.5 \
 		termios-0.3.1 \
 		textwrap-0.11.0 \
