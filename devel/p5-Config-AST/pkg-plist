@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Config/AST.pm
+%%SITE_PERL%%/Config/AST/Follow.pm
+%%SITE_PERL%%/Config/AST/Node.pm
+%%SITE_PERL%%/Config/AST/Root.pm
+%%SITE_PERL%%/Config/AST/Node/Null.pm
+%%SITE_PERL%%/Config/AST/Node/Section.pm
+%%SITE_PERL%%/Config/AST/Node/Value.pm
+%%PERL5_MAN3%%/Config::AST::Follow.3.gz
+%%PERL5_MAN3%%/Config::AST::Node::Null.3.gz
+%%PERL5_MAN3%%/Config::AST::Node::Section.3.gz
+%%PERL5_MAN3%%/Config::AST::Node::Value.3.gz
+%%PERL5_MAN3%%/Config::AST::Node.3.gz
+%%PERL5_MAN3%%/Config::AST::Root.3.gz
+%%PERL5_MAN3%%/Config::AST.3.gz
