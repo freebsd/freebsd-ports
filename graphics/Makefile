@@ -657,8 +657,6 @@
     SUBDIR += p5-Geo-GDAL
     SUBDIR += p5-Geo-GML
     SUBDIR += p5-Geo-Gpx
-    SUBDIR += p5-Geo-Point
-    SUBDIR += p5-Geo-Proj4
     SUBDIR += p5-Geometry-Primitive
     SUBDIR += p5-Gimp
     SUBDIR += p5-Google-Chart
@@ -809,7 +807,6 @@
     SUBDIR += price
     SUBDIR += processing
     SUBDIR += proj
-    SUBDIR += proj5
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
     SUBDIR += ptex

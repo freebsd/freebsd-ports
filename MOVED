@@ -12973,3 +12973,9 @@ comms/jpilot-picsnvideos||2019-09-24|Has expired: obsolete technology
 devel/libee||2019-09-24|Has expired: No longer required by rsyslog, which was its only consumer.  No longer maintained upstream
 devel/libmal||2019-09-24|Has expired: obsolete technology
 print/py-fonttools-lxml-ufo|print/py-fonttools|2019-09-25|Changed for new way for optional dependencies
+misc/zygrib||2019-09-28|Has expired: Can not build with graphics/proj
+misc/survex||2019-09-28|Has expired: Can not build with graphics/proj
+graphics/proj5||2019-09-28|Has expired: Please use graphics/proj instead
+graphics/p5-Geo-Proj4||2019-09-28|Has expired: Can not build with graphics/proj
+misc/zygrib-maps||2019-09-28|Removed, depends on expired misc/zygrib
+graphics/p5-Geo-Point||2019-09-28|Removed, depends on expired graphics/p5-Geo-Proj4

@@ -1,7 +1,0 @@
-Geo::Point tries to abstract coordinate systems. It does not
-try to solve all the problems itself, but will call-out for
-helper modules when computation has to be done.
-
-The module is heavily resting on Math::Polygon.
-
-WWW: https://metacpan.org/release/Geo-Point
