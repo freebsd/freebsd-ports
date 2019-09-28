@@ -3,7 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.42.2
-PORTREVISION=	1
+PORTREVISION=	2
 MASTER_SITES=	https://gitlab.com/graphviz/graphviz/-/archive/${PORTVERSION}/
 CATEGORIES=	graphics tk
 MAINTAINER=	dinoex@FreeBSD.org
@@ -83,9 +83,10 @@ NLS_USES=	gettext
 PANGOCAIRO_USE=	GNOME=pango,cairo XORG=xrender,x11,xau,xdmcp
 GTK2_USE=	XORG=sm,ice,xext,xinerama,xi,xrandr,xcursor,xfixes GNOME=gtk20
 GNOMEUI_USE=	GNOME=libgnomeui
-SMYRNA_USE=	GNOME=libglade2,pangox-compat GL=glut
+SMYRNA_USE=	GNOME=libglade2,pangox-compat,gdkpixbuf2 GL=glut,glu,gl
 GHOSTSCRIPT_USES=ghostscript
 PERL_USES=	perl5
+PHP_USE=	GNOME=libxml2
 PHP_USES=	php:build
 PYTHON_USES=	python:2.7,build
 RUBY_USE=	RUBY=yes
@@ -101,6 +102,9 @@ SMYRNA_LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2 \
 DEVIL_LIB_DEPENDS=	libIL.so:graphics/devil
 GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
 			libgc-threaded.so:devel/boehm-gc-threaded
+PHP_LIB_DEPENDS=	libpcre.so:devel/pcre \
+			libargon2.so:security/libargon2
+GHOSTSCRIPT_LIB_DEPENDS=	libgs.so:print/${_GS_PORT}
 
 XPM_CONFIGURE_WITH=		x
 DIGCOLA_CONFIGURE_WITH=		digcola
