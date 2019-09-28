@@ -3,7 +3,7 @@
 
 PORTNAME=	ncbi-toolkit
 DISTVERSION=	2017.01.06	# containing BLAST v2.2.27 (? is this true)
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi
@@ -11,8 +11,6 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	NCBI development toolkit, including BLAST 2 and GenBank/Entrez support
-
-DEPRECATED=	Depends on deprecated libXp
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libgmp.so:math/gmp \
@@ -24,8 +22,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
 		libtasn1.so:security/libtasn1 \
 		libtspi.so:security/trousers \
-		libunistring.so:devel/libunistring \
-		libXp.so:x11/libXp
+		libunistring.so:devel/libunistring
 
 USES=		gettext-runtime iconv jpeg motif xorg
 USE_XORG=	x11 xau xext xft xmu xrender xt
@@ -41,6 +38,8 @@ post-patch:
 		'/^NCBI_CC/s|=.*|= ${CC}| ; \
 		 /^NCBI_LDFLGS1/s|=.*|= ${LDFLAGS}| ; \
 		 /^NCBI_OPTFLAG/s|= .*|= ${CFLAGS}| ; \
+		 /^NCBI_VIBLIBS/s|-lXp\ || ; \
+		 /^NCBI_DISTVIBLIBS/s|-lXp\ || ; \
 		 s|-I/usr/X11R6/include||g ; \
 		 s|-L/usr/X11R6/lib||g ; \
 		 s|/usr/local|${LOCALBASE}|g ; \
