@@ -1,0 +1,159 @@
+From 87626c2707cc0d82e49e160ab3c85430ff33534f Mon Sep 17 00:00:00 2001
+From: Matthias Andree <matthias.andree@gmx.de>
+Date: Sat, 24 Aug 2019 17:53:08 +0200
+Subject: [PATCH] Properly report size of mailboxes of 2 GibiB or above.
+
+To fix Debian Bug#873668, reported by Andreas Schmidt.
+This requires C99's new long long type.
+---
+ NEWS        | 7 +++++++
+ driver.c    | 7 ++++---
+ etrn.c      | 2 +-
+ fetchmail.h | 2 +-
+ imap.c      | 2 +-
+ odmr.c      | 2 +-
+ pop2.c      | 2 +-
+ pop3.c      | 4 ++--
+ 8 files changed, 18 insertions(+), 10 deletions(-)
+
+diff --git a/NEWS b/NEWS
+index c01f9df9..9485edca 100644
+--- a/NEWS
++++ b/NEWS
+@@ -63,5 +63,12 @@
+ 
+ --------------------------------------------------------------------------------
+ 
++## BUG FIXES
++* fetchmail can now report mailbox sizes of 2^31 octets and beyond.
++  This requires C99 support (for the long long type).
++  Fixes Debian Bug#873668, reported by Andreas Schmidt.
++
++--------------------------------------------------------------------------------
++
+ fetchmail-6.4.1 (released 2019-09-28, 27473 LoC):
+ 
+diff --git a/driver.c b/driver.c
+index d21a32ab..a5033729 100644
+--- a/driver.c
++++ b/driver.c
+@@ -932,7 +932,7 @@ static int do_session(
+     {
+ 	/* sigsetjmp returned zero -> normal operation */
+ 	char buf[MSGBUFSIZE+1], *realhost;
+-	int count, newm, bytes;
++	int count, newm;
+ 	int fetches, dispatches, transient_errors, oldphase;
+ 	struct idlist *idp;
+ 
+@@ -1306,6 +1306,7 @@ is restored."));
+ 
+ 		/* compute # of messages and number of new messages waiting */
+ 		stage = STAGE_GETRANGE;
++		unsigned long long bytes;
+ 		err = (ctl->server.base_protocol->getrange)(mailserver_socket, ctl, idp->id, &count, &newm, &bytes);
+ 		if (err != 0)
+ 		    goto cleanUp;
+@@ -1335,10 +1336,10 @@ is restored."));
+ 							  "%d messages for %s",
+ 							  count), 
+ 				  count, buf);
+-			if (bytes == -1)
++			if (bytes == (unsigned long long)-1) // mailbox size unsupported
+ 			    report_complete(stdout, ".\n");
+ 			else
+-			    report_complete(stdout, GT_(" (%d octets).\n"), bytes);
++			    report_complete(stdout, GT_(" (%llu octets).\n"), bytes);
+ 		    }
+ 		    else
+ 		    {
+diff --git a/etrn.c b/etrn.c
+index f3fab0ce..12b9d3fd 100644
+--- a/etrn.c
++++ b/etrn.c
+@@ -31,7 +31,7 @@ static int etrn_ok (int sock, char *argbuf)
+ }
+ 
+ static int etrn_getrange(int sock, struct query *ctl, const char *id, 
+-			 int *countp, int *newp, int *bytes)
++			 int *countp, int *newp, unsigned long long *bytes)
+ /* send ETRN and interpret the response */
+ {
+     int ok, opts;
+diff --git a/fetchmail.h b/fetchmail.h
+index 23ba6e6e..72259e10 100644
+--- a/fetchmail.h
++++ b/fetchmail.h
+@@ -210,7 +210,7 @@ struct method		/* describe methods for protocol state machine */
+ 				/* response_parsing function */
+     int (*getauth)(int, struct query *, char *);
+ 				/* authorization fetcher */
+-    int (*getrange)(int, struct query *, const char *, int *, int *, int *);
++    int (*getrange)(int, struct query *, const char *, int *, int *, unsigned long long *);
+ 				/* get message range to fetch */
+     int (*getsizes)(int, int, int *);
+ 				/* get sizes of messages */
+diff --git a/imap.c b/imap.c
+index 7b80679a..7836acd7 100644
+--- a/imap.c
++++ b/imap.c
+@@ -883,7 +883,7 @@ static int imap_search(int sock, struct query *ctl, int count)
+ static int imap_getrange(int sock, 
+ 			 struct query *ctl, 
+ 			 const char *folder, 
+-			 int *countp, int *newp, int *bytes)
++			 int *countp, int *newp, unsigned long long *bytes)
+ /* get range of messages to be fetched */
+ {
+     int ok;
+diff --git a/odmr.c b/odmr.c
+index 85decb6d..d1c011c4 100644
+--- a/odmr.c
++++ b/odmr.c
+@@ -36,7 +36,7 @@ static int odmr_ok (int sock, char *argbuf)
+ }
+ 
+ static int odmr_getrange(int sock, struct query *ctl, const char *id, 
+-			 int *countp, int *newp, int *bytes)
++			 int *countp, int *newp, unsigned long long *bytes)
+ /* send ODMR and then run a reverse SMTP session */
+ {
+     int ok, opts, smtp_sock;
+diff --git a/pop2.c b/pop2.c
+index 7c843616..5a5a1bd1 100644
+--- a/pop2.c
++++ b/pop2.c
+@@ -80,7 +80,7 @@ static int pop2_getauth(int sock, struct query *ctl, char *buf)
+ }
+ 
+ static int pop2_getrange(int sock, struct query *ctl, const char *folder, 
+-			 int *countp, int *newp, int *bytes)
++			 int *countp, int *newp, unsigned long long *bytes)
+ /* get range of messages to be fetched */
+ {
+     (void)ctl;
+diff --git a/pop3.c b/pop3.c
+index 6efe1b7e..25efbaad 100644
+--- a/pop3.c
++++ b/pop3.c
+@@ -969,7 +969,7 @@ static int pop3_slowuidl( int sock,  struct query *ctl, int *countp, int *newp)
+ static int pop3_getrange(int sock, 
+ 			 struct query *ctl,
+ 			 const char *folder,
+-			 int *countp, int *newp, int *bytes)
++			 int *countp, int *newp, unsigned long long *bytes)
+ /* get range of messages to be fetched */
+ {
+     int ok;
+@@ -992,7 +992,7 @@ static int pop3_getrange(int sock,
+     if (ok == 0) {
+ 	int asgn;
+ 
+-	asgn = sscanf(buf,"%d %d", countp, bytes);
++	asgn = sscanf(buf,"%d %llu", countp, bytes);
+ 	if (asgn != 2)
+ 		return PS_PROTOCOL;
+     } else
+-- 
+2.22.0
+
