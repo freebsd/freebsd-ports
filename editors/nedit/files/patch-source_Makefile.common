@@ -1,6 +1,6 @@
---- source/Makefile.common.orig	2004-03-21 22:25:56.000000000 +0800
-+++ source/Makefile.common	2014-06-15 11:03:55.335101520 +0800
-@@ -28,6 +28,10 @@ nedit: $(OBJS) ../util/libNUtil.a $(XMLL
+--- source/Makefile.common.orig	2017-02-04 16:15:41 UTC
++++ source/Makefile.common
+@@ -27,6 +27,10 @@ nedit: $(OBJS) ../util/libNUtil.a $(XMLLIB) $(XLTLIB)
  nc: nc.o server_common.o ../util/libNUtil.a
  	$(CC) $(CFLAGS) nc.o server_common.o ../util/libNUtil.a $(LIBS) -o $@
  

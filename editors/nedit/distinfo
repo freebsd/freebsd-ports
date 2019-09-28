@@ -1,4 +1,5 @@
-SHA256 (nedit-5.6a-src.tar.gz) = 53677983cb6c91c5da1fcdcac90f7f9a193f08fa13b7a6330bc9ce21f9461eed
-SIZE (nedit-5.6a-src.tar.gz) = 1353454
+TIMESTAMP = 1569629725
+SHA256 (nedit-5.7-src.tar.gz) = add9ac79ff973528ad36c86858238bac4f59896c27dbf285cbe6a4d425fca17a
+SIZE (nedit-5.7-src.tar.gz) = 1344754
 SHA256 (nedit.app-defaults) = f7dd96054854d2831d77820c2640207ac1fb41f97a442a160a4d576b6499b600
 SIZE (nedit.app-defaults) = 7634
