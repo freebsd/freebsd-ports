@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-For pointers how to configure fetchmail in daemon mode
-please consult %%PREFIX%%/etc/rc.d/fetchmail.
-EOM
-}
-]
