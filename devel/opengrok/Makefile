@@ -4,7 +4,7 @@ PORTNAME=	opengrok
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	devel java
-MASTER_SITES=	https://github.com/OpenGrok/OpenGrok/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/oracle/opengrok/releases/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and powerful code search and cross-reference engine
@@ -12,10 +12,6 @@ COMMENT=	Fast and powerful code search and cross-reference engine
 LICENSE=	CDDL APACHE20
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
-
-BROKEN=		unfetchable
-DEPRECATED=	Unfetchable, unmaintained
-EXPIRATION_DATE=	2019-10-16
 
 RUN_DEPENDS=	exctags:devel/ctags
 
