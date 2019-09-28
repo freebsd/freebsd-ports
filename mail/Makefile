@@ -132,7 +132,6 @@
     SUBDIR += fastforward
     SUBDIR += fdm
     SUBDIR += fetchmail
-    SUBDIR += fetchmail64
     SUBDIR += fetchmailconf
     SUBDIR += filtermail
     SUBDIR += findmaildirs

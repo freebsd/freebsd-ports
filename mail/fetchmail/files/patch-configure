@@ -1,5 +1,5 @@
---- configure.orig	2013-04-23 21:36:55 UTC
-+++ configure
+--- a/configure.orig	2013-04-23 21:36:55 UTC
++++ b/configure
 @@ -9552,11 +9552,11 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  #ifdef __cplusplus
  extern "C"
@@ -28,26 +28,3 @@
    ;
    return 0;
  }
-@@ -10131,6 +10131,22 @@ fi
- 
- cat >>confdefs.h <<_ACEOF
- #define HAVE_DECL_SSLV2_CLIENT_METHOD $ac_have_decl
-+_ACEOF
-+
-+	;;
-+esac
-+
-+case "$LIBS" in *-lssl*)
-+	ac_fn_c_check_decl "$LINENO" "SSLv3_client_method" "ac_cv_have_decl_SSLv3_client_method" "#include <openssl/ssl.h>
-+"
-+if test "x$ac_cv_have_decl_SSLv3_client_method" = xyes; then :
-+  ac_have_decl=1
-+else
-+  ac_have_decl=0
-+fi
-+
-+cat >>confdefs.h <<_ACEOF
-+#define HAVE_DECL_SSLV3_CLIENT_METHOD $ac_have_decl
- _ACEOF
- 
- 	;;

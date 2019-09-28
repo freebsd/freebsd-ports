@@ -12980,3 +12980,4 @@ graphics/p5-Geo-Proj4||2019-09-28|Has expired: Can not build with graphics/proj
 misc/zygrib-maps||2019-09-28|Removed, depends on expired misc/zygrib
 graphics/p5-Geo-Point||2019-09-28|Removed, depends on expired graphics/p5-Geo-Proj4
 x11/rubygem-gnome2|x11/rubygem-gnome|2019-09-28|Upstream changed the project name from Ruby-GNOME2 to Ruby-GNOME
+mail/fetchmail64|mail/fetchmail|2019-09-28|mail/fetchmail now provides the same version

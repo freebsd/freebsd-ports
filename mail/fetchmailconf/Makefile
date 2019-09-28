@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	fetchmailconf
-PORTREVISION=	1
 DISTNAME=	fetchmail-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	chalpin@cs.wisc.edu
