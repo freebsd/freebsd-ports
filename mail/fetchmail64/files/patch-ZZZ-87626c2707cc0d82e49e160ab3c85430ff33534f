@@ -20,7 +20,7 @@ diff --git a/NEWS b/NEWS
 index c01f9df9..9485edca 100644
 --- a/NEWS
 +++ b/NEWS
-@@ -63,6 +63,13 @@
+@@ -63,5 +63,12 @@
  
  --------------------------------------------------------------------------------
  
@@ -31,9 +31,8 @@ index c01f9df9..9485edca 100644
 +
 +--------------------------------------------------------------------------------
 +
- fetchmail-6.4.0 (released 2019-09-27, 27429 LoC):
+ fetchmail-6.4.1 (released 2019-09-28, 27473 LoC):
  
- # NOTE THAT FETCHMAIL IS NO LONGER PUBLISHED THROUGH IBIBLIO.
 diff --git a/driver.c b/driver.c
 index d21a32ab..a5033729 100644
 --- a/driver.c
