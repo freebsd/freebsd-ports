@@ -1,18 +1,6 @@
---- agent/mibgroup/udp-mib/data_access/udp_endpoint_freebsd4.c.orig	2014-12-08 12:23:22.000000000 -0800
-+++ agent/mibgroup/udp-mib/data_access/udp_endpoint_freebsd4.c	2017-04-07 16:05:05.752849000 -0700
-@@ -153,7 +153,11 @@
- #endif
- 
- #if !defined(NETSNMP_ENABLE_IPV6)
-+#if __FreeBSD_version >= 1200026
-+	if (pcb.inp_vflag & INP_IPV6)
-+#else
-         if (pcb.xi_inp.inp_vflag & INP_IPV6)
-+#endif
- 	    continue;
- #endif
- 
-@@ -164,9 +168,24 @@
+--- agent/mibgroup/udp-mib/data_access/udp_endpoint_freebsd4.c.orig	2018-07-16 14:33:40 UTC
++++ agent/mibgroup/udp-mib/data_access/udp_endpoint_freebsd4.c
+@@ -168,9 +168,24 @@ _load(netsnmp_container *container, u_int load_flags)
          }
  
          /** oddly enough, these appear to already be in network order */
@@ -37,8 +25,8 @@
 -        entry->pid = 0;
          
          /** the addr string may need work */
- 	if (pcb.xi_inp.inp_vflag & INP_IPV6) {
-@@ -179,6 +198,8 @@
+ #ifdef INP_ISIPV6
+@@ -187,6 +202,8 @@ _load(netsnmp_container *container, u_int load_flags)
  	    memcpy(entry->loc_addr, &pcb.xi_inp.inp_laddr, 4);
  	    memcpy(entry->rmt_addr, &pcb.xi_inp.inp_faddr, 4);
  	}
@@ -47,12 +35,12 @@
  
          /*
           * add entry to container
-@@ -187,6 +208,8 @@
+@@ -194,6 +211,8 @@ _load(netsnmp_container *container, u_int load_flags)
+ 	entry->index = CONTAINER_SIZE(container) + 1;
          CONTAINER_INSERT(container, entry);
      }
- 
-+    free(udpcb_buf);
 +
-     if(rc<0)
-         return rc;
++    free(udpcb_buf);
+ 
+     free(udpcb_buf);
  

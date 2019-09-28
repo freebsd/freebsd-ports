@@ -1,6 +1,6 @@
---- agent/mibgroup/mibII/tcpTable.c.orig	2017-03-15 17:46:37.000000000 +0000
-+++ agent/mibgroup/mibII/tcpTable.c	2017-03-15 17:46:37.000000000 +0000
-@@ -96,7 +96,11 @@
+--- agent/mibgroup/mibII/tcpTable.c.orig	2018-07-16 14:33:40 UTC
++++ agent/mibgroup/mibII/tcpTable.c
+@@ -120,7 +120,11 @@ struct netsnmp_tcpConnEntry_s {
  
  typedef struct netsnmp_inpcb_s netsnmp_inpcb;
  struct netsnmp_inpcb_s {
@@ -12,7 +12,7 @@
      int             state;
      netsnmp_inpcb  *inp_next;
  };
-@@ -301,8 +305,10 @@
+@@ -330,8 +334,10 @@ tcpTable_handler(netsnmp_mib_handler          *handler
  #ifndef NETSNMP_FEATURE_REMOVE_TCP_COUNT_CONNECTIONS
  int
  TCP_Count_Connections( void ) {
@@ -23,7 +23,7 @@
  }
  #endif /* NETSNMP_FEATURE_REMOVE_TCP_COUNT_CONNECTIONS */
  
-@@ -923,12 +929,20 @@
+@@ -988,12 +994,20 @@ tcpTable_load(netsnmp_cache *cache, void *vmagic)
          nnew = SNMP_MALLOC_TYPEDEF(netsnmp_inpcb);
          if (!nnew)
              break;
@@ -42,5 +42,5 @@
                             sizeof(struct inpcb));
 +#endif
  
- 	if (nnew->pcb.inp_vflag & INP_IPV6)
- 	    free(nnew);
+ #ifdef INP_ISIPV6
+ 	if (INP_ISIPV6(&nnew->pcb))
