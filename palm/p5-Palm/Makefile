@@ -11,7 +11,7 @@ MAINTAINER=	arensb@ooblick.com
 COMMENT=	Perl 5 modules for reading and writing Palm database files
 
 DEPRECATED=	obsolete technology
-EXPIRATION_DATE=	2019-09-21
+EXPIRATION_DATE=	2019-11-01
 
 USES=		perl5
 USE_PERL5=	configure
