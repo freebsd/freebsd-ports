@@ -12,13 +12,14 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-faraday>=0.9.0:www/rubygem-faraday \
-		rubygem-faraday_middleware>=0.9.0:www/rubygem-faraday_middleware \
-		rubygem-gettext-setup>=0.11:devel/rubygem-gettext-setup \
+		rubygem-faraday_middleware>=0.9.0<0.13.0:www/rubygem-faraday_middleware \
+		rubygem-gettext-setup>=0.11<1:devel/rubygem-gettext-setup \
 		rubygem-minitar>=0:archivers/rubygem-minitar \
-		rubygem-semantic_puppet>=1.0:devel/rubygem-semantic_puppet
+		rubygem-semantic_puppet>=1.0<2:devel/rubygem-semantic_puppet
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
