@@ -1,6 +1,0 @@
-The Open Source PROJ.4 library converts between geographic coordinate systems.
-It is able to convert between geodetic latitude and longitude (LL, most commonly
-the WGS84 projection), into an enormous variety of other cartographic
-projections (XY, usually UTM).
-
-WWW: https://metacpan.org/release/Geo-Proj4
