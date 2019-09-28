@@ -10,17 +10,17 @@ MASTER_SITES=	http://www.mat.univie.ac.at/~gerald/ftp/xtexsh/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk-based simple TeX interface
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		desktop-file-utils gnome shebangfix tk
+USE_TEX=	latex
+SHEBANG_FILES=	xtexsh
+INSTALLS_ICONS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 NO_BUILD=	yes
 NO_ARCH=	yes
-
-USE_TEX=	latex
-USES=		tk desktop-file-utils shebangfix
-SHEBANG_FILES=	xtexsh
-INSTALLS_ICONS=	yes
 
 PORTDOCS=	*
 
