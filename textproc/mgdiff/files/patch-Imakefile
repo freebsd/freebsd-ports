@@ -1,18 +1,10 @@
---- ./Imakefile.orig	1994-05-19 02:01:00.000000000 +0000
-+++ ./Imakefile	2014-07-30 06:12:52.000000000 +0000
-@@ -4,11 +4,13 @@
- 
- XCOMM Imakefile,v 2.0 1994/05/19 02:01:00 dan Exp
- 
--XMLIB = -lXm
-+XMLIB = ${MOTIFLIB}
-+
+--- Imakefile.orig	2019-09-28 11:43:48 UTC
++++ Imakefile
+@@ -8,7 +8,7 @@ XMLIB = -lXm
  XCOMM
--XCOMM for Dell SVR4
-+XCOMM The gnuregex library is needed for the Motif file selection box widget.
+ XCOMM for Dell SVR4
  XCOMM
 -EXTRA_LIBRARIES = -lc -lucb
-+XCOMM 
 +EXTRA_LIBRARIES = -lgnuregex
  
  SRCS = mgdiff.c rundiff.c misc.c files.c spawn.c manual.c modal.c legend.c
