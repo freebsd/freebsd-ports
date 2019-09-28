@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sf
-DISTVERSION=	0.7-7
+DISTVERSION=	0.8-0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	Simple Features for R
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	dual
 
-CRAN_DEPENDS=	R-cran-classInt>=0.2.1:devel/R-cran-classInt \
+CRAN_DEPENDS=	R-cran-classInt>=0.4.1:devel/R-cran-classInt \
 		R-cran-DBI>=0.8:databases/R-cran-DBI \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-Rcpp>=0.12.18:devel/R-cran-Rcpp \
