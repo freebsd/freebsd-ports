@@ -12,11 +12,11 @@ COMMENT=	Ruby wrapper for the OAuth 2.0 protocol
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-faraday>=0.8:www/rubygem-faraday \
-		rubygem-jwt>=1.0:www/rubygem-jwt \
-		rubygem-multi_json>=1.3:devel/rubygem-multi_json \
-		rubygem-multi_xml>=0.5:textproc/rubygem-multi_xml \
-		rubygem-rack>=1.2:www/rubygem-rack
+RUN_DEPENDS=	rubygem-faraday>=0.8<0.16.0:www/rubygem-faraday \
+		rubygem-jwt>=1.0<3.0:www/rubygem-jwt \
+		rubygem-multi_json>=1.3<2:devel/rubygem-multi_json \
+		rubygem-multi_xml>=0.5<1:textproc/rubygem-multi_xml \
+		rubygem-rack>=1.2,3<3,3:www/rubygem-rack
 
 USES=		gem
 USE_RUBY=	yes
