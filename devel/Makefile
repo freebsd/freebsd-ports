@@ -5207,6 +5207,7 @@
     SUBDIR += py-xxhash
     SUBDIR += py-yaml
     SUBDIR += py-yamllint
+    SUBDIR += py-yamlordereddictloader
     SUBDIR += py-yandex-money-sdk
     SUBDIR += py-yappi
     SUBDIR += py-yapps2
