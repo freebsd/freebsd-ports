@@ -8,6 +8,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/000-system-configuration.xml
 %%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/010-value-policy.xml
 %%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/015-security-policy.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/020-archetype-system-user.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/021-archetype-system-role.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/022-archetype-business-role.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/023-archetype-manual-provisioning-case.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/024-archetype-operation-request.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/025-archetype-approval-case.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/026-archetype-trace.xml
 %%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/030-role-superuser.xml
 %%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/040-role-enduser.xml
 %%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/041-role-approver.xml
@@ -29,56 +36,33 @@
 %%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/220-lookup-timezones.xml
 %%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/230-lookup-lifecycle-state.xml
 %%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/240-lookup-state.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/250-object-collection-resource-all.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/260-object-collection-task-all.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/270-object-collection-task-active.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/280-object-collection-resource-up.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/290-object-collection-audit-errors.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/300-object-collection-audit-modifications.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/310-dashboard-admin.xml
+%%PORTDOCS%%%%DOCSDIR%%/config/initial-objects/330-object-collection-my-cases.xml
 %%PORTDOCS%%%%DOCSDIR%%/config/rest/index.html
 %%PORTDOCS%%%%DOCSDIR%%/config/rest/swagger.yml
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/h2-3.8-all.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/h2-3.9-all.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/h2-upgrade-3.8-3.9.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/mysql-3.8-all-utf8mb4.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/mysql-3.8-all.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/mysql-3.9-all-utf8mb4.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/mysql-3.9-all.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/mysql-upgrade-3.8-3.9-utf8mb4.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/mysql-upgrade-3.8-3.9.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/oracle-3.8-all.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/oracle-3.9-all.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/oracle-upgrade-3.8-3.9.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/postgresql-3.8-all.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/postgresql-3.9-all.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/postgresql-upgrade-3.8-3.9.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/sqlserver-3.8-all.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/sqlserver-3.9-all.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/_all/sqlserver-upgrade-3.8-3.9.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.h2.create.engine.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.h2.create.history.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.h2.create.identity.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.mssql.create.engine.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.mssql.create.history.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.mssql.create.identity.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.mysql.create.engine.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.mysql.create.history.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.mysql.create.identity.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.oracle.create.engine.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.oracle.create.history.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.oracle.create.identity.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.postgres.create.engine.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.postgres.create.history.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/activiti/activiti.postgres.create.identity.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/midpoint/3.8/h2/h2-3.8.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/midpoint/3.8/mysql/mysql-3.8-utf8mb4.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/midpoint/3.8/mysql/mysql-3.8.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/midpoint/3.8/oracle/oracle-3.8.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/midpoint/3.8/postgresql/postgresql-3.8.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/midpoint/3.8/sqlserver/sqlserver-3.8.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/quartz/tables_h2.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/quartz/tables_mysql_innodb.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/quartz/tables_oracle.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/quartz/tables_postgres.sql
-%%PORTDOCS%%%%DOCSDIR%%/config/sql/quartz/tables_sqlServer.sql
+%%PORTDOCS%%%%DOCSDIR%%/config/sql/h2-4.0-all.sql
+%%PORTDOCS%%%%DOCSDIR%%/config/sql/h2-upgrade-3.9-4.0.sql
+%%PORTDOCS%%%%DOCSDIR%%/config/sql/mysql-4.0-all-utf8mb4.sql
+%%PORTDOCS%%%%DOCSDIR%%/config/sql/mysql-4.0-all.sql
+%%PORTDOCS%%%%DOCSDIR%%/config/sql/mysql-upgrade-3.9-4.0-utf8mb4.sql
+%%PORTDOCS%%%%DOCSDIR%%/config/sql/mysql-upgrade-3.9-4.0.sql
+%%PORTDOCS%%%%DOCSDIR%%/config/sql/oracle-4.0-all.sql
+%%PORTDOCS%%%%DOCSDIR%%/config/sql/oracle-upgrade-3.9-4.0.sql
+%%PORTDOCS%%%%DOCSDIR%%/config/sql/postgresql-4.0-all.sql
+%%PORTDOCS%%%%DOCSDIR%%/config/sql/postgresql-upgrade-3.9-4.0.sql
+%%PORTDOCS%%%%DOCSDIR%%/config/sql/sqlserver-4.0-all.sql
+%%PORTDOCS%%%%DOCSDIR%%/config/sql/sqlserver-upgrade-3.9-4.0.sql
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/annotation-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/common/api-types-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/common/audit-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/common/common-3.xsd
+%%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/common/common-asynchronous-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/common/common-case-management-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/common/common-certification-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/common/common-core-3.xsd
@@ -90,7 +74,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/connector/icf-1/connector-extension-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/connector/icf-1/connector-schema-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/connector/icf-1/resource-schema-3.xsd
-%%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/gui/admin-1.xsd
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/model/extension-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/model/model-3.wsdl
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/model/scripting/extension-3.xsd
@@ -104,6 +87,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/task/jdbc-ping-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/task/noop-3.xsd
 %%PORTDOCS%%%%DOCSDIR%%/schema/xml/ns/public/types-3.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/archetypes/archetype-employee.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/archetypes/archetype-extern.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/archetypes/system-configuration.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/audit/config-custom-audit-columns.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/audit/custom-audit-columns-postgresql.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/audit/system-configuration-custom-audit-columns.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/2/create-table-crm.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/2/create-table-portal.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/2/hr.csv
@@ -116,9 +105,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/4/resource-openldap.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/5/hr.csv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/5/ldap-ideal.ldif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/5/ldap-ideal.ldif.log
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/5/ldap-real.ldif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/5/ldap-real.ldif.log
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/5/resource-csv-hr.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/5/resource-openldap.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/book/5/task-hr-import.xml
@@ -142,6 +129,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certification/sod/user-jack.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certification/start-all-user-assignments.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certification/start-role-inducements.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dashboard/dashboard-system-status.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dashboard/object-collection-errors.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dashboard/object-collection-resource-all.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dashboard/object-collection-resource-up.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo-generic synchronization/object-template-org-GenSync.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo-generic synchronization/object-template-role-GenSync.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo-generic synchronization/object-template-user-GenSync.xml
@@ -219,6 +211,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evolveum/security-policy.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evolveum/system-configuration.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evolveum/value-policy-nonce.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/experimental/collection-audit-errors.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/experimental/collection-resources-up.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/experimental/dashboard-system-status.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/forms/form-post-authentication.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/forms/form-registration.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/forms/form-reset-password.xml
@@ -264,47 +259,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/query-1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/query-2.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/query-3.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample.sln
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample.v11.suo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/App.config
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/ModelClientSample.csproj
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Program.cs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Properties/AssemblyInfo.cs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Properties/Settings.Designer.cs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Properties/Settings.settings
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/ModelClientSample.midpointModelService.ObjectDeltaOperationType.datasource
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/ModelClientSample.midpointModelService.ObjectListType.datasource
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/ModelClientSample.midpointModelService.ObjectType1.datasource
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/ModelClientSample.midpointModelService.OperationResultType.datasource
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/ModelClientSample.midpointModelService.SingleScriptOutputType.datasource
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/ModelClientSample.midpointModelService.TaskType.datasource
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/ModelClientSample.midpointModelService.UserType.datasource
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/ModelClientSample.midpointModelService.executeChangesResponse.datasource
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/ModelClientSample.midpointModelService.executeScriptsResponse.datasource
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/ModelClientSample.midpointModelService.findShadowOwnerResponse.datasource
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/ModelClientSample.midpointModelService.getObjectResponse.datasource
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/ModelClientSample.midpointModelService.searchObjectsResponse.datasource
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/Reference.cs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/Reference.svcmap
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/XMLSchema.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/annotation-3.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/api-types-3.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/capabilities-3.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/common-3.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/configuration.svcinfo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/configuration91.svcinfo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/connector-schema-3.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/fault.wsdl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/model-3.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/model-31.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/model.wsdl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/query-3.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/resource-schema-3.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/scripting-3.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/types-3.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/Service References/midpointModelService/xenc-schema.xsd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/WsSecurityHeaders.cs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/model-client-sample-dotnet/ModelClientSample/ModelClientSample/user-lechuck.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/objects/account-jack.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/objects/connector-dbtable.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/objects/connector-host-localhost.xml
@@ -445,6 +399,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/edirectory/example.ldif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/edirectory/resource-edirectory-nosync.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/edirectory/resource-ldap-edirectory-legacy.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/eduid/basic-eduid-affiliation.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/eduid/resource-eduid.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/gitlab/basic-role-for-group.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/gitlab/basic-role-for-project.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/gitlab/basic-role-for-user.xml
@@ -465,6 +421,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/gitlab/role-permission-master.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/gitlab/role-permission-owner.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/gitlab/role-permission-reporter.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/grouper/function-library-grouper.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/grouper/resource-grouper.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/grouper/task-async-update.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/grouper/task-reconciliation-groups.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/grouper/task-reconciliation-users.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/googleapps/googleapps-resource.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/jira/GroupAdministratorOfProject-role.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/jira/GroupDeveloperOfProject-role.xml
@@ -493,6 +454,12 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/manual/resource-semi-manual-csv.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/manual/semi-manual.csv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/misc/resource-gitlab.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/msgraph/basic-role-for-user.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/msgraph/extensions/connector-extension-msgraph.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/msgraph/mandatory-attributes-for-microsoft-azure-ad-group.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/msgraph/mandatory-attributes-for-microsoft-azure-ad-user.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/msgraph/object-template-for-group.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/msgraph/resource-msgraph-connector.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/mysqluser/init-mysql.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/mysqluser/mysqluser-localhost-advanced-nosync.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/mysqluser/mysqluser-localhost-simple.xml
@@ -523,6 +490,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/openldap/olcAccess.ldif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/openldap/openldap-localhost-advanced-sync-modifytimestamp.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/openldap/openldap-localhost-medium.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/openstack/mandatory-description.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/openstack/object-template-for-project.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/openstack/projectId_roleId.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/openstack/resource-openstack-connector.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/oracle/resource-oracle-medium.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/sap/assignment/extension-sap.xsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/sap/assignment/object-template-org.xml
@@ -595,20 +566,27 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedrest/thingspeak/TestScript.groovy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedrest/thingspeak/UpdateScript.groovy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedrest/thingspeak/resource.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/BaseScript.groovy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/CreateScript.groovy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/DeleteScript.groovy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/RunOnConnectorScript.groovy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/SchemaScript.groovy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/SearchScript.groovy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/SyncScript.groovy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/TestScript.groovy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/UpdateScript.groovy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/create-scripted-idm-db-and-tables-sync.mysql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/create-scripted-idm-db-sync-postgresql.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/create-scripted-idm-tables-sync-postgresql.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/localhost-scriptedsql-advanced-nosync.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/localhost-scriptedsql-advanced-sync.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/localhost-scriptedsql-simple.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/CreateScript.groovy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/DeleteScript.groovy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/RunOnConnectorScript.groovy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/SchemaScript.groovy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/SearchScript.groovy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/SyncScript.groovy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/TestScript.groovy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/UpdateScript.groovy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/create-scripted-idm-db-and-tables-sync.mysql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/create-scripted-idm-db-sync-postgresql.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/create-scripted-idm-tables-sync-postgresql.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/localhost-scriptedsql-advanced-nosync.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/localhost-scriptedsql-advanced-sync.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/scriptedsql/deprecated/localhost-scriptedsql-simple.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/siebel/siebel-resource.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/smartrecruiters/metarole-smartrecruiters-roles.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/smartrecruiters/resource-smartrecruiters.xml
@@ -663,7 +641,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/roles/sensitive-role-2.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/roles/sensitive-role-3.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/roles/users-for-approval-processes.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/samples.iml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/schema/extension-genericsync.xsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/schema/extension-piracy.xsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/schema/extension-samples.xsd
@@ -737,8 +714,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stories/unix-management/midpoint-user-example.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stories/unix-management/resource-unix-advanced.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stories/unix-management/role-assignment-inducement-metarole.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/target/maven-archiver/pom.properties
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/target/samples-3.9-tests.jar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/advanced-task-scheduling.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/bulk-actions/add-user.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/bulk-actions/assign-enduser-role-to-selected-users-no-approval.xml
@@ -770,6 +745,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/bulk-actions/reencrypt-selected-objects.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/bulk-actions/script-arbitrary-code-close-campaign.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/bulk-actions/script-async-execution.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/bulk-actions/script-delay-for-testing-thread-dumps.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/bulk-actions/script-objects-delay.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/bulk-actions/script-orgs.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/bulk-actions/script-users-distinct.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/bulk-actions/script-users-multinode.xml
@@ -808,8 +785,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/templates/task-template-change-description-start-2.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/templates/task-template-change-description-start.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/templates/task-template-change-description.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testng-integration.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testng-unit.xml
 @dir %%JAVASHAREDIR%%/icf-connectors
 %%JAVASHAREDIR%%/midpoint/midpoint.war
 @dir(midpoint,midpoint,) /var/db/midpoint
