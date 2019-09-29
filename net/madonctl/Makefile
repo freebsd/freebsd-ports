@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-#GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
-
 PLIST_FILES=	bin/madonctl
 
 GH_ACCOUNT=	McKael
@@ -48,8 +46,5 @@ GH_TUPLE=	McKael:madon:v2.3.0:McKael_madon/vendor/github.com/McKael/madon/v2 \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify
 USE_GITHUB=	yes
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/madonctl ${STAGEDIR}${PREFIX}/bin/madonctl
 
 .include <bsd.port.mk>

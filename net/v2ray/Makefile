@@ -32,6 +32,8 @@ GH_TUPLE=	golang:crypto:193df9c0f06f:golang_crypto/vendor/golang.org/x/crypto \
 		miekg:dns:v1.1.4:miekg_dns/vendor/github.com/miekg/dns
 
 GO_BUILDFLAGS=	-ldflags='-s -w'
+GO_TARGET=	./main:v2ray \
+		./infra/control/main:v2ctl
 
 USERS=		v2ray
 GROUPS=		v2ray
@@ -39,16 +41,9 @@ GROUPS=		v2ray
 SUB_LIST=	USER="${USERS}" \
 		GROUP="${GROUPS}"
 
-do-build:
-	cd ${GO_WRKSRC} && \
-	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} build ${GO_BUILDFLAGS} -o ${GO_WRKDIR_BIN}/v2ray v2ray.com/core/main && \
-	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} build ${GO_BUILDFLAGS} -o ${GO_WRKDIR_BIN}/v2ctl v2ray.com/core/infra/control/main
-
-do-install:
+post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/v2ray ${STAGEDIR}${PREFIX}/bin/v2ray
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/v2ctl ${STAGEDIR}${PREFIX}/bin/v2ctl
 	${INSTALL_DATA} ${WRKSRC}/release/config/config.json ${STAGEDIR}${ETCDIR}/config.json.sample
 	${INSTALL_DATA} ${WRKSRC}/release/config/vpoint_socks_vmess.json ${STAGEDIR}${ETCDIR}/vpoint_socks_vmess.json
 	${INSTALL_DATA} ${WRKSRC}/release/config/vpoint_vmess_freedom.json ${STAGEDIR}${ETCDIR}/vpoint_vmess_freedom.json

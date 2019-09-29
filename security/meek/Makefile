@@ -17,9 +17,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		go
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	golang:crypto:c126467:crypto/src/golang.org/x/crypto \
-		golang:net:a680a1e:net/src/golang.org/x/net \
-		golang:text:0605a83:text/src/golang.org/x/text
+GH_TUPLE=	golang:crypto:c126467:crypto/vendor/golang.org/x/crypto \
+		golang:net:a680a1e:net/vendor/golang.org/x/net \
+		golang:text:0605a83:text/vendor/golang.org/x/text
+
+GO_TARGET=	./meek-client \
+		./meek-server
 
 GOPTLIBVERSION=	0.7
 
@@ -30,22 +33,18 @@ PLIST_FILES=	bin/meek-client \
 
 SUB_FILES=	pkg-message
 
-post-extract:
-	@${MKDIR} ${WRKSRC}/src/git.torproject.org/pluggable-transports
-	@${LN} -s ${WRKDIR}/${PORTNAME}-${PORTVERSION} ${WRKSRC}/src/git.torproject.org/pluggable-transports/${PORTNAME}
-	@${LN} -s ${WRKDIR}/goptlib-${GOPTLIBVERSION} ${WRKSRC}/src/git.torproject.org/pluggable-transports/goptlib.git
-
-do-build:
-	@cd ${WRKSRC}/meek-client && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build
-	@cd ${WRKSRC}/meek-server && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build
+post-patch:
+	@${MKDIR} ${WRKDIR}/src/git.torproject.org/pluggable-transports
+	@${LN} -s ${WRKSRC} ${WRKDIR}/src/git.torproject.org/pluggable-transports/${PORTNAME}
+	@${LN} -s ${WRKDIR}/goptlib-${GOPTLIBVERSION} ${WRKDIR}/src/git.torproject.org/pluggable-transports/goptlib.git
 
 do-test:
-	@cd ${WRKSRC}/meek-client && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go test
-	@cd ${WRKSRC}/meek-server && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go test
+.for t in ${GO_TARGET}
+	cd ${GO_WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} test ${GO_BUILDFLAGS} ${t}
+.endfor
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/meek-client/meek-client ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/meek-server/meek-server ${STAGEDIR}${PREFIX}/bin
+post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/meek-server.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/meek-client.1 ${STAGEDIR}${PREFIX}/man/man1
 

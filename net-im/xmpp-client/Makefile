@@ -14,20 +14,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go
 
 USE_GITHUB=	yes
-GH_TUPLE=	agl:xmpp-client:3030ad4:DEFAULT/src/github.com/agl/xmpp-client \
-		golang:crypto:c126467:crypto/src/golang.org/x/crypto \
-		golang:net:a680a1e:net/src/golang.org/x/net \
-		golang:sys:ac767d6:sys/src/golang.org/x/sys
+GH_TUPLE=	agl:xmpp-client:3030ad4:DEFAULT/vendor/github.com/agl/xmpp-client \
+		golang:crypto:c126467:crypto/vendor/golang.org/x/crypto \
+		golang:net:a680a1e:net/vendor/golang.org/x/net \
+		golang:sys:ac767d6:sys/vendor/golang.org/x/sys
+
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 PLIST_FILES=	bin/xmpp-client
 
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build  -o ${PORTNAME}
-
 do-test:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go test . ./xmpp
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} test ${GO_BUILDFLAGS} . ./xmpp
 
 .include <bsd.port.mk>

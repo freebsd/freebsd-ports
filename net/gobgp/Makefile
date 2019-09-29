@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	./cmd/gobgp \
-		./cmd/gobgpd
+		./cmd/gobgpd:${PREFIX}/libexec/gobgpd
 GH_ACCOUNT=	osrg
 PLIST_FILES=	bin/gobgp libexec/gobgpd
 GH_TUPLE=	\
@@ -68,10 +68,6 @@ ZSH_PLIST_FILES=	share/zsh/site-functions/_gobgp
 
 USE_RC_SUBR=	gobgpd
 SUB_FILES=	gobgpd
-
-do-install:
-	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/gobgp  ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/gobgpd ${STAGEDIR}${PREFIX}/libexec
 
 post-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
