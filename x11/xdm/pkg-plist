@@ -20,4 +20,3 @@ share/pixmaps/xorg-bw.xpm
 share/pixmaps/xorg.xpm
 @postunexec rm -rf /var/db/xdm/* 2>/dev/null || true
 @dir /var/db/xdm
-@dir /var/db
