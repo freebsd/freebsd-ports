@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	lesstif-[0-9]*
 
-USES=		autoreconf gmake iconv jpeg libtool:keepla pkgconfig
+USES=		autoreconf gmake iconv jpeg libtool:keepla pkgconfig xorg
 USE_XORG=	x11 xaw xbitmaps xext xft xt xmu xrender sm ice
 LIB_DEPENDS=	libXp.so:x11/libXp \
 		libfontconfig.so:x11-fonts/fontconfig \
