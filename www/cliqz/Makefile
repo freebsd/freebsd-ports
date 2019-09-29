@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cliqz
-DISTVERSION=	1.28.2
-PORTREVISION=	2
+DISTVERSION=	1.29.0
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/cdn.cliqz.com/browser-f/APT/:amazon \
 		http://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/${CLIQZ_LAST_BUILD_ID}/:cliqz
@@ -13,7 +12,7 @@ DISTFILES=	adult-domains.bin:amazon \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${_GITHUB_EXTRACT_SUFX}
 
-MAINTAINER=	santhosh.raju@gmail.com
+MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Secure browser (Mozilla based) with built-in quick search
 
 LICENSE=	MPL20
@@ -54,7 +53,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio \
 		zip:archivers/zip
 
 USES=		compiler:c11 desktop-file-utils gmake gnome pkgconfig \
-		python:2.7,build shebangfix tar:xz
+		python:2.7,build shebangfix tar:xz xorg
 
 USE_GNOME=	cairo gconf2 gdkpixbuf2 gtk20 gtk30
 
@@ -74,7 +73,7 @@ SHEBANG_FILES=	magic_build_and_package.sh
 CLIQZ_CHANNEL=		release
 # If the DISTVERSION is updated, make sure to update the last build id from
 # fetch -qo - https://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/lastbuildid
-CLIQZ_LAST_BUILD_ID=	20190816174655
+CLIQZ_LAST_BUILD_ID=	20190920100917
 CLIQZ_ICON=		${PORTNAME}.png
 CLIQZ_ICON_SRC=		${WRKSRC}/mozilla-release/browser/branding/${PORTNAME}/default48.png
 MOZ_DESKTOP=		${WRKSRC}/mozilla-release/toolkit/mozapps/installer/linux/rpm/mozilla.desktop
@@ -86,6 +85,30 @@ MAKE_ENV+=	CQZ_BUILD_ID=${CLIQZ_LAST_BUILD_ID} \
 		LLVM_OBJDUMP=${LOCALBASE}/llvm${LLVM_DEFAULT}/bin/llvm-objdump \
 		MOZBUILD_STATE_PATH=${WRKDIR}
 
+# Configure args passed into mach build system
+MOZ_CONFIGURE_ARGS+=	"ac_add_options --disable-crashreporter" \
+			"ac_add_options --disable-debug" \
+			"ac_add_options --disable-debug-symbols" \
+			"ac_add_options --disable-tests" \
+			"ac_add_options --disable-updater" \
+			"ac_add_options --libclang-path=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib"
+
+.include <bsd.port.pre.mk>
+
+# Default to llvm 8 for i386
+.if ${ARCH} == i386 && ${LLVM_DEFAULT:S,-devel,990,} >= 90
+LLVM_DEFAULT=	80
+.endif
+
+# Require newer Clang than what's in base system unless user opted out
+.if ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
+CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
+CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
+CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
+# XXX avoid warnings
+USES:=		${USES:Ncompiler\:*}
+.endif
+
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/adult-domains.bin ${WRKSRC}
 	${MKDIR} ${WRKSRC}/obj/dist/bin/browser/features
@@ -94,8 +117,6 @@ post-extract:
 		${DISTDIR}/${DIST_SUBDIR}/gdprtool@cliqz.com.xpi \
 		${WRKSRC}/obj/dist/bin/browser/features
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${CP} ${MOZ_DESKTOP} ${CLIQZ_DESKTOP}
 	@${REINPLACE_CMD} -e 's/@MOZ_APP_DISPLAYNAME@/Cliqz Internet/g' \
@@ -103,8 +124,12 @@ post-patch:
 		-e '/Icon=${PORTNAME}/ s/${PORTNAME}/${CLIQZ_ICON}/' \
 		-e '/StartupWMClass/d' \
 		${CLIQZ_DESKTOP}
+.for MOZ_CONFIGURE_ARG in ${MOZ_CONFIGURE_ARGS}
+	@${ECHO_CMD} ${MOZ_CONFIGURE_ARG} >> \
+		${WRKSRC}/mozilla-release/browser/config/cliqz.mozconfig;
+.endfor
+# This prevents linker exhausting memory in i386 builds
 .if ${ARCH} == "i386"
-	# This prevents linker exhausting memory in i386 builds
 	@${ECHO_CMD} 'export LDFLAGS="-Wl,--no-keep-memory -Wl,--as-needed"' >> \
 		${WRKSRC}/mozilla-release/browser/config/cliqz.mozconfig
 .endif
