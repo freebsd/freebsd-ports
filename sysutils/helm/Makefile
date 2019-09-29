@@ -15,29 +15,15 @@ RUN_DEPENDS=	kubectl:sysutils/kubectl
 
 USES=		go tar:xz
 
-PLIST_FILES=	bin/${PORTNAME} \
-		bin/tiller \
-		bin/rudder
-
-post-patch:
-	${MV} ${WRKSRC}/vendor/* ${WRKDIR}/src/
-	${LN} -s ${WRKSRC} ${WRKDIR}/src/k8s.io/helm
-
-do-build:
-.for cmd in helm tiller rudder
-	cd ${WRKDIR}/src/k8s.io/helm/cmd/${cmd} ; \
-		GOPATH=${WRKDIR} GOCACHE=${WRKDIR}/.gocache go build \
-		-ldflags="-X k8s.io/helm/pkg/version.Version=v${PORTVERSION} \
+GO_PKGNAME=	k8s.io/helm
+GO_BUILDFLAGS=	-ldflags="-X k8s.io/helm/pkg/version.Version=v${PORTVERSION} \
 		-X k8s.io/helm/pkg/version.GitCommit=5270352a09c7e8b6e8c9593002a73535276507c0 \
 		-X k8s.io/helm/pkg/version.BuildMetadata="
-.endfor
+GO_TARGET=	./cmd/${PORTNAME} \
+		./cmd/tiller \
+		./cmd/rudder
 
-do-install:
-.for cmd in helm tiller rudder
-	${INSTALL_PROGRAM} \
-		${WRKSRC}/cmd/${cmd}/${cmd} \
-		${STAGEDIR}${PREFIX}/bin/${cmd}
-.endfor
+PLIST_FILES=	${GO_TARGET:C/.\/cmd/bin/}
 
 maintainer-distfile:
 	(cd /tmp; fetch https://github.com/helm/helm/archive/v${PORTVERSION}.tar.gz; \

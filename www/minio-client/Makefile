@@ -78,8 +78,6 @@ GO_BUILDFLAGS=	--ldflags='\
 		-X github.com/minio/mc/cmd.ReleaseTag=${GH_TAGNAME} \
 		-X github.com/minio/mc/cmd.CommitID=${COMMIT_ID} \
 		-X github.com/minio/mc/cmd.GOPATH=${WRKSRC} -s -w'
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/minio-client ${STAGEDIR}${PREFIX}/bin/${MC}
+GO_TARGET=	:${MC}
 
 .include <bsd.port.mk>

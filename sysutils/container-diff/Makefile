@@ -21,7 +21,4 @@ PLIST_FILES=	bin/container-diff
 GH_ACCOUNT=	GoogleContainerTools
 USE_GITHUB=	yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/container-diff ${STAGEDIR}${PREFIX}/bin/container-diff
-
 .include <bsd.port.mk>

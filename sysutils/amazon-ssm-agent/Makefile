@@ -18,6 +18,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	aws
 GH_SUBDIR=	src/github.com/aws/amazon-ssm-agent
 
+GO_BUILDLAGS=	-ldflags "-s -w"
+GO_TARGET=	./agent:${PREFIX}/sbin/amazon-ssm-agent \
+		./agent/framework/processor/executer/outofproc/worker:${PREFIX}/sbin/ssm-document-worker \
+		./agent/framework/processor/executer/outofproc/sessionworker:${PREFIX}/sbin/ssm-session-worker \
+		./agent/session/logging:${PREFIX}/sbin/ssm-session-logger \
+		./agent/cli-main:${PREFIX}/sbin/ssm-cli
+
 PLIST_FILES=	etc/amazon/ssm/amazon-ssm-agent.json.template	\
 		etc/amazon/ssm/seelog_unix.xml.template		\
 		sbin/amazon-ssm-agent				\
@@ -28,33 +35,10 @@ PLIST_FILES=	etc/amazon/ssm/amazon-ssm-agent.json.template	\
 
 USE_RC_SUBR=	amazon-ssm-agent
 
-do-build:
-	@cd ${WRKSRC};							\
-	    ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC}:${WRKSRC}/vendor CGO_ENABLED=0	\
-	    go build -ldflags "-s -w" -o amazon-ssm-agent -v 				\
-		agent/agent.go agent/agent_unix.go agent/agent_parser.go
-	@cd ${WRKSRC};							\
-	    ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC}:${WRKSRC}/vendor CGO_ENABLED=0	\
-	    go build -ldflags "-s -w" -o ssm-document-worker -v				\
-		agent/framework/processor/executer/outofproc/worker/main.go
-	@cd ${WRKSRC};							\
-	    ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC}:${WRKSRC}/vendor CGO_ENABLED=0	\
-	    go build -ldflags "-s -w" -o ssm-session-worker -v				\
-		agent/framework/processor/executer/outofproc/sessionworker/main.go
-	@cd ${WRKSRC};							\
-	    ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC}:${WRKSRC}/vendor CGO_ENABLED=0	\
-	    go build -ldflags "-s -w" -o ssm-session-logger -v				\
-		agent/session/logging/main.go
-	@cd ${WRKSRC};							\
-	    ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC}:${WRKSRC}/vendor CGO_ENABLED=0	\
-	    go build -ldflags "-s -w" -o ssm-cli -v agent/cli-main/cli-main.go
+post-patch:
+	${LN} -s ${WRKSRC}/vendor/src/* ${WRKSRC}/vendor/
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/amazon-ssm-agent ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/ssm-document-worker ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/ssm-session-worker ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/ssm-session-logger ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/ssm-cli ${STAGEDIR}${PREFIX}/sbin
+post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/amazon/ssm
 	${INSTALL_DATA} ${WRKSRC}/amazon-ssm-agent.json.template ${STAGEDIR}${PREFIX}/etc/amazon/ssm
 	${INSTALL_DATA} ${WRKSRC}/seelog_unix.xml ${STAGEDIR}${PREFIX}/etc/amazon/ssm/seelog_unix.xml.template

@@ -17,13 +17,9 @@ GH_ACCOUNT=	bakins
 GH_PROJECT=	php-fpm-exporter
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GO_TARGET=	./cmd/${GH_PROJECT}:${PORTNAME}
+
 PLIST_FILES=	bin/${PORTNAME}
 USE_RC_SUBR=	phpfpm_exporter
-
-do-build:
-	@(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} CGO_ENABLED=0 ${GO_CMD} build -o ${PORTNAME} ./cmd/${GH_PROJECT})
-
-do-install:
-	${INSTALL_PROGRAM} ${GO_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

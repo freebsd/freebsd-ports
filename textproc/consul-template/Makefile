@@ -21,13 +21,4 @@ PLIST_FILES=	bin/consul-template
 
 USE_RC_SUBR=	consul-template
 
-do-build:
-	@cd ${WRKSRC}/src/github.com/hashicorp/consul-template ; \
-		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build
-
-do-install:
-	${INSTALL_PROGRAM} \
-		${WRKSRC}/src/github.com/hashicorp/consul-template/consul-template \
-		${STAGEDIR}${PREFIX}/bin/consul-template
-
 .include <bsd.port.mk>

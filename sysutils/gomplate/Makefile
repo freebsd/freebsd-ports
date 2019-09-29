@@ -18,19 +18,12 @@ GH_ACCOUNT=	hairyhenderson
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 GH_TAG_COMMIT=	ce4b3e3
 
+GO_BUILDFLAGS=	-ldflags "\
+		-w -s \
+		-X github.com/${GH_ACCOUNT}/${PORTNAME}/version.GitCommit=${GH_TAG_COMMIT} \
+		-X github.com/${GH_ACCOUNT}/${PORTNAME}/version.Version=${DISTVERSION}"
+GO_TARGET=	./cmd/gomplate
+
 PLIST_FILES=	bin/gomplate
-
-post-extract:
-	@${CP} -RpP ${WRKSRC}/vendor/* ${WRKSRC}/src/
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} \
-	${LOCALBASE}/bin/go build \
-		-ldflags "-w -s -X github.com/${GH_ACCOUNT}/${PORTNAME}/version.GitCommit=${GH_TAG_COMMIT} -X github.com/${GH_ACCOUNT}/${PORTNAME}/version.Version=${DISTVERSION}" \
-		-o ${PORTNAME} \
-		./cmd/gomplate
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
