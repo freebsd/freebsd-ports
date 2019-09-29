@@ -17,12 +17,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		compiler go
+USES=		go
 USE_RC_SUBR=	grafana
 
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
 TAG=		69c5191
+
+GO_BUILDFLAGS=	-ldflags "-w -X main.version=${PORTVERSION} -X main.commit=${TAG}"
+GO_TARGET=	./pkg/cmd/grafana-server \
+		./pkg/cmd/grafana-cli
 
 GRAFANA_USER?=	grafana
 GRAFANA_GROUP?=	grafana
@@ -49,21 +53,12 @@ SUB_LIST+=	GRAFANA_USER=${GRAFANA_USER} \
 
 PLIST_SUB+=	GRAFANAHOMEDIR=${GRAFANAHOMEDIR}
 
-post-extract:
-	@${RM} -r ${WRKSRC}/src/github.com/grafana/grafana/public
+post-patch:
+	@${RM} -r ${WRKSRC}/public
 	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/grafana-${PORTVERSION}.linux-amd64${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS} grafana-${PORTVERSION}/public)
 
-do-build:
-	@cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; ${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags "-w -X main.version=${PORTVERSION} -X main.commit=${TAG}" -o ./bin/grafana-server ./pkg/cmd/grafana-server
-	@cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; ${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags "-w -X main.version=${PORTVERSION} -X main.commit=${TAG}" -o ./bin/grafana-cli ./pkg/cmd/grafana-cli
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/grafana/grafana/bin/grafana-server \
-		${STAGEDIR}${PREFIX}/bin/grafana-server
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/grafana/grafana/bin/grafana-cli \
-		${STAGEDIR}${PREFIX}/bin/grafana-cli
-	cd ${WRKSRC}/src/github.com/grafana/grafana && \
-		${COPYTREE_SHARE} public ${STAGEDIR}${PREFIX}/share/grafana
+post-install:
+	cd ${WRKSRC} && ${COPYTREE_SHARE} public ${STAGEDIR}${PREFIX}/share/grafana
 	${MKDIR} ${STAGEDIR}${GRAFANAPIDDIR}
 	${MKDIR} ${STAGEDIR}${GRAFANALOGDIR}
 	${MKDIR} ${STAGEDIR}${GRAFANAHOMEDIR}
@@ -73,14 +68,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${GRAFANAHOMEDIR}/conf
 	${MKDIR} ${STAGEDIR}${GRAFANAHOMEDIR}/data
 	${MKDIR} ${STAGEDIR}${GRAFANAHOMEDIR}/data/log
-	${INSTALL_DATA} ${WRKSRC}/src/github.com/grafana/grafana/conf/defaults.ini \
-		${STAGEDIR}${GRAFANAHOMEDIR}/conf/defaults.ini
+	${INSTALL_DATA} ${WRKSRC}/conf/defaults.ini ${STAGEDIR}${GRAFANAHOMEDIR}/conf/defaults.ini
 	${INSTALL_DATA} ${WRKDIR}/grafana.conf ${STAGEDIR}${PREFIX}/etc/grafana.conf.sample
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == clang
-BUILD_ENV=	CC=clang
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

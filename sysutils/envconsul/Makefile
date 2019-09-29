@@ -23,19 +23,10 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	README.md
 COMMIT=		7ece735
-GO_LDFLAGS=	-ldflags="-s -w \
+GO_BUILDFLAGS=	-ldflags="-s -w \
 		-X main.Name=${PORTNAME} \
 		-X main.Version=${PORTVERSION} \
 		-X main.GitCommit=${COMMIT}"
-
-do-build:
-	@cd ${WRKSRC}/src/github.com/hashicorp/envconsul; \
-		${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} \
-		go build ${GO_LDFLAGS}\
-		-o bin/envconsul
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/hashicorp/envconsul/bin/envconsul ${STAGEDIR}${PREFIX}/bin/envconsul
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

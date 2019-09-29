@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	miniflux
 
 GO_PKGNAME=	miniflux.app
-GO_TARGET=	${GO_PKGNAME}
+GO_TARGET=	:${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-X miniflux.app/version.Version=${DISTVERSION} \
 		-X miniflux.app/version.BuildDate=$$(date +'%Y-%m-%dT%H:%M:%SZ')"
 
@@ -32,11 +32,8 @@ OPTIONS_DEFINE=		PGSQL_SERVER
 PGSQL_SERVER_DESC=	Install the PostgreSQL Server Component
 PGSQL_SERVER_VARS=	WANT_PGSQL=server,contrib
 
-do-install:
-	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/miniflux.app ${STAGEDIR}${PREFIX}/bin/miniflux
-	${INSTALL_MAN} ${WRKSRC}/miniflux.1 ${STAGEDIR}${PREFIX}/man/man1/
-
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/miniflux.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_DATA} ${FILESDIR}/miniflux.env.sample \
 		${STAGEDIR}${PREFIX}/etc
 

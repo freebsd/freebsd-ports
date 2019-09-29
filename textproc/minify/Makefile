@@ -28,7 +28,4 @@ GH_TUPLE=	dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/
 		tdewolff:test:v1.0.4:tdewolff_test/vendor/github.com/tdewolff/test
 USE_GITHUB=	yes
 
-do-install:
-	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/minify ${STAGEDIR}${PREFIX}/bin/minify
-
 .include <bsd.port.mk>

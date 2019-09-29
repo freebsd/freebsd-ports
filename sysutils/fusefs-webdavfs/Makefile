@@ -41,6 +41,8 @@ GH_ACCOUNT+=	${GETOPT_GH_ACCOUNT}:getopt ${FUSE_GH_ACCOUNT}:fuse
 GH_PROJECT+=	${GETOPT_GH_PROJECT}:getopt ${FUSE_GH_PROJECT}:fuse
 GH_TAGNAME+=	${GETOPT_GH_TAGNAME}:getopt ${FUSE_GH_TAGNAME}:fuse
 
+GO_TARGET=	:${PREFIX}/sbin/mount.webdavfs
+
 PLIST_FILES=	sbin/mount.webdavfs sbin/mount_webdavfs
 
 SUB_FILES=	pkg-message mount_webdavfs
@@ -53,8 +55,7 @@ post-patch:
 	${LN} -s ${WRKDIR}/getopt-${GETOPT_GH_TAGNAME}/v2 ${GETOPT_WRKSRCDIR}
 	${LN} -s ${WRKDIR}/fuse-${FUSE_GH_TAGNAME} ${FUSE_WRKSRCDIR}/fuse
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin/mount.webdavfs
+post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/mount_webdavfs ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

@@ -12,14 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags="-X main.localbase=/usr/local"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rwestlund
-
-# Override default build command to pass ldflags.
-do-build:
-	@(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install \
-		-ldflags="-X main.localbase=/usr/local" -v ${GO_TARGET})
 
 post-install:
 	@${CP} ${WRKSRC}/etc/paladin.conf.sample ${STAGEDIR}/${LOCALBASE}/etc/

@@ -20,13 +20,10 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 PLIST_FILES=	bin/sift
 
 GH_ACCOUNT=	svent
-GH_TUPLE=	golang:crypto:71b5226:golang_crypto/../src/golang.org/x/crypto \
-		golang:sys:749cb33:golang_sys/../src/golang.org/x/sys \
-		svent:go-flags:4bcbad3:svent_goflags/../src/github.com/svent/go-flags \
-		svent:go-nbreader:7cef48d:svent_gonbreader/../src/github.com/svent/go-nbreader
+GH_TUPLE=	golang:crypto:71b5226:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sys:749cb33:golang_sys/vendor/golang.org/x/sys \
+		svent:go-flags:4bcbad3:svent_goflags/vendor/github.com/svent/go-flags \
+		svent:go-nbreader:7cef48d:svent_gonbreader/vendor/github.com/svent/go-nbreader
 USE_GITHUB=	yes
-
-do-install:
-	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/sift ${STAGEDIR}${PREFIX}/bin/sift
 
 .include <bsd.port.mk>
