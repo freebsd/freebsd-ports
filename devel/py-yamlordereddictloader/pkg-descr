@@ -1,0 +1,5 @@
+This module provide a loader and a dumper for PyYAML allowing to keep items
+order when loading a file (by putting them in OrderedDict objects) and to
+manage OrderedDict objects when dumping to a file.
+
+WWW: https://pypi.python.org/pypi/yamlordereddictloader
