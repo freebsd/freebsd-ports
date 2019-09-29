@@ -1,0 +1,8 @@
+ISA-L crypto is a collection of optimized low-level functions targeting
+cryptography applications.
+
+This port provides a software encryption module for in-kernel TLS
+(KTLS) that uses routines in the ISA-L crypto library to encrypt TLS
+records.
+
+WWW: https://github.com/01org/isa-l_crypto
