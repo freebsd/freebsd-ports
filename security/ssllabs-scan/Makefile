@@ -20,11 +20,4 @@ GH_ACCOUNT=	ssllabs
 
 PLIST_FILES=	bin/${PORTNAME}
 
-do-build:
-	@(cd ${GO_WRKSRC} && \
-	  ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} build ${GO_BUILDFLAGS} -o bin/${PORTNAME})
-
-do-install:
-	${INSTALL_PROGRAM} ${GO_WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-
 .include <bsd.port.mk>

@@ -18,7 +18,7 @@ GH_ACCOUNT=	akosela
 
 PLIST_FILES=	bin/cs man/man1/cs.1.gz
 
-GO_TARGET=	${GO_PKGNAME}/cs
+GO_TARGET=	./cs
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/cs.1 ${STAGEDIR}${MAN1PREFIX}/man/man1

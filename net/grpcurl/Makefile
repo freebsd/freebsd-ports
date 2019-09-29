@@ -17,22 +17,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fullstorydev
 GH_SUBDIR=	src/github.com/fullstorydev/grpcurl
 GH_TAGNAME=	ca5693f
-GH_TUPLE=	golang:protobuf:c65a041:jsonpb/src/github.com/golang/protobuf \
-		jhump:protoreflect:5cc2142:protoreflect/src/github.com/jhump/protoreflect \
-		golang:net:5f9ae10:net/src/golang.org/x/net \
-		grpc:grpc-go:4172bfc:grpcgo/src/google.golang.org/grpc \
-		golang:text:7922cc4:text/src/golang.org/x/text \
-		google:go-genproto:7fd901a:gogenproto/src/google.golang.org/genproto
+GH_TUPLE=	golang:protobuf:c65a041:jsonpb/vendor/github.com/golang/protobuf \
+		jhump:protoreflect:5cc2142:protoreflect/vendor/github.com/jhump/protoreflect \
+		golang:net:5f9ae10:net/vendor/golang.org/x/net \
+		grpc:grpc-go:4172bfc:grpcgo/vendor/google.golang.org/grpc \
+		golang:text:7922cc4:text/vendor/golang.org/x/text \
+		google:go-genproto:7fd901a:gogenproto/vendor/google.golang.org/genproto
+
+GO_BUILDFLAGS=	-ldflags "-X main.version=${DISTVERSIONPREFIX}${PORTVERSION} -s -w"
+GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	bin/grpcurl
-
-do-build:
-	cd ${WRKSRC}/cmd/${PORTNAME} && ${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} \
-	${LOCALBASE}/bin/go build -ldflags "-X main.version=${DISTVERSIONPREFIX}${PORTVERSION} -s -w" \
-		-o ${PORTNAME}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/fullstorydev/grpcurl/cmd/${PORTNAME}/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
