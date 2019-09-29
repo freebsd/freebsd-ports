@@ -3,7 +3,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	7.6.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases geography
 MASTER_SITES=	https://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -38,8 +38,9 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		blaslapack compiler:openmp fortran gettext gmake gl iconv \
-		jpeg perl5 pkgconfig python:2.7 readline shebangfix tk
+USES=		blaslapack fortran gmake gl gnome \
+		iconv jpeg perl5 pkgconfig python:2.7 \
+		readline shebangfix tk xorg
 SHEBANG_LANG=	nviz
 nviz_OLD_CMD=	nviz
 nviz_CMD=	${PREFIX}/${GRASS_INST_DIR}/bin/nviz
@@ -60,15 +61,14 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-blas \
 		--with-lapack \
 		--with-cairo \
-		--with-nls \
 		--with-readline \
 		--enable-largefile \
 		--with-wxwidgets=${WX_CONFIG} \
 		--with-proj-share=${LOCALBASE}/share/proj \
 		--with-geos=${LOCALBASE}/bin/geos-config \
 		--with-gdal=${LOCALBASE}/bin/gdal-config \
-		--with-pthread=yes \
-		--with-openmp
+		--with-pthread=yes
+		#--with-openmp
 
 ALL_TARGET=	default
 USE_LDCONFIG=	${PREFIX}/${GRASS_INST_DIR}/lib
@@ -79,23 +79,26 @@ PLIST_SUB=	GRASS_INST_DIR="${GRASS_INST_DIR}" \
 		VERSION="${PORTVERSION}" VERS="${PORTVERSION:C/([0-9]+).([0-9]+)(.*)/\1.\2/}" \
 		VER="${VER}" MAJVER="${PKGNAMESUFFIX}"
 
-OPTIONS_DEFINE=		LAS NETCDF PDAL
+OPTIONS_DEFINE=		LAS NETCDF NLS PDAL ZSTD
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL ODBC PGSQL SQLITE
 #OPTIONS_SINGLE=		BLAS
 #OPTIONS_SINGLE_BLAS=	ATLAS NETLIB GOTOBLAS OPENBLAS
-OPTIONS_DEFAULT=	LAS PDAL PGSQL SQLITE NETLIB NETCDF MYSQL ODBC
+OPTIONS_DEFAULT=	LAS NETCDF NLS PDAL PGSQL SQLITE ZSTD
 OPTIONS_SUB=		yes
 
+# BLAS/LAPACK: Only netlib compile the maxmimum number of modules
 #BLAS_DESC=		BLAS/LAPACK support
 #GOTOBLAS_DESC=		GotoBLAS implementationS
-LAS_DESC=		Enable LiDAR modules
-PDAL_DESC=		Enable points cloud data modules
 #ATLAS_USES=		blaslapack:atlas
 #NETLIB_USES=		blaslapack
 #GOTOBLAS_USES=		blaslapack:gotoblas
 #OPENBLAS_USES=		blaslapack:openblas
+LAS_DESC=		Enable LiDAR modules
+PDAL_DESC=		Enable points cloud data modules
 DB_DESC=		Database support
+NLS_CONFIGURE_WITH=	nls
+NLS_USES=		gettext	
 LAS_CONFIGURE_ON=	--with-liblas=yes
 LAS_LIB_DEPENDS=	liblas.so:devel/liblas \
 			libboost_program_options.so:devel/boost-libs \
@@ -116,6 +119,8 @@ PGSQL_CONFIGURE_ON=	--with-postgres
 SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
+ZSTD_CONFIGURE_WITH=	zstd
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .include <bsd.port.options.mk>
 
