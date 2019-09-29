@@ -14,19 +14,9 @@ GH_ACCOUNT=	golang
 GH_PROJECT=	review
 GH_TAGNAME=	77ae237
 
+GO_PKGNAME=	golang.org/x/review
+GO_TARGET=	./git-codereview
+
 PLIST_FILES=	bin/git-codereview
-
-post-patch:
-	@${MKDIR} ${WRKSRC}/src/golang.org/x/review
-.for src in .gitattributes AUTHORS CONTRIBUTING.md CONTRIBUTORS LICENSE PATENTS \
-	README codereview.cfg git-codereview
-	@${MV} ${WRKSRC}/${src} ${WRKSRC}/src/golang.org/x/review
-.endfor
-
-do-build:
-	@cd ${WRKSRC}/src/golang.org/x/review ; ${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go install ./...
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

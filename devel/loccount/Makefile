@@ -16,13 +16,8 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	esr
 GL_COMMIT=	249ea3d6927fd327086b609857c04bb95eafdd98
 
+GO_PKGNAME=	gitlab.com/${GL_ACCOUNT}/${PORTNAME}
+
 PLIST_FILES=	bin/${PORTNAME}
-
-do-build:
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build -o ${PORTNAME}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

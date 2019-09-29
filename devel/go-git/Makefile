@@ -11,11 +11,9 @@ COMMENT=	Highly extensible git implementation in pure Go
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	src-d
-GO_PKGNAME=	gopkg.in/src-d/go-git.v4
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 GH_TUPLE=	golang:crypto:505ab14:crypto/vendor/golang.org/x/crypto \
 		golang:net:04a2e54:net/vendor/golang.org/x/net \
 		golang:text:f21a4df:golangtext/vendor/golang.org/x/text \
@@ -35,14 +33,8 @@ GH_TUPLE=	golang:crypto:505ab14:crypto/vendor/golang.org/x/crypto \
 		src-d:gcfg:v1.4.0:gcfg/vendor/github.com/src-d/gcfg \
 		go-warnings:warnings:v0.1.2:warnings/vendor/gopkg.in/warnings.v0
 
+GO_TARGET=	./cli/go-git
+
 PLIST_FILES=	bin/go-git
-MAKE_ENV+=	GOFLAGS=-mod=vendor
-
-do-build:
-	(cd ${GO_WRKSRC}/cli/go-git/; \
-	    ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} build )
-
-do-install:
-	${INSTALL_PROGRAM} ${GO_WRKSRC}/cli/go-git/go-git ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

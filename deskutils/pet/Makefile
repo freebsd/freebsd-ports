@@ -37,7 +37,6 @@ GH_TUPLE=	\
 		spf13:cobra:v0.0.3:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.1:spf13_pflag/vendor/github.com/spf13/pflag \
 		xanzy:go-gitlab:v0.10.5:xanzy_go_gitlab/vendor/github.com/xanzy/go-gitlab
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 

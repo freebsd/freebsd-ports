@@ -28,7 +28,7 @@ post-patch:
 	${MV} ${WRKSRC}/config.yml.example ${WRKSRC}/config.yml.sample
 
 do-build:
-	export GOCACHE=${WRKSRC}/go && ${WRKSRC}/bin/compile
+	${SETENV} ${MAKE_ENV} ${GO_ENV} ${WRKSRC}/bin/compile
 
 pre-install:
 	${RM} -rf ${WRKSRC}/go
