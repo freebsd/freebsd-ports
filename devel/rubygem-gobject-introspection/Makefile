@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gobject-introspection
-PORTVERSION=	3.3.7
+PORTVERSION=	3.3.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 BROKEN_sparc64=	does not build: fails to compile rb-gi-function-info.c
 
-BUILD_DEPENDS=	rubygem-pkg-config>=0:devel/rubygem-pkg-config
 RUN_DEPENDS=	rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2
 
 USES=		gem gnome
