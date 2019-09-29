@@ -3,17 +3,15 @@
 
 PORTNAME=	xtar
 PORTVERSION=	1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	XCONTRIB/utilities
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View and manipulate contents of a tar file
 
-DEPRECATED=	Depends on deprecated libXp
-
 USES=		motif xorg
-USE_XORG=	ice sm x11 xext xp xt
+USE_XORG=	ice sm x11 xext xt
 MAKEFILE=	Makefile.noimake
 ALL_TARGET=	${PORTNAME}
 MAKE_ARGS=	XINC="-I${LOCALBASE}/include" XMLIB="${MOTIFLIB}" \
