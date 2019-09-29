@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	19.08
+PORTVERSION=	19.09
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -47,7 +47,10 @@ GH_TUPLE=	erlang-lager:lager:${LAGER_VER}:lager/deps/lager \
 		processone:ezlib:${EZLIB_VER}:ezlib/deps/ezlib \
 		processone:pkix:${PKIX_VER}:pkix/deps/pkix \
 		processone:mqtree:${MQTREE_VER}:mqtree/deps/mqtree \
-		processone:yconf:${YCONF_VER}:yconf/deps/yconf
+		processone:yconf:${YCONF_VER}:yconf/deps/yconf \
+		processone:p1_acme:${P1_ACME_VER}:p1_acme/deps/p1_acme \
+		benoitc:erlang-idna:${IDNA_VER}:idna/deps/idna \
+		benoitc:unicode_util_compat:${UNICODE_UTIL_COMPAT_VER}:unicode_util_compat/deps/unicode_util_compat
 
 OPTIONS_DEFINE=	ODBC PAM DOCS MYSQL PGSQL REDIS SIP SQLITE \
 		STUN TOOLS FULLXML
@@ -69,15 +72,18 @@ SUBS= 		PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}		\
 		FAST_XML_VER=${FAST_XML_VER}				\
 		FAST_YAML_VER=${FAST_YAML_VER}				\
 		GOLDRUSH_VER=${GOLDRUSH_VER}				\
+		IDNA_VER=${IDNA_VER}					\
 		JIFFY_VER=${JIFFY_VER} JOSE_VER=${JOSE_VER}		\
 		LAGER_VER=${LAGER_VER} LUERL_VER=${LUERL_VER}		\
 		MQTREE_VER=${MQTREE_VER}				\
+		P1_ACME_VER=${P1_ACME_VER}				\
 		P1_MYSQL_VER=${P1_MYSQL_VER}				\
 		P1_OAUTH2_VER=${P1_OAUTH2_VER}				\
 		P1_PGSQL_VER=${P1_PGSQL_VER}				\
 		P1_UTILS_VER=${P1_UTILS_VER} PKIX_VER=${PKIX_VER}	\
 		SQLITE3_VER=${SQLITE3_VER}				\
 		STRINGPREP_VER=${STRINGPREP_VER} STUN_VER=${STUN_VER}	\
+		UNICODE_UTIL_COMPAT_VER=${UNICODE_UTIL_COMPAT_VER}	\
 		XMPP_VER=${XMPP_VER} YCONF_VER=${YCONF_VER}
 
 SUB_FILES=	pkg-message pkg-install
@@ -97,23 +103,26 @@ ESIP_VER=	1.0.30
 EZLIB_VER=	1.0.6
 FAST_TLS_VER=	1.1.2
 FAST_XML_VER=	1.1.37
-FAST_YAML_VER=	1.0.20
+FAST_YAML_VER=	1.0.21
 GOLDRUSH_VER=	0.1.9
+IDNA_VER=	6.0.0
 JIFFY_VER=	0.14.8
 JOSE_VER=	1.8.4
 LAGER_VER=	3.6.10
 LUERL_VER=	0.3
-MQTREE_VER=	1.0.4
+MQTREE_VER=	1.0.5
+P1_ACME_VER=	1.0.1
 P1_MYSQL_VER=	1.0.11
 P1_OAUTH2_VER=	0.6.5
 P1_PGSQL_VER=	1.1.8
 P1_UTILS_VER=	1.0.16
-PKIX_VER=	1.0.3
+PKIX_VER=	1.0.4
 SQLITE3_VER=	1.1.6
 STRINGPREP_VER=	1.0.17
 STUN_VER=	1.0.29
-XMPP_VER=	1.4.0
-YCONF_VER=	1.0.0
+UNICODE_UTIL_COMPAT_VER=	0.4.1
+XMPP_VER=	1.4.2
+YCONF_VER=	1.0.1
 
 OPTIONS_SUB=		yes
 SIP_DESC=	SIP support
