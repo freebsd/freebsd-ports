@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	svt-vp9
-PORTVERSION=	s20190426
+PORTVERSION=	s20190927
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	gstreamer1-plugins-
 
@@ -19,7 +19,7 @@ USE_GNOME=	glib20
 USE_GSTREAMER1=	yes
 GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-VP9
-GH_TAGNAME=	ce24589
+GH_TAGNAME=	39bb49a
 WRKSRC_SUBDIR=	gstreamer-plugin
 PLIST_FILES=	lib/gstreamer-1.0/libgstsvtvp9enc.so
 
