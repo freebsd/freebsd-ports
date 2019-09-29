@@ -35,7 +35,16 @@ USE_GNOME=	gtkmm30 librsvg2
 USE_GCC=	9+
 USE_BINUTILS=	yes
 
-_LTO_FLAGS=	-flto=${MAKE_JOBS_NUMBER} -fuse-linker-plugin -fno-fat-lto-objects
+# gcc needs -flto=${MAKE_JOBS_NUMBER} for parallel link
+#   and does not understand -flto=thin
+#   
+# llvm/clang needs -flto=thin and will automatically parallelize the link
+#
+# As of 2019-09-29, this port is known to be micompiled by clang90 (SIGSEGV or SIBGUS)
+# FreeBSD 12.0's base clang 6.0.1 emits worse code with considerably higher
+# processing times.
+# so we shall stick to GCC 9.x for now
+_LTO_FLAGS=	-flto=${MAKE_JOBS_NUMBER}
 _AR=		${CC:S/gcc/gcc-ar/}
 _RANLIB=	${CC:S/gcc/gcc-ranlib/}
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${_LTO_FLAGS} ${_OPT_FLAGS}
