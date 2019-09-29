@@ -1,0 +1,4 @@
+A lightweight, object-oriented state machine implementation in Python.
+Compatible with Python 2.7+ and 3.0+.
+
+WWW: https://github.com/pytransitions/transitions
