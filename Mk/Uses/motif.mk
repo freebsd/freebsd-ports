@@ -24,7 +24,7 @@ USE_XORG+=	xpm
 LIB_DEPENDS+=		libXm.so.4:x11-toolkits/open-motif
 .endif
 
-MOTIFLIB?=	-L${LOCALBASE}/lib -lXm -lXp
+MOTIFLIB?=	-L${LOCALBASE}/lib -lXm
 MAKE_ENV+=	MOTIFLIB="${MOTIFLIB}"
 
 # We only need USES=xorg if we want USE_XORG modules
