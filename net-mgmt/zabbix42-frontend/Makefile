@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix42
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-frontend
 
@@ -12,7 +13,7 @@ NO_ARCH=	yes
 PATCHDIR=
 PLIST=		${PKGDIR}/pkg-plist.frontend
 
-USE_PHP=	bcmath ctype dom filter gd gettext json ldap mbstring pcre \
+USE_PHP=	bcmath ctype dom fileinfo filter gd gettext json ldap mbstring pcre \
 		session simplexml snmp sockets xml xmlreader xmlwriter
 USES+=		php:web
 
