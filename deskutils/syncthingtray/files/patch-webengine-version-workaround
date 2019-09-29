@@ -1,0 +1,19 @@
+--- ../syncthingtray/widgets/webview/webviewdialog.cpp.orig	2019-09-29 15:48:26.701747000 +0200
++++ ../syncthingtray/widgets/webview/webviewdialog.cpp	2019-09-29 15:49:53.491199000 +0200
+@@ -12,6 +12,7 @@
+ #include <QKeyEvent>
+ #if defined(SYNCTHINGWIDGETS_USE_WEBENGINE)
+ #include <QWebEngineProfile>
++#include <qtwebenginewidgetsversion.h>
+ #endif
+ 
+ using namespace QtUtilities;
+@@ -28,7 +29,7 @@
+ 
+ #if defined(SYNCTHINGWIDGETS_USE_WEBENGINE)
+     m_profile = new QWebEngineProfile(objectName(), this);
+-#if (QT_VERSION >= QT_VERSION_CHECK(5, 13, 0))
++#if (QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 13, 0))
+     m_profile->setUrlRequestInterceptor(new WebViewInterceptor(m_connectionSettings, m_profile));
+ #else
+     m_profile->setRequestInterceptor(new WebViewInterceptor(m_connectionSettings, m_profile));
