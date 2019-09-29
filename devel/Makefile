@@ -5891,7 +5891,6 @@
     SUBDIR += rubygem-grape-swagger
     SUBDIR += rubygem-grape11
     SUBDIR += rubygem-grape_logging
-    SUBDIR += rubygem-grape_logging181
     SUBDIR += rubygem-graphiql-rails
     SUBDIR += rubygem-graphql
     SUBDIR += rubygem-graphql-docs
