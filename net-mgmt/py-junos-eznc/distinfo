@@ -1,3 +1,3 @@
-TIMESTAMP = 1556017363
-SHA256 (junos-eznc-2.2.1.tar.gz) = 0133a10ba3d46ddf70f0ba6620aa3b92e5533f08c57edd000dbffd8fe60d586d
-SIZE (junos-eznc-2.2.1.tar.gz) = 110625
+TIMESTAMP = 1569666591
+SHA256 (junos-eznc-2.3.0.tar.gz) = c0f853cdad12256ae8c33a80ff6c31a3ce867c481f805b085d554fbb5b5b084f
+SIZE (junos-eznc-2.3.0.tar.gz) = 134895
