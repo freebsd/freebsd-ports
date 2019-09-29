@@ -3,18 +3,16 @@
 
 PORTNAME=	xmdiary
 PORTVERSION=	3.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils
 MASTER_SITES=	XCONTRIB/office
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Personal and group calendar utility
 
-DEPRECATED=	Depends on deprecated libXp
-
 NO_CDROM=	Do not sell for profit
 USES=		imake motif xorg
-USE_XORG=	x11 xext xp xpm xt
+USE_XORG=	x11 xext xpm xt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/malloc\.h/stdlib.h/' \
