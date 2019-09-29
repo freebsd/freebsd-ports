@@ -20,25 +20,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gogo
 GH_SUBDIR=	src/github.com/gogo/protobuf
 
-TARGETS=	protoc-gen-combo \
-		protoc-gen-gofast \
-		protoc-gen-gogo \
-		protoc-gen-gogofast \
-		protoc-gen-gogofaster \
-		protoc-gen-gogoslick \
-		protoc-gen-gogotypes \
-		protoc-gen-gostring \
-		protoc-min-version
-
-do-build:
-.for TARGET in ${TARGETS}
-	@cd ${WRKSRC}/${TARGET} && \
-		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build
-.endfor
-
-do-install:
-.for TARGET in ${TARGETS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${TARGET}/${TARGET} ${STAGEDIR}${PREFIX}/bin
-.endfor
+GO_TARGET=	./protoc-gen-combo \
+		./protoc-gen-gofast \
+		./protoc-gen-gogo \
+		./protoc-gen-gogofast \
+		./protoc-gen-gogofaster \
+		./protoc-gen-gogoslick \
+		./protoc-gen-gogotypes \
+		./protoc-gen-gostring \
+		./protoc-min-version
 
 .include <bsd.port.mk>

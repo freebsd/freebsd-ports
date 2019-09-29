@@ -1,5 +1,5 @@
---- ../src/github.com/coreos/go-systemd/util/util_cgo.go.orig
-+++ ../src/github.com/coreos/go-systemd/util/util_cgo.go
+--- cmd/vendor/github.com/coreos/go-systemd/util/util_cgo.go.orig
++++ cmd/vendor/github.com/coreos/go-systemd/util/util_cgo.go
 @@ -127,7 +127,7 @@
  	switch {
  	case errno >= 0:

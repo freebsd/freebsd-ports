@@ -26,10 +26,7 @@ post-patch:
 		${WRKSRC}/magefile.go
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} \
-	${LOCALBASE}/bin/go run bootstrap.go
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} \
+	${GO_CMD} run bootstrap.go
 
 .include <bsd.port.mk>

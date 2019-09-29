@@ -22,7 +22,6 @@ GH_PROJECT=	mongo-tools
 
 GO_BUILDFLAGS=	-tags "${USE_MY_TAGS}"
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
-GO_TARGET=	${TOOL_BUILD:C,(.*),github.com/${GH_ACCOUNT}/${GH_PROJECT}/\1/\1,}
 
 CONFLICTS_INSTALL=	mongodb3[46] mongodb3[46]-tools
 
@@ -45,28 +44,19 @@ MONGODUMP_DESC=		BSON data from the contents of a MongoDB instance
 MONGOTOP_DESC=		Track the amount of data I/O time
 MONGOREPLAY_DESC=	Traffic capture and replay tool
 
-BSONDUMP_VARS=		tool_build+=bsondump
-MONGOSTAT_VARS=		tool_build+=mongostat
-MONGOFILES_VARS=	tool_build+=mongofiles
-MONGOEXPORT_VARS=	tool_build+=mongoexport
-MONGOIMPORT_VARS=	tool_build+=mongoimport
-MONGORESTORE_VARS=	tool_build+=mongorestore
-MONGODUMP_VARS=		tool_build+=mongodump
-MONGOTOP_VARS=		tool_build+=mongotop
-MONGOREPLAY_VARS=	tool_build+=mongoreplay
+BSONDUMP_VARS=		go_target+=./bsondump/main:bsondump
+MONGOSTAT_VARS=		go_target+=./mongostat/main:mongostat
+MONGOFILES_VARS=	go_target+=./mongofiles/main:mongofiles
+MONGOEXPORT_VARS=	go_target+=./mongoexport/main:mongoexport
+MONGOIMPORT_VARS=	go_target+=./mongoimport/main:mongoimport
+MONGORESTORE_VARS=	go_target+=./mongorestore/main:mongorestore
+MONGODUMP_VARS=		go_target+=./mongodump/main:mongodump
+MONGOTOP_VARS=		go_target+=./mongotop/main:mongotop
+MONGOREPLAY_VARS=	go_target+=./mongoreplay/main:mongoreplay
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_USE=		my_tags=sasl
 SSL_USES=		ssl
 SSL_USE=		my_tags=ssl
-
-.include <bsd.port.options.mk>
-
-# Rename 'main' directories to the tool names so that the binaries
-# are not all named 'main' and we do not have to hack around USES=go.
-post-patch:
-.for tool in ${TOOL_BUILD}
-	@${MV} ${WRKSRC}/${tool}/main ${WRKSRC}/${tool}/${tool}
-.endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

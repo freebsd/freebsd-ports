@@ -55,7 +55,7 @@ GH_TUPLE=	jfrog:jfrog-cli-go:${PORTVERSION}:DEFAULT \
 		ulikunitz:xz:v0.5.4:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
 		xanzy:ssh-agent:v0.2.0:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent
 
-GO_PKGNAME=	github.com/jfrog/jfrog-cli-go/jfrog-cli/jfrog
+GO_TARGET=	./jfrog-cli/jfrog
 PLIST_FILES=	bin/jfrog
 
 .include <bsd.port.mk>

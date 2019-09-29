@@ -23,12 +23,8 @@ GH_PROJECT=	protobuf
 GH_SUBDIR=	src/github.com/golang/protobuf
 GH_TUPLE=	google:go-genproto:02b4e95:genproto/src/google.golang.org/genproto
 
+GO_TARGET=	./protoc-gen-go
+
 PLIST_FILES=	bin/protoc-gen-go
-
-do-build:
-	@cd ${WRKSRC}/protoc-gen-go && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/protoc-gen-go/protoc-gen-go ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
