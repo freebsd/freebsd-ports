@@ -1,6 +1,6 @@
 automount is a devd(8) based automounter for FreeBSD.
 
 It supports most popular file systems:
-NTFS/MSDOS/exFAT/EXT2/EXT3/EXT4/UFS
+NTFS/FAT/exFAT/EXT2/EXT3/EXT4/UFS/HFS/XFS/ISO9660
 
 WWW: https://github.com/vermaden/automount/
