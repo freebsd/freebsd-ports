@@ -1533,7 +1533,6 @@
     SUBDIR += rubygem-elasticsearch-rails
     SUBDIR += rubygem-elasticsearch-transport
     SUBDIR += rubygem-elasticsearch-xpack
-    SUBDIR += rubygem-elasticsearch-xpack6
     SUBDIR += rubygem-elasticsearch6
     SUBDIR += rubygem-emot
     SUBDIR += rubygem-escape_utils
