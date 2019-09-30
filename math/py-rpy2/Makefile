@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpy2
-DISTVERSION=	3.1.0
-PORTREVISION=	1
+DISTVERSION=	3.2.0
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,12 +13,12 @@ COMMENT=	Python interface to the R Programming Language
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.10.0:devel/py-cffi@${PY_FLAVOR}
 LIB_DEPENDS=	libR.so:math/R \
 		libicui18n.so:devel/icu \
 		libomp.so:devel/openmp \
 		libpcre.so:devel/pcre
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.10.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
@@ -29,9 +28,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR} \
 USES=		fortran python:3.5+ readline
 USE_PYTHON=	autoplist distutils
 
-NO_ARCH=	yes
+MAKE_ENV=	RPY2_CFFI_MODE=BOTH
 
-pre-build:
-	cd ${WRKSRC}/ && ${PYTHON_CMD} rpy/_rinterface_cffi_build.py
+PLIST_FILES=	${PYTHON_SITELIBDIR}/__pycache__/_rinterface_cffi_abi.cpython-${PYTHON_SUFFIX}.${PYTHON_PYOEXTENSION} \
+		${PYTHON_SITELIBDIR}/__pycache__/_rinterface_cffi_abi.cpython-${PYTHON_SUFFIX}.pyc \
+		${PYTHON_SITELIBDIR}/_rinterface_cffi_abi.py
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_rinterface_cffi_api.abi3.so
 
 .include <bsd.port.mk>

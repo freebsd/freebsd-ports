@@ -1,6 +1,6 @@
---- rpy/situation.py.orig	2019-05-05 16:29:19 UTC
-+++ rpy/situation.py
-@@ -63,7 +63,7 @@ def r_home_from_registry():
+--- rpy2/situation.py.orig	2019-09-27 19:59:40 UTC
++++ rpy2/situation.py
+@@ -90,7 +90,7 @@ def r_home_from_registry() -> Optional[s
  
  def get_rlib_path(r_home: str, system: str) -> str:
      """Get the path for the R shared library."""
