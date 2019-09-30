@@ -2,7 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	snmp
-PORTVERSION=	5.8
+PORTVERSION=	5.7.3
+PORTREVISION=	20
+PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION} \
 		ZI
@@ -18,19 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 NOT_FOR_ARCHS=		mips mips64
 NOT_FOR_ARCHS_REASON=	SSP is currently broken on MIPS
 
-LIB_DEPENDS=	libpkg.so:ports-mgmt/pkg \
-		libpcre.so:devel/pcre
-
-USES=		cpe libtool perl5 ssl
-USE_RC_SUBR=	snmpd snmptrapd
-USE_LDCONFIG=	yes
-USE_PERL5=	build run
-USE_CSTD=	c99
-
-CPE_VENDOR=	net-snmp
-GNU_CONFIGURE=	yes
-
-OPTIONS_DEFINE=	MFD_REWRITES PERL PERL_EMBEDDED PYTHON DUMMY TKMIB \
+OPTIONS_DEFINE=	IPV6 MFD_REWRITES PERL PERL_EMBEDDED PYTHON DUMMY TKMIB \
 		MYSQL AX_SOCKONLY UNPRIVILEGED SMUX DOCS JAIL AX_DISABLE_TRAP \
 		TLS NEWSYSLOG
 OPTIONS_DEFAULT=PERL PERL_EMBEDDED DUMMY SMUX NEWSYSLOG
@@ -50,6 +40,14 @@ NEWSYSLOG_DESC=		Automatically rotate snmpd.log via newsyslog
 MAKE_JOBS_UNSAFE=	yes
 
 PORTSCOUT=	skipv:5.7.2.1
+
+GNU_CONFIGURE=	yes
+USE_RC_SUBR=	snmpd snmptrapd
+USE_LDCONFIG=	yes
+USES=		cpe libtool perl5 ssl
+CPE_VENDOR=	net-snmp
+USE_PERL5=	build run
+USE_CSTD=	c99
 
 CFLAGS+=	-I${LOCALBASE}/include -I${PKG_PREFIX}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -75,6 +73,10 @@ CONFIGURE_ARGS+=--with-defaults
 TLS_CONFIGURE_ON=	--with-security-modules=tsm --with-transports=TLSTCP,DTLSUDP
 
 .include <bsd.port.options.mk>
+
+.if (${OSVERSION} >= 1200085 || ${SSL_DEFAULT:Mopenssl111*})
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openssl11
+.endif
 
 .if ${PORT_OPTIONS:MPYTHON}
 PYDISTUTILS_PKGNAME?=		netsnmp-python
@@ -136,12 +138,20 @@ CONFIGURE_ARGS+=--disable-snmptrapd-subagent
 CONFIGURE_ARGS+=--enable-agentx-dom-sock-only
 .endif
 
+.if ${PORT_OPTIONS:MIPV6}
+CONFIGURE_ARGS+=--enable-ipv6
+# --with-transport="UDPIPv6 TCPIPv6" --with-modules=mibII/ipv6"
+PLIST_SUB+=	WITH_IPV6=""
+.else
+PLIST_SUB+=	WITH_IPV6="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MUNPRIVILEGED}
 CONFIGURE_ARGS+=--without-root-access
 .endif
 
-SHLIB_VERSION=	35
-SHLIB_VERSION2=	.0.0
+SHLIB_VERSION=	30
+SHLIB_VERSION2=	.0.3
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION} SHLIB_VERSION2=${SHLIB_VERSION2}
 SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
 
@@ -186,12 +196,7 @@ CONFIGURE_ARGS+=--with-out-mib-modules="${NET_SNMP_WITHOUT_MIB_MODULE_LIST}"
 BIN_FILES=	snmpbulkwalk snmpget snmpgetnext snmpset \
 		snmpstatus snmptest snmptranslate snmptrap snmpwalk \
 		snmptable snmpbulkget snmpdelta snmpdf agentxtrap \
-		snmpvacm snmpusm encode_keychange snmpnetstat \
-		snmppcap snmpping snmpps
-.if ${PORT_OPTIONS:MTLS}
-BIN_FILES+=	snmptls
-.endif
-
+		snmpvacm snmpusm encode_keychange snmpnetstat
 LIB_FILES=	libnetsnmp.so.${SHLIB_VERSION}${SHLIB_VERSION2} \
 		libnetsnmpagent.so.${SHLIB_VERSION}${SHLIB_VERSION2} \
 		libnetsnmpmibs.so.${SHLIB_VERSION}${SHLIB_VERSION2} \
@@ -238,13 +243,17 @@ pre-everything::
 
 post-patch:
 .for filename in ${SCRIPT_FILES}
-	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/local/${filename}
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/local/${filename}
 .endfor
-	${REINPLACE_CMD} -e 's!utmp_p->ut_name!utmp_p->ut_user!' \
+	@${REINPLACE_CMD} -e 's!utmp_p->ut_name!utmp_p->ut_user!' \
 	    ${WRKSRC}/agent/mibgroup/host/hr_system.c
-	${REINPLACE_CMD} -E -e 's|return pci_lookup_name|disabled broken|g' \
+	@${REINPLACE_CMD} -E -e 's|return pci_lookup_name|disabled broken|g' \
 		${WRKSRC}/configure
-	${CP} ${WRKSRC}/include/net-snmp/system/freebsd12.h \
+.if (${OSVERSION} >= 1200085 || ${SSL_DEFAULT:Mopenssl111*})
+	@${REINPLACE_CMD} -E -e 's|SSL_library_init|OPENSSL_init_ssl|g' \
+		${WRKSRC}/configure
+.endif
+	@${CP} ${WRKSRC}/include/net-snmp/system/freebsd12.h \
 		${WRKSRC}/include/net-snmp/system/freebsd13.h
 
 post-configure:
@@ -298,7 +307,7 @@ install-config-files:
 
 install-doc-files:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for filename in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${filename} ${STAGEDIR}${DOCSDIR}
 . endfor

@@ -1,19 +1,19 @@
---- Makefile.in.orig	2018-07-16 14:33:40 UTC
+--- Makefile.in.orig	2014-12-08 20:23:22 UTC
 +++ Makefile.in
-@@ -22,7 +22,7 @@ INCLUDESUBDIRHEADERS= aix.h bsd.h bsdi3.h bsdi4.h bsdi
- 	dragonfly.h dynix.h \
+@@ -21,7 +21,7 @@ INCLUDESUBDIRHEADERS= aix.h bsd.h bsdi3.h bsdi4.h bsdi
+ 	darwin.h darwin7.h darwin8.h darwin9.h darwin10.h dragonfly.h dynix.h \
  	freebsd2.h freebsd3.h freebsd4.h freebsd5.h freebsd6.h \
  	freebsd7.h freebsd8.h freebsd9.h freebsd10.h freebsd11.h \
--	freebsd12.h freebsd.h kfreebsd.h \
-+	freebsd12.h freebsd13.h freebsd.h kfreebsd.h \
- 	generic.h \
- 	hpux.h irix.h linux.h mingw32.h mingw32msvc.h mips.h \
- 	netbsd.h nto-qnx6.h osf5.h \
-@@ -234,7 +234,7 @@ pythonmodules: subdirs
+-	freebsd12.h freebsd.h \
++	freebsd12.h freebsd13.h freebsd.h \
+         generic.h \
+ 	hpux.h irix.h linux.h mingw32.h mips.h netbsd.h osf5.h \
+ 	openbsd.h openbsd5.h openbsd4.h \
+@@ -230,7 +230,7 @@ pythonmodules: subdirs
          fi
  
  pythoninstall:
--	@(dir=`pwd`; cd python; $(PYMAKE) install --basedir=$$dir --root=$(DESTDIR) --prefix=$(prefix)) ; \
+-	@(dir=`pwd`; cd python; $(PYMAKE) install --basedir=$$dir) ; \
 +	@(dir=`pwd`; cd python; $(PYMAKE) install --root=${STAGEDIR} --basedir=$$dir ${PYDISTUTILS_INSTALLARGS}) ; \
          if test $$? != 0 ; then \
             exit 1 ; \
