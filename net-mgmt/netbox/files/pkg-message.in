@@ -1,5 +1,5 @@
 [
-{
+{ type: install
   message: <<EOD
 Please note that NetBox requires a PostgreSQL database server, which uses its
 built-in network address datatypes. Thus NetBox won't work with other RDBMS's,
@@ -9,9 +9,8 @@ For installation instructions please refer to the related wiki page:
 
 - https://wiki.freebsd.org/Ports/net-mgmt/netbox
 EOD
-  type: install
 }
-{
+{ type: upgrade
   message: <<EOD
 As always it is strongly encouraged to make a backup of the database before the
 database migrations will be executed.
@@ -26,6 +25,52 @@ The following steps are required to finish the upgrade:
 
 2. Restart WSGI/httpd environment (supervisord/apache/nginx/etc.)
 EOD
-  type: upgrade
+}
+{ type: upgrade
+  maximum_version: "2.6.5"
+  message: <<EOD
+1. New dependency: Redis
+
+Since the 2.6 release a running Redis server instance is required for caching
+objects to run. Also the following settings like below need to be added (or
+modified) in the existing configuration.py:
+
+REDIS = {
+	'HOST': 'localhost',
+	'PORT': 6397,
+	'PASSWORD': ''
+	'DATABASE': 0,
+	'CACHE_DATABASE': 1,
+	'DEFAULT_TIMEOUT': 300,
+	'SSL': False,
+}
+
+Note that if you were using these settings in a prior release with webhooks,
+the DATABASE setting remains the same but an additional CACHE_DATABASE settings
+has been added with a default value of 1 to support the caching backend.
+
+The DATABASE setting will be renamed in a future release of NetBox to better
+relay the meaning of the setting. It is highly recommended to keep the webhook
+and cache databases separate. Using the same database number for both may
+result in webhook processing data being lost during cache flushing events.
+
+
+2. View Permissions
+
+NetBox now enforces view-only permissions by default. You can grant view
+permission to a user or group by assigning the "can view" permission for the
+desired objects.
+
+To exclude _all_ objects, effectively disabling view permissions and restoring
+the pre-v2.6 behavior, set:
+
+EXEMPT_VIEW_PERMISSIONS = ['*']
+
+
+3. CORS_ORIGIN_WHITELIST requires URI Scheme
+
+If you have the CORS_ORIGIN_WHITELIST configuration parameter defined, note
+that each origin must now include a URI scheme.
+EOD
 }
 ]
