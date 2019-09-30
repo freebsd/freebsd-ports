@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Warnings
-PORTVERSION=	0.026
+PORTVERSION=	0.027
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,8 +18,9 @@ TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Test-Kwalitee>=1.12:devel/p5-Test-Kwalitee
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
