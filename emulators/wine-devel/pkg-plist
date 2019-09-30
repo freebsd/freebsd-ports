@@ -70,6 +70,7 @@ include/wine/msvcrt/sys/types.h
 include/wine/msvcrt/sys/unistd.h
 include/wine/msvcrt/sys/utime.h
 include/wine/msvcrt/time.h
+include/wine/msvcrt/uchar.h
 include/wine/msvcrt/unistd.h
 include/wine/msvcrt/wchar.h
 include/wine/msvcrt/wctype.h
@@ -799,6 +800,7 @@ include/wine/windows/tcpmib.h
 include/wine/windows/textserv.h
 include/wine/windows/textstor.h
 include/wine/windows/textstor.idl
+include/wine/windows/threadpoolapiset.h
 include/wine/windows/thumbcache.h
 include/wine/windows/thumbcache.idl
 include/wine/windows/timezoneapi.h
