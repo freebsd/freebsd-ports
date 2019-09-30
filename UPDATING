@@ -5,6 +5,37 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190930:
+  AFFECTS: users of NetBox
+  AUTHOR: kai@FreeBSD.org
+
+  Since the 2.6 release a running Redis server instance is required for
+  caching objects to run.  Also the following settings like below need to be
+  added (or modified) in the existing configuration.py:
+
+  REDIS = {
+    'HOST': 'localhost',
+    'PORT': 6397,
+    'PASSWORD': ''
+    'DATABASE': 0,
+    'CACHE_DATABASE': 1,
+    'DEFAULT_TIMEOUT': 300,
+    'SSL': False,
+  }
+
+  Note that if you were using these settings in a prior release with
+  webhooks, the DATABASE setting remains the same but an additional
+  CACHE_DATABASE settings has been added with a default value of 1 to
+  support the caching backend.
+
+  The DATABASE setting will be renamed in a future release of NetBox to
+  better relay the meaning of the setting.  It is highly recommended to keep
+  the webhook and cache databases separate.  Using the same database number
+  for both may result in webhook processing data being lost during cache
+  flushing events.
+
+  Please also check the pkg-message and the changelogs for further info.
+
 20190927:
   AFFECTS: users of emulators/qemu-devel
   AUTHOR: bofh@FreeBSD.org

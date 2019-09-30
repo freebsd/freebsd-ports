@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# This sample rc script eliminate the need to use sysutils/py-supervisor to
+# run NetBox as a system service. Only www/py-gunicorn is needed as a WSGI.
+#
+# Of course a working HTTP server like Apache/nginx is still required to make
+# use of the gunicorn WSGI.
+
+#
+# PROVIDE: netbox
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable netbox:
+#
+# netbox_enable (bool):	Set to NO by default.
+#			Set it to YES to enable netbox.
+# netbox_config (str):	Default to "/usr/local/etc/${name}.conf}"
+#			Config file for gunicorn's netbox config file
+# netbox_command (str):	Default to "/usr/local/bin/gunicorn-3.6"
+#			Path to gunicorn to run netbox
+# netbox_bind (str):    Default to "localhost:8001"
+#			Interface and port to bind to
+# netbox_workers (int):	Default to "3"
+#			Number of gunicorn works
+# netbox_timeout (int):	Default to "120"
+#			Worker timeout for gunicorn
+#
+
+. /etc/rc.subr
+
+name="netbox"
+rcvar=netbox_enable
+netbox_path=%%DATADIR%%
+
+load_rc_config $name
+
+start_precmd="netbox_precmd"
+command=${netbox_program:-%%LOCALBASE%%/bin/gunicorn}
+procname=${netbox_procname:-%%PYTHON_CMD%%}
+netbox_chdir=${netbox_path}
+pidfile=${netbox_pidfile:-/var/run/${name}/${name}.pid}
+netbox_user=${netbox_user:-%%WWWOWN%%}
+netbox_bind=${netbox_bind:-localhost:8001}
+netbox_workers=${netbox_workers:-3}
+netbox_timeout=${netbox_timeout:-120}
+
+command_args="${netbox_args} -D \
+	--log-syslog --log-syslog-prefix ${name} \
+	--log-syslog-to unix:///var/run/log#dgram \
+	--disable-redirect-access-to-syslog \
+	-p ${pidfile} --pythonpath ${netbox_path} \
+	-b ${netbox_bind} -w ${netbox_workers} -t ${netbox_timeout} \
+	netbox.wsgi"
+
+netbox_precmd()
+{
+	install -d -o ${netbox_user} `dirname ${pidfile}`
+}
+
+run_rc_command "$1"
