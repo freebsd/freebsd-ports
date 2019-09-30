@@ -1,3 +1,3 @@
-TIMESTAMP = 1564250056
-SHA256 (rubygem/prometheus-client-mmap-0.9.8.gem) = 8dd989fdadc6a559d806026ba792d2c458792633f8ba13667d55e313effcc105
-SIZE (rubygem/prometheus-client-mmap-0.9.8.gem) = 48640
+TIMESTAMP = 1569748330
+SHA256 (rubygem/prometheus-client-mmap-0.9.10.gem) = 333c2c2bff5e95f5b25660e2d067d932bcad8025c449d684f43a02adc8f3b546
+SIZE (rubygem/prometheus-client-mmap-0.9.10.gem) = 71680
