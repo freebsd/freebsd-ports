@@ -12,7 +12,6 @@
 %%SITE_PERL%%/Toadfarm/Manual/RunningToadfarm.pod
 %%SITE_PERL%%/Toadfarm/Manual/VirtualHost.pod
 %%SITE_PERL%%/Toadfarm/Plugin/AccessLog.pm
-%%SITE_PERL%%/Toadfarm/Plugin/Reload.pm
 %%PERL5_MAN3%%/Toadfarm.3.gz
 %%PERL5_MAN3%%/Toadfarm::Command::reload.3.gz
 %%PERL5_MAN3%%/Toadfarm::Command::restart.3.gz
@@ -27,4 +26,3 @@
 %%PERL5_MAN3%%/Toadfarm::Manual::RunningToadfarm.3.gz
 %%PERL5_MAN3%%/Toadfarm::Manual::VirtualHost.3.gz
 %%PERL5_MAN3%%/Toadfarm::Plugin::AccessLog.3.gz
-%%PERL5_MAN3%%/Toadfarm::Plugin::Reload.3.gz
