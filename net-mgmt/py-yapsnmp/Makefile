@@ -11,10 +11,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Python SNMP module based on net-snmp
 
-LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
-
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		use of undeclared identifier 'USM_LENGTH_OID_TRANSFORM'
+
+LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 USES=		gmake libtool python:2.7
 GNU_CONFIGURE=	yes
