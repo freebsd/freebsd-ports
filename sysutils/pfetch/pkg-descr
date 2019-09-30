@@ -1,0 +1,5 @@
+Pretty system information tool written in POSIX sh,
+supporting: Linux; MacOS; OpenBSD; FreeBSD; NetBSD;
+Haiku and more.
+
+WWW: https://github.com/dylanaraps/pfetch

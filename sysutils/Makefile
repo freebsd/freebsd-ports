@@ -881,6 +881,7 @@
     SUBDIR += pefs-kmod
     SUBDIR += personality
     SUBDIR += pesign
+    SUBDIR += pfetch
     SUBDIR += pflogx
     SUBDIR += pfstat
     SUBDIR += pftables
