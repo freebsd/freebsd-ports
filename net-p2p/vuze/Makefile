@@ -3,6 +3,7 @@
 
 PORTNAME=	vuze
 PORTVERSION=	5.7.4.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF/azureus/vuze/Vuze_${PORTVERSION:S/.//g}
 DISTNAME=	Vuze_${PORTVERSION:S/.//g}_source
@@ -16,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/GPL.txt
 BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:devel/log4j \
 		${JAVALIBDIR}/commons-cli.jar:java/jakarta-commons-cli \
 		${JAVALIBDIR}/junit.jar:java/junit \
-		${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel
-RUN_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel
+		${JAVALIBDIR}/swt.jar:x11-toolkits/swt
+RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 
 USES=		zip
 USE_JAVA=	yes
@@ -40,7 +41,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} \
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
-		SWTJAR="${JAVALIBDIR}/swt-devel.jar" JAVA="${LOCALBASE}/bin/java"
+		SWTJAR="${JAVALIBDIR}/swt.jar" JAVA="${LOCALBASE}/bin/java"
 
 DESKTOP_ENTRIES=	"Vuze" \
 			"BitTorrent client" \
