@@ -15,6 +15,10 @@ LICENSE=	BSD3CLAUSE
 USES=		python
 USE_PYTHON=	autoplist cython distutils
 
+# Add workaround to avoid using /usr/lib32 over /usr/lib
+# See PR/239725 for details
+LDFLAGS+=	-L/usr/lib
+
 pre-configure:
 	cd ${WRKSRC} && cython-${PYTHON_VER} pcap.pyx
 
