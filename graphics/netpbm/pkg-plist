@@ -398,7 +398,7 @@ include/netpbm/shhopt.h
 lib/libnetpbm.a
 lib/libnetpbm.so
 lib/libnetpbm.so.11
-lib/libnetpbm.so.11.87
+lib/libnetpbm.so.11.88
 %%MANPAGES%%man/man1/411toppm.1.gz
 %%MANPAGES%%man/man1/anytopnm.1.gz
 %%MANPAGES%%man/man1/asciitopgm.1.gz
