@@ -23,6 +23,8 @@ bin/hb-view
 @comment include/harfbuzz/hb-ot-font.h
 @comment include/harfbuzz/hb-ot-layout.h
 @comment include/harfbuzz/hb-ot-math.h
+@comment include/harfbuzz/hb-ot-meta.h
+@comment include/harfbuzz/hb-ot-metrics.h
 @comment include/harfbuzz/hb-ot-name.h
 @comment include/harfbuzz/hb-ot-shape.h
 @comment include/harfbuzz/hb-ot-var.h
