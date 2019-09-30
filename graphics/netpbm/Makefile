@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netpbm
-DISTVERSION=	10.87.02
+DISTVERSION=	10.88.00
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/ \
 		LOCAL/tobik
@@ -50,7 +50,8 @@ TEST_TARGET=	check
 # different on FreeBSD so the test fails.  The resulting and
 # intermediary images look fine in spite of this.
 _DISABLE_TESTS=	all-in-place palm-roundtrip pamhue pammixmulti-identity \
-		pamtopdbimg ppmgauss ps-alt-roundtrip tiff-flate-lzw-roundtrip
+		pamtopdbimg pnmquant ppmgauss ps-alt-roundtrip \
+		tiff-flate-lzw-roundtrip
 
 OPTIONS_DEFINE=		MANPAGES PERL STATIC SVGTOPAM X11
 OPTIONS_DEFAULT=	MANPAGES PERL
