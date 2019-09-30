@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	milton
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -17,7 +16,7 @@ BUILD_DEPENDS=	icotool:graphics/icoutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	serge-rgb
 
-USES=		cmake compiler:c++11-lang gl gnome sdl
+USES=		cmake compiler:c++11-lang gl gnome sdl xorg
 USE_GL=		gl glu
 USE_GNOME=	cairo gtk20
 USE_SDL=	sdl2 image2
@@ -32,6 +31,8 @@ PLIST_FILES+=	share/icons/hicolor/${n}x${n}/apps/milton.png
 post-patch:
 	@${REINPLACE_CMD} -e 's:__linux__:__${OPSYS}__:' \
 		${WRKSRC}/src/easytab.h
+	@${REINPLACE_CMD} -e '39s:^:#undef COUNT:' \
+		${WRKSRC}/src/milton.h
 	@${REINPLACE_CMD} -e 's:Carlito\.ttf:${DATADIR}/&:' \
 		${WRKSRC}/src/sdl_milton.cc
 	@${REINPLACE_CMD} -e 's:milton\.png:${PREFIX}/share/icons/hicolor/256x256/apps/&:' \
