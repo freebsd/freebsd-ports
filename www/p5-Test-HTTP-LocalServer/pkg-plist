@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/HTTP/LocalServer.pm
+%%SITE_PERL%%/Test/HTTP/cookie-server
+%%SITE_PERL%%/Test/HTTP/gzip-streamed.psgi
+%%SITE_PERL%%/Test/HTTP/log-server
+%%PERL5_MAN3%%/Test::HTTP::LocalServer.3.gz

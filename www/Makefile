@@ -1191,6 +1191,7 @@
     SUBDIR += p5-Template-Toolkit-Simple
     SUBDIR += p5-Tenjin
     SUBDIR += p5-Test-HTTP
+    SUBDIR += p5-Test-HTTP-LocalServer
     SUBDIR += p5-Test-HTTP-Server-Simple
     SUBDIR += p5-Test-LWP-UserAgent
     SUBDIR += p5-Test-Nginx

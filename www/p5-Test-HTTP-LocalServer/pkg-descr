@@ -1,0 +1,8 @@
+Test::HTTP::LocalServer implements a tiny web server suitable for running "live"
+tests of HTTP clients against it. It also takes care of cleaning %ENV from
+settings that influence the use of a local proxy etc.
+
+Use this web server if you write an HTTP client and want to exercise its
+behaviour in your test suite without talking to the outside world.
+
+WWW: https://metacpan.org/release/Test-HTTP-LocalServer
