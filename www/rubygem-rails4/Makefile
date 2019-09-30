@@ -3,7 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	4.2.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -37,7 +37,7 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:mail/rubygem-actionmailer4 \
 		rubygem-spring>=1.1.3:devel/rubygem-spring \
 		rubygem-sqlite3>=1.3.9:databases/rubygem-sqlite3 \
 		rubygem-sprockets3>=3.0.3:devel/rubygem-sprockets3 \
-		rubygem-sprockets-rails>=2.0:devel/rubygem-sprockets-rails \
+		rubygem-sprockets-rails-rails4>=2.0:devel/rubygem-sprockets-rails-rails4 \
 		rubygem-thread_safe>=0.3.4:devel/rubygem-thread_safe \
 		rubygem-turbolinks>=2.3.0:www/rubygem-turbolinks \
 		rubygem-uglifier>=2.5.0:www/rubygem-uglifier \
