@@ -1,4 +1,4 @@
 Arpeggio is a recursive descent parser with memoization based on PEG grammars
 (aka Packrat parser).
 
-WWW: https://github.com/igordejanovic/Arpeggio
+WWW: https://github.com/textX/Arpeggio
