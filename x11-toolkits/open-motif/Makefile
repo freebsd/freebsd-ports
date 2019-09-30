@@ -2,6 +2,7 @@
 
 PORTNAME=	open-motif
 PORTVERSION=	2.3.8
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 # MASTER_SITES=	SF/${PORTNAME}/Motif%202.3.4%20Source%20Code/
 MASTER_SITES=	SF/motif/Motif%20${PORTVERSION}%20Source%20Code/
@@ -18,12 +19,12 @@ CONFLICTS=	lesstif-[0-9]*
 
 USES=		autoreconf gmake iconv jpeg libtool:keepla pkgconfig xorg
 USE_XORG=	x11 xaw xbitmaps xext xft xt xmu xrender sm ice
-LIB_DEPENDS=	libXp.so:x11/libXp \
-		libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--enable-printing=no
 CPPFLAGS+=	-DCSRG_BASED -DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI -I${PREFIX}/include
 USE_CSTD=	gnu89
 INSTALL_TARGET=	install-strip
