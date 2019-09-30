@@ -15,6 +15,9 @@ COMMENT=	Standard Widget Toolkit for Java
 
 LICENSE=	EPL
 
+DEPRECATED=	Obsolete. Superseded by x11-toolkits/swt
+EXPIRATION_DATE=	2019-10-15
+
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
 SWT_VERSION=	3738
