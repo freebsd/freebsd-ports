@@ -21,7 +21,7 @@ LIB_DEPENDS=	libopus.so:audio/opus \
 		libspeex.so:audio/speex \
 		libspandsp.so:comms/spandsp
 
-USES=		cmake python:2.7,run shebangfix
+USES=		cmake compiler:c++11-lang python:2.7,run shebangfix
 SHEBANG_GLOB=	sems-*
 
 USE_GITHUB=	yes
