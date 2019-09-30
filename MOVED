@@ -12990,3 +12990,4 @@ textproc/rubygem-elasticsearch6|textproc/rubygem-elasticsearch|2019-09-30|Has ex
 devel/rubygem-sprockets-rails|devel/rubygem-sprockets-rails-rails4|2019-09-30|Rename to match our rubygem- port naming
 java/linux-oracle-jdk9|java/openjdk11|2019-09-30|Has expired: No longer maintained upstream, please migrate to openjdk11
 java/linux-oracle-jdk10|java/openjdk11|2019-09-30|Has expired: No longer maintained upstream, please migrate to openjdk11
+graphics/imgvtopgm||2019-09-30|Has expired: obsolete technology
