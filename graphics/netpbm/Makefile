@@ -10,7 +10,7 @@ MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/ \
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats
 
-LICENSE=	IJG GPLv2 LGPL21 MIT PD
+LICENSE=	GPLv2 IJG LGPL21 MIT PD
 LICENSE_COMB=	multi
 LICENSE_NAME_IJG=	Independent JPEG Group License
 LICENSE_FILE_IJG=	${WRKSRC}/doc/copyright_summary
@@ -27,59 +27,60 @@ USES=		ghostscript:test gmake perl5 shebangfix
 USE_LDCONFIG=	yes
 USE_PERL5=	build test
 
-SHEBANG_FILES=	buildtools/makeman editor/pnmflip editor/pnmquant \
-		editor/ppmfade editor/ppmquant editor/ppmshadow \
-		generator/ppmrainbow converter/pbm/pbmtox10bm \
-		test/Execute-Tests test/*.test test/Available-Testprog
+SHEBANG_FILES=	buildtools/makeman converter/pbm/pbmtox10bm editor/pnmflip \
+		editor/pnmquant editor/ppmfade editor/ppmquant editor/ppmshadow \
+		generator/ppmrainbow test/*.test test/Available-Testprog \
+		test/Execute-Tests
 
 MAKEFILE=	GNUmakefile
-INSTALL_TARGET=	install.bin install.lib install.data install.hdr \
-		install.staticlib
-MAKE_ARGS=	pkgdir=${STAGEDIR}${PREFIX} \
-		BINMODE=${BINMODE} \
-		SHAREMODE=${SHAREMODE} \
+MAKE_ARGS=	BINMODE=${BINMODE} \
+		DATADIR=${DATADIR} \
 		DATAMODE=${_SHAREMODE} \
 		DIRMODE=755 \
 		MANMODE=${MANMODE} \
-		DATADIR=${DATADIR}
+		pkgdir=${STAGEDIR}${PREFIX} \
+		SHAREMODE=${SHAREMODE}
+INSTALL_TARGET=	install.bin install.lib install.data install.hdr \
+		install.staticlib
 TEST_ARGS=	pkgdir="${STAGEDIR}${PREFIX}" \
 		resultdir="${WRKDIR}/tests" \
 		RGBDEF="${STAGEDIR}${PREFIX}/share/netpbm/rgb.txt"
 TEST_TARGET=	check
-
-# tiff-flate-lzw-roundtrip's checksums are different on FreeBSD so the
-# test fails.  The resulting and intermediary images look fine in
-# spite of this.
-DISABLED_TESTS=	all-in-place palm-roundtrip pamhue pammixmulti-identity \
+# Disable fragile tests.  tiff-flate-lzw-roundtrip's checksums are
+# different on FreeBSD so the test fails.  The resulting and
+# intermediary images look fine in spite of this.
+_DISABLE_TESTS=	all-in-place palm-roundtrip pamhue pammixmulti-identity \
 		pamtopdbimg ppmgauss ps-alt-roundtrip tiff-flate-lzw-roundtrip
 
+OPTIONS_DEFINE=		MANPAGES PERL STATIC SVGTOPAM X11
 OPTIONS_DEFAULT=	MANPAGES PERL
-OPTIONS_DEFINE=	MANPAGES PERL STATIC SVGTOPAM X11
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
+
+SVGTOPAM_DESC=	Build svgtopam
+X11_DESC=	Build pamx
 
 PERL_USE=		PERL5=run
-STATIC_BUILD_DEPENDS=	tiff>0:graphics/tiff \
-			png>0:graphics/png \
+STATIC_BUILD_DEPENDS=	jasper>0:graphics/jasper \
 			jbigkit>0:graphics/jbigkit \
-			jasper>0:graphics/jasper
-STATIC_LIB_DEPENDS_OFF=	libtiff.so:graphics/tiff \
-			libpng.so:graphics/png \
+			png>0:graphics/png \
+			tiff>0:graphics/tiff
+STATIC_LIB_DEPENDS_OFF=	libjasper.so:graphics/jasper \
 			libjbig.so:graphics/jbigkit \
-			libjasper.so:graphics/jasper
-STATIC_USES=		jpeg:build
+			libpng.so:graphics/png \
+			libtiff.so:graphics/tiff
 STATIC_USES_OFF=	jpeg
-SVGTOPAM_DESC=		Build svgtopam
+STATIC_USES=		jpeg:build
 SVGTOPAM_USES=		gnome
 SVGTOPAM_USE=		GNOME=libxml2
-SVGTOPAM_VARS_OFF=	DISABLED_TESTS+=svgtopam
-X11_USE=		XORG=x11,xcb,xau,xdmcp
+SVGTOPAM_VARS_OFF=	_DISABLE_TESTS+=svgtopam
+X11_USE=		XORG=x11,xau,xcb,xdmcp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|misc|share/netpbm|g' ${WRKSRC}/common.mk
 	@${REINPLACE_CMD} -e 's|$$(PKGDIR)/link|$$(PKGDIR)/lib|g' \
 		-e 's|pkg-config|false|g' \
 		${WRKSRC}/GNUmakefile ${WRKSRC}/lib/Makefile
-.for test in ${DISABLED_TESTS}
+.for test in ${_DISABLE_TESTS}
 	@${REINPLACE_CMD} -e '/${test}/d' ${WRKSRC}/test/Test-Order
 .endfor
 
