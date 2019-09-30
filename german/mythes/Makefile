@@ -17,14 +17,14 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	%%DATADIR%%/th_de_DE_v2.idx \
-		%%DATADIR%%/th_de_DE_v2.dat
+PLIST_FILES=	${DATADIR}/th_de_DE_v2.idx \
+		${DATADIR}/th_de_DE_v2.dat
 
 DEALIASES=	de_AT de_BE de_CH de_LI de_LU
 
 .for ALIAS in ${DEALIASES}
-PLIST_FILES+=	%%DATADIR%%/th_${ALIAS}_v2.idx \
-		%%DATADIR%%/th_${ALIAS}_v2.dat
+PLIST_FILES+=	${DATADIR}/th_${ALIAS}_v2.idx \
+		${DATADIR}/th_${ALIAS}_v2.dat
 .endfor
 
 do-install:
