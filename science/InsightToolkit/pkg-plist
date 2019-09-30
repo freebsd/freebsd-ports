@@ -138,7 +138,7 @@ include/ITK-%%ITK_VER%%/blas/ztrmm.h
 include/ITK-%%ITK_VER%%/blas/ztrmv.h
 include/ITK-%%ITK_VER%%/blas/ztrsv.h
 include/ITK-%%ITK_VER%%/cached-powers.h
-include/ITK-%%ITK_VER%%/compilers/ITK_COMPILER_INFO_Clang_CXX.h
+include/ITK-%%ITK_VER%%/compilers/ITK_COMPILER_INFO_%%CHOSEN_COMPILER_TYPE%%_CXX.h
 include/ITK-%%ITK_VER%%/compilers/VXL_COMPILER_INFO_AppleClang_CXX.h
 include/ITK-%%ITK_VER%%/compilers/VXL_COMPILER_INFO_Clang_CXX.h
 include/ITK-%%ITK_VER%%/compilers/VXL_COMPILER_INFO_GNU_CXX.h
