@@ -117,14 +117,14 @@ include/google/protobuf/wrappers.proto
 lib/libprotobuf-lite.a
 lib/libprotobuf-lite.so
 lib/libprotobuf-lite.so.20
-lib/libprotobuf-lite.so.20.0.1
+lib/libprotobuf-lite.so.20.0.2
 lib/libprotobuf.a
 lib/libprotobuf.so
 lib/libprotobuf.so.20
-lib/libprotobuf.so.20.0.1
+lib/libprotobuf.so.20.0.2
 lib/libprotoc.a
 lib/libprotoc.so
 lib/libprotoc.so.20
-lib/libprotoc.so.20.0.1
+lib/libprotoc.so.20.0.2
 libdata/pkgconfig/protobuf-lite.pc
 libdata/pkgconfig/protobuf.pc
