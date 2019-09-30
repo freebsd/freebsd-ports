@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	12.2.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -156,7 +156,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-chronic_duration>=0.10.6<0.11.0:devel/rubygem-chronic_duration \
 	rubygem-webpack-rails-rails52>=0.9.10<0.10.0:www/rubygem-webpack-rails-rails52 \
 	rubygem-rack-proxy>=0.6.0<0.7.0:www/rubygem-rack-proxy \
-	rubygem-sassc-rails>=2.1.0<2.2.0:textproc/rubygem-sassc-rails \
+	rubygem-sassc-rails-rails52>=2.1.0<2.2.0:textproc/rubygem-sassc-rails-rails52 \
 	rubygem-uglifier27>=2.7.2<2.8.0:www/rubygem-uglifier27 \
 	rubygem-addressable25>=2.5.2<2.6.0:www/rubygem-addressable25 \
 	rubygem-font-awesome-rails-rails52>=4.7<5.0:devel/rubygem-font-awesome-rails-rails52 \
