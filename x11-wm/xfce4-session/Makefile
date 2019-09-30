@@ -19,8 +19,8 @@ RUN_DEPENDS=	iceauth:x11/iceauth \
 LIB_DEPENDS=	libupower-glib.so:sysutils/upower \
 		libpolkit-gobject-1.so:sysutils/polkit
 
-USES=		gettext-tools gmake gnome libtool pathfix pkgconfig \
-		tar:bzip2 xfce xorg
+USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix \
+		pkgconfig tar:bzip2 xfce xorg
 USE_GNOME=	cairo gtk30 glib20 intltool libwnck3
 USE_XFCE=	libexo xfconf
 USE_XORG=	ice sm x11
