@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-settings
-PORTVERSION=	430.14
+PORTVERSION=	435.21
 CATEGORIES=	x11
 
 MAINTAINER=	bland@FreeBSD.org
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libjansson.so:devel/jansson \
 		libvdpau.so:multimedia/libvdpau
 
-USES=		gmake pkgconfig gettext-runtime
+USES=		gmake pkgconfig gettext-runtime xorg gnome
 USE_GNOME=	gtk20 cairo gdkpixbuf2
 USE_GL=		gl
 USE_XORG=	x11 xext xv xxf86vm
@@ -39,8 +39,8 @@ MAKE_ENV=	NV_USE_BUNDLED_LIBJANSSON=0 \
 		NV_VERBOSE= \
 		GTK3_AVAILABLE=0 \
 		INSTALL_DOC_ARGS="${INSTALL_MAN:Ninstall}" \
-		X_CFLAGS=-I${LOCALBASE}/include \
-		X_LDFLAGS=-L${LOCALBASE}/lib
+		XNVCTRL_CFLAGS=-I${LOCALBASE}/include \
+		XNVCTRL_LDFLAGS=-L${LOCALBASE}/lib
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} \
