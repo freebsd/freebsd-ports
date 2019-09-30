@@ -154,12 +154,6 @@ share/locale/ko/LC_MESSAGES/latte_indicator_org.kde.latte.plasma.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.latte.containment.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.latte.plasmoid.mo
 share/locale/ko/LC_MESSAGES/plasma_containmentactions_lattecontextmenu.mo
-share/locale/lt/LC_MESSAGES/latte-dock.mo
-share/locale/lt/LC_MESSAGES/latte_indicator_org.kde.latte.default.mo
-share/locale/lt/LC_MESSAGES/latte_indicator_org.kde.latte.plasma.mo
-share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.latte.containment.mo
-share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.latte.plasmoid.mo
-share/locale/lt/LC_MESSAGES/plasma_containmentactions_lattecontextmenu.mo
 share/locale/nl/LC_MESSAGES/latte-dock.mo
 share/locale/nl/LC_MESSAGES/latte_indicator_org.kde.latte.default.mo
 share/locale/nl/LC_MESSAGES/latte_indicator_org.kde.latte.plasma.mo
@@ -280,6 +274,8 @@ share/plasma/plasmoids/org.kde.latte.containment/contents/ui/indicators/Manager.
 share/plasma/plasmoids/org.kde.latte.containment/contents/ui/layouts/AppletsContainer.qml
 share/plasma/plasmoids/org.kde.latte.containment/contents/ui/layouts/EnvironmentActions.qml
 share/plasma/plasmoids/org.kde.latte.containment/contents/ui/layouts/LayoutsContainer.qml
+share/plasma/plasmoids/org.kde.latte.containment/contents/ui/layouts/indicator/Bridge.qml
+share/plasma/plasmoids/org.kde.latte.containment/contents/ui/layouts/indicator/Loader.qml
 share/plasma/plasmoids/org.kde.latte.containment/contents/ui/layouts/loaders/Tasks.qml
 share/plasma/plasmoids/org.kde.latte.containment/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.latte.containment/metadata.desktop
