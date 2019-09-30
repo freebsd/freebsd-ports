@@ -3,7 +3,7 @@
 
 PORTNAME=	tuxguitar
 PORTVERSION=	1.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/TuxGuitar/TuxGuitar-${PORTVERSION}:src \
 		LOCAL/gahr/:fluid \
@@ -20,7 +20,7 @@ COMMENT=	Multitrack tablature editor and player
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel \
+BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt \
 		${JAVALIBDIR}/itext.jar:devel/itext \
 		${JAVALIBDIR}/gervill.jar:audio/gervill
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -57,7 +57,7 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name build.properties | ${XARGS} ${REINPLACE_CMD} -e '\
-	    s|path\.swt=.*|path.swt=${JAVAJARDIR}/swt-devel.jar|; \
+	    s|path\.swt=.*|path.swt=${JAVAJARDIR}/swt.jar|; \
 	    s|path\.itext=.*|path.itext=${JAVAJARDIR}/itext.jar|; \
 	    s|path\.gervill=.*|path.gervill=${JAVAJARDIR}/gervill.jar|'
 	@${FIND} ${WRKSRC} -name GNUmakefile | ${XARGS} ${REINPLACE_CMD} -e '\
