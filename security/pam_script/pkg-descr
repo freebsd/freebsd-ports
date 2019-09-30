@@ -1,0 +1,7 @@
+PAM-script allows you to execute scripts during authorization,
+passwd changes, or session opening or closing.
+
+So if you need extra work done after login you can use this pam
+module to execute a session script.
+
+WWW: https://github.com/jeroennijhof/pam_script
