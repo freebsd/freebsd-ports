@@ -3,6 +3,7 @@
 
 PORTNAME=	fio
 PORTVERSION=	3.16
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
@@ -12,7 +13,10 @@ COMMENT=	Flexible IO tester
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+HAS_CONFIGURE=	yes
 USES=		gmake tar:bzip2
+
+CONFIGURE_ARGS+=	--disable-native
 
 OPTIONS_DEFINE=	GNUPLOT EXAMPLES
 GNUPLOT_DESC=	Support for plotting graphs
