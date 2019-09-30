@@ -20,7 +20,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/data/default_cfg.ini
 %%DATADIR%%/data/iso3166.tab
 %%DATADIR%%/data/iso639-1.utf8
-%%DATADIR%%/data/nomenclature.fab
+%%DATADIR%%/data/nomenclature.dat
 %%DATADIR%%/data/shaders/planet.frag
 %%DATADIR%%/data/shaders/planet.vert
 %%DATADIR%%/data/shaders/s3d_cube.frag
@@ -364,6 +364,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/Jones-Emberson1-vasey.png
 %%DATADIR%%/nebulae/default/Medusa-vasey.png
 %%DATADIR%%/nebulae/default/barnard142-vasey.png
+%%DATADIR%%/nebulae/default/barnard150.png
 %%DATADIR%%/nebulae/default/barnard173-vasey.png
 %%DATADIR%%/nebulae/default/barnard207.png
 %%DATADIR%%/nebulae/default/barnard22-vasey.png
@@ -411,6 +412,9 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/ic5146.png
 %%DATADIR%%/nebulae/default/ic883h.png
 %%DATADIR%%/nebulae/default/lbn438.png
+%%DATADIR%%/nebulae/default/ldn1622.png
+%%DATADIR%%/nebulae/default/ldn673.png
+%%DATADIR%%/nebulae/default/leo_cluster.png
 %%DATADIR%%/nebulae/default/lmc_01.png
 %%DATADIR%%/nebulae/default/lmc_02.png
 %%DATADIR%%/nebulae/default/lmc_03.png
@@ -682,6 +686,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/n5286.png
 %%DATADIR%%/nebulae/default/n5367.png
 %%DATADIR%%/nebulae/default/n5466.png
+%%DATADIR%%/nebulae/default/n5474.png
 %%DATADIR%%/nebulae/default/n55.png
 %%DATADIR%%/nebulae/default/n5566.png
 %%DATADIR%%/nebulae/default/n5694-dss.png
@@ -711,8 +716,11 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/n6397.png
 %%DATADIR%%/nebulae/default/n6441-2mass.png
 %%DATADIR%%/nebulae/default/n6445.png
+%%DATADIR%%/nebulae/default/n6522.png
 %%DATADIR%%/nebulae/default/n6541-dss.png
 %%DATADIR%%/nebulae/default/n6543kepler.png
+%%DATADIR%%/nebulae/default/n6544.png
+%%DATADIR%%/nebulae/default/n6553.png
 %%DATADIR%%/nebulae/default/n6563.png
 %%DATADIR%%/nebulae/default/n6590.png
 %%DATADIR%%/nebulae/default/n660.png
@@ -790,6 +798,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/rho-a10.png
 %%DATADIR%%/nebulae/default/rho-a11.png
 %%DATADIR%%/nebulae/default/sh2-101-vasey.png
+%%DATADIR%%/nebulae/default/sh2-106.png
 %%DATADIR%%/nebulae/default/sh2-136.png
 %%DATADIR%%/nebulae/default/sh2-155.png
 %%DATADIR%%/nebulae/default/sh2-240.png
@@ -798,6 +807,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/sh2-264.png
 %%DATADIR%%/nebulae/default/sh2-297.png
 %%DATADIR%%/nebulae/default/sh2-308.png
+%%DATADIR%%/nebulae/default/sh2-80.png
 %%DATADIR%%/nebulae/default/smc-ha.png
 %%DATADIR%%/nebulae/default/smc29-1.png
 %%DATADIR%%/nebulae/default/smc29-2.png
@@ -907,6 +917,7 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/scripts/lunar_partial.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/lunar_total.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/martian_analemma.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/messier_marathon.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/messier_tour.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/morsels_1.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/morsels_2.ssc
@@ -918,6 +929,7 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_4.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_5.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/planets_tour.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/saturnian_analemma.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/save_state.inc
 %%SCRIPTS%%%%DATADIR%%/scripts/screensaver.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/sky_cultures.ssc
@@ -930,8 +942,16 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/scripts/transit_of_venus.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/translation.inc
 %%SCRIPTS%%%%DATADIR%%/scripts/triple_sunrise_and_sunsets.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/uranian_analemma.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/western_constellations_tour.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/zodiac.ssc
+%%DATADIR%%/skycultures/anutan/constellation_names.eng.fab
+%%DATADIR%%/skycultures/anutan/constellationship.fab
+%%DATADIR%%/skycultures/anutan/description.en.utf8
+%%DATADIR%%/skycultures/anutan/dso_names.fab
+%%DATADIR%%/skycultures/anutan/info.ini
+%%DATADIR%%/skycultures/anutan/planet_names.fab
+%%DATADIR%%/skycultures/anutan/star_names.fab
 %%DATADIR%%/skycultures/arabic/Bearer-of-the-Demons-Head.png
 %%DATADIR%%/skycultures/arabic/Book_of_Fixed_Stars3.png
 %%DATADIR%%/skycultures/arabic/CentaurAndThe-Beast-of-Prey.png
@@ -1813,6 +1833,26 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/tupi/description.zh_TW.utf8
 %%DATADIR%%/skycultures/tupi/info.ini
 %%DATADIR%%/skycultures/tupi/star_names.fab
+%%DATADIR%%/skycultures/vanuatu_netwar/constellation_names.eng.fab
+%%DATADIR%%/skycultures/vanuatu_netwar/constellation_names.fra.fab
+%%DATADIR%%/skycultures/vanuatu_netwar/constellationsart.fab
+%%DATADIR%%/skycultures/vanuatu_netwar/constellationship.fab
+%%DATADIR%%/skycultures/vanuatu_netwar/description.cs.utf8
+%%DATADIR%%/skycultures/vanuatu_netwar/description.en.utf8
+%%DATADIR%%/skycultures/vanuatu_netwar/description.fr.utf8
+%%DATADIR%%/skycultures/vanuatu_netwar/dso_names.fab
+%%DATADIR%%/skycultures/vanuatu_netwar/info.ini
+%%DATADIR%%/skycultures/vanuatu_netwar/kahau.png
+%%DATADIR%%/skycultures/vanuatu_netwar/kasulia_apam.png
+%%DATADIR%%/skycultures/vanuatu_netwar/kasulia_rerparep.png
+%%DATADIR%%/skycultures/vanuatu_netwar/kilil.png
+%%DATADIR%%/skycultures/vanuatu_netwar/kou.png
+%%DATADIR%%/skycultures/vanuatu_netwar/nemrau.png
+%%DATADIR%%/skycultures/vanuatu_netwar/nowanuman_l.png
+%%DATADIR%%/skycultures/vanuatu_netwar/nowanuman_s.png
+%%DATADIR%%/skycultures/vanuatu_netwar/planet_names.fab
+%%DATADIR%%/skycultures/vanuatu_netwar/star_names.fab
+%%DATADIR%%/skycultures/vanuatu_netwar/suatu_kywer.png
 %%DATADIR%%/skycultures/western/andromeda.png
 %%DATADIR%%/skycultures/western/antlia.png
 %%DATADIR%%/skycultures/western/apus.png
@@ -2144,6 +2184,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/translations/stellarium-planetary-features/sv.qm
 %%DATADIR%%/translations/stellarium-planetary-features/sw.qm
 %%DATADIR%%/translations/stellarium-planetary-features/ta.qm
+%%DATADIR%%/translations/stellarium-planetary-features/te.qm
 %%DATADIR%%/translations/stellarium-planetary-features/tg.qm
 %%DATADIR%%/translations/stellarium-planetary-features/th.qm
 %%DATADIR%%/translations/stellarium-planetary-features/tl.qm
@@ -2233,6 +2274,7 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/sv.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/sw.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ta.qm
+%%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/te.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/tg.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/th.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/tl.qm
@@ -2322,6 +2364,7 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/sv.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/sw.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/ta.qm
+%%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/te.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/tg.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/th.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/tl.qm
@@ -2427,6 +2470,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/translations/stellarium-skycultures/sv.qm
 %%DATADIR%%/translations/stellarium-skycultures/sw.qm
 %%DATADIR%%/translations/stellarium-skycultures/ta.qm
+%%DATADIR%%/translations/stellarium-skycultures/te.qm
 %%DATADIR%%/translations/stellarium-skycultures/tg.qm
 %%DATADIR%%/translations/stellarium-skycultures/th.qm
 %%DATADIR%%/translations/stellarium-skycultures/tl.qm
@@ -2531,6 +2575,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/translations/stellarium/sv.qm
 %%DATADIR%%/translations/stellarium/sw.qm
 %%DATADIR%%/translations/stellarium/ta.qm
+%%DATADIR%%/translations/stellarium/te.qm
 %%DATADIR%%/translations/stellarium/tg.qm
 %%DATADIR%%/translations/stellarium/th.qm
 %%DATADIR%%/translations/stellarium/tl.qm
