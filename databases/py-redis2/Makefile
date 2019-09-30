@@ -5,6 +5,7 @@ PORTNAME=	redis
 PORTVERSION=	2.10.6
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python client for Redis key-value store
@@ -28,7 +29,8 @@ GH_ACCOUNT=	andymccurdy
 GH_PROJECT=	${PORTNAME}-py
 
 NO_ARCH=	yes
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}redis2
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}redis
+PORTSCOUT=	limit:^2\.
 
 # Needs redis-server to be running
 do-test:
