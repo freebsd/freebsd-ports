@@ -14,7 +14,8 @@ COMMENT=	Terminal emulator for the X windowing system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext-tools gmake gnome pkgconfig tar:bzip2 xfce xorg
+USES=		compiler:c11 gettext-tools gmake gnome pkgconfig tar:bzip2 \
+		xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libxml2 vte3
 USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11
