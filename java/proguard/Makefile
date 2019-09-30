@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	proguard
-PORTVERSION=	6.0.3
+PORTVERSION=	6.1.1
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:C/.[0-9]$//}
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -12,7 +12,7 @@ COMMENT=	Java class file shrinker, optimizer, and obfuscator
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES
 
 USE_JAVA=	yes
 NO_BUILD=	yes
@@ -20,7 +20,6 @@ NO_ARCH=	yes
 
 SUB_FILES=	proguard.sh proguard-gui.sh retrace.sh
 
-PORTDOCS=	*
 PORTEXAMPLES=	*
 
 do-install:
@@ -29,8 +28,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/proguard.sh ${STAGEDIR}${PREFIX}/bin/proguard
 	${INSTALL_SCRIPT} ${WRKDIR}/proguard-gui.sh ${STAGEDIR}${PREFIX}/bin/proguard-gui
 	${INSTALL_SCRIPT} ${WRKDIR}/retrace.sh ${STAGEDIR}${PREFIX}/bin/retrace
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 
