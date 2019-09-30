@@ -48,6 +48,7 @@
 @sample %%ETCDIR%%.d/charon/pem.conf.sample
 @sample %%ETCDIR%%.d/charon/pgp.conf.sample
 @sample %%ETCDIR%%.d/charon/pkcs1.conf.sample
+%%PKCS11%%@sample %%ETCDIR%%.d/charon/pkcs11.conf.sample
 @sample %%ETCDIR%%.d/charon/pkcs12.conf.sample
 @sample %%ETCDIR%%.d/charon/pkcs7.conf.sample
 @sample %%ETCDIR%%.d/charon/pkcs8.conf.sample
@@ -201,6 +202,8 @@ lib/ipsec/plugins/libstrongswan-pgp.la
 lib/ipsec/plugins/libstrongswan-pgp.so
 lib/ipsec/plugins/libstrongswan-pkcs1.la
 lib/ipsec/plugins/libstrongswan-pkcs1.so
+%%PKCS11%%lib/ipsec/plugins/libstrongswan-pkcs11.la
+%%PKCS11%%lib/ipsec/plugins/libstrongswan-pkcs11.so
 lib/ipsec/plugins/libstrongswan-pkcs12.la
 lib/ipsec/plugins/libstrongswan-pkcs12.so
 lib/ipsec/plugins/libstrongswan-pkcs7.la
@@ -333,6 +336,7 @@ sbin/ipsec
 %%DATADIR%%/templates/config/plugins/pem.conf
 %%DATADIR%%/templates/config/plugins/pgp.conf
 %%DATADIR%%/templates/config/plugins/pkcs1.conf
+%%PKCS11%%%%DATADIR%%/templates/config/plugins/pkcs11.conf
 %%DATADIR%%/templates/config/plugins/pkcs12.conf
 %%DATADIR%%/templates/config/plugins/pkcs7.conf
 %%DATADIR%%/templates/config/plugins/pkcs8.conf
