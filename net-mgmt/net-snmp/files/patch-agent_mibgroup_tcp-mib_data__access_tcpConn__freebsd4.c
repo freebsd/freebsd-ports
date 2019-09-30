@@ -1,6 +1,6 @@
---- agent/mibgroup/tcp-mib/data_access/tcpConn_freebsd4.c.orig	2018-07-16 14:33:40 UTC
-+++ agent/mibgroup/tcp-mib/data_access/tcpConn_freebsd4.c
-@@ -163,7 +163,11 @@ _load(netsnmp_container *container, u_int load_flags)
+--- agent/mibgroup/tcp-mib/data_access/tcpConn_freebsd4.c.orig	2017-03-15 18:15:07.000000000 +0000
++++ agent/mibgroup/tcp-mib/data_access/tcpConn_freebsd4.c	2017-03-15 18:15:07.000000000 +0000
+@@ -163,7 +163,11 @@
  #else
  	xig = (struct xinpgen *) ((char *) xig + xig->xig_len);
  #endif
@@ -12,12 +12,12 @@
  
  	if (load_flags) {
  	    if (state == TCPCONNECTIONSTATE_LISTEN) {
-@@ -223,6 +227,8 @@ _load(netsnmp_container *container, u_int load_flags)
+@@ -215,6 +219,8 @@
          entry->arbitrary_index = CONTAINER_SIZE(container) + 1;
          CONTAINER_INSERT(container, entry);
      }
 +
 +    free(tcpcb_buf);
  
-     free(tcpcb_buf);
- 
+     if(rc<0)
+         return rc;

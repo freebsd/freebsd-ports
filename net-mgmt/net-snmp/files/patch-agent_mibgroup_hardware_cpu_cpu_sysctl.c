@@ -1,6 +1,6 @@
---- agent/mibgroup/hardware/cpu/cpu_sysctl.c.orig	2018-07-16 14:33:40 UTC
-+++ agent/mibgroup/hardware/cpu/cpu_sysctl.c
-@@ -133,8 +133,21 @@ void init_cpu_sysctl( void ) {
+--- agent/mibgroup/hardware/cpu/cpu_sysctl.c.orig	2014-12-08 12:23:22.000000000 -0800
++++ agent/mibgroup/hardware/cpu/cpu_sysctl.c	2017-04-20 15:05:11.607496000 -0700
+@@ -130,8 +130,21 @@
  #endif  /* VM_UVMEXP2 || VM_UVMEXP */
  
  #elif defined(__FreeBSD__)                /* FreeBSD */
@@ -23,7 +23,7 @@
      #define NS_VM_INTR		v_intr
      #define NS_VM_SWTCH		v_swtch
      #define NS_VM_PAGEIN	v_swappgsin
-@@ -209,7 +222,23 @@ int netsnmp_cpu_arch_load( netsnmp_cache *cache, void 
+@@ -206,7 +219,23 @@
           * Interrupt/Context Switch statistics
           *   XXX - Do these really belong here ?
           */

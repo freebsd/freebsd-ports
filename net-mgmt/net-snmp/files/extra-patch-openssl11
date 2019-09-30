@@ -1,0 +1,223 @@
+--- apps/snmpusm.c
++++ apps/snmpusm.c
+@@ -125,6 +125,32 @@ char           *usmUserPublic_val = NULL
+ int             docreateandwait = 0;
+ 
+ 
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++
++#include <string.h>
++#include <openssl/engine.h>
++
++void DH_get0_pqg(const DH *dh,
++                const BIGNUM **p, const BIGNUM **q, const BIGNUM **g)
++{
++   if (p != NULL)
++       *p = dh->p;
++   if (q != NULL)
++       *q = dh->q;
++   if (g != NULL)
++       *g = dh->g;
++}
++
++void DH_get0_key(const DH *dh, const BIGNUM **pub_key, const BIGNUM **priv_key)
++{
++   if (pub_key != NULL)
++       *pub_key = dh->pub_key;
++   if (priv_key != NULL)
++       *priv_key = dh->priv_key;
++}
++
++#endif
++
+ void
+ usage(void)
+ {
+@@ -190,7 +216,7 @@ get_USM_DH_key(netsnmp_variable_list *va
+                oid *keyoid, size_t keyoid_len) {
+     u_char *dhkeychange;
+     DH *dh;
+-    BIGNUM *other_pub;
++    BIGNUM *p, *g, *pub_key, *other_pub;
+     u_char *key;
+     size_t key_len;
+             
+@@ -205,25 +231,29 @@ get_USM_DH_key(netsnmp_variable_list *va
+         dh = d2i_DHparams(NULL, &cp, dhvar->val_len);
+     }
+ 
+-    if (!dh || !dh->g || !dh->p) {
++    if (dh)
++        DH_get0_pqg(dh, &p, NULL, &g);
++
++    if (!dh || !g || !p) {
+         SNMP_FREE(dhkeychange);
+         return SNMPERR_GENERR;
+     }
+ 
+-    DH_generate_key(dh);
+-    if (!dh->pub_key) {
++    if (!DH_generate_key(dh)) {
+         SNMP_FREE(dhkeychange);
+         return SNMPERR_GENERR;
+     }
+             
+-    if (vars->val_len != (unsigned int)BN_num_bytes(dh->pub_key)) {
++    DH_get0_key(dh, &pub_key, NULL);
++
++    if (vars->val_len != (unsigned int)BN_num_bytes(pub_key)) {
+         SNMP_FREE(dhkeychange);
+         fprintf(stderr,"incorrect diffie-helman lengths (%lu != %d)\n",
+-                (unsigned long)vars->val_len, BN_num_bytes(dh->pub_key));
++                (unsigned long)vars->val_len, BN_num_bytes(pub_key));
+         return SNMPERR_GENERR;
+     }
+ 
+-    BN_bn2bin(dh->pub_key, dhkeychange + vars->val_len);
++    BN_bn2bin(pub_key, dhkeychange + vars->val_len);
+ 
+     key_len = DH_size(dh);
+     if (!key_len) {
+--- configure.d/config_os_libs2
++++ configure.d/config_os_libs2
+@@ -291,12 +291,6 @@ if test "x$tryopenssl" != "xno" -a "x$tr
+             AC_CHECK_LIB(${CRYPTO}, AES_cfb128_encrypt, 
+                 AC_DEFINE(HAVE_AES_CFB128_ENCRYPT, 1,
+                     [Define to 1 if you have the `AES_cfb128_encrypt' function.]))
+-
+-            AC_CHECK_LIB(${CRYPTO}, EVP_MD_CTX_create,
+-                AC_DEFINE([HAVE_EVP_MD_CTX_CREATE], [],
+-                    [Define to 1 if you have the `EVP_MD_CTX_create' function.])
+-                AC_DEFINE([HAVE_EVP_MD_CTX_DESTROY], [],
+-                    [Define to 1 if you have the `EVP_MD_CTX_destroy' function.]))
+         fi
+         if echo " $transport_result_list " | $GREP "DTLS" > /dev/null; then
+ 	    AC_CHECK_LIB(ssl, DTLSv1_method,
+--- snmplib/keytools.c
++++ snmplib/keytools.c
+@@ -149,13 +149,13 @@ generate_Ku(const oid * hashtype, u_int
+      */
+ #ifdef NETSNMP_USE_OPENSSL
+ 
+-#ifdef HAVE_EVP_MD_CTX_CREATE
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
+     ctx = EVP_MD_CTX_create();
+ #else
+-    ctx = malloc(sizeof(*ctx));
+-    if (!EVP_MD_CTX_init(ctx))
+-        return SNMPERR_GENERR;
++    ctx = EVP_MD_CTX_new();
+ #endif
++    if (!ctx)
++        return SNMPERR_GENERR;
+ #ifndef NETSNMP_DISABLE_MD5
+     if (ISTRANSFORM(hashtype, HMACMD5Auth)) {
+         if (!EVP_DigestInit(ctx, EVP_md5()))
+@@ -259,11 +259,10 @@ generate_Ku(const oid * hashtype, u_int
+     memset(buf, 0, sizeof(buf));
+ #ifdef NETSNMP_USE_OPENSSL
+     if (ctx) {
+-#ifdef HAVE_EVP_MD_CTX_DESTROY
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
+         EVP_MD_CTX_destroy(ctx);
+ #else
+-        EVP_MD_CTX_cleanup(ctx);
+-        free(ctx);
++        EVP_MD_CTX_free(ctx);
+ #endif
+     }
+ #endif
+--- snmplib/scapi.c
++++ snmplib/scapi.c
+@@ -486,15 +486,10 @@ sc_hash(const oid * hashtype, size_t has
+     }
+ 
+ /** initialize the pointer */
+-#ifdef HAVE_EVP_MD_CTX_CREATE
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
+     cptr = EVP_MD_CTX_create();
+ #else
+-    cptr = malloc(sizeof(*cptr));
+-#if defined(OLD_DES)
+-    memset(cptr, 0, sizeof(*cptr));
+-#else
+-    EVP_MD_CTX_init(cptr);
+-#endif
++    cptr = EVP_MD_CTX_new();
+ #endif
+     if (!EVP_DigestInit(cptr, hashfn)) {
+         /* requested hash function is not available */
+@@ -507,13 +502,11 @@ sc_hash(const oid * hashtype, size_t has
+ /** do the final pass */
+     EVP_DigestFinal(cptr, MAC, &tmp_len);
+     *MAC_len = tmp_len;
+-#ifdef HAVE_EVP_MD_CTX_DESTROY
++
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
+     EVP_MD_CTX_destroy(cptr);
+ #else
+-#if !defined(OLD_DES)
+-    EVP_MD_CTX_cleanup(cptr);
+-#endif
+-    free(cptr);
++    EVP_MD_CTX_free(cptr);
+ #endif
+     return (rval);
+ 
+
+--- snmplib/snmp_openssl.c	2014-12-08 21:23:22.000000000 +0100
++++ snmplib/snmp_openssl.c	2017-02-20 12:46:00.059727928 +0100
+@@ -47,7 +47,7 @@ void netsnmp_init_openssl(void) {
+     DEBUGMSGTL(("snmp_openssl", "initializing\n"));
+ 
+     /* Initializing OpenSSL */
+-    SSL_library_init();
++    OPENSSL_init_ssl(0, NULL);
+     SSL_load_error_strings();
+     ERR_load_BIO_strings();
+     OpenSSL_add_all_algorithms();
+@@ -164,11 +164,11 @@ netsnmp_openssl_cert_dump_names(X509 *oc
+         oname_entry = X509_NAME_get_entry(osubj_name, i);
+         netsnmp_assert(NULL != oname_entry);
+ 
+-        if (oname_entry->value->type != V_ASN1_PRINTABLESTRING)
++        if (X509_NAME_ENTRY_get_data(oname_entry)->type != V_ASN1_PRINTABLESTRING)
+             continue;
+ 
+         /** get NID */
+-        onid = OBJ_obj2nid(oname_entry->object);
++        onid = OBJ_obj2nid(X509_NAME_ENTRY_get_object(oname_entry));
+         if (onid == NID_undef) {
+             prefix_long = prefix_short = "UNKNOWN";
+         }
+@@ -179,9 +179,9 @@ netsnmp_openssl_cert_dump_names(X509 *oc
+ 
+         DEBUGMSGT(("9:cert:dump:names",
+                    "[%02d] NID type %d, ASN type %d\n", i, onid,
+-                   oname_entry->value->type));
++                   X509_NAME_ENTRY_get_data(oname_entry)->type));
+         DEBUGMSGT(("9:cert:dump:names", "%s/%s: '%s'\n", prefix_long,
+-                   prefix_short, ASN1_STRING_data(oname_entry->value)));
++                   prefix_short, ASN1_STRING_data(X509_NAME_ENTRY_get_data(oname_entry))));
+     }
+ }
+ #endif /* NETSNMP_FEATURE_REMOVE_CERT_DUMP_NAMES */
+@@ -470,7 +470,7 @@ netsnmp_openssl_cert_get_hash_type(X509
+     if (NULL == ocert)
+         return 0;
+ 
+-    return _nid2ht(OBJ_obj2nid(ocert->sig_alg->algorithm));
++    return _nid2ht(X509_get_signature_nid(ocert));
+ }
+ 
+ /**
+@@ -487,7 +487,7 @@ netsnmp_openssl_cert_get_fingerprint(X50
+     if (NULL == ocert)
+         return NULL;
+ 
+-    nid = OBJ_obj2nid(ocert->sig_alg->algorithm);
++    nid = X509_get_signature_nid(ocert);
+     DEBUGMSGT(("9:openssl:fingerprint", "alg %d, cert nid %d (%d)\n", alg, nid,
+                _nid2ht(nid)));
+         
+

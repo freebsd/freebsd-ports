@@ -1,9 +1,11 @@
---- agent/mibgroup/mibII/icmp.h.orig	2018-07-16 16:33:40.000000000 +0200
-+++ agent/mibgroup/mibII/icmp.h	2019-06-15 17:15:20.270320000 +0200
-@@ -16,6 +16,7 @@
+--- agent/mibgroup/mibII/icmp.h.orig	2014-12-08 20:23:22 UTC
++++ agent/mibgroup/mibII/icmp.h
+@@ -14,6 +14,9 @@ config_arch_require(freebsd7,  mibII/ker
+ config_arch_require(freebsd8,  mibII/kernel_sysctl)
+ config_arch_require(freebsd9,  mibII/kernel_sysctl)
  config_arch_require(freebsd10, mibII/kernel_sysctl)
- config_arch_require(freebsd11, mibII/kernel_sysctl)
- config_arch_require(freebsd12, mibII/kernel_sysctl)
++config_arch_require(freebsd11, mibII/kernel_sysctl)
++config_arch_require(freebsd12, mibII/kernel_sysctl)
 +config_arch_require(freebsd13, mibII/kernel_sysctl)
  config_arch_require(netbsd,    mibII/kernel_netbsd)
  config_arch_require(netbsdelf, mibII/kernel_netbsd)

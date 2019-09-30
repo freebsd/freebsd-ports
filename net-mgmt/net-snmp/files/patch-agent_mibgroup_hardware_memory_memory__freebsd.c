@@ -1,6 +1,6 @@
---- agent/mibgroup/hardware/memory/memory_freebsd.c.orig	2018-07-16 14:33:40 UTC
+--- agent/mibgroup/hardware/memory/memory_freebsd.c.orig	2015-02-20 14:44:47 UTC
 +++ agent/mibgroup/hardware/memory/memory_freebsd.c
-@@ -163,7 +163,7 @@ int netsnmp_mem_arch_load( netsnmp_cache *cache, void 
+@@ -163,7 +163,7 @@ int netsnmp_mem_arch_load( netsnmp_cache
          if (!mem->descr)
               mem->descr = strdup("Cached memory");
          mem->units = pagesize;
