@@ -6,6 +6,7 @@ PORTVERSION=	2.1.2
 PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	-rails52
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Integrate SassC-Ruby into Rails
