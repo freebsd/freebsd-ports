@@ -1,2 +1,3 @@
-SHA256 (commons-codec-1.10-src.tar.gz) = c5e48eacc96b16478ff86c752c113ad6d1eb2991cf895ced431d68e2c17838f1
-SIZE (commons-codec-1.10-src.tar.gz) = 322874
+TIMESTAMP = 1569852655
+SHA256 (commons-codec-1.13-bin.tar.gz) = 3469049d54f1fee98151a53e047d19ae333490a09eebd6de7465bdec9df589a0
+SIZE (commons-codec-1.13-bin.tar.gz) = 2162512
