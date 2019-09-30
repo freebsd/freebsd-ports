@@ -25,7 +25,7 @@ BUILD_DEPENDS=	convert:graphics/ImageMagick7 \
 USES=		autoreconf:build gmake libtool motif tar:bz2 xorg
 USE_GCC=	any
 USE_TEX=	dvipsk:build latex:build
-USE_XORG=	ice sm x11 xext xp xt
+USE_XORG=	ice sm x11 xext xt
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	ALLIANCE_TOP=${ALLIANCE_TOP}
