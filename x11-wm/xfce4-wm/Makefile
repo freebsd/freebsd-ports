@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-wm
 PORTVERSION=	4.14.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE
 DISTNAME=	xfwm4-${DISTVERSIONFULL}
@@ -19,12 +20,13 @@ USES=		gettext-tools gmake gnome pkgconfig tar:bzip2 xfce xorg
 USE_GNOME=	cairo gtk30 intltool libwnck3
 USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xi xinerama \
-		xrandr xrender
+		xorgproto xpresent xrandr xrender 
 
 CONFIGURE_ARGS=	--enable-xsync \
 		--enable-render \
 		--enable-randr \
 		--enable-compositor \
+		--enable-xpresent \
 		--disable-kde-systray
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
