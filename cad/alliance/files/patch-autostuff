@@ -1,0 +1,15 @@
+--- autostuff.orig	2019-09-30 12:32:32 UTC
++++ autostuff
+@@ -237,12 +237,6 @@ XM_LIBS=""
+ XP_LIBS=""
+ if test "$motif_includes" != "no" && test "$motif_libraries" != "no"
+ then
+-dnl Motif 2.1 wants `-lXp' (X11R6.3 print server)
+-AC_CHECK_LIB(Xp, XpSelectInput,
+-	XP_LIBS="-lXp"
+-	AC_DEFINE(HAVE_XP),,
+-                   ${XPM_LIBS} ${XEXT_LIBS} ${XT_LIBS} ${X_PRE_LIBS} ${X11_LIBS} ${X_EXTRA_LIBS})
+-dnl
+ AC_CHECK_LIB(Xm, XmCreateOptionMenu, 
+ 	XM_LIBS="-lXm"
+ 	AC_DEFINE(HAVE_MOTIF),,
