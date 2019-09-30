@@ -9,9 +9,11 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTNAME=	lua-cjson-${PORTVERSION}
 
 MAINTAINER=	osa@FreeBSD.org
-COMMENT?=	Fast JSON parsing and encoding support for Lua
+COMMENT=	Fast JSON parsing and encoding support for Lua
 
-USES?=		lua
+LICENSE=	MIT
+
+USES=		lua
 
 MAKE_ARGS=	LUA_VERSION=${LUA_VER}
 
