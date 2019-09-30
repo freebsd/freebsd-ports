@@ -2,6 +2,7 @@
 
 PORTNAME=	amazon-ssm-agent
 PORTVERSION=	2.3.612.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	cperciva@FreeBSD.org
@@ -18,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	aws
 GH_SUBDIR=	src/github.com/aws/amazon-ssm-agent
 
-GO_BUILDLAGS=	-ldflags "-s -w"
+GO_BUILDFLAGS=	-ldflags "-s -w"
 GO_TARGET=	./agent:${PREFIX}/sbin/amazon-ssm-agent \
 		./agent/framework/processor/executer/outofproc/worker:${PREFIX}/sbin/ssm-document-worker \
 		./agent/framework/processor/executer/outofproc/sessionworker:${PREFIX}/sbin/ssm-session-worker \
