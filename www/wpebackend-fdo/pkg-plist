@@ -1,0 +1,11 @@
+include/wpe-fdo-1.0/wpe/exported-image-egl.h
+include/wpe-fdo-1.0/wpe/fdo-egl.h
+include/wpe-fdo-1.0/wpe/fdo.h
+include/wpe-fdo-1.0/wpe/initialize-egl.h
+include/wpe-fdo-1.0/wpe/version.h
+include/wpe-fdo-1.0/wpe/view-backend-exportable-egl.h
+include/wpe-fdo-1.0/wpe/view-backend-exportable.h
+lib/libWPEBackend-fdo-1.0.so
+lib/libWPEBackend-fdo-1.0.so.1
+lib/libWPEBackend-fdo-1.0.so.1.4.1
+libdata/pkgconfig/wpebackend-fdo-1.0.pc
