@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sass-rails
-PORTVERSION=	5.0.7
+PORTVERSION=	6.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
@@ -13,18 +13,11 @@ COMMENT=	Sass adapter for the Rails asset pipeline
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-railties5>=4.0.0<6:www/rubygem-railties5 \
-		rubygem-sass>=3.1<4:textproc/rubygem-sass \
-		rubygem-sprockets3>=2.8<4.0:devel/rubygem-sprockets3 \
-		rubygem-sprockets-rails-rails5>=2.0<4.0:devel/rubygem-sprockets-rails-rails5 \
-		rubygem-tilt>=1.1<3:devel/rubygem-tilt
+RUN_DEPENDS=	rubygem-sassc-rails-rails5>=2.1.1<3:textproc/rubygem-sassc-rails-rails5
 
 USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
-
-# It requires Rails 5.2.0+ since 5.0.8.
-PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>
