@@ -4396,6 +4396,7 @@
     SUBDIR += py-dis3
     SUBDIR += py-distlib
     SUBDIR += py-distorm
+    SUBDIR += py-dj22-django-rq
     SUBDIR += py-django-rq
     SUBDIR += py-django-rq-dashboard
     SUBDIR += py-django-tastypie-mongoengine
