@@ -23,14 +23,15 @@ LIB_DEPENDS=	libleveldb.so:databases/leveldb
 USES=		compiler:c++11-lang gmake localbase perl5
 USE_PERL5=	configure
 
+CFLAGS_powerpc=	-DLEVELDB_CSTDATOMIC_PRESENT
+CFLAGS_powerpc64=	-DLEVELDB_CSTDATOMIC_PRESENT
+CFLAGS_powerpcspe=	-DLEVELDB_CSTDATOMIC_PRESENT
 MAKE_ARGS=	CC="${CXX}"
 
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-reserved-user-defined-literal
-.else
-CFLAGS+=	-DLEVELDB_CSTDATOMIC_PRESENT
 .endif
 
 post-patch:
