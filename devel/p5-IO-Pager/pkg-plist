@@ -3,6 +3,7 @@
 %%SITE_PERL%%/IO/Pager/Page.pm
 %%SITE_PERL%%/IO/Pager/Perl.pm
 %%SITE_PERL%%/IO/Pager/Unbuffered.pm
+%%SITE_PERL%%/IO/Pager/tp
 %%PERL5_MAN3%%/IO::Pager.3.gz
 %%PERL5_MAN3%%/IO::Pager::Buffered.3.gz
 %%PERL5_MAN3%%/IO::Pager::Page.3.gz

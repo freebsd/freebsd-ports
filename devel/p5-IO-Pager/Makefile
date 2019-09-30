@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Pager
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,15 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which
+RUN_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which \
+		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
-USES=		perl5 tar:tgz
+USES=		perl5 shebangfix tar:tgz
 USE_PERL5=	configure
 
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S|0$||}
+
+SHEBANG_FILES=	lib/IO/Pager/tp
+perl_OLD_CMD=	"/bin/env perl"
 
 .include <bsd.port.mk>
