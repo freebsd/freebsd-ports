@@ -26,7 +26,7 @@ BUILD_DEPENDS=	ffmpeg>=3.4.1,1:multimedia/ffmpeg \
 RUN_DEPENDS=	ffmpeg>=3.4.1,1:multimedia/ffmpeg
 
 USES=		compiler:c++11-lib desktop-file-utils gettext-tools gmake gnome \
-		iconv libtool pathfix pkgconfig tar:xz
+		iconv libtool localbase pathfix pkgconfig tar:xz
 
 # VLC git (post 2.2.4) requires C++11 support and passes the appropriate flag
 # to the compiler. Until the port is updated, we explicitly pass -std=c++11 to
@@ -58,9 +58,7 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
-CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS_i386=	-fomit-frame-pointer
-LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	A52 AALIB AOM ASS AVAHI CACA CHROMECAST DAV1D DBUS DCA DOCS DVDREAD \
 		DVDNAV FAAD FLAC FLUID FREERDP FRIBIDI GME GNUTLS \
@@ -70,10 +68,14 @@ OPTIONS_DEFINE=	A52 AALIB AOM ASS AVAHI CACA CHROMECAST DAV1D DBUS DCA DOCS DVDR
 		QT5 REALRTSP RUNROOT SAMPLERATE SIDPLAY SCHROEDINGER \
 		SDL SHOUTCAST SKINS SMB SNDIO STREAM SPEEX TAGLIB THEORA \
 		TWOLAME UPNP V4L VAAPI VCD VDPAU VPX VORBIS WAYLAND X11 X264 X265 ZVBI
+OPTIONS_DEFINE_powerpc=	ALTIVEC
+OPTIONS_DEFINE_powerpc64=	ALTIVEC
 OPTIONS_DEFAULT=A52 AVAHI DAV1D DBUS DCA DVDREAD DVDNAV FAAD FLAC GNUTLS JPEG \
 		LIVEMEDIA LUA MAD MPEG2 OGG OPTIMIZED_CFLAGS \
 		OPUS PNG QT5 SAMPLERATE STREAM SPEEX TAGLIB THEORA TWOLAME \
 		V4L VAAPI VCD VDPAU VORBIS WAYLAND X11
+OPTIONS_DEFAULT_powerpc=	ALTIVEC
+OPTIONS_DEFAULT_powerpc64=	ALTIVEC
 OPTIONS_SUB=	yes
 
 AOM_DESC=	AV1 video encoding/decoding via libaom
@@ -109,6 +111,8 @@ AALIB_CONFIGURE_ENABLE=	aa
 
 ASS_LIB_DEPENDS=	libass.so:multimedia/libass
 ASS_CONFIGURE_ENABLE=	libass
+
+ALTIVEC_CONFIGURE_ENABLE=	altivec
 
 AOM_LIB_DEPENDS=	libaom.so:multimedia/aom
 AOM_CONFIGURE_ENABLE=	aom
