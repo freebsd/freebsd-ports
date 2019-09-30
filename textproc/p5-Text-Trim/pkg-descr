@@ -1,3 +1,5 @@
-Text::Trim does what chomp does, but at both ends of the string.
+Text::Trim provides functions for removing leading and/or trailing whitespace
+from strings. It is basically a wrapper around some simple regexes with a
+flexible context-based interface.
 
 WWW: https://metacpan.org/release/Text-Trim
