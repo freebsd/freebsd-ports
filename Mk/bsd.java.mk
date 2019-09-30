@@ -180,10 +180,6 @@ _JAVA_PORT_NATIVE_OPENJDK_JDK_12_INFO=		PORT=java/openjdk12			HOME=${LOCALBASE}/
 											VERSION=12	OS=native	VENDOR=openjdk
 _JAVA_PORT_LINUX_ORACLE_JDK_8_INFO=		PORT=java/linux-oracle-jdk18	HOME=${LOCALBASE}/linux-oracle-jdk1.8.0 \
 											VERSION=8	OS=linux	VENDOR=oracle
-_JAVA_PORT_LINUX_ORACLE_JDK_9_INFO=		PORT=java/linux-oracle-jdk9	HOME=${LOCALBASE}/linux-oracle-jdk9 \
-											VERSION=9	OS=linux	VENDOR=oracle
-_JAVA_PORT_LINUX_ORACLE_JDK_10_INFO=		PORT=java/linux-oracle-jdk10	HOME=${LOCALBASE}/linux-oracle-jdk10 \
-											VERSION=10	OS=linux	VENDOR=oracle
 
 # Verbose description for each VENDOR
 _JAVA_VENDOR_openjdk=		"OpenJDK BSD Porting Team"
@@ -199,9 +195,7 @@ __JAVA_PORTS_ALL=	\
 					JAVA_PORT_NATIVE_OPENJDK_JDK_11 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_12 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_7  \
-					JAVA_PORT_LINUX_ORACLE_JDK_8    \
-					JAVA_PORT_LINUX_ORACLE_JDK_9    \
-					JAVA_PORT_LINUX_ORACLE_JDK_10
+					JAVA_PORT_LINUX_ORACLE_JDK_8
 _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
 					${__JAVA_PORTS_ALL}
 
