@@ -117,7 +117,6 @@ jai-*-lib-linux-i586.*	java/jai		Redistribution is not permitted
 java3d-sdk-*-linux-i386* java/java3d		License does not allow distribution
 jdk-8*-apidocs.zip	java/jdk8-doc		This documentation is under license and export control
 jdk-8*-i586.tar.gz	java/linux-oracle-jdk18	Redistribution of repackaged binaries not permitted
-jdk-9*-x64_bin.tar.gz	java/linux-oracle-jdk9	Redistribution of repackaged binaries not permitted
 jfbuild-*		games/jfsw		Must be distributed only through the Internet and free of charge
 jmf-*-alljava.zip	java/jmf		Redistribution of pre-compiled binaries is not permitted
 jpgraph-2.*		graphics/jpgraph2	The free version cannot be used in a commercial context
