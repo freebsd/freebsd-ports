@@ -1,0 +1,5 @@
+Began as a 'Rubyfied' version of perl's Net::NTP module,
+(C) 2004 by James G. Willmore. Refactored and re-released
+in 2010 by Zencoder.
+
+WWW: https://github.com/zencoder/net-ntp
