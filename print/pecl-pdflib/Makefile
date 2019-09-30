@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdflib
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	print pear
 
 MAINTAINER=	ale@FreeBSD.org
