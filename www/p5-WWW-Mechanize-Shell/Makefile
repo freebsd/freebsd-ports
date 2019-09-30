@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-Shell
-PORTVERSION=	0.57
+PORTVERSION=	0.58
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CORION
@@ -23,13 +23,16 @@ RUN_DEPENDS=	p5-HTML-Display>=0:www/p5-HTML-Display \
 		p5-WWW-Mechanize>=1.20:www/p5-WWW-Mechanize \
 		p5-WWW-Mechanize-FormFiller>=0.05:www/p5-WWW-Mechanize-FormFiller \
 		p5-libwww>=5.69:www/p5-libwww
-TEST_DEPENDS=	p5-CGI>=0:www/p5-CGI
+TEST_DEPENDS=	p5-CGI>=0:www/p5-CGI \
+		p5-Test-HTTP-LocalServer>=0:www/p5-Test-HTTP-LocalServer \
+		p5-Test-Without-Module>=0:devel/p5-Test-Without-Module
 
-OPTIONS_DEFINE=	EXAMPLES
-
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	banking.postbank.de.mech hotmail.signup.mech wwwshell.pl
 
