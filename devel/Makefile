@@ -3893,6 +3893,7 @@
     SUBDIR += pecl-request
     SUBDIR += pecl-swoole
     SUBDIR += pecl-sync
+    SUBDIR += pecl-uploadprogress
     SUBDIR += pecl-uuid
     SUBDIR += pecl-uv
     SUBDIR += pecl-vld
