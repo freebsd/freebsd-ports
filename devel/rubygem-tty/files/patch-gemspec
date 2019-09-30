@@ -1,4 +1,4 @@
---- tty.gemspec.orig	2019-08-02 15:42:09 UTC
+--- tty.gemspec.orig	2019-09-29 14:35:08 UTC
 +++ tty.gemspec
 @@ -24,29 +24,29 @@ Gem::Specification.new do |s|
      s.specification_version = 4
@@ -7,7 +7,8 @@
 -      s.add_runtime_dependency(%q<tty-box>.freeze, ["~> 0.3.0"])
 +      s.add_runtime_dependency(%q<tty-box>.freeze, ["~> 0.3"])
        s.add_runtime_dependency(%q<tty-color>.freeze, ["~> 0.4"])
-       s.add_runtime_dependency(%q<tty-command>.freeze, ["~> 0.8.0"])
+-      s.add_runtime_dependency(%q<tty-command>.freeze, ["~> 0.8.0"])
++      s.add_runtime_dependency(%q<tty-command>.freeze, ["~> 0.8"])
        s.add_runtime_dependency(%q<tty-config>.freeze, ["~> 0.3.0"])
        s.add_runtime_dependency(%q<tty-cursor>.freeze, ["~> 0.6"])
        s.add_runtime_dependency(%q<tty-editor>.freeze, ["~> 0.5.0"])
