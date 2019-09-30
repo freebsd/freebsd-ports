@@ -18,10 +18,11 @@
 @(,,555) %%DATADIR%%/bin/gitaly-upload-archive
 @(,,555) %%DATADIR%%/bin/gitaly-upload-pack
 @(,,555) %%DATADIR%%/bin/gitaly-receive-pack
-@(,,555) %%DATADIR%%/bin/gitlab-keys
 @(,,555) %%DATADIR%%/bin/gitlab-shell
 @(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-keys-check
+@(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-keys-check-ruby
 @(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-principals-check
+@(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-principals-check-ruby
 @(,,555) %%DATADIR%%/bin/gitlab-shell-ruby
 @(,,555) %%DATADIR%%/bin/install
 @(,,555) %%DATADIR%%/bin/test-logger
@@ -55,6 +56,7 @@
 %%DATADIR%%/spec/gitlab_metrics_spec.rb
 %%DATADIR%%/spec/gitlab_net_spec.rb
 %%DATADIR%%/spec/gitlab_shell_authorized_keys_check_spec.rb
+%%DATADIR%%/spec/gitlab_shell_authorized_principals_check_spec.rb
 %%DATADIR%%/spec/gitlab_shell_custom_git_receive_pack_spec.rb
 %%DATADIR%%/spec/gitlab_shell_gitlab_shell_spec.rb
 %%DATADIR%%/spec/gitlab_shell_lfs_authentication_spec.rb
@@ -67,7 +69,6 @@
 %%DATADIR%%/spec/support/gitlab_shell_setup.rb
 %%DATADIR%%/spec/support/gl_id_test_hook
 %%DATADIR%%/spec/support/http_unix_server.rb
-%%DATADIR%%/support/go-update-vendor
 %%DATADIR%%/spec/support/hook_fail
 %%DATADIR%%/spec/support/hook_ok
 %%DATADIR%%/spec/support/vcr.rb
