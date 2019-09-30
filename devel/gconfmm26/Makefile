@@ -3,8 +3,7 @@
 #   $MCom: ports-stable/devel/gconfmm26/Makefile,v 1.1 2010/06/24 07:51:01 kwm Exp $
 
 PORTNAME=	gconfmm
-PORTVERSION=	2.28.2
-PORTREVISION=	8
+PORTVERSION=	2.28.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +16,7 @@ BUILD_DEPENDS=	gm4:devel/m4 \
 		${LOCALBASE}/lib/libgtkmm-2.4.so.1:x11-toolkits/gtkmm24
 
 USES=		compiler:c++11-lang gmake libtool:keepla pathfix pkgconfig \
-		tar:bzip2
+		tar:bzip2 gnome xorg
 USE_CXXSTD=	c++11
 USE_XORG=	x11
 USE_GNOME=	gconf2 referencehack
