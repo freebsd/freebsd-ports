@@ -1,0 +1,5 @@
+This is the ruby client for Unleash, a powerful feature toggle
+system that gives you a great overview over all feature toggles
+across all your applications and services.
+
+WWW: https://github.com/unleash/unleash-client-ruby
