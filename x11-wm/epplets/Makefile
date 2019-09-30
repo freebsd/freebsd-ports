@@ -25,8 +25,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-auto-respawn \
 		--disable-esound
 
-OPTIONS_SUB=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|<machine/soundcard\.h>|<sys/soundcard.h>|g' \
 		${WRKSRC}/epplets/Emix.c
