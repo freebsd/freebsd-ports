@@ -3,7 +3,7 @@
 
 PORTNAME=	suitesparse
 DISTVERSION=	5.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://faculty.cse.tamu.edu/davis/SuiteSparse/	\
 		https://mirror.sobukus.de/files/src/suitesparse/
@@ -15,83 +15,57 @@ COMMENT=	SuiteSparse is a set of packages for sparse matrices calculation
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libmetis.so:math/metis \
-		liblapack.so:math/lapack
+LIB_DEPENDS=	libmetis.so:math/metis
 
-USES=		cmake:insource compiler:openmp fortran gmake
+USES=		cmake:insource compiler:${OPENMP}c++11-lib fortran gmake localbase:ldflags
 USE_LDCONFIG=	yes
-
 WRKSRC=		${WRKDIR}/SuiteSparse
-WRKSRC_SHARED=	${WRKSRC}_shared
+ALL_TARGET=	library # skip demos
+INSTALL_TARGET=	install # skip USES=cmake
+MAKE_ENV=	BLAS="${BLASLIB}" LAPACK="${LAPACKLIB}" \
+		MY_METIS_LIB="-lmetis" \
+		JOBS="${MAKE_JOBS_NUMBER}" \
+		CMAKE_OPTIONS='${CMAKE_ARGS}' \
+		INSTALL="${STAGEDIR}${PREFIX}" \
+		INSTALL_DOC="${STAGEDIR}${DOCSDIR}" \
+		INSTALL_INCLUDE="${STAGEDIR}${PREFIX}/include/${PORTNAME}"
+CMAKE_ARGS=	-DCMAKE_INSTALL_INCLUDEDIR:PATH="include/${PORTNAME}"
+LDFLAGS+=	-L${WRKSRC}/lib # prevent linking with shared libs from the preinstalled older versions
 
+CONFLICTS_INSTALL=	mongoose plinkseq # bin/mongoose
+
+OPTIONS_DEFINE=	DOCS OPENMP TBB
 OPTIONS_RADIO=	BLAS
-OPTIONS_RADIO_BLAS=	OPENBLAS NETLIB ATLAS
-OPTIONS_DEFAULT=	OPENBLAS
+OPTIONS_RADIO_BLAS=	ATLAS GOTOBLAS NETLIB OPENBLAS
+OPTIONS_DEFAULT=	OPENBLAS OPENMP TBB
 
-OPENBLAS_USES=	blaslapack:openblas
-NETLIB_USES=	blaslapack:netlib
-ATLAS_USES=	blaslapack:atlas
+ATLAS_USES=		blaslapack:atlas
+GOTOBLAS_DESC=		Goto blas implementation
+GOTOBLAS_USES=		blaslapack:gotoblas
+NETLIB_USES=		blaslapack:netlib
+OPENBLAS_USES=		blaslapack:openblas
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "sparc64"
-PICFLAG?=	-fPIC
-.else
-PICFLAG?=	-fpic
+OPENMP_USES=		compiler:openmp
+OPENMP_MAKE_ENV_OFF=	CFOPENMP=
+.if !exists(/usr/include/omp.h)
+# XXX ports/199603 + ports/210337
+OPENMP_VARS=		OPENMP=gcc-
 .endif
 
-METIS=		${LOCALBASE}/lib/libmetis.a
-METIS_PATH=	${LOCALBASE}/include/metis
-CHOLMOD_CONFIG=
-CFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${WRKSRC}/lib # prevent linking with shared libs from the preinstalled older versions
-MAKE_ARGS+=	JOBS="${MAKE_JOBS_NUMBER}"
-MAKE_ARGS+=	MY_METIS_LIB="-L${LOCALBASE}/lib -lmetis $(LDFLAGS)"
+TBB_DESC=		Intel threading building blocks
+TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
+TBB_MAKE_ENV=		TBB="-ltbb" SPQR_CONFIG="-DHAVE_TBB"
 
-pre-configure:
-	${RM} -r ${WRKSRC}/metis-5.1.0
-	${FIND} -X ${WRKSRC} -type f -name 'Makefile' -or -name '*.mk' | ${XARGS} \
-		${REINPLACE_CMD} \
-			-e '\|^AR =|s|ar|${AR}|' \
-			-e '\|^ *BLAS =|s|=.*|= ${LDFLAGS} ${BLASLIB}|' \
-			-e '\|^CC =|d' \
-			-e '\|^CFLAGS =|{s|-O[1-9]\{0,1\}||g;s|=|= ${CFLAGS} $${PICFLAG} |;}' \
-			-e '\|^CHOLMOD_CONFIG =|s|=.*|= ${CHOLMOD_CONFIG}|' \
-			-e '\|^CPLUSPLUS =|s|=.*|= ${CXX}|' \
-			-e '\|^F77 =|d' \
-			-e '\|^F77FLAGS =|s|=.*|= ${FFLAGS} $${PICFLAG}|' \
-			-e '\|^LAPACK =|s|=.*|= ${LDFLAGS} ${LAPACKLIB}|' \
-			-e '\|^METIS =|s|=.*|= ${METIS}|' \
-			-e '\|^METIS_PATH =|s|=.*|= ${METIS_PATH}|' \
-			-e 's|-I\$$(METIS_PATH)/Lib|-I${METIS_PATH}|' \
-			-e '\|^RANLIB =|s|ranlib|${RANLIB}|' \
-			-e '\|^SPQR_CONFIG =|s|=.*|= ${CHOLMOD_CONFIG}|' \
-			-e 's|# MAKE = gmake|MAKE = gmake|g' \
-			-e 's|/usr/local|${LOCALBASE}|g'
-	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
-	${FIND} -X ${WRKSRC_SHARED} -type f -name 'Makefile' -or -name '*.mk' | ${XARGS} \
-		${REINPLACE_CMD} -e 's|$$(CFLAGS)|$$(CFLAGS) $$(PICFLAG)|g'
+post-extract:
+	${RM} -r ${WRKSRC}/metis-*
 
-do-configure:
-	@${DO_NADA}
+do-configure: # skip USES=cmake
 
-do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PICFLAG= \
-		LD_LIBRARY_PATH=${WRKDIR}/SuiteSparse/lib ${MAKE_CMD} ${MAKE_ARGS}
-	cd ${WRKSRC_SHARED} && ${SETENV} ${MAKE_ENV} PICFLAG=${PICFLAG} \
-		LD_LIBRARY_PATH=${WRKDIR}/SuiteSparse/lib ${MAKE_CMD} ${MAKE_ARGS}
+post-patch-OPENMP-off:
+	@${REINPLACE_CMD} -e '/find_package.*OpenMP/d' \
+		${WRKSRC}/GraphBLAS/CMakeLists.txt
 
-do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/suitesparse
-	cd ${STAGEDIR}${PREFIX}/include && ${LN} -s suitesparse ufsparse
-.for d in AMD BTF CAMD CCOLAMD CHOLMOD COLAMD CSparse CXSparse KLU SPQR UMFPACK # CSparse: shared lib bot built
-	${INSTALL_DATA} ${WRKSRC}/${d}/Include/*.h ${STAGEDIR}${PREFIX}/include/suitesparse
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/SuiteSparse_config/SuiteSparse_config.h ${STAGEDIR}${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/UMFPACK/Source/umf_config.h ${STAGEDIR}${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/SPQR/Include/*.hpp ${STAGEDIR}${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC_SHARED}/lib/*.so* ${STAGEDIR}${PREFIX}/lib/
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so*
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>
