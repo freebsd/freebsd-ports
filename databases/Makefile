@@ -843,6 +843,7 @@
     SUBDIR += py-queries
     SUBDIR += py-rb
     SUBDIR += py-redis
+    SUBDIR += py-redis2
     SUBDIR += py-riak
     SUBDIR += py-rrdtool_lgpl
     SUBDIR += py-sispy

@@ -1,0 +1,3 @@
+This is the Python interface to the Redis key-value store.
+
+WWW: https://github.com/andymccurdy/redis-py
