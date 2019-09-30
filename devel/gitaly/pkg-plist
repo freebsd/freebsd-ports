@@ -35,6 +35,7 @@
 %%DATADIR%%/ruby/gitlab-shell/lib/hooks_utils.rb
 %%DATADIR%%/ruby/gitlab-shell/lib/http_helper.rb
 %%DATADIR%%/ruby/gitlab-shell/lib/httpunix.rb
+%%DATADIR%%/ruby/gitlab-shell/lib/message.rb
 %%DATADIR%%/ruby/gitlab-shell/lib/object_dirs_helper.rb
 %%DATADIR%%/ruby/gitlab-shell/spec/gitlab_access_spec.rb
 %%DATADIR%%/ruby/gitlab-shell/spec/gitlab_config_spec.rb
