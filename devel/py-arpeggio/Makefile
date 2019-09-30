@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arpeggio
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,8 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parser interpreter based on PEG grammars
 
 LICENSE=	MIT
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
