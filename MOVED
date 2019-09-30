@@ -12982,3 +12982,4 @@ graphics/p5-Geo-Point||2019-09-28|Removed, depends on expired graphics/p5-Geo-Pr
 x11/rubygem-gnome2|x11/rubygem-gnome|2019-09-28|Upstream changed the project name from Ruby-GNOME2 to Ruby-GNOME
 mail/fetchmail64|mail/fetchmail|2019-09-28|mail/fetchmail now provides the same version
 devel/rubygem-grape_logging181|devel/rubygem-grape_logging|2019-09-29|Obsolete, please use devel/rubygem-grape_logging
+devel/py-pip-tools3|devel/py-pip-tools|2019-09-30|Use devel/py-pip-tools instead
