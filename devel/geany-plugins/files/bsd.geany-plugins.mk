@@ -1,8 +1,7 @@
 # $FreeBSD$
 
-GEANY_VER=		1.35
-GEANY_PLUGINS_GTK2=	debugger \
-			geanypy \
+GEANY_VER=		1.36
+GEANY_PLUGINS_GTK2=	geanypy \
 			multiterm
 
 GEANY_PLUGINS_GTK3=	markdown
@@ -13,6 +12,7 @@ GEANY_PLUGINS_ALL=	addons \
 			codenav \
 			commander \
 			ctags \
+			debugger \
 			defineformat \
 			doc \
 			extrasel \
@@ -109,4 +109,4 @@ vc_DIR=			geanyvc
 git-changebar_SWITCH=	--enable-gitchangebar
 pretty-printer_SWITCH=	--enable-pretty_printer
 
-GEANY_UTIL=		scope workbench
+GEANY_UTIL=		debugger numberedbookmarks scope treebrowser workbench

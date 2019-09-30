@@ -90,8 +90,13 @@ share/applications/geany.desktop
 %%DATADIR%%/filedefs/filetypes.Cython.conf
 %%DATADIR%%/filedefs/filetypes.Genie.conf
 %%DATADIR%%/filedefs/filetypes.Graphviz.conf
+%%DATADIR%%/filedefs/filetypes.Groovy.conf
 %%DATADIR%%/filedefs/filetypes.JSON.conf
+%%DATADIR%%/filedefs/filetypes.Kotlin.conf
+%%DATADIR%%/filedefs/filetypes.Nim.conf
 %%DATADIR%%/filedefs/filetypes.Scala.conf
+%%DATADIR%%/filedefs/filetypes.Swift.conf
+%%DATADIR%%/filedefs/filetypes.TypeScript.conf
 %%DATADIR%%/filedefs/filetypes.abaqus
 %%DATADIR%%/filedefs/filetypes.abc
 %%DATADIR%%/filedefs/filetypes.actionscript
@@ -240,6 +245,7 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/ja/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/lb/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/geany.mo
