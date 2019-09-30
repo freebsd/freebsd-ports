@@ -1,16 +1,14 @@
-This module handles the SOAP protocol. The first implementation is SOAP1.1
-(http://www.w3.org/TR/2000/NOTE-SOAP-20000508/), which is still most often
-used. The SOAP1.2 definition (http://www.w3.org/TR/soap12/) is quite
-different; this module tries to define a sufficiently abstract interface to
-hide the protocol differences.
+XML::Compile::SOAP handles the SOAP protocol. The first implementation is
+SOAP1.1 (http://www.w3.org/TR/2000/NOTE-SOAP-20000508/), which is still most
+often used. The SOAP1.2 definition (http://www.w3.org/TR/soap12/) is provided
+via the separate distribution XML::Compile::SOAP12.
 
 Be aware that there are three kinds of SOAP:
-
 1. Document style (literal) SOAP, where there is a WSDL file which explicitly
-types all out-going and incoming messages. Very easy to use.
-2. RPC style SOAP literal. The WSDL file is not explicit about the content of
-the messages, but all messages must be schema defined types.
+   types all out-going and incoming messages. Very easy to use.
+2. RPC style SOAP literal. The body of the message has an extra element wrapper,
+   but the content is also well defined.
 3. RPC style SOAP encoded. The sent data is nowhere described formally. The data
-is transported in some ad-hoc way.
+   is constructed in some ad-hoc way.
 
 WWW: https://metacpan.org/release/XML-Compile-SOAP
