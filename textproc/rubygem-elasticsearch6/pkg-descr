@@ -1,7 +1,0 @@
-Ruby integrations for Elasticsearch that feature:
-
-* a client for connecting to an Elasticsearch cluster
-* a Ruby API for the Elasticsearch's REST API
-* various extensions and utilities
-
-WWW: https://github.com/elastic/elasticsearch-ruby
