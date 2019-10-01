@@ -183,6 +183,7 @@
     SUBDIR += pstotext
     SUBDIR += psutils
     SUBDIR += py-fonttools
+    SUBDIR += py-fonttools-graphite
     SUBDIR += py-fpdf
     SUBDIR += py-pdf
     SUBDIR += py-pdf2

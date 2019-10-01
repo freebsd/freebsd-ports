@@ -1,0 +1,6 @@
+This port is the extra dependencies for graphite functionality of FontTools.
+
+Add both print/py-fonttools and print/py-fonttools-graphite to RUN_DEPENDS if
+you need "fonttools[graphite]".
+
+WWW: https://github.com/fonttools/fonttools
