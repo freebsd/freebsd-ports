@@ -12,7 +12,8 @@ COMMENT=	Intel(R) Open Image Denoise library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_i386=	Intel(R) MKL-DNN supports 64 bit platforms only (oidn contains a custom version of mkl-dnn, see math/mkl-dnn)
+ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS_REASON=	Intel(R) MKL-DNN supports x86 64 bit platforms only (oidn contains a custom version of mkl-dnn, see math/mkl-dnn)
 
 LIB_DEPENDS=	libtbb.so:devel/tbb
 
