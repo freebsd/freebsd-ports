@@ -3,8 +3,7 @@
 
 PORTREVISION=	3
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/glibmm-2.4.pc:devel/glibmm \
-		gm4:devel/m4
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/glibmm-2.4.pc:devel/glibmm
 
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lang gmake pkgconfig

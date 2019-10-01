@@ -13,7 +13,6 @@ MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgnomecanvas library
 
 LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
-BUILD_DEPENDS=	gm4:devel/m4
 
 USES=		compiler:c++11-lang gmake libtool:keepla pathfix pkgconfig \
 		tar:bzip2
@@ -23,6 +22,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
 INSTALL_TARGET=	install-strip
+BINARY_WRAPPERS=	gm4
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 

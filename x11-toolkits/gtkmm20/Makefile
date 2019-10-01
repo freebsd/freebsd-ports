@@ -20,7 +20,6 @@ PORTSCOUT=	ignore:1
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	libsigc-1.2.so:devel/libsigc++12
-BUILD_DEPENDS=	gm4:devel/m4
 
 USES+=		autoreconf gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -29,6 +28,7 @@ USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--enable-static=yes \
 		--with-sigc-prefix=${LOCALBASE}
 INSTALL_TARGET=	install-strip
+BINARY_WRAPPERS=	gm4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gmessages.h|glib/gtestutils.h|g' \

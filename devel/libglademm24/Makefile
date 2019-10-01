@@ -15,7 +15,6 @@ COMMENT=	C++ wrapper for libglade2 library
 OPTIONS_DEFINE=	DOCS
 
 LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
-BUILD_DEPENDS=	gm4:devel/m4
 
 USE_XORG=	x11 ice
 USES=		compiler:c++11-lang gmake libtool:keepla pathfix pkgconfig \
@@ -26,6 +25,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
 INSTALL_TARGET=	install-strip
+BINARY_WRAPPERS=	gm4
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 

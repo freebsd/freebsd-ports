@@ -13,14 +13,14 @@ COMMENT=	GObject-based wrapper around Exiv2 library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gm4:devel/m4 \
-		vala>=0:lang/vala
+BUILD_DEPENDS=	vala>=0:lang/vala
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
 USES=		compiler:c++11-lang gnome libtool:build meson pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
+BINARY_WRAPPERS=	gm4
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SUB=		yes

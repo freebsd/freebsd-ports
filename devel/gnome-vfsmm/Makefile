@@ -12,8 +12,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for gnomevfs2 library
 
-BUILD_DEPENDS=	gm4:devel/m4
-
 USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2 \
 		compiler:c++11-lang
 USE_CXXSTD=	c++11
@@ -21,6 +19,7 @@ USE_GNOME=	glibmm gnomevfs2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+BINARY_WRAPPERS=	gm4
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 

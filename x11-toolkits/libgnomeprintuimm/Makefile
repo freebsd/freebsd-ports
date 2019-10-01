@@ -13,7 +13,6 @@ COMMENT=	C++ wrappers for the GNOME print support library
 
 LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24 \
 		libgnomeprintmm-2.5.so:print/libgnomeprintmm
-BUILD_DEPENDS=	gm4:devel/m4
 
 USES=		compiler:c++11-lang gmake libtool:keepla pathfix \
 		pkgconfig tar:bzip2
@@ -23,6 +22,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static
 INSTALL_TARGET=	install-strip
+BINARY_WRAPPERS=	gm4
 
 PLIST_SUB=	VERSION="2.5" API_VERSION="2.6"
 
