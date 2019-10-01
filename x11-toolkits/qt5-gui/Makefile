@@ -25,7 +25,8 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		compiler:c++11-lang jpeg localbase qmake:no_env qt-dist:5,base
+USES=		compiler:c++11-lang gl gnome jpeg localbase qmake:no_env \
+		qt-dist:5,base xorg
 USE_GL=		gl egl
 USE_GNOME=	glib20
 USE_QT=		core dbus network qmake_build buildtools_build
@@ -73,8 +74,6 @@ QT_CONFIG=	accessibility accessibility-atspi-bridge dbus \
 RUN_DEPENDS+=	${LOCALBASE}/share/fonts/encodings/encodings.dir:x11-fonts/encodings \
 		xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
 .endif
-
-CFLAGS_powerpc64=	-mminimal-toc
 
 post-configure:
 .for d in src/tools/qvkgen src/gui ${MORE_WRKSRCS}
