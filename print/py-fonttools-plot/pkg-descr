@@ -1,0 +1,6 @@
+This port is the extra dependencies for plot functionality of FontTools.
+
+Add both print/py-fonttools and print/py-fonttools-plot to RUN_DEPENDS if you
+need "fonttools[plot]".
+
+WWW: https://github.com/fonttools/fonttools
