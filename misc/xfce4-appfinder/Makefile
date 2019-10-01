@@ -12,7 +12,7 @@ COMMENT=	Application launcher and finder
 
 LICENSE=	GPLv2
 
-USES=		gettext-tools gmake gnome pkgconfig tar:bzip2 xfce
+USES=		compiler:c11 gettext-tools gmake gnome pkgconfig tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
 USE_XFCE=	garcon xfconf
 
