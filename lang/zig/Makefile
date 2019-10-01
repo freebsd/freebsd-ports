@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zig
-DISTVERSION=	0.4.0
+DISTVERSION=	0.5.0
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/
 
@@ -11,7 +11,10 @@ COMMENT=	Language designed for robustness, optimality, and maintainability
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-_LLVM_VER=	80
+BROKEN_i386=		static_assert failed "static_assert(sizeof(ZigClangAPValue) == sizeof(clang::APValue), "")"
+IGNORE_FreeBSD_11=	expects getrandom(2) which is unavailable on FreeBSD < 12.0
+
+_LLVM_VER=	90
 BUILD_DEPENDS=	llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
 
 USES=		cmake compiler:c++11-lang tar:xz
