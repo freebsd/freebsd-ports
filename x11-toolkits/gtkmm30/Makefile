@@ -20,8 +20,6 @@ PORTSCOUT=	limitw:1,even
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	gm4:devel/m4
-
 USES+=		gettext gmake gnome libtool pathfix pkgconfig \
 		compiler:c++11-lang
 USE_CXXSTD=	c++11
@@ -30,6 +28,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-documentation
 INSTALL_TARGET=	install-strip
+BINARY_WRAPPERS=	gm4
 
 PLIST_SUB=	API_VERSION="3.0"
 

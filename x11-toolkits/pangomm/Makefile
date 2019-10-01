@@ -18,8 +18,6 @@ USES=		tar:xz
 .if !defined(REFERENCE_PORT)
 PORTSCOUT=	limitw:1,even
 
-BUILD_DEPENDS=	gm4:devel/m4
-
 USES+=		gmake libtool localbase pathfix pkgconfig compiler:c++11-lang
 USE_CXXSTD=	c++11
 USE_GNOME=	cairomm glibmm pango
@@ -28,6 +26,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-documentation \
 		--enable-static=yes
 INSTALL_TARGET=	install-strip
+BINARY_WRAPPERS=	gm4
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="1.4"
 

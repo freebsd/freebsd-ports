@@ -11,8 +11,7 @@ COMMENT=	Binary configuration file encoder/decoder
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	gm4:devel/m4 \
-		flex:textproc/flex
+BUILD_DEPENDS=	flex:textproc/flex
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp \
 		libpkg.so:ports-mgmt/pkg
 
@@ -20,6 +19,7 @@ USES=		autoreconf bison libtool ssl
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
+BINARY_WRAPPERS=	gm4
 
 PLIST_SUB=	MIBS=share/snmp/mibs
 

@@ -18,7 +18,6 @@ PORTSCOUT=	ignore:1
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS=	gm4:devel/m4
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
@@ -32,6 +31,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-documentation
 INSTALL_TARGET=	install-strip
+BINARY_WRAPPERS=	gm4
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
