@@ -16,6 +16,23 @@ AUTHOR: madpilot@FreeBSD.org
   USES=xfce now defaults to gtk3, so for ported applications requiring
   GTK2 XFCE support USES=xfce:gtk2 should be used.
 
+20190903:
+AUTHOR: bapt@FreeBSD.org
+
+  The ports tree now supports overlays
+
+  overlays are a way to help users to integrate their own ports tree
+  with the official ports tree without having to maintain clone of the
+  official tree and remerge on regular basis.
+
+  The ports tree will lookup in the overlays (in the order the are listed in
+  OVERLAY variable) for the dependencies and the USES. It will use the first
+  found.
+
+  in order to use it the user have to declare his overlays that way in their
+  make.conf:
+  OVERLAYS= overlay1 overlay2 overlay3
+
 20181225:
 AUTHOR: kde@FreeBSD.org
 
