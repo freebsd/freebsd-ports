@@ -18,8 +18,8 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		desktop-file-utils gettext-tools gmake gnome libtool pathfix \
-		perl5 pkgconfig tar:bzip2 xfce xorg
+USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
+		libtool pathfix perl5 pkgconfig tar:bzip2 xfce xorg
 USE_GNOME=	cairo glib20 gtk30 intltool libwnck3
 USE_LDCONFIG=	yes
 USE_XFCE=	garcon libexo xfconf
