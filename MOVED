@@ -12850,7 +12850,7 @@ devel/py-pip-tools2|devel/py-pip-tools|2019-07-31|Has expired: Use devel/py-pip-
 lang/cint|lang/cling|2019-07-31|Has expired: Abandonware; superseded by lang/cling
 emulators/pearpc||2019-08-01|Has expired: Abandonware
 sysutils/bbcp||2019-08-03|Has expired: the port is broken for more than a year
-multimedia/gnome-mpv|multimedia/celluloid|2019-08-08|Renamed upstream
+multimedia/gnome-mpv|multimedia/celluloid|2019-08-03|Renamed upstream
 net/remmina-plugin-telepathy||2019-08-04|Disabled upstream for build Issues
 devel/py-mimeparse|devel/py-python-mimeparse|2019-08-11|Rename to match upstream naming
 devel/rubygem-web-console|devel/rubygem-web-console-rails5|2019-08-11|Rename to match our rubygem- port naming
@@ -12903,7 +12903,7 @@ x11-toolkits/pure-gtk||2019-09-01|Has expired: Depends on expiring devel/llvm35
 lang/pure||2019-09-01|Has expired: Depends on expiring devel/llvm35
 devel/pure-ffi||2019-09-01|Has expired: Depends on expiring devel/llvm35
 devel/llvm35||2019-09-01|Has expired: Obsolete and unmaintained
-archivers/py-attic|archivers/py-borg|2019-09-02|Has expired: Unsupported by upstream, please migrate to archivers/py-borg.  See https://borgbackup.readthedocs.io/en/stable/usage/upgrade.html#borg-upgrade
+archivers/py-attic|archivers/py-borgbackup|2019-09-02|Has expired: Unsupported by upstream, please migrate to archivers/py-borgbackup.  See https://borgbackup.readthedocs.io/en/stable/usage/upgrade.html#borg-upgrade
 sysutils/syslog-ng39|sysutils/syslog-ng|2019-09-04|Has expired: No longer supported by Balabit
 sysutils/syslog-ng312|sysutils/syslog-ng|2019-09-04|Has expired: No longer officially supported by Balabit
 sysutils/syslog-ng310|sysutils/syslog-ng|2019-09-04|Has expired: No longer supported by Balabit
@@ -12956,8 +12956,8 @@ devel/xfce4-vala||2019-09-20|Deprecated, functionality moved to xfce libraries w
 irc/iroffer-lamm||2019-09-23|obsolete
 java/openjdk6|java/openjdk8|2019-09-23|Has expired: EOLed upstream since December 2018
 java/openjdk6-jre|java/openjdk8-jre|2019-09-23|Has expired: EOLed upstream since December 2018
-deskutils/lumina-xdg-entry||2019-09-22|Deprecated, merged upstream with deskutils/lumina-fileinfo
-deskutils/lumina-notify||2019-09-22|Deprecated, removed upstream
+deskutils/lumina-xdg-entry||2019-09-23|Deprecated, merged upstream with deskutils/lumina-fileinfo
+deskutils/lumina-notify||2019-09-23|Deprecated, removed upstream
 palm/pilot-link||2019-09-24|Has expired: obsolete technology
 graphics/pixmap||2019-09-24|Has expired: No longer maintained
 japanese/jpilot||2019-09-24|Has expired: obsolete technology
