@@ -1,8 +1,8 @@
---- src/CMakeLists.txt.orig	2016-06-22 05:22:26 UTC
+--- src/CMakeLists.txt.orig	2019-02-13 22:20:23 UTC
 +++ src/CMakeLists.txt
-@@ -27,6 +27,13 @@ project(FastNetMon)
- set (FASTNETMON_VERSION_MAJOR 1)
- set (FASTNETMON_VERSION_MINOR 1)
+@@ -33,6 +33,13 @@ set (FASTNETMON_VERSION_MINOR 1)
+ set(CMAKE_INSTALL_SYSTEMD_SERVICEDIR "/lib/systemd/system"
+   CACHE PATH "Location for systemd service files")
  
 +# Respect PREFIX variable in FreeBSD
 +if($ENV{PREFIX})
@@ -14,7 +14,7 @@
  if (ENABLE_GOBGP_SUPPORT)
      # We could not compile gRPC without C++ 11
      set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -std=c++11")
-@@ -59,12 +66,14 @@ SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL
+@@ -65,12 +72,12 @@ SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_RPATH};/opt/l
  
  message(STATUS "C++ compilation flags: ${CMAKE_CXX_FLAGS_RELEASE}")
  
@@ -30,27 +30,25 @@
 +set(PFRING_CUSTOM_INSTALL_PATH ${PREFIX})
 +set(LIBPCAP_CUSTOM_INSTALL_PATH ${PREFIX})
 +set(MONGO_C_CUSTOM_INSTALL_PATH ${PREFIX})
-+set(NDPI_CUSTOM_INSTALL_PATH ${PREFIX})
-+set(LUAJIT_CUSTOM_INSTALL_PATH ${PREFIX})
  
  set(FASTNETMON_PROFILER OFF)
  
-@@ -184,21 +193,21 @@ add_library(sflow_plugin STATIC sflow_pl
+@@ -227,21 +234,22 @@ add_library(sflow_plugin STATIC sflow_plugin/sflow_col
  add_library(netflow_plugin STATIC netflow_plugin/netflow_collector.cpp)
  target_link_libraries(netflow_plugin ipfix_rfc)
  
--set(ENABLE_DPI_SUPPORT YES)
-+#set(ENABLE_DPI_SUPPORT YES)
+-option(ENABLE_DPI_SUPPORT "Enable Deep Packet Inspection support" ON)
++option(ENABLE_DPI_SUPPORT "Enable Deep Packet Inspection support" OFF)
  if (ENABLE_DPI_SUPPORT) 
      message(STATUS "We will enable nDPI support")
  
      add_library(fast_dpi STATIC fast_dpi.cpp)
  
 -    set(NDPI_INCLUDE_DIRS "/opt/ndpi/include/libndpi-1.7.1")
--
++    set(NDPI_INCLUDE_DIRS ${PREFIX})
+ 
 -    find_library(NDPI_LIBRARIES NAMES ndpi PATHS "/opt/ndpi/lib" NO_DEFAULT_PATH)
 +    file(GLOB NDPI_SEARCH_PATHS "${NDPI_CUSTOM_INSTALL_PATH}/include/libndpi-*")
-+    find_path(NDPI_INCLUDE_DIRS NAMES libndpi/ndpi_api.h PATHS ${NDPI_SEARCH_PATHS} NO_DEFAULT_PATH)
 +    find_library(NDPI_LIBRARIES NAMES ndpi PATHS "${NDPI_CUSTOM_INSTALL_PATH}/lib" NO_DEFAULT_PATH)
  
      if (NOT NDPI_LIBRARIES)
@@ -62,45 +60,29 @@
      include_directories(${NDPI_INCLUDE_DIRS})
  
      add_definitions(-DENABLE_DPI)
-@@ -215,8 +224,6 @@ if (ENABLE_LUA_SUPPORT)
+@@ -258,7 +266,7 @@ if (ENABLE_LUA_SUPPORT)
  
      add_definitions(-DENABLE_LUA_HOOKS)
  
 -    set(LUAJIT_CUSTOM_INSTALL_PATH "/opt/luajit_2.0.4")
--
++    set(LUAJIT_CUSTOM_INSTALL_PATH ${PREFIX})
+ 
      link_directories("${LUAJIT_CUSTOM_INSTALL_PATH}/lib")
      include_directories("${LUAJIT_CUSTOM_INSTALL_PATH}/include")
- 
-@@ -578,14 +585,14 @@ if (BUILD_TESTS) 
- endif()
- 
- if (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD" OR ${CMAKE_SYSTEM_NAME} STREQUAL "DragonFly")
--    install(TARGETS fastnetmon DESTINATION bin)
--    install(TARGETS fastnetmon_client DESTINATION bin)
-+    install(TARGETS fastnetmon DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
-+    install(TARGETS fastnetmon_client DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
- 
--    install(FILES fastnetmon.conf DESTINATION etc)
-+    install(FILES fastnetmon.conf DESTINATION ${CMAKE_INSTALL_PREFIX}/etc)
- 
-     # Install blank files for networks list and whitelist
--    install(FILES networks_list DESTINATION etc)
--    install(FILES networks_whitelist DESTINATION etc)
-+    install(FILES networks_list DESTINATION ${CMAKE_INSTALL_PREFIX}/etc)
-+    install(FILES networks_whitelist DESTINATION ${CMAKE_INSTALL_PREFIX}/etc)
- else()
-     # Linux
-     install(TARGETS fastnetmon DESTINATION /usr/sbin)
-@@ -599,8 +606,10 @@ else()
- endif()
+@@ -656,12 +664,12 @@ install(FILES networks_list DESTINATION "${CMAKE_INSTA
+ install(FILES networks_whitelist DESTINATION "${CMAKE_INSTALL_SYSCONFDIR}")
  
  # man pages
 -install(FILES man/fastnetmon.1 DESTINATION /usr/share/man/man1)
 -install(FILES man/fastnetmon_client.1 DESTINATION /usr/share/man/man1)
 +#install(FILES man/fastnetmon.1 DESTINATION /usr/share/man/man1)
 +#install(FILES man/fastnetmon_client.1 DESTINATION /usr/share/man/man1)
-+
-+install(FILES fastnetmon.conf DESTINATION ${CMAKE_INSTALL_PREFIX}/etc)
  
- # Configure cpack package builder
- # Run it with: cd build; cpack -G DEB ..
+ # service files
+-configure_file(fastnetmon.service.in "${CMAKE_CURRENT_BINARY_DIR}/fastnetmon.service" @ONLY)
+-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/fastnetmon.service" DESTINATION ${CMAKE_INSTALL_SYSTEMD_SERVICEDIR})
++#configure_file(fastnetmon.service.in "${CMAKE_CURRENT_BINARY_DIR}/fastnetmon.service" @ONLY)
++#install(FILES "${CMAKE_CURRENT_BINARY_DIR}/fastnetmon.service" DESTINATION ${CMAKE_INSTALL_SYSTEMD_SERVICEDIR})
+ 
+ if (${OS_ID} MATCHES debian|ubuntu)
+ install(FILES fastnetmon_init_script_debian_6_7 DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/init.d RENAME fastnetmon)
