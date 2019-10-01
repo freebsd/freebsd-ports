@@ -189,6 +189,7 @@
     SUBDIR += py-fonttools-plot
     SUBDIR += py-fonttools-symfont
     SUBDIR += py-fonttools-ufo
+    SUBDIR += py-fonttools-unicode
     SUBDIR += py-fpdf
     SUBDIR += py-pdf
     SUBDIR += py-pdf2
