@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pspg
-DISTVERSION=	2.1.2
+DISTVERSION=	2.1.3
 CATEGORIES=	databases
 
 MAINTAINER=	dmgk@FreeBSD.org
