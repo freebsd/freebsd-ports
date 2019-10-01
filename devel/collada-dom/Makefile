@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	collada-dom
+DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.0
 CATEGORIES=	devel
 
@@ -9,7 +10,7 @@ COMMENT=	COLLADA Document Object Model (DOM) C++ Library
 
 LICENSE=	MIT
 
-LIB_DEPENDS+=	libminizip.so:archivers/minizip \
+LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libpcre.so:devel/pcre \
 		libboost_filesystem.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
@@ -17,11 +18,10 @@ LIB_DEPENDS+=	libminizip.so:archivers/minizip \
 USES=	cmake gnome
 USE_LDCONFIG=	yes
 
-USE_GNOME+=	libxml2
+USE_GNOME=	libxml2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rdiankov
 GH_PROJECT=	collada-dom
-GH_TAGNAME=	v${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 .include <bsd.port.mk>
