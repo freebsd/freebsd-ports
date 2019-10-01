@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify
 
-USES=		gettext-tools gmake gnome pkgconfig tar:bzip2 xfce xorg
+USES=		compiler:c11 gettext-tools gmake gnome pkgconfig tar:bzip2 \
+		xfce xorg
 USE_GNOME=	cairo glib20 gtk30 intltool libwnck3
 USE_XFCE=	garcon libexo
 USE_XORG=	ice sm x11
