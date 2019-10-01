@@ -1259,6 +1259,7 @@
     SUBDIR += libiqxmlrpc
     SUBDIR += libisofs
     SUBDIR += libixp
+    SUBDIR += libjitterentropy
     SUBDIR += libjson++
     SUBDIR += libk8055
     SUBDIR += libklel
