@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	fasttracker2
-DISTVERSION=	0.1-b168
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.00
 CATEGORIES=	audio
 MASTER_SITES=	https://16-bits.org/ \
 		LOCAL/ehaupt
-DISTNAME=	ft2clone-${PORTVERSION:C/.*b/b/}-code
+DISTNAME=	ft2-clone-${DISTVERSIONPREFIX}${PORTVERSION}-code
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fasttracker II clone
