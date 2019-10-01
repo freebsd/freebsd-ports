@@ -1,0 +1,6 @@
+This port is the extra dependencies for ufo functionality of FontTools.
+
+Add both print/py-fonttools and print/py-fonttools-ufo to RUN_DEPENDS if you
+need "fonttools[ufo]".
+
+WWW: https://github.com/fonttools/fonttools
