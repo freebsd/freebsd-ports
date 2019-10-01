@@ -21,13 +21,13 @@ qmake_ARGS?=	# empty
 .include "${USESDIR}/qmake.mk"
 
 # Supported distribution arguments
-_QT5_DISTS=		3d activeqt androidextras base canvas3d charts connectivity \
-			datavis3d declarative doc gamepad graphicaleffects imageformats \
-			location macextras multimedia networkauth purchasing \
-			quickcontrols2 quickcontrols remoteobjects script scxml sensors \
-			serialbus serialport speech svg tools translations \
-			virtualkeyboard wayland webchannel webengine websockets webview \
-			winextras x11extras xmlpatterns
+_QT5_DISTS=		3d activeqt androidextras base charts connectivity datavis3d \
+			declarative doc gamepad graphicaleffects imageformats location \
+			lottie macextras multimedia networkauth purchasing quickcontrols \
+			quickcontrols2 remoteobjects script scxml sensors serialbus \
+			serialport speech svg tools translations virtualkeyboard wayland \
+			webchannel webengine webglplugin websockets webview winextras \
+			x11extras xmlpatterns
 _QT_DISTS=		${_QT${_QT_VER}_DISTS}
 
 # We only accept one item as an argument. The fetch target further below works
@@ -170,7 +170,8 @@ CONFIGURE_ARGS+=	-verbose
 _EXTRA_PATCHES_QT5=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_create__cmake.prf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_qt__module.prf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_common_bsd_bsd.conf \
-			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_freebsd-clang_qmake.conf
+			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_freebsd-clang_qmake.conf \
+			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_data_cmake_Qt5BasicConfig.cmake.in
 .        if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
 _EXTRA_PATCHES_QT5+=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_g++-base.conf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_gcc-base.conf \
@@ -247,6 +248,7 @@ _QT_TOOLS+=		${UIC}
 # The list of QtBase components that need to be linked into WRKSRC/lib for
 # other QtBase ports. See below.
 _QT5_BASE=		core dbus gui network sql widgets
+_QT5_ADDITIONAL_LINK?=	# Ensure definition
 
 .if ${_QT_VER:M5}
 post-patch: gcc-post-patch
@@ -331,6 +333,16 @@ qt5-pre-configure:
 	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${CONFIGURE_WRKSRC}/lib' >> ${CONFIGURE_WRKSRC}/.qmake.cache
 	${ECHO_CMD} 'QMAKE_DEFAULT_LIBDIRS += ${LOCALBASE}/lib /usr/lib /lib' >> ${CONFIGURE_WRKSRC}/.qmake.cache
 	${ECHO_CMD} 'QMAKE_DEFAULT_INCDIRS += ${LOCALBASE}/include /usr/include' >> ${CONFIGURE_WRKSRC}/.qmake.cache
+
+# Allow linking of further libraries to the configure directory.
+.    if !empty(_QT5_ADDITIONAL_LINK)
+.      for dep in ${_QT5_ADDITIONAL_LINK}
+	${MKDIR} ${CONFIGURE_WRKSRC}/lib
+.        if ! empty(USE_QT:M${dep})
+	${LN} -sf ${QT_LIBDIR}/${qt-${dep}_LIB} ${CONFIGURE_WRKSRC}/lib
+.        endif
+.      endfor
+.    endif
 
 post-install: qt-post-install
 qt-post-install:

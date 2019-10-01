@@ -20,7 +20,7 @@ USE_QT=		buildtools linguist_build core gui printsupport widgets
 PLIST_FILES=	bin/diffpdf
 
 pre-configure:
-	${LRELEASE} ${BUILD_WRKSRC}/${PORTNAME}.pro
+	( cd ${BUILD_WRKSRC} && ${LRELEASE} ${BUILD_WRKSRC}/${PORTNAME}.pro )
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/diffpdf ${STAGEDIR}${PREFIX}/bin/

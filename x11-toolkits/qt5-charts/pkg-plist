@@ -49,6 +49,7 @@
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/charttitle_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/chartvalueaxisx_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/chartvalueaxisy_p.h
+%%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/datetimeaxislabel_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/declarativeabstractrendernode_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/declarativeareaseries_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/declarativeaxes_p.h
@@ -68,6 +69,7 @@
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/declarativesplineseries_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/declarativexypoint_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/declarativexyseries_p.h
+%%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/editableaxislabel_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/glwidget_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/glxyseriesdata_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/horizontalaxis_p.h
@@ -150,6 +152,7 @@
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/splineanimation_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/splinechartitem_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/stackedbarchartitem_p.h
+%%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/valueaxislabel_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/verticalaxis_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/xlogydomain_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/xlogypolardomain_p.h

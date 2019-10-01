@@ -11,9 +11,11 @@ COMMENT=	Qt graphical user interface module
 
 BUILD_DEPENDS=	at-spi2-core>=0:accessibility/at-spi2-core
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libevdev.so:devel/libevdev \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
+		libinput.so:x11/libinput \
 		libpng.so:graphics/png \
 		libxcb.so:x11/libxcb \
 		libxcb-image.so:x11/xcb-util-image \
@@ -30,7 +32,6 @@ USE_QT=		core dbus network qmake_build buildtools_build
 USE_XORG=	ice sm x11 xi xrender
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-no-eglfs \
-		-no-evdev \
 		-no-libudev \
 		-system-harfbuzz
 # Explicitely set to c++14 as to net get c++17/c++1z, as libX11's headers

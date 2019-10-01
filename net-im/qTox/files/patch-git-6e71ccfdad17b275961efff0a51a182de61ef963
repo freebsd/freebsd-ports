@@ -1,0 +1,13 @@
+diff --git src/widget/form/groupchatform.cpp src/widget/form/groupchatform.cpp
+index 73411749..58e23b02 100644
+--- src/widget/form/groupchatform.cpp
++++ src/widget/form/groupchatform.cpp
+@@ -218,7 +218,7 @@ void GroupChatForm::updateUserNames()
+     // add the labels in alphabetical order into the layout
+     auto nickLabelList = peerLabels.values();
+ 
+-    qSort(nickLabelList.begin(), nickLabelList.end(), [](const QLabel* a, const QLabel* b)
++    std::sort(nickLabelList.begin(), nickLabelList.end(), [](const QLabel* a, const QLabel* b)
+     {
+         return a->text().toLower() < b->text().toLower();
+     });

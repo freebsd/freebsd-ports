@@ -1,6 +1,13 @@
 # Created by: Marie Loise Nolden <loise@kde.org>
 # $FreeBSD$
 
+# Lock the port at 5.12.2 due to distfile changes: At the moment it seems like
+# the documentation is no longer availble as a single tarball. So while we try
+# to figure out whether to create a per-module -doc port or some other nastiness
+# hold this port back at the last single-file version available.
+# If you need up-to-date Qt Documentation, for now, use the the online one :)
+QT5_VERSION=	5.12.2
+
 PORTNAME=	doc
 DISTVERSION=	${QT5_VERSION}
 CATEGORIES=	misc

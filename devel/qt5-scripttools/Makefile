@@ -16,4 +16,7 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 
+# Link in QtScript port
+_QT5_ADDITIONAL_LINK=	script
+
 .include <bsd.port.mk>

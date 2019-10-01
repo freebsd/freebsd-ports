@@ -109,6 +109,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qnoncontiguousbytedevice_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qnumeric_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qobject_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qoffsetstringarray_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qoperatingsystemversion_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qoperatingsystemversion_win_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qorderedmutexlocker_p.h
@@ -139,6 +140,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsjiscodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstate_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstatemachine_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstdweb_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstorageinfo_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstringalgorithms_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstringiterator_p.h
@@ -159,6 +161,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtools_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtrace_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtranslator_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtransposeproxymodel_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtsciicodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qunicodetables_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qunicodetools_p.h
@@ -222,6 +225,7 @@
 %%QT_INCDIR%%/QtCore/QCollatorSortKey
 %%QT_INCDIR%%/QtCore/QCommandLineOption
 %%QT_INCDIR%%/QtCore/QCommandLineParser
+%%QT_INCDIR%%/QtCore/QConcatenateTablesProxyModel
 %%QT_INCDIR%%/QtCore/QConstOverload
 %%QT_INCDIR%%/QtCore/QContiguousCache
 %%QT_INCDIR%%/QtCore/QContiguousCacheData
@@ -453,6 +457,7 @@
 %%QT_INCDIR%%/QtCore/QTimer
 %%QT_INCDIR%%/QtCore/QTimerEvent
 %%QT_INCDIR%%/QtCore/QTranslator
+%%QT_INCDIR%%/QtCore/QTransposeProxyModel
 %%QT_INCDIR%%/QtCore/QTypeInfo
 %%QT_INCDIR%%/QtCore/QTypeInfoMerger
 %%QT_INCDIR%%/QtCore/QTypeInfoQuery
@@ -543,6 +548,7 @@
 %%QT_INCDIR%%/QtCore/qcommandlineoption.h
 %%QT_INCDIR%%/QtCore/qcommandlineparser.h
 %%QT_INCDIR%%/QtCore/qcompilerdetection.h
+%%QT_INCDIR%%/QtCore/qconcatenatetablesproxymodel.h
 %%QT_INCDIR%%/QtCore/qconfig-bootstrapped.h
 %%QT_INCDIR%%/QtCore/qconfig.h
 %%QT_INCDIR%%/QtCore/qcontainerfwd.h
@@ -689,6 +695,7 @@
 %%QT_INCDIR%%/QtCore/qtimer.h
 %%QT_INCDIR%%/QtCore/qtimezone.h
 %%QT_INCDIR%%/QtCore/qtranslator.h
+%%QT_INCDIR%%/QtCore/qtransposeproxymodel.h
 %%QT_INCDIR%%/QtCore/qtypeinfo.h
 %%QT_INCDIR%%/QtCore/qtypetraits.h
 %%QT_INCDIR%%/QtCore/qurl.h

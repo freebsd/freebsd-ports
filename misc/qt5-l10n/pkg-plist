@@ -123,6 +123,7 @@
 %%QT_L10NDIR%%/qtbase_ru.qm
 %%QT_L10NDIR%%/qtbase_sk.qm
 %%QT_L10NDIR%%/qtbase_uk.qm
+%%QT_L10NDIR%%/qtbase_zh_TW.qm
 %%QT_L10NDIR%%/qtconnectivity_bg.qm
 %%QT_L10NDIR%%/qtconnectivity_da.qm
 %%QT_L10NDIR%%/qtconnectivity_de.qm
@@ -178,14 +179,18 @@
 %%QT_L10NDIR%%/qtmultimedia_ru.qm
 %%QT_L10NDIR%%/qtmultimedia_sk.qm
 %%QT_L10NDIR%%/qtmultimedia_uk.qm
+%%QT_L10NDIR%%/qtmultimedia_zh_TW.qm
 %%QT_L10NDIR%%/qtquickcontrols2_ar.qm
 %%QT_L10NDIR%%/qtquickcontrols2_bg.qm
+%%QT_L10NDIR%%/qtquickcontrols2_ca.qm
 %%QT_L10NDIR%%/qtquickcontrols2_da.qm
 %%QT_L10NDIR%%/qtquickcontrols2_en.qm
 %%QT_L10NDIR%%/qtquickcontrols2_hu.qm
 %%QT_L10NDIR%%/qtquickcontrols2_ko.qm
 %%QT_L10NDIR%%/qtquickcontrols2_uk.qm
+%%QT_L10NDIR%%/qtquickcontrols2_zh_TW.qm
 %%QT_L10NDIR%%/qtquickcontrols_bg.qm
+%%QT_L10NDIR%%/qtquickcontrols_ca.qm
 %%QT_L10NDIR%%/qtquickcontrols_da.qm
 %%QT_L10NDIR%%/qtquickcontrols_de.qm
 %%QT_L10NDIR%%/qtquickcontrols_en.qm
@@ -194,6 +199,7 @@
 %%QT_L10NDIR%%/qtquickcontrols_ja.qm
 %%QT_L10NDIR%%/qtquickcontrols_ru.qm
 %%QT_L10NDIR%%/qtquickcontrols_uk.qm
+%%QT_L10NDIR%%/qtquickcontrols_zh_TW.qm
 %%QT_L10NDIR%%/qtscript_ar.qm
 %%QT_L10NDIR%%/qtscript_bg.qm
 %%QT_L10NDIR%%/qtscript_ca.qm
@@ -254,3 +260,4 @@
 %%QT_L10NDIR%%/qtxmlpatterns_ru.qm
 %%QT_L10NDIR%%/qtxmlpatterns_sk.qm
 %%QT_L10NDIR%%/qtxmlpatterns_uk.qm
+%%QT_L10NDIR%%/qtxmlpatterns_zh_TW.qm
