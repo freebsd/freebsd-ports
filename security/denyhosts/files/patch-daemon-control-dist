@@ -1,15 +1,18 @@
---- daemon-control-dist.orig
+--- daemon-control-dist.orig	2015-09-16 19:40:15 UTC
 +++ daemon-control-dist
-@@ -11,9 +11,9 @@
+@@ -11,11 +11,11 @@
  #### Edit these to suit your configuration ####
  ###############################################
  
--DENYHOSTS_BIN   = "/usr/bin/denyhosts.py"
--DENYHOSTS_LOCK  = "/var/lock/subsys/denyhosts"
--DENYHOSTS_CFG   = "/usr/share/denyhosts/denyhosts.cfg"
+-DENYHOSTS_BIN   = "/usr/sbin/denyhosts"
+-DENYHOSTS_LOCK  = "/run/denyhosts.pid"
+-DENYHOSTS_CFG   = "/etc/denyhosts.conf"
 +DENYHOSTS_BIN   = "%%PREFIX%%/bin/denyhosts.py"
-+DENYHOSTS_LOCK  = "/var/run/denyhosts"
-+DENYHOSTS_CFG   = "%%PREFIX%%/share/denyhosts/denyhosts.cfg"
++DENYHOSTS_LOCK  = "/var/run/denyhosts.pid"
++DENYHOSTS_CFG   = "%%PREFIX%%/etc/denyhosts.conf"
  
+-PYTHON_BIN      = "/usr/bin/env python"
++PYTHON_BIN      = "%%PYTHON_CMD%%"
  
  ###############################################
+ ####         Do not edit below             ####
