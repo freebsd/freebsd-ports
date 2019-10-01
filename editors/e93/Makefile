@@ -13,7 +13,7 @@ COMMENT=	Tcl-based, programmer-oriented text editor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-USES=		tar:tgz tcl xorg
+USES=		compiler:c11 tar:tgz tcl xorg
 USE_XORG=	x11 xinerama xmu
 
 MAKE_ENV=	TCL_INCLUDEDIR=${TCL_INCLUDEDIR} TCL_VERSION=${TCL_SHLIB_VER}
