@@ -2,6 +2,7 @@
 
 PORTNAME=	ebusd
 PORTVERSION=	3.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	comms
 
 MAINTAINER=	samm@os2.kiev.ua
@@ -14,13 +15,8 @@ LIB_DEPENDS=	libargp.so:devel/argp-standalone
 
 USES=		autoreconf compiler:c++11-lang localbase:ldflags
 
-OPTIONS_DEFINE=	MQTT
-OPTIONS_DEFAULT=MQTT
-MQTT_DESC=	MQTT protocol support
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	john30
-GH_TAGNAME=	v${PORTVERSION}
 
 USE_RC_SUBR=	ebusd
 
@@ -35,6 +31,10 @@ GNU_CONFIGURE=	yes
 PLIST_SUB=	USER=${USERS} GROUP=${GROUPS} \
 		LOGDIR=${LOGDIR} \
 		RUNDIR=${RUNDIR}
+
+OPTIONS_DEFINE=	MQTT
+OPTIONS_DEFAULT=MQTT
+MQTT_DESC=	MQTT protocol support
 
 MQTT_CONFIGURE_WITH=	mqtt
 MQTT_LIB_DEPENDS=	libmosquitto.so:net/mosquitto
