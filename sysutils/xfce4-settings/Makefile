@@ -17,8 +17,8 @@ LIB_DEPENDS=	libcolord.so:graphics/colord \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libxklavier.so:x11/libxklavier
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
-		xfce xorg
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce xorg
 USE_GNOME=	cairo glib20 gtk30 intltool
 USE_XFCE=	garcon libexo xfconf
 USE_XORG=	xorgproto x11 xcursor xi xrandr
