@@ -1,5 +1,5 @@
-DenyHosts is a script intended to be run by *ix system administrators to
-help thwart ssh server attacks.
+DenyHosts is a utility developed by Phil Schwartz and maintained by a number of
+developers which aims to thwart sshd (ssh server) brute force attacks.
 
 If you've ever looked at your ssh log (/var/log/auth.log ) you may be alarmed
 to see how many hackers attempted to gain access to your server.
@@ -18,4 +18,4 @@ Denyhosts helps you:
 - Optionally sends an email of newly banned hosts and suspicious logins.
 - Resolves IP addresses to hostnames, if you want
 
-WWW: http://denyhosts.sourceforge.net/
+WWW: https://github.com/denyhosts/denyhosts
