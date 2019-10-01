@@ -19,8 +19,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
-		xfce xorg
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce xorg
 USE_GNOME=	cairo glib20 gtk30 intltool
 USE_XFCE=	libutil panel
 USE_XORG=	ice sm x11
