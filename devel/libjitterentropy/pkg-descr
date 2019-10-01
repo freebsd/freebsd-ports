@@ -1,0 +1,6 @@
+The CPU Jitter Random Number Generator provides a non-physical true random
+number generator that works equally in kernel and user land. The only
+prerequisite is the availability of a high-resolution timer that is available
+in modern CPUs.
+
+WWW: http://www.chronox.de/jent.html

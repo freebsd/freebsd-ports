@@ -1,0 +1,15 @@
+--- Makefile.orig	2019-10-01 18:36:51 UTC
++++ Makefile
+@@ -56,9 +56,9 @@ cppcheck:
+ 	cppcheck --force -q --enable=performance --enable=warning --enable=portability *.h *.c
+ 
+ install:
+-	install -d -m 0755 $(DESTDIR)$(PREFIX)/share/man/man3
+-	install -m 644 doc/$(NAME).3 $(DESTDIR)$(PREFIX)/share/man/man3/
+-	gzip -9 $(DESTDIR)$(PREFIX)/share/man/man3/$(NAME).3
++	install -d -m 0755 $(DESTDIR)$(PREFIX)/man/man3
++	install -m 644 doc/$(NAME).3 $(DESTDIR)$(PREFIX)/man/man3/
++	gzip -9 $(DESTDIR)$(PREFIX)/man/man3/$(NAME).3
+ 	install -d -m 0755 $(DESTDIR)$(PREFIX)/$(LIBDIR)
+ 	install -m 0755 -s lib$(NAME).so.$(LIBVERSION) $(DESTDIR)$(PREFIX)/$(LIBDIR)/
+ 	install -d -m 0755 $(DESTDIR)$(PREFIX)/$(INCDIR)
