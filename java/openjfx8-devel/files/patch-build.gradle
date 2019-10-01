@@ -23,7 +23,7 @@
      IS_LINUX && IS_64 ? "org.eclipse.swt.gtk.linux.x86_64_3.105.3.v20170228-0512" :
 -    IS_LINUX && !IS_64 ? "org.eclipse.swt.gtk.linux.x86_3.105.3.v20170228-0512" : ""
 +    IS_LINUX && !IS_64 ? "org.eclipse.swt.gtk.linux.x86_3.105.3.v20170228-0512" :
-+    IS_BSD ? "/usr/local/share/java/classes/swt-devel.jar" : ""
++    IS_BSD ? "/usr/local/share/java/classes/swt.jar" : ""
  
  // Build javadocs only if BUILD_JAVADOC=true
  defineProperty("BUILD_JAVADOC", "false")
