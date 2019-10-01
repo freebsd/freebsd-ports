@@ -1,0 +1,7 @@
+This port is the extra dependencies for interpolatable functionality of
+FontTools.
+
+Add both print/py-fonttools and print/py-fonttools-interpolatable to RUN_DEPENDS
+if you need "fonttools[interpolatable]".
+
+WWW: https://github.com/fonttools/fonttools
