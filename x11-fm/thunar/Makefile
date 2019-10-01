@@ -18,8 +18,8 @@ LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
 LIB_DEPENDS=	libtumbler-1.so:deskutils/xfce4-tumbler
 RUN_DEPENDS=	pkexec:sysutils/polkit
 
-USES=		desktop-file-utils gettext-tools gmake gnome libtool pathfix \
-		perl5 pkgconfig tar:bzip2 xfce xorg
+USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
+		libtool pathfix perl5 pkgconfig tar:bzip2 xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
 USE_LDCONFIG=	yes
 USE_XFCE=	libexo
