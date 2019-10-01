@@ -13043,3 +13043,11 @@ sysutils/py-azure-cli-sqlvm|sysutils/py-azure-cli|2019-09-30|Has expired: Incorp
 sysutils/py-azure-cli-storage|sysutils/py-azure-cli|2019-09-30|Has expired: Incorporated into azure-cli package
 sysutils/py-azure-cli-vm|sysutils/py-azure-cli|2019-09-30|Has expired: Incorporated into azure-cli package
 x11-toolkits/qt5-canvas3d||2019-10-01|Has been deprecated upstream
+x11/libXTrap||2019-10-01|Deprecated upstream
+x11/libXprintAppUtil||2019-10-01|Deprecated upstream
+x11/libXprintUtil||2019-10-01|Deprecated upstream
+x11/rstart||2019-10-01|Deprecated in favor of X11 forwarding over SSH
+x11/xdbedizzy||2019-10-01|Deprecated upstream
+x11/xplsprinters||2019-10-01|Deprecated upstream
+x11/xprehashprinterlist||2019-10-01|Deprecated upstream
+x11/xtrap||2019-10-01|Deprecated upstream

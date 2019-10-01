@@ -37,7 +37,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dmx.pc:x11/libdmx \
 		${LOCALBASE}/libdata/pkgconfig/xscrnsaver.pc:x11/libXScrnSaver \
 		${LOCALBASE}/libdata/pkgconfig/xt.pc:x11-toolkits/libXt \
 		${LOCALBASE}/libdata/pkgconfig/xtrans.pc:x11/xtrans \
-		${LOCALBASE}/libdata/pkgconfig/xtrap.pc:x11/libXTrap \
 		${LOCALBASE}/libdata/pkgconfig/xtst.pc:x11/libXtst \
 		${LOCALBASE}/libdata/pkgconfig/xv.pc:x11/libXv \
 		${LOCALBASE}/libdata/pkgconfig/xvmc.pc:x11/libXvMC \
