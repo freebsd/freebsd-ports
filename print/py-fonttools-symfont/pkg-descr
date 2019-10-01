@@ -1,0 +1,6 @@
+This port is the extra dependencies for symfont functionality of FontTools.
+
+Add both print/py-fonttools and print/py-fonttools-symfont to RUN_DEPENDS if you
+need "fonttools[symfont]".
+
+WWW: https://github.com/fonttools/fonttools
