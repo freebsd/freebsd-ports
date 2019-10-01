@@ -1,0 +1,13 @@
+diff --git src/widget/tool/callconfirmwidget.cpp src/widget/tool/callconfirmwidget.cpp
+index 19db6b86..dbcb96fc 100644
+--- src/widget/tool/callconfirmwidget.cpp
++++ src/widget/tool/callconfirmwidget.cpp
+@@ -148,7 +148,7 @@ void CallConfirmWidget::paintEvent(QPaintEvent*)
+     painter.setBrush(brush);
+     painter.setPen(Qt::NoPen);
+ 
+-    painter.drawRoundRect(mainRect, roundedFactor * rectRatio, roundedFactor);
++    painter.drawRoundedRect(mainRect, roundedFactor * rectRatio, roundedFactor, Qt::RelativeSize);
+     painter.drawPolygon(spikePoly);
+ }
+ 

@@ -22,7 +22,7 @@ _QT_MK_INCLUDED=	qt.mk
 
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=		5
-QT5_VERSION?=		5.12.2
+QT5_VERSION?=		5.13.0
 
 # We accept the Qt version to be passed by either or all of the three mk files.
 .  if empty(qt_ARGS) && empty(qmake_ARGS) && empty(qt-dist_ARGS)
@@ -134,12 +134,12 @@ _USE_QT_ALL=		assistant dbus declarative designer doc gui help \
 _USE_QT_ALL+=	sql-ibase
 .endif
 
-_USE_QT5_ONLY=		3d buildtools canvas3d charts concurrent connectivity \
+_USE_QT5_ONLY=		3d buildtools charts concurrent connectivity \
 			core datavis3d diag examples gamepad \
 			graphicaleffects location networkauth paths phonon4 plugininfo printsupport \
 			qdbus qdoc qdoc-data qev quickcontrols \
 			quickcontrols2 remoteobjects scxml sensors serialbus serialport speech \
-			sql-tds uiplugin uitools virtualkeyboard wayland webchannel \
+			sql-tds uiplugin uitools virtualkeyboard wayland webchannel webglplugin \
 			webengine websockets websockets-qml webview widgets x11extras
 
 # Dependency tuples: _LIB should be preferred if possible.
@@ -151,9 +151,6 @@ qt-assistant_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/assistant
 
 qt-buildtools_PORT=	devel/${_QT_RELNAME}-buildtools
 qt-buildtools_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/moc
-
-qt-canvas3d_PORT=	x11-toolkits/${_QT_RELNAME}-canvas3d
-qt-canvas3d_PATH=	${LOCALBASE}/${QT_QMLDIR_REL}/QtCanvas3D/qmldir
 
 qt-charts_PORT=		x11-toolkits/${_QT_RELNAME}-charts
 qt-charts_LIB=		libQt${_QT_LIBVER}Charts.so
@@ -325,6 +322,9 @@ qt-webchannel_LIB=	libQt${_QT_LIBVER}WebChannel.so
 
 qt-webengine_PORT=	www/${_QT_RELNAME}-webengine
 qt-webengine_LIB=	libQt${_QT_LIBVER}WebEngine.so
+
+qt-webglplugin_PORT=     www/${_QT_RELNAME}-webglplugin
+qt-webglplugin_PATH=     ${LOCALBASE}/${QT_PLUGINDIR_REL}/platforms/libqwebgl.so
 
 qt-websockets_PORT=	www/${_QT_RELNAME}-websockets
 qt-websockets_LIB=	libQt${_QT_LIBVER}WebSockets.so

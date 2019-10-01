@@ -265,6 +265,7 @@
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Desktop/qmldir
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Flat/libqtquickextrasflatplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/QtQuick/Controls/Styles/Flat/libqtquickextrasflatplugin.so.debug
+%%QT_QMLDIR%%/QtQuick/Controls/Styles/Flat/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/Flat/qmldir
 %%QT_QMLDIR%%/QtQuick/Controls/Styles/qmldir
 %%QT_QMLDIR%%/QtQuick/Controls/Switch.qml

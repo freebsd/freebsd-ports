@@ -24,4 +24,11 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
 GL_COMMIT=	2dd9ba521a0dd4277c4bf6970a7f4e3894fd85ae
 
+# Fix for  Qt5-5.13:
+# oauth2plugin.cpp:133:9: error: 'addQueryItem' is deprecated [-Werror,-Wdeprecated-declarations]
+#  url.addQueryItem(CLIENT_ID, d->m_oauth2Data.ClientId());
+#      ^
+post-patch:
+	${REINPLACE_CMD} '/-Werror/d' ${PATCH_WRKSRC}/common-project-config.pri
+
 .include <bsd.port.mk>

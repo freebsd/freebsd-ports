@@ -28,4 +28,7 @@ CRAFTY_RUN_DEPENDS=	crafty:games/crafty
 STOCKFISH_DESC=	Install Stockfish Chess Engine
 STOCKFISH_RUN_DEPENDS=	stockfish:games/stockfish
 
+post-configure:
+	( cd ${BUILD_WRKSRC} && ${LRELEASE} ${WRKSRC}/${PORTNAME}.pro )
+
 .include <bsd.port.mk>

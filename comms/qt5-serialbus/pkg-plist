@@ -32,6 +32,7 @@
 %%QT_INCDIR%%/QtSerialBus/QModbusRtuSerialSlave
 %%QT_INCDIR%%/QtSerialBus/QModbusServer
 %%QT_INCDIR%%/QtSerialBus/QModbusTcpClient
+%%QT_INCDIR%%/QtSerialBus/QModbusTcpConnectionObserver
 %%QT_INCDIR%%/QtSerialBus/QModbusTcpServer
 %%QT_INCDIR%%/QtSerialBus/QtSerialBus
 %%QT_INCDIR%%/QtSerialBus/QtSerialBusDepends
@@ -54,6 +55,7 @@
 %%QT_INCDIR%%/QtSerialBus/qmodbustcpserver.h
 %%QT_INCDIR%%/QtSerialBus/qserialbusglobal.h
 %%QT_INCDIR%%/QtSerialBus/qtserialbus-config.h
+%%QT_INCDIR%%/QtSerialBus/qtserialbusglobal.h
 %%QT_INCDIR%%/QtSerialBus/qtserialbusversion.h
 %%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBusConfig.cmake
 %%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBusConfigVersion.cmake

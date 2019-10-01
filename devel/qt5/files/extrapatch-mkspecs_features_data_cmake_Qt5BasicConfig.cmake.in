@@ -1,0 +1,18 @@
+Fix the location of the Qt5 libraries in the generated cmake files. Without this patch
+we will get stuff like:
+LINK_FLAGS = [...] /usr/local/lib/libQt5Widgets.so [...]
+LINK_LIBRARIES=  [...] /usr/local/lib/qt5/libQt5Widgets.so.5.13.0 [...]
+in the generated build.ninja files, making the builds fail due to the wrong path in
+LINK_FLAGS
+
+--- mkspecs/features/data/cmake/Qt5BasicConfig.cmake.in.orig	2019-06-13 04:18:18 UTC
++++ mkspecs/features/data/cmake/Qt5BasicConfig.cmake.in
+@@ -53,7 +53,7 @@ function(_qt5_$${CMAKE_MODULE_NAME}_process_prl_file p
+     set(_lib_deps)
+     set(_link_flags)
+ 
+-    get_filename_component(_qt5_install_libs \"${_qt5$${CMAKE_MODULE_NAME}_install_prefix}/lib\" ABSOLUTE)
++    get_filename_component(_qt5_install_libs \"${_qt5$${CMAKE_MODULE_NAME}_install_prefix}/lib/qt5\" ABSOLUTE)
+ 
+     if(EXISTS \"${prl_file_location}\")
+         file(STRINGS \"${prl_file_location}\" _prl_strings REGEX \"QMAKE_PRL_LIBS[ \\t]*=\")

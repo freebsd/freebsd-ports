@@ -1,0 +1,44 @@
+diff --git src/widget/form/settings/avform.cpp src/widget/form/settings/avform.cpp
+index 4c360143..e939f6ab 100644
+--- src/widget/form/settings/avform.cpp
++++ src/widget/form/settings/avform.cpp
+@@ -105,11 +105,14 @@ AVForm::AVForm(IAudioControl& audio, CoreAV* coreAV, CameraSource& camera,
+     eventsInit();
+ 
+     QDesktopWidget* desktop = QApplication::desktop();
+-    connect(desktop, &QDesktopWidget::screenCountChanged, this, &AVForm::rescanDevices);
+-
+     for (QScreen* qScreen : QGuiApplication::screens()) {
+         connect(qScreen, &QScreen::geometryChanged, this, &AVForm::rescanDevices);
+     }
++    auto* qGUIApp = qobject_cast<QGuiApplication *>(qApp);
++    assert (qGUIApp);
++    connect(qGUIApp, &QGuiApplication::screenAdded, this, &AVForm::trackNewScreenGeometry);
++    connect(qGUIApp, &QGuiApplication::screenAdded, this, &AVForm::rescanDevices);
++    connect(qGUIApp, &QGuiApplication::screenRemoved, this, &AVForm::rescanDevices);
+     Translator::registerHandler(std::bind(&AVForm::retranslateUi, this), this);
+ }
+ 
+@@ -160,6 +163,10 @@ void AVForm::open(const QString& devName, const VideoMode& mode)
+     camera.setupDevice(devName, mode);
+ }
+ 
++void AVForm::trackNewScreenGeometry(QScreen* qScreen) {
++    connect(qScreen, &QScreen::geometryChanged, this, &AVForm::rescanDevices);
++}
++
+ void AVForm::rescanDevices()
+ {
+     getAudioInDevices();
+diff --git src/widget/form/settings/avform.h src/widget/form/settings/avform.h
+index 5ff4ad6f..becaa74c 100644
+--- src/widget/form/settings/avform.h
++++ src/widget/form/settings/avform.h
+@@ -95,6 +95,7 @@ private:
+     void open(const QString& devName, const VideoMode& mode);
+     int getStepsFromValue(qreal val, qreal valMin, qreal valMax);
+     qreal getValueFromSteps(int steps, qreal valMin, qreal valMax);
++    void trackNewScreenGeometry(QScreen* qScreen);
+ 
+ private:
+     IAudioControl& audio;

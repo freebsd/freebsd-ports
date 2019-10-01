@@ -1,0 +1,12 @@
+diff --git test/model/groupmessagedispatcher_test.cpp test/model/groupmessagedispatcher_test.cpp
+index 30990d03..30591b37 100644
+--- test/model/groupmessagedispatcher_test.cpp
++++ test/model/groupmessagedispatcher_test.cpp
+@@ -26,6 +26,7 @@
+ #include <QObject>
+ #include <QtTest/QtTest>
+ 
++#include <set>
+ #include <deque>
+ 
+ 

@@ -725,6 +725,7 @@
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/geometryrenderermanager_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/glbuffer_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/glcommands_p.h
+%%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/glfence_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/gltexture_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/gltexturemanager_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/gltfskeletonloader_p.h
@@ -850,6 +851,7 @@
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/qsceneimportplugin_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/qsceneloader_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/qscissortest_p.h
+%%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/qsetfence_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/qshaderdata_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/qshaderprogram_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/qshaderprogrambuilder_p.h
@@ -869,6 +871,7 @@
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/qtextureimagedata_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/qurlhelper_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/qviewport_p.h
+%%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/qwaitfence_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/raycaster_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/raycastingjob_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/renderbuffer_p.h
@@ -900,6 +903,7 @@
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/segmentsvisitor_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/sendbuffercapturejob_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/sendrendercapturejob_p.h
+%%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/setfence_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/shader_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/shaderbuilder_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/shadercache_p.h
@@ -921,11 +925,13 @@
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/texture_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/texturedatamanager_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/textureimage_p.h
+%%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/texturesubmissioncontext_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/transform_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/triangleboundingvolume_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/trianglesextractor_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/trianglesvisitor_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/uniform_p.h
+%%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/updateentityhierarchyjob_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/updateentitylayersjob_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/updatelevelofdetailjob_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/updatemeshtrianglelistjob_p.h
@@ -937,6 +943,7 @@
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/viewportnode_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/visitorutils_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/vsyncframeadvanceservice_p.h
+%%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/waitfence_p.h
 %%QT_INCDIR%%/Qt3DRender/FunctorType
 %%QT_INCDIR%%/Qt3DRender/ParameterList
 %%QT_INCDIR%%/Qt3DRender/PropertyReaderInterface
@@ -1029,6 +1036,7 @@
 %%QT_INCDIR%%/Qt3DRender/QScissorTest
 %%QT_INCDIR%%/Qt3DRender/QScreenRayCaster
 %%QT_INCDIR%%/Qt3DRender/QSeamlessCubemap
+%%QT_INCDIR%%/Qt3DRender/QSetFence
 %%QT_INCDIR%%/Qt3DRender/QShaderData
 %%QT_INCDIR%%/Qt3DRender/QShaderProgram
 %%QT_INCDIR%%/Qt3DRender/QShaderProgramBuilder
@@ -1053,6 +1061,7 @@
 %%QT_INCDIR%%/Qt3DRender/QTextureImageDataPtr
 %%QT_INCDIR%%/Qt3DRender/QTextureWrapMode
 %%QT_INCDIR%%/Qt3DRender/QViewport
+%%QT_INCDIR%%/Qt3DRender/QWaitFence
 %%QT_INCDIR%%/Qt3DRender/Qt3DRender
 %%QT_INCDIR%%/Qt3DRender/Qt3DRenderDepends
 %%QT_INCDIR%%/Qt3DRender/Qt3DRenderVersion
@@ -1134,6 +1143,7 @@
 %%QT_INCDIR%%/Qt3DRender/qscissortest.h
 %%QT_INCDIR%%/Qt3DRender/qscreenraycaster.h
 %%QT_INCDIR%%/Qt3DRender/qseamlesscubemap.h
+%%QT_INCDIR%%/Qt3DRender/qsetfence.h
 %%QT_INCDIR%%/Qt3DRender/qshaderdata.h
 %%QT_INCDIR%%/Qt3DRender/qshaderprogram.h
 %%QT_INCDIR%%/Qt3DRender/qshaderprogrambuilder.h
@@ -1157,6 +1167,7 @@
 %%QT_INCDIR%%/Qt3DRender/qtextureimagedatagenerator.h
 %%QT_INCDIR%%/Qt3DRender/qtexturewrapmode.h
 %%QT_INCDIR%%/Qt3DRender/qviewport.h
+%%QT_INCDIR%%/Qt3DRender/qwaitfence.h
 %%QT_CMAKEDIR%%/Qt53DAnimation/Qt53DAnimationConfig.cmake
 %%QT_CMAKEDIR%%/Qt53DAnimation/Qt53DAnimationConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt53DCore/Qt53DCoreConfig.cmake

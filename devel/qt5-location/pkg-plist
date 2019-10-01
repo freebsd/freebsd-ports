@@ -49,6 +49,7 @@
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeocodingmanager_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeocodingmanagerengine_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeofiletilecache_p.h
+%%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeojson_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeomaneuver_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeomap_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeomap_p_p.h
@@ -222,8 +223,6 @@
 %%QT_INCDIR%%/QtLocation/qtlocation-config.h
 %%QT_INCDIR%%/QtLocation/qtlocationversion.h
 %%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qclipperutils_p.h
-%%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qdeclarativegeoaddress_p.h
-%%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qdeclarativegeolocation_p.h
 %%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qdoublematrix4x4_p.h
 %%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qdoublevector2d_p.h
 %%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qdoublevector3d_p.h
@@ -233,6 +232,7 @@
 %%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qgeocoordinateobject_p.h
 %%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qgeolocation_p.h
 %%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qgeopath_p.h
+%%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qgeopolygon_p.h
 %%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qgeopositioninfo_p.h
 %%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qgeopositioninfosource_p.h
 %%QT_INCDIR%%/QtPositioning/%%FULLVER%%/QtPositioning/private/qgeorectangle_p.h
@@ -251,7 +251,6 @@
 %%QT_INCDIR%%/QtPositioning/QGeoLocation
 %%QT_INCDIR%%/QtPositioning/QGeoPath
 %%QT_INCDIR%%/QtPositioning/QGeoPolygon
-%%QT_INCDIR%%/QtPositioning/QGeoPolygonPrivate
 %%QT_INCDIR%%/QtPositioning/QGeoPositionInfo
 %%QT_INCDIR%%/QtPositioning/QGeoPositionInfoSource
 %%QT_INCDIR%%/QtPositioning/QGeoPositionInfoSourceFactory
@@ -282,6 +281,8 @@
 %%QT_INCDIR%%/QtPositioning/qpositioningglobal.h
 %%QT_INCDIR%%/QtPositioning/qtpositioning-config.h
 %%QT_INCDIR%%/QtPositioning/qtpositioningversion.h
+%%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativegeoaddress_p.h
+%%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativegeolocation_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativeposition_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativepositionsource_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qpositioningquickglobal_p.h

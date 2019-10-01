@@ -100,6 +100,8 @@
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickshortcutcontext_p_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickslider_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickspinbox_p.h
+%%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquicksplitview_p.h
+%%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquicksplitview_p_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickstackelement_p_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickstacktransition_p_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickstackview_p.h
@@ -134,6 +136,8 @@
 %%QT_INCDIR%%/QtQuickTemplates2/qtquicktemplates2version.h
 %%QT_CMAKEDIR%%/Qt5QuickControls2/Qt5QuickControls2Config.cmake
 %%QT_CMAKEDIR%%/Qt5QuickControls2/Qt5QuickControls2ConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5QuickTemplates2/Qt5QuickTemplates2Config.cmake
+%%QT_CMAKEDIR%%/Qt5QuickTemplates2/Qt5QuickTemplates2ConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5QuickControls2.prl
 %%QT_LIBDIR%%/libQt5QuickControls2.so
 %%QT_LIBDIR%%/libQt5QuickControls2.so.5
@@ -148,6 +152,7 @@
 %%DEBUG%%%%QT_LIBDIR%%/libQt5QuickTemplates2.so.%%FULLVER%%.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_quickcontrols2.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_quickcontrols2_private.pri
+%%QT_MKSPECDIR%%/modules/qt_lib_quicktemplates2.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_quicktemplates2_private.pri
 %%QT_QMLDIR%%/Qt/labs/calendar/DayOfWeekRow.qml
 %%QT_QMLDIR%%/Qt/labs/calendar/DayOfWeekRow.qmlc
@@ -219,6 +224,7 @@
 %%QT_QMLDIR%%/QtQuick/Controls.2/Fusion/SliderGroove.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Fusion/SliderHandle.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Fusion/SpinBox.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Fusion/SplitView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Fusion/SwipeDelegate.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Fusion/Switch.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Fusion/SwitchDelegate.qml
@@ -268,6 +274,7 @@
 %%QT_QMLDIR%%/QtQuick/Controls.2/Imagine/ScrollIndicator.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Imagine/Slider.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Imagine/SpinBox.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Imagine/SplitView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Imagine/StackView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Imagine/SwipeDelegate.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Imagine/SwipeView.qml
@@ -328,6 +335,7 @@
 %%QT_QMLDIR%%/QtQuick/Controls.2/Material/Slider.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Material/SliderHandle.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Material/SpinBox.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Material/SplitView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Material/StackView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Material/SwipeDelegate.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Material/SwipeView.qml
@@ -366,6 +374,7 @@
 %%QT_QMLDIR%%/QtQuick/Controls.2/ScrollView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Slider.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/SpinBox.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/SplitView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/StackView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/SwipeDelegate.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/SwipeView.qml
@@ -415,6 +424,7 @@
 %%QT_QMLDIR%%/QtQuick/Controls.2/Universal/ScrollIndicator.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Universal/Slider.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Universal/SpinBox.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Universal/SplitView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Universal/StackView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Universal/SwipeDelegate.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Universal/Switch.qml
@@ -574,3 +584,4 @@
 %%QT_QMLDIR%%/QtQuick/Templates.2/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Templates.2/qmldir
 libdata/pkgconfig/Qt5QuickControls2.pc
+libdata/pkgconfig/Qt5QuickTemplates2.pc

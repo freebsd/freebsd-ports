@@ -33,7 +33,7 @@ TIFF_DESC=	Support for GeoTIFF images
 TIFF_USE=	QT=imageformats_run
 
 pre-build-NLS-on:
-	${LRELEASE} ${WRKSRC}/${PORTNAME}.pro
+	( cd ${BUILD_WRKSRC} && ${LRELEASE} ${WRKSRC}/${PORTNAME}.pro )
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gpxsee ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

@@ -45,6 +45,7 @@
 %%QT_INCDIR%%/QtTest/QTestKeyClicksEvent
 %%QT_INCDIR%%/QtTest/QTestKeyEvent
 %%QT_INCDIR%%/QtTest/QTestMouseEvent
+%%QT_INCDIR%%/QtTest/QtCoverageScanner
 %%QT_INCDIR%%/QtTest/QtTest
 %%QT_INCDIR%%/QtTest/QtTestDepends
 %%QT_INCDIR%%/QtTest/QtTestGui

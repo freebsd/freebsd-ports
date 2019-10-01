@@ -1,0 +1,43 @@
+diff --git src/video/genericnetcamview.cpp src/video/genericnetcamview.cpp
+index 7398cc47..36012b20 100644
+--- src/video/genericnetcamview.cpp
++++ src/video/genericnetcamview.cpp
+@@ -20,6 +20,7 @@
+ #include "genericnetcamview.h"
+ 
+ #include <QApplication>
++#include <QScreen>
+ #include <QBoxLayout>
+ #include <QDesktopWidget>
+ #include <QKeyEvent>
+@@ -136,8 +137,11 @@ void GenericNetCamView::enterFullScreen()
+     showFullScreen();
+     enterFullScreenButton->hide();
+     toggleMessagesButton->hide();
+-
+-    const auto screenSize = QApplication::desktop()->screenGeometry(this);
++#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
++    const auto screenSize = QGuiApplication::screenAt(this->pos())->geometry();
++#else
++    const QRect screenSize = QApplication::desktop()->screenGeometry(this);
++#endif
+     buttonPanel->setGeometry((screenSize.width() / 2) - buttonPanel->width() / 2,
+             screenSize.height() - BTN_PANEL_HEIGHT - 25, BTN_PANEL_WIDTH, BTN_PANEL_HEIGHT);
+     buttonPanel->show();
+diff --git src/widget/tool/screenshotgrabber.cpp src/widget/tool/screenshotgrabber.cpp
+index 7ea91f6b..0863393f 100644
+--- src/widget/tool/screenshotgrabber.cpp
++++ src/widget/tool/screenshotgrabber.cpp
+@@ -203,7 +203,11 @@ void ScreenshotGrabber::chooseHelperTooltipText(QRect rect)
+ void ScreenshotGrabber::adjustTooltipPosition()
+ {
+     QRect recGL = QGuiApplication::primaryScreen()->virtualGeometry();
+-    QRect rec = qApp->desktop()->screenGeometry(QCursor::pos());
++#if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
++    const auto rec = QGuiApplication::screenAt(QCursor::pos())->geometry();
++#else
++    const auto rec = qApp->desktop()->screenGeometry(QCursor::pos());
++#endif
+     const QRectF ttRect = this->helperToolbox->childrenBoundingRect();
+     int x = qAbs(recGL.x()) + rec.x() + ((rec.width() - ttRect.width()) / 2);
+     int y = qAbs(recGL.y()) + rec.y();

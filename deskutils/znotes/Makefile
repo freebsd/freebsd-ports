@@ -34,6 +34,6 @@ post-patch:
 
 pre-configure:
 #Work around badly written .pro
-	${LRELEASE} ${WRKSRC}/${PORTNAME}.pro
+	cd ${WRKSRC} && ${LRELEASE} ${WRKSRC}/${PORTNAME}.pro
 
 .include <bsd.port.mk>
