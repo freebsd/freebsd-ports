@@ -185,6 +185,7 @@
     SUBDIR += py-fonttools
     SUBDIR += py-fonttools-graphite
     SUBDIR += py-fonttools-interpolatable
+    SUBDIR += py-fonttools-lxml
     SUBDIR += py-fpdf
     SUBDIR += py-pdf
     SUBDIR += py-pdf2
