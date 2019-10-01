@@ -63,13 +63,13 @@ CLANG_COMMANDS=	\
 		clang-import-test \
 		clang-offload-bundler \
 		clang-scan-deps \
-		clangd \
 		diagtool \
 		hmaptool \
 		scan-build \
 		scan-view
 
 EXTRAS_COMMANDS= \
+		clangd \
 		clang-apply-replacements \
 		clang-change-namespace \
 		clang-doc \
