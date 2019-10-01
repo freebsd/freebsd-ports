@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20191001:
+AUTHOR: bapt@FreeBSD.org
+
+  BINARY_WRAPPERS allow to push in front of the PATH wrappers for binaries.
+  This is useful when 2 tools do provide the same feature, but the configure
+  scripts do test for some variables which are not in one of the tool.
+
 20190919:
 AUTHOR: madpilot@FreeBSD.org
 

@@ -1334,6 +1334,7 @@ INDEXFILE?=		INDEX-${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/Templates
 KEYWORDS?=		${PORTSDIR}/Keywords
+WRAPPERSDIR?=	${PORTSDIR}/Mk/Wrappers/
 
 PATCHDIR?=		${MASTERDIR}/files
 FILESDIR?=		${MASTERDIR}/files
@@ -5101,6 +5102,15 @@ create-binary-alias: ${BINARY_LINKDIR}
 .endif
 .endif
 
+.if !empty(BINARY_WRAPPERS)
+.if !target(create-binary-wrappers)
+create-binary-wrappers: ${BINARY_LINKDIR}
+.for bin in ${BINARY_WRAPPERS}
+	@${INSTALL_SCRIPT} ${WRAPPERSDIR}/${bin} ${BINARY_LINKDIR}
+.endfor
+.endif
+.endif
+
 .if defined(WARNING)
 WARNING_WAIT?=	10
 show-warnings:
@@ -5201,6 +5211,7 @@ _PATCH_SEQ=		050:ask-license 100:patch-message 150:patch-depends \
 				${_OPTIONS_patch} ${_USES_patch}
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	150:build-depends 151:lib-depends 160:create-binary-alias \
+				161:create-binary-wrappers \
 				200:configure-message \
 				300:pre-configure 450:pre-configure-script \
 				490:run-autotools-fixup 500:do-configure 700:post-configure \
