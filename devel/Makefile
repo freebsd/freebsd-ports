@@ -6297,6 +6297,7 @@
     SUBDIR += rubygem-tty-editor
     SUBDIR += rubygem-tty-file
     SUBDIR += rubygem-tty-font
+    SUBDIR += rubygem-tty-logger
     SUBDIR += rubygem-tty-markdown
     SUBDIR += rubygem-tty-pager
     SUBDIR += rubygem-tty-pie
