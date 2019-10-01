@@ -16,7 +16,7 @@ COMMENT=	DHCP/IPv4LL/IPv6RS/DHCPv6 client
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe tar:xz
+USES=		compiler:c11 cpe tar:xz
 
 CPE_VENDOR=	dhcpcd_project
 GNU_CONFIGURE=	yes
