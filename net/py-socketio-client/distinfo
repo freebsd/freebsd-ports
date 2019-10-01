@@ -1,2 +1,3 @@
-SHA256 (socketIO_client-0.6.5.tar.gz) = 843f271074e6d2b1302ab873d2dfb37e647aea03c75d542fdd0f47b9d81085bc
-SIZE (socketIO_client-0.6.5.tar.gz) = 18387
+TIMESTAMP = 1533387968
+SHA256 (socketIO_client-0.6.7.tar.gz) = 4a6fb8c8f0771f2ec6019d2523d6cc0195a1f114a16e3be10dad66e07c523226
+SIZE (socketIO_client-0.6.7.tar.gz) = 20293
