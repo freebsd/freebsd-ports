@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spleen
-DISTVERSION=	1.4.0
+DISTVERSION=	1.5.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/fcambus/spleen/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-font
@@ -32,8 +32,8 @@ X11_DESC=		Install Xorg bitmap fonts
 # doesn't have this problem.
 VT_BUILD_DEPENDS=	vtfontcvt-ng:x11-fonts/vtfontcvt-ng
 
-X11_USES=		fonts
 X11_USES_OFF=		fonts:none
+X11_USES=		fonts
 
 do-build:
 	@${DO_NADA}
