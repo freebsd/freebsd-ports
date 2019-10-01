@@ -1,6 +1,6 @@
---- src/pcm-oss.cc	2014-09-06 09:44:07.000000000 +0200
-+++ src/pcm-oss.cc	2014-09-06 09:45:02.000000000 +0200
-@@ -100,7 +100,8 @@
+--- src/pcm-oss.cc.orig	2006-07-03 20:05:03 UTC
++++ src/pcm-oss.cc
+@@ -100,7 +100,8 @@ PCMOSS::PCMOSS (const char* name, pcm_type_t type, pcm
      }
  
      int tmp_buffer_size = want_buffer_size;
