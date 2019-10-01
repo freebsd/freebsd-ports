@@ -35,7 +35,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-no-eglfs \
 		-no-libudev \
 		-system-harfbuzz
-# Explicitely set to c++14 as to net get c++17/c++1z, as libX11's headers
+# Explicitly set to c++14 as to net get c++17/c++1z, as libX11's headers
 # are using the obsolete 'register' key word.
 CONFIGURE_ARGS+=	-c++std c++14
 
