@@ -75,8 +75,6 @@ XORG_MODULES=	dmx \
 		xp \
 		xpm \
 		xpresent \
-		xprintapputil \
-		xprintutil \
 		xrandr \
 		xrender \
 		xres \
@@ -84,7 +82,6 @@ XORG_MODULES=	dmx \
 		xshmfence \
 		xt \
 		xtrans \
-		xtrap \
 		xtst \
 		xv \
 		xvmc \
@@ -133,8 +130,6 @@ xorgproto_BUILD_DEPENDS=	xorgproto>=0:x11/xorgproto
 xp_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xp.pc:x11/libXp
 xpm_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xpm.pc:x11/libXpm
 xpresent_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xpresent.pc:x11/libXpresent
-xprintapputil_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xprintapputil.pc:x11/libXprintAppUtil
-xprintutil_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xprintutil.pc:x11/libXprintUtil
 xrandr_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xrandr.pc:x11/libXrandr
 xrender_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xrender.pc:x11/libXrender
 xres_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xres.pc:x11/libXres
@@ -142,7 +137,6 @@ xscrnsaver_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xscrnsaver.pc:x11/libX
 xt_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xt.pc:x11-toolkits/libXt
 xshmfence_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xshmfence.pc:x11/libxshmfence
 xtrans_BUILD_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xtrans.pc:x11/xtrans
-xtrap_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xtrap.pc:x11/libXTrap
 xtst_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xtst.pc:x11/libXtst
 xv_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xv.pc:x11/libXv
 xvmc_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xvmc.pc:x11/libXvMC
