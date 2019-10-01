@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	olsrd
-DISTVERSION=	0.9.6.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.8
 CATEGORIES=	net
-MASTER_SITES=	http://www.olsr.org/releases/0.9/
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	OLSR routing daemon
@@ -12,10 +12,13 @@ COMMENT=	OLSR routing daemon
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-MAKE_ARGS=	VERBOSE=1
-USES=		bison gmake tar:bzip2
+USES=		bison gmake
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	olsrd
+
+GH_ACCOUNT=	OLSR
+MAKE_ARGS=	VERBOSE=1
 
 ALL_TARGET=	build_all
 INSTALL_TARGET=	install_all
@@ -27,7 +30,6 @@ MULTI_IF_LIB_DEPENDS=	libnet.so:net/libnet
 MULTI_IF_MAKE_ARGS=	LIBNET=1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/sbin/ldconfig|:|g' ${WRKSRC}/make/Makefile.fbsd
 	@${CP} ${WRKSRC}/src/cfgparser/cfgfile_gen.c \
 		${WRKSRC}/src/cfgparser/olsrd_conf.h \
 		${WRKSRC}/lib/httpinfo/src/
