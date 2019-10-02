@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.mathematik.uni-kl.de/ftp/pub/Math/Singular/SOURCES/4-1-1/
 
-MAINTAINER=	oam_yamada@cc.nara-wu.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Computer algebra system for polynomial computations
 
 LICENSE=	GPLv3RLE
