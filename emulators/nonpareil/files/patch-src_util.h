@@ -1,6 +1,6 @@
---- src.orig/util.h    Mon Jul 24 14:32:21 2006
-+++ src/util.h Mon Jul 24 14:33:52 2006
-@@ -56,7 +56,7 @@
+--- src/util.h.orig	2008-08-24 00:37:18 UTC
++++ src/util.h
+@@ -56,7 +56,7 @@ void realloc_strcpy (char **dest, char *
  // strlcpy will copy as much of src into dest as it can, up to one less than
  // the maximum length of dest specified by the argument l.  Unlike strncpy(),
  // strlcpy() will always leave dest NULL-terminated on return.

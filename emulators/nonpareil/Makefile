@@ -28,7 +28,7 @@ post-patch:
 		's|%%CFLAGS%%|${CFLAGS}| ; \
 		 s|%%CC%%|${CC}|' ${WRKSRC}/src/SConscript
 	@${REINPLACE_CMD} -E \
-		"s|('/usr/local')|\1,PathOption.PathAccept|" ${WRKSRC}/SConstruct
+		"s|('/usr/local')|\1,PathVariable.PathAccept|" ${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e \
 		's|<stdint.h>|<inttypes.h>|g' ${WRKSRC}/src/*.[cly]
 

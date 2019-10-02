@@ -1,6 +1,6 @@
---- src/SConscript.orig	2008-08-24 09:37:18.000000000 +0900
-+++ src/SConscript	2011-03-20 05:12:10.000000000 +0900
-@@ -41,16 +41,11 @@
+--- src/SConscript.orig	2008-08-24 00:37:18 UTC
++++ src/SConscript
+@@ -41,16 +41,11 @@ sdl_pkg_config_cmd = 'sdl-config --cflag
  
  build_env.Append (CPPPATH = ['.'])
  build_env.Append (CPPPATH = ['#/build/common'])  # generated includes
@@ -19,7 +19,7 @@
      build_env.Append (CCFLAGS = ['-mms-bitfields'])
      build_env.Append (CPPPATH = ['/usr/local/gtkwin/include'])  # libpng
      build_env.Append (CPPPATH = ['/usr/local/gtkwin/SDL-1.2.8/include'])
-@@ -286,7 +281,7 @@
+@@ -286,7 +281,7 @@ if (not ming) or (cross and not build_ta
  
  csim_env = nonpareil_env.Copy ()
  if not ming:
