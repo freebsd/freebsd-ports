@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Structured document editor, offering a graphical WYSIWYG interface
 
+BROKEN=		/usr/bin/ld: cannot find -lXp
+
 THOT_SUBDIR=	Target
 USES=		gmake motif
 WRKSRC=		${WRKDIR}/Thot/${THOT_SUBDIR}
