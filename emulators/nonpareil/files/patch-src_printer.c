@@ -1,6 +1,6 @@
---- src/printer.c.orig	2012-05-09 13:00:47.000000000 +0200
-+++ src/printer.c	2012-05-09 13:01:08.000000000 +0200
-@@ -29,6 +29,7 @@
+--- src/printer.c.orig	2008-08-24 00:37:18 UTC
++++ src/printer.c
+@@ -29,6 +29,7 @@ MA 02111, USA.
  #include <gtk/gtk.h>
  
  #include <png.h>

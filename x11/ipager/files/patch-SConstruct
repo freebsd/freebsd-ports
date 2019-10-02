@@ -1,0 +1,72 @@
+--- SConstruct.orig	2005-11-06 11:23:24 UTC
++++ SConstruct
+@@ -7,15 +7,15 @@ SConsignFile()
+ ###############################################
+ # options
+ ipager_optfile = [ 'scons.opts', 'user.opts' ]
+-ipager_options = Options(ipager_optfile)
+-ipager_options.AddOptions(
+-    BoolOption('debug', 'build debug version', 0),
+-    BoolOption('debug_events', 'debug xserve events', 0),
++ipager_options = Variables(ipager_optfile)
++ipager_options.AddVariables(
++    BoolVariable('debug', 'build debug version', 0),
++    BoolVariable('debug_events', 'debug xserve events', 0),
+ 
+-    BoolOption('xinerama', 'support xinerama', 0),
++    BoolVariable('xinerama', 'support xinerama', 0),
+ 
+-    PathOption('PREFIX', 'install-path base', '/usr/local'),
+-    PathOption('DESTDIR', 'install to $DESTDIR/$PREFIX', '/')
++    PathVariable('PREFIX', 'install-path base', '/usr/local'),
++    PathVariable('DESTDIR', 'install to $DESTDIR/$PREFIX', '/')
+ )
+ 
+ 
+@@ -73,12 +73,12 @@ if conf.CheckCHeader('sys/time.h'):
+ 
+ # sys/stat.h
+ if not conf.CheckCHeader('sys/stat.h'):
+-    print "missing 'sys/stat.h', install it."
++    print("missing 'sys/stat.h', install it.")
+     exit(1)
+ 
+ # sys/types.h
+ if not conf.CheckCHeader('sys/types.h'):
+-    print "missing 'sys/types.h', install it."
++    print("missing 'sys/types.h', install it.")
+     exit(1)
+ 
+ 
+@@ -90,7 +90,7 @@ if conf.CheckLibWithHeader('X11', 'X11/X
+     ipager_env.AppendUnique(
+         LIBS = ['X11','Xmu','Xext'])
+ else:
+-    print "missing x11-dev-stuff, install it."
++    print("missing x11-dev-stuff, install it.")
+     exit(1)
+ 
+ 
+@@ -102,18 +102,18 @@ if conf.env['xinerama'] and conf.CheckLi
+ 
+ 
+ # imlib2
+-print "Checking for Imlib2... ",
++print("Checking for Imlib2... ")
+ if not conf.env.WhereIs('imlib2-config'):
+-    print "cant find 'imlib2-config."
++    print("cant find 'imlib2-config.")
+     exit(1)
+ else:
+     imlib2_env = Environment()
+     imlib2_env.ParseConfig('imlib2-config --cflags --libs')
+     if not imlib2_env.Dictionary()['LIBS']:
+-        print "missing imlib2, install it."
++        print("missing imlib2, install it.")
+         exit(1)
+     else:
+-        print "yes"
++        print("yes")
+         ipager_env.AppendUnique(
+             CPPPATH = imlib2_env.Dictionary()['CPPPATH'], 
+             CCFLAGS = imlib2_env.Dictionary()['CCFLAGS'], 

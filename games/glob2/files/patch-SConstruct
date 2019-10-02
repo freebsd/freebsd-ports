@@ -1,16 +1,20 @@
---- SConstruct.orig	2009-08-30 21:23:30.000000000 +0200
-+++ SConstruct	2014-06-10 23:51:36.000000000 +0200
-@@ -14,7 +14,9 @@
+--- SConstruct.orig	2009-08-30 19:23:30 UTC
++++ SConstruct
+@@ -12,9 +12,11 @@ isLinuxPlatform = sys.platform=='linux2'
+ isDarwinPlatform = sys.platform=='darwin'
  
- def establish_options(env):
-     opts = Options('options_cache.py')
+ 
+-def establish_options(env):
+-    opts = Options('options_cache.py')
++def establish_variables(env):
++    opts = Variables('variables_cache.py')
 +    opts.Add("CCFLAGS", "Manually add to the CCFLAGS", "")
      opts.Add("CXXFLAGS", "Manually add to the CXXFLAGS", "-g")
 +    opts.Add("LIBPATH", "Manually add to the LIBPATH", "")
      opts.Add("LINKFLAGS", "Manually add to the LINKFLAGS", "-g")
      if isDarwinPlatform:
          opts.Add(PathOption("INSTALLDIR", "Installation Directory", "./"))
-@@ -22,10 +24,10 @@
+@@ -22,14 +24,14 @@ def establish_options(env):
  	    opts.Add("INSTALLDIR", "Installation Directory", "/usr/local/share")
      opts.Add("BINDIR", "Binary Installation Directory", "/usr/local/bin")
      opts.Add("DATADIR", "Directory where data will be put, set to the same as INSTALLDIR", "/usr/local/share")
@@ -25,7 +29,12 @@
      opts.Add("font", "Build the game using an alternative font placed in the data/font folder", "sans.ttf")
      Help(opts.GenerateHelpText(env))
      opts.Update(env)
-@@ -111,14 +113,17 @@
+-    opts.Save("options_cache.py", env)
++    opts.Save("variables_cache.py", env)
+ 
+ 
+ class Configuration:
+@@ -111,14 +113,17 @@ def configure(env):
              missing.append("zlib")
  
      boost_thread = ''
@@ -43,7 +52,7 @@
  
      boost_date_time = ''
      if conf.CheckLib("boost_date_time") and conf.CheckCXXHeader("boost/date_time/posix_time/posix_time.hpp"):
-@@ -186,7 +191,7 @@
+@@ -186,7 +191,7 @@ def configure(env):
          env.Append(LIBS=['fribidi'])
  
      #Do checks for portaudio
@@ -52,7 +61,7 @@
          if env['mingw'] or isWindowsPlatform:
              print "--------"
              print "NOTE: It appears you are compiling under Windows. At this stage, PortAudio crashes Globulation 2 when voice chat is used."
-@@ -194,9 +199,9 @@
+@@ -194,9 +199,9 @@ def configure(env):
              print "--------"
          else:
              if GetOption('portaudio'):
@@ -64,3 +73,12 @@
              else:
                  print "         no portaudio"
                  print "         no portaudio - although portaudio was found to be installed, you have "
+@@ -236,7 +241,7 @@ def main():
+         Exit(1)
+ 
+     env["VERSION"] = "0.9.4.4"
+-    establish_options(env)
++    establish_variables(env)
+     #Add the paths to important mingw libraries
+     if env['mingw'] or isWindowsPlatform:
+         env.Append(LIBPATH=["C:/msys/1.0/local/lib", "C:/msys/1.0/lib"])

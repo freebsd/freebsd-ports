@@ -1,6 +1,64 @@
---- SConstruct.orig	Mon Dec 18 19:56:15 2006
-+++ SConstruct	Sun Feb  4 15:22:47 2007
-@@ -57,13 +57,19 @@
+--- SConstruct.orig	2006-12-19 00:56:15 UTC
++++ SConstruct
+@@ -1,22 +1,22 @@
+ import sys, os
+ 
+-# create build environment and options
++# create build environment and variables
+ env = Environment()
+-opts = Options()
++opts = Variables()
+ 
+ # OPTION debug
+-opts.Add(BoolOption('debug', 'Set to yes (or 1) to build for debug', 'no'))
++opts.Add(BoolVariable('debug', 'Set to yes (or 1) to build for debug', 'no'))
+ # OPTION strip
+-opts.Add(BoolOption('strip', 'Set to no (or 0) to avoid stripping binaries', 'yes'))
++opts.Add(BoolVariable('strip', 'Set to no (or 0) to avoid stripping binaries', 'yes'))
+ # OPTION warning
+-opts.Add(BoolOption('warnings', 'Set to yes (or 1) to print all warnings', 'yes'))
++opts.Add(BoolVariable('warnings', 'Set to yes (or 1) to print all warnings', 'yes'))
+ # OPTION with_opengl
+-opts.Add(BoolOption('with_opengl', 'Set to no (or 0) if you do not want OpenGL support in the game', 'yes'))
++opts.Add(BoolVariable('with_opengl', 'Set to no (or 0) if you do not want OpenGL support in the game', 'yes'))
+ # OPTION root & prefix
+-opts.Add(PathOption('root', 'Path to the fakeroot directory', '/'))
+-opts.Add(PathOption('prefix', 'Path to prefix to default destinations', '/usr/local'))
+-# Adding options to the environment
+-env = Environment(options = opts)
++opts.Add(PathVariable('root', 'Path to the fakeroot directory', '/'))
++opts.Add(PathVariable('prefix', 'Path to prefix to default destinations', '/usr/local'))
++# Adding variables to the environment
++env = Environment(variables = opts)
+ 
+ if 'install' in sys.argv:
+ 	root = ARGUMENTS.get('root', '/')
+@@ -33,17 +33,17 @@ else:
+ 
+ # OPTION no_mingw
+ if env['PLATFORM'] == 'cygwin':
+-	opts.Add(BoolOption('no_mingw', 'Set to yes (or 1) to build without mingw', 'no'))
+-	env = Environment(options = opts)
++	opts.Add(BoolVariable('no_mingw', 'Set to yes (or 1) to build without mingw', 'no'))
++	env = Environment(variables = opts)
+ 
+ # PLATFORM mingw under cygwin
+ if env['PLATFORM'] == 'cygwin' and not int(env['no_mingw']):
+-	# add mingw specific options
+-	opts.AddOptions(
+-		PathOption('mingw_cygdir', 'where your mingw installation is located under cygwin', '/mingw'),
+-		PathOption('mingw_windir', 'where your mingw installation is located under cygwin', 'F:/Programmi/Dev-Cpp')
++	# add mingw specific variables
++	opts.AddVariables(
++		PathVariable('mingw_cygdir', 'where your mingw installation is located under cygwin', '/mingw'),
++		PathVariable('mingw_windir', 'where your mingw installation is located under cygwin', 'F:/Programmi/Dev-Cpp')
+     )
+-	env = Environment(options = opts)
++	env = Environment(variables = opts)
+ 
+ 	mingw_cygdir = env['mingw_cygdir']
+ 	mingw_windir = env['mingw_windir']
+@@ -57,15 +57,21 @@ if env['PLATFORM'] == 'cygwin' and not i
  
  # PLATFORM posix or pure cygwin
  else:
@@ -23,9 +81,12 @@
 +        env.Replace(LIBPATH = [LOCALBASE + '/lib',LOCALBASE+ '/lib'])
 +        env.Append(CXXFLAGS = os.environ['CXXFLAGS'] + ' `' + SDL_CONFIG + ' --cflags`')
  
- # generate help for options
+-# generate help for options
++# generate help for variables
  Help(opts.GenerateHelpText(env))
-@@ -92,16 +98,16 @@
+ 
+ # build for debug
+@@ -92,16 +98,16 @@ if data_dir != '': # installation requir
  if not env.GetOption('clean'):
  	print ":: Checking for libs"
  	conf = Configure(env)

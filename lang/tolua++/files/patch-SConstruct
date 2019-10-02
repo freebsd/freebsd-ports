@@ -1,6 +1,26 @@
---- SConstruct.orig	2006-04-10 13:45:44.000000000 +0400
-+++ SConstruct	2008-08-22 01:43:56.000000000 +0400
-@@ -17,6 +17,7 @@
+--- SConstruct.orig	2008-04-21 00:05:35 UTC
++++ SConstruct
+@@ -7,21 +7,22 @@ if os.name == 'nt':
+ 
+ env = Environment(tools = tools)
+ 
+-options_file = None
++variables_file = None
+ if sys.platform == 'linux2':
+-	options_file = "linux"
++	variables_file = "linux"
+ 
+ elif 'msvc' in env['TOOLS']:
+-	options_file = "msvc"
++	variables_file = "msvc"
+ else:
+-	options_file = "posix"
++	variables_file = "posix"
+ 
+-opts = Options(["config_"+options_file+".py", "custom.py", "custom_"+options_file+".py"], ARGUMENTS)
++opts = Variables(["config_"+variables_file+".py", "custom.py", "custom_"+variables_file+".py"], ARGUMENTS)
+ opts.Add('CC', 'The C compiler.')
+ opts.Add('CXX', 'The C++ compiler (for the tests)')
  opts.Add('CCFLAGS', 'Flags for the compiler.', ['-O2', '-Wall'])
  opts.Add('LINK', 'The linker.')
  opts.Add('LINKFLAGS', 'Linker flags.', [])
@@ -8,7 +28,7 @@
  opts.Add('no_cygwin', 'Use -mno-cygwin to build using the mingw compiler on cygwin', 0)
  opts.Add('LIBS', 'libraries', [])
  opts.Add('LIBPATH', 'library path', [])
-@@ -128,7 +129,9 @@
+@@ -145,7 +146,9 @@ Files will be installed on <prefix>/bin,
  ########### end of helper builders
  
  env['CPPPATH'] = '#/include'
