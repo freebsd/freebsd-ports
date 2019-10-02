@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191002:
+  AFFECTS: users of groff
+  AUTHOR: bapt@FreeBSD.org
+
+  with groff 1.2.4_3, groff does not depends anymore on ghostscript and
+  netpbm. In order to be able to properly use the html backend the user
+  can install ghostscript and netpbm from ports without the need of
+  reinstalling the package.
+
+  Also note that the X11 option has been removed.
+
 20190930:
   AFFECTS: users of NetBox
   AUTHOR: kai@FreeBSD.org
