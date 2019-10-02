@@ -13,7 +13,8 @@ COMMENT=	Mount and umount utility for the Xfce4 panel
 
 LICENSE=	GPLv2
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce
 USE_GNOME=	cairo gtk30 intltool
 USE_LDCONFIG=	yes
 USE_XFCE=	panel
