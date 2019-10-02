@@ -1,4 +1,5 @@
 @comment %%WWWDIR%%/.babelrc.js
+@comment %%WWWDIR%%/.eslintrc.js
 %%WWWDIR%%/AUTHORS.md
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/README.md
@@ -9,8 +10,10 @@
 %%WWWDIR%%/css/style.css
 %%WWWDIR%%/img/app-dark.svg
 %%WWWDIR%%/img/app.svg
-%%WWWDIR%%/js/settings.js
-%%WWWDIR%%/js/settings.js.map
+%%WWWDIR%%/js/main-login-setup.js
+%%WWWDIR%%/js/main-login-setup.js.map
+%%WWWDIR%%/js/main-settings.js
+%%WWWDIR%%/js/main-settings.js.map
 %%WWWDIR%%/l10n/.gitkeep
 %%WWWDIR%%/l10n/ar.js
 %%WWWDIR%%/l10n/ar.json
@@ -156,11 +159,13 @@
 %%WWWDIR%%/lib/Migration/Version010501Date20181018124436.php
 %%WWWDIR%%/lib/Migration/Version020102Date20190304124405.php
 %%WWWDIR%%/lib/Migration/Version030000Date20190305114917.php
+%%WWWDIR%%/lib/Provider/AtLoginProvider.php
 %%WWWDIR%%/lib/Provider/TotpProvider.php
 %%WWWDIR%%/lib/Service/ITotp.php
 %%WWWDIR%%/lib/Service/Totp.php
 %%WWWDIR%%/lib/Settings/Personal.php
 %%WWWDIR%%/templates/challenge.php
+%%WWWDIR%%/templates/loginsetup.php
 %%WWWDIR%%/templates/personal.php
 %%WWWDIR%%/vendor/autoload.php
 %%WWWDIR%%/vendor/christian-riesen/base32/LICENSE
