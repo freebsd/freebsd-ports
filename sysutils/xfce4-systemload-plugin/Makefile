@@ -12,7 +12,8 @@ COMMENT=	System Load plugin for Xfce4 panel
 
 LICENSE=	BSD2CLAUSE
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XFCE=	panel
 
