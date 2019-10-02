@@ -1,8 +1,8 @@
---- make/Makefile.fbsd.orig	2016-11-22 19:39:42 UTC
+--- make/Makefile.fbsd.orig	2019-08-11 08:09:47 UTC
 +++ make/Makefile.fbsd
-@@ -45,44 +45,49 @@
- # FREEBSD SPECIFIC CONFIGURATION
- #
+@@ -47,44 +47,47 @@
+ 
+ LDCONFIG ?= /sbin/ldconfig
  
 -PREFIX ?= /usr/local
 -SBINDIR = $(PREFIX)/sbin
@@ -18,8 +18,8 @@
 +mandir ?= $(prefix)/man
 +sbindir ?= $(prefix)/sbin
  
--SRCS +=		$(wildcard src/bsd/*.c) $(wildcard src/unix/*.c)
--HDRS +=		$(wildcard src/bsd/*.h) $(wildcard src/unix/*.h)
+-SRCS +=		$(sort $(wildcard src/bsd/*.c) $(wildcard src/unix/*.c))
+-HDRS +=		$(sort $(wildcard src/bsd/*.h) $(wildcard src/unix/*.h))
 +# the rest are defined in Makefile.inc, but we don't need to override defaults
 +ETCDIR =	$(DESTDIR)$(etcdir)
 +LIBDIR =	$(DESTDIR)$(libdir)
@@ -49,10 +49,8 @@
  
 +PLUGIN_SONAME ?= lib$(PLUGIN_NAME).so
 +PLUGIN_FULLNAME ?= $(PLUGIN_NAME).so.$(PLUGIN_VER)
-+INSTALL_LIB =	install -m 755 $(PLUGIN_FULLNAME) $(LIBDIR)/$(PLUGIN_FULLNAME); \
-+		/sbin/ldconfig -m $(LIBDIR)
-+UNINSTALL_LIB =	rm -f $(LIBDIR)/$(PLUGIN_FULLNAME); \
-+		/sbin/ldconfig -m $(LIBDIR)
++INSTALL_LIB =	install -m 755 $(PLUGIN_FULLNAME) $(LIBDIR)/$(PLUGIN_FULLNAME)
++UNINSTALL_LIB =	rm -f $(LIBDIR)/$(PLUGIN_FULLNAME)
 +
  ifdef OLSRD_PLUGIN
  CFLAGS +=	-fPIC
@@ -62,9 +60,9 @@
 -PLUGIN_SONAME ?= $(PLUGIN_NAME)
 -PLUGIN_FULLNAME ?= $(PLUGIN_NAME).so.$(PLUGIN_VER)
 -INSTALL_LIB =	install -m 755 $(PLUGIN_FULLNAME) $(LIBDIR)/$(PLUGIN_FULLNAME); \
--		/sbin/ldconfig
+-		$(LDCONFIG)
 -UNINSTALL_LIB =	rm -f $(LIBDIR)/$(PLUGIN_FULLNAME); \
--		/sbin/ldconfig
+-		$(LDCONFIG)
 -
 -OS_LIB_PTHREAD = -pthread
 +OS_LIB_PTHREAD = -lpthread

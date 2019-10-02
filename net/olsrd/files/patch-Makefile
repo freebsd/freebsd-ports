@@ -1,4 +1,4 @@
---- Makefile.orig	2016-11-22 19:39:42 UTC
+--- Makefile.orig	2019-08-11 08:09:47 UTC
 +++ Makefile
 @@ -167,20 +167,17 @@ uninstall_bin:
  install_olsrd:	install_bin
@@ -30,3 +30,16 @@
  		@echo -------------------------------------------
  		@echo Edit $(CFGFILE) before running olsrd!!
  		@echo -------------------------------------------
+@@ -196,9 +193,10 @@ ifneq ($(RCDIR),)
+ endif
+ ifneq ($(DOCDIR_OLSRD),)
+ 		mkdir -p "$(DOCDIR_OLSRD)"
+-		cp -t "$(DOCDIR_OLSRD)" "CHANGELOG" "README-Olsr-Extensions" \
++		cp "CHANGELOG" "README-Olsr-Extensions" \
+ 		  "README-LINUX_NL80211.txt" "files/olsrd.conf.default" \
+-		  "files/olsrd.conf.default.txt" "license.txt"
++		  "files/olsrd.conf.default.txt" "license.txt" \
++		  "$(DOCDIR_OLSRD)"
+ endif
+ 
+ uninstall_olsrd:	uninstall_bin

@@ -1,8 +1,8 @@
---- lib/httpinfo/Makefile.orig	2016-11-22 19:39:42 UTC
+--- lib/httpinfo/Makefile.orig	2019-08-11 08:09:47 UTC
 +++ lib/httpinfo/Makefile
-@@ -52,7 +52,6 @@ ifdef ADMIN_INTERFACE
- CPPFLAGS +=	-DADMIN_INTERFACE
- endif
+@@ -54,7 +54,6 @@ endif
+ 
+ LDFLAGS += -lm
  
 -OBJS += $(TOPDIR)/src/cfgparser/cfgfile_gen.o
  
