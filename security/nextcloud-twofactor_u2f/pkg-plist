@@ -14,6 +14,8 @@
 %%WWWDIR%%/img/app.svg
 %%WWWDIR%%/js/challenge.js
 %%WWWDIR%%/js/challenge.js.map
+%%WWWDIR%%/js/login-setup.js
+%%WWWDIR%%/js/login-setup.js.map
 %%WWWDIR%%/js/settings.js
 %%WWWDIR%%/js/settings.js.map
 %%WWWDIR%%/l10n/.gitkeep
@@ -139,10 +141,12 @@
 %%WWWDIR%%/lib/Listener/StateChangeActivity.php
 %%WWWDIR%%/lib/Listener/StateChangeRegistryUpdater.php
 %%WWWDIR%%/lib/Migration/Version010601Date20181022142736.php
+%%WWWDIR%%/lib/Provider/U2FLoginProvider.php
 %%WWWDIR%%/lib/Provider/U2FProvider.php
 %%WWWDIR%%/lib/Service/U2FManager.php
 %%WWWDIR%%/lib/Settings/Personal.php
 %%WWWDIR%%/templates/challenge.php
+%%WWWDIR%%/templates/loginsetup.php
 %%WWWDIR%%/templates/personal.php
 %%WWWDIR%%/vendor/autoload.php
 %%WWWDIR%%/vendor/composer/ClassLoader.php
