@@ -4,18 +4,21 @@
 Thanks to Nikos Ntarmos, it is now possible to start slim from /etc/ttys.
 Please see %%PREFIX%%/etc/rc.d/slim for instructions on how to do that.
 
-Alternatively, just put
+Alternatively, just put the following entry in /etc/rc.conf:
 
 slim_enable=yes
-
-into /etc/rc.conf
 
 *** Option "sessions" is no longer supported. ***
 
 Now you need to put session files in the directory specified by option
 "sessiondir". They should be xdg-style .desktop files.
-The "Name" entry in the session file would be used as session name.
-The "Exec" entry would replace %session in login_cmd.
+
+WARNING: the default behaviour in parsing .xinitrc file has changed!
+         You can now set a default xsession as described here:
+         https://github.com/iwamatsu/slim/pull/1
+         You can turn back to random xsession selection by compiling
+         this port without the option XDEFAULT.
+
 EOM
 }
 ]
