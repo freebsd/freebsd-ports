@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		bison cpe gmake localbase ssl tar:bzip2
+USES=		bison:alias cpe gmake localbase ssl tar:bzip2
 CONFIGURE_ARGS=	--without-zlib
 
 LIBS+=		-lexecinfo
