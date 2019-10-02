@@ -16,7 +16,7 @@ LIB_DEPENDS=	libjansson.so:devel/jansson
 USE_GITHUB=	yes
 GH_ACCOUNT=	adobkin
 
-USES=		cmake
+USES=		cmake ssl
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DOS_FREEBSD=yes \
 		-DCAPN_INSTALL_PATH_PKGCONFIG=${PREFIX}/libdata/pkgconfig
