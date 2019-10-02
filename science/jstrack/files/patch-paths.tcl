@@ -4,7 +4,7 @@
  # Typical location (multi-user use) for WinXX systems
  #    set install_dir c:/jstrack
  # install_dir value determined by autoconfig.tcl:
--set install_dir "/Users/jim/src/ht"
+-set install_dir "/home/jim/src/jstrack"
 +set install_dir "%%PREFIX%%/lib/jstrack"
  # Directory for storm data (must be an absolute path, e.g.,
  # /usr/local/lib/jstrack or $install_dir/tracker/storms).
