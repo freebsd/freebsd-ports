@@ -3,7 +3,7 @@
 
 PORTNAME=	xmradio
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://BSDforge.com/projects/source/audio/xmradio/
 
@@ -12,11 +12,10 @@ COMMENT=	Motif based FM tuner (for use with bktr(4) driver)
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		/usr/bin/ld: cannot find -lXp
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		imake motif
-USE_XORG=	xpm
+USES=		imake motif xorg
+USE_XORG=	ice sm x11 xext xmu xpm xt
 
 PLIST_FILES=	bin/xmradio lib/X11/app-defaults/XMradio
 
