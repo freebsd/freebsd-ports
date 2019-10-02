@@ -12,6 +12,7 @@ COMMENT=	Motif based FM tuner (for use with bktr(4) driver)
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		/usr/bin/ld: cannot find -lXp
 ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		imake motif
