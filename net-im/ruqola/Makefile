@@ -5,7 +5,7 @@ DISTVERSION=	1.0.0-246
 DISTVERSIONSUFFIX=	-g3b35804a
 CATEGORIES=	net-im kde
 
-MAINTAINER=	kde@FreeBSD
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Rocketchat client
 
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain \
