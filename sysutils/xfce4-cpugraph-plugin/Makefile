@@ -13,7 +13,7 @@ COMMENT=	Graphical representation of the CPU load
 
 LICENSE=	GPLv2
 
-USES=		gettext-tools gmake gnome libtool pkgconfig \
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
 USE_CSTD=	c99
 USE_GNOME=	cairo gtk30 intltool
