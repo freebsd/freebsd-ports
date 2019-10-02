@@ -3,7 +3,7 @@
 
 PORTNAME=	thoteditor
 PORTVERSION=	2.1e
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors www
 MASTER_SITES=	ftp://ftp.inrialpes.fr/pub/opera/sources/thot/ \
 		ftp://ftp.ruhr-uni-bochum.de/local/jk.collection/thot/
@@ -12,10 +12,9 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Structured document editor, offering a graphical WYSIWYG interface
 
-BROKEN=		/usr/bin/ld: cannot find -lXp
-
 THOT_SUBDIR=	Target
-USES=		gmake motif
+USES=		gmake motif xorg
+USE_XORG=	ice sm x11 xext xt
 WRKSRC=		${WRKDIR}/Thot/${THOT_SUBDIR}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-thot --enable-plugin --without-insure --without-amaya \
