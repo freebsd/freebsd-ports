@@ -26,6 +26,7 @@
 %%WWWDIR%%/img/tasks.png
 %%WWWDIR%%/img/tasks.svg
 %%WWWDIR%%/js/tasks.js
+%%WWWDIR%%/js/tasks.js.LICENSE
 %%WWWDIR%%/js/tasks.js.map
 %%WWWDIR%%/l10n/.gitkeep
 %%WWWDIR%%/l10n/af.js
