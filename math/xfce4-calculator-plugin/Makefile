@@ -13,8 +13,8 @@ COMMENT=	Simple calculator for the Xfce panel
 
 LICENSE=	GPLv2
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bz2 \
-		xfce xorg
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bz2 xfce xorg
 USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel
 USE_XORG=	x11
