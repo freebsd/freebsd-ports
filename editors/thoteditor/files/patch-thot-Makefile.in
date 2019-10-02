@@ -5,7 +5,7 @@
  LDFLAGS = @LDFLAGS@ -L../indexlib -L../drawlib -L../tablelib -L../thotlib -L..
  LIBS	= -lThotIndex -lThotDraw -lThotTable -lThotEditor @IMGLIBS@ \
 -          $(MOTIF_LIBRARIES) -lXm $(X_LIBS) -lXt -lXext $(X_PRE_LIBS) \
-+          %%MOTIFLIB%% -lXm -lXp -lXm $(X_LIBS) -lXt -lXext $(X_PRE_LIBS) \
++          %%MOTIFLIB%% -lXm -lXm $(X_LIBS) -lXt -lXext $(X_PRE_LIBS) \
  	  -lX11 $(X_EXTRA_LIBS) @LIBS@ @EXTRA_LIBS@ -lm
  
  prefix = @prefix@
