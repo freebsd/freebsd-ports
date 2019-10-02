@@ -13,7 +13,8 @@ COMMENT=	Timer plugin for Xfce
 
 LICENSE=	GPLv2
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce
 USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel
 

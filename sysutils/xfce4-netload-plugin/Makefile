@@ -13,7 +13,8 @@ COMMENT=	Network Load plugin for Xfce4
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce
 USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel
 
