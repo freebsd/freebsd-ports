@@ -71,13 +71,6 @@ lib/libOpenImageIO_Util.so.2.0
 lib/libOpenImageIO_Util.so.%%LIBVERS%%
 libdata/pkgconfig/OpenImageIO.pc
 share/cmake/Modules/FindOpenImageIO.cmake
-%%FREETYPE%%share/fonts/OpenImageIO/DroidSans-Bold.ttf
-%%FREETYPE%%share/fonts/OpenImageIO/DroidSans.ttf
-%%FREETYPE%%share/fonts/OpenImageIO/DroidSansMono.ttf
-%%FREETYPE%%share/fonts/OpenImageIO/DroidSerif-Bold.ttf
-%%FREETYPE%%share/fonts/OpenImageIO/DroidSerif-BoldItalic.ttf
-%%FREETYPE%%share/fonts/OpenImageIO/DroidSerif-Italic.ttf
-%%FREETYPE%%share/fonts/OpenImageIO/DroidSerif.ttf
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.md
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.x.md
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-1.x.md
