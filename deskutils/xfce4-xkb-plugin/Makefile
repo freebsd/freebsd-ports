@@ -13,8 +13,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libxklavier.so:x11/libxklavier
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
-		xfce xorg
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce xorg
 USE_GNOME=	cairo gtk30 intltool librsvg2 libwnck3
 USE_XFCE=	panel
 USE_XORG=	x11

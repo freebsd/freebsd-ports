@@ -19,8 +19,8 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libxklavier.so:x11/libxklavier
 
-USES=		gettext-tools gl gmake gnome pkgconfig python:3.5+ shebangfix \
-		tar:bzip2 xfce xorg
+USES=		compiler:c11 gettext-tools gl gmake gnome pkgconfig python:3.5+ \
+		shebangfix tar:bzip2 xfce xorg
 USE_GL=		gl
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libwnck3
 USE_XFCE=	garcon libexo xfconf

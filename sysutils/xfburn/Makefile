@@ -21,8 +21,8 @@ RUN_DEPENDS=	cdrdao:sysutils/cdrdao \
 		${LOCALBASE}/include/libburn/libburn.h:devel/libburn \
 		${LOCALBASE}/include/libisofs/libisofs.h:devel/libisofs
 
-USES=		desktop-file-utils gettext-tools gmake gnome pkgconfig \
-		tar:bzip2 xfce:gtk2
+USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
+		pkgconfig tar:bzip2 xfce:gtk2
 USE_GNOME=	cairo glib20 gtk20 intltool
 USE_XFCE=	libexo
 
