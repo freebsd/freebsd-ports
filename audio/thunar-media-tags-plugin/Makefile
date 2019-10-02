@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtag.so:audio/taglib
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XFCE=	libexo thunar
 
