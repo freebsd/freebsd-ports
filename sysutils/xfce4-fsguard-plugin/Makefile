@@ -13,8 +13,8 @@ COMMENT=	Panel plugin which displays free space of mountpoint
 # COPYING file is wrong compared to license header
 LICENSE=	BSD2CLAUSE
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
-		xfce xorg
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce xorg
 USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel
 USE_XORG=	x11
