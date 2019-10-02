@@ -35,8 +35,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-no-eglfs \
 		-no-libudev \
 		-system-harfbuzz
-# Explicitly set to c++14 as to net get c++17/c++1z, as libX11's headers
-# are using the obsolete 'register' key word.
+# Explicitly set to c++14 to avoid c++17/c++1z, since libX11's headers
+# are using the obsolete 'register' keyword.
 CONFIGURE_ARGS+=	-c++std c++14
 
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
