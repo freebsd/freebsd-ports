@@ -13,7 +13,7 @@ COMMENT=	Fullscreen gesture recognition
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison imake localbase
+USES=		bison:alias imake localbase xorg
 USE_XORG=	xft x11 xext xi xtst
 
 PLIST_FILES=	bin/xstroke %%ETCDIR%%/alphabet man/man1/xstroke.1.gz
