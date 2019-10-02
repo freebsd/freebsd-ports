@@ -14,6 +14,7 @@ include/pcap/nflog.h
 include/pcap/pcap-inttypes.h
 include/pcap/pcap.h
 include/pcap/sll.h
+include/pcap/socket.h
 include/pcap/usb.h
 include/pcap/vlan.h
 lib/libpcap.a
