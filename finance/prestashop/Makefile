@@ -3,6 +3,7 @@
 
 PORTNAME=	prestashop
 PORTVERSION=	1.7.6.1
+PORTREVISION=	1
 CATEGORIES=	finance www
 MASTER_SITES=	http://www.prestashop.com/download/old/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,8 +15,8 @@ USES=		cpe shebangfix zip:infozip
 NO_BUILD=	yes
 PRESTADIR=	www/${PORTNAME}
 PLIST=		${WRKDIR}/plist
-USE_PHP=	ctype curl dom filter gd intl mcrypt mysqli pdo_mysql \
-		posix session simplexml soap
+USE_PHP=	ctype curl dom filter gd hash intl json mcrypt \
+		mysqli pdo_mysql posix session simplexml soap
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
