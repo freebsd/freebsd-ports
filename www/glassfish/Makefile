@@ -6,7 +6,7 @@ PORTVERSION=	4.1
 CATEGORIES=	www java
 MASTER_SITES=	http://dlc.sun.com.edgesuite.net/glassfish/${PORTVERSION}/release/
 
-MAINTAINER=	cjr@cruwe.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reference implementation of the Java EE application server
 
 USES=		zip
