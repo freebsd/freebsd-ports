@@ -3,7 +3,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.22.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -12,23 +12,26 @@ COMMENT=	Software typesetting package
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	psselect:print/psutils
+BUILD_DEPENDS=	psselect:print/psutils \
+		gsfonts>=0:print/gsfonts
+LIB_DEPENDS=	libuchardet.so:textproc/uchardet
 RUN_DEPENDS:=	psselect:print/psutils
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		cpe gmake perl5 shebangfix makeinfo
+USES=		cpe gmake perl5 makeinfo
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-awk=/usr/bin/awk
-CONFIGURE_ENV+=	PERLPATH=${perl_CMD} # shebangfix
+CONFIGURE_ARGS+=	--with-urw-fonts-dir=${LOCALBASE}/share/ghostscript/fonts/ \
+			--with-awk=/usr/bin/awk \
+			--without-x \
+			--without-gs \
+			pnmcrop=missing \
+			pnmcut=missing \
+			pnmtopng=missing \
+			pnmtops=missing \
+			psselect=missing
 
 CPE_VENDOR=	gnu
-SHEBANG_FILES=	src/utils/afmtodit/afmtodit.pl \
-		contrib/mm/mmroff.pl \
-		font/devps/generate/symbol.sed
-SHEBANG_LANG=	sed
-sed_OLD_CMD=	/bin/sed
-sed_CMD=	/usr/bin/sed
 
 .ifdef QEMU_EMULATING
 # XXX bug 224740: configure hangs: GSlice: failed to allocate 496 bytes (alignment: 512)
@@ -43,11 +46,6 @@ PAPERSIZE=A4
 CONFIGURE_ENV+=	PAGE=${PAPERSIZE}
 .endif
 
-OPTIONS_DEFINE=	X11 URWFONTS
-X11_DESC=	X11 devices (-TX*) and gxditview
-URWFONTS_DESC=	URW fonts support (needed for growpdf)
-OPTIONS_DEFAULT=	X11 URWFONTS
-
 CONFLICTS=	ja-groff-[0-9]*
 
 INFO=	groff
@@ -56,30 +54,8 @@ DATADIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 EXAMPLESDIR=	${DOCSDIR}/examples
 
-URWFONTS_CONFIGURE_OFF= --without-urw-fonts-dir --without-gs
-URWFONTS_USES=	ghostscript:build
-URWFONTS_BUILD_DEPENDS=	gsfonts>=0:print/gsfonts
-OPTIONS_SUB=	yes
-
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MX11}
-CONFIGURE_ARGS+=--without-x
-.if exists(${LOCALBASE}/bin/pnmcut) && exists(${LOCALBASE}/bin/pnmcrop) && \
-    exists(${LOCALBASE}/bin/pnmtops) && exists(${LOCALBASE}/bin/pnmtopng)
-PLIST_SUB+=	HTMLDOCS=""
-.else
-PLIST_SUB+=	HTMLDOCS="@comment "
-.endif
-.else
-USE_XORG=	x11 xaw xmu
-BUILD_DEPENDS+=	${LOCALBASE}/bin/pnmtops:graphics/netpbm
-RUN_DEPENDS+=	${LOCALBASE}/bin/pnmtops:graphics/netpbm
-CONFIGURE_ARGS+=--with-x --with-appresdir=${PREFIX}/lib/X11/app-defaults
-PLIST_SUB+=	HTMLDOCS=""
-.endif
-
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/mdoc.local ${STAGEDIR}/${PREFIX}/share/groff/site-tmac
+	${INSTALL_DATA} ${FILESDIR}/mdoc.local ${STAGEDIR}${PREFIX}/share/groff/site-tmac
+	${REINPLACE_CMD} -i "" -e "s/missing/gs/" ${STAGEDIR}${DATADIR}/font/devhtml/DESC
 
 .include <bsd.port.mk>

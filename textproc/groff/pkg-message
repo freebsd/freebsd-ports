@@ -1,0 +1,21 @@
+[
+{
+	type: install,
+	message: <<EOD
+In order to be able to use the html driver, you need to install the following
+packages:
+ - ghostscript
+ - netpbm
+EOD
+},
+{
+	type: upgrade,
+	maximum_version = "1.2.4_3",
+	message: <<EOD
+In order to be able to use the html driver, you need to install the following
+packages:
+ - ghostscript
+ - netpbm
+EOD
+}
+]

@@ -1,0 +1,28 @@
+--- configure.orig	2018-12-23 14:34:25 UTC
++++ configure
+@@ -24750,11 +24750,11 @@ $as_echo_n "checking whether URW fonts in pfb format a
+ 
+ 
+    groff_have_urw_fonts=no
+-   if test "$AWK" = "missing" -o "$GHOSTSCRIPT" = "missing"; then
+-     { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: awk and gs are required, can't look for URW fonts" >&5
+-$as_echo "$as_me: WARNING: awk and gs are required, can't look for URW fonts" >&2;}
+-   else
+-     _list_paths=`$GHOSTSCRIPT -h | $AWK 'BEGIN { found = 0 } /Search path:/ { found = 1 } /^ *\// { print $'0' }'| tr : ' '`
++  # if test "$AWK" = "missing" -o "$GHOSTSCRIPT" = "missing"; then
++  #   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: awk and gs are required, can't look for URW fonts" >&5
++#$as_echo "$as_me: WARNING: awk and gs are required, can't look for URW fonts" >&2;}
++  # else
++#     _list_paths=`$GHOSTSCRIPT -h | $AWK 'BEGIN { found = 0 } /Search path:/ { found = 1 } /^ *\// { print $'0' }'| tr : ' '`
+      _list_paths="$_list_paths /usr/share/fonts/type1/gsfonts/ \
+                /opt/local/share/fonts/urw-fonts/"
+      if test -n "$urwfontsdir"; then
+@@ -24768,7 +24768,7 @@ $as_echo "found in $k" >&6; }
+          break
+        fi
+      done
+-   fi
++  # fi
+    if test $groff_have_urw_fonts = no; then
+      { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
