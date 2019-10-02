@@ -17,10 +17,8 @@ COMMENT=	Persistence of Vision Ray Tracer
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-BROKEN_powerpc64=	Does not build: error: 64 bit CPU required
-
 USE_XORG=	x11
-USES=		gmake jpeg tar:bzip2
+USES=		compiler:c11 gmake jpeg tar:bzip2
 GNU_CONFIGURE=	yes
 USE_CXXSTD=	gnu++98
 
