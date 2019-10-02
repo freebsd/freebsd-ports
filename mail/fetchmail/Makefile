@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 .if empty(MASTERDIR)
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		cpe gmake tar:xz ssl
+USES=		compiler:c11 cpe gmake tar:xz ssl
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
