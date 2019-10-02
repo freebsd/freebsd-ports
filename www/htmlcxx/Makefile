@@ -11,11 +11,9 @@ COMMENT=	HTML and CSS APIs for C++
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LGPL_V2
 
-USES=		bison iconv libtool pathfix
+USES=		bison:alias iconv libtool localbase:ldflags pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 post-patch:
