@@ -31,7 +31,7 @@ lib/cmake/Shiboken2-%%DISTVERSION%%/Shiboken2Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Shiboken2-%%DISTVERSION%%/Shiboken2Targets.cmake
 lib/cmake/Shiboken2-%%DISTVERSION%%/shiboken_helpers.cmake
 lib/libshiboken2%%PYVERSTR%%.so
-lib/libshiboken2%%PYVERSTR%%.so.5.12
+lib/libshiboken2%%PYVERSTR%%.so.5.13
 lib/libshiboken2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/shiboken2/__init__.py
 %%PYTHON_SITELIBDIR%%/shiboken2/_config.py
@@ -43,6 +43,7 @@ lib/libshiboken2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/layout.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/lib/enum_sig.py
+%%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/lib/tool.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/loader.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/mapping.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/parser.py
