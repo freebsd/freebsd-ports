@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	faraday
-PORTVERSION=	0.15.4
+PORTVERSION=	0.16.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
