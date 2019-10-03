@@ -3,7 +3,7 @@
 
 PORTNAME=	kamailio
 PORTVERSION=	5.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -14,14 +14,14 @@ COMMENT=	Very fast and configurable open source SIP proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=Does not build: /bin/sh: clang: not found
+BROKEN_powerpc64=	Does not build: /bin/sh: clang: not found
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libxml2.so:textproc/libxml2 \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-USES=		gmake ncurses pkgconfig python readline shebangfix
+USES=		gmake ncurses pkgconfig python:3.5+ readline shebangfix
 
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	utils/kamctl/dbtextdb/dbtextdb.py \
@@ -29,38 +29,61 @@ SHEBANG_FILES=	utils/kamctl/dbtextdb/dbtextdb.py \
 
 CFLAGS+=	-Wall
 
-USERS=		kamailio
-GROUPS=		kamailio
+KAMAILIO_USER?=		kamailio
+KAMAILIO_GROUP?=	kamailio
+
+USERS=		${KAMAILIO_USER}
+GROUPS=		${KAMAILIO_GROUP}
+
+KAMAILIO_RUNDIR?=	/var/run/${PORTNAME}
 
 USE_RC_SUBR=	kamailio
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-RUNDIR?=	/var/run/${PORTNAME}
+SUB_LIST=	KAMAILIO_USER=${KAMAILIO_USER} \
+		KAMAILIO_GROUP=${KAMAILIO_GROUP} \
+		KAMAILIO_RUNDIR=${KAMAILIO_RUNDIR}
 
-SUB_LIST=	RUNDIR=${RUNDIR} \
-		USERS=${USERS} \
-		GROUPS=${GROUPS}
+OPTIONS_GROUP=		DATABASE_DRIVERS KEMI
+OPTIONS_GROUP_KEMI=	LUAJIT PYTHON3
+OPTIONS_GROUP_DATABASE_DRIVERS=	MYSQL PGSQL UNIXODBC
+OPTIONS_DEFINE=		DATABASE DIALPLAN DOCS PERL PRESENCE RADIUS \
+			SCTP TLS WEBSOCKET
+OPTIONS_DEFAULT=	MYSQL PRESENCE RADIUS TLS
+OPTIONS_SUB=		YES
 
-OPTIONS_MULTI=	DATABASE
-OPTIONS_MULTI_DATABASE=MYSQL PGSQL
-OPTIONS_DEFINE=	DATABASE DIALPLAN DOCS JITSI PERL PRESENCE RADIUS \
-		SCTP TLS UNIXODBC WEBSOCKET
-OPTIONS_DEFAULT=MYSQL PRESENCE RADIUS TLS
-OPTIONS_SUB=	YES
+DATABASE_DRIVERS_DESC=	Database drivers
 
-DATABASE_DESC=	Database support (select one or more)
-
-DIALPLAN_DESC=	Dialplan support
-DIALPLAN_LIB_DEPENDS=libpcre.so:devel/pcre
-DIALPLAN_VARS=	EXTRA_MODULES+=dialplan
-
-JITSI_DESC=	VoIP Frontend GUI via Jitsi
-JITSI_RUN_DEPENDS=jitsi:net-im/jitsi
+DATABASE_DESC=	Database support
+DATABASE_VARS=	EXTRA_GROUPS+=db
 
 MYSQL_IMPLIES=	DATABASE
 MYSQL_USES=	mysql
 MYSQL_VARS=	EXTRA_GROUPS+=mysql
+
+PGSQL_IMPLIES=	DATABASE
+PGSQL_USES=	pgsql
+PGSQL_VARS=	EXTRA_GROUPS+=postgres
+
+UNIXODBC_IMPLIES=	DATABASE
+UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
+UNIXODBC_VARS=		EXTRA_MODULES+=db_unixodbc
+
+KEMI_DESC=		Kamailio Embedded Interface
+
+LUAJIT_DESC=		Execute embedded Lua scripts
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
+LUAJIT_MAKE_ARGS=	LUAJIT=yes
+LUAJIT_VARS=		EXTRA_MODULES+=app_lua
+
+PYTHON3_DESC=		Execute embedded Python3 scripts
+PYTHON3_MAKE_ARGS=	PYTHON3=${PYTHON_CMD}
+PYTHON3_VARS=		EXTRA_MODULES+=app_python3
+
+DIALPLAN_DESC=		String translations based on rules
+DIALPLAN_LIB_DEPENDS=	libpcre.so:devel/pcre
+DIALPLAN_VARS=		EXTRA_MODULES+=dialplan
 
 PERL_USES=	perl5
 PERL_VARS=	EXTRA_MODULES+=app_perl
@@ -68,15 +91,11 @@ PERL_MAKE_ENV=	PERLLDOPTS="`perl -MExtUtils::Embed -e ldopts`" \
 		PERLCCOPTS="`perl -MExtUtils::Embed -e ccopts`" \
 		TYPEMAP="`perl -MConfig -e 'print $$Config{privlib}'`/ExtUtils/typemap"
 
-PGSQL_IMPLIES=	DATABASE
-PGSQL_USES=	pgsql
-PGSQL_VARS=	EXTRA_GROUPS+=postgres
-
 PRESENCE_DESC=	Presence support
 PRESENCE_VARS=	EXTRA_GROUPS+=presence
 
-RADIUS_LIB_DEPENDS=libradiusclient-ng.so:net/radiusclient
-RADIUS_VARS=	EXTRA_GROUPS+=radius
+RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
+RADIUS_VARS=		EXTRA_GROUPS+=radius
 
 SCTP_DESC=	SCTP support
 SCTP_VARS=	EXTRA_MODULES+=sctp
@@ -84,51 +103,46 @@ SCTP_VARS=	EXTRA_MODULES+=sctp
 TLS_USES=	ssl
 TLS_VARS=	EXTRA_MODULES+=tls
 
-UNIXODBC_LIB_DEPENDS=libodbc.so:databases/unixODBC
-UNIXODBC_VARS=	EXTRA_MODULES+=db_unixodbc
-
-WEBSOCKET_DESC=	Websocket support
-WEBSOCKET_LIB_DEPENDS=libunistring.so:devel/libunistring
-WEBSOCKET_VARS=	EXTRA_MODULES+=websocket
+WEBSOCKET_DESC=		Websocket support
+WEBSOCKET_LIB_DEPENDS=	libunistring.so:devel/libunistring
+WEBSOCKET_VARS=		EXTRA_MODULES+=websocket
 
 .include <bsd.port.pre.mk>
 
-DEFAULT_GROUP_INCLUDE=standard standard-dep
+DEFAULT_GROUPS=	standard
 
 .if !empty (EXTRA_GROUPS)
-MAKE_ARGS+=	group_include="${DEFAULT_GROUP_INCLUDE} ${EXTRA_GROUPS}"
+CFG_ARGS+=	group_include="${DEFAULT_GROUPS} ${EXTRA_GROUPS}"
 .else
-MAKE_ARGS+=	group_include="${DEFAULT_GROUP_INCLUDE}"
+CFG_ARGS+=	group_include="${DEFAULT_GROUPS}"
 .endif
 
 .if !empty (EXTRA_MODULES)
-MAKE_ARGS+=	include_modules="${EXTRA_MODULES}"
+CFG_ARGS+=	include_modules="${EXTRA_MODULES}"
 .endif
 
 post-patch:
-	${REINPLACE_CMD} '499s|$$(run_prefix)/$$(run_dir)|${RUNDIR}|' \
+	${REINPLACE_CMD} '499s|$$(run_prefix)/$$(run_dir)|${KAMAILIO_RUNDIR}|' \
 		${WRKSRC}/src/Makefile.defs
-.if ! ${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} 's|install-doc install-man|install-man|' \
+
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} 's|install-doc install-man|install-man|' \
 		${WRKSRC}/src/Makefile
-.endif
 
 pre-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} cfg
-
-do-build:
-	@cd ${WRKSRC} && ${DO_MAKE_BUILD} ${ALL_TARGET}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${CFG_ARGS} cfg
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${RUNDIR}
-	@cd ${WRKSRC} && ${MAKE_CMD} ${INSTALL_TARGET}
+	@${MKDIR} ${STAGEDIR}${KAMAILIO_RUNDIR}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
 	@(cd ${STAGEDIR}${ETCDIR}; for i in `${FIND} . -type f`; do ${MV} $$i $$i.sample; done)
 
 post-install:
+	@${RMDIR} ${STAGEDIR}${DATADIR} || true
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/kamailio/*.so.1
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/kamailio/modules/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/kamailio
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/kamcmd
-	@${ECHO_CMD} "@dir(${USERS},${GROUPS},750) ${RUNDIR}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(${KAMAILIO_USER},${KAMAILIO_GROUP},750) ${KAMAILIO_RUNDIR}" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

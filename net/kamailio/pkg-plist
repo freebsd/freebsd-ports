@@ -141,8 +141,8 @@
 %%DATABASE%%lib/kamailio/modules/usrloc.so
 %%DIALPLAN%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.dialplan
 %%DIALPLAN%%lib/kamailio/modules/dialplan.so
-%%ETCDIR%%/kamailio.cfg.sample
-%%ETCDIR%%/kamctlrc.sample
+%%LUAJIT%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.app_lua
+%%LUAJIT%%lib/kamailio/modules/app_lua.so
 %%MYSQL%%%%DATADIR%%/mysql/acc-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/alias_db-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/auth_db-create.sql
@@ -214,8 +214,8 @@
 %%PERL%%lib/kamailio/perl/Kamailio/VDB/Pair.pm
 %%PERL%%lib/kamailio/perl/Kamailio/VDB/ReqCond.pm
 %%PERL%%lib/kamailio/perl/Kamailio/VDB/Result.pm
-%%PERL%%lib/kamailio/perl/Kamailio/VDB/Value.pm
 %%PERL%%lib/kamailio/perl/Kamailio/VDB/VTab.pm
+%%PERL%%lib/kamailio/perl/Kamailio/VDB/Value.pm
 %%PGSQL%%%%DATADIR%%/postgres/acc-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/alias_db-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/auth_db-create.sql
@@ -264,6 +264,7 @@
 %%PGSQL%%lib/kamailio/kamctl/kamdbctl.pgsql
 %%PGSQL%%lib/kamailio/modules/db_postgres.so
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.acc_diameter
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.app_jsdt
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.app_sqlang
@@ -350,7 +351,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xhttp_rpc
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xlog
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xprint
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PRESENCE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.presence
 %%PRESENCE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.presence_conference
 %%PRESENCE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.presence_dialoginfo
@@ -368,41 +368,45 @@
 %%PRESENCE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.rls
 %%PRESENCE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.xcap_client
 %%PRESENCE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.xcap_server
+%%PRESENCE%%lib/kamailio/modules/presence.so
 %%PRESENCE%%lib/kamailio/modules/presence_conference.so
 %%PRESENCE%%lib/kamailio/modules/presence_dialoginfo.so
 %%PRESENCE%%lib/kamailio/modules/presence_mwi.so
 %%PRESENCE%%lib/kamailio/modules/presence_profile.so
 %%PRESENCE%%lib/kamailio/modules/presence_reginfo.so
 %%PRESENCE%%lib/kamailio/modules/presence_xml.so
-%%PRESENCE%%lib/kamailio/modules/presence.so
+%%PRESENCE%%lib/kamailio/modules/pua.so
 %%PRESENCE%%lib/kamailio/modules/pua_bla.so
 %%PRESENCE%%lib/kamailio/modules/pua_dialoginfo.so
 %%PRESENCE%%lib/kamailio/modules/pua_reginfo.so
 %%PRESENCE%%lib/kamailio/modules/pua_rpc.so
 %%PRESENCE%%lib/kamailio/modules/pua_usrloc.so
 %%PRESENCE%%lib/kamailio/modules/pua_xmpp.so
-%%PRESENCE%%lib/kamailio/modules/pua.so
 %%PRESENCE%%lib/kamailio/modules/rls.so
 %%PRESENCE%%lib/kamailio/modules/xcap_client.so
 %%PRESENCE%%lib/kamailio/modules/xcap_server.so
-%%RADIUS%%%%ETCDIR%%/dictionary.kamailio.sample
+%%PYTHON3%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.app_python3
+%%PYTHON3%%lib/kamailio/modules/app_python3.so
 %%RADIUS%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.acc_radius
 %%RADIUS%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.auth_radius
 %%RADIUS%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.misc_radius
 %%RADIUS%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.peering
+%%RADIUS%%@sample %%ETCDIR%%/dictionary.kamailio.sample
 %%RADIUS%%lib/kamailio/modules/acc_radius.so
 %%RADIUS%%lib/kamailio/modules/auth_radius.so
 %%RADIUS%%lib/kamailio/modules/misc_radius.so
 %%RADIUS%%lib/kamailio/modules/peering.so
 %%SCTP%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.sctp
 %%SCTP%%lib/kamailio/modules/sctp.so
-%%TLS%%%%ETCDIR%%/tls.cfg.sample
 %%TLS%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.tls
+%%TLS%%@sample %%ETCDIR%%/tls.cfg.sample
 %%TLS%%lib/kamailio/modules/tls.so
 %%UNIXODBC%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.db_unixodbc
 %%UNIXODBC%%lib/kamailio/modules/db_unixodbc.so
 %%WEBSOCKET%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.websocket
 %%WEBSOCKET%%lib/kamailio/modules/websocket.so
+@sample %%ETCDIR%%/kamailio.cfg.sample
+@sample %%ETCDIR%%/kamctlrc.sample
 lib/kamailio/kamctl/kamctl.base
 lib/kamailio/kamctl/kamctl.ctlbase
 lib/kamailio/kamctl/kamctl.rpcfifo
@@ -421,9 +425,9 @@ lib/kamailio/modules/acc_diameter.so
 lib/kamailio/modules/app_jsdt.so
 lib/kamailio/modules/app_sqlang.so
 lib/kamailio/modules/async.so
+lib/kamailio/modules/auth.so
 lib/kamailio/modules/auth_diameter.so
 lib/kamailio/modules/auth_xkeys.so
-lib/kamailio/modules/auth.so
 lib/kamailio/modules/avp.so
 lib/kamailio/modules/benchmark.so
 lib/kamailio/modules/blst.so
@@ -438,8 +442,8 @@ lib/kamailio/modules/counters.so
 lib/kamailio/modules/ctl.so
 lib/kamailio/modules/debugger.so
 lib/kamailio/modules/diversion.so
-lib/kamailio/modules/dmq_usrloc.so
 lib/kamailio/modules/dmq.so
+lib/kamailio/modules/dmq_usrloc.so
 lib/kamailio/modules/domainpolicy.so
 lib/kamailio/modules/enum.so
 lib/kamailio/modules/evrexec.so
@@ -461,8 +465,8 @@ lib/kamailio/modules/nosip.so
 lib/kamailio/modules/path.so
 lib/kamailio/modules/pdb.so
 lib/kamailio/modules/pike.so
-lib/kamailio/modules/print_lib.so
 lib/kamailio/modules/print.so
+lib/kamailio/modules/print_lib.so
 lib/kamailio/modules/pv.so
 lib/kamailio/modules/qos.so
 lib/kamailio/modules/ratelimit.so
@@ -499,8 +503,8 @@ lib/kamailio/modules/topoh.so
 lib/kamailio/modules/topos.so
 lib/kamailio/modules/tsilo.so
 lib/kamailio/modules/uac_redirect.so
-lib/kamailio/modules/xhttp_rpc.so
 lib/kamailio/modules/xhttp.so
+lib/kamailio/modules/xhttp_rpc.so
 lib/kamailio/modules/xlog.so
 lib/kamailio/modules/xprint.so
 man/man5/kamailio.cfg.5.gz

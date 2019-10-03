@@ -9,8 +9,18 @@
 # Add the following line to /etc/rc.conf to enable this service
 # at system startup:
 #
-# kamailio_enable (bool): Set to NO by default.
-# 			  Set it to YES to enable kamailio.
+# kamailio_enable (bool):
+#     Set to NO by default
+#     Set it to YES to enable kamailio
+# kamailio_user (string)
+#     Set user to run kamailio
+#     Default is "%%KAMAILIO_USER%%"
+# kamailio_group (string)
+#     Set group to run kamailio
+#     Default is "%%KAMAILIO_GROUP%%"
+# kamailio_pidfile (string)
+#     Set full path to pid file
+#     Default is "%%KAMAILIO_RUNDIR%%/kamailio.pid"
 #
 
 . /etc/rc.subr
@@ -20,19 +30,31 @@ rcvar=kamailio_enable
 
 load_rc_config ${name}
 
-: ${kamailio_enable:=NO}
-: ${kamailio_user:=%%USERS%%}
-: ${pidfile:=%%RUNDIR%%/kamailio.pid}
+: ${kamailio_enable:="NO"}
+: ${kamailio_user:="%%KAMAILIO_USER%%"}
+: ${kamailio_group:="%%KAMAILIO_GROUP%%"}
+: ${kamailio_pidfile:="%%KAMAILIO_RUNDIR%%/kamailio.pid"}
 
+pidfile="${kamailio_pidfile}"
+required_files="%%ETCDIR%%/kamailio.cfg"
 command="/usr/local/sbin/kamailio"
 command_args="-P ${pidfile}"
 
-start_precmd="kamailio_prestart"
+start_precmd="kamailio_start_precmd"
+restart_precmd="kamailio_checkconfig"
+reload_precmd="kamailio_checkconfig"
+configtest_cmd="kamailio_checkconfig"
+extra_commands="configtest"
 
-required_files="%%ETCDIR%%/kamailio.cfg"
+kamailio_start_precmd()
+{
+	install -d -m 0750 -o ${kamailio_user} -g ${kamailio_group} "%%KAMAILIO_RUNDIR%%"
+}
 
-kamailio_prestart() {
-	install -d -m 0750 -o %%USERS%% -g %%GROUPS%% %%RUNDIR%%
+kamailio_checkconfig()
+{
+	echo "Performing sanity check on ${name} configuration:"
+	eval ${command} ${kamailio_flags} -c >/dev/null
 }
 
 run_rc_command $1
