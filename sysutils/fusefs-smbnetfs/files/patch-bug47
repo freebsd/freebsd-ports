@@ -1,0 +1,12 @@
+See:
+	https://sourceforge.net/p/smbnetfs/git/ci/fc721fecd9ea47a671cfa3acc4d2d0127bfdfc8c/
+
+--- src/reconfigure.c	2018-01-04 15:59:38.000000000 -0500
++++ src/reconfigure.c	2019-10-03 09:25:22.227842000 -0400
+@@ -295,5 +295,5 @@
+ #ifdef HAVE_LIBSECRET
+     /* auth-libsecret.h */
+-    if (strcasecmp(option, "use_libsecter") == 0)
++    if (strcasecmp(option, "use_libsecret") == 0)
+ 	return reconfigure_set_boolean(value, libsecret_enable);
+     if (strcasecmp(option, "libsecret_timeout") == 0)
