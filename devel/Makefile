@@ -5214,6 +5214,7 @@
     SUBDIR += py-yandex-money-sdk
     SUBDIR += py-yappi
     SUBDIR += py-yapps2
+    SUBDIR += py-yarg
     SUBDIR += py-yattag
     SUBDIR += py-ydbf
     SUBDIR += py-yg.lockfile
