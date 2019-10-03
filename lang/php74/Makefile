@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	php74
-DISTVERSION=	7.4.0RC1
+DISTVERSION=	7.4.0RC3
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	https://downloads.php.net/~derick/
