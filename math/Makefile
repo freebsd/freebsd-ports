@@ -354,6 +354,7 @@
     SUBDIR += matlab-installer
     SUBDIR += maxima
     SUBDIR += mbasecalc
+    SUBDIR += mcsim
     SUBDIR += metis
     SUBDIR += metis-edf
     SUBDIR += metis4
