@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	endless-sky
-PORTVERSION=	0.9.8
-PORTREVISION=	5
+PORTVERSION=	0.9.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -19,11 +18,12 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 USE_GITHUB=	yes
 
-USES=		compiler:c++11-lib jpeg localbase:ldflags openal scons
+USES=		compiler:c++11-lib gl gnome jpeg localbase:ldflags openal scons sdl xorg
 USE_SDL=	sdl2
 USE_GL=		gl glew
 LLD_UNSAFE=	yes
 INSTALLS_ICONS=	yes
+LLD_UNSAFE=	yes
 
 PORTDATA=	*
 
