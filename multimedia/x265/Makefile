@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x265
-PORTVERSION=	3.1.2
-PORTREVISION=	2
+PORTVERSION=	3.2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265/downloads/ \
 		https://downloads.videolan.org/pub/videolan/x265/ \

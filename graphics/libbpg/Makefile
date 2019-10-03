@@ -3,7 +3,7 @@
 
 PORTNAME=	libbpg
 PORTVERSION=	0.9.7
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	http://bellard.org/bpg/
 
