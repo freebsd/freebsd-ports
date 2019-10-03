@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-activesupport52>=0:devel/rubygem-activesupport52 \
 		rubygem-atlassian-jwt>=0:www/rubygem-atlassian-jwt \
 		rubygem-multipart-post>=0:www/rubygem-multipart-post \
-		rubygem-oauth>=0.5.0<1.0:net/rubygem-oauth
+		rubygem-oauth>=0.5.0<1:net/rubygem-oauth
 
 USES=		gem
 USE_RUBY=	yes
