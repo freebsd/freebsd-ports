@@ -12,7 +12,8 @@ COMMENT=	Displays various information about a WaveLAN device
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30 glib20 intltool
 USE_XFCE=	panel
 
