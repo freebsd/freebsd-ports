@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-FTPSSL
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	ftp perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,9 +18,10 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-Socket-SSL>=1.26:security/p5-IO-Socket-SSL \
 		p5-Net-SSLeay>=0:security/p5-Net-SSLeay
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 # Avoid interactive prompt
 post-patch:
