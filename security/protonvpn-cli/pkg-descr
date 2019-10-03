@@ -1,0 +1,16 @@
+protonvpn-cli is an user-friendly command-line tool for accessing the
+swiss-based privacy-focused ProtonVPN VPN service.
+You need a ProtonVPN account to use it: you can create one at
+https://protonvpn.com. Free accounts are available, although with
+limited features: only 3 countries (Netherlands, USA, Japan) are
+available with the free plan.
+It can also easily add an extra layer of privacy by activating Tor
+(needs payed plan).
+
+No manual page is provided with protonvpn-cli, but you can get help
+on usage by running protonvpn-cli -h.
+
+Warning: although user is asked about enabling a killswitch or not, no
+killswitch is available at the moment.
+
+WWW: https://protonvpn.com

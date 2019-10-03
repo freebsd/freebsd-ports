@@ -839,6 +839,7 @@
     SUBDIR += portsentry
     SUBDIR += ppars
     SUBDIR += proftpd-mod_clamav
+    SUBDIR += protonvpn-cli
     SUBDIR += proxycheck
     SUBDIR += proxytunnel
     SUBDIR += pscan
