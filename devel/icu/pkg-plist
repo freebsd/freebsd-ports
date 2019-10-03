@@ -82,6 +82,7 @@ include/unicode/icuplug.h
 include/unicode/idna.h
 include/unicode/listformatter.h
 include/unicode/localebuilder.h
+include/unicode/localematcher.h
 include/unicode/localpointer.h
 include/unicode/locdspnm.h
 include/unicode/locid.h
