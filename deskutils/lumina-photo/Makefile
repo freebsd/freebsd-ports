@@ -10,7 +10,7 @@ COMMENT=	Image viewer utility from the Lumina Desktop
 
 LICENSE=	BSD3CLAUSE
 
-USES=		qmake qt:5
+USES=		compiler:c++11-lang qmake qt:5
 USE_QT=		buildtools_build concurrent core gui multimedia \
 		network svg widgets x11extras
 USE_GITHUB=	yes
