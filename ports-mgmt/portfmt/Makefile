@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	portfmt
-PORTVERSION=	g20191001
+PORTVERSION=	g20191003
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	t6
-GH_TAGNAME=	16a873c98e015383e38bc70927f56733526395c9
+GH_TAGNAME=	e1938905d1fb9f23edbe74dd4713321a7d0560ca
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
@@ -26,9 +26,11 @@ TEST_TARGET=	test
 PLIST_FILES=	bin/portclippy \
 		bin/portedit \
 		bin/portfmt \
+		bin/portscan \
 		lib/libportfmt.so \
 		man/man1/portclippy.1.gz \
 		man/man1/portedit.1.gz \
-		man/man1/portfmt.1.gz
+		man/man1/portfmt.1.gz \
+		man/man1/portscan.1.gz
 
 .include <bsd.port.mk>
