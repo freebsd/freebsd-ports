@@ -3,7 +3,7 @@
 
 PORTNAME=	libical
 PORTVERSION=	3.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libical/libical/releases/download/v${PORTVERSION}/
 

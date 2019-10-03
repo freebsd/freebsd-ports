@@ -3,7 +3,7 @@
 
 PORTNAME=	parrot
 PORTVERSION=	8.1.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/supported/${PORTVERSION}/ \
 		LOCAL/sunpoet

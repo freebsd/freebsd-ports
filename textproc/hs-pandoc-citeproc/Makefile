@@ -2,7 +2,7 @@
 
 PORTNAME=	pandoc-citeproc
 PORTVERSION=	0.16.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
