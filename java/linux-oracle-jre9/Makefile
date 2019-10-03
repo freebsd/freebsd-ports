@@ -11,6 +11,9 @@ DISTNAME=	jre-${JRE_VERSION}.${JRE_UPDATE_VERSION}.${JRE_PATCH_VERSION}_linux-x6
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JRE_VERSION} Runtime Environment for Linux
 
+DEPRECATED=	No longer maintained upstream, please migrate to openjdk11
+EXPIRATION_DATE=2019-10-17
+
 ONLY_FOR_ARCHS=	amd64
 RUN_DEPENDS=	javavm:java/javavmwrapper
 
