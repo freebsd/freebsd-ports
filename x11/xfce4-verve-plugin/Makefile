@@ -16,7 +16,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool pango
 USE_XFCE=	panel
 
