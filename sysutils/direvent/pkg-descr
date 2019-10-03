@@ -1,0 +1,16 @@
+GNU Direvent is a daemon that monitors file system directories for events,
+such as creating, deleting or modifying files.  It can be configured to
+monitor different sets of directories for different events.  When an event
+is detected, direvent(8) calls an external program associated with it,
+supplying it with the information about the event and the location within
+the file system where it occurred.
+
+GNU Direvent provides an easy way to configure the system to react
+immediately if certain files undergo changes.  This may be helpful, for
+example, to track changes in important configuration files.
+
+The program aims to provide a uniform and system-independent command-level
+interface for file system events.  The current version is known to work on
+GNU/Linux and BSD systems (FreeBSD, NetBSD, OpenBSD, Darwin).
+
+WWW: https://www.gnu.org.ua/software/direvent/

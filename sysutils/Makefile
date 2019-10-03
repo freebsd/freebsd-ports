@@ -240,6 +240,7 @@
     SUBDIR += dim
     SUBDIR += dirdiff
     SUBDIR += direnv
+    SUBDIR += direvent
     SUBDIR += dirvish
     SUBDIR += diskcheckd
     SUBDIR += diskimage-tools
