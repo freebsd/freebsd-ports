@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.14.2.1
-PORTREVISION=	1
+PORTVERSION=	4.15.0
 CATEGORIES=	archivers
-MASTER_SITES=	http://ftp.rpm.org/releases/rpm-4.14.x/
+MASTER_SITES=	http://ftp.rpm.org/releases/rpm-4.15.x/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -15,17 +14,17 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:devel/popt \
-		libnss3.so:security/nss
+		libnss3.so:security/nss \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		alias bdb gmake libarchive libtool lua:51 pathfix pkgconfig \
-		shebangfix tar:bzip2
-INVALID_BDB_VER=51
+USES=		alias bdb compiler:openmp gmake iconv libarchive libtool \
+		lua:52+ pathfix pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	scripts/brp-python-bytecompile scripts/check-prereqs \
 		scripts/check-rpaths-worker scripts/pythondeps.sh \
-		scripts/mono-find-requires scripts/mono-find-provides \
 		scripts/pkgconfigdeps.sh scripts/fontconfig.prov \
 		scripts/rpmdb_loadcvt scripts/perl.prov scripts/perl.req  \
 		scripts/pythondistdeps.py scripts/find-lang.sh \
@@ -69,8 +68,6 @@ PLUGINS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:\.\./\.\./bin/::' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's/(hpux)/& || defined(__FreeBSD__)/' \
-		${WRKSRC}/misc/fts.?
 	@${REINPLACE_CMD} -e 's/ __GLIBC__.*/& || defined(__FreeBSD__)/' \
 		${WRKSRC}/system.h
 
