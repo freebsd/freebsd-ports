@@ -20,8 +20,8 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
-		xfce:gtk2 xorg
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce:gtk2 xorg
 USE_GNOME=	cairo glib20 gtk20 intltool
 USE_XFCE=	panel
 USE_XORG=	x11
