@@ -12,7 +12,7 @@ COMMENT=	Utility to recover UFS2 filesystems
 
 LICENSE=	BSD2CLAUSE
 
-USES=		tar:bzip2 uidfix
+USES=		compiler:c11 tar:bzip2 uidfix
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	sbin/ffs2recov \
