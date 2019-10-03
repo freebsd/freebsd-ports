@@ -21,7 +21,6 @@ USE_GITHUB=	yes
 USES=		compiler:c++11-lib gl gnome jpeg localbase:ldflags openal scons sdl xorg
 USE_SDL=	sdl2
 USE_GL=		gl glew
-LLD_UNSAFE=	yes
 INSTALLS_ICONS=	yes
 LLD_UNSAFE=	yes
 
