@@ -1,6 +1,6 @@
---- misc/fts.c.orig	2018-08-25 09:14:19 UTC
+--- misc/fts.c.orig	2019-06-26 14:17:31 UTC
 +++ misc/fts.c
-@@ -32,12 +32,14 @@ static char sccsid[] = "@(#)fts.c	8.6 (B
+@@ -32,12 +32,14 @@ static char sccsid[] = "@(#)fts.c	8.6 (Berkeley) 8/14/
  #endif /* LIBC_SCCS and not lint */
  
  /* Conditional to set up proper fstat64 implementation */
@@ -16,7 +16,7 @@
  #if defined(_LIBC)
  #include <sys/param.h>
  #include <include/sys/stat.h>
-@@ -51,7 +53,7 @@ static char sccsid[] = "@(#)fts.c	8.6 (B
+@@ -51,7 +53,7 @@ static char sccsid[] = "@(#)fts.c	8.6 (Berkeley) 8/14/
  #else
  
  /* Conditionals for working around non-GNU environments */
@@ -25,7 +25,7 @@
  #   define        _INCLUDE_POSIX_SOURCE
  #   define __errno_location() 	(&errno)
  #   define dirfd(dirp)		-1
-@@ -65,11 +67,9 @@ static char sccsid[] = "@(#)fts.c	8.6 (B
+@@ -65,11 +67,9 @@ static char sccsid[] = "@(#)fts.c	8.6 (Berkeley) 8/14/
  #   define __errno_location()	(__error())
  #endif
  
