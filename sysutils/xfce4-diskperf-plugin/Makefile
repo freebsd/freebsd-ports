@@ -14,7 +14,8 @@ COMMENT=	Graphical representation of the disk IO
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext-tools gnome gmake libtool pkgconfig tar:bzip2 xfce
+USES=		compiler:c11 gettext-tools gnome gmake libtool pkgconfig \
+		tar:bzip2 xfce
 USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel
 
