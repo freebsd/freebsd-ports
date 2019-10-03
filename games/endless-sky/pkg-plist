@@ -2,10 +2,12 @@ bin/endless-sky
 man/man6/endless-sky.6.gz
 share/appdata/endless-sky.appdata.xml
 share/applications/endless-sky.desktop
+share/icons/hicolor/128x128/apps/endless-sky.png
 share/icons/hicolor/16x16/apps/endless-sky.png
 share/icons/hicolor/22x22/apps/endless-sky.png
 share/icons/hicolor/24x24/apps/endless-sky.png
 share/icons/hicolor/256x256/apps/endless-sky.png
 share/icons/hicolor/32x32/apps/endless-sky.png
 share/icons/hicolor/48x48/apps/endless-sky.png
+share/icons/hicolor/512x512/apps/endless-sky.png
 share/pixmaps/endless-sky.png
