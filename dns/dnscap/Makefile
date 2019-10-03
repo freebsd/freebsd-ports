@@ -2,21 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	dnscap
-PORTVERSION=	1.10.2
-MASTER_SITES=	https://www.dns-oarc.net/files/dnscap/
+PORTVERSION=	1.10.3
 PORTEPOCH=	1
 CATEGORIES=	dns
+MASTER_SITES=	https://www.dns-oarc.net/files/dnscap/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	DNS network traffic capture utility
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-OPTIONS_DEFINE=	CDS DOCS THREADS
-OPTIONS_DEFAULT=THREADS
-OPTIONS_SUB=	yes
-CDS_DESC=	CBOR DNS Stream (CDS) format (experimental)
 
 USES=		autoreconf libtool localbase pkgconfig ssl
 
@@ -25,6 +21,11 @@ CONFIGURE_ENV=	libcrypto_CFLAGS=-I${OPENSSLINC}/include \
 		libcrypto_LIBS="-L${OPENSSLLIB}/lib -lcrypto"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	CDS DOCS THREADS
+OPTIONS_DEFAULT=THREADS
+OPTIONS_SUB=	yes
+CDS_DESC=	CBOR DNS Stream (CDS) format (experimental)
 
 CDS_CONFIGURE_OFF=	ac_cv_lib_ldns_ldns_wire2pkt=no \
 			ac_cv_lib_tinycbor_cbor_parser_init=no
