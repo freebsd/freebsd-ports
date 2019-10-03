@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 .if empty(MASTERDIR)
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		compiler:c11 cpe gmake tar:xz ssl
+USES=		cpe gmake tar:xz ssl
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
@@ -82,4 +82,13 @@ post-install-DOCS-on:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .endif
-.include <bsd.port.mk>
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Mpowerpc*} && ${OSREL:R} < 13
+# as of 2019-10-02, powerpc's base compiler does not yield a working fetchmail.
+# https://svnweb.freebsd.org/ports?view=revision&revision=513614 -- pkubaj@
+USE_GCC=	yes
+.endif
+
+.include <bsd.port.post.mk>
