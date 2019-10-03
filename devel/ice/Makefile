@@ -19,7 +19,7 @@ MAKE_JOBS_UNSAFE=	yes
 .if ${SLAVE_PORT} == "no"
 LIB_DEPENDS=		libexpat.so:textproc/expat2 \
 			libmcpp.so:devel/mcpp
-USES+=			ssl
+USES+=			compiler:c++11-lang ssl
 .else
 LIB_VRS=		${PORTVERSION:R:S|.||g}
 LIB_DEPENDS+=		libIce.so.${LIB_VRS}:devel/ice
