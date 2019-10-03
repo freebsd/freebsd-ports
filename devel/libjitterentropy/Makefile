@@ -9,7 +9,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Hardware RNG based on CPU timing jitter
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILES=	${WRKSRC}/COPYING.bsd
+LICENSE_FILE=	${WRKSRC}/COPYING.bsd
 
 USES=		gmake
 USE_LDCONFIG=	yes
