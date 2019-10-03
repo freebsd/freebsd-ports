@@ -4799,6 +4799,7 @@
     SUBDIR += py-pip-tools
     SUBDIR += py-pipdeptree
     SUBDIR += py-pipenv
+    SUBDIR += py-pipreqs
     SUBDIR += py-pkgconfig
     SUBDIR += py-plac
     SUBDIR += py-plan
