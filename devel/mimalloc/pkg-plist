@@ -1,0 +1,10 @@
+lib/libmimalloc.so
+lib/mimalloc-1.0/cmake/mimalloc-config-version.cmake
+lib/mimalloc-1.0/cmake/mimalloc-config.cmake
+lib/mimalloc-1.0/cmake/mimalloc-%%CMAKE_BUILD_TYPE%%.cmake
+lib/mimalloc-1.0/cmake/mimalloc.cmake
+lib/mimalloc-1.0/include/mimalloc-override.h
+lib/mimalloc-1.0/include/mimalloc.h
+lib/mimalloc-1.0/libmimalloc.a
+lib/mimalloc-1.0/libmimalloc.so
+lib/mimalloc-1.0/mimalloc.o
