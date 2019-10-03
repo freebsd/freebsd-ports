@@ -1,0 +1,8 @@
+GNU MCSim is a simulation package, written in C, which allows you to:
+
+   * design and run your own statistical or simulation models
+   * perform Monte Carlo stochastic simulations
+   * do Bayesian inference through Markov Chain Monte Carlo simulations
+   * formally optimize experimental designs
+
+WWW: https://www.gnu.org/software/mcsim/
