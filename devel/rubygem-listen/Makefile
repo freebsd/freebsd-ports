@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	listen
-PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,14 +12,14 @@ COMMENT=	Listen to file modifications and notify about the changes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-rb-fsevent>=0.9.4:devel/rubygem-rb-fsevent \
-		rubygem-rb-inotify>=0.9.7:devel/rubygem-rb-inotify \
-		rubygem-rb-kqueue>=0.2:devel/rubygem-rb-kqueue \
-		rubygem-ruby_dep>=1.2:devel/rubygem-ruby_dep
+RUN_DEPENDS=	rubygem-rb-fsevent>=0.10.3<1:devel/rubygem-rb-fsevent \
+		rubygem-rb-inotify>=0.9.10<1:devel/rubygem-rb-inotify \
+		rubygem-rb-kqueue>=0.2:devel/rubygem-rb-kqueue
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/listen
 
