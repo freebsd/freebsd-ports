@@ -2,6 +2,7 @@
 
 PORTNAME=	Lektor
 PORTVERSION=	3.1.3
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}inifile>=0.4:devel/py-inifile@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}inifile>=0.4:devel/py-inifile@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
