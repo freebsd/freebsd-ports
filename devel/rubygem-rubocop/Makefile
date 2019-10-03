@@ -12,13 +12,13 @@ COMMENT=	Ruby code style checking tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-jaro_winkler>=1.5.1:devel/rubygem-jaro_winkler \
-		rubygem-parallel>=1.10:sysutils/rubygem-parallel \
-		rubygem-parser>=2.5:devel/rubygem-parser \
-		rubygem-powerpack>=0.1:devel/rubygem-powerpack \
-		rubygem-rainbow>=2.2.2:devel/rubygem-rainbow \
-		rubygem-ruby-progressbar>=1.7:devel/rubygem-ruby-progressbar \
-		rubygem-unicode-display_width>=1.4.0:devel/rubygem-unicode-display_width
+RUN_DEPENDS=	rubygem-jaro_winkler>=1.5.1<1.6:devel/rubygem-jaro_winkler \
+		rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
+		rubygem-parser>=2.5<3:devel/rubygem-parser \
+		rubygem-powerpack>=0.1<1:devel/rubygem-powerpack \
+		rubygem-rainbow>=2.2.2<4.0:devel/rubygem-rainbow \
+		rubygem-ruby-progressbar>=1.7<2:devel/rubygem-ruby-progressbar \
+		rubygem-unicode-display_width>=1.4.0<2:devel/rubygem-unicode-display_width
 
 USES=		gem
 USE_RUBY=	yes
