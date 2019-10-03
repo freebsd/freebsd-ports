@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	selenium-webdriver
-PORTVERSION=	3.142.4
-PORTREVISION=	1
+PORTVERSION=	3.142.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-childprocess2>=0.5<3.0:devel/rubygem-childprocess2 \
-		rubygem-rubyzip>=1.2.2<2:archivers/rubygem-rubyzip
+		rubygem-rubyzip>=1.2.2:archivers/rubygem-rubyzip
 
 USES=		gem
 USE_RUBY=	yes
