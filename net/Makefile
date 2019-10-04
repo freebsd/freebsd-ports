@@ -35,7 +35,6 @@
     SUBDIR += asterisk-chan_sccp
     SUBDIR += asterisk-g72x
     SUBDIR += asterisk13
-    SUBDIR += asterisk15
     SUBDIR += asterisk16
     SUBDIR += avahi
     SUBDIR += avahi-app
