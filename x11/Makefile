@@ -336,6 +336,7 @@
     SUBDIR += waybar
     SUBDIR += wbar
     SUBDIR += wbarconf
+    SUBDIR += wdisplays
     SUBDIR += wdm
     SUBDIR += wev
     SUBDIR += wf-shell
