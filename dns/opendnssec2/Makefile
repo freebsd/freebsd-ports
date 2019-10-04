@@ -58,8 +58,8 @@ SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-enforcer-database=sqlite3
 SQLITE_BUILD_DEPENDS=	sqlite3>=3.3.9:databases/sqlite3
 
-SOFTHSM_CONFIGURE_ON=	--with-pkcs11-softhsm=${LOCALBASE}/lib/softhsm/libsofthsm.so
-SOFTHSM_RUN_DEPENDS=	softhsm>=1.2.0:security/softhsm
+SOFTHSM_CONFIGURE_ON=	--with-pkcs11-softhsm=${LOCALBASE}/lib/softhsm/libsofthsm2.so
+SOFTHSM_RUN_DEPENDS=	softhsm2>=2.5.0:security/softhsm2
 
 post-patch:
 	${REINPLACE_CMD} -e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" \
