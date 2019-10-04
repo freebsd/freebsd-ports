@@ -3,7 +3,7 @@
 
 PORTNAME=	ocserv
 PORTVERSION=	0.12.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net net-vpn security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
