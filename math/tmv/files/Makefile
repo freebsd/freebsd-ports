@@ -9,7 +9,7 @@ LST2= TMV_BandMatrix TMV_MultBV TMV_MultXB TMV_AddBB TMV_MultBM TMV_MultBB TMV_B
 LIB2=      libtmv_symband.so.0
 
 CXXFLAGS+= -I../include -fopenmp -fPIC -DTMV_NDEBUG -DFBLAS -DNOLAP
-LDFLAGS+=  -lblas -lomp
+LDFLAGS+=  -lblas
 
 SRCS1=  $(addsuffix .cpp, $(LST1))
 SRCS2=  $(addsuffix .cpp, $(LST2))
