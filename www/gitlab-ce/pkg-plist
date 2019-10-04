@@ -4009,6 +4009,7 @@
 %%WWWDIR%%/app/finders/projects/serverless/functions_finder.rb
 %%WWWDIR%%/app/finders/projects_finder.rb
 %%WWWDIR%%/app/finders/releases_finder.rb
+%%WWWDIR%%/app/finders/resource_label_event_finder.rb
 %%WWWDIR%%/app/finders/runner_jobs_finder.rb
 %%WWWDIR%%/app/finders/snippets_finder.rb
 %%WWWDIR%%/app/finders/starred_projects_finder.rb
@@ -4741,6 +4742,7 @@
 %%WWWDIR%%/app/policies/protected_branch_policy.rb
 %%WWWDIR%%/app/policies/release_policy.rb
 %%WWWDIR%%/app/policies/repository_policy.rb
+%%WWWDIR%%/app/policies/resource_label_event_policy.rb
 %%WWWDIR%%/app/policies/suggestion_policy.rb
 %%WWWDIR%%/app/policies/user_policy.rb
 %%WWWDIR%%/app/presenters/README.md
@@ -4967,6 +4969,7 @@
 %%WWWDIR%%/app/services/chat_names/authorize_user_service.rb
 %%WWWDIR%%/app/services/chat_names/find_user_service.rb
 %%WWWDIR%%/app/services/ci/archive_trace_service.rb
+%%WWWDIR%%/app/services/ci/cancel_user_pipelines_service.rb
 %%WWWDIR%%/app/services/ci/compare_reports_base_service.rb
 %%WWWDIR%%/app/services/ci/compare_test_reports_service.rb
 %%WWWDIR%%/app/services/ci/create_pipeline_schedule_service.rb
@@ -10232,6 +10235,7 @@
 %%WWWDIR%%/lib/gitlab/auth/saml/auth_hash.rb
 %%WWWDIR%%/lib/gitlab/auth/saml/config.rb
 %%WWWDIR%%/lib/gitlab/auth/saml/identity_linker.rb
+%%WWWDIR%%/lib/gitlab/auth/saml/origin_validator.rb
 %%WWWDIR%%/lib/gitlab/auth/saml/user.rb
 %%WWWDIR%%/lib/gitlab/auth/too_many_ips.rb
 %%WWWDIR%%/lib/gitlab/auth/unique_ips_limiter.rb
@@ -11429,6 +11433,7 @@
 %%WWWDIR%%/lib/object_storage/direct_upload.rb
 %%WWWDIR%%/lib/omni_auth/strategies/bitbucket.rb
 %%WWWDIR%%/lib/omni_auth/strategies/jwt.rb
+%%WWWDIR%%/lib/omni_auth/strategies/saml.rb
 %%WWWDIR%%/lib/peek/views/active_record.rb
 %%WWWDIR%%/lib/peek/views/detailed_view.rb
 %%WWWDIR%%/lib/peek/views/gitaly.rb
@@ -13053,6 +13058,7 @@
 %%WWWDIR%%/spec/finders/projects/serverless/functions_finder_spec.rb
 %%WWWDIR%%/spec/finders/projects_finder_spec.rb
 %%WWWDIR%%/spec/finders/releases_finder_spec.rb
+%%WWWDIR%%/spec/finders/resource_label_event_finder_spec.rb
 %%WWWDIR%%/spec/finders/runner_jobs_finder_spec.rb
 %%WWWDIR%%/spec/finders/snippets_finder_spec.rb
 %%WWWDIR%%/spec/finders/starred_projects_finder_spec.rb
@@ -14568,6 +14574,7 @@
 %%WWWDIR%%/spec/lib/gitlab/auth/request_authenticator_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/auth/saml/auth_hash_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/auth/saml/identity_linker_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/auth/saml/origin_validator_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/auth/saml/user_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/auth/unique_ips_limiter_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/auth/user_access_denied_reason_spec.rb
@@ -15452,6 +15459,7 @@
 %%WWWDIR%%/spec/lib/milestone_array_spec.rb
 %%WWWDIR%%/spec/lib/object_storage/direct_upload_spec.rb
 %%WWWDIR%%/spec/lib/omni_auth/strategies/jwt_spec.rb
+%%WWWDIR%%/spec/lib/omni_auth/strategies/saml_spec.rb
 %%WWWDIR%%/spec/lib/peek/views/detailed_view_spec.rb
 %%WWWDIR%%/spec/lib/peek/views/redis_detailed_spec.rb
 %%WWWDIR%%/spec/lib/peek/views/rugged_spec.rb
@@ -15922,6 +15930,7 @@
 %%WWWDIR%%/spec/policies/project_snippet_policy_spec.rb
 %%WWWDIR%%/spec/policies/project_statistics_policy_spec.rb
 %%WWWDIR%%/spec/policies/protected_branch_policy_spec.rb
+%%WWWDIR%%/spec/policies/resource_label_event_policy_spec.rb
 %%WWWDIR%%/spec/policies/user_policy_spec.rb
 %%WWWDIR%%/spec/presenters/award_emoji_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/blob_presenter_spec.rb
@@ -16070,6 +16079,7 @@
 %%WWWDIR%%/spec/requests/api/version_spec.rb
 %%WWWDIR%%/spec/requests/api/wikis_spec.rb
 %%WWWDIR%%/spec/requests/git_http_spec.rb
+%%WWWDIR%%/spec/requests/groups/milestones_controller_spec.rb
 %%WWWDIR%%/spec/requests/jwt_controller_spec.rb
 %%WWWDIR%%/spec/requests/lfs_http_spec.rb
 %%WWWDIR%%/spec/requests/lfs_locks_api_spec.rb
@@ -16257,6 +16267,7 @@
 %%WWWDIR%%/spec/services/chat_names/authorize_user_service_spec.rb
 %%WWWDIR%%/spec/services/chat_names/find_user_service_spec.rb
 %%WWWDIR%%/spec/services/ci/archive_trace_service_spec.rb
+%%WWWDIR%%/spec/services/ci/cancel_user_pipelines_service_spec.rb
 %%WWWDIR%%/spec/services/ci/compare_test_reports_service_spec.rb
 %%WWWDIR%%/spec/services/ci/create_pipeline_service_spec.rb
 %%WWWDIR%%/spec/services/ci/destroy_expired_job_artifacts_service_spec.rb
@@ -16741,6 +16752,7 @@
 %%WWWDIR%%/spec/support/migrations_helpers/cluster_helpers.rb
 %%WWWDIR%%/spec/support/migrations_helpers/track_untracked_uploads_helpers.rb
 %%WWWDIR%%/spec/support/omni_auth.rb
+%%WWWDIR%%/spec/support/omniauth_strategy.rb
 %%WWWDIR%%/spec/support/prepare-gitlab-git-test-for-commit
 %%WWWDIR%%/spec/support/prometheus/additional_metrics_shared_examples.rb
 %%WWWDIR%%/spec/support/prometheus/metric_builders.rb
