@@ -4,10 +4,7 @@ PORTNAME=	xpdf
 PORTVERSION=	3.04
 PORTREVISION=	10
 CATEGORIES=	graphics print
-MASTER_SITES=	http://mirrors.rit.edu/zi/ \
-		ftp://ftp.foolabs.com/pub/xpdf/ \
-		TEX_CTAN/support/xpdf \
-		http://komquats.com/distfiles/
+MASTER_SITES=	https://xpdfreader-dl.s3.amazonaws.com/old/
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	3
 CONFLICTS_INSTALL=	xpdf4-* xpdf-*
