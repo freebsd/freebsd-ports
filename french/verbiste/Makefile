@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	verbiste
-PORTVERSION=	0.1.44
+PORTVERSION=	0.1.47
 CATEGORIES=	french textproc
 MASTER_SITES=	http://sarrazip.com/dev/
 
@@ -11,22 +11,27 @@ COMMENT=	French verb conjugator/deconjugator
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	GTK2 GNOME DOCS EXAMPLES
-
-USES=		pathfix pkgconfig iconv:wchar_t libtool shebangfix
-SHEBANG_FILES=	${WRKSRC}/examples/*.pl
-GNU_CONFIGURE=	yes
+USES=		gnome pathfix pkgconfig iconv:wchar_t libtool shebangfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+SHEBANG_FILES=	${WRKSRC}/examples/*.pl
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+TEST_TARGET=	check
+
+OPTIONS_DEFINE=	GTK2 GNOME DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
+USE_GNOME+=	cairo gdkpixbuf2 gtk20
+LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 PLIST_SUB+=	HASGTK=""
 .else
 CONFIGURE_ARGS+=--without-gtk-app

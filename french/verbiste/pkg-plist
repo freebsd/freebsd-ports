@@ -20,8 +20,9 @@ man/man3/verbiste.3.gz
 %%HASGNOME%%share/applications/verbiste.desktop
 %%HASGUI%%share/locale/da/LC_MESSAGES/verbiste.mo
 %%HASGUI%%share/locale/de/LC_MESSAGES/verbiste.mo
-%%HASGUI%%share/locale/fr/LC_MESSAGES/verbiste.mo
 %%HASGUI%%share/locale/el/LC_MESSAGES/verbiste.mo
+%%HASGUI%%share/locale/fr/LC_MESSAGES/verbiste.mo
+%%HASGUI%%share/locale/it/LC_MESSAGES/verbiste.mo
 %%HASGUI%%share/icons/hicolor/16x16/apps/verbiste.png
 %%HASGUI%%share/icons/hicolor/32x32/apps/verbiste.png
 %%HASGUI%%share/icons/hicolor/48x48/apps/verbiste.png
