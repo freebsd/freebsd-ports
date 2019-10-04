@@ -39,4 +39,4 @@ include/cxxtest/XUnitPrinter.h
 include/cxxtest/XmlFormatter.h
 include/cxxtest/XmlPrinter.h
 include/cxxtest/YesNoRunner.h
-include/cxxtest/unix.h 
+include/cxxtest/unix.h
