@@ -2,6 +2,7 @@
 %%DATADIR%%/PHPMailer.php
 %%DATADIR%%/POP3.php
 %%DATADIR%%/SMTP.php
+%%DATADIR%%/language/phpmailer.lang-af.php
 %%DATADIR%%/language/phpmailer.lang-am.php
 %%DATADIR%%/language/phpmailer.lang-ar.php
 %%DATADIR%%/language/phpmailer.lang-az.php
