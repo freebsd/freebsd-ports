@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencascade
-PORTVERSION=	7.3.0
-PORTREVISION=	7
+PORTVERSION=	7.4.0
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -15,15 +14,16 @@ LICENSE_NAME=	LGPL21 with exception
 LICENSE_FILE=	${WRKSRC}/OCCT_LGPL_EXCEPTION.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libfreetype.so:print/freetype2	\
-		libtbb.so:devel/tbb		\
-		libvtksys-${VTKVER}.so:math/vtk6
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
+		libvtksys-${VTKVER}.so:math/vtk6	\
+		libfreetype.so:print/freetype2		\
+		libtbb.so:devel/tbb
 RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/overview/overview.md
 # and ${WRKSRC}/dox/dev_guides/building
 USES=		alias:10 cmake compiler:c++14-lang dos2unix \
-		gl shebangfix tk tar:tgz
+		gl python shebangfix tk tar:tgz xorg
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu
 
@@ -31,8 +31,11 @@ DOS2UNIX_FILES=	adm/templates/*
 SHEBANG_FILES=	adm/templates/*.sh	\
 		adm/templates/*.sh.in	\
 		adm/templates/*.sh.main	\
+		adm/genconf.tcl		\
+		adm/start.tcl		\
 		gendoc
-ENVSH=		env.sh adm/templates/env.sh.in adm/templates/env.sh
+ENVSH=		adm/templates/env.sh
+
 VTKVER=		6.2
 
 OPTIONS_DEFINE=	DOCS DOXYGEN FFMPEG VIS
@@ -98,8 +101,11 @@ pre-everything::
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|' ${WRKSRC}/gendoc
+	${REINPLACE_CMD} -e 's|/usr/bin/|${LOCALBASE}/bin/|' ${WRKSRC}/adm/genconfdeps.tcl
+	${GREP} -rl x86_64 ${WRKSRC} | ${XARGS} ${REINPLACE_CMD}	\
+		-e 's|x86_64|amd64|'
 .for es in ${ENVSH}
-	${REINPLACE_CMD} -e 's|lin|bsd|;s|x86_64|amd64|' ${WRKSRC}/${es}
+	${REINPLACE_CMD} -e 's|lin|bsd|' ${WRKSRC}/${es}
 .endfor
 
 pre-patch:
