@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bspwm
-PORTVERSION=	0.9.7
+DISTVERSION=	0.9.9
 CATEGORIES=	x11-wm
 
 MAINTAINER=	o.hushchenkov@gmail.com
@@ -16,8 +16,7 @@ LIB_DEPENDS=	libxcb-util.so:x11/xcb-util \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 RUN_DEPENDS=	sxhkd:x11/sxhkd
 
-USES=		gmake localbase:ldflags
-
+USES=		gmake localbase:ldflags xorg
 USE_XORG=	xcb
 
 USE_GITHUB=	yes
@@ -49,9 +48,13 @@ post-install-CONTRIB-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xsessions
-	${INSTALL_DATA} ${WRKSRC}/contrib/bash_completion ${STAGEDIR}${PREFIX}/share/bash-completion/completions/bspc
-	${INSTALL_DATA} ${WRKSRC}/contrib/fish_completion ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/bspc.fish
-	${INSTALL_DATA} ${WRKSRC}/contrib/zsh_completion ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_bspc
-	${INSTALL_DATA} ${WRKSRC}/contrib/freedesktop/bspwm.desktop ${STAGEDIR}${PREFIX}/share/xsessions/bspwm.desktop
+	${INSTALL_DATA} ${WRKSRC}/contrib/bash_completion \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/bspc
+	${INSTALL_DATA} ${WRKSRC}/contrib/fish_completion \
+		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/bspc.fish
+	${INSTALL_DATA} ${WRKSRC}/contrib/zsh_completion \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_bspc
+	${INSTALL_DATA} ${WRKSRC}/contrib/freedesktop/bspwm.desktop \
+		${STAGEDIR}${PREFIX}/share/xsessions/bspwm.desktop
 
 .include <bsd.port.mk>
