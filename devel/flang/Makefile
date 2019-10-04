@@ -14,9 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 ONLY_FOR_ARCHS=	amd64
 
-BUILD_DEPENDS=	llvm60>=0:devel/llvm60 \
+LLVM_VER=	60
+BUILD_DEPENDS=	llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER} \
 		flang-clang>=0:devel/flang-clang
-RUN_DEPENDS=	llvm60>=0:devel/llvm60 \
+RUN_DEPENDS=	llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER} \
 		flang-clang>=0:devel/flang-clang
 LIB_DEPENDS=	libpgmath.so:math/libpgmath
 
@@ -30,11 +31,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	flang-compiler
 GH_TAGNAME=	53e368b
 
-CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config60 \
+CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VER} \
 		-DCMAKE_CXX_COMPILER=${LOCALBASE}flang/bin/clang++ \
 		-DCMAKE_C_COMPILER=${LOCALBASE}/flang/bin/clang \
 		-DCMAKE_Fortran_COMPILER=${LOCALBASE}/flang/bin/flang \
-		-DFLANG_LIBOMP=${LOCALBASE}/llvm60/lib/libomp.so \
+		-DFLANG_LIBOMP=${LOCALBASE}/llvm${LLVM_VER}/lib/libomp.so \
 		-DLIBPGMATH="${LOCALBASE}/lib/libpgmath.a" \
 		-WWITH_ERROR=OFF
 
