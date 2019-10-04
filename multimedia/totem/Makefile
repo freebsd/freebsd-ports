@@ -37,7 +37,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gl gnome localbase meson \
+USES=		compiler desktop-file-utils gettext gl gnome localbase meson \
 		pkgconfig python:3.4+ tar:xz
 USE_GNOME=	cairo gtk30 intlhack introspection libxml2 nautilus3 \
 		pygobject3
@@ -76,10 +76,12 @@ pre-everything::
 	@${ECHO_MSG} "===> Define WITH_DVD_DEVICE if you want to change the default"
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
 
-.if exists(/usr/lib/libstdc++.so)
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 post-patch:
 	${REINPLACE_CMD} -e '/-Wno-unused-but-set-variable/d' \
 		${WRKSRC}/src/plugins/meson.build
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
