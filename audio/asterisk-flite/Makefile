@@ -13,21 +13,16 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libflite.so:audio/flite
 
-FLAVORS=			asterisk13 asterisk15 asterisk16
+FLAVORS=			asterisk13 asterisk16
 FLAVOR?=			${FLAVORS[1]}
 
 asterisk13_PKGNAMEPREFIX=	asterisk13-
-asterisk13_CONFLICTS_INSTALL=	asterisk15-flite asterisk16-flite
+asterisk13_CONFLICTS_INSTALL=	asterisk16-flite
 asterisk13_BUILD_DEPENDS=	asterisk:net/asterisk13
 asterisk13_RUN_DEPENDS=		asterisk:net/asterisk13
 
-asterisk15_PKGNAMEPREFIX=	asterisk15-
-asterisk15_CONFLICTS_INSTALL=	asterisk13-flite asterisk16-flite
-asterisk15_BUILD_DEPENDS=	asterisk:net/asterisk15
-asterisk15_RUN_DEPENDS=		asterisk:net/asterisk15
-
 asterisk16_PKGNAMEPREFIX=	asterisk16-
-asterisk16_CONFLICTS_INSTALL=	asterisk13-flite asterisk15-flite
+asterisk16_CONFLICTS_INSTALL=	asterisk13-flite
 asterisk16_BUILD_DEPENDS=	asterisk:net/asterisk16
 asterisk16_RUN_DEPENDS=		asterisk:net/asterisk16
 
