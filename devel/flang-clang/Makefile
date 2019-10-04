@@ -16,8 +16,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64
 
-BUILD_DEPENDS=	llvm60>=0:devel/llvm60
-RUN_DEPENDS=	llvm60>=0:devel/llvm60
+LLVM_VER=	60
+BUILD_DEPENDS=	llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER}
+RUN_DEPENDS=	llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER}
 
 USES=		cmake compiler:c++11-lib libedit tar:xz perl5 \
 		python shebangfix
@@ -33,7 +34,7 @@ GH_ACCOUNT=	flang-compiler
 GH_PROJECT=	flang-driver
 GH_TAGNAME=	742de5f
 
-CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config60
+CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VER}
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/flang
 
