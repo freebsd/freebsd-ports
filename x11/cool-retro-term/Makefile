@@ -16,7 +16,7 @@ GH_ACCOUNT=	Swordfish90
 GH_PROJECT=	qmltermwidget:qtw
 GH_TAGNAME=	0.2.0:qtw
 
-USES=		gmake gl qmake qt:5
+USES=		compiler gmake gl qmake qt:5
 USE_GL=		gl
 USE_QT=		qmake_build buildtools_build core declarative gui \
 		network sql widgets graphicaleffects_run \
@@ -24,12 +24,11 @@ USE_QT=		qmake_build buildtools_build core declarative gui \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 USE_GCC=	yes
 .else
-CC=		clang
-CXX=		clang++
-CPP=		clang-cpp
+BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+MAKE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}
 .endif
 
 post-extract:
