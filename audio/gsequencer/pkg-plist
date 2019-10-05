@@ -264,6 +264,8 @@ include/ags/audio/thread/ags_sequencer_thread.h
 include/ags/audio/thread/ags_sfz_loader.h
 include/ags/audio/thread/ags_soundcard_thread.h
 include/ags/audio/thread/ags_wave_loader.h
+include/ags/audio/wasapi/ags_wasapi_devin.h
+include/ags/audio/wasapi/ags_wasapi_devout.h
 include/ags/config.h
 include/ags/file/ags_file.h
 include/ags/file/ags_file_id_ref.h
