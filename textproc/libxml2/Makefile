@@ -54,6 +54,11 @@ THREAD_ALLOC_CONFIGURE_WITH=	thread-alloc
 
 .endif # !defined(MASTERDIR)
 
+.if !defined(MASTERDIR)
+post-install:
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/gtk-doc
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -69,11 +74,6 @@ post-patch:
 .endfor
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 	@${REINPLACE_CMD} -e 's/ -Wno-array-bounds//' ${WRKSRC}/configure
-.endif
-
-.if !defined(MASTERDIR)
-post-install:
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/gtk-doc
 .endif
 
 .include <bsd.port.post.mk>
