@@ -2,7 +2,7 @@
 
 PORTNAME=	barrier
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.1
+DISTVERSION=	2.3.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Mouse and keyboard sharing utility
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++14-lang localbase:ldflags pkgconfig ssl
+USES=		cmake compiler:c++14-lang localbase:ldflags pkgconfig ssl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	debauchee
 USE_XORG=	ice sm x11 xext xi xinerama xrandr xtst
