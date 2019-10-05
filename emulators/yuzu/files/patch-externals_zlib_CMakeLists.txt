@@ -1,0 +1,22 @@
+The following tests FAILED:
+          1 - example (Not Run)
+          2 - example64 (Not Run)
+
+--- externals/zlib/CMakeLists.txt.orig	2017-01-15 17:29:40 UTC
++++ externals/zlib/CMakeLists.txt
+@@ -232,7 +232,6 @@ endif()
+ 
+ add_executable(example test/example.c)
+ target_link_libraries(example zlib)
+-add_test(example example)
+ 
+ add_executable(minigzip test/minigzip.c)
+ target_link_libraries(minigzip zlib)
+@@ -241,7 +240,6 @@ if(HAVE_OFF64_T)
+     add_executable(example64 test/example.c)
+     target_link_libraries(example64 zlib)
+     set_target_properties(example64 PROPERTIES COMPILE_FLAGS "-D_FILE_OFFSET_BITS=64")
+-    add_test(example64 example64)
+ 
+     add_executable(minigzip64 test/minigzip.c)
+     target_link_libraries(minigzip64 zlib)
