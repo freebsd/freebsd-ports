@@ -18,7 +18,8 @@ GH_ACCOUNT=	sekrit-twc
 CONFLICTS_INSTALL=	zimg-[0-9]* # include/zimg.h
 
 USES=		autoreconf compiler:c++11-lib gmake libtool pathfix
-EXTRACT_AFTER_ARGS=	--exclude test/extra
+EXCLUDE=	googletest sha1
+EXTRACT_AFTER_ARGS=	${EXCLUDE:S,^,--exclude test/extra/,}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
