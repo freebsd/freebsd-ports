@@ -1,30 +1,6 @@
 --- Makefile.am.orig	2017-12-21 02:35:58 UTC
 +++ Makefile.am
-@@ -286,32 +286,13 @@ endif # TESTAPP
- if UNIT_TEST
- TESTS = test/unit_test
- 
--check_LTLIBRARIES = test/libmusl_m.la
- check_PROGRAMS = test/unit_test
- 
--test_libmusl_m_la_CFLAGS = $(AM_CFLAGS) -std=c99 -Wno-sign-compare -Wno-unused-variable -Wno-unused-but-set-variable
--
--test_libmusl_m_la_SOURCES = \
--	test/extra/musl-libm/__cos.c \
--	test/extra/musl-libm/__rem_pio2.c \
--	test/extra/musl-libm/__rem_pio2_large.c \
--	test/extra/musl-libm/__sin.c \
--	test/extra/musl-libm/cos.c \
--	test/extra/musl-libm/fpu_wrapper.c \
--	test/extra/musl-libm/expf.c \
--	test/extra/musl-libm/libm.h \
--	test/extra/musl-libm/log10f.c \
--	test/extra/musl-libm/logf.c \
--	test/extra/musl-libm/mymath.h \
--	test/extra/musl-libm/powf.c \
--	test/extra/musl-libm/sin.c
--
- test_unit_test_CPPFLAGS = \
+@@ -314,8 +313,7 @@ test_unit_test_CPPFLAGS = \
  	$(AM_CPPFLAGS) \
  	-I$(srcdir)/src/zimg \
  	-I$(srcdir)/test \
@@ -34,7 +10,7 @@
  
  test_unit_test_SOURCES = \
  	test/main.cpp \
-@@ -320,9 +301,6 @@ test_unit_test_SOURCES = \
+@@ -324,9 +322,6 @@ test_unit_test_SOURCES = \
  	test/colorspace/gamma_test.cpp \
  	test/depth/depth_convert_test.cpp \
  	test/depth/dither_test.cpp \
@@ -44,13 +20,13 @@
  	test/graph/audit_buffer.cpp \
  	test/graph/audit_buffer.h \
  	test/graph/copy_filter_test.cpp \
-@@ -362,7 +340,6 @@ test_unit_test_SOURCES += \
+@@ -368,7 +363,7 @@ test_unit_test_SOURCES += \
  endif # X86SIMD_AVX512
  
  test_unit_test_LDADD = \
 -	test/extra/googletest/googletest/lib/libgtest.la \
--	test/libmusl_m.la \
 +	-lgtest -lmd -lpthread \
+ 	test/libmusl_m.la \
  	libzimg_internal.la
  endif # UNIT_TEST
 --- configure.ac.orig	2016-05-08 20:08:38 UTC
@@ -81,27 +57,3 @@
  }
  
  #include "audit_buffer.h"
---- test/main.cpp.orig	2016-08-17 04:57:11 UTC
-+++ test/main.cpp
-@@ -1,8 +1,12 @@
- #include <cstdio>
- #include <cstdlib>
--#include "common/libm_wrapper.h"
- 
- #include "gtest/gtest.h"
-+
-+#if !defined(_WIN32) && !defined(__GLIBC__)
-+#define wrap_libm() // assume openlibm
-+#else
-+#include "common/libm_wrapper.h"
- #include "musl-libm/mymath.h"
- 
- namespace {
-@@ -16,6 +20,7 @@ void wrap_libm()
- }
- 
- } // namespace
-+#endif
- 
- 
- int main(int argc, char **argv)
