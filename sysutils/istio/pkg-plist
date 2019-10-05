@@ -1,5 +1,4 @@
 bin/istioctl
-%%DATADIR%%/install/OWNERS
 %%DATADIR%%/install/README.md
 %%DATADIR%%/install/consul/README.md
 %%DATADIR%%/install/consul/consul_config/agent-loglevel.json
@@ -10,34 +9,7 @@ bin/istioctl
 %%DATADIR%%/install/consul/templates/istio.yaml.tmpl
 %%DATADIR%%/install/gcp/README.md
 %%DATADIR%%/install/gcp/bootstrap/gcp_envoy_bootstrap.json
-%%DATADIR%%/install/gcp/deployment_manager/README.md
-%%DATADIR%%/install/gcp/deployment_manager/istio-cluster.jinja
-%%DATADIR%%/install/gcp/deployment_manager/istio-cluster.jinja.display
-%%DATADIR%%/install/gcp/deployment_manager/istio-cluster.jinja.schema
-%%DATADIR%%/install/gcp/deployment_manager/istio-cluster.yaml
 %%DATADIR%%/install/kubernetes/README.md
-%%DATADIR%%/install/kubernetes/ansible/OWNERS
-%%DATADIR%%/install/kubernetes/ansible/README.md
-%%DATADIR%%/install/kubernetes/ansible/ansible.cfg
-%%DATADIR%%/install/kubernetes/ansible/istio/defaults/main.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/meta/main.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/add_to_path.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/assert_oc_admin.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/bookinfo_cmd.j2
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/change_scc.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/create_namespace_free_definition_file.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/delete_resources.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/install_on_cluster.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/install_sample.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/install_samples.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/main.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/safely_create_namespace.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/set_appropriate_cmd_path.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/set_istio_distro_vars.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/set_istio_path.yml
-%%DATADIR%%/install/kubernetes/ansible/istio/tasks/simple_sample_cmd.j2
-%%DATADIR%%/install/kubernetes/ansible/istio/vars/main.yml
-%%DATADIR%%/install/kubernetes/ansible/main.yml
 %%DATADIR%%/install/kubernetes/global-default-sidecar-scope.yaml
 %%DATADIR%%/install/kubernetes/helm/README.md
 %%DATADIR%%/install/kubernetes/helm/helm-service-account.yaml
@@ -77,7 +49,6 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio/charts/certmanager/templates/serviceaccount.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/certmanager/values.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/galley/Chart.yaml
-%%DATADIR%%/install/kubernetes/helm/istio/charts/galley/OWNERS
 %%DATADIR%%/install/kubernetes/helm/istio/charts/galley/templates/_helpers.tpl
 %%DATADIR%%/install/kubernetes/helm/istio/charts/galley/templates/clusterrole.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/galley/templates/clusterrolebinding.yaml
@@ -101,6 +72,7 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio/charts/gateways/templates/serviceaccount.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/gateways/values.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/grafana/Chart.yaml
+%%DATADIR%%/install/kubernetes/helm/istio/charts/grafana/dashboards/citadel-dashboard.json
 %%DATADIR%%/install/kubernetes/helm/istio/charts/grafana/dashboards/galley-dashboard.json
 %%DATADIR%%/install/kubernetes/helm/istio/charts/grafana/dashboards/istio-mesh-dashboard.json
 %%DATADIR%%/install/kubernetes/helm/istio/charts/grafana/dashboards/istio-performance-dashboard.json
@@ -184,7 +156,6 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio/charts/prometheus/values.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/Chart.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/_helpers.tpl
-%%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/cleanup-secrets.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/clusterrole.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/clusterrolebinding.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/configmap.yaml
@@ -198,7 +169,6 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/tests/test-citadel-connection.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/values.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/sidecarInjectorWebhook/Chart.yaml
-%%DATADIR%%/install/kubernetes/helm/istio/charts/sidecarInjectorWebhook/OWNERS
 %%DATADIR%%/install/kubernetes/helm/istio/charts/sidecarInjectorWebhook/templates/_helpers.tpl
 %%DATADIR%%/install/kubernetes/helm/istio/charts/sidecarInjectorWebhook/templates/clusterrole.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/sidecarInjectorWebhook/templates/clusterrolebinding.yaml
@@ -214,6 +184,7 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio/charts/tracing/templates/deployment-jaeger.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/tracing/templates/deployment-zipkin.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/tracing/templates/ingress.yaml
+%%DATADIR%%/install/kubernetes/helm/istio/charts/tracing/templates/pvc.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/tracing/templates/service-jaeger.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/tracing/templates/service.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/tracing/templates/tests/test-tracing-connection.yaml
@@ -222,6 +193,7 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio/example-values/values-istio-example-sds-vault.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/example-values/values-istio-gateways.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/example-values/values-istio-googleca.yaml
+%%DATADIR%%/install/kubernetes/helm/istio/example-values/values-istio-meshexpansion-gateways.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/example-values/values-istio-multicluster-gateways.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/files/injection-template.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/requirements.yaml
@@ -257,6 +229,7 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio/values-istio-demo.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/values-istio-minimal.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/values-istio-remote.yaml
+%%DATADIR%%/install/kubernetes/helm/istio/values-istio-sds-auth-control-plane-auth-disabled.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/values-istio-sds-auth.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/values.yaml
 %%DATADIR%%/install/kubernetes/mesh-expansion.yaml
@@ -264,7 +237,6 @@ bin/istioctl
 %%DATADIR%%/install/tools/setupIstioVM.sh
 %%DATADIR%%/install/tools/setupMeshEx.sh
 %%DATADIR%%/install/updateVersion.sh
-%%EXAMPLES%%%%DATADIR%%/samples/OWNERS
 %%EXAMPLES%%%%DATADIR%%/samples/README.md
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/README.md
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/build_push_update_images.sh
@@ -303,7 +275,6 @@ bin/istioctl
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/platform/consul/virtual-service-reviews-v2-v3.yaml
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/platform/consul/virtual-service-reviews-v3.yaml
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/platform/kube/README.md
-%%EXAMPLES%%%%DATADIR%%/samples/bookinfo/platform/kube/bookinfo-add-serviceaccount.yaml
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/platform/kube/bookinfo-certificate.yaml
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/platform/kube/bookinfo-db.yaml
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/platform/kube/bookinfo-details-v2.yaml
@@ -452,6 +423,8 @@ bin/istioctl
 %%EXAMPLES%%%%DATADIR%%/samples/rawvm/demo.sh
 %%EXAMPLES%%%%DATADIR%%/samples/rawvm/k8cli.yaml.in
 %%EXAMPLES%%%%DATADIR%%/samples/rawvm/k8services.yaml.in
+%%EXAMPLES%%%%DATADIR%%/samples/security/psp/all-pods-psp.yaml
+%%EXAMPLES%%%%DATADIR%%/samples/security/psp/citadel-agent-psp.yaml
 %%EXAMPLES%%%%DATADIR%%/samples/sleep/README.md
 %%EXAMPLES%%%%DATADIR%%/samples/sleep/policy/sni-serviceaccount.yaml
 %%EXAMPLES%%%%DATADIR%%/samples/sleep/policy/sni-wikipedia.yaml
