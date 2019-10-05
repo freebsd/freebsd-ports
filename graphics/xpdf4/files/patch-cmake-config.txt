@@ -1,47 +1,32 @@
---- cmake-config.txt.orig	2019-02-18 10:24:19.000000000 -0800
-+++ cmake-config.txt	2019-02-19 18:15:45.359569000 -0800
+--- cmake-config.txt.orig	2019-09-25 12:54:33.000000000 -0700
++++ cmake-config.txt	2019-10-04 19:03:10.517020000 -0700
 @@ -81,6 +81,7 @@
  option(USE_EXCEPTIONS "use C++ exceptions" ON)
  option(USE_FIXEDPOINT "use fixed point (instead of floating point) arithmetic" OFF)
  option(SPLASH_CMYK "include support for CMYK rasterization" OFF)
 +option(USE_LIBPAPER "use libpaper" OFF)
+ option(NO_FONTCONFIG "disable support for libfontconfig" OFF)
  option(SYSTEM_XPDFRC "full path for system-wide xpdfrc file" "")
  if (SYSTEM_XPDFRC)
-   set(SYSTEM_XPDFRC_DEFINE "#define SYSTEM_XPDFRC \"${SYSTEM_XPDFRC}\"")
-@@ -200,9 +201,7 @@
-   if (XPDFWIDGET_PRINTING)
-     set(QT_INCLUDES "${Qt5Widgets_INCLUDE_DIRS} ${Qt5Network_INCLUDE_DIRS} ${Qt5PrintSupport_INCLUDE_DIRS}")
-     set(QT_DEFINITIONS "${Qt5Widgets_DEFINITIONS} ${Qt5Network_DEFINITIONS} ${Qt5PrintSupport_DEFINITIONS}")
--    if (APPLE)
--      set(QT_LIBRARIES Qt5::Widgets Qt5::Network Qt5::PrintSupport "-framework ApplicationServices")
--    elseif (UNIX)
-+    if (CUPS)
-       set(QT_LIBRARIES Qt5::Widgets Qt5::Network Qt5::PrintSupport cups)
-     else ()
-       set(QT_LIBRARIES Qt5::Widgets Qt5::Network Qt5::PrintSupport)
-@@ -213,9 +212,7 @@
-     set(QT_LIBRARIES Qt5::Widgets Qt5::Network)
-   endif ()
-   if (XPDFWIDGET_PRINTING)
--    if (APPLE)
--      set(EXTRA_QT_LIBRARIES "-framework ApplicationServices")
--    elseif (UNIX)
-+    if (CUPS)
-       set(EXTRA_QT_LIBRARIES cups)
-     else ()
-       set(EXTRA_QT_LIBRARIES "")
-@@ -226,9 +223,7 @@
- elseif(QT4_FOUND)
-   message(STATUS "Qt4 found")
-   if (XPDFWIDGET_PRINTING)
--    if (APPLE)
--      set(EXTRA_QT_LIBRARIES "-framework ApplicationServices")
--    elseif (UNIX)
-+    if (CUPS)
-       set(EXTRA_QT_LIBRARIES cups)
-     else ()
-       set(EXTRA_QT_LIBRARIES "")
-@@ -243,6 +238,29 @@
+@@ -212,7 +213,7 @@
+       set(EXTRA_QT_LIBRARIES "-framework ApplicationServices")
+     elseif (UNIX)
+       find_package(Cups)
+-      if (CUPS_FOUND)
++      if (CUPS)
+         set(EXTRA_QT_LIBRARIES ${CUPS_LIBRARIES})
+       else ()
+         set (XPDFWIDGET_PRINTING OFF)
+@@ -230,7 +231,7 @@
+       set(EXTRA_QT_LIBRARIES "-framework ApplicationServices")
+     elseif (UNIX)
+       find_package(Cups)
+-      if (CUPS_FOUND)
++      if (CUPS)
+         set(EXTRA_QT_LIBRARIES ${CUPS_LIBRARIES})
+       else ()
+         set (XPDFWIDGET_PRINTING OFF)
+@@ -248,6 +249,29 @@
               NAMES paper libpaper
               PATH_SUFFIXES lib64 lib
  )

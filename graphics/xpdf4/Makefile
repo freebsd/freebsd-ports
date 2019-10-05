@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpdf
-PORTVERSION=	4.01
-PORTREVISION=	2
+PORTVERSION=	4.02
 PORTEPOCH=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	https://xpdfreader-dl.s3.amazonaws.com/
