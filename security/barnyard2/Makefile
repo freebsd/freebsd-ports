@@ -30,7 +30,7 @@ PORT_PCAP_DESC=	Use libpcap from ports
 
 .if defined(SLAVE)
 OPTIONS_DEFINE+=	TCL
-OPTIONS_DESC=	Enable tcl support for sguil
+TCL_DESC=	Enable tcl support for sguil
 OPTIONS_DEFAULT+=	TCL
 .endif
 
@@ -65,12 +65,9 @@ PGSQL_CONFIGURE_OFF=	--without-postgresql
 TCL_USES=		tcl
 TCL_CONFIGURE_ON=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER}
 TCL_CONFIGURE_OFF=	--without-tcl
-WANT_PGSQL_VER=		92+
 PORT_PCAP_LIB_DEPENDS=	libpcap.so.1:net/libpcap
 PORT_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
 			--with-libpcap-libraries=${LOCALBASE}/lib
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc|${LOCALBASE}/etc|' \
