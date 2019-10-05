@@ -245,6 +245,7 @@
     SUBDIR += gambit
     SUBDIR += gap
     SUBDIR += gau2grid
+    SUBDIR += gemmlowp
     SUBDIR += geogebra
     SUBDIR += geogram
     SUBDIR += geonext
