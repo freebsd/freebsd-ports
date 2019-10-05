@@ -84,7 +84,7 @@ CFLAGS+=	${CPPFLAGS}
 CXXFLAGS+=	${CPPFLAGS}
 .endif
 
-TEST_CPPFLAGS+=	$$(${GTEST_CONFIG} --cppflags)
+TEST_CPPFLAGS+=	$$(${PKG_CONFIG} gtest --cflags)
 .for f in ${TEST_SRCS}
 CPPFLAGS.${f}+=	${TEST_CPPFLAGS}
 .endfor
@@ -93,13 +93,13 @@ LDADD!=		${LLVM_CONFIG} --system-libs --libs --ldflags --link-static
 LDADD+=		-lz \-lpthread
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=223191#c3
 LDADD:=		${LDADD:S,-l/usr/lib/libexecinfo.so,-lexecinfo,}
-TEST_LDADD+=	$$(${GTEST_CONFIG} --libs --ldflags)
+TEST_LDADD+=	$$(${PKG_CONFIG} gtest --libs)
 
 TEST_OBJS+=	${TEST_SRCS:R:S/$/.o/}
 CLEANFILES+=	${PROG}_test ${TEST_OBJS}
 
 LLVM_CONFIG?=	llvm-config
-GTEST_CONFIG?=	gtest-config
+PKG_CONFIG?=	pkg-config
 
 .include <bsd.prog.mk>
 

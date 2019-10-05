@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nlohmann-json>=3:devel/nlohmann-json \
 		spdlog>=1.3:devel/spdlog \
-		gtest-config:devel/googletest
+		googletest>0:devel/googletest
 LIB_DEPENDS=	libsodium.so:security/libsodium \
 		libboost_date_time.so:devel/boost-libs \
 		libboost_chrono.so:devel/boost-libs \

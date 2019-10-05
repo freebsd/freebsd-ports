@@ -85,7 +85,7 @@ OFX_VARS=		GLIB_SCHEMAS+=org.gnucash.dialogs.import.ofx.gschema.xml
 PYTHON_CMAKE_BOOL=	WITH_PYTHON
 PYTHON_USES=		python:3.3+
 TEST_BUILD_DEPENDS=	${NONEXISTENT}:devel/googlemock:build \
-			gtest-config:devel/googletest
+			googletest>0:devel/googletest
 
 .include <bsd.port.pre.mk>
 

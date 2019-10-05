@@ -3,8 +3,7 @@
 
 PORTNAME=	googletest
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.8.1
-PORTREVISION=	3
+DISTVERSION=	1.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,28 +15,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 
-USES=		autoreconf compiler:c++11-lang libtool
-WRKSRC_SUBDIR=	${PORTNAME}
-GNU_CONFIGURE=	yes
-# fused-src python tests are only useful for bundling. There's no point in
-# running them before installing system-wide without source files.
-CONFIGURE_ENV=	ac_cv_path_PYTHON=":"
-TEST_TARGET=	check
-INSTALL_TARGET=	install-strip
+USES=		cmake compiler:c++11-lib
 USE_LDCONFIG=	yes
+CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	BUILD_GMOCK
 
-# googletest requires pthread in order to function and does not properly
-# detect pthread support.
-#
-# See: https://github.com/google/googletest/issues/2162
-LIBS+=		-lpthread
+OPTIONS_DEFINE=	TEST
 
-post-patch:
-# enable vendor make install again (revert 661758e)
-	@${REINPLACE_CMD} -E 's/install-(exec|data)-local/&-dummy/' \
-		${WRKSRC}/Makefile.am
+TEST_USES=		python:build
+TEST_CMAKE_BOOL=	gtest_build_tests
+TEST_TEST_TARGET=	test
 
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/gtest-config ${STAGEDIR}${PREFIX}/bin
+pre-install-TEST-on: do-test
 
 .include <bsd.port.mk>
