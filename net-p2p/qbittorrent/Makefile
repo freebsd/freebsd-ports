@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-DISTVERSION=	4.1.7
-PORTREVISION=	1
+DISTVERSION=	4.1.8
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,7 +20,7 @@ FLAVOR?=	${FLAVORS:[1]}
 nox_PKGNAMESUFFIX=	-nox
 nox_PLIST=		${MASTERDIR}/pkg-plist-nox
 
-USES=			compiler:c++11-lib pkgconfig qmake:no_env qt:5 tar:xz
+USES=			compiler:c++11-lib pkgconfig qmake:no_env qt:5 tar:xz xorg
 GNU_CONFIGURE=		yes
 USE_QT=			core network xml buildtools_build linguisttools_build qmake_build
 CONFIGURE_ARGS=		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
