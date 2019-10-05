@@ -17,6 +17,8 @@
 #               Set it to required group.
 # elasticsearch_config (path):   Set to %%PREFIX%%/etc/elasticsearch/elasticsearch.yml by default.
 #               Set it to the config file location.
+# elasticsearch_java_home (path): Set to %%JAVA_HOME%% by default.
+#               Set it to the root of the JDK to use.
 #
 . /etc/rc.subr
 
@@ -30,11 +32,12 @@ load_rc_config ${name}
 : ${elasticsearch_group=elasticsearch}
 : ${elasticsearch_config=%%PREFIX%%/etc/elasticsearch}
 : ${elasticsearch_login_class=root}
+: ${elasticsearch_java_home="%%JAVA_HOME%%"}
 
 required_files="${elasticsearch_config}/elasticsearch.yml"
 _pidprefix=/var/run/elasticsearch/elasticsearch
 pidfile=${_pidprefix}.pid
-procname=%%JAVA%%
+procname=${elasticsearch_java_home}/bin/java
 
 extra_commands="console status"
 console_cmd=elasticsearch_console
@@ -43,6 +46,7 @@ command=%%PREFIX%%/lib/elasticsearch/bin/elasticsearch
 command_args="-d --pidfile=${pidfile}"
 
 export ES_PATH_CONF=${elasticsearch_config}
+export JAVA_HOME=${elasticsearch_java_home}
 
 elasticsearch_precmd()
 {
