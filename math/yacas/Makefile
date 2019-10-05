@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	bash:shells/bash \
 
-BUILD_DEPENDS=	gtest-config:devel/googletest
+BUILD_DEPENDS=	googletest>0:devel/googletest
 
 CMAKE_ARGS=	-DENABLE_DOCS:BOOL=OFF \
 		-DENABLE_CYACAS_CONSOLE:BOOL=ON \
