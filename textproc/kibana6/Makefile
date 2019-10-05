@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	kibana
-PORTVERSION=	6.5.4
-DISTVERSIONSUFFIX=	-linux-x86_64
-PORTREVISION=	2
+PORTVERSION=	6.8.3
+DISTVERSIONSUFFIX=	-darwin-x86_64
+PORTREVISION=	0
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		http://artifacts.elastic.co/downloads/kibana/
@@ -15,7 +15,7 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	node8>=8.11.3:www/node8
+RUN_DEPENDS=	node10>=10.15.2:www/node10
 
 CONFLICTS=	kibana[3-5]*
 
@@ -24,6 +24,7 @@ WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 USE_RC_SUBR=	${PORTNAME}
 
 SUB_FILES=	pkg-deinstall
+SUB_LIST+=	PORTNAME=${PORTNAME} PKGNAMESUFFIX=${PKGNAMESUFFIX}
 
 post-patch:
 	${FIND} -s ${WRKSRC}/node_modules -type d -empty -delete
@@ -43,9 +44,5 @@ post-install:
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	${ECHO} "@dir(www,www) ${WWWDIR}/data" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/plugins" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/ui/public/factories" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/core/public/injected_metadata/__fixtures__/frozen_object_mutation" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/server/http/integration_tests" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/type_definitions" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
