@@ -1,37 +1,17 @@
+# Sample Logstash configuration for creating a simple
+# Beats -> Logstash -> Elasticsearch pipeline.
+
 input {
-
-	file {
-		type => "syslog"
-		# path => [ "/var/log/*.log", "/var/log/messages", "/var/log/syslog" ]
-		path => "/var/log/messages"
-		start_position => "beginning"
-	}
-}
-
-filter {
-# An filter may change the regular expression used to match a record or a field,
-# alter the value of parsed fields, add or remove fields, etc.
-#
-#	if [type] == "syslog" {
-#		grok {
-#			#patterns_dir => ["/usr/local/etc/logstash/patterns"]
-#			match => { "message" => "(<%{POSINT:syslog_pri}>)?%{SYSLOGTIMESTAMP:syslog_timestamp} %{SYSLOGHOST:syslog_hostname} (%{DATA:syslog_program}(?:\[%{POSINT:syslog_pid}\])?: %{GREEDYDATA:syslog_message}|%{GREEDYDATA:syslog_message})" }
-#		}
-#		mutate {
-#			remove_field => [ "syslog_hostname", "syslog_message" ]
-#		}
-#		date {
-#			match => [ "syslog_timestamp","MMM  d HH:mm:ss", "MMM dd HH:mm:ss", "ISO8601" ] 
-#		}
-#		syslog_pri { }
-#	}
+  beats {
+    port => 5044
+  }
 }
 
 output {
-	# Emit events to stdout for easy debugging of what is going through
-	# logstash.
-	# stdout { codec => rubydebug }
-
-	# This will use elasticsearch to store your logs.
-	# elasticsearch { hosts => [ "localhost:9200" ] }
+  elasticsearch {
+    hosts => ["http://localhost:9200"]
+    index => "%{[@metadata][beat]}-%{[@metadata][version]}-%{+YYYY.MM.dd}"
+    #user => "elastic"
+    #password => "changeme"
+  }
 }
