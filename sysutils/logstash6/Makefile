@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logstash
-PORTVERSION=	6.5.4
+PORTVERSION=	6.8.3
 PORTREVISION=	0
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
@@ -37,10 +37,11 @@ LOGSTASH_HOME?=	${PREFIX}/${PORTNAME}
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		LOGSTASH_HOME=${LOGSTASH_HOME}
 
-LOGSTASH_CONF_FILES=	jvm.options log4j2.properties logstash.yml pipelines.yml
+LOGSTASH_CONF_FILES=	jvm.options log4j2.properties logstash.yml \
+			pipelines.yml startup.options
 LOGSTASH_JRUBY_SUBDIR=	vendor/jruby/bin
-LOGSTASH_JRUBY_BIN_FILES=	ast irb jirb jruby jruby.sh rdoc testrb gem \
-				jgem jirb_swing jruby.bash jrubyc rake ri
+LOGSTASH_JRUBY_BIN_FILES=	ast gem irb jgem jirb jirb_swing jruby \
+				jruby.bash jruby.sh jrubyc rake rdoc ri testrb
 
 post-patch:
 	${REINPLACE_CMD} 's|%%ETCDIR%%|${ETCDIR}|g' ${WRKSRC}/config/logstash.yml
@@ -69,11 +70,5 @@ post-install:
 	${FIND} -s ${STAGEDIR}${PREFIX}/logstash -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	${ECHO} "@dir(logstash,logstash,) logstash/data" >> ${TMPPLIST}
-	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/build_info" >> ${TMPPLIST}
-	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/cache" >> ${TMPPLIST}
-	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/doc" >> ${TMPPLIST}
-	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/extensions" >> ${TMPPLIST}
-	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/gems/manticore-0.6.4-java/spec/ssl" >> ${TMPPLIST}
-	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/gems/redis-3.3.5/test/db" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
