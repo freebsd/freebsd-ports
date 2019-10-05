@@ -838,6 +838,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/sr_Latn_BA.xml
 %%DATADIR%%/data/annotationsDerived/sv.xml
 %%DATADIR%%/data/annotationsDerived/sw.xml
+%%DATADIR%%/data/annotationsDerived/sw_KE.xml
 %%DATADIR%%/data/annotationsDerived/ta.xml
 %%DATADIR%%/data/annotationsDerived/te.xml
 %%DATADIR%%/data/annotationsDerived/th.xml
