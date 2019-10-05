@@ -18,6 +18,8 @@ include/htp/htp_transaction.h
 include/htp/htp_urlencoded.h
 include/htp/htp_utf8_decoder.h
 include/htp/htp_version.h
+include/htp/lzma/7zTypes.h
+include/htp/lzma/LzmaDec.h
 lib/libhtp.a
 lib/libhtp.so
 lib/libhtp.so.2
@@ -35,7 +37,7 @@ man/man1/suricata.1.gz
 %%DOCSDIR%%/Setting_up_IPSinline_for_Linux.txt
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/Third_Party_Installation_Guides.txt
-%%PYTHON_SITELIBDIR%%/suricata-5.0.0_beta1-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/suricata-5.0.0_rc1-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/suricata/__init__.py
 %%PYTHON_SITELIBDIR%%/suricata/__init__.pyc
 %%PYTHON_SITELIBDIR%%/suricata/config/__init__.py
@@ -124,7 +126,7 @@ man/man1/suricata.1.gz
 %%PYTHON_SITELIBDIR%%/suricata/update/util.pyc
 %%PYTHON_SITELIBDIR%%/suricata/update/version.py
 %%PYTHON_SITELIBDIR%%/suricata/update/version.pyc
-%%PYTHON_SITELIBDIR%%/suricata_update-1.0.5-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/suricata_update-1.1.0rc1-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/suricatasc/__init__.py
 %%PYTHON_SITELIBDIR%%/suricatasc/__init__.pyc
 @sample %%ETCDIR%%/classification.config.sample
@@ -133,6 +135,7 @@ man/man1/suricata.1.gz
 @sample %%ETCDIR%%/threshold.config.sample
 %%DATADIR%%/rules/app-layer-events.rules
 %%DATADIR%%/rules/decoder-events.rules
+%%DATADIR%%/rules/dhcp-events.rules
 %%DATADIR%%/rules/dnp3-events.rules
 %%DATADIR%%/rules/dns-events.rules
 %%DATADIR%%/rules/files.rules
