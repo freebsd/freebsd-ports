@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	3.48.0
-PORTREVISION=	2
+PORTVERSION=	4.0.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -19,7 +18,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libicudata.so:devel/icu \
 		libpodofo.so:graphics/podofo \
 		libmtp.so:multimedia/libmtp \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libhunspell-1.7.so:textproc/hunspell
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
@@ -51,7 +51,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 USES=		desktop-file-utils gettext-runtime gl gnome localbase:ldflags pkgconfig \
 		python:2.7 pyqt:5 qt:5 shared-mime-info shebangfix ssl tar:xz
 USE_RC_SUBR=	calibre
-USE_PYQT=	core gui network sip svg webkit widgets webkitwidgets xmlpatterns
+USE_PYQT=	core gui network sip svg webengine widgets xmlpatterns
 USE_QT=		buildtools_build core dbus gui qmake_build widgets
 USE_GL=		egl gl
 USE_GNOME=	glib20
