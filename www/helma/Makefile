@@ -39,7 +39,7 @@ PLIST_SUB=	DBDIR="${DBDIR}" \
 
 OPTIONS_DEFINE=	MYSQL DOCS
 OPTIONS_SUB=	yes
-OPTIONS_DESC=	Install MySQL Connector for Java
+MYSQL_DESC=	Install MySQL Connector for Java
 
 MYSQL_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:databases/mysql-connector-java
 
