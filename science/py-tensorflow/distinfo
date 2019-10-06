@@ -1,4 +1,4 @@
-TIMESTAMP = 1564939361
+TIMESTAMP = 1570325271
 SHA256 (tensorflow/v0.18.tar.gz) = 38a1c02104ee9f630c1ad68164119cd58ad0aaf59e04ccbe7bd5781add7bfbea
 SIZE (tensorflow/v0.18.tar.gz) = 1497239
 SHA256 (tensorflow/daf381e8535a1f1f1b8a75966a74e7cca63dee89.tar.gz) = 56cd3fbbbd94468a5fff58f5df2b6f9de7a0272870c61f6ca05b869934f4802a
@@ -29,5 +29,7 @@ SHA256 (tensorflow/license.rst.txt) = e76cacdf0bdd265ff074ccca03671c33126f597f39
 SIZE (tensorflow/license.rst.txt) = 45132
 SHA256 (tensorflow/backports.weakref-1.0rc1.tar.gz) = 8813bf712a66b3d8b85dc289e1104ed220f1878cf981e2fe756dfaabe9a82892
 SIZE (tensorflow/backports.weakref-1.0rc1.tar.gz) = 7761
+SHA256 (tensorflow/0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip) = 36fa66d4d49debd71d05fba55c1353b522e8caef4a20f8080a3d17cdda001d89
+SIZE (tensorflow/0d5f3f2768c6ca2faca0079a997a97ce22997a0c.zip) = 72534
 SHA256 (tensorflow/tensorflow-tensorflow-v1.14.0_GH0.tar.gz) = aa2a6a1daafa3af66807cfe0bc77bfe1144a9a53df9a96bab52e3e575b3047ed
 SIZE (tensorflow/tensorflow-tensorflow-v1.14.0_GH0.tar.gz) = 41335204
