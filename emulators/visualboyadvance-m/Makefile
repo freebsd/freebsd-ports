@@ -3,7 +3,7 @@
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	2.0.0b2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	emulators
 
 MAINTAINER=	root@cooltrainer.org
@@ -52,15 +52,13 @@ ASMCORE_CMAKE_BOOL=	ENABLE_ASM_CORE
 ASMSCALERS_BUILD_DEPENDS=	nasm:devel/nasm
 ASMSCALERS_CMAKE_BOOL=		ENABLE_ASM_SCALERS
 
-GVBAM_USE_GNOME=	gtk20
-GVBAM_LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24 \
-			libglibmm-2.4.so:devel/glibmm \
-			libgiomm-2.4.so:devel/glibmm \
-			libcairomm-1.0.so:graphics/cairomm \
-			libglademm-2.4.so:devel/libglademm24 \
+GVBAM_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2 \
+			libgdkglext-x11-1.0.so:x11-toolkits/gtkglext \
 			libgdkglextmm-x11-1.2.so:x11-toolkits/gtkglextmm
+GVBAM_USES=		desktop-file-utils gnome
+GVBAM_USE=		GNOME=gtkmm24,pangox-compat
 GVBAM_CMAKE_BOOL=	ENABLE_GTK
-GVBAM_USES=		desktop-file-utils
 
 SDL_IMPLIES=		DEBUGGER
 SDL_CMAKE_BOOL=		ENABLE_SDL
