@@ -61,7 +61,7 @@ BUILD_DEPENDS=								\
 		gpatch:devel/patch					\
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends	\
 		${LOCALBASE}/bin/vigra-config:graphics/vigra		\
-		${JAVALIBDIR}/commons-lang.jar:java/jakarta-commons-lang \
+		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang \
 		${JAVALIBDIR}/junit.jar:java/junit			\
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		bash:shells/bash					\
@@ -89,7 +89,7 @@ LIB_DEPENDS=								\
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
-		${JAVALIBDIR}/commons-lang.jar:java/jakarta-commons-lang \
+		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang \
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
@@ -184,7 +184,7 @@ WIKI_PUBLISHER_CONFIGURE_WITH=						\
 WIKI_PUBLISHER_JAR_DEPENDS=						\
 	${JAVALIBDIR}/commons-codec.jar:java/jakarta-commons-codec	\
 	${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient \
-	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging
+	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
 WIKI_PUBLISHER_BUILD_DEPENDS=	${WIKI_PUBLISHER_JAR_DEPENDS}
 WIKI_PUBLISHER_RUN_DEPENDS=	${WIKI_PUBLISHER_JAR_DEPENDS}
 WIKI_PUBLISHER_VARS=	BUNDLED_EXTENSIONS+=swext/wiki-publisher.oxt
