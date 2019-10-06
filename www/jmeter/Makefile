@@ -21,7 +21,7 @@ RUN_DEPENDS=	\
 		${JAVALIBDIR}/commons-collections.jar:java/apache-commons-collections	\
 		${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient	\
 		${JAVALIBDIR}/commons-io.jar:devel/apache-commons-io \
-		${JAVALIBDIR}/commons-lang.jar:java/jakarta-commons-lang	\
+		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang	\
 		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging	\
 		${JAVALIBDIR}/commons-net.jar:net/apache-commons-net	\
 		${JAVALIBDIR}/httpclient.jar:www/httpclient	\
