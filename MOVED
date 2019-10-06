@@ -12912,7 +12912,6 @@ sysutils/syslog-ng314|sysutils/syslog-ng|2019-09-04|Has expired: No longer suppo
 devel/ace+tao-doc||2019-09-05|Has expired: Broken for more than 6 months
 devel/dfmt||2019-09-05|Has expired: Broken for more than 6 months
 devel/ignition-transport||2019-09-05|Has expired: Broken for more than 6 months
-devel/spin||2019-09-05|Has expired: Broken for more than 6 months
 editors/dexed||2019-09-05|Has expired: Depends on expiring devel/dfmt
 editors/p5-Padre||2019-09-05|Has expired: Depends on expiring x11-toolkits/p5-Wx
 emulators/qemu2||2019-09-05|Has expired: Latest 3.X branch is in ports tree
