@@ -18,7 +18,6 @@ USE_PERL5=	run
 GH_ACCOUNT=	so-fancy
 NO_ARCH=	yes
 NO_BUILD=	yes
-NO_CONFIGURE=	yes
 SHEBANG_FILES=	${WRKSRC}/diff-so-fancy
 SUB_FILES=	pkg-message
 

@@ -15,7 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Oblomov
 
 USES=		gmake
-NO_CONFIGURE=	yes
 ALL_TARGET=	#
 PLIST_FILES=	bin/clinfo \
 		man/man1/clinfo.1.gz

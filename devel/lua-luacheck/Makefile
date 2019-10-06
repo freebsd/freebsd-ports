@@ -16,7 +16,6 @@ RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem
 USES=	lua
 NO_ARCH=	yes
 NO_BUILD=	yes
-NO_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpeterv

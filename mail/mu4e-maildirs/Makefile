@@ -22,7 +22,6 @@ GH_ACCOUNT=	agpchil
 GH_TAGNAME=	3ef4c48
 
 NO_ARCH=	yes
-NO_CONFIGURE=	yes
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/mu4e/mu4e-maildirs-extension.elc \
 		${EMACS_SITE_LISPDIR}/mu4e/mu4e-maildirs-extension.el.gz
 PORTDOCS=	README.md
