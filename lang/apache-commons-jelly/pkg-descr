@@ -1,0 +1,15 @@
+Jelly is an XML based scripting engine. The basic idea is that XML elements can
+be bound to a Java Tag which is a Java bean that performs some function.
+
+Jelly is totally extendable via custom actions (in a similar way to JSP custom
+tags) as well as cleanly integrating with scripting languages such as Jexl,
+Velocity, pnuts, beanshell and via BSF (Bean Scripting Framework) languages
+like JavaScript & JPython.
+
+Jelly uses an XMLOutput class which extends SAX ContentHandler to output XML
+events. This makes Jelly ideal for XML content generation, SOAP scripting or
+dynamic web site generation. A single Jelly tag can produce, consume, filter or
+transform XML events. This leads to a powerful XML pipeline engine similar in
+some ways to Cocoon.
+
+WWW: http://commons.apache.org/proper/commons-jelly/index.html

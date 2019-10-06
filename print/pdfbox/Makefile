@@ -3,6 +3,7 @@
 
 PORTNAME=	pdfbox
 PORTVERSION=	2.0.14
+PORTREVISION=	1
 CATEGORIES=	print textproc java
 MASTER_SITES=	APACHE/pdfbox/${PORTVERSION}
 DISTFILES=	${JAR_NAMES:S/$/-${PORTVERSION}.jar/}
@@ -14,8 +15,8 @@ COMMENT=	Java tool for working with PDF documents
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${JAVALIBDIR}/bcmail.jar:java/bouncycastle15 \
-		${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging \
-		${JAVALIBDIR}/commons-io.jar:devel/jakarta-commons-io
+		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
+		${JAVALIBDIR}/commons-io.jar:devel/apache-commons-io
 
 JAR_NAMES=	pdfbox fontbox preflight xmpbox pdfbox-tools pdfbox-debugger
 

@@ -15,6 +15,7 @@
     SUBDIR += adodb
     SUBDIR += adodb5
     SUBDIR += akonadi
+    SUBDIR += apache-commons-dbutils
     SUBDIR += apq
     SUBDIR += apq-mysql
     SUBDIR += apq-odbc
@@ -113,7 +114,6 @@
     SUBDIR += ipa_sdb
     SUBDIR += iplike
     SUBDIR += isql-viewer
-    SUBDIR += jakarta-commons-dbutils
     SUBDIR += jasperreports
     SUBDIR += jdb
     SUBDIR += jdbc-oracle11g

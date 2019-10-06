@@ -20,6 +20,7 @@
     SUBDIR += aluminum
     SUBDIR += anet
     SUBDIR += aoe
+    SUBDIR += apache-commons-net
     SUBDIR += apinger
     SUBDIR += appkonference
     SUBDIR += aprsc
@@ -283,7 +284,6 @@
     SUBDIR += isc-dhcp44-relay
     SUBDIR += isc-dhcp44-server
     SUBDIR += istgt
-    SUBDIR += jakarta-commons-net
     SUBDIR += java-beepcore
     SUBDIR += jcifs
     SUBDIR += jgroups

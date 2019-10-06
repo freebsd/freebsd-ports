@@ -11,6 +11,7 @@
     SUBDIR += alchemist.el
     SUBDIR += algol68g
     SUBDIR += angelscript
+    SUBDIR += apache-commons-jelly
     SUBDIR += arena
     SUBDIR += asis
     SUBDIR += asn1c
@@ -152,7 +153,6 @@
     SUBDIR += io-devel
     SUBDIR += itcl
     SUBDIR += itcl4
-    SUBDIR += jakarta-commons-jelly
     SUBDIR += janet
     SUBDIR += jimtcl
     SUBDIR += jruby

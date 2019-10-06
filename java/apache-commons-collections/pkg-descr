@@ -1,0 +1,11 @@
+A suite of classes that extend or augment the Java Collections Framework.
+
+Commons-Collections seek to build upon the JDK classes by providing new interfaces, implementations and utilities. There are many features,
+including:
+
+Special-purpose implementations of Lists and Maps for fast access Adapter
+classes from Java1-style containers (arrays, enumerations) to Java 2-style
+collections. Methods to test or create typical set-theory properties of
+collections such as union, intersection, and closure.
+
+WWW: http://commons.apache.org/proper/commons-collections/

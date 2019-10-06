@@ -3,7 +3,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.5.2
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	math cad java
 MASTER_SITES=	https://www.scilab.org/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -68,7 +68,7 @@ _GUI_DEPENDS+=	${JAVALIBDIR}/flexdock.jar:devel/flexdock \
 		foprep:math/jeuclid \
 		${JAVALIBDIR}/jhall.jar:java/javahelp \
 		${JAVALIBDIR}/jrosetta-api.jar:java/jrosetta \
-		${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging \
+		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
 		${JAVALIBDIR}/jgraphx.jar:java/jgraphx \
 		${JAVALIBDIR}/jlatexmath.jar:math/jlatexmath \
 		${LOCALBASE}/share/java/ecj-4.5.jar:lang/gcc-ecj45
@@ -77,7 +77,7 @@ _GUI_DEPENDS+=	${LOCALBASE}/share/java/fop/build/fop.jar:textproc/fop \
 		${JAVALIBDIR}/jlatexmath-fop.jar:math/jlatexmath \
 		${LOCALBASE}/share/java/batik/lib/batik-all.jar:graphics/batik \
 		${JAVALIBDIR}/avalon-framework.jar:devel/avalon-framework \
-		${JAVALIBDIR}/commons-io.jar:devel/jakarta-commons-io \
+		${JAVALIBDIR}/commons-io.jar:devel/apache-commons-io \
 		${JAVALIBDIR}/xmlgraphics-commons.jar:graphics/xmlgraphics-commons
 # Code quality:
 _GUI_DEPENDS+=	${JAVALIBDIR}/commons-beanutils.jar:java/jakarta-commons-beanutils \

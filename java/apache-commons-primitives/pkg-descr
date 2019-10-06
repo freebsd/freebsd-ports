@@ -1,0 +1,9 @@
+Apache Commons Primitives provides a collection of types and utilities
+optimized for working with Java primitives (boolean, byte, char, double, float,
+int, long, short). Generally, the Commons-Primitives classes are faster,
+smaller and easier to work with than their purely Object based alternatives.
+
+Currently Commons Primitives is primarily composed of implementations of the
+java.util collections adapted for the primitive types.
+
+WWW: http://commons.apache.org/dormant/commons-primitives/
