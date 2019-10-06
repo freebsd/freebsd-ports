@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libwf-config.so:devel/wf-config
 
+CONFLICTS_INSTALL=	wcmcommander # bin/wcm
+
 USES=		compiler:c++11-lib meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gtkmm30 libxml2
