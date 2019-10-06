@@ -6430,6 +6430,7 @@
     SUBDIR += spatialindex
     SUBDIR += spdlog
     SUBDIR += spice-protocol
+    SUBDIR += spin
     SUBDIR += spirv-tools
     SUBDIR += splint
     SUBDIR += spread-sheet-widget
