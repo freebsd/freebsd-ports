@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Nov 24 16:58:00 2006
-+++ Makefile	Fri Nov 24 16:59:18 2006
+--- Makefile.orig	2003-08-26 22:00:00 UTC
++++ Makefile
 @@ -1,18 +1,13 @@
  
  .SUFFIXES:
