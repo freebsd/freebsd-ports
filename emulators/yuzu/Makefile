@@ -2,7 +2,7 @@
 
 PORTNAME=	yuzu
 PORTVERSION=	s20191004
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -31,7 +31,7 @@ GH_ACCOUNT=	yuzu-emu
 GH_TAGNAME=	0a662d009
 GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
-		DarkLordZach:libzip:rel-1-5-2-25-gbd7a810:libzip/externals/libzip \
+		DarkLordZach:libzip:rel-1-5-2-27-gc230767:libzip/externals/libzip \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.1.117:Vulkan_Headers/externals/Vulkan-Headers \
 		MerryMage:dynarmic:r1-1436-g087a7441:dynarmic/externals/dynarmic \
