@@ -677,6 +677,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems-linux.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-blacklistd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-concepts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-ipf.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-ipfw.html
@@ -1052,6 +1053,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-varnish.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-webplugin.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-xfce.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-xorg-cat.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-xorg.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-zip.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-zope.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses.html
