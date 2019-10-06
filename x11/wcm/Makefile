@@ -16,7 +16,7 @@ CONFLICTS_INSTALL=	wcmcommander # bin/wcm
 
 USES=		compiler:c++11-lib meson pkgconfig
 USE_GITHUB=	yes
-USE_GNOME=	gtkmm30 libxml2
+USE_GNOME=	gtk30 libxml2
 GH_ACCOUNT=	WayfireWM
 GH_TAGNAME=	0251264
 DATADIR=	${PREFIX}/share/wayfire
