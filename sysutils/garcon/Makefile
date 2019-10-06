@@ -3,7 +3,7 @@
 
 PORTNAME=	garcon
 PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -20,17 +20,20 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix \
 		pkgconfig tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
 USE_XFCE=	libmenu
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--without-html-dir \
-		--enable-gtk2
+CONFIGURE_ARGS=	--without-html-dir
 
-OPTIONS_DEFINE=		NLS
+OPTIONS_DEFINE=		GTK2 NLS
+OPTIONS_DEFAULT=	GTK2
 OPTIONS_SUB=		yes
+
+GTK2_USE=		gnome=gtk20
+GTK2_CONFIGURE_ENABLE=	gtk2
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
