@@ -51,7 +51,6 @@ LIBPAPER_LIB_DEPENDS=	libpaper.so:print/libpaper
 
 GUI_CMAKE_OFF=		-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets=1
 GUI_DESC=		QT5 interface
-GUI_CMAKE_ARGS+=	-DNO_TEXT_SELECT:BOOL=OFF
 GUI_USES=		qt:5 desktop-file-utils
 GUI_USE=		QT=buildtools_build,qmake_build,concurrent,core,gui,widgets,printsupport,svg,network,printsupport
 
