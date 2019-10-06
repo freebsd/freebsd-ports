@@ -1,0 +1,23 @@
+Commons Configuration provides a generic configuration interface which enables
+an application to read configuration data from a variety of sources. Commons
+Configuration provides typed access to single, and multi-valued configuration
+parameters.
+
+Configuration parameters may be loaded from the following sources:
+
+  * Properties files
+  * XML documents
+  * Windows INI files
+  * Property list files (plist)
+  * JNDI
+  * JDBC Datasource
+  * System properties
+  * Applet parameters
+  * Servlet parameters
+
+Different configuration sources can be mixed using a ConfigurationFactory and
+CompositeConfiguration. Additional sources of configuration parameters can be
+created by using custom configuration objects. This customization can be
+achieved by extending AbstractConfiguration.
+
+WWW: http://commons.apache.org/proper/commons-configuration/

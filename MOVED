@@ -13054,3 +13054,16 @@ x11/xtrap||2019-10-01|Deprecated upstream
 security/softhsm|security/softhsm2|2019-10-04|Has expired: End-of-life announced, update to softhsm2 ASAP.
 net/asterisk15|net/asterisk16|2019-10-04|Has expired: Asterisk 15.x will reach EOL on 2019-10-03. Please migrate to net/asterisk16
 x11-wm/fvwm|x11-wm/fvwm2|2019-10-06|Has expired: Unfetchable, unmaintained, unsupported upstream
+databases/jakarta-commons-dbutils|databases/apache-commons-dbutils|2019-10-06|Renamed upstream
+devel/jakarta-commons-configuration|devel/apache-commons-configuration|2019-10-06|Renamed upstream
+devel/jakarta-commons-io|devel/apache-commons-io|2019-10-06|Renamed upstream
+devel/jakarta-commons-jxpath|devel/apache-commons-jxpath|2019-10-06|Renamed upstream
+devel/jakarta-commons-modeler|devel/apache-commons-modeler|2019-10-06|Renamed upstream
+java/jakarta-commons-cli|apache-commons-cli|2019-10-06|Renamed upstream
+java/jakarta-commons-collections|java/apache-commons-collections|2019-10-06|Renamed upstream
+java/jakarta-commons-lang|apache-commons-lang|2019-10-06|Renamed upstream
+java/jakarta-commons-logging|java/apache-commons-logging|2019-10-06|Renamed upstream
+java/jakarta-commons-primitives|java/apache-commons-primitives|2019-10-06|Renamed upstream
+lang/jakarta-commons-jelly|lang/apache-commons-jelly|2019-10-06|Renamed upstream
+net/jakarta-commons-net|net/apache-commons-net|2019-10-06|Renamed upstream
+textproc/jakarta-commons-digester|textproc/apache-commons-digester|2019-10-06|Renamed upstream

@@ -1,0 +1,35 @@
+# Created by: Ernst de Haan <znerd@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	commons-logging
+PORTVERSION=	1.2
+CATEGORIES=	java devel
+MASTER_SITES=	APACHE_COMMONS_BINARIES
+PKGNAMEPREFIX=	apache-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
+
+MAINTAINER=	makc@FreeBSD.org
+COMMENT=	Generic logging wrapper library
+
+LICENSE=	APACHE20
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+OPTIONS_DEFINE=	DOCS
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.6+
+NO_BUILD=	yes
+
+JARFILE=	${PORTNAME}-${PORTVERSION}.jar
+
+PORTDOCS=	*
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
+		%%JAVAJARDIR%%/${JARFILE}
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}
+	${LN} -sf ${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	(cd ${WRKSRC}/apidocs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+.include <bsd.port.mk>

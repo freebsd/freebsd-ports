@@ -41,6 +41,7 @@
     SUBDIR += amberfish
     SUBDIR += ansifilter
     SUBDIR += antiword
+    SUBDIR += apache-commons-digester
     SUBDIR += apache-poi
     SUBDIR += apache-solr
     SUBDIR += apertium
@@ -304,7 +305,6 @@
     SUBDIR += itstool
     SUBDIR += itstool22
     SUBDIR += jade
-    SUBDIR += jakarta-commons-digester
     SUBDIR += jalingo
     SUBDIR += jarnal
     SUBDIR += java2html

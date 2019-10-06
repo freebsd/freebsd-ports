@@ -124,6 +124,10 @@
     SUBDIR += antlr3
     SUBDIR += antlr4
     SUBDIR += apache-ant
+    SUBDIR += apache-commons-configuration
+    SUBDIR += apache-commons-io
+    SUBDIR += apache-commons-jxpath
+    SUBDIR += apache-commons-modeler
     SUBDIR += apache-rat
     SUBDIR += aphpbreakdown
     SUBDIR += aphpunit
@@ -1026,11 +1030,7 @@
     SUBDIR += itext
     SUBDIR += ivykis
     SUBDIR += iz
-    SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
-    SUBDIR += jakarta-commons-io
-    SUBDIR += jakarta-commons-jxpath
-    SUBDIR += jakarta-commons-modeler
     SUBDIR += jam
     SUBDIR += jansson
     SUBDIR += java-findbugs

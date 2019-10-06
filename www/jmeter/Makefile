@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-jmeter
 PORTVERSION=	2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	APACHE/jmeter/binaries
 
@@ -18,12 +18,12 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	\
 		${JAVALIBDIR}/avalon-framework.jar:devel/avalon-framework	\
 		${JAVALIBDIR}/commons-codec.jar:java/jakarta-commons-codec	\
-		${JAVALIBDIR}/commons-collections.jar:java/jakarta-commons-collections	\
+		${JAVALIBDIR}/commons-collections.jar:java/apache-commons-collections	\
 		${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient	\
-		${JAVALIBDIR}/commons-io.jar:devel/jakarta-commons-io \
+		${JAVALIBDIR}/commons-io.jar:devel/apache-commons-io \
 		${JAVALIBDIR}/commons-lang.jar:java/jakarta-commons-lang	\
-		${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging	\
-		${JAVALIBDIR}/commons-net.jar:net/jakarta-commons-net	\
+		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging	\
+		${JAVALIBDIR}/commons-net.jar:net/apache-commons-net	\
 		${JAVALIBDIR}/httpclient.jar:www/httpclient	\
 		${JAVALIBDIR}/httpcore.jar:www/httpcore	\
 		${JAVALIBDIR}/httpmime.jar:www/httpclient	\
