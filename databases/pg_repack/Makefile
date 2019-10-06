@@ -12,7 +12,7 @@ COMMENT=	Reorganize tables in PostgreSQL databases with minimal locks
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gmake pgsql:9.2+
+USES=		gettext-runtime gmake pgsql:9.2+
 LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	reorg
@@ -21,7 +21,7 @@ WANT_PGSQL=	server
 
 PLIST_FILES=	bin/pg_repack \
 		lib/postgresql/pg_repack.so \
-		share/postgresql/extension/pg_repack--1.4.4.sql \
+		share/postgresql/extension/pg_repack--${PORTVERSION}.sql \
 		share/postgresql/extension/pg_repack.control
 
 post-install:
