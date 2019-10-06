@@ -1,4 +1,6 @@
 include/wayfire/animation.hpp
 include/wayfire/config.hpp
 lib/libwf-config.so
+lib/libwf-config.so.0
+lib/libwf-config.so.0.1
 libdata/pkgconfig/wf-config.pc
