@@ -1,6 +1,6 @@
---- abclock.c.orig	Tue Aug 15 11:25:10 2000
-+++ abclock.c	Tue Aug 15 11:43:06 2000
-@@ -29,7 +29,7 @@
+--- abclock.c.orig	2006-03-13 07:51:41 UTC
++++ abclock.c
+@@ -30,7 +30,7 @@
  #include <time.h>
  #include <sys/time.h>
  #include <unistd.h>

@@ -3,21 +3,22 @@
 
 PORTNAME=	abclock
 PORTVERSION=	1.0d
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://odur.let.rug.nl/~kleiweg/abclock/
+MASTER_SITES=	https://www.let.rug.nl/~kleiweg/abclock/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	m.ne@gmx.net
 COMMENT=	Clock for X that displays hours and minutes in an analog fashion
 
-BROKEN=		unfetchable
-DEPRECATED=	Unfetchable, unmaintained
-EXPIRATION_DATE=	2019-10-16
+LICENSE=	GPLv2+
 
-PLIST_FILES=	bin/abclock bin/abc_img
+PLIST_FILES=	bin/abc_img \
+		bin/abclock
 
-MAKE_ARGS=	CC="${CC}" OPT="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" \
+		OPT="${CFLAGS}"
 
+USES=		xorg
 USE_XORG=	x11 xau xdmcp
 
 do-install:
