@@ -5,7 +5,7 @@
  	Trans.h
  
 -xanalyser_LDADD = -lXext -lXm -lXt -lSM -lICE -lXmu -lXpm -lX11		\
-+xanalyser_LDADD = -L/usr/local/lib -lXext -L/usr/local/lib -lXm -lXp  \
++xanalyser_LDADD = -L%%LOCALBASE%%/lib -lXext -lXm \
 +	-lXt -lSM -lICE -lXmu -lXpm -lX11		\
  	$(FFTWLDADD) $(ALSALDADD)
  
@@ -16,8 +16,8 @@
  install-data-hook:
 -	mkdir -p $(DESTDIR)/usr/share/X11/app-defaults
 -	cp XAnalyser.ad $(DESTDIR)/usr/share/X11/app-defaults/XAnalyser
-+	mkdir -p ${DESTDIR}/usr/local/lib/X11/app-defaults
-+	cp XAnalyser.ad ${DESTDIR}/usr/local/lib/X11/app-defaults/XAnalyser
++	mkdir -p ${DESTDIR}/%%LOCALBASE%%/lib/X11/app-defaults
++	cp XAnalyser.ad ${DESTDIR}/%%LOCALBASE%%/lib/X11/app-defaults/XAnalyser
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
