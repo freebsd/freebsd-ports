@@ -125,7 +125,7 @@ static MALLOC_DEFINE(M_INTEL_ISA, "isal_tls", "Intel ISA-L TLS");
 static int
 intel_isa_seal(struct isa_gcm_struct *isa,
     struct iovec *outiov, int numiovs,
-    uint8_t *static_iv, int iv_len, uint64_t seq,
+    uint8_t * iv,
     struct iovec *iniov,
     uint8_t * ad, int adlen,
     uint8_t * tagout, size_t *taglen,
@@ -135,36 +135,10 @@ intel_isa_seal(struct isa_gcm_struct *isa,
 	bool nt = true;
 	bool misaligned_len, misaligned_start;
 	int fixup = 0;
-	size_t offset;
 	uint8_t *in;
 	uint8_t *out;
 	uint64_t len;
-	uint8_t iv[32];
-	uint8_t seq_num[sizeof(seq)];
 	
-	if (iv_len > 32 - sizeof(seq)) {
-		return (-1);
-	}
-
-	if (tls_13) {
-		/*
-		 * RFC 8446 5.3:  left pad the 64b seqno
-		 * with 0s, and xor with the IV
-		 *
-		 * gcm_init does not provde a way to specify the
-		 * length of the iv, so we have hard-coded it to 12 in
-		 * openssl
-		 */
-		memcpy(seq_num, &seq, sizeof(seq));
-
-		offset = iv_len - sizeof(seq);
-		memcpy(iv, static_iv, offset);
-		for (i = 0; i < sizeof(seq); i++)
-			iv[i + offset] = static_iv[i + offset] ^ seq_num[i];
-	} else {
-		memcpy(iv, static_iv, iv_len);
-		memcpy(iv + iv_len, &seq, sizeof(seq));
-	}
 	isa->gcm_init(&isa->key_data, &isa->ctx_data, iv, ad, (size_t)adlen);
 	for (i = 0; i < numiovs; i++) {
 		in = iniov[i].iov_base;
@@ -236,31 +210,43 @@ ktls_intelisa_aead_encrypt(struct ktls_session *tls,
 	counter_u64_add(ktls_offload_isa_aead, 1);
 	taglen = KTLS_INTELISA_AEAD_TAGLEN;
 
-	if (tls->params.tls_vminor == TLS_MINOR_VER_THREE) {
-		tls_13 = true;
-		counter_u64_add(ktls_offload_isa_tls_13, 1);
-		adlen = sizeof(ad) - sizeof(ad.seq);
-		adptr = &ad.type;
-		ad.tls_length = hdr->tls_length;
+	/* Setup the nonce */
+	memcpy(&nd, tls->params.iv, tls->params.iv_len);
 
-	} else {
-		tls_13 = false;
-		counter_u64_add(ktls_offload_isa_tls_12, 1);
-		tls_comp_len = ntohs(hdr->tls_length) -
-			(KTLS_INTELISA_AEAD_TAGLEN + sizeof(nd.seq));
-		adlen = sizeof(ad);
-		adptr = (uint8_t *)&ad;
-		ad.tls_length = htons(tls_comp_len);
-	}
 	/* Setup the associated data */
 	ad.seq = htobe64(seqno);
 	ad.type = hdr->tls_type;
 	ad.tls_vmajor = hdr->tls_vmajor;
 	ad.tls_vminor = hdr->tls_vminor;
 
-	ret = intel_isa_seal(isa, outiov, iovcnt,
-	    tls->params.iv, tls->params.iv_len,
-	    htobe64(seqno), iniov,
+	/* Version-specific nonce and AAD. */
+	if (tls->params.tls_vminor == TLS_MINOR_VER_THREE) {
+		tls_13 = true;
+		counter_u64_add(ktls_offload_isa_tls_13, 1);
+
+		adlen = sizeof(ad) - sizeof(ad.seq);
+		adptr = &ad.type;
+		ad.tls_length = hdr->tls_length;
+
+		/*
+		 * RFC 8446 5.3:  left pad the 64b seqno
+		 * with 0s, and xor with the IV.
+		 */
+		nd.seq ^= htobe64(seqno);
+	} else {
+		tls_13 = false;
+		counter_u64_add(ktls_offload_isa_tls_12, 1);
+
+		tls_comp_len = ntohs(hdr->tls_length) -
+			(KTLS_INTELISA_AEAD_TAGLEN + sizeof(nd.seq));
+		adlen = sizeof(ad);
+		adptr = (uint8_t *)&ad;
+		ad.tls_length = htons(tls_comp_len);
+
+		memcpy(&nd.seq, hdr + 1, sizeof(nd.seq));
+	}
+
+	ret = intel_isa_seal(isa, outiov, iovcnt, (uint8_t *)&nd, iniov,
 	    adptr, adlen, trailer, &taglen,
 	    tls_13, tls_rtype);
 
