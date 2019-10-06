@@ -21,8 +21,7 @@ CONFLICTS_INSTALL+=	xpdf3-* xpdf-*
 CONFLICTS_INSTALL+=	xpdf3-*	xpdf4-*
 .endif
 
-USES=		compiler:c++11-lang cmake localbase:ldflags \
-		desktop-file-utils
+USES=		compiler:c++11-lang cmake localbase:ldflags
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/d050000l.pfb:print/gsfonts
@@ -53,7 +52,7 @@ LIBPAPER_LIB_DEPENDS=	libpaper.so:print/libpaper
 GUI_CMAKE_OFF=		-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets=1
 GUI_DESC=		QT5 interface
 GUI_CMAKE_ARGS+=	-DNO_TEXT_SELECT:BOOL=OFF
-GUI_USES=		qt:5
+GUI_USES=		qt:5 desktop-file-utils
 GUI_USE=		QT=buildtools_build,qmake_build,concurrent,core,gui,widgets,printsupport,svg,network,printsupport
 
 PRINT_CMAKE_ON=		-DXPDFWIDGET_PRINTING:BOOL=ON -DCUPS:BOOL=ON
