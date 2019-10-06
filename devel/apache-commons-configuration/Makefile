@@ -14,7 +14,7 @@ COMMENT=	Java package for the reading of configuration/preferences files
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:java/jakarta-commons-beanutils \
-		${JAVALIBDIR}/commons-lang.jar:java/jakarta-commons-lang \
+		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang \
 		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
