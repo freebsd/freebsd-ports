@@ -1,5 +1,7 @@
-TIMESTAMP = 1566889638
-SHA256 (dmlc-tvm-v0.4-1440-g347e3d9d_GH0.tar.gz) = 57caebe24afb19158cedf546d89d35f47d6a22c8ba6f1109d3017e756a1480db
-SIZE (dmlc-tvm-v0.4-1440-g347e3d9d_GH0.tar.gz) = 2694303
+TIMESTAMP = 1570383682
+SHA256 (dmlc-tvm-v0.4-1614-gd703fb4e_GH0.tar.gz) = c994bf0775a725eaf78a43485f9c33ec5573e08d14be8ebdf8725980eb340669
+SIZE (dmlc-tvm-v0.4-1614-gd703fb4e_GH0.tar.gz) = 2819396
 SHA256 (dmlc-dlpack-0acb731_GH0.tar.gz) = e246632ccb182369e78a4028bfd9d3ff8a3507620ba414126fb0e860477248ba
 SIZE (dmlc-dlpack-0acb731_GH0.tar.gz) = 39435
+SHA256 (dmlc-dmlc-core-808f485_GH0.tar.gz) = b04ba9f1931d8b62c1bd3f06373582ce9e393fcd1d7241766c6e7d7b6119eca0
+SIZE (dmlc-dmlc-core-808f485_GH0.tar.gz) = 250572
