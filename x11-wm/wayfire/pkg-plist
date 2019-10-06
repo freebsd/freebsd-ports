@@ -19,6 +19,7 @@ include/wayfire/output.hpp
 include/wayfire/plugin.hpp
 include/wayfire/render-manager.hpp
 include/wayfire/signal-definitions.hpp
+include/wayfire/singleton-plugin.hpp
 include/wayfire/surface.hpp
 include/wayfire/util.hpp
 include/wayfire/view-transform.hpp
@@ -43,7 +44,9 @@ lib/wayfire/libmove.so
 lib/wayfire/liboswitch.so
 lib/wayfire/libplace.so
 lib/wayfire/libresize.so
+lib/wayfire/libsimple-tile.so
 lib/wayfire/libswitcher.so
+lib/wayfire/libvswipe.so
 lib/wayfire/libvswitch.so
 lib/wayfire/libwindow-rules.so
 lib/wayfire/libwobbly.so
