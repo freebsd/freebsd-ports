@@ -12,7 +12,7 @@ COMMENT=	Java components implementing the base HTTP protocol
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${JAVALIBDIR}/commons-cli.jar:java/jakarta-commons-cli
+RUN_DEPENDS=	${JAVALIBDIR}/commons-cli.jar:java/apache-commons-cli
 
 OPTIONS_DEFINE=	DOCS
 
