@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:devel/log4j \
-		${JAVALIBDIR}/commons-cli.jar:java/jakarta-commons-cli \
+		${JAVALIBDIR}/commons-cli.jar:java/apache-commons-cli \
 		${JAVALIBDIR}/junit.jar:java/junit \
 		${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt
