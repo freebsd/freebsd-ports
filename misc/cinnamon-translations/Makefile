@@ -14,7 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 
 USES=		gettext-tools
-NO_CONFIGURE=	yes
 INSTALL_TARGET=	all
 NO_ARCH=	yes
 

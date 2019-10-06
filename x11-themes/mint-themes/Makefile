@@ -14,7 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 GH_TAGNAME=	41cf70d
 
-NO_CONFIGURE=	yes
 NO_BUILD=	yes
 
 do-install:

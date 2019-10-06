@@ -28,7 +28,6 @@ USE_GL=		gl
 USE_SDL=	sdl2 image2
 
 ALPHA_VERSION=	23
-NO_CONFIGURE=	yes
 LIBS+=		-lexecinfo
 LLD_UNSAFE=	yes
 MAKE_ARGS=	DATA_DIR="${DATADIR}" GCC="${CXX}" \
