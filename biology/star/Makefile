@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	STAR
-DISTVERSION=	2.7.0f
-PORTREVISION=	1
+DISTVERSION=	2.7.2d
 CATEGORIES=	biology
 PKGNAMEPREFIX=	rna-
 
@@ -26,7 +25,7 @@ PLIST_FILES=	bin/STAR
 .include <bsd.port.pre.mk>
 
 # Force newer compiler on platforms using GCC 4.2 as base
-.if ${CHOSEN_COMPILER_TYPE} == gcc
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 USE_GCC=	yes
 .endif
 
