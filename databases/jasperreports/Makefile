@@ -18,7 +18,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:devel/itext			\
 		${JAVALIBDIR}/jfreechart.jar:java/jfreechart	\
 		${LOCALBASE}/share/java/batik/lib/batik-all.jar:graphics/batik	\
 		${JAVALIBDIR}/commons-beanutils.jar:java/jakarta-commons-beanutils\
-		${JAVALIBDIR}/commons-digester.jar:textproc/jakarta-commons-digester
+		${JAVALIBDIR}/commons-digester.jar:textproc/apache-commons-digester
 
 OPTIONS_DEFINE=	MYSQL PGSQL HSQLDB
 OPTIONS_DEFAULT=MYSQL PGSQL
