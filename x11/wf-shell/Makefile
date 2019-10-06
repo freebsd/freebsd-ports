@@ -25,5 +25,6 @@ USE_GNOME=	gtkmm30
 GH_ACCOUNT=	WayfireWM
 GH_TUPLE=	GNOME:libgnome-volume-control:468022b:gvc/subprojects/gvc
 MESON_ARGS=	-Dgvc:alsa=false
+DATADIR=	${PREFIX}/share/wayfire
 
 .include <bsd.port.mk>
