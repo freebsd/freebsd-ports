@@ -1,0 +1,3 @@
+bin/spin
+%%ISPIN%%bin/ispin
+man/man1/spin.1.gz
