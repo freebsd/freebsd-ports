@@ -13053,3 +13053,4 @@ x11/xprehashprinterlist||2019-10-01|Deprecated upstream
 x11/xtrap||2019-10-01|Deprecated upstream
 security/softhsm|security/softhsm2|2019-10-04|Has expired: End-of-life announced, update to softhsm2 ASAP.
 net/asterisk15|net/asterisk16|2019-10-04|Has expired: Asterisk 15.x will reach EOL on 2019-10-03. Please migrate to net/asterisk16
+x11-wm/fvwm|x11-wm/fvwm2|2019-10-06|Has expired: Unfetchable, unmaintained, unsupported upstream

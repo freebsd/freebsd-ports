@@ -52,7 +52,6 @@
     SUBDIR += fluxconf
     SUBDIR += fluxter
     SUBDIR += flwm
-    SUBDIR += fvwm
     SUBDIR += fvwm-crystal
     SUBDIR += fvwm2
     SUBDIR += gcompmgr
