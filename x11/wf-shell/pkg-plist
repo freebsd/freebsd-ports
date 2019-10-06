@@ -1,4 +1,4 @@
 bin/wf-background
 bin/wf-dock
 bin/wf-panel
-share/wayfire/icons/wayfire.png
+%%DATADIR%%/icons/wayfire.png
