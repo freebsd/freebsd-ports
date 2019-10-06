@@ -5,7 +5,7 @@ PORTNAME=	ddclient
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.8.3-104
 DISTVERSIONSUFFIX=	-gec2acfb
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 
 MAINTAINER=	mjl@luckie.org.nz
@@ -42,6 +42,8 @@ post-patch:
 		's|/usr|${PREFIX}|g'
 	@${REINPLACE_CMD} -e 's|%%ETCDIR%%|${PREFIX}/etc| ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/ddclient
+	@${REINPLACE_CMD} -e '/^\#\!\/usr\/local\/local/d' \
+		${WRKSRC}/ddclient
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} sample-etc_ddclient.conf \
