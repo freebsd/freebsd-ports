@@ -4,13 +4,17 @@
 PORTNAME=	graphviz
 PORTVERSION=	2.42.2
 PORTREVISION=	2
-MASTER_SITES=	https://gitlab.com/graphviz/graphviz/-/archive/${PORTVERSION}/
 CATEGORIES=	graphics tk
+MASTER_SITES=	https://gitlab.com/graphviz/graphviz/-/archive/${PORTVERSION}/
+
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_aarch64=	missing sbrk ?
+BROKEN_arm64=	missing sbrk ?
 
 BUILD_DEPENDS=	tclsh${TCL_VER}:lang/tcl${_TCLTK_WANTED_VERSION}
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
