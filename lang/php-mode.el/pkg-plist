@@ -2,8 +2,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/php-face.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/php-mode-debug.el
 %%EMACS_VERSION_SITE_LISPDIR%%/php-mode-debug.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/php-mode-test.el
-%%EMACS_VERSION_SITE_LISPDIR%%/php-mode-test.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/php-mode.el
 %%EMACS_VERSION_SITE_LISPDIR%%/php-mode.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/php-project.el
