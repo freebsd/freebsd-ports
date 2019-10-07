@@ -8,7 +8,7 @@ MASTER_SITES=	NL/math
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	as@cmplx.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CalTech mathematical subprogram libraries for Fortran 77
 
 LICENSE=	BSD3CLAUSE
