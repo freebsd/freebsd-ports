@@ -11,7 +11,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/documentation_options.js
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/jquery-3.2.1.js
+%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/jquery-3.4.1.js
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/language_data.js
 %%PORTDOCS%%%%DOCSDIR%%/en/html/_static/logo.png
@@ -86,7 +86,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/documentation_options.js
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/jquery-3.2.1.js
+%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/jquery-3.4.1.js
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/language_data.js
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/logo.png
