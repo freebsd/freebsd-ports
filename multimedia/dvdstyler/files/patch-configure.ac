@@ -1,4 +1,4 @@
---- configure.ac.orig	2015-02-17 21:14:03 UTC
+--- configure.ac.orig	2019-10-03 16:00:00 UTC
 +++ configure.ac
 @@ -9,6 +9,7 @@ AM_MAINTAINER_MODE
  dnl options
@@ -8,7 +8,7 @@
  
  AC_MSG_CHECKING(for install location)
  case "$prefix" in
-@@ -112,7 +113,9 @@ if test "x$WXSVGLIBAV" = x"no"; then
+@@ -113,7 +114,9 @@ if test "x$WXSVGLIBAV" = x"no"; then
  fi
  
  dnl check gnomeui-2.0
