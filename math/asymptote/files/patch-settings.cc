@@ -1,11 +1,11 @@
---- settings.cc.orig	2016-03-14 05:33:18 UTC
+--- settings.cc.orig	2019-10-03 16:43:08 UTC
 +++ settings.cc
-@@ -95,7 +95,7 @@ string defaultPSViewer="gv";
- #ifdef __APPLE__
- string defaultPDFViewer="open";
+@@ -99,7 +99,7 @@ string defaultPDFViewer="open";
+ string defaultHTMLViewer="open";
  #else  
+ string defaultPSViewer="gv";
 -string defaultPDFViewer="acroread";
 +string defaultPDFViewer="gv";
+ string defaultHTMLViewer="google-chrome";
  #endif  
  string defaultGhostscript="gs";
- string defaultGhostscriptLibrary="/usr/lib/libgs.so";
