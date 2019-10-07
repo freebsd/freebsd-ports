@@ -2,7 +2,7 @@
 
 PORTNAME=	telegram-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.4
+DISTVERSION=	1.8.9
 CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
