@@ -13066,3 +13066,4 @@ java/jakarta-commons-primitives|java/apache-commons-primitives|2019-10-06|Rename
 lang/jakarta-commons-jelly|lang/apache-commons-jelly|2019-10-06|Renamed upstream
 net/jakarta-commons-net|net/apache-commons-net|2019-10-06|Renamed upstream
 textproc/jakarta-commons-digester|textproc/apache-commons-digester|2019-10-06|Renamed upstream
+devel/jakarta-commons-daemon|devel/apache-commons-daemon|2019-10-07|Renamed upstream
