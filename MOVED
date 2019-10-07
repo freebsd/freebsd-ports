@@ -10670,7 +10670,6 @@ deskutils/drivel||2018-12-11|Has expired: GNOME 2 application
 deskutils/notecase||2018-12-11|Has expired: GNOME 2 application
 deskutils/gtodo||2018-12-11|Has expired: GNOME 2 application
 deskutils/gtweakui||2018-12-11|Has expired: GNOME 2 application
-deskutils/gnotime||2018-12-11|Has expired: GNOME 2 application
 deskutils/gruler||2018-12-11|Has expired: GNOME 2 application
 japanese/gjiten||2018-12-11|Has expired: GNOME 2 application
 graphics/truevision||2018-12-11|Has expired: GNOME 2 application
@@ -13075,3 +13074,4 @@ print/py-fonttools-symfont|print/py-fonttools|2019-10-07|Folded back into main p
 print/py-fonttools-ufo|print/py-fonttools|2019-10-07|Folded back into main port
 print/py-fonttools-unicode|print/py-fonttools|2019-10-07|Folded back into main port
 print/py-fonttools-woff|print/py-fonttools|2019-10-07|Folded back into main port
+devel/jakarta-commons-lang3|devel/apache-commons-lang3|2019-10-07|Renamed upstream

@@ -6,6 +6,7 @@
     SUBDIR += apache-commons-cli
     SUBDIR += apache-commons-collections
     SUBDIR += apache-commons-lang
+    SUBDIR += apache-commons-lang3
     SUBDIR += apache-commons-logging
     SUBDIR += apache-commons-primitives
     SUBDIR += aparapi
@@ -48,7 +49,6 @@
     SUBDIR += jakarta-commons-dbcp
     SUBDIR += jakarta-commons-discovery
     SUBDIR += jakarta-commons-httpclient
-    SUBDIR += jakarta-commons-lang3
     SUBDIR += jakarta-commons-pool
     SUBDIR += jakarta-oro
     SUBDIR += jakarta-regexp

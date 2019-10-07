@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	commons-lang3
-PORTVERSION=	3.7
+PORTVERSION=	3.8.1
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE_COMMONS_BINARIES/lang
-PKGNAMEPREFIX=	jakarta-
+PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	truckman@FreeBSD.org
-COMMENT=	Jakarta library with helper utilities for the java.lang API
+COMMENT=	Apache library with helper utilities for the java.lang API
 
 LICENSE=	APACHE20
 
