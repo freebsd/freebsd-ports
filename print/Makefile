@@ -183,14 +183,6 @@
     SUBDIR += pstotext
     SUBDIR += psutils
     SUBDIR += py-fonttools
-    SUBDIR += py-fonttools-graphite
-    SUBDIR += py-fonttools-interpolatable
-    SUBDIR += py-fonttools-lxml
-    SUBDIR += py-fonttools-plot
-    SUBDIR += py-fonttools-symfont
-    SUBDIR += py-fonttools-ufo
-    SUBDIR += py-fonttools-unicode
-    SUBDIR += py-fonttools-woff
     SUBDIR += py-fpdf
     SUBDIR += py-pdf
     SUBDIR += py-pdf2
