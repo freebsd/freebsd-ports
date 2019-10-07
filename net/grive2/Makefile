@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libgpg-error.so:security/libgpg-error \
 		libyajl.so:devel/yajl
 
-USES=		cmake compiler localbase pkgconfig
+USES=		cmake compiler:c++11-lang localbase pkgconfig
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing
 
