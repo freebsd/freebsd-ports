@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swaks
-PORTVERSION=	20170101.0
+PORTVERSION=	20190914.0
 CATEGORIES=	mail
 MASTER_SITES=	http://jetmore.org/john/code/swaks/
 
