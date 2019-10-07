@@ -271,7 +271,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		FLEX=${LOCALBASE}/bin/flex \
 		GNUTAR="${TAR}" \
-		GPERF=${LOCALBASE}/bin/gperf \
+		GPERF=${LOCALBASE}/bin/gperf31 \
 		ICU_CFLAGS="`icu-config --cflags`" \
 		ICU_LIBS="`icu-config --ldflags`" \
 		OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \
