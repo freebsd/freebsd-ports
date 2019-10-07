@@ -4,4 +4,4 @@ share/applications/nvim-qt.desktop
 %%DATADIR%%/runtime/doc/nvim_gui_shim.txt
 %%DATADIR%%/runtime/doc/tags
 %%DATADIR%%/runtime/plugin/nvim_gui_shim.vim
-share/pixmaps/nvim-qt.png
+share/icons/hicolor/192x192/apps/nvim-qt.png
