@@ -82,5 +82,5 @@ include/wlr/xcursor.h
 %%X11%%include/wlr/xwayland.h
 lib/libwlroots.so
 lib/libwlroots.so.3
-lib/libwlroots.so.3.5.1
+lib/libwlroots.so.3.6.1
 libdata/pkgconfig/wlroots.pc
