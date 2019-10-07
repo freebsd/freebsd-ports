@@ -12,8 +12,6 @@ COMMENT=	Software Token for UNIX compatible with RSA SecurID
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-BROKEN=		Package requirements (nettle >= 2.4) were not met
-
 LIB_DEPENDS=	libtomcrypt.so:security/libtomcrypt # can alternatively use nettle, potentially port option can be created
 
 USES=		libtool localbase pkgconfig
