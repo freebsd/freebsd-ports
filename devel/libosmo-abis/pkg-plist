@@ -9,10 +9,10 @@ include/osmocom/abis/lapd.h
 include/osmocom/abis/lapd_pcap.h
 include/osmocom/abis/unixsocket_proto.h
 include/osmocom/trau/osmo_ortp.h
-lib/libosmoabis.so.6.0.2
+lib/libosmoabis.so.6.1.0
 lib/libosmoabis.so.6
 lib/libosmoabis.so
-lib/libosmotrau.so.2.1.2
+lib/libosmotrau.so.2.2.0
 lib/libosmotrau.so.2
 lib/libosmotrau.so
 lib/libosmoabis.a
