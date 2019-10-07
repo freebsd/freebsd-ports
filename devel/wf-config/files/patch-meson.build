@@ -1,0 +1,13 @@
+meson.build:15:0: ERROR: Invalid version of dependency, need 'wlroots' ['==0.8.0'] found '0.8.1'.
+
+--- meson.build.orig	2019-10-07 18:56:56 UTC
++++ meson.build
+@@ -12,7 +12,7 @@ project(
+ )
+ 
+ evdev = dependency('libevdev')
+-wlroots = dependency('wlroots', version: '==0.8.0')
++wlroots = dependency('wlroots', version: '>=0.8')
+ 
+ sources = [
+     'src/config.cpp',
