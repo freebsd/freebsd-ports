@@ -1,0 +1,4 @@
+ncnn implementation of waifu2x converter. Runs fast on Intel / AMD /
+Nvidia with Vulkan API.
+
+WWW: https://github.com/nihui/waifu2x-ncnn-vulkan
