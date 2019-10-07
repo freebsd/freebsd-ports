@@ -19,7 +19,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libnettle.so:security/nettle \
 		libp11-kit.so:security/p11-kit
 
-USES=		gmake gnome pkgconfig ncurses:port
+USES=		compiler:c11 gmake gnome pkgconfig ncurses:port
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/ncdc \
