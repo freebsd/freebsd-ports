@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmo-abis
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	devel
 MASTER_SITES=	http://git.osmocom.org/libosmo-abis/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
