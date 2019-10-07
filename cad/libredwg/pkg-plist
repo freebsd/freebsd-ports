@@ -5,12 +5,13 @@ bin/dwggrep
 bin/dwglayers
 bin/dwgread
 bin/dwgrewrite
+bin/dxf2dwg
 include/dwg.h
 include/dwg_api.h
 lib/libredwg.a
 lib/libredwg.so
 lib/libredwg.so.0
-lib/libredwg.so.0.0.0
+lib/libredwg.so.0.0.9
 libdata/pkgconfig/libredwg.pc
 man/man1/dwg2SVG.1.gz
 man/man1/dwg2dxf.1.gz
