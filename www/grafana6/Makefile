@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	grafana
-PORTVERSION=	6.3.5
+PORTVERSION=	6.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES+=	https://s3-us-west-2.amazonaws.com/grafana-releases/release/:public
+MASTER_SITES+=	https://dl.grafana.com/oss/release/:public
 PKGNAMESUFFIX=	${PORTVERSION:C/([0-9]).*/\1/1}
 DISTFILES=	grafana-${PORTVERSION}.linux-amd64${EXTRACT_SUFX}:public
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
