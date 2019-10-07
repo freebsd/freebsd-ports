@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libvterm
-PORTVERSION=	git20161218
+PORTVERSION=	0.1.1
 CATEGORIES=	devel
+MASTER_SITES=	https://launchpad.net/libvterm/trunk/v0.1/+download/
 
 MAINTAINER=	dem.procopiou@gmail.com
 COMMENT=	Implementation of a VT220/xterm/ECMA-48 terminal emulator
@@ -11,13 +12,10 @@ COMMENT=	Implementation of a VT220/xterm/ECMA-48 terminal emulator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	neovim
-GH_TAGNAME=	224b8dc
-
 USES=		gmake libtool:build pathfix perl5
 PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
+USE_PERL5=	test
 MAKE_ARGS=	PREFIX=${PREFIX}
 
 post-install:
