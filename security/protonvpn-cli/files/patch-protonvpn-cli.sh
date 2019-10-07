@@ -229,10 +229,10 @@
 +  then
 +    if [[ $1 -eq 1 ]]
 +    then
-+      country_id=6
++      country_id=9
 +    elif [[ $1 -eq 2 ]]
 +    then
-+      country_id=7
++      country_id=6
 +    fi
 +  fi
 +

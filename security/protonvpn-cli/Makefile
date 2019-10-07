@@ -3,6 +3,7 @@
 PORTNAME=	protonvpn-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	security net net-vpn
 
 MAINTAINER=	phascolarctos@protonmail.ch
@@ -16,7 +17,8 @@ LICENSE_DISTFILES_GPLv3=	${DISTFILES:M*scripts*}
 
 RUN_DEPENDS=	bash:shells/bash \
 		openvpn:security/openvpn \
-		wget:ftp/wget
+		wget:ftp/wget \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		python
 
@@ -34,7 +36,7 @@ PLIST_FILES=	bin/protonvpn-cli \
 
 post-patch:
 	${REINPLACE_CMD} s,\$$python,${PYTHON_CMD},g ${WRKSRC}/protonvpn-cli.sh
-	${REINPLACE_CMD} s,wget,wget\ --no-check-certificate,g ${WRKSRC}/protonvpn-cli.sh
+	${REINPLACE_CMD} s,wget,wget\ --ca-certificate\ ${LOCALBASE}/share/certs/ca-root-nss.crt,g ${WRKSRC}/protonvpn-cli.sh
 	${REINPLACE_CMD} s,%%LOCALBASE%%,${LOCALBASE},g ${WRKSRC}/protonvpn-cli.sh
 
 do-install:
