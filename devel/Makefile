@@ -1523,6 +1523,7 @@
     SUBDIR += luafilesystem-51
     SUBDIR += luajava
     SUBDIR += lutok
+    SUBDIR += luv
     SUBDIR += lwp
     SUBDIR += lxqt-build-tools
     SUBDIR += m17n-db
