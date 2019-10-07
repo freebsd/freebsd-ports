@@ -10,6 +10,8 @@ MASTER_SITES=	APACHE_JAKARTA/regexp/binaries
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Regular expressions for Java
 
+LICENSE=	APACHE20
+
 BROKEN_armv6=		fails to build: build.xml: Java returned: 1
 BROKEN_armv7=		fails to build: build.xml: Java returned: 1
 

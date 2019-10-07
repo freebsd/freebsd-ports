@@ -10,6 +10,8 @@ MASTER_SITES=	http://archive.apache.org/dist/jakarta/oro/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl/awk/sh regular expressions for Java
 
+LICENSE=	APACHE20
+
 USE_JAVA=	yes
 USE_ANT=	yes
 JAVA_VERSION=	1.6+
