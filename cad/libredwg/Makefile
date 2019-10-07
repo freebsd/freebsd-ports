@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libredwg
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	cad devel
 MASTER_SITES=	GNU
 
@@ -13,6 +13,7 @@ LICENSE=	GPLv3+
 
 USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-trace
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
@@ -34,8 +35,8 @@ PYTHON_CONFIGURE_OFF=	--disable-python
 post-patch:
 # XXX: switch the order of #include's to unbreak on powerpc/sparc64
 # which are still based on gcc-4.2.1 (should be no-op elsewhere)
-	@${REINPLACE_CMD} -e '/bits\.h/ { x; s/^/#include "suffix.inc"/; \
-		G; } ; 32d' ${WRKSRC}/programs/dwgwrite.c
+	@${REINPLACE_CMD} -e '/#include "com/ { x; s/^/#include <stdlib.h>/; \
+		G; }; 24d' ${WRKSRC}/src/common.c
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
