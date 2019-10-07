@@ -27,9 +27,6 @@ COMMENT=	Full operating system stack fingerprinting suite
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/LICENSE.Artistic
 
-NOT_FOR_ARCHS=		powerpc powerpc64 sparc64
-NOT_FOR_ARCHS_REASON=	does not support big-endian architectures
-
 .if ${PORTNAME} == "Net-SinFP"
 PKGNAMEPREFIX=	p5-
 
