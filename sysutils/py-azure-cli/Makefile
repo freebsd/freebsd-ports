@@ -2,6 +2,7 @@
 
 PORTNAME=	azure-cli
 PORTVERSION=	2.0.74
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,8 @@ COMMENT=	Microsoft Azure Command-Line Tools
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-batch>=8.0:devel/py-azure-batch@${PY_FLAVOR} \
+RUN_DEPENDS=	bash:shells/bash \
+		${PYTHON_PKGNAMEPREFIX}azure-batch>=8.0:devel/py-azure-batch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-core>=2.0.74:sysutils/py-azure-cli-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-telemetry>=1.0.2:sysutils/py-azure-cli-telemetry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cosmos>=3.0.2:devel/py-azure-cosmos@${PY_FLAVOR} \
