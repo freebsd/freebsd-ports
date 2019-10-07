@@ -12,4 +12,4 @@ include:
     reused in more than one application that requires the same type of
     processing
 
-WWW: http://jakarta.apache.org/commons/digester/
+WWW: http://commons.apache.org/proper/commons-digester/
