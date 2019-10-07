@@ -1,0 +1,39 @@
+--- configure.orig	2019-10-07 19:19:28 UTC
++++ configure
+@@ -20048,36 +20048,6 @@ $as_echo "#define HAVE_CXX11 1" >>confdefs.h
+     ;;
+   esac
+ 
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libmysqlservices.a directory" >&5
+-$as_echo_n "checking for libmysqlservices.a directory... " >&6; }
+-  pkglibdir="$($ac_mysql_config --variable=pkglibdir)"
+-  mysql_build_archive_output_dir="${MYSQL_BUILD_DIR}/archive_output_directory"
+-  mysql_build_libservices_dir="${MYSQL_BUILD_DIR}/libservices"
+-  if test -f "${mysql_build_archive_output_dir}/libmysqlservices.a"; then
+-    mysql_services_lib_dir="${mysql_build_archive_output_dir}"
+-  elif test -f "${mysql_build_libservices_dir}/libmysqlservices.a"; then
+-    mysql_services_lib_dir="${mysql_build_libservices_dir}"
+-  else
+-    if test -f "${pkglibdir}/libmysqlservices.a"; then
+-      mysql_services_lib_dir="${pkglibdir}"
+-    elif test -f "${pkglibdir}/mysql/libmysqlservices.a"; then
+-      mysql_services_lib_dir="${pkglibdir}/mysql"
+-    else
+-      as_fn_error $? "libmysqlservices.a is not found in <${pkglibdir}/> and <${pkglibdir}/mysql/>" "$LINENO" 5
+-    fi
+-  fi
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $mysql_services_lib_dir" >&5
+-$as_echo "$mysql_services_lib_dir" >&6; }
+-  MYSQL_LIBS="$MYSQL_LIBS \"$mysql_services_lib_dir/libmysqlservices.a\""
+-
+-
+-
+-
+-
+-
+-
+-
+-
+ if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+ 	if test -n "$ac_tool_prefix"; then
+   # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
