@@ -13,9 +13,6 @@ COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	missing sbrk ?
-BROKEN_arm64=	missing sbrk ?
-
 BUILD_DEPENDS=	tclsh${TCL_VER}:lang/tcl${_TCLTK_WANTED_VERSION}
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libpng.so:graphics/png \

@@ -6,7 +6,7 @@
  #endif
 +#if defined(__FreeBSD__) && defined(__aarch64__)
 +/* No sbrk on FreeBSD/AArch64 */
-+#define _std_malloc	1
++#define _BLD_INSTRUMENT	1
 +#endif
  #ifdef _WIN32
  #include <io.h>
