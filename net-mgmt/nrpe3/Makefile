@@ -13,9 +13,6 @@ COMMENT?=	Nagios Remote Plugin Executor
 
 LICENSE=	GPLv2
 
-BROKEN_SSL=	libressl libressl-devel
-BROKEN_SSL_REASON=	nrpe3 does not work with libressl
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	NagiosEnterprises
 
