@@ -1,5 +1,6 @@
 bin/prometheus
 bin/promtool
+bin/promtsdb
 %%PROMETHEUS_CONSOLE_LIBRARIES_DIR%%/menu.lib
 %%PROMETHEUS_CONSOLE_LIBRARIES_DIR%%/prom.lib
 %%PROMETHEUS_CONSOLES_DIR%%/index.html.example
