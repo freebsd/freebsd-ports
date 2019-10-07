@@ -1,6 +1,6 @@
 --- cmake/install_layout.cmake	2017-02-06 18:02:22.189764000 +0000
 +++ cmake/install_layout.cmake	2017-02-06 18:02:29.642407000 +0000
-@@ -162,7 +162,7 @@
+@@ -160,7 +160,7 @@
  #
  SET(INSTALL_SHAREDIR_STANDALONE         "share")
  SET(INSTALL_MYSQLSHAREDIR_STANDALONE    "share")
