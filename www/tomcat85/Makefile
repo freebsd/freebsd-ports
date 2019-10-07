@@ -13,7 +13,7 @@ COMMENT=	Open-source Java web server by Apache, 8.5.x branch
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	jsvc:devel/jakarta-commons-daemon
+RUN_DEPENDS=	jsvc:devel/apache-commons-daemon
 
 USES=		cpe
 CPE_VENDOR=	apache
