@@ -3,7 +3,7 @@
 
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.8
+DISTVERSION=	0.4.2
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -14,7 +14,8 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	gperf:devel/gperf \
 		${LUA_MODLIBDIR}/bit.so:devel/lua-bitop \
 		${LUA_MODLIBDIR}/lpeg.so:devel/lua-lpeg
-LIB_DEPENDS=	libmsgpackc.so:devel/msgpack \
+LIB_DEPENDS=	libluv.so:devel/luv \
+		libmsgpackc.so:devel/msgpack \
 		libtermkey.so:devel/libtermkey \
 		libunibilium.so:devel/unibilium \
 		libuv.so:devel/libuv \
