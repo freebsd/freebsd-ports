@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fluent-bit
-DISTVERSION=	1.0.4
+DISTVERSION=	1.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=   http://fluentbit.io/releases/${DISTVERSION:R}/
 
@@ -15,9 +15,7 @@ BROKEN_mips=		fails to build: conflicting types for 'restrict'
 BROKEN_mips64=		fails to build: conflicting types for 'restrict'
 BROKEN_powerpc64=	fails to build: cast from pointer to integer of different size
 
-USES=		cmake:noninja gmake
-
-#MAKE_ENV=	CC="cc"
+USES=		cmake:noninja gmake bison
 
 USE_RC_SUBR=	${PORTNAME}
 
