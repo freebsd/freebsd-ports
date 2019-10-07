@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	4.3.2
-PORTREVISION=	1
+PORTVERSION=	4.3.3
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/
 DISTNAME=	samhain_signed-${PORTVERSION}
