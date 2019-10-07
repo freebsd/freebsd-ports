@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	asymptote
-PORTVERSION=	2.44
-PORTREVISION=	8
+PORTVERSION=	2.56
+PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -22,7 +22,7 @@ RUN_DEPENDS=	animate:graphics/ImageMagick6 \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang gettext-runtime ghostscript gmake ncurses perl5 python \
+USES=		compiler:c++14-lang gettext-runtime ghostscript gl gmake ncurses perl5 python \
 		shebangfix tar:tgz
 SHEBANG_FILES=	GUI/*.py
 USE_GL=		gl glu glut

@@ -1,18 +1,18 @@
---- Makefile.in.orig	2016-03-14 05:33:18 UTC
+--- Makefile.in.orig	2019-10-03 16:43:08 UTC
 +++ Makefile.in
-@@ -88,7 +88,7 @@ datadir = $(DESTDIR)@datadir@
- asydir = $(datadir)/asymptote
- GUIdir = $(asydir)/GUI
+@@ -97,7 +97,7 @@ GUIdir = $(asydir)/GUI
+ shaderdir = $(asydir)/shaders
+ webgldir = $(asydir)/webgl
  docdir = $(DESTDIR)@docdir@
 -exampledir = $(docdir)/examples
 +exampledir = $(datadir)/examples/asymptote
  animationsdir = $(exampledir)/animations
  latexdir = $(DESTDIR)@latexdir@
  contextdir = $(DESTDIR)@contextdir@
-@@ -238,7 +238,7 @@ install-asy: asy sty
- 	${INSTALL} -p -m 644 base/*.asy $(addprefix base/,$(EXTRA)) \
- 		asy-keywords.el $(asydir)
- 	${INSTALL} -p -m 755 GUI/*.py $(GUIdir)
+@@ -260,7 +260,7 @@ install-asy: asy sty
+ 	${INSTALL} -p -m 644 GUI/configs/*.cson $(GUIdir)/configs
+ 	${INSTALL} -p -m 644 GUI/res/icons.qrc $(GUIdir)/res
+ 	${INSTALL} -p -m 644 GUI/res/icons/*.svg $(GUIdir)/res/icons
 -	ln -sf @datadir@/asymptote/GUI/xasy.py $(bindir)/$(XNAME)
 +	ln -sf ../share/asymptote/GUI/xasy.py $(bindir)/$(XNAME)
  	${INSTALL} -p -m 644 examples/*.asy $(addprefix examples/,$(EXEXTRA)) \
