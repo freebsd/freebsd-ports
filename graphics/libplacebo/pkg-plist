@@ -16,5 +16,5 @@ include/libplacebo/swapchain.h
 include/libplacebo/utils/upload.h
 include/libplacebo/vulkan.h
 lib/libplacebo.so
-lib/libplacebo.so.18
+lib/libplacebo.so.21
 libdata/pkgconfig/libplacebo.pc
