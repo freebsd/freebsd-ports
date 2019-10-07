@@ -1,5 +1,6 @@
 bin/wcd
 %%NLS%%man/de/man1/wcd.1.gz
+man/fr/man1/wcd.1.gz
 man/man1/wcd.1.gz
 %%NLS%%man/nl/man1/wcd.1.gz
 %%NLS%%man/pt_BR/man1/wcd.1.gz
@@ -11,6 +12,8 @@ man/man1/wcd.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/de/wcd.htm
 %%PORTDOCS%%%%DOCSDIR%%/de/wcd.txt
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/fr/wcd.htm
+%%PORTDOCS%%%%DOCSDIR%%/fr/wcd.txt
 %%PORTDOCS%%%%DOCSDIR%%/nl/wcd.htm
 %%PORTDOCS%%%%DOCSDIR%%/nl/wcd.txt
 %%PORTDOCS%%%%DOCSDIR%%/problems.txt
@@ -27,6 +30,7 @@ man/man1/wcd.1.gz
 %%NLS%%share/locale/eo/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wcd.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/fur/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wcd.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wcd.mo
