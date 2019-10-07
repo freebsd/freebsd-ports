@@ -2,7 +2,7 @@
 
 PORTNAME=	defcon
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,7 @@ COMMENT=	Set of flexible objects for representing UFO data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=3.31.0:print/py-fonttools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fonttools-ufo>0:print/py-fonttools-ufo@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fonttools-unicode>0:print/py-fonttools-unicode@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=3.31.0:print/py-fonttools@${PY_FLAVOR}
 
 USES=		python zip
 USE_PYTHON=	autoplist distutils

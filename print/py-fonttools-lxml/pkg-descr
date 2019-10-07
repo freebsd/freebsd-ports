@@ -1,6 +1,0 @@
-This port is the extra dependencies for lxml functionality of FontTools.
-
-Add both print/py-fonttools and print/py-fonttools-lxml to RUN_DEPENDS if you
-need "fonttools[lxml]".
-
-WWW: https://github.com/fonttools/fonttools

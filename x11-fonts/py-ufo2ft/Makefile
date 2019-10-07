@@ -2,7 +2,7 @@
 
 PORTNAME=	ufo2ft
 PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=3.32.0:print/py-fonttools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fonttools-ufo>0:print/py-fonttools-ufo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defcon>=0.6.0:x11-fonts/py-defcon@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cu2qu>=1.6.4:x11-fonts/py-cu2qu@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}compreffor>=0.4.5:x11-fonts/py-compreffor@${PY_FLAVOR} \

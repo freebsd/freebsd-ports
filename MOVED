@@ -13067,3 +13067,11 @@ lang/jakarta-commons-jelly|lang/apache-commons-jelly|2019-10-06|Renamed upstream
 net/jakarta-commons-net|net/apache-commons-net|2019-10-06|Renamed upstream
 textproc/jakarta-commons-digester|textproc/apache-commons-digester|2019-10-06|Renamed upstream
 devel/jakarta-commons-daemon|devel/apache-commons-daemon|2019-10-07|Renamed upstream
+print/py-fonttools-graphite|print/py-fonttools|2019-10-07|Folded back into main port
+print/py-fonttools-interpolatable|print/py-fonttools|2019-10-07|Folded back into main port
+print/py-fonttools-lxml|print/py-fonttools|2019-10-07|Folded back into main port
+print/py-fonttools-plot|print/py-fonttools|2019-10-07|Folded back into main port
+print/py-fonttools-symfont|print/py-fonttools|2019-10-07|Folded back into main port
+print/py-fonttools-ufo|print/py-fonttools|2019-10-07|Folded back into main port
+print/py-fonttools-unicode|print/py-fonttools|2019-10-07|Folded back into main port
+print/py-fonttools-woff|print/py-fonttools|2019-10-07|Folded back into main port
