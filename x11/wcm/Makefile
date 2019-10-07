@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	wcm
-DISTVERSION=	s20191003
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +19,6 @@ USES=		compiler:c++11-lib meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gtk30 libxml2
 GH_ACCOUNT=	WayfireWM
-GH_TAGNAME=	0251264
 DATADIR=	${PREFIX}/share/wayfire
 INSTALLS_ICONS=	yes
 
