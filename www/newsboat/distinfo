@@ -1,6 +1,6 @@
-TIMESTAMP = 1569167688
-SHA256 (newsboat-2.17.tar.xz) = 88c3f73b676f5fc52a0c935922eb520b463b388c7ef2325e67d847bee41efa79
-SIZE (newsboat-2.17.tar.xz) = 569476
+TIMESTAMP = 1570033852
+SHA256 (newsboat-2.17.1.tar.xz) = c1ebd24b017173156e817a1a3dd1d982808dec30a891e1f487806e5f86171997
+SIZE (newsboat-2.17.1.tar.xz) = 571412
 SHA256 (rust/crates/aho-corasick-0.6.9.tar.gz) = 1e9a933f4e58658d7b12defcf96dc5c720f20832deebe3e0a19efd3b6aaeeb9e
 SIZE (rust/crates/aho-corasick-0.6.9.tar.gz) = 25979
 SHA256 (rust/crates/argon2rs-0.2.5.tar.gz) = 3f67b0b6a86dae6e67ff4ca2b6201396074996379fba2b92ff649126f37cb392
