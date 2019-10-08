@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mimalloc
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 #MASTER_SITES=
@@ -19,8 +19,5 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	microsoft
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmimalloc.so
 
 .include <bsd.port.mk>
