@@ -1,0 +1,4 @@
+Lists information about block devices in the system in a similar way
+that util-linux's lsblk(8) does.
+
+WWW: https://github.com/vermaden/scripts/blob/master/lsblk.sh

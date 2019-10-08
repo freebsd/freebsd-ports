@@ -610,6 +610,7 @@
     SUBDIR += logwatch
     SUBDIR += lookat
     SUBDIR += lr
+    SUBDIR += lsblk
     SUBDIR += lscpu
     SUBDIR += lsof
     SUBDIR += lsop
