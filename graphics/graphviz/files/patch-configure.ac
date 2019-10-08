@@ -30,6 +30,15 @@
  		           LUA_LIBS="$LUA_LFLAGS "`$PKG_CONFIG --libs lualib$l`
  		        fi
                          break
+@@ -1181,7 +1181,7 @@ else
+ 	use_python="No (python is too old)"
+       else
+         PYTHON_PREFIX=`$PYTHON -c "import sys; print sys.prefix"`
+-        PYTHON_INCLUDES=-I$PYTHON_PREFIX/include/python$PYTHON_VERSION_SHORT
++        PYTHON_INCLUDES=-I$PYTHON_INCLUDEDIR
+ #        PYTHON_LIBS="-lpython$PYTHON_VERSION_SHORT"
+ 	PYTHON_LIBS="-undefined dynamic_lookup"
+         PYTHON_INSTALL_DIR="`$PYTHON $srcdir/config/config_python.py archsitelib`"
 @@ -1412,6 +1412,7 @@ else
  	    use_ruby="No (ruby not available)"
            else
