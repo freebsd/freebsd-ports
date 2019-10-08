@@ -31,7 +31,7 @@ NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include ".${CURDIR}/Makefile.manlinks"
+.include "Makefile.manlinks"
 
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -r
