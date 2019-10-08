@@ -21,7 +21,7 @@ TEST_DEPENDS=	${LOCALBASE}/bin/gpaste:sysutils/coreutils \
 		bash:shells/bash \
 		gfind:misc/findutils
 
-USES=		gmake localbase:ldflags shebangfix
+USES=		compiler:c11 gmake localbase:ldflags shebangfix
 SHEBANG_FILES=	tests/func/*.sh tests/run.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	adsr
