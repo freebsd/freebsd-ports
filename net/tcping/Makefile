@@ -3,28 +3,25 @@
 
 PORTNAME=	tcping
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.linuxco.de/tcping/ \
-		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITES=	LOCAL/ehaupt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Do a TCP connect to the given IP/port combination
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		unfetchable
-DEPRECATED=	Unfetchable, unmaintained
-EXPIRATION_DATE=	2019-10-16
+OPTIONS_DEFINE=	DOCS
+
+CFLAGS+=	-DHAVE_HSTRERROR
 
 PLIST_FILES=	bin/tcping
 PORTDOCS=	README
 
-OPTIONS_DEFINE=	DOCS
-
 do-build:
-	cd ${WRKSRC} && \
-	${CC} ${CFLAGS} -DHAVE_HSTRERROR -o tcping tcping.c
+	${CC} ${CFLAGS} -o ${WRKSRC}/tcping ${WRKSRC}/tcping.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcping ${STAGEDIR}${PREFIX}/bin

@@ -1,10 +1,8 @@
-tcping does a TCP connect to the given ip/port combination.
-The user can specify a timeout in seconds.
-This is useful in shell scripts running in firewalled environments.
-Often SYNs are just being dropped by firewalls,
-thus connection establishment will be retried several times
-(for minutes) until a TCP timeout is reached.
-With tcping it is possible to check first if the desired port
-is reachable and then start connection establishment.
+tcping does a TCP connect to the given ip/port combination. The user can specify
+a timeout in seconds. This is useful in shell scripts running in firewalled
+environments. Often SYNs are just being dropped by firewalls, thus connection
+establishment will be retried several times (for minutes) until a TCP timeout is
+reached. With tcping it is possible to check first if the desired port is
+reachable and then start connection establishment.
 
-WWW: http://www.linuxco.de/tcping/tcping.html
+WWW: https://github.com/mkirchner/tcping
