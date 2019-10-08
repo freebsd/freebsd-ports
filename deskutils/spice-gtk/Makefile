@@ -11,9 +11,6 @@ COMMENT=	Gtk client and libraries for SPICE remote desktop servers
 
 LICENSE=	GPLv2
 
-NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe sparc64
-NOT_FOR_ARCHS_REASON=	server only supports little-endian
-
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libjson-glib-1.0.so:devel/json-glib \
 		libopus.so:audio/opus \
