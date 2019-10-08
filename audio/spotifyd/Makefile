@@ -2,7 +2,7 @@
 
 PORTNAME=	spotifyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.18
+DISTVERSION=	0.2.19
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -29,7 +29,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		aes-ctr-0.3.0 \
 		aes-soft-0.3.3 \
 		aesni-0.6.0 \
-		aho-corasick-0.6.10 \
 		aho-corasick-0.7.6 \
 		alsa-0.2.2 \
 		alsa-sys-0.1.2 \
@@ -42,7 +41,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		backtrace-0.3.38 \
 		backtrace-sys-0.1.31 \
 		base64-0.10.1 \
-		base64-0.6.0 \
 		base64-0.9.3 \
 		bit-set-0.5.1 \
 		bit-vec-0.5.1 \
@@ -81,22 +79,22 @@ CARGO_CRATES=	adler32-1.0.4 \
 		crypto-mac-0.7.0 \
 		ctr-0.3.2 \
 		daemonize-0.4.1 \
+		darling-0.9.0 \
+		darling_core-0.9.0 \
+		darling_macro-0.9.0 \
 		dbus-0.2.3 \
 		dbus-0.6.5 \
 		dbus-tokio-0.2.1 \
-		derive-error-chain-0.10.1 \
-		derive_builder-0.5.1 \
-		derive_builder_core-0.2.0 \
+		derive_builder-0.7.2 \
+		derive_builder_core-0.5.0 \
 		digest-0.8.1 \
 		dirs-2.0.2 \
 		dirs-sys-0.3.4 \
-		dotenv-0.10.1 \
+		dotenv-0.13.0 \
 		dtoa-0.4.4 \
 		either-1.5.3 \
 		encoding_rs-0.8.20 \
-		env_logger-0.5.13 \
 		env_logger-0.6.2 \
-		error-chain-0.10.0 \
 		error-chain-0.11.0 \
 		error-chain-0.12.1 \
 		extprim-1.7.0 \
@@ -123,6 +121,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		h2-0.1.26 \
 		heck-0.3.1 \
 		hex-0.3.2 \
+		hex-0.4.0 \
 		hkdf-0.7.1 \
 		hmac-0.7.1 \
 		http-0.1.18 \
@@ -133,11 +132,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		hyper-0.12.35 \
 		hyper-proxy-0.4.1 \
 		hyper-tls-0.3.2 \
+		ident_case-1.0.1 \
 		idna-0.1.5 \
 		idna-0.2.0 \
 		indexmap-1.2.0 \
 		iovec-0.1.2 \
-		itertools-0.7.11 \
+		itertools-0.8.0 \
 		itoa-0.4.4 \
 		kernel32-sys-0.2.2 \
 		keyring-0.7.1 \
@@ -201,7 +201,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		publicsuffix-1.5.3 \
 		pulldown-cmark-0.2.0 \
 		quick-error-1.2.2 \
-		quote-0.3.15 \
 		quote-0.6.13 \
 		quote-1.0.2 \
 		rand-0.3.23 \
@@ -225,22 +224,19 @@ CARGO_CRATES=	adler32-1.0.4 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
 		redox_users-0.3.1 \
-		regex-0.2.11 \
 		regex-1.3.1 \
-		regex-syntax-0.5.6 \
 		regex-syntax-0.6.12 \
 		relay-0.1.1 \
 		remove_dir_all-0.5.2 \
-		reqwest-0.9.20 \
+		reqwest-0.9.17 \
 		result-1.0.0 \
 		rpassword-3.0.2 \
-		rspotify-0.2.5 \
+		rspotify-0.6.0 \
 		rust-argon2-0.5.1 \
 		rustc-demangle-0.1.16 \
 		rustc-serialize-0.3.24 \
 		rustc_version-0.2.3 \
 		ryu-1.0.0 \
-		safemem-0.2.0 \
 		safemem-0.3.2 \
 		same-file-1.0.5 \
 		schannel-0.1.16 \
@@ -273,12 +269,11 @@ CARGO_CRATES=	adler32-1.0.4 \
 		stable_deref_trait-1.1.1 \
 		stream-cipher-0.3.2 \
 		string-0.2.1 \
+		strsim-0.7.0 \
 		strsim-0.8.0 \
 		subtle-1.0.0 \
-		syn-0.11.11 \
 		syn-0.15.44 \
 		syn-1.0.5 \
-		synom-0.11.3 \
 		synstructure-0.10.2 \
 		syslog-4.0.1 \
 		take-0.1.0 \
@@ -313,18 +308,15 @@ CARGO_CRATES=	adler32-1.0.4 \
 		try-lock-0.2.2 \
 		try_from-0.3.2 \
 		typenum-1.11.2 \
-		ucd-util-0.1.5 \
 		unicase-2.5.1 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.8 \
 		unicode-segmentation-1.3.0 \
 		unicode-width-0.1.6 \
-		unicode-xid-0.0.4 \
 		unicode-xid-0.1.0 \
 		unicode-xid-0.2.0 \
 		url-1.7.2 \
 		url-2.1.0 \
-		utf8-ranges-1.0.4 \
 		uuid-0.7.4 \
 		vcpkg-0.2.7 \
 		vec_map-0.8.1 \
@@ -335,8 +327,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		want-0.0.4 \
 		want-0.2.0 \
 		wasi-0.7.0 \
-		webbrowser-0.2.2 \
+		webbrowser-0.5.2 \
 		whoami-0.5.3 \
+		widestring-0.4.0 \
 		winapi-0.2.8 \
 		winapi-0.3.8 \
 		winapi-build-0.1.1 \
@@ -344,7 +337,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		winapi-util-0.1.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		wincolor-1.0.2 \
-		winreg-0.6.2 \
 		ws2_32-sys-0.2.1 \
 		xdg-2.2.0
 CARGO_USE_GITHUB=	yes
