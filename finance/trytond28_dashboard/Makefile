@@ -6,7 +6,7 @@ PORTVERSION=	2.8.0
 PORTREVISION=	3
 CATEGORIES=	finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_dashboard/ \
-		http://downloads.tryton.org/${PORTVERSION:R}/
+		http://downloads-cdn.tryton.org/${PORTVERSION:R}/
 DISTNAME=	trytond_dashboard-${PORTVERSION}
 
 MAINTAINER=	matthias@petermann-it.de

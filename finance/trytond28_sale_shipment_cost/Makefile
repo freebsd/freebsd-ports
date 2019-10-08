@@ -6,7 +6,7 @@ PORTVERSION=	2.8.0
 PORTREVISION=	3
 CATEGORIES=	finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_sale_shipment_cost/ \
-		http://downloads.tryton.org/${PORTVERSION:R}/
+		http://downloads-cdn.tryton.org/${PORTVERSION:R}/
 DISTNAME=	trytond_sale_shipment_cost-${PORTVERSION}
 
 MAINTAINER=	matthias@petermann-it.de

@@ -6,7 +6,7 @@ PORTVERSION=	2.8.12
 PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	CHEESESHOP \
-		http://downloads.tryton.org/2.8/
+		http://downloads-cdn.tryton.org/2.8/
 PKGNAMESUFFIX=	28
 
 MAINTAINER=	matthias@petermann-it.de
