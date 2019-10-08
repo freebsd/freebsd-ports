@@ -3,7 +3,8 @@
 
 PORTNAME=	screenFetch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.9.0
+DISTVERSION=	3.9.0-2
+DISTVERSIONSUFFIX=	-g44b7f3b
 CATEGORIES=	sysutils
 
 MAINTAINER=	jgh@FreeBSD.org
@@ -27,10 +28,6 @@ GH_ACCOUNT=	KittyKatt
 
 PLIST_FILES=	bin/screenFetch bin/screenfetch man/man1/screenfetch.1.gz
 PORTDOCS=	CHANGELOG README.mkdn TODO
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|3.8.0|${DISTVERSION}|' ${WRKSRC}/screenfetch-dev \
-		${WRKSRC}/screenfetch.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME:tl}-dev ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
