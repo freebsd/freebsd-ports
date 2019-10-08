@@ -2,7 +2,7 @@
 
 PORTNAME=	go14
 PORTVERSION=	1.4.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	https://dl.google.com/go/
 DISTNAME=	go1.4-bootstrap-20171003
@@ -50,12 +50,18 @@ do-build:
 		GO386=387 \
 		CGO_ENABLED=0 \
 		${SH} make.bash
-	${RM} ${WRKSRC}/.[a-z]* ${WRKSRC}/favicon.ico ${WRKSRC}/robots.txt
-	${RM} -r ${WRKSRC}/lib/codereview ${WRKSRC}/misc \
-		${WRKSRC}/pkg/obj ${WRKSRC}/pkg/${OPSYS:tl}_${GOARCH}/cmd
 
 do-install:
-	@${CP} -a ${WRKSRC} ${STAGEDIR}${PREFIX}/go14
+	@${MKDIR} ${STAGEDIR}${PREFIX}/go14
+	( cd ${WRKSRC} ; \
+		${COPYTREE_BIN} "bin pkg/tool" ${STAGEDIR}${PREFIX}/go14 ; \
+		${RM} -r pkg/${OPSYS:tl}_${GOARCH}/cmd ; \
+		${COPYTREE_SHARE} " \
+			[A-Z]* \
+			include \
+			pkg/${OPSYS:tl}_${GOARCH} \
+			src" \
+		${STAGEDIR}${PREFIX}/go14 )
 
 do-test:
 	cd ${WRKSRC}/src && GOROOT=${WRKSRC} PATH=${WRKSRC}/bin:${PATH} ${SH} run.bash --no-rebuild --banner
