@@ -1,8 +1,8 @@
-TIMESTAMP = 1569515235
+TIMESTAMP = 1570366964
 SHA256 (ppsspp.1) = 64a7cca4c3a5fc6ad5b63399edef9056b0c85ea68fed00fb7e97f4b2724e503b
 SIZE (ppsspp.1) = 1598
-SHA256 (hrydgard-ppsspp-v1.9.2_GH0.tar.gz) = f63df24d866576c19d9d666850d216a235e7ce24e880a984f201fc1275513670
-SIZE (hrydgard-ppsspp-v1.9.2_GH0.tar.gz) = 17005456
+SHA256 (hrydgard-ppsspp-v1.9.3_GH0.tar.gz) = f38e6a17977da1da2f55041fe33e8b216f6f3beb19bfe95d05d3915e174f5d26
+SIZE (hrydgard-ppsspp-v1.9.3_GH0.tar.gz) = 17005390
 SHA256 (hrydgard-glslang-7.11.3214-63-gf9d08a25_GH0.tar.gz) = baf58cbd5a8614d2b0a446893fa201e7ccdb31e43322f55e1ad1dac7861a0893
 SIZE (hrydgard-glslang-7.11.3214-63-gf9d08a25_GH0.tar.gz) = 2947747
 SHA256 (hrydgard-ppsspp-lang-bfc3a51_GH0.tar.gz) = 1c57ade5c3f44a07f7fc128258a6c3e40edf8426d90149e9d0a1a3d4380ff490
