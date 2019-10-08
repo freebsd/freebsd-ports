@@ -4,7 +4,7 @@
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freebsd@grem.de
+MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Ice (Internet Communications Engine) language mapping for Python
 
 LICENSE=	GPLv2

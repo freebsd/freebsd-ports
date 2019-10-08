@@ -8,7 +8,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	freebsd@grem.de
+MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	FreeBSD RC script for starting bhyve guests in tmux
 
 RUN_DEPENDS=	tmux:sysutils/tmux
