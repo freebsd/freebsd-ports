@@ -12,10 +12,10 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2019-08-29T00-25-01Z
-COMMIT_ID=	eb18c82976251d9a0c0730df27e10204c89beae2
+GHTAG=		RELEASE.2019-10-02T21-19-38Z
+COMMIT_ID=	90bfa6260a8ac83199d522ed4c8fe1097dbd5153
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
-		Azure:azure-sdk-for-go:v27.0.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
+		Azure:azure-sdk-for-go:v33.4.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:go-autorest:v11.7.0:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		DataDog:zstd:v1.4.0:datadog_zstd/vendor/github.com/DataDog/zstd \
 		Shopify:sarama:v1.20.0:shopify_sarama/vendor/gopkg.in/Shopify/sarama.v1 \
@@ -42,18 +42,20 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		elazarl:go-bindata-assetfs:v1.0.0:elazarl_go_bindata_assetfs/vendor/github.com/elazarl/go-bindata-assetfs \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		fatih:structs:v1.1.0:fatih_structs/vendor/github.com/fatih/structs \
-		go-ini:ini:v1.42.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-asn1-ber:asn1-ber:f715ec2f112d:go_asn1_ber_asn1_ber/vendor/gopkg.in/asn1-ber.v1 \
+		go-ini:ini:v1.48.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-ldap:ldap:v3.0.3:go_ldap_ldap/vendor/gopkg.in/ldap.v3 \
 		go-sql-driver:mysql:v1.4.1:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:60c769a6c586:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:74dc4d7220e7:golang_net/vendor/golang.org/x/net \
+		golang:crypto:9ee001bba392:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:aa69164e4478:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:e64efc72b421:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:fde4db37ae7a:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:0a153f010e69:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
 		gomodule:redigo:v2.0.0:gomodule_redigo/vendor/github.com/gomodule/redigo \
@@ -83,16 +85,16 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		jcmturner:goidentity:v3.0.0:jcmturner_goidentity/vendor/gopkg.in/jcmturner/goidentity.v3 \
 		jcmturner:rpc:v1.1.0:jcmturner_rpc/vendor/gopkg.in/jcmturner/rpc.v1 \
 		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
-		klauspost:compress:v1.5.0:klauspost_compress/vendor/github.com/klauspost/compress \
+		json-iterator:go:v1.1.7:json_iterator_go/vendor/github.com/json-iterator/go \
+		klauspost:compress:v1.8.3:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.2.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		klauspost:pgzip:v1.2.1:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
 		klauspost:readahead:v1.3.0:klauspost_readahead/vendor/github.com/klauspost/readahead \
-		klauspost:reedsolomon:v1.9.1:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
+		klauspost:reedsolomon:v1.9.3:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
 		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kurin:blazer:cf2f27cc0be3:kurin_blazer/vendor/github.com/kurin/blazer \
 		lib:pq:v1.0.0:lib_pq/vendor/github.com/lib/pq \
 		mailru:easyjson:03f2033d19d5:mailru_easyjson/vendor/github.com/mailru/easyjson \
-		marstr:guid:v1.1.0:marstr_guid/vendor/github.com/marstr/guid \
 		mattn:go-colorable:v0.1.1:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.7:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
@@ -104,14 +106,16 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:hdfs:v3.0.1:minio_hdfs/vendor/github.com/minio/hdfs/v3 \
 		minio:highwayhash:v1.0.0:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:lsync:v1.0.1:minio_lsync/vendor/github.com/minio/lsync \
-		minio:mc:f4bb0b8850cb:minio_mc/vendor/github.com/minio/mc \
+		minio:mc:643835013047:minio_mc/vendor/github.com/minio/mc \
 		minio:minio-go:5325257a208f:minio_minio_go/vendor/github.com/minio/minio-go \
-		minio:minio-go:v6.0.29:dup_minio_go/vendor/github.com/minio/minio-go/v6 \
+		minio:minio-go:v6.0.38:dup_minio_go/vendor/github.com/minio/minio-go/v6 \
 		minio:parquet-go:9d767baf1679:minio_parquet_go/vendor/github.com/minio/parquet-go \
-		minio:sha256-simd:v0.1.0:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
+		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:sio:v0.2.0:minio_sio/vendor/github.com/minio/sio \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
+		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
+		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		nats-io:nats.go:v1.8.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.0.2:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
@@ -137,9 +141,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		tidwall:gjson:v1.2.1:tidwall_gjson/vendor/github.com/tidwall/gjson \
 		tidwall:match:v1.0.1:tidwall_match/vendor/github.com/tidwall/match \
 		tidwall:pretty:v1.0.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
-		tidwall:sjson:v1.0.4:tidwall_sjson/vendor/github.com/tidwall/sjson \
 		uber-go:atomic:v1.3.2:uber_go_atomic/vendor/go.uber.org/atomic \
-		valyala:fastjson:v1.4.1:valyala_fastjson/vendor/github.com/valyala/fastjson \
 		valyala:tcplisten:ceec8f93295a:valyala_tcplisten/vendor/github.com/valyala/tcplisten
 
 GO_BUILDFLAGS=	-ldflags='\
