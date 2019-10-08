@@ -58,9 +58,11 @@ LD_FLAG_STRING=		-s \
 		${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER}
 
 GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
+# A tsdb binary already exists in databases/opentsdb. Rename ours to
+# avoid issues.
 GO_TARGET=	./cmd/prometheus \
 		./cmd/promtool \
-		./tsdb/cmd/tsdb
+		./tsdb/cmd/tsdb:promtsdb
 
 post-install:
 	${INSTALL_DATA} \
@@ -76,9 +78,6 @@ post-install:
 	( cd ${WRKSRC}/consoles \
 		&& ${COPYTREE_SHARE} . ${STAGEDIR}${PROMETHEUS_CONSOLES_DIR} \
 	)
-	# A tsdb binary already exists in databases/opentsdb. Rename ours to
-	# avoid issues.
-	mv ${STAGEDIR}${LOCALBASE}/bin/tsdb ${STAGEDIR}${LOCALBASE}/bin/promtsdb
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
