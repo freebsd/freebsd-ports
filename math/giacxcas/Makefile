@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	giacxcas
-DISTVERSION=	1.5.0-63
-PORTREVISION=	1
+DISTVERSION=	1.5.0-67
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/
@@ -34,7 +33,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 NO_CDROM=	French documentation is for non-commercial use only
 
 USES=		blaslapack desktop-file-utils fortran gettext gl gmake gnome jpeg \
-		libtool ncurses readline shebangfix
+		libtool ncurses readline shebangfix xorg
 GNU_CONFIGURE=	yes
 USE_GL=		gl
 USE_XORG=	x11 xcursor xext xft xi xinerama
