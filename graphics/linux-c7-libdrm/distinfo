@@ -1,7 +1,13 @@
-TIMESTAMP = 1568997321
+TIMESTAMP = 1570552285
 SHA256 (centos/libdrm-2.4.91-3.el7.i686.rpm) = 514827c02a7d799d7b822bcf322c7c7d434a741275e12be7b80179e01789e661
 SIZE (centos/libdrm-2.4.91-3.el7.i686.rpm) = 161956
 SHA256 (centos/libdrm-2.4.91-3.el7.x86_64.rpm) = 4d15a04fe2bdeef64f5dca7a8515d990f3cc9d36f1c5d0352ebe37b784cb4ac5
 SIZE (centos/libdrm-2.4.91-3.el7.x86_64.rpm) = 156840
 SHA256 (centos/libdrm-2.4.91-3.el7.src.rpm) = 5b31a48278520e490a8ec67e061884b1517f4a469b096d87720cee4ca261449a
 SIZE (centos/libdrm-2.4.91-3.el7.src.rpm) = 837026
+SHA256 (centos/libdrm-2.4.97-2.el7.i686.rpm) = c27b6c6faed19a4067ed9b5a730d56d001e7d4f5cec2065ef36ca7a583673a3e
+SIZE (centos/libdrm-2.4.97-2.el7.i686.rpm) = 159500
+SHA256 (centos/libdrm-2.4.97-2.el7.x86_64.rpm) = cc11c6badf5727a5d0d3153df66de9a7f9a5957540beb085dc1915a231adbe7f
+SIZE (centos/libdrm-2.4.97-2.el7.x86_64.rpm) = 154672
+SHA256 (centos/libdrm-2.4.97-2.el7.src.rpm) = a0dc7e39ccae9d9cfd288084813e9173d741ab5eb68825fbcc45b588dbbdddce
+SIZE (centos/libdrm-2.4.97-2.el7.src.rpm) = 857411
