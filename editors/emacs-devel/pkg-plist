@@ -701,6 +701,9 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/images/splash.png
 %%DATADIR%%/%%EMACS_VER%%/etc/images/splash.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/splash.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/README
+%%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/close.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/new.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/close.png
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/close.xpm
@@ -2156,8 +2159,12 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/image.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/image/compface.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/image/compface.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/exif.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/exif.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/image/gravatar.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/image/gravatar.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-converter.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/image/image-converter.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/imenu.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/imenu.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/indent.el.gz
@@ -2953,6 +2960,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-extras.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-mapper.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-mapper.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/url-ns.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/url-ns.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-arch.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-arch.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vi.el.gz
@@ -3528,6 +3537,10 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/svg.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/t-mouse.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/t-mouse.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/tab-bar.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/tab-bar.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/tab-line.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/tab-line.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tabify.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/tabify.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/talk.el.gz
@@ -3756,8 +3769,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-news.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-nfs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-nfs.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/url/url-ns.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/url/url-ns.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-parse.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-parse.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-privacy.el.gz
