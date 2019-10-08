@@ -76,6 +76,10 @@ include/graphviz/usershape.h
 include/graphviz/vis.h
 include/graphviz/vispath.h
 include/graphviz/xdot.h
+%%GO%%lib/graphviz/go/gv.go
+%%GO%%lib/graphviz/go/libgv_go.la
+%%GO%%lib/graphviz/go/libgv_go.so
+%%GO%%lib/graphviz/go/runtime.h
 %%GUILE%%lib/graphviz/guile/libgv_guile.la
 %%GUILE%%lib/graphviz/guile/libgv_guile.so
 lib/graphviz/libgvplugin_core.la
@@ -275,6 +279,7 @@ man/man3/cdt.3.gz
 man/man3/cgraph.3.gz
 man/man3/expr.3.gz
 %%TCL%%man/man3/gdtclft.3tcl.gz
+%%GO%%man/man3/gv.3go.gz
 %%GUILE%%man/man3/gv.3guile.gz
 %%LUA%%man/man3/gv.3lua.gz
 %%PERL%%man/man3/gv.3perl.gz
@@ -504,6 +509,7 @@ man/man7/graphviz.7.gz
 %%TCL%%%%PORTDOCS%%%%DOCSDIR%%/pdf/gdtclft.3tcl.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gml2gv.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/graphml2gv.1.pdf
+%%GO%%%%PORTDOCS%%%%DOCSDIR%%/pdf/gv.3go.pdf
 %%GUILE%%%%PORTDOCS%%%%DOCSDIR%%/pdf/gv.3guile.pdf
 %%LUA%%%%PORTDOCS%%%%DOCSDIR%%/pdf/gv.3lua.pdf
 %%PERL%%%%PORTDOCS%%%%DOCSDIR%%/pdf/gv.3perl.pdf
