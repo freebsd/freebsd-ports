@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysctlview
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	alfix86@gmail.com
@@ -20,7 +20,7 @@ USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glib20 glibmm glibmm \
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
-GL_COMMIT=	cdfd6669591497d9178ef3cca99ceb5b9bd9e670
+GL_COMMIT=	abc8074a3d8eb37c98cba38beb1c541a6d9dad26
 
 INSTALLS_ICONS=	yes
 
@@ -40,7 +40,7 @@ NLS_CONFIGURE_ENABLE=	nls
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200019
-IGNORE=		needs oid_label constant in sysctl.h which was first introduced in FreeBSD 12
+IGNORE=		needs oid_label member of struct sysctl_oid defined in sysctl.h which was first introduced in FreeBSD 12
 .endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD
