@@ -6,7 +6,7 @@ PORTVERSION=	2.8.1
 PORTREVISION=	3
 CATEGORIES=	finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_account_stock_continental/ \
-		http://downloads.tryton.org/${PORTVERSION:R}/
+		http://downloads-cdn.tryton.org/${PORTVERSION:R}/
 DISTNAME=	trytond_account_stock_continental-${PORTVERSION}
 
 MAINTAINER=	matthias@petermann-it.de

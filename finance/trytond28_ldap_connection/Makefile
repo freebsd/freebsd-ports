@@ -6,7 +6,7 @@ PORTVERSION=	2.8.0
 PORTREVISION=	4
 CATEGORIES=	finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_ldap_connection/ \
-		http://downloads.tryton.org/${PORTVERSION:R}/
+		http://downloads-cdn.tryton.org/${PORTVERSION:R}/
 DISTNAME=	trytond_ldap_connection-${PORTVERSION}
 
 MAINTAINER=	matthias@petermann.it

@@ -6,7 +6,7 @@ PORTVERSION=	2.8.0
 PORTREVISION=	3
 CATEGORIES=	finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_stock_supply_forecast/ \
-		http://downloads.tryton.org/${PORTVERSION:R}/
+		http://downloads-cdn.tryton.org/${PORTVERSION:R}/
 DISTNAME=	trytond_stock_supply_forecast-${PORTVERSION}
 
 MAINTAINER=	matthias@petermann-it.de

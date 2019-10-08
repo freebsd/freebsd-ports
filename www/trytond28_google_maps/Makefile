@@ -6,7 +6,7 @@ PORTVERSION=	2.8.0
 PORTREVISION=	3
 CATEGORIES=	www finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_google_maps/ \
-		http://downloads.tryton.org/${PORTVERSION:R}/
+		http://downloads-cdn.tryton.org/${PORTVERSION:R}/
 DISTNAME=	trytond_google_maps-${PORTVERSION}
 
 MAINTAINER=	matthias@petermann-it.de
