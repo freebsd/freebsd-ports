@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysctlinfo-kmod
-DISTVERSION=	20190907
+DISTVERSION=	20191005
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
@@ -14,7 +14,7 @@ USES=		kmod
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
 GL_PROJECT=	sysctlinfo
-GL_COMMIT=	1f1b05e3432ccada8c38cfb5f1987dfceb75524b
+GL_COMMIT=	12c8b65d339becbc563d85bd2c81714b6b9226a6
 
 PLIST_FILES=	${KMODDIR}/sysctlinfo.ko \
 		include/sysctlinfo.h \
@@ -35,7 +35,7 @@ OPTIONS_DEFAULT=	EXAMPLES
 # Once the sysctlinfo interface (review D21700) lands into the base tree the
 # following statement needs to be expanded
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200019
-IGNORE=		needs oid_label constant in sysctl.h which was first introduced in FreeBSD 12
+IGNORE=		needs oid_label member of struct sysctl_oid defined in sysctl.h which was first introduced in FreeBSD 12
 .endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD
