@@ -2,9 +2,9 @@
 
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.9.5
+DISTVERSION=	3.10.2
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/3.9/
+MASTER_SITES=	https://packages.wazuh.com/deps/3.10/
 PKGNAMESUFFIX=	-agent
 DISTFILES=	cJSON.tar.gz src_cpython.tar.gz curl.tar.gz libdb.tar.gz libffi.tar.gz \
 		libyaml.tar.gz openssl.tar.gz procps.tar.gz sqlite.tar.gz  zlib.tar.gz \
@@ -17,9 +17,6 @@ COMMENT=	Security tool to monitor and check logs and intrusions
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BUILD_DEPENDS=	curl:ftp/curl
-RUN_DEPENDS=	curl:ftp/curl
 
 USES=		gmake perl5 readline shebangfix uidfix
 
