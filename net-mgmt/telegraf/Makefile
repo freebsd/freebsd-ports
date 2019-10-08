@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.12.1
-PORTREVISION=	1
+DISTVERSION=	1.12.3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -23,13 +22,12 @@ GH_ACCOUNT=	influxdata
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT_DEFAULT}
 GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com/go \
 		cloudfoundry:clock:02e53af:clock/vendor/code.cloudfoundry.org/clock \
-		collectd:go-collectd:v0.3.0:collectd_org/vendor/collectd.org \
+		collectd:go-collectd:v0.3.0:collectd0org/vendor/collectd.org \
 		census-ecosystem:opencensus-go-exporter-stackdriver:v0.6.0:census_ecosystem/vendor/contrib.go.opencensus.io/exporter/stackdriver \
-		cisco-ie:nx-telemetry-proto:82441e2:nx_telemetry_proto/vendor/github.com/cisco-ie/nx-telemetry-proto \
 		Azure:go-autorest:v10.12.0:go_autorest/vendor/github.com/Azure/go-autorest \
 		Microsoft:ApplicationInsights-Go:d2df5d4:application_insights/vendor/github.com/Microsoft/ApplicationInsights-Go \
 		Microsoft:go-winio:v0.4.9:go_winio/vendor/github.com/Microsoft/go-winio \
-		influxdata:sarama:b12709e:sarama/vendor/github.com/Shopify/sarama \
+		Shopify:sarama:b12709e:sarama/vendor/github.com/Shopify/sarama \
 		StackExchange:wmi:1.0.0:wmi/vendor/github.com/StackExchange/wmi \
 		aerospike:aerospike-client-go:v1.27.0:aerospike_client_go/vendor/github.com/aerospike/aerospike-client-go \
 		alecthomas:units:2efee85:units/vendor/github.com/alecthomas/units \
@@ -39,6 +37,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		beorn7:perks:3a771d9:perks/vendor/github.com/beorn7/perks \
 		caio:go-tdigest:v2.3.0:go_tdigest/vendor/github.com/caio/go-tdigest \
 		cenkalti:backoff:v2.0.0:backoff/vendor/github.com/cenkalti/backoff \
+		cisco-ie:nx-telemetry-proto:82441e2:nx_telemetry_proto/vendor/github.com/cisco-ie/nx-telemetry-proto \
 		couchbase:go-couchbase:16db1f1:go_couchbase/vendor/github.com/couchbase/go-couchbase \
 		couchbase:gomemcached:0da75df:gomemcached/vendor/github.com/couchbase/gomemcached \
 		couchbase:goutils:e865a14:goutils/vendor/github.com/couchbase/goutils \
@@ -54,9 +53,10 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		eapache:go-resiliency:v1.1.0:go_resiliency/vendor/github.com/eapache/go-resiliency \
 		eapache:go-xerial-snappy:040cc1a:go_xerial_snappy/vendor/github.com/eapache/go-xerial-snappy \
 		eapache:queue:v1.1.0:queue/vendor/github.com/eapache/queue \
-		eclipse:paho.mqtt.golang:v1.1.1:paho_mqtt_golang/vendor/github.com/eclipse/paho.mqtt.golang \
+		eclipse:paho.mqtt.golang:v1.2.0:paho0mqtt0golang/vendor/github.com/eclipse/paho.mqtt.golang \
 		ericchiang:k8s:v1.2.0:k8s/vendor/github.com/ericchiang/k8s \
 		ghodss:yaml:25d852a:yaml/vendor/github.com/ghodss/yaml \
+		glinton:ping:v0.1.1:ping/vendor/github.com/glinton/ping \
 		go-logfmt:logfmt:v0.4.0:go_logfmt/vendor/github.com/go-logfmt/logfmt \
 		go-ole:go-ole:v1.2.1:go_ole/vendor/github.com/go-ole/go-ole \
 		go-redis:redis:v6.12.0:redis/vendor/github.com/go-redis/redis \
@@ -65,8 +65,8 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		gogo:protobuf:v1.1.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:protobuf:v1.1.0:protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:2e65f85:snappy/vendor/github.com/golang/snappy \
-		google:go-github:v24.0.1:go_github/vendor/github.com/google/go-github \
 		google:go-cmp:v0.2.0:go_cmp/vendor/github.com/google/go-cmp \
+		google:go-github:v24.0.1:go_github/vendor/github.com/google/go-github \
 		google:go-querystring:v1.0.0:go_querystring/vendor/github.com/google/go-querystring \
 		google:uuid:0.2:uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.0:gax_go/vendor/github.com/googleapis/gax-go \
@@ -77,19 +77,15 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		hashicorp:consul:v1.2.1:consul/vendor/github.com/hashicorp/consul \
 		hashicorp:go-cleanhttp:d5fe4b5:go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
 		hashicorp:go-rootcerts:6bb64b3:go_rootcerts/vendor/github.com/hashicorp/go-rootcerts \
-		hashicorp:go-uuid:v1.0.1:gouuid/vendor/github.com/hashicorp/go-uuid \
+		hashicorp:go-uuid:v1.0.1:go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:serf:v0.8.1:serf/vendor/github.com/hashicorp/serf \
 		influxdata:go-syslog:v2.0.0:go_syslog/vendor/github.com/influxdata/go-syslog \
 		influxdata:tail:c434825:tail/vendor/github.com/influxdata/tail \
 		influxdata:toml:270119a:toml/vendor/github.com/influxdata/toml \
 		influxdata:wlog:7c63b0a:wlog/vendor/github.com/influxdata/wlog \
-		jackc:pgx:v3.2.0:pgx/vendor/github.com/jackc/pgx \
-		jcmturner:aescts:v1.0.1:aescts/vendor/gopkg.in/jcmturner/aescts.v1 \
-		jcmturner:dnsutils:v1.0.1:dnsutils/vendor/gopkg.in/jcmturner/dnsutils.v1 \
+		jackc:pgx:v3.4.0:pgx/vendor/github.com/jackc/pgx \
 		jcmturner:gofork:v1.0.0:gofork/vendor/github.com/jcmturner/gofork \
-		jcmturner:gokrb5:v7.3.0:gokrb5/vendor/gopkg.in/jcmturner/gokrb5.v7 \
-		jcmturner:rpc:v1.1.0:rpc/vendor/gopkg.in/jcmturner/rpc.v1 \
-		jmespath:go-jmespath:c2b33e84:go_jmespath/vendor/github.com/jmespath/go-jmespath \
+		jmespath:go-jmespath:c2b33e8:go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		kardianos:osext:ae77be6:osext/vendor/github.com/kardianos/osext \
 		kardianos:service:615a14e:service/vendor/github.com/kardianos/service \
 		karrick:godirwalk:v1.7.5:godirwalk/vendor/github.com/karrick/godirwalk \
@@ -99,7 +95,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		leodido:ragel-machinery:299bdde:ragel_machinery/vendor/github.com/leodido/ragel-machinery \
 		mailru:easyjson:efc7eb8:easyjson/vendor/github.com/mailru/easyjson \
 		matttproud:golang_protobuf_extensions:v1.0.1:golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
-		mdlayher:apcupsd:2fe55d9:apcupsd/vendor/github.com/mdlayher/apcupsd \
+		mdlayher:apcupsd:eb3dd99:apcupsd/vendor/github.com/mdlayher/apcupsd \
 		miekg:dns:v1.0.8:dns/vendor/github.com/miekg/dns \
 		mitchellh:go-homedir:3864e76:go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:f15292f:mapstructure/vendor/github.com/mitchellh/mapstructure \
@@ -115,7 +111,6 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		opentracing-contrib:go-observer:a52f234:go_observer/vendor/github.com/opentracing-contrib/go-observer \
 		opentracing:opentracing-go:v1.0.2:opentracing_go/vendor/github.com/opentracing/opentracing-go \
 		openzipkin:zipkin-go-opentracing:v0.3.4:zipkin_go_opentracing/vendor/github.com/openzipkin/zipkin-go-opentracing \
-		glinton:ping:v0.1.1:ping/vendor/github.com/glinton/ping \
 		pierrec:lz4:v2.0.3:lz4/vendor/github.com/pierrec/lz4 \
 		pkg:errors:v0.8.0:errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:go_difflib/vendor/github.com/pmezard/go-difflib \
@@ -125,8 +120,8 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		prometheus:procfs:ae68e2d:procfs/vendor/github.com/prometheus/procfs \
 		rcrowley:go-metrics:e2704e1:go_metrics/vendor/github.com/rcrowley/go-metrics \
 		samuel:go-zookeeper:c4fab1a:go_zookeeper/vendor/github.com/samuel/go-zookeeper \
-		satori:go.uuid:v1.2.0:go_uuid/vendor/github.com/satori/go.uuid \
-		shirou:gopsutil:v2.19.7:gopsutil/vendor/github.com/shirou/gopsutil \
+		satori:go.uuid:v1.2.0:go0uuid/vendor/github.com/satori/go.uuid \
+		shirou:gopsutil:ccd53e2:gopsutil/vendor/github.com/shirou/gopsutil \
 		shirou:w32:bb4de01:w32/vendor/github.com/shirou/w32 \
 		sirupsen:logrus:v1.0.5:logrus/vendor/github.com/sirupsen/logrus \
 		soniah:gosnmp:96b8622:gosnmp/vendor/github.com/soniah/gosnmp \
@@ -155,16 +150,20 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		golang:appengine:v1.1.0:appengine/vendor/google.golang.org/appengine \
 		google:go-genproto:fedd286:genproto/vendor/google.golang.org/genproto \
 		grpc:grpc-go:v1.13.0:grpc/vendor/google.golang.org/grpc \
-		go-asn1-ber:asn1-ber:v1.2:asn1_ber_v1/vendor/gopkg.in/asn1-ber.v1 \
-		fatih:pool:v2.0.0:pool_v2/vendor/gopkg.in/fatih/pool.v2 \
-		fsnotify:fsnotify:v1.4.7:fsnotify_v1/vendor/gopkg.in/fsnotify.v1 \
-		rethinkdb:rethinkdb-go:v3.0.5:gorethink_v3/vendor/gopkg.in/gorethink/gorethink.v3 \
-		go-inf:inf:v0.9.1:inf_v0/vendor/gopkg.in/inf.v0 \
-		go-ldap:ldap:v2.5.1:ldap_v2/vendor/gopkg.in/ldap.v2 \
-		go-mgo:mgo:9856a29:mgo_v2/vendor/gopkg.in/mgo.v2 \
-		olivere:elastic:v5.0.70:elastic_v5/vendor/gopkg.in/olivere/elastic.v5 \
-		go-tomb:tomb:dd63297:tomb_v1/vendor/gopkg.in/tomb.v1 \
-		go-yaml:yaml:v2.2.1:yaml_v2/vendor/gopkg.in/yaml.v2
+		go-asn1-ber:asn1-ber:v1.2:asn1_ber0v1/vendor/gopkg.in/asn1-ber.v1 \
+		fatih:pool:v2.0.0:pool0v2/vendor/gopkg.in/fatih/pool.v2 \
+		fsnotify:fsnotify:v1.4.7:fsnotify0v1/vendor/gopkg.in/fsnotify.v1 \
+		rethinkdb:rethinkdb-go:v3.0.5:gorethink0v3/vendor/gopkg.in/gorethink/gorethink.v3 \
+		go-inf:inf:v0.9.1:inf0v0/vendor/gopkg.in/inf.v0 \
+		jcmturner:aescts:v1.0.1:aescts0v1/vendor/gopkg.in/jcmturner/aescts.v1 \
+		jcmturner:dnsutils:v1.0.1:dnsutils0v1/vendor/gopkg.in/jcmturner/dnsutils.v1 \
+		jcmturner:gokrb5:v7.3.0:gokrb50v7/vendor/gopkg.in/jcmturner/gokrb5.v7 \
+		jcmturner:rpc:v1.1.0:rpc0v1/vendor/gopkg.in/jcmturner/rpc.v1 \
+		go-ldap:ldap:v2.5.1:ldap0v2/vendor/gopkg.in/ldap.v2 \
+		go-mgo:mgo:9856a29:mgo0v2/vendor/gopkg.in/mgo.v2 \
+		olivere:elastic:v5.0.70:elastic0v5/vendor/gopkg.in/olivere/elastic.v5 \
+		go-tomb:tomb:dd63297:tomb0v1/vendor/gopkg.in/tomb.v1 \
+		go-yaml:yaml:v2.2.1:yaml0v2/vendor/gopkg.in/yaml.v2
 
 GO_BUILDFLAGS=	-ldflags "-X main.version=${DISTVERSION}"
 GO_TARGET=	./cmd/telegraf
