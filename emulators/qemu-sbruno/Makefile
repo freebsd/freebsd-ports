@@ -15,13 +15,12 @@ USE_GITHUB=	yes
 GH_TUPLE=	seanbruno:qemu-bsd-user:7b21781 \
 		qemu:keycodemapdb:10739aa:keycodemapdb/ui/keycodemapdb
 HAS_CONFIGURE=	yes
-USES=		gmake pkgconfig bison perl5 python:2.7,build
+USES=		bison compiler:c11 gmake perl5 pkgconfig python:2.7,build
 USE_PERL5=	build
 MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 
 ONLY_FOR_ARCHS=		amd64 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
 BROKEN_i386=		aarch64 system target is currently broken for i386 hosts, disable for now while dealing with upstream
-BROKEN_powerpc64=	fails to build: async.c: internal compiler error: Segmentation fault
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR X86_TARGETS BSD_USER \

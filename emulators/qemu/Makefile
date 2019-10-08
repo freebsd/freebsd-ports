@@ -12,8 +12,6 @@ COMMENT?=	QEMU CPU Emulator
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	fails to compile: In function aio_bh_poll: internal compiler error: Segmentation fault
-
 LIB_DEPENDS?=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
@@ -25,7 +23,8 @@ USE_XORG=	pixman
 USE_GNOME+=	cairo glib20 libxml2
 .endif
 
-USES?=		cpe gmake gnome pkgconfig bison perl5 python:build tar:xz
+USES?=		compiler:c11 cpe gmake gnome pkgconfig bison perl5 \
+		python:build tar:xz
 USE_PERL5=	build
 
 PORTSCOUT=	limit:^3\.0\.
