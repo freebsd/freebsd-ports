@@ -1,0 +1,6 @@
+VMAF is a perceptual video quality assessment algorithm developed by
+Netflix. VMAF Development Kit (VDK) is a software package that
+contains the VMAF algorithm implementation, as well as a set of tools
+that allows a user to train and test a custom VMAF model.
+
+WWW: https://github.com/Netflix/vmaf
