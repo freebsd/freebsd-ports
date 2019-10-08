@@ -670,6 +670,7 @@
     SUBDIR += openclaw
     SUBDIR += openclonk
     SUBDIR += opendungeons
+    SUBDIR += openfodder
     SUBDIR += opengfx
     SUBDIR += openglad
     SUBDIR += openjazz
