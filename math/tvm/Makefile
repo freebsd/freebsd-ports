@@ -22,6 +22,6 @@ GH_TUPLE=	dmlc:dlpack:0acb731:dlpack/3rdparty/dlpack \
 		dmlc:dmlc-core:808f485:dmlc_core/3rdparty/dmlc-core
 USE_LDCONFIG=	yes
 
-PORTSCOUT=	ignore:v0.5 # https://github.com/dmlc/tvm/issues/3848
+PORTSCOUT=	ignore:0.5 # https://github.com/dmlc/tvm/issues/3848
 
 .include <bsd.port.mk>
