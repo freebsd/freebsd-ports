@@ -57,6 +57,7 @@ USE_GITHUB=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	phd
 SUB_FILES=	pkg-message
+PORTSCOUT=	ignore:1
 GH_ACCOUNT=	phacility
 GH_TAGNAME=	24dbff2
 
