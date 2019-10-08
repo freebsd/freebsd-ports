@@ -22,6 +22,7 @@ USE_PHP=	curl dom hash json simplexml zlib
 USE_GITHUB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
+PORTSCOUT=	ignore:1
 GH_ACCOUNT=	phacility
 GH_TAGNAME=	feb5f4d
 PLIST=		${.CURDIR}/pkg-plist

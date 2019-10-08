@@ -18,6 +18,7 @@ USE_PHP=	xml
 USE_GITHUB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
+PORTSCOUT=	ignore:1
 GH_ACCOUNT=	phacility
 GH_TAGNAME=	794ded9
 
