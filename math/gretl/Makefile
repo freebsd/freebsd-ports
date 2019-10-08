@@ -3,7 +3,7 @@
 
 PORTNAME=	gretl
 DISTVERSION=	2019a
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -65,7 +65,7 @@ ODBC_CONFIGURE_WITH=	odbc
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 OPENMP_CONFIGURE_ENABLE=	openmp
-OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
+OPENMP_USES=		compiler:openmp
 
 R_DESC=			libR support
 R_CONFIGURE_WITH=	libR
