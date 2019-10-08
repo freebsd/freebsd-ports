@@ -1,6 +1,6 @@
---- configure.orig	2014-04-26 03:58:46.000000000 -0700
-+++ configure	2017-05-13 09:29:58.991277000 -0700
-@@ -4858,63 +4858,6 @@
+--- configure.orig	2019-10-01 15:27:14.000000000 -0700
++++ configure	2019-10-08 04:39:00.284009000 -0700
+@@ -4756,63 +4756,6 @@
  
  else
    olibs="$LIBS"
@@ -64,7 +64,7 @@
    LIBS="-lncursesw $olibs"
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking libncursesw..." >&5
  $as_echo "$as_me: checking libncursesw..." >&6;}
-@@ -4999,15 +4942,6 @@
+@@ -4897,15 +4840,6 @@
  fi
  rm -f core conftest.err conftest.$ac_objext \
      conftest$ac_exeext conftest.$ac_ext
@@ -79,8 +79,8 @@
 -    conftest$ac_exeext conftest.$ac_ext
  
  if test "$cross_compiling" = yes; then :
-   { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
-@@ -5020,7 +4954,8 @@
+   echo "- skipping check because we are cross compiling; assuming terminfo database is used" 1>&6
+@@ -4917,7 +4851,8 @@
  
  main()
  {
@@ -90,7 +90,7 @@
  }
  _ACEOF
  if ac_fn_c_try_run "$LINENO"; then :
-@@ -5067,7 +5002,7 @@
+@@ -4967,7 +4902,7 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for SVR4 ptys..." >&5
  $as_echo "$as_me: checking for SVR4 ptys..." >&6;}
  sysvr4ptys=
@@ -99,7 +99,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -5178,19 +5113,16 @@
+@@ -5080,19 +5015,17 @@
  fi
  rm -f conftest*
  
@@ -118,12 +118,12 @@
 +#define PTYRANGE1 "0123456789abcdefghijklmnopqrstuv"
  _ACEOF
  
+ fi
 -fi
--
+ 
  
  # Check whether --with-pty-mode was given.
- if test "${with_pty_mode+set}" = set; then :
-@@ -5417,6 +5349,8 @@
+@@ -5318,6 +5251,8 @@
  #if defined(SVR4) && !defined(DGUX)
  #include <utmpx.h>
  #define utmp utmpx
@@ -132,7 +132,7 @@
  #else
  #include <utmp.h>
  #endif
-@@ -5485,6 +5419,10 @@
+@@ -5386,6 +5321,10 @@
  #if defined(SVR4) && !defined(DGUX)
  #include <utmpx.h>
  #define utmp utmpx

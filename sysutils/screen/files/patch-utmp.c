@@ -1,5 +1,5 @@
---- utmp.c.orig	2017-01-17 11:28:29.397404660 -0800
-+++ utmp.c	2017-02-10 16:48:34.902236000 -0800
+--- utmp.c.orig	2019-10-01 15:08:00.000000000 -0700
++++ utmp.c	2019-10-08 12:08:46.535155000 -0700
 @@ -26,6 +26,7 @@
   ****************************************************************
   */
@@ -8,7 +8,26 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <fcntl.h>
-@@ -409,12 +410,6 @@
+@@ -88,6 +89,9 @@
+ static void makedead __P((struct utmp *));
+ static int  pututslot __P((slot_t, struct utmp *, char *, struct win *));
+ static struct utmp *getutslot __P((slot_t));
++#ifdef __FreeBSD_version
++#define GETUTENT
++#endif
+ #ifndef GETUTENT
+ static struct utmp *getutent __P((void));
+ static void endutent __P((void));
+@@ -102,7 +106,7 @@
+ 
+ static int utmpok;
+ static char UtmpName[] = UTMPFILE;
+-#ifndef UTMP_HELPER
++#if !defined(UTMP_HELPER) || defined(__FreeBSD__)
+ static int utmpfd = -1;
+ #endif
+ 
+@@ -409,12 +413,6 @@
    register slot_t slot;
    struct utmp u;
    int saved_ut;
@@ -21,7 +40,7 @@
  
    wi->w_slot = (slot_t)0;
    if (!utmpok || wi->w_type != W_TYPE_PTY)
-@@ -435,51 +430,13 @@
+@@ -435,51 +433,13 @@
      makeuser(&u, stripdev(wi->w_tty), LoginName, wi->w_pid);
  
  #ifdef UTHOST
@@ -76,7 +95,7 @@
      {
        Msg(errno,"Could not write %s", UtmpName);
        UT_CLOSE;
-@@ -598,7 +555,7 @@
+@@ -598,7 +558,7 @@
  struct utmp *u;
  {
    u->ut_type = DEAD_PROCESS;
@@ -85,7 +104,7 @@
    u->ut_exit.e_termination = 0;
    u->ut_exit.e_exit = 0;
  #endif
-@@ -631,7 +588,11 @@
+@@ -631,7 +591,11 @@
    /* must use temp variable because of NetBSD/sparc64, where
     * ut_xtime is long(64) but time_t is int(32) */
    (void)time(&now);
@@ -98,7 +117,7 @@
  }
  
  static slot_t
-@@ -743,7 +704,11 @@
+@@ -743,7 +707,11 @@
    strncpy(u->ut_line, line, sizeof(u->ut_line));
    strncpy(u->ut_name, user, sizeof(u->ut_name));
    (void)time(&now);
