@@ -26,8 +26,8 @@ MC=	${PORTNAME}
 .endif
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2019-08-29T00-40-57Z
-COMMIT_ID=	bd7564a2d4524335a594f0f4e10b06c033eb299c
+GHTAG=		RELEASE.2019-10-02T19-41-02Z
+COMMIT_ID=	26b9044a8676a8c5ff79a6054343e5be74c35135
 GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		cheggaaa:pb:v1.0.28:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
 		coreos:etcd:v3.3.12:coreos_etcd/vendor/github.com/coreos/etcd \
@@ -56,10 +56,10 @@ GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		mattn:go-colorable:v0.1.1:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.7:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		minio:cli:v1.21.0:minio_cli/vendor/github.com/minio/cli \
-		minio:minio-go:v6.0.32:minio_minio_go/vendor/github.com/minio/minio-go/v6 \
-		minio:minio:83d4c5763c3e:minio_minio/vendor/github.com/minio/minio \
-		minio:sha256-simd:v0.1.0:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
+		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
+		minio:minio-go:v6.0.38:minio_minio_go/vendor/github.com/minio/minio-go/v6 \
+		minio:minio:1c5b05c130fa:minio_minio/vendor/github.com/minio/minio \
+		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:sio:v0.2.0:minio_sio/vendor/github.com/minio/sio \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		ncw:directio:v1.0.5:ncw_directio/vendor/github.com/ncw/directio \
