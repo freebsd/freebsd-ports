@@ -16674,6 +16674,7 @@
 %%WWWDIR%%/spec/support/helpers/policy_helpers.rb
 %%WWWDIR%%/spec/support/helpers/position_tracer_helpers.rb
 %%WWWDIR%%/spec/support/helpers/project_forks_helper.rb
+%%WWWDIR%%/spec/support/helpers/project_helpers.rb
 %%WWWDIR%%/spec/support/helpers/prometheus_helpers.rb
 %%WWWDIR%%/spec/support/helpers/query_recorder.rb
 %%WWWDIR%%/spec/support/helpers/quick_actions_helpers.rb
@@ -16780,6 +16781,7 @@
 %%WWWDIR%%/spec/support/shared_contexts/merge_requests_allowing_collaboration.rb
 %%WWWDIR%%/spec/support/shared_contexts/policies/group_policy_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/policies/project_policy_shared_context.rb
+%%WWWDIR%%/spec/support/shared_contexts/policies/project_policy_table_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/services_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/url_shared_context.rb
 %%WWWDIR%%/spec/support/shared_examples/application_setting_examples.rb
