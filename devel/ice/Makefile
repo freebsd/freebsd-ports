@@ -6,7 +6,7 @@ PORTVERSION=		3.6.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=		devel
 
-MAINTAINER=		freebsd@grem.de
+MAINTAINER=		grembo@FreeBSD.org
 COMMENT=		Modern alternative to object middleware such as CORBA/COM/DCOM/COM+
 
 LICENSE=		GPLv2
@@ -42,7 +42,7 @@ INVALID_BDB_VER=	48 6
 USE_LDCONFIG=		yes
 BUILD_WRKSRC?=		${WRKSRC}/cpp
 INSTALL_WRKSRC?=	${WRKSRC}/cpp
-PORTSCOUT=		limit:^3\.6\.
+PORTSCOUT=		limit:^v3\.6\.
 USE_GITHUB=		yes
 GH_ACCOUNT=		zeroc-ice
 GH_PROJECT=		ice
