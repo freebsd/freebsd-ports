@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webcamoid
-DISTVERSION=	8.6.1
-PORTREVISION=	4
+DISTVERSION=	8.7.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libpulse.so:audio/pulseaudio \
 		libv4l2.so:multimedia/libv4l
 
-USES=		compiler:c++11-lang gl gnome pkgconfig qmake qt:5
+USES=		compiler:c++11-lang gl gnome pkgconfig qmake qt:5 xorg
 USE_GITHUB=	yes
 USE_GNOME=	glib20
 USE_GSTREAMER1=	yes
