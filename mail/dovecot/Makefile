@@ -5,12 +5,11 @@
 # Anytime PORTVERSION changes please bump PORTREVISION of:           #
 # - mail/dovecot-pigeonhole. See ports/146029 for an explanation.    #
 # - mail/dovecot-fts-xapian.                                         #
-# Same for mail/dovecot-fts-xapian (see pr 241147)                   #
 ######################################################################
 
 PORTNAME=	dovecot
 PORTVERSION=	2.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.3/
 
