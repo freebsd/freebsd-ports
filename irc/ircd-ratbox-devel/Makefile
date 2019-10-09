@@ -4,7 +4,7 @@
 PORTNAME=	ircd-ratbox
 PORTVERSION=	3.0.7
 PORTREVISION=	3
-CATEGORIES=	irc ipv6
+CATEGORIES=	irc
 MASTER_SITES=	http://www.ratbox.org/download/				\
 		http://www.ratbox.org/download/old/
 PKGNAMESUFFIX=	-devel

@@ -3,7 +3,7 @@
 
 PORTNAME=	ircii
 PORTVERSION=	20190117
-CATEGORIES=	irc ipv6
+CATEGORIES=	irc
 MASTER_SITES=	http://ircii.warped.com/
 
 MAINTAINER=	andrew@tao11.riddles.org.uk

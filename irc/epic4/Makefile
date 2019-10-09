@@ -3,7 +3,7 @@
 
 PORTNAME=	epic4
 PORTVERSION=	2.10.7
-CATEGORIES=	irc ipv6
+CATEGORIES=	irc
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 		http://ftp.cc.uoc.gr/mirrors/irc/epic/EPIC4-PRODUCTION/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

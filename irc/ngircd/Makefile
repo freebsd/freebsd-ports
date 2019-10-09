@@ -4,7 +4,7 @@
 PORTNAME=	ngircd
 PORTVERSION=	25
 PORTEPOCH=	1
-CATEGORIES=	irc ipv6
+CATEGORIES=	irc
 MASTER_SITES=	http://arthur.barton.de/pub/${PORTNAME}/ \
 		http://ngircd.mirror.3rz.org/pub/${PORTNAME}/
 

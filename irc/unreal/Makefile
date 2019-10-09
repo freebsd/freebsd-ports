@@ -3,7 +3,7 @@
 
 PORTNAME=	Unreal
 PORTVERSION=	3.2.10.7
-CATEGORIES=	irc ipv6
+CATEGORIES=	irc
 MASTER_SITES=	http://www.unrealircd.com/downloads/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 

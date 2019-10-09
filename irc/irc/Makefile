@@ -3,7 +3,7 @@
 
 PORTNAME=	irc
 PORTVERSION=	2.11.2p3
-CATEGORIES=	irc ipv6
+CATEGORIES=	irc
 MASTER_SITES=	http://ftp.irc.org/ftp/irc/server/ \
 		ftp://ftp.archive.de.uu.net/pub/mirrors/ftp.irc.org/server/ \
 		ftp://ftp.nl.uu.net/pub/mirrors/ftp.irc.org/server/
