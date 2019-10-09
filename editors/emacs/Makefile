@@ -4,7 +4,7 @@
 PORTNAME=	emacs
 DISTVERSION=	26.3
 PORTEPOCH=	3
-CATEGORIES=	editors ipv6
+CATEGORIES=	editors
 MASTER_SITES=	GNU
 
 .if ${FLAVOR:U} == canna
