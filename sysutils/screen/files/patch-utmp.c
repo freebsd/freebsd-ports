@@ -1,6 +1,6 @@
 --- utmp.c.orig	2019-10-01 15:08:00.000000000 -0700
-+++ utmp.c	2019-10-08 12:08:46.535155000 -0700
-@@ -26,6 +26,7 @@
++++ utmp.c	2019-10-08 17:56:32.853627000 -0700
+@@ -26,9 +26,13 @@
   ****************************************************************
   */
  
@@ -8,16 +8,12 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <fcntl.h>
-@@ -88,6 +89,9 @@
- static void makedead __P((struct utmp *));
- static int  pututslot __P((slot_t, struct utmp *, char *, struct win *));
- static struct utmp *getutslot __P((slot_t));
 +#ifdef __FreeBSD_version
 +#define GETUTENT
 +#endif
- #ifndef GETUTENT
- static struct utmp *getutent __P((void));
- static void endutent __P((void));
+ 
+ #include "config.h"
+ #include "screen.h"
 @@ -102,7 +106,7 @@
  
  static int utmpok;
