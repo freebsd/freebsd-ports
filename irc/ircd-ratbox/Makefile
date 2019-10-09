@@ -4,7 +4,7 @@
 PORTNAME=	ircd-ratbox
 PORTVERSION=	3.0.10
 PORTREVISION=	6
-CATEGORIES=	irc ipv6
+CATEGORIES=	irc
 MASTER_SITES=	http://www.ratbox.org/download/				\
 		http://www.ratbox.org/download/old/
 

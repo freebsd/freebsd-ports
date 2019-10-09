@@ -3,7 +3,7 @@
 PORTNAME=	sirc
 PORTVERSION=	2.211
 PORTREVISION=	2
-CATEGORIES=	irc ipv6
+CATEGORIES=	irc
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME} \
 		http://www.iagora.com/~espel/sirc/ \
 		LOCAL/bdrewery/${PORTNAME}/scripts:s \

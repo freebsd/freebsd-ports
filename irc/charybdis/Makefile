@@ -2,7 +2,7 @@
 
 PORTNAME=	charybdis
 PORTVERSION=	3.5.3
-CATEGORIES=	irc ipv6 net
+CATEGORIES=	irc net
 MASTER_SITES=	http://distfiles.charybdis.io/
 
 MAINTAINER=	crees@FreeBSD.org
