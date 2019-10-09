@@ -1,0 +1,3 @@
+%%SITE_PERL%%/BigIP/ParseConfig.pm
+%%SITE_PERL%%/BigIP/ParseConfig.pod
+%%PERL5_MAN3%%/BigIP::ParseConfig.3.gz

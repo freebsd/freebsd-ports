@@ -1,0 +1,5 @@
+This module provides an interface to reading, writing, and
+manipulating configuration files used on F5 (BigIP) LTM network
+devices.
+
+WWW: https://metacpan.org/release/BigIP-ParseConfig
