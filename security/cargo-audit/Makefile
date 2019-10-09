@@ -2,7 +2,7 @@
 
 PORTNAME=	cargo-audit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.3
 CATEGORIES=	security
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -30,9 +30,9 @@ CARGO_CRATES=	abscissa_core-0.3.0 \
 		bitflags-1.2.0 \
 		c2-chacha-0.2.2 \
 		canonical-path-2.0.2 \
-		cargo-lock-2.0.0 \
+		cargo-lock-3.0.0 \
 		cc-1.0.45 \
-		cfg-if-0.1.9 \
+		cfg-if-0.1.10 \
 		chrono-0.4.9 \
 		cvss-1.0.0 \
 		darling-0.9.0 \
@@ -42,7 +42,7 @@ CARGO_CRATES=	abscissa_core-0.3.0 \
 		failure_derive-0.1.5 \
 		fixedbitset-0.1.9 \
 		fnv-1.0.6 \
-		generational-arena-0.2.2 \
+		generational-arena-0.2.3 \
 		getrandom-0.1.12 \
 		git2-0.10.1 \
 		gumdrop-0.6.0 \
@@ -69,7 +69,7 @@ CARGO_CRATES=	abscissa_core-0.3.0 \
 		percent-encoding-2.1.0 \
 		petgraph-0.4.13 \
 		pkg-config-0.3.16 \
-		platforms-0.2.0 \
+		platforms-0.2.1 \
 		ppv-lite86-0.2.5 \
 		proc-macro2-0.4.30 \
 		proc-macro2-1.0.4 \
@@ -84,7 +84,7 @@ CARGO_CRATES=	abscissa_core-0.3.0 \
 		regex-syntax-0.6.12 \
 		remove_dir_all-0.5.2 \
 		rustc-demangle-0.1.16 \
-		rustsec-0.14.1 \
+		rustsec-0.15.2 \
 		ryu-1.0.0 \
 		scopeguard-1.0.0 \
 		secrecy-0.2.2 \
@@ -92,7 +92,7 @@ CARGO_CRATES=	abscissa_core-0.3.0 \
 		semver-parser-0.7.0 \
 		serde-1.0.101 \
 		serde_derive-1.0.101 \
-		serde_json-1.0.40 \
+		serde_json-1.0.41 \
 		signal-hook-0.1.10 \
 		signal-hook-registry-1.1.1 \
 		smallvec-0.6.10 \
@@ -119,6 +119,8 @@ CARGO_CRATES=	abscissa_core-0.3.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		wincolor-1.0.2 \
 		zeroize-0.9.3
+
+NO_TEST=	yes
 
 PLIST_FILES=	bin/cargo-audit
 
