@@ -3,7 +3,7 @@
 
 PORTNAME=	msmtp
 PORTVERSION=	1.8.6
-CATEGORIES=	mail ipv6
+CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/msmtp/releases/
 
 MAINTAINER=	novel@FreeBSD.org

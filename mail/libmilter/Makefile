@@ -3,7 +3,7 @@
 PORTNAME=	libmilter
 PORTVERSION=	8.15.2
 PORTREVISION=	1
-CATEGORIES=	mail ipv6
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 DISTNAME=	sendmail.${PORTVERSION}
 

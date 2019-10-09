@@ -4,7 +4,7 @@
 PORTNAME=	courier-imap
 PORTVERSION=	5.0.8
 PORTEPOCH=	2
-CATEGORIES=	mail ipv6
+CATEGORIES=	mail
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
 
 MAINTAINER=	madpilot@FreeBSD.org

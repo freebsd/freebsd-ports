@@ -3,7 +3,7 @@
 PORTNAME?=	alpine
 DISTVERSION=	2.21.99999
 PORTREVISION=	1
-CATEGORIES?=	mail news ipv6
+CATEGORIES?=	mail news
 MASTER_SITES=	http://repo.or.cz/alpine.git/snapshot/${GIT_COMMIT}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	mbeis@xs4all.nl

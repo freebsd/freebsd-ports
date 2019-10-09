@@ -5,7 +5,7 @@ PORTNAME=	ffmpeg
 PORTVERSION=	4.2.1
 PORTREVISION=	5
 PORTEPOCH=	1
-CATEGORIES=	multimedia audio ipv6 net
+CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
 
 MAINTAINER=	multimedia@FreeBSD.org

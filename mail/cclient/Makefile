@@ -5,7 +5,7 @@ PORTNAME=	cclient
 PORTVERSION=	2007f
 PORTREVISION=	3
 PORTEPOCH=	1
-CATEGORIES=	mail devel ipv6
+CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		http://atreides.freenix.no/~anders/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/%SUBDIR%/ \

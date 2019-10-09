@@ -5,7 +5,7 @@ PORTNAME=	postfix
 DISTVERSION=	3.5-20190922
 PORTREVISION?=	1
 PORTEPOCH=	5
-CATEGORIES=	mail ipv6
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
 		http://de.postfix.org/ftpmirror/ \
 		http://cdn.postfix.johnriley.me/mirrors/postfix-release/ \

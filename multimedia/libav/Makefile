@@ -3,7 +3,7 @@
 PORTNAME=	libav
 PORTVERSION=	12.3
 PORTREVISION=	4
-CATEGORIES=	multimedia audio ipv6 net
+CATEGORIES=	multimedia audio net
 MASTER_SITES=	http://libav.org/releases/
 
 MAINTAINER=	dem.procopiou@gmail.com

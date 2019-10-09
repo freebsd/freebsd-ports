@@ -3,7 +3,7 @@
 
 PORTNAME=	smtpfeed
 PORTVERSION=	1.23
-CATEGORIES=	mail ipv6
+CATEGORIES=	mail
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/smtpfeed/
 
 MAINTAINER=	ports@FreeBSD.org
