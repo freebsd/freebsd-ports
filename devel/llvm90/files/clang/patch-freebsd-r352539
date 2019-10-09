@@ -1,0 +1,102 @@
+commit 053368e30489fc77ab06ee7954df3719af2548c2
+Author: dim <dim@FreeBSD.org>
+Date:   Thu Sep 19 19:42:59 2019 +0000
+
+    Pull in r371066 from upstream clang trunk (by Justin Hibbits):
+    
+      Add -m(no)-spe to clang
+    
+      Summary:
+      r337347 added support for the Signal Processing Engine (SPE) to LLVM.
+      This follows that up with the clang side.
+    
+      This adds -mspe and -mno-spe, to match GCC.
+    
+      Subscribers: nemanjai, kbarton, cfe-commits
+    
+      Differential Revision: https://reviews.llvm.org/D49754
+
+Notes:
+    svn path=/projects/clang900-import/; revision=352539
+
+diff --git tools/clang/include/clang/Driver/Options.td tools/clang/include/clang/Driver/Options.td
+index 4ea8bfff0973..508d046dbb91 100644
+--- tools/clang/include/clang/Driver/Options.td
++++ tools/clang/include/clang/Driver/Options.td
+@@ -2241,6 +2241,8 @@ def faltivec : Flag<["-"], "faltivec">, Group<f_Group>, Flags<[DriverOption]>;
+ def fno_altivec : Flag<["-"], "fno-altivec">, Group<f_Group>, Flags<[DriverOption]>;
+ def maltivec : Flag<["-"], "maltivec">, Group<m_ppc_Features_Group>;
+ def mno_altivec : Flag<["-"], "mno-altivec">, Group<m_ppc_Features_Group>;
++def mspe : Flag<["-"], "mspe">, Group<m_ppc_Features_Group>;
++def mno_spe : Flag<["-"], "mno-spe">, Group<m_ppc_Features_Group>;
+ def mvsx : Flag<["-"], "mvsx">, Group<m_ppc_Features_Group>;
+ def mno_vsx : Flag<["-"], "mno-vsx">, Group<m_ppc_Features_Group>;
+ def msecure_plt : Flag<["-"], "msecure-plt">, Group<m_ppc_Features_Group>;
+diff --git tools/clang/lib/Basic/Targets/PPC.cpp tools/clang/lib/Basic/Targets/PPC.cpp
+index 2a773d999286..a40991048873 100644
+--- tools/clang/lib/Basic/Targets/PPC.cpp
++++ tools/clang/lib/Basic/Targets/PPC.cpp
+@@ -54,6 +54,10 @@ bool PPCTargetInfo::handleTargetFeatures(std::vector<std::string> &Features,
+       HasFloat128 = true;
+     } else if (Feature == "+power9-vector") {
+       HasP9Vector = true;
++    } else if (Feature == "+spe") {
++      HasSPE = true;
++      LongDoubleWidth = LongDoubleAlign = 64;
++      LongDoubleFormat = &llvm::APFloat::IEEEdouble();
+     } else if (Feature == "-hard-float") {
+       FloatABI = SoftFloat;
+     }
+@@ -165,6 +169,10 @@ void PPCTargetInfo::getTargetDefines(const LangOptions &Opts,
+     Builder.defineMacro("__VEC__", "10206");
+     Builder.defineMacro("__ALTIVEC__");
+   }
++  if (HasSPE) {
++    Builder.defineMacro("__SPE__");
++    Builder.defineMacro("__NO_FPRS__");
++  }
+   if (HasVSX)
+     Builder.defineMacro("__VSX__");
+   if (HasP8Vector)
+@@ -203,7 +211,6 @@ void PPCTargetInfo::getTargetDefines(const LangOptions &Opts,
+   //   __CMODEL_LARGE__
+   //   _CALL_SYSV
+   //   _CALL_DARWIN
+-  //   __NO_FPRS__
+ }
+ 
+ // Handle explicit options being passed to the compiler here: if we've
+@@ -332,6 +339,7 @@ bool PPCTargetInfo::hasFeature(StringRef Feature) const {
+       .Case("extdiv", HasExtDiv)
+       .Case("float128", HasFloat128)
+       .Case("power9-vector", HasP9Vector)
++      .Case("spe", HasSPE)
+       .Default(false);
+ }
+ 
+diff --git tools/clang/lib/Basic/Targets/PPC.h tools/clang/lib/Basic/Targets/PPC.h
+index 6e5df097921b..6c6421c28e23 100644
+--- tools/clang/lib/Basic/Targets/PPC.h
++++ tools/clang/lib/Basic/Targets/PPC.h
+@@ -66,6 +66,7 @@ class LLVM_LIBRARY_VISIBILITY PPCTargetInfo : public TargetInfo {
+   bool HasBPERMD = false;
+   bool HasExtDiv = false;
+   bool HasP9Vector = false;
++  bool HasSPE = false;
+ 
+ protected:
+   std::string ABI;
+diff --git tools/clang/lib/CodeGen/TargetInfo.cpp tools/clang/lib/CodeGen/TargetInfo.cpp
+index 1e1038dbfe95..81f40011f11c 100644
+--- tools/clang/lib/CodeGen/TargetInfo.cpp
++++ tools/clang/lib/CodeGen/TargetInfo.cpp
+@@ -9716,7 +9716,8 @@ const TargetCodeGenInfo &CodeGenModule::getTargetCodeGenInfo() {
+ 
+   case llvm::Triple::ppc:
+     return SetCGInfo(
+-        new PPC32TargetCodeGenInfo(Types, CodeGenOpts.FloatABI == "soft"));
++        new PPC32TargetCodeGenInfo(Types, CodeGenOpts.FloatABI == "soft" ||
++                                   getTarget().hasFeature("spe")));
+   case llvm::Triple::ppc64:
+     if (Triple.isOSBinFormatELF()) {
+       PPC64_SVR4_ABIInfo::ABIKind Kind = PPC64_SVR4_ABIInfo::ELFv1;
