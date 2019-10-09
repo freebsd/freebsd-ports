@@ -4,7 +4,7 @@
 PORTNAME=	dillo
 PORTVERSION=	3.0.5
 PORTREVISION=	1
-CATEGORIES=	www ipv6
+CATEGORIES=	www
 MASTER_SITES=	http://www.dillo.org/download/ \
 		LOCAL/bf/dillo/ \
 		TEX_CTAN/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/:hyphen

@@ -4,7 +4,7 @@
 PORTNAME=	lynx
 PORTVERSION=	2.8.9d16
 PORTREVISION=	1
-CATEGORIES=	www ipv6
+CATEGORIES=	www
 MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/ \
 		ftp://invisible-island.net/lynx/tarballs/
 PKGNAMESUFFIX=	-current

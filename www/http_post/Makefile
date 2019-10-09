@@ -3,7 +3,7 @@
 
 PORTNAME=	http_post
 PORTVERSION=	1.0.20140814
-CATEGORIES=	www ipv6
+CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/http_post/
 DISTNAME=	${PORTNAME}_14Aug2014
 

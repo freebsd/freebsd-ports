@@ -3,7 +3,7 @@
 
 PORTNAME=	nostromo
 PORTVERSION=	1.9.6
-CATEGORIES=	www ipv6
+CATEGORIES=	www
 MASTER_SITES=	http://www.nazgul.ch/dev/
 
 MAINTAINER=	loox@e-shell.net

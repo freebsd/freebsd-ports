@@ -3,7 +3,7 @@
 
 PORTNAME=	xshttpd
 DISTVERSION=	3.7b35
-CATEGORIES=	www ipv6
+CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
 PKGNAMESUFFIX=	-devel

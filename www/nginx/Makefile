@@ -134,7 +134,6 @@ DSO_CONFIGURE_ON=	--modules-path=${MODULESDIR}
 DSO_VARS=		MODULESDIR=${PREFIX}/libexec/${PORTNAME}
 FILE_AIO_CONFIGURE_ON=	--with-file-aio
 IPV6_CONFIGURE_OFF=	--with-cc-opt="-DNGX_HAVE_INET6=0 -I ${LOCALBASE}/include"
-IPV6_CATEGORIES=	ipv6
 THREADS_CONFIGURE_ON=	--with-threads
 
 # Bundled modules

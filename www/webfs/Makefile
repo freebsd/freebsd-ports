@@ -3,7 +3,7 @@
 
 PORTNAME=	webfs
 PORTVERSION=	1.21
-CATEGORIES=	www ipv6
+CATEGORIES=	www
 MASTER_SITES=	http://dl.bytesex.org/releases/webfs/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/
 
