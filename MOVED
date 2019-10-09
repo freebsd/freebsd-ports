@@ -13075,3 +13075,4 @@ print/py-fonttools-ufo|print/py-fonttools|2019-10-07|Folded back into main port
 print/py-fonttools-unicode|print/py-fonttools|2019-10-07|Folded back into main port
 print/py-fonttools-woff|print/py-fonttools|2019-10-07|Folded back into main port
 java/jakarta-commons-lang3|java/apache-commons-lang3|2019-10-07|Renamed upstream
+x11-clocks/xfce4-timer-out-plugin|x11-clocks/xfce4-time-out-plugin|2019-10-09|Port was incorrectly named different to upstream

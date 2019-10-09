@@ -8,7 +8,7 @@ MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Timer out plugin for Xfce
+COMMENT=	Time out plugin for Xfce
 
 LICENSE=	GPLv2
 

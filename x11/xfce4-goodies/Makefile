@@ -109,7 +109,7 @@ PULSEAUDIO_RUN_DEPENDS=		xfce4-pulseaudio-plugin>=0:audio/xfce4-pulseaudio-plugi
 QUICKLAUNCHER_RUN_DEPENDS=	xfce4-quicklauncher-plugin>=0:x11/xfce4-quicklauncher-plugin
 SMARTBOOKMARK_RUN_DEPENDS=	xfce4-smartbookmark-plugin>=0:www/xfce4-smartbookmark-plugin
 SYSTEMLOAD_RUN_DEPENDS=		xfce4-systemload-plugin>=0:sysutils/xfce4-systemload-plugin
-TIMEOUT_RUN_DEPENDS=		xfce4-time-out-plugin>=0:x11-clocks/xfce4-timer-out-plugin
+TIMEOUT_RUN_DEPENDS=		xfce4-time-out-plugin>=0:x11-clocks/xfce4-time-out-plugin
 TIMER_RUN_DEPENDS=		xfce4-timer-plugin>=0:x11-clocks/xfce4-timer-plugin
 VERVE_RUN_DEPENDS=		xfce4-verve-plugin>=0:x11/xfce4-verve-plugin
 WAVELAN_RUN_DEPENDS=		xfce4-wavelan-plugin>=0:sysutils/xfce4-wavelan-plugin
