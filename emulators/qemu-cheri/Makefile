@@ -2,7 +2,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	emulators devel
 PKGNAMESUFFIX=	-cheri
 
@@ -25,7 +25,8 @@ GH_TAGNAME=	${QEMU_COMMIT}
 GH_TUPLE=	qemu:keycodemapdb:6b3d716:qemu/ui/keycodemapdb
 
 HAS_CONFIGURE=	yes
-USES=	gettext-runtime gmake gnome libtool makeinfo pkgconfig python:2.7,build
+USES=	gettext-runtime gl gmake gnome libtool makeinfo pkgconfig \
+	python:2.7,build xorg
 USE_XORG=	pixman
 USE_GNOME+=	glib20 libxml2
 USE_GL+=	gbm

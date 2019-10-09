@@ -48,9 +48,11 @@ STACK_ALIGN?=	-mstack-alignment=32
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_SOURCE_PATH=	${WRKSRC}/llvm
-CMAKE_ARGS+=	-DLLVM_BUILD_LLVM_DYLIB=ON \
-		-DLLVM_DEFAULT_TARGET_TRIPLE=cheri-unknown-freebsd
+CMAKE_ARGS+=	-DLLVM_BUILD_LLVM_DYLIB=ON -DLLVM_LINK_LLVM_DYLIB=ON
+CMAKEARGS+=	-DLLVM_DEFAULT_TARGET_TRIPLE=cheri-unknown-freebsd
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
 CMAKE_ARGS+=	-DLLVM_PARALLEL_LINK_JOBS=1
+CMAKE_ARGS+=	-DLLVM_ENABLE_Z3_SOLVER=OFF
 
 USE_GITHUB=	yes
 GH_PROJECT=	llvm-project
@@ -91,6 +93,7 @@ COMMANDS=	bugpoint \
 		dsymutil \
 		llc \
 		lli \
+		llvm-addr2line \
 		llvm-ar \
 		llvm-as \
 		llvm-bcanalyzer \
@@ -108,8 +111,11 @@ COMMANDS=	bugpoint \
 		llvm-dwp \
 		llvm-exegesis \
 		llvm-extract \
+		llvm-ifs \
+		llvm-jitlink \
 		llvm-lib \
 		llvm-link \
+		llvm-lipo \
 		llvm-lto \
 		llvm-lto2 \
 		llvm-mc \
@@ -126,6 +132,7 @@ COMMANDS=	bugpoint \
 		llvm-rc \
 		llvm-readelf \
 		llvm-readobj \
+		llvm-reduce \
 		llvm-rtdyld \
 		llvm-size \
 		llvm-split \
@@ -161,12 +168,14 @@ COMMANDS+=	clang \
 		clang-format \
 		clang-refactor \
 		clang-rename \
+		clang-scan-deps \
 		diagtool \
 		scan-build \
 		scan-view
 MAN1SRCS+=	clang.1 \
-		diagtool.1
-DOCS_PLIST_FILES+=	man/man1/scan-build${LLVM_SUFFIX}.1.gz
+		diagtool.1 \
+		scan-build.1
+#DOCS_PLIST_FILES+=	man/man1/scan-build${LLVM_SUFFIX}.1.gz
 USES+=		gnome
 .endif
 
@@ -199,16 +208,43 @@ CMAKE_ARGS+=	-DLLVM_ENABLE_PROJECTS="${LLVM_ENABLE_PROJECTS:ts;}"
 _USES_PYTHON?=	python:2.7,build
 USES+=		${_USES_PYTHON}
 
-MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
-		llvm-bcanalyzer.1 llvm-build.1 llvm-config.1 llvm-cov.1 \
+MAN1SRCS+=	bugpoint.1 \
+		dsymutil.1 \
+		llc.1 \
+		lli.1 \
+		llvm-addr2line.1 \
+		llvm-ar.1 \
+		llvm-as.1 \
+		llvm-bcanalyzer.1 \
+		llvm-build.1 \
+		llvm-config.1 \
+		llvm-cov.1 \
+		llvm-cxxfilt.1 \
 		llvm-cxxmap.1 \
-		llvm-diff.1 llvm-dis.1 llvm-dwarfdump.1 \
+		llvm-diff.1 \
+		llvm-dis.1 \
+		llvm-dwarfdump.1 \
 		llvm-exegesis.1 \
-		llvm-extract.1 llvm-lib.1 llvm-link.1 llvm-mca.1 llvm-nm.1 \
+		llvm-extract.1 \
+		llvm-lib.1 \
+		llvm-link.1 \
+		llvm-lipo.1 \
+		llvm-mca.1 \
+		llvm-nm.1 \
+		llvm-objcopy.1 \
 		llvm-objdump.1 \
 		llvm-pdbutil.1 \
-		llvm-profdata.1 llvm-readobj.1 llvm-stress.1 llvm-symbolizer.1 \
-		opt.1 tblgen.1
+		llvm-profdata.1 \
+		llvm-ranlib.1 \
+		llvm-readelf.1 \
+		llvm-readobj.1 \
+		llvm-size.1 \
+		llvm-stress.1 \
+		llvm-strings.1 \
+		llvm-strip.1 \
+		llvm-symbolizer.1 \
+		opt.1 \
+		tblgen.1
 
 .include <bsd.port.pre.mk>
 
@@ -246,14 +282,12 @@ post-install-DOCS-on:
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lit.1
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/FileCheck.1
 .endif
+#.if ${PORT_OPTIONS:MCLANG}
+#	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/scan-build.1 \
+#	    ${STAGEDIR}${MANPREFIX}/man/man1/scan-build${LLVM_SUFFIX}.1
+#.endif
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
-.if ${PORT_OPTIONS:MCLANG}
-	${MV} ${STAGEDIR}${LLVM_PREFIX}/man/man1/scan-build.1 \
-	    ${STAGEDIR}${MANPREFIX}/man/man1/scan-build${LLVM_SUFFIX}.1
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/man/man1
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/man
-.endif
 
 post-install-LLDB-on:
 .if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
