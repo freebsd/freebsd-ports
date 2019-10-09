@@ -23,7 +23,7 @@ DESKTOP_ENTRIES="${PORTNAME}" \
 		"" \
 		"${PORTNAME:tl}" \
 		"${PORTNAME}" \
-		"Game;ArcadeGame;" \
+		"Game;ActionGame;" \
 		""
 
 OPTIONS_DEFINE=	DOCS ICONS
@@ -47,7 +47,7 @@ post-build-ICONS-on:
 	done
 	@mogrify -verbose -set filename:size %wx%h -format png \
 		 -path ${WRKDIR}/icons/hicolor/%\[filename:size]/apps \
-		${WRKSRC}/Projects/openfodder.ico
+		${WRKSRC}/Projects/${PORTNAME:tl}.ico
 
 do-test:
 	@(cd ${WRKSRC_data} && ${SETENV} ${TEST_ENV} \
