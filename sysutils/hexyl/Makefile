@@ -2,8 +2,7 @@
 
 PORTNAME=	hexyl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
-PORTREVISION=	3
+DISTVERSION=	0.6.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -19,27 +18,24 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sharkdp
 
 CARGO_CRATES=	ansi_term-0.11.0 \
-		atty-0.2.11 \
-		bitflags-1.0.4 \
-		cc-1.0.37 \
-		cfg-if-0.1.9 \
+		ansi_term-0.12.1 \
+		atty-0.2.13 \
+		bitflags-1.2.0 \
+		cc-1.0.45 \
+		cfg-if-0.1.10 \
 		clap-2.33.0 \
-		ctrlc-3.1.2 \
+		ctrlc-3.1.3 \
 		kernel32-sys-0.2.2 \
-		libc-0.2.55 \
-		nix-0.13.0 \
-		numtoa-0.1.0 \
-		redox_syscall-0.1.54 \
-		redox_termios-0.1.1 \
+		libc-0.2.62 \
+		nix-0.14.1 \
 		strsim-0.8.0 \
 		term_size-0.3.1 \
-		termion-1.5.2 \
 		textwrap-0.11.0 \
-		unicode-width-0.1.5 \
+		unicode-width-0.1.6 \
 		vec_map-0.8.1 \
 		void-1.0.2 \
 		winapi-0.2.8 \
-		winapi-0.3.7 \
+		winapi-0.3.8 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
