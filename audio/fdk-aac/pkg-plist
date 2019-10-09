@@ -7,5 +7,5 @@ include/fdk-aac/syslib_channelMapDescr.h
 lib/libfdk-aac.a
 lib/libfdk-aac.so
 lib/libfdk-aac.so.2
-lib/libfdk-aac.so.2.0.0
+lib/libfdk-aac.so.2.0.1
 libdata/pkgconfig/fdk-aac.pc
