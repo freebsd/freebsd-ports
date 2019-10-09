@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rundeck
-DISTVERSION=	2.11.13
+DISTVERSION=	2.11.14
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://dl.bintray.com/rundeck/rundeck-maven/
 DISTNAME=	rundeck-launcher-${PORTVERSION}
