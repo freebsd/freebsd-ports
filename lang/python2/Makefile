@@ -3,7 +3,7 @@
 PORTNAME=	python2
 PORTVERSION=	${PYTHON_MAJOR_VER}
 PORTREVISION=	3
-CATEGORIES=	lang python ipv6
+CATEGORIES=	lang python
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
