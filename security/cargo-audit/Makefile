@@ -2,7 +2,7 @@
 
 PORTNAME=	cargo-audit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.3
 CATEGORIES=	security
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -84,7 +84,7 @@ CARGO_CRATES=	abscissa_core-0.3.0 \
 		regex-syntax-0.6.12 \
 		remove_dir_all-0.5.2 \
 		rustc-demangle-0.1.16 \
-		rustsec-0.15.0 \
+		rustsec-0.15.2 \
 		ryu-1.0.0 \
 		scopeguard-1.0.0 \
 		secrecy-0.2.2 \
@@ -92,7 +92,7 @@ CARGO_CRATES=	abscissa_core-0.3.0 \
 		semver-parser-0.7.0 \
 		serde-1.0.101 \
 		serde_derive-1.0.101 \
-		serde_json-1.0.40 \
+		serde_json-1.0.41 \
 		signal-hook-0.1.10 \
 		signal-hook-registry-1.1.1 \
 		smallvec-0.6.10 \
@@ -119,6 +119,8 @@ CARGO_CRATES=	abscissa_core-0.3.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		wincolor-1.0.2 \
 		zeroize-0.9.3
+
+NO_TEST=	yes
 
 PLIST_FILES=	bin/cargo-audit
 
