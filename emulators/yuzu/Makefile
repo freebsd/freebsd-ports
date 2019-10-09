@@ -94,11 +94,4 @@ post-patch:
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
 
-# XXX Hangs on beefy2 and beefy6 but cannot be reproduced locally
-.if !defined(MASTERNAME) || (${MASTERNAME} != 120amd64-default && ${MASTERNAME} != 120amd64-quarterly)
-.ifndef QEMU_EMULATING
-pre-install:	do-test
-.endif
-.endif
-
 .include <bsd.port.mk>
