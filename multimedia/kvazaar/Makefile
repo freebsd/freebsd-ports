@@ -44,9 +44,4 @@ post-patch:
 		-e '/AM_INIT_AUTOMAKE/s/])/ serial-tests&/' \
 		${WRKSRC}/configure.ac
 
-pre-install:	do-test
-
 .include <bsd.port.mk>
-
-# XXX test_external_symbols.sh fails with CRYPTOPP=on
-do-test:	.IGNORE
