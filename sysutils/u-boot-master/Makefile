@@ -151,7 +151,6 @@ MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-sun50i_a64/bl31.bin
 
 .if defined(FAMILY) && ${FAMILY} == rk3328
 BUILD_DEPENDS+=	${LOCALBASE}/share/atf-rk3328/bl31.elf:sysutils/atf-rk3328 \
-		${LOCALBASE}/share/linux-rkbin/bin/rk33/rk3328_ddr_333MHz_v1.16.bin:sysutils/linux-rkbin \
 		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
 MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-rk3328/bl31.elf
 .endif
@@ -219,10 +218,6 @@ post-build:
 .for i in ${UBOOT_EXTRA_TARGETS}
 	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${i})
 .endfor
-.endif
-.if defined(FAMILY) && ${FAMILY} == rk3328
-	mkimage -n rk3328 -T rksd -d ${LOCALBASE}/share/linux-rkbin/bin/rk33/rk3328_ddr_333MHz_v1.16.bin ${WRKSRC}/idbloader.img
-	cat ${WRKSRC}/spl/u-boot-spl.bin >> ${WRKSRC}/idbloader.img
 .endif
 # If we need to put anything into WRKSRC, do so now so we can build the PLIST
 # in do-install
