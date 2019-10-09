@@ -226,10 +226,8 @@
 %%PGADMDIR%%/lang/afrikaans.php
 %%PGADMDIR%%/lang/arabic.php
 %%PGADMDIR%%/lang/catalan.php
-%%PGADMDIR%%/lang/chinese-sim.php
-%%PGADMDIR%%/lang/chinese-tr.php
-%%PGADMDIR%%/lang/chinese-utf8-zh_CN.php
-%%PGADMDIR%%/lang/chinese-utf8-zh_TW.php
+%%PGADMDIR%%/lang/chinese-zh-CN.php
+%%PGADMDIR%%/lang/chinese-zh-TW.php
 %%PGADMDIR%%/lang/czech.php
 %%PGADMDIR%%/lang/danish.php
 %%PGADMDIR%%/lang/dutch.php
