@@ -21,7 +21,6 @@ RESTRICTED=	Source recipient must acknowledge license.\
 
 USES=		zip
 NO_BUILD=	yes
-NO_WRKSRC=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Binaries only available for i386 and amd64 from Broadcom

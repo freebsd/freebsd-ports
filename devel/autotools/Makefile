@@ -20,7 +20,6 @@ RUN_DEPENDS=	libtoolize:devel/libtool \
 
 PLIST_FILES=	share/${PORTNAME}
 NO_BUILD=	yes
-NO_FETCH=	yes
 
 do-install:
 	@${ECHO_CMD} "Placeholder file" > ${STAGEDIR}${PREFIX}/${PLIST_FILES}

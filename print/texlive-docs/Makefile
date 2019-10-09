@@ -14,7 +14,6 @@ COMMENT=	TeX Live Typesetting System, documentation
 USES=		tar:xz
 USE_TEX=	texmf
 NO_BUILD=	yes
-NO_WRKSRC=	yes
 
 EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/doc/aleph \

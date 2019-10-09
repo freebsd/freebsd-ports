@@ -16,8 +16,6 @@ BROKEN_FreeBSD_13=	fails to compile: rtc.c:166:2: implicit declaration of functi
 
 WRKSRC=		${WRKDIR}/files
 
-NO_FETCH=	yes
-
 KMODDIR=	${PREFIX}/modules
 
 CDEV_MAJOR=	202

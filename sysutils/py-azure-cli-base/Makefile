@@ -11,7 +11,6 @@ COMMENT=	Shared namespace for py-azure-* ports
 
 LICENSE=	MIT
 
-NO_FETCH=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		python

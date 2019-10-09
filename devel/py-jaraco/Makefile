@@ -16,7 +16,6 @@ USE_PYTHON=	flavors py3kplist
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-NO_FETCH=	yes
 
 PLIST_FILES=	${PYTHON_SITELIBDIR}/jaraco/__init__.py \
 		${PYTHON_SITELIBDIR}/jaraco/__init__.pyc \

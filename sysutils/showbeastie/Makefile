@@ -22,8 +22,6 @@ BROKEN_FreeBSD_13=	fails to build: ficl/Makefile line 13: Could not find bsd.sta
 IGNORE=	requires kernel source files in ${SRC_BASE}
 .endif
 
-NO_FETCH=	yes
-
 ALL_TARGET=	testmain
 
 PLIST_FILES=	bin/${PORTNAME}
