@@ -5,7 +5,7 @@ PORTNAME=	lynx
 PORTVERSION=	2.8.9.1
 PORTREVISION=	1
 PORTEPOCH=	1
-CATEGORIES=	www ipv6
+CATEGORIES=	www
 MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/ \
 		http://bitrote.org/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}rel.${PORTVERSION:E}

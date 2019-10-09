@@ -3,7 +3,7 @@
 
 PORTNAME=	w3m
 PORTVERSION=	0.5.3.${SNAPDATE}
-CATEGORIES+=	www ipv6
+CATEGORIES+=	www
 
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	Pager/text-based WWW browser

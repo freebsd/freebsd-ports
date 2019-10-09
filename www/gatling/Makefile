@@ -4,7 +4,7 @@
 PORTNAME=	gatling
 PORTVERSION=	0.15
 PORTREVISION=	2
-CATEGORIES=	www benchmarks ftp ipv6
+CATEGORIES=	www benchmarks ftp
 MASTER_SITES=	http://www.fefe.de/gatling/
 
 MAINTAINER=	coco@executive-computing.de

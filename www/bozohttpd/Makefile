@@ -3,7 +3,7 @@
 
 PORTNAME=	bozohttpd
 PORTVERSION=	20130711
-CATEGORIES=	www ipv6
+CATEGORIES=	www
 MASTER_SITES=	http://www.eterna.com.au/bozohttpd/ \
 		NETBSD
 

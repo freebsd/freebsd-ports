@@ -5,7 +5,7 @@ PORTNAME=	links
 DISTVERSION=	2.16
 PORTREVISION=	2
 PORTEPOCH=	1
-CATEGORIES=	www ipv6
+CATEGORIES=	www
 MASTER_SITES=	http://links.twibright.com/download/
 
 MAINTAINER=	portmaster@BSDforge.com
