@@ -2,7 +2,7 @@
 
 PORTNAME=	dnscrypt-proxy
 PORTVERSION=	2.0.27
-CATEGORIES=	dns security ipv6
+CATEGORIES=	dns security
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	egypcio@FreeBSD.org

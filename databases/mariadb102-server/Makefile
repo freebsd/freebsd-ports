@@ -3,7 +3,7 @@
 PORTNAME?=	mariadb
 PORTVERSION=	10.2.26
 PORTREVISION?=	0
-CATEGORIES=	databases ipv6
+CATEGORIES=	databases
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
 		http://gd.tuwien.ac.at/db/${SITESDIR}/ \

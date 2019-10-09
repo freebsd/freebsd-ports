@@ -3,7 +3,7 @@
 PORTNAME?=	mariadb
 PORTVERSION=	5.5.65
 PORTREVISION?=	2
-CATEGORIES=	databases ipv6
+CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/source/ \
 		http://mirror.aarnet.edu.au/pub/MariaDB/${PORTNAME}-${PORTVERSION}/source/ \

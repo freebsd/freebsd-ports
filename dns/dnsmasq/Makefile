@@ -5,7 +5,7 @@ PORTNAME=	dnsmasq
 DISTVERSION=	2.80
 PORTREVISION=	3	# leave this in even if 0 to avoid PORTEPOCH bumps
 PORTEPOCH=	1
-CATEGORIES=	dns ipv6
+CATEGORIES=	dns
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
 		LOCAL/mandree/
 
