@@ -2,12 +2,12 @@
 
 PORTNAME=	llvm
 DISTVERSION=	9.0.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 .if ${DISTVERSION:M*rc*}
-MASTER_SITES=  http://prereleases.llvm.org/${LLVM_RELEASE}/${RCDIR}
+MASTER_SITES=  https://prereleases.llvm.org/${LLVM_RELEASE}/${RCDIR}
 .else
-MASTER_SITES=	http://releases.llvm.org/${LLVM_RELEASE}/
+MASTER_SITES=	https://releases.llvm.org/${LLVM_RELEASE}/
 .endif
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -117,6 +117,7 @@ LIT_DESC=		Install lit and FileCheck test tools
 LIT_VARS=		_USES_PYTHON=python:3.6+
 LLD_DESC=		Install lld, the LLVM linker
 LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
+LLD_EXTRA_PATCHES=	${PATCHDIR}/lld
 LLD_LINK_DESC=		Link ld.lld as ld to clang uses it
 LLD_LINK_IMPLIES=	LLD
 LLDB_BUILD_DEPENDS=	swig3.0:devel/swig30 \
