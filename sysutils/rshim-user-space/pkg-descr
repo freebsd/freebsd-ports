@@ -2,7 +2,7 @@ rshim-user-space is a daemon for accessing the Mellanox BlueField SoC either
 via PCI or USB.
 
 The daemon provide virtual character and network devices for accessing the
-console of the Mellanox Bluefield device. Refer to 
+console of the Mellanox Bluefield device. Refer to
 https://www.mellanox.com/products/bluefield-overview
 for more information.
 
