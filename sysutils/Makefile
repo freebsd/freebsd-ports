@@ -1272,6 +1272,7 @@
     SUBDIR += syslog-ng321
     SUBDIR += syslog-ng322
     SUBDIR += syslog-ng323
+    SUBDIR += syslog-ng324
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
