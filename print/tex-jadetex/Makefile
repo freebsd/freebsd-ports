@@ -23,7 +23,6 @@ EXTRACT_FILES= \
 	texmf-dist/doc/otherformats/jadetex \
 	texmf-dist/source/jadetex/base \
 	texmf-dist/tex/jadetex/base
-NO_WRKSRC=	yes
 NO_BUILD=	yes
 TEX_FORMATS=	jadetex
 

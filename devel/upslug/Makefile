@@ -13,9 +13,7 @@ COMMENT=	Firmware upload tool for Linksys NSLU2
 USES=		gmake
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS+=	--with-libpcap
-
-NO_MAN=		defined
+CONFIGURE_ARGS=	--with-libpcap
 
 PLIST_FILES=	sbin/upslug2
 

@@ -17,7 +17,6 @@ USES=		tar:xz
 USE_TEX=	texmf>=20150523
 TEXHASHDIRS=	${TEXMFDISTDIR}
 NO_BUILD=	yes
-NO_WRKSRC=	yes
 
 INCLUDE_FILES=	texmf-dist/source
 EXCLUDE_FILES=	texmf-dist/source/fonts/japanese-otf \

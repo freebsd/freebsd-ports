@@ -22,7 +22,6 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 EXTRACT_FILES= \
 	texmf-dist/tex/xmltex \
 	texmf-dist/doc/otherformats/xmltex
-NO_WRKSRC=	yes
 NO_BUILD=	yes
 TEX_FORMATS=	xmltex
 
