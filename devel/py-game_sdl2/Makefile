@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	game_sdl2
-PORTVERSION=	7.3.3
+PORTVERSION=	7.3.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
 		GENTOO
