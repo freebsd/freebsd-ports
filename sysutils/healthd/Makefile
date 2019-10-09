@@ -4,7 +4,7 @@
 PORTNAME=	healthd
 PORTVERSION=	0.7.9
 PORTREVISION=	2
-CATEGORIES=	sysutils ipv6
+CATEGORIES=	sysutils
 MASTER_SITES=	http://healthd.thehousleys.net/ \
 		LOCAL/ohauer
 

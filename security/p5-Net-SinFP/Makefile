@@ -8,7 +8,7 @@ PORTREVISION=	${DBDATE}1
 .else
 PORTREVISION=	1
 .endif
-CATEGORIES=	security ipv6 perl5
+CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 .ifdef DBDATE
 MASTER_SITES+=	http://www.gomor.org/files/:DB

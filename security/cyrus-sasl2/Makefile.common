@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.27
-CATEGORIES=	security ipv6
+CATEGORIES=	security
 MASTER_SITES=	https://www.cyrusimap.org/releases/ \
 		ftp://ftp.cyrusimap.org/cyrus-sasl/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	tor
 DISTVERSION=	0.4.1.6
-CATEGORIES=	security net ipv6
+CATEGORIES=	security net
 MASTER_SITES=	TOR
 
 MAINTAINER=	yuri@FreeBSD.org
