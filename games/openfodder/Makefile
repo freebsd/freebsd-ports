@@ -53,8 +53,6 @@ do-test:
 	@(cd ${WRKSRC_data} && ${SETENV} ${TEST_ENV} \
 		${WRKSRC}/Run/${PORTNAME} --unit-test-headless)
 
-pre-install:	do-test
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Run/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
