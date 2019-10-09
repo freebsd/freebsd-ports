@@ -4,7 +4,7 @@
 PORTNAME=	zonecheck
 PORTVERSION=	3.0.5
 PORTEPOCH=	1
-CATEGORIES=	dns ipv6 ruby
+CATEGORIES=	dns ruby
 MASTER_SITES=	http://www.zonecheck.fr/download/ \
 		ftp://ftp.nic.fr/pub/mirror/zonecheck/src/
 

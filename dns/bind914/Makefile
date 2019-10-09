@@ -10,7 +10,7 @@ PORTREVISION=	0
 # dns/bind914 here
 PORTREVISION=	0
 .endif
-CATEGORIES=	dns net ipv6
+CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 .if defined(BIND_TOOLS_SLAVE)
 PKGNAMESUFFIX=	-tools

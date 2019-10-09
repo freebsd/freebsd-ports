@@ -3,7 +3,7 @@
 
 PORTNAME=	libowfat
 PORTVERSION=	0.31
-CATEGORIES=	devel ipv6
+CATEGORIES=	devel
 MASTER_SITES=	http://www.fefe.de/libowfat/
 
 MAINTAINER=	lx@FreeBSD.org

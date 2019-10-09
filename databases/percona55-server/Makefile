@@ -3,7 +3,7 @@
 PORTNAME?=	percona
 DISTVERSION=	5.5.61-38.13
 PORTREVISION?=	4
-CATEGORIES=	databases ipv6
+CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.5/Percona-Server-${DISTVERSION}/source/tarball/
 PKGNAMESUFFIX?=	55-server
 DISTNAME=	percona-server-${DISTVERSION}

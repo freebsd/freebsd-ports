@@ -3,7 +3,7 @@
 PORTNAME=	yadifa
 DISTVERSION=	2.3.9
 DISTVERSIONSUFFIX=	-8497
-CATEGORIES=	dns ipv6
+CATEGORIES=	dns
 MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/
 
 MAINTAINER=	freebsd@dns.company

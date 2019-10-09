@@ -4,7 +4,7 @@
 PORTNAME=	totd
 PORTVERSION=	1.5.1
 PORTREVISION=	1
-CATEGORIES=	dns ipv6
+CATEGORIES=	dns
 MASTER_SITES=	http://BSDforge.com/projects/source/dns/totd/
 
 MAINTAINER=	ed@FreeBSD.org
