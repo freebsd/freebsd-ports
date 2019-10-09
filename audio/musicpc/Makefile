@@ -3,7 +3,7 @@
 
 PORTNAME=	musicpc
 DISTVERSION=	0.32
-CATEGORIES=	audio ipv6
+CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/mpc/0/
 DISTNAME=	mpc-${PORTVERSION}
 

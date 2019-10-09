@@ -3,7 +3,7 @@
 
 PORTNAME=	mpg123
 PORTVERSION=	1.25.12
-CATEGORIES=	audio ipv6
+CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
 

@@ -3,7 +3,7 @@
 PORTNAME=	musicpd
 PORTVERSION=	0.21.15
 PORTREVISION=	2
-CATEGORIES=	audio ipv6
+CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
 
