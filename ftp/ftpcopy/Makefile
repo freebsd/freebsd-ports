@@ -3,7 +3,7 @@
 
 PORTNAME=	ftpcopy
 PORTVERSION=	0.6.7
-CATEGORIES=	ftp ipv6
+CATEGORIES=	ftp
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 
 MAINTAINER=	mandree@FreeBSD.org

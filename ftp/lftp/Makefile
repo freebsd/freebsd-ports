@@ -4,7 +4,7 @@
 PORTNAME=	lftp
 PORTVERSION=	4.8.4
 PORTREVISION=	5
-CATEGORIES=	ftp ipv6
+CATEGORIES=	ftp
 MASTER_SITES=	http://lftp.tech/ftp/ \
 		http://lftp.tech/ftp/old/ \
 		http://lftp.cybermirror.org/ \
