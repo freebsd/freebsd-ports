@@ -4,7 +4,7 @@
 PORTNAME=	xtris
 PORTVERSION=	1.15
 PORTREVISION=	2
-CATEGORIES=	games ipv6
+CATEGORIES=	games
 MASTER_SITES=	http://ftp.netbsd.org/pub/pkgsrc/distfiles/ \
 		http://ftp.uni-erlangen.de/mirrors/gentoo/distfiles/ \
 		http://www.iagora.com/~espel/xtris/ \
