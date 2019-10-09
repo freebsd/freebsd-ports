@@ -71,4 +71,5 @@ sbin/svlogd
 sbin/utmpset
 @postexec [ ! -e %%RUNITDIR%%/runsvdir/current ] && cd %%RUNITDIR%%/runsvdir && ln -s default current
 @postexec ln -sF /var/run/runit/runsvdir/current /var/service
+@postunexec [ %%RUNITDIR%%/runsvdir/default -ef %%RUNITDIR%%/runsvdir/current ] && rm -f %%RUNITDIR%%/runsvdir/current 2>/dev/null || true
 @rmtry /var/service
