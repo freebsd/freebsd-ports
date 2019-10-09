@@ -4,7 +4,7 @@
 PORTNAME=	tiarra
 PORTVERSION=	20100212
 PORTREVISION=	7
-CATEGORIES=	japanese irc ipv6
+CATEGORIES=	japanese irc
 MASTER_SITES=	http://www.clovery.jp/tiarra/archive/2010/02/
 
 MAINTAINER=	ume@FreeBSD.org

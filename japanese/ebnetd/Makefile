@@ -4,7 +4,7 @@
 PORTNAME=	ebnetd
 PORTVERSION=	1.0
 PORTREVISION=	11
-CATEGORIES=	japanese ipv6
+CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 
 MAINTAINER=	yasu@utahime.org

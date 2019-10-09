@@ -3,7 +3,7 @@
 
 PORTNAME=	lynx
 DISTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}
-CATEGORIES=	japanese www ipv6
+CATEGORIES=	japanese www
 MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/
 DISTNAME=	${PORTNAME}${VERSION}${MINOR_VERSION}
 PKGNAMESUFFIX=	-current
