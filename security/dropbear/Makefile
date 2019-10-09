@@ -3,7 +3,7 @@
 
 PORTNAME=	dropbear
 PORTVERSION=	2019.78
-CATEGORIES=	security ipv6
+CATEGORIES=	security
 MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 
 MAINTAINER=	pkubaj@FreeBSD.org

@@ -3,7 +3,7 @@
 PORTNAME=	openiked
 PORTVERSION=	2.1
 PORTREVISION=	1
-CATEGORIES=	security net ipv6
+CATEGORIES=	security net
 
 MAINTAINER=	marcel@FreeBSD.org
 COMMENT=	IKEv2 daemon

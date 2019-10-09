@@ -3,7 +3,7 @@
 PORTNAME=	gkrellm
 PORTVERSION=	2.3.11
 #PORTREVISION=	0
-CATEGORIES=	sysutils ipv6
+CATEGORIES=	sysutils
 MASTER_SITES=	http://gkrellm.srcbox.net/releases/ \
 		LOCAL/ume
 PKGNAMESUFFIX=	2

@@ -31,8 +31,6 @@ CONFIGURE_ARGS=--disable-masq
 
 .if ! ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=--disable-ipv6
-.else
-CATEGORIES+=	ipv6
 .endif
 
 post-patch:

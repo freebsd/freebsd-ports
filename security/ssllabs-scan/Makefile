@@ -3,7 +3,7 @@
 PORTNAME=		ssllabs-scan
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.5.0
-CATEGORIES=		security net ipv6
+CATEGORIES=		security net
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Command-line tool to use the SSL Labs API
