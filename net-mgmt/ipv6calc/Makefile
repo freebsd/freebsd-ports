@@ -3,7 +3,7 @@
 
 PORTNAME=	ipv6calc
 PORTVERSION=	2.1.1
-CATEGORIES=	net-mgmt ipv6
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
 MAINTAINER=	dbaio@FreeBSD.org

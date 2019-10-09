@@ -3,7 +3,7 @@
 PORTNAME=	dtcpclient
 PORTVERSION=	20151002
 PORTREVISION=	1
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://www.mahoroba.org/~ume/ipv6/
 
 MAINTAINER=	ume@FreeBSD.org

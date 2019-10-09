@@ -3,7 +3,7 @@
 PORTNAME=	u6rd
 PORTVERSION=	1.6
 PORTREVISION=	3
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://ftp.scythe.jp/pub/u6rd/release/
 
 MAINTAINER=	ume@FreeBSD.org

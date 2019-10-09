@@ -4,7 +4,7 @@
 PORTNAME=	miredo
 PORTVERSION=	1.2.6
 PORTREVISION=	6
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://www.remlab.net/files/miredo/archive/
 
 MAINTAINER=	ports@FreeBSD.org

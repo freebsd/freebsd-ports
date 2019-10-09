@@ -3,7 +3,7 @@
 
 PORTNAME=	radvd
 PORTVERSION=	2.18
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://www.litech.org/radvd/dist/
 
 MAINTAINER=	farrokhi@FreeBSD.org

@@ -4,7 +4,7 @@
 PORTNAME=	beacon
 PORTVERSION=	1.4
 PORTREVISION=	4
-CATEGORIES=	net perl5 mbone ipv6
+CATEGORIES=	net perl5 mbone
 MASTER_SITES=	SF/multicastbeacon/multicastbeacon/beacon%20v${PORTVERSION}
 
 MAINTAINER=	portmaster@bsdforge.com

@@ -5,7 +5,7 @@ PORTNAME=	send
 PORTVERSION=	0.3
 DISTVERSIONPREFIX=	v
 PORTREVISION=	3
-CATEGORIES=	net-mgmt ipv6
+CATEGORIES=	net-mgmt
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Secure Neighbor Discovery implementation for IPv6

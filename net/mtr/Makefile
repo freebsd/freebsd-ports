@@ -25,7 +25,6 @@ USES=		autoreconf ncurses pkgconfig
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lncurses
 
-IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_ENABLE=	ipv6
 X11_CONFIGURE_WITH=	gtk
 X11_USE=		GNOME=gtk20

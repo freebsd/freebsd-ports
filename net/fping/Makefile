@@ -4,7 +4,7 @@
 PORTNAME=	fping
 PORTVERSION=	4.2
 DISTVERSIONPREFIX=	v
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Quickly ping multiple hosts without flooding the network

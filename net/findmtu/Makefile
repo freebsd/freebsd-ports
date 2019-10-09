@@ -3,7 +3,7 @@
 
 PORTNAME=	findmtu
 PORTVERSION=	0.9
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://www.dia.uniroma3.it/~compunet/tunneldiscovery/findmtu/
 
 MAINTAINER=	jmohacsi@bsd.hu

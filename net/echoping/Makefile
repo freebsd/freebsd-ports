@@ -4,7 +4,7 @@
 PORTNAME=	echoping
 PORTVERSION=	6.0.2
 PORTREVISION=	6
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ping-like program that uses TCP and/or HTTP
