@@ -8,6 +8,9 @@ CATEGORIES=	sysutils
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Userspace daemon for the Mellanox BlueField SoC
 
+DISTVERSIONPREFIX=	v
+DISTVERSION=		1.0-alpha.1
+
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
@@ -18,11 +21,8 @@ USES=		gmake tar:bzip2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Mellanox
-GH_PROJECT=	rshim-user-space
-GH_TAGNAME=	v1.0-alpha.1
 
 OPTIONS_DEFINE=	DEBUG
-OPTIONS_DEFAULT=
 
 DEBUG_DESC=	Build with debugging support
 DEBUG_MAKE_ARGS=HAVE_DEBUG=YES
