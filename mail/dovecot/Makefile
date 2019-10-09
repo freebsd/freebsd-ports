@@ -9,7 +9,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	2.3.8
-CATEGORIES=	mail ipv6
+CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.3/
 
 MAINTAINER=	ler@FreeBSD.org

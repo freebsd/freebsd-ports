@@ -3,7 +3,7 @@
 
 PORTNAME=	mutt
 DISTVERSION=	1.12.2
-CATEGORIES+=	mail ipv6
+CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \

@@ -3,7 +3,7 @@
 
 PORTNAME?=	fetchmail
 PORTVERSION=	6.4.1
-CATEGORIES=	mail ipv6
+CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/branch_6.4/
 
 MAINTAINER=	chalpin@cs.wisc.edu

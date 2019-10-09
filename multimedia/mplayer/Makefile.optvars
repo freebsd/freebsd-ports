@@ -58,7 +58,6 @@ GUI_USES=		gnome
 GUI_DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "mplayer" "gmplayer" "" false
 GUI_IMPLIES=		ASS X11
 
-IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_OFF=	--disable-inet6
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack

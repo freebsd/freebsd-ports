@@ -3,7 +3,7 @@
 
 PORTNAME=	claws-mail
 PORTREVISION=	0
-CATEGORIES=	mail news ipv6
+CATEGORIES=	mail news
 
 COMMENT=	Lightweight and featureful GTK+ based e-mail and news client
 

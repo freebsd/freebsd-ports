@@ -3,7 +3,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	68.1.2
-CATEGORIES=	mail news net-im ipv6
+CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}

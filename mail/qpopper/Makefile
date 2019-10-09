@@ -4,7 +4,7 @@
 PORTNAME=	qpopper
 PORTVERSION=	4.1.0
 PORTREVISION=	6
-CATEGORIES=	mail ipv6
+CATEGORIES=	mail
 MASTER_SITES=	http://core.ring.gr.jp/archives/net/mail/qpopper/ \
 		http://ftp.osuosl.org/.1/blfs/7.7/q/ \
 		LOCAL/eugen

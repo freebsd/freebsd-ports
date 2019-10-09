@@ -4,7 +4,7 @@
 PORTNAME=	sylpheed
 PORTVERSION=	3.7.0
 PORTREVISION=	3
-CATEGORIES=	mail ipv6
+CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
 		LOCAL/ehaupt
 
