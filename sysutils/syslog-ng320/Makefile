@@ -15,8 +15,9 @@ COMMENT=	Powerful syslogd replacement
 
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
-DEPRECATED=	Agreed upon upstream six month deprecation policy
-EXPIRATION_DATE=	2020-03-03
+DEPRECATED=	Agreed upon upstream one year deprecation policy
+EXPIRATION_DATE=	2020-10-09
+
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
