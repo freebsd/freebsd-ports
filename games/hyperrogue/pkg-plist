@@ -1,6 +1,10 @@
 bin/hyperrogue
 %%DATADIR%%/DejaVuSans-Bold.ttf
 %%DATADIR%%/hyperrogue-music.txt
+%%DATADIR%%/music/hr-savino-caribbean.ogg
+%%DATADIR%%/music/hr-savino-ivory.ogg
+%%DATADIR%%/music/hr-savino-ocean.ogg
+%%DATADIR%%/music/hr-savino-palace.ogg
 %%DATADIR%%/music/hr3-caves.ogg
 %%DATADIR%%/music/hr3-crossroads.ogg
 %%DATADIR%%/music/hr3-desert.ogg
