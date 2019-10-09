@@ -3,7 +3,7 @@
 
 PORTNAME=	rshim-user-space
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.0-alpha.1
+DISTVERSION=		1.0-alpha.2
 
 CATEGORIES=	sysutils
 
