@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20191009:
+AUTHOR: bapt@FreeBSD.org
+
+  The ipv6 virtual category is gone, it does not make sense anymore in 2019
+  where the norm in applications is to have support both ipv4 and ipv6.
+  
 20191001:
 AUTHOR: bapt@FreeBSD.org
 
