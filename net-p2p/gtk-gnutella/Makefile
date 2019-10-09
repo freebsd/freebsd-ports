@@ -4,7 +4,7 @@
 PORTNAME=	gtk-gnutella
 PORTVERSION=	1.1.15
 DISTVERSIONPREFIX=v
-CATEGORIES=	net-p2p ipv6
+CATEGORIES=	net-p2p
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	GTK based Gnutella client

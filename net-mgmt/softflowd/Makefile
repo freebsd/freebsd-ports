@@ -4,7 +4,7 @@
 PORTNAME=	softflowd
 PORTVERSION=	0.9.9
 PORTREVISION=	1
-CATEGORIES=	net-mgmt ipv6
+CATEGORIES=	net-mgmt
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Flow-based network traffic analyzer and exporter

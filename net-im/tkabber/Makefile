@@ -4,7 +4,7 @@
 PORTNAME=	tkabber
 PORTVERSION=	1.1.2
 PORTREVISION=	2
-CATEGORIES=	net-im ipv6 tcl tk
+CATEGORIES=	net-im tcl tk
 MASTER_SITES=	http://files.jabber.ru/tkabber/
 
 MAINTAINER=	mp39590@gmail.com

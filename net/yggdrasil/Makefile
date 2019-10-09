@@ -3,7 +3,7 @@
 PORTNAME=	yggdrasil
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.6
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 
 MAINTAINER=	freebsd@neilalexander.dev
 COMMENT=	Experimental end-to-end encrypted self-arranging IPv6 network

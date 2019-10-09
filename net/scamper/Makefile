@@ -2,7 +2,7 @@
 
 PORTNAME=	scamper
 DISTVERSION=	20181219
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://www.caida.org/tools/measurement/scamper/code/
 DISTNAME=	${PORTNAME}-cvs-${PORTVERSION}
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	mping
 PORTVERSION=	2.01
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://mping.uninett.no/
 
 MAINTAINER=	ports@FreeBSD.org

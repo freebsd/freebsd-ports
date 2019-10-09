@@ -4,7 +4,7 @@
 PORTNAME=	flowd
 PORTVERSION=	0.9.1
 PORTREVISION=	3
-CATEGORIES=	net-mgmt ipv6
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://mindrot.org/files/flowd/
 
 MAINTAINER=	bofh@FreeBSD.org

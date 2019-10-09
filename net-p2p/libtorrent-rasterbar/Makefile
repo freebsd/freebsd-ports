@@ -4,7 +4,7 @@
 PORTNAME=	libtorrent-rasterbar
 DISTVERSION=	1.1.10
 PORTREVISION=	5
-CATEGORIES=	net-p2p ipv6
+CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-${PORTVERSION:S/./_/g}/
 
 MAINTAINER=	yuri@FreeBSD.org

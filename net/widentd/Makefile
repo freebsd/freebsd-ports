@@ -3,7 +3,7 @@
 
 PORTNAME=	widentd
 PORTVERSION=	1.04
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://BSDforge.com/projects/source/net/widentd/
 
 MAINTAINER=	portmaster@BSDforge.com

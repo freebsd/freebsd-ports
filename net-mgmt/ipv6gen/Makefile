@@ -3,7 +3,7 @@
 
 PORTNAME=	ipv6gen
 PORTVERSION=	1.0
-CATEGORIES=	net-mgmt ipv6
+CATEGORIES=	net-mgmt
 
 MAINTAINER=	vlada@devnull.cz
 COMMENT=	IPv6 prefix generator

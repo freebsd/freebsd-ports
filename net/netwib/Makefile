@@ -4,7 +4,7 @@
 PORTNAME=	netwib
 PORTVERSION=	5.38.0
 PORTREVISION=	1
-CATEGORIES=	net devel ipv6
+CATEGORIES=	net devel
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwib/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/netwib/download/v5/ \
 		http://laurentconstantin.free.fr/common/netw/netwib/download/v5/

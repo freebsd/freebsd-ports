@@ -4,7 +4,7 @@
 PORTNAME=	zebra
 PORTVERSION=	0.95a
 PORTREVISION=	9
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/ \
 		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
 		http://ftp.sunet.se/pub/network/zebra/

@@ -4,7 +4,7 @@
 PORTNAME=	tcpreen
 PORTVERSION=	1.4.4
 PORTREVISION=	3
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://www.remlab.net/files/tcpreen/
 
 MAINTAINER=	jmohacsi@bsd.hu

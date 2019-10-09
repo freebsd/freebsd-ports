@@ -3,7 +3,7 @@
 
 PORTNAME=	tcptrace
 PORTVERSION=	6.6.7
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://www.tcptrace.org/download/
 
 MAINTAINER=	ports@FreeBSD.org

@@ -26,7 +26,6 @@ PLIST_FILES=	bin/ipaggcreate bin/ipsumdump bin/ipaggmanip \
 OPTIONS_DEFINE=	IPV6 DOCS
 OPTIONS_SUB=	yes
 
-IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 # Try to unbreak parallel (-jX) builds

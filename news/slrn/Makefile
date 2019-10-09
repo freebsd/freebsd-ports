@@ -4,7 +4,7 @@
 PORTNAME=	slrn
 PORTVERSION=	1.0.3a
 PORTREVISION=	1
-CATEGORIES=	news ipv6
+CATEGORIES=	news
 MASTER_SITES=	http://www.jedsoft.org/releases/slrn/
 
 MAINTAINER=	johans@FreeBSD.org

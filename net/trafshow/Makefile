@@ -5,7 +5,7 @@ PORTNAME=	trafshow
 PORTVERSION=	5.2.3
 PORTREVISION=	2
 PORTEPOCH=	1
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/ \
 		ftp://ftp.nsk.su/pub/RinetSoftware/
 

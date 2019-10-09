@@ -3,7 +3,7 @@
 
 PORTNAME=	tcpdump
 PORTVERSION=	4.9.3
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/release/
 
 MAINTAINER=	garga@FreeBSD.org

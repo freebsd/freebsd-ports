@@ -40,7 +40,6 @@ OPTIONS_DEFAULT=	NETTLE
 NETTLE_DESC=		Nettle crypto library support
 NSS_DESC=		Add support for more hashing algorithms
 
-IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_OFF=	--disable-ipv6
 NETTLE_CONFIGURE_OFF=	--without-nettle
 NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle

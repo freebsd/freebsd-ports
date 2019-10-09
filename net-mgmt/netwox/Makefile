@@ -3,7 +3,7 @@
 
 PORTNAME=	netwox
 PORTVERSION=	5.38.0
-CATEGORIES=	net-mgmt ipv6
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwox/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/netwox/download/v5/ \
 		http://laurentconstantin.free.fr/common/netw/netwox/download/v5/

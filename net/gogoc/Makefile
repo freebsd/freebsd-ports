@@ -4,7 +4,7 @@
 PORTNAME=	gogoc
 PORTVERSION=	1.2
 PORTREVISION=	2
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://gogo6.com/downloads/
 DISTNAME=	gogoc-1_2-RELEASE
 

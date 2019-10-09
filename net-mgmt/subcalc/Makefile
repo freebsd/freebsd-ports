@@ -3,7 +3,7 @@
 
 PORTNAME=	subcalc
 PORTVERSION=	1.1
-CATEGORIES=	net-mgmt ipv6
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.seccuris.com/documents/downloads/
 
 MAINTAINER=	csjp@FreeBSD.org

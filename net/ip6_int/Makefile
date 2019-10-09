@@ -3,7 +3,7 @@
 
 PORTNAME=	ip6_int
 PORTVERSION=	1.0
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://www.bieringer.de/linux/IPv6/tools/
 DISTNAME=	ip6_int
 EXTRACT_SUFX=	# empty

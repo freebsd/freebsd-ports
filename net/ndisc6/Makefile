@@ -4,7 +4,7 @@
 PORTNAME=	ndisc6
 PORTVERSION=	1.0.4
 PORTREVISION=	1
-CATEGORIES=	net ipv6
+CATEGORIES=	net
 MASTER_SITES=	http://www.remlab.net/files/ndisc6/ \
 		http://people.via.ecp.fr/~rem/www.remlab.net/files/ndisc6/
 
