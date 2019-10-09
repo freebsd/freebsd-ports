@@ -3,7 +3,7 @@
 
 PORTNAME=	iperf
 PORTVERSION=	3.7
-CATEGORIES=	benchmarks ipv6
+CATEGORIES=	benchmarks
 MASTER_SITES=	https://downloads.es.net/pub/iperf/
 PKGNAMESUFFIX=	3
 

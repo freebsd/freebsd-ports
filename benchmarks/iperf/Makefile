@@ -20,7 +20,6 @@ PLIST_FILES=	bin/iperf \
 		man/man1/iperf.1.gz
 PORTDOCS=	*
 
-IPV6_CATEGORIES=	ipv6
 IPV6_CONFIGURE_ENABLE=	ipv6
 THREADS_CONFIGURE_ENABLE=	threads
 THREADS_LDFLAGS=	-lpthread

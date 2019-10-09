@@ -3,7 +3,7 @@
 
 PORTNAME=	netio
 PORTVERSION=	1.33
-CATEGORIES=	benchmarks net ipv6
+CATEGORIES=	benchmarks net
 MASTER_SITES=	http://www.ars.de/ \
 		LOCAL/arved
 DISTNAME=	netio133

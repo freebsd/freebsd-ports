@@ -4,7 +4,7 @@
 PORTNAME=	thrulay
 PORTVERSION=	0.9
 PORTREVISION=	1
-CATEGORIES=	benchmarks net ipv6
+CATEGORIES=	benchmarks net
 MASTER_SITES=	SF \
 		http://www.internet2.edu/~shalunov/thrulay/
 
