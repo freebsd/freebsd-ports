@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ircd-hybrid
-PORTVERSION=	8.2.22
+PORTVERSION=	8.2.26
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Fast irc daemon with a number of new features
 
 LICENSE=	GPLv2
@@ -24,14 +24,11 @@ USE_RC_SUBR=	ircd-hybrid
 SUB_FILES=	pkg-message
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=	OPENSSL HALFOPS ASSERT
+OPTIONS_DEFINE=	OPENSSL ASSERT
 OPTIONS_DEFAULT=OPENSSL
 
 ASSERT_CONFIGURE_ENABLE=	assert
 ASSERT_DESC=	Enable parts of the debugging code
-
-HALFOPS_CONFIGURE_ENABLE=	halfops
-HALFOPS_DESC=	Enable halfops on the server
 
 OPENSSL_DESC=	Enable openssl - allows use of CHALLENGE and encrypted links
 

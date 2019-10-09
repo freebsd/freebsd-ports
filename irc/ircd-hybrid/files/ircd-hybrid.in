@@ -24,10 +24,11 @@ stop_postcmd=pid_rm
 load_rc_config ${name}
 
 pidfile=${ircd_hybrid_pidfile-"/var/run/ircd/ircd.pid"}
+logfile=${ircd_hybrid_logfile-"/var/log/ircd/ircd.log"}
 : ${ircd_hybrid_enable:="NO"}
 : ${ircd_hybrid_user:="ircd"}
 : ${ircd_hybrid_config:="%%PREFIX%%/etc/ircd-hybrid/ircd.conf"}
-: ${ircd_hybrid_flags=" -pidfile ${pidfile}"}
+: ${ircd_hybrid_flags=" -pidfile ${pidfile} -logfile ${logfile}"}
 
 pid_touch ()
 {
