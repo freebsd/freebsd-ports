@@ -22,12 +22,6 @@ BUILD_DEPENDS+=	gsed:textproc/gsed \
 BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
 USES=		bison gmake python:2.7,build shebangfix tar:bz2
-.if defined(FAMILY) && ${FAMILY} == rk3399
-USES+=		linux
-USE_LINUX+=	base:build
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	RockChip tools are only for amd64
-.endif
 BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed swig=swig3.0 python2=python2.7
 
 SHEBANG_FILES=	tools/binman/binman.py arch/arm/mach-rockchip/make_fit_atf.py
@@ -100,7 +94,7 @@ UBOOT_PLIST_RK3328=	idbloader.img u-boot.itb
 UBOOT_ARCH_RK3328=	aarch64
 
 # Override for RK3399 family
-UBOOT_PLIST_RK3399=	idbloader.img trust.img uboot.img
+UBOOT_PLIST_RK3399=	idbloader.img u-boot.itb
 UBOOT_ARCH_RK3399=	aarch64
 
 # Override for ARMADA38X family
@@ -114,7 +108,7 @@ UBOOT_METADATA_ARMADA38X_RAW_BS=	512
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2019.07
+UBOOT_VERSION?=	2019.10
 
 # If a slave port defines a PORTREVISION use it
 .if defined(U_BOOT_SLAVE_PORTREVISION_${UBOOT_VERSION})
@@ -157,15 +151,14 @@ MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-sun50i_a64/bl31.bin
 
 .if defined(FAMILY) && ${FAMILY} == rk3328
 BUILD_DEPENDS+=	${LOCALBASE}/share/atf-rk3328/bl31.elf:sysutils/atf-rk3328 \
-		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR} \
-		${LOCALBASE}/bin/rk-trust_merger:sysutils/linux-rkbin
+		${LOCALBASE}/share/linux-rkbin/bin/rk33/rk3328_ddr_333MHz_v1.16.bin:sysutils/linux-rkbin \
+		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
 MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-rk3328/bl31.elf
 .endif
 
 .if defined(FAMILY) && ${FAMILY} == rk3399
 BUILD_DEPENDS+=	${LOCALBASE}/share/atf-rk3399/bl31.elf:sysutils/atf-rk3399 \
-		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR} \
-		${LOCALBASE}/bin/rk-trust_merger:sysutils/linux-rkbin
+		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
 MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-rk3399/bl31.elf
 .endif
 
@@ -230,12 +223,6 @@ post-build:
 .if defined(FAMILY) && ${FAMILY} == rk3328
 	mkimage -n rk3328 -T rksd -d ${LOCALBASE}/share/linux-rkbin/bin/rk33/rk3328_ddr_333MHz_v1.16.bin ${WRKSRC}/idbloader.img
 	cat ${WRKSRC}/spl/u-boot-spl.bin >> ${WRKSRC}/idbloader.img
-.endif
-.if defined(FAMILY) && ${FAMILY} == rk3399
-	mkimage -n rk3399 -T rksd -d ${LOCALBASE}/share/linux-rkbin/bin/rk33/rk3399_ddr_800MHz_v1.23.bin ${WRKSRC}/idbloader.img
-	cat ${LOCALBASE}/share/linux-rkbin/bin/rk33/rk3399_miniloader_v1.19.bin >> ${WRKSRC}/idbloader.img
-	(cd ${WRKSRC} && rk-trust_merger ${LOCALBASE}/share/linux-rkbin/rktrust/RK3399TRUST.ini)
-	(cd ${WRKSRC} && rk-loaderimage --pack --uboot u-boot-dtb.bin uboot.img)
 .endif
 # If we need to put anything into WRKSRC, do so now so we can build the PLIST
 # in do-install
