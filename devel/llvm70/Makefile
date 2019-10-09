@@ -208,6 +208,12 @@ MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/Makefile.COMMANDS"
 
+# Use lld for armv6 on clang 7 and up to avoid binutils ld issues
+# PR: 235282
+if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 70
+LDFLAGS_armv6=-fuse-ld=lld
+.endif
+
 _CRTLIBDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 _CRTBLDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/share
 _COMPILER_RT_BLACKLISTS=	cfi_blacklist.txt
