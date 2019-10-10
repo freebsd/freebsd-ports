@@ -12,6 +12,10 @@ COMMANDS_Include_MAINTAINER=	portmgr@FreeBSD.org
 
 _CCACHEMKINCLUDED=	yes
 
+.if defined(NOCCACHE)
+NO_CCACHE=	t
+.endif
+
 # HOME is always set to ${WRKDIR} now. Try to use /root/.ccache as default.
 .if defined(WITH_CCACHE_BUILD) && !defined(CCACHE_DIR)
 .  if defined(USER) && ${USER} == root
@@ -25,7 +29,7 @@ WARNING+=	WITH_CCACHE_BUILD support disabled, please set CCACHE_DIR.
 # Support NO_CCACHE for common setups, require WITH_CCACHE_BUILD, and
 # don't use if ccache already set in CC
 .if !defined(NO_CCACHE) && defined(WITH_CCACHE_BUILD) && !${CC:M*ccache*} && \
-  !defined(NO_BUILD) && !defined(NOCCACHE)
+  !defined(NO_BUILD)
 
 # Avoid depends loops between ccache and pkg
 .	if !defined(NO_CCACHE_DEPEND) && \
