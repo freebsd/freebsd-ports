@@ -7,6 +7,6 @@ lib/libexpat.so
 lib/libexpat.so.1
 lib/libexpat.so.1.6.10
 libdata/pkgconfig/expat.pc
-%%PORTDOCS%%man/man1/xmlwf.1.gz
+man/man1/xmlwf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/changelog
