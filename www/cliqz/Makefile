@@ -96,11 +96,6 @@ MOZ_CONFIGURE_ARGS+=	"ac_add_options --disable-crashreporter" \
 
 .include <bsd.port.pre.mk>
 
-# Default to llvm 8 for i386
-.if ${ARCH} == i386 && ${LLVM_DEFAULT:S,-devel,990,} >= 90
-LLVM_DEFAULT=	80
-.endif
-
 # Require newer Clang than what's in base system unless user opted out
 .if ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
 CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
