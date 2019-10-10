@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
-USES=		autoreconf:build gettext gmake libtool localbase pkgconfig \
-		shebangfix tar:bzip2
+USES=		autoreconf:build gettext gmake gnome libtool localbase \
+		pkgconfig shebangfix tar:bzip2 xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jonls
