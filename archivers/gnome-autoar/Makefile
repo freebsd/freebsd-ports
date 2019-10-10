@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
 
-USES=		gettext-runtime gmake libarchive libtool pkgconfig tar:xz
+USES=		gettext-runtime gmake gnome libarchive libtool pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

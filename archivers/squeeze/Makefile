@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libthunar-vfs-1.so:x11-fm/thunar-vfs
 
-USES=		tar:bzip2 pkgconfig gmake gettext pathfix desktop-file-utils \
-		libtool xfce:gtk2 xorg
+USES=		tar:bzip2 pkgconfig gmake gnome gettext pathfix \
+		desktop-file-utils libtool xfce:gtk2 xorg
 USE_XFCE=	thunar
 USE_XORG=	x11
 USE_GNOME=	gtk20 glib20 intltool

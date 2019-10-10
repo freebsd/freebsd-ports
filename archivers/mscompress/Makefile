@@ -9,6 +9,9 @@ MASTER_SITES=	SUNSITE/utils/compress
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft "compress.exe/expand.exe" compatible (de)compressor
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		tar:bzip2
 HAS_CONFIGURE=	yes
 
