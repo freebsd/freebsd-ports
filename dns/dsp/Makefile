@@ -25,7 +25,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 GNU_CONFIGURE=	yes
 
 USES=		gmake perl5
-PERL5=		configure patch shebangfix
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
