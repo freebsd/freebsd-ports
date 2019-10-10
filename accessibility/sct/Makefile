@@ -10,6 +10,7 @@ COMMENT=	Utility to change screen temperature
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	0mp
 USE_XORG=	x11 xrandr
