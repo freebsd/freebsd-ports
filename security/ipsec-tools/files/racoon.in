@@ -21,7 +21,8 @@ rcvar=racoon_enable
 load_rc_config $name
 
 racoon_enable=${racoon_enable:-"NO"}		# Disable by default
-racoon_create_dirs=${racoon_create_dirs:-"NO"}	# Create $required_dirs
+racoon_dirs=${racoon_dirs:-"%%STATEDIR%%"}	# For controlling socket
+racoon_create_dirs=${racoon_create_dirs:-"NO"}	# Create $racoon_dirs
 #racoon_flags=""				# Flags to racoon program
 
 command="%%PREFIX%%/sbin/${name}"
@@ -32,7 +33,6 @@ stop_postcmd="${name}_cleanup"
 
 socketfile="%%STATEDIR%%/${name}.sock"
 required_files="%%PREFIX%%/etc/${name}/${name}.conf"
-required_dirs="%%STATEDIR%%"
 required_modules="%%REQUIREMOD%%"
 
 racoon_cleanup()
@@ -46,7 +46,7 @@ racoon_prestart()
 	racoon_cleanup
 
 	if checkyesno "${name}_create_dirs"; then
-		/bin/mkdir -p $required_dirs
+		install -m 0755 -d $racoon_dirs
 	fi
 }
 
