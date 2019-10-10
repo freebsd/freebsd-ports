@@ -13,7 +13,7 @@ EXTRACT_ONLY=
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Broadcom AirForce IEEE 802.11 Firmware Kernel Module
 
-ONLY_FOR_ARCHS=		amd64 i386 powerpc
+ONLY_FOR_ARCHS=		amd64 i386 powerpc powerpc64
 ONLY_FOR_ARCHS_REASON=	hardware particular to PCI/CardBus
 
 BUILD_DEPENDS=	b43-fwcutter:sysutils/b43-fwcutter
