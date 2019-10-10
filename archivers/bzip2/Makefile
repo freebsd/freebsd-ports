@@ -9,6 +9,11 @@ MASTER_SITES=	https://sourceware.org/pub/bzip2/
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Block-sorting file compressor
 
+LICENSE=	BZIP2
+LICENSE_NAME=	BZIP2 license
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USES=		cpe
 CPE_VENDOR=	bzip
 USE_LDCONFIG=	yes
