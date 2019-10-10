@@ -7,18 +7,20 @@ bin/rspamd-%%RSPAMDVERSION%%
 bin/rspamd_stats
 %%CGP%%bin/rspamd-cgp-helper
 etc/newsyslog.conf.d/rspamd.newsyslog.conf
-@sample %%ETCDIR%%/2tld.inc.sample
 @sample %%ETCDIR%%/actions.conf.sample
 @sample %%ETCDIR%%/cgp.inc.sample
 @sample %%ETCDIR%%/common.conf.sample
 @sample %%ETCDIR%%/composites.conf.sample
-@sample %%ETCDIR%%/dmarc_whitelist.inc.sample
 @sample %%ETCDIR%%/groups.conf.sample
 @sample %%ETCDIR%%/logging.inc.sample
-@sample %%ETCDIR%%/maillist.inc.sample
+%%ETCDIR%%/maps.d/dmarc_whitelist.inc
+%%ETCDIR%%/maps.d/maillist.inc
+%%ETCDIR%%/maps.d/mid.inc
+%%ETCDIR%%/maps.d/mime_types.inc
+%%ETCDIR%%/maps.d/redirectors.inc
+%%ETCDIR%%/maps.d/spf_dkim_whitelist.inc
+%%ETCDIR%%/maps.d/surbl-whitelist.inc
 @sample %%ETCDIR%%/metrics.conf.sample
-@sample %%ETCDIR%%/mid.inc.sample
-@sample %%ETCDIR%%/mime_types.inc.sample
 @sample %%ETCDIR%%/modules.conf.sample
 %%ETCDIR%%/modules.d/antivirus.conf
 %%ETCDIR%%/modules.d/arc.conf
@@ -48,6 +50,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/mx_check.conf
 %%ETCDIR%%/modules.d/neural.conf
 %%ETCDIR%%/modules.d/once_received.conf
+%%ETCDIR%%/modules.d/p0f.conf
 %%ETCDIR%%/modules.d/phishing.conf
 %%ETCDIR%%/modules.d/ratelimit.conf
 %%ETCDIR%%/modules.d/rbl.conf
@@ -62,11 +65,8 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/surbl.conf
 %%ETCDIR%%/modules.d/trie.conf
 %%ETCDIR%%/modules.d/url_redirector.conf
-%%ETCDIR%%/modules.d/url_reputation.conf
-%%ETCDIR%%/modules.d/url_tags.conf
 %%ETCDIR%%/modules.d/whitelist.conf
 @sample %%ETCDIR%%/options.inc.sample
-%%ETCDIR%%/redirectors.inc
 @sample %%ETCDIR%%/rspamd.conf.sample
 @sample %%ETCDIR%%/rspamd.newsyslog.conf.sample
 %%ETCDIR%%/scores.d/fuzzy_group.conf
@@ -82,9 +82,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/scores.d/surbl_group.conf
 %%ETCDIR%%/scores.d/whitelist_group.conf
 @sample %%ETCDIR%%/settings.conf.sample
-@sample %%ETCDIR%%/spf_dkim_whitelist.inc.sample
 @sample %%ETCDIR%%/statistic.conf.sample
-@sample %%ETCDIR%%/surbl-whitelist.inc.sample
 @sample %%ETCDIR%%/worker-controller.inc.sample
 @sample %%ETCDIR%%/worker-fuzzy.inc.sample
 @sample %%ETCDIR%%/worker-normal.inc.sample
@@ -92,6 +90,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 lib/rspamd/librspamd-actrie.so
 lib/rspamd/librspamd-ev.so
 lib/rspamd/librspamd-kann.so
+lib/rspamd/librspamd-replxx.so
 lib/rspamd/librspamd-server.so
 man/man1/rspamadm.1.gz
 man/man1/rspamc.1.gz
@@ -152,6 +151,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/global_functions.lua
 %%DATADIR%%/lualib/lpegre.lua
 %%DATADIR%%/lualib/lua_auth_results.lua
+%%DATADIR%%/lualib/lua_bayes_learn.lua
 %%DATADIR%%/lualib/lua_cfg_transform.lua
 %%DATADIR%%/lualib/lua_clickhouse.lua
 %%DATADIR%%/lualib/lua_dkim_tools.lua
@@ -161,9 +161,15 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_ffi/spf.lua
 %%DATADIR%%/lualib/lua_fuzzy.lua
 %%DATADIR%%/lualib/lua_ical.lua
+%%DATADIR%%/lualib/lua_lexer.lua
+%%DATADIR%%/lualib/lua_magic/heuristics.lua
+%%DATADIR%%/lualib/lua_magic/init.lua
+%%DATADIR%%/lualib/lua_magic/patterns.lua
+%%DATADIR%%/lualib/lua_magic/types.lua
 %%DATADIR%%/lualib/lua_maps_expressions.lua
 %%DATADIR%%/lualib/lua_maps.lua
 %%DATADIR%%/lualib/lua_meta.lua
+%%DATADIR%%/lualib/lua_mime.lua
 %%DATADIR%%/lualib/lua_redis.lua
 %%DATADIR%%/lualib/lua_scanners/clamav.lua
 %%DATADIR%%/lualib/lua_scanners/common.lua
@@ -172,12 +178,17 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_scanners/icap.lua
 %%DATADIR%%/lualib/lua_scanners/init.lua
 %%DATADIR%%/lualib/lua_scanners/kaspersky_av.lua
+%%DATADIR%%/lualib/lua_scanners/kaspersky_se.lua
 %%DATADIR%%/lualib/lua_scanners/oletools.lua
+%%DATADIR%%/lualib/lua_scanners/p0f.lua
 %%DATADIR%%/lualib/lua_scanners/savapi.lua
 %%DATADIR%%/lualib/lua_scanners/sophos.lua
 %%DATADIR%%/lualib/lua_scanners/spamassassin.lua
 %%DATADIR%%/lualib/lua_scanners/vadesecure.lua
-%%DATADIR%%/lualib/lua_selectors.lua
+%%DATADIR%%/lualib/lua_selectors/extractors.lua
+%%DATADIR%%/lualib/lua_selectors/init.lua
+%%DATADIR%%/lualib/lua_selectors/maps.lua
+%%DATADIR%%/lualib/lua_selectors/transforms.lua
 %%DATADIR%%/lualib/lua_settings.lua
 %%DATADIR%%/lualib/lua_smtp.lua
 %%DATADIR%%/lualib/lua_stat.lua
@@ -233,6 +244,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/plugins/mx_check.lua
 %%DATADIR%%/plugins/neural.lua
 %%DATADIR%%/plugins/once_received.lua
+%%DATADIR%%/plugins/p0f.lua
 %%DATADIR%%/plugins/phishing.lua
 %%DATADIR%%/plugins/ratelimit.lua
 %%DATADIR%%/plugins/rbl.lua
@@ -244,8 +256,6 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/plugins/spamtrap.lua
 %%DATADIR%%/plugins/trie.lua
 %%DATADIR%%/plugins/url_redirector.lua
-%%DATADIR%%/plugins/url_reputation.lua
-%%DATADIR%%/plugins/url_tags.lua
 %%DATADIR%%/plugins/whitelist.lua
 %%DATADIR%%/rules/bitcoin.lua
 %%DATADIR%%/rules/forwarding.lua
@@ -258,7 +268,6 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/rules/regexp/headers.lua
 %%DATADIR%%/rules/regexp/misc.lua
 %%DATADIR%%/rules/regexp/upstream_spam_filters.lua
-%%DATADIR%%/rules/rspamd.classifiers.lua
 %%DATADIR%%/rules/rspamd.lua
 %%DATADIR%%/rules/subject_checks.lua
 %%DATADIR%%/www/README.md
@@ -286,10 +295,9 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/js/lib/d3.min.js
 %%DATADIR%%/www/js/lib/d3evolution.min.js
 %%DATADIR%%/www/js/lib/d3pie.min.js
-%%DATADIR%%/www/js/lib/domReady.js
 %%DATADIR%%/www/js/lib/footable.min.js
 %%DATADIR%%/www/js/lib/humanize.min.js
-%%DATADIR%%/www/js/lib/jquery-3.3.1.min.js
+%%DATADIR%%/www/js/lib/jquery-3.4.1.min.js
 %%DATADIR%%/www/js/lib/jquery.stickytabs.min.js
 %%DATADIR%%/www/js/lib/nprogress.min.js
 %%DATADIR%%/www/js/lib/require.min.js
