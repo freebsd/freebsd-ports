@@ -53,7 +53,7 @@ FFLAGS=		-O2
 LDFLAGS+=	-lpthread -lexecinfo
 
 MAKE_ENV=	CCACHE_DISABLE=yes PACKAGE=${PORTNAME}
-NOCCACHE=	yes
+NO_CCACHE=	yes
 
 CONFLICTS=	lam-7.* mpd-[0-9]* mpiexec-0.*
 
