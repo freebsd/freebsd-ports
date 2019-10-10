@@ -1,0 +1,14 @@
+LeProxy is designed for anonymous surfing, improved security and privacy
+plus circumventing geoblocking.  It allows you to enjoy the web like it
+was meant to work and access your favorite online video platform without
+annoying country blocks while traveling.
+
+LeProxy is a powerful, lightweight, fast and simple to use proxy server
+that you can host on your own server or PC at home and then access from
+anywhere.  It supports optional authentication so you can share a server
+instance with your family and friends without having to worry about
+third parties.  It provides compatibility with a large number of clients
+and services by accepting both common HTTP and SOCKS proxy protocols on
+a single listening port.
+
+WWW: https://github.com/leproxy/leproxy

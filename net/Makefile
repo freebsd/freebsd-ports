@@ -340,6 +340,7 @@
     SUBDIR += ldapscripts
     SUBDIR += ldapsdk
     SUBDIR += ldapsh
+    SUBDIR += leproxy
     SUBDIR += lft
     SUBDIR += libarms
     SUBDIR += libbgpdump
