@@ -19,7 +19,6 @@
     SUBDIR += fpc-gtk2
     SUBDIR += fpc-xforms
     SUBDIR += fxscintilla
-    SUBDIR += gai
     SUBDIR += gdl
     SUBDIR += girara
     SUBDIR += gnocl
