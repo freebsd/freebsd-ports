@@ -141,7 +141,7 @@ post-patch-SOURCES-off:
 		${WRKSRC}/src/bootstrap/install.rs
 
 .if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE) && !defined(NOCCACHE)
-CCACHE_VALUE=	"${CCACHE_WRAPPER_PATH:C,/libexec/ccache$,,}/bin/ccache"
+CCACHE_VALUE=	"${CCACHE_BIN}"
 .else
 CCACHE_VALUE=	false
 .endif

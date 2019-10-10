@@ -34,6 +34,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/bin/ccache:devel/ccache
 .	endif
 
 CCACHE_WRAPPER_PATH?=	${LOCALBASE}/libexec/ccache
+CCACHE_BIN?=			${CCACHE_WRAPPER_PATH:C,/libexec/ccache$,,}/bin/ccache
 
 .if exists(${CCACHE_WRAPPER_PATH})
 # Prepend the ccache dir into the PATH and setup ccache env
