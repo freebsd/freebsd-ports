@@ -111,7 +111,6 @@ X11_CONFIGURE_ON=	--with-giflib=system \
 X11_LIB_DEPENDS=	libgif.so:graphics/giflib
 X11_MAKE_ENV_OFF=	BUILD_HEADLESS_ONLY=1 \
 			MAKEFLAGS=X_CFLAGS="-I${LOCALBASE}/include"
-X11_MAKE_ENV_ON=	MAKEFLAGS=""
 X11_USE=		XORG=x11,xext,xi,xrender,xt,xtst
 FONTCONFIG_EXTRA_PATCHES=	${PATCHDIR}/fontconfig.patch
 FONTCONFIG_IMPLIES=	X11
