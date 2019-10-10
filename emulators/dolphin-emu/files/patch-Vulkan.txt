@@ -1,0 +1,24 @@
+Work around casting problems from 'nullptr_t' to 'VkDeviceMemory' on i386
+
+--- Source/Core/VideoBackends/Vulkan/VKTexture.h.orig	2019-10-07 22:49:08.522989000 +0200
++++ Source/Core/VideoBackends/Vulkan/VKTexture.h	2019-10-07 22:55:45.619770000 +0200
+@@ -54,7 +54,7 @@
+   VkImageView GetView() const { return m_view; }
+   VkImageLayout GetLayout() const { return m_layout; }
+   VkFormat GetVkFormat() const { return GetVkFormatForHostTextureFormat(m_config.format); }
+-  bool IsAdopted() const { return m_device_memory != nullptr; }
++  bool IsAdopted() const { return m_device_memory != static_cast<VkDeviceMemory>(VK_NULL_HANDLE); }
+ 
+   static std::unique_ptr<VKTexture> Create(const TextureConfig& tex_config);
+   static std::unique_ptr<VKTexture>
+--- Source/Core/VideoBackends/Vulkan/VKTexture.cpp.orig	2019-10-07 23:53:26.533835000 +0200
++++ Source/Core/VideoBackends/Vulkan/VKTexture.cpp	2019-10-07 23:53:57.764628000 +0200
+@@ -120,7 +120,7 @@
+                                                     VkImageViewType view_type, VkImageLayout layout)
+ {
+   std::unique_ptr<VKTexture> texture = std::make_unique<VKTexture>(
+-      tex_config, nullptr, image, layout, ComputeImageLayout::Undefined);
++      tex_config, static_cast<VkDeviceMemory>(VK_NULL_HANDLE), image, layout, ComputeImageLayout::Undefined);
+   if (!texture->CreateView(view_type))
+     return nullptr;
+ 
