@@ -73,9 +73,9 @@ INSTALLS_ICONS=	yes
 CMAKE_ARGS+=	-DPROC_TARGET_NUMBER="1"
 .endif
 
-.if "${WITH_CCACHE_BUILD}" == "yes" && !defined(NO_CCACHE) 
-CMAKE_ARGS+=	-DCMAKE_C_COMPILER_LAUNCHER=${LOCALBASE}/bin/ccache \
-		-DCMAKE_CXX_COMPILER_LAUNCHER=${LOCALBASE}/bin/ccache
+.if "${WITH_CCACHE_BUILD}" == "yes" && !defined(NO_CCACHE) && !defined(NOCCACHE)
+CMAKE_ARGS+=	-DCMAKE_C_COMPILER_LAUNCHER=${CCACHE_WRAPPER_PATH:C,/libexec/ccache$,,}/bin/ccache \
+		-DCMAKE_CXX_COMPILER_LAUNCHER=${CCACHE_WRAPPER_PATH:C,/libexec/ccache$,,}/bin/ccache
 .endif
 
 RTDIR=		${PREFIX}/libdata/${PORTNAME}
