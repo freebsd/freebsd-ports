@@ -10,6 +10,9 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Neat script to make self-extracting archives
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	bash:shells/bash
 
 EXTRACT_CMD=	${SH}

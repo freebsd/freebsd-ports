@@ -9,6 +9,9 @@ MASTER_SITES=	SUNSITE/utils/compress
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts files from the old '.arc' archive format
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 PLIST_FILES=	bin/nomarch man/man1/nomarch.1.gz
 PORTDOCS=	COPYING ChangeLog NEWS README TODO
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

@@ -22,7 +22,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 USE_GITHUB=	yes
 GH_ACCOUNT=	ib
 
-USES=		desktop-file-utils gmake pkgconfig
+USES=		desktop-file-utils gmake gnome pkgconfig
 USE_GNOME=	cairo glib20 intltool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

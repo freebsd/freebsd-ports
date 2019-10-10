@@ -9,6 +9,8 @@ MASTER_SITES=	LOCAL/ehaupt
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fast archiver with good compression ratio
 
+LICENSE=	PD
+
 PORTDOCS=	read_me.txt
 PLIST_FILES=	bin/ppmd man/man1/ppmd.1.gz
 

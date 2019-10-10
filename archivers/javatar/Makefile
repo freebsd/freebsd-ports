@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.gjt.org/download/time/java/tar/
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java tar archive I/O package
 
+LICENSE=	PD
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

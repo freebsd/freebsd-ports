@@ -10,6 +10,9 @@ DISTNAME=	upackddir_${PORTVERSION}-1
 MAINTAINER=	ayu@commun.jp
 COMMENT=	These trivial utilities can unpack and create PackdDir archives
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 WRKSRC=		${WRKDIR}/src
 
 PLIST_FILES=	bin/upackddir \

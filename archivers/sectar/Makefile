@@ -9,6 +9,9 @@ MASTER_SITES=	SF/star/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to create encrypted tar archives
 
+LICENSE=	GPLv2
+LICENSE_FILEE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/sectar

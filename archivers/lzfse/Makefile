@@ -8,6 +8,9 @@ CATEGORIES=	archivers
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Lempel-Ziv style data compression algorithm
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	lzfse
 GH_TAGNAME=	4591228
