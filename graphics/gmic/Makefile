@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmic
-DISTVERSION=	2.7.2
+DISTVERSION=	2.7.4
 CATEGORIES=	graphics
 MASTER_SITES=	https://gmic.eu/files/source/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
