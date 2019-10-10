@@ -14,7 +14,8 @@ LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libwpe-1.0.so:www/libwpe \
 		libwayland-client.so:graphics/wayland
 
-USES=		cmake pkgconfig localbase:ldflags gl gnome tar:xz
+USES=		cmake compiler:c++11-lang pkgconfig localbase:ldflags gl gnome \
+		tar:xz
 
 USE_GL=		egl
 USE_GNOME=	glib20
