@@ -2,14 +2,15 @@
 
 PORTNAME=	gui
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits graphics
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt graphical user interface module
 
-BUILD_DEPENDS=	at-spi2-core>=0:accessibility/at-spi2-core
+BUILD_DEPENDS=	at-spi2-core>=0:accessibility/at-spi2-core \
+		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libevdev.so:devel/libevdev \
 		libfontconfig.so:x11-fonts/fontconfig \
