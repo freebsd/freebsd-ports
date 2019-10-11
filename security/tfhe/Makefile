@@ -1,0 +1,30 @@
+# $FreeBSD$
+
+PORTNAME=	tfhe
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.1-14
+DISTVERSIONSUFFIX=	-g3319e2c
+CATEGORIES=	security
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Fast Fully Homomorphic Encryption (FHE) library over the Torus
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	cmake:devel/cmake
+TEST_DEPENDS=	fftw3>0:math/fftw3 \
+		googletest>0:devel/googletest
+
+USES=		gmake localbase:ldflags
+USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+
+BINARY_ALIAS=	make=${GMAKE}
+
+TEST_TARGET=	test
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
+
+.include <bsd.port.mk>

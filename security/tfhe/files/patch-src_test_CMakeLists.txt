@@ -1,0 +1,10 @@
+--- src/test/CMakeLists.txt.orig	2019-10-11 03:19:42 UTC
++++ src/test/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ cmake_minimum_required(VERSION 3.0)
+ 
+-add_subdirectory(googletest EXCLUDE_FROM_ALL)
++#add_subdirectory(googletest EXCLUDE_FROM_ALL)
+ 
+ include_directories(${GTEST_INCLUDE_DIRS})
+ 
