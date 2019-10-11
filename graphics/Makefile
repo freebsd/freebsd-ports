@@ -147,6 +147,7 @@
     SUBDIR += dspdfviewer
     SUBDIR += duhdraw
     SUBDIR += dynamechs
+    SUBDIR += ebsynth
     SUBDIR += edje_viewer
     SUBDIR += electricsheep
     SUBDIR += electrix
