@@ -16,7 +16,7 @@ BUILD_DEPENDS=	cmake:devel/cmake
 TEST_DEPENDS=	fftw3>0:math/fftw3 \
 		googletest>0:devel/googletest
 
-USES=		gmake localbase:ldflags
+USES=		compiler:c++11-lang gmake localbase:ldflags
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
