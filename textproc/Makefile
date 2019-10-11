@@ -1136,6 +1136,7 @@
     SUBDIR += p5-texcount
     SUBDIR += p5-xmltv
     SUBDIR += pa-aspell
+    SUBDIR += pageedit
     SUBDIR += par
     SUBDIR += pcrs
     SUBDIR += pdfgrep
