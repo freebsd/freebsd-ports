@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sslsplit
-PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTVERSION=	0.5.5
 CATEGORIES=	security
 MASTER_SITES=	http://mirror.roe.ch/rel/sslsplit/
 
@@ -17,9 +16,9 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 
 USES=		gmake pkgconfig tar:bzip2 uidfix ssl
 MAKEFILE=	GNUmakefile
-MAKE_ENV=	DESTDIR=${STAGEDIR} MANDIR=man INSTALLUID=${UID} INSTALLGID=${GID}
+MAKE_ENV=	DESTDIR=${STAGEDIR} MANDIR=${PREFIX}/man INSTALLUID=${UID} INSTALLGID=${GID}
 PLIST_FILES=	bin/sslsplit man/man1/sslsplit.1.gz man/man5/sslsplit.conf.5.gz \
-		"@sample sslsplit/sslsplit.conf.sample"
+		"@sample %%ETCDIR%%/sslsplit.conf.sample"
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sslsplit
