@@ -149,7 +149,7 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/codeassist.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/coding-style.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/common-extension-tasks.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/core-fileiconprovider-sub-qt-creator.html
+@comment %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/core-fileiconprovider-sub-qt-creator.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/core-locatorfilterentry-highlightinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/core-locatorfilterentry-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/core-locatorfilterentry.html
