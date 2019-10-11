@@ -1,0 +1,6 @@
+ebsynth is a tool for by-example synthesis of images. It can be used
+for a variety of image synthesis tasks, including guided texture
+synthesis, artistic style transfer, content-aware inpainting and
+super-resolution.
+
+WWW: https://ebsynth.com
