@@ -172,6 +172,7 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/thirdparty/licenses/physfs.txt
 %%DATADIR%%/game/thirdparty/licenses/tcod.txt
 %%DATADIR%%/game/thirdparty/licenses/tween.txt
+%%DATADIR%%/game/thirdparty/licenses/utf8proc.txt
 %%DATADIR%%/game/thirdparty/licenses/zlib.txt
 %%DATADIR%%/game/thirdparty/lpeg/re.lua
 %%DATADIR%%/game/thirdparty/ltn12.lua
