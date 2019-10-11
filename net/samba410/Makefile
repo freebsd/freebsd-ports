@@ -150,7 +150,7 @@ LIB_DEPENDS+=			libpopt.so:devel/popt
 LIB_DEPENDS+=			libinotify.so:devel/libinotify
 # GNUTLS
 LIB_DEPENDS+=			libgnutls.so:security/gnutls
-# NFS4 ACL glue
+# NFSv4 ACL glue
 LIB_DEPENDS+=			libsunacl.so:sysutils/libsunacl
 # Jansson
 BUILD_DEPENDS+=			jansson>=2.10:devel/jansson
@@ -416,6 +416,7 @@ SUB_LIST+=			SAMBA4_PYTHON="@comment "
 USES+=				python:3.4+
 PLIST_SUB+=			SAMBA4_PYTHON=""
 SUB_LIST+=			SAMBA4_PYTHON=""
+CONFIGURE_ARGS+=		--nopycache
 
 .if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
 SAMBA4_BUNDLED_LIBS+=		pytalloc-util
