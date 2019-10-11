@@ -1,3 +1,3 @@
-TIMESTAMP = 1562440289
-SHA256 (importlib_metadata-0.18.tar.gz) = cb6ee23b46173539939964df59d3d72c3e0c1b5d54b84f1d8a7e912fe43612db
-SIZE (importlib_metadata-0.18.tar.gz) = 23341
+TIMESTAMP = 1570802214
+SHA256 (importlib_metadata-0.23.tar.gz) = aa18d7378b00b40847790e7c27e11673d7fed219354109d0e7b9e5b25dc3ad26
+SIZE (importlib_metadata-0.23.tar.gz) = 25172
