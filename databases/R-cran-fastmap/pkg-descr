@@ -1,0 +1,8 @@
+Fast implementation of a key-value store. Environments are commonly
+used as key-value stores, but every time a new key is used, it is
+added to R's global symbol table, causing a small amount of memory
+leakage. This can be problematic in cases where many different keys
+are used. Fastmap avoids this memory leak issue by implementing the
+map using data structures in C++.
+
+WWW: https://cran.r-project.org/web/packages/fastmap/
