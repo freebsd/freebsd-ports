@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	bogofilter
-DISTVERSION=	1.2.5.rc1
-PORTREVISION?=	1
+DISTVERSION=	1.2.5
+PORTREVISION?=	0
 CATEGORIES?=	mail
-MASTER_SITES=	SF/bogofilter/bogofilter-current/bogofilter-1.2.5/
+MASTER_SITES=	SF/bogofilter/bogofilter-stable/
 
 MAINTAINER?=	mandree@FreeBSD.org
 COMMENT=	Fast, teachable, learning spam detector
