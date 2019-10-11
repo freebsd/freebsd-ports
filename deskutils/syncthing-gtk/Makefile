@@ -2,7 +2,7 @@
 
 PORTNAME=	syncthing-gtk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.4.3
+DISTVERSION=	0.9.4.4
 CATEGORIES=	deskutils python
 
 MAINTAINER=	swills@FreeBSD.org
