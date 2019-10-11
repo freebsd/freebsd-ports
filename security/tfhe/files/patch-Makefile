@@ -1,0 +1,18 @@
+--- Makefile.orig	2019-10-11 03:02:18 UTC
++++ Makefile
+@@ -17,13 +17,13 @@ clean: build
+ distclean:
+ 	rm -rf build builddtests buildotests; true
+ 
+-test: builddtests buildotests src/test/googletest/CMakeLists.txt
++test: builddtests buildotests #src/test/googletest/CMakeLists.txt
+ 	make -j $(nproc) -C builddtests VERBOSE=1
+ 	make -j $(nproc) -C buildotests VERBOSE=1
+ 	make -j $(nproc) -C builddtests test VERBOSE=1
+ 	make -j $(nproc) -C buildotests test VERBOSE=1
+ 
+-build: src/test/googletest/CMakeLists.txt
++build: #src/test/googletest/CMakeLists.txt
+ 	mkdir build; cd build; cmake ../src; cd ..
+ 
+ builddtests:

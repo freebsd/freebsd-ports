@@ -1,0 +1,10 @@
+TFHE is open-source software. The scheme is described in the paper
+"Faster fully homomorphic encryption: Bootstrapping in less than 0.1 seconds"
+presented at the IACR conference Asiacrypt 2016 by Ilaria Chillotti,
+Nicolas Gama, Mariya Georgieva, Malika Izabachene.
+
+The Fully Homomorphic Encryption is a cryptosystem that supports arbitrary
+computation on ciphertexts. It may be used by banks to perform computations on
+fully encrypted client information.
+
+WWW: https://github.com/tfhe/tfhe
