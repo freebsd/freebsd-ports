@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengrok-tools
-PORTVERSION=	1.2.23
+PORTVERSION=	1.3.3
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +13,7 @@ LICENSE=	CDDL
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.6.0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.18.4:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.20.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}resource>=0.2.0:devel/py-resource@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR}
@@ -30,7 +30,6 @@ BUILD_WRKSRC=	${WRKSRC}/opengrok-tools
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|requests\=\=2\.20\.0|requests==2.18.4|g' ${BUILD_WRKSRC}/requirements.txt
-	@${REINPLACE_CMD} -e 's|requests>\=2\.20\.0|requests>=2.18.4|g' ${BUILD_WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|requests\=\=|requests>=|g' ${BUILD_WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>
