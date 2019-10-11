@@ -4355,6 +4355,7 @@
     SUBDIR += py-coverage
     SUBDIR += py-crank
     SUBDIR += py-crcmod
+    SUBDIR += py-crc32c
     SUBDIR += py-ctags
     SUBDIR += py-cuisine
     SUBDIR += py-cursive
