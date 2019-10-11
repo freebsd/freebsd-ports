@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fluent-bit
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	sysutils
-MASTER_SITES=   http://fluentbit.io/releases/${DISTVERSION:R}/
+MASTER_SITES=   https://fluentbit.io/releases/${DISTVERSION:R}/
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Fast and lightweight data forwarder
