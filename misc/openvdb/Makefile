@@ -40,7 +40,7 @@ TOOLS_CMAKE_BOOL=	OPENVDB_BUILD_BINARIES OPENVDB_BUILD_VDB_LOD \
 			OPENVDB_BUILD_VDB_RENDER OPENVDB_BUILD_VDB_VIEW
 TOOLS_LIB_DEPENDS=	libglfw.so:graphics/glfw \
 			libIlmImf.so:graphics/openexr
-TOOLS_USES=		gl
+TOOLS_USES=		gl xorg
 TOOLS_USE=		GL=gl,glu XORG=x11,xcursor,xi,xinerama,xrandr,xxf86vm
 
 DOCS_CMAKE_BOOL=	OPENVDB_BUILD_DOCS
