@@ -21,6 +21,8 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 PLIST_FILES=	${SITE_PERL_REL}/Scope/Container/DBI.pm \
 		${SITE_MAN3_REL}/Scope::Container::DBI.3.gz
 
