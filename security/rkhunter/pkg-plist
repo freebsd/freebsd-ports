@@ -7,14 +7,14 @@ lib/rkhunter/scripts/readlink.sh
 lib/rkhunter/scripts/stat.pl
 man/man8/rkhunter.8.gz
 var/lib/rkhunter/db/backdoorports.dat
-var/lib/rkhunter/db/i18n/cn
-var/lib/rkhunter/db/i18n/de
-var/lib/rkhunter/db/i18n/en
-var/lib/rkhunter/db/i18n/tr
-var/lib/rkhunter/db/i18n/tr.utf8
-var/lib/rkhunter/db/i18n/zh
-var/lib/rkhunter/db/i18n/zh.utf8
-var/lib/rkhunter/db/i18n/ja
+@sample var/lib/rkhunter/db/i18n/cn.sample
+@sample var/lib/rkhunter/db/i18n/de.sample
+@sample var/lib/rkhunter/db/i18n/en.sample
+@sample var/lib/rkhunter/db/i18n/tr.sample
+@sample var/lib/rkhunter/db/i18n/tr.utf8.sample
+@sample var/lib/rkhunter/db/i18n/zh.sample
+@sample var/lib/rkhunter/db/i18n/zh.utf8.sample
+@sample var/lib/rkhunter/db/i18n/ja.sample
 @sample var/lib/rkhunter/db/mirrors.dat.sample
 @sample var/lib/rkhunter/db/programs_bad.dat.sample
 var/lib/rkhunter/db/signatures/RKH_BillGates.ldb
@@ -36,8 +36,12 @@ var/lib/rkhunter/db/signatures/RKH_xsyslog.ldb
 var/lib/rkhunter/db/suspscan.dat
 @postunexec rm -f %D/var/lib/rkhunter/db/rkhunter_prop_list.dat 2> /dev/null || true
 @postunexec rm -f %D/var/lib/rkhunter/db/rkhunter.dat* 2> /dev/null || true
-var/lib/rkhunter/tmp/group
-var/lib/rkhunter/tmp/passwd
+@comment var/lib/rkhunter/tmp/group
+@comment var/lib/rkhunter/tmp/passwd
+@postexec cp /etc/passwd %D/var/lib/rkhunter/tmp/passwd 2> /dev/null || true
+@postunexec rm -f %D/var/lib/rkhunter/tmp/passwd 2> /dev/null || true
+@postexec cp /etc/group %D/var/lib/rkhunter/tmp/group 2> /dev/null || true
+@postunexec rm -f %D/var/lib/rkhunter/tmp/group 2> /dev/null || true
 @dir(,,0750) lib/rkhunter/scripts
 @dir(,,0750) lib/rkhunter
 @dir(,,0750) var/lib/rkhunter/db/i18n

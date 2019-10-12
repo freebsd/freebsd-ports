@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.6
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -48,5 +48,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 	${INSTALL_DATA} -m 640 ${WRKSRC}/files/programs_bad.dat ${STAGEDIR}${PREFIX}/var/lib/${PORTNAME}/db/programs_bad.dat.sample
 	${INSTALL_DATA} -m 640 ${WRKSRC}/files/mirrors.dat ${STAGEDIR}${PREFIX}/var/lib/${PORTNAME}/db/mirrors.dat.sample
+
+.for f in cn de en tr tr.utf8 zh zh.utf8 ja
+	${INSTALL_DATA} -m 640 ${WRKSRC}/files/i18n/${f} ${STAGEDIR}${PREFIX}/var/lib/${PORTNAME}/db/i18n/${f}.sample
+.endfor
 
 .include <bsd.port.mk>
