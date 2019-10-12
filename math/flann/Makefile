@@ -22,8 +22,6 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	SHL3=${DISTVERSION:C/-.*//} SHL2=${DISTVERSION:R}
 
-CFLAGS_powerpc64=	-mminimal-toc
-
 CMAKE_OFF=	BUILD_PYTHON_BINDINGS BUILD_MATLAB_BINDINGS BUILD_EXAMPLES BUILD_TESTS BUILD_DOC \
 		USE_OPENMP # OpenMP search is broken in cmake: https://gitlab.kitware.com/cmake/cmake/issues/17474
 
