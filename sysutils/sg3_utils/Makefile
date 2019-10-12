@@ -6,7 +6,7 @@ PORTVERSION=	1.44
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of utilities that send SCSI commands to devices
 
 LICENSE=	BSD2CLAUSE
