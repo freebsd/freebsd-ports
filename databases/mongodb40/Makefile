@@ -2,8 +2,7 @@
 
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.0.8
-PORTREVISION=	2
+DISTVERSION=	4.0.12
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/ \
