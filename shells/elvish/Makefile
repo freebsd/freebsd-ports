@@ -19,11 +19,4 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 PLIST_FILES=	bin/elvish
 
-do-build:
-	@cd ${GO_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} build
-
-do-install:
-	${INSTALL_PROGRAM} ${GO_WRKSRC}/${PORTNAME} \
-	${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>
