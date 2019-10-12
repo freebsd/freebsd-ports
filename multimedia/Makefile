@@ -467,6 +467,7 @@
     SUBDIR += xporthdmv
     SUBDIR += xvid
     SUBDIR += yamdi
+    SUBDIR += zart
     SUBDIR += zoneminder
 
 .include <bsd.port.subdir.mk>
