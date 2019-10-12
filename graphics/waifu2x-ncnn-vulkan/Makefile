@@ -11,6 +11,8 @@ COMMENT=	Scale and denoise images using convolutional neural networks
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=241114
+
 BUILD_DEPENDS=	glslangValidator:devel/glslang \
 		${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers \
 		${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader \
