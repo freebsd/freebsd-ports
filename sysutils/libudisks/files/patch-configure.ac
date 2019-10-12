@@ -1,0 +1,388 @@
+--- configure.ac.orig	2019-07-22 16:24:44 UTC
++++ configure.ac
+@@ -33,6 +33,10 @@ AC_ISC_POSIX
+ AC_HEADER_STDC
+ AC_PROG_LIBTOOL
+ 
++AC_PATH_PROG([BASH], [bash])
++if test -z "$BASH"; then
++  AC_MSG_ERROR([bash is required to run Makefile])
++fi
+ 
+ # Compilation
+ #
+@@ -113,6 +117,12 @@ AS_IF([test "$enable_man" != no], [
+ ])
+ AM_CONDITIONAL(ENABLE_MAN, test "$enable_man" != no)
+ 
++AC_ARG_ENABLE(daemon,
++              [AS_HELP_STRING([--enable-daemon],
++                              [build udisks daemon [default=yes]])],,
++              enable_daemon=yes)
++AM_CONDITIONAL(ENABLE_DAEMON, test "$enable_daemon" != no)
++
+ GOBJECT_INTROSPECTION_CHECK([0.6.2])
+ 
+ # Behavior
+@@ -132,10 +142,6 @@ fi
+ # Libraries
+ #
+ 
+-PKG_CHECK_MODULES(GUDEV, [gudev-1.0 >= 165])
+-AC_SUBST(GUDEV_CFLAGS)
+-AC_SUBST(GUDEV_LIBS)
+-
+ PKG_CHECK_MODULES(GLIB, [glib-2.0 >= 2.50])
+ AC_SUBST(GLIB_CFLAGS)
+ AC_SUBST(GLIB_LIBS)
+@@ -144,14 +150,6 @@ PKG_CHECK_MODULES(GIO, [gio-unix-2.0 >= 2.50])
+ AC_SUBST(GIO_CFLAGS)
+ AC_SUBST(GIO_LIBS)
+ 
+-PKG_CHECK_MODULES(GMODULE, [gmodule-2.0])
+-AC_SUBST(GMODULE_CFLAGS)
+-AC_SUBST(GMODULE_LIBS)
+-
+-PKG_CHECK_MODULES(BLOCKDEV, [blockdev >= 2.19])
+-AC_SUBST(BLOCKDEV_CFLAGS)
+-AC_SUBST(BLOCKDEV_LIBS)
+-
+ PKG_CHECK_MODULES(POLKIT_GOBJECT_1, [polkit-gobject-1 >= 0.102])
+ AC_SUBST(POLKIT_GOBJECT_1_CFLAGS)
+ AC_SUBST(POLKIT_GOBJECT_1_LIBS)
+@@ -160,43 +158,61 @@ PKG_CHECK_MODULES(POLKIT_AGENT_1, [polkit-agent-1 >= 0
+ AC_SUBST(POLKIT_AGENT_1_CFLAGS)
+ AC_SUBST(POLKIT_AGENT_1_LIBS)
+ 
+-PKG_CHECK_MODULES(LIBATASMART, [libatasmart >= 0.17])
+-AC_SUBST(LIBATASMART_CFLAGS)
+-AC_SUBST(LIBATASMART_LIBS)
++if test "x$enable_daemon" = "xyes"; then
++  PKG_CHECK_MODULES(GUDEV, [gudev-1.0 >= 165])
++  AC_SUBST(GUDEV_CFLAGS)
++  AC_SUBST(GUDEV_LIBS)
+ 
+-PKG_CHECK_MODULES(LIBMOUNT, [mount >= 2.30],
+-                  [have_libmount=yes],
+-                  [have_libmount=no])
+-AM_CONDITIONAL(HAVE_LIBMOUNT, test x$have_libmount = xyes)
+-if test "x$have_libmount" = "xyes"; then
+-  AC_DEFINE([HAVE_LIBMOUNT], 1, [Define to 1 if libmount >= 2.30 is available])
+-fi
+-AC_SUBST(HAVE_LIBMOUNT)
+-AC_SUBST(LIBMOUNT_CFLAGS)
+-AC_SUBST(LIBMOUNT_LIBS)
++  PKG_CHECK_MODULES(GMODULE, [gmodule-2.0])
++  AC_SUBST(GMODULE_CFLAGS)
++  AC_SUBST(GMODULE_LIBS)
+ 
+-PKG_CHECK_MODULES(LIBSYSTEMD_LOGIN, [libsystemd >= 209], [have_libsystemd_login=yes],
+-                  [PKG_CHECK_MODULES(LIBSYSTEMD_LOGIN, [libsystemd-login >= 44 libsystemd-daemon],
+-                  [have_libsystemd_login=yes],
+-                  [have_libsystemd_login=no])])
+-AM_CONDITIONAL(HAVE_LIBSYSTEMD_LOGIN, test x$have_libsystemd_login = xyes)
+-if test "x$have_libsystemd_login" = "xyes"; then
+-  AC_DEFINE([HAVE_LIBSYSTEMD_LOGIN], 1, [Define to 1 if libsystemd-login is available])
+-fi
+-AC_SUBST(HAVE_LIBSYSTEMD_LOGIN)
+-AC_SUBST(LIBSYSTEMD_LOGIN_CFLAGS)
+-AC_SUBST(LIBSYSTEMD_LOGIN_LIBS)
++  PKG_CHECK_MODULES(BLOCKDEV, [blockdev >= 2.19])
++  AC_SUBST(BLOCKDEV_CFLAGS)
++  AC_SUBST(BLOCKDEV_LIBS)
+ 
+-PKG_CHECK_MODULES(LIBELOGIND, [libelogind >= 219],
+-                  [have_libelogind=yes],
+-                  [have_libelogins=no])
+-AM_CONDITIONAL(HAVE_LIBELOGIND, test x$have_libelogind = xyes)
+-if test "x$have_libelogind" = "xyes"; then
+-  AC_DEFINE([HAVE_LIBELOGIND], 1, [Define to 1 if libelogind is available])
++  PKG_CHECK_MODULES(LIBATASMART, [libatasmart >= 0.17])
++  AC_SUBST(LIBATASMART_CFLAGS)
++  AC_SUBST(LIBATASMART_LIBS)
++
++  PKG_CHECK_MODULES(LIBMOUNT, [mount >= 2.30],
++                    [have_libmount=yes],
++                    [have_libmount=no])
++  if test "x$have_libmount" = "xyes"; then
++    AC_DEFINE([HAVE_LIBMOUNT], 1, [Define to 1 if libmount >= 2.30 is available])
++  fi
++  AC_SUBST(HAVE_LIBMOUNT)
++  AC_SUBST(LIBMOUNT_CFLAGS)
++  AC_SUBST(LIBMOUNT_LIBS)
++
++  PKG_CHECK_MODULES(LIBSYSTEMD_LOGIN, [libsystemd >= 209], [have_libsystemd_login=yes],
++                    [PKG_CHECK_MODULES(LIBSYSTEMD_LOGIN, [libsystemd-login >= 44 libsystemd-daemon],
++                    [have_libsystemd_login=yes],
++                    [have_libsystemd_login=no])])
++  if test "x$have_libsystemd_login" = "xyes"; then
++    AC_DEFINE([HAVE_LIBSYSTEMD_LOGIN], 1, [Define to 1 if libsystemd-login is available])
++  fi
++  AC_SUBST(HAVE_LIBSYSTEMD_LOGIN)
++  AC_SUBST(LIBSYSTEMD_LOGIN_CFLAGS)
++  AC_SUBST(LIBSYSTEMD_LOGIN_LIBS)
++
++  PKG_CHECK_MODULES(LIBELOGIND, [libelogind >= 219],
++                    [have_libelogind=yes],
++                    [have_libelogind=no])
++  if test "x$have_libelogind" = "xyes"; then
++    AC_DEFINE([HAVE_LIBELOGIND], 1, [Define to 1 if libelogind is available])
++  fi
++  AC_SUBST(HAVE_LIBELOGIND)
++  AC_SUBST(LIBELOGIND_CFLAGS)
++  AC_SUBST(LIBELOGIND_LIBS)
++else
++  have_libmount=no
++  have_libsystemd_login=no
++  have_libelogind=no
+ fi
+-AC_SUBST(HAVE_LIBELOGIND)
+-AC_SUBST(LIBELOGIND_CFLAGS)
+-AC_SUBST(LIBELOGIND_LIBS)
++AM_CONDITIONAL(HAVE_LIBMOUNT, test x$have_libmount = xyes)
++AM_CONDITIONAL(HAVE_LIBSYSTEMD_LOGIN, test x$have_libsystemd_login = xyes)
++AM_CONDITIONAL(HAVE_LIBELOGIND, test x$have_libelogind = xyes)
+ 
+ # udevdir
+ AC_ARG_WITH([udevdir],
+@@ -537,124 +553,126 @@ if test "x$enable_vdo" = "xyes" \
+ fi
+ AM_CONDITIONAL(HAVE_VDO, [test "x$have_vdo" = "xyes"])
+ 
+-# libblockdev part
+-SAVE_CFLAGS=$CFLAGS
+-SAVE_LDFLAGS=$LDFLAGS
++if test "x$enable_daemon" = "xyes"; then
++  # libblockdev part
++  SAVE_CFLAGS=$CFLAGS
++  SAVE_LDFLAGS=$LDFLAGS
+ 
+-CFLAGS="$GLIB_CFLAGS"
+-LDFLAGS="$GLIB_LIBS"
+-AC_MSG_CHECKING([libblockdev-part presence])
+-AC_TRY_COMPILE([#include <blockdev/part.h>], [],
+-               [AC_MSG_RESULT([yes])
+-               have_part=yes],
+-               [AC_MSG_RESULT([no])
+-               have_part=no])
++  CFLAGS="$GLIB_CFLAGS"
++  LDFLAGS="$GLIB_LIBS"
++  AC_MSG_CHECKING([libblockdev-part presence])
++  AC_TRY_COMPILE([#include <blockdev/part.h>], [],
++                 [AC_MSG_RESULT([yes])
++                 have_part=yes],
++                 [AC_MSG_RESULT([no])
++                 have_part=no])
+ 
+-CFLAGS=$SAVE_CFLAGS
+-LDFLAGS=$SAVE_LDFLAGS
++  CFLAGS=$SAVE_CFLAGS
++  LDFLAGS=$SAVE_LDFLAGS
+ 
+-if test "x$have_part" = "xno"; then
+-  AC_MSG_ERROR([BlockDev part support requested but header or library not found])
+-fi
++  if test "x$have_part" = "xno"; then
++    AC_MSG_ERROR([BlockDev part support requested but header or library not found])
++  fi
+ 
+-# libblockdev loop
+-SAVE_CFLAGS=$CFLAGS
+-SAVE_LDFLAGS=$LDFLAGS
++  # libblockdev loop
++  SAVE_CFLAGS=$CFLAGS
++  SAVE_LDFLAGS=$LDFLAGS
+ 
+-CFLAGS="$GLIB_CFLAGS"
+-LDFLAGS="$GLIB_LIBS"
+-AC_MSG_CHECKING([libblockdev-loop presence])
+-AC_TRY_COMPILE([#include <blockdev/loop.h>], [],
+-               [AC_MSG_RESULT([yes])
+-               have_loop=yes],
+-               [AC_MSG_RESULT([no])
+-               have_loop=no])
++  CFLAGS="$GLIB_CFLAGS"
++  LDFLAGS="$GLIB_LIBS"
++  AC_MSG_CHECKING([libblockdev-loop presence])
++  AC_TRY_COMPILE([#include <blockdev/loop.h>], [],
++                 [AC_MSG_RESULT([yes])
++                 have_loop=yes],
++                 [AC_MSG_RESULT([no])
++                 have_loop=no])
+ 
+-CFLAGS=$SAVE_CFLAGS
+-LDFLAGS=$SAVE_LDFLAGS
++  CFLAGS=$SAVE_CFLAGS
++  LDFLAGS=$SAVE_LDFLAGS
+ 
+-if test "x$have_loop" = "xno"; then
+-  AC_MSG_ERROR([Loop support requested but header or library not found])
+-fi
++  if test "x$have_loop" = "xno"; then
++    AC_MSG_ERROR([Loop support requested but header or library not found])
++  fi
+ 
+-# libblockdev swap
+-SAVE_CFLAGS=$CFLAGS
+-SAVE_LDFLAGS=$LDFLAGS
++  # libblockdev swap
++  SAVE_CFLAGS=$CFLAGS
++  SAVE_LDFLAGS=$LDFLAGS
+ 
+-CFLAGS="$GLIB_CFLAGS"
+-LDFLAGS="$GLIB_LIBS"
+-AC_MSG_CHECKING([libblockdev-swap presence])
+-AC_TRY_COMPILE([#include <blockdev/swap.h>], [],
+-               [AC_MSG_RESULT([yes])
+-               have_swap=yes],
+-               [AC_MSG_RESULT([no])
+-               have_swap=no])
++  CFLAGS="$GLIB_CFLAGS"
++  LDFLAGS="$GLIB_LIBS"
++  AC_MSG_CHECKING([libblockdev-swap presence])
++  AC_TRY_COMPILE([#include <blockdev/swap.h>], [],
++                 [AC_MSG_RESULT([yes])
++                 have_swap=yes],
++                 [AC_MSG_RESULT([no])
++                 have_swap=no])
+ 
+-CFLAGS=$SAVE_CFLAGS
+-LDFLAGS=$SAVE_LDFLAGS
++  CFLAGS=$SAVE_CFLAGS
++  LDFLAGS=$SAVE_LDFLAGS
+ 
+-if test "x$have_swap" = "xno"; then
+-  AC_MSG_ERROR([SWAP support requested but header or library not found])
+-fi
++  if test "x$have_swap" = "xno"; then
++    AC_MSG_ERROR([SWAP support requested but header or library not found])
++  fi
+ 
+-# libblockdev mdraid
+-SAVE_CFLAGS=$CFLAGS
+-SAVE_LDFLAGS=$LDFLAGS
++  # libblockdev mdraid
++  SAVE_CFLAGS=$CFLAGS
++  SAVE_LDFLAGS=$LDFLAGS
+ 
+-CFLAGS="$GLIB_CFLAGS"
+-LDFLAGS="$GLIB_LIBS"
+-AC_MSG_CHECKING([libblockdev-mdraid presence])
+-AC_TRY_COMPILE([#include <blockdev/mdraid.h>], [],
+-               [AC_MSG_RESULT([yes])
+-               have_mdraid=yes],
+-               [AC_MSG_RESULT([no])
+-               have_mdraid=no])
++  CFLAGS="$GLIB_CFLAGS"
++  LDFLAGS="$GLIB_LIBS"
++  AC_MSG_CHECKING([libblockdev-mdraid presence])
++  AC_TRY_COMPILE([#include <blockdev/mdraid.h>], [],
++                 [AC_MSG_RESULT([yes])
++                 have_mdraid=yes],
++                 [AC_MSG_RESULT([no])
++                 have_mdraid=no])
+ 
+-CFLAGS=$SAVE_CFLAGS
+-LDFLAGS=$SAVE_LDFLAGS
++  CFLAGS=$SAVE_CFLAGS
++  LDFLAGS=$SAVE_LDFLAGS
+ 
+-if test "x$have_mdraid" = "xno"; then
+-  AC_MSG_ERROR([BLOCKDEV MDRAID support requested but header or library not found])
+-fi
++  if test "x$have_mdraid" = "xno"; then
++    AC_MSG_ERROR([BLOCKDEV MDRAID support requested but header or library not found])
++  fi
+ 
+-# libblockdev fs
+-SAVE_CFLAGS=$CFLAGS
+-SAVE_LDFLAGS=$LDFLAGS
++  # libblockdev fs
++  SAVE_CFLAGS=$CFLAGS
++  SAVE_LDFLAGS=$LDFLAGS
+ 
+-CFLAGS="$GLIB_CFLAGS"
+-LDFLAGS="$GLIB_LIBS"
+-AC_MSG_CHECKING([libblockdev-fs presence])
+-AC_TRY_COMPILE([#include <blockdev/fs.h>], [],
+-               [AC_MSG_RESULT([yes])
+-               have_fs=yes],
+-               [AC_MSG_RESULT([no])
+-               have_fs=no])
++  CFLAGS="$GLIB_CFLAGS"
++  LDFLAGS="$GLIB_LIBS"
++  AC_MSG_CHECKING([libblockdev-fs presence])
++  AC_TRY_COMPILE([#include <blockdev/fs.h>], [],
++                 [AC_MSG_RESULT([yes])
++                 have_fs=yes],
++                 [AC_MSG_RESULT([no])
++                 have_fs=no])
+ 
+-CFLAGS=$SAVE_CFLAGS
+-LDFLAGS=$SAVE_LDFLAGS
++  CFLAGS=$SAVE_CFLAGS
++  LDFLAGS=$SAVE_LDFLAGS
+ 
+-if test "x$have_fs" = "xno"; then
+-  AC_MSG_ERROR([BLOCKDEV FS support requested but header or library not found])
+-fi
++  if test "x$have_fs" = "xno"; then
++    AC_MSG_ERROR([BLOCKDEV FS support requested but header or library not found])
++  fi
+ 
+-# libblockdev crypto
+-SAVE_CFLAGS=$CFLAGS
+-SAVE_LDFLAGS=$LDFLAGS
++  # libblockdev crypto
++  SAVE_CFLAGS=$CFLAGS
++  SAVE_LDFLAGS=$LDFLAGS
+ 
+-CFLAGS="$GLIB_CFLAGS"
+-LDFLAGS="$GLIB_LIBS"
+-AC_MSG_CHECKING([libblockdev-crypto presence])
+-AC_TRY_COMPILE([#include <blockdev/crypto.h>], [],
+-               [AC_MSG_RESULT([yes])
+-               have_crypto=yes],
+-               [AC_MSG_RESULT([no])
+-               have_crypto=no])
++  CFLAGS="$GLIB_CFLAGS"
++  LDFLAGS="$GLIB_LIBS"
++  AC_MSG_CHECKING([libblockdev-crypto presence])
++  AC_TRY_COMPILE([#include <blockdev/crypto.h>], [],
++                 [AC_MSG_RESULT([yes])
++                 have_crypto=yes],
++                 [AC_MSG_RESULT([no])
++                 have_crypto=no])
+ 
+-CFLAGS=$SAVE_CFLAGS
+-LDFLAGS=$SAVE_LDFLAGS
++  CFLAGS=$SAVE_CFLAGS
++  LDFLAGS=$SAVE_LDFLAGS
+ 
+-if test "x$have_crypto" = "xno"; then
+-  AC_MSG_ERROR([BLOCKDEV CRYPTO support requested but header or library not found])
++  if test "x$have_crypto" = "xno"; then
++    AC_MSG_ERROR([BLOCKDEV CRYPTO support requested but header or library not found])
++  fi
+ fi
+ 
+ 
+@@ -721,6 +739,10 @@ doc/man/udisksctl.xml
+ doc/man/umount.udisks2.xml
+ doc/man/udisks2.conf.5.xml.in
+ doc/man/udisks2_lsm.conf.5.xml.in
++doc/udisks2-docs.xml.daemon.man
++doc/udisks2-docs.xml.daemon.part
++doc/udisks2-sections.txt.daemon.sections
++doc/udisks2.types.daemon
+ doc/udisks2-docs.xml.iscsi.dbus
+ doc/udisks2-docs.xml.iscsi.generated
+ doc/udisks2-sections.txt.iscsi.sections
+@@ -787,6 +809,7 @@ echo "
+         Building api docs:          ${enable_gtk_doc}
+         Building man pages:         ${enable_man}
+ 
++        Enable daemon:              ${enable_daemon}
+         Enable modules:             ${enable_modules_info}
+ 
+         BTRFS module:               ${have_btrfs}

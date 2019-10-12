@@ -1,0 +1,18 @@
+--- tools/Makefile.am.orig	2019-07-22 16:24:44 UTC
++++ tools/Makefile.am
+@@ -38,6 +38,7 @@ udisksctl_LDADD =                                     
+ 
+ # ------------------------------------------------------------------------------
+ 
++if ENABLE_DAEMON
+ sbin_PROGRAMS = umount.udisks2
+ 
+ umount_udisks2_SOURCES =                                                       \
+@@ -54,6 +55,7 @@ umount_udisks2_LDADD =                                
+ 	$(GIO_LIBS)                                                            \
+ 	$(top_builddir)/udisks/libudisks2.la                                   \
+ 	$(NULL)
++endif
+ 
+ # ------------------------------------------------------------------------------
+ 
