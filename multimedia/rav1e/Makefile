@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20191009
+PORTVERSION=	s20191011
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,15 +10,13 @@ COMMENT=	Fast and safe AV1 encoder
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	https://github.com/xiph/rav1e/issues/1741
-
 BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_amd64=	nasm:devel/nasm
 
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	8b19a94e
+GH_TAGNAME=	4a0a0b13
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler32-1.0.4 \
@@ -40,10 +38,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		bitflags-1.2.0 \
 		bitstream-io-0.8.4 \
 		bstr-0.2.8 \
-		bytecount-0.4.0 \
 		byteorder-1.3.2 \
 		c2-chacha-0.2.2 \
-		cargo_metadata-0.6.4 \
 		cast-0.2.2 \
 		cc-1.0.45 \
 		cexpr-0.3.5 \
@@ -69,12 +65,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		either-1.5.3 \
 		encode_unicode-0.3.6 \
 		env_logger-0.6.2 \
-		err-derive-0.2.0 \
+		err-derive-0.2.1 \
 		error-chain-0.10.0 \
-		error-chain-0.12.1 \
-		fuchsia-cprng-0.1.1 \
 		getrandom-0.1.12 \
-		glob-0.2.11 \
 		glob-0.3.0 \
 		humantime-1.3.0 \
 		image-0.22.3 \
@@ -109,30 +102,24 @@ CARGO_CRATES=	adler32-1.0.4 \
 		proc-macro-error-0.2.6 \
 		proc-macro-hack-0.5.10 \
 		proc-macro2-1.0.5 \
-		pulldown-cmark-0.2.0 \
 		quick-error-1.2.2 \
 		quote-1.0.2 \
-		rand-0.4.6 \
 		rand-0.7.2 \
 		rand_chacha-0.2.1 \
-		rand_core-0.3.1 \
-		rand_core-0.4.2 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
 		rand_os-0.2.2 \
 		rand_xoshiro-0.3.1 \
 		rayon-1.2.0 \
 		rayon-core-1.6.0 \
-		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
 		regex-1.3.1 \
 		regex-automata-0.1.8 \
 		regex-syntax-0.6.12 \
-		remove_dir_all-0.5.2 \
 		rustc-demangle-0.1.16 \
 		rustc-hash-1.0.1 \
 		rustc_version-0.2.3 \
-		ryu-1.0.0 \
+		ryu-1.0.1 \
 		same-file-1.0.5 \
 		scan_fmt-0.2.4 \
 		scopeguard-1.0.0 \
@@ -144,11 +131,10 @@ CARGO_CRATES=	adler32-1.0.4 \
 		shlex-0.1.1 \
 		signal-hook-0.1.10 \
 		signal-hook-registry-1.1.1 \
-		skeptic-0.13.4 \
+		simd_helpers-0.1.0 \
 		strsim-0.8.0 \
 		syn-1.0.5 \
 		synstructure-0.12.1 \
-		tempdir-0.3.7 \
 		termcolor-1.0.5 \
 		termios-0.3.1 \
 		textwrap-0.11.0 \
