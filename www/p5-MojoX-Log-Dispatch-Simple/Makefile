@@ -11,6 +11,7 @@ COMMENT=	Simple Log::Dispatch replacement of Mojo::Log
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Log-Dispatch>=0:devel/p5-Log-Dispatch \
