@@ -1,0 +1,24 @@
+--- util/Makefile.orig	2019-04-22 16:25:30 UTC
++++ util/Makefile
+@@ -209,7 +209,9 @@ pyinstall:
+ 		echo $(CP) $$x '$(PY_INSTALL_DIR)/'$$x; \
+ 		$(CP) $$x '$(PY_INSTALL_DIR)/'$$x; \
+ 	done
+-	$(MAKE) py && $(CP) _util$(PYTHON_SO_EXT) util.py '$(PY_INSTALL_DIR)'
++	$(MAKE) py
++	$(CP) util.py '$(PY_INSTALL_DIR)'
++	$(BSD_INSTALL_LIB) _util$(PYTHON_SO_EXT) '$(PY_INSTALL_DIR)'
+ 
+ .PHONY: pyinstall
+ 
+@@ -233,8 +235,8 @@ install-core: $(PYTHON_EXECS) $(PROGS) $(MAIN_PROGS) $
+ 	done
+ 	@echo Installing executables into '$(BIN_INSTALL_DIR)'...
+ 	@for x in $(PROGS) $(MAIN_PROGS); do \
+-		echo $(CP) $$x '$(BIN_INSTALL_DIR)/'$$x; \
+-		$(CP) $$x '$(BIN_INSTALL_DIR)/'$$x; \
++		echo $(BSD_INSTALL_PROGRAM) $$x '$(BIN_INSTALL_DIR)/'$$x; \
++		$(BSD_INSTALL_PROGRAM) $$x '$(BIN_INSTALL_DIR)/'$$x; \
+ 	done
+ 	@echo Installing headers into '$(INCLUDE_INSTALL_DIR)'...
+ 	$(MKDIR) '$(INCLUDE_INSTALL_DIR)'

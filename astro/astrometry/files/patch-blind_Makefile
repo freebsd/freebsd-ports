@@ -1,0 +1,61 @@
+--- blind/Makefile.orig	2019-04-22 16:25:30 UTC
++++ blind/Makefile
+@@ -223,11 +223,11 @@ PYTHON_EXECS := plotann.py
+ PYTHON_INSTALL := $(PYTHON_EXECS) __init__.py
+ 
+ install: $(INSTALL_EXECS) $(INSTALL_LIB)
+-	@echo Installing in directory '$(INSTALL_DIR)'
++	@echo Installing executables in directory '$(INSTALL_DIR)'
+ 	$(MKDIR) '$(INSTALL_DIR)/bin'
+ 	@for x in $(INSTALL_EXECS); do \
+-		echo $(CP) $$x '$(INSTALL_DIR)/bin'; \
+-		$(CP) $$x '$(INSTALL_DIR)/bin'; \
++		echo $(BSD_INSTALL_PROGRAM) $$x '$(INSTALL_DIR)/bin'; \
++		$(BSD_INSTALL_PROGRAM) $$x '$(INSTALL_DIR)/bin'; \
+ 	done
+ 	$(MKDIR) '$(ETC_INSTALL_DIR)'
+ 	$(PYTHON) -c "import os; print(open('../etc/astrometry.cfg-dist').read().replace('DATA_INSTALL_DIR', '$(DATA_FINAL_DIR)'))" > '$(ETC_INSTALL_DIR)/astrometry.cfg'
+@@ -238,8 +238,8 @@ install: $(INSTALL_EXECS) $(INSTALL_LIB)
+ 	done
+ 	$(MKDIR) '$(LIB_INSTALL_DIR)'
+ 	@for x in $(INSTALL_LIB); do \
+-		echo $(CP) $$x '$(LIB_INSTALL_DIR)'; \
+-		$(CP) $$x '$(LIB_INSTALL_DIR)'; \
++		echo $(BSD_INSTALL_LIB) $$x '$(LIB_INSTALL_DIR)'; \
++		$(BSD_INSTALL_LIB) $$x '$(LIB_INSTALL_DIR)'; \
+ 	done
+ 	$(MKDIR) '$(PY_INSTALL_DIR)'
+ 	@for x in $(PYTHON_INSTALL); do \
+@@ -254,26 +254,27 @@ install: $(INSTALL_EXECS) $(INSTALL_LIB)
+ 	done
+ 
+ 
+-PYTHON_EXTRA_INSTALL := plotstuff.py plotstuff_c.py _plotstuff_c$(PYTHON_SO_EXT)
++PYTHON_EXTRA_INSTALL := plotstuff.py plotstuff_c.py
+ 
+ install-extra: $(INSTALL_CAIRO_EXECS)
+-	@echo Installing in directory '$(INSTALL_DIR)'
++	@echo Installing executables in directory '$(INSTALL_DIR)'
+ 	$(MKDIR) '$(INSTALL_DIR)/bin'
+ 	@for x in $(INSTALL_CAIRO_EXECS); do \
+-		echo $(CP) $$x '$(INSTALL_DIR)/bin'; \
+-		$(CP) $$x '$(INSTALL_DIR)/bin'; \
++		echo $(BSD_INSTALL_PROGRAM) $$x '$(INSTALL_DIR)/bin'; \
++		$(BSD_INSTALL_PROGRAM) $$x '$(INSTALL_DIR)/bin'; \
+ 	done
+ 	$(MKDIR) '$(INCLUDE_INSTALL_DIR)'
+ 	@for x in $(PLOT_INSTALL_H); do \
+ 		echo $(CP) '$(INCLUDE_DIR)/'$$x '$(INCLUDE_INSTALL_DIR)'; \
+ 		$(CP) '$(INCLUDE_DIR)/'$$x '$(INCLUDE_INSTALL_DIR)'; \
+ 	done
+-	$(MAKE) $(PYTHON_EXTRA_INSTALL)
++	$(MAKE) $(PYTHON_EXTRA_INSTALL) _plotstuff_c$(PYTHON_SO_EXT)
+ 	$(MKDIR) '$(PY_INSTALL_DIR)'
+ 	@for x in $(PYTHON_EXTRA_INSTALL); do \
+ 		echo $(CP) $$x '$(PY_INSTALL_DIR)/'$$x; \
+ 		$(CP) $$x '$(PY_INSTALL_DIR)/'$$x; \
+ 	done
++	$(BSD_INSTALL_LIB) _plotstuff_c$(PYTHON_SO_EXT) '$(PY_INSTALL_DIR)'
+ 
+ test-solver: test-solver.o solver_test.o $(SLIB)
+ test-solver-2: test-solver-2.o solver_test_2.o $(SLIB)
