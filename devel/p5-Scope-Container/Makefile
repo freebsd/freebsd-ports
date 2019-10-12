@@ -14,6 +14,8 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 PLIST_FILES=	${SITE_PERL_REL}/Scope/Container.pm \
 		${SITE_MAN3_REL}/Scope::Container.3.gz
 

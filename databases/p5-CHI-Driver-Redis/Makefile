@@ -23,6 +23,7 @@ TEST_DEPENDS=	p5-Test-Class>=0:devel/p5-Test-Class \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
 PLIST_FILES=	${SITE_PERL_REL}/CHI/Driver/Redis.pm \
 		${SITE_MAN3_REL}/CHI::Driver::Redis.3.gz
 

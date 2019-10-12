@@ -20,6 +20,8 @@ TEST_DEPENDS=	p5-Test-Class>=0:devel/p5-Test-Class
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/CHI/Driver/Memcached/Test
 	@${RM} -r ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/CHI/Driver/Memcached/t

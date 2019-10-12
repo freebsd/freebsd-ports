@@ -19,6 +19,8 @@ TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 PLIST_FILES=	${SITE_PERL_REL}/Test/Deep/UnorderedPairs.pm \
 		${SITE_MAN3_REL}/Test::Deep::UnorderedPairs.3.gz
 

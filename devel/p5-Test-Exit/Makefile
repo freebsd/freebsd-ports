@@ -16,6 +16,8 @@ RUN_DEPENDS=	p5-Return-MultiLevel>=0:devel/p5-Return-MultiLevel
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 PLIST_FILES=	${SITE_PERL_REL}/Test/Exit.pm \
 		${SITE_MAN3_REL}/Test::Exit.3.gz
 
