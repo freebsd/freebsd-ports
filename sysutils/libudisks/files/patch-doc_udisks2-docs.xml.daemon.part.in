@@ -1,0 +1,58 @@
+--- doc/udisks2-docs.xml.daemon.part.in.orig	2019-10-03 03:15:30 UTC
++++ doc/udisks2-docs.xml.daemon.part.in
+@@ -0,0 +1,55 @@
++  <part id="ref-daemon">
++    <title>Daemon Implementation Details</title>
++    <chapter id="ref-daemon-core">
++      <title>Core</title>
++      <xi:include href="xml/udisksdaemonutil.xml"/>
++      <xi:include href="xml/udiskslogging.xml"/>
++      <xi:include href="xml/udisksdaemon.xml"/>
++      <xi:include href="xml/udisksprovider.xml"/>
++      <xi:include href="xml/udisksstate.xml"/>
++      <xi:include href="xml/udisksata.xml"/>
++      <xi:include href="xml/UDisksModuleManager.xml"/>
++    </chapter>
++    <chapter id="ref-daemon-monitoring">
++      <title>State and Configuration</title>
++      <xi:include href="xml/udisksmountmonitor.xml"/>
++      <xi:include href="xml/udisksfstabmonitor.xml"/>
++      <xi:include href="xml/udiskscrypttabmonitor.xml"/>
++      <xi:include href="xml/udisksutabmonitor.xml"/>
++    </chapter>
++    <chapter id="ref-daemon-jobs">
++      <title>Jobs</title>
++      <xi:include href="xml/udisksbasejob.xml"/>
++      <xi:include href="xml/udiskssimplejob.xml"/>
++      <xi:include href="xml/udisksthreadedjob.xml"/>
++      <xi:include href="xml/udisksspawnedjob.xml"/>
++    </chapter>
++    <chapter id="ref-daemon-linux-types">
++      <title>Linux-specific types</title>
++      <xi:include href="xml/udiskslinuxmanager.xml"/>
++      <xi:include href="xml/udiskslinuxprovider.xml"/>
++      <xi:include href="xml/udiskslinuxdevice.xml"/>
++    </chapter>
++    <chapter id="ref-daemon-drives">
++      <title>Drives on Linux</title>
++      <xi:include href="xml/udiskslinuxdrive.xml"/>
++      <xi:include href="xml/udiskslinuxdriveata.xml"/>
++      <xi:include href="xml/udiskslinuxdriveobject.xml"/>
++    </chapter>
++    <chapter id="ref-daemon-mdraid">
++      <title>Linux RAID</title>
++      <xi:include href="xml/udiskslinuxmdraid.xml"/>
++      <xi:include href="xml/udiskslinuxmdraidobject.xml"/>
++    </chapter>
++    <chapter id="ref-daemon-block-devices">
++      <title>Block devices on Linux</title>
++      <xi:include href="xml/udiskslinuxblock.xml"/>
++      <xi:include href="xml/udiskslinuxpartition.xml"/>
++      <xi:include href="xml/udiskslinuxpartitiontable.xml"/>
++      <xi:include href="xml/udiskslinuxfilesystem.xml"/>
++      <xi:include href="xml/udiskslinuxencrypted.xml"/>
++      <xi:include href="xml/udiskslinuxswapspace.xml"/>
++      <xi:include href="xml/udiskslinuxloop.xml"/>
++      <xi:include href="xml/udiskslinuxblockobject.xml"/>
++    </chapter>
++  </part>

@@ -1,0 +1,48 @@
+--- doc/udisks2.types.in.in.orig	2019-07-22 16:24:44 UTC
++++ doc/udisks2.types.in.in
+@@ -3,36 +3,6 @@ udisks_object_info_get_type
+ udisks_partition_type_info_get_type
+ udisks_partition_type_info_flags_get_type
+ 
+-udisks_daemon_get_type
+-udisks_linux_device_get_type
+-udisks_linux_block_object_get_type
+-udisks_linux_block_get_type
+-udisks_linux_drive_object_get_type
+-udisks_linux_drive_get_type
+-udisks_linux_drive_ata_get_type
+-udisks_base_job_get_type
+-udisks_spawned_job_get_type
+-udisks_threaded_job_get_type
+-udisks_simple_job_get_type
+-udisks_mount_get_type
+-udisks_mount_monitor_get_type
+-udisks_provider_get_type
+-udisks_linux_provider_get_type
+-udisks_linux_filesystem_get_type
+-udisks_linux_partition_get_type
+-udisks_linux_partition_table_get_type
+-udisks_linux_encrypted_get_type
+-udisks_linux_swapspace_get_type
+-udisks_linux_loop_get_type
+-udisks_linux_manager_get_type
+-udisks_state_get_type
+-udisks_fstab_entry_get_type
+-udisks_fstab_monitor_get_type
+-udisks_crypttab_entry_get_type
+-udisks_crypttab_monitor_get_type
+-udisks_linux_mdraid_object_get_type
+-udisks_linux_mdraid_get_type
+-
+ udisks_drive_get_type
+ udisks_drive_proxy_get_type
+ udisks_drive_skeleton_get_type
+@@ -67,6 +37,8 @@ udisks_object_get_type
+ udisks_object_proxy_get_type
+ udisks_object_skeleton_get_type
+ udisks_object_manager_client_get_type
++
++# DAEMON_TYPES
+ 
+ # LVM2_TYPES
+ 

@@ -1,0 +1,52 @@
+--- udisks/Makefile.am.orig	2019-07-22 16:24:44 UTC
++++ udisks/Makefile.am
+@@ -4,9 +4,11 @@ SUBDIRS = modules.conf.d
+ 
+ NULL =
+ 
++if ENABLE_DAEMON
+ moduleconfdir = $(sysconfdir)/udisks2/
+ 
+ moduleconf_DATA = udisks2.conf
++endif
+ 
+ AM_CPPFLAGS = \
+ 	-I$(top_builddir) -I$(top_srcdir)	 		\
+@@ -39,13 +41,13 @@ udisksenumtypes.h: udisksenums.h udisksenumtypes.h.tem
+ 	( top_builddir=`cd $(top_builddir) && pwd`; 						\
+ 	 cd $(srcdir) && glib-mkenums --template udisksenumtypes.h.template udisksenums.h ) | 	\
+ 	   sed 's,U_TYPE_DISKS,UDISKS_TYPE,' | sed 's,u_disks,udisks,' > 			\
+-	   udisksenumtypes.h.tmp && mv udisksenumtypes.h.tmp udisksenumtypes.h
++	   udisksenumtypes.h.tmp && mv -f udisksenumtypes.h.tmp udisksenumtypes.h
+ 
+ udisksenumtypes.c: udisksenums.h udisksenumtypes.c.template
+ 	( top_builddir=`cd $(top_builddir) && pwd`; 						\
+ 	 cd $(srcdir) && glib-mkenums --template udisksenumtypes.c.template udisksenums.h ) | 	\
+ 	   sed 's,U_TYPE_DISKS,UDISKS_TYPE,' | sed 's,u_disks,udisks,' > 			\
+-	   udisksenumtypes.c.tmp && mv udisksenumtypes.c.tmp udisksenumtypes.c
++	   udisksenumtypes.c.tmp && mv -f udisksenumtypes.c.tmp udisksenumtypes.c
+ 
+ enum_built_sources =									\
+ 	udisksenumtypes.h			udisksenumtypes.c			\
+@@ -56,7 +58,7 @@ dbus_built_sources =									\
+ 	$(NULL)
+ 
+ udisksversion.h: $(top_srcdir)/udisks/udisksversion.h.in
+-	   sed -e 's/@MAJOR_VERSION@/$(UDISKS_MAJOR_VERSION)/' -e 's/@MINOR_VERSION@/$(UDISKS_MINOR_VERSION)/' -e 's/@MICRO_VERSION@/$(UDISKS_MICRO_VERSION)/' $(top_srcdir)/udisks/udisksversion.h.in > udisksversion.h.tmp && mv udisksversion.h.tmp udisksversion.h
++	   sed -e 's/@MAJOR_VERSION@/$(UDISKS_MAJOR_VERSION)/' -e 's/@MINOR_VERSION@/$(UDISKS_MINOR_VERSION)/' -e 's/@MICRO_VERSION@/$(UDISKS_MICRO_VERSION)/' $(top_srcdir)/udisks/udisksversion.h.in > udisksversion.h.tmp && mv -f udisksversion.h.tmp udisksversion.h
+ 
+ BUILT_SOURCES =										\
+ 	$(enum_built_sources)								\
+@@ -115,10 +117,10 @@ if HAVE_INTROSPECTION
+ 
+ INTROSPECTION_GIRS = UDisks-2.0.gir
+ 
+-girdir = $(INTROSPECTION_GIRDIR)
++girdir = $(datadir)/gir-1.0
+ gir_DATA = UDisks-2.0.gir
+ 
+-typelibsdir = $(INTROSPECTION_TYPELIBDIR)
++typelibsdir = $(libdir)/girepository-1.0
+ typelibs_DATA = UDisks-2.0.typelib
+ 
+ UDisks_2_0_gir_SCANNERFLAGS = 			\

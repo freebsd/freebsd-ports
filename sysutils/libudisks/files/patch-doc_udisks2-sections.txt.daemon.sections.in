@@ -1,0 +1,563 @@
+--- doc/udisks2-sections.txt.daemon.sections.in.orig	2019-10-03 03:15:30 UTC
++++ doc/udisks2-sections.txt.daemon.sections.in
+@@ -0,0 +1,560 @@
++<SECTION>
++<FILE>udisksdaemon</FILE>
++<TITLE>UDisksDaemon</TITLE>
++UDisksDaemon
++udisks_daemon_new
++udisks_daemon_get_connection
++udisks_daemon_get_object_manager
++udisks_daemon_get_mount_monitor
++udisks_daemon_get_fstab_monitor
++udisks_daemon_get_crypttab_monitor
++udisks_daemon_get_linux_provider
++udisks_daemon_get_authority
++udisks_daemon_get_state
++UDisksDaemonWaitFunc
++udisks_daemon_wait_for_object_sync
++udisks_daemon_get_objects
++udisks_daemon_find_object
++udisks_daemon_find_block
++udisks_daemon_find_block_by_device_file
++udisks_daemon_find_block_by_sysfs_path
++udisks_daemon_launch_simple_job
++udisks_daemon_launch_spawned_job
++udisks_daemon_launch_spawned_job_sync
++udisks_daemon_launch_threaded_job
++udisks_daemon_get_disable_modules
++udisks_daemon_get_force_load_modules
++udisks_daemon_get_module_manager
++<SUBSECTION Standard>
++UDISKS_TYPE_DAEMON
++UDISKS_DAEMON
++UDISKS_IS_DAEMON
++<SUBSECTION Private>
++udisks_daemon_get_type
++udisks_daemon_marshal_BOOLEAN__BOOLEAN_BOXED
++udisks_daemon_marshal_BOOLEAN__BOXED_INT_BOXED_BOXED
++</SECTION>
++
++<SECTION>
++<FILE>udisksbasejob</FILE>
++<TITLE>UDisksBaseJob</TITLE>
++UDisksBaseJob
++UDisksBaseJobClass
++udisks_base_job_get_daemon
++udisks_base_job_get_cancellable
++udisks_base_job_get_auto_estimate
++udisks_base_job_set_auto_estimate
++udisks_base_job_add_object
++udisks_base_job_remove_object
++<SUBSECTION Standard>
++UDISKS_TYPE_BASE_JOB
++UDISKS_BASE_JOB
++UDISKS_IS_BASE_JOB
++UDISKS_BASE_JOB_CLASS
++UDISKS_BASE_JOB_GET_CLASS
++UDISKS_IS_BASE_JOB_CLASS
++UDisksBaseJobPrivate
++<SUBSECTION Private>
++udisks_base_job_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udisksspawnedjob</FILE>
++<TITLE>UDisksSpawnedJob</TITLE>
++UDisksSpawnedJob
++udisks_spawned_job_new
++udisks_spawned_job_get_command_line
++udisks_spawned_job_start
++<SUBSECTION Standard>
++UDISKS_TYPE_SPAWNED_JOB
++UDISKS_SPAWNED_JOB
++UDISKS_IS_SPAWNED_JOB
++<SUBSECTION Private>
++udisks_spawned_job_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udisksthreadedjob</FILE>
++<TITLE>UDisksThreadedJob</TITLE>
++UDisksThreadedJob
++UDisksThreadedJobFunc
++udisks_threaded_job_new
++udisks_threaded_job_start
++udisks_threaded_job_run_sync
++udisks_threaded_job_get_user_data
++<SUBSECTION Standard>
++UDISKS_TYPE_THREADED_JOB
++UDISKS_THREADED_JOB
++UDISKS_IS_THREADED_JOB
++<SUBSECTION Private>
++udisks_threaded_job_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskssimplejob</FILE>
++<TITLE>UDisksSimpleJob</TITLE>
++UDisksSimpleJob
++udisks_simple_job_new
++udisks_simple_job_complete
++<SUBSECTION Standard>
++UDISKS_TYPE_SIMPLE_JOB
++UDISKS_SIMPLE_JOB
++UDISKS_IS_SIMPLE_JOB
++<SUBSECTION Private>
++udisks_simple_job_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxdriveobject</FILE>
++<TITLE>UDisksLinuxDriveObject</TITLE>
++UDisksLinuxDriveObject
++udisks_linux_drive_object_new
++udisks_linux_drive_object_uevent
++udisks_linux_drive_object_get_daemon
++udisks_linux_drive_object_get_block
++udisks_linux_drive_object_get_device
++udisks_linux_drive_object_get_devices
++udisks_linux_drive_object_get_siblings
++udisks_linux_drive_object_housekeeping
++udisks_linux_drive_object_is_not_in_use
++<SUBSECTION Standard>
++UDISKS_TYPE_LINUX_DRIVE_OBJECT
++UDISKS_LINUX_DRIVE_OBJECT
++UDISKS_IS_LINUX_DRIVE_OBJECT
++<SUBSECTION Private>
++udisks_linux_drive_object_get_type
++udisks_linux_drive_object_should_include_device
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxdrive</FILE>
++UDisksLinuxDrive
++udisks_linux_drive_new
++udisks_linux_drive_update
++<SUBSECTION Standard>
++UDISKS_LINUX_DRIVE
++UDISKS_IS_LINUX_DRIVE
++UDISKS_TYPE_LINUX_DRIVE
++<SUBSECTION Private>
++udisks_linux_drive_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxdriveata</FILE>
++UDisksLinuxDriveAta
++udisks_linux_drive_ata_new
++udisks_linux_drive_ata_update
++udisks_linux_drive_ata_refresh_smart_sync
++udisks_linux_drive_ata_smart_selftest_sync
++udisks_linux_drive_ata_apply_configuration
++udisks_linux_drive_ata_secure_erase_sync
++udisks_linux_drive_ata_get_pm_state
++UDISKS_LINUX_DRIVE_ATA_IS_AWAKE
++<SUBSECTION Standard>
++UDISKS_LINUX_DRIVE_ATA
++UDISKS_IS_LINUX_DRIVE_ATA
++UDISKS_TYPE_LINUX_DRIVE_ATA
++<SUBSECTION Private>
++udisks_linux_drive_ata_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udisksprovider</FILE>
++<TITLE>UDisksProvider</TITLE>
++UDisksProvider
++UDisksProviderClass
++udisks_provider_start
++udisks_provider_get_daemon
++<SUBSECTION Standard>
++UDISKS_TYPE_PROVIDER
++UDISKS_PROVIDER
++UDISKS_PROVIDER_GET_CLASS
++UDISKS_PROVIDER_CLASS
++UDISKS_IS_PROVIDER
++UDISKS_IS_PROVIDER_CLASS
++<SUBSECTION Private>
++udisks_provider_get_type
++UDisksProviderPrivate
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxprovider</FILE>
++<TITLE>UDisksLinuxProvider</TITLE>
++UDisksLinuxProvider
++udisks_linux_provider_new
++udisks_linux_provider_get_udev_client
++udisks_linux_provider_get_coldplug
++<SUBSECTION Standard>
++UDISKS_TYPE_LINUX_PROVIDER
++UDISKS_LINUX_PROVIDER
++UDISKS_IS_LINUX_PROVIDER
++<SUBSECTION Private>
++udisks_linux_provider_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udisksmountmonitor</FILE>
++<TITLE>UDisksMountMonitor</TITLE>
++UDisksMount
++UDisksMountType
++udisks_mount_get_dev
++udisks_mount_get_mount_type
++udisks_mount_get_mount_path
++udisks_mount_compare
++UDisksMountMonitor
++udisks_mount_monitor_new
++udisks_mount_monitor_get_mounts_for_dev
++udisks_mount_monitor_is_dev_in_use
++<SUBSECTION Standard>
++UDISKS_TYPE_MOUNT
++UDISKS_MOUNT
++UDISKS_IS_MOUNT
++UDISKS_TYPE_MOUNT_MONITOR
++UDISKS_MOUNT_MONITOR
++UDISKS_IS_MOUNT_MONITOR
++<SUBSECTION Private>
++udisks_mount_get_type
++udisks_mount_monitor_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udisksstate</FILE>
++<TITLE>UDisksState</TITLE>
++UDisksState
++udisks_state_new
++udisks_state_start_cleanup
++udisks_state_stop_cleanup
++udisks_state_check
++udisks_state_check_sync
++udisks_state_get_daemon
++<SUBSECTION>
++udisks_state_add_mounted_fs
++udisks_state_find_mounted_fs
++<SUBSECTION>
++udisks_state_add_unlocked_crypto_dev
++udisks_state_find_unlocked_crypto_dev
++<SUBSECTION>
++udisks_state_add_loop
++udisks_state_has_loop
++<SUBSECTION>
++udisks_state_add_mdraid
++udisks_state_has_mdraid
++<SUBSECTION Standard>
++UDISKS_TYPE_STATE
++UDISKS_STATE
++UDISKS_IS_STATE
++<SUBSECTION Private>
++udisks_state_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udisksata</FILE>
++UDisksAtaCommandProtocol
++UDisksAtaCommandInput
++UDisksAtaCommandOutput
++udisks_ata_send_command_sync
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxdevice</FILE>
++<TITLE>UDisksLinuxDevice</TITLE>
++UDisksLinuxDevice
++udisks_linux_device_new_sync
++udisks_linux_device_reprobe_sync
++<SUBSECTION Standard>
++UDISKS_TYPE_LINUX_DEVICE
++UDISKS_LINUX_DEVICE
++UDISKS_IS_LINUX_DEVICE
++<SUBSECTION Private>
++udisks_linux_device_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udisksdaemonutil</FILE>
++udisks_decode_udev_string
++udisks_safe_append_to_object_path
++udisks_daemon_util_block_get_size
++udisks_daemon_util_resolve_link
++udisks_daemon_util_resolve_links
++udisks_daemon_util_check_authorization_sync
++udisks_daemon_util_get_caller_uid_sync
++udisks_daemon_util_get_caller_pid_sync
++udisks_daemon_util_setup_by_user
++udisks_daemon_util_dup_object
++udisks_daemon_util_escape
++udisks_daemon_util_escape_and_quote
++UDisksInhibitCookie
++udisks_daemon_util_inhibit_system_sync
++udisks_daemon_util_uninhibit_system_sync
++udisks_daemon_util_hexdump
++udisks_daemon_util_hexdump_debug
++udisks_daemon_util_file_set_contents
++udisks_daemon_util_on_user_seat
++udisks_daemon_util_get_free_mdraid_device
++udisks_ata_identify_get_word
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxblockobject</FILE>
++<TITLE>UDisksLinuxBlockObject</TITLE>
++UDisksLinuxBlockObject
++udisks_linux_block_object_new
++udisks_linux_block_object_uevent
++udisks_linux_block_object_get_daemon
++udisks_linux_block_object_get_device
++udisks_linux_block_object_trigger_uevent
++udisks_linux_block_object_reread_partition_table
++<SUBSECTION Standard>
++UDISKS_TYPE_LINUX_BLOCK_OBJECT
++UDISKS_LINUX_BLOCK_OBJECT
++UDISKS_IS_LINUX_BLOCK_OBJECT
++<SUBSECTION Private>
++udisks_linux_block_object_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxblock</FILE>
++UDisksLinuxBlock
++udisks_linux_block_new
++udisks_linux_block_update
++<SUBSECTION Standard>
++UDISKS_LINUX_BLOCK
++UDISKS_IS_LINUX_BLOCK
++UDISKS_TYPE_LINUX_BLOCK
++<SUBSECTION Private>
++udisks_linux_block_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxfilesystem</FILE>
++UDisksLinuxFilesystem
++udisks_linux_filesystem_new
++udisks_linux_filesystem_update
++<SUBSECTION Standard>
++UDISKS_LINUX_FILESYSTEM
++UDISKS_IS_LINUX_FILESYSTEM
++UDISKS_TYPE_LINUX_FILESYSTEM
++<SUBSECTION Private>
++udisks_linux_filesystem_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxencrypted</FILE>
++UDisksLinuxEncrypted
++udisks_linux_encrypted_new
++udisks_linux_encrypted_update
++<SUBSECTION Standard>
++UDISKS_LINUX_ENCRYPTED
++UDISKS_IS_LINUX_ENCRYPTED
++UDISKS_TYPE_LINUX_ENCRYPTED
++<SUBSECTION Private>
++udisks_linux_encrypted_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxswapspace</FILE>
++UDisksLinuxSwapspace
++udisks_linux_swapspace_new
++udisks_linux_swapspace_update
++<SUBSECTION Standard>
++UDISKS_LINUX_SWAPSPACE
++UDISKS_IS_LINUX_SWAPSPACE
++UDISKS_TYPE_LINUX_SWAPSPACE
++<SUBSECTION Private>
++udisks_linux_swapspace_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxloop</FILE>
++UDisksLinuxLoop
++udisks_linux_loop_new
++udisks_linux_loop_update
++<SUBSECTION Standard>
++UDISKS_LINUX_LOOP
++UDISKS_IS_LINUX_LOOP
++UDISKS_TYPE_LINUX_LOOP
++<SUBSECTION Private>
++udisks_linux_loop_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxmanager</FILE>
++<TITLE>UDisksLinuxManager</TITLE>
++UDisksLinuxManager
++udisks_linux_manager_new
++udisks_linux_manager_get_daemon
++<SUBSECTION Standard>
++UDISKS_TYPE_LINUX_MANAGER
++UDISKS_LINUX_MANAGER
++UDISKS_IS_LINUX_MANAGER
++<SUBSECTION Private>
++udisks_linux_manager_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udisksfstabmonitor</FILE>
++<TITLE>UDisksFstabMonitor</TITLE>
++UDisksFstabEntry
++udisks_fstab_entry_get_fsname
++udisks_fstab_entry_get_dir
++udisks_fstab_entry_get_fstype
++udisks_fstab_entry_get_opts
++udisks_fstab_entry_get_freq
++udisks_fstab_entry_get_passno
++udisks_fstab_entry_compare
++UDisksFstabMonitor
++udisks_fstab_monitor_new
++udisks_fstab_monitor_get_entries
++<SUBSECTION Standard>
++UDISKS_TYPE_FSTAB_ENTRY
++UDISKS_FSTAB_ENTRY
++UDISKS_IS_FSTAB_ENTRY
++UDISKS_TYPE_FSTAB_MONITOR
++UDISKS_FSTAB_MONITOR
++UDISKS_IS_FSTAB_MONITOR
++<SUBSECTION Private>
++udisks_fstab_entry_get_type
++udisks_fstab_monitor_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskscrypttabmonitor</FILE>
++<TITLE>UDisksCrypttabMonitor</TITLE>
++UDisksCrypttabEntry
++udisks_crypttab_entry_get_name
++udisks_crypttab_entry_get_device
++udisks_crypttab_entry_get_passphrase_path
++udisks_crypttab_entry_get_options
++udisks_crypttab_entry_compare
++UDisksCrypttabMonitor
++udisks_crypttab_monitor_new
++udisks_crypttab_monitor_get_entries
++<SUBSECTION Standard>
++UDISKS_TYPE_CRYPTTAB_ENTRY
++UDISKS_CRYPTTAB_ENTRY
++UDISKS_IS_CRYPTTAB_ENTRY
++UDISKS_TYPE_CRYPTTAB_MONITOR
++UDISKS_CRYPTTAB_MONITOR
++UDISKS_IS_CRYPTTAB_MONITOR
++<SUBSECTION Private>
++udisks_crypttab_entry_get_type
++udisks_crypttab_monitor_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udisksutabmonitor</FILE>
++<TITLE>UDisksUtabMonitor</TITLE>
++UDisksUtabEntry
++udisks_utab_entry_get_source
++udisks_utab_entry_get_opts
++UDisksUtabMonitor
++udisks_utab_monitor_new
++udisks_utab_monitor_get_entries
++<SUBSECTION Standard>
++UDISKS_TYPE_UTAB_ENTRY
++UDISKS_UTAB_ENTRY
++UDISKS_IS_UTAB_ENTRY
++UDISKS_TYPE_UTAB_MONITOR
++UDISKS_UTAB_MONITOR
++UDISKS_IS_UTAB_MONITOR
++<SUBSECTION Private>
++udisks_utab_entry_get_type
++udisks_utab_monitor_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxpartition</FILE>
++UDisksLinuxPartition
++udisks_linux_partition_new
++udisks_linux_partition_update
++udisks_linux_partition_set_type_sync
++<SUBSECTION Standard>
++UDISKS_LINUX_PARTITION
++UDISKS_IS_LINUX_PARTITION
++UDISKS_TYPE_LINUX_PARTITION
++<SUBSECTION Private>
++udisks_linux_partition_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxpartitiontable</FILE>
++UDisksLinuxPartitionTable
++udisks_linux_partition_table_new
++udisks_linux_partition_table_update
++<SUBSECTION Standard>
++UDISKS_LINUX_PARTITION_TABLE
++UDISKS_IS_LINUX_PARTITION_TABLE
++UDISKS_TYPE_LINUX_PARTITION_TABLE
++<SUBSECTION Private>
++udisks_linux_partition_table_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxmdraidobject</FILE>
++UDisksLinuxMDRaidObject
++udisks_linux_mdraid_object_new
++udisks_linux_mdraid_object_uevent
++udisks_linux_mdraid_object_have_devices
++udisks_linux_mdraid_object_get_daemon
++udisks_linux_mdraid_object_get_device
++udisks_linux_mdraid_object_get_members
++udisks_linux_mdraid_object_get_uuid
++<SUBSECTION Standard>
++UDISKS_LINUX_MDRAID_OBJECT
++UDISKS_IS_LINUX_MDRAID_OBJECT
++UDISKS_TYPE_LINUX_MDRAID_OBJECT
++<SUBSECTION Private>
++udisks_linux_mdraid_object_get_type
++</SECTION>
++
++<SECTION>
++<FILE>udiskslinuxmdraid</FILE>
++UDisksLinuxMDRaid
++udisks_linux_mdraid_new
++udisks_linux_mdraid_update
++<SUBSECTION Standard>
++UDISKS_LINUX_MDRAID
++UDISKS_IS_LINUX_MDRAID
++UDISKS_TYPE_LINUX_MDRAID
++<SUBSECTION Private>
++udisks_linux_mdraid_get_type
++</SECTION>
++
++<SECTION>
++<FILE>UDisksModuleManager</FILE>
++UDisksModuleManager
++UDisksModuleInterfaceInfo
++UDisksObjectHasInterfaceFunc
++UDisksObjectConnectInterfaceFunc
++UDisksObjectUpdateInterfaceFunc
++UDisksModuleObjectNewFunc
++UDisksModuleNewManagerIfaceFunc
++UDisksModuleInitFunc
++UDisksModuleIfaceSetupFunc
++UDisksModuleObjectNewSetupFunc
++UDisksModuleNewManagerIfaceSetupFunc
++UDisksModuleObject
++UDisksModuleObjectIface
++udisks_module_manager_new
++udisks_module_manager_get_modules_available
++udisks_module_manager_load_modules
++udisks_module_manager_get_module_state_pointer
++udisks_module_manager_set_module_state_pointer
++udisks_module_manager_get_block_object_iface_infos
++udisks_module_manager_get_drive_object_iface_infos
++udisks_module_manager_get_module_object_new_funcs
++udisks_module_manager_get_new_manager_iface_funcs
++udisks_module_object_process_uevent
++udisks_module_object_housekeeping
++<SUBSECTION Standard>
++UDISKS_IS_MODULE_MANAGER
++UDISKS_IS_MODULE_OBJECT
++UDISKS_MODULE_MANAGER
++UDISKS_MODULE_OBJECT
++UDISKS_MODULE_OBJECT_GET_IFACE
++UDISKS_TYPE_MODULE_MANAGER
++UDISKS_TYPE_MODULE_OBJECT
++<SUBSECTION Private>
++udisks_module_manager_get_type
++udisks_module_object_get_type
++</SECTION>

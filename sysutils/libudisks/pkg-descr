@@ -1,0 +1,12 @@
+Udisks provides interfaces to enumerate and perform operations on disks
+and storage devices. Any application (including unprivileged ones) can
+access the udisks(8) daemon via the name org.freedesktop.Udisks2 on the
+system message bus. In addition to the D-bus API, a library, libudisks2,
+is also provided. This library can be used from C/C++ and any high-level
+language with GObjectIntrospection support such as Javascript and
+Python.
+
+This port provides the libudisks library only and is meant for use with
+sysutils/bsdisks.
+
+WWW: https://www.freedesktop.org/wiki/Software/udisks/
