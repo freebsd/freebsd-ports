@@ -56,9 +56,9 @@ GH_TUPLE=	qtumproject:qtum:${DISTVERSIONPREFIX}${PORTVERSION} \
 # setting some related environment variables.
 .if ${SSL_DEFAULT} == base
 CONFIGURE_ENV+=	CRYPTO_CFLAGS="-I${OPENSSLINC}" \
-		CRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
+		CRYPTO_LIBS="-lcrypto" \
 		SSL_CFLAGS="-I${OPENSSLINC}" \
-		SSL_LIBS="-L${OPENSSLLIB} -lssl"
+		SSL_LIBS="-lssl"
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
