@@ -1,0 +1,9 @@
+High-quality pro image resizing / scaling C++ library, image resize.
+
+This library features routines for both down- and upsizing of 8- and 16-bit,
+1 to 4-channel images. Image resizing routines were implemented in
+multi-platform C++ code, and have a high level of optimality. Beside resizing,
+this library offers a sub-pixel shift operation. Built-in sRGB gamma correction
+is available.
+
+WWW: https://github.com/avaneev/avir
