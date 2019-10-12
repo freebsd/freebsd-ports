@@ -22,6 +22,8 @@ MAKE_ARGS=	INSTALLDIR=${STAGEDIR}${PREFIX}/bin
 
 PLIST_FILES=	bin/${PORTNAME}
 
+PORTSCOUT=	skipv:2.60 # a very old version is labeled with 2.60 in their repository
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
