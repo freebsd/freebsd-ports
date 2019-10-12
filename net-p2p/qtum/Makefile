@@ -27,7 +27,6 @@ USES=		autoreconf bdb:5+ compiler:c++14-lang gmake libtool pkgconfig qt:5 ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	BDB_CFLAGS="-I${BDB_INCLUDE_DIR}" \
 		BDB_LIBS="-L${BDB_LIB_DIR} -l${BDB_LIB_CXX_NAME}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 # * Man pages have not been adjusted after cloning the Bitcoin code base.
 #   They are the old Bitcoin man pages, so do not install them.
@@ -60,6 +59,17 @@ CONFIGURE_ENV+=	CRYPTO_CFLAGS="-I${OPENSSLINC}" \
 		CRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
 		SSL_CFLAGS="-I${OPENSSLINC}" \
 		SSL_LIBS="-L${OPENSSLLIB} -lssl"
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
+# Force PIC on FreeBSD 11.x because otherwise linking fails:
+# /usr/bin/ld: qtum_cli-bitcoin-cli.o: relocation R_X86_64_32 against `a local
+# symbol' can not be used when making a shared object; recompile with -fPIC
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -fPIC -DPIC"
+post-patch:
+	${SED} -i '' -e 's/AC_SUBST(PIE_FLAGS)//' ${WRKSRC}/configure.ac
+.else
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 .endif
 
 .include <bsd.port.post.mk>
