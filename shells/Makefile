@@ -14,6 +14,7 @@
     SUBDIR += bicon
     SUBDIR += ch
     SUBDIR += dash
+    SUBDIR += elvish
     SUBDIR += envy
     SUBDIR += es
     SUBDIR += esh
