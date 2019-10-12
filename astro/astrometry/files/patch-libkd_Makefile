@@ -1,0 +1,15 @@
+--- libkd/Makefile.orig	2019-04-22 16:25:30 UTC
++++ libkd/Makefile
+@@ -136,10 +136,11 @@ install: $(LIBKD)
+ .PHONY: install-spherematch
+ install-spherematch: spherematch_c$(PYTHON_SO_EXT)
+ 	mkdir -p '$(PY_INSTALL_DIR)'
+-	@for x in spherematch_c$(PYTHON_SO_EXT) spherematch.py __init__.py; do \
++	@for x in spherematch.py __init__.py; do \
+ 		echo cp $$x '$(PY_INSTALL_DIR)'; \
+ 		cp $$x '$(PY_INSTALL_DIR)'; \
+ 	done
++	$(BSD_INSTALL_LIB) spherematch_c$(PYTHON_SO_EXT) '$(PY_INSTALL_DIR)'
+ 
+ 
+ ### TESTS are great
