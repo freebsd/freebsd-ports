@@ -14,7 +14,6 @@ COMMENT=	DocBook SGML DTD into nroff/troff -man macros converter
 RUN_DEPENDS=	docbook>0:textproc/docbook
 
 USES=		imake
-XFREE86_HTML_MAN=	no
 
 MAKE_JOBS_UNSAFE=	yes
 

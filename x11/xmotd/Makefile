@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/GNU
 
 USES=		imake:noman
 USE_XORG=	ice sm x11 xaw xext xmu xt
-XFREE86_HTML_MAN=	no
 
 PLIST_FILES=	bin/xmotd \
 		man/man8/xmotd.8.gz
