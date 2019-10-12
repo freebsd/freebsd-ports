@@ -3527,7 +3527,6 @@ lib/emscripten/tools/lz4-compress.js
 lib/emscripten/tools/maybe_wasm2js.py
 lib/emscripten/tools/merge_pair.py
 lib/emscripten/tools/minified_js_name_generator.py
-lib/emscripten/tools/nativize_llvm.py
 lib/emscripten/tools/node_modules/acorn/CHANGELOG.md
 lib/emscripten/tools/node_modules/acorn/LICENSE
 lib/emscripten/tools/node_modules/acorn/README.md
