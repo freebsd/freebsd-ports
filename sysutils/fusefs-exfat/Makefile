@@ -1,4 +1,4 @@
-# Created by: Alex Samorukov <samm@os2.kiev.ua>
+# Created by: Alex Samorukov <samm@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	exfat
@@ -7,7 +7,7 @@ DISTVERSION=	1.3.0
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	samm@os2.kiev.ua
+MAINTAINER=	samm@freebsd.org
 COMMENT=	Full-featured exFAT FS implementation as a FUSE module
 
 LICENSE=	GPLv2+ MSPAT

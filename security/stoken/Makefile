@@ -1,4 +1,4 @@
-# Created by: Alex Samorukov <samm@os2.kiev.ua>
+# Created by: Alex Samorukov <samm@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	stoken
@@ -6,7 +6,7 @@ DISTVERSION=	0.92
 CATEGORIES=	security
 MASTER_SITES=	SF/stoken
 
-MAINTAINER=	samm@os2.kiev.ua
+MAINTAINER=	samm@freebsd.org
 COMMENT=	Software Token for UNIX compatible with RSA SecurID
 
 LICENSE=	LGPL21

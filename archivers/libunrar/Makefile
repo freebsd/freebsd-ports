@@ -1,4 +1,4 @@
-# Created by: samm@os2.kiev.ua
+# Created by: samm@freebsd.org
 # $FreeBSD$
 
 PORTNAME=	libunrar
@@ -8,7 +8,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-${PORTVERSION}
 
-MAINTAINER=	samm@os2.kiev.ua
+MAINTAINER=	samm@freebsd.org
 COMMENT=	Library to work with RAR archives
 
 WRKSRC=		${WRKDIR}/unrar

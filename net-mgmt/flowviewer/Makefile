@@ -1,4 +1,4 @@
-# Created by: Alex Samorukov, samm@os2.kiev.ua
+# Created by: Alex Samorukov, samm@freebsd.org
 # $FreeBSD$
 
 PORTNAME=	flowviewer
@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	FlowViewer_${DISTVERSION}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	samm@os2.kiev.ua
+MAINTAINER=	samm@freebsd.org
 COMMENT=	Web-based user interface for the flow-tools NetFlow data
 
 RUN_DEPENDS=	p5-GD-Graph>=0:graphics/p5-GD-Graph \

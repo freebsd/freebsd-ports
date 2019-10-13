@@ -1,4 +1,4 @@
-# Created by: Alex Samorukov <samm@os2.kiev.ua>
+# Created by: Alex Samorukov <samm@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	inadyn
@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.inatech.eu/inadyn/ \
 		LOCAL/dhn
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
-MAINTAINER=	samm@os2.kiev.ua
+MAINTAINER=	samm@freebsd.org
 COMMENT=	Dynamic DNS update client
 
 USES=		dos2unix gmake zip
