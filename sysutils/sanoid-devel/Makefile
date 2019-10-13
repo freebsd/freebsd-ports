@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	sanoid
-PORTVERSION=1.0.0.20190619
+PORTVERSION=	1.0.0.20190619
+PORTREVISION=	1
 CATEGORIES=	sysutils
-PKGNAMESUFFIX=-devel
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	Policy-driven snapshot management and replication tools
@@ -21,11 +22,13 @@ USES=		shebangfix perl5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jimsalterjrs
-GH_PROJECT=sanoid
-GH_TAGNAME=a90eec3
+GH_TAGNAME=	a90eec3
 
 USE_PERL5=	run
 SHEBANG_FILES=	findoid sanoid sleepymutex syncoid
+
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 # line 19:  my %args = ("configdir" => "/etc/sanoid");
 post-patch:
@@ -34,8 +37,6 @@ post-patch:
 	@${REINPLACE_CMD} -i '' \
 		-e 's|:/bin:/usr/bin:/sbin|:${PREFIX}/bin:/bin:/usr/bin:/sbin|' \
 		${WRKSRC}/syncoid
-
-do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/findoid ${STAGEDIR}${PREFIX}/bin
