@@ -1,4 +1,4 @@
-# Created by: Alex Samorukov <samm@os2.kiev.ua>
+# Created by: Alex Samorukov <samm@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	atop
@@ -6,7 +6,7 @@ PORTVERSION=	2.0.2.b3
 PORTREVISION=	2
 CATEGORIES=	sysutils
 
-MAINTAINER=	samm@os2.kiev.ua
+MAINTAINER=	samm@freebsd.org
 COMMENT=	ASCII Monitor for system resources and process activity
 
 LICENSE=	GPLv2

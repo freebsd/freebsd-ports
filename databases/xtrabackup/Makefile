@@ -1,4 +1,4 @@
-# Created by: Alex Samorukov <samm@os2.kiev.ua>
+# Created by: Alex Samorukov <samm@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	xtrabackup
@@ -9,7 +9,7 @@ MASTER_SITES=	https://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-${
 DISTFILES=	percona-${PORTNAME}-${PORTVERSION}.tar.gz:xtrabackup \
 		boost_1_59_0.tar.bz2:boost
 
-MAINTAINER=	samm@os2.kiev.ua
+MAINTAINER=	samm@freebsd.org
 COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
 
 LICENSE=	GPLv2
