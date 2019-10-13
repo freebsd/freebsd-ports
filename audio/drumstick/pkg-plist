@@ -28,6 +28,10 @@ share/icons/hicolor/32x32/apps/drumstick.png
 share/icons/hicolor/48x48/apps/drumstick.png
 share/icons/hicolor/64x64/apps/drumstick.png
 share/icons/hicolor/scalable/apps/drumstick.svgz
+%%DATADIR%%/cmake/drumstick-file-config-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/cmake/drumstick-file-config.cmake
+%%DATADIR%%/cmake/drumstick-rt-config-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/cmake/drumstick-rt-config.cmake
 %%MANPAGES%%man/man1/drumstick-drumgrid.1.gz
 %%MANPAGES%%man/man1/drumstick-dumpmid.1.gz
 %%MANPAGES%%man/man1/drumstick-dumpove.1.gz

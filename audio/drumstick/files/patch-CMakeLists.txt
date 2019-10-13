@@ -1,15 +1,6 @@
---- CMakeLists.txt.orig	2018-11-25 16:14:19 UTC
+--- CMakeLists.txt.orig	2019-09-01 13:59:42 UTC
 +++ CMakeLists.txt
-@@ -25,7 +25,7 @@ endif()
- project(DRUMSTICK)
- 
- if(CMAKE_SIZEOF_VOID_P MATCHES "8")
--    set(_INIT_LIB_SUFFIX "64")
-+    set(_INIT_LIB_SUFFIX "")
- else()
-     set(_INIT_LIB_SUFFIX "")
- endif()
-@@ -72,7 +72,7 @@ set(_DBUS_INIT OFF)
+@@ -54,7 +54,7 @@ set(_DBUS_INIT OFF)
  
  # User options
  option(STATIC_DRUMSTICK "Build static libraries instead of dynamic" OFF)
@@ -18,8 +9,8 @@
  
  message(STATUS "Build configuration: ${CMAKE_BUILD_TYPE}")
  
-@@ -100,8 +100,8 @@ else()
-     message(FATAL_ERROR "Program pkg-config not found")
+@@ -84,8 +84,8 @@ if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+     endif()
  endif()
  
 -if(${CMAKE_SYSTEM} MATCHES "Linux")
@@ -29,18 +20,18 @@
      if(ALSA_FOUND)
          set(ALSA_LIBS ${ALSA_LIBRARIES})
          list(APPEND ALSA_LIB_DIR ${ALSA_LIBRARY_DIRS} ${ALSA_LIBDIR})
-@@ -111,7 +111,9 @@ if(${CMAKE_SYSTEM} MATCHES "Linux")
-     endif()
+@@ -96,7 +96,9 @@ if(${CMAKE_SYSTEM} MATCHES "Linux")
  endif()
  
--pkg_check_modules(PULSE libpulse-simple)
-+if (USE_PULSEAUDIO)
-+  pkg_check_modules(PULSE libpulse-simple)
-+endif()
- if(NOT PULSE_FOUND)
-     message(STATUS "Warning: PulseAudio library not found.")
- endif()
-@@ -134,7 +136,7 @@ if(BUILD_TESTING)
+ if(PKG_CONFIG_FOUND)
+-    pkg_check_modules(PULSE libpulse-simple)
++    if (USE_PULSEAUDIO)
++        pkg_check_modules(PULSE libpulse-simple)
++    endif()
+     if(NOT PULSE_FOUND)
+         message(STATUS "Warning: PulseAudio library not found.")
+     endif()
+@@ -117,7 +119,7 @@ if(BUILD_TESTING)
    add_subdirectory(tests)
  endif()
  
@@ -49,7 +40,7 @@
      find_package(Doxygen)
      if(DOXYGEN_FOUND)
          configure_file(
-@@ -145,12 +147,14 @@ if(${CMAKE_SYSTEM} MATCHES "Linux")
+@@ -128,12 +130,14 @@ if(${CMAKE_SYSTEM} MATCHES "Linux")
              ${DOXYGEN} Doxyfile
              WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
      endif()
@@ -62,19 +53,10 @@
      configure_file(drumstick.spec.in drumstick.spec IMMEDIATE @ONLY)
 -    install(FILES
 -	${CMAKE_CURRENT_BINARY_DIR}/drumstick-alsa.pc
--	DESTINATION lib${LIB_SUFFIX}/pkgconfig )
+-        DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig )
 +    #install(FILES
-+    #	${CMAKE_CURRENT_BINARY_DIR}/drumstick-alsa.pc
-+    #	DESTINATION lib${LIB_SUFFIX}/pkgconfig )
++#	${CMAKE_CURRENT_BINARY_DIR}/drumstick-alsa.pc
++#        DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig )
      # XML mime types
      set( SHARED_MIME_INFO_MINIMUM_VERSION "0.30" )
      set( XDG_MIME_INSTALL_DIR "${CMAKE_INSTALL_DATAROOTDIR}/mime/packages" )
-@@ -180,7 +184,7 @@ configure_file(
- add_custom_target( uninstall
-     "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
- 
--if(${CMAKE_SYSTEM} MATCHES "Linux")
-+if(${CMAKE_SYSTEM} MATCHES "Linux|FreeBSD")
-     # tarball target
-     add_custom_target( tarball
-         COMMAND mkdir -p drumstick-${VERSION}
