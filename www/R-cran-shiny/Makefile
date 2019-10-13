@@ -12,6 +12,8 @@ COMMENT=	Web Application Framework for R
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		ERROR: dependency 'fastmap' is not available for package 'shiny'
+
 CRAN_DEPENDS=	R-cran-httpuv>=1.5.2:www/R-cran-httpuv \
 		R-cran-mime>=0.3:misc/R-cran-mime \
 		R-cran-jsonlite>=0.9.16:converters/R-cran-jsonlite \
