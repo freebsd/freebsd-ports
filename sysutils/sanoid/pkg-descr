@@ -2,3 +2,5 @@ Sanoid is a policy-driven snapshot management tool for ZFS
 filesystems.  More prosaically, you can use Sanoid to create,
 automatically thin, and monitor snapshots and pool health from a
 single eminently human-readable TOML config file.
+
+WWW: https://github.com/jimsalterjrs/sanoid

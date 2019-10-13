@@ -1,28 +1,16 @@
 [
 {
+  type: install
   message: <<EOD
-***************************************************************************
 
- Sanoid requires additional configuration in the ${PREFIX}/etc/sanoid.conf 
+ Sanoid requires additional configuration in the ${PREFIX}/etc/sanoid/sanoid.conf 
  file.
 
- A sample has been installed in ${PREFIX}/etc/sanoid.conf.sample and
+ A sample has been installed in ${PREFIX}/etc/sanoid/sanoid.conf.sample and
  additional documentation can be found at the sanoid master site:
  
    https://github.com/jimsalterjrs/sanoid
 
-***************************************************************************
 EOD
-}
-{
-  message: <<EOD
-***************************************************************************
-
- If you have created a local configuration file,
- ${PREFIX}/etc/sanoid.conf, you will need to remove it separately.
-
-***************************************************************************
-EOD
-  type: remove
 }
 ]
