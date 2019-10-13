@@ -3,7 +3,7 @@
 
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	1.10.6
+DISTVERSION=	1.10.7
 CATEGORIES=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -11,14 +11,14 @@ COMMENT=	Advanced shading language for production GI renderers
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	llvm-config60:devel/llvm60
+BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libtinfo.so:devel/ncurses \
 		libImath.so:graphics/ilmbase \
 		libIlmImf.so:graphics/openexr \
 		libOpenImageIO.so:graphics/openimageio \
 		libpugixml.so:textproc/pugixml
-RUN_DEPENDS=	llvm-config60:devel/llvm60
+RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 
 USES=		bison cmake compiler:c++11-lang ncurses python:build
 USE_LDCONFIG=	yes
@@ -27,9 +27,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	imageworks
 GH_PROJECT=	OpenShadingLanguage
 
+LLVM_VER=	80
 CMAKE_ON=	ENABLERTTI OSL_BUILD_TESTS USE_LLVM_BITCODE USE_LIBCPLUSPLUS
 CMAKE_OFF=	USE_BOOST_WAVE
-CMAKE_ARGS=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config60" \
+CMAKE_ARGS=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VER}" \
 		-DCMAKE_INSTALL_DOCDIR:STRING=${DOCSDIR} \
 		-DUSE_CPP:STRING=11
 
