@@ -70,11 +70,11 @@ lib/aspell-%%VER%%/standard.kbd
 lib/libaspell.a
 lib/libaspell.so
 lib/libaspell.so.15
-lib/libaspell.so.15.3.0
+lib/libaspell.so.15.3.1
 lib/libpspell.a
 lib/libpspell.so
 lib/libpspell.so.15
-lib/libpspell.so.15.3.0
+lib/libpspell.so.15.3.1
 man/man1/aspell-import.1.gz
 man/man1/aspell.1.gz
 man/man1/prezip-bin.1.gz
