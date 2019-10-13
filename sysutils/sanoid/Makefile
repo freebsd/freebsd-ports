@@ -3,7 +3,7 @@
 PORTNAME=	sanoid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	hartzell@alerce.com
@@ -12,9 +12,9 @@ COMMENT=	Policy-driven snapshot management and replication tools
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/bin/lzop:archivers/lzop \
-		${LOCALBASE}/bin/mbuffer:misc/mbuffer \
-		${LOCALBASE}/bin/pv:sysutils/pv \
+RUN_DEPENDS=	lzop:archivers/lzop \
+		mbuffer:misc/mbuffer \
+		pv:sysutils/pv \
 		p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Config-IniFiles>=0:devel/p5-Config-IniFiles
 
