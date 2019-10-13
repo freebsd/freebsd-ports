@@ -181,8 +181,8 @@ rpcs3/Emu/GDB.cpp:33:10: fatal error: 'charconv' file not found
  {
  	start_server();
  
--	while (server_socket != -1 && !Emu.IsStopped())
-+	while (!Emu.IsStopped())
+-	while (server_socket != -1 && thread_ctrl::state() != thread_state::aborting)
++	while (thread_ctrl::state() != thread_state::aborting)
  	{
  		sockaddr_in client;
  		socklen_t client_len = sizeof(client);
