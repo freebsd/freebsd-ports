@@ -12,6 +12,10 @@ COMMENT=	PHP mode for GNU Emacs
 
 LICENSE=	GPLv3
 
+.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
+BROKEN=		php.el:232:10:Error: Symbol's function definition is void: rx-form
+.endif
+
 USES=		emacs gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-php
