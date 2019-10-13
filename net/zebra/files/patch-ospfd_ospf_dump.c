@@ -5,7 +5,7 @@
    iph = (struct ip *) STREAM_PNT (s);
  
 -#ifdef GNU_LINUX
-+#ifdef GNU_LINUX || ((defined(__FreeBSD__) && (__FreeBSD_version >= 1100030))
++#if defined(GNU_LINUX) || defined(__FreeBSD__)
    length = ntohs (iph->ip_len);
  #else /* GNU_LINUX */
    length = iph->ip_len;
