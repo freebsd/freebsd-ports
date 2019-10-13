@@ -5,7 +5,8 @@
  # -ggdb to -O3 or -O2.
  
 -FC = /usr/bin/gfortran
- std_flags=-march=native -fimplicit-none -fno-f2c -fno-backslash\
+-std_flags=-march=native -fimplicit-none -fno-f2c -fno-backslash\
++std_flags=-fimplicit-none -fno-f2c -fno-backslash\
   -funroll-loops  -ffpe-trap=zero,overflow,invalid -finit-real=NAN\
 - -ftree-vectorize -floop-interchange -floop-strip-mine -floop-block -pipe
 + -ftree-vectorize -pipe
