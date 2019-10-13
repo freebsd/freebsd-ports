@@ -9,5 +9,6 @@ case $2 in
 		tee $DBDIR/README > $DBDIR/CNID/README <<-'EOF'
 			This directory contains modifiable Netatalk configuration files and the CNID databases.
 		EOF
+		truncate -s -1 $DBDIR/README $DBDIR/CNID/README
 		;;
 esac
