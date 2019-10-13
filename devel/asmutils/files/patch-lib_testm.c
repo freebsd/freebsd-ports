@@ -1,6 +1,6 @@
 --- lib/testm.c.orig	Fri Jul 20 14:02:56 2001
 +++ lib/testm.c	Wed Jan 26 15:35:47 2005
-@@ -16,10 +16,22 @@
+@@ -16,10 +16,17 @@
  # define __USE_BSD 1
  # define __USE_XOPEN 1
  # define __USE_SVID 1
@@ -15,12 +15,7 @@
 +#define	M_LN10		2.30258509299404568402	/* log e10 */
 +#define	M_E		2.7182818284590452354	/* e */
 +#define	M_PI		3.14159265358979323846	/* pi */
-+#if __FreeBSD_version < 501103
-+extern char __infinity[];
-+#define	HUGE_VAL	(*(double *) __infinity)
-+#else
 +#define	HUGE_VAL	__builtin_huge_val()
-+#endif
  
  #ifndef NAN
  #define NAN (0./0.)
