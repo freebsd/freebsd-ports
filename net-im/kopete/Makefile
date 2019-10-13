@@ -28,9 +28,6 @@ USE_KDE+=	contacts identitymanagement libkleo pimtextedit
 USE_QT=		concurrent core dbus gui network phonon4 printsupport sql widgets xml \
 		buildtools_build qmake_build
 
-# See #228640: temporary work around to fix the build on Current with ld being lld.
-LLD_UNSAFE=	yes
-
 SHEBANG_FILES=	protocols/winpopup/winpopup-install \
 		protocols/winpopup/winpopup-send \
 		kopete/kconf_update/*.pl
