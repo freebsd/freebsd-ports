@@ -1,0 +1,6 @@
+A Client Side Simple Certificate Enrollment Protocol (SCEP) Library.
+libscep implements the SCEP protocol as a C library. The library
+gets initialized, then one or multiple operations can be executed
+and then it gets destroyed again.
+
+WWW: https://github.com/openxpki/libscep
