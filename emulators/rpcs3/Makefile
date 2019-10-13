@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.7-8861 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g0172e097f
+DISTVERSION=	0.0.7-8871 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g9bcd7b534
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -57,7 +57,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-4504ac2d1248
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-5bd17a44c972
 .endif
 
-OPTIONS_DEFINE=	ALSA EVDEV GDB LLVM PULSEAUDIO VULKAN
+OPTIONS_DEFINE=	ALSA EVDEV LLVM PULSEAUDIO VULKAN
 OPTIONS_DEFAULT=LLVM VULKAN
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -68,10 +68,6 @@ EVDEV_DESC=		libevdev-based joystick support
 EVDEV_CMAKE_BOOL=	USE_LIBEVDEV
 EVDEV_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 EVDEV_LIB_DEPENDS=	libevdev.so:devel/libevdev
-
-GDB_DESC=		GDB remote stub (powerpc64 target)
-GDB_CMAKE_BOOL=		WITH_GDB
-GDB_BROKEN=		https://github.com/RPCS3/rpcs3/issues/5946
 
 LLVM_DESC=		LLVM-based PPU recompiler
 LLVM_CMAKE_BOOL_OFF=	WITHOUT_LLVM
