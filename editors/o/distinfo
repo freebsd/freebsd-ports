@@ -1,0 +1,15 @@
+TIMESTAMP = 1570998155
+SHA256 (xyproto-o-2.3.1_GH0.tar.gz) = 82d20977170391b7e37fb6dbf3883d077e0dba8b77fa0d61df3b96ec8d16b0e9
+SIZE (xyproto-o-2.3.1_GH0.tar.gz) = 1282670
+SHA256 (golang-sys-b09406accb47_GH0.tar.gz) = 732651ee709d3443e992f716796c5dac7cbc29a345a8ffe3fb80f505c93503d2
+SIZE (golang-sys-b09406accb47_GH0.tar.gz) = 1496780
+SHA256 (pkg-term-aa71e9d9e942_GH0.tar.gz) = dc6f1cf8c71916dd12b31a09a2b1e5b7022afb5c372beb9d6d3f35dd9d14d6b6
+SIZE (pkg-term-aa71e9d9e942_GH0.tar.gz) = 9497
+SHA256 (sourcegraph-annotate-f4cad6c6324d_GH0.tar.gz) = 9586ee91b45741f018ac91993dcf794283150aac952e10f965d4daa7c4bdd95f
+SIZE (sourcegraph-annotate-f4cad6c6324d_GH0.tar.gz) = 5960
+SHA256 (xyproto-syntax-1aa81d747d75_GH0.tar.gz) = dc775175311541e1bdcd731fbe5328c7d18cb1cc04532a84c8ce19813f4e0ed0
+SIZE (xyproto-syntax-1aa81d747d75_GH0.tar.gz) = 1240926
+SHA256 (xyproto-textoutput-v1.8.0_GH0.tar.gz) = c4e3cf8d1c3653353eb21db679bf58e0ed400f417955b6d2712f48791e53b987
+SIZE (xyproto-textoutput-v1.8.0_GH0.tar.gz) = 1235365
+SHA256 (xyproto-vt100-f1727647a85e_GH0.tar.gz) = b575bcef171549405630ddb6da262d07e49ec47a8d003e555374c44ccc800b7a
+SIZE (xyproto-vt100-f1727647a85e_GH0.tar.gz) = 1389891

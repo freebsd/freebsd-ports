@@ -1,0 +1,16 @@
+Small, fast and limited text editor
+
+Features and limitations:
+* Has syntax highlighting for Go code.
+* Never asks before saving or quitting. Be careful.
+* Home and End are not detected by the key handler.
+* Can format Go code using gofmt (press ctrl-f).
+* Expects utilities like gofmt to be in /usr/bin.
+* Will strip trailing whitespace whenever it can.
+* Must be given a filename at start.
+* Requires that /dev/tty is available.
+* Copy, cut and paste is only for one line at a time.
+* Some letters can not be typed in. Like the "ash" grapheme
+  formed from the letters a and e.
+
+WWW: https://github.com/xyproto/o
