@@ -1,5 +1,4 @@
 bin/peek
-share/appdata/com.uploadedlobster.peek.appdata.xml
 share/applications/com.uploadedlobster.peek.desktop
 share/dbus-1/services/com.uploadedlobster.peek.service
 share/icons/hicolor/scalable/apps/com.uploadedlobster.peek.svg
@@ -29,6 +28,8 @@ share/locale/pt_PT/LC_MESSAGES/peek.mo
 share/locale/ru/LC_MESSAGES/peek.mo
 share/locale/sr/LC_MESSAGES/peek.mo
 share/locale/sv/LC_MESSAGES/peek.mo
+share/locale/tr/LC_MESSAGES/peek.mo
 share/locale/uk_UA/LC_MESSAGES/peek.mo
 share/locale/zh_CN/LC_MESSAGES/peek.mo
 share/locale/zh_TW/LC_MESSAGES/peek.mo
+share/metainfo/com.uploadedlobster.peek.appdata.xml
