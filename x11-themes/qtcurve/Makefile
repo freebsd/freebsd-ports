@@ -24,6 +24,9 @@ KF5_RUN_DEPENDS=	kf5-style-qtcurve>=${PORTVERSION}:x11-themes/qtcurve-kf5
 QT5_RUN_DEPENDS=	qt5-style-qtcurve>=${PORTVERSION}:x11-themes/qtcurve-qt5
 
 .else # !defined(QTCURVE_SLAVE)
+PATCH_SITES=	https://github.com/KDE/${PORTNAME}/commit/
+PATCHFILES=	ee2228ea2f18ac5da9b434ee6089381df815aa94.patch:-p1
+
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
