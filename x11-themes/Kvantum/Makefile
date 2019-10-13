@@ -2,7 +2,7 @@
 
 PORTNAME=	Kvantum
 DISTVERSIONPREFIX=	V
-DISTVERSION=	0.11.2
+DISTVERSION=	0.12.1
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	-qt5
 
@@ -12,7 +12,7 @@ COMMENT=	SVG-based theme engine for Qt, KDE and LXQt
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang kde:5 qmake qt:5
+USES=		compiler:c++11-lang gl kde:5 qmake qt:5 xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tsujan
