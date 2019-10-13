@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	drumstick
-DISTVERSION=	1.1.2
-PORTREVISION=	6
+DISTVERSION=	1.1.3
 CATEGORIES=	audio multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -33,7 +32,7 @@ PLIST_SUB=	SHL3=${PORTVERSION} SHL1=${PORTVERSION:R:R}
 post-patch:
 	@${REINPLACE_CMD} -e 's|"default.sf2"|"${LOCALBASE}/share/sounds/sf2/FluidR3_GM.sf2"|' \
 		${WRKSRC}/utils/vpiano/fluidsettingsdialog.cpp \
-		${WRKSRC}/library/rt-backends/synth/synthengine.cpp
+		${WRKSRC}/library/rt-backends/fluidsynth/synthengine.cpp
 	@${REINPLACE_CMD} -e 's|"$${CMAKE_INSTALL_DATAROOTDIR}/man/man1"|"${PREFIX}/man/man1"|' \
 		${WRKSRC}/cmake_admin/CreateManpages.cmake
 
