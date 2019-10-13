@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	obs-studio
-DISTVERSION=	24.0.2
+DISTVERSION=	24.0.3
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
