@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chaospy
-DISTVERSION=	3.0.6
+DISTVERSION=	3.0.12
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,5 +18,8 @@ BUILD_DEPENDS=	${PYNUMPY} \
 USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
+
+post-extract: # https://github.com/jonathf/chaospy/issues/167
+	@truncate -s 0 ${WRKSRC}/README.rst
 
 .include <bsd.port.mk>
