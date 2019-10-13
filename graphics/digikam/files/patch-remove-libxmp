@@ -1,0 +1,33 @@
+Digikam bundles libxmp. Since this is already in Exiv2, we end up
+with two copies of a bunch of symbols, and when Digikam loads
+both libraries, and it then initializes Exiv2, that in turn calls
+into the *wrong* copy of libxmp.
+
+Just remove the bundled copy.
+
+diff --git core/app/DigikamCoreTarget.cmake core/app/DigikamCoreTarget.cmake
+index bf8c9f09e7..53284724b4 100644
+--- core/app/DigikamCoreTarget.cmake
++++ core/app/DigikamCoreTarget.cmake
+@@ -24,7 +24,7 @@ set(DIGIKAMCORE_OBJECTS
+             $<TARGET_OBJECTS:libwso2_src>
+ 
+             $<TARGET_OBJECTS:libmd5_src>
+-            $<TARGET_OBJECTS:libxmp_src>
++            # $<TARGET_OBJECTS:libxmp_src>
+             $<TARGET_OBJECTS:libdng_src>
+             $<TARGET_OBJECTS:dngwriter_src>
+ 
+diff --git core/libs/dngwriter/CMakeLists.txt core/libs/dngwriter/CMakeLists.txt
+index dc28a9c865..dc83173b37 100644
+--- core/libs/dngwriter/CMakeLists.txt
++++ core/libs/dngwriter/CMakeLists.txt
+@@ -66,7 +66,7 @@ foreach(_currentfile ${libxmp_SRCS})
+     endif()
+ endforeach()
+ 
+-add_library(libxmp_src OBJECT ${libxmp_SRCS})
++# add_library(libxmp_src OBJECT ${libxmp_SRCS})
+ 
+ #------------------------------------------------------------------------------------
+ 
