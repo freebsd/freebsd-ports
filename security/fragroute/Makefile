@@ -14,6 +14,8 @@ COMMENT=	Tool for intercepting, modifying, and rewriting egress traffic
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		compiler:c11
+
 LIB_DEPENDS=	libdnet.so:net/libdnet \
 		libevent.so:devel/libevent
 
