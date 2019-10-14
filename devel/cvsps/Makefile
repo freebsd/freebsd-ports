@@ -5,10 +5,9 @@ PORTNAME=	cvsps
 PORTVERSION=	2.1
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cobite.com/cvsps/ \
-		SF/${PORTNAME}/
+MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Create patchset information from CVS
 
 LICENSE=	GPLv2
