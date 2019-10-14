@@ -1,6 +1,6 @@
---- cvsps.c.orig	2008-04-01 21:18:44.000000000 -0400
-+++ cvsps.c	2008-04-01 21:18:44.000000000 -0400
-@@ -2575,8 +2575,8 @@
+--- cvsps.c.orig	2008-04-02 01:18:44 UTC
++++ cvsps.c
+@@ -2575,8 +2575,8 @@ static void determine_branch_ancestor(PatchSet * ps, P
      for (next = ps->members.next; next != &ps->members; next = next->next) 
      {
  	PatchSetMember * psm = list_entry(next, PatchSetMember, link);
