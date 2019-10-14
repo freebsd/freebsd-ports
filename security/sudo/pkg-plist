@@ -41,6 +41,7 @@ sbin/visudo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sudoers
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/syslog.conf
 %%NLS%%share/locale/ast/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/sudo.mo
@@ -103,6 +104,7 @@ sbin/visudo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/sudoers.mo
 @dir etc/sudoers.d
 @dir /var/db/sudo/lectured
 @dir /var/db/sudo
