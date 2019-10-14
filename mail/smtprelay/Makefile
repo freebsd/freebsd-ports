@@ -3,11 +3,8 @@
 PORTNAME=	smtprelay
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	https://code.bluelife.at/decke/smtprelay/archive/ \
-		LOCAL/decke/smtprelay/
-DISTFILES=	${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Simple Go SMTP relay/proxy server
@@ -18,10 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_RC_SUBR=	smtprelay
 
-USE_GITHUB=	nodefault
-GH_TUPLE=	chrj:smtpd:v0.1.2:smtpd/vendor/github.com/chrj/smtpd \
-		vharitonsky:iniflags:a33cd0b5f3de:iniflags/vendor/github.com/vharitonsky/iniflags \
-		golang:crypto:9756ffdc2472:golang/vendor/golang.org/x/crypto
+USE_GITHUB=	yes
+GH_ACCOUNT=	decke
+
+GH_TUPLE=	chrj:smtpd:v0.1.2:chrj_smtpd/vendor/github.com/chrj/smtpd \
+		golang:crypto:9756ffdc2472:golang_crypto/vendor/golang.org/x/crypto \
+		vharitonsky:iniflags:a33cd0b5f3de:vharitonsky_iniflags/vendor/github.com/vharitonsky/iniflags
 
 PLIST_FILES=	bin/${PORTNAME} \
 		"@sample ${ETCDIR}/smtprelay.ini.sample"
