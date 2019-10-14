@@ -3,12 +3,8 @@
 
 PORTNAME=	emptyepsilon
 DISTVERSIONPREFIX=	EE-
-DISTVERSION=	2019.05.21
-PORTREVISION=	1
+DISTVERSION=	2019.09.10
 CATEGORIES=	games
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	bbdf350f103a0b680f2053c94d8e91403260357e.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Spaceship bridge simulator game
@@ -18,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsfml-system.so:devel/sfml
 
-USES=		cmake compiler:c++11-lib gl
+USES=		cmake compiler:c++11-lib gl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	daid
 GH_PROJECT=	EmptyEpsilon SeriousProton:sproton
