@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191014:
+  AFFECTS: users of mail/rspamd, mail/rspamd-devel
+  AUTHOR: vsevolod@FreeBSD.org
+
+  Sample configuration files has been removed as default configuration files
+  are NOT intended for modification by users and SHOULD be overwritten on
+  port upgrade.
+
+  Make sure the default configuration files are unmodified and migrate all
+  configuration changes to the proper places, before you continue.
+
 20191002:
   AFFECTS: users of groff
   AUTHOR: bapt@FreeBSD.org

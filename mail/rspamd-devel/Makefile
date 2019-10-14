@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	2.0.a1.20191010
+PORTVERSION=	2.1.a1.20191014
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -51,7 +51,7 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DDEBUG=ON \
 		-DGIT_ID=${GH_TAGNAME}
 USE_GITHUB=	yes
-GH_TAGNAME=	1bf202d
+GH_TAGNAME=	fe09a19
 
 DEBUG_FLAGS=	-g -O0
 WITH_DEBUG=	yes
@@ -70,16 +70,14 @@ CGP_RUN_DEPENDS+=	\
 	p5-EV>=0:devel/p5-EV \
 	p5-JSON-XS>=0:converters/p5-JSON-XS
 
-.include <bsd.port.options.mk>
-
 post-install:
 	@${MKDIR} \
 		${STAGEDIR}/var/log/rspamd \
 		${STAGEDIR}/var/db/rspamd \
 		${STAGEDIR}/var/run/rspamd
+	${RM} ${STAGEDIR}/${ETCDIR}/rspamd.conf.sample
 	# Linux specific
 	${RM} ${STAGEDIR}/${ETCDIR}/rspamd.systemd.conf
-	# No need, since rspamd.conf.sample is a same
 	${RM} ${STAGEDIR}/${ETCDIR}/rspamd.sysvinit.conf
 	# No examples installed by the port
 	${RMDIR} ${STAGEDIR}/${EXAMPLESDIR}
