@@ -18,11 +18,9 @@ RUN_DEPENDS=	rsync:net/rsync \
 LIB_DEPENDS=	libssh2.so:security/libssh2 \
 		libsqlite3.so:databases/sqlite3
 
-USES=		libedit pkgconfig:both
+USES=		compiler:c++11-lang libedit pkgconfig:both
 USE_GITHUB=	yes
 USE_RC_SUBR=	cbsdd cbsdrsyncd cbsd-statsd-bhyve cbsd-statsd-hoster cbsd-statsd-jail
-
-CFLAGS_powerpc64=	-mminimal-toc
 
 SUB_FILES=	pkg-message pkg-deinstall
 
