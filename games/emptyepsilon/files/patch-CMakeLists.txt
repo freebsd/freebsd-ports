@@ -1,19 +1,29 @@
---- CMakeLists.txt.orig	2016-10-31 05:06:07 UTC
+--- CMakeLists.txt.orig	2019-09-10 10:55:00 UTC
 +++ CMakeLists.txt
-@@ -395,11 +395,11 @@ else()
+@@ -464,16 +464,16 @@ else()
    install(TARGETS ${EXECUTABLE_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_FULL_BINDIR})
  endif()
  
 -find_package(PythonInterp)
 -if(PYTHONINTERP_FOUND)
--  add_custom_target(scriptdoc ALL ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/compile_script_docs.py ${CMAKE_BINARY_DIR}/script_reference.html WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMENT "Building script reference documentation.")
+-  add_custom_command(
+-        OUTPUT ${CMAKE_BINARY_DIR}/script_reference.html
+-        COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/compile_script_docs.py ${CMAKE_BINARY_DIR}/script_reference.html
+-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+-        COMMENT "Building script reference documentation.")
+-  add_custom_target(script_reference ALL DEPENDS ${CMAKE_BINARY_DIR}/script_reference.html)
 -  install(FILES ${CMAKE_BINARY_DIR}/script_reference.html DESTINATION .)
 -endif()
 +#find_package(PythonInterp)
 +#if(PYTHONINTERP_FOUND)
-+#  add_custom_target(scriptdoc ALL ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/compile_script_docs.py ${CMAKE_BINARY_DIR}/script_reference.html WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMENT "Building script reference documentation.")
++#  add_custom_command(
++#        OUTPUT ${CMAKE_BINARY_DIR}/script_reference.html
++#        COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/compile_script_docs.py ${CMAKE_BINARY_DIR}/script_reference.html
++#        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
++#        COMMENT "Building script reference documentation.")
++#  add_custom_target(script_reference ALL DEPENDS ${CMAKE_BINARY_DIR}/script_reference.html)
 +#  install(FILES ${CMAKE_BINARY_DIR}/script_reference.html DESTINATION .)
 +#endif()
  
  set(CPACK_PACKAGE_EXECUTABLES ${EXECUTABLE_NAME})
- set(CPACK_GENERATOR "ZIP")
+ set(CPACK_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}")
