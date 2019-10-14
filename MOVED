@@ -13078,3 +13078,4 @@ java/jakarta-commons-lang3|java/apache-commons-lang3|2019-10-07|Renamed upstream
 x11-clocks/xfce4-timer-out-plugin|x11-clocks/xfce4-time-out-plugin|2019-10-09|Port was incorrectly named different to upstream
 x11-toolkits/gai||2019-10-10|Abandonware since 2005
 palm/synce-libsynce||2019-10-14|Has expired: obsolete technology
+french/py-grammalecte|french/py-grammalecte-fr|2019-10-14|Port was incorrectly named different to upstream
