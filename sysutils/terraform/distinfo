@@ -1,3 +1,3 @@
-TIMESTAMP = 1567781888
-SHA256 (hashicorp-terraform-v0.12.8_GH0.tar.gz) = f1c69a264c76de20afbca92943419668f02a46005111347959d25ea285c2f5cc
-SIZE (hashicorp-terraform-v0.12.8_GH0.tar.gz) = 9945904
+TIMESTAMP = 1571016835
+SHA256 (hashicorp-terraform-v0.12.10_GH0.tar.gz) = 289d5287fda0bb870c1fb1ed504523bf24885ccf763b9547d91f8225310dc4f5
+SIZE (hashicorp-terraform-v0.12.10_GH0.tar.gz) = 10319706
