@@ -4,7 +4,7 @@
 PORTNAME=	tmpreaper
 PORTVERSION=	1.6.14
 CATEGORIES=	sysutils
-MASTER_SITES=	DEBIAN_POOL
+MASTER_SITES=	LOCAL/ehaupt
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -21,9 +21,6 @@ PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-# contains systemd/linux specific changes
-PORTSCOUT=	skipv:1.6.14+nmu1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
