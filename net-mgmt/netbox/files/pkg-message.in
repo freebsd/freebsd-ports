@@ -73,4 +73,12 @@ If you have the CORS_ORIGIN_WHITELIST configuration parameter defined, note
 that each origin must now include a URI scheme.
 EOD
 }
+{ type: upgrade
+  maximum_version: 2.6.6
+  message: <<EOD
+The 2.6.6 release includes a migration which automatically updates all existing
+cables to enable filtering by site/rack. This migration may take several
+minutes to complete on installations with tens of thousands of cables defined.
+EOD
+}
 ]
