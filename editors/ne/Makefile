@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ne
-PORTVERSION=	3.1.2
-PORTREVISION=	2
+PORTVERSION=	3.2.1
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.di.unimi.it/
 
