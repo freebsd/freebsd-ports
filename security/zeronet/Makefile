@@ -3,9 +3,7 @@
 
 PORTNAME=	zeronet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.5-25
-DISTVERSIONSUFFIX=	-gabb566e3
-PORTREVISION=	2
+DISTVERSION=	0.7.1
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gevent>0:devel/py-gevent@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gevent-websocket>0:www/py-gevent-websocket@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stem>0:security/py-stem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
@@ -25,7 +24,8 @@ PLIST_SUB=	USER=${USER} GROUP=${GROUP}
 
 # ZeroNet hasn't been ported to Python 3 yet
 # https://github.com/HelloZeroNet/ZeroNet/issues/149
-USES=		python:2.7
+USES=		python:3.6+ shebangfix
+SHEBANG_FILES=	zeronet.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	HelloZeroNet
 GH_PROJECT=	ZeroNet
