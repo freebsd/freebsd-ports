@@ -67,7 +67,7 @@ CONFIGURE_ENV+=	CRYPTO_CFLAGS="-I${OPENSSLINC}" \
 # symbol' can not be used when making a shared object; recompile with -fPIC
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -fPIC -DPIC"
 post-patch:
-	${SED} -i '' -e 's/AC_SUBST(PIE_FLAGS)//' ${WRKSRC}/configure.ac
+	${REINPLACE_CMD} -e 's/AC_SUBST(PIE_FLAGS)//' ${WRKSRC}/configure.ac
 .else
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 .endif
