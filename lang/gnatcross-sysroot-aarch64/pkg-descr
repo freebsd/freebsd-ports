@@ -1,4 +1,4 @@
 This package is used by the lang/gnatcross-aarch64 Ada cross-compiler to
-install the system root of FreeBSD ARM64 (aarch64).  
+install the system root of FreeBSD ARM64 (aarch64).
 
 WWW: http://www.dragonlace.net
