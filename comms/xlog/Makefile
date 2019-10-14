@@ -16,7 +16,7 @@ LIB_DEPENDS=	libhamlib.so:comms/hamlib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gnome pkgconfig shared-mime-info
+USES=		compiler:c11 gnome pkgconfig shared-mime-info
 
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
