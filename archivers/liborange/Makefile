@@ -3,7 +3,7 @@
 
 PORTNAME=	liborange
 PORTVERSION=	0.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Orange/${PORTVERSION}
 
@@ -13,26 +13,21 @@ COMMENT=	Library to extract CAB files from self-extracting installers
 LIB_DEPENDS=	libgsf-1.so:devel/libgsf
 RUN_DEPENDS=	cabextract:archivers/cabextract
 
-OPTIONS_DEFINE=	LIBSYNCE LIBDYNAMITE LIBUNSHIELD INNO VISE MSI
-OPTIONS_DEFAULT=	LIBSYNCE LIBDYNAMITE LIBUNSHIELD
-LIBSYNCE_DESC=		WinCE communication support via libsynce
+OPTIONS_DEFINE=	LIBDYNAMITE LIBUNSHIELD INNO VISE MSI
+OPTIONS_DEFAULT=	LIBDYNAMITE LIBUNSHIELD
 LIBDYNAMITE_DESC=	PKWARE data compression support via libdynamite
 LIBUNSHIELD_DESC=	InstallShield support via libunshield
 INNO_DESC=		Expermential Inno Setup support
 VISE_DESC=		Expermential VISE support
 MSI_DESC=		Expermential MSI support
 
-GNU_CONFIGURE=	yes
 USES=		iconv libtool localbase pathfix pkgconfig
 LIBS+=		-lgsf-1
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS+=		--with-libgsf
-
-LIBSYNCE_LIB_DEPENDS=		libsynce.so:palm/synce-libsynce
-LIBSYNCE_CONFIGURE_WITH=	libsynce
-LIBSYNCE_VARS=			REQUIRES+=libsynce
 
 LIBDYNAMITE_LIB_DEPENDS=	libdynamite.so:archivers/libdynamite
 LIBDYNAMITE_CONFIGURE_WITH=	libdynamite
