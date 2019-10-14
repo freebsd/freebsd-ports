@@ -384,6 +384,8 @@ man/man1/anyremote.1.gz
 %%DATADIR%%/cfg-data/iViewer/totem.cfg
 %%DATADIR%%/cfg-data/iViewer/vlc.cfg
 %%DATADIR%%/cfg-data/iViewer/xine.cfg
+%%DATADIR%%/cfg-data/Server-mode/shotwell.cfg
+%%DATADIR%%/cfg-data/Server-mode/snappy.cfg
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
