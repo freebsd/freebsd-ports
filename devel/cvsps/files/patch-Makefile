@@ -1,5 +1,5 @@
---- Makefile.orig	2012-07-18 12:44:35.000000000 +0200
-+++ Makefile	2012-07-18 12:44:52.000000000 +0200
+--- Makefile.orig	2005-05-26 03:39:40 UTC
++++ Makefile
 @@ -23,6 +23,9 @@ all: cvsps
  cvsps: $(OBJS)
  	$(CC) -o cvsps $(OBJS) -lz
