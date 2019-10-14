@@ -7,12 +7,12 @@ bin/rspamd-%%RSPAMDVERSION%%
 bin/rspamd_stats
 %%CGP%%bin/rspamd-cgp-helper
 etc/newsyslog.conf.d/rspamd.newsyslog.conf
-@sample %%ETCDIR%%/actions.conf.sample
-@sample %%ETCDIR%%/cgp.inc.sample
-@sample %%ETCDIR%%/common.conf.sample
-@sample %%ETCDIR%%/composites.conf.sample
-@sample %%ETCDIR%%/groups.conf.sample
-@sample %%ETCDIR%%/logging.inc.sample
+%%ETCDIR%%/actions.conf
+%%ETCDIR%%/cgp.inc
+%%ETCDIR%%/common.conf
+%%ETCDIR%%/composites.conf
+%%ETCDIR%%/groups.conf
+%%ETCDIR%%/logging.inc
 %%ETCDIR%%/maps.d/dmarc_whitelist.inc
 %%ETCDIR%%/maps.d/maillist.inc
 %%ETCDIR%%/maps.d/mid.inc
@@ -20,8 +20,8 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/maps.d/redirectors.inc
 %%ETCDIR%%/maps.d/spf_dkim_whitelist.inc
 %%ETCDIR%%/maps.d/surbl-whitelist.inc
-@sample %%ETCDIR%%/metrics.conf.sample
-@sample %%ETCDIR%%/modules.conf.sample
+%%ETCDIR%%/metrics.conf
+%%ETCDIR%%/modules.conf
 %%ETCDIR%%/modules.d/antivirus.conf
 %%ETCDIR%%/modules.d/arc.conf
 %%ETCDIR%%/modules.d/asn.conf
@@ -66,8 +66,8 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/trie.conf
 %%ETCDIR%%/modules.d/url_redirector.conf
 %%ETCDIR%%/modules.d/whitelist.conf
-@sample %%ETCDIR%%/options.inc.sample
-@sample %%ETCDIR%%/rspamd.conf.sample
+%%ETCDIR%%/options.inc
+%%ETCDIR%%/rspamd.conf
 @sample %%ETCDIR%%/rspamd.newsyslog.conf.sample
 %%ETCDIR%%/scores.d/fuzzy_group.conf
 %%ETCDIR%%/scores.d/headers_group.conf
@@ -81,12 +81,12 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/scores.d/subject_group.conf
 %%ETCDIR%%/scores.d/surbl_group.conf
 %%ETCDIR%%/scores.d/whitelist_group.conf
-@sample %%ETCDIR%%/settings.conf.sample
-@sample %%ETCDIR%%/statistic.conf.sample
-@sample %%ETCDIR%%/worker-controller.inc.sample
-@sample %%ETCDIR%%/worker-fuzzy.inc.sample
-@sample %%ETCDIR%%/worker-normal.inc.sample
-@sample %%ETCDIR%%/worker-proxy.inc.sample
+%%ETCDIR%%/settings.conf
+%%ETCDIR%%/statistic.conf
+%%ETCDIR%%/worker-controller.inc
+%%ETCDIR%%/worker-fuzzy.inc
+%%ETCDIR%%/worker-normal.inc
+%%ETCDIR%%/worker-proxy.inc
 lib/rspamd/librspamd-actrie.so
 lib/rspamd/librspamd-ev.so
 lib/rspamd/librspamd-kann.so
@@ -181,6 +181,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_scanners/kaspersky_se.lua
 %%DATADIR%%/lualib/lua_scanners/oletools.lua
 %%DATADIR%%/lualib/lua_scanners/p0f.lua
+%%DATADIR%%/lualib/lua_scanners/razor.lua
 %%DATADIR%%/lualib/lua_scanners/savapi.lua
 %%DATADIR%%/lualib/lua_scanners/sophos.lua
 %%DATADIR%%/lualib/lua_scanners/spamassassin.lua
