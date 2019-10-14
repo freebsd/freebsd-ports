@@ -208,6 +208,7 @@ man/man1/ne.1.gz
 %%DATADIR%%/syntax/ada.jsf
 %%DATADIR%%/syntax/ant.jsf
 %%DATADIR%%/syntax/asm.jsf
+%%DATADIR%%/syntax/asterisk.jsf
 %%DATADIR%%/syntax/awk.jsf
 %%DATADIR%%/syntax/batch.jsf
 %%DATADIR%%/syntax/c.jsf
