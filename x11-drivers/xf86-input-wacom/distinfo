@@ -1,3 +1,3 @@
-TIMESTAMP = 1560873776
-SHA256 (xorg/driver/xf86-input-wacom-0.37.0.tar.bz2) = 9311cd1ff2a284a429a04c3c5d03ccbad83e76a58770668ac0f2d22740e05881
-SIZE (xorg/driver/xf86-input-wacom-0.37.0.tar.bz2) = 650501
+TIMESTAMP = 1571076162
+SHA256 (xorg/driver/xf86-input-wacom-0.38.0.tar.bz2) = a1cd08dfb92eb770353b838561a0d89e06a54f599c808ec4d8bbb4f3c686a370
+SIZE (xorg/driver/xf86-input-wacom-0.38.0.tar.bz2) = 621356
