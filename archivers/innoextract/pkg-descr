@@ -2,4 +2,4 @@ Inno Setup is a tool to create installers for Microsoft Windows applications.
 innoextract allows to extract such installers under non-windows systems without
 running the actual installer using Wine.
 
-WWW: http://constexpr.org/innoextract/
+WWW: https://constexpr.org/innoextract/
