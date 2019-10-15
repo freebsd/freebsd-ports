@@ -9,6 +9,6 @@ include/osmocom/netif/rtp.h
 include/osmocom/netif/stream.h
 lib/libosmonetif.a
 lib/libosmonetif.so
-lib/libosmonetif.so.6
-lib/libosmonetif.so.6.1.0
+lib/libosmonetif.so.8
+lib/libosmonetif.so.8.0.0
 libdata/pkgconfig/libosmo-netif.pc
