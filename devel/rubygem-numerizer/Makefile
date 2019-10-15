@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	numerizer
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	mfechner@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Parse numbers in natural language from strings
 
 LICENSE=	MIT
