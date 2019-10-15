@@ -1,6 +1,6 @@
---- mozilla-release/config/rules.mk.orig	2019-05-29 12:52:42 UTC
+--- mozilla-release/config/rules.mk.orig	2019-10-08 09:02:23 UTC
 +++ mozilla-release/config/rules.mk
-@@ -1003,20 +1003,20 @@ $(EXTENSIONS_PATH):
+@@ -989,20 +989,20 @@ $(EXTENSIONS_PATH):
  CLIQZ_XPI_PATH = $(EXTENSIONS_PATH)/cliqz@cliqz.com.xpi
  $(CLIQZ_XPI_PATH): $(EXTENSIONS_PATH)
  	echo CLIQZ_XPI_PATH in `pwd`
@@ -23,4 +23,4 @@
 +#	wget --output-document $(CONSENTRICK_XPI_PATH) $(CONSENTRICK_EXT_URL)
  endif
  
- CLIQZ_ONIONMODE_XPI_PATH = $(EXTENSIONS_PATH)/onionmode@cliqz.com.xpi
+ DAT_XPI_PATH = $(EXTENSIONS_PATH)/dat@cliqz.com.xpi
