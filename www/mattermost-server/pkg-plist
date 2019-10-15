@@ -1,5 +1,4 @@
 bin/mattermostd
-etc/mattermost/config.json.sample
 %%WWWDIR%%/fonts/OFL.txt
 %%WWWDIR%%/fonts/nunito-bold.ttf
 %%WWWDIR%%/i18n/de.json
