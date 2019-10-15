@@ -4,6 +4,6 @@ man/man5/dhclient.conf.5.gz
 man/man5/dhclient.leases.5.gz
 man/man8/dhclient.8.gz
 man/man8/dhclient-script.8.gz
-@sample %D/etc/dhclient.conf.example %D/etc/dhclient.conf
+@sample etc/dhclient.conf.example etc/dhclient.conf
 @exec [ -f /var/run/dhclient.leases ] || touch /var/run/dhclient.leases
 @unexec [ -s /var/run/dhclient.leases ] || rm -f /var/run/dhclient.leases
