@@ -1,0 +1,45 @@
+[
+{ type: install
+  message: <<EOM
+For Zabbix server and proxy daemons, as well as Zabbix frontend, a database is
+required. It is not needed to run Zabbix agent.
+
+% cd %%DATADIR%%/%%ZABBIX_BUILD%%/database
+
+And follow the instructions:
+https://www.zabbix.com/documentation/4.4/manual/appendix/install/db_scripts
+
+Upgrade notes for 4.4.0:
+https://www.zabbix.com/documentation/4.4/manual/installation/upgrade_notes_440
+
+Upgrade procedure:
+https://www.zabbix.com/documentation/4.4/manual/installation/upgrade/sources
+
+Please see https://www.zabbix.com/ for detailed information about Zabbix.
+
+Official Zabbix documentation:
+https://www.zabbix.com/documentation/4.4/start
+
+For Zabbix frontend "Welcome" screen. Enter the user name Admin with password
+zabbix to log in as a Zabbix superuser.
+
+For use NMAP please edit sudoers
+
+This is a Zabbix Standard release!
+
+Standard Zabbix releases are supported for Zabbix customers during six (6)
+months of Full Support (general, critical and security issues) until the next
+Zabbix stable release, plus one (1) additional month of Limited Support
+(critical and security issues only). Zabbix Standard version release will result
+in change of the second version number.
+
+Stable release:         Zabbix 4.4
+Release date:           Q3, 2019
+End of Full Support:    Q1, 2020
+End of Limited Support: Q2, 2020
+
+Zabbix Life Cycle & Release Policy:
+https://www.zabbix.com/life_cycle_and_release_policy
+EOM
+}
+]
