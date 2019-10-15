@@ -52,6 +52,7 @@
     SUBDIR += fbreader
     SUBDIR += fet
     SUBDIR += flameshot
+    SUBDIR += foliate
     SUBDIR += freemind
     SUBDIR += freeplane
     SUBDIR += ganttproject
