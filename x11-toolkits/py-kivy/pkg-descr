@@ -19,4 +19,4 @@ doing graphics.  The toolkit is coming with more than 20 widgets designed to be
 extensible. Many parts are written in C using Cython, tested with regression
 tests.
 
-WWW: http://kivy.org
+WWW: https://kivy.org/
