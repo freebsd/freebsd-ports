@@ -64,7 +64,6 @@
     SUBDIR += liblz4
     SUBDIR += liblzxcomp
     SUBDIR += libmspack
-    SUBDIR += liborange
     SUBDIR += libpar2
     SUBDIR += librtfcomp
     SUBDIR += libunrar
