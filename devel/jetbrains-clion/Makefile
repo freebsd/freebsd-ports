@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clion
-PORTVERSION=	2019.2.3
+PORTVERSION=	2019.2.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/cpp/
 PKGNAMEPREFIX=	jetbrains-
