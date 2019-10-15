@@ -3,7 +3,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.92.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
@@ -29,9 +29,12 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 		libpotrace.so:graphics/libpotrace \
 		libpng.so:graphics/png \
 		libMagick++-6.so:graphics/ImageMagick6
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scour>0:textproc/py-scour@${PY_FLAVOR}
 
 USES=		compiler:c++11-lib cmake cpe desktop-file-utils gnome \
-		iconv:wchar_t jpeg pathfix pkgconfig python:2.7,build \
+		iconv:wchar_t jpeg pathfix pkgconfig python:2.7 \
 		shebangfix tar:bzip2
 USE_GNOME=	gtkmm24 libxml2 libxslt
 USE_XORG=	x11
@@ -82,6 +85,9 @@ USES+=			gettext
 post-patch:
 	@${REINPLACE_CMD} -e 's|COMMAND python|COMMAND ${PYTHON_VERSION}|g' \
 		${WRKSRC}/share/*/CMakeLists.txt
+	# Third entry in the table of interpreters is basename of executable
+	@${REINPLACE_CMD} -e 's|python|${PYTHON_VERSION}|3' \
+		${WRKSRC}/src/extension/implementation/script.cpp
 	# Obtained from Arch Linux
 	@${REINPLACE_CMD} -e 's|gTrue|true|g' -e 's|gFalse|false|g' -e 's|GBool|bool|g' \
 		${WRKSRC}/src/extension/internal/pdfinput/pdf-parser.*
