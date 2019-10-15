@@ -24,8 +24,8 @@ lib/afl/libdislocator.so
 %%LLVM%%lib/afl/libLLVMInsTrim.so
 %%LLVM%%lib/afl/split-compares-pass.so
 %%LLVM%%lib/afl/split-switches-pass.so
-man/man8/afl-clang-fast.8.gz
-man/man8/afl-clang-fast++.8.gz
+%%LLVM%%man/man8/afl-clang-fast.8.gz
+%%LLVM%%man/man8/afl-clang-fast++.8.gz
 man/man8/afl-cmin.8.gz
 man/man8/afl-fuzz.8.gz
 man/man8/afl-gcc.8.gz
