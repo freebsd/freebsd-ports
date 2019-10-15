@@ -1,3 +1,5 @@
-TIMESTAMP = 1567351280
-SHA256 (python-gitlab-1.11.0.tar.gz) = fe356d084927477b7bf695191287474919db8cb6eb0d7832a4afd9cc8f7096c5
-SIZE (python-gitlab-1.11.0.tar.gz) = 118629
+TIMESTAMP = 1570916431
+SHA256 (python-gitlab-1.12.1.tar.gz) = 984e110c1f76fd939652c30ce3101267a7064e34417cbfc4687e6106d4db54ec
+SIZE (python-gitlab-1.12.1.tar.gz) = 120227
+SHA256 (todo.json) = ed65051d90c4966fe52b81f0b5a9da1b1e706e13e9df7cfbb2999421f169265e
+SIZE (todo.json) = 2615
