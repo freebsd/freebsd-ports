@@ -13093,3 +13093,4 @@ x11-drivers/xf86-input-mutouch||2019-10-15|Deprecatd upstream
 x11-drivers/xf86-input-acecad||2019-10-15|Deprecatd upstream
 x11-drivers/xf86-input-penmount||2019-10-15|Deprecatd upstream
 x11-drivers/xf86-input-fpit||2019-10-15|Deprecatd upstream
+archivers/liborange||2019-10-15|Removed, unmaintained, website gone, broken after palm/synce-libsynce removal
