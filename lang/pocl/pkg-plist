@@ -2,7 +2,7 @@ bin/poclcc
 etc/OpenCL/vendors/pocl.icd
 lib/libpocl.so
 lib/libpocl.so.2
-lib/libpocl.so.2.3.0
+lib/libpocl.so.2.4.0
 lib/pocl/libllvmopencl.so
 libdata/pkgconfig/pocl.pc
 %%DATADIR%%/include/_builtin_renames.h
@@ -11,7 +11,8 @@ libdata/pkgconfig/pocl.pc
 %%DATADIR%%/include/_kernel.h
 %%DATADIR%%/include/_kernel_c.h
 %%DATADIR%%/include/_kernel_constants.h
-%%DATADIR%%/include/_pocl_opencl.h
+%%DATADIR%%/include/opencl-c-base.h
+%%DATADIR%%/include/opencl-c.h
 %%DATADIR%%/include/pocl.h
 %%DATADIR%%/include/pocl_device.h
 %%DATADIR%%/include/pocl_image_types.h
