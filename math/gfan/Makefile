@@ -27,6 +27,9 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's,ADDITIONALLINKOPTIONS = ,ADDITIONALLINKOPTIONS = -L${LOCALBASE}/lib ,' \
 		${WRKSRC}/Makefile
+	for x in ${WRKSRC}/src/*; \
+		do ${REINPLACE_CMD} 's,log2,gfan_log2,g' $$x; \
+		done
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gfan ${STAGEDIR}${PREFIX}/bin
