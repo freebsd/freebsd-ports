@@ -14,8 +14,6 @@ LICENSE_FILE=		${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	only tested on x86
 
-BROKEN_FreeBSD_10=	pocl is not supported on 10.x
-
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>=0:devel/llvm${LLVM_VERSION} \
 				opencl>=2.1:devel/opencl
 LIB_DEPENDS=	libhwloc.so:devel/hwloc \
