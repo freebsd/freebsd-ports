@@ -1,6 +1,6 @@
---- bin/sbt.orig	2019-09-04 07:20:45 UTC
+--- bin/sbt.orig	2019-10-14 14:34:15 UTC
 +++ bin/sbt
-@@ -72,7 +72,7 @@ cygwinpath() {
+@@ -76,7 +76,7 @@ cygwinpath() {
  
  
  declare -r sbt_bin_dir="$(dirname "$(realpathish "$0")")"
@@ -9,7 +9,7 @@
  
  echoerr () {
    echo 1>&2 "$@"
-@@ -85,7 +85,7 @@ dlog () {
+@@ -89,7 +89,7 @@ dlog () {
  }
  
  jar_file () {
@@ -18,7 +18,7 @@
  }
  
  acquire_sbt_jar () {
-@@ -277,14 +277,14 @@ getPreloaded() {
+@@ -281,14 +281,14 @@ getPreloaded() {
  }
  
  syncPreloaded() {
@@ -35,16 +35,18 @@
      [[ -d "$source_preloaded" ]] && {
        command -v rsync >/dev/null 2>&1 && {
          mkdir -p "$target_preloaded"
-@@ -401,7 +401,7 @@ run() {
+@@ -408,8 +408,8 @@ run() {
  
  declare -r noshare_opts="-Dsbt.global.base=project/.sbtboot -Dsbt.boot.directory=project/.boot -Dsbt.ivy.home=project/.ivy"
  declare -r sbt_opts_file=".sbtopts"
 -declare -r etc_sbt_opts_file="/etc/sbt/sbtopts"
+-# this allows /etc/sbt/sbtopts location to be changed
 +declare -r etc_sbt_opts_file="%%PREFIX%%/etc/sbt/sbtopts"
++# this allows %%PREFIX%%/etc/sbt/sbtopts location to be changed
+ declare -r etc_file="${SBT_ETC_FILE:-$etc_sbt_opts_file}"
  declare -r dist_sbt_opts_file="${sbt_home}/conf/sbtopts"
  declare -r win_sbt_opts_file="${sbt_home}/conf/sbtconfig.txt"
- 
-@@ -446,7 +446,7 @@ Usage: `basename "$0"` [options]
+@@ -459,7 +459,7 @@ Usage: `basename "$0"` [options]
    SBT_OPTS            environment variable, if unset uses "$default_sbt_opts"
    .sbtopts            if this file exists in the current directory, its contents
                        are prepended to the runner args
