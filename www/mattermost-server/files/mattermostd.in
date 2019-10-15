@@ -9,20 +9,20 @@
 # Add the following lines to /etc/rc.conf to enable mattermostdb:
 # mattermostd_enable="YES"
 #
-# mattermostd_enable (bool):	Set to YES to enable influxd
-#				Default: NO
-# mattermostd_conf (str):		influxd configuration file
-#				Default: ${PREFIX}/etc/mattermostd.conf
-# mattermostd_user (str):		influxd daemon user
-#				Default: mattermostd
-# mattermostd_group (str):		influxd daemon group
-#				Default: mattermostd
-# mattermostd_flags (str):		Extra flags passed to influxd
-#
+# mattermostd_enable (bool):        Set to YES to enable mattermostd
+#                                   Default: NO
+# mattermostd_conf (str):           mattermostd configuration file
+#                                   Default: ${PREFIX}/etc/mattermostd.conf
+# mattermostd_user (str):           mattermostd daemon user
+#                                   Default: mattermostd
+# mattermostd_group (str):          mattermostd daemon group
+#                                   Default: mattermostd
+# mattermostd_extraflags (str):     Extra flags passed to mattermostd
+#                                   Default: --disableconfigwatch
 # mattermostd_facility (str):       Syslog facility to use
-#                               Default: daemon
+#                                   Default: daemon
 # mattermostd_priority (str):       Syslog priority to use
-#                               Default: info
+#                                   Default: info
 
 . /etc/rc.subr
 
@@ -33,25 +33,30 @@ load_rc_config $name
 : ${mattermostd_enable:="NO"}
 : ${mattermostd_user:="mattermost"}
 : ${mattermostd_group:="mattermost"}
-: ${mattermostd_flags:="--disableconfigwatch"}
+: ${mattermostd_extraflags:="--disableconfigwatch"}
 : ${mattermostd_facility:="daemon"}
 : ${mattermostd_priority:="info"}
 : ${mattermostd_tag:="mattermostd"}
 : ${mattermostd_conf:="%%PREFIX%%/etc/mattermost/config.json"}
-: ${mattermostd_options:="${mattermostd_flags} --config=${mattermostd_conf}"}
 
 # daemon
-mattermostd_pidfile="/var/run/${name}.pid"
-procname="%%PREFIX%%/bin/${name}"
+pidfile=/var/run/${name}.pid
+procname=%%PREFIX%%/bin/${name}
 command=/usr/sbin/daemon
-start_cmd="mattermostd_startcmd_daemon"
+command_args="-p ${pidfile} -S -s ${mattermostd_priority} -l ${mattermostd_facility} -T ${mattermostd_tag} ${procname} ${mattermostd_extraflags} --config=${mattermostd_conf}"
+start_precmd=mattermostd_startprecmd
+mattermostd_chdir=%%PREFIX%%/www/mattermost
+required_files=${mattermostd_confg}
 
-mattermostd_startcmd_daemon()
+mattermostd_startprecmd()
 {
-    echo "Starting ${name}."
-    cd /usr/local/www/mattermost && \
-        /usr/sbin/daemon -p ${mattermostd_pidfile} -S -s ${mattermostd_priority} -l ${mattermostd_facility} -T ${mattermostd_tag} \
-       	-u ${mattermostd_user} ${procname} ${mattermostd_options}
+    if [ ! -e ${pidfile} ]; then
+            install -o ${mattermostd_user} -g ${mattermostd_group} /dev/null ${pidfile};
+    fi
+
+    if [ ! -d ${mattermostd_dir} ]; then
+            install -d -o ${mattermostd_user} -g ${mattermostd_group} ${mattermostd_dir}
+    fi
 }
 
 run_rc_command "$1"

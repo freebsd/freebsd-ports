@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mattermost-server
-PORTVERSION=	5.13.2
+PORTVERSION=	5.15.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -36,8 +36,6 @@ GROUPS=		${MATTERMOSTD_GROUP}
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/mattermost ${STAGEDIR}${PREFIX}/bin/mattermostd
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mattermost
-	${INSTALL_DATA} ${GO_WRKSRC}/config/default.json ${STAGEDIR}${PREFIX}/etc/mattermost/config.json.sample
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${GO_WRKSRC} && ${COPYTREE_SHARE} 'fonts i18n templates' ${STAGEDIR}${WWWDIR}
 
