@@ -2,14 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	2.54c
-PORTREVISION=	1
+PORTVERSION=	2.57c
 CATEGORIES=	security
 PKGNAMESUFFIX=	++
-
-PATCH_SITES=	https://github.com/vanhauser-thc/AFLplusplus/commit/
-PATCHFILES=	52cbd650b7ae30c64152601fbc34350d61b3e02a.patch:-p1 \
-		efa205289662db40382f9c2a4e83420438419bba.patch:-p1
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Fast instrumented fuzzer
@@ -90,7 +85,7 @@ post-install:
 .for prog in afl-analyze afl-fuzz afl-gcc afl-gotcpu afl-showmap afl-tmin
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${prog}
 .endfor
-	${INSTALL_LIB} ${WRKSRC}/libdislocator/libdislocator.so \
+	${INSTALL_LIB} ${WRKSRC}/libdislocator.so \
 		${STAGEDIR}${PREFIX}/lib/afl
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/libdislocator
 	${INSTALL_MAN} ${WRKSRC}/libdislocator/README.md \
