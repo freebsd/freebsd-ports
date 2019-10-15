@@ -1,0 +1,17 @@
+bin/pioneer
+bin/pioneer-modelcompiler
+bin/pioneer-savegamedump
+share/appdata/net.pioneerspacesim.Pioneer.appdata.xml
+share/applications/net.pioneerspacesim.Pioneer.desktop
+share/icons/hicolor/128x128/apps/net.pioneerspacesim.Pioneer.png
+share/icons/hicolor/16x16/apps/net.pioneerspacesim.Pioneer.png
+share/icons/hicolor/22x22/apps/net.pioneerspacesim.Pioneer.png
+share/icons/hicolor/24x24/apps/net.pioneerspacesim.Pioneer.png
+share/icons/hicolor/256x256/apps/net.pioneerspacesim.Pioneer.png
+share/icons/hicolor/32x32/apps/net.pioneerspacesim.Pioneer.png
+share/icons/hicolor/40x40/apps/net.pioneerspacesim.Pioneer.png
+share/icons/hicolor/48x48/apps/net.pioneerspacesim.Pioneer.png
+share/icons/hicolor/64x64/apps/net.pioneerspacesim.Pioneer.png
+@dir %%DATADIR%%/data/music/core/docked
+@dir %%DATADIR%%/data/music/core/near-planet
+@dir %%DATADIR%%/data/music/core/undocked
