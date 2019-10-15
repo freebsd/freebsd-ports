@@ -2700,8 +2700,10 @@
 %%WWWDIR%%/templates/digest_template_html.txt
 %%WWWDIR%%/templates/email_article_template.txt
 %%WWWDIR%%/templates/generated_feed.txt
+%%WWWDIR%%/templates/mail_change_template.txt
+%%WWWDIR%%/templates/otp_disabled_template.txt
+%%WWWDIR%%/templates/password_change_template.txt
 %%WWWDIR%%/templates/resetpass_link_template.txt
-%%WWWDIR%%/templates/resetpass_template.txt
 %%WWWDIR%%/tests/ApiTest.php
 %%WWWDIR%%/themes.local/.empty
 %%WWWDIR%%/themes/.empty
