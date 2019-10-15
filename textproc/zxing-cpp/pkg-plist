@@ -9,7 +9,7 @@ include/zxing/FormatException.h
 include/zxing/IllegalStateException.h
 include/zxing/InvertedLuminanceSource.h
 include/zxing/LuminanceSource.h
-include/zxing/MatSource.h
+%%OPENCV%%include/zxing/MatSource.h
 include/zxing/MultiFormatReader.h
 include/zxing/NotFoundException.h
 include/zxing/Reader.h
@@ -106,4 +106,3 @@ lib/libzxing.so
 lib/zxing/cmake/zxing-config.cmake
 lib/zxing/cmake/zxing-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/zxing/cmake/zxing-targets.cmake
-
