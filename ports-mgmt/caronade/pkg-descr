@@ -1,4 +1,4 @@
 Caronade will automatically create build jobs using poudriere and portlint
 whenever you push changes to your Git based ports repository.
 
-WWW: https://code.bluelife.at/decke/caronade
+WWW: https://github.com/decke/caronade
