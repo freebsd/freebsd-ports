@@ -1,7 +1,0 @@
-bin/xrx
-lib/libxrx.a
-lib/libxrx.so
-lib/libxrxnest.a
-lib/libxrxnest.so
-man/man1/xrx.1.gz
-man/man1/libxrx.1.gz

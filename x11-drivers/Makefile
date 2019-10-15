@@ -3,18 +3,13 @@
 
     COMMENT = X11 drivers
 
-    SUBDIR += xf86-input-acecad
     SUBDIR += xf86-input-egalax
     SUBDIR += xf86-input-elographics
     SUBDIR += xf86-input-evdev
-    SUBDIR += xf86-input-fpit
-    SUBDIR += xf86-input-hyperpen
     SUBDIR += xf86-input-joystick
     SUBDIR += xf86-input-keyboard
     SUBDIR += xf86-input-libinput
     SUBDIR += xf86-input-mouse
-    SUBDIR += xf86-input-mutouch
-    SUBDIR += xf86-input-penmount
     SUBDIR += xf86-input-synaptics
     SUBDIR += xf86-input-vmmouse
     SUBDIR += xf86-input-void
