@@ -12,13 +12,14 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2019-10-02T21-19-38Z
-COMMIT_ID=	90bfa6260a8ac83199d522ed4c8fe1097dbd5153
+GHTAG=		RELEASE.2019-10-12T01-39-57Z
+COMMIT_ID=	bd106408462ecef70debf51f1e6179de950c5812
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-sdk-for-go:v33.4.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:go-autorest:v11.7.0:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		DataDog:zstd:v1.4.0:datadog_zstd/vendor/github.com/DataDog/zstd \
 		Shopify:sarama:v1.20.0:shopify_sarama/vendor/gopkg.in/Shopify/sarama.v1 \
+		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		alecthomas:participle:v0.2.1:alecthomas_participle/vendor/github.com/alecthomas/participle \
 		aliyun:aliyun-oss-go-sdk:86c17b95fcd5:aliyun_aliyun_oss_go_sdk/vendor/github.com/aliyun/aliyun-oss-go-sdk \
 		apache:thrift:v0.12.0:apache_thrift/vendor/git.apache.org/thrift.git \
@@ -45,6 +46,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		go-asn1-ber:asn1-ber:f715ec2f112d:go_asn1_ber_asn1_ber/vendor/gopkg.in/asn1-ber.v1 \
 		go-ini:ini:v1.48.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-ldap:ldap:v3.0.3:go_ldap_ldap/vendor/gopkg.in/ldap.v3 \
+		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		go-sql-driver:mysql:v1.4.1:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
@@ -108,7 +110,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:lsync:v1.0.1:minio_lsync/vendor/github.com/minio/lsync \
 		minio:mc:643835013047:minio_mc/vendor/github.com/minio/mc \
 		minio:minio-go:5325257a208f:minio_minio_go/vendor/github.com/minio/minio-go \
-		minio:minio-go:v6.0.38:dup_minio_go/vendor/github.com/minio/minio-go/v6 \
+		minio:minio-go:v6.0.39:dup_minio_go/vendor/github.com/minio/minio-go/v6 \
 		minio:parquet-go:9d767baf1679:minio_parquet_go/vendor/github.com/minio/parquet-go \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:sio:v0.2.0:minio_sio/vendor/github.com/minio/sio \
@@ -135,6 +137,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		rs:cors:v1.6.0:rs_cors/vendor/github.com/rs/cors \
 		ryanuber:go-glob:v1.0.0:ryanuber_go_glob/vendor/github.com/ryanuber/go-glob \
 		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
+		shirou:gopsutil:v2.18.12:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		skyrings:skyring-common:d1c0bb1cbd5e:skyrings_skyring_common/vendor/github.com/skyrings/skyring-common \
 		streadway:amqp:16ed540749f6:streadway_amqp/vendor/github.com/streadway/amqp \
