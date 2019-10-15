@@ -13,18 +13,13 @@ INPUTDIR=	${LOCALBASE}/lib/xorg/modules/input
 
 USES=		metaport
 
-INPUT_DRIVERS=		acecad \
-			egalax \
+INPUT_DRIVERS=		egalax \
 			elographics \
 			evdev \
-			fpit \
-			hyperpen \
 			joystick \
 			keyboard \
 			libinput \
 			mouse \
-			mutouch \
-			penmount \
 			synaptics \
 			void \
 			wacom
