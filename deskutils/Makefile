@@ -270,7 +270,6 @@
     SUBDIR += xfce4-volumed
     SUBDIR += xfce4-volumed-pulse
     SUBDIR += xfce4-xkb-plugin
-    SUBDIR += xmaddressbook
     SUBDIR += xmdiary
     SUBDIR += xneur
     SUBDIR += xpad

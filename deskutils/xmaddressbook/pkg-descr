@@ -1,5 +1,0 @@
-       XmAddressbook is a X11/Motif based address  book  program.
-       It  allows the user to enter addressbook type information.
-       It saves its data in  a  text  file.  It  can  output  the
-       addressbook  in Postscript. It also has a Curses interface
-       for searching and viewing the address book.
