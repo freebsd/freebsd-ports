@@ -24,6 +24,8 @@ lib/afl/libdislocator.so
 %%LLVM%%lib/afl/libLLVMInsTrim.so
 %%LLVM%%lib/afl/split-compares-pass.so
 %%LLVM%%lib/afl/split-switches-pass.so
+man/man8/afl-clang-fast.8.gz
+man/man8/afl-clang-fast++.8.gz
 man/man8/afl-cmin.8.gz
 man/man8/afl-fuzz.8.gz
 man/man8/afl-gcc.8.gz
@@ -33,7 +35,7 @@ man/man8/afl-showmap.8.gz
 man/man8/afl-system-config.8.gz
 man/man8/afl-tmin.8.gz
 man/man8/afl-whatsup.8.gz
-%%DATADIR%%/README.dictionaries
+%%DATADIR%%/README.md
 %%DATADIR%%/README.testcases
 %%DATADIR%%/archives/common/ar/small_archive.a
 %%DATADIR%%/archives/common/bzip2/small_archive.bz2
