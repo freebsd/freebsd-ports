@@ -1,4 +1,4 @@
-TIMESTAMP = 1569316425
+TIMESTAMP = 1571129482
 SHA256 (rust/crates/adler32-1.0.3.tar.gz) = 7e522997b529f05601e05166c07ed17789691f562762c7f3b987263d2dedee5c
 SIZE (rust/crates/adler32-1.0.3.tar.gz) = 5734
 SHA256 (rust/crates/aho-corasick-0.6.9.tar.gz) = 1e9a933f4e58658d7b12defcf96dc5c720f20832deebe3e0a19efd3b6aaeeb9e
@@ -561,5 +561,5 @@ SHA256 (rust/crates/xattr-0.2.2.tar.gz) = 244c3741f4240ef46274860397c7c74e50eb23
 SIZE (rust/crates/xattr-0.2.2.tar.gz) = 11750
 SHA256 (rust/crates/zip-0.4.2.tar.gz) = 36b9e08fb518a65cf7e08a1e482573eb87a2f4f8c6619316612a3c1f162fe822
 SIZE (rust/crates/zip-0.4.2.tar.gz) = 25852
-SHA256 (mozilla-sccache-0.2.11_GH0.tar.gz) = d72569789c4c54e5c8dc20bbde8e553b85497dbd9a3fdcc6d738a4df411dea46
-SIZE (mozilla-sccache-0.2.11_GH0.tar.gz) = 242470
+SHA256 (mozilla-sccache-0.2.12_GH0.tar.gz) = 591a82ddbc2e970630a9426c78c25cbc52c3261b06d57cb4e1f11ab8008629fa
+SIZE (mozilla-sccache-0.2.12_GH0.tar.gz) = 244128
