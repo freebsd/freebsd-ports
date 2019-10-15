@@ -2,7 +2,7 @@
 
 PORTNAME=	kanboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.8
+DISTVERSION=	1.2.11
 CATEGORIES=	www
 
 MAINTAINER=	bsd@if0.eu
@@ -32,7 +32,7 @@ OPTIONS_DEFINE=		OPCACHE
 OPCACHE_DESC=	OPcache support (recommended)
 
 MYSQL_USES=	mysql
-MYSQL_USE=	PHP=pdo_mysql,mysqli
+MYSQL_USE=	PHP=pdo_mysqli,mysqli
 PGSQL_USES=	pgsql
 PGSQL_USE=	PHP=pdo_pgsql,pgsql
 SQLITE_USE=	PHP=pdo_sqlite,sqlite3
