@@ -81,7 +81,7 @@ you update your ports collection, before attempting any port upgrades.
   settings applet and enable only one Screensaver there.
 
   Some further information can be found in the xfce4-session
-  pkg-message dispolayed on installation and upgrade.
+  pkg-message displayed on installation and upgrade.
 
 20190920:
   AFFECTS: users of net-mgmt/pushgateway
