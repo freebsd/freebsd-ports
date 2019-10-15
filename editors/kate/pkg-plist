@@ -1239,6 +1239,7 @@ share/locale/zh_TW/LC_MESSAGES/katexmltools.mo
 share/locale/zh_TW/LC_MESSAGES/kterustcompletion.mo
 share/locale/zh_TW/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kwrite.mo
+share/locale/zh_TW/LC_MESSAGES/lspclient.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/zh_TW/LC_MESSAGES/tabswitcherplugin.mo
 share/metainfo/org.kde.kate.appdata.xml

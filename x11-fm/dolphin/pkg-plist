@@ -117,4 +117,5 @@ share/locale/wa/LC_MESSAGES/dolphin.mo
 share/locale/zh_CN/LC_MESSAGES/dolphin.mo
 share/locale/zh_CN/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/zh_TW/LC_MESSAGES/dolphin.mo
+share/locale/zh_TW/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/metainfo/org.kde.dolphin.appdata.xml

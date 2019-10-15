@@ -382,6 +382,7 @@ share/locale/zh_TW/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/zh_TW/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/zh_TW/LC_MESSAGES/kmail.mo
 share/locale/zh_TW/LC_MESSAGES/ktnef.mo
 share/metainfo/org.kde.kmail2.appdata.xml
