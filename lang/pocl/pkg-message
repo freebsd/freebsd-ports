@@ -1,6 +1,4 @@
-[
-{ type: install
-  message: <<EOM
+
 Deadlocks (freezes) on FreeBSD:
 
 OpenCL applications using pocl on FreeBSD must be compiled with 
@@ -12,6 +10,3 @@ See:
 	http://www.freebsd.org/cgi/query-pr.cgi?pr=163512
 
 (Source: http://portablecl.org/docs/html/faq.html?highlight=freebsd)
-EOM
-}
-]
