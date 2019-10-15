@@ -71,7 +71,6 @@ include/kodi/xbmc_epg_types.h
 include/kodi/xbmc_pvr_dll.h
 include/kodi/xbmc_pvr_types.h
 %%GBM%%lib/kodi/kodi-gbm
-%%RPI%%lib/kodi/kodi-rbpi
 %%WAYLAND%%lib/kodi/kodi-wayland
 %%X11%%lib/kodi/kodi-x11
 %%X11%%lib/kodi/kodi-xrandr
