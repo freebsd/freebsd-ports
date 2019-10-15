@@ -4,8 +4,8 @@ diff --git config/system-headers.mozbuild config/system-headers.mozbuild
 index 7620b4d00623..09d3db5ca8c0 100644
 --- config/system-headers.mozbuild
 +++ config/system-headers.mozbuild
-@@ -1300,6 +1300,19 @@ if CONFIG['MOZ_ENABLE_CONTENTMANAGER']:
-         'SelectSingleContentItemPage.h',
+@@ -1295,6 +1295,19 @@ if CONFIG['MOZ_ENABLE_LIBPROXY']:
+         'proxy.h',
      ]
  
 +if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
@@ -28,7 +28,7 @@ diff --git dom/base/moz.build dom/base/moz.build
 index 8e19020315ae..2fcdbb6f7b42 100644
 --- dom/base/moz.build
 +++ dom/base/moz.build
-@@ -495,6 +495,9 @@ if CONFIG['MOZ_BUILD_APP'] in ['browser', 'mobile/android', 'xulrunner']:
+@@ -539,6 +539,9 @@ if CONFIG['MOZ_BUILD_APP'] in ['browser', 'mobile/andr
  if CONFIG['MOZ_X11']:
      CXXFLAGS += CONFIG['TK_CFLAGS']
  
@@ -85,7 +85,7 @@ diff --git gfx/moz.build gfx/moz.build
 index 771f652e837a..3b358d84e384 100644
 --- gfx/moz.build
 +++ gfx/moz.build
-@@ -10,6 +10,12 @@ with Files('**'):
+@@ -13,6 +13,12 @@ with Files('wr/**'):
  if CONFIG['MOZ_TREE_CAIRO']:
      DIRS += ['cairo']
  
@@ -98,7 +98,7 @@ index 771f652e837a..3b358d84e384 100644
  DIRS += [
      '2d',
      'ycbcr',
-@@ -18,8 +24,6 @@ DIRS += [
+@@ -21,8 +27,6 @@ DIRS += [
      'qcms',
      'gl',
      'layers',
@@ -111,35 +111,35 @@ diff --git gfx/skia/generate_mozbuild.py gfx/skia/generate_mozbuild.py
 index e06ae3457a47..93faa61594a3 100755
 --- gfx/skia/generate_mozbuild.py
 +++ gfx/skia/generate_mozbuild.py
-@@ -148,6 +148,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+@@ -117,6 +117,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
      ]
  
 +if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
- if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk3', 'android'):
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk', 'android'):
      CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
      CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
 diff --git gfx/skia/moz.build gfx/skia/moz.build
 index 2118677ca3a8..e4978b413784 100644
 --- gfx/skia/moz.build
 +++ gfx/skia/moz.build
-@@ -822,6 +822,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+@@ -493,6 +493,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
      ]
  
 +if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
- if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk3', 'android'):
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk', 'android'):
      CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
      CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
 diff --git gfx/thebes/moz.build gfx/thebes/moz.build
 index 56f1b9fe3f4b..0ac1100b0df3 100644
 --- gfx/thebes/moz.build
 +++ gfx/thebes/moz.build
-@@ -288,7 +288,13 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'gtk3':
+@@ -284,7 +284,13 @@ if CONFIG['MOZ_WAYLAND']:
  
  LOCAL_INCLUDES += CONFIG['SKIA_INCLUDES']
  
@@ -170,7 +170,7 @@ diff --git netwerk/dns/moz.build netwerk/dns/moz.build
 index 79c26e3e7001..c4d93bc5f7dc 100644
 --- netwerk/dns/moz.build
 +++ netwerk/dns/moz.build
-@@ -76,3 +76,6 @@ USE_LIBS += ['icu']
+@@ -90,3 +90,6 @@ USE_LIBS += ['icu']
  
  if CONFIG['CC_TYPE'] in ('clang', 'gcc'):
      CXXFLAGS += ['-Wno-error=shadow']
@@ -181,11 +181,10 @@ diff --git old-configure.in old-configure.in
 index 95a58b634593..b614eef85c89 100644
 --- old-configure.in
 +++ old-configure.in
-@@ -3951,6 +3951,27 @@ dnl ========================================================
- 
+@@ -2665,5 +2665,26 @@ dnl ==================================================
  AC_SUBST(MOZ_LINUX_32_SSE2_STARTUP_ERROR)
  
-+dnl ========================================================
+ dnl ========================================================
 +dnl Check for graphite2
 +dnl ========================================================
 +if test -n "$MOZ_SYSTEM_GRAPHITE2"; then
@@ -206,14 +205,14 @@ index 95a58b634593..b614eef85c89 100644
 +    CFLAGS=$_SAVE_CFLAGS
 +fi
 +
- dnl ========================================================
++dnl ========================================================
  dnl Check for pixman and cairo
  dnl ========================================================
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 24f940e1ed7e..079a575adec3 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -226,6 +226,12 @@ if CONFIG['MOZ_SYSTEM_PNG']:
+@@ -254,6 +254,12 @@ if CONFIG['MOZ_SYSTEM_PNG']:
  if CONFIG['MOZ_SYSTEM_WEBP']:
      OS_LIBS += CONFIG['MOZ_WEBP_LIBS']
  
@@ -230,7 +229,7 @@ diff --git toolkit/moz.configure toolkit/moz.configure
 index 9297e4d6f501..d8e273887e4b 100644
 --- toolkit/moz.configure
 +++ toolkit/moz.configure
-@@ -894,6 +894,26 @@ add_old_configure_assignment('FT2_LIBS',
+@@ -927,6 +927,25 @@ add_old_configure_assignment('FT2_LIBS',
  add_old_configure_assignment('FT2_CFLAGS',
                               ft2_info.cflags)
  
@@ -249,11 +248,10 @@ index 9297e4d6f501..d8e273887e4b 100644
 +option('--with-system-harfbuzz',
 +       help="Use system harfbuzz (located with pkgconfig)")
 +
-+system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 2.5.3',
++system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 2.6.1',
 +                                    when='--with-system-harfbuzz')
 +
 +set_config('MOZ_SYSTEM_HARFBUZZ', depends_if(system_harfbuzz)(lambda _: True))
-+
- # Marionette remote protocol
+ 
+ # Remote agent (part of CDP based remote protocol)
  # ==============================================================
- #
