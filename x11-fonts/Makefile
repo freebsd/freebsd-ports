@@ -69,7 +69,6 @@
     SUBDIR += font-bh-type1
     SUBDIR += font-bitstream-100dpi
     SUBDIR += font-bitstream-75dpi
-    SUBDIR += font-bitstream-speedo
     SUBDIR += font-bitstream-type1
     SUBDIR += font-cronyx-cyrillic
     SUBDIR += font-cursor-misc
@@ -136,7 +135,6 @@
     SUBDIR += libFS
     SUBDIR += libXfont
     SUBDIR += libXfont2
-    SUBDIR += libXfontcache
     SUBDIR += libXft
     SUBDIR += liberation-fonts-ttf
     SUBDIR += libfontenc

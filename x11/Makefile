@@ -145,7 +145,6 @@
     SUBDIR += libXcursor
     SUBDIR += libXdamage
     SUBDIR += libXdmcp
-    SUBDIR += libXevie
     SUBDIR += libXext
     SUBDIR += libXfixes
     SUBDIR += libXi
@@ -174,7 +173,6 @@
     SUBDIR += libgnomemm26
     SUBDIR += libinput
     SUBDIR += libmatekbd
-    SUBDIR += liboldX
     SUBDIR += libsx
     SUBDIR += libsynaptics
     SUBDIR += libwacom
@@ -184,7 +182,6 @@
     SUBDIR += libxfce4util
     SUBDIR += libxkbcommon
     SUBDIR += libxkbfile
-    SUBDIR += libxkbui
     SUBDIR += libxklavier
     SUBDIR += libxshmfence
     SUBDIR += lightdm
@@ -483,7 +480,6 @@
     SUBDIR += xrootconsole
     SUBDIR += xrsh
     SUBDIR += xrsi
-    SUBDIR += xrx
     SUBDIR += xscope
     SUBDIR += xscreensaver
     SUBDIR += xscreensaver-gnome
@@ -491,7 +487,6 @@
     SUBDIR += xscreensaver.app
     SUBDIR += xsel-conrad
     SUBDIR += xset
-    SUBDIR += xsetmode
     SUBDIR += xsetpointer
     SUBDIR += xsetroot
     SUBDIR += xsettingsd
