@@ -1,0 +1,235 @@
+Force building against system-wide graphite2/harfbuzz.
+
+This was causing cliqz build failures in 13.0-CURRENT (1300050).
+
+--- mozilla-release/config/system-headers.mozbuild.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/config/system-headers.mozbuild
+@@ -1304,6 +1304,19 @@ if CONFIG['MOZ_ENABLE_CONTENTMANAGER']:
+         'SelectSingleContentItemPage.h',
+     ]
+ 
++if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
++    system_headers += [
++        'graphite2/Font.h',
++        'graphite2/Segment.h',
++    ]
++
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    system_headers += [
++        'harfbuzz/hb-glib.h',
++        'harfbuzz/hb-ot.h',
++        'harfbuzz/hb.h',
++    ]
++
+ if CONFIG['MOZ_SYSTEM_LIBVPX']:
+     system_headers += [
+         'vpx_mem/vpx_mem.h',
+--- mozilla-release/dom/base/moz.build.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/dom/base/moz.build
+@@ -528,6 +528,9 @@ if CONFIG['MOZ_BUILD_APP'] in ['browser', 'mobile/andr
+ if CONFIG['MOZ_X11']:
+     CXXFLAGS += CONFIG['TK_CFLAGS']
+ 
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++
+ GENERATED_FILES += [
+     'PropertyUseCounterMap.inc',
+     'UseCounterList.h',
+--- mozilla-release/gfx/graphite2/moz-gr-update.sh.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/gfx/graphite2/moz-gr-update.sh
+@@ -1,6 +1,7 @@
+ #!/bin/bash
+ 
+ # Script used to update the Graphite2 library in the mozilla source tree
++# and bump version for --with-system-graphite2
+ 
+ # This script lives in gfx/graphite2, along with the library source,
+ # but must be run from the top level of the mozilla-central tree.
+@@ -37,12 +38,16 @@ echo "See" $0 "for update procedure." >> gfx/graphite2
+ #find gfx/graphite2/ -name "*.cpp" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
+ #find gfx/graphite2/ -name "*.h" -exec perl -p -i -e "s/<cstdio>/<stdio.h>/;s/Windows.h/windows.h/;" {} \;
+ 
++# chase version for --with-system-graphite2
++perl -p -i -e "s/[0-9]+\,[0-9]+\,[0-9]+/$RELEASE/ and tr/./,/ \
++  if /GR2_VERSION_REQUIRE/" old-configure.in
++
+ # summarize what's been touched
+ echo Updated to $RELEASE.
+ echo Here is what changed in the gfx/graphite2 directory:
+ echo
+ 
+-hg stat gfx/graphite2
++hg stat old-configure.in gfx/graphite2
+ 
+ echo
+ echo If gfx/graphite2/src/files.mk has changed, please make corresponding
+--- mozilla-release/gfx/harfbuzz/README-mozilla.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/gfx/harfbuzz/README-mozilla
+@@ -15,3 +15,8 @@ from within the gfx/harfbuzz directory.
+ 
+ If the collection of source files changes, manual updates to moz.build may be
+ needed as we don't use the upstream makefiles.
++
++The in-tree copy may be omitted during build by --with-system-harfbuzz.
++Make sure to keep pkg-config version check within toolkit/moz.configure in sync
++with checkout version or increment latest tag by one if it's not based
++on upstream release.
+--- mozilla-release/gfx/moz.build.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/gfx/moz.build
+@@ -12,6 +12,12 @@ with Files('wr/**'):
+ if CONFIG['MOZ_TREE_CAIRO']:
+     DIRS += ['cairo']
+ 
++if not CONFIG['MOZ_SYSTEM_GRAPHITE2']:
++    DIRS += ['graphite2/src' ]
++
++if not CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    DIRS += ['harfbuzz/src']
++
+ DIRS += [
+     '2d',
+     'ycbcr',
+@@ -20,8 +26,6 @@ DIRS += [
+     'qcms',
+     'gl',
+     'layers',
+-    'graphite2/src',
+-    'harfbuzz/src',
+     'ots/src',
+     'thebes',
+     'ipc',
+--- mozilla-release/gfx/skia/generate_mozbuild.py.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/gfx/skia/generate_mozbuild.py
+@@ -117,6 +117,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+         '-Wno-unused-private-field',
+     ]
+ 
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk3', 'android'):
+     CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
+     CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
+--- mozilla-release/gfx/skia/moz.build.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/gfx/skia/moz.build
+@@ -493,6 +493,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+         '-Wno-unused-private-field',
+     ]
+ 
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk3', 'android'):
+     CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
+     CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
+--- mozilla-release/gfx/thebes/moz.build.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/gfx/thebes/moz.build
+@@ -284,7 +284,13 @@ if CONFIG['MOZ_WAYLAND']:
+ 
+ LOCAL_INCLUDES += CONFIG['SKIA_INCLUDES']
+ 
+-DEFINES['GRAPHITE2_STATIC'] = True
++if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
++    CXXFLAGS += CONFIG['MOZ_GRAPHITE2_CFLAGS']
++else:
++    DEFINES['GRAPHITE2_STATIC'] = True
++
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
+ 
+ if CONFIG['CC_TYPE'] == 'clang':
+     # Suppress warnings from Skia header files.
+--- mozilla-release/intl/unicharutil/util/moz.build.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/intl/unicharutil/util/moz.build
+@@ -25,4 +25,7 @@ UNIFIED_SOURCES += [
+     'nsUnicodeProperties.cpp',
+ ]
+ 
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++
+ FINAL_LIBRARY = 'xul'
+--- mozilla-release/netwerk/dns/moz.build.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/netwerk/dns/moz.build
+@@ -83,3 +83,6 @@ USE_LIBS += ['icu']
+ 
+ if CONFIG['CC_TYPE'] in ('clang', 'gcc'):
+     CXXFLAGS += ['-Wno-error=shadow']
++
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
+--- mozilla-release/old-configure.in.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/old-configure.in
+@@ -2715,6 +2715,27 @@ dnl ==================================================
+ AC_SUBST(MOZ_LINUX_32_SSE2_STARTUP_ERROR)
+ 
+ dnl ========================================================
++dnl Check for graphite2
++dnl ========================================================
++if test -n "$MOZ_SYSTEM_GRAPHITE2"; then
++    dnl graphite2.pc has bogus version, check manually
++    _SAVE_CFLAGS=$CFLAGS
++    CFLAGS="$CFLAGS $MOZ_GRAPHITE2_CFLAGS"
++    AC_TRY_COMPILE([ #include <graphite2/Font.h>
++                     #define GR2_VERSION_REQUIRE(major,minor,bugfix)  \
++                             ( GR2_VERSION_MAJOR * 10000 + GR2_VERSION_MINOR \
++                               * 100 + GR2_VERSION_BUGFIX >= \
++                               (major) * 10000 + (minor) * 100 + (bugfix) )
++                   ], [
++                     #if !GR2_VERSION_REQUIRE(1,3,12)
++                     #error "Insufficient graphite2 version."
++                     #endif
++                   ], [],
++                   [AC_MSG_ERROR([--with-system-graphite2 requested but no working libgraphite2 found])])
++    CFLAGS=$_SAVE_CFLAGS
++fi
++
++dnl ========================================================
+ dnl Check for pixman and cairo
+ dnl ========================================================
+ 
+--- mozilla-release/toolkit/library/moz.build.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/toolkit/library/moz.build
+@@ -226,6 +226,12 @@ if CONFIG['MOZ_SYSTEM_PNG']:
+ if CONFIG['MOZ_SYSTEM_WEBP']:
+     OS_LIBS += CONFIG['MOZ_WEBP_LIBS']
+ 
++if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
++    OS_LIBS += CONFIG['MOZ_GRAPHITE2_LIBS']
++
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    OS_LIBS += CONFIG['MOZ_HARFBUZZ_LIBS']
++
+ if CONFIG['MOZ_SYSTEM_LIBEVENT']:
+     OS_LIBS += CONFIG['MOZ_LIBEVENT_LIBS']
+ 
+--- mozilla-release/toolkit/moz.configure.orig	2019-10-08 09:02:23 UTC
++++ mozilla-release/toolkit/moz.configure
+@@ -932,6 +932,26 @@ set_config('ENABLE_REMOTE_AGENT', remote)
+ set_define('ENABLE_REMOTE_AGENT', remote)
+ 
+ 
++# Graphite2
++# ==============================================================
++option('--with-system-graphite2',
++       help="Use system graphite2 (located with pkgconfig)")
++
++system_graphite2 = pkg_check_modules('MOZ_GRAPHITE2', 'graphite2',
++                                     when='--with-system-graphite2')
++
++set_config('MOZ_SYSTEM_GRAPHITE2', depends_if(system_graphite2)(lambda _: True))
++
++# HarfBuzz
++# ==============================================================
++option('--with-system-harfbuzz',
++       help="Use system harfbuzz (located with pkgconfig)")
++
++system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 2.5.3',
++                                    when='--with-system-harfbuzz')
++
++set_config('MOZ_SYSTEM_HARFBUZZ', depends_if(system_harfbuzz)(lambda _: True))
++
+ # Marionette remote protocol
+ # ==============================================================
+ #

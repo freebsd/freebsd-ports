@@ -1,11 +1,11 @@
-TIMESTAMP = 1569573921
+TIMESTAMP = 1570787248
 SHA256 (cliqz/adult-domains.bin) = 3d018d6ffa75107fdfbf39658e4adaa092d9b8a90c7865b21376855f7c382b65
 SIZE (cliqz/adult-domains.bin) = 528392
-SHA256 (cliqz/cliqz@cliqz.com.xpi) = 3617f21e0ba06df20022eb95aaa87fd55109d346939f7eaba66a67d821540c6a
-SIZE (cliqz/cliqz@cliqz.com.xpi) = 5914074
+SHA256 (cliqz/cliqz@cliqz.com.xpi) = c729bf22cd90c3312f0ea6f142eb6857f50cfe978dafc74710d9e1841cd602b8
+SIZE (cliqz/cliqz@cliqz.com.xpi) = 5903170
 SHA256 (cliqz/gdprtool@cliqz.com.xpi) = 95ce7bd4ba1ea301246ce45bc3cdcff550acf7d8f1af1b42fd22984614cd9018
 SIZE (cliqz/gdprtool@cliqz.com.xpi) = 222247
 SHA256 (cliqz/https-everywhere@cliqz.com.xpi) = 094516da166aa984c836130075184315c5636033899c49fe6bca5b7190f488fc
 SIZE (cliqz/https-everywhere@cliqz.com.xpi) = 2147608
-SHA256 (cliqz/cliqz-oss-browser-f-1.29.0_GH0.tar.gz) = 10850fa992b8d1cac92bb8f0c06148248a0fb1568d36a408768420b20248d0f6
-SIZE (cliqz/cliqz-oss-browser-f-1.29.0_GH0.tar.gz) = 501511014
+SHA256 (cliqz/cliqz-oss-browser-f-1.29.2_GH0.tar.gz) = dd63c2d435501614ad46df7d934362284f591144cacea6b06dd1b95be1203481
+SIZE (cliqz/cliqz-oss-browser-f-1.29.2_GH0.tar.gz) = 501536649
