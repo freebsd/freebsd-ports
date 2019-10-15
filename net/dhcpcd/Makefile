@@ -10,7 +10,7 @@ MASTER_SITES=	http://roy.marples.name/downloads/dhcpcd/ \
 		http://cflags.cc/roy/dhcpcd/ \
 		LOCAL/delphij
 
-MAINTAINER=	roy@marples.name
+MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	DHCP/IPv4LL/IPv6RS/DHCPv6 client
 
 LICENSE=	BSD2CLAUSE
