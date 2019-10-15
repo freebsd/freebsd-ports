@@ -3,19 +3,20 @@
 
 PORTNAME=	pioneer
 DISTVERSION=	0.0.${GH_TAGNAME}
-PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	lightside@gmx.com
 COMMENT=	Space adventure game set in the Milky Way galaxy
 
-LICENSE=	APACHE20 GPLv3 MIT ZLIB CC-BY-SA-3.0 DejaVu IUP SIL
-LICENSE_COMB=	multi
+LICENSE=		APACHE20 BSD2CLAUSE CC-BY-SA-3.0 DejaVu GLEW GPLv3 IUP \
+			MIT SIL ZLIB
+LICENSE_COMB=		multi
 LICENSE_NAME_DejaVu=	Bitstream Vera and Arev fonts license
 LICENSE_NAME_GLEW=	The OpenGL Extension Wrangler Library license
 LICENSE_NAME_IUP=	Galaxy colour image use policy
 LICENSE_NAME_SIL=	SIL open font license version 1.1
 LICENSE_FILE_APACHE20=	${WRKSRC}/licenses/Apache-2.0.txt
+LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/licenses/LZ4.txt
 LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/licenses/CC-BY-SA-3.0.txt
 LICENSE_FILE_DejaVu=	${WRKSRC}/licenses/DejaVu-license.txt
 LICENSE_FILE_GLEW=	${WRKSRC}/licenses/GLEW.txt
@@ -31,66 +32,50 @@ BROKEN_powerpc=		fails to build: contrib/profiler/Profiler.h:158:51: inconsisten
 BROKEN_powerpc64=	fails to build: contrib/profiler/Profiler.h:158:51: inconsistent operand constraints in an 'asm'
 BROKEN_powerpcspe=	fails to build: contrib/profiler/Profiler.h:158:51: inconsistent operand constraints in an 'asm'
 
-BUILD_DEPENDS=	${LOCALBASE}/include/GL/glu.h:graphics/libGLU
-LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
+LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libfreetype.so:print/freetype2 \
-		libvorbisfile.so:audio/libvorbis \
-		libpng.so:graphics/png \
-		libassimp.so:multimedia/assimp
+		libsigc-2.0.so:devel/libsigc++20 \
+		libvorbisfile.so:audio/libvorbis
 
-USES=		autoreconf compiler:c++11-lib gl gmake pkgconfig
+USES=		cmake compiler:c++11-lib gl gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim
-GH_TAGNAME=	20190203
-USE_GL=		gl
+GH_TAGNAME=	20191009
+USE_GL=		gl glu
 USE_SDL=	image2 sdl2
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PIONEER_DATA_DIR="${DATADIR}/data"
-CONFIGURE_ARGS=	--with-version="${GH_TAGNAME}"
-EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions --exclude .gitignore
+CMAKE_ARGS=	-DPIONEER_DATA_DIR:PATH="${DATADIR}/data"
+EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions --exclude \
+			.gitignore
+INSTALLS_ICONS=	yes
 
 PORTDATA=	data
-PORTDOCS=	AUTHORS.txt Changelog.txt Modelviewer.txt Quickstart.txt README.md
-
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
-
-DESKTOP_ENTRIES="Pioneer" "${COMMENT}" \
-		"${PORTNAME}" "${PORTNAME}" \
-		"Game;Simulation;" false
+PORTDOCS=	AUTHORS.txt Changelog.txt Modelviewer.txt Quickstart.txt \
+		README.md
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		DOCS EXTRA_WARNINGS EXTERNAL_GLEW EXTERNAL_LUA \
-		MODELCOMPILER NOGPUJOBS PROFILER
-OPTIONS_DEFAULT=	EXTERNAL_GLEW EXTERNAL_LUA MODELCOMPILER
+OPTIONS_DEFINE=		DOCS EXTERNAL_GLEW EXTERNAL_LUA NOGPUJOBS PROFILER
+OPTIONS_DEFAULT=	EXTERNAL_GLEW EXTERNAL_LUA
 
 EXTERNAL_GLEW_DESC=	Use external libglew from graphics/glew
 EXTERNAL_LUA_DESC=	Use external liblua from lang/lua52
-EXTRA_WARNINGS_DESC=	Enable extra compiler warnings
-MODELCOMPILER_DESC=	Build/install modelcompiler tool
 NOGPUJOBS_DESC=		Disable EnableGPUJobs for config.ini by default
 PROFILER_DESC=		Build with internal profiler
 
-DOCS_SUB_LIST=		QUICKSTART_PATH="${DOCSDIR}"
-DOCS_SUB_LIST_OFF=	QUICKSTART_PATH="https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${GH_TAGNAME}"
-EXTERNAL_GLEW_CONFIGURE_WITH=	external-libglew
-EXTERNAL_GLEW_VARS_OFF=	LICENSE+=GLEW
-EXTERNAL_GLEW_USE=	GL=glew,glu
-EXTERNAL_LUA_CONFIGURE_WITH=	external-liblua
-EXTERNAL_LUA_USES=	lua:52
-EXTRA_WARNINGS_CONFIGURE_WITH=	extra-warnings
-MODELCOMPILER_PLIST_FILES=	bin/${PORTNAME}-modelcompiler
-PROFILER_CONFIGURE_ON=	--enable-profiler
+DOCS_SUB_LIST=			QUICKSTART_PATH="${DOCSDIR}"
+DOCS_SUB_LIST_OFF=		QUICKSTART_PATH="https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${GH_TAGNAME}"
+EXTERNAL_GLEW_CMAKE_BOOL=	USE_SYSTEM_LIBGLEW
+EXTERNAL_GLEW_VARS_OFF=		LICENSE+=GLEW
+EXTERNAL_GLEW_USE=		GL=glew
+EXTERNAL_LUA_CMAKE_BOOL=	USE_SYSTEM_LIBLUA
+EXTERNAL_LUA_USES=		lua:52
+PROFILER_CMAKE_BOOL=		PROFILER_ENABLED
 
 post-patch: .SILENT
-	${REINPLACE_CMD} -e '/^OPTIMISE=/d ; s|lua5\.2|lua-5.2|' \
-		${WRKSRC}/configure.ac
-
-post-patch-MODELCOMPILER-off: .SILENT
-	${REINPLACE_CMD} -e 's/pioneer modelcompiler/pioneer/' \
-		${WRKSRC}/src/Makefile.am
+	${REINPLACE_CMD} -e '/^include(FindGit/d ; \
+		/TIMESTAMP PROJECT_VERSION/s|.*|set(PROJECT_VERSION "${GH_TAGNAME}")|' \
+		${WRKSRC}/CMakeLists.txt
 
 post-patch-NOGPUJOBS-on: .SILENT
 # Revert 41272a856d9072404efbfdb10f0e3c9e4f96bb4d commit, in case of
@@ -99,26 +84,17 @@ post-patch-NOGPUJOBS-on: .SILENT
 		 ${WRKSRC}/src/GameConfig.cpp
 
 post-patch-PROFILER-off: .SILENT
-	${REINPLACE_CMD} -e '/^SUBDIRS/s/ profiler//' \
-		${WRKSRC}/contrib/Makefile.am
-	${REINPLACE_CMD} -i '.p.bak' -e \
-		'/libprofiler.a/d; $$!N; /libprofiler.a$$/s| \\||; P; D' \
-		${WRKSRC}/src/Makefile.am
-	${REINPLACE_CMD} -i '.p.bak' -e '/contrib\/profiler/d' \
-		${WRKSRC}/configure.ac
-
-post-configure:
-	${CP} ${FILESDIR}/buildopts.h ${WRKSRC}/src
+	${REINPLACE_CMD} -i '.profiler' -e '/contrib\/profiler/d ; /profiler$$/d ; \
+		/target_link_libraries(savegamedump/s| profiler||' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/application-icon/pngs/pioneer-256x256.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+.for f in modelcompiler savegamedump
+	${MV} ${STAGEDIR}${PREFIX}/bin/${f} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${f}
+.endfor
 
 post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
-
-post-install-MODELCOMPILER-on:
-	${MV} ${STAGEDIR}${PREFIX}/bin/modelcompiler \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-modelcompiler
 
 .include <bsd.port.mk>
