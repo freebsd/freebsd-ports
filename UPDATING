@@ -17,7 +17,7 @@ you update your ports collection, before attempting any port upgrades.
   configuration changes to the proper places, before you continue.
 
 20191002:
-  AFFECTS: users of groff
+  AFFECTS: users of textproc/groff
   AUTHOR: bapt@FreeBSD.org
 
   with groff 1.2.4_3, groff does not depends anymore on ghostscript and
@@ -28,7 +28,7 @@ you update your ports collection, before attempting any port upgrades.
   Also note that the X11 option has been removed.
 
 20190930:
-  AFFECTS: users of NetBox
+  AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org
 
   Since the 2.6 release a running Redis server instance is required for
@@ -67,7 +67,7 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -o emulators/qemu-devel emulators/qemu40
 
 20190927:
-  AFFECTS: users of XFCE desktop
+  AFFECTS: users of XFCE desktop (x11-wm/xfce4)
   AUTHOR: madpilot@FreeBSD.org
 
   Due to changes in the XFCE 4.14 metaport, systems could end up with
@@ -465,7 +465,7 @@ you update your ports collection, before attempting any port upgrades.
   are more intuitive and logical.
 
 20190604:
-  AFFECTS: users of samba47
+  AFFECTS: users of net/samba47
   AUTHOR: antoine@FreeBSD.org
 
   The default version of samba has been switched from 4.7 to 4.8.
