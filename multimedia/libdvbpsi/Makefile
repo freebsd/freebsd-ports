@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdvbpsi
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/libdvbpsi/${PORTVERSION}/
 
