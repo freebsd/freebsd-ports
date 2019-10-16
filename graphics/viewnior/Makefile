@@ -4,10 +4,10 @@
 PORTNAME=	viewnior
 PORTVERSION=	1.6
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Fast and simple image viewer
 
 LICENSE=	GPLv3
