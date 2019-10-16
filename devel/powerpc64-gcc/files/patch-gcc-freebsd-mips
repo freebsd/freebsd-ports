@@ -64,7 +64,7 @@ new file mode 100644
 index 0000000..56a921e
 --- /dev/null
 +++ gcc/config/mips/freebsd.h
-@@ -0,0 +1,320 @@
+@@ -0,0 +1,325 @@
 +/* Definitions for MIPS varients running FreeBSD with ELF format
 +   Copyright (C) 2008 Free Software Foundation, Inc.
 +   Continued by David O'Brien <obrien@freebsd.org>
@@ -312,9 +312,14 @@ index 0000000..56a921e
 +
 +/* Always pass ISA to drivers */
 +#undef DRIVER_SELF_SPECS
-+#define DRIVER_SELF_SPECS					\
-+  MIPS_DEFAULT_ISA_LEVEL_SPEC,					\
-+  MIPS_ISA_LEVEL_SPEC,						\
++#define DRIVER_SELF_SPECS						\
++  MIPS_DEFAULT_ISA_LEVEL_SPEC,						\
++  MIPS_ISA_LEVEL_SPEC,							\
++									\
++  /* Make sure that an endian option is always present.  This makes	\
++     things like LINK_SPEC easier to write.  */				\
++  "%{!EB:%{!EL:%(endian_spec)}}",					\
++									\
 +  BASE_DRIVER_SELF_SPECS
 +
 +#if 0
