@@ -1421,7 +1421,6 @@
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libjavafx_font.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libjavafx_font_freetype.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libjavafx_font_pango.so
-%%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libjavafx_font_t2k.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libjavafx_iio.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libjawt.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libjdwp.so
