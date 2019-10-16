@@ -1,5 +1,4 @@
 bin/kscreen-doctor
-etc/xdg/libkscreen.categories
 include/KF5/KScreen/KScreen/Config
 include/KF5/KScreen/KScreen/ConfigMonitor
 include/KF5/KScreen/KScreen/ConfigOperation
@@ -41,3 +40,4 @@ lib/libexec/kf5/kscreen_backend_launcher
 libdata/pkgconfig/kscreen2.pc
 %%QT_MKSPECDIR%%/modules/qt_KScreen.pri
 share/dbus-1/services/org.kde.kscreen.service
+share/qlogging-categories5/libkscreen.categories

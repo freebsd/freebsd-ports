@@ -1,28 +1,22 @@
 bin/gmenudbusmenuproxy
-bin/kcheckrunning
 bin/kcminit
 bin/kcminit_startup
-bin/kdostartupconfig5
 bin/klipper
 bin/krunner
 bin/ksmserver
 bin/ksplashqml
-bin/kstartupconfig5
+bin/plasma_session
 bin/plasma_waitforname
 bin/plasmashell
 bin/plasmawindowed
-bin/startkde
-bin/startplasmacompositor
+bin/startplasma-wayland
+bin/startplasma-x11
 bin/systemmonitor
 bin/xembedsniproxy
 etc/xdg/autostart/gmenudbusmenuproxy.desktop
 etc/xdg/autostart/klipper.desktop
-etc/xdg/autostart/krunner.desktop
 etc/xdg/autostart/org.kde.plasmashell.desktop
 etc/xdg/autostart/xembedsniproxy.desktop
-etc/xdg/klipper.categories
-etc/xdg/libnotificationmanager.categories
-etc/xdg/plasma-workspace.categories
 etc/xdg/plasmanotifyrc
 etc/xdg/taskmanagerrulesrc
 include/colorcorrect/colorcorrect_export.h
@@ -33,6 +27,7 @@ include/kworkspace5/config-libkworkspace.h
 include/kworkspace5/kdisplaymanager.h
 include/kworkspace5/kworkspace.h
 include/kworkspace5/kworkspace_export.h
+include/kworkspace5/sessionmanagement.h
 include/notificationmanager/job.h
 include/notificationmanager/jobsmodel.h
 include/notificationmanager/notification.h
@@ -78,6 +73,7 @@ lib/cmake/LibTaskManager/LibTaskManagerConfig.cmake
 lib/cmake/LibTaskManager/LibTaskManagerConfigVersion.cmake
 lib/cmake/LibTaskManager/LibTaskManagerLibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibTaskManager/LibTaskManagerLibraryTargets.cmake
+lib/kconf_update_bin/krunnerglobalshortcuts
 lib/kconf_update_bin/krunnerplugins
 lib/libcolorcorrect.so
 lib/libcolorcorrect.so.5
@@ -85,7 +81,8 @@ lib/libcolorcorrect.so.%%KDE_PLASMA_VERSION%%
 lib/libexec/baloorunner
 lib/libexec/ksmserver-logout-greeter
 lib/libexec/ksyncdbusenv
-lib/libexec/startplasma
+lib/libexec/plasma-sourceenv.sh
+lib/libexec/startplasma-waylandsession
 lib/libkdeinit5_kcminit.so
 lib/libkdeinit5_kcminit_startup.so
 lib/libkdeinit5_klipper.so
@@ -141,6 +138,11 @@ lib/libweather_ion.so.7.0.0
 %%QT_PLUGINDIR%%/plasma/applets/plasma_applet_calendar.so
 %%QT_PLUGINDIR%%/plasma/applets/plasma_applet_icon.so
 %%QT_PLUGINDIR%%/plasma/applets/plasma_applet_notifications.so
+%%QT_PLUGINDIR%%/plasma/containmentactions/plasma_containmentactions_applauncher.so
+%%QT_PLUGINDIR%%/plasma/containmentactions/plasma_containmentactions_contextmenu.so
+%%QT_PLUGINDIR%%/plasma/containmentactions/plasma_containmentactions_paste.so
+%%QT_PLUGINDIR%%/plasma/containmentactions/plasma_containmentactions_switchdesktop.so
+%%QT_PLUGINDIR%%/plasma/containmentactions/plasma_containmentactions_switchwindow.so
 %%QT_PLUGINDIR%%/plasma/dataengine/ion_bbcukmet.so
 %%QT_PLUGINDIR%%/plasma/dataengine/ion_envcan.so
 %%QT_PLUGINDIR%%/plasma/dataengine/ion_noaa.so
@@ -162,19 +164,12 @@ lib/libweather_ion.so.7.0.0
 %%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_packagekit.so
 %%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_places.so
 %%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_powermanagement.so
-%%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_share.so
 %%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_soliddevice.so
 %%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_statusnotifieritem.so
 %%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_systemmonitor.so
 %%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_time.so
 %%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_weather.so
-%%QT_PLUGINDIR%%/plasma/packagestructure/plasma_packagestructure_share.so
-%%QT_PLUGINDIR%%/plasma_containmentactions_applauncher.so
-%%QT_PLUGINDIR%%/plasma_containmentactions_contextmenu.so
-%%QT_PLUGINDIR%%/plasma_containmentactions_paste.so
 %%QT_PLUGINDIR%%/plasma_containmentactions_switchactivity.so
-%%QT_PLUGINDIR%%/plasma_containmentactions_switchdesktop.so
-%%QT_PLUGINDIR%%/plasma_containmentactions_switchwindow.so
 %%QT_PLUGINDIR%%/plasmacalendarplugins/holidays/HolidaysConfig.qml
 %%QT_PLUGINDIR%%/plasmacalendarplugins/holidaysevents.so
 %%QT_QMLDIR%%/org/kde/colorcorrect/libcolorcorrectplugin.so
@@ -185,8 +180,16 @@ lib/libweather_ion.so.7.0.0
 %%QT_QMLDIR%%/org/kde/notificationmanager/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/private/appmenu/libappmenuplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/private/appmenu/qmldir
+%%QT_QMLDIR%%/org/kde/plasma/private/containmentlayoutmanager/BasicAppletContainer.qml
+%%QT_QMLDIR%%/org/kde/plasma/private/containmentlayoutmanager/ConfigOverlayWithHandles.qml
+%%QT_QMLDIR%%/org/kde/plasma/private/containmentlayoutmanager/PlaceHolder.qml
+%%QT_QMLDIR%%/org/kde/plasma/private/containmentlayoutmanager/libcontainmentlayoutmanagerplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/private/containmentlayoutmanager/private/BasicResizeHandle.qml
+%%QT_QMLDIR%%/org/kde/plasma/private/containmentlayoutmanager/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/private/digitalclock/libdigitalclockplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/private/digitalclock/qmldir
+%%QT_QMLDIR%%/org/kde/plasma/private/kicker/libkickerplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/private/kicker/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/private/sessions/libsessionsprivateplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/private/sessions/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/private/shell/libplasmashellprivateplugin.so
@@ -282,13 +285,21 @@ share/doc/HTML/en/PolicyKit-kde/index.docbook
 share/doc/HTML/en/PolicyKit-kde/introduction.docbook
 share/doc/HTML/en/kcontrol/screenlocker/index.cache.bz2
 share/doc/HTML/en/kcontrol/screenlocker/index.docbook
+share/doc/HTML/en/kcontrol/translations/go-top.png
 share/doc/HTML/en/kcontrol/translations/index.cache.bz2
 share/doc/HTML/en/kcontrol/translations/index.docbook
+share/doc/HTML/en/kcontrol/translations/list-remove.png
 share/doc/HTML/en/klipper/index.cache.bz2
 share/doc/HTML/en/klipper/index.docbook
 share/doc/HTML/en/klipper/klipper-application.png
 share/doc/HTML/en/klipper/klipper-widget.png
 share/doc/HTML/en/klipper/screenshot.png
+share/doc/HTML/id/kcontrol/screenlocker/index.cache.bz2
+share/doc/HTML/id/kcontrol/screenlocker/index.docbook
+share/doc/HTML/id/kcontrol/translations/index.cache.bz2
+share/doc/HTML/id/kcontrol/translations/index.docbook
+share/doc/HTML/id/klipper/index.cache.bz2
+share/doc/HTML/id/klipper/index.docbook
 share/doc/HTML/it/kcontrol/screenlocker/index.cache.bz2
 share/doc/HTML/it/kcontrol/screenlocker/index.docbook
 share/doc/HTML/it/kcontrol/translations/index.cache.bz2
@@ -334,8 +345,10 @@ share/doc/HTML/uk/klipper/index.cache.bz2
 share/doc/HTML/uk/klipper/index.docbook
 share/doc/HTML/uk/klipper/klipper-widget.png
 share/doc/HTML/uk/klipper/screenshot.png
+share/kconf_update/krunnerglobalshortcuts.upd
 share/kconf_update/krunnerplugins.upd
 share/kdevappwizard/templates/ion-dataengine.tar.bz2
+share/kglobalaccel/krunner.desktop
 share/kio_desktop/directory.desktop
 share/kio_desktop/directory.trash
 share/knotifications5/freespacenotifier.notifyrc
@@ -373,12 +386,7 @@ share/kservices5/plasma-applet-org.kde.plasma.systemmonitor.diskusage.desktop
 share/kservices5/plasma-applet-org.kde.plasma.systemmonitor.memory.desktop
 share/kservices5/plasma-applet-org.kde.plasma.systemmonitor.net.desktop
 share/kservices5/plasma-applet-org.kde.plasma.systemtray.desktop
-share/kservices5/plasma-containmentactions-applauncher.desktop
-share/kservices5/plasma-containmentactions-contextmenu.desktop
-share/kservices5/plasma-containmentactions-paste.desktop
 share/kservices5/plasma-containmentactions-switchactivity.desktop
-share/kservices5/plasma-containmentactions-switchdesktop.desktop
-share/kservices5/plasma-containmentactions-switchwindow.desktop
 share/kservices5/plasma-dataengine-activities.desktop
 share/kservices5/plasma-dataengine-applicationjobs.desktop
 share/kservices5/plasma-dataengine-apps.desktop
@@ -396,18 +404,6 @@ share/kservices5/plasma-dataengine-notifications.desktop
 share/kservices5/plasma-dataengine-packagekit.desktop
 share/kservices5/plasma-dataengine-places.desktop
 share/kservices5/plasma-dataengine-powermanagement.desktop
-share/kservices5/plasma-dataengine-share-addon-im9.desktop
-share/kservices5/plasma-dataengine-share-addon-imgsusepasteorg.desktop
-share/kservices5/plasma-dataengine-share-addon-imgur.desktop
-share/kservices5/plasma-dataengine-share-addon-kde.desktop
-share/kservices5/plasma-dataengine-share-addon-pastebincom.desktop
-share/kservices5/plasma-dataengine-share-addon-pasteopensuseorg.desktop
-share/kservices5/plasma-dataengine-share-addon-pasteubuntucom.desktop
-share/kservices5/plasma-dataengine-share-addon-privatepastecom.desktop
-share/kservices5/plasma-dataengine-share-addon-simplestimagehosting.desktop
-share/kservices5/plasma-dataengine-share-addon-wklej.desktop
-share/kservices5/plasma-dataengine-share-addon-wstaw.desktop
-share/kservices5/plasma-dataengine-share.desktop
 share/kservices5/plasma-dataengine-soliddevice.desktop
 share/kservices5/plasma-dataengine-statusnotifieritem.desktop
 share/kservices5/plasma-dataengine-systemmonitor.desktop
@@ -437,7 +433,6 @@ share/kservices5/plasma-wallpaper-org.kde.slideshow.desktop
 share/kservices5/programs.protocol
 share/kservicetypes5/phononbackend.desktop
 share/kservicetypes5/plasma-layouttemplate.desktop
-share/kservicetypes5/plasma_shareprovider.desktop
 share/ksplash/Themes/Classic/FadeIn.qml
 share/ksplash/Themes/Classic/Preview.png
 share/ksplash/Themes/Classic/Theme.rc
@@ -475,6 +470,7 @@ share/locale/ar/LC_MESSAGES/kio5_applications.mo
 share/locale/ar/LC_MESSAGES/klipper.mo
 share/locale/ar/LC_MESSAGES/krunner.mo
 share/locale/ar/LC_MESSAGES/ksmserver.mo
+share/locale/ar/LC_MESSAGES/libkicker.mo
 share/locale/ar/LC_MESSAGES/libkworkspace.mo
 share/locale/ar/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -504,7 +500,6 @@ share/locale/ar/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/ar/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_weather.mo
@@ -522,7 +517,6 @@ share/locale/ar/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/ar/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_windows.mo
@@ -532,6 +526,17 @@ share/locale/ar/LC_MESSAGES/plasmashell.mo
 share/locale/ar/LC_MESSAGES/plasmashellprivateplugin.mo
 share/locale/ar/LC_MESSAGES/soliduiserver5.mo
 share/locale/ar/LC_MESSAGES/systemmonitor.mo
+share/locale/ast/LC_MESSAGES/kcm_translations.mo
+share/locale/ast/LC_MESSAGES/kcminit.mo
+share/locale/ast/LC_MESSAGES/phonon_kde_plugin.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.devicenotifier.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.digitalclock.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.cpu.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.memory.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.net.mo
+share/locale/ast/LC_MESSAGES/plasma_engine_devicenotifications.mo
+share/locale/ast/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/be/LC_MESSAGES/kcminit.mo
 share/locale/be/LC_MESSAGES/kio5_applications.mo
 share/locale/be/LC_MESSAGES/klipper.mo
@@ -581,7 +586,6 @@ share/locale/bg/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_services.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/bg/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/bg/LC_MESSAGES/soliduiserver5.mo
@@ -616,6 +620,7 @@ share/locale/bs/LC_MESSAGES/kio5_applications.mo
 share/locale/bs/LC_MESSAGES/klipper.mo
 share/locale/bs/LC_MESSAGES/krunner.mo
 share/locale/bs/LC_MESSAGES/ksmserver.mo
+share/locale/bs/LC_MESSAGES/libkicker.mo
 share/locale/bs/LC_MESSAGES/libkworkspace.mo
 share/locale/bs/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -641,7 +646,6 @@ share/locale/bs/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/bs/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/bs/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/bs/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/bs/LC_MESSAGES/plasma_engine_share.mo
 share/locale/bs/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/bs/LC_MESSAGES/plasma_engine_time.mo
 share/locale/bs/LC_MESSAGES/plasma_engine_weather.mo
@@ -659,7 +663,6 @@ share/locale/bs/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/bs/LC_MESSAGES/plasma_runner_services.mo
 share/locale/bs/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/bs/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/bs/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/bs/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/bs/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/bs/LC_MESSAGES/plasma_runner_windows.mo
@@ -678,6 +681,7 @@ share/locale/ca/LC_MESSAGES/kio_desktop.mo
 share/locale/ca/LC_MESSAGES/klipper.mo
 share/locale/ca/LC_MESSAGES/krunner.mo
 share/locale/ca/LC_MESSAGES/ksmserver.mo
+share/locale/ca/LC_MESSAGES/libkicker.mo
 share/locale/ca/LC_MESSAGES/libkworkspace.mo
 share/locale/ca/LC_MESSAGES/libnotificationmanager.mo
 share/locale/ca/LC_MESSAGES/phonon_kde_plugin.mo
@@ -705,11 +709,11 @@ share/locale/ca/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/ca/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/ca/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ca/LC_MESSAGES/plasma_engine_weather.mo
@@ -728,7 +732,6 @@ share/locale/ca/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/ca/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_windows.mo
@@ -747,6 +750,7 @@ share/locale/ca@valencia/LC_MESSAGES/kio_desktop.mo
 share/locale/ca@valencia/LC_MESSAGES/klipper.mo
 share/locale/ca@valencia/LC_MESSAGES/krunner.mo
 share/locale/ca@valencia/LC_MESSAGES/ksmserver.mo
+share/locale/ca@valencia/LC_MESSAGES/libkicker.mo
 share/locale/ca@valencia/LC_MESSAGES/libkworkspace.mo
 share/locale/ca@valencia/LC_MESSAGES/libnotificationmanager.mo
 share/locale/ca@valencia/LC_MESSAGES/phonon_kde_plugin.mo
@@ -778,7 +782,6 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/ca@valencia/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_weather.mo
@@ -797,7 +800,6 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/ca@valencia/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_windows.mo
@@ -816,6 +818,7 @@ share/locale/cs/LC_MESSAGES/kio_desktop.mo
 share/locale/cs/LC_MESSAGES/klipper.mo
 share/locale/cs/LC_MESSAGES/krunner.mo
 share/locale/cs/LC_MESSAGES/ksmserver.mo
+share/locale/cs/LC_MESSAGES/libkicker.mo
 share/locale/cs/LC_MESSAGES/libkworkspace.mo
 share/locale/cs/LC_MESSAGES/libnotificationmanager.mo
 share/locale/cs/LC_MESSAGES/phonon_kde_plugin.mo
@@ -843,11 +846,11 @@ share/locale/cs/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/cs/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/cs/LC_MESSAGES/plasma_engine_share.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_time.mo
 share/locale/cs/LC_MESSAGES/plasma_engine_weather.mo
@@ -866,7 +869,6 @@ share/locale/cs/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_services.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/cs/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_windows.mo
@@ -897,7 +899,6 @@ share/locale/csb/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_services.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/csb/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/csb/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
@@ -914,6 +915,7 @@ share/locale/da/LC_MESSAGES/kio_desktop.mo
 share/locale/da/LC_MESSAGES/klipper.mo
 share/locale/da/LC_MESSAGES/krunner.mo
 share/locale/da/LC_MESSAGES/ksmserver.mo
+share/locale/da/LC_MESSAGES/libkicker.mo
 share/locale/da/LC_MESSAGES/libkworkspace.mo
 share/locale/da/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -944,7 +946,6 @@ share/locale/da/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/da/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/da/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/da/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/da/LC_MESSAGES/plasma_engine_share.mo
 share/locale/da/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/da/LC_MESSAGES/plasma_engine_time.mo
 share/locale/da/LC_MESSAGES/plasma_engine_weather.mo
@@ -963,7 +964,6 @@ share/locale/da/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/da/LC_MESSAGES/plasma_runner_services.mo
 share/locale/da/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/da/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/da/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/da/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/da/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/da/LC_MESSAGES/plasma_runner_windows.mo
@@ -982,6 +982,7 @@ share/locale/de/LC_MESSAGES/kio_desktop.mo
 share/locale/de/LC_MESSAGES/klipper.mo
 share/locale/de/LC_MESSAGES/krunner.mo
 share/locale/de/LC_MESSAGES/ksmserver.mo
+share/locale/de/LC_MESSAGES/libkicker.mo
 share/locale/de/LC_MESSAGES/libkworkspace.mo
 share/locale/de/LC_MESSAGES/libnotificationmanager.mo
 share/locale/de/LC_MESSAGES/phonon_kde_plugin.mo
@@ -1009,11 +1010,11 @@ share/locale/de/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/de/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/de/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/de/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/de/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/de/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/de/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/de/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/de/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/de/LC_MESSAGES/plasma_engine_share.mo
 share/locale/de/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/de/LC_MESSAGES/plasma_engine_time.mo
 share/locale/de/LC_MESSAGES/plasma_engine_weather.mo
@@ -1032,7 +1033,6 @@ share/locale/de/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/de/LC_MESSAGES/plasma_runner_services.mo
 share/locale/de/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/de/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/de/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/de/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/de/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/de/LC_MESSAGES/plasma_runner_windows.mo
@@ -1051,6 +1051,7 @@ share/locale/el/LC_MESSAGES/kio_desktop.mo
 share/locale/el/LC_MESSAGES/klipper.mo
 share/locale/el/LC_MESSAGES/krunner.mo
 share/locale/el/LC_MESSAGES/ksmserver.mo
+share/locale/el/LC_MESSAGES/libkicker.mo
 share/locale/el/LC_MESSAGES/libkworkspace.mo
 share/locale/el/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/el/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -1079,7 +1080,6 @@ share/locale/el/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/el/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/el/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/el/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/el/LC_MESSAGES/plasma_engine_share.mo
 share/locale/el/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/el/LC_MESSAGES/plasma_engine_time.mo
 share/locale/el/LC_MESSAGES/plasma_engine_weather.mo
@@ -1096,7 +1096,6 @@ share/locale/el/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/el/LC_MESSAGES/plasma_runner_services.mo
 share/locale/el/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/el/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/el/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/el/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/el/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/el/LC_MESSAGES/plasma_runner_windows.mo
@@ -1115,6 +1114,7 @@ share/locale/en_GB/LC_MESSAGES/kio_desktop.mo
 share/locale/en_GB/LC_MESSAGES/klipper.mo
 share/locale/en_GB/LC_MESSAGES/krunner.mo
 share/locale/en_GB/LC_MESSAGES/ksmserver.mo
+share/locale/en_GB/LC_MESSAGES/libkicker.mo
 share/locale/en_GB/LC_MESSAGES/libkworkspace.mo
 share/locale/en_GB/LC_MESSAGES/libnotificationmanager.mo
 share/locale/en_GB/LC_MESSAGES/phonon_kde_plugin.mo
@@ -1142,11 +1142,11 @@ share/locale/en_GB/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/en_GB/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/en_GB/LC_MESSAGES/plasma_engine_share.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_time.mo
 share/locale/en_GB/LC_MESSAGES/plasma_engine_weather.mo
@@ -1165,7 +1165,6 @@ share/locale/en_GB/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_services.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/en_GB/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_windows.mo
@@ -1192,7 +1191,6 @@ share/locale/eo/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/eo/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/eo/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/eo/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/eo/LC_MESSAGES/plasma_engine_share.mo
 share/locale/eo/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/eo/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/eo/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
@@ -1205,7 +1203,6 @@ share/locale/eo/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/eo/LC_MESSAGES/plasma_runner_services.mo
 share/locale/eo/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/eo/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/eo/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/eo/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/eo/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/eo/LC_MESSAGES/plasma_runner_windows.mo
@@ -1220,6 +1217,7 @@ share/locale/es/LC_MESSAGES/kio_desktop.mo
 share/locale/es/LC_MESSAGES/klipper.mo
 share/locale/es/LC_MESSAGES/krunner.mo
 share/locale/es/LC_MESSAGES/ksmserver.mo
+share/locale/es/LC_MESSAGES/libkicker.mo
 share/locale/es/LC_MESSAGES/libkworkspace.mo
 share/locale/es/LC_MESSAGES/libnotificationmanager.mo
 share/locale/es/LC_MESSAGES/phonon_kde_plugin.mo
@@ -1247,11 +1245,11 @@ share/locale/es/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/es/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/es/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/es/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/es/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/es/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/es/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/es/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/es/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/es/LC_MESSAGES/plasma_engine_share.mo
 share/locale/es/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/es/LC_MESSAGES/plasma_engine_time.mo
 share/locale/es/LC_MESSAGES/plasma_engine_weather.mo
@@ -1270,7 +1268,6 @@ share/locale/es/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/es/LC_MESSAGES/plasma_runner_services.mo
 share/locale/es/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/es/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/es/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/es/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/es/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/es/LC_MESSAGES/plasma_runner_windows.mo
@@ -1288,6 +1285,7 @@ share/locale/et/LC_MESSAGES/kio5_applications.mo
 share/locale/et/LC_MESSAGES/klipper.mo
 share/locale/et/LC_MESSAGES/krunner.mo
 share/locale/et/LC_MESSAGES/ksmserver.mo
+share/locale/et/LC_MESSAGES/libkicker.mo
 share/locale/et/LC_MESSAGES/libkworkspace.mo
 share/locale/et/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/et/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -1314,7 +1312,6 @@ share/locale/et/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/et/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/et/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/et/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/et/LC_MESSAGES/plasma_engine_share.mo
 share/locale/et/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/et/LC_MESSAGES/plasma_engine_time.mo
 share/locale/et/LC_MESSAGES/plasma_engine_weather.mo
@@ -1332,7 +1329,6 @@ share/locale/et/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/et/LC_MESSAGES/plasma_runner_services.mo
 share/locale/et/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/et/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/et/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/et/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/et/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/et/LC_MESSAGES/plasma_runner_windows.mo
@@ -1351,6 +1347,7 @@ share/locale/eu/LC_MESSAGES/kio_desktop.mo
 share/locale/eu/LC_MESSAGES/klipper.mo
 share/locale/eu/LC_MESSAGES/krunner.mo
 share/locale/eu/LC_MESSAGES/ksmserver.mo
+share/locale/eu/LC_MESSAGES/libkicker.mo
 share/locale/eu/LC_MESSAGES/libkworkspace.mo
 share/locale/eu/LC_MESSAGES/libnotificationmanager.mo
 share/locale/eu/LC_MESSAGES/phonon_kde_plugin.mo
@@ -1378,11 +1375,11 @@ share/locale/eu/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/eu/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/eu/LC_MESSAGES/plasma_engine_share.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_time.mo
 share/locale/eu/LC_MESSAGES/plasma_engine_weather.mo
@@ -1401,7 +1398,6 @@ share/locale/eu/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_services.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/eu/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_windows.mo
@@ -1434,6 +1430,7 @@ share/locale/fi/LC_MESSAGES/kio_desktop.mo
 share/locale/fi/LC_MESSAGES/klipper.mo
 share/locale/fi/LC_MESSAGES/krunner.mo
 share/locale/fi/LC_MESSAGES/ksmserver.mo
+share/locale/fi/LC_MESSAGES/libkicker.mo
 share/locale/fi/LC_MESSAGES/libkworkspace.mo
 share/locale/fi/LC_MESSAGES/libnotificationmanager.mo
 share/locale/fi/LC_MESSAGES/phonon_kde_plugin.mo
@@ -1461,11 +1458,11 @@ share/locale/fi/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/fi/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/fi/LC_MESSAGES/plasma_engine_share.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_time.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_weather.mo
@@ -1484,7 +1481,6 @@ share/locale/fi/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_services.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/fi/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_windows.mo
@@ -1503,6 +1499,7 @@ share/locale/fr/LC_MESSAGES/kio_desktop.mo
 share/locale/fr/LC_MESSAGES/klipper.mo
 share/locale/fr/LC_MESSAGES/krunner.mo
 share/locale/fr/LC_MESSAGES/ksmserver.mo
+share/locale/fr/LC_MESSAGES/libkicker.mo
 share/locale/fr/LC_MESSAGES/libkworkspace.mo
 share/locale/fr/LC_MESSAGES/libnotificationmanager.mo
 share/locale/fr/LC_MESSAGES/phonon_kde_plugin.mo
@@ -1530,11 +1527,11 @@ share/locale/fr/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/fr/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/fr/LC_MESSAGES/plasma_engine_share.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_time.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_weather.mo
@@ -1553,7 +1550,6 @@ share/locale/fr/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_services.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/fr/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_windows.mo
@@ -1594,6 +1590,7 @@ share/locale/ga/LC_MESSAGES/kcminit.mo
 share/locale/ga/LC_MESSAGES/kio5_applications.mo
 share/locale/ga/LC_MESSAGES/klipper.mo
 share/locale/ga/LC_MESSAGES/ksmserver.mo
+share/locale/ga/LC_MESSAGES/libkicker.mo
 share/locale/ga/LC_MESSAGES/libkworkspace.mo
 share/locale/ga/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/ga/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -1607,7 +1604,6 @@ share/locale/ga/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/ga/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ga/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ga/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/ga/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ga/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ga/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ga/LC_MESSAGES/plasma_runner_activities.mo
@@ -1621,7 +1617,6 @@ share/locale/ga/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ga/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ga/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ga/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/ga/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ga/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ga/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ga/LC_MESSAGES/plasma_runner_windows.mo
@@ -1636,6 +1631,7 @@ share/locale/gl/LC_MESSAGES/kio_desktop.mo
 share/locale/gl/LC_MESSAGES/klipper.mo
 share/locale/gl/LC_MESSAGES/krunner.mo
 share/locale/gl/LC_MESSAGES/ksmserver.mo
+share/locale/gl/LC_MESSAGES/libkicker.mo
 share/locale/gl/LC_MESSAGES/libkworkspace.mo
 share/locale/gl/LC_MESSAGES/libnotificationmanager.mo
 share/locale/gl/LC_MESSAGES/phonon_kde_plugin.mo
@@ -1663,11 +1659,11 @@ share/locale/gl/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/gl/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/gl/LC_MESSAGES/plasma_engine_share.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_time.mo
 share/locale/gl/LC_MESSAGES/plasma_engine_weather.mo
@@ -1686,7 +1682,6 @@ share/locale/gl/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_services.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/gl/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_windows.mo
@@ -1713,7 +1708,6 @@ share/locale/gu/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/gu/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/gu/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/gu/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/gu/LC_MESSAGES/plasma_engine_share.mo
 share/locale/gu/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/gu/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
@@ -1725,7 +1719,6 @@ share/locale/gu/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_services.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/gu/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_windows.mo
@@ -1740,6 +1733,7 @@ share/locale/he/LC_MESSAGES/kio_desktop.mo
 share/locale/he/LC_MESSAGES/klipper.mo
 share/locale/he/LC_MESSAGES/krunner.mo
 share/locale/he/LC_MESSAGES/ksmserver.mo
+share/locale/he/LC_MESSAGES/libkicker.mo
 share/locale/he/LC_MESSAGES/libkworkspace.mo
 share/locale/he/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -1768,7 +1762,6 @@ share/locale/he/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/he/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/he/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/he/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/he/LC_MESSAGES/plasma_engine_share.mo
 share/locale/he/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/he/LC_MESSAGES/plasma_engine_time.mo
 share/locale/he/LC_MESSAGES/plasma_engine_weather.mo
@@ -1785,7 +1778,6 @@ share/locale/he/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/he/LC_MESSAGES/plasma_runner_services.mo
 share/locale/he/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/he/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/he/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/he/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/he/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/he/LC_MESSAGES/plasma_runner_windows.mo
@@ -1824,7 +1816,6 @@ share/locale/hi/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/hi/LC_MESSAGES/plasma_runner_services.mo
 share/locale/hi/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/hi/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/hi/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/hi/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/hi/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/hi/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
@@ -1859,7 +1850,6 @@ share/locale/hr/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/hr/LC_MESSAGES/plasma_engine_share.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/hr/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
@@ -1872,7 +1862,6 @@ share/locale/hr/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/hr/LC_MESSAGES/plasma_runner_services.mo
 share/locale/hr/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/hr/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/hr/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/hr/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/hr/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/hr/LC_MESSAGES/plasma_runner_windows.mo
@@ -1904,6 +1893,7 @@ share/locale/hu/LC_MESSAGES/kio_desktop.mo
 share/locale/hu/LC_MESSAGES/klipper.mo
 share/locale/hu/LC_MESSAGES/krunner.mo
 share/locale/hu/LC_MESSAGES/ksmserver.mo
+share/locale/hu/LC_MESSAGES/libkicker.mo
 share/locale/hu/LC_MESSAGES/libkworkspace.mo
 share/locale/hu/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -1930,7 +1920,6 @@ share/locale/hu/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/hu/LC_MESSAGES/plasma_engine_share.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_time.mo
 share/locale/hu/LC_MESSAGES/plasma_engine_weather.mo
@@ -1948,7 +1937,6 @@ share/locale/hu/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_services.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/hu/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_windows.mo
@@ -1970,6 +1958,7 @@ share/locale/ia/LC_MESSAGES/kio5_applications.mo
 share/locale/ia/LC_MESSAGES/klipper.mo
 share/locale/ia/LC_MESSAGES/krunner.mo
 share/locale/ia/LC_MESSAGES/ksmserver.mo
+share/locale/ia/LC_MESSAGES/libkicker.mo
 share/locale/ia/LC_MESSAGES/libkworkspace.mo
 share/locale/ia/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -1998,7 +1987,6 @@ share/locale/ia/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/ia/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ia/LC_MESSAGES/plasma_engine_weather.mo
@@ -2016,7 +2004,6 @@ share/locale/ia/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/ia/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_windows.mo
@@ -2035,6 +2022,7 @@ share/locale/id/LC_MESSAGES/kio_desktop.mo
 share/locale/id/LC_MESSAGES/klipper.mo
 share/locale/id/LC_MESSAGES/krunner.mo
 share/locale/id/LC_MESSAGES/ksmserver.mo
+share/locale/id/LC_MESSAGES/libkicker.mo
 share/locale/id/LC_MESSAGES/libkworkspace.mo
 share/locale/id/LC_MESSAGES/libnotificationmanager.mo
 share/locale/id/LC_MESSAGES/phonon_kde_plugin.mo
@@ -2062,11 +2050,11 @@ share/locale/id/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/id/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/id/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/id/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/id/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/id/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/id/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/id/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/id/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/id/LC_MESSAGES/plasma_engine_share.mo
 share/locale/id/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/id/LC_MESSAGES/plasma_engine_time.mo
 share/locale/id/LC_MESSAGES/plasma_engine_weather.mo
@@ -2085,7 +2073,6 @@ share/locale/id/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/id/LC_MESSAGES/plasma_runner_services.mo
 share/locale/id/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/id/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/id/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/id/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/id/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/id/LC_MESSAGES/plasma_runner_windows.mo
@@ -2111,7 +2098,6 @@ share/locale/is/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/is/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/is/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/is/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/is/LC_MESSAGES/plasma_engine_share.mo
 share/locale/is/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/is/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/is/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
@@ -2124,7 +2110,6 @@ share/locale/is/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/is/LC_MESSAGES/plasma_runner_services.mo
 share/locale/is/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/is/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/is/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/is/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/is/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/is/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
@@ -2138,6 +2123,7 @@ share/locale/it/LC_MESSAGES/kio_desktop.mo
 share/locale/it/LC_MESSAGES/klipper.mo
 share/locale/it/LC_MESSAGES/krunner.mo
 share/locale/it/LC_MESSAGES/ksmserver.mo
+share/locale/it/LC_MESSAGES/libkicker.mo
 share/locale/it/LC_MESSAGES/libkworkspace.mo
 share/locale/it/LC_MESSAGES/libnotificationmanager.mo
 share/locale/it/LC_MESSAGES/phonon_kde_plugin.mo
@@ -2165,11 +2151,11 @@ share/locale/it/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/it/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/it/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/it/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/it/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/it/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/it/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/it/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/it/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/it/LC_MESSAGES/plasma_engine_share.mo
 share/locale/it/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/it/LC_MESSAGES/plasma_engine_time.mo
 share/locale/it/LC_MESSAGES/plasma_engine_weather.mo
@@ -2188,7 +2174,6 @@ share/locale/it/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/it/LC_MESSAGES/plasma_runner_services.mo
 share/locale/it/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/it/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/it/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/it/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/it/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/it/LC_MESSAGES/plasma_runner_windows.mo
@@ -2207,6 +2192,7 @@ share/locale/ja/LC_MESSAGES/kio_desktop.mo
 share/locale/ja/LC_MESSAGES/klipper.mo
 share/locale/ja/LC_MESSAGES/krunner.mo
 share/locale/ja/LC_MESSAGES/ksmserver.mo
+share/locale/ja/LC_MESSAGES/libkicker.mo
 share/locale/ja/LC_MESSAGES/libkworkspace.mo
 share/locale/ja/LC_MESSAGES/libnotificationmanager.mo
 share/locale/ja/LC_MESSAGES/phonon_kde_plugin.mo
@@ -2234,11 +2220,11 @@ share/locale/ja/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/ja/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/ja/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_weather.mo
@@ -2257,7 +2243,6 @@ share/locale/ja/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/ja/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_windows.mo
@@ -2286,7 +2271,6 @@ share/locale/kk/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/kk/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/kk/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/kk/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/kk/LC_MESSAGES/plasma_engine_share.mo
 share/locale/kk/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/kk/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/kk/LC_MESSAGES/plasma_runner_activities.mo
@@ -2300,7 +2284,6 @@ share/locale/kk/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/kk/LC_MESSAGES/plasma_runner_services.mo
 share/locale/kk/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/kk/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/kk/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/kk/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/kk/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/kk/LC_MESSAGES/plasma_runner_windows.mo
@@ -2324,7 +2307,6 @@ share/locale/km/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/km/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/km/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/km/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/km/LC_MESSAGES/plasma_engine_share.mo
 share/locale/km/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/km/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/km/LC_MESSAGES/plasma_runner_activities.mo
@@ -2338,7 +2320,6 @@ share/locale/km/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/km/LC_MESSAGES/plasma_runner_services.mo
 share/locale/km/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/km/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/km/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/km/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/km/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/km/LC_MESSAGES/plasma_runner_windows.mo
@@ -2371,7 +2352,6 @@ share/locale/kn/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/kn/LC_MESSAGES/plasma_runner_services.mo
 share/locale/kn/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/kn/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/kn/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/kn/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/kn/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/kn/LC_MESSAGES/soliduiserver5.mo
@@ -2384,6 +2364,7 @@ share/locale/ko/LC_MESSAGES/kio_desktop.mo
 share/locale/ko/LC_MESSAGES/klipper.mo
 share/locale/ko/LC_MESSAGES/krunner.mo
 share/locale/ko/LC_MESSAGES/ksmserver.mo
+share/locale/ko/LC_MESSAGES/libkicker.mo
 share/locale/ko/LC_MESSAGES/libkworkspace.mo
 share/locale/ko/LC_MESSAGES/libnotificationmanager.mo
 share/locale/ko/LC_MESSAGES/phonon_kde_plugin.mo
@@ -2411,11 +2392,11 @@ share/locale/ko/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/ko/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/ko/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_weather.mo
@@ -2434,7 +2415,6 @@ share/locale/ko/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/ko/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_windows.mo
@@ -2472,7 +2452,9 @@ share/locale/lt/LC_MESSAGES/kio_desktop.mo
 share/locale/lt/LC_MESSAGES/klipper.mo
 share/locale/lt/LC_MESSAGES/krunner.mo
 share/locale/lt/LC_MESSAGES/ksmserver.mo
+share/locale/lt/LC_MESSAGES/libkicker.mo
 share/locale/lt/LC_MESSAGES/libkworkspace.mo
+share/locale/lt/LC_MESSAGES/libnotificationmanager.mo
 share/locale/lt/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -2502,7 +2484,6 @@ share/locale/lt/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/lt/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/lt/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/lt/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/lt/LC_MESSAGES/plasma_engine_share.mo
 share/locale/lt/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/lt/LC_MESSAGES/plasma_engine_time.mo
 share/locale/lt/LC_MESSAGES/plasma_engine_weather.mo
@@ -2521,7 +2502,6 @@ share/locale/lt/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/lt/LC_MESSAGES/plasma_runner_services.mo
 share/locale/lt/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/lt/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/lt/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/lt/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/lt/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/lt/LC_MESSAGES/plasma_runner_windows.mo
@@ -2536,6 +2516,7 @@ share/locale/lv/LC_MESSAGES/kcminit.mo
 share/locale/lv/LC_MESSAGES/kio5_applications.mo
 share/locale/lv/LC_MESSAGES/klipper.mo
 share/locale/lv/LC_MESSAGES/ksmserver.mo
+share/locale/lv/LC_MESSAGES/libkicker.mo
 share/locale/lv/LC_MESSAGES/libkworkspace.mo
 share/locale/lv/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -2561,7 +2542,6 @@ share/locale/lv/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_services.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/lv/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/lv/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
@@ -2583,7 +2563,6 @@ share/locale/mai/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/mai/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/mai/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/mai/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/mai/LC_MESSAGES/plasma_engine_share.mo
 share/locale/mai/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/mai/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/mai/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
@@ -2596,7 +2575,6 @@ share/locale/mai/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/mai/LC_MESSAGES/plasma_runner_services.mo
 share/locale/mai/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/mai/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/mai/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/mai/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/mai/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/mai/LC_MESSAGES/plasma_runner_windows.mo
@@ -2629,8 +2607,8 @@ share/locale/ml/LC_MESSAGES/kio_desktop.mo
 share/locale/ml/LC_MESSAGES/klipper.mo
 share/locale/ml/LC_MESSAGES/krunner.mo
 share/locale/ml/LC_MESSAGES/ksmserver.mo
+share/locale/ml/LC_MESSAGES/libkicker.mo
 share/locale/ml/LC_MESSAGES/libkworkspace.mo
-share/locale/ml/LC_MESSAGES/libnotificationmanager.mo
 share/locale/ml/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -2660,7 +2638,6 @@ share/locale/ml/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/ml/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_weather.mo
@@ -2679,7 +2656,6 @@ share/locale/ml/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/ml/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_windows.mo
@@ -2694,6 +2670,7 @@ share/locale/mr/LC_MESSAGES/kcminit.mo
 share/locale/mr/LC_MESSAGES/kio5_applications.mo
 share/locale/mr/LC_MESSAGES/klipper.mo
 share/locale/mr/LC_MESSAGES/ksmserver.mo
+share/locale/mr/LC_MESSAGES/libkicker.mo
 share/locale/mr/LC_MESSAGES/libkworkspace.mo
 share/locale/mr/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/mr/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -2708,7 +2685,6 @@ share/locale/mr/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/mr/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/mr/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/mr/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/mr/LC_MESSAGES/plasma_engine_share.mo
 share/locale/mr/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/mr/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/mr/LC_MESSAGES/plasma_runner_activities.mo
@@ -2722,7 +2698,6 @@ share/locale/mr/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/mr/LC_MESSAGES/plasma_runner_services.mo
 share/locale/mr/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/mr/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/mr/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/mr/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/mr/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/mr/LC_MESSAGES/plasma_runner_windows.mo
@@ -2745,7 +2720,6 @@ share/locale/ms/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/ms/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/ms/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ms/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/ms/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ms/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ms/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ms/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
@@ -2758,7 +2732,6 @@ share/locale/ms/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ms/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ms/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ms/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/ms/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ms/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ms/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ms/LC_MESSAGES/plasma_runner_windows.mo
@@ -2772,6 +2745,7 @@ share/locale/nb/LC_MESSAGES/kio_desktop.mo
 share/locale/nb/LC_MESSAGES/klipper.mo
 share/locale/nb/LC_MESSAGES/krunner.mo
 share/locale/nb/LC_MESSAGES/ksmserver.mo
+share/locale/nb/LC_MESSAGES/libkicker.mo
 share/locale/nb/LC_MESSAGES/libkworkspace.mo
 share/locale/nb/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -2801,7 +2775,6 @@ share/locale/nb/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/nb/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/nb/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/nb/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/nb/LC_MESSAGES/plasma_engine_share.mo
 share/locale/nb/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/nb/LC_MESSAGES/plasma_engine_time.mo
 share/locale/nb/LC_MESSAGES/plasma_engine_weather.mo
@@ -2820,7 +2793,6 @@ share/locale/nb/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/nb/LC_MESSAGES/plasma_runner_services.mo
 share/locale/nb/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/nb/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/nb/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/nb/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/nb/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/nb/LC_MESSAGES/plasma_runner_windows.mo
@@ -2837,6 +2809,7 @@ share/locale/nds/LC_MESSAGES/kio5_applications.mo
 share/locale/nds/LC_MESSAGES/klipper.mo
 share/locale/nds/LC_MESSAGES/krunner.mo
 share/locale/nds/LC_MESSAGES/ksmserver.mo
+share/locale/nds/LC_MESSAGES/libkicker.mo
 share/locale/nds/LC_MESSAGES/libkworkspace.mo
 share/locale/nds/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -2857,7 +2830,6 @@ share/locale/nds/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/nds/LC_MESSAGES/plasma_engine_share.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_time.mo
 share/locale/nds/LC_MESSAGES/plasma_engine_weather.mo
@@ -2875,7 +2847,6 @@ share/locale/nds/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/nds/LC_MESSAGES/plasma_runner_services.mo
 share/locale/nds/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/nds/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/nds/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/nds/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/nds/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/nds/LC_MESSAGES/plasma_runner_windows.mo
@@ -2904,6 +2875,7 @@ share/locale/nl/LC_MESSAGES/kio_desktop.mo
 share/locale/nl/LC_MESSAGES/klipper.mo
 share/locale/nl/LC_MESSAGES/krunner.mo
 share/locale/nl/LC_MESSAGES/ksmserver.mo
+share/locale/nl/LC_MESSAGES/libkicker.mo
 share/locale/nl/LC_MESSAGES/libkworkspace.mo
 share/locale/nl/LC_MESSAGES/libnotificationmanager.mo
 share/locale/nl/LC_MESSAGES/phonon_kde_plugin.mo
@@ -2931,11 +2903,11 @@ share/locale/nl/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/nl/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/nl/LC_MESSAGES/plasma_engine_share.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_time.mo
 share/locale/nl/LC_MESSAGES/plasma_engine_weather.mo
@@ -2954,7 +2926,6 @@ share/locale/nl/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_services.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/nl/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_windows.mo
@@ -2973,8 +2944,9 @@ share/locale/nn/LC_MESSAGES/kio_desktop.mo
 share/locale/nn/LC_MESSAGES/klipper.mo
 share/locale/nn/LC_MESSAGES/krunner.mo
 share/locale/nn/LC_MESSAGES/ksmserver.mo
-share/locale/nn/LC_MESSAGES/libnotificationmanager.mo
+share/locale/nn/LC_MESSAGES/libkicker.mo
 share/locale/nn/LC_MESSAGES/libkworkspace.mo
+share/locale/nn/LC_MESSAGES/libnotificationmanager.mo
 share/locale/nn/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3000,11 +2972,11 @@ share/locale/nn/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/nn/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/nn/LC_MESSAGES/plasma_engine_share.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_time.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_weather.mo
@@ -3023,7 +2995,6 @@ share/locale/nn/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_services.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/nn/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_windows.mo
@@ -3043,24 +3014,6 @@ share/locale/oc/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/oc/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
 share/locale/oc/LC_MESSAGES/plasma_applet_org.kde.plasma.devicenotifier.mo
 share/locale/oc/LC_MESSAGES/soliduiserver5.mo
-share/locale/or/LC_MESSAGES/kcminit.mo
-share/locale/or/LC_MESSAGES/kio5_applications.mo
-share/locale/or/LC_MESSAGES/klipper.mo
-share/locale/or/LC_MESSAGES/ksmserver.mo
-share/locale/or/LC_MESSAGES/libkworkspace.mo
-share/locale/or/LC_MESSAGES/phonon_kde_plugin.mo
-share/locale/or/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
-share/locale/or/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
-share/locale/or/LC_MESSAGES/plasma_applet_org.kde.plasma.devicenotifier.mo
-share/locale/or/LC_MESSAGES/plasma_engine_applicationjobs.mo
-share/locale/or/LC_MESSAGES/plasma_runner_locations.mo
-share/locale/or/LC_MESSAGES/plasma_runner_powerdevil.mo
-share/locale/or/LC_MESSAGES/plasma_runner_recentdocuments.mo
-share/locale/or/LC_MESSAGES/plasma_runner_sessions.mo
-share/locale/or/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/or/LC_MESSAGES/plasma_runner_webshortcuts.mo
-share/locale/or/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
-share/locale/or/LC_MESSAGES/soliduiserver5.mo
 share/locale/pa/LC_MESSAGES/freespacenotifier.mo
 share/locale/pa/LC_MESSAGES/kcm_translations.mo
 share/locale/pa/LC_MESSAGES/kcminit.mo
@@ -3069,6 +3022,7 @@ share/locale/pa/LC_MESSAGES/kio_desktop.mo
 share/locale/pa/LC_MESSAGES/klipper.mo
 share/locale/pa/LC_MESSAGES/krunner.mo
 share/locale/pa/LC_MESSAGES/ksmserver.mo
+share/locale/pa/LC_MESSAGES/libkicker.mo
 share/locale/pa/LC_MESSAGES/libkworkspace.mo
 share/locale/pa/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -3096,7 +3050,6 @@ share/locale/pa/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/pa/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/pa/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/pa/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/pa/LC_MESSAGES/plasma_engine_share.mo
 share/locale/pa/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/pa/LC_MESSAGES/plasma_engine_time.mo
 share/locale/pa/LC_MESSAGES/plasma_engine_weather.mo
@@ -3114,7 +3067,6 @@ share/locale/pa/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/pa/LC_MESSAGES/plasma_runner_services.mo
 share/locale/pa/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/pa/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/pa/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/pa/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/pa/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/pa/LC_MESSAGES/plasma_runner_windows.mo
@@ -3133,6 +3085,7 @@ share/locale/pl/LC_MESSAGES/kio_desktop.mo
 share/locale/pl/LC_MESSAGES/klipper.mo
 share/locale/pl/LC_MESSAGES/krunner.mo
 share/locale/pl/LC_MESSAGES/ksmserver.mo
+share/locale/pl/LC_MESSAGES/libkicker.mo
 share/locale/pl/LC_MESSAGES/libkworkspace.mo
 share/locale/pl/LC_MESSAGES/libnotificationmanager.mo
 share/locale/pl/LC_MESSAGES/phonon_kde_plugin.mo
@@ -3160,11 +3113,11 @@ share/locale/pl/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/pl/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/pl/LC_MESSAGES/plasma_engine_share.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_time.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_weather.mo
@@ -3183,7 +3136,6 @@ share/locale/pl/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_services.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/pl/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_windows.mo
@@ -3202,6 +3154,7 @@ share/locale/pt/LC_MESSAGES/kio_desktop.mo
 share/locale/pt/LC_MESSAGES/klipper.mo
 share/locale/pt/LC_MESSAGES/krunner.mo
 share/locale/pt/LC_MESSAGES/ksmserver.mo
+share/locale/pt/LC_MESSAGES/libkicker.mo
 share/locale/pt/LC_MESSAGES/libkworkspace.mo
 share/locale/pt/LC_MESSAGES/libnotificationmanager.mo
 share/locale/pt/LC_MESSAGES/phonon_kde_plugin.mo
@@ -3229,11 +3182,11 @@ share/locale/pt/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/pt/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/pt/LC_MESSAGES/plasma_engine_share.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_time.mo
 share/locale/pt/LC_MESSAGES/plasma_engine_weather.mo
@@ -3252,7 +3205,6 @@ share/locale/pt/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/pt/LC_MESSAGES/plasma_runner_services.mo
 share/locale/pt/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/pt/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/pt/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/pt/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/pt/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/pt/LC_MESSAGES/plasma_runner_windows.mo
@@ -3271,6 +3223,7 @@ share/locale/pt_BR/LC_MESSAGES/kio_desktop.mo
 share/locale/pt_BR/LC_MESSAGES/klipper.mo
 share/locale/pt_BR/LC_MESSAGES/krunner.mo
 share/locale/pt_BR/LC_MESSAGES/ksmserver.mo
+share/locale/pt_BR/LC_MESSAGES/libkicker.mo
 share/locale/pt_BR/LC_MESSAGES/libkworkspace.mo
 share/locale/pt_BR/LC_MESSAGES/libnotificationmanager.mo
 share/locale/pt_BR/LC_MESSAGES/phonon_kde_plugin.mo
@@ -3298,11 +3251,11 @@ share/locale/pt_BR/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/pt_BR/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/pt_BR/LC_MESSAGES/plasma_engine_share.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_time.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_engine_weather.mo
@@ -3321,7 +3274,6 @@ share/locale/pt_BR/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_services.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/pt_BR/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_windows.mo
@@ -3338,6 +3290,7 @@ share/locale/ro/LC_MESSAGES/kio5_applications.mo
 share/locale/ro/LC_MESSAGES/klipper.mo
 share/locale/ro/LC_MESSAGES/krunner.mo
 share/locale/ro/LC_MESSAGES/ksmserver.mo
+share/locale/ro/LC_MESSAGES/libkicker.mo
 share/locale/ro/LC_MESSAGES/libkworkspace.mo
 share/locale/ro/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -3363,7 +3316,6 @@ share/locale/ro/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/ro/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ro/LC_MESSAGES/plasma_engine_weather.mo
@@ -3379,7 +3331,6 @@ share/locale/ro/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/ro/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_windows.mo
@@ -3397,8 +3348,9 @@ share/locale/ru/LC_MESSAGES/kio_desktop.mo
 share/locale/ru/LC_MESSAGES/klipper.mo
 share/locale/ru/LC_MESSAGES/krunner.mo
 share/locale/ru/LC_MESSAGES/ksmserver.mo
-share/locale/ru/LC_MESSAGES/libnotificationmanager.mo
+share/locale/ru/LC_MESSAGES/libkicker.mo
 share/locale/ru/LC_MESSAGES/libkworkspace.mo
+share/locale/ru/LC_MESSAGES/libnotificationmanager.mo
 share/locale/ru/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3424,11 +3376,11 @@ share/locale/ru/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/ru/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/ru/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_weather.mo
@@ -3447,7 +3399,6 @@ share/locale/ru/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/ru/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_windows.mo
@@ -3507,6 +3458,7 @@ share/locale/sk/LC_MESSAGES/kio_desktop.mo
 share/locale/sk/LC_MESSAGES/klipper.mo
 share/locale/sk/LC_MESSAGES/krunner.mo
 share/locale/sk/LC_MESSAGES/ksmserver.mo
+share/locale/sk/LC_MESSAGES/libkicker.mo
 share/locale/sk/LC_MESSAGES/libkworkspace.mo
 share/locale/sk/LC_MESSAGES/libnotificationmanager.mo
 share/locale/sk/LC_MESSAGES/phonon_kde_plugin.mo
@@ -3534,11 +3486,11 @@ share/locale/sk/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/sk/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/sk/LC_MESSAGES/plasma_engine_share.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_weather.mo
@@ -3557,7 +3509,6 @@ share/locale/sk/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/sk/LC_MESSAGES/plasma_runner_services.mo
 share/locale/sk/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/sk/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/sk/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/sk/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/sk/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/sk/LC_MESSAGES/plasma_runner_windows.mo
@@ -3576,6 +3527,7 @@ share/locale/sl/LC_MESSAGES/kio_desktop.mo
 share/locale/sl/LC_MESSAGES/klipper.mo
 share/locale/sl/LC_MESSAGES/krunner.mo
 share/locale/sl/LC_MESSAGES/ksmserver.mo
+share/locale/sl/LC_MESSAGES/libkicker.mo
 share/locale/sl/LC_MESSAGES/libkworkspace.mo
 share/locale/sl/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -3606,7 +3558,6 @@ share/locale/sl/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/sl/LC_MESSAGES/plasma_engine_share.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sl/LC_MESSAGES/plasma_engine_weather.mo
@@ -3624,7 +3575,6 @@ share/locale/sl/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_services.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/sl/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_windows.mo
@@ -3659,7 +3609,6 @@ share/locale/sq/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/sq/LC_MESSAGES/plasma_runner_services.mo
 share/locale/sq/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/sq/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/sq/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/sq/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/sq/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
 share/locale/sq/LC_MESSAGES/soliduiserver5.mo
@@ -3672,6 +3621,7 @@ share/locale/sr/LC_MESSAGES/kio_desktop.mo
 share/locale/sr/LC_MESSAGES/klipper.mo
 share/locale/sr/LC_MESSAGES/krunner.mo
 share/locale/sr/LC_MESSAGES/ksmserver.mo
+share/locale/sr/LC_MESSAGES/libkicker.mo
 share/locale/sr/LC_MESSAGES/libkworkspace.mo
 share/locale/sr/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -3702,7 +3652,6 @@ share/locale/sr/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/sr/LC_MESSAGES/plasma_engine_share.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sr/LC_MESSAGES/plasma_engine_weather.mo
@@ -3720,7 +3669,6 @@ share/locale/sr/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/sr/LC_MESSAGES/plasma_runner_services.mo
 share/locale/sr/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/sr/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/sr/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/sr/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/sr/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/sr/LC_MESSAGES/plasma_runner_windows.mo
@@ -3739,6 +3687,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kio_desktop.mo
 share/locale/sr@ijekavian/LC_MESSAGES/klipper.mo
 share/locale/sr@ijekavian/LC_MESSAGES/krunner.mo
 share/locale/sr@ijekavian/LC_MESSAGES/ksmserver.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libkicker.mo
 share/locale/sr@ijekavian/LC_MESSAGES/libkworkspace.mo
 share/locale/sr@ijekavian/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -3769,7 +3718,6 @@ share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_share.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_engine_weather.mo
@@ -3787,7 +3735,6 @@ share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_services.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_windows.mo
@@ -3806,6 +3753,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kio_desktop.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/klipper.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/krunner.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/ksmserver.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libkicker.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkworkspace.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -3836,7 +3784,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_share.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_engine_weather.mo
@@ -3854,7 +3801,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_services.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_windows.mo
@@ -3873,6 +3819,7 @@ share/locale/sr@latin/LC_MESSAGES/kio_desktop.mo
 share/locale/sr@latin/LC_MESSAGES/klipper.mo
 share/locale/sr@latin/LC_MESSAGES/krunner.mo
 share/locale/sr@latin/LC_MESSAGES/ksmserver.mo
+share/locale/sr@latin/LC_MESSAGES/libkicker.mo
 share/locale/sr@latin/LC_MESSAGES/libkworkspace.mo
 share/locale/sr@latin/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -3903,7 +3850,6 @@ share/locale/sr@latin/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/sr@latin/LC_MESSAGES/plasma_engine_share.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_engine_weather.mo
@@ -3921,7 +3867,6 @@ share/locale/sr@latin/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_runner_services.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/sr@latin/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_runner_windows.mo
@@ -3940,6 +3885,7 @@ share/locale/sv/LC_MESSAGES/kio_desktop.mo
 share/locale/sv/LC_MESSAGES/klipper.mo
 share/locale/sv/LC_MESSAGES/krunner.mo
 share/locale/sv/LC_MESSAGES/ksmserver.mo
+share/locale/sv/LC_MESSAGES/libkicker.mo
 share/locale/sv/LC_MESSAGES/libkworkspace.mo
 share/locale/sv/LC_MESSAGES/libnotificationmanager.mo
 share/locale/sv/LC_MESSAGES/phonon_kde_plugin.mo
@@ -3967,11 +3913,11 @@ share/locale/sv/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/sv/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/sv/LC_MESSAGES/plasma_engine_share.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sv/LC_MESSAGES/plasma_engine_weather.mo
@@ -3990,7 +3936,6 @@ share/locale/sv/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_services.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/sv/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_windows.mo
@@ -4033,7 +3978,9 @@ share/locale/te/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
 share/locale/te/LC_MESSAGES/soliduiserver5.mo
 share/locale/tg/LC_MESSAGES/freespacenotifier.mo
 share/locale/tg/LC_MESSAGES/kcminit.mo
+share/locale/tg/LC_MESSAGES/kholidays_calendar_plugin.mo
 share/locale/tg/LC_MESSAGES/kio5_applications.mo
+share/locale/tg/LC_MESSAGES/kio_desktop.mo
 share/locale/tg/LC_MESSAGES/klipper.mo
 share/locale/tg/LC_MESSAGES/ksmserver.mo
 share/locale/tg/LC_MESSAGES/libkworkspace.mo
@@ -4041,15 +3988,30 @@ share/locale/tg/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.devicenotifier.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.lock_logout.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.panelspacer.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.cpu.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.diskactivity.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.diskusage.mo
+share/locale/tg/LC_MESSAGES/plasma_containmentactions_applauncher.mo
+share/locale/tg/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/tg/LC_MESSAGES/plasma_engine_applicationjobs.mo
+share/locale/tg/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/tg/LC_MESSAGES/plasma_engine_hotplug.mo
+share/locale/tg/LC_MESSAGES/plasma_engine_powermanagement.mo
+share/locale/tg/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
+share/locale/tg/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/tg/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/tg/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/tg/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/tg/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/tg/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/tg/LC_MESSAGES/plasma_runner_webshortcuts.mo
+share/locale/tg/LC_MESSAGES/plasma_wallpaper_org.kde.color.mo
 share/locale/tg/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
+share/locale/tg/LC_MESSAGES/plasmashell.mo
 share/locale/tg/LC_MESSAGES/soliduiserver5.mo
+share/locale/tg/LC_MESSAGES/systemmonitor.mo
 share/locale/th/LC_MESSAGES/freespacenotifier.mo
 share/locale/th/LC_MESSAGES/kcminit.mo
 share/locale/th/LC_MESSAGES/kio5_applications.mo
@@ -4067,7 +4029,6 @@ share/locale/th/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/th/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/th/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/th/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/th/LC_MESSAGES/plasma_engine_share.mo
 share/locale/th/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/th/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/th/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
@@ -4080,7 +4041,6 @@ share/locale/th/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/th/LC_MESSAGES/plasma_runner_services.mo
 share/locale/th/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/th/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/th/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/th/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/th/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/th/LC_MESSAGES/plasma_runner_windows.mo
@@ -4095,6 +4055,7 @@ share/locale/tr/LC_MESSAGES/kio_desktop.mo
 share/locale/tr/LC_MESSAGES/klipper.mo
 share/locale/tr/LC_MESSAGES/krunner.mo
 share/locale/tr/LC_MESSAGES/ksmserver.mo
+share/locale/tr/LC_MESSAGES/libkicker.mo
 share/locale/tr/LC_MESSAGES/libkworkspace.mo
 share/locale/tr/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -4124,7 +4085,6 @@ share/locale/tr/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/tr/LC_MESSAGES/plasma_engine_share.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_time.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_weather.mo
@@ -4142,7 +4102,6 @@ share/locale/tr/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_services.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/tr/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_windows.mo
@@ -4157,6 +4116,7 @@ share/locale/ug/LC_MESSAGES/kcminit.mo
 share/locale/ug/LC_MESSAGES/kio5_applications.mo
 share/locale/ug/LC_MESSAGES/klipper.mo
 share/locale/ug/LC_MESSAGES/ksmserver.mo
+share/locale/ug/LC_MESSAGES/libkicker.mo
 share/locale/ug/LC_MESSAGES/libkworkspace.mo
 share/locale/ug/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/ug/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -4170,7 +4130,6 @@ share/locale/ug/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/ug/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ug/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ug/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/ug/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ug/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ug/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ug/LC_MESSAGES/plasma_runner_activities.mo
@@ -4184,7 +4143,6 @@ share/locale/ug/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ug/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ug/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ug/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/ug/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ug/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ug/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ug/LC_MESSAGES/plasma_runner_windows.mo
@@ -4199,6 +4157,7 @@ share/locale/uk/LC_MESSAGES/kio_desktop.mo
 share/locale/uk/LC_MESSAGES/klipper.mo
 share/locale/uk/LC_MESSAGES/krunner.mo
 share/locale/uk/LC_MESSAGES/ksmserver.mo
+share/locale/uk/LC_MESSAGES/libkicker.mo
 share/locale/uk/LC_MESSAGES/libkworkspace.mo
 share/locale/uk/LC_MESSAGES/libnotificationmanager.mo
 share/locale/uk/LC_MESSAGES/phonon_kde_plugin.mo
@@ -4226,11 +4185,11 @@ share/locale/uk/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/uk/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/uk/LC_MESSAGES/plasma_engine_share.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_time.mo
 share/locale/uk/LC_MESSAGES/plasma_engine_weather.mo
@@ -4249,7 +4208,6 @@ share/locale/uk/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_services.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/uk/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_windows.mo
@@ -4294,7 +4252,6 @@ share/locale/wa/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/wa/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/wa/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/wa/LC_MESSAGES/plasma_engine_notifications.mo
-share/locale/wa/LC_MESSAGES/plasma_engine_share.mo
 share/locale/wa/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/wa/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/wa/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
@@ -4307,7 +4264,6 @@ share/locale/wa/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/wa/LC_MESSAGES/plasma_runner_services.mo
 share/locale/wa/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/wa/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/wa/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/wa/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/wa/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/wa/LC_MESSAGES/plasma_runner_windows.mo
@@ -4324,6 +4280,7 @@ share/locale/zh_CN/LC_MESSAGES/kio_desktop.mo
 share/locale/zh_CN/LC_MESSAGES/klipper.mo
 share/locale/zh_CN/LC_MESSAGES/krunner.mo
 share/locale/zh_CN/LC_MESSAGES/ksmserver.mo
+share/locale/zh_CN/LC_MESSAGES/libkicker.mo
 share/locale/zh_CN/LC_MESSAGES/libkworkspace.mo
 share/locale/zh_CN/LC_MESSAGES/libnotificationmanager.mo
 share/locale/zh_CN/LC_MESSAGES/phonon_kde_plugin.mo
@@ -4351,11 +4308,11 @@ share/locale/zh_CN/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/zh_CN/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/zh_CN/LC_MESSAGES/plasma_engine_share.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_time.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_engine_weather.mo
@@ -4374,7 +4331,6 @@ share/locale/zh_CN/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_services.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/zh_CN/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_windows.mo
@@ -4393,6 +4349,7 @@ share/locale/zh_TW/LC_MESSAGES/kio_desktop.mo
 share/locale/zh_TW/LC_MESSAGES/klipper.mo
 share/locale/zh_TW/LC_MESSAGES/krunner.mo
 share/locale/zh_TW/LC_MESSAGES/ksmserver.mo
+share/locale/zh_TW/LC_MESSAGES/libkicker.mo
 share/locale/zh_TW/LC_MESSAGES/libkworkspace.mo
 share/locale/zh_TW/LC_MESSAGES/libnotificationmanager.mo
 share/locale/zh_TW/LC_MESSAGES/phonon_kde_plugin.mo
@@ -4420,11 +4377,11 @@ share/locale/zh_TW/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_powermanagement.mo
-share/locale/zh_TW/LC_MESSAGES/plasma_engine_share.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_time.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_weather.mo
@@ -4443,7 +4400,6 @@ share/locale/zh_TW/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_services.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_shell.mo
-share/locale/zh_TW/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_windows.mo
@@ -4706,31 +4662,8 @@ share/plasma/services/org.kde.places.operations
 share/plasma/services/org.kde.plasma.clipboard.operations
 share/plasma/services/packagekit.operations
 share/plasma/services/powermanagementservice.operations
-share/plasma/services/share.operations
 share/plasma/services/soliddevice.operations
 share/plasma/services/statusnotifieritem.operations
-share/plasma/shareprovider/im9/contents/code/main.js
-share/plasma/shareprovider/im9/metadata.desktop
-share/plasma/shareprovider/imgsusepasteorg/contents/code/main.js
-share/plasma/shareprovider/imgsusepasteorg/metadata.desktop
-share/plasma/shareprovider/imgur/contents/code/main.js
-share/plasma/shareprovider/imgur/metadata.desktop
-share/plasma/shareprovider/kde/contents/code/main.js
-share/plasma/shareprovider/kde/metadata.desktop
-share/plasma/shareprovider/pastebincom/contents/code/main.js
-share/plasma/shareprovider/pastebincom/metadata.desktop
-share/plasma/shareprovider/pasteopensuseorg/contents/code/main.js
-share/plasma/shareprovider/pasteopensuseorg/metadata.desktop
-share/plasma/shareprovider/pasteubuntucom/contents/code/main.js
-share/plasma/shareprovider/pasteubuntucom/metadata.desktop
-share/plasma/shareprovider/privatepastecom/contents/code/main.js
-share/plasma/shareprovider/privatepastecom/metadata.desktop
-share/plasma/shareprovider/simplestimagehosting/contents/code/main.js
-share/plasma/shareprovider/simplestimagehosting/metadata.desktop
-share/plasma/shareprovider/wklej/contents/code/main.js
-share/plasma/shareprovider/wklej/metadata.desktop
-share/plasma/shareprovider/wstaw/contents/code/main.js
-share/plasma/shareprovider/wstaw/metadata.desktop
 share/plasma/wallpapers/org.kde.color/contents/config/main.xml
 share/plasma/wallpapers/org.kde.color/contents/ui/config.qml
 share/plasma/wallpapers/org.kde.color/contents/ui/main.qml
@@ -4754,6 +4687,9 @@ share/plasma/wallpapers/org.kde.slideshow/contents/ui/config.qml
 share/plasma/wallpapers/org.kde.slideshow/contents/ui/main.qml
 share/plasma/wallpapers/org.kde.slideshow/metadata.desktop
 share/plasma/wallpapers/org.kde.slideshow/metadata.json
+share/qlogging-categories5/klipper.categories
+share/qlogging-categories5/libnotificationmanager.categories
+share/qlogging-categories5/plasma-workspace.categories
 share/sddm/themes/breeze/Background.qml
 share/sddm/themes/breeze/BreezeMenuStyle.qml
 share/sddm/themes/breeze/KeyboardButton.qml

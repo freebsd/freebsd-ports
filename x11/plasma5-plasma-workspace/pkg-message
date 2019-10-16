@@ -3,7 +3,7 @@
   message: <<EOM
 To start plasma5 via x11/startx add the following to your .xinitrc file:
 
-    exec ck-launch-session startkde
+    exec ck-launch-session startplasma-x11
 EOM
 }
 ]

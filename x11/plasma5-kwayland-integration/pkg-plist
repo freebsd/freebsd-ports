@@ -1,3 +1,4 @@
-etc/xdg/kwindowsystem.kwayland.categories
+%%QT_PLUGINDIR%%/kf5/kguiaddons/kmodifierkey/kmodifierkey_wayland.so
 %%QT_PLUGINDIR%%/kf5/org.kde.kidletime.platforms/KF5IdleTimeKWaylandPlugin.so
 %%QT_PLUGINDIR%%/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemKWaylandPlugin.so
+share/qlogging-categories5/kwindowsystem.kwayland.categories

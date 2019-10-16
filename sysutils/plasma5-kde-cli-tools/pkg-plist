@@ -17,6 +17,7 @@ man/ca/man1/kdesu.1.gz
 man/de/man1/kdesu.1.gz
 man/es/man1/kdesu.1.gz
 man/et/man1/kdesu.1.gz
+man/id/man1/kdesu.1.gz
 man/it/man1/kdesu.1.gz
 man/man1/kdesu.1.gz
 man/nb/man1/kdesu.1.gz
@@ -46,6 +47,10 @@ share/doc/HTML/es/kdesu/index.cache.bz2
 share/doc/HTML/es/kdesu/index.docbook
 share/doc/HTML/et/kdesu/index.cache.bz2
 share/doc/HTML/et/kdesu/index.docbook
+share/doc/HTML/id/kcontrol5/filetypes/index.cache.bz2
+share/doc/HTML/id/kcontrol5/filetypes/index.docbook
+share/doc/HTML/id/kdesu/index.cache.bz2
+share/doc/HTML/id/kdesu/index.docbook
 share/doc/HTML/it/kcontrol5/filetypes/index.cache.bz2
 share/doc/HTML/it/kcontrol5/filetypes/index.docbook
 share/doc/HTML/it/kdesu/index.cache.bz2
@@ -496,12 +501,6 @@ share/locale/oc/LC_MESSAGES/kioclient5.mo
 share/locale/oc/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/oc/LC_MESSAGES/kstart5.mo
 share/locale/oc/LC_MESSAGES/ktraderclient5.mo
-share/locale/or/LC_MESSAGES/kcmshell5.mo
-share/locale/or/LC_MESSAGES/kdesu5.mo
-share/locale/or/LC_MESSAGES/kioclient5.mo
-share/locale/or/LC_MESSAGES/kmimetypefinder5.mo
-share/locale/or/LC_MESSAGES/kstart5.mo
-share/locale/or/LC_MESSAGES/ktraderclient5.mo
 share/locale/pa/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/pa/LC_MESSAGES/kcmshell5.mo
 share/locale/pa/LC_MESSAGES/kdesu5.mo

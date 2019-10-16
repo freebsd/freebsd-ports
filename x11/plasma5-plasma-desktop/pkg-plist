@@ -8,7 +8,6 @@ bin/knetattach
 bin/krdb
 bin/lookandfeeltool
 bin/solid-action-desktop-gen
-etc/xdg/plasma-desktop.categories
 lib/kconf_update_bin/krdb_clearlibrarypath
 lib/libexec/kauth/fontinst
 lib/libexec/kauth/fontinst_helper
@@ -42,7 +41,6 @@ lib/libkfontinstui.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kcm_keyboard.so
 %%QT_PLUGINDIR%%/kcm_keys.so
 %%QT_PLUGINDIR%%/kcm_mouse.so
-%%QT_PLUGINDIR%%/kcm_phonon.so
 %%QT_PLUGINDIR%%/kcm_plasmasearch.so
 %%QT_PLUGINDIR%%/kcm_smserver.so
 %%QT_PLUGINDIR%%/kcm_solid_actions.so
@@ -75,8 +73,6 @@ lib/libkfontinstui.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/activities/settings/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/activityswitcher/libactivityswitcherextensionplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/activityswitcher/qmldir
-%%QT_QMLDIR%%/org/kde/plasma/private/kicker/libkickerplugin.so
-%%QT_QMLDIR%%/org/kde/plasma/private/kicker/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/private/kimpanel/libkimpanelplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/private/kimpanel/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/private/pager/libpagerplugin.so
@@ -94,15 +90,6 @@ lib/libkfontinstui.so.%%KDE_PLASMA_VERSION%%
 share/applications/org.kde.kcolorschemeeditor.desktop
 share/applications/org.kde.kfontview.desktop
 share/applications/org.kde.knetattach.desktop
-share/color-schemes/Honeycomb.colors
-share/color-schemes/Norway.colors
-share/color-schemes/ObsidianCoast.colors
-share/color-schemes/Oxygen.colors
-share/color-schemes/OxygenCold.colors
-share/color-schemes/Steel.colors
-share/color-schemes/WontonSoup.colors
-share/color-schemes/Zion.colors
-share/color-schemes/ZionReversed.colors
 %%SYNAPTICS%%share/config.kcfg/touchpad.kcfg
 %%SYNAPTICS%%share/config.kcfg/touchpaddaemon.kcfg
 %%SYNAPTICS%%share/dbus-1/interfaces/org.kde.touchpad.xml
@@ -172,8 +159,6 @@ share/doc/HTML/ca/kcontrol/mouse/index.docbook
 share/doc/HTML/ca/kcontrol/paths/index.cache.bz2
 share/doc/HTML/ca/kcontrol/paths/index.docbook
 share/doc/HTML/ca/kcontrol/paths/paths.png
-share/doc/HTML/ca/kcontrol/phonon/index.cache.bz2
-share/doc/HTML/ca/kcontrol/phonon/index.docbook
 share/doc/HTML/ca/kcontrol/solid-actions/add-action.png
 share/doc/HTML/ca/kcontrol/solid-actions/edit-action.png
 share/doc/HTML/ca/kcontrol/solid-actions/index.cache.bz2
@@ -259,8 +244,6 @@ share/doc/HTML/de/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/de/kcontrol/mouse/index.docbook
 share/doc/HTML/de/kcontrol/paths/index.cache.bz2
 share/doc/HTML/de/kcontrol/paths/index.docbook
-share/doc/HTML/de/kcontrol/phonon/index.cache.bz2
-share/doc/HTML/de/kcontrol/phonon/index.docbook
 share/doc/HTML/de/kcontrol/solid-actions/index.cache.bz2
 share/doc/HTML/de/kcontrol/solid-actions/index.docbook
 share/doc/HTML/de/kcontrol/solid-device-automounter/index.cache.bz2
@@ -340,8 +323,6 @@ share/doc/HTML/en/kcontrol/mouse/index.docbook
 share/doc/HTML/en/kcontrol/paths/index.cache.bz2
 share/doc/HTML/en/kcontrol/paths/index.docbook
 share/doc/HTML/en/kcontrol/paths/paths.png
-share/doc/HTML/en/kcontrol/phonon/index.cache.bz2
-share/doc/HTML/en/kcontrol/phonon/index.docbook
 share/doc/HTML/en/kcontrol/solid-actions/add-action.png
 share/doc/HTML/en/kcontrol/solid-actions/edit-action.png
 share/doc/HTML/en/kcontrol/solid-actions/index.cache.bz2
@@ -420,8 +401,6 @@ share/doc/HTML/es/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/es/kcontrol/mouse/index.docbook
 share/doc/HTML/es/kcontrol/paths/index.cache.bz2
 share/doc/HTML/es/kcontrol/paths/index.docbook
-share/doc/HTML/es/kcontrol/phonon/index.cache.bz2
-share/doc/HTML/es/kcontrol/phonon/index.docbook
 share/doc/HTML/es/kcontrol/solid-device-automounter/index.cache.bz2
 share/doc/HTML/es/kcontrol/solid-device-automounter/index.docbook
 share/doc/HTML/es/kfontview/index.cache.bz2
@@ -430,12 +409,72 @@ share/doc/HTML/es/knetattach/index.cache.bz2
 share/doc/HTML/es/knetattach/index.docbook
 share/doc/HTML/et/kcontrol/clock/index.cache.bz2
 share/doc/HTML/et/kcontrol/clock/index.docbook
-share/doc/HTML/et/kcontrol/phonon/index.cache.bz2
-share/doc/HTML/et/kcontrol/phonon/index.docbook
 share/doc/HTML/et/kcontrol/solid-actions/index.cache.bz2
 share/doc/HTML/et/kcontrol/solid-actions/index.docbook
 share/doc/HTML/et/kcontrol/solid-device-automounter/index.cache.bz2
 share/doc/HTML/et/kcontrol/solid-device-automounter/index.docbook
+share/doc/HTML/id/kcontrol/autostart/index.cache.bz2
+share/doc/HTML/id/kcontrol/autostart/index.docbook
+share/doc/HTML/id/kcontrol/baloo/index.cache.bz2
+share/doc/HTML/id/kcontrol/baloo/index.docbook
+share/doc/HTML/id/kcontrol/clock/index.cache.bz2
+share/doc/HTML/id/kcontrol/clock/index.docbook
+share/doc/HTML/id/kcontrol/colors/index.cache.bz2
+share/doc/HTML/id/kcontrol/colors/index.docbook
+share/doc/HTML/id/kcontrol/componentchooser/index.cache.bz2
+share/doc/HTML/id/kcontrol/componentchooser/index.docbook
+share/doc/HTML/id/kcontrol/cursortheme/index.cache.bz2
+share/doc/HTML/id/kcontrol/cursortheme/index.docbook
+share/doc/HTML/id/kcontrol/desktopthemedetails/index.cache.bz2
+share/doc/HTML/id/kcontrol/desktopthemedetails/index.docbook
+share/doc/HTML/id/kcontrol/emoticons/index.cache.bz2
+share/doc/HTML/id/kcontrol/emoticons/index.docbook
+share/doc/HTML/id/kcontrol/fontinst/index.cache.bz2
+share/doc/HTML/id/kcontrol/fontinst/index.docbook
+share/doc/HTML/id/kcontrol/fonts/index.cache.bz2
+share/doc/HTML/id/kcontrol/fonts/index.docbook
+share/doc/HTML/id/kcontrol/formats/index.cache.bz2
+share/doc/HTML/id/kcontrol/formats/index.docbook
+share/doc/HTML/id/kcontrol/icons/index.cache.bz2
+share/doc/HTML/id/kcontrol/icons/index.docbook
+share/doc/HTML/id/kcontrol/joystick/index.cache.bz2
+share/doc/HTML/id/kcontrol/joystick/index.docbook
+share/doc/HTML/id/kcontrol/kcmaccess/index.cache.bz2
+share/doc/HTML/id/kcontrol/kcmaccess/index.docbook
+share/doc/HTML/id/kcontrol/kcmlaunchfeedback/index.cache.bz2
+share/doc/HTML/id/kcontrol/kcmlaunchfeedback/index.docbook
+share/doc/HTML/id/kcontrol/kcmnotify/index.cache.bz2
+share/doc/HTML/id/kcontrol/kcmnotify/index.docbook
+share/doc/HTML/id/kcontrol/kcmsmserver/index.cache.bz2
+share/doc/HTML/id/kcontrol/kcmsmserver/index.docbook
+share/doc/HTML/id/kcontrol/kcmstyle/index.cache.bz2
+share/doc/HTML/id/kcontrol/kcmstyle/index.docbook
+share/doc/HTML/id/kcontrol/kded/index.cache.bz2
+share/doc/HTML/id/kcontrol/kded/index.docbook
+share/doc/HTML/id/kcontrol/keyboard/index.cache.bz2
+share/doc/HTML/id/kcontrol/keyboard/index.docbook
+share/doc/HTML/id/kcontrol/keys/index.cache.bz2
+share/doc/HTML/id/kcontrol/keys/index.docbook
+share/doc/HTML/id/kcontrol/mouse/index.cache.bz2
+share/doc/HTML/id/kcontrol/mouse/index.docbook
+share/doc/HTML/id/kcontrol/paths/index.cache.bz2
+share/doc/HTML/id/kcontrol/paths/index.docbook
+share/doc/HTML/id/kcontrol/solid-actions/index.cache.bz2
+share/doc/HTML/id/kcontrol/solid-actions/index.docbook
+share/doc/HTML/id/kcontrol/solid-device-automounter/index.cache.bz2
+share/doc/HTML/id/kcontrol/solid-device-automounter/index.docbook
+share/doc/HTML/id/kcontrol/spellchecking/index.cache.bz2
+share/doc/HTML/id/kcontrol/spellchecking/index.docbook
+share/doc/HTML/id/kcontrol/splashscreen/index.cache.bz2
+share/doc/HTML/id/kcontrol/splashscreen/index.docbook
+share/doc/HTML/id/kcontrol/workspaceoptions/index.cache.bz2
+share/doc/HTML/id/kcontrol/workspaceoptions/index.docbook
+share/doc/HTML/id/kfontview/index.cache.bz2
+share/doc/HTML/id/kfontview/index.docbook
+share/doc/HTML/id/knetattach/index.cache.bz2
+share/doc/HTML/id/knetattach/index.docbook
+share/doc/HTML/id/plasma-desktop/index.cache.bz2
+share/doc/HTML/id/plasma-desktop/index.docbook
 share/doc/HTML/it/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/it/kcontrol/autostart/index.docbook
 share/doc/HTML/it/kcontrol/baloo/index.cache.bz2
@@ -482,8 +521,6 @@ share/doc/HTML/it/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/it/kcontrol/mouse/index.docbook
 share/doc/HTML/it/kcontrol/paths/index.cache.bz2
 share/doc/HTML/it/kcontrol/paths/index.docbook
-share/doc/HTML/it/kcontrol/phonon/index.cache.bz2
-share/doc/HTML/it/kcontrol/phonon/index.docbook
 share/doc/HTML/it/kcontrol/solid-actions/index.cache.bz2
 share/doc/HTML/it/kcontrol/solid-actions/index.docbook
 share/doc/HTML/it/kcontrol/solid-device-automounter/index.cache.bz2
@@ -546,8 +583,6 @@ share/doc/HTML/nl/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/nl/kcontrol/mouse/index.docbook
 share/doc/HTML/nl/kcontrol/paths/index.cache.bz2
 share/doc/HTML/nl/kcontrol/paths/index.docbook
-share/doc/HTML/nl/kcontrol/phonon/index.cache.bz2
-share/doc/HTML/nl/kcontrol/phonon/index.docbook
 share/doc/HTML/nl/kcontrol/solid-actions/index.cache.bz2
 share/doc/HTML/nl/kcontrol/solid-actions/index.docbook
 share/doc/HTML/nl/kcontrol/solid-device-automounter/index.cache.bz2
@@ -608,8 +643,6 @@ share/doc/HTML/pt/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/pt/kcontrol/mouse/index.docbook
 share/doc/HTML/pt/kcontrol/paths/index.cache.bz2
 share/doc/HTML/pt/kcontrol/paths/index.docbook
-share/doc/HTML/pt/kcontrol/phonon/index.cache.bz2
-share/doc/HTML/pt/kcontrol/phonon/index.docbook
 share/doc/HTML/pt/kcontrol/solid-actions/index.cache.bz2
 share/doc/HTML/pt/kcontrol/solid-actions/index.docbook
 share/doc/HTML/pt/kcontrol/solid-device-automounter/index.cache.bz2
@@ -679,8 +712,6 @@ share/doc/HTML/pt_BR/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/mouse/index.docbook
 share/doc/HTML/pt_BR/kcontrol/paths/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/paths/index.docbook
-share/doc/HTML/pt_BR/kcontrol/phonon/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol/phonon/index.docbook
 share/doc/HTML/pt_BR/kcontrol/solid-actions/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/solid-actions/index.docbook
 share/doc/HTML/pt_BR/kcontrol/solid-device-automounter/index.cache.bz2
@@ -767,8 +798,6 @@ share/doc/HTML/ru/kcontrol/mouse/index.docbook
 share/doc/HTML/ru/kcontrol/paths/index.cache.bz2
 share/doc/HTML/ru/kcontrol/paths/index.docbook
 share/doc/HTML/ru/kcontrol/paths/paths.png
-share/doc/HTML/ru/kcontrol/phonon/index.cache.bz2
-share/doc/HTML/ru/kcontrol/phonon/index.docbook
 share/doc/HTML/ru/kcontrol/solid-actions/add-action.png
 share/doc/HTML/ru/kcontrol/solid-actions/edit-action.png
 share/doc/HTML/ru/kcontrol/solid-actions/index.cache.bz2
@@ -868,8 +897,6 @@ share/doc/HTML/sv/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/sv/kcontrol/mouse/index.docbook
 share/doc/HTML/sv/kcontrol/paths/index.cache.bz2
 share/doc/HTML/sv/kcontrol/paths/index.docbook
-share/doc/HTML/sv/kcontrol/phonon/index.cache.bz2
-share/doc/HTML/sv/kcontrol/phonon/index.docbook
 share/doc/HTML/sv/kcontrol/solid-actions/index.cache.bz2
 share/doc/HTML/sv/kcontrol/solid-actions/index.docbook
 share/doc/HTML/sv/kcontrol/solid-device-automounter/index.cache.bz2
@@ -878,6 +905,8 @@ share/doc/HTML/sv/kcontrol/spellchecking/index.cache.bz2
 share/doc/HTML/sv/kcontrol/spellchecking/index.docbook
 share/doc/HTML/sv/kcontrol/splashscreen/index.cache.bz2
 share/doc/HTML/sv/kcontrol/splashscreen/index.docbook
+share/doc/HTML/sv/kcontrol/workspaceoptions/index.cache.bz2
+share/doc/HTML/sv/kcontrol/workspaceoptions/index.docbook
 share/doc/HTML/sv/kfontview/index.cache.bz2
 share/doc/HTML/sv/kfontview/index.docbook
 share/doc/HTML/sv/knetattach/index.cache.bz2
@@ -935,8 +964,6 @@ share/doc/HTML/uk/kcontrol/mouse/index.docbook
 share/doc/HTML/uk/kcontrol/paths/index.cache.bz2
 share/doc/HTML/uk/kcontrol/paths/index.docbook
 share/doc/HTML/uk/kcontrol/paths/paths.png
-share/doc/HTML/uk/kcontrol/phonon/index.cache.bz2
-share/doc/HTML/uk/kcontrol/phonon/index.docbook
 share/doc/HTML/uk/kcontrol/solid-actions/add-action.png
 share/doc/HTML/uk/kcontrol/solid-actions/edit-action.png
 share/doc/HTML/uk/kcontrol/solid-actions/index.cache.bz2
@@ -946,6 +973,7 @@ share/doc/HTML/uk/kcontrol/solid-device-automounter/index.cache.bz2
 share/doc/HTML/uk/kcontrol/solid-device-automounter/index.docbook
 share/doc/HTML/uk/kcontrol/spellchecking/index.cache.bz2
 share/doc/HTML/uk/kcontrol/spellchecking/index.docbook
+share/doc/HTML/uk/kcontrol/splashscreen/get-new-theme.png
 share/doc/HTML/uk/kcontrol/splashscreen/index.cache.bz2
 share/doc/HTML/uk/kcontrol/splashscreen/index.docbook
 share/doc/HTML/uk/kcontrol/splashscreen/splash-main.png
@@ -984,7 +1012,6 @@ share/kcm_componentchooser/kcm_browser.desktop
 share/kcm_componentchooser/kcm_filemanager.desktop
 share/kcm_componentchooser/kcm_kemail.desktop
 share/kcm_componentchooser/kcm_terminal.desktop
-share/kcm_phonon/listview-background.png
 share/kcmkeyboard/pics/epo.png
 share/kcmkeys/kde3.kksrc
 share/kcmkeys/kde4.kksrc
@@ -1025,19 +1052,14 @@ share/kdisplay/app-defaults/Xpdf.ad
 share/kf5/kactivitymanagerd/workspace/settings/qml/activitiesTab/ActivitiesView.qml
 share/kf5/kactivitymanagerd/workspace/settings/qml/activitiesTab/main.qml
 share/kf5/kactivitymanagerd/workspace/settings/qml/activityDialog/GeneralTab.qml
-share/kf5/kactivitymanagerd/workspace/settings/qml/activityDialog/OtherTab.qml
-share/kf5/kactivitymanagerd/workspace/settings/qml/activityDialog/components/DialogButtons.qml
-share/kf5/kactivitymanagerd/workspace/settings/qml/activityDialog/components/IconChooser.qml
-share/kf5/kactivitymanagerd/workspace/settings/qml/activityDialog/components/LabeledTextField.qml
-share/kf5/kactivitymanagerd/workspace/settings/qml/activityDialog/components/ShortcutChooser.qml
 share/kf5/kactivitymanagerd/workspace/settings/qml/privacyTab/BlacklistApplicationView.qml
 share/kfontinst/icons/hicolor/16x16/actions/addfont.png
-share/kfontinst/icons/hicolor/16x16/actions/disablefont.png
-share/kfontinst/icons/hicolor/16x16/actions/enablefont.png
+share/kfontinst/icons/hicolor/16x16/actions/font-disable.png
+share/kfontinst/icons/hicolor/16x16/actions/font-enable.png
 share/kfontinst/icons/hicolor/16x16/actions/fontstatus.png
 share/kfontinst/icons/hicolor/22x22/actions/addfont.png
-share/kfontinst/icons/hicolor/22x22/actions/disablefont.png
-share/kfontinst/icons/hicolor/22x22/actions/enablefont.png
+share/kfontinst/icons/hicolor/22x22/actions/font-disable.png
+share/kfontinst/icons/hicolor/22x22/actions/font-enable.png
 share/kfontinst/icons/hicolor/22x22/actions/fontstatus.png
 share/knotifications5/kaccess.notifyrc
 %%SYNAPTICS%%share/knotifications5/kcm_touchpad.notifyrc
@@ -1121,7 +1143,6 @@ share/kservices5/kcm_launchfeedback.desktop
 share/kservices5/kcm_lookandfeel.desktop
 share/kservices5/kcm_nightcolor.desktop
 share/kservices5/kcm_notifications.desktop
-share/kservices5/kcm_phonon.desktop
 share/kservices5/kcm_plasmasearch.desktop
 share/kservices5/kcm_splashscreen.desktop
 %%SYNAPTICS%%share/kservices5/kcm_touchpad.desktop
@@ -1197,7 +1218,6 @@ share/locale/ar/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ar/LC_MESSAGES/kcm5_icons.mo
 share/locale/ar/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ar/LC_MESSAGES/kcm5_kded.mo
-share/locale/ar/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ar/LC_MESSAGES/kcm_activities5.mo
 share/locale/ar/LC_MESSAGES/kcm_autostart.mo
 share/locale/ar/LC_MESSAGES/kcm_colors.mo
@@ -1242,13 +1262,25 @@ share/locale/ar/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
 share/locale/ar/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ar/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/as/LC_MESSAGES/kcmaccess.mo
+share/locale/ast/LC_MESSAGES/kcm5_componentchooser.mo
+share/locale/ast/LC_MESSAGES/kcm5_device_automounter.mo
+share/locale/ast/LC_MESSAGES/kcm_notifications.mo
+share/locale/ast/LC_MESSAGES/kcm_splashscreen.mo
+share/locale/ast/LC_MESSAGES/kcm_standard_actions.mo
+share/locale/ast/LC_MESSAGES/kcm_workspace.mo
+share/locale/ast/LC_MESSAGES/kcmkclock.mo
+share/locale/ast/LC_MESSAGES/kcmkeyboard.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.panel.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.minimizeall.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/be/LC_MESSAGES/kaccess.mo
 share/locale/be/LC_MESSAGES/kcm5_componentchooser.mo
 share/locale/be/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/be/LC_MESSAGES/kcm5_icons.mo
 share/locale/be/LC_MESSAGES/kcm5_joystick.mo
 share/locale/be/LC_MESSAGES/kcm5_kded.mo
-share/locale/be/LC_MESSAGES/kcm5_phonon.mo
 share/locale/be/LC_MESSAGES/kcm_colors.mo
 share/locale/be/LC_MESSAGES/kcm_cursortheme.mo
 share/locale/be/LC_MESSAGES/kcm_desktoppaths.mo
@@ -1271,7 +1303,6 @@ share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/be@latin/LC_MESSAGES/kcm5_icons.mo
-share/locale/be@latin/LC_MESSAGES/kcm5_phonon.mo
 share/locale/be@latin/LC_MESSAGES/kcm_autostart.mo
 share/locale/be@latin/LC_MESSAGES/kcm_colors.mo
 share/locale/be@latin/LC_MESSAGES/kcm_desktoppaths.mo
@@ -1293,7 +1324,6 @@ share/locale/bg/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/bg/LC_MESSAGES/kcm5_icons.mo
 share/locale/bg/LC_MESSAGES/kcm5_joystick.mo
 share/locale/bg/LC_MESSAGES/kcm5_kded.mo
-share/locale/bg/LC_MESSAGES/kcm5_phonon.mo
 share/locale/bg/LC_MESSAGES/kcm_autostart.mo
 share/locale/bg/LC_MESSAGES/kcm_colors.mo
 share/locale/bg/LC_MESSAGES/kcm_cursortheme.mo
@@ -1324,7 +1354,6 @@ share/locale/bn/LC_MESSAGES/kaccess.mo
 share/locale/bn/LC_MESSAGES/kcm5_componentchooser.mo
 share/locale/bn/LC_MESSAGES/kcm5_icons.mo
 share/locale/bn/LC_MESSAGES/kcm5_kded.mo
-share/locale/bn/LC_MESSAGES/kcm5_phonon.mo
 share/locale/bn/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/bn/LC_MESSAGES/kcm_fonts.mo
 share/locale/bn/LC_MESSAGES/kcmaccess.mo
@@ -1338,7 +1367,6 @@ share/locale/bn/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/bn_IN/LC_MESSAGES/kaccess.mo
 share/locale/bn_IN/LC_MESSAGES/kcm5_icons.mo
 share/locale/bn_IN/LC_MESSAGES/kcm5_kded.mo
-share/locale/bn_IN/LC_MESSAGES/kcm5_phonon.mo
 share/locale/bn_IN/LC_MESSAGES/kcm_autostart.mo
 share/locale/bn_IN/LC_MESSAGES/kcm_colors.mo
 share/locale/bn_IN/LC_MESSAGES/kcm_desktoppaths.mo
@@ -1388,7 +1416,6 @@ share/locale/bs/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/bs/LC_MESSAGES/kcm5_icons.mo
 share/locale/bs/LC_MESSAGES/kcm5_joystick.mo
 share/locale/bs/LC_MESSAGES/kcm5_kded.mo
-share/locale/bs/LC_MESSAGES/kcm5_phonon.mo
 share/locale/bs/LC_MESSAGES/kcm_autostart.mo
 share/locale/bs/LC_MESSAGES/kcm_colors.mo
 share/locale/bs/LC_MESSAGES/kcm_cursortheme.mo
@@ -1437,7 +1464,6 @@ share/locale/ca/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ca/LC_MESSAGES/kcm5_icons.mo
 share/locale/ca/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ca/LC_MESSAGES/kcm5_kded.mo
-share/locale/ca/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ca/LC_MESSAGES/kcm_activities5.mo
 share/locale/ca/LC_MESSAGES/kcm_autostart.mo
 share/locale/ca/LC_MESSAGES/kcm_colors.mo
@@ -1495,7 +1521,6 @@ share/locale/ca@valencia/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm5_icons.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm5_kded.mo
-share/locale/ca@valencia/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_activities5.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_autostart.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_colors.mo
@@ -1553,7 +1578,6 @@ share/locale/cs/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/cs/LC_MESSAGES/kcm5_icons.mo
 share/locale/cs/LC_MESSAGES/kcm5_joystick.mo
 share/locale/cs/LC_MESSAGES/kcm5_kded.mo
-share/locale/cs/LC_MESSAGES/kcm5_phonon.mo
 share/locale/cs/LC_MESSAGES/kcm_activities5.mo
 share/locale/cs/LC_MESSAGES/kcm_autostart.mo
 share/locale/cs/LC_MESSAGES/kcm_colors.mo
@@ -1608,7 +1632,6 @@ share/locale/csb/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/csb/LC_MESSAGES/kcm5_icons.mo
 share/locale/csb/LC_MESSAGES/kcm5_joystick.mo
 share/locale/csb/LC_MESSAGES/kcm5_kded.mo
-share/locale/csb/LC_MESSAGES/kcm5_phonon.mo
 share/locale/csb/LC_MESSAGES/kcm_colors.mo
 share/locale/csb/LC_MESSAGES/kcm_fonts.mo
 share/locale/csb/LC_MESSAGES/kcm_launchfeedback.mo
@@ -1657,7 +1680,6 @@ share/locale/da/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/da/LC_MESSAGES/kcm5_icons.mo
 share/locale/da/LC_MESSAGES/kcm5_joystick.mo
 share/locale/da/LC_MESSAGES/kcm5_kded.mo
-share/locale/da/LC_MESSAGES/kcm5_phonon.mo
 share/locale/da/LC_MESSAGES/kcm_activities5.mo
 share/locale/da/LC_MESSAGES/kcm_autostart.mo
 share/locale/da/LC_MESSAGES/kcm_colors.mo
@@ -1714,7 +1736,6 @@ share/locale/de/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/de/LC_MESSAGES/kcm5_icons.mo
 share/locale/de/LC_MESSAGES/kcm5_joystick.mo
 share/locale/de/LC_MESSAGES/kcm5_kded.mo
-share/locale/de/LC_MESSAGES/kcm5_phonon.mo
 share/locale/de/LC_MESSAGES/kcm_activities5.mo
 share/locale/de/LC_MESSAGES/kcm_autostart.mo
 share/locale/de/LC_MESSAGES/kcm_colors.mo
@@ -1772,7 +1793,6 @@ share/locale/el/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/el/LC_MESSAGES/kcm5_icons.mo
 share/locale/el/LC_MESSAGES/kcm5_joystick.mo
 share/locale/el/LC_MESSAGES/kcm5_kded.mo
-share/locale/el/LC_MESSAGES/kcm5_phonon.mo
 share/locale/el/LC_MESSAGES/kcm_activities5.mo
 share/locale/el/LC_MESSAGES/kcm_autostart.mo
 share/locale/el/LC_MESSAGES/kcm_colors.mo
@@ -1825,7 +1845,6 @@ share/locale/en_GB/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/en_GB/LC_MESSAGES/kcm5_icons.mo
 share/locale/en_GB/LC_MESSAGES/kcm5_joystick.mo
 share/locale/en_GB/LC_MESSAGES/kcm5_kded.mo
-share/locale/en_GB/LC_MESSAGES/kcm5_phonon.mo
 share/locale/en_GB/LC_MESSAGES/kcm_activities5.mo
 share/locale/en_GB/LC_MESSAGES/kcm_autostart.mo
 share/locale/en_GB/LC_MESSAGES/kcm_colors.mo
@@ -1882,7 +1901,6 @@ share/locale/eo/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/eo/LC_MESSAGES/kcm5_icons.mo
 share/locale/eo/LC_MESSAGES/kcm5_joystick.mo
 share/locale/eo/LC_MESSAGES/kcm5_kded.mo
-share/locale/eo/LC_MESSAGES/kcm5_phonon.mo
 share/locale/eo/LC_MESSAGES/kcm_autostart.mo
 share/locale/eo/LC_MESSAGES/kcm_colors.mo
 share/locale/eo/LC_MESSAGES/kcm_cursortheme.mo
@@ -1920,7 +1938,6 @@ share/locale/es/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/es/LC_MESSAGES/kcm5_icons.mo
 share/locale/es/LC_MESSAGES/kcm5_joystick.mo
 share/locale/es/LC_MESSAGES/kcm5_kded.mo
-share/locale/es/LC_MESSAGES/kcm5_phonon.mo
 share/locale/es/LC_MESSAGES/kcm_activities5.mo
 share/locale/es/LC_MESSAGES/kcm_autostart.mo
 share/locale/es/LC_MESSAGES/kcm_colors.mo
@@ -1978,7 +1995,6 @@ share/locale/et/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/et/LC_MESSAGES/kcm5_icons.mo
 share/locale/et/LC_MESSAGES/kcm5_joystick.mo
 share/locale/et/LC_MESSAGES/kcm5_kded.mo
-share/locale/et/LC_MESSAGES/kcm5_phonon.mo
 share/locale/et/LC_MESSAGES/kcm_activities5.mo
 share/locale/et/LC_MESSAGES/kcm_autostart.mo
 share/locale/et/LC_MESSAGES/kcm_colors.mo
@@ -2031,7 +2047,6 @@ share/locale/eu/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/eu/LC_MESSAGES/kcm5_icons.mo
 share/locale/eu/LC_MESSAGES/kcm5_joystick.mo
 share/locale/eu/LC_MESSAGES/kcm5_kded.mo
-share/locale/eu/LC_MESSAGES/kcm5_phonon.mo
 share/locale/eu/LC_MESSAGES/kcm_activities5.mo
 share/locale/eu/LC_MESSAGES/kcm_autostart.mo
 share/locale/eu/LC_MESSAGES/kcm_colors.mo
@@ -2088,7 +2103,6 @@ share/locale/fa/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/fa/LC_MESSAGES/kcm5_icons.mo
 share/locale/fa/LC_MESSAGES/kcm5_joystick.mo
 share/locale/fa/LC_MESSAGES/kcm5_kded.mo
-share/locale/fa/LC_MESSAGES/kcm5_phonon.mo
 share/locale/fa/LC_MESSAGES/kcm_autostart.mo
 share/locale/fa/LC_MESSAGES/kcm_colors.mo
 share/locale/fa/LC_MESSAGES/kcm_cursortheme.mo
@@ -2122,7 +2136,6 @@ share/locale/fi/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/fi/LC_MESSAGES/kcm5_icons.mo
 share/locale/fi/LC_MESSAGES/kcm5_joystick.mo
 share/locale/fi/LC_MESSAGES/kcm5_kded.mo
-share/locale/fi/LC_MESSAGES/kcm5_phonon.mo
 share/locale/fi/LC_MESSAGES/kcm_activities5.mo
 share/locale/fi/LC_MESSAGES/kcm_autostart.mo
 share/locale/fi/LC_MESSAGES/kcm_colors.mo
@@ -2180,7 +2193,6 @@ share/locale/fr/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/fr/LC_MESSAGES/kcm5_icons.mo
 share/locale/fr/LC_MESSAGES/kcm5_joystick.mo
 share/locale/fr/LC_MESSAGES/kcm5_kded.mo
-share/locale/fr/LC_MESSAGES/kcm5_phonon.mo
 share/locale/fr/LC_MESSAGES/kcm_activities5.mo
 share/locale/fr/LC_MESSAGES/kcm_autostart.mo
 share/locale/fr/LC_MESSAGES/kcm_colors.mo
@@ -2236,7 +2248,6 @@ share/locale/fy/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/fy/LC_MESSAGES/kcm5_icons.mo
 share/locale/fy/LC_MESSAGES/kcm5_joystick.mo
 share/locale/fy/LC_MESSAGES/kcm5_kded.mo
-share/locale/fy/LC_MESSAGES/kcm5_phonon.mo
 share/locale/fy/LC_MESSAGES/kcm_autostart.mo
 share/locale/fy/LC_MESSAGES/kcm_colors.mo
 share/locale/fy/LC_MESSAGES/kcm_cursortheme.mo
@@ -2269,7 +2280,6 @@ share/locale/ga/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ga/LC_MESSAGES/kcm5_icons.mo
 share/locale/ga/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ga/LC_MESSAGES/kcm5_kded.mo
-share/locale/ga/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ga/LC_MESSAGES/kcm_autostart.mo
 share/locale/ga/LC_MESSAGES/kcm_colors.mo
 share/locale/ga/LC_MESSAGES/kcm_cursortheme.mo
@@ -2309,7 +2319,6 @@ share/locale/gl/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/gl/LC_MESSAGES/kcm5_icons.mo
 share/locale/gl/LC_MESSAGES/kcm5_joystick.mo
 share/locale/gl/LC_MESSAGES/kcm5_kded.mo
-share/locale/gl/LC_MESSAGES/kcm5_phonon.mo
 share/locale/gl/LC_MESSAGES/kcm_activities5.mo
 share/locale/gl/LC_MESSAGES/kcm_autostart.mo
 share/locale/gl/LC_MESSAGES/kcm_colors.mo
@@ -2366,7 +2375,6 @@ share/locale/gu/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/gu/LC_MESSAGES/kcm5_icons.mo
 share/locale/gu/LC_MESSAGES/kcm5_joystick.mo
 share/locale/gu/LC_MESSAGES/kcm5_kded.mo
-share/locale/gu/LC_MESSAGES/kcm5_phonon.mo
 share/locale/gu/LC_MESSAGES/kcm_autostart.mo
 share/locale/gu/LC_MESSAGES/kcm_colors.mo
 share/locale/gu/LC_MESSAGES/kcm_cursortheme.mo
@@ -2402,7 +2410,6 @@ share/locale/he/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/he/LC_MESSAGES/kcm5_icons.mo
 share/locale/he/LC_MESSAGES/kcm5_joystick.mo
 share/locale/he/LC_MESSAGES/kcm5_kded.mo
-share/locale/he/LC_MESSAGES/kcm5_phonon.mo
 share/locale/he/LC_MESSAGES/kcm_activities5.mo
 share/locale/he/LC_MESSAGES/kcm_autostart.mo
 share/locale/he/LC_MESSAGES/kcm_colors.mo
@@ -2453,7 +2460,6 @@ share/locale/hi/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/hi/LC_MESSAGES/kcm5_icons.mo
 share/locale/hi/LC_MESSAGES/kcm5_joystick.mo
 share/locale/hi/LC_MESSAGES/kcm5_kded.mo
-share/locale/hi/LC_MESSAGES/kcm5_phonon.mo
 share/locale/hi/LC_MESSAGES/kcm_autostart.mo
 share/locale/hi/LC_MESSAGES/kcm_colors.mo
 share/locale/hi/LC_MESSAGES/kcm_cursortheme.mo
@@ -2484,7 +2490,6 @@ share/locale/hne/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/hne/LC_MESSAGES/kcm5_icons.mo
 share/locale/hne/LC_MESSAGES/kcm5_joystick.mo
 share/locale/hne/LC_MESSAGES/kcm5_kded.mo
-share/locale/hne/LC_MESSAGES/kcm5_phonon.mo
 share/locale/hne/LC_MESSAGES/kcm_autostart.mo
 share/locale/hne/LC_MESSAGES/kcm_colors.mo
 share/locale/hne/LC_MESSAGES/kcm_cursortheme.mo
@@ -2514,7 +2519,6 @@ share/locale/hr/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/hr/LC_MESSAGES/kcm5_icons.mo
 share/locale/hr/LC_MESSAGES/kcm5_joystick.mo
 share/locale/hr/LC_MESSAGES/kcm5_kded.mo
-share/locale/hr/LC_MESSAGES/kcm5_phonon.mo
 share/locale/hr/LC_MESSAGES/kcm_autostart.mo
 share/locale/hr/LC_MESSAGES/kcm_colors.mo
 share/locale/hr/LC_MESSAGES/kcm_cursortheme.mo
@@ -2549,7 +2553,6 @@ share/locale/hsb/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/hsb/LC_MESSAGES/kcm5_icons.mo
 share/locale/hsb/LC_MESSAGES/kcm5_joystick.mo
 share/locale/hsb/LC_MESSAGES/kcm5_kded.mo
-share/locale/hsb/LC_MESSAGES/kcm5_phonon.mo
 share/locale/hsb/LC_MESSAGES/kcm_autostart.mo
 share/locale/hsb/LC_MESSAGES/kcm_colors.mo
 share/locale/hsb/LC_MESSAGES/kcm_cursortheme.mo
@@ -2582,7 +2585,6 @@ share/locale/hu/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/hu/LC_MESSAGES/kcm5_icons.mo
 share/locale/hu/LC_MESSAGES/kcm5_joystick.mo
 share/locale/hu/LC_MESSAGES/kcm5_kded.mo
-share/locale/hu/LC_MESSAGES/kcm5_phonon.mo
 share/locale/hu/LC_MESSAGES/kcm_activities5.mo
 share/locale/hu/LC_MESSAGES/kcm_autostart.mo
 share/locale/hu/LC_MESSAGES/kcm_colors.mo
@@ -2636,7 +2638,6 @@ share/locale/ia/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ia/LC_MESSAGES/kcm5_icons.mo
 share/locale/ia/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ia/LC_MESSAGES/kcm5_kded.mo
-share/locale/ia/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ia/LC_MESSAGES/kcm_activities5.mo
 share/locale/ia/LC_MESSAGES/kcm_autostart.mo
 share/locale/ia/LC_MESSAGES/kcm_colors.mo
@@ -2689,7 +2690,6 @@ share/locale/id/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/id/LC_MESSAGES/kcm5_icons.mo
 share/locale/id/LC_MESSAGES/kcm5_joystick.mo
 share/locale/id/LC_MESSAGES/kcm5_kded.mo
-share/locale/id/LC_MESSAGES/kcm5_phonon.mo
 share/locale/id/LC_MESSAGES/kcm_activities5.mo
 share/locale/id/LC_MESSAGES/kcm_autostart.mo
 share/locale/id/LC_MESSAGES/kcm_colors.mo
@@ -2746,7 +2746,6 @@ share/locale/is/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/is/LC_MESSAGES/kcm5_icons.mo
 share/locale/is/LC_MESSAGES/kcm5_joystick.mo
 share/locale/is/LC_MESSAGES/kcm5_kded.mo
-share/locale/is/LC_MESSAGES/kcm5_phonon.mo
 share/locale/is/LC_MESSAGES/kcm_autostart.mo
 share/locale/is/LC_MESSAGES/kcm_colors.mo
 share/locale/is/LC_MESSAGES/kcm_cursortheme.mo
@@ -2783,7 +2782,6 @@ share/locale/it/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/it/LC_MESSAGES/kcm5_icons.mo
 share/locale/it/LC_MESSAGES/kcm5_joystick.mo
 share/locale/it/LC_MESSAGES/kcm5_kded.mo
-share/locale/it/LC_MESSAGES/kcm5_phonon.mo
 share/locale/it/LC_MESSAGES/kcm_activities5.mo
 share/locale/it/LC_MESSAGES/kcm_autostart.mo
 share/locale/it/LC_MESSAGES/kcm_colors.mo
@@ -2841,7 +2839,6 @@ share/locale/ja/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ja/LC_MESSAGES/kcm5_icons.mo
 share/locale/ja/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ja/LC_MESSAGES/kcm5_kded.mo
-share/locale/ja/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ja/LC_MESSAGES/kcm_activities5.mo
 share/locale/ja/LC_MESSAGES/kcm_autostart.mo
 share/locale/ja/LC_MESSAGES/kcm_colors.mo
@@ -2898,7 +2895,6 @@ share/locale/kk/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/kk/LC_MESSAGES/kcm5_icons.mo
 share/locale/kk/LC_MESSAGES/kcm5_joystick.mo
 share/locale/kk/LC_MESSAGES/kcm5_kded.mo
-share/locale/kk/LC_MESSAGES/kcm5_phonon.mo
 share/locale/kk/LC_MESSAGES/kcm_autostart.mo
 share/locale/kk/LC_MESSAGES/kcm_colors.mo
 share/locale/kk/LC_MESSAGES/kcm_cursortheme.mo
@@ -2938,7 +2934,6 @@ share/locale/km/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/km/LC_MESSAGES/kcm5_icons.mo
 share/locale/km/LC_MESSAGES/kcm5_joystick.mo
 share/locale/km/LC_MESSAGES/kcm5_kded.mo
-share/locale/km/LC_MESSAGES/kcm5_phonon.mo
 share/locale/km/LC_MESSAGES/kcm_autostart.mo
 share/locale/km/LC_MESSAGES/kcm_colors.mo
 share/locale/km/LC_MESSAGES/kcm_cursortheme.mo
@@ -2976,7 +2971,6 @@ share/locale/kn/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/kn/LC_MESSAGES/kcm5_icons.mo
 share/locale/kn/LC_MESSAGES/kcm5_joystick.mo
 share/locale/kn/LC_MESSAGES/kcm5_kded.mo
-share/locale/kn/LC_MESSAGES/kcm5_phonon.mo
 share/locale/kn/LC_MESSAGES/kcm_autostart.mo
 share/locale/kn/LC_MESSAGES/kcm_colors.mo
 share/locale/kn/LC_MESSAGES/kcm_cursortheme.mo
@@ -3011,7 +3005,6 @@ share/locale/ko/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ko/LC_MESSAGES/kcm5_icons.mo
 share/locale/ko/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ko/LC_MESSAGES/kcm5_kded.mo
-share/locale/ko/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ko/LC_MESSAGES/kcm_activities5.mo
 share/locale/ko/LC_MESSAGES/kcm_autostart.mo
 share/locale/ko/LC_MESSAGES/kcm_colors.mo
@@ -3066,7 +3059,6 @@ share/locale/ku/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ku/LC_MESSAGES/kcm5_icons.mo
 share/locale/ku/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ku/LC_MESSAGES/kcm5_kded.mo
-share/locale/ku/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ku/LC_MESSAGES/kcm_autostart.mo
 share/locale/ku/LC_MESSAGES/kcm_colors.mo
 share/locale/ku/LC_MESSAGES/kcm_cursortheme.mo
@@ -3100,7 +3092,6 @@ share/locale/lt/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/lt/LC_MESSAGES/kcm5_icons.mo
 share/locale/lt/LC_MESSAGES/kcm5_joystick.mo
 share/locale/lt/LC_MESSAGES/kcm5_kded.mo
-share/locale/lt/LC_MESSAGES/kcm5_phonon.mo
 share/locale/lt/LC_MESSAGES/kcm_activities5.mo
 share/locale/lt/LC_MESSAGES/kcm_autostart.mo
 share/locale/lt/LC_MESSAGES/kcm_colors.mo
@@ -3111,6 +3102,7 @@ share/locale/lt/LC_MESSAGES/kcm_fonts.mo
 share/locale/lt/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/lt/LC_MESSAGES/kcm_lookandfeel.mo
 share/locale/lt/LC_MESSAGES/kcm_nightcolor.mo
+share/locale/lt/LC_MESSAGES/kcm_notifications.mo
 share/locale/lt/LC_MESSAGES/kcm_search.mo
 share/locale/lt/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/lt/LC_MESSAGES/kcm_splashscreen.mo
@@ -3156,7 +3148,6 @@ share/locale/lv/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/lv/LC_MESSAGES/kcm5_icons.mo
 share/locale/lv/LC_MESSAGES/kcm5_joystick.mo
 share/locale/lv/LC_MESSAGES/kcm5_kded.mo
-share/locale/lv/LC_MESSAGES/kcm5_phonon.mo
 share/locale/lv/LC_MESSAGES/kcm_autostart.mo
 share/locale/lv/LC_MESSAGES/kcm_colors.mo
 share/locale/lv/LC_MESSAGES/kcm_cursortheme.mo
@@ -3196,7 +3187,6 @@ share/locale/mai/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/mai/LC_MESSAGES/kcm5_icons.mo
 share/locale/mai/LC_MESSAGES/kcm5_joystick.mo
 share/locale/mai/LC_MESSAGES/kcm5_kded.mo
-share/locale/mai/LC_MESSAGES/kcm5_phonon.mo
 share/locale/mai/LC_MESSAGES/kcm_autostart.mo
 share/locale/mai/LC_MESSAGES/kcm_colors.mo
 share/locale/mai/LC_MESSAGES/kcm_cursortheme.mo
@@ -3229,7 +3219,6 @@ share/locale/mk/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/mk/LC_MESSAGES/kcm5_icons.mo
 share/locale/mk/LC_MESSAGES/kcm5_joystick.mo
 share/locale/mk/LC_MESSAGES/kcm5_kded.mo
-share/locale/mk/LC_MESSAGES/kcm5_phonon.mo
 share/locale/mk/LC_MESSAGES/kcm_autostart.mo
 share/locale/mk/LC_MESSAGES/kcm_colors.mo
 share/locale/mk/LC_MESSAGES/kcm_cursortheme.mo
@@ -3253,25 +3242,54 @@ share/locale/mk/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
-share/doc/HTML/uk/kcontrol/splashscreen/get-new-theme.png
+share/locale/ml/LC_MESSAGES/attica_kde_plugin.mo
+share/locale/ml/LC_MESSAGES/kaccess.mo
 share/locale/ml/LC_MESSAGES/kcm5_baloofile.mo
+share/locale/ml/LC_MESSAGES/kcm5_componentchooser.mo
 share/locale/ml/LC_MESSAGES/kcm5_device_automounter.mo
+share/locale/ml/LC_MESSAGES/kcm5_emoticons.mo
+share/locale/ml/LC_MESSAGES/kcm5_icons.mo
+share/locale/ml/LC_MESSAGES/kcm5_joystick.mo
+share/locale/ml/LC_MESSAGES/kcm5_kded.mo
 share/locale/ml/LC_MESSAGES/kcm_activities5.mo
+share/locale/ml/LC_MESSAGES/kcm_autostart.mo
+share/locale/ml/LC_MESSAGES/kcm_colors.mo
+share/locale/ml/LC_MESSAGES/kcm_cursortheme.mo
+share/locale/ml/LC_MESSAGES/kcm_desktoppaths.mo
+share/locale/ml/LC_MESSAGES/kcm_desktoptheme.mo
+share/locale/ml/LC_MESSAGES/kcm_fonts.mo
+share/locale/ml/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/ml/LC_MESSAGES/kcm_lookandfeel.mo
 share/locale/ml/LC_MESSAGES/kcm_nightcolor.mo
-share/locale/ml/LC_MESSAGES/kcm_notifications.mo
 share/locale/ml/LC_MESSAGES/kcm_search.mo
+share/locale/ml/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ml/LC_MESSAGES/kcm_splashscreen.mo
+share/locale/ml/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/ml/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ml/LC_MESSAGES/kcm_workspace.mo
+share/locale/ml/LC_MESSAGES/kcmaccess.mo
+share/locale/ml/LC_MESSAGES/kcmformats.mo
+share/locale/ml/LC_MESSAGES/kcmkclock.mo
+share/locale/ml/LC_MESSAGES/kcmkeyboard.mo
+share/locale/ml/LC_MESSAGES/kcmkeys.mo
+share/locale/ml/LC_MESSAGES/kcmmouse.mo
 share/locale/ml/LC_MESSAGES/kcmqtquicksettings.mo
+share/locale/ml/LC_MESSAGES/kcmsmserver.mo
+share/locale/ml/LC_MESSAGES/kcmstyle.mo
+share/locale/ml/LC_MESSAGES/kfontinst.mo
+share/locale/ml/LC_MESSAGES/knetattach5.mo
+share/locale/ml/LC_MESSAGES/krdb.mo
+share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.kimpanel.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.minimizeall.mo
+share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.showActivityManager.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
+share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
+share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_touchpad.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_kwin.mo
@@ -3280,38 +3298,6 @@ share/locale/ml/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
 share/locale/ml/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ml/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ml/LC_MESSAGES/plasmaactivitymanager.mo
-share/locale/ml/LC_MESSAGES/attica_kde_plugin.mo
-share/locale/ml/LC_MESSAGES/kaccess.mo
-share/locale/ml/LC_MESSAGES/kcm5_componentchooser.mo
-share/locale/ml/LC_MESSAGES/kcm5_emoticons.mo
-share/locale/ml/LC_MESSAGES/kcm5_icons.mo
-share/locale/ml/LC_MESSAGES/kcm5_joystick.mo
-share/locale/ml/LC_MESSAGES/kcm5_kded.mo
-share/locale/ml/LC_MESSAGES/kcm5_phonon.mo
-share/locale/ml/LC_MESSAGES/kcm_autostart.mo
-share/locale/ml/LC_MESSAGES/kcm_colors.mo
-share/locale/ml/LC_MESSAGES/kcm_cursortheme.mo
-share/locale/ml/LC_MESSAGES/kcm_desktoppaths.mo
-share/locale/ml/LC_MESSAGES/kcm_desktoptheme.mo
-share/locale/ml/LC_MESSAGES/kcm_fonts.mo
-share/locale/ml/LC_MESSAGES/kcm_launchfeedback.mo
-share/locale/ml/LC_MESSAGES/kcm_solid_actions.mo
-share/locale/ml/LC_MESSAGES/kcm_standard_actions.mo
-share/locale/ml/LC_MESSAGES/kcmaccess.mo
-share/locale/ml/LC_MESSAGES/kcmformats.mo
-share/locale/ml/LC_MESSAGES/kcmkclock.mo
-share/locale/ml/LC_MESSAGES/kcmkeyboard.mo
-share/locale/ml/LC_MESSAGES/kcmkeys.mo
-share/locale/ml/LC_MESSAGES/kcmmouse.mo
-share/locale/ml/LC_MESSAGES/kcmsmserver.mo
-share/locale/ml/LC_MESSAGES/kcmstyle.mo
-share/locale/ml/LC_MESSAGES/kfontinst.mo
-share/locale/ml/LC_MESSAGES/knetattach5.mo
-share/locale/ml/LC_MESSAGES/krdb.mo
-share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
-share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
-share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
-share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/mr/LC_MESSAGES/attica_kde_plugin.mo
 share/locale/mr/LC_MESSAGES/kaccess.mo
 share/locale/mr/LC_MESSAGES/kcm5_componentchooser.mo
@@ -3320,7 +3306,6 @@ share/locale/mr/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/mr/LC_MESSAGES/kcm5_icons.mo
 share/locale/mr/LC_MESSAGES/kcm5_joystick.mo
 share/locale/mr/LC_MESSAGES/kcm5_kded.mo
-share/locale/mr/LC_MESSAGES/kcm5_phonon.mo
 share/locale/mr/LC_MESSAGES/kcm_autostart.mo
 share/locale/mr/LC_MESSAGES/kcm_colors.mo
 share/locale/mr/LC_MESSAGES/kcm_cursortheme.mo
@@ -3360,7 +3345,6 @@ share/locale/ms/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ms/LC_MESSAGES/kcm5_icons.mo
 share/locale/ms/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ms/LC_MESSAGES/kcm5_kded.mo
-share/locale/ms/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ms/LC_MESSAGES/kcm_autostart.mo
 share/locale/ms/LC_MESSAGES/kcm_colors.mo
 share/locale/ms/LC_MESSAGES/kcm_cursortheme.mo
@@ -3397,7 +3381,6 @@ share/locale/nb/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/nb/LC_MESSAGES/kcm5_icons.mo
 share/locale/nb/LC_MESSAGES/kcm5_joystick.mo
 share/locale/nb/LC_MESSAGES/kcm5_kded.mo
-share/locale/nb/LC_MESSAGES/kcm5_phonon.mo
 share/locale/nb/LC_MESSAGES/kcm_autostart.mo
 share/locale/nb/LC_MESSAGES/kcm_colors.mo
 share/locale/nb/LC_MESSAGES/kcm_cursortheme.mo
@@ -3446,7 +3429,6 @@ share/locale/nds/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/nds/LC_MESSAGES/kcm5_icons.mo
 share/locale/nds/LC_MESSAGES/kcm5_joystick.mo
 share/locale/nds/LC_MESSAGES/kcm5_kded.mo
-share/locale/nds/LC_MESSAGES/kcm5_phonon.mo
 share/locale/nds/LC_MESSAGES/kcm_autostart.mo
 share/locale/nds/LC_MESSAGES/kcm_colors.mo
 share/locale/nds/LC_MESSAGES/kcm_cursortheme.mo
@@ -3489,7 +3471,6 @@ share/locale/ne/LC_MESSAGES/kcm5_componentchooser.mo
 share/locale/ne/LC_MESSAGES/kcm5_icons.mo
 share/locale/ne/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ne/LC_MESSAGES/kcm5_kded.mo
-share/locale/ne/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ne/LC_MESSAGES/kcm_colors.mo
 share/locale/ne/LC_MESSAGES/kcm_cursortheme.mo
 share/locale/ne/LC_MESSAGES/kcm_desktoppaths.mo
@@ -3517,7 +3498,6 @@ share/locale/nl/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/nl/LC_MESSAGES/kcm5_icons.mo
 share/locale/nl/LC_MESSAGES/kcm5_joystick.mo
 share/locale/nl/LC_MESSAGES/kcm5_kded.mo
-share/locale/nl/LC_MESSAGES/kcm5_phonon.mo
 share/locale/nl/LC_MESSAGES/kcm_activities5.mo
 share/locale/nl/LC_MESSAGES/kcm_autostart.mo
 share/locale/nl/LC_MESSAGES/kcm_colors.mo
@@ -3575,7 +3555,6 @@ share/locale/nn/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/nn/LC_MESSAGES/kcm5_icons.mo
 share/locale/nn/LC_MESSAGES/kcm5_joystick.mo
 share/locale/nn/LC_MESSAGES/kcm5_kded.mo
-share/locale/nn/LC_MESSAGES/kcm5_phonon.mo
 share/locale/nn/LC_MESSAGES/kcm_activities5.mo
 share/locale/nn/LC_MESSAGES/kcm_autostart.mo
 share/locale/nn/LC_MESSAGES/kcm_colors.mo
@@ -3629,7 +3608,6 @@ share/locale/oc/LC_MESSAGES/kcm5_componentchooser.mo
 share/locale/oc/LC_MESSAGES/kcm5_icons.mo
 share/locale/oc/LC_MESSAGES/kcm5_joystick.mo
 share/locale/oc/LC_MESSAGES/kcm5_kded.mo
-share/locale/oc/LC_MESSAGES/kcm5_phonon.mo
 share/locale/oc/LC_MESSAGES/kcm_colors.mo
 share/locale/oc/LC_MESSAGES/kcm_cursortheme.mo
 share/locale/oc/LC_MESSAGES/kcm_desktoppaths.mo
@@ -3652,7 +3630,6 @@ share/locale/or/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/or/LC_MESSAGES/kcm5_icons.mo
 share/locale/or/LC_MESSAGES/kcm5_joystick.mo
 share/locale/or/LC_MESSAGES/kcm5_kded.mo
-share/locale/or/LC_MESSAGES/kcm5_phonon.mo
 share/locale/or/LC_MESSAGES/kcm_autostart.mo
 share/locale/or/LC_MESSAGES/kcm_colors.mo
 share/locale/or/LC_MESSAGES/kcm_cursortheme.mo
@@ -3685,7 +3662,6 @@ share/locale/pa/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/pa/LC_MESSAGES/kcm5_icons.mo
 share/locale/pa/LC_MESSAGES/kcm5_joystick.mo
 share/locale/pa/LC_MESSAGES/kcm5_kded.mo
-share/locale/pa/LC_MESSAGES/kcm5_phonon.mo
 share/locale/pa/LC_MESSAGES/kcm_activities5.mo
 share/locale/pa/LC_MESSAGES/kcm_autostart.mo
 share/locale/pa/LC_MESSAGES/kcm_colors.mo
@@ -3737,7 +3713,6 @@ share/locale/pl/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/pl/LC_MESSAGES/kcm5_icons.mo
 share/locale/pl/LC_MESSAGES/kcm5_joystick.mo
 share/locale/pl/LC_MESSAGES/kcm5_kded.mo
-share/locale/pl/LC_MESSAGES/kcm5_phonon.mo
 share/locale/pl/LC_MESSAGES/kcm_activities5.mo
 share/locale/pl/LC_MESSAGES/kcm_autostart.mo
 share/locale/pl/LC_MESSAGES/kcm_colors.mo
@@ -3795,7 +3770,6 @@ share/locale/pt/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/pt/LC_MESSAGES/kcm5_icons.mo
 share/locale/pt/LC_MESSAGES/kcm5_joystick.mo
 share/locale/pt/LC_MESSAGES/kcm5_kded.mo
-share/locale/pt/LC_MESSAGES/kcm5_phonon.mo
 share/locale/pt/LC_MESSAGES/kcm_activities5.mo
 share/locale/pt/LC_MESSAGES/kcm_autostart.mo
 share/locale/pt/LC_MESSAGES/kcm_colors.mo
@@ -3853,7 +3827,6 @@ share/locale/pt_BR/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/pt_BR/LC_MESSAGES/kcm5_icons.mo
 share/locale/pt_BR/LC_MESSAGES/kcm5_joystick.mo
 share/locale/pt_BR/LC_MESSAGES/kcm5_kded.mo
-share/locale/pt_BR/LC_MESSAGES/kcm5_phonon.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_activities5.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_autostart.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_colors.mo
@@ -3911,7 +3884,6 @@ share/locale/ro/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ro/LC_MESSAGES/kcm5_icons.mo
 share/locale/ro/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ro/LC_MESSAGES/kcm5_kded.mo
-share/locale/ro/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ro/LC_MESSAGES/kcm_autostart.mo
 share/locale/ro/LC_MESSAGES/kcm_colors.mo
 share/locale/ro/LC_MESSAGES/kcm_cursortheme.mo
@@ -3960,7 +3932,6 @@ share/locale/ru/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ru/LC_MESSAGES/kcm5_icons.mo
 share/locale/ru/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ru/LC_MESSAGES/kcm5_kded.mo
-share/locale/ru/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ru/LC_MESSAGES/kcm_activities5.mo
 share/locale/ru/LC_MESSAGES/kcm_autostart.mo
 share/locale/ru/LC_MESSAGES/kcm_colors.mo
@@ -4014,7 +3985,6 @@ share/locale/se/LC_MESSAGES/kcm5_componentchooser.mo
 share/locale/se/LC_MESSAGES/kcm5_icons.mo
 share/locale/se/LC_MESSAGES/kcm5_joystick.mo
 share/locale/se/LC_MESSAGES/kcm5_kded.mo
-share/locale/se/LC_MESSAGES/kcm5_phonon.mo
 share/locale/se/LC_MESSAGES/kcm_colors.mo
 share/locale/se/LC_MESSAGES/kcm_cursortheme.mo
 share/locale/se/LC_MESSAGES/kcm_desktoppaths.mo
@@ -4040,7 +4010,6 @@ share/locale/si/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/si/LC_MESSAGES/kcm5_icons.mo
 share/locale/si/LC_MESSAGES/kcm5_joystick.mo
 share/locale/si/LC_MESSAGES/kcm5_kded.mo
-share/locale/si/LC_MESSAGES/kcm5_phonon.mo
 share/locale/si/LC_MESSAGES/kcm_autostart.mo
 share/locale/si/LC_MESSAGES/kcm_colors.mo
 share/locale/si/LC_MESSAGES/kcm_cursortheme.mo
@@ -4075,7 +4044,6 @@ share/locale/sk/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/sk/LC_MESSAGES/kcm5_icons.mo
 share/locale/sk/LC_MESSAGES/kcm5_joystick.mo
 share/locale/sk/LC_MESSAGES/kcm5_kded.mo
-share/locale/sk/LC_MESSAGES/kcm5_phonon.mo
 share/locale/sk/LC_MESSAGES/kcm_activities5.mo
 share/locale/sk/LC_MESSAGES/kcm_autostart.mo
 share/locale/sk/LC_MESSAGES/kcm_colors.mo
@@ -4133,7 +4101,6 @@ share/locale/sl/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/sl/LC_MESSAGES/kcm5_icons.mo
 share/locale/sl/LC_MESSAGES/kcm5_joystick.mo
 share/locale/sl/LC_MESSAGES/kcm5_kded.mo
-share/locale/sl/LC_MESSAGES/kcm5_phonon.mo
 share/locale/sl/LC_MESSAGES/kcm_activities5.mo
 share/locale/sl/LC_MESSAGES/kcm_autostart.mo
 share/locale/sl/LC_MESSAGES/kcm_colors.mo
@@ -4184,7 +4151,6 @@ share/locale/sq/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/sq/LC_MESSAGES/kcm5_icons.mo
 share/locale/sq/LC_MESSAGES/kcm5_joystick.mo
 share/locale/sq/LC_MESSAGES/kcm5_kded.mo
-share/locale/sq/LC_MESSAGES/kcm5_phonon.mo
 share/locale/sq/LC_MESSAGES/kcm_autostart.mo
 share/locale/sq/LC_MESSAGES/kcm_colors.mo
 share/locale/sq/LC_MESSAGES/kcm_cursortheme.mo
@@ -4220,7 +4186,6 @@ share/locale/sr/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/sr/LC_MESSAGES/kcm5_icons.mo
 share/locale/sr/LC_MESSAGES/kcm5_joystick.mo
 share/locale/sr/LC_MESSAGES/kcm5_kded.mo
-share/locale/sr/LC_MESSAGES/kcm5_phonon.mo
 share/locale/sr/LC_MESSAGES/kcm_activities5.mo
 share/locale/sr/LC_MESSAGES/kcm_autostart.mo
 share/locale/sr/LC_MESSAGES/kcm_colors.mo
@@ -4275,7 +4240,6 @@ share/locale/sr@ijekavian/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm5_icons.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm5_joystick.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm5_kded.mo
-share/locale/sr@ijekavian/LC_MESSAGES/kcm5_phonon.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm_activities5.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm_autostart.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm_colors.mo
@@ -4330,7 +4294,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm5_icons.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm5_joystick.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm5_kded.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm5_phonon.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_activities5.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_autostart.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_colors.mo
@@ -4385,7 +4348,6 @@ share/locale/sr@latin/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/sr@latin/LC_MESSAGES/kcm5_icons.mo
 share/locale/sr@latin/LC_MESSAGES/kcm5_joystick.mo
 share/locale/sr@latin/LC_MESSAGES/kcm5_kded.mo
-share/locale/sr@latin/LC_MESSAGES/kcm5_phonon.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_activities5.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_autostart.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_colors.mo
@@ -4440,7 +4402,6 @@ share/locale/sv/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/sv/LC_MESSAGES/kcm5_icons.mo
 share/locale/sv/LC_MESSAGES/kcm5_joystick.mo
 share/locale/sv/LC_MESSAGES/kcm5_kded.mo
-share/locale/sv/LC_MESSAGES/kcm5_phonon.mo
 share/locale/sv/LC_MESSAGES/kcm_activities5.mo
 share/locale/sv/LC_MESSAGES/kcm_autostart.mo
 share/locale/sv/LC_MESSAGES/kcm_colors.mo
@@ -4495,7 +4456,6 @@ share/locale/ta/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ta/LC_MESSAGES/kcm5_icons.mo
 share/locale/ta/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ta/LC_MESSAGES/kcm5_kded.mo
-share/locale/ta/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ta/LC_MESSAGES/kcm_autostart.mo
 share/locale/ta/LC_MESSAGES/kcm_colors.mo
 share/locale/ta/LC_MESSAGES/kcm_cursortheme.mo
@@ -4523,7 +4483,6 @@ share/locale/te/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/te/LC_MESSAGES/kcm5_icons.mo
 share/locale/te/LC_MESSAGES/kcm5_joystick.mo
 share/locale/te/LC_MESSAGES/kcm5_kded.mo
-share/locale/te/LC_MESSAGES/kcm5_phonon.mo
 share/locale/te/LC_MESSAGES/kcm_autostart.mo
 share/locale/te/LC_MESSAGES/kcm_colors.mo
 share/locale/te/LC_MESSAGES/kcm_cursortheme.mo
@@ -4554,7 +4513,6 @@ share/locale/tg/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/tg/LC_MESSAGES/kcm5_icons.mo
 share/locale/tg/LC_MESSAGES/kcm5_joystick.mo
 share/locale/tg/LC_MESSAGES/kcm5_kded.mo
-share/locale/tg/LC_MESSAGES/kcm5_phonon.mo
 share/locale/tg/LC_MESSAGES/kcm_autostart.mo
 share/locale/tg/LC_MESSAGES/kcm_colors.mo
 share/locale/tg/LC_MESSAGES/kcm_cursortheme.mo
@@ -4575,9 +4533,15 @@ share/locale/tg/LC_MESSAGES/kfontinst.mo
 share/locale/tg/LC_MESSAGES/knetattach5.mo
 share/locale/tg/LC_MESSAGES/krdb.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.minimizeall.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.showActivityManager.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
+share/locale/tg/LC_MESSAGES/plasma_runner_kwin.mo
+share/locale/tg/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/th/LC_MESSAGES/attica_kde_plugin.mo
 share/locale/th/LC_MESSAGES/kaccess.mo
 share/locale/th/LC_MESSAGES/kcm5_componentchooser.mo
@@ -4586,7 +4550,6 @@ share/locale/th/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/th/LC_MESSAGES/kcm5_icons.mo
 share/locale/th/LC_MESSAGES/kcm5_joystick.mo
 share/locale/th/LC_MESSAGES/kcm5_kded.mo
-share/locale/th/LC_MESSAGES/kcm5_phonon.mo
 share/locale/th/LC_MESSAGES/kcm_autostart.mo
 share/locale/th/LC_MESSAGES/kcm_colors.mo
 share/locale/th/LC_MESSAGES/kcm_cursortheme.mo
@@ -4623,7 +4586,6 @@ share/locale/tr/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/tr/LC_MESSAGES/kcm5_icons.mo
 share/locale/tr/LC_MESSAGES/kcm5_joystick.mo
 share/locale/tr/LC_MESSAGES/kcm5_kded.mo
-share/locale/tr/LC_MESSAGES/kcm5_phonon.mo
 share/locale/tr/LC_MESSAGES/kcm_activities5.mo
 share/locale/tr/LC_MESSAGES/kcm_autostart.mo
 share/locale/tr/LC_MESSAGES/kcm_colors.mo
@@ -4675,7 +4637,6 @@ share/locale/ug/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/ug/LC_MESSAGES/kcm5_icons.mo
 share/locale/ug/LC_MESSAGES/kcm5_joystick.mo
 share/locale/ug/LC_MESSAGES/kcm5_kded.mo
-share/locale/ug/LC_MESSAGES/kcm5_phonon.mo
 share/locale/ug/LC_MESSAGES/kcm_autostart.mo
 share/locale/ug/LC_MESSAGES/kcm_colors.mo
 share/locale/ug/LC_MESSAGES/kcm_cursortheme.mo
@@ -4716,7 +4677,6 @@ share/locale/uk/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/uk/LC_MESSAGES/kcm5_icons.mo
 share/locale/uk/LC_MESSAGES/kcm5_joystick.mo
 share/locale/uk/LC_MESSAGES/kcm5_kded.mo
-share/locale/uk/LC_MESSAGES/kcm5_phonon.mo
 share/locale/uk/LC_MESSAGES/kcm_activities5.mo
 share/locale/uk/LC_MESSAGES/kcm_autostart.mo
 share/locale/uk/LC_MESSAGES/kcm_colors.mo
@@ -4814,7 +4774,6 @@ share/locale/vi/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/vi/LC_MESSAGES/kcm5_icons.mo
 share/locale/vi/LC_MESSAGES/kcm5_joystick.mo
 share/locale/vi/LC_MESSAGES/kcm5_kded.mo
-share/locale/vi/LC_MESSAGES/kcm5_phonon.mo
 share/locale/vi/LC_MESSAGES/kcm_colors.mo
 share/locale/vi/LC_MESSAGES/kcm_cursortheme.mo
 share/locale/vi/LC_MESSAGES/kcm_desktoppaths.mo
@@ -4846,7 +4805,6 @@ share/locale/wa/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/wa/LC_MESSAGES/kcm5_icons.mo
 share/locale/wa/LC_MESSAGES/kcm5_joystick.mo
 share/locale/wa/LC_MESSAGES/kcm5_kded.mo
-share/locale/wa/LC_MESSAGES/kcm5_phonon.mo
 share/locale/wa/LC_MESSAGES/kcm_autostart.mo
 share/locale/wa/LC_MESSAGES/kcm_colors.mo
 share/locale/wa/LC_MESSAGES/kcm_cursortheme.mo
@@ -4903,7 +4861,6 @@ share/locale/zh_CN/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/zh_CN/LC_MESSAGES/kcm5_icons.mo
 share/locale/zh_CN/LC_MESSAGES/kcm5_joystick.mo
 share/locale/zh_CN/LC_MESSAGES/kcm5_kded.mo
-share/locale/zh_CN/LC_MESSAGES/kcm5_phonon.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_activities5.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_autostart.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_colors.mo
@@ -4961,7 +4918,6 @@ share/locale/zh_TW/LC_MESSAGES/kcm5_emoticons.mo
 share/locale/zh_TW/LC_MESSAGES/kcm5_icons.mo
 share/locale/zh_TW/LC_MESSAGES/kcm5_joystick.mo
 share/locale/zh_TW/LC_MESSAGES/kcm5_kded.mo
-share/locale/zh_TW/LC_MESSAGES/kcm5_phonon.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_activities5.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_autostart.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_colors.mo
@@ -5052,14 +5008,13 @@ share/plasma/packages/org.kde.paneltoolbox/metadata.json
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/config/config.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/config/main.xml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/ActionButton.qml
-share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/AppletAppearance.qml
-share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/AppletHandle.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/BackButtonItem.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/BusyOverlay.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/CompactRepresentation.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/ConfigFilter.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/ConfigIcons.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/ConfigLocation.qml
+share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/ConfigOverlay.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/ConfigTweaks.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/FolderItemActionButton.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/FolderItemDelegate.qml
@@ -5068,9 +5023,7 @@ share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/FolderView.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/FolderViewDialog.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/FolderViewDropArea.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/FolderViewLayer.qml
-share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/ResizeHandle.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/code/FolderTools.js
-share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/code/LayoutManager.js
 share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.desktopcontainment/metadata.desktop
 share/plasma/plasmoids/org.kde.desktopcontainment/metadata.json
@@ -5227,7 +5180,7 @@ share/plasma/shells/org.kde.plasma.desktop/contents/explorer/AppletDelegate.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/explorer/Tooltip.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/explorer/WidgetExplorer.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/layout.js
-share/plasma/shells/org.kde.plasma.desktop/contents/loader.qml
+share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js
 share/plasma/shells/org.kde.plasma.desktop/contents/views/Desktop.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/views/Panel.qml

@@ -8,6 +8,8 @@ share/doc/HTML/de/kcontrol/plasma-pa/index.cache.bz2
 share/doc/HTML/de/kcontrol/plasma-pa/index.docbook
 share/doc/HTML/en/kcontrol/plasma-pa/index.cache.bz2
 share/doc/HTML/en/kcontrol/plasma-pa/index.docbook
+share/doc/HTML/id/kcontrol/plasma-pa/index.cache.bz2
+share/doc/HTML/id/kcontrol/plasma-pa/index.docbook
 share/doc/HTML/it/kcontrol/plasma-pa/index.cache.bz2
 share/doc/HTML/it/kcontrol/plasma-pa/index.docbook
 share/doc/HTML/nl/kcontrol/plasma-pa/index.cache.bz2
@@ -29,7 +31,6 @@ share/kde4/apps/kconf_update/plasmaVolumeDisableKMixAutostart.pl
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/Advanced.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/Applications.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/CardListItem.qml
-share/kpackage/kcms/kcm_pulseaudio/contents/ui/DefaultDeviceButton.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/DeviceComboBox.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/DeviceListItem.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/Devices.qml
@@ -45,6 +46,8 @@ share/kservices5/kcm_pulseaudio.desktop
 share/kservices5/plasma-applet-org.kde.plasma.volume.desktop
 share/locale/ar/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
+share/locale/ast/LC_MESSAGES/kcm_pulseaudio.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/ca/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_pulseaudio.mo
@@ -87,8 +90,6 @@ share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/lt/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
-share/locale/ml/LC_MESSAGES/kcm_pulseaudio.mo
-share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/nb/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/nl/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
