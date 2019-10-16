@@ -1,5 +1,0 @@
-bin/hpack
-bin/keycvt
-@sample etc/hpack.cfg.sample
-lib/hpack/language.dat
-man/man1/hpack.1.gz

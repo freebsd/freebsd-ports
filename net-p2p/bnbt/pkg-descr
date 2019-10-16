@@ -1,7 +1,0 @@
-BNBT was written by Trevor Hogan. BNBT is a complete port of the
-original Python BitTorrent tracker to C++ using the STL for data storage
-and basic network sockets for network communication. BNBT is fast,
-efficient, customizable, easy to use, powerful, and portable. BNBT is
-covered under the GNU Lesser General Public License (LGPL).
-
-WWW: http://bnbt.sourceforge.net/

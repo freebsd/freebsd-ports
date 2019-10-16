@@ -1,8 +1,0 @@
-GpsDrive is a car (bike, ship, plane) GPS navigation system.
-
-GpsDrive displays the position provided from a NMEA-capable GPS receiver on
-a zoomable map. The map file is autoselected depending on the position and
-preferred scale. Speech output is supported if the "festival" software is
-running. Waypoint database is supported via MySQL (optional).
-
-WWW: http://www.gpsdrive.de/

@@ -1,6 +1,0 @@
-check_spamd is a Nagios plugin for checking SpamAssassins SPAMD. It's written
-in Perl, should work with the embedded Perl interpreter (not tested though),
-does not require spamc to be installed on the Nagios host and has no other
-prerequisites.
-
-WWW: http://www.jhweiss.de/code.html

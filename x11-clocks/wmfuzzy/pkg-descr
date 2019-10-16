@@ -1,9 +1,0 @@
-wmfuzzy is a fuzzy clock Windowmaker dock applet (but also runs well
-under *boxen and many other windowmanagers).
-
-A fuzzy clock gives an approximate time, under the supposition that
-it's more useful to know that it's about Half Past Three than that
-it's 3:27.  The granularity of the approximation can be set via
-commandline switches.
-
-WWW: http://www.manicai.net/comp/wmfuzzy

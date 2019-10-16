@@ -32,7 +32,6 @@
     SUBDIR += ario
     SUBDIR += arss
     SUBDIR += artyfx-lv2
-    SUBDIR += ascd
     SUBDIR += asmix
     SUBDIR += asmixer
     SUBDIR += asterisk-espeak
@@ -44,7 +43,6 @@
     SUBDIR += audacity
     SUBDIR += audiere
     SUBDIR += audiocd-kio
-    SUBDIR += audiotag
     SUBDIR += aumix
     SUBDIR += autocd
     SUBDIR += autotalent
@@ -212,7 +210,6 @@
     SUBDIR += gimmix
     SUBDIR += gkrellmvolume2
     SUBDIR += glurp
-    SUBDIR += gmidimonitor
     SUBDIR += gmpc
     SUBDIR += gmpc-alarm
     SUBDIR += gmpc-albumview
@@ -222,7 +219,6 @@
     SUBDIR += gmpc-libnotify
     SUBDIR += gmpc-lyrics
     SUBDIR += gmpc-lyricsplugin
-    SUBDIR += gmpc-lyricwiki
     SUBDIR += gmpc-magnatune
     SUBDIR += gmpc-mdcover
     SUBDIR += gmpc-mserver
@@ -351,13 +347,11 @@
     SUBDIR += jack-keyboard
     SUBDIR += jack-smf-utils
     SUBDIR += jack_ghero
-    SUBDIR += jack_mixer
     SUBDIR += jack_umidi
     SUBDIR += jalv
     SUBDIR += jalv-select
     SUBDIR += jamin
     SUBDIR += jid3lib
-    SUBDIR += jmusic
     SUBDIR += jokosher
     SUBDIR += juk
     SUBDIR += juke
@@ -496,9 +490,7 @@
     SUBDIR += madfufw
     SUBDIR += madplay
     SUBDIR += malint
-    SUBDIR += maplay
     SUBDIR += mate-media
-    SUBDIR += mbox
     SUBDIR += mctoolame-decoder
     SUBDIR += mctoolame-encoder
     SUBDIR += mda-lv2
@@ -572,7 +564,6 @@
     SUBDIR += nosefart
     SUBDIR += noson-app
     SUBDIR += nspmod
-    SUBDIR += nuvolaplayer
     SUBDIR += oaml
     SUBDIR += ocp
     SUBDIR += ogg2mp3
@@ -846,7 +837,6 @@
     SUBDIR += umix
     SUBDIR += umodplayer
     SUBDIR += umurmur
-    SUBDIR += vagalume
     SUBDIR += vamp-plugin-sdk
     SUBDIR += vgmplay
     SUBDIR += vimpc
@@ -875,7 +865,6 @@
     SUBDIR += wmix
     SUBDIR += wmmp
     SUBDIR += wmrecord
-    SUBDIR += wmsmixer
     SUBDIR += workman
     SUBDIR += wxguitar
     SUBDIR += x42-plugins-lv2
@@ -893,7 +882,6 @@
     SUBDIR += xmixer
     SUBDIR += xmmix
     SUBDIR += xmms2
-    SUBDIR += xmms2-scrobbler
     SUBDIR += xmp
     SUBDIR += xmradio
     SUBDIR += xoscope

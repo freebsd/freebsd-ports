@@ -1,5 +1,0 @@
-HFFzip is a file compressor based on Huffman coding. HFFzip is
-right for embedded systems, because of its little size and the
-simple algorithm used.
-
-WWW: http://retis.sssup.it/~scordino/code/hffzip.html

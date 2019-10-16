@@ -1,8 +1,0 @@
-Software Development Kit for Atlassian's family of applications
-(JIRA, Confluence, and others).
-
-This port strips out the Maven bits bundled with the SDK by Altassian
-relying instead on the Maven installed from one of the FreeBSD
-mvn-ports.
-
-WWW: https://developer.atlassian.com/docs/getting-started/set-up-the-atlassian-plugin-sdk-and-build-a-project

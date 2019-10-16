@@ -1,6 +1,0 @@
-poker-engine is a python library that implements poker rules according
-to variants and betting structures specified in configuration files.
-It designed to be used by a multiplayer poker server, a poker AI or a
-poker client.
-
-WWW: http://www.pokersource.info/wiki/poker-engine

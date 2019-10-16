@@ -19,7 +19,6 @@
     SUBDIR += cd-hit
     SUBDIR += cdbfasta
     SUBDIR += checkm
-    SUBDIR += chemeq
     SUBDIR += clustal-omega
     SUBDIR += clustalw
     SUBDIR += consed
@@ -69,7 +68,6 @@
     SUBDIR += libbigwig
     SUBDIR += libgtextutils
     SUBDIR += libsbml
-    SUBDIR += linux-foldingathome
     SUBDIR += mafft
     SUBDIR += mapm3
     SUBDIR += migrate

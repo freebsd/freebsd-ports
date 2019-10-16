@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-See the file %%PREFIX%%/share/doc/astrolog/helpfile.540 for help
-and tune %%PREFIX%%/lib/astrolog/astrolog.dat
-EOM
-}
-]

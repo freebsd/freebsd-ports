@@ -1,3 +1,0 @@
-auth		include		system
-%%PAM_KEYRING%%auth		optional	%%LOCALBASE%%/lib/pam_gnome_keyring.so
-account		include		system

@@ -1,6 +1,0 @@
-The Prewikka frontend provides a means to query the Prelude database, aggregate
-and filter events, and provides useful statistics about what's going on. It
-provides a nice interface for the security analyst to see what's going on on
-the monitored system.
-
-WWW: http://www.prelude-ids.org/

@@ -7,7 +7,6 @@
     SUBDIR += advancemame
     SUBDIR += advancemenu
     SUBDIR += advancemess
-    SUBDIR += aftp
     SUBDIR += almostti
     SUBDIR += anese 
     SUBDIR += aqemu
@@ -55,7 +54,6 @@
     SUBDIR += hugo
     SUBDIR += i386-wine
     SUBDIR += i386-wine-devel
-    SUBDIR += ia64sim
     SUBDIR += ines
     SUBDIR += javatari
     SUBDIR += joytran
@@ -71,7 +69,6 @@
     SUBDIR += linux_base-c6
     SUBDIR += linux_base-c7
     SUBDIR += lisaem
-    SUBDIR += loemu
     SUBDIR += mame
     SUBDIR += mastergear
     SUBDIR += mednafen
@@ -106,7 +103,6 @@
     SUBDIR += pcem
     SUBDIR += pcemu
     SUBDIR += pcsxr
-    SUBDIR += pipelight
     SUBDIR += playonbsd
     SUBDIR += ppsspp
     SUBDIR += ppsspp-qt5

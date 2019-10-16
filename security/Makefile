@@ -32,9 +32,7 @@
     SUBDIR += arm
     SUBDIR += arpCounterattack
     SUBDIR += asignify
-    SUBDIR += authforce
     SUBDIR += autossh
-    SUBDIR += avcheck
     SUBDIR += aws-iam-authenticator
     SUBDIR += aws-vault
     SUBDIR += axTLS
@@ -125,7 +123,6 @@
     SUBDIR += dehydrated
     SUBDIR += denyhosts
     SUBDIR += destroy
-    SUBDIR += digest
     SUBDIR += dirbuster
     SUBDIR += dirmngr
     SUBDIR += distcache
@@ -161,7 +158,6 @@
     SUBDIR += fl0p
     SUBDIR += flawfinder
     SUBDIR += fpc-openssl
-    SUBDIR += fpm2
     SUBDIR += fprint_demo
     SUBDIR += fprintd
     SUBDIR += fragroute
@@ -172,7 +168,6 @@
     SUBDIR += fuzz
     SUBDIR += fwanalog
     SUBDIR += fwbuilder
-    SUBDIR += fwipe
     SUBDIR += fwknop
     SUBDIR += fwlogwatch
     SUBDIR += gag
@@ -183,7 +178,6 @@
     SUBDIR += git-secret
     SUBDIR += gnome-keyring
     SUBDIR += gnome-keyring-sharp
-    SUBDIR += gnome-password-generator
     SUBDIR += gnome-ssh-askpass
     SUBDIR += gnomint
     SUBDIR += gnupg
@@ -222,7 +216,6 @@
     SUBDIR += honggfuzz
     SUBDIR += hotssh
     SUBDIR += hpenc
-    SUBDIR += httprint
     SUBDIR += hydra
     SUBDIR += i2p
     SUBDIR += i2pd
@@ -230,13 +223,11 @@
     SUBDIR += idea
     SUBDIR += identify
     SUBDIR += ike
-    SUBDIR += ike-scan
     SUBDIR += integrit
     SUBDIR += ipfcount
     SUBDIR += ipfilter2dshield
     SUBDIR += ipfmeta
     SUBDIR += ipfw2dshield
-    SUBDIR += ipfwcount
     SUBDIR += ipguard
     SUBDIR += ipsec-tools
     SUBDIR += ipv6toolkit
@@ -316,7 +307,6 @@
     SUBDIR += libsecret
     SUBDIR += libsectok
     SUBDIR += libsodium
-    SUBDIR += libsparkcrypto
     SUBDIR += libssh
     SUBDIR += libssh2
     SUBDIR += libtasn1
@@ -364,8 +354,6 @@
     SUBDIR += matrixssl
     SUBDIR += mbedtls
     SUBDIR += mcrypt
-    SUBDIR += md4coll
-    SUBDIR += md5coll
     SUBDIR += md5deep
     SUBDIR += medusa
     SUBDIR += meek
@@ -445,7 +433,6 @@
     SUBDIR += openvpn-mbedtls
     SUBDIR += ophcrack
     SUBDIR += orthrus
-    SUBDIR += osiris
     SUBDIR += ossec-hids
     SUBDIR += ossec-hids-agent
     SUBDIR += ossec-hids-agent-config
@@ -1053,7 +1040,6 @@
     SUBDIR += quantis-kmod
     SUBDIR += racoon2
     SUBDIR += radamsa
-    SUBDIR += ranpwd
     SUBDIR += ratproxy
     SUBDIR += rats
     SUBDIR += razorback-api
@@ -1072,7 +1058,6 @@
     SUBDIR += razorback-virusTotal
     SUBDIR += razorback-yaraNugget
     SUBDIR += rcracki_mt
-    SUBDIR += rdigest
     SUBDIR += regripper
     SUBDIR += reop
     SUBDIR += retranslator
@@ -1217,7 +1202,6 @@
     SUBDIR += sks
     SUBDIR += slurpie
     SUBDIR += slush
-    SUBDIR += smap
     SUBDIR += smtpscan
     SUBDIR += smurflog
     SUBDIR += sniff
@@ -1245,7 +1229,6 @@
     SUBDIR += ssh-multiadd
     SUBDIR += ssh-vault
     SUBDIR += ssh_askpass_gtk2
-    SUBDIR += sshblock
     SUBDIR += sshguard
     SUBDIR += sshpass
     SUBDIR += ssl-admin

@@ -1,6 +1,0 @@
-xmldiff uses xmlprpr and diff to display meaningful differences in XML
-files in an easy to read format. Output formats available include HTML,
-ANSI colour, and regular diff. The coloured modes are particularly
-useful for viewing small differences in context within large XML files.
-
-WWW: http://software.decisionsoft.com/tools.html

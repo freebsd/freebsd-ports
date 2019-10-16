@@ -118,7 +118,6 @@
     SUBDIR += hermit
     SUBDIR += inconsolata-lgc-ttf
     SUBDIR += inconsolata-ttf
-    SUBDIR += indic-ttf
     SUBDIR += intlfonts
     SUBDIR += iosevka
     SUBDIR += isabella
@@ -179,7 +178,6 @@
     SUBDIR += padauk
     SUBDIR += paratype
     SUBDIR += pcf2bdf
-    SUBDIR += pingwi
     SUBDIR += plex-ttf
     SUBDIR += powerline-fonts
     SUBDIR += prociono

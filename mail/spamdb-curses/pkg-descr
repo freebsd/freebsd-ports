@@ -1,9 +1,0 @@
-Human friendly curses interface for spamdb(8) to manage addresses for the
-whitelist/greylist.
-
-Note: This is for OpenBSD's spamd(8), which has absolutely nothing to do with
-SpamAssasin's spamd.
-
-It's simple, and "just works" ... What more is there to say?
-
-WWW: http://code.arp242.net/spamdb-curses/

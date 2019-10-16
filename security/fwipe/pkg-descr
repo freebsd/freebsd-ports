@@ -1,8 +1,0 @@
-Fwipe is a secure file erasing program. fwipe0, which actually erases
-your files, is immune to filenames containing spaces, carriage returns,
-dashes, or any other special characters. You can use it in place of rm
-in cron jobs, together with "find ... -print0". The output of fwipe0 is
-specially designed to be parsed easily by machine, so it can be embedded
-in other applications which need secure file erasure.
-
-WWW: http://jeenyus.net/~budney/linux/software/fwipe.html

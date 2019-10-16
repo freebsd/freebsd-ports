@@ -1,7 +1,0 @@
-bin/snowlog
-man/man1/snowlog.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/INSTALLATION
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/filters.example
-%%PORTDOCS%%%%DATADIR%%/referers.regexp
-%%PORTDOCS%%%%DATADIR%%/useragents.regexp

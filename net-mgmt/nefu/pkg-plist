@@ -1,9 +1,0 @@
-bin/nefu
-man/man1/nefu.1.gz
-man/man4/nefu.conf.4.gz
-@owner nefu
-@group nefu
-@dir %%WWWDIR%%
-@dir /var/db/nefu
-@group
-@owner

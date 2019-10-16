@@ -1,8 +1,0 @@
---- libs/domc/Makefile.orig	Tue Oct 17 01:25:18 2006
-+++ libs/domc/Makefile	Sun Nov  5 23:37:10 2006
-@@ -1,4 +1,4 @@
--_EXTRA     = -I../libmba/src/ -L../libmba/
-+_EXTRA     = -I${LOCALBASE}/include/ -L${LOCALBASE}/lib/
- prefix     = ./
- includedir = $(prefix)
- libdir     = $(prefix)

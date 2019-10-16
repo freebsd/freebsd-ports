@@ -1,7 +1,0 @@
-#!/bin/sh
-FAHDIR=~/.fah
-CURDIR=`pwd`
-mkdir $FAHDIR
-cd $FAHDIR
-nice -n 20 /DATADIR/BINNAME -freeBSD
-cd $CURDIR

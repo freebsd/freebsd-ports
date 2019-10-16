@@ -1,7 +1,0 @@
-log_analysis is a log file analysis engine that extracts relevant
-data for any of the recognized log messages and produces a summary
-that is much easier to read. It can be configured to recognize
-entirely new log types. log_analysis natively understands about
-100 different kinds of syslog messages, as well as wtmp messages.
-
-WWW: http://userpages.umbc.edu/~mabzug1/log_analysis.html

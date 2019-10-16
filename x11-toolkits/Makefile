@@ -239,7 +239,6 @@
     SUBDIR += slingshot
     SUBDIR += soqt-devel
     SUBDIR += swt
-    SUBDIR += swt-devel
     SUBDIR += tepl
     SUBDIR += termit
     SUBDIR += tile

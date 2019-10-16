@@ -1,7 +1,0 @@
-bsnmp-jails is a module for bsnmpd which allows you to measure statistics
-about jails on your system. Counters are available for network traffic,
-CPU time used, process and thread counts, and disk utilization.
-
-LICENSE: BSD
-
-WWW: http://thewalter.net/stef/software/bsnmp-jails/

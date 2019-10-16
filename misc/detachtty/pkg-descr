@@ -1,6 +1,0 @@
-detachtty is a Unix utility that lets you run interactive programs
-non-interactively, and connect to them over the network when you do
-need to interact with them. It's intended for use with long-running
-server processes running in Common Lisp implementations.
-
-WWW: http://www.cliki.net/detachtty

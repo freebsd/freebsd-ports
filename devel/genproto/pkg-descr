@@ -1,4 +1,0 @@
-genproto generates prototypes from C/C++ code. It does not touch the original
-files, and the output format can be changed via printf-style format strings.
-
-WWW: http://freequaos.host.sk/genproto/

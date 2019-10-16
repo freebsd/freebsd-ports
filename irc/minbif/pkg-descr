@@ -1,7 +1,0 @@
-Minbif aims to use the libpurple library from the Pidgin project to provide
-an IRC-friendly instant messaging client.
-
-It is very easy to setup, does not require any non-standard authentication,
-and just uses the server password feature of IRC clients.
-
-https://symlink.me/projects/minbif/wiki/

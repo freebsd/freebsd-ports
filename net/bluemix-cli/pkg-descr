@@ -1,8 +1,0 @@
-Bluemix CLI provides a unified way for you to interact with your
-applications, virtual servers, containers, and other components in
-Bluemix through a command line interface. It also leverages command
-line tools from Cloud Foundry, Docker, and the OpenStack community
-when you interact with specific compute types. Bluemix CLI helps you
-handle the environment settings when these community tools are used.
-
-WWW: http://clis.ng.bluemix.net

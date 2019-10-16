@@ -1,6 +1,0 @@
-Pypersrc is an open-source (GNU GPL) GUI program written in Python
-and C++ for browsing source code. You can click a HTML-like hyperlink
-to jump to a line in a source code file.  Pypersrc can display
-different representations of the same source code.
-
-WWW: http://www.jimbrooks.org/programming/tools/hypersrc/pypersrc.php

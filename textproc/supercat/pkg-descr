@@ -1,7 +1,0 @@
-Supercat (spc) is a program that colorizes text based on matching
-regular expressions/strings/characters. Supercat supports html output
-as well as standard ASCII text. Unlike some text-colorizing programs
-that exist, Supercat does not require you to have to be a programmer to
-make colorization rules.
-
-WWW: http://supercat.nosredna.net/

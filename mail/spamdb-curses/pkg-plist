@@ -1,7 +1,0 @@
-bin/spamdb-curses
-%%PYTHON_SITELIBDIR%%/spamdbcurses/OrderedDict.py
-%%PYTHON_SITELIBDIR%%/spamdbcurses/__init__.py
-%%PYTHON_SITELIBDIR%%/spamdbcurses/OrderedDict.pyc
-%%PYTHON_SITELIBDIR%%/spamdbcurses/__init__.pyc
-%%PYTHON_SITELIBDIR%%/spamdbcurses/OrderedDict.pyo
-%%PYTHON_SITELIBDIR%%/spamdbcurses/__init__.pyo

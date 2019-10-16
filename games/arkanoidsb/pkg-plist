@@ -1,7 +1,0 @@
-bin/arkanoidsb
-%%DATADIR%%/arkanoidsb
-%%DATADIR%%/res/arkanoidsb.pak
-%%DATADIR%%/res/module01.ogg
-%%DATADIR%%/res/module02.ogg
-%%DATADIR%%/res/module03.s3m
-share/pixmaps/arkanoidsb.png

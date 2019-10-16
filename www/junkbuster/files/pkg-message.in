@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Please, review the samples of the configuration files (in
-%%PREFIX%%/etc/junkbuster/) and create your own config files. Read
-the junkbuster man-page (man junkbuster) for even more information.
-EOM
-}
-]

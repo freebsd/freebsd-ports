@@ -1,8 +1,0 @@
-include/sfio/ast_common.h
-include/sfio/sfio.h
-include/sfio/sfio_t.h
-include/sfio/stdio.h
-lib/libsfio.a
-lib/libstdio.a
-man/man1/iffe.1.gz
-man/man3/sfio.3.gz

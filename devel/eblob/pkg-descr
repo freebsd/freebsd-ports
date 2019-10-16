@@ -1,6 +1,0 @@
-Eblob is a low-level local append-only (configurable) storage system.  It
-combines fast read/write performance with configuration simplicity and rich
-feature set.  Its main goal was to provide bullet-proof low-level backend
-for Elliptics distributed storage (this is default backend now).
-
-WWW: http://reverbrain.com/eblob/

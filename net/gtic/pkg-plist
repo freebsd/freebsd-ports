@@ -1,7 +1,0 @@
-@sample %%ETCDIR%%/areagroups.sample
-@sample %%ETCDIR%%/areas.sample
-@sample %%ETCDIR%%/config.sample
-@sample %%ETCDIR%%/domains.sample
-@sample %%ETCDIR%%/help.sample
-@sample %%ETCDIR%%/users.sample
-sbin/gtic

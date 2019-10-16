@@ -1,8 +1,0 @@
-Aeskulap is a medical image viewer. It is able to load a series of
-special images stored in the DICOM format for review. Additionally
-Aeskulap is able to query and fetch DICOM images from archive nodes
-(also called PACS) over the network. The goal of this project is to
-create a full open source replacement for commercially available DICOM
-viewers.
-
-WWW: https://github.com/pipelka/aeskulap

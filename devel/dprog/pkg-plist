@@ -1,7 +1,0 @@
-bin/dprog
-include/cxx_dprog.hh
-lib/libcxx_dprog.a
-%%EMACS%%%%DATADIR%%/dprog-constants.el
-%%EMACS%%%%DATADIR%%/dprog-font-lock.el
-%%EMACS%%%%DATADIR%%/dprog-indent.el
-%%EMACS%%%%DATADIR%%/dprog.el

@@ -1,9 +1,0 @@
-Flate is a template library used to deal with html code in CGI applications.
-The library includes C and Perl support. All html code is put in an external
-file (the template) and printed using the library functions: variables, zones
-(parts to be displayed or not) and tables (parts to be displayed 0 to n times).
-Using this method you don't need to modify/recompile your application when
-modifying html code, printing order doesn't matter in your CGI code, and your
-CGI code is much cleaner.
-
-WWW: http://flate.dead-inside.org/

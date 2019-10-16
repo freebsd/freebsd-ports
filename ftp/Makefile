@@ -5,12 +5,10 @@
 
     SUBDIR += R-cran-RCurl
     SUBDIR += R-cran-curl
-    SUBDIR += atftp
     SUBDIR += axel
     SUBDIR += bbftp
     SUBDIR += bftpd
     SUBDIR += bsdftpd-ssl
-    SUBDIR += cftp
     SUBDIR += cmdftp
     SUBDIR += curl
     SUBDIR += curlie

@@ -1,6 +1,0 @@
-Xmandel is a user friendly interface for generating Mandelbrot sets and
-Julia sets.  It initially comes up with several command buttons,
-which are described in the man page, for controlling the execution.  A
-Mandelbrot set is drawn in the window of the initial form when the
-mandel button is selected.  Other buttons are provided for zooming,
-clearing, etc.  A separate window is created for drawing the Julia sets.

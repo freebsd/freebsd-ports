@@ -195,7 +195,6 @@
     SUBDIR += copytape
     SUBDIR += coreos-ct
     SUBDIR += coreutils
-    SUBDIR += cotty
     SUBDIR += cpdup
     SUBDIR += cpu
     SUBDIR += cpu-x
@@ -267,7 +266,6 @@
     SUBDIR += dsbmd
     SUBDIR += dsbsu
     SUBDIR += dsbwrtsysctl
-    SUBDIR += dt
     SUBDIR += dtc
     SUBDIR += dtpstree
     SUBDIR += du2ps
@@ -419,7 +417,6 @@
     SUBDIR += gigolo
     SUBDIR += gkfreq
     SUBDIR += gkleds2
-    SUBDIR += gkrellfire
     SUBDIR += gkrellflynn
     SUBDIR += gkrellm-trayicons
     SUBDIR += gkrellm2
@@ -601,7 +598,6 @@
     SUBDIR += lmon
     SUBDIR += lnav
     SUBDIR += lockfile-progs
-    SUBDIR += log_analysis
     SUBDIR += logrotate
     SUBDIR += logstalgia
     SUBDIR += logstash-forwarder
@@ -681,7 +677,6 @@
     SUBDIR += mkfile
     SUBDIR += mkfwimage
     SUBDIR += mkntpwd
-    SUBDIR += mksunbootcd
     SUBDIR += mmc-utils
     SUBDIR += mmve
     SUBDIR += mnrpes
@@ -1063,7 +1058,6 @@
     SUBDIR += restic
     SUBDIR += retail
     SUBDIR += rex
-    SUBDIR += rfstool
     SUBDIR += rhc
     SUBDIR += riak-cs
     SUBDIR += rinse
@@ -1214,10 +1208,8 @@
     SUBDIR += signon-plugin-oauth2
     SUBDIR += signon-qt5
     SUBDIR += signon-ui
-    SUBDIR += skill
     SUBDIR += slack
     SUBDIR += sleuthkit
-    SUBDIR += sloth
     SUBDIR += slst
     SUBDIR += slurm-wlm
     SUBDIR += smart
@@ -1227,7 +1219,6 @@
     SUBDIR += snap
     SUBDIR += snmp_exporter
     SUBDIR += snooze
-    SUBDIR += snowlog
     SUBDIR += sockaddr
     SUBDIR += socket
     SUBDIR += socklog
@@ -1451,7 +1442,6 @@
     SUBDIR += wmcpuload
     SUBDIR += wmcube
     SUBDIR += wmdiskmon
-    SUBDIR += wmfire
     SUBDIR += wmflame
     SUBDIR += wmmemfree
     SUBDIR += wmmemload
@@ -1462,7 +1452,6 @@
     SUBDIR += wuzzah
     SUBDIR += x86info
     SUBDIR += xbatt
-    SUBDIR += xbattbar
     SUBDIR += xcdroast
     SUBDIR += xcpustate
     SUBDIR += xdu

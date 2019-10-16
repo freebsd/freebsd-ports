@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-    See %%DOCSDIR%%/README to know how configure the httpd.conf
-    of your apache.
-EOM
-}
-]

@@ -1,6 +1,0 @@
-ACL Policy Daemon is a program that communicates with the Postfix MTA using the
-Policy Delegation Protocol implementing an ACL (Access Control List) system,
-making very easy to improve and create nice controls on your e-mail traffic.
-You can use it to verify SPF records too.
-
-WWW: http://www.apolicy.org

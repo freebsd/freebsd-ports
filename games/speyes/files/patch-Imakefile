@@ -1,8 +1,0 @@
---- Imakefile.orig	Fri Nov  5 09:43:09 1999
-+++ Imakefile	Wed Nov  1 07:59:39 2000
-@@ -8,4 +8,4 @@
- SRCS = speyes.c
- OBJS = speyes.o getopt.o getopt1.o
- 
--ComplexProgramTarget(speyes)
-+ComplexProgramTargetNoMan(speyes)

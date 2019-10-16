@@ -1,5 +1,0 @@
-cgiparse is a C library that is used to build cgi's that can parse
-web forms.  It provides a few utility functions that allow your
-cgi's to be easily debuged.
-
-To parse a cgi form it is as easy as calling cgigetvalue("name").

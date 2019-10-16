@@ -1,5 +1,0 @@
-dvts (Digital Video Transport System) is a package of DV/RTP.
-   dvsend:  Receive DV/IEEE1394 packets and send RTP/DV packets.
-   dvrecv:  Receive DV/RTP packets and send DV/IEEE1394 packets.
-
-WWW: http://www.sfc.wide.ad.jp/DVTS/

@@ -1,9 +1,0 @@
-WebMagick is a package which supports making image collections
-available on the Web. It recurses through directory trees, building
-HTML pages and imagemap files to allow the user to navigate through
-collections of thumbnail images (somewhat similar to xv's Visual
-Schnauzer) and select the image to view with a mouse click (see sample
-output). Every effort is made to minimize the bandwidth required
-between the server and the browser.
-
-WWW: http://webmagick.sourceforge.net/

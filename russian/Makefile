@@ -6,7 +6,6 @@
     SUBDIR += artwiz-ru
     SUBDIR += aspell
     SUBDIR += bugzilla44
-    SUBDIR += d1489
     SUBDIR += emkatic
     SUBDIR += eric6
     SUBDIR += gd

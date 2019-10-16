@@ -1,9 +1,0 @@
-[ excerpt from developer's www site with modifications ]
-
-Faster implementation of techniques described in Cryptanalysis for
-Hash Functions MD4 and RIPEMD, by Xiaoyun Wang, et al.
-
-MD4 Collision Generator by Patrick Stach <pstach@stachliu.com>
-Implementation of paper by Xiaoyun Wang, et. al.
-
-WWW: http://www.stachliu.com/collisions.html

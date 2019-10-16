@@ -40,7 +40,6 @@
     SUBDIR += kmymoney
     SUBDIR += ktoblzcheck
     SUBDIR += ledger
-    SUBDIR += ledgersmb
     SUBDIR += ledgersmb12
     SUBDIR += libofx
     SUBDIR += libstocks

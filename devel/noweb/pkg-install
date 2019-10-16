@@ -1,8 +1,0 @@
-#!/bin/sh
-if ! which mktexlsr >/dev/null; then
-  echo "I can't find mktexlsr in your search path."
-  echo "If you want to use noweb's (La)TeX output"
-  echo "you should also install the teTeX package."
-else
-  mktexlsr
-fi

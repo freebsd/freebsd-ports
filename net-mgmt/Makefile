@@ -23,7 +23,6 @@
     SUBDIR += blackbox_exporter
     SUBDIR += bpft
     SUBDIR += braa
-    SUBDIR += bsnmp-jails
     SUBDIR += bsnmp-regex
     SUBDIR += bsnmp-ucd
     SUBDIR += bwm-ng
@@ -105,7 +104,6 @@
     SUBDIR += icmpquery
     SUBDIR += iftop
     SUBDIR += intel-snap
-    SUBDIR += iog
     SUBDIR += ipacctd
     SUBDIR += ipaudit
     SUBDIR += ipcad
@@ -120,7 +118,6 @@
     SUBDIR += kapacitor
     SUBDIR += kismet
     SUBDIR += klg
-    SUBDIR += lanmap
     SUBDIR += lg
     SUBDIR += librenms
     SUBDIR += librenms-agent
@@ -162,7 +159,6 @@
     SUBDIR += nagios-plugins
     SUBDIR += nagios-snmp-plugins
     SUBDIR += nagios-snmp-plugins-extras
-    SUBDIR += nagios-spamd-plugin
     SUBDIR += nagios4
     SUBDIR += nagiosgraph
     SUBDIR += nagiosql
@@ -174,7 +170,6 @@
     SUBDIR += nbtscan
     SUBDIR += ndoutils
     SUBDIR += ndpmon
-    SUBDIR += nefu
     SUBDIR += net-snmp
     SUBDIR += netbox
     SUBDIR += netdata
@@ -294,7 +289,6 @@
     SUBDIR += php74-snmp
     SUBDIR += phpipam
     SUBDIR += phpweathermap
-    SUBDIR += pixilate
     SUBDIR += pktstat
     SUBDIR += pmacct
     SUBDIR += pnp
@@ -366,7 +360,6 @@
     SUBDIR += sendip
     SUBDIR += sipcalc
     SUBDIR += sjitter
-    SUBDIR += slate
     SUBDIR += smokeping
     SUBDIR += snmp++
     SUBDIR += snmp4nagios
@@ -393,7 +386,6 @@
     SUBDIR += victorops-nagios
     SUBDIR += virt-viewer
     SUBDIR += wdiag
-    SUBDIR += weplab
     SUBDIR += whatmask
     SUBDIR += wifimgr
     SUBDIR += wmi-client

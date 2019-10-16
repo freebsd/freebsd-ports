@@ -1,7 +1,0 @@
-bin/xcurs
-lib/xcurs/filesel.py
-lib/xcurs/gladew.py
-lib/xcurs/parsexcursor.py
-lib/xcurs/xcursorlist.py
-%%DATADIR%%/README
-%%DATADIR%%/xcurs.glade

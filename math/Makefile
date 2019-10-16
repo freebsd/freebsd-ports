@@ -120,7 +120,6 @@
     SUBDIR += adol-c
     SUBDIR += algae
     SUBDIR += alglib
-    SUBDIR += algotutor
     SUBDIR += alt-ergo
     SUBDIR += amath
     SUBDIR += ambit
@@ -389,7 +388,6 @@
     SUBDIR += nlopt
     SUBDIR += ntl
     SUBDIR += numdiff
-    SUBDIR += nyh-hoc
     SUBDIR += ocaml-ocamlgraph
     SUBDIR += ocaml-zarith
     SUBDIR += ocamlgsl
@@ -852,13 +850,11 @@
     SUBDIR += suitesparse
     SUBDIR += sundials
     SUBDIR += superlu
-    SUBDIR += superlu_mt
     SUBDIR += symmetrica
     SUBDIR += symphony
     SUBDIR += tablix
     SUBDIR += taucs
     SUBDIR += tblis
-    SUBDIR += testu01
     SUBDIR += tetgen
     SUBDIR += timbl
     SUBDIR += tmv

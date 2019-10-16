@@ -1,5 +1,0 @@
-Find the fastest mirror for every mirror list in bsd.sites.mk.
-
-Output is suitable for inclusion into make.conf.
-
-WWW: http://www.semicomplete.com/blog/geekery/freebsd-ports-master-sites-sorting.html

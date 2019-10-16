@@ -1,9 +1,0 @@
-%%DEDICATED%%bin/cleanq3ded
-%%CLIENT%%bin/cleanq3
-%%SMP_CLIENT%%bin/cleanq3-smp
-%%GAMELIBS%%%%LIBDIR%%/baseq3/cgame.so
-%%GAMELIBS%%%%LIBDIR%%/baseq3/qagame.so
-%%GAMELIBS%%%%LIBDIR%%/baseq3/ui.so
-%%GAMELIBS%%%%LIBDIR%%/missionpack/cgame.so
-%%GAMELIBS%%%%LIBDIR%%/missionpack/qagame.so
-%%GAMELIBS%%%%LIBDIR%%/missionpack/ui.so

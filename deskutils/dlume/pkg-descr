@@ -1,6 +1,0 @@
-Dlume is nice, gtk2-based addressbook. You can easily add, edit
-and delete records to/from database (but Dlume doesn't rely on an outside
-database - It stores your contacts in XML format). The Quick-search
-feature allows you find required entry in comfortable way. Export to
-CSV and HTML formats is also available. Interface design was borrowed
-and improved from Paddress (http://paddress.sourceforge.net).

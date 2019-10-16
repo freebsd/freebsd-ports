@@ -1,5 +1,0 @@
-jack_mixer is a GTK+  JACK audio mixer app with a look similar
-to its hardware counterpart. It has lot of useful features,
-apart from being able to mix multiple JACK audio streams.
-
-WWW: http://home.gna.org/jackmixer/
