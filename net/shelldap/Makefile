@@ -3,16 +3,13 @@
 
 PORTNAME=	shelldap
 PORTVERSION=	1.5.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net perl5
 
 MAINTAINER=	mahlon@martini.nu
 COMMENT=	Shell-like environment for LDAP
 
 LICENSE=	BSD3CLAUSE
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	mahlonsmith
-GH_TAGNAME=	54885085b8ec0b8063f4144bfa80ba4b72698f39
 
 RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
 		p5-perl-ldap>=0:net/p5-perl-ldap \
@@ -24,6 +21,9 @@ RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
 
 USES=		perl5
 USE_PERL5=	extract build run
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mahlonsmith
 
 PLIST_FILES=	bin/shelldap man/man1/shelldap.1.gz
 
