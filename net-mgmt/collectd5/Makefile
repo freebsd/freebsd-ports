@@ -24,7 +24,7 @@ OPTIONS_GROUP_OUTPUT=	KAFKA MONGODB NOTIFYDESKTOP NOTIFYEMAIL PROMETHEUS \
 			RIEMANN RRDTOOL TSDB
 OPTIONS_GROUP_INPUT=	CHRONY CURL CURL_JSON CURL_XML DBI IPMI JSON MEMCACHEC \
 			MODBUS MQTT MYSQL NUTUPS OLSRD ONEWIRE OPENLDAP PERL \
-			PGSQL PINBA PING PYTHON RABBITMQ REDIS ROUTEROS SIGROK \
+			PGSQL PINBA PING PYTHON RABBITMQ REDIS SIGROK \
 			SNMP STATSD TOKYOTYRANT VARNISH XML ZOOKEEPER
 
 OPTIONS_DEFAULT=	GCRYPT LOGGING PING
@@ -61,7 +61,6 @@ PYTHON_DESC=		Enable python-based plugins
 RABBITMQ_DESC=		Enable rabbitmq-based plugins
 REDIS_DESC=		Enable redis-based plugins
 RIEMANN_DESC=		Enable write_riemann plugin (via riemann-c-client)
-ROUTEROS_DESC=		Enable routeros plugin
 RRDTOOL_DESC=		Enable rrdtool plugin (also rrdcached plugin)
 SIGROK_DESC=		Enable sigrok plugin
 SNMP_DESC=		Enable SNMP plugin
@@ -231,12 +230,6 @@ REDIS_CONFIGURE_WITH=	libhiredis=${LOCALBASE}
 RIEMANN_LIB_DEPENDS=		libltdl.so:devel/libltdl \
 				libriemann-client.so:net-mgmt/riemann-c-client
 RIEMANN_CONFIGURE_ENABLE=	write_riemann
-
-ROUTEROS_LIB_DEPENDS=		libgcrypt.so:security/libgcrypt \
-				libgpg-error.so:security/libgpg-error \
-				librouteros.so:net/librouteros
-ROUTEROS_CONFIGURE_ENABLE=	routeros
-ROUTEROS_CONFIGURE_WITH=	librouteros=${LOCALBASE}
 
 RRDTOOL_LIB_DEPENDS=		librrd.so:databases/rrdtool
 RRDTOOL_CONFIGURE_ENABLE=	rrdcached rrdtool
