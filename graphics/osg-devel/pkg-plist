@@ -699,7 +699,6 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_glsl.so
 %%GTA%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_gta.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_gz.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_hdr.so
-%%INVENTOR%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_iv.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_ive.so
 %%JASPER%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_jp2.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_jpeg.so

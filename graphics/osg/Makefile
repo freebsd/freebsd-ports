@@ -24,7 +24,7 @@ GH_PROJECT=	OpenSceneGraph
 
 CONFLICTS=	osg-devel
 
-USES=		alias cmake compiler:c++11-lang gl jpeg pkgconfig
+USES=		alias cmake compiler:c++11-lang gl jpeg pkgconfig xorg
 USE_GL=		gl glu
 USE_XORG=	x11
 USE_LDCONFIG=	yes
@@ -38,14 +38,13 @@ PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
 
 PORTSCOUT=	limitw:1,even
 
-OPTIONS_DEFINE=	CURL FFMPEG FREETYPE GDAL GIF GSTREAMER GTA INVENTOR \
+OPTIONS_DEFINE=	CURL FFMPEG FREETYPE GDAL GIF GSTREAMER GTA \
 		JASPER LIBLAS LUA NVTT OPENEXR PDF QT5 SDL \
 		SVG VNC XINE XRANDR
 OPTIONS_DEFAULT=FFMPEG FREETYPE GIF XRANDR
 
 GDAL_DESC=	GDAL support
 GTA_DESC=	GTA file format support
-INVENTOR_DESC=	SGI OpenInventor support
 LIBLAS_DESC=	liblas support
 NVTT_DESC=	Use NVidia texture tools
 SDL_DESC=	Use SDL (joystick support in present3d)
@@ -75,9 +74,6 @@ GSTREAMER_BROKEN=	fails when linking gstreamer plugin, with error cannot find -l
 GTA_LIB_DEPENDS=	libgta.so:devel/libgta
 GTA_VARS=		FORCE_REQUIRE+=GTA
 GTA_VARS_OFF=		FORCE_IGNORE+=GTA
-INVENTOR_LIB_DEPENDS=	libInventor.so:graphics/inventor
-INVENTOR_VARS=		FORCE_REQUIRE+=Inventor
-INVENTOR_VARS_OFF=	FORCE_IGNORE+=Inventor
 JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 JASPER_VARS=		FORCE_REQUIRE+=Jasper
 JASPER_VARS_OFF=	FORCE_IGNORE+=Jasper
