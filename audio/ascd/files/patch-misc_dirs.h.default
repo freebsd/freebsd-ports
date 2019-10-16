@@ -1,9 +1,0 @@
---- misc/dirs.h.default.orig	1999-04-19 17:24:12 UTC
-+++ misc/dirs.h.default
-@@ -1,3 +1,3 @@
--#define CBINDIR /usr/local/bin
--#define CMANDIR /usr/local/man/man1
--#define CTHDIR /usr/local/share/AScd
-+#define CBINDIR %%PREFIX%%/bin
-+#define CMANDIR %%PREFIX%%/man/man1
-+#define CTHDIR %%PREFIX%%/share/ascd

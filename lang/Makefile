@@ -12,7 +12,6 @@
     SUBDIR += algol68g
     SUBDIR += angelscript
     SUBDIR += apache-commons-jelly
-    SUBDIR += arena
     SUBDIR += asis
     SUBDIR += asn1c
     SUBDIR += atlast
@@ -50,7 +49,6 @@
     SUBDIR += crystal
     SUBDIR += csharp-mode.el
     SUBDIR += cython
-    SUBDIR += diveintopython
     SUBDIR += dlang-tools
     SUBDIR += dlv
     SUBDIR += duktape
@@ -200,7 +198,6 @@
     SUBDIR += mixal
     SUBDIR += mlton
     SUBDIR += mmix
-    SUBDIR += modula3
     SUBDIR += mono
     SUBDIR += mono-basic
     SUBDIR += mosh
@@ -235,7 +232,6 @@
     SUBDIR += opendylan
     SUBDIR += ott
     SUBDIR += owl-lisp
-    SUBDIR += p2c
     SUBDIR += p5-Data-JavaScript
     SUBDIR += p5-Error
     SUBDIR += p5-Expect
@@ -315,7 +311,6 @@
     SUBDIR += python37
     SUBDIR += qmasm
     SUBDIR += qscheme
-    SUBDIR += quack
     SUBDIR += quickjs
     SUBDIR += racket
     SUBDIR += racket-minimal
@@ -364,7 +359,6 @@
     SUBDIR += squeak
     SUBDIR += squirrel
     SUBDIR += starlogo
-    SUBDIR += stldoc
     SUBDIR += swi-pl
     SUBDIR += tcbasic
     SUBDIR += tcc

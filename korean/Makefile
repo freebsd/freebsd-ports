@@ -7,12 +7,10 @@
     SUBDIR += FreeWnn-server
     SUBDIR += aleefonts-ttf
     SUBDIR += baekmukfonts-bdf
-    SUBDIR += baekmukfonts-ttf
     SUBDIR += d2coding-ttf
     SUBDIR += engdic
     SUBDIR += fcitx-hangul
     SUBDIR += gimp-help
-    SUBDIR += gtkcomm
     SUBDIR += h2ps
     SUBDIR += hanyangfonts
     SUBDIR += hcode

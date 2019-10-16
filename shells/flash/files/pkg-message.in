@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-This software is not yet ready-to-go on your system. You need
-to configure flash in %%PREFIX%%/lib/flash in order for it to
-work properly.
-EOM
-}
-]

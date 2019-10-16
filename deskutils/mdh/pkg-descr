@@ -1,5 +1,0 @@
-mdh (MailDooHicky) is a GTK2-based toolbar that can display the time,
-email message count and various system (CPU, network, etc.) utilization.
-It also features user-definable buttons, a run window and scratch-pad.
-
-WWW: http://www.gozer.org/programs/gtk/mdh.php

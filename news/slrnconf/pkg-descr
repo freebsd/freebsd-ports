@@ -1,7 +1,0 @@
-Slrnconf is a graphical configuation utility for the newsreader
-slrn. It is intended to make the hairy configuration of SLRN a
-bit easier. Slrnconf will try to read your ~/.slrnrc at
-startup. If you're using a different file, just open it via
-File -> Open. There are no command line switches.
-
-WWW: http://home.arcor.de/kaffeetisch/slrnconf.html

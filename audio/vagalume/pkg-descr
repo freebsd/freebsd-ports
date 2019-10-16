@@ -1,8 +1,0 @@
-Vagalume is an GTK+-based client for the Last.fm online radio.
-
-Although it works in standard PCs, it is specially designed
-to work in the Maemo platform. It has access to virtually all
-the same functions as the official client, including scrobbling,
-tagging, loving, banning etc.
-
-WWW: http://vagalume.igalia.com/

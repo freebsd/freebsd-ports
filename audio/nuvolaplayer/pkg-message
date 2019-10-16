@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-To use Flash-based services you need to install www/flashplayer.
-EOM
-}
-]

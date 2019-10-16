@@ -28,8 +28,6 @@
     SUBDIR += eclipse-drjava
     SUBDIR += eclipse-ecj
     SUBDIR += eclipse-findbugs
-    SUBDIR += eclipse-log4e
-    SUBDIR += eclipse-lomboz
     SUBDIR += eclipse-pydev
     SUBDIR += eclipse-shelled
     SUBDIR += eclipse-windowbuilder
@@ -54,7 +52,6 @@
     SUBDIR += jakarta-regexp
     SUBDIR += jasmin
     SUBDIR += jattach
-    SUBDIR += java-checkstyle
     SUBDIR += java-cup
     SUBDIR += java-getopt
     SUBDIR += java-subversion

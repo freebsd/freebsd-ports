@@ -1,8 +1,0 @@
-Bingo is a Go language server that speaks the Language Server
-Protocol.  It supports editor features such as go-to-definition,
-hover, and find-references for Go projects.
-
-This project was largely inspired by go-langserver, but bingo is
-simpler, faster, and smarter.
-
-WWW: https://github.com/saibing/bingo

@@ -1,8 +1,0 @@
-This distribution contains a library to access GSM mobile phones through GSM
-modems. Features include:
-   - modification of phonebooks stored in the mobile phone or on the SIM card
-   - reading and writing of SMS messages stored in the mobile phone
-   - sending and reception of SMS messages
-
-Additionally, some simple command line programs are provided to use these
-functionalities.

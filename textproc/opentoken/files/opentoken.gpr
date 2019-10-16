@@ -1,7 +1,0 @@
-project OpenToken is
-   for Languages use ("ada");
-   for Library_Name use "opentoken";
-   for Source_Dirs use ("../../include/opentoken");
-   for Library_Dir use  "../../lib/opentoken";
-   for Externally_Built use "true";
-end OpenToken;

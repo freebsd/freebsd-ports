@@ -1,8 +1,0 @@
-This is a Chinese Checkers game, it has 5 AI players, and can easily support
-more for any hackers out there. It uses SDL and runs great in plain X11.
-It has some fun effects to liven things up a bit.
-
-Multiplayer is supported on the same computer, although a net player would
-not be hard to add given the plugin player feature.
-
-WWW: http://jcatki.no-ip.org/CC/

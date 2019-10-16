@@ -1,5 +1,0 @@
-The digest utility is a wrapper for the md5, sha1, sha256, sha384,
-sha512, rmd160, tiger and whirlpool message digest algorithms (also
-known as hashes, checksums or "fingerprints").
-
-WWW: http://cvsweb.NetBSD.org/bsdweb.cgi/pkgsrc/pkgtools/digest/

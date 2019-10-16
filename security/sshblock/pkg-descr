@@ -1,6 +1,0 @@
-SSHBlock is a daemon to monitor a syslog log for break-in attempts using
-SSH, and to automatically block bad hosts by adding lines to /etc/hosts.allow
-(TCP Wrappers). Several thresholds are pre-defined, to be able to block those
-trying many attempts within a longer or shorter period.
-
-WWW: http://www.bsdconsulting.no/tools/

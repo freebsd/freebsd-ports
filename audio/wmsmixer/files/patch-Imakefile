@@ -1,8 +1,0 @@
---- Imakefile.orig	2003-04-12 22:08:16 UTC
-+++ Imakefile
-@@ -12,4 +12,4 @@ LD = c++ -m32 -nostdlib
- SRCS = wmsmixer.cc
- OBJS = wmsmixer.o
- 
--ComplexProgramTarget(wmsmixer)
-+ComplexProgramTargetNoMan(wmsmixer)

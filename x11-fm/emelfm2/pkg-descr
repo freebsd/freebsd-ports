@@ -1,7 +1,0 @@
-This is a port of emelFM2. emelFM2 is a file manager that
-implements the popular two-pane design. It features a
-simple GTK+ interface, a flexible file typing scheme,
-and a built-in command line for executing commands
-without opening a xterm.
-
-WWW: http://www.emelfm2.net/

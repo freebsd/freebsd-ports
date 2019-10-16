@@ -1,9 +1,0 @@
-bin/graph_gen
-bin/maxbit
-bin/tsp
-bin/tsp_bf
-include/fga.hpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph_gen.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/maxbit.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsp.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsp_bf.cpp

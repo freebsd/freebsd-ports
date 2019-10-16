@@ -1,9 +1,0 @@
-ranpwd uses /dev/random or /dev/urandom to generate cryptographically secure
-passwords.
-
-Generated passwords may consist of any specified length and any combination of
-upper- or lower-case alphanumeric characters or punctuation.  ranpwd can also
-generate passwords consisting of hexadecimal, decimal, octal or binary numbers,
-and format these as valid C constants for inclusion in source code.
-
-WWW: http://freecode.com/projects/ranpwd

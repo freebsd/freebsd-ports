@@ -42,7 +42,6 @@
     SUBDIR += deforaos-todo
     SUBDIR += devd-notifier
     SUBDIR += dfshow
-    SUBDIR += dlume
     SUBDIR += docear
     SUBDIR += dosage
     SUBDIR += easystroke
@@ -61,7 +60,6 @@
     SUBDIR += gcal
     SUBDIR += gcalcli
     SUBDIR += genius
-    SUBDIR += gkrellm-reminder2
     SUBDIR += glabels
     SUBDIR += gnome-calendar
     SUBDIR += gnome-characters
@@ -146,7 +144,6 @@
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += ljcharm
     SUBDIR += ljclive
-    SUBDIR += ljit
     SUBDIR += logjam
     SUBDIR += lookbook
     SUBDIR += lumina-archiver
@@ -163,7 +160,6 @@
     SUBDIR += mate-notification-daemon
     SUBDIR += mate-utils
     SUBDIR += mbox-importer
-    SUBDIR += mdh
     SUBDIR += mencal
     SUBDIR += menumaker
     SUBDIR += meteo

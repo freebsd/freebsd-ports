@@ -1,8 +1,0 @@
-Here you have the new release of `poster', to scale postscript
-images to a larger size, and print them on larger media and/or
-tile them to print on multiple sheets.
-With respect to the earlier release:
-- support is added for foreign (Non European A*) media sizes.
-- options for scaling became more flexible
-- original restrictions on white margins in your drawing are removed.
-For a complete explanation see the accompanying manual.

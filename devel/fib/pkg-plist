@@ -1,8 +1,0 @@
-include/fib.h
-lib/libfib.a
-lib/libfib.so
-lib/libfib.so.1
-%%PROFILE%%lib/libfib_p.a
-man/man3/fh_extractmin.3.gz
-man/man3/fh_makeheap.3.gz
-man/man3/fh_makekeyheap.3.gz

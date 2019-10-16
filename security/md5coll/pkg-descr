@@ -1,9 +1,0 @@
-[ excerpt from developer's www site with modifications ]
-
-Faster implementation of techniques in How to Break MD5 and Other
-Hash Functions, by Xiaoyun Wang, et al.
-
-MD5 Collision Generator by Patrick Stach <pstach@stachliu.com>.
-Implementation of paper by Xiaoyun Wang, et all.
-
-WWW: http://www.stachliu.com/collisions.html

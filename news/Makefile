@@ -31,7 +31,6 @@
     SUBDIR += mail2nntp
     SUBDIR += mmail
     SUBDIR += multisuck
-    SUBDIR += newscache
     SUBDIR += newsfetch
     SUBDIR += newsfish
     SUBDIR += newsgrab
@@ -42,7 +41,6 @@
     SUBDIR += nn
     SUBDIR += nnap
     SUBDIR += nntp
-    SUBDIR += nntpbtr
     SUBDIR += nntpcache
     SUBDIR += noffle
     SUBDIR += nzbget
@@ -66,7 +64,6 @@
     SUBDIR += s-news
     SUBDIR += sabnzbdplus
     SUBDIR += slrn
-    SUBDIR += slrnconf
     SUBDIR += slrnface
     SUBDIR += sn
     SUBDIR += suck
@@ -75,7 +72,6 @@
     SUBDIR += trn
     SUBDIR += trn4
     SUBDIR += ubh
-    SUBDIR += xpn
     SUBDIR += xrn
     SUBDIR += yencode
     SUBDIR += yydecode

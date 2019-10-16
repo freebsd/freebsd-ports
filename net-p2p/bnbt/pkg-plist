@@ -1,4 +1,0 @@
-bin/bnbt
-%%ETCDIR%%/.keep
-/var/log/bnbt/.keep
-@dir /var/log/bnbt

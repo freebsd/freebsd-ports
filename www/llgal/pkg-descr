@@ -1,6 +1,0 @@
-llgal is an easy and fast on-line gallery generator based on iGal.
-Its primary goal is to NOT require any boring useless expensive feature in
-your webserver, such as PHP, JavaScript, SQL, ...
-Thus, llgal generates static web-pages.
-
-WWW: http://home.gna.org/llgal/

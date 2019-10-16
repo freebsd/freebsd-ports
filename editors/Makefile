@@ -259,6 +259,5 @@
     SUBDIR += xvile
     SUBDIR += yudit
     SUBDIR += zile
-    SUBDIR += zoinks
 
 .include <bsd.port.subdir.mk>

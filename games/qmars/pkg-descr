@@ -1,6 +1,0 @@
-QMars stands for Quicker Mars. It is a completely new implementation of a mars
-simulator, which is an interpreter of the Assembler-like language RedCode,
-which is used in CoreWars. QMars is heavily optimized to be as fast as
-possible.
-
-WWW: http://corewar.co.uk/ankerl/qmars.htm

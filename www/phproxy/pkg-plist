@@ -1,8 +1,0 @@
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
-@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/index.inc.php
-@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/index.php
-@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/style.css
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%

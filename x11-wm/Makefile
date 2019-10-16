@@ -55,7 +55,6 @@
     SUBDIR += fvwm-crystal
     SUBDIR += fvwm2
     SUBDIR += gcompmgr
-    SUBDIR += genmenu
     SUBDIR += herbstluftwm
     SUBDIR += hikari
     SUBDIR += hs-xmonad
@@ -82,7 +81,6 @@
     SUBDIR += mcwm
     SUBDIR += metacity
     SUBDIR += muffin
-    SUBDIR += musca
     SUBDIR += mutter
     SUBDIR += nickleby
     SUBDIR += obapps
@@ -126,15 +124,12 @@
     SUBDIR += vtwm
     SUBDIR += w9wm
     SUBDIR += wayfire
-    SUBDIR += weewm
-    SUBDIR += windowlab
     SUBDIR += windowmaker
     SUBDIR += wm2
     SUBDIR += wmakerconf
     SUBDIR += wmanager
     SUBDIR += wmanager-addons
     SUBDIR += wmconfig
-    SUBDIR += wmfs
     SUBDIR += wmii
     SUBDIR += wmii-devel
     SUBDIR += wmname

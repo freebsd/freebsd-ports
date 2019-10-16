@@ -1,9 +1,0 @@
---- doc/Makefile.orig	2017-04-19 15:17:02 UTC
-+++ doc/Makefile
-@@ -12,5 +12,5 @@ subdir = doc
- top_builddir = ..
- include $(top_builddir)/src/Makefile.global
- 
--all distprep html man install installdirs uninstall clean distclean maintainer-clean:
-+all distprep man install installdirs uninstall clean distclean maintainer-clean:
- 	$(MAKE) -C src $@

@@ -25,7 +25,6 @@
     SUBDIR += bgrot
     SUBDIR += bgs
     SUBDIR += bitmap
-    SUBDIR += blast
     SUBDIR += bmpanel2
     SUBDIR += bricons
     SUBDIR += brisk-menu
@@ -54,7 +53,6 @@
     SUBDIR += docker-tray
     SUBDIR += dsbautostart
     SUBDIR += dxpc
-    SUBDIR += dynamag
     SUBDIR += dzen2
     SUBDIR += eaglemode
     SUBDIR += editres
@@ -390,7 +388,6 @@
     SUBDIR += xcolors
     SUBDIR += xcolorsel
     SUBDIR += xconsole
-    SUBDIR += xcurs
     SUBDIR += xcursorgen
     SUBDIR += xcut
     SUBDIR += xditview
@@ -482,8 +479,6 @@
     SUBDIR += xrsi
     SUBDIR += xscope
     SUBDIR += xscreensaver
-    SUBDIR += xscreensaver-gnome
-    SUBDIR += xscreensaver-gnome-hacks
     SUBDIR += xscreensaver.app
     SUBDIR += xsel-conrad
     SUBDIR += xset

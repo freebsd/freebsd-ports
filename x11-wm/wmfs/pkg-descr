@@ -1,6 +1,0 @@
-WMFS (Window Manager From Scratch) is a lightweight tiling window
-manager for X. It can be configured with a configuration file (made with
-LibConfuse), it supports Xft (FreeType) fonts and EWMH hints wm
-standards.
-
-WWW: https://github.com/xorg62/wmfs

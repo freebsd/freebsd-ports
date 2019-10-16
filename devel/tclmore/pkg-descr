@@ -1,5 +1,0 @@
-TCLMORE provides a few commands to TCL interpreters and a set of
-functions accessible through the C interface. It is mostly a base
-library for other extensions.
-
-WWW: http://gna.org/projects/tclmore/

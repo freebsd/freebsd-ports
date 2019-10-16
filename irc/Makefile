@@ -62,7 +62,6 @@
     SUBDIR += libircclient
     SUBDIR += lostirc
     SUBDIR += miau
-    SUBDIR += minbif
     SUBDIR += muh
     SUBDIR += nethirc
     SUBDIR += ngircd

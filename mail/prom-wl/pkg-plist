@@ -1,6 +1,0 @@
-share/emacs/site-lisp/prom-wl.el
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/prom-wl-usage.jis
-%%PORTDOCS%%%%DOCSDIR%%/byte-compile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.emacs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.procmailrc

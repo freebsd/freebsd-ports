@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-To use Quack, add the following line to your ~/.emacs:
-
-(require 'quack)
-EOM
-}
-]

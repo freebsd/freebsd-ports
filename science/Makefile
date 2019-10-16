@@ -149,7 +149,6 @@
     SUBDIR += mdynamix
     SUBDIR += medit
     SUBDIR += meep
-    SUBDIR += metaf2xml
     SUBDIR += metaphysicl
     SUBDIR += minc2
     SUBDIR += mmdb2

@@ -1,3 +1,0 @@
-Chemeq is a basic standalone filter written in C++ language, flex and bison.
-It takes strings like: 2H2 + O2 ---> 2 H2O and can output pretty LaTeX code,
-useful messages and much more.  It aims to be embeddable in education tools.

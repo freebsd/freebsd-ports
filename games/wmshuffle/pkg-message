@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Run 'wmshuffle --help' for the available options
-EOM
-}
-]

@@ -1,9 +1,0 @@
-bin/updatenews
-etc/newscache.conf-dist
-etc/newscache.auth-dist
-sbin/newscache
-sbin/newscacheclean
-man/man5/newscache.conf.5.gz
-man/man8/newscache.8.gz
-man/man8/newscacheclean.8.gz
-man/man8/updatenews.8.gz

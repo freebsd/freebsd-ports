@@ -1,6 +1,0 @@
-LinM is a Linux clone of famous MS-DOS file manager Mdir, popular in
-Korea.  It inherits keyboard shortcuts and screen layout from Mdir in
-order to maximize user-friendliness, and supports FTP, SFTP, and SMB
-protocols.
-
-WWW: http://kldp.net/projects/mls/

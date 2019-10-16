@@ -1,9 +1,0 @@
-%%WEBPLUGIN_DIR%%/libswfdecmozilla.a
-%%WEBPLUGIN_DIR%%/libswfdecmozilla.la
-%%WEBPLUGIN_DIR%%/libswfdecmozilla.so
-share/icons/hicolor/16x16/apps/swfdec-mozilla.png
-share/icons/hicolor/22x22/apps/swfdec-mozilla.png
-share/icons/hicolor/24x24/apps/swfdec-mozilla.png
-share/icons/hicolor/32x32/apps/swfdec-mozilla.png
-share/icons/hicolor/48x48/apps/swfdec-mozilla.png
-share/icons/hicolor/scalable/apps/swfdec-mozilla.svg

@@ -1,2 +1,0 @@
-A program that is used to convert static elf images to a.out format.
-The SUN OpenBoot PROM can only boot a.out images.

@@ -1,4 +1,0 @@
-Sloth allows you to slow down a specified application by specifying (in
-miliseconds) the delay on the process. It slows down the process by sending
-SIGSTOP & SIGCONT signals to the process over a very fast period of time,
-giving the appearance of a slower application.

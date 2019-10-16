@@ -1,9 +1,0 @@
-bin/ros
-include/routeros_version.h
-include/routeros_api.h
-lib/librouteros.a
-lib/librouteros.so
-lib/librouteros.so.0
-lib/librouteros.so.0.2.2
-man/man1/ros.1.gz
-man/man3/librouteros.3.gz

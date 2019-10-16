@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
- Please note that you need composite extension enabled in X.org or Xgl.
-EOM
-}
-]

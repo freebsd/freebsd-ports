@@ -20,7 +20,6 @@
     SUBDIR += cura-engine
     SUBDIR += digital
     SUBDIR += dinotrace
-    SUBDIR += dxf2fig
     SUBDIR += electric
     SUBDIR += electric-ng
     SUBDIR += feappv
@@ -31,8 +30,6 @@
     SUBDIR += gdsreader
     SUBDIR += gdt
     SUBDIR += geda
-    SUBDIR += gerbv
-    SUBDIR += ghdl
     SUBDIR += gmsh
     SUBDIR += gnucap
     SUBDIR += gplcver

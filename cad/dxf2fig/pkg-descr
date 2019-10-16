@@ -1,4 +1,0 @@
-dxf2fig parses Autocad DXF input, then calls external routines to do either
-plotting or a fig conversion for xfig. The conversion is fairly complete.
-Layers (depths in xfig), blocks (compounds in xfig), colors, and linetypes
-are roughly preserved in the output file.

@@ -1,6 +1,0 @@
-WMeyes is a pretty simple application: it sits in the WindowMaker dock, and
-a pair of eyes track your cursor. Actually, the program should work in all
-window managers, but then you don't have a dock to sit it in, in which case
-you might as well use xeyes.
-
-WWW: http://www.bstern.org/wmeyes/

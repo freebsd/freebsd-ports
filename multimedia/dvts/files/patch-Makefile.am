@@ -1,6 +1,0 @@
---- Makefile.am.orig	2003-02-28 16:57:31 UTC
-+++ Makefile.am
-@@ -1,2 +1,2 @@
- @SET_MAKE@
--SUBDIRS=dvsend dvrecv dvplay dvsave
-+SUBDIRS=dvsend dvrecv

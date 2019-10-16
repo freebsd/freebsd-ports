@@ -1,5 +1,0 @@
-libghthash is a Generic Hash Table which is meant to be easy to extend,
-portable, clear in its code and easy to use. You can store any kind of
-data in it, regardless of size etc.
-
-WWW: http://www.ipd.bth.se/ska/sim_home/libghthash.html

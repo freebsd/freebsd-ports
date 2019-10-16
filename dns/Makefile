@@ -69,7 +69,6 @@
     SUBDIR += dsp
     SUBDIR += dynip
     SUBDIR += erlang-idna
-    SUBDIR += ez-ipupdate
     SUBDIR += fastresolve
     SUBDIR += firedns
     SUBDIR += flamethrower
