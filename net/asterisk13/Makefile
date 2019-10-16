@@ -58,7 +58,7 @@ CONFLICTS=		ossp-uuid-[0-9]*
 CONFLICTS_BUILD=	linuxthreads-*
 CONFLICTS_INSTALL=	asterisk15 asterisk16
 
-OPTIONS_DEFINE=			ASTVERSION BACKTRACE CURL EXCHANGE FREETDS LDAP LUA \
+OPTIONS_DEFINE=			ASTVERSION BACKTRACE CURL EXCHANGE FREETDS G729 LDAP LUA \
 				MP3PLAYER OOH323 OPTIMIZED_CFLAGS PJSIP PORTAUDIO RADIUS SNMP \
 				SPANDSP SRTP SYSINFO XMPP
 OPTIONS_DEFAULT=		CURL FREETDS GSM LUA MP3PLAYER NEWT ODBC MYSQL PGSQL PJSIP \
@@ -92,11 +92,6 @@ OPTIONS_MULTI_MENU=		NCURSES NEWT
 MENU_DESC=			Menuselect Interface Backend
 NEWT_DESC=			Newt User Interface
 
-OPTIONS_GROUP+=			SOUNDS
-OPTIONS_GROUP_SOUNDS=		G729 JAPANESE
-SOUNDS_DESC=			Core and Music-on-Hold (MoH) Sound Files
-G729_DESC=			Install G.729 format sounds
-JAPANESE_DESC=			Install Japanese voice prompts
 ASTERISK_CORE_G729_SOUNDS=	asterisk-core-sounds-en-g729-1.5.tar.gz
 ASTERISK_MOH_G729_SOUNDS=	asterisk-moh-opsound-g729-2.03.tar.gz
 G729_DISTFILES=			${ASTERISK_CORE_G729_SOUNDS}:g729 \
@@ -107,6 +102,7 @@ BACKTRACE_DESC?= Stack backtrace support via (lib)execinfo
 BASE_DESC=	Use base compiler
 DAHDI_DESC?=	DAHDI support
 EXCHANGE_DESC?=	Exchange calendar support
+G729_DESC=	Install G.729 format sounds for Music-on-Hold (MoH)
 MP3PLAYER_DESC=	Install MP3 Player for Music-On-Hold (mpg123)
 NEWG711_DESC?=	New G711 Codec
 OOH323_DESC?=	ooh323 support
@@ -145,8 +141,6 @@ GCC_USE=		GCC=yes
 
 GSM_CONFIGURE_WITH=	gsm
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
-
-JAPANESE_RUN_DEPENDS=	${LOCALBASE}/share/asterisk/sounds/ja/digits/0.gsm:japanese/asterisk-sounds
 
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
