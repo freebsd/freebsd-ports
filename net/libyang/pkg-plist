@@ -8,12 +8,13 @@ include/libyang/tree_schema.h
 include/libyang/user_types.h
 include/libyang/xml.h
 lib/libyang.so
-lib/libyang.so.0.16
-lib/libyang.so.0.16.105
+lib/libyang.so.1
+lib/libyang.so.1.2.2
 lib/libyang/extensions/metadata.so
 lib/libyang/extensions/nacm.so
 lib/libyang/extensions/yangdata.so
-lib/libyang/user_types/user_date_and_time.so
+lib/libyang/user_types/user_inet_types.so
+lib/libyang/user_types/user_yang_types.so
 libdata/pkgconfig/libyang.pc
 man/man1/yanglint.1.gz
 man/man1/yangre.1.gz
