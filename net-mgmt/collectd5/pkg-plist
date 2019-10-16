@@ -72,7 +72,6 @@ lib/collectd/powerdns.so
 lib/collectd/processes.so
 %%PYTHON%%lib/collectd/python.so
 %%REDIS%%lib/collectd/redis.so
-%%ROUTEROS%%lib/collectd/routeros.so
 %%RRDTOOL%%lib/collectd/rrdcached.so
 %%RRDTOOL%%lib/collectd/rrdtool.so
 %%SIGROK%%lib/collectd/sigrok.so
