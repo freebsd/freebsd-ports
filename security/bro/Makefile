@@ -3,6 +3,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.zeek.org/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -51,11 +52,11 @@ GROUPS=		${BROGROUP}
 
 OPTIONS_DEFINE=	BROCCOLI BROCTL BROKER DEBUG GEOIP2 IPSUMDUMP LBL_CF \
 		LBL_HF NETMAP PERFTOOLS
-OPTIONS_DEFAULT=BROCCOLI BROCTL GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP
+OPTIONS_DEFAULT=BROCTL BROKER GEOIP2 IPSUMDUMP LBL_CF LBL_HF NETMAP
 OPTIONS_SUB=	yes
 
-BROCCOLI_DESC=	Build support for libbroccoli communications
-BROCTL_DESC=	BroControl support (implies BROCCOLI and IPSUMDUMP)
+BROCCOLI_DESC=	Build support for libbroccoli communications (DEPRECATED)
+BROCTL_DESC=	BroControl support (implies BROKER and IPSUMDUMP)
 BROKER_DESC=	Enable the Broker communication library
 GEOIP2_DESC=	Build with GeoIP2 (MaxMindDB) support
 IPSUMDUMP_DESC=	Enables traffic summaries
@@ -64,7 +65,7 @@ LBL_HF_DESC=	Address to hostname filter support
 NETMAP_DESC=	Native Netmap Packet IOSource for Bro
 PERFTOOLS_DESC=	Use Perftools to improve memory & CPU usage
 
-BROCTL_IMPLIES=		BROCCOLI IPSUMDUMP
+BROCTL_IMPLIES=		BROKER IPSUMDUMP
 
 BROCCOLI_LIB_DEPENDS=	libbroccoli.so:security/broccoli
 BROCTL_BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
