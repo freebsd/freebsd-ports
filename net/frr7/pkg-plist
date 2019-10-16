@@ -24,11 +24,14 @@ include/frr/filter.h
 include/frr/freebsd-queue.h
 include/frr/frr_pthread.h
 include/frr/frratomic.h
+include/frr/frrcu.h
+include/frr/frrlua.h
 include/frr/frrstr.h
 include/frr/getopt.h
 include/frr/graph.h
 include/frr/hash.h
 include/frr/hook.h
+include/frr/iana_afi.h
 include/frr/id_alloc.h
 include/frr/if.h
 include/frr/if_rmap.h
@@ -42,8 +45,7 @@ include/frr/libfrr.h
 include/frr/libospf.h
 include/frr/linklist.h
 include/frr/log.h
-include/frr/logicalrouter.h
-include/frr/lua.h
+include/frr/log_vty.h
 include/frr/md5.h
 include/frr/memory.h
 include/frr/memory_vty.h
@@ -54,6 +56,7 @@ include/frr/mpls.h
 include/frr/network.h
 include/frr/nexthop.h
 include/frr/nexthop_group.h
+include/frr/nexthop_group_private.h
 include/frr/northbound.h
 include/frr/northbound_cli.h
 include/frr/northbound_db.h
@@ -73,10 +76,11 @@ include/frr/ospfd/ospf_opaque.h
 include/frr/ospfd/ospfd.h
 include/frr/pbr.h
 include/frr/plist.h
-include/frr/pqueue.h
 include/frr/prefix.h
+include/frr/printfrr.h
 include/frr/privs.h
 include/frr/ptm_lib.h
+include/frr/pullwr.h
 include/frr/pw.h
 include/frr/queue.h
 include/frr/qobj.h
@@ -162,6 +166,8 @@ sbin/staticd
 sbin/zebra
 sbin/isisd
 sbin/watchfrr
+share/yang/frr-bfdd.yang
+share/yang/frr-eigrpd.yang
 share/yang/frr-interface.yang
 share/yang/frr-isisd.yang
 share/yang/frr-module-translator.yang
