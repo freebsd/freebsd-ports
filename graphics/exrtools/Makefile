@@ -13,9 +13,6 @@ COMMENT=	Utilities for manipulating with HDR images in OpenEXR format
 
 LICENSE=	GPLv2
 
-BROKEN_armv6=		fails to configure: checking for /nxb-bin/usr/bin/cc... no
-BROKEN_armv7=		fails to configure: checking for /nxb-bin/usr/bin/cc... no
-
 LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libpng.so:graphics/png \
 		libIlmImf.so:graphics/openexr
