@@ -1,0 +1,12 @@
+dhcpcd-ui is the graphical interface to dhcpcd(8).
+
+The are front ends for:
+- GTK+-3
+- Qt (not currently included in this port)
+- Curses (work in progress - only informative at this stage)
+
+The dhcpcd-online command line utility is also included, which can be
+used to work out if dhcpcd(8) is in the connected state - useful in
+startup scripts or monitoring applications.
+
+WWW: https://roy.marples.name/projects/dhcpcd-ui
