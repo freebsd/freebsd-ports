@@ -21,7 +21,6 @@ USE_LDCONFIG=	yes
 USE_XORG=	xi xmu ice sm
 USE_GL=		glut
 INSTALL_TARGET=	install-strip
-USE_GCC=	any # otherwise graphics/makehuman won't link
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
