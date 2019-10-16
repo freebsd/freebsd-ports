@@ -36,6 +36,7 @@ lib/libplasmapotdprovidercore.so.1.0.0
 %%QT_PLUGINDIR%%/potd/plasma_potd_flickrprovider.so
 %%QT_PLUGINDIR%%/potd/plasma_potd_natgeoprovider.so
 %%QT_PLUGINDIR%%/potd/plasma_potd_noaaprovider.so
+%%QT_PLUGINDIR%%/potd/plasma_potd_unsplashprovider.so
 %%QT_PLUGINDIR%%/potd/plasma_potd_wcpotdprovider.so
 %%QT_QMLDIR%%/org/kde/plasma/private/colorpicker/libcolorpickerplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/private/colorpicker/qmldir
@@ -154,6 +155,14 @@ share/locale/ar/LC_MESSAGES/plasma_runner_katesessions.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_mediawiki.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.calculator.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardindicator.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.konsoleprofiles.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.notes.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.systemloadviewer.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.timer.mo
+share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo
 share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.calculator.mo
 share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.colorpicker.mo
@@ -164,8 +173,6 @@ share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.notes.mo
 share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.weather.mo
 share/locale/be/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/be/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
-share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo
-share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.plasma.calculator.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.plasma.calculator.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.plasma.colorpicker.mo
@@ -1421,6 +1428,12 @@ share/locale/sv/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_mediawiki.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.konsoleprofiles.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.private.grouping.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.userswitcher.mo
+share/locale/tg/LC_MESSAGES/plasma_runner_converterrunner.mo
+share/locale/tg/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
+share/locale/tg/LC_MESSAGES/plasma_runner_mediawiki.mo
 share/locale/th/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo
 share/locale/th/LC_MESSAGES/plasma_applet_org.kde.plasma.calculator.mo
 share/locale/th/LC_MESSAGES/plasma_applet_org.kde.plasma.colorpicker.mo
@@ -1603,7 +1616,6 @@ share/metainfo/org.kde.plasma.weather.appdata.xml
 share/metainfo/org.kde.plasma.webbrowser.appdata.xml
 share/metainfo/org.kde.plasma_applet_dict.appdata.xml
 share/metainfo/org.kde.potd.appdata.xml
-share/plasma/desktoptheme/default/icons/quota.svg
 share/plasma/desktoptheme/default/weather/wind-arrows.svgz
 share/plasma/desktoptheme/default/widgets/timer.svgz
 share/plasma/plasmoids/org.kde.plasma.activitypager/metadata.desktop
@@ -1682,6 +1694,7 @@ share/plasma/plasmoids/org.kde.plasma.mediaframe/metadata.desktop
 share/plasma/plasmoids/org.kde.plasma.mediaframe/metadata.json
 share/plasma/plasmoids/org.kde.plasma.notes/contents/config/config.qml
 share/plasma/plasmoids/org.kde.plasma.notes/contents/config/main.xml
+share/plasma/plasmoids/org.kde.plasma.notes/contents/ui/ShortcutMenuItem.qml
 share/plasma/plasmoids/org.kde.plasma.notes/contents/ui/configAppearance.qml
 share/plasma/plasmoids/org.kde.plasma.notes/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.notes/metadata.desktop

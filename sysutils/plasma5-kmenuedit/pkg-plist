@@ -1,5 +1,4 @@
 bin/kmenuedit
-etc/xdg/kmenuedit.categories
 lib/libkdeinit5_kmenuedit.so
 share/applications/org.kde.kmenuedit.desktop
 share/doc/HTML/ca/kmenuedit/done.png
@@ -20,6 +19,8 @@ share/doc/HTML/en/kmenuedit/new.png
 share/doc/HTML/en/kmenuedit/reset.png
 share/doc/HTML/en/kmenuedit/selecticon.png
 share/doc/HTML/en/kmenuedit/selectinternet.png
+share/doc/HTML/id/kmenuedit/index.cache.bz2
+share/doc/HTML/id/kmenuedit/index.docbook
 share/doc/HTML/it/kmenuedit/index.cache.bz2
 share/doc/HTML/it/kmenuedit/index.docbook
 share/doc/HTML/nl/kmenuedit/index.cache.bz2
@@ -116,7 +117,6 @@ share/locale/ne/LC_MESSAGES/kmenuedit.mo
 share/locale/nl/LC_MESSAGES/kmenuedit.mo
 share/locale/nn/LC_MESSAGES/kmenuedit.mo
 share/locale/oc/LC_MESSAGES/kmenuedit.mo
-share/locale/or/LC_MESSAGES/kmenuedit.mo
 share/locale/pa/LC_MESSAGES/kmenuedit.mo
 share/locale/pl/LC_MESSAGES/kmenuedit.mo
 share/locale/pt/LC_MESSAGES/kmenuedit.mo
@@ -147,3 +147,4 @@ share/locale/wa/LC_MESSAGES/kmenuedit.mo
 share/locale/xh/LC_MESSAGES/kmenuedit.mo
 share/locale/zh_CN/LC_MESSAGES/kmenuedit.mo
 share/locale/zh_TW/LC_MESSAGES/kmenuedit.mo
+share/qlogging-categories5/kmenuedit.categories

@@ -12,7 +12,7 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
 USES=		cmake compiler:c++11-lib cpe kde:5 qt:5 tar:xz
-USE_KDE=	ecm idletime wayland windowsystem
+USE_KDE=	ecm guiaddons idletime wayland windowsystem
 USE_QT=		core gui widgets \
 		buildtools_build qmake_build
 

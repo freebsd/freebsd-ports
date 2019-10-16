@@ -318,8 +318,6 @@ share/locale/nn/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/nn/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/nn/LC_MESSAGES/plasmoidviewer.mo
 share/locale/oc/LC_MESSAGES/plasmaengineexplorer.mo
-share/locale/or/LC_MESSAGES/plasmaengineexplorer.mo
-share/locale/or/LC_MESSAGES/plasmoidviewer.mo
 share/locale/pa/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/pa/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/pa/LC_MESSAGES/plasmawallpaperviewer.mo
@@ -426,6 +424,7 @@ share/locale/ta/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/ta/LC_MESSAGES/plasmoidviewer.mo
 share/locale/te/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/te/LC_MESSAGES/plasmoidviewer.mo
+share/locale/tg/LC_MESSAGES/cuttlefish_editorplugin.mo
 share/locale/tg/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/tg/LC_MESSAGES/plasmoidviewer.mo
 share/locale/th/LC_MESSAGES/plasmaengineexplorer.mo
@@ -476,11 +475,16 @@ share/metainfo/org.kde.plasma.plasmoidviewershell.appdata.xml
 share/metainfo/org.kde.plasma.themeexplorer.appdata.xml
 share/metainfo/org.kde.plasmaengineexplorer.appdata.xml
 share/metainfo/org.kde.plasmoidviewer.appdata.xml
+share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/DualMontage.qml
+share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/GlobalMenuBar.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/IconGrid.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/IconGridDelegate.qml
+share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Menu.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Preview.qml
+share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/ResponsivePreview.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/SvgGrid.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Tools.qml
+share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/ToolsResponsive.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/cuttlefish.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/metadata.desktop
 share/plasma/packages/org.kde.plasma.cuttlefish/metadata.json

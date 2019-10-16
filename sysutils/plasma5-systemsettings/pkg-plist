@@ -1,5 +1,4 @@
 bin/systemsettings5
-etc/xdg/systemsettings.categories
 include/systemsettingsview/BaseData.h
 include/systemsettingsview/BaseMode.h
 include/systemsettingsview/MenuItem.h
@@ -9,7 +8,6 @@ include/systemsettingsview/ModuleView.h
 include/systemsettingsview/systemsettingsview_export.h
 lib/libsystemsettingsview.so
 lib/libsystemsettingsview.so.3
-%%QT_PLUGINDIR%%/classic_mode.so
 %%QT_PLUGINDIR%%/icon_mode.so
 %%QT_PLUGINDIR%%/systemsettings_sidebar_mode.so
 share/applications/kdesystemsettings.desktop
@@ -20,6 +18,8 @@ share/doc/HTML/de/systemsettings/index.cache.bz2
 share/doc/HTML/de/systemsettings/index.docbook
 share/doc/HTML/en/systemsettings/index.cache.bz2
 share/doc/HTML/en/systemsettings/index.docbook
+share/doc/HTML/id/systemsettings/index.cache.bz2
+share/doc/HTML/id/systemsettings/index.docbook
 share/doc/HTML/it/systemsettings/index.cache.bz2
 share/doc/HTML/it/systemsettings/index.docbook
 share/doc/HTML/nl/systemsettings/index.cache.bz2
@@ -34,7 +34,6 @@ share/doc/HTML/sv/systemsettings/index.cache.bz2
 share/doc/HTML/sv/systemsettings/index.docbook
 share/doc/HTML/uk/systemsettings/index.cache.bz2
 share/doc/HTML/uk/systemsettings/index.docbook
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/ActionMenu.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/CategoriesPage.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/IntroIcon.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/SubCategoryPage.qml
@@ -45,9 +44,7 @@ share/kservices5/settings-appearance-applicationstyle.desktop
 share/kservices5/settings-appearance-color.desktop
 share/kservices5/settings-appearance-font.desktop
 share/kservices5/settings-appearance-icons.desktop
-share/kservices5/settings-appearance-workspacetheme.desktop
 share/kservices5/settings-appearance.desktop
-share/kservices5/settings-classic-view.desktop
 share/kservices5/settings-hardware-display.desktop
 share/kservices5/settings-hardware-input.desktop
 share/kservices5/settings-hardware-multimedia.desktop
@@ -67,6 +64,7 @@ share/kservices5/settings-personalization-notification.desktop
 share/kservices5/settings-personalization-regionalsettings.desktop
 share/kservices5/settings-personalization.desktop
 share/kservices5/settings-sidebar-view.desktop
+share/kservices5/settings-system-administration.desktop
 share/kservices5/settings-workspace-desktopbehavior.desktop
 share/kservices5/settings-workspace-search.desktop
 share/kservices5/settings-workspace-session.desktop
@@ -130,7 +128,6 @@ share/locale/ne/LC_MESSAGES/systemsettings.mo
 share/locale/nl/LC_MESSAGES/systemsettings.mo
 share/locale/nn/LC_MESSAGES/systemsettings.mo
 share/locale/oc/LC_MESSAGES/systemsettings.mo
-share/locale/or/LC_MESSAGES/systemsettings.mo
 share/locale/pa/LC_MESSAGES/systemsettings.mo
 share/locale/pl/LC_MESSAGES/systemsettings.mo
 share/locale/pt/LC_MESSAGES/systemsettings.mo
@@ -159,6 +156,5 @@ share/locale/wa/LC_MESSAGES/systemsettings.mo
 share/locale/zh_CN/LC_MESSAGES/systemsettings.mo
 share/locale/zh_TW/LC_MESSAGES/systemsettings.mo
 share/metainfo/org.kde.systemsettings.metainfo.xml
-%%DATADIR%%/classic/main.html
-%%DATADIR%%/classic/systemsettings-classic.css
 %%DATADIR%%/systemsettings.kcfg
+share/qlogging-categories5/systemsettings.categories

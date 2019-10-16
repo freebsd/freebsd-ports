@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191016:
+  AFFECTS: users of KDE Plasma Desktop
+  AUTHOR: kde@FreeBSD.org
+
+  With Plasma 5.17 the startup script has been renamed. People who use the
+  .xinitrc method to start Plasma have to call the new binary.
+
+  Previously:
+  	exec ck-launch-session startkde
+  Change to:
+  	exec ck-launch-session startplasma-x11
+
 20191014:
   AFFECTS: users of mail/rspamd, mail/rspamd-devel
   AUTHOR: vsevolod@FreeBSD.org

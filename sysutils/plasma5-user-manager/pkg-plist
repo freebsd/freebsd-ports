@@ -1,33 +1,30 @@
-etc/xdg/user-manager.categories
 %%QT_PLUGINDIR%%/user_manager.so
 share/kservices5/user_manager.desktop
-%%DATADIR%%/avatars/bluesstyle/Ada Lovelace.png
-%%DATADIR%%/avatars/bluesstyle/Alice in Wonderland.png
-%%DATADIR%%/avatars/bluesstyle/Grace Hopper.png
-%%DATADIR%%/avatars/bluesstyle/Leonardo da Vinci.png
-%%DATADIR%%/avatars/bluesstyle/Mahatma Gandhi.png
-%%DATADIR%%/avatars/bluesstyle/Man.png
-%%DATADIR%%/avatars/bluesstyle/Mowgli jungle book.png
 %%DATADIR%%/avatars/circles/Cat.png
 %%DATADIR%%/avatars/circles/Female.png
-%%DATADIR%%/avatars/circles/Konqui.png
+%%DATADIR%%/avatars/circles/Konqi.png
 %%DATADIR%%/avatars/circles/Male.png
 %%DATADIR%%/avatars/circles/Penguin.png
 %%DATADIR%%/avatars/circles/Zebra.png
-%%DATADIR%%/avatars/classic/Blackbox.png
-%%DATADIR%%/avatars/classic/Bomb.png
-%%DATADIR%%/avatars/classic/Dragon.png
-%%DATADIR%%/avatars/classic/Green.png
-%%DATADIR%%/avatars/classic/Happy.png
-%%DATADIR%%/avatars/classic/Listening.png
-%%DATADIR%%/avatars/classic/Notme.png
-%%DATADIR%%/avatars/classic/TV.png
-%%DATADIR%%/avatars/konqui/Kati.png
-%%DATADIR%%/avatars/konqui/Konqui.png
-%%DATADIR%%/avatars/konqui/Logger.png
-%%DATADIR%%/avatars/konqui/Parley.png
-%%DATADIR%%/avatars/konqui/Rekonqui.png
+%%DATADIR%%/avatars/konqui/Artist Konqi.png
+%%DATADIR%%/avatars/konqui/Bookworm Konqi.png
+%%DATADIR%%/avatars/konqui/Boss Konqi.png
+%%DATADIR%%/avatars/konqui/Bug Catcher Konqi.png
+%%DATADIR%%/avatars/konqui/Card Shark Konqi.png
+%%DATADIR%%/avatars/konqui/Hacker Konqi.png
+%%DATADIR%%/avatars/konqui/Journalist Konqi.png
+%%DATADIR%%/avatars/konqui/Katie.png
+%%DATADIR%%/avatars/konqui/Konqi.png
+%%DATADIR%%/avatars/konqui/Mechanic Konqi.png
+%%DATADIR%%/avatars/konqui/Messenger Konqi.png
+%%DATADIR%%/avatars/konqui/Musician Konqi.png
+%%DATADIR%%/avatars/konqui/Office Worker Konqi.png
+%%DATADIR%%/avatars/konqui/PC Builder Konqi.png
+%%DATADIR%%/avatars/konqui/Scientist Konqi.png
+%%DATADIR%%/avatars/konqui/Teacher Konqi.png
+%%DATADIR%%/avatars/konqui/Virtual Reality Konqi.png
 share/locale/ar/LC_MESSAGES/user_manager.mo
+share/locale/bg/LC_MESSAGES/user_manager.mo
 share/locale/bs/LC_MESSAGES/user_manager.mo
 share/locale/ca/LC_MESSAGES/user_manager.mo
 share/locale/ca@valencia/LC_MESSAGES/user_manager.mo
@@ -50,7 +47,6 @@ share/locale/it/LC_MESSAGES/user_manager.mo
 share/locale/ja/LC_MESSAGES/user_manager.mo
 share/locale/ko/LC_MESSAGES/user_manager.mo
 share/locale/lt/LC_MESSAGES/user_manager.mo
-share/locale/ml/LC_MESSAGES/user_manager.mo
 share/locale/mr/LC_MESSAGES/user_manager.mo
 share/locale/nb/LC_MESSAGES/user_manager.mo
 share/locale/nl/LC_MESSAGES/user_manager.mo
@@ -73,3 +69,4 @@ share/locale/ug/LC_MESSAGES/user_manager.mo
 share/locale/uk/LC_MESSAGES/user_manager.mo
 share/locale/zh_CN/LC_MESSAGES/user_manager.mo
 share/locale/zh_TW/LC_MESSAGES/user_manager.mo
+share/qlogging-categories5/user-manager.categories
