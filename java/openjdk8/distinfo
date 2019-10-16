@@ -1,5 +1,5 @@
-TIMESTAMP = 1563551584
+TIMESTAMP = 1571191646
 SHA256 (jtreg4.1-b08.tar.gz) = a9fbfac903313c12687e60978c4688c20189cdf873560125917d6ad53d55b30c
 SIZE (jtreg4.1-b08.tar.gz) = 6834252
-SHA256 (battleblow-openjdk-jdk8u-8.222.10.1-jdk8u222-b10.1_GH0.tar.gz) = 1b2e31b4c67896e3292d390960afaf274f283a8b6feb3a12022feb2c7b1c3a7d
-SIZE (battleblow-openjdk-jdk8u-8.222.10.1-jdk8u222-b10.1_GH0.tar.gz) = 85692163
+SHA256 (battleblow-openjdk-jdk8u-8.232.09.1-jdk8u232-b09.1_GH0.tar.gz) = f6796bfb8a0a30fd045b608e8a2e6a8b8ae02748fbb6a647dd3669914040f319
+SIZE (battleblow-openjdk-jdk8u-8.232.09.1-jdk8u232-b09.1_GH0.tar.gz) = 85766372
