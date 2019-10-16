@@ -41,7 +41,7 @@ AMAVISDIR?=	/var/amavis
 AMAVISQUARANTINE?=	/var/virusmails
 DAEMON?=	/usr/sbin/daemon -p
 
-OPTIONS_DEFINE=	IPV6 BDB SNMP SQLITE MYSQL PGSQL LDAP SASL SPAMASSASSIN P0F ALTERMIME \
+OPTIONS_DEFINE=	IPV6 BDB SNMP SQLITE MYSQL PGSQL LDAP SASL SPAMASSASSIN P0F \
 		FILE RAR UNRAR ARJ UNARJ LHA ARC NOMARCH CAB RPM ZOO UNZOO LZOP \
 		P7ZIP MSWORD TNEF DOCS
 OPTIONS_DEFAULT=	BDB SPAMASSASSIN FILE UNRAR ARJ LHA ARC CAB RPM ZOO LZOP \
@@ -55,7 +55,6 @@ LDAP_DESC=		Use LDAP for lookups
 SASL_DESC=		Use SASL authentication
 SPAMASSASSIN_DESC=	Use mail/spamassassin
 P0F_DESC=		Passive operating system fingerprinting
-ALTERMIME_DESC=		Use AlterMime for defanging/disclaimers
 FILE_DESC=		Use newer file(1) utility from ports
 RAR_DESC=		RAR support with archivers/rar
 UNRAR_DESC=		RAR support with archivers/unrar
@@ -134,10 +133,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/p0f:net-mgmt/p0f
 USE_RC_SUBR+=	amavis-p0fanalyzer
 .else
 AMAVIS_NOP0F=	"@comment "
-.endif
-
-.if ${PORT_OPTIONS:MALTERMIME}
-RUN_DEPENDS+=	${LOCALBASE}/bin/altermime:mail/altermime
 .endif
 
 .if ${PORT_OPTIONS:MFILE}
