@@ -28,19 +28,15 @@ USE_XORG=	ice sm x11 xext xrandr xscrnsaver xxf86vm
 
 SHEBANG_FILES=	src/xfce4-screensaver-configure
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-xscreensaverdir=${XSCREENSAVER_DIR} \
-		--with-xscreensaverhackdir=${LOCALBASE}/bin/xscreensaver-hacks \
-		--with-console-kit=yes \
+CONFIGURE_ARGS= --with-console-kit=yes \
 		--with-systemd=no \
 		--enable-maintainer-mode
 
-XSCREENSAVER_DIR=	${LOCALBASE}/share/xscreensaver/config
 SCREENSAVER_DIR=	share/applications/screensavers
 
-OPTIONS_DEFINE=	NLS PAM XSCREENSAVER
+OPTIONS_DEFINE=	NLS PAM
 OPTIONS_DEFAULT=PAM
 PAM_DESC=	Pluggable Authentication Module support
-XSCREENSAVER_DESC=	Use xscreensaver hacks
 
 OPTIONS_SUB=	yes
 
@@ -51,8 +47,6 @@ PAM_RUN_DEPENDS=	pam_helper:security/pam_helper
 PAM_CONFIGURE_ON=	--enable-authentication-scheme=helper \
 			--with-passwd-helper=${LOCALBASE}/bin/pam_helper
 PAM_CONFIGURE_OFF=	--disable-pam
-
-XSCREENSAVER_RUN_DEPENDS=	xscreensaver-gnome-hacks>=0:x11/xscreensaver-gnome-hacks
 
 .include <bsd.port.pre.mk>
 
