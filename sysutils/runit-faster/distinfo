@@ -1,3 +1,3 @@
-TIMESTAMP = 1569817512
-SHA256 (freebsd-runit-2.1.3.4.tar.xz) = 6283acd903956af4b297395fdc542fd51f13a496124ee2ecb9ebb79ead783b07
-SIZE (freebsd-runit-2.1.3.4.tar.xz) = 112128
+TIMESTAMP = 1571224300
+SHA256 (freebsd-runit-2.1.3.5.tar.xz) = ee43f6ea4152cf0928298bd77f35a33fd18dbda112f4d5ba8a571452af5552fa
+SIZE (freebsd-runit-2.1.3.5.tar.xz) = 112208

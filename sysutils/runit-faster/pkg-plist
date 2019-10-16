@@ -42,6 +42,7 @@ bin/svmod
 %%RUNITDIR%%/ctrlaltdel
 %%RUNITDIR%%/functions
 %%RUNITDIR%%/jail
+@sample %%RUNITDIR%%/logger.sample
 %%RUNITDIR%%/reboot
 @dir %%RUNITDIR%%/runsvdir
 @dir %%RUNITDIR%%/runsvdir/default
