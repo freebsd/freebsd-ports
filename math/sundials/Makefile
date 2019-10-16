@@ -20,7 +20,7 @@ CMAKE_ARGS=	-DPTHREAD_ENABLE:BOOL=ON \
 
 PLIST_SUB=	SHL3=${DISTVERSION} SHL1=${DISTVERSION:R:R} SHLX3=1.1.2 SHLX1=1
 
-OPTIONS_DEFINE=		BLAS EXAMPLES LAPACK MPI SUPERLUMT # OPENMP detection is broken in cmake: https://gitlab.kitware.com/cmake/cmake/issues/17474
+OPTIONS_DEFINE=		BLAS EXAMPLES LAPACK MPI # OPENMP detection is broken in cmake: https://gitlab.kitware.com/cmake/cmake/issues/17474
 OPTIONS_DEFAULT=	LAPACK
 OPTIONS_GROUP=		VECTORS
 OPTIONS_GROUP_VECTORS=	HYPRE PETSC
@@ -29,7 +29,6 @@ BLAS_DESC=		Enable BLAS support
 HYPRE_DESC=		HYPRE vectors support (also enables MPI)
 LAPACK_DESC=		Use Lapack linear algebra (sets SUNDIALS_INDEX_TYPE=int32)
 PETSC_DESC=		PETSc vectors support (also enables MPI)
-SUPERLUMT_DESC=		Sparse matrix factorization through SUPERLUMT
 OPTIONS_SUB=		yes
 
 BLAS_CMAKE_BOOL=	BLAS_ENABLE
@@ -60,14 +59,6 @@ PETSC_CMAKE_ON=		-DPETSC_INCLUDE_DIR=${LOCALBASE}/include \
 PETSC_LIB_DEPENDS=	libpetsc.so:science/PETSc
 PETSC_IMPLIES=		MPI
 PETSC_PREVENTS=		LAPACK  # error: Incompatible sunindextype for LAPACK; disable LAPACK and rebuild
-
-SUPERLUMT_CMAKE_BOOL=	SUPERLUMT_ENABLE
-SUPERLUMT_CMAKE_ON=	-DSUPERLUMT_INCLUDE_DIR=${LOCALBASE}/include/superlu_mt \
-			-DSUPERLUMT_LIBRARY_DIR=${LOCALBASE}/lib \
-			-DSUPERLUMT_THREAD_TYPE=Pthread \
-			-DFREEBSD_GCC_DIR:STRING=${LOCALBASE}/lib/gcc${GCC_DEFAULT:S/.//} # assumes that fortran:gcc is used
-SUPERLUMT_LIB_DEPENDS=	libsuperlu_mt_PTHREAD.so:math/superlu_mt
-SUPERLUMT_PREVENTS=	LAPACK  # LAPACK requires SUNDIALS_INDEX_TYPE=int32, and SUPERLUMT requires SUNDIALS_INDEX_TYPE=int64
 
 PORTEXAMPLES=	*
 
