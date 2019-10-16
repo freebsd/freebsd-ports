@@ -755,6 +755,7 @@
     SUBDIR += ohmu
     SUBDIR += omnibackup
     SUBDIR += open
+    SUBDIR += opencorsairlink
     SUBDIR += openipmi
     SUBDIR += openupsd
     SUBDIR += openzfs
