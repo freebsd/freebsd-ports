@@ -68,7 +68,6 @@ include/sunlinsol/sunlinsol_spbcgs.h
 include/sunlinsol/sunlinsol_spfgmr.h
 include/sunlinsol/sunlinsol_spgmr.h
 include/sunlinsol/sunlinsol_sptfqmr.h
-%%SUPERLUMT%%include/sunlinsol/sunlinsol_superlumt.h
 include/sunmatrix/sunmatrix_band.h
 include/sunmatrix/sunmatrix_dense.h
 include/sunmatrix/sunmatrix_sparse.h
@@ -132,9 +131,6 @@ lib/libsundials_sunlinsolspgmr.so.%%SHLX3%%
 lib/libsundials_sunlinsolsptfqmr.so
 lib/libsundials_sunlinsolsptfqmr.so.%%SHLX1%%
 lib/libsundials_sunlinsolsptfqmr.so.%%SHLX3%%
-%%SUPERLUMT%%lib/libsundials_sunlinsolsuperlumt.so
-%%SUPERLUMT%%lib/libsundials_sunlinsolsuperlumt.so.%%SHLX1%%
-%%SUPERLUMT%%lib/libsundials_sunlinsolsuperlumt.so.%%SHLX3%%
 lib/libsundials_sunmatrixband.so
 lib/libsundials_sunmatrixband.so.%%SHLX1%%
 lib/libsundials_sunmatrixband.so.%%SHLX3%%
