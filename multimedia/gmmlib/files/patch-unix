@@ -160,14 +160,14 @@ Source/GmmLib/inc/External/Common/GmmInfo.h:58:3: note: 'GMM_UMD_CONTEXT' declar
          pthread_mutex_t TTLock;
  #endif
  
---- Source/GmmLib/ULT/GmmAuxTableULT.cpp.orig	2019-09-16 10:30:27 UTC
+--- Source/GmmLib/ULT/GmmAuxTableULT.cpp.orig	2019-10-15 14:02:10 UTC
 +++ Source/GmmLib/ULT/GmmAuxTableULT.cpp
 @@ -20,7 +20,7 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWAR
  OTHER DEALINGS IN THE SOFTWARE.
  ============================================================================*/
  
--#ifdef __linux__
-+#ifndef _WIN32
+-#if defined (__linux__) && !defined(__i386__)
++#if !defined (_WIN32) && !defined(__i386__)
  
  #include "GmmAuxTableULT.h"
  
@@ -177,14 +177,14 @@ Source/GmmLib/inc/External/Common/GmmInfo.h:58:3: note: 'GMM_UMD_CONTEXT' declar
  
 -#endif /* __linux__ */
 +#endif /* !_WIN32 */
---- Source/GmmLib/ULT/GmmAuxTableULT.h.orig	2019-09-16 10:30:27 UTC
+--- Source/GmmLib/ULT/GmmAuxTableULT.h.orig	2019-10-17 00:14:58 UTC
 +++ Source/GmmLib/ULT/GmmAuxTableULT.h
 @@ -22,7 +22,7 @@ OTHER DEALINGS IN THE SOFTWARE.
  
  #pragma once
  
--#ifdef __linux__
-+#ifndef _WIN32
+-#if defined (__linux__) && !defined(__i386__)
++#if !defined (_WIN32) && !defined(__i386__)
  
  #ifndef _ISOC11_SOURCE
  #define _ISOC11_SOURCE 1
