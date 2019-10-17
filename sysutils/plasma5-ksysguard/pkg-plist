@@ -1,9 +1,9 @@
 bin/ksysguard
 bin/ksysguardd
 etc/ksysguarddrc
-lib/libexec/ksysguard/ksgrd_network_helper
+%%PCAP%%lib/libexec/ksysguard/ksgrd_network_helper
 lib/libkdeinit5_ksysguard.so
-%%QT_PLUGINDIR%%/ksysguard/process/ksysguard_plugin_network.so
+%%PCAP%%%%QT_PLUGINDIR%%/ksysguard/process/ksysguard_plugin_network.so
 share/applications/org.kde.ksysguard.desktop
 share/doc/HTML/ca/ksysguard/index.cache.bz2
 share/doc/HTML/ca/ksysguard/index.docbook
