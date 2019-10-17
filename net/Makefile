@@ -293,13 +293,13 @@
     SUBDIR += kalarmcal
     SUBDIR += kamailio
     SUBDIR += kblog
-    SUBDIR += kcalcore
     SUBDIR += kcalutils
-    SUBDIR += kcontacts
     SUBDIR += kdav
     SUBDIR += kdenetwork
     SUBDIR += kdenetwork-filesharing
     SUBDIR += kea
+    SUBDIR += kf5-kcalendarcore
+    SUBDIR += kf5-kcontacts
     SUBDIR += kf5-kholidays
     SUBDIR += kf5-kxmlrpcclient
     SUBDIR += kf5-syndication

@@ -13414,3 +13414,5 @@ x11-wm/weewm||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-wm/windowlab||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-wm/wmfs||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-wm/plank|x11/plank|2019-10-17|Port incorrectly labeled as Windows Manager, is an independent dock application.
+net/kcontacts|net/kf5-kcontacts|2019-10-17|Became a KDE Framework
+net/kcalcore|net/kf5-kcalendarcore|2019-10-17|Became a KDE Framework

@@ -48,7 +48,6 @@ lib/libKF5PeopleWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/people/qmldir
 %%QT_MKSPECDIR%%/modules/qt_KPeople.pri
 %%QT_MKSPECDIR%%/modules/qt_KPeopleWidgets.pri
-share/kf5/kpeople/dummy_avatar.png
 share/kservicetypes5/kpeople_data_source.desktop
 share/kservicetypes5/kpeople_plugin.desktop
 share/kservicetypes5/persondetailsplugin.desktop
