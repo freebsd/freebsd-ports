@@ -1,4 +1,4 @@
---- src/cpp/desktop/DesktopMain.cpp.orig	2019-02-16 02:00:24 UTC
+--- src/cpp/desktop/DesktopMain.cpp.orig	2019-09-19 13:59:21 UTC
 +++ src/cpp/desktop/DesktopMain.cpp
 @@ -41,6 +41,7 @@
  #include "DesktopProgressActivator.hpp"
@@ -7,8 +7,8 @@
 +#include "global-setenv.h"
  
  #ifdef _WIN32
- #include <Windows.h>
-@@ -324,7 +325,7 @@ QString inferDefaultRenderingEngine()
+ #include <core/system/RegistryKey.hpp>
+@@ -367,7 +368,7 @@ QString inferDefaultRenderingEngine()
  
  #endif
  
@@ -17,7 +17,7 @@
  
  QString inferDefaultRenderingEngine()
  {
-@@ -383,6 +384,7 @@ void initializeRenderingEngine(std::vect
+@@ -426,6 +427,7 @@ void initializeRenderingEngine(std::vector<char*>* pAr
  
  int main(int argc, char* argv[])
  {

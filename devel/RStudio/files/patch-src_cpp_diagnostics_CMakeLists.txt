@@ -1,4 +1,4 @@
---- src/cpp/diagnostics/CMakeLists.txt.orig	2019-02-16 02:00:24 UTC
+--- src/cpp/diagnostics/CMakeLists.txt.orig	2019-09-19 13:59:21 UTC
 +++ src/cpp/diagnostics/CMakeLists.txt
 @@ -62,6 +62,7 @@ endif()
  # set link dependencies
@@ -6,5 +6,5 @@
     rstudio-core
 +   procstat
  )
- install(TARGETS diagnostics DESTINATION ${RSTUDIO_INSTALL_BIN})
- 
+ if(NOT RSTUDIO_SESSION_WIN32)
+    install(TARGETS diagnostics DESTINATION ${RSTUDIO_INSTALL_BIN})
