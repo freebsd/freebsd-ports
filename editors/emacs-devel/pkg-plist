@@ -854,6 +854,7 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/srecode/getset-cpp.srt
 %%DATADIR%%/%%EMACS_VER%%/etc/srecode/java.srt
 %%DATADIR%%/%%EMACS_VER%%/etc/srecode/make.srt
+%%DATADIR%%/%%EMACS_VER%%/etc/srecode/proj-test.srt
 %%DATADIR%%/%%EMACS_VER%%/etc/srecode/template.srt
 %%DATADIR%%/%%EMACS_VER%%/etc/srecode/test.srt
 %%DATADIR%%/%%EMACS_VER%%/etc/srecode/texi.srt
