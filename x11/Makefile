@@ -246,6 +246,7 @@
     SUBDIR += perwindowlayoutd
     SUBDIR += pipeglade
     SUBDIR += pixman
+    SUBDIR += plank
     SUBDIR += plasma5-kactivitymanagerd
     SUBDIR += plasma5-kgamma5
     SUBDIR += plasma5-kscreen
