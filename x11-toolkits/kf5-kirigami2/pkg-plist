@@ -45,6 +45,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/OverlayDrawer.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/OverlaySheet.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Page.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/PagePoolAction.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/PageRow.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/PasswordField.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ScrollablePage.qml
@@ -109,6 +110,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/PassiveNotification.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/ScrollView.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/qmldir
+share/kdevappwizard/templates/kirigami.tar.bz2
 share/locale/ar/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/libkirigami2plugin_qt.qm

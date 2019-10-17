@@ -74,6 +74,7 @@ share/ECM/modules/ECMQtDeclareLoggingCategory.h.in
 share/ECM/modules/ECMQueryQmake.cmake
 share/ECM/modules/ECMSetupQtPluginMacroNames.cmake
 share/ECM/modules/ECMSetupVersion.cmake
+share/ECM/modules/ECMSourceVersionControl.cmake
 share/ECM/modules/ECMUninstallTarget.cmake
 share/ECM/modules/ECMUseFindModules.cmake
 share/ECM/modules/ECMVersionHeader.h.in
@@ -144,6 +145,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMQtDeclareLoggingCategory.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMSetupQtPluginMacroNames.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMSetupVersion.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMSourceVersionControl.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMUninstallTarget.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMUseFindModules.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMWinResolveSymlinks.rst.txt
@@ -231,6 +233,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMQtDeclareLoggingCategory.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMSetupQtPluginMacroNames.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMSetupVersion.html
+%%PORTDOCS%%%%DOCSDIR%%/html/module/ECMSourceVersionControl.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMUninstallTarget.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMUseFindModules.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMWinResolveSymlinks.html

@@ -1,4 +1,3 @@
-etc/xdg/kactivities-stats.categories
 include/KF5/KActivitiesStats/KActivities/Stats/Cleaning
 include/KF5/KActivitiesStats/KActivities/Stats/Query
 include/KF5/KActivitiesStats/KActivities/Stats/ResultModel

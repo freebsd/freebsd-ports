@@ -1,5 +1,6 @@
 %%QT_PLUGINDIR%%/imageformats/kimg_eps.so
 %%OPENEXR%%%%QT_PLUGINDIR%%/imageformats/kimg_exr.so
+%%QT_PLUGINDIR%%/imageformats/kimg_hdr.so
 %%QT_PLUGINDIR%%/imageformats/kimg_kra.so
 %%QT_PLUGINDIR%%/imageformats/kimg_ora.so
 %%QT_PLUGINDIR%%/imageformats/kimg_pcx.so
@@ -12,6 +13,7 @@
 share/kservices5/qimageioplugins/dds.desktop
 share/kservices5/qimageioplugins/eps.desktop
 %%OPENEXR%%share/kservices5/qimageioplugins/exr.desktop
+share/kservices5/qimageioplugins/hdr.desktop
 share/kservices5/qimageioplugins/jp2.desktop
 share/kservices5/qimageioplugins/kra.desktop
 share/kservices5/qimageioplugins/ora.desktop

@@ -1,5 +1,3 @@
-share/qlogging-categories5/kcontacts.categories
-share/qlogging-categories5/kcontacts.renamecategories
 include/KF5/KContacts/KContacts/Address
 include/KF5/KContacts/KContacts/Addressee
 include/KF5/KContacts/KContacts/AddresseeList
@@ -68,9 +66,11 @@ lib/cmake/KF5Contacts/KF5ContactsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5Contacts/KF5ContactsTargets.cmake
 lib/libKF5Contacts.so
 lib/libKF5Contacts.so.5
-lib/libKF5Contacts.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKF5Contacts.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KContacts.pri
 share/locale/ar/LC_MESSAGES/kcontacts5.mo
+share/locale/ast/LC_MESSAGES/kcontacts5.mo
+share/locale/be/LC_MESSAGES/kcontacts5.mo
 share/locale/bs/LC_MESSAGES/kcontacts5.mo
 share/locale/ca/LC_MESSAGES/kcontacts5.mo
 share/locale/ca@valencia/LC_MESSAGES/kcontacts5.mo
@@ -87,6 +87,7 @@ share/locale/fr/LC_MESSAGES/kcontacts5.mo
 share/locale/ga/LC_MESSAGES/kcontacts5.mo
 share/locale/gl/LC_MESSAGES/kcontacts5.mo
 share/locale/hi/LC_MESSAGES/kcontacts5.mo
+share/locale/hne/LC_MESSAGES/kcontacts5.mo
 share/locale/hu/LC_MESSAGES/kcontacts5.mo
 share/locale/ia/LC_MESSAGES/kcontacts5.mo
 share/locale/it/LC_MESSAGES/kcontacts5.mo
@@ -96,6 +97,7 @@ share/locale/km/LC_MESSAGES/kcontacts5.mo
 share/locale/ko/LC_MESSAGES/kcontacts5.mo
 share/locale/lt/LC_MESSAGES/kcontacts5.mo
 share/locale/lv/LC_MESSAGES/kcontacts5.mo
+share/locale/mai/LC_MESSAGES/kcontacts5.mo
 share/locale/mr/LC_MESSAGES/kcontacts5.mo
 share/locale/nb/LC_MESSAGES/kcontacts5.mo
 share/locale/nds/LC_MESSAGES/kcontacts5.mo
@@ -107,12 +109,21 @@ share/locale/pt/LC_MESSAGES/kcontacts5.mo
 share/locale/pt_BR/LC_MESSAGES/kcontacts5.mo
 share/locale/ro/LC_MESSAGES/kcontacts5.mo
 share/locale/ru/LC_MESSAGES/kcontacts5.mo
+share/locale/se/LC_MESSAGES/kcontacts5.mo
 share/locale/sk/LC_MESSAGES/kcontacts5.mo
 share/locale/sl/LC_MESSAGES/kcontacts5.mo
+share/locale/sq/LC_MESSAGES/kcontacts5.mo
 share/locale/sr/LC_MESSAGES/kcontacts5.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kcontacts5.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kcontacts5.mo
+share/locale/sr@latin/LC_MESSAGES/kcontacts5.mo
 share/locale/sv/LC_MESSAGES/kcontacts5.mo
+share/locale/tg/LC_MESSAGES/kcontacts5.mo
+share/locale/th/LC_MESSAGES/kcontacts5.mo
 share/locale/tr/LC_MESSAGES/kcontacts5.mo
 share/locale/ug/LC_MESSAGES/kcontacts5.mo
 share/locale/uk/LC_MESSAGES/kcontacts5.mo
 share/locale/zh_CN/LC_MESSAGES/kcontacts5.mo
 share/locale/zh_TW/LC_MESSAGES/kcontacts5.mo
+share/qlogging-categories5/kcontacts.categories
+share/qlogging-categories5/kcontacts.renamecategories
