@@ -1,17 +1,17 @@
 --- jdk/src/share/native/sun/font/freetypeScaler.c.orig	2017-01-20 17:04:07 UTC
 +++ jdk/src/share/native/sun/font/freetypeScaler.c
-@@ -38,6 +38,8 @@
- #include FT_SIZES_H
+@@ -42,6 +42,8 @@
  #include FT_OUTLINE_H
  #include FT_SYNTHESIS_H
+ #include FT_MODULE_H
 +#include FT_LCD_FILTER_H
 +#include <fontconfig/fontconfig.h>
  
  #include "fontscaler.h"
  
-@@ -693,6 +695,132 @@ static void CopyFTSubpixelVToSubpixel(co
-     }
- }
+@@ -87,6 +89,133 @@
+     int        ptsz;          /* size in points */
+ } FTScalerContext;
  
 +typedef struct {
 +    FT_Render_Mode ftRenderMode;
@@ -139,20 +139,18 @@
 +    rp->ftLoadFlags = ftLoadFlags;
 +    rp->ftLcdFilter = ftLcdFilter;
 +}
- 
- /*
-  * Class:     sun_font_FreetypeFontScaler
-@@ -698,31 +826,15 @@
++
+ #ifdef DEBUG
+ /* These are referenced in the freetype sources if DEBUG macro is defined.
+    To simplify work with debuging version of freetype we define
+@@ -809,31 +938,14 @@
          return ptr_to_jlong(getNullGlyphImage());
      }
  
 -    if (!context->useSbits) {
 -        renderFlags |= FT_LOAD_NO_BITMAP;
 -    }
-+    RenderingProperties renderingProperties;
-+    readFontconfig((const FcChar8 *) scalerInfo->face->family_name,
-+                   context->ptsz, context->aaType, &renderingProperties);
- 
+-
 -    /* NB: in case of non identity transform
 -     we might also prefer to disable transform before hinting,
 -     and apply it explicitly after hinting is performed.
@@ -170,28 +168,34 @@
 -        target = FT_LOAD_TARGET_LCD_V;
 -    }
 -    renderFlags |= target;
--
++    RenderingProperties renderingProperties;
++    readFontconfig((const FcChar8 *) scalerInfo->face->family_name,
++                   context->ptsz, context->aaType, &renderingProperties);
+ 
      glyph_index = FT_Get_Char_Index(scalerInfo->face, glyphCode);
  
 -    error = FT_Load_Glyph(scalerInfo->face, glyphCode, renderFlags);
 +    FT_Library_SetLcdFilter(scalerInfo->library, renderingProperties.ftLcdFilter);
 +    error = FT_Load_Glyph(scalerInfo->face, glyphCode, renderingProperties.ftLoadFlags);
-+
      if (error) {
          //do not destroy scaler yet.
          //this can be problem of particular context (e.g. with bad transform)
-@@ -770,9 +877,7 @@ Java_sun_font_FreetypeFontScaler_getGlyp
- 
-     /* generate bitmap if it is not done yet
-      e.g. if algorithmic styling is performed and style was added to outline */
--    if (ftglyph->format == FT_GLYPH_FORMAT_OUTLINE) {
--        FT_Render_Glyph(ftglyph, FT_LOAD_TARGET_MODE(target));
--    }
-+    FT_Render_Glyph(ftglyph, renderingProperties.ftRenderMode);
+@@ -862,10 +974,10 @@
+             glyphInfo = getNullGlyphImage();
+             return ptr_to_jlong(glyphInfo);
+         }
+-        error = FT_Render_Glyph(ftglyph, FT_LOAD_TARGET_MODE(target));
+-        if (error != 0) {
+-            return ptr_to_jlong(getNullGlyphImage());
+-        }
++    }
++    error = FT_Render_Glyph(ftglyph, renderingProperties.ftRenderMode);
++    if (error != 0) {
++        return ptr_to_jlong(getNullGlyphImage());
+     }
  
      width  = (UInt16) ftglyph->bitmap.width;
-     height = (UInt16) ftglyph->bitmap.rows;
-@@ -1001,11 +1106,14 @@ static FT_Outline* getFTOutline(JNIEnv* 
+@@ -1100,11 +1211,14 @@
          return NULL;
      }
  
