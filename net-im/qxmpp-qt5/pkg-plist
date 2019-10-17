@@ -68,6 +68,6 @@ lib/cmake/qxmpp/QXmpp.cmake
 lib/cmake/qxmpp/QXmppConfig.cmake
 lib/cmake/qxmpp/QXmppConfigVersion.cmake
 lib/libqxmpp.so
-lib/libqxmpp.so.0
+lib/libqxmpp.so.1
 lib/libqxmpp.so.%%VERSION%%
 libdata/pkgconfig/qxmpp.pc
