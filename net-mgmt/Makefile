@@ -289,6 +289,7 @@
     SUBDIR += php74-snmp
     SUBDIR += phpipam
     SUBDIR += phpweathermap
+    SUBDIR += ping_exporter
     SUBDIR += pktstat
     SUBDIR += pmacct
     SUBDIR += pnp

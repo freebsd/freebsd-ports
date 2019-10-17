@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: ping_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# ping_exporter_enable (bool):          Set to NO by default.
+#               Set it to YES to enable ping_exporter.
+# ping_exporter_user (string):          Set user that ping_exporter will run under
+#               Default is "nobody".
+# ping_exporter_group (string):         Set group that ping_exporter will run under
+#               Default is "nobody".
+# ping_exporter_args (string):          Set extra arguments to pass to ping_exporter
+#               Default is "".
+# ping_exporter_listen_address (string):Set ip:port that ping_exporter will listen on
+#               Default is "localhost:9427".
+# ping_exporter_config (string):        Set configuration file of ping_exporter
+#               Default is "%%PREFIX%%/etc/ping_exporter.yml".
+# ping_exporter_log_file (string):      Set log file of ping_exporter
+#               Default is "/var/log/ping_exporter.log".
+
+. /etc/rc.subr
+
+name=ping_exporter
+desc="Ping exporter for use with Prometheus"
+rcvar=ping_exporter_enable
+
+load_rc_config $name
+
+: ${ping_exporter_enable:=NO}
+: ${ping_exporter_user:=nobody}
+: ${ping_exporter_group:=nobody}
+: ${ping_exporter_listen_address=localhost:9427}
+: ${ping_exporter_config="%%PREFIX%%/etc/ping_exporter.yml"}
+: ${ping_exporter_log_file=/var/log/ping_exporter.log}
+
+required_files="${ping_exporter_config}"
+pidfile=/var/run/ping_exporter.pid
+command=/usr/sbin/daemon
+procname="%%PREFIX%%/bin/ping_exporter"
+command_args="-p ${pidfile} /usr/bin/env ${procname} \
+    -web.listen-address ${ping_exporter_listen_address} \
+    -config.path ${ping_exporter_config} \
+    ${ping_exporter_args} >> ${ping_exporter_log_file} 2>&1"
+
+start_precmd=ping_exporter_startprecmd
+
+ping_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install -o ${ping_exporter_user} -g ${ping_exporter_group} /dev/null ${pidfile};
+    else
+        chown ${ping_exporter_user}:${ping_exporter_group} ${pidfile};
+    fi
+    if [ ! -e ${ping_exporter_log_file} ]; then
+        install -o ${ping_exporter_user} -g ${ping_exporter_group} -m 640 /dev/null ${ping_exporter_log_file};
+    else
+        chown ${ping_exporter_user}:${ping_exporter_group} ${ping_exporter_log_file};
+    fi
+}
+
+run_rc_command "$1"

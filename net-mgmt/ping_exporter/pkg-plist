@@ -1,0 +1,2 @@
+bin/ping_exporter
+@sample %%ETCDIR%%.yml.sample
