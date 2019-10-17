@@ -1,14 +1,22 @@
---- jdk/make/mapfiles/libnio/mapfile-bsd
+--- jdk/make/mapfiles/libnio/mapfile-bsd.orig	2019-10-17 21:15:55 UTC
 +++ jdk/make/mapfiles/libnio/mapfile-bsd
-@@ -42,6 +42,7 @@ SUNWprivate_1.1 {
- 		Java_sun_nio_ch_FileChannelImpl_position0;
+@@ -41,6 +41,7 @@ SUNWprivate_1.1 {
+ 		Java_sun_nio_ch_FileChannelImpl_map0;
  		Java_sun_nio_ch_FileChannelImpl_transferTo0;
  		Java_sun_nio_ch_FileChannelImpl_unmap0;
 +		Java_sun_nio_ch_FileDispatcherImpl_allocate0;
  		Java_sun_nio_ch_FileDispatcherImpl_close0;
  		Java_sun_nio_ch_FileDispatcherImpl_closeIntFD;
- 		Java_sun_nio_ch_FileDispatcherImpl_force0;
-@@ -143,6 +144,14 @@ SUNWprivate_1.1 {
+ 		Java_sun_nio_ch_FileDispatcherImpl_seek0;
+@@ -135,6 +136,7 @@ SUNWprivate_1.1 {
+ 		Java_sun_nio_fs_BsdNativeDispatcher_endfsstat;
+ 		Java_sun_nio_fs_BsdNativeDispatcher_fsstatEntry;
+ 		Java_sun_nio_fs_BsdNativeDispatcher_getfsstat;
++		Java_sun_nio_fs_BsdNativeDispatcher_getmntonname0;
+ 		Java_sun_nio_fs_BsdNativeDispatcher_initIDs;
+ 		Java_sun_nio_fs_GnomeFileTypeDetector_initializeGio;
+ 		Java_sun_nio_fs_GnomeFileTypeDetector_initializeGnomeVfs;
+@@ -143,6 +145,14 @@ SUNWprivate_1.1 {
  		Java_sun_nio_fs_MagicFileTypeDetector_initialize0;
  		Java_sun_nio_fs_MagicFileTypeDetector_probe0;
  		Java_sun_nio_fs_UnixCopyFile_transfer;
