@@ -3,13 +3,15 @@ include/plank/plank.h
 lib/libplank.so
 lib/libplank.so.1
 lib/libplank.so.1.0.0
+lib/plank/docklets/libdocklet-applications.so
+lib/plank/docklets/libdocklet-battery.so
 lib/plank/docklets/libdocklet-clippy.so
 lib/plank/docklets/libdocklet-clock.so
 lib/plank/docklets/libdocklet-desktop.so
 lib/plank/docklets/libdocklet-trash.so
 libdata/pkgconfig/plank.pc
 man/man1/plank.1.gz
-share/appdata/plank.appdata.xml
+share/metainfo/plank.appdata.xml
 share/applications/plank.desktop
 share/icons/hicolor/128x128/apps/plank.svg
 share/icons/hicolor/16x16/apps/plank.svg
@@ -24,6 +26,7 @@ share/icons/hicolor/64x64/apps/plank.svg
 %%NLS%%share/locale/bs/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/da/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/de/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/el/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/plank.mo
@@ -80,3 +83,4 @@ share/icons/hicolor/64x64/apps/plank.svg
 %%DATADIR%%/themes/Transparent/dock.theme
 share/vala/vapi/plank.deps
 share/vala/vapi/plank.vapi
+
