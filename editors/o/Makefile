@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	o
-DISTVERSION=	2.3.1
+DISTVERSION=	2.4.7
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
