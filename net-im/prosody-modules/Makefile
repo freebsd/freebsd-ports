@@ -1,15 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	prosody-modules
-PORTVERSION=	20180216
+PORTVERSION=	20191017
 CATEGORIES=	net-im
-MASTER_SITES=	https://hg.prosody.im/${PORTNAME}/archive/  \
-		LOCAL/tcberner/${PORTNAME}-${PORTVERSION}
-DISTNAME=	6f289283feb1
+MASTER_SITES=	https://hg.prosody.im/${PORTNAME}/archive/
+DISTNAME=	a6db99c1420a
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Prosody modules repository snapshot
+COMMENT=	Prosody Community modules repository snapshot
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,7 +19,7 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	INSTALLPATH=${INSTALLPATH}
 PLIST_SUB=	INSTALLPATH=${INSTALLPATH}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
+WRKSRC=		${WRKDIR}/Community-Modules-${DISTNAME}
 INSTALLPATH=	${PREFIX}/lib/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
