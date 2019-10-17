@@ -6,27 +6,19 @@ OPTIONS_MULTI_AUDIO=	JACK PULSEAUDIO SNDIO
 OPTIONS_DEFAULT=	JACK PULSEAUDIO SNDIO
 AUDIO_DESC=		Choose your audio options
 
-.include <bsd.port.options.mk>
+JACK_BUILD_DEPENDS=	${LOCALBASE}/include/jack/jack.h:audio/jack
+JACK_VARS=		MOZ_CONFIGURE_ARGS+=	"ac_add_options --enable-jack"
 
-.if ${PORT_OPTIONS:MJACK}
-BUILD_DEPENDS+=	${LOCALBASE}/include/jack/jack.h:audio/jack
-MOZ_CONFIGURE_ARGS+=	"ac_add_options --enable-jack"
-.endif
+PULSEAUDIO_BUILD_DEPENDS=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio
+PULSEAUDIO_VARS=		MOZ_CONFIGURE_ARGS+=	"ac_add_options	--enable-pulseaudio"
+PULSEAUDIO_VARS_OFF=		MOZ_CONFIGURE_ARGS+=	"ac_add_options --disable-pulseaudio"
 
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-BUILD_DEPENDS+=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio
-MOZ_CONFIGURE_ARGS+=	"ac_add_options	--enable-pulseaudio"
-.else
-MOZ_CONFIGURE_ARGS+=	"ac_add_options --disable-pulseaudio"
-.endif
+SNDIO_BUILD_DEPENDS+=	${LOCALBASE}/include/sndio.h:audio/sndio
+SNDIO_LIB_DEPENDS+=	libsndio.so:audio/sndio
 
-.if ${PORT_OPTIONS:MSNDIO}
-BUILD_DEPENDS+=	${LOCALBASE}/include/sndio.h:audio/sndio
-LIB_DEPENDS+=	libsndio.so:audio/sndio
 post-patch-SNDIO-on:
 	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
 		${WRKSRC}/mozilla-release/media/libcubeb/src/moz.build \
 		${WRKSRC}/mozilla-release/toolkit/library/moz.build
 	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
 		${WRKSRC}/mozilla-release/media/libcubeb/gtest/moz.build
-.endif
