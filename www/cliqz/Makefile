@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cliqz
-DISTVERSION=	1.29.2
+DISTVERSION=	1.29.3
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/cdn.cliqz.com/browser-f/APT/:amazon \
 		http://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/${CLIQZ_LAST_BUILD_ID}/:cliqz
@@ -64,8 +64,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cliqz-oss
 GH_PROJECT=	browser-f
 
-.include "${.CURDIR}/Makefile.options"
-
 USE_LDCONFIG=	yes
 
 bash_OLD_CMD=	"/bin/bash"
@@ -75,7 +73,7 @@ SHEBANG_FILES=	magic_build_and_package.sh
 CLIQZ_CHANNEL=		release
 # If the DISTVERSION is updated, make sure to update the last build id from
 # fetch -qo - https://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/lastbuildid
-CLIQZ_LAST_BUILD_ID=	20191008110659
+CLIQZ_LAST_BUILD_ID=	20191011101006
 CLIQZ_ICON=		${PORTNAME}.png
 CLIQZ_ICON_SRC=		${WRKSRC}/mozilla-release/browser/branding/${PORTNAME}/default48.png
 MOZ_DESKTOP=		${WRKSRC}/mozilla-release/toolkit/mozapps/installer/linux/rpm/mozilla.desktop
@@ -96,6 +94,8 @@ MOZ_CONFIGURE_ARGS+=	"ac_add_options --disable-crashreporter" \
 			"ac_add_options --libclang-path=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib" \
 			"ac_add_options --with-system-graphite2" \
 			"ac_add_options --with-system-harfbuzz"
+
+.include "${.CURDIR}/Makefile.options"
 
 .include <bsd.port.pre.mk>
 
