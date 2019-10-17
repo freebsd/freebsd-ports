@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	inlets
-DISTVERSION=	2.5.0
+DISTVERSION=	2.6.1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
 USE_GITHUB=	yes
-GH_ACCOUNT=	alexellis
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
