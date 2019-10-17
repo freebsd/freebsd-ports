@@ -18,7 +18,7 @@ LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
 		libopencv_video.so:graphics/opencv \
 		libfftw3.so:math/fftw3
 
-USES=		pkgconfig qmake qt:5
+USES=		compiler:c++11-lang pkgconfig qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	c-koi
 GH_TAGNAME=	e1b25e8
