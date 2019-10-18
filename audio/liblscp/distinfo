@@ -1,2 +1,3 @@
-SHA256 (liblscp-0.5.7.tar.bz2) = 5156fb6a36bc14f427a5971b1e8768df7771ee7bd9fe501d3330d3bb8f255a3c
-SIZE (liblscp-0.5.7.tar.bz2) = 529902
+TIMESTAMP = 1571384381
+SHA256 (liblscp-0.6.0.tar.gz) = b39c78f4be07d4cc6b791d934e6fe58c0a7bc4aa32b6ed5131e303f99bd687e6
+SIZE (liblscp-0.6.0.tar.gz) = 670650
