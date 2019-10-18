@@ -1,15 +1,15 @@
---- Telegram/SourceFiles/core/launcher.cpp.orig	2019-09-06 13:41:43 UTC
+--- Telegram/SourceFiles/core/launcher.cpp.orig	2019-10-07 15:58:21 UTC
 +++ Telegram/SourceFiles/core/launcher.cpp
-@@ -16,6 +16,8 @@ https://github.com/telegramdesktop/tdesktop/blob/maste
- #include "core/sandbox.h"
+@@ -17,6 +17,8 @@ https://github.com/telegramdesktop/tdesktop/blob/maste
  #include "base/concurrent_timer.h"
+ #include "facades.h"
  
 +#include "FREEBSD_QT_PLUGINDIR.h"
 +
  namespace Core {
  namespace {
  
-@@ -248,12 +250,13 @@ void Launcher::init() {
+@@ -249,12 +251,13 @@ void Launcher::init() {
  #define TDESKTOP_LAUNCHER_FILENAME_TO_STRING_HELPER(V) #V
  #define TDESKTOP_LAUNCHER_FILENAME_TO_STRING(V) TDESKTOP_LAUNCHER_FILENAME_TO_STRING_HELPER(V)
  	QApplication::setDesktopFileName(qsl(TDESKTOP_LAUNCHER_FILENAME_TO_STRING(TDESKTOP_LAUNCHER_FILENAME)));
@@ -26,7 +26,7 @@
  
  	initHook();
  }
-@@ -270,6 +273,11 @@ int Launcher::exec() {
+@@ -271,6 +274,11 @@ int Launcher::exec() {
  	// both are finished in Sandbox::closeApplication
  	Logs::start(this); // must be started before Platform is started
  	Platform::start(); // must be started before Sandbox is created

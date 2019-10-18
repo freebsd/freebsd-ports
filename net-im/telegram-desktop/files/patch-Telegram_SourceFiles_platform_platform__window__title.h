@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/platform/platform_window_title.h.orig	2019-02-01 12:51:46 UTC
+--- Telegram/SourceFiles/platform/platform_window_title.h.orig	2019-10-07 15:58:21 UTC
 +++ Telegram/SourceFiles/platform/platform_window_title.h
-@@ -25,7 +25,7 @@ void PreviewWindowFramePaint(QImage &preview, const st
+@@ -26,7 +26,7 @@ void PreviewWindowFramePaint(QImage &preview, const st
  #include "platform/mac/window_title_mac.h"
  #elif defined Q_OS_WIN // Q_OS_MAC
  #include "platform/win/window_title_win.h"
@@ -9,7 +9,7 @@
  
  namespace Platform {
  
-@@ -43,4 +43,4 @@ inline void PreviewWindowFramePaint(QImage &preview, c
+@@ -44,4 +44,4 @@ inline void PreviewWindowFramePaint(QImage &preview, c
  
  } // namespace Platform
  
