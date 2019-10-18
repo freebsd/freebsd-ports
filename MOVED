@@ -13415,3 +13415,5 @@ x11-wm/wmfs||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-wm/plank|x11/plank|2019-10-17|Port incorrectly labeled as Windows Manager, is an independent dock application.
 net/kcontacts|net/kf5-kcontacts|2019-10-17|Became a KDE Framework
 net/kcalcore|net/kf5-kcalendarcore|2019-10-17|Became a KDE Framework
+java/linux-oracle-jre9|java/openjdk11|2019-10-18|Has expired: No longer maintained upstream, please migrate to openjdk11
+java/linux-oracle-jre10|java/openjdk11|2019-10-18|Has expired: No longer maintained upstream, please migrate to openjdk11
