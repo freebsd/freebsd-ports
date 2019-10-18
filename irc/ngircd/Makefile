@@ -3,6 +3,7 @@
 
 PORTNAME=	ngircd
 PORTVERSION=	25
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://arthur.barton.de/pub/${PORTNAME}/ \
@@ -40,7 +41,7 @@ ICONV_USES=			iconv
 ICONV_CONFIGURE_WITH=		iconv
 IDENT_DESC=			IDENT (AUTH) protocol support
 IDENT_LIB_DEPENDS=		libident.so:security/libident
-INDENT_CONFIGURE_WITH=		dent
+IDENT_CONFIGURE_WITH=		ident
 IPV6_CONFIGURE_ENABLE=		ipv6
 IRCPLUS_DESC=			IRC+ protocol
 IRCPLUS_CONFIGURE_ENABLE=	ircplus
