@@ -3,8 +3,7 @@
 
 PORTNAME=	qsampler
 DISTVERSIONPREFIX=	qsampler_
-DISTVERSION=	0_5_0
-PORTREVISION=	3
+DISTVERSION=	0_6_0
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,7 +18,8 @@ RUN_DEPENDS=	linuxsampler:audio/linuxsampler
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USES=		autoreconf gmake pkgconfig shared-mime-info qmake:no_env qt:5
+USES=		autoreconf desktop-file-utils gl gmake pkgconfig \
+		shared-mime-info qmake:no_env qt:5 xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_ac_cv_qmake=${QMAKE} \
 		ac_cv_path_ac_moc=${MOC} \
@@ -29,7 +29,7 @@ CONFIGURE_ENV=	ac_cv_path_ac_cv_qmake=${QMAKE} \
 		ac_cv_path_ac_lrelease=${LRELEASE}
 CONFIGURE_ARGS=	--enable-qt5
 USE_GL=		gl
-USE_QT=		core gui widgets x11extras \
+USE_QT=		core gui network widgets x11extras \
 		buildtools_build linguisttools_build qmake_build
 
 USE_GITHUB=	yes
