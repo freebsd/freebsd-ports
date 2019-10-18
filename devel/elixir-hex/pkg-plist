@@ -21,6 +21,7 @@ lib/elixir/lib/hex/ebin/Elixir.Hex.HTTP.Certs.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.HTTP.SSL.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.HTTP.VerifyHostname.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.HTTP.beam
+lib/elixir/lib/hex/ebin/Elixir.Hex.Mix.TaskDescription.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Mix.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.OptionParser.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Parallel.beam
@@ -33,6 +34,7 @@ lib/elixir/lib/hex/ebin/Elixir.Hex.Resolver.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.SCM.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Server.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Set.beam
+lib/elixir/lib/hex/ebin/Elixir.Hex.Shell.Process.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.Shell.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.State.beam
 lib/elixir/lib/hex/ebin/Elixir.Hex.UpdateChecker.beam
@@ -51,6 +53,7 @@ lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Install.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Organization.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Outdated.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Owner.beam
+lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Package.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Publish.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Repo.beam
 lib/elixir/lib/hex/ebin/Elixir.Mix.Tasks.Hex.Retire.beam
@@ -101,10 +104,12 @@ lib/elixir/lib/hex/lib/hex/scm.ex
 lib/elixir/lib/hex/lib/hex/server.ex
 lib/elixir/lib/hex/lib/hex/set.ex
 lib/elixir/lib/hex/lib/hex/shell.ex
+lib/elixir/lib/hex/lib/hex/shell/process.ex
 lib/elixir/lib/hex/lib/hex/state.ex
 lib/elixir/lib/hex/lib/hex/update_checker.ex
 lib/elixir/lib/hex/lib/hex/utils.ex
 lib/elixir/lib/hex/lib/hex/version.ex
+lib/elixir/lib/hex/lib/mix/task_description.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.audit.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.build.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.config.ex
@@ -115,6 +120,7 @@ lib/elixir/lib/hex/lib/mix/tasks/hex.install.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.organization.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.outdated.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.owner.ex
+lib/elixir/lib/hex/lib/mix/tasks/hex.package.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.publish.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.repo.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.retire.ex
