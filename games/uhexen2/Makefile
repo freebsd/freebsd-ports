@@ -3,6 +3,7 @@
 
 PORTNAME=	uhexen2
 PORTVERSION=	1.5.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Hammer%20of%20Thyrion/${PORTVERSION}/Source \
 		SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.29b:data \
@@ -51,7 +52,7 @@ HW_MAKE_ARGS=		BUILD_HW=yes
 MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_MAKE_ARGS=		MP3LIB=mad
 MIKMOD_LIB_DEPENDS=	libmikmod.so:audio/libmikmod
-MIDMOD_MAKE_ARGS=	USE_CODEC_MIKMOD=yes
+MIKMOD_MAKE_ARGS=	USE_CODEC_MIKMOD=yes
 MP3LIB_DESC=		MP3 audio codec
 MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 MPG123_MAKE_ARGS=	MP3LIB=mpg123
