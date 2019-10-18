@@ -20,4 +20,4 @@ Explorer 6.
 The library comes with an application server that acts as a stand-alone
 Http(s)/WebSocket server or integrates through FastCGI with other web servers.
 
-WWW: http://www.webtoolkit.eu/wt
+WWW: https://www.webtoolkit.eu/wt
