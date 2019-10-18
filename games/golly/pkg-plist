@@ -96,6 +96,7 @@ share/pixmaps/golly.xpm
 %%DATADIR%%/Patterns/Generations/What-a-mess.mcl
 %%DATADIR%%/Patterns/HashLife/broken-lines.mc
 %%DATADIR%%/Patterns/HashLife/catacryst.mc
+%%DATADIR%%/Patterns/HashLife/demonoid-c512-hashlife-friendly.mc.gz
 %%DATADIR%%/Patterns/HashLife/gotts-dots.mc
 %%DATADIR%%/Patterns/HashLife/hashlife-oddity1.mc
 %%DATADIR%%/Patterns/HashLife/hashlife-oddity2.mc
@@ -162,6 +163,7 @@ share/pixmaps/golly.xpm
 %%DATADIR%%/Patterns/Life/Breeders/LWSS-breeder.rle
 %%DATADIR%%/Patterns/Life/Breeders/breeder.lif
 %%DATADIR%%/Patterns/Life/Breeders/c4-diag-switch-engines.rle
+%%DATADIR%%/Patterns/Life/Breeders/one-cell-thick-quadratic-growth-2596x1.rle
 %%DATADIR%%/Patterns/Life/Breeders/p100-H-channel-breeder.rle
 %%DATADIR%%/Patterns/Life/Breeders/p90-rake-factory.rle
 %%DATADIR%%/Patterns/Life/Breeders/pi-blink-breeder1.rle
@@ -178,9 +180,11 @@ share/pixmaps/golly.xpm
 %%DATADIR%%/Patterns/Life/Guns/Cordership-gun-p784.rle
 %%DATADIR%%/Patterns/Life/Guns/golly-ticker.rle
 %%DATADIR%%/Patterns/Life/Guns/gun-p165mwss.rle
+%%DATADIR%%/Patterns/Life/Guns/infinite-Corderships-gun.rle.gz
 %%DATADIR%%/Patterns/Life/Guns/loafer-gun-p210.rle
 %%DATADIR%%/Patterns/Life/Guns/p59-gun-with-Snark-reflectors.rle
 %%DATADIR%%/Patterns/Life/Guns/p690-PT-Cordership-gun.rle
+%%DATADIR%%/Patterns/Life/Guns/period-52-glider-gun.rle
 %%DATADIR%%/Patterns/Life/Guns/pseudo-p34-gun.rle
 %%DATADIR%%/Patterns/Life/Guns/vacuum-cleaner.rle
 %%DATADIR%%/Patterns/Life/Methuselahs/acorn.lif
@@ -238,7 +242,7 @@ share/pixmaps/golly.xpm
 %%DATADIR%%/Patterns/Life/Rakes/2c5-spaceship-rake-p240.rle
 %%DATADIR%%/Patterns/Life/Rakes/basic-rakes.rle
 %%DATADIR%%/Patterns/Life/Rakes/c2-Cordership-rake.rle
-%%DATADIR%%/Patterns/Life/Rakes/c3-forward-rake-p333.rle
+%%DATADIR%%/Patterns/Life/Rakes/c3-forward-rake-p159.rle
 %%DATADIR%%/Patterns/Life/Rakes/c4-sideways-rake.rle
 %%DATADIR%%/Patterns/Life/Rakes/c5-adjustable-rake.rle
 %%DATADIR%%/Patterns/Life/Rakes/forward-LWSS-rake-p90.rle
@@ -258,6 +262,7 @@ share/pixmaps/golly.xpm
 %%DATADIR%%/Patterns/Life/Signal-Circuitry/heisenburp-46-natural.rle
 %%DATADIR%%/Patterns/Life/Signal-Circuitry/heisenburp-46.rle
 %%DATADIR%%/Patterns/Life/Signal-Circuitry/high-bandwidth-telegraph.rle.gz
+%%DATADIR%%/Patterns/Life/Signal-Circuitry/loafer-mwss-signal-loop.rle.gz
 %%DATADIR%%/Patterns/Life/Signal-Circuitry/p30-racetrack.rle
 %%DATADIR%%/Patterns/Life/Signal-Circuitry/p46racetrack.rle
 %%DATADIR%%/Patterns/Life/Signal-Circuitry/reflectors.rle
@@ -343,6 +348,10 @@ share/pixmaps/golly.xpm
 %%DATADIR%%/Patterns/Other-Rules/HPP-demo-small.rle
 %%DATADIR%%/Patterns/Other-Rules/HPP-demo.rle
 %%DATADIR%%/Patterns/Other-Rules/Langtons-Ant.rle
+%%DATADIR%%/Patterns/Other-Rules/NoTimeAtAll-demo.zip
+%%DATADIR%%/Patterns/Other-Rules/animated-pixel-art-sample.zip
+%%DATADIR%%/Patterns/Other-Rules/b2ein-spaceships-and-rakes.rle
+%%DATADIR%%/Patterns/Other-Rules/dragon-curve-generator.zip
 %%DATADIR%%/Patterns/Other-Rules/factorize-84.zip
 %%DATADIR%%/Patterns/Other-Rules/golly-ants.rle
 %%DATADIR%%/Patterns/Other-Rules/life-on-the-edge.rle
@@ -378,6 +387,7 @@ share/pixmaps/golly.xpm
 %%DATADIR%%/Patterns/Self-Rep/Devore/Devore-rep.rle
 %%DATADIR%%/Patterns/Self-Rep/Devore/crossover.rle
 %%DATADIR%%/Patterns/Self-Rep/Devore/discriminator.rle
+%%DATADIR%%/Patterns/Self-Rep/Flow6/Flow6.zip
 %%DATADIR%%/Patterns/Self-Rep/JvN/Boustrophedon-replicator.rle
 %%DATADIR%%/Patterns/Self-Rep/JvN/CY_Lee_computer.zip
 %%DATADIR%%/Patterns/Self-Rep/JvN/Hutton-replicator.rle
@@ -393,6 +403,7 @@ share/pixmaps/golly.xpm
 %%DATADIR%%/Patterns/Self-Rep/JvN/golly-constructor.rle
 %%DATADIR%%/Patterns/Self-Rep/JvN/partial-constructor.mc.gz
 %%DATADIR%%/Patterns/Self-Rep/JvN/read-arm-demo.rle
+%%DATADIR%%/Patterns/Self-Rep/JvN/small-JvN-self-replicator.rle
 %%DATADIR%%/Patterns/Self-Rep/JvN/sphinx-midpoint.mc.gz
 %%DATADIR%%/Patterns/Self-Rep/JvN/sphinx-spark.mc.gz
 %%DATADIR%%/Patterns/Self-Rep/JvN/sphinx.mc.gz
@@ -478,7 +489,9 @@ share/pixmaps/golly.xpm
 %%DATADIR%%/Rules/Worm-1525115.rule
 %%DATADIR%%/Rules/Worm-complement.rule
 %%DATADIR%%/Rules/Worm-shared.rule
+%%DATADIR%%/Scripts/Lua/1D.lua
 %%DATADIR%%/Scripts/Lua/3D.lua
+%%DATADIR%%/Scripts/Lua/Margolus.lua
 %%DATADIR%%/Scripts/Lua/breakout.lua
 %%DATADIR%%/Scripts/Lua/bricklayer.lua
 %%DATADIR%%/Scripts/Lua/browse-patterns.lua
@@ -489,6 +502,7 @@ share/pixmaps/golly.xpm
 %%DATADIR%%/Scripts/Lua/flood-fill.lua
 %%DATADIR%%/Scripts/Lua/giffer.lua
 %%DATADIR%%/Scripts/Lua/goto.lua
+%%DATADIR%%/Scripts/Lua/gplus/NewCA.lua
 %%DATADIR%%/Scripts/Lua/gplus/guns.lua
 %%DATADIR%%/Scripts/Lua/gplus/init.lua
 %%DATADIR%%/Scripts/Lua/gplus/objects.lua
@@ -517,6 +531,7 @@ share/pixmaps/golly.xpm
 %%DATADIR%%/Scripts/Lua/slide-show.lua
 %%DATADIR%%/Scripts/Lua/tile-with-clip.lua
 %%DATADIR%%/Scripts/Lua/tile.lua
+%%DATADIR%%/Scripts/Lua/toChangeState.lua
 %%DATADIR%%/Scripts/Lua/toLife.lua
 %%DATADIR%%/Scripts/Lua/toLifeHistory.lua
 %%DATADIR%%/Scripts/Python/Margolus/convert-MCell-string.py
@@ -583,3 +598,4 @@ share/pixmaps/golly.xpm
 %%DATADIR%%/Scripts/Python/slide-show.py
 %%DATADIR%%/Scripts/Python/tile-with-clip.py
 %%DATADIR%%/Scripts/Python/tile.py
+
