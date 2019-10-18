@@ -1656,6 +1656,7 @@ go/src/cmd/go/testdata/mod/example.com_badchain_b_v1.0.0.txt
 go/src/cmd/go/testdata/mod/example.com_badchain_b_v1.1.0.txt
 go/src/cmd/go/testdata/mod/example.com_badchain_c_v1.0.0.txt
 go/src/cmd/go/testdata/mod/example.com_badchain_c_v1.1.0.txt
+go/src/cmd/go/testdata/mod/example.com_dotgo.go_v1.0.0.txt
 go/src/cmd/go/testdata/mod/example.com_downgrade_v2.0.0.txt
 go/src/cmd/go/testdata/mod/example.com_downgrade_v2_v2.0.1.txt
 go/src/cmd/go/testdata/mod/example.com_invalidpath_v1_v1.0.0.txt
@@ -1789,6 +1790,7 @@ go/src/cmd/go/testdata/script/cgo_syso_issue29253.txt
 go/src/cmd/go/testdata/script/clean_testcache.txt
 go/src/cmd/go/testdata/script/cmd_import_error.txt
 go/src/cmd/go/testdata/script/cover_atomic_pkgall.txt
+go/src/cmd/go/testdata/script/cover_mod_empty.txt
 go/src/cmd/go/testdata/script/cover_pkgall_multiple_mains.txt
 go/src/cmd/go/testdata/script/cover_pkgall_runtime.txt
 go/src/cmd/go/testdata/script/cpu_profile_twice.txt
@@ -1811,10 +1813,12 @@ go/src/cmd/go/testdata/script/install_cross_gobin.txt
 go/src/cmd/go/testdata/script/install_rebuild_gopath.txt
 go/src/cmd/go/testdata/script/install_rebuild_removed.txt
 go/src/cmd/go/testdata/script/linkname.txt
+go/src/cmd/go/testdata/script/list_ambiguous_path.txt
 go/src/cmd/go/testdata/script/list_bad_import.txt
 go/src/cmd/go/testdata/script/list_compiled_imports.txt
 go/src/cmd/go/testdata/script/list_find.txt
 go/src/cmd/go/testdata/script/list_importmap.txt
+go/src/cmd/go/testdata/script/list_split_main.txt
 go/src/cmd/go/testdata/script/list_std.txt
 go/src/cmd/go/testdata/script/list_tags.txt
 go/src/cmd/go/testdata/script/list_test_e.txt
@@ -1847,7 +1851,6 @@ go/src/cmd/go/testdata/script/mod_domain_root.txt
 go/src/cmd/go/testdata/script/mod_dot.txt
 go/src/cmd/go/testdata/script/mod_download.txt
 go/src/cmd/go/testdata/script/mod_download_hash.txt
-go/src/cmd/go/testdata/script/mod_download_latest.txt
 go/src/cmd/go/testdata/script/mod_edit.txt
 go/src/cmd/go/testdata/script/mod_edit_go.txt
 go/src/cmd/go/testdata/script/mod_enabled.txt
@@ -1856,14 +1859,17 @@ go/src/cmd/go/testdata/script/mod_find.txt
 go/src/cmd/go/testdata/script/mod_fs_patterns.txt
 go/src/cmd/go/testdata/script/mod_get_cmd.txt
 go/src/cmd/go/testdata/script/mod_get_commit.txt
+go/src/cmd/go/testdata/script/mod_get_direct.txt
 go/src/cmd/go/testdata/script/mod_get_downgrade.txt
 go/src/cmd/go/testdata/script/mod_get_fallback.txt
 go/src/cmd/go/testdata/script/mod_get_hash.txt
 go/src/cmd/go/testdata/script/mod_get_incompatible.txt
 go/src/cmd/go/testdata/script/mod_get_indirect.txt
+go/src/cmd/go/testdata/script/mod_get_insecure_redirect.txt
 go/src/cmd/go/testdata/script/mod_get_latest_pseudo.txt
 go/src/cmd/go/testdata/script/mod_get_local.txt
 go/src/cmd/go/testdata/script/mod_get_main.txt
+go/src/cmd/go/testdata/script/mod_get_major.txt
 go/src/cmd/go/testdata/script/mod_get_moved.txt
 go/src/cmd/go/testdata/script/mod_get_newcycle.txt
 go/src/cmd/go/testdata/script/mod_get_none.txt
@@ -1875,6 +1881,7 @@ go/src/cmd/go/testdata/script/mod_get_pseudo_prefix.txt
 go/src/cmd/go/testdata/script/mod_get_svn.txt
 go/src/cmd/go/testdata/script/mod_get_tags.txt
 go/src/cmd/go/testdata/script/mod_get_test.txt
+go/src/cmd/go/testdata/script/mod_get_trailing_slash.txt
 go/src/cmd/go/testdata/script/mod_get_upgrade.txt
 go/src/cmd/go/testdata/script/mod_get_upgrade_pseudo.txt
 go/src/cmd/go/testdata/script/mod_getmode_vendor.txt
@@ -3111,10 +3118,6 @@ go/src/crypto/des/example_test.go
 go/src/crypto/dsa/dsa.go
 go/src/crypto/dsa/dsa_test.go
 go/src/crypto/ecdsa/ecdsa.go
-go/src/crypto/ecdsa/ecdsa_noasm.go
-go/src/crypto/ecdsa/ecdsa_s390x.go
-go/src/crypto/ecdsa/ecdsa_s390x.s
-go/src/crypto/ecdsa/ecdsa_s390x_test.go
 go/src/crypto/ecdsa/ecdsa_test.go
 go/src/crypto/ecdsa/example_test.go
 go/src/crypto/ecdsa/testdata/SigVer.rsp.bz2
