@@ -3,6 +3,7 @@
 
 PORTNAME=	baudline
 PORTVERSION=	1.08
+PORTREVISION=	1
 CATEGORIES=	audio linux
 # We have permission from author Erik Olsen <erik@sigblips.net> for the
 # package cluster to automatically fetch baudline
@@ -26,7 +27,7 @@ PLIST_FILES=	bin/baudline
 OPTIONS_DEFINE=		MPG123 DOCS
 OPTIONS_DEFAULT=	MPG123
 
-MMPG123_RUN_DEPENDS=	mpg123:audio/mpg123
+MPG123_RUN_DEPENDS=	mpg123:audio/mpg123
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
