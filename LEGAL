@@ -119,7 +119,6 @@ jdk-8*-i586.tar.gz	java/linux-oracle-jdk18	Redistribution of repackaged binaries
 jfbuild-*		games/jfsw		Must be distributed only through the Internet and free of charge
 jmf-*-alljava.zip	java/jmf		Redistribution of pre-compiled binaries is not permitted
 jre-8*-i586.tar.gz	java/linux-oracle-jre18	License does not allow distribution with fee
-jre-9*-x64_bin.tar.gz	java/linux-oracle-jre9	Redistribution of repackaged binaries not permitted
 jta-*.zip		java/jta		See the license
 komodo-*		editors/komodo-edit	Distribution not permitted
 kye-data_nuke_levels.20121101.tar.gz games/kye	kye-data_nuke_levels is charityware
