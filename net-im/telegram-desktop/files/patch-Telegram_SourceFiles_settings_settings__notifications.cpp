@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/settings/settings_notifications.cpp.orig	2019-09-06 13:41:43 UTC
+--- Telegram/SourceFiles/settings/settings_notifications.cpp.orig	2019-10-07 15:58:21 UTC
 +++ Telegram/SourceFiles/settings/settings_notifications.cpp
-@@ -494,11 +494,11 @@ void NotificationsCount::SampleWidget::destroyDelayed(
+@@ -496,11 +496,11 @@ void NotificationsCount::SampleWidget::destroyDelayed(
  	_deleted = true;
  
  	// Ubuntu has a lag if deleteLater() called immediately.

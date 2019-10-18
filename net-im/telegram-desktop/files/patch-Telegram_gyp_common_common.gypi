@@ -1,5 +1,5 @@
---- Telegram/gyp/common.gypi.orig	2018-08-04 18:53:40 UTC
-+++ Telegram/gyp/common.gypi
+--- Telegram/gyp/common/common.gypi.orig	2019-10-07 15:58:21 UTC
++++ Telegram/gyp/common/common.gypi
 @@ -29,7 +29,7 @@
              }, {
                'build_mac': 0,

@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/platform/platform_specific.h.orig	2019-04-13 06:46:58 UTC
+--- Telegram/SourceFiles/platform/platform_specific.h.orig	2019-10-07 15:58:21 UTC
 +++ Telegram/SourceFiles/platform/platform_specific.h
-@@ -58,8 +58,8 @@ void finish();
+@@ -51,8 +51,8 @@ void finish();
  
  #ifdef Q_OS_MAC
  #include "platform/mac/specific_mac.h"

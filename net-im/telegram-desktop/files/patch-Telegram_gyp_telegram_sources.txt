@@ -1,6 +1,6 @@
---- Telegram/gyp/telegram_sources.txt.orig	2019-09-27 17:04:25 UTC
-+++ Telegram/gyp/telegram_sources.txt
-@@ -607,8 +607,8 @@
+--- Telegram/gyp/telegram/sources.txt.orig	2019-10-07 15:58:21 UTC
++++ Telegram/gyp/telegram/sources.txt
+@@ -610,8 +610,8 @@
  <(src_loc)/platform/linux/linux_libs.h
  <(src_loc)/platform/linux/file_utilities_linux.cpp
  <(src_loc)/platform/linux/file_utilities_linux.h
@@ -11,9 +11,9 @@
  <(src_loc)/platform/linux/launcher_linux.cpp
  <(src_loc)/platform/linux/launcher_linux.h
  <(src_loc)/platform/linux/main_window_linux.cpp
-@@ -931,14 +931,7 @@
- <(emoji_suggestions_loc)/emoji_suggestions.cpp
- <(emoji_suggestions_loc)/emoji_suggestions.h
+@@ -863,14 +863,7 @@
+ <(src_loc)/settings.cpp
+ <(src_loc)/settings.h
  
 -platforms: !win
 -<(minizip_loc)/crypt.h
