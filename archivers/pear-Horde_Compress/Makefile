@@ -2,6 +2,7 @@
 
 PORTNAME=	Horde_Compress
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	archivers www pear
 
 MAINTAINER=	horde@FreeBSD.org
@@ -17,6 +18,6 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Util \
 		Horde_Stream_Filter
 
-ZLIP_USE=	PHP=zlib
+ZLIB_USE=	PHP=zlib
 
 .include <bsd.port.mk>
