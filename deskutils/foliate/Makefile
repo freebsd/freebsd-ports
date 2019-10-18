@@ -33,8 +33,6 @@ GH_ACCOUNT=	johnfactotum
 
 GLIB_SCHEMAS=	com.github.johnfactotum.Foliate.gschema.xml
 
-INSTALLATION_DIRS+=	libexec/foliate
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/@PYTHON_VERSION@/${PYTHON_VERSION}/g' \
 		${WRKSRC}/src/main.js
