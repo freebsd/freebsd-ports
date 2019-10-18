@@ -8,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://thaumaturgy.net/~etgold/software/tkRunIt/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	GUI app launcher with completion and history
 
 OPTIONS_DEFINE=	EXAMPLES
