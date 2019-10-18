@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	putty
-PORTVERSION=	0.72
+PORTVERSION=	0.73
 CATEGORIES=	security
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -38,6 +38,7 @@ CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP -DIPV6 -DHAVE_FUTIMES
 LDFLAGS+=	-Wl,--as-needed
 
 .if (${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}) && !defined(WITHOUT_X11)
+USES+=		xorg
 USE_XORG=	x11
 .if ${PORT_OPTIONS:MGTK2}
 USES+=		gnome
