@@ -50,6 +50,6 @@ NLS_USES=		gettext-runtime
 
 VAPI_BUILD_DEPENDS=	vapigen:lang/vala
 VAPI_CONFIGURE_ENABLE=	vala
-VAPA_IMPLIES=		GIR
+VAPI_IMPLIES=		GIR
 
 .include <bsd.port.mk>
