@@ -41,7 +41,7 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	DOCS TESTS
 TESTS_DESC=	Run self-tests (faulty) (pulls in graphics/netpbm shells/bash)
 
-TEST_BUILD_DEPENDS=	pngtopnm:graphics/netpbm \
+TESTS_BUILD_DEPENDS=	pngtopnm:graphics/netpbm \
 			bash:shells/bash
 
 .include <bsd.port.options.mk>
