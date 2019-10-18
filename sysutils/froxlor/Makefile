@@ -3,7 +3,7 @@
 
 PORTNAME=	froxlor
 PORTVERSION=	0.9.38.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -95,7 +95,7 @@ NGINX_RUN_DEPENDS=	nginx:www/nginx
 
 APACHE_USES=	apache php:mod
 
-MYSQL_USES=	mysql:server
+MYSQLS_USES=	mysql:server
 
 PCNTL_USE=	PHP=pcntl
 
