@@ -23,6 +23,7 @@
 %%PYQT_SIPDIR%%/QtNetwork/qnetworkreply.sip
 %%PYQT_SIPDIR%%/QtNetwork/qnetworkrequest.sip
 %%PYQT_SIPDIR%%/QtNetwork/qnetworksession.sip
+%%PYQT_SIPDIR%%/QtNetwork/qocspresponse.sip
 %%PYQT_SIPDIR%%/QtNetwork/qpassworddigestor.sip
 %%PYQT_SIPDIR%%/QtNetwork/qpynetwork_qhash.sip
 %%PYQT_SIPDIR%%/QtNetwork/qpynetwork_qmap.sip

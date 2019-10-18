@@ -118,6 +118,7 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/qcollator.sip
 %%PYQT_SIPDIR%%/QtCore/qcommandlineoption.sip
 %%PYQT_SIPDIR%%/QtCore/qcommandlineparser.sip
+%%PYQT_SIPDIR%%/QtCore/qconcatenatetablesproxymodel.sip
 %%PYQT_SIPDIR%%/QtCore/qcoreapplication.sip
 %%PYQT_SIPDIR%%/QtCore/qcoreevent.sip
 %%PYQT_SIPDIR%%/QtCore/qcryptographichash.sip
@@ -217,6 +218,7 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/qtimer.sip
 %%PYQT_SIPDIR%%/QtCore/qtimezone.sip
 %%PYQT_SIPDIR%%/QtCore/qtranslator.sip
+%%PYQT_SIPDIR%%/QtCore/qtransposeproxymodel.sip
 %%PYQT_SIPDIR%%/QtCore/qurl.sip
 %%PYQT_SIPDIR%%/QtCore/qurlquery.sip
 %%PYQT_SIPDIR%%/QtCore/quuid.sip

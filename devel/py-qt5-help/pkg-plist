@@ -1,9 +1,12 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtHelp.so
 %%PYTHON_SITELIBDIR%%/PyQt5/QtHelp.pyi
 %%PYQT_SIPDIR%%/QtHelp/QtHelpmod.sip
+%%PYQT_SIPDIR%%/QtHelp/qcompressedhelpinfo.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpcontentwidget.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpengine.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpenginecore.sip
+%%PYQT_SIPDIR%%/QtHelp/qhelpfilterdata.sip
+%%PYQT_SIPDIR%%/QtHelp/qhelpfilterengine.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpindexwidget.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpsearchengine.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpsearchquerywidget.sip
