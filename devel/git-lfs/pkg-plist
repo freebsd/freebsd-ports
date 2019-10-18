@@ -2,6 +2,7 @@ bin/git-lfs
 %%MANPAGES%%man/man1/git-lfs-checkout.1.gz
 %%MANPAGES%%man/man1/git-lfs-clean.1.gz
 %%MANPAGES%%man/man1/git-lfs-clone.1.gz
+%%MANPAGES%%man/man1/git-lfs-dedup.1.gz
 %%MANPAGES%%man/man1/git-lfs-env.1.gz
 %%MANPAGES%%man/man1/git-lfs-ext.1.gz
 %%MANPAGES%%man/man1/git-lfs-fetch.1.gz
@@ -21,6 +22,7 @@ bin/git-lfs
 %%MANPAGES%%man/man1/git-lfs-pull.1.gz
 %%MANPAGES%%man/man1/git-lfs-push.1.gz
 %%MANPAGES%%man/man1/git-lfs-smudge.1.gz
+%%MANPAGES%%man/man1/git-lfs-standalone-file.1.gz
 %%MANPAGES%%man/man1/git-lfs-status.1.gz
 %%MANPAGES%%man/man1/git-lfs-track.1.gz
 %%MANPAGES%%man/man1/git-lfs-uninstall.1.gz
