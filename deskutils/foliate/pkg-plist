@@ -31,7 +31,6 @@ share/com.github.johnfactotum.Foliate/assets/viewer.css
 share/com.github.johnfactotum.Foliate/assets/viewer.html
 share/com.github.johnfactotum.Foliate/assets/viewer.js
 share/com.github.johnfactotum.Foliate/com.github.johnfactotum.Foliate.src.gresource
-share/glib-2.0/schemas/com.github.johnfactotum.Foliate.gschema.xml
 share/icons/hicolor/scalable/apps/com.github.johnfactotum.Foliate.svg
 share/icons/hicolor/symbolic/apps/com.github.johnfactotum.Foliate-symbolic.svg
 share/locale/cs_CS/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
