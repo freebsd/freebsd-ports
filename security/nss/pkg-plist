@@ -127,6 +127,7 @@ lib/nss/libcrmf.a
 lib/nss/libfreebl3.so
 lib/nss/libfreeblpriv3.so
 lib/nss/libnss3.so
+@comment lib/nss/libnssckbi-testlib.so
 lib/nss/libnssckbi.so
 lib/nss/libnssdbm3.so
 lib/nss/libnssutil3.so
