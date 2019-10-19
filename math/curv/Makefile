@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	curv
-DISTVERSION=	0.4-127
-DISTVERSIONSUFFIX=	-g3caf3068
-PORTREVISION=	4
+DISTVERSION=	0.4-333
+DISTVERSIONSUFFIX=	-ga9a63930
 CATEGORIES=	math lang graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,11 +20,11 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libopenvdb.so:misc/openvdb \
 		libtbb.so:devel/tbb
 
-USES=		cmake compiler:c++14-lang gl localbase:ldflags
+USES=		cmake compiler:c++14-lang gl localbase:ldflags xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	curv3d
-GH_TUPLE=	ocornut:imgui:e0cab5664adf02c030f9cf2a05d2c334638a85f8:imgui/extern/imgui \
-		Tessil:ordered-map:3c1415148f38409e4e68c13c55117107ece0187d:om/extern/ordered-map
+GH_TUPLE=	ocornut:imgui:e0cab56:imgui/extern/imgui \
+		Tessil:ordered-map:3c14151:om/extern/ordered-map
 USE_GL=		gl
 USE_XORG=	x11
 
