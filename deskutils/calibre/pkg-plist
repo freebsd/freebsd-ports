@@ -1093,6 +1093,9 @@ lib/calibre/calibre/gui2/viewer/convert_book.py
 lib/calibre/calibre/gui2/viewer/lookup.py
 lib/calibre/calibre/gui2/viewer/main.py
 lib/calibre/calibre/gui2/viewer/mathjax.py
+lib/calibre/calibre/gui2/viewer/overlay.py
+lib/calibre/calibre/gui2/viewer/printing.py
+lib/calibre/calibre/gui2/viewer/shortcuts.py
 lib/calibre/calibre/gui2/viewer/toc.py
 lib/calibre/calibre/gui2/viewer/ui.py
 lib/calibre/calibre/gui2/viewer/web_view.py
