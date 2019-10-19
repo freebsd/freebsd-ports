@@ -14,8 +14,8 @@ RUN_DEPENDS=	${PEARDIR}/Net/URL2.php:net/pear-Net_URL2@${PHP_FLAVOR}
 
 OPTIONS_DEFINE=	CURL FILEINFO ZLIB
 CURL_DESC=	PHP CURL extension support
-FILEINF_DESC=	PHP FILEINFO extension support
-ZLI_DESC=	PECL ZLIB support
+FILEINFO_DESC=	PHP FILEINFO extension support
+ZLIB_DESC=	PECL ZLIB support
 
 USES=	pear
 
