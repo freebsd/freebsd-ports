@@ -4,7 +4,7 @@
 PORTNAME=	firedns
 PORTVERSION=	0.9.12
 CATEGORIES=	dns devel
-MASTER_SITES=	http://BSDforge.com/projects/source/dns/firedns/ \
+MASTER_SITES=	https://BSDforge.com/projects/source/dns/firedns/ \
 		http://www.firestuff.org/projects/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/

@@ -11,4 +11,4 @@ arithmetic and should not at any point perform an arithmetic operations
 that may overflow.  It also performs basic type agreement checks to
 ensure that the macros are being used (somewhat) correctly.
 
-WWW: http://BSDforge.com/projects/devel/safe-iop/
+WWW: https://BSDforge.com/projects/devel/safe-iop/

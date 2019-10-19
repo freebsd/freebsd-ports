@@ -5,7 +5,7 @@ PORTNAME=	fastresolve
 PORTVERSION=	2.10
 PORTREVISION=	6
 CATEGORIES=	dns
-MASTER_SITES=	http://BSDforge.com/projects/source/dns/fastresolve/
+MASTER_SITES=	https://BSDforge.com/projects/source/dns/fastresolve/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Programs to get DNS and domain ownership information from web logs

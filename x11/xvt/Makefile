@@ -5,7 +5,7 @@ PORTNAME=	xvt
 PORTVERSION=	3.0.1
 PORTREVISION=	1
 CATEGORIES+=	x11
-MASTER_SITES=	http://BSDforge.com/projects/source/x11/xvt/
+MASTER_SITES=	https://BSDforge.com/projects/source/x11/xvt/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Xterm replacement, supporting color, transparency, and more, with less

@@ -4,7 +4,7 @@
 PORTNAME=	codeville
 PORTVERSION=	0.1.17
 CATEGORIES=	devel python
-MASTER_SITES=	http://bsdforge.com/projects/source/devel/codeville/
+MASTER_SITES=	https://BSDforge.com/projects/source/devel/codeville/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Anarchic control version system without unnecessary re-merges

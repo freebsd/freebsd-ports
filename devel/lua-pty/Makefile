@@ -5,7 +5,7 @@ PORTNAME=	pty
 PORTVERSION=	1.25
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/nuclewall/bsdinstaller/${COMMIT}/src/lib/lua/pty/ \
-		http://BSDforge.com/projects/source/devel/lua-pty/
+		https://BSDforge.com/projects/source/devel/lua-pty/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	pty.lua pty.c
 DIST_SUBDIR=	lua-${PORTNAME}-${COMMIT}

@@ -8,4 +8,4 @@ SheerDNS is a good candidate for creating and RBL for mail, or web sites,
 as well as for providing DNS on embedded systems. Or anything else that
 requires a fast DNS, with very low overhead.
 
-WWW: http://BSDforge.com/projects/dns/sheerdns/
+WWW: https://BSDforge.com/projects/dns/sheerdns/

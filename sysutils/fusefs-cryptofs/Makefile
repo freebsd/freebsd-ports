@@ -5,7 +5,7 @@ PORTNAME=	cryptofs
 PORTVERSION=	0.6.0
 PORTREVISION=	7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/fusefs-cryptofs/
+MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/fusefs-cryptofs/
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	portmaster@BSDforge.com

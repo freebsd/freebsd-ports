@@ -4,7 +4,7 @@
 PORTNAME=	rsyncbackup
 PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/rsyncbackup/
+MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/rsyncbackup/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Rsync frontend written in Perl

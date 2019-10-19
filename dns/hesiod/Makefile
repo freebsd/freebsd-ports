@@ -5,7 +5,7 @@ PORTNAME=	hesiod
 PORTVERSION=	3.2.1
 PORTREVISION=	3
 CATEGORIES=	dns
-MASTER_SITES=	http://BSDforge.com/projects/source/dns/hesiod/
+MASTER_SITES=	https://BSDforge.com/projects/source/dns/hesiod/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Directory service built on DNS and BIND

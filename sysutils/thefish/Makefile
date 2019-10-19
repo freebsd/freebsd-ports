@@ -4,7 +4,7 @@
 PORTNAME=	thefish
 PORTVERSION=	0.6.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/thefish/
+MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/thefish/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Gtk+/ncurses rc.conf editor/management tool

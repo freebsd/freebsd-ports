@@ -8,4 +8,4 @@ It also contains a library independent introduction to CGI programming
 with C, an .html to .h HTML template preprocessor, and fast,
 block-allocating memory files.
 
-WWW: http://bsdforge.com/projects/devel/ecgi/
+WWW: https://BSDforge.com/projects/devel/ecgi/

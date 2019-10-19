@@ -4,7 +4,7 @@ PORTNAME=	cronolog
 PORTVERSION=	1.7.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/cronolog-devel/
+MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/cronolog-devel/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta
 

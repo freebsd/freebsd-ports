@@ -5,7 +5,7 @@ PORTNAME=	jailutils
 PORTVERSION=	1.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://thewalter.net/stef/freebsd/jails/jailutils/ \
-		http://BSDforge.com/projects/source/sysutils/jailutils/
+		https://BSDforge.com/projects/source/sysutils/jailutils/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Several utilities for managing jails

@@ -5,7 +5,7 @@ PORTNAME=	zerowait
 PORTVERSION=	0.8d
 PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	http://BSDforge.com/projects/source/www/zerowait-httpd/
+MASTER_SITES=	https://BSDforge.com/projects/source/www/zerowait-httpd/
 PKGNAMESUFFIX=	-httpd
 DISTNAME=	0W-httpd-${PORTVERSION}
 

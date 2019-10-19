@@ -5,7 +5,7 @@ PORTNAME=	bzip
 PORTVERSION=	0.21
 PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	http://bsdforge.com/projects/source/archivers/bzip/
+MASTER_SITES=	https://BSDforge.com/projects/source/archivers/bzip/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Block-sorting file compressor

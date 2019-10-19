@@ -4,7 +4,7 @@
 PORTNAME=	wackamole
 PORTVERSION=	2.1.5
 CATEGORIES=	net
-MASTER_SITES=	http://bsdforge.com/projects/source/net/wackamole/ \
+MASTER_SITES=	https://BSDforge.com/projects/source/net/wackamole/ \
 		http://mirrors.omniti.com/wackamole/
 
 MAINTAINER=	portmaster@bsdforge.com

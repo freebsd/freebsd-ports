@@ -5,7 +5,7 @@ PORTNAME=	Gdtclft
 PORTVERSION=	2.2.5
 PORTREVISION=	16
 CATEGORIES=	graphics tcl
-MASTER_SITES=	http://BSDforge.com/projects/source/graphics/gdtclft/
+MASTER_SITES=	https://BSDforge.com/projects/source/graphics/gdtclft/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	portmaster@bsdforge.com

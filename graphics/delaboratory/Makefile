@@ -5,7 +5,7 @@ PORTNAME=	delaboratory
 PORTVERSION=	0.8
 PORTREVISION=	9
 CATEGORIES=	graphics
-MASTER_SITES=	http://BSDforge.com/projects/source/graphics/delaboratory/
+MASTER_SITES=	https://BSDforge.com/projects/source/graphics/delaboratory/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Unique image postprocessing application

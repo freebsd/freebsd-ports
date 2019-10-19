@@ -5,7 +5,7 @@ PORTNAME=	ircproxy
 PORTVERSION=	1.3.6
 PORTREVISION=	3
 CATEGORIES=	irc
-MASTER_SITES=	http://BSDforge.com/projects/source/irc/ircproxy/
+MASTER_SITES=	https://BSDforge.com/projects/source/irc/ircproxy/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	IRC proxy/bouncer daemon

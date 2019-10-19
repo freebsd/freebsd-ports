@@ -10,4 +10,4 @@ the standard DNS network protocol.  Dlint is very useful since most nameservers
 do no more than syntax-check your database files.  Dlint's messages are very
 informative and suggest ways to fix the problems, not just complain about them.
 
-WWW: http://BSDforge.com/projects/dns/dlint
+WWW: https://BSDforge.com/projects/dns/dlint

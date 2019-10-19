@@ -5,7 +5,7 @@ PORTNAME=	tailor
 PORTVERSION=	0.9.35
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://BSDforge.com/projects/source/devel/tailor/
+MASTER_SITES=	https://BSDforge.com/projects/source/devel/tailor/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Migrates changesets between version control systems

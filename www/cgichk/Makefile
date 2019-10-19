@@ -5,7 +5,7 @@ PORTNAME=	cgichk
 PORTVERSION=	2.60
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://BSDforge.com/projects/source/www/cgichk/
+MASTER_SITES=	https://BSDforge.com/projects/source/www/cgichk/
 
 LICENSE=	GPLv2
 
