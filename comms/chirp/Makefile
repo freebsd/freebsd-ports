@@ -20,7 +20,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		desktop-file-utils python:2.7
 USE_PYTHON=	distutils autoplist
 
-NLS_USES=	gettext
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
