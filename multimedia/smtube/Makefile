@@ -30,13 +30,11 @@ OPTIONS_MULTI_PLAYER=	MPLAYER MPV SMPLAYER VLC
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	QT5 SMPLAYER
 
-TOOLKIT_DESC=	Qt toolkit version
 PLAYER_DESC=	Video player
 MPLAYER_DESC=	MPlayer dependency for video playback
 MPV_DESC=	mpv dependency for video playback
 SMPLAYER_DESC=	SMPlayer dependency for video playback
 VLC_DESC=	VLC dependency for video playback
-
 
 MPLAYER_RUN_DEPENDS=		mplayer:multimedia/mplayer
 MPV_RUN_DEPENDS=		mpv:multimedia/mpv
