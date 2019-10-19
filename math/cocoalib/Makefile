@@ -41,7 +41,6 @@ GFAN_DESC=		Link with libgfan.a
 GSL_DESC=		Link with libgsl.a
 NORMALIZ_DESC=		Link with libnormaliz.a (might cause circular dependency)
 SMALLDEG_DESC=		Optimization for small degree polynomials
-BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/thread.hpp:devel/boost-libs
 FROBBY_BUILD_DEPENDS=	${LOCALBASE}/lib/libfrobby.a:math/frobby
 FROBBY_CXXFLAGS=	-DCoCoA_WITH_FROBBY
 FROBBY_LDFLAGS=		-lfrobby
