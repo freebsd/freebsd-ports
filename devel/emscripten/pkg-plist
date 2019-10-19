@@ -239,6 +239,7 @@ lib/emscripten/src/runtime_safe_heap.js
 lib/emscripten/src/runtime_stack_check.js
 lib/emscripten/src/runtime_strings.js
 lib/emscripten/src/settings.js
+lib/emscripten/src/settings_internal.js
 lib/emscripten/src/shell.html
 lib/emscripten/src/shell.js
 lib/emscripten/src/shell_minimal.html
@@ -1183,6 +1184,7 @@ lib/emscripten/system/lib/gl/webgl2_ext.h
 lib/emscripten/system/lib/html5/dom_pk_codes.c
 lib/emscripten/system/lib/html5/key_codes.c
 lib/emscripten/system/lib/libc/README.md
+lib/emscripten/system/lib/libc/crt1.c
 lib/emscripten/system/lib/libc/emscripten_asan_fcntl.c
 lib/emscripten/system/lib/libc/emscripten_asan_memchr.c
 lib/emscripten/system/lib/libc/emscripten_asan_strchrnul.c
@@ -3588,7 +3590,7 @@ lib/emscripten/tools/response_file.py
 lib/emscripten/tools/scons/site_scons/site_tools/emscripten/__init__.py
 lib/emscripten/tools/scons/site_scons/site_tools/emscripten/emscripten.py
 lib/emscripten/tools/separate_asm.py
-lib/emscripten/tools/settings_template_readonly.py
+lib/emscripten/tools/settings_template.py
 lib/emscripten/tools/shared.py
 lib/emscripten/tools/source-maps/sourcemap2json.js
 lib/emscripten/tools/source-maps/sourcemapper.js
