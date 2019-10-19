@@ -4,18 +4,14 @@
 PORTNAME=	sfnt2woff
 PORTVERSION=	20091004
 CATEGORIES=	www converters
-MASTER_SITES=	http://people.mozilla.org/~jkew/woff/
+MASTER_SITES=	https://BSDforge.com/projects/source/www/sfnt2woff/
 DISTNAME=	woff-code-latest
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Convert TTF/OTF fonts to WOFF web embeddable format and back
 
 LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	multi
-
-BROKEN=		unfetchable
-DEPRECATED=	Unfetchable, unmaintained
-EXPIRATION_DATE=	2019-10-16
 
 NO_WRKSUBDIR=	yes
 USES=		gmake zip
