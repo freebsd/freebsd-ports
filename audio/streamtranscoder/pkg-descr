@@ -5,4 +5,4 @@ Ogg Vorbis format. It can transcode the input audio by resampling or
 re-encoding, as well as changing the format from MP3 to Ogg Vorbis (or vice
 versa).
 
-WWW: http://bsdforge.com/projects/audio/streamTranscoder/
+WWW: https://BSDforge.com/projects/audio/streamTranscoder/

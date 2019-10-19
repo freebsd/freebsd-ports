@@ -3,4 +3,4 @@ SVG-font. This includes all PostScript fonts, GhostScript's own format, and
 almost all TrueType fonts. You may want to hand-edit the generated font to
 add font-style information.
 
-WWW: http://BSDforge.com/projects/print/font2svg
+WWW: https://BSDforge.com/projects/print/font2svg

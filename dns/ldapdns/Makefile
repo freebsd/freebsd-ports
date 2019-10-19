@@ -5,7 +5,7 @@ PORTNAME=	ldapdns
 PORTVERSION=	2.07
 PORTREVISION=	2
 CATEGORIES=	dns
-MASTER_SITES=	http://bsdforge.com/projects/source/dns/ldapdns/
+MASTER_SITES=	https://BSDforge.com/projects/source/dns/ldapdns/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	LDAP-backed DNS server

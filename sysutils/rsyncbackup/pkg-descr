@@ -2,4 +2,4 @@ rsyncbackup is a Perl script that reads configuration files for
 sources and destinations. It then feeds the rsync tool with the
 appropriate parameters.
 
-WWW: http://BSDforge.com/projects/sysutils/rsync-backup/
+WWW: https://BSDforge.com/projects/sysutils/rsync-backup/

@@ -6,7 +6,7 @@ PORTVERSION=	1.1.11
 PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/3821/ \
-		http://BSDforge.com/projects/source/databases/pg_reorg/
+		https://BSDforge.com/projects/source/databases/pg_reorg/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	PostgreSQL utility to reorganize tables

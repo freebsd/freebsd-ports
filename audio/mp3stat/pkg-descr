@@ -11,4 +11,4 @@ average bitrate. The batch mode can take MP3's, and OGG's in the same
 directory, but it cannot (yet at least) recursively run into subdirectories
 -- this will be possible in the next version, arriving soon.
 
-WWW: http://BSDforge.com/projects/audio/mp3stat/
+WWW: https://BSDforge.com/projects/audio/mp3stat/

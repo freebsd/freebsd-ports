@@ -15,7 +15,7 @@ rsyncbackup is now installed on your system.
   The HTML documentation has been installed into
   %%DOCSDIR%%
 
-Official page: 	http://BSDforge.com/projects/sysutils/rsync-backup/
+Official page: 	https://BSDforge.com/projects/sysutils/rsync-backup/
 EOM
 }
 ]

@@ -5,7 +5,7 @@ PORTNAME=	safe-iop
 PORTVERSION=	0.3.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://BSDforge.com/projects/source/devel/safe-iop/
+MASTER_SITES=	https://BSDforge.com/projects/source/devel/safe-iop/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Safe integer operation library for C

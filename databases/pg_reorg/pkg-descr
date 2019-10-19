@@ -2,4 +2,4 @@ pg_reorg can reorganize tables of a PostgreSQL database without any locks,
 so that you can retrieve or update rows in tables being reorganized.  The
 module is developed to be a better alternative to CLUSTER and VACUUM FULL.
 
-WWW: http://BSDforge.com/projects/databases/pg_reorg/
+WWW: https://BSDforge.com/projects/databases/pg_reorg/

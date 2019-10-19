@@ -4,7 +4,7 @@
 PORTNAME=	dlint
 PORTVERSION=	1.4.1
 CATEGORIES=	dns
-MASTER_SITES=	http://BSDforge.com/projects/source/dns/dlint/
+MASTER_SITES=	https://BSDforge.com/projects/source/dns/dlint/
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Lint for DNS zones (Domain Name Server zone verification utility)

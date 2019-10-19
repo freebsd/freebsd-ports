@@ -2,4 +2,4 @@ Tailor is a tool to migrate changesets between Aegis, ArX, Bazaar, Bazaar-NG,
 CVS, Codeville, Darcs, Git, Mercurial, Monotone, Perforce, Subversion,
 and Tla repositories.
 
-WWW: http://BSDforge.com/projects/devel/tailor
+WWW: https://BSDforge.com/projects/devel/tailor

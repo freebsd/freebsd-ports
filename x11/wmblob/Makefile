@@ -5,7 +5,7 @@ PORTNAME=	wmblob
 PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://BSDforge.com/projects/source/x11/wmblob/
+MASTER_SITES=	https://BSDforge.com/projects/source/x11/wmblob/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Shows moving blobs

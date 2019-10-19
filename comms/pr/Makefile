@@ -5,7 +5,7 @@ PORTNAME=	pr
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	comms net
-MASTER_SITES=	http://bsdforge.com/projects/source/comms/pr/
+MASTER_SITES=	https://BSDforge.com/projects/source/comms/pr/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Daemon that connects local terminal device to a terminal server

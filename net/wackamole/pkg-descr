@@ -12,4 +12,4 @@ on any virtual IP.
 Wackamole also works toward achieving a balanced distribution of the
 numbered IPs on the machine within the cluster it manages.
 
-WWW: http://BSDforge.com/projects/net/wackamole/
+WWW: https://BSDforge.com/projects/net/wackamole/

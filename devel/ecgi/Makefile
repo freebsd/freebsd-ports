@@ -4,7 +4,7 @@
 PORTNAME=	ecgi
 PORTVERSION=	0.6.3
 CATEGORIES=	devel
-MASTER_SITES=	http://bsdforge.com/projects/source/devel/ecgi/
+MASTER_SITES=	https://BSDforge.com/projects/source/devel/ecgi/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Library for the creation of CGI-based Web applications

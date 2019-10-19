@@ -5,7 +5,7 @@ PORTNAME=	compiz-bcop
 PORTVERSION=	0.8.8
 CATEGORIES=	devel x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/ \
-		http://BSDforge.com/projects/source/devel/compiz-bcop/
+		https://BSDforge.com/projects/source/devel/compiz-bcop/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Code generator for Compiz Fusion Plugins

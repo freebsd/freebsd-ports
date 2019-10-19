@@ -5,7 +5,7 @@ PORTNAME=	sms_client
 PORTVERSION=	3.0.2
 PORTREVISION=	3
 CATEGORIES=	comms
-MASTER_SITES=	http://bsdforge.com/projects/source/comms/sms_client/
+MASTER_SITES=	https://BSDforge.com/projects/source/comms/sms_client/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Simple UNIX SMS client to send messages to phones or pagers

@@ -6,7 +6,7 @@ PORTVERSION=	2.1.6
 PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	https://launchpad.net/soundconverter/trunk/2.1.6/+download/ \
-		http://BSDforge.com/projects/source/audio/soundconverter/
+		https://BSDforge.com/projects/source/audio/soundconverter/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Sound conversion application for the GNOME environment

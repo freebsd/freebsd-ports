@@ -5,7 +5,7 @@ PORTNAME=	totd
 PORTVERSION=	1.5.1
 PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	http://BSDforge.com/projects/source/dns/totd/
+MASTER_SITES=	https://BSDforge.com/projects/source/dns/totd/
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation

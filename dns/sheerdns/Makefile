@@ -4,7 +4,7 @@
 PORTNAME=	sheerdns
 PORTVERSION=	1.04
 CATEGORIES=	dns
-MASTER_SITES=	http://bsdforge.com/projects/source/dns/sheerdns/
+MASTER_SITES=	https://BSDforge.com/projects/source/dns/sheerdns/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Lightweight, simple, and fast master DNS server

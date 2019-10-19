@@ -5,4 +5,4 @@ for devel/cgit to parse the README.md files, returning HTML output.  I am
 also using it to markup wiki pages, for a git backed wiki.  The use cases
 are limited only by your imagination.
 
-WWW: http://BSDforge.com/projects/textproc/smi/
+WWW: https://BSDforge.com/projects/textproc/smi/

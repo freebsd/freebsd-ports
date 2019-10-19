@@ -5,7 +5,7 @@ PORTNAME=	xmradio
 PORTVERSION=	1.2
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://BSDforge.com/projects/source/audio/xmradio/
+MASTER_SITES=	https://BSDforge.com/projects/source/audio/xmradio/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Motif based FM tuner (for use with bktr(4) driver)

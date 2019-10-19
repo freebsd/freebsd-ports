@@ -6,7 +6,7 @@ PORTVERSION=	0.3.0
 PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/compression/ \
-		http://BSDforge.com/projects/source/archivers/grzip/
+		https://BSDforge.com/projects/source/archivers/grzip/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Efficient file compressor

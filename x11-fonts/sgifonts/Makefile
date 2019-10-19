@@ -5,7 +5,7 @@ PORTNAME=	sgifonts
 PORTVERSION=	1.0.1
 PORTREVISION=	5
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://BSDforge.com/projects/source/x11-fonts/sgifonts/
+MASTER_SITES=	https://BSDforge.com/projects/source/x11-fonts/sgifonts/
 DISTNAME=	sgi-fonts-1.0-1.src
 EXTRACT_SUFX=	.rpm
 

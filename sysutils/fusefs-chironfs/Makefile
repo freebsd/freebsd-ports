@@ -5,7 +5,7 @@ PORTNAME=	chironfs
 PORTVERSION=	1.1.1
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://BSDforge.com/projects/source/sysutils/chironfs/
+MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/chironfs/
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	portmaster@BSDforge.com

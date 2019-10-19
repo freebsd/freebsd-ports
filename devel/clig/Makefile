@@ -5,7 +5,7 @@ PORTNAME=	clig
 PORTVERSION=	1.9.11.1
 PORTREVISION=	3
 CATEGORIES=	devel tcl
-MASTER_SITES=	http://BSDforge.com/projects/source/devel/clig/
+MASTER_SITES=	https://BSDforge.com/projects/source/devel/clig/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Auto-generate an (argc, argv) processor, usage message, and manpage

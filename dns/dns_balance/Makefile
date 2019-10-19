@@ -4,7 +4,7 @@
 PORTNAME=	dns_balance
 PORTVERSION=	2.1
 CATEGORIES=	dns
-MASTER_SITES=	http://BSDforge.com/projects/source/dns/dns_balance/
+MASTER_SITES=	https://BSDforge.com/projects/source/dns/dns_balance/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Dynamic load-balancing DNS server

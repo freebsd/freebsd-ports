@@ -5,7 +5,7 @@ PORTNAME=	bayespam
 PORTVERSION=	0.9.2
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://BSDforge.com/projects/source/mail/bayespam/
+MASTER_SITES=	https://BSDforge.com/projects/source/mail/bayespam/
 EXTRACT_SUFX=	.tar_.gz
 
 MAINTAINER=	portmaster@BSDforge.com
