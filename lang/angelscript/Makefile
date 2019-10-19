@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	angelscript
-PORTVERSION=	2.33.0
+PORTVERSION=	2.34.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.angelcode.com/angelscript/sdk/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ndowens@yahoo.com
+MAINTAINER=	ndowens04@gmail.com
 COMMENT=	AngelCode Scripting Library
 
 LICENSE=	ZLIB
