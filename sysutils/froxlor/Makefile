@@ -43,7 +43,6 @@ FTP_DESC=	FTP server dependency
 APACHE_DESC=	Apache as HTTP/HTTPS server
 LIGHTTPD_DESC=	Lighttpd as HTTP/HTTPS server
 NGINX_DESC=	Nginx as HTTP/HTTPS server
-MYSQLC_DESC=	MySQL database client only
 POSTFIX_DESC=	Postfix as SMTP server
 EXIM_DESC=	Exim as SMTP server
 DKIM_DESC=	OpenDKIM for DomainKeys Identified Mail
