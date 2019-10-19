@@ -40,8 +40,8 @@ OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 
 MANPAGES_MESON_TRUE=	man
-MANPAGE_BUILD_DEPENDS=	docbook-xml>=0:textproc/docbook-xml \
-		docbook-xsl>=0:textproc/docbook-xsl
+MANPAGES_BUILD_DEPENDS=	docbook-xml>=0:textproc/docbook-xml \
+			docbook-xsl>=0:textproc/docbook-xsl
 MANPAGES_USE=	GNOME=libxslt:build
 
 .include <bsd.port.mk>
