@@ -32,8 +32,6 @@ man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/gtkwave/fst_config.h
 %%DATADIR%%/include/gtkwave/fstapi.c
 %%DATADIR%%/include/gtkwave/fstapi.h
-%%DATADIR%%/include/gtkwave/lxt2_write.cpp
-%%DATADIR%%/include/gtkwave/lxt2_write.h
 %%DATADIR%%/include/gtkwave/lz4.c
 %%DATADIR%%/include/gtkwave/lz4.h
 %%DATADIR%%/include/gtkwave/wavealloca.h
@@ -52,8 +50,6 @@ man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilated_fst_c.h
 %%DATADIR%%/include/verilated_heavy.h
 %%DATADIR%%/include/verilated_imp.h
-%%DATADIR%%/include/verilated_lxt2_c.cpp
-%%DATADIR%%/include/verilated_lxt2_c.h
 %%DATADIR%%/include/verilated_save.cpp
 %%DATADIR%%/include/verilated_save.h
 %%DATADIR%%/include/verilated_sc.h
