@@ -5,17 +5,13 @@ PORTNAME=	lmon
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.bsdconsulting.no/tools/
+MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/lmon/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Near-realtime log monitoring tool, sends alerts on hits and misses
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		unfetchable
-DEPRECATED=	Unfetchable, unmaintained
-EXPIRATION_DATE=	2019-10-16
 
 RUN_DEPENDS=	p5-Config-IniFiles>=0:devel/p5-Config-IniFiles \
 		p5-Mail-Sendmail>=0:mail/p5-Mail-Sendmail \
