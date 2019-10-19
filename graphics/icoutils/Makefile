@@ -28,7 +28,7 @@ EXTRESSO_RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
 EXTRESSO_USES=		perl5
 EXTRESSO_USE=		PERL5=run
 
-post-patch-RESSCRIPTS-off:
+post-patch-EXTRESSO-off:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s| extresso||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
