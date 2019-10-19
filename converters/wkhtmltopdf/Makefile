@@ -3,7 +3,7 @@
 
 PORTNAME=	wkhtmltopdf
 PORTVERSION=	0.12.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	converters
 
 MAINTAINER=	pi@FreeBSD.org
@@ -20,7 +20,8 @@ BROKEN_mips64=		fails to link: undefined reference to __sync_add_and_fetch_4
 RUN_DEPENDS=	webfonts>=0:x11-fonts/webfonts
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libQt5WebKit.so:www/qt5-webkit
 
 USES=		compiler:c++11-lang gmake iconv jpeg perl5 pkgconfig ssl
 USE_XORG=	x11 xext xrender
