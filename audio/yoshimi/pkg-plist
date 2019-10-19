@@ -963,14 +963,22 @@ share/pixmaps/yoshimi.png
 %%DATADIR%%/examples/Out_There.txt
 %%DATADIR%%/examples/Out_There.xmz
 %%DATADIR%%/examples/synth_prelude.txt
-%%DATADIR%%/presets/AddnoteArp1.Padsyth.xpz
+%%DATADIR%%/presets/Advoice.Padsythn.xpz
+%%DATADIR%%/presets/Bubbly.Padsyth.xpz
 %%DATADIR%%/presets/ChurchOrgan01.Poscilgen.xpz
 %%DATADIR%%/presets/Deep.Presonance.xpz
 %%DATADIR%%/presets/Delay.Plfoamplitude.xpz
 %%DATADIR%%/presets/Long Reverb.Peffect.xpz
+%%DATADIR%%/presets/Pulse Mod.Padsyth.xpz
 %%DATADIR%%/presets/SmoothSaw.Ppadsyth.xpz
+%%DATADIR%%/presets/TinkleBell.Padsythn.xpz
 %%DATADIR%%/presets/WahWah1.Peffect.xpz
 %%DATADIR%%/presets/alienWah21.Peffect.xpz
+%%DATADIR%%/presets/ampenv.Penvamplitude.xpz
+%%DATADIR%%/presets/disty.Peffect.xpz
+%%DATADIR%%/presets/echo.Peffect.xpz
+%%DATADIR%%/presets/phase.Peffect.xpz
 %%DATADIR%%/presets/sweep.Penvfilter.xpz
 %%DATADIR%%/presets/sweep.Penvfrequency.xpz
+%%DATADIR%%/presets/systype.Peffect.xpz
 %%DATADIR%%/presets/windpipes.Psubsyth.xpz
