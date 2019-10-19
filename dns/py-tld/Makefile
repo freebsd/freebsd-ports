@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tld
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.6
 CATEGORIES=	dns python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,7 @@ LICENSE_COMB=	multi
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python shebangfix
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
-SHEBANG_FILES=	src/tld/bin/update-tld-names
 
 .include <bsd.port.mk>
