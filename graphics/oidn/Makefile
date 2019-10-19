@@ -2,8 +2,7 @@
 
 PORTNAME=	oidn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
-PORTREVISION=	1
+DISTVERSION=	1.1.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,8 +19,8 @@ LIB_DEPENDS=	libtbb.so:devel/tbb
 USES=		cmake:noninja compiler:c++11-lang python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenImageDenoise
-GH_TUPLE=	OpenImageDenoise:oidn-weights:cd8e2ce:w/weights \
-		OpenImageDenoise:mkl-dnn:6241ac7:m/mkl-dnn
+GH_TUPLE=	OpenImageDenoise:oidn-weights:f175104:w/weights \
+		OpenImageDenoise:mkl-dnn:096bda1:m/mkl-dnn
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
