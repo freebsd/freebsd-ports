@@ -202,4 +202,5 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/thirdparty/socket/tp.lua
 %%DATADIR%%/game/thirdparty/socket/url.lua
 %%DATADIR%%/game/thirdparty/tween.lua
+%%DATADIR%%/game/thirdparty/vector.lua
 %%DATADIR%%/t-engine
