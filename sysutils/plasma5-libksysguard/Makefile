@@ -20,4 +20,11 @@ WEBENGINE_USE=	QT=webengine
 WEBENGINE_DESC=	HTML-based GUI ksysguard library based on Qt5WebEngine
 WEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidgets
 
+.include <bsd.port.options.mk>
+
+# Enable WebEngine on !powerpc* archs by default
+.if !(${ARCH:M*powerpc*})
+OPTIONS_DEFAULT=	WEBENGINE
+.endif
+
 .include <bsd.port.mk>
