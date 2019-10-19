@@ -19,7 +19,7 @@ RUN_DEPENDS=	spamd:mail/spamassassin \
 
 OPTIONS_DEFINE=	MODPERL DOCS EXAMPLES
 OPTIONS_DEFAULT=MODPERL
-MOD_PERL_DESC=	"Apache Support via mod_perl"
+MODPERL_DESC=	Apache Support via mod_perl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	smtpd
