@@ -2,9 +2,9 @@
 
 PORTNAME=	iosevka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/be5invis/Iosevka/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
+MASTER_SITES=	https://github.com/be5invis/Iosevka/releases/download/${DISTVERSIONFULL}/
 DISTFILES=	01-${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		02-${PORTNAME}-term-${DISTVERSION}${EXTRACT_SUFX} \
 		03-${PORTNAME}-type-${DISTVERSION}${EXTRACT_SUFX} \
@@ -74,28 +74,30 @@ XWINDOWSFIXEDSTYLE_DISTFILES=	${PORTNAME}-ss11-${DISTVERSION}${EXTRACT_SUFX} \
 EXPERIMENTAL_DESC=		Experimental variants (Aile, Etoile, and Expanded)
 EXPERIMENTAL_DISTFILES=		experimental-${PORTNAME}-aile-${DISTVERSION}${EXTRACT_SUFX} \
 				experimental-${PORTNAME}-etoile-${DISTVERSION}${EXTRACT_SUFX} \
-				experimental-${PORTNAME}-extended-${DISTVERSION}${EXTRACT_SUFX}
+				experimental-${PORTNAME}-extended-${DISTVERSION}${EXTRACT_SUFX} \
+				experimental-${PORTNAME}-slab-extended-${DISTVERSION}${EXTRACT_SUFX}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${STAGEDIR}${FONTSDIR}
 
-regenerate-plist:
-	${MAKE} makeplist | ${AWK} 'NR > 1 {print}' > pkg-plist.tmp
-	${SED} -e 's|\(.*ss01.*\)|%%ANDALEMONOSTYLE%%\1|g' \
-		-e 's|\(.*ss02.*\)|%%ANONYMOUSPROSTYLE%%\1|g' \
-		-e 's|\(.*ss03.*\)|%%CONSOLASSTYLE%%\1|g' \
-		-e 's|\(.*ss04.*\)|%%MENLOSTYLE%%\1|g' \
-		-e 's|\(.*ss05.*\)|%%FIRAMONOSTYLE%%\1|g' \
-		-e 's|\(.*ss06.*\)|%%LIBERATIONMONOSTYLE%%\1|g' \
-		-e 's|\(.*ss07.*\)|%%MONACOSTYLE%%\1|g' \
-		-e 's|\(.*ss08.*\)|%%PRAGMATAPROSTYLE%%\1|g' \
-		-e 's|\(.*ss09.*\)|%%SOURCECODEPROSTYLE%%\1|g' \
-		-e 's|\(.*ss10.*\)|%%ENVYCODERSTYLE%%\1|g' \
-		-e 's|\(.*ss11.*\)|%%XWINDOWSFIXEDSTYLE%%\1|g' \
-		-e 's|\(.*aile.*\)|%%EXPERIMENTAL%%\1|g' \
-		-e 's|\(.*etoile.*\)|%%EXPERIMENTAL%%\1|g' \
-		-e 's|\(.*extended.*\)|%%EXPERIMENTAL%%\1|g' \
+regenerate-plist: stage
+	${MAKE} makeplist 2>/dev/null | \
+		${AWK} 'NR > 1 {print}' > pkg-plist.tmp
+	${SED} -E -e 's|(.*ss01.*)|%%ANDALEMONOSTYLE%%\1|g' \
+		-e 's|(.*ss02.*)|%%ANONYMOUSPROSTYLE%%\1|g' \
+		-e 's|(.*ss03.*)|%%CONSOLASSTYLE%%\1|g' \
+		-e 's|(.*ss04.*)|%%MENLOSTYLE%%\1|g' \
+		-e 's|(.*ss05.*)|%%FIRAMONOSTYLE%%\1|g' \
+		-e 's|(.*ss06.*)|%%LIBERATIONMONOSTYLE%%\1|g' \
+		-e 's|(.*ss07.*)|%%MONACOSTYLE%%\1|g' \
+		-e 's|(.*ss08.*)|%%PRAGMATAPROSTYLE%%\1|g' \
+		-e 's|(.*ss09.*)|%%SOURCECODEPROSTYLE%%\1|g' \
+		-e 's|(.*ss10.*)|%%ENVYCODERSTYLE%%\1|g' \
+		-e 's|(.*ss11.*)|%%XWINDOWSFIXEDSTYLE%%\1|g' \
+		-e 's|(.*aile.*)|%%EXPERIMENTAL%%\1|g' \
+		-e 's|(.*etoile.*)|%%EXPERIMENTAL%%\1|g' \
+		-e 's|(.*extended.*)|%%EXPERIMENTAL%%\1|g' \
 		pkg-plist.tmp > pkg-plist
 
 .include <bsd.port.mk>
