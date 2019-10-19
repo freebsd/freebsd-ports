@@ -34,7 +34,6 @@ SUB_FILES+=	pkg-install pkg-message
 DOCS=		COPYRIGHT SPEC README.md
 
 OPTIONS_DEFINE=	DOCS
-IGNORE_TIMESTAMPS_DESC=	Add '-t' option to fsdiff
 
 .include <bsd.port.options.mk>
 
