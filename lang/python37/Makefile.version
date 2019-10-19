@@ -3,4 +3,4 @@
 
 # Do not forget to update python documentation (lang/python-doc-*)
 # Run "make -C lang/python-doc-html makesum"
-PYTHON_PORTVERSION=	3.7.4
+PYTHON_PORTVERSION=	3.7.5
