@@ -3,8 +3,7 @@
 
 PORTNAME=	qjackctl
 DISTVERSIONPREFIX=	qjackctl_
-DISTVERSION=	0_5_9
-PORTREVISION=	1
+DISTVERSION=	0_6_0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,6 +45,7 @@ PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 SYSTRAY_CONFIGURE_ENABLE=	system-tray
 
 XUNIQUE_CONFIGURE_ENABLE=	xunique
+XUNIQUE_USES=			xorg
 XUNIQUE_USE=			XORG=x11
 
 .include <bsd.port.mk>
