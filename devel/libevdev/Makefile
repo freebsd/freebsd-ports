@@ -24,7 +24,6 @@ USE_LDCONFIG=	yes
 
 # Test requires /dev/uinput and should be run as root
 .if exists(/dev/uinput)
-TEST_USES+=	pkgconfig
 TEST_DEPENDS=	checkmk:devel/check
 TEST_TARGET=	check
 TEST_WRKSRC=	${WRKSRC}/test
