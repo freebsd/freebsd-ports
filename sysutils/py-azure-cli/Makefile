@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli
-PORTVERSION=	2.0.74
-PORTREVISION=	1
+PORTVERSION=	2.0.75
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-batch>=8.0:devel/py-azure-batch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-cli-core>=2.0.74:sysutils/py-azure-cli-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-cli-core>=2.0.75:sysutils/py-azure-cli-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-telemetry>=1.0.2:sysutils/py-azure-cli-telemetry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cosmos>=3.0.2:devel/py-azure-cosmos@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-datalake-store>=0.0.45:devel/py-azure-datalake-store@${PY_FLAVOR} \
@@ -80,7 +79,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-signalr>=0.3.0:devel/py-azure-mgmt-signalr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-sql>=0.12:devel/py-azure-mgmt-sql@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-sqlvirtualmachine>=0.4.0:devel/py-azure-mgmt-sqlvirtualmachine@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-storage>=4.0:devel/py-azure-mgmt-storage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-storage>=4.2.0:devel/py-azure-mgmt-storage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-trafficmanager>=0.51.0:devel/py-azure-mgmt-trafficmanager@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-web>=0.42.0:devel/py-azure-mgmt-web@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-multiapi-storage>=0.2.4:devel/py-azure-multiapi-storage@${PY_FLAVOR} \
