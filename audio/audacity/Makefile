@@ -56,7 +56,6 @@ MOD_SCRIPT_PIPE_DESC=	mod-script-pipe scripting support
 MOD_NYQ_BENCH_DESC=	Enable Nyquist Workbench
 SBSMS_DESC=		Use libsbsms for pitch and tempo changing
 SOUNDTOUCH_DESC=	Use libSoundTouch for pitch and tempo changing
-TAGLIB_DESC=		Use TagLib for metadata support
 TWOLAME_DESC=		Use libtwolame for MP2 export support
 VAMP_DESC=		Vamp plug-in support
 VST_DESC=		VST plug-in support

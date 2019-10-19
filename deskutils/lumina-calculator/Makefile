@@ -21,8 +21,6 @@ GH_TAGNAME=	ccb792fc713aa7163fffd37fc20c83ffe9ca7523
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
 
-I18N_DESC=	Install localization files
-
 CONFLICTS_INSTALL=	lumina-1.2.*
 
 WRKSRC_SUBDIR=	src-qt5
