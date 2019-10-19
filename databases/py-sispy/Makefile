@@ -7,7 +7,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	vmiller@verisign.com
+MAINTAINER=	vrwmiller@gmail.com
 COMMENT=	Python client library for interacting with the SIS RESTful API
 
 LICENSE=	BSD3CLAUSE
