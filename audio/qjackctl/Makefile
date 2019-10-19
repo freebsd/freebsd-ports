@@ -32,7 +32,6 @@ OPTIONS_GROUP_AIFACE=	ALSA PORTAUDIO
 
 AIFACE_DESC=		Other audio interfaces
 SYSTRAY_DESC=		System tray icon support
-TOOLKIT_DESC=		Qt toolkit
 XUNIQUE_DESC=		X11 unique/single instance
 
 ALSA_CONFIGURE_ENABLE=	alsa_seq
