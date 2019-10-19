@@ -60,6 +60,11 @@ include/ags/audio/ags_synth_generator.h
 include/ags/audio/ags_synth_util.h
 include/ags/audio/ags_track.h
 include/ags/audio/ags_wave.h
+include/ags/audio/audio-unit/ags_audio_unit_client.h
+include/ags/audio/audio-unit/ags_audio_unit_devin.h
+include/ags/audio/audio-unit/ags_audio_unit_devout.h
+include/ags/audio/audio-unit/ags_audio_unit_port.h
+include/ags/audio/audio-unit/ags_audio_unit_server.h
 include/ags/audio/core-audio/ags_core_audio_client.h
 include/ags/audio/core-audio/ags_core_audio_devin.h
 include/ags/audio/core-audio/ags_core_audio_devout.h
