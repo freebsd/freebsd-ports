@@ -3,7 +3,7 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.7.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -178,7 +178,7 @@ NLS_CONFIGURE_OFF=	--disable-nls
 
 M3U_CONFIGURE_OFF=	--disable-m3u
 
-SPF_CONFIGURE_OFF=	--disable-psf
+PSF_CONFIGURE_OFF=	--disable-psf
 
 DSP_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 DSP_CONFIGURE_OFF=	--disable-src
