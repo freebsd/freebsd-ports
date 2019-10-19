@@ -1,0 +1,23 @@
+--- startkde/startplasma.cpp.orig	2019-10-19 18:43:24.172713000 +0200
++++ startkde/startplasma.cpp	2019-10-19 18:45:50.953945000 +0200
+@@ -192,6 +192,10 @@
+     if (!qEnvironmentVariableIsSet("XDG_DATA_DIRS")) {
+         qputenv("XDG_DATA_DIRS", KDE_INSTALL_FULL_DATAROOTDIR ":/usr/share:/usr/local/share");
+     }
++   // Additionally also set default value for XDG_CONFIG_DIRS which is not set by default on FreeBSD.
++   if (!qEnvironmentVariableIsSet("XDG_CONFIG_DIRS")) {
++        qputenv("XDG_CONFIG_DIRS", KDE_INSTALL_FULL_CONFDIR ":/etc/xdg:/usr/local/etc/xdg");
++   }
+ }
+ 
+ 
+--- startkde/config-startplasma.h.cmake.orig	2019-10-19 18:56:51.844465000 +0200
++++ startkde/config-startplasma.h.cmake	2019-10-19 18:57:22.843807000 +0200
+@@ -3,6 +3,7 @@
+ 
+ #define CMAKE_INSTALL_FULL_BINDIR "@CMAKE_INSTALL_FULL_BINDIR@"
+ #define KDE_INSTALL_FULL_DATAROOTDIR "@KDE_INSTALL_FULL_DATAROOTDIR@"
++#define KDE_INSTALL_FULL_CONFDIR "@KDE_INSTALL_FULL_CONFDIR@"
+ #define CMAKE_INSTALL_FULL_LIBEXECDIR "@CMAKE_INSTALL_FULL_LIBEXECDIR@"
+ #define CMAKE_INSTALL_FULL_LIBEXECDIR_KF5 "@CMAKE_INSTALL_FULL_LIBEXECDIR_KF5@"
+ #define KWIN_WAYLAND_BIN_PATH "@KWIN_WAYLAND_BIN_PATH@"
