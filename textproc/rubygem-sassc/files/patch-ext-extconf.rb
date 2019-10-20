@@ -1,11 +1,21 @@
---- ext/extconf.rb.orig	2019-09-07 21:32:44 UTC
+--- ext/extconf.rb.orig	2019-10-20 13:40:05 UTC
 +++ ext/extconf.rb
-@@ -28,7 +28,7 @@ end
- if enable_config('lto', true)
-   $CFLAGS << ' -flto'
-   $CXXFLAGS << ' -flto'
--  $LDFLAGS << ' -flto'
-+  $LDFLAGS << ' -flto -fuse-ld=lld'
+@@ -19,18 +19,6 @@ if enable_config('static-stdlib', false)
+   $LDFLAGS << ' -static-libgcc -static-libstdc++'
  end
  
+-# Set to false when building binary gems
+-if enable_config('march-tune-native', true)
+-  $CFLAGS << ' -march=native -mtune=native'
+-  $CXXFLAGS << ' -march=native -mtune=native'
+-end
+-
+-if enable_config('lto', true)
+-  $CFLAGS << ' -flto'
+-  $CXXFLAGS << ' -flto'
+-  $LDFLAGS << ' -flto'
+-end
+-
  # Disable noisy compilation warnings.
+ $warnflags = ''
+ $CFLAGS.gsub!(/[\s+](-ansi|-std=[^\s]+)/, '')
