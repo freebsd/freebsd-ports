@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpgmath
-DISTVERSION=	g20180904
-PORTREVISION=	3
+DISTVERSION=	g20191020
 CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -14,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 ONLY_FOR_ARCHS=	amd64
 
-BUILD_DEPENDS=	llvm60>=0:devel/llvm60
-RUN_DEPENDS=	llvm60>=0:devel/llvm60
+LLVM_VER=	70
+BUILD_DEPENDS=	llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER}
+RUN_DEPENDS=	llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER}
 
 USES=		cmake
 USE_LDCONFIG=	yes
@@ -23,12 +23,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	flang-compiler
 GH_PROJECT=	flang
-GH_TAGNAME=	53e368b
+GH_TAGNAME=	d07daf3
 
-CC=		${LOCALBASE}/llvm60/bin/clang
-CXX=		${LOCALBASE}/llvm60/bin/clang++
+CC=		${LOCALBASE}/llvm${LLVM_VER}/bin/clang
+CXX=		${LOCALBASE}/llvm${LLVM_VER}/bin/clang++
 
-CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config60
+CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VER} -DLIBPGMATH_LLVM_LIT_EXECUTABLE=${LOCALBASE}/llvm${LLVM_VER}/bin/llvm-lit
 
 WRKSRC_SUBDIR=	runtime/libpgmath
 
