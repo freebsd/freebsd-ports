@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ptpython
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>=0:devel/py-docopt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jedi>=0.9.0:devel/py-jedi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=1.0.14:devel/py-prompt_toolkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=2.0.8<2.1.0:devel/py-prompt_toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
 
 USES=		python
