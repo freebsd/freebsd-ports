@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20191016
+PORTVERSION=	s20191019
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	aee3410f
+GH_TAGNAME=	b560e114
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler32-1.0.4 \
@@ -30,8 +30,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		arrayvec-0.5.1 \
 		atty-0.2.13 \
 		autocfg-0.1.6 \
-		backtrace-0.3.38 \
-		backtrace-sys-0.1.31 \
+		backtrace-0.3.40 \
+		backtrace-sys-0.1.32 \
 		better-panic-0.2.0 \
 		bincode-1.2.0 \
 		bindgen-0.51.1 \
@@ -76,7 +76,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		itertools-0.8.0 \
 		itoa-0.4.4 \
 		lazy_static-1.4.0 \
-		libc-0.2.64 \
+		libc-0.2.65 \
 		libloading-0.5.2 \
 		log-0.4.8 \
 		memchr-2.2.1 \
@@ -100,8 +100,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		pretty_assertions-0.6.1 \
 		pretty_env_logger-0.3.1 \
 		proc-macro-error-0.2.6 \
-		proc-macro-hack-0.5.10 \
-		proc-macro2-1.0.5 \
+		proc-macro-hack-0.5.11 \
+		proc-macro2-1.0.6 \
 		quick-error-1.2.2 \
 		quote-1.0.2 \
 		rand-0.7.2 \
