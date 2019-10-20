@@ -99,12 +99,15 @@ share/doc/HTML/en/kile/usermenu_12.png
 %%PORTDOCS%%%%DOCSDIR%%/README.cwl
 %%PORTDOCS%%%%DOCSDIR%%/kile-remote-control.txt
 share/icons/hicolor/128x128/apps/kile.png
+share/icons/hicolor/150x150/apps/kile.png
 share/icons/hicolor/16x16/apps/kile.png
 share/icons/hicolor/22x22/apps/kile.png
+share/icons/hicolor/310x310/apps/kile.png
 share/icons/hicolor/32x32/apps/kile.png
+share/icons/hicolor/44x44/apps/kile.png
 share/icons/hicolor/48x48/apps/kile.png
 share/icons/hicolor/64x64/apps/kile.png
-share/icons/hicolor/scalable/apps/kile.svgz
+share/icons/hicolor/scalable/apps/kile.svg
 share/kconf_update/kile.upd
 share/kconf_update/kile1.6_upd.pl
 share/kconf_update/kile1.7_upd.pl
@@ -280,14 +283,12 @@ share/kconf_update/kile2.0-5_upd.pl
 %%DATADIR%%/icons/hicolor/16x16/actions/complete1.png
 %%DATADIR%%/icons/hicolor/16x16/actions/complete2.png
 %%DATADIR%%/icons/hicolor/16x16/actions/complete3.png
-%%DATADIR%%/icons/hicolor/16x16/actions/configure_kile.png
 %%DATADIR%%/icons/hicolor/16x16/actions/configure_project.png
 %%DATADIR%%/icons/hicolor/16x16/actions/contents.png
 %%DATADIR%%/icons/hicolor/16x16/actions/ddot.png
 %%DATADIR%%/icons/hicolor/16x16/actions/delenv_i.png
 %%DATADIR%%/icons/hicolor/16x16/actions/delenv_o.png
 %%DATADIR%%/icons/hicolor/16x16/actions/deleol.png
-%%DATADIR%%/icons/hicolor/16x16/actions/delete.png
 %%DATADIR%%/icons/hicolor/16x16/actions/delgroup_i.png
 %%DATADIR%%/icons/hicolor/16x16/actions/delgroup_o.png
 %%DATADIR%%/icons/hicolor/16x16/actions/delline.png
@@ -340,7 +341,6 @@ share/kconf_update/kile2.0-5_upd.pl
 %%DATADIR%%/icons/hicolor/16x16/actions/medspace.png
 %%DATADIR%%/icons/hicolor/16x16/actions/minipage.png
 %%DATADIR%%/icons/hicolor/16x16/actions/modified.png
-%%DATADIR%%/icons/hicolor/16x16/actions/modonhd.png
 %%DATADIR%%/icons/hicolor/16x16/actions/multline.png
 %%DATADIR%%/icons/hicolor/16x16/actions/nextbullet.png
 %%DATADIR%%/icons/hicolor/16x16/actions/nextparagraph.png
@@ -414,7 +414,6 @@ share/kconf_update/kile2.0-5_upd.pl
 %%DATADIR%%/icons/hicolor/22x22/actions/complete1.png
 %%DATADIR%%/icons/hicolor/22x22/actions/complete2.png
 %%DATADIR%%/icons/hicolor/22x22/actions/complete3.png
-%%DATADIR%%/icons/hicolor/22x22/actions/configure_kile.png
 %%DATADIR%%/icons/hicolor/22x22/actions/configure_project.png
 %%DATADIR%%/icons/hicolor/22x22/actions/contents.png
 %%DATADIR%%/icons/hicolor/22x22/actions/convert.png
