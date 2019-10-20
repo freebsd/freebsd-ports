@@ -90,7 +90,7 @@ AUTOCREATE_PATCH_SITES=	http://email.uoa.gr/download/cyrus/${PORTNAME}-2.3.16/:a
 AUTOCREATE_PATCHFILES=	${PORTNAME}-2.3.16-autocreate-${AUTOCREATE_VERSION}.diff:autocreate
 
 AUTOSIEVE_VERSION=	0.6.0
-AUTOSIETE_PATCH_SITES=	http://email.uoa.gr/download/cyrus/${PORTNAME}-2.3.16/:autosieve
+AUTOSIEVE_PATCH_SITES=	http://email.uoa.gr/download/cyrus/${PORTNAME}-2.3.16/:autosieve
 AUTOSIEVE_PATCHFILES=	${PORTNAME}-2.3.16-autosieve-${AUTOSIEVE_VERSION}.diff
 AUTOSIEVE_BROKEN=	Not buildable with autosieve patch
 
