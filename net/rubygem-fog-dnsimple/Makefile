@@ -12,12 +12,13 @@ COMMENT=	Module for the 'fog' gem to support DNSimple
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-fog-core>=1.38:devel/rubygem-fog-core \
+RUN_DEPENDS=	rubygem-fog-core>=1.38<3:devel/rubygem-fog-core \
 		rubygem-fog-json>=0:devel/rubygem-fog-json
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/console ${STAGEDIR}${PREFIX}/bin/setup
