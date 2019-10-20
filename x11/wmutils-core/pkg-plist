@@ -5,6 +5,7 @@ bin/killw
 bin/lsw
 bin/mapw
 bin/pfw
+bin/slw
 bin/wattr
 bin/wmp
 bin/wmv
@@ -18,6 +19,7 @@ man/man1/killw.1.gz
 man/man1/lsw.1.gz
 man/man1/mapw.1.gz
 man/man1/pfw.1.gz
+man/man1/slw.1.gz
 man/man1/wattr.1.gz
 man/man1/wmp.1.gz
 man/man1/wmutils.1.gz

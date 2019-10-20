@@ -1,4 +1,4 @@
---- config.mk.orig	2017-01-25 13:19:03 UTC
+--- config.mk.orig	2019-10-16 17:08:21 UTC
 +++ config.mk
 @@ -1,9 +1,9 @@
 -PREFIX = /usr
@@ -8,8 +8,8 @@
  CC      = cc
  LD      = $(CC)
  
--CFLAGS  = -std=c99 -pedantic -Wall -Os
--LDFLAGS = -lxcb -lxcb-util
-+CFLAGS  := -std=c99 -pedantic -Wall $(CFLAGS)
-+LDFLAGS := -lxcb -lxcb-util $(LDFLAGS)
+-CFLAGS  = -std=c99 -pedantic -Wall -Os -I/usr/X11R6/include
+-LDFLAGS = -lxcb -lxcb-util -lxcb-cursor -L/usr/X11R6/lib
++CFLAGS  := -std=c99 -pedantic -Wall -Os $(CFLAGS)
++LDFLAGS := -lxcb -lxcb-util -lxcb-cursor $(LDFLAGS)
  
