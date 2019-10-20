@@ -12,9 +12,9 @@ COMMENT=	CAS 3.0 Strategy for OmniAuth
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
-		rubygem-nokogiri>=1.7.1:textproc/rubygem-nokogiri \
-		rubygem-omniauth>=1.2:security/rubygem-omniauth
+RUN_DEPENDS=	rubygem-addressable>=2.3<3:www/rubygem-addressable \
+		rubygem-nokogiri>=1.7.1<2:textproc/rubygem-nokogiri \
+		rubygem-omniauth>=1.2<2:security/rubygem-omniauth
 
 USES=		gem
 USE_RUBY=	yes
