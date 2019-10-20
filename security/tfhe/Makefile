@@ -12,6 +12,8 @@ COMMENT=	Fast Fully Homomorphic Encryption (FHE) library over the Torus
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	amd64 # because of arch-specific assembly
+
 BUILD_DEPENDS=	cmake:devel/cmake
 TEST_DEPENDS=	fftw3>0:math/fftw3 \
 		googletest>0:devel/googletest
