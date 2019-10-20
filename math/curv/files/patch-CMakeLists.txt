@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-05-11 14:42:40 UTC
+--- CMakeLists.txt.orig	2019-10-15 23:21:21 UTC
 +++ CMakeLists.txt
-@@ -10,18 +10,14 @@ execute_process(COMMAND sh -c "${CMAKE_S
+@@ -10,18 +10,14 @@ execute_process(COMMAND sh -c "${CMAKE_SOURCE_DIR}/cma
  
  list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
  
@@ -20,27 +20,30 @@
      extern/glad)
  
  if (APPLE)
-@@ -30,19 +26,6 @@ if (APPLE)
+@@ -30,6 +26,7 @@ if (APPLE)
      link_directories(/usr/local/lib)
  endif (APPLE)
  
--# REPLxx library
--file(GLOB ReplxxSrc "extern/replxx/src/*.cxx" "extern/replxx/src/*.cpp")
--add_library(replxx ${ReplxxSrc})
--target_include_directories(replxx
--   PUBLIC extern/replxx/include
--   PRIVATE extern/replxx/src)
--set_property(TARGET replxx PROPERTY CXX_STANDARD 14)
--
++# REPLxx used to be unbundled, but due to the incompatibilities (see Bug#241205) it was bundled again
+ # REPLxx library
+ file(GLOB ReplxxSrc "extern/replxx/src/*.cxx" "extern/replxx/src/*.cpp")
+ add_library(replxx ${ReplxxSrc})
+@@ -38,10 +35,10 @@ target_include_directories(replxx
+    PRIVATE extern/replxx/src)
+ set_property(TARGET replxx PROPERTY CXX_STANDARD 14)
+ 
 -# double-conversion library
 -file(GLOB DoubleConversionSrc "extern/double-conversion/double-conversion/*.cc")
 -add_library(double-conversion ${DoubleConversionSrc})
 -set_property(TARGET double-conversion PROPERTY CXX_STANDARD 14)
--
++## double-conversion library
++#file(GLOB DoubleConversionSrc "extern/double-conversion/double-conversion/*.cc")
++#add_library(double-conversion ${DoubleConversionSrc})
++#set_property(TARGET double-conversion PROPERTY CXX_STANDARD 14)
+ 
  # glad library, an OpenGL loader
  add_library(glad
-     extern/glad/glad/glad.c)
-@@ -93,7 +76,7 @@ target_link_libraries(libcurv_geom PUBLI
+@@ -93,7 +90,7 @@ target_link_libraries(libcurv_geom PUBLIC imgui)
  
  file(GLOB Src "curv/*.c" "curv/*.cc")
  add_executable(curv ${Src})
@@ -49,7 +52,7 @@
  
  file(GLOB CurvcSrc "curvc/*.cc")
  add_executable(curvc EXCLUDE_FROM_ALL ${CurvcSrc})
-@@ -128,5 +111,3 @@ if (NOT TARGET uninstall)
+@@ -128,5 +125,3 @@ if (NOT TARGET uninstall)
  endif()
  
  add_subdirectory(extern/googletest/googletest EXCLUDE_FROM_ALL)
