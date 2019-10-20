@@ -55,7 +55,7 @@ lib/cmake/xapian/xapian-config-version.cmake
 lib/cmake/xapian/xapian-config.cmake
 lib/libxapian.so
 lib/libxapian.so.30
-lib/libxapian.so.30.9.0
+lib/libxapian.so.30.9.1
 libdata/pkgconfig/xapian-core.pc
 man/man1/copydatabase.1.gz
 man/man1/quest.1.gz
