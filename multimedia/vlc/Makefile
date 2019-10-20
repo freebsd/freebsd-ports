@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	3.0.8
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -124,7 +124,7 @@ CACA_LIB_DEPENDS=	libcaca.so:graphics/libcaca
 CACA_CONFIGURE_ENABLE=	caca
 
 CHROMECAST_LIB_DEPENDS=	libprotobuf-lite.so:devel/protobuf
-CHROMECASE_CONFIGURE_ENABLE=	chromecast
+CHROMECAST_CONFIGURE_ENABLE=	chromecast
 
 DAV1D_LIB_DEPENDS=	libdav1d.so:multimedia/dav1d
 DAV1D_CONFIGURE_ENABLE=	dav1d
