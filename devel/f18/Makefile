@@ -3,6 +3,7 @@
 
 PORTNAME=	f18
 DISTVERSION=	g20191019
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -14,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	llvm80>=0:devel/llvm80
-RUN_DEPENDS=	llvm80>=0:devel/llvm60
+RUN_DEPENDS=	llvm80>=0:devel/llvm80
 
-USES=		cmake:noninja compiler:c++11-lib libedit perl5 tar:xz \
+USES=		cmake:noninja libedit perl5 tar:xz \
 		shebangfix
 _USES_PYTHON?=	python:build
 USES+=		${_USES_PYTHON}
