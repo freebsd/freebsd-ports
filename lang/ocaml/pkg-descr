@@ -16,4 +16,4 @@ of processors. Compilation takes longer and generates bigger code, but
 the generated programs deliver excellent performance, while retaining
 the moderate memory requirements of the bytecode compiler.
 
-WWW: http://ocaml.org/
+WWW: https://ocaml.org/
