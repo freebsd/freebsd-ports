@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	f18
-DISTVERSION=	g20190422
-PORTREVISION=	1
+DISTVERSION=	g20191019
 CATEGORIES=	devel
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -13,10 +12,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
-BROKEN_FreeBSD_11=	could not read symbols: File format not recognized
 
 BUILD_DEPENDS=	llvm80>=0:devel/llvm80
-RUN_DEPENDS=	llvm80>=0:devel/llvm80
+RUN_DEPENDS=	llvm80>=0:devel/llvm60
 
 USES=		cmake:noninja compiler:c++11-lib libedit perl5 tar:xz \
 		shebangfix
@@ -25,7 +23,12 @@ USES+=		${_USES_PYTHON}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flang-compiler
-GH_TAGNAME=	9e178f2
+GH_TAGNAME=	1688bef
+
+SHEBANG_FILES=	tools/f18/flang.sh
+
+CC=		${LOCALBASE}/llvm80/bin/clang
+CXX=		${LOCALBASE}/llvm80/bin/clang++
 
 CMAKE_ARGS+=	-DLLVM_DIR=${LOCALBASE}/llvm80/lib/cmake/llvm \
 		-DBUILD_WITH_CLANG=${LOCALBASE}/llvm80
