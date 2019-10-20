@@ -12,7 +12,7 @@ COMMENT=	Module for the 'fog' gem to support OpenStack clouds
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-fog-core>=2.1:devel/rubygem-fog-core \
+RUN_DEPENDS=	rubygem-fog-core>=2.1<3:devel/rubygem-fog-core \
 		rubygem-fog-json>=1.0:devel/rubygem-fog-json \
 		rubygem-ipaddress>=0.8:net/rubygem-ipaddress
 
