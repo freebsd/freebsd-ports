@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-crispy-forms
-PORTVERSION=	1.7.2
+PORTVERSION=	1.8.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj21-django-crispy-forms
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj21-django-crispy-forms \
+			${PYTHON_PKGNAMEPREFIX}dj22-django-crispy-forms
 
 .include <bsd.port.mk>
