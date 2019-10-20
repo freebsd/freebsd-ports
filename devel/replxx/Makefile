@@ -2,8 +2,7 @@
 
 PORTNAME=	replxx
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	0.0.1
-PORTREVISION=	2
+DISTVERSION=	0.0.2
 CATEGORIES=	devel
 
 MAINTAINER=	meka@tilda.center
@@ -18,6 +17,8 @@ GH_ACCOUNT=	AmokHuginnsson
 
 PLIST_FILES=	include/replxx.h \
 		include/replxx.hxx \
-		lib/libreplxx.a
+		lib/libreplxx.a \
+		lib/libreplxx.so
+
 
 .include <bsd.port.mk>
