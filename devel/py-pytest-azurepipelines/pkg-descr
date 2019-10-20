@@ -1,0 +1,16 @@
+Make pytest easier to use with Microsoft Azure Pipelines. Just run pytest with
+this plugin and see your test results in the Azure Pipelines UI!
+
+Features:
+- Formats the PyTest output to show test docstrings and module names instead of
+  just test case names in the Azure Pipelines UI.
+- Uploads test results automatically, no need for a separate test results upload
+  command
+- Displays the number of failed tests if there were failures as an error message
+  in the UI
+- Automatically formats code coverage and uploads coverage data if pytest-cov is
+  installed
+- Supports running inside a Docker container and automatically uploads test
+  results
+
+WWW: https://github.com/tonybaloney/pytest-azurepipelines
