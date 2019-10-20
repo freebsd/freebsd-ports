@@ -884,6 +884,7 @@
     SUBDIR += py-wand
     SUBDIR += py-webcolors
     SUBDIR += py-willow
+    SUBDIR += py-willow11
     SUBDIR += py-yaswfp
     SUBDIR += pygts
     SUBDIR += pymorph
