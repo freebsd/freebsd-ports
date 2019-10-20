@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-fog-core>=0:devel/rubygem-fog-core \
-		rubygem-rbvmomi>=1.9:net/rubygem-rbvmomi
+		rubygem-rbvmomi>=1.9<3:net/rubygem-rbvmomi
 
 USES=		gem
 USE_RUBY=	yes
