@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 BROKEN_SSL=	openssl111
 BROKEN_SSL_REASON_openssl111=	member access into incomplete type 'DH' (aka 'dh_st')
 
-USES=		gmake pkgconfig python tar:bzip2 shebangfix ssl
+USES=		compiler:c++11-lang gmake pkgconfig python tar:bzip2 \
+		shebangfix ssl
 
 CONFLICTS=	omniORB41-4.1.*
 SONUM=		3
