@@ -1,0 +1,10 @@
+Willow is a simple image library that combines the APIs of Pillow, Wand and
+OpenCV. It converts the image between the libraries when necessary.
+
+Willow currently has basic resize and crop operations, face and feature
+detection and animated GIF support. New operations and library integrations can
+also be easily implemented.
+
+It is written in pure-Python.
+
+WWW: https://github.com/wagtail/Willow
