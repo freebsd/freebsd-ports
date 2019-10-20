@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dry-inflector
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
