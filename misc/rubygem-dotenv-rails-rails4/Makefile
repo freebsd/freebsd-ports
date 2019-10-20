@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-dotenv>=${PORTVERSION}:misc/rubygem-dotenv \
-		rubygem-railties4>=3.2:www/rubygem-railties4
+		rubygem-railties4>=3.2<6.1:www/rubygem-railties4
 
 USES=		gem
 USE_RUBY=	yes
