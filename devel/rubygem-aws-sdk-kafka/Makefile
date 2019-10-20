@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-kafka
-PORTVERSION=	1.12.0
+PORTVERSION=	1.14.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
