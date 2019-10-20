@@ -358,6 +358,7 @@
 %%SITE_PERL%%/DateTime/Locale/fy.pod
 %%SITE_PERL%%/DateTime/Locale/fy_NL.pod
 %%SITE_PERL%%/DateTime/Locale/ga.pod
+%%SITE_PERL%%/DateTime/Locale/ga_GB.pod
 %%SITE_PERL%%/DateTime/Locale/ga_IE.pod
 %%SITE_PERL%%/DateTime/Locale/gd.pod
 %%SITE_PERL%%/DateTime/Locale/gd_GB.pod
@@ -1113,6 +1114,7 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/fur.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/fy-NL.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/fy.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/ga-GB.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ga-IE.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ga.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/gd-GB.pl
@@ -1874,6 +1876,7 @@
 %%PERL5_MAN3%%/DateTime::Locale::fy.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::fy_NL.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::ga.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::ga_GB.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::ga_IE.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::gd.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::gd_GB.3.gz
