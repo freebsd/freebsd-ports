@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cffi
-PORTVERSION=	1.12.3
+PORTVERSION=	1.13.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,11 +18,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycparser>=0:devel/py-pycparser@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		compiler localbase python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == "clang"
+.if ${COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-shift-negative-value
 .endif
 
