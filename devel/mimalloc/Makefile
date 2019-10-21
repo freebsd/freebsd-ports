@@ -20,4 +20,7 @@ USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	microsoft
 
+# shows broken links: 400: Invalid request
+PORTSCOUT=	ignore
+
 .include <bsd.port.mk>
