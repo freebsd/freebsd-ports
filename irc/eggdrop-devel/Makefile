@@ -9,7 +9,7 @@ MASTER_SITES=	GH \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
 
 LICENSE=	GPLv2

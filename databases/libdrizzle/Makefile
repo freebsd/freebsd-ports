@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://launchpadlibrarian.net/41155299/ \
 		LOCAL/bdrewery/${PORTNAME}/
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client and protocol library for the Drizzle database
 
 LICENSE=	BSD3CLAUSE
