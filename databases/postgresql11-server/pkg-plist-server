@@ -330,7 +330,7 @@ lib/postgresql/utf8_and_win.so
 %%LLVM%%lib/postgresql/bitcode/postgres/libpq/auth.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/libpq/be-fsstubs.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/libpq/be-secure-common.bc
-%%LLVM%%lib/postgresql/bitcode/postgres/libpq/be-secure-openssl.bc
+%%LLVM%%%%SSL%%lib/postgresql/bitcode/postgres/libpq/be-secure-openssl.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/libpq/be-secure.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/libpq/crypt.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/libpq/hba.bc
