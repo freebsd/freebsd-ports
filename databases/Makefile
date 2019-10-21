@@ -687,6 +687,7 @@
     SUBDIR += postgresql-libpqxx4
     SUBDIR += postgresql-mysql_fdw
     SUBDIR += postgresql-odbc
+    SUBDIR += postgresql-ogr_fdw
     SUBDIR += postgresql-orafce
     SUBDIR += postgresql-plproxy
     SUBDIR += postgresql-plv8js
