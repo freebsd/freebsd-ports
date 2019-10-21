@@ -19,7 +19,7 @@ LLVM_VER=	70
 BUILD_DEPENDS=	llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER}
 RUN_DEPENDS=	llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER}
 
-USES=		cmake compiler:c++11-lib libedit tar:xz perl5 \
+USES=		cmake libedit tar:xz perl5 \
 		python shebangfix
 USE_LDCONFIG=	${PREFIX}/flang/lib
 USE_GNOME=	libxml2
