@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	roundcube
-DISTVERSION=	1.3.9
+DISTVERSION=	1.3.10
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/${DISTVERSION}/
@@ -53,7 +53,7 @@ SQLITE_VARS=	use_php+=pdo_sqlite
 
 SUB_FILES=	newsyslog.conf
 
-post-extract-NSC:
+post-extract-NSC-on:
 	@${CP} ${FILESDIR}/spellchecker.php ${WRKSRC}
 
 post-patch:
