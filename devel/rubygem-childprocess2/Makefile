@@ -13,6 +13,9 @@ COMMENT=	External background process controller
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use devel/rubygem-childprocess instead
+EXPIRATION_DATE=2019-10-31
+
 RUN_DEPENDS=	rubygem-rake>=0<13.0:devel/rubygem-rake
 
 USES=		gem
