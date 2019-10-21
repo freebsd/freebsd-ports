@@ -2,7 +2,7 @@
 
 PORTNAME=	cmrtlib
 DISTVERSIONPREFIX=	intel-media-
-DISTVERSION=	19.3.0
+DISTVERSION=	19.4.pre1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
