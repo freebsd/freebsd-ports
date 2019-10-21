@@ -13416,3 +13416,4 @@ net/kcontacts|net/kf5-kcontacts|2019-10-17|Became a KDE Framework
 net/kcalcore|net/kf5-kcalendarcore|2019-10-17|Became a KDE Framework
 java/linux-oracle-jre9|java/openjdk11|2019-10-18|Has expired: No longer maintained upstream, please migrate to openjdk11
 java/linux-oracle-jre10|java/openjdk11|2019-10-18|Has expired: No longer maintained upstream, please migrate to openjdk11
+www/glassfish5|www/glassfish|2019-10-20|glassfish5 became the default glassfish
