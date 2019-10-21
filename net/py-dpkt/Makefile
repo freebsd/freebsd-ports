@@ -2,6 +2,7 @@
 
 PORTNAME=	dpkt
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_PYTHON=	distutils autoplist pythonprefix
+USE_PYTHON=	autoplist concurrent distutils pythonprefix
 
 OPTIONS_DEFINE=	DOCS
 
