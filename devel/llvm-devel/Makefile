@@ -66,7 +66,7 @@ GH_TAGNAME=	${LLVM_COMMIT}
 
 .include "Makefile.snapshot"
 
-OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD LLDB
+OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD LLDB ELFV2
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
 OPTIONS_DEFAULT=	CLANG EXTRAS LIT LLD LLDB
@@ -130,6 +130,9 @@ OPENMP_EXTRA_PATCHES=	${PATCHDIR}/openmp
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
+ELFV2_DESC=		[PowerPC64] Use OpenPOWER ELF ABI v2 by default
+ELFV2_EXTRA_PATCHES=	${PATCHDIR}/ppc64-elfv2
+ELFV2_IMPLIES=		CLANG
 
 PLIST_SUB+=	LLVM_MAJOR=${LLVM_MAJOR} \
 		LLVM_RELEASE=${LLVM_RELEASE}
@@ -158,6 +161,7 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-lib.1 \
 		llvm-lipo.1 \
 		llvm-link.1 \
+		llvm-locstats.1 \
 		llvm-mca.1 \
 		llvm-nm.1 \
 		llvm-objcopy.1 \
@@ -196,6 +200,12 @@ EXTRAS_LIBS=	\
 EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
 
 .include <bsd.port.options.mk>
+
+# PPC_ABI variable is only defined after including bsd.port.options.mk
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+OPTIONS_DEFAULT_powerpc64=      ELFV2
+.endif
+
 
 # keep in sync with /usr/src/lib/clang/clang.build.mk 
 # ----------- start of sync block ------------------
