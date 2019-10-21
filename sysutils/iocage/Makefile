@@ -2,7 +2,7 @@
 
 PORTNAME=	iocage
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,15 +24,30 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libzfs>=1.0.2:devel/py-libzfs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}GitPython>0:devel/py-gitpython@${PY_FLAVOR} \
-		${LOCALBASE}/bin/git:devel/git-lite \
 		merge:devel/rcs57
 
 USES=		python:3.6+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
+CONFLICTS=	py27-iocage-[0-9]*
 NO_ARCH=	yes
 
-CONFLICTS=	py27-iocage-[0-9]*
+PLIST_FILES=	${PYTHON_SITELIBDIR}/${PORTNAME}_lib-${PORTVERSION}-py${PYTHON_VER}.egg-info/PKG-INFO \
+		${PYTHON_SITELIBDIR}/${PORTNAME}_lib-${PORTVERSION}-py${PYTHON_VER}.egg-info/SOURCES.txt \
+		${PYTHON_SITELIBDIR}/${PORTNAME}_lib-${PORTVERSION}-py${PYTHON_VER}.egg-info/dependency_links.txt \
+		${PYTHON_SITELIBDIR}/${PORTNAME}_lib-${PORTVERSION}-py${PYTHON_VER}.egg-info/entry_points.txt \
+		${PYTHON_SITELIBDIR}/${PORTNAME}_lib-${PORTVERSION}-py${PYTHON_VER}.egg-info/requires.txt \
+		${PYTHON_SITELIBDIR}/${PORTNAME}_lib-${PORTVERSION}-py${PYTHON_VER}.egg-info/top_level.txt
+
+OPTIONS_DEFAULT=	GIT_LITE
+OPTIONS_RADIO=	GIT_PACKAGE
+OPTIONS_RADIO_GIT_PACKAGE=	GIT GIT_LITE
+
+GIT_DESC=	depend on devel/git
+GIT_LITE_DESC=	depend on devel/git-lite (bare minimum git experience)
+
+GIT_RUN_DEPENDS=git:devel/git
+GIT_LITE_RUN_DEPENDS=git:devel/git-lite
 
 .include <bsd.port.mk>
