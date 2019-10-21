@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flang
-DISTVERSION=	6.0-g20180904
-PORTREVISION=	4
+DISTVERSION=	7.0-g20191020
 CATEGORIES=	devel
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 ONLY_FOR_ARCHS=	amd64
 
-LLVM_VER=	60
+LLVM_VER=	70
 BUILD_DEPENDS=	llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER} \
 		flang-clang>=0:devel/flang-clang
 RUN_DEPENDS=	llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER} \
@@ -29,7 +28,7 @@ USE_LDCONFIG=	${PREFIX}/flang/lib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flang-compiler
-GH_TAGNAME=	53e368b
+GH_TAGNAME=	d07daf3
 
 CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VER} \
 		-DCMAKE_CXX_COMPILER=${LOCALBASE}flang/bin/clang++ \

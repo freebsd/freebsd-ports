@@ -1,6 +1,6 @@
---- runtime/flangrti/x86_64-Linux/dumpregs.c.orig	2017-10-19 11:03:03 UTC
+--- runtime/flangrti/x86_64-Linux/dumpregs.c.orig	2019-10-09 20:28:35 UTC
 +++ runtime/flangrti/x86_64-Linux/dumpregs.c
-@@ -40,7 +40,7 @@
+@@ -42,7 +42,7 @@
  #define RSP 15
  #define RIP 16
  
