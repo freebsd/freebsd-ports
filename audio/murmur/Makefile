@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	murmur
-DISTVERSION=	1.3.0-rc1
-PORTREVISION=	8
+PORTVERSION=	1.3.0
+PORTREVISION=	0
 CATEGORIES=	audio net
 
 MAINTAINER=	feld@FreeBSD.org
@@ -15,9 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
-USERS=		murmur
-GROUPS=		murmur
-USES=		compiler:c++11-lang qmake pkgconfig python:2.7 qt:5 ssl
+USES=		compiler:c++11-lang qmake pkgconfig python:build qt:5 ssl
 USE_CXXSTD=	c++11
 USE_QT=		buildtools_build core network sql xml
 
@@ -27,48 +25,35 @@ GH_PROJECT=	mumble
 
 CONFIG=		no-client
 QMAKE_ARGS=	"CONFIG+=${CONFIG}"
+QMAKE_ENV+=	"MUMBLE_PYTHON=${PYTHON_CMD}"
 
 USE_RC_SUBR=	murmur
 SUB_LIST+=	USERS="${USERS}" GROUPS="${GROUPS}"
 
-OPTIONS_DEFINE=	BONJOUR DBUS DOCS ICE
+OPTIONS_DEFINE=		BONJOUR DBUS DOCS ICE
 OPTIONS_DEFAULT=	BONJOUR MYSQL SQLITE
-OPTIONS_MULTI=	SQL
+OPTIONS_MULTI=		SQL
 OPTIONS_MULTI_SQL=	MYSQL SQLITE
-ICE_DESC=	Ice Support
-BONJOUR_DESC=	Bonjour Support
 
-.include <bsd.port.options.mk>
+BONJOUR_DESC=		Bonjour Support
+BONJOUR_VARS_OFF=	CONFIG+=no-bonjour
+BONJOUR_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 
-.if ${PORT_OPTIONS:MICE}
-LIB_DEPENDS+=	libIce.so:devel/ice
-.else
-CONFIG+=	no-ice
-.endif
+DBUS_VARS_OFF=		CONFIG+=no-dbus
+DBUS_USE=		QT=dbus
 
-.if ${PORT_OPTIONS:MDBUS}
-USE_QT+=	dbus
-.else
-CONFIG+=	no-dbus
-.endif
+ICE_DESC=		Ice Support
+ICE_VARS_OFF=		CONFIG+=no-ice
+ICE_LIB_DEPENDS=	libIce.so:devel/ice
 
-.if ${PORT_OPTIONS:MBONJOUR}
-LIB_DEPENDS+=	libdns_sd.so:net/mDNSResponder
-.else
-CONFIG+=	no-bonjour
-.endif
+MYSQL_VARS_OFF=		CONFIG+=no-sql-mysql
+MYSQL_USE=		QT=sql-mysql
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_QT+=	sql-mysql
-.else
-CONFIG+=	no-sql-mysql
-.endif
+SQLITE_VARS_OFF=	CONFIG+=no-sqlite3_run
+SQLITE_USE=		QT=sql-sqlite3_run
 
-.if ${PORT_OPTIONS:MSQLITE}
-USE_QT+=	sql-sqlite3_run
-.else
-CONFIG+=	no-sqlite3_run
-.endif
+USERS=		murmur
+GROUPS=		murmur
 
 .include <bsd.port.pre.mk>
 # PCH is broken on GCC
