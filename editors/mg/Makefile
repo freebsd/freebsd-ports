@@ -2,13 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	mg
-PORTVERSION=	6.5
+PORTVERSION=	6.6
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/ibara/mg/releases/download/mg-${PORTVERSION}/
-
-PATCH_SITES=	https://github.com/ibara/mg/commit/
-PATCHFILES=	0740c97eff175f90688ac2a4ae08a8f12d5fabcc.patch:-p1
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Small, fast Emacs-like editor
