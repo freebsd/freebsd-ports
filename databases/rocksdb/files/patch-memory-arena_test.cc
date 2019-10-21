@@ -1,5 +1,5 @@
---- util/arena_test.cc.orig	2018-01-31 01:15:39 UTC
-+++ util/arena_test.cc
+--- memory/arena_test.cc.orig	2018-01-31 01:15:39 UTC
++++ memory/arena_test.cc
 @@ -91,7 +91,7 @@ static void ApproximateMemoryUsageTest(s
    ASSERT_EQ(kZero, arena.ApproximateMemoryUsage());
  
