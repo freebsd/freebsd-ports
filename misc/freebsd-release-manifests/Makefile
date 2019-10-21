@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	#
 DISTFILES=	#
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	re@FreeBSD.org
 COMMENT=	FreeBSD release manifests
 
 LICENSE=	BSD2CLAUSE
