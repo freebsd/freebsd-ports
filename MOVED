@@ -13417,3 +13417,19 @@ net/kcalcore|net/kf5-kcalendarcore|2019-10-17|Became a KDE Framework
 java/linux-oracle-jre9|java/openjdk11|2019-10-18|Has expired: No longer maintained upstream, please migrate to openjdk11
 java/linux-oracle-jre10|java/openjdk11|2019-10-18|Has expired: No longer maintained upstream, please migrate to openjdk11
 www/glassfish5|www/glassfish|2019-10-20|glassfish5 became the default glassfish
+www/nuvolaplayer-8tracks||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-all-services||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-amazon-cloud-player||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-bandcamp||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-google-play-music||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-groove||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-jango||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-kexp||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-logitech-media-server||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-mixcloud||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-plex||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-soundcloud||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-spotify||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-tunein||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-yandex-music||2019-10-21|Useless without audio/nuvolaplayer
+www/nuvolaplayer-youtube||2019-10-21|Useless without audio/nuvolaplayer
