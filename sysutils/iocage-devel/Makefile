@@ -2,8 +2,8 @@
 
 PORTNAME=	iocage-devel
 PORTVERSION=	1.0.0.20190810
+PORTREVISION=	3
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,17 +25,34 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libzfs>=1.0.2:devel/py-libzfs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}GitPython>=2.1.10:devel/py-gitpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${PY_FLAVOR} \
-		git-lite>0:devel/git-lite
 
+USES=		python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	iocage
 GH_PROJECT=	iocage
 GH_TAGNAME=	c933509
 
-NO_ARCH=	yes
-USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py[0-9]*-iocage-[0-9]*
+NO_ARCH=	yes
+
+_IOCAGE_LIB_VERSION=	1.2rc0
+PLIST_FILES=	${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/PKG-INFO \
+		${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/SOURCES.txt \
+		${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/dependency_links.txt \
+		${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/entry_points.txt \
+		${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/requires.txt \
+		${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/top_level.txt
+
+OPTIONS_DEFAULT=	GIT_LITE
+OPTIONS_RADIO=	GIT_PACKAGE
+OPTIONS_RADIO_GIT_PACKAGE=	GIT GIT_LITE
+
+GIT_DESC=	depend on devel/git
+GIT_LITE_DESC=	depend on devel/git-lite (bare minimum git experience)
+
+GIT_RUN_DEPENDS=git:devel/git
+GIT_LITE_RUN_DEPENDS=git:devel/git-lite
 
 .include <bsd.port.mk>
