@@ -1,3 +1,3 @@
-TIMESTAMP = 1536093717
-SHA256 (flang-compiler-flang-6.0-g20180904-53e368b_GH0.tar.gz) = e9cf2589c6cbad3ec953f4622ee60f7746c6921518d6905aef0526705d83c888
-SIZE (flang-compiler-flang-6.0-g20180904-53e368b_GH0.tar.gz) = 4603486
+TIMESTAMP = 1571593984
+SHA256 (flang-compiler-flang-7.0-g20191020-d07daf3_GH0.tar.gz) = 24c54eaad89d1bc3a30fd50b5cd4aa5a563ef8377157c246781681297e19a893
+SIZE (flang-compiler-flang-7.0-g20191020-d07daf3_GH0.tar.gz) = 133245436

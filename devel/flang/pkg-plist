@@ -1,5 +1,7 @@
 flang/bin/flang1
 flang/bin/flang2
+flang/include/__norm2.mod
+flang/include/__norm2_i8.mod
 flang/include/ieee_arithmetic.mod
 flang/include/ieee_arithmetic_la.mod
 flang/include/ieee_exceptions.mod
@@ -19,3 +21,4 @@ flang/lib/libflangrti.a
 flang/lib/libflangrti.so
 flang/lib/libompstub.a
 flang/lib/libompstub.so
+libdata/ldconfig/flang

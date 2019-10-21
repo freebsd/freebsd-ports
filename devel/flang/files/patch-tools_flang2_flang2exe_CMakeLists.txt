@@ -1,6 +1,6 @@
---- tools/flang2/flang2exe/CMakeLists.txt.orig	2018-09-04 22:25:18 UTC
+--- tools/flang2/flang2exe/CMakeLists.txt.orig	2019-10-09 20:28:35 UTC
 +++ tools/flang2/flang2exe/CMakeLists.txt
-@@ -101,7 +101,7 @@ set(INCLUDE_DIRS
+@@ -98,7 +98,7 @@ set(INCLUDE_DIRS
    ${FLANG_SOURCE_DIR}/lib/scutil
    ${CMAKE_CURRENT_SOURCE_DIR}
    ${CMAKE_CURRENT_BINARY_DIR}

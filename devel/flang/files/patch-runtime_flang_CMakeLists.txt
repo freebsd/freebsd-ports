@@ -1,20 +1,11 @@
---- runtime/flang/CMakeLists.txt.orig	2018-09-04 22:33:13 UTC
+--- runtime/flang/CMakeLists.txt.orig	2019-10-09 20:28:35 UTC
 +++ runtime/flang/CMakeLists.txt
-@@ -420,7 +420,7 @@ set(I8_FILES_DIR I8_sources)
- # Fortran files with macros as module names need to be preprocessed. 
- add_custom_command(
-   OUTPUT "${I8_FILES_DIR}/ieee_arithmetic.F95"
--  COMMAND "${CMAKE_C_COMPILER}" -E 
-+  COMMAND "${CMAKE_C_COMPILER}" -E -x c 
-   "${CMAKE_CURRENT_SOURCE_DIR}/ieee_arithmetic.F95" -DDESC_I8 
-   > "${I8_FILES_DIR}/ieee_arithmetic.F95"
-   COMMENT "Preprocessing ieee_arithmetic.F95"
-@@ -429,7 +429,7 @@ add_custom_command(
+@@ -18,7 +18,7 @@ enable_language(C ASM Fortran) # Enable assembly and F
  
- add_custom_command(
-   OUTPUT "${I8_FILES_DIR}/ieee_exceptions.F95"
--  COMMAND "${CMAKE_C_COMPILER}" -E 
-+  COMMAND "${CMAKE_C_COMPILER}" -E -x c 
-   "${CMAKE_CURRENT_SOURCE_DIR}/ieee_exceptions.F95" -DDESC_I8 
-   > "${I8_FILES_DIR}/ieee_exceptions.F95"
-   COMMENT "Preprocessing ieee_exceptions.F95"
+ SET(ASM_OPTIONS "-DLINUX_ELF")
+ SET(CMAKE_ASM_FLAGS "${CFLAGS} ${ASM_OPTIONS}" )
+-SET(CMAKE_SHARED_LINKER_FLAGS "-no-flang-libs")
++SET(CMAKE_SHARED_LINKER_FLAGS "-no-flang-libs -L/usr/lib")
+ 
+ # We are using Fortran driver to build this library with fresh compiler
+ # components, so point its binary directory to the build directory to pick up
