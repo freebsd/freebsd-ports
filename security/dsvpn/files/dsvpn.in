@@ -26,6 +26,8 @@ procname="%%PREFIX%%/sbin/${name}"
 : ${dsvpn_port:="443"}
 : ${dsvpn_remote:=""}
 
+load_rc_config $name
+
 required_files=${dsvpn_key}
 
 command=/usr/sbin/daemon
@@ -34,5 +36,4 @@ command=/usr/sbin/daemon
   command_args_dsvpn="client ${dsvpn_key} ${dsvpn_remote} ${dsvpn_port}"
 command_args="-o /var/log/${name}.log -p ${pidfile} ${procname} ${command_args_dsvpn}"
 
-load_rc_config $name
 run_rc_command "$1"
