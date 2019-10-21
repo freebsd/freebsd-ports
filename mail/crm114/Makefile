@@ -3,7 +3,7 @@
 
 PORTNAME=	crm114
 PORTVERSION=	20100106
-PORTREVISION=	3
+PORTREVISION=	4
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
@@ -23,7 +23,6 @@ LIB_DEPENDS=	libtre.so:textproc/libtre
 
 CRM114RELEASENAME=BlameMichelson
 
-USES=	gettext-runtime
 USE_CSTD=gnu89
 
 OPTIONS_DEFINE=	NORMALIZEMIME DOCS EXAMPLES
@@ -34,8 +33,7 @@ MAKE_ARGS=	CC="${CC}" prefix="${STAGEDIR}${PREFIX}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-LIBS+=		-L${LOCALBASE}/lib -lintl
+LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 
 CFLAGS+=	-DVERSION='\"${PORTVERSION}-${CRM114RELEASENAME}\"'
 CFLAGS+=	-DNO_LOGL
