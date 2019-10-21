@@ -7,7 +7,7 @@ index 53fc3c9937f7..b23771ab80fa 100644
 @@ -7,6 +7,7 @@
  #include "FlacDecoder.h"
  #include "MediaContainerType.h"
- #include "mozilla/StaticPrefs.h"
+ #include "mozilla/StaticPrefs_media.h"
 +#include "PDMFactory.h"
  
  namespace mozilla {
