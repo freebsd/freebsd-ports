@@ -1,5 +1,5 @@
---- util/arena.cc.orig	2018-01-31 01:15:39 UTC
-+++ util/arena.cc
+--- memory/arena.cc.orig	2018-01-31 01:15:39 UTC
++++ memory/arena.cc
 @@ -33,7 +33,7 @@ const size_t Arena::kInlineSize;
  
  const size_t Arena::kMinBlockSize = 4096;
