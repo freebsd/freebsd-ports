@@ -1,6 +1,6 @@
---- src/mumble/OSS.cpp.orig	2014-08-08 15:51:59 UTC
+--- src/mumble/OSS.cpp.orig	2019-08-30 01:01:56 UTC
 +++ src/mumble/OSS.cpp
-@@ -153,7 +153,6 @@ OSSEnumerator::OSSEnumerator() {
+@@ -130,7 +130,6 @@ OSSEnumerator::OSSEnumerator() {
  	qhOutput.insert(QString(), QLatin1String("Default OSS Device"));
  	qhDevices.insert(QString(), QLatin1String("/dev/dsp"));
  
@@ -8,7 +8,7 @@
  	int mixerfd = open("/dev/mixer", O_RDWR, 0);
  	if (mixerfd == -1) {
  		qWarning("OSSEnumerator: Failed to open /dev/mixer");
-@@ -182,15 +181,14 @@ OSSEnumerator::OSSEnumerator() {
+@@ -159,15 +158,14 @@ OSSEnumerator::OSSEnumerator() {
  		if (ainfo.caps & PCM_CAP_HIDDEN)
  			continue;
  
@@ -27,7 +27,7 @@
  }
  
  OSSInput::OSSInput() {
-@@ -221,20 +219,23 @@ void OSSInput::run() {
+@@ -198,20 +196,23 @@ void OSSInput::run() {
  	ival = AFMT_S16_NE;
  	if ((ioctl(fd, SNDCTL_DSP_SETFMT, &ival) == -1) || (ival != AFMT_S16_NE)) {
  		qWarning("OSSInput: Failed to set sound format");
@@ -54,7 +54,7 @@
  	}
  	iMicFreq = ival;
  
-@@ -258,8 +259,6 @@ void OSSInput::run() {
+@@ -235,8 +236,6 @@ void OSSInput::run() {
  	qWarning("OSSInput: Releasing.");
  	ioctl(fd, SNDCTL_DSP_RESET, NULL);
  
