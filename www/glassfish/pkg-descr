@@ -1,4 +1,9 @@
-The Glassfish Java Application Server is the reference implementation for a
-Java EE Application server.
+Eclipse Enterprise for Java
 
-WWW: http://glassfish.java.net/
+Eclipse GlassFish is a complete application server that implements the Jakarta
+EE specification. GlassFish includes implementations of all required and
+optional Jakarta EE APIs, and passes all Jakarta EE TCKs. GlassFish also
+includes a complete administration console, clustering support, and other
+developer and production focused tools and features.
+
+WWW: https://projects.eclipse.org/projects/ee4j.glassfish

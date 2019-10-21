@@ -1,27 +1,20 @@
-# Created by: cjr@cruwe.de 
+# Created by: cjr@cruwe.de
 # $FreeBSD$
 
 PORTNAME=	glassfish
-PORTVERSION=	5.1.0
+PORTVERSION=	4.1
 CATEGORIES=	www java
-MASTER_SITES=	ECLIPSE/glassfish
-PKGNAMEPREFIX=	eclipse-
-PKGNAMESUFFIX=	5
+MASTER_SITES=	http://dlc.sun.com.edgesuite.net/glassfish/${PORTVERSION}/release/
 
 MAINTAINER=	jmd@FreeBSD.org
-COMMENT=	Eclipse Jakarta EE Platform
-
-LICENSE=	EPL
+COMMENT=	Reference implementation of the Java EE application server
 
 USES=		zip
 USE_JAVA=	yes
-
-JAVA_VERSION=	11+
+JAVA_VERSION=	1.7+
 NO_BUILD=	yes
 
-CONFLICTS_INSTALL=	glassfish
-
-WRKSRC=		${WRKDIR}/glassfish5
+WRKSRC=		${WRKDIR}/glassfish4
 DATADIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
 
 # Since we USE_JAVA, we propagate the received JAVA_HOME variable to the
@@ -29,8 +22,10 @@ DATADIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
 SUB_LIST=	GLASSFISHVERSION=${PORTVERSION} \
 		JAVA_HOME=${JAVA_HOME}
 
+DOWNLOAD_URL=	http://dlc.sun.com.edgesuite.net/glassfish/${PORTVERSION}/release/
+
 USE_RC_SUBR=	glassfish
-GLASSFISH_BIN_FILES=	appclient appclient.js asadmin capture-schema capture-schema.1m jspc package-appclient schemagen startserv stopserv wscompile wsdeploy wsgen wsimport xjc
+GLASSFISH_BIN_FILES=	appclient asadmin capture-schema jspc package-appclient schemagen startserv stopserv wscompile wsdeploy wsgen wsimport xjc
 
 .include <bsd.port.pre.mk>
 
