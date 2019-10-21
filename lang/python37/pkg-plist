@@ -2136,8 +2136,8 @@ lib/python%%XYDOT%%/ensurepip/__pycache__/__main__.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-19.0.3-py2.py3-none-any.whl
-lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-40.8.0-py2.py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-19.2.3-py2.py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-41.2.0-py2.py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
 lib/python%%XYDOT%%/filecmp.py
@@ -2271,6 +2271,9 @@ lib/python%%XYDOT%%/idlelib/__pycache__/dynoption.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/editor.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/editor.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/editor.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/format.cpython-37.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/format.cpython-37.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/format.cpython-37.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/filelist.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/filelist.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/filelist.cpython-%%XY%%.pyc
@@ -2307,9 +2310,6 @@ lib/python%%XYDOT%%/idlelib/__pycache__/multicall.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/outwin.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/outwin.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/outwin.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/idlelib/__pycache__/paragraph.cpython-%%XY%%.opt-1.pyc
-lib/python%%XYDOT%%/idlelib/__pycache__/paragraph.cpython-%%XY%%.opt-2.pyc
-lib/python%%XYDOT%%/idlelib/__pycache__/paragraph.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/parenmatch.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/parenmatch.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/parenmatch.cpython-%%XY%%.pyc
@@ -2337,9 +2337,6 @@ lib/python%%XYDOT%%/idlelib/__pycache__/replace.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/rpc.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/rpc.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/rpc.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/idlelib/__pycache__/rstrip.cpython-%%XY%%.opt-1.pyc
-lib/python%%XYDOT%%/idlelib/__pycache__/rstrip.cpython-%%XY%%.opt-2.pyc
-lib/python%%XYDOT%%/idlelib/__pycache__/rstrip.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/run.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/run.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/run.cpython-%%XY%%.pyc
@@ -2358,6 +2355,9 @@ lib/python%%XYDOT%%/idlelib/__pycache__/searchbase.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/searchengine.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/searchengine.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/searchengine.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/sidebar.cpython-37.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/sidebar.cpython-37.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/__pycache__/sidebar.cpython-37.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/squeezer.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/squeezer.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/__pycache__/squeezer.cpython-%%XY%%.pyc
@@ -2412,6 +2412,7 @@ lib/python%%XYDOT%%/idlelib/dynoption.py
 lib/python%%XYDOT%%/idlelib/editor.py
 lib/python%%XYDOT%%/idlelib/extend.txt
 lib/python%%XYDOT%%/idlelib/filelist.py
+lib/python%%XYDOT%%/idlelib/format.py
 lib/python%%XYDOT%%/idlelib/grep.py
 lib/python%%XYDOT%%/idlelib/help.html
 lib/python%%XYDOT%%/idlelib/help.py
@@ -2495,6 +2496,9 @@ lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_editor.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_filelist.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_filelist.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_filelist.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_format.cpython-37.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_format.cpython-37.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_format.cpython-37.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_grep.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_grep.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_grep.cpython-%%XY%%.pyc
@@ -2525,9 +2529,6 @@ lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_multicall.cpython-%%XY%%.
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_outwin.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_outwin.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_outwin.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_paragraph.cpython-%%XY%%.opt-1.pyc
-lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_paragraph.cpython-%%XY%%.opt-2.pyc
-lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_paragraph.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_parenmatch.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_parenmatch.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_parenmatch.cpython-%%XY%%.pyc
@@ -2555,9 +2556,6 @@ lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_replace.cpython-%%XY%%.py
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_rpc.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_rpc.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_rpc.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_rstrip.cpython-%%XY%%.opt-1.pyc
-lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_rstrip.cpython-%%XY%%.opt-2.pyc
-lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_rstrip.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_run.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_run.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_run.cpython-%%XY%%.pyc
@@ -2576,6 +2574,9 @@ lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_searchbase.cpython-%%XY%%
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_searchengine.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_searchengine.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_searchengine.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_squeezer.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_squeezer.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_squeezer.cpython-%%XY%%.pyc
@@ -2632,6 +2633,7 @@ lib/python%%XYDOT%%/idlelib/idle_test/test_delegator.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_editmenu.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_editor.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_filelist.py
+lib/python%%XYDOT%%/idlelib/idle_test/test_format.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_grep.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_help.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_help_about.py
@@ -2642,7 +2644,6 @@ lib/python%%XYDOT%%/idlelib/idle_test/test_macosx.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_mainmenu.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_multicall.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_outwin.py
-lib/python%%XYDOT%%/idlelib/idle_test/test_paragraph.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_parenmatch.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_pathbrowser.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_percolator.py
@@ -2652,13 +2653,13 @@ lib/python%%XYDOT%%/idlelib/idle_test/test_rpc.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_query.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_redirector.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_replace.py
-lib/python%%XYDOT%%/idlelib/idle_test/test_rstrip.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_run.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_runscript.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_scrolledlist.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_search.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_searchbase.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_searchengine.py
+lib/python%%XYDOT%%/idlelib/idle_test/test_sidebar.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_squeezer.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_stackviewer.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_statusbar.py
@@ -2675,7 +2676,6 @@ lib/python%%XYDOT%%/idlelib/macosx.py
 lib/python%%XYDOT%%/idlelib/mainmenu.py
 lib/python%%XYDOT%%/idlelib/multicall.py
 lib/python%%XYDOT%%/idlelib/outwin.py
-lib/python%%XYDOT%%/idlelib/paragraph.py
 lib/python%%XYDOT%%/idlelib/parenmatch.py
 lib/python%%XYDOT%%/idlelib/pathbrowser.py
 lib/python%%XYDOT%%/idlelib/percolator.py
@@ -2685,13 +2685,13 @@ lib/python%%XYDOT%%/idlelib/query.py
 lib/python%%XYDOT%%/idlelib/redirector.py
 lib/python%%XYDOT%%/idlelib/replace.py
 lib/python%%XYDOT%%/idlelib/rpc.py
-lib/python%%XYDOT%%/idlelib/rstrip.py
 lib/python%%XYDOT%%/idlelib/run.py
 lib/python%%XYDOT%%/idlelib/runscript.py
 lib/python%%XYDOT%%/idlelib/scrolledlist.py
 lib/python%%XYDOT%%/idlelib/search.py
 lib/python%%XYDOT%%/idlelib/searchbase.py
 lib/python%%XYDOT%%/idlelib/searchengine.py
+lib/python%%XYDOT%%/idlelib/sidebar.py
 lib/python%%XYDOT%%/idlelib/squeezer.py
 lib/python%%XYDOT%%/idlelib/stackviewer.py
 lib/python%%XYDOT%%/idlelib/statusbar.py
