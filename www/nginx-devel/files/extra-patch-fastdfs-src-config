@@ -1,11 +1,11 @@
---- ../fastdfs-nginx-module-85347be/src/config.orig	2016-10-12 16:09:34.075804000 +0200
-+++ ../fastdfs-nginx-module-85347be/src/config	2016-10-12 16:10:43.916280000 +0200
+--- ../fastdfs-nginx-module-8796a7d/src/config.orig	2018-07-16 05:05:22.000000000 -0400
++++ ../fastdfs-nginx-module-8796a7d/src/config	2019-10-22 14:20:23.138241000 -0400
 @@ -3,16 +3,16 @@
  if test -n "${ngx_module_link}"; then
      ngx_module_type=HTTP
      ngx_module_name=$ngx_addon_name
--    ngx_module_incs="/usr/include/fastdfs /usr/include/fastcommon/"
-+    ngx_module_incs="%%LOCALBASE%%/include/fastdfs %%LOCALBASE%%/include/fastcommon/"
+-    ngx_module_incs="/usr/local/include"
++    ngx_module_incs="%%LOCALBASE%%/include"
      ngx_module_libs="-lfastcommon -lfdfsclient"
      ngx_module_srcs="$ngx_addon_dir/ngx_http_fastdfs_module.c"
      ngx_module_deps=
@@ -15,8 +15,8 @@
  else
      HTTP_MODULES="$HTTP_MODULES ngx_http_fastdfs_module"
      NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_http_fastdfs_module.c"
--    CORE_INCS="$CORE_INCS /usr/include/fastdfs /usr/include/fastcommon/"
-+    CORE_INCS="$CORE_INCS %%LOCALBASE%%/include/fastdfs %%LOCALBASE%%/include/fastcommon/"
+-    CORE_INCS="$CORE_INCS /usr/local/include"
++    CORE_INCS="$CORE_INCS %%LOCALBASE%%/include"
      CORE_LIBS="$CORE_LIBS -lfastcommon -lfdfsclient"
 -    CFLAGS="$CFLAGS -D_FILE_OFFSET_BITS=64 -DFDFS_OUTPUT_CHUNK_SIZE='256*1024' -DFDFS_MOD_CONF_FILENAME='\"/etc/fdfs/mod_fastdfs.conf\"'"
 +    CFLAGS="$CFLAGS -D_FILE_OFFSET_BITS=64 -DFDFS_OUTPUT_CHUNK_SIZE='256*1024' -DFDFS_MOD_CONF_FILENAME='\"%%PREFIX%%/etc/fdfs/mod_fastdfs.conf\"'"
