@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tclreadline
-PORTVERSION=	2.3.6
+PORTVERSION=	2.3.7
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	devel tcl
@@ -19,7 +19,8 @@ CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--with-tcl-includes=${TCL_INCLUDEDIR} \
 		--with-readline-includes=${LOCALBASE}/include \
 		--with-readline-library="-L${LOCALBASE}/lib -lreadline" \
-		--with-tk=no
+		--with-tk=no \
+		--enable-tclstub
 INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
