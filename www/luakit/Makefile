@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	luakit
-PORTVERSION=	2017.08.10
-PORTREVISION=	2
+PORTVERSION=	2.1
+PORTEPOCH=	1
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -29,25 +29,20 @@ USES=		compiler:c++11-lang desktop-file-utils gettext-runtime gmake \
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 
-MAKE_ARGS+=	DEVELOPMENT_PATHS=0
-
 OPTIONS_DEFINE=	DOCS LUAJIT
 LUAJIT_DESC=	Use the Just-In-Time compiler for lua
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUAJIT_MAKE_ARGS=	USE_LUAJIT=1
 LUAJIT_MAKE_ARGS_OFF=	USE_LUAJIT=0
 
-post-patch:
+post-extract:
 	@${REINPLACE_CMD} -e \
 		's|share/man|man| ; s|luakit/doc|doc/luakit| ; \
-		s|/etc/xdg|${PREFIX}/etc/xdg| ; /MANPREFIX */s|?=|=|' \
+		s|/etc/xdg|${PREFIX}/etc/xdg| ; /MANPREFIX */s|?=|=| ; \
+		s|gnu99|gnu11| ; s|-ggdb||' \
 		${WRKSRC}/config.mk
 	@${REINPLACE_CMD} -e 's|bin/env lua|&${LUA_VER_STR}|' \
 		${WRKSRC}/build-utils/gentokens.lua
-	@${REINPLACE_CMD} -e 's|bin/env lua|&${LUA_VER_STR}|' \
-		${WRKSRC}/lib/markdown.lua
-	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|' \
-		${WRKSRC}/config/window.lua
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/luakit
