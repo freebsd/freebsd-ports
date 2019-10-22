@@ -27,7 +27,6 @@ share/kdevappwizard/templates/simple_phpapp.tar.bz2
 share/kdevphpsupport/phpfunctions.php
 share/kdevphpsupport/phpunitdeclarations.php
 share/kservices5/kcm_kdevphpdocs.desktop
-share/locale/ast/LC_MESSAGES/kdevphp.mo
 share/locale/bs/LC_MESSAGES/kdevphp.mo
 share/locale/ca/LC_MESSAGES/kdevphp.mo
 share/locale/ca@valencia/LC_MESSAGES/kdevphp.mo
@@ -49,7 +48,6 @@ share/locale/it/LC_MESSAGES/kdevphp.mo
 share/locale/ja/LC_MESSAGES/kdevphp.mo
 share/locale/kk/LC_MESSAGES/kdevphp.mo
 share/locale/ko/LC_MESSAGES/kdevphp.mo
-share/locale/lt/LC_MESSAGES/kdevphp.mo
 share/locale/mr/LC_MESSAGES/kdevphp.mo
 share/locale/nb/LC_MESSAGES/kdevphp.mo
 share/locale/nds/LC_MESSAGES/kdevphp.mo
