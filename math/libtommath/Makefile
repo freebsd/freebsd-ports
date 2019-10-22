@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libtommath
-DISTVERSION=	1.1.0
-PORTREVISION=	3
+DISTVERSION=	1.2.0
+PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/libtom/libtommath/releases/download/v${DISTVERSION}/
 DISTNAME=	ltm-${DISTVERSION}
@@ -24,8 +24,6 @@ CFLAGS+=	-fPIC
 PORTDOCS=	*
 
 PLIST_FILES=	include/tommath.h \
-		include/tommath_class.h \
-		include/tommath_superclass.h \
 		lib/libtommath.a \
 		lib/libtommath.so \
 		lib/libtommath.so.${DISTVERSION:R:R} \
@@ -37,8 +35,6 @@ OPTIONS_DEFINE=	DOCS
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/bn.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/poster.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/tommath.pdf ${STAGEDIR}${DOCSDIR}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtommath.so.${DISTVERSION}
 
 do-test:
