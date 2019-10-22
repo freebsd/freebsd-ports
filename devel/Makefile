@@ -634,6 +634,7 @@
     SUBDIR += etcd31
     SUBDIR += etcd32
     SUBDIR += etcd33
+    SUBDIR += etcd34
     SUBDIR += etl
     SUBDIR += euca2ools
     SUBDIR += evdev-proto
