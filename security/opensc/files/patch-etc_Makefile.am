@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	2018-09-13 11:56:07 UTC
-+++ etc/Makefile.in
-@@ -558,13 +558,7 @@ opensc.conf.example: opensc.conf.example
+--- etc/Makefile.am.orig	2018-09-13 11:52:42 UTC
++++ etc/Makefile.am
+@@ -32,13 +32,7 @@ opensc.conf.example: opensc.conf.example.in force
  
  install-exec-hook: opensc.conf.example
  	$(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
