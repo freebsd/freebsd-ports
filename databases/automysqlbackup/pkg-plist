@@ -1,4 +1,4 @@
 bin/automysqlbackup
-@sample		etc/automysqlbackup/automysqlbackup.conf.sample
-@dir(,,0700)	/var/backups/automysqlbackup
+@sample etc/automysqlbackup/automysqlbackup.conf.sample
+@dir(,,0700) /var/backups/automysqlbackup
 %%DOCSDIR%%/README
