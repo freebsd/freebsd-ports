@@ -4564,6 +4564,7 @@
     SUBDIR += py-jep
     SUBDIR += py-jinja2-time
     SUBDIR += py-jira
+    SUBDIR += py-jitterentropy
     SUBDIR += py-jmespath
     SUBDIR += py-joblib
     SUBDIR += py-jsbeautifier
