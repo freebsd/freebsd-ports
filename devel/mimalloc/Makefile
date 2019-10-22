@@ -13,7 +13,7 @@ COMMENT=	General-purpose allocator with excellent performance characteristics
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake compiler:c11
 
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
