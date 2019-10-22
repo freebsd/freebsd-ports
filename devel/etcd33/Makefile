@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	etcd
-PORTVERSION=	3.3.13
+PORTVERSION=	3.3.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
@@ -18,7 +18,7 @@ CONFLICTS_INSTALL=	coreos-etcd-* coreos-etcd31-* coreos-etcd32-* \
 
 USES=		go
 GO_PKGNAME=	github.com/coreos/etcd
-GO_TARGET=	./cmd/etcd ./cmd/etcdctl
+GO_TARGET=	. ./etcdctl
 USE_GITHUB=	yes
 GH_ACCOUNT=	coreos
 
@@ -28,9 +28,6 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 DOCS_DESC=	Install etcd README file
-
-post-patch:
-	${REINPLACE_CMD} -i '' "s@#cgo LDFLAGS: -ldl@@g;" ${WRKSRC}/cmd/vendor/github.com/coreos/pkg/dlopen/dlopen.go
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
