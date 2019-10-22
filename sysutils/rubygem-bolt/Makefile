@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bolt
-PORTVERSION=	1.33.0
+PORTVERSION=	1.34.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
