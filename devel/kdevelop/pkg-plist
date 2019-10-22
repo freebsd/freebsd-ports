@@ -1132,6 +1132,7 @@ share/locale/de/LC_MESSAGES/kdevcustomdefinesandincludes.mo
 share/locale/de/LC_MESSAGES/kdevcustommake.mo
 share/locale/de/LC_MESSAGES/kdevcustomscript.mo
 share/locale/de/LC_MESSAGES/kdevdebuggercommon.mo
+share/locale/de/LC_MESSAGES/kdevdocker.mo
 share/locale/de/LC_MESSAGES/kdevdocumentswitcher.mo
 share/locale/de/LC_MESSAGES/kdevdocumentview.mo
 share/locale/de/LC_MESSAGES/kdevelop.mo
@@ -1168,6 +1169,7 @@ share/locale/de/LC_MESSAGES/kdevqmakemanager.mo
 share/locale/de/LC_MESSAGES/kdevqmljs.mo
 share/locale/de/LC_MESSAGES/kdevqthelp.mo
 share/locale/de/LC_MESSAGES/kdevquickopen.mo
+share/locale/de/LC_MESSAGES/kdevscratchpad.mo
 share/locale/de/LC_MESSAGES/kdevsourceformatter.mo
 share/locale/de/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/de/LC_MESSAGES/kdevsubversion.mo
@@ -1972,7 +1974,6 @@ share/locale/ko/LC_MESSAGES/kdevvcsprojectintegration.mo
 share/locale/ko/LC_MESSAGES/kdevwelcomepage.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
-share/locale/ku/LC_MESSAGES/kdevelop.mo
 share/locale/lt/LC_MESSAGES/kdevappwizard.mo
 share/locale/lt/LC_MESSAGES/kdevastyle.mo
 share/locale/lt/LC_MESSAGES/kdevclangtidy.mo
@@ -2503,11 +2504,14 @@ share/locale/ro/LC_MESSAGES/kdevqthelp.mo
 share/locale/ro/LC_MESSAGES/kdevquickopen.mo
 share/locale/ro/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/ro/LC_MESSAGES/kdevsubversion.mo
+share/locale/ru/LC_MESSAGES/kdevandroid.mo
 share/locale/ru/LC_MESSAGES/kdevappwizard.mo
 share/locale/ru/LC_MESSAGES/kdevastyle.mo
+share/locale/ru/LC_MESSAGES/kdevbazaar.mo
 share/locale/ru/LC_MESSAGES/kdevclang.mo
 share/locale/ru/LC_MESSAGES/kdevclangtidy.mo
 share/locale/ru/LC_MESSAGES/kdevclassbrowser.mo
+share/locale/ru/LC_MESSAGES/kdevclazy.mo
 share/locale/ru/LC_MESSAGES/kdevcmake.mo
 share/locale/ru/LC_MESSAGES/kdevcmakebuilder.mo
 share/locale/ru/LC_MESSAGES/kdevcodeutils.mo
@@ -2531,14 +2535,19 @@ share/locale/ru/LC_MESSAGES/kdevgdb.mo
 share/locale/ru/LC_MESSAGES/kdevghprovider.mo
 share/locale/ru/LC_MESSAGES/kdevgit.mo
 share/locale/ru/LC_MESSAGES/kdevgrepview.mo
+share/locale/ru/LC_MESSAGES/kdevheaptrack.mo
 share/locale/ru/LC_MESSAGES/kdevkdeprovider.mo
 share/locale/ru/LC_MESSAGES/kdevkonsole.mo
+share/locale/ru/LC_MESSAGES/kdevlldb.mo
 share/locale/ru/LC_MESSAGES/kdevmakebuilder.mo
 share/locale/ru/LC_MESSAGES/kdevmanpage.mo
+share/locale/ru/LC_MESSAGES/kdevmesonmanager.mo
 share/locale/ru/LC_MESSAGES/kdevninja.mo
 share/locale/ru/LC_MESSAGES/kdevokteta.mo
 share/locale/ru/LC_MESSAGES/kdevopenwith.mo
+share/locale/ru/LC_MESSAGES/kdevoutlineview.mo
 share/locale/ru/LC_MESSAGES/kdevpatchreview.mo
+share/locale/ru/LC_MESSAGES/kdevperforce.mo
 share/locale/ru/LC_MESSAGES/kdevplatform.mo
 share/locale/ru/LC_MESSAGES/kdevproblemreporter.mo
 share/locale/ru/LC_MESSAGES/kdevprojectfilter.mo
@@ -2548,6 +2557,7 @@ share/locale/ru/LC_MESSAGES/kdevqmakemanager.mo
 share/locale/ru/LC_MESSAGES/kdevqmljs.mo
 share/locale/ru/LC_MESSAGES/kdevqthelp.mo
 share/locale/ru/LC_MESSAGES/kdevquickopen.mo
+share/locale/ru/LC_MESSAGES/kdevscratchpad.mo
 share/locale/ru/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/ru/LC_MESSAGES/kdevsubversion.mo
 share/locale/ru/LC_MESSAGES/kdevswitchtobuddy.mo
@@ -2907,7 +2917,6 @@ share/locale/uk/LC_MESSAGES/kdevvcsprojectintegration.mo
 share/locale/uk/LC_MESSAGES/kdevwelcomepage.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
-share/locale/xh/LC_MESSAGES/kdevelop.mo
 share/locale/zh_CN/LC_MESSAGES/kdevandroid.mo
 share/locale/zh_CN/LC_MESSAGES/kdevappwizard.mo
 share/locale/zh_CN/LC_MESSAGES/kdevastyle.mo
@@ -3028,6 +3037,7 @@ share/locale/zh_TW/LC_MESSAGES/kdevqmakemanager.mo
 share/locale/zh_TW/LC_MESSAGES/kdevqmljs.mo
 share/locale/zh_TW/LC_MESSAGES/kdevqthelp.mo
 share/locale/zh_TW/LC_MESSAGES/kdevquickopen.mo
+share/locale/zh_TW/LC_MESSAGES/kdevscratchpad.mo
 share/locale/zh_TW/LC_MESSAGES/kdevsourceformatter.mo
 share/locale/zh_TW/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/zh_TW/LC_MESSAGES/kdevsubversion.mo

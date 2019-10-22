@@ -1,8 +1,10 @@
 # $FreeBSD$
 
+# When updating this port, also chase
+#  devel/kdev-php
+#  devel/kdev-python
 PORTNAME=	kdevelop
-DISTVERSION=	5.4.2
-PORTREVISION=	1
+DISTVERSION=	5.4.3
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop
