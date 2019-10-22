@@ -11,7 +11,7 @@ LICENSE=	PD
 
 LIB_DEPENDS=	libomp.so:devel/openmp
 
-USES=		localbase
+USES=		compiler:c++11-lang localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	jamriska
 GH_TAGNAME=	2f5c97c0c21a
