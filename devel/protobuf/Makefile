@@ -38,7 +38,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^check-local:|disabled-&|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|$$(GOOGLETEST_BUILD_DIR)/lib/libgtest\.la|-lgtest|' ${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|$$(GOOGLEMOCK_BUILD_DIR)/lib/libgmock\(.*\)\.la|-lgmock\1|' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -Ee 's,[^ 	]*lib(gtest|gmock.*)\.la,-l\1,' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
