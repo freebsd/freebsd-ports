@@ -12,14 +12,14 @@ COMMENT=	C++ utility library with generic and independent components
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_sparc64=	Does not build: cannot configure with boost
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2
 
-BROKEN_sparc64=	Does not build: cannot configure with boost
-
+USES=		compiler:c++11-lib libtool
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		compiler:c++11-lib libtool
 
 # The checks for external boost and external expat are quite limited and do not
 # add the ${LOCALBASE} paths correctly (libboost.m4 uses wrong paths and
