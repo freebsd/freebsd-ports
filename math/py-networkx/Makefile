@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	networkx
-DISTVERSION=	2.4
+DISTVERSION=	2.1
+PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +18,8 @@ RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}decorator>=4.1.0:devel/py-decorator@${PY_FL
 #		${PYTHON_PKGNAMEPREFIX}sphinx>=1.2.3:textproc/py-sphinx@${PY_FLAVOR} \
 #		${PYTHON_PKGNAMEPREFIX}docutils>=0.12:textproc/py-docutils@${PY_FLAVOR}
 
-USES=		python:3.5+ shebangfix
-USE_PYTHON=	autoplist distutils
+USES=		python shebangfix zip
+USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_GLOB=	*.py
 NO_ARCH=	yes
 
@@ -26,7 +27,7 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}networkx1
 
 PLIST_SUB+=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER}
 
-OPTIONS_DEFINE=	YAML
+OPTIONS_DEFINE=	EXAMPLES YAML
 OPTIONS_GROUP=	MATRIX RENDER
 OPTIONS_GROUP_MATRIX=	NUMPY SCIPY
 OPTIONS_GROUP_RENDER=	MPL GRAPHVIZ
@@ -48,13 +49,10 @@ GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.2:graphics/py-pygraph
 YAML_DESC=	Reading and writing YAML files
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR}
 
-POST_PLIST=	rm-examples-docs-from-plist
-
-rm-examples-docs-from-plist:
-	@${REINPLACE_CMD} '/.*\/examples\//d' ${TMPPLIST}
-	@${REINPLACE_CMD} '/.*\/doc\//d' ${TMPPLIST}
+PORTEXAMPLES=	*
 
 post-install:
-	@${RM} -r ${STAGEDIR}${PREFIX}/share
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
