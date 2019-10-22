@@ -51,8 +51,9 @@ ENCRYPTSESSION_IMPLIES=		DEVEL_KIT
 ENCRYPTSESSION_GH_TUPLE=	openresty:encrypted-session-nginx-module:v0.08:encryptsession
 ENCRYPTSESSION_VARS=		DSO_EXTMODS+=encryptsession
 
-FASTDFS_GH_TUPLE=	happyfish100:fastdfs-nginx-module:85347be:fastdfs
-FASTDFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fastdfs-src-config
+FASTDFS_GH_TUPLE=	happyfish100:fastdfs-nginx-module:8796a7d:fastdfs
+FASTDFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fastdfs-src-config \
+			${PATCHDIR}/extra-patch-fastdfs-src-mod_fastdfs.conf
 FASTDFS_BUILD_DEPENDS=	${LOCALBASE}/include/fastcommon/logger.h:devel/libfastcommon \
 			${LOCALBASE}/include/fastdfs/fdfs_client.h:ftp/fastdfs
 FASTDFS_LIB_DEPENDS=	libfastcommon.so:devel/libfastcommon \
@@ -230,7 +231,7 @@ NAXSI_NGINX_VER=	0.56
 NAXSI_GH_TUPLE=		nbs-system:naxsi:${NAXSI_NGINX_VER}:naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 
-NJS_GH_TUPLE=		nginx:njs:0.3.5:njs
+NJS_GH_TUPLE=		nginx:njs:0.3.6:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
 PASSENGER_NGINX_VER=	6.0.4
