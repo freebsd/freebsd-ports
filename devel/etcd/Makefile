@@ -13,14 +13,14 @@ COMMENT=	Highly-available key value store and service discovery
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=coreos-etcdctl-0.* coreos-etcd31-* coreos-etcd32-* coreos-etcd33-*
+CONFLICTS_INSTALL=	coreos-etcd31-* coreos-etcd32-* coreos-etcd33-* \
+			coreos-etcdctl-0.*
 
 PORTSCOUT=	limit:^2.*
 
 USES=		go
 GO_PKGNAME=	github.com/coreos/etcd
-GO_TARGET=	github.com/coreos/etcd \
-		github.com/coreos/etcd/etcdctl
+GO_TARGET=	github.com/coreos/etcd github.com/coreos/etcd/etcdctl
 USE_GITHUB=	yes
 GH_ACCOUNT=	coreos
 
