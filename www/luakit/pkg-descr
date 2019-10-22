@@ -1,9 +1,9 @@
-Luakit is a highly configurable, micro-browser framework
-based on the WebKit2 web content engine and the GTK3 toolkit.
+Luakit is a highly configurable browser framework based on the
+WebKit web content engine and the GTK+ toolkit.
 
-It is very fast, extensible with Lua, and licensed under the
-GNU GPLv3 license. It is primarily targeted at power users,
-developers, and people who want to have a fast and configurable
-web browsers.
+It is very fast, extensible with Lua, and licensed under the GNU
+GPLv3 license. It is primarily targeted at power users, developers
+and anyone who wants to have fine-grained control over their web
+browser's behaviour and interface.
 
-WWW: http://luakit.org
+WWW: https://luakit.github.io
