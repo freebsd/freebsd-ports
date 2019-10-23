@@ -3,7 +3,7 @@
 
 PORTNAME=	streamripper
 PORTVERSION=	1.64.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28current%29/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -38,8 +38,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 FAAD_CONFIGURE_OFF=	ac_cv_lib_faad_NeAACDecDecode2=no
 FAAD_LIB_DEPENDS=	libfaad.so:audio/faad
 
-VORBIS_CONFIGURE_WITH=	ogg
-VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+VORBIS_CONFIGURE_WITH=	ogg=${LOCALBASE}
+VORBIS_LIB_DEPENDS=	libogg.so:audio/libogg \
+			libvorbis.so:audio/libvorbis
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/streamripper ${STAGEDIR}${PREFIX}/bin
