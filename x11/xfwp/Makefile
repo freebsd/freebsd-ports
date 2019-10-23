@@ -8,6 +8,9 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X firewall proxy
 
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=2019-11-06
+
 LICENSE=	MIT
 
 XORG_CAT=	app
