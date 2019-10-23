@@ -1,7 +1,7 @@
-TIMESTAMP = 1560109707
-SHA256 (LMMS-lmms-v1.2.0_GH0.tar.gz) = 0c1be741b39b20023a34f16bad043ad668d054a0d776cc1e083d80f9cc9cb6a7
-SIZE (LMMS-lmms-v1.2.0_GH0.tar.gz) = 16498812
-SHA256 (mjansson-rpmalloc-1.3.2_GH0.tar.gz) = c902238fe6166baa2e5ec48e2a3937e314aa8aa9e5fefb30a6628ef021081ad7
-SIZE (mjansson-rpmalloc-1.3.2_GH0.tar.gz) = 65645
+TIMESTAMP = 1571646445
+SHA256 (LMMS-lmms-v1.2.1_GH0.tar.gz) = e95e87dbc22b796376c240e0762e5a27346af22170b4690c7ee44da2436e6055
+SIZE (LMMS-lmms-v1.2.1_GH0.tar.gz) = 16497672
+SHA256 (mjansson-rpmalloc-1.4.0_GH0.tar.gz) = c5b63c40253d7f048d4489a6fa78e7a0c77d90037018c712df3bf68c033888a8
+SIZE (mjansson-rpmalloc-1.4.0_GH0.tar.gz) = 71692
 SHA256 (lukas-w-qt5-x11embed-ec77d4ba40bebc0c53a016adb646b6fa65dd5faf_GH0.tar.gz) = 57213eb6da900412b182322e342366815c2cc2d3213cd948c2a7e405d6e41f06
 SIZE (lukas-w-qt5-x11embed-ec77d4ba40bebc0c53a016adb646b6fa65dd5faf_GH0.tar.gz) = 32135
