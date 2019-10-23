@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tiled
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics editors games
 
@@ -16,7 +15,8 @@ LICENSE_COMB=	multi
 USE_GITHUB=	yes
 GH_ACCOUNT=	bjorn
 
-USES=		compiler:c++11-lib desktop-file-utils gl qmake qt:5 shared-mime-info
+USES=		compiler:c++11-lib desktop-file-utils gl qmake qt:5 \
+		shared-mime-info xorg
 USE_QT=		core gui widgets opengl network \
 		buildtools_build linguisttools_build
 USE_GL=		gl
