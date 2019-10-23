@@ -1,0 +1,15 @@
+%%DATADIR%%/AlexTemplate
+%%DATADIR%%/AlexTemplate-debug
+%%DATADIR%%/AlexTemplate-ghc
+%%DATADIR%%/AlexTemplate-ghc-debug
+%%DATADIR%%/AlexTemplate-ghc-nopred
+%%DATADIR%%/AlexWrapper-basic
+%%DATADIR%%/AlexWrapper-basic-bytestring
+%%DATADIR%%/AlexWrapper-gscan
+%%DATADIR%%/AlexWrapper-monad
+%%DATADIR%%/AlexWrapper-monad-bytestring
+%%DATADIR%%/AlexWrapper-monadUserState
+%%DATADIR%%/AlexWrapper-monadUserState-bytestring
+%%DATADIR%%/AlexWrapper-posn
+%%DATADIR%%/AlexWrapper-posn-bytestring
+%%DATADIR%%/AlexWrapper-strict-bytestring
