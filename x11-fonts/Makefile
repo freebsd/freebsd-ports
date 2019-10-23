@@ -11,6 +11,7 @@
     SUBDIR += alfont
     SUBDIR += andika
     SUBDIR += anonymous-pro
+    SUBDIR += apl385
     SUBDIR += artwiz-aleczapka
     SUBDIR += artwiz-aleczapka-de
     SUBDIR += artwiz-aleczapka-se
