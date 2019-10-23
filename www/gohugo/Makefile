@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.58.3
+DISTVERSION=	0.59.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -23,7 +23,7 @@ GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		PuerkitoBio:purell:v1.1.0:puerkitobio_purell/vendor/github.com/PuerkitoBio/purell \
 		PuerkitoBio:urlesc:de5bf2ad4578:puerkitobio_urlesc/vendor/github.com/PuerkitoBio/urlesc \
-		alecthomas:chroma:v0.6.4:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+		alecthomas:chroma:v0.6.7:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		armon:go-radix:v1.0.0:armon_go_radix/vendor/github.com/armon/go-radix \
 		aws:aws-sdk-go:v1.19.40:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		bep:debounce:v1.2.0:bep_debounce/vendor/github.com/bep/debounce \
@@ -34,7 +34,7 @@ GH_TUPLE=	\
 		cpuguy83:go-md2man:v1.0.10:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		disintegration:gift:v1.2.1:disintegration_gift/vendor/github.com/disintegration/gift \
-		dlclark:regexp2:v1.1.6:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
+		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		eknkc:amber:cdade1c07385:eknkc_amber/vendor/github.com/eknkc/amber \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
@@ -69,7 +69,7 @@ GH_TUPLE=	\
 		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		kr:pretty:v0.1.0:kr_pretty/vendor/github.com/kr/pretty \
 		kr:text:v0.1.0:kr_text/vendor/github.com/kr/text \
-		kyokomi:emoji:v1.5.1:kyokomi_emoji/vendor/github.com/kyokomi/emoji \
+		kyokomi:emoji:v2.1.0:kyokomi_emoji/vendor/github.com/kyokomi/emoji \
 		magefile:mage:v1.4.0:magefile_mage/vendor/github.com/magefile/mage \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		markbates:inflect:a12c3aec81a6:markbates_inflect/vendor/github.com/markbates/inflect \
@@ -80,7 +80,7 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		muesli:smartcrop:f6ebaa786a12:muesli_smartcrop/vendor/github.com/muesli/smartcrop \
 		nicksnyder:go-i18n:v1.10.0:nicksnyder_go_i18n/vendor/github.com/nicksnyder/go-i18n \
-		niklasfasching:go-org:v0.1.4:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
+		niklasfasching:go-org:v0.1.6:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
 		olekukonko:tablewriter:d4647c9c7a84:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:v1.4.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -95,8 +95,8 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
-		tdewolff:minify:v2.3.7:tdewolff_minify/vendor/github.com/tdewolff/minify/v2 \
-		tdewolff:parse:v2.3.5:tdewolff_parse/vendor/github.com/tdewolff/parse/v2 \
+		tdewolff:minify:v2.5.2:tdewolff_minify/vendor/github.com/tdewolff/minify/v2 \
+		tdewolff:parse:v2.3.9:tdewolff_parse/vendor/github.com/tdewolff/parse/v2 \
 		wellington:go-libsass:c63644206701:wellington_go_libsass/vendor/github.com/wellington/go-libsass \
 		yosssi:ace:v0.0.5:yosssi_ace/vendor/github.com/yosssi/ace
 
@@ -128,7 +128,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=	4aac02d49c2e2bab9f36f0caabbbd9f3cb4715cd
+COMMIT_ID=		1dd0c69c7b18c3e504411a2fb4f1055be2532aeb
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
