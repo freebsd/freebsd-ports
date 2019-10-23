@@ -93,6 +93,7 @@
 %%DATABASE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.pipelimit
 %%DATABASE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.prefix_route
 %%DATABASE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.registrar
+%%DATABASE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.secfilter
 %%DATABASE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.sipcapture
 %%DATABASE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.siptrace
 %%DATABASE%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.speeddial
@@ -131,6 +132,7 @@
 %%DATABASE%%lib/kamailio/modules/pipelimit.so
 %%DATABASE%%lib/kamailio/modules/prefix_route.so
 %%DATABASE%%lib/kamailio/modules/registrar.so
+%%DATABASE%%lib/kamailio/modules/secfilter.so
 %%DATABASE%%lib/kamailio/modules/sipcapture.so
 %%DATABASE%%lib/kamailio/modules/siptrace.so
 %%DATABASE%%lib/kamailio/modules/speeddial.so
@@ -141,6 +143,8 @@
 %%DATABASE%%lib/kamailio/modules/usrloc.so
 %%DIALPLAN%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.dialplan
 %%DIALPLAN%%lib/kamailio/modules/dialplan.so
+%%KEMIX%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.kemix
+%%KEMIX%%lib/kamailio/modules/kemix.so
 %%LUAJIT%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.app_lua
 %%LUAJIT%%lib/kamailio/modules/app_lua.so
 %%MYSQL%%%%DATADIR%%/mysql/acc-create.sql
@@ -158,7 +162,7 @@
 %%MYSQL%%%%DATADIR%%/mysql/group-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/htable-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/imc-create.sql
-%%MYSQL%%%%DATADIR%%/mysql/ims_charging_create.sql
+%%MYSQL%%%%DATADIR%%/mysql/ims_charging-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/ims_dialog-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/ims_usrloc_pcscf-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/ims_usrloc_scscf-create.sql
@@ -177,6 +181,7 @@
 %%MYSQL%%%%DATADIR%%/mysql/rtpengine-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/rtpproxy-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/sca-create.sql
+%%MYSQL%%%%DATADIR%%/mysql/secfilter-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/siptrace-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/speeddial-create.sql
 %%MYSQL%%%%DATADIR%%/mysql/standard-create.sql
@@ -246,6 +251,7 @@
 %%PGSQL%%%%DATADIR%%/postgres/rtpengine-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/rtpproxy-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/sca-create.sql
+%%PGSQL%%%%DATADIR%%/postgres/secfilter-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/siptrace-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/speeddial-create.sql
 %%PGSQL%%%%DATADIR%%/postgres/standard-create.sql
@@ -348,6 +354,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.tsilo
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.uac_redirect
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xhttp
+%%PORTDOCS%%%%DOCSDIR%%/modules/README.xhttp_prom
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xhttp_rpc
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xlog
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.xprint
@@ -401,6 +408,7 @@
 %%TLS%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.tls
 %%TLS%%@sample %%ETCDIR%%/tls.cfg.sample
 %%TLS%%lib/kamailio/modules/tls.so
+%%TLS%%lib/kamailio/openssl_mutex_shared/openssl_mutex_shared.so
 %%UNIXODBC%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.db_unixodbc
 %%UNIXODBC%%lib/kamailio/modules/db_unixodbc.so
 %%WEBSOCKET%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.websocket
@@ -504,6 +512,7 @@ lib/kamailio/modules/topos.so
 lib/kamailio/modules/tsilo.so
 lib/kamailio/modules/uac_redirect.so
 lib/kamailio/modules/xhttp.so
+lib/kamailio/modules/xhttp_prom.so
 lib/kamailio/modules/xhttp_rpc.so
 lib/kamailio/modules/xlog.so
 lib/kamailio/modules/xprint.so
