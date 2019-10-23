@@ -5,4 +5,4 @@ directories and files that don't exist that should be there (you can
 even create a queue from scratch).  It will also print warnings for
 any files it finds that should not exist.
 
-WWW: http://www.qmail.org/
+WWW: https://cr.yp.to/qmail.html
