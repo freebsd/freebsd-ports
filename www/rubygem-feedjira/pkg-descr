@@ -1,3 +1,3 @@
-A library designed to retrieve and parse feeds as quickly as possible
+Feedjira (formerly Feedzirra) is a Ruby gem for fetching and parsing RSS feeds.
 
-WWW: http://feedjira.com
+WWW: http://feedjira.com/
