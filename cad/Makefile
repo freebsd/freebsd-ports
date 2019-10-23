@@ -66,6 +66,7 @@
     SUBDIR += meshdev
     SUBDIR += netgen
     SUBDIR += ngspice_rework
+    SUBDIR += nvc
     SUBDIR += opencascade
     SUBDIR += openscad
     SUBDIR += openscad-devel

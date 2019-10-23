@@ -1,0 +1,5 @@
+NVC is a GPLv3 VHDL compiler and simulator aiming for IEEE 1076-2002 compliance.
+See these blog posts for background information. NVC has been successfully used
+to simulate several real-world designs.
+
+WWW: https://github.com/nickg/nvc
