@@ -22,14 +22,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
 
-LICENSE=	NVIDIA
-LICENSE_NAME=	License For Customer Use of NVIDIA Software
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
-LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+.include "${.CURDIR}/../nvidia-driver/Makefile.common"
 
-ONLY_FOR_ARCHS=	i386 amd64
-
-ARCH_SUFX=	x86${ARCH:S/i386//:S/amd/_/}
 USES=		kmod uidfix
 USE_XORG=	x11 xorg-server xext
 USE_GL=		gl
@@ -54,18 +49,6 @@ SUB_PATCHES=	extra-patch-src-Makefile \
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
 PORTDOCS=	*
-
-# NVVERSION is float since r372065 (integer values become less readable
-# after minor version could occupy three digits)
-.if ${DISTVERSION:C/[0-9]+//g} == ".."		# major.minor.update
-NVVERSION=	${DISTVERSION:S/./.0/:R}${DISTVERSION:E}
-.else						# major.minor
-.  if ${DISTVERSION:E} < 100
-NVVERSION=	${DISTVERSION:S/./.0/}		# allow minor > 99
-.  else
-NVVERSION=	${DISTVERSION}
-.  endif
-.endif
 
 .if ${NVVERSION} >= 331.013
 SUB_LIST+=	NVGL=""
@@ -629,18 +612,5 @@ post-install-LINUX-on:
 		${STAGEDIR}${LINUXBASE}/usr/lib/${t}
 .endfor
 .endif
-
-# Target below can be used instead of standard `makesum' to correctly
-# update distinfo (i.e., keeping other driver version entries intact)
-.if ${.TARGETS:Mupdate-distinfo}
-DISTINFO_FILE=	${MASTERDIR}/distinfo.new
-.endif
-
-update-distinfo: makesum .SILENT
-	${REINPLACE_CMD} -e '/${ARCH_SUFX}-${NVVERSION:R}/s/^/~/' \
-		${MASTERDIR}/distinfo
-	${REINPLACE_CMD} -e '/^~SHA256/r ${DISTINFO_FILE}' -e '/^~/d' \
-		${MASTERDIR}/distinfo
-	${RM} ${DISTINFO_FILE} ${MASTERDIR}/distinfo.bak
 
 .include <bsd.port.post.mk>
