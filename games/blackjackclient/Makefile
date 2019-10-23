@@ -10,11 +10,13 @@ DISTNAME=	t-blackjack-beta
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Simple Blackjack game in Java
 
+LICENSE=	GPLv2
+
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 PLIST_FILES=	bin/${PORTNAME} \
-		%%JAVAJARDIR%%/${PORTNAME}.jar
+		${JAVAJARDIR}/${PORTNAME}.jar
 SUB_FILES=	${PORTNAME}.sh
 
 post-extract-script:
