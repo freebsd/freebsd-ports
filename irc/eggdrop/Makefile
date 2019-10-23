@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.bz2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
 
 LICENSE=	GPLv2
