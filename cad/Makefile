@@ -30,6 +30,7 @@
     SUBDIR += gdsreader
     SUBDIR += gdt
     SUBDIR += geda
+    SUBDIR += ghdl
     SUBDIR += gmsh
     SUBDIR += gnucap
     SUBDIR += gplcver
