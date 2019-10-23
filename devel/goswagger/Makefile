@@ -2,7 +2,7 @@
 
 PORTNAME=	goswagger
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.1
+DISTVERSION=	0.21.0
 CATEGORIES=	devel
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -26,28 +26,28 @@ GH_TUPLE=	\
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		go-openapi:analysis:v0.19.4:go_openapi_analysis/vendor/github.com/go-openapi/analysis \
+		go-openapi:analysis:v0.19.5:go_openapi_analysis/vendor/github.com/go-openapi/analysis \
 		go-openapi:errors:v0.19.2:go_openapi_errors/vendor/github.com/go-openapi/errors \
 		go-openapi:inflect:v0.19.0:go_openapi_inflect/vendor/github.com/go-openapi/inflect \
-		go-openapi:jsonpointer:v0.19.2:go_openapi_jsonpointer/vendor/github.com/go-openapi/jsonpointer \
+		go-openapi:jsonpointer:v0.19.3:go_openapi_jsonpointer/vendor/github.com/go-openapi/jsonpointer \
 		go-openapi:jsonreference:v0.19.2:go_openapi_jsonreference/vendor/github.com/go-openapi/jsonreference \
-		go-openapi:loads:v0.19.2:go_openapi_loads/vendor/github.com/go-openapi/loads \
-		go-openapi:runtime:v0.19.4:go_openapi_runtime/vendor/github.com/go-openapi/runtime \
-		go-openapi:spec:v0.19.2:go_openapi_spec/vendor/github.com/go-openapi/spec \
-		go-openapi:strfmt:v0.19.2:go_openapi_strfmt/vendor/github.com/go-openapi/strfmt \
+		go-openapi:loads:v0.19.3:go_openapi_loads/vendor/github.com/go-openapi/loads \
+		go-openapi:runtime:v0.19.5:go_openapi_runtime/vendor/github.com/go-openapi/runtime \
+		go-openapi:spec:v0.19.3:go_openapi_spec/vendor/github.com/go-openapi/spec \
+		go-openapi:strfmt:v0.19.3:go_openapi_strfmt/vendor/github.com/go-openapi/strfmt \
 		go-openapi:swag:v0.19.5:go_openapi_swag/vendor/github.com/go-openapi/swag \
-		go-openapi:validate:v0.19.2:go_openapi_validate/vendor/github.com/go-openapi/validate \
+		go-openapi:validate:v0.19.3:go_openapi_validate/vendor/github.com/go-openapi/validate \
 		go-stack:stack:v1.8.0:go_stack_stack/vendor/github.com/go-stack/stack \
 		go-swagger:scan-repo-boundary:973b3573c013:go_swagger_scan_repo_boundary/vendor/github.com/go-swagger/scan-repo-boundary \
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:appengine:v1.6.1:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:4def268fd1a4:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:74dc4d7220e7:golang_net/vendor/golang.org/x/net \
+		golang:appengine:v1.6.2:golang_appengine/vendor/google.golang.org/appengine \
+		golang:crypto:71b5226ff739:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:ba9fcec4b297:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:fde4db37ae7a:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:d223b2b6db03:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		golang:tools:85edb9ef3283:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:2ca718005c18:golang_tools/vendor/golang.org/x/tools \
 		gorilla:handlers:v1.4.2:gorilla_handlers/vendor/github.com/gorilla/handlers \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		jessevdk:go-flags:v1.4.0:jessevdk_go_flags/vendor/github.com/jessevdk/go-flags \
@@ -56,7 +56,7 @@ GH_TUPLE=	\
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mailru:easyjson:b2ccc519800e:mailru_easyjson/vendor/github.com/mailru/easyjson \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		mongodb:mongo-go-driver:v1.1.0:mongodb_mongo_go_driver/vendor/go.mongodb.org/mongo-driver \
+		mongodb:mongo-go-driver:v1.1.1:mongodb_mongo_go_driver/vendor/go.mongodb.org/mongo-driver \
 		pelletier:go-toml:v1.4.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
