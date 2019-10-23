@@ -155,10 +155,14 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/mosaic/ui.qml
 %%DATADIR%%/qml/filters/movit_diffusion/meta.qml
 %%DATADIR%%/qml/filters/movit_diffusion/ui.qml
+%%DATADIR%%/qml/filters/nervous/meta.qml
+%%DATADIR%%/qml/filters/nervous/ui.qml
 %%DATADIR%%/qml/filters/noise_fast/meta.qml
 %%DATADIR%%/qml/filters/noise_fast/ui.qml
 %%DATADIR%%/qml/filters/noise_keyframes/meta.qml
 %%DATADIR%%/qml/filters/noise_keyframes/ui.qml
+%%DATADIR%%/qml/filters/nosync/meta.qml
+%%DATADIR%%/qml/filters/nosync/ui.qml
 %%DATADIR%%/qml/filters/oldfilm/meta.qml
 %%DATADIR%%/qml/filters/oldfilm/ui.qml
 %%DATADIR%%/qml/filters/opacity/meta.qml
@@ -212,8 +216,12 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/timer/meta.qml
 %%DATADIR%%/qml/filters/timer/ui.qml
 %%DATADIR%%/qml/filters/timer/vui.qml
+%%DATADIR%%/qml/filters/trails/meta.qml
+%%DATADIR%%/qml/filters/trails/ui.qml
 %%DATADIR%%/qml/filters/unpremultiply/meta.qml
 %%DATADIR%%/qml/filters/unpremultiply/ui.qml
+%%DATADIR%%/qml/filters/vertigo/meta.qml
+%%DATADIR%%/qml/filters/vertigo/ui.qml
 %%DATADIR%%/qml/filters/vignette/meta_movit.qml
 %%DATADIR%%/qml/filters/vignette/meta_oldfilm.qml
 %%DATADIR%%/qml/filters/vignette/ui_movit.qml
@@ -235,6 +243,9 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Simple Scroll/simple_scroll.html
 %%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Simple Scroll/simple_scroll_ui.qml
 %%DATADIR%%/qml/filters/webvfx/ui.qml
+%%DATADIR%%/qml/filters/webvfx_choppy/choppy.html
+%%DATADIR%%/qml/filters/webvfx_choppy/meta.qml
+%%DATADIR%%/qml/filters/webvfx_choppy/ui.qml
 %%DATADIR%%/qml/filters/webvfx_circular_frame/filter-demo.html
 %%DATADIR%%/qml/filters/webvfx_circular_frame/meta.qml
 %%DATADIR%%/qml/filters/webvfx_circular_frame/ui.qml
@@ -269,6 +280,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/white/meta_frei0r.qml
 %%DATADIR%%/qml/filters/white/meta_movit.qml
 %%DATADIR%%/qml/filters/white/ui.qml
+%%DATADIR%%/translations/shotcut_th.qm
 %%DATADIR%%/qml/htmleditor/text_outline.qml
 %%DATADIR%%/qml/htmleditor/text_shadow.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/ColorPicker.qml
