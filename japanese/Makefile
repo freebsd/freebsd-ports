@@ -286,7 +286,6 @@
     SUBDIR += xshodou
     SUBDIR += xtr
     SUBDIR += xv
-    SUBDIR += yasou-fpw
     SUBDIR += yc.el
     SUBDIR += zinnia
     SUBDIR += zinnia-tomoe
