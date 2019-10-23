@@ -1,27 +1,27 @@
 # $FreeBSD$
 
 PORTNAME=	Andika
-PORTVERSION=	5.000
-PORTREVISION=	2
+DISTVERSION=	5.000
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=${MEDIA_ID}&filename=/
+MASTER_SITES=	https://software.sil.org/downloads/r/andika/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Andika TrueType fonts
 
 LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/OFL.txt
 
-USES=		fonts
+USES=		fonts zip
 
-MEDIA_ID=	${PORTNAME}-${PORTVERSION}.zip
+NO_ARCH=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:S,.orig,,:S,_,-,}
 
 PLIST_FILES=	${FONTSDIR}/Andika-R.ttf
 
 SUB_FILES=	pkg-message
 
-DOCSLIST=	FONTLOG.txt OFL-FAQ.txt README.txt
+DOCSLIST=	FONTLOG.txt OFL-FAQ.txt README.txt documentation/Andika-features.odt documentation/Andika-features.pdf documentation/DOCUMENTATION.txt
 PORTDOCS=	${DOCSLIST:C,^.*/,,}
 
 OPTIONS_DEFINE=	DOCS
