@@ -77,6 +77,7 @@
     SUBDIR += ccxstream
     SUBDIR += ceph12
     SUBDIR += ceph13
+    SUBDIR += ceph14
     SUBDIR += cf
     SUBDIR += charm
     SUBDIR += chrony
