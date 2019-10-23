@@ -15,16 +15,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Swordfish90
 GH_PROJECT=	qmltermwidget:qtw
 GH_TAGNAME=	0.2.0:qtw
+GH_SUBDIR=	${GH_PROJECT}
 
 USES=		compiler:c++11-lang gl gmake qmake qt:5
 USE_GL=		gl
 USE_QT=		qmake_build buildtools_build core declarative gui \
 		network sql widgets graphicaleffects_run \
 		quickcontrols_run sql-sqlite3_run
-
-post-extract:
-	@${RMDIR} ${WRKSRC}/qmltermwidget
-	@${LN} -s ../qmltermwidget-${GH_TAGNAME_qtw} ${WRKSRC}/qmltermwidget
 
 post-patch:
 	@${REINPLACE_CMD} -e '/DEFINES +=/s,^macx:,,' \
