@@ -1,0 +1,34 @@
+--- configure.orig	2019-10-21 19:07:51 UTC
++++ configure
+@@ -114,8 +114,6 @@ for opt do
+     --enable-coverage)      build_mode="coverage";;
+     -h|-help|--help)        show_help=yes;;
+     *)
+-      echo "$0: unknown option $opt; try $0 --help"
+-      exit 1
+       ;;
+   esac
+ done
+@@ -164,10 +162,10 @@ if ! grep $pat $srcdir/configure > /dev/null 2>&1; the
+   exit 1
+ fi
+ 
+-if ! `cmp --help > /dev/null 2>&1`; then
+-  echo "Sorry, you need 'cmp' to configure GHDL.";
+-  exit 1
+-fi
++#if ! `cmp --help > /dev/null 2>&1`; then
++#  echo "Sorry, you need 'cmp' to configure GHDL.";
++#  exit 1
++#fi
+ 
+ if ! cmp $srcdir/configure $abs_srcdir/configure > /dev/null 2>&1; then
+   echo "Cannot compute absolute source dir (or incorrect srcdir)"
+@@ -368,6 +366,7 @@ if test $backend = mcode; then
+     *darwin*) ortho_flags="Flags_Macosx${mcode64}" ;;
+     *mingw32*) ortho_flags="Flags_Windows${mcode64}" ;;
+     *linux*) ortho_flags="Flags_Linux${mcode64}" ;;
++    *freebsd*) ortho_flags="Flags_Linux${mcode64}" ;;
+     *) echo "Unsupported $build build for mcode"; exit 1;;
+   esac
+   echo "Generate ortho_code-x86-flags.ads"
