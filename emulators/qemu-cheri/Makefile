@@ -25,7 +25,7 @@ GH_TAGNAME=	${QEMU_COMMIT}
 GH_TUPLE=	qemu:keycodemapdb:6b3d716:qemu/ui/keycodemapdb
 
 HAS_CONFIGURE=	yes
-USES=	gettext-runtime gl gmake gnome libtool makeinfo pkgconfig \
+USES=	compiler:c11 gettext-runtime gl gmake gnome libtool makeinfo pkgconfig \
 	python:2.7,build xorg
 USE_XORG=	pixman
 USE_GNOME+=	glib20 libxml2
