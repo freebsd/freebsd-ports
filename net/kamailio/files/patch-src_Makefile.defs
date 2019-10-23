@@ -1,6 +1,6 @@
---- src/Makefile.defs.orig	2019-08-14 09:43:03 UTC
+--- src/Makefile.defs.orig	2019-10-17 11:30:50 UTC
 +++ src/Makefile.defs
-@@ -208,7 +208,7 @@ YACC := $(shell echo "$${YACC}")
+@@ -245,7 +245,7 @@ YACC := $(shell echo "$${YACC}")
  
  # find compiler name & version
  ifeq ($(CC),)
@@ -9,7 +9,7 @@
  endif
  LD= $(CC)
  CC_LONGVER:=$(shell if  $(CC) -v 2>/dev/null; then \
-@@ -222,7 +222,7 @@ MKTAGS=ctags
+@@ -259,7 +259,7 @@ MKTAGS=ctags
  #find-out the compiler's name
  
  ifneq (,$(findstring gcc, $(CC_LONGVER)))
@@ -18,7 +18,7 @@
  	RPAREN=)
  	CC_VER:=$(word 1,$(CC)) $(shell $(CC) - --version|head -n 1|\
  				sed  -e 's/([^$(RPAREN)]*)//g' \
-@@ -392,7 +392,7 @@ LIBDIR ?=
+@@ -444,7 +444,7 @@ LIBDIR ?=
  ifeq ($(LIBDIR),)
  ARCHBSZ= $(shell echo $(ARCH) | sed -e 's/.*64.*/64b/')
  ifeq ($(ARCHBSZ),64b)
@@ -27,7 +27,7 @@
  else
  	LIBDIR = lib
  endif
-@@ -1736,7 +1736,7 @@ ifeq ($(YACC),)
+@@ -1818,7 +1818,7 @@ ifeq ($(YACC),)
  endif
  YACC_FLAGS=-d -b core/cfg
  # on solaris add -lxnet (e.g. LIBS= -lxnet)
