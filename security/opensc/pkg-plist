@@ -4,6 +4,7 @@ bin/dnie-tool
 bin/egk-tool
 bin/eidenv
 bin/gids-tool
+bin/goid-tool
 bin/iasecc-tool
 bin/netkey-tool
 bin/npa-tool
@@ -13,6 +14,7 @@ bin/opensc-explorer
 bin/opensc-notify
 bin/opensc-tool
 bin/piv-tool
+bin/pkcs11-register
 bin/pkcs11-tool
 bin/pkcs15-crypt
 bin/pkcs15-init
@@ -41,6 +43,7 @@ etc/bash_completion.d/pkcs15-tool
 etc/bash_completion.d/sc-hsm-tool
 etc/bash_completion.d/westcos-tool
 @sample etc/opensc.conf.sample
+etc/xdg/autostart/pkcs11-register.desktop
 lib/libopensc.a
 lib/libopensc.so
 lib/libopensc.so.6
@@ -83,6 +86,7 @@ share/applications/org.opensc.notify.desktop
 %%DATADIR%%/pkcs15.profile
 %%DATADIR%%/rutoken.profile
 %%DATADIR%%/rutoken_ecp.profile
+%%DATADIR%%/rutoken_lite.profile
 %%DATADIR%%/sc-hsm.profile
 %%DATADIR%%/setcos.profile
 %%DATADIR%%/starcos.profile
