@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-simpledb
-PORTVERSION=	1.15.0
+PORTVERSION=	1.16.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Official AWS Ruby gem for Amazon SimpleDB
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-aws-sdk-core>=3.61.1<4:devel/rubygem-aws-sdk-core \
+RUN_DEPENDS=	rubygem-aws-sdk-core>=3.71.0<4:devel/rubygem-aws-sdk-core \
 		rubygem-aws-sigv2>=1.0<2:devel/rubygem-aws-sigv2
 
 USES=		gem
