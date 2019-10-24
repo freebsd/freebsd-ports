@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lzbench
-PORTVERSION=	1.7.3
-PORTREVISION=	3
+PORTVERSION=	1.7.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks
 
@@ -14,10 +13,8 @@ USES=		compiler:c11 gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	inikep
 
-MAKE_ENV=	CODE_FLAGS=-Wno-c++11-narrowing		# XXX: for clang 6
-
 PLIST_FILES=	bin/lzbench
-PORTDOCS=	NEWS
+PORTDOCS=	NEWS README.md
 
 OPTIONS_DEFINE=	DOCS
 
