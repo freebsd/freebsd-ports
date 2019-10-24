@@ -780,6 +780,7 @@ lib/python2.7/distutils/tests/Setup.sample
 lib/python2.7/distutils/tests/__init__.py
 lib/python2.7/distutils/tests/__init__.pyc
 lib/python2.7/distutils/tests/__init__.pyo
+lib/python2.7/distutils/tests/includetest.rst
 lib/python2.7/distutils/tests/setuptools_build_ext.py
 lib/python2.7/distutils/tests/setuptools_build_ext.pyc
 lib/python2.7/distutils/tests/setuptools_build_ext.pyo
@@ -1436,8 +1437,8 @@ lib/python2.7/ensurepip/__init__.pyo
 lib/python2.7/ensurepip/__main__.py
 lib/python2.7/ensurepip/__main__.pyc
 lib/python2.7/ensurepip/__main__.pyo
-lib/python2.7/ensurepip/_bundled/pip-18.1-py2.py3-none-any.whl
-lib/python2.7/ensurepip/_bundled/setuptools-40.6.2-py2.py3-none-any.whl
+lib/python2.7/ensurepip/_bundled/pip-19.2.3-py2.py3-none-any.whl
+lib/python2.7/ensurepip/_bundled/setuptools-41.2.0-py2.py3-none-any.whl
 lib/python2.7/ensurepip/_uninstall.py
 lib/python2.7/ensurepip/_uninstall.pyc
 lib/python2.7/ensurepip/_uninstall.pyo
@@ -2738,6 +2739,7 @@ lib/python2.7/test/capath/5ed36f99.0
 lib/python2.7/test/capath/6e88d7b8.0
 lib/python2.7/test/capath/99d0fa06.0
 lib/python2.7/test/capath/ce7b8643.0
+lib/python2.7/test/capath/efa5f9c3.0
 lib/python2.7/test/cfgparser.1
 lib/python2.7/test/cjkencodings/big5-utf8.txt
 lib/python2.7/test/cjkencodings/big5.txt
