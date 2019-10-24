@@ -410,6 +410,7 @@
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-fenv
     SUBDIR += octave-forge-financial
+    SUBDIR += octave-forge-fits
     SUBDIR += octave-forge-fpl
     SUBDIR += octave-forge-fuzzy-logic-toolkit
     SUBDIR += octave-forge-ga
