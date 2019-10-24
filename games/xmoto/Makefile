@@ -23,10 +23,12 @@ LIB_DEPENDS=	libode.so:devel/ode \
 BROKEN_powerpc64=	fails to compile: hashtable.h: no match for call to __gnu_cxx::hash
 
 GNU_CONFIGURE=	yes
-USES=		compiler:features dos2unix gmake jpeg localbase lua:51 sqlite
+USES=		compiler:features dos2unix gl gmake gnome jpeg localbase lua:51 sdl sqlite xorg
 USE_GNOME=	libxml2
 USE_SDL=	sdl mixer ttf net
 USE_GL=		gl glu
+USE_CXXSTD=	c++11
+USE_XORG=	x11
 DOS2UNIX_GLOB=	*.cpp *.h
 
 CPPFLAGS+=	-isystem${LUA_INCDIR}
