@@ -7,22 +7,16 @@ PORTREVISION=	21
 CATEGORIES=	games
 MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
-PATCH_SITES=	https://gitlab.com/${PORTNAME}/${PORTNAME}/commit/ \
-		https://mirror.amdmi3.ru/distfiles/
-PATCHFILES=	fef8cf6512fa.patch:-p1
-
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free Lemmings-like game
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		checksum mismatch
-
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/signals2.hpp:devel/boost-libs
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler:c++11-lib gl iconv scons tar:bzip2
+USES=		compiler:c++11-lib gl iconv scons sdl tar:bzip2 xorg
 USE_GL=		gl
 USE_SDL=	sdl image mixer
 LIBS+=		${ICONV_LIB}
