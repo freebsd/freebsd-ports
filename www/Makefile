@@ -120,6 +120,7 @@
     SUBDIR += e107
     SUBDIR += e2guardian
     SUBDIR += edbrowse
+    SUBDIR += eden
     SUBDIR += efront
     SUBDIR += elgg
     SUBDIR += elinks
