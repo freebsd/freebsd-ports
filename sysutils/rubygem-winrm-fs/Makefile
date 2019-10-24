@@ -11,14 +11,15 @@ COMMENT=	Library for file system operations via WinRM
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-erubis>=2.7:www/rubygem-erubis \
-		rubygem-logging>=1.6.1:devel/rubygem-logging \
-		rubygem-rubyzip>=1.1:archivers/rubygem-rubyzip \
-		rubygem-winrm>=1.5:sysutils/rubygem-winrm
+RUN_DEPENDS=	rubygem-erubis>=2.7<3:www/rubygem-erubis \
+		rubygem-logging>=1.6.1<3.0:devel/rubygem-logging \
+		rubygem-rubyzip>=1.1<2:archivers/rubygem-rubyzip \
+		rubygem-winrm>=2.0<3:sysutils/rubygem-winrm
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/rwinrmcp
 
