@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	12.3.3
+PORTVERSION=	12.4.0
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -15,10 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # the rubygems of RUN_DEPENDS matches the order of the Gemfile
 # which makes maintaining this long list much easier!
 MY_DEPENDS=	git>=2.21.0:devel/git \
-	gitlab-shell>=10.0.0:devel/gitlab-shell \
-	gitlab-workhorse>=8.10.0:www/gitlab-workhorse \
-	gitaly>=1.65.0:devel/gitaly \
-	gitlab-pages>=1.9.0:www/gitlab-pages \
+	gitlab-shell>=10.2.0:devel/gitlab-shell \
+	gitlab-workhorse>=8.14.0:www/gitlab-workhorse \
+	gitaly>=1.67.0:devel/gitaly \
+	gitlab-pages>=1.11.0:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
 	yarn>=1.10.0:www/yarn \
 	rubygem-rails52>=5.2.3:www/rubygem-rails52 \
@@ -109,7 +109,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-asciidoctor>=2.0.10<2.1.0:textproc/rubygem-asciidoctor \
 	rubygem-asciidoctor-include-ext>=0.3.1<0.4.0:textproc/rubygem-asciidoctor-include-ext \
 	rubygem-asciidoctor-plantuml=0.0.9.:textproc/rubygem-asciidoctor-plantuml \
-	rubygem-rouge>=3.7<4.0:textproc/rubygem-rouge \
+	rubygem-rouge>=3.11.0<3.13:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.11<0.8.0:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=4.2.0<4.3.0:devel/rubygem-bootstrap_form \
 	rubygem-nokogiri>=1.10.4<1.11.0:textproc/rubygem-nokogiri \
@@ -206,7 +206,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-sshkey>=2.0<3.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2<2.0:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0<2.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly>=1.58.0<1.59.0:net/rubygem-gitaly \
+	rubygem-gitaly>=1.65.0<1.66:net/rubygem-gitaly \
 	rubygem-grpc>=1.19.0<1.20.0:net/rubygem-grpc \
 	rubygem-google-protobuf371>=3.7.1<3.8.0:devel/rubygem-google-protobuf371 \
 	rubygem-toml-rb10>=1.0.0<1.1.0:www/rubygem-toml-rb10 \
@@ -216,7 +216,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-unleash>=0.1.5<0.2.0:devel/rubygem-unleash \
 	rubygem-lograge-rails52>=0.5<1.0:www/rubygem-lograge-rails52 \
 	rubygem-grape_logging>=1.7<2.0:devel/rubygem-grape_logging \
-	rubygem-net-dns>=0.9.0<0.10.0:dns/rubygem-net-dns \
+	rubygem-gitlab-net-dns>=0.9.1<0.10:dns/rubygem-gitlab-net-dns \
 	rubygem-countries>=3.0.0<4.0.0:devel/rubygem-countries
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
@@ -237,12 +237,11 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	ab531f31825d8d5aedce12d9975ecaa3e2720417
+GL_COMMIT=	1425a56c75beecaa289ad59587d636f8f469509e
 
 USERS=	git
 GROUPS=	git
 
-NO_ARCH=	yes
 NO_BUILD=	yes
 
 post-patch:
