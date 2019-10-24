@@ -12,7 +12,7 @@ COMMENT=	Open source neural networks in C
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+USES=		compiler:c11 gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pjreddie
 GH_TAGNAME=	61c9d02
