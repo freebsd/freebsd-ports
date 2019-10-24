@@ -1,4 +1,6 @@
 BSVC is an extensible simulator framework for microprocessor
 design and testing.  It comes with a simulator and assembler
-for the Motorola MC68k family of microprocessors, and supplies
-a graphical user interface for simulation runs.
+for the Motorola MC68k family of microprocessors, and provides
+a graphical user interface.
+
+WWW: https://github.com/BSVC/bsvc
