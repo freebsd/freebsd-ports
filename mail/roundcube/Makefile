@@ -46,15 +46,12 @@ GD_VARS=	use_php+=gd
 LDAP_VARS=	use_php+=ldap
 MYSQL_VARS=	use_php+=pdo_mysql
 NSC_IMPLIES=	PSPELL
-NSC_VARS=	use_php+=simplexml rcubecomp+=spellchecker.php
+NSC_VARS=	use_php+=simplexml
 PGSQL_VARS=	use_php+=pdo_pgsql
 PSPELL_VARS=	use_php+=pspell
 SQLITE_VARS=	use_php+=pdo_sqlite
 
 SUB_FILES=	newsyslog.conf
-
-post-extract-NSC-on:
-	@${CP} ${FILESDIR}/spellchecker.php ${WRKSRC}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -type f -delete
@@ -71,6 +68,10 @@ do-install:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} '@postexec chown ${WWWOWN}:${WWWGRP} %D/${WWWDIR_REL}/temp' \
 		>> ${TMPPLIST}
+
+do-install-NSC-on:
+	@${INSTALL_DATA} ${FILESDIR}/spellchecker.php ${STAGEDIR}${WWWDIR}
+	@${ECHO_CMD} '${WWWDIR_REL}/spellchecker.php' >> ${TMPPLIST}
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
