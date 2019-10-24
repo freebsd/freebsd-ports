@@ -3,12 +3,9 @@
 
 PORTNAME=	shadowsocks-libev
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.3
-PORTREVISION=	7
+DISTVERSION=	3.3.2
+PORTREVISION=	0
 CATEGORIES=	net
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	662b6db3f3c395b552fa16f7fb22558aa38fe6aa.patch:-p1 \
 
 MAINTAINER=	xiaoding+freebsd@xiaoding.org
 COMMENT=	Lightweight tunnel proxy which can help you get through firewalls
@@ -28,7 +25,7 @@ CONFIGURE_ARGS=	--enable-shared
 USE_GITHUB=	yes
 GH_ACCOUNT=	shadowsocks
 GH_TUPLE=	shadowsocks:libbloom:7a9deb8:libbloom/libbloom \
-		shadowsocks:libcork:0220aa5:libcork/libcork \
+		shadowsocks:libcork:074e074:libcork/libcork \
 		shadowsocks:ipset:3ea7fe3:libipset/libipset
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
@@ -41,10 +38,6 @@ DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 DOCS_CONFIGURE_OFF=	--disable-documentation
 
 USE_RC_SUBR=	shadowsocks_libev
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^#ifdef TCP_FASTOPEN|#if defined(TCP_FASTOPEN) \&\& defined(__linux)|' \
-		${WRKSRC}/src/local.c ${WRKSRC}/src/server.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
