@@ -17,8 +17,8 @@ LIB_DEPENDS=	libpulse-mainloop-glib.so:audio/pulseaudio \
 		libdbus-glib-1.so:devel/dbus-glib
 RUN_DEPENDS=	pavucontrol>=2.0:audio/pavucontrol
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
-		xfce xorg
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce xorg
 USE_GNOME=	cairo glib20 gtk30 intltool libwnck3
 USE_XFCE=	panel
 USE_XORG=	x11
