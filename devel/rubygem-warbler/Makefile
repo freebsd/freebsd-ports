@@ -14,13 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	jruby:lang/jruby \
 		rubygem-jruby-jars>=9.0.0.0:devel/rubygem-jruby-jars \
-		rubygem-jruby-rack>=1.1.1:www/rubygem-jruby-rack \
+		rubygem-jruby-rack>=1.1.1<1.3:www/rubygem-jruby-rack \
 		rubygem-rake>=10.1.0:devel/rubygem-rake \
-		rubygem-rubyzip>=1.0:archivers/rubygem-rubyzip
+		rubygem-rubyzip>=1.0<1.4:archivers/rubygem-rubyzip
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/warble
 
