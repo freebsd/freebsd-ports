@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-pages
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.0
 CATEGORIES=	www
 
 MAINTAINER=	swills@FreeBSD.org
@@ -17,12 +17,12 @@ USE_GITHUB=	nodefault
 
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-pages/tags
-GL_COMMIT=	77c1fd80fe2e7e6e25b038b720a47df7d7c7f374
+GL_COMMIT=	fa804e9f422cb1525324e917a4b318bea8596067
 
-GH_TUPLE=	kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
+# Build with: make gomod-vendor
+GH_TUPLE=	\
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		certifi:gocertifi:a5e0173ced67:certifi_gocertifi/vendor/github.com/certifi/gocertifi \
-		certifi:gocertifi:ee1a9a0726d2:certifi_gocertifi2/.GOPATH/pkg/mod/github.com/certifi/gocertifi@v0.0.0-20190905060710-a5e0173ced67 \
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		fzipp:gocyclo:6acd4345c835:fzipp_gocyclo/vendor/github.com/fzipp/gocyclo \
@@ -43,6 +43,7 @@ GH_TUPLE=	kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardian
 		grpc-ecosystem:go-grpc-middleware:v1.0.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:v1.2.0:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
 		grpc:grpc-go:v1.19.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
 		karrick:godirwalk:v1.10.12:karrick_godirwalk/vendor/github.com/karrick/godirwalk \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
@@ -58,8 +59,8 @@ GH_TUPLE=	kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardian
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		wadey:gocovmerge:b5bfa59ec0ad:wadey_gocovmerge/vendor/github.com/wadey/gocovmerge
-
-GL_TUPLE=	gitlab-org:gitaly:c013d9f144d1d288fed054d0541241b4c6d3bdcc:gitlab_org_gitaly/vendor/gitlab.com/gitlab-org/gitaly \
+GL_TUPLE=	\
+		gitlab-org:gitaly:c013d9f144d1d288fed054d0541241b4c6d3bdcc:gitlab_org_gitaly/vendor/gitlab.com/gitlab-org/gitaly \
 		gitlab-org:labkit:3253d7975ca73714779c0a1fc95a27fb678071b6:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit \
 		lupine:go-mimedb:e8af1d65987739a7ab277dedd9772c7398154ff3:lupine_go_mimedb/vendor/gitlab.com/lupine/go-mimedb
 
