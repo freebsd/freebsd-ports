@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	1.65.1
+DISTVERSION=	1.67.0
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -41,11 +41,11 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	11980609ad78842b5cf83899d1bb002bbbe9ba2d
+GL_COMMIT=	ca21a624582be7bcf4d43075be2a7e5981e191fa
 
 # for go dependencies
 USE_GITHUB=	nodefault
-# generated with gomod-deps below
+# generated with: make gomod-vendor
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
@@ -55,6 +55,7 @@ GH_TUPLE=	\
 		codahale:hdrhistogram:3a0bb77429bd:codahale_hdrhistogram/vendor/github.com/codahale/hdrhistogram \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		getsentry:raven-go:v0.1.2:getsentry_raven_go/vendor/github.com/getsentry/raven-go \
+		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:crypto:20be4c3c3ed5:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:d28f0bde5980:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
@@ -91,11 +92,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
 	${MV} ${WRKSRC}/config.toml.example ${WRKSRC}/config.toml.sample
 
-# Build the go deps, use `pkg install modules2tuple`
-gomod-deps: patch
-	(cd ${WRKSRC} && go mod vendor)
-	(cd ${WRKSRC} && modules2tuple vendor/modules.txt)
-
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}/bin
@@ -106,3 +102,4 @@ do-install:
 	cd ${WRKSRC}/ruby && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/ruby
 
 .include <bsd.port.mk>
+
