@@ -2,38 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	bsvc
-PORTVERSION=	2.1
-PORTREVISION=	3
-CATEGORIES=	emulators tk
-MASTER_SITES=	SUNSITE/system/emulators
-DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.4.6
+CATEGORIES=     emulators tk
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cross@gajendra.net
 COMMENT=	Extensible hardware simulation framework with MC68K support
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-MAKE_ENV=	PROJECT_BASE=${STAGEDIR}${PREFIX} WRKSRC=${WRKSRC} WISH=${WISH}
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
-USES=		tk
-MAKE_JOBS_UNSAFE=	yes
+USES=		tk gmake
 
-pre-patch:
-	@${CP} ${WRKSRC}/Makefile.Linux ${WRKSRC}/Makefile
+USE_GITHUB=	yes
+GH_ACCOUNT=	BSVC
+USE_CSTD=	c11
+USE_CXXSTD=	c++11
 
-post-patch:
-
-.for cfile in codegen.c listing.c object.c main.c
-	@${REINPLACE_CMD} -e 's|exit()|exit(1)|g' ${WRKSRC}/Assemblers/68kasm/${cfile}
-.endfor
-	@${REINPLACE_CMD} -e 's|^#endif.*$$|#endif|g' \
-		${WRKSRC}/Assemblers/68kasm/instlookup.c
-
-	@${FIND} ${WRKSRC} -name "*.[ch]xx" -exec \
-		${REINPLACE_CMD} -e \
-			's/iostream\.h/iostream/; \
-			 s/strstream\.h/strstream/; \
-			 s/fstream\.h/fstream/' \{\} \;
-	@${FIND} ${WRKSRC} -name Makefile -exec \
-		${REINPLACE_CMD} -e 's/make/${MAKE}/' \{\} \;
+WRKSRC_SUBDIR=	src
+MAKEFILE=	Makefile.BSD
+MAKE_ARGS+=	WISH=wish${TK_VER}
 
 .include <bsd.port.mk>
