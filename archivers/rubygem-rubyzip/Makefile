@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	rubyzip
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby module for reading and writing zip files
 
 LICENSE=	BSD2CLAUSE RUBY
