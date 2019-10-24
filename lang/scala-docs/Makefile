@@ -20,15 +20,11 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+DOCS_IGNORE_OFF=port only installs documentation
+
 WRKSRC=		${WRKDIR}/scala-${PORTVERSION}
 
 #PORTSCOUT=	limit:^2\.13\.
-
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDOCS}
-IGNORE=		port only installs documentation
-.endif
 
 do-install:
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
