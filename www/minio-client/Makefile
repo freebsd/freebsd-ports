@@ -26,8 +26,8 @@ MC=	${PORTNAME}
 .endif
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2019-10-02T19-41-02Z
-COMMIT_ID=	26b9044a8676a8c5ff79a6054343e5be74c35135
+GHTAG=		RELEASE.2019-10-09T22-54-57Z
+COMMIT_ID=	f93fe1330a3647b1afaff0ed8c188d2897bf391e
 GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		cheggaaa:pb:v1.0.28:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
 		coreos:etcd:v3.3.12:coreos_etcd/vendor/github.com/coreos/etcd \
