@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stackdriver-core
-PORTVERSION=	1.3.4
+PORTVERSION=	1.4.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
