@@ -94,8 +94,8 @@ GROUPS=		ceph
 
 .include <bsd.port.options.mk>
 
-# 12.0 RELEASE has clang60 and will give versioning errors
-.if ${OSVERSION} >= 1200000 && ${OSVERSION} < 1200099
+# 11.2 and 12.0 RELEASE has clang60 and will give versioning errors
+.if (${OSVERSION} < 1102507) || (${OSVERSION} >= 1200000 && ${OSVERSION} < 1200099)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang80:devel/llvm80
 CC=		clang80
 CXX=		clang++80
