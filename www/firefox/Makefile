@@ -14,14 +14,14 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.21:devel/nspr \
-		nss>=3.45:security/nss \
-		icu>=63.1,1:devel/icu \
+		nss>=3.46.1:security/nss \
+		icu>=64.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=2.6.1:print/harfbuzz \
 		graphite2>=1.3.13:graphics/graphite2 \
 		png>=1.6.35:graphics/png \
 		libvpx>=1.5.0:multimedia/libvpx \
-		sqlite3>=3.28.0:databases/sqlite3 \
+		sqlite3>=3.29.0:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
