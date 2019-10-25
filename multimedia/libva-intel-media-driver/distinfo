@@ -1,3 +1,5 @@
 TIMESTAMP = 1571323883
 SHA256 (intel-media-driver-intel-media-19.4.pre1_GH0.tar.gz) = 713517a69a493166d64d90b60aff2b905a181c5ecab4e290ef34a17a50a59032
 SIZE (intel-media-driver-intel-media-19.4.pre1_GH0.tar.gz) = 15739399
+SHA256 (4d247bea67d4.patch) = 9c6825ff935964adf84733f7f102968fbb82411924d3091a736e7058df14736c
+SIZE (4d247bea67d4.patch) = 2377
