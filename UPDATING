@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191025:
+  AFFECTS: users of x11/nvidia-driver (and slave ports)
+  AUTHOR: danfe@FreeBSD.org
+
+  x11/nvidia-driver* ports no longer install Linux programs and libraries,
+  which had been moved to their own ports (x11/linux-nvidia-libs*).  When
+  updating the driver package next time, remember to install them manually
+  if you need to run Linux OpenGL programs.
+
 20191016:
   AFFECTS: users of KDE Plasma Desktop (x11/plasma5*)
   AUTHOR: kde@FreeBSD.org
@@ -3638,7 +3647,7 @@ you update your ports collection, before attempting any port upgrades.
   # portupgrade -o www/node6 www/node
 
 20161202:
-  AFFECTS: Users of textproc/p5-Search-Elasticsearch
+  AFFECTS: users of textproc/p5-Search-Elasticsearch
   AUTHOR: tj@FreeBSD.org
 
   As of the 5.01 release of ths package, the client libraries for older
@@ -3647,7 +3656,7 @@ you update your ports collection, before attempting any port upgrades.
   the textproc/p5-Search-Elasticsearch-Client-* ports.
 
 20161126:
-  AFFECTS: Users of security/gpgme-*
+  AFFECTS: users of security/gpgme-*
   AUTHOR: jhale@FreeBSD.org
 
   Gpgme has been updated to 1.8.0.
@@ -3665,14 +3674,14 @@ you update your ports collection, before attempting any port upgrades.
       portupgrade -fr security/gpgme
 
 20161121:
-  AFFECTS: Users of graphics/tiff
+  AFFECTS: users of graphics/tiff
   AUTHOR: antoine@FreeBSD.org
 
   The tiff port was updated to 4.0.7.
   The following tools are removed from this release: bmp2tiff, gif2tiff, ras2tiff, rgb2ycbcr and thumbnail.
 
 20161116:
-  AFFECTS: Users of sysutils/bareos-*
+  AFFECTS: users of sysutils/bareos-*
   AUTHOR: rand@iteris.com
 
   Bareos v1.6.x changed the configuration scheme, from one configuration
@@ -3938,7 +3947,7 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -o lang/python35 lang/python34
 
 20161011:
-  AFFECTS: Users of net-im/ejabberd
+  AFFECTS: users of net-im/ejabberd
   AUTHOR: ashish@FreeBSD.org
 
   Before upgrading ejabberd to 16.09, please make sure to backup your
@@ -3957,7 +3966,7 @@ you update your ports collection, before attempting any port upgrades.
   https://github.com/processone/ejabberd/issues/1305
 
 20161005:
-  AFFECTS: Users of audio/squeezeboxserver (now audio/logitechmediaserver)
+  AFFECTS: users of audio/squeezeboxserver (now audio/logitechmediaserver)
   AUTHOR: woodsb02@FreeBSD.org
 
   With the rename of the audio/squeezeboxserver port to
