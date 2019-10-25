@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	eden
-DISTVERSION=	g20190924
+PORTVERSION=	0.7.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -14,7 +15,6 @@ USES=		go:modules
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	starkandwayne
-GH_TAGNAME=	6f84e1d
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
