@@ -1,6 +1,6 @@
---- src/lib/dhcpsrv/Makefile.am.orig	2019-09-07 13:00:43.923225000 -0500
-+++ src/lib/dhcpsrv/Makefile.am	2019-09-07 13:02:13.215945000 -0500
-@@ -4,7 +4,7 @@
+--- src/lib/dhcpsrv/Makefile.am.orig	2019-10-25 12:41:08 UTC
++++ src/lib/dhcpsrv/Makefile.am
+@@ -4,7 +4,7 @@ SUBDIRS = . testutils tests benchmarks
  
  # DATA_DIR is the directory where to put default CSV files and the DHCPv6
  # server ID file (i.e. the file where the server finds its DUID at startup).

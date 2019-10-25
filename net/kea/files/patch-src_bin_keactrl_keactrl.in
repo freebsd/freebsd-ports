@@ -1,0 +1,13 @@
+--- src/bin/keactrl/keactrl.in.orig	2019-10-19 21:50:45 UTC
++++ src/bin/keactrl/keactrl.in
+@@ -517,8 +517,8 @@ ${args}" 1
+ 
+     status)
+         if [ -t 1 ]; then
+-            inactive="\e[91minactive\e[0m"
+-            active="\e[92mactive\e[0m"
++            inactive="\033[91minactive\033[0m"
++            active="\033[92mactive\033[0m"
+         else
+             inactive="inactive"
+             active="active"

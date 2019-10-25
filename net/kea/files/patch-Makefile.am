@@ -1,6 +1,6 @@
---- Makefile.am.orig	2019-09-07 13:19:16.709194000 -0500
-+++ Makefile.am	2019-09-07 13:20:04.760926000 -0500
-@@ -154,7 +154,6 @@
+--- Makefile.am.orig	2019-10-25 12:41:08 UTC
++++ Makefile.am
+@@ -154,7 +154,6 @@ docs:
  # These steps are necessary during installation
  install-exec-hook:
  	mkdir -p $(DESTDIR)${localstatedir}/log/

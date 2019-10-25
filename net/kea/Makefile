@@ -2,7 +2,7 @@
 
 PORTNAME=	kea
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/-beta/b/:S/a/.a/:S/rc/.rc/}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/${ISCVERSION}
 DISTNAME=	${PORTNAME}-${ISCVERSION}
@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
 		libboost_system.so:devel/boost-libs
 
+USES=		autoreconf compiler:c++11-lang iconv libtool pathfix ssl cpe
+
 # ISC releases things like 1.4.0-P1, which our versioning doesn't like
 ISCVERSION=	1.6.0
 
@@ -25,7 +27,6 @@ CPE_VERSION=	${ISCVERSION:C/-.*//}
 CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 .endif
 
-USES=		autoreconf compiler:c++11-lang iconv libtool pathfix ssl cpe
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes

@@ -3,7 +3,7 @@
 #
 # PROVIDE: kea
 # REQUIRE: netif routing
-# KEYWORD: nojail
+# KEYWORD: nojail shutdown
 
 #
 # Add the following to /etc/rc.conf[.local] to enable this service
@@ -13,28 +13,20 @@
 
 . /etc/rc.subr
 
-name="kea"
-rcvar="${name}_enable"
-command="%%PREFIX%%/sbin/keactrl"
-required_files="%%PREFIX%%/etc/${name}/keactrl.conf"
-extra_commands="reload"
-start_precmd="kea_start_precmd"
-stop_cmd="kea_cmd stop"
-status_cmd="kea_cmd status"
-reload_cmd="kea_cmd reload"
-
-kea_start_precmd()
-{
-
-	command_args="start"
-}
-
-kea_cmd()
-{
-
-	$command $1
-}
+name=kea
+desc="Kea DHCP Server"
+rcvar=kea_enable
 
 load_rc_config $name
-: ${kea_enable="NO"}
+
+kea_enable=${kea_enable:-"NO"}
+
+command="%%PREFIX%%/sbin/keactrl"
+required_files="%%PREFIX%%/etc/${name}/keactrl.conf"
+extra_commands=reload
+start_precmd=command_args=start
+stop_cmd="$command stop"
+status_cmd="$command status"
+reload_cmd="$command reload"
+
 run_rc_command "$1"
