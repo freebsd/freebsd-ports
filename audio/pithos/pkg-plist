@@ -21,7 +21,6 @@ bin/pithos
 %%PYTHON_SITELIBDIR%%/pithos/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/pithos/plugins/auto_volume_normalization.py
 %%PYTHON_SITELIBDIR%%/pithos/plugins/dbus_util/DBusServiceObject.py
-%%PYTHON_SITELIBDIR%%/pithos/plugins/dbus_util/GioNotify.py
 %%PYTHON_SITELIBDIR%%/pithos/plugins/inhibit_screensaver.py
 %%PYTHON_SITELIBDIR%%/pithos/plugins/journald_logging.py
 %%PYTHON_SITELIBDIR%%/pithos/plugins/lastfm.py
@@ -32,7 +31,6 @@ bin/pithos
 %%PYTHON_SITELIBDIR%%/pithos/plugins/screensaver_pause.py
 %%PYTHON_SITELIBDIR%%/pithos/util.py
 man/man1/pithos.1.gz
-share/appdata/io.github.Pithos.appdata.xml
 share/applications/io.github.Pithos.desktop
 share/dbus-1/services/io.github.Pithos.service
 share/icons/hicolor/48x48/apps/io.github.Pithos-tray.png
@@ -41,4 +39,5 @@ share/icons/hicolor/scalable/apps/io.github.Pithos.svg
 share/icons/hicolor/symbolic/apps/io.github.Pithos-symbolic.svg
 share/icons/ubuntu-mono-dark/16x16/apps/io.github.Pithos-tray.svg
 share/icons/ubuntu-mono-light/16x16/apps/io.github.Pithos-tray.svg
+share/metainfo/io.github.Pithos.appdata.xml
 %%DATADIR%%/pithos.gresource
