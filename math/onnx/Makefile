@@ -2,7 +2,7 @@
 
 PORTNAME=	onnx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0
+DISTVERSION=	1.6.0.20191021
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +15,8 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USES=		cmake compiler:c++11-lang python:build
 USE_GITHUB=	yes
+GH_TAGNAME=	3ea3b0e0 # repo is mislabeled: https://github.com/onnx/onnx/issues/2420
+USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
