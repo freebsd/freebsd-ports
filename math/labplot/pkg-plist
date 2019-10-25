@@ -1,6 +1,7 @@
 bin/labplot2
 etc/xdg/labplot2_themes.knsrc
 man/man1/labplot2.1.gz
+man/es/man1/labplot2.1.gz
 man/nl/man1/labplot2.1.gz
 man/sv/man1/labplot2.1.gz
 man/uk/man1/labplot2.1.gz
@@ -50,6 +51,8 @@ share/doc/HTML/en/labplot2/tutorial-xy-function8.png
 share/doc/HTML/en/labplot2/tutorial-xy-function9.png
 share/doc/HTML/en/labplot2/workbook.png
 share/doc/HTML/en/labplot2/worksheet.png
+share/doc/HTML/es/labplot2/index.cache.bz2
+share/doc/HTML/es/labplot2/index.docbook
 share/doc/HTML/nl/labplot2/index.cache.bz2
 share/doc/HTML/nl/labplot2/index.docbook
 share/doc/HTML/sv/labplot2/index.cache.bz2
@@ -287,6 +290,7 @@ share/locale/de/LC_MESSAGES/labplot2.mo
 share/locale/el/LC_MESSAGES/labplot2.mo
 share/locale/en_GB/LC_MESSAGES/labplot2.mo
 share/locale/es/LC_MESSAGES/labplot2.mo
+share/locale/eu/LC_MESSAGES/labplot2.mo
 share/locale/fi/LC_MESSAGES/labplot2.mo
 share/locale/fr/LC_MESSAGES/labplot2.mo
 share/locale/gl/LC_MESSAGES/labplot2.mo
