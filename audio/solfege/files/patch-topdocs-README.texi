@@ -1,0 +1,8 @@
+--- topdocs/README.texi.orig	2013-10-05 20:57:48 UTC
++++ topdocs/README.texi
+@@ -1,4 +1,5 @@
+ \input texinfo
++@documentencoding ISO-8859-1
+ @setfilename README.info
+ @include topdocs/defs.texi
+ @settitle README

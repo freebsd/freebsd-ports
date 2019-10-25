@@ -1,6 +1,14 @@
 --- doc/gri.texi.orig	2011-07-06 14:10:17 UTC
 +++ doc/gri.texi
-@@ -18486,7 +18486,7 @@ Versions exist for MSDOS, windows, and L
+@@ -38,6 +38,7 @@
+ @comment *** End of HTML stuff ***
+ @c
+ @comment OVERRIDE some defaults in texinfo.tex
++@documentencoding ISO-8859-1
+ @iftex
+ @message{}
+ @message{gri.texi: overriding parskip, }
+@@ -18486,7 +18487,7 @@ Versions exist for MSDOS, windows, and L
  (Actually, the windows version is just the MSDOS version, which can be
  run inside an msdos window within windows-95, windows-NT, etc.)
  
@@ -9,7 +17,7 @@
  @cindex compilation under MSDOS
  @cindex MSDOS compilation
  
-@@ -18543,7 +18543,7 @@ To view the output, use a PostScript vie
+@@ -18543,7 +18544,7 @@ To view the output, use a PostScript vie
  
  
  

@@ -1,0 +1,9 @@
+--- interfaces/emacs/imaxima/imaxima.texi.orig	2019-02-21 02:30:14 UTC
++++ interfaces/emacs/imaxima/imaxima.texi
+@@ -1,5 +1,6 @@
+ \input texinfo                  @c -*-texinfo-*-
+ @c %**start of header
++@documentencoding ISO-8859-1
+ @setfilename imaxima.info
+ @settitle Imaxima Manual
+ @paragraphindent 0
