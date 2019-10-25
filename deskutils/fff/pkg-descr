@@ -1,0 +1,16 @@
+A simple file manager written in Bash.
+
+- It's ******* Fast
+- Minimal (only requires bash and coreutils)
+- Smooth Scrolling (using vim keybindings)
+- Works on Linux, BSD, macOS, Haiku etc.
+- Supports LS_COLORS!
+- File operations (copy, paste, cut, ranger style bulk rename, etc)
+- Instant as you type search
+- Tab completion for all commands!
+- Automatic CD on exit (see setup)
+- Works as a file picker in vim/neovim!
+- Display images with w3m-img!
+- Supports $CDPATH.
+
+WWW: https://github.com/dylanaraps/fff
