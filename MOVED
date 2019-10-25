@@ -11610,7 +11610,6 @@ www/moodle31|www/moodle35|2019-03-04|Has expired: Upstream no longer maintained
 www/moodle34|www/moodle35|2019-03-04|Has expired: Upstream no longer maintained
 net/wireshark-qt5|net/wireshark|2019-03-05|Only GUI for wireshark is Qt5
 devel/elixir-lager_logger||2019-03-06|Has expired: Broken for more than 6 months
-devel/gpsim||2019-03-06|Has expired: Broken for more than 6 months
 devel/hgview||2019-03-06|Has expired: Broken for more than 6 months
 games/mudmagic||2019-03-06|Has expired: Broken for more than 6 months
 math/mumps-mpich||2019-03-06|Has expired: Broken for more than 6 months
