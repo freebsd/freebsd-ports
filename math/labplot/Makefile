@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	labplot
-PORTVERSION=	2.6
-PORTREVISION=	2
+PORTVERSION=	2.7.0
 CATEGORIES=	math kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}.0
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Data plotting and function analysis tool by KDE
@@ -35,7 +34,8 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 CANTOR_DESC=		Build with Cantor support
 CANTOR_CMAKE_BOOL=	ENABLE_CANTOR
-CANTOR_LIB_DEPENDS=	libcantorlibs.so:math/cantor
+CANTOR_LIB_DEPENDS=	libcantorlibs.so:math/cantor \
+			libpoppler-qt5.so:graphics/poppler-qt5
 FITS_DESC=		Flexible Image Transport System Data Format (FITS) Library
 FITS_CMAKE_BOOL=	ENABLE_FITS
 FITS_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
