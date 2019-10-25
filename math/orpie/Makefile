@@ -3,7 +3,7 @@
 
 PORTNAME=	orpie
 PORTVERSION=	1.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	math
 MASTER_SITES=	GENTOO http://pessimization.com/software/orpie/
 

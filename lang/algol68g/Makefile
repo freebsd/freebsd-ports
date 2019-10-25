@@ -2,7 +2,7 @@
 
 PORTNAME=	algol68g
 PORTVERSION=	2.8.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang
 MASTER_SITES=	http://jmvdveer.home.xs4all.nl/
 
