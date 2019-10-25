@@ -7,3 +7,5 @@ SHA256 (chfast-ethash-67a3216a5494834f7c221df93b079dac4_GH0.tar.gz) = 6c3f996b48
 SIZE (chfast-ethash-67a3216a5494834f7c221df93b079dac4_GH0.tar.gz) = 95929
 SHA256 (ethereum-evmc-bf7064dca5cbbda4def8c2548d0d7a040_GH0.tar.gz) = 881c99b3093978f3b03811d318373eea04ce91092e1f8585eaa4bb82c41b81b3
 SIZE (ethereum-evmc-bf7064dca5cbbda4def8c2548d0d7a040_GH0.tar.gz) = 68126
+SHA256 (05564ff309be.patch) = 8c239ff8dad036f060d2b4361363e7c36368bda6b0f92d5175b8d3c3648cd9ab
+SIZE (05564ff309be.patch) = 694
