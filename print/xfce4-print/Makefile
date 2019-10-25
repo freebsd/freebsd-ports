@@ -19,8 +19,8 @@ RUN_DEPENDS=	a2ps:print/a2ps
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext-tools gmake gnome libtool pathfix pkgconfig \
-		tar:bzip2 xfce:gtk2 xorg
+USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix \
+		pkgconfig tar:bzip2 xfce:gtk2 xorg
 USE_GNOME=	cairo glib20 gtk20 intltool
 USE_LDCONFIG=	yes
 USE_XFCE=	libgui xfconf
