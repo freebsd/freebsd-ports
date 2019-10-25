@@ -9,3 +9,4 @@ libexec/openconnect/csd-wrapper.sh
 libexec/openconnect/hipreport.sh
 libexec/openconnect/tncc-wrapper.py
 man/man8/openconnect.8.gz
+libexec/openconnect/hipreport-android.sh

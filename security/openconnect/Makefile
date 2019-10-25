@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openconnect
-PORTVERSION=	8.03
+PORTVERSION=	8.05
 CATEGORIES=	security net-vpn
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		ZI
@@ -25,8 +25,10 @@ USES=		cpe gmake iconv libtool pkgconfig python:build ssl shebangfix
 CPE_VENDOR=	infradead
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+SHEBANG_LANG+=	SH
+SH_OLD_CMD+=	/system/bin/sh
 SHEBANG_FILES=	trojans/csd-post.sh trojans/csd-wrapper.sh \
-		trojans/tncc-wrapper.py
+		trojans/hipreport-android.sh trojans/tncc-wrapper.py
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS PROXY GNUTLS GSSAPI LZ4 P11 STOKEN
