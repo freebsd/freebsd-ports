@@ -6,6 +6,9 @@ PORTVERSION=	0.18.1
 DISTVERSIONPREFIX=	mainnet-ignition-v
 CATEGORIES=	net-p2p finance
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	05564ff309be.patch:-p1
+
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	PoS cryptocurrency that can execute smart contract as part of an UTXO
 
