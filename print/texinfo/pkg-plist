@@ -26,13 +26,10 @@ man/man5/texinfo.5.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/da/LC_MESSAGES/texinfo.mo
-%%NLS%%share/locale/da/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/de.us-ascii/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/de/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/de/LC_MESSAGES/texinfo_document.mo
-%%NLS%%share/locale/de_AT/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/el/LC_MESSAGES/texinfo.mo
-%%NLS%%share/locale/el/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/es/LC_MESSAGES/texinfo.mo
@@ -66,6 +63,7 @@ man/man5/texinfo.5.gz
 %%NLS%%share/locale/rw/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/texinfo_document.mo
@@ -114,6 +112,7 @@ man/man5/texinfo.5.gz
 %%DATADIR%%/texindex.awk
 %%DATADIR%%/texinfo.dtd
 %%TEXMFDIR%%/tex/generic/epsf/epsf.tex
+%%TEXMFDIR%%/tex/texinfo/texinfo-ja.tex
 %%TEXMFDIR%%/tex/texinfo/texinfo.tex
 %%TEXMFDIR%%/tex/texinfo/txi-ca.tex
 %%TEXMFDIR%%/tex/texinfo/txi-cs.tex
