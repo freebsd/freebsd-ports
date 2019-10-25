@@ -34,6 +34,8 @@ GH_TAGNAME=	299f8e4
 GH_TUPLE=	Valloric:ycmd:d0eba90:ycm/third_party/ycmd \
 		micbou:regex:d2ef9c4:ycmd5/third_party/ycmd/third_party/cregex
 
+LLVM_VER=		70
+
 CMAKE_SOURCE_PATH+=	${WRKSRC}/third_party/ycmd/cpp
 
 PLIST_SUB=		VIMFILESDIR=share/vim/vimfiles \
@@ -51,8 +53,8 @@ C_DESC=			C-family Semantic Completion Support
 MONO_DESC=		C\# Semantic Completion Support
 RUST_DESC=		Rust Semantic Completion Support
 
-C_CMAKE_ON=		-DPATH_TO_LLVM_ROOT=${LOCALBASE}/llvm70
-C_LIB_DEPENDS=		libclang.so:devel/llvm70
+C_CMAKE_ON=		-DPATH_TO_LLVM_ROOT=${LOCALBASE}/llvm${LLVM_VER}
+C_LIB_DEPENDS=		libclang.so:devel/llvm${LLVM_VER}
 
 MONO_RUN_DEPENDS=	${LOCALBASE}/share/omnisharp-server/bin/Release/OmniSharp.exe:devel/omnisharp-server
 MONO_VARS=		MONOFILESDIR=${VIMFILESDIR}/third_party/ycmd/third_party/OmniSharpServer
