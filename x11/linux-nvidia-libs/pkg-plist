@@ -1,0 +1,178 @@
+%%LINUXBASE%%/etc/OpenCL/vendors/nvidia.icd
+%%LINUXBASE%%/etc/vulkan/icd.d/nvidia_icd.json
+%%LINUXBASE%%/usr/bin/nvidia-bug-report.sh
+%%LINUXBASE%%/usr/bin/nvidia-cuda-mps-control
+%%LINUXBASE%%/usr/bin/nvidia-cuda-mps-server
+%%LINUXBASE%%/usr/bin/nvidia-debugdump
+%%LINUXBASE%%/usr/bin/nvidia-persistenced
+%%LINUXBASE%%/usr/bin/nvidia-settings
+%%LINUXBASE%%/usr/bin/nvidia-smi
+%%LINUXBASE%%/usr/bin/nvidia-xconfig
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libEGL.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libEGL.so.X
+%%LINUX32%%@postunexec [ ! -e %%LINUXBASE%%/usr/lib/libEGL.so.1.0.0 ] || ln -sf libEGL.so.1.0.0 %%LINUXBASE%%/usr/lib/libEGL.so.1
+%%LINUX32%%@postunexec [ ! -e %%LINUXBASE%%/usr/lib/libEGL.so.1.1.0 ] || ln -sf libEGL.so.1.1.0 %%LINUXBASE%%/usr/lib/libEGL.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libEGL_nvidia.so.0
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libEGL_nvidia.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGL.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGL.so.X
+%%LINUX32%%@postunexec [ ! -e %%LINUXBASE%%/usr/lib/libGL.so.1.2.0 ] || ln -sf libGL.so.1.2.0 %%LINUXBASE%%/usr/lib/libGL.so.1
+%%LINUX32%%@postunexec [ ! -e %%LINUXBASE%%/usr/lib/libGL.so.1.7.0 ] || ln -sf libGL.so.1.7.0 %%LINUXBASE%%/usr/lib/libGL.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLESv1_CM.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLESv1_CM.so.X
+%%LINUX32%%@postunexec [ ! -e %%LINUXBASE%%/usr/lib/libGLESv1_CM.so.1.2.0 ] || ln -sf libGLESv1_CM.so.1.2.0 %%LINUXBASE%%/usr/lib/libGLESv1_CM.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLESv1_CM_nvidia.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLESv1_CM_nvidia.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLESv2.so.2
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLESv2.so.X
+%%LINUX32%%@postunexec [ ! -e %%LINUXBASE%%/usr/lib/libGLESv2.so.2.1.0 ] || ln -sf libGLESv2.so.2.1.0 %%LINUXBASE%%/usr/lib/libGLESv2.so.2
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLESv2_nvidia.so.2
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLESv2_nvidia.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLX.so.0
+%%LINUX32%%@postunexec [ ! -e %%LINUXBASE%%/usr/lib/libGLX.so.0.0.0 ] || ln -sf libGLX.so.0.0.0 %%LINUXBASE%%/usr/lib/libGLX.so.0
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLX_indirect.so.0
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLX_nvidia.so.0
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLX_nvidia.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libGLdispatch.so.0
+%%LINUX32%%@postunexec [ ! -e %%LINUXBASE%%/usr/lib/libGLdispatch.so.0.0.0 ] || ln -sf libGLdispatch.so.0.0.0 %%LINUXBASE%%/usr/lib/libGLdispatch.so.0
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libOpenGL.so.0
+%%LINUX32%%@postunexec [ ! -e %%LINUXBASE%%/usr/lib/libOpenGL.so.0.0.0 ] || ln -sf libOpenGL.so.0.0.0 %%LINUXBASE%%/usr/lib/libOpenGL.so.0
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libcuda.so
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libcuda.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libcuda.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvcuvid.so
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvcuvid.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvcuvid.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-compiler.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-eglcore.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-encode.so
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-encode.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-encode.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-fatbinaryloader.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-fbc.so
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-fbc.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-fbc.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-glcore.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-glsi.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ifr.so
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ifr.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ifr.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ml.so
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ml.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ml.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-opencl.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-opencl.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ptxjitcompiler.so
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ptxjitcompiler.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ptxjitcompiler.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-tls.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libvdpau_nvidia.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/tls/libnvidia-tls.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/vdpau/libvdpau_nvidia.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libEGL.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libEGL.so.X
+@postunexec [ ! -e %%LINUXBASE%%%%LINUX_LIBDIR%%/libEGL.so.1.0.0 ] || ln -sf libEGL.so.1.0.0 %%LINUXBASE%%%%LINUX_LIBDIR%%/libEGL.so.1
+@postunexec [ ! -e %%LINUXBASE%%%%LINUX_LIBDIR%%/libEGL.so.1.1.0 ] || ln -sf libEGL.so.1.1.0 %%LINUXBASE%%%%LINUX_LIBDIR%%/libEGL.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libEGL_nvidia.so.0
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libEGL_nvidia.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGL.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGL.so.X
+@postunexec [ ! -e %%LINUXBASE%%%%LINUX_LIBDIR%%/libGL.so.1.2.0 ] || ln -sf libGL.so.1.2.0 %%LINUXBASE%%%%LINUX_LIBDIR%%/libGL.so.1
+@postunexec [ ! -e %%LINUXBASE%%%%LINUX_LIBDIR%%/libGL.so.1.7.0 ] || ln -sf libGL.so.1.7.0 %%LINUXBASE%%%%LINUX_LIBDIR%%/libGL.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLESv1_CM.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLESv1_CM.so.X
+@postunexec [ ! -e %%LINUXBASE%%%%LINUX_LIBDIR%%/libGLESv1_CM.so.1.2.0 ] || ln -sf libGLESv1_CM.so.1.2.0 %%LINUXBASE%%%%LINUX_LIBDIR%%/libGLESv1_CM.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLESv1_CM_nvidia.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLESv1_CM_nvidia.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLESv2.so.2
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLESv2.so.X
+@postunexec [ ! -e %%LINUXBASE%%%%LINUX_LIBDIR%%/libGLESv2.so.2.1.0 ] || ln -sf libGLESv2.so.2.1.0 %%LINUXBASE%%%%LINUX_LIBDIR%%/libGLESv2.so.2
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLESv2_nvidia.so.2
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLESv2_nvidia.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLX.so.0
+@postunexec [ ! -e %%LINUXBASE%%%%LINUX_LIBDIR%%/libGLX.so.0.0.0 ] || ln -sf libGLX.so.0.0.0 %%LINUXBASE%%%%LINUX_LIBDIR%%/libGLX.so.0
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLX_indirect.so.0
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLX_nvidia.so.0
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLX_nvidia.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libGLdispatch.so.0
+@postunexec [ ! -e %%LINUXBASE%%%%LINUX_LIBDIR%%/libGLdispatch.so.0.0.0 ] || ln -sf libGLdispatch.so.0.0.0 %%LINUXBASE%%%%LINUX_LIBDIR%%/libGLdispatch.so.0
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libOpenGL.so.0
+@postunexec [ ! -e %%LINUXBASE%%%%LINUX_LIBDIR%%/libOpenGL.so.0.0.0 ] || ln -sf libOpenGL.so.0.0.0 %%LINUXBASE%%%%LINUX_LIBDIR%%/libOpenGL.so.0
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libXvMCNVIDIA.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libXvMCNVIDIA_dynamic.so
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libXvMCNVIDIA_dynamic.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libcuda.so
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libcuda.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libcuda.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvcuvid.so
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvcuvid.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvcuvid.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-cfg.so
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-cfg.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-cfg.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-compiler.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-wayland.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-wayland.so.X
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-eglcore.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-encode.so
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-encode.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-encode.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-fatbinaryloader.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-fbc.so
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-fbc.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-fbc.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-glcore.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-glsi.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-gtk2.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-gtk3.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ifr.so
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ifr.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ifr.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ml.so
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ml.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ml.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-opencl.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-opencl.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ptxjitcompiler.so
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ptxjitcompiler.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ptxjitcompiler.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-tls.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libvdpau_nvidia.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/tls/libnvidia-tls.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/vdpau/libvdpau_nvidia.so.1
+%%LINUXBASE%%/usr/share/egl/egl_external_platform.d/10_nvidia_wayland.json
+%%LINUXBASE%%/usr/share/glvnd/egl_vendor.d/10_nvidia.json
+%%LINUXBASE%%/usr/share/man/man1/nvidia-cuda-mps-control.1.gz
+%%LINUXBASE%%/usr/share/man/man1/nvidia-persistenced.1.gz
+%%LINUXBASE%%/usr/share/man/man1/nvidia-settings.1.gz
+%%LINUXBASE%%/usr/share/man/man1/nvidia-smi.1.gz
+%%LINUXBASE%%/usr/share/man/man1/nvidia-xconfig.1.gz
+%%LINUXBASE%%/usr/share/nvidia/monitoring.conf
+%%LINUXBASE%%/usr/share/nvidia/nvidia-application-profiles-%%SHLIB_VERSION%%-key-documentation
+%%LINUXBASE%%/usr/share/nvidia/nvidia-application-profiles-%%SHLIB_VERSION%%-rc
+%%LINUXBASE%%/usr/share/nvidia/pci.ids
+@postexec %%LINUXBASE%%/sbin/ldconfig
+@postunexec %%LINUXBASE%%/sbin/ldconfig
+@dir %%LINUXBASE%%/etc/OpenCL/vendors
+@dir %%LINUXBASE%%/etc/OpenCL
+@dir %%LINUXBASE%%/etc/vulkan/icd.d
+@dir %%LINUXBASE%%/etc/vulkan
+@dir %%LINUXBASE%%/etc
+@dir %%LINUXBASE%%/usr/bin
+%%LINUX32%%@dir %%LINUXBASE%%/usr/lib/tls
+%%LINUX32%%@dir %%LINUXBASE%%/usr/lib/vdpau
+%%LINUX32%%@dir %%LINUXBASE%%/usr/lib
+@dir %%LINUXBASE%%%%LINUX_LIBDIR%%/tls
+@dir %%LINUXBASE%%%%LINUX_LIBDIR%%/vdpau
+@dir %%LINUXBASE%%%%LINUX_LIBDIR%%
+@dir %%LINUXBASE%%/usr/share/egl/egl_external_platform.d
+@dir %%LINUXBASE%%/usr/share/egl
+@dir %%LINUXBASE%%/usr/share/glvnd/egl_vendor.d
+@dir %%LINUXBASE%%/usr/share/glvnd
+@dir %%LINUXBASE%%/usr/share/man/man1
+@dir %%LINUXBASE%%/usr/share/man
+@dir %%LINUXBASE%%/usr/share/nvidia
+@dir %%LINUXBASE%%/usr/share
+@dir %%LINUXBASE%%/usr
+@dir %%LINUXBASE%%
+@dir /compat
