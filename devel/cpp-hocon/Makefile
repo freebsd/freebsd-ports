@@ -2,8 +2,11 @@
 
 PORTNAME=	cpp-hocon
 PORTVERSION=	0.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	caab27550982.patch:-p1
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	C++ configuration library
