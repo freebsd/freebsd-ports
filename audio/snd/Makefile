@@ -3,7 +3,7 @@
 
 PORTNAME=	snd
 PORTVERSION=	15.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 		SF

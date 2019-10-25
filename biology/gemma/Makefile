@@ -2,7 +2,7 @@
 
 PORTNAME=	gemma
 DISTVERSION=	0.98.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -25,6 +25,8 @@ CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -DOPENBLAS -DOPENBLAS_LEGACY
 LDFLAGS+=	-lopenblas
 
 OPTIONS_DEFINE=	EXAMPLES
+
+BROKEN=		Conflict between math/gsl and math/cblas constant redeclarations
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|../bin/gemma|../gemma|' ${WRKSRC}/test/*.sh

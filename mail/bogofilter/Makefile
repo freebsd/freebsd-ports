@@ -3,7 +3,7 @@
 
 PORTNAME=	bogofilter
 DISTVERSION=	1.2.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	mail
 MASTER_SITES=	SF/bogofilter/bogofilter-stable/
 

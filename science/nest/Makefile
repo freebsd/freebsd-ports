@@ -3,7 +3,7 @@
 PORTNAME=	nest
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.18.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science biology # NEST is used in neuroscience
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
