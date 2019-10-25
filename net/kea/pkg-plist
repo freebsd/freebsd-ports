@@ -1,3 +1,8 @@
+@sample %%ETCDIR%%/kea-ctrl-agent.conf.sample
+@sample %%ETCDIR%%/kea-dhcp-ddns.conf.sample
+@sample %%ETCDIR%%/kea-dhcp4.conf.sample
+@sample %%ETCDIR%%/kea-dhcp6.conf.sample
+@sample %%ETCDIR%%/keactrl.conf.sample
 include/kea/asiodns/asiodns_messages.h
 include/kea/asiodns/io_fetch.h
 include/kea/asiodns/logger.h
@@ -517,10 +522,5 @@ sbin/keactrl
 %%DATADIR%%/scripts/pgsql/upgrade_4.0_to_5.0.sh
 %%DATADIR%%/scripts/pgsql/upgrade_5.0_to_5.1.sh
 %%DATADIR%%/scripts/pgsql/wipe_data.sh
-@sample %%ETCDIR%%/kea-ctrl-agent.conf.sample
-@sample %%ETCDIR%%/kea-dhcp-ddns.conf.sample
-@sample %%ETCDIR%%/kea-dhcp4.conf.sample
-@sample %%ETCDIR%%/kea-dhcp6.conf.sample
-@sample %%ETCDIR%%/keactrl.conf.sample
 @dir /var/db/kea
 @dir /var/run/kea

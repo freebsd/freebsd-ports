@@ -1,6 +1,6 @@
---- src/bin/keactrl/Makefile.am.orig	2019-09-07 12:46:25.279164000 -0500
-+++ src/bin/keactrl/Makefile.am	2019-09-07 12:46:32.455324000 -0500
-@@ -62,7 +62,7 @@
+--- src/bin/keactrl/Makefile.am.orig	2019-10-25 12:41:08 UTC
++++ src/bin/keactrl/Makefile.am
+@@ -62,7 +62,7 @@ install-data-local:
  			   $(DESTDIR)$(sysconfdir)/@PACKAGE@/$$f.bak; \
  		fi; \
  		if test ! -f $(DESTDIR)$(sysconfdir)/@PACKAGE@/$$f; then \
