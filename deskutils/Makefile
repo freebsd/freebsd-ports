@@ -50,6 +50,7 @@
     SUBDIR += fasd
     SUBDIR += fbreader
     SUBDIR += fet
+    SUBDIR += fff
     SUBDIR += flameshot
     SUBDIR += foliate
     SUBDIR += freemind
