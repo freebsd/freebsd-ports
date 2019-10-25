@@ -165,6 +165,7 @@
     SUBDIR += gone
     SUBDIR += gonvert
     SUBDIR += gplink
+    SUBDIR += gpsim
     SUBDIR += granulate
     SUBDIR += grc
     SUBDIR += gwhich
