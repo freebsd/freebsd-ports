@@ -1,3 +1,3 @@
-TIMESTAMP = 1536535704
-SHA256 (nss-pam-ldapd-0.9.10.tar.gz) = 809d5692ed1e58ad31b04a41c091cab22a79b53c6f9a4c65ecfc5d6c32ab0ab3
-SIZE (nss-pam-ldapd-0.9.10.tar.gz) = 749302
+TIMESTAMP = 1572011464
+SHA256 (nss-pam-ldapd-0.9.11.tar.gz) = d0d71be06d1a90940b7566ce00cef1a465aae7171d5d062785506a83411ecab6
+SIZE (nss-pam-ldapd-0.9.11.tar.gz) = 777878
