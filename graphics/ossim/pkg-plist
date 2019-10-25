@@ -58,7 +58,6 @@
 %%TEST%%bin/ossim-rect-test
 %%TEST%%bin/ossim-ref-ptr-test
 %%TEST%%bin/ossim-remap-table-test
-%%TEST%%bin/ossim-remap-tool-test
 %%TEST%%bin/ossim-shift-filter-test
 %%TEST%%bin/ossim-single-image-chain-test
 %%TEST%%bin/ossim-single-image-chain-threaded-test
@@ -95,7 +94,6 @@ include/ossim/base/ossim2dBilinearTransform.h
 include/ossim/base/ossim2dLinearRegression.h
 include/ossim/base/ossim2dTo2dCompositeTransform.h
 include/ossim/base/ossim2dTo2dIdentityTransform.h
-include/ossim/base/ossim2dTo2dMatrixTransform.h
 include/ossim/base/ossim2dTo2dShiftTransform.h
 include/ossim/base/ossim2dTo2dTransform.h
 include/ossim/base/ossim2dTo2dTransformFactory.h
@@ -572,6 +570,7 @@ include/ossim/imaging/ossimNitfWriter.h
 include/ossim/imaging/ossimNitfWriterBase.h
 include/ossim/imaging/ossimNormalizedRemapTable.h
 include/ossim/imaging/ossimNormalizedS16RemapTable.h
+include/ossim/imaging/ossimNormalizedU10RemapTable.h
 include/ossim/imaging/ossimNormalizedU11RemapTable.h
 include/ossim/imaging/ossimNormalizedU12RemapTable.h
 include/ossim/imaging/ossimNormalizedU13RemapTable.h
@@ -579,6 +578,7 @@ include/ossim/imaging/ossimNormalizedU14RemapTable.h
 include/ossim/imaging/ossimNormalizedU15RemapTable.h
 include/ossim/imaging/ossimNormalizedU16RemapTable.h
 include/ossim/imaging/ossimNormalizedU8RemapTable.h
+include/ossim/imaging/ossimNormalizedU9RemapTable.h
 include/ossim/imaging/ossimNullPixelFlip.h
 include/ossim/imaging/ossimOrthoImageMosaic.h
 include/ossim/imaging/ossimOverviewBuilderBase.h
@@ -631,6 +631,7 @@ include/ossim/imaging/ossimTilingRect.h
 include/ossim/imaging/ossimTopographicCorrectionFilter.h
 include/ossim/imaging/ossimTrimFilter.h
 include/ossim/imaging/ossimTwoColorView.h
+include/ossim/imaging/ossimU10ImageData.h
 include/ossim/imaging/ossimU11ImageData.h
 include/ossim/imaging/ossimU12ImageData.h
 include/ossim/imaging/ossimU13ImageData.h
@@ -638,6 +639,7 @@ include/ossim/imaging/ossimU14ImageData.h
 include/ossim/imaging/ossimU15ImageData.h
 include/ossim/imaging/ossimU16ImageData.h
 include/ossim/imaging/ossimU8ImageData.h
+include/ossim/imaging/ossimU9ImageData.h
 include/ossim/imaging/ossimUsgsDemTileSource.h
 include/ossim/imaging/ossimValueAssignImageSourceFilter.h
 include/ossim/imaging/ossimVectorRenderer.h
@@ -925,6 +927,7 @@ include/ossim/support_data/ossimNitfRpcBTag.h
 include/ossim/support_data/ossimNitfRpcBase.h
 include/ossim/support_data/ossimNitfRpfTagFactory.h
 include/ossim/support_data/ossimNitfRsmecaTag.h
+include/ossim/support_data/ossimNitfRsmecbTag.h
 include/ossim/support_data/ossimNitfRsmidaTag.h
 include/ossim/support_data/ossimNitfRsmpcaTag.h
 include/ossim/support_data/ossimNitfRsmpiaTag.h
@@ -1014,7 +1017,6 @@ include/ossim/util/ossimInfo.h
 include/ossim/util/ossimOrthoIgen.h
 include/ossim/util/ossimOrthoTool.h
 include/ossim/util/ossimPointCloudTool.h
-include/ossim/util/ossimRemapTool.h
 include/ossim/util/ossimRpfUtil.h
 include/ossim/util/ossimShorelineTool.h
 include/ossim/util/ossimSlopeTool.h

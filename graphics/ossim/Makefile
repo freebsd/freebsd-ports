@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ossim
-DISTVERSIONPREFIX=	Miami-
-DISTVERSION=	2.9.1
+DISTVERSIONPREFIX=	Neptune-
+DISTVERSION=	2.10.0
 CATEGORIES=	graphics geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org
