@@ -70,7 +70,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_nvidia-modeset_nvidia-modeset-freebs
 
 OPTIONS_DEFINE=	ACPI_PM LINUX WBINVD DOCS
 OPTIONS_DEFINE_i386=	PAE
-#OPTIONS_DEFAULT=	LINUX
+OPTIONS_DEFAULT=	LINUX
 
 ACPI_PM_DESC=		ACPI Power Management support
 LINUX_DESC=		Linux compatibility support
@@ -132,7 +132,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/libvdpau[[:blank:]_][^n]/d ; \
 		s/name libvdpau/&_nvidia/' ${WRKSRC}/lib/Makefile
 # Do not build any binaries (native nvidia-settings and nvidia-xconfig are
-# provided by corresponding ports) and manual pages
+# provided by their corresponding ports) and manual pages
 	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
 	${REINPLACE_CMD} -e '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
 # Also do not install libnvidia-gtk* libraries which are for nvidia-settings
@@ -218,18 +218,18 @@ post-install: .SILENT
 		${STAGEDIR}${PREFIX}/lib/libGL-NVIDIA.so
 	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGL.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libGL-NVIDIA.so.1
-	${RM} -f ${STAGEDIR}${PREFIX}/lib/libGL.so
+	${RM} ${STAGEDIR}${PREFIX}/lib/libGL.so
 .if ${NVVERSION} >= 331.013
 	${LN} -sf libEGL-NVIDIA.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libEGL-NVIDIA.so
 	${MV} -f ${STAGEDIR}${PREFIX}/lib/libEGL.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libEGL-NVIDIA.so.1
-	${RM} -f ${STAGEDIR}${PREFIX}/lib/libEGL.so
+	${RM} ${STAGEDIR}${PREFIX}/lib/libEGL.so
 	${LN} -sf libGLESv2-NVIDIA.so.2 \
 		${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so
 	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGLESv2.so.2 \
 		${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so.2
-	${RM} -f ${STAGEDIR}${PREFIX}/lib/libGLESv2.so
+	${RM} ${STAGEDIR}${PREFIX}/lib/libGLESv2.so
 .endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/libmap.d/
 	${INSTALL_DATA} ${WRKDIR}/nvidia.conf \
