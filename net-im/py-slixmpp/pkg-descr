@@ -5,4 +5,4 @@ Slixmpp's goals is to only rewrite the core of the library (the low level
 socket handling, the timers, the events dispatching) in order to remove all
 threads.
 
-WWW: https://dev.louiz.org/projects/slixmpp
+WWW: https://lab.louiz.org/poezio/slixmpp
