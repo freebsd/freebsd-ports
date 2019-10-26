@@ -1,8 +1,6 @@
---- pkg/minikube/constants/constants_freebsd.go.orig	2019-10-26 17:48:57 UTC
-+++ pkg/minikube/constants/constants_freebsd.go
-@@ -0,0 +1,26 @@
-+// +build freebsd, !gendocs
-+
+--- pkg/minikube/driver/driver_freebsd.go.orig	2019-10-26 17:55:50 UTC
++++ pkg/minikube/driver/driver_freebsd.go
+@@ -0,0 +1,34 @@
 +/*
 +Copyright 2016 The Kubernetes Authors All rights reserved.
 +
@@ -19,11 +17,21 @@
 +limitations under the License.
 +*/
 +
-+package constants
++package driver
 +
 +import (
-+	"k8s.io/client-go/util/homedir"
++	"os/exec"
 +)
 +
-+// DefaultMountDir is the default mount dir
-+var DefaultMountDir = homedir.HomeDir()
++// supportedDrivers is a list of supported drivers on Linux.
++var supportedDrivers = []string{
++	VirtualBox,
++}
++
++func VBoxManagePath() string {
++	cmd := "VBoxManage"
++	if path, err := exec.LookPath(cmd); err == nil {
++		return path
++	}
++	return cmd
++}
