@@ -123,6 +123,7 @@ lib/sbcl/sb-rotate-byte/arm64-vm.lisp
 lib/sbcl/sb-rotate-byte/compiler.lisp
 lib/sbcl/sb-rotate-byte/package.lisp
 lib/sbcl/sb-rotate-byte/ppc-vm.lisp
+lib/sbcl/sb-rotate-byte/ppc64-vm.lisp
 lib/sbcl/sb-rotate-byte/riscv-vm.lisp
 lib/sbcl/sb-rotate-byte/rotate-byte-tests.lisp
 lib/sbcl/sb-rotate-byte/rotate-byte.lisp
