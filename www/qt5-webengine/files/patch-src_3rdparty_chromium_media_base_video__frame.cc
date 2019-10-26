@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/base/video_frame.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/media/base/video_frame.cc.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/media/base/video_frame.cc
-@@ -64,7 +64,7 @@ static std::string StorageTypeToString(
+@@ -53,7 +53,7 @@ static std::string StorageTypeToString(
        return "OWNED_MEMORY";
      case VideoFrame::STORAGE_SHMEM:
        return "SHMEM";
@@ -9,16 +9,16 @@
      case VideoFrame::STORAGE_DMABUFS:
        return "DMABUFS";
  #endif
-@@ -80,7 +80,7 @@ static std::string StorageTypeToString(
+@@ -68,7 +68,7 @@ static std::string StorageTypeToString(
  // static
- static bool IsStorageTypeMappable(VideoFrame::StorageType storage_type) {
+ bool VideoFrame::IsStorageTypeMappable(VideoFrame::StorageType storage_type) {
    return
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
        // This is not strictly needed but makes explicit that, at VideoFrame
        // level, DmaBufs are not mappable from userspace.
        storage_type != VideoFrame::STORAGE_DMABUFS &&
-@@ -367,7 +367,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalYuva
+@@ -461,7 +461,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalYuva
    return frame;
  }
  
@@ -26,9 +26,9 @@
 +#if defined(OS_LINUX) || defined(OS_BSD)
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
-     VideoPixelFormat format,
-@@ -488,7 +488,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
-     wrapping_frame->data_[i] = frame->data(i);
+     const VideoFrameLayout& layout,
+@@ -592,7 +592,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
+     }
    }
  
 -#if defined(OS_LINUX)
@@ -36,12 +36,12 @@
    // If there are any |dmabuf_fds_| plugged in, we should duplicate them.
    if (frame->storage_type() == STORAGE_DMABUFS) {
      wrapping_frame->dmabuf_fds_ = DuplicateFDs(frame->dmabuf_fds_);
-@@ -860,7 +860,7 @@ size_t VideoFrame::shared_memory_offset() const {
+@@ -917,7 +917,7 @@ size_t VideoFrame::shared_memory_offset() const {
    return shared_memory_offset_;
  }
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
- std::vector<int> VideoFrame::DmabufFds() const {
+ const std::vector<base::ScopedFD>& VideoFrame::DmabufFds() const {
    DCHECK_EQ(storage_type_, STORAGE_DMABUFS);
-   std::vector<int> ret;
+ 

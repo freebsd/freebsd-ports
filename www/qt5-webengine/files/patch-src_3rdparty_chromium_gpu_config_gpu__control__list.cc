@@ -1,14 +1,14 @@
---- src/3rdparty/chromium/gpu/config/gpu_control_list.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/gpu/config/gpu_control_list.cc.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/gpu/config/gpu_control_list.cc
 @@ -16,7 +16,11 @@
  #include "base/values.h"
  #include "build/build_config.h"
- #include "gpu/config/gpu_info.h"
+ #include "gpu/config/gpu_util.h"
 +#if defined(OS_BSD)
 +#include <re2/re2.h>
 +#else
  #include "third_party/re2/src/re2/re2.h"
-+#endif
++#endif // defined(OS_BSD)
  
  namespace gpu {
  namespace {
@@ -21,7 +21,7 @@
    return kGLTypeGL;
  #elif defined(OS_MACOSX)
    return kGLTypeGL;
-@@ -681,7 +685,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
+@@ -699,7 +703,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
    return kOsAndroid;
  #elif defined(OS_FUCHSIA)
    return kOsFuchsia;

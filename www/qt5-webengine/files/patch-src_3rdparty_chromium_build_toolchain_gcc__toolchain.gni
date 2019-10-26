@@ -1,20 +1,18 @@
---- src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni
-@@ -11,6 +11,13 @@ import("//build/toolchain/clang_static_analyzer.gni")
- import("//build/toolchain/goma.gni")
- import("//build/toolchain/toolchain.gni")
+@@ -47,6 +47,11 @@ analyzer_wrapper =
+     rebase_path("//build/toolchain/clang_static_analyzer_wrapper.py",
+                 root_build_dir) + " --mode=clang"
  
 +declare_args() {
 +  extra_cxxflags = ""
 +  extra_ldflags = ""
 +}
 +
-+
-+
- if (is_nacl) {
-   # To keep NaCl variables out of builds that don't include NaCl, all
-   # variables defined in nacl/config.gni referenced here should be protected by
-@@ -604,13 +611,23 @@ template("clang_toolchain") {
+ # This template defines a toolchain for something that works like gcc
+ # (including clang).
+ #
+@@ -610,13 +615,24 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {
@@ -26,18 +24,19 @@
 -    ar = "${prefix}/llvm-ar"
 -    nm = "${toolprefix}nm"
 +    if (is_bsd) {
-+      cc = "${toolprefix}clang"
-+      cxx = "${toolprefix}clang++"
++      # XXX fix the hardcoding!
++      prefix = "/usr/local/bin"
++      cc = "cc"
++      cxx = "c++"
 +      ld = cxx
 +      readelf = "readelf"
-+      ar = "${toolprefix}ar"
++      ar = "${prefix}/ar"
 +      nm = "${toolprefix}nm"
 +    } else {
 +      prefix = rebase_path("$clang_base_path/bin", root_build_dir)
 +      cc = "$prefix/clang"
 +      cxx = "$prefix/clang++"
 +      ld = cxx
-+
 +      readelf = "${toolprefix}readelf"
 +      ar = "${prefix}/llvm-ar"
 +      nm = "${toolprefix}nm"

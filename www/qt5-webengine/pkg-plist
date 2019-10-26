@@ -2,6 +2,7 @@
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebengineaction_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebengineaction_p_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginecertificateerror_p.h
+%%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebengineclientcertificateselection_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginecontextmenurequest_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginedialogrequests_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginedownloaditem_p.h
@@ -17,9 +18,11 @@
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginesettings_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginesingleton_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginetestsupport_p.h
+%%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginetouchhandleprovider_p_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebengineview_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebengineview_p_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qtwebengineglobal_p.h
+%%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qtwebengine-config_p.h
 %%QT_INCDIR%%/QtWebEngine/QQuickWebEngineProfile
 %%QT_INCDIR%%/QtWebEngine/QQuickWebEngineScript
 %%QT_INCDIR%%/QtWebEngine/QtWebEngine
@@ -29,14 +32,18 @@
 %%QT_INCDIR%%/QtWebEngine/qquickwebenginescript.h
 %%QT_INCDIR%%/QtWebEngine/qtwebengineglobal.h
 %%QT_INCDIR%%/QtWebEngine/qtwebengineversion.h
+%%QT_INCDIR%%/QtWebEngine/qtwebengine-config.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qtwebenginecoreglobal_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginecallback_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginecookiestore_p.h
+%%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginemessagepumpscheduler_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebengineurlrequestinfo_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qtwebenginecore-config_p.h
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineCallback
+%%QT_INCDIR%%/QtWebEngineCore/QWebEngineClientCertificateStore
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineCookieStore
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineHttpRequest
+%%QT_INCDIR%%/QtWebEngineCore/QWebEngineNotification
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineQuotaRequest
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineRegisterProtocolHandlerRequest
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineUrlRequestInfo
@@ -51,8 +58,10 @@
 %%QT_INCDIR%%/QtWebEngineCore/qtwebenginecoreversion.h
 %%QT_INCDIR%%/QtWebEngineCore/qtwebenginecore-config.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginecallback.h
+%%QT_INCDIR%%/QtWebEngineCore/qwebengineclientcertificatestore.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginecookiestore.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginehttprequest.h
+%%QT_INCDIR%%/QtWebEngineCore/qwebenginenotification.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginequotarequest.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineregisterprotocolhandlerrequest.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineurlrequestinfo.h
@@ -62,6 +71,7 @@
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineurlschemehandler.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginedownloaditem_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginehistory_p.h
+%%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginenotificationpresenter_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginepage_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebengineprofile_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginescriptcollection_p.h
@@ -140,6 +150,8 @@
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/MenuSeparator.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/PromptDialog.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/ToolTip.qml
+%%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/TouchHandle.qml
+%%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/TouchSelectionMenu.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/qmldir
 %%QT_QMLDIR%%/QtWebEngine/Controls2Delegates/AlertDialog.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls2Delegates/AuthenticationDialog.qml

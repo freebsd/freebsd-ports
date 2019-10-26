@@ -1,16 +1,27 @@
---- src/3rdparty/chromium/content/browser/memory/swap_metrics_driver_impl_linux.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/content/browser/memory/swap_metrics_driver_impl_linux.cc.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/content/browser/memory/swap_metrics_driver_impl_linux.cc
-@@ -44,9 +44,13 @@ SwapMetricsDriverImplLinux::~SwapMetricsDriverImplLinu
+@@ -43,6 +43,7 @@ SwapMetricsDriverImplLinux::~SwapMetricsDriverImplLinu
+ 
  SwapMetricsDriver::SwapMetricsUpdateResult
  SwapMetricsDriverImplLinux::UpdateMetricsInternal(base::TimeDelta interval) {
-   base::VmStatInfo vmstat;
 +#if !defined(OS_BSD)
+   base::VmStatInfo vmstat;
    if (!base::GetVmStatInfo(&vmstat)) {
      return SwapMetricsDriver::SwapMetricsUpdateResult::kSwapMetricsUpdateFailed;
-   }
-+#else
-+    return SwapMetricsDriver::SwapMetricsUpdateResult::kSwapMetricsUpdateFailed;
-+#endif
+@@ -55,12 +56,15 @@ SwapMetricsDriverImplLinux::UpdateMetricsInternal(base
  
-   uint64_t in_counts = vmstat.pswpin - last_pswpin_;
-   uint64_t out_counts = vmstat.pswpout - last_pswpout_;
+   if (interval.is_zero())
+     return SwapMetricsDriver::SwapMetricsUpdateResult::
+-        kSwapMetricsUpdateSuccess;
++    kSwapMetricsUpdateSuccess;
+ 
+   delegate_->OnSwapInCount(in_counts, interval);
+   delegate_->OnSwapOutCount(out_counts, interval);
+ 
+   return SwapMetricsDriver::SwapMetricsUpdateResult::kSwapMetricsUpdateSuccess;
++#else
++  return SwapMetricsDriver::SwapMetricsUpdateResult::kSwapMetricsUpdateFailed;
++#endif
+ }
+ 
+ }  // namespace content

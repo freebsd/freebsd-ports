@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/net/features.gni.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/net/features.gni.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/net/features.gni
 @@ -27,7 +27,7 @@ declare_args() {
    disable_brotli_filter = false
  
    # Multicast DNS.
--  enable_mdns = is_win || is_linux || is_fuchsia
-+  enable_mdns = is_win || is_linux || is_fuchsia || is_bsd
+-  enable_mdns = is_win || is_linux || is_fuchsia || is_mac || is_ios
++  enable_mdns = is_win || is_linux || is_fuchsia || is_mac || is_ios || is_bsd
  
    # Reporting not used on iOS.
    enable_reporting = !is_ios

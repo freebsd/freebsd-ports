@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/native_pixmap_handle.h.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/ui/gfx/native_pixmap_handle.h.orig	2019-03-01 17:04:22 UTC
 +++ src/3rdparty/chromium/ui/gfx/native_pixmap_handle.h
 @@ -13,7 +13,7 @@
  #include "build/build_config.h"
@@ -21,8 +21,8 @@
    std::vector<NativePixmapPlane> planes;
  };
  
--#if defined(OS_LINUX) && !defined(TOOLKIT_QT)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(TOOLKIT_QT)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
  // Returns an instance of |handle| which can be sent over IPC. This duplicates
  // the file-handles, so that the IPC code take ownership of them, without
  // invalidating |handle|.

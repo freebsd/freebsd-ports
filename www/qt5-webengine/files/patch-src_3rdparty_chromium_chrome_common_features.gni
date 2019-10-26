@@ -1,14 +1,14 @@
---- src/3rdparty/chromium/chrome/common/features.gni.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/chrome/common/features.gni.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/chrome/common/features.gni
-@@ -46,9 +46,9 @@ declare_args() {
+@@ -41,9 +41,9 @@ declare_args() {
                                  (is_desktop_linux && use_dbus) || is_chromeos
  
    enable_one_click_signin =
 -      is_win || is_mac || (is_linux && !is_chromeos && !is_chromecast)
 +      is_win || is_mac || is_bsd || (is_linux && !is_chromeos && !is_chromecast)
  
--  enable_service_discovery = enable_mdns || is_mac
-+  enable_service_discovery = enable_mdns || is_mac || is_bsd
+-  enable_service_discovery = (enable_mdns && !is_android && !is_ios) || is_mac
++  enable_service_discovery = (enable_mdns && !is_android && !is_ios) || is_mac || is_bsd
  
    # Enables use of the session service, which is enabled by default.
    # Android stores them separately on the Java side.

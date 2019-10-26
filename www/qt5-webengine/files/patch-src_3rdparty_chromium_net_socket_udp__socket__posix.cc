@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/socket/udp_socket_posix.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/net/socket/udp_socket_posix.cc.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/net/socket/udp_socket_posix.cc
 @@ -68,7 +68,7 @@ const int kActivityMonitorMinimumSamplesForThroughputE
  const base::TimeDelta kActivityMonitorMsThreshold =
@@ -18,7 +18,7 @@
  
  #if defined(OS_MACOSX) && !defined(OS_IOS)
  
-@@ -632,13 +632,13 @@ int UDPSocketPosix::SetDoNotFragment() {
+@@ -644,13 +644,13 @@ int UDPSocketPosix::SetDoNotFragment() {
  }
  
  void UDPSocketPosix::SetMsgConfirm(bool confirm) {
@@ -34,7 +34,7 @@
  }
  
  int UDPSocketPosix::AllowAddressReuse() {
-@@ -653,17 +653,20 @@ int UDPSocketPosix::SetBroadcast(bool broadcast) {
+@@ -665,17 +665,20 @@ int UDPSocketPosix::SetBroadcast(bool broadcast) {
    DCHECK_CALLED_ON_VALID_THREAD(thread_checker_);
    int value = broadcast ? 1 : 0;
    int rv;
@@ -57,7 +57,7 @@
    rv = setsockopt(socket_, SOL_SOCKET, SO_BROADCAST, &value, sizeof(value));
  
    return rv == 0 ? OK : MapSystemError(errno);
-@@ -901,19 +904,24 @@ int UDPSocketPosix::SetMulticastOptions() {
+@@ -937,19 +940,24 @@ int UDPSocketPosix::SetMulticastOptions() {
    if (multicast_interface_ != 0) {
      switch (addr_family_) {
        case AF_INET: {
@@ -74,18 +74,18 @@
          mreq.imr_ifindex = multicast_interface_;
          mreq.imr_address.s_addr = htonl(INADDR_ANY);
 -#endif  //  !defined(OS_MACOSX)
-+#endif  //  !defined(OS_MACOSX) || !defined(OS_BSD)
++#endif  //  !defined(OS_MACOSX) || defined(OS_BSD)
          int rv = setsockopt(socket_, IPPROTO_IP, IP_MULTICAST_IF,
 +#if defined(OS_BSD)
 +                            reinterpret_cast<const char*>(&mreq.imr_interface.s_addr),
-+			    sizeof(mreq.imr_interface.s_addr));
++                            sizeof(mreq.imr_interface.s_addr));
 +#else
                              reinterpret_cast<const char*>(&mreq), sizeof(mreq));
 +#endif
          if (rv)
            return MapSystemError(errno);
          break;
-@@ -975,7 +983,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
+@@ -1011,7 +1019,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  
@@ -94,3 +94,22 @@
        ip_mreq mreq = {};
        int error = GetIPv4AddressFromIndex(socket_, multicast_interface_,
                                            &mreq.imr_interface.s_addr);
+@@ -1059,9 +1067,18 @@ int UDPSocketPosix::LeaveGroup(const IPAddress& group_
+     case IPAddress::kIPv4AddressSize: {
+       if (addr_family_ != AF_INET)
+         return ERR_ADDRESS_INVALID;
++#if defined(OS_BSD)
++      ip_mreq mreq = {};
++      int error = GetIPv4AddressFromIndex(socket_, multicast_interface_,
++                                          &mreq.imr_interface.s_addr);
++
++      if (error != OK)
++        return error;
++#else
+       ip_mreqn mreq = {};
+       mreq.imr_ifindex = multicast_interface_;
+       mreq.imr_address.s_addr = INADDR_ANY;
++#endif
+       memcpy(&mreq.imr_multiaddr, group_address.bytes().data(),
+              IPAddress::kIPv4AddressSize);
+       int rv = setsockopt(socket_, IPPROTO_IP, IP_DROP_MEMBERSHIP,

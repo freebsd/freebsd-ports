@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/skia/src/ports/SkFontHost_FreeType.cpp.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/third_party/skia/src/ports/SkFontHost_FreeType.cpp.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/third_party/skia/src/ports/SkFontHost_FreeType.cpp
-@@ -112,8 +112,6 @@ class FreeTypeLibrary : SkNoncopyable { (public)
+@@ -122,8 +122,6 @@ class FreeTypeLibrary : SkNoncopyable { (public)
          : fGetVarDesignCoordinates(nullptr)
          , fGetVarAxisFlags(nullptr)
          , fLibrary(nullptr)
@@ -9,7 +9,7 @@
      {
          if (FT_New_Library(&gFTMemory, &fLibrary)) {
              return;
-@@ -173,12 +171,7 @@ class FreeTypeLibrary : SkNoncopyable { (public)
+@@ -183,12 +181,7 @@ class FreeTypeLibrary : SkNoncopyable { (public)
          }
  #endif
  
@@ -23,7 +23,7 @@
      }
      ~FreeTypeLibrary() {
          if (fLibrary) {
-@@ -187,8 +180,6 @@ class FreeTypeLibrary : SkNoncopyable { (public)
+@@ -197,8 +190,6 @@ class FreeTypeLibrary : SkNoncopyable { (public)
      }
  
      FT_Library library() { return fLibrary; }
@@ -32,7 +32,7 @@
  
      // FT_Get_{MM,Var}_{Blend,Design}_Coordinates were added in FreeType 2.7.1.
      // Prior to this there was no way to get the coordinates out of the FT_Face.
-@@ -205,8 +196,6 @@ class FreeTypeLibrary : SkNoncopyable { (public)
+@@ -215,8 +206,6 @@ class FreeTypeLibrary : SkNoncopyable { (public)
  
  private:
      FT_Library fLibrary;
@@ -41,7 +41,7 @@
  
      // FT_Library_SetLcdFilterWeights was introduced in FreeType 2.4.0.
      // The following platforms provide FreeType of at least 2.4.0.
-@@ -704,17 +693,6 @@ void SkTypeface_FreeType::onFilterRec(SkScalerContextR
+@@ -713,17 +702,6 @@ void SkTypeface_FreeType::onFilterRec(SkScalerContextR
          rec->fTextSize = SkIntToScalar(1 << 14);
      }
  
@@ -56,12 +56,12 @@
 -        unref_ft_library();
 -    }
 -
-     SkPaint::Hinting h = rec->getHinting();
-     if (SkPaint::kFull_Hinting == h && !isLCD(*rec)) {
+     SkFontHinting h = rec->getHinting();
+     if (kFull_SkFontHinting == h && !isLCD(*rec)) {
          // collapse full->normal hinting if we're not doing LCD
-@@ -1109,11 +1087,11 @@ bool SkScalerContext_FreeType::getCBoxForLetter(char l
+@@ -1121,11 +1099,11 @@ bool SkScalerContext_FreeType::getCBoxForLetter(char l
  void SkScalerContext_FreeType::updateGlyphIfLCD(SkGlyph* glyph) {
-     if (isLCD(fRec)) {
+     if (glyph->fMaskFormat == SkMask::kLCD16_Format) {
          if (fLCDIsVert) {
 -            glyph->fHeight += gFTLibrary->lcdExtra();
 -            glyph->fTop -= gFTLibrary->lcdExtra() >> 1;
@@ -71,7 +71,7 @@
 -            glyph->fWidth += gFTLibrary->lcdExtra();
 -            glyph->fLeft -= gFTLibrary->lcdExtra() >> 1;
 +            glyph->fWidth += 2;
-+            glyph->fLeft -= 1; 
++            glyph->fLeft -= 1;
          }
      }
  }

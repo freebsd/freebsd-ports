@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/threading/platform_thread_linux.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/base/threading/platform_thread_linux.cc.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/base/threading/platform_thread_linux.cc
 @@ -18,7 +18,9 @@
  
@@ -10,7 +10,16 @@
  #include <sys/resource.h>
  #include <sys/time.h>
  #include <sys/types.h>
-@@ -128,7 +130,7 @@ bool GetCurrentThreadPriorityForPlatform(ThreadPriorit
+@@ -99,7 +101,7 @@ const ThreadPriorityToNiceValuePair kThreadPriorityToN
+ 
+ Optional<bool> CanIncreaseCurrentThreadPriorityForPlatform(
+     ThreadPriority priority) {
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
+   // A non-zero soft-limit on RLIMIT_RTPRIO is required to be allowed to invoke
+   // pthread_setschedparam in SetCurrentThreadPriorityForPlatform().
+   struct rlimit rlim;
+@@ -141,7 +143,7 @@ Optional<ThreadPriority> GetCurrentThreadPriorityForPl
  void PlatformThread::SetName(const std::string& name) {
    ThreadIdNameManager::GetInstance()->SetName(name);
  

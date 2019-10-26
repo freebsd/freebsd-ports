@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/build/config/compiler/compiler.gni.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/build/config/compiler/compiler.gni.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/build/config/compiler/compiler.gni
-@@ -173,7 +173,7 @@ declare_args() {
- 
+@@ -181,7 +181,7 @@ declare_args() {
  declare_args() {
    # Whether to use the gold linker from binutils instead of lld or bfd.
--  use_gold = !use_lld && !(is_chromecast && is_linux &&
-+  use_gold = !is_bsd && !use_lld && !(is_chromecast && is_linux &&
-                            (current_cpu == "arm" || current_cpu == "mipsel")) &&
-              ((is_linux && (current_cpu == "x64" || current_cpu == "x86" ||
-                             current_cpu == "arm" || current_cpu == "mipsel" ||
+   use_gold =
+-      !use_lld && !(is_chromecast && is_linux &&
++      !is_bsd && !use_lld && !(is_chromecast && is_linux &&
+                     (current_cpu == "arm" || current_cpu == "mipsel")) &&
+       ((is_linux && (current_cpu == "x64" || current_cpu == "x86" ||
+                      current_cpu == "arm" || current_cpu == "arm64" ||

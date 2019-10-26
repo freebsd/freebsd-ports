@@ -1,11 +1,20 @@
---- src/3rdparty/chromium/base/process/process_metrics.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/base/process/process_metrics.cc.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/base/process/process_metrics.cc
-@@ -10,7 +10,7 @@
- #include "base/values.h"
- #include "build/build_config.h"
+@@ -126,7 +126,7 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
+ }
+ #endif
  
 -#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_AIX)
 +#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD)
- namespace {
- int CalculateEventsPerSecond(uint64_t event_count,
-                              uint64_t* last_event_count,
+ int ProcessMetrics::CalculateIdleWakeupsPerSecond(
+     uint64_t absolute_idle_wakeups) {
+   return CalculateEventsPerSecond(absolute_idle_wakeups,
+@@ -138,7 +138,7 @@ int ProcessMetrics::GetIdleWakeupsPerSecond() {
+   NOTIMPLEMENTED();  // http://crbug.com/120488
+   return 0;
+ }
+-#endif  // defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_AIX)
++#endif  // defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD)
+ 
+ #if defined(OS_MACOSX)
+ int ProcessMetrics::CalculatePackageIdleWakeupsPerSecond(

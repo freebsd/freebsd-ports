@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/BUILD.gn.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/net/BUILD.gn.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/net/BUILD.gn
-@@ -95,7 +95,7 @@ net_configs = [
+@@ -97,7 +97,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -9,7 +9,16 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1904,6 +1904,17 @@ component("net") {
+@@ -1900,7 +1900,7 @@ component("net") {
+     }
+ 
+     # Use getifaddrs() on POSIX platforms, except Linux and Android.
+-    if (is_posix && !is_linux && !is_android) {
++    if (is_posix && ((!is_linux && !is_android) || (is_bsd))) {
+       sources += [
+         "base/network_interfaces_getifaddrs.cc",
+         "base/network_interfaces_getifaddrs.h",
+@@ -1993,6 +1993,16 @@ component("net") {
        ]
  
        sources -= [ "disk_cache/blockfile/file_posix.cc" ]
@@ -23,7 +32,6 @@
 +         "base/network_change_notifier_linux.h",
 +         "base/network_interfaces_linux.cc",
 +      ]
-+      sources += [ "base/network_interfaces_freebsd.cc" ]
      }
  
      if (is_ios || is_mac) {

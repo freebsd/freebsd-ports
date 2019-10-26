@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/services/audio/BUILD.gn.orig	2019-05-23 12:39:34 UTC
++++ src/3rdparty/chromium/services/audio/BUILD.gn
+@@ -106,7 +106,7 @@ source_set("lib") {
+     "//services/service_manager/sandbox:sandbox",
+   ]
+ 
+-  if (is_linux) {
++  if ((is_linux) && (!is_bsd)) {
+     sources += [
+       "audio_sandbox_hook_linux.cc",
+       "audio_sandbox_hook_linux.h",

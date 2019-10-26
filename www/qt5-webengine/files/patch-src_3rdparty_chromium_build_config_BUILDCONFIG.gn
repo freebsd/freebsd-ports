@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/build/config/BUILDCONFIG.gn.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/build/config/BUILDCONFIG.gn.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/build/config/BUILDCONFIG.gn
 @@ -131,10 +131,10 @@ declare_args() {
    is_official_build = false
  
    # Whether we're a traditional desktop unix.
 -  is_desktop_linux = current_os == "linux"
-+  is_desktop_linux = current_os == "linux" || current_os == "bsd"
++  is_desktop_linux = current_os == "linux" || current_os == "freebsd"
  
    # Set to true when compiling with the Clang compiler.
 -  is_clang = current_os != "linux" ||
-+  is_clang = current_os != "linux" || current_os == "bsd" ||
++  is_clang = current_os != "linux" || current_os == "freebsd" ||
               (current_cpu != "s390x" && current_cpu != "s390" &&
                current_cpu != "ppc64" && current_cpu != "ppc" &&
                current_cpu != "mips" && current_cpu != "mips64")
@@ -19,110 +19,30 @@
  
 -  if (host_os == "linux") {
 -    if (target_os != "linux") {
-+  if (host_os == "linux" || host_os == "bsd") {
-+    if (target_os != "linux" || target_os != "bsd") {
-       # TODO(dpranke) - is_clang normally applies only to the target
-       # build, and there is no way to indicate that you want to override
-       # it for both the target build *and* the host build. Do we need to
-@@ -232,7 +232,7 @@ if (target_os == "android") {
++  if (host_os == "linux" || host_os == "freebsd") {
++    if (target_os != "linux" && target_os != "freebsd") {
+       host_toolchain = "//build/toolchain/linux:clang_$host_cpu"
+     } else if (is_clang) {
+       host_toolchain = "//build/toolchain/linux:clang_$host_cpu"
+@@ -229,7 +229,7 @@ if (target_os == "android") {
    assert(host_os == "linux" || host_os == "mac",
           "Android builds are only supported on Linux and Mac hosts.")
    _default_toolchain = "//build/toolchain/android:android_clang_$target_cpu"
 -} else if (target_os == "chromeos" || target_os == "linux") {
-+} else if (target_os == "chromeos" || target_os == "linux" || target_os == "bsd") {
++} else if (target_os == "chromeos" || target_os == "linux" || target_os == "freebsd") {
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
      _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
-@@ -306,6 +306,7 @@ if (current_os == "win" || current_os == "winuwp") {
-   is_nacl = false
-   is_posix = false
-   is_win = true
-+  is_bsd = false
- } else if (current_os == "mac") {
-   is_aix = false
-   is_android = false
-@@ -317,6 +318,7 @@ if (current_os == "win" || current_os == "winuwp") {
-   is_nacl = false
-   is_posix = true
-   is_win = false
-+  is_bsd = false
- } else if (current_os == "android") {
-   is_aix = false
-   is_android = true
-@@ -328,6 +330,7 @@ if (current_os == "win" || current_os == "winuwp") {
-   is_nacl = false
-   is_posix = true
-   is_win = false
-+  is_bsd = false
- } else if (current_os == "chromeos") {
-   is_aix = false
-   is_android = false
-@@ -339,6 +342,7 @@ if (current_os == "win" || current_os == "winuwp") {
-   is_nacl = false
-   is_posix = true
-   is_win = false
-+  is_bsd = false
- } else if (current_os == "nacl") {
-   # current_os == "nacl" will be passed by the nacl toolchain definition.
-   # It is not set by default or on the command line. We treat is as a
-@@ -353,6 +357,7 @@ if (current_os == "win" || current_os == "winuwp") {
-   is_nacl = true
-   is_posix = true
-   is_win = false
-+  is_bsd = false
- } else if (current_os == "fuchsia") {
-   is_aix = false
-   is_android = false
-@@ -364,6 +369,7 @@ if (current_os == "win" || current_os == "winuwp") {
-   is_nacl = false
-   is_posix = false
-   is_win = false
-+  is_bsd = false
- } else if (current_os == "ios") {
-   is_aix = false
-   is_android = false
-@@ -375,6 +381,7 @@ if (current_os == "win" || current_os == "winuwp") {
-   is_nacl = false
-   is_posix = true
-   is_win = false
-+  is_bsd = false
- } else if (current_os == "linux") {
-   is_aix = false
-   is_android = false
-@@ -386,6 +393,7 @@ if (current_os == "win" || current_os == "winuwp") {
-   is_nacl = false
-   is_posix = true
-   is_win = false
-+  is_bsd = false
- } else if (current_os == "aix") {
-   is_aix = true
-   is_android = false
-@@ -397,6 +405,19 @@ if (current_os == "win" || current_os == "winuwp") {
-   is_nacl = false
-   is_posix = true
-   is_win = false
-+  is_bsd = false
-+} else if (current_os == "bsd") {
-+  is_aix = false
-+  is_android = false
-+  is_chromeos = false
-+  is_fuchsia = false
-+  is_ios = false
-+  is_linux = true
-+  is_mac = false
-+  is_nacl = false
-+  is_posix = true
-+  is_win = false
-+  is_bsd = true
- }
+@@ -296,10 +296,11 @@ is_android = current_os == "android"
+ is_chromeos = current_os == "chromeos"
+ is_fuchsia = current_os == "fuchsia"
+ is_ios = current_os == "ios"
+-is_linux = current_os == "chromeos" || current_os == "linux"
++is_linux = current_os == "chromeos" || current_os == "linux" || current_os == "freebsd"
+ is_mac = current_os == "mac"
+ is_nacl = current_os == "nacl"
+ is_win = current_os == "win" || current_os == "winuwp"
++is_bsd = current_os == "freebsd"
  
- # =============================================================================
-@@ -459,7 +480,7 @@ if (!is_ios) {
- if (!is_mac && !is_ios) {
-   sources_assignment_filter += [ "*.mm" ]
- }
--if (!is_linux) {
-+if (!is_linux && !is_bsd) {
-   sources_assignment_filter += [
-     "*_linux.h",
-     "*_linux.cc",
+ is_posix = !is_win && !is_fuchsia
+ 

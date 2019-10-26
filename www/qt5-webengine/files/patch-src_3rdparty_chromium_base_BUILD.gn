@@ -1,17 +1,15 @@
---- src/3rdparty/chromium/base/BUILD.gn.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/base/BUILD.gn.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/base/BUILD.gn
-@@ -1248,8 +1248,8 @@ jumbo_component("base") {
+@@ -1183,7 +1183,7 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
 -  if (!use_sysroot && (is_android || (is_linux && !is_chromecast && !use_qt)) &&
--      host_toolchain != "//build/toolchain/cros:host") {
-+  if (!use_sysroot && (is_android || (is_linux && !is_chromecast && !use_qt) && !is_clang &&
-+      host_toolchain != "//build/toolchain/cros:host")) {
++  if (!use_sysroot && (is_android || (is_linux && !is_chromecast && !use_qt) && !is_clang) &&
+       host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
- 
-@@ -1274,7 +1274,7 @@ jumbo_component("base") {
+@@ -1209,7 +1209,7 @@ jumbo_component("base") {
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
        ]
        deps += [ "//base/allocator:tcmalloc" ]
@@ -20,7 +18,7 @@
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
      } else if (is_android && use_allocator == "none") {
        sources += [
-@@ -1704,6 +1704,33 @@ jumbo_component("base") {
+@@ -1749,6 +1749,33 @@ jumbo_component("base") {
      }
    }
  
@@ -29,11 +27,10 @@
 +      "files/file_path_watcher_linux.cc",
 +      "files/file_util_linux.cc",
 +      "process/memory_linux.cc",
-+      "process/process_linux.cc",
 +      "process/process_handle_linux.cc",
 +      "process/process_iterator_linux.cc",
 +      "process/process_metrics_linux.cc",
-+      "sys_info_linux.cc"
++      "system/sys_info_linux.cc"
 +    ]
 +    sources += [
 +      "files/file_path_watcher_kqueue.cc",
@@ -43,18 +40,19 @@
 +      "process/process_handle_freebsd.cc",
 +      "process/process_iterator_freebsd.cc",
 +      "process/process_metrics_freebsd.cc",
-+      "sys_info_freebsd.cc",
++      "system/sys_info_freebsd.cc",
 +    ]
 +    libs = [
 +      "execinfo", # logging.cc
-+      "kvm"       # process_metrics_freebsd
++      "kvm",      # process_metrics_freebsd
++      "util"      # process_metrics_freebsd
 +    ]
 +  }
 +
    # iOS
    if (is_ios) {
      set_sources_assignment_filter([])
-@@ -2693,6 +2720,12 @@ test("base_unittests") {
+@@ -2805,6 +2832,12 @@ test("base_unittests") {
      ]
      set_sources_assignment_filter(sources_assignment_filter)
    }
