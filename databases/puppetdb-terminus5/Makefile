@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppetdb-terminus
-PORTVERSION=	5.2.10
+PORTVERSION=	5.2.11
 CATEGORIES=	databases ruby
 MASTER_SITES=	https://downloads.puppetlabs.com/puppetdb/
 PKGNAMESUFFIX=	5
