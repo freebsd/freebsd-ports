@@ -4,5 +4,7 @@ system.  It can be used to enter a single user, and it can be invoked as
 uses pw(8) and can be used concurrently by multiple admins and techs to
 add users to a system.
 
-Enteruser is also designed to be extensible.  Please see
-http://www.daemonnews.org/199908/enteruser.html for further background.
+Enteruser is also designed to be extensible.  Please see the linked
+article for further background.
+
+WWW: https://web.archive.org/web/20041211013021/http://www.daemonnews.org/199908/enteruser.html
