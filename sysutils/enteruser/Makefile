@@ -15,6 +15,7 @@ COMMENT=	Extensible script for adding new users
 LICENSE=	BSD2CLAUSE
 
 USES=		perl5 shebangfix
+USE_PERL5=	run
 SHEBANG_FILES=	enteruser
 
 NO_ARCH=	yes
