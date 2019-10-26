@@ -6,4 +6,6 @@ include/bemenu.h
 %%X11%%lib/bemenu/bemenu-renderer-x11.so
 lib/libbemenu.so
 lib/libbemenu.so.0
-lib/libbemenu.so.0.1.0
+lib/libbemenu.so.%%SOVERSION%%
+man/man1/bemenu-run.1.gz
+man/man1/bemenu.1.gz
