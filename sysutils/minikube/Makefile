@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minikube
-PORTVERSION=	1.3.1
+PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -21,6 +21,7 @@ GH_ACCOUNT=	kubernetes
 GH_TUPLE=	\
 		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
 		MakeNowJust:heredoc:bb23615498cd:makenowjust_heredoc/vendor/github.com/MakeNowJust/heredoc \
+		Microsoft:go-winio:v0.4.11:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		Parallels:docker-machine-parallels:v1.3.0:parallels_docker_machine_parallels/vendor/github.com/Parallels/docker-machine-parallels \
 		Sirupsen:logrus:89742aefa4b2:sirupsen_logrus/vendor/github.com/Sirupsen/logrus \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
@@ -32,14 +33,15 @@ GH_TUPLE=	\
 		c4milo:gotoolkit:bcc06269efa9:c4milo_gotoolkit/vendor/github.com/c4milo/gotoolkit \
 		cenkalti:backoff:v2.2.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
 		census-instrumentation:opencensus-go:v0.18.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
-		cheggaaa:pb:v1.0.27:cheggaaa_pbv1/vendor/gopkg.in/cheggaaa/pb.v1 \
-		cheggaaa:pb:v3.0.1:cheggaaa_pbv3/vendor/github.com/cheggaaa/pb \
+		cheggaaa:pb:v1.0.27:cheggaaa_pb/vendor/gopkg.in/cheggaaa/pb.v1 \
+		cheggaaa:pb:v3.0.1:cheggaaa_pb_1/vendor/github.com/cheggaaa/pb \
 		cloudfoundry-attic:jibber_jabber:bcc4c8345a21:cloudfoundry_attic_jibber_jabber/vendor/github.com/cloudfoundry-attic/jibber_jabber \
 		cpuguy83:go-md2man:v1.0.10:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		moby:moby:v1.13.1:docker_docker/vendor/github.com/docker/docker \
+		docker:distribution:edc3ab29cdff:docker_distribution/vendor/github.com/docker/distribution \
+		moby:moby:v1.13.1:moby_moby/vendor/github.com/docker/docker \
+		docker:go-connections:v0.3.0:docker_go_connections/vendor/github.com/docker/go-connections \
 		docker:go-units:v0.3.3:docker_go_units/vendor/github.com/docker/go-units \
-		docker:machine:a555e4f7a8f5:docker_machine/vendor/github.com/docker/machine \
 		docker:spdystream:449fdfce4d96:docker_spdystream/vendor/github.com/docker/spdystream \
 		elazarl:goproxy:9d40249d3c2f:elazarl_goproxy/vendor/github.com/elazarl/goproxy \
 		evanphx:json-patch:v4.2.0:evanphx_json_patch/vendor/github.com/evanphx/json-patch \
@@ -51,6 +53,7 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.1.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-collections:collections:604e922904d3:golang_collections_collections/vendor/github.com/golang-collections/collections \
 		golang:appengine:v1.5.0:golang_appengine/vendor/google.golang.org/appengine \
+		golang:build:041ab4dc3f9d:golang_build/vendor/golang.org/x/build \
 		golang:crypto:5c40567a22f8:golang_crypto/vendor/golang.org/x/crypto \
 		golang:glog:23def4e6c14b:golang_glog/vendor/github.com/golang/glog \
 		golang:groupcache:02826c3e7903:golang_groupcache/vendor/github.com/golang/groupcache \
@@ -62,16 +65,15 @@ GH_TUPLE=	\
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:85acf8d2951c:golang_time/vendor/golang.org/x/time \
 		google:go-cmp:v0.3.0:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-containerregistry:019cdfc6adf9:google_go_containerregistry/vendor/github.com/google/go-containerregistry \
+		google:go-containerregistry:697ee0b3d46e:google_go_containerregistry/vendor/github.com/google/go-containerregistry \
 		google:go-genproto:4b09977fb922:google_go_genproto/vendor/google.golang.org/genproto \
-		google:go-github:v25.0.2:google_go_github/vendor/github.com/google/go-github/v25 \
-		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:gofuzz:v1.0.0:google_gofuzz/vendor/github.com/google/gofuzz \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.3:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:gnostic:0c5108395e2d:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
 		googleapis:google-api-go-client:v0.1.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.36.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		gotestyourself:gotest.tools:v2.2.0:gotestyourself_gotest_tools/vendor/gotest.tools \
 		grpc:grpc-go:v1.17.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:7554cd9344ce:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-cleanhttp:v0.5.0:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
@@ -90,13 +92,17 @@ GH_TUPLE=	\
 		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		johanneswuerbach:nfsexports:1aa528dcb345:johanneswuerbach_nfsexports/vendor/github.com/johanneswuerbach/nfsexports \
 		json-iterator:go:v1.1.6:json_iterator_go/vendor/github.com/json-iterator/go \
+		juju:clock:9c5c9712527c:juju_clock/vendor/github.com/juju/clock \
+		juju:errors:0232dcc7464d:juju_errors/vendor/github.com/juju/errors \
+		juju:mutex:d21b13acf4bf:juju_mutex/vendor/github.com/juju/mutex \
 		kubernetes-sigs:yaml:v1.1.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
 		kubernetes:klog:v0.3.1:kubernetes_klog/vendor/k8s.io/klog \
 		kubernetes:kube-openapi:b3a7cee44a30:kubernetes_kube_openapi/vendor/k8s.io/kube-openapi \
-		kubernetes:kubernetes:v1.15.0:kubernetes_kubernetes/vendor/k8s.io/kubernetes \
+		kubernetes:kubernetes:v1.15.2:kubernetes_kubernetes/vendor/k8s.io/kubernetes \
 		kubernetes:utils:c2654d5206da:kubernetes_utils/vendor/k8s.io/utils \
 		libvirt:libvirt-go:v3.4.0:libvirt_libvirt_go/vendor/github.com/libvirt/libvirt-go \
 		machine-drivers:docker-machine-driver-vmware:v0.1.1:machine_drivers_docker_machine_driver_vmware/vendor/github.com/machine-drivers/docker-machine-driver-vmware \
+		machine-drivers:machine:21bd2f51b8ea:machine_drivers_machine/vendor/github.com/docker/machine \
 		magiconair:properties:v1.8.0:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
@@ -112,11 +118,13 @@ GH_TUPLE=	\
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		olekukonko:tablewriter:bdcc175572fd:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
+		opencontainers:go-digest:a6d0ee40d420:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
+		otiai10:copy:v1.0.2:otiai10_copy/vendor/github.com/otiai10/copy \
 		pborman:uuid:v1.2.0:pborman_uuid/vendor/github.com/pborman/uuid \
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		phayes:freeport:95f893ade6f2:phayes_freeport/vendor/github.com/phayes/freeport \
 		pkg:browser:9302be274faa:pkg_browser/vendor/github.com/pkg/browser \
-		pkg:errors:v0.8.0:pkg_errors/vendor/github.com/pkg/errors \
+		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
 		pkg:profile:3a8809bd8a80:pkg_profile/vendor/github.com/pkg/profile \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		prometheus:client_golang:v0.9.2:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
@@ -138,34 +146,36 @@ GH_TUPLE=	\
 		xeipuuv:gojsonreference:e02fc20de94c:xeipuuv_gojsonreference/vendor/github.com/xeipuuv/gojsonreference \
 		xeipuuv:gojsonschema:c539bca196be:xeipuuv_gojsonschema/vendor/github.com/xeipuuv/gojsonschema \
 		zchee:go-vmnet:97ebf9174097:zchee_go_vmnet/vendor/github.com/zchee/go-vmnet \
-		kubernetes:kubernetes:8c3b7d7679cc:kubernetes_api/vendor/k8s.io/kubernetes \
 		kubernetes-sigs:sig-storage-lib-external-provisioner:v4.0.0:kubernetes_sigs_sig_storage_lib_external_provisioner/vendor/sigs.k8s.io/sig-storage-lib-external-provisioner
 
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-X k8s.io/minikube/pkg/version.version=v${PORTVERSION} \
-		-X k8s.io/minikube/pkg/version.isoVersion=v1.3.0 \
+		-X k8s.io/minikube/pkg/version.isoVersion=v1.5.0 \
 		-X k8s.io/minikube/pkg/version.isoPath=minikube/iso"
 
 PLIST_FILES=	bin/${PORTNAME}
 
 SUB_FILES=	pkg-message
 
-K8S_APIS=	node-api cloud-provider apiserver code-generator \
+K8S_STAGING_APIS=	node-api cloud-provider apiserver code-generator \
 		apiextensions-apiserver apimachinery cli-runtime \
 		metrics kube-aggregator cluster-bootstrap sample-cli-plugin \
 		sample-apiserver cri-api sample-controller kube-scheduler \
 		kube-proxy client-go csi-translation-lib component-base \
-		legacy-cloud-providers kubelet kube-controller-manager kubectl api
+		legacy-cloud-providers kubelet kube-controller-manager api
+K8S_APIS=	kubectl
 
 post-patch:
 	cd ${WRKSRC}/pkg/minikube/tunnel && \
 		${LN} -s route_darwin.go route_freebsd.go
-	cd ${WRKSRC}/pkg/minikube/cluster && \
-		${LN} -s cluster_linux.go cluster_freebsd.go
 	cd ${WRKSRC}/third_party/go9p && \
 		${LN} -s srv_pipe_linux.go srv_pipe_freebsd.go
-.for api in ${K8S_APIS}
+.for api in ${K8S_STAGING_APIS}
 	${LN} -s ${WRKSRC}/vendor/k8s.io/kubernetes/staging/src/k8s.io/${api} ${WRKSRC}/vendor/k8s.io/${api}
+.endfor
+.for api in ${K8S_APIS}
+	${MKDIR} ${WRKSRC}/vendor/k8s.io/${api}
+	${LN} -s ${WRKSRC}/vendor/k8s.io/kubernetes/pkg/${api} ${WRKSRC}/vendor/k8s.io/${api}/pkg
 .endfor
 
 pre-build:
