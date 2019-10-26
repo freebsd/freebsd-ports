@@ -19,11 +19,10 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 RUN_DEPENDS=	gpasm:devel/gputils
 
 USES=		compiler:c++11-lang gmake gnome libtool localbase:ldflags pathfix pkgconfig readline
-USE_CXXSTD=	gnu++98
+USE_CXXSTD=	c++11
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 pango
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 CONFLICTS_BUILD=	ga
