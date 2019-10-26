@@ -29,8 +29,8 @@ USES=		gmake iconv libtool pathfix pkgconfig
 PORTDOCS=	*
 
 PST2DII_BUILD_DEPENDS=	convert:graphics/ImageMagick6
-PST2DII_CONFIGURE_OFF=	--enable-dii=no
-PST2DII_CONFIGURE_ON=	--enable-dii=yes
+PST2DII_CONFIGURE_ENABLE=	dii
+PST2DII_USES=		localbase
 PST2DII_LIB_DEPENDS=	libgd.so:graphics/gd
 PST2DII_RUN_DEPENDS=	convert:graphics/ImageMagick6
 
