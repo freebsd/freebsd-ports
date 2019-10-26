@@ -207,6 +207,7 @@
     SUBDIR += sourceserifpro-ttf
     SUBDIR += spleen
     SUBDIR += stix-fonts
+    SUBDIR += sudo-font
     SUBDIR += suxus
     SUBDIR += symbola
     SUBDIR += tamsyn
