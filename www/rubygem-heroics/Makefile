@@ -12,7 +12,7 @@ COMMENT=	Ruby HTTP client generator for APIs represented with JSON schema
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-erubis>=2.0:www/rubygem-erubis \
+RUN_DEPENDS=	rubygem-erubis>=2.0<3:www/rubygem-erubis \
 		rubygem-excon>=0:devel/rubygem-excon \
 		rubygem-moneta>=0:devel/rubygem-moneta \
 		rubygem-multi_json>=1.9.2:devel/rubygem-multi_json
