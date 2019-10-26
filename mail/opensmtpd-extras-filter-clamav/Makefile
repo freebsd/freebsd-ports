@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-clamav
-PORTREVISION=		2
+PORTREVISION=		0
 
 COMMENT=		Check messages with ClamAV in OpenSMTPD
+
+IGNORE=			temporary unavailable
 
 RUN_DEPENDS=		clamscan:security/clamav
 

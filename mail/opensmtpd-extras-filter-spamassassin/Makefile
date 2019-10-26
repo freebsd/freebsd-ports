@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-spamassassin
-PORTREVISION=		2
+PORTREVISION=		0
 
 COMMENT=		Spamassassin filter addon for OpenSMTPD
+
+IGNORE=			temporary unavailable
 
 PLIST_FILES=		libexec/opensmtpd/filter-spamassassin \
 			man/man8/filter-spamassassin.8.gz

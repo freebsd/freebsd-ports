@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-dkim
-PORTREVISION=		2
+PORTREVISION=		0
 
 COMMENT=		DKIM-signing filter for OpenSMTPD
+
+IGNORE=			temporary unavailable
 
 PLIST_FILES=		libexec/opensmtpd/filter-dkim-signer \
 			man/man8/filter-dkim-signer.8.gz

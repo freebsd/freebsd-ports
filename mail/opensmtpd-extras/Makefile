@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd-extras
-PORTVERSION=	201606230001
-PORTREVISION?=	5
+PORTVERSION?=	6.4.0
+PORTREVISION?=	0
+PORTEPOCH?=	1
 CATEGORIES+=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
 
@@ -35,23 +36,27 @@ NO_OPTIONS_SORT=	yes
 #
 # Pass OpenSMTPD branch selection to all extras
 #
-OPTIONS_DEFINE=	OPENSMTP_DEVEL
+#OPTIONS_DEFINE=	OPENSMTP_DEVEL
 
-OPENSMTP_DEVEL_DESC=	Depend on opensmtpd-devel (opensmtpd if off)
-OPENSMTP_DEVEL_BUILD_DEPENDS_OFF=	smtpctl:mail/opensmtpd
-OPENSMTP_DEVEL_RUN_DEPENDS_OFF=		smtpctl:mail/opensmtpd
-OPENSMTP_DEVEL_BUILD_DEPENDS=	smtpctl:mail/opensmtpd-devel
-OPENSMTP_DEVEL_RUN_DEPENDS=	smtpctl:mail/opensmtpd-devel
+#OPENSMTP_DEVEL_DESC=	Depend on opensmtpd-devel (opensmtpd if off)
+#OPENSMTP_DEVEL_BUILD_DEPENDS_OFF=	smtpctl:mail/opensmtpd
+#OPENSMTP_DEVEL_RUN_DEPENDS_OFF=		smtpctl:mail/opensmtpd
+#OPENSMTP_DEVEL_BUILD_DEPENDS=	smtpctl:mail/opensmtpd-devel
+#OPENSMTP_DEVEL_RUN_DEPENDS=	smtpctl:mail/opensmtpd-devel
+BUILD_DEPENDS=	smtpctl:mail/opensmtpd
+RUN_DEPENDS=	smtpctl:mail/opensmtpd
+
 
 .if empty(SLAVE_PORT)
-OPTIONS_GROUP=			TOOLS TABLE FILTER FILTER_EXP QUEUE SCHEDULER
-OPTIONS_GROUP_FILTER=		FILTER_CLAMAV FILTER_DKIM FILTER_DNSBL FILTER_MONKEY FILTER_PAUSE FILTER_REGEX FILTER_SPAMASSASSIN
-OPTIONS_GROUP_FILTER_EXP=	FILTER_LUA FILTER_PERL FILTER_PYTHON
+OPTIONS_GROUP=			FILTER TOOLS TABLE QUEUE SCHEDULER
+OPTIONS_GROUP_FILTER=		FILTER_MONKEY
+#OPTIONS_GROUP_FILTER=		FILTER_CLAMAV FILTER_DKIM FILTER_DNSBL FILTER_MONKEY FILTER_PAUSE FILTER_REGEX FILTER_SPAMASSASSIN
+#OPTIONS_GROUP_FILTER_EXP=	FILTER_LUA FILTER_PERL FILTER_PYTHON
 OPTIONS_GROUP_QUEUE=		QUEUE_PYTHON QUEUE_RAM
 OPTIONS_GROUP_SCHEDULER=	SCHEDULER_PYTHON SCHEDULER_RAM
 OPTIONS_GROUP_TABLE=		TABLE_LDAP TABLE_MYSQL TABLE_PASSWD TABLE_PGSQL TABLE_PYTHON TABLE_REDIS TABLE_SOCKETMAP TABLE_SQLITE
 OPTIONS_GROUP_TOOLS=		TOOL_STATS
-OPTIONS_DEFAULT=		${OPTIONS_GROUP_FILTER} ${OPTIONS_GROUP_TABLE} ${OPTIONS_GROUP_TOOLS}
+OPTIONS_DEFAULT=		${OPTIONS_GROUP_TABLE} ${OPTIONS_GROUP_TOOLS}
 
 # Groups
 FILTER_DESC=			BASE FILTERS
@@ -94,7 +99,7 @@ TABLE_SQLITE_DESC=		SQLite table support
 # Tools
 TOOL_STATS_DESC=		Stats tool for OpenSMTPD
 
-PLIST_FILES=			man/man3/filter_api.3.gz
+#PLIST_FILES=			man/man3/filter_api.3.gz
 INSTALL_DIR=			${LOCALBASE}/libexec/opensmtpd
 
 NO_ARCH=	yes
@@ -134,11 +139,9 @@ TOOL_STATS_RUN_DEPENDS=			tool-stats:mail/opensmtpd-extras-tool-stats
 .else
 
 # Only install this for the opensmtpd-extras master port
-pre-patch:
-	@${REINPLACE_CMD} -e '/man_MANS.*filter_api.3/s/^/#/' \
-		${WRKSRC}/extras/filters/Makefile.am
-# While filters still experimental feature, suppress extra call warnings from logs
-	${REINPLACE_CMD} -e '/is EXPERIMENTAL/d' ${WRKSRC}/api/filter_api.c
+#pre-patch:
+#	@${REINPLACE_CMD} -e '/man_MANS.*filter_api.3/s/^/#/' \
+#		${WRKSRC}/extras/filters/Makefile.am
 
 .endif
 

@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-perl
-PORTREVISION=		2
+PORTREVISION=		0
 
 COMMENT=		Perl-script filter support for OpenSMTPD
+
+IGNORE=			temporary unavailable
 
 PLIST_FILES=		libexec/opensmtpd/filter-perl
 

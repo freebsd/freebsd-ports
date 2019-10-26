@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-table-passwd
-PORTREVISION=	2
+PORTREVISION=	0
 
 COMMENT=	passwd(5) table support for OpenSMTPD
 

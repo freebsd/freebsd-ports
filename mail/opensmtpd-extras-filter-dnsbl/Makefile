@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-dnsbl
-PORTREVISION=		2
+PORTREVISION=		0
 
 COMMENT=		DNSBL-checking filter for OpenSMTPD
+
+IGNORE=			temporary unavailable
 
 PLIST_FILES=		libexec/opensmtpd/filter-dnsbl \
 			man/man8/filter-dnsbl.8.gz
