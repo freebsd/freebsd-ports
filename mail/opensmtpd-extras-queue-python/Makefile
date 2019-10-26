@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-queue-python
-PORTREVISION=		3
+PORTREVISION=		0
 
 COMMENT=		Python queue support for OpenSMTPD
 

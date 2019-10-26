@@ -1,6 +1,6 @@
---- mk/smtpd/Makefile.in.orig	2016-02-02 20:40:51 UTC
+--- mk/smtpd/Makefile.in.orig	2019-10-26 11:56:36 UTC
 +++ mk/smtpd/Makefile.in
-@@ -1365,13 +1365,7 @@ install-exec-hook: $(CONFIGFILES) $(MANP
+@@ -1404,13 +1404,7 @@ install-exec-hook: $(CONFIGFILES) $(MANPAGES)
  	$(MKDIR_P) $(DESTDIR)$(bindir)
  	$(MKDIR_P) $(DESTDIR)$(mandir)/$(mansubdir)5
  	$(MKDIR_P) $(DESTDIR)$(mandir)/$(mansubdir)8

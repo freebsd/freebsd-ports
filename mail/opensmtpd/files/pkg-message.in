@@ -1,13 +1,13 @@
 [
 { type: install
   message: <<EOM
-If you are upgrading from OpenSMTPD version 5.7.3 or earlier, please
+If you are upgrading from OpenSMTPD version 5.7.3/201303011853 or earlier, please
 follow the procedure below to update the permissions on the OpenSMTPD
 spool directories:
 
   1. Stop 'smtpd' service:
 
-     # %%PREFIX%%/sbin/smtpctl stop
+     # service smtpd stop
 
   2. Update permissions:
 

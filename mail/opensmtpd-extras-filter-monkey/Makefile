@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-monkey
-PORTREVISION=		2
+PORTVERSION=		201703132115
+PORTREVISION=		0
+PORTREPOCH=		0
 
 COMMENT=		Arbitrary delay or reject filter for OpenSMTPD
 
-CONFIGURE_ARGS+=	--with-experimental-filter-monkey
+CONFIGURE_ARGS+=	--with-filter-monkey
 
 PLIST=			${.CURDIR}/pkg-plist
 MASTERDIR=		${.CURDIR}/../opensmtpd-extras

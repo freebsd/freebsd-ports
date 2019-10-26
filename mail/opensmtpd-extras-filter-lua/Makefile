@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=		-filter-lua
-PORTREVISION=		2
+PORTREVISION=		0
 
 COMMENT=		LUA-script filter support for OpenSMTPD
+
+IGNORE=			temporary unavailable
 
 PLIST_FILES=		libexec/opensmtpd/filter-lua
 
