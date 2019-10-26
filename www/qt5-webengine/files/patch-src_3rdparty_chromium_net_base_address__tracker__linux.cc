@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/base/address_tracker_linux.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/net/base/address_tracker_linux.cc.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/net/base/address_tracker_linux.cc
 @@ -21,96 +21,10 @@
  namespace net {
@@ -99,7 +99,7 @@
  }
  
  AddressTrackerLinux::AddressTrackerLinux()
-@@ -153,76 +67,10 @@ AddressTrackerLinux::~AddressTrackerLinux() {
+@@ -153,93 +67,8 @@ AddressTrackerLinux::~AddressTrackerLinux() {
  }
  
  void AddressTrackerLinux::Init() {
@@ -109,10 +109,7 @@
 -    AbortAndForceOnline();
 -    return;
 -  }
-+NOTIMPLEMENTED();
-+AbortAndForceOnline();
-+}
- 
+-
 -  int rv;
 -
 -  if (tracking_) {
@@ -176,10 +173,29 @@
 -    return;
 -  }
 -
-   // Consume pending message to populate links_online_, but don't notify.
-   ReadMessages(&address_changed, &link_changed, &tunnel_changed);
-   {
-@@ -250,25 +98,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
+-  // Consume pending message to populate links_online_, but don't notify.
+-  ReadMessages(&address_changed, &link_changed, &tunnel_changed);
+-  {
+-    AddressTrackerAutoLock lock(*this, connection_type_lock_);
+-    connection_type_initialized_ = true;
+-    connection_type_initialized_cv_.Broadcast();
+-  }
+-
+-  if (tracking_) {
+-    rv = base::MessageLoopCurrentForIO::Get()->WatchFileDescriptor(
+-        netlink_fd_, true, base::MessagePumpForIO::WATCH_READ, &watcher_, this);
+-    if (rv < 0) {
+-      PLOG(ERROR) << "Could not watch NETLINK socket";
+-      AbortAndForceOnline();
+-      return;
+-    }
+-  }
++NOTIMPLEMENTED();
++AbortAndForceOnline();
+ }
+ 
+ void AddressTrackerLinux::AbortAndForceOnline() {
+@@ -250,25 +79,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
    connection_type_initialized_cv_.Broadcast();
  }
  
@@ -205,7 +221,7 @@
  NetworkChangeNotifier::ConnectionType
  AddressTrackerLinux::GetCurrentConnectionType() {
    // http://crbug.com/125097
-@@ -323,102 +152,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
+@@ -326,102 +136,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
                                          bool* address_changed,
                                          bool* link_changed,
                                          bool* tunnel_changed) {
@@ -241,7 +257,7 @@
 -            msg->ifa_flags |= IFA_F_DEPRECATED;
 -          // Only indicate change if the address is new or ifaddrmsg info has
 -          // changed.
--          AddressMap::iterator it = address_map_.find(address);
+-          auto it = address_map_.find(address);
 -          if (it == address_map_.end()) {
 -            address_map_.insert(it, std::make_pair(address, *msg));
 -            *address_changed = true;
@@ -309,7 +325,7 @@
  }
  
  void AddressTrackerLinux::OnFileCanReadWithoutBlocking(int fd) {
-@@ -455,34 +189,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
+@@ -458,31 +173,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
  }
  
  void AddressTrackerLinux::UpdateCurrentConnectionType() {
@@ -317,12 +333,9 @@
 -  std::unordered_set<int> online_links = GetOnlineLinks();
 -
 -  // Strip out tunnel interfaces from online_links
--  for (std::unordered_set<int>::const_iterator it = online_links.begin();
--       it != online_links.end();) {
+-  for (auto it = online_links.cbegin(); it != online_links.cend();) {
 -    if (IsTunnelInterface(*it)) {
--      std::unordered_set<int>::const_iterator tunnel_it = it;
--      ++it;
--      online_links.erase(*tunnel_it);
+-      it = online_links.erase(it);
 -    } else {
 -      ++it;
 -    }

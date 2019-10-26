@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/process/process_handle_freebsd.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/base/process/process_handle_freebsd.cc.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/base/process/process_handle_freebsd.cc
 @@ -16,10 +16,13 @@ namespace base {
  
@@ -8,7 +8,7 @@
 +  size_t length = sizeof(struct kinfo_proc);
    int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process };
  
-   if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
+   if (sysctl(mib, base::size(mib), &info, &length, NULL, 0) < 0)
 +    return -1;
 +
 +  if (length < sizeof(struct kinfo_proc))

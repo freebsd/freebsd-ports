@@ -1,6 +1,15 @@
---- src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc
-@@ -496,6 +496,12 @@ int OS::GetCurrentThreadId() {
+@@ -376,7 +376,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
+ 
+ // static
+ bool OS::HasLazyCommits() {
+-#if V8_OS_AIX || V8_OS_LINUX || V8_OS_MACOSX
++#if V8_OS_AIX || V8_OS_LINUX || V8_OS_MACOSX || V8_OS_FREEBSD
+   return true;
+ #else
+   // TODO(bbudge) Return true for all POSIX platforms.
+@@ -501,6 +501,12 @@ int OS::GetCurrentThreadId() {
    return static_cast<int>(syscall(__NR_gettid));
  #elif V8_OS_ANDROID
    return static_cast<int>(gettid());

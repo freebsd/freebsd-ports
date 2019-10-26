@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/common/chrome_paths.h.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/chrome/common/chrome_paths.h.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/chrome/common/chrome_paths.h
 @@ -51,7 +51,7 @@ enum {
                                  // to set policies for chrome. This directory
@@ -18,7 +18,7 @@
    DIR_STANDALONE_EXTERNAL_EXTENSIONS,  // Directory for 'per-extension'
                                         // definition manifest files that
                                         // describe extensions which are to be
-@@ -111,7 +111,7 @@ enum {
+@@ -107,7 +107,7 @@ enum {
    DIR_SUPERVISED_USER_INSTALLED_WHITELISTS,  // Directory where sanitized
                                               // supervised user whitelists are
                                               // installed.
@@ -27,3 +27,16 @@
    DIR_NATIVE_MESSAGING,         // System directory where native messaging host
                                  // manifest files are stored.
    DIR_USER_NATIVE_MESSAGING,    // Directory with Native Messaging Hosts
+@@ -122,10 +122,10 @@ enum {
+   DIR_GEN_TEST_DATA,            // Directory where generated test data resides.
+   DIR_TEST_DATA,                // Directory where unit test data resides.
+   DIR_TEST_TOOLS,               // Directory where unit test tools reside.
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   FILE_COMPONENT_FLASH_HINT,    // A file in a known location that points to
+                                 // the component updated flash plugin.
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
+ #if defined(OS_CHROMEOS)
+   FILE_CHROME_OS_COMPONENT_FLASH,  // The location of component updated Flash on
+                                    // Chrome OS.

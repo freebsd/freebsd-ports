@@ -1,0 +1,15 @@
+--- src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn.orig	2019-05-23 12:39:34 UTC
++++ src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn
+@@ -71,6 +71,12 @@ static_library("client") {
+     sources += [ "crashpad_client_fuchsia.cc" ]
+   }
+ 
++  if (crashpad_is_posix) {
++    sources += [
++      "crashpad_client_posix.cc",
++    ]
++  }
++
+   if (crashpad_is_linux || crashpad_is_android || crashpad_is_fuchsia) {
+     sources += [ "crash_report_database_generic.cc" ]
+   }

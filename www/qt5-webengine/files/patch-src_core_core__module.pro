@@ -2,7 +2,7 @@
 * Extend some Linux-only compiler arguments to FreeBSD.
 * Generate split out debug files on FreeBSD too.
 
---- src/core/core_module.pro.orig	2018-11-27 04:10:38 UTC
+--- src/core/core_module.pro.orig	2019-05-24 09:01:39 UTC
 +++ src/core/core_module.pro
 @@ -4,6 +4,9 @@ include(core_common.pri)
  # Needed to set a CFBundleIdentifier
@@ -14,16 +14,16 @@
  linking_pri = $$OUT_PWD/$$getConfigDir()/$${TARGET}.pri
  
  !include($$linking_pri) {
-@@ -29,21 +32,21 @@ RSP_FILE = $$OUT_PWD/$$getConfigDir()/$${TARGET}.rsp
- for(object, NINJA_OBJECTS): RSP_CONTENT += $$object
- write_file($$RSP_FILE, RSP_CONTENT)
- macos:LIBS_PRIVATE += -Wl,-filelist,$$shell_quote($$RSP_FILE)
--linux:LIBS_PRIVATE += @$$RSP_FILE
-+unix:LIBS_PRIVATE += @$$RSP_FILE
+@@ -30,21 +33,21 @@ RSP_ARCHIVE_FILE = $$OUT_PWD/$$getConfigDir()/$${TARGE
+ for(archive, NINJA_ARCHIVES): RSP_A_CONTENT += $$archive
+ write_file($$RSP_ARCHIVE_FILE, RSP_A_CONTENT)
+ macos:LIBS_PRIVATE += -Wl,-filelist,$$shell_quote($$RSP_OBJECT_FILE)
+-linux:QMAKE_LFLAGS += @$${RSP_OBJECT_FILE}
++unix:QMAKE_LFLAGS += @$${RSP_OBJECT_FILE}
  # QTBUG-58710 add main rsp file on windows
- win32:QMAKE_LFLAGS += @$$RSP_FILE
--linux: LIBS_PRIVATE += -Wl,--start-group $$NINJA_ARCHIVES -Wl,--end-group
-+unix: LIBS_PRIVATE += -Wl,--start-group $$NINJA_ARCHIVES -Wl,--end-group
+ win32:QMAKE_LFLAGS += @$${RSP_OBJECT_FILE}
+-linux:QMAKE_LFLAGS += -Wl,--start-group @$${RSP_ARCHIVE_FILE} -Wl,--end-group
++unix:QMAKE_LFLAGS += -Wl,--start-group @$${RSP_ARCHIVE_FILE} -Wl,--end-group
  else: LIBS_PRIVATE += $$NINJA_ARCHIVES
  LIBS_PRIVATE += $$NINJA_LIB_DIRS $$NINJA_LIBS
  # GN's LFLAGS doesn't always work across all the Linux configurations we support.
@@ -40,9 +40,9 @@
  } else {
      QMAKE_LFLAGS += $$NINJA_LFLAGS
  }
-@@ -86,7 +89,7 @@ CONFIG -= bsymbolic_functions
- 
- qtConfig(egl): CONFIG += egl
+@@ -85,7 +88,7 @@ win32 {
+ # and doesn't let Chromium get access to libc symbols through dlsym.
+ CONFIG -= bsymbolic_functions
  
 -linux:qtConfig(separate_debug_info): QMAKE_POST_LINK="cd $(DESTDIR) && $(STRIP) --strip-unneeded $(TARGET)"
 +unix:qtConfig(separate_debug_info): QMAKE_POST_LINK="cd $(DESTDIR) && $(STRIP) --strip-unneeded $(TARGET)"

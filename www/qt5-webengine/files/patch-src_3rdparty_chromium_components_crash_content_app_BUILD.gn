@@ -1,20 +1,29 @@
---- src/3rdparty/chromium/components/crash/content/app/BUILD.gn.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/components/crash/content/app/BUILD.gn.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/components/crash/content/app/BUILD.gn
-@@ -36,7 +36,7 @@ static_library("app") {
+@@ -36,12 +36,12 @@ static_library("app") {
      sources += [ "crashpad.cc" ]
    }
  
--  if (is_android || is_linux) {
-+  if (is_android || (is_linux && !is_bsd)) {
-     # Want these files on both Linux and Android.
+-  if (is_android || (is_linux && !is_chromeos)) {
++  if (is_android || (is_linux && !is_chromeos && !is_bsd)) {
      set_sources_assignment_filter([])
+     sources += [ "crashpad_linux.cc" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
      sources += [
-@@ -73,8 +73,6 @@ static_library("app") {
-       "//content/public/common:content_descriptors",
-       "//content/public/common:result_codes",
-       "//sandbox",
--      "//third_party/breakpad:client",
--      "//third_party/crashpad/crashpad/snapshot",
+       "breakpad_linux.cc",
+       "breakpad_linux.h",
+@@ -79,7 +79,10 @@ static_library("app") {
+       "//third_party/crashpad/crashpad/snapshot",
      ]
  
-     # Clang's -mstackrealign doesn't work well with
+-    if (is_linux) {
++    if (is_bsd) {
++      deps -= [ "//third_party/crashpad/crashpad/snapshot" ]
++    }
++    if (is_linux && !is_bsd) {
+       deps += [ "//third_party/breakpad:client" ]
+     }
+   }

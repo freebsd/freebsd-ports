@@ -1,11 +1,21 @@
---- src/3rdparty/chromium/cc/BUILD.gn.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/cc/BUILD.gn.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/cc/BUILD.gn
-@@ -550,7 +550,7 @@ cc_static_library("test_support") {
+@@ -548,7 +548,7 @@ cc_test_static_library("test_support") {
      "//ui/gl:test_support",
      "//ui/latency",
    ]
 -  if (!is_android) {
 +  if (!is_android && !is_bsd) {
      data_deps = [
-       "//third_party/mesa:osmesa",
+       "//third_party/mesa_headers",
      ]
+@@ -746,9 +746,6 @@ cc_test("cc_unittests") {
+     "//ui/gfx/geometry",
+     "//ui/gl",
+     "//ui/gl:test_support",
+-  ]
+-  data_deps = [
+-    "//third_party/mesa_headers",
+   ]
+ }
+ 

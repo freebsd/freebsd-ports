@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/crc32c/src/src/crc32c_arm64_linux_check.h.orig	2019-01-16 11:59:47 UTC
+--- src/3rdparty/chromium/third_party/crc32c/src/src/crc32c_arm64_linux_check.h.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/third_party/crc32c/src/src/crc32c_arm64_linux_check.h
 @@ -16,6 +16,24 @@
  

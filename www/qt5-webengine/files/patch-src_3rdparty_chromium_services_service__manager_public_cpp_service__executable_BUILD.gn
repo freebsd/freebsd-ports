@@ -1,0 +1,14 @@
+--- src/3rdparty/chromium/services/service_manager/public/cpp/service_executable/BUILD.gn.orig	2019-05-23 12:39:34 UTC
++++ src/3rdparty/chromium/services/service_manager/public/cpp/service_executable/BUILD.gn
+@@ -30,6 +30,11 @@ source_set("support") {
+       "//sandbox/linux:seccomp_bpf",
+     ]
+   }
++  if (is_bsd) {
++    deps -= [
++      "//sandbox/linux:seccomp_bpf"
++    ]
++  }
+ }
+ 
+ # Service executable targets should link against this to get a boilerplate entry

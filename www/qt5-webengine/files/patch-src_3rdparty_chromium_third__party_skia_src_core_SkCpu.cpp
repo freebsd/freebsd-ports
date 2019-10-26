@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/skia/src/core/SkCpu.cpp.orig	2019-01-16 10:59:47 UTC
+--- src/3rdparty/chromium/third_party/skia/src/core/SkCpu.cpp.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/third_party/skia/src/core/SkCpu.cpp
 @@ -70,6 +70,20 @@
          return features;

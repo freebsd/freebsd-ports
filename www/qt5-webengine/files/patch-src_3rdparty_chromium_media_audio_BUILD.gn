@@ -1,13 +1,13 @@
---- src/3rdparty/chromium/media/audio/BUILD.gn.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/media/audio/BUILD.gn.orig	2019-05-23 12:39:34 UTC
 +++ src/3rdparty/chromium/media/audio/BUILD.gn
-@@ -254,9 +254,19 @@ source_set("audio") {
+@@ -240,8 +240,18 @@ source_set("audio") {
      deps += [ "//media/base/android:media_jni_headers" ]
    }
  
 -  if (is_linux) {
 +  if (is_linux && !use_sndio) {
      sources += [ "linux/audio_manager_linux.cc" ]
-   }
++  }
 +  if (use_sndio) {
 +    libs += [ "sndio" ]
 +    sources += [
@@ -17,15 +17,6 @@
 +      "sndio/sndio_output.cc",
 +      "sndio/sndio_output.h"
 +    ]
-+  }
+   }
  
    if (use_alsa) {
-     libs += [ "asound" ]
-@@ -302,7 +312,6 @@ source_set("audio") {
-     if (link_pulseaudio) {
-       configs += [ ":libpulse" ]
-     } else {
--      libs += [ "dl" ]
-       deps += [ ":pulse_generate_stubs" ]
-       sources += get_target_outputs(":pulse_generate_stubs")
-     }
