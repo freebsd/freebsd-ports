@@ -6557,6 +6557,7 @@
     SUBDIR += wxGlade
     SUBDIR += wxformbuilder
     SUBDIR += xa65
+    SUBDIR += xbyak
     SUBDIR += xc3sprog
     SUBDIR += xdg-user-dirs
     SUBDIR += xdg-utils

@@ -1,0 +1,9 @@
+This is a header-only library which enables to dynamically assemble
+x86(IA32), x64(AMD64, x86-64) mnemonic.
+
+Features:
+* header file library
+* Intel/MASM like syntax
+* Full suppor of AVX-512
+
+WWW: https://github.com/herumi/xbyak
