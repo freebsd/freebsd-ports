@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eksctl
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -36,7 +36,7 @@ GH_TUPLE=	\
 		alecthomas:units:2efee857e7cf:alecthomas_units/vendor/github.com/alecthomas/units \
 		apex:log:v1.1.0:apex_log/vendor/github.com/apex/log \
 		aws:aws-sdk-go:v1.23.15:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
-		beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
+		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bep:debounce:v1.2.0:bep_debounce/vendor/github.com/bep/debounce \
 		bep:gitmap:v1.0.0:bep_gitmap/vendor/github.com/bep/gitmap \
 		bep:go-tocss:v0.6.0:bep_go_tocss/vendor/github.com/bep/go-tocss \
@@ -62,9 +62,9 @@ GH_TUPLE=	\
 		dlclark:regexp2:v1.1.6:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dlespiau:kube-test-harness:c51c87635b61:dlespiau_kube_test_harness/vendor/github.com/dlespiau/kube-test-harness \
 		docker:distribution:5223c27422cc:docker_distribution/vendor/github.com/docker/distribution \
-		moby:moby:v1.13.1:docker_docker/vendor/github.com/docker/docker \
+		moby:moby:v1.13.1:moby_moby/vendor/github.com/docker/docker \
 		docker:go-connections:v0.4.0:docker_go_connections/vendor/github.com/docker/go-connections \
-		docker:go-metrics:b84716841b82:docker_go_metrics/vendor/github.com/docker/go-metrics \
+		docker:go-metrics:v0.0.1:docker_go_metrics/vendor/github.com/docker/go-metrics \
 		docker:go-units:v0.3.3:docker_go_units/vendor/github.com/docker/go-units \
 		docker:libtrust:aabc10ec26b7:docker_libtrust/vendor/github.com/docker/libtrust \
 		docker:spdystream:6480d4af844c:docker_spdystream/vendor/github.com/docker/spdystream \
@@ -73,9 +73,9 @@ GH_TUPLE=	\
 		errordeveloper:goformation:a31eae35e596:errordeveloper_goformation/vendor/github.com/awslabs/goformation \
 		evanphx:json-patch:v4.2.0:evanphx_json_patch/vendor/github.com/evanphx/json-patch \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
-		fluxcd:helm-operator:v1.0.0-rc1:fluxcd_helm_operator/vendor/github.com/fluxcd/helm-operator \
+		fluxcd:flux:v1.15.0:fluxcd_flux/vendor/github.com/fluxcd/flux \
+		fluxcd:helm-operator:v1.0.0-rc2:fluxcd_helm_operator/vendor/github.com/fluxcd/helm-operator \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/gopkg.in/fsnotify.v1 \
 		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
 		go-gcfg:gcfg:v1.2.3:go_gcfg_gcfg/vendor/gopkg.in/gcfg.v1 \
 		go-inf:inf:v0.9.1:go_inf_inf/vendor/gopkg.in/inf.v0 \
@@ -94,13 +94,13 @@ GH_TUPLE=	\
 		golang:crypto:4def268fd1a4:golang_crypto/vendor/golang.org/x/crypto \
 		golang:gddo:5a2505f3dbf0:golang_gddo/vendor/github.com/golang/gddo \
 		golang:glog:23def4e6c14b:golang_glog/vendor/github.com/golang/glog \
-		golang:groupcache:5b532d6fd5ef:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:groupcache:869f871628b6:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:image:3fc05d484e9f:golang_image/vendor/golang.org/x/image \
 		golang:net:ca1201d0de80:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:15dcb6c0061f:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:cbf593c0f2f3:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
 		golang:tools:5aca471b1d59:golang_tools/vendor/golang.org/x/tools \
@@ -114,8 +114,7 @@ GH_TUPLE=	\
 		google:gofuzz:v1.0.0:google_gofuzz/vendor/github.com/google/gofuzz \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		google:wire:v0.2.1:google_wire/vendor/github.com/google/wire \
-		googleapis:gax-go:v2.0.2:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
-		googleapis:gax-go:v2.0.4:googleapis_gax_go/vendor/github.com/googleapis/gax-go/v2 \
+		googleapis:gax-go:v2.0.4:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:gnostic:v0.3.0:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
 		googleapis:google-api-go-client:v0.3.2:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.37.4:googleapis_google_cloud_go/vendor/cloud.google.com/go \
@@ -139,10 +138,10 @@ GH_TUPLE=	\
 		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		joho:godotenv:v1.3.0:joho_godotenv/vendor/github.com/joho/godotenv \
 		json-iterator:go:v1.1.7:json_iterator_go/vendor/github.com/json-iterator/go \
-		jteeuwen:go-bindata:6025e8de665b:jteeuwen_go_bindata/vendor/github.com/jteeuwen/go-bindata \
 		justinbarrick:go-k8s-portforward:d79fe1b9d79d:justinbarrick_go_k8s_portforward/vendor/github.com/justinbarrick/go-k8s-portforward \
 		kamilsk:retry:v4.0.0:kamilsk_retry/vendor/github.com/kamilsk/retry/v4 \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
+		kevinburke:go-bindata:v3.11.0:kevinburke_go_bindata/vendor/github.com/kevinburke/go-bindata \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kr:fs:v0.1.0:kr_fs/vendor/github.com/kr/fs \
 		kr:logfmt:b84e30acd515:kr_logfmt/vendor/github.com/kr/logfmt \
@@ -158,7 +157,7 @@ GH_TUPLE=	\
 		kubernetes:client-go:78295b709ec6:kubernetes_client_go/vendor/k8s.io/client-go \
 		kubernetes:code-generator:d0071a119380:kubernetes_code_generator/vendor/k8s.io/code-generator \
 		kubernetes:csi-api:a37926bd2215:kubernetes_csi_api/vendor/k8s.io/csi-api \
-		kubernetes:gengo:0689ccc1d7d6:kubernetes_gengo/vendor/k8s.io/gengo \
+		kubernetes:gengo:ebc107f98eab:kubernetes_gengo/vendor/k8s.io/gengo \
 		kubernetes:helm:v2.13.1:kubernetes_helm/vendor/k8s.io/helm \
 		kubernetes:klog:v0.3.3:kubernetes_klog/vendor/k8s.io/klog \
 		kubernetes:kops:278e6606534e:kubernetes_kops/vendor/k8s.io/kops \
@@ -199,10 +198,10 @@ GH_TUPLE=	\
 		pkg:sftp:v1.8.3:pkg_sftp/vendor/github.com/pkg/sftp \
 		pkg:term:aa71e9d9e942:pkg_term/vendor/github.com/pkg/term \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		prometheus:client_golang:v1.0.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_golang:v1.1.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:fd36f4220a90:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.4.1:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:v0.0.2:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		prometheus:common:v0.6.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.0.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		riywo:loginshell:2ed199a032f6:riywo_loginshell/vendor/github.com/riywo/loginshell \
 		rogpeppe:go-internal:v1.1.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		russross:blackfriday:v1.5.2:russross_blackfriday/vendor/github.com/russross/blackfriday \
@@ -231,7 +230,6 @@ GH_TUPLE=	\
 		vektra:mockery:e78b021dcbb5:vektra_mockery/vendor/github.com/vektra/mockery \
 		vmware:govmomi:v0.19.0:vmware_govmomi/vendor/github.com/vmware/govmomi \
 		voxelbrain:goptions:58cddc247ea2:voxelbrain_goptions/vendor/github.com/voxelbrain/goptions \
-		weaveworks:flux:c78ccd3706b5:weaveworks_flux/vendor/github.com/weaveworks/flux \
 		weaveworks:github-release:v0.6.2:weaveworks_github_release/vendor/github.com/weaveworks/github-release \
 		weaveworks:launcher:f1b2830d4f2d:weaveworks_launcher/vendor/github.com/weaveworks/launcher \
 		wellington:go-libsass:c63644206701:wellington_go_libsass/vendor/github.com/wellington/go-libsass \
