@@ -4856,6 +4856,7 @@
     SUBDIR += py-pygithub
     SUBDIR += py-pygpx
     SUBDIR += py-pyhashxx
+    SUBDIR += py-pyhcl
     SUBDIR += py-pyicu
     SUBDIR += py-pyinotify
     SUBDIR += py-pyinstaller
