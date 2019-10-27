@@ -22,6 +22,7 @@
     SUBDIR += dinotrace
     SUBDIR += electric
     SUBDIR += electric-ng
+    SUBDIR += fasm
     SUBDIR += feappv
     SUBDIR += fidocadj
     SUBDIR += freecad
