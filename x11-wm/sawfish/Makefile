@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	sawfish
-PORTVERSION=	1.12.0
-PORTEPOCH=	4
+DISTVERSION=	1.12.90
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	dem.procopiou@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible window manager using Lisp-based scripting language
 
 LICENSE=	ART20 GPLv2
@@ -21,7 +20,7 @@ LIB_DEPENDS=	librep.so:lang/librep \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	rep-gtk2>=0.90:x11-toolkits/rep-gtk2
 
-USES=		gmake libtool localbase makeinfo pathfix pkgconfig tar:xz
+USES=		autoreconf gmake gnome libtool localbase makeinfo pathfix pkgconfig tar:xz
 USE_XORG=	ice sm x11 xft xinerama xrandr xtst xrender xext
 USE_GNOME=	cairo gtk20
 GNU_CONFIGURE=	yes
