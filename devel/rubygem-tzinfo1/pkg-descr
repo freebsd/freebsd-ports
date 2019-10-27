@@ -1,0 +1,14 @@
+TZInfo is a Ruby library that provides daylight savings aware transformations
+between times in different timezones.
+
+TZInfo requires a source of timezone data. There are two built-in options:
+- The separate TZInfo::Data library (the tzinfo-data gem). TZInfo::Data contains
+  a set of Ruby modules that are generated from the IANA Time Zone Database.
+- A zoneinfo directory. Most Unix-like systems include a zoneinfo directory
+  containing timezone definitions. These are also generated from the IANA Time
+  Zone Database.
+
+By default, TZInfo::Data will be used. If TZInfo::Data is not available, then
+TZInfo will search for a zoneinfo directory instead.
+
+WWW: https://tzinfo.github.io/
