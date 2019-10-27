@@ -1,0 +1,10 @@
+--- src/external/angelscript/sdk/CMakeLists.txt.orig	2019-10-23 07:44:07 UTC
++++ src/external/angelscript/sdk/CMakeLists.txt
+@@ -124,7 +124,6 @@ if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "^arm")
+         enable_language(ASM)
+         if(CMAKE_ASM_COMPILER_WORKS)
+                 set(ANGELSCRIPT_SOURCE ${ANGELSCRIPT_SOURCE} ./angelscript/source/as_callfunc_arm.cpp ./angelscript/source/as_callfunc_arm_gcc.S)
+-                set_property(SOURCE ./angelscript/source/as_callfunc_arm_gcc.S APPEND PROPERTY COMPILE_FLAGS " -Wa,-mimplicit-it=always")
+         else()
+                 message(FATAL ERROR "ARM target requires a working assembler")
+         endif()
