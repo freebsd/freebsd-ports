@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	http://libav.org/releases/
 
-MAINTAINER=	dem.procopiou@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime audio/video conversion library
 
 LICENSE=	GPLv2+

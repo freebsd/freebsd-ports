@@ -5,7 +5,7 @@ PORTNAME=	Net_URL2
 PORTVERSION=	2.2.1
 CATEGORIES=	net www pear
 
-MAINTAINER=	dem.procopiou@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Class for parsing and handling URL
 
 LICENSE=	BSD3CLAUSE
