@@ -294,6 +294,7 @@
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
     SUBDIR += py-qt5-qml
+    SUBDIR += py-textX
     SUBDIR += pypy
     SUBDIR += pypy3
     SUBDIR += python
