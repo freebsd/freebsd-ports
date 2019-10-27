@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	polyphone
-DISTVERSION=	2.1.2
+DISTVERSION=	2.1.3
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
