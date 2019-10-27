@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	App-perlbrew
-PORTVERSION=	0.86
+PORTVERSION=	0.87
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GUGOD
@@ -15,9 +15,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-CPAN-Perl-Releases>=3.66:devel/p5-CPAN-Perl-Releases \
+RUN_DEPENDS=	p5-CPAN-Perl-Releases>=4.12:devel/p5-CPAN-Perl-Releases \
 		p5-Capture-Tiny>=0.36:devel/p5-Capture-Tiny \
-		p5-Devel-PatchPerl>=1.52:devel/p5-Devel-PatchPerl \
+		p5-Devel-PatchPerl>=1.54:devel/p5-Devel-PatchPerl \
 		p5-local-lib>=2.000014:devel/p5-local-lib
 TEST_DEPENDS=	p5-File-Which>=1.21:sysutils/p5-File-Which \
 		p5-IO-All>=0.51:devel/p5-IO-All \
