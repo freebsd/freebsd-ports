@@ -12,9 +12,7 @@ COMMENT=	API for the Polarizable Continuum Model
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to compile: SphericalDiffuse.cpp:182: invalid initialization of non-const reference
-
-USES=		cmake:noninja fortran python
+USES=		cmake:noninja compiler:c11 fortran python
 USE_GITHUB=	yes
 GH_ACCOUNT=	PCMSolver
 USE_LDCONFIG=	yes
@@ -27,6 +25,8 @@ do-configure: # full CMAKE_ARGS breaks configure: -DCMAKE_EXE_LINKER_FLAGS="${LD
 			-DCMAKE_C_FLAGS_RELEASE:STRING="${CFLAGS}" \
 			-DCMAKE_CXX_FLAGS_RELEASE:STRING="${CXXFLAGS}" \
 			-DCMAKE_EXE_LINKER_FLAGS:STRING="${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so" \
+			-DCMAKE_C_COMPILER:STRING="${CC}" \
+			-DCMAKE_CXX_COMPILER:STRING="${CXX}" \
 			${CMAKE_SOURCE_PATH}
 
 post-patch:
