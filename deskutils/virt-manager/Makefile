@@ -2,6 +2,7 @@
 
 PORTNAME=	virt-manager
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	https://virt-manager.org/download/sources/${PORTNAME}/
 
@@ -31,7 +32,7 @@ USE_PYTHON=	noegginfo autoplist distutils noflavors
 
 NO_ARCH=	yes
 
-USE_GNOME=	introspection:run intltool librsvg2 pygobject3
+USE_GNOME=	gtksourceview4 introspection:run intltool librsvg2 pygobject3
 
 INSTALLS_ICONS=	yes
 
