@@ -142,4 +142,5 @@ share/postgresql/extension/citus--8.2-2--8.2-3.sql
 share/postgresql/extension/citus--8.2-3--8.2-4.sql
 share/postgresql/extension/citus--8.2-4--8.3-1.sql
 share/postgresql/extension/citus--8.3-1--9.0-1.sql
+share/postgresql/extension/citus--9.0-1--9.0-2.sql
 share/postgresql/extension/citus.control
