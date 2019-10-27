@@ -1,0 +1,16 @@
+include/TR_interface.h
+include/ideep.hpp
+include/ideep/abstract_types.hpp
+include/ideep/allocators.hpp
+include/ideep/computations.hpp
+include/ideep/distribute.hpp
+include/ideep/fast_math.hpp
+include/ideep/instruments.hpp
+include/ideep/lru_cache.hpp
+include/ideep/omp_ctrl.hpp
+include/ideep/scope_guard.hpp
+include/ideep/tensor.hpp
+include/ideep/utils.hpp
+include/ideep/web.hpp
+include/ideep_pin_singletons.hpp
+lib/libideep.so
