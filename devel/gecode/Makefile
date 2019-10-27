@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gecode
-PORTVERSION=	5.1.0
-PORTREVISION=	5
-CATEGORIES=	devel
-MASTER_SITES=	https://www.gecode.org/download/
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	6.2.0
+CATEGORIES=	devel math
 
-MAINTAINER=	dem.procopiou@gmail.com
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	f08079c5df271869bc7c0799b3eccc52ca2f4d83.patch:-p1 # https://github.com/Gecode/gecode/pull/51
+
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Constraint Development Environment
 
 LICENSE=	BSL MIT
@@ -16,49 +18,19 @@ LICENSE_COMB=	multi
 NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64
 NOT_FOR_ARCHS_REASON=	needs code written to specify rounding control mechanism in Boost.Numeric.Interval
 
-LIB_DEPENDS=	libmpfr.so:math/mpfr \
-		libgmp.so:math/gmp
-
-USES=		bison compiler:c++11-lang gmake perl5
-USE_PERL5=	build
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static \
-		--enable-shared \
-		--disable-doc-dot \
-		--disable-doc-tagfile \
-		--disable-doc-chm \
-		--enable-driver \
-		--enable-graph \
-		--enable-flatzinc \
-		--enable-sheduling \
-		--disable-examples \
-		--enable-minimodel \
-		--enable-search \
-		--with-gmp-include=${LOCALBASE}/include \
-		--with-gmp-lib=${LOCALBASE}/lib \
-		--with-mpfr-include=${LOCALBASE}/include \
-		--with-mpfr-lib=${LOCALBASE}/lib \
-		--disable-gist --disable-qt
+USES=		bison cmake compiler:c++11-lang
+USE_GITHUB=	yes
+GH_ACCOUNT=	Gecode
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=yes
-PLIST_SUB=	SHLIB_VERSION=44
 
-.include <bsd.port.options.mk>
+CMAKE_ON=	BUILD_SHARED_LIBS
 
-.if ${ARCH} == "amd64"
-CFLAGS+=	-D__USE_ISOC99
-.endif
+OPTIONS_DEFINE=	GIST
+OPTIONS_SUB=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^PACKAGE_VERSION_NUMBER/s|^|#| ; \
-		 /_vendor/s| == | = | ; \
-		 /host_os/s| == | = | ; \
-		 /gcc_optimize_flag/s|-O3|| ; \
-		 /="-ggdb/s|^|#|' ${WRKSRC}/configure
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fzn-gecode
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgecode*.so.[0-9]*.[0-9]*
+GIST_DESC=	Enable gist, graphical and interactive search tool
+GIST_CMAKE_BOOL=	ENABLE_GIST
+GIST_USES=	qt:5
+GIST_USE=	qt=core,gui,printsupport,widgets,qmake_build,buildtools_build
 
 .include <bsd.port.mk>
