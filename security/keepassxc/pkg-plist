@@ -3,6 +3,7 @@ bin/keepassxc-cli
 %%BROWSER%%bin/keepassxc-proxy
 %%AUTOTYPE%%lib/keepassxc/libkeepassx-autotype-xcb.so
 man/man1/keepassxc-cli.1.gz
+man/man1/keepassxc.1.gz
 share/applications/org.keepassxc.KeePassXC.desktop
 share/icons/hicolor/128x128/apps/keepassxc-dark.png
 share/icons/hicolor/128x128/apps/keepassxc-locked.png
@@ -42,6 +43,9 @@ share/icons/hicolor/scalable/apps/keepassxc-locked.svg
 share/icons/hicolor/scalable/apps/keepassxc-unlocked.svg
 share/icons/hicolor/scalable/apps/keepassxc.svg
 share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svg
+%%DATADIR%%/docs/KeePassXC_GettingStarted.pdf
+%%DATADIR%%/docs/KeePassXC_UserGuide.pdf
+@comment @dir %%DATADIR%%/docs/man
 %%DATADIR%%/icons/application/128x128/apps/keepassxc-dark.png
 %%DATADIR%%/icons/application/128x128/apps/keepassxc-locked.png
 %%DATADIR%%/icons/application/128x128/apps/keepassxc-unlocked.png
@@ -52,9 +56,9 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svg
 %%DATADIR%%/icons/application/16x16/actions/auto-type.png
 %%DATADIR%%/icons/application/16x16/actions/configure.png
 %%DATADIR%%/icons/application/16x16/actions/database-change-key.png
+%%DATADIR%%/icons/application/16x16/actions/database-lock.png
 %%DATADIR%%/icons/application/16x16/actions/document-close.png
 %%DATADIR%%/icons/application/16x16/actions/document-edit.png
-%%DATADIR%%/icons/application/16x16/actions/document-encrypt.png
 %%DATADIR%%/icons/application/16x16/actions/document-new.png
 %%DATADIR%%/icons/application/16x16/actions/document-open.png
 %%DATADIR%%/icons/application/16x16/actions/document-save-as.png
@@ -90,9 +94,9 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svg
 %%DATADIR%%/icons/application/22x22/actions/auto-type.png
 %%DATADIR%%/icons/application/22x22/actions/chronometer.png
 %%DATADIR%%/icons/application/22x22/actions/database-change-key.png
+%%DATADIR%%/icons/application/22x22/actions/database-lock.png
 %%DATADIR%%/icons/application/22x22/actions/dialog-close.png
 %%DATADIR%%/icons/application/22x22/actions/dialog-ok.png
-%%DATADIR%%/icons/application/22x22/actions/document-encrypt.png
 %%DATADIR%%/icons/application/22x22/actions/document-new.png
 %%DATADIR%%/icons/application/22x22/actions/document-open.png
 %%DATADIR%%/icons/application/22x22/actions/document-save.png
@@ -129,11 +133,11 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svg
 %%DATADIR%%/icons/application/32x32/actions/chronometer.png
 %%DATADIR%%/icons/application/32x32/actions/configure.png
 %%DATADIR%%/icons/application/32x32/actions/database-change-key.png
+%%DATADIR%%/icons/application/32x32/actions/database-lock.png
 %%DATADIR%%/icons/application/32x32/actions/dialog-close.png
 %%DATADIR%%/icons/application/32x32/actions/dialog-ok.png
 %%DATADIR%%/icons/application/32x32/actions/document-close.png
 %%DATADIR%%/icons/application/32x32/actions/document-edit.png
-%%DATADIR%%/icons/application/32x32/actions/document-encrypt.png
 %%DATADIR%%/icons/application/32x32/actions/document-new.png
 %%DATADIR%%/icons/application/32x32/actions/document-open.png
 %%DATADIR%%/icons/application/32x32/actions/document-properties.png
@@ -154,6 +158,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svg
 %%DATADIR%%/icons/application/32x32/actions/password-generator.png
 %%DATADIR%%/icons/application/32x32/actions/password-show-off.png
 %%DATADIR%%/icons/application/32x32/actions/password-show-on.png
+%%DATADIR%%/icons/application/32x32/actions/statistics.png
 %%DATADIR%%/icons/application/32x32/actions/system-help.png
 %%DATADIR%%/icons/application/32x32/actions/system-search.png
 %%DATADIR%%/icons/application/32x32/actions/url-copy.png
@@ -178,6 +183,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svg
 %%DATADIR%%/icons/application/64x64/apps/keepassxc-unlocked.png
 %%DATADIR%%/icons/application/64x64/apps/keepassxc.png
 %%DATADIR%%/icons/application/64x64/mimetypes/application-x-keepassxc.png
+%%DATADIR%%/icons/application/scalable/apps/freedesktop.svg
 %%DATADIR%%/icons/application/scalable/apps/keepassxc-dark.svg
 %%DATADIR%%/icons/application/scalable/apps/keepassxc-locked.svg
 %%DATADIR%%/icons/application/scalable/apps/keepassxc-unlocked.svg
