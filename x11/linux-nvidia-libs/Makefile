@@ -16,6 +16,8 @@ COMMENT=	NVidia graphics libraries and programs (Linux version)
 LICENSE_FILE=	${WRKSRC}/LICENSE
 .include "${.CURDIR}/../nvidia-driver/Makefile.common"
 
+PORTSCOUT=	limit:\.\d+$$		# ignore *-no-compat32 distfiles
+
 USES=		linux
 USE_LINUX=	xorglibs
 USE_LDCONFIG=	yes
@@ -24,7 +26,6 @@ NO_BUILD=	yes
 PLIST_RE=	# empty
 
 LINUX_LIBDIR=	/usr/lib${ARCH:S/i386//:S/amd//}
-LINUX_WRKSRC=	${WRKDIR}/NVIDIA-Linux-${ARCH_SUFX}-${DISTVERSION}
 
 LINUX_LIBS=	libcuda.so.${PORTVERSION} \
 		libnvcuvid.so.${PORTVERSION} \
@@ -333,8 +334,8 @@ do-extract:
 post-patch:
 .if ${NVVERSION} >= 384.047
 	@${SED} 's/__NV_VK_ICD__/libGLX_nvidia.so.0/' \
-		${LINUX_WRKSRC}/nvidia_icd.json.template > \
-		${LINUX_WRKSRC}/nvidia_icd.json
+		${WRKSRC}/nvidia_icd.json.template > \
+		${WRKSRC}/nvidia_icd.json
 .endif
 
 do-install:
@@ -371,23 +372,23 @@ do-install:
 	${REINPLACE_CMD} -E ${PLIST_RE:S/^/-e /} ${TMPPLIST}
 .for f d in ${LINUX_DATA}
 	${MKDIR} ${STAGEDIR}${LINUXBASE}${d}
-	${INSTALL_DATA} ${LINUX_WRKSRC}/${f} ${STAGEDIR}${LINUXBASE}${d}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${LINUXBASE}${d}
 .endfor
 	${MKDIR} ${STAGEDIR}${LINUXBASE}/usr/bin
-	${INSTALL_SCRIPT} ${LINUX_WRKSRC}/nvidia-bug-report.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/nvidia-bug-report.sh \
 		${STAGEDIR}${LINUXBASE}/usr/bin
 .for p in ${LINUX_PROGS}
-	${INSTALL_PROGRAM} ${LINUX_WRKSRC}/${p} ${STAGEDIR}${LINUXBASE}/usr/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${STAGEDIR}${LINUXBASE}/usr/bin
 .endfor
 	${MKDIR} ${STAGEDIR}${LINUXBASE}/usr/share/man/man1
 .for m in ${LINUX_MANS}
-	${INSTALL_MAN} ${LINUX_WRKSRC}/${m}.1.gz \
+	${INSTALL_MAN} ${WRKSRC}/${m}.1.gz \
 		${STAGEDIR}${LINUXBASE}/usr/share/man/man1
 .endfor
 	${MKDIR} ${STAGEDIR}${LINUXBASE}${LINUX_LIBDIR}/tls
 	${MKDIR} ${STAGEDIR}${LINUXBASE}${LINUX_LIBDIR}/vdpau
 .for l in ${LINUX_LIBS}
-	${INSTALL_LIB} ${LINUX_WRKSRC}/${l} \
+	${INSTALL_LIB} ${WRKSRC}/${l} \
 		${STAGEDIR}${LINUXBASE}${LINUX_LIBDIR}/${l}
 .endfor
 .for s t in ${LINUX_LINKS}
@@ -398,7 +399,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${LINUXBASE}/usr/lib/tls
 	${MKDIR} ${STAGEDIR}${LINUXBASE}/usr/lib/vdpau
 .for l in ${LINUX32_LIBS}
-	${INSTALL_LIB} ${LINUX_WRKSRC}/32/${l} \
+	${INSTALL_LIB} ${WRKSRC}/32/${l} \
 		${STAGEDIR}${LINUXBASE}/usr/lib/${l}
 .endfor
 .for s t in ${LINUX32_LINKS}
