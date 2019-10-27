@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dav1d
-DISTVERSION=	0.5.0
+DISTVERSION=	0.5.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,7 +19,7 @@ USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
-GL_COMMIT=	5f86e719ec4e24023e30cd61dc080be3ddba1a31
+GL_COMMIT=	bb160f09fa7ad132f4b6a014ac8e168b913ee3ab
 
 OPTIONS_DEFINE=	SDL TEST
 OPTIONS_SUB=	yes
