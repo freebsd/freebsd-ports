@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		fails to compile: invokes x86 asm
-BROKEN_armv6=		fails to compile: invokes x86 asm
-BROKEN_armv7=		fails to compile: invokes x86 asm
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libpng.so:graphics/png \
