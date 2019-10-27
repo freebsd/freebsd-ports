@@ -1,0 +1,9 @@
+Implements a parser for HCL (HashiCorp Configuration Language) in Python.
+This implementation aims to be compatible with the original golang version of
+the parser.
+
+The grammar and many of the tests/fixtures were copied/ported from the golang
+parser into pyhcl. All releases are tested with a variety of Python versions
+from Python 2.7 onward.
+
+WWW: https://github.com/virtuald/pyhcl
