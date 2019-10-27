@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nim
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
