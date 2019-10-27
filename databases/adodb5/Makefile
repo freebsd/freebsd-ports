@@ -7,7 +7,7 @@ CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5-only/${PORTNAME}-520-for-php5
 PKGNAMESUFFIX=	5
 
-MAINTAINER=	dem.procopiou@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database library for PHP
 
 LICENSE=	BSD3CLAUSE LGPL21+
