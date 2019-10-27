@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nextpnr
-PORTVERSION=	g20190529
-PORTREVISION=	1
+DISTVERSION=	g20191026
 CATEGORIES=	devel
 
 MAINTAINER=	manu@FreeBSD.org
@@ -21,13 +20,12 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		${PY_BOOST}
 
 USES=		compiler:c++11-lang cmake qt:5 eigen:3 python:3.5+ gl
-
 USE_QT=		buildtools_build core gui opengl qmake_build widgets
-USE_GL=		gl
-
+USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	YosysHQ
-GH_TAGNAME=	150004e3
+GH_TAGNAME=	5cf0ed5
+GH_TUPLE=	YosysHQ:nextpnr-tests:8f93e7e:tests/tests
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
