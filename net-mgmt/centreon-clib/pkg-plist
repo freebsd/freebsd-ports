@@ -18,7 +18,6 @@ include/centreon/com/centreon/process_manager_posix.hh
 include/centreon/com/centreon/process_manager_win32.hh
 include/centreon/com/centreon/process_posix.hh
 include/centreon/com/centreon/process_win32.hh
-include/centreon/com/centreon/shared_ptr.hh
 include/centreon/com/centreon/task.hh
 include/centreon/com/centreon/task_manager.hh
 include/centreon/com/centreon/timestamp.hh

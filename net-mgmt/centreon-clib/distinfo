@@ -1,3 +1,3 @@
-TIMESTAMP = 1556306551
-SHA256 (centreon-centreon-clib-19.04.0_GH0.tar.gz) = 5abd8c3358ac6f4b2a183d82725145cc489978a009b8a7ce87384157a216dbb4
-SIZE (centreon-centreon-clib-19.04.0_GH0.tar.gz) = 93158
+TIMESTAMP = 1572019706
+SHA256 (centreon-centreon-clib-19.10.0_GH0.tar.gz) = 33d1173a20b8507d4eb904e77d57ced258b68ddec2adc78183d90b18e3727ecc
+SIZE (centreon-centreon-clib-19.10.0_GH0.tar.gz) = 93254
