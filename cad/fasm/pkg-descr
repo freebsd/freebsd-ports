@@ -1,0 +1,7 @@
+FPGA Assembly is a file format designed by the SymbiFlow Project developers to
+provide a plain text file format for configuring the internals of an FPGA.
+
+It is designed to allow FPGA place and route to not care about the actual
+bitstream format used on an FPGA.
+
+WWW: https://github.com/SymbiFlow/fasm
