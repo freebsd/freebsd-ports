@@ -1,13 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	keepassxc
-DISTVERSION=	2.4.3
-PORTREVISION=	1
+DISTVERSION=	2.5.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/${PORTNAME}-${DISTVERSION}-src.tar.xz?dummy=/
-
-PATCH_SITES=	https://github.com/keepassxreboot/keepassxc/commit/
-PATCHFILES=	ef3c2daef142cc4dc60ec779d1019d50ed679a99.patch:-p1
 
 MAINTAINER=	melanhit@gmail.com
 COMMENT=	KeePass Cross-platform Community Edition
@@ -28,10 +24,10 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libqrencode.so:graphics/libqrencode \
 		libsodium.so:security/libsodium
 
-USES=		cmake compiler:c++11-lang desktop-file-utils qt:5 \
-		shared-mime-info tar:xz
-USE_QT=		buildtools_build concurrent core dbus gui linguisttools network \
-		qmake_build svg testlib widgets
+USES=		cmake compiler:c++11-lang desktop-file-utils qt:5 readline \
+		shared-mime-info tar:xz xorg
+USE_QT=		concurrent core dbus gui network svg widgets buildtools_build \
+		linguisttools_build qmake_build testlib_build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
