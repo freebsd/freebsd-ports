@@ -5887,6 +5887,7 @@
     SUBDIR += rubygem-graphql
     SUBDIR += rubygem-graphql-docs
     SUBDIR += rubygem-grit
+    SUBDIR += rubygem-grpc-google-iam-v1
     SUBDIR += rubygem-guess_html_encoding
     SUBDIR += rubygem-gyoku
     SUBDIR += rubygem-hamster
