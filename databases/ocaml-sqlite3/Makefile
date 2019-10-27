@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	dem.procopiou@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml bindings to sqlite3 library
 
 LICENSE=	OCSQLT3
