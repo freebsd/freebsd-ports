@@ -6,3 +6,5 @@ Currently nextpnr supports:
 Lattice iCE40 devices supported by Project IceStorm
 (experimental) Lattice ECP5 devices supported by Project Trellis
 (experimental) a "generic" back-end for user-defined architectures
+
+WWW: https://github.com/YosysHQ/nextpnr
