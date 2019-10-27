@@ -1,0 +1,4 @@
+Cloud Bigtable API provides API for reading and writing the contents of
+Bigtables associated with a cloud project.
+
+WWW: https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-bigtable
