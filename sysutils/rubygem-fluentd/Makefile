@@ -2,6 +2,7 @@
 
 PORTNAME=	fluentd
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +20,7 @@ RUN_DEPENDS=	\
 	rubygem-http_parser.rb>=0.5.1:net/rubygem-http_parser.rb \
 	rubygem-sigdump>=0.2.2:devel/rubygem-sigdump \
 	rubygem-strptime>=0.2.2:devel/rubygem-strptime \
-	rubygem-tzinfo>=1.0.0:devel/rubygem-tzinfo \
+	rubygem-tzinfo1>=1.0:devel/rubygem-tzinfo1 \
 	rubygem-tzinfo-data>=1.0.0:devel/rubygem-tzinfo-data
 
 USE_RUBY=	yes
