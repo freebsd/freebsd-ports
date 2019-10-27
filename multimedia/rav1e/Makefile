@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20191023
+PORTVERSION=	s20191026
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	08b6705b
+GH_TAGNAME=	e4683b18
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler32-1.0.4 \
@@ -67,7 +67,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		env_logger-0.6.2 \
 		err-derive-0.2.1 \
 		error-chain-0.10.0 \
-		getrandom-0.1.12 \
+		getrandom-0.1.13 \
 		glob-0.3.0 \
 		humantime-1.3.0 \
 		image-0.22.3 \
