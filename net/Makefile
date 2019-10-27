@@ -1261,6 +1261,7 @@
     SUBDIR += rubygem-google-cloud-env
     SUBDIR += rubygem-google-cloud-logging
     SUBDIR += rubygem-google-cloud-pubsub
+    SUBDIR += rubygem-google-cloud-spanner
     SUBDIR += rubygem-google-cloud-storage
     SUBDIR += rubygem-grpc
     SUBDIR += rubygem-grpc124

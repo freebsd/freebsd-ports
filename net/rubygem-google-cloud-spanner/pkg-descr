@@ -1,0 +1,6 @@
+Google Cloud Spanner API (docs) provides a fully managed, mission-critical,
+relational database service that offers transactional consistency at global
+scale, schemas, SQL (ANSI 2011 with extensions), and automatic, synchronous
+replication for high availability.
+
+WWW: https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-spanner
