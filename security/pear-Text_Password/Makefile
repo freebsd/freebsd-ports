@@ -6,7 +6,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	security www pear
 DISTNAME=	Text_password-${PORTVERSION}
 
-MAINTAINER=	dem.procopiou@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR random password creator
 
 USES=	pear
