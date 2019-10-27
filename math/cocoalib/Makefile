@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	cocoalib
-DISTVERSION=	0.99600
-PORTREVISION=	2
+DISTVERSION=	0.99601
 CATEGORIES=	math
 MASTER_SITES=	http://cocoa.dima.unige.it/cocoalib/tgz/
-DISTNAME=	CoCoALib-0.99600
+DISTNAME=	CoCoALib-${DISTVERSION}
 
 MAINTAINER=	phascolarctos@protonmail.ch
 COMMENT=	C++ library for doing Computations in Commutative Algebra
@@ -34,34 +33,66 @@ BUILD_WRKSRC=	${WRKSRC}/src/AlgebraicCore
 TEST_TARGET=	all
 TEST_WRKSRC=	${WRKSRC}/src/tests
 
-OPTIONS_DEFINE=		DOCS EXAMPLES FROBBY GFAN \
+PREPROCESSOR_DEFNS=	${WRKSRC}/include/CoCoA/PREPROCESSOR_DEFNS.H
+
+OPTIONS_DEFINE=		BOOST DOCS EXAMPLES FROBBY GFAN \
 			GSL NORMALIZ SMALLDEG TEST
+
 FROBBY_DESC=		Link with libfrobby.a
 GFAN_DESC=		Link with libgfan.a
 GSL_DESC=		Link with libgsl.a
 NORMALIZ_DESC=		Link with libnormaliz.a (might cause circular dependency)
 SMALLDEG_DESC=		Optimization for small degree polynomials
+
+BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/thread.hpp:devel/boost-libs
+BOOST_CXXFLAGS=		-pthread
 FROBBY_BUILD_DEPENDS=	${LOCALBASE}/lib/libfrobby.a:math/frobby
-FROBBY_CXXFLAGS=	-DCoCoA_WITH_FROBBY
-FROBBY_LDFLAGS=		-lfrobby
 GFAN_BUILD_DEPENDS=	${LOCALBASE}/lib/libgfan.a:math/gfanlib
-GFAN_CXXFLAGS=		-DCoCoA_WITH_GFAN
-GFAN_LDFLAGS=		-lgfan
 GSL_BUILD_DEPENDS=	${LOCALBASE}/lib/libgsl.a:math/gsl
-GSL_CXXFLAGS=		-DCoCoA_WITH_GSL
-GSL_LDFLAGS=		-lgsl -lgslcblas
 NORMALIZ_BUILD_DEPENDS=	${LOCALBASE}/lib/libnormaliz.a:math/libnormaliz
-NORMALIZ_CXXFLAGS=	-DCoCoA_WITH_NORMALIZ
-NORMALIZ_LDFLAGS=	-lnormaliz
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile.AlgebraicCore ${BUILD_WRKSRC}/Makefile
+	${CP} ${FILESDIR}/${PREPROCESSOR_DEFNS:T} ${PREPROCESSOR_DEFNS}
 
 post-patch-SMALLDEG-on:
 	${REINPLACE_CMD} 's,int SmallExponent_t,short SmallExponent_t,' ${WRKSRC}/include/CoCoA/config.H
 
 post-patch-TEST-on:
 	${CP} ${FILESDIR}/Makefile.tests ${TEST_WRKSRC}/Makefile
+
+do-configure-BOOST-on:
+	${ECHO_CMD} "#define COCOA_WITH_BOOST" >> ${PREPROCESSOR_DEFNS}
+
+do-configure-BOOST-off:
+	${ECHO_CMD} "#undef COCOA_WITH_BOOST" >> ${PREPROCESSOR_DEFNS}
+
+do-configure-FROBBY-on:
+	${ECHO_CMD} "#define COCOA_WITH_FROBBY" >> ${PREPROCESSOR_DEFNS}
+
+do-configure-FROBBY-off:
+	${ECHO_CMD} "#undef COCOA_WITH_FROBBY" >> ${PREPROCESSOR_DEFNS}
+
+do-configure-GFAN-on:
+	${ECHO_CMD} "#define COCOA_WITH_GFAN" >> ${PREPROCESSOR_DEFNS}
+
+do-configure-GFAN-off:
+	${ECHO_CMD} "#undef COCOA_WITH_GFAN" >> ${PREPROCESSOR_DEFNS}
+
+do-configure-GSL-on:
+	${ECHO_CMD} "#define COCOA_WITH_GSL" >> ${PREPROCESSOR_DEFNS}
+
+do-configure-GSL-off:
+	${ECHO_CMD} "#undef COCOA_WITH_GSL" >> ${PREPROCESSOR_DEFNS}
+
+do-configure-NORMALIZ-on:
+	${ECHO_CMD} "#define COCOA_WITH_NORMALIZ" >> ${PREPROCESSOR_DEFNS}
+
+do-configure-NORMALIZ-off:
+	${ECHO_CMD} "#undef COCOA_WITH_NORMALIZ" >> ${PREPROCESSOR_DEFNS}
+
+post-configure:
+	${ECHO_CMD} "#endif" >> ${PREPROCESSOR_DEFNS}
 
 pre-build:
 	cd ${WRKSRC}/include/CoCoA && ./MakeUnifiedHeader.sh --check
@@ -71,13 +102,13 @@ post-build-TEST-on: do-test
 do-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/libcocoa.a ${STAGEDIR}${PREFIX}/lib
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/CoCoA
-	cd ${WRKSRC}/include/CoCoA && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/CoCoA '-name *\.H'
+	cd ${WRKSRC}/include/CoCoA && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/CoCoA '-name *\.H -a ! -name \._*'
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_MAN} ${WRKSRC}/doc/CoCoALib.pdf ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html
+	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html '! -name \._*'
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
