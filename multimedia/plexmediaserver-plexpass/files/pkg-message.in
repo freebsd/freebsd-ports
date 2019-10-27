@@ -16,21 +16,16 @@ http://localhost:32400/web
 @@@ INTEL GPU OFFLOAD NOTES @@@
 
 If you have a supported Intel GPU, you can leverage hardware
-accellerated encoding/decoding in Plex Media Server on FreeBSD 12.0+.
+accelerated encoding/decoding in Plex Media Server on FreeBSD 12.0+.
 
 The requirements are as follows:
 
 * Install multimedia/drm-kmod: e.g., pkg install drm-fbsd12.0-kmod
 
-* Enable loading of kernel module on boot: sysrc kld_list+="drm" 
+* Enable loading of kernel module on boot: sysrc kld_list+="i915kms"
 ** If Plex will run in a jail, you must load the module outside the jail!
 
-* Load the kernel module now: kldload drm
-
-* Install the supporting Intel VA support library for your GPU
-** multimedia/libva-intel-driver: [LEGACY] Intel GMA 4500 or newer
-** multimedia/libva-intel-media-driver: Intel HD 5000 (Gen8) or newer
-*** This must be installed beside Plex. e.g., in the jail with Plex
+* Load the kernel module now (although reboot is advised): kldload i915kms
 
 * Add plex user to the video group: pw groupmod -n video -m plex
 
@@ -49,15 +44,14 @@ add path 'drm*' unhide
 add path 'drm/*' unhide
 
 * Enable the devfs ruleset for your jail. e.g., devfs_ruleset=10 in your
-/etc/jail.conf or for iocage, iocage set devfs_ruleset="10" 
+/etc/jail.conf or for iocage, iocage set devfs_ruleset="10"
 
 Please refer to documentation for all other FreeBSD jail management
 utilities.
 
-@@@ INTEL GPU OFFLOAD NOTES @@@
+* Make sure hardware transcoding is enabled in the server settings
 
-This is the PlexPass release channel of Plex. It is bleeding edge and
-new features may not function without an active PlexPass account.
+@@@ INTEL GPU OFFLOAD NOTES @@@
 EOM
 }
 ]
