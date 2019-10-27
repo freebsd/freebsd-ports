@@ -4,7 +4,7 @@
 PKGNAMESUFFIX=		-filter-monkey
 PORTVERSION=		201703132115
 PORTREVISION=		0
-PORTREPOCH=		0
+PORTEPOCH=		1
 
 COMMENT=		Arbitrary delay or reject filter for OpenSMTPD
 
