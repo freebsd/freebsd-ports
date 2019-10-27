@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	tome4
-DISTVERSION?=	1.5.10
-PORTREVISION?=	1
+DISTVERSION?=	1.6.0
+PORTREVISION?=	0
 CATEGORIES=	games
 MASTER_SITES=	https://te4.org/dl/t-engine/ \
 		SF/lifanov-ports-distfiles/${PORTNAME}/:icons
