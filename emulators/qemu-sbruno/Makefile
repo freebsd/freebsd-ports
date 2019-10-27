@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.11.50.g20190730
+PORTVERSION=	2.11.50.g20191026
 CATEGORIES=	emulators
 PKGNAMESUFFIX?=	-sbruno
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -12,7 +12,7 @@ COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 
 LICENSE=	GPLv2
 USE_GITHUB=	yes
-GH_TUPLE=	seanbruno:qemu-bsd-user:7b21781 \
+GH_TUPLE=	seanbruno:qemu-bsd-user:5b85e90 \
 		qemu:keycodemapdb:10739aa:keycodemapdb/ui/keycodemapdb
 HAS_CONFIGURE=	yes
 USES=		bison compiler:c11 gmake perl5 pkgconfig python:2.7,build
@@ -157,6 +157,9 @@ PLIST_SUB+=	GTK2=""
 
 .if ${PORT_OPTIONS:MGNUTLS}
 LIB_DEPENDS+=	libgnutls.so:security/gnutls
+CONFIGURE_ARGS+=	--enable-gnutls
+.else
+CONFIGURE_ARGS+=	--disable-gnutls
 .endif
 
 .if empty(PORT_OPTIONS:MSASL)
