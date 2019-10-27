@@ -111,7 +111,6 @@ CMAKE_ON+=	WITHOUT_SERVER
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=NO
 .else
 # MySQL-Server part
-BROKEN_powerpc64=	Does not build: fatal error: sys/platform/ppc.h: No such file or directory
 USES+=		mysql:101m
 USE_GNOME=	libxml2
 USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
