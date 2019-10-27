@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	scikit-image
-PORTVERSION=	0.14.2
-PORTREVISION=	2
+PORTVERSION=	0.14.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +23,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=1.7:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=1.8:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PyWavelets>=0.4:math/py-PyWavelets@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}PyWavelets>=0.4:math/py-PyWavelets@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cloudpickle>=0.2.1:devel/py-cloudpickle@${PY_FLAVOR}
 
 USES=		cpe python
 USE_GITHUB=	yes
