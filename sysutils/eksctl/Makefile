@@ -157,7 +157,7 @@ GH_TUPLE=	\
 		kubernetes:client-go:78295b709ec6:kubernetes_client_go/vendor/k8s.io/client-go \
 		kubernetes:code-generator:d0071a119380:kubernetes_code_generator/vendor/k8s.io/code-generator \
 		kubernetes:csi-api:a37926bd2215:kubernetes_csi_api/vendor/k8s.io/csi-api \
-		kubernetes:gengo:ebc107f98eab:kubernetes_gengo/vendor/k8s.io/gengo \
+		kubernetes:gengo:7fa3014cb28f:kubernetes_gengo/vendor/k8s.io/gengo \
 		kubernetes:helm:v2.13.1:kubernetes_helm/vendor/k8s.io/helm \
 		kubernetes:klog:v0.3.3:kubernetes_klog/vendor/k8s.io/klog \
 		kubernetes:kops:278e6606534e:kubernetes_kops/vendor/k8s.io/kops \
