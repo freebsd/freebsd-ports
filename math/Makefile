@@ -284,6 +284,7 @@
     SUBDIR += hpipm
     SUBDIR += hs-Agda
     SUBDIR += hs-semigroups
+    SUBDIR += ideep
     SUBDIR += ignition-math
     SUBDIR += igraph
     SUBDIR += intervaltree

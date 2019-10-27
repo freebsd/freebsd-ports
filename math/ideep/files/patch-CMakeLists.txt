@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2019-08-30 01:57:18 UTC
++++ CMakeLists.txt
+@@ -15,7 +15,7 @@ IF(APPLE)
+   SET(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
+ ENDIF(APPLE)
+ 
+-set(USE_MKLDNN_INTERNAL 1)
++set(USE_MKLDNN_INTERNAL 0)
+ include(cmake/profiling.cmake)
+ include(cmake/mkldnn.cmake)
+ include(cmake/mkl.cmake)
+@@ -26,7 +26,9 @@ include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR}
+ 
+ install(DIRECTORY include/ DESTINATION include)
+ 
+-add_subdirectory(tests)
++if (BUILD_TESTING)
++  add_subdirectory(tests)
++endif()
+ 
+ if (multinode)
+   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -mavx -Wall -Wextra -Werror")

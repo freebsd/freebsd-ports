@@ -1,0 +1,4 @@
+Intel Optimization for Chainer, a Chainer module providing numpy like API and
+DNN acceleration using MKL-DNN.
+
+WWW: https://github.com/intel/ideep
