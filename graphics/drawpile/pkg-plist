@@ -6,6 +6,7 @@ share/applications/net.drawpile.drawpile.desktop
 share/drawpile/drawpile/i18n/drawpile_cs.qm
 share/drawpile/drawpile/i18n/drawpile_de.qm
 share/drawpile/drawpile/i18n/drawpile_fi.qm
+share/drawpile/drawpile/i18n/drawpile_it.qm
 share/drawpile/drawpile/i18n/drawpile_ja.qm
 share/drawpile/drawpile/i18n/drawpile_ru.qm
 share/drawpile/drawpile/i18n/drawpile_uk.qm
@@ -44,7 +45,6 @@ share/drawpile/drawpile/theme/dark/draw-freehand.svg
 share/drawpile/drawpile/theme/dark/draw-line.svg
 share/drawpile/drawpile/theme/dark/draw-rectangle.svg
 share/drawpile/drawpile/theme/dark/draw-text.svg
-share/drawpile/drawpile/theme/dark/draw-watercolor.svg
 share/drawpile/drawpile/theme/dark/drawpile_chat.svg
 share/drawpile/drawpile/theme/dark/drawpile_incremental_mode.svg
 share/drawpile/drawpile/theme/dark/drawpile_pixelround.svg
@@ -122,7 +122,6 @@ share/drawpile/drawpile/theme/light/draw-freehand.svg
 share/drawpile/drawpile/theme/light/draw-line.svg
 share/drawpile/drawpile/theme/light/draw-rectangle.svg
 share/drawpile/drawpile/theme/light/draw-text.svg
-share/drawpile/drawpile/theme/light/draw-watercolor.svg
 share/drawpile/drawpile/theme/light/drawpile_chat.svg
 share/drawpile/drawpile/theme/light/drawpile_incremental_mode.svg
 share/drawpile/drawpile/theme/light/drawpile_pixelround.svg
