@@ -5357,6 +5357,7 @@
     SUBDIR += raknet
     SUBDIR += rang
     SUBDIR += range-v3
+    SUBDIR += rapidcheck
     SUBDIR += rapidjson
     SUBDIR += raylib
     SUBDIR += rbenv

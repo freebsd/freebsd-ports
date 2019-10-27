@@ -1,0 +1,9 @@
+--- ext/CMakeLists.txt.orig	2019-08-15 15:24:20 UTC
++++ ext/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ if (RC_ENABLE_TESTS OR RC_ENABLE_CATCH)
+-  add_subdirectory(catch)
++  #add_subdirectory(catch)
+ endif()
+ 
+ if ((RC_ENABLE_GMOCK OR RC_ENABLE_GTEST) AND RC_ENABLE_TESTS)
