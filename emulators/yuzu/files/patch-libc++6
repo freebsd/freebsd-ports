@@ -160,6 +160,25 @@ template <class _Tp, size_t _Size> struct _LIBCPP_TEMPLATE_VIS array;
  namespace Vulkan::VKShader {
  
  using Sirit::Id;
+--- src/video_core/shader/shader_ir.cpp.orig	2019-10-26 19:56:13 UTC
++++ src/video_core/shader/shader_ir.cpp
+@@ -13,6 +13,16 @@
+ #include "video_core/shader/node_helper.h"
+ #include "video_core/shader/shader_ir.h"
+ 
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 7000
++_LIBCPP_BEGIN_NAMESPACE_STD
++template<class _Tp, class... _Args,
++         class = typename enable_if<(is_same_v<_Tp, _Args> && ...), void>::type
++         >
++array(_Tp, _Args...)
++  -> array<_Tp, 1 + sizeof...(_Args)>;
++_LIBCPP_END_NAMESPACE_STD
++#endif
++
+ namespace VideoCommon::Shader {
+ 
+ using Tegra::Shader::Attribute;
 --- src/yuzu/configuration/configure_gamelist.cpp.orig	2019-06-28 18:03:38 UTC
 +++ src/yuzu/configuration/configure_gamelist.cpp
 @@ -11,6 +11,16 @@
