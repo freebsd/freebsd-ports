@@ -4336,8 +4336,8 @@
     SUBDIR += py-cov-core
     SUBDIR += py-coverage
     SUBDIR += py-crank
-    SUBDIR += py-crcmod
     SUBDIR += py-crc32c
+    SUBDIR += py-crcmod
     SUBDIR += py-ctags
     SUBDIR += py-cuisine
     SUBDIR += py-cursive
@@ -4492,6 +4492,7 @@
     SUBDIR += py-gobject
     SUBDIR += py-gobject3
     SUBDIR += py-google-apputils
+    SUBDIR += py-google-cloud-iam
     SUBDIR += py-google-i18n-address
     SUBDIR += py-google-pasta
     SUBDIR += py-googleapis-common-protos
@@ -5389,13 +5390,13 @@
     SUBDIR += robodoc
     SUBDIR += ros-catkin_pkg
     SUBDIR += ros-console_bridge
-    SUBDIR += ros-urdfdom
-    SUBDIR += ros-urdfdom_headers
     SUBDIR += ros-rosdep
     SUBDIR += ros-rosdistro
     SUBDIR += ros-rosinstall
     SUBDIR += ros-rosinstall_generator
     SUBDIR += ros-rospkg
+    SUBDIR += ros-urdfdom
+    SUBDIR += ros-urdfdom_headers
     SUBDIR += ros-vcstools
     SUBDIR += ros-wstool
     SUBDIR += rote
