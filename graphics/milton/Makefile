@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	milton
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -31,8 +31,6 @@ PLIST_FILES+=	share/icons/hicolor/${n}x${n}/apps/milton.png
 post-patch:
 	@${REINPLACE_CMD} -e 's:__linux__:__${OPSYS}__:' \
 		${WRKSRC}/src/easytab.h
-	@${REINPLACE_CMD} -e '39s:^:#undef COUNT:' \
-		${WRKSRC}/src/milton.h
 	@${REINPLACE_CMD} -e 's:Carlito\.ttf:${DATADIR}/&:' \
 		${WRKSRC}/src/sdl_milton.cc
 	@${REINPLACE_CMD} -e 's:milton\.png:${PREFIX}/share/icons/hicolor/256x256/apps/&:' \
