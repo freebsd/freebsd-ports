@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Event-Easter
-PORTVERSION=	1.06
+PORTVERSION=	1.08
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -20,6 +20,7 @@ RUN_DEPENDS=	p5-DateTime>=0.16:devel/p5-DateTime \
 		p5-DateTime-Calendar-Julian>=0:devel/p5-DateTime-Calendar-Julian \
 		p5-DateTime-Set>=0.08:devel/p5-DateTime-Set \
 		p5-Params-Validate>=0:devel/p5-Params-Validate
+TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5
 USE_PERL5=	configure
