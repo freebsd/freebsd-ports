@@ -2,32 +2,32 @@
 
 PORTNAME=	alef
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://alef.hagilda.com/
 DISTNAME=	Alef
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Free multi-lingual font designed for screens
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL-license.txt
 
 USES=		fonts zip
-USE_XORG=	x11
+FONTNAME=	Alef
 
-NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
-FONTSDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
+NO_WRKSUBDIR=	yes
+
 PLIST_FILES=	${FONTSDIR}/Alef-Bold.ttf \
 		${FONTSDIR}/Alef-Regular.ttf
-
 PORTDOCS=	COMING-SOON.txt readme.txt
 
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	${MV} ${WRKSRC}/--COMING-SOON--.txt ${WRKSRC}/COMING-SOON.txt
+	@${MV} ${WRKSRC}/--COMING-SOON--.txt ${WRKSRC}/COMING-SOON.txt
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
