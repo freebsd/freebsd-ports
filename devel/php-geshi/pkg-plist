@@ -200,6 +200,7 @@ lib/php/geshi/geshi/rbs.php
 lib/php/geshi/geshi/rebol.php
 lib/php/geshi/geshi/reg.php
 lib/php/geshi/geshi/rexx.php
+lib/php/geshi/geshi/roff.php
 lib/php/geshi/geshi/robots.php
 lib/php/geshi/geshi/rpmspec.php
 lib/php/geshi/geshi/rsplus.php
@@ -217,6 +218,7 @@ lib/php/geshi/geshi/smarty.php
 lib/php/geshi/geshi/spark.php
 lib/php/geshi/geshi/sparql.php
 lib/php/geshi/geshi/sql.php
+lib/php/geshi/geshi/sshconfig.php
 lib/php/geshi/geshi/standardml.php
 lib/php/geshi/geshi/stonescript.php
 lib/php/geshi/geshi/swift.php
@@ -247,6 +249,7 @@ lib/php/geshi/geshi/visualprolog.php
 lib/php/geshi/geshi/whitespace.php
 lib/php/geshi/geshi/whois.php
 lib/php/geshi/geshi/winbatch.php
+lib/php/geshi/geshi/wolfram.php
 lib/php/geshi/geshi/xbasic.php
 lib/php/geshi/geshi/xml.php
 lib/php/geshi/geshi/xojo.php
