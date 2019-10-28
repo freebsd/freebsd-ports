@@ -2,4 +2,4 @@ Mail::Mbox::MessageParser is a very fast but very simple mbox parser. It uses
 the best of three strategies for parsing a mailbox: either using cached folder
 information, GNU grep, or highly optimized Perl.
 
-WWW: https://metacpan.org/pod/Mail::Mbox::MessageParser
+WWW: https://metacpan.org/release/Mail-Mbox-MessageParser
