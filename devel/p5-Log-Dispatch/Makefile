@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch
-PORTVERSION=	2.68
+PORTVERSION=	2.69
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +24,11 @@ TEST_DEPENDS=	p5-IPC-Run3>=0:devel/p5-IPC-Run3 \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:devel/p5-Test-Requires
 
+USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=		APACHELOG MIMELITE MAILSEND MAILSENDER MAILSENDMAIL
 OPTIONS_DEFAULT=	MAILSENDMAIL
 APACHELOG_DESC=		Apache::Log support
@@ -31,10 +36,6 @@ MIMELITE_DESC=		MIME::Lite support
 MAILSEND_DESC=		Mail::Send support
 MAILSENDER_DESC=	Mail::Sender support
 MAILSENDMAIL_DESC=	Mail::Sendmail support
-
-NO_ARCH=	yes
-USES=		perl5
-USE_PERL5=	configure
 
 APACHELOG_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2
 APACHELOG_USE=		APACHE_RUN=22+
