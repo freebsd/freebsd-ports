@@ -2,7 +2,7 @@
 
 PORTNAME=	hmat-oss
 DISTVERSION=	1.5.0-348
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-g76beaf3
 CATEGORIES=	math
 
@@ -13,10 +13,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libcblas.so:math/cblas \
-		libomp.so:devel/openmp \
 		libopenblas.so:math/openblas
 
-USES=		cmake
+USES=		cmake compiler:openmp
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeromerobert
 USE_LDCONFIG=	yes
