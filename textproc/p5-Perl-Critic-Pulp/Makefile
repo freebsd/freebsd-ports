@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Perl-Critic-Pulp
-PORTVERSION=	96
+PORTVERSION=	97
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,7 @@ RUN_DEPENDS=	p5-Perl-Critic>=0:textproc/p5-Perl-Critic \
 
 USES=		perl5
 USE_PERL5=	configure
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
