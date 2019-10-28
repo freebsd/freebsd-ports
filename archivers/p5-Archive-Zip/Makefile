@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Archive-Zip
-PORTVERSION=	1.66
+PORTVERSION=	1.67
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create, manipulate, read, and write Zip archive files
 
 LICENSE=	ART10 GPLv1+
