@@ -3,7 +3,7 @@
 
 PORTNAME=	supertuxkart
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/supertuxkart/SuperTuxKart/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -43,8 +43,8 @@ PORTDATA=	*
 CXXFLAGS+=	-DNO_IRR_COMPILE_WITH_JOYSTICK_EVENTS_ \
 		-D__FREE_BSD_
 
-OPTIONS_DEFINE=	FRIBIDI NETTLE
-OPTIONS_DEFAULT=FRIBIDI NETTLE
+OPTIONS_DEFINE=	FRIBIDI NETTLE WAYLAND
+OPTIONS_DEFAULT=FRIBIDI NETTLE WAYLAND
 
 FRIBIDI_DESC=		Support for right-to-left languages
 FRIBIDI_CMAKE_BOOL=	USE_FRIBIDI
@@ -54,6 +54,11 @@ NETTLE_DESC=		Use Nettle instead of OpenSSL for cryptography
 NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
 NETTLE_USES_OFF=	ssl
 NETTLE_CMAKE_BOOL_OFF=	USE_CRYPTO_OPENSSL
+
+WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND_DEVICE
+WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
+			libxkbcommon.so:x11/libxkbcommon
+WAYLAND_USE=		GL=egl
 
 # make sure that as much bundled stuff as possible is not used
 post-extract:
