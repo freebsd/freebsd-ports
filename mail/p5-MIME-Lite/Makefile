@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MIME-Lite
-PORTVERSION=	3.030
-PORTREVISION=	1
+PORTVERSION=	3.031
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,8 +19,9 @@ RUN_DEPENDS=	p5-Email-Date-Format>=1.000:mail/p5-Email-Date-Format \
 		p5-MIME-Types>=1.28:mail/p5-MIME-Types \
 		p5-Mail-Tools>=1.62:mail/p5-Mail-Tools
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
