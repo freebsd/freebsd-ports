@@ -28,7 +28,7 @@ BROKEN_sparc64=		invokes x86 assembler
 BROKEN_i386=		does not build (error: this directive must appear between .cfi_startproc and .cfi_endproc directives)
 
 USES=		alias cmake compiler:c++11-lib gettext gl \
-		jpeg openal:al pkgconfig sdl tar:xz
+		jpeg openal:al pkgconfig sdl tar:xz xorg
 USE_GL=		gl glu glew
 USE_SDL=	sdl
 USE_XORG=	x11 xrandr
