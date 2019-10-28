@@ -21,11 +21,7 @@ LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libfreetype.so:print/freetype2 \
 		libenet.so:net/enet
 
-BROKEN_aarch64=		invokes x86 assembler
-BROKEN_mips=		invokes x86 assembler
-BROKEN_mips64=		invokes x86 assembler
-BROKEN_sparc64=		invokes x86 assembler
-BROKEN_i386=		does not build (error: this directive must appear between .cfi_startproc and .cfi_endproc directives)
+BROKEN_i386=	does not build (error: this directive must appear between .cfi_startproc and .cfi_endproc directives)
 
 USES=		alias cmake compiler:c++11-lib gettext gl \
 		jpeg openal:al pkgconfig sdl tar:xz xorg
