@@ -1,4 +1,5 @@
 bin/FvwmCommand
+bin/fvwm
 bin/fvwm-bug
 bin/fvwm-config
 bin/fvwm-convert-2.6
@@ -8,7 +9,6 @@ bin/fvwm-menu-headlines
 bin/fvwm-menu-xlock
 bin/fvwm-perllib
 bin/fvwm-root
-bin/fvwm
 bin/fvwm2
 bin/xpmroot
 @sample etc/system.fvwm2rc.dist etc/system.fvwm2rc
@@ -57,16 +57,16 @@ man/man1/FvwmPerl.1.gz
 man/man1/FvwmProxy.1.gz
 man/man1/FvwmRearrange.1.gz
 man/man1/FvwmScript.1.gz
+man/man1/fvwm.1.gz
 man/man1/fvwm-bug.1.gz
 man/man1/fvwm-config.1.gz
 man/man1/fvwm-convert-2.6.1.gz
-man/man1/fvwm-perllib.1.gz
 man/man1/fvwm-menu-desktop.1.gz
 man/man1/fvwm-menu-directory.1.gz
 man/man1/fvwm-menu-headlines.1.gz
 man/man1/fvwm-menu-xlock.1.gz
+man/man1/fvwm-perllib.1.gz
 man/man1/fvwm-root.1.gz
-man/man1/fvwm.1.gz
 man/man1/fvwm2.1.gz
 man/man1/xpmroot.1.gz
 %%ICONS%%%%DATADIR%%/pixmaps/Jlock.xpm
@@ -419,8 +419,6 @@ man/man1/xpmroot.1.gz
 %%DATADIR%%/FvwmScript-ScreenDump
 %%DATADIR%%/FvwmScript-ScreenSetup
 %%DATADIR%%/FvwmScript-WidgetDemo
-%%DATADIR%%/fvwm-menu-desktop-config.fpl
-%%DATADIR%%/fvwm-script-ComExample.pl
 %%DATADIR%%/default-config/.stalonetrayrc
 %%DATADIR%%/default-config/FvwmScript-ConfirmCopyConfig
 %%DATADIR%%/default-config/FvwmScript-ConfirmQuit
@@ -442,14 +440,16 @@ man/man1/xpmroot.1.gz
 %%DATADIR%%/default-config/images/icons/restart.png
 %%DATADIR%%/default-config/images/icons/terminal.png
 %%DATADIR%%/default-config/images/icons/wallpaper.png
+%%DATADIR%%/fvwm-menu-desktop-config.fpl
+%%DATADIR%%/fvwm-script-ComExample.pl
 %%DATADIR%%/perllib/FVWM/Commands.pm
 %%DATADIR%%/perllib/FVWM/Constants.pm
 %%DATADIR%%/perllib/FVWM/Event.pm
 %%DATADIR%%/perllib/FVWM/EventNames.pm
+%%DATADIR%%/perllib/FVWM/Module.pm
+%%DATADIR%%/perllib/FVWM/Module/Terminal.pm
 %%DATADIR%%/perllib/FVWM/Module/Tk.pm
 %%DATADIR%%/perllib/FVWM/Module/Toolkit.pm
-%%DATADIR%%/perllib/FVWM/Module/Terminal.pm
-%%DATADIR%%/perllib/FVWM/Module.pm
 %%DATADIR%%/perllib/FVWM/Tracker.pm
 %%DATADIR%%/perllib/FVWM/Tracker/Colorsets.pm
 %%DATADIR%%/perllib/FVWM/Tracker/GlobalConfig.pm
