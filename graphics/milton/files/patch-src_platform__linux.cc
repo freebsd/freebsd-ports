@@ -18,16 +18,7 @@
  }
  
  void
-@@ -148,7 +150,7 @@ platform_dialog_yesno(char* info, char* title)
- }
- 
- YesNoCancelAnswer
--platform_dialog_yesnocancel(char* info, char* title);
-+platform_dialog_yesnocancel(char* info, char* title)
- {
-     // NOTE: As of 2019-09-23, this function hasn't been tested on Linux.
- 
-@@ -342,5 +344,32 @@ platform_deinit(PlatformState* platform)
+@@ -357,7 +359,14 @@ platform_deinit(PlatformState* platform)
  void
  platform_setup_cursor(Arena* arena, PlatformState* platform)
  {
@@ -39,24 +30,6 @@
 +
 +    SDL_SetWindowIcon(platform->window, surface);
 +    SDL_FreeSurface(surface);
-+}
-+
-+v2i
-+platform_cursor_get_position(PlatformState* platform)
-+{
-+    v2i pos;
-+
-+    SDL_GetMouseState(&pos.x, &pos.y);
-+    return pos;
-+}
-+
-+void
-+platform_cursor_set_position(PlatformState* platform, v2i pos)
-+{
-+    SDL_WarpMouseInWindow(platform->window, pos.x, pos.y);
-+
-+    // Pending mouse move events will have the cursor close
-+    // to where it was before we set it.
-+    SDL_FlushEvent(SDL_MOUSEMOTION);
-+    SDL_FlushEvent(SDL_SYSWMEVENT);
  }
+ 
+ v2i
