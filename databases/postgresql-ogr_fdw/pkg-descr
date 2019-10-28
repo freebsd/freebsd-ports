@@ -1,6 +1,6 @@
 This PostgreSQL extension implements a Foreign Data Wrapper (FDW) for OGR.
 
-Please note that this version of mysql_fdw works with PostgreSQL 9.3+, and
+Please note that this version of ogr_fdw works with PostgreSQL 9.3+, and
 have some limitations:
 	Only non-spatial query restrictions are pushed down to the OGR driver.
 	Spatial restrictions are not pushed down.
