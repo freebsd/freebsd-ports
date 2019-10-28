@@ -5,4 +5,4 @@ time-consuming initialization processes, such as loading large modules or
 opening persistent database connections, will see large performance
 improvements.
 
-WWW: https://metacpan.org/pod/CGI::Fast
+WWW: https://metacpan.org/release/CGI-Fast
