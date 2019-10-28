@@ -1,10 +1,6 @@
 %%SITE_PERL%%/Finance/QuoteHist.pm
-%%SITE_PERL%%/Finance/QuoteHist/DailyFinance.pm
 %%SITE_PERL%%/Finance/QuoteHist/Generic.pm
-%%SITE_PERL%%/Finance/QuoteHist/Google.pm
 %%SITE_PERL%%/Finance/QuoteHist/Yahoo.pm
 %%PERL5_MAN3%%/Finance::QuoteHist.3.gz
-%%PERL5_MAN3%%/Finance::QuoteHist::DailyFinance.3.gz
 %%PERL5_MAN3%%/Finance::QuoteHist::Generic.3.gz
-%%PERL5_MAN3%%/Finance::QuoteHist::Google.3.gz
 %%PERL5_MAN3%%/Finance::QuoteHist::Yahoo.3.gz
