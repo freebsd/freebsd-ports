@@ -1,0 +1,58 @@
+commit 3538987a800db5e174b3301b9bf70b955a349762
+Author: dim <dim@FreeBSD.org>
+Date:   Mon Sep 23 17:05:46 2019 +0000
+
+    Pull in r372606 from upstream llvm trunk (by Sanjay Patel):
+    
+      [x86] fix assert with horizontal math + broadcast of vector (PR43402)
+    
+      https://bugs.llvm.org/show_bug.cgi?id=43402
+    
+    This should fix 'Assertion failed: ((HOp.getValueType() == MVT::v2f64 ||
+    HOp.getValueType() == MVT::v4f64) && HOp.getValueType() == VT &&
+    "Unexpected type for h-op"), function foldShuffleOfHorizOp, file
+    contrib/llvm/lib/Target/X86/X86ISelLowering.cpp, line 33661' when
+    building the devel/llvm90 port with CPUTYPE=haswell.
+    
+    PR:             240759
+
+Notes:
+    svn path=/projects/clang900-import/; revision=352629
+
+diff --git lib/Target/X86/X86ISelLowering.cpp lib/Target/X86/X86ISelLowering.cpp
+index 0c5b8a79dd62..1869cc9da017 100644
+--- lib/Target/X86/X86ISelLowering.cpp
++++ lib/Target/X86/X86ISelLowering.cpp
+@@ -33651,14 +33651,14 @@ static SDValue foldShuffleOfHorizOp(SDNode *N, SelectionDAG &DAG) {
+ 
+   // When the operands of a horizontal math op are identical, the low half of
+   // the result is the same as the high half. If a target shuffle is also
+-  // replicating low and high halves, we don't need the shuffle.
++  // replicating low and high halves (and without changing the type/length of
++  // the vector), we don't need the shuffle.
+   if (Opcode == X86ISD::MOVDDUP || Opcode == X86ISD::VBROADCAST) {
+-    if (HOp.getScalarValueSizeInBits() == 64) {
++    if (HOp.getScalarValueSizeInBits() == 64 && HOp.getValueType() == VT) {
+       // movddup (hadd X, X) --> hadd X, X
+       // broadcast (extract_vec_elt (hadd X, X), 0) --> hadd X, X
+       assert((HOp.getValueType() == MVT::v2f64 ||
+-        HOp.getValueType() == MVT::v4f64) && HOp.getValueType() == VT &&
+-        "Unexpected type for h-op");
++              HOp.getValueType() == MVT::v4f64) && "Unexpected type for h-op");
+       return updateHOp(HOp, DAG);
+     }
+     return SDValue();
+diff --git lib/Target/X86/X86ISelLowering.h lib/Target/X86/X86ISelLowering.h
+index db36bcb929e3..d873edb857a8 100644
+--- lib/Target/X86/X86ISelLowering.h
++++ lib/Target/X86/X86ISelLowering.h
+@@ -422,7 +422,8 @@ namespace llvm {
+       // Tests Types Of a FP Values for scalar types.
+       VFPCLASSS,
+ 
+-      // Broadcast scalar to vector.
++      // Broadcast (splat) scalar or element 0 of a vector. If the operand is
++      // a vector, this node may change the vector length as part of the splat.
+       VBROADCAST,
+       // Broadcast mask to vector.
+       VBROADCASTM,

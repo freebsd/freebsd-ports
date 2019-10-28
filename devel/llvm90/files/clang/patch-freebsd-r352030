@@ -1,0 +1,36 @@
+commit 5f6a983e7fba98335e2863fe31305e895545ebb2
+Author: dim <dim@FreeBSD.org>
+Date:   Sun Sep 8 10:31:34 2019 +0000
+
+    Target i586 by default on the i386 architecture, since after upstream's
+    change https://reviews.llvm.org/rL356631 ("[X86] Add CMPXCHG8B feature
+    flag. Set it for all CPUs except i386/i486 including 'generic'. Disable
+    use of CMPXCHG8B when this flag isn't set"), clang now correctly emits
+    calls to __atomic_load_8, __atomic_store_8, etc. when targeting i486,
+    and this means we can no longer link most modern programs, because we do
+    not have a libatomic, nor support for atomic functions in libc.  See
+    also PR 230888, 220822, 233725, 234976, and more probably duplicates.
+    
+    Note that in practice, clang has been incorrectly generating cmpxchg8b
+    instructions for years now, when targeting i486.  So de facto nothing
+    really changes by doing this.
+
+Notes:
+    svn path=/projects/clang900-import/; revision=352030
+
+diff --git tools/clang/lib/Driver/ToolChains/Arch/X86.cpp tools/clang/lib/Driver/ToolChains/Arch/X86.cpp
+index 34be226b69e9..9a5c0aa28c7f 100644
+--- tools/clang/lib/Driver/ToolChains/Arch/X86.cpp
++++ tools/clang/lib/Driver/ToolChains/Arch/X86.cpp
+@@ -93,10 +93,10 @@ const char *x86::getX86TargetCPU(const ArgList &Args,
+     return "x86-64";
+ 
+   switch (Triple.getOS()) {
+-  case llvm::Triple::FreeBSD:
+   case llvm::Triple::NetBSD:
+   case llvm::Triple::OpenBSD:
+     return "i486";
++  case llvm::Triple::FreeBSD:
+   case llvm::Triple::Haiku:
+     return "i586";
+   default:

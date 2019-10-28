@@ -60,11 +60,11 @@ bin/sancov%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-import-test%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-offload-bundler%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-scan-deps%%LLVM_SUFFIX%%
-%%CLANG%%bin/clangd%%LLVM_SUFFIX%%
 %%CLANG%%bin/diagtool%%LLVM_SUFFIX%%
 %%CLANG%%bin/hmaptool%%LLVM_SUFFIX%%
 %%CLANG%%bin/scan-build%%LLVM_SUFFIX%%
 %%CLANG%%bin/scan-view%%LLVM_SUFFIX%%
+%%EXTRAS%%bin/clangd%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-apply-replacements%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-change-namespace%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-doc%%LLVM_SUFFIX%%
@@ -135,7 +135,7 @@ llvm%%LLVM_SUFFIX%%/bin/bugpoint
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-scan-deps
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-tblgen
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/clang-tidy
-%%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clangd
+%%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/clangd
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/diagtool
 llvm%%LLVM_SUFFIX%%/bin/dsymutil
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/find-all-symbols
@@ -2729,10 +2729,10 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%COMPILER_RT%%llvm%%LLVM_SUFFIX%%/include/xray/xray_interface.h
 %%COMPILER_RT%%llvm%%LLVM_SUFFIX%%/include/xray/xray_log_interface.h
 %%COMPILER_RT%%llvm%%LLVM_SUFFIX%%/include/xray/xray_records.h
-llvm%%LLVM_SUFFIX%%/lib/CheckerDependencyHandlingAnalyzerPlugin.so
-llvm%%LLVM_SUFFIX%%/lib/CheckerOptionHandlingAnalyzerPlugin.so
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/CheckerDependencyHandlingAnalyzerPlugin.so
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/CheckerOptionHandlingAnalyzerPlugin.so
 %%GOLD%%llvm%%LLVM_SUFFIX%%/lib/LLVMgold.so
-llvm%%LLVM_SUFFIX%%/lib/SampleAnalyzerPlugin.so
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/SampleAnalyzerPlugin.so
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_builtin_vars.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_cmath.h
 %%CLANG%%%%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_complex_builtins.h
