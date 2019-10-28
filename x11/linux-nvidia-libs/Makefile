@@ -16,7 +16,11 @@ COMMENT=	NVidia graphics libraries and programs (Linux version)
 LICENSE_FILE=	${WRKSRC}/LICENSE
 .include "${.CURDIR}/../nvidia-driver/Makefile.common"
 
+.if ${DISTVERSION:R} >= 390
 PORTSCOUT=	limit:\.\d+$$		# ignore *-no-compat32 distfiles
+.else
+PORTSCOUT=	limit:^${DISTVERSION:R}\.\d+$$
+.endif
 
 USES=		linux
 USE_LINUX=	xorglibs
