@@ -15,6 +15,7 @@
 %%SITE_PERL%%/Image/Info/SVG/XMLSimple.pm
 %%SITE_PERL%%/Image/Info/TIFF.pm
 %%SITE_PERL%%/Image/Info/WBMP.pm
+%%SITE_PERL%%/Image/Info/WEBP.pm
 %%SITE_PERL%%/Image/Info/XBM.pm
 %%SITE_PERL%%/Image/Info/XPM.pm
 %%SITE_PERL%%/Image/TIFF.pm
