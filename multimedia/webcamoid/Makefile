@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webcamoid
-DISTVERSION=	8.7.0
+DISTVERSION=	8.7.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
