@@ -5,4 +5,4 @@ Database handles are cached automatically, so they can be reused transparently
 to increase performance. And you can handle connection timeouts gracefully by
 holding on to them only for short amounts of time.
 
-WWW: https://metacpan.org/pod/Mojo::Pg
+WWW: https://metacpan.org/release/Mojo-Pg
