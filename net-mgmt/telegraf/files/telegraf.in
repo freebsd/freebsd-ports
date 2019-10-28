@@ -63,10 +63,11 @@ telegraf_start()
 
 telegraf_stop()
 {
-    if [ -f ${pidfile} ] && procstat $(cat ${pidfile}) >/dev/null 2>&1; then
-        local pid=$(cat ${pidfile})
+    pid=$(check_pidfile $pidfile $command)
+    if [ -n "${pid}" ]; then
         echo "Stopping ${name} (pid=${pid})"
         kill -- -${pid}
+        wait_for_pids ${pid}
     else
         echo "${name} isn't running"
     fi

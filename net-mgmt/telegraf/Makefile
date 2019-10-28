@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.12.3
+DISTVERSION=	1.12.4
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -25,9 +25,10 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		collectd:go-collectd:v0.3.0:collectd0org/vendor/collectd.org \
 		census-ecosystem:opencensus-go-exporter-stackdriver:v0.6.0:census_ecosystem/vendor/contrib.go.opencensus.io/exporter/stackdriver \
 		Azure:go-autorest:v10.12.0:go_autorest/vendor/github.com/Azure/go-autorest \
+		DataDog:zstd:v1.4.1:zstd/vendor/github.com/DataDog/zstd \
 		Microsoft:ApplicationInsights-Go:d2df5d4:application_insights/vendor/github.com/Microsoft/ApplicationInsights-Go \
 		Microsoft:go-winio:v0.4.9:go_winio/vendor/github.com/Microsoft/go-winio \
-		Shopify:sarama:b12709e:sarama/vendor/github.com/Shopify/sarama \
+		Shopify:sarama:v1.23.1:sarama/vendor/github.com/Shopify/sarama \
 		StackExchange:wmi:1.0.0:wmi/vendor/github.com/StackExchange/wmi \
 		aerospike:aerospike-client-go:v1.27.0:aerospike_client_go/vendor/github.com/aerospike/aerospike-client-go \
 		alecthomas:units:2efee85:units/vendor/github.com/alecthomas/units \
@@ -95,7 +96,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		leodido:ragel-machinery:299bdde:ragel_machinery/vendor/github.com/leodido/ragel-machinery \
 		mailru:easyjson:efc7eb8:easyjson/vendor/github.com/mailru/easyjson \
 		matttproud:golang_protobuf_extensions:v1.0.1:golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
-		mdlayher:apcupsd:eb3dd99:apcupsd/vendor/github.com/mdlayher/apcupsd \
+		mdlayher:apcupsd:2fe55d9:apcupsd/vendor/github.com/mdlayher/apcupsd \
 		miekg:dns:v1.0.8:dns/vendor/github.com/miekg/dns \
 		mitchellh:go-homedir:3864e76:go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:f15292f:mapstructure/vendor/github.com/mitchellh/mapstructure \
@@ -121,7 +122,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		rcrowley:go-metrics:e2704e1:go_metrics/vendor/github.com/rcrowley/go-metrics \
 		samuel:go-zookeeper:c4fab1a:go_zookeeper/vendor/github.com/samuel/go-zookeeper \
 		satori:go.uuid:v1.2.0:go0uuid/vendor/github.com/satori/go.uuid \
-		shirou:gopsutil:ccd53e2:gopsutil/vendor/github.com/shirou/gopsutil \
+		shirou:gopsutil:v2.19.7:gopsutil/vendor/github.com/shirou/gopsutil \
 		shirou:w32:bb4de01:w32/vendor/github.com/shirou/w32 \
 		sirupsen:logrus:v1.0.5:logrus/vendor/github.com/sirupsen/logrus \
 		soniah:gosnmp:96b8622:gosnmp/vendor/github.com/soniah/gosnmp \
