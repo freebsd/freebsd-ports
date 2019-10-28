@@ -1,6 +1,6 @@
---- t/local/LocalServer.pm.orig	2011-08-05 12:48:08.000000000 -0800
-+++ t/local/LocalServer.pm	2012-04-06 14:37:36.000000000 -0800
-@@ -152,7 +152,7 @@
+--- t/local/LocalServer.pm.orig	2019-10-10 13:12:38 UTC
++++ t/local/LocalServer.pm
+@@ -155,7 +155,7 @@ url.
  sub stop {
      my ($self) = @_;
      get( $self->quit_server );
