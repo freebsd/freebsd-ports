@@ -27,6 +27,8 @@ LICENSE_PERMS_FREEWARE=	dist-mirror pkg-mirror auto-accept
 LICENSE_DISTFILES_GPLv3=	${DISTFILES:[3]}
 LICENSE_DISTFILES_FREEWARE=	${DISTFILES:[2]:S/:data//}
 
+BROKEN=		checksum and size mismatch
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cmake compiler:c++11-lang sdl
