@@ -1,6 +1,6 @@
 --- Makefile.orig	2019-08-06 13:35:52 UTC
 +++ Makefile
-@@ -1,17 +1,20 @@
+@@ -1,18 +1,20 @@
  CC        ?= gcc
  CFLAGS    ?= -std=c99 -Wall -Wextra -pedantic -Os
 +CPPFLAGS  ?=
@@ -21,6 +21,7 @@
  
  mtm: vtparser.c mtm.c config.h
 -	$(CC) $(CFLAGS) $(FEATURES) -o $@ $(HEADERS) vtparser.c mtm.c $(LIBPATH) $(LIBS)
+-	strip -s mtm
 +	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o $@ vtparser.c mtm.c
  
  config.h: config.def.h

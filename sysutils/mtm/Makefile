@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mtm
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	0mp@FreeBSD.org
