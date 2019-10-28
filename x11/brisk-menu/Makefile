@@ -10,8 +10,10 @@ CATEGORIES=	x11
 MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Brisk Menu is an efficient menu for the MATE Desktop
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	GPLv2+ CC-BY-SA-4.0
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/LICENSE
+LICENSE_FILE_CC-BY-SA-4.0=	${WRKSRC}/LICENSE.CC-BY-SA-4.0
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify
 
