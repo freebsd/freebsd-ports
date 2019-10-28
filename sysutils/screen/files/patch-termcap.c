@@ -1,6 +1,15 @@
---- termcap.c.orig	Wed Jul  5 16:33:30 2000
-+++ termcap.c	Wed Oct 11 05:40:12 2000
-@@ -355,11 +355,7 @@
+--- termcap.c.orig	2019-10-01 22:08:00 UTC
++++ termcap.c
+@@ -227,7 +227,7 @@ int he;
+ 	  (D_CKM && (InStr(D_CKM, "\033[M") || InStr(D_CKM, "\033[<"))))
+         {
+           D_CXT = 1;
+-          kmapdef[0] = SaveStr(D_CKM);
++          kmapdef[0] = D_CKM ? SaveStr(D_CKM) : NULL;
+         }
+       /* "be" seems to be standard for xterms... */
+       if (D_CXT)
+@@ -362,11 +362,7 @@ int he;
    if (D_CG0)
      {
        if (D_CS0 == 0)
