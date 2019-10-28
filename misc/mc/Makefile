@@ -3,7 +3,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.8.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		https://ftp.osuosl.org/pub/midnightcommander/
@@ -60,6 +60,8 @@ SUBSHELL_CONFIGURE_WITH=subshell
 
 X11_CONFIGURE_ENABLE=	x
 X11_USE=		xorg=x11,xext
+X11_VARS=		CONFLICTS_INSTALL+="mc-nox11-[0-9]*"
+X11_VARS_OFF=		CONFLICTS_INSTALL+="mc-[0-9]*" PKGNAMESUFFIX=-nox11
 
 PORTDOCS=	*
 
