@@ -2,7 +2,7 @@
 
 PORTNAME=	cde
 DISTVERSION=	2.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig \
 		xrdb:x11/xrdb \
 		xset:x11/xset
 
-USES=		iconv:wchar_t motif perl5 shebangfix tcl:85
+USES=		iconv:wchar_t motif perl5 shebangfix tcl:85 xorg
 SHEBANG_LANG=	pl ksh tcl
 SHEBANG_FILES=	programs/dtdocbook/sgmls/sgmls.pl \
 		programs/dtinfo/tools/bin/ccdate \
@@ -36,7 +36,7 @@ SHEBANG_FILES=	programs/dtdocbook/sgmls/sgmls.pl \
 		programs/dtdocbook/doc2sdl/dtdocbook
 USE_LDCONFIG=	${PREFIX}/dt/lib
 USE_RC_SUBR=	dtcms dtspc dtlogin
-USE_XORG=	ice sm x11 xau xdmcp xext xinerama xmu xp xscrnsaver xt
+USE_XORG=	ice sm x11 xau xdmcp xext xinerama xmu xscrnsaver xt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 ALL_TARGET=	World
