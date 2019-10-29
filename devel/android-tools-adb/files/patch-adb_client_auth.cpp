@@ -1,16 +1,17 @@
---- adb/client/auth.cpp.orig	2019-07-17 19:54:09 UTC
+--- adb/client/auth.cpp.orig	2019-10-18 00:22:21 UTC
 +++ adb/client/auth.cpp
-@@ -34,7 +34,9 @@
+@@ -34,7 +34,10 @@
  #include <android-base/stringprintf.h>
  #include <android-base/strings.h>
  #include <crypto_utils/android_pubkey.h>
 +#if defined(OPENSSL_IS_BORINGSSL)
  #include <openssl/base64.h>
 +#endif
++#include <openssl/err.h>
  #include <openssl/evp.h>
  #include <openssl/objects.h>
  #include <openssl/pem.h>
-@@ -52,6 +54,30 @@ static std::mutex& g_keys_mutex = *new std::mutex;
+@@ -52,6 +55,30 @@ static std::mutex& g_keys_mutex = *new std::mutex;
  static std::map<std::string, std::shared_ptr<RSA>>& g_keys =
      *new std::map<std::string, std::shared_ptr<RSA>>;
  static std::map<int, std::string>& g_monitored_paths = *new std::map<int, std::string>;

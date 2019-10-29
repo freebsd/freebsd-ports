@@ -2,7 +2,7 @@
 
 PORTNAME=	android-tools-fastboot
 DISTVERSIONPREFIX=	platform-tools-
-DISTVERSION?=	29.0.4
+DISTVERSION?=	29.0.5
 PORTREVISION?=	0
 CATEGORIES=	devel sysutils
 MASTER_SITES=	https://salsa.debian.org/android-tools-team/android-tools/raw/706e754/debian/:manpage
@@ -17,6 +17,7 @@ LICENSE_COMB=	multi
 
 USE_GITHUB=	yes
 GH_TUPLE=	aosp-mirror:platform_system_core:${DISTVERSIONFULL} \
+		jbeich:platform_external_avb:${DISTVERSIONFULL}:avb/avb \
 		jbeich:platform_system_extras:${DISTVERSIONFULL}:extras/extras \
 		jbeich:platform_system_tools_mkbootimg:${DISTVERSIONFULL}:mkbootimg/mkbootimg
 

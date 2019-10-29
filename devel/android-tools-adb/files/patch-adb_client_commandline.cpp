@@ -1,6 +1,16 @@
---- adb/client/commandline.cpp.orig	2019-07-17 19:54:09 UTC
+--- adb/client/commandline.cpp.orig	2019-10-18 00:22:21 UTC
 +++ adb/client/commandline.cpp
-@@ -1016,7 +1016,11 @@ static int ppp(int argc, const char** argv) {
+@@ -59,7 +59,9 @@
+ #include "bugreport.h"
+ #include "client/file_sync_client.h"
+ #include "commandline.h"
++#if defined(ENABLE_FASTDEPLOY)
+ #include "fastdeploy.h"
++#endif
+ #include "services.h"
+ #include "shell_protocol.h"
+ #include "sysdeps/chrono.h"
+@@ -1012,7 +1014,11 @@ static int ppp(int argc, const char** argv) {
  
          // copy args
          const char** ppp_args = (const char**)alloca(sizeof(char*) * argc + 1);
@@ -12,7 +22,7 @@
          for (i = 2 ; i < argc ; i++) {
              //argv[2] and beyond become ppp_args[1] and beyond
              ppp_args[i - 1] = argv[i];
-@@ -1028,8 +1032,13 @@ static int ppp(int argc, const char** argv) {
+@@ -1024,8 +1030,13 @@ static int ppp(int argc, const char** argv) {
          adb_close(STDERR_FILENO);
          adb_close(fd);
  
