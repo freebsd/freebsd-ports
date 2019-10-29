@@ -1,9 +1,12 @@
 bin/freeplane
 %%DATADIR%%/core/org.freeplane.core/META-INF/MANIFEST.MF
 %%DATADIR%%/core/org.freeplane.core/lib/SimplyHTML-0.17.3.jar
+%%DATADIR%%/core/org.freeplane.core/lib/annotations-16.0.1.jar
 %%DATADIR%%/core/org.freeplane.core/lib/commons-codec-1.8.jar
 %%DATADIR%%/core/org.freeplane.core/lib/commons-io-2.4.jar
 %%DATADIR%%/core/org.freeplane.core/lib/commons-lang-2.6.jar
+%%DATADIR%%/core/org.freeplane.core/lib/darcula-2018.2.jar
+%%DATADIR%%/core/org.freeplane.core/lib/data-url-1.0.1.jar
 %%DATADIR%%/core/org.freeplane.core/lib/freeplane_mac-%%PORTVERSION%%.jar
 %%DATADIR%%/core/org.freeplane.core/lib/freeplaneeditor-%%PORTVERSION%%.jar
 %%DATADIR%%/core/org.freeplane.core/lib/freeplaneosgi-%%PORTVERSION%%.jar
@@ -12,7 +15,6 @@ bin/freeplane
 %%DATADIR%%/core/org.freeplane.core/lib/jgoodies-common-1.8.1.jar
 %%DATADIR%%/core/org.freeplane.core/lib/jgoodies-forms-1.9.0.jar
 %%DATADIR%%/core/org.freeplane.core/lib/jortho-%%PORTVERSION%%.jar
-%%DATADIR%%/core/org.freeplane.core/lib/jortho.jar
 %%DATADIR%%/core/org.freeplane.core/lib/kitfox-svg-salamander-1.1.1-p1.jar
 %%DATADIR%%/doc/Freeplane_LaTeX.mm
 %%DATADIR%%/doc/Images/Preferences_Joining nodes.png
@@ -63,6 +65,7 @@ bin/freeplane
 %%DATADIR%%/doc/api/index-all.html
 %%DATADIR%%/doc/api/index.html
 %%DATADIR%%/doc/api/org/freeplane/api/AttributeCondition.html
+%%DATADIR%%/doc/api/org/freeplane/api/AttributeValueSerializer.html
 %%DATADIR%%/doc/api/org/freeplane/api/Attributes.html
 %%DATADIR%%/doc/api/org/freeplane/api/AttributesRO.html
 %%DATADIR%%/doc/api/org/freeplane/api/Cloud.html
@@ -92,7 +95,12 @@ bin/freeplane
 %%DATADIR%%/doc/api/org/freeplane/api/Loader.html
 %%DATADIR%%/doc/api/org/freeplane/api/Map.html
 %%DATADIR%%/doc/api/org/freeplane/api/MapRO.html
+%%DATADIR%%/doc/api/org/freeplane/api/MindMap.html
+%%DATADIR%%/doc/api/org/freeplane/api/MindMapRO.html
 %%DATADIR%%/doc/api/org/freeplane/api/Node.html
+%%DATADIR%%/doc/api/org/freeplane/api/NodeChangeListener.html
+%%DATADIR%%/doc/api/org/freeplane/api/NodeChanged.ChangedElement.html
+%%DATADIR%%/doc/api/org/freeplane/api/NodeChanged.html
 %%DATADIR%%/doc/api/org/freeplane/api/NodeCondition.html
 %%DATADIR%%/doc/api/org/freeplane/api/NodeNotFoundException.html
 %%DATADIR%%/doc/api/org/freeplane/api/NodeRO.html
@@ -153,6 +161,8 @@ bin/freeplane
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Loader.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Map.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.MapRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.MindMap.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.MindMapRO.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Node.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.NodeRO.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.NodeStyle.html
@@ -272,6 +282,7 @@ bin/freeplane
 %%DATADIR%%/resources/ortho/dictionary_fr.ortho
 %%DATADIR%%/resources/templates/BigMap.mm
 %%DATADIR%%/resources/templates/BuzanMap.mm
+%%DATADIR%%/resources/templates/Darcula-1.7.mm
 %%DATADIR%%/resources/templates/beamerMap.mm
 %%DATADIR%%/resources/templates/conceptMap.mm
 %%DATADIR%%/resources/templates/essay.mm
