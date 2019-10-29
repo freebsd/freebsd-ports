@@ -293,6 +293,7 @@ bin/emptyepsilon
 %%DATADIR%%/scripts/scenario_07_quick_basic.lua
 %%DATADIR%%/scripts/scenario_08_atlantis.lua
 %%DATADIR%%/scripts/scenario_10_empty.lua
+%%DATADIR%%/scripts/scenario_49_allies.lua
 %%DATADIR%%/scripts/scenario_50_gaps.lua
 %%DATADIR%%/scripts/scenario_51_deliverAmbassador.lua
 %%DATADIR%%/scripts/scenario_53_escape.lua
@@ -314,12 +315,12 @@ bin/emptyepsilon
 %%DATADIR%%/scripts/shipTemplates_StarFighters.lua
 %%DATADIR%%/scripts/shipTemplates_Stations.lua
 %%DATADIR%%/scripts/supply_drop.lua
+%%DATADIR%%/scripts/tutorial_00_all.lua
 %%DATADIR%%/scripts/tutorial_01_mainscreen.lua
 %%DATADIR%%/scripts/tutorial_02_helm.lua
 %%DATADIR%%/scripts/tutorial_03_weapons.lua
 %%DATADIR%%/scripts/tutorial_04_engineering.lua
 %%DATADIR%%/scripts/tutorial_05_science.lua
 %%DATADIR%%/scripts/tutorial_06_relay.lua
-%%DATADIR%%/scripts/tutorial_07_all.lua
 %%DATADIR%%/scripts/util_random_transports.lua
 %%DATADIR%%/scripts/utils.lua
