@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagvis
-PORTVERSION=	1.9.15
+PORTVERSION=	1.9.16
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.nagvis.org/share/
 
