@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+6cord was successfully installed.
+
+Example configuration:
+======================
+
+If you want a persistent login, copy the configuration file to your home directory:
+
+mkdir -p ~/.config/6cord # Create the config directory if non-existent
+cp %%EXAMPLESDIR%%/6cord.toml ~/.config/6cord
+
+From there, you can make adjustments to the 6cord.toml configuration file.
+It's suggested you replace the token value, rather than use your Discord email
+and plain-text password. You will no longer need to provide the '-t' (token), 'u' 
+(username) or '-p' (password) flag when starting 6cord, depending on the values
+you provided in the configuration.
+
+Alternatively, you can use the GNOME keyring (if applicable to you) and the token
+will be stored securely. This can be used by running 6cord without any arguments.
+
+For more information, read the full help-page by running:
+
+6cord -t
+
+Or by going to the repo at:
+
+https://gitlab.com/diamondburned/6cord
+EOM
+}
+]
