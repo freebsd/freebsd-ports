@@ -9,13 +9,14 @@ bin/inspircd-genssl
 @sample %%ETCDIR%%/examples/opermotd.txt.example %%ETCDIR%%/opermotd.txt
 @sample %%ETCDIR%%/examples/opers.conf.example %%ETCDIR%%/opers.conf
 @sample %%ETCDIR%%/examples/quotes.txt.example %%ETCDIR%%/quotes.txt
+%%ETCDIR%%/examples/providers/irccloud.conf.example
+%%ETCDIR%%/examples/providers/kiwiirc-com.conf.example
 %%ETCDIR%%/examples/services/anope.conf.example
 %%ETCDIR%%/examples/services/atheme.conf.example
 %%ETCDIR%%/examples/services/generic.conf.example
 %%ETCDIR%%/examples/sql/sqloper.mysql.sql
 %%ETCDIR%%/examples/sql/sqloper.pgsql.sql
 %%ETCDIR%%/examples/sql/sqloper.sqlite3.sql
-libexec/inspircd/.gdbargs
 libexec/inspircd/inspircd
 libexec/inspircd/modules/core_channel.so
 libexec/inspircd/modules/core_dns.so
