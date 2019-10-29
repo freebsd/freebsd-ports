@@ -252,6 +252,7 @@
     SUBDIR += mtail
     SUBDIR += mtx
     SUBDIR += najitool
+    SUBDIR += netron
     SUBDIR += nms
     SUBDIR += nnn
     SUBDIR += nsf
