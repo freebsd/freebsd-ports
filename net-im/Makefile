@@ -3,6 +3,7 @@
 
     COMMENT = Instant messaging
 
+    SUBDIR += 6cord
     SUBDIR += centerim
     SUBDIR += centerim-devel
     SUBDIR += chattahoochie
