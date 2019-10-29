@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansilove
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.4
 CATEGORIES=	graphics textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libansilove.so:graphics/libansilove
 USE_GITHUB=	yes
 
 USES=		cmake
+TEST_TARGET=	test
 
 PORTDOCS=	AUTHORS ChangeLog README.md THANKS TODO
 PORTEXAMPLES=	*
@@ -34,7 +35,7 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-do-test:
+post-test:
 	@cd ${WRKSRC}/examples/ && for f in */*.ans; do \
 		${MKDIR} -p ${WRKDIR}/test/`dirname "$$f"`; \
 		${BUILD_WRKSRC}/${PORTNAME} -o "${WRKDIR}/test/$$f.png" "$$f"; \
