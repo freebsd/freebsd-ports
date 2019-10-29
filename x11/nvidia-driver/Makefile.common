@@ -4,7 +4,11 @@ LICENSE=	NVIDIA
 LICENSE_NAME=	License For Customer Use of NVIDIA Software
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+.if ${DISTVERSION:R} > 390
+ONLY_FOR_ARCHS=	amd64
+.else
 ONLY_FOR_ARCHS=	i386 amd64
+.endif
 
 ARCH_SUFX=	x86${ARCH:S/i386//:S/amd/_/}
 
