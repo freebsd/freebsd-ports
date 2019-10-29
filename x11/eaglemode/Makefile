@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.94.1
-PORTREVISION=	7
+PORTVERSION=	0.94.2
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
 USES=		compiler:features jpeg gnome perl5 \
-		pkgconfig tar:bzip2
+		pkgconfig tar:bzip2 xorg
 USE_PERL5=	build
 USE_XORG=	x11 xext xxf86vm
 SUB_FILES=	eaglemode.sh
