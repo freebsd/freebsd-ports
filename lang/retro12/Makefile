@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	retro12
-DISTVERSION=	2019.7
+DISTVERSION=	2019.10
 CATEGORIES=	lang
 MASTER_SITES=	http://forthworks.com/retro/r/ \
 		https://forthworks.com/retro/r/
@@ -13,7 +13,7 @@ COMMENT=	Clean, elegant, and pragmatic dialect of Forth
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	ncurses shebangfix
+USES=		ncurses shebangfix
 
 SHEBANG_FILES=	example/Atua*
 SHEBANG_LANG=	retro
@@ -26,6 +26,8 @@ MAKE_ENV=	DATADIR=${DATADIR} \
 # There are race conditions in the makefile due to missing dependencies for
 # targets as upstream tests releases on single core machines.
 MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	test
 
 PLIST_FILES=	bin/retro \
 		bin/retro-describe \
@@ -33,21 +35,14 @@ PLIST_FILES=	bin/retro \
 		bin/retro-embedimage \
 		bin/retro-extend \
 		bin/retro-muri \
+		bin/retro-tags \
 		bin/retro-unu
 
-PORTDATA=	glossary.forth \
-		ngaImage \
-		tests \
-		words.tsv
+PORTDATA=	glossary.retro ngaImage tests words.tsv
 
-PORTDOCS=	doc \
-		README \
-		RELEASE-NOTES
+PORTDOCS=	README RELEASE-NOTES doc
 
 PORTEXAMPLES=	example
-
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	test
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
