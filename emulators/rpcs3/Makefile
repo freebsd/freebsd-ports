@@ -2,9 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.7-8941 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g0ef7ad129
-PORTREVISION=	1
+DISTVERSION=	0.0.7-9035 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gb49b4c809
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,8 +24,9 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-27-g9220f5e:hidapi/3rdparty/hidapi \
-		RPCS3:llvm:b860b5e8f4ee:llvm/llvm \
+		RPCS3:llvm:9836c299733e:llvm/llvm \
 		Cyan4973:xxHash:v0.6.5:xxHash/3rdparty/xxHash \
+		FNA-XNA:FAudio:19.10:FAudio/3rdparty/FAudio \
 		jbeder:yaml-cpp:yaml-cpp-0.6.2-23-geca9cfd:yamlcpp/3rdparty/yaml-cpp \
 		kobalicek:asmjit:fc251c9:asmjit/asmjit \
 		KhronosGroup:glslang:7.11.3214:glslang/Vulkan/glslang \
@@ -37,7 +37,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-27-g9220f5e:hidapi/3rdparty/hidapi \
 USES=		cmake compiler:c++17-lang iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig qt:5
 USE_GL=		gl glew
-USE_QT=		qmake_build buildtools_build core dbus declarative gui network widgets
+USE_QT=		qmake_build buildtools_build core concurrent dbus declarative gui network widgets
 USE_XORG=	x11
 CMAKE_ON=	CMAKE_SKIP_RPATH USE_SYSTEM_FFMPEG USE_SYSTEM_LIBPNG
 CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS
@@ -57,8 +57,8 @@ CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx-${LLVM_VER}.src/include
 LLVM_VER=	8.0.0 # same as FreeBSD 11.3
 .endif
 
-OPTIONS_DEFINE=	ALSA EVDEV LLVM PULSEAUDIO VULKAN
-OPTIONS_DEFAULT=LLVM VULKAN
+OPTIONS_DEFINE=	ALSA EVDEV FAUDIO LLVM PULSEAUDIO VULKAN
+OPTIONS_DEFAULT=FAUDIO LLVM VULKAN
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
@@ -68,6 +68,10 @@ EVDEV_DESC=		libevdev-based joystick support
 EVDEV_CMAKE_BOOL=	USE_LIBEVDEV
 EVDEV_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 EVDEV_LIB_DEPENDS=	libevdev.so:devel/libevdev
+
+FAUDIO_DESC=		FAudio audio support
+FAUDIO_LIB_DEPENDS=	libFAudio.so:audio/faudio
+FAUDIO_CMAKE_BOOL=	USE_FAUDIO
 
 LLVM_DESC=		LLVM-based PPU recompiler
 LLVM_CMAKE_BOOL_OFF=	WITHOUT_LLVM
