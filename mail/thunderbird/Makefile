@@ -3,7 +3,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	68.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
@@ -55,7 +55,7 @@ MOZ_OPTIONS+=	--disable-calendar
 .endif
 
 post-extract:
-	@${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|;s|@MOZILLA@|${MOZILLA}|' \
+	@${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON:R}|;s|@MOZILLA@|${MOZILLA}|' \
 		<${FILESDIR}/thunderbird.desktop.in >${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop
 
 post-patch:
