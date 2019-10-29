@@ -184,11 +184,11 @@ do-install:
 	${LN} -sf ${L}.so.${OPENBLAS_SVER} ${STAGEDIR}${PREFIX}/lib/${L}.so
 .endfor
 	cd ${WRKSRC} && \
-		${FIND} . -name 'common*.h' -print | ${XARGS} ${BASENAME} | ${XARGS} -I {} ${CP} {} openblas_{}
-	${CP} ${WRKSRC}/version.h ${WRKSRC}/openblas_version.h
-	${CP} ${WRKSRC}/param.h ${WRKSRC}/openblas_param.h
-	${CP} ${WRKSRC}/cpuid.h ${WRKSRC}/openblas_cpuid.h
-	${CP} ${WRKSRC}/config.h ${WRKSRC}/openblas_config.h
+		${FIND} . -name 'common*.h' -print | ${XARGS} ${BASENAME} | ${XARGS} -I {} ${MV} {} openblas_{}
+	${MV} ${WRKSRC}/version.h ${WRKSRC}/openblas_version.h
+	${MV} ${WRKSRC}/param.h ${WRKSRC}/openblas_param.h
+	${MV} ${WRKSRC}/cpuid.h ${WRKSRC}/openblas_cpuid.h
+	${MV} ${WRKSRC}/config.h ${WRKSRC}/openblas_config.h
 	${REINPLACE_CMD} \
 	-e 's/"common.h"/"openblas_common.h"/' \
 	-e 's/"version.h"/"openblas_version.h"/' \
