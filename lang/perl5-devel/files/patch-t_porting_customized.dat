@@ -1,6 +1,6 @@
 Fix tests for modified files.
 
---- t/porting/customized.dat.orig	2019-10-21 10:19:41 UTC
+--- t/porting/customized.dat.orig	2019-10-28 23:30:31 UTC
 +++ t/porting/customized.dat
 @@ -7,6 +7,7 @@ Digest::MD5 cpan/Digest-MD5/Makefile.PL 3bf781444ee671
  Digest::MD5 cpan/Digest-MD5/MD5.pm df5f0663f0f755be7eda6e3d2f008f2629246b19
@@ -9,8 +9,8 @@ Fix tests for modified files.
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm ac29a8dc1c7d6f0aca4abff0730c05bde1dab3ad
  Filter::Util::Call pod/perlfilter.pod e9833bf4ebc51087dfee5c553e0f8a5eef67212d
  Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6
- Math::BigInt cpan/Math-BigInt/lib/Math/BigFloat.pm 4bc175802939bf831e0cef6e79528ff0bcc18171
-@@ -23,7 +24,7 @@ Pod::Checker cpan/Pod-Checker/t/pod/contains_bad_pod.x
+ Math::Complex cpan/Math-Complex/lib/Math/Complex.pm 198ea6c6c584f5ea79a0fd7e9d411d0878f3b2af
+@@ -19,7 +20,7 @@ Pod::Checker cpan/Pod-Checker/t/pod/contains_bad_pod.x
  Pod::Checker cpan/Pod-Checker/t/pod/selfcheck.t 8ce3cfd38e4b9bcf5bc7fe7f2a14195e49aed7d8
  Pod::Checker cpan/Pod-Checker/t/pod/testcmp.pl a0cd5c8eca775c7753f4464eee96fa916e3d8a16
  Pod::Checker cpan/Pod-Checker/t/pod/testpchk.pl b2072c7f4379fd050e15424175d7cac5facf5b3b
