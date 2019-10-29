@@ -2,7 +2,7 @@
 
 PORTNAME=	android-tools-adb
 DISTVERSIONPREFIX=	platform-tools-
-DISTVERSION?=	29.0.4
+DISTVERSION?=	29.0.5
 PORTREVISION?=	0
 CATEGORIES=	devel comms
 
@@ -27,6 +27,12 @@ ALL_TARGET=	all
 TEST_TARGET=	test
 PLIST_FILES=	bin/adb
 PORTDOCS=	*
+
+# XXX Remove after FreeBSD 11.2/12.0 reach EOL i.e., around 2020-02-01
+# XXX Switch to bundled libc++ to avoid error-prone reverts
+.if !exists(/usr/include/c++/v1/charconv) && exists(/usr/lib/libc++.so)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-d3d650628c8c
+.endif
 
 OPTIONS_DEFINE+=MDNSRESPONDER BASH DOCS TEST TEST_PYTHON
 OPTIONS_DEFAULT=MDNSRESPONDER

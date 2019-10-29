@@ -1,12 +1,11 @@
---- liblog/fake_writer.cpp.orig	2019-07-17 19:54:09 UTC
+--- liblog/fake_writer.cpp.orig	2019-10-18 00:22:21 UTC
 +++ liblog/fake_writer.cpp
-@@ -33,8 +33,8 @@ static int logFds[(int)LOG_ID_MAX] = {-1, -1, -1, -1, 
- 
+@@ -34,7 +34,7 @@ static int logFds[(int)LOG_ID_MAX] = {-1, -1, -1, -1, 
  struct android_log_transport_write fakeLoggerWrite = {
-     .node = {&fakeLoggerWrite.node, &fakeLoggerWrite.node},
--    .context.priv = &logFds,
      .name = "fake",
+     .logMask = 0,
+-    .context.priv = &logFds,
 +    .context = { .priv = &logFds }, // GCC
-     .available = NULL,
+     .available = fakeAvailable,
      .open = fakeOpen,
      .close = fakeClose,
