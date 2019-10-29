@@ -38,7 +38,6 @@ lib/open-vm-tools/plugins/vmsvc/libvmbackup.so
 %%X11%%lib/open-vm-tools/plugins/vmusr/libdndcp.so
 lib/vmware-tools/modules/drivers/vmblock.ko
 lib/vmware-tools/modules/drivers/vmmemctl.ko
-lib/vmware-tools/modules/drivers/vmxnet.ko
 libdata/pkgconfig/vmguestlib.pc
 sbin/mount_vmblock
 share/vmware-tools/poweroff-vm-default
@@ -57,5 +56,7 @@ share/vmware-tools/vm-support
 %%DATADIR%%/messages/zh_CN/toolboxcmd.vmsg
 @rmtry etc/vmware-tools/plugins
 etc/pam.d/vmtoolsd
+/etc/vmware-tools/tools.conf.example
+@dirrmtry /etc/vmware-tools
 @dir %%DATADIR%%/scripts/vmware
 @dir %%DATADIR%%/tests
