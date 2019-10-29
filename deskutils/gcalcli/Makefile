@@ -4,6 +4,7 @@
 PORTNAME=	gcalcli
 PORTVERSION=	4.0.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -34,4 +35,6 @@ OPTIONS_DEFAULT=	ICS_VCAL
 ICS_VCAL_DESC=		Enable importing of ics/vcal files
 ICS_VCAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:deskutils/py-vobject@${PY_FLAVOR}
 
+post-patch:
+	@${REINPLACE_CMD} -e "s,share/man,man,g" ${WRKSRC}/setup.py
 .include <bsd.port.mk>
