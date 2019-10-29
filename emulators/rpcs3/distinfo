@@ -1,4 +1,6 @@
 TIMESTAMP = 1571505618
+SHA256 (libcxx-8.0.0.src.tar.xz) = c2902675e7c84324fb2c1e45489220f250ede016cc3117186785d9dc291f9de2
+SIZE (libcxx-8.0.0.src.tar.xz) = 1752308
 SHA256 (RPCS3-rpcs3-v0.0.7-8941-g0ef7ad129_GH0.tar.gz) = daf9c83bc14d274c267cc110bdfe22d1e839eec6bfa0c9ba24d2d4eae279c857
 SIZE (RPCS3-rpcs3-v0.0.7-8941-g0ef7ad129_GH0.tar.gz) = 5625433
 SHA256 (RPCS3-hidapi-hidapi-0.8.0-rc1-27-g9220f5e_GH0.tar.gz) = 3120e0b701943f452760e45f9fc1ac50bab356ad4c807b4cac4598041c5ca1a5

@@ -4,6 +4,7 @@ PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.7-8941 # git rev-list --count HEAD
 DISTVERSIONSUFFIX=	-g0ef7ad129
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -48,14 +49,12 @@ LLD_UNSAFE=	yes # XXX ports/219089
 .endif
 
 # XXX Remove after FreeBSD 11.2/12.0 reach EOL i.e., around 2020-02-01
-# XXX Switch to bundled libc++ to avoid error-prone reverts
-.if !exists(/usr/include/c++/v1/charconv) && exists(/usr/lib/libc++.so)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-db7042b986ab
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-6b1e1e402049
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-9710473a2e3e
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-f9ad6358563b
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-4504ac2d1248
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-5bd17a44c972
+.if make(makesum) || (!exists(/usr/include/c++/v1/charconv) && exists(/usr/lib/libc++.so))
+MASTER_SITES+=	https://releases.llvm.org/${LLVM_VER}/:libcxx
+DISTFILES+=	libcxx-${LLVM_VER}.src.tar.xz:libcxx
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-no-cotire
+CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx-${LLVM_VER}.src/include
+LLVM_VER=	8.0.0 # same as FreeBSD 11.3
 .endif
 
 OPTIONS_DEFINE=	ALSA EVDEV LLVM PULSEAUDIO VULKAN
