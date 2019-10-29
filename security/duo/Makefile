@@ -22,7 +22,9 @@ USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS
+SUID_DESC=	Install login_duo with suid bit set
+OPTIONS_DEFINE=	DOCS SUID
+OPTIONS_SUB=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's| /etc| ${PREFIX}/etc|g' \
