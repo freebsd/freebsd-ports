@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-efi
-PORTVERSION=	3.0.10
+PORTVERSION=	3.0.11
 CATEGORIES=	devel
 MASTER_SITES=	SF/gnu-efi
 

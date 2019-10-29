@@ -1,6 +1,6 @@
---- Make.defaults.orig	2015-08-17 20:06:47 UTC
+--- Make.defaults.orig	2019-10-28 11:48:52 UTC
 +++ Make.defaults
-@@ -45,11 +45,14 @@ TOPDIR := $(shell if [ "$$PWD" != "" ]; 
+@@ -45,11 +45,14 @@ TOPDIR := $(shell if [ "$$PWD" != "" ]; then echo $$PW
  # Where to install the package. GNU-EFI will create and access
  # lib and include under the root
  #
@@ -16,3 +16,21 @@
  # Compilation tools
  HOSTCC       := $(prefix)gcc
  CC           := $(prefix)$(CROSS_COMPILE)gcc
+@@ -110,10 +113,14 @@ ifeq ($(ARCH),x86_64)
+                             || ( [ $(GCCVERSION) -eq "4" ]      \
+                                  && [ $(GCCMINOR) -ge "7" ] ) ) \
+                           && echo 1)
+-  ifeq ($(GCCNEWENOUGH),1)
+-    CPPFLAGS += -DGNU_EFI_USE_MS_ABI -maccumulate-outgoing-args --std=c11
+-  else ifeq ($(USING_CLANG),clang)
++  ifeq ($(USING_CLANG),clang)
+     CPPFLAGS += -DGNU_EFI_USE_MS_ABI --std=c11
++  else
++    ifeq ($(GCCNEWENOUGH),1)
++      CPPFLAGS += -DGNU_EFI_USE_MS_ABI -maccumulate-outgoing-args --std=c11
++    else
++      CPPFLAGS += -DGNU_EFI_USE_MS_ABI --std=c11
++    endif
+   endif
+ 
+   CFLAGS += -mno-red-zone
