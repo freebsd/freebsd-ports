@@ -758,6 +758,7 @@
     SUBDIR += open
     SUBDIR += opencorsairlink
     SUBDIR += openipmi
+    SUBDIR += opensbi
     SUBDIR += openupsd
     SUBDIR += openzfs
     SUBDIR += openzfs-kmod
