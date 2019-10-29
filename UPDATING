@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191029:
+  AFFECTS: users of emulators/open-vm-tools[-nox11]
+  AUTHOR: jpaetzel@FreeBSD.org
+
+open-vm-tools 11.0.1 has removed the vmxnet driver.  This driver has been
+in tree for quite some time and hopefully everyone is using the in tree
+version, however if you had removed device vmx from your kernel, or are
+running an unsupported version of FreeBSD which didn't have the driver
+included in the base system, updating your open-vm-tools version will
+leave you without networking.
+
 20191026:
   AFFECTS: users of www/qt5-webengine
   AUTHOR: kai@FreeBSD.org

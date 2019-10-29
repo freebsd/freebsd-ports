@@ -3,7 +3,6 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
-PORTREVISION=		1
 DISTVERSIONPREFIX=	stable-
 PORTEPOCH=		2
 CATEGORIES=		emulators
@@ -19,8 +18,8 @@ ONLY_FOR_ARCHS=		amd64 i386
 LIB_DEPENDS=		libmspack.so:archivers/libmspack \
 			libdnet.so:net/libdnet
 
-RELEASE_VER=		10.3.0
-BUILD_VER=		8931395
+RELEASE_VER=		11.0.1
+BUILD_VER=		14773994
 
 OPTIONS_DEFINE=		LIBNOTIFY OPENSSL X11
 OPTIONS_DEFAULT=	LIBNOTIFY OPENSSL X11
@@ -85,7 +84,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/input
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers/vmblock.ko
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers/vmmemctl.ko
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmxnet.ko ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers/vmxnet.ko
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/open-vm-tools/scripts/vmware/
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/open-vm-tools/scripts/
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/open-vm-tools/tests/
