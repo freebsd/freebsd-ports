@@ -3,7 +3,7 @@
 
 PORTNAME=	openblas
 PORTVERSION=	0.2.20
-PORTREVISION=	10
+PORTREVISION=	11
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	math
@@ -183,5 +183,25 @@ do-install:
 	${INSTALL_LIB} ${WRKDIR}/lib/${L}.so.${OPENBLAS_SVER} ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf ${L}.so.${OPENBLAS_SVER} ${STAGEDIR}${PREFIX}/lib/${L}.so
 .endfor
+	cd ${WRKSRC} && \
+		${FIND} . -name 'common*.h' -print | ${XARGS} ${BASENAME} | ${XARGS} -I {} ${CP} {} openblas_{}
+	${CP} ${WRKSRC}/version.h ${WRKSRC}/openblas_version.h
+	${CP} ${WRKSRC}/param.h ${WRKSRC}/openblas_param.h
+	${CP} ${WRKSRC}/cpuid.h ${WRKSRC}/openblas_cpuid.h
+	${CP} ${WRKSRC}/config.h ${WRKSRC}/openblas_config.h
+	${REINPLACE_CMD} \
+	-e 's/"common.h"/"openblas_common.h"/' \
+	-e 's/"version.h"/"openblas_version.h"/' \
+	-e 's/"param.h"/"openblas_param.h"/' \
+	-e 's/"cpuid.h"/"openblas_cpuid.h"/' \
+	-e 's/"config.h"/"openblas_config.h"/' \
+	-e 's/"common_/"openblas_common_/' \
+		${WRKSRC}/*.h \
+		${WRKSRC}/*.c \
+		${WRKSRC}/interface/*.c
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/openblas
+	${INSTALL_DATA} ${WRKSRC}/openblas_*.h ${STAGEDIR}${PREFIX}/include/openblas
+	${INSTALL_DATA} ${WRKSRC}/cblas.h ${WRKSRC}/config_kernel.h ${WRKSRC}/config_last.h ${WRKSRC}/l1param.h ${WRKSRC}/l2param.h ${WRKSRC}/symcopy.h \
+		${STAGEDIR}${PREFIX}/include/openblas
 
 .include <bsd.port.mk>
