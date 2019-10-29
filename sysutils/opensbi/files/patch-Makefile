@@ -1,0 +1,11 @@
+--- Makefile.orig	2019-10-09 02:45:51 UTC
++++ Makefile
+@@ -180,7 +180,7 @@ ASFLAGS		+=	$(firmware-asflags-y)
+ 
+ ARFLAGS		=	rcs
+ 
+-ELFFLAGS	+=	-Wl,--build-id=none -N -static-libgcc -lgcc
++ELFFLAGS	+=	-Wl,--build-id=none -N -static-libgcc
+ ELFFLAGS	+=	$(platform-ldflags-y)
+ ELFFLAGS	+=	$(firmware-ldflags-y)
+ 

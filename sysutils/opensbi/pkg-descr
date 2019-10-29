@@ -1,0 +1,18 @@
+The RISC-V Supervisor Binary Interface (SBI) is the recommended interface
+between:
+
+1. A platform-specific firmware running in M-mode and a bootloader, a
+   hypervisor or a general-purpose OS executing in S-mode or HS-mode.
+2. A hypervisor running in HS-mode and a bootloader or a general-purpose OS
+   executing in VS-mode.
+
+The RISC-V SBI specification is maintained as an independent project by the
+RISC-V Foundation at https://github.com/riscv/riscv-sbi-doc.
+
+The goal of the OpenSBI project is to provide an open-source reference
+implementation of the RISC-V SBI specifications for platform-specific firmwares
+executing in M-mode (case 1 mentioned above). An OpenSBI implementation can be
+easily extended by RISC-V platform and system-on-chip vendors to fit a
+particular hardware configuration.
+
+WWW: https://github.com/riscv/opensbi
