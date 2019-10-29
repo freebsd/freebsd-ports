@@ -17,6 +17,7 @@ include/qxmpp/QXmppElement.h
 include/qxmpp/QXmppEntityTimeIq.h
 include/qxmpp/QXmppEntityTimeManager.h
 include/qxmpp/QXmppGlobal.h
+include/qxmpp/QXmppHttpUploadIq.h
 include/qxmpp/QXmppIbbIq.h
 include/qxmpp/QXmppIncomingClient.h
 include/qxmpp/QXmppIncomingServer.h
@@ -28,6 +29,8 @@ include/qxmpp/QXmppMamIq.h
 include/qxmpp/QXmppMamManager.h
 include/qxmpp/QXmppMessage.h
 include/qxmpp/QXmppMessageReceiptManager.h
+include/qxmpp/QXmppMixIq.h
+include/qxmpp/QXmppMixItem.h
 include/qxmpp/QXmppMucIq.h
 include/qxmpp/QXmppMucManager.h
 include/qxmpp/QXmppNonSASLAuth.h
@@ -58,6 +61,7 @@ include/qxmpp/QXmppStreamFeatures.h
 include/qxmpp/QXmppStun.h
 include/qxmpp/QXmppTransferManager.h
 include/qxmpp/QXmppTransferManager_p.h
+include/qxmpp/QXmppUploadRequestManager.h
 include/qxmpp/QXmppUtils.h
 include/qxmpp/QXmppVCardIq.h
 include/qxmpp/QXmppVCardManager.h
@@ -68,6 +72,6 @@ lib/cmake/qxmpp/QXmpp.cmake
 lib/cmake/qxmpp/QXmppConfig.cmake
 lib/cmake/qxmpp/QXmppConfigVersion.cmake
 lib/libqxmpp.so
-lib/libqxmpp.so.1
+lib/libqxmpp.so.2
 lib/libqxmpp.so.%%VERSION%%
 libdata/pkgconfig/qxmpp.pc
