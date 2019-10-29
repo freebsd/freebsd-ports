@@ -53,6 +53,8 @@ SSL_CONFIGURE_WITH=	openssl
 
 .if ${ARCH} == aarch64
 CONFIGURE_ARGS+=	--cc-abi="-march=armv8-a+crypto"
+.elif ${ARCH} == powerpc64
+CONFIGURE_ARGS+=	--cpu="ppc64"
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
