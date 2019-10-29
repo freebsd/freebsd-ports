@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.8
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	LOCAL/yuri/:js
-DISTFILES=	netron-3.4.8-node_modules.tgz:js
+DISTFILES=	netron-${DISTVERSION}-node_modules.tgz:js
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Visualizer for neural network, deep learning, machine learning models
@@ -28,6 +28,7 @@ post-extract:
 regenerate-node_modules-distfile: # requires npm installed by www/npm
 	@${MAKE} clean patch && \
 	cd ${WRKSRC} && \
+	${RM} -r node_modules && \
 	npm install -l && \
 	${TAR} czf ${DISTDIR}/netron-${DISTVERSION}-node_modules.tgz node_modules && \
 	${ECHO} "Please upload the file ${DISTDIR}/netron-${DISTVERSION}-node_modules.tgz"
