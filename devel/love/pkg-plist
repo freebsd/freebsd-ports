@@ -1,5 +1,5 @@
 bin/love
-lib/liblove-11.2.so
+lib/liblove-11.3.so
 lib/liblove.so
 man/man1/love.1.gz
 share/applications/love.desktop

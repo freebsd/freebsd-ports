@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	love
-PORTVERSION=	11.2
-PORTREVISION=	2
+PORTVERSION=	11.3
 CATEGORIES=	devel games
 MASTER_SITES=	https://bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
 		libogg.so:audio/libogg
 
 USES=		autoreconf compiler:c++11-lib desktop-file-utils gl gmake \
-		libtool localbase openal pkgconfig shared-mime-info
+		libtool localbase openal pkgconfig sdl shared-mime-info
 USE_SDL=	sdl2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
