@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	i2pd
-PORTVERSION=	2.28.0
+PORTVERSION=	2.29.0
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	amdmi3@FreeBSD.org
