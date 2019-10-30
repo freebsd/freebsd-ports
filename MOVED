@@ -13431,3 +13431,4 @@ www/nuvolaplayer-tunein||2019-10-21|Useless without audio/nuvolaplayer
 www/nuvolaplayer-yandex-music||2019-10-21|Useless without audio/nuvolaplayer
 www/nuvolaplayer-youtube||2019-10-21|Useless without audio/nuvolaplayer
 japanese/yasou-fpw||2019-10-23|Has expired: the only remaining mastersite times out
+lang/gcc5|lang/gcc|2019-10-30|Has expired: Unsupported by upstream. Use GCC 9 or newer instead.

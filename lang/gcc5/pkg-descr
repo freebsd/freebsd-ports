@@ -1,7 +1,0 @@
-GCC, the GNU Compiler Collection, supports a number of languages.
-This port installs the C, C++, and Fortran front ends as gcc5, g++5,
-and gfortran5, respectively.
-
-WWW: https://gcc.gnu.org
-
-Gerald Pfeifer <gerald@FreeBSD.org>
