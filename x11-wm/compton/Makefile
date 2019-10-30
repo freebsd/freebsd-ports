@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	xprop:x11/xprop \
 		xwininfo:x11/xwininfo
 
+CONFLICTS_INSTALL=	compton-yshui # bin/compton
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	chjj
 GH_TAGNAME=	b7f43ee

@@ -1,0 +1,15 @@
+Compton is a standalone compositor for X11 for window managers without
+built-in compositing. This is an actively maintained fork of Compton.
+
+Features:
+- Rendering with optional VSync via OpenGL or XRender
+- Transparent windows, menus, titlebars, borders
+- Shadows and colored shadows
+- Fading effects
+- Bluring of background
+- GLSL fragment shader for window contents
+- Conditional settings
+- Config, log and PID file support
+- Remote control via DBus
+
+WWW: https://github.com/yshui/compton

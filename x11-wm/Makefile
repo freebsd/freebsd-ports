@@ -26,6 +26,7 @@
     SUBDIR += compizconfig-backend-gconf
     SUBDIR += compizconfig-python
     SUBDIR += compton
+    SUBDIR += compton-yshui
     SUBDIR += ctwm
     SUBDIR += cwm
     SUBDIR += devilspie
