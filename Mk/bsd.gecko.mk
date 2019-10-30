@@ -71,7 +71,6 @@ USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrender xt
 HAS_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
-CONFIGURE_WRKSRC=	${WRKSRC}/objdir # bug1579761
 LDFLAGS+=		-Wl,--as-needed
 
 BUNDLE_LIBS=	yes
