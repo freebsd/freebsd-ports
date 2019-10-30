@@ -1,3 +1,3 @@
-TIMESTAMP = 1542399381
-SHA256 (pmem-pmdk-1.5_GH0.tar.gz) = 6b069d7207febeb62440e89245e8b18fcdf40b6170d2ec2ef33c252ed16db2d4
-SIZE (pmem-pmdk-1.5_GH0.tar.gz) = 2439245
+TIMESTAMP = 1567183026
+SHA256 (pmem-pmdk-1.6.1_GH0.tar.gz) = f263c8301f86ddf8bc5e020909ac52350baedba5c169a1a3a7786df64f129446
+SIZE (pmem-pmdk-1.6.1_GH0.tar.gz) = 2499478
