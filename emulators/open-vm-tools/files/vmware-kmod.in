@@ -57,21 +57,6 @@ load_rc_config $name
 : ${vmware_guest_vmmemctl_enable:=$vmware_guest_kmod_enable}
 run_rc_command "$1"
 
-# VMware kernel module: vmxnet
-kernel_mod="vmxnet"
-name="vmware_guest_${kernel_mod}"
-rcvar=vmware_guest_${kernel_mod}_enable
-extra_commands="status"
-status_cmd="vmware_mod_status ${kernel_mod}"
-start_precmd="${checkvm_cmd}"
-start_cmd="vmware_mod_load ${kernel_mod}"
-stop_precmd="${checkvm_cmd}"
-stop_cmd=":"
-
-load_rc_config $name
-: ${vmware_guest_vmxnet_enable:=$vmware_guest_kmod_enable}
-run_rc_command "$1"
-
 # VMware kernel module: vmblock
 kernel_mod="vmblock"
 name="vmware_guest_${kernel_mod}"
