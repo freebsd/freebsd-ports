@@ -150,6 +150,13 @@ man/man3/pmemobj_defer_free.3.gz
 man/man3/pmemobj_direct.3.gz
 man/man3/pmemobj_drain.3.gz
 man/man3/pmemobj_errormsg.3.gz
+man/man3/pmemobj_f_mem_nodrain.3.gz
+man/man3/pmemobj_f_mem_noflush.3.gz
+man/man3/pmemobj_f_mem_nontemporal.3.gz
+man/man3/pmemobj_f_mem_temporal.3.gz
+man/man3/pmemobj_f_mem_wb.3.gz
+man/man3/pmemobj_f_mem_wc.3.gz
+man/man3/pmemobj_f_relaxed.3.gz
 man/man3/pmemobj_first.3.gz
 man/man3/pmemobj_flush.3.gz
 man/man3/pmemobj_free.3.gz

@@ -1,17 +1,6 @@
---- src/common.inc.orig	2018-10-26 15:43:47 UTC
+--- src/common.inc.orig	2019-08-27 15:43:26 UTC
 +++ src/common.inc
-@@ -85,9 +85,7 @@ endif
- osdep = $(1)_$(shell echo $(OS_KERNEL_NAME) | tr "[:upper:]" "[:lower:]")$(2)
- 
- get_arch = $(shell $(CC) -dumpmachine | awk -F'[/-]' '{print $$1}')
--ifeq ($(ARCH),)
--export ARCH := $(call get_arch)
--endif
-+override export ARCH := $(call get_arch)
- 
- ifeq ($(PKG_CONFIG_CHECKED),)
- ifeq ($(shell command -v $(PKG_CONFIG) && echo y || echo n), n)
-@@ -186,9 +184,9 @@ else
+@@ -193,9 +193,9 @@ else
  export WSTRINGOP_TRUNCATION_AVAILABLE
  endif
  
@@ -23,7 +12,7 @@
  
  define create-deps
  	@cp $(objdir)/$*.d $(objdir)/.deps/$*.P; \
-@@ -209,7 +207,7 @@ export prefix = /usr/local
+@@ -216,7 +216,7 @@ export prefix = /usr/local
  export exec_prefix := $(prefix)
  export sysconfdir := $(prefix)/etc
  export datarootdir := $(prefix)/share
