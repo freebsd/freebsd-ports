@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	harfbuzz
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 PORTREVISION?=	0
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-PLIST_SUB+=	LIBVER=0.20600.3
+PLIST_SUB+=	LIBVER=0.20600.4
 
 HARFBUZZ_SLAVE?=	no
 
