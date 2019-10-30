@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	polybar
-DISTVERSION=	3.4.0
+DISTVERSION=	3.4.1
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/polybar/polybar/releases/download/${DISTVERSION}/
 
@@ -23,12 +23,12 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 # compiler:c++11-lang is needed for powerpc64
 USES=		cmake compiler:c++11-lang gnome localbase:ldflags \
-		pkgconfig python:2.7,build tar
+		pkgconfig python:3.5+,build tar xorg
 
 USE_GNOME=	cairo
 USE_XORG=	xcb
 
-# Needs libnl to work. Disabling completely.
+# Needs libnl to work. Disabling it completely.
 CMAKE_OFF=	ENABLE_NETWORK
 
 OPTIONS_DEFINE=		ALSA CURSOR DEBUG GITHUB I3 IPC MPD PULSEAUDIO \
