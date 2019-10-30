@@ -40,7 +40,7 @@ OPENMPI_CONFIGURE_ENABLE=	parform
 OPENMPI_CONFIGURE_ENV+=	MPICC="${MPICC}" MPICXX="${MPICXX}"
 
 OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi \
-			libgcc_s.so.1:lang/gcc5
+			libgcc_s.so.1:lang/gcc9
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -O3||' ${WRKSRC}/configure.ac
