@@ -5133,6 +5133,7 @@
 %%WWWDIR%%/app/services/concerns/exclusive_lease_guard.rb
 %%WWWDIR%%/app/services/concerns/git/change_params.rb
 %%WWWDIR%%/app/services/concerns/issues/resolve_discussions.rb
+%%WWWDIR%%/app/services/concerns/merge_requests/assigns_merge_params.rb
 %%WWWDIR%%/app/services/concerns/suggestible.rb
 %%WWWDIR%%/app/services/concerns/update_visibility_level.rb
 %%WWWDIR%%/app/services/concerns/users/new_user_notifier.rb
@@ -11246,6 +11247,7 @@
 %%WWWDIR%%/lib/gitlab/graphql/present.rb
 %%WWWDIR%%/lib/gitlab/graphql/present/instrumentation.rb
 %%WWWDIR%%/lib/gitlab/graphql/query_analyzers/logger_analyzer.rb
+%%WWWDIR%%/lib/gitlab/graphql/query_analyzers/recursion_analyzer.rb
 %%WWWDIR%%/lib/gitlab/graphql/representation/submodule_tree_entry.rb
 %%WWWDIR%%/lib/gitlab/graphql/representation/tree_entry.rb
 %%WWWDIR%%/lib/gitlab/graphql/variables.rb
@@ -15204,6 +15206,9 @@
 %%WWWDIR%%/spec/fixtures/GoogleCodeProjectHosting.json
 %%WWWDIR%%/spec/fixtures/aosp_manifest.xml
 %%WWWDIR%%/spec/fixtures/api/graphql/introspection.graphql
+%%WWWDIR%%/spec/fixtures/api/graphql/recursive-introspection.graphql
+%%WWWDIR%%/spec/fixtures/api/graphql/recursive-query.graphql
+%%WWWDIR%%/spec/fixtures/api/graphql/small-recursive-introspection.graphql
 %%WWWDIR%%/spec/fixtures/api/schemas/board.json
 %%WWWDIR%%/spec/fixtures/api/schemas/boards.json
 %%WWWDIR%%/spec/fixtures/api/schemas/branch.json
@@ -18600,6 +18605,7 @@
 %%WWWDIR%%/spec/services/commits/commit_patch_service_spec.rb
 %%WWWDIR%%/spec/services/commits/tag_service_spec.rb
 %%WWWDIR%%/spec/services/compare_service_spec.rb
+%%WWWDIR%%/spec/services/concerns/merge_requests/assigns_merge_params_spec.rb
 %%WWWDIR%%/spec/services/create_branch_service_spec.rb
 %%WWWDIR%%/spec/services/create_snippet_service_spec.rb
 %%WWWDIR%%/spec/services/delete_branch_service_spec.rb
