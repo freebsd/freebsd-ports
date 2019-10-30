@@ -2,6 +2,7 @@
 
 PORTNAME=	dnscrypt-proxy
 PORTVERSION=	2.0.29
+PORTREVISION=	1
 CATEGORIES=	dns security
 PKGNAMESUFFIX=	2
 
@@ -17,7 +18,8 @@ USES=		go:modules
 USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
 
-GH_ACCOUNT=	jedisct1
+GH_ACCOUNT=	DNSCrypt
+GH_TAGNAME=	ceed905
 
 GO_TARGET=	./dnscrypt-proxy:${PREFIX}/sbin/dnscrypt-proxy
 
