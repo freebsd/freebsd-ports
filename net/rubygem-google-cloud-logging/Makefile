@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-logging
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.1<2:devel/rubygem-concurrent-ruby \
 		rubygem-google-cloud-core>=1.2<2:net/rubygem-google-cloud-core \
-		rubygem-google-gax>=1.7<2:devel/rubygem-google-gax \
+		rubygem-google-gax>=1.8<2:devel/rubygem-google-gax \
 		rubygem-googleapis-common-protos-types>=1.0.2:devel/rubygem-googleapis-common-protos-types \
 		rubygem-stackdriver-core>=1.3<2:net/rubygem-stackdriver-core
 
