@@ -1,3 +1,3 @@
-TIMESTAMP = 1569591563
-SHA256 (rubygem/google-protobuf-3.9.2.gem) = 6b362b35a15fdbf1c6bb155d6b17a6e896568c898fb80bb3d991b3c959e48c21
-SIZE (rubygem/google-protobuf-3.9.2.gem) = 262656
+TIMESTAMP = 1572437477
+SHA256 (rubygem/google-protobuf-3.10.1.gem) = 980bed90a2790b6d6984ec6c0e7b2358b49deef5d4248e261c864fc971480c16
+SIZE (rubygem/google-protobuf-3.10.1.gem) = 206848
