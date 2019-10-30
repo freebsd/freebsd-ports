@@ -2,6 +2,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	21.3
+PORTREVISION=	1
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/
 PKGNAMESUFFIX=	-man
@@ -26,8 +27,7 @@ do-install:
 	@${ECHO_CMD} "MANPATH ${PREFIX}/lib/erlang/man" > ${WRKDIR}/erlang.conf
 	${INSTALL_DATA} ${WRKDIR}/erlang.conf ${STAGEDIR}${PREFIX}/etc/man.d/erlang.conf
 	for SECTION in 1 3 4 6 7; do \
-		cd ${WRKSRC}/man/ && ${COPYTREE_SHARE} man$${SECTION} ${STAGEDIR}${PREFIX}/lib/erlang; \
+		cd ${WRKSRC}/man/ && ${COPYTREE_SHARE} man$${SECTION} ${STAGEDIR}${PREFIX}/lib/erlang/man; \
 	done
-	${RM} -r ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/man/cat?
 
 .include <bsd.port.mk>
