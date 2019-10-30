@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_system.so:devel/boost-libs \
 		libGraphicsMagick.so:graphics/GraphicsMagick
 
-USES=		cmake compiler:c++14-lang pkgconfig ssl
+USES=		cmake compiler:c++14-lang pkgconfig ssl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	emweb
 GH_PROJECT=	wt
