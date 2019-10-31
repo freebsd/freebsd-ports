@@ -3,7 +3,7 @@
 
 PORTNAME=			${SAMBA4_BASENAME}410
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			1
+PORTREVISION=			0
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -24,7 +24,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/0001-provision-use-ASCII-quotes.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.10.8
+SAMBA4_VERSION=			4.10.10
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=		--mandir="${MANPREFIX}/man" \
 CONFIGURE_ENV+=			PTHREAD_LDFLAGS="-lpthread"
 
 USES+=				compiler:c++11-lang iconv localbase:ldflags \
-				perl5 pkgconfig shebangfix ssl waf
+				perl5 pkgconfig shebangfix ssl waf gettext-runtime
 USE_PERL5=			build
 USE_LDCONFIG=			${SAMBA4_LIBDIR}
 LLD_UNSAFE=			yes
@@ -150,6 +150,7 @@ LIB_DEPENDS+=			libpopt.so:devel/popt
 LIB_DEPENDS+=			libinotify.so:devel/libinotify
 # GNUTLS
 LIB_DEPENDS+=			libgnutls.so:security/gnutls
+LIB_DEPENDS+=			libgcrypt.so:security/libgcrypt
 # NFSv4 ACL glue
 LIB_DEPENDS+=			libsunacl.so:sysutils/libsunacl
 # Jansson
@@ -272,7 +273,8 @@ CONFIGURE_ARGS+=		\
 				--with-acl-support \
 				--with-sendfile-support \
 				--disable-ctdb-tests \
-				${ICONV_CONFIGURE_BASE}
+
+#				${ICONV_CONFIGURE_BASE}
 ##############################################################################
 FRUIT_PREVENTS=			ZEROCONF_NONE
 FRUIT_PREVENTS_MSG=		MacOSX support requires Zeroconf(AVAHI or MDNSRESPONDER)
