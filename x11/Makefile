@@ -193,6 +193,7 @@
     SUBDIR += linux-nvidia-libs
     SUBDIR += linux-nvidia-libs-304
     SUBDIR += linux-nvidia-libs-340
+    SUBDIR += linux-nvidia-libs-390
     SUBDIR += listres
     SUBDIR += lsw
     SUBDIR += luit
