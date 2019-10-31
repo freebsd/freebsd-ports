@@ -74,6 +74,7 @@ STATIC_USES=		jpeg:build
 SVGTOPAM_USES=		gnome
 SVGTOPAM_USE=		GNOME=libxml2
 SVGTOPAM_VARS_OFF=	_DISABLE_TESTS+=svgtopam
+X11_USES=		xorg
 X11_USE=		XORG=x11,xau,xcb,xdmcp
 
 post-patch:
