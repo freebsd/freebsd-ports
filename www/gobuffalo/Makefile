@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gobuffalo
-PORTVERSION=	0.14.11
+PORTVERSION=	0.15.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -31,7 +31,7 @@ GH_TUPLE=	\
 		go-sql-driver:mysql:v1.4.1:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobuffalo:attrs:v0.1.0:gobuffalo_attrs/vendor/github.com/gobuffalo/attrs \
-		gobuffalo:buffalo-pop:v1.22.0:gobuffalo_buffalo_pop/vendor/github.com/gobuffalo/buffalo-pop \
+		gobuffalo:buffalo-pop:v1.23.1:gobuffalo_buffalo_pop/vendor/github.com/gobuffalo/buffalo-pop \
 		gobuffalo:clara:v0.9.1:gobuffalo_clara/vendor/github.com/gobuffalo/clara \
 		gobuffalo:envy:v1.7.1:gobuffalo_envy/vendor/github.com/gobuffalo/envy \
 		gobuffalo:events:v1.4.0:gobuffalo_events/vendor/github.com/gobuffalo/events \
@@ -49,10 +49,10 @@ GH_TUPLE=	\
 		gobuffalo:packd:v0.3.0:gobuffalo_packd/vendor/github.com/gobuffalo/packd \
 		gobuffalo:packr:v2.7.1:gobuffalo_packr/vendor/github.com/gobuffalo/packr \
 		gobuffalo:plush:v3.8.3:gobuffalo_plush/vendor/github.com/gobuffalo/plush \
-		gobuffalo:pop:v4.12.1:gobuffalo_pop/vendor/github.com/gobuffalo/pop \
-		gobuffalo:release:v1.13.4:gobuffalo_release/vendor/github.com/gobuffalo/release \
+		gobuffalo:pop:v4.12.2:gobuffalo_pop/vendor/github.com/gobuffalo/pop \
+		gobuffalo:release:v1.14.0:gobuffalo_release/vendor/github.com/gobuffalo/release \
 		gobuffalo:shoulders:v1.2.0:gobuffalo_shoulders/vendor/github.com/gobuffalo/shoulders \
-		gobuffalo:tags:v2.1.5:gobuffalo_tags/vendor/github.com/gobuffalo/tags \
+		gobuffalo:tags:v2.1.6:gobuffalo_tags/vendor/github.com/gobuffalo/tags \
 		gobuffalo:uuid:v2.0.5:gobuffalo_uuid/vendor/github.com/gobuffalo/uuid \
 		gobuffalo:validate:v2.0.3:gobuffalo_validate/vendor/github.com/gobuffalo/validate \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
@@ -62,7 +62,7 @@ GH_TUPLE=	\
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:fde4db37ae7a:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		golang:tools:f936694f27bf:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:86caa796c7ab:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:a985d3407aa7:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.3.1:google_go_cmp/vendor/github.com/google/go-cmp \
 		gorilla:mux:v1.7.3:gorilla_mux/vendor/github.com/gorilla/mux \
@@ -82,7 +82,6 @@ GH_TUPLE=	\
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		lib:pq:v1.2.0:lib_pq/vendor/github.com/lib/pq \
 		magiconair:properties:v1.8.0:magiconair_properties/vendor/github.com/magiconair/properties \
-		markbates:deplist:v1.3.0:markbates_deplist/vendor/github.com/markbates/deplist \
 		markbates:grift:v1.1.0:markbates_grift/vendor/github.com/markbates/grift \
 		markbates:oncer:v1.0.0:markbates_oncer/vendor/github.com/markbates/oncer \
 		markbates:refresh:v1.8.0:markbates_refresh/vendor/github.com/markbates/refresh \
