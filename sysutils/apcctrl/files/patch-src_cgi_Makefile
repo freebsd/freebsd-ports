@@ -1,0 +1,15 @@
+--- src/cgi/Makefile.orig	2014-11-04 19:17:43 UTC
++++ src/cgi/Makefile
+@@ -43,9 +43,9 @@ install-cgi:
+ 	$(call INSTPROG,755,upsfstats.cgi,$(cgibin))
+ 	$(call INSTPROG,755,upsimage.cgi,$(cgibin))
+ 	$(call MKDIR,$(sysconfdir))
+-	$(call INSTNEW,644,apcctrl.css,$(sysconfdir))
+-	$(call INSTNEW,644,$(topdir)/platforms/etc/hosts.conf,$(sysconfdir))
+-	$(call INSTNEW,644,$(topdir)/platforms/etc/multimon.conf,$(sysconfdir))
++	$(call INSTDATA,644,apcctrl.css,$(sysconfdir)/apcctrl.css.sample)
++	$(call INSTDATA,644,$(topdir)/platforms/etc/hosts.conf,$(sysconfdir)/hosts.conf.sample)
++	$(call INSTDATA,644,$(topdir)/platforms/etc/multimon.conf,$(sysconfdir)/multimon.conf.sample)
+ 
+ uninstall-cgi:
+ 	$(call UNINST,$(cgibin)/multimon.cgi)

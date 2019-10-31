@@ -1,0 +1,83 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: apcctrl
+# REQUIRE: SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable apcctrl
+#
+# apcctrl_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable apcctrl.
+# apcctrl_flags (str):		Custom additional arguments to be passed
+#				to apcctrl (default --kill-on-powerfail).
+# apcctrl_configs (str):	A list of configs to run multiple instances.
+#
+
+. /etc/rc.subr
+
+name=apcctrl
+rcvar=apcctrl_enable
+
+load_rc_config $name
+
+: ${apcctrl_enable="NO"}
+: ${apcctrl_flags="--kill-on-powerfail"}
+
+pidfile=/var/run/${name}.pid
+required_files="${apcctrl_configs:-%%ETCDIR%%/apcctrl.conf}"
+command=%%PREFIX%%/sbin/${name}
+restart_cmd=${name}_restart_cmd
+
+apcctrl_precmd()
+{
+	config=$1
+
+	dn="`/usr/bin/dirname ${pidfile}`"
+	if [ -n "${config}" ]; then
+		# Specific config
+		base="`/usr/bin/basename ${config} .conf`"
+		pidfile="${dn}/${base}.pid"
+		command_args="-f ${config} -P ${pidfile}"
+	else
+		# Default config
+		command_args=""
+	fi
+}
+
+apcctrl_restart_cmd()
+{
+	if [ -n "${apcctrl_configs}" ]; then
+		# One or more named configs
+		for config in ${apcctrl_configs}; do
+			apcctrl_precmd ${config}
+			run_rc_command stop
+		done
+		for config in ${apcctrl_configs}; do
+			apcctrl_precmd ${config}
+			run_rc_command start
+		done
+	else
+		# Default config
+		apcctrl_precmd
+		run_rc_command stop
+		run_rc_command start
+	fi
+}
+
+if [ "$1" = restart ]; then
+	apcctrl_precmd
+	run_rc_command $1
+elif [ -n "${apcctrl_configs}" ]; then
+	# One or more named configs
+	for config in ${apcctrl_configs}; do
+		apcctrl_precmd ${config}
+		run_rc_command $1
+	done
+else
+	# Default config
+	apcctrl_precmd
+	run_rc_command $1
+fi

@@ -1,0 +1,15 @@
+ApcCtrl is an unofficial branch from apcupsd 3.14.x. It can be
+used for controlling Brazilian APC UPS models (herited from Microsol).
+
+Models supported or in tests:
+  - BACK-UPS BR 1200VA (BZ1200BI-BR)
+  - BACK-UPS BR 1500VA (BZ1500PBI-BR)
+  - BACK-UPS BR 2200VA (BZ2200BI-BR and BZ2200I-BR)
+  - SMART-UPS BR 1000VA (SUA1000BI-BR and SOLIS1000BI)
+  - SMART-UPS BR 1500VA (SUA1500BI-BR and SOLIS1500BI)
+  - SMART-UPS BR 2000VA (SUA2000BI-BR)
+  - SMART-UPS BR 3000VA (SUA3000BI-BR)
+  - STAY 800 (PS800)
+  - STAY 700 (PS700)
+
+WWW: http://www.apcctrl.com.br
