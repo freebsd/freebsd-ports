@@ -29,7 +29,7 @@ include/openblas/openblas_common_x86_64.h
 include/openblas/openblas_common_z.h
 include/openblas/openblas_common_zarch.h
 include/openblas/openblas_config.h
-include/openblas/config_kernel.h
+%%DYNARCH%%include/openblas/config_kernel.h
 include/openblas/config_last.h
 include/openblas/openblas_cpuid.h
 include/openblas/l1param.h

@@ -85,6 +85,9 @@ MANUAL_PACKAGE_BUILD=	Optimizes for the build machine.
 
 .if ${PORT_OPTIONS:MDYNAMIC_ARCH}
 BUILDFLAGS+=	DYNAMIC_ARCH=1
+PLIST_SUB+=	DYNARCH=""
+.else
+PLIST_SUB+=	DYNARCH="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MINTERFACE64}
@@ -201,7 +204,10 @@ do-install:
 		${WRKSRC}/interface/*.c
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/openblas
 	${INSTALL_DATA} ${WRKSRC}/openblas_*.h ${STAGEDIR}${PREFIX}/include/openblas
-	${INSTALL_DATA} ${WRKSRC}/cblas.h ${WRKSRC}/config_kernel.h ${WRKSRC}/config_last.h ${WRKSRC}/l1param.h ${WRKSRC}/l2param.h ${WRKSRC}/symcopy.h \
+	${INSTALL_DATA} ${WRKSRC}/cblas.h ${WRKSRC}/config_last.h ${WRKSRC}/l1param.h ${WRKSRC}/l2param.h ${WRKSRC}/symcopy.h \
 		${STAGEDIR}${PREFIX}/include/openblas
+
+do-install-DYNAMIC_ARCH-on:
+	${INSTALL_DATA} ${WRKSRC}/config_kernel.h ${STAGEDIR}${PREFIX}/include/openblas
 
 .include <bsd.port.mk>
