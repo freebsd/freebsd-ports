@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-libs
-DISTVERSION?=	390.87
+DISTVERSION?=	410.104
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11 linux
@@ -118,7 +118,11 @@ PLIST_RE+=	'\,${LINUXBASE}.*libGLESv(1_CM|2)_nvidia\.so,d' \
 		'\,${LINUXBASE}.*libnvidia-fatbinaryloader\.so,d' \
 		'\,${LINUXBASE}.*libnvidia-ptxjitcompiler\.so,d'
 .endif
-.if ${NVVERSION} >= 387.012
+.if ${NVVERSION} >= 410.057
+LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.0
+LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.0 libnvidia-egl-wayland.so.1
+PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.0/'
+.elif ${NVVERSION} >= 387.012
 LINUX_LIBS+=	libnvidia-egl-wayland.so.1.0.2
 LINUX_LINKS+=	libnvidia-egl-wayland.so.1.0.2 libnvidia-egl-wayland.so.1
 PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.0.2/'
