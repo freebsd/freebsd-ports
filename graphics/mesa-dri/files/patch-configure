@@ -1,6 +1,15 @@
---- configure.orig	2018-11-09 11:03:06 UTC
+--- configure.orig	2019-01-17 11:26:29 UTC
 +++ configure
-@@ -22659,12 +22659,13 @@ case "$host_os" in
+@@ -20767,7 +20767,7 @@ case "$host_os" in
+ *-android*)
+     android=yes
+     ;;
+-linux*|*-gnu*|gnu*|cygwin*)
++linux*|*-gnu*|gnu*|cygwin*|freebsd*)
+     DEFINES="$DEFINES -D_GNU_SOURCE"
+     ;;
+ solaris*)
+@@ -22648,12 +22648,13 @@ case "$host_os" in
  darwin*)
      ;;
  *)
@@ -18,7 +27,7 @@
  _ACEOF
   CLOCK_LIB=
  else
-@@ -23330,8 +23331,12 @@ $as_echo_n "checking whether pthread_setaffinity_np is
+@@ -23319,8 +23320,12 @@ $as_echo_n "checking whether pthread_setaffinity_np is
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
@@ -31,7 +40,7 @@
      int main() {
         void *a = (void*) &pthread_setaffinity_np;
         long b = (long) a;
-@@ -23350,11 +23355,20 @@ rm -f core conftest.err conftest.$ac_objext \
+@@ -23339,11 +23344,20 @@ rm -f core conftest.err conftest.$ac_objext \
      conftest$ac_exeext conftest.$ac_ext
  LIBS="$save_LIBS"
  
@@ -55,7 +64,7 @@
  
  
  # Check whether --enable-selinux was given.
-@@ -24252,7 +24266,7 @@ fi
+@@ -24241,7 +24255,7 @@ fi
  
  
  case "$host_os" in
@@ -64,7 +73,7 @@
      dri3_default=yes
      ;;
  *)
-@@ -26640,31 +26654,11 @@ fi
+@@ -26542,31 +26556,11 @@ fi
  	# Put the nasty error message in config.log where it belongs
  	echo "$XCB_RANDR_PKG_ERRORS" >&5
  
@@ -98,7 +107,7 @@
  else
  	XCB_RANDR_CFLAGS=$pkg_cv_XCB_RANDR_CFLAGS
  	XCB_RANDR_LIBS=$pkg_cv_XCB_RANDR_LIBS
-@@ -26732,31 +26726,11 @@ fi
+@@ -26634,31 +26628,11 @@ fi
  	# Put the nasty error message in config.log where it belongs
  	echo "$XLIB_RANDR_PKG_ERRORS" >&5
  
@@ -132,7 +141,7 @@
  else
  	XLIB_RANDR_CFLAGS=$pkg_cv_XLIB_RANDR_CFLAGS
  	XLIB_RANDR_LIBS=$pkg_cv_XLIB_RANDR_LIBS
-@@ -28792,9 +28766,6 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+@@ -28694,9 +28668,6 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
          CLANG_LIBDIR=${LLVM_LIBDIR}
      fi
      CLANG_RESOURCE_DIR=$CLANG_LIBDIR/clang/${LLVM_VERSION}
