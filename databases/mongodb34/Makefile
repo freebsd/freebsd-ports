@@ -17,6 +17,9 @@ COMMENT=	Distributed document-oriented "NoSQL" database
 LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi
 
+DEPRECATED=	EOL January 2020; See https://www.mongodb.com/support-policy
+EXPIRATION_DATE=	2020-03-31
+
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 and aarch64 (i386 deprecated in v3)"
 
