@@ -15,7 +15,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libgee-0.8.so:devel/libgee
 
-USES=		gettext-runtime meson pkgconfig tar:xz
+USES=		gettext-runtime gnome meson pkgconfig tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	glib20

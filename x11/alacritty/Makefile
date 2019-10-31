@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		cargo python:3.6+,build ssl:build
+USES=		cargo python:3.6+,build ssl:build xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	jwilm
 USE_XORG=	xcb

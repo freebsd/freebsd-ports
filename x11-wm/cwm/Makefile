@@ -13,7 +13,7 @@ LICENSE=	ISCL
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		pkgconfig shebangfix
+USES=		pkgconfig shebangfix xorg
 USE_XORG=	x11 xft xinerama xrandr
 
 PLIST_FILES=	bin/cwm \

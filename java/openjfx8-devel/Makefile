@@ -26,7 +26,8 @@ BUILD_DEPENDS=	apache-ant>0:devel/apache-ant \
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext-runtime gl gnome jpeg localbase:ldflags pkgconfig sqlite
+USES=		gettext-runtime gl gnome jpeg localbase:ldflags pkgconfig \
+		sqlite xorg
 USE_GL=		gl
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 gtk30 pango
 USE_JAVA=	yes
