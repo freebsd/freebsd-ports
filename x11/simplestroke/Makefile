@@ -38,6 +38,7 @@ X11_DESC=	XTEST based mouse tracker
 SUID_VARS_OFF=	_MAYBE_SUID=""
 SUID_VARS=	_MAYBE_SUID="@(,,4755) "
 
+X11_USES=	xorg
 X11_USE=	XORG=x11,xtst
 
 pre-configure-X11-off:

@@ -23,7 +23,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libosg.so:graphics/osg \
 		libunshield.so:archivers/unshield
 
-USES=		cmake compiler:c++14-lang gl openal pkgconfig qt:5 sdl
+USES=		cmake compiler:c++14-lang gl openal pkgconfig qt:5 sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMW
 USE_GL=		gl

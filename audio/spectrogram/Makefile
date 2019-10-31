@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libsndio.so:audio/sndio
 
-USES=	pkgconfig
+USES=		pkgconfig xorg
 USE_XORG=	x11
 
 USE_GITHUB=	yes

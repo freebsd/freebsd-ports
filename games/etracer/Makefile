@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsfml-system.so:devel/sfml
 
-USES=		compiler:c++11-lang pkgconfig tar:xz
+USES=		compiler:c++11-lang gl pkgconfig tar:xz xorg
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 

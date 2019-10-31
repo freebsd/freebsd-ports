@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopus.so:audio/opus \
 		libopusfile.so:audio/opusfile
 
-USES=		gl gmake jpeg openal pkgconfig sdl
+USES=		gl gmake jpeg openal pkgconfig sdl xorg
 USE_GITHUB=	yes
 USE_GL=		gl
 USE_SDL=	sdl2
