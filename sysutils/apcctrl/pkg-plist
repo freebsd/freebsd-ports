@@ -1,0 +1,30 @@
+sbin/apcctrl
+sbin/apcaccess
+sbin/apctest
+@sample %%ETCDIR%%/apcctrl.conf.sample
+%%ETCDIR%%/apccontrol
+@sample %%ETCDIR%%/changeme.sample
+@sample %%ETCDIR%%/commfailure.sample
+@sample %%ETCDIR%%/commok.sample
+@sample %%ETCDIR%%/onbattery.sample
+@sample %%ETCDIR%%/offbattery.sample
+%%CGI%%@sample %%ETCDIR%%/apcctrl.css.sample
+%%CGI%%@sample %%ETCDIR%%/hosts.conf.sample
+%%CGI%%@sample %%ETCDIR%%/multimon.conf.sample
+%%CGI%%%%ETCDIR%%/cgi/multimon.cgi
+%%CGI%%%%ETCDIR%%/cgi/upsfstats.cgi
+%%CGI%%%%ETCDIR%%/cgi/upsimage.cgi
+%%CGI%%%%ETCDIR%%/cgi/upsstats.cgi
+%%GAPCMON%%bin/gapcmon
+%%GAPCMON%%share/applications/gapcmon.desktop
+%%GAPCMON%%share/pixmaps/apcctrl.png
+%%GAPCMON%%share/pixmaps/charging.png
+%%GAPCMON%%share/pixmaps/gapc_prefs.png
+%%GAPCMON%%share/pixmaps/onbatt.png
+%%GAPCMON%%share/pixmaps/online.png
+%%GAPCMON%%share/pixmaps/unplugged.png
+man/man5/apcctrl.conf.5.gz
+man/man8/apcaccess.8.gz
+man/man8/apccontrol.8.gz
+man/man8/apctest.8.gz
+man/man8/apcctrl.8.gz
