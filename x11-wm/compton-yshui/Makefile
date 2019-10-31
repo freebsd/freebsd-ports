@@ -29,6 +29,7 @@ USES=		compiler:c11 meson localbase pkgconfig python:3.4+,run shebangfix
 USE_GITHUB=	yes
 USE_XORG=	x11 xcb xext pixman
 GH_ACCOUNT=	yshui
+GH_PROJECT=	picom
 SHEBANG_FILES=	bin/compton-convgen.py
 MESON_ARGS=	-Dunittest=true
 TEST_TARGET=	test
