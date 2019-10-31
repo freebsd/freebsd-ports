@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minikube
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -26,13 +26,14 @@ GH_TUPLE=	\
 		Sirupsen:logrus:89742aefa4b2:sirupsen_logrus/vendor/github.com/Sirupsen/logrus \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		VividCortex:ewma:v1.1.1:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
+		afbjorklund:go-getter:eb9f6c26742c:afbjorklund_go_getter/vendor/github.com/hashicorp/go-getter \
 		aws:aws-sdk-go:v1.16.26:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:3a771d992973:beorn7_perks/vendor/github.com/beorn7/perks \
 		bgentry:go-netrc:9fd32a8b3d3d:bgentry_go_netrc/vendor/github.com/bgentry/go-netrc \
 		blang:semver:v3.5.0:blang_semver/vendor/github.com/blang/semver \
 		c4milo:gotoolkit:bcc06269efa9:c4milo_gotoolkit/vendor/github.com/c4milo/gotoolkit \
 		cenkalti:backoff:v2.2.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
-		census-instrumentation:opencensus-go:v0.18.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		census-instrumentation:opencensus-go:v0.22.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cheggaaa:pb:v1.0.27:cheggaaa_pb/vendor/gopkg.in/cheggaaa/pb.v1 \
 		cheggaaa:pb:v3.0.1:cheggaaa_pb_1/vendor/github.com/cheggaaa/pb \
 		cloudfoundry-attic:jibber_jabber:bcc4c8345a21:cloudfoundry_attic_jibber_jabber/vendor/github.com/cloudfoundry-attic/jibber_jabber \
@@ -52,37 +53,36 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.1.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-collections:collections:604e922904d3:golang_collections_collections/vendor/github.com/golang-collections/collections \
-		golang:appengine:v1.5.0:golang_appengine/vendor/google.golang.org/appengine \
+		golang:appengine:v1.6.1:golang_appengine/vendor/google.golang.org/appengine \
 		golang:build:041ab4dc3f9d:golang_build/vendor/golang.org/x/build \
 		golang:crypto:5c40567a22f8:golang_crypto/vendor/golang.org/x/crypto \
 		golang:glog:23def4e6c14b:golang_glog/vendor/github.com/golang/glog \
 		golang:groupcache:02826c3e7903:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:eb5bcb51f2a3:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:9f3314589c9a:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.2.0:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:net:3b0461eec859:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:04f50cda93cb:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		golang:time:85acf8d2951c:golang_time/vendor/golang.org/x/time \
+		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
 		google:go-cmp:v0.3.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-containerregistry:697ee0b3d46e:google_go_containerregistry/vendor/github.com/google/go-containerregistry \
-		google:go-genproto:4b09977fb922:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:24fa4b261c55:google_go_genproto/vendor/google.golang.org/genproto \
 		google:gofuzz:v1.0.0:google_gofuzz/vendor/github.com/google/gofuzz \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
-		googleapis:gax-go:v2.0.3:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
+		googleapis:gax-go:v2.0.5:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:gnostic:0c5108395e2d:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
-		googleapis:google-api-go-client:v0.1.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:v0.36.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		googleapis:google-api-go-client:v0.9.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:v0.45.1:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gotestyourself:gotest.tools:v2.2.0:gotestyourself_gotest_tools/vendor/gotest.tools \
-		grpc:grpc-go:v1.17.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.21.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:7554cd9344ce:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-cleanhttp:v0.5.0:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
-		hashicorp:go-getter:v1.3.0:hashicorp_go_getter/vendor/github.com/hashicorp/go-getter \
 		hashicorp:go-multierror:8c5f0ad93604:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		hashicorp:go-retryablehttp:v0.5.4:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
 		hashicorp:go-safetemp:v1.0.0:hashicorp_go_safetemp/vendor/github.com/hashicorp/go-safetemp \
 		hashicorp:go-version:v1.1.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
-		hashicorp:golang-lru:v0.5.0:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
+		hashicorp:golang-lru:v0.5.1:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		hooklift:iso9660:1cf07e5970d8:hooklift_iso9660/vendor/github.com/hooklift/iso9660 \
 		imdario:mergo:v0.3.5:imdario_mergo/vendor/github.com/imdario/mergo \
@@ -95,6 +95,7 @@ GH_TUPLE=	\
 		juju:clock:9c5c9712527c:juju_clock/vendor/github.com/juju/clock \
 		juju:errors:0232dcc7464d:juju_errors/vendor/github.com/juju/errors \
 		juju:mutex:d21b13acf4bf:juju_mutex/vendor/github.com/juju/mutex \
+		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		kubernetes-sigs:yaml:v1.1.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
 		kubernetes:klog:v0.3.1:kubernetes_klog/vendor/k8s.io/klog \
 		kubernetes:kube-openapi:b3a7cee44a30:kubernetes_kube_openapi/vendor/k8s.io/kube-openapi \
