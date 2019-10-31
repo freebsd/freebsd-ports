@@ -19,6 +19,7 @@ lib/liteide/plugins/libgolangfmt.so
 lib/liteide/plugins/libgolangpackage.so
 lib/liteide/plugins/libgolangplay.so
 lib/liteide/plugins/libgolangpresent.so
+lib/liteide/plugins/libimageeditor.so
 lib/liteide/plugins/libjsonedit.so
 lib/liteide/plugins/liblitebuild.so
 lib/liteide/plugins/liblitedebug.so
