@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipaddress
-PORTVERSION=	1.0.22
+PORTVERSION=	1.0.23
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
