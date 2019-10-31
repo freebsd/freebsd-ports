@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sherlock
-DISTVERSION=	0.18.0
-PORTREVISION=	1
+DISTVERSION=	0.20.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libsord-0.so:devel/sord \
 		libsratom-0.so:audio/sratom
 
-USES=		compiler:c11 gl meson pkgconfig
+USES=		compiler:c11 gl meson pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMusicKontrollers
 GH_PROJECT=	sherlock.lv2
