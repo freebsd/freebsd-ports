@@ -2,7 +2,7 @@
 
 PORTNAME=	liteide
 DISTVERSIONPREFIX=	x
-DISTVERSION=	36.1
+DISTVERSION=	36.2
 CATEGORIES=	devel editors
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -12,14 +12,15 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
 
 USES=		gl go:modules,no_targets,run qmake qt:5
-USE_GL=		gl
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
-USE_QT=		buildtools_build core gui network printsupport widgets xml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	visualfc
-GH_TUPLE=	visualfc:gocode:5e8ed360a181:visualfc_gocode \
+GH_TUPLE=	visualfc:gocode:15064618fb33:visualfc_gocode \
 		visualfc:gotools:64c955ca5eea:visualfc_gotools
+
+USE_GL=		gl
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+USE_QT=		buildtools_build core gui network printsupport widgets xml
 
 SUB_FILES=	liteide
 
