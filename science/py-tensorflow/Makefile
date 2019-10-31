@@ -15,7 +15,6 @@ COMMENT=	Computation using data flow graphs for scalable machine learning
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
@@ -23,7 +22,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		bash:shells/bash \
 		cython:lang/cython \
 		swig3.0:devel/swig30 \
-		bazel:devel/bazel
+		bazel:devel/bazel029
 LIB_DEPENDS=	libsnappy.so:archivers/snappy \
 		liblmdb.so:databases/lmdb \
 		libsqlite3.so:databases/sqlite3 \
