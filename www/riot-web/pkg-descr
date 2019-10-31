@@ -1,0 +1,9 @@
+Riot (formerly known as Vector) is a Matrix web client built using the Matrix
+React SDK.
+
+Riot is officially supported on the web in modern versions of Chrome, Firefox,
+and Safari. Other browsers may work, however official support is not provided.
+For accessing Riot on an Android or iOS device, check out riot-android and
+riot-ios - riot-web does not support mobile devices.
+
+WWW: https://github.com/vector-im/riot-web

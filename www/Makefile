@@ -1923,6 +1923,7 @@
     SUBDIR += resin3
     SUBDIR += restbed
     SUBDIR += retawq
+    SUBDIR += riot-web
     SUBDIR += roundup
     SUBDIR += rsskit
     SUBDIR += rssowl
