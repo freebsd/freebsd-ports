@@ -36,6 +36,7 @@ lib/emscripten/emscons
 lib/emscripten/emscons.py
 lib/emscripten/emscripten-version.txt
 lib/emscripten/emscripten.py
+lib/emscripten/emsize.py
 lib/emscripten/site/.gitignore
 lib/emscripten/site/Makefile
 lib/emscripten/site/build/text/docs/tools_reference/emcc.txt
