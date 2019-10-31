@@ -1,0 +1,19 @@
+--- run_scaled.orig	2019-10-31 16:00:04 UTC
++++ run_scaled
+@@ -65,12 +65,13 @@ done
+ 
+ declare -i UNSCALED_RESOLUTION_X
+ declare -i UNSCALED_RESOLUTION_Y
+-UNSCALED_RESOLUTION_X=`xrandr | sed -n -e 's/Screen 0:.*current \([0-9]\+\) x \([0-9]\+\).*/\1/p'`
+-UNSCALED_RESOLUTION_Y=`xrandr | sed -n -e 's/Screen 0:.*current \([0-9]\+\) x \([0-9]\+\).*/\2/p'`
++UNSCALED_RESOLUTION_X=`xrandr | sed -n -e 's/Screen 0:.*current \([0-9][0-9]*\) x \([0-9][0-9]*\).*/\1/p'`
++UNSCALED_RESOLUTION_Y=`xrandr | sed -n -e 's/Screen 0:.*current \([0-9][0-9]*\) x \([0-9][0-9]*\).*/\2/p'`
+ 
+ UNSCALED_RESOLUTION="$( bc <<<"$UNSCALED_RESOLUTION_X / $SCALING_FACTOR" )x$( bc <<<"$UNSCALED_RESOLUTION_Y / $SCALING_FACTOR" )"
+ 
+-DISPLAYNUM=:`shuf -i 10000-99999999 -n 1`
++# sysutils/shuf is significantly slower than jot(1).
++DISPLAYNUM=:`jot -r 1 10000 99999999`
+ ESCAPED_PARAMS=`printf '%q ' "$@"`
+ xpra start "$DISPLAYNUM" --xvfb="Xvfb +extension Composite -screen 0 ${UNSCALED_RESOLUTION}x24+32 -nolisten tcp -noreset  -auth \$XAUTHORITY" --env=GDK_SCALE=1 --env=GDK_DPI_SCALE=1 --start-child="$ESCAPED_PARAMS" --exit-with-children
+ sleep "$SLEEPTIME"
