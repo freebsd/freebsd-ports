@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jaro_winkler
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
