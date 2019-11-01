@@ -46,6 +46,7 @@ include/webkitgtk-4.0/webkit2/WebKitFindController.h
 include/webkitgtk-4.0/webkit2/WebKitFormSubmissionRequest.h
 include/webkitgtk-4.0/webkit2/WebKitForwardDeclarations.h
 include/webkitgtk-4.0/webkit2/WebKitFrame.h
+include/webkitgtk-4.0/webkit2/WebKitGeolocationManager.h
 include/webkitgtk-4.0/webkit2/WebKitGeolocationPermissionRequest.h
 include/webkitgtk-4.0/webkit2/WebKitHitTestResult.h
 include/webkitgtk-4.0/webkit2/WebKitInstallMissingMediaPluginsPermissionRequest.h
@@ -213,10 +214,10 @@ lib/girepository-1.0/WebKit2-4.0.typelib
 lib/girepository-1.0/WebKit2WebExtension-4.0.typelib
 lib/libjavascriptcoregtk-4.0.so
 lib/libjavascriptcoregtk-4.0.so.18
-lib/libjavascriptcoregtk-4.0.so.18.13.7
+lib/libjavascriptcoregtk-4.0.so.18.14.6
 lib/libwebkit2gtk-4.0.so
 lib/libwebkit2gtk-4.0.so.37
-lib/libwebkit2gtk-4.0.so.37.37.6
+lib/libwebkit2gtk-4.0.so.37.39.2
 lib/webkit2gtk-4.0/injected-bundle/libwebkit2gtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-4.0.pc
 libdata/pkgconfig/webkit2gtk-4.0.pc
@@ -224,7 +225,6 @@ libdata/pkgconfig/webkit2gtk-web-extension-4.0.pc
 libexec/webkit2gtk-4.0/MiniBrowser
 libexec/webkit2gtk-4.0/WebKitNetworkProcess
 libexec/webkit2gtk-4.0/WebKitPluginProcess
-%%NPAPI%%libexec/webkit2gtk-4.0/WebKitPluginProcess2
 libexec/webkit2gtk-4.0/WebKitWebProcess
 libexec/webkit2gtk-4.0/jsc
 share/gir-1.0/JavaScriptCore-4.0.gir
