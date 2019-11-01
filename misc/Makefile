@@ -228,6 +228,7 @@
     SUBDIR += libutf
     SUBDIR += lifelines
     SUBDIR += lingoteach
+    SUBDIR += locale-en_DK
     SUBDIR += localedata
     SUBDIR += logsurfer
     SUBDIR += loop
