@@ -14,7 +14,7 @@ COMMENT=	SDL audio library and player for some popular sound file formats
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool localbase
+USES=		libtool localbase sdl
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 INSTALL_TARGET=	install-strip
@@ -49,13 +49,20 @@ SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex \
 SPEEX_CONFIGURE_ENABLE=	speex
 
 MIDI_DESC=		Software MIDI music
-MIDI_RUN_DEPENDS=	${LOCALBASE}/lib/timidity/goemon.cfg:audio/timidity
-MIDI_BUILD_DEPENDS=	${LOCALBASE}/lib/timidity/goemon.cfg:audio/timidity
+MIDI_RUN_DEPENDS=	timidity>=0:audio/timidity
+MIDI_BUILD_DEPENDS=	timidity>=0:audio/timidity
 MIDI_CONFIGURE_ENABLE=	midi
 
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 			libogg.so:audio/libogg
 VORBIS_CONFIGURE_ENABLE=ogg
+
+pre-configure-MIDI-on:
+	@if ! [ -e "${LOCALBASE}/lib/timidity/goemon.cfg" ]; then \
+		${ECHO_CMD} 'MIDI support requires audio/timidity port to be built with GOEMON option enabled, which is not the case'; \
+		${ECHO_CMD} 'Please, run `make -C ${PORTSDIR}/audio/timidity config` and enable GOEMON option to continue'; \
+		${FALSE}; \
+	fi
 
 post-patch:
 	@${REINPLACE_CMD} 's|timidity.cfg|${PREFIX}/share/timidity/&|' \
