@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	musikcube
-DISTVERSION=	0.65.1
-PORTREVISION=	3
+DISTVERSION=	0.70.0
 CATEGORIES=	multimedia audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -31,5 +30,8 @@ USES=		cmake:noninja compiler:c++14-lang ncurses ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	clangen
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} 's|COMMAND \./strip-nix\.sh|COMMAND ${WRKSRC}/strip-nix.sh|' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
