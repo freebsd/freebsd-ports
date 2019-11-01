@@ -463,6 +463,7 @@
     SUBDIR += hare
     SUBDIR += hared
     SUBDIR += hatop
+    SUBDIR += hcloud
     SUBDIR += hdrecover
     SUBDIR += healthd
     SUBDIR += heartbeat
