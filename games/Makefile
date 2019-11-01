@@ -1072,7 +1072,6 @@
     SUBDIR += xpat2
     SUBDIR += xpenguins
     SUBDIR += xpilot
-    SUBDIR += xpilot-ng-client
     SUBDIR += xpilot-ng-server
     SUBDIR += xpipeman
     SUBDIR += xpired

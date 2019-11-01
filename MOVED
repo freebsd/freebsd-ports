@@ -13432,3 +13432,5 @@ www/nuvolaplayer-yandex-music||2019-10-21|Useless without audio/nuvolaplayer
 www/nuvolaplayer-youtube||2019-10-21|Useless without audio/nuvolaplayer
 japanese/yasou-fpw||2019-10-23|Has expired: the only remaining mastersite times out
 lang/gcc5|lang/gcc|2019-10-30|Has expired: Unsupported by upstream. Use GCC 9 or newer instead.
+games/xpilot-ng-client||2019-11-01|Has expired: Depends on deprecated libXxf86misc
+science/xmakemol||2019-11-01|Has expired: Depends on expiring graphics/libGLw
