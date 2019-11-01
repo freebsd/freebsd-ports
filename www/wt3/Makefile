@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wt3
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	www
 
 MAINTAINER=	info@babaei.net
