@@ -30,6 +30,7 @@ include/ipepath.h
 include/ipepdfparser.h
 include/ipepdfwriter.h
 include/ipepdfview.h
+include/ipepdfview_cocoa.h
 include/ipepdfview_qt.h
 include/ipepdfview_win.h
 include/ipepswriter.h
@@ -201,6 +202,7 @@ man/man1/ipetoipe.1.gz
 %%DATADIR%%/%%VERSION%%/styles/beamer.isy
 %%DATADIR%%/%%VERSION%%/styles/colors.isy
 %%DATADIR%%/%%VERSION%%/styles/decorations.isy
+%%DATADIR%%/%%VERSION%%/styles/imperial.isy
 %%DATADIR%%/%%VERSION%%/styles/presentation.isy
 %%DATADIR%%/%%VERSION%%/styles/note-paper.isy
 %%DATADIR%%/%%VERSION%%/styles/tikz-shapes.isy
