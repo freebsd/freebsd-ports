@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	librsync
-PORTVERSION=	2.0.2
+PORTVERSION=	2.2.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	net devel
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Library for delta compression of streams
 
 LICENSE=	LGPL21+
@@ -15,12 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:devel/popt
 
-CONFLICTS=	librsync-[0-9]* librsync1-[0-9]*
-
-USE_GITHUB=	yes
-
 USES=		cmake
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+
+CONFLICTS=	librsync-[0-9]* librsync1-[0-9]*
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librsync.so.${PORTVERSION}
