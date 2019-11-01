@@ -383,7 +383,6 @@
     SUBDIR += libucl
     SUBDIR += libunibreak
     SUBDIR += libuninameslist
-    SUBDIR += libutf8proc
     SUBDIR += libvisio01
     SUBDIR += libwapcaplet
     SUBDIR += libwpd010

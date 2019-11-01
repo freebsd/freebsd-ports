@@ -1,5 +1,0 @@
-include/libutf8proc/utf8proc.h
-lib/libutf8proc.so
-lib/libutf8proc.so.1
-lib/libutf8proc.so.%%VERSION%%-3
-libdata/pkgconfig/libutf8proc.pc
