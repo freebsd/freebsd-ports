@@ -29,8 +29,7 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^PKG_/d' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|sys/capability.h|sys/capsicum.h|' ${WRKSRC}/src/platform-headers.h ${WRKSRC}/src/platform/freebsd/platform-freebsd.h
+#	@${REINPLACE_CMD} -e '/^PKG_/d' ${WRKSRC}/configure.ac
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
