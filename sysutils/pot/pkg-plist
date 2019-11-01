@@ -12,6 +12,7 @@ bin/pot
 %%DATADIR%%/create-base.sh
 %%DATADIR%%/create-dns.sh
 %%DATADIR%%/create-fscomp.sh
+%%DATADIR%%/create-private-bridge.sh
 %%DATADIR%%/create.sh
 %%DATADIR%%/de-init.sh
 %%DATADIR%%/destroy.sh
@@ -33,6 +34,8 @@ bin/pot
 %%DATADIR%%/revert.sh
 %%DATADIR%%/set-attribute.sh
 %%DATADIR%%/set-cmd.sh
+%%DATADIR%%/set-env.sh
+%%DATADIR%%/set-hosts.sh
 %%DATADIR%%/set-rss.sh
 %%DATADIR%%/show.sh
 %%DATADIR%%/snapshot.sh
