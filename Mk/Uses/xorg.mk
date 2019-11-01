@@ -68,7 +68,6 @@ XORG_MODULES=	dmx \
 		xorg-macros \
 		xorg-server \
 		xorgproto \
-		xp \
 		xpm \
 		xpresent \
 		xrandr \
@@ -82,7 +81,6 @@ XORG_MODULES=	dmx \
 		xv \
 		xvmc \
 		xxf86dga \
-		xxf86misc \
 		xxf86vm
 
 # Register all xorg .pc files here.
