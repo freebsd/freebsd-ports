@@ -5,4 +5,4 @@ Unlike most diff programs, librsync does not require access to both of the
 files on the same machine, but rather only a short ``signature'' of the
 old file and the complete contents of the new file.
 
-WWW: http://librsync.sourceforge.net/
+WWW: https://github.com/librsync/librsync
