@@ -4,6 +4,9 @@ include/poppler/BuiltinFont.h
 include/poppler/BuiltinFontTables.h
 include/poppler/CMap.h
 include/poppler/CachedFile.h
+include/poppler/CairoFontEngine.h
+include/poppler/CairoOutputDev.h
+include/poppler/CairoRescaleBox.h
 include/poppler/Catalog.h
 include/poppler/CertificateInfo.h
 include/poppler/CharCodeToUnicode.h
@@ -132,8 +135,8 @@ lib/libpoppler-cpp.so
 lib/libpoppler-cpp.so.0
 lib/libpoppler-cpp.so.0.7.0
 lib/libpoppler.so
-lib/libpoppler.so.91
-lib/libpoppler.so.91.0.0
+lib/libpoppler.so.92
+lib/libpoppler.so.92.0.0
 libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-cpp.pc
 libdata/pkgconfig/poppler-splash.pc

@@ -101,7 +101,7 @@
  {
      int render = state->getRender();
      // check for invisible text -- this is used by Acrobat Capture
-@@ -402,7 +408,7 @@ void SvgOutputDev::drawString(GfxState * state, GooStr
+@@ -402,10 +408,10 @@ void SvgOutputDev::drawString(GfxState * state, GooStr
  
      QString str;
  
@@ -109,7 +109,11 @@
 +    const char * p = s->c_str();
      int len = s->getLength();
      CharCode code;
-     Unicode *u = nullptr;
+-    Unicode *u = nullptr;
++    const Unicode *u = nullptr;
+     int uLen;
+     double dx, dy, originX, originY;
+     while (len > 0) {
 @@ -429,7 +435,7 @@ void SvgOutputDev::drawString(GfxState * state, GooStr
      double x = state->getCurX();
      double y = state->getCurY();
@@ -144,6 +148,24 @@
  {
      ImageStream * imgStr = new ImageStream(str, width, colorMap->getNumPixelComps(), colorMap->getBits());
      imgStr->reset();
+@@ -488,7 +494,7 @@ void SvgOutputDev::drawImage(GfxState *state, Object *
+     if (maskColors) {
+         for (int y = 0; y < height; y++) {
+             dest = (unsigned int *)(buffer + y * 4 * width);
+-            Guchar * pix = imgStr->getLine();
++            unsigned char * pix = imgStr->getLine();
+             colorMap->getRGBLine(pix, dest, width);
+ 
+             for (int x = 0; x < width; x++) {
+@@ -507,7 +513,7 @@ void SvgOutputDev::drawImage(GfxState *state, Object *
+     } else {
+         for (int y = 0; y < height; y++) {
+             dest = (unsigned int *)(buffer + y * 4 * width);
+-            Guchar * pix = imgStr->getLine();
++            unsigned char * pix = imgStr->getLine();
+             colorMap->getRGBLine(pix, dest, width);
+         }
+ 
 @@ -522,7 +528,7 @@ void SvgOutputDev::drawImage(GfxState *state, Object *
          return;
      }

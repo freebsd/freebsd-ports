@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra
 DISTVERSION=	3.1.0
-PORTREVISION=	26
+PORTREVISION=	28
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -69,8 +69,4 @@ CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS="-DKDE_NO_DEBUG_OUTPUT"
 
 PLIST_SUB+=	SHLIB_VER=16.0.0
 
-post-patch:
-	# Fix with poppler 0.73
-	${REINPLACE_CMD} -e 's|Guchar|unsigned char|g' \
-		${WRKSRC}/filters/karbon/pdf/SvgOutputDev.cpp
 .include <bsd.port.mk>
