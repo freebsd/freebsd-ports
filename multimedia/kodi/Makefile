@@ -5,7 +5,7 @@ DISTVERSION=	17.6
 PORTREVISION=	14
 CATEGORIES=	multimedia java
 
-MAINTAINER=	mickael.maillot@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Award winning media center application
 
 LICENSE=	GPLv2
