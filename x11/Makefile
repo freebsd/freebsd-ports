@@ -147,7 +147,6 @@
     SUBDIR += libXfixes
     SUBDIR += libXi
     SUBDIR += libXinerama
-    SUBDIR += libXp
     SUBDIR += libXpm
     SUBDIR += libXpresent
     SUBDIR += libXrandr
@@ -157,7 +156,6 @@
     SUBDIR += libXv
     SUBDIR += libXvMC
     SUBDIR += libXxf86dga
-    SUBDIR += libXxf86misc
     SUBDIR += libXxf86vm
     SUBDIR += libdmx
     SUBDIR += libexo
