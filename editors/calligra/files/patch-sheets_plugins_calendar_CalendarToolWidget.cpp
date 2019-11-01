@@ -3,13 +3,7 @@ From: David Faure <faure@kde.org>
 Date: Tue, 23 Jul 2019 13:02:34 +0200
 Subject: Fix compilation with Qt 5.13 (missing include)
 
----
- sheets/plugins/calendar/CalendarToolWidget.cpp | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/sheets/plugins/calendar/CalendarToolWidget.cpp b/sheets/plugins/calendar/CalendarToolWidget.cpp
-index b10b230..0c5eeb6 100644
---- sheets/plugins/calendar/CalendarToolWidget.cpp
+--- sheets/plugins/calendar/CalendarToolWidget.cpp.orig	2018-01-26 09:24:44 UTC
 +++ sheets/plugins/calendar/CalendarToolWidget.cpp
 @@ -30,6 +30,7 @@
  #include <kdatepicker.h>
@@ -19,5 +13,3 @@ index b10b230..0c5eeb6 100644
  
  namespace Calligra
  {
--- 
-cgit v1.1

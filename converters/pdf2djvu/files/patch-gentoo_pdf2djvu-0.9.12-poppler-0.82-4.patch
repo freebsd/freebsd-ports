@@ -1,0 +1,26 @@
+This patch doesn't come from Gentoo, but because there are already
+three unrelated patches that touch the same file, I'm following the
+naming convention so that it gets applied in the right order.
+
+Chase constness changes in the poppler API.
+
+--- pdf2djvu.cc.orig	2019-10-27 19:16:30.654895000 +0000
++++ pdf2djvu.cc	2019-10-27 19:16:47.450786000 +0000
+@@ -333,7 +333,7 @@
+   }
+ 
+   void drawImage(pdf::gfx::State *state, pdf::Object *object, pdf::Stream *stream, int width, int height,
+-    pdf::gfx::ImageColorMap *color_map, bool interpolate, int *mask_colors, bool inline_image)
++    pdf::gfx::ImageColorMap *color_map, bool interpolate, const int *mask_colors, bool inline_image)
+   {
+     if (is_foreground_color_map(color_map) || config.no_render)
+     {
+@@ -376,7 +376,7 @@
+   bool interpretType3Chars() { return false; }
+ 
+   void drawChar(pdf::gfx::State *state, double x, double y, double dx, double dy, double origin_x, double origin_y,
+-    CharCode code, int n_bytes, Unicode *unistr, int length)
++    CharCode code, int n_bytes, const Unicode *unistr, int length)
+   {
+     double pox, poy, pdx, pdy, px, py, pw, ph;
+     x -= origin_x; y -= origin_y;

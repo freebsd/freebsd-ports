@@ -2,6 +2,7 @@
 
 PORTNAME=	pdf2djvu
 PORTVERSION=	0.9.13
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	https://github.com/jwilk/${PORTNAME}/releases/download/${PORTVERSION}/
 
