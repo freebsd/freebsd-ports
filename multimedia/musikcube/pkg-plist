@@ -20,6 +20,7 @@ include/musikcube/core/sdk/IIndexerSource.h
 include/musikcube/core/sdk/IIndexerWriter.h
 include/musikcube/core/sdk/IMap.h
 include/musikcube/core/sdk/IMapList.h
+include/musikcube/core/sdk/IMetadataProxy.h
 include/musikcube/core/sdk/IOutput.h
 include/musikcube/core/sdk/IPcmVisualizer.h
 include/musikcube/core/sdk/IPlaybackRemote.h
@@ -28,7 +29,6 @@ include/musikcube/core/sdk/IPlugin.h
 include/musikcube/core/sdk/IPreferences.h
 include/musikcube/core/sdk/IResource.h
 include/musikcube/core/sdk/ISchema.h
-include/musikcube/core/sdk/ISimpleDataProvider.h
 include/musikcube/core/sdk/ISpectrumVisualizer.h
 include/musikcube/core/sdk/ITagReader.h
 include/musikcube/core/sdk/ITagStore.h
