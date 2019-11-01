@@ -154,7 +154,6 @@ MAILUTILS_LIB_DEPENDS=	libmailutils.so:mail/mailutils
 MODULES_CONFIGURE_WITH=	modules
 MOTIF_USES=		motif
 MOTIF_CONFIGURE_ON=	--with-x-toolkit=motif
-MOTIF_LIB_DEPENDS=	libXp.so:x11/libXp
 OSS_CONFIGURE_ON=	--with-sound=oss
 OTF_LIB_DEPENDS=	libotf.so:print/libotf
 OTF_CONFIGURE_WITH=	libotf
