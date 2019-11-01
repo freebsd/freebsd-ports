@@ -4,13 +4,9 @@
 PORTNAME=	bkpupsd
 PORTVERSION=	1.0a
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ftp.knit.kagoshima-u.ac.jp/pub/Unix/bkpupsd/
+MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/bkpupsd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Simple UPS daemon for APC BK Pro(TM)
-
-BROKEN=		unfetchable
-DEPRECATED=	Unfetchable, unmaintained
-EXPIRATION_DATE=	2019-10-16
 
 .include <bsd.port.mk>
