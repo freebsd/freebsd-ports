@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-DISTVERSION=	27.0.50.20191016
+DISTVERSION=	27.0.50.20191101
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -33,7 +33,7 @@ USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xrender xt
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	3ad4070
+GH_TAGNAME=	3a1e762
 
 CONFIGURE_ARGS=	--disable-build-details \
 		--localstatedir=/var
