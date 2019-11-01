@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dmake
-PORTVERSION=	4.12.20150309
+PORTVERSION=	4.12.3
+PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	office@FreeBSD.org
@@ -11,11 +12,12 @@ COMMENT=	Another hyper make utility
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/readme/license.txt
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	mohawk2
-GH_TAGNAME=	e5588b0
-
 USES=		autoreconf
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jimjag
+GH_TAGNAME=	b4e5352
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datarootdir=${DATADIR}
 
