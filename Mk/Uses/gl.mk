@@ -4,7 +4,7 @@
 # 
 # Feature:	gl
 # Usage:	USES=gl
-#		USE_GL=egl gbm gl glesv2 glew glu glut glw
+#		USE_GL=egl gbm gl glesv2 glew glu glut
 #		
 #		USE_GL specifies which GL components to add as dependencies.
 #		Not specifying USE_GL with USES=gl is an error.
@@ -24,7 +24,6 @@ _GL_glew_LIB_DEPENDS=		libGLEW.so:graphics/glew
 _GL_glu_LIB_DEPENDS=		libGLU.so:graphics/libGLU
 _GL_glu_USE_XORG=		xorgproto
 _GL_glut_LIB_DEPENDS=		libglut.so:graphics/freeglut
-_GL_glw_LIB_DEPENDS=		libGLw.so:graphics/libGLw
 
 .if !empty(gl_ARGS)
 IGNORE=	USES=gl takes no arguments
