@@ -703,7 +703,9 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/images/splash.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/close.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/left-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/new.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/right-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/close.png
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/close.xpm
