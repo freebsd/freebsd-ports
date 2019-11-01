@@ -1,28 +1,29 @@
 # $FreeBSD$
 
 PORTNAME=	svnup
-PORTVERSION=	1.07
-PORTREVISION=	3
+PORTVERSION=	1.08
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
-MASTER_SITES=	http://jcm.dsl.visi.com/freebsd/svnup/ \
-		LOCAL/jgh/net/${PORTNAME}/
 
 MAINTAINER=	jmehr@umn.edu
 COMMENT=	Lightweight program to pull source from an Apache Subversion server
 
 LICENSE=	BSD2CLAUSE
 
+USES=		tar:xz ssl
 OPTIONS_DEFINE=	DOCS
 
-CFLAGS=		-I${OPENSSLINC}
-LDFLAGS=	-L${OPENSSLLIB} -lmd -lssl
-USES=		tar:xz ssl
+CFLAGS+=		-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB} -lmd -lssl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	johnmehr
 
 PORTDOCS=	ChangeLog
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\/stable\/8|\/stable\/${OSREL:R}| ; \
-		s|\/releng\/8.3|\/releng\/${OSREL}|' \
+	@${REINPLACE_CMD} -e 's|\/stable\/12|\/stable\/${OSREL:R}| ; \
+		s|\/releng\/12.1|\/releng\/${OSREL}|' \
 		${WRKSRC}/svnup.conf
 
 do-build:
