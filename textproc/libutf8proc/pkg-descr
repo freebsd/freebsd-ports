@@ -1,9 +1,0 @@
-This is the Public software group utf8proc library repackaged as a
-conveniance library for NetSurf.
-
-This takes the unicode 5 capable version 1.1.6 of the library and
-converts it to the NetSurf build system. additional API has been added
-with a normalisation function but there are no data changes from
-upstream.
-
-WWW: http://www.netsurf-browser.org/
