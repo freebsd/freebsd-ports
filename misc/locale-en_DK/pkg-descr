@@ -1,0 +1,6 @@
+This is a FreeBSD port of the en_DK.UTF-8 locale.
+
+See the blog post by Ivan Voras to learn more about this special locale:
+http://www.ivoras.net/blog/tree/2010-12-20.the-wonderful-en_dk-locale.html
+
+WWW: https://github.com/0mp/en_DK.UTF-8
