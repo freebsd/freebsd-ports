@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	traefik
-PORTVERSION=	1.7.18
+PORTVERSION=	1.7.19
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/riggs/${PORTNAME}:webui
@@ -40,10 +40,10 @@ PLIST_FILES=	bin/traefik \
 # it downloads node modules from the internet during build.
 # Instead, we use the pre-generated from LOCAL.
 # (20180510: the upath module requires node < 10)
-# BUILD_DEPENDS+=	npm:www/npm \
+# BUILD_DEPENDS+=	npm:www/npm-node8 \
 #		yarnpkg:www/yarn
 #USES+=		python:2.7,build
-#pre-build:
+#build-ui:
 #	@cd ${WRKSRC}/webui; \
 #	yarn install && \
 #	yarn run build
