@@ -6,7 +6,6 @@ man/man8/ipv6calc.8.gz
 man/man8/ipv6loganon.8.gz
 man/man8/ipv6logconv.8.gz
 man/man8/ipv6logstats.8.gz
-%%DATADIR%%/tools/DBIP-generate-db.pl
 %%DATADIR%%/tools/DBIP-update.sh
 %%DATADIR%%/tools/GeoIP-update.sh
 %%DATADIR%%/tools/IP2Location-update.sh
