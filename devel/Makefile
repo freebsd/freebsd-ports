@@ -3979,6 +3979,7 @@
     SUBDIR += protobuf-c
     SUBDIR += protobuf-java
     SUBDIR += protobuf25
+    SUBDIR += prototool
     SUBDIR += protozero
     SUBDIR += pructl
     SUBDIR += psimd
