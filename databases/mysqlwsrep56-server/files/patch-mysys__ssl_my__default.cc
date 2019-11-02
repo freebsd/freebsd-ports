@@ -1,6 +1,6 @@
---- mysys_ssl/my_default.cc.orig	2019-07-16 14:08:43 UTC
+--- mysys_ssl/my_default.cc.orig	2019-10-21 05:17:49 UTC
 +++ mysys_ssl/my_default.cc
-@@ -116,7 +116,7 @@ char wsrep_defaults_group_suffix[FN_EXTLEN]={0,};
+@@ -128,7 +128,7 @@ char wsrep_defaults_group_suffix[FN_EXTLEN]={0,};
  #endif /* WITH_WREP */
  /* Which directories are searched for options (and in which order) */
  
@@ -9,7 +9,7 @@
  #define DEFAULT_DIRS_SIZE (MAX_DEFAULT_DIRS + 1)  /* Terminate with NULL */
  static const char **default_directories = NULL;
  
-@@ -921,6 +921,14 @@ static int search_default_file_with_ext(Process_option
+@@ -933,6 +933,14 @@ static int search_default_file_with_ext(Process_option
      strncpy(wsrep_defaults_file, name, sizeof(wsrep_defaults_file) - 1);
  #endif /* WITH_WSREP */
  
@@ -24,7 +24,7 @@
    while (mysql_file_getline(buff, sizeof(buff) - 1, fp, is_login_file))
    {
      line++;
-@@ -1259,7 +1267,8 @@ void my_print_default_files(const char *conf_file)
+@@ -1271,7 +1279,8 @@ void my_print_default_files(const char *conf_file)
              end[(strlen(end)-1)] = ' ';
            else
              strxmov(end, conf_file, *ext , " ",  NullS);
@@ -34,7 +34,7 @@
          }
        }
      }
-@@ -1418,14 +1427,9 @@ static const char **init_default_directories(MEM_ROOT 
+@@ -1430,14 +1439,9 @@ static const char **init_default_directories(MEM_ROOT 
  
  #else
  
@@ -51,7 +51,7 @@
  #endif
  
    if ((env= getenv("MYSQL_HOME")))
-@@ -1495,7 +1499,7 @@ int check_file_permissions(const char *file_name, my_b
+@@ -1507,7 +1511,7 @@ int check_file_permissions(const char *file_name, my_b
    MY_STAT stat_info;
  
    if (!my_stat(file_name,&stat_info,MYF(0)))
