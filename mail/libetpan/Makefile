@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libetpan
-PORTVERSION=	1.9.3
-PORTREVISION=	1
+PORTVERSION=	1.9.4
 CATEGORIES=	mail
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libsasl2.so:security/cyrus-sasl2
 
-USES=		autoreconf compiler:c++11-lang gmake iconv libtool localbase
+USES=		autoreconf compiler:c++11-lang gmake iconv libtool localbase pkgconfig
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
