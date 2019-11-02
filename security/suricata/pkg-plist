@@ -56,6 +56,8 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/ctl/test_filestore.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/sc/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/sc/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/sc/specs.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/sc/specs.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/sc/suricatasc.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/sc/suricatasc.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/__init__.py
@@ -64,6 +66,8 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/addsource.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/addsource.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/checkversions.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/checkversions.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/disablesource.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/disablesource.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/commands/enablesource.py
@@ -124,15 +128,14 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/util.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.0.5-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.1.0-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.pyc
-@sample %%ETCDIR%%/classification.config.sample
-@sample %%ETCDIR%%/reference.config.sample
-@sample %%ETCDIR%%/suricata.yaml.sample
-@sample %%ETCDIR%%/threshold.config.sample
+@sample %%DATADIR%%/classification.config.sample
+@sample %%DATADIR%%/reference.config.sample
 %%DATADIR%%/rules/app-layer-events.rules
 %%DATADIR%%/rules/decoder-events.rules
+%%DATADIR%%/rules/dhcp-events.rules
 %%DATADIR%%/rules/dnp3-events.rules
 %%DATADIR%%/rules/dns-events.rules
 %%DATADIR%%/rules/files.rules
@@ -146,9 +149,11 @@ man/man1/suricata.1.gz
 %%DATADIR%%/rules/smtp-events.rules
 %%DATADIR%%/rules/stream-events.rules
 %%DATADIR%%/rules/tls-events.rules
+@sample %%ETCDIR%%/suricata.yaml.sample
+@sample %%ETCDIR%%/threshold.config.sample
 @dir %%DATADIR%%
+@dir %%DOCSDIR%%
 @dir %%ETCDIR%%
 @dir include/htp
 @dir(root,wheel,0700) /var/log/suricata
 @postunexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, run ``rm -rf ${PKG_PREFIX}/%%ETCDIR%%`` to remove configuration files."; fi
-@dir %%DOCSDIR%%
