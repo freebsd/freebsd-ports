@@ -9704,11 +9704,13 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/java/lib/rt/debugger-agent-storage.jar
 %%DATADIR%%/plugins/java/lib/rt/debugger-agent.jar
 %%DATADIR%%/plugins/java/lib/wadl-core.jar
-%%DATADIR%%/plugins/javaFX/lib/SceneBuilderKit-8.2.0.jar
 %%DATADIR%%/plugins/javaFX/lib/common-javaFX-plugin.jar
 %%DATADIR%%/plugins/javaFX/lib/javaFX-jps-plugin.jar
 %%DATADIR%%/plugins/javaFX/lib/javaFX.jar
 %%DATADIR%%/plugins/javaFX/lib/resources_en.jar
+%%DATADIR%%/plugins/javaFX/lib/rt/java11/scenebuilderkit-11.0.2.jar
+%%DATADIR%%/plugins/javaFX/lib/rt/java8/SceneBuilderKit-8.2.0.jar
+%%DATADIR%%/plugins/javaFX/lib/rt/sceneBuilderBridge.jar
 %%DATADIR%%/plugins/junit/lib/idea-junit.jar
 %%DATADIR%%/plugins/junit/lib/junit-rt.jar
 %%DATADIR%%/plugins/junit/lib/junit5-rt.jar
