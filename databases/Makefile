@@ -999,7 +999,6 @@
     SUBDIR += rubygem-redis-actionpack-rails50
     SUBDIR += rubygem-redis-actionpack-rails52
     SUBDIR += rubygem-redis-namespace
-    SUBDIR += rubygem-redis3
     SUBDIR += rubygem-seed-fu
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby
