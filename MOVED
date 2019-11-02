@@ -13455,3 +13455,4 @@ www/bigbluebutton||2019-11-02|Has expired: Depends on expired www/tomcat6
 www/node6|www/node8|2019-11-02|Has expired: Node.js 6.x LTS reaches end-of-life on 2019-04-30, see https://github.com/nodejs/Release
 www/pebble||2019-11-02|Has expired: depends on expired www/tomcat6
 www/tomcat6|www/tomcat7|2019-11-02|Has expired: End-of-life since 2017
+www/p5-WWW-Mechanize-PhantomJS||2019-11-02|Has expired: uses expired lang/phantomjs
