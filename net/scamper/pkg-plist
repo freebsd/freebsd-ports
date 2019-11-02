@@ -3,6 +3,7 @@ bin/sc_ally
 bin/sc_analysis_dump
 bin/sc_attach
 bin/sc_bdrmap
+bin/sc_erosprober
 bin/sc_filterpolicy
 bin/sc_ipiddump
 bin/sc_prefixscan
@@ -28,6 +29,7 @@ man/man1/sc_ally.1.gz
 man/man1/sc_analysis_dump.1.gz
 man/man1/sc_attach.1.gz
 man/man1/sc_bdrmap.1.gz
+man/man1/sc_erosprober.1.gz
 man/man1/sc_filterpolicy.1.gz
 man/man1/sc_ipiddump.1.gz
 man/man1/sc_prefixscan.1.gz
@@ -51,6 +53,7 @@ man/man5/warts.5.gz
 include/scamper_addr.h
 include/scamper_dealias.h
 include/scamper_file.h
+include/scamper_host.h
 include/scamper_icmpext.h
 include/scamper_list.h
 include/scamper_neighbourdisc.h
