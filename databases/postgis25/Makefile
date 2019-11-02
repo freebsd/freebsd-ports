@@ -3,6 +3,7 @@
 
 PORTNAME=	postgis
 PORTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	databases geography
 MASTER_SITES=	https://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	25
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libjson-c.so:devel/json-c \
 		libgdal.so:graphics/gdal
 
-CONFLICTS_INSTALL=	postgis20 postgis21 postgis22 postgis23 postgis24
+CONFLICTS_INSTALL=	postgis20 postgis21 postgis22 postgis23 postgis24 postgis30
 
 USES=		alias compiler gettext gmake gnome iconv:wchar_t libtool:keepla \
 		localbase perl5 pkgconfig pgsql:9.4+ shebangfix
