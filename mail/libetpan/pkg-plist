@@ -1,4 +1,3 @@
-bin/libetpan-config
 include/libetpan.h
 include/libetpan/acl.h
 include/libetpan/acl_types.h
@@ -167,4 +166,5 @@ include/libetpan/xlist.h
 lib/libetpan.a
 lib/libetpan.so
 lib/libetpan.so.20
-lib/libetpan.so.20.4.0
+lib/libetpan.so.20.5.0
+libdata/pkgconfig/libetpan.pc
