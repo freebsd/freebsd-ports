@@ -28,8 +28,7 @@ OPTIONS_DEFAULT=	PGSQL
 PGSQL_DESC=	Work as PostgreSQL interactive client
 
 PGSQL_USES=	pgsql
-PGSQL_CONFIGURE_OFF=	--without-postgresql
-PGSQL_CONFIGURE_ON=	--with-postgresql=yes
+PGSQL_CONFIGURE_WITH=	postgresql=yes
 PGSQL_VARS=	WANT_PGSQL=client
 
 post-install:
