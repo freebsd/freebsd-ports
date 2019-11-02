@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	fet
-DISTVERSION=	5.39.0
-CATEGORIES=	deskutils kde
+DISTVERSION=	5.40.3
+CATEGORIES=	deskutils
 MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://lalescu.ro/liviu/fet/download/old/ \
 		http://timetabling.de/download/ \
