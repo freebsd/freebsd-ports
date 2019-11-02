@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pika
-PORTVERSION=	1.0.1
-CATEGORIES=	devel net
+PORTVERSION=	1.1.0
+CATEGORIES=	devel net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
@@ -16,9 +16,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${PY_FLAVOR}
 
-# 2.7,3.4+
+# 2.7,3.4-3.7
 USES=		python
-USE_GITHUB=	yes
+USE_GITHUB=	yes #  tests not packaged in PyPI sdist
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
