@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ledit
-PORTVERSION=	2.03
+PORTVERSION=	2.04
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cristal.inria.fr/%SUBDIR%/ \
 		http://pauillac.inria.fr/%SUBDIR%/
