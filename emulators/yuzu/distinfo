@@ -1,6 +1,6 @@
-TIMESTAMP = 1572460637
-SHA256 (yuzu-emu-yuzu-s20191030-658489ebf_GH0.tar.gz) = 04329002a4b7035eb6b3541c4791700a3cc09ce0032b377b454e9645f64b11dc
-SIZE (yuzu-emu-yuzu-s20191030-658489ebf_GH0.tar.gz) = 2595613
+TIMESTAMP = 1572486989
+SHA256 (yuzu-emu-yuzu-s20191031-11e39da02_GH0.tar.gz) = 05ccf59dc5d1b9c95d8081b8d2fb320fdea9f8729acc8b3e06bbc47371456ba6
+SIZE (yuzu-emu-yuzu-s20191031-11e39da02_GH0.tar.gz) = 2595587
 SHA256 (yuzu-emu-unicorn-1.0.1-153-g73f45735_GH0.tar.gz) = 8f7b4d8eb998c2a4c146268d83b44fc22ca8d4d276f26d6af1071e51f4b5bd4f
 SIZE (yuzu-emu-unicorn-1.0.1-153-g73f45735_GH0.tar.gz) = 3296254
 SHA256 (DarkLordZach-libzip-rel-1-5-2-26-gda12b71_GH0.tar.gz) = c98b808a98082aa8b8c21efbb820fd0210ab450871014e745a4b1caf39b9025c
