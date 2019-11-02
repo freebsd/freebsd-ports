@@ -2,6 +2,7 @@
 
 PORTNAME=	rapid-photo-downloader
 DISTVERSION=	0.9.17
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/rapid/pyqt/${PORTVERSION}/+download/
 
@@ -27,6 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>0:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rawkit>0:graphics/py-rawkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>0:devel/py-sortedcontainers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tenacity>0:devel/py-tenacity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=4.1:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
@@ -36,8 +38,8 @@ USES=		desktop-file-utils gettext pyqt:5 python:3.4+ qt:5
 USE_PYTHON=	autoplist distutils noflavors
 USE_QT=		imageformats_run
 USE_PYQT=	core gui network sip widgets
-
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
+
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=		COLOUR PROGRESS
