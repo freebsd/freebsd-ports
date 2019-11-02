@@ -1,4 +1,0 @@
-This plugin for Kibana adds session management and multi tenancy
-to a Search Guard secured cluster. 
-
-WWW: https://github.com/floragunncom/search-guard-kibana-plugin

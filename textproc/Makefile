@@ -318,8 +318,6 @@
     SUBDIR += kf5-kcodecs
     SUBDIR += kf5-sonnet
     SUBDIR += kf5-syntax-highlighting
-    SUBDIR += kibana5
-    SUBDIR += kibana5-search-guard
     SUBDIR += kibana6
     SUBDIR += kiss-templates
     SUBDIR += kmfl-european-latin
@@ -508,7 +506,6 @@
     SUBDIR += p5-Dev-Bollocks
     SUBDIR += p5-Devel-TraceSAX
     SUBDIR += p5-DocSet
-    SUBDIR += p5-EBook-Tools
     SUBDIR += p5-Excel-Template
     SUBDIR += p5-Excel-Writer-XLSX
     SUBDIR += p5-File-Inplace
@@ -1829,7 +1826,6 @@
     SUBDIR += xml-format
     SUBDIR += xml-i18n-tools
     SUBDIR += xml-lite.el
-    SUBDIR += xml-parse.el
     SUBDIR += xml2
     SUBDIR += xml2rfc
     SUBDIR += xmlada

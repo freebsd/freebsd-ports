@@ -1,5 +1,0 @@
-A network daemon that runs on the Node.js platform and listens for statistics,
-like counters and timers, sent over UDP and sends aggregates to one or more
-pluggable backend services (e.g., Graphite).
-
-WWW: https://github.com/etsy/statsd

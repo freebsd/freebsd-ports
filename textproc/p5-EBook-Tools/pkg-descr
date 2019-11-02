@@ -1,9 +1,0 @@
-EBook-Tools contains a library and a command-line tool for unpacking,
-creating, correcting, and repacking electronic books.
-
-Current unpacking support is limited to PalmDoc and Mobipocket and
-generation is limited to EPub.  The metadata correction tools are
-quite extensive, however.  For more details, see the POD information
-on EBook::Tools and EBook::Tools::Unpack.
-
-WWW: https://metacpan.org/release/EBook-Tools

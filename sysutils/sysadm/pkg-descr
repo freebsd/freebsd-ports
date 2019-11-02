@@ -1,6 +1,0 @@
-SysAdm is a FreeBSD-based service which provides a stable API for
-administrating FreeBSD and TrueOS systems. It is composed of a
-headless daemon that runs in the background on any system to be
-administrated, providing both web socket and REST network services.
-
-WWW: https://sysadm.us

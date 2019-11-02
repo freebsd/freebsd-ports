@@ -1,8 +1,0 @@
-Pebble is a lightweight, open source, Java EE blogging tool. It's small, fast
-and feature-rich with unrivalled ease of installation and use. Blog content is
-stored as XML files on disk and served up dynamically, so there's no need to
-install a database. All maintenance and administration can be performed through
-your web browser, making Pebble ideal for anybody who is constantly on the move
-or doesn't have direct access to their host.
-
-WWW: http://pebble.sourceforge.net

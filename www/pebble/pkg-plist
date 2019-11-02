@@ -1,3 +1,0 @@
-@sample etc/pebble.properties.sample
-@dir(%%WWWOWN%%,%%WWWGRP%%,) /var/lib/pebble
-@dir /var/lib
