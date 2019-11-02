@@ -1,6 +1,6 @@
---- support-files/CMakeLists.txt.orig	2019-07-17 18:38:36 UTC
+--- support-files/CMakeLists.txt.orig	2019-10-21 05:21:41 UTC
 +++ support-files/CMakeLists.txt
-@@ -60,7 +60,9 @@ IF(UNIX)
+@@ -67,7 +67,9 @@ IF(UNIX)
      INSTALL(FILES magic DESTINATION ${inst_location} COMPONENT SupportFiles)
    ENDIF()
  

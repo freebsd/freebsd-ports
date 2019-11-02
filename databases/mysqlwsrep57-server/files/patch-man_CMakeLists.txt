@@ -1,6 +1,6 @@
---- man/CMakeLists.txt.orig	2019-07-17 18:38:36 UTC
+--- man/CMakeLists.txt.orig	2019-10-21 05:21:41 UTC
 +++ man/CMakeLists.txt
-@@ -14,9 +14,7 @@
+@@ -21,9 +21,7 @@
  # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
  
  # Copy man pages
