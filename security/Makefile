@@ -149,6 +149,7 @@
     SUBDIR += fakebo
     SUBDIR += fakeident
     SUBDIR += fakeroot
+    SUBDIR += farmhash
     SUBDIR += fbopenssl
     SUBDIR += fcheck
     SUBDIR += fcrackzip
