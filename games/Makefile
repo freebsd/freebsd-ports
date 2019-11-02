@@ -405,6 +405,7 @@
     SUBDIR += ioquake3
     SUBDIR += ioquake3-server
     SUBDIR += iortcw
+    SUBDIR += iqpuzzle
     SUBDIR += irrlamb
     SUBDIR += ishido
     SUBDIR += ivan
