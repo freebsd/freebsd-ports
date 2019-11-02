@@ -22,6 +22,8 @@ BROKEN_powerpc64=	fails to compile: Action failed to execute: java.io.IOExceptio
 BUILD_DEPENDS=	bash:shells/bash \
 		zip:archivers/zip
 
+CONFLICTS_INSTALL=	bazel
+
 USES=		python:3.3+ shebangfix zip:infozip
 
 # In bazel, a release is always code-wise identical to the final release candidate.
