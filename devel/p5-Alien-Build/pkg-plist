@@ -77,6 +77,7 @@
 %%SITE_PERL%%/Test/Alien/Build.pm
 %%SITE_PERL%%/Test/Alien/CanCompile.pm
 %%SITE_PERL%%/Test/Alien/CanPlatypus.pm
+%%SITE_PERL%%/Test/Alien/Diag.pm
 %%SITE_PERL%%/Test/Alien/Run.pm
 %%SITE_PERL%%/Test/Alien/Synthetic.pm
 %%SITE_PERL%%/alienfile.pm
@@ -159,6 +160,7 @@
 %%PERL5_MAN3%%/Test::Alien::Build.3.gz
 %%PERL5_MAN3%%/Test::Alien::CanCompile.3.gz
 %%PERL5_MAN3%%/Test::Alien::CanPlatypus.3.gz
+%%PERL5_MAN3%%/Test::Alien::Diag.3.gz
 %%PERL5_MAN3%%/Test::Alien::Run.3.gz
 %%PERL5_MAN3%%/Test::Alien::Synthetic.3.gz
 %%PERL5_MAN3%%/alienfile.3.gz
