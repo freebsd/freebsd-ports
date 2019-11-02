@@ -4650,6 +4650,7 @@ lib/python%%XYDOT%%/test/capath/5ed36f99.0
 lib/python%%XYDOT%%/test/capath/6e88d7b8.0
 lib/python%%XYDOT%%/test/capath/99d0fa06.0
 lib/python%%XYDOT%%/test/capath/ce7b8643.0
+lib/python%%XYDOT%%/test/capath/efa5f9c3.0
 lib/python%%XYDOT%%/test/cfgparser.1
 lib/python%%XYDOT%%/test/cfgparser.2
 lib/python%%XYDOT%%/test/cfgparser.3
