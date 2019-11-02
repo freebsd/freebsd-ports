@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	serd
-PORTVERSION=	0.30.0
+PORTVERSION=	0.30.2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.drobilla.net/
 
