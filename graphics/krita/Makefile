@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	krita
-DISTVERSION=	4.2.6
-PORTREVISION=	3
+DISTVERSION=	4.2.7.1
 CATEGORIES=	graphics kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
+MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION:R}
 DIST_SUBDIR=	KDE/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -42,6 +41,8 @@ USE_QT=		concurrent core dbus declarative gui multimedia network printsupport \
 		svg testlib widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm xcb xext xi
+
+CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_PyQt5:BOOL=true
 
 OPTIONS_DEFINE=		GMIC OPENEXR
 OPTIONS_DEFAULT=	OPENEXR
