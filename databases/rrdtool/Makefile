@@ -49,9 +49,10 @@ GRAPH_USE=		GNOME=cairo,pango
 MMAP_CONFIGURE_ENABLE=	mmap
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USE=		GNOME=intltool
-NLS_USES=		gettext
+NLS_USES=		gettext localbase
 PERL_CONFIGURE_OFF=	--disable-perl
 PERL_CONFIGURE_ON=	--enable-perl --enable-perl-site-install
+PERL_MAKE_ARGS=		PERL_MAKE_OPTIONS='PREFIX="${PREFIX}" INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"'
 PERL_USES=		perl5
 PYTHON_CONFIGURE_ENABLE=python
 PYTHON_USES=		python
