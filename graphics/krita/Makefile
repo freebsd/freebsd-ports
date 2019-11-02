@@ -3,7 +3,7 @@
 PORTNAME=	krita
 DISTVERSION=	4.2.7.1
 CATEGORIES=	graphics kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION:R}
+MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -34,7 +34,7 @@ LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 # Disable ninja generator for now (with gmake), until the duplicate test targets are resolved upstream.
 USES=		cmake:noninja gmake compiler:c++11-lib desktop-file-utils \
 		eigen:3 gettext jpeg kde:5 pkgconfig python:3.4+ qt:5 \
-		shared-mime-info xorg
+		shared-mime-info tar:xz xorg
 USE_KDE=	archive completion config coreaddons crash guiaddons i18n \
 		itemmodels itemviews kio service widgetsaddons windowsystem
 USE_QT=		concurrent core dbus declarative gui multimedia network printsupport \
