@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Install graphics/py-graphviz and devel/py-twisted to enable state
+machine visualization (`MethodicalMachine.asDigraph`).
+EOM
+}
+]
