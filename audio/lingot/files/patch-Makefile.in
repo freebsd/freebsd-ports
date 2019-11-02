@@ -1,32 +1,18 @@
---- Makefile.in.orig	2011-08-22 14:10:09 UTC
+--- Makefile.in.orig	2019-11-01 06:36:02 UTC
 +++ Makefile.in
-@@ -291,21 +291,21 @@ SUBDIRS = po src pixmaps
+@@ -423,7 +423,6 @@ ACLOCAL_AMFLAGS = -I m4
  lingotdocdir = ${docdir}
  lingotdoc_DATA = \
- 	README\
--	COPYING\
- 	AUTHORS\
- 	ChangeLog\
- 	INSTALL\
- 	NEWS\
--	TODO\
- 	THANKS\
--	MAINTAINERS\
--	src/lingot-background.xpm\
--	src/lingot-logo.xpm\
-+	MAINTAINERS
-+EXTRA_DIST = \
-+	COPYING\
-+	TODO\
- 	intltool-extract.in\
- 	intltool-merge.in\
--	intltool-update.in
--
--EXTRA_DIST = $(lingotdoc_DATA)
-+	intltool-update.in\
-+	src/lingot-background.xpm\
-+	src/lingot-logo.xpm\
-+	$(lingotdoc_DATA)
- CLEANFILES = \
- 	intltool-extract\
- 	intltool-merge\
+ 	README \
+-	COPYING \
+ 	AUTHORS \
+ 	ChangeLog \
+ 	NEWS \
+@@ -446,6 +445,7 @@ appdatadir = $(datadir)/metainfo
+ appdata_DATA = org.nongnu.lingot.appdata.xml
+ dist_man_MANS = lingot.1
+ EXTRA_DIST = \
++	COPYING \
+ 	$(lingotdoc_DATA) \
+ 	$(appdata_DATA) \
+ 	build-aux/gitlog-to-changelog \
