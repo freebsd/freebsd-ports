@@ -41,6 +41,8 @@ DESKTOP_ENTRIES="Qt Creator" "" "QtProject-qtcreator" \
 
 BROKEN_aarch64=		fails to build: invokes x86 asm
 
+PORTDOCS=		*
+
 OPTIONS_DEFINE=		DOCS EXAMPLES QTWEBENGINE
 OPTIONS_SUB=		yes
 DOCS_DESC=		Install the Qt5 api documentation
@@ -86,12 +88,6 @@ SHEBANG_FILES=		tests/system/tools/objectsToTable.py \
 
 .if ${LLVM_DEFAULT:S,-devel,990,} >= 90
 LLVM_DEFAULT=	80
-.endif
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-PLIST_SUB+=	GCC="" CLANG="@comment "
-.else
-PLIST_SUB+=	GCC="@comment " CLANG=""
 .endif
 
 post-patch:
