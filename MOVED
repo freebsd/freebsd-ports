@@ -13439,3 +13439,4 @@ x11/libXxf86misc||2019-11-01|Deprecated upstream
 graphics/libGLw||2019-11-01|Deprecated upstream
 textproc/libutf8proc||2019-11-01|Has expired: No longer needed for www/netsurf
 devel/rubygem-childprocess2|devel/rubygem-childprocess|2019-11-01|Has expired: Use devel/rubygem-childprocess instead
+databases/rubygem-redis3|databases/rubygem-redis|2019-11-02|Has expired: Use databases/rubygem-redis instead
