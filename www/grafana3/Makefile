@@ -12,11 +12,11 @@ COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
 
 LICENSE=	APACHE20
 
+BROKEN=		lang/phantomjs was removed
 DEPRECATED=	Depends on expired lang/phantomjs
 EXPIRATION_DATE=2019-12-01
 
-RUN_DEPENDS=	${LOCALBASE}/bin/phantomjs:lang/phantomjs \
-		webfonts>=0:x11-fonts/webfonts
+RUN_DEPENDS=	webfonts>=0:x11-fonts/webfonts
 
 ONLY_FOR_ARCHS=	i386 amd64
 
