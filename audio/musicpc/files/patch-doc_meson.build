@@ -1,7 +1,7 @@
---- doc/meson.build.orig	2018-10-24 08:31:33 UTC
+--- doc/meson.build.orig	2019-10-31 15:01:59 UTC
 +++ doc/meson.build
 @@ -15,5 +15,5 @@ custom_target(
-   command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@/man1'],
+   command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/man_doctrees', meson.current_source_dir(), '@OUTPUT@/man1'],
    build_by_default: true,
    install: true,
 -  install_dir: get_option('datadir'),
