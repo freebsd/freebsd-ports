@@ -3,6 +3,7 @@
 PORTNAME=	prototool
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,6 +42,19 @@ GH_TUPLE=	\
 		uber-go:zap:v1.10.0:uber_go_zap/vendor/go.uber.org/zap
 GO_PKGNAME=	./cmd/prototool
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		etc/bash_completion.d/prototool \
+		etc/zsh/site-functions/_prototool
+
+post-build:
+	cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} run ${GO_BUILDFLAGS} ./internal/cmd/gen-prototool-bash-completion/main.go > prototool-bash-completion && \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} run ${GO_BUILDFLAGS} ./internal/cmd/gen-prototool-zsh-completion/main.go > prototool-zsh-completion
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${WRKSRC}/prototool-bash-completion ${STAGEDIR}${PREFIX}/etc/bash_completion.d/prototool
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/prototool-zsh-completion ${STAGEDIR}${PREFIX}/etc/zsh/site-functions/_prototool
 
 .include <bsd.port.mk>
