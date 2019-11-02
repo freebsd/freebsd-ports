@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	devilutionX
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.5.0
+PORTREVISION=	0
 CATEGORIES=	games
 
 MAINTAINER=	benny.goemans@gmail.com
@@ -10,20 +10,15 @@ COMMENT=	Open-source implementation of Diablo Game engine
 
 LICENSE=	UNLICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	Uses inline x86 assembly
-
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		cmake dos2unix sdl
-USE_GCC=	yes
 USE_SDL=	mixer2 sdl2 ttf2
 
 PLIST_FILES=	bin/devilutionx
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	diasurgical
-GH_PROJECT=	devilutionX
 
 OPTIONS_DEFAULT=	RELEASE
 

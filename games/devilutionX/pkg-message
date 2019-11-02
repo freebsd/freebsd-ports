@@ -7,11 +7,8 @@ If you don't own it yet, you can buy it at https://www.gog.com/game/diablo
 Copy DIABDAT.MPQ to ~/.local/share/diasurgical/devilution/diabdat.mpq
 Pay attention to the case, the resulting file needs to be entirely lowercase!
 
-If you have any issues with this game, file a bug report on the GitHub page:
+If you have any issues with this game, please file a bug report on the GitHub page:
 https://github.com/diasurgical/devilutionX/issues
-
-Note that only 32-bit builds are currently supported, amd64 is experimental but
-seems to be working fine as far as I've tested.
 EOM
 }
 ]
