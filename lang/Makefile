@@ -271,7 +271,6 @@
     SUBDIR += petite-chez
     SUBDIR += pfe
     SUBDIR += purescript
-    SUBDIR += phantomjs
     SUBDIR += pharo
     SUBDIR += phc
     SUBDIR += php-mode.el

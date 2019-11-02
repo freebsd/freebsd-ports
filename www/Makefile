@@ -42,7 +42,6 @@
     SUBDIR += bareos-webui
     SUBDIR += bareos16-webui
     SUBDIR += bareos17-webui
-    SUBDIR += bigbluebutton
     SUBDIR += bkmrkconv
     SUBDIR += blastbeat
     SUBDIR += bluefish
@@ -459,7 +458,6 @@
     SUBDIR += nift
     SUBDIR += node
     SUBDIR += node10
-    SUBDIR += node6
     SUBDIR += node8
     SUBDIR += nostromo
     SUBDIR += novnc
@@ -1359,7 +1357,6 @@
     SUBDIR += pear-UDDI
     SUBDIR += pear-XML_GRDDL
     SUBDIR += pear-twig
-    SUBDIR += pebble
     SUBDIR += pecl-http
     SUBDIR += pecl-solr
     SUBDIR += pecl-yaf
@@ -2292,7 +2289,6 @@
     SUBDIR += tntnet
     SUBDIR += tokyopromenade
     SUBDIR += tomcat-native
-    SUBDIR += tomcat6
     SUBDIR += tomcat7
     SUBDIR += tomcat85
     SUBDIR += tomcat9

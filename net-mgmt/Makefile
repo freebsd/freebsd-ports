@@ -368,7 +368,6 @@
     SUBDIR += softflowd
     SUBDIR += spectools
     SUBDIR += ssgless
-    SUBDIR += statsd
     SUBDIR += statsite
     SUBDIR += subcalc
     SUBDIR += super_mediator

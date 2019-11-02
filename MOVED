@@ -13440,3 +13440,18 @@ graphics/libGLw||2019-11-01|Deprecated upstream
 textproc/libutf8proc||2019-11-01|Has expired: No longer needed for www/netsurf
 devel/rubygem-childprocess2|devel/rubygem-childprocess|2019-11-01|Has expired: Use devel/rubygem-childprocess instead
 databases/rubygem-redis3|databases/rubygem-redis|2019-11-02|Has expired: Use databases/rubygem-redis instead
+lang/phantomjs||2019-11-02|Has expired: Project has been discontinued: https://github.com/ariya/phantomjs/issues/15344
+net-mgmt/statsd||2019-11-02|Has expired: depends on expired www/node6
+palm/p5-Palm||2019-11-02|Has expired: obsolete technology
+shells/sparforte||2019-11-02|Has expired: uses expired bdb48
+sysutils/pcbsd-utils-qt5||2019-11-02|Has expired: No longer maintained upstream
+sysutils/sysadm||2019-11-02|Has expired: No longer maintained upstream
+sysutils/sysadm-client||2019-11-02|Has expired: No longer maintained upstream
+textproc/kibana5|textproc/kibana6|2019-11-02|Has expired: depends on expired www/node6
+textproc/kibana5-search-guard||2019-11-02|Has expired: Depends on expired www/node6 via textproc/kibana5
+textproc/p5-EBook-Tools||2019-11-02|Has expired: Depends on expired palm/p5-Palm
+textproc/xml-parse.el||2019-11-02|Has expired: Unfetchable, unmaintained
+www/bigbluebutton||2019-11-02|Has expired: Depends on expired www/tomcat6
+www/node6|www/node8|2019-11-02|Has expired: Node.js 6.x LTS reaches end-of-life on 2019-04-30, see https://github.com/nodejs/Release
+www/pebble||2019-11-02|Has expired: depends on expired www/tomcat6
+www/tomcat6|www/tomcat7|2019-11-02|Has expired: End-of-life since 2017

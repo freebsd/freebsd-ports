@@ -1,9 +1,0 @@
-TIMESTAMP = 1484137497
-SHA256 (ariya-phantomjs-2.1.1_GH0.tar.gz) = bd1e63e9cd48d5a9c8ff1affc254eeae14704304437710729f133cb80cf98cf1
-SIZE (ariya-phantomjs-2.1.1_GH0.tar.gz) = 1880406
-SHA256 (Vitallium-phantomjs-3rdparty-win-19051aa_GH0.tar.gz) = cf097cf098c40f9b60255a5c369d968b0e3e3881e25374f00f0c74c265cfd37e
-SIZE (Vitallium-phantomjs-3rdparty-win-19051aa_GH0.tar.gz) = 24611974
-SHA256 (Vitallium-qtbase-b5cc008_GH0.tar.gz) = 9bf66dcaa1b522fe41d74574eae949b740a9bec3cd7f8a69e0555f3ffc2fe6a0
-SIZE (Vitallium-qtbase-b5cc008_GH0.tar.gz) = 46446806
-SHA256 (Vitallium-qtwebkit-e7b7433_GH0.tar.gz) = 76d0bc7430919d7f8c12cbc0cae6dd174543e40777d984a6c14af982a3a71fcc
-SIZE (Vitallium-qtwebkit-e7b7433_GH0.tar.gz) = 50630572

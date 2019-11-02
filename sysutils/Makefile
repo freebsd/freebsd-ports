@@ -865,7 +865,6 @@
     SUBDIR += pcbsd-libsh
     SUBDIR += pcbsd-syscache
     SUBDIR += pcbsd-utils
-    SUBDIR += pcbsd-utils-qt5
     SUBDIR += pciutils
     SUBDIR += pcpustat
     SUBDIR += pdixtract
@@ -1256,8 +1255,6 @@
     SUBDIR += symon
     SUBDIR += synergy
     SUBDIR += synergy-1
-    SUBDIR += sysadm
-    SUBDIR += sysadm-client
     SUBDIR += sysctlinfo-kmod
     SUBDIR += sysgather
     SUBDIR += sysinfo
