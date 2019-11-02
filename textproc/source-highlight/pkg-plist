@@ -112,6 +112,7 @@ man/man1/source-highlight.1.gz
 %%DATADIR%%/bison.lang
 %%DATADIR%%/c.lang
 %%DATADIR%%/c_comment.lang
+%%DATADIR%%/c_preprocessor.lang
 %%DATADIR%%/c_string.lang
 %%DATADIR%%/caml.lang
 %%DATADIR%%/changelog.lang
@@ -166,6 +167,7 @@ man/man1/source-highlight.1.gz
 %%DATADIR%%/htmlcss.outlang
 %%DATADIR%%/htmltable.outlang
 %%DATADIR%%/htmltablelinenum.outlang
+%%DATADIR%%/ipxe.lang
 %%DATADIR%%/islisp.lang
 %%DATADIR%%/java.lang
 %%DATADIR%%/javadoc.outlang
@@ -214,6 +216,7 @@ man/man1/source-highlight.1.gz
 %%DATADIR%%/r.lang
 %%DATADIR%%/r.style
 %%DATADIR%%/ruby.lang
+%%DATADIR%%/rust.lang
 %%DATADIR%%/s.lang
 %%DATADIR%%/scala.lang
 %%DATADIR%%/scheme.lang
@@ -289,6 +292,7 @@ man/man1/source-highlight.1.gz
 %%DATADIR%%/url.lang
 %%DATADIR%%/vala.lang
 %%DATADIR%%/vbscript.lang
+%%DATADIR%%/vim.lang
 %%DATADIR%%/xhtml.css
 %%DATADIR%%/xhtml.outlang
 %%DATADIR%%/xhtml_common.outlang
