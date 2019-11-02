@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	FreeCAD
-DISTVERSION=	0.18.3
-PORTREVISION=	3
+DISTVERSION=	0.18.4
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -36,7 +35,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy-devel>0:graphics/py-pivy-devel@${PY_FLA
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++11-lib cmake gl eigen:3 fortran jpeg \
-		localbase:ldflags pkgconfig python:3.6 localbase qt:5
+		localbase:ldflags pkgconfig python:3.6 localbase qt:5 xorg
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
