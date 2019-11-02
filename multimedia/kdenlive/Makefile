@@ -1,8 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	kdenlive
-PORTREVISION=	4
-# NOTE KDE_APPLICATIONS_VERSION is set explicitly in this port, not 19.08
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	multimedia kde kde-applications
 
@@ -11,22 +9,23 @@ COMMENT=	KDE professional quality non-linear video editing suite
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmlt.so:multimedia/mlt
+LIB_DEPENDS=	libmlt.so:multimedia/mlt \
+		librttr_core.so:devel/rttr
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
 		${LOCALBASE}/lib/mlt/libmltqt.so:multimedia/mlt-qt5
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext-tools pkgconfig \
-		qt:5 shared-mime-info kde:5 tar:xz
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext-tools \
+		gl pkgconfig qt:5 shared-mime-info kde:5 tar:xz xorg
 USE_GL=		gl glu
 USE_KDE=	archive attica auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons ecm filemetadata \
-		guiaddons i18n iconthemes kio itemviews jobwidgets newstuff \
-		notifications notifyconfig service solid sonnet textwidgets \
-		widgetsaddons xmlgui \
+		guiaddons i18n iconthemes kio itemviews jobwidgets \
+		kdeclarative newstuff notifications notifyconfig package \
+		service solid sonnet textwidgets widgetsaddons xmlgui \
 		init_run
-USE_QT=		concurrent core dbus declarative gui network xml \
+USE_QT=		concurrent core dbus declarative gui multimedia network xml \
 		buildtools_build qmake_build \
 		quickcontrols_run script svg webkit widgets
 USE_XORG=	x11
@@ -65,9 +64,6 @@ V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 V4L_CMAKE_OFF=		-DWITH_LibV4L2:BOOL=FALSE
 
 XINE_RUN_DEPENDS=	xine:multimedia/xine
-
-# kdenlive 19.04 has some issues that still need to be sorted out.
-KDE_APPLICATIONS_VERSION=	18.12.3
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \
