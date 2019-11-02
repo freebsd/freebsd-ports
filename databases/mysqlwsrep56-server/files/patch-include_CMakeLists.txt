@@ -1,6 +1,6 @@
---- include/CMakeLists.txt.orig	2017-01-25 07:58:07 UTC
+--- include/CMakeLists.txt.orig	2019-10-21 05:17:49 UTC
 +++ include/CMakeLists.txt
-@@ -65,10 +65,12 @@ SET(HEADERS 
+@@ -72,10 +72,12 @@ SET(HEADERS 
    ${HEADERS_GEN_CONFIGURE}
  )
  

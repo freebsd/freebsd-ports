@@ -1,6 +1,6 @@
---- libservices/CMakeLists.txt.orig	2017-01-25 07:58:07 UTC
+--- libservices/CMakeLists.txt.orig	2019-10-21 05:17:49 UTC
 +++ libservices/CMakeLists.txt
-@@ -24,4 +24,6 @@ SET(MYSQLSERVICES_SOURCES
+@@ -31,4 +31,6 @@ SET(MYSQLSERVICES_SOURCES
    mysql_string_service.c)
  
  ADD_LIBRARY(mysqlservices ${MYSQLSERVICES_SOURCES})

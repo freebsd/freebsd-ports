@@ -1,6 +1,6 @@
---- scripts/CMakeLists.txt.orig	2019-07-16 14:08:43 UTC
+--- scripts/CMakeLists.txt.orig	2019-10-21 05:17:49 UTC
 +++ scripts/CMakeLists.txt
-@@ -304,6 +304,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
+@@ -311,6 +311,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
            GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
            STRING(REGEX REPLACE "^lib" "" lib "${lib}")
            SET(${var} "${${var}}-l${lib} " ) 
@@ -9,7 +9,7 @@
          ELSE()
            SET(${var} "${${var}}-l${lib} " ) 
          ENDIF()
-@@ -366,15 +368,10 @@ ELSE()
+@@ -373,15 +375,10 @@ ELSE()
    # On Unix, most of the files end up in the bin directory
    SET(mysql_config_COMPONENT COMPONENT Development)
    SET(BIN_SCRIPTS
@@ -25,7 +25,7 @@
      mysqlhotcopy
      mysqldumpslow
      mysqld_multi
-@@ -384,7 +381,7 @@ ELSE()
+@@ -391,7 +388,7 @@ ELSE()
    FOREACH(file ${BIN_SCRIPTS})
      IF(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${file}.sh)
        CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${file}.sh
