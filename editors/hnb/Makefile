@@ -6,7 +6,7 @@ PORTVERSION=	1.9.18
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Hierarchical NoteBook a data organizer
 
 LICENSE=	GPLv2+
