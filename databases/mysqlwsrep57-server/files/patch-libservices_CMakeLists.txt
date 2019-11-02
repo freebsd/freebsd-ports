@@ -1,6 +1,6 @@
---- libservices/CMakeLists.txt.orig	2019-07-17 18:38:36 UTC
+--- libservices/CMakeLists.txt.orig	2019-10-21 05:21:41 UTC
 +++ libservices/CMakeLists.txt
-@@ -40,4 +40,6 @@ SET(MYSQLSERVICES_SOURCES
+@@ -47,4 +47,6 @@ SET(MYSQLSERVICES_SOURCES
    mysql_keyring_service.c)
  
  ADD_CONVENIENCE_LIBRARY(mysqlservices ${MYSQLSERVICES_SOURCES})

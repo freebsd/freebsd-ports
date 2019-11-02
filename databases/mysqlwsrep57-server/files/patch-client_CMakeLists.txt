@@ -1,15 +1,12 @@
---- client/CMakeLists.txt.orig	2019-07-17 18:38:36 UTC
+--- client/CMakeLists.txt.orig	2019-10-21 05:21:41 UTC
 +++ client/CMakeLists.txt
-@@ -31,8 +31,6 @@ INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compile_flags.cmake)
+@@ -38,17 +38,17 @@ INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compile_flags.cmake)
  
  ## Subdirectory with common client code.
  ADD_SUBDIRECTORY(base)
 -## Subdirectory for mysqlpump code.
 -ADD_SUBDIRECTORY(dump)
  
- ## We will need libeay32.dll and ssleay32.dll when running client executables.
- COPY_OPENSSL_DLLS(copy_openssl_client)
-@@ -40,11 +38,13 @@ COPY_OPENSSL_DLLS(copy_openssl_client)
  INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compile_flags.cmake)
  
  ADD_DEFINITIONS(${SSL_DEFINES})
@@ -23,7 +20,7 @@
  
  IF(NOT WITHOUT_SERVER)
    MYSQL_ADD_EXECUTABLE(mysql_upgrade
-@@ -65,6 +65,7 @@ ADD_DEPENDENCIES(mysqltest GenError)
+@@ -69,6 +69,7 @@ ADD_DEPENDENCIES(mysqltest GenError)
  ADD_CONVENIENCE_LIBRARY(mysqlcheck_core check/mysqlcheck_core.cc)
  TARGET_LINK_LIBRARIES(mysqlcheck_core mysqlclient)
  
@@ -31,7 +28,7 @@
  MYSQL_ADD_EXECUTABLE(mysqlcheck check/mysqlcheck.cc)
  TARGET_LINK_LIBRARIES(mysqlcheck mysqlcheck_core)
  
-@@ -77,10 +78,12 @@ TARGET_LINK_LIBRARIES(mysqlimport mysqlclient)
+@@ -81,10 +82,12 @@ TARGET_LINK_LIBRARIES(mysqlimport mysqlclient)
  
  MYSQL_ADD_EXECUTABLE(mysqlshow mysqlshow.c)
  TARGET_LINK_LIBRARIES(mysqlshow mysqlclient)
@@ -44,15 +41,15 @@
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
  ADD_COMPILE_FLAGS(
    mysqlbinlog.cc
-@@ -97,6 +100,7 @@ TARGET_LINK_LIBRARIES(mysqlslap mysqlclient)
+@@ -101,6 +104,7 @@ TARGET_LINK_LIBRARIES(mysqlslap mysqlclient)
  
  MYSQL_ADD_EXECUTABLE(mysql_config_editor mysql_config_editor.cc)
- TARGET_LINK_LIBRARIES(mysql_config_editor mysqlclient)
+ TARGET_LINK_LIBRARIES(mysql_config_editor ${FORCE_SSL_SOLARIS} mysqlclient)
 +ENDIF()
  
  MYSQL_ADD_EXECUTABLE(mysql_secure_installation mysql_secure_installation.cc)
  TARGET_LINK_LIBRARIES(mysql_secure_installation mysqlclient)
-@@ -112,9 +116,11 @@ IF(UNIX AND NOT WITHOUT_SERVER)
+@@ -116,9 +120,11 @@ IF(UNIX AND NOT WITHOUT_SERVER)
    ADD_DEPENDENCIES(mysql_install_db GenBootstrapPriv GenSysSchema)
  ENDIF()
  
@@ -64,7 +61,7 @@
  
  # "WIN32" also covers 64 bit. "echo" is used in some files below "mysql-test/".
  IF(WIN32)
-@@ -123,11 +129,6 @@ ENDIF(WIN32)
+@@ -127,11 +133,6 @@ ENDIF(WIN32)
  
  SET_TARGET_PROPERTIES (
    mysql_plugin
