@@ -379,6 +379,7 @@
     SUBDIR += fusefs-hfsfuse
     SUBDIR += fusefs-httpfs
     SUBDIR += fusefs-ifuse
+    SUBDIR += fusefs-jmtpfs
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-libs3
     SUBDIR += fusefs-lkl
