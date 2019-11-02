@@ -1,9 +1,9 @@
---- meson.build.orig	2019-06-21 04:19:37 UTC
+--- meson.build.orig	2019-10-31 15:01:59 UTC
 +++ meson.build
 @@ -1,4 +1,4 @@
 -project('mpc', 'c',
 +project('musicpc', 'c',
-   version: '0.32',
+   version: '0.33',
    meson_version: '>= 0.47',
    default_options: [
 @@ -111,13 +111,13 @@ executable('mpc',
