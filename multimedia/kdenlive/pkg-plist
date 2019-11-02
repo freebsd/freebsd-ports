@@ -1,6 +1,6 @@
 bin/kdenlive
 bin/kdenlive_render
-etc/xdg/kdenlive.categories
+etc/xdg/kdenlive_keyboardschemes.knsrc
 etc/xdg/kdenlive_renderprofiles.knsrc
 etc/xdg/kdenlive_titles.knsrc
 etc/xdg/kdenlive_wipes.knsrc
@@ -11,7 +11,7 @@ share/applications/org.kde.kdenlive.desktop
 share/config.kcfg/kdenlivesettings.kcfg
 %%PORTDOCS%%%%DOCSDIR%%/Kdenlive/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/Kdenlive/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/Kdenlive/README
+%%PORTDOCS%%%%DOCSDIR%%/Kdenlive/README.md
 share/icons/hicolor/128x128/actions/kdenlive-select-all.png
 share/icons/hicolor/128x128/apps/kdenlive.png
 share/icons/hicolor/128x128/mimetypes/application-x-kdenlivetitle.png
@@ -103,8 +103,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-kdenlive.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-kdenlivetitle.svgz
 share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/banner.png
-%%DATADIR%%/blacklisted_effects.txt
-%%DATADIR%%/blacklisted_transitions.txt
 %%DATADIR%%/effects/acompressor.xml
 %%DATADIR%%/effects/aecho.xml
 %%DATADIR%%/effects/agate.xml
@@ -198,6 +196,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/invert.xml
 %%DATADIR%%/effects/lift_gamma_gain.xml
 %%DATADIR%%/effects/loudness.xml
+%%DATADIR%%/effects/luma.xml
 %%DATADIR%%/effects/mirror.xml
 %%DATADIR%%/effects/movit_blur.xml
 %%DATADIR%%/effects/movit_deconvolution_sharpen.xml
@@ -244,11 +243,13 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/update/frei0r.select0r.js
 %%DATADIR%%/effects/update/frei0r.sopsat.js
 %%DATADIR%%/effects/update/frei0r.vertigo.js
+%%DATADIR%%/effects/vidstab.xml
 %%DATADIR%%/effects/vignette.xml
 %%DATADIR%%/effects/volume.xml
 %%DATADIR%%/effects/wave.xml
 %%DATADIR%%/encodingprofiles.rc
 %%DATADIR%%/export/profiles.xml
+%%DATADIR%%/externalproxies.rc
 %%DATADIR%%/generators/count.xml
 %%DATADIR%%/generators/frei0r_test_pat_b.xml
 %%DATADIR%%/generators/noise.xml
@@ -309,14 +310,22 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/titles/simple-scroll.kdenlivetitle
 %%DATADIR%%/titles/simple-with-date.kdenlivetitle
 %%DATADIR%%/titles/simple.kdenlivetitle
+%%DATADIR%%/transitions/affine.xml
+%%DATADIR%%/transitions/composite.xml
+%%DATADIR%%/transitions/dissolve.xml
 %%DATADIR%%/transitions/frei0r_cairoaffineblend.xml
 %%DATADIR%%/transitions/frei0r_cairoblend.xml
+%%DATADIR%%/transitions/luma.xml
+%%DATADIR%%/transitions/mix.xml
 %%DATADIR%%/transitions/qtblend.xml
+%%DATADIR%%/transitions/region.xml
+%%DATADIR%%/transitions/slide.xml
 %%DATADIR%%/transitions/wipe.xml
 share/knotifications5/kdenlive.notifyrc
 share/kservices5/mltpreview.desktop
 share/kxmlgui5/kdenlive/kdenliveui.rc
 share/locale/ar/LC_MESSAGES/kdenlive.mo
+share/locale/ast/LC_MESSAGES/kdenlive.mo
 share/locale/bs/LC_MESSAGES/kdenlive.mo
 share/locale/ca/LC_MESSAGES/kdenlive.mo
 share/locale/ca@valencia/LC_MESSAGES/kdenlive.mo
@@ -338,6 +347,7 @@ share/locale/hu/LC_MESSAGES/kdenlive.mo
 share/locale/id/LC_MESSAGES/kdenlive.mo
 share/locale/it/LC_MESSAGES/kdenlive.mo
 share/locale/ja/LC_MESSAGES/kdenlive.mo
+share/locale/ko/LC_MESSAGES/kdenlive.mo
 share/locale/lt/LC_MESSAGES/kdenlive.mo
 share/locale/mr/LC_MESSAGES/kdenlive.mo
 share/locale/nb/LC_MESSAGES/kdenlive.mo
@@ -359,3 +369,4 @@ share/locale/zh_TW/LC_MESSAGES/kdenlive.mo
 share/metainfo/org.kde.kdenlive.appdata.xml
 share/mime/packages/org.kde.kdenlive.xml
 share/mime/packages/westley.xml
+share/qlogging-categories5/kdenlive.categories
