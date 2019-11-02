@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	source-highlight
-DISTVERSION=	3.1.8
-PORTREVISION=	8
+DISTVERSION=	3.1.9
 CATEGORIES=	textproc
 MASTER_SITES=	GNU/src-highlite
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	C/C++ and Java sources to HTML converter
 
 LICENSE=	GPLv3
@@ -30,6 +29,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
+INFO=		source-highlight-lib source-highlight
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS} check
