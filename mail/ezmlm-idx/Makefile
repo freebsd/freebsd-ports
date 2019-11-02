@@ -3,6 +3,7 @@
 
 PORTNAME=	ezmlm-idx
 PORTVERSION=	7.2.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/ezmlm/archive/${PORTVERSION}/
 
@@ -18,7 +19,6 @@ CONFLICTS=	ezmlm-0.*
 SUB_FILES=	pkg-message
 
 MAKE_JOBS_UNSAFE=	yes
-LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 OPTIONS_DEFINE=		DB DOCS
 OPTIONS_SINGLE=		DB
@@ -69,16 +69,16 @@ post-patch:
 	@${ECHO_CMD} "${PREFIX}/etc/ezmlm" > ${WRKSRC}/conf-etc
 	@${ECHO_CMD} "${PREFIX}/lib/ezmlm" > ${WRKSRC}/conf-lib
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
-	@${ECHO_CMD} "${CC} -s" > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "${CC} -s -rdynamic" > ${WRKSRC}/conf-ld
 .if ${PORT_OPTIONS:MMYSQL}
 	@${ECHO_CMD} "${CC} ${CFLAGS} ${EXTRACT_INCLUDE}" > ${WRKSRC}/conf-cc
-	@${ECHO_CMD} "${CC} -s ${EXTRACT_LIB}" > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "${CC} -s -rdynamic ${EXTRACT_LIB}" > ${WRKSRC}/conf-ld
 .elif ${PORT_OPTIONS:MPGSQL}
 	@${ECHO_CMD} "${CC} ${CFLAGS} ${EXTRACT_INCLUDE}" > ${WRKSRC}/conf-cc
-	@${ECHO_CMD} "${CC} -s ${EXTRACT_LIB}" > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "${CC} -s -rdynamic ${EXTRACT_LIB}" > ${WRKSRC}/conf-ld
 .elif ${PORT_OPTIONS:MSQLITE}
 	@${ECHO_CMD} "${CC} ${CFLAGS} ${EXTRACT_INCLUDE}" > ${WRKSRC}/conf-cc
-	@${ECHO_CMD} "${CC} -s ${EXTRACT_LIB}" > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "${CC} -s -rdynamic ${EXTRACT_LIB}" > ${WRKSRC}/conf-ld
 .endif
 	@${ECHO_CMD} "${MANPREFIX}/man" > ${WRKSRC}/conf-man
 	@${ECHO_CMD} "${QMAIL_PREFIX}" > ${WRKSRC}/conf-qmail
