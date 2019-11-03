@@ -32,8 +32,6 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/extensions.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/feedcore.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/feedcore.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/gpodder/__pycache__/feedservice.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/gpodder/__pycache__/feedservice.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/jsonconfig.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/jsonconfig.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/log.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -50,6 +48,8 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/player.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/query.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/query.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/__pycache__/registry.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/__pycache__/registry.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/schema.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/schema.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/services.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -150,7 +150,7 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/escapist_videos.py
 %%PYTHON_SITELIBDIR%%/gpodder/extensions.py
 %%PYTHON_SITELIBDIR%%/gpodder/feedcore.py
-%%PYTHON_SITELIBDIR%%/gpodder/feedservice.py
+%%PYTHON_SITELIBDIR%%/gpodder/registry.py
 %%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/__init__.py
 %%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/base.py
 %%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/config.py
@@ -221,6 +221,7 @@ share/gpodder/extensions/ubuntu_appindicator.py
 share/gpodder/extensions/ubuntu_unity.py
 share/gpodder/extensions/update_feeds_on_startup.py
 share/gpodder/extensions/video_converter.py
+share/gpodder/extensions/youtube-dl.py
 share/gpodder/images/directory-examples.png
 share/gpodder/images/directory-gpodder.png
 share/gpodder/images/directory-opml.png
