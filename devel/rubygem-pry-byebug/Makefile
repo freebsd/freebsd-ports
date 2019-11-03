@@ -11,8 +11,8 @@ COMMENT=	Fast debugging with Pry
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-byebug>=11.0:devel/rubygem-byebug \
-		rubygem-pry>=0.10:devel/rubygem-pry
+RUN_DEPENDS=	rubygem-byebug>=11.0<12:devel/rubygem-byebug \
+		rubygem-pry>=0.10<1:devel/rubygem-pry
 
 USES=		gem
 USE_RUBY=	yes
