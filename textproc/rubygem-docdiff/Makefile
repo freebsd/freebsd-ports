@@ -12,9 +12,10 @@ COMMENT=	Compares two text files by word, by character, or by line
 
 LICENSE=	BSD3CLAUSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem shebangfix
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/docdiff
 
