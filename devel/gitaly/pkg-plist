@@ -231,6 +231,7 @@
 @(,,555) %%DATADIR%%/ruby/gitlab-shell/hooks/update
 @(,,555) %%DATADIR%%/bin/gitaly
 @(,,555) %%DATADIR%%/bin/gitaly-debug
+@(,,555) %%DATADIR%%/bin/gitaly-hooks
 @(,,555) %%DATADIR%%/bin/gitaly-ssh
 @(,,555) %%DATADIR%%/bin/gitaly-wrapper
 @(,,555) %%DATADIR%%/bin/praefect
