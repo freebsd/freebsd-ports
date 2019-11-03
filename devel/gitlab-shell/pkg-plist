@@ -14,110 +14,26 @@
 @(,,555) %%DATADIR%%/bin/authorized_keys
 @(,,555) %%DATADIR%%/bin/check
 @(,,555) %%DATADIR%%/bin/compile
-@(,,555) %%DATADIR%%/bin/create-hooks
-@(,,555) %%DATADIR%%/bin/gitaly-upload-archive
-@(,,555) %%DATADIR%%/bin/gitaly-upload-pack
-@(,,555) %%DATADIR%%/bin/gitaly-receive-pack
 @(,,555) %%DATADIR%%/bin/gitlab-shell
 @(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-keys-check
-@(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-keys-check-ruby
 @(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-principals-check
-@(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-principals-check-ruby
-@(,,555) %%DATADIR%%/bin/gitlab-shell-ruby
 @(,,555) %%DATADIR%%/bin/install
-@(,,555) %%DATADIR%%/bin/test-logger
 @sample %%DATADIR%%/config.yml.sample
 @(,,555) %%DATADIR%%/hooks/post-receive
 @(,,555) %%DATADIR%%/hooks/pre-receive
 @(,,555) %%DATADIR%%/hooks/update
-%%DATADIR%%/lib/action.rb
-%%DATADIR%%/lib/action/custom.rb
-%%DATADIR%%/lib/console_helper.rb
-%%DATADIR%%/lib/gitlab_access_status.rb
-%%DATADIR%%/lib/gitlab_config.rb
-%%DATADIR%%/lib/gitlab_init.rb
-%%DATADIR%%/lib/gitlab_keys.rb
-%%DATADIR%%/lib/gitlab_lfs_authentication.rb
-%%DATADIR%%/lib/gitlab_logger.rb
-%%DATADIR%%/lib/gitlab_metrics.rb
-%%DATADIR%%/lib/gitlab_net.rb
-%%DATADIR%%/lib/gitlab_net/errors.rb
-%%DATADIR%%/lib/gitlab_shell.rb
-%%DATADIR%%/lib/hooks_utils.rb
-%%DATADIR%%/lib/httpunix.rb
-%%DATADIR%%/lib/http_helper.rb
-%%DATADIR%%/lib/object_dirs_helper.rb
-%%DATADIR%%/spec/action/custom_spec.rb
-%%DATADIR%%/spec/console_helper_spec.rb
-%%DATADIR%%/spec/gitlab_config_spec.rb
-%%DATADIR%%/spec/gitlab_keys_spec.rb
-%%DATADIR%%/spec/gitlab_lfs_authentication_spec.rb
-%%DATADIR%%/spec/gitlab_logger_spec.rb
-%%DATADIR%%/spec/gitlab_metrics_spec.rb
-%%DATADIR%%/spec/gitlab_net_spec.rb
 %%DATADIR%%/spec/gitlab_shell_authorized_keys_check_spec.rb
 %%DATADIR%%/spec/gitlab_shell_authorized_principals_check_spec.rb
 %%DATADIR%%/spec/gitlab_shell_custom_git_receive_pack_spec.rb
-%%DATADIR%%/spec/gitlab_shell_gitlab_shell_spec.rb
+%%DATADIR%%/spec/gitlab_shell_discover_spec.rb
 %%DATADIR%%/spec/gitlab_shell_lfs_authentication_spec.rb
-%%DATADIR%%/spec/gitlab_shell_spec.rb
 %%DATADIR%%/spec/gitlab_shell_two_factor_recovery_spec.rb
-%%DATADIR%%/spec/hooks_utils_spec.rb
-%%DATADIR%%/spec/httpunix_spec.rb
-%%DATADIR%%/spec/object_dirs_helper_spec.rb
 %%DATADIR%%/spec/spec_helper.rb
 %%DATADIR%%/spec/support/gitlab_shell_setup.rb
-%%DATADIR%%/spec/support/gl_id_test_hook
 %%DATADIR%%/spec/support/http_unix_server.rb
-%%DATADIR%%/spec/support/hook_fail
-%%DATADIR%%/spec/support/hook_ok
-%%DATADIR%%/spec/support/vcr.rb
-%%DATADIR%%/spec/support/webmock.rb
-%%DATADIR%%/spec/vcr_cassettes/allowed-pull.yml
-%%DATADIR%%/spec/vcr_cassettes/allowed-push.yml
-%%DATADIR%%/spec/vcr_cassettes/allowed-push-project-not-found-404-text-html.yml
-%%DATADIR%%/spec/vcr_cassettes/allowed-push-project-not-found-404-text-plain.yml
-%%DATADIR%%/spec/vcr_cassettes/allowed-push-project-not-found-404.yml
-%%DATADIR%%/spec/vcr_cassettes/allowed-push-project-not-found-text-html.yml
-%%DATADIR%%/spec/vcr_cassettes/allowed-push-project-not-found-text-plain.yml
-%%DATADIR%%/spec/vcr_cassettes/allowed-push-project-not-found.yml
-%%DATADIR%%/spec/vcr_cassettes/broadcast_message-none.yml
-%%DATADIR%%/spec/vcr_cassettes/broadcast_message-ok.yml
-%%DATADIR%%/spec/vcr_cassettes/check-ok.yml
-%%DATADIR%%/spec/vcr_cassettes/custom-action-not-ok-json.yml
-%%DATADIR%%/spec/vcr_cassettes/custom-action-not-ok-not-json.yml
-%%DATADIR%%/spec/vcr_cassettes/custom-action-ok-not-json.yml
-%%DATADIR%%/spec/vcr_cassettes/custom-action-ok-with-message.yml
-%%DATADIR%%/spec/vcr_cassettes/custom-action-ok.yml
-%%DATADIR%%/spec/vcr_cassettes/discover-ok.yml
-%%DATADIR%%/spec/vcr_cassettes/http-pull-disabled.yml
-%%DATADIR%%/spec/vcr_cassettes/http-push-disabled.yml
-%%DATADIR%%/spec/vcr_cassettes/lfs-authenticate-ok-download.yml
-%%DATADIR%%/spec/vcr_cassettes/lfs-authenticate-ok-upload.yml
-%%DATADIR%%/spec/vcr_cassettes/notify-post-receive.yml
-%%DATADIR%%/spec/vcr_cassettes/post-receive-not-found.yml
-%%DATADIR%%/spec/vcr_cassettes/post-receive.yml
-%%DATADIR%%/spec/vcr_cassettes/pre-receive-not-found.yml
-%%DATADIR%%/spec/vcr_cassettes/pre-receive.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-key-not-found.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-key-not-implemented.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-key-ok.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-pull-disabled.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-pull-project-denied.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-pull-project-denied-401-text-html.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-pull-project-denied-401-text-plain.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-pull-project-denied-401.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-pull-project-denied-with-user.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-push-disabled.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-push-project-denied-401-text-html.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-push-project-denied-401-text-plain.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-push-project-denied-401.yml
-%%DATADIR%%/spec/vcr_cassettes/ssh-push-project-denied.yml
-%%DATADIR%%/spec/vcr_cassettes/two-factor-recovery-codes-fail.yml
-%%DATADIR%%/spec/vcr_cassettes/two-factor-recovery-codes.yml
+%%DATADIR%%/support/gitlab_config.rb
 %%DATADIR%%/support/go-format
 %%DATADIR%%/support/go-test
 %%DATADIR%%/support/go_build.rb
-%%DATADIR%%/support/rewrite-hooks.sh
 %%DATADIR%%/support/truncate_repositories.sh
 @dir(git,,755) /var/log/gitlab-shell
