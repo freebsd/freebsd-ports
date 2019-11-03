@@ -11,8 +11,9 @@ COMMENT=	Non-strict parsing, composition, and wildcard-matching of URLs in Ruby
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
