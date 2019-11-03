@@ -12,7 +12,7 @@ COMMENT=	Term::ANSIColor for Ruby
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-tins>=1.0:devel/rubygem-tins
+RUN_DEPENDS=	rubygem-tins>=1.0<2:devel/rubygem-tins
 
 USES=		gem
 USE_RUBY=	yes
