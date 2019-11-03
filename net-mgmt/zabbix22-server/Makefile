@@ -15,6 +15,9 @@ COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		End of Life was August, 2019
+EXPIRATION_DATE=	2019-11-30
+
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 CONFLICTS=	zabbix[0-13-9][0-9]${PKGNAMESUFFIX} zabbix[0-9]${PKGNAMESUFFIX}
