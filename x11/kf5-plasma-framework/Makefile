@@ -7,7 +7,7 @@ CATEGORIES=	x11 kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 plugin based UI runtime used to write user interfaces
 
-USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lib gettext gl kde:5 pkgconfig qt:5 tar:xz xorg
 USE_GL=		egl gl
 USE_KDE=	activities archive auth codecs completion config \
 		configwidgets coreaddons dbusaddons doctools globalaccel \
