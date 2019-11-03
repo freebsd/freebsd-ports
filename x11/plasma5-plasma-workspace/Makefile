@@ -2,7 +2,7 @@
 
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,7 +19,9 @@ RUN_DEPENDS=	ck-launch-session:sysutils/consolekit2\
 		xset:x11/xset \
 		xmessage:x11/xmessage \
 		${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:x11/xkeyboard-config \
-		iso-codes>=0:misc/iso-codes
+		iso-codes>=0:misc/iso-codes \
+		${LOCALBASE}/bin/genv:sysutils/coreutils
+
 
 USES=		cmake compiler:c++11-lib cpe gettext kde:5 pkgconfig \
 		qt:5 tar:xz xorg
