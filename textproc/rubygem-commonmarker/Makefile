@@ -12,7 +12,7 @@ COMMENT=	Ruby wrapper for libcmark (CommonMark parser)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-ruby-enum>=0.5:devel/rubygem-ruby-enum
+RUN_DEPENDS=	rubygem-ruby-enum>=0.5<1:devel/rubygem-ruby-enum
 
 USES=		gem
 USE_RUBY=	yes
