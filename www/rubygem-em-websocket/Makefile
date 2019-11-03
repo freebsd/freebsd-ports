@@ -12,10 +12,11 @@ COMMENT=	EventMachine based WebSocket server
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-eventmachine>=0.12.9:devel/rubygem-eventmachine \
-		rubygem-http_parser.rb>=0.6.0:net/rubygem-http_parser.rb
+		rubygem-http_parser.rb>=0.6.0<0.7:net/rubygem-http_parser.rb
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
