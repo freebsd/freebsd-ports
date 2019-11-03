@@ -12,6 +12,6 @@ COMMENT=	X.Org syscons display driver
 USE_GITHUB=     yes
 GH_ACCOUNT=     rayddteam
 
-XORG_CAT=	driver
+USES=		xorg-cat:driver
 
 .include <bsd.port.mk>

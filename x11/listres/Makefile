@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	List resources in widgets
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xaw xmu xorgproto xt
 
 PLIST_FILES=	bin/listres man/man1/listres.1.gz

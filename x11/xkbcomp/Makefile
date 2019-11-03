@@ -10,8 +10,7 @@ COMMENT=	Compile XKB keyboard description
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix
-XORG_CAT=	app
+USES=		pathfix xorg xorg-cat:app
 USE_XORG=	x11 xkbfile
 
 PLIST_FILES=	bin/xkbcomp \

@@ -12,9 +12,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cpe perl5
+USES=		cpe perl5 xorg-cat:lib
 USE_PERL5=	build
-XORG_CAT=	lib
 CONFIGURE_ARGS=	--disable-gtk
 INSTALL_TARGET=	install-strip
 

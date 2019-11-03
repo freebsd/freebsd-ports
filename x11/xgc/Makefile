@@ -9,7 +9,7 @@ COMMENT=	X graphics demo
 
 LICENSE=	MIT
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	xt xaw
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ CATEGORIES=	x11-wm
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Tab Window Manager for the X Window System
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	ice sm x11 xext xt xmu
 
 .include <bsd.port.mk>

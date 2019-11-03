@@ -11,7 +11,7 @@ COMMENT=	X Window System initializer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11
 
 post-patch:

@@ -10,7 +10,7 @@ COMMENT=	X.org cf files for use with imake builds
 
 LICENSE=	MIT
 
-XORG_CAT=	util
+USES=		xorg-cat:util
 
 post-patch:
 		@${REINPLACE_CMD} 's|\(define ExtraXaw[^ ]*\) [$$].*|\1 /**/|' \

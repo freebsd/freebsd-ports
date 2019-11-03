@@ -8,7 +8,7 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org tseng display driver
 
-XORG_CAT=	driver
+USES=		xorg-cat:driver
 
 BROKEN_aarch64=		error: implicit declaration of function outb is invalid in C99
 BROKEN_armv6=		error: implicit declaration of function outb is invalid in C99

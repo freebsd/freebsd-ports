@@ -11,7 +11,7 @@ COMMENT=	XKB file library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	lib
+USES=		xorg xorg-cat:lib
 USE_XORG=	x11 xorgproto
 
 INSTALL_TARGET=	install-strip

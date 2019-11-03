@@ -12,9 +12,8 @@ COMMENT=	Convert X font from BDF to PCF
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		localbase
+USES=		localbase xorg xorg-cat:app
 
-XORG_CAT=	app
 USE_XORG=	xorgproto
 
 PLIST_FILES=	bin/bdftopcf man/man1/bdftopcf.1.gz

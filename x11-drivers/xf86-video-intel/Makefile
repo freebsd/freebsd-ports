@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS_REASON=	Intel integrated GPU only exists in Intel x86 processors/
 LIB_DEPENDS=	libxcb-util.so:x11/xcb-util \
 		libdrm.so:graphics/libdrm
 
-USES=		cpe xorg xorg-cat:driver
+USES=		cpe gl xorg xorg-cat:driver
 USE_GITLAB=	yes
 GL_COMMIT=	e5ff8e1828f97891c819c919d7115c6e18b2eb1f
 USE_GL=		gl

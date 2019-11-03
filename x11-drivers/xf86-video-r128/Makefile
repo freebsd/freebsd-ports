@@ -10,8 +10,7 @@ COMMENT=	X.Org r128 display driver
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gl
+USES=		gl xorg-cat:driver
 USE_GL=		gl
-XORG_CAT=	driver
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Session Manager Proxy
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	xt xmu
 
 PLIST_FILES=	bin/smproxy man/man1/smproxy.1.gz

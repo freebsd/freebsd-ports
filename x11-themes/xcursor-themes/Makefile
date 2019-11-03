@@ -14,6 +14,6 @@ BUILD_DEPENDS=	xcursorgen:x11/xcursorgen
 
 NO_ARCH=	yes
 
-XORG_CAT=	data
+USES=		xorg-cat:data
 
 .include <bsd.port.mk>

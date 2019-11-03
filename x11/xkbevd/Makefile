@@ -9,7 +9,7 @@ COMMENT=	XKB event daemon
 
 LICENSE=	MIT
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	xkbfile x11
 
 PLIST_FILES=	bin/xkbevd man/man1/xkbevd.1.gz

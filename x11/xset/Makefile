@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		xorg xorg-cat:app
-
 USE_XORG=	xmuu x11 xext
 CONFIGURE_ARGS=	--without-xf86misc \
 		--without-fontcache

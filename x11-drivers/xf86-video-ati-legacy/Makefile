@@ -24,8 +24,8 @@ CONFLICTS_INSTALL=	xf86-video-ati
 
 PORTSCOUT=	limit:^7\.9\.0
 
+USES=		gl xorg xorg-cat:driver
 USE_GL=		gl
-XORG_CAT=	driver
 USE_XORG=	pciaccess
 
 CONFIGURE_ARGS+=--disable-udev

@@ -13,9 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xkbcomp:x11/xkbcomp
 
-USES=		gmake gnome localbase pathfix perl5
+USES=		gmake gnome localbase pathfix perl5 xorg-cat:data
 
-XORG_CAT=	data
 NO_ARCH=	yes
 USE_GNOME=	libxslt:build
 USE_PERL5=	build

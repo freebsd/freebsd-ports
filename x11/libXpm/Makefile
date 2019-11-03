@@ -11,7 +11,7 @@ COMMENT=	X Pixmap library
 
 LICENSE=	MIT
 
-XORG_CAT=	lib
+USES=		xorg xorg-cat:lib
 USE_XORG=	xorgproto x11 xext xt
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -7,7 +7,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Image displayer for X
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11
 
 PLIST_FILES=	bin/xwud man/man1/xwud.1.gz

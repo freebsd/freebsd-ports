@@ -10,6 +10,6 @@ COMMENT=	X.org documentation files
 
 CONFIGURE_ARGS+=	--without-xmlto --without-fop --disable-specs
 
-XORG_CAT=	doc
+USES=		xorg-cat:doc
 
 .include <bsd.port.mk>

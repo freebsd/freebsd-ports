@@ -10,7 +10,7 @@ COMMENT=	Property displayer for X
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11
 
 PLIST_FILES=	bin/xprop man/man1/xprop.1.gz

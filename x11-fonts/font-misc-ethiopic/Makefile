@@ -8,7 +8,7 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org miscellaneous Ethiopic font
 
-XORG_CAT=	font
+USES=		xorg-cat:font
 FONTNAME=	TTF
 PLIST_FILES=	"@fcfontsdir ${PREFIX}/share/fonts/OTF" \
 		"@comment ${PREFIX}/share/fonts/OTF/fonts.dir" \

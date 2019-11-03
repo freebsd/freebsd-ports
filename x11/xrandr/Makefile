@@ -10,8 +10,7 @@ COMMENT=	Primitive command line interface to the RandR extension
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz
-XORG_CAT=	app
+USES=		tar:xz xorg xorg-cat:app
 USE_XORG=	xrandr xrender x11
 
 PLIST_FILES=	bin/xrandr \

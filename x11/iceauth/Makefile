@@ -11,7 +11,7 @@ COMMENT=	ICE authority file utility for X
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	xorgproto ice
 
 PLIST_FILES=	bin/iceauth man/man1/iceauth.1.gz

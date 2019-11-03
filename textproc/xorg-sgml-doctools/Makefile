@@ -8,8 +8,6 @@ CATEGORIES=	textproc x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Stylesheets and entities for X.Org documentation
 
-XORG_CAT=       doc
-
-USES=		pathfix gmake
+USES=		gmake pathfix xorg-cat:doc
 
 .include <bsd.port.mk>

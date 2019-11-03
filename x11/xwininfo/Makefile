@@ -10,8 +10,7 @@ COMMENT=	Window information utility for X
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	app
-USES=		iconv
+USES=		iconv xorg xorg-cat:app
 USE_XORG=	x11 xcb xorgproto
 
 LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm

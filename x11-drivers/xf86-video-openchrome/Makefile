@@ -13,9 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
+USES=		gl xorg xorg-cat:driver
 USE_GL=		gl
 
-XORG_CAT=	driver
 USE_XORG=	x11 xext xv
 
 # Override pkg-config to prevent linking against libudev

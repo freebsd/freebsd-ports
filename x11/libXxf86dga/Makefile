@@ -11,8 +11,7 @@ COMMENT=	X DGA Extension
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe
-XORG_CAT=	lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	x11 xext xorgproto
 CPE_VENDOR=	x
 CPE_PRODUCT=	libxxf86dga

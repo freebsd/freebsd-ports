@@ -31,6 +31,9 @@ COMPONENT=	${PORTNAME:tl:C/^lib//:C/mesa-//}
 
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
+.if ${COMPONENT} != clover
+USES+=		xorg
+.endif
 .if ${COMPONENT} != osmesa
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 .endif

@@ -10,7 +10,7 @@ COMMENT=	Wrap a bitmap font in a sftn wrapper
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	xorgproto fontenc
 
 PLIST_FILES=	bin/fonttosfnt man/man1/fonttosfnt.1.gz

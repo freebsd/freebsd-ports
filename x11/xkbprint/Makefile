@@ -9,7 +9,7 @@ COMMENT=	Utility for printing an XKB keyboard description
 
 LICENSE=	MIT
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	xkbfile x11
 
 PLIST_FILES=	bin/xkbprint man/man1/xkbprint.1.gz

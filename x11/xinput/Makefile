@@ -11,7 +11,7 @@ COMMENT=	Very useful utility for configuring and testing XInput devices
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	xorgproto x11 xi xext xrandr xinerama
 
 PLIST_FILES=	bin/xinput man/man1/xinput.1.gz

@@ -9,6 +9,6 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org Adobe Utopia Type1 font
 
-XORG_CAT=	font
+USES=		xorg-cat:font
 
 .include <bsd.port.mk>

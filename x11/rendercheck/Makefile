@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Small program for testing basic Render extension conformance
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	xrender
 
 PLIST_FILES=	bin/rendercheck man/man1/rendercheck.1.gz
