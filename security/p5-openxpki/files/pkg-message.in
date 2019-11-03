@@ -50,6 +50,10 @@ install -m 660 -o www -g www /dev/null /var/log/openxpki/soap.log
     /var/openxpki/session: session files.
     /var/log/openxpki: server log files.
     /var/tmp: temporary directory.
+- OpenXPKI has not been fully tested with LibreSSL,
+  report your LibreSSL story to the list
+  https://sourceforge.net/p/openxpki/mailman/
+  or use OpenSSL instead.
 EOM
 }
 { type: upgrade

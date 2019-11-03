@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openxpki
-PORTVERSION=	2.2.3
+PORTVERSION=	2.5.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
@@ -13,11 +13,8 @@ COMMENT=	Perl based trustcenter for PKI: universal server building block
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=	openssl111
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	bash:shells/bash \
-		openca-tools-forked>=1.4.0:security/openca-tools-forked \
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-CGI>=4.21:www/p5-CGI \
 		p5-CGI-Fast>=2.10:www/p5-CGI-Fast \
@@ -29,6 +26,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		p5-Config-Std>=0:devel/p5-Config-Std \
 		p5-Connector>=0:devel/p5-Connector \
 		p5-Crypt-CBC>=0:security/p5-Crypt-CBC \
+		p5-Crypt-LibSCEP>=0.6:security/p5-Crypt-LibSCEP \
 		p5-Crypt-OpenSSL-AES>=0:security/p5-Crypt-OpenSSL-AES \
 		p5-Crypt-PKCS10>=1.3:security/p5-Crypt-PKCS10 \
 		p5-Crypt-SMIME>=0:security/p5-Crypt-SMIME \
@@ -118,10 +116,6 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/t/var/log/openxpki
 
 .include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	this version of OpenXPKI is not fully functional with LibreSSL library, use OpenSSL instead
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/OpenXPKI/OpenXPKI.so
