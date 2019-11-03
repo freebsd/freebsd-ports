@@ -2587,6 +2587,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Templates/MSBuild/FlagTables/v141_CSharp.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v141_Link.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v142_CL.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v142_CSharp.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v142_Link.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v14_LIB.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v14_MASM.json
