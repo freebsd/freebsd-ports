@@ -174,6 +174,7 @@
     SUBDIR += asmx
     SUBDIR += astah-community
     SUBDIR += astyle
+    SUBDIR += asyncplusplus
     SUBDIR += atf
     SUBDIR += atlas
     SUBDIR += atlas-devel
