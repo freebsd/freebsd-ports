@@ -1,13 +1,22 @@
---- Gemfile.orig	2019-09-24 12:11:44 UTC
+--- Gemfile.orig	2019-10-22 12:01:49 UTC
 +++ Gemfile
 @@ -92,7 +92,6 @@ gem 'graphql', '~> 1.9.11'
- # https://gitlab.com/gitlab-org/gitlab-ce/issues/67263
+ # https://gitlab.com/gitlab-org/gitlab/issues/31747
  gem 'graphiql-rails', '~> 1.4.10'
  gem 'apollo_upload_server', '~> 2.0.0.beta3'
 -gem 'graphql-docs', '~> 1.6.0', group: [:development, :test]
  
  # Disable strong_params so that Mash does not respond to :permitted?
  gem 'hashie-forbidden_attributes'
+@@ -148,7 +147,7 @@ gem 'wikicloth', '0.8.1'
+ gem 'asciidoctor', '~> 2.0.10'
+ gem 'asciidoctor-include-ext', '~> 0.3.1', require: false
+ gem 'asciidoctor-plantuml', '0.0.9'
+-gem 'rouge', '~> 3.11.0'
++gem 'rouge', '~> 3.11'
+ gem 'truncato', '~> 0.7.11'
+ gem 'bootstrap_form', '~> 4.2.0'
+ gem 'nokogiri', '~> 1.10.4'
 @@ -225,7 +224,7 @@ gem 'redis-rails', '~> 5.0.2'
  gem 'discordrb-webhooks-blackst0ne', '~> 3.3', require: false
  
@@ -48,7 +57,7 @@
 -  gem 'fuubar', '~> 2.2.0'
 -
 -  gem 'database_cleaner', '~> 1.7.0'
--  gem 'factory_bot_rails', '~> 4.8.2'
+-  gem 'factory_bot_rails', '~> 5.1.0'
 -  gem 'rspec-rails', '~> 3.8.0'
 -  gem 'rspec-retry', '~> 0.6.1'
 -  gem 'rspec_profiling', '~> 0.0.5'
@@ -98,7 +107,7 @@
 -  gem 'webmock', '~> 3.5.1'
 -  gem 'rails-controller-testing'
 -  gem 'concurrent-ruby', '~> 1.1'
--  gem 'test-prof', '~> 0.2.5'
+-  gem 'test-prof', '~> 0.10.0'
 -  gem 'rspec_junit_formatter'
  end
  
