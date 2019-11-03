@@ -1,15 +1,48 @@
---- configure.ac.orig	2019-01-08 23:08:21 UTC
+--- configure.ac.orig	2019-03-07 05:44:37 UTC
 +++ configure.ac
-@@ -1268,7 +1268,7 @@ fi
- 
+@@ -920,6 +920,32 @@ if test x"$enable_libetpan" = xyes; then
+ 	    AC_TRY_LINK([#include <libetpan/dbstorage.h>], [db_mailstorage_init(NULL, NULL);], [libetpan_result=yes], [libetpan_result=no])
+ 	    AC_MSG_RESULT([$libetpan_result])
+ 	  fi
++	   LIBETPAN_CPPFLAGS="`$libetpanconfig --cflags`"
++	   LIBETPAN_LIBS="`$libetpanconfig --libs`"
++	   LIBETPAN_VERSION=`$libetpanconfig --version | $AWK -F. '{printf "%d", ($1 * 100) + $2}'`
++	else
++	  libetpanconfig="pkg-config libetpan"
++	  CPPFLAGS="$CPPFLAGS `$libetpanconfig --cflags 2>/dev/null`"
++	  AC_CHECK_HEADER(libetpan/libetpan.h, [libetpan_result=yes])
++	  if test "x$libetpan_result" = "xyes"; then
++	    AC_MSG_CHECKING([whether libetpan-config hints compiles and links fine])
++	    LIBS="$LIBS `$libetpanconfig --libs 2>/dev/null`"
++	    AC_TRY_LINK([#include <libetpan/dbstorage.h>], [db_mailstorage_init(NULL, NULL);], [libetpan_result=yes], [libetpan_result=no])
++	    AC_MSG_RESULT([$libetpan_result])
++	  fi
++	   LIBETPAN_CPPFLAGS="`$libetpanconfig --cflags`"
++	   LIBETPAN_LIBS="`$libetpanconfig --libs`"
++	   LIBETPAN_VERSION=`$libetpanconfig --modversion | $AWK -F. '{printf "%d", ($1 * 100) + $2}'`
++	fi
++	if test "x$libetpan_result" = "xyes"; then
++	   if test "$LIBETPAN_VERSION" -lt "57"; then
++		AC_MSG_RESULT([*** Claws Mail requires libetpan 0.57 or newer. See http://www.etpan.org/])
++		AC_MSG_RESULT([*** You can use --disable-libetpan if you don't need IMAP4 and/or NNTP support.])
++                AC_MSG_ERROR([libetpan 0.57 not found])
++	   fi
++	   AC_SUBST(LIBETPAN_FLAGS)
++	   AC_SUBST(LIBETPAN_LIBS)
++	   AC_DEFINE(HAVE_LIBETPAN, 1, Define if you want IMAP and/or NNTP support.)
+ 	fi
+ 	if test "x$libetpan_result" = "xyes"; then
+ 	   LIBETPAN_CPPFLAGS="`$libetpanconfig --cflags`"
+@@ -1301,7 +1327,7 @@ fi
  dnl Python *********************************************************************
+ missing_python=""
  AM_PATH_PYTHON([2.5], [
 -	AC_PATH_PROG(PYTHON_CONFIG, python$PYTHON_VERSION-config)
 +	AC_PATH_PROG(PYTHON_CONFIG, python"$PYTHON_VERSION"m-config)
  	if test x"$PYTHON_CONFIG" = x"" ; then
  		AC_PATH_PROG(PYTHON_CONFIG, python-config)
  	fi
-@@ -1286,7 +1286,7 @@ AM_PATH_PYTHON([2.5], [
+@@ -1320,7 +1346,7 @@ AM_PATH_PYTHON([2.5], [
  		_save_libs="$LIBS"
  		if test x"$platform_win32" = xno; then
  			# libpython.so
