@@ -12,8 +12,8 @@ COMMENT=	Single wrapper for most popular notification libraries
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-nenv>=0.1:devel/rubygem-nenv \
-		rubygem-shellany>=0:sysutils/rubygem-shellany
+RUN_DEPENDS=	rubygem-nenv>=0.1<1:devel/rubygem-nenv \
+		rubygem-shellany>=0<1:sysutils/rubygem-shellany
 
 USES=		gem
 USE_RUBY=	yes
