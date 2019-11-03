@@ -12,10 +12,11 @@ COMMENT=	Manages persistent connections using Net::HTTP
 
 LICENSE=	MIT
 
-PORTSCOUT=	limit:^2\.
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
+
+PORTSCOUT=	limit:^2\.
 
 .include <bsd.port.mk>
