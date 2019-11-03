@@ -17,8 +17,9 @@ RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-mime-types>=0:misc/rubygem-mime-types \
 		rubygem-xml-simple>=0:textproc/rubygem-xml-simple
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
