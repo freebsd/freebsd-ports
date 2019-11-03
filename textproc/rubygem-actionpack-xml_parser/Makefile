@@ -15,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-actionpack5>=5.0:www/rubygem-actionpack5 \
 		rubygem-railties5>=5.0:www/rubygem-railties5
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
