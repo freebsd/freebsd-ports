@@ -700,8 +700,8 @@ include/wine/windows/raserror.h
 include/wine/windows/reason.h
 include/wine/windows/regstr.h
 include/wine/windows/restartmanager.h
-%%STAGING%%include/wine/windows/restrictederrorinfo.h
-%%STAGING%%include/wine/windows/restrictederrorinfo.idl
+include/wine/windows/restrictederrorinfo.h
+include/wine/windows/restrictederrorinfo.idl
 include/wine/windows/richedit.h
 include/wine/windows/richole.h
 include/wine/windows/richole.idl
