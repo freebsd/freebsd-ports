@@ -473,7 +473,7 @@
 %%WWWDIR%%/include/classes/import/converters/CArrayKeysImportConverter.php
 %%WWWDIR%%/include/classes/import/converters/CConstantImportConverter.php
 %%WWWDIR%%/include/classes/import/converters/CConverter.php
-%%WWWDIR%%/include/classes/import/converters/CDefaultValuesImportConverter.php
+%%WWWDIR%%/include/classes/import/converters/CDefaultImportConverter.php
 %%WWWDIR%%/include/classes/import/converters/CImportConverterFactory.php
 %%WWWDIR%%/include/classes/import/importers/CAbstractScreenImporter.php
 %%WWWDIR%%/include/classes/import/importers/CHostImporter.php
@@ -549,7 +549,7 @@
 %%WWWDIR%%/include/classes/parsers/CUserMacroParser.php
 %%WWWDIR%%/include/classes/parsers/CValidationRule.php
 %%WWWDIR%%/include/classes/parsers/results/CParserResult.php
-%%WWWDIR%%/include/classes/parsers/results/CTriggerExpressionParserResult.php
+%%WWWDIR%%/include/classes/parsers/results/CTriggerExprParserResult.php
 %%WWWDIR%%/include/classes/regexp/CGlobalRegexp.php
 %%WWWDIR%%/include/classes/routing/CUrl.php
 %%WWWDIR%%/include/classes/routing/CUrlFactory.php
