@@ -13,8 +13,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-haml>=4.0.0:www/rubygem-haml
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
