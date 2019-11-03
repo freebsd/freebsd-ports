@@ -30,8 +30,7 @@ MAKEFILE=	GNUmakefile
 MAKE_ARGS=	STRIP="${STRIP_CMD}"
 DATADIR=	${PREFIX}/lib/vapoursynth
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
-PLIST_FILES=	%%DATADIR%%/libwaifu2x-w2xc.so
-PORTDATA=	models
+PORTDATA=	lib${PORTNAME}.so models
 PORTDOCS=	*.md
 
 OPTIONS_DEFINE=	DOCS
@@ -44,7 +43,7 @@ post-patch:
 
 post-install:
 	(cd ${WRKSRC}/Waifu2x-w2xc && ${COPYTREE_SHARE} \
-		"${PORTDATA}" ${STAGEDIR}${DATADIR})
+		"${PORTDATA:N*.so}" ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 

@@ -30,7 +30,7 @@ CPPFLAGS+=	`pkg-config vapoursynth --cflags`
 INSTALL_TARGET=	install-strip
 DATADIR=	${PREFIX}/lib/vapoursynth
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
-PLIST_FILES=	%%DATADIR%%/libfmtconv.so
+PORTDATA=	lib${PORTNAME}.so
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
