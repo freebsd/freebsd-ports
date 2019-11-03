@@ -16,11 +16,12 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-tilt>=0:devel/rubygem-tilt
 
-PORTSCOUT=	limit:^4\.
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
+
+PORTSCOUT=	limit:^4\.
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/haml
