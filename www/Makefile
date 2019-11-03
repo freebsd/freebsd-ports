@@ -458,6 +458,7 @@
     SUBDIR += nift
     SUBDIR += node
     SUBDIR += node10
+    SUBDIR += node12
     SUBDIR += node8
     SUBDIR += nostromo
     SUBDIR += novnc
