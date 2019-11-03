@@ -12,12 +12,13 @@ COMMENT=	Ruby library provide swappable XML backends
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-OPTIONS_DEFINE=	NOKOGIRI
-NOKOGIRI_DESC=	Nokogiri is a HTML, XML, SAX, and Reader parser
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
+
+OPTIONS_DEFINE=	NOKOGIRI
+NOKOGIRI_DESC=	Use Nokogiri for parsing
 
 NOKOGIRI_RUN_DEPENDS=	rubygem-nokogiri>=0:textproc/rubygem-nokogiri
 
