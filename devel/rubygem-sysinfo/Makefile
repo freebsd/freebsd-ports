@@ -15,11 +15,13 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-drydock>=0:devel/rubygem-drydock \
 		rubygem-storable>=0:devel/rubygem-storable
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem shebangfix
-SHEBANG_FILES=	bin/sysinfo
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/sysinfo
+
+SHEBANG_FILES=	bin/sysinfo
 
 .include <bsd.port.mk>
