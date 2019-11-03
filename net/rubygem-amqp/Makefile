@@ -15,8 +15,9 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	rubygem-amq-protocol>=2.2.0:net/rubygem-amq-protocol \
 		rubygem-eventmachine>=0:devel/rubygem-eventmachine
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
