@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-timezone-field
-DISTVERSION=	3.0
+DISTVERSION=	3.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj21-
@@ -12,7 +12,7 @@ COMMENT=	Provides database and form fields for pytz timezone objects for Django
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django21>=1.8:www/py-django21@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django21>=1.11:www/py-django21@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 
 USES=		python:3.5+
