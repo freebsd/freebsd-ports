@@ -15,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-carrierwave>=0.5.8:www/rubygem-carrierwave \
 		rubygem-rails5>=5.0.0:www/rubygem-rails5
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
