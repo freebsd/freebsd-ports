@@ -11,8 +11,9 @@ COMMENT=	Marshal Ruby classes into and out of multiple formats
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
