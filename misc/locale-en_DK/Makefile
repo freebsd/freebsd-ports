@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	locale-en_DK
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.1
 CATEGORIES=	misc
 
 MAINTAINER=	0mp@FreeBSD.org
