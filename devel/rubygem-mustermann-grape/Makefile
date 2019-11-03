@@ -11,10 +11,11 @@ COMMENT=	Adds Grape style patterns to Mustermman
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-mustermann>=1.0.0:devel/rubygem-mustermann
+RUN_DEPENDS=	rubygem-mustermann>=1.0.0<1.1:devel/rubygem-mustermann
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
