@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2015-02-19 16:13:47 UTC
++++ CMakeLists.txt
+@@ -978,9 +978,8 @@ set (with_mail no)
+ # find the compilation flags
+ enable_if_not_defined (enable-mail)
+ if (enable-mail)
+-	find_program (LIBETPAN_CONFIG_EXECUTABLE libetpan-config)
+ 	execute_process(
+-		COMMAND ${LIBETPAN_CONFIG_EXECUTABLE} --cflags
++		COMMAND pkg-config libetpan --cflags
+ 		OUTPUT_VARIABLE MAIL_PACKAGE_CFLAGS)
+ 	if (NOT "${MAIL_PACKAGE_CFLAGS}" STREQUAL "" AND NOT "${MAIL_PACKAGE_CFLAGS}" STREQUAL "\n") # if there is a problem with the previous, we don't want to have a lot of errors
+ 		STRING (REGEX REPLACE "\n" "" TMP_VARIABLE "${MAIL_PACKAGE_CFLAGS}") # to not skip the last option
+@@ -993,7 +992,7 @@ if (enable-mail)
+ 	endif()
+ 	# find the link flags
+ 	execute_process(
+-		COMMAND ${LIBETPAN_CONFIG_EXECUTABLE} --libs
++		COMMAND pkg-config libetpan --libs
+ 		OUTPUT_VARIABLE MAIL_PACKAGE_LIBS)
+ 	if (NOT "${MAIL_PACKAGE_LIBS}" STREQUAL "")
+ 		STRING (REGEX REPLACE "\n" "" MAIL_PACKAGE_LIBS "${MAIL_PACKAGE_LIBS}")

@@ -91,6 +91,8 @@ KEYBOARD_INDICATOR_LIB_DEPENDS=	libexif.so:graphics/libexif \
 				libxklavier.so:x11/libxklavier
 KEYBOARD_INDICATOR_CMAKE_BOOL=	enable-keyboard-indicator
 
+# libetpan 1.9.4 replaces libetpan-config with libetpan.pc
+MAIL_BUILD_DEPENDS=	libetpan>=1.9.4:mail/libetpan
 MAIL_LIB_DEPENDS=	libetpan.so:mail/libetpan
 MAIL_CMAKE_BOOL=	enable-mail
 
