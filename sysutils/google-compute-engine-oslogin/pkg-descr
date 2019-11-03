@@ -16,4 +16,4 @@ installing these components:
 
 - bin contains a shell script for (de)activating the package components.
 
-WWW: https://github.com/GoogleCloudPlatform/compute-image-packages/tree/master/packages/google-compute-engine-oslogin
+WWW: https://github.com/GoogleCloudPlatform/guest-oslogin

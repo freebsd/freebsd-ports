@@ -1,3 +1,3 @@
-TIMESTAMP = 1559044433
-SHA256 (GoogleCloudPlatform-compute-image-packages-1.5.3-20190522_GH0.tar.gz) = 8cfb338c3c768ea7e76e479728a1438b2f10b0df13bddd70c9fbcbfc1273efd6
-SIZE (GoogleCloudPlatform-compute-image-packages-1.5.3-20190522_GH0.tar.gz) = 132314
+TIMESTAMP = 1571819820
+SHA256 (GoogleCloudPlatform-guest-oslogin-20191018.00-5a710bb_GH0.tar.gz) = e2416461d61b1f4a81cf13a883ea2922271d09882c951eec61c1d3ca398c927e
+SIZE (GoogleCloudPlatform-guest-oslogin-20191018.00-5a710bb_GH0.tar.gz) = 36556
