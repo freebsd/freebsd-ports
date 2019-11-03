@@ -413,6 +413,7 @@
     SUBDIR += vamps
     SUBDIR += vapoursynth
     SUBDIR += vapoursynth-l-smash-works
+    SUBDIR += vapoursynth-vmaf
     SUBDIR += vcdgear
     SUBDIR += vcdimager
     SUBDIR += vcdpad
