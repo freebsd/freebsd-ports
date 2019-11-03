@@ -11,7 +11,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png
 
 USES=		cmake compiler:c++11-lib gettext gperf jpeg kde:5 \
-		qt:5 tar:xz
+		qt:5 tar:xz xorg
 USE_KDE=	archive auth bookmarks codecs completion config \
 		configwidgets coreaddons ecm globalaccel i18n iconthemes \
 		jobwidgets js kio notifications parts service sonnet \
