@@ -3,7 +3,7 @@
 
 PORTNAME=	fftw3
 DISTVERSION=	3.3.8
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	math
 MASTER_SITES=	http://www.fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/
@@ -62,6 +62,11 @@ OPENMPI_CONFIGURE_ENV=		MPICC=${MPIDIR}/bin/mpicc \
 
 .include <bsd.port.options.mk>
 
+# Enable cycle counter via the CNTVCT_EL0 register for all variants on arm64.
+.if ${ARCH} == "aarch64"
+CONFIGURE_ARGS+=--enable-armv8-cntvct-el0
+.endif
+
 #Users must add altivec to MACHINE_CPU when desired:
 #this is not currently done in bsd.cpu.mk
 .if ${FFTW3_FLAVOR} == "default"
@@ -92,6 +97,9 @@ CONFIGURE_ARGS+=--enable-sse2
 .    endif
 .    if !empty(ARCH:Mpowerpc*) && !empty(MACHINE_CPU:Maltivec)
 CONFIGURE_ARGS+=--enable-altivec
+.    endif
+.    if ${ARCH} == "aarch64"
+CONFIGURE_ARGS+=--enable-neon
 .    endif
 .  endif
 .elif ${FFTW3_FLAVOR} == "long"
