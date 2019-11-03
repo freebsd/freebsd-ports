@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	bzr
-PORTVERSION=	2.7.0
-PORTREVISION=	2
+PORTVERSION=	2.7.0.6622
 CATEGORIES=	devel
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	https://distfiles.over-yonder.net/bzr/
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Distributed version control system by Canonical
@@ -23,11 +22,13 @@ OPTIONS_DEFAULT=	SFTP CA_BUNDLE
 SFTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR}
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		gettext python:2.7 shebangfix
+USES=		gettext python:2.7 shebangfix tar:xz
 SHEBANG_FILES=	bzr
-USE_PYTHON=	distutils cython
+USE_PYTHON=	distutils cython autoplist
 PYDISTUTILS_PKGNAME=	bzr
 MAKE_ENV=	BZR_LOG=/dev/null
+
+WRKSRC=		${WRKDIR}/bzr-2.7.1dev
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/bzr.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
