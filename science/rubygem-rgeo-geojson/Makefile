@@ -12,7 +12,7 @@ COMMENT=	GeoJSON formatting and parsing in Ruby
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-rgeo>=1.0:science/rubygem-rgeo
+RUN_DEPENDS=	rubygem-rgeo>=1.0.0:science/rubygem-rgeo
 
 USES=		gem
 USE_RUBY=	yes
