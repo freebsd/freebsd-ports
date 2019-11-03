@@ -14,16 +14,16 @@ COMMENT=	Non-interactive SSH processing
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+USES=		gem shebangfix
+USE_RUBY=	yes
+
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	PROMPT_PASSPHRASES
 OPTIONS_DEFAULT=PROMPT_PASSPHRASES
 PROMPT_PASSPHRASES_DESC=	Prompt for passphrases on keys
 
 PORTSCOUT=	limit:^4\.
-
-USES=		gem shebangfix
-USE_RUBY=	yes
-
-NO_ARCH=	yes
 
 SHEBANG_FILES=	support/ssh_tunnel_bug.rb
 
