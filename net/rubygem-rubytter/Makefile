@@ -14,8 +14,9 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-json>=1.1.3:devel/rubygem-json \
 		rubygem-oauth>=0.3.6:net/rubygem-oauth
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
