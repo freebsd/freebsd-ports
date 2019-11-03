@@ -7,7 +7,7 @@ CATEGORIES=	misc kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Touch typing tutor for KDE
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons doctools \
 		ecm i18n itemviews kcmutils kdeclarative kio newstuff package \
 		parts service sonnet texteditor textwidgets widgetsaddons \
