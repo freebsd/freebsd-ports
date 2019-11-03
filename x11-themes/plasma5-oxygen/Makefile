@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
 USES=		cmake compiler:c++11-lib cpe gettext \
-		kde:5 pkgconfig qt:5 tar:xz
+		kde:5 pkgconfig qt:5 tar:xz xorg
 USE_LDCONFIG=	yes
 USE_KDE=	auth codecs completion config configwidgets coreaddons decoration ecm \
 		frameworkintegration guiaddons i18n kcmutils service \
