@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# Author: Bernard Spil <brnrd@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+# PROVIDE: endlessh
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable endlessh:
+# endlessh_enable="YES"
+# endlessh_daemonuser="nobody"
+# endlessh_config="<config file>" Default %%PREFIX%%/etc/endlessh.conf
+# endlessh_logfile"<log file>" Default /var/log/endlessh.log
+# endlessh_args="<set as needed>" these override the conf file
+
+. /etc/rc.subr
+
+name=endlessh
+rcvar=endlessh_enable
+
+load_rc_config $name
+
+: ${endlessh_enable:=NO}
+: ${endlessh_daemonuser:=nobody}
+: ${endlessh_config:=%%PREFIX%%/etc/endlessh.conf}
+: ${endlessh_logfile:=/var/log/endlessh.log}
+
+pidfile=/var/run/endlessh.pid
+procname="%%PREFIX%%/bin/endlessh"
+command=/usr/sbin/daemon
+command_args='-p ${pidfile} -u ${endlessh_daemonuser} -o ${endlessh_logfile} ${procname} -f ${endlessh_config} ${endlessh_args}'
+
+run_rc_command $1

@@ -140,6 +140,7 @@
     SUBDIR += elixir-kafka_ex
     SUBDIR += elixir-oauth2
     SUBDIR += empty
+    SUBDIR += endlessh
     SUBDIR += enet
     SUBDIR += erlang-ranch
     SUBDIR += erlang-xmlrpc
