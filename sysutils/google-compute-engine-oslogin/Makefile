@@ -1,15 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	google-compute-engine-oslogin
-DISTVERSION=	1.5.3
-PORTREVISION=	2
+DISTVERSION=	20191018.00
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OS Login Guest Environment for Google Compute Engine
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/../../LICENSE
+LICENSE_FILE=	${WRKSRC}/packaging/debian/copyright
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjson-c.so:devel/json-c
@@ -20,31 +19,25 @@ USES=		compiler:c++11-lang gmake localbase:ldflags
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	GoogleCloudPlatform
-GH_PROJECT=	compute-image-packages
-GH_TAGNAME=	20190522
+GH_PROJECT=	guest-oslogin
+GH_TAGNAME=	5a710bb
 
-MAKE_ARGS=	JSON_INCLUDE_PATH=${LOCALBASE}/include/json-c \
-		BIN_INSTALL_PATH=/bin \
-		PAM_INSTALL_PATH=/lib \
-		AUTHKEYS_INSTALL_PATH=/bin \
-		NSS_LIBRARY_SONAME=nss_oslogin.so.1
+PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 
-WRKSRC_SUBDIR=	packages/google-compute-engine-oslogin
-
-PLIST_SUB=	DISTVERSION=${DISTVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!' \
-		${WRKSRC}/bin/google_oslogin_control \
-		${WRKSRC}/libnss_cache_oslogin/nss_cache_oslogin.c \
-		${WRKSRC}/nss_cache/nss_cache.cc
+MAKE_ARGS=	CPPFLAGS="-Iinclude -I${LOCALBASE}/include/json-c -I${LOCALBASE}/include" \
+		LDLIBS="-lcurl -ljson-c -L${LOCALBASE}/lib" \
+		DESTDIR=${STAGEDIR}${PREFIX} \
+		PREFIX=${PREFIX} \
+		LIBDIR=${PREFIX}/lib \
+		PAMDIR=${PREFIX}/lib \
+		MANDIR=${PREFIX}/man
 
 post-install:
-	${LN} -sf libnss_${PORTNAME}-${DISTVERSION}.so ${STAGEDIR}${PREFIX}/lib/nss_oslogin.so.1
-	${LN} -sf libnss_cache_${PORTNAME}-${DISTVERSION}.so ${STAGEDIR}${PREFIX}/lib/nss_cache_oslogin.so.1
+	${LN} -sf libnss_oslogin-${DISTVERSION}.so ${STAGEDIR}${PREFIX}/lib/nss_oslogin.so.1
+	${LN} -sf libnss_cache_oslogin-${DISTVERSION}.so ${STAGEDIR}${PREFIX}/lib/nss_cache_oslogin.so.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/google_authorized_keys \
-		${STAGEDIR}${PREFIX}/lib/libnss_google-compute-engine-oslogin-${DISTVERSION}.so \
-		${STAGEDIR}${PREFIX}/lib/libnss_cache_google-compute-engine-oslogin-${DISTVERSION}.so \
+		${STAGEDIR}${PREFIX}/lib/libnss_oslogin-${DISTVERSION}.so \
+		${STAGEDIR}${PREFIX}/lib/libnss_cache_oslogin-${DISTVERSION}.so \
 		${STAGEDIR}${PREFIX}/lib/pam_oslogin_admin.so \
 		${STAGEDIR}${PREFIX}/lib/pam_oslogin_login.so
 

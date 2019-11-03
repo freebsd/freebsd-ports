@@ -1,0 +1,21 @@
+--- google_oslogin_control.orig	2019-10-18 20:10:43 UTC
++++ google_oslogin_control
+@@ -39,7 +39,8 @@ modify_nsswitch_conf() {
+ 
+   if ! grep -q '^passwd:.*oslogin' "$nss_config"; then
+     $sed -i"" '/^passwd:/ s/$/ cache_oslogin oslogin/' "$nss_config"
+-    $sed -i"" '/^group:/ s/$/ cache_oslogin oslogin/' "$nss_config"
++    # OsLogin for group database is still not supported for FreeBSD
++    # $sed -i"" '/^group:/ s/$/ cache_oslogin oslogin/' "$nss_config"
+   fi
+ 
+   if is_freebsd && grep -q '^passwd:.*compat' "$nss_config"; then
+@@ -51,7 +52,7 @@ restore_nsswitch_conf() {
+   local nss_config="${1:-${nss_config}}"
+ 
+   $sed -i"" '/^passwd:/ s/ cache_oslogin oslogin//' "$nss_config"
+-  $sed -i"" '/^group:/ s/ cache_oslogin oslogin//' "$nss_config"
++  # $sed -i"" '/^group:/ s/ cache_oslogin oslogin//' "$nss_config"
+   if is_freebsd; then
+     $sed -i"" '/^passwd:/ s/files/compat/' "$nss_config"
+   fi
