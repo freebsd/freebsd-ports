@@ -3,11 +3,11 @@
 PORTNAME=	tensorflow
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.14.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	tensorflow-tensorflow-v1.14.0_GH0.tar.gz
+EXTRACT_ONLY=	tensorflow-tensorflow-v${DISTVERSION}_GH0.tar.gz
 
 MAINTAINER=	amzo1337@gmail.com
 COMMENT=	Computation using data flow graphs for scalable machine learning
@@ -58,21 +58,17 @@ SHEBANG_GLOB=	*.py
 USE_GITHUB=	yes
 USE_PYTHON=	distutils
 
-OPTIONS_DEFINE=	CPU_OPTS
-CPU_OPTS_DESC=	Enable CPU optimisations
-
 BAZEL_BOOT=	--output_user_root=${WRKDIR}/bazel_out
 
 PLIST_SUB=	TF_PORT_VERSION=${PORTVERSION}
 
-.include "Makefile.MASTER_SITES"
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=		CPU_OPTS
 
-.if !${PORT_OPTIONS:MCPU_OPTS}
-CPU_TARGET=x86-64
-.else
-CPU_TARGET=native
-.endif
+CPU_OPTS_DESC=		Enable optimisations using features available on your CPU
+CPU_OPTS_VARS=		CPU_TARGET=native BAZEL_COPT="-c opt --copt=-march=native --copt=-mfpmath=sse"
+CPU_OPTS_VARS_OFF=	CPU_TARGET=x86-64
+
+.include "Makefile.MASTER_SITES"
 
 post-patch:
 	# Set up a local repository with our pre-downloaded packages
@@ -160,4 +156,4 @@ post-install: # autoplist: thousands of files, all under ${PYTHON_SITELIBDIR}
 	@cd ${STAGEDIR}${PREFIX} && \
 		${FIND} ${PYTHON_SITELIBDIR:C|^${LOCALBASE}/||} -type f -or -type l | grep -v "egg-info/" >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
