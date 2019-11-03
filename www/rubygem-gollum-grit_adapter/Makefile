@@ -11,10 +11,11 @@ COMMENT=	Adapter for Gollum to use Grit at the backend
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-gitlab-grit>=2.7.1:textproc/rubygem-gitlab-grit
+RUN_DEPENDS=	rubygem-gitlab-grit>=2.7.1<3:textproc/rubygem-gitlab-grit
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
