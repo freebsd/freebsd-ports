@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-screenshooter-plugin
-PORTVERSION=	1.9.6
+PORTVERSION=	1.9.7
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DISTNAME=	xfce4-screenshooter-${DISTVERSIONFULL}
