@@ -111,7 +111,7 @@ RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
 .endif
 
 # Standard depends
-_ALL_DEPENDS=	av1 event ffi graphite harfbuzz hunspell icu jpeg nspr nss png pixman sqlite vpx webp
+_ALL_DEPENDS=	av1 event ffi graphite harfbuzz icu jpeg nspr nss png pixman sqlite vpx webp
 
 .if exists(${FILESDIR}/patch-bug1559213)
 av1_LIB_DEPENDS=	libaom.so:multimedia/aom libdav1d.so:multimedia/dav1d
@@ -131,9 +131,6 @@ graphite_MOZ_OPTIONS=	--with-system-graphite2
 harfbuzz_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 harfbuzz_MOZ_OPTIONS=	--with-system-harfbuzz
 .endif
-
-hunspell_LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
-hunspell_MOZ_OPTIONS=	--enable-system-hunspell
 
 icu_LIB_DEPENDS=		libicui18n.so:devel/icu
 icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api
