@@ -208,6 +208,7 @@
     SUBDIR += doom-wolfendoom
     SUBDIR += doomlegacy
     SUBDIR += doomsday
+    SUBDIR += dreamchess
     SUBDIR += drm
     SUBDIR += duckmaze
     SUBDIR += duel

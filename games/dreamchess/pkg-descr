@@ -1,0 +1,10 @@
+DreamChess is an open source chess game.
+
+It features 3D OpenGL graphics and provides various chess board sets, ranging
+from classic wooden to flat figurine. Other features include music, sound
+effects, on-screen move lists using SAN notation, undo functionality, and
+savegames in PGN format. It comes with its own engine called Dreamer.
+
+DreamChess can be controlled with the mouse and/or the keyboard.
+
+WWW: https://www.dreamchess.org
