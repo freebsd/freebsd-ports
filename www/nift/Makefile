@@ -12,6 +12,7 @@ COMMENT=	Cross-platform open source website generator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	nifty-site-manager
 GH_PROJECT=	nsm
