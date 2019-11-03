@@ -11,8 +11,9 @@ COMMENT=	Library for HTTP authentication protocol in RFC 2617
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
