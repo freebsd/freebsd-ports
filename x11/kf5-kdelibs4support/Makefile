@@ -10,7 +10,7 @@ COMMENT=	KF5 porting aid from KDELibs4
 BUILD_DEPENDS=	p5-URI>=0:net/p5-URI
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 shebangfix \
-		tar:xz
+		tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools emoticons globalaccel guiaddons \
 		i18n iconthemes itemviews jobwidgets kded kio notifications \
