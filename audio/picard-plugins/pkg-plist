@@ -4,6 +4,8 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/acousticbrainz.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/acousticbrainz_tonal-rhythm.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/acousticbrainz_tonal-rhythm.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/additional_artists_variables.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/additional_artists_variables.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/addrelease.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/addrelease.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/albumartist_website.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -82,6 +84,7 @@
 %%ALBUM_COLUMN%%%%PYTHON_SITELIBDIR%%/picard/plugins/add_album_column/__init__.py
 %%ALBUM_COLUMN%%%%PYTHON_SITELIBDIR%%/picard/plugins/add_album_column/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%ALBUM_COLUMN%%%%PYTHON_SITELIBDIR%%/picard/plugins/add_album_column/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/additional_artists_variables.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/addrelease.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/albumartist_website.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/albumartistextension.py
