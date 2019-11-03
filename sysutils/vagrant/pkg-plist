@@ -1,6 +1,5 @@
 bin/vagrant
 %%GEMS_DIR%%cache/vagrant-%%PORTVERSION%%.gem
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.travis.yml
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.vimrc
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.yardopts
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/CHANGELOG.md
@@ -326,6 +325,14 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/communicators/winssh/communicator.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/communicators/winssh/config.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/communicators/winssh/plugin.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alpine/cap/change_host_name.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alpine/cap/configure_networks.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alpine/cap/halt.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alpine/cap/nfs_client.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alpine/cap/rsync.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alpine/cap/smb.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alpine/guest.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alpine/plugin.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alt/cap/change_host_name.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alt/cap/configure_networks.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alt/cap/flavor.rb
@@ -544,10 +551,12 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/arch/host.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/arch/plugin.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/bsd/cap/nfs.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/bsd/cap/path.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/bsd/cap/ssh.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/bsd/host.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/bsd/plugin.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/cap/configured_ip_addresses.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/cap/path.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/cap/provider_install_virtualbox.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/cap/rdp.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/hosts/darwin/cap/smb.rb
@@ -918,6 +927,8 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/commands/winrm_config/config.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/config/messages.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/config/validation_failed.erb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/alpine/network_dhcp.erb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/alpine/network_static.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/alt/network_dhcp.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/alt/network_ipv4address.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/alt/network_ipv4route.erb
@@ -953,6 +964,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/slackware/network_static.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/suse/network_dhcp.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/suse/network_static.erb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/suse/network_static6.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/locales/comm_winrm.yml
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/locales/command_ps.yml
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/locales/command_rdp.yml
