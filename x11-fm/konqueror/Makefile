@@ -10,7 +10,7 @@ COMMENT=	KDE system log application
 LIB_DEPENDS=	libtidy5.so:www/tidy-html5
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
-		localbase:ldflags kde:5 pkgconfig qt:5 tar:xz
+		localbase:ldflags kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	activities  archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons i18n iconthemes \
 		itemviews jobwidgets js kcmutils kdelibs4support \

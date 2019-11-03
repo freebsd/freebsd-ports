@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libical.so:devel/libical
 
-USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz xorg
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons dnssd globalaccel guiaddons i18n \
 		iconthemes itemmodels itemviews jobwidgets kcmutils \
