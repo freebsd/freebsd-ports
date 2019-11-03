@@ -12,10 +12,11 @@ COMMENT=	Commandline option parser for Ruby that gets out of your way
 
 LICENSE=	MIT
 
-PORTSCOUT=	limit:^1\.
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
+
+PORTSCOUT=	limit:^1\.
 
 .include <bsd.port.mk>
