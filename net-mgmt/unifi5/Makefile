@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unifi5
-PORTVERSION=	5.11.50
+PORTVERSION=	5.12.22
 PORTREVISION=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
@@ -11,15 +11,16 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}/:unifi \
 			javax/activation/${JAX_DISTNAME}/${JAX_VERSION}/:jax
 DISTFILES=	unifi_sysvinit_all.deb:unifi \
 		${JAX_DISTNAME}-${JAX_VERSION}.jar:jax
-EXTRACT_ONLY=	unifi_sysvinit_all.deb
-
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+EXTRACT_ONLY=	unifi_sysvinit_all.deb
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	UniFi Controller v5
 
 RUN_DEPENDS=	mongodb36>0:databases/mongodb36 \
 		snappyjava>0:archivers/snappy-java
+
+USES=		cpe
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR} \
 		JAVA=${JAVA} JAVA_HOME=${JAVA_HOME}
@@ -28,11 +29,10 @@ EXTRACT_CMD=	/usr/bin/ar
 EXTRACT_BEFORE_ARGS=	-p
 EXTRACT_AFTER_ARGS=	data.tar.xz | ${TAR} -xf -
 
-USES=		cpe
 CPE_VENDOR=	ubnt
 CPE_PRODUCT=	unifi_controller
 USE_JAVA=	yes
-JAVA_VERSION=	8+
+JAVA_VERSION=	1.8+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk bsdjava
 JAVA_RUN=	yes
