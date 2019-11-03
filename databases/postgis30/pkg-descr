@@ -1,0 +1,15 @@
+PostGIS adds support for geographic objects to the PostgreSQL
+object-relational database. In effect, PostGIS "spatially enables"
+the PostgreSQL server, allowing it to be used as a backend spatial
+database for geographic information systems (GIS), much like ESRI's
+SDE or Oracle's Spatial extension. PostGIS follows the OpenGIS
+"Simple Features Specification for SQL" and has been certified as
+compliant with the "Types and Functions" profile.
+
+PostGIS development was started by Refractions Research as a project
+in open source spatial database technology. PostGIS is released
+under the GNU General Public License. PostGIS continues to be
+developed by a group of contributors led by a Project Steering
+Committee and new features continue to be added.
+
+WWW: https://postgis.net/
