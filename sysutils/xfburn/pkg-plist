@@ -49,6 +49,7 @@ share/icons/hicolor/scalable/stock/media/stock_xfburn-new-data-composition.svg
 share/icons/hicolor/scalable/stock/media/stock_xfburn.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfburn.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfburn.mo
@@ -67,7 +68,9 @@ share/icons/hicolor/scalable/stock/media/stock_xfburn.svg
 %%NLS%%share/locale/he/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfburn.mo
+%%NLS%%share/locale/hy_AM/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfburn.mo
+%%NLS%%share/locale/ie/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/is/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfburn.mo
