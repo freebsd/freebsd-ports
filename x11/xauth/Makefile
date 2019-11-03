@@ -12,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	cmdtest:devel/py-cmdtest
 
-USES=		shebangfix
-XORG_CAT=	app
+USES=		shebangfix xorg xorg-cat:app
 USE_XORG=	x11 xau xext xmuu
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check

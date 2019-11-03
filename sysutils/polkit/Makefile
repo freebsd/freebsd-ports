@@ -20,8 +20,8 @@ RUN_DEPENDS=	dbus-launch:devel/dbus
 USERS=		polkitd
 GROUPS=		polkitd
 
-USES=		compiler:c++11-lib gettext gmake libtool localbase pathfix \
-		pkgconfig shebangfix
+USES=		compiler:c++11-lib gettext gmake gnome libtool localbase \
+		pathfix pkgconfig shebangfix
 USE_GNOME=	glib20 intlhack introspection:build
 SHEBANG_FILES=	${WRKSRC}/src/polkitbackend/toarray.pl
 GNU_CONFIGURE=	yes

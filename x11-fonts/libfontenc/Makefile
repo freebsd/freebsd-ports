@@ -11,7 +11,7 @@ COMMENT=	The fontenc Library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	lib
+USES=		xorg xorg-cat:lib
 USE_XORG=	xorgproto
 
 CONFIGURE_ARGS=	--with-encodingsdir=${LOCALBASE}/share/fonts/encodings

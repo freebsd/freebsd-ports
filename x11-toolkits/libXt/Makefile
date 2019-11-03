@@ -12,8 +12,7 @@ COMMENT=	X Toolkit library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe
-XORG_CAT=	lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	x11 sm ice xorgproto
 CPE_VENDOR=	x
 CPE_PRODUCT=	libxt

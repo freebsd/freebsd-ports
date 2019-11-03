@@ -12,7 +12,7 @@ COMMENT=	Library that allows to defer selection of an OpenGL API until runtime
 
 LICENSE=	BSD2CLAUSE
 
-USES=		cmake compiler:c11 localbase pathfix pkgconfig tar:xz
+USES=		cmake compiler:c11 gl localbase pathfix pkgconfig tar:xz xorg
 USE_GL=		egl gl
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xcb

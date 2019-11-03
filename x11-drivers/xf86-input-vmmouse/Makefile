@@ -11,8 +11,7 @@ COMMENT=	X.Org vmmouse input driver
 
 LIB_DEPENDS=	libhal.so:sysutils/hal
 
-USES=		gmake
-XORG_CAT=	driver
+USES=		gmake xorg-cat:driver
 CONFIGURE_ARGS=	--with-hal-callouts-dir=${PREFIX}/libexec/hal/scripts
 
 ONLY_FOR_ARCHS=	i386 amd64

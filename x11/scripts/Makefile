@@ -10,9 +10,8 @@ COMMENT=	Various X related scripts
 
 RUN_DEPENDS=	ksh:shells/pdksh
 
-XORG_CAT=	app
+USES=		shebangfix xorg xorg-cat:app
 USE_XORG=	x11
-USES=		shebangfix
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|XCOMM!/bin/ksh|XCOMM!${ksh_CMD}|' ${WRKSRC}/xauth_switch_to_sun-des-1.cpp

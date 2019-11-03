@@ -10,7 +10,7 @@ COMMENT=	X Present Extension library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		xorg-cat:lib
+USES=		xorg xorg-cat:lib
 USE_XORG=	x11 xfixes xext xorgproto xrandr
 
 INSTALL_TARGET=	install-strip

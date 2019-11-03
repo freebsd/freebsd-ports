@@ -11,7 +11,7 @@ COMMENT=	Dependency generator for makefiles
 
 LICENSE=	MIT
 
-XORG_CAT=	util
+USES=		xorg xorg-cat:util
 USE_XORG=	xorgproto
 
 PLIST_FILES=	bin/makedepend man/man1/makedepend.1.gz

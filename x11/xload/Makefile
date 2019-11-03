@@ -10,7 +10,7 @@ COMMENT=	System load average display for X
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xaw xmu xt
 
 .include <bsd.port.mk>

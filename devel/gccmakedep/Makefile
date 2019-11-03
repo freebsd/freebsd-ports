@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Create dependencies in makefiles using 'gcc -M'
 
-XORG_CAT=	util
+USES=		xorg-cat:util
 
 BUILD_DEPENDS=	tradcpp:devel/tradcpp
 

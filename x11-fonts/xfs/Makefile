@@ -8,8 +8,7 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org font server
 
-XORG_CAT=	app
-USES=		cpe gmake
+USES=		cpe gmake xorg xorg-cat:app
 CPE_VENDOR=	x
 CPE_PRODUCT=	x_font_server
 USE_XORG=	libfs xfont2 xorgproto xtrans

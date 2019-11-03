@@ -14,8 +14,8 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
+USES=		gmake gl localbase pkgconfig tar:bzip2 xorg
 GNU_CONFIGURE=	yes
-USES=		gmake localbase pkgconfig tar:bzip2
 USE_GL=		egl gbm gl glesv2 glew glu glut
 USE_XORG=	xorgproto x11 xdamage xext xfixes xi xxf86vm
 

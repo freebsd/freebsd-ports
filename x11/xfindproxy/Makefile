@@ -13,7 +13,7 @@ EXPIRATION_DATE=2019-11-06
 
 LICENSE=	MIT
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 ice xt xorgproto
 
 PLIST_FILES=	bin/xfindproxy man/man1/xfindproxy.1.gz

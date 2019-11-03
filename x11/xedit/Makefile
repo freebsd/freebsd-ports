@@ -12,8 +12,7 @@ LICENSE=	MIT BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		xorg-cat:app xorg
-
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xmu xt xaw7
 
 .include <bsd.port.mk>

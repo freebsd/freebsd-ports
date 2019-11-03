@@ -10,6 +10,6 @@ COMMENT=	X.Org elographics input driver
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	driver
+USES=		xorg-cat:driver
 
 .include <bsd.port.mk>

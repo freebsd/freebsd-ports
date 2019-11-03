@@ -32,6 +32,7 @@ OPTIONS_DEFINE=	JPEG PNG TIFF GIF ID3 X11
 OPTIONS_DEFAULT=	JPEG PNG TIFF GIF ID3 X11
 OPTIONS_SUB=	yes
 
+X11_USES=		xorg
 X11_USE=		XORG=x11,sm,xcb,xext
 X11_CONFIGURE_ON=	--with-x --with-x-shm-fd
 X11_CONFIGURE_OFF=	--without-x --without-x-shm-fd

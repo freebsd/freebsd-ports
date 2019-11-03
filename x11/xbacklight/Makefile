@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xrender xrandr xcb
 
 PLIST_FILES=	bin/xbacklight man/man1/xbacklight.1.gz

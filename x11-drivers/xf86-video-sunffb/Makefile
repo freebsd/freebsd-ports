@@ -8,8 +8,8 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org sunffb display driver
 
+USES=		gl xorg-cat:drivers
 USE_GL=		gl
-XORG_CAT=	driver
 
 ONLY_FOR_ARCHS=	sparc64
 

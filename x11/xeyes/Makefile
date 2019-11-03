@@ -10,7 +10,7 @@ COMMENT=	Follow the mouse X demo
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xt xext xmu xrender
 
 PLIST_FILES=	bin/xeyes man/man1/xeyes.1.gz

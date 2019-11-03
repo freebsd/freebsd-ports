@@ -10,9 +10,7 @@ COMMENT=	The FS library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe
-
-XORG_CAT=	lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	xorgproto xtrans
 CPE_VENDOR=	x
 CPE_PRODUCT=	libfs

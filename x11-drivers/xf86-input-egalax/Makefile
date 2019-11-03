@@ -15,7 +15,6 @@ GH_TAGNAME=	7f1e4ac
 
 LICENSE=	BSD2CLAUSE
 
-USES=		autoreconf
-XORG_CAT=	driver
+USES=		autoreconf xorg-cat:driver
 
 .include <bsd.port.mk>

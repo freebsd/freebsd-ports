@@ -9,7 +9,7 @@ CATEGORIES=	devel
 MAINTAINER=	unixmania@gmail.com
 COMMENT=	Create a shadow directory of symbolic links to another directory tree
 
-XORG_CAT=	util
+USES=		xorg xorg-cat:util
 USE_XORG=	xorgproto
 
 PLIST_FILES=	bin/lndir \

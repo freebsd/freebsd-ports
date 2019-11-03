@@ -9,7 +9,7 @@ COMMENT=	Plain text display program for X
 
 LICENSE=	MIT
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xaw xt
 
 .include <bsd.port.mk>

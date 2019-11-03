@@ -11,8 +11,6 @@ COMMENT=	X.Org bitmaps data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix
-
-XORG_CAT=	data
+USES=		pathfix xorg-cat:data
 
 .include <bsd.port.mk>

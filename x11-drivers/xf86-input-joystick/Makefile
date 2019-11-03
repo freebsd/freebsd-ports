@@ -11,8 +11,6 @@ COMMENT=	X.Org joystick input driver
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	driver
-
-USES=		pathfix
+USES=		pathfix xorg-cat:driver
 
 .include <bsd.port.mk>

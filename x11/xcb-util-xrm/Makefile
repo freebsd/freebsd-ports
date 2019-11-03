@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 
-USES=		libtool pkgconfig tar:bzip2
+USES=		libtool pkgconfig tar:bzip2 xorg
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 USE_XORG=	xcb

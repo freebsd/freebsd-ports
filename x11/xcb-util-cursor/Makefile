@@ -19,10 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-util.pc:x11/xcb-util \
 		${LOCALBASE}/libdata/pkgconfig/xcb-renderutil.pc:x11/xcb-util-renderutil \
 		${LOCALBASE}/libdata/pkgconfig/xcb-image.pc:x11/xcb-util-image
 
-XORG_CAT=	lib
+USES=		gmake gperf xorg xorg-cat:lib
 USE_XORG=	xcb
 INSTALL_TARGET=	install-strip
-USES=		gmake gperf
 
 post-patch:
 	@${REINPLACE_CMD} -e \

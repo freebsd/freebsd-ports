@@ -7,7 +7,7 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org geode display driver
 
-XORG_CAT=	driver
+USES=		xorg-cat:driver
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	Geode processors are 32bit x86 only

@@ -24,13 +24,12 @@ RUN_DEPENDS=	glxinfo:graphics/mesa-demos \
 		nvidia-settings:x11/nvidia-settings
 
 USES=		gettext-runtime gettext-tools gl gmake gnome libtool \
-		localbase pathfix tar:bzip2
+		localbase pathfix tar:bzip2 xorg xorg-cat:app
 USE_GL=		gl glu
 USE_GNOME=	cairo gconf2 intltool libxslt
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xinerama \
 		xorgproto xrandr xrender
-XORG_CAT=	app
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-kde4 \

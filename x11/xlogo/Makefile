@@ -10,7 +10,7 @@ COMMENT=	Displays the X Window System logo
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	sm x11 xaw xext xft xmu xrender xt
 
 .include <bsd.port.mk>

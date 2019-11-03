@@ -14,7 +14,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 BUILD_DEPENDS=	fc-cache:x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:x11-fonts/fontconfig
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xft xkbfile xmu xrender xt xaw
 
 .include <bsd.port.mk>

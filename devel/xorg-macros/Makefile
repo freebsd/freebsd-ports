@@ -12,7 +12,7 @@ COMMENT=	X.Org development aclocal macros
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	util
+USES=		xorg-cat:util
 
 NO_ARCH=	yes
 

@@ -10,7 +10,7 @@ COMMENT=	XKB utility demos
 
 LICENSE=	MIT
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	xkbfile x11 xaw xorgproto
 
 .include <bsd.port.mk>

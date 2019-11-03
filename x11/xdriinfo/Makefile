@@ -8,9 +8,8 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Query configuration information of DRI drivers
 
+USES=		gl xorg xorg-cat:app
 USE_GL=		gl
-
-XORG_CAT=	app
 USE_XORG=	x11 xorgproto
 PLIST_FILES=	bin/xdriinfo man/man1/xdriinfo.1.gz
 

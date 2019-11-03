@@ -13,9 +13,8 @@ LICENSE=	GPLv2+
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 RUN_DEPENDS=	webcamd>=3.1.0.1:multimedia/webcamd
 
-USES=		gmake pathfix
+USES=		gmake pathfix xorg xorg-cat:driver
 USE_XORG=	x11 xext xinerama xrandr
-XORG_CAT=	driver
 LDFLAGS+=	-Wl,--as-needed # Xext
 USE_RC_SUBR=	wacom
 SUB_FILES=	pkg-message

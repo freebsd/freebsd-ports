@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libudev.so:devel/libudev-devd
 
-USES=		gettext-runtime gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext-runtime gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

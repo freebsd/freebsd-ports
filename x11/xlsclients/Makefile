@@ -10,7 +10,7 @@ COMMENT=	List client applications running on a display
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-XORG_CAT=	app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xcb xmuu
 
 PLIST_FILES=	bin/xlsclients man/man1/xlsclients.1.gz

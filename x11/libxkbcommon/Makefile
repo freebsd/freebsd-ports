@@ -13,9 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	xkeyboard-config>0:x11/xkeyboard-config
 
-XORG_CAT=	lib
-USES=		gmake bison tar:xz
-
+USES=		gmake bison tar:xz xorg xorg-cat:lib
 USE_XORG=	xcb
 INSTALL_TARGET=	install-strip
 

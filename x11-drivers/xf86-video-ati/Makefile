@@ -20,8 +20,8 @@ LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
 
 CONFLICTS_INSTALL=	xf86-video-ati-legacy
 
+USES=		gl xorg xorg-cat:driver
 USE_GL=		gl
-XORG_CAT=	driver
 USE_XORG=	pciaccess
 
 CONFIGURE_ARGS+=--disable-udev

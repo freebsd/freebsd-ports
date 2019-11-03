@@ -11,7 +11,7 @@ COMMENT=	Library to handle OpenGL function pointer management
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		localbase meson pkgconfig python:3.3+,build tar:xz
+USES=		gl localbase meson pkgconfig python:3.3+,build tar:xz xorg
 USE_XORG=	x11
 USE_GL=		gl glesv2 egl
 USE_LDCONFIG=	yes
