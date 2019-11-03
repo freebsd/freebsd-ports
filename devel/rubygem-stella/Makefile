@@ -24,14 +24,15 @@ RUN_DEPENDS=	rubygem-benelux>=0.6.1:devel/rubygem-benelux \
 		rubygem-whois>=1.6.6:net/rubygem-whois \
 		rubygem-yajl-ruby>=0.7.9:devel/rubygem-yajl-ruby
 
-# bin/stella
-CONFLICTS_INSTALL=	stella
+USES=		gem shebangfix
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem shebangfix
 
 PLIST_FILES=	bin/stella
+
+# bin/stella
+CONFLICTS_INSTALL=	stella
 
 SHEBANG_FILES=	bin/stella \
 		support/sample_webapp/app.rb
