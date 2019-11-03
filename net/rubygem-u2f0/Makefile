@@ -13,10 +13,11 @@ COMMENT=	Library for handling registration and authentication of U2F devices
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PORTSCOUT=	limit:^0\.
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
+
+PORTSCOUT=	limit:^0\.
 
 .include <bsd.port.mk>
