@@ -5,10 +5,10 @@ DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Plasma5 monitor's gamma settings
+COMMENT=	Plasma5 monitor's gamma settings #'
 
 USES=		cmake compiler:c++11-lang cpe gettext kde:5 qt:5 \
-		tar:xz
+		tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash doctools ecm emoticons guiaddons i18n \
 		iconthemes init itemmodels itemviews jobwidgets \
