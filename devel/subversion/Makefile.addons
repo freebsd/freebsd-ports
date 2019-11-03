@@ -1,19 +1,19 @@
 # Created by: lev@FreeBSD.org
 # $FreeBSD$
 
-WITH_SUBVERSION_VER?=	112
+WITH_SUBVERSION_VER?=	113
 
 PKGDIR=			${.CURDIR}
 
 SVN_BUILD_ADDONS=	yes
 
-.if ${WITH_SUBVERSION_VER} == 112
+.if ${WITH_SUBVERSION_VER} == 113
 CONFLICTS_BUILD+=	${PORTNAME}-1.[0-9].[0-9]* \
 			${PORTNAME}-1.[^1][0-9].[0-9]* \
 			${PORTNAME}-1.1[0-1].[0-9]* \
 			${PORTNAME}-lts-1.[0-9][0-9].[0-9]*
-PORTREVISION=		${PORTREVISION_112:U0}
-PLIST_SUB+=		SVN112="" SVNLTS="@comment "
+PORTREVISION=		${PORTREVISION_113:U0}
+PLIST_SUB+=		SVN113="" SVNLTS="@comment "
 LIB_DEPENDS+=		libsvn_client-1.so:devel/subversion
 OPTIONS_NAME=		devel_subversion
 MASTERDIR=		${.CURDIR}/../../devel/subversion
@@ -23,11 +23,11 @@ PKGNAMESUFFIX:=		${PKGNAMESUFFIX}-lts
 CONFLICTS_BUILD+=	${PORTNAME}-1.[0-9].[0-9]* \
 			${PORTNAME}-1.[0-9][0-9].[0-9]*
 PORTREVISION=		${PORTREVISION_LTS:U0}
-PLIST_SUB+=		SVN112="@comment " SVNLTS=""
+PLIST_SUB+=		SVN113="@comment " SVNLTS=""
 LIB_DEPENDS+=		libsvn_client-1.so:devel/subversion-lts
 OPTIONS_NAME=		devel_subversion-lts
 MASTERDIR=		${.CURDIR}/../../devel/subversion-lts
 .include		"${MASTERDIR}/Makefile.common"
 .else
-BROKEN=			Wrong WITH_SUBVERSION_VER=${WITH_SUBVERSION_VER}, only 112 (default) and LTS are supported
+BROKEN=			Wrong WITH_SUBVERSION_VER=${WITH_SUBVERSION_VER}, only 113 (default) and LTS are supported
 .endif

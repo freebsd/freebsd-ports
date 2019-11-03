@@ -10,7 +10,7 @@ COMMENT=	Python bindings for version control system
 USES+=		python:2.7
 USE_PYTHON=	flavors py3kplist
 
-PORTREVISION_112=	0
+PORTREVISION_113=	0
 PORTREVISION_LTS=	0
 
 SVN_BUILD_BINDINGS=	yes
