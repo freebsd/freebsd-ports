@@ -12,8 +12,9 @@ COMMENT=	Open4 manages child processes and their io handles
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
