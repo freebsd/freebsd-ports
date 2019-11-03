@@ -1,4 +1,5 @@
 include/rapidjson/allocators.h
+include/rapidjson/cursorstreamwrapper.h
 include/rapidjson/document.h
 include/rapidjson/encodedstream.h
 include/rapidjson/encodings.h
@@ -8,6 +9,7 @@ include/rapidjson/filereadstream.h
 include/rapidjson/filewritestream.h
 include/rapidjson/fwd.h
 include/rapidjson/internal/biginteger.h
+include/rapidjson/internal/clzll.h
 include/rapidjson/internal/diyfp.h
 include/rapidjson/internal/dtoa.h
 include/rapidjson/internal/ieee754.h
@@ -36,18 +38,3 @@ include/rapidjson/writer.h
 lib/cmake/RapidJSON/RapidJSONConfig.cmake
 lib/cmake/RapidJSON/RapidJSONConfigVersion.cmake
 libdata/pkgconfig/RapidJSON.pc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/capitalize/capitalize.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/condense/condense.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filterkey/filterkey.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filterkeydom/filterkeydom.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jsonx/jsonx.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/messagereader/messagereader.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parsebyparts/parsebyparts.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pretty/pretty.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prettyauto/prettyauto.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/schemavalidator/schemavalidator.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serialize/serialize.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simpledom/simpledom.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplereader/simplereader.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplewriter/simplewriter.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/tutorial.cpp
