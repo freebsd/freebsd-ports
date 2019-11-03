@@ -13,10 +13,11 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-net-ssh>=2.6.5:security/rubygem-net-ssh
 
-PORTSCOUT=	limit:^1\.
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
+
+PORTSCOUT=	limit:^1\.
 
 .include <bsd.port.mk>
