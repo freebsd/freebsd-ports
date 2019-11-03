@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	8.10.0
+PORTVERSION=	8.14.0
 CATEGORIES=	www
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -20,11 +20,11 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-workhorse/tags
-GL_COMMIT=	6ca9bc1ebc1541a3761429dc6d3b7f06ce190dd7
+GL_COMMIT=	9d06288b2c6d2630773d3c13794b830e24aa1ca2
 
 # for go dependencies
 USE_GITHUB=	nodefault
-# generated with gomod-deps below
+# generated with: make gomod-vendor
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
@@ -77,16 +77,10 @@ GL_TUPLE=	\
 		gitlab-org:gitaly:a8e2980b1ffe1a728ab13032dc81f90f4b990a03:gitlab_org_gitaly/vendor/gitlab.com/gitlab-org/gitaly \
 		gitlab-org:labkit:905271af7abbfaa1d3549f46ac0394c50cef9b28:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
-
 PLIST_FILES=	bin/gitlab-workhorse \
 		bin/gitlab-zip-cat \
 		bin/gitlab-zip-metadata
 PLIST_DIRS=	${WWWDIR}
-
-# Build the go deps, use `pkg install modules2tuple`
-gomod-deps: patch
-	(cd ${WRKSRC} && go mod vendor)
-	(cd ${WRKSRC} && modules2tuple vendor/modules.txt)
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}
