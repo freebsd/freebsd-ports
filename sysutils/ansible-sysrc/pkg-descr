@@ -1,0 +1,5 @@
+Ansible module to manipulate rc.conf on a FreeBSD system
+via sysrc. The current states available are: append,
+absent, present and subtract.
+
+WWW: https://github.com/dlundgren/ansible-freebsd-modules/
