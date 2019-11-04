@@ -286,6 +286,7 @@
     SUBDIR += pocl
     SUBDIR += polyml
     SUBDIR += ponyc
+    SUBDIR += ponyc-static
     SUBDIR += ptoc
     SUBDIR += purescript
     SUBDIR += py-hy
