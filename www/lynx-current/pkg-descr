@@ -1,5 +1,10 @@
-lynx is a program which allows a user to access World-Wide Web servers
-and other information servers.  It uses only ascii representation so
-that it can be used from ascii-terminals and dialin-lines.
+lynx is the oldest actively-maintained console-based web browser. It
+is highly configurable and can act as a front-end for a large number
+of network services.
+
+Although lynx is fast, small, and very stable, it makes no attempt
+to handle JavaScript or CSS formatting. Other console browsers like
+elinks (www/elinks) tackle those languages, with varying degrees
+of success.
 
 WWW: http://lynx.invisible-island.net/current/
