@@ -21,4 +21,5 @@ man/man3/MMDB_open.3.gz
 man/man3/MMDB_read_node.3.gz
 man/man3/MMDB_strerror.3.gz
 man/man3/MMDB_vget_value.3.gz
+man/man3/defined.3.gz
 man/man3/libmaxminddb.3.gz
