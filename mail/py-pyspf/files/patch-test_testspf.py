@@ -1,19 +1,19 @@
---- test/testspf.py.orig	2015-01-12 22:47:56 UTC
+--- test/testspf.py.orig	2019-08-31 02:49:19 UTC
 +++ test/testspf.py
-@@ -221,9 +221,9 @@ def makeSuite(filename):
+@@ -237,9 +237,9 @@ def docsuite():
  
- def suite(): 
-   suite = unittest.makeSuite(SPFTestCases,'test')
+ def suite(skipdoc=False): 
+   suite = docsuite()
 -  suite.addTest(makeSuite('test.yml'))
 -  suite.addTest(makeSuite('rfc7208-tests.yml'))
 -  suite.addTest(makeSuite('rfc4408-tests.yml'))
 +  suite.addTest(makeSuite('test/test.yml'))
 +  suite.addTest(makeSuite('test/rfc7208-tests.yml'))
 +  suite.addTest(makeSuite('test/rfc4408-tests.yml'))
-   import doctest
-   suite.addTest(doctest.DocTestSuite(spf))
    return suite
-@@ -237,9 +237,9 @@ if __name__ == '__main__':
+ 
+ if __name__ == '__main__':
+@@ -255,9 +255,9 @@ if __name__ == '__main__':
      # a specific test selected by id from YAML files
      if not tc:
        tc = unittest.TestSuite()
@@ -26,12 +26,12 @@
      if i in t0:
        tc.addTest(SPFTestCase(t0[i]))
      if i in t1:
-@@ -248,7 +248,7 @@ if __name__ == '__main__':
+@@ -266,7 +266,7 @@ if __name__ == '__main__':
        tc.addTest(SPFTestCase(t2[i]))
    if not tc:
      # load zonedata for doctests
--    fp = open('doctest.yml','rb')
-+    fp = open('test/doctest.yml','rb')
-     try:
+-    with open('doctest.yml','rb') as fp:
++    with open('test/doctest.yml','rb') as fp:
        zonedata = loadZone(next(yaml.safe_load_all(fp)))
-     finally: fp.close()
+     if doctest:
+       tc = docsuite()   # doctests only
