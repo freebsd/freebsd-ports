@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-current
 DISTNAME=	${PORTNAME}${PORTVERSION:S/p/pre./:S/d/dev./}
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	Non-graphical, text-based World-Wide Web client
+COMMENT=	Console-based web browser (current/development version)
 
 LICENSE=	GPLv2
 
