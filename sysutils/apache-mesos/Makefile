@@ -12,6 +12,7 @@ COMMENT=	Cluster manager providing resource isolation and sharing
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
 IGNORE_FreeBSD_11=	does not build
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
