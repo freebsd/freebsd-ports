@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jbig2dec
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	graphics devel
 MASTER_SITES=	LOCAL/sunpoet:tests
 

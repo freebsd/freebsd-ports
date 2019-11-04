@@ -1,6 +1,15 @@
---- autogen.sh.orig	2018-09-03 16:39:20 UTC
+--- autogen.sh.orig	2019-10-02 12:52:19 UTC
 +++ autogen.sh
-@@ -164,12 +164,3 @@ $AUTOMAKE --add-missing --copy $AUTOMAKE
+@@ -22,7 +22,7 @@ VERSIONGREP="sed -e s/.*[^0-9\.]\([0-9][
+ VERSIONMKMAJ="sed -e s/\([0-9][0-9]*\)[^0-9].*/\\1/"
+ VERSIONMKMIN="sed -e s/.*[0-9][0-9]*\.//"
+ 
+-JBIG2VERSIONGREP="sed -e s/^.*(\([0-9]\+\)).*/\\1/"
++JBIG2VERSIONGREP="sed -e s/^.*(\([0-9]*\)).*/\1/"
+ JBIG2MAJOR=$(grep 'define JBIG2_VERSION_MAJOR' jbig2.h | $JBIG2VERSIONGREP)
+ JBIG2MINOR=$(grep 'define JBIG2_VERSION_MINOR' jbig2.h | $JBIG2VERSIONGREP)
+ sed -e "s/^\(AC_INIT[^,]*,\)[^,]*\(,.*\)$/\1 [$JBIG2MAJOR.$JBIG2MINOR]\2/" configure.ac.in > configure.ac
+@@ -169,12 +169,3 @@ $AUTOMAKE --add-missing --copy $AUTOMAKE
  
  echo "  autoconf"
  autoconf

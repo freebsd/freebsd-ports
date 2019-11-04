@@ -1,6 +1,6 @@
---- configure.ac.orig	2018-09-03 16:39:20 UTC
-+++ configure.ac
-@@ -140,8 +140,6 @@ AC_CHECK_FUNC(getopt_long, 
+--- configure.ac.in.orig	2019-10-02 12:52:19 UTC
++++ configure.ac.in
+@@ -141,8 +141,6 @@ AC_CHECK_FUNC(getopt_long, 
  	AC_DEFINE(HAVE_GETOPT_LONG,,
  	  [Define if the local libc includes getopt_long()]
  	),[
