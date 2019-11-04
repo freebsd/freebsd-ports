@@ -17,7 +17,6 @@
 %%WWWDIR%%/images/file-32x32.png
 %%WWWDIR%%/images/fork_me.png
 %%WWWDIR%%/index.html
-%%WWWDIR%%/modules/BSON.js
 %%WWWDIR%%/modules/Charts.js
 %%WWWDIR%%/modules/Ciphers.js
 %%WWWDIR%%/modules/Code.js
@@ -31,6 +30,7 @@
 %%WWWDIR%%/modules/PGP.js
 %%WWWDIR%%/modules/PublicKey.js
 %%WWWDIR%%/modules/Regex.js
+%%WWWDIR%%/modules/Serialise.js
 %%WWWDIR%%/modules/Shellcode.js
 %%WWWDIR%%/modules/URL.js
 %%WWWDIR%%/modules/UserAgent.js
