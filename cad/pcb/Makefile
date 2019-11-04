@@ -22,7 +22,7 @@ RUN_DEPENDS=	m4>=1.4.11:devel/m4 \
 		${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:devel/dbus
 
 USES=		gl gmake gnome pkgconfig tk:run shared-mime-info \
-		desktop-file-utils
+		desktop-file-utils xorg
 USE_GL=		gl glu
 USE_GNOME=	intltool cairo pangox-compat
 USE_XORG=	x11 xrender xinerama

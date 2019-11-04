@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png
 
-USES=		gmake jpeg
+USES=		gmake jpeg xorg
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 MAKEFILE=	makefile
 

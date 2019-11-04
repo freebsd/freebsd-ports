@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gl gnome pkgconfig
+USES=		gl gnome pkgconfig xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk20

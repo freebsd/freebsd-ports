@@ -16,7 +16,7 @@ LICENSE_FILE=	${FILESDIR}/license.txt
 
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt
 
-USES=		gmake tk:tea tar:tgz
+USES=		gmake gl tk:tea tar:tgz xorg
 USE_XORG=	ice xext xi xmu
 USE_GL=		gl
 CONFIGURE_ARGS=	--with-opengl

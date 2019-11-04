@@ -21,9 +21,9 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 WRKSRC=		${WRKDIR}/Varkon_${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/sources
 
+USES=		gl gmake xorg
 USE_XORG=	xpm
 USE_GL=		glu
-USES=		gmake
 MAKE_ENV=	PLATFORM=FreeBSD
 ALL_TARGET=	# none
 MAKE_JOBS_UNSAFE=	yes

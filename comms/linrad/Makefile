@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake tar:bzip2
+USES=		gmake tar:bzip2 xorg
 USE_XORG=	x11
 LINRAD_DOCFILES=	z_APM.txt z_BUFFERS.txt z_CALIBRATE.txt \
 			z_COPYRIGHT.txt z_GIFINFO.txt \

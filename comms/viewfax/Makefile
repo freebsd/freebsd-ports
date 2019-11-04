@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.ping.de/pub/unix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display files containing g3 and/or g4 coded fax pages
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/viewfax lib/viewfax.tif \

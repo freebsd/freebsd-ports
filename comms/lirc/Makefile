@@ -13,7 +13,7 @@ COMMENT=	Linux Infrared Remote Control
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
-USES=		alias autoreconf gmake libtool localbase python tar:bzip2
+USES=		alias autoreconf gmake libtool localbase python tar:bzip2 xorg
 USE_XORG=	sm x11 ice
 USE_CSTD=	gnu89
 INSTALL_TARGET=	install-strip

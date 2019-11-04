@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libopencc.so:chinese/opencc \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		cmake compiler:c++11-lib gettext pathfix perl5 pkgconfig
+USES=		cmake compiler:c++11-lib gettext pathfix perl5 pkgconfig xorg
 USE_PERL5=	build patch
 
 USE_CXXSTD=	c++11

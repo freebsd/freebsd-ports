@@ -25,7 +25,7 @@ TCL_USES=		tk:tea
 
 CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 
-USES=	gmake tar:tgz
+USES=	gmake tar:tgz xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 

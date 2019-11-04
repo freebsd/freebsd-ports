@@ -17,7 +17,7 @@ LIB_DEPENDS=	libTix8.4.3.so:x11-toolkits/tix \
 OCC_BROKEN=	Does not compile because of issues with cad/opencascade
 
 USE_LDCONFIG=	yes
-USES=		gmake jpeg libtool localbase tk:tea
+USES=		gl gmake jpeg libtool localbase tk:tea xorg
 USE_GL=		gl glu
 USE_XORG=	x11 xmu xi
 MAKE_JOBS_UNSAFE=	yes
