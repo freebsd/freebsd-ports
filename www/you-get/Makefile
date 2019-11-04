@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	you-get
-PORTVERSION=	0.4.1314
+PORTVERSION=	0.4.1355
 CATEGORIES=	www
 MASTER_SITES=	CHEESESHOP
 
@@ -14,12 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-OPTIONS_DEFINE=	RTMPDUMP
-
 USES=		python:3.4+
 USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	RTMPDUMP
 
 RTMPDUMP_RUN_DEPENDS=	rtmpdump:multimedia/rtmpdump
 
