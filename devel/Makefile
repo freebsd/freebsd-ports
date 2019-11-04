@@ -5015,6 +5015,7 @@
     SUBDIR += py-rubymarshal
     SUBDIR += py-rwt
     SUBDIR += py-rx
+    SUBDIR += py-rx1
     SUBDIR += py-sanetime
     SUBDIR += py-saneyaml
     SUBDIR += py-sarge
