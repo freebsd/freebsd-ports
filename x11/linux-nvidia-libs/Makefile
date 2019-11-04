@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-libs
-DISTVERSION?=	410.104
+DISTVERSION?=	430.50
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11 linux
@@ -16,7 +16,7 @@ COMMENT=	NVidia graphics libraries and programs (Linux version)
 LICENSE_FILE=	${WRKSRC}/LICENSE
 .include "${.CURDIR}/../nvidia-driver/Makefile.common"
 
-.if ${DISTVERSION:R} >= 390
+.if ${DISTVERSION:R} > 390
 PORTSCOUT=	limit:\.\d+$$		# ignore *-no-compat32 distfiles
 .else
 PORTSCOUT=	limit:^${DISTVERSION:R}\.\d+$$
@@ -39,8 +39,10 @@ LINUX_LIBS=	libcuda.so.${PORTVERSION} \
 		libnvidia-ml.so.${PORTVERSION} \
 		libnvidia-opencl.so.${PORTVERSION} \
 		libnvidia-tls.so.${PORTVERSION} \
-		libvdpau_nvidia.so.${PORTVERSION} \
-		tls/libnvidia-tls.so.${PORTVERSION}
+		libvdpau_nvidia.so.${PORTVERSION}
+.if ${NVVERSION} < 415.013
+LINUX_LIBS+=	tls/libnvidia-tls.so.${PORTVERSION}
+.endif
 LINUX_LINKS=	libcuda.so.${PORTVERSION} libcuda.so.1 \
 		libcuda.so.${PORTVERSION} libcuda.so \
 		libnvcuvid.so.${PORTVERSION} libnvcuvid.so.1 \
@@ -57,8 +59,10 @@ LINUX32_LIBS=	libcuda.so.${PORTVERSION} \
 		libnvidia-ml.so.${PORTVERSION} \
 		libnvidia-opencl.so.${PORTVERSION} \
 		libnvidia-tls.so.${PORTVERSION} \
-		libvdpau_nvidia.so.${PORTVERSION} \
-		tls/libnvidia-tls.so.${PORTVERSION}
+		libvdpau_nvidia.so.${PORTVERSION}
+.if ${NVVERSION} < 415.013
+LINUX32_LIBS+=	tls/libnvidia-tls.so.${PORTVERSION}
+.endif
 LINUX32_LINKS=	libcuda.so.${PORTVERSION} libcuda.so.1 \
 		libcuda.so.${PORTVERSION} libcuda.so \
 		libnvidia-ml.so.${PORTVERSION} libnvidia-ml.so.1 \
@@ -118,7 +122,11 @@ PLIST_RE+=	'\,${LINUXBASE}.*libGLESv(1_CM|2)_nvidia\.so,d' \
 		'\,${LINUXBASE}.*libnvidia-fatbinaryloader\.so,d' \
 		'\,${LINUXBASE}.*libnvidia-ptxjitcompiler\.so,d'
 .endif
-.if ${NVVERSION} >= 410.057
+.if ${NVVERSION} >= 418.030
+LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.2
+LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.2 libnvidia-egl-wayland.so.1
+PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.2/'
+.elif ${NVVERSION} >= 410.057
 LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.0
 LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.0 libnvidia-egl-wayland.so.1
 PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.0/'
@@ -376,6 +384,9 @@ do-install:
 .else
 	${REINPLACE_CMD} -E '\,${LINUXBASE},!{/\/lib\/libGLESv[12](_CM)?(\.so)?(_nvidia.so(\.[0-9]|\.[0-9]+\.[0-9]+)?)?$$/d ; \
 		/libEGL_nvidia\.so\.${PORTVERSION}/d;}' ${TMPPLIST}
+.endif
+.if ${NVVERSION} >= 415.013
+	${REINPLACE_CMD} -e '/tls\/libnvidia-tls\.so/d' ${TMPPLIST}
 .endif
 	${REINPLACE_CMD} -E ${PLIST_RE:S/^/-e /} ${TMPPLIST}
 .for f d in ${LINUX_DATA}
