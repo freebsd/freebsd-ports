@@ -25,10 +25,10 @@ RUN_DEPENDS=	p5-Cairo>=0:graphics/p5-Cairo \
 		p5-Glib2>=0:devel/p5-Glib2 \
 		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
+USES=		gnome perl5 xorg
 USE_GNOME=	pango gtk20
 USE_PERL5=	configure
 USE_XORG=	xrender
-USES=		perl5
 
 MAKE_JOBS_UNSAFE=	yes
 

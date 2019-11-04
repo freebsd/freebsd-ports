@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BUILD_DEPENDS=	glfw>=3.3:graphics/glfw
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 
-USES=		cmake gl localbase:ldflags
+USES=		cmake gl localbase:ldflags xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	raysan5
 USE_LDCONFIG=	yes

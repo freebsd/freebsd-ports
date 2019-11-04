@@ -9,7 +9,7 @@ MASTER_SITES=	SF/x3270/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	saper@saper.info
 COMMENT=	IBM 026 Keypunch Emulator for the X Window System
 
-USES=		imake tar:tgz
+USES=		imake tar:tgz xorg
 USE_XORG=	xaw7 xpm xt
 
 PLIST_FILES=	bin/${PORTNAME} \

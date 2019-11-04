@@ -16,7 +16,7 @@ LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/xrolo
 
-USES=		imake tar:Z
+USES=		imake tar:Z xorg
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/xrolo man/man1/xrolo.1.gz
 

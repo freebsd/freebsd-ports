@@ -21,7 +21,7 @@ CONFLICTS=	gnome-utils-2.[0-9]*
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome localbase meson pkgconfig python:3.4+,build \
-		shebangfix tar:xz
+		shebangfix tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11 xext
 SHEBANG_FILES=	build-aux/postinstall.py

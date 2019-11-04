@@ -12,7 +12,7 @@ COMMENT=	Synchronizes the two copy/paste buffers used by X applications
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf gmake libtool xorg
 USE_XORG=	ice sm x11 xaw xext xmu xt
 USE_GITHUB=	yes
 GH_ACCOUNT=	sigmike

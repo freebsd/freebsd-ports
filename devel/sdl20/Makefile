@@ -222,6 +222,7 @@ CONFIGURE_ARGS+=	--enable-video-x11 \
 			--enable-video-x11-scrnsaver \
 			--enable-video-x11-xshape \
 			--enable-video-x11-vm
+USES+=		xorg
 USE_XORG+=	xinerama xcursor xi xrandr xscrnsaver xxf86vm xext
 .else
 CONFIGURE_ARGS+=	--disable-video-x11 \

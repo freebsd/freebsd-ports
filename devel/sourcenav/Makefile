@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=		fails to build: undefined reference to fpsetround
 
-USES=		shebangfix tar:bzip2
+USES=		shebangfix tar:bzip2 xorg
 SHEBANG_FILES=	${WRKSRC}/snavigator/demo/c++/contrib/perl/sample_client
 USE_XORG=	x11
 

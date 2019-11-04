@@ -10,7 +10,7 @@ DISTNAME=	${QSCI2_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 port of the Scintilla C++ editor class
 
-USES=		compiler:c++11-lang qmake pyqt:5 qt:5
+USES=		compiler:c++11-lang gl qmake pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	#
 USE_QT=		buildtools_build core gui printsupport widgets

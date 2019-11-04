@@ -43,9 +43,11 @@ EIFFEL_ARCH=		x86
 
 .if ${EIFFEL_ARCH} == x86
 LIB_DEPENDS=	libc.so.5:misc/compat5x
+USES+=		gnome xorg
 USE_GNOME=	gtk20 pangox-compat
 USE_XORG=	x11 xcursor xext xft xi xinerama xrandr xrender xtst
 .elif ${EIFFEL_ARCH} == x86_64
+USES+=		gnome xorg
 LIB_DEPENDS=	libc.so.6:misc/compat6x
 USE_GNOME=	gtk20
 USE_XORG=	x11 xtst

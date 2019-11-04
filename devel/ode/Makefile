@@ -14,7 +14,7 @@ COMMENT=	Articulated rigid body dynamics library
 LICENSE=	LGPL21 BSD3CLAUSE
 LICENSE_COMB=	dual
 
-USES=		tar:bzip2 libtool pathfix
+USES=		gl tar:bzip2 libtool pathfix
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared

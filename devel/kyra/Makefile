@@ -22,7 +22,7 @@ BROKEN_armv7=		invalid output constraint =A in assembler
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		compiler gmake jpeg zip
+USES=		compiler gl gmake jpeg sdl zip
 USE_GL=		gl
 USE_SDL=	image sdl
 

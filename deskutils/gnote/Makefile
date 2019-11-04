@@ -24,7 +24,7 @@ PORTSCOUT=	limitw:1,even
 USE_GNOME=	gtkmm30 intltool libxml2 libxslt
 USE_XORG=	x11
 USES=		desktop-file-utils compiler:c++11-lib gettext gmake \
-		gnome libtool localbase pathfix pkgconfig tar:xz
+		gnome libtool localbase pathfix pkgconfig tar:xz xorg
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

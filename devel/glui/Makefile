@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Source/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLUT-based C++ user interface library
 
-USES=		gmake tar:tgz
+USES=		gl gmake tar:tgz xorg
 USE_GL=		glut
 USE_XORG=	xmu xext x11 xi
 USE_LDCONFIG=	yes

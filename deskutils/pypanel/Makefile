@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:x11-toolkits/py-xlib@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		python:2.7
+USES=		python:2.7 xorg
 USE_PYTHON=	autoplist distutils
 USE_XORG=	xft
 

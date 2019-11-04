@@ -15,7 +15,7 @@ LICENSE=	ZLIB
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		autoreconf libtool pathfix
+USES=		autoreconf libtool pathfix xorg
 USE_XORG=	x11 xaw
 USE_LDCONFIG=	yes
 

@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 PORTSCOUT=	limit:^0\.7\.
 
-USES=		gmake openal dos2unix lua:51
+USES=		gmake gl openal dos2unix lua:51 sdl
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
