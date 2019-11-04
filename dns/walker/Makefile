@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://josefsson.org/walker/releases/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recover zone file information from servers that use DNSSEC
 
 LICENSE=	GPLv2+

@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	swipl-${PORTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Edinburgh-style Prolog compiler
 
 LICENSE=	BSD2CLAUSE

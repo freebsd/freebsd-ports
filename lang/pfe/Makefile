@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of ANSI Forth
 
 BROKEN_aarch64=		fails to compile: implicit declaration of function 'PFE_SBR_COMPILE_EXIT' is invalid in C99

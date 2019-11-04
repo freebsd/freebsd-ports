@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU database manager
 
 LICENSE=	GPLv3+

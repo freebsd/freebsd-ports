@@ -5,7 +5,7 @@ PORTVERSION=	20140220
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/LOCAL_PORTS/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PGP signing, verification, encryption, and decryption program
 
 USES=		libtool ssl

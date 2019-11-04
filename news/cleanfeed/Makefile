@@ -6,7 +6,7 @@ PORTVERSION=	20110224
 CATEGORIES=	news
 MASTER_SITES=	http://www.mixmin.net/cleanfeed/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spam filter for Usenet news servers
 
 RUN_DEPENDS=	${LOCALBASE}/news/bin/innd:news/inn

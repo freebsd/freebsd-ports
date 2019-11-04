@@ -7,7 +7,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	ver-
 CATEGORIES=	lang
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight implementation of Standard ML
 
 BROKEN_mips=		does not configure: this architecture seems to be neither big endian nor little endian

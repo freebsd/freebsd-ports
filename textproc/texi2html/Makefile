@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Texinfo to HTML converter
 
 GNU_CONFIGURE=	yes

@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to indent the C preprocessor directives
 
 USES=		charsetfix gmake tar:xz	# gmake is needed for -jX builds

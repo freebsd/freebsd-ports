@@ -6,7 +6,7 @@ PORTVERSION=	0.3.4
 CATEGORIES=	misc
 MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small collection of programs that operate on patch files
 
 RUN_DEPENDS=	bash:shells/bash

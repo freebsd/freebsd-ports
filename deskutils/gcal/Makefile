@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Gregorian calendar program
 
 LICENSE=	GPLv3+

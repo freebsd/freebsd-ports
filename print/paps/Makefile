@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UTF-8 to PostScript converter using Pango
 
 PLIST_FILES=	bin/paps lib/libpaps.a include/libpaps.h \

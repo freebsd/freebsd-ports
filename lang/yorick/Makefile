@@ -7,7 +7,7 @@ DISTVERSION=	2_2_04
 PORTREVISION=	2
 CATEGORIES=	lang math
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interpreted language for scientific simulations
 
 LICENSE=	BSD3CLAUSE

@@ -6,7 +6,7 @@ PORTVERSION=	0.32
 CATEGORIES=	security
 MASTER_SITES=	http://www.mew.org/~kazu/proj/pgpdump/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PGP packet visualizer
 
 LICENSE=	BSD3CLAUSE

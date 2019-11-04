@@ -9,7 +9,7 @@ MASTER_SITES=	GNU/chess
 # The DISTFILES here is explicitly needed because it can be extended later.
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"Classic" Gnu Chess
 
 LICENSE=	GPLv3+

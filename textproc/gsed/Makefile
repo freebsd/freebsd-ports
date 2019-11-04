@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	g
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU stream editor
 
 LICENSE=	GPLv3+ GFDL

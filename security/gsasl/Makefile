@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU SASL Library
 
 LIB_DEPENDS=	libidn.so:dns/libidn \

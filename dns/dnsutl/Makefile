@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs to make using DNS easier
 
 LIB_DEPENDS=	libexplain.so:devel/libexplain

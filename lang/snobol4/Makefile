@@ -6,7 +6,7 @@ PORTVERSION=	2.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ultimate.com/snobol/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of Macro SNOBOL4, supports full SNOBOL4 plus SPITBOL
 
 HAS_CONFIGURE=	yes

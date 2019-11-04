@@ -6,7 +6,7 @@ PORTVERSION=	5.0.0
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU version of AWK scripting language
 
 LICENSE=	GPLv3+

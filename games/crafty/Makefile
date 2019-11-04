@@ -13,7 +13,7 @@ DISTFILES=	crafty-${PORTVERSION}.zip:src \
 DIST_SUBDIR=	crafty
 EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chess program for playing and analyzing games
 
 BROKEN_aarch64=		fails to compile: invokes amd64 assembler

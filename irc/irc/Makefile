@@ -10,7 +10,7 @@ MASTER_SITES=	http://ftp.irc.org/ftp/irc/server/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The "Internet Relay Chat" Server
 
 CONFLICTS_INSTALL=	charybdis-[0-9]* ircd-hybrid-[0-9]* Nefarious-[0-9]* \

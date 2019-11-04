@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	SF/adc-${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email archiver that parses mailboxes and performs actions
 
 LICENSE=	GPLv2
