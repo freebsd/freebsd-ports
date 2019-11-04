@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
-USES=		gnome
+USES=		gnome xorg
 USE_XORG=	x11 xext
 
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"

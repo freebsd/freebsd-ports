@@ -22,7 +22,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libinotify.so:devel/libinotify \
 		libpolkit-gobject-1.so:sysutils/polkit
 
-USES=		gl gnome
+USES=		gl gnome xorg
 
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 pangox-compat

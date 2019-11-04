@@ -31,8 +31,8 @@ RUN_DEPENDS=	geoclue>=0:net/geoclue
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake gnome libtool \
-		localbase pathfix pkgconfig tar:xz
+USES=		desktop-file-utils gettext gl gmake gnome libtool \
+		localbase pathfix pkgconfig tar:xz xorg
 USE_GNOME=	cairo gtk30 intltool libxml2
 USE_GL=		egl
 USE_LDCONFIG=	yes

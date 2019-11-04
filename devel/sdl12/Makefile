@@ -60,6 +60,7 @@ SVGALIB_LIB_DEPENDS=		libvga.so:graphics/svgalib
 VGL_CONFIGURE_ENABLE=		video-vgl
 VGL_VARS=			PKGMESSAGE+=pkg-message.vgl
 X11_CONFIGURE_ENABLE=		video-x11
+X11_USES=			xorg
 X11_USE=			XORG=x11,xrender,xrandr,xorgproto
 
 post-patch:

@@ -14,8 +14,8 @@ COMMENT=	C++ wrapper for gconf2 API library
 LIB_DEPENDS=	libglibmm-2.4.so:devel/glibmm
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgtkmm-2.4.so.1:x11-toolkits/gtkmm24
 
-USES=		compiler:c++11-lang gmake libtool:keepla pathfix pkgconfig \
-		tar:bzip2 gnome xorg
+USES=		compiler:c++11-lang gmake gnome libtool:keepla pathfix \
+		pkgconfig tar:bzip2 xorg
 USE_CXXSTD=	c++11
 USE_XORG=	x11
 USE_GNOME=	gconf2 referencehack

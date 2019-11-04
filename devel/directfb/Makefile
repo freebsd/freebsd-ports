@@ -50,6 +50,7 @@ CONFIGURE_ARGS=	--disable-osx --disable-extra-warnings --disable-profiling \
 DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
+X11_USES=	xorg
 X11_USE=	XORG=x11,xext,xorgproto
 X11_CONFIGURE_ENABLE=	x11
 SDL_USE=	sdl=sdl

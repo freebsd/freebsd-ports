@@ -12,7 +12,7 @@ COMMENT=	Stroke translation library
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool autoreconf
+USES=		gmake libtool autoreconf xorg
 USE_CSTD=	gnu89
 USE_XORG=	x11
 USE_LDCONFIG=	yes

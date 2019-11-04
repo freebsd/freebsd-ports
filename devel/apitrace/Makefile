@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake compiler:c++11-lang pkgconfig python:2.7 shebangfix
+USES=		cmake compiler:c++11-lang pkgconfig python:2.7 shebangfix xorg
 USE_GITHUB=	yes
 USE_XORG=	x11
 

@@ -13,7 +13,7 @@ COMMENT=	AfterStep dockable version of XPostIt
 LICENSE=	GPLv2+
 
 USE_XORG=	xpm xaw xext x11
-USES=		gmake jpeg
+USES=		gmake jpeg xorg
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/aspostit man/man1/aspostit.1.gz

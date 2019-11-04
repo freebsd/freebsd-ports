@@ -22,7 +22,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 RUN_DEPENDS=	dbus-daemon:devel/dbus \
 		gsettings-desktop-schemas>=3.28.0:devel/gsettings-desktop-schemas
 
-USES=		gettext-runtime gmake libtool pkgconfig
+USES=		gettext-runtime gmake gnome libtool pkgconfig xorg
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_XORG=	pixman x11
 

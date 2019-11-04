@@ -33,8 +33,8 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 STATISTICS_CONFIGURE_ENABLE=	statistics
 
-USES=		autoreconf compiler:c++11-lang gmake jpeg libtool \
-		localbase:ldflag pkgconfig python ssl tar:bzip2
+USES=		autoreconf compiler:c++11-lang gmake gnome jpeg libtool \
+		localbase:ldflag pkgconfig python ssl tar:bzip2 xorg
 
 USE_GNOME=	glib20
 USE_XORG=	pixman

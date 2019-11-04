@@ -16,7 +16,7 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.AL
 BROKEN_armv6=		fails to compile: build.xml: compilation failed
 BROKEN_armv7=		fails to compile: build.xml: compilation failed
 
-USES=		autoreconf:build gmake libtool
+USES=		autoreconf:build gmake libtool xorg
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	8

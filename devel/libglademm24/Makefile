@@ -16,10 +16,10 @@ OPTIONS_DEFINE=	DOCS
 
 LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
-USE_XORG=	x11 ice
-USES=		compiler:c++11-lang gmake libtool:keepla pathfix pkgconfig \
-		tar:bzip2
+USES=		compiler:c++11-lang gmake gnome libtool:keepla pathfix \
+		pkgconfig tar:bzip2 xorg
 USE_CXXSTD=	c++11
+USE_XORG=	x11 ice
 USE_GNOME=	libglade2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

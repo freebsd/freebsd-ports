@@ -13,6 +13,7 @@ COMMENT=	Reminds you to take wrist breaks
 LICENSE=	GPLv2 # only
 
 GNU_CONFIGURE=	yes
+USES=		xorg
 USE_XORG=	ice sm x11 xau xdmcp xext xinerama
 
 PLIST_FILES=	bin/xwrits \

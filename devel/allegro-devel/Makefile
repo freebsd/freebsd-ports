@@ -24,7 +24,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 		libphysfs.so:devel/physfs
 
 USES=		cmake:insource compiler:c++11-lang gl gnome jpeg \
-		openal:soft pkgconfig
+		openal:soft pkgconfig xorg
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_GL=		glu
 USE_GNOME=	gtk20

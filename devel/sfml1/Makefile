@@ -19,7 +19,7 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
-USES=		gmake jpeg gl openal:al pkgconfig dos2unix
+USES=		gmake jpeg gl openal:al pkgconfig dos2unix xorg
 DOS2UNIX_GLOB=	Makefile ResourcePtr.inl
 USE_XORG=	x11 xrandr
 USE_GL=		gl glu

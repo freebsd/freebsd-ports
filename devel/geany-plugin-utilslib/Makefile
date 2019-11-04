@@ -12,6 +12,7 @@ OPTIONS_DEFINE=	DOCS
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 
 .if ${FLAVOR} == gtk2
+USES+=		xorg
 USE_GNOME+=	vte
 USE_XORG+=	x11 xext
 .endif

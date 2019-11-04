@@ -49,8 +49,9 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}html5-parser>=0.4.3:www/py-html5-parser@${PY_FLAVOR} \
 		pdftohtml:graphics/poppler-utils
 
-USES=		desktop-file-utils gettext-runtime gl gnome localbase:ldflags pkgconfig \
-		python:2.7 pyqt:5 qt:5 shared-mime-info shebangfix ssl tar:xz
+USES=		desktop-file-utils gettext-runtime gl gnome localbase:ldflags \
+		pkgconfig python:2.7 pyqt:5 qt:5 shared-mime-info shebangfix \
+		ssl tar:xz xorg
 USE_RC_SUBR=	calibre
 USE_PYQT=	core gui network sip svg webengine widgets xmlpatterns
 USE_QT=		buildtools_build core dbus gui qmake_build widgets

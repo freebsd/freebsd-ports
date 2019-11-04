@@ -13,7 +13,7 @@ COMMENT=	Lightweight GTK+ clipboard manager
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		localbase pkgconfig
+USES=		gnome localbase pkgconfig xorg
 USE_GNOME=	glib20 gtk20 pango
 USE_XORG=	x11
 

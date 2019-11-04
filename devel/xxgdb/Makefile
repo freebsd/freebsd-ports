@@ -10,7 +10,7 @@ MASTER_SITES=	XCONTRIB/utilities
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	X window interface for gdb
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
 # This isn't included in the original Imakefile for some reason.

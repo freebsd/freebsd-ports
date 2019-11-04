@@ -16,7 +16,7 @@ LIB_DEPENDS=	libIL.so:graphics/devil \
 		libfreetype.so:print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
-USES=		tar:bzip2 gmake dos2unix lua:51
+USES=		tar:bzip2 gmake gl dos2unix lua:51 sdl
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes

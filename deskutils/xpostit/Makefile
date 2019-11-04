@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	PostIt (R) messages onto your X11 screen
 
-USES=		imake tar:Z
+USES=		imake tar:Z xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 WRKSRC=		${WRKDIR}/xpostit
 

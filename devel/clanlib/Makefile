@@ -22,8 +22,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpcre.so:devel/pcre
 
-USES=		compiler:c++11-lib gmake jpeg libtool localbase:ldflags \
-		pathfix pkgconfig sqlite tar:tgz
+USES=		compiler:c++11-lib gl gmake jpeg libtool localbase:ldflags \
+		pathfix pkgconfig sqlite tar:tgz xorg
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 USE_GL=		yes

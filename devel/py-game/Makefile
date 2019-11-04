@@ -22,7 +22,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 RUN_DEPENDS=	${PYNUMPY} \
 		v4l_compat>0:multimedia/v4l_compat
 
-USES=		jpeg python sdl
+USES=		jpeg python sdl xorg
 USE_SDL=	ttf image mixer
 USE_PYTHON=	autoplist distutils
 USE_XORG=	x11

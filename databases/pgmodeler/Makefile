@@ -13,7 +13,7 @@ COMMENT=	PostgreSQL Database Modeler
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lib pgsql qmake pkgconfig gmake qt:5
+USES=		compiler:c++11-lib gl pgsql qmake pkgconfig gmake qt:5 xorg
 USE_GITHUB=	yes
 
 USE_GNOME=	libxml2

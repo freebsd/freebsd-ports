@@ -14,6 +14,7 @@ LICENSE=	PD
 
 CONFLICTS=	pdcurses-the-[0-9]*
 
+USES=		xorg
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xext sm ice xt xaw xmu xpm
 GNU_CONFIGURE=	yes

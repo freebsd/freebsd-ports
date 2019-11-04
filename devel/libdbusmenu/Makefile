@@ -23,7 +23,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 
 GNU_CONFIGURE=	yes
 USES=		compiler gmake gnome libtool pathfix pkgconfig python:run \
-		shebangfix
+		shebangfix xorg
 USE_GNOME=	gnomedocutils:build glib20 intltool intlhack libxslt \
 		introspection:build gtk30
 USE_XORG=	x11

@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libspectre.so:print/libspectre \
 		libfribidi.so:converters/fribidi
 
-USES=		gettext gmake gnome libtool pathfix perl5 pkgconfig shebangfix tar:xz
+USES=		gettext gmake gnome libtool pathfix perl5 pkgconfig \
+		shebangfix tar:xz xorg
 USE_GNOME=	cairo gtk30 intlhack introspection:build libgsf librsvg2 libxslt
 USE_XORG=	xrender xext
 GNU_CONFIGURE=	yes

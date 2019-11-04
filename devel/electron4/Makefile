@@ -50,7 +50,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 TEST_DEPENDS=	npm:www/npm-node10
 
 USES=		bison dos2unix gettext-tools gl gnome jpeg localbase:ldflags \
-		ninja pkgconfig python:2.7,build tar:xz
+		ninja pkgconfig python:2.7,build tar:xz xorg
 
 CONFLICTS_INSTALL=	electron5
 

@@ -11,7 +11,7 @@ MASTER_SITES=	SUNSITE/apps/editors/X \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Borland-like IDE programming environment
 
-USES=		desthack ncurses
+USES=		desthack ncurses xorg
 DESTDIRNAME=	STAGEDIR
 USE_XORG=	sm ice x11
 GNU_CONFIGURE=	yes
