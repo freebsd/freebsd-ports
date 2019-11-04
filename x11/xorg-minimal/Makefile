@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	x11 x11-servers
 PKGNAMESUFFIX=	-minimal
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org minimal distribution metaport
 
 USES=		metaport
