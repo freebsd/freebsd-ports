@@ -4502,6 +4502,7 @@
     SUBDIR += py-grab
     SUBDIR += py-graphene
     SUBDIR += py-graphene-django
+    SUBDIR += py-graphene-sqlalchemy
     SUBDIR += py-graphql-core
     SUBDIR += py-graphql-relay
     SUBDIR += py-greenlet
