@@ -106,6 +106,7 @@ man/man1/lynx.1.gz
 %%NLS%%share/locale/ja/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/lynx.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/lynx.mo
