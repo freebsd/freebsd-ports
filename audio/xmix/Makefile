@@ -13,7 +13,7 @@ PATCHFILES=	xmix-2.1.mixers.patch
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mixer for X Window System
 
-USES=		imake
+USES=		imake xorg
 WRKSRC=		${WRKDIR}/xmix
 USE_XORG=	x11 xext xmu xaw xt sm ice
 

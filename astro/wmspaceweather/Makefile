@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Time-modules>=0:devel/p5-Time-modules
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSpaceWeather
 
-USES=		shebangfix
+USES=		shebangfix xorg
 SHEBANG_FILES=	GetKp
 USE_XORG=	x11 xext xpm
 ALL_TARGET=	clean all

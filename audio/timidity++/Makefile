@@ -36,6 +36,7 @@ CONFIGURE_ARGS+=	--enable-audio=oss,vorbis
 EAWPLUS_DESC=		Collection of Gravis Ultrasound MIDI patches
 EAWPLUS_RUN_DEPENDS=	eawplus>0:audio/eawplus
 X11_LIB_DEPENDS=	libpng.so:graphics/png
+X11_USES=		xorg
 X11_USE=		xorg=x11,xext
 X11_CONFIGURE_ON=	--with-x --enable-spectrogram --enable-wrd \
 			--enable-dynamic

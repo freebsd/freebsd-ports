@@ -14,7 +14,7 @@ COMMENT=	Audio player/recorder/editor for the X Window System
 OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-981109
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xaw
 MAKE_JOBS_UNSAFE=	yes
 

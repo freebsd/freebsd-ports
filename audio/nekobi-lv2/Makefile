@@ -16,7 +16,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		compiler:c++11-lang gl gmake localbase pkgconfig shebangfix
+USES=		compiler:c++11-lang gl gmake localbase pkgconfig shebangfix xorg
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	DISTRHO

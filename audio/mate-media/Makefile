@@ -23,8 +23,8 @@ LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool localbase pathfix \
-		pkgconfig tar:xz
+USES=		gettext gmake gnome libtool localbase mate pathfix \
+		pkgconfig tar:xz xorg
 USE_MATE=	desktop mixer panel
 USE_GNOME=	cairo glib20 gtk30 intlhack libxml2
 USE_XORG=	x11

@@ -14,7 +14,7 @@ COMMENT=	Open Look-based CD player tool
 LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/workman
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/workman lib/help/workman.info man/man1/workman.1.gz man/man5/workmandb.5.gz
 

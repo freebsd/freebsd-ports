@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
-USES=		gnome waf localbase:ldflags pkgconfig
+USES=		gnome waf localbase:ldflags pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	mxmilkb
 GH_TAGNAME=	543a95d

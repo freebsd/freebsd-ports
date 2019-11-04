@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdockapp.so:x11-wm/libdockapp
 
+USES=		xorg
 USE_XORG=	xext xpm x11
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \

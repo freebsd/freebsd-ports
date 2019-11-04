@@ -18,7 +18,7 @@ ONLY_FOR_ARCHS_REASON=	assembly only for these architectures
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
-USES=		compiler:c11 gmake gl gnome iconv:wchar_t pkgconfig
+USES=		compiler:c11 gmake gl gnome iconv:wchar_t pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	sadko4u
 USE_GCC=	any # clang breaks: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=232911

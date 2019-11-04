@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libwraster.so:x11-wm/libwraster
 
+USES=		xorg
 USE_XORG=	x11 xext xpm
 
 PLIST_FILES=	bin/wmglobe \

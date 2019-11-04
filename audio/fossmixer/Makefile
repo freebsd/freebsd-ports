@@ -21,7 +21,7 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libltdl.so:devel/libltdl \
 		libfreetype.so:print/freetype2
 
-USES=		gettext-runtime gl perl5
+USES=		gettext-runtime gl perl5 xorg
 USE_GL=		gl
 USE_PERL5=	patch build
 USE_XORG=	x11 xext xrandr

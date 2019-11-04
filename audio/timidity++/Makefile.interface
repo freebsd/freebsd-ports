@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=\
 		--with-tk-libs=${LOCALBASE}/lib
 .endif
 
-USES+=		shebangfix
+USES+=		shebangfix xorg
 SHEBANG_FILES=	interface/tkmidity.ptcl interface/tkpanel.tcl
 SHEBANG_LANG=	wish
 wish_OLD_CMD=	/usr/bin/wish
@@ -107,6 +107,7 @@ LINK=		xawmidi
 
 LIB_DEPENDS+=	libXaw3d.so:x11-toolkits/Xaw3d
 
+USES+=		xorg
 USE_XORG=	x11 xext xmu xt sm ice xpm
 
 DESKTOP_ENTRIES="XawMidi" "" "" "${LINK}" "AudioVideo;Audio;Midi;" ""
@@ -115,6 +116,7 @@ DESKTOP_ENTRIES="XawMidi" "" "" "${LINK}" "AudioVideo;Audio;Midi;" ""
 .if ${INTERFACE} == "xskin"
 LINK=		xskinmidi
 
+USES=		xorg
 USE_XORG=	x11
 
 DESKTOP_ENTRIES="XSkinMidi" "" "" "${LINK}" "AudioVideo;Audio;Midi;" ""

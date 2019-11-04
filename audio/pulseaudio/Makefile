@@ -24,7 +24,7 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libck-connector.so:sysutils/consolekit2
 
 USES=		compiler:c11 cpe gettext gmake gnome iconv libtool \
-		pathfix pkgconfig python:run shebangfix ssl tar:xz
+		pathfix pkgconfig python:run shebangfix ssl tar:xz xorg
 
 USE_GNOME=	glib20
 USE_XORG=	ice sm x11 xcb xtst

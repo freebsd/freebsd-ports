@@ -19,7 +19,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libFOX-1.7.so:x11-toolkits/fox17
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
-		localbase:ldflags pkgconfig shebangfix sqlite
+		localbase:ldflags pkgconfig shebangfix sqlite xorg
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11
 
@@ -78,6 +78,7 @@ OGG_LIB_DEPENDS=	libogg.so:audio/libogg
 OGG_CMAKE_BOOL=		WITH_OGG
 
 OPENGL_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
+OPENGL_USES=		gl
 OPENGL_USE=		GL=gl,glu
 OPENGL_CMAKE_BOOL=	WITH_OPENGL
 

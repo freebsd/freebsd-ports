@@ -11,7 +11,7 @@ COMMENT=	Sound card oscilloscope
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX} --sysconfdir=${STAGEDIR}${PREFIX}
-USES=		gmake pkgconfig tar:tgz
+USES=		gmake gnome pkgconfig tar:tgz xorg
 USE_GNOME=	gtk20
 USE_XORG=	x11
 

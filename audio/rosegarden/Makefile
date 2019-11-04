@@ -30,7 +30,7 @@ RUN_DEPENDS=	dssi_osc_update:audio/dssi \
 
 USES=		alias cmake compiler:c++11-lib desktop-file-utils \
 		localbase:ldflags pkgconfig shared-mime-info tar:bzip2 \
-		qt:5
+		qt:5 xorg
 USE_QT=		core gui network printsupport testlib widgets xml \
 		buildtools_build linguisttools_build qmake_build
 USE_XORG=	ice sm x11 xext
