@@ -1354,13 +1354,6 @@ DEV_WARNING+=		"Using USE_XORG alone is deprecated, please use USES=xorg"
 USES+=	xorg
 .endif
 
-.if defined(XORG_CAT)
-DEV_WARNING+=		"Using XORG_CAT is deprecated, please use USES=xorg-cat:category"
-.if !defined(USES) || !${USES:Mxorg-cat*}
-USES+=	xorg-cat:${XORG_CAT}
-.endif
-.endif
-
 .if defined(USE_PHP) && (!defined(USES) || ( defined(USES) && !${USES:Mphp*} ))
 DEV_WARNING+=		"Using USE_PHP alone is deprecated, please use USES=php"
 USES+=	php
