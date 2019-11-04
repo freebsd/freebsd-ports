@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/doc/public/LICENSE
 LIB_DEPENDS=	libpcre.so:devel/pcre
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++11-lang gmake mysql perl5 python shebangfix ssl
+USES=		compiler:c++11-lang gmake mysql perl5 python shebangfix ssl xorg
 SHEBANG_FILES=	src/app/blast/get_species_taxids.sh src/app/blast/legacy_blast.pl src/app/blast/update_blastdb.pl src/app/winmasker/windowmasker_2.2.22_adapter.py
 USE_XORG=	x11 xpm
 

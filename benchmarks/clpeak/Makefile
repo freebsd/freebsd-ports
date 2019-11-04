@@ -22,8 +22,8 @@ GH_ACCOUNT=	krrishnarraj
 GH_TAGNAME=	75c8746
 
 USE_LDCONFIG=	yes
+USES=		cmake:insource gl
 USE_GL=		gl
-USES=		cmake:insource
 
 CXXFLAGS+=	-std=c++11
 

@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 PORTSCOUT=	skipv:4.6.1.3
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake jpeg
+USES=		gmake jpeg xorg
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 
 MAKE_ENV=	HELPFILE='-DDEFAULT_HELPFILE=\"${DATADIR}/seaview.html\"' \
