@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export JAVA_VERSION=%%JAVA_VER%%
+
+exec java -cp %%JAVALIBDIR%%/jhall.jar com.sun.java.help.search.QueryEngine "$@"

@@ -2,49 +2,47 @@
 # $FreeBSD$
 
 PORTNAME=	javahelp
-PORTVERSION=	2.0.05
-PORTREVISION=	1
+PORTVERSION=	2.0.05.20170719
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.java.net/javadesktop/javahelp/
-DISTNAME=	${PORTNAME}2_0_05
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Online help support for Java applications
 
-USES=		zip
+LICENSE=	CDDL
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${TOMCAT_jsp}:${TOMCAT_PORT}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	javaee
+GH_TAGNAME=	3ca862d
 USE_JAVA=	yes
-JAVA_RUN=	yes
-NO_BUILD=	yes
+USE_ANT=	yes
 
-WRKSRC=		${WRKDIR}/jh2.0
+JAVA_VER=	1.${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/}
+TOMCAT_VER?=	8.5
+TOMCAT_PORT=	www/tomcat${TOMCAT_VER:S/.0//:S/.//}
+TOMCAT_DIR=	${LOCALBASE}/apache-tomcat-${TOMCAT_VER}
+TOMCAT_jsp=	${TOMCAT_DIR}/lib/jsp-api.jar
+TOMCAT_servlet=	${TOMCAT_DIR}/lib/servlet-api.jar
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+MAKE_ARGS=	-Djsp-jar=${TOMCAT_jsp} \
+		-Dfile.reference.jsp-api.jar=${TOMCAT_jsp} \
+		-Dservlet-jar=${TOMCAT_servlet} \
+		-Dfile.reference.servlet-api.jar=${TOMCAT_servlet} \
+		-Djavac.target=${JAVA_VER} \
+		-Ddefault.javac.target=${JAVA_VER} \
+		-Dtomcat-zip-present=true
 
-post-patch:
-	${REINPLACE_CMD} -e 's|$$JAVAHELP_HOME/javahelp/bin/|${JAVAJARDIR}/|' ${WRKSRC}/javahelp/bin/jhindexer
-	${REINPLACE_CMD} -e 's|$$JAVAHELP_HOME/javahelp/bin/|${JAVAJARDIR}/|' ${WRKSRC}/javahelp/bin/jhsearch
-	(cd ${WRKSRC} && ${RM} -r `${FIND} . -type d -name .svn`)
+BUILD_WRKSRC=	${WRKSRC}/javahelp_nbproject
+SUB_FILES=	jhindexer \
+		jhsearch
+SUB_LIST=	JAVA_VER=${JAVA_VER}+
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/LICENSE.html ${STAGEDIR}${JAVAJARDIR}/LICENSE.${PORTNAME}.html
-	${INSTALL_SCRIPT} ${WRKSRC}/javahelp/bin/jhindexer ${STAGEDIR}${PREFIX}/bin/jhindexer
-	${INSTALL_SCRIPT} ${WRKSRC}/javahelp/bin/jhsearch ${STAGEDIR}${PREFIX}/bin/jhsearch
-	${INSTALL_DATA} ${WRKSRC}/javahelp/bin/jhindexer.jar ${STAGEDIR}${JAVAJARDIR}/jhindexer.jar
-	${INSTALL_DATA} ${WRKSRC}/javahelp/bin/jhsearch.jar ${STAGEDIR}${JAVAJARDIR}/jhsearch.jar
-	${INSTALL_DATA} ${WRKSRC}/javahelp/lib/jh.jar ${STAGEDIR}${JAVAJARDIR}/jh.jar
-	${INSTALL_DATA} ${WRKSRC}/javahelp/lib/jhall.jar ${STAGEDIR}${JAVAJARDIR}/jhall.jar
-	${INSTALL_DATA} ${WRKSRC}/javahelp/lib/jhbasic.jar ${STAGEDIR}${JAVAJARDIR}/jhbasic.jar
-	${INSTALL_DATA} ${WRKSRC}/javahelp/lib/jsearch.jar ${STAGEDIR}${JAVAJARDIR}/jsearch.jar
+	${INSTALL_SCRIPT} ${WRKDIR}/jhindexer ${WRKDIR}/jhsearch ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${BUILD_WRKSRC}/dist/lib/*.jar ${STAGEDIR}${JAVAJARDIR}/
 	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/dtd
-	${INSTALL_DATA} ${WRKSRC}/javahelp/lib/dtd/favorites_2_0.dtd ${STAGEDIR}${JAVAJARDIR}/dtd/favorites_2_0.dtd
-	${INSTALL_DATA} ${WRKSRC}/javahelp/lib/dtd/helpset_2_0.dtd ${STAGEDIR}${JAVAJARDIR}/dtd/helpset_2_0.dtd
-	${INSTALL_DATA} ${WRKSRC}/javahelp/lib/dtd/index_2_0.dtd ${STAGEDIR}${JAVAJARDIR}/dtd/index_2_0.dtd
-	${INSTALL_DATA} ${WRKSRC}/javahelp/lib/dtd/map_2_0.dtd ${STAGEDIR}${JAVAJARDIR}/dtd/map_2_0.dtd
-	${INSTALL_DATA} ${WRKSRC}/javahelp/lib/dtd/toc_2_0.dtd ${STAGEDIR}${JAVAJARDIR}/dtd/toc_2_0.dtd
-	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.html ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/demos/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
+	${INSTALL_DATA} ${WRKSRC}/jhMaster/JavaHelp/doc/public-spec/dtd/*_2_0.dtd ${STAGEDIR}${JAVAJARDIR}/dtd/
 
 .include <bsd.port.mk>
