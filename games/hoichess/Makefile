@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.hoicher.de/hoichess/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/hoichess/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Not-so-very-strong chess engine
 
 USES=		gmake perl5 readline

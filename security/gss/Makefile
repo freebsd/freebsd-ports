@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Generic Security Service Library
 
 LIB_DEPENDS=	libshishi.so:security/shishi

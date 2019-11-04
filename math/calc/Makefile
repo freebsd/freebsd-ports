@@ -5,7 +5,7 @@ PORTNAME=	calc
 PORTVERSION=	2.12.7.2
 CATEGORIES=	math
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrary precision calculator
 
 LICENSE=	LGPL21

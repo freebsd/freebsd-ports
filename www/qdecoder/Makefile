@@ -6,7 +6,7 @@ PORTVERSION=	12.0.5
 DISTVERSIONPREFIX=	r
 CATEGORIES=	www
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ language library including CGI supports
 
 USE_GITHUB=	yes

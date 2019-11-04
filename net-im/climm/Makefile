@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.climm.org/source/ \
 		http://http.bg.climm.org/source/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI-based Multi-Messenger
 
 USES=		gmake pkgconfig

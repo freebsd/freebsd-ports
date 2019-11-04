@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/empserver/${DISTNAME}
 DISTNAME=	empire-${PORTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Long term multiplayer strategy game
 
 LICENSE=	GPLv3+

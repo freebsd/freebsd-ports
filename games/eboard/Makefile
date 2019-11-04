@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		eboard-extras-2.tar.gz:p2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 
 LIB_DEPENDS=	libpng.so:graphics/png

@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	SF/ooc/ooc2/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${BITS}-${PORTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimizing Oberon-2 compiler of University of Kaiserslautern, Germany
 
 LICENSE=	GPLv2

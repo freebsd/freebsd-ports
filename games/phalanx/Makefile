@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Version%20XXV
 DISTNAME=	${PORTNAME}-XXV-source
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xboard-compatible chess playing program
 
 LICENSE=	GPLv2+

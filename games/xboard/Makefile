@@ -8,7 +8,7 @@ PORTEPOCH?=	0
 CATEGORIES?=	games
 MASTER_SITES?=	GNU
 
-MAINTAINER?=	johans@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
 
 LICENSE?=	GPLv3

@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webserver with CGI as own user and SSL support
 
 RUN_DEPENDS=	run-mailcap:misc/mime-support

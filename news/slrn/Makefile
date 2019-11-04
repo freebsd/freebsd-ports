@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.jedsoft.org/releases/slrn/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLang-based newsreader
 
 LICENSE=	GPLv2+

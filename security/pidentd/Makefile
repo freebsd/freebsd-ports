@@ -13,7 +13,7 @@ PATCH_SITES=	ftp://ftp.stack.nl/pub/users/johans/pidentd/ \
 PATCHFILES=	pidentd-${PORTVERSION}-ipv6-20080101.diff.gz
 PATCH_DIST_STRIP=	-p0
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC1413 identification server
 
 BROKEN_FreeBSD_12=	fails to compile: k_freebsd2.c: storage size of 'pcbp' isn't known

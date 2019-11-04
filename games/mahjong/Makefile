@@ -9,7 +9,7 @@ MASTER_SITES=	http://mahjong.julianbradfield.org/Source/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Old
 DISTNAME=	mj-${PORTVERSION}-src
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Networked Mah Jong program, together with a computer player
 
 LICENSE=	GPLv2+

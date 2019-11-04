@@ -9,7 +9,7 @@ CATEGORIES=	games net
 MASTER_SITES=	http://www.bearnip.com/ftp/mud/ \
 		ftp://mud.stack.nl/pub/ldmud/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern version of the LPMud game driver
 
 BUILD_DEPENDS=	help2man:misc/help2man

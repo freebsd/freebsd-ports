@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 DISTNAME=	clive-${PORTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line client for posting LiveJournal entries
 
 USES=		iconv

@@ -6,7 +6,7 @@ PORTVERSION=	1.10
 CATEGORIES=	archivers
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compression utility designed to be a replacement for compress
 
 LICENSE=	GPLv3+

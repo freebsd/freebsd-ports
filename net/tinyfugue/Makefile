@@ -8,7 +8,7 @@ CATEGORIES=	net games
 MASTER_SITES=	SF/tinyfugue/tinyfugue/5.0%20beta%208
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Popular programmable MUD client, with macro support and more
 
 LIB_DEPENDS=	libpcre.so:devel/pcre

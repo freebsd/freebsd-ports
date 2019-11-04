@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/openMSX/openMSX/releases/download/RELEASE_${PORTVERSION:S/./_/g}/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source MSX emulator
 
 LICENSE=	GPLv2

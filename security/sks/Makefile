@@ -7,7 +7,7 @@ MASTER_SITES=	http://bitbucket.org/skskeyserver/sks-keyserver/downloads/
 
 EXTRA_PATCHES=	${FILESDIR}/debian-bug-870150:-p1
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
 
 LICENSE=	GPLv2+

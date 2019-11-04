@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	https://www.tlswrap.com/
 DISTNAME=	${PORTNAME}-1.04
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP proxy that wraps data and control with TLS/SSL
 
 USES=		ssl

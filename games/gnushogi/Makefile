@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU version of Shogi
 
 USES=		makeinfo

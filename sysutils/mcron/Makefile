@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	100% compatible replacement for Vixie cron
 
 LIB_DEPENDS=	libguile-2.2.so:lang/guile2

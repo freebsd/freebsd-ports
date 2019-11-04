@@ -6,7 +6,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/chk4mail/ \
 		ftp://mud.stack.nl/pub/chk4mail/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quickly check multiple folders for new email
 
 PLIST_FILES=	bin/chk4mail bin/chkimap \

@@ -10,7 +10,7 @@ MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/ \
 PKGNAMESUFFIX=	-current
 DISTNAME=	${PORTNAME}${PORTVERSION:S/p/pre./:S/d/dev./}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Non-graphical, text-based World-Wide Web client
 
 LICENSE=	GPLv2

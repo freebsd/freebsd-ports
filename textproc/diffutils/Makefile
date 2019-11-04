@@ -8,7 +8,7 @@ MASTER_SITES=	GNU
 
 LICENSE=	GPLv3+
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU differential compare utilities
 
 LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv

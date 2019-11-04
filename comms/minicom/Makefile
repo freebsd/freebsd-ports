@@ -8,7 +8,7 @@ MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4215/ \
 		http://alioth.debian.org/frs/download.php/file/4215/ \
 		http://fossies.org/linux/misc/
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MS-DOS Telix serial communication program "workalike"
 
 LICENSE=	GPLv2+

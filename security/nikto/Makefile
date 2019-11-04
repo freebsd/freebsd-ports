@@ -6,7 +6,7 @@ PORTVERSION=	2.1.6
 PORTEPOCH=	1
 CATEGORIES=	security www
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web and CGI vulnerability scanner with SSL support
 
 LICENSE=	GPLv2
