@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	websocket
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.8
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
