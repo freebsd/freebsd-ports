@@ -1,14 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	python-gitlab
-PORTVERSION=	1.12.1
+PORTVERSION=	1.13.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP \
-		https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/v${PORTVERSION}/gitlab/tests/data/:tests
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		todo.json:tests
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Interact with GitLab API
@@ -34,14 +30,6 @@ NO_ARCH=	yes
 USE_PYTHON=	distutils autoplist concurrent
 
 SUB_FILES=	pkg-message
-
-# todo.json is missing in the pypi dist file
-# https://github.com/python-gitlab/python-gitlab/issues/907
-# Once included EXTRACT_ONLY, DISTFILES, Extra MASTER_SITES, and the below post-extract
-# can be removed
-post-extract:
-	@${MKDIR} ${WRKSRC}/gitlab/tests/data
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/todo.json ${WRKSRC}/gitlab/tests/data/
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}/etc|g' ${WRKSRC}/gitlab/config.py
