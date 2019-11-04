@@ -1,4 +1,4 @@
---- installer/dcheck.py.orig	2019-05-23 09:47:03 UTC
+--- installer/dcheck.py.orig	2019-11-03 15:17:23 UTC
 +++ installer/dcheck.py
 @@ -48,7 +48,11 @@ mod_output = ''
  def update_ld_output():
@@ -17,11 +17,11 @@
      except ImportError:
          return '-'
      else:
--         return Image.VERSION
+-         return Image.PILLOW_VERSION
 +        if hasattr(Image, "__version__"): # required for Pillow >= 6.0.0
 +            return Image.__version__
 +        else:
-+            return Image.VERSION
++            return Image.PILLOW_VERSION
  
  def get_libpthread_version():
      try:

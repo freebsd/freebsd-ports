@@ -1,0 +1,78 @@
+--- Makefile.in.orig	2019-10-22 06:32:27 UTC
++++ Makefile.in
+@@ -103,7 +103,7 @@ DIST_COMMON = $(am__configure_deps) \
+ 
+ # ip library
+ @HPLIP_BUILD_TRUE@am__append_12 = libhpip.la
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_13 = prnt/drv/hpijs.drv.in.template prnt/drv/hpcups.drv.in.template prnt/hpcups/libImageProcessor-x86_64.so prnt/hpcups/libImageProcessor-x86_32.so
++@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_13 = prnt/drv/hpijs.drv.in.template prnt/drv/hpcups.drv.in.template
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_14 = dat2drv.py install.py  hplip-install init-suse-firewall init-iptables-firewall class_rpm_build.sh hplipclassdriver.spec createPPD.sh Makefile_dat2drv hpijs-drv
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@am__append_15 = scan/sane/hpaio.desc \
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	installer/text_install.py \
+@@ -377,6 +377,7 @@ am__libsane_hpaio_la_SOURCES_DIST = scan/sane/hpaio.c 
+ 	scan/sane/sclpml.h common/utils.c common/utils.h \
+ 	scan/sane/escl.h scan/sane/escli.h scan/sane/escl.c \
+ 	scan/sane/orblitei.h scan/sane/orblite.h scan/sane/orblite.c \
++	scan/sane/OrbliteScan/BSDCommon.h \
+ 	scan/sane/OrbliteScan/LinuxCommon.h \
+ 	scan/sane/OrbliteScan/MacCommon.h
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@am_libsane_hpaio_la_OBJECTS = libsane_hpaio_la-hpaio.lo \
+@@ -500,8 +501,7 @@ am__hpcups_SOURCES_DIST = prnt/hpcups/HPCupsFilter.cpp
+ 	prnt/hpcups/RunLenEncoding.h prnt/hpcups/common_defines.h \
+ 	prnt/hpcups/genPCLm.h common/utils.c common/utils.h \
+ 	prnt/hpcups/Hbpl1_Wrapper.cpp prnt/hpcups/genPCLm.cpp \
+-	prnt/hpcups/genJPEGStrips.cpp prnt/hpcups/RunLenEncoding.cpp \
+-	prnt/hpcups/ImageProcessor.h
++	prnt/hpcups/genJPEGStrips.cpp prnt/hpcups/RunLenEncoding.cpp
+ @HPCUPS_INSTALL_TRUE@am_hpcups_OBJECTS =  \
+ @HPCUPS_INSTALL_TRUE@	hpcups-HPCupsFilter.$(OBJEXT) \
+ @HPCUPS_INSTALL_TRUE@	hpcups-dbuscomm.$(OBJEXT) \
+@@ -728,8 +728,6 @@ am__dist_locatedriver_DATA_DIST = locatedriver
+ am__dist_models_DATA_DIST = data/models/models.dat
+ am__dist_noinst_DATA_DIST = prnt/drv/hpijs.drv.in.template \
+ 	prnt/drv/hpcups.drv.in.template \
+-	prnt/hpcups/libImageProcessor-x86_64.so \
+-	prnt/hpcups/libImageProcessor-x86_32.so scan/sane/hpaio.desc \
+ 	installer/text_install.py data/localization/hplip_de.ts \
+ 	data/localization/hplip_es.ts data/localization/hplip_fr.ts \
+ 	data/localization/hplip_it.ts data/localization/hplip_pt.ts \
+@@ -4407,7 +4405,7 @@ dist_unrel_DATA = 
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@        scan/sane/bb_ledm.c scan/sane/http.h scan/sane/http.c scan/sane/sclpml.c scan/sane/sclpml.h common/utils.c common/utils.h \
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	scan/sane/escl.h scan/sane/escli.h scan/sane/escl.c \
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	scan/sane/orblitei.h scan/sane/orblite.h scan/sane/orblite.c \
+-@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	scan/sane/OrbliteScan/LinuxCommon.h scan/sane/OrbliteScan/MacCommon.h
++@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	scan/sane/OrbliteScan/BSDCommon.h scan/sane/OrbliteScan/LinuxCommon.h scan/sane/OrbliteScan/MacCommon.h
+ 
+ @DARWIN_BUILD_FALSE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -version-info 1:0:0
+ @DARWIN_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -module -framework CoreFoundation -version-info 1:0:0
+@@ -4802,11 +4800,10 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+ @HPCUPS_INSTALL_TRUE@	prnt/hpcups/flate_colorspace.h prnt/hpcups/RunLenEncoding.h prnt/hpcups/common_defines.h \
+ @HPCUPS_INSTALL_TRUE@	prnt/hpcups/genPCLm.h \
+ @HPCUPS_INSTALL_TRUE@	common/utils.c common/utils.h prnt/hpcups/Hbpl1_Wrapper.cpp prnt/hpcups/genPCLm.cpp \
+-@HPCUPS_INSTALL_TRUE@	prnt/hpcups/genJPEGStrips.cpp prnt/hpcups/RunLenEncoding.cpp \
+-@HPCUPS_INSTALL_TRUE@	prnt/hpcups/ImageProcessor.h
++@HPCUPS_INSTALL_TRUE@	prnt/hpcups/genJPEGStrips.cpp prnt/hpcups/RunLenEncoding.cpp
+ 
+ @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS)
+-@HPCUPS_INSTALL_TRUE@hpcups_LDADD = -L./prnt/hpcups/ -ljpeg -ldl -lImageProcessor -lcups -lcupsimage -lz $(DBUS_LIBS)
++@HPCUPS_INSTALL_TRUE@hpcups_LDADD = -L./prnt/hpcups/ -ljpeg -ldl -lcups -lcupsimage -lz $(DBUS_LIBS)
+ #else
+ #hpcupsdir = $(cupsfilterdir)
+ #hpcups_PROGRAMS = hpcups
+@@ -9577,16 +9574,6 @@ uninstall-am: uninstall-apparmor_abstractionDATA \
+ 
+ 
+ install-data-hook:
+-@HPLIP_BUILD_TRUE@	if [ \( "$(UNAME)" = "x86_64" -a  -d "$(libdir)/" \) ]; then \
+-@HPLIP_BUILD_TRUE@		cp prnt/hpcups/libImageProcessor-x86_64.so $(libdir)/ ; \
+-@HPLIP_BUILD_TRUE@		chmod 775 $(libdir)/libImageProcessor-x86_64.so ; \
+-@HPLIP_BUILD_TRUE@		ln -sf $(libdir)/libImageProcessor-x86_64.so $(libdir)/libImageProcessor.so ; \
+-@HPLIP_BUILD_TRUE@	fi; \
+-@HPLIP_BUILD_TRUE@	if [ \( \( "$(UNAME)" = "i686" -o "$(UNAME)" = "i386" \) -a -d "$(libdir)/" \) ]; then \
+-@HPLIP_BUILD_TRUE@		cp prnt/hpcups/libImageProcessor-x86_32.so $(libdir)/ ; \
+-@HPLIP_BUILD_TRUE@		chmod 775 $(libdir)/libImageProcessor-x86_32.so ; \
+-@HPLIP_BUILD_TRUE@		ln -sf $(libdir)/libImageProcessor-x86_32.so $(libdir)/libImageProcessor.so ; \
+-@HPLIP_BUILD_TRUE@	fi
+ #	   If scanner build, add hpaio entry to sane dll.conf.
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	if [ "$(scan_build)" = "yes" ]; then \
+ @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	   $(mkinstalldirs) $(DESTDIR)/etc/sane.d; \
