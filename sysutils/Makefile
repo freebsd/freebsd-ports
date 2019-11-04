@@ -1071,8 +1071,8 @@
     SUBDIR += roct
     SUBDIR += roottail
     SUBDIR += rovclock
-    SUBDIR += rshim-user-space
     SUBDIR += rpi-firmware
+    SUBDIR += rshim-user-space
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
     SUBDIR += rsyncrypto

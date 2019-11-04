@@ -214,8 +214,8 @@
     SUBDIR += bashdb
     SUBDIR += bats-core
     SUBDIR += bazel
-    SUBDIR += bazel029
     SUBDIR += bazel-buildtools
+    SUBDIR += bazel029
     SUBDIR += bbfreeze
     SUBDIR += bbfreeze-loader
     SUBDIR += bcc
