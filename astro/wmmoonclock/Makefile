@@ -14,8 +14,8 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
+USES=		gmake xorg
 USE_XORG=	xpm
-USES=		gmake
 
 PLIST_FILES=	bin/wmmoonclock man/man1/wmmoonclock.1.gz
 

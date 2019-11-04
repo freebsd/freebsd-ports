@@ -18,7 +18,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile
 
-USES=		cmake compiler:c++11-lang gnome pkgconfig
+USES=		cmake compiler:c++11-lang gnome pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	openAVproductions
 GH_PROJECT=	openAV-Luppp

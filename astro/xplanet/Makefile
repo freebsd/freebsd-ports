@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draw pictures of the earth textured by an image
 
 GNU_CONFIGURE=	yes
-USES=		iconv localbase
+USES=		iconv localbase xorg
 USE_XORG=	xt xscrnsaver
 CONFIGURE_ARGS=	--with-map-extension=jpg
 CPPFLAGS+=	-I${LOCALBASE}/include/netpbm
@@ -23,6 +23,7 @@ OPTIONS_DEFAULT=	FREETYPE PANGO GIF JPEG PNG PNM TIFF
 FREETYPE_CONFIGURE_WITH=	--with-freetype
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 PANGO_CONFIGURE_WITH=	pango
+PANGO_USES=		gnome
 PANGO_USE=	GNOME=pango
 GIF_CONFIGURE_WITH=	gif
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib

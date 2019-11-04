@@ -15,8 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	engerim42
 
 PLIST_FILES=	bin/wmJupiter
+USES=		gmake xorg
 USE_XORG=	x11 xext xpm
-USES=		gmake
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|values.h|float.h|; s|MAXDOUBLE|DBL_MAX|g' \

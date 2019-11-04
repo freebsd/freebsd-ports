@@ -18,6 +18,7 @@ ALL_TARGET=	xmixer
 PLIST_FILES=	bin/xmixer \
 		man/man1/xmixer.1.gz
 
+USES=		xorg
 USE_XORG=	x11 xt ice xaw xmu sm
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11
 

@@ -13,6 +13,7 @@ COMMENT=	Smithsonian Astrophysical Observatory image utility for X
 MAKEFILE=	makefile
 MAKE_ENV=	OFLAGS="${CFLAGS}"
 ALL_TARGET=	${OPSYS}
+USES=		xorg
 USE_XORG=	x11
 
 PLIST_FILES=	bin/saoimage etc/imtoolrc.sample man/man1/saoimage.1.gz

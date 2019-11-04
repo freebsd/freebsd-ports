@@ -23,7 +23,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		liblz4.so:archivers/liblz4
 
 USES=		cmake compiler:c++11-lang desktop-file-utils \
-		kde:5 mysql:client,embedded pkgconfig qt:5 shebangfix ssl
+		kde:5 mysql:client,embedded pkgconfig qt:5 shebangfix ssl xorg
 
 USE_QT=		core concurrent declarative dbus gui location network phonon4 \
 		quickcontrols2 script scripttools sql svg webchannel \

@@ -41,12 +41,12 @@ GTK2_DESC=		Build GTK-2 sandbox
 GTK2_MESON_OFF=		-Duse-gtk2=false
 GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
-GTK2_USES=		gl gnome
+GTK2_USES=		gl gnome xorg
 GTK2_USE=		XORG=x11,xcb,xext GL=gl,glu GNOME=glib20,gtk20,gdkpixbuf2,atk,cairo,pango gettext-runtime
 
 GTK3_DESC=		Build GTK-3 sandbox
 GTK3_MESON_OFF=		-Duse-gtk3=false
-GTK3_USES=		gl gnome
+GTK3_USES=		gl gnome xorg
 GTK3_USE=		XORG=x11,xcb,xext GL=glu GNOME=glib20,gtk30,gdkpixbuf2,atk,cairo,pango gettext-runtime
 
 JACK_DESC=		Build JACK standalone host

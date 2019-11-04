@@ -25,7 +25,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		liboauth.so:net/liboauth
 RUN_DEPENDS=	gpsbabel:astro/gpsbabel
 
-USES=		compiler:c++11-lib gmake iconv desktop-file-utils perl5 pkgconfig tar:bzip2
+USES=		compiler:c++11-lib gmake gnome iconv desktop-file-utils perl5 \
+		pkgconfig tar:bzip2 xorg
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 USE_GNOME=	cairo gnomedocutils gtk20 intlhack

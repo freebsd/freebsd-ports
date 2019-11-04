@@ -24,7 +24,8 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 LIB_DEPENDS=	libjack.so:audio/jack \
 		libsndfile.so:audio/libsndfile
 
-USES=		compiler:c++14-lang cmake:noninja gnome localbase:ldflags pkgconfig shared-mime-info
+USES=		compiler:c++14-lang cmake:noninja gnome localbase:ldflags \
+		pkgconfig shared-mime-info xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	quamplex
 USE_GNOME=	cairo

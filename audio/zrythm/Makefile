@@ -30,7 +30,8 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		kf5-breeze-icons>0:x11-themes/kf5-breeze-icons
 
-USES=		gettext-tools meson python:3.5+,build gettext-runtime gnome libtool pkgconfig shebangfix
+USES=		gettext-tools meson python:3.5+,build gettext-runtime gnome \
+		libtool pkgconfig shebangfix xorg
 USE_GITLAB=	yes
 GL_SITE=	https://git.zrythm.org
 GL_COMMIT=	5b1f4efa53ca33090ef7795204dfc387072f58f5

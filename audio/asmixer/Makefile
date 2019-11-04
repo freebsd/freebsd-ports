@@ -12,6 +12,7 @@ COMMENT=	Mixer control for AfterStep window manager
 
 LICENSE=	GPLv2
 
+USES=		xorg
 USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \

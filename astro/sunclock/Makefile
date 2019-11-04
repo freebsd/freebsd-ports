@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		jpeg
+USES=		jpeg xorg
 USE_XORG=	xpm
 
 CPPFLAGS+=	$$(libpng-config --I_opts) \

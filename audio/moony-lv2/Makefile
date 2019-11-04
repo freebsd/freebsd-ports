@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
-USES=		compiler:c++11-lang gl meson pkgconfig
+USES=		compiler:c++11-lang gl meson pkgconfig xorg
 USE_XORG=	x11 xext
 USE_GL=		gl glu
 

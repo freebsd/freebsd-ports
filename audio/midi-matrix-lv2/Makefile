@@ -18,7 +18,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		lv2lint:audio/lv2lint \
 		sord_validate:devel/sord
 
-USES=		compiler:c11 gl meson pkgconfig
+USES=		compiler:c11 gl meson pkgconfig xorg
 USE_XORG=	x11 xext
 USE_GL=		gl glu
 

@@ -11,6 +11,7 @@ MASTER_SITES=	http://linkinnovations.linux.tucows.com/files/x11/dock/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose audio recording utility for the WindowMaker dock
 
+USES=		xorg
 USE_XORG=	xpm x11 xext
 MAKE_ARGS=	LIBS="-L${LOCALBASE}/lib -lXpm -lX11 -lXext" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBDIR=""

@@ -16,7 +16,7 @@ CONFIGURE_ARGS=	--enable-oss=v3 \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-USES=		autoreconf gmake gettext pkgconfig
+USES=		autoreconf gmake gnome gettext pkgconfig xorg
 USE_GNOME=	gtk30 intltool cairo gdkpixbuf2
 USE_XORG=	x11
 USE_CSTD=	gnu99

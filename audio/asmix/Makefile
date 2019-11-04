@@ -13,6 +13,7 @@ COMMENT=	Volume control dock-app for the AfterStep Window Manager
 
 LICENSE=	GPLv2
 
+USES=		xorg
 USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \

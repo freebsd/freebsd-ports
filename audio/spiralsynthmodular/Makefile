@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libsndfile.so:audio/libsndfile
 
+USES=		xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	FLTK_CONFIG="${FLTK_CONFIG}"

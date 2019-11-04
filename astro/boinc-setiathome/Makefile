@@ -47,7 +47,7 @@ X11_DESC=	Build screensaver (requires net/boinc-client with X11)
 OPTIONS_SUB=	yes
 
 X11_BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc_graphics2.a:net/boinc-client
-X11_USES=		gl jpeg
+X11_USES=		gl jpeg xorg
 X11_USE=		GL=gl,glu,glut \
 			XORG=ice,sm,x11,xau,xcb,xext,xi,xdamage,xdmcp,xfixes,xmu,xt,xxf86vm
 X11_CONFIGURE_ENABLE=	graphics

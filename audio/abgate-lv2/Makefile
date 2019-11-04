@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
-USES=		compiler:c++11-lang gmake pkgconfig qt:5
+USES=		compiler:c++11-lang gl gmake gnome pkgconfig qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	antanasbruzas
 USE_CXXSTD=	c++11

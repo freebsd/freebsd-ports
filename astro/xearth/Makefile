@@ -14,7 +14,7 @@ LICENSE_NAME=	Xearth license
 LICENSE_FILE=	${WRKSRC}/README
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-USES=		tar:xz
+USES=		tar:xz xorg
 USE_XORG=	x11 xext sm ice xt
 
 PLIST_FILES=	bin/xearth \

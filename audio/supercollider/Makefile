@@ -21,7 +21,7 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libfftw3f.so:math/fftw3-float
 
 USES=		cmake compiler:c++11-lang iconv localbase pkgconfig \
-		qt:5 readline shared-mime-info tar:bzip2
+		qt:5 readline shared-mime-info tar:bzip2 xorg
 USE_QT=		buildtools_build concurrent core declarative gui linguisttools location \
 		network opengl printsupport qmake_build sensors \
 		sql widgets webengine websockets webchannel svg

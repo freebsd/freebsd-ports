@@ -21,7 +21,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libsratom-0.so:audio/sratom
 RUN_DEPENDS=	jalv:audio/jalv
 
-USES=		gettext-runtime gmake gnome pkgconfig
+USES=		gettext-runtime gmake gnome pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	brummer10
 GH_PROJECT=	jalv_select

@@ -23,7 +23,8 @@ RUN_DEPENDS=	dejavu>0:x11-fonts/dejavu \
 		${PYGAME} \
 		${PYNUMPY}
 
-USES=		compiler:c++11-lib desktop-file-utils iconv python:2.7 shebangfix zip
+USES=		compiler:c++11-lib desktop-file-utils iconv python:2.7 \
+		shebangfix zip xorg
 SHEBANG_FILES=	install/pykaraoke_mini install/pykar install/pykaraoke \
 		install/pycdg install/pympg
 USE_SDL=	sdl

@@ -24,7 +24,8 @@ LIB_DEPENDS=	libmpd.so:audio/libmpd \
 		libfreetype.so:print/freetype2
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool localbase pathfix pkgconfig sqlite
+USES=		gettext gmake gnome libtool localbase pathfix pkgconfig sqlite \
+		xorg
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo glib20 gtk20 intltool libglade2
 INSTALLS_ICONS=	yes

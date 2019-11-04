@@ -35,6 +35,7 @@ OPTIONS_SUB=		yes
 
 WVS_DESC=		Use world vector shoreline data (37MB)
 WVS_DISTFILES=		${DISTNAME_WVS}${EXTRACT_SUFX}
+X11_USES=		xorg
 X11_USE=		xorg=ice,sm,x11,xaw,xext,xmu,xpm,xt
 X11_CONFIGURE_WITH=	x
 X11_DESKTOP_ENTRIES=	"XTide" "" "xtide" "xtide" "" ""
