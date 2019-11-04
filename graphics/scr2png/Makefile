@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/nik
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts the output of "vidcontrol -p" to PNG
 
 LICENSE=	BSD2CLAUSE

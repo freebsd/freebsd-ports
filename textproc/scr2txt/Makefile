@@ -6,7 +6,7 @@ PORTVERSION=	1.2
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/nik
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts the output of "vidcontrol -p" to text
 
 NO_WRKSUBDIR=	yes
