@@ -70,6 +70,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/UserAgent/Transactor.pm
 %%SITE_PERL%%/Mojo/Util.pm
 %%SITE_PERL%%/Mojo/WebSocket.pm
+%%SITE_PERL%%/Mojo/resources/html_entities.txt
 %%SITE_PERL%%/Mojolicious.pm
 %%SITE_PERL%%/Mojolicious/Command.pm
 %%SITE_PERL%%/Mojolicious/Command/Author/cpanify.pm
