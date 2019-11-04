@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eccodes
-PORTVERSION=	2.13.1
+PORTVERSION=	2.14.1
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	science
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/45757960/ \
