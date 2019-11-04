@@ -17,7 +17,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3		\
 		libfreetype.so:print/freetype2          \
 		libdbus-1.so:devel/dbus
 
-USES=		autoreconf gmake libtool localbase pkgconfig sqlite
+USES=		autoreconf gmake libtool localbase pkgconfig sqlite xorg
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

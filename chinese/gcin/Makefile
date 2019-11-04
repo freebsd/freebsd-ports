@@ -16,7 +16,7 @@ BROKEN_powerpc64=	fails to build: gmake[3]: *** [Makefile:30: en-american] Error
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		gmake gnome pkgconfig tar:xz
+USES=		gmake gnome pkgconfig tar:xz xorg
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--use_gtk3=N --use_qt5=N
 USE_GNOME=	gtk30

@@ -12,7 +12,7 @@ COMMENT=	X psk31 client
 
 LICENSE=	GPLv3
 
-USES=		motif pkgconfig
+USES=		motif pkgconfig xorg
 USE_XORG=	sm ice xt x11
 
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio

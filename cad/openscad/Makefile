@@ -32,7 +32,7 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 CONFLICTS=	openscad
 
 USES=		bison compiler:c++11-lib desktop-file-utils eigen:3 gettext \
-		pkgconfig qmake qt:5 shared-mime-info
+		gl gnome pkgconfig qmake qt:5 shared-mime-info xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu glew
 USE_GNOME=	glib20 libxml2

@@ -23,7 +23,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
 		libQt5WebKit.so:www/qt5-webkit
 
-USES=		compiler:c++11-lang gmake iconv jpeg perl5 pkgconfig ssl
+USES=		compiler:c++11-lang gmake iconv jpeg perl5 pkgconfig ssl xorg
 USE_XORG=	x11 xext xrender
 USE_PERL5=	build
 USE_LDCONFIG=	yes

@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libtiff.so:graphics/tiff \
 		libxerces-c.so:textproc/xerces-c3
 
-USES=		cmake jpeg python shebangfix zip
+USES=		cmake gl jpeg python shebangfix zip xorg
 SHEBANG_FILES=	tools/*.py tools/*/*.py \
 		tools/*/*/*.py tools/*/*/*/*.py \
 		tools/*/*/*/*/*/*.py \

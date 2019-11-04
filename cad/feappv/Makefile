@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite element analysis program (personal version)
 
-USES=		fortran gmake localbase:ldflags
+USES=		fortran gmake localbase:ldflags xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	sanjayg0
 USE_XORG=	x11

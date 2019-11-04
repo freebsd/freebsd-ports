@@ -19,7 +19,7 @@ BROKEN_aarch64=		fails to link: shapeFunctions.c:(function attach_new): relocati
 
 RUN_DEPENDS=	ccx:cad/calculix-ccx
 
-USES=		gmake tar:bzip2 compiler:c++11-lib
+USES=		gl gmake tar:bzip2 compiler:c++11-lib xorg
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu # uses its own glut
 

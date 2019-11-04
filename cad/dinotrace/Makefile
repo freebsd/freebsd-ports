@@ -14,7 +14,7 @@ COMMENT=	Graphical signal trace waveform viewer
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake motif perl5 tar:tgz
+USES=		gmake motif perl5 tar:tgz xorg
 USE_XORG=	x11 sm ice xmu xt
 USE_PERL5=	build
 

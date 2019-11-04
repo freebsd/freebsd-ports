@@ -16,7 +16,7 @@ LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 PLIST_FILES=	bin/acfax
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext xmu xt sm ice
 
 post-extract:
