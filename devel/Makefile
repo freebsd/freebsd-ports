@@ -4501,6 +4501,7 @@
     SUBDIR += py-googleapis-common-protos
     SUBDIR += py-grab
     SUBDIR += py-graphene
+    SUBDIR += py-graphene-django
     SUBDIR += py-graphql-core
     SUBDIR += py-graphql-relay
     SUBDIR += py-greenlet
