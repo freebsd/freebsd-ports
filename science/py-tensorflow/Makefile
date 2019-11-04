@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	tensorflow-tensorflow-v${DISTVERSION}_GH0.tar.gz
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	amzo1337@gmail.com
 COMMENT=	Computation using data flow graphs for scalable machine learning
