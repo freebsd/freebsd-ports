@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hplip
-PORTVERSION=	3.18.6
+PORTVERSION=	3.19.10
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -21,10 +21,11 @@ RUN_DEPENDS=	cups-filters>=0:print/cups-filters \
 CONFLICTS_INSTALL=	hpijs-[0-9]*
 
 INSTALL_TARGET=	install-strip
-USES=		jpeg libtool pkgconfig python shebangfix
+USES=		dos2unix gnome jpeg libtool pkgconfig python shebangfix
 USE_GNOME=	pygobject
 USE_LDCONFIG=	yes
 SHEBANG_GLOB=	*.py hpps pstotiff
+DOS2UNIX_FILES=	scan/sane/orblite.c
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \

@@ -1,4 +1,4 @@
---- protocol/discovery/mdns.c.orig	2016-08-26 10:04:47 UTC
+--- protocol/discovery/mdns.c.orig	2019-10-22 06:18:12 UTC
 +++ protocol/discovery/mdns.c
 @@ -24,7 +24,11 @@
   Author: Sanjay Kumar
@@ -13,15 +13,15 @@
  #include <string.h>
  #include <syslog.h>
  #include <sys/socket.h>
-@@ -89,6 +93,11 @@ static int mdns_open_socket(int *psocket
-         BUG("unable to setsockopt: %m\n");
-         goto bugout;
-     }
-+    if (setsockopt(udp_socket, SOL_SOCKET, SO_REUSEPORT, &yes, sizeof(yes)) == -1)
+@@ -85,6 +89,11 @@ static int mdns_open_socket(int *psocket)
+ 
+     /* Get rid of "address already in use" error message. */
+     if (setsockopt(udp_socket, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(yes)) == -1)
 +    {
 +        BUG("unable to setsockopt: %m\n");
 +        goto bugout;
 +    }
- 
-     /* Bind the socket to port and IP equal to INADDR_ANY. */
-     bzero(&recv_addr, sizeof(recv_addr));
++    if (setsockopt(udp_socket, SOL_SOCKET, SO_REUSEPORT, &yes, sizeof(yes)) == -1)
+     {
+         BUG("unable to setsockopt: %m\n");
+         goto bugout;
