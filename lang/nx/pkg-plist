@@ -20,7 +20,7 @@ lib/%%PKGNAME%%/lib/nx-volatile.tcl
 lib/%%PKGNAME%%/lib/nx-zip.tcl
 lib/%%PKGNAME%%/lib/pkgIndex.tcl
 lib/%%PKGNAME%%/lib%%PKGNAME%%.so
-lib/%%PKGNAME%%/libnsfstub2.2.0.a
+lib/%%PKGNAME%%/libnsfstub%%PORTVERSION%%.a
 lib/%%PKGNAME%%/nx/class-method.tcl
 lib/%%PKGNAME%%/nx/nx.tcl
 lib/%%PKGNAME%%/nx/pkgIndex.tcl
