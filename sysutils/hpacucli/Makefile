@@ -14,7 +14,9 @@ ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	relies on compatXx features that are x86-specific
 
 RUN_DEPENDS=	compat4x-i386>0:misc/compat4x \
-		compat5x-${ARCH}>0:misc/compat5x
+		${RUN_DEPENDS_${ARCH}}
+RUN_DEPENDS_i386=	compat5x-i386>0:misc/compat5x
+RUN_DEPENDS_amd64=	compat5x-amd64>0:misc/compat5x
 
 USES=		tar:bzip2
 NO_BUILD=	yes
