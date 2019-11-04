@@ -686,6 +686,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.22.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.22.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.23.0.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.24.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1276,6 +1277,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/coccinelle/commit.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/flex_alloc.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/free.cocci
+%%CONTRIB%%share/git-core/contrib/coccinelle/hashmap.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/object_id.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/preincr.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/qsort.cocci
@@ -1420,6 +1422,7 @@ share/git-core/templates/hooks/fsmonitor-watchman.sample
 share/git-core/templates/hooks/post-update.sample
 share/git-core/templates/hooks/pre-applypatch.sample
 share/git-core/templates/hooks/pre-commit.sample
+share/git-core/templates/hooks/pre-merge-commit.sample
 share/git-core/templates/hooks/pre-push.sample
 share/git-core/templates/hooks/pre-rebase.sample
 share/git-core/templates/hooks/pre-receive.sample
@@ -1495,6 +1498,7 @@ share/git-core/templates/info/exclude
 %%GUI%%share/gitk/lib/msgs/ru.msg
 %%GUI%%share/gitk/lib/msgs/sv.msg
 %%GUI%%share/gitk/lib/msgs/vi.msg
+%%GUI%%share/gitk/lib/msgs/zh_cn.msg
 %%NLS%%share/locale/bg/LC_MESSAGES/git.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/git.mo
 %%NLS%%share/locale/de/LC_MESSAGES/git.mo
