@@ -14,9 +14,6 @@ COMMENT=	C client interface to Zookeeper server
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	uses x86 assembly
-
 LIB_DEPENDS=	libcppunit.so:devel/cppunit
 
 USES=		autoreconf libtool pkgconfig
