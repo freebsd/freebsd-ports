@@ -32,12 +32,13 @@ lib/pony/%%VERSION%%/packages/builtin/do_not_optimise.pony
 lib/pony/%%VERSION%%/packages/builtin/env.pony
 lib/pony/%%VERSION%%/packages/builtin/float.pony
 lib/pony/%%VERSION%%/packages/builtin/iterator.pony
-lib/pony/%%VERSION%%/packages/builtin/maybe_pointer.pony
 lib/pony/%%VERSION%%/packages/builtin/none.pony
+lib/pony/%%VERSION%%/packages/builtin/nullable_pointer.pony
 lib/pony/%%VERSION%%/packages/builtin/platform.pony
 lib/pony/%%VERSION%%/packages/builtin/pointer.pony
 lib/pony/%%VERSION%%/packages/builtin/read_seq.pony
 lib/pony/%%VERSION%%/packages/builtin/real.pony
+lib/pony/%%VERSION%%/packages/builtin/runtime_options.pony
 lib/pony/%%VERSION%%/packages/builtin/seq.pony
 lib/pony/%%VERSION%%/packages/builtin/signed.pony
 lib/pony/%%VERSION%%/packages/builtin/source_loc.pony
@@ -202,6 +203,7 @@ lib/pony/%%VERSION%%/packages/time/timers.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dtrace/scheduling.d
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dtrace/telemetry.d
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/echo.pony
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fan-in/main.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ffi-callbacks/callbacks.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ffi-callbacks/callbacks.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ffi-struct/struct.c

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ponyc
-DISTVERSION=	0.31.0
+DISTVERSION=	0.33.0
 CATEGORIES=	lang
 
 MAINTAINER=	greg@unrelenting.technology
@@ -14,7 +14,6 @@ ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Undefined reference to __atomic_compare_exchange_8
 
 BUILD_DEPENDS=	llvm-link${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-RUN_DEPENDS=	llvm-link${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 
 USES=		gmake ncurses compiler:c++11-lang
 
@@ -32,12 +31,16 @@ MAKE_ENV=	config=release verbose=true default_pic=true \
 		prefix=${PREFIX} arch=${PONYARCH} \
 		LLVM_CONFIG=llvm-config${LLVM_VERSION}
 
-OPTIONS_DEFINE=			DOCS EXAMPLES DTRACE
+OPTIONS_DEFINE=			DOCS DTRACE EXAMPLES STATIC
 OPTIONS_EXCLUDE_aarch64=	DTRACE
 # Not enabling DTrace by default yet because it breaks --runtimebc ("super LTO"):
 # https://github.com/ponylang/ponyc/issues/2915
 
 DTRACE_MAKE_ENV=		use=dtrace
+
+STATIC_RUN_DEPENDS_OFF=	llvm-link${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+STATIC_MAKE_ENV_OFF=	link=llvm-dynamic
+STATIC_MAKE_ENV=	link=llvm-static
 
 .include <bsd.port.pre.mk>
 
