@@ -152,6 +152,7 @@
 %%WWWDIR%%/plugins/copyformatting/cursors/cursor.svg
 %%WWWDIR%%/plugins/copyformatting/styles/copyformatting.css
 %%WWWDIR%%/plugins/dialog/dialogDefinition.js
+%%WWWDIR%%/plugins/dialog/styles/dialog.css
 %%WWWDIR%%/plugins/div/dialogs/div.js
 %%WWWDIR%%/plugins/find/dialogs/find.js
 %%WWWDIR%%/plugins/flash/dialogs/flash.js
@@ -181,7 +182,9 @@
 %%WWWDIR%%/plugins/magicline/images/icon-rtl.png
 %%WWWDIR%%/plugins/magicline/images/icon.png
 %%WWWDIR%%/plugins/pagebreak/images/pagebreak.gif
+%%WWWDIR%%/plugins/pastefromgdocs/filter/default.js
 %%WWWDIR%%/plugins/pastefromword/filter/default.js
+%%WWWDIR%%/plugins/pastetools/filter/common.js
 %%WWWDIR%%/plugins/preview/preview.html
 %%WWWDIR%%/plugins/scayt/CHANGELOG.md
 %%WWWDIR%%/plugins/scayt/LICENSE.md
