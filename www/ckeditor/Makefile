@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ckeditor
-PORTVERSION=	4.12.1
+PORTVERSION=	4.13.0
 CATEGORIES=	www
 MASTER_SITES=	https://download.cksource.com/CKEditor/CKEditor/CKEditor%20${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_full
