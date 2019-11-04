@@ -45,6 +45,7 @@ include/yacas/substitute.h
 include/yacas/tokenizer.h
 include/yacas/utf8.h
 include/yacas/utf8/checked.h
+include/yacas/utf8/cpp11.h
 include/yacas/utf8/core.h
 include/yacas/utf8/unchecked.h
 include/yacas/xmltokenizer.h
