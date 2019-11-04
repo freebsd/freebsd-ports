@@ -21,7 +21,7 @@ RESTRICTED=	free for academic, non profit usage; do not re-distribute source and
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 
-USES=		fortran gl gmake
+USES=		fortran gl gmake xorg
 USE_XORG=	x11
 USE_GL=		gl glu
 MAKEFILE=	makefile

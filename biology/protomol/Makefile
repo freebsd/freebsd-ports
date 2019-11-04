@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		jpeg shebangfix
+USES=		jpeg shebangfix xorg
 USE_CXXSTD=	c++98
 SHEBANG_FILES=	examples/butane_4/procDihedralFile.awk \
 		examples/butane_4/cleanOutput.bash \
@@ -41,6 +41,7 @@ OPTIONS_DEFINE=	GLUT EXAMPLES
 OPTIONS_DEFAULT=	GLUT
 
 GLUT_CONFIGURE_ON=	--with-glut=yes
+GLUT_USES=	gl
 GLUT_USE=	GL=glut
 GLUT_CONFIGURE_OFF=	--with-glut=no
 

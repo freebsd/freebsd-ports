@@ -18,7 +18,7 @@ BUILD_DEPENDS=	bash:shells/bash
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11 xaw xt
 MAKEFILE=	Makefile.unx
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DUNX" \
