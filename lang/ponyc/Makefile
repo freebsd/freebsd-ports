@@ -31,7 +31,7 @@ MAKE_ENV=	config=release verbose=true default_pic=true \
 		prefix=${PREFIX} arch=${PONYARCH} \
 		LLVM_CONFIG=llvm-config${LLVM_VERSION}
 
-CONFLICTS_INSTALL=	ponyc-static
+CONFLICTS_INSTALL?=	ponyc-static
 
 OPTIONS_DEFINE=			DOCS DTRACE EXAMPLES STATIC
 OPTIONS_EXCLUDE_aarch64=	DTRACE
