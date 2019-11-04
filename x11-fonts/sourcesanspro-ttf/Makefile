@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sourcesanspro
-PORTVERSION=	2.045
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	R-ro/1.095R-it
+PORTVERSION=	3.006
+DISTVERSIONSUFFIX=	R
 CATEGORIES=	x11-fonts
 PKGNAMESUFFIX=	-ttf
 
@@ -12,7 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of fonts by Adobe designed for user interfaces
 
 LICENSE=	OFL11
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 PORTSCOUT=	skipv:variable-fonts
 
