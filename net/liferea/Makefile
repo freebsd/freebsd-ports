@@ -11,6 +11,8 @@ COMMENT=	Simple RSS/RDF feed reader
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
