@@ -57,7 +57,6 @@ for native_category in ${dp_CATEGORIES}; do
 		net-p2p)	c="Network P2P"				;;
 		net-vpn)	c="Network VPN"				;;
 		news)		c="Network News"			;;
-		palm)		c="Office PDA"				;;
 		parallel)	c="ParallelComputing"			;;
 		pear)		c="Development WebDevelopment"		;;
 		perl5)		c="Development"				;;
