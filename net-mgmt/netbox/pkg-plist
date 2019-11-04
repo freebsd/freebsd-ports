@@ -251,6 +251,8 @@
 %%DATADIR%%/extras/migrations/0023_fix_tag_sequences.py
 %%DATADIR%%/extras/migrations/0024_scripts.py
 %%DATADIR%%/extras/migrations/0025_objectchange_time_index.py
+%%DATADIR%%/extras/migrations/0026_webhook_ca_file_path.py
+%%DATADIR%%/extras/migrations/0027_webhook_additional_headers.py
 %%DATADIR%%/extras/migrations/__init__.py
 %%DATADIR%%/extras/models.py
 %%DATADIR%%/extras/querysets.py
@@ -785,6 +787,7 @@
 %%DATADIR%%/utilities/middleware.py
 %%DATADIR%%/utilities/models.py
 %%DATADIR%%/utilities/paginator.py
+%%DATADIR%%/utilities/querysets.py
 %%DATADIR%%/utilities/tables.py
 %%DATADIR%%/utilities/templates/buttons/add.html
 %%DATADIR%%/utilities/templates/buttons/export.html
@@ -800,6 +803,7 @@
 %%DATADIR%%/utilities/testing.py
 %%DATADIR%%/utilities/tests/__init__.py
 %%DATADIR%%/utilities/tests/test_api.py
+%%DATADIR%%/utilities/tests/test_filters.py
 %%DATADIR%%/utilities/tests/test_managers.py
 %%DATADIR%%/utilities/tests/test_utils.py
 %%DATADIR%%/utilities/utils.py

@@ -2,7 +2,7 @@
 
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.6
+DISTVERSION=	2.6.7
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	kai@FreeBSD.org
@@ -31,12 +31,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.2<2.3:www/py-django22@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}markdown>=2.6.11:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.7.19:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycryptodome>=3.8.2:security/py-pycryptodome@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=6.0.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=6.2.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.8.3:databases/py-psycopg2@${PY_FLAVOR}
 
 USES=		pgsql:9.4+ python:3.5+
 USE_GITHUB=	yes
-GH_ACCOUNT=	digitalocean
+GH_ACCOUNT=	netbox-community
 
 SUB_FILES=	netboxrc.sample pkg-message
 SUB_LIST=	DATADIR=${DATADIR} PYTHON_CMD=${PYTHON_CMD} PYTHON_VER=${PYTHON_VER} WWWOWN=${WWWOWN}
