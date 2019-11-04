@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tintin++
-PORTVERSION=	2.01.91
+PORTVERSION=	2.01.92
 CATEGORIES+=	net games
 MASTER_SITES=	SF/tintin/TinTin%2B%2B%20Source%20Code/${PORTVERSION:C|.$||}/
 DISTNAME=	tintin-${PORTVERSION}
