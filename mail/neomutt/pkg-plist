@@ -19,6 +19,7 @@ man/man5/neomuttrc.5.gz
 %%NLS%%share/locale/es/LC_MESSAGES/neomutt.mo
 %%NLS%%share/locale/et/LC_MESSAGES/neomutt.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/neomutt.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/neomutt.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/neomutt.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/neomutt.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/neomutt.mo
@@ -87,11 +88,13 @@ man/man5/neomuttrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/samples/colors.default
 %%PORTDOCS%%%%DOCSDIR%%/samples/colors.linux
 %%PORTDOCS%%%%DOCSDIR%%/samples/gpg.rc
+%%PORTDOCS%%%%DOCSDIR%%/samples/mairix_filter.pl
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.mailcap
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.neomuttrc
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.neomuttrc-tlr
 %%PORTDOCS%%%%DOCSDIR%%/samples/smime.rc
 %%PORTDOCS%%%%DOCSDIR%%/samples/smime_keys_test.pl
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.neomuttrc-starter
 %%PORTDOCS%%%%DOCSDIR%%/security.html
 %%PORTDOCS%%%%DOCSDIR%%/smime-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/tuning.html
