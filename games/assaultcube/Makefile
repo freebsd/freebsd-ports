@@ -40,6 +40,7 @@ OPTIONS_DEFAULT=	CLIENT DEDICATED
 
 CLIENT_DESC=	Build client
 CLIENT_USES=		gettext-runtime openal:al
+CLIENT_USES=		gl xorg
 CLIENT_USE=		GL=gl SDL=image,sdl XORG=x11
 CLIENT_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 			libcurl.so:ftp/curl

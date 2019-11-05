@@ -42,6 +42,7 @@ TIFF_MESON_TRUE=	tiff
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 X11_MESON_TRUE=		x11
+X11_USES=		xorg
 X11_USE=		xorg=x11
 
 post-install:

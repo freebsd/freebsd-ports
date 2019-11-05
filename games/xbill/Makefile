@@ -38,6 +38,7 @@ ATHENA_DESC=	Athena widget set
 MOTIF_DESC=	Motif widget set
 
 ATHENA_CONFIGURE_ON=	--disable-motif
+ATHENA_USES=	xorg
 ATHENA_USE=	xorg=xaw,xmu
 
 MOTIF_CONFIGURE_ON=	--disable-athena

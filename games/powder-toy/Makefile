@@ -38,6 +38,7 @@ SSE_MAKE_ARGS_OFF=	--no-sse
 SSE3_DESC=		Enable SSE3 optimizations
 SSE3_MAKE_ARGS=		--sse3
 SSE3_IMPLIES=		SSE
+OPENGL_USES=		gl
 OPENGL_USE=		GL=gl,glu,glew
 OPENGL_MAKE_ARGS=	--opengl --opengl-renderer
 OPENGL_BROKEN=		Application dies with SIGBUS at startup

@@ -36,6 +36,7 @@ SUB_FILES=	pkg-message ${PLIST_FILES:Mbin/*:T}
 OPTIONS_DEFINE=	DOCS
 
 CLIENT_DESC=	Build client
+CLIENT_USES=		gl xorg
 CLIENT_USE=		GL=gl SDL=image,mixer,sdl XORG=x11
 CLIENT_ALL_TARGET=	client
 CLIENT_PLIST_FILES=	bin/sauer_client libexec/sauer_client

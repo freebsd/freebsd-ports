@@ -96,7 +96,7 @@ CONSOLE_VARS=		GUI=no
 GNOME_PLIST_SUB=	GUI="" DESKTOP=""
 GNOME_IMPLIES=		NLS
 GNOME_USE=		GNOME=gdkpixbuf2,libgnomeui XORG=ice,sm,xorgproto,x11,xpm,xt
-GNOME_USES=		desktop-file-utils gnome
+GNOME_USES=		desktop-file-utils gnome xorg
 GNOME_VARS=		GUI=gnome2 INSTALLS_ICONS=yes
 
 GTK2_PLIST_SUB=		GUI="" DESKTOP=""

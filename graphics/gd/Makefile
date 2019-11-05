@@ -44,6 +44,7 @@ FREETYPE_CPPFLAGS=	-I${LOCALBASE}/include
 FONTCONFIG_LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
 FONTCONFIG_CONFIGURE_OFF=	--with-fontconfig=no
 FONTCONFIG_CPPFLAGS=		-I${LOCALBASE}/include
+XPM_USES=	xorg
 XPM_USE=	xorg=xpm,x11
 XPM_CONFIGURE_ON=	--with-x
 XPM_CONFIGURE_OFF=	--with-xpm=no
