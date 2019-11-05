@@ -12,4 +12,4 @@ features from the latest versions of GCC.
 
 For cross-compilation, see the devel/cross-binutils port.
 
-WWW: http://sources.redhat.com/binutils/
+WWW: https://www.gnu.org/software/binutils/
