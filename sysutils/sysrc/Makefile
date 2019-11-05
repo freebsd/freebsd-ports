@@ -6,7 +6,7 @@ PORTVERSION=	5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 
-MAINTAINER=	dteske@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to get or set rc.conf(5) values
 
 LICENSE=	BSD2CLAUSE

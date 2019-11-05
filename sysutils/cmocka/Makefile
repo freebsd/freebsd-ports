@@ -6,7 +6,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://cmocka.org/files/1.1/ \
 		LOCAL/dteske
 
-MAINTAINER=	dteske@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unit testing framework for C with support for mock objects
 
 LICENSE=	APACHE20
