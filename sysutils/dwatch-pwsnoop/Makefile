@@ -4,7 +4,7 @@ PORTNAME=	dwatch-pwsnoop
 DISTVERSION=	0.1.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	dteske@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD dwatch profile for snooping passwords
 
 LICENSE=	BSD2CLAUSE

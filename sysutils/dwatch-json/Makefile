@@ -4,7 +4,7 @@ PORTNAME=	dwatch-json
 DISTVERSION=	0.4.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	dteske@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD dwatch profiles to produce JSON logs
 
 LICENSE=	BSD2CLAUSE
