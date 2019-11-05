@@ -25,7 +25,8 @@ MMX_BUILD_DEPENDS=nasm:devel/nasm
 MMX_CONFIGURE_ENABLE=mmx
 
 EXTRACT_AFTER_ARGS=--exclude libltdl
-USES=		gettext gmake gnome jpeg libtool localbase pkgconfig shebangfix
+USES=		gettext gmake gnome jpeg libtool localbase pkgconfig \
+		shebangfix xorg
 USE_GNOME=	gtk20
 SHEBANG_FILES=	contrib/instgame
 USE_XORG=	x11 xext xxf86vm

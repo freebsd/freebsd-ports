@@ -20,7 +20,7 @@ MACROS_DESC=	Install default set of macros (highly recommended)
 OPTIONS_DEFAULT=	MACROS
 OPTIONS_SUB=	yes
 
-USES=		cpe
+USES=		cpe xorg
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

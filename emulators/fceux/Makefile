@@ -18,7 +18,7 @@ RUN_DEPENDS=	zenity:x11/zenity
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		compiler:c++0x desktop-file-utils dos2unix localbase:ldflags pkgconfig scons
+USES=		compiler:c++0x desktop-file-utils dos2unix localbase:ldflags pkgconfig scons xorg
 USE_SDL=	sdl
 USE_XORG=	x11
 
@@ -38,9 +38,11 @@ DEBUG_MAKE_ARGS_OFF=	DEBUG=0
 FRAMESKIP_DESC=		Enable frameskipping
 FRAMESKIP_MAKE_ARGS=	FRAMESKIP=1
 FRAMESKIP_MAKE_ARGS_OFF=	FRAMESKIP=0
+GTK2_USES=		gnome
 GTK2_USE=		GNOME=gtk20
 GTK2_MAKE_ARGS=		GTK=1
 GTK2_MAKE_ARGS_OFF=	GTK=0
+GTK3_USES=		gnome
 GTK3_USE=		GNOME=gtk30
 GTK3_MAKE_ARGS=		GTK3=1
 GTK3_MAKE_ARGS_OFF=	GTK3=0
@@ -52,6 +54,7 @@ LOGO_IMPLIES=		CREATE_AVI
 LUA_USES=		lua:51
 LUA_MAKE_ARGS=		LUA=1 SYSTEM_LUA=1
 LUA_MAKE_ARGS_OFF=	LUA=0
+OPENGL_USES=		gl
 OPENGL_USE=		GL=gl
 OPENGL_MAKE_ARGS=	OPENGL=1
 OPENGL_MAKE_ARGS_OFF=	OPENGL=0

@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 
 BROKEN_i386=		does not build on i386 (../cpu.h:4513:117: error: 'regparm' parameter must be between 0 and 3 inclusive)
 
-USES=		gmake libtool:keepla pkgconfig
+USES=		gmake libtool:keepla pkgconfig xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_alsa_asoundlib_h=no \

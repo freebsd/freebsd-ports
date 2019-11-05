@@ -23,7 +23,7 @@ LICENSE_TEXT=	This program is NOT in public domain.\
 		Legal status of distributed ROM images is unclear.
 LICENSE_PERMS=	none
 
-USES=		dos2unix gmake zip
+USES=		dos2unix gmake xorg zip
 USE_XORG=	x11 xext
 DOS2UNIX_FILES=	EMULib/Unix/LibUnix.c EMULib/Unix/NetUnix.c EMULib/Rules.gcc \
 		EMULib/Rules.Unix fMSX/fMSX.html

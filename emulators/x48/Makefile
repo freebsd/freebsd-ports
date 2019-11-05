@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/misc/7x14B-ISO8859-1.pcf.gz:x11-fonts/font
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-lutil
-USES=		autoreconf gmake pkgconfig tar:bzip2
+USES=		autoreconf gmake pkgconfig tar:bzip2 xorg
 USE_XORG=	x11 xext xt
 NO_WRKSUBDIR=	yes
 

@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 
 WRKSRC=		${WRKDIR}/fte
 
-USES=		perl5 zip
+USES=		perl5 zip xorg
 USE_PERL5=	build
 USE_XORG=	x11 xpm
 

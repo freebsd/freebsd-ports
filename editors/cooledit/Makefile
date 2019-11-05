@@ -13,7 +13,7 @@ COMMENT=	Suite of utilities, including a GUI editor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake libtool python # gettext is linked to despite .mo files having been deleted
+USES=		gettext gmake libtool python xorg # gettext is linked to despite .mo files having been deleted
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xt
 USE_LDCONFIG=	yes

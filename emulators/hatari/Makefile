@@ -18,7 +18,7 @@ LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 		libpng.so:graphics/png
 
 USES=		cmake desktop-file-utils gnome python:3.6+ readline \
-		sdl shared-mime-info shebangfix tar:bzip2
+		sdl shared-mime-info shebangfix tar:bzip2 xorg
 USE_GNOME=	gtk30
 USE_XORG=	sm ice x11 xext
 USE_PYTHON=	concurrent

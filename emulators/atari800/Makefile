@@ -58,6 +58,7 @@ PKGNAMESUFFIX=	-sdl
 USE_SDL=	sdl
 CONFIGURE_ARGS+=	--target=sdl
 .else
+USES+=		xorg
 USE_XORG=	x11 xext
 .if ${PORT_OPTIONS:MSHM}
 CONFIGURE_ARGS+=	--target=x11-shm

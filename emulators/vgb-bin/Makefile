@@ -19,6 +19,7 @@ LIB_DEPENDS=	libc.so.5:misc/compat5x
 IA32_BINARY_PORT=	yes
 NO_BUILD=	no
 NO_WRKSUBDIR=	no
+USES=		xorg
 USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/vgb

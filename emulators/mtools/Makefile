@@ -37,6 +37,7 @@ CONFIGURE_ENV+=	ac_cv_header_iconv_h=no
 .endif
 
 .if ${PORT_OPTIONS:MX11}
+USES+=		xorg
 USE_XORG=	x11 sm ice xau
 PLIST_SUB+=	X11=""
 .else

@@ -12,7 +12,7 @@ COMMENT=	Yet another Nintendo Game Boy emulator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2
+USES=		tar:bzip2 xorg
 USE_XORG=	x11 xext xv
 USE_GITHUB=	yes
 GH_ACCOUNT=	nakal

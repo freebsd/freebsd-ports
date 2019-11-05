@@ -21,7 +21,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
 USES=		compiler:c++14-lang gl gmake jpeg pkgconfig \
-		python:2.7,build qt:5 sdl shebangfix
+		python:2.7,build qt:5 sdl shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev

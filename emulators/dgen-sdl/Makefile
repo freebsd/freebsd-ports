@@ -11,8 +11,8 @@ MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Wonderful Sega Genesis/MegaDrive emulator
 
 USE_SDL=	sdl
-USE_GL=		yes
-USES=		gmake libarchive
+USE_GL=		glu
+USES=		gl gmake libarchive
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/dgen \

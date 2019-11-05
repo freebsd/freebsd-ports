@@ -15,8 +15,8 @@ COMMENT=	Multiwindow mouse-based text editor for X
 
 LICENSE=	GPLv2
 
+USES=		bison compiler:c11 xorg
 USE_XORG=	x11
-USES=		bison compiler:c11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 LIBS+=		-lgnuregex

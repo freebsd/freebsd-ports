@@ -30,7 +30,7 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=--disable-alsa --disable-alsatest \
 		--with-sdl-prefix=${LOCALBASE}
 
-USES=		compiler:c++11-lib cpe iconv pkgconfig:build tar:xz
+USES=		compiler:c++11-lib cpe gl iconv pkgconfig:build tar:xz
 CPE_VENDOR=	david_shadoff
 
 OPTIONS_DEFINE=	NLS DOCS JACK

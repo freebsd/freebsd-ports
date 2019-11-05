@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	reflex:textproc/reflex
 
-USES=		pkgconfig shebangfix tar:tgz
+USES=		pkgconfig shebangfix tar:tgz xorg
 SHEBANG_FILES=	macros/lxvile macros/lxvile-fonts perl/vileget
 USE_XORG=	x11 xext xpm xt
 GNU_CONFIGURE=	yes

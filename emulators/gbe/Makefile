@@ -13,6 +13,7 @@ COMMENT=	Nintendo GameBoy(tm) emulator with GNU source code
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		xorg
 USE_XORG=	x11
 
 PLIST_FILES=	bin/gbe
