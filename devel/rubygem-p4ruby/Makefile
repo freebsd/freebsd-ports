@@ -5,7 +5,7 @@ PORTVERSION=	2017.1.1599185
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	brd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby bindings for the Perforce API
 
 LICENSE=	BSD2CLAUSE

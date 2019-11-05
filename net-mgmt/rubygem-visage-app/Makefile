@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	brd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph tool for Collectd
 
 LICENSE=	MIT

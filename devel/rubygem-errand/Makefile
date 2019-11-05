@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	brd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby bindings for RRD
 
 LICENSE=	MIT
