@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-libs
-DISTVERSION?=	430.50
+DISTVERSION?=	440.31
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11 linux
@@ -122,7 +122,15 @@ PLIST_RE+=	'\,${LINUXBASE}.*libGLESv(1_CM|2)_nvidia\.so,d' \
 		'\,${LINUXBASE}.*libnvidia-fatbinaryloader\.so,d' \
 		'\,${LINUXBASE}.*libnvidia-ptxjitcompiler\.so,d'
 .endif
-.if ${NVVERSION} >= 418.030
+.if ${NVVERSION} >= 440.026
+LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.4
+LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.4 libnvidia-egl-wayland.so.1
+PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.4/'
+.elif ${NVVERSION} >= 435.017
+LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.3
+LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.3 libnvidia-egl-wayland.so.1
+PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.3/'
+.elif ${NVVERSION} >= 418.030
 LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.2
 LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.2 libnvidia-egl-wayland.so.1
 PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.2/'
@@ -130,6 +138,10 @@ PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.2/'
 LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.0
 LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.0 libnvidia-egl-wayland.so.1
 PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.0/'
+.elif ${NVVERSION} >= 396.018
+LINUX_LIBS+=	libnvidia-egl-wayland.so.1.0.3
+LINUX_LINKS+=	libnvidia-egl-wayland.so.1.0.3 libnvidia-egl-wayland.so.1
+PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.0.3/'
 .elif ${NVVERSION} >= 387.012
 LINUX_LIBS+=	libnvidia-egl-wayland.so.1.0.2
 LINUX_LINKS+=	libnvidia-egl-wayland.so.1.0.2 libnvidia-egl-wayland.so.1
@@ -348,7 +360,7 @@ do-extract:
 		--extract-only > /dev/null)
 
 post-patch:
-.if ${NVVERSION} >= 384.047
+.if ${NVVERSION} >= 384.047 && ${NVVERSION} < 435.017
 	@${SED} 's/__NV_VK_ICD__/libGLX_nvidia.so.0/' \
 		${WRKSRC}/nvidia_icd.json.template > \
 		${WRKSRC}/nvidia_icd.json
