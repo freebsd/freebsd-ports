@@ -1,11 +1,11 @@
---- Makefile.ship.orig	2018-01-29 02:26:08 UTC
+--- Makefile.ship.orig	2019-11-04 23:36:46 UTC
 +++ Makefile.ship
 @@ -581,7 +581,7 @@ else
  #endif	/* end of skip for non-Gnu makefiles */
  
  # default INCDIR for non-macOS
 -INCDIR= /usr/include
-+INCDIR= ${PREFIX}/include
++INCDIR= ${LOCALBASE}/include
  #INCDIR= /usr/local/include
  #INCDIR= /dev/env/DJDIR/include
  
@@ -32,16 +32,34 @@
  
  # default CALC_SHAREDIR for non-macOS
 -CALC_SHAREDIR= /usr/share/calc
-+CALC_SHAREDIR= ${PREFIX}/share/calc
++CALC_SHAREDIR= ${DATADIR}
  #CALC_SHAREDIR= /usr/local/lib/calc
  #CALC_SHAREDIR= /dev/env/DJDIR/share/calc
  
+@@ -690,7 +690,7 @@ endif
+ #
+ #CALC_INCDIR= /usr/local/include/calc
+ #CALC_INCDIR= /dev/env/DJDIR/include/calc
+-CALC_INCDIR= ${INCDIR}/calc
++CALC_INCDIR= ${PREFIX}/include/calc
+ 
+ # By default, these values are based CALC_SHAREDIR, INCDIR, BINDIR
+ # ---------------------------------------------------------------
+@@ -717,7 +717,7 @@ HELPDIR= ${CALC_SHAREDIR}/help
+ CUSTOMCALDIR= ${CALC_SHAREDIR}/custom
+ CUSTOMHELPDIR= ${CALC_SHAREDIR}/custhelp
+ CUSTOMINCDIR= ${CALC_INCDIR}/custom
+-SCRIPTDIR= ${BINDIR}/cscript
++SCRIPTDIR= ${PREFIX}/libexec/cscript
+ 
+ # T - top level directory under which calc will be installed
+ #
 @@ -749,7 +749,7 @@ SCRIPTDIR= ${BINDIR}/cscript
  #
  # If in doubt, use T=
  #
 -T=
-+T=${DESTDIR}
++T= ${DESTDIR}
  
  # where man pages are installed
  #
@@ -54,182 +72,56 @@
  #MANDIR= /dev/env/DJDIR/man/man1
  #MANDIR= /usr/man/u_man/man1
  #MANDIR= /usr/contrib/man/man1
-@@ -895,14 +895,14 @@ CALCRC= ${CALC_SHAREDIR}/startup:~/.calc
+@@ -895,11 +895,11 @@ CALCRC= ${CALC_SHAREDIR}/startup:~/.calcrc:./.calcinit
  #
  # If in doubt, set USE_READLINE, READLINE_LIB and READLINE_INCLUDE to nothing.
  #
 -USE_READLINE=
--#USE_READLINE= -DUSE_READLINE
-+#USE_READLINE=
 +USE_READLINE= -DUSE_READLINE
+ #USE_READLINE= -DUSE_READLINE
  #
- READLINE_LIB=
- READLINE_EXTRAS=
- #
--#READLINE_LIB= -lreadline
--#READLINE_EXTRAS= -lhistory -lncurses
-+READLINE_LIB= -lreadline
+-READLINE_LIB=
+-READLINE_EXTRAS=
++READLINE_LIB= -L${LOCALBASE}/lib -lreadline
 +READLINE_EXTRAS= -lhistory -lncurses
  #
- #READLINE_LIB= -L/usr/gnu/lib -lreadline
+ #READLINE_LIB= -lreadline
  #READLINE_EXTRAS= -lhistory -lncurses
+@@ -925,7 +925,7 @@ READLINE_EXTRAS=
+ #READLINE_LIB= -L/usr/local/opt/readline/lib -lreadline
+ #READLINE_EXTRAS= -lhistory -lncurses
+ #
+-READLINE_INCLUDE=
++READLINE_INCLUDE= -I${LOCALBASE}/include
+ #READLINE_INCLUDE= -I/usr/gnu/include
+ #READLINE_INCLUDE= -I/usr/local/include
+ 
 @@ -936,7 +936,7 @@ READLINE_INCLUDE=
  #CALCPAGER= more
  #CALCPAGER= pg
  #CALCPAGER= cat
 -CALCPAGER= less
-+#CALCPAGER= less
++CALCPAGER= more
  #CALCPAGER= less.exe -ci
  
  # Debug/Optimize options for ${CC} and ${LCC}
-@@ -1063,35 +1063,35 @@ LIB_EXT_VERSION= ${LIB_EXT}.${VERSION}
- 
- # standard utilities used during make
- #
--SHELL= /bin/sh
-+#SHELL= /bin/sh
- LANG= C
--MAKE= make
-+#MAKE= make
- AWK= awk
--SED= sed
-+#SED= sed
- DIFF= diff
- GREP= egrep
- SORT= sort
- TEE= tee
- CTAGS= ctags
--CHMOD= chmod
-+#CHMOD= chmod
- FMT= fmt
- XARGS= xargs
- CMP= cmp
--MKDIR= mkdir
-+#MKDIR= mkdir
- SPLINT= splint
- SPLINT_OPTS=
--RM= rm
--TOUCH= touch
-+#RM= rm
-+#TOUCH= touch
- RMDIR= rmdir
--CP= cp
--MV= mv
-+#CP= cp
-+#MV= mv
- CO= co
- AR= ar
--TRUE= true
--CAT= cat
-+#TRUE= true
-+#CAT= cat
- COL= col
--LN= ln
--LDCONFIG= ldconfig
-+#LN= ln
-+#LDCONFIG= ldconfig
- # assume the X11 makedepend tool for the depend rule
- MAKEDEPEND= makedepend
- STRIP= strip
-@@ -1381,13 +1381,15 @@ WNO_IMPLICT= -Wno-implicit
- WNO_ERROR_LONG_LONG= -Wno-error=long-long
- WNO_LONG_LONG= -Wno-long-long
- CCWERR=
--CCOPT= ${DEBUG}
-+#CCOPT= ${DEBUG}
-+CCOPT=
+@@ -1384,8 +1384,8 @@ CCWERR=
+ CCOPT= ${DEBUG}
  CCMISC=
  #
 -LCC= gcc
 -CC= ${PURIFY} ${LCC} ${CCWERR}
 +LCC= ${CC}
-+#CC= ${PURIFY} ${LCC} ${CCWERR}
++#CC= ${PURIFY} ${CC} ${CCWERR}
  #
--MAKE= gmake
-+#MAKE= gmake
-+MAKE= ${GMAKE}
+ MAKE= gmake
  #
- endif
- 
-@@ -1734,7 +1736,8 @@ ICFLAGS= ${COMMON_CFLAGS} ${CC_STATIC}
+@@ -1734,7 +1734,7 @@ ICFLAGS= ${COMMON_CFLAGS} ${CC_STATIC}
  else
  ICFLAGS= ${COMMON_CFLAGS} ${CC_SHARE}
  endif
 -CFLAGS= ${ICFLAGS} ${CCOPT}
-+#CFLAGS= ${ICFLAGS} ${CCOPT}
 +CFLAGS+= ${ICFLAGS} ${CCOPT}
  
  # Required flags to link files for calc
  #
-@@ -1919,7 +1922,7 @@ CUSTOM_PASSDOWN=  \
-     COMMON_ADD="${COMMON_ADD}" \
-     COMMON_CFLAGS="${COMMON_CFLAGS} -I.." \
-     COMMON_LDFLAGS="${COMMON_LDFLAGS}" \
--    CP=${CP} \
-+    CP="${CP}" \
-     CUSTOMCALDIR="${CUSTOMCALDIR}" \
-     CUSTOMHELPDIR="${CUSTOMHELPDIR}" \
-     CUSTOMINCDIR="${CUSTOMINCDIR}" \
-@@ -1947,7 +1950,7 @@ CUSTOM_PASSDOWN=  \
-     PURIFY="${PURIFY}" \
-     Q="${Q}" \
-     RANLIB="${RANLIB}" \
--    RM=${RM} \
-+    RM="${RM}" \
-     RMDIR=${RMDIR} \
-     SCRIPTDIR="${SCRIPTDIR}" \
-     SED=${SED} \
-@@ -1974,7 +1977,7 @@ HELP_PASSDOWN= \
-     COMMON_ADD="${COMMON_ADD}" \
-     COMMON_CFLAGS="${COMMON_CFLAGS}" \
-     COMMON_LDFLAGS="${COMMON_LDFLAGS}" \
--    CP=${CP} \
-+    CP="${CP}" \
-     EXT=${EXT} \
-     FMT=${FMT} \
-     GREP=${GREP} \
-@@ -1989,7 +1992,7 @@ HELP_PASSDOWN= \
-     MKDIR=${MKDIR} \
-     MV=${MV} \
-     Q="${Q}" \
--    RM=${RM} \
-+    RM="${RM}" \
-     RMDIR=${RMDIR} \
-     SCRIPTDIR="${SCRIPTDIR}" \
-     SED=${SED} \
-@@ -2009,7 +2012,7 @@ CAL_PASSDOWN= \
-     CHMOD=${CHMOD} \
-     CMP=${CMP} \
-     CO=${CO} \
--    CP=${CP} \
-+    CP="${CP}" \
-     HELPDIR="${HELPDIR}" \
-     INCDIR="${INCDIR}" \
-     LANG=${LANG} \
-@@ -2018,7 +2021,7 @@ CAL_PASSDOWN= \
-     MKDIR=${MKDIR} \
-     MV=${MV} \
-     Q="${Q}" \
--    RM=${RM} \
-+    RM="${RM}" \
-     RMDIR=${RMDIR} \
-     SCRIPTDIR="${SCRIPTDIR}" \
-     T=${T} \
-@@ -2037,7 +2040,7 @@ CSCRIPT_PASSDOWN= \
-     CHMOD=${CHMOD} \
-     CMP=${CMP} \
-     CO=${CO} \
--    CP=${CP} \
-+    CP="${CP}" \
-     FMT=${FMT} \
-     HELPDIR="${HELPDIR}" \
-     INCDIR="${INCDIR}" \
-@@ -2047,7 +2050,7 @@ CSCRIPT_PASSDOWN= \
-     MKDIR=${MKDIR} \
-     MV=${MV} \
-     Q="${Q}" \
--    RM=${RM} \
-+    RM="${RM}" \
-     RMDIR=${RMDIR} \
-     SCRIPTDIR="${SCRIPTDIR}" \
-     SED=${SED} \

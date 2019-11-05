@@ -5,32 +5,30 @@ PORTNAME=	calc
 PORTVERSION=	2.12.7.2
 CATEGORIES=	math
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Arbitrary precision calculator
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING-LGPL
 
 USES=		gmake tar:bzip2 readline
-USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
 GH_ACCOUNT=	lcn2
 
 MAKE_JOBS_UNSAFE=	yes
-
-CALCPAGER?=	more
-MAKEFILE=	Makefile.ship
-MAKE_ENV+=	CALCPAGER="${CALCPAGER}" CAT="${CAT}" CHMOD="${CHMOD}" \
-		CP="${CP}" GMAKE="${MAKE_CMD}" LN="${LN}" MKDIR="${MKDIR}" \
-		MV="${MV}" RM="${RM}" SED="${SED}" TOUCH="${TOUCH}" \
-		TRUE="${TRUE}"
-TEST_TARGET=	check
-.if !exists(/usr/lib/libreadline.so)
-MAKE_ARGS=	READLINE_INCLUDE="-I${LOCALBASE}/include" \
-		READLINE_LIB="-L${LOCALBASE}/lib -lreadline"
-.endif
-
 PLIST_SUB+=	VERSION=${PORTVERSION}
+
+MAKEFILE=	Makefile.ship
+MAKE_ARGS=	DATADIR="${DATADIR}"
+TEST_TARGET=	check
+
+OPTIONS_DEFINE=	FULL HELP
+OPTIONS_DEFAULT=FULL HELP
+OPTIONS_SUB=	yes
+FULL_DESC=	Install all functions, scripts, and headers
+HELP_DESC=	Install calc help files
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/calc \
