@@ -23,8 +23,6 @@ CONFIGURE_ARGS=	--with-bash-completion
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-INFO=		source-highlight source-highlight-lib
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PORTDOCS=	*
