@@ -1,14 +1,14 @@
---- chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc.orig	2019-04-30 22:22:33 UTC
+--- chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc.orig	2019-09-09 21:55:09 UTC
 +++ chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc
 @@ -112,6 +112,12 @@ void WiredDisplayMediaRouteProvider::CreateRoute(
      bool incognito,
      CreateRouteCallback callback) {
-   DCHECK(!base::ContainsKey(presentations_, presentation_id));
-+#if defined(OS_BSD) // XXX
-+   std::move(callback).Run(base::nullopt, nullptr,
-+                           std::string("Not implemented"),
-+                           RouteRequestResult::UNKNOWN_ERROR);
-+   return;
+   DCHECK(!base::Contains(presentations_, presentation_id));
++#if defined(OS_BSD)
++  std::move(callback).Run(base::nullopt, nullptr,
++		          std::string("Not implemented"),
++			  RouteRequestResult::UNKNOWN_ERROR);
++  return;
 +#else
    base::Optional<Display> display = GetDisplayBySinkId(sink_id);
    if (!display) {

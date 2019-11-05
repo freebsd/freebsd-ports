@@ -1,6 +1,6 @@
---- chrome/common/extensions/api/api_sources.gni.orig	2019-07-24 18:58:13 UTC
+--- chrome/common/extensions/api/api_sources.gni.orig	2019-10-21 19:06:25 UTC
 +++ chrome/common/extensions/api/api_sources.gni
-@@ -106,7 +106,7 @@ if (is_chromeos) {
+@@ -109,7 +109,7 @@ if (is_chromeos) {
      "wallpaper.json",
      "wallpaper_private.json",
    ]

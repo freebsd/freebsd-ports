@@ -1,6 +1,6 @@
---- content/public/common/child_process_host.h.orig	2019-07-24 18:58:24 UTC
+--- content/public/common/child_process_host.h.orig	2019-10-21 19:06:32 UTC
 +++ content/public/common/child_process_host.h
-@@ -51,7 +51,7 @@ class CONTENT_EXPORT ChildProcessHost : public IPC::Se
+@@ -52,7 +52,7 @@ class CONTENT_EXPORT ChildProcessHost : public IPC::Se
      // No special behavior requested.
      CHILD_NORMAL = 0,
  

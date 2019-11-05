@@ -1,6 +1,6 @@
---- chrome/test/base/testing_browser_process.h.orig	2019-07-24 18:58:15 UTC
+--- chrome/test/base/testing_browser_process.h.orig	2019-09-09 21:55:11 UTC
 +++ chrome/test/base/testing_browser_process.h
-@@ -120,8 +120,8 @@ class TestingBrowserProcess : public BrowserProcess {
+@@ -116,8 +116,8 @@ class TestingBrowserProcess : public BrowserProcess {
    DownloadRequestLimiter* download_request_limiter() override;
    StartupData* startup_data() override;
  
@@ -10,4 +10,4 @@
 +  void StartAutoupdateTimer() /*override*/ {}
  #endif
  
-   net_log::ChromeNetLog* net_log() override;
+   component_updater::ComponentUpdateService* component_updater() override;

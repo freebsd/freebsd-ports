@@ -1,20 +1,32 @@
---- gpu/vulkan/vulkan_function_pointers.cc.orig	2019-07-24 18:58:27 UTC
+--- gpu/vulkan/vulkan_function_pointers.cc.orig	2019-10-21 19:06:35 UTC
 +++ gpu/vulkan/vulkan_function_pointers.cc
-@@ -352,7 +352,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
- 
- #endif
+@@ -731,7 +731,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+   }
+ #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
- 
-   vkGetSemaphoreFdKHRFn = reinterpret_cast<PFN_vkGetSemaphoreFdKHR>(
-       vkGetDeviceProcAddrFn(vk_device, "vkGetSemaphoreFdKHR"));
-@@ -366,7 +366,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
- 
- #endif
+   if (gfx::HasExtension(enabled_extensions,
+                         VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME)) {
+     vkGetSemaphoreFdKHRFn = reinterpret_cast<PFN_vkGetSemaphoreFdKHR>(
+@@ -750,9 +750,9 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+       return false;
+     }
+   }
+-#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
++#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
+   if (gfx::HasExtension(enabled_extensions,
+                         VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME)) {
+     vkGetMemoryFdKHRFn = reinterpret_cast<PFN_vkGetMemoryFdKHR>(
+@@ -763,7 +763,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+       return false;
+     }
+   }
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
  
-   vkGetMemoryFdKHRFn = reinterpret_cast<PFN_vkGetMemoryFdKHR>(
-       vkGetDeviceProcAddrFn(vk_device, "vkGetMemoryFdKHR"));
+ #if defined(OS_FUCHSIA)
+   if (gfx::HasExtension(enabled_extensions,

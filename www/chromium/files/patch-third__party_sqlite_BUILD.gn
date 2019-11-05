@@ -1,6 +1,6 @@
---- third_party/sqlite/BUILD.gn.orig	2019-07-24 18:59:14 UTC
+--- third_party/sqlite/BUILD.gn.orig	2019-09-09 21:55:43 UTC
 +++ third_party/sqlite/BUILD.gn
-@@ -258,7 +258,7 @@ config("sqlite_warnings") {
+@@ -262,7 +262,7 @@ config("sqlite_warnings") {
        ]
      }
    }

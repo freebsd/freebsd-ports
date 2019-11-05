@@ -1,6 +1,6 @@
---- content/browser/devtools/protocol/system_info_handler.cc.orig	2019-05-04 08:59:22 UTC
+--- content/browser/devtools/protocol/system_info_handler.cc.orig	2019-09-09 21:55:16 UTC
 +++ content/browser/devtools/protocol/system_info_handler.cc
-@@ -40,7 +40,7 @@ using GetInfoCallback = SystemInfo::Backend::GetInfoCa
+@@ -48,7 +48,7 @@ std::unique_ptr<SystemInfo::Size> GfxSizeToSystemInfoS
  // Give the GPU process a few seconds to provide GPU info.
  // Linux Debug builds need more time -- see Issue 796437.
  // Windows builds need more time -- see Issue 873112.

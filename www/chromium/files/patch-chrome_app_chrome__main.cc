@@ -1,7 +1,7 @@
---- chrome/app/chrome_main.cc.orig	2019-04-30 22:22:30 UTC
+--- chrome/app/chrome_main.cc.orig	2019-09-09 21:55:07 UTC
 +++ chrome/app/chrome_main.cc
-@@ -94,11 +94,11 @@ int ChromeMain(int argc, const char** argv) {
- #endif
+@@ -101,11 +101,11 @@ int ChromeMain(int argc, const char** argv) {
+   MainThreadStackSamplingProfiler scoped_sampling_profiler;
  
    // Chrome-specific process modes.
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)

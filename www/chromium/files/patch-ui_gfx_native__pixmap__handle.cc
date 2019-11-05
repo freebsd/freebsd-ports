@@ -1,4 +1,4 @@
---- ui/gfx/native_pixmap_handle.cc.orig	2019-07-24 18:59:22 UTC
+--- ui/gfx/native_pixmap_handle.cc.orig	2019-10-21 19:07:29 UTC
 +++ ui/gfx/native_pixmap_handle.cc
 @@ -8,7 +8,7 @@
  
@@ -45,3 +45,12 @@
      DCHECK(plane.fd.is_valid());
      base::ScopedFD fd_dup(HANDLE_EINTR(dup(plane.fd.get())));
      if (!fd_dup.is_valid()) {
+@@ -96,7 +96,7 @@ NativePixmapHandle CloneHandleForIPC(const NativePixma
+ #endif
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   clone.modifier = handle.modifier;
+ #endif
+ 

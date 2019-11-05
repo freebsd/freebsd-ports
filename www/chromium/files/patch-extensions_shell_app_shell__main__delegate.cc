@@ -1,4 +1,4 @@
---- extensions/shell/app/shell_main_delegate.cc.orig	2019-03-11 22:00:58 UTC
+--- extensions/shell/app/shell_main_delegate.cc.orig	2019-09-09 21:55:17 UTC
 +++ extensions/shell/app/shell_main_delegate.cc
 @@ -38,7 +38,7 @@
  
@@ -9,15 +9,6 @@
  #include "base/nix/xdg_util.h"
  #elif defined(OS_MACOSX)
  #include "base/base_paths_mac.h"
-@@ -52,7 +52,7 @@
- 
- namespace {
- 
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
- extensions::ShellCrashReporterClient* GetCrashReporterClient() {
-   static base::NoDestructor<extensions::ShellCrashReporterClient> instance;
-   return instance.get();
 @@ -70,7 +70,7 @@ base::FilePath GetDataPath() {
      return cmd_line->GetSwitchValuePath(switches::kContentShellDataPath);
  

@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/external_vk_image_gl_representation.cc.orig	2019-06-04 18:55:24 UTC
+--- gpu/command_buffer/service/external_vk_image_gl_representation.cc.orig	2019-09-09 21:55:18 UTC
 +++ gpu/command_buffer/service/external_vk_image_gl_representation.cc
-@@ -128,7 +128,7 @@ GLuint ExternalVkImageGlRepresentation::ImportVkSemaph
+@@ -183,7 +183,7 @@ GLuint ExternalVkImageGlRepresentation::ImportVkSemaph
  #if defined(OS_FUCHSIA)
    NOTIMPLEMENTED_LOG_ONCE();
    return 0;
@@ -9,7 +9,7 @@
    if (handle.vk_handle_type() !=
        VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_FD_BIT) {
      DLOG(ERROR) << "Importing semaphore handle of unexpected type:"
-@@ -143,7 +143,7 @@ GLuint ExternalVkImageGlRepresentation::ImportVkSemaph
+@@ -198,7 +198,7 @@ GLuint ExternalVkImageGlRepresentation::ImportVkSemaph
                                  fd.release());
  
    return gl_semaphore;

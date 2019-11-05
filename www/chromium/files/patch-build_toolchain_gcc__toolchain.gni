@@ -1,4 +1,4 @@
---- build/toolchain/gcc_toolchain.gni.orig	2019-06-04 18:55:15 UTC
+--- build/toolchain/gcc_toolchain.gni.orig	2019-10-21 19:06:18 UTC
 +++ build/toolchain/gcc_toolchain.gni
 @@ -36,6 +36,11 @@ if (is_linux && target_os == "android") {
    enable_resource_whitelist_generation = false
@@ -12,7 +12,7 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -617,13 +622,23 @@ template("clang_toolchain") {
+@@ -589,13 +594,23 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {

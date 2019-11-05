@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/first_run_dialog.cc.orig	2019-07-24 18:58:12 UTC
+--- chrome/browser/ui/views/first_run_dialog.cc.orig	2019-09-09 21:55:11 UTC
 +++ chrome/browser/ui/views/first_run_dialog.cc
 @@ -37,8 +37,10 @@
  namespace {
@@ -11,7 +11,7 @@
  }
  
  }  // namespace
-@@ -111,8 +113,10 @@ views::View* FirstRunDialog::CreateExtraView() {
+@@ -108,8 +110,10 @@ std::unique_ptr<views::View> FirstRunDialog::CreateExt
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  

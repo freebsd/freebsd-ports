@@ -1,4 +1,4 @@
---- content/shell/app/shell_main_delegate.cc.orig	2019-07-29 19:14:59 UTC
+--- content/shell/app/shell_main_delegate.cc.orig	2019-10-21 19:06:33 UTC
 +++ content/shell/app/shell_main_delegate.cc
 @@ -170,7 +170,7 @@ bool ShellMainDelegate::BasicStartupComplete(int* exit
  
@@ -9,7 +9,7 @@
    breakpad::SetFirstChanceExceptionHandler(v8::TryHandleWebAssemblyTrapPosix);
  #endif
  #if defined(OS_MACOSX)
-@@ -314,7 +314,7 @@ bool ShellMainDelegate::BasicStartupComplete(int* exit
+@@ -317,7 +317,7 @@ bool ShellMainDelegate::BasicStartupComplete(int* exit
  }
  
  void ShellMainDelegate::PreSandboxStartup() {

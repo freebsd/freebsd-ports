@@ -1,6 +1,6 @@
---- third_party/swiftshader/src/Main/SwiftConfig.cpp.orig	2019-03-11 22:08:03 UTC
+--- third_party/swiftshader/src/Main/SwiftConfig.cpp.orig	2019-09-09 21:57:01 UTC
 +++ third_party/swiftshader/src/Main/SwiftConfig.cpp
-@@ -762,7 +762,11 @@ namespace sw
+@@ -764,7 +764,11 @@ namespace sw
  		struct stat status;
  		int lastModified = ini.getInteger("LastModified", "Time", 0);
  

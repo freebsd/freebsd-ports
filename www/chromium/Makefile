@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	76.0.3809.132
-PORTREVISION=	1
+PORTVERSION=	78.0.3904.87
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/cpm/chromium/:fonts
@@ -75,7 +74,7 @@ USES=		compiler:c++14-lang dos2unix localbase:ldflags ninja pkgconfig \
 		python:2.7,build shebangfix tar:xz
 .else
 USES=		bison cpe desktop-file-utils dos2unix gl gnome jpeg localbase:ldflags \
-		ninja perl5 pkgconfig python:2.7,build shebangfix tar:xz
+		ninja perl5 pkgconfig python:2.7,build shebangfix tar:xz xorg
 .endif
 MAKE_ARGS=	-C out/${BUILDTYPE}
 BINARY_ALIAS=	python=${PYTHON_CMD}
@@ -294,6 +293,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in \
 		${STAGEDIR}${MANPREFIX}/man/man1/chrome.1
+	${CP} ${WRKSRC}/chrome/app/theme/chromium/product_logo_22_mono.png ${WRKSRC}/chrome/app/theme/chromium/product_logo_22.png
 .for s in 22 24 48 64 128 256
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/chrome/app/theme/chromium/product_logo_${s}.png \
@@ -316,10 +316,15 @@ do-install:
 		${STAGEDIR}${DATADIR}
 
 	# ANGLE, EGL, Vk
-.for f in libEGL.so libGLESv2.so libVkICD_mock_icd.so libVkLayer_core_validation.so libVkLayer_object_lifetimes.so \
-	libVkLayer_stateless_validation.so libVkLayer_thread_safety.so libVkLayer_unique_objects.so
+.for f in libEGL.so libGLESv2.so libVkICD_mock_icd.so
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/${f} ${STAGEDIR}${DATADIR}
 .endfor
+.if ${BUILDTYPE} == Debug
+.for f in libVkLayer_core_validation.so libVkLayer_object_lifetimes.so libVkLayer_stateless_validation.so \
+	libVkLayer_thread_safety.so libVkLayer_unique_objects.so
+	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/${f} ${STAGEDIR}${DATADIR}
+.endfor
+.endif
 
 	# SwiftShader
 .if ${ARCH} != aarch64

@@ -1,4 +1,4 @@
---- extensions/browser/api/messaging/message_service.cc.orig	2019-06-04 18:55:24 UTC
+--- extensions/browser/api/messaging/message_service.cc.orig	2019-09-09 21:55:17 UTC
 +++ extensions/browser/api/messaging/message_service.cc
 @@ -61,7 +61,7 @@ namespace {
  
@@ -9,7 +9,7 @@
  const char kMissingPermissionError[] =
      "Access to native messaging requires nativeMessaging permission.";
  const char kProhibitedByPoliciesError[] =
-@@ -383,7 +383,7 @@ void MessageService::OpenChannelToNativeApp(
+@@ -382,7 +382,7 @@ void MessageService::OpenChannelToNativeApp(
    if (!opener_port->IsValidPort())
      return;
  
@@ -18,7 +18,7 @@
    bool has_permission = extension->permissions_data()->HasAPIPermission(
        APIPermission::kNativeMessaging);
    if (!has_permission) {
-@@ -433,11 +433,11 @@ void MessageService::OpenChannelToNativeApp(
+@@ -432,11 +432,11 @@ void MessageService::OpenChannelToNativeApp(
    channel->opener->IncrementLazyKeepaliveCount();
  
    AddChannel(std::move(channel), receiver_port_id);
