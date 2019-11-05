@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	html-xml-utils
-PORTVERSION=	7.7
-PORTREVISION=	3
+PORTVERSION=	7.8
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.w3.org/Tools/HTML-XML-utils/
 
