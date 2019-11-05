@@ -15,7 +15,7 @@ LICENSE=	GPLv2 # from website
 
 WRKSRC_SUBDIR=	src
 
-USES=		dos2unix
+USES=		dos2unix gl xorg
 DOS2UNIX_FILES=	Makefile bmp.cpp
 USE_GL=		gl glu glut
 USE_XORG=	x11 xext xmu xi

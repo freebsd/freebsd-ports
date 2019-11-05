@@ -16,7 +16,7 @@ LICENSE=	GPLv2 # version unspecified actually
 BUILD_DEPENDS=	scons:devel/scons
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler
+USES=		compiler gl sdl
 USE_GL=		gl
 USE_SDL=	sdl image ttf
 SCONS_ARGS=	prefix=${PREFIX}

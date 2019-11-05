@@ -15,7 +15,7 @@ COMMENT=	Remake of classic F1 Spirit racing game
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		dos2unix gmake zip
+USES=		dos2unix gl gmake sdl zip
 USE_SDL=	sdl net image mixer sound
 USE_GL=		gl glu
 DOS2UNIX_GLOB=	*.h *.cpp

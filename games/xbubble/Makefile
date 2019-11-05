@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
+USES=		gmake xorg
 USE_XORG=	x11 xmu
 GNU_CONFIGURE=	yes
-USES=		gmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

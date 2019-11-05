@@ -30,7 +30,7 @@ GH_PROJECT=	megaglest-source
 SUB_FILES=	pkg-message
 
 USES=		cmake:insource compiler:c++11-lib display:build dos2unix jpeg lua \
-		openal:al,alut pkgconfig ssl localbase:ldflags sdl gl
+		openal:al,alut pkgconfig ssl localbase:ldflags sdl gl xorg
 USE_GL=		glew gl glu
 USE_SDL=	sdl2
 USE_XORG=	sm ice x11 xext

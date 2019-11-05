@@ -18,6 +18,7 @@ EXTRACT_AFTER_ARGS=	# empty
 
 NO_WRKSUBDIR=	yes
 
+USES=		xorg
 USE_XORG=	x11 xext
 
 CPPFLAGS+=	-I${LOCALBASE}/include

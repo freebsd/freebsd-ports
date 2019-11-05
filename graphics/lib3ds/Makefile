@@ -13,7 +13,7 @@ COMMENT=	Library for handling 3DS (3D Studio) files
 
 LICENSE=	LGPL21+
 
-USES=		libtool localbase zip
+USES=		gl libtool localbase zip
 GNU_CONFIGURE=	yes
 USE_GL=		gl glu glut
 INSTALL_TARGET=	install-strip

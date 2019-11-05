@@ -15,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/share/searchandrescue/human.ini:games/searchandrescue-data
 
+USES=		gl sdl xorg
+USE_GL=		gl glu
 USE_SDL=	mixer
 USE_XORG=	ice sm x11 xau xdmcp xext xmu xpm xxf86vm
-USE_GL=		gl glu
 WRKSRC=		${WRKDIR}/${PORTNAME:tl}_${PORTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME} \

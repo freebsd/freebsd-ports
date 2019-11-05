@@ -14,8 +14,8 @@ COMMENT=	OpenGL wrapper for Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
+USES=		gl gem
 USE_GL=		glut
 USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>

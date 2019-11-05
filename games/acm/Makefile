@@ -13,7 +13,7 @@ COMMENT=	Aerial combat simulator for X11
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		perl5
+USES=		perl5 xorg
 USE_PERL5=	build
 USE_XORG=	x11 xext
 HAS_CONFIGURE=	yes

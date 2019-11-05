@@ -13,7 +13,7 @@ COMMENT=	OpenGL based space-ship "shoot-em-up" game
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		dos2unix gmake
+USES=		dos2unix gl gmake sdl
 USE_SDL=	sdl mixer
 USE_GL=		glut
 GNU_CONFIGURE=	yes

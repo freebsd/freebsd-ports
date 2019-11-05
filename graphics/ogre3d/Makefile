@@ -23,7 +23,7 @@ LIB_DEPENDS=	libzzip.so:devel/zziplib \
 CONFLICTS=	ogre3d19-[0-9]*
 
 USE_LDCONFIG=	yes
-USES=		cmake pkgconfig compiler:c++11-lib sdl
+USES=		cmake pkgconfig compiler:c++11-lib sdl xorg
 USE_SDL=	sdl2
 USE_XORG=	x11 xaw xext xrandr xt
 

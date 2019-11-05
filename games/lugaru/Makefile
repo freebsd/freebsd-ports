@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg
 
-USES=		cmake jpeg openal:soft pkgconfig tar:bzip2
+USES=		cmake gl jpeg openal:soft pkgconfig sdl tar:bzip2 xorg
 USE_GL=		gl glu
 USE_SDL=	sdl
 USE_XORG=	sm

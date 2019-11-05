@@ -23,7 +23,7 @@ RUN_DEPENDS=	giftopnm:graphics/netpbm
 OPTIONS_DEFINE=	NLS A4SIZE DOCS
 A4SIZE_DESC=	Set default paper size to A4
 
-USES=		imake
+USES=		imake xorg
 PORTDOCS=	HISTORY README
 USE_XORG=	x11 xext xt sm ice
 

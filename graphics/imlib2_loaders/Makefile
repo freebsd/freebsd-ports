@@ -21,7 +21,7 @@ LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool localbase pathfix pkgconfig tar:bzip2
+USES=		libtool localbase pathfix pkgconfig tar:bzip2 xorg
 USE_XORG=	x11 xext
 
 CONFIGURE_ARGS=	--disable-static

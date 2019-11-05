@@ -22,8 +22,8 @@ LIB_DEPENDS=	libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome localbase pathfix pkgconfig \
-		sqlite tar:xz
+USES=		gettext gl gmake gnome localbase pathfix pkgconfig \
+		sqlite tar:xz xorg
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
 INSTALLS_ICONS=	yes
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr

@@ -14,7 +14,7 @@ COMMENT=	Cat, Sakura or Tomoyo chasing a mouse all over the screen
 
 CONFLICTS=	oneko-2.*
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/oneko \
 		man/man6/oneko.6.gz

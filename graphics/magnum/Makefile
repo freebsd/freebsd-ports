@@ -17,7 +17,7 @@ BROKEN=		fails to build
 LIB_DEPENDS=	libCorradeUtility.so:devel/corrade \
 		libglfw.so:graphics/glfw
 
-USES=		cmake compiler:c++14-lang gl openal
+USES=		cmake compiler:c++14-lang gl openal sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	mosra
 GH_TUPLE=	mosra:toolchains:a3e0aff:t/toolchains

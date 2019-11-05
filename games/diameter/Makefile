@@ -16,7 +16,8 @@ BROKEN_armv7=		fails to compile: res/3dsloader.cpp:77:15: comparison between poi
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libguichan.so:devel/guichan
 
-USES=		compiler:c++11-lang dos2unix tar:bzip2 gmake pkgconfig python:2.7
+USES=		compiler:c++11-lang dos2unix gl gmake pkgconfig python:2.7 sdl \
+		tar:bzip2 
 DOS2UNIX_FILES=	src/res/3dsloader.cpp
 GNU_CONFIGURE=	yes
 USE_GL=		gl glu

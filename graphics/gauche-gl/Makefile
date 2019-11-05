@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	gosh:lang/gauche
 RUN_DEPENDS=	gosh:lang/gauche
 
-USES=		gl localbase makeinfo tar:tgz
+USES=		gl localbase makeinfo tar:tgz xorg
 USE_CSTD=	gnu99
 USE_XORG=	ice sm x11 xext xmu xi
 USE_GL=		gl glu glut

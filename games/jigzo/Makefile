@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake jpeg tar:tgz
+USES=		gl gmake jpeg sdl tar:tgz
 USE_SDL=	sdl mixer
 USE_GL=		gl
 MAKE_ARGS=	CXX=${CXX}

@@ -17,7 +17,7 @@ LIB_DEPENDS=		libvorbisfile.so:audio/libvorbis \
 			libboost_filesystem.so:devel/boost-libs \
 			libpng.so:graphics/png
 
-USES=			cmake compiler:c++11-lang gl openal:al pkgconfig sdl
+USES=			cmake compiler:c++11-lang gl openal:al pkgconfig sdl xorg
 USE_GL=			gl
 USE_SDL=		sdl2 ttf2 image2
 USE_XORG=		xcursor

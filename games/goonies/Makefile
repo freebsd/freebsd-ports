@@ -14,7 +14,7 @@ COMMENT=	Remake of the 8 bit classic game 'The Goonies'
 
 LICENSE=	NONE
 
-USES=		gmake tar:tgz
+USES=		gl gmake sdl tar:tgz
 USE_SDL=	sdl mixer image
 USE_GL=		gl glu
 USE_CXXSTD=	c++98

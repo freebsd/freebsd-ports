@@ -19,7 +19,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/doc/gpl.txt
 LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/doc/cc-by-sa.txt
 
-USES=		localbase:ldflags zip
+USES=		gl localbase:ldflags zip
 USE_GL=		gl
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	Makefile.lnx

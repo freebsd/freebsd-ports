@@ -34,7 +34,7 @@ GAME_DESC=	Build main game (default mod)
 
 .if ${PORT_OPTIONS:MCLIENT}
 LIB_DEPENDS=	libpng.so:graphics/png
-USES+=		jpeg
+USES+=		gl jpeg
 USE_GL=		gl
 PLIST_SUB+=	CLIENT=""
 EGL_BIN+=	egl

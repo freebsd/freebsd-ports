@@ -13,6 +13,7 @@ COMMENT=		Multi-format graphics manipulation library
 LIB_DEPENDS=		libtiff.so:graphics/tiff
 
 PLIST_FILES=		lib/liblug.a
+USES=			xorg
 USE_XORG=		x11
 CFLAGS+=		-Wno-return-type
 

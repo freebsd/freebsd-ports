@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Connect the pipes to stop the leaks
 
-USES=		imake tar:Z
+USES=		imake tar:Z xorg
 USE_XORG=	x11 xaw xext xmu xt sm ice
 CFLAGS+=	-Wno-error=return-type
 

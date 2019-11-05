@@ -13,7 +13,7 @@ COMMENT=	Strategy game of position and movement for X Window System
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		imake tar:Z
+USES=		imake tar:Z xorg
 USE_XORG=	x11 xext
 
 post-install:

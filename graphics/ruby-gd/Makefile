@@ -46,6 +46,7 @@ WITH_X11_CHECK=		# empty
 .endif
 
 .if !empty(WITH_X11_CHECK)
+USES=		xorg
 USE_XORG=	xpm x11
 PKGNAMESUFFIX_XPM=	+xpm
 CONFIGURE_ARGS+=	--with-X11-dir="${LOCALBASE}" --with-xpm

@@ -12,7 +12,7 @@ COMMENT=	Open-source 3D chess game
 
 LICENSE=	GPLv2  # from sourceforge page
 
-USES=		compiler dos2unix gmake
+USES=		compiler dos2unix gl gmake sdl
 USE_SDL=	sdl image
 USE_GL=		gl glu
 DOS2UNIX_GLOB=	*.cpp *.h Makefile config.ini

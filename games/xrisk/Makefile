@@ -11,7 +11,7 @@ MASTER_SITES=	http://my.pages.de/pub/comp/unix/games/xrisk/old/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game for X11, much like the popular board game
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext xt
 
 RESTRICTED=	Possible trademark infringement

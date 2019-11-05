@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Masterball puzzle for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext xt sm ice
 
 PLIST_FILES=	bin/xmball \

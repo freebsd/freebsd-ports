@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		fortran shebangfix
+USES=		fortran shebangfix xorg
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xorgproto xt
 

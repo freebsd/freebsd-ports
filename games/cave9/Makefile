@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bart9h
 GH_TAGNAME=	e6896eb
 
-USES=		gmake
+USES=		gl gmake sdl
 USE_SDL=	sdl ttf image
 USE_GL=		gl glu
 

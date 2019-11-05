@@ -58,7 +58,7 @@ PLIST_SUB+=	GAME="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MREF_GL}
-USES+=		jpeg
+USES+=		gl jpeg sdl
 USE_GL=		gl
 USE_SDL=	sdl
 LIB_DEPENDS+=	libpng.so:graphics/png

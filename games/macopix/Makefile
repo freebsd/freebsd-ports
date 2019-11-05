@@ -34,7 +34,7 @@ RESTRICTED_FILES=	\
 		macopix-mascot-marimite-euc-ja-2.20.tar.gz \
 		macopix-mascot-HxB-euc-ja-0.30.tar.gz
 
-USES=		gettext gmake gnome iconv jpeg libtool pkgconfig
+USES=		gettext gmake gnome iconv jpeg libtool pkgconfig xorg
 USE_GNOME=	gtk20
 USE_XORG=	x11
 GNU_CONFIGURE=	yes

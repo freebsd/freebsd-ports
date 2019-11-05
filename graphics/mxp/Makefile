@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		xorg
 USE_XORG=	xaw xbitmaps xpm
 ALL_TARGET=	${PORTNAME}
 MAKE_JOBS_UNSAFE=	yes

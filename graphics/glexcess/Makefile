@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	hernan.di.pietro@gmail.com
 COMMENT=	Impressive OpenGL Demo
 
+USES=		gl
 USE_GL=		glut
 
 MAKE_ARGS=	'CXXFLAGS=${CXXFLAGS} -I${LOCALBASE}/include -pipe -s -O2' \

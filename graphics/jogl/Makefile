@@ -28,7 +28,7 @@ ALL_TARGET=	all
 # jogl/make/build.xml
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		zip
+USES=		gl xorg zip
 USE_XORG=	x11 xau xdamage xdmcp xext xfixes xorgproto xt xxf86vm
 USE_GL=		gl
 USE_ANT=	yes

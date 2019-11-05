@@ -24,7 +24,7 @@ GH_PROJECT=	ValyriaTear
 GH_TAGNAME=	${PORTVERSION}-gcc5 # contains relevant tolua++ fixes
 
 USES=		alias cmake compiler:c++11-lang gettext-tools gl iconv lua:51 \
-		openal sdl
+		openal sdl xorg
 CMAKE_ARGS=	-DUSE_PCH_COMPILATION=OFF
 USE_SDL=	sdl image ttf
 USE_GL=		gl glu

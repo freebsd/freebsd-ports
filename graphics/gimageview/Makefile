@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake jpeg libtool localbase perl5 pkgconfig
+USES=		gmake gnome jpeg libtool localbase perl5 pkgconfig xorg
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_PERL5=	build

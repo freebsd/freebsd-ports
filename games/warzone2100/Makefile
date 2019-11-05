@@ -25,7 +25,7 @@ LIB_DEPENDS=	libphysfs.so:devel/physfs \
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
 USES=		bison compiler:c++11-lib gl gmake localbase openal:al pkgconfig \
-		qmake:no_env qt:5 sdl ssl tar:xz
+		qmake:no_env qt:5 sdl ssl tar:xz xorg
 GNU_CONFIGURE=	yes
 USE_GL=		gl glu glew
 USE_SDL=	sdl2

@@ -14,7 +14,7 @@ COMMENT=	Word unscrambling game
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lib qmake qt:5 tar:bzip2
+USES=		compiler:c++11-lib gl qmake qt:5 tar:bzip2
 USE_GL=		gl
 USE_QT=		buildtools_build core gui linguisttools_build network widgets
 

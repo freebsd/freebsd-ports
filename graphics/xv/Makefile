@@ -22,7 +22,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
 		libjasper.so:graphics/jasper
 
-USES=		imake jpeg
+USES=		imake jpeg xorg
 USE_XORG=	xext x11 xt
 
 OPTIONS_DEFINE=	M17N DOCS

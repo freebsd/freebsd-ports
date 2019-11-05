@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_TAGNAME=	b15afba
 
 USES=		autoreconf compiler:c++11-lib gmake gnome libtool localbase \
-		pkgconfig
+		pkgconfig xorg
 USE_CXXSTD=	c++98
 USE_XORG=	xext
 GNU_CONFIGURE=	yes

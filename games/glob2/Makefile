@@ -21,7 +21,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 
 OPTIONS_DEFINE=	DOCS PORTAUDIO
 
-USES=		compiler:c++11-lang pkgconfig scons
+USES=		compiler:c++11-lang gl pkgconfig scons sdl
 USE_SDL=	image net sdl ttf
 USE_GL=		gl glu
 MAKE_ARGS=	CCFLAGS="${CFLAGS}" \

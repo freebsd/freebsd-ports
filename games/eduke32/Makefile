@@ -30,7 +30,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libvpx.so:multimedia/libvpx \
 		libpng.so:graphics/png
 
-USES=		dos2unix gmake pkgconfig tar:xz
+USES=		dos2unix gl gmake gnome pkgconfig sdl tar:xz
 USE_GL=		gl glu
 USE_GNOME=	gtk20
 USE_SDL=	sdl2 mixer2

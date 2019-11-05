@@ -12,6 +12,7 @@ COMMENT=	Easy to use, portable, and powerful 2D graphics library
 
 LIB_DEPENDS=	libgd.so:graphics/gd
 
+USES=		xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

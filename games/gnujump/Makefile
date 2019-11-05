@@ -14,7 +14,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake localbase
+USES=		gl gmake localbase sdl xorg
 USE_SDL=	sdl mixer image
 USE_GL=		gl
 USE_XORG=	x11

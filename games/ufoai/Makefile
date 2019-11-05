@@ -25,11 +25,11 @@ BUILD_DEPENDS=	zip:archivers/zip
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/base/default.cfg:games/ufoai-data
 
 ALL_TARGET=	all lang
+USES=		compiler:c++11-lang gettext gl gmake jpeg openal:soft \
+		pkgconfig python:build sdl tar:bzip2
 USE_GL=		yes
 USE_SDL=	sdl image mixer ttf
 USE_CXXSTD=	c++11
-USES=		compiler:c++11-lang gettext gmake jpeg openal:soft pkgconfig \
-		python:build tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-release --target-os=freebsd
 LDFLAGS+=	-lpthread -lexecinfo
@@ -70,6 +70,7 @@ PLIST_SUB+=	UFO2MAP="@comment "
 .if ${PORT_OPTIONS:MUFORADIANT}
 ALL_TARGET+=	uforadiant
 CONFIGURE_ARGS+=--enable-uforadiant
+USES+=		gnome
 USE_GNOME+=	gtk20 glib20 gtksourceview2 libxml2
 LIB_DEPENDS+=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 RADIANT_FILES=	colours.xml game.xml input.xml mapdef.template menu.xml user.xml

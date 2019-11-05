@@ -12,7 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	SDL/OpenGL top-down shooter
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gl gmake sdl
 USE_GL=		gl
 USE_SDL=	sdl mixer image
 

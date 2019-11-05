@@ -11,7 +11,7 @@ DISTNAME=	NehQuake-bjp-bin-src.linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake engine designed for playing Nehahra
 
-USES=		gmake dos2unix tar:bzip2
+USES=		gl gmake dos2unix tar:bzip2 xorg
 USE_GL=		gl
 USE_XORG=	xxf86dga
 
@@ -19,6 +19,7 @@ OPTIONS_DEFINE=	OPTIMIZED_CFLAGS SDL X86_ASM
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS SDL X86_ASM
 OPTIONS_SUB=	yes
 
+SDL_USES=	sdl
 SDL_USE=	SDL=sdl
 SDL_MAKE_ENV=	BUILD_SDL=YES
 

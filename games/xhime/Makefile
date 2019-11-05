@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resident Himechan for X Window System
 
 WRKSRC=		${WRKDIR}/xhime1.51
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 
 NO_CDROM=	Contains commercial character data

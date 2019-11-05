@@ -11,6 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Avoid running into walls, your own tail, and that of your opponent
 
+USES=		xorg
 USE_XORG=	x11 xpm
 
 PLIST_FILES=	bin/${PORTNAME} lib/X11/app-defaults/Tron

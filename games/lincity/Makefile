@@ -35,6 +35,7 @@ SVGALIB_CONFIGURE_OFF=	--without-svga
 .if ${PORT_OPTIONS:MSVGALIB}
 PLIST_SUB+=	PROG="bin/lincity"
 .else
+USES+=		xorg
 USE_XORG=	sm xext
 PLIST_SUB+=	PROG="bin/xlincity"
 .endif

@@ -14,6 +14,7 @@ COMMENT=	Chess program with 3D interface for X Window System
 
 WRKSRC=		${WRKDIR}/Export
 
+USES=		gl xorg
 USE_XORG=	xmu xt xext x11 xi
 USE_GL=		glut
 ALL_TARGET=	KnightCap

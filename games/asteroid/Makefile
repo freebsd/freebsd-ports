@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	chazomaticus
 GH_TAGNAME=	64869df
 
-USES=		cmake
+USES=		cmake gl gnome sdl xorg
 USE_GL=		gl glu glut
 USE_SDL=	mixer sdl
 USE_GNOME=	gtk30

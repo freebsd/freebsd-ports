@@ -37,7 +37,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	EasyRPG
 GH_PROJECT=	Player
 
-USES=		cmake:insource compiler:c++11-lib localbase:ldflags pkgconfig sdl
+USES=		cmake:insource compiler:c++11-lib localbase:ldflags pkgconfig \
+		sdl xorg
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=man \
 		-DPLAYER_AUDIO_BACKEND=SDL2_mixer
 USE_XORG=	pixman

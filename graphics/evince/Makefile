@@ -28,7 +28,7 @@ PORTSCOUT=	limitw:1,even
 SLAVEPORT?=	no
 
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake \
-		gnome libarchive libtool localbase pathfix pkgconfig tar:xz
+		gnome libarchive libtool localbase pathfix pkgconfig tar:xz xorg
 USE_GNOME=	cairo gtk30 intlhack
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes

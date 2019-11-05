@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libgif.so:graphics/giflib \
 		libImlib2.so:graphics/imlib2
 
-USES=		gmake localbase:ldflags pkgconfig
+USES=		gmake localbase:ldflags pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	muennich
 USE_XORG=	x11 xft

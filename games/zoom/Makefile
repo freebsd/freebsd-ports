@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libt1.so:devel/t1lib \
 		libpng.so:graphics/png
 
-USES=		gmake perl5
+USES=		gmake perl5 xorg
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_XORG=	xft

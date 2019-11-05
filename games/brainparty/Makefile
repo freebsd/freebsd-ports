@@ -15,7 +15,7 @@ COMMENT=	Family-friendly set of 36 puzzle games
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler gmake
+USES=		compiler gl gmake sdl
 USE_SDL=	sdl mixer ttf gfx image
 USE_GL=		gl glu
 

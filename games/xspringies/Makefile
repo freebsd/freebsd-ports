@@ -14,6 +14,7 @@ COMMENT=	Mass and spring simulation system
 LICENSE=	GPLv1+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		xorg
 USE_XORG=	x11 xext
 ALL_TARGET=	${PORTNAME}
 

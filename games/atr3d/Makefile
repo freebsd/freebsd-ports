@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		autoreconf gmake perl5 tar:tgz
+USES=		autoreconf gl gmake perl5 tar:tgz xorg
 USE_GL=		glut glu
 USE_XORG=	xmu xi x11
 USE_PERL5=	build

@@ -66,6 +66,7 @@ GTK2_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXPM}
+USES+=		xorg
 USE_XORG=	xpm
 .endif
 

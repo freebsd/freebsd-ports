@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/ptr_container/ptr_map.hpp:devel/boost-libs \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm
 
-USES=		compiler:c++0x libtool pathfix pkgconfig tar:bzip2
+USES=		compiler:c++0x gl libtool pathfix pkgconfig tar:bzip2
 USE_GL=		glew
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libfltk.so:x11-toolkits/fltk
 
-USES=		gmake localbase lua:51
+USES=		gl gmake localbase lua:51
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_ICE_IceConnectionNumber="no" \

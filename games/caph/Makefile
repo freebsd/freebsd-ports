@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/doc/caph/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		tar:bzip2 iconv
+USES=		gl iconv sdl tar:bzip2
 USE_SDL=	sdl
 USE_GL=		gl
 

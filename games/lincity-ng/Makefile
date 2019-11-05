@@ -16,7 +16,7 @@ LIB_DEPENDS=	libphysfs.so:devel/physfs
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gl gnome localbase:ldflags pkgconfig tar:bzip2
+USES=		gl gnome localbase:ldflags pkgconfig sdl tar:bzip2 xorg
 USE_SDL=	sdl mixer image ttf gfx
 USE_GL=		gl
 USE_XORG=	x11

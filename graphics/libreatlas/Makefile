@@ -31,7 +31,8 @@ LIB_DEPENDS=	libmspack.so:archivers/libmspack \
 		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang gettext gmake iconv jpeg pathfix pkgconfig
+USES=		compiler:c++11-lang gettext gmake gnome iconv jpeg pathfix \
+		pkgconfig xorg
 USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender xxf86vm
 USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango

@@ -24,7 +24,7 @@ BROKEN_sparc64=		fails to compile
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,-src,,}
 
-USES=		compiler:c++11-lang pkgconfig python:2.7 scons
+USES=		compiler:c++11-lang gl gnome pkgconfig python:2.7 scons xorg
 USE_GNOME=	pygtk2
 USE_GL=		glu
 USE_XORG=	x11

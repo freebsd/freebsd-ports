@@ -18,7 +18,7 @@ COMMENT=	Falling ball puzzle game for X
 
 WRKSRC=		${WRKDIR}/xrot
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xpm
 ALL_TARGET=	xrot
 CFLAGS+=	-Wno-return-type

@@ -15,7 +15,7 @@ COMMENT=	Classic single screen vertical shoot em up
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11 xpm
 
 ALL_TARGET=	${PORTNAME}

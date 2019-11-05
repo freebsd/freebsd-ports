@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}\
 MAINTAINER=	ports@dclg.ca
 COMMENT=	GL Tubing and Extrusion Library
 
-USES=		libtool
+USES=		gl libtool xorg
 USE_XORG=	ice xt xmu
 USE_GL=		glut
 USE_LDCONFIG=	yes

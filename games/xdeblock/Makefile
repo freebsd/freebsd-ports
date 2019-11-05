@@ -13,7 +13,7 @@ COMMENT=	Block action game
 
 WRKSRC=		${WRKDIR}/xdeblo_v1.0
 
-USES=		imake:noman
+USES=		imake:noman xorg
 USE_XORG=	xpm
 
 CFLAGS+=	-Wno-return-type

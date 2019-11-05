@@ -17,7 +17,7 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libpng.so:graphics/png \
 		libcurl.so:ftp/curl
 
-USES=		autoreconf compiler:c++11-lang pkgconfig:build tar:xz
+USES=		autoreconf compiler:c++11-lang pkgconfig:build sdl tar:xz xorg
 USE_XORG=	x11
 USE_SDL=	sdl2 gfx2 image2 mixer2 net2 ttf2
 

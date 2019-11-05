@@ -16,7 +16,7 @@ COMMENT=	Futuristic overhead shooter
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+USES=		gl gmake sdl
 USE_SDL=	mixer image sdl
 USE_GL=		gl glu
 

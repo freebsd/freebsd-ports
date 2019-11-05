@@ -12,7 +12,7 @@ COMMENT=	X11 shoot-'em up which requires some lateral thinking
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake localbase:ldflags tar:bzip2
+USES=		gl gmake localbase:ldflags tar:bzip2
 USE_GL=		glut
 MAKE_ARGS=	CC="${CC}" CPP="${CXX}" CC_FLAGS="${CXXFLAGS}" \
 		LIB_FLAGS="${LDFLAGS}" GCC="${CC}" CFLAGS="${CFLAGS}"

@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X-based rubik's cube(tm)
 
 WRKSRC=		${WRKDIR}/xrubik
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xt sm ice xext x11
 
 do-install:

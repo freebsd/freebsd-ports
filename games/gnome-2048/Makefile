@@ -22,7 +22,7 @@ LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz
+USES=		gettext gl gmake gnome localbase pathfix pkgconfig tar:xz xorg
 USE_GNOME=	cairo gtk30 intltool libxml2:build
 USE_GL=		egl
 USE_XORG+=	x11 xext xdamage xfixes xcomposite xi xrandr

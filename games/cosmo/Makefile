@@ -22,7 +22,7 @@ NO_CDROM=	Possible copyright infringement
 
 WRKSRC=		${WRKDIR}/cosmo2
 DIST_SUBDIR=	cosmo
-USES=		imake:notall,noman
+USES=		imake:notall,noman xorg
 USE_XORG=	x11 xext
 
 do-install:

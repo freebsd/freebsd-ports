@@ -23,8 +23,8 @@ BROKEN_armv6=		fails to compile: use of undeclared identifier CRenderer
 BROKEN_armv7=		fails to compile: use of undeclared identifier CRenderer
 BROKEN_sparc64=		fails to compile
 
+USES=		bison compiler:c++0x gl libtool pathfix tar:tgz
 USE_GL=		glu
-USES=		bison compiler:c++0x libtool pathfix tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/pixie \
 		--libdir=${PREFIX}/lib/pixie \

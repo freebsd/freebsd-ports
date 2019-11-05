@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	qstat:games/qstat
 
+USES=		xorg
 USE_XORG=	xpm x11 xext
 
 PLIST_FILES=	bin/${PORTNAME}

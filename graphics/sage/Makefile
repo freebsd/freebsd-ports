@@ -12,8 +12,8 @@ COMMENT=	OpenGL extension library
 
 CONFIGURE_ARGS=	--program-transform-name=
 GNU_CONFIGURE=	yes
+USES=		gl libtool pathfix sdl
 USE_GL=		yes
-USES=		libtool pathfix
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
 

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2
 
-USES=		jpeg pkgconfig tar:bzip2
+USES=		gnome jpeg pkgconfig tar:bzip2 xorg
 USE_XORG=	xext
 USE_GNOME=	librsvg2
 GNU_CONFIGURE=	yes

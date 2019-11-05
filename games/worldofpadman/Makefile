@@ -73,6 +73,7 @@ MAKE_ENV+=	USE_OPENAL_DLOPEN=1
 .    endif
 .  endif
 # SDL
+USES+=		gl sdl
 USE_GL=		glu
 USE_SDL=	sdl
 # Vorbis

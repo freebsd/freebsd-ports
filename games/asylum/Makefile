@@ -13,7 +13,7 @@ COMMENT=	Surreal platform shooting game
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		gl gmake sdl
 USE_SDL=	sdl mixer
 ALL_TARGET=	build
 USE_GL=		gl glu

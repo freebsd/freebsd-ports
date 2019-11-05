@@ -12,6 +12,7 @@ COMMENT=	One or two player T*tris game
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/games
+USES=		xorg
 USE_XORG=	x11
 ALL_TARGET=	${PORTNAME}
 

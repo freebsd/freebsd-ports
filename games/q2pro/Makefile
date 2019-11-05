@@ -39,6 +39,7 @@ UI_DESC=	Build user interface (for client menus)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
+USES+=		sdl
 USE_SDL+=	sdl
 ALL_TARGET+=	client
 PLIST_SUB+=	CLIENT=""
@@ -62,7 +63,7 @@ PLIST_SUB+=	GAME="@comment "
 
 .if ${PORT_OPTIONS:MGL}
 LIB_DEPENDS+=	libpng.so:graphics/png
-USES+=		jpeg
+USES+=		gl jpeg
 USE_GL=		gl
 ALL_TARGET+=	ref_newgl
 PLIST_SUB+=	GL=""

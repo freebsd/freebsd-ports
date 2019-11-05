@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infocom game interpreter that runs under X11
 
+USES=		xorg
 USE_XORG=	x11
 WRKSRC=		${WRKDIR}/xzip
 ALL_TARGET=

@@ -35,7 +35,7 @@ LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
 		libltdl.so:devel/libltdl \
 		libpoppler.so:graphics/poppler
 
-USES=		gmake iconv
+USES=		gl gmake gnome iconv xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	NatronGitHub
 GH_PROJECT=	openfx-arena

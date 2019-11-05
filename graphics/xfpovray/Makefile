@@ -17,7 +17,7 @@ RUN_DEPENDS=	povray:graphics/povray-meta
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:tgz uidfix
+USES=		tar:tgz uidfix xorg
 USE_XORG=	x11 xext xpm
 MAKEFILE=	${FILESDIR}/BSDmakefile
 MAKE_ENV=	DOCSDIR="${DOCSDIR}"

@@ -16,6 +16,7 @@ LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/README.jp
 
 WRKSRC=		${WRKDIR}/xosmulti
+USES=		xorg
 USE_XORG=	x11 xbitmaps xext
 
 OPTIONS_DEFINE=	DOCS

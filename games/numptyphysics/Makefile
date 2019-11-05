@@ -13,7 +13,7 @@ COMMENT=	Drawing physics-based puzzle game
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang tar:bzip2 desktop-file-utils
+USES=		compiler:c++11-lang tar:bzip2 desktop-file-utils sdl xorg
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image
 USE_XORG=	x11

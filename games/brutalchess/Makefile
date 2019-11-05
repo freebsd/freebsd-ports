@@ -14,12 +14,12 @@ MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	Nice looking OpenGL chess game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_XORG=	x11 xext xt xmu xi
 
 GNU_CONFIGURE=	yes
-USES=		dos2unix gmake libtool
+USES=		dos2unix gl gmake libtool sdl xorg
 USE_GL=		yes
 USE_SDL=	sdl image
+USE_XORG=	x11 xext xt xmu xi
 INSTALL_TARGET=	install-strip
 
 pre-build:

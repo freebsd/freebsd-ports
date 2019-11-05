@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/gnu.txt
 
 EXTRACT_DEPENDS=	unrar:archivers/unrar
 
-USES=		gmake tar:bzip2
+USES=		gmake tar:bzip2 xorg
 USE_XORG=	x11 xext xxf86vm xxf86dga
 ALL_TARGET=	release
 WRKSRC=		${WRKDIR}/${DISTNAME:S/quake2max/Quake2maX/}
@@ -44,11 +44,12 @@ SDLGL_DESC=	Build SDL OpenGL renderer
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDLGL}
 LIB_DEPENDS=	libpng.so:graphics/png
-USES+=		jpeg
+USES+=		gl jpeg
 USE_GL=		glu
 .endif
 
 .if ${PORT_OPTIONS:MSDLCLIENT} || ${PORT_OPTIONS:MSDLGL}
+USES+=		sdl
 USE_SDL=	sdl
 .endif
 

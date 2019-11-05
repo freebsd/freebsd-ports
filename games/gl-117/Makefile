@@ -11,8 +11,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/GL-117%20Source
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	OpenGL & SDL action flight simulator
 
+USES=		gl tar:bzip2
 USE_GL=		glut
-USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl-dir=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include

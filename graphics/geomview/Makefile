@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		libtool makeinfo motif tar:bzip2
+USES=		gl libtool makeinfo motif tar:bzip2
 USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-htmlbrowser=xdg-open --with-pdfviewer=xdg-open \

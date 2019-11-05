@@ -22,6 +22,7 @@ LICENSE=	GPLv2
 BROKEN=		unfetchable
 RESTRICTED=	Possible trademark infringement
 WRKSRC=		${WRKDIR}/xtris
+USES=		xorg
 USE_XORG=	x11 xext
 
 MAKE_ENV=	IPV6_CFLAGS="-DINET6"

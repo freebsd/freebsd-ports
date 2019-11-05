@@ -17,7 +17,7 @@ LIB_DEPENDS=	libBox2D.so:misc/box2d \
 		libglfw.so:graphics/glfw \
 		libMagnum.so:graphics/magnum
 
-USES=		cmake compiler:c++14-lang gl localbase:ldflags openal
+USES=		cmake compiler:c++14-lang gl localbase:ldflags openal sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	mosra
 GH_TUPLE=	mosra:toolchains:fc22ff5:t/toolchains

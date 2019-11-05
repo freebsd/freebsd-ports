@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/../copyright
 
 WRKSRC_SUBDIR=	src
 
-USES=		imake tar:tgz
+USES=		imake tar:tgz xorg
 USE_XORG=	x11 xext
 
 CFLAGS+=	-Wno-return-type -Wno-pointer-sign

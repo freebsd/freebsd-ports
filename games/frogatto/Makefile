@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 USE_GITHUB=	yes
 GH_ACCOUNT=	frogatto
 
-USES=		compiler:c++11-lang dos2unix gmake pkgconfig
+USES=		compiler:c++11-lang dos2unix gl gmake pkgconfiga sdl
 ALL_TARGET=	game server
 USE_GL=		glew glu
 USE_SDL=	sdl image mixer ttf

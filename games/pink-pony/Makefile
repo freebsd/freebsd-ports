@@ -21,7 +21,7 @@ LIB_DEPENDS=	libIL.so:graphics/devil \
 USE_GITHUB=	yes
 GH_ACCOUNT=	ginkgo
 
-USES=		pkgconfig scons compiler:c++11-lang
+USES=		pkgconfig scons compiler:c++11-lang gl sdl
 USE_CXXSTD=	c++11
 USE_GL=		gl glu
 USE_SDL=	mixer

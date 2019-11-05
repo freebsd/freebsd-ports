@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_sparc64=	does not compile on sparc64
 
-USES=		localbase
+USES=		localbase xorg
 USE_XORG=	x11 xext
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -13,7 +13,7 @@ COMMENT=	African board game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		imake tk tar:tgz
+USES=		imake tk tar:tgz xorg
 USE_XORG=	x11
 MAKE_ARGS=	AWELE_DIR=${STAGEDIR}${PREFIX}/bin
 

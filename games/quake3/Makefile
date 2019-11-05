@@ -55,7 +55,8 @@ MAKE_ENV+=	DLL_ONLY=true
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT} || ${PORT_OPTIONS:MTHREADS}
-USE_GL=		yes
+USES+=		gl xorg
+USE_GL=		glu
 USE_XORG=	xxf86dga
 .endif
 

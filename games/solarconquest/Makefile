@@ -13,7 +13,7 @@ DISTNAME=	SolarConquest
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Space 2D action game with plenty of shooting
 
-USES=		dos2unix
+USES=		gl dos2unix sdl
 USE_SDL=	sdl mixer image
 USE_GL=		yes
 DOS2UNIX_FILES=	makefile source/MenuScreen.h source/main.cpp

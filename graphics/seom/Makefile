@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to any arch other than x86
 
-USES=		gmake tar:bzip2
+USES=		gl gmake tar:bzip2 xorg
 USE_XORG=	x11 xv xext
 USE_GL=		gl
 USE_LDCONFIG=	yes

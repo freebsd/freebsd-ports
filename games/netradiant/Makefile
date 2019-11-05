@@ -26,7 +26,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
 USES=		compiler:c++11-lang gl gmake gnome jpeg localbase:ldflags \
-		pkgconfig tar:xz
+		pkgconfig tar:xz xorg
 USE_GL=		gl glu
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 libxml2 pango pangox-compat
 USE_XORG=	x11

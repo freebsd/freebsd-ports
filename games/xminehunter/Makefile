@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		compiler motif
+USES=		compiler motif xorg
 USE_XORG=	xpm
 ALL_TARGET=	${PORTNAME}
 

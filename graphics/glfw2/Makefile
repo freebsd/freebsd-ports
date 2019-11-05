@@ -13,7 +13,7 @@ COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
 
-USES=		tar:bzip2
+USES=		gl tar:bzip2 xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	compile.sh
 ALL_TARGET=	x11

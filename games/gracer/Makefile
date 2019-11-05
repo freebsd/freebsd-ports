@@ -17,8 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png
 
+USES=		gl gmake jpeg localbase perl5 tcl
 USE_GL=		glut
-USES=		gmake jpeg localbase perl5 tcl
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-plib=${LOCALBASE}

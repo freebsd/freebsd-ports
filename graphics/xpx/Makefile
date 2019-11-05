@@ -13,7 +13,7 @@ COMMENT=	Simple pixel editing tool to generate data for KISS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		imake:notall
+USES=		imake:notall xorg
 USE_XORG=	x11 xext
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}

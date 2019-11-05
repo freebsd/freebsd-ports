@@ -12,6 +12,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer fight with spells turn based game for X Window System
 
+USES=		xorg
 USE_XORG=	x11
 PLIST_FILES=	bin/spellcast man/man6/spellcast.6.gz
 PORTDOCS=	README spelllist.ps

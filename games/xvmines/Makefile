@@ -14,7 +14,7 @@ LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		imake tar:Z
+USES=		imake tar:Z xorg
 USE_XORG=	x11
 
 PORTDOCS=	Copyright

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	jam:devel/jam
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/servers.ini:games/glest-data
 
 USES=		autoreconf:build dos2unix gl localbase lua:51 openal:al,alut \
-		pkgconfig zip
+		pkgconfig sdl xorg zip
 USE_SDL=	sdl
 USE_GL=		gl glu
 USE_XORG=	x11

@@ -16,7 +16,7 @@ COMMENT=	Dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-3.2.2
 
-USES=		tar:tgz
+USES=		tar:tgz xorg
 USE_XORG=	xaw xpm
 PLIST_SUB=	HACKNAME="${HACKNAME}" \
 		HACKEXT="${HACKEXT}"

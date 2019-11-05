@@ -11,7 +11,7 @@ MASTER_SITES=	XCONTRIB/games \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another minesweeper game for the X Window System
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xpm
 PLIST_FILES=	bin/xdemineur \
 		man/man1/xdemineur.1.gz

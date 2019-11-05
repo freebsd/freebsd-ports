@@ -7,7 +7,7 @@ CATEGORIES=	games kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
-USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gl kde:5 qt:5 tar:xz
 USE_GL=		gl glu
 USE_KDE=	archive auth codecs completion config configwidgets \
 		coreaddons crash ecm guiaddons i18n jobwidgets kio \

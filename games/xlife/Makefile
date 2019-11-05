@@ -16,7 +16,7 @@ RUN_DEPENDS=	gawk:lang/gawk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-USES=		imake:notall tar:bzip2
+USES=		imake:notall tar:bzip2 xorg
 USE_XORG=	x11
 
 PORTDOCS=	*

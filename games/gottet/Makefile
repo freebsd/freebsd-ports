@@ -14,7 +14,7 @@ COMMENT=	Tetris clone
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lib qmake qt:5 tar:bzip2
+USES=		compiler:c++11-lib gl qmake qt:5 tar:bzip2
 USE_GL=		gl
 USE_QT=		core gui widgets \
 		buildtools_build linguisttools_build

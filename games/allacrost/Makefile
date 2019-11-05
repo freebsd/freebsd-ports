@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_thread.so:devel/boost-libs
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake iconv jpeg localbase lua:51 openal:al
+USES=		gettext gl gmake iconv jpeg localbase lua:51 openal:al sdl xorg
 USE_SDL=	sdl ttf net
 USE_GL=		gl glu
 USE_XORG=	x11

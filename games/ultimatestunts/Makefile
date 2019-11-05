@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
-USES=		compiler gettext openal:al,alut pkgconfig
+USES=		compiler gettext gl openal:al,alut pkgconfig sdl
 USE_GL=		gl glu
 USE_SDL=	sdl image
 GNU_CONFIGURE=	yes

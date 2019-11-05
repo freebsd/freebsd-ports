@@ -16,6 +16,7 @@ GH_ACCOUNT=	DusteDdk
 GH_PROJECT=	Osgg
 GH_TAGNAME=	32d9e02 # 1.0 + extra FreeBSD-related fixes
 
+USES=		sdl xorg
 USE_SDL=	sdl image ttf mixer
 USE_GL=		gl
 MAKE_ENV=	DATADIR="${DATADIR}/"

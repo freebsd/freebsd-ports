@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.fractint.org/ftp/current/linux/ \
 MAINTAINER=	onemda@gmail.com
 COMMENT=	Unix port of FractInt
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11 xft
 
 ALL_TARGET=	${PORTNAME}

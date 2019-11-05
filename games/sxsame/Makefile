@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	VinePlus/1.1/JG-0.9.1/sources
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tile-removing puzzle game for the X Window system
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xpm
 INSTALL_TARGET=	install install.dir
 

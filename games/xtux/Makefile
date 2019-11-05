@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	xpm
 MAKE_ENV=	CPP="${CC} -E"
 

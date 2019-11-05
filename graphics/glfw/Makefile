@@ -13,7 +13,7 @@ COMMENT=	Portable framework for OpenGL development
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/README.md
 
-USES=		cmake:insource localbase zip
+USES=		cmake:insource gl localbase zip
 USE_GL=		glu
 USE_LDCONFIG=	yes
 
@@ -35,6 +35,7 @@ WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 WAYLAND_USES=		kde:5 pkgconfig
 WAYLAND_USE=		KDE=ecm
 
+X11_USES=		xorg
 X11_USE=		XORG=x11,xcursor,xi,xinerama,xrandr,xxf86vm
 
 PLIST_SUB=	VERSION="${PORTVERSION}" MAJVER="${PORTVERSION:C|\..*||}"

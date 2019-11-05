@@ -13,7 +13,7 @@ COMMENT=	X Window Asteroids style game with full color pixmaps
 NOT_FOR_ARCHS=		mips64
 NOT_FOR_ARCHS_REASON=	unknown architecture
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xpm
 
 PLIST_FILES=	bin/xoids \

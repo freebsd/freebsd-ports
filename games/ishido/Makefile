@@ -10,8 +10,9 @@ MASTER_SITES=	LOCAL/obrien
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tile placement game
 
-MAKE_ENV=	X11BASE=${LOCALBASE}
+USES=		xorg
 USE_XORG=	x11
+MAKE_ENV=	X11BASE=${LOCALBASE}
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/ishido.6 ${STAGEDIR}${PREFIX}/man/man6

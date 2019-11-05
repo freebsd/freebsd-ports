@@ -18,7 +18,7 @@ LICENSE=	GPLv2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
-USES=		imake:env tar:tgz
+USES=		imake:env tar:tgz xorg
 USE_XORG=	x11 xext
 MAKE_JOBS_UNSAFE=	yes
 

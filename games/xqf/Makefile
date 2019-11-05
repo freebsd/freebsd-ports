@@ -12,8 +12,8 @@ COMMENT=	Server browser for many popular 3D action games
 
 RUN_DEPENDS=	qstat:games/qstat
 
+USES=		gettext gmake gnome pkgconfig xorg
 USE_GNOME=	intlhack
-USES=		gettext gmake pkgconfig
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
