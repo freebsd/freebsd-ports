@@ -40,9 +40,9 @@ lib/smalltalk/i18n.so
 lib/smalltalk/iconv-%%VERSION%%.so
 lib/smalltalk/iconv.a
 lib/smalltalk/iconv.so
-lib/smalltalk/sdl-%%VERSION%%.so
-lib/smalltalk/sdl.a
-lib/smalltalk/sdl.so
+%%SDL%%lib/smalltalk/sdl-%%VERSION%%.so
+%%SDL%%lib/smalltalk/sdl.a
+%%SDL%%lib/smalltalk/sdl.so
 lib/smalltalk/zlib-%%VERSION%%.so
 lib/smalltalk/zlib.a
 lib/smalltalk/zlib.so

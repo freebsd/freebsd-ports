@@ -17,19 +17,16 @@ BROKEN_sparc64=		Fails to install
 BUILD_DEPENDS=	zip:archivers/zip \
 		gawk:lang/gawk
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
-		libcairo.so:graphics/cairo
+		libffi.so:devel/libffi \
+		libltdl.so:devel/libltdl \
+		libcairo.so:graphics/cairo \
+		libexpat.so:textproc/expat2
 
-OPTIONS_DEFINE=	PGSQL SDL
-OPTIONS_DEFAULT=PGSQL SDL
-OPTIONS_SUB=	yes
-PGSQL_USES=	pgsql
-SDL_USE=	SDL=image,mixer,sdl,sound,ttf
-
-USES=		gmake iconv libtool localbase makeinfo pathfix pkgconfig \
-		shebangfix sqlite tar:xz
+USES=		gl gmake gnome iconv libtool makeinfo pathfix pkgconfig \
+		readline shebangfix sqlite tar:xz xorg
+USE_GL=		gl glu glut
 USE_GNOME=	pango
-USE_XORG=	ice xi xmu
-USE_GL=		gl glut
+USE_XORG=	ice sm x11 xi xmu
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_EMACS=no ac_cv_prog_AWK=gawk
 CONFIGURE_ARGS=	--enable-generational-gc=no \
@@ -47,6 +44,13 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 PORTDATA=	*
 
 INFO=		gst gst-base gst-libs
+
+OPTIONS_DEFINE=	PGSQL SDL
+OPTIONS_DEFAULT=	PGSQL SDL
+OPTIONS_SUB=	yes
+
+PGSQL_USES=	pgsql
+SDL_USE=	SDL=image,mixer,sdl,sound,ttf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/ia64-\*-\* /&|amd64-*-* /' \
