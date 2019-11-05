@@ -125,7 +125,7 @@
 %%DATADIR%%/nexus/WEB-INF/lib/sisu-mailer-1.10.jar
 %%DATADIR%%/nexus/WEB-INF/lib/sisu-resource-scanner-1.1.jar
 %%DATADIR%%/nexus/WEB-INF/lib/statemap-6.0.1-java.jar
-%%DATADIR%%/nexus/WEB-INF/lib/tika-core-1.20.jar
+%%DATADIR%%/nexus/WEB-INF/lib/tika-core-1.22.jar
 %%DATADIR%%/nexus/WEB-INF/lib/velocity-1.7.jar
 %%DATADIR%%/nexus/WEB-INF/lib/xmlpull-1.1.3.1.jar
 %%DATADIR%%/nexus/WEB-INF/lib/xpp3_min-1.1.4c.jar
@@ -208,7 +208,7 @@
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-migrationagent-plugin-%%VERSION%%/dependencies/jackson-dataformat-smile-2.9.3.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-migrationagent-plugin-%%VERSION%%/nexus-migrationagent-plugin-%%VERSION%%.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-npm-repository-plugin-%%VERSION%%/META-INF/MANIFEST.MF
-%%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-npm-repository-plugin-%%VERSION%%/dependencies/commons-compress-1.18.jar
+%%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-npm-repository-plugin-%%VERSION%%/dependencies/commons-compress-1.19.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-npm-repository-plugin-%%VERSION%%/dependencies/jackson-dataformat-smile-2.9.3.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-npm-repository-plugin-%%VERSION%%/nexus-npm-repository-plugin-%%VERSION%%.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-nuget-plugin-%%VERSION%%/META-INF/MANIFEST.MF
