@@ -11,6 +11,7 @@ share/locale/da/LC_MESSAGES/celluloid.mo
 share/locale/de_DE/LC_MESSAGES/celluloid.mo
 share/locale/eo/LC_MESSAGES/celluloid.mo
 share/locale/es/LC_MESSAGES/celluloid.mo
+share/locale/fa/LC_MESSAGES/celluloid.mo
 share/locale/fr/LC_MESSAGES/celluloid.mo
 share/locale/hr/LC_MESSAGES/celluloid.mo
 share/locale/hu/LC_MESSAGES/celluloid.mo
@@ -26,6 +27,7 @@ share/locale/sr/LC_MESSAGES/celluloid.mo
 share/locale/sr@latin/LC_MESSAGES/celluloid.mo
 share/locale/sv/LC_MESSAGES/celluloid.mo
 share/locale/tr/LC_MESSAGES/celluloid.mo
+share/locale/uk/LC_MESSAGES/celluloid.mo
 share/locale/zh_CN/LC_MESSAGES/celluloid.mo
 share/locale/zh_TW/LC_MESSAGES/celluloid.mo
 share/metainfo/io.github.celluloid_player.Celluloid.appdata.xml
