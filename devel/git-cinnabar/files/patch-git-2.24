@@ -1,0 +1,164 @@
+https://github.com/glandium/git-cinnabar/commit/3a70616bca72
+
+--- helper/GIT-VERSION.mk.orig	2019-07-01 04:57:48 UTC
++++ helper/GIT-VERSION.mk
+@@ -1,2 +1,2 @@
+-GIT_VERSION ?= v2.23.0
++GIT_VERSION ?= v2.24.0
+ WINDOWS_GIT_VERSION ?= $(GIT_VERSION).windows.1
+--- helper/cinnabar-helper.c.orig	2019-07-01 04:57:48 UTC
++++ helper/cinnabar-helper.c
+@@ -1578,21 +1578,25 @@ struct oid_map_entry {
+ 	struct object_id new_oid;
+ };
+ 
+-static int old2new_manifest_tree_cmp(const void *cmpdata, const void *e1,
+-                                     const void *e2, const void *keydata)
++static int old2new_manifest_tree_cmp(const void *cmpdata, const struct hashmap_entry *e1,
++                                     const struct hashmap_entry *e2, const void *keydata)
+ {
+-	const struct old2new_manifest_tree *entry1 = e1;
+-	const struct old2new_manifest_tree *entry2 = e2;
++	const struct old2new_manifest_tree *entry1 =
++		container_of(e1, const struct old2new_manifest_tree, ent);
++	const struct old2new_manifest_tree *entry2 =
++		container_of(e2, const struct old2new_manifest_tree, ent);
+ 
+ 	return memcmp(&entry1->old_tree, &entry2->old_tree,
+ 	              sizeof(struct old_manifest_tree));
+ }
+ 
+-static int oid_map_entry_cmp(const void *cmpdata, const void *e1,
+-                             const void *e2, const void *keydata)
++static int oid_map_entry_cmp(const void *cmpdata, const struct hashmap_entry *e1,
++                             const struct hashmap_entry *e2, const void *keydata)
+ {
+-	const struct oid_map_entry *entry1 = e1;
+-	const struct oid_map_entry *entry2 = e2;
++	const struct oid_map_entry *entry1 =
++		container_of(e1, const struct oid_map_entry, ent);
++	const struct oid_map_entry *entry2 =
++		container_of(e2, const struct oid_map_entry, ent);
+ 
+ 	return oidcmp(&entry1->old_oid, &entry2->old_oid);
+ }
+@@ -1606,7 +1610,7 @@ static void upgrade_manifest_tree_v1(const struct obje
+ 
+ 	oidcpy(&k.old_oid, tree_id);
+ 	hashmap_entry_init(&k.ent, oidhash(&k.old_oid));
+-	old2new = hashmap_get(cache, &k, NULL);
++	old2new = hashmap_get_entry(cache, &k, ent, NULL);
+ 	if (!old2new) {
+ 		struct strbuf tree_buf = STRBUF_INIT;
+ 		struct strbuf entry_buf = STRBUF_INIT;
+@@ -1649,7 +1653,7 @@ static void upgrade_manifest_tree_v1(const struct obje
+ 		store_git_tree(&tree_buf, reference, &old2new->new_oid);
+ 		strbuf_release(&tree_buf);
+ 		strbuf_release(&entry_buf);
+-		hashmap_add(cache, old2new);
++		hashmap_add(cache, &old2new->ent);
+ 
+ 		free_tree_buffer(tree);
+ 		if (ref_state.tree)
+@@ -1667,7 +1671,7 @@ static void upgrade_manifest_tree(struct old_manifest_
+ 
+ 	hashmap_entry_init(&k.ent, memhash(tree, sizeof(*tree)));
+ 	k.old_tree = *tree;
+-	old2new = hashmap_get(cache, &k, NULL);
++	old2new = hashmap_get_entry(cache, &k, ent, NULL);
+ 	if (!old2new) {
+ 		struct old_manifest_tree_state state;
+ 		struct old_manifest_entry entry;
+@@ -1712,7 +1716,7 @@ static void upgrade_manifest_tree(struct old_manifest_
+ 		store_git_tree(&tree_buf, reference, &old2new->new_tree);
+ 		strbuf_release(&tree_buf);
+ 		strbuf_release(&entry_buf);
+-		hashmap_add(cache, old2new);
++		hashmap_add(cache, &old2new->ent);
+ 
+ 		free_tree_buffer(state.tree_git);
+ 		free_tree_buffer(state.tree_hg);
+@@ -1749,7 +1753,7 @@ static void upgrade_manifest(struct commit *commit,
+ 		struct commit *p;
+ 		oidcpy(&k.old_oid, &commit->parents->item->object.oid);
+ 		hashmap_entry_init(&k.ent, oidhash(&k.old_oid));
+-		entry = hashmap_get(&track->commit_cache, &k, NULL);
++		entry = hashmap_get_entry(&track->commit_cache, &k, ent, NULL);
+ 		if (!entry)
+ 			die("Something went wrong");
+ 		p = lookup_commit(the_repository, &entry->new_oid);
+@@ -1785,7 +1789,7 @@ static void upgrade_manifest(struct commit *commit,
+ 		if (get_oid_hex(cursor, &k.old_oid))
+ 			die("Invalid sha1");
+ 		hashmap_entry_init(&k.ent, oidhash(&k.old_oid));
+-		entry = hashmap_get(&track->commit_cache, &k, NULL);
++		entry = hashmap_get_entry(&track->commit_cache, &k, ent, NULL);
+ 		if (!entry)
+ 			die("Something went wrong");
+ 		oid_to_hex_r(cursor, &entry->new_oid);
+@@ -1797,7 +1801,7 @@ static void upgrade_manifest(struct commit *commit,
+ 	hashmap_entry_init(&entry->ent, oidhash(&commit->object.oid));
+ 	oidcpy(&entry->old_oid, &commit->object.oid);
+ 	store_git_commit(&new_commit, &entry->new_oid);
+-	hashmap_add(&track->commit_cache, entry);
++	hashmap_add(&track->commit_cache, &entry->ent);
+ 	oidset_insert(&track->manifests, &entry->new_oid);
+ 
+ 	get_manifest_oid(commit, &oid);
+@@ -1932,8 +1936,8 @@ static void do_upgrade(struct string_list *args)
+ 				free_tree_buffer(get_commit_tree(manifest_commit));
+ 			}
+ 		}
+-		hashmap_free(&track.commit_cache, 1);
+-		hashmap_free(&track.tree_cache, 1);
++		hashmap_free_entries(&track.commit_cache, struct oid_map_entry, ent);
++		hashmap_free_entries(&track.tree_cache, struct oid_map_entry, ent);
+ 		oidset_clear(&track.manifests);
+ 		stop_progress(&track.progress);
+ 	}
+@@ -1952,7 +1956,7 @@ static void recurse_create_git_tree(const struct objec
+ 
+ 	hashmap_entry_init(&k.ent, oidhash(tree_id));
+ 	oidcpy(&k.old_oid, tree_id);
+-	cache_entry = hashmap_get(cache, &k, NULL);
++	cache_entry = hashmap_get_entry(cache, &k, ent, NULL);
+ 	if (!cache_entry) {
+ 		struct manifest_tree_state state;
+ 		struct manifest_tree_state ref_state = { NULL, };
+@@ -2017,7 +2021,7 @@ static void recurse_create_git_tree(const struct objec
+ 			cache_entry->old_oid = k.old_oid;
+ 			store_git_tree(tree_buf, reference, &cache_entry->new_oid);
+ 			strbuf_release(&tree_buf_);
+-			hashmap_add(cache, cache_entry);
++			hashmap_add(cache, &cache_entry->ent);
+ 		}
+ 
+ 		if (state.tree)
+@@ -2277,7 +2281,7 @@ static void do_reload(struct string_list *args)
+ 
+ 	oidset_clear(&hg2git_seen);
+ 
+-	hashmap_free(&git_tree_cache, 1);
++	hashmap_free_entries(&git_tree_cache, struct oid_map_entry, ent);
+ 	hashmap_init(&git_tree_cache, oid_map_entry_cmp, NULL, 0);
+ 
+ 	oid_array_clear(&manifest_heads);
+@@ -2450,7 +2454,7 @@ int cmd_main(int argc, const char *argv[])
+ 
+ 	oidset_clear(&hg2git_seen);
+ 
+-	hashmap_free(&git_tree_cache, 1);
++	hashmap_free_entries(&git_tree_cache, struct oid_map_entry, ent);
+ 
+ 	return 0;
+ }
+--- helper/curl-compat.c.orig	2019-07-01 04:57:48 UTC
++++ helper/curl-compat.c
+@@ -6,6 +6,7 @@ void curl_easy_setopt() {}
+ void curl_easy_strerror() {}
+ void curl_global_cleanup() {}
+ void curl_global_init() {}
++void curl_global_init_mem() {}
+ void curl_multi_add_handle() {}
+ void curl_multi_cleanup() {}
+ void curl_multi_fdset() {}
