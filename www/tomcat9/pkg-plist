@@ -25,7 +25,7 @@
 %%T%%/lib/catalina-storeconfig.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-4.12.jar
+%%T%%/lib/ecj-4.13.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -160,6 +160,7 @@
 %%DOCS%%%%T%%/webapps/docs/funcspecs/fs-memory-realm.html
 %%DOCS%%%%T%%/webapps/docs/funcspecs/index.html
 %%DOCS%%%%T%%/webapps/docs/funcspecs/mbean-names.html
+%%DOCS%%%%T%%/webapps/docs/graal.html
 %%DOCS%%%%T%%/webapps/docs/host-manager-howto.html
 %%DOCS%%%%T%%/webapps/docs/html-host-manager-howto.html
 %%DOCS%%%%T%%/webapps/docs/html-manager-howto.html
