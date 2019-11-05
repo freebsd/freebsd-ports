@@ -1,6 +1,6 @@
---- deps/hiredis/Makefile.orig	2017-05-01 19:46:31.733229000 -0400
-+++ deps/hiredis/Makefile	2017-05-01 19:48:37.150358000 -0400
-@@ -15,7 +15,7 @@
+--- deps/hiredis/Makefile.orig	2019-09-25 10:40:18 UTC
++++ deps/hiredis/Makefile
+@@ -15,7 +15,7 @@ HIREDIS_PATCH=$(shell grep HIREDIS_PATCH hiredis.h | a
  HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h | awk '{print $$3}')
  
  # Installation related variables and target
@@ -9,7 +9,7 @@
  INCLUDE_PATH?=include/hiredis
  LIBRARY_PATH?=lib
  PKGCONF_PATH?=pkgconfig
-@@ -38,10 +38,10 @@
+@@ -38,10 +38,10 @@ export REDIS_TEST_CONFIG
  # Fallback to gcc when $CC is not in $PATH.
  CC:=$(shell sh -c 'type $(CC) >/dev/null 2>/dev/null && echo $(CC) || echo gcc')
  CXX:=$(shell sh -c 'type $(CXX) >/dev/null 2>/dev/null && echo $(CXX) || echo g++')
@@ -23,10 +23,11 @@
  REAL_LDFLAGS=$(LDFLAGS) $(ARCH)
  
  DYLIBSUFFIX=so
-@@ -60,6 +60,15 @@
+@@ -59,6 +59,15 @@ ifeq ($(uname_S),SunOS)
+   REAL_LDFLAGS+= -ldl -lnsl -lsocket
    DYLIB_MAKE_CMD=$(CC) -G -o $(DYLIBNAME) -h $(DYLIB_MINOR_NAME) $(LDFLAGS)
    INSTALL= cp -r
- endif
++endif
 +ifeq ($(uname_S),FreeBSD)
 +  CFLAGS?=$(CFLAGS)
 +  CCLINK?=-pthread
@@ -35,7 +36,6 @@
 +  DYLIB_MAKE_CMD?=$(CC) -o ${DYLIBNAME} ${OBJ}
 +  STLIBNAME?=libhiredis.a
 +  STLIB_MAKE_CMD?=ar rcs ${STLIBNAME} ${OBJ}
-+endif
+ endif
  ifeq ($(uname_S),Darwin)
    DYLIBSUFFIX=dylib
-   DYLIB_MINOR_NAME=$(LIBNAME).$(HIREDIS_SONAME).$(DYLIBSUFFIX)
