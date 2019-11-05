@@ -16,7 +16,7 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libenchant.so:textproc/enchant
 
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext gnome \
-		kde:5 perl5 pkgconfig python:2.7 qt:5 ssl tar:bzip2
+		kde:5 perl5 pkgconfig python:2.7 qt:5 ssl tar:bzip2 xorg
 USE_GNOME=	glib20
 USE_PERL5=	build
 USE_KDE=	auth codecs config configwidgets coreaddons i18n notifications \
