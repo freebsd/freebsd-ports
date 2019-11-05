@@ -30,6 +30,7 @@ OPTIONS_SUB=
 LIBNOTIFY_DESC=		Desktop notification support
 
 X11_CONFIGURE_WITH=	x gtk2 gtkmm
+X11_USES=		gnome xorg
 X11_USE=		xorg=ice,sm,x11,xext,xi,xinerama,xorgproto,xrandr,xrender,xtst \
 			gnome=gdkpixbuf2,gtk20,gtkmm24
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \

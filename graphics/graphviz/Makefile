@@ -79,12 +79,16 @@ GO_DESC=	Go bindings (swig)
 TK_DESC=	TK toolkit support
 NVTHREADS_DESC=	Link with threads (needed for nvidia)
 
+XPM_USES=	xorg
 XPM_USE=	XORG=xaw,xpm,xmu,xt,sm,ice,xext,x11,xau,xdmcp
 ICONV_USES=	iconv
 NLS_USES=	gettext
+PANGOCAIRO_USES=gnome xorg
 PANGOCAIRO_USE=	GNOME=pango,cairo XORG=xrender,x11,xau,xdmcp
+GTK2_USES=	gnome xorg
 GTK2_USE=	XORG=sm,ice,xext,xinerama,xi,xrandr,xcursor,xfixes GNOME=gtk20
 GNOMEUI_USE=	GNOME=libgnomeui
+SMYRNA_USES=	gnome gl
 SMYRNA_USE=	GNOME=libglade2,pangox-compat,gdkpixbuf2 GL=glut,glu,gl
 GHOSTSCRIPT_USES=ghostscript
 PERL_USES=	perl5

@@ -35,6 +35,7 @@ OPTIMIZED_CFLAGS_CFLAGS=\
 			-fexpensive-optimizations
 SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib
 SVGALIB_CONFIGURE_WITH=	svga
+X11_USES=		xorg
 X11_USE=		xorg=x11,xpm
 X11_CONFIGURE_WITH=	x
 

@@ -46,6 +46,7 @@ FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 SMPEG_DESC=		Video playback support
 SMPEG_LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 X11_DESC=		X11 window manager support
+X11_USES=		xorg
 X11_USE=		xorg=x11
 X11_CONFIGURE_ON=	--with-X=yes
 X11_CONFIGURE_OFF=	--with-X=no

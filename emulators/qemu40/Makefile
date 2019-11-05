@@ -55,7 +55,7 @@ X11_USES=	sdl
 X11_CONFIGURE_ENABLE=	sdl
 GTK3_LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 GTK3_USE=	GNOME=gdkpixbuf2,gtk30,vte3 XORG=x11,xext
-GTK3_USES=	gettext gl
+GTK3_USES=	gettext gl xorg
 GTK3_CONFIGURE_OFF=	--disable-gtk --disable-vte
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_OFF=	--disable-gnutls

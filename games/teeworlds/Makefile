@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=	CLIENT TEST
 
 CLIENT_DESC=		Build game client
 CLIENT_CMAKE_BOOL=	CLIENT
-CLIENT_USES=		gl sdl
+CLIENT_USES=		gl sdl xorg
 CLIENT_USE=		GL=gl,glu XORG=x11 SDL=sdl2
 CLIENT_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libwavpack.so:audio/wavpack \

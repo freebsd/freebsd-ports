@@ -36,6 +36,7 @@ TK_CONFIGURE_ON=	--with-tcltk=${TCL_INCLUDEDIR} \
 			--with-tkdir=${TK_INCLUDEDIR}
 TK_CONFIGURE_OFF=	--with-tcltk=no
 TK_LDFLAGS=		-lX11 -lXext
+X11_USES=		xorg
 X11_USE=		xorg=x11,xmu,xpm
 X11_CONFIGURE_ENV=	ac_cv_lib_Xm_main=no
 X11_CONFIGURE_OFF=	--with-x11=no
