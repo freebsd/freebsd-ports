@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy11>0:databases/py-sqlalchemy11@${PY_FLAVOR}
 
-USES=		python:3.4+ shebangfix
+USES=		python:3.4-3.6 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	yurivict
 NO_ARCH=	yes
