@@ -6,7 +6,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
-MAINTAINER=	brd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Misc LED programs for ARM boards
 
 USE_GITHUB=	yes

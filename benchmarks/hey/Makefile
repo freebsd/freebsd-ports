@@ -6,7 +6,7 @@ PORTVERSION=	0.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks
 
-MAINTAINER=	brd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny program that sends some load to a web application
 
 LICENSE=	APACHE20
