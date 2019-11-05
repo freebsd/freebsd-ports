@@ -1,5 +1,5 @@
---- deps/linenoise/Makefile.orig	2015-01-17 22:13:25.000000000 +0300
-+++ deps/linenoise/Makefile	2015-01-17 22:13:45.000000000 +0300
+--- deps/linenoise/Makefile.orig	2019-09-25 10:40:18 UTC
++++ deps/linenoise/Makefile
 @@ -1,10 +1,10 @@
  STD=
  WARN= -Wall

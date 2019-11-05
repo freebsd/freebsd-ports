@@ -1,5 +1,5 @@
---- src/mkreleasehdr.sh.orig	2018-09-06 07:04:23.000000000 -0400
-+++ src/mkreleasehdr.sh	2018-09-07 18:05:03.013274000 -0400
+--- src/mkreleasehdr.sh.orig	2019-09-25 10:40:18 UTC
++++ src/mkreleasehdr.sh
 @@ -1,6 +1,6 @@
  #!/bin/sh
 -GIT_SHA1=`(git show-ref --head --hash=8 2> /dev/null || echo 00000000) | head -n1`
