@@ -3,21 +3,23 @@
 
 PORTNAME=	trafshow
 PORTVERSION=	5.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/ \
 		ftp://ftp.nsk.su/pub/RinetSoftware/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Full screen visualization of network traffic
 
-CONFLICTS=	trafshow-4.* trafshow3-*
+LICENSE=	BSD2CLAUSE
 
 USES=		ncurses tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 ALL_TARGET=	trafshow
+
+CONFLICTS=	trafshow-4.* trafshow3-*
 
 OPTIONS_DEFINE=	IPV6
 IPV6_CFLAGS=	-DINET6
