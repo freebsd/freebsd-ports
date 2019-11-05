@@ -10,7 +10,7 @@
 # slave ports instead (`x11/nvidia-driver-340' or `x11/nvidia-driver-304').
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	430.50
+DISTVERSION?=	440.31
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11
@@ -30,9 +30,8 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 PATCH_DEPENDS=	gsed:textproc/gsed
 .endif
 
-USES=		kmod uidfix
+USES=		kmod uidfix xorg
 USE_XORG=	x11 xorg-server xext
-USE_GL=		gl
 USE_LDCONFIG=	yes
 
 # NVIDIA_ROOT is not set in src/Makefile, which results in bogus -I/src
