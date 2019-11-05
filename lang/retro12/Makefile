@@ -14,6 +14,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		ncurses shebangfix
+USE_CSTD=	c99
 
 SHEBANG_FILES=	example/Atua*
 SHEBANG_LANG=	retro
