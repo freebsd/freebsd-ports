@@ -1,6 +1,6 @@
-TrafShow continuously displays the information regarding packet
+TrafShow continuously displays information regarding the packet
 traffic on the configured network interface that matches the boolean
 expression. It periodically sorts and updates this information. It
 may be useful for locating suspicious network traffic on the net.
 
-WWW: http://soft.risp.ru/trafshow/index_en.shtml
+WWW: https://BSDforge.com/projects/net/trafshow
