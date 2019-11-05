@@ -1,4 +1,4 @@
---- components/crash/core/common/BUILD.gn.orig	2019-07-24 18:58:18 UTC
+--- components/crash/core/common/BUILD.gn.orig	2019-09-09 21:55:14 UTC
 +++ components/crash/core/common/BUILD.gn
 @@ -7,7 +7,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
  
@@ -21,8 +21,8 @@
      sources += [ "objc_zombie_unittest.mm" ]
    }
  
--  if (!is_mac && !is_win && !is_fuchsia && !is_android) {
-+  if (!is_mac && !is_win && !is_fuchsia && !is_android && !is_bsd) {
+-  if (!is_mac && !is_ios && !is_win && !is_fuchsia && !is_android) {
++  if (!is_mac && !is_ios && !is_win && !is_fuchsia && !is_android && !is_bsd) {
      include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
      sources += [ "crash_key_breakpad_unittest.cc" ]
    }

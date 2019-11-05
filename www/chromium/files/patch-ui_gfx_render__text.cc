@@ -1,6 +1,6 @@
---- ui/gfx/render_text.cc.orig	2019-07-24 18:59:22 UTC
+--- ui/gfx/render_text.cc.orig	2019-09-09 21:55:46 UTC
 +++ ui/gfx/render_text.cc
-@@ -976,32 +976,33 @@ void RenderText::SetDisplayOffset(int horizontal_offse
+@@ -983,32 +983,33 @@ void RenderText::SetDisplayOffset(int horizontal_offse
    const int extra_content = GetContentWidth() - display_rect_.width();
    const int cursor_width = cursor_enabled_ ? 1 : 0;
  

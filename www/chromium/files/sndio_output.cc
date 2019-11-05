@@ -58,7 +58,7 @@ bool SndioAudioOutputStream::Open() {
   sio_initpar(&par);
   par.rate = params.sample_rate();
   par.pchan = params.channels();
-  par.bits = SampleFormatToBitsPerChannel(kSampleFormat); 
+  par.bits = SampleFormatToBitsPerChannel(kSampleFormat);
   par.bps = par.bits / 8;
   par.sig = sig = par.bits != 8 ? 1 : 0;
   par.le = SIO_LE_NATIVE;

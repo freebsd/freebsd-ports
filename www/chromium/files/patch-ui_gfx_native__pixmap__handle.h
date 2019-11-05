@@ -1,4 +1,4 @@
---- ui/gfx/native_pixmap_handle.h.orig	2019-07-24 18:59:22 UTC
+--- ui/gfx/native_pixmap_handle.h.orig	2019-10-21 19:07:29 UTC
 +++ ui/gfx/native_pixmap_handle.h
 @@ -15,7 +15,7 @@
  #include "build/build_config.h"
@@ -27,3 +27,12 @@
    // File descriptor for the underlying memory object (usually dmabuf).
    base::ScopedFD fd;
  #elif defined(OS_FUCHSIA)
+@@ -82,7 +82,7 @@ struct GFX_EXPORT NativePixmapHandle {
+ 
+   std::vector<NativePixmapPlane> planes;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // The modifier is retrieved from GBM library and passed to EGL driver.
+   // Generally it's platform specific, and we don't need to modify it in
+   // Chromium code. Also one per plane per entry.

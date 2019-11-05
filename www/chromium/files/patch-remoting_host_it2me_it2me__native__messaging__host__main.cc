@@ -1,6 +1,6 @@
---- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig	2019-03-11 22:01:01 UTC
+--- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig	2019-10-21 19:06:39 UTC
 +++ remoting/host/it2me/it2me_native_messaging_host_main.cc
-@@ -27,12 +27,12 @@
+@@ -28,12 +28,12 @@
  #include "remoting/host/resources.h"
  #include "remoting/host/usage_stats_consent.h"
  
@@ -15,7 +15,7 @@
  
  #if defined(OS_MACOSX)
  #include "base/mac/scoped_nsautorelease_pool.h"
-@@ -106,7 +106,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+@@ -108,7 +108,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
  
    remoting::LoadResources("");
  
@@ -24,7 +24,7 @@
    // Required in order for us to run multiple X11 threads.
    XInitThreads();
  
-@@ -122,7 +122,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+@@ -124,7 +124,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
    // Need to prime the host OS version value for linux to prevent IO on the
    // network thread. base::GetLinuxDistro() caches the result.
    base::GetLinuxDistro();

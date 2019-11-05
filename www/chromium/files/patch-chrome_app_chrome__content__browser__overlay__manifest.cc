@@ -1,6 +1,6 @@
---- chrome/app/chrome_content_browser_overlay_manifest.cc.orig	2019-07-29 18:39:15 UTC
+--- chrome/app/chrome_content_browser_overlay_manifest.cc.orig	2019-10-21 19:06:19 UTC
 +++ chrome/app/chrome_content_browser_overlay_manifest.cc
-@@ -79,7 +79,7 @@
+@@ -69,7 +69,7 @@
  #include "chrome/services/app_service/public/cpp/manifest.h"
  #endif
  
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS)
  #include "chrome/browser/performance_manager/webui_graph_dump.mojom.h"  // nogncheck
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
-@@ -240,7 +240,7 @@ const service_manager::Manifest& GetChromeContentBrows
+@@ -205,7 +205,7 @@ const service_manager::Manifest& GetChromeContentBrows
  #else
                  app_management::mojom::PageHandlerFactory,
  #endif

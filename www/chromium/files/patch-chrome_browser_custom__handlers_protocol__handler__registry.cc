@@ -1,6 +1,6 @@
---- chrome/browser/custom_handlers/protocol_handler_registry.cc.orig	2019-03-17 19:35:08 UTC
+--- chrome/browser/custom_handlers/protocol_handler_registry.cc.orig	2019-10-21 19:06:21 UTC
 +++ chrome/browser/custom_handlers/protocol_handler_registry.cc
-@@ -48,7 +48,7 @@ const ProtocolHandler& LookupHandler(
+@@ -43,7 +43,7 @@ const ProtocolHandler& LookupHandler(
  // If true default protocol handlers will be removed if the OS level
  // registration for a protocol is no longer Chrome.
  bool ShouldRemoveHandlersNotInOS() {

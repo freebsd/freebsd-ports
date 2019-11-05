@@ -1,6 +1,6 @@
---- third_party/angle/BUILD.gn.orig	2019-07-24 19:03:24 UTC
+--- third_party/angle/BUILD.gn.orig	2019-10-21 19:09:09 UTC
 +++ third_party/angle/BUILD.gn
-@@ -322,6 +322,7 @@ angle_static_library("angle_gpu_info_util") {
+@@ -353,6 +353,7 @@ angle_static_library("angle_gpu_info_util") {
          "X11",
          "Xi",
          "Xext",
@@ -8,8 +8,8 @@
        ]
      }
    }
-@@ -929,10 +930,6 @@ foreach(is_shared_library,
-     libs = []
+@@ -1076,10 +1077,6 @@ foreach(is_shared_library,
+ 
      if (is_linux) {
        sources += util_linux_sources
 -      libs += [

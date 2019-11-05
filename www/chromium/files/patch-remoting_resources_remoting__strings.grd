@@ -1,0 +1,20 @@
+--- remoting/resources/remoting_strings.grd.orig	2019-10-30 16:22:45 UTC
++++ remoting/resources/remoting_strings.grd
+@@ -1332,7 +1332,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
+           Not Now
+         </message>
+       </if>
+-      <if expr="is_linux">
++      <if expr="is_posix">
+         <message name="IDS_SESSION_DIALOG_MESSAGE" desc="The message to show at the top of the session-selection dialog.">
+           Select a session to launch within your Chrome Remote Desktop environment. (Note that some session types may not support running within Chrome Remote Desktop and on the local console simultaneously.)
+         </message>
+@@ -1348,7 +1348,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
+         <message name="IDS_SESSION_DIALOG_DEFAULT_SESSION_COMMENT" desc="The comment for the entry to launch the default session.">
+           Launch the default XSession
+         </message>
+-      </if> <!-- is_linux -->
++      </if> <!-- is_posix -->
+     </messages>
+   </release>
+ </grit>

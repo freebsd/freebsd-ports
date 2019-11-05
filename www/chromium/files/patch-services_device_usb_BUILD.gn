@@ -1,6 +1,6 @@
---- services/device/usb/BUILD.gn.orig	2019-07-29 14:20:42 UTC
+--- services/device/usb/BUILD.gn.orig	2019-09-09 21:55:22 UTC
 +++ services/device/usb/BUILD.gn
-@@ -111,7 +111,7 @@ static_library("usb") {
+@@ -110,7 +110,7 @@ static_library("usb") {
      ]
    }
  

@@ -1,6 +1,6 @@
---- ui/gfx/BUILD.gn.orig	2019-07-24 18:59:22 UTC
+--- ui/gfx/BUILD.gn.orig	2019-10-21 19:07:29 UTC
 +++ ui/gfx/BUILD.gn
-@@ -550,7 +550,7 @@ jumbo_source_set("memory_buffer_sources") {
+@@ -573,7 +573,7 @@ jumbo_source_set("memory_buffer_sources") {
      deps += [ "//build/config/linux/libdrm" ]
    }
  

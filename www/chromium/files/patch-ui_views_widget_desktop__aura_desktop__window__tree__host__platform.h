@@ -1,8 +1,8 @@
---- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.h.orig	2019-03-17 17:59:02 UTC
+--- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.h.orig	2019-10-21 19:07:29 UTC
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.h
-@@ -119,7 +119,7 @@ class VIEWS_EXPORT DesktopWindowTreeHostPlatform
+@@ -146,7 +146,7 @@ class VIEWS_EXPORT DesktopWindowTreeHostPlatform
  
-   bool is_active_ = false;
+   base::string16 window_title_;
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

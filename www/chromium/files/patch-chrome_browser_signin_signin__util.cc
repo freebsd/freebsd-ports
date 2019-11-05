@@ -1,7 +1,7 @@
---- chrome/browser/signin/signin_util.cc.orig	2019-07-24 18:58:11 UTC
+--- chrome/browser/signin/signin_util.cc.orig	2019-09-09 21:55:10 UTC
 +++ chrome/browser/signin/signin_util.cc
-@@ -33,7 +33,7 @@
- #include "services/identity/public/cpp/primary_account_mutator.h"
+@@ -34,7 +34,7 @@
+ #include "google_apis/gaia/gaia_auth_util.h"
  #include "ui/base/l10n/l10n_util.h"
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/browser_finder.h"
  #include "chrome/browser/ui/browser_list.h"
  #include "chrome/browser/ui/browser_list_observer.h"
-@@ -45,7 +45,7 @@ namespace {
+@@ -46,7 +46,7 @@ namespace {
  
  constexpr char kSignoutSettingKey[] = "signout_setting";
  

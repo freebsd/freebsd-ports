@@ -1,6 +1,6 @@
---- media/gpu/linux/platform_video_frame_utils.cc.orig	2019-07-24 18:58:30 UTC
+--- media/gpu/linux/platform_video_frame_utils.cc.orig	2019-09-09 21:55:20 UTC
 +++ media/gpu/linux/platform_video_frame_utils.cc
-@@ -107,7 +107,7 @@ gfx::GpuMemoryBufferHandle CreateGpuMemoryBufferHandle
+@@ -121,7 +121,7 @@ gfx::GpuMemoryBufferHandle CreateGpuMemoryBufferHandle
    DCHECK(video_frame);
  
    gfx::GpuMemoryBufferHandle handle;
@@ -9,7 +9,7 @@
    handle.type = gfx::NATIVE_PIXMAP;
  
    std::vector<base::ScopedFD> duped_fds =
-@@ -126,7 +126,7 @@ gfx::GpuMemoryBufferHandle CreateGpuMemoryBufferHandle
+@@ -136,7 +136,7 @@ gfx::GpuMemoryBufferHandle CreateGpuMemoryBufferHandle
    }
  #else
    NOTREACHED();

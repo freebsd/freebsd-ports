@@ -1,6 +1,6 @@
---- chrome/browser/extensions/activity_log/activity_log.cc.orig	2019-06-04 18:55:17 UTC
+--- chrome/browser/extensions/activity_log/activity_log.cc.orig	2019-10-21 19:06:21 UTC
 +++ chrome/browser/extensions/activity_log/activity_log.cc
-@@ -53,7 +53,11 @@
+@@ -54,7 +54,11 @@
  #include "extensions/browser/extensions_browser_client.h"
  #include "extensions/common/extension.h"
  #include "extensions/common/extension_messages.h"
