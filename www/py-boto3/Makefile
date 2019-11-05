@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	boto3
-PORTVERSION=	1.9.159
+PORTVERSION=	1.10.6
 CATEGORIES=	www python devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,9 +12,7 @@ COMMENT=	AWS SDK for Python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		depends on package: ${PYTHON_PKGNAMEPREFIX}botocore>=1.12.159,<1.13.0 - not found
-
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.12.159,<1.13.0:devel/py-botocore@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.13.6,<1.14.0:devel/py-botocore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0.7.1,<1.0.0:devel/py-jmespath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}s3transfer>=0.2.0,<0.3.0:net/py-s3transfer@${PY_FLAVOR}
 
