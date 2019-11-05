@@ -12,7 +12,7 @@ COMMENT=	Shoot-em-up them nasty little bugs
 
 NO_CDROM=	don't sell for profit
 
-USES=		gettext
+USES=		gettext xorg
 USE_XORG=	x11 xmu xaw xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-scorefile=/var/games/xinvaders.scores

@@ -13,7 +13,7 @@ COMMENT=	X window mille bourne game
 
 WRKSRC=		${WRKDIR}/Mille
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/xmille man/man1/xmille.1.gz
 MAKE_JOBS_UNSAFE=	yes

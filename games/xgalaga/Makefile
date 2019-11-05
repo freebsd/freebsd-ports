@@ -11,7 +11,7 @@ COMMENT=	Clone of the classic game Galaga for X11
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	xpm xmu
 HAS_CONFIGURE=	yes
 

@@ -12,6 +12,7 @@ COMMENT=	Library for displaying game cards on X Window System
 
 LICENSE=	ART10
 
+USES=		xorg
 USE_XORG=	xpm
 MAKEFILE=	${FILESDIR}/Makefile.lib
 USE_LDCONFIG=	yes

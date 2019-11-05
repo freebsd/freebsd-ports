@@ -13,7 +13,7 @@ COMMENT=	Display GL animations on X screen
 
 NO_WRKSUBDIR=	yes
 
-USES=		imake tar:Z
+USES=		imake tar:Z xorg
 USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/glib bin/xgrasp \

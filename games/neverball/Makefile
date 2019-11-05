@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
 		libphysfs.so:devel/physfs
 
-USES=		gmake iconv jpeg
+USES=		gl gmake iconv jpeg sdl
 USE_GL=		gl
 USE_SDL=	sdl2 ttf2
 MAKE_ARGS+=	DATADIR="${DATADIR}" \

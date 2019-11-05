@@ -17,6 +17,7 @@ OPTIONS_DEFINE=	DOCS
 RUN_DEPENDS=	fig2dev:print/transfig
 
 GNU_CONFIGURE=	yes
+USES=		xorg
 USE_XORG=	xpm
 
 PLIST_FILES=	bin/figurine \

@@ -12,7 +12,8 @@ COMMENT=	Cross stitch pattern editor
 LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick6 \
 		libMagickCore-6.so:graphics/ImageMagick6
 
-USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 tar:xz \
+		xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons \
 		i18n itemviews jobwidgets kio service solid sonnet textwidgets \
 		widgetsaddons xmlgui

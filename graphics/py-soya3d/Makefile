@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:graphics/py-editobj@${PY_FLA
 		${PYTHON_SITELIBDIR}/tofu/client.py:net/py-tofu@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/cerealizer/__init__.py:security/py-cerealizer@${PY_FLAVOR}
 
-USES=		gmake openal:al,alut python:2.7 tar:bzip2
+USES=		gl gmake openal:al,alut python:2.7 sdl tar:bzip2
 USE_GL=		glew glu
 USE_PYTHON=	autoplist distutils
 USE_SDL=	sdl

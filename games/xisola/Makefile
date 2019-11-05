@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple board game for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		imake:noman
+USES=		imake:noman xorg
 USE_XORG=	x11 xext xaw xmu xt sm ice
 
 PLIST_FILES=	bin/xisola

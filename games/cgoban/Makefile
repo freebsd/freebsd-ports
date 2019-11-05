@@ -11,6 +11,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Internet Go Server client and game editor
 
 GNU_CONFIGURE=	yes
+USES=		xorg
 USE_XORG=	x11 ice sm
 
 PLIST_FILES=	bin/cgoban \

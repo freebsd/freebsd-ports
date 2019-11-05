@@ -28,8 +28,8 @@ LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		bison compiler:c++11-lib desktop-file-utils gettext gmake \
-		jpeg libtool localbase pathfix pkgconfig tar:xz
+USES=		bison compiler:c++11-lib desktop-file-utils gettext gl gmake \
+		gnome jpeg libtool localbase pathfix pkgconfig tar:xz xorg
 USE_GL=		egl
 USE_GNOME=	cairo gtk30 intltool librsvg2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xrandr xi

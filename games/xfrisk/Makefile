@@ -21,8 +21,8 @@ NO_CDROM=	Possible trademark infringement
 
 WRKSRC=		${WRKDIR}/XFrisk
 
+USES=		gmake xorg
 USE_XORG=	x11 xt xaw xmu sm ice
-USES=		gmake
 MAKE_ENV=	XDIR="${LOCALBASE}"
 
 do-install:

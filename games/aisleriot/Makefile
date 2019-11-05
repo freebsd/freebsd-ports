@@ -21,7 +21,8 @@ LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
 CONFLICTS_INSTALL=	sol-[0-9]*
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake gnome pathfix pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake gnome pathfix pkgconfig \
+		tar:xz xorg
 USE_GNOME=	cairo gconf2 gtk30 intlhack librsvg2 libxml2:build
 USE_XORG=	x11
 

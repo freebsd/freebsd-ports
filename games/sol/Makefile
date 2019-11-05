@@ -19,7 +19,7 @@ LIB_DEPENDS=	libXaw.so:x11-toolkits/libXaw \
 
 CONFLICTS=	gnome-games-*
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	ice sm x11 xext xmu xpm xt
 
 OPTIONS_DEFINE=	DOCS

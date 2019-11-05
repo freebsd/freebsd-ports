@@ -13,7 +13,7 @@ COMMENT=	Space-Invaders like 2D space shooter
 
 LICENSE=	GPLv3+
 
-USES=		localbase:ldflags tar:bzip2
+USES=		gl localbase:ldflags sdl tar:bzip2
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
 

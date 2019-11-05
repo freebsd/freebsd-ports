@@ -13,6 +13,7 @@ COMMENT=	Simulation of water waves on the desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		xorg
 USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/xdesktopwaves \

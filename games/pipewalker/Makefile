@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		desktop-file-utils localbase
+USES=		desktop-file-utils gl localbase sdl
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_GL=		gl glu

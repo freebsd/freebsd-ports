@@ -14,7 +14,7 @@ COMMENT=	2D graphics library
 LICENSE=	LGPL20 MIT
 LICENSE_COMB=	multi
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11 xau xcb xdmcp
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-fontpath=${DATADIR}/fonts \

@@ -12,6 +12,7 @@ COMMENT=	Fractal image animated wallpaper program
 
 LICENSE=	GPLv2+
 
+USES=		xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# none

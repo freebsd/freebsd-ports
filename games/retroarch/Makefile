@@ -36,9 +36,11 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
+SDL_USES=		sdl
 SDL_USE=		SDL=sdl2 image2
 SDL_CONFIGURE_ON=	--disable-sdl --enable-sdl2
 SDL_CONFIGURE_OFF=	--disable-sdl --disable-sdl2
+OPENGL_USES=		gl
 OPENGL_USE=		GL=gl,egl,gbm
 OPENGL_CONFIGURE_ENABLE=opengl
 OPENAL_USES=		openal:soft
@@ -58,7 +60,7 @@ LDFLAGS+=	-pthread
 CONFIGURE_ARGS+=--enable-threads
 CONFIGURE_ENV+=	MAN_DIR=${MANPREFIX}/man
 
-USES=		compiler:c++11-lib gmake pkgconfig shebangfix
+USES=		compiler:c++11-lib gmake pkgconfig shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 SUB_FILES=	pkg-message

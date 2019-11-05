@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=		gmake
+USES=		gl gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	NatronGitHub
 GH_PROJECT=	openfx-misc

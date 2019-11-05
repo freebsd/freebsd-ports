@@ -51,6 +51,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 CMAKE_ON+=	OCIO_BUILD_APPS USE_EXTERNAL_LCMS
 CMAKE_OFF+=	OCIO_BUILD_SHARED OCIO_BUILD_PYGLUE
 LDFLAGS+=	-lOpenColorIO
+USES+=		gl xorg
 USE_GL=		gl glu glut glew
 USE_XORG=	xi xmu
 PLIST=		${PKGDIR}/pkg-plist-tools

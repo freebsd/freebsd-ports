@@ -14,7 +14,7 @@ COMMENT=	Quake engine modification
 # Loads libraries at run-time, thus RUN_DEPENDS.
 RUN_DEPENDS=	${LOCALBASE}/lib/libvorbis.so:audio/libvorbis
 
-USES=		gmake jpeg zip:infozip
+USES=		gmake jpeg xorg zip:infozip
 USE_XORG=	xxf86dga xpm
 MAKE_ENV=	DP_FS_BASEDIR="${Q1DIR}" DP_LINK_JPEG=dlopen
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -42,6 +42,7 @@ SERVER_DESC=	Build dedicated server
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDL}
+USES+=		gl
 USE_GL=		glu
 PLIST_SUB+=	CLIENT=""
 .else
@@ -61,6 +62,7 @@ EXE_TARGETS+=	${PORTNAME}-dedicated
 .endif
 
 .if ${PORT_OPTIONS:MSDL}
+USES+=		sdl
 . if ${PORT_OPTIONS:MSDL1}
 USE_SDL=	sdl
 ALL_TARGET+=	sdl-release

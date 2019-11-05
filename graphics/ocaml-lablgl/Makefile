@@ -17,7 +17,7 @@ LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	ocaml-nox11-[0-9]*
 
-USES=		gmake tk
+USES=		gl gmake tk xorg
 USE_XORG=	x11 xext xmu
 USE_GL=		glut
 USE_OCAML=	yes

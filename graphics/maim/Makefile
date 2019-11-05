@@ -17,7 +17,7 @@ LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libpng.so:graphics/png \
 		libslopy.so:x11/slop
 
-USES=		cmake compiler:c++11-lang jpeg
+USES=		cmake compiler:c++11-lang gl jpeg xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	naelstrof
 USE_GL=		gl glut

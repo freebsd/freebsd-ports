@@ -58,8 +58,8 @@ GTK2_CONFIGURE_WITH=	gtk
 
 .include <bsd.port.options.mk>
 
-USES+=		desktop-file-utils makeinfo perl5 pkgconfig shared-mime-info \
-		shebangfix
+USES+=		desktop-file-utils gnome makeinfo perl5 pkgconfig \
+		shared-mime-info shebangfix xorg
 USE_XORG+=	xt xpm
 USE_GNOME+=	librsvg2
 .if ${PORT_OPTIONS:MXAW}

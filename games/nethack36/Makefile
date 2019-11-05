@@ -36,6 +36,7 @@ DOCSDIR=	${PREFIX}/share/doc/${HACKNAME}
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 .if !defined(PKGNAMESUFFIX)
+USES+=		xorg
 USE_XORG=	xaw xpm xmu xext xt x11 sm ice
 CFLAGS+=	-DX11_GRAPHICS -DUSE_TILES
 GRAPHICS=	X11_GRAPHICS

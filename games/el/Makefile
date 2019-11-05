@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libcal3d.so:graphics/cal3d
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:games/el-data
 
-USES=		compiler:c++11-lang gmake iconv openal:al,alut
+USES=		compiler:c++11-lang gl gmake gnome iconv openal:al,alut sdl xorg
 USE_GNOME=	libxml2
 USE_SDL=	sdl net image
 USE_GL=		gl

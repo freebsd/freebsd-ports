@@ -59,13 +59,16 @@ MAKE_ENV+=	USE_OPENAL_DLOPEN=1
 .  endif
 # SDL
 .  if ${PORT_OPTIONS:MSDL_AUDIO}
+USES+=		sdl
 USE_SDL=	sdl
 MAKE_ENV+=	USE_SDL_AUDIO=1
 .  endif
 .  if ${PORT_OPTIONS:MSDL_VIDEO}
+USES+=		sdl
 USE_SDL=	sdl
 MAKE_ENV+=	USE_SDL_VIDEO=1
 .  else
+USES+=		gl xorg
 USE_GL=		gl
 USE_XORG=	x11 xxf86dga
 .  endif

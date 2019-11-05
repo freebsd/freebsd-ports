@@ -12,6 +12,7 @@ COMMENT=	Chinese game of Mahjongg for X11
 
 LICENSE=	GPLv2
 
+USES=		xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 

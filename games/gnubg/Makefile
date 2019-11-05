@@ -22,7 +22,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		bison gmake libtool pathfix shebangfix python pkgconfig compiler:c++11-lang readline gnome gl
+USES=		bison gl gmake gnome libtool pathfix shebangfix python \
+		pkgconfig compiler:c++11-lang readline xorg
 USE_GNOME=	glib20 gtk20 cairo pangox-compat
 USE_XORG+=	xmu xt sm ice x11
 USE_GL+=	glu gl

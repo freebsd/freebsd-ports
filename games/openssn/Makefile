@@ -13,6 +13,7 @@ COMMENT=	Modern submarine simulator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		sdl xorg
 USE_SDL=	sdl gfx image mixer
 USE_XORG=	x11 xau xdmcp xext xmu xpm xxf86vm
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -14,7 +14,7 @@ COMMENT=	The `Athena' port of the xminesweeper game
 
 LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 
 .include <bsd.port.mk>

@@ -18,8 +18,8 @@ LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
 
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
-USES=		autoreconf desktop-file-utils gettext-runtime gmake libtool \
-		localbase pkgconfig qt:5 webplugin:native
+USES=		autoreconf desktop-file-utils gettext-runtime gl gmake gnome \
+		libtool localbase pkgconfig qt:5 webplugin:native xorg
 USE_GL=		gl
 USE_QT=		core gui network opengl printsupport widgets \
 		buildtools_build linguisttools_build qmake_build

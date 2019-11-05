@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gl-inc="${LOCALBASE}/include" \
 		--without-glut-inc
-USES=		pathfix gmake libtool
+USES=		gl pathfix gmake libtool xorg
 USE_GL=		gl glu
 USE_XORG=	x11 xext xmu
 USE_LDCONFIG=	yes

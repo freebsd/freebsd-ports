@@ -23,7 +23,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-USES=		autoreconf jpeg tk:tea zip
+USES=		autoreconf jpeg tk:tea xorg zip
 USE_XORG=	x11 xext xft xrender xscrnsaver
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SUB=	yes

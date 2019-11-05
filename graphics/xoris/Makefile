@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	alexander.gromnitsky@gmail.com
 COMMENT=	X11 pixel color grabber
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

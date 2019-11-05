@@ -63,12 +63,13 @@ PLIST_SUB+=	${mod}="@comment "
 .endfor
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDLGL}
-USES+=		jpeg
+USES+=		gl jpeg
 USE_GL=		glu
 LIB_DEPENDS+=	libpng.so:graphics/png
 .endif
 
 .if ${PORT_OPTIONS:MSDL} || ${PORT_OPTIONS:MSDLGL}
+USES+=		sdl
 USE_SDL=	sdl
 .endif
 

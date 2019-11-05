@@ -16,10 +16,10 @@ COMMENT=	3D penguin racing game using OpenGL
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gl gmake sdl tk xorg
 USE_SDL=	mixer sdl
 USE_GL=		gl
 USE_XORG=	x11 xt xmu xi
-USES=		gmake tk
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-inc="${TCL_INCLUDEDIR}" \
 		--with-tcl-libs="${LOCALBASE}/lib" \

@@ -12,7 +12,7 @@ COMMENT=	Minesweeper with a couple of grid types
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig tar:tgz
+USES=		pkgconfig tar:tgz xorg
 USE_XORG=	xaw7
 
 do-build:

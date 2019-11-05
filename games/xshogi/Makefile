@@ -11,6 +11,7 @@ COMMENT=	Japanese chess-like game for X Window System
 
 RUN_DEPENDS=	gnushogi:games/gnushogi
 
+USES=		xorg
 USE_XORG=	xt xaw x11
 GNU_CONFIGURE=	yes
 

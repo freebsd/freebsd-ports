@@ -10,7 +10,7 @@ MASTER_SITES=	XCONTRIB/games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jigsaw puzzle game for X11
 
-USES=		compiler tar:tgz
+USES=		compiler tar:tgz xorg
 USE_XORG=	x11 xorgproto xext
 MAKEFILE=	Makefile.Linux
 PLIST_FILES=	bin/xjig man/man1/xjig.1.gz

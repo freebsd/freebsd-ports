@@ -18,7 +18,7 @@ COMMENT=	X Window 3D Pong game for 1 or 2 players
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		XLIB="-L${LOCALBASE}/lib -lX11"

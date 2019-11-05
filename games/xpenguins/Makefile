@@ -16,6 +16,7 @@ COMMENT=	Cute little penguins that walk along the tops of your windows
 
 LICENSE=	GPLv2
 
+USES=		xorg
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 

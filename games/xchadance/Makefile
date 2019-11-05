@@ -12,7 +12,7 @@ DISTFILES=	xchada01.lzh
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display a dancing girl "ChaCha."
 
-USES=		lha
+USES=		lha xorg
 USE_XORG=	x11
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes

@@ -18,7 +18,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		tar:xz
+USES=		tar:xz xorg
 
 USE_ANT=	yes
 USE_GCC=	yes

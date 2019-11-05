@@ -19,7 +19,7 @@ BUILD_DEPENDS=	vala:lang/vala \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gnome localbase meson \
+USES=		desktop-file-utils gettext gl gnome localbase meson \
 		pkgconfig python:3.6+,build tar:xz
 USE_GNOME=	cairo gtk30 librsvg2 libxml2:build
 INSTALLS_ICONS=	yes

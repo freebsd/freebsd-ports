@@ -12,7 +12,7 @@ COMMENT=	Remake of the first real time strategy game on the SPECTRUM
 
 GNU_CONFIGURE=	yes
 
-USES=		compiler
+USES=		compiler gl sdl
 USE_GL=		gl glu glut
 USE_SDL=	sdl mixer
 

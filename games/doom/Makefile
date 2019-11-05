@@ -20,7 +20,7 @@ NO_CDROM=	Redistribution is limited, see license; Requested by id Software
 
 ONLY_FOR_ARCHS=	i386
 
-USES=		gmake zip
+USES=		gmake xorg zip
 USE_XORG=	x11 sm xorgproto xext
 NO_WRKSUBDIR=	yes
 

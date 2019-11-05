@@ -13,6 +13,7 @@ COMMENT=	Simple X game where one tries to jump up as many levels as possible
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/g}
 
+USES=		xorg
 USE_XORG=	xpm xaw
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" RECORD_FILE="/var/games/xjump.record" \
 		IDIR="-I${LOCALBASE}/include" LDIR="-L${LOCALBASE}/lib"

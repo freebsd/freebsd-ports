@@ -12,7 +12,7 @@ COMMENT=	Evolving Artificial Life
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		autoreconf libtool ncurses pkgconfig tar:bzip2
+USES=		autoreconf gl libtool ncurses pkgconfig sdl tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_GL=		gl

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/hugin/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ii@any.com.ru
 COMMENT=	Panorama viewer using OpenGL
 
-USES=		compiler:c++11-lang gmake
+USES=		compiler:c++11-lang gl gmake
 USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-unicode

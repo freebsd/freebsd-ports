@@ -13,7 +13,7 @@ LICENSE=	PD
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libpng.so:graphics/png
 
-USES=		gmake fortran jpeg readline
+USES=		gmake gnome fortran jpeg readline xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	usnistgov

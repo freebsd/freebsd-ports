@@ -21,7 +21,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz xorg
 INSTALLS_ICONS=	yes
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
 USE_XORG=	x11

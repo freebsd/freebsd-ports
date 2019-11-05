@@ -11,7 +11,7 @@ DISTNAME=	connectFive
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Place five pieces in a row on a 3D board
 
-USES=		gmake dos2unix
+USES=		dos2unix gl gmake sdl xorg
 USE_SDL=	sdl
 USE_GL=		gl
 USE_XORG=	xmu xext x11

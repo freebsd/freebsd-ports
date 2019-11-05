@@ -10,8 +10,8 @@ MASTER_SITES=	SUNSITE/apps/graphics/hacks/X
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Four-Dimensional graphics tumbler for X11
 
+USES=		tar:tgz xorg
 USE_XORG=	x11
-USES=		tar:tgz
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CLIBS="-lm -lX11 -L${LOCALBASE}/lib"

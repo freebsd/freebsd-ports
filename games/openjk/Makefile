@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler:c++11-lang cmake gl jpeg localbase sdl
+USES=		compiler:c++11-lang cmake gl jpeg localbase sdl xorg
 USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	JACoders

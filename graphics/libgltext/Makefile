@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		gmake localbase libtool
+USES=		gl gmake localbase libtool xorg
 USE_GL=		gl glu
 USE_XORG=	x11 xmu
 GNU_CONFIGURE=	yes

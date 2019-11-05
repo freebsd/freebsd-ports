@@ -16,7 +16,7 @@ LIB_DEPENDS=	liblua-5.1.so:lang/lua51 \
 		libpng.so:graphics/png \
 		libphysfs.so.1:devel/physfs
 
-USES=		pathfix pkgconfig
+USES=		gl pathfix pkgconfig sdl
 USE_SDL=	sdl sound
 USE_GL=		glu
 GNU_CONFIGURE=	yes

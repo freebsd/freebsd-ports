@@ -14,7 +14,7 @@ COMMENT=	OpenGL screensaver collection
 LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6 \
 		libGLC.so:graphics/quesoglc
 
-USES=		compiler:c++11-lang gmake pathfix pkgconfig tar:bzip2 libtool
+USES=		compiler:c++11-lang gl gmake pathfix pkgconfig tar:bzip2 libtool
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 

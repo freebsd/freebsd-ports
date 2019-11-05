@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High level 3D graphics library compatible with Apple's QuickDraw(TM)
 
-USES=		libtool
+USES=		gl libtool xorg
 USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 USE_GL=		glut

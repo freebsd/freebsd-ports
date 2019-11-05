@@ -17,7 +17,7 @@ LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		liblcms2.so:graphics/lcms2 \
 		libexif.so:graphics/libexif
 
-USES=		gmake pkgconfig tar:tgz
+USES=		gmake gnome pkgconfig tar:tgz xorg
 USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/qiv man/man1/qiv.1.gz

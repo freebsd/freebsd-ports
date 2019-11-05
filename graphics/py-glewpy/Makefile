@@ -18,7 +18,7 @@ COMMENT=	Advanced OpenGL extensions to Python
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyrex>=0.9.6.2:devel/pyrex@${PY_FLAVOR}
 
-USES=		python:2.7
+USES=		gl python:2.7
 USE_GL=		glew
 USE_PYTHON=	distutils
 

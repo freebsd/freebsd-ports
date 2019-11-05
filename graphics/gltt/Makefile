@@ -12,7 +12,7 @@ COMMENT=	TrueType fonts rendering using OpenGL
 
 LIB_DEPENDS=	libttf.so:print/freetype
 
-USES=		gmake libtool
+USES=		gl gmake libtool
 USE_GL=		gl glut
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -19,7 +19,7 @@ LICENSE_FILE_OFL11=	${WRKSRC}/data_contrib/SIL_Open_Font_License.txt
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libcurl.so:ftp/curl
 
-USES=		compiler:c++14-lang gmake localbase openal
+USES=		compiler:c++14-lang gl gmake localbase openal sdl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	miki151

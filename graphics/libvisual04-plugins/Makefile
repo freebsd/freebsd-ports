@@ -14,7 +14,7 @@ COMMENT=	Set of plugins for the libvisual framework
 
 LIB_DEPENDS=	libvisual-${MAJORMINOR}.so:graphics/libvisual04
 
-USES=		libtool pkgconfig
+USES=		gl libtool pkgconfig xorg
 USE_GL=		yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes

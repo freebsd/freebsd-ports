@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME}102
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic game with apples and hungry worm
 
+USES=		xorg
 USE_XORG=	x11 xt
 WRKSRC=		${WRKDIR}/XWorm
 ALL_TARGET=	linux

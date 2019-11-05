@@ -24,7 +24,7 @@ NVIDIA_BUMPREF_DESC=	NVidia extensions
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
-USES=		gmake
+USES=		gmake xorg
 GNU_CONFIGURE=	yes
 USE_XORG=	xaw ice
 
@@ -39,9 +39,11 @@ DESKTOP_ENTRIES=	"Foobillard" \
 			false
 
 .if ${PORT_OPTIONS:MSDL}
+USES+=		sdl
 USE_SDL=	sdl
 CONFIGURE_ARGS+=	--enable-SDL
 .else
+USES+=		gl
 USE_GL=		glut
 CONFIGURE_ARGS+=	--enable-glut
 .endif

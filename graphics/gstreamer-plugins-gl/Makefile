@@ -13,7 +13,7 @@ COMMENT=	GStreamer OpenGL video plugin
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gettext gmake jpeg libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake gl jpeg libtool pathfix pkgconfig tar:bzip2 xorg
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 USE_XORG=	ice x11

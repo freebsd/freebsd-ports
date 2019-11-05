@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	glfw>2.7.0:graphics/glfw
 
-USES=		cmake
+USES=		cmake gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PixarAnimationStudios
@@ -34,6 +34,7 @@ DOCS_BUILD_DEPENDS=	rst2html.py:textproc/py-docutils \
 DOCS_USES=		python:build
 
 EXAMPLES_CMAKE_BOOL_OFF=	NO_EXAMPLES
+EXAMPLES_USES=		xorg
 EXAMPLES_USE=		xorg=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
 EXAMPLES_LIB_DEPENDS=	libglfw.so:graphics/glfw
 
@@ -55,6 +56,7 @@ TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
 
 TEST_CMAKE_BOOL_OFF=	NO_REGRESSION NO_TESTS NO_GL_TESTS
 TEST_LIB_DEPENDS=	libglfw.so:graphics/glfw
+TEST_USES=		xorg
 TEST_USE=		xorg=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
 
 TUTORIALS_DESC=		Install tutorial programs

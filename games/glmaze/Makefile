@@ -19,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		gl sdl
 USE_GL=		gl
 USE_SDL=	mixer sdl
 

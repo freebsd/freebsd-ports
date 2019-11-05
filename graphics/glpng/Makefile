@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/glpng-1079563
 
-USES=		cmake zip
+USES=		cmake gl zip
 USE_GL=		gl
 
 OPTIONS_DEFINE=	DOCS

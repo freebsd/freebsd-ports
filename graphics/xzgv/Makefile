@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gmake gnome pkgconfig
+USES=		gmake gnome pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_XORG=	x11
 

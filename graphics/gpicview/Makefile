@@ -11,8 +11,8 @@ COMMENT=	Simple and fast image viewer for X11
 
 LICENSE=	GPLv2
 
-USES=		desktop-file-utils gettext-tools gmake jpeg localbase \
-		pkgconfig tar:xz
+USES=		desktop-file-utils gettext-tools gmake gnome jpeg localbase \
+		pkgconfig tar:xz xorg
 USE_GNOME=	gtk20 intltool
 USE_XORG=	x11
 INSTALLS_ICONS=	yes

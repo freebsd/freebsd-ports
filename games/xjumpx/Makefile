@@ -13,6 +13,7 @@ COMMENT=	Improved version of xjump
 LICENSE=	BSD2CLAUSE
 
 MAKE_ENV=	X11BASE=${LOCALBASE}
+USES=		xorg
 USE_XORG=	xpm xaw
 
 SUB_FILES=	pkg-message

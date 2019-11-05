@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
-USES=		gmake iconv localbase pkgconfig
+USES=		gmake gnome iconv localbase pkgconfig xorg
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20
 USE_XORG=	x11

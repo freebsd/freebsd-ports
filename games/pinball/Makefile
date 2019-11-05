@@ -16,7 +16,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	sergiomb2
 
-USES=		autoreconf gl gettext gmake localbase:ldflags libtool:keepla # .la needed for plugin loading
+USES=		autoreconf gl gettext gmake localbase:ldflags libtool:keepla sdl xorg # .la needed for plugin loading
 USES+=		sdl
 USE_XORG=	ice sm
 USE_GL=		gl glu

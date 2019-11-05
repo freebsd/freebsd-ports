@@ -48,7 +48,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
-USES+=		jpeg openal:soft,alut pkgconfig
+USES+=		gl jpeg openal:soft,alut pkgconfig xorg
 LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \

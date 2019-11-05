@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X version of a simple but tricky board game
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xaw
 PLIST_FILES=	bin/xtic man/man1/xtic.1.gz
 

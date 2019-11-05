@@ -17,7 +17,7 @@ MANUAL_PACKAGE_BUILD=	needs the X server it will be used with to build
 PORTSCOUT=	limit:^[0-9\.]*$$
 
 CONFIGURE_ARGS=	interface=FREEGLUT
-USES=		perl5 display:configure
+USES=		gl perl5 display:configure xorg
 USE_PERL5=	configure
 USE_GL=		glut
 USE_XORG=	x11 xext xmu xi ice

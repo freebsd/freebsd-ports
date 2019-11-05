@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Skewb puzzle (similar to Rubik's Cube) for X Window
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext xt sm ice
 
 PLIST_FILES=	bin/xskewb \

@@ -17,6 +17,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
 
+USES=		gl xorg
 USE_XORG=	xext
 USE_GL=		gl glut
 GNU_CONFIGURE=	yes

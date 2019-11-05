@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:graphics/png \
 		${LOCALBASE}/lib/libtiff.a:graphics/tiff
 
-USES=		jpeg:build
+USES=		jpeg:build xorg
 USE_XORG=	xpm x11
 
 USE_GITHUB=	yes

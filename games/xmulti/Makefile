@@ -13,7 +13,7 @@ COMMENT=	X11 mascot based on gal-game "To Heart"
 
 WRKSRC=		${WRKDIR}/xmulti200beta4
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext xaw xmu xt xpm sm ice
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}

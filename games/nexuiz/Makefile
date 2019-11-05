@@ -52,6 +52,7 @@ MAPPACK_DISTFILES=	nexmappack_r2${EXTRACT_SUFX}:mappack
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
+USES+=		gl xorg
 USE_GL=		glut
 USE_XORG=	x11 xpm xxf86vm xxf86dga xext
 ALL_TARGET+=	cl-release
@@ -66,6 +67,7 @@ DESKTOP_ENTRIES="Nexuiz" \
 .endif
 
 .if ${PORT_OPTIONS:MSDL_CLIENT}
+USES+=		sdl
 USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
 PLIST_FILES+=	bin/${PORTNAME}-sdl

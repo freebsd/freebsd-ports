@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
 LIB_DEPENDS=	libsimage.so:graphics/simage
 
-USES=		gl openal:al libtool pathfix
+USES=		gl openal:al libtool pathfix xorg
 USE_GL=		gl
 USE_XORG=	ice sm x11 xext xt
 GNU_CONFIGURE=	yes

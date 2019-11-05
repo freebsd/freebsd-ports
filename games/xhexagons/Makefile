@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexagons puzzle (similar to Fifteen Puzzle) for X Window System
 
 WRKSRC=		${WRKDIR}/xhexagons
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext xt sm ice
 
 PLIST_FILES=	bin/xhexagons \

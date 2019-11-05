@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake jpeg localbase
+USES=		gettext gl gmake jpeg localbase sdl xorg
 USE_SDL=	sdl
 USE_GL=		gl glu
 USE_XORG=	x11

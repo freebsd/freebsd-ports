@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/copyright
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm \
 		libtiff.so:graphics/tiff
 
-USES=		gmake tar:xz
+USES=		gmake tar:xz xorg
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

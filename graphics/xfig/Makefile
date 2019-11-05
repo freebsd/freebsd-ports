@@ -17,7 +17,7 @@ CONFLICTS=	xfig-[12].* xfig-3.1* xfig-3.2.[1234]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		desktop-file-utils gmake jpeg tar:xz
+USES=		desktop-file-utils gmake jpeg tar:xz xorg
 GNU_CONFIGURE=	yes
 USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
 USE_CSTD=	gnu89

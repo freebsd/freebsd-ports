@@ -15,7 +15,7 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake pkgconfig zip
+USES=		gl gmake pkgconfig zip
 USE_GL=		glut
 ALL_TARGET=	${PORTNAME}
 

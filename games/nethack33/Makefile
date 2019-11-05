@@ -30,6 +30,7 @@ DOCSDIR=	${PREFIX}/share/doc/${HACKNAME}
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 .if !defined(PKGNAMESUFFIX)
+USES+=		xorg
 USE_XORG=	xaw xpm
 GRAPHICS=	X11_GRAPHICS
 .else

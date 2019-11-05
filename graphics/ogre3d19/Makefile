@@ -22,7 +22,7 @@ LIB_DEPENDS=	libzzip.so:devel/zziplib \
 CONFLICTS=	ogre3d-[0-9]*
 
 USE_LDCONFIG=	yes
-USES=		tar:bzip2 cmake pkgconfig compiler:c++11-lib
+USES=		tar:bzip2 cmake pkgconfig compiler:c++11-lib sdl xorg
 USE_SDL=	sdl
 USE_XORG=	xaw xrandr
 WRKSRC=		${WRKDIR}/sinbad-ogre-dd30349ea667

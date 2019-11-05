@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 BROKEN_sparc64=	does not configure
 
 GNU_CONFIGURE=	yes
-USES=		jpeg gmake localbase lua:52+ python
+USES=		jpeg gmake localbase lua:52+ python sdl xorg
 USE_XORG=	x11
 USE_SDL=	sdl image gfx
 CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
@@ -38,6 +38,7 @@ BACKTRACE_DESC=	Use backtrace() to generate nice bug reports
 BACKTRACE_CONFIGURE_ENABLE=	backtrace
 BACKTRACE_VARS=			STRIP= # empty
 
+OPENGL_USES=			gl
 OPENGL_USE=			GL=gl
 OPENGL_CONFIGURE_ENABLE=	opengl
 

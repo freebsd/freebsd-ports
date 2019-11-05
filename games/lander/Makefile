@@ -21,7 +21,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib gettext localbase pkgconfig
+USES=		compiler:c++11-lib gettext gl localbase pkgconfig sdl
 USE_SDL=	sdl image mixer
 USE_GL=		gl glu
 

@@ -14,7 +14,7 @@ COMMENT=	Tk OpenGL widget
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake tk:tea
+USES=		gl gmake tk:tea xorg
 USE_XORG=	x11 xt xmu
 USE_GL=		gl
 USE_LDCONFIG=	yes

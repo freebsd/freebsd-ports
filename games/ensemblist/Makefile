@@ -13,7 +13,7 @@ COMMENT=	Assemble given shapes from primitives
 LIB_DEPENDS=	libmikmod.so:audio/libmikmod \
 		libpng.so:graphics/png
 
-USES=		gmake
+USES=		gl gmake xorg
 USE_XORG=	xmu
 USE_GL=		glut
 MAKE_ARGS=	CC="${CC}" DATADIR="${DATADIR}"

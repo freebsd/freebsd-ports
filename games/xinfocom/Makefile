@@ -11,7 +11,7 @@ DISTNAME=	unix8m
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Infocom game interpreter for X11
 
-USES=		imake tar:tgz
+USES=		imake tar:tgz xorg
 USE_XORG=	xt sm ice xext x11
 
 WRKSRC=		${WRKDIR}/xinfocom

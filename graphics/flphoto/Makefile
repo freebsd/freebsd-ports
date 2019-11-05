@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2 \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		tar:bzip2
+USES=		tar:bzip2 xorg
 USE_XORG=	xinerama
 GNU_CONFIGURE=	yes
 

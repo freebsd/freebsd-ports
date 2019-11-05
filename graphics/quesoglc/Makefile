@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gmake libtool localbase pathfix pkgconfig tar:bzip2
+USES=		gl gmake libtool localbase pathfix pkgconfig tar:bzip2 xorg
 GNU_CONFIGURE=	yes
 USE_GL=		gl glu
 USE_XORG=	x11

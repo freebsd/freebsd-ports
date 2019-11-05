@@ -16,7 +16,7 @@ COMMENT=	Improved and extended version of Doom
 
 LICENSE=	GPLv2
 
-USES=		gmake tar:bzip2
+USES=		gl gmake sdl tar:bzip2
 USE_GL=		glu
 USE_SDL=	mixer sdl
 

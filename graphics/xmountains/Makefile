@@ -16,6 +16,7 @@ COMMENT=	X11 based fractal landscape generator
 
 NO_WRKSUBDIR=	yes
 
+USES=		xorg
 USE_XORG=	xbitmaps x11
 
 PLIST_FILES=	bin/${PORTNAME} \

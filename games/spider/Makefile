@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Challenging double decked solitaire game
 
-USES=		imake tar:Z
+USES=		imake tar:Z xorg
 USE_XORG=	x11 xext xaw xmu xt sm ice xpm
 INSTALL_TARGET=	install install.doc
 CFLAGS+=	-Wno-error=return-type

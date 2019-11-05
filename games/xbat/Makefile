@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 NO_CDROM=	Possible copyright infringement
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/Xev111
 ALL_TARGET=	xbat

@@ -23,7 +23,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libtinyxml.so:textproc/tinyxml
 RUN_DEPENDS=	flam3-animate:graphics/flam3
 
-USES=		autoreconf compiler:c++11-lang dos2unix gl gnome libtool localbase:ldflags lua:51 pkgconfig gettext-runtime
+USES=		autoreconf compiler:c++11-lang dos2unix gl gnome libtool \
+		localbase:ldflags lua:51 pkgconfig gettext-runtime xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	scottdraves
 GH_TAGNAME=	4949c31

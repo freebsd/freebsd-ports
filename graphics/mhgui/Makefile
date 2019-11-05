@@ -16,7 +16,7 @@ LIB_DEPENDS=	libanimorph.so:graphics/animorph \
 		libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake libtool
+USES=		pkgconfig gl gmake libtool xorg
 USE_LDCONFIG=	yes
 USE_XORG=	xi xmu ice sm
 USE_GL=		glut

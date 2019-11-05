@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 
-USES=		gmake
+USES=		gl gmake
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-plib=${LOCALBASE}

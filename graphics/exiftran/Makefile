@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexif.so:graphics/libexif
 
-USES=		jpeg uidfix
+USES=		jpeg uidfix xorg
 USE_XORG=	pixman
 
 MAKE_ARGS+=	WRKSRC=${WRKSRC} BINDIR=${PREFIX}/bin MANDIR=${MANPREFIX}/man

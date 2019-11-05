@@ -11,7 +11,7 @@ DISTFILES=	mindfocus-0.88.tar.gz mindfocus-data1.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lovely characters stay on top of active window
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xpm
 RESTRICTED=	'contains commercial character data'
 

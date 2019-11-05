@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake
+USES=		gl gmake sdl
 USE_GL=		gl
 USE_SDL=	sdl sound
 GNU_CONFIGURE=	yes

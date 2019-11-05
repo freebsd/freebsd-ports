@@ -13,7 +13,7 @@ COMMENT=	Unique game of conflict and cooperation in a gardening community
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
-USES=		gmake
+USES=		gl gmake xorg
 USE_XORG=	x11 xi xext xmu
 USE_GL=		glut
 

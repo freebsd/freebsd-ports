@@ -11,6 +11,7 @@ COMMENT=	Tetris(TM) clone for X11
 
 MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		X11BASE=${LOCALBASE}
+USES=		xorg
 USE_XORG=	x11 xext xi
 PLIST_FILES=	bin/tetrons
 

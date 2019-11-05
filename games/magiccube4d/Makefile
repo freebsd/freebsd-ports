@@ -12,6 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MagicCube4D is a four-dimensional analog of Rubik's cube
 
+USES=		xorg
 USE_XORG=	x11 xext xt sm ice xaw
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION:S/./_/}

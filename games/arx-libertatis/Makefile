@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/ARX_PUBLIC_LICENSE.txt
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/foreach.hpp:devel/boost-libs
 
-USES=		cmake openal tar:xz
+USES=		cmake gl openal sdl tar:xz
 USE_SDL=	sdl
 USE_GL=		gl glew
 LLD_UNSAFE=	yes

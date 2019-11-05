@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
 		libImlib2.so:graphics/imlib2
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11
 
 ALL_TARGET=	${PORTNAME}

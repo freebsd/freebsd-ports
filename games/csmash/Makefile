@@ -13,7 +13,7 @@ COMMENT=	3D tabletennis game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang gettext gmake pkgconfig
+USES=		compiler:c++11-lang gettext gl gmake gnome pkgconfig sdl
 USE_SDL=	image mixer sdl
 USE_GL=		yes
 USE_GNOME=	gtk20

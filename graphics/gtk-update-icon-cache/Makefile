@@ -19,7 +19,8 @@ RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info \
 
 PORTSCOUT=	ignore:1
 
-USES=		gettext gmake libtool localbase:ldflags pathfix perl5 pkgconfig tar:xz
+USES=		gettext gmake gnome libtool localbase:ldflags pathfix perl5 \
+		pkgconfig tar:xz xorg
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes

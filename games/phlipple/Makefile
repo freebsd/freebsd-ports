@@ -13,7 +13,7 @@ COMMENT=	Flipping squares will never be the same
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis
 
-USES=		desktop-file-utils pkgconfig
+USES=		desktop-file-utils gl pkgconfig sdl
 USE_SDL=	sdl mixer image
 USE_GL=		gl glew glu
 GNU_CONFIGURE=	yes

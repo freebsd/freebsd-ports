@@ -19,7 +19,7 @@ COMMENT=	Hexen II source port supporting Linux/FreeBSD/Unix/Windows
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		gmake pkgconfig tar:tgz
+USES=		gl gmake pkgconfig sdl tar:tgz
 USE_GL=		gl
 USE_SDL=	sdl
 MAKE_ARGS=	X11BASE="${LOCALBASE}"

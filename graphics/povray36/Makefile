@@ -17,8 +17,8 @@ COMMENT=	Persistence of Vision Ray Tracer
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
+USES=		compiler:c11 gmake jpeg tar:bzip2 xorg
 USE_XORG=	x11
-USES=		compiler:c11 gmake jpeg tar:bzip2
 GNU_CONFIGURE=	yes
 USE_CXXSTD=	gnu++98
 

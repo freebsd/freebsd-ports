@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 WRKSRC=		${WRKDIR}/wmtictactoe.app/wmtictactoe
 
+USES=		gmake xorg
 USE_XORG=	x11 xext xpm
-USES=		gmake
 
 PLIST_FILES=	bin/wmtictactoe
 

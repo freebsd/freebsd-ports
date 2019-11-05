@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 USE_GITHUB=	yes
 GH_ACCOUNT=	Wargus
 
-USES=		cmake compiler:c++11-lang pkgconfig
+USES=		cmake compiler:c++11-lang gnome pkgconfig xorg
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DSHAREDIR:STRING="${DATADIR_REL}"
 USE_XORG=	x11

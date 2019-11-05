@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 NO_WRKSUBDIR=	yes
 
-USES=		dos2unix zip
+USES=		dos2unix xorg zip
 USE_XORG=	xpm
 DOS2UNIX_GLOB=	*.cpp *.h config.mk makefile
 MAKEFILE=	makefile

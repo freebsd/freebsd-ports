@@ -11,7 +11,7 @@ MASTER_SITES=	http://sed.free.fr/rubix/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another Rubik's cube game with a rather interesting interface
 
-USES=		compiler:nestedfct gmake tar:bzip2
+USES=		compiler:nestedfct gmake tar:bzip2 xorg
 USE_XORG=	x11
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DENGLISH" \
 		XINC="-I${LOCALBASE}/include" XLIB="-L${LOCALBASE}/lib -lX11"

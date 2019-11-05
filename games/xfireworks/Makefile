@@ -13,6 +13,7 @@ COMMENT=	Fireworks on X
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+USES=		xorg
 USE_XORG=	x11
 
 do-install:

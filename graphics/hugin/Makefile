@@ -28,7 +28,7 @@ RUN_DEPENDS=	enblend>=4.1.4:graphics/enblend \
 
 BROKEN_i386=	Fails to build: ld: error: src/hugin_base/libhuginbase.so.0.0: undefined reference to __atomic_load
 
-USES=		cmake compiler:c++11-lib desktop-file-utils \
+USES=		cmake compiler:c++11-lib gl desktop-file-utils \
 		gettext jpeg pkgconfig shared-mime-info shebangfix tar:bzip2
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
 USE_WX=		3.0+

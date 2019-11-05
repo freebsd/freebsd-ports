@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
-USES=		openal:al,alut pkgconfig
+USES=		openal:al,alut gnome pkgconfig xorg
 USE_GNOME=	gtk20
 USE_XORG=	x11
 LLD_UNSAFE=	yes
