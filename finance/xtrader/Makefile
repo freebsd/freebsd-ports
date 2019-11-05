@@ -14,10 +14,10 @@ LIB_DEPENDS=	libptypes.so:devel/ptypes \
 		libfltk.so.1:x11-toolkits/fltk
 
 MAKEFILE=	Makefile.linux
+USES=		gmake xorg
 USE_XORG=	x11 xpm
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 NO_WRKSUBDIR=	yes
-USES=		gmake
 
 PLIST_FILES=	bin/xtrader \
 		%%DATADIR%%/sample.xt

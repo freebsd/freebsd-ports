@@ -14,8 +14,8 @@ COMMENT=	Dock app for Window Maker providing wget functionality
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
+USES=		gmake xorg
 USE_XORG=	x11 xpm
-USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ENV+=	${CONFIGURE_ENV}
