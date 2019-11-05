@@ -8,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	GNU/which
 DISTNAME=	which-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU Which - Everything you never wanted in a which
 
 GNU_CONFIGURE=	yes

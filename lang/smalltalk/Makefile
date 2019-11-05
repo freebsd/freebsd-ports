@@ -7,7 +7,7 @@ PORTREVISION=	14
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU Smalltalk
 
 BROKEN_aarch64=		Fails to link: undefined reference to sbrk

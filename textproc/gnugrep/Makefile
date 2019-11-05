@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU version of popular pattern matching utility
 
 LICENSE=	GPLv3+

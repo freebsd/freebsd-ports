@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/opencvs/ \
 		LOCAL/johans
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	BSD-licensed CVS implementation
 
 LICENSE=	BSD2CLAUSE
