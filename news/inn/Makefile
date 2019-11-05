@@ -6,7 +6,7 @@ PORTVERSION=	2.6.1
 CATEGORIES=	news
 MASTER_SITES=	ISC/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
 BUILD_DEPENDS=	p5-GD>=0:graphics/p5-GD \
