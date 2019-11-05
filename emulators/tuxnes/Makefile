@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	uses i386 assembly code
 
-USES=		compiler gmake
+USES=		compiler gmake xorg
 USE_XORG=	x11 ice sm xext xpm
 USE_BINUTILS=	yes
 GNU_CONFIGURE=	yes

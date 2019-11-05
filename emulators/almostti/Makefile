@@ -10,7 +10,7 @@ DISTNAME=	AlmostTI13-Unix-DougMelton-051409
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Texas Instruments Z80 series calculator emulator
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11 xext
 
 WRKSRC=		${WRKDIR}/AlmostTI-DougMelton-Source

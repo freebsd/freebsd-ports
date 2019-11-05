@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.eonet.ne.jp/~showtime/quasi88/release/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC-8801 emulator for X
 
+USES=		gmake tar:tgz xorg
 USE_XORG=	x11 xext
-USES=		gmake tar:tgz
 MAKE_ENV=	DATADIR="${DATADIR}" _CC="${CC}" _CFLAGS="${CFLAGS}" \
 		_CXX="${CXX}" LD="${CXX}" PROGRAM="${PORTNAME}"
 MAKE_ARGS=	ARCH="freebsd"

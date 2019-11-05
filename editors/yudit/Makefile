@@ -12,8 +12,8 @@ COMMENT=	Multi-lingual Unicode text editor with TTF support
 
 CONFLICTS=	netatalk-[0-9]*
 
+USES=		gmake xorg
 USE_XORG=	x11
-USES=		gmake
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

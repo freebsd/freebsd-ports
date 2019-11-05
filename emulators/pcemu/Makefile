@@ -14,8 +14,8 @@ COMMENT=	8086 PC emulator, by David Hedley
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontscale:x11-fonts/mkfontscale
 
+USES=		dos2unix xorg
 USE_XORG=	x11 xext
-USES=		dos2unix
 DOS2UNIX_FILES=	programs/config.sys
 MAKE_ENV=	FILESDIR=${FILESDIR} STAGEDIR=${STAGEDIR}
 MAKE_ARGS=	CC="${CC}"

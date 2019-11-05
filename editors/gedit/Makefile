@@ -29,7 +29,7 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils gettext gmake gnome libtool \
-		localbase pathfix pkgconfig python:3.4+ shebangfix tar:xz
+		localbase pathfix pkgconfig python:3.4+ shebangfix tar:xz xorg
 USE_CSTD=	c11
 USE_GNOME=	cairo gdkpixbuf2 gtksourceview3 intlhack introspection \
 		libxml2 pygobject3

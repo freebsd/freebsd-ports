@@ -23,7 +23,7 @@ BROKEN_armv6=		fails to compile: call to min is ambiguous
 BROKEN_armv7=		fails to compile: call to min is ambiguous
 
 USES=		cpe desktop-file-utils gmake iconv localbase pkgconfig python \
-		shared-mime-info shebangfix
+		shared-mime-info shebangfix xorg
 USE_TEX=	tex:run dvipsk:run
 USE_XORG=	xext
 GNU_CONFIGURE=	yes

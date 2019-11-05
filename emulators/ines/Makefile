@@ -18,6 +18,7 @@ ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	is an i386 binary
 
 NO_WRKSUBDIR=	yes
+USES=		xorg
 USE_XORG=	x11 xext
 NO_BUILD=	yes
 STRIP=

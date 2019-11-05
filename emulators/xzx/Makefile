@@ -14,7 +14,7 @@ COMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
 
 RESTRICTED=	Redistribution forbidden by license
 
-USES=		imake:env motif
+USES=		imake:env motif xorg
 USE_XORG=	x11 ice sm xext xpm xt xxf86vm
 
 GNU_CONFIGURE=	yes

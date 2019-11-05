@@ -17,7 +17,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}
 
 USE_XORG=	ice
 USE_GNOME=	glib20
-USES=		gettext iconv pkgconfig
+USES=		gettext gnome iconv pkgconfig xorg
 
 LIB_DEPENDS+=	libpcre.so:devel/pcre \
 		libdsk.so:emulators/libdsk

@@ -21,7 +21,7 @@ BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 RESTRICTED=	Contains ROM (C) by Atari
 
 TOSIMG?=	tos.img
-USES=		fonts
+USES=		fonts xorg
 FONTNAME=	misc
 USE_XORG=	x11 sm ice xext xorgproto
 HAS_CONFIGURE=	yes

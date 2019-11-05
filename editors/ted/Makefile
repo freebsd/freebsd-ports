@@ -23,8 +23,8 @@ RUN_DEPENDS=	gsfonts>0:print/gsfonts
 
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 
+USES=		ghostscript:x11,run iconv pkgconfig xorg
 USE_XORG=	xext xft
-USES=		ghostscript:x11,run iconv pkgconfig
 GNU_CONFIGURE=	yes
 MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}/\\\"\"" \
 		DEF_INDDIR="-DINDDIR=\"\\\"${INDDIR}/\\\"\"" \
@@ -42,6 +42,7 @@ INDDIR=		${DATADIR}/dfa
 
 OPTIONS_DEFINE=	GTK2 DOCS
 GTK2_DESC=	Use GTK2 instead of MOTIF
+GTK2_USES=	gnome
 GTK2_USE=		GNOME=gtk20
 GTK2_CONFIGURE_ON=	--with-GTK
 GTK2_CPPFLAGS=		`pkg-config --cflags gtk+-2.0 | ${SED} -e 's|-I|-isystem |g'`
