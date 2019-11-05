@@ -14,6 +14,8 @@ PORTREVISION_LTS=	0
 
 SVN_BUILD_BINDINGS=	yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 
 CATEGORIES+=	perl5
