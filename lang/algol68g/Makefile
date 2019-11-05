@@ -6,7 +6,7 @@ PORTREVISION=	8
 CATEGORIES=	lang
 MASTER_SITES=	http://jmvdveer.home.xs4all.nl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Algol 68 Genie compiler
 
 LICENSE=	GPLv3+
