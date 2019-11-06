@@ -3,15 +3,13 @@
 
 PORTNAME=	stardict-dictd_mova
 PORTVERSION=	2.4.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.huzheng.org/mova.org/
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionaries from www.mova.org for StarDict
-
-BROKEN=		unfetchable
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -21,21 +19,64 @@ DATADIR=	${PREFIX}/share/stardict
 DICTDIR=	${DATADIR}/dic
 PORTDATA=	*
 
-DICTIONARIES=	1000pbio aviation beslov biology brok_and_efr compbe \
-		deutsch engcom ethnographic findict geology_enru geology_ruen \
-		idioms korolew_enru korolew_ruen mech mueller7 ozhegov \
-		religion sc-abbr \
-		sinyagin_abbrev sinyagin_alexeymavrin sinyagin_business \
-		sinyagin_computer sinyagin_general_er \
-		sinyagin_general_re sinyagin_unsorted \
-		slovnyk_be-en slovnyk_be-ru slovnyk_be-uk slovnyk_en-be \
-		slovnyk_en-ru slovnyk_en-uk slovnyk_ru-be slovnyk_ru-en \
-		slovnyk_ru-uk slovnyk_uk-be slovnyk_uk-en slovnyk_uk-ru \
-		smiley sokrat_enru sokrat_ruen swedish teo ushakov \
-		zhelezyaki_abbr zhelezyaki_analogs
+DICTIONARIES=	1000pbio \
+		aviation \
+		beslov \
+		biology \
+		brok_and_efr \
+		compbe \
+		deutsch \
+		engcom \
+		ethnographic \
+		findict \
+		geology_enru \
+		geology_ruen \
+		idioms \
+		korolew_enru \
+		korolew_ruen \
+		mech \
+		ozhegov \
+		religion \
+		sc-abbr \
+		sinyagin_abbrev \
+		sinyagin_alexeymavrin \
+		sinyagin_business \
+		sinyagin_computer \
+		sinyagin_general_er \
+		sinyagin_general_re \
+		sinyagin_unsorted \
+		slovnyk_be-en \
+		slovnyk_be-pl \
+		slovnyk_be-ru \
+		slovnyk_be-uk \
+		slovnyk_en-be \
+		slovnyk_en-pl \
+		slovnyk_en-ru \
+		slovnyk_en-uk \
+		slovnyk_pl-be \
+		slovnyk_pl-en \
+		slovnyk_pl-ru \
+		slovnyk_pl-uk \
+		slovnyk_ru-be \
+		slovnyk_ru-en \
+		slovnyk_ru-pl \
+		slovnyk_ru-uk \
+		slovnyk_uk-be \
+		slovnyk_uk-en \
+		slovnyk_uk-pl \
+		slovnyk_uk-ru \
+		smiley \
+		sokrat_enru \
+		sokrat_ruen \
+		swedish \
+		teo \
+		ushakov \
+		zhelezyaki_abbr \
+		zhelezyaki_analogs
 
 OPTIONS_DEFINE=	ALL
 OPTIONS_DEFAULT=	ALL
+NO_OPTIONS_SORT=	yes
 ALL_DESC=	All dictionaries
 .for dict in ${DICTIONARIES}
 OPTIONS_DEFINE+=	${dict:tu:S|-|_|g}
