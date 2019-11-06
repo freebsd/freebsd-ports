@@ -12,7 +12,7 @@ COMMENT=	SKK-like Japanese input method for X11
 
 LICENSE=	GPLv2
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	ice sm x11 xext xt xmu
 
 PLIST_FILES=	bin/skkinput lib/X11/app-defaults/Skkinput \

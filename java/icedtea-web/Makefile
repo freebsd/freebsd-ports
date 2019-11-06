@@ -26,7 +26,7 @@ JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 USE_PERL5=	build
 USE_XORG=	x11
-USES=		desktop-file-utils gmake perl5 pkgconfig shebangfix
+USES=		desktop-file-utils gmake perl5 pkgconfig shebangfix xorg
 SHEBANG_FILES=	jrunscript.in launcher/launchers.in
 
 CONFIGURE_ARGS=		--with-hamcrest="${HAMCREST_JAR}"
@@ -72,7 +72,7 @@ PLUGIN_MASTER_SITES=	LOCAL/tobik:npapi
 PLUGIN_PORTDOCS=	plugin
 PLUGIN_TEST_TARGET=	plugin-tests
 PLUGIN_USE=		GNOME=glib20
-PLUGIN_USES=		webplugin:native
+PLUGIN_USES=		webplugin:native gnome
 PLUGIN_VARS=		WEBPLUGIN_DIR=${PREFIX}/lib \
 			WEBPLUGIN_FILES=IcedTeaPlugin.so
 

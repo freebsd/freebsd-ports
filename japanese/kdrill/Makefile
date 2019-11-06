@@ -12,7 +12,7 @@ COMMENT=	Program to quiz you on the meanings of Kanji
 
 RUN_DEPENDS=	xjdic:japanese/edict
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 DATADIR=	${PREFIX}/share/dict/kdrill

@@ -18,6 +18,7 @@ RUN_DEPENDS=	tgif:graphics/tgif \
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+USES=		xorg
 USE_XORG=	x11
 PLIST_SUB=	XAPPLRESDIR=${XAPPLRESDIR}
 

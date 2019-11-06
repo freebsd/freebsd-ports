@@ -49,7 +49,7 @@ USES+=		qt:5 gnome
 USE_GNOME=	glib20 gtk20
 USE_QT=		buildtools core gui widgets
 .elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
-USES+=		gettext-runtime gnome
+USES+=		gettext-runtime gnome xorg
 USE_XORG=	xcb
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \

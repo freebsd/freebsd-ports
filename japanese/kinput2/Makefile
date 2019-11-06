@@ -13,7 +13,7 @@ COMMENT=	Japanese text input server for X11 applications
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 SUB_FILES=	Kinput2.conf
 PLIST_FILES=	bin/kinput2 lib/X11/app-defaults/Kinput2 man/man1/kinput2.1.gz

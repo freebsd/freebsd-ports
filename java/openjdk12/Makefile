@@ -26,7 +26,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libpng.so:graphics/png
 RUN_DEPENDS=	javavm:java/javavmwrapper
 
-USES=		compiler:features gmake iconv jpeg pkgconfig
+USES=		compiler:features gmake iconv jpeg pkgconfig xorg
 USE_XORG=	x11 xext xi xrandr xrender xt xtst
 
 USE_GITHUB=	yes

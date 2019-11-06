@@ -16,7 +16,7 @@ BUILD_DEPENDS=	jikes:java/jikes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pkgconfig
+USES=		gmake libtool pkgconfig xorg
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_XORG=	x11 ice xtst sm
 
@@ -35,6 +35,7 @@ ZIP_DESC=	Compress class library
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
+USES+=			gnome
 USE_GNOME+=		gtk20
 PLIST_SUB+=		GTK2=""
 .if ${PORT_OPTIONS:MCAIRO}
