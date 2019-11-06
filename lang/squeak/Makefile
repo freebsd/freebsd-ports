@@ -31,7 +31,7 @@ LIB_DEPENDS=	libaudio.so:audio/nas \
 		libpulse-simple.so:audio/pulseaudio \
 		libv4l2.so:multimedia/libv4l
 
-USES=		pkgconfig
+USES=		gl gnome pkgconfig
 USE_GNOME=	cairo pango
 USE_GL=		gl
 HAS_CONFIGURE=	yes

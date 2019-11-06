@@ -12,8 +12,8 @@ COMMENT=	ANSI/Turbo Pascal to C/C++ converter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		bison xorg
 USE_XORG=	x11
-USES=		bison
 
 EXAMPLES=	arr.pas bgidemo.pas ccall.pas coord.txt dos.h dos.pas \
 		func.pas hello.pas impact.pas lister.pas makefile.bsd \
