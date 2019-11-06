@@ -1,6 +1,6 @@
 TIMESTAMP = 1495068953
-SHA256 (jbeich-platform_system_extras-android-7.1.2_r17_GH0.tar.gz) = ee97ae3df4eecc0d7fc16d3cb6f016ae1b1f81d7e450e678473c9b4618676b42
-SIZE (jbeich-platform_system_extras-android-7.1.2_r17_GH0.tar.gz) = 79621709
+SHA256 (jbeich-platform_system_extras-android-7.1.2_r17_GH0.tar.gz) = 870e7aee7d52d23bf74aeb4a5a8db98d3929695eb5e1b4b54097583da87355d4
+SIZE (jbeich-platform_system_extras-android-7.1.2_r17_GH0.tar.gz) = 79621715
 SHA256 (aosp-mirror-platform_system_core-android-7.1.2_r17_GH0.tar.gz) = fb8d053d846f439951c651f205c9c914531d8dace86da60474f6675a92576449
 SIZE (aosp-mirror-platform_system_core-android-7.1.2_r17_GH0.tar.gz) = 1596372
 SHA256 (aosp-mirror-platform_bionic-android-7.1.2_r17_GH0.tar.gz) = 33677ce1ca7a534c1d9060081890939d3ae7b6980cf573b650c4ec306874613a
