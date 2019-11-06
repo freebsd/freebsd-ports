@@ -13,7 +13,7 @@ COMMENT=	Interpreted language for scientific simulations
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		makeinfo
+USES=		makeinfo xorg
 USE_XORG=	x11
 MAKE_ARGS=	Y_HOME=relocatable Y_DOCDIR=/dev/null
 

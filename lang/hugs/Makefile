@@ -21,7 +21,7 @@ BUILD_DEPENDS=	bash:shells/bash
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 HUGS_DATE=	Sep2006
-USES=		bison gmake openal:al,alut
+USES=		bison gl gmake openal:al,alut xorg
 USE_CSTD=	gnu89
 USE_GCC=	yes
 

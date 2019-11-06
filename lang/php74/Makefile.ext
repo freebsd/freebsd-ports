@@ -489,8 +489,6 @@ USES+=	mysql
 .	endif
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${PHP_MODNAME} == "gd"
 .	if ${PORT_OPTIONS:MJIS}
 CONFIGURE_ARGS+=--enable-gd-jis-conv
@@ -501,11 +499,14 @@ LIB_DEPENDS+=   libwebp.so:graphics/webp
 CONFIGURE_ARGS+=--with-webp
 .   endif
 .	if ${PORT_OPTIONS:MX11}
+USES+=		xorg
 USE_XORG=	xpm
 
 CONFIGURE_ARGS+=--with-xpm
 .	endif
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${PHP_MODNAME} == "imap"
 .	if ${PORT_OPTIONS:MPANDA}
