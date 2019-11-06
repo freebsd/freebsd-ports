@@ -130,7 +130,7 @@ IGNORE=	does not work with PHP versions "${IGNORE_WITH_PHP}" and "${_INSTALLED_P
 PHP_VER?=	${PHP_DEFAULT:S/.//}
 .  endif # .if exists(${PHPBASE}/etc/php.conf)
 
-# Use the "default" php version as th first version for flavors, so that it
+# Use the "default" php version as the first version for flavors, so that it
 # gets to be the default flavor.
 _ALL_FLAVOR_VERSIONS=	${PHP_VER} ${_ALL_PHP_VERSIONS:N${PHP_VER}}
 
@@ -158,6 +158,10 @@ FLAVORS:=	${_ALL_FLAVOR_VERSIONS:S/^/php/}
 FLAVOR=	${FLAVORS:[1]}
 .    endif
 .  endif
+
+.if ${PHP_VER} == 74 && (${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64)
+USE_GCC=	yes
+.endif
 
 # This variable is for dependencies lines, so you write:
 # ${PHP_PKGNAMEPREFIX}foo:devel/php-foo@${PHP_FLAVOR}
