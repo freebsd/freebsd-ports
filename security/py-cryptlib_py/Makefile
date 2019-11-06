@@ -12,6 +12,8 @@ DISTNAME=	cl${PORTVERSION:S/.//g}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Pythin binding for cryptlib
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 

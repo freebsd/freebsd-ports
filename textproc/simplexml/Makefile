@@ -12,6 +12,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	konstantin.lepa@gmail.com
 COMMENT=	C++ XML parser library
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		cmake iconv

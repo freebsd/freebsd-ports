@@ -9,6 +9,8 @@ CATEGORIES=	x11-fonts gnome
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Font management application for the GNOME desktop
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 

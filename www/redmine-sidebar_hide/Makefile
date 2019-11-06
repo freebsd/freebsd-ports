@@ -8,6 +8,8 @@ CATEGORIES=	www
 MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Adds simple hide button for sidebar of Redmine
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 

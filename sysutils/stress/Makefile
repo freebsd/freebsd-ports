@@ -10,6 +10,8 @@ MASTER_SITES=	https://people.seas.harvard.edu/~apw/stress/
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Tool to impose load on and stress test Unix-like systems
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes

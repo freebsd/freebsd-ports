@@ -21,6 +21,8 @@ DISTFILES+=	shabytetestvectors.zip:shs
 MAINTAINER=	jmg@FreeBSD.org
 COMMENT=	Collection of NIST's Known Answer Test Vectors
 
+BROKEN=		unfetchable
+
 LICENSE=	PD
 
 # We want each dist file in it's own subdir

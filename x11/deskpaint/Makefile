@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	sic_zer0@hotmail.com
 COMMENT=	Tiny interactive paint program that draws as your desktop wallpaper
 
+BROKEN=		unfetchable
+
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/deskpaint
 

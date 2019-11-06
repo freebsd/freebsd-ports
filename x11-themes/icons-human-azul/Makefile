@@ -11,6 +11,8 @@ DISTNAME=	37099-HumanAzul
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	Set of icons from the Ubuntu human look
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/HumanAzul
 

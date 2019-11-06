@@ -11,6 +11,8 @@ DISTNAME=	gpct${PORTVERSION:S/.//g}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Evaluation tool for the Generic Polygon Clipper library
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgpc.so:devel/libgpc	\
 		libformsGL.so:x11-toolkits/xforms
 

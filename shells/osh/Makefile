@@ -9,6 +9,8 @@ MASTER_SITES=	http://v6shell.org/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the UNIX 6th Edition shell
 
+BROKEN=		unfetchable
+
 MAKE_ENV+=	DOCDIR=${DOCSDIR} \
 		EXPDIR=${EXAMPLESDIR} \
 		MANDIR=${MANPREFIX}/man/man1

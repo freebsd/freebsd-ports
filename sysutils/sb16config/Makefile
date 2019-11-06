@@ -11,6 +11,8 @@ EXTRACT_ONLY=
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Configuration utility for Granch SBNI16-SHDSL PCI modems
 
+BROKEN=		unfetchable
+
 USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile
 NO_WRKSUBDIR=	yes

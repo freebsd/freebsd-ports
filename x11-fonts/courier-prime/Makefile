@@ -11,6 +11,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	flo@snakeoilproductions.net
 COMMENT=	It\'s Courier, just better
 
+BROKEN=		unfetchable
+
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/"Courier Prime/LICENSE/OFL.txt"
 

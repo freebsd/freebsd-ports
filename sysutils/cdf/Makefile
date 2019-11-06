@@ -9,6 +9,8 @@ MASTER_SITES=	SF/bmp-plugins
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Colorized df
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/cdf
 
 GNU_CONFIGURE=	yes

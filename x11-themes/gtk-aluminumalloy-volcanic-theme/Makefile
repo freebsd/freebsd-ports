@@ -13,6 +13,8 @@ DISTNAME=	aa_${THEME_FLAVOR}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of Mac OS X theme Aluminum Alloy (${THEME_FLAVOR} flavor)
 
+BROKEN=		unfetchable
+
 TYPE?=		gtk
 THEME_FLAVOR?=	volcanic
 

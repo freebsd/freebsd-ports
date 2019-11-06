@@ -10,6 +10,8 @@ MASTER_SITES=	http://frmb.org/download/
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	UPS daemon for some Belkin UPS's
 
+BROKEN=		unfetchable
+
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name= --bindir=${PREFIX}/sbin

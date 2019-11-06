@@ -13,6 +13,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
+BROKEN=		unfetchable
+
 LICENSE=	ART10
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

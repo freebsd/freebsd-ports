@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}plugin-r${SVN_REV}
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Provides extends attachments list of Trac
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	tracd:www/trac

@@ -9,6 +9,8 @@ MASTER_SITES=	http://atlas.kennesaw.edu/~rbentley/
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Generate all permutations of lines from stdin
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

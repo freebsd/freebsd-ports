@@ -13,6 +13,8 @@ DISTNAME=	Longhorn_Inspirat
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of Windows XP theme Longhorn Inspirat
 
+BROKEN=		unfetchable
+
 USES=		tar:bzip2
 NO_BUILD=	yes
 

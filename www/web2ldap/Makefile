@@ -9,6 +9,8 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Python-based WWW gateway to LDAP servers
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}

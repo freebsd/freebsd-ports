@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.pulia.nu/tss/src/
 MAINTAINER=	peter@pean.org
 COMMENT=	Terminal ScreenSaver that allows you to lock you terminal
 
+BROKEN=		unfetchable
+
 USES=		ncurses
 OPTIONS_DEFINE=	DOCS
 

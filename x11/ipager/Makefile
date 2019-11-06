@@ -10,6 +10,8 @@ MASTER_SITES=	http://useperl.ru/ipager/src/
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	X11 pager program
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2

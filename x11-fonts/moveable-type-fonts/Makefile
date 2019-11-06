@@ -19,6 +19,8 @@ DISTFILES=	junction.zip \
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Collection of open source fonts
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 USES=		fonts zip
 

@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
 MAINTAINER=	felix@palmen-it.de
 COMMENT=	Fork of SGML-tools specially tailored for linuxdoc SGMLs
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3 LinuxdocTools
 LICENSE_COMB=	multi
 LICENSE_NAME_LinuxdocTools=	The linuxdoc-tools license

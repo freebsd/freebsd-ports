@@ -9,6 +9,8 @@ MASTER_SITES=	http://files.etoilebsd.net/cblog/
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple weblog in C using markdown
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:www/clearsilver
 LIB_DEPENDS=	libfcgi.so:www/fcgi \
 		libcdb.so:databases/tinycdb

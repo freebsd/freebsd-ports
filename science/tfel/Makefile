@@ -11,6 +11,8 @@ PKGNAMESUFFIX=	-mfront
 MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	Code generation tool dedicated to material knowledge
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	gnuplot:math/gnuplot

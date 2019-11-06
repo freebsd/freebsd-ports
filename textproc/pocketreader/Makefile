@@ -13,6 +13,8 @@ DIST_SUBDIR=	pocketreader
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Siemens PocketReader
 
+BROKEN=		unfetchable
+
 USES=		linux
 NO_BUILD=	yes
 PLIST_FILES=	bin/pocketreader

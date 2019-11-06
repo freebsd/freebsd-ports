@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	The Simple WATCHer and filter
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	\
 	p5-TimeDate>=0:devel/p5-TimeDate \
 	p5-Date-Manip>=0:devel/p5-Date-Manip \

@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.nought.de/
 MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Converts LaTeX formulas into high resolution pixmap graphics
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	convert:graphics/ImageMagick6 \
 		bash:shells/bash
 

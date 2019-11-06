@@ -8,6 +8,8 @@ MASTER_SITES=	https://github.com/fruux/sabre-dav/releases/download/${PORTVERSION
 MAINTAINER=	meyser@xenet.de
 COMMENT=	WebDav, CalDav and Carddav Server/Framework written in PHP
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 OPTIONS_MULTI=		DATABASE

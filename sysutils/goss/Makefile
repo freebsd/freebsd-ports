@@ -9,6 +9,8 @@ CATEGORIES=		sysutils
 MAINTAINER=		englishm@llnw.com
 COMMENT=		Quick and Easy server validation
 
+BROKEN=		unfetchable
+
 LICENSE=		APACHE20
 LICENSE_FILE=		${WRKSRC}/LICENSE
 

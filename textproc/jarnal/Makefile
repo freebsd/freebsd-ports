@@ -11,6 +11,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Tool to take notes, annotate documents (including PDF), and more
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		zip

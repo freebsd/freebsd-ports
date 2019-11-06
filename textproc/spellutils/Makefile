@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.sourcefiles.org/Utilities/Text_Utilities/
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Programs used to isolate some parts or texts before spell-checking
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes

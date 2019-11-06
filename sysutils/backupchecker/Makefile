@@ -9,6 +9,8 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Fully automated backup checker
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 NO_ARCH=	yes

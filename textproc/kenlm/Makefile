@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	KenLM Language Model Toolkit
 
+BROKEN=		unfetchable
+
 BROKEN_aarch64=		fails to compile: target architecture was not detected as supported by Double-Conversion
 
 BUILD_DEPENDS=	bjam:devel/boost-jam \

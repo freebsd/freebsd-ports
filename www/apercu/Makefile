@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.incava.org/pub/apercu/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Summarize information from Apache logs
 
+BROKEN=		unfetchable
+
 USE_RUBY=	yes
 NO_BUILD=	yes
 

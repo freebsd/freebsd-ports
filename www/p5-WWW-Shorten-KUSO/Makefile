@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Shorten URL using http://KUSO.CC/
 
+BROKEN=		unfetchable
+
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 

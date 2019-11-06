@@ -8,6 +8,8 @@ CATEGORIES=	x11
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Fork of dmenu with many enhancements and additional options
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

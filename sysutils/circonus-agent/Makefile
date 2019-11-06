@@ -8,6 +8,8 @@ CATEGORIES=	sysutils
 MAINTAINER=	sam.gwydir@joyent.com
 COMMENT=	Circonus host agent for metric collection
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.inter7.com/webreport/
 MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	WebReport is a web log statistics program  for web hosting sites
 
+BROKEN=		unfetchable
+
 SUB_FILES=	pkg-message
 PORTDOCS=	INSTALL
 PLIST_FILES=	bin/webreport etc/webreport.conf-dist

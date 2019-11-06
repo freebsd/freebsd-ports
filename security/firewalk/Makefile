@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Remote firewall auditing tool
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libdnet.so:net/libdnet \
 		libnet.so:net/libnet
 

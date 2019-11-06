@@ -13,6 +13,8 @@ DISTNAME=	FreeBSDx64
 MAINTAINER=	freebsd@intel.com
 COMMENT=	Intel(R) QSFP+ Configuration Utility
 
+BROKEN=		unfetchable
+
 LICENSE=	IPL
 LICENSE_NAME=	Intel Proprietary License
 LICENSE_FILE=	${WRKSRC}/Intel_Proprietary_License.pdf

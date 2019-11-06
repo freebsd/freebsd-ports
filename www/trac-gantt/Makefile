@@ -12,6 +12,8 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Plugin to creates Gantt charts for trac
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	trac>=0.11:www/trac

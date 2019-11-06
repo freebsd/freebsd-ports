@@ -11,6 +11,8 @@ MASTER_SITES=	http://web.taranis.org/drraw/dist/ \
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Simple web-based presentation front-end for RRDtool
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS+=	rrdtool>=0:databases/rrdtool
 
 OPTIONS_DEFINE=	ZOOM_PATCH DOCS

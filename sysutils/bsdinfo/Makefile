@@ -10,6 +10,8 @@ MASTER_SITES=	GHC
 MAINTAINER=	freebsd-ports@samu.pl
 COMMENT=	Simple utility to display system-based information
 
+BROKEN=		unfetchable
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	samupl
 GNU_CONFIGURE=	yes

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Converts a well formed csv file to a LaTeX document
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man

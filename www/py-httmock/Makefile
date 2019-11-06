@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Mocking library for requests
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

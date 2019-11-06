@@ -12,6 +12,8 @@ EXTRACT_ONLY=
 MAINTAINER=	valerio.daelli@gmail.com
 COMMENT=	El Torito image extractor
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	run

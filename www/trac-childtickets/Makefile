@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Support for having child-tickets in Trac
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 

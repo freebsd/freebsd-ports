@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl module provides read access to GRIB files
 
+BROKEN=		unfetchable
+
 USES=		perl5
 USE_PERL5=	configure
 

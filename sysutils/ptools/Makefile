@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	tmwalaszek@gmail.com
 COMMENT=	Toolset based on Solaris ptools functionality
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD4CLAUSE
 
 PLIST_FILES=	bin/pargs \

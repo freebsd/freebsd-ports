@@ -10,6 +10,8 @@ DISTNAME=	httpd-test_20041105052051
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Profile-driven HTTP load tester
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libapr-1.so:devel/apr1
 

@@ -11,6 +11,8 @@ DIST_SUBDIR=	stardict
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictionaries from www.mova.org for StarDict
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		tar:bzip2

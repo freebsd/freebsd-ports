@@ -9,6 +9,8 @@ DISTNAME=	datawarrior${DISTVERSION:S/.//g}Source
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Chemistry-aware multi-purpose data visualization and analysis program
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 

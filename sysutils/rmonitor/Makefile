@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://gwdu111.gwdg.de/pub/FreeBSD/misc/ \
 MAINTAINER=	kheuer@gwdg.de
 COMMENT=	Remote system monitoring utility
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD4CLAUSE
 
 USES=		ncurses

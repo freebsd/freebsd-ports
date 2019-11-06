@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.red5.org/downloads/red5/1_0_1/ \
 MAINTAINER=	joris.dedieu@gmail.com
 COMMENT=	Red5 is an Open Source Flash Server
 
+BROKEN=		unfetchable
+
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes

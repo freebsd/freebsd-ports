@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	nukama+maintainer@gmail.com
 COMMENT=	Perl module for LaTeX statistics
 
+BROKEN=		unfetchable
+
 #LICENSE=	LPPL13c
 
 NO_BUILD=	yes

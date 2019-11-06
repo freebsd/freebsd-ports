@@ -12,6 +12,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module to access James Clark XML Parser ToolKit ("expat")
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/uconv.so:japanese/ruby-uconv \

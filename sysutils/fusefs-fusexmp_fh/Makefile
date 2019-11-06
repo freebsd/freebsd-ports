@@ -12,6 +12,8 @@ DISTNAME=	fuse-${PORTVERSION}
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Dummy driver from fusefs-libs example
 
+BROKEN=		unfetchable
+
 USES=		fuse libtool pathfix iconv
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

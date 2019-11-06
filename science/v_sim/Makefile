@@ -10,6 +10,8 @@ MASTER_SITES=	http://inac.cea.fr/L_Sim/V_Sim/download/
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Visualization of atomic structures
 
+BROKEN=		unfetchable
+
 LICENSE=	CeCILL
 LICENSE_NAME=	CeCILL
 LICENSE_FILE=	${WRKSRC}/COPYING

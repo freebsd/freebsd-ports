@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.enderunix.org/scanhill/ \
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Microsoft Messenger Protocol Sniffer
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes

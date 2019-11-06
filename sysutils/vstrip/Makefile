@@ -11,6 +11,8 @@ DISTNAME=	vStrip_${DISTVERSION:C/\.//g}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	VOB de-multiplexing tool, splitter, and VOB/IFO files processor
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 LDFLAGS+=	-lm

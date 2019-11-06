@@ -9,6 +9,8 @@ DISTNAME=	Gion-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Gion Icons for Gnome
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Gion/COPYING
 

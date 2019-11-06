@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://ftp.feep.net/pub/software/PAM/pam_pseudo/
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	PAM module for per-user authentication
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 

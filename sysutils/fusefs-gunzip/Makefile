@@ -9,6 +9,8 @@ MASTER_SITES=	http://fuse.gunzip.silverice.org/files/
 MAINTAINER=	jirnov@gmail.com
 COMMENT=	Fuse.gunzip provides transparent decompression of gzip compressed files
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/fuse.gunzip
 USES=		fuse
 

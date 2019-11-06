@@ -9,6 +9,8 @@ MASTER_SITES=	http://legh.ru/wp-content/uploads/jx/
 MAINTAINER=	legh@legh.ru
 COMMENT=	Wrapper to jexec with more feature in interpreting jail id
 
+BROKEN=		unfetchable
+
 USES=		perl5
 NO_BUILD=	yes
 USE_PERL5=	run

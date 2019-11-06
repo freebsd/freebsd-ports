@@ -11,6 +11,8 @@ DISTNAME=	6550-Jimmac
 MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	The beautiful Jimmac X cursor themes
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/Jimmac

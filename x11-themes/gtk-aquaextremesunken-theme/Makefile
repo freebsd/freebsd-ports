@@ -13,6 +13,8 @@ DISTNAME=	AquaExtremeSunken
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of AquaExtreme Sunken theme
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 
 TYPE?=		gtk

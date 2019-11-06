@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 OPTIONS_DEFINE=	ALTQ

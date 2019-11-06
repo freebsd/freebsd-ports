@@ -11,6 +11,8 @@ DISTNAME=	45384-MurrinaLightBlue
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	Murrina LightBlue GTK+ 2.x cairo based theme
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.so:x11-themes/gtk-murrine-engine
 RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.so:x11-themes/gtk-murrine-engine
 

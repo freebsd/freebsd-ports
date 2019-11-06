@@ -10,6 +10,8 @@ MASTER_SITES=	http://dropmix.xs4all.nl/rick/Xsnow/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create a snowy and Santa-y desktop
 
+BROKEN=		unfetchable
+
 USES=		imake
 USE_XORG=	xpm
 PLIST_FILES=	bin/xsnow man/man6/xsnow.6.gz

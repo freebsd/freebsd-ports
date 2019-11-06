@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.incava.org/pub/glark/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Search text files for complex regular expressions
 
+BROKEN=		unfetchable
+
 USE_RUBY=	yes
 NO_BUILD=	yes
 

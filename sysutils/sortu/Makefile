@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	matt@peterson.org
 COMMENT=	Tool that combines sort and uniq functionality
 
+BROKEN=		unfetchable
+
 LICENSE=	ISCL
 
 PORTDOCS=	*

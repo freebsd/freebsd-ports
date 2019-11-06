@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	proftpd-
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	ClamAV ProFTPD module
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 DESCR=		${.CURDIR}/pkg-descr

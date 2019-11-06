@@ -9,6 +9,8 @@ MASTER_SITES=	GH \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool to check NFS server response times
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 OPTIONS_DEFINE=	DOCS SMOKEPING

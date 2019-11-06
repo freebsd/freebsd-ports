@@ -10,6 +10,8 @@ MASTER_SITES=	GHC
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Display human-readable ZFS statistics
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 USES=		perl5 shebangfix

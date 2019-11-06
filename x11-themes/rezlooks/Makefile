@@ -11,6 +11,8 @@ DISTNAME=	39179-rezlooks-${PORTVERSION}
 MAINTAINER=	brandoncash@gmail.com
 COMMENT=	GTK+ 2.x engine based on Clearlooks
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/rezlooks-${PORTVERSION}
 
 GNU_CONFIGURE=	yes

@@ -12,6 +12,8 @@ PKGNAMESUFFIX=	-engine
 MAINTAINER=	sk8harddiefast@gmail.com
 COMMENT=	Engine, and collection of icons, themes from OpenSolaris
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	icon-naming-utils>=0.8.90:x11-themes/icon-naming-utils

@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Lightweight tool to generate heavily fragmented I/O
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/iogen man/man8/iogen.8.gz
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

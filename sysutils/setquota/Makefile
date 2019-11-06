@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://ftp.jurai.net/users/winter/
 MAINTAINER=	winter@jurai.net
 COMMENT=	Command line quota tools
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/setquota/
 USES=		uidfix
 

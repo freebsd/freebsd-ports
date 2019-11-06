@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.bacula-web.org/files/bacula-web.org/downloads/
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Bacula-web provides a summarized output of Bacula jobs
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 

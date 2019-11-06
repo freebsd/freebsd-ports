@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.pas
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Analyze molecules for the presence of functional groups
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 
 NO_WRKSUBDIR=	yes

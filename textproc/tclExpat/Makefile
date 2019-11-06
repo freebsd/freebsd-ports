@@ -10,6 +10,8 @@ CATEGORIES=	textproc tcl
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tcl interface to Expat library
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USE_LDCONFIG=	yes

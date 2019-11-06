@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	File splitter, GTK and CLI versions
 
+BROKEN=		unfetchable
+
 USE_GNOME=	#
 USES=		gmake pkgconfig
 

@@ -10,6 +10,8 @@ DISTNAME=	jini-icon-theme-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Jini Icons for Gnome
 
+BROKEN=		unfetchable
+
 USES=		gnome
 INSTALLS_ICONS=	yes
 

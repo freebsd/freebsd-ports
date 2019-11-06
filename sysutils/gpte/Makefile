@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://segfault.kiev.ua/pub/
 MAINTAINER=	netch@segfault.kiev.ua
 COMMENT=	Simple command-line GPT partition editor
 
+BROKEN=		unfetchable
+
 USES=		uidfix
 MAKEFILE=	Makefile.bsd
 

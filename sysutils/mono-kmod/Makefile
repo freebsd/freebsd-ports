@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.alpha-tierchen.de/pub/FreeBSD/ports/distfiles/
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Execute .NET applications from command line
 
+BROKEN=		unfetchable
+
 ONLY_FOR_ARCHS=		amd64 arm i386
 
 DEPRECATED=	mastersite disappeared, unfetchable

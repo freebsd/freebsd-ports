@@ -9,6 +9,8 @@ MASTER_SITES=	http://web.ffn.ne.jp/~hsakai/myfreesoft/
 MAINTAINER=	hsakai@m8.ffn.ne.jp
 COMMENT=	Insert section numbers in HTML and make a table of contents
 
+BROKEN=		unfetchable
+
 USES=		perl5
 USE_PERL5=	build
 

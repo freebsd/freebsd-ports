@@ -11,6 +11,8 @@ MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Command-line utility to encrypt files
 
+BROKEN=		unfetchable
+
 USES=		tar:tgz ssl
 GNU_CONFIGURE=	yes
 

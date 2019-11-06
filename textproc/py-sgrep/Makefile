@@ -13,6 +13,8 @@ EXTRACT_ONLY=	sgrep-${SGREP_VER}.tar.gz
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python wrappers for Sgrep
 
+BROKEN=		unfetchable
+
 SGREP_VER=	1.94a
 WRKSRC=		${WRKDIR}/sgrep-${SGREP_VER}
 GNU_CONFIGURE=	yes

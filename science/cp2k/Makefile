@@ -13,6 +13,8 @@ PATCHFILES=	f03e6277feea9a65d543ca6c1184f58d3e83bc2a.patch:-p2 \
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quantum chemistry and solid state physics software package
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libblas.so:math/blas \

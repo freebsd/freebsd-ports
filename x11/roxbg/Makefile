@@ -12,6 +12,8 @@ EXTRACT_ONLY=
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Tool for setting the background in rox using a simple command
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer
 
 NO_WRKSUBDIR=	yes

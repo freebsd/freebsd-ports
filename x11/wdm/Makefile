@@ -17,6 +17,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	WINGs Display Manager; an xdm replacement
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libWINGs.so:x11-wm/windowmaker
 
 NOT_FOR_ARCHS=	sparc64
