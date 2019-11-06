@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.orig.tar.gz
 MAINTAINER=	brittlehaus@gmail.com
 COMMENT=	Pd library of clones of Max/MSP 4.5 objects
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 

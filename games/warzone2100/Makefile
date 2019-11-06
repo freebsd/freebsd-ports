@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

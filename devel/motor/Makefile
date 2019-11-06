@@ -10,6 +10,8 @@ MASTER_SITES=	http://thekonst.net/download/
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Powerful text mode based programming IDE
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS NLS

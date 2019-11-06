@@ -9,6 +9,8 @@ CATEGORIES=	games
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Real time simulation game
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \

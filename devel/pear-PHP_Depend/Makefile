@@ -9,6 +9,8 @@ MASTER_SITES=	http://pear.pdepend.org/get/
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP_Depend design quality metrics for PHP packages
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 USES=	pear

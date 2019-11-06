@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.deb
 MAINTAINER=	wulf@FreeBSD.org
 COMMENT=	Intel Wireless 8260 bluetooth adaptor firmwares used by iwmbtfw(8)
 
+BROKEN=		unfetchable
+
 LICENSE=	INTEL
 LICENSE_NAME=	Intel firmware license
 LICENSE_FILE=	${WRKDIR}/usr/share/doc/firmware-iwlwifi/copyright

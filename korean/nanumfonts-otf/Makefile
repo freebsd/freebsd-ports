@@ -13,6 +13,8 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Nanum family Hangul fonts (${FONTFORMAT})
 
+BROKEN=		unfetchable
+
 LICENSE=	OFL11
 
 DISTFILE_LIST=	ALL

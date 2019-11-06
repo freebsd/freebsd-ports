@@ -9,6 +9,8 @@ MASTER_SITES=	http://pear.phpunit.de/get/
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Code browser that augments the code with information
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

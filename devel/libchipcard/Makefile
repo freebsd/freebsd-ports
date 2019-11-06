@@ -9,6 +9,8 @@ MASTER_SITES=	http://www2.aquamaniac.de/sites/download/download.php?package=02&r
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for easy access to chipcards
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite \

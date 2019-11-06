@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.dcc.fc.up.pt/~vsc/Yap/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High-performance Prolog compiler
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 PORTSCOUT=	limit:^6\.2\.

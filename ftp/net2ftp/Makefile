@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Web-based FTP client written in PHP
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/files_to_upload/LICENSE.txt
 

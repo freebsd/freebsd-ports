@@ -21,6 +21,8 @@ EXTRACT_ONLY=	spice3f5${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	General-purpose circuit simulation program
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 

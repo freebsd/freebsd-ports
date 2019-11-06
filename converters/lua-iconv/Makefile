@@ -12,6 +12,8 @@ DISTNAME=	lua-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Iconv binding for Lua 5
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 

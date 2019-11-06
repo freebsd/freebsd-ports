@@ -7,6 +7,8 @@ CATEGORIES=	devel
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CLI client for Artifactory
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

@@ -11,6 +11,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-data-${PORTVERSION}${EXTRACT_S
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game destined to improve the knowledge of Andalusia
 
+BROKEN=		unfetchable
+
 LICENSE=	CC-BY-NC-SA-2.0
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2

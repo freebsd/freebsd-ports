@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Icon programming language
 
+BROKEN=		unfetchable
+
 USE_GCC=	any
 ALL_TARGET=	All
 MAKE_JOBS_UNSAFE=	yes

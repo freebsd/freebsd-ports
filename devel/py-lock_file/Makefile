@@ -12,6 +12,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	martin@horcicka.eu
 COMMENT=	Lock file manipulation
 
+BROKEN=		unfetchable
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 

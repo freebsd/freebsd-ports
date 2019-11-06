@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Open-Source Chinese and Japanese Handwriting Recognition
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libzinnia.so:japanese/zinnia

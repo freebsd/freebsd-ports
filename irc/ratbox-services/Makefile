@@ -11,6 +11,8 @@ MASTER_SITES=	http://services.ratbox.org/download/		\
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	Highly configurable services package for use with ircd-ratbox
 
+BROKEN=		unfetchable
+
 USE_RC_SUBR=	ratbox-services
 
 USERS=		ircservices

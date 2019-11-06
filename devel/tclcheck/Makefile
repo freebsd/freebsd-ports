@@ -11,6 +11,8 @@ DISTNAME=	tclCheck-${PORTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Program to check the nesting of parenthesis in tcl scripts
 
+BROKEN=		unfetchable
+
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	 dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_linux
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Graphical tool for editing Phrap assemblies
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	phred:biology/phred \
 		phrap:biology/phrap
 

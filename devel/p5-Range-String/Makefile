@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rdna@rdna.ru
 COMMENT=	Perl5 module which provides interface to string ranges
 
+BROKEN=		unfetchable
+
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 

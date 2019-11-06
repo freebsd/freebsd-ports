@@ -11,6 +11,8 @@ PKGNAMESUFFIX=	1-mysql${MYSQL_VER}
 MAINTAINER=	sergey@network-asp.biz
 COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LGPL
 

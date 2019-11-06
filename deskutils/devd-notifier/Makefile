@@ -9,6 +9,8 @@ MASTER_SITES=	GHC http://roladder.net/~flo/dist/
 
 MAINTAINER=	f.unglaub@googlemail.com
 COMMENT=	Daemon notifying the user about devd(8) events \
+
+BROKEN=		unfetchable
 		with libnotify
 
 LICENSE=	BSD2CLAUSE

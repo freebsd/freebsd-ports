@@ -10,6 +10,8 @@ MASTER_SITES=	http://romain.blogreen.org/distfiles/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	C\# client library for notification-daemon
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:devel/ndesk-dbus-glib
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:devel/ndesk-dbus-glib \
 		${LOCALBASE}/libexec/notification-daemon:deskutils/notification-daemon

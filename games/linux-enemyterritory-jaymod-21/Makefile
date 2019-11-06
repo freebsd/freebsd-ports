@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	linux-enemyterritory-
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Jaymod - An Enemy Territory Modification
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	et:games/linux-enemyterritory
 
 VERSTR=		${PORTVERSION:C/([0-9])\.([0-9])\.([0-9]+)/\1\2\3/}

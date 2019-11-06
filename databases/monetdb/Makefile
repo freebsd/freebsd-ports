@@ -11,6 +11,8 @@ DISTNAME=	MonetDB-${PORTVERSION}
 MAINTAINER=	jim@ohlste.in
 COMMENT=	Multithreaded "column-oriented" SQL databasee
 
+BROKEN=		unfetchable
+
 LICENSE=	MonetDB_License
 LICENSE_NAME=	MonetDB Public License Version 1.1
 LICENSE_FILE=	${WRKSRC}/COPYING

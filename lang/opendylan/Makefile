@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-x86-freebsd
 MAINTAINER=	hannes@mehnert.org
 COMMENT=	Open Dylan project native command-line compiler for Dylan
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 

@@ -11,6 +11,8 @@ DISTNAME=	Q2P-0.2-2006-12-31
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Enhanced OpenGL-only Quake II engine
 
+BROKEN=		unfetchable
+
 USES=		gmake tar:bzip2 xorg
 USE_XORG=	xxf86dga xext xxf86vm x11
 ALL_TARGET=	release

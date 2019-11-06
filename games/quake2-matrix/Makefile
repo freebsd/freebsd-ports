@@ -11,6 +11,8 @@ DISTNAME=	Matrix-v${PORTVERSION}.fixed.Linux
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Matrix modification for Quake II
 
+BROKEN=		unfetchable
+
 USES=		gmake tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/MatrixFixSource

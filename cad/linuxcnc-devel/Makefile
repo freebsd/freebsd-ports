@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Open Source CNC machine controller
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt \

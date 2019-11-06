@@ -10,6 +10,8 @@ MASTER_SITES=	http://atrn.org/ici/distfiles
 MAINTAINER=	atrn@zeta.org.au
 COMMENT=	Interpretive language with C's feel and high level data types
 
+BROKEN=		unfetchable
+
 MAKEFILE=	Makefile.bsd
 
 ALL_TARGET=	all ici.h

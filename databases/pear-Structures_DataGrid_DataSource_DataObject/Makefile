@@ -8,6 +8,8 @@ CATEGORIES=	databases www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	DataSource driver using PEAR::DB_DataObject
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid@${PHP_FLAVOR} \

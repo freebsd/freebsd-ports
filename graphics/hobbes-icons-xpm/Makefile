@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Collection of over 3000 icons in XPM3 format
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

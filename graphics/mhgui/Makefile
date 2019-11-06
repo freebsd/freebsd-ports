@@ -10,6 +10,8 @@ MASTER_SITES=	SF/makehuman/MakeHuman%20Source/MakeHuman_091
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI widget library for MakeHuman
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libanimorph.so:graphics/animorph \

@@ -11,6 +11,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High-performance Prolog compiler
 
+BROKEN=		unfetchable
+
 LICENSE=	ART20 LGPL3
 LICENSE_COMB=	dual
 

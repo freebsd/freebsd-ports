@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to test PSGI programs using WWW::Mechanize
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Plack>0:www/p5-Plack \

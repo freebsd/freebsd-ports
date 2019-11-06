@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IPAmj Mincho Japanese fonts
 
+BROKEN=		unfetchable
+
 LICENSE=	IPAFLAv1
 LICENSE_NAME=	IPA Font License Agreement v1.0
 LICENSE_FILE=	${WRKSRC}/IPA_Font_License_Agreement_v1.0.txt

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Not-so-very-strong chess engine
 
+BROKEN=		unfetchable
+
 USES=		gmake perl5 readline
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=yes

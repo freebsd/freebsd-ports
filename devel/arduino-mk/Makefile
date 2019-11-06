@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Build Arduino sketches from the command line
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21
 
 # gmake is needed to use the port, not to build it

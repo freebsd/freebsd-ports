@@ -17,6 +17,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-mave
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Workflow scheduler for Hadoop
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3 \

@@ -11,6 +11,8 @@ DISTNAME=	ircd-RU-${PORTVERSION}-03-rc-20090810
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	IRC daemon with translation schemes and other useful features
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv1
 
 BROKEN_aarch64=	Fails to link: missing sbrk

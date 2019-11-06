@@ -11,6 +11,8 @@ DISTNAME=	pgAgent-${PORTVERSION}-Source
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Job scheduler for PostgreSQL
 
+BROKEN=		unfetchable
+
 USES=		cmake:insource dos2unix pgsql
 DOS2UNIX_GLOB=	*.txt
 CMAKE_ARGS=	-DSTATIC_BUILD:BOOL=NO -DWX_CONFIG_PATH:FILEPATH="${WX_CONFIG}"

@@ -13,6 +13,8 @@ PATCHFILES=	ical-2.3.1-upvar.patch
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Calendar application
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \

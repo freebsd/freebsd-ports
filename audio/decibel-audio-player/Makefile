@@ -10,6 +10,8 @@ MASTER_SITES=	http://decibel.silent-blade.org/uploads/Main/
 MAINTAINER=	somicide@gmail.com
 COMMENT=	Fast GTK+ audio player with an clean and user friendly interface
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 BROKEN_armv6=	fails to package: Unable to access file locale/ar/LC_MESSAGES/decibel-audio-player.mo:No such file or directory

@@ -10,6 +10,8 @@ MASTER_SITES=	http://gcompris.net/download/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome2 educational games and activities for kids ages 2 to 10
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 

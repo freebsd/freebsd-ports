@@ -11,6 +11,8 @@ DISTNAME=	psyBNC-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful IRC bouncer
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv1+ # though COPYING is GPLv2
 
 USES=		dos2unix ssl

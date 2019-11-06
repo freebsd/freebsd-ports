@@ -10,6 +10,8 @@ CATEGORIES=	cad
 MAINTAINER=	lenzi.sergio@gmail.com
 COMMENT=	CAD for printed circuit boards
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 
 SUB_FILES+=	pkg-install

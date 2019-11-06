@@ -11,6 +11,8 @@ DISTNAME=	libmonetra-${PORTVERSION}
 MAINTAINER=	brad@monetra.com
 COMMENT=	Library for credit card processing through Monetra (formerly MCVE)
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 USES=		gmake libtool ssl
 USE_LDCONFIG=	yes

@@ -9,6 +9,8 @@ MASTER_SITES=	http://download.banshee.fm/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Tagging library for the Mono framework
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_MCS=${LOCALBASE}/bin/mcs
 USES=		gmake mono pathfix pkgconfig

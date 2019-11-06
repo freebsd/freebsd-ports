@@ -11,6 +11,8 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python XCAP client library
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL20+
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}application>=1.1.5:devel/py-application@${PY_FLAVOR} \

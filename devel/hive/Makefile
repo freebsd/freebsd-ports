@@ -13,6 +13,8 @@ DIST_SUBDIR=	hadoop
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Framework for data warehousing on top of Hadoop
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:devel/maven3 \

@@ -10,6 +10,8 @@ DISTNAME=	solver
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Sudoku Solver in C
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}_${PORTVERSION}

@@ -11,6 +11,8 @@ DISTNAME=	tomboy-latex-${PORTVERSION}
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	LaTeX math plugin for Tomboy
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	tomboy:deskutils/tomboy
 RUN_DEPENDS=	tomboy:deskutils/tomboy
 

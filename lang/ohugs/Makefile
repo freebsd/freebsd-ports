@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Interpreter for Haskell with object-oriented features
 
+BROKEN=		unfetchable
+
 OPTIONS_DEFINE=		X11
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}

@@ -15,6 +15,8 @@ PATCHFILES=	ftp.pl_wupatch
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Mirror packages on remote sites
 
+BROKEN=		unfetchable
+
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 USES=		perl5 shebangfix

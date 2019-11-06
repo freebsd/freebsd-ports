@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to read and write shapefiles via shapelib
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libshp.so:devel/shapelib
 
 USES=		perl5

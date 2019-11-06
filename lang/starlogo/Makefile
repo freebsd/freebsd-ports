@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-2.0
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Specialized version of the Logo programming language written in Java
 
+BROKEN=		unfetchable
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -11,6 +11,8 @@ DISTNAME=	tomboy-todo-${PORTVERSION}
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Highlight FIXME, TODO, and XXX in your notes
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	tomboy:deskutils/tomboy
 RUN_DEPENDS=	tomboy:deskutils/tomboy
 

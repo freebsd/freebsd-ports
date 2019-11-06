@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Hope is lazy interpreter for HOPE applicative language
 
+BROKEN=		unfetchable
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 

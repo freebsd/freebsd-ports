@@ -9,6 +9,8 @@ CATEGORIES=	games
 MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Open source 3D real-time strategy game
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/docs/gnu_gpl_3.0.txt
 

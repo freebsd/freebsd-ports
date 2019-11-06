@@ -9,6 +9,8 @@ MASTER_SITES=	http://pear.phpmd.org/get/
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP Mess Detector
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

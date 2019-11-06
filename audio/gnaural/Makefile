@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/Gnaural/
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Binaural beat generator
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 

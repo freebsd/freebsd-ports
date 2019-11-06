@@ -10,6 +10,8 @@ MASTER_SITES=	https://bitbucket.org/maproom/qmapshack/downloads/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Ultimate outdoor aficionado's tool
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

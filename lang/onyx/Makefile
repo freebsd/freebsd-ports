@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.canonware.com/download/onyx/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Embeddable stack-based threaded interpreted language
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	cook:devel/cook

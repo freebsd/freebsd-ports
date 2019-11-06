@@ -11,6 +11,8 @@ DIST_SUBDIR=	festival
 MAINTAINER=	valtri@civ.zcu.cz
 COMMENT=	Czech male voice for Festival
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/dicts/czech-lexicon.out:audio/festlex-czech
 
 NO_BUILD=	yes

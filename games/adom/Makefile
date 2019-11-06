@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-elf
 MAINTAINER=	sr-13@mail.ru
 COMMENT=	Rogue-like advanced rpg with color support (binary port)
 
+BROKEN=		unfetchable
+
 LICENSE=	unknown
 LICENSE_NAME=	The ADOM License
 LICENSE_FILE=	${WRKSRC}/readme.1st

@@ -11,6 +11,8 @@ DISTFILES=	${PORTNAME}-src-${PORTVERSION}.tgz
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Toolset for working with human genetic variation data
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 BROKEN_aarch64=		Does not build: Host architecture was not detected as supported by protobuf

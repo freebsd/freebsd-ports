@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.benzedrine.cx/
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Proxy IRC client and ICB server
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${FILESDIR}/COPYING
 

@@ -12,6 +12,8 @@ DISTNAME=	lua-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Iconv binding for Lua 5
 
+BROKEN=		unfetchable
+
 USES=		pkgconfig iconv lua:51
 
 USE_GITHUB=	yes

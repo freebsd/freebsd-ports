@@ -11,6 +11,8 @@ MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library to parse mime data
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -13,6 +13,8 @@ DIST_SUBDIR=	${DISTNAME}-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese font support for xpdf
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	xpdf:graphics/xpdf \
 		${ADOBECMAPDIR}/ai0/CMap/Identity-H:print/adobe-cmaps \
 		${FONTSDIR}/Ryumin-Light:japanese/font-std \

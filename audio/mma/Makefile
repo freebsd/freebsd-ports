@@ -11,6 +11,8 @@ DISTFILES=	${PORTNAME}-bin-${PORTVERSION}.tar.gz
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Musical MIDI Accompaniment generator
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	aplaymidi:audio/alsa-utils \

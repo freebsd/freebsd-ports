@@ -11,6 +11,8 @@ MASTER_SITES=	http://openmya.hacker.jp/hasegawa/jstrings/ \
 MAINTAINER=	ryo@aquahill.net
 COMMENT=	Japanese enhancement of strings(1) command
 
+BROKEN=		unfetchable
+
 EXTRACT_DEPENDS=nkf:japanese/nkf
 
 PLIST_FILES=	bin/jstrings man/ja/man1/jstrings.1.gz

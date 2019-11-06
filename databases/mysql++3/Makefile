@@ -11,6 +11,8 @@ PKGNAMESUFFIX=	-mysql${MYSQL_VER}
 MAINTAINER=	dudu@dudu.ro
 COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
 
+BROKEN=		unfetchable
+
 USES=		gmake mysql
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --enable-thread-check

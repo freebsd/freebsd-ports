@@ -10,6 +10,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Powerful translation memory application written in Java
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		shebangfix zip

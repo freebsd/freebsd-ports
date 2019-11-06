@@ -8,6 +8,8 @@ CATEGORIES=	devel
 MAINTAINER=	jonathan@FreeBSD.org
 COMMENT=	Tool to manage all your version control repos
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 
 USE_GITHUB=	yes

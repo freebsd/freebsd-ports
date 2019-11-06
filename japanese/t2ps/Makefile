@@ -10,6 +10,8 @@ DISTNAME=	t2ps
 MAINTAINER=	yabu@uopmu.ees.osakafu-u.ac.jp
 COMMENT=	Converts text files to PostScript including Japanese
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	nkf:japanese/nkf
 
 PLIST_FILES=	bin/t2ps

@@ -11,6 +11,8 @@ DISTNAME=	gogland-${PORTVERSION}
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	JetBrains Gogland IDE (Preview Edition)
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \

@@ -14,6 +14,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Improved and extended version of Doom
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		gl gmake sdl tar:bzip2

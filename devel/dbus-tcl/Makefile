@@ -10,6 +10,8 @@ DISTNAME=	dbus-${PORTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tcl interface to the D-Bus messaging system
 
+BROKEN=		unfetchable
+
 LICENSE=	ISCL
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus

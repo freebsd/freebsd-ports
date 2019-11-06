@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Free, open-source, cross-platform bioinformatics toolkit
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 

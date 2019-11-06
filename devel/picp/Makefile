@@ -9,6 +9,8 @@ MASTER_SITES=	http://home.pacbell.net/theposts/picmicro/
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Driver for the Microchip Picstart Plus development programmer
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/picp
 
 do-install:

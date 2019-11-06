@@ -17,6 +17,8 @@ EXTRACT_ONLY=	WB_v${PORTVERSION}_UpdateSite_for_Eclipse4.3.zip
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Powerful and easy to use Java GUI designer for Eclipse
 
+BROKEN=		unfetchable
+
 LICENSE=	EPL
 
 RUN_DEPENDS=	eclipse:java/eclipse

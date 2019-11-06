@@ -13,6 +13,8 @@ EXTRACT_ONLY=
 MAINTAINER=	lhd@cs.nctu.edu.tw
 COMMENT=	Combine of Kai and Sung with CNS11643 TrueType Fonts
 
+BROKEN=		unfetchable
+
 LICENSE=	CC_BY-ND_3.0_TW
 LICENSE_NAME=	Creative Commons Attribution-NoDerivs 3.0 Taiwan License
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://creativecommons.org/licenses/by-nd/3.0/tw/

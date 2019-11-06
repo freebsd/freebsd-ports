@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.nlnetlabs.nl/downloads/autotrust/
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Tool to automatically update DNSSEC trust anchors
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS+=	libldns.so:dns/ldns \
 		libunbound.so:dns/unbound
 

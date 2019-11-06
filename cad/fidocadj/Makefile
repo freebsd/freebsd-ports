@@ -12,6 +12,8 @@ EXTRACT_ONLY=
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Easy to use graphical editor for electronics
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

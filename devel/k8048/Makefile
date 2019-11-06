@@ -9,6 +9,8 @@ MASTER_SITES=	http://dev.kewl.org/k8048/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Programs Microchip PICs using Velleman K8048 board
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 BROKEN_armv6=		invokes x86 assembler

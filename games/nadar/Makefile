@@ -10,6 +10,8 @@ MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/game/action/
 MAINTAINER=	hsakai@m8.ffn.ne.jp
 COMMENT=	Network tank battle game
 
+BROKEN=		unfetchable
+
 MAKE_ENV=	X11BASE=${LOCALBASE}
 USES=		xorg
 USE_XORG=	xpm

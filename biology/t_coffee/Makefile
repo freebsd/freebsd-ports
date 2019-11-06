@@ -12,6 +12,8 @@ DISTNAME=	T-COFFEE_distribution_Version_${PORTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple DNA or protein sequence alignment package
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	clustalw:biology/clustalw

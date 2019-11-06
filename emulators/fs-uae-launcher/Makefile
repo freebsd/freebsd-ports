@@ -10,6 +10,8 @@ MASTER_SITES=	http://fs-uae.net/fs-uae/stable/${PORTVERSION}/
 MAINTAINER=	ndowens@yahoo.com
 COMMENT=	GUI launcher for the FS-UAE Amiga emulator
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

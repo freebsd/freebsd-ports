@@ -11,6 +11,8 @@ DISTNAME=	components_${PORTVERSION:S/./_/}
 MAINTAINER=	rodakay@internode.on.net
 COMMENT=	Simple Ada Components
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
 

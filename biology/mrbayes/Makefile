@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Bayesian inference of phylogeny
 
+BROKEN=		unfetchable
+
 OPTIONS_DEFINE=	EXAMPLES
 
 USES=		gmake readline:port

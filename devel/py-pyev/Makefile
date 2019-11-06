@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gd.workbox@gmail.com
 COMMENT=	Python libev interface
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libev.so:devel/libev

@@ -14,6 +14,8 @@ DISTFILES=	cnprint330b.c cnprint330b.readme ttfb330b.c cnprint330b.hlp \
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Print CJK text (or convert to PostScript)
 
+BROKEN=		unfetchable
+
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 FILES=		${WRKSRC}/*.sym ${WRKSRC}/*.htf ${WRKSRC}/*.hbf \
 		${WRKSRC}/*.bin ${WRKSRC}/*.ttf

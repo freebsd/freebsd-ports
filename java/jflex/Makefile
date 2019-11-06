@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	The Fast Lexical Analyser Generator for Java[tm]
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
 
 USE_JAVA=	yes

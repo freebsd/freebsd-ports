@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.phpcompiler.org/src/archive/
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Compiler for the PHP language
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license/LICENSE
 

@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Postal codes in Hungary / Magyarorszagi iranyitoszamok
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	share/misc/hu.zipcodes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}

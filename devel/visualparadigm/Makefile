@@ -9,6 +9,8 @@ DISTNAME=	Visual_Paradigm_CE_${PORTVERSION:C/\./_/g}_Unix_InstallFree
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Visual modeling tool for all kinds of UML diagrams
 
+BROKEN=		unfetchable
+
 LICENSE=	VPCEL
 LICENSE_NAME=	Visual Paradigm Community Edition License Agreement
 LICENSE_FILE=	${WRKSRC}/.install4j/i4j_extf_5_aprh35.txt

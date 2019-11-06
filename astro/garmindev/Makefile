@@ -9,6 +9,8 @@ MASTER_SITES=	https://bitbucket.org/kiozen/qlandkarte-gt/downloads/
 MAINTAINER=	cmt@burggraben.net
 COMMENT=	Drivers for using Garmin GPS units with QlandkarteGT
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
