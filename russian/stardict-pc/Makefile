@@ -7,7 +7,7 @@ CATEGORIES=	russian
 MASTER_SITES=	http://download.huzheng.org/ru/
 DISTNAME=	${PORTNAME}-user-ru-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	English-Russian PC-user dictionary
 
 USES=	tar:bzip2
