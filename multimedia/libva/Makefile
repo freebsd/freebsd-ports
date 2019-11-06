@@ -39,6 +39,7 @@ GLX_IMPLIES=		X11
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_MESON_YES=	with_wayland
 
+X11_USES=		xorg
 X11_USE=		XORG=x11,xorgproto,xext,xfixes
 X11_MESON_YES=		with_x11
 

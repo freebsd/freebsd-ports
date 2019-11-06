@@ -39,6 +39,7 @@ INFO=		scm
 OPTIONS_DEFINE=		X11
 OPTIONS_SUB=		yes
 
+X11_USES=		xorg
 X11_USE=		xorg=ice,sm,x11,xext
 
 SCM_DATA=	COPYING COPYING.LESSER Iedline.scm Idiffer.scm \

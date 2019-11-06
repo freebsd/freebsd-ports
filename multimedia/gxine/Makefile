@@ -38,7 +38,7 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
 WEBPLUGIN_USE=			xorg=xaw
-WEBPLUGIN_USES=			webplugin:native
+WEBPLUGIN_USES=			webplugin:native xorg
 WEBPLUGIN_CONFIGURE_WITH=	browser-plugin
 WEBPLUGIN_DIR=			${PREFIX}/lib/gxine
 WEBPLUGIN_FILES=		gxineplugin.so

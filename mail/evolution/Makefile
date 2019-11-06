@@ -130,6 +130,7 @@ MAPS_LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 			libclutter-1.0.so:graphics/clutter \
 			libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 			libchamplain-0.12.so:graphics/libchamplain
+MAPS_USES=		gl xorg
 MAPS_USE=		xorg=xcomposite,xdamage,xext,xfixes,xi,xrandr gl=egl
 
 .include <bsd.port.mk>

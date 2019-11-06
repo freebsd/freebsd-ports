@@ -58,6 +58,7 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
 AMIDI_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 AMIDI_CONFIGURE_ENABLE=	amidiplug
+AOSD_USES=		xorg
 AOSD_USE=		gnome=pango xorg=xrender
 AOSD_LIB_DEPENDS=	libXcomposite.so:x11/libXcomposite
 AOSD_CONFIGURE_ENABLE=	aosd
@@ -92,7 +93,7 @@ NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=notify
-OPENGL_USES=		gl
+OPENGL_USES=		gl xorg
 OPENGL_USE=		xorg=x11 gl=gl
 OPENGL_CONFIGURE_ENABLE=glspectrum
 OSS_CONFIGURE_ENABLE=	oss4
