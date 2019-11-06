@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libspectrum.so:emulators/libspectrum
 
 USES=		compiler:c++11-lang gettext gmake gnome localbase perl5 \
-		pkgconfiga xorg
+		pkgconfig xorg
 USE_PERL5=	build
 USE_GNOME=	cairo libxml2 glib20
 USE_XORG=	x11
