@@ -3,6 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.17.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -344,6 +345,11 @@ do-install-DSO-on:
 do-install-FASTDFS-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fdfs
 	${INSTALL_DATA} ${WRKSRC_fastdfs}/src/mod_fastdfs.conf ${STAGEDIR}${PREFIX}/etc/fdfs/mod_fastdfs.conf.sample
+
+do-install-MODSECURITY-on:
+	${INSTALL_DATA} \
+	${WRKDIR}/modsecurity-${MODSECURITY_VERSION}/unicode.mapping \
+	${STAGEDIR}${ETCDIR}
 
 do-install-NAXSI-on:
 	${INSTALL_DATA} \

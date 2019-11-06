@@ -5,6 +5,7 @@
 %%NAXSI%%%%ETCDIR%%/naxsi_core.rules
 @sample %%ETCDIR%%/scgi_params-dist %%ETCDIR%%/scgi_params
 @sample %%ETCDIR%%/uwsgi_params-dist %%ETCDIR%%/uwsgi_params
+%%MODSECURITY%%%%ETCDIR%%/unicode.mapping
 %%ETCDIR%%/win-utf
 @sample %%ETCDIR%%/mime.types-dist %%ETCDIR%%/mime.types
 @sample %%ETCDIR%%/nginx.conf-dist %%ETCDIR%%/nginx.conf

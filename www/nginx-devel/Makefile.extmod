@@ -222,6 +222,7 @@ MODSECURITY_MASTER_SITES=	https://www.modsecurity.org/tarball/${MODSECURITY_VERS
 MODSECURITY_DISTFILES=		modsecurity-${MODSECURITY_VERSION}.tar.gz:modsecurity
 MODSECURITY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
 MODSECURITY_VARS=		WRKSRC_modsecurity=${WRKDIR}/modsecurity-${MODSECURITY_VERSION}
+MODSECURITY_CONFIGURE_ON=	--add-module=${WRKDIR}/modsecurity-${MODSECURITY_VERSION}/nginx/modsecurity
 
 MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
 MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:ecb255a:modsec
