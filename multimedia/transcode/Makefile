@@ -31,6 +31,7 @@ POSTPROC_DESC=		Libpostproc support
 DVDREAD_DESC=		Libdvdread support
 LZO_DESC=		LZO compression support
 
+X11_USES=			xorg
 X11_USE=			xorg=xv,xaw,xpm
 X11_CONFIGURE_WITH=		x
 

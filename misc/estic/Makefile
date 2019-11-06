@@ -33,6 +33,7 @@ OPTIONS_DEFINE=	X11 DTR_OFF DOCS
 OPTIONS_DEFAULT=X11
 NO_OPTIONS_SORT=yes
 DTR_OFF_DESC=	use dtr-off patch
+X11_USES=	xorg
 X11_USE=	xorg=x11
 
 FIXME=	areacode estic spunk

@@ -32,7 +32,7 @@ PLIST_FILES=	bin/lxi \
 
 OPTIONS_DEFINE=	DOCS GUI
 
-GUI_USES=		qmake:no_env qt:5
+GUI_USES=		gl qmake:no_env qt:5
 GUI_USE=		qt=core,gui,charts,widgets,buildtools_build,qmake_build gl=gl
 GUI_CONFIGURE_ENABLE=	lxi-gui
 GUI_CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${QT_LIBDIR}"

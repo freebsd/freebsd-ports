@@ -39,6 +39,7 @@ X11_CONFIGURE_WITH=	x
 
 OPENSSL_USES=		ssl
 PGSQL_USES=		pgsql
+X11_USES=		xorg
 X11_USE=		xorg=x11
 
 GDBM_LIB_DEPENDS+=	libgdbm.so:databases/gdbm

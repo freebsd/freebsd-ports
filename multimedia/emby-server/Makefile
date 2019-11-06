@@ -107,6 +107,7 @@ LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 SMB_CONFIGURE_ENABLE=	libsmbclient
 SMB_USES=		samba:lib
 
+X11_USES=		xorg
 X11_USE=		xorg=x11
 X11_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6
 X11_LIB_DEPENDS_OFF=	libMagickWand-6.so:graphics/ImageMagick6-nox11
