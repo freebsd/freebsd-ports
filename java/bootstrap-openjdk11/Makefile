@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk11
-PORTVERSION=	11.0.2.9.2
-PORTREVISION=	1
+PORTVERSION=	11.0.5.10.1
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/glewis/bootstrap-openjdk11
 PKGNAMEPREFIX=	bootstrap-

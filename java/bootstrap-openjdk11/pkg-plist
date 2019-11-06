@@ -388,6 +388,7 @@
 %%JDK_ROOT%%/lib/libprefs.so
 %%JDK_ROOT%%/lib/librmi.so
 %%JDK_ROOT%%/lib/libsaproc.so
+%%JDK_ROOT%%/lib/libsctp.so
 %%JDK_ROOT%%/lib/libsplashscreen.so
 %%JDK_ROOT%%/lib/libsunec.so
 %%JDK_ROOT%%/lib/libunpack.so
