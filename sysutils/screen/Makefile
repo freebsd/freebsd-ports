@@ -3,7 +3,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.7.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -50,6 +50,9 @@ CPE_VENDOR=	gnu
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7
+SSP_CFLAGS?=	-fno-stack-protector
+.endif
+.if ${ARCH} == i386 && ${OSVERSION} < 1200000
 SSP_CFLAGS?=	-fno-stack-protector
 .endif
 
