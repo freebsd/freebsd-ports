@@ -5,7 +5,7 @@ PORTVERSION=	2.4.2
 CATEGORIES=	russian
 MASTER_SITES=	http://download.huzheng.org/ru/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Mueller English-Russian dictionary
 
 USES=		tar:bzip2

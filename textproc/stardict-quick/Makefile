@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://download.huzheng.org/Quick/
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionaries from Quick for StarDict
 
 NO_BUILD=	yes
