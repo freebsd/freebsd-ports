@@ -1,0 +1,11 @@
+--- src/gallium/state_trackers/xvmc/Makefile.in.orig	2019-10-21 15:12:43 UTC
++++ src/gallium/state_trackers/xvmc/Makefile.in
+@@ -674,7 +674,7 @@ AM_CFLAGS = \
+ noinst_LTLIBRARIES = libxvmctracker.la
+ libxvmctracker_la_SOURCES = $(C_SOURCES)
+ noinst_HEADERS = tests/testlib.h
+-TEST_LIBS = $(XVMC_LIBS) -lXvMCW $(VL_LIBS) $(XCB_DRI3_LIBS)
++TEST_LIBS = $(XVMC_LIBS) -lXv -lXvMCW $(VL_LIBS) $(XCB_DRI3_LIBS)
+ tests_test_context_SOURCES = tests/test_context.c tests/testlib.c
+ tests_test_context_LDADD = $(TEST_LIBS)
+ tests_test_surface_SOURCES = tests/test_surface.c tests/testlib.c

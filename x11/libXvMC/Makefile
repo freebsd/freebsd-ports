@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libXvMC
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe xorg xorg-cat:lib
-USE_XORG=	x11 xext xv xorgproto
+USE_XORG=	x11 xext xorgproto xv
 CPE_VENDOR=	x
 CPE_PRODUCT=	libxvmc
 

@@ -1,0 +1,11 @@
+--- src/gallium/targets/xvmc/Makefile.in.orig	2019-10-21 16:05:11 UTC
++++ src/gallium/targets/xvmc/Makefile.in
+@@ -718,7 +718,7 @@ libXvMCgallium_la_LIBADD = $(top_builddir)/src/gallium
+ 	$(top_builddir)/src/gallium/auxiliary/libgalliumvlwinsys.la \
+ 	$(top_builddir)/src/gallium/auxiliary/libgalliumvl.la \
+ 	$(top_builddir)/src/gallium/auxiliary/libgallium.la \
+-	$(top_builddir)/src/util/libmesautil.la $(XVMC_LIBS) \
++	$(top_builddir)/src/util/libmesautil.la $(XVMC_LIBS) -lXv \
+ 	$(VL_LIBS) $(XCB_DRI3_LIBS) $(LIBDRM_LIBS) \
+ 	$(GALLIUM_COMMON_LIB_DEPS) $(am__append_13) $(am__append_14) \
+ 	$(am__append_15)

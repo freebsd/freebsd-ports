@@ -1,3 +1,3 @@
-TIMESTAMP = 1560363169
-SHA256 (xorg/lib/libXvMC-1.0.11.tar.bz2) = 4a2e34d444a683a7c010b01b23cefe2b8043a063ce4dc6a9b855836b5262622d
-SIZE (xorg/lib/libXvMC-1.0.11.tar.bz2) = 303516
+TIMESTAMP = 1569372181
+SHA256 (xorg/lib/libXvMC-1.0.12.tar.bz2) = 6b3da7977b3f7eaf4f0ac6470ab1e562298d82c4e79077765787963ab7966dcd
+SIZE (xorg/lib/libXvMC-1.0.12.tar.bz2) = 306581
