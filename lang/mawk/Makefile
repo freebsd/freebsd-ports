@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mawk
-DISTVERSION=	1.3.4-20161120
+DISTVERSION=	1.3.4-20190203
 CATEGORIES=	lang
-MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
+MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Interpreter for the AWK Programming Language
