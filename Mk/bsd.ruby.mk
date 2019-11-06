@@ -54,22 +54,16 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 #
 # RUBY_PKGNAMEPREFIX	- Common PKGNAMEPREFIX for ruby ports
 #			  (default: ruby${RUBY_SUFFIX}-)
-# RUBY_RELVERSION	- Full version of ruby without preview/beta suffix in
+# RUBY_VERSION		- Full version of ruby without preview/beta suffix in
 #			  the form of `x.y.z' (see below for current value).
-# RUBY_RELVERSION_CODE	- Integer version of RUBY_RELVERSION in the form of
+# RUBY_VERSION_CODE	- Integer version of RUBY_VERSION in the form of 
 #			  `xyz'.
-# RUBY_VERSION		- Composite version of RUBY_RELVERSION and
-#			  RUBY_PATCHLEVEL in the form of `x.y.z.p'.
-#			  (default: ${RUBY_RELVERSION}.${RUBY_PATCHLEVEL})
-# RUBY_VERSION_CODE	- Composite integer version of RUBY_VERSION in the form
-#			  of `xyzp'.
 # RUBY_PORTVERSION	- PORTVERSION for the standard ruby ports (ruby,
 #			  ruby-gdbm, etc.).
 # RUBY_PORTREVISION	- PORTREVISION for the standard ruby ports.
 # RUBY_PORTEPOCH	- PORTEPOCH for the standard ruby ports.
 # RUBY_DISTNAME		- DISTNAME for the standard ruby ports, i.e. the
 #			  basename of the ruby distribution tarball.
-# RUBY_DISTVERSION	- The version number part of RUBY_DISTNAME.
 # RUBY_PATCHFILES	- PATCHFILES for the standard ruby ports, i.e. the
 #			  basename of the ruby distribution tarball.
 # RUBY_WRKSRC		- WRKSRC for the ruby port.
@@ -154,30 +148,27 @@ RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 #
 # Ruby 2.4
 #
-RUBY_RELVERSION=	2.4.9
+RUBY_VERSION=		2.4.9
 RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
-RUBY_PATCHLEVEL=	0
 RUBY24=			""	# PLIST_SUB helpers
 
 . elif ${RUBY_VER} == 2.5
 #
 # Ruby 2.5
 #
-RUBY_RELVERSION=	2.5.7
+RUBY_VERSION=		2.5.7
 RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
-RUBY_PATCHLEVEL=	0
 RUBY25=			""	# PLIST_SUB helpers
 
 . elif ${RUBY_VER} == 2.6
 #
 # Ruby 2.6
 #
-RUBY_RELVERSION=	2.6.5
+RUBY_VERSION=		2.6.5
 RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
-RUBY_PATCHLEVEL=	0
 RUBY26=			""	# PLIST_SUB helpers
 
 # When adding a version, please keep the comment in
@@ -205,15 +196,7 @@ BROKEN=			${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}}
 .endif
 .endif
 
-.if ${RUBY_PATCHLEVEL} == 0
-RUBY_VERSION?=		${RUBY_RELVERSION}
-RUBY_DISTVERSION?=	${RUBY_RELVERSION}
-.else
-RUBY_VERSION?=		${RUBY_RELVERSION}.${RUBY_PATCHLEVEL}
-RUBY_DISTVERSION?=	${RUBY_RELVERSION}-p${RUBY_PATCHLEVEL}
-.endif
-
-RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
+RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_VERSION}
 
 RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-${RUBY_VER}/" \
 			--with-rubylibprefix="${PREFIX}/lib/ruby" \
@@ -236,10 +219,9 @@ _RUBY_VENDORDIR?=	${_RUBY_SYSLIBDIR}/ruby/vendor_ruby
 
 RUBY_DEFAULT_SUFFIX?=	${RUBY_DEFAULT_VER:S/.//}
 
-RUBY_DISTVERSION?=	${RUBY_VERSION}
 RUBY_PORTVERSION?=	${RUBY_VERSION}
 MASTER_SITE_SUBDIR_RUBY?=	${RUBY_VER}
-RUBY_DISTNAME?=		ruby-${RUBY_DISTVERSION}
+RUBY_DISTNAME?=		ruby-${RUBY_VERSION}
 
 RUBY_WRKSRC?=		${WRKDIR}/${RUBY_DISTNAME}
 
