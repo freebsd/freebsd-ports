@@ -9,6 +9,8 @@ MASTER_SITES=	http://download.gna.org/cbb/
 MAINTAINER=	kline@thought.org
 COMMENT=	Checkbook balancing tool
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 NO_BUILD=	yes

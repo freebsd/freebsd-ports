@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	openSUSE_Leap_42.3/x86_64/:DEFAULT,amd64 \
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Linux Test Project (openSUSE Leap 42.3)
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 
 ONLY_FOR_ARCHS=	amd64

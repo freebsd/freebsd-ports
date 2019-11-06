@@ -10,6 +10,8 @@ MASTER_SITES=	GENTOO
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Simple queue service over Memcache
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent

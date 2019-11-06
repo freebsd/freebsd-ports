@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-linux
 MAINTAINER=	gamato@users.sf.net
 COMMENT=	Fast world domination game
 
+BROKEN=		unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

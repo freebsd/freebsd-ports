@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-plus-${HUGS_DATE}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Interpreter for the functional programming language Haskell 98
 
+BROKEN=		unfetchable
+
 BROKEN_armv6=		fails to compile: cppinput.c: invalid preprocessing directive \#!
 BROKEN_armv7=		fails to compile: cppinput.c: invalid preprocessing directive \#!
 

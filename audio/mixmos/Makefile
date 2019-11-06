@@ -10,6 +10,8 @@ MASTER_SITES=	TUCOWS
 MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	GTK2 audio mixer
 
+BROKEN=		unfetchable
+
 USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

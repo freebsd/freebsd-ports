@@ -10,6 +10,8 @@ DISTNAME=	jad158c.freebsd
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java Decompiler
 
+BROKEN=		unfetchable
+
 USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

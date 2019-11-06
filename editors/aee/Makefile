@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.users.uswest.net/~hmahon/sources/
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Easy editor with both curses and X11 interfaces
 
+BROKEN=		unfetchable
+
 LICENSE=	ART10
 
 USES=		ncurses

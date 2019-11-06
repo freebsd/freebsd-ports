@@ -10,6 +10,8 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic music player for Unix-like systems
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libid3tag.so:audio/libid3tag

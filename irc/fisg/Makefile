@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.tnsp.org/files/
 MAINTAINER=	psh@iki.fi
 COMMENT=	Fast IRC statistics generator
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

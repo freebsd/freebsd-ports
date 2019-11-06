@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-allinone_${DISTVERSIONSUFFIX}
 MAINTAINER=	udo.rader@bestsolution.at
 COMMENT=	Professional Open Source Groupware and CRM
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/share/pear/Date.php:devel/pear-Date@${PHP_FLAVOR}
 
 USES=		gettext mysql php:web php:flavors tar:bzip2

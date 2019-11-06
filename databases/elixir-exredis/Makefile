@@ -8,6 +8,8 @@ PKGNAMEPREFIX=	elixir-
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Redis client for Elixir
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 
 USES=		elixir

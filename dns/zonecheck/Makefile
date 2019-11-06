@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.zonecheck.fr/download/ \
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Perform consistency checks on DNS zones
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL
 

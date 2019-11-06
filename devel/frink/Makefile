@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tcl formatter and static tester
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.2.2
 USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile.bsd

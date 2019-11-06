@@ -9,6 +9,8 @@ CATEGORIES=	astro geography
 MAINTAINER=	ml@netfence.it
 COMMENT=	Concise ChartPlotter/Navigator
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio \

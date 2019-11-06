@@ -10,6 +10,8 @@ CATEGORIES=	devel
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	General purpose library for the D programming language
 
+BROKEN=		unfetchable
+
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0..txt
 

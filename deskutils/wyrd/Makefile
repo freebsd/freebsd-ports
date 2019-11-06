@@ -10,6 +10,8 @@ MASTER_SITES=	http://pessimization.com/software/wyrd/
 MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	Text-based front-end to Remind
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	remind:deskutils/remind

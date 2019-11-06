@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.newlisp.org/downloads/
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	LISP like scripting language
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libffi.so:devel/libffi

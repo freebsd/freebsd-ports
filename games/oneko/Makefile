@@ -18,6 +18,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	candy@kgc.co.jp
 COMMENT=	Cat chasing a mouse all over the screen
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	nkf:japanese/nkf
 
 CONFLICTS=	oneko-1.*

@@ -11,6 +11,8 @@ DISTNAME=	llnlxftp2.1
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Motif FTP client
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/xftp lib/X11/app-defaults/XFtp \
 		man/man1/xftp.1.gz
 WRKSRC=		${WRKDIR}/llnlxftp2.1/sources

@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-TESTFLIGHT-060
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	M+ Outline Fonts
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	mkfontscale>=0:x11-fonts/mkfontscale \
 		mkfontscale:x11-fonts/mkfontscale
 

@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.mammothcheese.ca/
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Simple console text editor
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

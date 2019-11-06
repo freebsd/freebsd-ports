@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.mammothcheese.ca/
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Generic TCP server in a library
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

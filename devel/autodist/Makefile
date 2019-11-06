@@ -12,6 +12,8 @@ MASTER_SITES=	http://silcnet.org/download/autodist/sources/ \
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	Distribution creation system
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 
 INFO=		autodist

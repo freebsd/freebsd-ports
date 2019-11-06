@@ -13,6 +13,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GNOME SUICA Viewer
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	rubygem-gtk2>0:x11-toolkits/rubygem-gtk2 \

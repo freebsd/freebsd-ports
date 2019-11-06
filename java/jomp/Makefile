@@ -13,6 +13,8 @@ EXTRACT_ONLY=
 MAINTAINER=	brueffer@FreeBSD.org
 COMMENT=	Prototype OpenMP implementation for Java
 
+BROKEN=		unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 

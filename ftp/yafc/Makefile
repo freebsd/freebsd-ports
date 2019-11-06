@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.yafc-ftp.com/downloads/
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Yet another FTP client, similar to ftp(1)
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 
 OPTIONS_DEFINE=	BASH EXAMPLES NLS SSH READLINE

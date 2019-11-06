@@ -12,6 +12,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Backup and recovery manager for PostgreSQL
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	rsync:net/rsync						\

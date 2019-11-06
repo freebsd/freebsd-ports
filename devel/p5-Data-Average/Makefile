@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	avk@vl.ru
 COMMENT=	Hold Data Set To Calculate Average
 
+BROKEN=		unfetchable
+
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 

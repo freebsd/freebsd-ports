@@ -12,6 +12,8 @@ DISTNAME=	generate-${PORTVERSION}
 MAINTAINER=	darcy@druid.net
 COMMENT=	Python module to implement generate
 
+BROKEN=		unfetchable
+
 USES=		gmake python tar:tgz
 USE_PYTHON=	distutils autoplist
 

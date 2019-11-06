@@ -11,6 +11,8 @@ MASTER_SITES=	http://fr.wordpress.org/
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=	de-wordpress-[0-9].* ja-wordpress-[0-9].* ru-wordpress-[0-9].*

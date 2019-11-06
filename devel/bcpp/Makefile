@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://invisible-island.net/bcpp/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Utility similar to indent for C++ code
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 

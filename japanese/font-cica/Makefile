@@ -11,6 +11,8 @@ DISTNAME=	Cica_v${PORTVERSION}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Cica Japanese monospaced fonts for programming
 
+BROKEN=		unfetchable
+
 USES=		fonts:fc zip
 FONTNAME=	cica
 NO_WRKSUBDIR=	yes

@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.ircservices.za.net/download/ \
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	System of IRC services for IRC networks
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		gmake perl5

@@ -12,6 +12,8 @@ DISTNAME=	gkrellm-volume-${PORTVERSION}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GKrellM volume plugin
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 

@@ -12,6 +12,8 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	jon@witchspace.com
 COMMENT=	Graphical screensaver kernel module
 
+BROKEN=		unfetchable
+
 USES=		kmod
 
 MAKE_ENV+=	WERROR=

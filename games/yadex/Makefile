@@ -11,6 +11,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	WAD file editor, for games like Doom and Heretic
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		gmake perl5 shebangfix xorg

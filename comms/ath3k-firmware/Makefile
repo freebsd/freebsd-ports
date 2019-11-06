@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.deb
 MAINTAINER=	wulf@FreeBSD.org
 COMMENT=	Atheros AR3011/AR3012 bluetooth adaptor firmwares used by ath3kfw(8)
 
+BROKEN=		unfetchable
+
 LICENSE=	ATHEROS
 LICENSE_NAME=	Atheros firmware license
 LICENSE_FILE=	${WRKDIR}/usr/share/doc/firmware-atheros/copyright

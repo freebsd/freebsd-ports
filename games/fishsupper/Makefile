@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Guide a cat across a series of rivers, jumping from log to log
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

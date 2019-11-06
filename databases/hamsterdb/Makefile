@@ -10,6 +10,8 @@ MASTER_SITES=	http://files.hamsterdb.com/dl/
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Lightweight Embedded Database Engine
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 
 BROKEN_powerpc64=	fails to configure: checking for the Boost system library... no

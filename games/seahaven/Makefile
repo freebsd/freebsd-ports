@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	imp@FreeBSD.org
 COMMENT=	The classic, lightweight version of Seahaven Towers
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 USES=		xorg
 USE_XORG=	x11 xext xft

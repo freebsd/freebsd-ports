@@ -10,6 +10,8 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Versatile ncurses-based hex editor
 
+BROKEN=		unfetchable
+
 USES=		ncurses
 
 GNU_CONFIGURE=	yes

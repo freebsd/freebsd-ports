@@ -9,6 +9,8 @@ CATEGORIES=	audio
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern music production system, also known as DAW
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 

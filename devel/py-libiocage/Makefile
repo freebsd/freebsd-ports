@@ -8,6 +8,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	maintainers@iocage.io
 COMMENT=	Library to manage jails with iocage
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 

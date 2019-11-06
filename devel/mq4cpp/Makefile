@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.sixtyfourbit.org/Download/
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Message Queuing for C++
 
+BROKEN=		unfetchable
+
 OPTIONS_DEFINE=	DOCS
 
 USE_LDCONFIG=	yes

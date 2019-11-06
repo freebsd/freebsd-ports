@@ -12,6 +12,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python module to run tests written as simple functions
 
+BROKEN=		unfetchable
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 

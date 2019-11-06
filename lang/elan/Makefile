@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-1.7
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Compiler for the Elan Programming Environment
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libdcg.so:devel/mimir
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

@@ -9,6 +9,8 @@ MASTER_SITES=	http://java.sun.com/docs/books/jls/download/
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	The Java Language Specification
 
+BROKEN=		unfetchable
+
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

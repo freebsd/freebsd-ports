@@ -10,6 +10,8 @@ MASTER_SITES=	http://devio.us/~dereckson/software/commons-utilities/
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Wikimedia Commons (MediaWiki) utilities for bulk image uploading
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 

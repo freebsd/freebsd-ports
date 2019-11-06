@@ -11,6 +11,8 @@ MASTER_SITES=	https://github.com/blblack/gdnsd/releases/download/v${PORTVERSION}
 MAINTAINER=	allanjude@FreeBSD.org
 COMMENT=	Authoritative-only GeoIP-aware DNS server
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libev.so:devel/libev

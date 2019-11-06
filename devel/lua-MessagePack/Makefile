@@ -8,6 +8,8 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 MAINTAINER=	oleksii.tsai@gmail.com
 COMMENT=	Efficient binary serialization format
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 

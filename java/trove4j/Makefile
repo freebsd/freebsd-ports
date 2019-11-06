@@ -10,6 +10,8 @@ DISTNAME=	trove-${PORTVERSION}
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High performance collections API for Java
 
+BROKEN=		unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

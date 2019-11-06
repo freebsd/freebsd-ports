@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}${DISTVERSION}
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Phylogenetic Analysis by Maximum Likelihood (PAML)
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 USES=		dos2unix gmake tar:tgz

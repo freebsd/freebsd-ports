@@ -11,6 +11,8 @@ DISTFILES=	${DISTNAME}-demo.tgz ${DISTNAME}-doc.tgz ${DISTNAME}-src.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EZ Widget and Graphics Library
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png
 

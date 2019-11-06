@@ -9,6 +9,8 @@ MASTER_SITES=	http://pear.doctrine-project.org/get/
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Primary package containing the Doctrine ORM
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

@@ -10,6 +10,8 @@ MASTER_SITES=	http://kombat.kajaani.net/dl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Funny multiplayer game... and much more
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

@@ -11,6 +11,8 @@ DISTNAME=	rain-${PORTVERSION}
 MAINTAINER=	jacob@whotookspaz.org
 COMMENT=	The original BSD rain program, ported from NetBSD
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/rain \
 		man/man6/rain.6.gz
 

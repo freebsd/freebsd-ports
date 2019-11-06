@@ -9,6 +9,8 @@ PKGNAMESUFFIX=	-com
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Application that allows multiple users to watch serial consoles
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

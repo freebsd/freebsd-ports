@@ -35,6 +35,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Espressif ESP32 toolchain
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 

@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	douglas@t2web.com.br
 COMMENT=	Simple IRC relay proxy with support for virtual hosting
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 
 DOCS=		COPYING Changelog README example.conf

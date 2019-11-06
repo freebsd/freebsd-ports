@@ -12,6 +12,8 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION:E}.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python adaptor for the poker-eval toolkit
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

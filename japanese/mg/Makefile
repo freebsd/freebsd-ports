@@ -11,6 +11,8 @@ EXTRACT_ONLY=	# None
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Multi-line grep suitable for Japanese text
 
+BROKEN=		unfetchable
+
 USES=		perl5
 USE_PERL5=	run
 CONFLICTS=	mg-200*

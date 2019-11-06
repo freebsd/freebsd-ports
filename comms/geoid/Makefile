@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Geodetic computer for amateur radio use
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+ NONE  # only one src file contains license
 LICENSE_COMB=	multi
 

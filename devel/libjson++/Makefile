@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://ftp.cflinux.hu/pub/
 MAINTAINER=	krichy@tvnetwork.hu
 COMMENT=	Small C++ library to handle JSON serialized data
 
+BROKEN=		unfetchable
+
 USES=		cmake
 USE_LDCONFIG=	yes
 

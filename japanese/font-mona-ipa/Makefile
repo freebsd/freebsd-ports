@@ -11,6 +11,8 @@ DISTNAME=	opfc-ModuleHP-1.1.1_withIPAMonaFonts-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IPA Japanese TrueType fonts with Mona font
 
+BROKEN=		unfetchable
+
 USES=		fonts:fc
 FONTNAME=	TTF
 NO_ARCH=	yes

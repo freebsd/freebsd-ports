@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub4/resources/software/seqtools/PRODUCTION
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Tools for visualising sequence alignments
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \

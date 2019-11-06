@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.bsddiary.net/jerm/
 MAINTAINER=	smatsui@karashi.org
 COMMENT=	Communication terminal through serial and TCP/IP interfaces
 
+BROKEN=		unfetchable
+
 OPTIONS_DEFINE=	DOCS JUPITER
 
 JUPITER_DESC=	With Jupiter support

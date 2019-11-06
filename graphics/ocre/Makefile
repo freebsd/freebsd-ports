@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
 MAINTAINER=	w.schwarzenfeld@utanet.at
 COMMENT=	Simple optical character recognition solution
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libaspell.so:textproc/aspell

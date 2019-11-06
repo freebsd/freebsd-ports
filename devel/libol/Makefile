@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.balabit.com/downloads/files/libol/0.3/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Library needed by syslog-ng
 
+BROKEN=		unfetchable
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

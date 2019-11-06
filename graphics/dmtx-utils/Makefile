@@ -10,6 +10,8 @@ MASTER_SITES=	SF/libdmtx/libdmtx/${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Software for reading and writing Data Matrix barcodes
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libdmtx.so:graphics/libdmtx \

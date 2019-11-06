@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Data binding for XML (JAXB) and SQL database (JDO)
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 
 USES=		cpe

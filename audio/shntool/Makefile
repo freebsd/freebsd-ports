@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.etree.org/shnutils/shntool/dist/src/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multi-purpose WAVE data processing and reporting utility
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 SHN_ALIASES=	cat cmp conv cue fix gen hash info join len pad split \
 		strip tool trim

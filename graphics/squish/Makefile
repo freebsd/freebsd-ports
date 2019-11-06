@@ -10,6 +10,8 @@ MASTER_SITES=	http://her.gr.distfiles.macports.org/squish/
 MAINTAINER=	rddeblois@gmail.com
 COMMENT=	Open source DXT compression library
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 
 USES=		uidfix

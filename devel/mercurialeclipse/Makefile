@@ -14,6 +14,8 @@ EXTRACT_ONLY=
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Mercurial plugin for the Eclipse IDE Framework
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
 
 PLIST_SUB=	VER=${PORTVERSION}

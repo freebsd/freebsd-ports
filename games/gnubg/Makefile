@@ -11,6 +11,8 @@ DISTFILES=	gnubg-release-${PORTVERSION}-sources.tar.gz
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	GNU Backgammon
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	sqlite3:databases/sqlite3

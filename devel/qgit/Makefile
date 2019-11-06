@@ -10,6 +10,8 @@ CATEGORIES=	devel
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Graphical interface to git repositories
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		cmake compiler:c++11-lang qt:5

@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.bitmechanic.com/projects/jdbcpool/dist/
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	JDBC connection pool
 
+BROKEN=		unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

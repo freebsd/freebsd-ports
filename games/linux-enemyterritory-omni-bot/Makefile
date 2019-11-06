@@ -12,6 +12,8 @@ DISTFILES=	omni-bot_0_831_ET_linux.zip \
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Omni-Bot is a bot for Enemy Territory
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	et:games/linux-enemyterritory
 
 USES=		linux zip

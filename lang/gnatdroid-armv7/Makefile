@@ -12,6 +12,8 @@ DISTFILES=	${IDENTIFICATION}.tar.xz
 MAINTAINER?=	jamie@catflap.org
 COMMENT?=	C/Ada cross-compiler, target: Android ARMv7
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 

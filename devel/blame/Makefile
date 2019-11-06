@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	jhein@symmetricom.com
 COMMENT=	Display last modification for each line in an RCS file
 
+BROKEN=		unfetchable
+
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/blame \

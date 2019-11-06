@@ -13,6 +13,8 @@ DISTFILES=	${DISTNAME}-neutral${EXTRACT_SUFX} \
 MAINTAINER=	dds@FreeBSD.org
 COMMENT=	Source code analyzer and refactoring browser for C program collections
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS+=	libc.so.6:misc/compat6x
 
 NO_BUILD=	yes

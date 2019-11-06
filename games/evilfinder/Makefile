@@ -14,6 +14,8 @@ EXTRACT_ONLY=	ef.tgz
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Numerologically determine the evilness of things
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_SUB=	yes

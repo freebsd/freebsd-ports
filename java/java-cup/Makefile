@@ -13,6 +13,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-v${PORTVERSION:S|.||}-20050516-sources
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	LALR parser generator in Java
 
+BROKEN=		unfetchable
+
 BROKEN_armv6=		fails to build: build.xml: Java returned: 1
 BROKEN_armv7=		fails to build: build.xml: Java returned: 1
 

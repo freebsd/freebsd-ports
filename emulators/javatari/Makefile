@@ -12,6 +12,8 @@ EXTRACT_ONLY=
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Multiplayer Atari 2600 emulator written in pure Java
 
+BROKEN=		unfetchable
+
 LICENSE=	AGPLv3
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip

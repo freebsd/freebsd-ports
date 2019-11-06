@@ -11,6 +11,8 @@ DISTNAME=	cdk-perl-${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for Curses Development Kit
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 

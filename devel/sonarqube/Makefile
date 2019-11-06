@@ -9,6 +9,8 @@ MASTER_SITES=	http://sonarsource.bintray.com/Distribution/sonarqube/
 MAINTAINER=	freebsd@dussan.org
 COMMENT=	Platform for continuous inspection of code quality
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 

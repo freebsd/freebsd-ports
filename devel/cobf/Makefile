@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	C and C++ code obfuscator
 
+BROKEN=		unfetchable
+
 USES=		zip
 
 BUILD_WRKSRC=	${WRKSRC}/src/cpp

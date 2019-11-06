@@ -14,6 +14,8 @@ DISTNAME=	djcrx203
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	Headers and Libraries for DJGPP cross-development
 
+BROKEN=		unfetchable
+
 USES=		zip
 MAKEFILE=	${FILESDIR}/Makefile
 NO_MTREE=	yes

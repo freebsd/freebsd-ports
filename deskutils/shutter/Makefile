@@ -10,6 +10,8 @@ MASTER_SITES=	http://shutter-project.org/wp-content/uploads/releases/tars/
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Screenshot tool
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3 GPLv2 # the latter for some shipped cursors
 LICENSE_COMB=	multi
 

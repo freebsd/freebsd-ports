@@ -10,6 +10,8 @@ DISTNAME=	TclOO+Package-${FOSSIL_CHECKIN}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Implementation of TclOO for Tcl 8.5
 
+BROKEN=		unfetchable
+
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms

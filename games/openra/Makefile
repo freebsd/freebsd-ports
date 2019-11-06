@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.config:N*.dll:N*.nupkg}
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multiplayer re-envisioning of early RTS games by Westwood Studios
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \

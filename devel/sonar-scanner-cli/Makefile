@@ -11,6 +11,8 @@ DISTNAME=	sonar-scanner-${PORTVERSION}
 MAINTAINER=	freebsd@dussan.org
 COMMENT=	Launcher for analyzing projects with SonarQube
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL3
 
 NO_ARCH=	yes

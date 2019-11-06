@@ -9,6 +9,8 @@ CATEGORIES=	archivers
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Desktop-agnostic GTK+2 frontend to various archiving tools
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

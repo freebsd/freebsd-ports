@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.dnsjava.org/download/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Implementation of DNS in Java
 
+BROKEN=		unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes

@@ -17,6 +17,8 @@ PATCHFILES=	nvi-m17n-1.79-20040608.diff.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of vi/ex, with multilingual patch, no default settings
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD4CLAUSE
 
 PATCH_DIST_ARGS=	-d ${WRKSRC}/.. --forward --quiet -E -p0 -f

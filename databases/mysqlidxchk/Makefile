@@ -10,6 +10,8 @@ MASTER_SITES=	http://hackmysql.com/scripts/
 MAINTAINER=	rdna@rdna.ru
 COMMENT=	Checks MySQL databases/tables for unused indexes
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
 		p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql

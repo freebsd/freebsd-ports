@@ -12,6 +12,8 @@ DISTFILES=	${PORTNAME}-linux-src-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tomato-smashing, Q-Bert style
 
+BROKEN=		unfetchable
+
 LICENSE=	ZLIB
 
 DATAVERSION=	1.5

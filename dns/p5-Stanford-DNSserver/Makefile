@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	DNS name server framework with a Perl backend
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 USES=		perl5

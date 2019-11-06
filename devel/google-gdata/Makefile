@@ -9,6 +9,8 @@ CATEGORIES=	devel
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	DOT NET library for the Google Data API
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Newtonsoft.Json.pc:devel/newtonsoft-json

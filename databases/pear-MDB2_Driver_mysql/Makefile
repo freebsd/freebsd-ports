@@ -8,6 +8,8 @@ CATEGORIES=	databases www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR MySQL MDB2 driver
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PEAR_PKGNAMEPREFIX}MDB2>=0:databases/pear-MDB2@${PHP_FLAVOR}

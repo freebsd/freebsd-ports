@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Grand Central Dispatch API support library
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 
 GNU_CONFIGURE=	yes

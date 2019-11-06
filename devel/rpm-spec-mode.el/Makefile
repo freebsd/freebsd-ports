@@ -13,6 +13,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	max.n.boyarov@gmail.com
 COMMENT=	RPM spec file editing commands for Emacs
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 NO_WRKSUBDIR=	yes

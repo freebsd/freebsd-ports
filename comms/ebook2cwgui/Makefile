@@ -9,6 +9,8 @@ MASTER_SITES=	http://fkurz.net/ham/ebook4cw/
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Gui front end for ebooks2cw
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

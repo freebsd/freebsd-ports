@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Phone codes in Hungary / Magyarorszagi korzetszamok
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	share/misc/hu.phone
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}

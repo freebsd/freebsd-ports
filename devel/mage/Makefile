@@ -8,6 +8,8 @@ CATEGORIES=	devel
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Command-line make-like build tool using Go as input files
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
