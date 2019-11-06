@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Low-level routines for manipulations of NURBS geometries
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 

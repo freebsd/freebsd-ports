@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.infa.abo.fi/~patrik/sn/files/ \
 MAINTAINER=	fehlner@gmx.de
 COMMENT=	Small news system for small sites serving
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	bash:shells/bash

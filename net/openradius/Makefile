@@ -11,6 +11,8 @@ MASTER_SITES=	http://evbergen.home.xs4all.nl/openradius/download/ \
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	RADIUS server with some actual documentation
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

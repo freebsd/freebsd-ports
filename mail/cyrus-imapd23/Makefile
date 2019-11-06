@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	23
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Cyrus mail server, supporting POP3 and IMAP4 protocols
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 

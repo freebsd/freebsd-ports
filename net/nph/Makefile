@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.feep.net/pub/software/nph/
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	New PH Client and API Library
 
+BROKEN=		unfetchable
+
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	--disable-encap --disable-epkg-install
 

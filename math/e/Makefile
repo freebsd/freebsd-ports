@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.softnet.tuc.gr/~apdim/projects/e/
 MAINTAINER=	snowy@netphile.de
 COMMENT=	Tiny expression evaluator
 
+BROKEN=		unfetchable
+
 MAKEFILE=	makefile
 ALL_TARGET=	e
 

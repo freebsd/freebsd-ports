@@ -9,6 +9,8 @@ MASTER_SITES=	http://gomor.org/files/
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	SSL Capable Netcat
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

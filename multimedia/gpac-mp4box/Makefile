@@ -11,6 +11,8 @@ DISTNAME=	gpac-${DISTVERSION}
 MAINTAINER=	pvizeli@yahoo.de
 COMMENT=	Tool for merge mpg4 from Gpac
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libgpac.so:multimedia/gpac-libgpac

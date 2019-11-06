@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Java library of self-contained mathematics and statistics components
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 
 BROKEN_armv6=		fails to compile: build.xml: Compile failed; see the compiler error output for details

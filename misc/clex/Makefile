@@ -10,6 +10,8 @@ DISTNAME=	clex-4.6.patch7
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Command line file manager
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes

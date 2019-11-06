@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.porchdogsoft.com/download/
 MAINTAINER=	freebsd@donovansbrain.co.uk
 COMMENT=	Zeroconf/Bonjour(tm) implementation
 
+BROKEN=		unfetchable
+
 CONFLICTS=	avahi-[0-9]*
 
 GNU_CONFIGURE=	yes

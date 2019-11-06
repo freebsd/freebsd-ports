@@ -10,6 +10,8 @@ DISTNAME=	mcast-tools-20061214
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IPv6 PIM-DM multicast routing daemon
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 

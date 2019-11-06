@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Prayer Webmail System
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libc-client4.so:mail/cclient

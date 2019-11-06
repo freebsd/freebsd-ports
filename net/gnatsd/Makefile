@@ -8,6 +8,8 @@ CATEGORIES=	net
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Messaging system written in Go
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

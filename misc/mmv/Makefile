@@ -14,6 +14,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Move/Copy/Append/Link multiple files
 
+BROKEN=		unfetchable
+
 LICENSE=	Freeware
 LICENSE_NAME=	MMV
 LICENSE_FILE=	${PATCHDIR}/LICENSE

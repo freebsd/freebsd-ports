@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.kvaleberg.org/pub/
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Program to fetch news from and post news to a remote NNTP server
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 .if defined(WITH_CNEWS)

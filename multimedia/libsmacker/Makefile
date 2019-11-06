@@ -8,6 +8,8 @@ MASTER_SITES=	SF/${PORTNAME}/${DISTNAME}/
 MAINTAINER=	kennedy.greg@gmail.com
 COMMENT=	C library for decoding .smk Smacker Video files
 
+BROKEN=		unfetchable
+
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
 

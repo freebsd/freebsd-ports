@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Jabber Perl library for client/component connectivity
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 BUILD_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1
 

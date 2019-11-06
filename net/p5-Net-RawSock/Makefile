@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ecu@200ok.org
 COMMENT=	Net::RawSock provides a base function to send raw IP packets from Perl
 
+BROKEN=		unfetchable
+
 USES=		perl5
 USE_PERL5=	configure patch
 

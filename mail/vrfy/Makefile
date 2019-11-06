@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Verify mail address
 
+BROKEN=		unfetchable
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" RES=""
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/vrfy

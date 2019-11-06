@@ -10,6 +10,8 @@ MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		gpg:security/gnupg
 RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \

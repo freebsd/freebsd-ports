@@ -11,6 +11,8 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 MAINTAINER=	t.kempka@web.de
 COMMENT=	Multiping host checker dockapp
 
+BROKEN=		unfetchable
+
 USE_XORG=	xpm
 
 OPTIONS_DEFINE=	DOCS

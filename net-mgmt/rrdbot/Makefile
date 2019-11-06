@@ -10,6 +10,8 @@ MASTER_SITES=	http://thewalter.net/stef/software/rrdbot/
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Threaded SNMP polling daemon which stores data in RRDs
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	librrd.so:databases/rrdtool
 
 GNU_CONFIGURE=	yes

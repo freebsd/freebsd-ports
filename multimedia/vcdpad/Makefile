@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.nocrew.org/software/vcdpad/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Program to pad vcd mpegs
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/vcdpad
 USES=		gmake
 

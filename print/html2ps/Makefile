@@ -12,6 +12,8 @@ MASTER_SITES=	http://user.it.uu.se/~jan/ \
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	HTML to PostScript converter
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

@@ -10,6 +10,8 @@ MASTER_SITES=	http://opensource.confusticate.com/rbl-milter/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Milter that adds mail header warnings on mail from open-relays
 
+BROKEN=		unfetchable
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 

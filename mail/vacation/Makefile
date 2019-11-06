@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}-0.4
 MAINTAINER=	mcdouga9@egr.msu.edu
 COMMENT=	Email autoresponder, similar to vacation from sendmail
 
+BROKEN=		unfetchable
+
 PORTSCOUT=	ignore:1
 
 USES=		bdb

@@ -11,6 +11,8 @@ MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Python Managesieve Server
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

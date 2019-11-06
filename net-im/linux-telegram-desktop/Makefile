@@ -11,6 +11,8 @@ DISTNAME=	tsetup32.${PORTVERSION}
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Official desktop client for Telegram messenger (Linux version)
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 USES=		linux:c7 tar:xz

@@ -10,6 +10,8 @@ MASTER_SITES=	SF/crosti/crosti%20${DISTVERSION}/
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Convert custom image to cross stitch design, edit stitch designs
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 

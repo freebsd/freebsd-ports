@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.gz
 
 MAINTAINER=	fehlner@gmx.de
 COMMENT=	Script for maintaining ports
+
+BROKEN=		unfetchable
 # Any ideas for a better comment?
 
 EXTRACT_CMD=	${GZCAT}

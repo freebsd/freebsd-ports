@@ -10,6 +10,8 @@ MASTER_SITES=	SF/aoetools/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Virtual EtherDrive(R) blade AoE target
 
+BROKEN=		unfetchable
+
 MAKE_ARGS=	PLATFORM=freebsd\
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"\
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"\

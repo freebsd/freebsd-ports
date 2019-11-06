@@ -9,6 +9,8 @@ MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Interaction library for iso-codes
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	valac:lang/vala

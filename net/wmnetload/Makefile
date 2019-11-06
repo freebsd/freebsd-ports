@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://truffula.com/pub/ \
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Network load monitor dockapp
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libdockapp.so:x11-wm/libdockapp
 
 USES=		tar:bzip2

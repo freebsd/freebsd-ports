@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	Map data for py-basemap
 
+BROKEN=		unfetchable
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 

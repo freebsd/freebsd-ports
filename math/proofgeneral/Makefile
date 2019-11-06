@@ -12,6 +12,8 @@ DISTNAME=	ProofGeneral-${PORTVERSION}
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Generic interface for proof assistants
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

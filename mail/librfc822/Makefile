@@ -9,6 +9,8 @@ MASTER_SITES=	http://cryp.to/librfc2822/
 MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	Complete parser for RFC822 addresses
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	user-manual.html

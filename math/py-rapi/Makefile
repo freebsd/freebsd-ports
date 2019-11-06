@@ -9,6 +9,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Minimal R API for Python
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}

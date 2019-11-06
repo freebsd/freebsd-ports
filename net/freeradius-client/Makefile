@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/ \
 MAINTAINER=	netch@portaone.com
 COMMENT=	Client library and basic utilities for RADIUS AAA
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool tar:bzip2

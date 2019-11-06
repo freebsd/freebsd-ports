@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.hsc.fr/ressources/outils/nstreams/download/ \
 MAINTAINER=	ecu@200ok.org
 COMMENT=	Analyses network traffic and produces ipfw rules to allow it
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes

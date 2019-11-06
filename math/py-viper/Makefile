@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Minimalistic scientific plotter and visualization module
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL3
 
 USES=		python:2.7

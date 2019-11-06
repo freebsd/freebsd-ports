@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Sourcecode
 MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	HTTP video streaming daemon
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:multimedia/v4l_compat

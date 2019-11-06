@@ -8,6 +8,8 @@ MASTER_SITES=	https://bitbucket.org/nikratio/s3ql/downloads/
 MAINTAINER=	stdin@niklaas.eu
 COMMENT=	File system that stores all its data in the cloud
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

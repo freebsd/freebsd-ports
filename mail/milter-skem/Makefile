@@ -10,6 +10,8 @@ MASTER_SITES=	http://virtual-estates.net/skem/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Cache earlier sendmail's verdicts for the relays
 
+BROKEN=		unfetchable
+
 .if !exists( /usr/include/libmilter/mfapi.h )
 BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:mail/libmilter
 CFLAGS+=	-I${LOCALBASE}/include

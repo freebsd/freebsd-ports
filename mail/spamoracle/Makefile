@@ -10,6 +10,8 @@ MASTER_SITES=	http://cristal.inria.fr/~xleroy/software/
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	procmail spam filter written in ML using Bayesian classification
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	ocaml:lang/ocaml
 
 PLIST_FILES=	bin/spamoracle

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A toolbox for the implementation of morphological analysers
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME:tu}/src
 INSTALL_TARGET=	install maninstall libinstall
 USES=		gmake readline

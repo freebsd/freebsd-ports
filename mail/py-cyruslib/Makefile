@@ -12,6 +12,8 @@ EXTRACT_SUFX=
 MAINTAINER=	dimma@higis.ru
 COMMENT=	Cyrus imapd library for Python
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USES=		python

@@ -10,6 +10,8 @@ MASTER_SITES=	http://support.red-fone.com/fonulator/
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	FoneBRIDGE configuration utility
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargtable2.a:devel/argtable\
 		${LOCALBASE}/lib/libfb.a:net/libfb
 LIB_DEPENDS=	libnet.so:net/libnet

@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-20040808
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Client library for Peer Distributed Transfer Protocol (PDTP)
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 USES=		ssl

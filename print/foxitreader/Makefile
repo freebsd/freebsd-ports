@@ -12,6 +12,8 @@ EXTRACT_ONLY=	FoxitReader-${PORTVERSION}.tar.bz2
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Free PDF document viewer for desktop Linux
 
+BROKEN=		unfetchable
+
 LICENSE=	EULA
 LICENSE_NAME=	End-User License Agreement
 LICENSE_TEXT=	http://www.foxitsoftware.com/pdf/desklinux/eula.htm

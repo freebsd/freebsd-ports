@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.intec.co.jp/pub/utils/
 MAINTAINER=	mutoh@openedu.org
 COMMENT=	X-based keyboard trainer
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/xtypo
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

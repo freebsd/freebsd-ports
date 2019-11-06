@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.wart.ru/pub/download/
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Userland driver for Samsung WiMAX modems
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		uidfix

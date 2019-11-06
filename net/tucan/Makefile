@@ -10,6 +10,8 @@ MASTER_SITES=	http://forja.rediris.es/frs/download.php/2051/
 MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	Tucan Manager aids file-sharing with 1-click hosters
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${LOCALBASE}/bin/cntraining:graphics/tesseract
 

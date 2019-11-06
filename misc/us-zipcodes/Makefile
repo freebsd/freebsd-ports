@@ -11,6 +11,8 @@ DISTFILES=	${PORTNAME}.gz
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	USA postal codes
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# None

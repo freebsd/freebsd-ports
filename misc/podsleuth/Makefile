@@ -10,6 +10,8 @@ MASTER_SITES=	http://download.banshee.fm/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Tool to discover detailed model information about an iPod
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libsgutils2.so:sysutils/sg3_utils \
 		libhal.so:sysutils/hal
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:devel/ndesk-dbus

@@ -10,6 +10,8 @@ MASTER_SITES=	https://www.mimar.rs/distfiles/
 MAINTAINER=	marko.cupac@mimar.rs
 COMMENT=	Plugin to add msn style "toaster" popups to Pidgin
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:net-im/pidgin

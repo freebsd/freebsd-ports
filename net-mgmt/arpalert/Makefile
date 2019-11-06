@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.arpalert.org/src/
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	ARP traffic monitoring
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes

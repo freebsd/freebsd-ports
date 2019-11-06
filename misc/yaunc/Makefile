@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.redterror.net/code/yaunc/
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Yet another uptimes.net client
 
+BROKEN=		unfetchable
+
 ALL_TARGET=	bsd
 CFLAGS+=	-DCONFFILE=\\\"${STAGEDIR}${PREFIX}/etc/yaunc.conf\\\"
 

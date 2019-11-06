@@ -12,6 +12,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Twitter API
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=3.4.0:devel/py-simplejson@${PY_FLAVOR} \

@@ -9,6 +9,8 @@ MASTER_SITES=	http://thewalter.net/stef/software/nullpop/
 MAINTAINER=	pankov_p@mail.ru
 COMMENT=	POP3 server that allows logins, but never returns any email
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes

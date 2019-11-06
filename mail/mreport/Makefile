@@ -9,6 +9,8 @@ MASTER_SITES=	http://yenigul.net/mreport/
 MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	Sendmail logfile summary tool
 
+BROKEN=		unfetchable
+
 ALL_TARGET=	ALL
 PLIST_FILES=	sbin/mreport man/man8/mreport.8.gz
 

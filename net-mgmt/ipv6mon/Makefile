@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Tool for monitoring IPv6 address usage
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 

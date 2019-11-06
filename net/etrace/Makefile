@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	dave.ryan@gmail.com
 COMMENT=	Configurable static port network tracing tool
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:net/libdnet \

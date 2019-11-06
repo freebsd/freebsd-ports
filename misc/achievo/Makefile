@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 MAINTAINER=	kevin@caomhin.demon.co.uk
 COMMENT=	Flexible web-based resource management tool
 
+BROKEN=		unfetchable
+
 USES=	php:mod
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

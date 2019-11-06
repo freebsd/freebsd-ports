@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for ICQv7 protocol realisation
 
+BROKEN=		unfetchable
+
 USES=		perl5
 USE_PERL5=	configure
 

@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.inlab.de/
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Simple but powerful generic TCP proxy with round robin features
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 ALL_TARGET=	balance

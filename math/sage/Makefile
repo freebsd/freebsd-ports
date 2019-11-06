@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Open source Mathematics software
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 

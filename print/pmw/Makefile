@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.quercite.com/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High quality music typesetting program
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS
