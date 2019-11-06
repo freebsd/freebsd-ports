@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libbt.pc:x11-wm/blackbox
 
-USES=		pkgconfig
+USES=		pkgconfig xorg
 USE_XORG=	xext
 GNU_CONFIGURE=	yes
 

@@ -18,8 +18,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
+USES=		fpc lazarus:flavors xorg
 USE_XORG=	x11
-USES=		fpc lazarus:flavors
 USE_FPC=	chm fcl-base fcl-image fcl-json fcl-xml pasjpeg regexpr x11
 
 NO_WRKSUBDIR=	yes

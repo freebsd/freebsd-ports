@@ -13,7 +13,7 @@ COMMENT=	X11 on-screen-display program and library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig libtool
+USES=		gmake pkgconfig libtool xorg
 USE_CSTD=	gnu89
 USE_XORG=	x11 xext xt sm ice xinerama
 USE_LDCONFIG=	yes
@@ -36,6 +36,7 @@ MSEC_VARS=	DELAY_UNITS=milliseconds
 MSEC_VARS_OFF=	DELAY_UNITS=seconds
 
 XFT_EXTRA_PATCHES=	${FILESDIR}/extra-patch-xft
+XFT_USES=		gnome
 XFT_USE=		GNOME=pango XORG=xft
 
 post-patch:

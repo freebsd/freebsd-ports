@@ -17,7 +17,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libmpich.so:net/mpich \
 		libpetsc.so:science/PETSc
 
-USES=		gmake fortran python:2.7 shebangfix
+USES=		gmake fortran python:2.7 shebangfix xorg
 SHEBANG_FILES=	configure
 SHEBANG_GLOB=	*.py
 MAKEFILE=	makefile

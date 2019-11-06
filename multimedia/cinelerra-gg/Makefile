@@ -51,7 +51,8 @@ EXTRA_PATCHES=	${BUILD_WRKSRC}/blds/bsd.patch:-p1
 
 REV=		502b6f3b6fd04f6b01c6d70dcb81aa304dd0db1c # git revision
 
-USES=		autoreconf gettext-runtime gettext-tools gmake iconv:wchar_t jpeg localbase makeinfo python:2.7,build shebangfix
+USES=		autoreconf gettext-runtime gettext-tools gmake iconv:wchar_t \
+		jpeg localbase makeinfo python:2.7,build shebangfix xorg
 SHEBANG_GLOB=	*.sh *.bld
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xau xdmcp xext xfixes xft xinerama xv
@@ -79,7 +80,7 @@ OPTIONS_SUB=		yes
 
 LV2_DESC=		Use LV2 plugins
 LV2_CONFIGURE_WITH=	lv2
-LV2_USES=		pkgconfig
+LV2_USES=		gnome pkgconfig
 LV2_USE=		GNOME=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
 LV2_CFLAGS=		-I${LOCALBASE}/include/lilv-0 -I${LOCALBASE}/include/suil-0
 LV2_BUILD_DEPENDS=	lv2>0:audio/lv2
@@ -90,6 +91,7 @@ LV2_LIB_DEPENDS=	liblilv-0.so:audio/lilv \
 			libsuil-0.so:audio/suil
 
 OPENGL_CONFIGURE_WITH=	gl
+OPENGL_USES=		gl
 OPENGL_USE=		GL=gl,glu
 
 post-patch:

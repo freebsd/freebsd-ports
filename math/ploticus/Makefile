@@ -36,6 +36,7 @@ ALL_TARGET=	plgd18
 MAKE_ARGS+=	NOX11=-DNOX11 XLIBS= XOBJ=
 PKGNAMESUFFIX=	-nox11
 .else
+USES+=		xorg
 USE_XORG=	xpm
 .endif
 

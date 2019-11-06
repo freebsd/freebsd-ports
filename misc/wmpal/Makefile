@@ -12,7 +12,7 @@ COMMENT=	One of the most useless dockapps in the world
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		localbase
+USES=		localbase xorg
 USE_XORG=	x11 xpm
 GNU_CONFIGURE=	yes
 LIBS+=		-lX11

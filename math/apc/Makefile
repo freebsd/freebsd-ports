@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 
+USES=		xorg
 USE_XORG=	x11 xpm
 PLIST_FILES=	bin/apc man/man1/apc.1.gz
 

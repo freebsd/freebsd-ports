@@ -22,7 +22,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		autoreconf:build libtool gmake ncurses jpeg
+USES=		autoreconf:build libtool gmake ncurses jpeg xorg
 USE_XORG=	x11 xcursor xext xorgproto xft xrandr xrender
 
 SFSUBDIR=	snapshot_2019-04-13

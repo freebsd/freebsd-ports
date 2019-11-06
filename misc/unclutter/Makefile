@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remove idle cursor image from screen
 
 WRKSRC=		${WRKDIR}/unclutter
-USES=		imake tar:Z
+USES=		imake tar:Z xorg
 USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/unclutter \

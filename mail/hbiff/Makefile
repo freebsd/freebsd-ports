@@ -11,6 +11,7 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for xbiff that handles popup window with mail headers
 
+USES=		xorg
 USE_XORG=	x11
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libgmtk.so:multimedia/gmtk
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
-USES=		desktop-file-utils gettext gmake pkgconfig
+USES=		desktop-file-utils gettext gmake gnome pkgconfig xorg
 USE_XORG=	x11 xscrnsaver
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes

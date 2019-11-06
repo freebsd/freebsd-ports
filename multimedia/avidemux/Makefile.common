@@ -17,7 +17,7 @@ USE_GNOME=	libxml2
 
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME:C/-.*//}/options
 
-USES=		cmake:noninja pkgconfig iconv gmake compiler:features sqlite
+USES=		cmake:noninja pkgconfig iconv gmake gnome compiler:features sqlite
 USES+=		dos2unix
 DOS2UNIX_FILES=	cmake/admCheckMiscLibs.cmake \
 		avidemux_core/ADM_coreVideoCodec/include/ADM_coreVideoCodec6_export.h \
@@ -137,6 +137,7 @@ CMAKE_ARGS+=	-DFONTCONFIG:BOOL=OFF
 
 .if ${PORT_OPTIONS:MXVIDEO}
 #LIB_DEPENDS+=	Xv:x11/libXv
+USES+=		xorg
 USE_XORG+=	xv
 .else
 CMAKE_ARGS+=	-DXVIDEO:BOOL=OFF
@@ -199,6 +200,7 @@ PLIST_SUB+=	XVID="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSDL}
+USES+=		sdl
 USE_SDL=	sdl
 PLIST_SUB+=	SDL=""
 .else

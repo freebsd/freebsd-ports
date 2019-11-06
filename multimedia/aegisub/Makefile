@@ -23,8 +23,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libass.so:multimedia/libass \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		compiler:c++11-lib desktop-file-utils gettext gmake iconv \
-		localbase pkgconfig tar:xz
+USES=		compiler:c++11-lib desktop-file-utils gettext gl gmake gnome \
+		iconv localbase pkgconfig tar:xz
 USE_GNOME=	intltool
 USE_WX=		3.0
 WX_CONF_ARGS=	absolute

@@ -16,7 +16,7 @@ LICENSE_NAME=	xgraph license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		imake tar:Z
+USES=		imake tar:Z xorg
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

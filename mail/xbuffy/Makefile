@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}-3.3.bl.3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for xbiff that handles multiple mail files
 
+USES=		cpe gmake xorg
 USE_XORG=	xext xt xaw
-USES=		cpe gmake
 CPE_VENDOR=	xbuffy_project
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/xbuffy lib/X11/app-defaults/XBuffy man/man1/xbuffy.1.gz

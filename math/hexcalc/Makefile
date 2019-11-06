@@ -21,6 +21,7 @@ COMMENT=	Multi-radix calculator for x11
 #	Old distfile name in 8.2 was hexcalc..tar.Z & EXTRACT_SUFX was ..tar.Z
 #	presumably a mistake, now shortened to normality.
 
+USES=		xorg
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
 PLIST_FILES=	bin/hexcalc man/man1/hexcalc.1.gz

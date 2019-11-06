@@ -25,7 +25,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libpng.so:graphics/png \
 		libv4l2.so:multimedia/libv4l
 
-USES=		cmake compiler:c++11-lang eigen:3 fortran gnome jpeg
+USES=		cmake compiler:c++11-lang eigen:3 fortran gnome jpeg xorg
 USE_GNOME=	libxml2
 USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes

@@ -12,7 +12,7 @@ COMMENT=	VDPAU wrapper and tracing library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf libtool pkgconfig tar:xz
+USES=		autoreconf libtool pkgconfig tar:xz xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-documentation
 USE_XORG=	xorgproto xext

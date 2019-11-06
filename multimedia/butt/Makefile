@@ -24,7 +24,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libsamplerate.so:audio/libsamplerate \
 		libvorbis.so:audio/libvorbis
 
-USES=		autoreconf compiler:c++11-lang gmake jpeg pkgconfig
+USES=		autoreconf compiler:c++11-lang gmake jpeg pkgconfig xorg
 USE_XORG=	x11 xrender xcursor xfixes xext xft xinerama
 
 GNU_CONFIGURE=	yes

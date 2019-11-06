@@ -45,7 +45,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils cmake gettext gnome \
 		iconv:wchar_t sqlite libarchive localbase pathfix pkgconfig \
-		tar:xz
+		tar:xz xorg
 USE_GNOME=	cairo evolutiondataserver3 gnomedesktop3 intltool
 GNU_CONFIGURE=	yes
 USE_XORG=	x11

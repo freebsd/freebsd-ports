@@ -21,9 +21,9 @@ CONFIGURE_ARGS=	--with-db3-inc=${BDB_INCLUDE_DIR} \
 		--with-db3-lib=${BDB_LIB_DIR} \
 		--with-db-name=${BDB_LIB_NAME}
 
+USES=		bdb gmake xorg
 USE_XORG=	x11 xft xkbfile xmu
 GNU_CONFIGURE=	yes
-USES=		bdb gmake
 
 OPTIONS_DEFINE=	OSD
 OPTIONS_DEFAULT=	OSD

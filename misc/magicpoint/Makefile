@@ -18,7 +18,7 @@ RUN_DEPENDS+=	pnmscale:graphics/netpbm
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		imake:env perl5 pkgconfig
+USES=		imake:env perl5 pkgconfig xorg
 USE_PERL5=	run
 USE_XORG=	x11 xext xmu xt sm ice xi xtst
 GNU_CONFIGURE=	yes

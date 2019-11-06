@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libxine.so:multimedia/libxine
 
 USES=		desktop-file-utils gmake iconv jpeg pkgconfig readline \
-		shared-mime-info tar:xz
+		shared-mime-info tar:xz xorg
 USE_XORG=	x11 xext xinerama xscrnsaver xt xtst xv xxf86vm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vdr-keys \

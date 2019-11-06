@@ -14,7 +14,7 @@ LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter
 
 PORTSCOUT=	ignore:1
 
-USES=		gmake libtool localbase pathfix \
+USES=		gl gmake gnome libtool localbase pathfix \
 		pkgconfig tar:xz xorg
 USE_GNOME=	introspection gnomeprefix
 GNU_CONFIGURE=	yes

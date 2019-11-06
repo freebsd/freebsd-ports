@@ -10,7 +10,7 @@ MASTER_SITES=	XCONTRIB/applications
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mailbox checker with sound and animation for X Window System
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xaw
 
 OPTIONS_DEFINE=	DOCS

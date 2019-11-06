@@ -24,7 +24,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 # * VTK Groups
 
 CONFLICTS=	vtk5 vtk8
-USES=		alias cmake jpeg localbase
+USES=		alias cmake jpeg localbase xorg
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	xt sm ice x11 xext
 CXXFLAGS_powerpc64=	-mminimal-toc
@@ -103,6 +103,7 @@ CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 PLIST_SUB+=	X11="@comment " \
 		OSMESA=""
 .else
+USES+=		gl
 USE_GL=		gl glu
 PLIST_SUB+=	X11="" \
 		OSMESA="@comment "

@@ -20,7 +20,8 @@ LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
 		libvdpau.so:multimedia/libvdpau \
 		libhogweed.so:security/nettle
 
-USES=		cpe compiler:c++11-lang gmake localbase perl5 pkgconfig tar:xz
+USES=		cpe compiler:c++11-lang gmake localbase perl5 pkgconfig tar:xz \
+		xorg
 
 USE_XORG=	x11
 USE_PERL5=	build
@@ -127,6 +128,7 @@ RTMP_CONFIGURE_ENABLE=		librtmp
 SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:multimedia/schroedinger
 SCHROEDINGER_CONFIGURE_ENABLE=	libschroedinger
 
+SDL_USES=			sdl
 SDL_USE=			SDL=sdl
 SDL_CONFIGURE_ENABLE=		avplay
 
