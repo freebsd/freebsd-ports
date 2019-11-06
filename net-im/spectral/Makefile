@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	libqmatrixclient>=0.5:net-im/libqmatrixclient
 
-USES=		compiler:c++17-lang pkgconfig qmake qt:5 tar:bz2
+USES=		compiler:c++17-lang gl pkgconfig qmake qt:5 tar:bz2
 USE_GL=		gl
 USE_QT=		core dbus declarative graphicaleffects gui imageformats \
 		multimedia network quickcontrols2 svg widgets \

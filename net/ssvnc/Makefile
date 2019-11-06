@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	stunnel:security/stunnel \
 		xterm:x11/xterm
 
-USES=		gmake imake:env jpeg perl5 ssl tk:wrapper
+USES=		gmake imake:env jpeg perl5 ssl tk:wrapper xorg
 USE_PERL5=	run
 USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
 

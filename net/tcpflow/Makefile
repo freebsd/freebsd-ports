@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		python:2.7 ssl
+USES=		python:2.7 ssl xorg
 USE_XORG=	pixman
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_md_MD5=no \

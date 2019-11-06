@@ -11,7 +11,7 @@ COMMENT=	RDP client for Windows NT/2000/2003 Terminal Server
 
 LICENSE=	GPLv3
 
-USES=		autoreconf gmake iconv pkgconfig ssl
+USES=		autoreconf gmake iconv pkgconfig ssl xorg
 USE_XORG=	x11 xrandr
 USE_GITHUB=	yes
 

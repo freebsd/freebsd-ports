@@ -16,7 +16,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup
 
 USES=		cmake compiler:c11 desktop-file-utils gettext gnome localbase:ldflags pathfix \
-		pkgconfig shared-mime-info ssl shebangfix
+		pkgconfig shared-mime-info ssl shebangfix xorg
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	Remmina

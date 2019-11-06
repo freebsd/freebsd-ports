@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.nazgul.ch/dev/
 MAINTAINER=	LukeD@pobox.com
 COMMENT=	DockApp showing the state of a wireless network device
 
+USES=		xorg
 USE_XORG=	x11 xext xpm
 
 PLIST_FILES=	bin/wmwlmon man/man1/wmwlmon.1.gz

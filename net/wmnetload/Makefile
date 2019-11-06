@@ -16,7 +16,7 @@ BROKEN=		unfetchable
 
 LIB_DEPENDS=	libdockapp.so:x11-wm/libdockapp
 
-USES=		tar:bzip2
+USES=		tar:bzip2 xorg
 USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 

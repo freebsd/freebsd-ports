@@ -15,7 +15,7 @@ COMMENT=	Dockapp displaying the signal strength of WiFi connection
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake localbase
+USES=		gmake localbase xorg
 USE_XORG=	x11 xext xpm
 
 CONFIGURE_ENV=	X_CFLAGS="${CFLAGS}"

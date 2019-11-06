@@ -12,7 +12,7 @@ COMMENT=	Usenet News reader for the X Window System
 
 BROKEN=		unfetchable
 
-USES=		bison gmake pkgconfig
+USES=		bison gmake pkgconfig xorg
 GNU_CONFIGURE=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 

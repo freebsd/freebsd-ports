@@ -13,7 +13,7 @@ COMMENT=	WiFi Networks Manager
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		desktop-file-utils pkgconfig tar:bzip2
+USES=		desktop-file-utils gnome pkgconfig tar:bzip2 xorg
 USE_XORG=	x11
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes

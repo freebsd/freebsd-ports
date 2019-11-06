@@ -10,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	serg@cad.kiev.ua
 COMMENT=	Windowmaker dock app to display network hosts status
 
+USES=		gmake xorg
 USE_XORG=	xpm
-USES=		gmake
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	BUGS CHANGES README TODO

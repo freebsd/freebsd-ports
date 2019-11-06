@@ -13,7 +13,7 @@ COMMENT=	Graphical TCP connection analysis tool
 
 BROKEN=		unfetchable
 
-USES=		motif tk
+USES=		motif tk xorg
 USE_XORG=	xt
 
 PORTDOCS=	tcpclient.log tcpserver.log
