@@ -14,7 +14,7 @@ COMMENT=	Emulator of Elektronika RPN programmable calculator series
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		fpc lazarus:flavors
+USES=		fpc lazarus:flavors xorg
 USE_FPC=	cairo chm fcl-base fcl-image fcl-json fcl-registry fcl-xml \
 		pasjpeg regexpr rtl-extra x11
 USE_XORG=	x11
@@ -35,6 +35,7 @@ OPTIONS_DEFAULT=	PORTAUDIO
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
 .if ${FLAVOR:Ugtk2:Mgtk2}
+USES+=		gnome
 USE_GNOME+=	cairo
 .endif
 
