@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nanumfonts
-PORTVERSION=	20160201
-PORTREVISION=	1
+PORTVERSION=	20170921
 CATEGORIES=	korean
 MASTER_SITES=	http://appdown.naver.com/naver/font/NanumFont/setup/ \
 		LOCAL/jkim
@@ -12,8 +11,6 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Nanum family Hangul fonts (${FONTFORMAT})
-
-BROKEN=		unfetchable
 
 LICENSE=	OFL11
 
@@ -47,7 +44,22 @@ FONTLIST=	BarunGothic \
 		Myeongjo \
 		MyeongjoBold \
 		MyeongjoExtraBold \
-		Pen
+		Pen \
+		SquareB \
+		SquareEB \
+		SquareL \
+		SquareR
+.if ${FONTTYPE} == otf
+FONTLIST+=	SquareRoundOTFB \
+		SquareRoundOTFEB \
+		SquareRoundOTFL \
+		SquareRoundOTFR
+.else
+FONTLIST+=	SquareRoundB \
+		SquareRoundEB \
+		SquareRoundL \
+		SquareRoundR
+.endif
 FONTFILES=	${FONTLIST:S|^|Nanum|:S|$|.${FONTTYPE}|}
 
 PLIST_FILES=	${FONTFILES:S|^|${FONTSDIR}/|}
