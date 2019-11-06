@@ -3,7 +3,7 @@
 PORTNAME=	dspdfviewer
 PORTVERSION=	1.15.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	graphics
 
 MAINTAINER=	fox@FreeBSD.org
@@ -44,7 +44,7 @@ CFLAGS+=	-Wno-error=zero-as-null-pointer-constant
 .endif
 
 # Fixes build failure for Clang 8.0.0
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300014
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1300014 || (${OSVERSION} >= 1103000 && ${OSVERSION} < 1200000) || ${OSVERSION} >= 1201000)
 CFLAGS+=	-Wno-error=extra-semi-stmt
 .endif
 
