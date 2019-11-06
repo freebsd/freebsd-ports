@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-alpha${PORTVERSION}
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Tool that searches the sequence of AS numbers
 
+BROKEN=		unfetchable
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:

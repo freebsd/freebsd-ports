@@ -13,6 +13,8 @@ DIST_SUBDIR=	squirrelmail
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	NLS translations for Squirrelmail (mail/squirrelmail)
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	squirrelmail${PHP_PKGNAMESUFFIX}>=${PORTVERSION}:mail/squirrelmail@${PHP_FLAVOR}

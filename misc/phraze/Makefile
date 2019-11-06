@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.incava.org/pub/phraze/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Converts telephone number to combinations of valid words
 
+BROKEN=		unfetchable
+
 USE_RUBY=	yes
 NO_BUILD=	yes
 

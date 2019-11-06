@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	moro@remus.dti.ne.jp
 COMMENT=	Command-line interface to Paul Vixie's RBL filter
 
+BROKEN=		unfetchable
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 

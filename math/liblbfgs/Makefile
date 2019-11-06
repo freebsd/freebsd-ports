@@ -10,6 +10,8 @@ MASTER_SITES=	GHC
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Library of Limited-memory Broyden-Fletcher-Goldfarb-Shanno
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 

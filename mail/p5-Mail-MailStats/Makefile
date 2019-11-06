@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to detect newer messages in procmail-generated mailboxes
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-AppConfig>=0:devel/p5-AppConfig
 

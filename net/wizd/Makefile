@@ -11,6 +11,8 @@ DISTFILES=	wizd_sources_v${PORTVERSION}.zip simplicity_v1-2.zip
 MAINTAINER=	kikuchan@uranus.dti.ne.jp
 COMMENT=	Open-source media server for Syabas-based media players
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 RUN_DEPENDS=	nkf:japanese/nkf
 

@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.jasoncantarella.com/downloads/
 MAINTAINER=	tzhuan@gmail.com
 COMMENT=	Fast Sparse Nonnegative Least Squares Solver
 
+BROKEN=		unfetchable
+
 BROKEN_aarch64=		fails to configure: error: cannot compute sizeof (int)
 
 GNU_CONFIGURE=	yes

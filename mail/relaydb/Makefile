@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.benzedrine.cx/
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Spam relay database
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/relaydb \
 		man/man8/relaydb.8.gz
 

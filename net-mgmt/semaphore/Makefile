@@ -8,6 +8,8 @@ CATEGORIES=	net-mgmt
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Open Source alternative to Ansible Tower
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE
 

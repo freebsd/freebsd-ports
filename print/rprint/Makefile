@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://gwdu111.gwdg.de/pub/FreeBSD/misc/ \
 MAINTAINER=	kheuer@gwdg.de
 COMMENT=	Remote printing utility using a raw bidirectional tcp connection
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD4CLAUSE
 
 PLIST_FILES=	bin/rprint man/man1/rprint.1.gz

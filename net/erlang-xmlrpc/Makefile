@@ -11,6 +11,8 @@ DIST_SUBDIR=	erlang
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Library for XMLRPC support in Erlang
 
+BROKEN=		unfetchable
+
 USES=		gmake erlang tar:tgz
 WRKSRC=		${WRKDIR}/xmlrpc-${PORTVERSION}
 

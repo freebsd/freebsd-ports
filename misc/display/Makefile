@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sjroz@verizon.net
 COMMENT=	Runs command repeatedly; shows output
 
+BROKEN=		unfetchable
+
 USES=		ncurses
 GNU_CONFIGURE=	yes
 

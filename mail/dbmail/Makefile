@@ -11,6 +11,8 @@ MASTER_SITES=	http://git.dbmail.eu/paul/dbmail/snapshot/ \
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SQL database-based mail system (POP3 and IMAP)
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \

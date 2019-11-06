@@ -10,6 +10,8 @@ MASTER_SITES=	http://aetos.it.teithe.gr/~tzabal/ports/jitsi/
 MAINTAINER=	tzabal@it.teithe.gr
 COMMENT=	Open source IM and VoIP application
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21
 
 USES=		zip

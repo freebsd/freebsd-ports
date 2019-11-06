@@ -8,6 +8,8 @@ CATEGORIES=	misc textproc python
 MAINTAINER=	alexander.4mail@gmail.com
 COMMENT=	Text-mode fb2 books reader
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		python:2.7

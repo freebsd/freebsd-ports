@@ -11,6 +11,8 @@ DISTNAME=	socket++-${PORTVERSION}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	C++ wrapper library to the sockets
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 

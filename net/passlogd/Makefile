@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.morphine.com/void/
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Intercept and dump syslog remote log packets
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	sbin/passlogd
 
 post-patch:

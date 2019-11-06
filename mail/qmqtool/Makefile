@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-current
 MAINTAINER=	mwill@spingen.com
 COMMENT=	Tool to manipulate contents of a qmail queue
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 USES=		perl5 tar:tgz

@@ -10,6 +10,8 @@ DISTNAME=	auto-multiple-choice_${PORTVERSION}_precomp
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Multiple-choice questionnaire management with automated marking
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcairo.so:graphics/cairo \

@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.maxlor.com/files/
 MAINTAINER=	mail@maxlor.com
 COMMENT=	Utility for searching the FreeBSD Ports Collection
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/psearch \
 		man/man1/psearch.1.gz
 

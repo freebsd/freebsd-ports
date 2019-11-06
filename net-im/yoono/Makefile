@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-desktop-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Client for Twitter and other social networks
 
+BROKEN=		unfetchable
+
 LICENSE_NAME=	ToU
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_TEXT=	http://www.yoono.com/terms.html

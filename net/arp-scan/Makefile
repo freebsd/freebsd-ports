@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.nta-monitor.com/files/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ARP scanning and fingerprinting tool
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes

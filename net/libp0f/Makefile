@@ -10,6 +10,8 @@ DISTNAME=	p0flib
 MAINTAINER=	setjmp@hotmail.com
 COMMENT=	Library of p0f-2.x for yaf as in the CERT NETSA confluence
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21
 
 WRKSRC_SUBDIR=	libp0f

@@ -17,6 +17,8 @@ EXTRACT_ONLY=
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Commercial Spreadsheet
 
+BROKEN=		unfetchable
+
 NO_PACKAGE=	Commercial software with nothing to build - install from port
 
 IA32_BINARY_PORT=yes

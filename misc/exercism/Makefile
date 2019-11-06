@@ -8,6 +8,8 @@ CATEGORIES=	misc
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CLI client for exercism.io
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

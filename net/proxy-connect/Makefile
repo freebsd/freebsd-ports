@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.exit2shell.com/~skreuzer/distfiles/ \
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Command to make network connections via SOCKS and HTTPS proxies
 
+BROKEN=		unfetchable
+
 USES=	tar:bzip2
 
 EXENAME=	${PORTNAME}

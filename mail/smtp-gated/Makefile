@@ -10,6 +10,8 @@ MASTER_SITES=	http://software.klolik.org/smtp-gated/files/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Proxy for SMTP sessions with virus and spam scan
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes

@@ -11,6 +11,8 @@ DISTNAME=	die-c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Marsaglia's Diehard Battery of Tests of Randomness
 
+BROKEN=		unfetchable
+
 LICENSE=	NONE
 
 ALL_TARGET=	diehard

@@ -11,6 +11,8 @@ DISTNAME=	IRPF2014-1.4
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Programa do Imposto de Renda Pessoa Fisica 2014 versao Java
 
+BROKEN=		unfetchable
+
 LICENSE=	EULA
 LICENSE_NAME=	End User License Agreement
 LICENSE_FILE=	${WRKSRC}/IRPF-Licenses.txt

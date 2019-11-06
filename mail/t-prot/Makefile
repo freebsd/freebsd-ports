@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.escape.de/~tolot/mutt/t-prot/downloads/ \
 MAINTAINER=	torres.g.alex@gmail.com
 COMMENT=	TOFU Protection - Display Filter for RFC822 messages
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	p5-Locale-gettext>=0:devel/p5-Locale-gettext
 
 NO_ARCH=	yes

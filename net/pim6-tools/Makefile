@@ -10,6 +10,8 @@ DISTNAME=	mcast-tools-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IPv6 multicast tools
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 

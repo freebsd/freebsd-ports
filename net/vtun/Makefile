@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 DEPRECATED=		No longer supported by upline

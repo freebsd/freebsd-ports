@@ -13,6 +13,8 @@ PATCHFILES=	clipgrab-qt5-${PORTVERSION}.patch:-p1
 MAINTAINER=	kikadf.01@gmail.com
 COMMENT=	Program to download videos from YouTube and etc
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 USES=		compiler:c++11-lang qmake qt:5

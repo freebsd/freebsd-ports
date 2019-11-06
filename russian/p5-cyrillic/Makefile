@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library for fast and easy Cyrillic text manipulation
 
+BROKEN=		unfetchable
+
 USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes

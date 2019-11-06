@@ -11,6 +11,8 @@ DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Skins for free42, simulation of the HP-42S scientific calculator
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	free42>0:misc/free42

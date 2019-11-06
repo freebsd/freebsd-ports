@@ -9,6 +9,8 @@ MASTER_SITES=	http://gromnizki.unixdev.net/soft/
 MAINTAINER=	gromnizki@unixdev.net
 COMMENT=	Remove unsafe characters from email & make xterm happy
 
+BROKEN=		unfetchable
+
 ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/tidyup-mail man/ru.KOI8-R/man1/tidyup-mail.1.gz
 

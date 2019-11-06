@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Miscellaneous Norwegian-specific conversion methods for Perl
 
+BROKEN=		unfetchable
+
 USES=		perl5
 USE_PERL5=	configure
 

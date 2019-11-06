@@ -14,6 +14,8 @@ EXTRACT_ONLY=
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Truth Tables generator (written in Java)
 
+BROKEN=		unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

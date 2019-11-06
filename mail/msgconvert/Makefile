@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.bz2
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Convert .MSG files to multipart MIME messages (mbox)
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	p5-OLE-Storage_Lite>=0:devel/p5-OLE-Storage_Lite \
 		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
 		p5-TimeDate>=0:devel/p5-TimeDate

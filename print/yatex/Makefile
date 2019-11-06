@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Yet Another LaTeX mode and html mode on Emacs
 
+BROKEN=		unfetchable
+
 USES=		dos2unix emacs
 EMACS_NO_DEPENDS=	yes
 

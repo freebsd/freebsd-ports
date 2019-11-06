@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.sourcefiles.org/Internet/News/Usenet_Clients/  \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Newsreader
 
+BROKEN=		unfetchable
+
 BROKEN_aarch64=	Fails to link: missing sbrk
 
 USES=		tar:Z

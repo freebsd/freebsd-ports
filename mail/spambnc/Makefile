@@ -13,6 +13,8 @@ EXTRACT_ONLY=	sb.tar.gz
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Set of procmail recipes which handle known/suspected spam
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	procmail:mail/procmail

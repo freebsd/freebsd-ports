@@ -8,6 +8,8 @@ MASTER_SITES=	http://www.pro-bono-publico.de/projects/src/
 MAINTAINER=	akuz84@gmail.com
 COMMENT=	This is a TACACS+ daemon from pro-bono
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 USES=		gmake perl5 ssl shebangfix

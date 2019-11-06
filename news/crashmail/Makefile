@@ -10,6 +10,8 @@ DISTNAME=	cm071linux
 MAINTAINER=	vk@vk.pp.ru
 COMMENT=	CrashMail II FTN mail tosser
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src

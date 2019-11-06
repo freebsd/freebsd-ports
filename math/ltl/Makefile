@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.mpe.mpg.de/~drory/ltl/
 MAINTAINER=	rossiya@gmail.com
 COMMENT=	C++ class SSE library for scientific computing
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

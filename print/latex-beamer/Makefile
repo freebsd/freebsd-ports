@@ -10,6 +10,8 @@ DISTNAME=	version-${PORTVERSION:S/./-/}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	LaTeX class to create a beamer presentation
 
+BROKEN=		unfetchable
+
 USES=		tar:bz2
 USE_TEX=	texmf latex texhash
 TEXHASHDIRS=	${TEXMFDIR}

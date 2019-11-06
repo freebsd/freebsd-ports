@@ -10,6 +10,8 @@ CATEGORIES=	net-im
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Privacy plugin for the pidgin instant messenger
 
+BROKEN=		unfetchable
+
 DEPRECATED=	Abandonware
 EXPIRATION_DATE=	2019-12-09
 

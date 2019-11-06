@@ -10,6 +10,8 @@ MASTER_SITES=	http://gkrellm.luon.net/files/
 MAINTAINER=	ktsin@acm.org
 COMMENT=	GKrellM wireless plugin
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 

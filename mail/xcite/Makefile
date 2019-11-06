@@ -13,6 +13,8 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Exciting Cite for any Mail/News reading modes on Emacs
 
+BROKEN=		unfetchable
+
 USES=		emacs
 
 NO_WRKSUBDIR=	yes

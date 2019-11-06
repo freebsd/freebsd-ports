@@ -10,6 +10,8 @@ MASTER_SITES=	http://thewalter.net/stef/software/bsnmp-regex/
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	bsnmpd module allowing creation of counters from log files
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes

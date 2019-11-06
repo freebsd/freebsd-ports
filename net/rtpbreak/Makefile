@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Detects, reconstructs, and analyzes any RTP session
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libnet.so:net/libnet
 
 CFLAGS+=	-I${LOCALBASE}/include

@@ -9,6 +9,8 @@ MASTER_SITES=	http://muuz.deadbbs.com/FreeBSD/rftp/
 MAINTAINER=	kline@thought.org
 COMMENT=	Automatically reconstruct ftpmail- or bitftp-retrieved files
 
+BROKEN=		unfetchable
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rftp ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/uucat ${STAGEDIR}${PREFIX}/bin

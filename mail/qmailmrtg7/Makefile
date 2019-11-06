@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.inter7.com/qmailmrtg7/
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Program to create mrtg graphs for qmail activity
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	mrtg:net-mgmt/mrtg

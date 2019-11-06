@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.wormulon.net/files/slurm/ \
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Generic network load monitor
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 
 LDFLAGS+=	-lncurses

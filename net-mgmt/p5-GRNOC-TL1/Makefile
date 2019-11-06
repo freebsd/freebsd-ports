@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Retrieve data from different models of TL1 devices
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Date-Calc>0:devel/p5-Date-Calc \
 		p5-Net-SSH-Expect>0:net/p5-Net-SSH-Expect \

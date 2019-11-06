@@ -8,6 +8,8 @@ CATEGORIES=	net-mgmt
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Time-series data collection
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386

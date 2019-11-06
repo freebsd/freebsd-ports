@@ -10,6 +10,8 @@ DISTNAME=	sc-0.5
 MAINTAINER=	logix@foobar.franken.de
 COMMENT=	Calculates "DNS-spam"-values for hostnames
 
+BROKEN=		unfetchable
+
 USES=		perl5 tar:tgz
 
 OPTIONS_DEFINE=	DOCS

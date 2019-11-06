@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.dewn.com/rfc/
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Perl script to search for RFC's
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	w3m:www/w3m
 
 NO_BUILD=	yes

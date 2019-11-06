@@ -12,6 +12,8 @@ EXTRACT_SUFX=
 MAINTAINER=	tedm@ipinc.net
 COMMENT=	Server to allow users to change their password from within Eudora
 
+BROKEN=		unfetchable
+
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| ${SED} -e '1,16d' | ${SH}

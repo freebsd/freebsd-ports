@@ -10,6 +10,8 @@ MASTER_SITES=	http://exe2bin.com/granulate/ \
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Granulate is a program for splitting files in place
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/granulate
 
 post-patch:

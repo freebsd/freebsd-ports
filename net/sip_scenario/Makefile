@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}.v${PORTVERSION}
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	SIP call flow creator (HTML format)
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 
 USES=		perl5 zip shebangfix

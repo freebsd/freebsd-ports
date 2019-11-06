@@ -10,6 +10,8 @@ MASTER_SITES=	http://www6.freebsdbrasil.com.br/~eksffa/l/qmail-auditor/
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	Selective e-mail auditing for qmail by means of qmail-queue wrapping
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME:R}
 
 USES=		qmail:run

@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Command line tool to make a copy from a Video DVD
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libdvdnav.so:multimedia/libdvdnav \
 		libdvdread.so:multimedia/libdvdread
 RUN_DEPENDS=	buffer:misc/buffer \

@@ -9,6 +9,8 @@ MASTER_SITES=	http://sarg.sourceforge.net/
 MAINTAINER=	sexbear@tmu.edu.tw
 COMMENT=	Sendmail Analysis Report Generator
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message

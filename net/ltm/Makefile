@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.statseeker.com/downloads/
 MAINTAINER=	ltm-support@statseeker.com
 COMMENT=	Statseeker Real Time LAN Analyser
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 
 do-install:

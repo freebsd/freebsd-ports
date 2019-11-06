@@ -10,6 +10,8 @@ MASTER_SITES=	http://netdot.uoregon.edu/pub/dists/
 MAINTAINER=	nick@foobar.org
 COMMENT=	Open source tool to organize and maintain network information
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-libapreq2>=0:www/p5-libapreq2 \
