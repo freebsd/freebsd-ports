@@ -3,6 +3,7 @@
 PORTNAME=	openra
 PORTVERSION=	20190314
 DISTVERSIONPREFIX=	release-
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20161223/:SDL2_CS \
 		https://github.com/${GH_ACCOUNT}/OpenAL-CS/releases/download/20151227/:OpenAL_CS \
@@ -13,7 +14,7 @@ DISTFILES=	SDL2-CS.dll:SDL2_CS \
 		OpenAL-CS.dll:OpenAL_CS \
 		OpenAL-CS.dll.config:OpenAL_CS \
 		Eluant.dll:Eluant \
-		GeoLite2-Country_20190312${EXTRACT_SUFX}:GeoLite2
+		GeoLite2-Country_20191105${EXTRACT_SUFX}:GeoLite2
 EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.config:N*.dll:N*.nupkg}
 
 MAINTAINER=	jbeich@FreeBSD.org
