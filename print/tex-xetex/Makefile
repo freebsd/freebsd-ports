@@ -23,7 +23,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
 		libTECkit.so:textproc/teckit
 
-USES=		compiler:c++11-lib pkgconfig tar:xz
+USES=		compiler:c++11-lib gnome pkgconfig tar:xz xorg
 USE_CXXSTD=	gnu++11
 USE_TEX=	kpathsea web2c texmf formats fmtutil dvipdfmx
 USE_XORG=	pixman

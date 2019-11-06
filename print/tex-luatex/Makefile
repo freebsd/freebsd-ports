@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libmpfr.so:math/mpfr \
 		libzzip.so:devel/zziplib
 
-USES=		pkgconfig tar:xz libtool
+USES=		gnome libtool pkgconfig tar:xz xorg
 USE_TEX=	kpathsea web2c texmf formats texlua texluajit fmtutil
 USE_XORG=	pixman
 USE_GNOME=	cairo

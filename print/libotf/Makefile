@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		pathfix pkgconfig libtool:keepla
+USES=		pathfix pkgconfig libtool:keepla xorg
 GNU_CONFIGURE=	yes
 USE_XORG=	ice sm x11 xaw xt xmu
 INSTALL_TARGET=	install-strip

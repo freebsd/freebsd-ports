@@ -21,7 +21,8 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		gettext gmake libtool localbase pathfix perl5 pkgconfig tar:bzip2
+USES=		gettext gmake gnome libtool localbase pathfix perl5 pkgconfig \
+		tar:bzip2 xorg
 USE_GNOME=	cairo gtk20
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xaw ice xscrnsaver

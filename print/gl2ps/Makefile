@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake tar:tgz
+USES=		cmake gl tar:tgz
 USE_GL=		gl
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source

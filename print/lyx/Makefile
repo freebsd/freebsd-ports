@@ -23,7 +23,7 @@ MAJOR_VERSION=	2.3
 MINOR_VERSION=	2
 
 USES=		compiler:c++11-lang desktop-file-utils gmake iconv pkgconfig \
-		perl5 python:2.7 qt:5 shebangfix tar:xz
+		perl5 python:2.7 qt:5 shebangfix tar:xz xorg
 USE_QT=		core concurrent gui svg widgets x11extras buildtools_build qmake_build
 USE_XORG=	xcb
 GNU_CONFIGURE=	yes
