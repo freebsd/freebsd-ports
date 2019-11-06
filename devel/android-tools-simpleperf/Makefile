@@ -9,8 +9,6 @@ CATEGORIES=	devel
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Android simpleperf tool
 
-BROKEN=		unfetchable
-
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
