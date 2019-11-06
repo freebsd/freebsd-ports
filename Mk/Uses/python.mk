@@ -496,8 +496,8 @@ PYTHON_CMD?=		${_PYTHON_BASECMD}${_PYTHON_VERSION}
 .if ${PYTHON_VER} != 2.7
 .if exists(${PYTHON_CMD}-config)
 PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
-.else
-# Default ABI flags for lang/python3x ports
+.elif ${PYTHON_REL} < 3800
+# Default ABI flags for lang/python3[567] ports
 PYTHON_ABIVER=		m
 .endif
 .endif
