@@ -13,6 +13,7 @@ COMMENT=	Multiping host checker dockapp
 
 BROKEN=		unfetchable
 
+USES=		xorg
 USE_XORG=	xpm
 
 OPTIONS_DEFINE=	DOCS

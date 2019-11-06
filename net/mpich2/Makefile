@@ -124,6 +124,7 @@ CONFIGURE_ARGS+=	--disable-graphics
 PLIST_SUB+=	X11="@comment "
 .else
 CONFIGURE_ARGS+=	--x-includes=${LOCALBASE}/include --x-libraries==${LOCALBASE}/lib
+USES+=		xorg
 USE_XORG=	x11 xt
 PLIST_SUB+=	X11=${PLX11}
 .endif

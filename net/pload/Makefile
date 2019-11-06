@@ -11,7 +11,7 @@ MASTER_SITES=	LOCAL/pav \
 MAINTAINER=	fbsd@opal.com
 COMMENT=	X11 program to display network traffic graphs
 
-USES=		imake:env
+USES=		imake:env xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 HAS_CONFIGURE=	yes
 LATE_INSTALL_ARGS=	install.man

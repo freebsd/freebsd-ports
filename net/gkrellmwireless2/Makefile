@@ -16,8 +16,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 
 WRKSRC=		${WRKDIR}/gkrellmwireless
+USES=		gmake pkgconfig xorg
 USE_XORG=	x11
-USES=		gmake pkgconfig
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins

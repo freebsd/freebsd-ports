@@ -19,8 +19,9 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libgpg-error.so:security/libgpg-error \
 		libsasl2.so:security/cyrus-sasl2
 
+USES=		gettext gmake gnome libtool localbase pathfix pkgconfig python \
+		tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build
-USES=		gettext gmake gnome libtool localbase pathfix pkgconfig python tar:xz
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

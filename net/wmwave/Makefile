@@ -11,6 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	benjsc@FreeBSD.org
 COMMENT=	Display 802.11 status in the WindowMaker Dock
 
+USES=		xorg
 USE_XORG=	xpm
 
 PLIST_FILES=	bin/wmwave man/man1/wmwave.1.gz

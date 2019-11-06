@@ -27,7 +27,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 PORTSCOUT=	limitw:1,even
 
 USES=		cpe gettext gmake gnome jpeg localbase pathfix \
-		pkgconfig tar:xz
+		pkgconfig tar:xz xorg
 CPE_VENDOR=	david_king
 USE_GNOME=	cairo gtk30 intlhack
 USE_XORG=	ice x11 xdamage xext xfixes sm xtst

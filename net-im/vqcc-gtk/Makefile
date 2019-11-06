@@ -12,7 +12,7 @@ COMMENT=	LAN chat client compatible with quickChat and Vypress Chat (TM)
 
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 
-USES=		pathfix gmake gettext pkgconfig
+USES=		pathfix gmake gnome gettext pkgconfig xorg
 USE_GNOME=	gnomeprefix gtk20
 USE_XORG=	x11 xext xscrnsaver
 GNU_CONFIGURE=	yes

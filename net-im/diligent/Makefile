@@ -16,7 +16,7 @@ USE_LDCONFIG=	yes
 USE_QT=		core gui linguist network svg \
 		webkit widgets x11extras buildtools_build
 USE_GL=		gl
-USES=		compiler:c++11-lang qmake qt:5
+USES=		compiler:c++11-lang gl qmake qt:5
 
 QMAKE_ARGS=	CONFIG+="configure"
 

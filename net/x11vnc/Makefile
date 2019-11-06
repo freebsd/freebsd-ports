@@ -14,11 +14,11 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS=	libvncserver.so:net/libvncserver
 
+USES=		iconv pkgconfig jpeg ssl gmake autoreconf xorg
 USE_XORG=	x11 xcb xdamage xfixes xrandr xinerama xext xtst xau xrender \
 		xdmcp xi xorgproto
 # Sets LDFLAGS and adds to CONFIGURE_ENV, therefore we set LDFLAGS
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		iconv pkgconfig jpeg ssl gmake autoreconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include

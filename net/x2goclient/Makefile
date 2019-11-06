@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcups.so:print/cups \
 RUN_DEPENDS=	nxproxy:net/nxproxy \
 		x2goclient-cli:net/x2goclient-cli
 
-USES=		compiler:c++11-lang gl qmake qt:5
+USES=		compiler:c++11-lang gl qmake qt:5 xorg
 USE_GL=		gl
 USE_XORG=	x11 xpm
 USE_QT=		core gui network svg widgets x11extras  \

@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	ice sm x11 xext xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dummy-driver

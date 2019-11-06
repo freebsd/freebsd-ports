@@ -5,7 +5,7 @@ PKGNAMESUFFIX=	-nx
 
 COMMENT=	Remmina plugin for NX
 
-USES=		gnome
+USES=		gnome xorg
 USE_GNOME=	cairo
 USE_XORG=	x11 xkbfile
 

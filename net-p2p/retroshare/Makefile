@@ -29,7 +29,7 @@ LIB_DEPENDS=	libsqlcipher.so:databases/sqlcipher \
 		libminiupnpc.so:net/miniupnpc
 
 USES=		compiler:features desktop-file-utils dos2unix \
-		gnome pkgconfig qmake qt:5 ssl
+		gl gnome pkgconfig qmake qt:5 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	RetroShare
 GH_PROJECT=	RetroShare

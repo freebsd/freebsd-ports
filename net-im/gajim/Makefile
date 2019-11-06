@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cssutils>=1.0.2:www/py-cssutils@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${PY_FLAVOR}
 
-USES=		cpe dos2unix gnome python:3.5+ tar:bzip2
+USES=		cpe dos2unix gnome python:3.5+ tar:bzip2 xorg
 USE_PYTHON=	autoplist distutils noflavors
 USE_GNOME=	intltool pygobject3
 USE_XORG=	x11 xext xscrnsaver
