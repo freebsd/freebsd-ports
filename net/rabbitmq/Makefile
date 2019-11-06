@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.7.17
+DISTVERSION=	3.8.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -69,8 +69,10 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/rabbitmq
 	@${MKDIR} ${STAGEDIR}/var/db/rabbitmq/mnesia
 	@${MKDIR} ${STAGEDIR}/var/log/rabbitmq
-	${INSTALL_DATA} ${WRKSRC}/deps/rabbit/docs/rabbitmq.config.example \
-	${STAGEDIR}${PREFIX}/etc/rabbitmq/rabbitmq.config.sample
+	${INSTALL_DATA} ${WRKSRC}/deps/rabbit/docs/advanced.config.example \
+	${STAGEDIR}${PREFIX}/etc/rabbitmq/advanced.config.sample
+	${INSTALL_DATA} ${WRKSRC}/deps/rabbit/docs/rabbitmq.conf.example \
+	${STAGEDIR}${PREFIX}/etc/rabbitmq/rabbitmq.conf.sample
 .for _file in rabbitmq-defaults rabbitmq-diagnostics rabbitmq-env rabbitmq-plugins rabbitmq-server rabbitmqctl
 	${LN} -s ../lib/rabbitmq_server-${PORTVERSION}/sbin/${_file} ${STAGEDIR}${PREFIX}/sbin
 .endfor
