@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	wxWidgets frontend for abgx360
 
+BROKEN=		unfetchable
+
 LICENSE=	NONE
 
 RUN_DEPENDS=	abgx360:sysutils/abgx360 \

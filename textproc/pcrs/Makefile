@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	wongk@apt.homeunix.net
 COMMENT=	Perl-compatible regular expression based substitutions
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libpcre.so:devel/pcre

@@ -11,6 +11,8 @@ DISTNAME=	CrashPlan_${DISTVERSION}_Linux
 MAINTAINER=	subtil@gmail.com
 COMMENT=	Backs up data to remote servers or hard drives
 
+BROKEN=		unfetchable
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 RUN_DEPENDS=	bash:shells/bash

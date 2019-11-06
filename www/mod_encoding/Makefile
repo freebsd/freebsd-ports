@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for non-ASCII filename interoperability
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE11
 
 USES=		apache:2.2+ iconv gmake

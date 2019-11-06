@@ -11,6 +11,8 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Mass virtual hosting using mod_ldap or mod_dbd with Apache 2.2.x
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE11
 
 MANUAL_PACKAGE_BUILD=	needs apr with LDAP and DBD options enabled

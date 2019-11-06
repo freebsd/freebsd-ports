@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.newsrssticker.com/src/ \
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	News RSS Ticker
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes

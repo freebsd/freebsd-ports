@@ -10,6 +10,8 @@ MASTER_SITES=	http://cthulhu.c3d2.de/~toidinamai/vlock/archive/
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Locks a terminal
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 HAS_CONFIGURE=	yes

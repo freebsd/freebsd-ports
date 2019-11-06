@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-8089
 MAINTAINER=	candy@kgc.co.jp
 COMMENT=	Simple digital timer for X11
 
+BROKEN=		unfetchable
+
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 PLIST_FILES=	bin/xtimer man/man1/${PORTNAME}.1.gz

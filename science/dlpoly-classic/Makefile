@@ -11,6 +11,8 @@ DISTNAME=	dl_class_${PORTVERSION}
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Molecular dynamics simulation package
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpif90:net/openmpi
 RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 

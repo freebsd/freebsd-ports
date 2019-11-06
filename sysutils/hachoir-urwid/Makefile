@@ -9,6 +9,8 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Binary file explorer
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:devel/hachoir-parser \
 		${PYTHON_SITELIBDIR}/urwid/__init__.py:devel/py-urwid@${PY_FLAVOR}
 

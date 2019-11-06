@@ -11,6 +11,8 @@ DISTFILES=	vils
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Use your favorite editor to rename files
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	zsh:shells/zsh

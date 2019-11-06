@@ -12,6 +12,8 @@ DISTFILES=	xmlpp.pl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML pretty printer
 
+BROKEN=		unfetchable
+
 USES=		shebangfix perl5
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

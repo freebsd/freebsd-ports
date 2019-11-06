@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Web server fingerprinting utility
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL
 

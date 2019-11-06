@@ -11,6 +11,8 @@ MASTER_SITES=	https://pekwm.org/projects/3/files/
 MAINTAINER=	natbsd@instinctive.eu
 COMMENT=	Light, Unobtrusive, and configurable windowmanager
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

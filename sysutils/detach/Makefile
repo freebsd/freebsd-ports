@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://ftp.ntnu.no/pub/unix/utils/
 MAINTAINER=	arnej@pvv.org
 COMMENT=	Start a process detached from a terminal
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/detach man/man1/detach.1.gz
 
 do-install:

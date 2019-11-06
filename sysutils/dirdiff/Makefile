@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/paulus/
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Graphical diff tool
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

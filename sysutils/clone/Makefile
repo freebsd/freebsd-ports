@@ -9,6 +9,8 @@ MASTER_SITES=	http://cyclaero.com/public/clone/
 MAINTAINER=	cyclaero@gmail.com
 COMMENT=	File tree cloning tool
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 USES=		compiler:c11

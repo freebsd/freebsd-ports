@@ -10,6 +10,8 @@ MASTER_SITES=	http://nsd.dyndns.org/pwsafe/releases/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Cmdline program that manages encrypted password databases
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	SETUID X11

@@ -16,6 +16,8 @@ DISTNAME=	${DISTDATE}_madsonic-${PORTVERSION}${DISTVERSIONSUFFIX}-standalone
 MAINTAINER=	jlh@FreeBSD.org
 COMMENT=	Subsonic streaming media server, standalone version
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 OPTIONS_GROUP=	TRANSCODING

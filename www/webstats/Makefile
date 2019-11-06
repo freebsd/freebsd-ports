@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	kevin@caomhin.demon.co.uk
 COMMENT=	Automated log file processing
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL
 

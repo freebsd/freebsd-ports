@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.nickwithers.com/downtime/
 MAINTAINER=	nick@nickwithers.com
 COMMENT=	GTK-based shutdown manager using shutdown(8)
 
+BROKEN=		unfetchable
+
 USES=		desktop-file-utils pkgconfig shared-mime-info
 USE_GNOME=	gtk20
 

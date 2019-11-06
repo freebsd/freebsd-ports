@@ -11,6 +11,8 @@ DISTNAME=	ssh-askpass-fullscreen-${PORTVERSION}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Tiny GTK2 ssh askpass replacement
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

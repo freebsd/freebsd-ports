@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	bob@bomar.us
 COMMENT=	Simple web based photo gallery
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	anytopnm:graphics/netpbm\
 		p5-Image-Info>=0:graphics/p5-Image-Info\
 		p5-URI>=0:net/p5-URI

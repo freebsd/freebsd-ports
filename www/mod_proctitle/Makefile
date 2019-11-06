@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Set httpd process titles to reflect currently processed request
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes

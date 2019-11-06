@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.feep.net/pub/software/PAM/pam_per_user/
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	PAM module for per-user authentication
 
+BROKEN=		unfetchable
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 

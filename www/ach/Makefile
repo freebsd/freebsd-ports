@@ -10,6 +10,8 @@ MASTER_SITES=	GHC
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Free, open source tool for complex research problems
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 USE_MYSQL=	yes

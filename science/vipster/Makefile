@@ -9,6 +9,8 @@ CATEGORIES=	science
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Crystalline and molecular structure visualisation program
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

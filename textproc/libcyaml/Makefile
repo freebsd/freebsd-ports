@@ -8,6 +8,8 @@ CATEGORIES=	textproc
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for reading and writing YAML
 
+BROKEN=		unfetchable
+
 LICENSE=	ISCL
 
 LIB_DEPENDS=	libyaml.so:textproc/libyaml

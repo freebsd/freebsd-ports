@@ -11,6 +11,8 @@ MASTER_SITES=	http://deathbeforedecaf.net/misc/ports/ \
 MAINTAINER=	freebsd@deathbeforedecaf.net
 COMMENT=	Summarise ipf logs by counting and sorting the fields
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/ipfcount man/man1/ipfcount.1.gz
 
 USES=		perl5 shebangfix

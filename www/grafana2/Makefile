@@ -12,6 +12,8 @@ DISTFILES=	grafana-static-${PORTVERSION}.tar.gz:static_assets
 MAINTAINER=	thomas@bartelmess.io
 COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 
 ONLY_FOR_ARCHS=	i386 amd64

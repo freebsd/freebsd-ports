@@ -10,6 +10,8 @@ MASTER_SITES=	http://gromnizki.unixdev.net/soft/
 MAINTAINER=	gromnizki@unixdev.net
 COMMENT=	Tcl/Tk-based timezone viewer
 
+BROKEN=		unfetchable
+
 USES=		tk:run
 NO_BUILD=	yes
 

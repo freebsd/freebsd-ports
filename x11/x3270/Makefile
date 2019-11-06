@@ -11,6 +11,8 @@ EXTRACT_SUFX=	ga7-src.tgz
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	3270 Terminal emulator
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		mkfontscale:x11-fonts/mkfontscale
 

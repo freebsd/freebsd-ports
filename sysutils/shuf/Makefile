@@ -9,6 +9,8 @@ MASTER_SITES=	https://devio.us/~bcallah/shuf/
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Randomly permute input lines
 
+BROKEN=		unfetchable
+
 LICENSE=	ISCL
 
 GNU_CONFIGURE=	yes

@@ -9,6 +9,8 @@ CATEGORIES=	security
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Reasonable Expectation Of Privacy
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		gmake

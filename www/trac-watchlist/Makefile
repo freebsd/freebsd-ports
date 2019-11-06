@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}plugin-r${SVN_REV}
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Watchlist feature for wikis and tickets of Trac
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3+
 
 RUN_DEPENDS=	tracd:www/trac

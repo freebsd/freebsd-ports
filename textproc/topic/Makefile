@@ -9,6 +9,8 @@ MASTER_SITES=	http://freebsd.hypermart.net/code/
 MAINTAINER=	email@freebsd.hypermart.net
 COMMENT=	Topic markup parser
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 PLIST_FILES=	bin/topic \

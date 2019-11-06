@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	estrabd@gmail.com
 COMMENT=	Tiny CLI blogging tool
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}
 

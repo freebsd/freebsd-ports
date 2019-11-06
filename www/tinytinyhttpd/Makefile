@@ -9,6 +9,8 @@ MASTER_SITES=	GHC
 MAINTAINER=	smatsui@karashi.org
 COMMENT=	Tiny tiny httpd
 
+BROKEN=		unfetchable
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	mattn
 

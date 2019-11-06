@@ -8,6 +8,8 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimal, Multithreaded web server in C
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 DEPRECATED=	Upstream no longer available

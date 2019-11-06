@@ -11,6 +11,8 @@ MASTER_SITES=	http://josefsson.org/gnutls/releases/opencdk/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Open Crypto Development Kit
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

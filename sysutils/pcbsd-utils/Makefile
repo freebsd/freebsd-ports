@@ -9,6 +9,8 @@ CATEGORIES=	sysutils
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Command-Line Utilities
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	sipcalc:net-mgmt/sipcalc \

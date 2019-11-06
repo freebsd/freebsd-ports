@@ -10,6 +10,8 @@ DISTNAME=	cloop_${CLOOP_VERSION}-${CLOOP_REVISION}
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Compressed loop FS utils
 
+BROKEN=		unfetchable
+
 USES=		gmake
 
 WRKSRC=		${WRKDIR}/cloop-${CLOOP_VERSION}

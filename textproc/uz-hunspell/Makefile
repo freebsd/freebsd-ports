@@ -12,6 +12,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Uzbek hunspell dictionaries
 
+BROKEN=		unfetchable
+
 ALL_TARGET=	uz_UZ.dic
 NO_ARCH=	yes
 USES=		tar:bzip2

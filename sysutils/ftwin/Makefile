@@ -10,6 +10,8 @@ MASTER_SITES=	http://files.etoilebsd.net/ftwin/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful tool to find duplicate files
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/
 MAINTAINER=	jacs@gnome.co.uk
 COMMENT=	Make fish swim in the background of your screen
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/xfishtank
 USES=		imake
 USE_XORG=	x11 xext

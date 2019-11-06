@@ -11,6 +11,8 @@ DISTFILES=	UDFclient.${PORTVERSION}.tgz
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Tools for UDF filesystem
 
+BROKEN=		unfetchable
+
 LICENSE=	ClArtistic
 
 WRKSRC=		${WRKDIR}/UDFclient.${PORTVERSION}

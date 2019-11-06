@@ -12,6 +12,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Swedish hyphenation rules
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21
 
 USES=		zip

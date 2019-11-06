@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.mammothcheese.ca/
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Lightweight kqueue-based http/1.1 server
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

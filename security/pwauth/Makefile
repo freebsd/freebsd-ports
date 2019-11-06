@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.unixpapa.com/software/
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Unix Web Authenticator
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 PLIST_FILES=	"@(,,4555) bin/pwauth" \

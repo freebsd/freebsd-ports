@@ -11,6 +11,8 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce keyboard LEDs panel plugin
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

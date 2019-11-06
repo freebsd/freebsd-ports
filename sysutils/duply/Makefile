@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Shell front end for the duplicity backup tool
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 

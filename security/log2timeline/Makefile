@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Log file parser for computer forensic investigations
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

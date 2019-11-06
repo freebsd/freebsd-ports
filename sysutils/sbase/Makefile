@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-4b9c664
 MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Collection of UNIX tools that are portable across UNIX-like systems
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

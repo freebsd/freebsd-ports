@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.ederbs.org/pub/ \
 MAINTAINER=	freebsduser@paradisegreen.co.uk
 COMMENT=	Simple APC UPS Daemon
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 USE_RC_SUBR=	upsdaemon

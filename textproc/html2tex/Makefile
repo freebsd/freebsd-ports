@@ -12,6 +12,8 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	HTML to LaTeX converter, last modified 2010
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/html2tex
 NO_WRKSUBDIR=	yes
 

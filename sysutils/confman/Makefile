@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.timesinks.net/distfiles/
 MAINTAINER=	ccowart@timesinks.net
 COMMENT=	Revision controlled configuration manager
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	bash:shells/bash \
 		svn:devel/subversion \

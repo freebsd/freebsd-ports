@@ -10,6 +10,8 @@ DISTFILES=	${PORTNAME}-manual-main-reference.pdf
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Bareos document set (PDF)
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 
 PORTDOCS=	*.pdf

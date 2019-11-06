@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Various OpenPGP related tools
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	gpg:security/gnupg \
 		p5-Net-IDN-Encode>=0:textproc/p5-Net-IDN-Encode \
 		p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \

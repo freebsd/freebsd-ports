@@ -9,6 +9,8 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	gregf@hugops.pw
 COMMENT=	Developer-targeted fonts with a high number of glyphs
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 
 USES=		fonts

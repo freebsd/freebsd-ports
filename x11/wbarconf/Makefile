@@ -10,6 +10,8 @@ MASTER_SITES=	http://koti.kapsi.fi/ighea/wbarconf/
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Configuration GUI for wbar
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	wbar:x11/wbar

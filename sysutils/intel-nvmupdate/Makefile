@@ -13,6 +13,8 @@ DISTNAME=	700Series_NVMUpdatePackage_v${DISTVERSION}_FreeBSD
 MAINTAINER=	freebsd@intel.com
 COMMENT=	NVM Update Utility for Intel(R) Ethernet Adapters
 
+BROKEN=		unfetchable
+
 LICENSE=		IFL IPL
 LICENSE_COMB=		multi
 

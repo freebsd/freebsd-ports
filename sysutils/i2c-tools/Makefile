@@ -9,6 +9,8 @@ MASTER_SITES=	http://dl.lm-sensors.org/i2c-tools/releases/
 MAINTAINER=	avg@FreeBSD.org
 COMMENT=	Heterogeneous set of I2C tools
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 NO_BUILD=	yes

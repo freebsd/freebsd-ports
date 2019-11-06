@@ -12,6 +12,8 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users authentication based on external mechanisms
 
+BROKEN=		unfetchable
+
 LICENSE=	APACHE20
 
 USES=		apache:2.2+

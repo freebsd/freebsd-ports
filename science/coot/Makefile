@@ -12,6 +12,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Crystallographic Object-Oriented Toolkit
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 

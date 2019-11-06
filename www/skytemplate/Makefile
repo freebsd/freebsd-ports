@@ -11,6 +11,8 @@ DISTNAME=	SkyTemplate.v${PORTVERSION:S/.//g}
 MAINTAINER=	munggo@gmail.com
 COMMENT=	Yet another PHP compiling template engine
 
+BROKEN=		unfetchable
+
 USES=		php:web
 NO_BUILD=	yes
 NO_ARCH=	yes

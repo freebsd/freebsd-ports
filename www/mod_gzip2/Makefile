@@ -11,6 +11,8 @@ DISTNAME=	mod_gzip-${PORTVERSION}
 MAINTAINER=	sec@42.org
 COMMENT=	Apache 2.x Internet Content Acceleration module
 
+BROKEN=		unfetchable
+
 #LICENSE=	AL11
 
 AP_FAST_BUILD=	yes

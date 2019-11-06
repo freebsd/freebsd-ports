@@ -11,6 +11,8 @@ DISTNAME=	autojump_v${PORTVERSION}
 MAINTAINER=	neeraj.verma.ports@vermatech.com
 COMMENT=	Tool that acts as a complement to cd
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

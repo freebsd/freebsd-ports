@@ -9,6 +9,8 @@ CATEGORIES=	sysutils
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Web Interface
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	syscache:sysutils/pcbsd-syscache \

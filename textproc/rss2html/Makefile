@@ -10,6 +10,8 @@ MASTER_SITES=	http://mirror.mcx2.org/
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	RSS to HTML converter
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libcurl.so:ftp/curl

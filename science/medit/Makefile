@@ -12,6 +12,8 @@ EXTRACT_ONLY=	${SOURCETARB}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Interactive meshes visualization
 
+BROKEN=		unfetchable
+
 LICENSE=	None
 LICENSE_NAME=	Special grant
 LICENSE_TEXT=	Special grant from the author

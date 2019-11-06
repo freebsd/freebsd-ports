@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.src.tar.Z
 MAINTAINER=	sec@42.org
 COMMENT=	Animate your root-cursor
 
+BROKEN=		unfetchable
+
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 PLIST_FILES=	bin/xaniroc man/man1/xaniroc.1.gz

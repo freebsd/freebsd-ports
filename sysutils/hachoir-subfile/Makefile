@@ -9,6 +9,8 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Find subfiles in any binary stream
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:devel/hachoir-parser \
 		${PYTHON_SITELIBDIR}/hachoir_regex/__init__.py:devel/hachoir-regex
 

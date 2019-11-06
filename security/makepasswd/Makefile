@@ -15,6 +15,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Random password generator
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv1
 
 NO_BUILD=	yes

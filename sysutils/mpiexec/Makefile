@@ -9,6 +9,8 @@ MASTER_SITES=	https://www.osc.edu/~djohnson/mpiexec/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tool to run a parallel job from within a PBS environment
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 CONFLICTS=	mpich2-1.2.*

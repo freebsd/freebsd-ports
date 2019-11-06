@@ -14,6 +14,8 @@ EXTRACT_ONLY=
 MAINTAINER=	bsdports@wayfair.com
 COMMENT=	Xen API Library for Python
 
+BROKEN=		unfetchable
+
 USES=		python:2.7
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/XenAPI.py \

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME:C/_/-/}_${PORTVERSION}+git.orig
 MAINTAINER=	lichray@gmail.com
 COMMENT=	PAM module offering finger print authentication using libfprint
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libfprint.so:security/libfprint
 
 GNU_CONFIGURE=	yes

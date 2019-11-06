@@ -10,6 +10,8 @@ MASTER_SITES=	http://anduin.net/jailctl/
 MAINTAINER=	ltning-jailctl@anduin.net
 COMMENT=	Jail management tool
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
 NO_BUILD=	yes

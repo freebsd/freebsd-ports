@@ -14,6 +14,8 @@ DISTNAME=	Milk-${PORTVERSION}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of Milk, Mac OS X theme
 
+BROKEN=		unfetchable
+
 USES=		tar:bzip2
 NO_BUILD=	yes
 

@@ -13,6 +13,8 @@ DISTNAME=	Digital-Cream
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Neat and clean theme for GNOME desktop
 
+BROKEN=		unfetchable
+
 USES=		tar:bzip2
 NO_BUILD=	yes
 

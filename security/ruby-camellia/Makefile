@@ -12,6 +12,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	osho@pcc-software.org
 COMMENT=	Ruby extension library which implements Camellia encryption
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 

@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Lightweight http proxy to help IPv4 only browsers
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/}

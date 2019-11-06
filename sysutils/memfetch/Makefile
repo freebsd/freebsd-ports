@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Utility to dump memory of a running process
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		perl5 shebangfix tar:tgz

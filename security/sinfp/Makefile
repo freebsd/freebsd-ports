@@ -7,6 +7,8 @@ PORTREVISION=	${DBDATE}
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Full operating system stack fingerprinting suite
 
+BROKEN=		unfetchable
+
 LICENSE=	ART10
 
 BUILD_DEPENDS=	p5-Net-SinFP>=2.02:security/p5-Net-SinFP

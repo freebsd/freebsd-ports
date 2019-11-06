@@ -11,6 +11,8 @@ MASTER_SITES=	http://freebsd.flatrate.ru/distfiles/ \
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	GTK+ tool for managing x11 cut-buffers
 
+BROKEN=		unfetchable
+
 HAS_CONFIGURE=	yes
 USES=		pkgconfig tar:bzip2
 USE_GNOME=	gtk20

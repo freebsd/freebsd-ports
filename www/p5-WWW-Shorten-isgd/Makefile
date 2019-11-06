@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Abstract interface to is.gd, one of URL shortening sites
 
+BROKEN=		unfetchable
+
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 

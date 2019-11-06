@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Themes for Openbox
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	openbox:x11-wm/openbox

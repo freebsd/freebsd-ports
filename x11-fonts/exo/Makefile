@@ -11,6 +11,8 @@ DISTNAME=	EXO_2_OTF
 MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Geometric sans serif font with a technological feel
 
+BROKEN=		unfetchable
+
 LICENSE=	OFL11
 
 USES=		fonts zip

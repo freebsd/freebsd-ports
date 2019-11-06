@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.acm.vt.edu/~jmaxwell/programs/xspy/
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Utility for monitoring keystrokes on remote X servers
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake:notall
 USE_XORG=	x11

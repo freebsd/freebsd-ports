@@ -9,6 +9,8 @@ MASTER_SITES=	http://80386.nl/projects/${PORTNAME}/distfiles/
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Utility that uses LD_PRELOAD to hide .svn directories
 
+BROKEN=		unfetchable
+
 USES=		shebangfix tar:xz
 USE_LDCONFIG=	yes
 

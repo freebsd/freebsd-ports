@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Module for manipulating bibliographic records in the USMARC format
 
+BROKEN=		unfetchable
+
 USES=		perl5
 USE_PERL5=	configure
 

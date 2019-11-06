@@ -9,6 +9,8 @@ MASTER_SITES=	http://surfraw.alioth.debian.org/dist/
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Command line interface to popular WWW search engines
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 USES=		gmake perl5 shebangfix
 SHEBANG_FILES=	opensearch-discover \

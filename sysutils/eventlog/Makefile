@@ -11,6 +11,8 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.tar.gz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Replacement of the simple syslog() API providing structure to messages
 
+BROKEN=		unfetchable
+
 DEPRECATED=		No longer supported by Balabit
 EXPIRATION_DATE=	2019-12-31
 

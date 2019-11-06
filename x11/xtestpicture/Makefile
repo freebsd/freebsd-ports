@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Create a full-screen image to adjust your monitor
 
+BROKEN=		unfetchable
+
 USES=		imake
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/xtestpicture man/man1/${PORTNAME}.1.gz

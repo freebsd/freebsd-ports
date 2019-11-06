@@ -11,6 +11,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Norwegian (Nynorsk and Bokmaal) hunspell dictionaries
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 

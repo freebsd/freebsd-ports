@@ -13,6 +13,8 @@ DISTNAME=	Digital-Harmony
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Another popular theme for GNOME desktop
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 
 TYPE?=		gtk

@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.squidjam.com/matwm/pub/
 MAINTAINER=	sic_zer0@hotmail.com
 COMMENT=	Minimalistic, yet functional window manager for X11
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 
 HAS_CONFIGURE=	yes

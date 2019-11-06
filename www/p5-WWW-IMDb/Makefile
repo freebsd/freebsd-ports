@@ -12,6 +12,8 @@ DISTNAME=	IMDb-current
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Perl interface to query the Internet Movie Database(IMDb)
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
 

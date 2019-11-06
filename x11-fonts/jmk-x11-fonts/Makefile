@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.jmknoble.net/fonts/
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Jim Knoble's font package for X
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		mkfontscale>=0:x11-fonts/mkfontscale
 

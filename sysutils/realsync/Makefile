@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.it-sys.org/distfiles/
 MAINTAINER=	krasi@it-sys.org
 COMMENT=	Parallel synchronization daemon for rsync
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	rsync:net/rsync \

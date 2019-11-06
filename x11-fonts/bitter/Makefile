@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.huertatipografica.com/free_download/eo0pZGbJPxy2YyRkWQX
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Contemporary serif typeface for text designed for comfortably reading
 
+BROKEN=		unfetchable
+
 LICENSE=	OFL11
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}

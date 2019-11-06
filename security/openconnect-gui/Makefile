@@ -10,6 +10,8 @@ CATEGORIES=	security net-vpn
 MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Graphical OpenConnect client
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 

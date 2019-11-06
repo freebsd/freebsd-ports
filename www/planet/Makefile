@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.planetplanet.org/download/
 MAINTAINER=	alan@wave2.co.uk
 COMMENT=	Planet is a flexible feed aggregator - and more!
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/Tidy/Tidy.py:devel/py-mx-experimental \
 		${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${PY_FLAVOR}
 
