@@ -36,8 +36,8 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
 GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
-USES=		cmake:insource compiler:c++11-lib gettext-runtime \
-		libarchive pkgconfig qt:5 readline tar:bzip2
+USES=		cmake:insource compiler:c++11-lib gettext-runtime gnome \
+		libarchive pkgconfig qt:5 readline tar:bzip2 xorg
 USE_XORG=	x11 xext xfixes xscrnsaver
 USE_GNOME=	glib20
 USE_QT=		concurrent core dbus declarative gui multimedia network \

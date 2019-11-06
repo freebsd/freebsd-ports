@@ -12,7 +12,7 @@ COMMENT=	Command line utility for PDF viewers
 
 CONFLICTS=	texlive-base-20150521_[1-4]
 
-USES=		tar:xz
+USES=		tar:xz xorg
 USE_XORG=	x11 xmu
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	build-aux \

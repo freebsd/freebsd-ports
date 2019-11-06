@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 CONFLICTS=	transfig-*
 
-USES=		alias ghostscript:run iconv tar:xz
+USES=		alias ghostscript:run iconv tar:xz xorg
 CFLAGS+=	-Wno-return-type
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-transfig

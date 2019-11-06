@@ -12,7 +12,7 @@ COMMENT=	PostScript and PDF previewer
 
 LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
-USES=		cpe ghostscript:x11 iconv gmake perl5 shebangfix
+USES=		cpe ghostscript:x11 iconv gmake perl5 shebangfix xorg
 USE_PERL5=	build
 USE_XORG=	xpm ice sm xext xmu x11
 GNU_CONFIGURE=	yes

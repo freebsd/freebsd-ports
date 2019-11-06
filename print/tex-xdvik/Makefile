@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpaper.so:print/libpaper
 RUN_DEPENDS=	tex-dvipsk>=5.995:print/tex-dvipsk
 
-USES=		iconv motif
+USES=		iconv motif xorg
 USE_TEX=	web2c kpathsea texmf texhash
 TEXHASHDIRS=	${TEXMFDISTDIR}
 USE_XORG=	ice sm x11 xmu xpm xt xi

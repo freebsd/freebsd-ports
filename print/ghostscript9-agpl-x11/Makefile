@@ -22,7 +22,7 @@ CONFLICTS_INSTALL= \
 
 DISTINFO_FILE=	${.CURDIR:H}/ghostscript9-agpl-base/distinfo
 PATCHDIR=	${.CURDIR:H}/ghostscript9-agpl-base/files
-USES=		cpe gmake iconv localbase pkgconfig tar:xz
+USES=		cpe gmake iconv localbase pkgconfig tar:xz xorg
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext xt

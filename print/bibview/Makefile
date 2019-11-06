@@ -10,7 +10,7 @@ MASTER_SITES=	TEX_CTAN/biblio/bibtex/utils/bibview-2.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface for manipulating BibTeX bibliography databases
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xt
 WRKSRC=		${WRKDIR}/bibview-${PORTVERSION}
 
