@@ -40,6 +40,7 @@ SHELL_DESC=	Shell support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
+USES+=		xorg
 USE_XORG=	xaw xpm
 GRAPHICS=	X11_GRAPHICS
 .endif
