@@ -116,7 +116,7 @@ DESKTOP_ENTRIES="XawMidi" "" "" "${LINK}" "AudioVideo;Audio;Midi;" ""
 .if ${INTERFACE} == "xskin"
 LINK=		xskinmidi
 
-USES=		xorg
+USES+=		xorg
 USE_XORG=	x11
 
 DESKTOP_ENTRIES="XSkinMidi" "" "" "${LINK}" "AudioVideo;Audio;Midi;" ""
