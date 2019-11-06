@@ -62,7 +62,6 @@ TOKYOCABINET_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
-NLS_USES_OFF=		gettext-runtime:build gettext-tools:build
 
 IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 IDN_CONFIGURE_ENABLE=	idn
