@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-whiskermenu-plugin
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
