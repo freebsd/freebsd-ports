@@ -18,8 +18,6 @@ PATCHFILES=	1b5524282981.patch:-p1 \
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Better shell for Android devices
 
-BROKEN=		unfetchable
-
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
