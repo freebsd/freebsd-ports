@@ -134,6 +134,9 @@ CONFIGURE_ARGS+=	--disable-warnings-as-errors \
 .if ${ARCH} != amd64
 CONFIGURE_ARGS+=	--enable-aot=no
 .endif
+.if ${ARCH} == powerpc64 && ${OSREL:C/\.[0-9]//} == 12
+EXTRA_PATCHES=		${PATCHDIR}/extra-patch-src_hotspot_cpu_ppc_vm__version__ppc.hpp
+.endif
 
 .if empty(ICONV_LIB)
 ICONV_CFLAGS=	-DLIBICONV_PLUG
