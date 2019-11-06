@@ -20,7 +20,7 @@ BROKEN_powerpc64=	fails to link: c++: error: no such file or directory: 'gcc111l
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		compiler dos2unix gmake gnome localbase pkgconfig tar:tgz
+USES=		compiler dos2unix gmake gnome localbase pkgconfig tar:tgz xorg
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 USE_XORG=	x11 xmu
 DOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h gtk/IntelRDFPMathLib20U1/LIBRARY/float128/architecture.h

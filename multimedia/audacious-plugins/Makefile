@@ -22,7 +22,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 RUN_DEPENDS=	audacious:multimedia/audacious
 
 USES=		compiler:c++11-lib gettext-tools gmake gnome iconv \
-		localbase pkgconfig tar:bzip2
+		localbase pkgconfig tar:bzip2 xorg
 USE_GNOME=	gtk20 glib20 libxml2 cairo gdkpixbuf2
 USE_XORG=	x11
 

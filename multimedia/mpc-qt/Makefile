@@ -19,7 +19,7 @@ GH_ACCOUNT=	wm4 # mirror
 GH_TAGNAME=	4bf2ca5
 GH_TUPLE=	Argon-:mpv-stats:1.1-28-gf42aa68:mpv_stats/external/mpv-stats
 
-USES=		compiler:c++14-lang desktop-file-utils pkgconfig qmake qt:5
+USES=		compiler:c++14-lang desktop-file-utils gl pkgconfig qmake qt:5
 USE_QT=		qmake_build buildtools_build linguisttools_build \
 		core dbus gui network svg_run widgets x11extras
 USE_GL=		gl

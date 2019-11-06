@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	2ff:graphics/farbfeld
 
+USES=		xorg
 USE_XORG=	x11 xft
 
 MAKE_ARGS=	CC="${CC}" PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}/man" \

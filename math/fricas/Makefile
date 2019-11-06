@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license/LICENSE.AXIOM
 
 BUILD_DEPENDS=	sbcl:lang/sbcl
 
-USES=		autoreconf gmake tar:bz2
+USES=		autoreconf gmake tar:bz2 xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lisp=sbcl
 USE_XORG=	ice sm x11 xpm

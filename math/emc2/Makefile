@@ -17,7 +17,7 @@ LICENSE_NAME=	INRIA license, perhaps specific to emc2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	auto-accept no-dist-sell no-pkg-sell
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11 xau xcb xdmcp
 
 ALL_TARGET=	${PORTNAME}

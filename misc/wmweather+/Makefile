@@ -26,7 +26,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 WRKSRC=		${WRKDIR}/wmweather+-${PORTVERSION}
 
-USES=		iconv jpeg
+USES=		iconv jpeg xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwraster=${LOCALBASE} \
 		--with-libpcre=${LOCALBASE} \

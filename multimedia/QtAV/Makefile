@@ -16,7 +16,7 @@ LICENSE_FILE=		${WRKSRC}/lgpl-2.1.txt
 LIB_DEPENDS=		libass.so:multimedia/libass \
 			libavcodec.so:multimedia/ffmpeg
 
-USES=			compiler:c++11-lang qmake:outsource qt:5
+USES=			compiler:c++11-lang gl qmake:outsource qt:5 xorg
 USE_GL=			gl
 USE_QT=			core declarative gui network opengl sql widgets \
 			buildtools_build qmake_build

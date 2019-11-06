@@ -30,7 +30,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext-runtime \
-		kde:5 pkgconfig qt:5
+		gnome kde:5 pkgconfig qt:5 xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_QT=		concurrent core dbus gui network phonon4 printsupport \
 		svg widgets x11extras xml \

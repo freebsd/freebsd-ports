@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 PLIST_FILES=	bin/wmjulia
 WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	xpm xext
 
 do-install:

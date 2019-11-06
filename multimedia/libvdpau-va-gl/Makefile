@@ -22,7 +22,7 @@ LIB_DEPENDS=	libva-x11.so:multimedia/libva
 USE_GITHUB=	yes
 GH_ACCOUNT=	i-rinat
 
-USES=		cmake compiler:c++11-lang pkgconfig
+USES=		cmake compiler:c++11-lang gl pkgconfig xorg
 USE_XORG=	x11
 USE_GL=		gl
 LDFLAGS+=	-Wl,--as-needed # Xext, ICE, SM

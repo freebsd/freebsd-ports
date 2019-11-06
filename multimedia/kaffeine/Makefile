@@ -18,7 +18,7 @@ LIB_DEPENDS=	libvlc.so:multimedia/vlc \
 		libdvbv5.so:multimedia/libv4l
 
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext \
-		pkgconfig kde:5 qt:5 tar:xz
+		pkgconfig kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons i18n itemviews kio solid dbusaddons jobwidgets \
 		service widgetsaddons windowsystem xmlgui

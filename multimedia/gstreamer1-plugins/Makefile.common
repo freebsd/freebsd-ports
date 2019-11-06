@@ -328,6 +328,7 @@ gst_libmms_LIB_DEPENDS=	libmms.so:net/libmms
 gst_libmms_PLIST_FILES=	${GST_LIB_DIR}/libgstmms.so
 
 # librfb
+gst_librfb_USES=	xorg
 gst_librfb_USE_XORG=	x11
 
 # liblv2
@@ -490,6 +491,7 @@ gst_webrtcdsp_LIB_DEPENDS=	libwebrtc_audio_processing.so:audio/webrtc-audio-proc
 
 # X ximage and xvimage sinks aka output
 .if ${DIST} == base
+gst_x_USES=		xorg
 gst_x_USE_XORG=		x11 xv xext
 gst_x_CONFIGURE_ARGS=	--enable-xvideo --enable-xshm
 gst_x_GST_PLUGIN_DIR=	sys/ximage sys/xvimage
@@ -499,6 +501,7 @@ gst_x_PLIST_FILES=	${GST_LIB_DIR}/libgstximagesink.so \
 
 .if ${DIST} == good
 # Ximagesrc
+gst_x_USES=		xorg
 gst_x_USE_XORG=		x11 xfixes xdamage xext
 gst_x_CONFIGURE_ARGS=	--enable-x
 gst_x_GST_PLUGIN_DIR=	sys/ximage

@@ -16,6 +16,7 @@ BROKEN=		unfetchable
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		xorg
 USE_XORG=	x11 xbitmaps xorgproto
 CFLAGS+=	-w -Wno-return-type
 ALL_TARGET=	xppaut

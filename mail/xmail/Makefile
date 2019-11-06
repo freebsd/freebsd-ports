@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	sjroz@verizon.net
 COMMENT=	X-based interface to the Berkeley mail program
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xbitmaps xaw
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	GNUTLS
 
-USES=		shebangfix
+USES=		shebangfix xorg
 SHEBANG_FILES=	scripts/security.debian.rb
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

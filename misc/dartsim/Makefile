@@ -31,7 +31,8 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libtinyxml2.so:textproc/tinyxml2 \
 		liburdfdom_world.so:misc/urdfdom
 
-USES=		cmake compiler:c++11-lang eigen:3 gl localbase:ldflags pkgconfig
+USES=		cmake compiler:c++11-lang eigen:3 gl localbase:ldflags \
+		pkgconfig xorg
 USE_GITHUB=	yes
 GH_PROJECT=	dart
 USE_GL=		gl glu glut

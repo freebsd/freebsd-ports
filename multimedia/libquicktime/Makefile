@@ -25,6 +25,7 @@ LIBS+=		-L${LOCALBASE}/lib -lintl
 INSTALL_TARGET=	install-strip
 
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
+USES+=		xorg
 USE_XORG=	xaw xv
 CONFIGURE_ARGS=	--with-x --enable-gpl --without-doxygen --without-lame
 
@@ -48,6 +49,7 @@ CONFIGURE_ARGS+=	--without-cpuflags
 
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 .if ${PORT_OPTIONS:MGTK2}
+USES+=		gnome
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-gtk
 .else
@@ -61,6 +63,7 @@ CONFIGURE_ARGS+=	--without-alsa
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}
+USES+=		gl
 USE_GL=		yes
 CONFIGURE_ARGS+=	--with-opengl
 .else

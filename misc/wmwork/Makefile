@@ -13,8 +13,8 @@ COMMENT=	Dockapp that keeps track of time you have spent on something
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
+USES=		gmake xorg
 USE_XORG=	xpm
-USES=		gmake
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/wmwork man/man1/wmwork.1.gz

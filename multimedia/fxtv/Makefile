@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libXaw3d.so:x11-toolkits/Xaw3d
 
-USES=		gmake jpeg tar:tgz
+USES=		gmake jpeg tar:tgz xorg
 MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm xxf86vm xxf86dga
 MAKE_FLAGS=	-e

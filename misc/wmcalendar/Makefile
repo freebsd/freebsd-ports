@@ -14,7 +14,7 @@ LIB_DEPENDS=	libical.so:devel/libical
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
-USES=		pkgconfig
+USES=		gnome pkgconfig xorg
 USE_XORG=	xpm
 USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC}" \

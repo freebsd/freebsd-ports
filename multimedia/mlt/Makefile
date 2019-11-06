@@ -38,7 +38,7 @@ USE_GL=		gl
 USE_GNOME=	libxml2
 USE_SDL=	image2
 USE_XORG=	x11
-USES+=		gl iconv pathfix
+USES+=		gl iconv pathfix xorg
 PATHFIX_MAKEFILEIN=	Makefile
 CONFIGURE_ARGS+=--disable-qt --swig-languages=none
 USE_LDCONFIG=	yes

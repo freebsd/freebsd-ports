@@ -38,7 +38,8 @@ LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 BUILD_DEPENDS=	yasm:devel/yasm \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
-USES=		gmake gl iconv libtool pkgconfig pathfix qmake:no_env qt:5 ssl
+USES=		gmake gl iconv libtool pkgconfig pathfix qmake:no_env qt:5 ssl \
+		xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 USE_GL=		gl

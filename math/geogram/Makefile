@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/doc/devkit/license.dox
 
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 
-USES=		cmake gl localbase:ldflags
+USES=		cmake gl localbase:ldflags xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	alicevision
 USE_XORG=	x11 xcursor xi xinerama xrandr xxf86vm

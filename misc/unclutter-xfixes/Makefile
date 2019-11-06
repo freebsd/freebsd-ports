@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	a2x:textproc/asciidoc
 LIB_DEPENDS=	libev.so:devel/libev
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Airblader

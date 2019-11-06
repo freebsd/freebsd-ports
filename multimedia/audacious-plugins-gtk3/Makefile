@@ -30,7 +30,7 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 FILESDIR=	${MASTERDIR}/files
 
 USES=		autoreconf compiler:c++11-lib gettext-tools gmake gnome \
-		iconv localbase pkgconfig
+		iconv localbase pkgconfig xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	audacious-media-player

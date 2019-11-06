@@ -24,6 +24,7 @@ TTY_USES=	ncurses
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
+USES+=		xorg
 USE_XORG=	x11
 BINARIES+=	xcalctool
 .endif

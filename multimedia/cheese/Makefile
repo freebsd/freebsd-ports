@@ -29,8 +29,8 @@ RUN_DEPENDS=	gnome-video-effects>=0:graphics/gnome-video-effects
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome libtool localbase pathfix \
-		pkgconfig tar:xz
+USES=		gettext gl gmake gnome libtool localbase pathfix \
+		pkgconfig tar:xz xorg
 USE_GNOME=	cairo intlhack evolutiondataserver3 librsvg2 \
 		gnomedesktop3 libxml2:build introspection:build
 USE_GL=		egl

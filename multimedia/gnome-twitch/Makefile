@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 USES=		compiler:c11 gettext gnome meson pkgconfig python:3.5+,build \
-		tar:xz
+		tar:xz xorg
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk30

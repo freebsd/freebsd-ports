@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/math/special_functions/binomial.hpp:devel/boost-libs
 
-USES=		compiler:c++11-lang desktop-file-utils qmake qt:5
+USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdelKS
 USE_QT=		core gui network printsupport widgets buildtools_build

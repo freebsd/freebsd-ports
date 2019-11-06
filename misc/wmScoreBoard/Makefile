@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 RUN_DEPENDS=	wget:ftp/wget
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+USES=		gmake shebangfix xorg
 USE_XORG=	xpm x11 xext
-USES=		gmake shebangfix
 SHEBANG_FILES=	GrabScores.excite
 
 OPTIONS_DEFINE=	DOCS

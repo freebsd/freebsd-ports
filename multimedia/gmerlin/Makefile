@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libgavl.so:multimedia/gavl \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gettext libtool makeinfo pathfix pkgconfig sqlite
+USES=		gettext gl gnome libtool makeinfo pathfix pkgconfig sqlite xorg
 USE_GNOME=	gtk20 libxml2
 USE_XORG=	x11 xext xfixes xinerama xv
 USE_GL=		gl

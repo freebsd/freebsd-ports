@@ -13,6 +13,7 @@ MAINTAINER=	gmarco@gufi.org
 COMMENT=	Free spreadsheet with graphical user interface
 
 PLIST_FILES=	bin/abs
+USES=		xorg
 USE_XORG=	x11 xpm xaw
 WRKSRC=		${WRKDIR}/abs-src-0.908
 
