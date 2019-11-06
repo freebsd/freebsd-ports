@@ -9,15 +9,14 @@ CATEGORIES=	multimedia audio
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt 5 clone of Media Player Classic based on libmpv
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	mpv>=0.29,1:multimedia/mpv
 LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	cmdrkotori
+GH_ACCOUNT=	wm4 # mirror
+GH_TAGNAME=	4bf2ca5
 GH_TUPLE=	Argon-:mpv-stats:1.1-28-gf42aa68:mpv_stats/external/mpv-stats
 
 USES=		compiler:c++14-lang desktop-file-utils pkgconfig qmake qt:5
