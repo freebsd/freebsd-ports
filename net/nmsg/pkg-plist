@@ -40,11 +40,12 @@ include/nmsg/sock.h
 include/nmsg/strbuf.h
 include/nmsg/timespec.h
 include/nmsg/vendors.h
+include/nmsg/version.h
 include/nmsg/zbuf.h
 lib/libnmsg.a
 lib/libnmsg.so
 lib/libnmsg.so.6
-lib/libnmsg.so.6.0.0
+lib/libnmsg.so.6.1.0
 lib/nmsg/nmsg_flt1_sample.so
 lib/nmsg/nmsg_msg9_base.so
 libdata/pkgconfig/libnmsg.pc
@@ -70,3 +71,4 @@ libdata/pkgconfig/libnmsg.pc
 %%EXAMPLES%%%%EXAMPLESDIR%%/nmsg-packet2pcap.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/nmsg_callback.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/print_srcip.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/print_version.c
