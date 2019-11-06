@@ -4,7 +4,7 @@ include/libps/psversion.h
 lib/libps.a
 lib/libps.so
 lib/libps.so.0
-lib/libps.so.0.4.5
+lib/libps.so.0.4.6
 libdata/pkgconfig/libps.pc
 %%MANPAGES%%man/man3/PS_add_bookmark.3.gz
 %%MANPAGES%%man/man3/PS_add_kerning.3.gz
