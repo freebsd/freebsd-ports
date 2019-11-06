@@ -179,6 +179,7 @@ USE_XORG+=	fontutil
 
 # We only need USES=xorg if we want USE_XORG modules
 .  if defined(USE_XORG) && !empty(USE_XORG)
+USES+=		xorg
 .include "${USESDIR}/xorg.mk"
 .  endif
 
