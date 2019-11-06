@@ -2,13 +2,9 @@
 
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
-DISTVERSION=	19.4.pre1
-PORTREVISION=	2
+DISTVERSION=	19.4.pre2
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	4d247bea67d4.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VAAPI driver for Intel HD 5000 (Gen8) or newer
