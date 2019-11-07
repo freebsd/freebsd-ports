@@ -1,5 +1,5 @@
---- lib/localcharset.c.orig	2018-02-03 12:42:20 UTC
-+++ lib/localcharset.c
+--- ./lib/localcharset.c.orig	2018-02-03 12:42:20 UTC
++++ ./lib/localcharset.c
 @@ -129,7 +129,7 @@ get_charset_aliases (void)
    cp = charset_aliases;
    if (cp == NULL)

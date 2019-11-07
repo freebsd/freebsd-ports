@@ -1,3 +1,5 @@
 TIMESTAMP = 1518689812
 SHA256 (patch-2.7.6.tar.xz) = ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
 SIZE (patch-2.7.6.tar.xz) = 783756
+SHA256 (patch_2.7.6-6.debian.tar.xz) = 75ea94b265763b65005381f1eceeaf3351a70ec5c3243bc161d702776414db02
+SIZE (patch_2.7.6-6.debian.tar.xz) = 14464
