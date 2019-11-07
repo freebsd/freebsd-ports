@@ -13,7 +13,7 @@ COMMENT=	Pseudoserver to support mobile X11 clients
 
 BROKEN=		unfetchable
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

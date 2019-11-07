@@ -20,7 +20,8 @@ LIB_DEPENDS=	librep.so:lang/librep \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	rep-gtk2>=0.90:x11-toolkits/rep-gtk2
 
-USES=		autoreconf gmake gnome libtool localbase makeinfo pathfix pkgconfig tar:xz
+USES=		autoreconf gmake gnome libtool localbase makeinfo pathfix \
+		pkgconfig tar:xz xorg
 USE_XORG=	ice sm x11 xft xinerama xrandr xtst xrender xext
 USE_GNOME=	cairo gtk20
 GNU_CONFIGURE=	yes

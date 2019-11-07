@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospace font
 
-USES=		fonts
+USES=		fonts xorg
 USE_XORG=	x11
 NO_BUILD=	yes
 

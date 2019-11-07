@@ -17,7 +17,7 @@ EXTRACT_AFTER_ARGS=	| ${SED} -e "/^...bin.sh/,/exit 0/!d" | ${SH}
 
 DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11
 PLIST_FILES=	bin/xskyroot
 

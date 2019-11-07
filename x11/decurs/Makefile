@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	danfe
 GH_TAGNAME=	10c5691
 
-USES=		compiler:c++11-lang dos2unix gnome pkgconfig
+USES=		compiler:c++11-lang dos2unix gnome pkgconfig xorg
 DOS2UNIX_FILES=	src/cppstring.cc
 GNU_CONFIGURE=	yes
 USE_XORG=	x11

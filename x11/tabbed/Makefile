@@ -11,6 +11,7 @@ COMMENT=	Simple generic tabbed fronted to xembed aware applications
 
 LICENSE=	MIT
 
+USES=		xorg
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

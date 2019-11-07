@@ -12,7 +12,7 @@ COMMENT=	Monospaced font with programming ligatures derived from Fira
 
 LICENSE=	OFL11
 
-USES=		fonts zip
+USES=		fonts xorg zip
 USE_XORG=	x11
 NO_ARCH=	yes
 NO_BUILD=	yes

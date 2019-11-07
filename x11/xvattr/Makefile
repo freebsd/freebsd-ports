@@ -13,7 +13,7 @@ COMMENT=	Getting and setting Xv attributes
 
 BROKEN=		unfetchable
 
-USES=		gnome pkgconfig
+USES=		gnome pkgconfig xorg
 USE_GNOME=	gtk20
 USE_XORG=	x11 xv
 

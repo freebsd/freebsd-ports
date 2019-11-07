@@ -23,8 +23,8 @@ PORTSCOUT=	limitw:0,even
 RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 
-USES+=		gettext gmake libtool localbase:ldflags pathfix perl5 \
-		pkgconfig python:run shebangfix
+USES+=		gettext gmake gnome libtool localbase:ldflags pathfix perl5 \
+		pkgconfig python:run shebangfix xorg
 SHEBANG_FILES=	gtk/gtk-builder-convert
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk pango gdkpixbuf2 introspection:build \

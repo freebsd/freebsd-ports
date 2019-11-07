@@ -25,7 +25,7 @@ CONFLICTS?=	fvwm1-1.* fvwm-2.[457].*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mandoc --without-gnome --disable-gtk \
 		ac_cv_path_PYTHON=${PYTHON_CMD}
-USES=		gmake perl5 pkgconfig python:3.4+ gettext readline
+USES=		gmake gnome perl5 pkgconfig python:3.4+ gettext readline xorg
 USE_XORG=	xcursor xft xinerama xpm xrender x11 ice xext
 USE_GNOME=	cairo
 

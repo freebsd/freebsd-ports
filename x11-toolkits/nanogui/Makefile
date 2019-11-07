@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libglfw.so:graphics/glfw
 
-USES=		cmake compiler:c++14-lang eigen:3,build,run gl
+USES=		cmake compiler:c++14-lang eigen:3,build,run gl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	wjakob
 GH_TAGNAME=	885e4fc

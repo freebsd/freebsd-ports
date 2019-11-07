@@ -13,7 +13,7 @@ COMMENT=	Simple X screen locker
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe
+USES=		cpe xorg
 CPE_VENDOR=	suckless
 USE_XORG=	x11 xext xorgproto xrandr xt
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \

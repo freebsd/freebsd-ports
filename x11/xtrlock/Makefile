@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/GPL-3.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		localbase
+USES=		localbase xorg
 USE_XORG=	x11
 
 LIBS+=		-lX11 -lcrypt

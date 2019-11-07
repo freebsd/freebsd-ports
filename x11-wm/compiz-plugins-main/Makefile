@@ -22,7 +22,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake jpeg libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		gl gmake gnome jpeg libtool:keepla pathfix pkgconfig tar:bzip2 \
+		xorg
 USE_CSTD=	gnu89
 USE_GL=		yes
 USE_GNOME=	gconf2 intltool libxslt

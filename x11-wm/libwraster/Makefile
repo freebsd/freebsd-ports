@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libwebp.so:graphics/webp \
 		libMagickWand-6.so:graphics/ImageMagick6
 
-USES=		jpeg libtool localbase pathfix pkgconfig
+USES=		jpeg libtool localbase pathfix pkgconfig xorg
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xext xft xinerama xmu xpm
 BUILD_WRKSRC=	${WRKSRC}/wrlib

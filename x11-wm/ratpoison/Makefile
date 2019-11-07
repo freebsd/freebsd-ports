@@ -13,7 +13,7 @@ COMMENT=	Simple window manager with no fat library dependencies
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig
+USES=		pkgconfig xorg
 USE_XORG=	ice x11 xext xrandr xtst
 GNU_CONFIGURE=	yes
 

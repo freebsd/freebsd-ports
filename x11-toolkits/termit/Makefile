@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	nonstop
 
-USES=		cmake lua pkgconfig
+USES=		cmake gnome lua pkgconfig xorg
 USE_XORG=	x11
 USE_GNOME=	cairo gdkpixbuf2 gtk30 vte3
 

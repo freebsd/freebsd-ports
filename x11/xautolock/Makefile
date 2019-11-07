@@ -10,7 +10,7 @@ MASTER_SITES=	SUNSITE/X11/screensavers
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Activate xlock after a user defined time of inactivity
 
-USES=		tar:tgz imake gmake		# gmake is needed for -jX builds
+USES=		tar:tgz imake gmake xorg	# gmake is needed for -jX builds
 USE_XORG=	x11 xext xscrnsaver
 
 OPTIONS_DEFINE=	XLOCK

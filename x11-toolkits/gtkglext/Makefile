@@ -15,7 +15,8 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake iconv libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gl gmake gnome iconv libtool pathfix pkgconfig \
+		tar:bzip2 xorg
 USE_GL=		glu
 USE_GNOME=	gtk20 pangox-compat
 USE_LDCONFIG=	yes

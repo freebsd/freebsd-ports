@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		libtool pathfix pkgconfig tar:bzip2
+USES=		libtool pathfix pkgconfig tar:bzip2 xorg
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xft xmu xpm xt
 USE_LDCONFIG=	yes

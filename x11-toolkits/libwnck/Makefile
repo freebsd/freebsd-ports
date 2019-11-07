@@ -21,9 +21,10 @@ PORTSCOUT=	ignore:1
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES+=		bison gettext gmake gnome libtool:keepla localbase:ldflags \
+		pathfix pkgconfig xorg
 USE_XORG=	xres x11
 USE_GNOME=	gtk20 referencehack intlhack introspection
-USES+=		bison gettext gmake libtool:keepla localbase:ldflags pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc

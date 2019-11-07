@@ -15,7 +15,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang desktop-file-utils pathfix pkgconfig
+USES=		compiler:c++11-lang desktop-file-utils gnome pathfix pkgconfig \
+		xorg
 USE_GNOME=	gnomeprefix gconf2 libwnck
 USE_WX=		2.8
 USE_XORG=	x11

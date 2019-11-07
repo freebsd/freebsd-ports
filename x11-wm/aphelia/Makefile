@@ -16,6 +16,7 @@ RUN_DEPENDS=	dmenu_run:x11/dmenu \
 USE_GITHUB=	yes
 GH_ACCOUNT=	vardy
 GH_TAGNAME=	54c2d6fb18f3121ebaf836fad53ca48a2f3aa812
+USES=		xorg
 USE_XORG=	x11
 
 PLIST_FILES=	bin/aphelia

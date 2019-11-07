@@ -29,7 +29,7 @@ CONFIGURE_ENV=	GDB=/usr/bin/gdb
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		iconv libtool shebangfix
+USES=		iconv libtool shebangfix xorg
 SHEBANG_FILES=	${WRKSRC}/utils/kEsetroot.in
 perl_OLD_CMD=	@PERL@
 USE_CSTD=	gnu89

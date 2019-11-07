@@ -23,7 +23,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		compiler:c11 gettext-tools gnome meson pkgconfig
+USES=		compiler:c11 gettext-tools gnome meson pkgconfig xorg
 USE_GITLAB=	yes
 USE_GNOME=	cairo glib20
 USE_XORG=	pixman

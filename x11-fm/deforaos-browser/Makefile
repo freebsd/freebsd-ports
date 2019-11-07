@@ -25,7 +25,7 @@ NLS_USES=		gettext
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
     ${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
-USES=		desktop-file-utils gnome pkgconfig
+USES=		desktop-file-utils gnome pkgconfig xorg
 USE_GNOME=	gtk20 cairo
 USE_XORG=	x11
 USE_LDCONFIG=	yes

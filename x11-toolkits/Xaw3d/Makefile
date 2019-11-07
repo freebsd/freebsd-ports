@@ -13,7 +13,7 @@ COMMENT=	3-D Athena Widget set that looks like Motif
 LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
-USES=		gettext imake
+USES=		gettext imake xorg
 USE_XORG=	x11 xext xmu xt sm ice xpm
 USE_LDCONFIG=	yes
 

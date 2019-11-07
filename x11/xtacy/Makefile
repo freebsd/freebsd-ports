@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}114
 MAINTAINER=	matt@bdd.net
 COMMENT=	X11 trippy color-cycling toy
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/xtacy man/man1/xtacy.1.gz
 

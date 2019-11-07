@@ -22,7 +22,7 @@ BUILD_DEPENDS=	browser:x11-fm/deforaos-browser
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
 		sudo:security/sudo
 
-USES=		gnome pkgconfig
+USES=		gnome pkgconfig xorg
 USE_GNOME=	gtk20 cairo
 USE_XORG=	x11
 INSTALLS_ICONS=	yes

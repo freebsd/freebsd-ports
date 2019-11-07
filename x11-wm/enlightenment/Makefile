@@ -21,7 +21,7 @@ BROKEN_sparc64=		Does not install on sparc64: signal 10
 
 GNU_CONFIGURE=	yes
 USES=		alias autoreconf compiler:c11 desktop-file-utils gettext-tools \
-		gmake iconv libtool pathfix pkgconfig tar:xz
+		gmake iconv libtool pathfix pkgconfig tar:xz xorg
 USE_XORG=	xcb
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

@@ -12,7 +12,7 @@ COMMENT=	Nifty set of desktop apps, including floating buttons
 
 LIB_DEPENDS=	libforms.so:x11-toolkits/xforms
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xaw
 
 post-patch:

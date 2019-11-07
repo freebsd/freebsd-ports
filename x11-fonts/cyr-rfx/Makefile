@@ -18,7 +18,7 @@ BROKEN=		unfetchable
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		mkfontscale>=0:x11-fonts/mkfontscale
 
-USES=		fonts
+USES=		fonts xorg
 USE_XORG=	x11
 
 CYR_RFX_ENCODING?=	koi8-o

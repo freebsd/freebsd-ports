@@ -11,6 +11,7 @@ COMMENT=	Binding to the X11 graphics library
 
 LICENSE=	BSD3CLAUSE
 
+USES=		xorg
 USE_CABAL=	data-default
 USE_XORG=	x11 xrandr xext
 

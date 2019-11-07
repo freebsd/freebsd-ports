@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	alols
 
-USES=		pkgconfig
+USES=		pkgconfig xorg
 USE_XORG=	x11 xtst
 
 MAKE_ARGS=	PREFIX=${PREFIX} MANDIR=/man/man1

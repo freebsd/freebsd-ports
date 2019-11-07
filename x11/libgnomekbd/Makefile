@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libxklavier.so:x11/libxklavier
 
-USES=		gettext gmake libtool localbase pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool localbase pathfix pkgconfig \
+		tar:xz xorg
 USE_GNOME=	cairo gtk30 introspection:build
 GNU_CONFIGURE=	yes
 USE_XORG=	x11

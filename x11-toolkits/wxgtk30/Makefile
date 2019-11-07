@@ -23,7 +23,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	wxWidgets
 GH_PROJECT=	wxWidgets
 
-USES=		compiler:c++11-lib gl gmake gnome iconv jpeg localbase pkgconfig
+USES=		compiler:c++11-lib gl gmake gnome iconv jpeg localbase \
+		pkgconfig xorg
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk30

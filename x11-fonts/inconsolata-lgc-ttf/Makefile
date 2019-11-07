@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	DeLaGuardo
 GH_TAGNAME=	16e2c94
 
-USES=		fonts
+USES=		fonts xorg
 USE_XORG=	x11
 NO_BUILD=	yes
 FONTNAME=	TTF

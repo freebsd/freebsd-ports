@@ -13,7 +13,7 @@ COMMENT=	Small and fast window manager for X11R6
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		pathfix pkgconfig iconv
+USES=		pathfix pkgconfig iconv xorg
 USE_XORG=	x11 xft
 
 GNU_CONFIGURE=	yes

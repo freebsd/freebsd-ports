@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Writes any log live onto the background
 
+USES=		gmake xorg
 USE_XORG=	x11
-USES=		gmake
 
 PLIST_FILES=	bin/xrootconsole man/man1/xrootconsole.1.gz
 post-patch:

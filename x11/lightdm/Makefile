@@ -24,7 +24,7 @@ LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice \
 		libxklavier.so:x11/libxklavier
 
 USES=		compiler:c++11-lang gettext gmake gnome libtool localbase \
-		pathfix pkgconfig tar:xz
+		pathfix pkgconfig tar:xz xorg
 USE_CXXSTD=	c++11
 USE_GNOME=	glib20 intltool
 USE_XORG=	x11 xcb xdmcp

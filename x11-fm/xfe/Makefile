@@ -18,7 +18,7 @@ LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16 \
 		libpng.so:graphics/png \
 		libxcb-util.so:x11/xcb-util
 
-USES=		desktop-file-utils gmake localbase pathfix pkgconfig gnome
+USES=		desktop-file-utils gmake localbase pathfix pkgconfig gnome xorg
 USE_XORG=	x11 xcb xft xrandr xrender
 USE_GNOME=	intltool
 

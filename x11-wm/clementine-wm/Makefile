@@ -17,7 +17,7 @@ LICENSE_COMB=	multi
 RUN_DEPENDS=	xv:graphics/xv \
 		rxvt:x11/rxvt
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11
 
 PORTDOCS=	HISTORY LICENSE

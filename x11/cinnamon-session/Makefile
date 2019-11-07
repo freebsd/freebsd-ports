@@ -18,8 +18,8 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 RUN_DEPENDS=	console-kit-daemon:sysutils/consolekit2 \
 		xdpyinfo:x11/xdpyinfo
 
-USES=		autoreconf:build gettext gmake libtool \
-		pathfix pkgconfig tar:xz
+USES=		autoreconf:build gettext gl gmake gnome libtool \
+		pathfix pkgconfig tar:xz xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_GNOME=	gnomeprefix gtk30 intlhack

@@ -14,7 +14,7 @@ COMMENT=	Switch your X keyboard layouts from the command line
 
 LICENSE=	GPLv3
 
-USES=		cmake
+USES=		cmake xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	ierton
 USE_XORG=	x11 xkbfile

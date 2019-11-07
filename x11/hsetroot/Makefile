@@ -16,7 +16,7 @@ RUN_DEPENDS=	xrandr:x11/xrandr
 USE_GITHUB=	yes
 GH_ACCOUNT=	himdel
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig xorg
 USE_XORG=	x11
 
 PLIST_FILES=	bin/hsetroot

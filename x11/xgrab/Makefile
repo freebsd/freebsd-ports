@@ -16,7 +16,7 @@ BUILD_DEPENDS=	xrdb:x11/xrdb
 BROKEN_armv6=		fails to install: xrdb: Socket is not connected: Can't open display ':0'
 BROKEN_armv7=		fails to install: xrdb: Socket is not connected: Can't open display ':0'
 
-USES=		display:build imake:notall tar:Z
+USES=		display:build imake:notall tar:Z xorg
 USE_XORG=	x11 xaw
 
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \

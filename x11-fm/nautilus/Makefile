@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgnome-autoar-0.so:archivers/gnome-autoar \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils gettext gnome \
-		localbase meson pkgconfig python:3.4+,build tar:xz
+		localbase meson pkgconfig python:3.4+,build tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

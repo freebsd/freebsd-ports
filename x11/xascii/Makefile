@@ -10,7 +10,7 @@ MASTER_SITES=	http://komquats.com/distfiles/ \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display an ASCII table in decimal, octal, and hexadecimal
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xt xaw
 
 MAKE_ARGS=	PREFIX=${PREFIX}

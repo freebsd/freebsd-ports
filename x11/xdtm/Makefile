@@ -12,8 +12,8 @@ COMMENT=	Graphical shell for the X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		imake xorg
 USE_XORG=	xaw
-USES=		imake
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

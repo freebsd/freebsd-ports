@@ -12,6 +12,7 @@ COMMENT=	Very fast launcher program for X
 
 LICENSE=	MIT
 
+USES=		xorg
 USE_XORG=	x11 xorgproto
 
 CPPFLAGS+=	-I${LOCALBASE}/include -lX11

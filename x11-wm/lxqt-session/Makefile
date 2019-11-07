@@ -15,7 +15,7 @@ LICENSE=	LGPL21+
 BUILD_DEPENDS=	xdg-user-dirs-update:devel/xdg-user-dirs
 
 USES=	cmake compiler:c++14-lang kde:5 lxqt qt:5 \
-	pkgconfig tar:xz
+	pkgconfig tar:xz xorg
 USE_QT=	buildtools_build qmake_build core dbus gui linguisttools \
 	svg widgets x11extras xml
 USE_KDE=	windowsystem

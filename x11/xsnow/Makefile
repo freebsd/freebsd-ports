@@ -12,7 +12,7 @@ COMMENT=	Create a snowy and Santa-y desktop
 
 BROKEN=		unfetchable
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xpm
 PLIST_FILES=	bin/xsnow man/man6/xsnow.6.gz
 

@@ -10,6 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low memory usage xterm replacement that supports color
 
+USES=		xorg
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 

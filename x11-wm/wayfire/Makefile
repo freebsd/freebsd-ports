@@ -22,7 +22,7 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c++11-lib gl jpeg meson pkgconfig
+USES=		compiler:c++11-lib gl gnome jpeg meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_GL=		egl glesv2
 USE_GNOME=	cairo

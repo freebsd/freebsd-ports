@@ -24,7 +24,8 @@ BROKEN_armv6=	Fails to build: error: GETLEFTBITS_ALIGNMENT must be 1
 BROKEN_armv7=	Fails to build: error: GETLEFTBITS_ALIGNMENT must be 1
 BROKEN_i386=	case value evaluates to -2147481600, which cannot be narrowed to type 'unsigned long'
 
-USES=		gettext libtool localbase:ldflags pathfix pkgconfig python:2.7 shebangfix tar:bzip2
+USES=		gettext libtool localbase:ldflags pathfix pkgconfig python:2.7 \
+		shebangfix tar:bzip2 xorg
 SHEBANG_FILES=	${WRKSRC}/fvwm-insitu/bin/fvwm-convert-2.4.in \
 		${WRKSRC}/fvwm-insitu/bin/fvwm-convert-2.6.in \
 		${WRKSRC}/fvwm-insitu/bin/fvwm-menu-desktop.in \
@@ -69,8 +70,11 @@ GLX_X86_CONFIGURE_ENABLE=	glx-x86
 STROKE_LIB_DEPENDS=	libstroke.so:devel/libstroke
 MRPLAY_LIB_DEPENDS=	librplay.so:audio/rplay
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
+GLIB_USES=	gnome
 GLIB_USE=	GNOME=glib20
+GTK2_USES=	gnome
 GTK2_USE=	GNOME=gtk20
+GCONF_USES=	gnome
 GCONF_USE=	GNOME=gconf2,libglade2
 
 post-patch:

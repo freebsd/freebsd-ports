@@ -10,6 +10,7 @@ MASTER_SITES=	SF/bbtools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application configuring tool for the blackbox window manager
 
+USES=		xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 

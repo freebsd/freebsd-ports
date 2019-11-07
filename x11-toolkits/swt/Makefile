@@ -15,7 +15,7 @@ LICENSE=	EPL
 ONLY_FOR_ARCHS=	amd64 i386
 BROKEN_i386=	missing distinfo
 
-USES=		gl gnome pkgconfig zip:infozip
+USES=		gl gnome pkgconfig zip:infozip xorg
 
 SWT_VERSION=	4763
 OUTPUT_JAR=	swt.jar

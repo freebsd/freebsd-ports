@@ -19,7 +19,7 @@ RUN_DEPENDS=	asclock:x11-clocks/asclock
 CONFLICTS?=	afterstep-2*
 PORTSCOUT=	limit:^1\.[0-9.]*$$
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xpm xext x11
 USE_CSTD=	gnu89
 INSTALL_TARGET=	install install.man

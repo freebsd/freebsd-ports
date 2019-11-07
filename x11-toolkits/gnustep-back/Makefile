@@ -18,7 +18,7 @@ LIB_DEPENDS+=	libgif.so:graphics/giflib \
 		libfreetype.so:print/freetype2 \
 		libcairo.so:graphics/cairo
 
-USES=		gnustep jpeg pkgconfig gl
+USES=		gl gnustep jpeg pkgconfig xorg
 USE_GNUSTEP=	base gui build
 USE_XORG=	xft xrender xmu xext x11 xcursor xfixes xmu
 USE_GL=	gl

@@ -19,7 +19,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS_INSTALL=	xsel-[0-9]*
 
-USES=		autoreconf localbase
+USES=		autoreconf localbase xorg
 USE_XORG=	x11 xt
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz

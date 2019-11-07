@@ -13,8 +13,8 @@ COMMENT=	X11 events recorder and player
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
+USES=		gmake pathfix xorg
 USE_XORG=	xtst
-USES=		gmake pathfix
 
 CONFIGURE_ARGS=	--enable-cli --disable-doc --disable-xinput2
 

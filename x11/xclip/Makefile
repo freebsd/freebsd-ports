@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	astrand
 
-USES=		autoreconf gmake iconv
+USES=		autoreconf gmake iconv xorg
 USE_XORG=	x11 xmu
 
 GNU_CONFIGURE=	yes

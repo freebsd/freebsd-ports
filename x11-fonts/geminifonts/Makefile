@@ -16,7 +16,7 @@ COMMENT=	Ukrainian KOI8 fonts for X11R6 (koi8-u)
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		mkfontscale>=0:x11-fonts/mkfontscale
 
-USES=		fonts perl5 tar:tgz
+USES=		fonts perl5 tar:tgz xorg
 USE_PERL5=	build
 USE_XORG=	x11
 NO_WRKSUBDIR=	yes

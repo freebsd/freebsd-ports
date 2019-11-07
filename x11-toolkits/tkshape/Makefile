@@ -12,7 +12,7 @@ DISTNAME=		shape${PORTVERSION:S/.//g}
 MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		Tk library to access to X Shaped Window Extension
 
-USES=			gmake tk
+USES=			gmake tk xorg
 
 USE_XORG=		x11 xext
 

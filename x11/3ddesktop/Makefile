@@ -12,7 +12,7 @@ COMMENT=	3D Virtual Desktop Switcher
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
-USES=		localbase
+USES=		gl localbase xorg
 USE_XORG=	xmu
 USE_GL=		glut
 GNU_CONFIGURE=	yes

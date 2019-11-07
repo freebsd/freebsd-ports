@@ -20,7 +20,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libxcb-xrm.so:x11/xcb-util-xrm \
 		libxkbcommon-x11.so:x11/libxkbcommon
 
-USES=		bison gmake gnome libtool pkgconfig shebangfix
+USES=		bison gmake gnome libtool pkgconfig shebangfix xorg
 USE_GNOME=	cairo gdkpixbuf2 librsvg2 pango
 USE_XORG=	xcb
 

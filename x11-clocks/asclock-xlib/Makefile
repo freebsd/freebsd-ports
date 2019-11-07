@@ -12,8 +12,8 @@ COMMENT=	New flavor of asclock
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/asclock-xlib
+USES=		imake xorg
 USE_XORG=	xpm x11
-USES=		imake
 
 .include <bsd.port.pre.mk>
 

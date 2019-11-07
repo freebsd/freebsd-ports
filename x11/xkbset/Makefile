@@ -13,7 +13,7 @@ COMMENT=	Manage various XKB features of X Window
 
 LICENSE=	BSD3CLAUSE
 
-USES=		perl5
+USES=		perl5 xorg
 USE_XORG=	x11
 USE_PERL5=	build
 

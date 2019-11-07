@@ -12,6 +12,7 @@ COMMENT=	Simple menu patterened for use with ratpoison
 
 BROKEN=		unfetchable
 
+USES=		xorg
 USE_XORG=	x11
 ALL_TARGET=	ratmenu
 PLIST_FILES=	bin/ratmenu \

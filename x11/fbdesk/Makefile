@@ -16,8 +16,8 @@ LICENSE=	MIT
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libImlib2.so:graphics/imlib2
 
+USES=		pkgconfig xorg
 USE_XORG=	xext xft xpm xrender
-USES=		pkgconfig
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	ChangeLog INSTALL README

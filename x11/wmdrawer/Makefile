@@ -13,7 +13,7 @@ COMMENT=	Dockapp which provides a drawer to launch applications
 
 LICENSE=	GPLv2+
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig xorg
 USE_GNOME=	gdkpixbuf2
 USE_XORG=	x11 xext xi
 MAKE_ENV=	USE_GDKPIXBUF2=1

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libixp.so:devel/libixp
 
 CONFLICTS=	wmii-[0-9]*
 
-USES=		pkgconfig python:run shebangfix tar:tbz
+USES=		pkgconfig python:run shebangfix tar:tbz xorg
 SHEBANG_FILES=	alternative_wmiircs/python/wmiirc
 USE_XORG=	x11 xext xrandr xrender xinerama xft
 

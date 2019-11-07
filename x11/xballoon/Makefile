@@ -10,6 +10,7 @@ MASTER_SITES=	http://kozos.jp/myfreesoft/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Balloons move on root window
 
+USES=		xorg
 USE_XORG=	xpm xmu xaw
 ALL_TARGET=	xballoon
 

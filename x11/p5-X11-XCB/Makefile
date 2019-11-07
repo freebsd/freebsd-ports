@@ -31,7 +31,7 @@ RUN_DEPENDS=	\
 		p5-XML-Simple>=0:textproc/p5-XML-Simple \
 		p5-XS-Object-Magic>=0:devel/p5-XS-Object-Magic
 
-USES=		localbase perl5
+USES=		localbase perl5 xorg
 USE_PERL5=	configure
 USE_XORG=	x11 xcb xorgproto xinerama
 MAKE_JOBS_UNSAFE=	yes

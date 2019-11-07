@@ -17,8 +17,8 @@ LIB_DEPENDS=	libxcb-util.so:x11/xcb-util \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxcb-icccm.so:x11/xcb-util-wm
 
+USES=		tar:bzip2 xorg
 USE_XORG=	x11 xrandr
-USES=		tar:bzip2
 
 PLIST_FILES=	bin/mcwm bin/hidden man/man1/mcwm.1.gz man/man1/hidden.1.gz
 PORTDOCS=	README NEWS

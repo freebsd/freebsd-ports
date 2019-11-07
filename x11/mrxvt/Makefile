@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-lastlog --disable-wtmp
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-USES=		jpeg tar:tgz
+USES=		jpeg tar:tgz xorg
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS JAPANESE XFT

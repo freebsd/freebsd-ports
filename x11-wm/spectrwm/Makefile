@@ -23,6 +23,7 @@ OPTIONS_DEFINE= EXAMPLES
 
 .include	<bsd.port.options.mk>
 
+USES=		xorg
 USE_XORG=	x11 xcb xcursor xft xrandr xt
 
 USE_LDCONFIG=	yes

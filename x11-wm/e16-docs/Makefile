@@ -12,7 +12,7 @@ COMMENT=	Data files of enlightenment DOX
 
 RUN_DEPENDS=	${LOCALBASE}/bin/e16:x11-wm/e16
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsstd

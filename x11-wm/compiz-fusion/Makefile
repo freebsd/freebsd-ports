@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz \
 		${LOCALBASE}/lib/compiz/libanimation.so:x11-wm/compiz-plugins-main \
 		${LOCALBASE}/bin/ccsm:x11-wm/ccsm
 
-USES=		metaport
+USES=		gnome metaport xorg
 USE_GNOME=	libxslt
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xinerama xrandr
 

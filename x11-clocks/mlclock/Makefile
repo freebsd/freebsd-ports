@@ -12,6 +12,7 @@ COMMENT=	Clock for mlvwm window manager
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USES=		xorg
 USE_XORG=	x11 xau xdmcp
 
 PLIST_FILES=	bin/mlclock %%DATADIR%%/mlclockrc %%DATADIR%%/mlclockrc-kanji

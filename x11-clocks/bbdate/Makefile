@@ -14,6 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+USES=		xorg
 USE_XORG=	x11 xau xdmcp xext xfixes xi xrandr ice sm
 
 PLIST_FILES=	bin/bbdate share/bbtools/README.bbdate \

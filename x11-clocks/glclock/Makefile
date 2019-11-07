@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.daionet.gr.jp/~masa/archives/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL spinning pocket watch demo and benchmark utility
 
+USES=		gl xorg
 USE_XORG=	xi xmu xext x11
 USE_GL=		gl glu glut
 MAKEFILE=	makefile

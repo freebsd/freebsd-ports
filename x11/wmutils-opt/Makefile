@@ -11,7 +11,7 @@ COMMENT=	Optional addons to wmutils
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		localbase:ldflags
+USES=		localbase:ldflags xorg
 USE_XORG=	xcb
 
 USE_GITHUB=	yes

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	System tray icon support
 
-USES+=		tk:tea
+USES+=		tk:tea xorg
 USE_XORG=	x11 xext
 
 PLIST_FILES=	lib/${TCL_PKG}/libtktray.so.1 \

@@ -17,7 +17,8 @@ PLIST_FILES=	bin/E-Run.epplet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GL=	gl
+USES=		gl
+USE_GL=		gl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib -lepplet -lImlib2 -lGL
 

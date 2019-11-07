@@ -13,7 +13,7 @@ COMMENT=	Turns on numlock in X
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		localbase
+USES=		localbase xorg
 USE_XORG=	x11 xext xtst
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \

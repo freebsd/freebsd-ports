@@ -26,7 +26,7 @@ XINERAMA_ALL_TARGET=	euclid-wm
 EUCLID_MENU_ALL_TARGET=	euclid-menu
 XINERAMA_USE=		XORG=xinerama
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11
 
 PLIST_FILES=	bin/euclid-wm \

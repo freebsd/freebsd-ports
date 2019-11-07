@@ -13,7 +13,7 @@ COMMENT=	Message-of-the-day browser for X11 and dumb-terminals
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GNU
 
-USES=		imake:noman
+USES=		imake:noman xorg
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
 PLIST_FILES=	bin/xmotd \

@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Inline>=0.44:devel/p5-Inline \
 		p5-Inline-C>=0.44:devel/p5-Inline-C
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		perl5
+USES=		perl5 xorg
 USE_PERL5=	configure
 USE_XORG=	x11 xext xscrnsaver
 

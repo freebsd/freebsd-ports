@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekoort
 
+USES=		gnome pkgconfig xorg
 USE_XORG=	xmu x11
 USE_GNOME=	libwnck libglade2 gtk20
-USES=		pkgconfig
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

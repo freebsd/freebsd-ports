@@ -11,7 +11,7 @@ MASTER_SITES=	SUNSITE/X11/xutils \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xcmd is a front-end for starting programs under X11
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	ice sm x11 xext xmu xt
 
 PLIST_FILES=	bin/xcmd \

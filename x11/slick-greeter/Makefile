@@ -16,7 +16,7 @@ LIB_DEPENDS=	liblightdm-gobject-1.so:x11/lightdm \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3
 BUILD_DEPENDS=	valac:lang/vala
 
-USES=		autoreconf gettext gmake gnome localbase pkgconfig
+USES=		autoreconf gettext gmake gnome localbase pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 
 USE_XORG=	x11

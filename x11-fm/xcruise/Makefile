@@ -13,7 +13,7 @@ COMMENT=	Navigate through a three-dimensional view of a file system
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 OPTIONS_DEFINE=	DOCS

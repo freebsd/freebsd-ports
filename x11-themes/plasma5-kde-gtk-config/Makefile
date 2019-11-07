@@ -15,7 +15,7 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
-USES=		cmake compiler:c++11-lib cpe gettext \
+USES=		cmake compiler:c++11-lib cpe gettext gnome \
 		kde:5 pkgconfig qt:5 tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk20 gtk30 glib20
 USE_KDE=	archive attica auth codecs completion config configwidgets \

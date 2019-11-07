@@ -14,7 +14,7 @@ COMMENT=	Time/date applet for WindowMaker with fishes swimming around
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gnome pkgconfig
+USES=		gnome pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_XORG=	x11
 

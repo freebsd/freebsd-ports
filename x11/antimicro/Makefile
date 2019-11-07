@@ -20,7 +20,7 @@ GH_ACCOUNT=	antimicro #Ryochan7
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig \
-		qt:5 shared-mime-info
+		qt:5 sdl shared-mime-info xorg
 USE_XORG=	x11 xi xtst
 USE_QT=		core gui linguisttools_build qmake_build buildtools_build widgets network
 USE_SDL=	sdl2

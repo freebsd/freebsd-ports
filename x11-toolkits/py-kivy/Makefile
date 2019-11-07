@@ -23,7 +23,7 @@ TEST_DEPENDS=	nosetests-${PYTHON_VER}:devel/py-nose@${PY_FLAVOR}
 MAKE_ENV=	KIVY_NO_CONFIG=yes KIVY_NO_FILELOG=yes USE_OPENGL_ES2=1 \
 		PYTHONPATH=${WRKSRC}
 
-USES=		display:test python:2.7 shebangfix uniquefiles:dirs
+USES=		display:test gl python:2.7 shebangfix uniquefiles:dirs
 USE_GL=		egl gl glesv2
 USE_PYTHON=	autoplist concurrent cython distutils
 PYDISTUTILS_BUILD_TARGET=	build_ext
@@ -71,9 +71,10 @@ SDL2_DESC=		Simple Direct Media Layer v2.0 support
 SDL2_MAKE_ENV=		USE_SDL2=1
 SDL2_MAKE_ENV_OFF=	USE_SDL2=0
 SDL2_USE=		SDL=sdl2,mixer2,image2,ttf2
-SDL2_USES=		pkgconfig
+SDL2_USES=		pkgconfig sdl
 X11_MAKE_ENV=		USE_X11=1
 X11_MAKE_ENV_OFF=	USE_X11=0
+X11_USES=		xorg
 X11_USE=		XORG=xrender,x11
 
 .if !defined(ARCH)

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Native drag and drop capabilities for Tk
 
-USES+=		tk:tea
+USES+=		tk:tea xorg
 USE_XORG=	x11 xext
 
 TCL_PKG=	${PORTNAME}${PORTVERSION}

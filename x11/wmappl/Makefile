@@ -13,6 +13,7 @@ COMMENT=	Application launcher dockapp similar to wmbutton
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		xorg
 USE_XORG=	ice sm x11 xext xpm
 GNU_CONFIGURE=	yes
 

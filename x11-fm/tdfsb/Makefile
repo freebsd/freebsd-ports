@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 
+USES=		gl pkgconfig sdl
 USE_GL=		glut
 USE_SDL=	image sdl
-USES=		pkgconfig
 
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}

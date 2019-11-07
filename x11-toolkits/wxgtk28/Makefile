@@ -16,8 +16,8 @@ LIB_DEPENDS+=	libpng.so:graphics/png\
 		libtiff.so:graphics/tiff\
 		libexpat.so:textproc/expat2
 
-USES=		compiler:c++11-lang gl gmake iconv jpeg localbase pkgconfig \
-		tar:bzip2
+USES=		compiler:c++11-lang gl gmake gnome iconv jpeg localbase \
+		pkgconfig tar:bzip2 xorg
 USE_CXXSTD=	gnu++98
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		glu

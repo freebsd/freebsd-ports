@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib -lXinerama
-USES=		autoreconf gmake pkgconfig
+USES=		autoreconf gmake gnome pkgconfig xorg
 USE_GNOME=	vte gtk20
 USE_XORG=	xinerama
 

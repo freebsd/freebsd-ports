@@ -18,7 +18,7 @@ USE_GITHUB=     yes
 GH_ACCOUNT=     oyranos-cms
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
-USES=		pkgconfig
+USES=		pkgconfig xorg
 USE_XORG=	x11 xfixes xmu xt
 
 # xcm should be added to XORG_MODULES at /usr/ports/Mk/bsd.xorg.mk

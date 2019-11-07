@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt C++ widgets module
 
-USES=		compiler:c++11-lang qmake:no_env qt-dist:5,base
+USES=		compiler:c++11-lang qmake:no_env qt-dist:5,base xorg
 USE_QT=		core gui qmake_build buildtools_build
 USE_XORG=	x11
 HAS_CONFIGURE=	yes
@@ -27,6 +27,7 @@ OPTIONS_DEFINE=	GTK3
 OPTIONS_SUB=	YES
 
 GTK3_DESC=	GTK+-based Qt theme
+GTK3_USES=	gnome
 GTK3_USE=	GNOME=gtk30 QT=dbus
 GTK3_CONFIGURE_ON=	-gtk
 GTK3_CONFIGURE_OFF=	-no-gtk

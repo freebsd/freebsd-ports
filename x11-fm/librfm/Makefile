@@ -23,7 +23,8 @@ OPTIONS_DEFINE=	NLS
 
 CONFIGURE_ARGS+=--with-pkglibdata
 INSTALLS_ICONS=	yes
-USES=		autoreconf gettext gnome gmake libtool:keepla pkgconfig tar:bzip2
+USES=		autoreconf gettext gnome gmake libtool:keepla pkgconfig \
+		tar:bzip2 xorg
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool cairo libxml2 librsvg2
 USE_XORG+=	x11

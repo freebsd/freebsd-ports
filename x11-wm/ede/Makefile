@@ -27,7 +27,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libfltk.so:x11-toolkits/fltk
 
 USES=		fam gettext iconv:translit localbase:ldflags pathfix \
-		pkgconfig python:2.7 shared-mime-info shebangfix
+		pkgconfig python:2.7 shared-mime-info shebangfix xorg
 
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 SHEBANG_FILES=	doc/asciidoc/asciidoc.py

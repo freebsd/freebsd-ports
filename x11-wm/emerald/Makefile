@@ -19,8 +19,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gmake libtool pathfix \
-		pkgconfig shared-mime-info tar:bzip2
+USES=		desktop-file-utils gl gmake gnome libtool pathfix \
+		pkgconfig shared-mime-info tar:bzip2 xorg
 USE_GL=		gl
 USE_GNOME=	cairo gtk20 intltool libwnck pango
 USE_XORG=	x11 xrender

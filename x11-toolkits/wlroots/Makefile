@@ -18,7 +18,7 @@ LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c11 gl meson pkgconfig
+USES=		compiler:c11 gl meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_GL=		egl gbm glesv2
 USE_XORG=	pixman

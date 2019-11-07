@@ -15,7 +15,7 @@ BROKEN=		unfetchable
 CONFLICTS=	ion-2-*
 CONFLICTS_INSTALL=	ion-shell
 
+USES=		gmake xorg
 USE_XORG=	x11
-USES=		gmake
 
 .include <bsd.port.mk>

@@ -12,7 +12,7 @@ COMMENT=	tvtwm with pie (circular) menus
 
 BROKEN=		unfetchable
 
-USES=		imake
+USES=		imake xorg
 DISABLE_SIZE=	yes
 USE_XORG=	xbitmaps xpm xmu
 

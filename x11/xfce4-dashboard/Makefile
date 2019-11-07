@@ -18,7 +18,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libcogl.so:graphics/cogl \
 		libclutter-1.0.so:graphics/clutter
 
-USES=		compiler:c11 gettext-tools gmake gnome localbase libtool \
+USES=		compiler:c11 gettext-tools gl gmake gnome localbase libtool \
 		pathfix perl5 pkgconfig tar:bzip2 xfce xorg
 USE_GNOME=	cairo glib20 gtk30 intltool libwnck3
 USE_XFCE=	garcon xfconf

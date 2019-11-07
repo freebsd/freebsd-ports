@@ -16,9 +16,9 @@ BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common \
 RUN_DEPENDS=	xkeyboard-config>=0:x11/xkeyboard-config \
 		libxkbfile>=0:x11/libxkbfile
 
+USES=		autoreconf gettext gmake gnome libtool localbase:ldflags \
+		pathfix pkgconfig python:2.7,run shebangfix tar:xz xorg
 USE_XORG=	x11 xrandr xext
-USES=		autoreconf gettext gmake libtool localbase:ldflags pathfix \
-		pkgconfig python:2.7,run shebangfix tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build

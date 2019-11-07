@@ -14,7 +14,7 @@ COMMENT=	NeXtaw based replacement for xfontsel
 
 LIB_DEPENDS=	libneXtaw.so:x11-toolkits/neXtaw
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xaw
 
 post-patch:

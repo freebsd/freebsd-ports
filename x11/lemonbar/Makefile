@@ -13,7 +13,7 @@ COMMENT=	Lightweight xcb based bar
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 gmake localbase:ldflags perl5
+USES=		compiler:c11 gmake localbase:ldflags perl5 xorg
 USE_PERL5=	build
 USE_XORG=	xcb
 

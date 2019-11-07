@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 
-USES=		jpeg perl5 pkgconfig
+USES=		jpeg perl5 pkgconfig xorg
 USE_PERL5=	configure
 USE_XORG=	x11 xcursor xext xpm xrender xrandr
 

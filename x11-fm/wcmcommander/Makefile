@@ -19,7 +19,7 @@ GH_PROJECT=	WCMCommander
 
 CONFLICTS_INSTALL=	wcm # bin/wcm
 
-USES=		compiler:c++11-lib cmake
+USES=		compiler:c++11-lib cmake xorg
 CMAKE_ARGS=	-DDATADIR="${DATADIR_REL}"
 USE_XORG=	x11
 

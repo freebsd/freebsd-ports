@@ -15,7 +15,7 @@ COMMENT=	DockApp that runs a version of the xmatrix screenhack
 MAKE_JOBS_UNSAFE= yes
 
 PLIST_FILES=	bin/wmmatrix
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	xpm
 ALL_TARGET=	clean all
 

@@ -27,7 +27,7 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		xkeyboard-config>=0:x11/xkeyboard-config
 
 USES=		bison gettext gmake gnome libtool localbase pathfix \
-		pkgconfig python:3.4+ tar:xz
+		pkgconfig python:3.4+ tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes

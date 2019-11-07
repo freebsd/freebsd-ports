@@ -12,7 +12,7 @@ COMMENT=	TrueType font server for X11
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-USES=		pkgconfig tar:xz
+USES=		pkgconfig tar:xz xorg
 USE_XORG=	xorgproto
 USE_RC_SUBR=	xfstt
 GNU_CONFIGURE=	yes

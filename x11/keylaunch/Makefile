@@ -13,7 +13,7 @@ COMMENT=	X utility for binding commands to a hot key
 BROKEN=		unfetchable
 
 WRKSRC=		${WRKDIR}/keylaunch
-USES=		perl5 gmake
+USES=		perl5 gmake xorg
 USE_PERL5=	build
 USE_XORG=	x11
 

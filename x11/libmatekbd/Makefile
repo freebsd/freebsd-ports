@@ -17,8 +17,8 @@ LIB_DEPENDS=	libxklavier.so:x11/libxklavier
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool localbase pathfix \
-		pkgconfig tar:xz
+USES=		gettext gmake gnome libtool localbase pathfix \
+		pkgconfig tar:xz xorg
 USE_GNOME=	cairo gtk30 intltool introspection:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes

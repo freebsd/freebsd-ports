@@ -10,6 +10,7 @@ MASTER_SITES=	http://dl.suckless.org/tools/ \
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Simple SELection Printer for X11
 
+USES=		xorg
 USE_XORG=	x11
 
 PLIST_FILES=	bin/sselp

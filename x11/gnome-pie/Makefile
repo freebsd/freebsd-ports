@@ -42,7 +42,7 @@ REINPLACE_ARGS=	-e 's,%%DATADIR%%,${DATADIR},1' \
 		-e 's,%%PREFIX%%,${PREFIX},1' -i.bak \
 		-e '/has_resize_grip/d' -i ''
 
-USES=		cmake pkgconfig
+USES=		cmake gnome pkgconfig xorg
 USE_GITHUB=	yes
 USE_GNOME=	cairo gconf2 gnomemenus3 gtk30 librsvg2 libwnck3
 USE_XORG=	xtst

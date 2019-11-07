@@ -21,7 +21,7 @@ LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LICENSE.CC-BY-3.0
 BUILD_DEPENDS=	rst2man.py-${PYTHON_VER}:textproc/py-docutils@${PY_FLAVOR}
 RUN_DEPENDS=	dbus-run-session:devel/dbus
 
-USES=		cmake compiler:c++11-lang kde:5 python:2.7,build qt:5
+USES=		cmake compiler:c++11-lang kde:5 python:2.7,build qt:5 xorg
 USE_GITHUB=	yes
 USE_KDE=	ecm
 USE_QT=		core declarative dbus gui network \

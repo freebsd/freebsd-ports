@@ -16,7 +16,8 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		autoreconf gmake libtool mono pathfix perl5 pkgconfig shebangfix tar:bzip2
+USES=		autoreconf gmake gnome libtool mono pathfix perl5 pkgconfig \
+		shebangfix tar:bzip2 xorg
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 USE_GNOME=	cairo gnomevfs2 gtksharp20 librsvg2 vte libgnomeprintui libgnomeui

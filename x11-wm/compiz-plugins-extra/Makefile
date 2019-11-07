@@ -23,7 +23,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz \
 		${LOCALBASE}/libdata/pkgconfig/compiz-text.pc:x11-wm/compiz-plugins-main
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gettext-runtime gettext-tools gmake gl gnome libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		gettext-runtime gettext-tools gmake gl gnome libtool:keepla \
+		pathfix pkgconfig tar:bzip2 xorg
 USE_GL=		glu
 USE_CSTD=	gnu89
 USE_GNOME=	gconf2 gdkpixbuf2 intltool libxslt

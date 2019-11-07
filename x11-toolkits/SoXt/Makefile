@@ -12,7 +12,7 @@ COMMENT=	GUI binding for using Open Inventor with Xt/Motif
 
 LIB_DEPENDS=	libCoin.so:graphics/Coin
 
-USES=		libtool motif pathfix perl5 shebangfix
+USES=		gl libtool motif pathfix perl5 shebangfix xorg
 USE_GL=		yes
 USE_PERL5=	build
 SHEBANG_FILES=	cfg/doxy4win.pl

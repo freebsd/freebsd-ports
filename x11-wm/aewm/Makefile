@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	DOCS GTK2 XFT
 
-USES=		gmake
+USES=		gmake xorg
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" XROOT="${LOCALBASE}"
 USE_XORG=	x11 xext xt xaw
 
@@ -26,6 +26,7 @@ PORTDOCS=	DESIGN LICENSE NEWS README TODO
 GTKCLIENTS=	aemenu-gtk aepanel-gtk
 XAWCLIENTS=	aemenu-xaw aepanel-xaw aesession set-gnome-pda
 
+GTK2_USES=	gnome
 GTK2_USE=	GNOME=gtk20
 GTK2_PLIST_FILES=	bin/aemenu-gtk bin/aepanel-gtk
 

@@ -14,10 +14,10 @@ COMMENT=	Development version of mrxvt
 LICENSE=	GPLv2
 
 CONFLICTS=	mrxvt-0.4.*
+USES=		shebangfix xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
-USES=		shebangfix
 SHEBANG_FILES=  ${WRKSRC}/share/scripts/mrxvtset.pl
 
 SUB_FILES+=	pkg-message

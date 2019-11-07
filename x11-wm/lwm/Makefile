@@ -12,7 +12,7 @@ COMMENT=	Lightweight window manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig
+USES=		pkgconfig xorg
 USE_XORG=	sm x11 xext
 MAKEFILE=	no_xmkmf_makefile
 MAKE_ARGS=	LDFLAGS="${LDFLAGS}"

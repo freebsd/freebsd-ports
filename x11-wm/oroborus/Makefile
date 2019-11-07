@@ -13,6 +13,7 @@ COMMENT=	Small and simple GNOME-compatible window manager
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+USES=		xorg
 USE_XORG=	xpm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
