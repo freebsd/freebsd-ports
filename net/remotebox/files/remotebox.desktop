@@ -5,6 +5,6 @@ Type=Application
 Name=Remotebox
 GenericName=Remotebox
 Comment=Open Source VirtualBox Client with Remote Management
-Icon=remotebox.png
+Icon=remotebox
 Exec=remotebox
 Categories=System
