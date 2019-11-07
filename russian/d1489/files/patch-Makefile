@@ -1,0 +1,29 @@
+--- Makefile.orig	2005-10-17 03:08:22.000000000 +0500
++++ Makefile	2013-09-29 21:42:45.000000000 +0400
+@@ -24,6 +24,7 @@
+ # SUCH DAMAGE.
+ 
+ PREFIX=/usr/local
++DISTDIR=${STAGEDIR}${PREFIX}
+ LOCAL_CFLAGS=-O
+ #LOCAL_CFLAGS=-O -DNO_RENAME
+ LOCAL_LDFLAGS=-s
+@@ -39,12 +40,12 @@ a2kfcnv:  a2kfcnv.c koi82alt.h
+ 		a2kfcnv.c -o $@
+ 
+ install: todos a2kfcnv
+-	cp todos ${PREFIX}/bin
+-	-rm -f ${PREFIX}/bin/fromdos ${PREFIX}/bin/fromwin ${PREFIX}/bin/towin
+-	ln ${PREFIX}/bin/todos ${PREFIX}/bin/fromdos
+-	ln ${PREFIX}/bin/todos ${PREFIX}/bin/fromwin
+-	ln ${PREFIX}/bin/todos ${PREFIX}/bin/towin
+-	cp a2kfcnv ${PREFIX}/bin
++	cp todos ${DISTDIR}/bin
++	-rm -f ${DISTDIR}/bin/fromdos ${DISTDIR}/bin/fromwin ${DISTDIR}/bin/towin
++	ln -sf ${PREFIX}/bin/todos ${DISTDIR}/bin/fromdos
++	ln -sf ${PREFIX}/bin/todos ${DISTDIR}/bin/fromwin
++	ln -sf ${PREFIX}/bin/todos ${DISTDIR}/bin/towin
++	cp a2kfcnv ${DISTDIR}/bin
+ 
+ clean:
+ 	-rm -f todos a2kfcnv
