@@ -27,3 +27,34 @@
          AC_SUBST(LDAPLIB)
          AC_SUBST(LDAPINC)
          AUTHALIB="modules/.libs/libauth_ldap.a"
+@@ -339,7 +339,7 @@ AC_DEFUN([DM_CHECK_EVENT], [
+ 
+ AC_DEFUN([DM_CHECK_SSL], [
+ 	AC_CHECK_HEADERS([openssl/ssl.h],
+-	 [SSLLIB=`pkg-config --libs openssl 2>/dev/null`],[SSLLIB="failed"])
++	 [SSLLIB="-lcrypto -lssl"],[SSLLIB="failed"])
+ 	if test [ "x$SSLLIB" = "xfailed" ]; then
+ 		AC_MSG_ERROR([Could not find OPENSSL library.])
+ 	else
+@@ -539,15 +539,15 @@ AC_DEFUN([CMU_SOCKETS], [
+ 	save_LIBS="$LIBS"
+ 	SOCKETLIB=""
+ 	AC_CHECK_FUNC(connect, :,
+-		AC_CHECK_LIB(nsl, gethostbyname,
+-			     SOCKETLIB="-lnsl $SOCKETLIB")
+-		AC_CHECK_LIB(socket, connect,
+-			     SOCKETLIB="-lsocket $SOCKETLIB")
++		AC_CHECK_LIB(c, gethostbyname,
++			     SOCKETLIB="-lc $SOCKETLIB")
++		AC_CHECK_LIB(c, connect,
++			     SOCKETLIB="-lc $SOCKETLIB")
+ 	)
+ 	LIBS="$SOCKETLIB $save_LIBS"
+ 	AC_CHECK_FUNC(res_search, :,
+-                AC_CHECK_LIB(resolv, res_search,
+-                              SOCKETLIB="-lresolv $SOCKETLIB") 
++                AC_CHECK_LIB(c, res_search,
++                              SOCKETLIB="-lc $SOCKETLIB") 
+         )
+ 	LIBS="$SOCKETLIB $save_LIBS"
+ 	AC_CHECK_FUNCS(dn_expand dns_lookup)
