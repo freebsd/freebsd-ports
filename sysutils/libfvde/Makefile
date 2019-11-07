@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfvde
-PORTVERSION=	20190104
+PORTVERSION=	20191104
 DISTVERSIONPREFIX=	experimental-
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/libyal/libfvde/releases/download/${PORTVERSION}/ \
