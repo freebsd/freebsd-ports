@@ -50,11 +50,11 @@
 +	@scripts/mkinstalldirs $(DESTDIR)$(MANDIR)/man6
 +	@scripts/mkinstalldirs $(DESTDIR)$(SHAREDIR)
 +	rm -f $(DESTDIR)$(BINDIR)/yadex
-+	$(OBJDIR)/install -m 755 $(OBJDIR)/yadex $(DESTDIR)$(BINDIR)/yadex
++	$(BSD_INSTALL_PROGRAM) $(OBJDIR)/yadex $(DESTDIR)$(BINDIR)
 +	rm -f $(DESTDIR)$(MANDIR)/man6/yadex.6*
-+	$(OBJDIR)/install -m 644 doc/yadex.6 $(DESTDIR)$(MANDIR)/man6/yadex.6
-+	$(OBJDIR)/install -m 644 -d $(DESTDIR)$(SHAREDIR) $(YGD)
-+	$(OBJDIR)/install -m 644 -d $(DESTDIR)$(ETCDIR) yadex.cfg
++	$(BSD_INSTALL_MAN) doc/yadex.6 $(DESTDIR)$(MANDIR)/man6
++	$(BSD_INSTALL_DATA) $(YGD) $(DESTDIR)$(SHAREDIR)
++	$(BSD_INSTALL_DATA) yadex.cfg $(DESTDIR)$(ETCDIR)
 +ifndef DESTDIR
  	@echo "---------------------------------------------------------------"
  	@echo "  Yadex is now installed."
