@@ -18,7 +18,7 @@ NO_ARCH=	yes
 
 MAKE_ARGS+=	-e
 
-do-patch:
+post-patch:
 	${REINPLACE_CMD} 's%\$$(PREFIX)%${STAGEDIR}/$$(PREFIX)%g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

@@ -33,10 +33,8 @@ pre-everything::
 	@${ECHO_MSG} "You can build quark with your own config.h using the QUARK_CONF knob:"
 	@${ECHO_MSG} "make QUARK_CONF=/path/to/quark/config.h install clean"
 
-do-patch:
-	${REINPLACE_CMD} -e '/^include config.mk$$/d' ${WRKSRC}/Makefile
-
 post-patch:
+	${REINPLACE_CMD} -e '/^include config.mk$$/d' ${WRKSRC}/Makefile
 .if defined(QUARK_CONF)
 	@${ECHO_MSG} "Creating config.h from ${QUARK_CONF}"
 	@${LN} -sf ${QUARK_CONF} ${WRKSRC}/config.h

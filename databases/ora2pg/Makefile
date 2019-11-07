@@ -28,7 +28,7 @@ DOCS=		changelog README
 
 OPTIONS_DEFINE=	DOCS
 
-do-patch:
+post-patch:
 	${REINPLACE_CMD} -e '/install_all :/,/};/s=$$CONFDIR=${STAGEDIR}${ETCDIR}=g' \
 		-e '/install_all :/,/};/s=$$DOCDIR=${STAGEDIR}${DOCSDIR}=g' \
 		${WRKSRC}/Makefile.PL

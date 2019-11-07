@@ -23,7 +23,7 @@ PLIST_FILES=	bin/clips
 post-extract:
 	${CP} ${WRKDIR}/${DISTNAME}/makefiles/${MAKEFILE} ${WRKSRC}/
 
-do-patch:
+post-patch:
 	${REINPLACE_CMD} -e 's#gcc #${CC} ${CFLAGS} #g' ${WRKSRC}/${MAKEFILE}
 
 do-install:

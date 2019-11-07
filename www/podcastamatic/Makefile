@@ -28,7 +28,7 @@ SUB_LIST=	PORTNAME="${PORTNAME}"
 
 OPTIONS_DEFINE=	DOCS
 
-do-patch:
+post-patch:
 	@${REINPLACE_CMD} -e "s|${PORTNAME}.conf|${PREFIX}/etc/${PORTNAME}.conf|"\
 		 ${WRKSRC}/${PORTNAME}.pl
 	@${REINPLACE_CMD} -e "s|../test/podcastamatic.log|/var/log/${PORTNAME}.log|"\

@@ -45,12 +45,10 @@ PERLFILES=	AdminIndex.pl BoardConvert.pl Convert.pl \
 post-extract:
 	@${RM} -r ${WCGI}/Convert ${WCGI}/Modules ${WCGI}/FixFile.pl
 
-do-patch:
+post-patch:
 .for _I in ${PERLFILES}
 	@${SED} -i '' -e '1s|/usr/bin/perl|${perl_CMD}|' ${WCGI}/${_I}
 .endfor
-
-post-patch:
 	@${CHMOD} -R a=,u+rwX ${WCGI}/*
 	@${CHMOD} a=rx ${WCGI}/AdminIndex.pl ${WCGI}/Setup.pl ${WCGI}/YaBB.pl
 	@${CHMOD} -R a-w ${WCGI}/Admin ${WCGI}/Languages ${WCGI}/Sources

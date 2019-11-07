@@ -22,7 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 PLIST_FILES=	sbin/autotrust man/man8/autotrust.8.gz \
 		etc/autotrust/autotrust.conf.sample
 
-do-patch:
+post-patch:
 	${REINPLACE_CMD} \
 		'45s!=!\?=!; \
 		46s!^\(CFLAGS \)\(= -I.\) @CFLAGS@!\1+\2!' \
