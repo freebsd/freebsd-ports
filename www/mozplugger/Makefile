@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		desthack gmake webplugin:native
+USES=		desthack gmake webplugin:native xorg
 USE_XORG=	x11 xt
 LLD_UNSAFE=	yes
 

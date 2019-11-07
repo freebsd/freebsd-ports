@@ -41,7 +41,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome \
 		localbase:ldflags meson pkgconfig python:3.4+ shebangfix \
-		sqlite tar:xz
+		sqlite tar:xz xorg
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo gnomedesktop3 intlhack libwnck3 libxml2 libxslt
 USE_XORG=	x11
