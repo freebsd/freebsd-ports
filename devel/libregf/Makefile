@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libregf
-DISTVERSION=	alpha-20190808
+DISTVERSION=	alpha-20191102
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libregf/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
