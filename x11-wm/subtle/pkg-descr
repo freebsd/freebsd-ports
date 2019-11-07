@@ -11,4 +11,4 @@ managers, subtle does not allow weak tagging and always maps windows to
 virtual desktops (called views) with matching tags, regardless of the
 current active view.
 
-WWW: http://subtle.subforge.org/
+WWW: https://subtle.subforge.org/
