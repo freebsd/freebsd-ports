@@ -47,11 +47,9 @@ CLIENTS_DESC=		Clients
 CLIENTS_BUILD_DEPENDS=	icotool:graphics/icoutils
 CLIENTS_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 			libcurl.so:ftp/curl
-CLIENTS_USES=		pkgconfig
-CLIENTS_USES=		gl xorg
+CLIENTS_USES=		gl pkgconfig xorg
 CLIENTS_USE=		gl=glu xorg=xext
 CLIENTS_CONFIGURE_OFF=	--with-clients=""
-CLIENTS_VERS=		INSTALLS_ICONS=yes
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CONFIGURE_ON=	--with-libFLAC=${LOCALBASE}
 FLAC_CONFIGURE_OFF=	--disable-flac
