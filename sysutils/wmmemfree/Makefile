@@ -15,7 +15,7 @@ BROKEN_FreeBSD_13=	fails to compile: read_mem.c: invalid use of undefined type '
 BROKEN_mips=		fails to compile: mem_freebsd.c: storage size of 'vm' isn't known
 BROKEN_mips64=		fails to compile: mem_freebsd.c: storage size of 'vm' isn't known
 
-USES=		tar:bzip2
+USES=		tar:bzip2 xorg
 USE_XORG=	xpm
 
 PLIST_FILES=	"@(,kmem,2555) bin/wmmemfree" man/man1/${PORTNAME}.1.gz

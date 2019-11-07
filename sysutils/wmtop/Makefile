@@ -12,7 +12,7 @@ COMMENT=	Dockapp to display top three CPU consuming processes
 
 LICENSE=	GPLv2
 
-USES=		gmake			# gmake is needed for -jX builds
+USES=		gmake xorg		# gmake is needed for -jX builds
 USE_XORG=	xpm x11
 USE_CSTD=	gnu89
 ALL_TARGET=	freebsd

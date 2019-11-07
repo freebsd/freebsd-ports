@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libxosd.so:misc/xosd \
 		liblineak.so:sysutils/lineakd
 
-USES=		gmake libtool
+USES=		gmake libtool xorg
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xext xt
 GNU_CONFIGURE=	yes

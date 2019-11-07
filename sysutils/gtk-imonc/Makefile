@@ -13,7 +13,7 @@ COMMENT=	GTK2-based imond-client to control an on(e) disc fli4l router
 LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gettext iconv
+USES=		pkgconfig gettext gnome iconv xorg
 USE_GNOME=	gtk20
 USE_XORG=	x11
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -13,6 +13,7 @@ COMMENT=	AfterStep look-n-feel memory utilization monitor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		xorg
 USE_XORG=	x11 ice sm x11 xext xpm
 
 GNU_CONFIGURE=	yes

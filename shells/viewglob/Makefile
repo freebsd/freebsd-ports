@@ -13,7 +13,7 @@ COMMENT=	GTK+ add-on to bash and zsh
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		pkgconfig
+USES=		gnome pkgconfig xorg
 USE_XORG=	x11
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

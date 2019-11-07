@@ -12,7 +12,7 @@ COMMENT=	Dockapp for monitoring memory and swap usage
 LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf
+USES=		autoreconf xorg
 USE_XORG=	xpm
 WRKSRC=		${WRKDIR}/dockapps
 

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme \
 RUN_DEPENDS=	seahorse>=3.0.0:security/seahorse \
 		gpg:security/gnupg
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz xorg
 USE_GNOME=	intlhack gnomeprefix gtk30 introspection:build
 USE_XORG=	sm ice
 USE_LDCONFIG=	yes

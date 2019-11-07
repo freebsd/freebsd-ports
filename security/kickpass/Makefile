@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsodium.so:security/libsodium \
 		libevent.so:devel/libevent
 BUILD_DEPENDS=	checkmk:devel/check
 
-USES=		cmake
+USES=		cmake xorg
 USE_XORG=	x11
 
 PLIST_FILES=	bin/kickpass \

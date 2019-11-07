@@ -21,7 +21,8 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libftgl.so:graphics/ftgl
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c++0x gmake jpeg localbase:ldflags pkgconfig
+USES=		autoreconf compiler:c++0x gl gmake jpeg localbase:ldflags \
+		pkgconfig sdl
 USE_GL=		gl glu glew
 USE_SDL=	image2 sdl2
 

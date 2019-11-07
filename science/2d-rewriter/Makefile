@@ -10,7 +10,7 @@ CATEGORIES=	science
 MAINTAINER=	iserikov@acm.org
 COMMENT=	Cellular automata simulator
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 USE_GITHUB=	yes
 GH_ACCOUNT=	iserikov

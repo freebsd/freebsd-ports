@@ -10,6 +10,7 @@ MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Disk usage monitor dockapp
 
+USES=		xorg
 USE_XORG=	x11 xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=""

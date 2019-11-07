@@ -17,7 +17,7 @@ EXTRACT_AFTER_ARGS=	# none
 
 NO_WRKSUBDIR=	yes
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
 PLIST_FILES=	"@(,kmem,2555) bin/${PORTNAME}" man/man1/${PORTNAME}.1.gz

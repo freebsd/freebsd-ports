@@ -13,7 +13,7 @@ COMMENT=	Dockapp that shows the load average as a flame
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11 xpm
 
 PLIST_FILES=	bin/wmflame

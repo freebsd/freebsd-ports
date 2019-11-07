@@ -21,7 +21,7 @@ LIB_DEPENDS=	libminizip.so:archivers/minizip \
 
 USES=		compiler:c++11-lang desktop-file-utils gl gmake libtool \
 		localbase:ldflags pathfix pkgconfig shared-mime-info \
-		shebangfix tar:xz
+		shebangfix tar:xz xorg
 SHEBANG_FILES=	plugins/process/invert_python.py
 USE_GNOME=	cairo gtk20 libxml2 pangox-compat
 USE_GL=		gl glu

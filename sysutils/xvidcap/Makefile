@@ -24,7 +24,7 @@ LIB_DEPENDS=		libdbus-1.so:devel/dbus			\
 RUN_DEPENDS=		animate:graphics/ImageMagick6	\
 			gimp:graphics/gimp-app
 
-USES=			gettext gmake gnome localbase pkgconfig
+USES=			gettext gmake gnome localbase pkgconfig xorg
 
 USE_GNOME=		cairo gdkpixbuf2 glib20 libglade2 intltool
 USE_XORG=		x11 xext xmu ice xfixes xdamage

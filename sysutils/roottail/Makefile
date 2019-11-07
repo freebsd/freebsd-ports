@@ -19,7 +19,7 @@ COMMENT=	Print text directly to X11 root window
 
 BROKEN=		unfetchable
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 MAKE_ARGS=	CC="${CC}"
 

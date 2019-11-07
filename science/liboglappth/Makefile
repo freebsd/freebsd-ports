@@ -13,7 +13,7 @@ COMMENT=	Support libraries of science/ghemical port
 
 GNU_CONFIGURE=  yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix
+USES=		gl libtool pathfix
 USE_GL=		glu
 
 CPPFLAGS+=	-I${LOCALBASE}/include

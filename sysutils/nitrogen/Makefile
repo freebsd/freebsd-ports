@@ -19,7 +19,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 RUN_DEPENDS=	gnome-icon-theme>0:misc/gnome-icon-theme \
 		hicolor-icon-theme>0:misc/hicolor-icon-theme
 
-USES=		compiler:c++11-lang gettext gmake gnome iconv localbase pkgconfig
+USES=		compiler:c++11-lang gettext gmake gnome iconv localbase \
+		pkgconfig xorg
 USE_CXXSTD=	c++11
 USE_GNOME=	gtkmm24
 INSTALLS_ICONS=	yes

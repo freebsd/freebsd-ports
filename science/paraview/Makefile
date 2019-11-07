@@ -34,7 +34,7 @@ RUN_DEPENDS=	bash:shells/bash	\
 
 USES=		alias cmake compiler:c11 gl jpeg localbase python:2.7 qt:5 shebangfix
 USE_QT=		core gui help network sql widgets x11extras xmlpatterns \
-		buildtools_build qmake_build
+		buildtools_build qmake_build xorg
 USE_GL=		gl glu
 USE_XORG=	x11 xt xext ice xdmcp xau xcb xfixes xdamage xxf86vm xrender sm xorgproto
 USE_LDCONFIG=	yes

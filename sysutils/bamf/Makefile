@@ -21,7 +21,8 @@ LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 	libdbus-glib-1.so:devel/dbus-glib \
 	libstartup-notification-1.so:x11/startup-notification
 
-USES=		gettext-runtime gmake libtool pathfix pkgconfig python:2.7
+USES=		gettext-runtime gmake gnome libtool pathfix pkgconfig \
+		python:2.7 xorg
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk30 glib20 introspection:build libwnck3 cairo gdkpixbuf2
 USE_XORG=	x11

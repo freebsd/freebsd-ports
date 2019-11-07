@@ -27,6 +27,7 @@ PLIST_FILES=	bin/pwsafe man/man1/pwsafe.1.gz
 
 .if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS=	--with-x
+USES+=		xorg
 USE_XORG=	ice sm x11 xmu
 .else
 CONFIGURE_ARGS=	ac_cv_have_x="have_x=no" \

@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	uses x86-specific hardware resources
 
-USES=		gmake
+USES=		gmake xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	hills
 

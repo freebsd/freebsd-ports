@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gmake localbase pkgconfig tar:xz
+USES=		gmake gnome localbase pkgconfig tar:xz xorg
 USE_GNOME=	gtk20 cairo gdkpixbuf2 intltool
 USE_XORG=	x11
 GNU_CONFIGURE=	yes

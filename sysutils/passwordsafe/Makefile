@@ -20,7 +20,7 @@ BUILD_DEPENDS=	zip:archivers/zip
 
 CONFLICTS=	pwsafe-[0-9]*
 
-USES=		compiler:c++11-lang gmake
+USES=		compiler:c++11-lang gmake xorg
 USE_GITHUB=	yes
 USE_WX=		3.0+
 USE_XORG=	x11 xtst

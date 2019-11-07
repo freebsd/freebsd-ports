@@ -27,7 +27,7 @@ RUN_DEPENDS=	xrdb:x11/xrdb
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool localbase pathfix \
+USES=		gettext gmake gnome libtool localbase mate pathfix \
 		pkgconfig tar:xz xorg
 USE_MATE=	desktop libmatekbd mixer
 USE_XORG=	ice sm x11 xext xi

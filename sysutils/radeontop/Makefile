@@ -20,7 +20,7 @@ NOT_FOR_ARCHS_REASON=	fails to compile: fatal error: amdgpu_drm.h file not found
 USE_GITHUB=	yes
 GH_ACCOUNT=	clbr
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig xorg
 USE_XORG=	xcb
 MAKE_ARGS=	amdgpu=1
 
