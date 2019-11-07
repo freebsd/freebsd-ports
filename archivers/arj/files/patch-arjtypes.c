@@ -6,7 +6,7 @@
   struct tm *stm;
 + time_t _ts;
  
-- stm=arj_localtime((time_t*)&ts);
+- stm=arj_localtime(&ts);
 + _ts = ts;
 +
 + stm=arj_localtime(&_ts);
