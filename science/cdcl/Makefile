@@ -17,7 +17,7 @@ BROKEN_armv6=		fails to link: final link failed: Nonrepresentable section on out
 BROKEN_armv7=		fails to link: final link failed: Nonrepresentable section on output
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-USES=		desthack pkgconfig
+USES=		desthack gnome pkgconfig xorg
 USE_XORG=	x11 xext
 USE_GNOME=	gtk20 gdkpixbuf2
 GNU_CONFIGURE=	yes

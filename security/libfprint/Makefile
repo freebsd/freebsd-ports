@@ -18,7 +18,7 @@ LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick6 \
 		libnspr4.so:devel/nspr
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix pkgconfig tar:xz
+USES=		gnome libtool pathfix pkgconfig tar:xz xorg
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 USE_XORG=	pixman

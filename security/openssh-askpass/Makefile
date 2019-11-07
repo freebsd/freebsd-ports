@@ -14,7 +14,7 @@ COMMENT=	Graphical password applet for entering SSH passphrase
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/README
 
-USES=		uidfix
+USES=		uidfix xorg
 USE_XORG=	x11 xt sm ice
 DOCSDIR=	${PREFIX}/share/doc/ssh-askpass
 PLIST_FILES=	bin/x11-ssh-askpass \

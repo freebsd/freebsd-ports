@@ -21,7 +21,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
-USES=		compiler:c++11-lang gettext-runtime gl gmake gnome pkgconfig
+USES=		compiler:c++11-lang gettext-runtime gl gmake gnome pkgconfig \
+		xorg
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango pangox-compat
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xmu xt

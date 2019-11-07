@@ -19,7 +19,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libtiff.so:graphics/tiff \
 		libvtkViewsCore-8.1.so:math/vtk8
 
-USES=		compiler:c++17-lang cmake fortran jpeg qt:5
+USES=		compiler:c++17-lang cmake fortran jpeg qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	CFDEMproject
 GH_PROJECT=	${PORTNAME:tu}-PUBLIC

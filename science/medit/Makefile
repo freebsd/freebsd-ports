@@ -21,9 +21,9 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/include/cfortran.h:lang/cfortran
 
+USES=		gl gmake tar:tgz xorg
 USE_XORG=	x11 xmu xext
 USE_GL=		glut
-USES=		gl gmake tar:tgz
 MAKEFILE=	makefile
 ALL_TARGET=	${OPSYS}
 MAKE_ENV=	WRKSRC="${WRKSRC}" ARCHI=${OPSYS} ARCH=${ARCH} OSREL=${OSREL}

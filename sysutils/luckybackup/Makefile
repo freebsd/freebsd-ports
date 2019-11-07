@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license/gpl.txt
 
 RUN_DEPENDS=	rsync:net/rsync
 
-USES=		compiler:c++11-lang qmake qt:5
+USES=		compiler:c++11-lang gl qmake qt:5
 
 USE_GL=		gl
 USE_QT=		core gui network widgets buildtools_build

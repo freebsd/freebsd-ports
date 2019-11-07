@@ -13,7 +13,7 @@ COMMENT=	Utility for monitoring keystrokes on remote X servers
 BROKEN=		unfetchable
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		imake:notall
+USES=		imake:notall xorg
 USE_XORG=	x11
 
 ALL_TARGET=	xspy

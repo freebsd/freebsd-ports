@@ -19,7 +19,7 @@ BROKEN_mips64=		fails to compile: asmon.c: storage size of 'sum' isn't known
 
 BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/asmon
 CFLAGS+=	-I${LOCALBASE}/include
-USES=		gmake
+USES=		gmake xorg
 USE_CSTD=	gnu89
 USE_XORG=	xpm x11
 ALL_TARGET=	asmon

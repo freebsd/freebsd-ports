@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
-		tar:bzip2 xfce
+		tar:bzip2 xfce xorg
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 intltool pango
 USE_XORG=	ice sm x11

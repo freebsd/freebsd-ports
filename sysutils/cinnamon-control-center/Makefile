@@ -38,8 +38,8 @@ RUN_DEPENDS=	py*-dbus>=0:devel/py-dbus \
 		ca_root_nss>=0:security/ca_root_nss \
 		py*-lxml>=0:devel/py-lxml
 
-USES=		autoreconf gettext gmake libtool pathfix \
-		python:2.7 pkgconfig
+USES=		autoreconf gettext gmake gnome libtool pathfix \
+		python:2.7 pkgconfig xorg
 USE_GNOME=	evolutiondataserver3 gconf2 gnomeprefix \
 		gtk30 intlhack libgnomekbd
 USE_GITHUB=	yes

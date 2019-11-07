@@ -12,7 +12,7 @@ MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Uptime showing dockapp with a similar look to wmcpuload
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf tar:bzip2
+USES=		autoreconf tar:bzip2 xorg
 USE_XORG=	xpm
 CONFIGURE_ARGS=	--program-prefix=""
 

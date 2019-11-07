@@ -12,7 +12,7 @@ COMMENT=	"lcd" dockapp for windowmaker, which displays the current cpuload
 
 BROKEN=		unfetchable
 
-USES=		tar:bzip2
+USES=		tar:bzip2 xorg
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 

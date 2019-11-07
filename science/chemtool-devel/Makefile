@@ -15,7 +15,7 @@ COMMENT=	Drawing organic molecules easily and store them (developer version)
 LIB_DEPENDS=	libEMF.so:graphics/libemf
 RUN_DEPENDS=	transfig:print/transfig
 
-USES=		compiler:c++11-lang gettext gmake pkgconfig tar:tgz
+USES=		compiler:c++11-lang gettext gmake gnome pkgconfig tar:tgz xorg
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.7alpha15/
 USE_GNOME=	gtk20
 USE_XORG=	x11

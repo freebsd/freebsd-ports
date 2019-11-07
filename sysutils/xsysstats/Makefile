@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System information display tool
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	x11
 
 ALL_TARGET=	xsysstats

@@ -32,7 +32,9 @@ LIB_DEPENDS=	libccp4c.so:science/libccp4 \
 		libssm.so:science/libssm
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++11-lang desktop-file-utils fortran gettext-runtime gl gmake gnome libtool localbase:ldflags pkgconfig python:2.7 shebangfix sqlite
+USES=		compiler:c++11-lang desktop-file-utils fortran gettext-runtime \
+		gl gmake gnome libtool localbase:ldflags pkgconfig python:2.7 \
+		shebangfix sqlite xorg
 SHEBANG_FILES=	src/coot.in
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static --with-goocanvas-prefix=${LOCALBASE}

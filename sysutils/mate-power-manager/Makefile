@@ -27,8 +27,8 @@ RUN_DEPENDS=	pkexec:sysutils/polkit \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool localbase \
-		pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool localbase mate \
+		pathfix pkgconfig tar:xz xorg
 USE_MATE=	panel
 USE_XORG=	x11 xext xorgproto xrandr xrender
 USE_GNOME=	cairo glib20 gtk30 intlhack

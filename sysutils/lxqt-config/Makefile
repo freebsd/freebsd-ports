@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/xorg/modules/input/libinput_drv.so:x11-drivers/x
 LIB_DEPENDS=	libudev.so:devel/libudev-devd
 
 USES=	cmake compiler:c++14-lang kde:5 localbase:ldflags lxqt qt:5 \
-	pkgconfig tar:xz
+	pkgconfig tar:xz xorg
 USE_QT=	buildtools_build qmake_build concurrent core dbus \
 	gui linguisttools svg widgets x11extras xml
 USE_KDE=	libkscreen windowsystem

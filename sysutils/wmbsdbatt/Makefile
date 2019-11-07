@@ -12,6 +12,7 @@ COMMENT=	Dockapp for battery & temperature monitoring through ACPI
 
 BROKEN=		unfetchable
 
+USES=		xorg
 USE_XORG=	x11 xpm
 
 PLIST_FILES=	bin/wmbsdbatt
