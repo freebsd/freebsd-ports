@@ -1,6 +1,6 @@
---- vendor/openssl-sys/src/ssl.rs.orig	2019-05-13 21:50:35 UTC
+--- vendor/openssl-sys/src/ssl.rs.orig	2019-11-04 17:34:46 UTC
 +++ vendor/openssl-sys/src/ssl.rs
-@@ -1032,7 +1032,7 @@ extern "C" {
+@@ -1057,7 +1057,7 @@ extern "C" {
  }
  
  cfg_if! {
