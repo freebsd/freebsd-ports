@@ -19,11 +19,13 @@ OPTIONS_DEFAULT=	XFT UTF8
 XFT_DESC=		Use Xft to render text (UTF-8 support included)
 XFT_CABAL_FLAGS=	with_xft
 XFT_USE_CABAL=		utf8-string-1.0.1.1_3 X11-xft-0.3.1
+XFT_USES=		xorg
 XFT_USE=		xorg=xft
 XFT_IMPLIES=		UTF8
 
 XPM_DESC=		Use Xpm to render icons
 XPM_CABAL_FLAGS=	with_xpm
+XPM_USES=		xorg
 XPM_USE=		xorg=xpm
 
 UTF8_DESC=		UTF-8 support

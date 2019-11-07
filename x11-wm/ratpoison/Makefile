@@ -28,6 +28,7 @@ OPTIONS_SUB=		yes
 GDM_SUPPORT_DESC=	Install session data files for GDM
 READLINE_USES=		readline
 READLINE_CONFIGURE_ENABLE=	history
+XFT_USES=		xorg
 XFT_USE=		xorg=xft
 XFT_CONFIGURE_WITH=	xft
 

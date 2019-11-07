@@ -50,6 +50,7 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 FFMPEG_CMAKE_BOOL=	WITH_FFMPEG
 
 GSTREAMER_CMAKE_BOOL=	WITH_GSTREAMER_1_0
+GSTREAMER_USES=		gnome xorg
 GSTREAMER_USE=		gnome=glib20 gstreamer1=yes xorg=x11,xorgproto,xext,xrandr
 GSTREAMER_LIB_DEPENDS=	libgstbase-1.0.so:multimedia/gstreamer1
 
@@ -68,6 +69,7 @@ X11_DESC=		Build FreeRDP X11 client
 X11_BUILD_DEPENDS=	xmlto:textproc/xmlto
 X11_CMAKE_BOOL=		WITH_X11
 X11_CMAKE_OFF=		-DWITH_XKBFILE=OFF
+X11_USES=		xorg
 X11_USE=		xorg=x11,xkbfile,xcursor,xorgproto,xv,xinerama,xext,xrandr,xi,xfixes,xrender
 
 post-patch:
