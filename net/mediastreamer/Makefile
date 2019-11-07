@@ -86,6 +86,7 @@ VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 
 XVIDEO_IMPLIES=		VIDEO
 XVIDEO_CMAKE_BOOL=	ENABLE_X11 ENABLE_XV
+XVIDEO_USES=		xorg
 XVIDEO_USE=		XORG=xorgproto,x11,xv
 
 .include <bsd.port.pre.mk>

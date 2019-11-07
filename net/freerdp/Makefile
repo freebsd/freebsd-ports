@@ -83,6 +83,7 @@ GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 GSM_CMAKE_BOOL=		WITH_GSM
 
 GSTREAMER_CMAKE_BOOL=	WITH_GSTREAMER_1_0
+GSTREAMER_USES=		gnome xorg
 GSTREAMER_USE=		gnome=glib20 gstreamer1=yes xorg=x11,xext,xorgproto,xrandr
 GSTREAMER_LIB_DEPENDS=	libgstbase-1.0.so:multimedia/gstreamer1
 
@@ -135,6 +136,7 @@ X11_CMAKE_ON=		-DWITH_X11:BOOL=ON -DWITH_XCURSOR:BOOL=ON \
 			-DWITH_XRENDER:BOOL=ON -DWITH_XSHM:BOOL=ON \
 			-DWITH_XV:BOOL=ON
 X11_CMAKE_OFF=		-DWITH_X11:BOOL=OFF -DWITH_XKBFILE:BOOL=OFF
+X11_USES=		xorg
 X11_USE=		xorg=x11,xcursor,xext,xorgproto,xfixes,xi,xinerama,xkbfile,xrandr,xrender,xv
 
 post-patch:

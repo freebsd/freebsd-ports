@@ -97,6 +97,7 @@ RSS_CMAKE_BOOL=		BUILD_RSS
 RSS_USE=		gnome=glib20,libxml2
 RSS_IMPLIES=		CURL
 
+X11_USES=		xorg
 X11_USE=		xorg=x11,xext,xdamage,xfixes
 X11_CMAKE_BOOL=		BUILD_X11 OWN_WINDOW
 X11_VARS=		EXAMPLE_CONF_FILE=${WRKSRC}/data/conky.conf

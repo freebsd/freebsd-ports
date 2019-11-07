@@ -43,9 +43,11 @@ PROFILE_CONFIGURE_ON=	--with-profiling=gprof
 SHM_DESC=		Shared Memory support
 SHM_CONFIGURE_ON=	--with-xshm=yes
 SHM_CONFIGURE_OFF=	--with-xshm=no
+XCURSOR_USES=		xorg
 XCURSOR_USE=		xorg=xcursor
 XCURSOR_CONFIGURE_ON=	--with-xcursor=yes
 XCURSOR_CONFIGURE_OFF=	--with-xcursor=no
+XFT_USES=		xorg
 XFT_USE=		xorg=xft
 XFT_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libfontconfig.so:x11-fonts/fontconfig
@@ -55,13 +57,16 @@ XFT_CPPFLAGS=		$$(freetype-config --cflags)
 XFT_LDFLAGS=		$$(freetype-config --libs)
 XFT_IMPLIES=		XRENDER
 XINPUT_DESC=		X Input extension library support
+XINPUT_USES=		xorg
 XINPUT_USE=		xorg=xi
 XINPUT_CONFIGURE_ON=	--with-xinput=yes
 XINPUT_CONFIGURE_OFF=	--with-xinput=no
+XRANDR_USES=		xorg
 XRANDR_USE=		xorg=xrandr
 XRANDR_CONFIGURE_ON=	--with-xrandr=yes
 XRANDR_CONFIGURE_OFF=	--with-xrandr=no
 XRENDER_DESC=		X Render extension library support
+XRENDER_USES=		xorg
 XRENDER_USE=		xorg=xrender
 XRENDER_CONFIGURE_ON=	--with-xrender=yes
 XRENDER_CONFIGURE_OFF=	--with-xrender=no

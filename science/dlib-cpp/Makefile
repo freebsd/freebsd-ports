@@ -22,6 +22,7 @@ OPTIONS_DEFAULT=	X11 JPEG PNG GIF SQLITE
 BLASLAPACK_DESC=	Use Blas and Lapack libraries from ports
 AVX_DESC=		Use AVX instructions if supported by CPU
 
+X11_USES=		xorg
 X11_USE=		xorg=x11
 X11_CMAKE_OFF=		-DDLIB_NO_GUI_SUPPORT=1
 

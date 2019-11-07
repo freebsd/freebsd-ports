@@ -22,6 +22,7 @@ OPTIONS_DEFAULT=	XTEST
 XAW3D_DESC=		Xaw3d widget library support
 XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 XTEST_DESC=		XTEST extensions support
+XTEST_USES=		xorg
 XTEST_USE=		xorg=xtst
 
 post-patch:

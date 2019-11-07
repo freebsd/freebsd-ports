@@ -58,6 +58,7 @@ TRANS_EXTRA_PATCHES=	${FILESDIR}/extra-terminal.c.diff
 
 UTF8_CONFIGURE_ENABLE=	utf8
 
+X11_USES=		xorg
 X11_USE=		xorg=x11,xorgproto
 X11_LIB_DEPENDS=	libevent.so:devel/libevent \
 			libfontconfig.so:x11-fonts/fontconfig
