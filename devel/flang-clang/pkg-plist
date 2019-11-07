@@ -733,4 +733,3 @@ flang/share/scan-view/Reporter.py
 flang/share/scan-view/ScanView.py
 flang/share/scan-view/bugcatcher.ico
 flang/share/scan-view/startfile.py
-libdata/ldconfig/flang-clang
