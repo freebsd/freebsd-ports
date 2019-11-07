@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		jpeg
+USES=		jpeg xorg
 USE_XORG=	x11 xext xfixes xft
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

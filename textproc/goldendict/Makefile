@@ -16,7 +16,7 @@ LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 		libvorbis.so:audio/libvorbis
 
 USES=		compiler:c++11-lang gnome iconv:wchar_t pkgconfig \
-		qmake qt:5
+		qmake qt:5 xorg
 USE_GITHUB=	yes
 GH_TAGNAME=	05bfc35
 USE_XORG=	xtst
