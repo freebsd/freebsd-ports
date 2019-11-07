@@ -1,6 +1,6 @@
---- src/librustc_llvm/build.rs.orig	2019-04-08 12:42:31 UTC
+--- src/librustc_llvm/build.rs.orig	2019-11-04 15:45:21 UTC
 +++ src/librustc_llvm/build.rs
-@@ -254,7 +254,10 @@ fn main() {
+@@ -273,7 +273,10 @@ fn main() {
      };
  
      // C++ runtime library

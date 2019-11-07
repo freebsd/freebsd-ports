@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.38.0
+PORTVERSION?=	1.39.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -41,13 +41,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
 
-USES=		libedit pkgconfig python:build ssl tar:xz
+USES=		pkgconfig python:build ssl tar:xz
 
 CONFLICTS_INSTALL?=	rust-nightly
-
-EXTRA_PATCHES+=		${EXTRA_PATCHES_${ARCH}}
-EXTRA_PATCHES_armv6=	${PATCHDIR}/extra-patch-arm-compiler-rt
-EXTRA_PATCHES_armv7=	${PATCHDIR}/extra-patch-arm-compiler-rt
 
 PLIST_FILES=	lib/rustlib/components \
 		lib/rustlib/rust-installer-version
@@ -61,9 +57,9 @@ DOCS_VARS=		_RUST_BUILD_DOCS=true
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
 
 # See WRKSRC/src/stage0.txt for the date and version values.
-BOOTSTRAPS_DATE?=		2019-08-15
-RUST_BOOTSTRAP_VERSION?=	1.37.0
-CARGO_BOOTSTRAP_VERSION?=	0.38.0
+BOOTSTRAPS_DATE?=		2019-09-26
+RUST_BOOTSTRAP_VERSION?=	1.38.0
+CARGO_BOOTSTRAP_VERSION?=	0.39.0
 COMPILER_RT_VERSION?=		9.0.0
 
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
@@ -83,6 +79,10 @@ _CARGO_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_B
 
 .include <bsd.port.pre.mk>
 
+.if exists(${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX})
+EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
+.endif
+
 .if ${ARCH} == powerpc64
 # The bootstrap is hardcoded to use gcc9
 # but we can build with a newer or older compiler as provided by USE_GCC=yes
@@ -90,9 +90,7 @@ BUILD_DEPENDS+=	gcc9:lang/gcc9
 USE_GCC=	yes
 .endif
 
-.if ${OPSYS} == FreeBSD && ${ARCH} == aarch64 && \
-	(${OSVERSION} < 1200502 || \
-	(${OSVERSION} > 1300000 && ${OSVERSION} < 1300006))
+.if ${ARCH} == aarch64 && ${OSVERSION} < 1200502
 IGNORE=	fails to run due to a bug in rtld, update to 12-STABLE r342847 or 13-CURRENT r342113
 .endif
 
@@ -131,6 +129,10 @@ post-patch:
 		${WRKSRC}/src/stage0.txt
 	@${ECHO_MSG} "Bootstrap date and version after patching:"
 	@${GREP} -E '^(date|rustc|cargo)' ${WRKSRC}/src/stage0.txt
+.if ${ARCH} == powerpc64
+	@${REINPLACE_CMD} -e 's,powerpc64-unknown-freebsd,powerpc64-unknown-freebsd${OSREL},' \
+		${WRKSRC}/src/librustc_target/spec/powerpc64_unknown_freebsd.rs
+.endif
 # Disable vendor checksums
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
 		${CARGO_VENDOR_DIR}/*/.cargo-checksum.json

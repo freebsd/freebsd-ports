@@ -1,6 +1,6 @@
 Revert to libgit2 0.28 API per https://github.com/rust-lang/git2-rs/issues/458
 
---- vendor/libgit2-sys/lib.rs.orig	2019-08-16 20:27:18 UTC
+--- vendor/libgit2-sys/lib.rs.orig	2019-11-04 17:34:46 UTC
 +++ vendor/libgit2-sys/lib.rs
 @@ -331,7 +331,6 @@ pub struct git_remote_callbacks {
      pub push_negotiation: Option<git_push_negotiation>,
@@ -19,7 +19,7 @@ Revert to libgit2 0.28 API per https://github.com/rust-lang/git2-rs/issues/458
  
  #[repr(C)]
  pub struct git_push_update {
-@@ -2233,7 +2230,7 @@ extern "C" {
+@@ -2280,7 +2277,7 @@ extern "C" {
          source: *const git_tree,
      ) -> c_int;
      pub fn git_treebuilder_clear(bld: *mut git_treebuilder);
