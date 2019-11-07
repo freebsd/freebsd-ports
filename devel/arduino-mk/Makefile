@@ -5,13 +5,11 @@ PORTNAME=	arduino-mk
 PORTVERSION=	0.10
 PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	http://mjo.tc/atelier/2009/02/acli/
+MASTER_SITES=	http://www.mjoldfield.com/atelier/2009/02/acli/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Build Arduino sketches from the command line
-
-BROKEN=		unfetchable
 
 LICENSE=	LGPL21
 
