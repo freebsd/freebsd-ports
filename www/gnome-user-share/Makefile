@@ -20,7 +20,7 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 RUN_DEPENDS=	ap*-mod_dnssd>=0:www/mod_dnssd \
 		console-kit-daemon:sysutils/consolekit2
 
-USES=		apache:2.2+ gettext gmake libtool pkgconfig tar:xz
+USES=		apache:2.2+ gettext gmake gnome libtool pkgconfig tar:xz xorg
 USE_XORG=	sm
 USE_GNOME=	gnomeprefix gtk30 intlhack nautilus3
 GNU_CONFIGURE=	yes

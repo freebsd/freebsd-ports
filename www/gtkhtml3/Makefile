@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 
 PORTSCOUT=	ignore:1
 
-USES=		gettext libtool pathfix pkgconfig gmake tar:bzip2
+USES=		gettext gnome libtool pathfix pkgconfig gmake tar:bzip2 xorg
 USE_XORG=	xinerama xi xrandr xcursor xcomposite xdamage
 USE_GNOME=	gnomeprefix intlhack gconf2 gtk20
 USE_LDCONFIG=	yes

@@ -21,7 +21,7 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		xclip:x11/xclip \
 		xsel:x11/xsel-conrad
 
-USES=		cargo localbase:ldflags python:build,3.5+ ssl
+USES=		cargo localbase:ldflags python:build,3.5+ ssl xorg
 USE_GITLAB=	yes
 GL_ACCOUNT=	timvisee
 GL_COMMIT=	7751898851511a516aa0d017afea1d8a8260a02a

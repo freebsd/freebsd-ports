@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${PY_ENUM34}
 RUN_DEPENDS=	${PY_ENUM34}
 
-USES=		python pyqt:5 qt:5
+USES=		gl python pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core gui network printsupport webchannel
 USE_PYTHON=	concurrent flavors py3kplist

@@ -30,7 +30,7 @@ OPERA_VER?=	12.16
 OPERA_BUILD?=	1860
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
-USES=		tar:xz desktop-file-utils shared-mime-info
+USES=		tar:xz desktop-file-utils shared-mime-info xorg
 USE_XORG=	x11 xext sm ice xft xrender
 REINPLACE_ARGS=	-i '' # no .bak files
 
@@ -46,6 +46,7 @@ VIDEO_DESC=	support for HTML5 video (requires GStreamer)
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
 VIDEO_USE=	gstreamer=vorbis,ogg,theora,vp8,good
+GTK2_USES=	gnome
 GTK2_USE=	gnome=gtk20,libxml2
 
 .include <bsd.port.options.mk>

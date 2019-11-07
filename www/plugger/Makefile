@@ -9,8 +9,8 @@ MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia front-end plugin for Mozilla or Opera
 
+USES=		webplugin:native xorg
 USE_XORG=	xext xt sm ice xext x11
-USES=		webplugin:native
 GNU_CONFIGURE=	yes
 
 PKGDEINSTALL=	${PKGINSTALL}
