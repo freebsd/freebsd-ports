@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=Gtk Copy-paste Buffer
 Comment=A GTK+ tool for managing x11 cut-buffers
-Icon=gcb.png
+Icon=gcb
 Exec=gcb -B
 Type=Application
 Categories=GNOME;Application;System
