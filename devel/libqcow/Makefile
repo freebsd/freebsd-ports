@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libqcow
-DISTVERSION=	alpha-20181227
+DISTVERSION=	alpha-20191103
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libqcow/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
