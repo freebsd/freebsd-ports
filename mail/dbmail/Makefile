@@ -3,15 +3,13 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	3.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	http://git.dbmail.eu/paul/dbmail/snapshot/ \
 		http://www.dbmail.org/download/3.2/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SQL database-based mail system (POP3 and IMAP)
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
@@ -32,7 +30,7 @@ SIEVE_DESC=	Sieve mail sorting language support
 OPTIONS_SUB=	yes
 
 INSTALL_TARGET=	install-strip
-USES=		autoreconf gmake libtool pkgconfig shebangfix ssl tar:bzip2
+USES=		autoreconf gmake libtool pkgconfig shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
 GNU_CONFIGURE=	yes
