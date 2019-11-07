@@ -32,7 +32,7 @@ PLIST_FILES=	bin/zerotier-cli bin/zerotier-idtool sbin/zerotier-one
 
 .if ${OPSYS} == "FreeBSD"
 # log output via syslog when daemon(8) supports it
-.if ((${OSVERSION} >= 1100513 && ${OSVERSION} < 1200000) || ${OSVERSION} >= 1200015)
+.if (${OSVERSION} < 1200000 || ${OSVERSION} >= 1200015)
 SUB_LIST+=	ZEROTIER_SYSLOG="-s debug -T zerotier"
 .else
 SUB_LIST+=	ZEROTIER_SYSLOG=""

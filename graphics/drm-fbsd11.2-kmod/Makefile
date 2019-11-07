@@ -32,7 +32,7 @@ GH_TAGNAME=	72300db
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1102000 || ${OSVERSION} > 1200000)
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200000
 IGNORE=		only supported on FreeBSD 11.
 .endif
 

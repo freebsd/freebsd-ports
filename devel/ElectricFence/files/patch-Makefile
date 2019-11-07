@@ -1,12 +1,12 @@
---- Makefile.orig	Wed Apr 14 03:22:49 1999
-+++ Makefile	Sun Oct 22 14:27:23 2006
+--- Makefile.orig	1999-04-13 17:22:49 UTC
++++ Makefile
 @@ -1,8 +1,14 @@
  PIC= -fPIC
 -CFLAGS= -g -DUSE_SEMAPHORE $(PIC)
 -LIBS= -lpthread
 +#CFLAGS= -g -DUSE_SEMAPHORE $(PIC)
 +CFLAGS+= -g $(PIC)
-+.if ${MACHINE_ARCH} == "i386" && ${OSVERSION} < 700003 || (${MACHINE_ARCH} == "amd64" && ${OSVERSION} < 700003) || ${MACHINE_ARCH} == "ia64" || ${MACHINE_ARCH} == "sparc64"
++.if ${MACHINE_ARCH} == "sparc64"
 +CFLAGS+= -DPAGE_PROTECTION_VIOLATED_SIGNAL=SIGBUS
 +.endif
 +#CFLAGS+= -pthread
@@ -18,7 +18,7 @@
  BIN_INSTALL_DIR= $(prefix)/bin
  LIB_INSTALL_DIR= $(prefix)/lib
  MAN_INSTALL_DIR= $(prefix)/man/man3
-@@ -17,14 +23,18 @@
+@@ -17,14 +23,18 @@ PACKAGE_SOURCE= README efence.3 Makefile efence.h \
  OBJECTS= efence.o page.o print.o
  
  all:	libefence.a libefence.so.0.0 tstheap eftest
@@ -45,7 +45,7 @@
  
  install: libefence.a efence.3 libefence.so.0.0
  	$(INSTALL) -m 755 ef.sh $(BIN_INSTALL_DIR)/ef
-@@ -54,16 +64,16 @@
+@@ -54,16 +64,16 @@ libefence.a: $(OBJECTS)
  	$(AR) crv libefence.a $(OBJECTS)
  
  libefence.so.0.0: $(OBJECTS)
