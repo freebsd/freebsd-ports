@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	blackbox:x11-wm/blackbox
 
-USES=		perl5 pkgconfig
+USES=		perl5 pkgconfig xorg
 USE_PERL5=	build
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes

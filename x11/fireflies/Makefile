@@ -13,7 +13,8 @@ COMMENT=	Extension of xscreensaver
 LIB_DEPENDS=	libgfx.so:graphics/libgfx
 
 GNU_CONFIGURE=	yes
-USE_GL=		yes
+USES=		gl
+USE_GL=		glu
 EXTRACT_AFTER_ARGS=--exclude '${DISTNAME}/libgfx*'
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/GL

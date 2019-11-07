@@ -16,7 +16,7 @@ GH_ACCOUNT=	tiliado
 
 # USES=waf implicity does USES=python:2.7,build but that is not sufficient
 # for shebangfix to know the python version
-USES=		gnome pkgconfig python:2.7,build shebangfix waf
+USES=		gnome pkgconfig python:2.7,build shebangfix waf xorg
 USE_GITHUB=	yes
 USE_GNOME=	gdkpixbuf2 glib20 gtk30
 USE_XORG=	x11

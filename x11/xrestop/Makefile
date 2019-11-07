@@ -12,7 +12,7 @@ COMMENT=	X11 server side resource usage statistics monitor
 
 BROKEN=		unfetchable
 
-USES=		gmake pkgconfig ncurses
+USES=		gmake pkgconfig ncurses xorg
 USE_XORG=	x11 xext xrender xt xres xorgproto
 GNU_CONFIGURE=	yes
 

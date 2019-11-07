@@ -13,7 +13,7 @@ COMMENT=	Simple dockable clock application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2
+USES=		tar:bzip2 xorg
 USE_XORG=	x11 xau xdmcp xext xpm
 
 PLIST_FILES=	bin/wmblueclock man/man1/${PORTNAME}.1.gz

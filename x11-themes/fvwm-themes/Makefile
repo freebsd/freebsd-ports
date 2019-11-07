@@ -19,7 +19,7 @@ BUILD_DEPENDS=	gm4:devel/m4 \
 		fvwm2:x11-wm/fvwm2
 RUN_DEPENDS=	fvwm2:x11-wm/fvwm2
 
-USES=		gmake perl5 shebangfix tar:bzip2
+USES=		gmake perl5 shebangfix tar:bzip2 xorg
 USE_XORG=	xpm
 SHEBANG_FILES=	themes/cde/modules/create-buttonbar-config \
 		themes/redmondxp/modules/FvwmThemesPanelManager

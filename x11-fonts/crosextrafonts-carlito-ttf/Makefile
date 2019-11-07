@@ -2,7 +2,7 @@
 
 PORTNAME=	crosextrafonts-carlito
 PORTVERSION=	20130920
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://gsdview.appspot.com/chromeos-localmirror/distfiles/
 
@@ -11,7 +11,7 @@ COMMENT=	Font created by Google for ChromeOS to replace MS Calibri
 
 LICENSE=	OFL11
 
-USES=		fonts
+USES=		fonts xorg
 USE_XORG=	x11
 
 NO_ARCH=	yes

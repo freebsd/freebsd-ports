@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	fluxbox:x11-wm/fluxbox
 
-USES=		gmake localbase:ldflags tar:bzip2
+USES=		gmake localbase:ldflags tar:bzip2 xorg
 ALL_TARGET=	first
 MAKE_ARGS=	CXX="${CXX}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" LFLAGS="${LDFLAGS}"

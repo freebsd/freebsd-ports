@@ -9,8 +9,8 @@ MASTER_SITES=	http://disjunkt.com/xbrightness/ ftp://ftp.motoom.net/files/
 MAINTAINER=	motoom@xs4all.nl
 COMMENT=	Brightness and gamma correction through the X server
 
+USES=		imake xorg
 USE_XORG=	x11 xxf86vm ice xmu xt xaw
-USES=		imake
 
 PLIST_FILES=	bin/xbrightness man/man1/xbrightness.1.gz
 

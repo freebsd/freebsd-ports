@@ -18,7 +18,8 @@ USES=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
-USES+=		bison gettext gmake libtool localbase pathfix pkgconfig
+USES+=		bison gettext gmake gnome libtool localbase pathfix pkgconfig \
+		xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intlhack introspection:build \
 		referencehack
 USE_XORG=	xext xrender xres x11

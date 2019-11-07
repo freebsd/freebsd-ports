@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ant hill simulation on X11 root window
 
 WRKSRC=		${WRKDIR}/xantfarm
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext xt
 PLIST_FILES=	bin/xantfarm \
 		man/man1/xantfarm.1.gz

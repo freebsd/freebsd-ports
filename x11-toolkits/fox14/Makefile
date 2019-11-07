@@ -23,7 +23,7 @@ MAJORVER=	${PORTVERSION:R}
 SHVER=		${PORTVERSION:S/${MAJORVER}.//}
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
-USES=		jpeg libtool
+USES=		gl jpeg libtool
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl=yes \
@@ -48,6 +48,7 @@ SHM_DESC=	Shared Memory support
 #
 .if ${PORT_OPTIONS:MXFT}
 CONFIGURE_ARGS+=--with-xft=yes
+USES+=		xorg
 USE_XORG+=	xft
 CPPFLAGS+=	`freetype-config --cflags`
 LDFLAGS+=	`freetype-config --libs`

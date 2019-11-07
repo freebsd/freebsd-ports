@@ -13,7 +13,7 @@ COMMENT=	Simple digital timer for X11
 
 BROKEN=		unfetchable
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 PLIST_FILES=	bin/xtimer man/man1/${PORTNAME}.1.gz
 

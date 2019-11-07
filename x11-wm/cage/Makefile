@@ -19,7 +19,7 @@ LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c11 meson pkgconfig
+USES=		compiler:c11 meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	Hjdskes

@@ -10,6 +10,7 @@ MASTER_SITES=	http://dl.suckless.org/tools/
 MAINTAINER=	nuncupatio@gmail.com
 COMMENT=	Prints/sets the window manager name property of the root window
 
+USES=		xorg
 USE_XORG=	x11 xorgproto
 
 PLIST_FILES=	bin/wmname

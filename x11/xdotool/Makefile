@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jordansissel
 
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig perl5
+USES=		gmake pkgconfig perl5 xorg
 USE_XORG=	x11 xtst xinerama
 USE_PERL5=	build
 

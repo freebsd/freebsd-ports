@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++11-lang gl xorg
 USE_GL=		gl glu glew
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext xrender

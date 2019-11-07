@@ -14,7 +14,7 @@ COMMENT=	Twm with a virtual desktop
 LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/tvtwm
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xbitmaps xpm xmu
 PLIST_FILES=	bin/tvtwm \
 		man/man1/tvtwm.1.gz

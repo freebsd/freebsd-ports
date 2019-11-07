@@ -15,7 +15,7 @@ COMMENT=	Rotating Object on the screen (Zalgaller polyhedra)
 
 LICENSE=	MIT
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

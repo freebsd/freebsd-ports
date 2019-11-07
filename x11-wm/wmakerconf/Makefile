@@ -20,8 +20,8 @@ RUN_DEPENDS=	rpm:archivers/rpm4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USES=		gettext pkgconfig perl5 gmake gnome shebangfix xorg
 USE_GNOME=	gtk20
-USES=		gettext pkgconfig perl5 gmake shebangfix
 SHEBANG_FILES=	scripts/getfile.pl.in scripts/upgrade.pl.in
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wmakerdataprefix="${LOCALBASE}/share" \

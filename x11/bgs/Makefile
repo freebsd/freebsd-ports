@@ -13,6 +13,7 @@ COMMENT=	Simple X11 BackGround Setter using Imlib2
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
+USES=		xorg
 USE_XORG=	x11 xinerama
 
 PLIST_FILES=	bin/bgs \

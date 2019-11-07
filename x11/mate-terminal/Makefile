@@ -19,8 +19,8 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake localbase pathfix perl5 pkgconfig \
-		shebangfix tar:xz
+USES=		gettext gmake gnome localbase pathfix perl5 pkgconfig \
+		shebangfix tar:xz xorg
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo dconf gdkpixbuf2 gtk30 intltool vte3
 SHEBANG_FILES=	mate-terminal.wrapper

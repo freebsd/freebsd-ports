@@ -20,7 +20,8 @@ LIB_DEPENDS+=	libgnome-keyring.so:security/libgnome-keyring \
 		libstartup-notification-1.so:x11/startup-notification
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:misc/gnome-icon-theme
 
-USES+=		bison gettext gmake localbase libtool:keepla pathfix pkgconfig
+USES+=		bison gettext gmake gnome localbase libtool:keepla pathfix \
+		pkgconfig xorg
 USE_GNOME=	gnomeprefix intltool libbonoboui referencehack gvfs
 USE_XORG=	sm
 USE_LDCONFIG=	yes

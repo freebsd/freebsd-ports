@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_i386=	constant expression evaluates to -2147483648 which cannot be narrowed to type 'unsigned long'
 
-USES=		gmake imake:env tar:bzip2
+USES=		gmake imake:env tar:bzip2 xorg
 USE_XORG=	x11 ice sm xext xmu xpm xt xxf86vm
 
 PORTDOCS=	AUTHORS ChangeLog PROBLEMS README README.tiling TODO

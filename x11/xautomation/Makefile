@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
+USES=		xorg
 USE_XORG=	xtst
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

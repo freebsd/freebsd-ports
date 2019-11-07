@@ -14,7 +14,7 @@ LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL.txt
 
 NO_ARCH=	yes
-USES=		fonts
+USES=		fonts xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	fonts

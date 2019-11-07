@@ -12,6 +12,7 @@ COMMENT=	Minimalist window manager inspired by Ratpoison
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		xorg
 USE_XORG=	x11
 
 PLIST_FILES=	bin/antiwm

@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Raw X11 protocol analyser
 
 WRKSRC=		${WRKDIR}/xmon.${PORTVERSION}
-USES=		imake
+USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
 .include <bsd.port.mk>

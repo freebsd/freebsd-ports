@@ -13,6 +13,7 @@ COMMENT=	Another Window Maker calendar/clock dockapp
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+USES=		xorg
 USE_XORG=	xpm
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 PLIST_FILES=	bin/wmCalClock man/man1/${PORTNAME}.1.gz

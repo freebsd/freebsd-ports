@@ -17,7 +17,7 @@ LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/props
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 MAKE_ARGS=	INFOFILES=""
 

@@ -13,7 +13,7 @@ COMMENT=	Quick start up utility for applications on an X display
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		imake perl5 tar:Z
+USES=		imake perl5 tar:Z xorg
 USE_PERL5=	build
 USE_XORG=	xaw
 

@@ -40,7 +40,8 @@ RUN_DEPENDS=	gnome-control-center:sysutils/gnome-control-center
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 cpe gettext gl gnome libtool localbase meson \
-		pathfix perl5 pkgconfig python:3.4+ shebangfix tar:xz webplugin:native
+		pathfix perl5 pkgconfig python:3.4+ shebangfix tar:xz \
+		webplugin:native xorg
 USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 introspection \
 		libxslt:build libxml2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr xtst

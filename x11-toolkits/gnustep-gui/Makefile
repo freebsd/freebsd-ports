@@ -21,7 +21,7 @@ LIB_DEPENDS+=	libsndfile.so:audio/libsndfile
 LIB_DEPENDS+=	libao.so:audio/libao
 LIB_DEPENDS+=	libflite.so:audio/flite
 
-USES=		gnustep jpeg pkgconfig
+USES=		gnustep jpeg pkgconfig xorg
 USE_GNUSTEP=	base build
 USE_XORG=	x11 xt
 

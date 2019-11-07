@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
 
-USES=		gmake localbase:ldflags
+USES=		gmake localbase:ldflags xorg
 
 USE_XORG=	xcb
 

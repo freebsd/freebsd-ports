@@ -13,7 +13,7 @@ COMMENT=	Extension to twm, with support for multiple virtual screens
 
 LICENSE=	MIT
 
-USES=		cmake jpeg tar:xz
+USES=		cmake jpeg tar:xz xorg
 USE_XORG=	x11 xext xt ice sm xpm xmu
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

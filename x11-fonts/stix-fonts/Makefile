@@ -11,7 +11,7 @@ COMMENT=	OpenType Unicode fonts for Scientific, Technical, and Math texts
 
 LICENSE=	OFL11
 
-USES=		fonts
+USES=		fonts xorg
 USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	stipub

@@ -17,7 +17,8 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		compiler:c++11-lang gettext-runtime gl pkgconfig qmake qt:5
+USES=		compiler:c++11-lang gettext-runtime gl gnome pkgconfig qmake \
+		qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	qt
 GH_PROJECT=	qtstyleplugins

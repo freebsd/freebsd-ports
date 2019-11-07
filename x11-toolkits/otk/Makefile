@@ -15,7 +15,7 @@ LICENSE=	LGPL20+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_lib
 
-USES=		tar:tgz
+USES=		gl tar:tgz xorg
 USE_XORG=	xmu xext x11
 USE_GL=		glut glu gl
 USE_LDCONFIG=	yes

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		localbase pkgconfig
+USES=		localbase pkgconfig xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sagb

@@ -13,6 +13,7 @@ COMMENT=	Letters fly to far, far, far away
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.1
 
+USES=		xorg
 USE_XORG=	xpm xt xaw
 ALL_TARGET=	xstarroll
 

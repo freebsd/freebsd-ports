@@ -22,10 +22,10 @@ RUN_DEPENDS=	zenity>=3.0.0:x11/zenity \
 
 PORTSCOUT=	limitw:1,even
 
-USE_XORG=	x11 xcomposite xdamage xrender xcursor xinerama xext xrandr
 USES=		compiler:c11 gettext gmake gnome libtool \
-		localbase pathfix pkgconfig tar:xz
+		localbase pathfix pkgconfig tar:xz xorg
 GNU_CONFIGURE=	yes
+USE_XORG=	x11 xcomposite xdamage xrender xcursor xinerama xext xrandr
 USE_GNOME=	gnomeprefix gtk30 intlhack libxml2:build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

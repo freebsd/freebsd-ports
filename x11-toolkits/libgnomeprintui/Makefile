@@ -15,7 +15,8 @@ COMMENT=	Gnome print support library
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-theme
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-theme
 
-USES=		bison gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		bison gettext gmake gnome libtool:keepla pathfix pkgconfig \
+		tar:bzip2 xorg
 USE_XORG=	x11 xpm
 USE_GNOME=	gnomeprefix libgnomeprint libgnomecanvas \
 		intlhack

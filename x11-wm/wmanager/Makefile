@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gmake
+USES=		gl gmake xorg
 USE_XORG=	x11 xext
 USE_GL=		gl
 

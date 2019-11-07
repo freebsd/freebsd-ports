@@ -34,7 +34,8 @@ PANGO_CONFIGURE_ENABLE=	pango
 DOCS_CONFIGURE_ON=	--enable-docs=yes
 DOCS_CONFIGURE_OFF=	--enable-docs=no
 
-USES=		autoreconf gmake iconv libtool gnome perl5 pkgconfig shebangfix
+USES=		autoreconf gmake iconv libtool gnome perl5 pkgconfig \
+		shebangfix xorg
 
 USE_XORG=	ice sm xorgproto x11 xbitmaps \
 		xcomposite xdamage xext xfixes xft xinerama xrandr xrender \

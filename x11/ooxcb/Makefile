@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 NO_ARCH=	yes
 
-USES=		python:2.7
+USES=		python:2.7 xorg
 USE_PYTHON=	distutils autoplist
 USE_XORG=	xcb
 

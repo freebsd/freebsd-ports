@@ -11,7 +11,7 @@ COMMENT=	Virtual keyboard for X applications
 
 LICENSE=	GPLv2+
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 DESKTOP_ENTRIES="Xvkbd" "" "" "xvkbd" "Utility;" false

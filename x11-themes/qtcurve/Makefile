@@ -34,7 +34,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	KDE
 GH_TAGNAME=	a1ec5f8
 
-USES=		compiler:c++11-lib cmake:insource pkgconfig
+USES=		compiler:c++11-lib cmake:insource pkgconfig xorg
 USE_XORG=	x11 xcb
 
 .for i in gtk2 kf5 qt5

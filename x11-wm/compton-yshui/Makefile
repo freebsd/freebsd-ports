@@ -25,7 +25,8 @@ RUN_DEPENDS=	xprop:x11/xprop \
 
 CONFLICTS_INSTALL=	compton # bin/compton
 
-USES=		compiler:c11 meson localbase pkgconfig python:3.4+,run shebangfix
+USES=		compiler:c11 meson localbase pkgconfig python:3.4+,run \
+		shebangfix xorg
 USE_GITHUB=	yes
 USE_XORG=	x11 xcb xext pixman
 GH_ACCOUNT=	yshui
@@ -49,6 +50,7 @@ DRM_DESC=		DRM VSync fallback (deprecated)
 DRM_LIB_DEPENDS=	libdrm.so:graphics/libdrm
 DRM_MESON_TRUE=		vsync_drm
 
+OPENGL_USES=		gl
 OPENGL_USE=		GL=gl
 OPENGL_MESON_TRUE=	opengl
 

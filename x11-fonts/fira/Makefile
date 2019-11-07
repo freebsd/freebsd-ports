@@ -11,7 +11,7 @@ COMMENT=	Sans-serif, monospaced, and code typeface for small screens
 
 LICENSE=	OFL11
 
-USES=		fonts
+USES=		fonts xorg
 USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	bBoxType

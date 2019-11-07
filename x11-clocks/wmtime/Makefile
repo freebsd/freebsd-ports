@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time/Date applet for WindowMaker
 
 WRKSRC=		${WRKDIR}/wmtime.app/wmtime
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xpm
 USE_CSTD=	gnu89
 

@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
-USES=		jpeg libtool
+USES=		gl jpeg libtool xorg
 USE_XORG=	xpm
 USE_GL=		gl
 USE_LDCONFIG=	yes

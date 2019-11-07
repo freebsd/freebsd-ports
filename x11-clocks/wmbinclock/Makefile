@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	engerim42
 
 PLIST_FILES=	bin/wmBinClock
-USES=		gmake
+USES=		gmake xorg
 USE_XORG=	xpm
 
 post-patch:

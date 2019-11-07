@@ -18,6 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 # do-test target.
 TEST_DEPENDS=	${LOCALBASE}/libexec/atf-check:devel/kyua
 
+USES=		xorg
 USE_XORG=	x11 xft
 
 MAKE_ARGS=	CC="${CC}" \

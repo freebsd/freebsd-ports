@@ -22,7 +22,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libgnutls.so:security/gnutls
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		gettext libtool:build pkgconfig python:build tar:xz
+USES=		gettext gnome libtool:build pkgconfig python:build tar:xz xorg
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo librsvg2:run libxslt:build vte3
 USE_CSTD=	c99

@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=	pkgconfig
+USES=	pkgconfig xorg
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xft xinerama xpm xmu xrandr

@@ -23,7 +23,7 @@ BUILD_DEPENDS=	xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
 		xf86-input-libinput>0:x11-drivers/xf86-input-libinput
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils \
-		gettext kde:5 pkgconfig qt:5 tar:xz xorg
+		gettext gnome kde:5 pkgconfig qt:5 tar:xz xorg
 USE_GNOME=	glib20
 USE_KDE=	activities activities-stats archive attica auth baloo \
 		bookmarks codecs completion config configwidgets coreaddons \

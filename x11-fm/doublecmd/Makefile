@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		dos2unix desktop-file-utils fpc gnome lazarus:flavors
+USES=		dos2unix desktop-file-utils fpc gnome lazarus:flavors xorg
 
 PORTDOCS=	*
 

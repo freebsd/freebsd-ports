@@ -20,7 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 PATCHDIR=	${PORTSDIR}/x11-toolkits/xview/files
 LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 ALL_TARGET=	Clients
 

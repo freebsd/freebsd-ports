@@ -11,7 +11,7 @@ COMMENT=	Keeps per-window keyboard layout under X11
 
 LICENSE=	GPLv3
 
-USES=		localbase
+USES=		localbase xorg
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
 

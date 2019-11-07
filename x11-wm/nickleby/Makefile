@@ -11,6 +11,7 @@ COMMENT=	Simple window manager
 
 BROKEN=		unfetchable
 
+USES=		xorg
 USE_XORG=	x11
 DESTDIRNAME=	STAGEDIR
 

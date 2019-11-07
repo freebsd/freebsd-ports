@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	lightweight window manager with emphasis on usability
 
+USES=		gmake xorg
 USE_XORG=	x11
-USES=		gmake
 MAKE_ENV=	X11_PREFIX="${LOCALBASE}" HAS_SYSTEM_ASPRINTF=1
 
 OPTIONS_DEFINE=	DOCS

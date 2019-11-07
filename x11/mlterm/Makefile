@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		gettext gnome libtool perl5 pkgconfig
+USES=		gettext gnome libtool perl5 pkgconfig xorg
 USE_XORG=	sm x11 xft
 USE_GNOME=	cairo gdkpixbuf2 gtk20 vte
 USE_LDCONFIG=	yes

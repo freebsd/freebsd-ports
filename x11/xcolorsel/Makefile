@@ -20,7 +20,7 @@ LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 RUN_DEPENDS=	rgb>=1.0.3:x11/rgb
 
 WRKSRC=		${WRKDIR}/xcolorsel
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xpm
 
 post-patch:

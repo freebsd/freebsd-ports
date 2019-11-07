@@ -9,8 +9,8 @@ MASTER_SITES=	http://opencircuitdesign.com/~tim/programs/dclock/archive/
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	7-segment digital clock with some optional features
 
+USES=		pkgconfig tar:tgz xorg
 USE_XORG=	x11 xt
-USES=		pkgconfig tar:tgz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lXt -lm

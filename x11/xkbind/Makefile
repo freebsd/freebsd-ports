@@ -12,6 +12,7 @@ COMMENT=	Minimal keyboard layout indicator program
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+USES=		xorg
 USE_XORG=	x11
 
 PLIST_FILES=	bin/${PORTNAME} lib/${PORTNAME}/app-defaults/Xkbind \

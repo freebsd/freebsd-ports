@@ -21,8 +21,8 @@ BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool localbase pathfix \
-		pkgconfig python shebangfix tar:xz
+USES=		gettext gmake gnome libtool localbase pathfix \
+		pkgconfig python shebangfix tar:xz xorg
 USE_XORG=	x11 xrandr
 USE_GNOME=	cairo dconf gdkpixbuf2 gnomeprefix gtk30 \
 		intltool introspection:build

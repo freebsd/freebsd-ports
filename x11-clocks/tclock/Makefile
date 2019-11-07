@@ -14,7 +14,7 @@ COMMENT=	Transparent analog clock for x11
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		imake tar:Z
+USES=		imake tar:Z xorg
 USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/tclock man/man1/${PORTNAME}.1.gz

@@ -12,7 +12,7 @@ COMMENT=	XKB keyboard layout indicator and switcher
 
 LICENSE=	ART10
 
-USES=		iconv imake pkgconfig
+USES=		iconv imake pkgconfig xorg
 USE_XORG=	xext xpm xt
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

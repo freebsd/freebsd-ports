@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfm-extra.so:x11/libfm-extra \
 	libfreetype.so:print/freetype2 \
 	libunistring.so:devel/libunistring
 
-USES=	gettext-tools gmake pathfix pkgconfig tar:xz
+USES=		gettext-tools gmake gnome pathfix pkgconfig tar:xz xorg
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 intltool cairo gdkpixbuf2
 USE_XORG=	x11

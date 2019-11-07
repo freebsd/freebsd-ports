@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	mkfontdir:x11-fonts/mkfontscale
 
-USES=		autoreconf fonts libtool pkgconfig
+USES=		autoreconf fonts libtool pkgconfig xorg
 USE_LDCONFIG=	yes
 USE_XORG=	fontutil x11 xext xpm
 

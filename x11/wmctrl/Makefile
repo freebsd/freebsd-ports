@@ -12,7 +12,7 @@ COMMENT=	Command line tool to interact with an EWMH/NetWM compatible X managers
 
 LICENSE=	GPLv2
 
-USES=		pkgconfig
+USES=		pkgconfig xorg
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xmu xext xt
 USE_GNOME=	glib20

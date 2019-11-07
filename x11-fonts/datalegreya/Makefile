@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	figs-lab
 GH_TAGNAME=	bb0872f
 
-USES=		fonts
+USES=		fonts xorg
 USE_XORG=	x11
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
-USES=		autoreconf gmake
+USES=		autoreconf gmake xorg
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xt
 

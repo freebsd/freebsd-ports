@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		cmake compiler:c++11-lang jpeg pkgconfig
+USES=		cmake compiler:c++11-lang jpeg pkgconfig xorg
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xmu xorg-server xrandr \
 		xrender xt
 USE_RC_SUBR=	slim

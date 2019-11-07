@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 # Conflict due to x3270if
 CONFLICTS=	c3270-*
 
-USES=		cpe iconv fonts imake:env
+USES=		cpe iconv fonts imake:env xorg
 USE_XORG=	ice sm x11 xaw xext xmu xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fontdir=${FONTSDIR} \

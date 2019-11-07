@@ -13,7 +13,7 @@ COMMENT=	Portable library for joystick/sound/OpenGL GUI/3D math
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		gl gmake xorg
 USE_XORG=	xt xi xmu xext x11
 USE_GL=		glu
 GNU_CONFIGURE=	yes

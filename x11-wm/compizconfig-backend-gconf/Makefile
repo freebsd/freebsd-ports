@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcompizconfig.so:x11-wm/libcompizconfig \
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		gmake gnome libtool:keepla pathfix pkgconfig tar:bzip2 xorg
 USE_GNOME=	gconf2 glib20 libxslt
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xinerama xrandr

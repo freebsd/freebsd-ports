@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake jpeg libtool:build motif pkgconfig tar:tgz
+USES=		gmake jpeg libtool:build motif pkgconfig tar:tgz xorg
 USE_XORG=	xft xmu xpm xt
 USE_LDCONFIG=	yes
 

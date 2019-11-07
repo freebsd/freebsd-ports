@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 PORTDOCS=	xvt.1.html xvtRef.html xvtRef.txt
 
-USES=		libtool perl5 tar:xz
+USES=		libtool perl5 tar:xz xorg
 USE_LDCONFIG=	yes
 USE_PERL5=	build patch
 USE_XORG=	x11 xpm

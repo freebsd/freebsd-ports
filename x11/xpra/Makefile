@@ -41,7 +41,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		Xvfb:x11-servers/xorg-vfbserver
 
 USES=		desktop-file-utils fortran gettext-runtime gnome pkgconfig \
-		python:2.7 shared-mime-info shebangfix tar:xz
+		python:2.7 shared-mime-info shebangfix tar:xz xorg
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 USE_PYTHON=	cython distutils

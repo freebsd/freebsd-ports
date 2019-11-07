@@ -10,8 +10,8 @@ MASTER_SITES=	ftp://ftp.cs.brown.edu/pub/xmx/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X protocol multiplexor
 
+USES=		tar:Z xorg
 USE_XORG=	x11
-USES=		tar:Z
 
 PLIST_FILES=	bin/xmx man/man1/xmx.1.gz
 

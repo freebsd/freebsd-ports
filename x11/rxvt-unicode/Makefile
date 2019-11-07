@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig
 RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig
 
-USES=			cpe pkgconfig shebangfix tar:bzip2 terminfo
+USES=			cpe pkgconfig shebangfix tar:bzip2 terminfo xorg
 USE_XORG=		xpm xft xrender
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
@@ -143,6 +143,7 @@ CONFIGURE_ARGS+=	--enable-smart-resize
 .if !${PORT_OPTIONS:MGDK_PIXBUF}
 CONFIGURE_ARGS+=	--disable-pixbuf
 .else
+USES+=			gnome
 USE_GNOME+=		gdkpixbuf2
 CONFIGURE_ARGS+=	--enable-pixbuf
 .endif

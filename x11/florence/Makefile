@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify
 
-USES=		gmake iconv libtool pathfix pkgconfig tar:bzip2
+USES=		gmake gnome iconv libtool pathfix pkgconfig tar:bzip2 xorg
 USE_XORG=	xtst xext
 USE_GNOME=	gtk30 cairo intlhack gnomedocutils librsvg2
 USE_GSTREAMER1=	yes

@@ -15,8 +15,8 @@ COMMENT=	X11 font designed to be small yet easily read
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 SUB_FILES=	pkg-message
+USES=		fonts xorg
 USE_XORG=	x11
-USES=		fonts
 PLIST_FILES=	${FONTSDIR}/suxus-iso-8859-1.pcf.gz
 
 do-extract:

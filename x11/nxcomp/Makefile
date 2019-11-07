@@ -12,7 +12,7 @@ COMMENT=	NX X11 protocol compression libraries
 
 WRKSRC=		${WRKDIR}/nx-libs-${PORTVERSION}/${PORTNAME}
 
-USES=		autoreconf gmake jpeg
+USES=		autoreconf gmake jpeg xorg
 USE_XORG=	xorgproto
 GNU_CONFIGURE=	yes
 LIB_DEPENDS=	libpng.so:graphics/png

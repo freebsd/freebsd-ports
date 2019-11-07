@@ -18,7 +18,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler gmake iconv:wchar_t jpeg localbase pkgconfig tar:bzip2
+USES=		compiler gmake iconv:wchar_t jpeg localbase pkgconfig \
+		tar:bzip2 xorg
 USE_XORG=	xft xpm x11 sm ice xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shape --enable-xinerama --enable-xrandr \

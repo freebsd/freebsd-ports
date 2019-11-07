@@ -12,7 +12,7 @@ COMMENT=	Hack of 9wm to give virtual screens
 
 WRKSRC=		${WRKDIR}/${DISTNAME}.orig
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/w9wm \

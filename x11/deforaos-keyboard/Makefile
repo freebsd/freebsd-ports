@@ -19,7 +19,7 @@ LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		desktop-file-utils gnome pkgconfig
+USES=		desktop-file-utils gnome pkgconfig xorg
 USE_GNOME=	gtk20 cairo gdkpixbuf2
 USE_XORG=	x11 xtst
 MAKE_ARGS+=	PREFIX=${PREFIX}

@@ -23,7 +23,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff \
 
-USES=		compiler:c++11-lib gl gmake gnome iconv jpeg localbase pkgconfig
+USES=		compiler:c++11-lib gl gmake gnome iconv jpeg localbase \
+		pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	wxWidgets
 GH_PROJECT=	wxWidgets

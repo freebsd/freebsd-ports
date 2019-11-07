@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.eyesbeyond.com/freebsddom/astzclock/
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Afterstep clock with some timezone extensions
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	xpm
 PLIST_FILES=	bin/astzclock man/man1/${PORTNAME}.1.gz
 

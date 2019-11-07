@@ -13,7 +13,7 @@ COMMENT=	Athena Widgets with N*XTSTEP appearance
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool localbase
+USES=		libtool localbase xorg
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xmu x11 xext

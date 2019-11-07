@@ -15,7 +15,7 @@ LICENSE_NAME=	Emi Clock for X11
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT.en
 LICENSE_PERMS=  dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-USES=		iconv:build imake
+USES=		iconv:build imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 LANGRES=	resources/R6/EUC/EmiClock.ad

@@ -11,7 +11,7 @@ COMMENT=	X virtual keyboard library
 
 LICENSE=	LGPL20+
 
-USES=		libtool pathfix pkgconfig
+USES=		libtool pathfix pkgconfig xorg
 USE_XORG=	x11 xtst
 GNU_CONFIGURE=	YES
 INSTALL_TARGET=	install-strip

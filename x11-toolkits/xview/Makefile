@@ -19,7 +19,7 @@ BUILD_DEPENDS=	mkfontscale:x11-fonts/mkfontscale
 
 ONLY_FOR_ARCHS=	i386
 REINPLACE_ARGS=	-i ""
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 IMAKEINCLUDE=	"-I${WRKSRC}/config -I${LOCALBASE}/lib/X11/config"

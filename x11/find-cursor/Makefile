@@ -11,7 +11,7 @@ COMMENT=	Simple XLib program to highlight the cursor position
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	localbase:ldflags
+USES=		localbase:ldflags xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	Carpetsmoker
 USE_XORG=	x11 xdamage xext xfixes xrender

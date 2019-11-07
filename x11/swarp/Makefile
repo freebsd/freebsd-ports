@@ -13,6 +13,7 @@ COMMENT=	X11 generic pointer warping utility
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		xorg
 USE_XORG=	x11
 MAKE_ARGS=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lX11" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include \

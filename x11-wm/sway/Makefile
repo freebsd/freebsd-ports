@@ -23,7 +23,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	swaybg:x11/swaybg
 
-USES=		compiler:c11 gnome meson pkgconfig
+USES=		compiler:c11 gnome meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_GNOME=	cairo pango
 USE_XORG=	pixman

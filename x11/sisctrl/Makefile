@@ -12,7 +12,7 @@ COMMENT=	Display Control Panel for XFree86/X.org SiS driver
 
 BROKEN=		unfetchable
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig xorg
 USE_XORG=	x11 ice xxf86vm xinerama xv xrandr xext sm
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

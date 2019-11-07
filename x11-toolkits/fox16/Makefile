@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		compiler:features jpeg libtool pathfix
+USES=		compiler:features gl jpeg libtool pathfix xorg
 USE_GL=		gl glu
 USE_XORG=	x11 xext xfixes
 GNU_CONFIGURE=	yes

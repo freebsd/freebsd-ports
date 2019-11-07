@@ -11,6 +11,7 @@ COMMENT=	Simple menu patterned after Plan9
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arnoldrobbins
+USES=		xorg
 USE_XORG=	x11
 MAKEFILE=	Makefile.noimake
 ALL_TARGET=	9menu

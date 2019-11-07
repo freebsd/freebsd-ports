@@ -12,6 +12,7 @@ COMMENT=	Tiny interactive paint program that draws as your desktop wallpaper
 
 BROKEN=		unfetchable
 
+USES=		xorg
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/deskpaint
 

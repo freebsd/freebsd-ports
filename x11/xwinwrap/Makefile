@@ -13,7 +13,7 @@ COMMENT=	XWinWrap replace a desktop background with a movie or screensaver
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ONLY_FOR_ARCHS=	amd64 i386
-USES=	tar:bzip2
+USES=		tar:bzip2 xorg
 USE_XORG=	x11 xorgproto xrender xext
 PLIST_FILES=	bin/${PORTNAME}
 MAKE_ARGS+=	PREFIX=${PREFIX}

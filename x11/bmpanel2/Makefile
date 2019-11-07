@@ -14,7 +14,7 @@ COMMENT=	Lightweight NetWM-compliant panel (taskbar) for X11
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake pkgconfig
+USES=		cmake gnome pkgconfig xorg
 USE_GNOME=	pango
 USE_XORG=	x11 xext
 

@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	wget:ftp/wget
 
+USES=		xorg
 USE_XORG=	x11 xpm
 
 PORTDOCS=	README

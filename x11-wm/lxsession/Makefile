@@ -20,7 +20,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libpolkit-agent-1.so:sysutils/polkit \
 		libck-connector.so:sysutils/consolekit2
 
-USES=		autoreconf gmake gnome localbase pkgconfig tar:xz
+USES=		autoreconf gmake gnome localbase pkgconfig tar:xz xorg
 USE_GNOME=	glib20 gtk20 intltool cairo gdkpixbuf2 libxslt
 USE_XORG=	x11
 

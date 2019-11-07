@@ -24,8 +24,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
+USES=		fonts perl5 xorg
 USE_XORG=	x11
-USES=		fonts perl5
 USE_PERL5=	build
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes

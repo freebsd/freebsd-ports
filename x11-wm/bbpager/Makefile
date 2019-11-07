@@ -15,7 +15,7 @@ OPTIONS_SUB=	yes
 
 BUILD_DEPENDS=	blackbox:x11-wm/blackbox
 
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig xorg
 USE_XORG=	xext sm x11 xau xcursor xi
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	`pkg-config --cflags xft`

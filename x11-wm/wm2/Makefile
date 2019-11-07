@@ -13,6 +13,7 @@ COMMENT=	Simple window manager for X
 
 BUILD_DEPENDS=	makedepend:devel/makedepend
 
+USES=		xorg
 USE_XORG=	x11 xext xmu
 ALL_TARGET=	depend wm2
 

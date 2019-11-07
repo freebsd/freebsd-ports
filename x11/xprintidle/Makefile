@@ -11,7 +11,7 @@ COMMENT=	Print X idle time
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		localbase:ldflags
+USES=		localbase:ldflags xorg
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	lucianposton

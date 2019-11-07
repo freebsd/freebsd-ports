@@ -35,7 +35,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 introspection:build pango
 USES=		compiler:c11 gettext gmake gnome libtool localbase \
-		pathfix perl5 pkgconfig tar:xz
+		pathfix perl5 pkgconfig tar:xz xorg
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
 CONFIGURE_ARGS=	--enable-x11-backend \

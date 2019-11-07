@@ -12,7 +12,7 @@ COMMENT=	Create a full-screen image to adjust your monitor
 
 BROKEN=		unfetchable
 
-USES=		imake
+USES=		imake xorg
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/xtestpicture man/man1/${PORTNAME}.1.gz
 

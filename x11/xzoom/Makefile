@@ -10,7 +10,7 @@ MASTER_SITES=	SUNSITE/libs/X
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Magnify, rotate, mirror the image on the X screen
 
-USES=		imake tar:tgz
+USES=		imake tar:tgz xorg
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/xzoom man/man1/xzoom.1.gz
 

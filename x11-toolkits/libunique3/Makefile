@@ -12,8 +12,8 @@ COMMENT=	Library for single instance applications
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz xorg
 USE_XORG=	ice x11
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk30 gnomeprefix introspection:build
 GNU_CONFIGURE=	yes

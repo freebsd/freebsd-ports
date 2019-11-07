@@ -16,7 +16,7 @@ LIB_DEPENDS=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 
-USES=		compiler:c11 localbase:ldflags
+USES=		compiler:c11 localbase:ldflags xorg
 USE_XORG=	x11 xcb
 
 OPTIONS_DEFINE=	DOCS
