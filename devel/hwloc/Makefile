@@ -37,6 +37,7 @@ OPTIONS_SUB=	yes
 CAIRO_CONFIGURE_OFF=	--disable-cairo --without-x
 CAIRO_CONFIGURE_ON=	--enable-cairo --with-x
 CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
+CAIRO_USES=		xorg
 CAIRO_USE=		XORG=x11
 
 post-install-DOCS-on:

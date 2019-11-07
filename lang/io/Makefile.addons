@@ -74,13 +74,16 @@ OPTIONS_GROUP_ADDONS=${OPTIONAL_ADDONS:tu}
 
 BIGNUM_LIB_DEPENDS=	libgmp.so:math/gmp
 CFFI_LIB_DEPENDS=	libffi.so:devel/libffi
+CAIRO_USES=		gnome
 CAIRO_USE=		GNOME=cairo
 CLUTTER_LIB_DEPENDS=	libclutter-glx-1.0.so:graphics/clutter
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 EDITLINE_USES=		libedit
 FONT_LIB_DEPENDS=	libfreetype.so:print/freetype2
+FONT_USES=		gl xorg
 FONT_USE=		GL=glut XORG=xmu
 GLFW_LIB_DEPENDS=	libglfw.so:graphics/glfw2
+GLFW_USES=		gl xorg
 GLFW_USE+=		GL=glu,gl XORG=sm,ice,x11,xext,xi
 IMAGE_LIB_DEPENDS=	libpng.so:graphics/png \
 			libtiff.so:graphics/tiff
@@ -88,11 +91,12 @@ IMAGE_USES=		jpeg
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 LIBSNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 LIBXML2_USE=		GNOME=libxml2
-LIBXML2_USES=		iconv
+LIBXML2_USES=		gnome iconv
 LOUDMOUTH_LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 MYSQL_USES=		mysql:client
 OGG_LIB_DEPENDS=	libogg.so:audio/libogg
+OPENGL_USES=		gl xorg
 OPENGL_USE=		GL=glut XORG=xmu
 POSTGRESQL_USES=	pgsql
 PYTHON_USES=		python:3.3+

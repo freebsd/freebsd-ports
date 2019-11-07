@@ -50,6 +50,7 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 VORBIS_CMAKE_BOOL=	WITH_OGGVORBIS
 
 X11_DESC=		X11 clipboard pasting support
+X11_USES=		xorg
 X11_USE=		XORG=x11
 X11_CMAKE_BOOL=		WITH_X11
 

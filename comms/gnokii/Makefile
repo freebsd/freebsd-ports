@@ -72,6 +72,7 @@ SQLITE_CONFIGURE_OFF=	--disable-sqlite
 X11_CONFIGURE_WITH=	x
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
+X11_USES=		gnome xorg
 X11_USE=		XORG=x11 XORG=xpm \
 			GNOME=cairo GNOME=gdkpixbuf2 GNOME=gtk20
 X11_PLIST_SUB=		X11=''

@@ -62,6 +62,7 @@ GTK2_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 			libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
 
+GTK3_USES=		xorg
 GTK3_USE=		GNOME=cairo,gtk30 XORG=x11,xi
 GTK3_CONFIGURE_ENABLE=	gtk3 libnotify
 GTK3_LIB_DEPENDS=	libdbus-1.so:devel/dbus \

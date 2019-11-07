@@ -44,6 +44,7 @@ CHAMPLAIN_LIB_DEPENDS=	libcogl.so:graphics/cogl \
 			libclutter-1.0.so:graphics/clutter \
 			libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 			libchamplain-0.12.so:graphics/libchamplain
+CHAMPLAIN_USES=		gl xorg
 CHAMPLAIN_USE=		GL=egl XORG=x11,xcomposite,xdamage,xext,xfixes,xi,xrandr
 
 PYTHON_CONFIGURE_ENABLE=python

@@ -48,6 +48,7 @@ GTK2_USE=		GNOME=gtk20
 GTK2_USES=		pkgconfig
 GTK2_CONFIGURE_WITH=	gtk-driver
 
+X11_USES=		xorg
 X11_USE=		XORG=x11,xext
 X11_CONFIGURE_WITH=	x11-driver x
 

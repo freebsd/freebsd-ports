@@ -26,9 +26,10 @@ NVCONTROL_DESC=	NV-CONTROL support (for OpenGL settings)
 X11_DESC=	Build GUI program (requires GTK+ 2.x)
 
 NVCONTROL_USE=		XORG=xext
-NVCONTROL_USES=		pkgconfig
+NVCONTROL_USES=		pkgconfig xorg
 NVCONTROL_CONFIGURE_OFF=	--disable-nvcontrol
 
+X11_USES=		gnome
 X11_USE=		GNOME=gtk20
 X11_CONFIGURE_OFF=	--disable-gtk
 X11_VARS=		INSTALLS_ICONS=yes

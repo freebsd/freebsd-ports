@@ -26,6 +26,7 @@ OPTIONS_RADIO_IMAGEMAGICK=	V6 V7
 OPTIONS_SUB=	yes
 V4L_DESC=	Build zbarcam video scanner
 
+X11_USES=	xorg
 X11_USE=	XORG=ice,sm,x11,xau,xcb,xdmcp,xext,xv
 X11_CONFIGURE_ON=	--with-x=yes
 X11_CONFIGURE_OFF=	--with-x=no --without-xshm --without-xv

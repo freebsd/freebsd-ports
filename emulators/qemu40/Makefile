@@ -51,7 +51,7 @@ VDE_DESC=		vde dependency (for vde networking)
 OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP NCURSES VDE
 OPTIONS_SUB=	yes
 X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
-X11_USES=	sdl
+X11_USES=	gnome sdl xorg
 X11_CONFIGURE_ENABLE=	sdl
 GTK3_LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 GTK3_USE=	GNOME=gdkpixbuf2,gtk30,vte3 XORG=x11,xext

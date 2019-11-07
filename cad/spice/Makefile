@@ -46,6 +46,7 @@ PORTEXAMPLES=	bjtnoise.cir bsim1tst.cir bsim2tst.cir diffpair.cir \
 OPTIONS_DEFINE=	DOCS EXAMPLES X11 DEV_BSIM3 DEV_BSIM4 DEV_HISIM2
 OPTIONS_DEFAULT=X11
 
+X11_USES=		xorg
 X11_USE=		XORG=x11,xaw,xext,xmu,xt
 X11_CONFIGURE_ENV=	WITH_X11=yes
 DEV_BSIM3_DESC=		BSIM3v3 MOS Transistor Model Support

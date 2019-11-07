@@ -48,6 +48,7 @@ TK_MAKE_ENV=		tk=1
 TRIO_DESC=		Trio portable string functions
 TRIO_BUILD_DEPENDS=	trio>=0:devel/trio
 TRIO_MAKE_ENV=		trio=1
+X11_USES=		xorg
 X11_USE=		XORG=xt
 X11_MAKE_ENV=		xt=1
 

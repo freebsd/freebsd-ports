@@ -34,6 +34,7 @@ WAYLAND_CONFIGURE_ENABLE=	wayland
 WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland
 
 X11_CONFIGURE_ENABLE=		x11
+X11_USES=			xorg
 X11_USE=			XORG=x11,xext,xfixes
 
 .include <bsd.port.mk>

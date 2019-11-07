@@ -46,6 +46,7 @@ NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	gettext-runtime
 
 SVG_CONFIGURE_WITH=	librsvg
+SVG_USES=		gnome
 SVG_USE=		gnome=librsvg2,glib20,gdkpixbuf2,cairo
 
 SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib

@@ -29,6 +29,7 @@ OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
 
+X11_USES=	xorg
 X11_USE=	XORG=x11,xaw,xext,xmu,xt
 
 .include <bsd.port.options.mk>

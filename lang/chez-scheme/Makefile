@@ -45,6 +45,7 @@ CONFIGURE_ARGS=	--installprefix=${PREFIX} \
 PLIST_SUB=	PORTNAME=${PORTNAME} \
 		CHEZ_ARCH=${CHEZ_ARCH} \
 		CHEZ_LIBDIR=${CHEZ_LIBDIR}
+X11_USES=	xorg
 X11_USE=	XORG=x11
 
 .include <bsd.port.pre.mk>
