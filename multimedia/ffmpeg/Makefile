@@ -501,6 +501,7 @@ VAPOURSYNTH_LIB_DEPENDS=	libvapoursynth-script.so:multimedia/vapoursynth
 VAPOURSYNTH_CONFIGURE_ENABLE=	vapoursynth
 
 # vdpau
+VDPAU_USES=		xorg
 VDPAU_USE=		XORG=x11
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
@@ -554,6 +555,7 @@ XAVS2_LIB_DEPENDS=	libxavs2.so:multimedia/xavs2
 XAVS2_CONFIGURE_ENABLE=	libxavs2
 
 # xcb
+XCB_USES=		xorg
 XCB_USE=		XORG=xcb
 XCB_CONFIGURE_ENABLE=	libxcb
 
@@ -562,6 +564,7 @@ XVID_LIB_DEPENDS=	libxvidcore.so:multimedia/xvid
 XVID_CONFIGURE_ENABLE=	libxvid
 
 # xv
+XVIDEO_USES=		xorg
 XVIDEO_USE=		XORG=x11,xext,xv
 XVIDEO_CONFIGURE_OFF=	--disable-outdev=xv
 

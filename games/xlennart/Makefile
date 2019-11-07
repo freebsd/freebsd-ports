@@ -40,12 +40,14 @@ GH_ACCOUNT=	Xylemon
 USES=		pkgconfig
 
 ATHENA_CONFIGURE_ON=	--disable-gtk --disable-motif
+ATHENA_USES=		xorg
 ATHENA_USE=		XORG=xaw,xmu,xt,x11,sm,ice
 
 MOTIF_CONFIGURE_ON=	--disable-athena --disable-gtk
 MOTIF_USE=		XORG=xt,x11,sm,ice,xpm
-MOTIF_USES=		motif
+MOTIF_USES=		motif xorg
 
+GTK_USES=		gnome xorg
 GTK_CONFIGURE_ON=	--disable-athena --disable-motif
 GTK_USE=		GNOME=gtk20 XORG=sm,ice
 

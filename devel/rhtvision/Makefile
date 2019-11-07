@@ -36,6 +36,7 @@ PLIST_SUB=	VERSION="${PORTVERSION:R}"
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--no-intl
 
+X11_USES		xorg
 X11_USE=		XORG=x11,xmu
 X11_CONFIGURE_ON=	--x-include=${LOCALBASE}/include \
 			--x-lib=${LOCALBASE}/lib

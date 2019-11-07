@@ -52,6 +52,7 @@ FONTCONFIG_CONFIGURE_WITH=fontconfig
 FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 FONTCONFIG_IMPLIES=	GUI
 
+X11_USES=		gl xorg
 X11_USE=		GL=gl XORG=x11,xext
 X11_CONFIGURE_ON=	--with-x=${LOCALBASE} --with-glx
 X11_CONFIGURE_OFF=	--without-x --without-glx
@@ -61,6 +62,7 @@ XINERAMA_USE=		XORG=xinerama
 XINERAMA_CONFIGURE_WITH=xinerama
 XINERAMA_IMPLIES=	X11
 
+SDL_USES=		gl sdl
 SDL_USE=		SDL=sdl GL=gl
 SDL_CONFIGURE_WITH=	sdl
 SDL_IMPLIES=		GUI

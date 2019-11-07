@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=SMB CLI
 ASUS_DESC=	Enable A7N8X-VM support
 SMB_DESC=	Enable smb(4) support
 CLI_DESC=	CLI support only
+X11_USES=	xorg
 X11_USE=	XORG=x11,xt
 X11_MAKE_ARGS_OFF=	PROGRAM="mbmon"
 

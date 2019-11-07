@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 USES=		jpeg libtool:keepla localbase zip
 
 OPENGL_CONFIGURE_ENABLE=opengl
+OPENGL_USES=		gl xorg
 OPENGL_USE=		GL=glut XORG=x11,xext,xi,xmu
 UUID_EXTRA_PATCHES=	${PATCHDIR}/uuid.patch
 

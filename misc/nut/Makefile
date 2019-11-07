@@ -28,6 +28,7 @@ FLTK_LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
 			libexpat.so:textproc/expat2 \
 			libfontconfig.so:x11-fonts/fontconfig \
 			libfltk_images.so:x11-toolkits/fltk
+FLTK_USES=		xorg
 FLTK_USE=		XORG=x11,xau,xcb,xdmcp,xext,xft,xinerama,xpm,xrender
 FLTK_MAKE_ENV=		HAVE_FLTK=1 FLTK_NUT="fltk/Nut"
 FLTK_MAKE_ENV_OFF=	HAVE_FLTK=0 FLTK_NUT=""

@@ -19,6 +19,7 @@ OPTIONS_SUB=		yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
+X11_USES=	xorg
 X11_USE=	XORG=x11,xaw,xt
 
 post-patch:

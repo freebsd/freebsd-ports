@@ -63,6 +63,7 @@ IPV6_CMAKE_BOOL=	BUILD_IPV6
 
 LUA_CAIRO_DESC=		Lua-Cairo binding
 LUA_CAIRO_CMAKE_BOOL=	BUILD_LUA_CAIRO
+LUA_CAIRO_USES=		gnome
 LUA_CAIRO_USE=		gnome=cairo
 LUA_CAIRO_PLIST_FILES=	lib/conky/libcairo.so
 LUA_CAIRO_IMPLIES=	X11
@@ -74,6 +75,7 @@ LUA_IMLIB2_IMPLIES=	IMLIB2 X11
 
 LUA_RSVG_DESC=		Lua-rsvg binding
 LUA_RSVG_CMAKE_BOOL=	BUILD_LUA_RSVG
+LUA_RSVG_USES=		gnome
 LUA_RSVG_USE=		gnome=librsvg2
 LUA_RSVG_PLIST_FILES=	lib/conky/librsvg.so
 LUA_RSVG_IMPLIES=	X11
@@ -94,6 +96,7 @@ NCURSES_USES=		ncurses:port
 
 RSS_DESC=		Display RSS feeds
 RSS_CMAKE_BOOL=		BUILD_RSS
+RSS_USES=		gnome
 RSS_USE=		gnome=glib20,libxml2
 RSS_IMPLIES=		CURL
 
@@ -118,6 +121,7 @@ XMMS2_LIB_DEPENDS=	libxmmsclient.so:audio/xmms2
 XOAP_DESC=		Display XOAP weather reports
 XOAP_CMAKE_BOOL=	BUILD_WEATHER_XOAP
 XOAP_IMPLIES=		CURL METAR
+XOAP_USES=		gnome
 XOAP_USE=		gnome=libxml2
 
 .include <bsd.port.options.mk>

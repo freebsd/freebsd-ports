@@ -23,6 +23,7 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	XAE
 
 XAE_DESC=		Build X11 version 'xae'
+XAE_USES=		xorg
 XAE_USE=		XORG=x11
 XAE_PLIST_FILES=	bin/xae bin/rxae
 XAE_ALL_TARGET=		xae

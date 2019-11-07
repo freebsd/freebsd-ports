@@ -32,6 +32,7 @@ BACKEND_DESC=	GUI backend
 SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib
 SVGALIB_VARS=		MAKE_ARGS+=TARGET=Linux_svgalib
 
+X11_USES=	xorg
 X11_USE=	XORG=x11,xaw,xext,xmu,xt
 
 .include <bsd.port.pre.mk>

@@ -36,9 +36,10 @@ OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPENGL X11 OPTIMIZED_CFLAGS
 OPTIONS_SUB=	yes
 
-OPENGL_USES=		jpeg
+OPENGL_USES=		gl jpeg
 OPENGL_USE=		GL=yes
 
+X11_USES=		xorg
 X11_USE=		XORG=xxf86dga
 
 BROKEN_powerpc=		Does not install on powerpc: signal 2

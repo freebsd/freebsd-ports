@@ -48,6 +48,7 @@ IDE_LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libnotify.so:devel/libnotify \
 		libpng.so:graphics/png
 IDE_PLIST_FILES=	bin/theide ${MANPREFIX}/man/man1/theide.1.gz
+IDE_USES=	gnome xorg
 IDE_USE=	XORG=x11,xau,xcb,xcursor,xdmcp,xext,xfixes,xft,xi,xinerama,xrandr,xrender \
 		GNOME=cairo,gdkpixbuf2,gtk20
 UMK_DESC=	Build/install UMK (U++ MaKe command line utility)
@@ -57,7 +58,9 @@ USEMALLOC_VARS=	MACRO_FLAGS+=-DflagUSEMALLOC
 SCD_DESC=	Install spelling dictionaries (*.scd files)
 SCD_VARS=	PORTDATA+=*.scd
 # SDL/OPENGL/MYSQL/PGSQL dependencies are only for run-time for use by executables built by the IDE
+SDL_USES=	sdl
 SDL_USE=	SDL=sdl
+OPENGL_USES=	gl
 OPENGL_USE=	GL=gl,glu
 MYSQL_USES=	mysql
 PGSQL_USES=	pgsql

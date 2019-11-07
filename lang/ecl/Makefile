@@ -41,6 +41,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 ASDF_CONFIGURE_ON=	--with-asdf=yes
 ASDF_CONFIGURE_OFF=	--with-asdf=no
 
+CLX_USES=		xorg
 CLX_USE=		XORG=x11
 CLX_CONFIGURE_ON=	--with-clx=yes
 CLX_CONFIGURE_OFF=	--with-clx=no

@@ -64,6 +64,7 @@ OCTAVE_CONFIGURE_OFF=	--disable-mex
 SHARED_DESC=		Build shared (dynamic) libraries
 SHARED_CONFIGURE_ON=	--enable-shared
 SHARED_USE=		LDCONFIG=yes
+X11_USES=		xorg
 X11_USE=		XORG=x11,xaw,xmu,xt
 X11_CONFIGURE_OFF=	--disable-xgrid
 

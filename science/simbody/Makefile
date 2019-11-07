@@ -34,7 +34,7 @@ DOCS_CMAKE_BOOL=	INSTALL_DOCS
 
 VISUALIZER_DESC=	Build the visualizer component
 VISUALIZER_CMAKE_BOOL=	BUILD_VISUALIZER
-VISUALIZER_USES=	gl
+VISUALIZER_USES=	gl xorg
 VISUALIZER_USE=		GL=gl,glu,glut XORG=xi,xmu
 
 EXAMPLE_PROGRAMS_DESC=	Build and install example programs

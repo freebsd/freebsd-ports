@@ -39,8 +39,8 @@ DATADIR=	${PREFIX}/share/${PORTNAME:tu}
 OPTIONS_DEFINE=	DOCS X11
 OPTIONS_DEFAULT=	X11
 DOCS_CONFIGURE_ON=	--with-docroot=${DOCSDIR}
+X11_USES=	motif xorg
 X11_USE=	XORG=x11
-X11_USES=	motif
 X11_LIB_DEPENDS=	libgd.so:graphics/gd \
 		libpng.so:graphics/png
 X11_CONFIGURE_OFF=	--without-x

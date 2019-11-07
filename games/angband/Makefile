@@ -23,8 +23,10 @@ OPTIONS_DEFINE=	SDL X11 DOCS
 OPTIONS_DEFAULT=X11
 
 DOCS_BUILD_DEPENDS=	rst2html:textproc/py-docutils
+SDL_USES=		sdl
 SDL_USE=		SDL=image,mixer,ttf,sdl
 SDL_CONFIGURE_ENABLE=	sdl
+X11_USES=		xorg
 X11_USE=		XORG=ice,sm,x11
 X11_RUN_DEPENDS=	xorg-fonts-miscbitmaps>=0:x11-fonts/xorg-fonts-miscbitmaps
 X11_CONFIGURE_ENABLE=	x11

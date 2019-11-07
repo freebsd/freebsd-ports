@@ -64,6 +64,7 @@ EXCITER_DESC=		Build the exciter opcode
 EXCITER_CMAKE_BOOL=	BUILD_EXCITER_OPCODES
 
 FLTK_DESC=		Build FLTK plugin and GUI
+FLTK_USES=		xorg
 FLTK_USE=		XORG=ice,sm,x11,xext
 FLTK_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 FLTK_CMAKE_ON=		-DBUILD_WINSOUND:BOOL=ON

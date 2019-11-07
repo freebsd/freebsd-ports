@@ -32,6 +32,7 @@ OPTIONS_DEFAULT=	X11 IMLIB2
 X11_DESC=	X11 and OpenGL support
 FTGL_DESC=	Freetype font rendering in OpenGL
 
+X11_USES=	gl xorg
 X11_USE=	XORG=x11 GL=glut
 X11_CONFIGURE_OFF=	--disable-x11 --disable-gl
 IMLIB2_LIB_DEPENDS=	libImlib2.so:graphics/imlib2

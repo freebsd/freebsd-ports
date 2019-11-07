@@ -91,7 +91,7 @@ ALL_MODULES_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 				libyaml.so:textproc/libyaml
 ALL_MODULES_RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 ALL_MODULES_USE=		XORG=x11 OPENLDAP=yes
-ALL_MODULES_USES=		autoreconf # required by mod_unimrcp
+ALL_MODULES_USES=		autoreconf xorg # required by mod_unimrcp
 
 8K_VARS=	BITRATES+=8000
 16K_VARS=	BITRATES+=16000

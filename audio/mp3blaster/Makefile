@@ -32,11 +32,13 @@ VORBIS_LIB_DEPENDS=		libvorbisfile.so:audio/libvorbis
 VORBIS_CONFIGURE_WITH=		oggvorbis
 
 SDL_CONFIGURE_WITH=	sdl
+SDL_USES=		sdl
 SDL_USE=		SDL=sdl
 
 NAS_CONFIGURE_WITH=	nas
 NAS_LIB_DEPENDS=	libaudio.so:audio/nas
 NAS_LDFLAGS=		-laudio
+NAS_USES=		xorg
 NAS_USE=		XORG=x11,xt,ice,sm
 
 post-patch:
