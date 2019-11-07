@@ -29,7 +29,7 @@ BINFILES=	pd-queue pd-send pdagentd.py
 USERS=		pdagent
 GROUPS=		pdagent
 
-do-patch:
+post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib/pdagent|/var/db/pdagent| ; s|/etc|${ETCDIR}|' \
 		${WRKSRC}/pdagent/confdirs.py
 

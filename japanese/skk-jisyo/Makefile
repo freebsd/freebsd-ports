@@ -44,10 +44,10 @@ post-extract:
 
 .if defined(WITH_SKKJISYO_DELCOMMENTS)
 # Strip comments in transtation candidates list.
-# Candidate list starts with '/', and each candidate is concatinated by
+# Candidate list starts with '/', and each candidate is concatenated by
 # '/' (e.g., "/c1/c2/".)  Each candidate may have a comment just after
 # the candidate, leading a marker character ';' (e.g. /c3;comment/).
-do-patch:
+post-patch:
 .for type in ${SKK_JISYO_TYPE}
 	${REINPLACE_CMD} -e '/^[^;]/s,;[^/]*/,/,g' -e '/^>/d' \
 		${WRKSRC}/SKK-JISYO.${type}.${PORTVERSION}

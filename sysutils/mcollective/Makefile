@@ -32,7 +32,7 @@ SUB_LIST+=	RUBY=${RUBY}
 
 OPTIONS_DEFINE=	DOCS
 
-do-patch:
+post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/mcollective|${ETCDIR}|" \
 	    ${WRKSRC}/bin/mcollectived \
 		${WRKSRC}/etc/server.cfg.dist \

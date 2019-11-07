@@ -15,7 +15,7 @@ GH_ACCOUNT=	pr1ntf
 
 NO_ARCH=	yes
 
-do-patch:
+post-patch:
 	${REINPLACE_CMD} 's%\$$(PREFIX)%${STAGEDIR}/$$(PREFIX)%g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

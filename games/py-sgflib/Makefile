@@ -22,7 +22,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
-do-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/bin/python|${python_CMD}|' \
 		${WRKSRC}/*.py
 	@${FIND} ${WRKSRC} -name "*.bak" -delete

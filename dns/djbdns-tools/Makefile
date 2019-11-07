@@ -25,7 +25,7 @@ MANPAGES=	dnsfilter.1 dnsip.1 dnsipq.1 dnsmx.1 dnsname.1 \
 
 ALL_TARGET=	it
 
-do-patch:
+do-configure:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP}" > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/conf-home
