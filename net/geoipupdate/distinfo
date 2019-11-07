@@ -1,9 +1,9 @@
-TIMESTAMP = 1568387349
-SHA256 (maxmind-geoipupdate-v4.0.5_GH0.tar.gz) = c13a919ffd5ae3cc61469d26672bddd39c682a93928ff980f8b4b19f341009d3
-SIZE (maxmind-geoipupdate-v4.0.5_GH0.tar.gz) = 23529
+TIMESTAMP = 1573160162
+SHA256 (maxmind-geoipupdate-v4.1.0_GH0.tar.gz) = 8784286560a6c3f93516f5bf31bb21f0c1c4f804777a4a2461745d6a6fd124ab
+SIZE (maxmind-geoipupdate-v4.1.0_GH0.tar.gz) = 24774
 SHA256 (gofrs-flock-v0.7.1_GH0.tar.gz) = d4e33c3923e671fe6288a6dcb6618b7c46834c1a387653f482f5247c5a132dea
 SIZE (gofrs-flock-v0.7.1_GH0.tar.gz) = 7294
 SHA256 (pkg-errors-v0.8.1_GH0.tar.gz) = 7a428967c6fc2e80cd84a0d9469ab6bd4dbe6b13493ba6294322a933a5a7e356
 SIZE (pkg-errors-v0.8.1_GH0.tar.gz) = 11009
-SHA256 (spf13-pflag-v1.0.3_GH0.tar.gz) = 9e57f86f493f04d9077fccd04e7139ebf243dd544e917ab83d35729b3e54a124
-SIZE (spf13-pflag-v1.0.3_GH0.tar.gz) = 46002
+SHA256 (spf13-pflag-v1.0.5_GH0.tar.gz) = 9a2cae1f8e8ab0d2cc8ebe468e871af28d9ac0962cf0520999e3ba85f0c7b808
+SIZE (spf13-pflag-v1.0.5_GH0.tar.gz) = 50796
