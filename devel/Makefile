@@ -4866,6 +4866,7 @@
     SUBDIR += py-pyinotify
     SUBDIR += py-pyinstaller
     SUBDIR += py-pyjsparser
+    SUBDIR += py-pyjq
     SUBDIR += py-pyke
     SUBDIR += py-pylama
     SUBDIR += py-pylibsrtp
