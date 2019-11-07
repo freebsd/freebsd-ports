@@ -1,0 +1,20 @@
+--- Makefile.orig	2019-11-07 20:59:07 UTC
++++ Makefile
+@@ -41,9 +41,6 @@ $(BUILDDIR):
+ 	mkdir -p $(BUILDDIR)
+ 
+ $(BUILDDIR)/geoipupdate: $(BUILDDIR)
+-	go fmt ./...
+-	golangci-lint run
+-	go test ./...
+ 	(cd cmd/geoipupdate && go build -ldflags '-X main.defaultConfigFile=$(CONFFILE) -X main.defaultDatabaseDirectory=$(DATADIR) -X "main.version=$(VERSION)"')
+ 	cp cmd/geoipupdate/geoipupdate $(BUILDDIR)
+ 
+@@ -57,7 +54,6 @@ $(BUILDDIR)/geoipupdate.md: $(BUILDDIR) doc/geoipupdat
+ 	sed -e 's|CONFFILE|$(CONFFILE)|g' -e 's|DATADIR|$(DATADIR)|g' -e 's|$$|$(MAYBE_CR)|g' doc/geoipupdate.md > $(BUILDDIR)/geoipupdate.md
+ 
+ $(BUILDDIR)/GeoIP.conf.5: $(BUILDDIR)/GeoIP.conf.md  $(BUILDDIR)/geoipupdate.md
+-	dev-bin/make-man-pages.pl "$(BUILDDIR)"
+ 
+ $(BUILDDIR)/geoipupdate.1: $(BUILDDIR)/GeoIP.conf.5
+ 
