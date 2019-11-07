@@ -46,8 +46,7 @@ GROUPS=		${KAPACITORD_GROUP}
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == "FreeBSD" && ((${OSVERSION} >= 1100513 && ${OSVERSION} < 1200000) || \
-	${OSVERSION} >= 1200015)
+.if ${OPSYS} == "FreeBSD" && (${OSVERSION} < 1200000 || ${OSVERSION} >= 1200015)
 SUB_LIST+=	KAPACITORD_LOGCMD="daemon"
 .else
 SUB_LIST+=	KAPACITORD_LOGCMD="logger"

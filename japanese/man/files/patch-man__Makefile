@@ -1,6 +1,6 @@
---- man/Makefile.orig	2014-08-26 12:12:08.000000000 +0900
-+++ man/Makefile	2014-08-26 12:12:36.000000000 +0900
-@@ -10,14 +10,14 @@
+--- man/Makefile.orig	2019-10-10 18:39:59 UTC
++++ man/Makefile
+@@ -10,16 +10,13 @@ PROG=	jman
  SRCS=	man.c manpath.c glob.c locale.c
  MAN1=	jman.1
  EMAN1=	jman.1.eng.gz
@@ -15,11 +15,12 @@
  DPADD=	${LIBMAN}
  LDADD=	${LIBMAN}
 -.if exists(/usr/lib/libxpg4.a)
-+.if ${OSVERSION} < 400020
- LDADD+= -L/usr/lib -lxpg4
- .endif
+-LDADD+= -L/usr/lib -lxpg4
+-.endif
  
-@@ -48,16 +48,23 @@
+ DPADD+=  ${MAN1} ${EMAN1}
+ 
+@@ -48,16 +45,23 @@ ${EMAN1}: ${.CURDIR}/jman.man.eng
  	${.CURDIR}/jman.man.eng | \
  	${compress} > ${EMAN1}
  

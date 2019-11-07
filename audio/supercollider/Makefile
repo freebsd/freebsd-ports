@@ -55,7 +55,7 @@ CMAKE_ARGS+=	-DSSE:BOOL=FALSE -DSSE2:BOOL=FALSE
 .endif
 
 .if ${OPSYS} == FreeBSD
-.if (${OSVERSION} >= 1102507 && ${OSVERSION} < 1200000) || \
+.if ${OSVERSION} < 1200000 || \
 	(${OSVERSION} >= 1200506 && ${OSVERSION} < 1300000) || \
 	${OSVERSION} >= 1300014
 BROKEN=	fails to compile with Clang 8 due shipped Boost 1.66 libraries. Not compatible with Boost 1.70+, either

@@ -21,7 +21,6 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	intel
 # -lpthread is not necessary if pthread_getthreadid_np is a libc stub
 LDFLAGS+=	${LDFLAGS_${OPSYS}_${OSREL}}
-LDFLAGS_FreeBSD_11.2=	-lpthread
 LDFLAGS_FreeBSD_11.3=	-lpthread
 LDFLAGS_FreeBSD_12.0=	-lpthread
 
