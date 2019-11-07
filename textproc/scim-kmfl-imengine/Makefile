@@ -21,9 +21,9 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 RUN_DEPENDS=	kmflcomp:textproc/kmflcomp \
 		scim:textproc/scim
 
+USES=		gettext gnome iconv libtool pkgconfig xorg
 USE_XORG=	x11 xkbfile xorgproto
 USE_GNOME=	glib20 gtk20 intlhack
-USES=		gettext iconv pkgconfig libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

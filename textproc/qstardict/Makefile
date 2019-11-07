@@ -13,7 +13,7 @@ COMMENT=	Qt based dictionary program (stardict clone)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang gl gnome pkgconfig qmake qt:5 tar:bzip2
+USES=		compiler:c++11-lang gl gnome pkgconfig qmake qt:5 tar:bzip2 xorg
 USE_GL=		gl
 USE_GNOME=	glib20
 USE_QT=		core dbus gui network printsupport widgets xml \

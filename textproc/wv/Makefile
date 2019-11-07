@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
 		libwmf.so:graphics/libwmf
 
-USES=		gmake jpeg pkgconfig libtool
+USES=		gmake gnome jpeg pkgconfig libtool xorg
 USE_GNOME=	libgsf
 USE_XORG=	x11
 USE_LDCONFIG=	yes

@@ -9,6 +9,7 @@ DIST_SUBDIR=	repacked
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical Diff for X
 
+USES=		xorg
 USE_XORG=	x11 xt ice xaw
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=${STAGEDIR}${PREFIX}/bin

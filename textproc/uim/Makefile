@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=	X11
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
+USES+=		xorg
 USE_XORG+=	x11 xext
 LIB_DEPENDS+=	libXft.so:x11-fonts/libXft
 CONFIGURE_ARGS+=	--with-x --with-xft
