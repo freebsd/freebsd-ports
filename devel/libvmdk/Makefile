@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvmdk
-PORTVERSION=	20181227
+PORTVERSION=	20191104
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libvmdk/releases/download/${PORTVERSION}/ \
