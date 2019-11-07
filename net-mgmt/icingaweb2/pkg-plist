@@ -196,8 +196,6 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/doc/accessibility/svg.html
 %%WWWDIR%%/doc/accessibility/text-cue-for-required-form-control-labels.html
 %%WWWDIR%%/doc/phpdoc.xml
-%%WWWDIR%%/doc/res/gitlab-job-artifacts.png
-%%WWWDIR%%/doc/res/gitlab-rpm-package-pipeline-jobs.png
 %%WWWDIR%%/doc/res/GraphExample#1.png
 %%WWWDIR%%/doc/res/GraphExample#2.png
 %%WWWDIR%%/doc/res/GraphExample#3.png
@@ -208,6 +206,8 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/doc/res/GraphExample#7.png
 %%WWWDIR%%/doc/res/GraphExample#8.png
 %%WWWDIR%%/doc/res/GraphExample#9.png
+%%WWWDIR%%/doc/res/gitlab-job-artifacts.png
+%%WWWDIR%%/doc/res/gitlab-rpm-package-pipeline-jobs.png
 %%WWWDIR%%/etc/bash_completion.d/icingacli
 %%WWWDIR%%/etc/schema/mysql-upgrades/2.0.0beta3-2.0.0rc1.sql
 %%WWWDIR%%/etc/schema/mysql-upgrades/2.5.0.sql
@@ -1949,6 +1949,8 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimeendhistoryQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimeeventQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/DowntimestarthistoryQuery.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/EmptyhostgroupQuery.php
+%%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/EmptyservicegroupQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/EventgridQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/EventgridhostsQuery.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Backend/Ido/Query/EventgridservicesQuery.php
@@ -2105,7 +2107,6 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/modules/monitoring/library/Monitoring/TransportStep.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Web/Controller/MonitoredObjectController.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Web/Helper/PluginOutputHookRenderer.php
-%%WWWDIR%%/modules/monitoring/library/Monitoring/Web/Helper/PluginOutputPurifier.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Web/Hook/HostActionsHook.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Web/Hook/ServiceActionsHook.php
 %%WWWDIR%%/modules/monitoring/library/Monitoring/Web/Hook/TimelineProviderHook.php
