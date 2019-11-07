@@ -1,5 +1,5 @@
---- lib/Makefile.in.orig	2018-02-03 13:33:56 UTC
-+++ lib/Makefile.in
+--- ./lib/Makefile.in.orig	2018-02-03 13:33:56 UTC
++++ ./lib/Makefile.in
 @@ -1603,7 +1603,7 @@ install-data: install-data-am
  uninstall: uninstall-am
  
