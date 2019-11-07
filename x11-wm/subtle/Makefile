@@ -4,7 +4,7 @@
 PORTNAME=	subtle
 PORTVERSION=	0.11.3224
 CATEGORIES=	x11-wm ruby
-MASTER_SITES=	http://subtle.subforge.org/attachments/download/81/
+MASTER_SITES=	https://subtle.subforge.org/attachments/download/81/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-xi
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -12,11 +12,11 @@ COMMENT=	Grid-based manual tiling window manager
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	rake:devel/rubygem-rake
-
 BROKEN_powerpc64=	fails to compile: ruby.h: wrong number of arguments specified for 'deprecated' attribute
 
-USES=		pkgconfig tar:tbz2
+BUILD_DEPENDS=	rake:devel/rubygem-rake
+
+USES=		pkgconfig tar:tbz2 xorg
 USE_RUBY=	yes
 USE_XORG=	x11 xft xinerama xpm xrandr xtst
 
