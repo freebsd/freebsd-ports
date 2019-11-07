@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scummvm
-PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTVERSION=	2.1.0
 CATEGORIES=	games emulators
 MASTER_SITES=	http://www.scummvm.org/frs/scummvm/${PORTVERSION}/
 
@@ -13,30 +12,31 @@ COMMENT=	Interpreter for several adventure games
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libtheoradec.so:multimedia/libtheora \
-		libfaad.so:audio/faad \
+LIB_DEPENDS=	libfaad.so:audio/faad \
+		libfreetype.so:print/freetype2 \
 		libmpeg2.so:multimedia/libmpeg2 \
-		libfreetype.so:print/freetype2
+		libtheoradec.so:multimedia/libtheora
 
-USES=		gmake jpeg tar:xz
+USES=		gmake gnome jpeg sdl tar:xz
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl2
 INSTALLS_ICONS=	yes
 
-CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE} \
-		--with-jpeg-prefix=${LOCALBASE} \
-		--disable-alsa \
-		--with-zlib-prefix=/usr \
+CONFIGURE_ARGS=	--disable-alsa \
 		--disable-debug \
 		--disable-nasm \
 		--disable-tremor \
-		--enable-verbose-build
+		--enable-verbose-build \
+		--with-jpeg-prefix=${LOCALBASE} \
+		--with-sdl-prefix=${LOCALBASE} \
+		--with-zlib-prefix=/usr
 
 LDFLAGS+=	-lpthread
 
-OPTIONS_DEFINE=	VORBIS MP3 PNG FLAC FLUIDSYNTH MT32EMU DOCS SNDIO
+OPTIONS_DEFINE=		DOCS FLAC FLUIDSYNTH MP3 MT32EMU PNG SNDIO VORBIS
+OPTIONS_DEFAULT=	MP3 MT32EMU PNG VORBIS
+
 MT32EMU_DESC=	MT-32 emulator
-OPTIONS_DEFAULT=	VORBIS MP3 PNG MT32EMU
 
 VORBIS_LIB_DEPENDS=	libogg.so:audio/libogg \
 			libvorbis.so:audio/libvorbis
