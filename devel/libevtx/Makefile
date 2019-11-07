@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libevtx
-DISTVERSION=	alpha-20190619
+DISTVERSION=	alpha-20191104
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libevtx/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
