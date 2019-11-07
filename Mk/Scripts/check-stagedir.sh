@@ -98,13 +98,15 @@ setup_plist_seds() {
 	    \#${LOCALBASE}/lib/debug#d;"
 	sed_dirs_gen="s,^,@dir ,; \
 	    ${sed_portdocsexamples} \
-	    /^@dir share\/licenses/d;"
+	    /^@dir share\/licenses/d; \
+	    \#@dir ${LOCALBASE}/lib/debug#d;"
 
 	# These prevent ignoring DOCS/EXAMPLES dirs with sed_portdocsexamples
 	sed_files="/^share\/licenses/d; \
 	    \#${LOCALBASE}/lib/debug#d;"
 	sed_dirs="s,^,@dir ,; \
-	    /^@dir share\/licenses/d;"
+	    /^@dir share\/licenses/d; \
+	    \#@dir ${LOCALBASE}/lib/debug#d;"
 
 }
 
