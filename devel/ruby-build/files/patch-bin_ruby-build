@@ -1,0 +1,20 @@
+--- bin/ruby-build.orig	2019-10-30 17:11:02 UTC
++++ bin/ruby-build
+@@ -1317,15 +1317,8 @@ fi
+ 
+ if [ -z "$MAKE" ]; then
+   if [ "FreeBSD" = "$(uname -s)" ]; then
+-    if [ "$(echo $1 | sed 's/-.*$//')" = "jruby" ]; then
+-      export MAKE="gmake"
+-    else
+-      if [ "$(uname -r | sed 's/[^[:digit:]].*//')" -lt 10 ]; then
+-        export MAKE="gmake"
+-      else
+-        export MAKE="make"
+-      fi
+-    fi
++    # FreeBSD bug 241633: fails to build due to race condition
++    export MAKE="gmake"
+   else
+     export MAKE="make"
+   fi
