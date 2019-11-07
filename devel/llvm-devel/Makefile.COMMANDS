@@ -52,7 +52,6 @@ LLVM_COMMANDS=	\
 		llvm-undname \
 		llvm-xray \
 		opt \
-		pp-trace \
 		sancov
 
 CLANG_COMMANDS=	\
@@ -64,27 +63,28 @@ CLANG_COMMANDS=	\
 		clang-extdef-mapping \
 		clang-format \
 		clang-import-test \
-		clang-move \
 		clang-offload-bundler \
 		clang-offload-wrapper \
 		clang-scan-deps \
-		clangd \
 		diagtool \
 		hmaptool \
 		scan-build \
 		scan-view
 
 EXTRAS_COMMANDS= \
+		clangd \
 		clang-apply-replacements \
 		clang-change-namespace \
 		clang-doc \
 		clang-include-fixer \
+		clang-move \
 		clang-query \
 		clang-rename \
 		clang-reorder-fields \
 		clang-tidy \
 		find-all-symbols \
-		modularize
+		modularize \
+		pp-trace
 
 LIT_COMMANDS=	\
 		FileCheck \

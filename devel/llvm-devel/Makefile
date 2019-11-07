@@ -186,9 +186,14 @@ STRIP_LIBS=	BugpointPasses.so \
 
 EXTRAS_LIBS=	\
 		libclangApplyReplacements \
+		libclangChangeNamespace \
+		libclangDaemon \
+		libclangDoc \
 		libclangIncludeFixer \
-		libclangRename \
+		libclangMove \
 		libclangQuery \
+		libclangRename \
+		libclangReorderFields \
 		libclangTidy \
 		libclangTidyGoogleModule \
 		libclangTidyLLVMModule \
@@ -197,7 +202,8 @@ EXTRAS_LIBS=	\
 		libclangTidyUtils \
 		libfindAllSymbols \
 		libmodernizeCore
-EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
+EXTRAS_FILES=	index.js
+EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}|${EXTRAS_FILES:tW:C/  */|/g}
 
 .include <bsd.port.options.mk>
 
