@@ -16,7 +16,7 @@ LIB_DEPENDS=	libeiskaltdcpp.so:net-p2p/eiskaltdcpp-lib
 
 MASTERDIR=	${.CURDIR}/../eiskaltdcpp-lib
 
-USES=		cmake gettext compiler:c++11-lib desktop-file-utils ssl
+USES=		cmake compiler:c++11-lib desktop-file-utils gettext gnome ssl
 USE_GNOME=	pango glib20
 
 OPTIONS_DEFINE=	LIBNOTIFY FREE_SPACE

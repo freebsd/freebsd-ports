@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		jpeg libtool localbase pathfix ssl tar:bzip2
+USES=		gnome jpeg libtool localbase pathfix ssl tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 INSTALL_TARGET=	install-strip

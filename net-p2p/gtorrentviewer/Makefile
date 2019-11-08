@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		gmake pkgconfig desktop-file-utils
+USES=		desktop-file-utils gmake gnome pkgconfig
 USE_GNOME=	gtk20 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pixmapsdir=${PREFIX}/share/pixmaps \

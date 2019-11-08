@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 MASTERDIR=	${.CURDIR}/../eiskaltdcpp-lib
 
-USES=		cmake shebangfix
+USES=		cmake gnome shebangfix
 SHEBANG_FILES=	data/examples/commands.ru_RU.UTF-8.php \
 		data/examples/deadbeef.ru_RU.UTF-8.sh \
 		data/examples/mod.amarok.sh \

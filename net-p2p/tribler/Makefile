@@ -34,7 +34,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apsw>0:databases/py-apsw@${PY_FLAVOR} \
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
-USES=		desktop-file-utils python:2.7,run ssl:run tar:xz
+USES=		desktop-file-utils gnome python:2.7,run ssl:run tar:xz
 USE_WX=		2.8
 WX_COMPS=	python
 INSTALLS_ICONS=	yes
