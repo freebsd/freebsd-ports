@@ -18,10 +18,10 @@ To obtain a key:
    MINITUBE_GOOGLE_API_KEY=your_key in make.conf. If you use package
    set GOOGLE_API_KEY environment variable to your key.
 
-Make sure you also have a phonon4 backend installed at runtime:
-multimedia/qt5-phonon4-gstreamer
+Make sure you also have a Phonon backend installed:
+multimedia/phonon-gstreamer
 -or-
-multimedia/qt5-phonon4-vlc
+multimedia/phonon-vlc
 EOM
 }
 ]

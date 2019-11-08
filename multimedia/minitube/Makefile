@@ -2,7 +2,7 @@
 
 PORTNAME=	minitube
 DISTVERSION=	2.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,9 +24,6 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 NLS_USES=	qt:5
 NLS_USE=	QT=linguisttools_build
-
-pre-everything::
-	@${CAT} ${PKGMESSAGE}
 
 post-patch:
 # Remove BOM
