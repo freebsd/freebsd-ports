@@ -18,7 +18,7 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
-USES=		gmake libtool pkgconfig
+USES=		gmake gnome libtool pkgconfig
 USE_GNOME=	cairo glib20 gtk30
 USE_LDCONFIG=	yes
 

@@ -13,7 +13,7 @@ COMMENT=	Implements Pango library with a PDF backend for PDF output
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	pango
 USE_LDCONFIG=	yes
 

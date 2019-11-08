@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		perl5
+USES=		gnome perl5
 USE_GNOME=	gconf2
 USE_PERL5=	configure
 

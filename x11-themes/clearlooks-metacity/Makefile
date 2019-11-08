@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.stellingwerff.com/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clearlooks Metacity theme
 
+USES=		gnome
+
 CONFLICTS=	gnome-themes-2.11.9[1-9]* gnome-themes-2.*
 
 WRKSRC=		${WRKDIR}/Clearlooks/metacity-1/

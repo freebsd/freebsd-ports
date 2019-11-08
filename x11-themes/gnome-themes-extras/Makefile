@@ -16,7 +16,7 @@ BUILD_DEPENDS=	gtk-engines2>=2.11.0:x11-themes/gtk-engines2 \
 		icon-naming-utils>=0.8.1:x11-themes/icon-naming-utils
 RUN_DEPENDS=	gtk-engines2>=2.11.0:x11-themes/gtk-engines2
 
-USES=		gettext gmake pkgconfig tar:bzip2
+USES=		gettext gmake gnome pkgconfig tar:bzip2
 USE_GNOME=	libgnomeui intlhack
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

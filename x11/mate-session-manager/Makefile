@@ -21,8 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:sysutils/consolekit2 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome localbase libtool pathfix \
-		pkgconfig tar:xz xorg
+USES=		gettext gmake gnome libtool localbase mate pathfix pkgconfig \
+		tar:xz xorg
 USE_MATE=	desktop
 USE_XORG=	ice sm x11 xau xext xrandr xrender xtrans xtst
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxslt pango

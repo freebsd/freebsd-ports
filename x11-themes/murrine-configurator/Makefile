@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/bin/zenity:x11/zenity
 
 NO_BUILD=	yes
-USES=	tar:bzip2
+USES=		gnome tar:bzip2
 USE_GNOME=	gtk20
 
 do-install:

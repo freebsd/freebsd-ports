@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Glib2>=1.00:devel/p5-Glib2 \
 
 USE_GNOME=	libglade2
 
-USES=		perl5
+USES=		gnome perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

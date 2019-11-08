@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libnotify.so:devel/libnotify \
 		libgtkimageview.so:x11-toolkits/gtkimageview
 
-USES=		gmake pkgconfig tar:bzip2 tcl
+USES=		gmake gnome pkgconfig tar:bzip2 tcl
 USE_GNOME=	gtk20 libglade2
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${TCL_INCLUDEDIR} -L${TCL_LIBDIR}

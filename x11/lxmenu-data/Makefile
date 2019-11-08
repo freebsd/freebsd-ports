@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
-USES=		gettext gmake localbase tar:xz
+USES=		gettext gmake gnome localbase tar:xz
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc

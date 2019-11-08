@@ -23,7 +23,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome libtool localbase pathfix pkgconfig \
+USES=		gettext gmake gnome libtool localbase mate pathfix pkgconfig \
 		tar:xz xorg
 USE_MATE=	desktop libmateweather menus
 USE_XORG=	ice sm x11 xau xrandr

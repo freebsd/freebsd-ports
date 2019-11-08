@@ -14,7 +14,7 @@ COMMENT?=	GTK+ 2.x engine based on Bluecurve
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pkgconfig tar:bzip2
+USES=		gnome libtool pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 
 CPPFLAGS+=	-I${LOCALBASE}/include

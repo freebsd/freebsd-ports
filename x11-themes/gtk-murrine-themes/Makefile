@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.so:x11-
 GTKRC_DIR=	${DISTNAME}/gtk-2.0
 USE_GNOME=	gtk20
 NO_BUILD=	yes
-USES=		tar:bzip2
+USES=		gnome tar:bzip2
 
 do-install:
 	@(for theme in MurrinaCandy MurrinaCappuccino MurrinaEalm MurrinaNeoGraphite; do \

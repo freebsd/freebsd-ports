@@ -13,6 +13,8 @@ COMMENT=	Faenza GNOME 2 icon themes
 
 LICENSE=	GPLv3
 
+USES=		gnome
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-icon-theme-${PORTVERSION:R}
 NO_BUILD=	yes
 NO_ARCH=	yes

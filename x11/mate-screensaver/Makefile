@@ -23,7 +23,8 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gl gmake gnome localbase pathfix pkgconfig tar:xz xorg
+USES=		gettext gl gmake gnome localbase mate pathfix pkgconfig tar:xz \
+		xorg
 USE_GL=		gl
 USE_MATE=	desktop libmatekbd menus session:run
 USE_XORG=	ice sm x11 xext xscrnsaver xxf86vm

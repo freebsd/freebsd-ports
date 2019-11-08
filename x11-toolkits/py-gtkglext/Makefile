@@ -16,7 +16,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:graphics/py-PyOpenGL@${PY
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:graphics/py-PyOpenGL@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang gmake libtool pathfix pkgconfig python:2.7 tar:bzip2
+USES=		compiler:c++11-lang gmake gnome libtool pathfix pkgconfig \
+		python:2.7 tar:bzip2
 USE_GNOME=	pygtk2
 USE_PYTHON=	flavors
 GNU_CONFIGURE=	yes

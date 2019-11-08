@@ -9,7 +9,7 @@ COMMENT=	Very simple tool to display some text as large as possible
 
 LICENSE=	GPLv2+
 
-USES=		gmake autoreconf pkgconfig gettext-runtime
+USES=		autoreconf gettext-runtime gmake gnome pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nomeata

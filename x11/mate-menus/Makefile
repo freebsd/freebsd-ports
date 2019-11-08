@@ -17,7 +17,7 @@ LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool localbase pathfix pkgconfig \
+USES=		gettext gmake gnome libtool localbase pathfix pkgconfig \
 		python:2.7 tar:xz
 USE_GNOME=	glib20 intltool introspection:buid
 USE_LDCONFIG=	yes

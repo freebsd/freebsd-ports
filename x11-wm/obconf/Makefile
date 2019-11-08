@@ -13,7 +13,7 @@ COMMENT=	Preferences manager for the Openbox window manager
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libobrender.so:x11-wm/openbox
 
-USES=		pkgconfig desktop-file-utils shared-mime-info
+USES=		desktop-file-utils gnome pkgconfig shared-mime-info
 USE_GNOME=	libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPENBOX_CFLAGS="`pkg-config --cflags obrender-3.5 obt-3.5`" \

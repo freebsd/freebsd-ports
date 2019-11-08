@@ -22,8 +22,8 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig
 RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
+USES=		gnome perl5
 USE_GNOME=	libglade2
-USES=		perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

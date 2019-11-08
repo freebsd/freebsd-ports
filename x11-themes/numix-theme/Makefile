@@ -18,7 +18,7 @@ RUN_DEPENDS=	gtk-murrine-engine>=0.98.2:x11-themes/gtk-murrine-engine
 GH_ACCOUNT=	numixproject
 GH_PROJECT=	numix-gtk-theme
 
-USES=		gmake
+USES=		gmake gnome
 USE_GITHUB=	yes
 USE_GNOME=	glib20 gdkpixbuf2
 NO_ARCH=	yes

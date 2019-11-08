@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
-USES=		tar:xz
+USES=		gnome tar:xz
 NO_BUILD=	yes
 INSTALLS_ICONS=	yes
 

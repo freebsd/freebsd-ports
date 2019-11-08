@@ -23,7 +23,8 @@ RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 USES=		autoreconf:build compiler:c++11-lang desktop-file-utils gettext \
-		gmake libtool pathfix pkgconfig python:2.7 shared-mime-info
+		gmake gnome libtool pathfix pkgconfig python:2.7 \
+		shared-mime-info
 USE_GNOME=	gnomedesktop3 gnomeprefix intlhack introspection:build \
 		libxml2 pygobject3
 USE_GITHUB=	yes

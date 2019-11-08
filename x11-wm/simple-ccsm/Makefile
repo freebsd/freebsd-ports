@@ -14,7 +14,7 @@ BROKEN=		unfetchable
 
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compizconfig-python.pc:x11-wm/compizconfig-python
 
-USES=		gettext gmake pkgconfig python:2.7 tar:bzip2
+USES=		gettext gmake gnome pkgconfig python:2.7 tar:bzip2
 USE_GNOME=	intltool pygtk2
 
 INSTALLS_ICONS=	yes

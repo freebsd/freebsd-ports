@@ -21,8 +21,8 @@ RUN_DEPENDS=	p5-Glib2>=0:devel/p5-Glib2 \
 		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
 MAKE_JOBS_UNSAFE=	yes
+USES=		gnome perl5 pkgconfig
 USE_GNOME=	gnomevfs2
 USE_PERL5=	configure
-USES=		perl5 pkgconfig
 
 .include <bsd.port.mk>

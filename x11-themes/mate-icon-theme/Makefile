@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-them
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext-tools gmake pkgconfig tar:xz
+USES=		gettext-tools gmake gnome pkgconfig tar:xz
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

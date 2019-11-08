@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:x11-themes/icon-naming-uti
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	intlhack
-USES+=		gettext-tools gmake pathfix pkgconfig
+USES+=		gettext-tools gmake gnome pathfix pkgconfig
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

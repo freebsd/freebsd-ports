@@ -14,7 +14,7 @@ COMMENT=	GNOME Symbolic Icons
 BUILD_DEPENDS=	icon-naming-utils>=0.8.7:x11-themes/icon-naming-utils
 
 INSTALLS_ICONS=	yes
-USES=		gmake pathfix pkgconfig tar:xz
+USES=		gmake gnome pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_GIT="" \

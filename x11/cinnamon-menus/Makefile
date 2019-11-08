@@ -16,7 +16,7 @@ BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common \
 RUN_DEPENDS=	xkeyboard-config>=0:x11/xkeyboard-config \
 		libxkbfile>=0:x11/libxkbfile
 
-USES=		autoreconf gettext gmake libtool pathfix pkgconfig \
+USES=		autoreconf gettext gmake gnome libtool pathfix pkgconfig \
 		python:2.7 tar:xz
 USE_GNOME=	gnomemenus3 gnomeprefix gtk30 introspection:build
 USE_GITHUB=	yes

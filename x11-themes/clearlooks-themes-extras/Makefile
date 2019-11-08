@@ -12,6 +12,7 @@ COMMENT=	Extras colour schemes for Clearlooks engine theme
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+USES=		gnome
 USE_GNOME=	gtk20
 
 THEME_DIR=	${PREFIX}/share/themes

@@ -17,7 +17,7 @@ ANIMATION_CONFIGURE_ENABLE=		animation
 ANIMATIONTOLEFT_CONFIGURE_ENABLE=	animationtoleft
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig
+USES=		gmake gnome libtool pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 

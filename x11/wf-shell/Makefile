@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libwayland-client.so:graphics/wayland \
 		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 
-USES=		compiler:c++14-lang meson pkgconfig
+USES=		compiler:c++14-lang gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gtkmm30
 GH_ACCOUNT=	WayfireWM

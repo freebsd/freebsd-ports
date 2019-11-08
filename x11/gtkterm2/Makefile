@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	vte
-USES=		gmake libtool localbase pkgconfig
+USES=		gmake gnome libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README

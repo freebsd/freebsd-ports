@@ -12,7 +12,7 @@ COMMENT=	GTK2 bitmap font editor
 
 LICENSE=	MIT
 
-USES=		gettext pkgconfig tar:bzip2
+USES=		gettext gnome pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

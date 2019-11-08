@@ -14,7 +14,7 @@ COMMENT=	GTK2 theme changer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake gnome pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/gtk-chtheme \

@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libxklavier.so:x11/libxklavier \
 		libwnck-1.so:x11-toolkits/libwnck
 
-USES=		pkgconfig
+USES=		gnome pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gdkpixbuf2 glib20 gtk20
 

@@ -21,7 +21,7 @@ PORTSCOUT=	ignore:1
 
 LIB_DEPENDS=	libsigc-1.2.so:devel/libsigc++12
 
-USES+=		autoreconf gmake libtool:keepla pathfix pkgconfig
+USES+=		autoreconf gmake gnome libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20

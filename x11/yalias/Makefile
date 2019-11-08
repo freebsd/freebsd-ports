@@ -11,7 +11,7 @@ MASTER_SITES=	http://offog.org/files/ \
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Enhanced execution box with regex pattern matching
 
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	gtk20
 
 ALL_TARGET=	yalias

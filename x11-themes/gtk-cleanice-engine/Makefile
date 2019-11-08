@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplistic GTK+ 2.x theme engine
 
-USES=		pathfix pkgconfig libtool
+USES=		gnome libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 INSTALL_TARGET=	install-strip

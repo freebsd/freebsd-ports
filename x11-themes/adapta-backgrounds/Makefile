@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	DOCS
 
 NO_ARCH=	yes
 
-USES=		autoreconf gmake pkgconfig
+USES=		autoreconf gmake gnome pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	glib20 libxml2
 

@@ -15,7 +15,7 @@ LICENSE=	LGPL3+
 RUN_DEPENDS=	dot:graphics/graphviz
 
 NO_ARCH=	yes
-USES=		python:2.7
+USES=		gnome python:2.7
 USE_PYTHON=	autoplist distutils
 USE_GNOME=	pygtk2
 

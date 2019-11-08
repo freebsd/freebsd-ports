@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	p5-XML-LibXML>=0:textproc/p5-XML-LibXML
 
-USES=		gmake libtool mono pathfix perl5 pkgconfig shebangfix
+USES=		gmake gnome libtool mono pathfix perl5 pkgconfig shebangfix
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk20 libglade2
 USE_PERL5=	run

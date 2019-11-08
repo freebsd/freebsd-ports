@@ -18,7 +18,8 @@ COMMENT=	Set of Python bindings for GTK+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:graphics/py-cairo@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:graphics/py-cairo@${PY_FLAVOR}
 
-USES=		gettext gmake libtool pathfix pkgconfig python:2.7 tar:bzip2
+USES=		gettext gmake gnome libtool pathfix pkgconfig python:2.7 \
+		tar:bzip2
 USE_GNOME=	libglade2 pygobject
 USE_PYTHON=	flavors
 GNU_CONFIGURE=	yes

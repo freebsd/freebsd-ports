@@ -12,6 +12,7 @@ COMMENT=	Game controller mapping generator
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		sdl
 USE_SDL=	sdl2
 WRKSRC_SUBDIR=	test
 CFLAGS+=	`sdl2-config --cflags`

@@ -26,7 +26,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libstartup-notification-1.so:x11/startup-notification \
 		libfltk.so:x11-toolkits/fltk
 
-USES=		fam gettext iconv:translit localbase:ldflags pathfix \
+USES=		fam gettext gnome iconv:translit localbase:ldflags pathfix \
 		pkgconfig python:2.7 shared-mime-info shebangfix xorg
 
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
