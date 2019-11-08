@@ -3,7 +3,7 @@
 
 PORTNAME=	blender
 DISTVERSION=	2.80
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -48,7 +48,7 @@ CXXFLAGS_i386=	-march=i586
 # version without trailing update letters
 VERDIR=		${DISTVERSION:C/[abcdef]//g}
 PLIST_SUB+=	VER=${VERDIR}
-LLVM_VER=	60
+LLVM_VER=	80
 OPTIONS_SUB=	yes
 
 .include "${.CURDIR}/Makefile.options"
