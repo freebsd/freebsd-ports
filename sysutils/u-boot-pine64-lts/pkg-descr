@@ -6,4 +6,4 @@ dd if=/usr/local/share/u-boot/u-boot-pine64-lts/u-boot-sunxi-with-spl.bin of=/pa
 For information about running FreeBSD on Allwinner boards, see
  https://wiki.freebsd.org/FreeBSD/arm/Allwinner
 
-WWW: http://www.denx.de/wiki/U-Boot
+WWW: https://www.denx.de/wiki/U-Boot

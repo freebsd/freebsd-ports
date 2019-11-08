@@ -17,4 +17,4 @@ at https://github.com/SolidRun/u-boot-imx6 which appears to be a highly
 modified fork of the stock U-Boot 2013.10 release.  As of this writing,
 the changes in this fork have not been rolled back into upstream U-Boot.
 
-WWW: http://www.denx.de/wiki/U-Boot
+WWW: https://www.denx.de/wiki/U-Boot

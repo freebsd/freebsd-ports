@@ -21,4 +21,4 @@ at https://github.com/TechNexion/U-Boot-edm/ which appears to be a slightly
 modified fork of the stock U-Boot 2013.10 release.  As of this writing,
 the changes in this fork have not been rolled back into upstream U-Boot.
 
-WWW: http://www.denx.de/wiki/U-Boot
+WWW: https://www.denx.de/wiki/U-Boot
