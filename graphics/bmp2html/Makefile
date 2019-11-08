@@ -13,6 +13,7 @@ COMMENT=	BMP to HTML converter
 
 LICENSE=	PD
 
+USES=		sdl
 USE_SDL=	sdl
 
 PLIST_FILES=	bin/bmp2html

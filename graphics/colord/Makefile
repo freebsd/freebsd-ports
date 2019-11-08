@@ -20,7 +20,8 @@ RUN_DEPENDS=	spotread:graphics/argyllcms
 USERS=		colord
 GROUPS=		colord
 
-USES=		gettext gmake libtool localbase pathfix pkgconfig sqlite tar:xz
+USES=		gettext gmake gnome libtool localbase pathfix pkgconfig sqlite \
+		tar:xz
 USE_GNOME=	glib20 intlhack introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

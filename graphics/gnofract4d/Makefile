@@ -20,7 +20,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USE_GITHUB=	yes
 GH_ACCOUNT=	edyoung
 
-USES=		desktop-file-utils display:build jpeg localbase pathfix \
+USES=		desktop-file-utils display:build gnome jpeg localbase pathfix \
 		pkgconfig python:2.7 shared-mime-info shebangfix
 SHEBANG_FILES=	fractutils/get.py
 USE_GNOME=	intlhack libxslt:build pygtk2

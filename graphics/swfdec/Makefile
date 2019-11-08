@@ -16,7 +16,7 @@ LIB_DEPENDS=	liboil-0.3.so:devel/liboil \
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig
+USES=		gnome libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20
 USE_GSTREAMER=	core good mp3 ffmpeg

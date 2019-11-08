@@ -19,7 +19,7 @@ RESTRICTED=	May be covered by patents
 CONFLICTS=	autopano-sift-[0-9]*
 
 USE_GNOME=	libxml2
-USES=		cmake jpeg
+USES=		cmake gnome jpeg
 
 PORTDOCS=	*
 

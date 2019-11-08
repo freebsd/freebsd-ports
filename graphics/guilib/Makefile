@@ -12,7 +12,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Simple GUI framework for use with SDL
 
 USE_SDL=	sdl
-USES=		gmake libtool
+USES=		gmake libtool sdl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

@@ -11,7 +11,7 @@ MASTER_SITES=	GNU_ALPHA
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small-scale painting program for GNOME
 
-USES=		libtool pkgconfig
+USES=		gnome libtool pkgconfig
 USE_GNOME=	libgnomeprint libgnomeprintui
 GNU_CONFIGURE=	yes
 LIBS+=		-lm

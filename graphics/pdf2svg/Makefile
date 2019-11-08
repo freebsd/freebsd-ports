@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 USE_GITHUB=	yes
 GH_ACCOUNT=	db9052
 
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	cairo
 GNU_CONFIGURE=	yes
 

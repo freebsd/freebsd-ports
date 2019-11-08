@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
-USES=		compiler:c++11-lang gl qmake:outsource qt:5
+USES=		compiler:c++11-lang gl gnome qmake:outsource qt:5
 USE_GL=		gl glu
 QMAKE_ARGS=	VERSION_NUMBER=${PORTVERSION}
 USE_QT=		buildtools_build core gui opengl

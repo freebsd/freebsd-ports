@@ -22,7 +22,7 @@ RUN_DEPENDS=	display:graphics/ImageMagick6 \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 
-USES=		compiler:c11 gettext gmake pkgconfig tar:tgz
+USES=		compiler:c11 gettext gmake gnome pkgconfig tar:tgz
 USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC}" CFLAGS1="${CFLAGS}"
 

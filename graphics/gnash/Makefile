@@ -149,11 +149,13 @@ LIB_DEPENDS+=		libavcodec.so:multimedia/ffmpeg \
 CONFIGURE_ARGS+=	--enable-media=ffmpeg \
 			--with-ffmpeg-incl=${LOCALBASE}/include/libavcodec \
 			--with-ffmpeg-lib=${LOCALBASE}/lib
+USES+=			sdl
 USE_SDL+=		sdl
 MAKE_ARGS+=		INCLUDES="-I${LOCALBASE}/include/ffmpeg"
 .elif ${PORT_OPTIONS:MGSTREAMER} && empty(PORT_OPTIONS:MFFMPEG)
 USE_GSTREAMER=		ffmpeg mad vorbis
 CONFIGURE_ARGS+=	--enable-media=gst
+USES+=			sdl
 USE_SDL+=		sdl
 .else
 CONFIGURE_ARGS+=	--enable-media=none

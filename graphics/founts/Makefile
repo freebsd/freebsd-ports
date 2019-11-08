@@ -13,6 +13,7 @@ COMMENT=	Demo/program inspired by Erics cascade
 
 LICENSE=	GPLv2
 
+USES=		sdl
 USE_SDL=	sdl
 
 PLIST_FILES=	bin/${PORTNAME} \

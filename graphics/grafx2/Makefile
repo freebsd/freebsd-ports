@@ -18,7 +18,7 @@ LIB_DEPENDS=	libX11.so:x11/libX11 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		desktop-file-utils gmake iconv:wchar_t pkgconfig
+USES=		desktop-file-utils gmake gnome iconv:wchar_t pkgconfig sdl
 USE_SDL=	sdl2 image2
 USE_GITLAB=	yes
 

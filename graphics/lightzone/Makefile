@@ -34,7 +34,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ktgw0316
 GH_PROJECT=	LightZone
 
-USES=		desktop-file-utils gmake jpeg pkgconfig xorg
+USES=		desktop-file-utils gmake gnome jpeg pkgconfig xorg
 USE_ANT=	yes
 USE_JAVA=	yes
 USE_GCC=	yes

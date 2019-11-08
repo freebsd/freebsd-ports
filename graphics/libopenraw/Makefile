@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/variant.hpp:devel/boost-libs
 
-USES=		compiler:c++11-lib jpeg libtool localbase pkgconfig tar:bz2
+USES=		compiler:c++11-lib gnome jpeg libtool localbase pkgconfig \
+		tar:bz2
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

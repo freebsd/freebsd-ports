@@ -11,7 +11,7 @@ COMMENT=	Tools for reading and writing the ICC profile contents as XML files
 
 LIB_DEPENDS=	libSampleICC.so:graphics/sampleicc
 
-USES=		gmake pathfix pkgconfig libtool
+USES=		gmake gnome libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes

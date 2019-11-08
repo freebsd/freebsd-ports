@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
-USES=		compiler:c11 desktop-file-utils gettext gl gmake \
+USES=		compiler:c11 desktop-file-utils gettext gl gmake gnome \
 		localbase:ldflags pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix gtk20
 USE_GL=		yes

@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libexif.so:graphics/libexif
 
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig
+USES=		gnome libtool pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
