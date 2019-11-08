@@ -13,7 +13,7 @@ COMMENT=	Graphical logo interpreter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.4
 
-USES=		pathfix gmake pkgconfig
+USES=		gmake gnome pathfix pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89

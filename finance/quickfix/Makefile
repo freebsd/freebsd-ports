@@ -16,7 +16,7 @@ BROKEN_i386=	fails to build
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake iconv libtool autoreconf shebangfix ssl
+USES=		autoreconf gmake gnome iconv libtool shebangfix ssl
 
 USE_GITHUB=	yes
 

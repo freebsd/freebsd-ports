@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
-USES=		compiler:c++11-lang pathfix pkgconfig gettext
+USES=		compiler:c++11-lang gettext gnome pathfix pkgconfig
 USE_CXXSTD=	c++11
 USE_GNOME=	gnomeprefix
 GNU_CONFIGURE=	yes

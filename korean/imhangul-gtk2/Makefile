@@ -25,7 +25,7 @@ USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	cairo gdkpixbuf2 gtk20
-USES=		autoreconf gmake libtool pkgconfig
+USES=		autoreconf gmake gnome libtool pkgconfig
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

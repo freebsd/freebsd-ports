@@ -13,7 +13,7 @@ COMMENT=	Management utility for the PureFTPd
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		fam gettext gmake localbase pathfix pkgconfig
+USES=		fam gettext gmake gnome localbase pathfix pkgconfig
 USE_GNOME=	intltool libglade2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

@@ -16,12 +16,13 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 
 CONFLICTS_BUILD=spidermonkey17-1.7.*
 
-USES=		autoreconf compiler:c11 gettext libtool gmake \
-		pathfix pkgconfig python:build shebangfix
+USES=		autoreconf compiler:c11 gettext gmake gnome libtool pathfix \
+		pkgconfig python:build shebangfix
 USE_GNOME=	cairo glib20 gnomeprefix introspection:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include

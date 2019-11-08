@@ -17,7 +17,7 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
 		libhangul.so:korean/libhangul
 
-USES=		cmake gettext pkgconfig tar:xz
+USES=		cmake gettext gnome pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

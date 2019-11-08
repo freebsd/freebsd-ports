@@ -12,7 +12,7 @@ COMMENT=	Simple IRC client
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang pkgconfig xorg
+USES=		cmake compiler:c++11-lang gnome pkgconfig xorg
 USE_XORG=	ice sm x11 xext
 INSTALLS_ICONS=	yes
 

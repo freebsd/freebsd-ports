@@ -10,7 +10,7 @@ MASTER_SITES=	http://fishsoup.net/software/kanjipad/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Handwriting recognition
 
-USES=		perl5 gmake pkgconfig
+USES=		gmake gnome perl5 pkgconfig
 USE_GNOME=	gtk20
 MAKE_ARGS=	OPTIMIZE="${CFLAGS}" PREFIX="${PREFIX}" \
 		GTKINC="`pkg-config --cflags gtk+-2.0`"

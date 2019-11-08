@@ -13,7 +13,7 @@ COMMENT=	XML document transfer program
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lang pkgconfig tar:tgz
+USES=		compiler:c++11-lang gnome pkgconfig tar:tgz
 USE_CXXSTD=	c++11
 USE_GNOME=	glibmm libxml2 libxslt
 HAS_CONFIGURE=	yes

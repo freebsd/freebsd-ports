@@ -13,7 +13,7 @@ COMMENT=	Download manager
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
-USES=		dos2unix libtool pkgconfig ssl
+USES=		dos2unix gnome libtool pkgconfig ssl
 USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	DOCS NLS

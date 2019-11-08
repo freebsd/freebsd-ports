@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 BUILD_DEPENDS=	bitlbee:irc/bitlbee
 
-USES=		autoreconf gettext-runtime libtool pkgconfig
+USES=		autoreconf gettext-runtime gnome libtool pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-plugindir=${PREFIX}/lib/bitlbee

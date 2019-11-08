@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyro>=0:devel/py-pyro@${PY_FLAVOR}
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
-USES=		python:2.7 tar:bzip2
+USES=		gnome python:2.7 tar:bzip2
 DOCSDIR=	${PREFIX}/share/doc/sndcs
 DATADIR=	${PREFIX}/share/sndcs
 SUB_FILES=	pkg-message

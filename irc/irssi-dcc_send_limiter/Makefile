@@ -22,7 +22,7 @@ LICENSE=	GPLv2+
 BUILD_DEPENDS=	irssi:irc/irssi
 RUN_DEPENDS=	irssi:irc/irssi
 
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	glib20
 NO_WRKSUBDIR=	yes
 

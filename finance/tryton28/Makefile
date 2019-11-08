@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil@${PY_FLAVOR}
 
 CONFLICTS=	tryton-2.[46].*
 
-USES=		desktop-file-utils gettext python:2.7
+USES=		desktop-file-utils gettext gnome python:2.7
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	gtk20 pygtk2
 

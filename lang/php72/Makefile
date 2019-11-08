@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=--with-layout=GNU \
 		--with-pcre-regex=${LOCALBASE} \
 		--with-password-argon2=${LOCALBASE} \
 		--program-prefix=""
-USES+=		autoreconf:build
+USES+=		autoreconf:build gnome
 USE_GNOME=	libxml2
 
 # PR230207 Allow relocations against read-only segments (override lld default)

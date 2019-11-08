@@ -17,7 +17,7 @@ LICENSE=	GPLv2+
 OPTIONS_DEFINE=	BASH EXAMPLES NLS SSH READLINE
 OPTIONS_DEFAULT=BASH SSH
 
-USES=		gmake tar:xz ssl
+USES=		gmake ssl tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_ipv6=yes
 CONFIGURE_ARGS=	--with-socks=no --with-socks5=no --with-krb4=no \
@@ -31,7 +31,7 @@ PLIST_FILES=	bin/yafc \
 		man/man1/yafc.1.gz
 INFO=		yafc
 
-NLS_USES=		gettext
+NLS_USES=		gettext gnome
 NLS_USE=		GNOME=intltool
 NLS_CONFIGURE_WITH=	gettext=${LOCALBASE}
 NLS_PLIST_FILES=	share/locale/de/LC_MESSAGES/yafc.mo \
