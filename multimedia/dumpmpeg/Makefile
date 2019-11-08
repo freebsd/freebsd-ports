@@ -12,6 +12,7 @@ COMMENT=	Dump frames from mpeg movies
 
 LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 
+USES=		sdl
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 

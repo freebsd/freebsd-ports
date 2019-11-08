@@ -17,7 +17,7 @@ CONFLICTS_INSTALL=	${PORTNAME}*
 LIB_DEPENDS+=		libaravis-0.6.so:devel/libaravis \
 			libnotify.so:devel/libnotify
 
-USES=			autoreconf gettext gmake libtool pkgconfig
+USES=			autoreconf gettext gmake gnome libtool pkgconfig
 USE_GNOME=		cairo glib20 intltool gtk30
 USE_GSTREAMER1=		yes
 GNU_CONFIGURE=		yes

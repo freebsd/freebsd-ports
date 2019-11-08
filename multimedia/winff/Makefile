@@ -41,6 +41,7 @@ LAZBUILD_ARGS=		-d
 BUILD_WRKSRC=	${WRKDIR}/${PKGNAME}/${_PORTNAME}
 
 .if ${FLAVOR:Ugtk2:Mgtk2}
+USES+=		gnome
 USE_FPC+=	cairo
 USE_GNOME+=	cairo
 INSTALLS_ICONS=yes

@@ -22,7 +22,7 @@ LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake iconv localbase pkgconfig
+USES=		gmake gnome iconv localbase pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 

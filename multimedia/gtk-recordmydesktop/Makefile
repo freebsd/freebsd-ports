@@ -16,7 +16,7 @@ RUN_DEPENDS=	recordmydesktop:multimedia/recordmydesktop
 
 NO_ARCH=	yes
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake localbase pkgconfig \
+USES=		desktop-file-utils gettext gmake gnome localbase pkgconfig \
 		python:2.7 shebangfix
 SHEBANG_FILES=	src/gtk-recordMyDesktop.in
 USE_GNOME=	gtk20 pygtk2

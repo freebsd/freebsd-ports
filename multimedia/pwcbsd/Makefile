@@ -47,7 +47,7 @@ ALL_TARGET=	all
 .if ${PORT_OPTIONS:MPROGRAMS}
 ALL_TARGET+=	pwcview
 PROGRAMS=	pwcview
-USES+=		jpeg
+USES+=		jpeg sdl
 USE_SDL=	sdl
 PLIST_SUB+=	PROGRAMS=""
 .else

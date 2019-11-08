@@ -18,7 +18,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libopenal.so:audio/openal-soft
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils gl gmake \
-		iconv pkgconfig qt:5 tar:xz
+		gnome iconv pkgconfig qt:5 tar:xz
 USE_GL=		gl glu glew
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

@@ -39,14 +39,9 @@ PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	libpng
 QUICKTIME_LIB_DEPENDS=	libquicktime.so:multimedia/libquicktime
 QUICKTIME_CONFIGURE_WITH=	libquicktime
+SDL_USES=		sdl
 SDL_USE=		SDL=gfx,sdl
 SDL_CONFIGURE_OFF=	--without-libsdl --without-sdlgfx
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == i386 || ${ARCH} == powerpc
-USES+=		compiler:c++11-lang
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} \

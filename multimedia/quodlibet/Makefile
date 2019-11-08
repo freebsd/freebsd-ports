@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}musicbrainzngs>=0.4:audio/py-musicbrainzngs@
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
-USES=		desktop-file-utils display gettext python:2.7 shebangfix
+USES=		desktop-file-utils display gettext gnome python:2.7 shebangfix
 SHEBANG_FILES=	exfalso.py operon.py quodlibet.py
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	gtk30 intltool pygobject3
