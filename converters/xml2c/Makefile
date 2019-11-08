@@ -11,6 +11,7 @@ COMMENT=	Reads in an XML file and produces equivalent C source code
 
 LICENSE=	BSD2CLAUSE
 
+USES=		gnome
 USE_GNOME=	libxml2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

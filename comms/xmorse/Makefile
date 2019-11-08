@@ -15,6 +15,7 @@ COMMENT=	Fully automatic Morse code teaching machine
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
+USES=		sdl
 USE_SDL=	sdl
 
 PLIST_FILES=	bin/xmorse

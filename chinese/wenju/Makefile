@@ -13,7 +13,7 @@ COMMENT=	Collection of writing tools in Chinese
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pkgconfig
+USES=		gnome libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 INSTALL_TARGET=	install-strip

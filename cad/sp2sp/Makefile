@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		autoreconf gettext-runtime pkgconfig
+USES=		autoreconf gettext-runtime gnome pkgconfig
 USE_GNOME=	gtk20 pango atk cairo gdkpixbuf2 glib20
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/sp2sp

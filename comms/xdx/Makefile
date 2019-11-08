@@ -13,7 +13,7 @@ COMMENT=	Amateur Radio DX cluster monitor
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 USE_GNOME=	gtk20
 
 GNU_CONFIGURE=	yes

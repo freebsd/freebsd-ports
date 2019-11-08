@@ -12,7 +12,7 @@ COMMENT=	A X viewer of nec2c data
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake pkgconfig tar:tgz
+USES=		gmake gnome pkgconfig tar:tgz
 USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/xnecview man/man1/xnecview.1.gz

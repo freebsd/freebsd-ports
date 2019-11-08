@@ -14,7 +14,7 @@ COMMENT=	BBS client using GTK+ 2.x
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang gmake iconv pkgconfig tar:xz
+USES=		compiler:c++11-lang gmake gnome iconv pkgconfig tar:xz
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intlhack

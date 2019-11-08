@@ -27,7 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:cad/ldraw \
 WRKSRC=		${WRKDIR}/BrickUtils-${PORTVERSION}
 
 NO_ARCH=	yes
-USES=		python:2.7 shebangfix
+USES=		gnome python:2.7 shebangfix
 USE_GNOME=	pygtk2
 SHEBANG_FILES=	pyBrickUtils.py \
 		BrickUtils/*.py

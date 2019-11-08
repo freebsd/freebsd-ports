@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gordonjcp
 GH_TAGNAME=	stable-0
 
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	gtk20
 PLIST_FILES=	bin/lysdr
 

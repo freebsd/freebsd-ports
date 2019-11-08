@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES+=		iconv:translit tk:build,run autoreconf libtool pkgconfig
+USES+=		autoreconf gnome iconv:translit libtool pkgconfig tk:build,run
 USE_GNOME=	pango
 OPTIONS_DEFINE=	DOCS
 

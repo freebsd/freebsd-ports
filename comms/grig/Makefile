@@ -16,7 +16,7 @@ LIB_DEPENDS=	libhamlib.so:comms/hamlib
 
 USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake gnome pkgconfig
 
 LIBS+=		-lm
 

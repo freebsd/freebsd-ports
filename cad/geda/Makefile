@@ -22,7 +22,7 @@ LIB_DEPENDS=	libstroke.so:devel/libstroke \
 		libguile.so:lang/guile
 RUN_DEPENDS=	gawk:lang/gawk\
 
-USES=		desktop-file-utils gettext gmake libtool pathfix perl5 \
+USES=		desktop-file-utils gettext gmake gnome libtool pathfix perl5 \
 		pkgconfig python:run shared-mime-info shebangfix
 SHEBANG_FILES=	examples/lightning_detector/bom libgeda/docs/*.dox \
 		utils/gxyrs/*.pl utils/scripts/* \

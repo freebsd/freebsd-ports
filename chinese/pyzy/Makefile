@@ -16,7 +16,8 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 USE_GITHUB=	yes
 GH_TAGNAME=	6d9c3cd
 
-USES=		compiler:c++11-lang gmake libtool pkgconfig python:2.7,build shebangfix autoreconf gettext-runtime pathfix
+USES=		autoreconf compiler:c++11-lang gettext-runtime gmake gnome \
+		libtool pathfix pkgconfig python:2.7,build shebangfix
 SHEBANG_FILES=	data/db/android/create_db.py
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

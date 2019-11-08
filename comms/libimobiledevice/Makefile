@@ -26,6 +26,7 @@ INSTALL_TARGET=	install-strip
 LIB_DEPENDS=	libplist.so:devel/libplist \
 		libusbmuxd.so:comms/libusbmuxd
 
+USES+=		gnome
 USE_GNOME=	glib20
 CONFIGURE_ARGS+=--without-cython
 USE_CSTD=	gnu89

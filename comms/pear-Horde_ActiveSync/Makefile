@@ -7,7 +7,7 @@ CATEGORIES=	comms www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde ActiveSync Server Library
 
-USES=	horde
+USES=		horde php
 USE_PHP=	ctype
 USE_HORDE_RUN=	Horde_Compress \
 		Horde_Date \

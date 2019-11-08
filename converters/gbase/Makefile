@@ -13,7 +13,7 @@ COMMENT=	Program to convert between the 4 common bases used in programming
 LICENSE=	ART10
 
 PLIST_FILES=	bin/${PORTNAME}
-USES=		pkgconfig
+USES=		gnome pkgconfig
 
 USE_GNOME+=	gtk20
 GTK_CFLAGS=	`pkg-config --cflags gtk+-2.0`
