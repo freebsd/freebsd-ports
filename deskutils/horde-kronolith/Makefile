@@ -18,7 +18,7 @@ DATE_HOLIDAYS_DESC=	Depend on PEAR Date_Holidays
 TIMEOBJECTS_DESC=	Depenbd on Horde timeobjects
 XMLWRITER_DESC=		Depend on PHP xmlwriter extension
 
-USES=		horde cpe
+USES=		cpe horde php
 USE_PHP=	gettext json simplexml
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \

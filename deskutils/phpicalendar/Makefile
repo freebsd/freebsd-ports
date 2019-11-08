@@ -19,7 +19,7 @@ COMMENT=	Webbased calendar with iCal support
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bz2
+USES=		php tar:bz2
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	session pcre

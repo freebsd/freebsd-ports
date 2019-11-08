@@ -12,7 +12,7 @@ COMMENT=	Web based customer relationship management suite
 
 BROKEN=		unfetchable
 
-USES=		zip
+USES=		php zip
 USE_PHP=	gd mysqli session pcre xml zlib mbstring curl imap spl posix \
 		json ctype zip tokenizer
 NO_BUILD=	yes

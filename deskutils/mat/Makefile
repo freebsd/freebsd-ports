@@ -17,7 +17,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mutagen>=0:audio/py-mutagen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdfrw>=0:textproc/py-pdfrw@${PY_FLAVOR} \
 		srm:security/srm
 
-USES=		gettext python:2.7
+USES=		gettext gnome python:2.7
 USE_GITLAB=	yes
 GL_SITE=	https://0xacab.org
 GL_ACCOUNT=	mat

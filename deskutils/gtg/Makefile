@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.4:devel/py-dbus@${PY_FLAVOR} \
 		xset:x11/xset
 
 USE_GNOME=	pygobject pygtk2
-USES=		gettext desktop-file-utils python:2.7 shebangfix
+USES=		desktop-file-utils gettext gnome python:2.7 shebangfix
 INSTALLS_ICONS=	yes
 SHEBANG_FILES=	${WRKSRC}/gtcli_bash_completion
 USE_PYTHON=	distutils autoplist

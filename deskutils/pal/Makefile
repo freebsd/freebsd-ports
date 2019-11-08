@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}cal/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	Calendar application
 
-USES=		gettext gmake ncurses pkgconfig readline tar:tgz
+USES=		gettext gmake gnome ncurses pkgconfig readline tar:tgz
 USE_GNOME=	glib20
 ALL_TARGET=
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src

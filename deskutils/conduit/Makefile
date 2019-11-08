@@ -25,8 +25,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas@${PY_
 		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		xdg-open:devel/xdg-utils
 
-USES=		gettext gmake localbase:ldflags pathfix pkgconfig python:2.7 \
-		shebangfix
+USES=		gettext gmake gnome localbase:ldflags pathfix pkgconfig \
+		python:2.7 shebangfix
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
