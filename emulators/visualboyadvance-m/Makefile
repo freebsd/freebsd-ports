@@ -40,8 +40,8 @@ DOS2UNIX_REGEX=	.*\.(c|cpp|h|ypp)
 USE_XORG=	x11 xext
 USE_GL=		gl glu
 USE_SDL=	sdl
-USES=		compiler:c++11-lang cmake:insource,noninja dos2unix gnome gl \
-		pkgconfig xorg
+USES=		cmake:insource,noninja compiler:c++11-lang dos2unix gl gnome \
+		pkgconfig sdl xorg
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DVERSION:STRING="${PORTVERSION}" \
 		-DSYSCONFDIR:STRING="${PREFIX}/etc"  \

@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated text editor for code, markup and prose
 
 INSTALLS_ICONS=	yes
-USES=		desktop-file-utils linux tar:bzip2
+USES=		desktop-file-utils gnome linux tar:bzip2
 USE_LINUX=	xorglibs gtk2
 WRKSRC=		${WRKDIR}/"Sublime Text 2"
 

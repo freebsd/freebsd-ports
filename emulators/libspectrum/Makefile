@@ -15,7 +15,7 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool pkgconfig perl5
+USES=		gettext gmake gnome libtool perl5 pkgconfig
 USE_GNOME=	glib20
 USE_PERL5=	build
 USE_LDCONFIG=	yes

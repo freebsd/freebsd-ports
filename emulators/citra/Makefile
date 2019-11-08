@@ -39,7 +39,7 @@ GH_TUPLE=	citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		weidai11:cryptopp:CRYPTOPP_7_0_0-23-gf320e7d9:cryptopp/externals/cryptopp/cryptopp \
 		wwylele:teakra:e6ea0ea:teakra/externals/teakra
 
-USES=		cmake compiler:c++17-lang iconv localbase:ldflags
+USES=		cmake compiler:c++17-lang iconv localbase:ldflags sdl
 USE_SDL=	sdl2
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test

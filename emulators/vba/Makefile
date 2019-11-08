@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 BROKEN_powerpc=		Runaway cc1plus process
 BROKEN_sparc64=		Runaway cc1plus process
 
-USES=		gettext gmake
+USES=		gettext gmake sdl
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 

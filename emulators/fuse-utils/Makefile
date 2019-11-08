@@ -17,7 +17,7 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libpng.so:graphics/png \
 		libspectrum.so:emulators/libspectrum
 
-USES=		gettext iconv jpeg pkgconfig
+USES=		gettext gnome iconv jpeg pkgconfig
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes

@@ -22,7 +22,7 @@ OPTIONS_SUB=	yes
 NETPLAY_DESC=	Netplay support
 SDL_MIXER_DESC=	SDL_mixer support
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig sdl
 USE_SDL=	sdl
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
@@ -38,6 +38,7 @@ IGNORE=	NETPLAY support requires GTK2 support
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
+USES+=		gnome
 USE_GNOME=	gtk20
 .else
 CONFIGURE_ARGS+=	--disable-gui --disable-gtktest

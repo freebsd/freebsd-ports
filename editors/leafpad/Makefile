@@ -13,7 +13,7 @@ COMMENT=	GTK+ based simple text editor
 LICENSE=	GPLv2
 
 USE_GNOME=	gtk20 intlhack
-USES=		desktop-file-utils gettext gmake pkgconfig
+USES=		desktop-file-utils gettext gmake gnome pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-chooser
 INSTALLS_ICONS=	yes

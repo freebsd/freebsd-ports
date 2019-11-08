@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}2/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME manpages editor
 
-USES=		pathfix gettext gmake pkgconfig
+USES=		gettext gmake gnome pathfix pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

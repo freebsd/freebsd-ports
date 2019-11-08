@@ -20,7 +20,7 @@ LIB_DEPENDS=	libxerces-c.so.3:textproc/xerces-c3 \
 		libxml2.so:textproc/libxml2 \
 		libexpat.so:textproc/expat2
 
-USES=		compiler:c++11-lang dos2unix gettext gmake iconv libtool
+USES=		compiler:c++11-lang dos2unix gettext gmake gnome iconv libtool
 USE_WX=		2.8+
 WX_COMPS=	wx contrib
 WX_CONF_ARGS=	absolute

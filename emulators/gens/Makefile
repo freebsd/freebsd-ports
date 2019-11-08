@@ -18,7 +18,7 @@ BUILD_DEPENDS=	nasm:devel/nasm
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	uses i386 assembly code
 
-USES=		gmake gnome gl localbase pkgconfig
+USES=		gl gmake gnome localbase pkgconfig sdl
 USE_GNOME=	gtk20
 USE_GL=		gl
 USE_SDL=	sdl

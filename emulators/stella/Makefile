@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler:c++11-lib gmake tar:xz
+USES=		compiler:c++11-lib gmake sdl tar:xz
 USE_SDL=	sdl2
 USE_GITHUB=	yes
 GH_ACCOUNT=	stella-emu

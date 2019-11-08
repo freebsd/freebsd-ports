@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 CONFLICTS=	e-uae-[0-9]*
 MAKE_JOBS_UNSAFE=yes
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake gnome pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 

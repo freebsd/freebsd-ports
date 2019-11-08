@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USE_SDL=	sdl2
-USES=		tar:bzip2 cmake:insource pkgconfig xorg
+USES=		cmake:insource pkgconfig sdl tar:bzip2 xorg
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" -DPREFIX="${PREFIX}"
 USE_XORG=	x11 xtst
 
