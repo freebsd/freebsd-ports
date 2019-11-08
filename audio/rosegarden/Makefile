@@ -42,6 +42,4 @@ LIRC_CMAKE_ON=		-DENABLE_LIRC:BOOL=ON
 
 CMAKE_ON=		USE_QT5
 
-.include <bsd.port.options.mk>
-
 .include <bsd.port.mk>
