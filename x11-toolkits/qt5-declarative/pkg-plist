@@ -674,6 +674,8 @@
 %%QT_INCDIR%%/QtQuickWidgets/qquickwidget.h
 %%QT_INCDIR%%/QtQuickWidgets/qtquickwidgetsglobal.h
 %%QT_INCDIR%%/QtQuickWidgets/qtquickwidgetsversion.h
+%%QT_CMAKEDIR%%/Qt5PacketProtocol/Qt5PacketProtocolConfig.cmake
+%%QT_CMAKEDIR%%/Qt5PacketProtocol/Qt5PacketProtocolConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5Qml/Qt5QmlConfig.cmake
 %%QT_CMAKEDIR%%/Qt5Qml/Qt5QmlConfigExtras.cmake
 %%QT_CMAKEDIR%%/Qt5Qml/Qt5QmlConfigVersion.cmake
@@ -688,9 +690,17 @@
 %%QT_CMAKEDIR%%/Qt5Qml/Qt5Qml_QQmlProfilerServiceFactory.cmake
 %%QT_CMAKEDIR%%/Qt5Qml/Qt5Qml_QQuickProfilerAdapterFactory.cmake
 %%QT_CMAKEDIR%%/Qt5Qml/Qt5Qml_QTcpServerConnectionFactory.cmake
+%%QT_CMAKEDIR%%/Qt5QmlDebug/Qt5QmlDebugConfig.cmake
+%%QT_CMAKEDIR%%/Qt5QmlDebug/Qt5QmlDebugConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5QmlDevTools/Qt5QmlDevToolsConfig.cmake
+%%QT_CMAKEDIR%%/Qt5QmlDevTools/Qt5QmlDevToolsConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5Quick/Qt5QuickConfig.cmake
 %%QT_CMAKEDIR%%/Qt5Quick/Qt5QuickConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5QuickCompiler/Qt5QuickCompilerConfig.cmake
+%%QT_CMAKEDIR%%/Qt5QuickParticles/Qt5QuickParticlesConfig.cmake
+%%QT_CMAKEDIR%%/Qt5QuickParticles/Qt5QuickParticlesConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5QuickShapes/Qt5QuickShapesConfig.cmake
+%%QT_CMAKEDIR%%/Qt5QuickShapes/Qt5QuickShapesConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5QuickTest/Qt5QuickTestConfig.cmake
 %%QT_CMAKEDIR%%/Qt5QuickTest/Qt5QuickTestConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5QuickWidgets/Qt5QuickWidgetsConfig.cmake

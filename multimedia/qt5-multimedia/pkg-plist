@@ -278,6 +278,12 @@
 %%QT_INCDIR%%/QtMultimediaWidgets/qtmultimediawidgetsversion.h
 %%QT_INCDIR%%/QtMultimediaWidgets/qvideowidget.h
 %%QT_INCDIR%%/QtMultimediaWidgets/qvideowidgetcontrol.h
+%%QT_CMAKEDIR%%/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfig.cmake
+%%QT_CMAKEDIR%%/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5MultimediaGstTools/Qt5MultimediaGstToolsConfig.cmake
+%%QT_CMAKEDIR%%/Qt5MultimediaGstTools/Qt5MultimediaGstToolsConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5MultimediaQuick/Qt5MultimediaQuickConfig.cmake
+%%QT_CMAKEDIR%%/Qt5MultimediaQuick/Qt5MultimediaQuickConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5Multimedia/Qt5MultimediaConfig.cmake
 %%QT_CMAKEDIR%%/Qt5Multimedia/Qt5MultimediaConfigVersion.cmake
 %%NO_GSTREAMER%%%%QT_CMAKEDIR%%/Qt5Multimedia/Qt5Multimedia_AudioCaptureServicePlugin.cmake
@@ -288,8 +294,6 @@
 %%GSTREAMER%%%%QT_CMAKEDIR%%/Qt5Multimedia/Qt5Multimedia_QGstreamerPlayerServicePlugin.cmake
 %%QT_CMAKEDIR%%/Qt5Multimedia/Qt5Multimedia_QM3uPlaylistPlugin.cmake
 %%PULSEAUDIO%%%%QT_CMAKEDIR%%/Qt5Multimedia/Qt5Multimedia_QPulseAudioPlugin.cmake
-%%QT_CMAKEDIR%%/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfig.cmake
-%%QT_CMAKEDIR%%/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5Multimedia.prl
 %%QT_LIBDIR%%/libQt5Multimedia.so
 %%QT_LIBDIR%%/libQt5Multimedia.so.5

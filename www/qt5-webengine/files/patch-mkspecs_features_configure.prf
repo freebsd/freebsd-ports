@@ -1,6 +1,6 @@
---- mkspecs/features/configure.prf.orig	2018-11-27 04:10:38 UTC
+--- mkspecs/features/configure.prf.orig	2019-10-23 10:30:33 UTC
 +++ mkspecs/features/configure.prf
-@@ -22,7 +22,7 @@ defineTest(runConfigure) {
+@@ -26,7 +26,7 @@ defineTest(runConfigure) {
          return(false)
      }
  
@@ -9,7 +9,7 @@
          skipBuild("pkg-config is required")
          return(false)
      }
-@@ -64,17 +64,17 @@ defineTest(runConfigure) {
+@@ -68,17 +68,17 @@ defineTest(runConfigure) {
          return(false);
      }
  
@@ -22,11 +22,11 @@
          }
  
 -        !qtConfig(webengine-system-glibc) {
--            skipBuild("A suitable version of libc could not be found. See: https://sourceware.org/bugzilla/show_bug.cgi?id=14898")
+-            skipBuild("A suitable version >= 2.27 of libc could not be found.")
 -            return(false)
 -        }
 +        #!qtConfig(webengine-system-glibc) {
-+        #    skipBuild("A suitable version of libc could not be found. See: https://sourceware.org/bugzilla/show_bug.cgi?id=14898")
++        #    skipBuild("A suitable version >= 2.27 of libc could not be found.")
 +        #    return(false)
 +        #}
  

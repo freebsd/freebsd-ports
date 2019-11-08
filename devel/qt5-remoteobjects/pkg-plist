@@ -70,6 +70,7 @@
 %%QT_LIBDIR%%/libQt5RemoteObjects.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5RemoteObjects.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQt5RemoteObjects.so.%%FULLVER%%.debug
+%%QT_LIBDIR%%/libQt5RepParser.prl
 %%QT_MKSPECDIR%%/features/remoteobjects_repc.prf
 %%QT_MKSPECDIR%%/features/repcclient.pri
 %%QT_MKSPECDIR%%/features/repccommon.pri
@@ -89,3 +90,4 @@
 %%QT_QMLDIR%%/QtRemoteObjects/plugins.qmltypes
 %%QT_QMLDIR%%/QtRemoteObjects/qmldir
 libdata/pkgconfig/Qt5RemoteObjects.pc
+libdata/pkgconfig/Qt5RepParser.pc

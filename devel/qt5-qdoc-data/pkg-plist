@@ -13,6 +13,7 @@
 %%QT_DOCDIR%%/global/html-header-online.qdocconf
 %%QT_DOCDIR%%/global/includes-online/search.qdoc
 %%QT_DOCDIR%%/global/includes/examples-run.qdocinc
+%%QT_DOCDIR%%/global/includes/module-use.qdocinc
 %%QT_DOCDIR%%/global/macros.qdocconf
 %%QT_DOCDIR%%/global/manifest-meta.qdocconf
 %%QT_DOCDIR%%/global/qt-cpp-defines.qdocconf

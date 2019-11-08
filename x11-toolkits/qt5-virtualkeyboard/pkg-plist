@@ -47,6 +47,8 @@
 %%QT_INCDIR%%/QtVirtualKeyboard/qvirtualkeyboardselectionlistmodel.h
 %%QT_INCDIR%%/QtVirtualKeyboard/qvirtualkeyboardtrace.h
 %%QT_CMAKEDIR%%/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake
+%%QT_CMAKEDIR%%/Qt5HunspellInputMethod/Qt5HunspellInputMethodConfig.cmake
+%%QT_CMAKEDIR%%/Qt5HunspellInputMethod/Qt5HunspellInputMethodConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5VirtualKeyboard/Qt5VirtualKeyboardConfig.cmake
 %%QT_CMAKEDIR%%/Qt5VirtualKeyboard/Qt5VirtualKeyboardConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5VirtualKeyboard/Qt5VirtualKeyboard_QtVirtualKeyboardHunspellPlugin.cmake
