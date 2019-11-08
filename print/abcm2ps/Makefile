@@ -11,7 +11,7 @@ COMMENT=	Converts ABC to music sheet in PostScript format
 
 LICENSE=	GPLv2
 
-USES=		cpe gettext-runtime
+USES=		cpe gettext-runtime gnome
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 CPE_VENDOR=	moinejf
 GNU_CONFIGURE=	yes

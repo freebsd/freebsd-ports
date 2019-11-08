@@ -12,7 +12,7 @@ COMMENT=	Small library for rendering Postscript documents
 
 LICENSE=	GPLv2
 
-USES=		gmake libtool localbase pathfix pkgconfig ghostscript
+USES=		ghostscript gmake gnome libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo
 GNU_CONFIGURE=	yes
