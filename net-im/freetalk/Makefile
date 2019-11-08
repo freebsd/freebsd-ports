@@ -17,7 +17,8 @@ LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth \
 		libguile-2.2.so:lang/guile2 \
 		libgc-threaded.so:devel/boehm-gc-threaded
 
-USES=		autoreconf gettext-runtime localbase makeinfo pkgconfig readline
+USES=		autoreconf gettext-runtime gnome localbase makeinfo pkgconfig \
+		readline
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 

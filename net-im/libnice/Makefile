@@ -9,7 +9,7 @@ MASTER_SITES=	http://nice.freedesktop.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library and transmitter that implements ICE-19
 
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake gnome libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 introspection:build
 GNU_CONFIGURE=	yes

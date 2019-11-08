@@ -18,7 +18,7 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libpurple.so:net-im/libpurple
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig
+USES=		gmake gnome libtool pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20 intltool
 

@@ -14,7 +14,7 @@ COMMENT=	Flexible Communications Framework
 LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib \
 		libdbus-glib-1.so:devel/dbus-glib
 
-USES=		gmake libtool pathfix pkgconfig python:2.7,build
+USES=		gmake gnome libtool pathfix pkgconfig python:2.7,build
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 libxslt:build
 GNU_CONFIGURE=	yes

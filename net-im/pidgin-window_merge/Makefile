@@ -18,7 +18,7 @@ RUN_DEPENDS=	pidgin:net-im/pidgin
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 
-USES=		autoreconf gmake libtool pkgconfig localbase:ldflags
+USES=		autoreconf gmake gnome libtool localbase:ldflags pkgconfig
 USE_GNOME=	intltool
 
 INSTALL_TARGET=	install-strip

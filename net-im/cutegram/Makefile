@@ -23,7 +23,8 @@ GH_PROJECT=	Cutegram aseman-qt-tools:tools
 GH_TAGNAME=	91bf14b:tools
 GH_SUBDIR=	Cutegram/asemantools:tools
 
-USES=		compiler:c++11-lang qmake:outsource desktop-file-utils qt:5 ssl
+USES=		compiler:c++11-lang desktop-file-utils gnome qmake:outsource \
+		qt:5 ssl
 USE_QT=		qmake_build buildtools_build core declarative sql xml multimedia \
 		widgets dbus webkit quickcontrols graphicaleffects sql-sqlite3
 QMAKE_ARGS=	LIBQTELEGRAM_INCLUDE_PATH="${LOCALBASE}/include/libqtelegram-ae" \

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpurple.so:net-im/libpurple
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

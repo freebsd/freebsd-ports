@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpurple.so:net-im/libpurple \
 		libjson-glib-1.0.so:devel/json-glib
 
 GITHASH=	9ff9acf9fa14
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf gnome libtool pkgconfig
 PLIST_FILES=	lib/purple-2/libfacebook.so
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20

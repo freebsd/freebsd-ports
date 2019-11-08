@@ -17,7 +17,7 @@ LIB_DEPENDS=	libidn.so:dns/libidn \
 		libgadu.so:polish/libgadu
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake gnome pkgconfig
 USE_GNOME=	glib20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

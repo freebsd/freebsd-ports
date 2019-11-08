@@ -18,7 +18,8 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgspell-1.so:textproc/gspell
 
-USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig sqlite
+USES=		autoreconf compiler:c++11-lang gmake gnome libtool pkgconfig \
+		sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	baedert

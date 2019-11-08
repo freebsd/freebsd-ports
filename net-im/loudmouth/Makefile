@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libidn.so:dns/libidn
 
-USES=		gettext gmake libtool pkgconfig tar:bzip2
+USES=		gettext gmake gnome libtool pkgconfig tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

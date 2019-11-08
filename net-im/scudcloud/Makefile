@@ -28,7 +28,7 @@ INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	HUNSPELL
 
-USES=		python:3.4+
+USES=		gnome python:3.4+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils optsuffix
 NO_ARCH=	yes

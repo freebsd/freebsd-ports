@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libidn.so:dns/libidn
 
-USES=		pkgconfig shebangfix
+USES=		gnome pkgconfig shebangfix
 SHEBANG_FILES=	scripts/roommaker.pl scripts/roomname.pl
 USE_GNOME=	glib20
 USE_RC_SUBR=	${PORTNAME}

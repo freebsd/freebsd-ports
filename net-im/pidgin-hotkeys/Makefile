@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpurple.so:net-im/libpurple
 BUILD_DEPENDS=	pidgin:net-im/pidgin
 RUN_DEPENDS=	pidgin:net-im/pidgin
 
-USES=		libtool pkgconfig
+USES=		gnome libtool pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
