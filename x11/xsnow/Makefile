@@ -12,8 +12,6 @@ MASTER_SITES=	https://janswaal.home.xs4all.nl/Xsnow/ \
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Create a snowy and Santa-y desktop
 
-BROKEN=		unfetchable
-
 USES=		imake xorg
 USE_XORG=	xpm
 PLIST_FILES=	bin/xsnow man/man6/xsnow.6.gz
