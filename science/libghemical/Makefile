@@ -23,7 +23,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
 		libmpqc.so:science/mpqc
 
-USES=		fortran gettext gl gmake libtool localbase pathfix pkgconfig 
+USES=		fortran gettext gl gmake libtool localbase pathfix pkgconfig
 USE_CXXSTD=	c++98
 USE_GL=		gl
 GNU_CONFIGURE=	yes
