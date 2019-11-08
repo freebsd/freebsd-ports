@@ -16,7 +16,7 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	smcameron
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 USE_GNOME=	gtk20
 
 PORTDOCS=	AAA_HOW_TO_MAKE_NEW_LEVELS.txt AUTHORS README changelog.txt

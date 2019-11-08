@@ -37,7 +37,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libsigc-2.0.so:devel/libsigc++20 \
 		libvorbisfile.so:audio/libvorbis
 
-USES=		cmake compiler:c++11-lib gl gnome pkgconfig
+USES=		cmake compiler:c++11-lib gl gnome pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim
 GH_TAGNAME=	20191009

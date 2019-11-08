@@ -14,7 +14,7 @@ COMMENT=	Challenge your spelling skills in the old western style
 CONFLICTS=	bsdgames-*
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake sdl
 USE_CSTD=	gnu89
 USE_SDL=	sdl mixer image ttf
 

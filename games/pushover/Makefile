@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer ttf
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gettext gmake pkgconfig lua
+USES=		gettext gmake lua pkgconfig sdl
 
 PORTDOCS=	*
 PORTDATA=	*

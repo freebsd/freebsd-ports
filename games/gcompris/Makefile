@@ -24,8 +24,8 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		gnucap:cad/gnucap
 
-USES=		display:configure gettext gmake libtool localbase pathfix \
-		pkgconfig python:2.7 shebangfix sqlite tar:bzip2 perl5
+USES=		display:configure gettext gmake gnome libtool localbase pathfix \
+		perl5 pkgconfig python:2.7 sdl shebangfix sqlite tar:bzip2
 USE_PERL5=	run
 SHEBANG_FILES=	boards/voices/*.sh boards/voices/*.pl
 GNU_CONFIGURE=	yes

@@ -34,7 +34,7 @@ OPTIONS_SUB=	yes
 
 FLAVOR_DESC=	Clients and servers
 CLIENT_DESC=	Build client
-CLIENT_USES=			gl xorg
+CLIENT_USES=			gl sdl xorg
 CLIENT_USE=			GL=gl,glu SDL=image,mixer,sdl XORG=x11
 CLIENT_LDFLAGS=			-lX11
 CLIENT_ALL_TARGET=		client

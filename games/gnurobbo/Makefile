@@ -10,7 +10,7 @@ EXTRACT_SUFX=	-source.tar.gz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Reimplementation of LK Avalon's Robbo for the Atari XE/XL
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl ttf mixer image
 
 MAKE_ENV=	PACKAGE_DATA_DIR="${DATADIR}" \

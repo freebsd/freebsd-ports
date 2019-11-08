@@ -17,7 +17,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_SDL=	sdl mixer image ttf
-USES=		gmake lua:51 pkgconfig
+USES=		gmake lua:51 pkgconfig sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir="${DATADIR}"
 CONFIGURE_ENV=	LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}" \

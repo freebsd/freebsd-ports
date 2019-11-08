@@ -14,7 +14,7 @@ COMMENT=	Find all matching pairs of icons as fast as possible
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake localbase
+USES=		gmake localbase sdl
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image ttf
 

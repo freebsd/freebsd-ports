@@ -12,7 +12,7 @@ COMMENT=	Clone of the classic game Missile Command
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		jpeg
+USES=		jpeg sdl
 USE_SDL=	mixer image sdl
 GNU_CONFIGURE=	yes
 

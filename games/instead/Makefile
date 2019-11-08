@@ -39,8 +39,10 @@ LUAJIT_DESC=		Use LuaJIT instead of Lua
 SDL_USE=		SDL=sdl,image,ttf,mixer
 SDL2_USE=		SDL=sdl2,image2,ttf2,mixer2
 SDL2_CMAKE_BOOL=	WITH_SDL2
+GTK2_USES=		gnome
 GTK2_USE=		GNOME=gtk20
 GTK2_CMAKE_BOOL=	WITH_GTK2
+GTK3_USES=		gnome
 GTK3_USE=		GNOME=gtk30
 GTK3_CMAKE_BOOL=	WITH_GTK3
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit

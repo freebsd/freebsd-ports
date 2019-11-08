@@ -13,7 +13,7 @@ COMMENT=	Vector-based rock-shooting game similar to Asteroids
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	image mixer sdl
 
 PORTDOCS=	CHANGES.txt README.txt

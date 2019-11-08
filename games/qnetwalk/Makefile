@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
 
-USES=		cmake compiler:c++11-lang qt:5
+USES=		cmake compiler:c++11-lang qt:5 sdl
 USE_QT=		core gui widgets qmake_build buildtools_build linguisttools_build
 USE_SDL=	mixer sdl
 

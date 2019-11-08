@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	patapizza
 GH_TAGNAME=	f5b809c
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl image gfx
 
 PORTDOCS=	README.md

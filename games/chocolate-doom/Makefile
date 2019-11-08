@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake python:build pkgconfig
+USES=		gmake pkgconfig python:build sdl
 USE_SDL=	mixer2 net2 sdl2
 GNU_CONFIGURE=	yes
 BINARY_ALIAS=	python=${PYTHON_CMD}

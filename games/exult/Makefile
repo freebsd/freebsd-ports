@@ -18,8 +18,8 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 USE_GITHUB=	yes
 GH_TAGNAME=	b15afba
 
-USES=		autoreconf compiler:c++11-lib gmake gnome libtool localbase \
-		pkgconfig xorg
+USES=		autoreconf compiler:c++11-lib gmake libtool localbase pkgconfig \
+		xorg
 USE_CXXSTD=	c++98
 USE_XORG=	xext
 GNU_CONFIGURE=	yes
@@ -40,17 +40,20 @@ GIMP_DESC=		GIMP plugin support
 GIMP_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
 GIMP_CONFIGURE_ENABLE=	gimp-plugin
 SDL1_DESC=		Simple Direct Media Layer 1 support
+SDL1_USES=		sdl
 SDL1_USE=		sdl=mixer
 SDL1_CONFIGURE_ON=	--with-sdl=sdl12
 SDL2_DESC=		Simple Direct Media Layer 2 support
+SDL2_USES=		sdl
 SDL2_USE=		sdl=mixer2
 SDL2_CONFIGURE_ON=	--with-sdl=sdl2
 STUDIO_DESC=		Install Exult Studio
 STUDIO_CONFIGURE_ENABLE=\
 			exult-studio exult-studio-support
+STUDIO_USES=		gnome
 STUDIO_USE=		gnome=libglade2
 THUMBNAILER_DESC=	Gnome SHP thumbnailer support
-THUMBNAILER_USES=	shared-mime-info
+THUMBNAILER_USES=	gnome shared-mime-info
 THUMBNAILER_USE=	gnome=libgnomeui
 THUMBNAILER_CONFIGURE_ENABLE=\
 			gnome-shp-thumbnailer

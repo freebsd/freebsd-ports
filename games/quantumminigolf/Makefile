@@ -14,7 +14,7 @@ COMMENT=	Computer game visualizing quantum mechanics
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libfftw3.so:math/fftw3
 
-USES=		gmake compiler:env
+USES=		compiler:env gmake sdl
 USE_SDL=	sdl ttf
 
 PLIST_FILES=	bin/${PORTNAME}

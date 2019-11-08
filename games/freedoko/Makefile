@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/../doc/GPL
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 
-USES=		compiler:c++14-lang gettext-tools gettext-runtime gmake \
+USES=		compiler:c++14-lang gettext-runtime gettext-tools gmake gnome \
 		localbase pkgconfig zip:infozip
 
 USE_CXXSTD=	c++14

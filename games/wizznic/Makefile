@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
-USES=		gmake tar:bzip2
+USES=		gmake sdl tar:bzip2
 USE_CSTD=	gnu89
 USE_SDL=	image mixer sdl
 MAKE_ENV=	DATADIR=${DATADIR}/ BINDIR=${PREFIX}/bin

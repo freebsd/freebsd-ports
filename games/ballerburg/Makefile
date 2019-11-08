@@ -16,7 +16,7 @@ LICENSE=	GPLv3+
 
 GNU_CONFIGURE=	yes
 NLS_USES=	gettext
-USES=		cmake:insource
+USES=		cmake:insource sdl
 USE_SDL=	sdl
 
 OPTIONS_DEFINE=	DOCS NLS

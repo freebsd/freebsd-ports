@@ -14,7 +14,7 @@ COMMENT=	Mechanized Assault and Exploration Reloaded
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/data/COPYING
 
-USES=		cmake compiler:c++11-lib dos2unix
+USES=		cmake compiler:c++11-lib dos2unix sdl
 DOS2UNIX_FILES=	src/config/selectplatformconfig.h
 USE_SDL=	sdl2 mixer2 net2
 

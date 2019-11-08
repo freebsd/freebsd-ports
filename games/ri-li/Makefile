@@ -14,7 +14,7 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2 gmake
+USES=		gmake sdl tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer
 

@@ -18,7 +18,7 @@ COMMENT=	Enhanced shoot-the-asteroids game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake tar:bzip2
+USES=		gmake sdl tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
 USE_CSTD=	gnu89

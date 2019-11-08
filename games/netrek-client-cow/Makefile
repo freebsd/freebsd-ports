@@ -16,7 +16,7 @@ LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl mixer
 
 CONFIGURE_ARGS+=	NORSA='\#'

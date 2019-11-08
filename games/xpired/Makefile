@@ -13,6 +13,7 @@ COMMENT=	Action-puzzle maze escape game
 
 LICENSE=	GPLv2+
 
+USES=		sdl
 USE_SDL=	gfx image mixer sdl
 WRKSRC=		${WRKDIR}/src
 

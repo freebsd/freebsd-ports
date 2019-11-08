@@ -19,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/arena//}
 
+USES=		gnome sdl
 USE_SDL=	mixer net sdl
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lm

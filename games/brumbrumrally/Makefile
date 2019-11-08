@@ -12,7 +12,7 @@ COMMENT=	Racing game with randomized tracks
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		dos2unix gmake
+USES=		dos2unix gmake sdl
 DOS2UNIX_FILES=	src/hqx/common.h
 USE_SDL=	sdl image net
 

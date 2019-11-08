@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSTP Bottle client
 
 NO_ARCH=	yes
-USES=		gettext-tools gmake python:2.7 shebangfix
+USES=		gettext-tools gmake gnome python:2.7 shebangfix
 SHEBANG_FILES=	src/*.py src/viewer/*.py
 USE_GNOME=	pygtk2
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}

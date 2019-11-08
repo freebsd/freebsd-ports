@@ -20,7 +20,7 @@ BROKEN_armv7=		fails to compile: no matching function for call to cmdwin_vpush
 
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake sdl
 
 post-patch:
 	${REINPLACE_CMD} -i "" 's|malloc.h|stdlib.h|g' ${WRKSRC}/src/scheme.c

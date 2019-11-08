@@ -19,7 +19,7 @@ GH_ACCOUNT=	keithfancher
 GH_PROJECT=	Bomns-for-Linux
 GH_TAGNAME=	113be27
 
-USES=		cmake localbase
+USES=		cmake gnome localbase sdl
 CMAKE_ARGS=	-Wno-dev
 USE_CXXSTD=	gnu++98
 USE_SDL=	mixer sdl

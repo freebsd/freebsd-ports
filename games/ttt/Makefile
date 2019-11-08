@@ -17,7 +17,7 @@ COMMENT=	Simple one or two player Tic Tac Toe game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf
+USES=		autoreconf sdl
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}

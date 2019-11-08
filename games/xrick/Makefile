@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of Rick Dangerous
 
 RESTRICTED=	Copyright status of the graphics and sounds is uncertain
-USES=		gmake jpeg tar:tgz
+USES=		gmake jpeg sdl tar:tgz
 USE_SDL=	sdl
 
 PLIST_FILES=	bin/xrick man/man6/xrick.6.gz share/xrick/data.zip

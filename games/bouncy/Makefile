@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYGAME} \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-post-${DISTVERSION}
 
-USES=		python:2.7
+USES=		gnome python:2.7
 
 PORTDOCS=	README.txt
 

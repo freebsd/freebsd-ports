@@ -16,6 +16,7 @@ COMMENT=	Falling blocks game with 2-player hotseat mode
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gnome sdl
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}

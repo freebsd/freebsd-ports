@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 WRKSRC=		${WRKDIR}/fop-${DISTVERSION}
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	image mixer sdl
 
 PORTDOCS=	CHANGES.txt README.txt

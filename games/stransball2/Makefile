@@ -17,7 +17,7 @@ LICENSE_FILE=	${BUILD_WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libSGE.so:devel/sdl_sge
 
-USES=		gmake dos2unix zip
+USES=		dos2unix gmake sdl zip
 DOS2UNIX_FILES=	sources/main.cpp sources/auxiliar.cpp
 USE_SDL=	sdl image mixer sound
 

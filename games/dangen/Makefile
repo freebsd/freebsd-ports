@@ -15,7 +15,7 @@ LICENSE=	GPLv2 ART20
 LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl image
 DESKTOP_ENTRIES="dangen" \
 		"Shoot'em up game where accurate shooting matters" \

@@ -48,7 +48,7 @@ TEST_USES=		localbase
 
 HEADLESS_DESC=		Build only headless components: server and AI
 HEADLESS_CMAKE_BOOL=	BUILD_HEADLESS
-HEADLESS_USES_OFF=	openal
+HEADLESS_USES_OFF=	gl openal sdl
 HEADLESS_USE_OFF=	SDL=sdl2 GL=gl,glu,glew
 HEADLESS_LIB_DEPENDS_OFF= \
 		libfreetype.so:print/freetype2 \

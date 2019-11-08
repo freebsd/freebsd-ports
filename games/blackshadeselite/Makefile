@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
-USES=		gl gmake openal:al,alut tar:bzip2
+USES=		gl gmake openal:al,alut sdl tar:bzip2
 USE_CXXSTD=	c++98
 USE_SDL=	sdl
 USE_GL=		gl glu

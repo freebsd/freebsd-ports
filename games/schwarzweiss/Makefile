@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	horstjens
 GH_TAGNAME=	d95263f
 
-USES=		python:2.7 shebangfix
+USES=		gnome python:2.7 shebangfix
 SHEBANG_FILES=	schwarzweiss_start.py data/*.py
 
 PORTDOCS=	readme.txt

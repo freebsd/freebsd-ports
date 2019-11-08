@@ -12,7 +12,7 @@ COMMENT=	Climb a tower and avoid monsters
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake localbase
+USES=		gettext gmake localbase sdl
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/games

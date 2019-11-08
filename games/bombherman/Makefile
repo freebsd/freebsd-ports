@@ -22,7 +22,7 @@ GH_ACCOUNT=	Keruspe
 GH_PROJECT=	Bomb-her-man
 GH_TAGNAME=	8f5aa22
 
-USES=		autoreconf compiler:c++11-lang gmake pkgconfig
+USES=		autoreconf compiler:c++11-lang gmake gnome pkgconfig sdl
 USE_CXXSTD=	gnu++98
 USE_SDL=	sdl image mixer ttf
 USE_GNOME=	cairo intltool librsvg2

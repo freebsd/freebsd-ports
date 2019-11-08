@@ -12,7 +12,7 @@ COMMENT=	Play cute bunnies jumping on each other's heads
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake shebangfix tar:bzip2
+USES=		gettext gmake sdl shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/menu/jumpnbump_menu.py.pre
 USE_SDL=	sdl2 mixer2 net2
 

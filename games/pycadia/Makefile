@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		python:2.7 shebangfix
+USES=		gnome python:2.7 shebangfix
 USE_GNOME=	pygtk2 libgnomeui
 SHEBANG_FILES=	*.py
 NO_ARCH=	yes

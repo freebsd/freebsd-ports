@@ -21,7 +21,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/gpl.txt
 
 WRKSRC=		${WRKDIR}/hhh-2008-03-29
 
-USES=		gmake
+USES=		gmake gnome sdl
 USE_SDL=	sdl image mixer ttf
 ALL_TARGET=	# empty
 MAKE_ENV=	DATA_INSTALL_DIR="${DATADIR}" \

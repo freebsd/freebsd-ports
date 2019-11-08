@@ -13,7 +13,7 @@ COMMENT=	Rewritten engine for Flashback
 LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
 		libvorbisidec.so:audio/libtremor
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake pkgconfig sdl tar:bzip2
 USE_SDL=	sdl2
 
 ALL_TARGET=	rs

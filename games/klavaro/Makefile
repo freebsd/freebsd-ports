@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		pkgconfig gettext gmake iconv tar:bzip2
+USES=		gettext gmake gnome iconv pkgconfig tar:bzip2
 USE_GNOME=	gtk30 intlhack
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

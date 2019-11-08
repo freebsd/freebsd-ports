@@ -18,7 +18,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libmikmod.so:audio/libmikmod \
 		libpth.so:devel/pth
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig sdl
 USE_SDL=	image sdl
 DATAVERSION=	0.7.0
 

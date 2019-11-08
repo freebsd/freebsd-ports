@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libguile.so:lang/guile
 
-USES=		pkgconfig readline
+USES=		gnome pkgconfig readline
 USE_GNOME=	vte
 GNU_CONFIGURE=	yes
 

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang gettext gl gmake localbase pkgconfig
+USES=		compiler:c++11-lang gettext gl gmake gnome localbase pkgconfig
 USE_GNOME=	gtk20
 USE_GL=		gl glu
 

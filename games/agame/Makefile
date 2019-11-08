@@ -14,7 +14,7 @@ COMMENT=	Simple Tetris-like game
 
 LICENSE=	GPLv2+
 
-USES=		gmake tar:tgz
+USES=		gmake sdl tar:tgz
 USE_SDL=	sdl image mixer
 
 WRKSRC=		${WRKDIR}/game

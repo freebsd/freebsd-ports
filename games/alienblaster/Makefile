@@ -13,7 +13,7 @@ COMMENT=	Alien Blaster
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake tar:tgz
+USES=		gmake sdl tar:tgz
 USE_SDL=	mixer sdl
 REINPLACE_ARGS=	-i ''
 

@@ -16,6 +16,7 @@ LICENSE=	GPLv2+ # (now dead) website mentions GPL
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
+USES=		sdl
 USE_SDL=	sdl ttf mixer
 USE_CXXSTD=	c++98
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

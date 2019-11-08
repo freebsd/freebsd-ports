@@ -12,7 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	From 6 letters you are to create as many words as you can
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl mixer image ttf
 
 CPPFLAGS+=	`${SDL_CONFIG} --cflags`

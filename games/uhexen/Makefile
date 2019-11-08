@@ -13,7 +13,7 @@ COMMENT=	Yet another port of Hexen, popular game from Raven Software
 BROKEN_powerpc=		fails to compile
 BROKEN_powerpc64=	fails to compile: m_misc.o: undefined reference to 'ShortSwap'
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	mixer sdl
 MAKE_ENV=	EXTRA_LIBS=-lm
 

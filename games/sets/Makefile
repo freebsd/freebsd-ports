@@ -16,7 +16,7 @@ COMMENT=	This is an implementation of the sets game
 
 LICENSE=	GPLv3
 
-USES=		gmake tar:tgz
+USES=		gmake sdl tar:tgz
 USE_SDL=	sdl image
 ALL_TARGET=	${PORTNAME}
 

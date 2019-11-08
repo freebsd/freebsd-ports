@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 
 USE_SDL=	sdl
 HAS_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake sdl
 
 OPTIONS_DEFINE=	DOCS
 

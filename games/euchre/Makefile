@@ -16,7 +16,7 @@ COMMENT=	Very popular card game with variable skill levels
 
 LICENSE=	GPLv2
 
-USES=		compiler:c++11-lang pkgconfig
+USES=		compiler:c++11-lang gnome pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 

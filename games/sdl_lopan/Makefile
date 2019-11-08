@@ -17,7 +17,7 @@ COMMENT=	Mahjong game remake
 
 WRKSRC=		${WRKDIR}/sdllopan-${PORTVERSION}
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl image mixer
 ALL_TARGET=	# empty
 

@@ -11,6 +11,7 @@ MASTER_SITES=	http://bilious.homelinux.org/~paxed/brickshooter/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Push blocks on to the playing field, match block colors to remove them
 
+USES=		sdl
 USE_SDL=	sdl mixer image
 
 PLIST_FILES=	bin/${PORTNAME}

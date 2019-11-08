@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYGAME}
 
-USES=		python:2.7 shebangfix zip
+USES=		gnome python:2.7 shebangfix zip
 SHEBANG_FILES=	pyconsole.py
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes

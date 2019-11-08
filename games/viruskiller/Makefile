@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gmake
+USES=		gmake gnome sdl
 USE_SDL=	mixer image ttf net
 MAKEFILE=	makefile
 INSTALLS_ICONS=	yes

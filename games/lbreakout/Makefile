@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_SDL=	sdl
-USES=		gmake
+USES=		gmake sdl
 GNU_CONFIGURE=	yes
 LIBS+=		-lcompat
 

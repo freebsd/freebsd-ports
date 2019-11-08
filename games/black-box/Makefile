@@ -18,6 +18,7 @@ COMMENT=	Shoot in and watch where the shot leaves the box
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		sdl
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
 

@@ -44,6 +44,7 @@ PLIB_DESC=		Enable sound support through plib
 PLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 GUI_DESC=		Enable FLTK GUI
 GUI_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+SDL_USES=		sdl
 SDL_USE=		SDL=sdl,mixer
 
 post-patch:

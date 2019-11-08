@@ -11,7 +11,7 @@ COMMENT=	Reimplementation of the classic Bullfrog game Syndicate
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake:insource
+USES=		cmake:insource sdl
 USE_SDL=	sdl image mixer
 
 SUB_FILES=	pkg-message

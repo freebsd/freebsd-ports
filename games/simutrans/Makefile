@@ -37,7 +37,7 @@ MAKE_ARGS=	BACKEND=mixer_sdl \
 		FLAGS="-DUSE_C -DREVISION=${SIMUTRANS_REVISION}" \
 		VERBOSE=1
 NO_WRKSUBDIR=	yes
-USES=		compiler dos2unix gmake zip
+USES=		compiler dos2unix gmake sdl zip
 USE_SDL=	sdl mixer
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}

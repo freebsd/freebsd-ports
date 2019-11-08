@@ -17,7 +17,8 @@ BUILD_DEPENDS=	gsed:textproc/gsed
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		autoreconf gettext gmake iconv localbase perl5 pkgconfig
+USES=		autoreconf gettext gmake gnome iconv localbase perl5 pkgconfig \
+		sdl
 USE_GNOME=	libxml2
 USE_SDL=	image mixer net pango sdl
 GNU_CONFIGURE=	yes
