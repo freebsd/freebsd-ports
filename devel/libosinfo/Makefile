@@ -17,7 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		osinfo-db-import:sysutils/osinfo-db-tools \
 		${LOCALBASE}/share/osinfo/VERSION:misc/osinfo-db
 
-USES=		compiler:c11 gettext-tools gmake libtool pathfix pkgconfig
+USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix \
+		pkgconfig
 USE_GNOME=	glib20 libxml2 libxslt introspection:build intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

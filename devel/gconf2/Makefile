@@ -23,7 +23,8 @@ USES=		tar:xz
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libpolkit-gobject-1.so:sysutils/polkit
 
-USES+=		gettext gmake libtool pathfix pkgconfig python:run shebangfix
+USES+=		gettext gmake gnome libtool pathfix pkgconfig python:run \
+		shebangfix
 USE_GNOME=	orbit2 gtk20 libxml2 \
 		referencehack intlhack dconf introspection:build
 USE_LDCONFIG=	yes

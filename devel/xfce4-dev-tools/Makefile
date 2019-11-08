@@ -18,7 +18,7 @@ RUN_DEPENDS=	autoconf>=2.69:devel/autoconf \
 		libtoolize:devel/libtool \
 		bash:shells/bash
 
-USES=		pkgconfig tar:bzip2 xfce
+USES=		gnome pkgconfig tar:bzip2 xfce
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes

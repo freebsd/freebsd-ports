@@ -16,7 +16,7 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
 		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 RUN_DEPENDS=	p5-Glib2>=0:devel/p5-Glib2
 
-USES=		perl5
+USES=		gnome perl5
 USE_PERL5=	configure
 USE_GNOME=	gconf2
 MAKE_JOBS_UNSAFE=	yes

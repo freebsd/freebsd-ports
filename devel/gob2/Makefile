@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USES=		localbase pkgconfig gmake
+USES=		gmake gnome localbase pkgconfig
 
 PLIST_FILES=	bin/gob2 share/aclocal/gob2.m4 ${EXAMPLES:S/^/%%EXAMPLESDIR%%\//} \
 		man/man1/gob2.1.gz

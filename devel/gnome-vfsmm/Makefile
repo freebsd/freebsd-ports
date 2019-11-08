@@ -12,8 +12,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for gnomevfs2 library
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2 \
-		compiler:c++11-lang
+USES=		compiler:c++11-lang gmake gnome libtool:keepla pathfix \
+		pkgconfig tar:bzip2
 USE_CXXSTD=	c++11
 USE_GNOME=	glibmm gnomevfs2
 GNU_CONFIGURE=	yes

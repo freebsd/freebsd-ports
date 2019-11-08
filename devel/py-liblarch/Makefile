@@ -13,7 +13,7 @@ COMMENT=	Python library to easily handle data structures
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:2.7
+USES=		gnome python:2.7
 USE_GITHUB=	yes
 USE_GNOME=	pygobject
 USE_PYTHON=	distutils autoplist

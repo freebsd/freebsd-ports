@@ -13,7 +13,7 @@ LICENSE?=	LGPL21
 
 SLAVE_PORT?=	no
 
-USES+=		compiler libtool pathfix pkgconfig tar:bzip2
+USES+=		compiler gnome libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 

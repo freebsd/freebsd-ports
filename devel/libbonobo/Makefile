@@ -22,7 +22,8 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libpopt.so:devel/popt
 
-USES+=		bison gettext gmake libtool:keepla localbase:ldflags pathfix pkgconfig perl5
+USES+=		bison gettext gmake gnome libtool:keepla localbase:ldflags \
+		pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	intlhack libxml2 orbit2 referencehack

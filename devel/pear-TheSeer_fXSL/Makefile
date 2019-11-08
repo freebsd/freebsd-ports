@@ -15,6 +15,6 @@ LICENSE=	BSD3CLAUSE
 
 USE_PHP=	dom xml xsl
 PEAR_CHANNEL=	theseer
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>

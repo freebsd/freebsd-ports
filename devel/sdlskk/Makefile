@@ -14,7 +14,7 @@ COMMENT=	SKK like library for input Japanese, based on SDL
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
-USES=		iconv libtool
+USES=		iconv libtool sdl
 USE_SDL=	image ttf sdl
 USE_LDCONFIG=   yes
 

@@ -14,7 +14,7 @@ COMMENT=	Scripts to make it easier to work with Evolution's configuration
 RUN_DEPENDS=	evolution:mail/evolution
 
 GNU_CONFIGURE=	yes
-USES=		python:2.7
+USES=		gnome python:2.7
 USE_GNOME=	gnomeprefix
 NO_ARCH=	yes
 

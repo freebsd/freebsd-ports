@@ -23,7 +23,7 @@ RUN_DEPENDS=	guile-lib>0:devel/guile-lib
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool ncurses pkgconfig
+USES=		gnome libtool ncurses pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

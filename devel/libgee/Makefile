@@ -18,7 +18,7 @@ PORTSCOUT=	limitw:1,even
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection=yes
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libvirt.so:devel/libvirt \
 	        libvirt-glib-1.0.so:devel/libvirt-glib
 RUN_DEPENDS=	dbus-daemon:devel/dbus
 
-USES=		gettext-runtime gmake libtool perl5 pkgconfig tar:xz
+USES=		gettext-runtime gmake gnome libtool perl5 pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_PERL5=	build
 

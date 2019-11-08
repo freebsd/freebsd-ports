@@ -18,6 +18,6 @@ RUN_DEPENDS=	rubygem-rake>=0.7.0:devel/rubygem-rake \
 NO_ARCH=	yes
 USE_RUBY=	yes
 USE_SDL=	gfx image mixer ttf
-USES=		gem
+USES=		gem sdl
 
 .include <bsd.port.mk>

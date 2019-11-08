@@ -6,7 +6,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Utility Libraries
 
-USES=	horde
+USES=		horde php
 USE_PHP=	dom
 
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Token API
 
-USES=	horde
+USES=		horde php
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Translation \
 		Horde_Url \

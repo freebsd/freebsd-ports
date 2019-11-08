@@ -14,7 +14,8 @@ LIB_DEPENDS=	libticonv.so:converters/libticonv
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		autoreconf gettext-tools libarchive libtool pkgconfig tar:bzip2
+USES=		autoreconf gettext-tools gnome libarchive libtool pkgconfig \
+		tar:bzip2
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

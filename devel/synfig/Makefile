@@ -29,7 +29,8 @@ LIB_DEPENDS=	libHalf.so:graphics/ilmbase \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		compiler:c++11-lang gmake iconv jpeg libtool localbase pathfix pkgconfig
+USES=		compiler:c++11-lang gmake gnome iconv jpeg libtool localbase \
+		pathfix pkgconfig
 USE_CXXSTD=	c++11
 USE_GNOME=	cairo glibmm intltool libxml++26 pango
 GNU_CONFIGURE=	yes

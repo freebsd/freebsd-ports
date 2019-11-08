@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 CONFLICTS_INSTALL=	tinker-[0-9]*
 
-USES=		desktop-file-utils python:2.7 tar:bzip2
+USES=		desktop-file-utils gnome python:2.7 tar:bzip2
 USE_GNOME=	pygtk2
 
 NO_BUILD=	yes

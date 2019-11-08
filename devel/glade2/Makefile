@@ -20,8 +20,8 @@ LIB_DEPENDS=	librarian.so:textproc/rarian
 
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix gettext gmake pkgconfig desktop-file-utils \
-		localbase:ldflags tar:bzip2
+USES=		desktop-file-utils gettext gmake gnome localbase:ldflags \
+		pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack gtk20
 
 CONFIGURE_ARGS+=	--disable-gnome-db --disable-nome

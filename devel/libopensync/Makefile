@@ -18,7 +18,7 @@ LIB_DEPENDS=	libexslt.so:textproc/libxslt
 
 CONFLICTS=	libopensync-0.22*
 
-USES=		cmake pkgconfig python tar:bzip2 sqlite:3
+USES=		cmake gnome pkgconfig python sqlite:3 tar:bzip2
 CMAKE_ARGS+=	-Wno-dev
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes

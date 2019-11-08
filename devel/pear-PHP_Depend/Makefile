@@ -13,7 +13,7 @@ BROKEN=		unfetchable
 
 LICENSE=	BSD3CLAUSE
 
-USES=	pear
+USES=		pear php
 PEAR_CHANNEL=	pdepend
 USE_PHP=	dom tokenizer simplexml
 

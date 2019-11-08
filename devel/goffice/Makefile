@@ -19,7 +19,7 @@ PORTSCOUT=	ignore:1
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack gtk20 libgsf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

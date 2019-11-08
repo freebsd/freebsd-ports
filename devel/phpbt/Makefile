@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:databases/pear-DB@${PHP_FLAVOR}
 
 .if !defined(WITHOUT_PHP_DEPENDS)
+USES=		php
 USE_PHP=	ctype pcre posix session tokenizer xml zlib
 .endif
 

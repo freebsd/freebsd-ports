@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libicutu.so:devel/icu
 
-USES=		gmake libtool pkgconfig pathfix python:2.7
+USES=		gmake gnome libtool pathfix pkgconfig python:2.7
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 introspection:build pygobject3
 USE_LDCONFIG=	yes

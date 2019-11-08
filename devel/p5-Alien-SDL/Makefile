@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Archive-Extract>=0:archivers/p5-Archive-Extract \
 		p5-File-ShareDir>=0:devel/p5-File-ShareDir \
 		p5-Capture-Tiny>=0:devel/p5-Capture-Tiny
 
-USES=		perl5
+USES=		perl5 sdl
 USE_PERL5=	modbuild
 USE_SDL=	gfx image mixer pango sdl ttf
 CONFIGURE_ARGS=	--with-sdl-config=${SDL_CONFIG}

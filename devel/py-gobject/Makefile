@@ -22,7 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo@${PY_FL
 
 PORTSCOUT=	ignore:1
 
-USES=		gmake libtool pathfix pkgconfig python:2.7 tar:xz shebangfix
+USES=		gmake gnome libtool pathfix pkgconfig python:2.7 shebangfix \
+		tar:xz
 USE_GNOME=	glib20 introspection:build,run
 USE_PYTHON=	flavors
 GNU_CONFIGURE=	yes

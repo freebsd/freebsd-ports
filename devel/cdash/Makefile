@@ -14,7 +14,7 @@ COMMENT=	Web-based software testing server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-USES=		dos2unix cmake zip
+USES=		cmake dos2unix php zip
 DOS2UNIX_GLOB=	*.php *.xml *.xsl *.txt
 CMAKE_ARGS=	-DCDASH_DB_NAME:STRING=cdash \
 		-DCDASH_DB_LOGIN:STRING=cdash \

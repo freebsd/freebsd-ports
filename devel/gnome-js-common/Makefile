@@ -14,7 +14,7 @@ COMMENT=	GNOME JavaScript common modules and tests
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	intltool
-USES=		pathfix pkgconfig gettext gmake tar:bzip2
+USES=		gettext gmake gnome pathfix pkgconfig tar:bzip2
 NO_ARCH=	yes
 
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README ChangeLog

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 RUN_DEPENDS=	system-tools-backends:sysutils/system-tools-backends
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gmake gnome libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-hal

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu \
 		libindicator3.so:devel/libindicator \
 		libdbus-glib-1.so:devel/dbus-glib
 
-USES=		gmake libtool pkgconfig python:2.7
+USES=		gmake gnome libtool pkgconfig python:2.7
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk30 pygtk2
 

@@ -13,7 +13,7 @@ COMMENT=	Generic game engine for 2D double-buffering animation
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix pkgconfig libtool
+USES=		libtool pathfix pkgconfig sdl
 USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image

@@ -27,7 +27,7 @@ LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
 PORTSCOUT=	limit:^0\.10\.
 
 USES=		autoreconf compiler:c++11-lib desktop-file-utils gl gmake \
-		libtool localbase openal pkgconfig shared-mime-info
+		libtool localbase openal pkgconfig sdl shared-mime-info
 USE_SDL=	sdl2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
