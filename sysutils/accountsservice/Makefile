@@ -16,7 +16,8 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libpolkit-gobject-1.so:sysutils/polkit
 
 USE_GNOME=	glib20 intlhack introspection:build libxslt
-USES=		cpe gettext gmake libtool localbase:ldflags pathfix pkgconfig tar:xz
+USES=		cpe gettext gmake gnome libtool localbase:ldflags pathfix \
+		pkgconfig tar:xz
 CPE_VENDOR=	ray_stode
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

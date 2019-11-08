@@ -13,7 +13,7 @@ COMMENT=	GNOME frontend to the PolicyKit framework
 
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk20 gtk30 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

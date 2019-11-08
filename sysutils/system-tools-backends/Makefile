@@ -17,7 +17,8 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libpolkit-gobject-1.so:sysutils/polkit
 RUN_DEPENDS=	p5-Net-DBus>=0:devel/p5-Net-DBus
 
-USES=		gettext-tools gmake pathfix perl5 pkgconfig shebangfix tar:bzip2
+USES=		gettext-tools gmake gnome pathfix perl5 pkgconfig shebangfix \
+		tar:bzip2
 SHEBANG_FILES=	SystemToolsBackends.pl.in
 USE_GNOME=	intlhack glib20
 GNU_CONFIGURE=	yes

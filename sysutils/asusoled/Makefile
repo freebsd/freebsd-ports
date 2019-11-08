@@ -13,6 +13,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${FONTDIR}/TTF/luxisr.ttf:x11-fonts/font-bh-ttf
 
+USES=		sdl
 USE_SDL=	image sdl ttf
 USE_RC_SUBR=	asusoled oled_clock
 

@@ -13,7 +13,7 @@ COMMENT=	Lightweight desktop-independent task manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake iconv pkgconfig
+USES=		gmake gnome iconv pkgconfig
 USE_GNOME=	gtk20 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

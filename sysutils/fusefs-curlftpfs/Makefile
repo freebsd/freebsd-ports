@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
-USES=		fuse pkgconfig
+USES=		fuse gnome pkgconfig
 USE_GNOME=	glib20
 PLIST_FILES=	bin/curlftpfs man/man1/${PORTNAME}.1.gz
 

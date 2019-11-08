@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup
 
-USES=		gettext gmake libarchive pkgconfig
+USES=		gettext gmake gnome libarchive pkgconfig
 USE_GNOME=	glib20 intltool libxml2 libxslt
 
 GNU_CONFIGURE=	yes

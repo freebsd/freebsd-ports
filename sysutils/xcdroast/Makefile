@@ -20,7 +20,7 @@ NONROOT_DESC=	Use xcdroast w/o being root
 RUN_DEPENDS=	cdrecord:sysutils/cdrtools
 BUILD_DEPENDS=	cdrecord:sysutils/cdrtools
 
-USES=		gettext gmake iconv pkgconfig
+USES=		gettext gmake gnome iconv pkgconfig
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \

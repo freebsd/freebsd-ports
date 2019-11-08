@@ -13,7 +13,7 @@ COMMENT=	Display notebook battery status in tray
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.3+
+USES=		gnome python:3.3+
 USE_GNOME=	pygobject3
 USE_PYTHON=	autoplist distutils optsuffix
 

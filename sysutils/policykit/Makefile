@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 USERS=		polkit
 GROUPS=		polkit
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig
+USES=		gettext gmake gnome libtool:keepla pathfix pkgconfig
 USE_GNOME=	glib20 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

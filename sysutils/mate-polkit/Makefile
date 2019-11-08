@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool localbase pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

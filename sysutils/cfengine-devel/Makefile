@@ -32,8 +32,8 @@ USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		autoreconf:build \
-		cpe gmake localbase libtool shebangfix ssl
+USES=		autoreconf:build cpe gmake gnome libtool localbase shebangfix \
+		ssl
 USE_GNOME=	libxml2
 SHEBANG_FILES=	examples/remake_outputs.pl
 CFLAGS+=	-Wno-return-type
