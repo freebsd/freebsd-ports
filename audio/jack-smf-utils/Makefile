@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libjack.so:audio/jack \
 		liblash.so:audio/lash
 
-USES=		pkgconfig
+USES=		gnome pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 

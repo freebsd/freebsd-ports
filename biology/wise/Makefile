@@ -13,7 +13,7 @@ COMMENT=	Intelligent algorithms for DNA searches
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	glib20
 MAKEFILE=	makefile
 

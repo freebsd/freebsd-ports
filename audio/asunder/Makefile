@@ -22,7 +22,7 @@ OPTIONS_SUB=	yes
 WINDOWS_CHARS_DESC=	Allow Windows special chars in filenames
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake pkgconfig tar:bzip2
+USES=		desktop-file-utils gettext gmake gnome pkgconfig tar:bzip2
 USE_GNOME=	gtk20 glib20 intltool intlhack
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO

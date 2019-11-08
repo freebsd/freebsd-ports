@@ -20,7 +20,7 @@ INSTALL_TARGET=	install --without-ldconfig
 
 .if !defined(XMMS2_SLAVE)
 USE_GNOME=	glib20
-USES+=		readline sqlite
+USES+=		gnome readline sqlite
 
 USE_LDCONFIG=	yes
 

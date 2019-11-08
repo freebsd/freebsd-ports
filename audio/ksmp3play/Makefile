@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 
 GNU_CONFIGURE=	yes
-USES=		ncurses pathfix
+USES=		ncurses pathfix sdl
 USE_SDL=	sdl
 NO_WRKSUBDIR=	yes
 EXTRACT_AFTER_ARGS=	--exclude CVS

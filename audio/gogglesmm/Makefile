@@ -18,7 +18,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libexpat.so:textproc/expat2 \
 		libFOX-1.7.so:x11-toolkits/fox17
 
-USES=		cmake compiler:c++11-lib desktop-file-utils \
+USES=		cmake compiler:c++11-lib desktop-file-utils gnome \
 		localbase:ldflags pkgconfig shebangfix sqlite xorg
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11

@@ -15,8 +15,8 @@ LICENSE=	ISCL
 LIB_DEPENDS=	libmpd.so:audio/libmpd
 RUN_DEPENDS=	musicpd:audio/musicpd
 
-USES=		compiler:c11 gettext-tools gmake libtool pkgconfig tar:bzip2 \
-		xfce
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XFCE=	panel
 

@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--with-lispdir=${PREFIX}/share/emacs/site-lisp
 .if ${INTERFACE} == "gtk"
 LINK=		gtkmidi
 
-USES+=		pkgconfig
+USES+=		gnome pkgconfig
 USE_GNOME=	gtk20
 
 DESKTOP_ENTRIES="GtkMidi" "" "" "${LINK}" "GTK;AudioVideo;Audio;Midi;" ""

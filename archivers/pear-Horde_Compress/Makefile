@@ -18,6 +18,7 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Util \
 		Horde_Stream_Filter
 
+ZLIB_USES=	php
 ZLIB_USE=	PHP=zlib
 
 .include <bsd.port.mk>

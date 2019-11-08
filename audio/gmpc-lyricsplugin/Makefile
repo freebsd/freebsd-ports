@@ -18,7 +18,7 @@ RUN_DEPENDS=	gmpc:audio/gmpc
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	intltool glib20 gtk20 libxml2
-USES=		gettext gmake libtool pkgconfig
+USES=		gettext gmake gnome libtool pkgconfig
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/gmpc/plugins/lyricspluginplugin.so

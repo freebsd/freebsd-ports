@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/gpl.txt
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig\
 		libfreetype.so:print/freetype2
 
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 
 PORTDOCS=	AUTHORS ChangeLog README

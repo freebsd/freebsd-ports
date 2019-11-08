@@ -16,7 +16,7 @@ GH_ACCOUNT=	cboxdoerfer
 GH_PROJECT=	ddb_waveform_seekbar
 GH_TAGNAME=	0402f6d
 
-USES=		gmake pkgconfig sqlite
+USES=		gmake gnome pkgconfig sqlite
 
 MAKE_JOBS_UNSAFE=	yes
 

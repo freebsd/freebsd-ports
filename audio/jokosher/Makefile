@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
 
-USES=		desktop-file-utils python:2.7 shared-mime-info
+USES=		desktop-file-utils gnome python:2.7 shared-mime-info
 USE_PYTHON=	distutils
 USE_GSTREAMER=	gnonlin good python
 INSTALLS_ICONS=	yes

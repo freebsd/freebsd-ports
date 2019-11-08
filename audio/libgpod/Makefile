@@ -16,8 +16,8 @@ LIB_DEPENDS=	libplist.so:devel/libplist \
 		libtag.so:audio/taglib \
 		libsgutils2.so:sysutils/sg3_utils
 
-USES=		compiler:c++11-lang gettext gmake libtool localbase pathfix \
-		pkgconfig sqlite:3 tar:bzip2
+USES=		compiler:c++11-lang gettext gmake gnome libtool localbase \
+		pathfix pkgconfig sqlite:3 tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-udev --without-hal \
 		--with-html-dir="${DOCSDIR:H}"

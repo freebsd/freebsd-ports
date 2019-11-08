@@ -13,7 +13,7 @@ COMMENT=	Alternative for replaygain
 RUN_DEPENDS+=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		wavegain:audio/wavegain
 
-USES=		perl5 shebangfix
+USES=		gnome perl5 shebangfix
 USE_PERL5=	run
 INSTALLS_ICONS=	yes
 

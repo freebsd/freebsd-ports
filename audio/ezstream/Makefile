@@ -19,7 +19,7 @@ OPTIONS_DEFAULT=	TAGLIB
 
 TAGLIB_DESC=	TagLib support
 
-USES=		iconv pkgconfig
+USES=		gnome iconv pkgconfig
 USE_GNOME=	libxml2
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
-USES=		compiler:c++11-lang gmake pkgconfig
+USES=		compiler:c++11-lang gmake gnome pkgconfig
 USE_GNOME=	libxml2
 
 USE_GITHUB=	yes

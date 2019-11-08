@@ -21,7 +21,7 @@ LIB_DEPENDS=	libdssialsacompat.so:audio/libdssialsacompat \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float
 
-USES=		gmake pkgconfig tar:bzip2 libtool
+USES=		gmake gnome libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 

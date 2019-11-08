@@ -12,7 +12,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/bind.hpp:devel/boost-libs
 LIB_DEPENDS=	libxmmsclient.so:audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
-USES=		ssl
+USES=		gnome ssl
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 

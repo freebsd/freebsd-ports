@@ -18,7 +18,7 @@ LIB_DEPENDS=	libid3tag.so:audio/libid3tag
 RUN_DEPENDS=	mpg123:audio/mpg123
 
 USE_GNOME=	gtk20
-USES=		gettext pkgconfig
+USES=		gettext gnome pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk2
 

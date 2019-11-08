@@ -17,7 +17,7 @@ LIB_DEPENDS=	libmpd.so:audio/libmpd \
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake gnome pkgconfig
 USE_GNOME=	gtk20 intltool
 
 post-patch:

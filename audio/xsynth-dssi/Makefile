@@ -21,7 +21,7 @@ LICENSE_COMB=	multi
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USES=		gmake libtool pkgconfig
+USES=		gmake gnome libtool pkgconfig
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include

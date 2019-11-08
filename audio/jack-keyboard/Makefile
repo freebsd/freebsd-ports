@@ -15,7 +15,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libjack.so:audio/jack
 
 USE_GNOME=	gtk20
-USES=		cmake
+USES=		cmake gnome
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=        LASH

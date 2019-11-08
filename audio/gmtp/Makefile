@@ -16,7 +16,7 @@ LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
 		libvorbis.so:audio/libvorbis
 
 GNU_CONFIGURE=	yes
-USES=		gmake localbase pkgconfig
+USES=		gmake gnome localbase pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 glib20
 
 PORTDOCS=	AUTHORS COPYING ChangeLog README

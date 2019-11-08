@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libid3tag.so:audio/libid3tag \
 		libgpod.so:audio/libgpod
 
-USES=		gettext gmake pkgconfig python:run shebangfix
+USES=		gettext gmake gnome pkgconfig python:run shebangfix
 SHEBANG_FILES=	scripts/mab2vcard scripts/sync-evolution.sh \
 		scripts/sync-knotes.sh scripts/sync-ldif.sh \
 		scripts/sync-palm-jppy.py

@@ -14,7 +14,7 @@ COMMENT=	Simple GTK+ audio tag editor
 
 LIB_DEPENDS=	libtag.so:audio/taglib
 
-USES=		pathfix pkgconfig shebangfix
+USES=		gnome pathfix pkgconfig shebangfix
 USE_GNOME=	gnomeprefix libglade2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

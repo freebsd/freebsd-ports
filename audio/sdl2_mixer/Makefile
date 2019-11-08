@@ -13,7 +13,7 @@ COMMENT=	Sample multi-channel audio mixer library
 LICENSE=	ZLIB
 LICENSE_FILE_ZLIB=${WRKSRC}/COPYING.txt
 
-USES=		gmake pathfix pkgconfig libtool localbase
+USES=		gmake libtool localbase pathfix pkgconfig sdl
 USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

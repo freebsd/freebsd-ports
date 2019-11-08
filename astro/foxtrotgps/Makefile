@@ -24,7 +24,7 @@ INFO=		foxtrotgps
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share
 CONFIGURE_ARGS=	--disable-schemas-install
-USES=		compiler:c++11-lang gettext gmake pkgconfig python \
+USES=		compiler:c++11-lang gettext gmake gnome pkgconfig python \
 		shebangfix sqlite:3
 SHEBANG_FILES=	contrib/convert2gpx \
 		contrib/convert2osm \

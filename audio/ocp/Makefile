@@ -22,7 +22,8 @@ LIB_DEPENDS=	libid3tag.so:audio/libid3tag \
 		libsidplay.so:audio/libsidplay \
 		libogg.so:audio/libogg
 
-USES=		gmake iconv localbase:ldflags makeinfo ncurses pkgconfig tar:xz
+USES=		gmake gnome iconv localbase:ldflags makeinfo ncurses pkgconfig \
+		tar:xz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

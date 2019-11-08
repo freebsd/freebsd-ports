@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.la-samhna.de/nightfall/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive binary star application
 
-USES=		compiler gettext gmake pathfix perl5 pkgconfig
+USES=		compiler gettext gmake gnome pathfix perl5 pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -29,6 +29,7 @@ GNOME_VARS=		INSTALLS_OMF=yes
 OPENGL_CONFIGURE_ON=	--with-lib-GL
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 OPENGL_LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2
+OPENGL_USES=		gl
 OPENGL_USE=		GL=glut
 
 PGPLOT_DESC=		PGPLOT support

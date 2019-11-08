@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdssialsacompat.so:audio/libdssialsacompat \
 		libjack.so:audio/jack
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:audio/dssi
 
-USES=		gmake libtool pkgconfig tar:bzip2
+USES=		gmake gnome libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 

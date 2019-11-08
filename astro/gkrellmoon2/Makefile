@@ -17,7 +17,7 @@ RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	gtk20
 
 ALL_TARGET=	gkrellmoon.so
