@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:devel/popt
 
-USES=		cmake
+USES=		compiler:c11 cmake
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
