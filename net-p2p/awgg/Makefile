@@ -20,7 +20,7 @@ RUN_DEPENDS=	aria2c:www/aria2 \
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
 
-USES=		fpc lazarus:flavors xorg
+USES=		fpc gnome lazarus:flavors xorg
 USE_FPC=	chm fcl-base fcl-db fcl-image fcl-json fcl-registry fcl-xml \
 		pasjpeg regexpr rtl-extra rtl-objpas x11
 USE_XORG=	x11
