@@ -6,4 +6,4 @@ dd if=$LOCALBASE/share/u-boot/u-boot-orangepi-pc2/u-boot-sunxi-with-spl.bin of=/
 For information about running FreeBSD on Allwinner boards, see
 https://wiki.freebsd.org/FreeBSD/arm/Allwinner
 
-WWW: http://www.denx.de/wiki/U-Boot
+WWW: https://www.denx.de/wiki/U-Boot
