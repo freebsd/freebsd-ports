@@ -36,6 +36,7 @@ USE_LDCONFIG=	yes
 
 X11_CONFIGURE_OFF=	build_vwebp=no
 X11_CONFIGURE_ON=	build_vwebp=yes
+X11_USES=		gl
 X11_USE=		GL=glut
 
 post-patch:
