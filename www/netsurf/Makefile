@@ -34,7 +34,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 RUN_DEPENDS=	duk:lang/duktape \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		bison desktop-file-utils gettext-runtime gmake iconv jpeg \
+USES=		bison desktop-file-utils gettext-runtime gmake gnome iconv jpeg \
 		localbase pkgconfig shebangfix ssl
 ALL_TARGET=	#empty
 LDFLAGS+=	-L${OPENSSLLIB} -lssl -lcrypto ${ICONV_LIB}

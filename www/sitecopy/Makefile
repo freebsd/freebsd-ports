@@ -18,7 +18,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-neon --with-libxml2
 USE_GNOME=	libxml2
-USES=		gmake
+USES=		gmake gnome
 
 OPTIONS_DEFINE=	NLS
 

@@ -11,7 +11,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		sqlite:3
+USES=		gnome sqlite:3
 USE_GNOME=	libxml2
 
 CEZ_VERSION=	1.05

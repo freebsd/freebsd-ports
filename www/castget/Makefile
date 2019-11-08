@@ -16,7 +16,7 @@ LIB_DEPENDS=	libid3.so:audio/id3lib \
 		libcurl.so:ftp/curl
 
 USE_LDCONFIG=	yes
-USES=		libtool pkgconfig tar:bzip2
+USES=		gnome libtool pkgconfig tar:bzip2
 USE_GNOME=	glib20 libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
