@@ -12,7 +12,7 @@ COMMENT=	Extendable MySQL managing assistant
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.3:databases/py-MySQLdb@${PY_FLAVOR}
 
-USES=		python:2.7
+USES=		gnome python:2.7
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
 

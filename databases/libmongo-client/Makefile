@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	algernon
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf libtool pkgconfig gmake pathfix
+USES=		autoreconf gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

@@ -13,7 +13,7 @@ COMMENT=	Database library for PHP
 LICENSE=	BSD4CLAUSE LGPL21
 LICENSE_COMB=	dual
 
-USES=		tar:tgz
+USES=		php tar:tgz
 USE_PHP=	pcre
 
 CONFLICTS=	adodb-5.*

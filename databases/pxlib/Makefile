@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
-USES=		gmake iconv libtool pathfix perl5 pkgconfig
+USES=		gmake gnome iconv libtool pathfix perl5 pkgconfig
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
