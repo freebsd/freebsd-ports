@@ -14,7 +14,7 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	librrd.so:databases/rrdtool
 
-USES=		groff pkgconfig python:2.7
+USES=		gnome groff pkgconfig python:2.7
 USE_GNOME=	cairo glib20 libxml2 pango
 USE_PYTHON=	distutils autoplist
 

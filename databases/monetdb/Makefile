@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_GNOME=	libxml2
 
-USES=		bison iconv gmake libtool pkgconfig tar:xz
+USES=		bison gmake gnome iconv libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	monetdbd

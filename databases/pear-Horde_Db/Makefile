@@ -17,7 +17,9 @@ USE_HORDE_RUN=	Horde_Date \
 		Horde_Exception \
 		Horde_Support
 
+MYSQLI_USES=	php
 MYSQLI_USE=	PHP=mysqli
+PDO_USES=	php
 PDO_USE=	PHP=pdo
 
 .include <bsd.port.mk>

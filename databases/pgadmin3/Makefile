@@ -15,7 +15,7 @@ LICENSE=	PostgreSQL
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
-USES=		compiler:c++11-lib gettext gmake pgsql:9.0+ ssl
+USES=		compiler:c++11-lib gettext gmake gnome pgsql:9.0+ ssl
 USE_GNOME=	libxml2 libxslt
 USE_WX=		3.0
 USE_CXXSTD=	c++11

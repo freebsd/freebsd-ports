@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid@${PHP_FLAVOR} \
 		${PEARDIR}/DB.php:databases/pear-DB@${PHP_FLAVOR}
 
-USES=	pear
+USES=		pear php
 USE_PHP=	mysqli
 
 NO_ARCH=	yes

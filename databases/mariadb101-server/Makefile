@@ -111,7 +111,7 @@ CMAKE_ON+=	WITHOUT_SERVER
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=NO
 .else
 # MySQL-Server part
-USES+=		mysql:101m
+USES+=		gnome mysql:101m
 USE_GNOME=	libxml2
 USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 USE_RC_SUBR=	mysql-server

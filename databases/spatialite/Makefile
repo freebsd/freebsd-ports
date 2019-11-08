@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgeos_c.so:graphics/geos \
 		libfreexl.so:textproc/freexl
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv pathfix pkgconfig libtool sqlite
+USES=		gmake gnome iconv libtool pathfix pkgconfig sqlite
 USE_GNOME=	libxml2
 
 CFLAGS+=	-I${WRKSRC}/src/headers -I${LOCALBASE}/include
