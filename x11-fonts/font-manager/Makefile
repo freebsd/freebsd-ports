@@ -8,8 +8,7 @@ CATEGORIES=	x11-fonts gnome
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Font management application for the GNOME desktop
-
-BROKEN=		unfetchable
+PORTSCOUT=	limit:^0\.5\.7
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -23,6 +22,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${PY_FLAVOR} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	FontManager
 GH_PROJECT=	master
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-0.5.7
 
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes
