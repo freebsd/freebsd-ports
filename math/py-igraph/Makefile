@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libigraph.so:math/igraph
 
-USES=		python
+USES=		gnome python
 USE_PYTHON=	autoplist concurrent distutils
 USE_GNOME=	libxml2
 

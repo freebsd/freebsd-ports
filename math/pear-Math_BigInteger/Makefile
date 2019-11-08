@@ -8,7 +8,7 @@ CATEGORIES=	math pear
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	Pure-PHP arbitrary precision integer arithmetic library
 
+USES=		pear php
 USE_PHP=	pcre
-USES=	pear
 
 .include <bsd.port.mk>

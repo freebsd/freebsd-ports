@@ -120,7 +120,7 @@ TK_CONFIGURE_ON=	--with-tk-library=${LOCALBASE}/lib \
 			--with-tk-include=${TK_INCLUDEDIR} \
 			--with-tcl-library=${LOCALBASE}/lib \
 			--with-tcl-include=${TCL_INCLUDEDIR}
-TK_USES=	tk
+TK_USES=	tk xorg
 TK_USE=		XORG=x11
 TK_RUN_DEPENDS=	${LOCALBASE}/lib/bwidget/init.tcl:x11-toolkits/bwidget
 

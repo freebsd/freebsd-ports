@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	gtk20 libglade2 libxml2
 
 .include <bsd.port.mk>

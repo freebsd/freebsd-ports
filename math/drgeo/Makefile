@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libguile.so:lang/guile
 
-USES=		compiler:c++11-lang gettext gmake localbase:ldflags pkgconfig pathfix
+USES=		compiler:c++11-lang gettext gmake gnome localbase:ldflags \
+		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix intlhack libglade2
 

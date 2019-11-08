@@ -24,7 +24,7 @@ BUILD_DEPENDS=	camlp5:devel/ocaml-camlp5 \
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		emacs gmake gettext-runtime
+USES=		emacs gettext-runtime gmake gnome
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 gtksourceview2 pango
 USE_LDCONFIG=	${PREFIX}/lib/coq
 USE_OCAML=	yes

@@ -27,6 +27,7 @@ OPTIONS_SUB=	yes
 MOTIF_LIB_DEPENDS=	libplot.so:graphics/plotutils \
 			libXbae.so:x11-toolkits/xbae \
 			libXmHTML.so:x11-toolkits/xmhtml
+MOTIF_USES_OFF=		xorg
 MOTIF_USES=		motif
 MOTIF_CONFIGURE_WITH=	motif
 MOTIF_USE_OFF=		XORG=xt,ice,sm

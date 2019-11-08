@@ -13,7 +13,7 @@ COMMENT=	Tool that allows you to create, manipulate, and study graphs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison compiler:c++11-lang gmake tar:bzip2
+USES=		bison compiler:c++11-lang gmake gnome tar:bzip2
 USE_GNOME=	gtk20
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
