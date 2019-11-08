@@ -16,7 +16,7 @@ BUILD_DEPENDS=		g-ir-compiler:devel/gobject-introspection
 
 CONFLICTS_INSTALL=	${PORTNAME}*
 
-USES=			pkgconfig autoreconf libtool gmake
+USES=			autoreconf gmake gnome libtool pkgconfig
 USE_GITHUB=		yes
 GH_ACCOUNT=		AravisProject
 GH_PROJECT=		aravis

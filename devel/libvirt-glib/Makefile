@@ -21,7 +21,7 @@ VALA_BUILD_DEPENDS=	valac:lang/vala
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection
-USES=		gettext gmake libtool pathfix pkgconfig python:2.7
+USES=		gettext gmake gnome libtool pathfix pkgconfig python:2.7
 USE_LDCONFIG=	yes
 USE_GNOME=	intlhack introspection libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include

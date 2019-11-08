@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTSCOUT=	skipv=2.*
 
-USES=	pear
+USES=		pear php
 PEAR_CHANNEL=	phpmd
 USE_PHP=	dom simplexml
 NO_ARCH=	yes

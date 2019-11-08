@@ -12,7 +12,7 @@ COMMENT=	GIO bindings not available in gtk-sharp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_CSC=${LOCALBASE}/bin/mcs
-USES=		gmake pathfix pkgconfig tar:bzip2
+USES=		gmake gnome pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtksharp20
 
 MAKE_JOBS_UNSAFE=yes

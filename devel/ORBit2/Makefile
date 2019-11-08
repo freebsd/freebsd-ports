@@ -17,7 +17,7 @@ USES=		tar:bzip2
 .if !defined(REFERENCE_PORT)
 
 GNU_CONFIGURE=	yes
-USES+=		gettext gmake libtool:keepla pathfix pkgconfig
+USES+=		gettext gmake gnome libtool:keepla pathfix pkgconfig
 USE_GNOME=	libidl referencehack
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \

@@ -14,7 +14,7 @@ COMMENT=	Complete rewrite of dia2code in C++
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf:build compiler:c++11-lib iconv
+USES=		autoreconf:build compiler:c++11-lib gnome iconv
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 

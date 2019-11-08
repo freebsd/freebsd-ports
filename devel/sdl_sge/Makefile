@@ -13,7 +13,7 @@ COMMENT=	Graphic library for the Simple DirectMedia Layer (SDL)
 
 LICENSE=	LGPL20+ # LICENSE is LGPL21
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 

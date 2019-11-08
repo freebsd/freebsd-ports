@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 
 GNU_CONFIGURE=	yes
 
-USES=		pathfix pkgconfig tar:bzip2
+USES=		gnome pathfix pkgconfig tar:bzip2
 USE_GNOME=	libxslt
 
 post-patch:

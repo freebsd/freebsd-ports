@@ -20,7 +20,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libdbus-1.so:devel/dbus
 
-USES=		autoreconf compiler:c++11-lib gettext gmake libtool localbase pathfix pkgconfig
+USES=		autoreconf compiler:c++11-lib gettext gmake gnome libtool \
+		localbase pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreas-volz
 GH_PROJECT=	dbus-cplusplus

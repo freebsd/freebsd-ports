@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYGAME}
 RUN_DEPENDS=	${PYGAME}
 
-USES=		python:2.7
+USES=		gnome python:2.7
 USE_GNOME=	atk
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes

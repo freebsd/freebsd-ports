@@ -12,7 +12,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for creating trees of CORBA IDL files
 
-USES=		bison gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		bison gettext gmake gnome libtool:keepla pathfix pkgconfig \
+		tar:bzip2
 USE_GNOME=	glib20
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

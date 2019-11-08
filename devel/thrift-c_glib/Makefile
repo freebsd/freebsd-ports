@@ -17,7 +17,8 @@ BUILDIR=	${WRKDIR}/${DISTNAME}/lib/c_glib
 
 DISTINFO_FILE=	${.CURDIR}/../thrift/distinfo
 
-USES=		autoreconf compiler:c++11-lang pathfix pkgconfig gmake libtool
+USES=		autoreconf compiler:c++11-lang gmake gnome libtool pathfix \
+		pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

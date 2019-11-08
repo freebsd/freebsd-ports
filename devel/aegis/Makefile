@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	tkdiff:textproc/tkdiff
 
-USES=		gettext ghostscript groff perl5 tk
+USES=		gettext ghostscript gnome groff perl5 tk
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"

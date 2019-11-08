@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	pavouk
 
-USES=		gmake lua pkgconfig
+USES=		gmake gnome lua pkgconfig
 USE_GNOME=	introspection:build,run
 MAKE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}"
 MAKE_ARGS=	PREFIX="${PREFIX}" LUA_LIBDIR="${LUA_MODLIBDIR}" \

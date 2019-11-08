@@ -17,7 +17,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		liblas.so:devel/liblas \
 		libcunit.so:devel/cunit
 
-USES=		cmake
+USES=		cmake gnome
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 CFLAGS+=	"-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1"

@@ -22,7 +22,7 @@ USE_OCAML_FINDLIB=yes
 USE_OCAMLFIND_PLIST=yes
 USE_OCAML_LDCONFIG=yes
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lablgldir=${LOCALBASE} \

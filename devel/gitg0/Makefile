@@ -20,7 +20,7 @@ RUN_DEPENDS=	git:devel/git
 
 CONFLICTS=	gitg-[0-9]*
 
-USES=		tar:bzip2 gmake pkgconfig pathfix libtool
+USES=		gmake gnome libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gconf2 gtk20 gtksourceview2 intlhack
 INSTALL_TARGET=	install-strip

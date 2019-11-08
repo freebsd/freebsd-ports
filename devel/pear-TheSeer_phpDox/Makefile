@@ -27,6 +27,6 @@ RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}TheSeer_DirectoryScanner>=1.1.0:devel/pear-The
 
 USE_PHP=	dom tokenizer xsl iconv
 PEAR_CHANNEL=	theseer
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>

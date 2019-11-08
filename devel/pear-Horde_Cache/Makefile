@@ -7,7 +7,7 @@ CATEGORIES=	devel www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Caching API
 
-USES=	horde
+USES=		horde php
 USE_HORDE_RUN=	Horde_Compress_Fast \
 		Horde_Exception \
 		Horde_HashTable \

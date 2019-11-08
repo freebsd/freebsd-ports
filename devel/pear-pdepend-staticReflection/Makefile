@@ -14,6 +14,6 @@ LICENSE=	BSD3CLAUSE
 
 USE_PHP=	tokenizer
 PEAR_CHANNEL=	pdepend
-USES=	pear
+USES=		pear php
 
 .include <bsd.port.mk>

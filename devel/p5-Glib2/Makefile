@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-ExtUtils-Depends>=0.300:devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1:devel/p5-ExtUtils-PkgConfig
 
-USES=		perl5
+USES=		gnome perl5
 USE_GNOME=	glib20
 USE_PERL5=	configure
 

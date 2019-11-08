@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 # Upstream tends to reroll distfiles before moving under /release/
 PORTSCOUT=	site:http://www.renpy.org/dl/release/
 
-USES=		jpeg python
+USES=		jpeg python sdl
 USE_SDL=	image2 mixer2 ttf2
 USE_PYTHON=	autoplist distutils cython
 EXCLUDE=	gen gen3 PKG-INFO '*.egg-info'

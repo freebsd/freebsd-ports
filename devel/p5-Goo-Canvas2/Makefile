@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgoocanvas-2.0.so:graphics/goocanvas2
 RUN_DEPENDS=    p5-Glib2>=1.210:devel/p5-Glib2 \
 		p5-Gtk3>=0.026:x11-toolkits/p5-Gtk3
 
-USES=		perl5
+USES=		gnome perl5
 USE_PERL5=	configure
 USE_GNOME=	gtk30
 

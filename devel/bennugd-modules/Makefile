@@ -15,7 +15,7 @@ COMMENT=	High level open source game development suite, modules
 LIB_DEPENDS=	libbgdrtm.so:devel/bennugd-core \
 		libpng.so:graphics/png
 
-USES=		tar:bzip2 dos2unix pkgconfig libtool
+USES=		dos2unix libtool pkgconfig sdl tar:bzip2
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
