@@ -10,3 +10,5 @@
 %%QT_CMAKEDIR%%/Qt5UiPlugin/Qt5UiPluginConfig.cmake
 %%QT_CMAKEDIR%%/Qt5UiPlugin/Qt5UiPluginConfigVersion.cmake
 %%QT_MKSPECDIR%%/modules/qt_lib_uiplugin.pri
+%%QT_LIBDIR%%/libQt5UiPlugin.prl
+libdata/pkgconfig/Qt5UiPlugin.pc

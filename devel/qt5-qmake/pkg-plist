@@ -165,6 +165,7 @@
 %%QT_MKSPECDIR%%/features/android/android_deployment_settings.prf
 %%QT_MKSPECDIR%%/features/android/resolve_target.prf
 %%QT_MKSPECDIR%%/features/android/sdk.prf
+%%QT_MKSPECDIR%%/features/android/spec_post.prf
 %%QT_MKSPECDIR%%/features/benchmark.prf
 %%QT_MKSPECDIR%%/features/build_pass.prf
 %%QT_MKSPECDIR%%/features/cmake_functions.prf
@@ -252,6 +253,7 @@
 %%QT_MKSPECDIR%%/features/qt_module_pris.prf
 %%QT_MKSPECDIR%%/features/qt_parts.prf
 %%QT_MKSPECDIR%%/features/qt_plugin.prf
+%%QT_MKSPECDIR%%/features/qt_prefix_build_check.prf
 %%QT_MKSPECDIR%%/features/qt_targets.prf
 %%QT_MKSPECDIR%%/features/qt_test_helper.prf
 %%QT_MKSPECDIR%%/features/qt_tool.prf
