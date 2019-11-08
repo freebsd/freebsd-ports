@@ -36,7 +36,7 @@ NO_ARCH=	yes
 
 # Use upstreamed patches not yet mainlined
 PATCH_DIST_STRIP=	-p1
-PATCH_SITES+=	http://patchwork.ozlabs.org/patch/
+PATCH_SITES+=	https://patchwork.ozlabs.org/patch/
 
 # Sanity checks
 .if !defined(MODEL) && !defined(BOARD_CONFIG) && !defined(FAMILY)
