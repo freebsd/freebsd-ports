@@ -14,7 +14,7 @@ COMMENT=	Agent of the tool for graphical Internet traffic visualization
 LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	glib20
 CFLAGS+=	-Wno-return-type
 

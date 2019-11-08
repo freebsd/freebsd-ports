@@ -22,8 +22,7 @@ LIB_DEPENDS=	libgdata.so:devel/libgdata \
 		libzapojit-0.0.so:net/libzapojit \
 		libgrilo-0.3.so:net/grilo
 
-USES=		gettext gmake libtool localbase pathfix \
-		pkgconfig tar:xz
+USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

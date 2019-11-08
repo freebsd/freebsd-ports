@@ -19,7 +19,8 @@ LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring
 
 USE_GNOME=	intltool libglade2 gnomedocutils
 USE_OPENLDAP=	yes
-USES=		desktop-file-utils gettext pkgconfig gmake shared-mime-info ssl
+USES=		desktop-file-utils gettext gmake gnome pkgconfig \
+		shared-mime-info ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE} --disable-update-mimedb
 INSTALLS_ICONS=	yes

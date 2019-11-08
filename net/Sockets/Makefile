@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.alhem.net/Sockets/ \
 MAINTAINER=	ml@netfence.it
 COMMENT=	C++ wrapper for BSD-style sockets
 
-USES+=		gmake ssl
+USES+=		gmake gnome ssl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${OPENSSLINC}

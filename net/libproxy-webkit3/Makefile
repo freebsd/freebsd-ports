@@ -9,7 +9,7 @@ COMMENT=	WebKit JavaScript plug-in for libproxy
 
 LIB_DEPENDS=	libjavascriptcoregtk-4.0.so:www/webkit2-gtk3
 
-USES=		gettext-runtime
+USES=		gettext-runtime gnome
 USE_GNOME=	glib20
 
 LIBPROXY_SLAVE=	webkit3

@@ -8,7 +8,7 @@ CATEGORIES=	net www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde LDAP libraries
 
-USES=	horde
+USES=		horde php
 USE_PHP=	ldap
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Util

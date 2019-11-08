@@ -26,9 +26,9 @@ CONFLICTS_INSTALL?=	wireshark-lite-[0-9]* tshark-[0-9]* tshark-lite-[0-9]*
 DATADIR_NAME=	wireshark
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 
-USES=		alias cmake cpe compiler:c++11-lang gettext-runtime \
-		libtool localbase pathfix localbase:ldflags \
-		perl5 pkgconfig python:3.4+ ssl tar:xz
+USES=		alias cmake compiler:c++11-lang cpe gettext-runtime gnome \
+		libtool localbase pathfix perl5 pkgconfig python:3.4+ ssl \
+		tar:xz
 USE_PERL5=	build
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes

@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 NO_BUILD=	yes
 USE_GNOME=	pygtk2 librsvg2
 
-USES=		gettext python:2.7
+USES=		gettext gnome python:2.7
 
 post-patch:
 	${REINPLACE_CMD} -Ee 's|#! /usr/bin/env python|#! ${PYTHON_CMD}|' ${WRKSRC}/tucan.py

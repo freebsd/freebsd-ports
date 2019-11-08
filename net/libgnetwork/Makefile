@@ -11,7 +11,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib-based networking wrapper
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		gettext gmake gnome libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack gconf2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

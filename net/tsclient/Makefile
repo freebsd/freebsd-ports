@@ -13,7 +13,7 @@ COMMENT=	GNOME 2 frontend for rdesktop and vncviewer
 RUN_DEPENDS=	rdesktop:net/rdesktop
 
 USE_GNOME=	gtk20 intltool
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake gnome libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gnome
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libnet.so:net/libnet
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libnet-prefix=${LOCALBASE}
-USES=		gmake
+USES=		gmake gnome
 
 OPTIONS_DEFINE=	DOCS
 
