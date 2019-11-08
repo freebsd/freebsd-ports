@@ -1,19 +1,14 @@
 @(,games,2555) bin/toppler
 man/man6/toppler.6.gz
 share/applications/toppler.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-share/locale/cs/LC_MESSAGES/toppler.mo
-share/locale/de/LC_MESSAGES/toppler.mo
-share/locale/eu/LC_MESSAGES/toppler.mo
-share/locale/fi/LC_MESSAGES/toppler.mo
-share/locale/fr/LC_MESSAGES/toppler.mo
-share/locale/pt/LC_MESSAGES/toppler.mo
-share/locale/ro/LC_MESSAGES/toppler.mo
-share/locale/sv/LC_MESSAGES/toppler.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/toppler.mo
+%%NLS%%share/locale/de/LC_MESSAGES/toppler.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/toppler.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/toppler.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/toppler.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/toppler.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/toppler.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/toppler.mo
 share/pixmaps/toppler.xpm
-%%DATADIR%%/toppler.dat
-%%DATADIR%%/toppler.ogg
 @sample(,games,664) /var/games/toppler/toppler.hsc.sample
 @dir(,games,775) /var/games/toppler
