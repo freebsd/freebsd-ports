@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libnettle.so:security/nettle
 
-USES=		autoreconf gmake libarchive pkgconfig
+USES=		autoreconf gmake gnome libarchive pkgconfig
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 GH_ACCOUNT=	miekg

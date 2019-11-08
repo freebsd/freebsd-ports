@@ -33,8 +33,8 @@ SPICE_LIB_DEPENDS=	libspice-server.so:devel/libspice-server
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64"
 
-USES=		cpe gettext gmake libtool localbase:ldflags perl5 pkgconfig \
-		python:2.7 shebangfix
+USES=		cpe gettext gmake gnome libtool localbase:ldflags perl5 \
+		pkgconfig python:2.7 shebangfix
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes

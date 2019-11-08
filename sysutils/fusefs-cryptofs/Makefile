@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes
-USES=		fuse pkgconfig
+USES=		fuse gnome pkgconfig
 USE_GNOME=	glib20
 DOCS=		README cryptofs.conf
 

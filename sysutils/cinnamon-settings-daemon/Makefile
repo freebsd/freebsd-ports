@@ -27,8 +27,7 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 RUN_DEPENDS=	cinnamon-session:x11/cinnamon-session \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
-USES=		autoreconf gettext gmake libtool pathfix \
-		pkgconfig tar:xz
+USES=		autoreconf gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack libgnomekbd \
 		libxslt:build
 USE_GITHUB=	yes

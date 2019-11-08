@@ -28,7 +28,7 @@ LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake libtool localbase \
+USES=		desktop-file-utils gettext gmake gnome libtool localbase mate \
 		pathfix pkgconfig shared-mime-info tar:xz xorg
 USE_MATE=	desktop libmatekbd marco menus settingsdaemon
 USE_XORG=	ice sm x11 xcursor xext xft xi xrandr xscrnsaver

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libplist.so:devel/libplist \
 RUN_DEPENDS=	usbmuxd:comms/usbmuxd
 
 USE_GNOME=	glib20
-USES=		fuse pkgconfig tar:bzip2
+USES=		fuse gnome pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

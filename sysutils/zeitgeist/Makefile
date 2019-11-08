@@ -21,7 +21,8 @@ BUILD_DEPENDS=	valac:lang/vala \
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:devel/py-dbus@${PY_FLAVOR}
 
-USES=		gmake gettext pathfix python:2.7 pkgconfig libtool sqlite tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig python:2.7 sqlite \
+		tar:xz
 USE_GNOME=	intlhack glib20 introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 USE_GITHUB=	yes
 GH_ACCOUNT=	cboxdoerfer
 
-USES=		autoreconf compiler:c++11-lang gettext gmake pkgconfig
+USES=		autoreconf compiler:c++11-lang gettext gmake gnome pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 

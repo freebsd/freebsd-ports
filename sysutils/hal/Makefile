@@ -18,7 +18,8 @@ LIB_DEPENDS=	libpolkit.so.2:sysutils/policykit \
 		libck-connector.so:sysutils/consolekit2
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig python shebangfix
+USES=		gettext gmake gnome libtool:keepla pathfix pkgconfig python \
+		shebangfix
 USE_GNOME=	intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

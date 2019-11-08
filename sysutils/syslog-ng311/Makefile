@@ -21,8 +21,8 @@ EXPIRATION_DATE=	2019-12-31
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		autoreconf:build compiler:c11 gmake libtool pathfix pkgconfig \
-		ssl gettext-runtime python shebangfix
+USES=		autoreconf:build compiler:c11 gettext-runtime gmake gnome \
+		libtool pathfix pkgconfig python shebangfix ssl
 
 CONFLICTS?=	syslog-ng[0-9]-[0-9]* syslog-ng[0-9][0-9]-[0-9]* \
 		syslog-ng[0-24-9][02-9][02-9]-[0-9]* \

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
 		libid3tag.so:audio/libid3tag \
 		libmad.so:audio/libmad
 
-USES=		fuse pkgconfig
+USES=		fuse gnome pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mtpfs

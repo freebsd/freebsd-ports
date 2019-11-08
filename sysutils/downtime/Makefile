@@ -12,7 +12,7 @@ COMMENT=	GTK-based shutdown manager using shutdown(8)
 
 BROKEN=		unfetchable
 
-USES=		desktop-file-utils pkgconfig shared-mime-info
+USES=		desktop-file-utils gnome pkgconfig shared-mime-info
 USE_GNOME=	gtk20
 
 .include <bsd.port.mk>
