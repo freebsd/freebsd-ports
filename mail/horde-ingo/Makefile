@@ -11,7 +11,7 @@ COMMENT=	Horde email filter rules manager
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		horde cpe
+USES=		cpe horde php
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \

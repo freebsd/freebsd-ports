@@ -17,7 +17,7 @@ NOT_FOR_ARCHS_REASON=	fails to compile: error: Unsupported word size
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
 
-USES=		cmake compiler:c11 bison pkgconfig ssl
+USES=		bison cmake compiler:c11 gnome pkgconfig ssl
 USE_GNOME=	glib20
 
 USERS=		_rmilter

@@ -20,7 +20,8 @@ LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libgpg-error.so:security/libgpg-error
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}30
-USES=		gettext-runtime gmake iconv libtool localbase pathfix pkgconfig tar:xz
+USES=		gettext-runtime gmake gnome iconv libtool localbase pathfix \
+		pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

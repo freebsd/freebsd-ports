@@ -22,8 +22,8 @@ RUN_DEPENDS=	gnome-keyring:security/gnome-keyring
 
 # Depends on gtkhtml4 (which is being abandonend). When our webkitgtk3
 # in ports gets updated to > 1.10.x, balsa should depend on it.
-USES=		desktop-file-utils gettext gmake iconv pathfix \
-		perl5 pkgconfig tar:bzip2 ssl
+USES=		desktop-file-utils gettext gmake gnome iconv pathfix perl5 \
+		pkgconfig ssl tar:bzip2
 USE_GNOME=	gnomeprefix gtkhtml4 intlhack libxslt
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

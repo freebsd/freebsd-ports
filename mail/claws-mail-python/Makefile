@@ -6,6 +6,7 @@ PORTREVISION=	0
 
 COMMENT=	Python scripting plugin for Claws Mail
 
+USES+=		gnome
 USE_GNOME=	pygtk2
 
 CLAWS_PLUGINS_BUILD=	python

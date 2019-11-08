@@ -16,7 +16,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USES=		mono
+USES=		gnome mono
 USE_GNOME=	glib20 gtksharp20
 CONFIGURE_ARGS=	--enable-mono=yes
 

@@ -18,8 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext iconv gmake pkgconfig tar:bzip2 desktop-file-utils \
-		libtool
+USES=		desktop-file-utils gettext gmake gnome iconv libtool pkgconfig \
+		tar:bzip2
 USE_GNOME=	gtk20 cairo gdkpixbuf2
 USE_LDCONFIG=	yes
 

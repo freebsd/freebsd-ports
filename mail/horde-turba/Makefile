@@ -16,7 +16,7 @@ FACEBOOK_DESC=	Support connections with Facebook
 IMSP_DSC=	Support IMSP addressbooks
 LDAP_DESC=	Support LDAP Addressbooks
 
-USES=		horde cpe
+USES=		cpe horde php
 USE_PHP=	gettext hash json
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
