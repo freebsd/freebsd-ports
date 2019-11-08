@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsdconv>=8.0:converters/py-bsdconv@${PY_FLAV
 USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
 
-USES=		python shebangfix
+USES=		gnome python shebangfix
 USE_GNOME=	gtk30 introspection:run
 SHEBANG_FILES=	gbsdconv
 

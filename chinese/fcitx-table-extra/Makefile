@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx
 
-USES=		tar:xz cmake gettext
+USES=		cmake gettext gnome tar:xz
 INSTALLS_ICONS=	yes
 STRIP=
 
