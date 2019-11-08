@@ -22,7 +22,7 @@ GTKHTML_DESC=	Support rendering HTML
 RSVG_DESC=	Support rendering SVG
 SQLITE_DESC=	Use sqlite3 as a backend
 
-USES=		gettext gmake pathfix pkgconfig tar:bzip2
+USES=		gettext gmake gnome pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gtk20 libxml2 intlhack
 CONFIGURE_ARGS=	--program-transform-name="s/$$//"

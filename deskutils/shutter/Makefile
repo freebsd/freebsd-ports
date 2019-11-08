@@ -57,7 +57,7 @@ SHEBANG_FILES=	bin/shutter share/shutter/resources/system/upload_plugins/*.pm
 SHUTTER_DESKTOP=	share/applications/shutter.desktop
 
 USE_PERL5=	run
-USES=	desktop-file-utils gettext-runtime perl5 shebangfix
+USES=		desktop-file-utils gettext-runtime gnome perl5 shebangfix
 
 .include <bsd.port.options.mk>
 

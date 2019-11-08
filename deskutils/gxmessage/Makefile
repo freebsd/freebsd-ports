@@ -12,7 +12,7 @@ MAINTAINER=	avg@icyb.net.ua
 COMMENT=	GTK3 substitute for xmessage
 
 USE_GNOME=	gtk30 gnomeprefix intltool
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

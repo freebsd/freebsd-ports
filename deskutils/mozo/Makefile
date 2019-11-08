@@ -12,7 +12,7 @@ COMMENT=	Editor for the freedesktop.org menu specification
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake localbase pathfix pkgconfig \
+USES=		gettext gmake gnome localbase mate pathfix pkgconfig \
 		python:3.5+ tar:xz
 USE_MATE=	menus
 USE_GNOME=	gtk30 intltool pygobject3

@@ -13,7 +13,7 @@ COMMENT=	Program for reading e-books
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${PY_FLAVOR}
 
-USES=		python:2.7
+USES=		gnome python:2.7
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	PyBookReader
 USE_GNOME=	pygtk2

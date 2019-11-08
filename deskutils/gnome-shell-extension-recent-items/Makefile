@@ -12,6 +12,7 @@ COMMENT=	Recent items extensions for the GNOME3 shell
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		gnome
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

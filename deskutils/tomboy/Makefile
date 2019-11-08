@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-2.0.pc:devel/dbus-
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-2.0.pc:devel/dbus-sharp-glib \
 		mautil:devel/mono-addins
 
-USES=		cpe gettext gmake libtool mono pathfix pkgconfig tar:xz
+USES=		cpe gettext gmake gnome libtool mono pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack gnomeprefix gnomedocutils gnomesharp20
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

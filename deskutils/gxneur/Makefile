@@ -18,7 +18,7 @@ BUILD_DEPENDS=	xneur:deskutils/xneur
 RUN_DEPENDS=	xneur:deskutils/xneur
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang pkgconfig
+USES=		compiler:c++11-lang gnome pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GNOME=	gconf2 gtk20 libglade2
 INSTALLS_ICONS=	yes

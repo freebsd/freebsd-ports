@@ -35,7 +35,7 @@ GH_TAGNAME=	6c8ec3a
 
 USE_GNOME=	gconf2 gnomeprefix gnomedocutils gtksourceview3 intlhack \
 		introspection:build libxml2 pygtk2
-USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig \
+USES=		autoreconf:build gettext gmake gnome libtool pathfix pkgconfig \
 		python:2.7 shebangfix
 SHEBANG_FILES=	nemo-dropbox/dropbox.in
 INSTALLS_ICONS=	yes

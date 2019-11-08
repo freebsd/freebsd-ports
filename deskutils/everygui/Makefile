@@ -13,7 +13,7 @@ COMMENT=	Dynamic GUI for an OS command
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		dos2unix python:2.7 shebangfix
+USES=		dos2unix gnome python:2.7 shebangfix
 SHEBANG_FILES=	src/*.py
 DOS2UNIX_GLOB=	*.py
 USE_PYTHON=	distutils autoplist

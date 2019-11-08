@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libqt5keychain.so:security/qtkeychain
 
-USES=		cmake:noninja compiler:c++11-lib gmake iconv \
+USES=		cmake:noninja compiler:c++11-lib gmake gnome iconv \
 		localbase:ldflags pkgconfig qt:5 sqlite ssl
 USE_QT=		buildtools_build concurrent core dbus declarative gui linguist_build location network \
 		printsupport qmake_build sql webchannel webengine webkit widgets xml

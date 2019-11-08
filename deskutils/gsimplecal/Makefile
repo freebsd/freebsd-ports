@@ -16,7 +16,7 @@ GH_ACCOUNT=	dmedvinsky
 
 GNU_CONFIGURE=	yes
 
-USES=		autoreconf compiler:c++11-lang gmake pkgconfig
+USES=		autoreconf compiler:c++11-lang gmake gnome pkgconfig
 USE_GNOME=	glib20 gtk30
 
 PLIST_FILES=	bin/gsimplecal \
