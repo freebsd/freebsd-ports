@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Console/Getopt.php:devel/pear@${PHP_FLAVOR}
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-USES=		zip
+USES=		php zip
 USE_PHP=	gd
 
 WM_FILES=	HTML_ImageMap.class.php WeatherMap.functions.php \

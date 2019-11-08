@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfixbuf.so:net/libfixbuf \
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		compiler:c11 libtool pathfix perl5 pkgconfig ssl
+USES=		compiler:c11 gnome libtool pathfix perl5 pkgconfig ssl
 USE_GNOME=	glib20
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"

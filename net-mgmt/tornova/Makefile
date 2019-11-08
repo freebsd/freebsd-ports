@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	neelchauhan
 GH_PROJECT=	TorNova
 
-USES=		python:2.7
+USES=		gnome python:2.7
 USE_PYTHON=	autoplist distutils
 USE_GNOME=	gtk30 pygobject3
 NO_ARCH=	yes
