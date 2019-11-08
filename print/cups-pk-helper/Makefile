@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcups.so:print/cups \
 		libpolkit-gobject-1.so:sysutils/polkit
 
 USE_GNOME=	glib20 intltool
-USES=		cpe gettext localbase gmake pkgconfig tar:xz
+USES=		cpe gettext gmake gnome localbase pkgconfig tar:xz
 CPE_VENDOR=	cups-pk-helper_project
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		gmake perl5
+USES=		gmake gnome perl5
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL} LIBDIR=${PREFIX}/share/foomatic/ \

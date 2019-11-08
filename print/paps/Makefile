@@ -15,6 +15,6 @@ PLIST_FILES=	bin/paps lib/libpaps.a include/libpaps.h \
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pango
-USES=		pkgconfig
+USES=		gnome pkgconfig
 
 .include <bsd.port.mk>

@@ -21,7 +21,7 @@ LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
 		libfreetype.so:print/freetype2
 
 MAKE_ARGS+=	PREFIX=${PREFIX}
-USES=		desktop-file-utils pkgconfig
+USES=		desktop-file-utils gnome pkgconfig
 USE_GNOME=	gtk20 gdkpixbuf2 cairo
 MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
 

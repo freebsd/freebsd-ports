@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake pkgconfig
+USES=		autoreconf gmake gnome pkgconfig
 PLIST_FILES=	bin/gsmc man/man1/gsmc.1.gz
 
 post-patch:

@@ -14,7 +14,7 @@ COMMENT=	Support library for gnome cups administration
 
 LIB_DEPENDS=	libcups.so:print/cups
 
-USES=		pkgconfig pathfix gettext gmake libtool:keepla tar:bzip2
+USES=		gettext gmake gnome libtool:keepla pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	intlhack glib20
 USE_LDCONFIG=	yes

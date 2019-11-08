@@ -19,7 +19,7 @@ USES=		tar:bzip2
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
-USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig
+USES+=		bison gettext gmake gnome libtool:keepla pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack glib20 pango libxml2 libartlgpl2
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

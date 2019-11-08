@@ -21,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycups>=0:print/py-pycups@${PY_FLAVOR} \
 PORTSCOUT=	limitw:1,even
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig python:2.7 \
-		shebangfix tar:xz
+USES=		desktop-file-utils gettext gmake gnome pathfix pkgconfig \
+		python:2.7 shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	intlhack pygobject3
