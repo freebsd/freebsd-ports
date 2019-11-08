@@ -11,7 +11,8 @@ COMMENT=	Network simulator for Internet systems
 
 LICENSE=	GPLv2
 
-USES=		compiler:c++11-lib gettext pkgconfig python sqlite tar:bzip2 waf
+USES=		compiler:c++11-lib gettext gnome pkgconfig python sqlite \
+		tar:bzip2 waf
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	ns-${DISTVERSION}

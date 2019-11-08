@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig sdl
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
 

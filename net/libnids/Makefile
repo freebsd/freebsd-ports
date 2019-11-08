@@ -19,6 +19,7 @@ OPTIONS_DEFAULT=GLIB2
 GLIB2_DESC=	Use GLIB2 for multiprocessing support
 OPTIONS_SUB=	yes
 
+GLIB2_USES=	gnome
 GLIB2_USE=	gnome=glib20
 GLIB2_CONFIGURE_ENABLE=	libglib
 

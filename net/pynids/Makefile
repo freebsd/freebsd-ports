@@ -14,7 +14,7 @@ COMMENT=	Python interface to libnids
 
 LIB_DEPENDS=	libnet.so:net/libnet
 
-USES=		pkgconfig python:2.7
+USES=		gnome pkgconfig python:2.7
 USE_GNOME=	glib20
 USE_PYTHON=	distutils autoplist pythonprefix
 

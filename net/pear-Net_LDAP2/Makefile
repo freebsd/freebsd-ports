@@ -9,7 +9,7 @@ CATEGORIES=	net pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	OO interface for searching and manipulating LDAP-entries
 
-USES=	pear
+USES=		pear php
 USE_PHP=	ldap
 
 .include <bsd.port.mk>

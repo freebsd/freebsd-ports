@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	aria2c:www/aria2
 
-USES=	compiler:c11 gettext-tools gmake pkgconfig
+USES=		compiler:c11 gettext-tools gmake gnome pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 intltool cairo
 INSTALLS_ICONS=	yes

@@ -17,7 +17,8 @@ LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop
 RUN_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind-tools
 
 USE_GNOME=	gtk30 intlhack libxml2:build
-USES=		gettext gmake libtool localbase:ldflags pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool localbase:ldflags pathfix pkgconfig \
+		tar:xz
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

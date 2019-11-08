@@ -13,7 +13,7 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USE_SDL=	sdl2
-USES=		gmake libtool pathfix pkgconfig:build
+USES=		gmake libtool pathfix pkgconfig:build sdl
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

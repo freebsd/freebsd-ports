@@ -14,8 +14,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone liburcu-bp.so:sysutils/liburcu
 
-USES=		bison gettext libtool pkgconfig python:2.7 readline shebangfix \
-		sqlite ssl
+USES=		bison gettext gnome libtool pkgconfig python:2.7 readline \
+		shebangfix sqlite ssl
 
 BROKEN_SSL=	libressl
 

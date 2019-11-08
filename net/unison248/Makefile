@@ -63,7 +63,7 @@ MAKE_ARGS=		UISTYLE=gtk2
 SUB_FILES=		${PORTNAME}.desktop
 SUB_LIST=		PORTVERSION=${PORTVERSION} VERSIONSUFFIX=${VERSIONSUFFIX}
 USE_GNOME+=		atk cairo gdkpixbuf2 glib20 gtk20 pango
-USES+=			gettext-runtime
+USES+=			gettext-runtime gnome
 PLIST_SUB+=		X11=""
 .endif
 

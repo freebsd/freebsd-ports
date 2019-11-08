@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 # Looks like GNU make(1) is needed for parallel (-jX) builds to work
-USES=		gmake libtool pathfix pkgconfig ssl
+USES=		gmake gnome libtool pathfix pkgconfig ssl
 USE_GNOME=	glib20
 
 .include <bsd.port.mk>
