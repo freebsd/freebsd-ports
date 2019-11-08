@@ -30,7 +30,7 @@ load_rc_config $name
 pidfile="/var/run/${name}/${name}.pid"
 procname="%%PREFIX%%/bin/${name}"
 command="/usr/sbin/daemon"
-command_args="-S -m 3 -s info -l daemon -p ${pidfile} ${procname} --no-daemon -c ${spotifyd_config} ${spotifyd_args}"
+command_args="-S -m 3 -s info -l daemon -p ${pidfile} ${procname} --no-daemon --config-path ${spotifyd_config} ${spotifyd_args}"
 
 spotifyd_precmd()
 {
