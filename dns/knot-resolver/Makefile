@@ -13,9 +13,6 @@ COMMENT=	Caching full resolver implementation
 
 LICENSE=	GPLv3+
 
-NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON_i386=	libknot (installed by knot2) is broken
-
 BUILD_DEPENDS=	bash:shells/bash \
 		git:devel/git
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
