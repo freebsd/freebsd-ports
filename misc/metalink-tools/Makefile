@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang localbase pkgconfig
+USES=		compiler:c++11-lang gnome localbase pkgconfig
 USE_CXXSTD=	c++11
 CONFIGURE_ENV+=	AWK="${AWK}"
 

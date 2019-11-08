@@ -13,7 +13,7 @@ COMMENT=	Diff/patch utility for binary files
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pkgconfig
+USES=		gnome libtool pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

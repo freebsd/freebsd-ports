@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake localbase mono pathfix pkgconfig tar:bzip2
+USES=		gettext gmake gnome localbase mono pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack libgnome gnomesharp20
 GCONF_SCHEMAS=	cdcollect.schemas
 NO_ARCH=	yes

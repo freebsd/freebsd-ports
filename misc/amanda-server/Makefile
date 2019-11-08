@@ -20,7 +20,7 @@ SLAVEDIRS=	misc/amanda-client
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		charsetfix gmake libtool perl5 pkgconfig ssl
+USES=		charsetfix gmake gnome libtool perl5 pkgconfig ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
