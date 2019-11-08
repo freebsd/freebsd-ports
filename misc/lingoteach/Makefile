@@ -16,7 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-ui-${PORTVERSION}
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig libtool
+USES=		gmake gnome libtool pkgconfig
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib `pkg-config --libs gmodule-2.0`

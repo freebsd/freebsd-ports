@@ -15,7 +15,7 @@ COMMENT=	MIME and Application database for GNOME
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake localbase pathfix tar:bzip2
+USES=		gettext gmake gnome localbase pathfix tar:bzip2
 USE_GNOME=	gnomeprefix intlhack
 GNU_CONFIGURE=	yes
 LIBS+=		-lintl

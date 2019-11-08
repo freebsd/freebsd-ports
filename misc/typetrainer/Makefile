@@ -12,7 +12,7 @@ COMMENT=	Typing tutor trainer
 LICENSE=	MIT
 
 USE_GNOME=	pygtk2
-USES=		python:2.7
+USES=		gnome python:2.7
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

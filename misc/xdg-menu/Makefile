@@ -25,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
 WRKSRC=		${WRKDIR}/XDG-Menu
 DATADIR=	${PREFIX}/apps/XDG-Menu
 
-USES=		python:2.7 shebangfix
+USES=		gnome python:2.7 shebangfix
 SHEBANG_FILES=	AppRun AppletRun
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes
