@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	requests
-PORTVERSION=	2.21.0
+PORTVERSION=	2.22.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,11 +21,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.8.0:devel/py-pytest@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR}
 
-# Actually 2.6-2.7,3.4+
+# Actually 2.7,3.5+
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
-
-CONFLICTS_INSTALL=	py*-requests1-*
 
 NO_ARCH=	yes
 
