@@ -17,7 +17,7 @@ BROKEN_sparc64=		fails to compile: uses x86 asm
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix
+USES=		gmake gnome libtool pathfix
 USE_GNOME=	libxml2
 CONFIGURE_ARGS+=	--enable-gmp
 CFLAGS+=	-I${LOCALBASE}/include

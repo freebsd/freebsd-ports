@@ -11,6 +11,8 @@ COMMENT=	Visualization and "Audibilization" of Sorting Algorithms
 
 LICENSE=	GPLv3
 
+USES=		sdl
+
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 USE_WX=		2.8+

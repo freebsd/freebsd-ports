@@ -64,7 +64,8 @@ PGPLOT_BUILD_DEPENDS=	p5-PGPLOT>=0:graphics/p5-PGPLOT
 PLPLOT_LIB_DEPENDS=	libplplotd.so:math/plplot
 OPENGL_BUILD_DEPENDS=	p5-OpenGL>=0.65:graphics/p5-OpenGL
 OPENGL_RUN_DEPENDS:=	${OPENGL_BUILD_DEPENDS}
-OPENGL_USE=		gl=yes
+OPENGL_USES=		gl
+OPENGL_USE=		gl=glu
 GD_LIB_DEPENDS=		libgd.so:graphics/gd
 F77_BUILD_DEPENDS=	p5-ExtUtils-F77>=0:lang/p5-ExtUtils-F77
 FFTW_LIB_DEPENDS=	libfftw.so:math/fftw
