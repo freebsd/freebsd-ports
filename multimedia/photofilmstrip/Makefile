@@ -14,8 +14,6 @@ COMMENT=	Creates movies out of your pictures
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to build: Signal 11
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 RUN_DEPENDS=	mencoder:multimedia/mencoder \
 		mplayer:multimedia/mplayer

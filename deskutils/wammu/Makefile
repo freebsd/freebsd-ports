@@ -14,8 +14,6 @@ COMMENT=	GUI manager of contacts, todos, calendar, and messages in your phone
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to build: Signal 11
-
 LIB_DEPENDS=	libGammu.so:comms/gammu
 
 USES=		gettext pkgconfig python:2.7 tar:bz2

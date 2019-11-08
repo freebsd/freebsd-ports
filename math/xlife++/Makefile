@@ -13,8 +13,6 @@ COMMENT=	XLiFE++: eXtended Library of Finite Elements in C++
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_aarch64=		fails to compile: BlasUtil.h:63:63: no type named 'ReturnType' in 'Eigen::ScalarBinaryOpTraits<__attribute__
-
 USES=		cmake compiler:c++11-lang eigen:3 fortran tar:tbz
 USE_LDCONFIG=	yes
 
