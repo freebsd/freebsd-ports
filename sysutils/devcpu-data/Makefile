@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/sbruno:amd
 PKGNAMEPREFIX=	devcpu-
-DISTFILES=	amd64-microcode.20181214.tar.xz:amd
+DISTFILES=	amd64-microcode.20191021.tar.xz:amd
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Intel and AMD CPUs microcode updates
@@ -19,7 +19,7 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 GH_PROJECT=	Intel-Linux-Processor-Microcode-Data-Files
-GH_TAGNAME=	microcode-20190618
+GH_TAGNAME=	microcode-20190918
 
 ONLY_FOR_ARCHS=	amd64 i386
 NO_ARCH=	yes
