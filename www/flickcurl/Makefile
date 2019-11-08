@@ -23,7 +23,7 @@ RAPTOR_DESC=	Use Raptor to serialize to triples
 OFFLINE_DESC=	Offline use of captured XML web service responses
 CAPTURE_DESC=	Capturing web service responses
 
-USES=		libtool pathfix pkgconfig
+USES=		gnome libtool pathfix pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc

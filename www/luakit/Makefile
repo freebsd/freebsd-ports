@@ -25,7 +25,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}luafilesystem>=0:devel/luafilesystem-51
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-runtime gmake \
-		lua:51 pkgconfig sqlite
+		gnome lua:51 pkgconfig sqlite
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 

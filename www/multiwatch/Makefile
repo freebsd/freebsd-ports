@@ -16,7 +16,7 @@ LIB_DEPENDS=	libev.so:devel/libev
 
 GNU_CONFIGURE=	yes
 
-USES=		pkgconfig tar:bzip2
+USES=		gnome pkgconfig tar:bzip2
 USE_GNOME=	glib20
 
 # Help configure find libev.

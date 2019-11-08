@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${PY_FLAVOR} \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		cpe python:2.7
+USES=		cpe gnome python:2.7
 CPE_VENDOR=	bastian_kleineidam
 USE_PYTHON=	distutils autoplist
 INSTALLS_ICONS=	yes
