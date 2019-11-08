@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 
 CONFLICTS=	pv-[0-9]*
 
-USES=		ncurses pkgconfig
+USES=		gnome ncurses pkgconfig
 USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/waon bin/pv bin/gwaon \

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libmpd.so:audio/libmpd \
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:audio/gmpc
 RUN_DEPENDS=	gmpc:audio/gmpc
 
-USES=		gettext gmake libtool pkgconfig sqlite
+USES=		gettext gmake gnome libtool pkgconfig sqlite
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 intltool libglade2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

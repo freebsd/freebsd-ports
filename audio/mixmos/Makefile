@@ -12,7 +12,7 @@ COMMENT=	GTK2 audio mixer
 
 BROKEN=		unfetchable
 
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

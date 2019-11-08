@@ -16,7 +16,7 @@ GH_ACCOUNT=	cboxdoerfer
 GH_PROJECT=	ddb_quick_search
 GH_TAGNAME=	332e994
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -16,7 +16,7 @@ CONFIGURE_ARGS+=--enable-oss
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-USES=		gmake iconv pkgconfig
+USES=		gmake gnome iconv pkgconfig
 USE_GNOME=	gtk30 intltool
 
 PORTDOCS=	AUTHORS ChangeLog README

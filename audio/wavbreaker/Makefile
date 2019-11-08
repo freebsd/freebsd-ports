@@ -21,7 +21,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 USE_GNOME=	gtk20 libxml2
-USES=		desktop-file-utils gmake localbase pathfix pkgconfig
+USES=		desktop-file-utils gmake gnome localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa
 INSTALLS_ICONS=	yes

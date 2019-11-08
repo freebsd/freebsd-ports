@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:audio/py-mpd@${PY_FLAVOR}
 
-USES=		gettext pkgconfig python:2.7
+USES=		gettext gnome pkgconfig python:2.7
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils autoplist
 

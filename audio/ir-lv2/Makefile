@@ -21,7 +21,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libzita-convolver.so:audio/zita-convolver \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	tomszilagyi
 GH_PROJECT=	ir.lv2

@@ -12,7 +12,7 @@ COMMENT=	Real-time 3D sound generation library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:bzip2 cmake
+USES=		cmake sdl tar:bzip2
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 

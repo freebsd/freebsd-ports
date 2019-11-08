@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libxmmsclient.so:audio/xmms2 \
 		libnotify.so:devel/libnotify
 
-USES=		gettext-tools gmake desktop-file-utils localbase \
+USES=		desktop-file-utils gettext-tools gmake gnome localbase \
 		pkgconfig tar:xz
 USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes

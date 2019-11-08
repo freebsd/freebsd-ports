@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
-USES=		pkgconfig tar:bzip2 waf
+USES=		gnome pkgconfig tar:bzip2 waf
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

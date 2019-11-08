@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdssialsacompat.so:audio/libdssialsacompat \
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:audio/dssi
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig
+USES=		gmake gnome libtool pkgconfig
 USE_GNOME=	gtk20
 
 .include <bsd.port.mk>

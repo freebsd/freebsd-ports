@@ -14,7 +14,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=verbose
 CONFIGURE_ENV+=	PREFIX=${PREFIX}
 
-USES=		pkgconfig ncurses tar:bzip2
+USES=		gnome ncurses pkgconfig tar:bzip2
 USE_GNOME=	glib20
 
 OPTIONS_DEFINE=	MAD VORBIS SNDFILE MODPLUG HTTP LIBAO XCURSES XSPF NLS

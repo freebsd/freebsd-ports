@@ -62,7 +62,7 @@ QT_USE=			QT=core,widgets
 X11_DESC=		Build X11 sandbox
 X11_MESON_OFF=		-Duse-x11=false
 X11_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
-X11_USES=		gnome
+X11_USES=		gnome xorg
 X11_USE=		XORG=xcb GNOME=cairo
 
 .include <bsd.port.mk>

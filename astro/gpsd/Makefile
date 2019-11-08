@@ -136,6 +136,7 @@ CPPBIND_MAKE_ARGS_OFF=	libgpsmm=no
 X11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 #X11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR}
+X11_USES=	gnome
 X11_USE=	GNOME=gtk30
 
 # Build control

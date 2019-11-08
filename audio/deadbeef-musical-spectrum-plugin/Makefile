@@ -17,7 +17,7 @@ GH_ACCOUNT=	cboxdoerfer
 GH_PROJECT=	ddb_musical_spectrum
 GH_TAGNAME=	353870a
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 
 OPTIONS_DEFINE=	GTK2 GTK3
 OPTIONS_DEFAULT=	GTK2

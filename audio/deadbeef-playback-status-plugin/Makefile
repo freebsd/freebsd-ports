@@ -16,7 +16,7 @@ GH_ACCOUNT=	cboxdoerfer
 GH_PROJECT=	ddb_playback_status
 GH_TAGNAME=	fce1de0
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 
 MAKE_JOBS_UNSAFE=	yes
 

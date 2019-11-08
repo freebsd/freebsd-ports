@@ -13,7 +13,7 @@ COMMENT=	Standard MIDI File format library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix pkgconfig readline:port libtool
+USES=		gnome libtool pathfix pkgconfig readline:port
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

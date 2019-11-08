@@ -22,7 +22,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 		libglademm-2.4.so:devel/libglademm24 \
 		libflowcanvas.so:x11-toolkits/flowcanvas
 
-USES=		compiler:c++11-lang pkgconfig tar:bzip2 waf
+USES=		compiler:c++11-lang gnome pkgconfig tar:bzip2 waf
 USE_CXXSTD=	c++11
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \

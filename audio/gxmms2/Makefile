@@ -19,7 +19,7 @@ LIB_DEPENDS=	libxmmsclient.so:audio/xmms2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gtk20
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/gxmms2 \

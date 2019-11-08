@@ -19,8 +19,8 @@ LIB_DEPENDS=	libmad.so:audio/libmad \
 		libvorbis.so:audio/libvorbis \
 		libspeex.so:audio/speex
 
-USES=		pathfix gettext pkgconfig gmake tar:bzip2 libtool \
-		desktop-file-utils
+USES=		desktop-file-utils gettext gmake gnome libtool pathfix \
+		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 

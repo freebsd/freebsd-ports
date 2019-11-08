@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:audio/py-mpd@${PY_FLAVOR}
 
-USES=		gettext iconv python:2.7 tar:tgz
+USES=		gettext gnome iconv python:2.7 tar:tgz
 USE_GNOME=	intltool pygtk2
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	mpdBrowser

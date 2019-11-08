@@ -19,8 +19,8 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 	libsoup-2.4.so:devel/libsoup \
 	libtotem-plparser.so:multimedia/totem-pl-parser
 
-USES=	compiler:c11 desktop-file-utils gettext-tools gmake libtool \
-	pkgconfig sqlite tar:bz2
+USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
+		libtool pkgconfig sqlite tar:bz2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 intltool intlhack
 USE_GSTREAMER1=	yes faad flac libav mpg123 ogg speex

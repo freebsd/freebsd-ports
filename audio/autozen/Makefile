@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		shebangfix perl5 pkgconfig
+USES=		gnome perl5 pkgconfig shebangfix
 SHEBANG_FILES=	zentime
 USE_PERL5=	run
 

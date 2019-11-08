@@ -16,7 +16,7 @@ LIB_DEPENDS=	libmpd.so:audio/libmpd \
 		libtag.so:audio/taglib \
 		libnxml.so:textproc/libnxml
 
-USES=		tar:bzip2 desktop-file-utils gmake pkgconfig
+USES=		desktop-file-utils gmake gnome pkgconfig tar:bzip2
 USE_GNOME=	gtk20 intltool libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share

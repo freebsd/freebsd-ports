@@ -18,7 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gmake libtool pkgconfig shared-mime-info
+USES=		desktop-file-utils gmake gnome libtool pkgconfig \
+		shared-mime-info
 USE_GNOME=	gtk20 intltool libxml2
 
 post-install:

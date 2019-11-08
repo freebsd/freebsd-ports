@@ -18,8 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libmtp.so:multimedia/libmtp
 
-USES=		cmake compiler:c++11-lib desktop-file-utils \
-		pkgconfig qt:5
+USES=		cmake compiler:c++11-lib desktop-file-utils gnome pkgconfig \
+		qt:5
 USE_GNOME=	glib20
 USE_GSTREAMER1=	flac libav mpg123 ogg opus vorbis
 USE_QT=		dbus core gui network sql sql-sqlite3_run widgets xml \

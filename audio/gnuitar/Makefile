@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time guitar processor
 
 USE_GNOME=	gtk20
-USES=		tar:bzip2 gmake pkgconfig
+USES=		gmake gnome pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk2 \
 		--enable-clip-everywhere \

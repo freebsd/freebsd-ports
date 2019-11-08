@@ -12,7 +12,7 @@ MASTER_SITES=	LOCAL/gahr \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Tiny CD, a simple ncurses-based CD player
 
-USES=		ncurses
+USES=		ncurses sdl
 USE_SDL=	sdl
 
 MAKE_ARGS=	INCDIR=${LOCALBASE}/include LIBDIR=${LOCALBASE}/lib \

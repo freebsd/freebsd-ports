@@ -13,7 +13,7 @@ COMMENT=	OpenDarwin XML eXtensible ARchiver
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake libtool ssl
+USES=		gmake gnome libtool ssl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

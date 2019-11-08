@@ -13,7 +13,7 @@ COMMENT=	Read information about an MP3's, or OGG's bitstream
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		dos2unix gmake localbase pkgconfig
+USES=		dos2unix gmake gnome localbase pkgconfig
 DOS2UNIX_FILES=	ui/console/cli.cpp
 USE_GNOME=	gtk20
 

@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libid3.so:audio/id3lib \
 		libvorbis.so:audio/libvorbis
 
-USES=		compiler:c++11-lang gettext gmake localbase:ldflags pathfix \
-		pkgconfig tar:bzip2
+USES=		compiler:c++11-lang gettext gmake gnome localbase:ldflags \
+		pathfix pkgconfig tar:bzip2
 USE_GNOME=	intlhack libglade2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

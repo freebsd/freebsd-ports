@@ -19,7 +19,7 @@ LIB_DEPENDS=	libdssialsacompat.so:audio/libdssialsacompat \
 USE_GITHUB=	yes
 GH_ACCOUNT=	gordonjcp
 
-USES=		pkgconfig waf
+USES=		gnome pkgconfig waf
 USE_GNOME=	gtk20
 
 CPPFLAGS+=	-I${LOCALBASE}/include/dssi -I${LOCALBASE}/include

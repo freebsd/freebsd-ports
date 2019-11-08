@@ -18,7 +18,7 @@ ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 
-USES=		libtool pkgconfig tar:bzip2
+USES=		libtool pkgconfig sdl tar:bzip2
 USE_SDL=	sdl
 
 GNU_CONFIGURE=	yes

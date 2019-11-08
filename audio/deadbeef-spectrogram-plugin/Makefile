@@ -19,7 +19,7 @@ GH_ACCOUNT=	cboxdoerfer
 GH_PROJECT=	ddb_spectrogram
 GH_TAGNAME=	8d1b371
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 
 MAKE_JOBS_UNSAFE=	yes
 
