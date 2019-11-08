@@ -20,7 +20,7 @@ BUILD_WRKSRC=	${WRKSRC}/contrib
 ALL_TARGET=	gnome-ssh-askpass2
 
 PLIST_FILES=	bin/gnome-ssh-askpass2
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	gtk20
 
 CFLAGS+=	-lpthread

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem
 PLIST_FILES=	bin/gputty
 
 MAKE_ARGS=	PREFIX=${PREFIX}
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	gtk20
 
 post-install:

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	gpgv:security/gnupg1
 
-USES=		ncurses
+USES=		gnome ncurses
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	curses_loc=${NCURSESBASE}

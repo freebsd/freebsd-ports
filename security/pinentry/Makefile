@@ -78,6 +78,7 @@ OPTIONS_DEFINE=	LIBSECRET
 LIBSECRET_DESC=	Saving the passphrase with libsecret
 LIBSECRET_CONFIGURE_ENABLE=	libsecret
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
+LIBSECRET_USES=		gnome
 LIBSECRET_USE=		GNOME=glib20
 
 .if ${PINENTRY_GUI} == "gnome3"
@@ -99,6 +100,7 @@ CONFIGURE_ARGS+=--disable-pinentry-qt --disable-pinentry-qt5
 .endif
 
 .if ${PINENTRY_GUI} == "gtk2"
+USES+=		gnome
 USE_GNOME+=	gtk20
 PLIST_FILES=	bin/pinentry-gtk-2
 .else

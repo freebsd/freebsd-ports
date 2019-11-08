@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-1.0.pc:devel/ndesk-dbus
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake libtool mono pathfix pkgconfig
+USES=		autoreconf gmake gnome libtool mono pathfix pkgconfig
 USE_GNOME=	gtksharp20
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

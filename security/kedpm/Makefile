@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR}
 
 NO_ARCH=	yes
 
-USES=		python:2.7
+USES=		gnome python:2.7
 USE_GNOME=	pygtk2
 USE_PYTHON=	autoplist distutils
 

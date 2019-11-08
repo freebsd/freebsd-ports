@@ -12,7 +12,7 @@ COMMENT=	Simple AMaViS statistics generator based on rrdtool
 
 RUN_DEPENDS=	rrdtool>=0:databases/rrdtool
 
-USES=		perl5 shebangfix
+USES=		perl5 php shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	amavis-stats
 perl_CMD=	${PERL} -w

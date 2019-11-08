@@ -8,7 +8,7 @@ CATEGORIES=	security www pear
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Secret Encryption API
 
-USES=	horde
+USES=		horde php
 USE_HORDE_RUN=	Horde_Crypt_Blowfish \
 		Horde_Exception \
 		Horde_Support

@@ -14,7 +14,7 @@ RUN_DEPENDS=	opensc-tool:security/opensc \
 		pcscd:devel/pcsc-lite
 
 USE_GNOME=	gtk20
-USES=		webplugin:gecko pkgconfig ssl
+USES=		gnome pkgconfig ssl webplugin:gecko
 WEBPLUGIN_DIR=	${PREFIX}/lib
 WEBPLUGIN_FILES=	npesteid-firefox-plugin.so
 

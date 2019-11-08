@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libgringotts.so:security/libgringotts
 
-USES=		gettext localbase pkgconfig
+USES=		gettext gnome localbase pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 

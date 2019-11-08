@@ -20,7 +20,7 @@ LIB_DEPENDS=	libotr.so.5:security/libotr \
 		libgcrypt.so:security/libgcrypt \
 		libpurple.so:net-im/libpurple
 
-USES=		cpe gmake libtool pkgconfig
+USES=		cpe gmake gnome libtool pkgconfig
 CPE_VENDOR=	cypherpunks
 CPE_PRODUCT=	${PKGNAMEPREFIX}${PORTNAME}
 USE_GNOME=	gtk20 intltool

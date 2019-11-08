@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--disable-static \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		gettext gmake libtool pkgconfig
+USES=		gettext gmake gnome libtool pkgconfig
 USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	NLS
