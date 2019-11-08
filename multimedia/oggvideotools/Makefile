@@ -19,7 +19,8 @@ LIB_DEPENDS=	libgd.so:graphics/gd \
 		libtheora.so:multimedia/libtheora \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake compiler:c++11-lib localbase:ldflags pkgconfig tar:bz2
+USES=		cmake compiler:c++11-lib localbase:ldflags pkgconfig sdl \
+		tar:bz2
 USE_CXXSTD=	c++11
 USE_SDL=	sdl
 USE_LDCONFIG=	yes

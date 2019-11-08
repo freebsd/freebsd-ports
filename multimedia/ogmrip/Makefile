@@ -25,7 +25,8 @@ RUN_DEPENDS=	lame:audio/lame \
 		mplayer:multimedia/mplayer \
 		ogmmerge:multimedia/ogmtools
 
-USES=		desktop-file-utils gmake libtool localbase:ldflags pathfix pkgconfig
+USES=		desktop-file-utils gmake gnome libtool localbase:ldflags \
+		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 intlhack libxml2
 INSTALL_TARGET=	install-strip

@@ -16,7 +16,8 @@ LIB_DEPENDS=	libswfdec-0.8.so:graphics/swfdec
 
 USE_GNOME=	gnomeprefix gtk20 intlhack gconf2
 INSTALLS_ICONS=	yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:bzip2
+USES=		desktop-file-utils gettext gmake gnome pathfix pkgconfig \
+		tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

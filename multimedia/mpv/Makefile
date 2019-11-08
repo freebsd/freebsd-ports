@@ -117,6 +117,7 @@ OPENGL_IMPLIES=			X11
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 
+SDL_USES=			sdl
 SDL_USE=			SDL=sdl2
 SDL_CONFIGURE_ON=		--enable-sdl2
 

@@ -14,7 +14,7 @@ COMMENT=	Free MPEG1 video player library with sound support
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler gmake libtool:build
+USES=		compiler gmake libtool:build sdl
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 

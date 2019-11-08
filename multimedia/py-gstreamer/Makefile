@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:textproc/py-libxml2@${PY_FLAVOR}
 
 PORTSCOUT=	limit:0\.10\..*
 
-USES=		gmake libtool pathfix pkgconfig python:2.7 tar:bzip2
+USES=		gmake gnome libtool pathfix pkgconfig python:2.7 tar:bzip2
 USE_GNOME=	pygobject
 USE_GSTREAMER=	yes
 USE_PYTHON=	flavors

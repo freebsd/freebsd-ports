@@ -28,7 +28,7 @@ RUN_DEPENDS=	mplayer:multimedia/mplayer \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
 		bash:shells/bash
 
-USES=		python:2.7 shebangfix
+USES=		gnome python:2.7 shebangfix
 SHEBANG_FILES= src/set_chapters src/titleset-wizard src/todiscgui src/tovid-stats
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes

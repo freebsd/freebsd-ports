@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 CONFLICTS=	${PORTNAME}-0.*
 PORTSCOUT=	limit:^1\..*
 
-USES=		cmake pathfix pkgconfig qt:5 tar:bzip2
+USES=		cmake gnome pathfix pkgconfig qt:5 tar:bzip2
 USE_QT=		core gui network widgets xml \
 		buildtools_build linguisttools_build qmake_build
 USE_LDCONFIG=	yes
@@ -72,7 +72,7 @@ QSUI_DESC=	Simple UI based on standard widgets set
 QSUI_CMAKE_BOOL=	USE_QSUI
 
 SKINNEDUI_DESC=	Skinned GUI
-SKINNEDUI_USES=	qt:5
+SKINNEDUI_USES=	qt:5 xorg
 SKINNEDUI_USE=	QT=x11extras XORG=x11
 SKINNEDUI_CMAKE_BOOL=	USE_SKINNED
 
@@ -147,7 +147,8 @@ MPLAYER_CMAKE_BOOL=	USE_MPLAYER
 
 PROJECTM_DESC=	Support the projectM music visualiser
 PROJECTM_LIB_DEPENDS=	libprojectM.so.2:graphics/libprojectm
-PROJECTM_USE=	GL=gl
+PROJECTM_USES=		gl
+PROJECTM_USE=		GL=gl
 PROJECTM_CMAKE_BOOL=	USE_PROJECTM
 
 OSS_CMAKE_BOOL=	USE_OSS

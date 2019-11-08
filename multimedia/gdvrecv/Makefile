@@ -13,7 +13,7 @@ COMMENT=	DV tools for FreeBSD
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:2.7 tar:bzip2
+USES=		gnome python:2.7 tar:bzip2
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
 DESKTOP_ENTRIES="Capture Video" \

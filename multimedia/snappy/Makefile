@@ -17,8 +17,7 @@ LIB_DEPENDS=	libclutter-gst-2.0.so:multimedia/clutter-gst \
 		libclutter-1.0.so:graphics/clutter \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3
 
-USES=		desktop-file-utils gettext gmake pathfix \
-		pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake gnome pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

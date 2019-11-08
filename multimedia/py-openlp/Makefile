@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}alembic>=0:databases/py-alembic@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${PY_FLAVOR} \
 		unoconv:textproc/unoconv
 
-USES=		desktop-file-utils pyqt:5 python:3.4+ qt:5
+USES=		desktop-file-utils gnome pyqt:5 python:3.4+ qt:5
 USE_PYQT=	core_run gui_run multimedia_run network_run opengl_run printsupport_run \
 	       	sip_run svg_run webkit_run webkitwidgets_run widgets_run
 USE_PYTHON=	distutils autoplist

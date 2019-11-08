@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libenchant.so:textproc/enchant \
 		libgtkspell.so:textproc/gtkspell
 
-USES=		cpe gmake mono pkgconfig libtool localbase desktop-file-utils
+USES=		cpe desktop-file-utils gmake gnome libtool localbase mono \
+		pkgconfig
 CPE_VENDOR=	pedro_castro
 USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20 gnomedocutils intltool
 USE_GSTREAMER1=	yes

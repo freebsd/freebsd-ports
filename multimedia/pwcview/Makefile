@@ -17,7 +17,7 @@ LIB_DEPENDS=	libv4l1.so:multimedia/libv4l
 
 CONFLICTS=	pwcbsd-[0-9]*
 
-USES=		jpeg
+USES=		jpeg sdl
 USE_SDL=	sdl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
