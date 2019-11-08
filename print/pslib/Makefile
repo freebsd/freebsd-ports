@@ -13,7 +13,8 @@ COMMENT=	C-library for generating multi page PostScript documents
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png \
+LIB_DEPENDS=	libgif.so:graphics/giflib \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		gettext gmake gnome jpeg libtool localbase pathfix pkgconfig
