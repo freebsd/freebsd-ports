@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/HighMoon
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	image sdl
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LIBS}"
 

@@ -20,7 +20,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nickg
 GH_TAGNAME=	cb6513e
 
-USES=		cmake:insource compiler:c++11-lib dos2unix gl pkgconfig sdl
+USES=		cmake:insource compiler:c++11-lib dos2unix gl gnome pkgconfig \
+		sdl
 DOS2UNIX_GLOB=	*.mtl *.obj
 USE_CXXSTD=	c++11
 USE_SDL=	sdl image

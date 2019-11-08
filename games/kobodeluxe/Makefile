@@ -12,7 +12,7 @@ DISTNAME=	KoboDeluxe-${DISTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	SDL port of the scrolling game XKobo
 
-USES=		tar:bzip2
+USES=		sdl tar:bzip2
 USE_SDL=	image sdl
 USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes

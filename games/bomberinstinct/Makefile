@@ -13,7 +13,7 @@ COMMENT=	Bomberman-like multiplayer game
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		gettext gmake
+USES=		gettext gmake sdl
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
 

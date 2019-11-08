@@ -17,7 +17,7 @@ COMMENT=	One- or two-player maze game based on the Entombed
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	image mixer sdl
 
 PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt

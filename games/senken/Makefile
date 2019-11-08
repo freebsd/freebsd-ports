@@ -10,7 +10,7 @@ MASTER_SITES=	GENTOO
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	City simulation game
 
-USES=		pkgconfig
+USES=		gnome pkgconfig sdl
 USE_GNOME=	gtk20
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes

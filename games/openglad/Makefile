@@ -13,7 +13,7 @@ COMMENT=	SDL port of an old DOS game called Gladiator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
 

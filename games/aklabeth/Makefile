@@ -12,8 +12,10 @@ COMMENT=	Remake of Richard Garriott's Ultima prequel
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
+USES=		sdl
 USE_SDL=	sdl
+
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

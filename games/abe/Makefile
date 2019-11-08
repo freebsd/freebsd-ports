@@ -16,7 +16,7 @@ COMMENT=	Abe's Amazing Adventure
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-data-dir=${DATADIR}

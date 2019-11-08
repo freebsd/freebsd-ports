@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	cdrecord:sysutils/cdrtools
 RUN_DEPENDS=	cdrecord:sysutils/cdrtools
 
+USES=		sdl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 

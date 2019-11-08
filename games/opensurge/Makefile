@@ -28,7 +28,7 @@ LIB_DEPENDS=	libalfont.so:x11-fonts/alfont \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-build${SVN_REV}
 
-USES=		cmake dos2unix localbase openal:soft
+USES=		cmake dos2unix gnome localbase openal:soft
 DOS2UNIX_GLOB=	*.bg *.brk *.grp  *.inc *.lev *.lng  *.obj *.qst *.spr *.txt
 
 PORTDOCS=	readme.html

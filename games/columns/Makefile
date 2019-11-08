@@ -16,6 +16,7 @@ COMMENT=	Nice little implementation of columns game for X Window System
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		sdl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 

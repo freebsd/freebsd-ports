@@ -13,7 +13,7 @@ COMMENT=	Tetris clone but a good one with bunch of cool features
 
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
-USES=		gmake localbase
+USES=		gmake localbase sdl
 CONFIGURE_ARGS=	--localstatedir=/var/games
 
 OPTIONS_DEFINE=	NLS

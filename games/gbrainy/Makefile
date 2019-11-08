@@ -18,8 +18,7 @@ BUILD_DEPENDS=	mautil:devel/mono-addins \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	gtksharp20 gnomesharp20 gnomedocutils intltool
-USES=		gettext gmake mono pathfix pkgconfig \
-		shebangfix
+USES=		gettext gmake gnome mono pathfix pkgconfig shebangfix
 SHEBANG_FILES=	src/Clients/Classical/gbrainy.in
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -13,7 +13,7 @@ COMMENT=	Reimplementation of Atomic Bomber Man
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake localbase
+USES=		gmake localbase sdl
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-werror

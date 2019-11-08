@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}-project
 
-USES=		cmake compiler:c11 pkgconfig
+USES=		cmake compiler:c11 pkgconfig sdl
 CMAKE_ARGS=	-DTAISEI_VERSION_OVERRIDE=${PORTVERSION}
 USE_SDL=	sdl2 ttf2 mixer2
 

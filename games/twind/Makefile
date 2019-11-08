@@ -13,6 +13,7 @@ COMMENT=	Match and remove all of the blocks before time runs out
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		sdl
 USE_SDL=	sdl image mixer
 
 PORTDOCS=	AUTHORS CREDITS ChangeLog NEWS README

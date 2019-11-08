@@ -18,7 +18,7 @@ GH_ACCOUNT=	kduske
 GH_PROJECT=	TrenchBroom
 GH_TAGNAME=	ed46601
 
-USES=		cmake:insource compiler:c++11-lib gl pkgconfig
+USES=		cmake:insource compiler:c++11-lib gl gnome pkgconfig
 USE_GL=		glew
 USE_WX=		3.0+
 CMAKE_ARGS=	-DAPP_BUILD_CHANNEL:STRING="Beta for ${OPSYS}/${ARCH}"

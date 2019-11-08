@@ -31,7 +31,7 @@ SOUNDSRC=	${WRKDIR}/${SOUNDISTNAME}
 MUSICSRC=	${WRKDIR}/${MUSICDISTNAME}
 
 USE_SDL=	mixer sdl
-USES=		gettext gmake iconv makeinfo
+USES=		gettext gmake iconv makeinfo sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi

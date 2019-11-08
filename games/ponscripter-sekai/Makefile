@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sekaiproject
 GH_PROJECT=	${PORTNAME:S/sekai/fork/}
 
-USES=		compiler:c++11-lang gmake shebangfix
+USES=		compiler:c++11-lang gmake sdl shebangfix
 USE_SDL=	image2 mixer2
 EXTRACT_AFTER_ARGS=--exclude src/extlib
 SHEBANG_FILES=	util/xml-template

@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	vala:lang/vala
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake perl5 pkgconfig tar:bzip2
+USES=		cmake gnome perl5 pkgconfig sdl tar:bzip2
 USE_PERL5=	build
 USE_GNOME=	gtk20
 USE_SDL=	sdl image mixer

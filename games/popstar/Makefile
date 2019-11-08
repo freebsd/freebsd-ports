@@ -18,7 +18,7 @@ LICENSE=	GPLv2+ CC-BY-SA-2.5 CC-BY-3.0
 LICENSE_COMB=	multi
 LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/docs/COPYING-CC-Attrib30.txt
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	image mixer sdl
 
 PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt

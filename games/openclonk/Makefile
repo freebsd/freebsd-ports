@@ -28,8 +28,8 @@ LIB_DEPENDS=	libalut.so:audio/freealut \
 WRKSRC=		${WRKDIR}/openclonk-release-${PORTVERSION}-src
 
 # make install has parallel issues with ninja
-USES=		compiler:c++14-lang cmake:noninja desktop-file-utils gl jpeg \
-		openal pkgconfig sdl tar:bzip2 xorg
+USES=		cmake:noninja compiler:c++14-lang desktop-file-utils gl gnome \
+		jpeg openal pkgconfig sdl tar:bzip2 xorg
 USE_GL=		gl glew glu
 USE_SDL=	sdl2
 USE_XORG=	x11 xpm

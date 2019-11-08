@@ -13,6 +13,7 @@ COMMENT=	Clone of Activision's classic Atari 2600 console game "Kaboom!"
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+USES=		sdl
 USE_SDL=	mixer image sdl
 
 CPPFLAGS+=	`${SDL_CONFIG} --cflags` -DDATA_PREFIX=\"${DATADIR}/\"

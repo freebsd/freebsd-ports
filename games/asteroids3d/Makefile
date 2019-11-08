@@ -17,7 +17,7 @@ COMMENT=	First-person shooter blowing up asteroids in 3D space
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		autoreconf gl tar:bzip2
+USES=		autoreconf gl gnome tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	with_gamesdir="${PREFIX}/bin" with_gamedatadir="${DATADIR}"
 USE_GL=		glut

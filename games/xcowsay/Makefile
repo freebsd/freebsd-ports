@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USE_GNOME=	cairo gdkpixbuf2 gtk20
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake gnome pkgconfig
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/xcowdream \

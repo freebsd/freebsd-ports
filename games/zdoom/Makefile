@@ -28,7 +28,7 @@ PORTSCOUT=	limit:^.+\.[1-9]{1,3}[1-8]?$$
 
 DATADIR=	${DMDIR}/${PORTNAME}
 
-USES=		cmake	gettext jpeg openal pkgconfig
+USES=		cmake gettext gnome jpeg openal pkgconfig sdl
 USE_GNOME=	atk cairo gdkpixbuf2 gtk20 pango
 USE_SDL=	sdl2
 CMAKE_ARGS=	-DNO_FMOD:BOOL=ON

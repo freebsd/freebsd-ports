@@ -13,7 +13,7 @@ COMMENT=	Atris: Alizarin Tetris
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl ttf
 
 GNU_CONFIGURE=	yes

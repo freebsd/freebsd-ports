@@ -18,6 +18,7 @@ COMMENT=	Your mission is to defend little penguinoids
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
+USES=		sdl
 USE_SDL=	mixer sdl
 
 PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt

@@ -10,6 +10,7 @@ MASTER_SITES=	https://www.libsdl.org/projects/newvox/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voxel-style landscape rendering fly-by
 
+USES=		sdl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lm

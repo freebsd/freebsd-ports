@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYGAME}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10@${PY_FLAVOR} \
 		${PYGAME}
 
-USES=		gettext shebangfix tar:tgz python:2.7
+USES=		gettext gnome python:2.7 shebangfix tar:tgz
 USE_GNOME=	pygtk2
 NO_BUILD=	yes
 NO_ARCH=	yes

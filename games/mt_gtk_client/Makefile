@@ -16,7 +16,7 @@ LIB_DEPENDS=		libmt_client.so:games/libmt_client
 RUN_DEPENDS=		${LOCALBASE}/share/cardpics/images/78.png:games/cardpics
 
 GNU_CONFIGURE=		yes
-USES=			gettext pkgconfig tar:bzip2
+USES=			gettext gnome pkgconfig tar:bzip2
 USE_GNOME=		glib20 gtk20 libxml2
 
 .if !defined(WITHOUT_SERVER)

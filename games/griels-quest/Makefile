@@ -11,6 +11,7 @@ COMMENT=	Griel's Quest for the Sangraal
 
 LICENSE=	GPLv3
 
+USES=		sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	nevat
 GH_TAGNAME=	0282e6a2e3

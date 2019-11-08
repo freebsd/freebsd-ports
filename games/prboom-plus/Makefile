@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg \
 		libpng.so:graphics/png
 
-USES=		gmake localbase
+USES=		gmake localbase sdl
 USE_SDL=	mixer net sdl
 
 GNU_CONFIGURE=	yes
@@ -28,7 +28,8 @@ OPTIONS_DEFAULT=OPENGL
 DATADIR=	${DMDIR}
 
 OPENGL_CONFIGURE_ENABLE=	gl
-OPENGL_USE=	GL=yes
+OPENGL_USES=	gl
+OPENGL_USE=	GL=glu
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \

@@ -13,6 +13,7 @@ COMMENT=	Land a spacecraft on the moon
 
 LICENSE=	BSD2CLAUSE
 
+USES=		sdl
 USE_SDL=	mixer image sdl
 
 WRKSRC=		${WRKDIR}/moon-lander

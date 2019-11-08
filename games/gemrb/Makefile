@@ -24,7 +24,8 @@ OPENGL_USE=	gl=gl,glu,glew
 OPENGL_CMAKE_ON=-DOPENGL_BACKEND=OpenGL
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-USES=		cmake openal:al,alut python:2.7 shebangfix iconv localbase
+USES=		cmake gnome iconv localbase openal:al,alut python:2.7 sdl \
+		shebangfix
 SHEBANG_FILES=	admin/extend2da.py
 USE_SDL=	sdl2
 USE_LDCONFIG=	yes

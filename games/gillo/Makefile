@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${JAM}:devel/jam \
 		${LOCALBASE}/lib/libplibsg.a:x11-toolkits/plib
 LIB_DEPENDS=	libode.so:devel/ode
 
-USES=		gl tar:bzip2
+USES=		gl sdl tar:bzip2
 USE_CXXSTD=	c++98
 USE_GL=		gl glu
 USE_SDL=	sdl

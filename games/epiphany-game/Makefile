@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf localbase
+USES=		autoreconf localbase sdl
 USE_SDL=	sdl mixer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

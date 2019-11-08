@@ -14,7 +14,8 @@ COMMENT=	Extremely addictive realtime worms shoot-em-up
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake:insource compiler:c++11-lang gnome localbase pkgconfig tar:bzip2
+USES=		cmake:insource compiler:c++11-lang gnome localbase pkgconfig \
+		sdl tar:bzip2
 USE_SDL=	sdl image
 USE_GNOME=	libxml2
 
@@ -42,6 +43,7 @@ OPTIONS_DEFINE=	DEDICATED_ONLY DOCS
 
 DEDICATED_ONLY_DESC=		Build dedicated server only
 DEDICATED_ONLY_CMAKE_BOOL=	DEDICATED_ONLY
+DEDICATED_ONLY_USES_OFF=	xorg
 DEDICATED_ONLY_USE_OFF=		XORG=x11 SDL=mixer
 DEDICATED_ONLY_LIB_DEPENDS_OFF=	libgd.so:graphics/gd
 

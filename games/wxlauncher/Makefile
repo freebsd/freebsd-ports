@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	scp-fs2open
 GH_PROJECT=	wxLauncher
 
-USES=		cmake openal pkgconfig python:2.7,build
+USES=		cmake openal pkgconfig python:2.7,build sdl
 USE_SDL=	sdl2
 CMAKE_ARGS+=	-DRESOURCES_PATH:STRING="${DATADIR}"
 

@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	liballeg.so:devel/allegro
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils localbase
+USES=		desktop-file-utils gnome localbase
 INSTALLS_ICONS=	yes
 
 DATADIR=	${PREFIX}/share/garden

@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		gmake iconv ncurses
+USES=		gmake iconv ncurses sdl
 USE_SDL=	sdl image mixer net ttf
 ALL_TARGET=	client server
 

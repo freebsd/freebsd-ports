@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 BROKEN_powerpc64=	fails to build: gif2png: error in reading DataBlock: Segmentation fault (core dumped)
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	mixer net sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sdl-net \

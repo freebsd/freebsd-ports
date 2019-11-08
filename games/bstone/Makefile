@@ -12,7 +12,7 @@ COMMENT=	Source port of Blake Stone
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig
+USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	bibendovsky
 USE_SDL=	sdl2

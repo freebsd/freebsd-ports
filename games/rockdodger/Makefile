@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	mixer image sdl
 
 DESKTOP_ENTRIES="Rock Dodger" "" "${PORTNAME}" \

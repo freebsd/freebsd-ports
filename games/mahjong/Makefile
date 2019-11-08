@@ -14,7 +14,7 @@ COMMENT=	Networked Mah Jong program, together with a computer player
 
 LICENSE=	GPLv2+
 
-USES=		gmake perl5 pkgconfig
+USES=		gmake gnome perl5 pkgconfig
 USE_GNOME=	gtk20
 USE_PERL5=	build
 MAKE_ENV=	CCLINK="${CC}" CDEBUGFLAGS="${CFLAGS}" PERL="${PERL}"

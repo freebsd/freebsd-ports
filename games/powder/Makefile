@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}_src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical dungeon crawling game
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl
 USE_CXXSTD=	c++98
 MAKE_JOBS_UNSAFE=yes

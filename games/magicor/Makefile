@@ -37,6 +37,7 @@ OPTIONS_DEFAULT=EDITOR
 OPTIONS_SUB=	yes
 
 EDITOR_DESC=	Enable editor
+EDITOR_USES=	gnome
 EDITOR_USE=	gnome=pygtk2
 
 post-patch:

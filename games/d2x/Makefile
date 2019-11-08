@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix port of Descent 2 Game
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl image
 
 CONFIGURE_ARGS=	--disable-network --disable-debug

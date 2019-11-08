@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
 GH_PROJECT=	${PORTNAME}-sdl
 
-USES=		cmake compiler:c++11-lib
+USES=		cmake compiler:c++11-lib sdl
 CMAKE_ARGS=	-DSYSTEMWIDE=ON
 USE_SDL=	sdl2 image2 ttf2 mixer2
 

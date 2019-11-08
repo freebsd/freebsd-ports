@@ -16,7 +16,8 @@ LIB_DEPENDS=	libgnomecanvasmm-2.6.so:graphics/libgnomecanvasmm26 \
 		libgconfmm-2.6.so:devel/gconfmm26 \
 		libglademm-2.4.so:devel/libglademm24
 
-USES=		compiler:c++11-lang pathfix gettext gmake pkgconfig tar:bzip2
+USES=		compiler:c++11-lang gettext gmake gnome pathfix pkgconfig \
+		tar:bzip2
 USE_CXXSTD=	c++11
 USE_GNOME=	gnomeprefix intlhack libgnome
 GNU_CONFIGURE=	yes

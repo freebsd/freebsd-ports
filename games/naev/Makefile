@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libzip.so:archivers/libzip
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/${DISTNAME}-ndata.zip:games/naev-data
 
-USES=		autoreconf:build compiler:features gl gmake gnome pkgconfig \
+USES=		autoreconf:build compiler:features gl gmake gnome pkgconfig sdl \
 		tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GL=		gl glu

@@ -26,7 +26,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 WRKSRC=		${WRKDIR}/vulture-${PORTVERSION}/nethack
 CONFIGURE_WRKSRC=	${WRKSRC}/sys/unix
 
-USES=		bison gmake tar:xz
+USES=		bison gmake sdl tar:xz
 USE_SDL=	sdl mixer ttf
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	setup.sh

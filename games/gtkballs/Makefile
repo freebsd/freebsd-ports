@@ -13,7 +13,7 @@ COMMENT=	Lines-like simple logic game for X Window System
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/games

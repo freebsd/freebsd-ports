@@ -17,6 +17,8 @@ LICENSE_PERMS=	# empty
 
 RUN_DEPENDS=	timidity:audio/timidity
 
+USES=		sdl
+
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer
 

@@ -29,7 +29,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 EXTRACT_DEPENDS=${UNZIP_CMD}:archivers/unzip
 
-USES=		gmake iconv
+USES=		gmake gnome iconv sdl
 USE_SDL=	image mixer net sdl
 MAKE_ARGS=	CC="${CC}" MAKE="${MAKE_CMD}" OPTIONS="${CFLAGS}" \
 		RO_GAME_DIR="${DATADIR}" \

@@ -12,7 +12,7 @@ COMMENT=	Classic WW1 biplane game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig sdl
 USE_SDL=	sdl
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYGAME} \
 
 USE_GITHUB=	yes
 
-USES=		python:2.7
+USES=		python:2.7 sdl
 USE_PYTHON=	autoplist distutils
 USE_SDL=	image mixer
 PORTDOCS=	AUTHORS Changelog README.txt TODO

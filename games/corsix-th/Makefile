@@ -16,8 +16,8 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem \
 		${LUA_MODLIBDIR}/lpeg.so:devel/lua-lpeg
 
-USES=		cmake:insource compiler:c++11-lib desktop-file-utils dos2unix iconv \
-		lua pkgconfig
+USES=		cmake:insource compiler:c++11-lib desktop-file-utils dos2unix \
+		iconv lua pkgconfig sdl
 USE_SDL=	mixer2
 DOS2UNIX_FILES=	CMake/FindFFmpeg.cmake \
 		CorsixTH/CMakeLists.txt \
@@ -25,6 +25,7 @@ DOS2UNIX_FILES=	CMake/FindFFmpeg.cmake \
 CMAKE_ARGS=	-DWITH_LUAJIT=OFF
 CFLAGS+=	-I${ICONV_PREFIX}/include
 DATADIR=	${PREFIX}/share/corsix-th
+
 DESKTOP_ENTRIES=	"CorsixTH" \
 			"${COMMENT}" \
 			"${PREFIX}/share/pixmaps/corsix-th.png" \

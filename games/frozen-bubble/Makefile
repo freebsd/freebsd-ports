@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-SDL>=2.511:devel/p5-SDL \
 		p5-Compress-Bzip2>=0:archivers/p5-Compress-Bzip2 \
 		p5-Alien-SDL>=1.413:devel/p5-Alien-SDL
 
-USES=		compiler:features gettext-runtime perl5 pkgconfig tar:bzip2
+USES=		compiler:features gettext-runtime gnome perl5 pkgconfig sdl \
+		tar:bzip2
 USE_GNOME=	glib20
 USE_PERL5=	modbuild
 USE_SDL=	mixer pango sdl ttf

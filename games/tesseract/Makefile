@@ -31,7 +31,7 @@ OPTIONS_MULTI=	FLAVOR
 OPTIONS_MULTI_FLAVOR=CLIENT DEDICATED MASTER
 
 CLIENT_DESC=		Build client
-CLIENT_USES=		gl xorg
+CLIENT_USES=		gl sdl xorg
 CLIENT_USE=		GL=gl SDL=image2,mixer2 XORG=x11
 CLIENT_ALL_TARGET=	client
 CLIENT_PLIST_FILES=	bin/tess_client libexec/tess_client

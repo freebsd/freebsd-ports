@@ -13,7 +13,7 @@ COMMENT=	Puzzle game similar to PipeMania
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 

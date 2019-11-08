@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	itstool:textproc/itstool
 RUN_DEPENDS=	yelp:x11/yelp
 
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake gnome pkgconfig
 USE_GNOME=	gnomeprefix gtk30 intltool libgnome librsvg2
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes

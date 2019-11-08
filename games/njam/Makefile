@@ -17,7 +17,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake localbase
+USES=		gmake localbase sdl
 USE_SDL=	mixer image net sdl
 
 PORTDOCS=	*

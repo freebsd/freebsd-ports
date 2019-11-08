@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	dorkster
 
-USES=		cmake
+USES=		cmake sdl
 CMAKE_ARGS=	-DDATADIR="${DATADIR_REL}"
 USE_SDL=	sdl mixer image ttf
 

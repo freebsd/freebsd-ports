@@ -20,7 +20,8 @@ i386_BUILD_DEPENDS=	ghc:lang/ghc
 LIB_DEPENDS=		libphysfs.so:devel/physfs \
 			libpng.so:graphics/png
 
-USES=		cmake:noninja desktop-file-utils fpc gl lua:51 qt:5 tar:bzip2 pkgconfig
+USES=		cmake:noninja desktop-file-utils fpc gl lua:51 pkgconfig qt:5 \
+		sdl tar:bzip2
 USE_SDL=	sdl2 mixer2 image2 ttf2 net2
 USE_FPC=	opengl libpng rtl-objpas
 USE_QT=		core gui widgets network \

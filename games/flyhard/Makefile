@@ -20,7 +20,7 @@ BROKEN_armv7=	dumps core: Assertion failed: (!NodePtr->isKnownSentinel()), funct
 LIB_DEPENDS=	libpng.so:graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
-USES=		gmake localbase
+USES=		gmake localbase sdl
 GNU_CONFIGURE=	yes
 USE_CXXSTD=	c++98
 USE_SDL=	sdl mixer

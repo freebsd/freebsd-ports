@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	blynn
 GH_TAGNAME=	cb6b089
 
-USES=		gmake iconv sdl xorg
+USES=		gmake gnome iconv sdl xorg
 USE_SDL=	sdl ttf
 USE_XORG=	x11 xau xdmcp
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}

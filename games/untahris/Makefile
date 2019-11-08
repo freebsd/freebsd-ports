@@ -11,7 +11,7 @@ EXTRACT_SUFX=	-src.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Play several classic fun, simple arcade games in multiplayer mode
 
-USES=		dos2unix
+USES=		dos2unix sdl
 USE_SDL=	sdl net ttf mixer
 DOS2UNIX_FILES=	intface.cpp
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -16,7 +16,7 @@ COMMENT=	Game like Monopoly(tm)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		localbase:ldflags pkgconfig
+USES=		gnome localbase:ldflags pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 

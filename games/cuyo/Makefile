@@ -13,7 +13,7 @@ COMMENT=	Nice, innovative, challenging Tetris-like game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake iconv localbase:ldflags sdl xorg
+USES=		gmake gnome iconv localbase:ldflags sdl xorg
 USE_SDL=	mixer image
 USE_XORG=	x11 xau xdmcp
 GNU_CONFIGURE=	yes

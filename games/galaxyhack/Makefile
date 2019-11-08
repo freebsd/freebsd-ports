@@ -27,7 +27,7 @@ FLEETS_DESC=	Additional fleets
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-USES=		compiler:c++11-lang dos2unix gmake tar:bzip2
+USES=		compiler:c++11-lang dos2unix gmake sdl tar:bzip2
 USE_SDL=	gfx image mixer sdl
 ALL_TARGET=	${PORTNAME}
 

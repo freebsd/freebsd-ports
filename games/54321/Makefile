@@ -14,7 +14,7 @@ COMMENT=	Five games in four-, three-, or two-dimensions for one player
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake tar:tgz
+USES=		gmake sdl tar:tgz
 USE_SDL=	image sdl
 MAKEFILE=	GNUmakefile
 

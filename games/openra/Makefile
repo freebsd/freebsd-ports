@@ -39,7 +39,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	OpenRA
 
 NO_ARCH=	yes
-USES=		desktop-file-utils gmake lua:51,run mono:nuget openal:soft \
+USES=		desktop-file-utils gmake lua:51,run mono:nuget openal:soft sdl \
 		shared-mime-info shebangfix
 USE_SDL=	sdl2
 NUGET_LAYOUT=	flat

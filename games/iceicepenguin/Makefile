@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/"ice ice penguin"
 
-USES=		python:run shebangfix zip
+USES=		gnome python:run shebangfix zip
 SHEBANG_FILES=	iceicepengui.py
 NO_BUILD=	yes
 NO_ARCH=	yes

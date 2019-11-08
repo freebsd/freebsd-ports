@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 RUN_DEPENDS=	${PYGAME}
 
-USES=		python:2.7 shebangfix
+USES=		gnome python:2.7 shebangfix
 SHEBANG_FILES=	TuxFighter54.py
 
 PORTDOCS=	readme_TuxFighter54.txt

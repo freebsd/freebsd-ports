@@ -12,6 +12,7 @@ COMMENT=	Cross-platform port of l'Abbaye des Morts by Locomalito
 LICENSE=	GPLv3 CC-BY-3.0
 LICENSE_COMB=	multi
 
+USES=		sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	nevat
 GH_PROJECT=	${PORTNAME}-gpl

@@ -19,7 +19,7 @@ COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 LIB_DEPENDS=	libpng.so:graphics/png
 
 EXTRAS=		1pl2 2
-USES=		shebangfix pkgconfig perl5 tar:bzip2
+USES=		gnome perl5 pkgconfig shebangfix tar:bzip2
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
 USE_GNOME=	gtk20

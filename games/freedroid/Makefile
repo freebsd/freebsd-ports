@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		iconv jpeg
+USES=		iconv jpeg sdl
 USE_SDL=	mixer image sdl
 
 GNU_CONFIGURE=	yes

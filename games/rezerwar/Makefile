@@ -11,7 +11,7 @@ MASTER_SITES=	http://tamentis.com/projects/rezerwar/files/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game involving organizing blocks with pipes
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	sdl mixer
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	Unix

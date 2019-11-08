@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 
-USES=		gmake
+USES=		gmake sdl
 USE_SDL=	mixer net sdl
 
 GNU_CONFIGURE=	yes
@@ -31,6 +31,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 SUB_FILES=	pkg-message
 
 OPENGL_CONFIGURE_ENABLE=	gl
-OPENGL_USE=	GL=yes
+OPENGL_USES=	gl
+OPENGL_USE=	GL=glu
 
 .include <bsd.port.mk>

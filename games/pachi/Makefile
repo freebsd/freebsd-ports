@@ -12,7 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Platform game similar to Manic Miner
 
 USE_SDL=	mixer sdl
-USES=		gmake tar:tgz
+USES=		gmake sdl tar:tgz
 GNU_CONFIGURE=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib

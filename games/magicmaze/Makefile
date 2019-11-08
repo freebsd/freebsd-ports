@@ -16,7 +16,7 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING_GPL.txt
 
 RUN_DEPENDS=	ruby${RUBY_SUFFIX}-sdl>=0:devel/ruby-sdl
 
-USES=		shebangfix
+USES=		sdl shebangfix
 SHEBANG_FILES=	mm.rb testmm.rb
 USE_SDL=	sdl image mixer
 USE_RUBY=	yes

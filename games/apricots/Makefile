@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.fishies.org.uk/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fly a little plane around and shoot things and drop bombs
 
-USES=		dos2unix
+USES=		dos2unix sdl
 USE_SDL=	sdl
 USE_CXXSTD=	c++98
 DOS2UNIX_GLOB=	*.cpp

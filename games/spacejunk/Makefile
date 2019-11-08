@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_aarch64=	Fails to compile: error: _compile_time_assert__ declared as an array with a negative size
 BROKEN_sparc64=	Doesn't compile on sparc64
 
-USES=		dos2unix localbase
+USES=		dos2unix localbase sdl
 USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image
