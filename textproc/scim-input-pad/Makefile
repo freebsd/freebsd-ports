@@ -14,7 +14,7 @@ COMMENT=	SCIM add-on to input various symbols with customisable on-screen pad
 LIB_DEPENDS=	libscim-1.0.so:textproc/scim
 
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig libtool
+USES=		gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -34,7 +34,7 @@ OPTIONS_DEFINE=	DOCS NLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
+USES+=		gettext gnome
 USE_GNOME=	intlhack
 PLIST_SUB+=	NLS=""
 .else

@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR
 LIB_DEPENDS=	libibus-1.0.so:textproc/ibus
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		autoreconf gmake pkgconfig python:3.4+
+USES=		autoreconf gmake gnome pkgconfig python:3.4+
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	kaio

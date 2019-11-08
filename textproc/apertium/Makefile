@@ -17,7 +17,7 @@ LIB_DEPENDS=	liblttoolbox3.so:textproc/lttoolbox \
 		libpcre.so:devel/pcre
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf pathfix pkgconfig libtool localbase:ldflags
+USES=		autoreconf gnome libtool localbase:ldflags pathfix pkgconfig
 USE_GNOME=	libxml2 libxslt
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

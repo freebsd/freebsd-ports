@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-Levenshtein>0:devel/py-python-Levensh
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
 		${LOCALBASE}/share/gir-1.0/IBus-1.0.gir:textproc/ibus
 
-USES=		gmake python:3.4+ shebangfix
+USES=		gmake gnome python:3.4+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	salty-horse
 USE_GNOME=	glib20 pygobject3

@@ -18,7 +18,7 @@ RUN_DEPENDS=	stixfonts>0:x11-fonts/stix-fonts
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 pango intltool gdkpixbuf2 libxml2 introspection:build
 
 CONFIGURE_ARGS=	--disable-gtk-doc-html \

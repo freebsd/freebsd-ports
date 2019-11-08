@@ -20,7 +20,7 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib gmake gperf libtool pathfix perl5 \
+USES=		compiler:c++11-lib gmake gnome gperf libtool pathfix perl5 \
 		pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build

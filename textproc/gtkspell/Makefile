@@ -15,7 +15,7 @@ COMMENT=	GTK+ 2 spell checking component
 
 LIB_DEPENDS=	libenchant.so:textproc/enchant
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig
+USES=		gettext gmake gnome libtool:keepla pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk20 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

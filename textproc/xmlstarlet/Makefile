@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	libxslt
-USES=		iconv
+USES=		gnome iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libxml-prefix=${LOCALBASE} \
 		--with-libxslt-prefix=${LOCALBASE} \
