@@ -12,14 +12,21 @@ COMMENT=	Climb a tower and avoid monsters
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake localbase sdl
+USES=		gmake localbase sdl
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/games
 
-OPTIONS_DEFINE=	DOCS
-
 SCOREFILE=	/var/games/toppler/toppler.hsc
+
+PORTDOCS=	*
+PORTDATA=	*
+
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
 
 post-install:
 	@${MV} ${STAGEDIR}${SCOREFILE} ${STAGEDIR}${SCOREFILE}.sample
