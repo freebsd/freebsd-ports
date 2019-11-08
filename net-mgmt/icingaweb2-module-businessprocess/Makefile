@@ -23,7 +23,7 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=		NLS
 
-NLS_USES=	gettext
+NLS_USES=	gettext php
 NLS_USE=	php=intl
 
 WWWDIR?=	${PREFIX}/www/icingaweb2/modules/${PORTNAME:C/^.*-//}

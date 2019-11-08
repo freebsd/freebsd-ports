@@ -26,8 +26,8 @@ OPTIONS_SUB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
 CONFIGURE_ARGS=	--with-spice-gtk
-USES=		autoreconf libtool desktop-file-utils gmake pkgconfig \
-		shared-mime-info cpe gettext-tools
+USES=		autoreconf cpe desktop-file-utils gettext-tools gmake gnome \
+		libtool pkgconfig shared-mime-info
 USE_GNOME=	gtk30
 INSTALLS_ICONS=	yes
 CPE_VENDOR=	redhat

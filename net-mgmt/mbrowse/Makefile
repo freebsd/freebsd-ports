@@ -14,7 +14,7 @@ LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mbrowse
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--with-snmp-prefix=${PREFIX} --with-snmp-type=net
 CPPFLAGS+=	`net-snmp-config --cflags`

@@ -12,9 +12,9 @@ COMMENT=	Automated import of your VMs and Physical Host from VMware Sphere
 RUN_DEPENDS=	icingaweb2>=2.4.1:net-mgmt/icingaweb2 \
 		${LOCALBASE}/www/icingaweb2/modules/director/run.php:net-mgmt/icingaweb2-module-director
 
+USES=		php
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
-
 USE_PHP=	posix soap
 
 NO_BUILD=	yes

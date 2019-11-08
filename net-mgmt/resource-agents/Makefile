@@ -20,7 +20,7 @@ CONFLICTS=	heartbeat-[0-9]*
 USE_GITHUB=	yes
 GH_ACCOUNT=	ClusterLabs
 
-USES=		autoreconf gmake pkgconfig python shebangfix
+USES=		autoreconf gmake gnome pkgconfig python shebangfix
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-fatal-warnings

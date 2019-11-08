@@ -16,7 +16,7 @@ BROKEN=		unfetchable
 LIB_DEPENDS=	libgsnmp.so:net-mgmt/gsnmp
 
 GNU_CONFIGURE=	yes
-USES=		gmake ncurses pkgconfig readline
+USES=		gmake gnome ncurses pkgconfig readline
 USE_GNOME=	libxml2
 
 INFO=		scli
