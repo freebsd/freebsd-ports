@@ -15,7 +15,7 @@ BUILD_DEPENDS=	irssi:irc/irssi
 LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gettext-runtime pkgconfig
+USES=		gettext-runtime gnome pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

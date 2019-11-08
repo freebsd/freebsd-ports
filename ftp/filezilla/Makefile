@@ -25,7 +25,8 @@ LIB_DEPENDS=	libfilezilla.so:ftp/libfilezilla \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 INSTALLS_ICONS=	yes
-USES=		compiler:c++14-lang gmake iconv:wchar_t localbase pkgconfig sqlite tar:bzip2
+USES=		compiler:c++14-lang gmake gnome iconv:wchar_t localbase \
+		pkgconfig sqlite tar:bzip2
 USE_GNOME=	cairo gtk20
 USE_WX=		3.0
 WX_CONF_ARGS=	relative

@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 PORTSCOUT=	skipv:3.12
 
-USES=		gettext shebangfix zip
+USES=		gettext php shebangfix zip
 SHEBANG_FILES=	report_runner.php \
 		build/make_release.sh \
 		build/check_syntax.sh

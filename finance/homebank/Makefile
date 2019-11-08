@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libosp.so:textproc/opensp
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake localbase pkgconfig \
+USES=		desktop-file-utils gettext gmake gnome localbase pkgconfig \
 		shared-mime-info
 USE_GNOME=	cairo gtk30 intltool
 INSTALLS_ICONS=	yes

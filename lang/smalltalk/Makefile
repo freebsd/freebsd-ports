@@ -50,6 +50,7 @@ OPTIONS_DEFAULT=	PGSQL SDL
 OPTIONS_SUB=	yes
 
 PGSQL_USES=	pgsql
+SDL_USES=	sdl
 SDL_USE=	SDL=image,mixer,sdl,sound,ttf
 
 post-patch:

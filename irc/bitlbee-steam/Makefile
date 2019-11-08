@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 BUILD_DEPENDS=	bitlbee:irc/bitlbee
 
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf gnome libtool pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-plugindir=${PREFIX}/lib/bitlbee

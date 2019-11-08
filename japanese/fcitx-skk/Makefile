@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
 		libskk.so:japanese/libskk
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		tar:xz compiler:c++11-lang cmake gettext pkgconfig
+USES=		cmake compiler:c++11-lang gettext gnome pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 CMAKE_ARGS+=	-DSKK_DEFAULT_PATH=${LOCALBASE}/share/skk/SKK-JISYO.L
 
