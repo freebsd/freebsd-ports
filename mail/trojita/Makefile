@@ -25,8 +25,8 @@ CMAKE_ARGS+=	-DWITH_CLEARTEXT_PLUGIN:STRING=ON -DWITH_DBUS:STRING=ON \
 		-DWITH_SHARED_PLUGINS:STRING=ON -DWITH_TESTS:STRING=OFF \
 		-DWITH_ZLIB:STRING=ON \
 		-DWITH_QT5:STRING=ON
-USES=		cmake compiler:c++11-lib cpe desktop-file-utils localbase:ldflags \
-		qt:5 tar:xz
+USES=		cmake compiler:c++11-lib cpe desktop-file-utils gnome \
+		localbase:ldflags qt:5 tar:xz
 USE_QT=		buildtools_build linguisttools_build qmake_build \
 		core dbus gui network sql sql-sqlite3 svg webkit widgets
 

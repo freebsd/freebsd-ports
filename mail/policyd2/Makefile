@@ -47,12 +47,15 @@ PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 
 .if ${PORT_OPTIONS:MWEBUI}
 . if ${PORT_OPTIONS:MMYSQL}
+USES+=		php
 USE_PHP=	pdo_mysql
 . endif
 . if ${PORT_OPTIONS:MSQLITE}
+USES+=		php
 USE_PHP=	pdo_sqlite
 . endif
 . if ${PORT_OPTIONS:MPGSQL}
+USES+=		php
 USE_PHP=	pdo_pgsql
 . endif
 .endif

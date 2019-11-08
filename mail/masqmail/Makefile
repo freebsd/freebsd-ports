@@ -12,7 +12,7 @@ COMMENT=	Mail server for hosts, not permanently connected to the internet
 LICENSE=	GPLv2
 
 USE_GNOME=	glib20
-USES=		pkgconfig
+USES=		gnome pkgconfig
 USE_RC_SUBR=	masqmail
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-trigraphs

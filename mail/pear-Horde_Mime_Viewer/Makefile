@@ -12,7 +12,7 @@ CONFLICTS=	horde-3*
 
 USE_HORDE_BUILD=	Horde_Role
 
-USES=	horde
+USES=		horde php
 USE_HORDE_RUN=	Horde_Role \
 		Horde_Browser \
 		Horde_Compress \
