@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsofia-sip-ua.so:net/sofia-sip \
 		libdbus-glib-1.so:devel/dbus-glib
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake ssl
+USES=		gmake gnome pkgconfig ssl
 USE_GNOME=	glib20
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ BUILD_DEPENDS=	pidgin:net-im/pidgin \
 RUN_DEPENDS=	pidgin:net-im/pidgin \
 		xosd>=2.2.12:misc/xosd
 
-USES=		gmake libtool pkgconfig tar:bzip2
+USES=		gmake gnome libtool pkgconfig tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 

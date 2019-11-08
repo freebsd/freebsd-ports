@@ -24,7 +24,7 @@ BUILD_DEPENDS=	pidgin:net-im/pidgin
 RUN_DEPENDS=	pidgin:net-im/pidgin
 
 GNU_CONFIGURE=	yes
-USES=		gmake gettext libtool pkgconfig autoreconf
+USES=		autoreconf gettext gmake gnome libtool pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool
 USE_LDCONFIG=	yes
 

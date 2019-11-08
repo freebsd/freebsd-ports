@@ -16,7 +16,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmarkdown.a:textproc/discount
 RUN_DEPENDS=	pidgin:net-im/pidgin
 
-USES=		gmake pkgconfig zip
+USES=		gmake gnome pkgconfig zip
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

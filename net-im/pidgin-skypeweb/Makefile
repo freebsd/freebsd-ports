@@ -17,7 +17,8 @@ RUN_DEPENDS=	pidgin:net-im/pidgin
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libpurple.so:net-im/libpurple
 
-USES=		cmake dos2unix gettext-runtime localbase:ldflags pkgconfig
+USES=		cmake dos2unix gettext-runtime gnome localbase:ldflags \
+		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
 GH_PROJECT=	skype4pidgin

@@ -11,7 +11,8 @@ DISTNAME=	pidgin-${PORTVERSION}
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
 
-USES+=		cpe gettext gmake libtool localbase pathfix pkgconfig tar:bzip2
+USES+=		cpe gettext gmake gnome libtool localbase pathfix pkgconfig \
+		tar:bzip2
 USE_GNOME?=	gnomeprefix intltool glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
