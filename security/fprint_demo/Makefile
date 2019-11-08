@@ -13,7 +13,7 @@ COMMENT=	Demo and test application for libfprint
 
 LIB_DEPENDS=	libfprint.so:security/libfprint
 
-USES=		autoreconf pkgconfig desktop-file-utils
+USES=		autoreconf desktop-file-utils gnome pkgconfig
 USE_GNOME=	atk glib20 gtk20 pango
 INSTALLS_ICONS=	yes
 

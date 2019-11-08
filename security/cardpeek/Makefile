@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	pcscd:devel/pcsc-lite
 
-USES=		iconv localbase lua pkgconfig
+USES=		gnome iconv localbase lua pkgconfig
 USE_GNOME=	gtk30
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

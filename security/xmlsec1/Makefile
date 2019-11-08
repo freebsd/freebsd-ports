@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libltdl.so:devel/libltdl
 
-USES=		libtool localbase pathfix pkgconfig ssl gmake
+USES=		gmake gnome libtool localbase pathfix pkgconfig ssl
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

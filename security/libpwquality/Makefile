@@ -11,7 +11,7 @@ COMMENT=	Library for generating random passwords and quality checking
 
 LIB_DEPENDS=	libcrack.so:security/cracklib
 
-USES=		gettext gmake localbase libtool pathfix tar:bz2
+USES=		gettext gmake gnome libtool localbase pathfix tar:bz2
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

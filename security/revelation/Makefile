@@ -18,8 +18,8 @@ LIB_DEPENDS=	libcrack.so:security/cracklib
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}cracklib>0:security/py-cracklib@${PY_FLAVOR}
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig python:2.7 \
-		shared-mime-info shebangfix tar:bzip2
+USES=		desktop-file-utils gettext gmake gnome pathfix pkgconfig \
+		python:2.7 shared-mime-info shebangfix tar:bzip2
 SHEBANG_FILES=	src/revelation.py
 USE_GNOME=	gnomeprefix pygnome2 intltool
 GNU_CONFIGURE=	yes

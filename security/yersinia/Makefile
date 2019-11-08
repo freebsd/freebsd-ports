@@ -15,7 +15,7 @@ LIB_DEPENDS=	libnet.so:net/libnet \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		autoreconf ncurses pkgconfig
+USES=		autoreconf gnome ncurses pkgconfig
 USE_GNOME+=	cairo gdkpixbuf2 gtk20 
 PKGNAMESUFFIX=	-gtk
 USE_GITHUB=	yes

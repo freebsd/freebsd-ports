@@ -16,7 +16,7 @@ DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 PKGDIR=		${.CURDIR}
 WRKSRC_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-USES=		dos2unix python:2.7 tar:bzip2
+USES=		dos2unix gnome python:2.7 tar:bzip2
 DOS2UNIX_GLOB=	*.xml
 USE_GNOME=	pygtk2
 USE_PYTHON=	autoplist distutils

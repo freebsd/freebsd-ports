@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 
 NO_ARCH=	yes
 
-USES=		python:2.7 shebangfix tar:bzip2
+USES=		gnome python:2.7 shebangfix tar:bzip2
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
 INSTALLS_ICONS=	yes

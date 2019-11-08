@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vte>=0:x11-toolkits/py-vte@${PY_FLAVOR}
 
 USE_GNOME=	glib20 gnomedocutils intltool libxslt pygobject pygtk2
-USES=		gettext python:2.7 tar:bzip2 waf
+USES=		gettext gnome python:2.7 tar:bzip2 waf
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 
