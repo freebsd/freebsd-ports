@@ -14,7 +14,7 @@ COMMENT?=	Emacs lisp for uim input method library
 
 RUN_DEPENDS=	uim-el-agent:textproc/uim
 
-USES=		emacs gettext-tools gmake iconv perl5 tar:bzip2
+USES=		emacs gettext-tools gmake gnome iconv perl5 tar:bzip2
 USE_GNOME=	intltool
 USE_PERL5=	build
 

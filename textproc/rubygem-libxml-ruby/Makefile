@@ -14,6 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GNOME=	libxml2
 USE_RUBY=	yes
-USES=		gem
+USES=		gem gnome
 
 .include <bsd.port.mk>

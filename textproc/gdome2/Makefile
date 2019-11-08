@@ -10,7 +10,7 @@ MASTER_SITES=	http://gdome2.cs.unibo.it/tarball/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome DOM Engine
 
-USES=		pathfix pkgconfig libtool
+USES=		gnome libtool pathfix pkgconfig
 USE_GNOME=	glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/pkg-config glib-2.0"

@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.mangrove.cz/diffmark/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML diff and merge package
 
-USES=		libtool pkgconfig
+USES=		gnome libtool pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

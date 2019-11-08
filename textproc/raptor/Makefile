@@ -13,7 +13,7 @@ COMMENT=	RDF Parser Toolkit for Redland
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		libtool pathfix
+USES=		gnome libtool pathfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

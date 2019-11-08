@@ -14,7 +14,7 @@ DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
 USE_GNOME=	libxml2
-USES=		python gettext-runtime
+USES=		gettext-runtime gnome python
 USE_PYTHON=	autoplist distutils
 
 CPPFLAGS+=	`${PYTHON_CMD}-config --cflags`

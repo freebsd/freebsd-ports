@@ -9,7 +9,7 @@ MASTER_SITES=	SF/lingoteach/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing lesson files based on the LingoTeach DTD
 
-USES=		gmake pathfix pkgconfig libtool
+USES=		gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

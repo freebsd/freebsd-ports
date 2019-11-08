@@ -20,7 +20,8 @@ OPTIONS_DEFINE=	DOCS
 
 USE_GNOME=	libxml2
 
-USES=		compiler:c++11-lib gmake gperf libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib gmake gnome gperf libtool pathfix pkgconfig \
+		tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

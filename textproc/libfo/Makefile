@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 
 CONFLICTS_INSTALL=	xmlroff-0.6.[12] xmlroff-0.6.2_[12345]
 
-USES=		autoreconf gettext gmake libtool pkgconfig pathfix
+USES=		autoreconf gettext gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	libgnomeprint libxslt \
 		libxml2 gtk20 glib20 pango \
 		librsvg2 gdkpixbuf2

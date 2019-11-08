@@ -23,7 +23,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 CONFLICTS=	raptor-1.4.1[0-9]* raptor-1.4.21
 
 USE_GNOME=	libxml2 libxslt
-USES=		libtool:keepla pathfix pkgconfig
+USES=		gnome libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \

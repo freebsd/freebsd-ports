@@ -17,7 +17,8 @@ RUN_DEPENDS=	rarian-sk-config:textproc/rarian \
 		${PYTHON_SITELIBDIR}/libxml2mod.so:textproc/py-libxml2@${PY_FLAVOR} \
 		docbook-xml>0:textproc/docbook-xml
 
-USES=		gettext-tools:build,run gmake pathfix pkgconfig python:2.7 tar:xz
+USES=		gettext-tools:build,run gmake gnome pathfix pkgconfig \
+		python:2.7 tar:xz
 USE_GNOME=	libxslt intlhack
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
