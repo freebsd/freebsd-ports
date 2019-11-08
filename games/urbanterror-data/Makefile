@@ -15,6 +15,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone realism based mod originally for Quake III Arena
 
+BROKEN_mips=		Fails to install: runaway process
+BROKEN_mips64=		Fails to install: runaway process
+
 NO_BUILD=	yes
 NO_CDROM=	The mod files may not be sold or distributed on physical media unless with permission from id Software.
 
@@ -25,10 +28,6 @@ URT_VER=	${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 URT_REV=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\2/}
 
 PLIST_SUB+=	VER=${URT_VER}
-
-BROKEN_aarch64=		Fails to install: runaway process
-BROKEN_mips=		Fails to install: runaway process
-BROKEN_mips64=		Fails to install: runaway process
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes

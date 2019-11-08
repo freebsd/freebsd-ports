@@ -39,8 +39,6 @@ QMAKE_ARGS+=	QTC_PREFIX=${PREFIX} LLVM_INSTALL_DIR=${PREFIX}/llvm${LLVM_DEFAULT}
 DESKTOP_ENTRIES="Qt Creator" "" "QtProject-qtcreator" \
 		"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
 
-BROKEN_aarch64=		fails to build: invokes x86 asm
-
 PORTDOCS=		*
 
 OPTIONS_DEFINE=		DOCS EXAMPLES QTWEBENGINE

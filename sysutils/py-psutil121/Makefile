@@ -14,7 +14,6 @@ COMMENT=	Process utilities module for Python
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_aarch64=		fails to compile: psutil/_psutil_bsd.c:957:23: error: no member named 'kf_sa_local' in 'struct kinfo_file'
 BROKEN_armv6=		fails to compile: psutil/_psutil_bsd.c:957:23: error: no member named 'kf_sa_local' in 'struct kinfo_file'
 BROKEN_armv7=		fails to compile: psutil/_psutil_bsd.c:957:23: error: no member named 'kf_sa_local' in 'struct kinfo_file'
 BROKEN_mips=		fails to compile: psutil/_psutil_bsd.c:957:23: error: no member named 'kf_sa_local' in 'struct kinfo_file'

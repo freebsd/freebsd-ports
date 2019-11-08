@@ -15,8 +15,6 @@ COMMENT=	Python binding for Xapian
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	fails to build: Fatal Python error: swig_pythreadstate set in XapianSWIG_Python_Thread_Allow ctor
-
 BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 

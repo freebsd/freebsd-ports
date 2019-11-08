@@ -13,8 +13,6 @@ COMMENT=	DJ mixing application
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		fails to compile: Exception("invalid machine type")
-
 BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libFLAC.so:audio/flac \
