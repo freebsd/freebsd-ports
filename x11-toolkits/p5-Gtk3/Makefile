@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Cairo-GObject>=1:devel/p5-Cairo-GObject \
 		p5-Glib-Object-Introspection>=0.016:devel/p5-Glib-Object-Introspection
 
 NO_ARCH=	yes
-USES=		perl5
+USES=		gnome perl5
 USE_PERL5=	configure
 USE_GNOME=	gtk30
 

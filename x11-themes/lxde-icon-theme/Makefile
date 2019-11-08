@@ -12,7 +12,7 @@ COMMENT=	LXDE Icon Theme
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz
+USES=		gnome tar:xz
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 

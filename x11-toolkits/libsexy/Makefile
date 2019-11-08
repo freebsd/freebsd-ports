@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USES=		gettext libtool pathfix pkgconfig
+USES=		gettext gnome libtool pathfix pkgconfig
 USE_GNOME=	gtk20 libxml2
 USE_LDCONFIG=	yes
 

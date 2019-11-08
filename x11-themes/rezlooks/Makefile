@@ -16,7 +16,7 @@ BROKEN=		unfetchable
 WRKSRC=		${WRKDIR}/rezlooks-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig
+USES=		gnome libtool pkgconfig
 USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	ANIMATION

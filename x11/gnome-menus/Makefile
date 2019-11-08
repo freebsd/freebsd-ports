@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the FreeDesktop Desktop Menu Spec
 
-USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
+USES=		gettext gmake gnome libtool pathfix pkgconfig python tar:xz
 USE_GNOME=	glib20 gnomeprefix intlhack \
 		introspection:build
 GNU_CONFIGURE=	yes

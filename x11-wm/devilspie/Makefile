@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libwnck-3.so:x11-toolkits/libwnck3
 
-USES=		gettext gmake pkgconfig tar:xz
+USES=		gettext gmake gnome pkgconfig tar:xz
 USE_GNOME=	libwnck intltool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

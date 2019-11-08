@@ -19,7 +19,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-static
 INSTALLS_ICONS=		yes
 INSTALL_TARGET=		install-strip
-USES=			gettext gmake libtool pkgconfig tar:bzip2
+USES=			gettext gmake gnome libtool pkgconfig tar:bzip2
 USE_LDCONFIG=		yes
 USE_GNOME=		gtk20 intltool
 

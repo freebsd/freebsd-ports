@@ -13,7 +13,7 @@ LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	gtk30
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake gnome pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 

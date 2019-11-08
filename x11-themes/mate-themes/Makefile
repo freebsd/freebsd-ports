@@ -18,7 +18,7 @@ RUN_DEPENDS=	gtk-engines2>=2.15.0:x11-themes/gtk-engines2 \
 
 PORTSCOUT=	limit:^${PORTVERSION:R:S|.|\.|}\.*$$
 
-USES=		gettext gmake localbase pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz
 USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

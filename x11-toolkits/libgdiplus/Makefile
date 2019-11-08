@@ -22,7 +22,8 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
-USES=		cpe gettext-runtime gmake jpeg libtool:keepla pathfix pkgconfig
+USES=		cpe gettext-runtime gmake gnome jpeg libtool:keepla pathfix \
+		pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

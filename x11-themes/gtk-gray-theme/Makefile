@@ -18,6 +18,7 @@ EXPIRATION_DATE=	2019-10-16
 RUN_DEPENDS=	icons-tango>0:x11-themes/icons-tango
 
 NO_BUILD=	yes
+USES=		gnome
 USE_GNOME=	gtk20
 
 do-install:

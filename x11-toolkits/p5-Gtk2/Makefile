@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Cairo>=1:graphics/p5-Cairo \
 		p5-Glib2>=1.280:devel/p5-Glib2 \
 		p5-Pango>=1.220:x11-toolkits/p5-Pango
 
-USES=		gmake perl5
+USES=		gmake gnome perl5
 USE_PERL5=	configure
 USE_GNOME=	gtk20 pango
 

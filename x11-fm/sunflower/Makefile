@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${PY_FLAVOR} \
 
 WRKSRC=		${WRKDIR}/Sunflower
 
-USES=		desktop-file-utils gettext python:2.7 shebangfix tar:tgz
+USES=		desktop-file-utils gettext gnome python:2.7 shebangfix tar:tgz
 USE_GNOME=	gtk20 pygtk2 pygobject
 NO_ARCH=	yes
 INSTALLS_ICONS=	yes

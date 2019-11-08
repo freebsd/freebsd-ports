@@ -15,7 +15,7 @@ LIB_DEPENDS=	libwf-config.so:devel/wf-config
 
 CONFLICTS_INSTALL=	wcmcommander # bin/wcm
 
-USES=		compiler:c++11-lib meson pkgconfig
+USES=		compiler:c++11-lib gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gtk30 libxml2
 GH_ACCOUNT=	WayfireWM

@@ -14,7 +14,7 @@ COMMENT=	Ada graphical toolkit based on Gtk2+
 
 LICENSE=	GPLv2
 
-USES=		ada gmake perl5 pkgconfig tar:bzip2
+USES=		ada gmake gnome perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

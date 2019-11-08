@@ -22,7 +22,8 @@ RUN_DEPENDS=	pam_helper:security/pam_helper \
 		gsettings-desktop-schemas>=3.2.0:devel/gsettings-desktop-schemas \
 		gnome-keyring>=0:security/gnome-keyring
 
-USES=		autoreconf:build gettext gmake libtool pathfix pkgconfig xorg
+USES=		autoreconf:build gettext gmake gnome libtool pathfix pkgconfig \
+		xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_XORG=	x11 xext xxf86vm xscrnsaver

@@ -11,7 +11,7 @@ MASTER_SITES=	https://pwmt.org/projects/girara/download/ \
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	GTK3 Interface Library for Zathura PDF Viewer
 
-USES=		compiler:c11 meson pathfix pkgconfig tar:xz
+USES=		compiler:c11 gnome meson pathfix pkgconfig tar:xz
 PATHFIX_MAKEFILEIN=	Makefile
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_LDCONFIG=	yes

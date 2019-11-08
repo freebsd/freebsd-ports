@@ -14,7 +14,7 @@ COMMENT=	GTK+ tool for managing x11 cut-buffers
 BROKEN=		unfetchable
 
 HAS_CONFIGURE=	yes
-USES=		pkgconfig tar:bzip2
+USES=		gnome pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 
 post-patch:

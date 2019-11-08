@@ -32,7 +32,7 @@ LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp \
 		libfmt.so:devel/libfmt \
 		libwayland-client.so:graphics/wayland
 
-USES=		compiler:c++17-lang meson pkgconfig
+USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gtkmm30
 GH_ACCOUNT=	Alexays

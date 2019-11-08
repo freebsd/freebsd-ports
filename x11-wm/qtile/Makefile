@@ -27,7 +27,7 @@ GH_ACCOUNT=	qtile
 
 USE_GNOME=	pygobject3
 
-USES=		python:3.4+
+USES=		gnome python:3.4+
 USE_PYTHON=	distutils autoplist noflavors
 NO_ARCH=	yes
 

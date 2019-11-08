@@ -19,8 +19,8 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.300:devel/p5-ExtUtils-Depends \
 		p5-Glib2>=1.220:devel/p5-Glib2
 RUN_DEPENDS=	p5-Glib2>=1.220:devel/p5-Glib2
 
+USES=		gnome perl5
 USE_GNOME=	pango
-USES=		perl5
 USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 

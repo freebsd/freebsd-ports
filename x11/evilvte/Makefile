@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.calno.com/${PORTNAME}/
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	VTE based, super lightweight terminal emulator
 
-USES=		pkgconfig gmake tar:xz
+USES=		gmake gnome pkgconfig tar:xz
 HAS_CONFIGURE=	yes
 ALL_TARGET=	evilvte
 INSTALLS_ICONS=	yes

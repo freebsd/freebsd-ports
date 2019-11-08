@@ -21,7 +21,8 @@ OPTIONS_SUB=	yes
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:devel/py-orbit@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ORBit.so:devel/py-orbit@${PY_FLAVOR}
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig python:2.7 tar:bzip2
+USES=		gettext gmake gnome libtool:keepla pathfix pkgconfig python:2.7 \
+		tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	libgnomeui pygtk2
 USE_PYTHON=	flavors

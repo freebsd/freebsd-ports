@@ -13,7 +13,7 @@ COMMENT=	Xfce GTK2 theme engine
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig xfce tar:bzip2
+USES=		gmake gnome libtool pkgconfig tar:bzip2 xfce
 USE_GNOME=	glib20 gtk20
 
 .include <bsd.port.mk>

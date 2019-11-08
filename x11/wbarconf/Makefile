@@ -17,7 +17,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	wbar:x11/wbar
 
 USE_GNOME=	pygobject pygtk2 gtk20
-USES=		gettext desktop-file-utils python:2.7 shebangfix
+USES=		desktop-file-utils gettext gnome python:2.7 shebangfix
 SHEBANG_FILES=	${WRKSRC}/wbarconf
 python_OLD_CMD=	"/usr/bin/env python2"
 NO_BUILD=	yes

@@ -8,7 +8,7 @@ CATEGORIES=	x11 mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	"meta-port" for the MATE base integrated X11 desktop
 
-USES=		metaport
+USES=		mate metaport
 
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf:x11-fonts/dejavu \
 		${LOCALBASE}/share/hal/fdi/information/10freedesktop/10-camera-ptp.fdi:sysutils/hal-info \

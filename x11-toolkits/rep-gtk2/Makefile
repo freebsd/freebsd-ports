@@ -18,7 +18,7 @@ LIB_DEPENDS=	librep.so:lang/librep \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		autoreconf gmake libtool pathfix pkgconfig tar:xz
+USES=		autoreconf gmake gnome libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 

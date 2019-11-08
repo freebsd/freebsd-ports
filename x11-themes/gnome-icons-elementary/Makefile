@@ -12,6 +12,7 @@ COMMENT=	Elementary icon set
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gnome
 USE_GITHUB=	yes
 GH_PROJECT=	icons
 

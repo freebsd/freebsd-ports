@@ -14,7 +14,7 @@ BUILD_DEPENDS=	wayland-protocols>=1.17:graphics/wayland-protocols
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libwayland-client.so:graphics/wayland
 
-USES=		compiler:c11 meson pkgconfig
+USES=		compiler:c11 gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gtk30
 GH_ACCOUNT=	cyclopsian

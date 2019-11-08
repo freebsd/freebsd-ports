@@ -19,7 +19,8 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libmagic.so.1:sysutils/file \
 		librfm.so:x11-fm/librfm
 
-USES=		desktop-file-utils gmake libtool:keepla pkgconfig tar:bzip2 shebangfix
+USES=		desktop-file-utils gmake gnome libtool:keepla pkgconfig \
+		shebangfix tar:bzip2
 USE_GNOME=	glib20 gtk20 librsvg2 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}

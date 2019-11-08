@@ -8,7 +8,7 @@ CATEGORIES=	x11 mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	"meta-port" for the MATE integrated X11 desktop
 
-USES=		metaport
+USES=		mate metaport
 
 RUN_DEPENDS=	mate-base>=1.22.0:x11/mate-base \
 		mate-themes>=0:x11-themes/mate-themes \

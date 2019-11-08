@@ -16,6 +16,8 @@ BROKEN=		unfetchable
 BUILD_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.so:x11-themes/gtk-murrine-engine
 RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libmurrine.so:x11-themes/gtk-murrine-engine
 
+USES=		gnome
+
 WRKSRC=	${WRKDIR}/MurrinaFancyClearlooks
 USE_GNOME=	gtk20
 NO_BUILD=	yes
