@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	shiboken2
-DISTVERSION=	5.13.1
+DISTVERSION=	5.13.2
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
+DISTNAME=	pyside-setup-opensource-src-${DISTVERSION}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Python binding generator for C++ libraries
@@ -43,6 +43,6 @@ PLIST_SUB+=	PYVERSTR=.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}
 PLIST_SUB+=	PYVERSTR=-${PYTHON_VERSION}
 .endif
 
-WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${DISTVERSION}/sources/shiboken2
+WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION}/sources/shiboken2
 
 .include <bsd.port.post.mk>

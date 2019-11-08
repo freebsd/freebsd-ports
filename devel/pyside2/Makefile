@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	pyside2
-DISTVERSION=	5.13.1
+DISTVERSION=	5.13.2
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
+DISTNAME=	pyside-setup-opensource-src-${DISTVERSION}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Python Qt bindings for Qt 5.12+
@@ -41,7 +41,7 @@ PLIST_SUB+=	PYVERSTR=-${PYTHON_VERSION}
 
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 
-WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${DISTVERSION}/sources/pyside2
+WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION}/sources/pyside2
 
 post-stage:
 	@${RM} -r ${STAGEDIR}/${PYTHON_SITELIBDIR}/CMakeFiles \

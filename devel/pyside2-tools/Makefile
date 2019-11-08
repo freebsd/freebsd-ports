@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	pyside2-tools
-DISTVERSION=	5.13.1
+DISTVERSION=	5.13.2
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
+DISTNAME=	pyside-setup-opensource-src-${DISTVERSION}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Pyside2 development tools
@@ -40,6 +40,6 @@ LIB_DEPENDS+=	libshiboken2-${PYTHON_VERSION}.so:devel/shiboken2@${PY_FLAVOR} \
 		libpyside2-${PYTHON_VERSION}.so:devel/pyside2@${PY_FLAVOR}
 .endif
 
-WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${DISTVERSION}/sources/pyside2-tools
+WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION}/sources/pyside2-tools
 
 .include <bsd.port.post.mk>
