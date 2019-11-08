@@ -13,8 +13,6 @@ COMMENT=	CalTech mathematical subprogram libraries for Fortran 77
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_aarch64=		fails to compile: error: unknown architecture native
-
 USES=		fortran gmake tar:tgz
 WRKSRC=		${WRKDIR}/MATH77
 MAKEFILE=	makefile
