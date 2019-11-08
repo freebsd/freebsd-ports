@@ -25,12 +25,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CPE_VENDOR=	gnu
 
-#TEST_TARGET=	check
+TEST_TARGET=	check
 
 PLIST_FILES=	bin/gpatch man/man1/gpatch.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^_SHELL =/s,@SHELL@,bash,' \
+	@${REINPLACE_CMD} -e '/^LOG_COMPILER =/,+1s|$$(SHELL)|bash|' \
 		${WRKSRC}/tests/Makefile.in
 
 .include <bsd.port.mk>
