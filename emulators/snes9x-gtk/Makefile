@@ -20,8 +20,8 @@ LIB_DEPENDS=	libpng.so:graphics/png
 USE_GITHUB=	yes
 GH_ACCOUNT=	snes9xgit
 
-USES=		autoreconf compiler:c11 desktop-file-utils gettext gmake \
-		gnome localbase perl5 pkgconfig tar:bzip2 xorg
+USES=		autoreconf compiler:c11 desktop-file-utils gettext gmake gnome \
+		localbase perl5 pkgconfig sdl tar:bzip2 xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool libxml2
 USE_SDL=	sdl2
 USE_XORG=	x11 xext

@@ -49,7 +49,8 @@ GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		weidai11:cryptopp:CRYPTOPP_7_0_0-23-gf320e7d9:cryptopp/externals/cryptopp/cryptopp \
 		xiph:opus:v1.3.1-4-gad8fe90d:opus/externals/opus/opus
 
-USES=		cmake compiler:c++17-lang iconv localbase:ldflags python:2.7,build
+USES=		cmake compiler:c++17-lang iconv localbase:ldflags \
+		python:2.7,build sdl
 USE_SDL=	sdl2
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test

@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes
 
-USES=		compiler:c++11-lang gl gmake qt:5 tar:bzip2 xorg
+USES=		compiler:c++11-lang gl gmake qt:5 sdl tar:bzip2 xorg
 USE_XORG=	x11 xmu
 USE_GL=		gl glu
 USE_QT=		buildtools_build core declarative gui multimedia \

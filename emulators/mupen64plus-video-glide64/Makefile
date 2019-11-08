@@ -9,7 +9,7 @@ COMMENT=	Glide64 video plugin for Mupen64Plus
 
 LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
 
-USES+=		gl
+USES+=		gl sdl
 USE_GL=		gl
 USE_SDL=	sdl2
 

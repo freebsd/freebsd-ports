@@ -13,7 +13,7 @@ DISTNAME_i386=	sublime_text_3_build_${PORTVERSION:S/.//g}_x32
 MAINTAINER=	miguelmclara@gmail.com
 COMMENT=	Sophisticated text editor for code, markup and prose
 
-USES=		desktop-file-utils linux tar:bzip2
+USES=		desktop-file-utils gnome linux tar:bzip2
 USE_LINUX=	xorglibs gtk2
 
 INSTALLS_ICONS=	yes

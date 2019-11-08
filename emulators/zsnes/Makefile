@@ -28,7 +28,7 @@ DEBUGGER_DESC=	ZSNES Debugger
 JMA_DESC=	JMA support
 
 USE_SDL=	sdl
-USES=		gmake tar:bzip2
+USES=		gmake sdl tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-cpucheck
 
@@ -45,8 +45,6 @@ AO_CONFIGURE_ENABLE=	libao
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \

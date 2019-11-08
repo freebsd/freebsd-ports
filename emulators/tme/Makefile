@@ -15,9 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		autoreconf compiler gettext gmake iconv libtool perl5 pkgconfig
+USES=		autoreconf compiler gettext gmake gnome iconv libtool perl5 \
+		pkgconfig
 USE_GNOME=	gdkpixbuf2 gtk20
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --disable-warnings
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}

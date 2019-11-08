@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gconf=auto
-USES=		gettext pkgconfig libtool
+USES=		gettext gnome libtool pkgconfig
 USE_GNOME=	gconf2 libgtkhtml libxslt
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 

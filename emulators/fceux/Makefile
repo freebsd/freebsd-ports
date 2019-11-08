@@ -18,7 +18,8 @@ RUN_DEPENDS=	zenity:x11/zenity
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		compiler:c++0x desktop-file-utils dos2unix localbase:ldflags pkgconfig scons xorg
+USES=		compiler:c++0x desktop-file-utils dos2unix localbase:ldflags \
+		pkgconfig scons sdl xorg
 USE_SDL=	sdl
 USE_XORG=	x11
 

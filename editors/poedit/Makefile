@@ -19,7 +19,8 @@ LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3 \
 		libicui18n.so:devel/icu \
 		liblucene++.so:textproc/luceneplusplus
 
-USES=		bdb compiler:c++11-lib desktop-file-utils gettext gmake pkgconfig
+USES=		bdb compiler:c++11-lib desktop-file-utils gettext gmake gnome \
+		pkgconfig
 USE_WX=		3.0
 WX_CONF_ARGS=	absolute
 WITH_BDB_HIGHEST=	yes

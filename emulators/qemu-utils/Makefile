@@ -6,8 +6,8 @@ MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	QEMU userland utilities
 
 HAS_CONFIGURE=	yes
-USES=		compiler:c11 cpe gmake pkgconfig perl5 python:build tar:xz
-USES+=		gettext-runtime
+USES=		compiler:c11 cpe gettext-runtime gmake gnome perl5 pkgconfig \
+		python:build tar:xz
 USE_GNOME+=	glib20
 MAKE_ENV+=	BSD_MAKE="${MAKE}" PREFIX=${PREFIX}
 CONFLICTS_INSTALL=	qemu-[0-9]* qemu-devel-* qemu-sbruno-*

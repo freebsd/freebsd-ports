@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	uae-[0-9]*
 
-USES=		gmake tar:bzip2
+USES=		gmake gnome sdl tar:bzip2
 USE_GNOME=	gtk20
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes

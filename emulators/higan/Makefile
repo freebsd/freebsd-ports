@@ -45,6 +45,7 @@ GLX_USES=	gl
 GLX_USE=	GL=gl
 GLX_VARS=	VIDEO_DRIVER+=video.glx
 
+SDL_USES=	sdl
 SDL_USE=	XORG=xv SDL=sdl
 SDL_VARS=	VIDEO_DRIVER+=video.sdl
 
@@ -65,6 +66,7 @@ OSS_VARS=	AUDIO_DRIVER+=audio.oss
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_VARS=	AUDIO_DRIVER+=audio.pulseaudio
 
+INPUT_SDL_USES=	sdl
 INPUT_SDL_USE=	SDL=sdl
 INPUT_SDL_VARS=	INPUT_DRIVER+=input.sdl
 
