@@ -26,7 +26,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		compiler:c++11-lib pkgconfig python scons tar:bzip2
+USES=		compiler:c++11-lib gnome pkgconfig python scons tar:bzip2
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 MAKE_ARGS=	INPUT_PLUGINS="`${ECHO} ${INPUT_PLUGINS} | ${TR} ' ' ,`" \

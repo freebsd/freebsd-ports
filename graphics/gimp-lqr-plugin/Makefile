@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app \
 		liblqr-1.so:graphics/liblqr-1
 
-USES=		compiler:c++11-lang gettext gmake localbase pkgconfig \
+USES=		compiler:c++11-lang gettext gmake gnome localbase pkgconfig \
 		tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool

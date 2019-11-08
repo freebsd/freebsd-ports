@@ -16,7 +16,7 @@ CONFLICTS=	pcb-[0-9]*
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool localbase pathfix pkgconfig
+USES=		gnome libtool localbase pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

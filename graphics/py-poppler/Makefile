@@ -17,7 +17,7 @@ COMMENT=	Python bindings for the Poppler PDF rendering library
 LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig python:2.7
+USES=		gmake gnome libtool pkgconfig python:2.7
 USE_GNOME=	atk pygtk2
 USE_PYTHON=	flavors
 

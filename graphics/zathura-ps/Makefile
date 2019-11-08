@@ -17,7 +17,8 @@ LIB_DEPENDS=	libspectre.so:print/libspectre
 BUILD_DEPENDS=	zathura:graphics/zathura
 RUN_DEPENDS=	zathura:graphics/zathura
 
-USES=		meson ninja compiler:c11 desktop-file-utils pkgconfig ssl tar:xz
+USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig ssl \
+		tar:xz
 USE_GNOME=	glib20 gtk30
 
 PLIST_FILES=	lib/zathura/libps.so \

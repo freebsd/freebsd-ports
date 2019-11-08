@@ -13,7 +13,7 @@ COMMENT=	Chaos map rendering system with GTK+-2 interface
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		compiler:c++11-lang desktop-file-utils gmake pkgconfig \
+USES=		compiler:c++11-lang desktop-file-utils gmake gnome pkgconfig \
 		shared-mime-info tar:bzip2
 USE_GNOME=	libglade2
 GNU_CONFIGURE=	yes

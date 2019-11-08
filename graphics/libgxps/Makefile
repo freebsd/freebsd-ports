@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
 		liblcms2.so:graphics/lcms2
 
-USES=		gettext jpeg libarchive localbase meson pkgconfig tar:xz
+USES=		gettext gnome jpeg libarchive localbase meson pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo glib20 introspection:build
 

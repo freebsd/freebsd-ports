@@ -12,7 +12,7 @@ COMMENT=	SDL graphics drawing primitives and other support functions
 
 LICENSE=	ZLIB
 
-USES=		gmake libtool pathfix
+USES=		gmake libtool pathfix sdl
 USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

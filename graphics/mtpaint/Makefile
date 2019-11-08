@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libgif.so:graphics/giflib \
 		libfreetype.so:print/freetype2
 
-USES=		desktop-file-utils gmake iconv jpeg pkgconfig tar:bzip2
+USES=		desktop-file-utils gmake gnome iconv jpeg pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \

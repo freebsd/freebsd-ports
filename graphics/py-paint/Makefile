@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=		python:2.7
+USES=		gnome python:2.7
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	libartlgpl2
 NO_WRKSUBDIR=	yes

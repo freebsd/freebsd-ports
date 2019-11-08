@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
-USES=		iconv jpeg libtool pathfix pkgconfig
+USES=		gnome iconv jpeg libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 

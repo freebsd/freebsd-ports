@@ -11,7 +11,7 @@ COMMENT=	Application to view PDF files
 
 LICENSE=	GPLv2
 
-USES=		desktop-file-utils pkgconfig python:2.7 tar:bzip2 waf
+USES=		desktop-file-utils gnome pkgconfig python:2.7 tar:bzip2 waf
 USE_GNOME=	gtk20 glib20 intltool intlhack
 
 MAKE_ENV=	DESTDIR="${STAGEDIR}" \

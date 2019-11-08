@@ -18,7 +18,7 @@ LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/docs/cc-by-sa-3.0.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake gettext-runtime pathfix pkgconfig shebangfix
+USES=		cmake gettext-runtime gnome pathfix pkgconfig shebangfix
 SHEBANG_FILES=	apps/lensfun-update-data apps/lensfun-add-adapter
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

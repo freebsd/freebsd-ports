@@ -61,8 +61,10 @@ EXR_CONFIGURE_ENABLE=	exr
 #SQUISH_CONFIGURE_WITH=	libsquish
 NVTT_LIB_DEPENDS=	libnvtt.so:graphics/nvidia-texture-tools
 NVTT_CONFIGURE_WITH=	nvtt
+X11_USES=		gl
 X11_USE=		GL=glut
 X11_CONFIGURE_OFF=	--disable-opengl --disable-x11 --disable-xpm --disable-shm
+SDL_USES=		sdl
 SDL_USE=		SDL=sdl
 SDL_CONFIGURE_OFF=	--disable-sdl
 SIMD_CONFIGURE_OFF=	--disable-altivec --disable-sse --disable-sse2 --disable-sse3

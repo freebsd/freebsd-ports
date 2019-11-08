@@ -19,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	liberation-fonts-ttf>0:x11-fonts/liberation-fonts-ttf
 
+USES=		sdl
 USE_SDL=	sdl image ttf
 
 PLIST_FILES=	bin/${PORTNAME} \

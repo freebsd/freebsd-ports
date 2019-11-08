@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	zathura:graphics/zathura
 RUN_DEPENDS=	zathura:graphics/zathura
 
-USES=		meson ninja compiler:c11 desktop-file-utils pkgconfig libarchive ssl tar:xz
+USES=		compiler:c11 desktop-file-utils gnome libarchive meson ninja \
+		pkgconfig ssl tar:xz
 USE_GNOME=	glib20 gtk30
 
 PLIST_FILES=	lib/zathura/libcb.so \

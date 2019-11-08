@@ -21,7 +21,7 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	flavors
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-docs
-USES=		gmake libtool pathfix pkgconfig python:2.7 tar:bzip2
+USES=		gmake gnome libtool pathfix pkgconfig python:2.7 tar:bzip2
 INSTALL_TARGET=	install-strip
 
 post-patch:

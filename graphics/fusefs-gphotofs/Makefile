@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 
-USES=		fuse pkgconfig tar:bzip2
+USES=		fuse gnome pkgconfig tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 

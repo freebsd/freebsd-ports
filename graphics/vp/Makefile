@@ -12,7 +12,7 @@ COMMENT=	Image viewer for X
 
 GNU_CONFIGURE=	yes
 LIBS+=		-lm
-USES=		tar:xz
+USES=		sdl tar:xz
 USE_SDL=	image
 
 PLIST_FILES=	bin/vp man/man1/vp.1.gz

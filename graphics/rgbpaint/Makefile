@@ -12,7 +12,7 @@ COMMENT=	Very basic painting program
 
 LICENSE=	GPLv2+
 
-USES=		gettext pkgconfig tar:bzip2
+USES=		gettext gnome pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \

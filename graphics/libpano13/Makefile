@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 USE_GNOME=	gtk20 glib20 pango atk
 
-USES=		autoreconf jpeg libtool pathfix
+USES=		autoreconf gnome jpeg libtool pathfix
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include/gtk-2.0 \
 		-I${LOCALBASE}/include/glib-2.0 \
