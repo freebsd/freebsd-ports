@@ -1,0 +1,11 @@
+MPFR library allows user to conduct floating-point calculations with virtually
+any (restricted by available memory only) precision with correct rounding.
+Besides simple arithmetic operations like "+" and "/" the whole set of
+mathematical functions is supported: sin, sqrt, pow, log, etc.
+
+MPFR defines custom C-language type to represent floating-point number mpfr_t.
+Mathematical manipulations with mpfr_t - variables are done through
+assembler-look-like functions. For instance, to add two numbers x and y with
+result in z special function mpfr_add(z,x,y,GMP_RNDN) should be called.
+
+WWW: http://www.holoborodko.com/pavel/mpfr/

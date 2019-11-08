@@ -371,6 +371,7 @@
     SUBDIR += mpc
     SUBDIR += mpexpr
     SUBDIR += mpfr
+    SUBDIR += mpfrc++
     SUBDIR += mpir
     SUBDIR += mppp
     SUBDIR += mprime
