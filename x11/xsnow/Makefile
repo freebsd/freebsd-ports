@@ -9,7 +9,7 @@ MASTER_SITES=	https://janswaal.home.xs4all.nl/Xsnow/ \
 		LOCAL/fluffy \
 		http://build.miwi.cc/dima/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Create a snowy and Santa-y desktop
 
 BROKEN=		unfetchable
