@@ -2,7 +2,7 @@
 
 PORTNAME=	nstat
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	swills@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	pcm.x:sysutils/intel-pcm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gallatin
-GH_TAGNAME=	5839b41
+GH_TAGNAME=	30de621
 
 PLIST_FILES=	bin/nstat \
 		man/man1/nstat.1.gz
