@@ -1,0 +1,16 @@
+Alfio is a service that lets you choose which services start at boot
+time by using profiles.
+
+For example, if you have a laptop, you might be interested in creating
+a profile for when you have access to an internet connection and one
+for when you don't. You also might need less services when you boot
+your laptop on battery, then decide to save power.
+In some situation you might like to connect through DHCP while in
+others you need a static IP.
+Or you might want to test on your machine how different services
+interact with each other without messing with your safe
+configuration.
+
+Read the man page (man alfio) to learn how to use it.
+
+WWW: https://sourceforge.net/projects/alfio
