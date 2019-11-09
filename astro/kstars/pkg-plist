@@ -593,6 +593,7 @@ share/doc/HTML/it/kstars/details.docbook
 share/doc/HTML/it/kstars/devicemanager.png
 share/doc/HTML/it/kstars/dumpmode.docbook
 share/doc/HTML/it/kstars/ecliptic.docbook
+share/doc/HTML/it/kstars/ekos-logs.docbook
 share/doc/HTML/it/kstars/ellipticalgalaxies.docbook
 share/doc/HTML/it/kstars/epoch.docbook
 share/doc/HTML/it/kstars/equinox.docbook
@@ -1757,6 +1758,7 @@ share/locale/ro/LC_MESSAGES/kstars.mo
 share/locale/ru/LC_MESSAGES/kstars.mo
 share/locale/se/LC_MESSAGES/kstars.mo
 share/locale/si/LC_MESSAGES/kstars.mo
+share/locale/sk/LC_MESSAGES/kstars.mo
 share/locale/sl/LC_MESSAGES/kstars.mo
 share/locale/sq/LC_MESSAGES/kstars.mo
 share/locale/sv/LC_MESSAGES/kstars.mo
