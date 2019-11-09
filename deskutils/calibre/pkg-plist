@@ -1097,6 +1097,7 @@ lib/calibre/calibre/gui2/viewer/overlay.py
 lib/calibre/calibre/gui2/viewer/printing.py
 lib/calibre/calibre/gui2/viewer/shortcuts.py
 lib/calibre/calibre/gui2/viewer/toc.py
+lib/calibre/calibre/gui2/viewer/toolbars.py
 lib/calibre/calibre/gui2/viewer/ui.py
 lib/calibre/calibre/gui2/viewer/web_view.py
 lib/calibre/calibre/gui2/webengine.py
@@ -1142,6 +1143,7 @@ lib/calibre/calibre/plugins/certgen.so
 lib/calibre/calibre/plugins/chmlib.so
 lib/calibre/calibre/plugins/freetype.so
 lib/calibre/calibre/plugins/html.so
+lib/calibre/calibre/plugins/html_as_json.so
 lib/calibre/calibre/plugins/hunspell.so
 lib/calibre/calibre/plugins/icu.so
 lib/calibre/calibre/plugins/imageops.so
@@ -2010,6 +2012,18 @@ share/applications/calibre-ebook-viewer.desktop
 share/applications/calibre-gui.desktop
 share/applications/calibre-lrfviewer.desktop
 share/bash-completion/completions/calibre
+share/bash-completion/completions/calibre-debug
+share/bash-completion/completions/calibre-server
+share/bash-completion/completions/calibre-smtp
+share/bash-completion/completions/ebook-convert
+share/bash-completion/completions/ebook-device
+share/bash-completion/completions/ebook-edit
+share/bash-completion/completions/ebook-meta
+share/bash-completion/completions/ebook-polish
+share/bash-completion/completions/ebook-viewer
+share/bash-completion/completions/fetch-ebook-metadata
+share/bash-completion/completions/lrf2lrs
+share/bash-completion/completions/lrfviewer
 share/icons/hicolor/128x128/apps/calibre-ebook-edit.png
 share/icons/hicolor/128x128/apps/calibre-gui.png
 share/icons/hicolor/128x128/apps/calibre-viewer.png
