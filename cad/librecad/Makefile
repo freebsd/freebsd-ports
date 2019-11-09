@@ -5,6 +5,9 @@ DISTVERSION=	2.2.0-rc1
 PORTREVISION=	10
 CATEGORIES=	cad
 
+PATCH_SITES=	https://github.com/LibreCAD/LibreCAD/commit/
+PATCHFILES=	d0a0ef284b7fcc5c0d65b92c30855f62b637653f.patch:-p1
+
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	2D CAD system
 
