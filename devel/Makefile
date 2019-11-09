@@ -6040,6 +6040,7 @@
     SUBDIR += rubygem-numerizer
     SUBDIR += rubygem-numerizer01
     SUBDIR += rubygem-octopress-hooks
+    SUBDIR += rubygem-oci
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-omniauth_crowd
     SUBDIR += rubygem-omniauth_crowd22

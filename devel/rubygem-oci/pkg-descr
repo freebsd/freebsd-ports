@@ -1,0 +1,5 @@
+This is the Ruby SDK for Oracle Cloud Infrastructure.
+Ruby version 2.2 or later is required.
+
+WWW: https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/rubysdk.htm
+WWW: https://github.com/oracle/oci-ruby-sdk/
