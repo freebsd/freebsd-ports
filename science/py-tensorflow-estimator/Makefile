@@ -13,7 +13,7 @@ COMMENT=	TensorFlow Estimator, an API to simplify machine learning programming
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	bash:shells/bash \
-		bazel:devel/bazel \
+		bazel:devel/bazel029 \
 		${PYTHON_PKGNAMEPREFIX}tensorflow>=1.14.0:science/py-tensorflow@${PY_FLAVOR}
 
 USES=		python shebangfix
