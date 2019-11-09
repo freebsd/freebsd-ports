@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vips
-PORTVERSION=	8.7.4
-PORTREVISION=	10
+PORTVERSION=	8.8.3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -52,14 +51,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
-OPTIONS_DEFINE=		DOCS PYTHON
-OPTIONS_DEFAULT=	PYTHON
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=		DOCS
 
 DOCS_CONFIGURE_ENABLE=	gtk-doc gtk-doc-html
 DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
-
-PYTHON_CONFIGURE_ENABLE=	pyvips8
-PYTHON_USE=			GNOME=pygobject3
 
 .include <bsd.port.mk>
