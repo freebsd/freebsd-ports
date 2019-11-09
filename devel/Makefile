@@ -4555,6 +4555,7 @@
     SUBDIR += py-isort
     SUBDIR += py-iterpipes
     SUBDIR += py-itypes
+    SUBDIR += py-jail
     SUBDIR += py-jaraco
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.context
