@@ -35,11 +35,3 @@ sbin/sun2amd
 sbin/wait4amd
 sbin/wait4amd2die
 sbin/wire-test
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README.attrcache
-%%OPENLDAP%%%%PORTDOCS%%%%DOCSDIR%%/README.ldap
-%%OPENLDAP%%%%PORTDOCS%%%%DOCSDIR%%/ldap-id.txt
-%%OPENLDAP%%%%PORTDOCS%%%%DOCSDIR%%/ldap.schema
