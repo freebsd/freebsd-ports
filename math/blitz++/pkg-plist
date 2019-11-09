@@ -58,12 +58,12 @@ include/blitz/et-forward.h
 include/blitz/etbase.h
 include/blitz/funcs.h
 include/blitz/globeval.cc
-include/blitz/gnu/bzconfig.h
 include/blitz/indexexpr.h
 include/blitz/indexmap-forward.h
 include/blitz/levicivita.h
 include/blitz/limits-hack.h
 include/blitz/listinit.h
+include/blitz/%%COMPILER%%/bzconfig.h
 include/blitz/memblock.cc
 include/blitz/memblock.h
 include/blitz/meta/dot.h
@@ -121,8 +121,3 @@ lib/libblitz.so
 lib/libblitz.so.0
 lib/libblitz.so.0.0.0
 libdata/pkgconfig/blitz.pc
-%%PORTDOCS%%%%DOCSDIR%%/indirect.txt
-%%PORTDOCS%%%%DOCSDIR%%/sinsoid.txt
-%%PORTDOCS%%%%DOCSDIR%%/slice.txt
-%%PORTDOCS%%%%DOCSDIR%%/strideslice.txt
-%%PORTDOCS%%%%DOCSDIR%%/tensor1.txt
