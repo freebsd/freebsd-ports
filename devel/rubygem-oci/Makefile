@@ -1,12 +1,12 @@
-# Created by: Alessandro Sagratini <alessandro.sagratini@gmail.com>
+# Created by: Alessandro Sagratini <ale_sagra@hotmail.com>
 # $FreeBSD$
 
 PORTNAME=	oci
-PORTVERSION=	2.5.11
+PORTVERSION=	2.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	alessandro.sagratini@gmail.com
+MAINTAINER=	ale_sagra@hotmail.com
 COMMENT=	Ruby client for the Oracle Cloud Infrastructure API
 
 LICENSE=	APACHE20
