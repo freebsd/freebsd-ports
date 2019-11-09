@@ -16,6 +16,7 @@ include/bltChain.h
 include/bltDecls.h
 include/bltHash.h
 include/bltList.h
+include/bltOldConfig.h
 include/bltPool.h
 include/bltTree.h
 include/bltVector.h
