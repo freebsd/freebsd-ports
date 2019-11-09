@@ -3,12 +3,12 @@
 
 PORTNAME=	blt
 PORTVERSION=	2.5.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/wize
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Extension to the Tk toolkit
 
 LICENSE=	MIT
