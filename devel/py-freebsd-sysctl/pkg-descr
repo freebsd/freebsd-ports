@@ -1,0 +1,3 @@
+Native Python wrapper for FreeBSD sysctls using libc.
+
+WWW: https://github.com/gronke/py-freebsd_sysctl
