@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pfetch
-DISTVERSION=	0.1
+DISTVERSION=	0.4.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	vulcan@wired.sh
