@@ -1,4 +1,4 @@
---- src/openrct2-ui/input/KeyboardShortcuts.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2-ui/input/KeyboardShortcuts.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2-ui/input/KeyboardShortcuts.cpp
 @@ -19,6 +19,7 @@
  #include <openrct2/core/Path.hpp>
@@ -25,7 +25,7 @@
                  }
                  result = true;
              }
---- src/openrct2/audio/Audio.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/audio/Audio.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/audio/Audio.cpp
 @@ -23,6 +23,7 @@
  #include "../peep/Peep.h"
@@ -35,7 +35,7 @@
  #include "../util/Util.h"
  #include "AudioContext.h"
  #include "AudioMixer.h"
-@@ -350,7 +351,7 @@ void audio_init_ride_sounds_and_info()
+@@ -344,7 +345,7 @@ void audio_init_ride_sounds_and_info()
              try
              {
                  auto fs = FileStream(path, FILE_MODE_OPEN);
@@ -44,9 +44,9 @@
                  if (head == 0x78787878)
                  {
                      rideMusicInfo.length = 0;
---- src/openrct2/common.h.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/common.h.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/common.h
-@@ -75,6 +75,10 @@ const constexpr auto ror64 = ror<uint64_
+@@ -71,6 +71,10 @@ const constexpr auto ror64 = ror<uint64_t>;
  #        define RCT2_ENDIANESS __ORDER_LITTLE_ENDIAN__
  #        define LOBYTE(w) ((uint8_t)(w))
  #        define HIBYTE(w) ((uint8_t)(((uint16_t)(w) >> 8) & 0xFF))
@@ -57,7 +57,7 @@
  #    endif // __BYTE_ORDER__
  
  #    ifndef RCT2_ENDIANESS
---- src/openrct2/core/FileIndex.hpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/core/FileIndex.hpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/core/FileIndex.hpp
 @@ -10,6 +10,7 @@
  #pragma once
@@ -67,7 +67,7 @@
  #include "Console.hpp"
  #include "File.h"
  #include "FileScanner.h"
-@@ -265,6 +266,14 @@ private:
+@@ -265,6 +266,14 @@ template<typename TItem> class FileIndex (private)
  
                  // Read header, check if we need to re-scan
                  auto header = fs.ReadValue<FileIndexHeader>();
@@ -82,7 +82,7 @@
                  if (header.HeaderSize == sizeof(FileIndexHeader) && header.MagicNumber == _magicNumber
                      && header.VersionA == FILE_INDEX_VERSION && header.VersionB == _version && header.LanguageId == language
                      && header.Stats.TotalFiles == stats.TotalFiles && header.Stats.TotalFileSize == stats.TotalFileSize
---- src/openrct2/drawing/Drawing.Sprite.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/drawing/Drawing.Sprite.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/drawing/Drawing.Sprite.cpp
 @@ -16,6 +16,7 @@
  #include "../platform/platform.h"
@@ -92,7 +92,7 @@
  #include "../util/Util.h"
  #include "Drawing.h"
  
-@@ -237,6 +238,8 @@ bool gfx_load_g1(const IPlatformEnvironm
+@@ -238,6 +239,8 @@ bool gfx_load_g1(const IPlatformEnvironment& env)
          auto path = Path::Combine(env.GetDirectoryPath(DIRBASE::RCT2, DIRID::DATA), "g1.dat");
          auto fs = FileStream(path, FILE_MODE_OPEN);
          _g1.header = fs.ReadValue<rct_g1_header>();
@@ -101,7 +101,7 @@
  
          log_verbose("g1.dat, number of entries: %u", _g1.header.num_entries);
  
-@@ -309,6 +312,8 @@ bool gfx_load_g2()
+@@ -310,6 +313,8 @@ bool gfx_load_g2()
      {
          auto fs = FileStream(path, FILE_MODE_OPEN);
          _g2.header = fs.ReadValue<rct_g1_header>();
@@ -110,7 +110,7 @@
  
          // Read element headers
          _g2.elements.resize(_g2.header.num_entries);
---- src/openrct2/object/BannerObject.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/object/BannerObject.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/object/BannerObject.cpp
 @@ -14,6 +14,7 @@
  #include "../localisation/Language.h"
@@ -120,7 +120,7 @@
  #include "ObjectJsonHelpers.h"
  #include "ObjectList.h"
  
-@@ -22,13 +23,14 @@ void BannerObject::ReadLegacy(IReadObjec
+@@ -22,13 +23,14 @@ void BannerObject::ReadLegacy(IReadObjectContext* cont
      stream->Seek(6, STREAM_SEEK_CURRENT);
      _legacyType.banner.scrolling_mode = stream->ReadValue<uint8_t>();
      _legacyType.banner.flags = stream->ReadValue<uint8_t>();
@@ -136,7 +136,7 @@
      SetPrimarySceneryGroup(&sgEntry);
  
      GetImageTable().Read(context, stream);
---- src/openrct2/object/FootpathItemObject.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/object/FootpathItemObject.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/object/FootpathItemObject.cpp
 @@ -15,6 +15,7 @@
  #include "../localisation/Localisation.h"
@@ -166,7 +166,7 @@
      SetPrimarySceneryGroup(&sgEntry);
  
      GetImageTable().Read(context, stream);
---- src/openrct2/object/ImageTable.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/object/ImageTable.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/object/ImageTable.cpp
 @@ -11,6 +11,7 @@
  
@@ -176,7 +176,7 @@
  #include "Object.h"
  
  #include <algorithm>
-@@ -37,8 +38,8 @@ void ImageTable::Read(IReadObjectContext
+@@ -37,8 +38,8 @@ void ImageTable::Read(IReadObjectContext* context, ISt
  
      try
      {
@@ -187,7 +187,7 @@
  
          uint64_t headerTableSize = numImages * 16;
          uint64_t remainingBytes = stream->GetLength() - stream->GetPosition() - headerTableSize;
-@@ -63,15 +64,15 @@ void ImageTable::Read(IReadObjectContext
+@@ -63,15 +64,15 @@ void ImageTable::Read(IReadObjectContext* context, ISt
          {
              rct_g1_element g1Element;
  
@@ -210,7 +210,7 @@
  
              newEntries.push_back(g1Element);
          }
---- src/openrct2/object/LargeSceneryObject.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/object/LargeSceneryObject.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/object/LargeSceneryObject.cpp
 @@ -16,6 +16,7 @@
  #include "../drawing/Drawing.h"
@@ -220,7 +220,7 @@
  #include "../world/Banner.h"
  #include "../world/Location.hpp"
  #include "ObjectJsonHelpers.h"
-@@ -28,8 +29,8 @@ void LargeSceneryObject::ReadLegacy(IRea
+@@ -28,8 +29,8 @@ void LargeSceneryObject::ReadLegacy(IReadObjectContext
      stream->Seek(6, STREAM_SEEK_CURRENT);
      _legacyType.large_scenery.tool_id = stream->ReadValue<uint8_t>();
      _legacyType.large_scenery.flags = stream->ReadValue<uint8_t>();
@@ -231,7 +231,7 @@
      stream->Seek(5, STREAM_SEEK_CURRENT);
      _legacyType.large_scenery.scenery_tab_id = 0xFF;
      _legacyType.large_scenery.scrolling_mode = stream->ReadValue<uint8_t>();
-@@ -38,6 +39,7 @@ void LargeSceneryObject::ReadLegacy(IRea
+@@ -38,6 +39,7 @@ void LargeSceneryObject::ReadLegacy(IReadObjectContext
      GetStringTable().Read(context, stream, OBJ_STRING_ID_NAME);
  
      rct_object_entry sgEntry = stream->ReadValue<rct_object_entry>();
@@ -239,7 +239,7 @@
      SetPrimarySceneryGroup(&sgEntry);
  
      if (_legacyType.large_scenery.flags & LARGE_SCENERY_FLAG_3D_TEXT)
-@@ -112,10 +114,17 @@ void LargeSceneryObject::DrawPreview(rct
+@@ -112,10 +114,17 @@ void LargeSceneryObject::DrawPreview(rct_drawpixelinfo
  std::vector<rct_large_scenery_tile> LargeSceneryObject::ReadTiles(IStream* stream)
  {
      auto tiles = std::vector<rct_large_scenery_tile>();
@@ -257,7 +257,7 @@
          tiles.push_back(tile);
      }
      tiles.push_back({ -1, -1, -1, 255, 0xFFFF });
---- src/openrct2/object/ObjectFactory.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/object/ObjectFactory.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/object/ObjectFactory.cpp
 @@ -20,6 +20,7 @@
  #include "../core/String.hpp"
@@ -267,7 +267,7 @@
  #include "BannerObject.h"
  #include "EntranceObject.h"
  #include "FootpathItemObject.h"
---- src/openrct2/object/ObjectRepository.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/object/ObjectRepository.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/object/ObjectRepository.cpp
 @@ -29,6 +29,7 @@
  #include "../rct12/SawyerChunkReader.h"
@@ -277,7 +277,7 @@
  #include "../util/SawyerCoding.h"
  #include "../util/Util.h"
  #include "Object.h"
-@@ -161,6 +162,7 @@ protected:
+@@ -161,6 +162,7 @@ class ObjectFileIndex final : public FileIndex<ObjectR
          ObjectRepositoryItem item;
  
          item.ObjectEntry = stream->ReadValue<rct_object_entry>();
@@ -285,7 +285,7 @@
          item.Path = stream->ReadStdString();
          item.Name = stream->ReadStdString();
          auto sourceLength = stream->ReadValue<uint8_t>();
-@@ -186,11 +188,12 @@ protected:
+@@ -186,11 +188,12 @@ class ObjectFileIndex final : public FileIndex<ObjectR
                  break;
              case OBJECT_TYPE_SCENERY_GROUP:
              {
@@ -299,7 +299,7 @@
                  }
                  break;
              }
-@@ -363,6 +366,7 @@ public:
+@@ -363,6 +366,7 @@ class ObjectRepository final : public IObjectRepositor
  
          // Check if we already have this object
          rct_object_entry entry = stream->ReadValue<rct_object_entry>();
@@ -307,7 +307,7 @@
          if (FindObject(&entry) != nullptr)
          {
              chunkReader.SkipChunk();
-@@ -622,6 +626,7 @@ private:
+@@ -622,6 +626,7 @@ class ObjectRepository final : public IObjectRepositor
          // Read object data from file
          auto fs = FileStream(item->Path, FILE_MODE_OPEN);
          auto fileEntry = fs.ReadValue<rct_object_entry>();
@@ -315,9 +315,9 @@
          if (!object_entry_compare(entry, &fileEntry))
          {
              throw std::runtime_error("Header found in object file does not match object to pack.");
---- src/openrct2/object/RideObject.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/object/RideObject.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/object/RideObject.cpp
-@@ -22,6 +22,7 @@
+@@ -23,6 +23,7 @@
  #include "../ride/RideGroupManager.h"
  #include "../ride/ShopItem.h"
  #include "../ride/Track.h"
@@ -325,7 +325,7 @@
  #include "ObjectJsonHelpers.h"
  #include "ObjectRepository.h"
  
-@@ -34,7 +35,7 @@ using namespace OpenRCT2;
+@@ -35,7 +36,7 @@ using namespace OpenRCT2;
  void RideObject::ReadLegacy(IReadObjectContext* context, IStream* stream)
  {
      stream->Seek(8, STREAM_SEEK_CURRENT);
@@ -334,7 +334,7 @@
      for (auto& rideType : _legacyType.ride_type)
      {
          rideType = stream->ReadValue<uint8_t>();
-@@ -59,7 +60,7 @@ void RideObject::ReadLegacy(IReadObjectC
+@@ -60,7 +61,7 @@ void RideObject::ReadLegacy(IReadObjectContext* contex
      _legacyType.intensity_multiplier = stream->ReadValue<int8_t>();
      _legacyType.nausea_multiplier = stream->ReadValue<int8_t>();
      _legacyType.max_height = stream->ReadValue<uint8_t>();
@@ -343,7 +343,7 @@
      _legacyType.category[0] = stream->ReadValue<uint8_t>();
      _legacyType.category[1] = stream->ReadValue<uint8_t>();
      _legacyType.shop_item = stream->ReadValue<uint8_t>();
-@@ -94,7 +95,7 @@ void RideObject::ReadLegacy(IReadObjectC
+@@ -108,7 +109,7 @@ void RideObject::ReadLegacy(IReadObjectContext* contex
          uint16_t numPeepLoadingPositions = stream->ReadValue<uint8_t>();
          if (numPeepLoadingPositions == 255)
          {
@@ -352,7 +352,7 @@
          }
  
          if (_legacyType.vehicles[i].flags & VEHICLE_ENTRY_FLAG_LOADING_WAYPOINTS)
-@@ -116,7 +117,7 @@ void RideObject::ReadLegacy(IReadObjectC
+@@ -130,7 +131,7 @@ void RideObject::ReadLegacy(IReadObjectContext* contex
                  entry[1].y = stream->ReadValue<int8_t>();
                  entry[2].x = stream->ReadValue<int8_t>();
                  entry[2].y = stream->ReadValue<int8_t>();
@@ -361,7 +361,7 @@
  
                  _peepLoadingWaypoints[i].push_back(entry);
              }
-@@ -412,19 +413,19 @@ void RideObject::SetRepositoryItem(Objec
+@@ -426,19 +427,19 @@ void RideObject::SetRepositoryItem(ObjectRepositoryIte
  void RideObject::ReadLegacyVehicle(
      [[maybe_unused]] IReadObjectContext* context, IStream* stream, rct_ride_entry_vehicle* vehicle)
  {
@@ -387,7 +387,7 @@
      stream->Seek(15 * 4, STREAM_SEEK_CURRENT);
      vehicle->no_seating_rows = stream->ReadValue<uint8_t>();
      vehicle->spinning_inertia = stream->ReadValue<uint8_t>();
---- src/openrct2/object/SceneryGroupObject.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/object/SceneryGroupObject.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/object/SceneryGroupObject.cpp
 @@ -18,6 +18,7 @@
  #include "../drawing/Drawing.h"
@@ -397,7 +397,7 @@
  #include "ObjectJsonHelpers.h"
  #include "ObjectManager.h"
  #include "ObjectRepository.h"
-@@ -34,7 +35,7 @@ void SceneryGroupObject::ReadLegacy(IRea
+@@ -34,7 +35,7 @@ void SceneryGroupObject::ReadLegacy(IReadObjectContext
      _legacyType.pad_107 = stream->ReadValue<uint8_t>();
      _legacyType.priority = stream->ReadValue<uint8_t>();
      _legacyType.pad_109 = stream->ReadValue<uint8_t>();
@@ -406,7 +406,7 @@
  
      GetStringTable().Read(context, stream, OBJ_STRING_ID_NAME);
      _items = ReadItems(stream);
-@@ -126,6 +127,7 @@ std::vector<rct_object_entry> SceneryGro
+@@ -126,6 +127,7 @@ std::vector<rct_object_entry> SceneryGroupObject::Read
      {
          stream->Seek(-1, STREAM_SEEK_CURRENT);
          auto entry = stream->ReadValue<rct_object_entry>();
@@ -414,7 +414,7 @@
          items.push_back(entry);
      }
      return items;
---- src/openrct2/object/SmallSceneryObject.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/object/SmallSceneryObject.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/object/SmallSceneryObject.cpp
 @@ -17,6 +17,7 @@
  #include "../drawing/Drawing.h"
@@ -452,9 +452,9 @@
      SetPrimarySceneryGroup(&sgEntry);
  
      if (scenery_small_entry_has_flag(&_legacyType, SMALL_SCENERY_FLAG_HAS_FRAME_OFFSETS))
---- src/openrct2/object/WallObject.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/object/WallObject.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/object/WallObject.cpp
-@@ -13,6 +13,7 @@
+@@ -14,6 +14,7 @@
  #include "../drawing/Drawing.h"
  #include "../interface/Cursors.h"
  #include "../localisation/Language.h"
@@ -462,7 +462,7 @@
  #include "../world/Banner.h"
  #include "ObjectJsonHelpers.h"
  
-@@ -23,13 +24,14 @@ void WallObject::ReadLegacy(IReadObjectC
+@@ -24,13 +25,14 @@ void WallObject::ReadLegacy(IReadObjectContext* contex
      _legacyType.wall.flags = stream->ReadValue<uint8_t>();
      _legacyType.wall.height = stream->ReadValue<uint8_t>();
      _legacyType.wall.flags2 = stream->ReadValue<uint8_t>();
@@ -478,7 +478,7 @@
      SetPrimarySceneryGroup(&sgEntry);
  
      GetImageTable().Read(context, stream);
---- src/openrct2/object/WaterObject.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/object/WaterObject.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/object/WaterObject.cpp
 @@ -15,6 +15,7 @@
  #include "../core/IStream.hpp"
@@ -497,7 +497,7 @@
  
      GetStringTable().Read(context, stream, OBJ_STRING_ID_NAME);
      GetImageTable().Read(context, stream);
---- src/openrct2/rct12/SawyerChunkReader.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/rct12/SawyerChunkReader.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/rct12/SawyerChunkReader.cpp
 @@ -10,6 +10,7 @@
  #include "SawyerChunkReader.h"
@@ -515,25 +515,25 @@
          _stream->Seek(header.length, STREAM_SEEK_CURRENT);
      }
      catch (const std::exception&)
-@@ -68,6 +70,7 @@ std::shared_ptr<SawyerChunk> SawyerChunk
+@@ -68,6 +70,7 @@ std::shared_ptr<SawyerChunk> SawyerChunkReader::ReadCh
      try
      {
          auto header = _stream->ReadValue<sawyercoding_chunk_header>();
-+        header.length = ORCT_SwapLEu32(header.length);
-         switch (header.encoding)
-         {
-             case CHUNK_ENCODING_NONE:
---- src/openrct2/rct12/SawyerEncoding.cpp.orig	2019-03-13 20:51:10 UTC
++	header.length = ORCT_SwapLEu32(header.length);
+         if (header.length >= MAX_UNCOMPRESSED_CHUNK_SIZE)
+             throw SawyerChunkException(EXCEPTION_MSG_CORRUPT_CHUNK_SIZE);
+ 
+--- src/openrct2/rct12/SawyerEncoding.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/rct12/SawyerEncoding.cpp
 @@ -10,6 +10,7 @@
  #include "SawyerEncoding.h"
  
  #include "../core/IStream.hpp"
 +#include "../util/Endian.h"
+ #include "RCT12.h"
  
  #include <algorithm>
- 
-@@ -44,7 +45,7 @@ namespace SawyerEncoding
+@@ -45,7 +46,7 @@ namespace SawyerEncoding
              } while (dataSize != 0);
  
              // Read file checksum
@@ -542,7 +542,7 @@
  
              // Rewind back to original position
              stream->SetPosition(initialPosition);
---- src/openrct2/ride/TrackDesignRepository.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/ride/TrackDesignRepository.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/ride/TrackDesignRepository.cpp
 @@ -22,6 +22,7 @@
  #include "../localisation/LocalisationService.h"
@@ -552,7 +552,7 @@
  #include "RideGroupManager.h"
  #include "TrackDesign.h"
  
-@@ -114,7 +115,7 @@ protected:
+@@ -113,7 +114,7 @@ class TrackDesignFileIndex final : public FileIndex<Tr
          item.Path = stream->ReadStdString();
          item.RideType = stream->ReadValue<uint8_t>();
          item.ObjectEntry = stream->ReadStdString();
@@ -561,7 +561,7 @@
          return item;
      }
  
---- src/openrct2/scenario/ScenarioRepository.cpp.orig	2019-03-13 20:51:10 UTC
+--- src/openrct2/scenario/ScenarioRepository.cpp.orig	2019-10-28 20:18:47 UTC
 +++ src/openrct2/scenario/ScenarioRepository.cpp
 @@ -25,6 +25,7 @@
  #include "../localisation/LocalisationService.h"
@@ -571,7 +571,7 @@
  #include "Scenario.h"
  #include "ScenarioSources.h"
  
-@@ -182,17 +183,17 @@ protected:
+@@ -182,17 +183,17 @@ class ScenarioFileIndex final : public FileIndex<scena
          scenario_index_entry item;
  
          stream->Read(item.path, sizeof(item.path));
@@ -594,7 +594,7 @@
          item.highscore = nullptr;
  
          stream->Read(item.internal_name, sizeof(item.internal_name));
-@@ -587,7 +588,7 @@ private:
+@@ -587,7 +588,7 @@ class ScenarioRepository final : public IScenarioRepos
          try
          {
              auto fs = FileStream(path, FILE_MODE_OPEN);
@@ -603,7 +603,7 @@
              if (fileVersion != 1)
              {
                  Console::Error::WriteLine("Invalid or incompatible highscores file.");
-@@ -596,14 +597,14 @@ private:
+@@ -596,14 +597,14 @@ class ScenarioRepository final : public IScenarioRepos
  
              ClearHighscores();
  
@@ -621,7 +621,7 @@
              }
          }
          catch (const std::exception&)
-@@ -647,6 +648,10 @@ private:
+@@ -647,6 +648,10 @@ class ScenarioRepository final : public IScenarioRepos
              {
                  // Read legacy entry
                  auto scBasic = fs.ReadValue<rct_scores_entry>();
@@ -632,7 +632,7 @@
  
                  // Ignore non-completed scenarios
                  if (scBasic.Flags & SCENARIO_FLAGS_COMPLETED)
---- src/openrct2/util/Endian.h.orig	2019-04-04 08:21:55 UTC
+--- src/openrct2/util/Endian.h.orig	2019-10-29 22:14:34 UTC
 +++ src/openrct2/util/Endian.h
 @@ -0,0 +1,70 @@
 +#include <cstdint>
