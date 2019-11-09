@@ -855,6 +855,7 @@
     SUBDIR += parallel
     SUBDIR += pass-otp
     SUBDIR += password-store
+    SUBDIR += password-update
     SUBDIR += passwordsafe
     SUBDIR += patchelf
     SUBDIR += pax-utils
