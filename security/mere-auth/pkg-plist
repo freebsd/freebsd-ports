@@ -1,0 +1,11 @@
+bin/mere-auth
+etc/pam.d/mere
+lib/libmere-auth.so
+lib/libmere-auth.so.0
+lib/libmere-auth.so.0.0
+lib/libmere-auth.so.0.0.1b
+include/mere/auth/mereauth.h
+include/mere/auth/mereaccount.h
+include/mere/auth/mereauthglobal.h
+include/mere/auth/mereapplicant.h
+include/mere/auth/pam/merepam.h
