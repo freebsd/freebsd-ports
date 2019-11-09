@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	helm
-PORTVERSION=	2.15.2
+PORTVERSION=	2.16.0
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/danilo
 
@@ -17,7 +17,7 @@ USES=		go tar:xz
 
 GO_PKGNAME=	k8s.io/helm
 GO_BUILDFLAGS=	-ldflags="-X k8s.io/helm/pkg/version.Version=v${PORTVERSION} \
-		-X k8s.io/helm/pkg/version.GitCommit=cf1de4f8ba70eded310918a8af3a96bfe8e7683b \
+		-X k8s.io/helm/pkg/version.GitCommit=e13bc94621d4ef666270cfbe734aaabf342a49bb \
 		-X k8s.io/helm/pkg/version.BuildMetadata="
 GO_TARGET=	./cmd/${PORTNAME} \
 		./cmd/tiller \
