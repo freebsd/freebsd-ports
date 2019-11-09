@@ -7782,6 +7782,7 @@
 %%WWWDIR%%/db/migrate/20191014132931_remove_index_on_snippets_project_id.rb
 %%WWWDIR%%/db/migrate/20191016072826_replace_ci_trigger_requests_index.rb
 %%WWWDIR%%/db/migrate/20191016220135_add_join_table_for_self_managed_prometheus_alert_issues.rb
+%%WWWDIR%%/db/migrate/20191026041447_change_default_value_of_throttle_protected_paths.rb
 %%WWWDIR%%/db/optional_migrations/composite_primary_keys.rb
 %%WWWDIR%%/db/post_migrate/20180104131052_schedule_set_confidential_note_events_on_webhooks.rb
 %%WWWDIR%%/db/post_migrate/20180119121225_remove_redundant_pipeline_stages.rb
