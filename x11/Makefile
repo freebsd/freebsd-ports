@@ -219,6 +219,7 @@
     SUBDIR += menu-cache
     SUBDIR += menulibre
     SUBDIR += metalock
+    SUBDIR += mere-about
     SUBDIR += mere-utils
     SUBDIR += metisse
     SUBDIR += mkcomposecache
