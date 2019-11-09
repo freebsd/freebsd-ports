@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	noson-app
-DISTVERSION=	3.15.2
+DISTVERSION=	3.16.0
 CATEGORIES=	audio net
 
 MAINTAINER=	tcberner@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libFLAC.so:audio/flac
 
 USES=		cmake compiler:c++11-lang qt:5 ssl
-USE_QT=		core declarative gui network quickcontrols2 \
+USE_QT=		core dbus declarative gui network quickcontrols2 \
 		svg widgets xml \
 		buildtools_build qmake_build
 USE_GITHUB=	yes
