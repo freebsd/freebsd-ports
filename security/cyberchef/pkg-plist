@@ -17,6 +17,7 @@
 %%WWWDIR%%/images/file-32x32.png
 %%WWWDIR%%/images/fork_me.png
 %%WWWDIR%%/index.html
+%%WWWDIR%%/modules/Bletchley.js
 %%WWWDIR%%/modules/Charts.js
 %%WWWDIR%%/modules/Ciphers.js
 %%WWWDIR%%/modules/Code.js
