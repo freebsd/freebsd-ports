@@ -1,11 +1,11 @@
---- kstars/auxiliary/ksutils.cpp.orig	2019-09-08 19:12:11 UTC
+--- kstars/auxiliary/ksutils.cpp.orig	2019-11-07 16:33:51 UTC
 +++ kstars/auxiliary/ksutils.cpp
-@@ -1323,7 +1323,7 @@ bool copyRecursively(QString sourceFolder, QString des
- //One is createLocalAstrometryConf and the other is configureAstrometry
- bool configureLocalAstrometryConfIfNecessary()
+@@ -1419,7 +1419,7 @@ bool createLocalAstrometryConf()
+ 
+ QString getAstrometryConfFilePath()
  {
 -#if defined(Q_OS_LINUX)
 +#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)
-     QString confPath = KSPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Literal("astrometry") + QLatin1Literal("/astrometry.cfg");
-     if (QFileInfo(confPath).exists() == false)
-     {
+     if (Options::astrometryConfFileIsInternal())
+         return KSPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("astrometry") + QLatin1String("/astrometry.cfg");
+ #elif defined(Q_OS_OSX)
