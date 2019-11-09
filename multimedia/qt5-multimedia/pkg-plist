@@ -280,8 +280,8 @@
 %%QT_INCDIR%%/QtMultimediaWidgets/qvideowidgetcontrol.h
 %%QT_CMAKEDIR%%/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfig.cmake
 %%QT_CMAKEDIR%%/Qt5MultimediaWidgets/Qt5MultimediaWidgetsConfigVersion.cmake
-%%QT_CMAKEDIR%%/Qt5MultimediaGstTools/Qt5MultimediaGstToolsConfig.cmake
-%%QT_CMAKEDIR%%/Qt5MultimediaGstTools/Qt5MultimediaGstToolsConfigVersion.cmake
+%%GSTREAMER%%%%QT_CMAKEDIR%%/Qt5MultimediaGstTools/Qt5MultimediaGstToolsConfig.cmake
+%%GSTREAMER%%%%QT_CMAKEDIR%%/Qt5MultimediaGstTools/Qt5MultimediaGstToolsConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5MultimediaQuick/Qt5MultimediaQuickConfig.cmake
 %%QT_CMAKEDIR%%/Qt5MultimediaQuick/Qt5MultimediaQuickConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5Multimedia/Qt5MultimediaConfig.cmake
