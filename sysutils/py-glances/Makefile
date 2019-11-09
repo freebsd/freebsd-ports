@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glances
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,8 @@ COMMENT=	CLI curses based monitoring tool for GNU/Linux and BSD OS
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.3.0:sysutils/py-psutil@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.3.0:sysutils/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}future>=0.15.2:devel/py-future@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
