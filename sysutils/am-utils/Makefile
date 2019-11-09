@@ -34,26 +34,20 @@ MAKE_ENV=	MAKEINFOFLAGS=--no-split
 INSTALL_TARGET=	install-strip
 
 INFO=		am-utils
-DOCS=		AUTHORS BUGS FAQ NEWS README.attrcache
+PORTDOCS=	AUTHORS BUGS FAQ NEWS README.attrcache
 
 OPENLDAP_USES=			localbase:ldflags
 OPENLDAP_USE=			OPENLDAP=yes
 OPENLDAP_CONFIGURE_WITH=	ldap
-OPENLDAP_CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
-				CPPFLAGS="-I${LOCALBASE}/include"
-OPENLDAP_VARS=			DOCS+="README.ldap ldap-id.txt ldap.schema"
+OPENLDAP_PORTDOCS=		README.ldap ldap-id.txt ldap.schema
 
 OPTIONS_SUB=	yes
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/am-utils.info*
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-.endif
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
