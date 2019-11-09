@@ -2,9 +2,11 @@
 bin/shcomp%%93%%
 man/man1/ksh%%93%%.1.gz
 share/ksh/config.ksh
+share/ksh/functions/_cd
 share/ksh/functions/_ksh_print_help
 share/ksh/functions/dirs
 share/ksh/functions/man
+share/ksh/functions/mcd
 share/ksh/functions/popd
 share/ksh/functions/pushd
 share/ksh/man/man1/alias.1
