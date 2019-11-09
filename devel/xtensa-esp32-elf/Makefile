@@ -7,8 +7,8 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases/binutils:source1 \
 		GNU/binutils:source1 \
-		https://github.com/libexpat/libexpat/releases/download/R_${PORTVERSION:S|.|_|g}/:source2 \
-		SF/expat:source2 \
+		https://github.com/libexpat/libexpat/releases/download/R_2_1_0/:source2 \
+		SF/expat/expat/2.1.0:source2 \
 		GCC/releases/gcc-5.2.0:source3 \
 		GNU/gdb:source4 \
 		GNU/gmp:source5 \
@@ -38,7 +38,6 @@ COMMENT=	Espressif ESP32 toolchain
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BROKEN=		unfetchable
 BROKEN_armv6=		fails to build: failed in step 'Installing pass-2 core C gcc compiler'
 BROKEN_armv7=		fails to build: failed in step 'Installing pass-2 core C gcc compiler'
 
