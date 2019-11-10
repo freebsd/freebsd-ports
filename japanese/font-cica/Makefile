@@ -11,6 +11,8 @@ DISTNAME=	Cica_v${DISTVERSION}_${OPT_EMOJI}_emoji
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Cica Japanese monospaced fonts for programming
 
+LICENSE=	OFL11
+
 USES=		fonts:fc zip
 FONTNAME=	cica
 NO_WRKSUBDIR=	yes
