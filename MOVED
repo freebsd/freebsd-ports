@@ -12726,7 +12726,6 @@ converters/hs-sandi||2019-05-09|Has expired: Haskell libraries are getting pushe
 devel/hs-gtk2hs-buildtools||2019-05-09|Removed, does not build with recent GHC and references deleted port
 lang/perl5.24||2019-05-09|Has expired: Support ends three years after .0 release, please upgrade to a more recent version of Perl
 sysutils/bareos-client-static|sysutils/bareos17-client-static|2019-05-09|Port was renamed
-cad/brlcad||2019-05-13|Has expired: Broken for more than 6 months
 misc/gnuit||2019-05-13|Has expired: Upstream stale for 10 years, no users it appears
 print/py-reportlab1|print/py-reportlab|2019-05-13|Has expired: consider using latest upstream version in print/py-reportlab
 sysutils/djmount||2019-05-15|Has expired: Unmaintained upstream and does not build with upnp >= 1.8
@@ -13407,7 +13406,7 @@ x11-wm/musca||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-wm/weewm||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-wm/windowlab||2019-10-16|Has expired: Unfetchable, unmaintained
 x11-wm/wmfs||2019-10-16|Has expired: Unfetchable, unmaintained
-x11-wm/plank|x11/plank|2019-10-17|Port incorrectly labeled as Windows Manager, is an independent dock application.
+x11-wm/plank|x11/plank|2019-10-17|Port incorrectly labeled as window manager, is an independent dock application
 net/kcontacts|net/kf5-kcontacts|2019-10-17|Became a KDE Framework
 net/kcalcore|net/kf5-kcalendarcore|2019-10-17|Became a KDE Framework
 java/linux-oracle-jre9|java/openjdk11|2019-10-18|Has expired: No longer maintained upstream, please migrate to openjdk11
@@ -13430,7 +13429,7 @@ www/nuvolaplayer-tunein||2019-10-21|Useless without audio/nuvolaplayer
 www/nuvolaplayer-yandex-music||2019-10-21|Useless without audio/nuvolaplayer
 www/nuvolaplayer-youtube||2019-10-21|Useless without audio/nuvolaplayer
 japanese/yasou-fpw||2019-10-23|Has expired: the only remaining mastersite times out
-lang/gcc5|lang/gcc|2019-10-30|Has expired: Unsupported by upstream. Use GCC 9 or newer instead.
+lang/gcc5|lang/gcc|2019-10-30|Has expired: Unsupported by upstream. Use GCC 9 or newer instead
 games/xpilot-ng-client||2019-11-01|Has expired: Depends on deprecated libXxf86misc
 science/xmakemol||2019-11-01|Has expired: Depends on expiring graphics/libGLw
 x11/libXp||2019-11-01|Deprecated upstream
