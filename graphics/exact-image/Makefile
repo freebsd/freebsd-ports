@@ -3,6 +3,7 @@
 
 PORTNAME=	exact-image
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics perl5 python
 MASTER_SITES=	https://dl.exactcode.de/oss/exact-image/
 
