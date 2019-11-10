@@ -40,6 +40,7 @@ LICENSE_COMB=	multi
 
 BROKEN_armv6=		fails to build: failed in step 'Installing pass-2 core C gcc compiler'
 BROKEN_armv7=		fails to build: failed in step 'Installing pass-2 core C gcc compiler'
+BROKEN_powerpc64=	fails to build: [ERROR] collect2: error: ld returned 1 exit status
 
 BUILD_DEPENDS=	bash:shells/bash \
 		gawk:lang/gawk \
