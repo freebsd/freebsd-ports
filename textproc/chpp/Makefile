@@ -29,10 +29,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "aarch64" && ${ARCH} != "amd64" && ${ARCH} != "i386" && ${ARCH} != "powerpc64"
-BROKEN=		Does not compile
-.endif
-
 post-extract:
 .for i in getopt.h regex.h gc/gc.h
 	@cd ${WRKSRC} && ${MV} -f ${i} ${i}.dist
@@ -51,8 +47,8 @@ post-patch:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in AUTHORS NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
+.for filename in AUTHORS NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${filename} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 post-install-EXAMPLES-on:
