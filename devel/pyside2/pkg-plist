@@ -22,6 +22,7 @@ include/PySide2/QtPrintSupport/pyside2_qtprintsupport_python.h
 include/PySide2/QtQml/pyside2_qtqml_python.h
 include/PySide2/QtQuick/pyside2_qtquick_python.h
 include/PySide2/QtQuickWidgets/pyside2_qtquickwidgets_python.h
+include/PySide2/QtRemoteObjects/pyside2_qtremoteobjects_python.h
 include/PySide2/QtScript/pyside2_qtscript_python.h
 include/PySide2/QtScriptTools/pyside2_qtscripttools_python.h
 include/PySide2/QtScxml/pyside2_qtscxml_python.h
@@ -83,6 +84,7 @@ lib/libpyside2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/PySide2/QtQml.so
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/PySide2/QtQuick.so
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/PySide2/QtQuickWidgets.so
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/PySide2/QtRemoteObjects.so
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/PySide2/QtScript.so
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/PySide2/QtScriptTools.so
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/PySide2/QtScxml.so
@@ -124,6 +126,7 @@ lib/libpyside2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON3%%%%PYTHON_SITELIBDIR%%/PySide2/QtQml%%PYVERSTR%%.so
 %%PYTHON3%%%%PYTHON_SITELIBDIR%%/PySide2/QtQuick%%PYVERSTR%%.so
 %%PYTHON3%%%%PYTHON_SITELIBDIR%%/PySide2/QtQuickWidgets%%PYVERSTR%%.so
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/PySide2/QtRemoteObjects%%PYVERSTR%%.so
 %%PYTHON3%%%%PYTHON_SITELIBDIR%%/PySide2/QtScript%%PYVERSTR%%.so
 %%PYTHON3%%%%PYTHON_SITELIBDIR%%/PySide2/QtScriptTools%%PYVERSTR%%.so
 %%PYTHON3%%%%PYTHON_SITELIBDIR%%/PySide2/QtScxml%%PYVERSTR%%.so
@@ -226,6 +229,7 @@ share/PySide2/typesystems/typesystem_printsupport_common.xml
 share/PySide2/typesystems/typesystem_qml.xml
 share/PySide2/typesystems/typesystem_quick.xml
 share/PySide2/typesystems/typesystem_quickwidgets.xml
+share/PySide2/typesystems/typesystem_remoteobjects.xml
 share/PySide2/typesystems/typesystem_script.xml
 share/PySide2/typesystems/typesystem_scripttools.xml
 share/PySide2/typesystems/typesystem_scxml.xml
