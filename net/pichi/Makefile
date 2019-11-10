@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rapidjson>=1.1.0:devel/rapidjson
 
-USES=		cmake
+USES=		cmake compiler:c++17-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pichi-router
