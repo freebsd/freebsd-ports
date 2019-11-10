@@ -1,14 +1,15 @@
---- src/cpp/session/session-config.h.in.orig	2019-08-17 19:37:09 UTC
+--- src/cpp/session/session-config.h.in.orig	2019-10-25 22:16:29 UTC
 +++ src/cpp/session/session-config.h.in
-@@ -13,10 +13,9 @@
+@@ -13,11 +13,11 @@
   *
   */
  
 -#define RSTUDIO_VERSION "${CPACK_PACKAGE_VERSION}"
--#define RSTUDIO_GIT_REVISION_HASH "${RSTUDIO_GIT_REVISION_HASH}"
++#define RSTUDIO_VERSION "${FREEBSD_RSTUDIO_VERSION}"
+ #define RSTUDIO_RELEASE_NAME "${RSTUDIO_RELEASE_NAME}"
+ #define RSTUDIO_GIT_REVISION_HASH "${RSTUDIO_GIT_REVISION_HASH}"
 -#define RSTUDIO_GIT_COMMIT "${RSTUDIO_GIT_COMMIT}"
 -#define RSTUDIO_BUILD_ID "${RSTUDIO_BUILD_ID}"
-+#define RSTUDIO_VERSION "${FREEBSD_RSTUDIO_VERSION}"
 +#define RSTUDIO_GIT_COMMIT "n/a"
 +#define RSTUDIO_BUILD_ID "FreeBSD-port-version-${FREEBSD_RSTUDIO_VERSION}"
  #define RSTUDIO_BUILD_DATE "${CPACK_BUILD_DATE}"
