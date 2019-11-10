@@ -6,7 +6,7 @@ PORTVERSION=	3.4.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
-MAINTAINER=	bofs@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Toolbox to build shallow-transfer machine translation systems
 
 LICENSE=	GPLv2+
