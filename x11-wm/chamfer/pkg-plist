@@ -1,0 +1,10 @@
+bin/chamfer
+@sample %%DATADIR%%/config/config.py.sample
+%%DATADIR%%/shaders/default_fragment.spv
+%%DATADIR%%/shaders/default_geometry.spv
+%%DATADIR%%/shaders/default_vertex.spv
+%%DATADIR%%/shaders/frame_fragment.spv
+%%DATADIR%%/shaders/frame_geometry.spv
+%%DATADIR%%/shaders/frame_vertex.spv
+%%DATADIR%%/shaders/solid_fragment.spv
+share/xsessions/chamfer.desktop
