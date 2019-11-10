@@ -1,4 +1,4 @@
---- Makefile.orig	2019-03-28 18:57:23 UTC
+--- Makefile.orig	2019-06-24 16:08:57 UTC
 +++ Makefile
 @@ -8,7 +8,7 @@
  #
@@ -9,21 +9,7 @@
  
  SHELL = /bin/sh
  TAR = tar
-@@ -29,11 +29,11 @@ LIBPOINT=0
- LIBVER=$(LIBMAJOR).$(LIBMINOR).$(LIBPOINT)
- 
- SOURCES = dgif_lib.c egif_lib.c gifalloc.c gif_err.c gif_font.c \
--	gif_hash.c openbsd-reallocarray.c
-+	gif_hash.c openbsd-reallocarray.c quantize.c
- HEADERS = gif_hash.h  gif_lib.h  gif_lib_private.h
- OBJECTS = $(SOURCES:.c=.o)
- 
--USOURCES = qprintf.c quantize.c getarg.c 
-+USOURCES = qprintf.c getarg.c 
- UHEADERS = getarg.h
- UOBJECTS = $(USOURCES:.c=.o)
- 
-@@ -60,15 +60,21 @@ UTILS = $(INSTALLABLE) \
+@@ -59,15 +59,21 @@ UTILS = $(INSTALLABLE) \
  	gifsponge \
  	gifwedge
  
@@ -49,7 +35,7 @@
  
  libgif.a: $(OBJECTS) $(HEADERS)
  	$(AR) rcs libgif.a $(OBJECTS)
-@@ -100,7 +106,7 @@ install-include:
+@@ -99,7 +105,7 @@ install-include:
  install-lib:
  	$(INSTALL) -d "$(DESTDIR)$(LIBDIR)"
  	$(INSTALL) -m 644 libgif.a "$(DESTDIR)$(LIBDIR)/libgif.a"
