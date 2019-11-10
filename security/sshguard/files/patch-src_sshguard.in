@@ -1,0 +1,19 @@
+--- src/sshguard.in.orig	2019-05-23 22:25:17 UTC
++++ src/sshguard.in
+@@ -97,14 +97,8 @@ elif [ -z "$tailcmd" ]; then
+     exit 1
+ fi
+ 
+-if [ ! -z "$PID_FILE" ]; then
+-    if [ ! -e "$PID_FILE" ]; then
+-        echo "$$" > $PID_FILE
+-    else
+-        err "$PID_FILE already exists; is SSHGuard already running?"
+-        exit 1
+-    fi
+-fi
++# Already checked by rc(8)
++echo "$$" > $PID_FILE
+ 
+ # Make sure to kill entire process group (subshell) on exit/interrupts.
+ trap "clean_and_exit" INT TERM
