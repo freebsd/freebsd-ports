@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tiff
-PORTVERSION=	4.0.10
-PORTREVISION=	1
+PORTVERSION=	4.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://download.osgeo.org/libtiff/
 
