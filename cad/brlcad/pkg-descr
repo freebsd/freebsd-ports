@@ -1,0 +1,17 @@
+BRL-CAD is a powerful Combinatorial/Constructive Solid Geometry (CSG)
+solid modeling system that includes an interactive geometry editor,
+ray-tracing support for rendering and geometric analysis,
+network-distributed framebuffer support, image and signal-processing
+tools, and an embedded scripting language.
+
+The package is a collection of over 400 tools and utilities across
+over 750,000 lines of source code.  Included is support for various
+geometric data format conversions, image and signal processing
+capabilities, sophisticated ray-tracing based lighting models, network
+distributed ray-tracing, massively parallel ray-tracing, animation
+capabilities, data compression, image handling, and interactive 3-D
+geometric editing.  Included is an implementation of Weiler's
+n-Manifold Geometry (NMG) data structures for surface-based solid
+models and photon mapping.
+
+WWW: http://www.brlcad.org/
