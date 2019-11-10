@@ -13,6 +13,8 @@ COMMENT=	Server daemon providing Internet access to APRS packet data
 
 LICENSE=	GPLv2
 
+BROKEN_powerpc64=	fails to link: httpserver.o:(.text+0x1074): undefined reference to `convertUpTime(int)'
+
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message pkg-deinstall
 USE_RC_SUBR=	aprsd
