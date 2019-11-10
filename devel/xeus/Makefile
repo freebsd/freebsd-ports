@@ -24,10 +24,4 @@ GH_ACCOUNT=	QuantStack
 CMAKE_OFF=	BUILD_STATIC_LIBS
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-CMakeLists.txt
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
