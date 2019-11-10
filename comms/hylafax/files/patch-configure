@@ -1,6 +1,6 @@
---- configure.orig	2012-06-06 02:58:38.000000000 +0200
-+++ configure	2013-10-23 14:29:24.000000000 +0200
-@@ -831,7 +831,8 @@
+--- configure.orig	2018-09-18 18:51:17 UTC
++++ configure
+@@ -831,7 +831,8 @@ checkGCCVersion()
  # NB: use ANSI C prototype to weed out non-ANSI compilers.
  #
  cat>dummy.c<<EOF
@@ -10,7 +10,7 @@
  EOF
  
  checkCompiler()
-@@ -982,7 +983,8 @@
+@@ -982,7 +983,8 @@ fi
  # Make dependency information.
  #
  cat>dummy.c<<EOF
@@ -20,7 +20,7 @@
  EOF
  capture cat dummy.c
  if capture "$CCOMPILER -c -M $MKDEPCOPTS dummy.c | grep '^dummy.o[ 	]*:[ 	]*dummy.c'"; then
-@@ -1629,7 +1631,7 @@
+@@ -1629,7 +1631,7 @@ pamconv(int num_msg, const struct pam_me
  {
      return(0);
  }
@@ -29,7 +29,7 @@
  {
      struct pam_conv conv = { pamconv };
  }
-@@ -1664,10 +1666,10 @@
+@@ -1664,10 +1666,10 @@ HAVE_JBIG="/*#define HAVE_JBIG 1*/"
  LIBJBIG=""
  if [ "$DISABLE_JBIG" != "yes" ]; then
  	Note "Checking for JBIG library support"
@@ -42,7 +42,7 @@
  		}
  	if [ "x$LIBJBIG" = "x" ]; then
  		Note "... not found. Disabling JBIG support"
-@@ -1832,17 +1834,48 @@
+@@ -1832,17 +1834,48 @@ for f in openlog pututxline; do
  done
  if [ "$ISGXX" = yes ]; then
      if [ -z "$CXXRUNTIME" ]; then
@@ -96,7 +96,7 @@
  	CheckForLibrary $f -lc || {
  	    CheckForLibrary $f -liberty && {
  		Note "Looks like we need -liberty for $f"
-@@ -1850,9 +1883,8 @@
+@@ -1850,9 +1883,8 @@ if [ "$ISGXX" = yes ]; then
  		break;
  	    }
  	}
@@ -107,7 +107,7 @@
      Note "Looks like -lm is the library for math functions."
      MACHDEPLIBS="$MACHDEPLIBS -lm"
  }
-@@ -2176,11 +2208,13 @@
+@@ -2176,11 +2208,13 @@ EmitConfigurationDefinitions()
  #
  CheckForFunc()
  {
@@ -122,7 +122,7 @@
  #
  # Look for a function declaration in system include files.
  #
-@@ -2397,6 +2431,7 @@
+@@ -2397,6 +2431,7 @@ EOF
  EOF
      }
  cat<<'EOF'
@@ -130,7 +130,7 @@
  extern char* malloc();
  static void
  boom(const char* msg)
-@@ -2448,7 +2483,7 @@
+@@ -2448,7 +2483,7 @@ CheckForStructExitStatus()
  	echo "$i"
      done
      cat<<EOF
@@ -139,7 +139,7 @@
  {
      struct $decl x;
      x.ut_exit.e_exit = 0;
-@@ -2465,7 +2500,7 @@
+@@ -2465,7 +2500,7 @@ CheckForTimeZoneHandling()
  {
      (echo '#include <time.h>'
      cat<<EOF
@@ -148,7 +148,7 @@
  {
      struct tm x;
      char* cp;
-@@ -2484,7 +2519,7 @@
+@@ -2484,7 +2519,7 @@ CheckForTXCD()
  {
      cat>t.c<<EOF
  #include <sys/ioctl.h>
@@ -157,7 +157,7 @@
  {
      ioctl(0, TXADDCD, "rts");
      ioctl(0, TXDELCD, "rts");
-@@ -2537,8 +2572,9 @@
+@@ -2537,8 +2572,9 @@ CheckLibtiff()
      tiff_bytecount_t=""
      cat>t.c<<EOF
  #include <stdio.h>
@@ -168,7 +168,13 @@
  {
      printf( "header_ver=%d lib_ver=%s", TIFFLIB_VERSION, TIFFGetVersion() );
      exit(0);
-@@ -2568,7 +2604,7 @@
+@@ -2563,12 +2599,12 @@ EOF
+ 				tiff_offset_t="uint32"
+ 				tiff_bytecount_t="uint32"
+ 				;;
+-		4.[0])		tiff_runlen_t="uint32"
++		4.[01])		tiff_runlen_t="uint32"
+ 				tiff_offset_t="uint64"
  				tiff_bytecount_t="uint64"
  				echo '#define TIFFHeader	TIFFHeaderClassic'
  				echo '#define TIFF_VERSION	TIFF_VERSION_CLASSIC'
@@ -177,7 +183,7 @@
  				;;
  	    esac
  	fi
-@@ -3255,7 +3291,7 @@
+@@ -3255,7 +3291,7 @@ FUNCS="
      strtoul
      writev
  "
@@ -186,7 +192,7 @@
  for i in $FUNCS; do
      CheckForFunc $i || {
  	Note "... emulate $i"
-@@ -3313,8 +3349,9 @@
+@@ -3313,8 +3349,9 @@ Note "Checking ZLIB support."
  # Verify library is compatible.
  #
  cat>t.c<<EOF
