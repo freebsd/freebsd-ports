@@ -1,0 +1,11 @@
+--- include/config.h.in.orig	2019-04-14 16:29:43 UTC
++++ include/config.h.in
+@@ -13,6 +13,8 @@
+ #cmakedefine HAS_SETSID
+ #cmakedefine HAS_CLOSE
+ 
++#cmakedefine RESOLVER_CONSTRUCTED_FROM_EXECUTOR
++
+ #cmakedefine CMAKE_INSTALL_PREFIX "@CMAKE_INSTALL_PREFIX@"
+ 
+ #ifdef CMAKE_INSTALL_PREFIX

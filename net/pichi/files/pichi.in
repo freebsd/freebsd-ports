@@ -1,0 +1,88 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: pichi
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+get_pid()
+{
+  ps -o "pid=" -p "$(cat ${pid_file} 2>/dev/null)" 2>/dev/null
+}
+
+pichi_start()
+{
+  pid="$(get_pid)"
+  if [ -n "${pid}" ]; then
+    echo "${name} is running with pid ${pid}"
+    exit 1
+  fi
+  if [ -z "${pichi_port}" ]; then
+    echo "pichi_port is not set"
+    exit 1
+  fi
+  "${command}" -u nobody --group daemon -d -g "${pichi_mmdb}" -p "${pichi_port}" -l "${pichi_bind}" --json "${pichi_conf}"
+  if ! get_pid >/dev/null 2>&1; then
+    echo "Failed to start ${name}"
+    exit 1
+  fi
+}
+
+# Main
+. /etc/rc.subr
+
+load_rc_config "${name}"
+
+name="pichi"
+rcvar="${name}_enable"
+prefix="%%PREFIX%%"
+command="${prefix}/bin/${name}"
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+restart_cmd="${name}_restart"
+status_cmd="${name}_status"
+extra_commands="reload"
+reload_cmd="${name}_reload"
+pid_file="${prefix}/var/run/${name}.pid"
+
+: ${pichi_enable:="NO"}
+: ${pichi_bind:="::1"}
+: ${pichi_port:="21127"}
+: ${pichi_conf:="${prefix}/etc/${name}/pichi.json"}
+: ${pichi_mmdb:="${prefix}/etc/${name}/geo.mmdb"}
+
+pichi_stop()
+{
+  pid=$(get_pid)
+  if [ -n "${pid}" ]; then
+    kill ${pid}
+  fi
+}
+
+pichi_restart()
+{
+  pichi_stop
+  pichi_start
+}
+
+pichi_reload()
+{
+  pid=$(get_pid)
+  if [ -n "${pid}" ]; then
+    kill -HUP ${pid}
+  fi
+}
+
+pichi_status()
+{
+  pid=$(get_pid)
+  if [ -n "${pid}" ]; then
+    echo "${name} is running with PID ${pid}"
+  else
+    echo "${name} is not running"
+  fi
+}
+
+run_rc_command "$1"

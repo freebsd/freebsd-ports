@@ -1,0 +1,6 @@
+Pichi is an application layer proxy, which can be fully controlled via
+RESTful APIs. It supports HTTP/SOCKS5/Shadowsocks.
+
+The core feature of pichi is the dynamic, flexible route controlling.
+
+WWW: https://github.com/pichi-router/pichi
