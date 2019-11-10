@@ -84,7 +84,7 @@ bin/procbatch
 bin/prunehistory
 bin/pullnews
 bin/rc.news
-bin/rnews
+@(,uucp,4550) bin/rnews
 bin/rnews.libexec/c7unbatch
 bin/rnews.libexec/decode
 bin/rnews.libexec/encode
