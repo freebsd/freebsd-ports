@@ -14,6 +14,8 @@ COMMENT=	Unarchiver for a vast variety of file formats
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/License.txt
 
+BROKEN_powerpc64=	fails to compile: Your gnustep-base was configured for the objc-nonfragile-abi but you are not using it now.
+
 # XXX: USES=gnustep overrides MAKEFILE we set below, so depend explicitly
 LIB_DEPENDS=	libgnustep-base.so:lang/gnustep-base \
 		libicuuc.so:devel/icu \
