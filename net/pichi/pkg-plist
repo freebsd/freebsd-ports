@@ -1,0 +1,7 @@
+bin/pichi
+include/pichi.h
+@sample etc/pichi/pichi.json.sample
+etc/pichi/geo.mmdb
+%%NO_STATIC%%lib/libpichi.so.%%DISTVERSION%%
+%%NO_STATIC%%lib/libpichi.so
+%%STATIC%%lib/libpichi.a
