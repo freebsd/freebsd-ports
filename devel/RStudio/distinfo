@@ -1,4 +1,4 @@
-TIMESTAMP = 1571188560
+TIMESTAMP = 1572714000
 SHA256 (core-dictionaries.zip) = 4341a9630efb9dcf7f215c324136407f3b3d6003e1c96f2e5e1f9f14d5787494
 SIZE (core-dictionaries.zip) = 876339
 SHA256 (gin-2.1.2.zip) = b98e704164f54be596779696a3fcd11be5785c9907a99ec535ff6e9525ad5f9a
@@ -7,8 +7,8 @@ SHA256 (gwt-2.8.1.zip) = 0b7af89fdadb4ec51cdb400ace94637d6fe9ffa401b168e2c3d3723
 SIZE (gwt-2.8.1.zip) = 95650299
 SHA256 (mathjax-26.zip) = 939a2d7f37e26287970be942df70f3e8f272bac2eb868ce1de18bb95d3c26c71
 SIZE (mathjax-26.zip) = 3061588
-SHA256 (RStudio-rstudio-v1.2.5001_GH0.tar.gz) = 0d1ec7aef62bda1ceec364e372fdbbcc4da502a3f03eddcddc700bdead6ee840
-SIZE (RStudio-rstudio-v1.2.5001_GH0.tar.gz) = 20458908
+SHA256 (RStudio-rstudio-v1.2.5019_GH0.tar.gz) = 8c108d2bd086db77df128ff267bfd20de0910d2495ebcb128a1829b2202dc6c9
+SIZE (RStudio-rstudio-v1.2.5019_GH0.tar.gz) = 20455572
 SHA256 (rstudio-r2d3-v0.2.0_GH0.tar.gz) = 6355a7632134c8c9487056019a9c458db2c98d10388cf66b018d5461d0a947af
 SIZE (rstudio-r2d3-v0.2.0_GH0.tar.gz) = 21977747
 SHA256 (rstudio-rmarkdown-aed26ac_GH0.tar.gz) = b6f6f48dd9930514204739d8957c2737f0b1d110aebf9f89fa31de10598cb29b
