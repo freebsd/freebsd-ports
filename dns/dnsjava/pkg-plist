@@ -1,5 +1,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/allclasses-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/allclasses-noframe.html
 %%PORTDOCS%%%%DOCSDIR%%/constant-values.html
@@ -16,6 +16,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/Address.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/CAARecord.Flags.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/CAARecord.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/CDNSKEYRecord.html
+%%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/CDSRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/CERTRecord.CertificateType.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/CERTRecord.html
 %%PORTDOCS%%%%DOCSDIR%%/org/xbill/DNS/CNAMERecord.html
@@ -172,14 +174,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/overview-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/package-list
-%%JDK6%%%%PORTDOCS%%%%DOCSDIR%%/resources/inherit.gif
-%%JDK8%%%%PORTDOCS%%%%DOCSDIR%%/script.js
+%%PORTDOCS%%%%DOCSDIR%%/script.js
 %%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/EXAMPLES.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/USAGE
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dig.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/jnamed.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lookup.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/update.java
-share/java/classes/dnsjava.jar
+%%JAVAJARDIR%%/dnsjava.jar
