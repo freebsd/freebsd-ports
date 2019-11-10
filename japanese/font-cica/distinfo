@@ -1,3 +1,5 @@
-TIMESTAMP = 1520950521
-SHA256 (Cica_v2.1.0.zip) = 6b1e4750a3c07995bbcfaadcec0be5ed73de26ca1dc2082dc712b296af35b59b
-SIZE (Cica_v2.1.0.zip) = 22571722
+TIMESTAMP = 1573384550
+SHA256 (Cica_v5.0.1_with_emoji.zip) = b61ae55fb1a4a98dd78e90fe68649bcfaabb20a5eaaffa57c246356890c6b0df
+SIZE (Cica_v5.0.1_with_emoji.zip) = 23619224
+SHA256 (Cica_v5.0.1_without_emoji.zip) = 609a34b6fdf3bedd1949a58717f347b82d041ebfb9cbcd977cf57b171cefa1cd
+SIZE (Cica_v5.0.1_without_emoji.zip) = 22665456
