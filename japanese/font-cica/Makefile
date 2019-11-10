@@ -1,17 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	cica
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	5.0.1
+#PORTREVISION=	0
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	https://github.com/miiton/Cica/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	ja-font-
-DISTNAME=	Cica_v${PORTVERSION}
+DISTNAME=	Cica_v${DISTVERSION}_${OPT_EMOJI}_emoji
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Cica Japanese monospaced fonts for programming
-
-BROKEN=		unfetchable
 
 USES=		fonts:fc zip
 FONTNAME=	cica
@@ -24,7 +22,17 @@ SUB_FILES=	pkg-install
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EMOJI
+OPTIONS_DEFAULT=EMOJI
+EMOJI_DESC=	With Emoji
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEMOJI}
+OPT_EMOJI=	with
+.else
+OPT_EMOJI=	without
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
@@ -43,5 +51,13 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 		"! -name *\.ttf"
+
+makesums:
+	${MAKE} rmconfig
+	${MAKE} makesum OPTIONS_UNSET=EMOJI
+	${MV} distinfo .distinfo.without_emoji
+	${MAKE} makesum OPTIONS_SET=EMOJI
+	tail -2 .distinfo.without_emoji >> distinfo
+	${RM} .distinfo.without_emoji
 
 .include <bsd.port.mk>
