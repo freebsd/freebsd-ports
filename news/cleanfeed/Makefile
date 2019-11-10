@@ -2,9 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	cleanfeed
-PORTVERSION=	20110224
+DISTVERSION=	20190602
 CATEGORIES=	news
-MASTER_SITES=	http://www.mixmin.net/cleanfeed/
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	crooks
+GH_TAGNAME=	b3c6bcf6e34a6d35cad402d34c7ff76aba481c6d
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Spam filter for Usenet news servers
@@ -19,18 +22,17 @@ SHAREOWN=	news
 SHAREGRP=	news
 INSTALL+=	-b
 PKGDEINSTALL=	${PKGINSTALL}
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e "/debug_batch_directory/s:'.*':'/var/log/cleanfeed':" ${WRKSRC}/etc/cleanfeed.local
+	@${REINPLACE_CMD} -e "/debug_batch_directory/s:'.*':'/var/log/cleanfeed':" ${WRKSRC}/samples/cleanfeed.local
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/news/cleanfeed/etc
 .for f in bad_adult_paths bad_body bad_cancel_paths bad_from bad_groups \
 		bad_hosts bad_paths bad_subject bad_url
-	@${INSTALL_DATA} ${WRKSRC}/etc/${f} ${STAGEDIR}${PREFIX}/news/cleanfeed/etc
+	@${INSTALL_DATA} ${WRKSRC}/samples/${f} ${STAGEDIR}${PREFIX}/news/cleanfeed/etc
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/etc/cleanfeed.local \
+	@${INSTALL_DATA} ${WRKSRC}/samples/cleanfeed.local \
 		${STAGEDIR}${PREFIX}/news/cleanfeed/etc/cleanfeed.local.sample
 	@${MKDIR} ${STAGEDIR}${PREFIX}/news/bin/filter
 	@${INSTALL_DATA} ${WRKSRC}/cleanfeed ${STAGEDIR}${PREFIX}/news/bin/filter
