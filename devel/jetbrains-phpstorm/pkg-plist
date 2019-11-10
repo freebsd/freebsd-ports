@@ -24,6 +24,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/batik-anim-1.12.0-8.jar
 %%DATADIR%%/lib/batik-awt-util-1.12.0-8.jar
 %%DATADIR%%/lib/batik-bridge-1.12.0-8.jar
+%%DATADIR%%/lib/batik-codec-1.7.jar
 %%DATADIR%%/lib/batik-constants-1.12.0-8.jar
 %%DATADIR%%/lib/batik-css-1.12.0-8.jar
 %%DATADIR%%/lib/batik-dom-1.12.0-8.jar
@@ -243,7 +244,6 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/CSS/lib/css.jar
 %%DATADIR%%/plugins/CSS/lib/resources_en.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/database-impl.jar
-%%DATADIR%%/plugins/DatabaseTools/lib/database-minicat.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/database-openapi.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/dekaf-single-2.0.0.390.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/jdbc-console.jar
