@@ -932,6 +932,9 @@ share/locale/nl/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/or/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/pl/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/pt_BR/LC_MESSAGES/ibus-typing-booster.mo
+share/locale/pt_PT/LC_MESSAGES/ibus-typing-booster.mo
+share/locale/sw/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/uk/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/zh_CN/LC_MESSAGES/ibus-typing-booster.mo
+share/locale/zh_TW/LC_MESSAGES/ibus-typing-booster.mo
 share/metainfo/typing-booster.appdata.xml
