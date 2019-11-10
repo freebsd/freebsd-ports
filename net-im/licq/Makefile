@@ -16,7 +16,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
-BROKEN_sparc64=		Does not build: fails to link
+BROKEN_powerp64=	fails to link: undefined reference to `boost::re_detail_106900::cpp_regex_traits_implementation<char>::transform(char const*, char const*) const'
+BROKEN_sparc64=		fails to link
 
 USES=		cmake:noninja iconv ssl
 USE_CXXSTD=	c++98
