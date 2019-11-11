@@ -1481,6 +1481,7 @@
     SUBDIR += ruby-xmlparser
     SUBDIR += rubygem-actionpack-xml_parser
     SUBDIR += rubygem-actionpack-xml_parser1
+    SUBDIR += rubygem-actionpack-xml_parser52
     SUBDIR += rubygem-albino
     SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
