@@ -227,7 +227,6 @@ share/locale/gl/LC_MESSAGES/tellico.mo
 share/locale/hu/LC_MESSAGES/tellico.mo
 share/locale/ia/LC_MESSAGES/tellico.mo
 share/locale/it/LC_MESSAGES/tellico.mo
-share/locale/ja/LC_MESSAGES/tellico.mo
 share/locale/kk/LC_MESSAGES/tellico.mo
 share/locale/ko/LC_MESSAGES/tellico.mo
 share/locale/lt/LC_MESSAGES/tellico.mo
@@ -307,6 +306,7 @@ share/mime/packages/tellico.xml
 %%DATADIR%%/pics/gcstar.png
 %%DATADIR%%/pics/goodreads.png
 %%DATADIR%%/pics/griffith.png
+%%DATADIR%%/pics/librarything.png
 %%DATADIR%%/pics/nocover_album.png
 %%DATADIR%%/pics/nocover_bibtex.png
 %%DATADIR%%/pics/nocover_boardgame.png
