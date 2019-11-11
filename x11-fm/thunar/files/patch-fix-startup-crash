@@ -1,0 +1,53 @@
+diff --git a/thunar/thunar-pango-extensions.c b/thunar/thunar-pango-extensions.c
+index 3ff6262c..d42f83ba 100644
+--- thunar/thunar-pango-extensions.c
++++ thunar/thunar-pango-extensions.c
+@@ -128,18 +128,18 @@ thunar_pango_attr_list_bold (void)
+  * Return value: a #PangoAttrList for not inserting hyphens at intra-word line
+  *               breaks.
+  **/
++#if PANGO_VERSION_CHECK (1, 44, 0)
+ PangoAttrList*
+ thunar_pango_attr_disable_hyphens (void)
+ {
+   static PangoAttrList *attr_list = NULL;
+ 
+-#ifdef PANGO_VERSION_1_44
+   if (G_UNLIKELY (attr_list == NULL))
+     attr_list = thunar_pango_attr_list_wrap (pango_attr_insert_hyphens_new (FALSE), NULL);
+-#endif
+ 
+   return attr_list;
+ }
++#endif
+ 
+ 
+ 
+diff --git a/thunar/thunar-pango-extensions.h b/thunar/thunar-pango-extensions.h
+index aa0e515b..a2300faa 100644
+--- thunar/thunar-pango-extensions.h
++++ thunar/thunar-pango-extensions.h
+@@ -31,7 +31,9 @@ PangoAttrList *thunar_pango_attr_disable_hyphens        (void) G_GNUC_CONST;
+ PangoAttrList *thunar_pango_attr_list_italic            (void) G_GNUC_CONST;
+ PangoAttrList *thunar_pango_attr_list_small_italic      (void) G_GNUC_CONST;
+ PangoAttrList *thunar_pango_attr_list_small             (void) G_GNUC_CONST;
++#if PANGO_VERSION_CHECK (1, 44, 0)
+ PangoAttrList *thunar_pango_attr_list_underline_single  (void) G_GNUC_CONST;
++#endif
+ 
+ G_END_DECLS;
+ 
+diff --git a/thunar/thunar-standard-view.c b/thunar/thunar-standard-view.c
+index bebfdeb5..7cd99060 100644
+--- thunar/thunar-standard-view.c
++++ thunar/thunar-standard-view.c
+@@ -729,7 +729,9 @@ G_GNUC_END_IGNORE_DEPRECATIONS
+ 
+   /* setup the name renderer */
+   standard_view->name_renderer = g_object_new (GTK_TYPE_CELL_RENDERER_TEXT,
++#if PANGO_VERSION_CHECK (1, 44, 0)
+                                                "attributes", thunar_pango_attr_disable_hyphens (),
++#endif
+                                                "alignment", PANGO_ALIGN_CENTER,
+                                                "xalign", 0.5,
+                                                FALSE);
