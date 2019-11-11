@@ -2,10 +2,8 @@
 { type: install
   message: <<EOM
 The spambouncer procmail rules have been installed in %%DATADIR%%/.
-Please read the section entitled "Configuring the Spam Bouncer" in the file
-%%DOCSDIR%%/documentation.html for information on how to set
-up your mailbox, and the file upgrading.html if you are migrating from a
-previous version (before 20051109).
+An example of .procmailrc can be found as
+%%DATADIR%%/auxiliary/procmail.rc .
 EOM
 }
 ]

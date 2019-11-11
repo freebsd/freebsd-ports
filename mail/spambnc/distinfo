@@ -1,6 +1,3 @@
-SHA256 (spambnc-20060416/sb.tar.gz) = 822cb64dc5c6243e693a7ec6a431cc755e7d6198f8632f0aaa417bbf6a2e5b57
-SIZE (spambnc-20060416/sb.tar.gz) = 692210
-SHA256 (spambnc-20060416/quickstart.shtml) = f82943581165a32bb4f0433866b61bed6bfeaf9d71d959f3671845515b8d8989
-SIZE (spambnc-20060416/quickstart.shtml) = 17900
-SHA256 (spambnc-20060416/upgrading.shtml) = e65bcf125a3b12adc7b8920e7e5236b3c8824e5dfe844d3182acd8d41168d197
-SIZE (spambnc-20060416/upgrading.shtml) = 17139
+TIMESTAMP = 1573488219
+SHA256 (spambnc-30.f/sb-30-final.tar.gz) = 165a9ed884129e2076bb20d9c8e08cba1feeffce84dfcac9e332f70e9bcf9445
+SIZE (spambnc-30.f/sb-30-final.tar.gz) = 334526
