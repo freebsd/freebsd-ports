@@ -3,15 +3,16 @@
 
 PORTNAME=	certificate-transparency
 PORTVERSION=	20161015
-PORTREVISION=	39
+PORTREVISION=	40
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open framework for monitoring and auditing SSL certificates
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS?=	libevent.so:devel/libevent \
+LIB_DEPENDS=	libevent.so:devel/libevent \
 		libevhtp.so:www/libevhtp \
 		libgtest.so:devel/googletest \
 		libgflags.so:devel/gflags \
@@ -23,20 +24,16 @@ LIB_DEPENDS?=	libevent.so:devel/libevent \
 		libobjecthash.so:devel/objecthash \
 		libprotobuf.so:devel/protobuf \
 		libsqlite3.so:databases/sqlite3 \
-		libtcmalloc.so:devel/google-perftools
+		libtcmalloc.so:devel/google-perftools \
+		libsnappy.so:archivers/snappy
 
-USES=		autoreconf compiler:c++11-lib gmake pkgconfig ssl
+USES=		autoreconf compiler:c++11-lib gmake localbase:ldflags pkgconfig ssl
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	"CFLAGS+=-I${LOCALBASE}/include CXXFLAGS+=-lgtest CXXFLAGS+=-lgmock"
 MAKE_FLAGS+=	"V=1"
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_TAGNAME=	28478cb
-
-CPPFLAGS+=	"-I${LOCALBASE}/include"
-CPPFLAGS+=	"-I${LOCALBASE}/include/evhtp"
-LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
