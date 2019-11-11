@@ -214,6 +214,7 @@
     SUBDIR += libquvi-scripts
     SUBDIR += libquvi-scripts09
     SUBDIR += libquvi09
+    SUBDIR += librav1e
     SUBDIR += librtmp
     SUBDIR += libsmacker
     SUBDIR += libtheora
