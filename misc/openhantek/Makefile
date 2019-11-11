@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
-USES=		cmake gl localbase qt:5
+USES=		cmake compiler:c++11-lang gl localbase qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenHantek
 GH_TAGNAME=	e7e0c7b
