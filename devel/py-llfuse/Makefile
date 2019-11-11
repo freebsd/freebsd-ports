@@ -12,7 +12,7 @@ COMMENT=	Python bindings for low-level FUSE API
 
 LICENSE=	LGPL20+
 
-USES=		compiler:c++11-lang fuse pkgconfig python tar:bz2
+USES=		compiler:c++11-lang fuse pkgconfig python:-3.6 tar:bz2
 USE_PYTHON=	autoplist distutils
 
 post-install:
