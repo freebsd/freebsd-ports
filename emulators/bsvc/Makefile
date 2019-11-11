@@ -12,7 +12,7 @@ COMMENT=	Extensible hardware simulation framework with MC68K support
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
-USES=		tk gmake
+USES=		compiler:c++11-lang tk gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BSVC
