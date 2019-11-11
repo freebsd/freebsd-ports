@@ -1,0 +1,6 @@
+include/rav1e/rav1e.h
+lib/librav1e.a
+lib/librav1e.so
+lib/librav1e.so.0
+lib/librav1e.so.%%VERSION%%
+libdata/pkgconfig/rav1e.pc
