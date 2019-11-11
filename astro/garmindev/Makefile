@@ -4,15 +4,17 @@
 PORTNAME=	garmindev
 PORTVERSION=	0.3.4
 CATEGORIES=	astro
-MASTER_SITES=	https://bitbucket.org/kiozen/qlandkarte-gt/downloads/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	qlandkartegt/garmindev/Garmin%20Device%20Driver%20${PORTVERSION}
 
-MAINTAINER=	cmt@burggraben.net
+MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Drivers for using Garmin GPS units with QlandkarteGT
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	This port is useful only with the long expired QLandkarteGT
+EXPIRES=	2019-11-30
 
 USES=		cmake
 
