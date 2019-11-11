@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-openid
-PORTVERSION=	2.7.0
+PORTVERSION=	2.9.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
