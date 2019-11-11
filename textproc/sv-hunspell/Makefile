@@ -3,7 +3,7 @@
 PORTNAME=	hunspell
 PORTVERSION=	2.40
 CATEGORIES=	textproc
-MASTER_SITES=	http://extensions.libreoffice.org/extension-center/swedish-spelling-dictionary-den-stora-svenska-ordlistan/releases/${PORTVERSION}/ \
+MASTER_SITES=	https://extensions.libreoffice.org/extensions/swedish-spelling-dictionary-den-stora-svenska-ordlistan/${PORTVERSION}/@@download/file/ \
 		LOCAL/sunpoet/${PORTNAME}
 PKGNAMEPREFIX=	sv-
 DISTNAME=	ooo_swedish_dict_${PORTVERSION:R}-${PORTVERSION:E}
@@ -13,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Swedish hunspell dictionaries
 
-LICENSE=	GPLv3
+LICENSE=	LGPL3
 
 NO_ARCH=	yes
 NO_BUILD=	yes
