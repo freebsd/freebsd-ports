@@ -12857,7 +12857,6 @@ www/rubygem-turbolinks-rails5|www/rubygem-turbolinks|2019-08-11|Remove unnecessa
 www/rubygem-turbolinks-rails50|www/rubygem-turbolinks|2019-08-11|Remove unnecessary port after www/rubygem-turbolinks RUN_DEPENDS fix
 textproc/sphinxsearch-devel|textproc/sphinxsearch|2019-08-11|Has expired: Broken for more than 6 months
 lang/dmd2||2019-08-11|Has expired: Broken for more than 6 months and upstream has no fix for statfs64
-cad/elmerfem||2019-08-12|Has expired: Broken for more than 6 months
 sysutils/openhpi||2019-08-12|Has expired: Broken for more than 6 months
 textproc/scim-bridge||2019-08-17|Has expired: Broken for more than 6 months
 devel/py-efilter||2019-08-17|Has expired: No longer maintained

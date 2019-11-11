@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2017-05-19 12:19:26 UTC
++++ CMakeLists.txt
+@@ -264,7 +264,7 @@ ADD_SUBDIRECTORY(umfpack)
+ ADD_SUBDIRECTORY(fhutiter)
+ ADD_SUBDIRECTORY(meshgen2d)
+ ADD_SUBDIRECTORY(fem)
+-ADD_SUBDIRECTORY(mathlibs)
++#ADD_SUBDIRECTORY(mathlibs)
+ ADD_SUBDIRECTORY(elmergrid)
+ ADD_SUBDIRECTORY(license_texts)
+ 
