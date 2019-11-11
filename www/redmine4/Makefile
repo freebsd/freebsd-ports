@@ -5,6 +5,7 @@ PORTNAME=	redmine
 PORTVERSION=	4.0.5
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	mikael.urankar@gmail.com
 COMMENT=	Flexible project management web application
