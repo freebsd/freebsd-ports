@@ -1,0 +1,8 @@
+cargo applet to build and install C-ABI compatibile dynamic and static
+libraries.
+
+It produces and installs a correct pkg-config file, a static library
+and a dynamic library, and a C header to be used by any C (and
+C-compatible) software.
+
+WWW: https://github.com/lu-zero/cargo-c
