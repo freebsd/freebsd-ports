@@ -12,7 +12,7 @@ LICENSE=	UNLICENSE
 
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
-USES=		cmake dos2unix sdl
+USES=		cmake compiler:c++11-lang dos2unix sdl
 USE_SDL=	mixer2 sdl2 ttf2
 
 PLIST_FILES=	bin/devilutionx
