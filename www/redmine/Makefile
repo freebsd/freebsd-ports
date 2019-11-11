@@ -36,6 +36,8 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 USES=		cpe
 USE_RUBY=	yes
 
+CONFLICTS_INSTALL=	redmine4
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
