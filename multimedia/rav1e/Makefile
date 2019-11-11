@@ -2,6 +2,7 @@
 
 PORTNAME=	rav1e
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -155,6 +156,15 @@ CARGO_CRATES=	adler32-1.0.4 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		wincolor-1.0.2 \
 		y4m-0.4.0
+
+.ifndef PKGNAMEPREFIX
+OPTIONS_DEFINE=	FFMPEG
+OPTIONS_DEFAULT=FFMPEG
+
+FFMPEG_BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+FFMPEG_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
+FFMPEG_VARS=		CARGO_FEATURES+=avformat-sys
+.endif
 
 .if !target(post-install)
 post-install:
