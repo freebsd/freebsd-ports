@@ -2,6 +2,7 @@ bin/janet
 bin/jpm
 include/janet/janet.h
 include/janet/janetconf.h
+lib/janet/.keep
 lib/libjanet.a
 lib/libjanet.so
 man/man1/janet.1.gz
