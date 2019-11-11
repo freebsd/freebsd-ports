@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fasm
-PORTVERSION=	1.73.16
+PORTVERSION=	1.73.17
 CATEGORIES=	lang devel
 MASTER_SITES=	https://flatassembler.net/
 
