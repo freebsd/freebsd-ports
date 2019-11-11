@@ -166,6 +166,10 @@ FFMPEG_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
 FFMPEG_VARS=		CARGO_FEATURES+=avformat-sys
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} 's/env!("VERGEN_SEMVER_LIGHTWEIGHT")/"${DISTVERSIONFULL}"/' \
+		${WRKSRC}/src/capi.rs ${WRKSRC}/src/lib.rs
+
 .if !target(post-install)
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
