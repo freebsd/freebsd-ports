@@ -5,7 +5,6 @@ PORTNAME=	mimalloc
 PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-#MASTER_SITES=
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	General-purpose allocator with excellent performance characteristics
