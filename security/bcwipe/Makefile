@@ -4,14 +4,11 @@
 PORTNAME=	bcwipe
 PORTVERSION=	1.9.13
 CATEGORIES=	security
-MASTER_SITES=	http://www.jetico.com/linux/ \
-		http://bsd.desa-hosting.de/distfiles/security/
+MASTER_SITES=	http://www.jetico.com/linux/
 DISTNAME=	BCWipe-${PORTVERSION:S/./-/g:S/-/./}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	BCWipe securely erases data from magnetic and solid-state memory
-
-BROKEN=		unfetchable
 
 NO_CDROM=	Non-commercial distribution and use only
 
