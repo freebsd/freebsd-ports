@@ -11,8 +11,6 @@ PKGNAMEPREFIX=	proftpd-
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	ClamAV ProFTPD module
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv2
 
 DESCR=		${.CURDIR}/pkg-descr
@@ -22,9 +20,9 @@ MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 GIT_REVISION=	c8586c7
 
 RUN_DEPENDS+=	clamd:security/clamav
-_PROFTPD_MODULE_DISTFILES=	mod_clamav-v0.14rc2${EXTRACT_SUFX}:clamav
-_PROFTPD_MODULE_EXTRACT_ONLY=	mod_clamav-v0.14rc2${EXTRACT_SUFX}
-_PROFTPD_MODULE_MASTER_SITES=	https://codeload.github.com/jbenden/mod_clamav/legacy.tar.gz/${GH_TAGNAME}?dummy=/:clamav
+_PROFTPD_MODULE_DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${EXTRACT_SUFX}:clamav
+_PROFTPD_MODULE_EXTRACT_ONLY=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${EXTRACT_SUFX}
+_PROFTPD_MODULE_MASTER_SITES=	https://codeload.github.com/jbenden/mod_clamav/legacy.tar.gz/v${DISTVERSION}?dummy=/:clamav
 
 INCLUDEDIRS=	${LOCALBASE}/include
 LIBDIRS=	${LOCALBASE}/lib
