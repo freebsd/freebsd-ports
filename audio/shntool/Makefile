@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	shntool
-PORTVERSION=	3.0.10
-PORTREVISION=	1
+DISTVERSION=	3.0.10
+PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.etree.org/shnutils/shntool/dist/src/
+MASTER_SITES=	http://shnutils.freeshell.org/shntool/dist/src/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multi-purpose WAVE data processing and reporting utility
 
-BROKEN=		unfetchable
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-SHN_ALIASES=	cat cmp conv cue fix gen hash info join len pad split \
-		strip tool trim
 
-PLIST_FILES=	${SHN_ALIASES:S|^|bin/shn|} \
+PLIST_FILES=	${_SHN_ALIASES:S|^|bin/shn|} \
 		man/man1/shntool.1.gz
 
 OPTIONS_DEFINE=	AIFF ALAC APE FLAC KXS LA LPAC OFR SHN TTA WAVPACK
@@ -39,5 +38,8 @@ OFR_RUN_DEPENDS=	ofr:audio/optimfrog
 SHN_RUN_DEPENDS=	shorten:audio/shorten
 TTA_RUN_DEPENDS=	ttaenc:audio/tta
 WAVPACK_RUN_DEPENDS=	wavpack:audio/wavpack
+
+_SHN_ALIASES=	cat cmp conv cue fix gen hash info join len pad split strip \
+		tool trim
 
 .include <bsd.port.mk>
