@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.7-9095 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g81c61e230
+DISTVERSION=	0.0.7-9124 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gabbf3c4d1
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +12,8 @@ COMMENT=	PS3 emulator/debugger
 LICENSE=	BSD3CLAUSE BSL GPLv2 MIT ZLIB
 LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC_cereal}/LICENSE
-LICENSE_FILE_MIT=	${WRKSRC_GSL}/LICENSE
+LICENSE_FILE_BSL=	${WRKSRC_span}/LICENSE_1_0.txt
+LICENSE_FILE_MIT=	${WRKSRC_pugixml}/LICENSE.md
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
 LIB_DEPENDS=	libpng.so:graphics/png \
@@ -30,7 +31,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-27-g9220f5e:hidapi/3rdparty/hidapi \
 		jbeder:yaml-cpp:yaml-cpp-0.6.2-23-geca9cfd:yamlcpp/3rdparty/yaml-cpp \
 		kobalicek:asmjit:fc251c9:asmjit/asmjit \
 		KhronosGroup:glslang:7.11.3214:glslang/Vulkan/glslang \
-		Microsoft:GSL:v2.0.0:GSL/3rdparty/GSL \
+		tcbrindle:span:9d7559a:span/3rdparty/span \
 		USCiLab:cereal:v1.2.0:cereal/3rdparty/cereal \
 		zeux:pugixml:v1.9-51-g8bf806c:pugixml/3rdparty/pugixml
 
