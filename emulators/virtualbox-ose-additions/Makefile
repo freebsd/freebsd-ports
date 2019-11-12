@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.34
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions
@@ -15,7 +16,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
-USES=		compiler:c++11-lang cpe iconv kmod python:build tar:bzip2
+USES=		compiler:c++11-lang cpe iconv kmod tar:bzip2
 USE_RC_SUBR=	vboxguest vboxservice
 
 BUILD_DEPENDS=	yasm:devel/yasm \
@@ -60,7 +61,7 @@ DEBUG_VARS_OFF=		KMK_BUILDTYPE=release
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 OPENGL_IMPLIES=		X11
 OPENGL_USE=		GL=gl,glu XORG=xcomposite,xdamage,xfixes
-OPENGL_USES=		gl xorg
+OPENGL_USES=		gl python:2.7,build xorg
 X11_BUILD_DEPENDS=	${LOCALBASE}/include/xorg/compiler.h:x11-servers/xorg-server
 X11_RUN_DEPENDS=	xrandr:x11/xrandr
 X11_USE=		XORG=x11,xcursor,xext,xorgproto,xmu,xrandr,xt
