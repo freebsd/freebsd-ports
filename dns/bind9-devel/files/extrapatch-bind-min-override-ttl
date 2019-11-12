@@ -1,8 +1,8 @@
 Add the override-cache-ttl feature.
 
---- bin/named/config.c.orig	2019-10-31 19:19:57 UTC
+--- bin/named/config.c.orig	2019-11-12 11:24:41 UTC
 +++ bin/named/config.c
-@@ -177,6 +177,7 @@ options {\n\
+@@ -178,6 +178,7 @@ options {\n\
  	notify-source *;\n\
  	notify-source-v6 *;\n\
  	nsec3-test-zone no;\n\
@@ -10,9 +10,9 @@ Add the override-cache-ttl feature.
  	provide-ixfr true;\n\
  	qname-minimization relaxed;\n\
  	query-source address *;\n\
---- bin/named/server.c.orig	2019-10-31 19:19:57 UTC
+--- bin/named/server.c.orig	2019-11-12 11:24:41 UTC
 +++ bin/named/server.c
-@@ -4215,6 +4215,11 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
+@@ -4219,6 +4219,11 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
  	}
  
  	obj = NULL;
@@ -23,8 +23,8 @@ Add the override-cache-ttl feature.
 +	obj = NULL;
  	result = named_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
- 	view->maxcachettl = cfg_obj_asuint32(obj);
---- lib/dns/include/dns/view.h.orig	2019-10-31 19:19:57 UTC
+ 	view->maxcachettl = cfg_obj_asduration(obj);
+--- lib/dns/include/dns/view.h.orig	2019-11-12 11:24:41 UTC
 +++ lib/dns/include/dns/view.h
 @@ -152,6 +152,7 @@ struct dns_view {
  	bool				requestnsid;
@@ -34,7 +34,7 @@ Add the override-cache-ttl feature.
  	dns_ttl_t			maxncachettl;
  	dns_ttl_t			mincachettl;
  	dns_ttl_t			minncachettl;
---- lib/dns/resolver.c.orig	2019-10-31 19:19:57 UTC
+--- lib/dns/resolver.c.orig	2019-11-12 11:24:41 UTC
 +++ lib/dns/resolver.c
 @@ -6056,6 +6056,12 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_adb
  		}
@@ -49,13 +49,13 @@ Add the override-cache-ttl feature.
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl) {
---- lib/isccfg/namedconf.c.orig	2019-10-31 19:19:57 UTC
+--- lib/isccfg/namedconf.c.orig	2019-11-12 11:24:41 UTC
 +++ lib/isccfg/namedconf.c
-@@ -1907,6 +1907,7 @@ view_clauses[] = {
+@@ -1980,6 +1980,7 @@ view_clauses[] = {
  #endif
  	{ "max-acache-size", &cfg_type_sizenodefault, CFG_CLAUSEFLAG_OBSOLETE },
  	{ "max-cache-size", &cfg_type_sizeorpercent, 0 },
-+	{ "override-cache-ttl", &cfg_type_ttlval, 0 },
- 	{ "max-cache-ttl", &cfg_type_ttlval, 0 },
++	{ "override-cache-ttl", &cfg_type_duration, 0 },
+ 	{ "max-cache-ttl", &cfg_type_duration, 0 },
  	{ "max-clients-per-query", &cfg_type_uint32, 0 },
- 	{ "max-ncache-ttl", &cfg_type_ttlval, 0 },
+ 	{ "max-ncache-ttl", &cfg_type_duration, 0 },
