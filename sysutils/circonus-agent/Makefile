@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	sam.gwydir@joyent.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Circonus host agent for metric collection
 
 BROKEN=		unfetchable
