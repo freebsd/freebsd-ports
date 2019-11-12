@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	signing-party
-PORTVERSION=	2.7
+PORTVERSION=	2.10
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
-		DEBIAN
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Various OpenPGP related tools
 
-BROKEN=		unfetchable
+LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2 GPLv2+ GPLv3+ MIT
+LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	gsed:textproc/gsed
 RUN_DEPENDS=	gpg:security/gnupg \
 		p5-Net-IDN-Encode>=0:textproc/p5-Net-IDN-Encode \
 		p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
@@ -24,11 +23,15 @@ RUN_DEPENDS=	gpg:security/gnupg \
 		p5-Text-Template>=0:textproc/p5-Text-Template \
 		p5-GD>=0:graphics/p5-GD
 
-CONFLICTS_INSTALL=sig2dot-[0-9]* springgraph-[0-9]*
-
 USES=		perl5 python gmake shebangfix
 SHEBANG_FILES=	${SCRIPTS}
-NO_WRKSUBDIR=	yes
+BINARY_ALIAS=	sed=gsed
+CONFLICTS_INSTALL=sig2dot-[0-9]* springgraph-[0-9]*
+
+USE_GITLAB=	yes
+GL_SITE=	https://salsa.debian.org/
+GL_ACCOUNT=	signing-party-team
+GL_COMMIT=	8f6c9d59d8edbb08dade7bac06417fce07626f7f
 
 BINS=		keyanalyze/keyanalyze keyanalyze/process_keys \
 		gpgwrap/bin/gpgwrap
