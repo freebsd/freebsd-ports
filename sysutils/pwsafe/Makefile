@@ -6,7 +6,7 @@ DISTVERSION=	0.2.0-155
 DISTVERSIONSUFFIX=	-g1dbcfd0
 CATEGORIES=	sysutils
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	m.ne@gmx.net
 COMMENT=	Cmdline program that manages encrypted password databases
 
 LICENSE=	GPLv2
