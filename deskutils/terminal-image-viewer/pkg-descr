@@ -1,0 +1,17 @@
+Small C++ program to display images in a (modern) terminal using RGB ANSI codes
+and unicode block graphic characters.
+
+There are various similar tools (such as timg) using the unicode half block
+character to display two 24bit pixels per character cell. This program enhances
+the resolution by mapping 4x8 pixel cells to different unicode characters,
+using the following algorithm:
+
+For each 4x8 pixel cell of the (potentially downscaled) image:
+* Find the color channel (R, G or B) that has the biggest range of values for
+  the current cell.
+* Split this range in the middle and create a corresponding bitmap for the cell.
+* Compare the bitmap to the assumed bitmaps for various unicode block graphics
+  characters.
+* Re-calculate the foreground and background colors for the chosen character.
+
+WWW: https://github.com/stefanhaustein/TerminalImageViewer

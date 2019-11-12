@@ -1,0 +1,20 @@
+--- Makefile.orig	2019-10-21 19:12:09 UTC
++++ Makefile
+@@ -5,7 +5,7 @@ OBJECTS = tiv.o
+ CXX      ?= g++
+ CXXFLAGS ?= -O2 -fpermissive
+ INSTALL  ?= install
+-INSTALL_PROGRAM ?= $(INSTALL) -D
++INSTALL_PROGRAM ?= $(INSTALL)
+ 
+ # https://www.gnu.org/prep/standards/html_node/Directory-Variables.html#Directory-Variables
+ prefix      ?= /usr/local
+@@ -14,7 +14,7 @@ bindir      ?= $(exec_prefix)/bin
+ 
+ override CXXFLAGS += -std=c++17 -Wall -fexceptions
+ override LDFLAGS  += -pthread
+-override LDLIBS   += -lstdc++fs
++#override LDLIBS   += -lstdc++fs
+ 
+ all: $(PROGNAME)
+ 
