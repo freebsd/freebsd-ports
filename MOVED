@@ -13455,3 +13455,4 @@ www/tomcat6|www/tomcat7|2019-11-02|Has expired: End-of-life since 2017
 www/p5-WWW-Mechanize-PhantomJS||2019-11-02|Has expired: uses expired lang/phantomjs
 x11/xfwp||2019-11-06|Has expired: Deprecated upstream
 x11/xfindproxy||2019-11-06|Has expired: Deprecated upstream
+security/clamav-milter|security/clamav|2019-11-12|Now that MILTER option is enabled by default, use security/clamav instead
