@@ -22,6 +22,6 @@ post-patch:
 	@${RM} -r ${WRKSRC}/dependencies
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python3.6/site-packages/_pyjq.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_pyjq.so
 
 .include <bsd.port.mk>
