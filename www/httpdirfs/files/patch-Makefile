@@ -1,0 +1,10 @@
+--- Makefile.orig	2019-11-12 10:38:03 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+ VERSION=1.2.0
+ 
+-CFLAGS += -O2 -Wall -Wextra -Wshadow -rdynamic -D_GNU_SOURCE\
++CFLAGS += -Wall -Wextra -Wshadow -D_GNU_SOURCE\
+ 	-D_FILE_OFFSET_BITS=64 -DVERSION=\"$(VERSION)\"\
+ 	`pkg-config --cflags-only-I gumbo libcurl fuse uuid expat`
+ LDFLAGS += `pkg-config --libs-only-L gumbo libcurl fuse uuid expat`

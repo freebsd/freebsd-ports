@@ -1,0 +1,16 @@
+Have you ever wanted to mount those HTTP directory listings as if it was a
+partition? Look no further, this is your solution. HTTPDirFS stands for Hyper
+Text Transfer Protocol Directory Filesystem.
+
+The performance of the program is excellent. HTTP connections are reused due to
+the use of curl-multi interface. The FUSE component runs in multithreaded mode.
+
+There is a permanent cache system which can cache all the file segments you
+have downloaded, so you don't need to these segments again if you access them
+later. This feature is triggered by the --cache flag. This makes this
+filesystem much faster than rclone mount.
+
+The support for Airsonic / Subsonic server has also been added. This allows you
+to mount a remote music collection locally.
+
+WWW: https://github.com/fangfufu/httpdirfs
