@@ -238,6 +238,7 @@
     SUBDIR += taskwarrior
     SUBDIR += teapot
     SUBDIR += tel
+    SUBDIR += terminal-image-viewer
     SUBDIR += thinkingrock
     SUBDIR += timewarrior
     SUBDIR += tine20
