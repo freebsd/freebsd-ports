@@ -13456,3 +13456,4 @@ www/p5-WWW-Mechanize-PhantomJS||2019-11-02|Has expired: uses expired lang/phanto
 x11/xfwp||2019-11-06|Has expired: Deprecated upstream
 x11/xfindproxy||2019-11-06|Has expired: Deprecated upstream
 security/clamav-milter|security/clamav|2019-11-12|Now that MILTER option is enabled by default, use security/clamav instead
+graphics/py-vips|graphics/py-pyvips|2019-11-12|Rename for better naming
