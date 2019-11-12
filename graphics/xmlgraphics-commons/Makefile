@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlgraphics-commons
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 DISTVERSIONSUFFIX=	-bin
 CATEGORIES=	graphics textproc java
 MASTER_SITES=	APACHE/xmlgraphics/commons/binaries
