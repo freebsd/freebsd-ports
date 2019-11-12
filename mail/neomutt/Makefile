@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	neomutt
-PORTVERSION=	20191102
+PORTVERSION=	20191111
 CATEGORIES=	mail
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -43,6 +43,7 @@ SCREEN_DESC=	Screen options
 
 CONFIGURE_ARGS=	--with-ssl="${OPENSSLBASE}" \
 		--locales-fix \
+		--fmemopen \
 		--mandir=${PREFIX}/man \
 		${ICONV_CONFIGURE_ARGS}
 
