@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-DISTVERSION=	5.2.3
+DISTVERSION=	5.2.4
 DISTVERSIONSUFFIX=	-de_DE
 CATEGORIES=	german www
 MASTER_SITES=	http://de.wordpress.org/
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
