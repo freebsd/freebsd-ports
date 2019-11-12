@@ -880,7 +880,7 @@
     SUBDIR += py-termtosvg
     SUBDIR += py-toyplot
     SUBDIR += py-traitsui
-    SUBDIR += py-vips
+    SUBDIR += py-pyvips
     SUBDIR += py-wand
     SUBDIR += py-webcolors
     SUBDIR += py-willow
