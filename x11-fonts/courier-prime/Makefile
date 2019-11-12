@@ -4,14 +4,12 @@ PORTNAME=	courier-prime
 PORTVERSION=	g20180831
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://quoteunquoteapps.com/downloads/
+MASTER_SITES=	https://quoteunquoteapps.com/courierprime/downloads/
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	flo@snakeoilproductions.net
 COMMENT=	It\'s Courier, just better
-
-BROKEN=		unfetchable
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/"Courier Prime/LICENSE/OFL.txt"
