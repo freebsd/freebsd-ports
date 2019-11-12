@@ -41,8 +41,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		mda-lv2>0:audio/mda-lv2 \
 		zam-plugins-lv2>0:audio/zam-plugins-lv2
 
-USES=		desktop-file-utils libtool localbase:ldflags gettext gnome meson ninja \
-		pathfix pkgconfig python:3.6+ shebangfix
+USES=		compiler:c++17-lang desktop-file-utils libtool \
+		localbase:ldflags gettext gnome meson ninja pathfix pkgconfig \
+		python:3.6+ shebangfix
 USE_GNOME=	cairo gconf2 gtkmm30 libsigc++20 pygobject3
 USE_GSTREAMER1=	bad bs2b good ladspa lv2 pulse webrtcdsp
 USE_LDCONFIG=	yes
