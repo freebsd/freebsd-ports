@@ -14,12 +14,3 @@
          if (rc) {
            if (arg_verbose > 0) printf("rng seeded with %d bytes from %s\n", rc, rng_filename);
          } else {
-@@ -2111,7 +2116,7 @@ static secstring xmlescape(const secstri
-       case '"': out += "&quot;"; break;
-       case '&': out += "&amp;"; break;
-       case '<': out += "&lt;"; break;
--      case '>': out += "&gt"; break;
-+      case '>': out += "&gt;"; break;
-       case '\\': out += "\\\\"; break;
-       default: out += c;
-     }
