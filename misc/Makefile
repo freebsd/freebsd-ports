@@ -36,6 +36,7 @@
     SUBDIR += buffer
     SUBDIR += cave
     SUBDIR += cdcollect
+    SUBDIR += cheat
     SUBDIR += chef
     SUBDIR += chmlib
     SUBDIR += cinnamon-translations
