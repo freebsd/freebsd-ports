@@ -17,6 +17,7 @@ include/kodi/TimingConstants.h
 include/kodi/XBMC_vkeys.h
 include/kodi/addon-instance/AudioDecoder.h
 include/kodi/addon-instance/AudioEncoder.h
+include/kodi/addon-instance/Game.h
 include/kodi/addon-instance/ImageDecoder.h
 include/kodi/addon-instance/Inputstream.h
 include/kodi/addon-instance/Peripheral.h
@@ -55,10 +56,7 @@ include/kodi/gui/gl/GL.h
 include/kodi/gui/gl/GLonDX.h
 include/kodi/gui/gl/Shader.h
 include/kodi/gui/renderHelper.h
-include/kodi/kodi_game_dll.h
-include/kodi/kodi_game_types.h
 include/kodi/kodi_vfs_types.h
-include/kodi/libKODI_game.h
 include/kodi/libKODI_guilib.h
 include/kodi/libXBMC_addon.h
 include/kodi/libXBMC_pvr.h
