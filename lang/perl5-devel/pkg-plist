@@ -26,6 +26,7 @@ bin/ptardiff%%BINSUFFIX%%
 bin/ptargrep%%BINSUFFIX%%
 bin/shasum%%BINSUFFIX%%
 bin/splain%%BINSUFFIX%%
+bin/streamzip%%BINSUFFIX%%
 bin/xsubpp%%BINSUFFIX%%
 bin/zipdetails%%BINSUFFIX%%
 etc/man.d/perl%%PKGNAMESUFFIX%%.conf
@@ -955,6 +956,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5281delta.1.gz
 %%MAN1%%/perl5282delta.1.gz
 %%MAN1%%/perl5300delta.1.gz
+%%MAN1%%/perl5301delta.1.gz
 %%MAN1%%/perl5310delta.1.gz
 %%MAN1%%/perl5311delta.1.gz
 %%MAN1%%/perl5312delta.1.gz
@@ -1131,6 +1133,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/ptargrep.1.gz
 %%MAN1%%/shasum.1.gz
 %%MAN1%%/splain.1.gz
+%%MAN1%%/streamzip.1.gz
 %%MAN1%%/xsubpp.1.gz
 %%MAN1%%/zipdetails.1.gz
 %%MAN3%%/AnyDBM_File.3.gz
@@ -1744,6 +1747,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5281delta.pod
 %%PRIV_LIB%%/pod/perl5282delta.pod
 %%PRIV_LIB%%/pod/perl5300delta.pod
+%%PRIV_LIB%%/pod/perl5301delta.pod
 %%PRIV_LIB%%/pod/perl5310delta.pod
 %%PRIV_LIB%%/pod/perl5311delta.pod
 %%PRIV_LIB%%/pod/perl5312delta.pod
@@ -1911,7 +1915,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/Blocks.txt
 %%PRIV_LIB%%/unicore/CombiningClass.pl
 %%PRIV_LIB%%/unicore/Decomposition.pl
-%%PRIV_LIB%%/unicore/Heavy.pl
 %%PRIV_LIB%%/unicore/Name.pl
 %%PRIV_LIB%%/unicore/Name.pm
 %%PRIV_LIB%%/unicore/NamedSequences.txt
@@ -2431,7 +2434,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/uni_keywords.pl
 %%PRIV_LIB%%/unicore/version
 %%PRIV_LIB%%/utf8.pm
-%%PRIV_LIB%%/utf8_heavy.pl
 %%PRIV_LIB%%/vars.pm
 %%PRIV_LIB%%/version.pm
 %%PRIV_LIB%%/version.pod
