@@ -3,7 +3,7 @@
 
 PORTNAME=	c6
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 
@@ -57,7 +57,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.5-7.el6_0 \
 		libstdc++-4.4.7-23.el6 \
 		libuuid-2.17.2-12.28.el6_9.2 \
 		ncurses-libs-5.7-4.20090207.el6 \
-		nss-softokn-freebl-3.14.3-23.3.el6_8 \
+		nss-softokn-freebl-3.44.0-5.el6_10 \
 		pcre-7.8-7.el6 \
 		popt-1.13-7.el6 \
 		readline-6.0-4.el6 \
@@ -98,7 +98,7 @@ SRC_DISTFILES=	acl-2.2.49-7.el6_9.1${SRC_SUFX}:SOURCE \
 		libselinux-2.0.94-7.el6${SRC_SUFX}:SOURCE \
 		libsepol-2.0.41-4.el6${SRC_SUFX}:SOURCE \
 		ncurses-5.7-4.20090207.el6${SRC_SUFX}:SOURCE \
-		nss-softokn-3.14.3-23.3.el6_8${SRC_SUFX}:SOURCE \
+		nss-softokn-3.44.0-5.el6_10${SRC_SUFX}:SOURCE \
 		pcre-7.8-7.el6${SRC_SUFX}:SOURCE \
 		popt-1.13-7.el6${SRC_SUFX}:SOURCE \
 		readline-6.0-4.el6${SRC_SUFX}:SOURCE \
