@@ -5,10 +5,12 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER:S/-beta./.b/}
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v4.1.0/:chromium \
+		https://commondatastorage.googleapis.com/chromium-browser-official/:chromium_official \
 		https://commondatastorage.googleapis.com/chromium-nodejs/:chromium_node \
 		https://commondatastorage.googleapis.com/chromium-fonts/:chromium_testfonts
 PKGNAMESUFFIX=	4
 DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}:chromium \
+		chromium-${CHROMIUM_OFFICIAL_VER}${EXTRACT_SUFX}:chromium_official \
 		${CHROMIUM_NODE_MODULES_HASH}:chromium_node \
 		electron-npm-modules-${ELECTRON_VER}${EXTRACT_SUFX}:prefetch
 DIST_SUBDIR=	${PORTNAME}
@@ -19,12 +21,9 @@ COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/electron/LICENSE
 
-BROKEN=		fails to build
-
 FETCH_DEPENDS=	npm:www/npm-node10
 PATCH_DEPENDS=	git:devel/git
 BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
-		gn:devel/chromium-gn \
 		gperf:devel/gperf \
 		yasm:devel/yasm \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
@@ -52,7 +51,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 TEST_DEPENDS=	npm:www/npm-node10
 
 USES=		bison dos2unix gettext-tools gl gnome jpeg localbase:ldflags \
-		ninja pkgconfig python:2.7,build tar:xz xorg
+		ninja pkgconfig python:2.7,build tar:xz
 
 CONFLICTS_INSTALL=	electron5
 
@@ -64,7 +63,9 @@ GH_TUPLE=	electron:node:8bc5d171a0873c0ba49f9433798bc8b67399788c:node
 		# yaml:pyyaml:3.12:pyyaml \
 		# kennethreitz:requests:e4d59bedfd3c7f4f254f4f5d036587bcd8152458:requests
 
-ELECTRON_VER=	4.2.9
+ELECTRON_VER=	4.2.12
+# Official chromium version containing "gn" which is known to work
+CHROMIUM_OFFICIAL_VER=	76.0.3809.132
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
 CHROMIUM_VER=	69.0.3497.128
 # See ${WRKSRC}/third_party/node/node_modules.tar.gz.sha1 for CHROMIUM_NODE_MODULES_HASH
@@ -107,6 +108,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_system_libjpeg=true \
 		extra_cxxflags="${CXXFLAGS}" \
 		extra_ldflags="${LDFLAGS}"
+GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild --skip-generate-buildfiles
 
 ALL_TARGET=	electron
 MAKE_ARGS=	-C out/${BUILDTYPE}
@@ -157,7 +159,7 @@ TEST_ALL_TARGET+=	third_party/electron_node:headers
 POST_BUILD_TARGETS=	licenses version
 POST_BUILD_DIST_TARGETS=	dist.zip chromedriver.zip mksnapshot.zip
 
-NPM_TIMESTAMP=	1565176036
+NPM_TIMESTAMP=	1573298347
 
 PLIST_SUB=	ELECTRON_VER=${ELECTRON_VER}
 
@@ -196,6 +198,9 @@ pre-fetch:
 
 post-extract:
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/chromium-${CHROMIUM_VER} ${WRKSRC}
+	${RM} -r ${WRKSRC}/tools/gn
+	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/chromium-${CHROMIUM_OFFICIAL_VER}/tools/gn \
+		${WRKSRC}/tools/gn
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${PORTNAME}-${ELECTRON_VER} ${WRKSRC}/electron
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_node}-${GH_TAGNAME_node} \
 		${WRKSRC}/third_party/${GH_ACCOUNT_node}_${GH_PROJECT_node}
@@ -233,7 +238,11 @@ pre-configure:
 		libxslt openh264 opus snappy yasm || ${FALSE}
 
 do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} gn gen out/${BUILDTYPE} \
+	# GN generator bootstrapping and generating ninja files
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
+		READELF=${READELF} AR=${AR} NM=${NM} ${PYTHON_CMD} \
+		./tools/gn/bootstrap/bootstrap.py ${GN_BOOTSTRAP_FLAGS}
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./out/${BUILDTYPE}/gn gen out/${BUILDTYPE} \
 		--args='import("//electron/build/args/${BUILDTYPE:tl}.gn") ${GN_ARGS}'
 	# Setup nodejs dependency
 	${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin
