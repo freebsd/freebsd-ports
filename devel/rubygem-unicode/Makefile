@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Unicode string manipulation library for Ruby
 
+LICENSE=	RUBY
+
 USES=		gem
 USE_RUBY=	yes
 
