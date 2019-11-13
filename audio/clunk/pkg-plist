@@ -1,4 +1,6 @@
-include/clunk/backend.h
+include/clunk/audio_spec.h
+include/clunk/backend/sdl/backend.h
+include/clunk/backend/sdl/locker.h
 include/clunk/buffer.h
 include/clunk/clunk.h
 include/clunk/clunk_assert.h
@@ -18,6 +20,7 @@ include/clunk/sample.h
 include/clunk/source.h
 include/clunk/sse_fft_context.h
 include/clunk/stream.h
+include/clunk/types.h
 include/clunk/v3.h
 include/clunk/window_function.h
 lib/libclunk.so
