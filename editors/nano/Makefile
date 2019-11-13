@@ -34,11 +34,6 @@ INFO=		nano
 
 PORTSCOUT=	limitw:1,even
 
-.ifdef QEMU_EMULATING
-# XXX bug 224740/231346: configure hangs
-CONFIGURE_ENV+=	gl_cv_func_printf_enomem=no
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's/^groff.*/false/' ${WRKSRC}/configure
 

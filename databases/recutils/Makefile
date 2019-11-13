@@ -14,10 +14,6 @@ LICENSE=	GPLv3
 
 USES=		charsetfix libtool makeinfo
 GNU_CONFIGURE=	yes
-.ifdef QEMU_EMULATING
-# XXX bug 224740: configure hangs
-CONFIGURE_ENV=	gl_cv_func_printf_enomem=no
-.endif
 USE_LDCONFIG=	yes
 
 INFO=		rec-mode recutils

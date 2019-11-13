@@ -33,11 +33,6 @@ CONFIGURE_ARGS+=	--with-urw-fonts-dir=${LOCALBASE}/share/ghostscript/fonts/ \
 
 CPE_VENDOR=	gnu
 
-.ifdef QEMU_EMULATING
-# XXX bug 224740: configure hangs: GSlice: failed to allocate 496 bytes (alignment: 512)
-CONFIGURE_ENV+=	gl_cv_func_printf_enomem=no
-.endif
-
 # Canonicalize to A4 if set.
 .if defined(A4) || (defined(PAPERSIZE) && ${PAPERSIZE:tu} == "A4")
 PAPERSIZE=A4
