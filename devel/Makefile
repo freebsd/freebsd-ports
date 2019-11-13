@@ -4868,8 +4868,8 @@
     SUBDIR += py-pyicu
     SUBDIR += py-pyinotify
     SUBDIR += py-pyinstaller
-    SUBDIR += py-pyjsparser
     SUBDIR += py-pyjq
+    SUBDIR += py-pyjsparser
     SUBDIR += py-pyke
     SUBDIR += py-pylama
     SUBDIR += py-pylibsrtp
@@ -6042,8 +6042,8 @@
     SUBDIR += rubygem-nsa-rails5
     SUBDIR += rubygem-numerizer
     SUBDIR += rubygem-numerizer01
-    SUBDIR += rubygem-octopress-hooks
     SUBDIR += rubygem-oci
+    SUBDIR += rubygem-octopress-hooks
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-omniauth_crowd
     SUBDIR += rubygem-omniauth_crowd22
