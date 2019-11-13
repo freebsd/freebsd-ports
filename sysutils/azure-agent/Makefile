@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	azure-agent
-PORTVERSION=	2.2.14
+PORTVERSION=	2.2.41
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	sysutils
 
-MAINTAINER=	honzhan@microsoft.com
+MAINTAINER=	weh@microsoft.com
 COMMENT=	Microsoft Azure Linux Agent
 
 LICENSE=	APACHE20
