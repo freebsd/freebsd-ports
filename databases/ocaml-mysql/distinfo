@@ -1,3 +1,3 @@
-TIMESTAMP = 1505942666
-SHA256 (ocaml-mysql-1.2.2.tar.gz) = fac7873c53ebe8d08c35701c77780d3fdae3b71d536238b6630932dd44e0987d
-SIZE (ocaml-mysql-1.2.2.tar.gz) = 99136
+TIMESTAMP = 1573595819
+SHA256 (ocaml-mysql-1.2.4.tar.gz) = 8535a88f74a34dfdb51c4539e4a965b84204273bd04e539a5d729f2536da6c9f
+SIZE (ocaml-mysql-1.2.4.tar.gz) = 99473
