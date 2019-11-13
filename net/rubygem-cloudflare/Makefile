@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudflare
-PORTVERSION=	4.1.3
+PORTVERSION=	4.2.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
