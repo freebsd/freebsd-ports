@@ -5511,6 +5511,7 @@
     SUBDIR += rubygem-aws-sdk-codedeploy
     SUBDIR += rubygem-aws-sdk-codepipeline
     SUBDIR += rubygem-aws-sdk-codestar
+    SUBDIR += rubygem-aws-sdk-codestarnotifications
     SUBDIR += rubygem-aws-sdk-cognitoidentity
     SUBDIR += rubygem-aws-sdk-cognitoidentityprovider
     SUBDIR += rubygem-aws-sdk-cognitosync
