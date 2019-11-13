@@ -5,7 +5,7 @@ PORTVERSION=	0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	phascolarctos@protonmail.ch
 COMMENT=	Services manager to choose which services start at boot time
 
 LICENSE=	BSD2CLAUSE
