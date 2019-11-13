@@ -1,6 +1,9 @@
-Ruby wrapper that supports all of the GitHub API v3 methods(nearly 200). It's
-build in a modular way, that is, you can either instantiate the whole api
-wrapper Github.new or use parts of it e.i. Github::Repos.new if working solely
-with repositories is your main concern.
+A Ruby client for the official GitHub API.
 
-WWW: http://piotrmurach.github.io/github/
+Supports all the API methods. It's built in a modular way. You can either
+instantiate the whole API wrapper Github.new or use parts of it i.e.
+Github::Client::Repos.new if working solely with repositories is your main
+concern. Intuitive query methods allow you easily call API endpoints.
+
+WWW: https://piotrmurach.github.io/github/
+WWW: https://github.com/piotrmurach/github
