@@ -51,6 +51,10 @@ ONIG_LIB_DEPENDS=	libonig.so:devel/oniguruma
 CONFIGURE_ARGS+=	--without-iconv
 .endif
 
+.if ${ARCH} == powerpc64
+USE_GCC=	any
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E 's,doc/slsh,doc/slang/v\@slang_major_version\@,' \
 		${WRKSRC}/slsh/Makefile.in
