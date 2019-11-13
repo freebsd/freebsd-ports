@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	2.1.2
-PORTREVISION=	2
+PORTVERSION=	2.1.3
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -27,7 +26,10 @@ USE_PERL5=	build
 CMAKE_ARGS=	-DCMAKE_INSTALL_FULL_SYSCONFDIR=${ETCDIR} \
 		-DCMAKE_INSTALL_LOCALSTATEDIR=/var \
 		-DCMAKE_INSTALL_MANDIR=${PREFIX}/man
-CMAKE_OFF=	ENABLE_BUNDLED_LIBYAML ENABLE_BUNDLED_MSGPUCK ENABLE_BUNDLED_ZSTD
+CMAKE_OFF=	ENABLE_BUNDLED_LIBCURL \
+		ENABLE_BUNDLED_LIBYAML \
+		ENABLE_BUNDLED_MSGPUCK \
+		ENABLE_BUNDLED_ZSTD
 CMAKE_ON=	ENABLE_DIST
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
@@ -38,10 +40,10 @@ PLIST_SUB=	TT_DATADIR=${TT_DATADIR} \
 SUB_FILES=	pkg-message
 
 GH_TUPLE=	luafun:luafun:e248e00:luafun/third_party/luafun \
-		tarantool:luajit:5f0a43a:luajit/third_party/luajit \
+		tarantool:luajit:4625404:luajit/third_party/luajit \
 		tarantool:luarocks:05312b5:luarocks/third_party/luarocks \
-		tarantool:small:020716d:small/src/lib/small \
-		tarantool:test-run:27aebd9:test_run/test-run
+		tarantool:small:9046d88:small/src/lib/small \
+		tarantool:test-run:e665a66:test_run/test-run
 USE_GITHUB=	yes
 
 USERS=		tarantool
