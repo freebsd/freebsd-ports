@@ -1904,7 +1904,6 @@
     SUBDIR += radicale2
     SUBDIR += red5
     SUBDIR += redmine
-    SUBDIR += redmine4
     SUBDIR += redmine-a_common_libs
     SUBDIR += redmine-basecamp
     SUBDIR += redmine-default_assign
@@ -1918,6 +1917,7 @@
     SUBDIR += redmine-sidebar_hide
     SUBDIR += redmine-single_auth
     SUBDIR += redmine-wiki_notes
+    SUBDIR += redmine4
     SUBDIR += rejik
     SUBDIR += reportmagic
     SUBDIR += repos-style
