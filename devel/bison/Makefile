@@ -23,10 +23,6 @@ USES=		charsetfix localbase makeinfo perl5 tar:xz
 USE_PERL5=	build
 
 CONFIGURE_ARGS=	--disable-yacc --enable-relocatable
-.ifdef QEMU_EMULATING
-# XXX bug 224740: configure hangs
-CONFIGURE_ENV=	gl_cv_func_printf_enomem=no
-.endif
 GNU_CONFIGURE=	yes
 LIBS+=		-lm
 TEST_TARGET=	check

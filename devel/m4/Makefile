@@ -19,10 +19,6 @@ LIBSIGSEGV_DESC=Use alternative page fault handler (GNU libsigsegv)
 
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
-.ifdef QEMU_EMULATING
-# XXX bug 224740: configure hangs
-CONFIGURE_ENV+=	gl_cv_func_printf_enomem=no
-.endif
 GNU_CONFIGURE=	yes
 USES=		makeinfo tar:xz
 
