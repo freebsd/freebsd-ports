@@ -1,0 +1,11 @@
+/usr/ports/x11-toolkits/fltk
+/usr/ports/graphics/mesa-libs
+/usr/ports/x11-toolkits/wxgtk30
+/usr/ports/graphics/py-imageio
+/usr/ports/math/py-numpy
+/usr/ports/graphics/py-PyOpenGL
+/usr/ports/devel/pyside2
+/usr/ports/devel/py-setuptools
+/usr/ports/lang/python37
+/usr/ports/devel/py-qt5-core
+/usr/ports/x11-toolkits/py-qt5-gui
