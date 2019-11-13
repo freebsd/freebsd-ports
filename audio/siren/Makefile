@@ -59,8 +59,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lcurses|-lncurses|' ${WRKSRC}/configure
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/siren
-	${FIND} ${STAGEDIR}${PREFIX}/lib/siren -path '*.so' \
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/siren
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/siren -path '*.so' \
 		| ${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.mk>
