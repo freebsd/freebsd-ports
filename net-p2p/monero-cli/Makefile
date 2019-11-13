@@ -3,9 +3,8 @@
 
 PORTNAME=	monero-cli
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	0.14.1.2
+PORTVERSION=	0.15.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 # and uncomment the following two lines (use for example -git-HEAD or -git-b6420e1)
 #PORTVERSION=	0
 #PKGNAMESUFFIX=	-git-HEAD
@@ -16,7 +15,7 @@ COMMENT=	Private, secure, untraceable, decentralised digital currency (CLI)
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_i386=		fails to compile: register r15d is only available in 64-bit mode
+BROKEN_i386=	fails to compile: register r15d is only available in 64-bit mode
 
 LIB_DEPENDS=	\
 		libboost_chrono.so:devel/boost-libs \
@@ -38,12 +37,15 @@ BUILD_DEPENDS=	${LOCALBASE}/include/rapidjson/document.h:devel/rapidjson \
 
 USES=		cmake compiler:c++11-lib pkgconfig readline ssl
 USE_GITHUB=	yes
-
-GH_ACCOUNT=	monero-project
-GH_PROJECT=	monero
 .if defined(PKGNAMESUFFIX)
-GH_TAGNAME=	${PKGNAMESUFFIX:C/-git-//}
+GIT_COMMIT=	${PKGNAMESUFFIX:C/-git-//}
+.else
+GIT_COMMIT=	${DISTVERSIONPREFIX}${PORTVERSION}
 .endif
+GH_TUPLE=	monero-project:monero:${GIT_COMMIT} \
+		tevador:RandomX:7567cef4c6192fb5356bbdd7:ext1/external/randomx \
+		trezor:trezor-common:31a0073c62738:ext2/external/trezor-common
+
 CFLAGS+=	-D_WANT_SEMUN
 
 OPTIONS_DEFINE=		DOXYGEN
@@ -98,6 +100,7 @@ PLIST_FILES=	\
 		bin/monero-blockchain-prune-known-spent-data \
 		bin/monero-blockchain-stats \
 		bin/monero-blockchain-usage \
+		bin/monero-gen-ssl-cert \
 		bin/monero-gen-trusted-multisig \
 		bin/monero-wallet-cli \
 		bin/monero-wallet-rpc \
