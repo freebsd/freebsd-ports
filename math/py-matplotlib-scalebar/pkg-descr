@@ -1,0 +1,5 @@
+Provides a new artist for matplotlib to display a scale bar, aka micron bar. It
+is particularly useful when displaying calibrated images plotted using
+plt.imshow(...).
+
+WWW: https://github.com/ppinard/matplotlib-scalebar
