@@ -1,6 +1,6 @@
-TIMESTAMP = 1569703939
-SHA256 (processone-ejabberd-19.09_GH0.tar.gz) = e46055d88c7fc1943b3fe6ade719f4eb4829c2dbe20080bc3d9cbd909a9f4deb
-SIZE (processone-ejabberd-19.09_GH0.tar.gz) = 1845562
+TIMESTAMP = 1573634066
+SHA256 (processone-ejabberd-19.09.1_GH0.tar.gz) = 82a3fcf69d1aba0f9422dafa666012136db74928b01c03274f703eaefcd6a866
+SIZE (processone-ejabberd-19.09.1_GH0.tar.gz) = 1847245
 SHA256 (erlang-lager-lager-3.6.10_GH0.tar.gz) = c5bb4ba6f918e90d2e6671c3996d72c61f2a589b65c151b3df8011d046362981
 SIZE (erlang-lager-lager-3.6.10_GH0.tar.gz) = 268657
 SHA256 (processone-p1_utils-1.0.16_GH0.tar.gz) = 2559967770558dc003bcc3c7efc216f6c57c4f23830d5de33c6bf61d8a3f880c

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	19.09
+PORTVERSION=	19.09.1
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
