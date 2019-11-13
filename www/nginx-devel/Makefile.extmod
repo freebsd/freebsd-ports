@@ -8,11 +8,11 @@ ARRAYVAR_IMPLIES=	DEVEL_KIT
 ARRAYVAR_GH_TUPLE=	openresty:array-var-nginx-module:v0.05:arrayvar
 ARRAYVAR_VARS=		DSO_EXTMODS+=arrayvar
 
-AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:f1bcf3b:aws_auth
+AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:75c94e6:aws_auth
 AWS_AUTH_VARS=		DSO_EXTMODS+=aws_auth
 
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
-BROTLI_GH_TUPLE=	eustas:ngx_brotli:e26248e:brotli
+BROTLI_GH_TUPLE=	google:ngx_brotli:e505dce:brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 
 CACHE_PURGE_MASTER_SITES=	http://labs.frickle.com/files/:cache_purge
@@ -22,7 +22,7 @@ CACHE_PURGE_CONFIGURE_ON=	--add-module=${WRKDIR}/ngx_cache_purge-2.3
 CLOJURE_CATEGORIES+=	java
 CLOJURE_USE=		JAVA=yes JAVA_OS=native JAVA_VERSION=1.8 \
 			JAVA_VENDOR=openjdk JAVA_BUILD=yes JAVA_RUN=yes
-CLOJURE_GH_TUPLE=	nginx-clojure:nginx-clojure:50096bd:clojure
+CLOJURE_GH_TUPLE=	nginx-clojure:nginx-clojure:eb286b9:clojure
 CLOJURE_CONFIGURE_ENV=	"JNI_INCS=-I${LOCALBASE}/openjdk8/include -I${LOCALBASE}/openjdk8/include/freebsd"
 CLOJURE_VARS=		DSO_EXTMODS+=clojure CLOJURE_SUBDIR=/src/c
 
@@ -274,7 +274,7 @@ SFLOW_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
 			${PATCHDIR}/extra-patch-ngx_http_sflow_config.h \
 			${PATCHDIR}/extra-patch-ngx_http_sflow_module.c
 
-SHIBBOLETH_GH_TUPLE=	nginx-shib:nginx-http-shibboleth:d9fe8e5:shibboleth
+SHIBBOLETH_GH_TUPLE=	nginx-shib:nginx-http-shibboleth:20f6822:shibboleth
 SHIBBOLETH_VARS=	DSO_EXTMODS+=shibboleth
 
 SLOWFS_CACHE_MASTER_SITES=	http://labs.frickle.com/files/:slowfs_cache
