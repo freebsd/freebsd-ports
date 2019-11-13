@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-resources
-DISTVERSION=	3.54.1
+PORTVERSION=	3.57.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -47,6 +47,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-acm>=1<2:devel/rubygem-aws-sdk-acm \
 		rubygem-aws-sdk-codedeploy>=1<2:devel/rubygem-aws-sdk-codedeploy \
 		rubygem-aws-sdk-codepipeline>=1<2:devel/rubygem-aws-sdk-codepipeline \
 		rubygem-aws-sdk-codestar>=1<2:devel/rubygem-aws-sdk-codestar \
+		rubygem-aws-sdk-codestarnotifications>=1<2:devel/rubygem-aws-sdk-codestarnotifications \
 		rubygem-aws-sdk-cognitoidentity>=1<2:devel/rubygem-aws-sdk-cognitoidentity \
 		rubygem-aws-sdk-cognitoidentityprovider>=1<2:devel/rubygem-aws-sdk-cognitoidentityprovider \
 		rubygem-aws-sdk-cognitosync>=1<2:devel/rubygem-aws-sdk-cognitosync \
@@ -170,6 +171,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-acm>=1<2:devel/rubygem-aws-sdk-acm \
 		rubygem-aws-sdk-s3control>=1<2:devel/rubygem-aws-sdk-s3control \
 		rubygem-aws-sdk-sagemaker>=1<2:devel/rubygem-aws-sdk-sagemaker \
 		rubygem-aws-sdk-sagemakerruntime>=1<2:devel/rubygem-aws-sdk-sagemakerruntime \
+		rubygem-aws-sdk-savingsplans>=1<2:devel/rubygem-aws-sdk-savingsplans \
 		rubygem-aws-sdk-secretsmanager>=1<2:devel/rubygem-aws-sdk-secretsmanager \
 		rubygem-aws-sdk-securityhub>=1<2:devel/rubygem-aws-sdk-securityhub \
 		rubygem-aws-sdk-serverlessapplicationrepository>=1<2:devel/rubygem-aws-sdk-serverlessapplicationrepository \
@@ -185,6 +187,8 @@ RUN_DEPENDS=	rubygem-aws-sdk-acm>=1<2:devel/rubygem-aws-sdk-acm \
 		rubygem-aws-sdk-sns>=1<2:devel/rubygem-aws-sdk-sns \
 		rubygem-aws-sdk-sqs>=1<2:devel/rubygem-aws-sdk-sqs \
 		rubygem-aws-sdk-ssm>=1<2:devel/rubygem-aws-sdk-ssm \
+		rubygem-aws-sdk-sso>=1<2:devel/rubygem-aws-sdk-sso \
+		rubygem-aws-sdk-ssooidc>=1<2:devel/rubygem-aws-sdk-ssooidc \
 		rubygem-aws-sdk-states>=1<2:devel/rubygem-aws-sdk-states \
 		rubygem-aws-sdk-storagegateway>=1<2:devel/rubygem-aws-sdk-storagegateway \
 		rubygem-aws-sdk-support>=1<2:devel/rubygem-aws-sdk-support \
