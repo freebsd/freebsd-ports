@@ -5639,6 +5639,7 @@
     SUBDIR += rubygem-aws-sdk-s3control
     SUBDIR += rubygem-aws-sdk-sagemaker
     SUBDIR += rubygem-aws-sdk-sagemakerruntime
+    SUBDIR += rubygem-aws-sdk-savingsplans
     SUBDIR += rubygem-aws-sdk-secretsmanager
     SUBDIR += rubygem-aws-sdk-securityhub
     SUBDIR += rubygem-aws-sdk-serverlessapplicationrepository
