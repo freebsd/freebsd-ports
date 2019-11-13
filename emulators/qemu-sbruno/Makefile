@@ -7,7 +7,7 @@ CATEGORIES=	emulators
 PKGNAMESUFFIX?=	-sbruno
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
-MAINTAINER=	sbruno@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT?=	QEMU CPU Emulator - github bsd-user branch
 
 LICENSE=	GPLv2
