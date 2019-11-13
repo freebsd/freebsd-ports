@@ -17,8 +17,8 @@ LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		autoreconf gmake iconv libtool gnome perl5 pkgconfig \
-		shebangfix xorg
+USES=		autoreconf gettext-tools gmake iconv libtool gnome perl5 \
+		pkgconfig shebangfix xorg
 
 INSTALL_TARGET=	install-strip
 
@@ -45,8 +45,6 @@ DOCS_CONFIGURE_ON=	--enable-docs=yes
 DOCS_CONFIGURE_OFF=	--enable-docs=no
 
 .include <bsd.port.options.mk>
-USES=		autoreconf gmake iconv libtool gnome perl5 pkgconfig \
-		shebangfix xorg
 
 # Double check SOUND and SOUNDLOADER
 E16_SOUND=	${PORT_OPTIONS:MPULSEAUDIO}${PORT_OPTIONS:MSNDIO}
@@ -64,7 +62,7 @@ SHEBANG_FILES=	scripts/e_gen_menu
 CFLAGS+=	-Wno-unused-parameter -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-dependency-tracking  --disable-rpath \
+CONFIGURE_ARGS+=--disable-dependency-tracking  --disable-rpath \
 		--enable-mans SHELL=/bin/sh
 
 .if empty(E16_SOUND) && empty(E16_SNDLDR)
