@@ -17,6 +17,7 @@ NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 NO_ARCH=	YES
 
+BROKEN=		unfetchable
 RESTRICTED=	Redistribution of software prohibited by VictorOps
 
 OPTIONS_DEFINE=	QPAGE
