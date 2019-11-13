@@ -23,4 +23,6 @@ RUN_DEPENDS=	p5-Crypt-DH-GMP>=0:net/p5-Crypt-DH-GMP \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
