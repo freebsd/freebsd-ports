@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	All your system-independent infoz in one handy class
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-drydock>=0:devel/rubygem-drydock \
 		rubygem-storable>=0:devel/rubygem-storable
