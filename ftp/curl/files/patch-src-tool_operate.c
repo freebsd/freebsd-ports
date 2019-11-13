@@ -1,6 +1,6 @@
---- src/tool_operate.c.orig	2019-09-10 17:47:19 UTC
+--- src/tool_operate.c.orig	2019-11-04 08:43:26 UTC
 +++ src/tool_operate.c
-@@ -960,20 +960,7 @@ static CURLcode create_transfers(struct 
+@@ -992,20 +992,7 @@ static CURLcode single_transfer(struct G
              DEBUGASSERT(!outs->filename);
            }
  
@@ -22,17 +22,7 @@
  #ifdef __VMS
              /* open file for output, forcing VMS output format into stream
                 mode which is needed for stat() call above to always work. */
-@@ -981,7 +968,8 @@ static CURLcode create_transfers(struct 
-                                "ctx=stm", "rfm=stmlf", "rat=cr", "mrs=0");
- #else
-             /* open file for output: */
--            FILE *file = fopen(per->outfile, config->resume_from?"ab":"wb");
-+            /* (always open for appending, it has no effect on new files) */
-+            FILE *file = fopen(per->outfile, "ab");
- #endif
-             if(!file) {
-               helpf(global->errors, "Can't open '%s'!\n", per->outfile);
-@@ -990,6 +978,19 @@ static CURLcode create_transfers(struct 
+@@ -1022,6 +1009,19 @@ static CURLcode single_transfer(struct G
              }
              outs->fopened = TRUE;
              outs->stream = file;
