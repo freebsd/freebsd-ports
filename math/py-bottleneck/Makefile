@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bottleneck
-PORTVERSION=	1.2.1
-PORTREVISION=	5
+PORTVERSION=	1.3.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,11 +12,10 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of fast NumPy array functions written in Cython
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/bottleneck/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${PYNUMPY}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
@@ -34,8 +32,5 @@ post-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-
-do-test:
-	cd ${WRKSRC} && nosetests-${PYTHON_VER}
 
 .include <bsd.port.mk>
