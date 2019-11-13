@@ -17,6 +17,7 @@ share/icons/warzone2100.png
 %%NLS%%share/locale/ga/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/id/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/it/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/la/LC_MESSAGES/warzone2100.mo
@@ -34,3 +35,4 @@ share/icons/warzone2100.png
 %%NLS%%share/locale/uk_UA/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/warzone2100.mo
+share/metainfo/warzone2100.appdata.xml
