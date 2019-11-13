@@ -1,15 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	warzone2100
-PORTVERSION=	3.2.3
-PORTREVISION=	7
+PORTVERSION=	3.3.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -26,7 +24,7 @@ LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
-USES=		bison compiler:c++11-lib gl gmake localbase openal:al pkgconfig \
+USES=		autoreconf bison compiler:c++11-lib gl gmake localbase openal:al pkgconfig \
 		qmake:no_env qt:5 sdl ssl tar:xz xorg
 GNU_CONFIGURE=	yes
 USE_GL=		gl glu glew
@@ -38,6 +36,8 @@ CONFIGURE_ENV=	LIBCRYPTO_CFLAGS="-I${OPENSSLINC}" \
 		LIBCRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
 		CCOMPILER="${CC}" CXXCOMPILER="${CXX}"
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 PORTDOCS=	*
 PORTDATA=	*
 
@@ -46,16 +46,12 @@ OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
+NLS_USES_OFF=		gettext-tools
 NLS_CONFIGURE_ENABLE=	nls
 
 MANPAGES_BUILD_DEPENDS=	a2x:textproc/asciidoc
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror||g; s|-R$$found_dir||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|./build_tools/autorevision|& -f|g' ${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e '/INSTALL_DATA.*warzone2100.appdata.xml/d' ${WRKSRC}/icons/Makefile.*
-
-post-install:
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/metainfo
+	@${REINPLACE_CMD} -e 's|./build_tools/autorevision|& -f|g' ${WRKSRC}/src/Makefile.am
 
 .include <bsd.port.mk>
