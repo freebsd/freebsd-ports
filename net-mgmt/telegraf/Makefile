@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.12.4
+DISTVERSION=	1.12.5
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Time-series data collection
-
-BROKEN=		unfetchable
 
 LICENSE=	MIT
 
