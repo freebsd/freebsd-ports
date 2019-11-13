@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Protocol-HTTP2
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CRUX
@@ -21,8 +21,9 @@ RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 TEST_DEPENDS=	p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace \
 		p5-Test-TCP>=0:devel/p5-Test-TCP
 
-NO_ARCH=	yes
-USE_PERL5=	modbuildtiny
 USES=		perl5
+USE_PERL5=	modbuildtiny
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
