@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pikepdf
-DISTVERSION=	1.6.5
+DISTVERSION=	1.7.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=19.1.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=5.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xmp-toolkit>=2.0.1:textproc/py-python-xmp-toolkit@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.5+
+USES=		compiler:c++14-lang python:3.5+
 USE_PYTHON=	distutils autoplist
 
 post-install:
