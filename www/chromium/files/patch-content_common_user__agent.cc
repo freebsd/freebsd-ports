@@ -1,8 +1,8 @@
---- content/common/user_agent.cc.orig	2019-03-11 22:00:58 UTC
+--- content/common/user_agent.cc.orig	2019-09-09 21:55:16 UTC
 +++ content/common/user_agent.cc
-@@ -131,6 +131,14 @@ std::string BuildOSCpuInfo(bool include_android_build_
+@@ -124,6 +124,14 @@ std::string BuildOSCpuInfo(bool include_android_build_
  #endif
-   );  // NOLINT
+   );
  
 +#if defined(OS_BSD)
 +#if defined(__x86_64__)

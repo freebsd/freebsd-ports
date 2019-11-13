@@ -1,15 +1,15 @@
---- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig	2019-06-04 18:55:50 UTC
+--- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig	2019-10-21 19:07:29 UTC
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
-@@ -102,7 +102,7 @@ void DesktopWindowTreeHostPlatform::OnNativeWidgetCrea
-     const Widget::InitParams& params) {
-   native_widget_delegate_->OnNativeWidgetCreated();
+@@ -137,7 +137,7 @@ void DesktopWindowTreeHostPlatform::OnNativeWidgetCrea
+                                            Widget::InitParams::TYPE_WINDOW &&
+                                        !params.remove_standard_frame);
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // Setup a non_client_window_event_filter, which handles resize/move, double
    // click and other events.
    DCHECK(!non_client_window_event_filter_);
-@@ -552,7 +552,7 @@ void DesktopWindowTreeHostPlatform::Relayout() {
+@@ -668,7 +668,7 @@ void DesktopWindowTreeHostPlatform::Relayout() {
  }
  
  void DesktopWindowTreeHostPlatform::RemoveNonClientEventFilter() {

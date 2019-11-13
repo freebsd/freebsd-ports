@@ -1,9 +1,9 @@
---- extensions/shell/browser/shell_extensions_api_client.h.orig	2019-04-30 22:22:49 UTC
+--- extensions/shell/browser/shell_extensions_api_client.h.orig	2019-09-09 21:55:17 UTC
 +++ extensions/shell/browser/shell_extensions_api_client.h
-@@ -30,14 +30,14 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
-       WebViewGuest* web_view_guest) const override;
-   std::unique_ptr<VirtualKeyboardDelegate> CreateVirtualKeyboardDelegate(
+@@ -32,14 +32,14 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
        content::BrowserContext* browser_context) const override;
+   std::unique_ptr<DisplayInfoProvider> CreateDisplayInfoProvider()
+       const override;
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    FileSystemDelegate* GetFileSystemDelegate() override;

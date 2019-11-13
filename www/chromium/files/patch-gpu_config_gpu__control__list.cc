@@ -1,4 +1,4 @@
---- gpu/config/gpu_control_list.cc.orig	2019-06-04 18:55:24 UTC
+--- gpu/config/gpu_control_list.cc.orig	2019-10-21 19:06:35 UTC
 +++ gpu/config/gpu_control_list.cc
 @@ -16,7 +16,11 @@
  #include "base/values.h"
@@ -21,7 +21,7 @@
    return kGLTypeGL;
  #elif defined(OS_MACOSX)
    return kGLTypeGL;
-@@ -700,7 +704,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
+@@ -707,7 +711,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
    return kOsAndroid;
  #elif defined(OS_FUCHSIA)
    return kOsFuchsia;

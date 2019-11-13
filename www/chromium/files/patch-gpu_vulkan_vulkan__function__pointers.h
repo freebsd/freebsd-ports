@@ -1,24 +1,27 @@
---- gpu/vulkan/vulkan_function_pointers.h.orig	2019-07-24 18:58:27 UTC
+--- gpu/vulkan/vulkan_function_pointers.h.orig	2019-10-21 19:06:35 UTC
 +++ gpu/vulkan/vulkan_function_pointers.h
-@@ -145,13 +145,13 @@ struct VulkanFunctionPointers {
- #endif
+@@ -170,14 +170,14 @@ struct VulkanFunctionPointers {
+       vkGetAndroidHardwareBufferPropertiesANDROIDFn = nullptr;
+ #endif  // defined(OS_ANDROID)
  
-   // Device functions shared between Linux and Android.
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
    PFN_vkGetSemaphoreFdKHR vkGetSemaphoreFdKHRFn = nullptr;
    PFN_vkImportSemaphoreFdKHR vkImportSemaphoreFdKHRFn = nullptr;
- #endif
+-#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
++#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  
-   // Linux-only device functions.
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    PFN_vkGetMemoryFdKHR vkGetMemoryFdKHRFn = nullptr;
- #endif
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
  
-@@ -313,14 +313,14 @@ struct VulkanFunctionPointers {
+ #if defined(OS_FUCHSIA)
+   PFN_vkImportSemaphoreZirconHandleFUCHSIA
+@@ -356,16 +356,16 @@ struct VulkanFunctionPointers {
        ->vkGetAndroidHardwareBufferPropertiesANDROIDFn
- #endif
+ #endif  // defined(OS_ANDROID)
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
@@ -26,10 +29,14 @@
    gpu::GetVulkanFunctionPointers()->vkGetSemaphoreFdKHRFn
  #define vkImportSemaphoreFdKHR \
    gpu::GetVulkanFunctionPointers()->vkImportSemaphoreFdKHRFn
- #endif
+-#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
++#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  #define vkGetMemoryFdKHR gpu::GetVulkanFunctionPointers()->vkGetMemoryFdKHRFn
- #endif
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
  
+ #if defined(OS_FUCHSIA)
+ #define vkImportSemaphoreZirconHandleFUCHSIA \

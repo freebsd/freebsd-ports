@@ -1,4 +1,4 @@
---- base/process/process_metrics.h.orig	2019-07-24 18:58:02 UTC
+--- base/process/process_metrics.h.orig	2019-10-21 19:06:18 UTC
 +++ base/process/process_metrics.h
 @@ -41,7 +41,7 @@ namespace base {
  // Full declaration is in process_metrics_iocounters.h.
@@ -27,7 +27,7 @@
    // Resident Set Size is a Linux/Android specific memory concept. Do not
    // attempt to extend this to other platforms.
    BASE_EXPORT size_t GetResidentSetSize() const;
-@@ -199,14 +199,14 @@ class BASE_EXPORT ProcessMetrics {
+@@ -172,14 +172,14 @@ class BASE_EXPORT ProcessMetrics {
    int GetOpenFdSoftLimit() const;
  #endif  // defined(OS_POSIX)
  
@@ -44,7 +44,7 @@
  
    // Returns total memory usage of malloc.
    size_t GetMallocUsage();
-@@ -218,7 +218,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -191,7 +191,7 @@ class BASE_EXPORT ProcessMetrics {
    ProcessMetrics(ProcessHandle process, PortProvider* port_provider);
  #endif  // !defined(OS_MACOSX) || defined(OS_IOS)
  
@@ -53,7 +53,7 @@
    int CalculateIdleWakeupsPerSecond(uint64_t absolute_idle_wakeups);
  #endif
  #if defined(OS_MACOSX)
-@@ -247,7 +247,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -220,7 +220,7 @@ class BASE_EXPORT ProcessMetrics {
    // Number of bytes transferred to/from disk in bytes.
    uint64_t last_cumulative_disk_usage_ = 0;
  
@@ -62,7 +62,7 @@
    // Same thing for idle wakeups.
    TimeTicks last_idle_wakeups_time_;
    uint64_t last_absolute_idle_wakeups_;
-@@ -292,7 +292,7 @@ BASE_EXPORT size_t GetMaxFds();
+@@ -271,7 +271,7 @@ BASE_EXPORT size_t GetHandleLimit();
  BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_descriptors);
  #endif  // defined(OS_POSIX)
  
@@ -71,7 +71,7 @@
      defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA)
  // Data about system-wide memory consumption. Values are in KB. Available on
  // Windows, Mac, Linux, Android and Chrome OS.
-@@ -326,7 +326,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -305,7 +305,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
    int avail_phys = 0;
  #endif
  
@@ -80,7 +80,7 @@
    // This provides an estimate of available memory as described here:
    // https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773
    // NOTE: this is ONLY valid in kernels 3.14 and up.  Its value will always
-@@ -340,7 +340,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -319,7 +319,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
    int swap_free = 0;
  #endif
  
@@ -89,7 +89,7 @@
      defined(OS_FUCHSIA)
    int buffers = 0;
    int cached = 0;
-@@ -350,7 +350,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -329,7 +329,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
    int inactive_file = 0;
    int dirty = 0;
    int reclaimable = 0;
@@ -98,7 +98,7 @@
          // defined(OS_FUCHSIA)
  
  #if defined(OS_CHROMEOS)
-@@ -376,10 +376,10 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -355,10 +355,10 @@ struct BASE_EXPORT SystemMemoryInfoKB {
  // Exposed for memory debugging widget.
  BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo);
  
@@ -111,7 +111,7 @@
  // Parse the data found in /proc/<pid>/stat and return the sum of the
  // CPU-related ticks.  Returns -1 on parse error.
  // Exposed for testing.
-@@ -452,7 +452,7 @@ BASE_EXPORT bool GetSystemDiskInfo(SystemDiskInfo* dis
+@@ -431,7 +431,7 @@ BASE_EXPORT bool GetSystemDiskInfo(SystemDiskInfo* dis
  // Returns the amount of time spent in user space since boot across all CPUs.
  BASE_EXPORT TimeDelta GetUserCpuTimeSinceBoot();
  
@@ -120,7 +120,7 @@
  
  #if defined(OS_CHROMEOS)
  // Data from files in directory /sys/block/zram0 about ZRAM usage.
-@@ -547,7 +547,7 @@ class BASE_EXPORT SystemMetrics {
+@@ -526,7 +526,7 @@ class BASE_EXPORT SystemMetrics {
    FRIEND_TEST_ALL_PREFIXES(SystemMetricsTest, SystemMetrics);
  
    size_t committed_memory_;

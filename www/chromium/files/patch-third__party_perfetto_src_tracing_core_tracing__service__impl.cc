@@ -1,16 +1,6 @@
---- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig	2019-07-24 19:03:29 UTC
+--- third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig	2019-10-21 19:09:15 UTC
 +++ third_party/perfetto/src/tracing/core/tracing_service_impl.cc
-@@ -2053,7 +2053,8 @@ void TracingServiceImpl::OnStartTriggersTimeout(Tracin
- 
- void TracingServiceImpl::UpdateMemoryGuardrail() {
- #if !PERFETTO_BUILDFLAG(PERFETTO_EMBEDDER_BUILD) && \
--    !PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX)
-+    !PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX) && \
-+    !PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
-   uint64_t total_buffer_bytes = 0;
- 
-   // Sum up all the shared memory buffers.
-@@ -2106,7 +2107,8 @@ void TracingServiceImpl::SnapshotClocks(std::vector<Tr
+@@ -2180,7 +2180,8 @@ void TracingServiceImpl::SnapshotClocks(std::vector<Tr
    protos::ClockSnapshot* clock_snapshot = packet.mutable_clock_snapshot();
  
  #if !PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX) && \
@@ -19,4 +9,4 @@
 +    !PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
    struct {
      clockid_t id;
-     protos::ClockSnapshot::Clock::Type type;
+     protos::ClockSnapshot::Clock::BuiltinClocks type;

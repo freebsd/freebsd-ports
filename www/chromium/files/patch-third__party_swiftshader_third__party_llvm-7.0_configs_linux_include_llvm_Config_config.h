@@ -1,4 +1,4 @@
---- third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h.orig	2019-04-30 22:26:00 UTC
+--- third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h.orig	2019-09-09 21:57:03 UTC
 +++ third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h
 @@ -8,15 +8,15 @@
  #define BUG_REPORT_URL "https://bugs.llvm.org/"
@@ -141,7 +141,7 @@
  #elif defined(__mips__)
  #define LLVM_DEFAULT_TARGET_TRIPLE "mipsel-linux-gnu"
  #elif defined(__mips64)
-@@ -308,7 +308,7 @@
+@@ -310,7 +310,7 @@
  #endif
  
  /* Define if zlib compression is available */

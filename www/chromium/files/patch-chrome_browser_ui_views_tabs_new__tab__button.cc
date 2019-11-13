@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/tabs/new_tab_button.cc.orig	2019-07-24 18:58:13 UTC
+--- chrome/browser/ui/views/tabs/new_tab_button.cc.orig	2019-10-21 19:06:24 UTC
 +++ chrome/browser/ui/views/tabs/new_tab_button.cc
 @@ -69,7 +69,7 @@ const gfx::Size NewTabButton::kButtonSize{28, 28};
  NewTabButton::NewTabButton(TabStrip* tab_strip, views::ButtonListener* listener)

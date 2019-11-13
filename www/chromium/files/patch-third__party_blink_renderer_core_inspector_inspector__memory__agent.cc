@@ -1,11 +1,11 @@
---- third_party/blink/renderer/core/inspector/inspector_memory_agent.cc.orig	2019-04-30 22:23:01 UTC
+--- third_party/blink/renderer/core/inspector/inspector_memory_agent.cc.orig	2019-09-09 21:55:24 UTC
 +++ third_party/blink/renderer/core/inspector/inspector_memory_agent.cc
-@@ -188,7 +188,7 @@ InspectorMemoryAgent::GetSamplingProfileById(uint32_t 
+@@ -184,7 +184,7 @@ InspectorMemoryAgent::GetSamplingProfileById(uint32_t 
  
- std::vector<std::string> InspectorMemoryAgent::Symbolize(
-     const std::vector<void*>& addresses) {
+ Vector<String> InspectorMemoryAgent::Symbolize(
+     const WebVector<void*>& addresses) {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // TODO(alph): Move symbolization to the client.
-   std::vector<void*> addresses_to_symbolize;
-   for (void* address : addresses) {
+   Vector<void*> addresses_to_symbolize;
+   for (size_t i = 0; i < addresses.size(); i++) {

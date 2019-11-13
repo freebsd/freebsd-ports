@@ -1,4 +1,4 @@
---- media/capture/video/linux/video_capture_device_factory_linux.cc.orig	2019-03-11 22:00:59 UTC
+--- media/capture/video/linux/video_capture_device_factory_linux.cc.orig	2019-09-09 21:55:20 UTC
 +++ media/capture/video/linux/video_capture_device_factory_linux.cc
 @@ -259,6 +259,7 @@ bool VideoCaptureDeviceFactoryLinux::HasUsableFormats(
    if (!(capabilities & V4L2_CAP_VIDEO_CAPTURE))
@@ -9,7 +9,7 @@
        VideoCaptureDeviceLinux::GetListOfUsableFourCCs(false);
    v4l2_fmtdesc fmtdesc = {};
 @@ -267,6 +268,7 @@ bool VideoCaptureDeviceFactoryLinux::HasUsableFormats(
-     if (base::ContainsValue(usable_fourccs, fmtdesc.pixelformat))
+     if (base::Contains(usable_fourccs, fmtdesc.pixelformat))
        return true;
    }
 +#endif

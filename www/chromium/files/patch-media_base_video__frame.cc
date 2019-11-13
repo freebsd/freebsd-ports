@@ -1,6 +1,6 @@
---- media/base/video_frame.cc.orig	2019-07-24 18:58:30 UTC
+--- media/base/video_frame.cc.orig	2019-10-21 19:06:36 UTC
 +++ media/base/video_frame.cc
-@@ -53,7 +53,7 @@ static std::string StorageTypeToString(
+@@ -52,7 +52,7 @@ static std::string StorageTypeToString(
        return "OWNED_MEMORY";
      case VideoFrame::STORAGE_SHMEM:
        return "SHMEM";
@@ -9,7 +9,7 @@
      case VideoFrame::STORAGE_DMABUFS:
        return "DMABUFS";
  #endif
-@@ -68,7 +68,7 @@ static std::string StorageTypeToString(
+@@ -67,7 +67,7 @@ static std::string StorageTypeToString(
  // static
  bool VideoFrame::IsStorageTypeMappable(VideoFrame::StorageType storage_type) {
    return
@@ -18,7 +18,25 @@
        // This is not strictly needed but makes explicit that, at VideoFrame
        // level, DmaBufs are not mappable from userspace.
        storage_type != VideoFrame::STORAGE_DMABUFS &&
-@@ -495,7 +495,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalYuva
+@@ -185,7 +185,7 @@ static base::Optional<VideoFrameLayout> GetDefaultLayo
+   return VideoFrameLayout::CreateWithPlanes(format, coded_size, planes);
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // This class allows us to embed a vector<ScopedFD> into a scoped_refptr, and
+ // thus to have several VideoFrames share the same set of DMABUF FDs.
+ class VideoFrame::DmabufHolder
+@@ -203,7 +203,7 @@ class VideoFrame::DmabufHolder
+   friend class base::RefCountedThreadSafe<DmabufHolder>;
+   ~DmabufHolder() = default;
+ };
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
+ 
+ // static
+ bool VideoFrame::IsValidConfig(VideoPixelFormat format,
+@@ -468,7 +468,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalYuva
    return frame;
  }
  
@@ -27,17 +45,17 @@
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -626,7 +626,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
+@@ -604,7 +604,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
      }
    }
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   // If there are any |dmabuf_fds_| plugged in, we should duplicate them.
-   if (frame.storage_type() == STORAGE_DMABUFS) {
-     wrapping_frame->dmabuf_fds_ = DuplicateFDs(frame.dmabuf_fds_);
-@@ -950,7 +950,7 @@ size_t VideoFrame::shared_memory_offset() const {
-   return shared_memory_offset_;
+   DCHECK(frame.dmabuf_fds_);
+   // If there are any |dmabuf_fds_| plugged in, we should refer them too.
+   wrapping_frame->dmabuf_fds_ = frame.dmabuf_fds_;
+@@ -911,7 +911,7 @@ VideoFrame::mailbox_holder(size_t texture_index) const
+   return mailbox_holders_[texture_index];
  }
  
 -#if defined(OS_LINUX)
@@ -45,3 +63,12 @@
  const std::vector<base::ScopedFD>& VideoFrame::DmabufFds() const {
    DCHECK_EQ(storage_type_, STORAGE_DMABUFS);
  
+@@ -986,7 +986,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
+       storage_type_(storage_type),
+       visible_rect_(Intersection(visible_rect, gfx::Rect(layout.coded_size()))),
+       natural_size_(natural_size),
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+       dmabuf_fds_(base::MakeRefCounted<DmabufHolder>()),
+ #endif
+       timestamp_(timestamp),

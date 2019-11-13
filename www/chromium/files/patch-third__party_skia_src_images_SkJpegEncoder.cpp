@@ -1,6 +1,6 @@
---- third_party/skia/src/images/SkJpegEncoder.cpp.orig	2019-03-11 22:08:28 UTC
+--- third_party/skia/src/images/SkJpegEncoder.cpp.orig	2019-09-09 21:57:02 UTC
 +++ third_party/skia/src/images/SkJpegEncoder.cpp
-@@ -75,9 +75,14 @@ bool SkJpegEncoderMgr::setParams(const SkImageInfo& sr
+@@ -76,9 +76,14 @@ bool SkJpegEncoderMgr::setParams(const SkImageInfo& sr
          return (transform_scanline_proc) nullptr;
      };
  
@@ -15,7 +15,7 @@
          case kRGBA_8888_SkColorType:
              fProc = chooseProc8888();
              jpegColorType = JCS_EXT_RGBA;
-@@ -88,6 +93,7 @@ bool SkJpegEncoderMgr::setParams(const SkImageInfo& sr
+@@ -89,6 +94,7 @@ bool SkJpegEncoderMgr::setParams(const SkImageInfo& sr
              jpegColorType = JCS_EXT_BGRA;
              numComponents = 4;
              break;
@@ -23,7 +23,7 @@
          case kRGB_565_SkColorType:
              fProc = transform_scanline_565;
              jpegColorType = JCS_RGB;
-@@ -107,6 +113,7 @@ bool SkJpegEncoderMgr::setParams(const SkImageInfo& sr
+@@ -108,6 +114,7 @@ bool SkJpegEncoderMgr::setParams(const SkImageInfo& sr
              jpegColorType = JCS_GRAYSCALE;
              numComponents = 1;
              break;
@@ -31,7 +31,7 @@
          case kRGBA_F16_SkColorType:
              if (kUnpremul_SkAlphaType == srcInfo.alphaType() &&
                      options.fAlphaOption == SkJpegEncoder::AlphaOption::kBlendOnBlack) {
-@@ -117,6 +124,7 @@ bool SkJpegEncoderMgr::setParams(const SkImageInfo& sr
+@@ -118,6 +125,7 @@ bool SkJpegEncoderMgr::setParams(const SkImageInfo& sr
              jpegColorType = JCS_EXT_RGBA;
              numComponents = 4;
              break;

@@ -1,74 +1,56 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2019-06-04 18:55:27 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2019-10-21 19:06:39 UTC
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -134,7 +134,7 @@ constexpr base::TimeDelta kMaxInitialProgressivePaintT
- 
- PDFiumEngine* g_engine_for_fontmapper = nullptr;
+@@ -53,7 +53,7 @@
+ #include "ui/gfx/geometry/rect.h"
+ #include "v8/include/v8.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
+ #include "pdf/pdfium/pdfium_font_linux.h"
+ #endif
  
- PP_Instance g_last_instance_id;
- 
-@@ -414,7 +414,7 @@ void Release(FPDF_SYSFONTINFO* sysfontinfo) {
-   fontinfo_with_metrics->default_sysfontinfo->Release(
-       fontinfo_with_metrics->default_sysfontinfo);
- }
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_LINUX) || defined(OS_BSD)
- 
- PDFiumEngine::CreateDocumentLoaderFunction
-     g_create_document_loader_for_testing = nullptr;
-@@ -664,7 +664,7 @@ bool InitializeSDK() {
+@@ -378,7 +378,7 @@ bool InitializeSDK(bool enable_v8) {
    config.m_v8EmbedderSlot = gin::kEmbedderPDFium;
    FPDF_InitLibraryWithConfig(&config);
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   // Font loading doesn't work in the renderer sandbox in Linux.
-   FPDF_SetSystemFontInfo(&g_font_info);
- #else
-@@ -689,7 +689,7 @@ bool InitializeSDK() {
- 
- void ShutdownSDK() {
-   FPDF_DestroyLibrary();
--#if !defined(OS_LINUX)
-+#if !defined(OS_LINUX) && !defined(OS_BSD)
-   delete g_font_info;
+   InitializeLinuxFontMapper();
  #endif
-   TearDownV8();
-@@ -713,7 +713,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client, 
+ 
+@@ -414,7 +414,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client, 
    IFSDK_PAUSE::user = nullptr;
    IFSDK_PAUSE::NeedToPauseNow = Pause_NeedToPauseNow;
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // PreviewModeClient does not know its pp::Instance.
-   pp::Instance* instance = client_->GetPluginInstance();
-   if (instance)
-@@ -1177,7 +1177,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
+   SetLastInstance(client_->GetPluginInstance());
+ #endif
+@@ -870,7 +870,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
  
    KillFormFocus();
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   g_last_instance_id = client_->GetPluginInstance()->pp_instance();
+   SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -2978,7 +2978,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -2696,7 +2696,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK(image_data);
  
    last_progressive_start_time_ = base::Time::Now();
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   g_last_instance_id = client_->GetPluginInstance()->pp_instance();
+   SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -3453,7 +3453,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3190,7 +3190,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form(), FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   g_last_instance_id = client_->GetPluginInstance()->pp_instance();
+   SetLastInstance(client_->GetPluginInstance());
  #endif
    if (most_visible_page_ != -1 && called_do_document_action_) {
