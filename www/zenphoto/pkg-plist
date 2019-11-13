@@ -1141,6 +1141,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/leaflet.css
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/leaflet.js
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/leaflet.markercluster.js
+%%WWWDIR%%/zp-core/zp-extensions/openstreetmap/leaflet.markercluster.js.map
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/openstreetmap.css
 %%WWWDIR%%/zp-core/zp-extensions/paged_thumbs_nav.php
 %%WWWDIR%%/zp-core/zp-extensions/print_album_menu.php
