@@ -19,7 +19,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		autoreconf:build bison gmake gnome libtool pathfix pkgconfig
+USES=		autoreconf:build bison compiler:c11 gmake gnome libtool \
+		pathfix pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	efficios
