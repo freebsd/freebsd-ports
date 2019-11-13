@@ -4,8 +4,8 @@ Description: use EXSLT "replace" function when available
 Author: Peter De Wachter <pdewacht@gmail.com>
 Bug-Debian: https://bugs.debian.org/750593
 
---- docbook-xsl-1.78.1+dfsg.orig/docbook-xsl/lib/lib.xsl
-+++ docbook-xsl-1.78.1+dfsg/docbook-xsl/lib/lib.xsl
+--- lib/lib.xsl.orig	2013-09-04 18:09:43 UTC
++++ lib/lib.xsl
 @@ -10,7 +10,10 @@
       This module implements DTD-independent functions
  

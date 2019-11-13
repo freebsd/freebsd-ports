@@ -5,8 +5,8 @@ PORTVERSION=	1.79.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc
-MASTER_SITES=	SF/docbook/${PORTNAME}/${PORTVERSION}:src \
-		SF/docbook/${PORTNAME}-doc/${PORTVERSION}:doc
+MASTER_SITES=	SF/docbook/docbook-xsl/${PORTVERSION}:src \
+		SF/docbook/docbook-xsl-doc/${PORTVERSION}:doc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,8 +18,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 RUN_DEPENDS=	docbook>=0:textproc/docbook \
 		xmlcatmgr:textproc/xmlcatmgr
-
-EXTRA_PATCHES=	${PATCHDIR}/docbook-style-xsl-non-recursive-string-subst.patch:-p2
 
 USES=		tar:bzip2
 
@@ -55,7 +53,7 @@ TOOLS_DESC=		Tools
 WEBSITE_DESC=		Website modules
 XHTML11_DESC=		XHTML 1.1 modules
 
-DOCS_DISTFILES=		${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
+DOCS_DISTFILES=		docbook-xsl-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
 
 ECLIPSE_VARS=		MODULES+=eclipse
 EPUB_VARS=		MODULES+=epub
@@ -108,7 +106,7 @@ do-install-DOCS-on:
 
 .if defined(MAINTAINER_MODE)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
-		${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
+		docbook-xsl-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
 .endif
 
 .include <bsd.port.mk>
