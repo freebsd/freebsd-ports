@@ -109,7 +109,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-asciidoctor>=2.0.10<2.1.0:textproc/rubygem-asciidoctor \
 	rubygem-asciidoctor-include-ext>=0.3.1<0.4.0:textproc/rubygem-asciidoctor-include-ext \
 	rubygem-asciidoctor-plantuml009=0.0.9.:textproc/rubygem-asciidoctor-plantuml009 \
-	rubygem-rouge>=3.11.0<3.13:textproc/rubygem-rouge \
+	rubygem-rouge>=3.11.0<4:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.11<0.8.0:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=4.2.0<4.3.0:devel/rubygem-bootstrap_form \
 	rubygem-nokogiri>=1.10.4<1.11.0:textproc/rubygem-nokogiri \
