@@ -19,6 +19,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		gmake localbase pkgconfig ssl
+USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	fangfufu
 
