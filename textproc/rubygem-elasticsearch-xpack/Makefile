@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch-xpack
-PORTVERSION=	7.3.0
+PORTVERSION=	7.4.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
