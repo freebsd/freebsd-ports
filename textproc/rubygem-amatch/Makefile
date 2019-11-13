@@ -12,10 +12,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-mize>=0:devel/rubygem-mize \
-		rubygem-tins>=1.0:devel/rubygem-tins
+		rubygem-tins>=1.0<2:devel/rubygem-tins
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 PLIST_FILES=	bin/agrep bin/dupfind
 
