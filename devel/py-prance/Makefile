@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prance
-PORTVERSION=	0.16.2
+PORTVERSION=	0.17.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=3.0:textproc/py-chardet@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}six>=1.12:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.1:devel/py-yaml@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python:3.4+
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
