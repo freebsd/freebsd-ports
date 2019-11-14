@@ -1,5 +1,7 @@
---- freebsd/tun_dev.c.orig	2008-01-07 14:36:10.000000000 -0800
-+++ freebsd/tun_dev.c	2016-09-19 20:06:49.919502000 -0700
+Part of extended mode being an argument and not a compile time decision.
+
+--- freebsd/tun_dev.c.orig	2016-10-01 21:46:01 UTC
++++ freebsd/tun_dev.c
 @@ -35,6 +35,8 @@
  #include "vtun.h"
  #include "lib.h"
@@ -9,7 +11,7 @@
  /* 
   * Allocate TUN device, returns opened fd. 
   * Stores dev name in the first arg(must be large enough).
-@@ -58,10 +60,8 @@
+@@ -58,10 +60,8 @@ int tun_open(char *dev)
         }
      }
      if( fd > -1 ){

@@ -1,3 +1,6 @@
+Part of extended mode being an argument and not a compile time decision.
+Some bits about using vfork, or not, and pidfile as an argument.
+
 --- main.c.orig	2013-07-07 20:31:22 UTC
 +++ main.c
 @@ -39,9 +39,9 @@
