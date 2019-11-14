@@ -5,12 +5,12 @@
 # package site: https://build.opensuse.org/package/show/benchmark/ltp
 
 PORTNAME=	ltp
-PORTVERSION=	20190115
+PORTVERSION=	20190930
 DISTVERSIONSUFFIX=	-1.5
 CATEGORIES=	devel
 MASTER_SITES=	https://download.opensuse.org/repositories/benchmark/%SUBDIR%/:DEFAULT,amd64,SOURCE
-MASTER_SITE_SUBDIR=	openSUSE_Leap_42.3/x86_64/:DEFAULT,amd64 \
-			openSUSE_Leap_42.3/src/:SOURCE
+MASTER_SITE_SUBDIR=	SLE_15/x86_64/:DEFAULT,amd64 \
+			SLE_15/src/:SOURCE
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Linux Test Project (openSUSE Leap 42.3)
