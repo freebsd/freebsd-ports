@@ -1,8 +1,8 @@
-TIMESTAMP = 1573564559
+TIMESTAMP = 1573757851
 SHA256 (hashicorp-vault-v1.2.4_GH0.tar.gz) = 1f4e57bf69e17f1dccf0247df1863a2ec386d705c5d0821f74ec5638ba202833
 SIZE (hashicorp-vault-v1.2.4_GH0.tar.gz) = 27778766
-SHA256 (swills-vaultui-v1.2.4_GH0.tar.gz) = fa9287bb05d9f9d3689edd63c67062b3363fb00b4ecff0d7e99e306d05688450
-SIZE (swills-vaultui-v1.2.4_GH0.tar.gz) = 1884043
+SHA256 (swills-vaultui-v1.2.4_GH0.tar.gz) = 7c00942789757963d2f55611b84126aec1f9ec8636fd166e62a959f819ceb152
+SIZE (swills-vaultui-v1.2.4_GH0.tar.gz) = 1884110
 SHA256 (Azure-azure-sdk-for-go-v29.0.0_GH0.tar.gz) = 53900dbc9fc6b418d281fe00431d540871ab07081cdaa9f494043f14c47a3ca9
 SIZE (Azure-azure-sdk-for-go-v29.0.0_GH0.tar.gz) = 15378657
 SHA256 (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = ee1ebe2efef498be1c558bf71e143289db2d21e2d42592503ad2d4a989006821
