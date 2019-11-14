@@ -14,6 +14,8 @@ LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		unknown type name 'u_int64'
+DEPRECATED=		marked BROKEN for more than 6 months
+EXPIRATION_DATE=	2020-01-14
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ftlib.h:net-mgmt/flow-tools
 
