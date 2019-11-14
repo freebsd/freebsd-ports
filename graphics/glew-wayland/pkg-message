@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+To enable Wayland support in GLEW for a specific application
+  $ LD_PRELOAD=libGLEW-wayland.so <application>
+
+To enable globally
+  $ echo libGLEW.so.2 libGLEW-wayland.so.2 >>/etc/libmap.conf
+EOM
+}
+]
