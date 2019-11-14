@@ -95,4 +95,7 @@ do-install-RMAGIC-on:
 do-install-THIN-on:
 	${CP} ${FILESDIR}/thin.rb ${STAGEDIR}${WWWDIR}/bundler.d
 
+post-install:
+	(cd ${STAGEDIR}${WWWDIR} && ${RM} Gemfile.lock && bundle install --local)
+
 .include <bsd.port.mk>
