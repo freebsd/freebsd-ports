@@ -37,5 +37,6 @@ share/postgresql/extension/timescaledb--1.3.2--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--1.4.0--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--1.4.1--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--1.4.2--%%PORTVERSION%%.sql
+share/postgresql/extension/timescaledb--1.5.0--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb.control
