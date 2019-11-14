@@ -6,7 +6,7 @@ PORTVERSION=	3.0.5
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jessekempf@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mock unit tests for Python
 
 LICENSE=	BSD2CLAUSE
