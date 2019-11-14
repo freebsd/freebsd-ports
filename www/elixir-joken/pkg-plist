@@ -4,6 +4,7 @@ lib/elixir/lib/joken/ebin/Elixir.Joken.CurrentTime.OS.beam
 lib/elixir/lib/joken/ebin/Elixir.Joken.CurrentTime.beam
 lib/elixir/lib/joken/ebin/Elixir.Joken.Error.beam
 lib/elixir/lib/joken/ebin/Elixir.Joken.Hooks.beam
+lib/elixir/lib/joken/ebin/Elixir.Joken.Hooks.RequiredClaims.beam
 lib/elixir/lib/joken/ebin/Elixir.Joken.Signer.beam
 lib/elixir/lib/joken/ebin/Elixir.Joken.beam
 lib/elixir/lib/joken/ebin/joken.app
@@ -13,5 +14,6 @@ lib/elixir/lib/joken/lib/joken/config.ex
 lib/elixir/lib/joken/lib/joken/current_time.ex
 lib/elixir/lib/joken/lib/joken/error.ex
 lib/elixir/lib/joken/lib/joken/hooks.ex
+lib/elixir/lib/joken/lib/joken/hooks/required_claims.ex
 lib/elixir/lib/joken/lib/joken/signer.ex
 %%PORTDOCS%%%%DOCSDIR%%/README.md
