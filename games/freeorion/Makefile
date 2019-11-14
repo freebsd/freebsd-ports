@@ -21,6 +21,7 @@ PATCHFILES+=	78b7a1994b8b.patch:-p1
 PATCHFILES+=	ff8c06a6685f.patch:-p1
 PATCHFILES+=	4a7b8833cb8d.patch:-p1 # rebased from 7513ede6b03c
 PATCHFILES+=	17caf5a174d3.patch:-p1
+PATCHFILES+=	5ad3f175925d.patch:-p1
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Turn-based space empire and galactic conquest game
