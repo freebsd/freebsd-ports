@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-s3
-PORTVERSION=	1.53.0
+PORTVERSION=	1.54.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3)
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-aws-sdk-core>=3.71.0<4:devel/rubygem-aws-sdk-core \
+RUN_DEPENDS=	rubygem-aws-sdk-core>=3.77.0<4:devel/rubygem-aws-sdk-core \
 		rubygem-aws-sdk-kms>1<2:devel/rubygem-aws-sdk-kms \
 		rubygem-aws-sigv4>=1.1<2:devel/rubygem-aws-sigv4
 
