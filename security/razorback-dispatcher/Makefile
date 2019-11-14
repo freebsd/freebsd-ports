@@ -12,6 +12,8 @@ DIST_SUBDIR=	razorback
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for an intelligence driven security - Dispatcher
 
+BROKEN=		uses deprecated libssh API
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

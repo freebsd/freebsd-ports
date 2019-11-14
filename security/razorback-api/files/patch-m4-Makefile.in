@@ -1,0 +1,10 @@
+--- m4/Makefile.in.orig	2019-07-03 11:16:02.965284000 -0700
++++ m4/Makefile.in	2019-07-03 11:16:07.044879000 -0700
+@@ -47,7 +47,6 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/common_m4/set_dirs.m4 \
+ 	$(top_srcdir)/common_m4/standard_headers_functions.m4 \
+ 	$(top_srcdir)/common_m4/standard_options.m4 \
+-	$(top_srcdir)/libssh/configure.m4 \
+ 	$(top_srcdir)/common_m4/compiler_options.m4 \
+ 	$(top_srcdir)/common_m4/cflags.m4 $(top_srcdir)/configure.ac
+ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \

@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
+		libssh.so:security/libssh \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libcurl.so:ftp/curl \
 		libjson-c.so:devel/json-c
@@ -35,14 +36,7 @@ ASSERT_CONFIGURE_ENABLE=	assert
 CNC_DEBUG_CONFIGURE_ENABLE=	cnc-debug
 STOMP_DEBUG_CONFIGURE_ENABLE=	stomp-debug
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base || ${SSL_DEFAULT} == openssl111
-BROKEN_FreeBSD_12=	incomplete definition of type 'struct rsa_st'
-BROKEN_FreeBSD_13=	incomplete definition of type 'struct rsa_st'
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e s/json/json-c/ -e s/-Werror// ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,23 @@
+--- src/Makefile.in.orig	2019-07-03 11:16:51.512300000 -0700
++++ src/Makefile.in	2019-07-03 11:17:24.953401000 -0700
+@@ -50,7 +50,6 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/common_m4/set_dirs.m4 \
+ 	$(top_srcdir)/common_m4/standard_headers_functions.m4 \
+ 	$(top_srcdir)/common_m4/standard_options.m4 \
+-	$(top_srcdir)/libssh/configure.m4 \
+ 	$(top_srcdir)/common_m4/compiler_options.m4 \
+ 	$(top_srcdir)/common_m4/cflags.m4 $(top_srcdir)/configure.ac
+ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
+@@ -375,9 +374,9 @@ transfer/http.c \
+ transfer/ssh.c \
+ uuids.c
+ 
+-librazorback_api_la_CFLAGS = -DBUILDING_SO -I$(top_srcdir)/libssh/include -I$(top_srcdir)/include
+-librazorback_api_la_LDFLAGS = -version-info @APIVERSION@ @XCCFLAGS@ ../libssh/src/libssh.la
+-AM_CPPFLAGS = -I$(srcdir) -I$(top_srcdir)/libssh/include -I$(top_srcdir)/include @extra_incl@
++librazorback_api_la_CFLAGS = -DBUILDING_SO -I$(top_srcdir)/include
++librazorback_api_la_LDFLAGS = -version-info @APIVERSION@ @XCCFLAGS@ -lssh
++AM_CPPFLAGS = -I$(srcdir) -I$(top_srcdir)/include @extra_incl@
+ all: all-am
+ 
+ .SUFFIXES:
