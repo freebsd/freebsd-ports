@@ -1,0 +1,22 @@
+--- configure.orig	2019-07-03 10:16:22.080221000 -0700
++++ configure	2019-07-03 10:17:08.000445000 -0700
+@@ -13050,7 +13050,7 @@ echo "CFLAGS set to $CFLAGS"
+ 
+ 
+ 
+-ac_config_files="$ac_config_files razorback.pc Makefile m4/Makefile etc/Makefile include/Makefile src/Makefile libssh/Makefile libssh/src/Makefile libssh/src/threads/Makefile libssh/include/Makefile tests/Makefile"
++ac_config_files="$ac_config_files razorback.pc Makefile m4/Makefile etc/Makefile include/Makefile src/Makefile tests/Makefile"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -14041,10 +14041,6 @@ do
+     "etc/Makefile") CONFIG_FILES="$CONFIG_FILES etc/Makefile" ;;
+     "include/Makefile") CONFIG_FILES="$CONFIG_FILES include/Makefile" ;;
+     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+-    "libssh/Makefile") CONFIG_FILES="$CONFIG_FILES libssh/Makefile" ;;
+-    "libssh/src/Makefile") CONFIG_FILES="$CONFIG_FILES libssh/src/Makefile" ;;
+-    "libssh/src/threads/Makefile") CONFIG_FILES="$CONFIG_FILES libssh/src/threads/Makefile" ;;
+-    "libssh/include/Makefile") CONFIG_FILES="$CONFIG_FILES libssh/include/Makefile" ;;
+     "tests/Makefile") CONFIG_FILES="$CONFIG_FILES tests/Makefile" ;;
+ 
+   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5 ;;
