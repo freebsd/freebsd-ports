@@ -1,6 +1,8 @@
---- Makefile.in.orig	2012-07-08 21:55:38.000000000 -0700
-+++ Makefile.in	2014-06-09 23:06:38.000000000 -0700
-@@ -28,7 +28,7 @@
+Cleanup install procedure.
+
+--- Makefile.in.orig	2016-10-01 21:46:00 UTC
++++ Makefile.in
+@@ -28,7 +28,7 @@ LEX = @LEX@
  LEXFLAGS = -t 
  
  INSTALL = @INSTALL@
@@ -9,7 +11,7 @@
  
  prefix = @prefix@
  exec_prefix = @exec_prefix@
-@@ -55,7 +55,7 @@
+@@ -55,7 +55,7 @@ OBJS = main.o cfg_file.tab.o cfg_file.lex.o server.o c
  
  CONFIGURE_FILES = Makefile config.status config.cache config.h config.log 
  
@@ -18,7 +20,7 @@
  	$(CC) $(CFLAGS) $(DEFS) -c $<
  
  vtund: $(OBJS)
-@@ -80,25 +80,25 @@
+@@ -80,25 +80,25 @@ distclean: clean
  	rm -f `cat vtun.drivers`	
  
  install_man: 
