@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-core
-PORTVERSION=	3.76.0
+PORTVERSION=	3.77.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	AWS SDK for Ruby - Core
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-aws-eventstream>=1.0.2<2:devel/rubygem-aws-eventstream \
-		rubygem-aws-partitions>=1.228.0<2:devel/rubygem-aws-partitions \
+		rubygem-aws-partitions>=1.239.0<2:devel/rubygem-aws-partitions \
 		rubygem-aws-sigv4>=1.1<2:devel/rubygem-aws-sigv4 \
 		rubygem-jmespath>=1.0<2:devel/rubygem-jmespath
 
