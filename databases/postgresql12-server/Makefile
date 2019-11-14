@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	12.0
+DISTVERSION?=	12.1
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
@@ -110,7 +110,7 @@ USES+=		pkgconfig
 # (requires dump/restore if modified.)
 OPTIONS_DEFINE+=	INTDATE
 INTDATE_DESC=		Builds with 64-bit date/time type
-OPTIONS_DEFAULT+=	TZDATA INTDATE
+OPTIONS_DEFAULT+=	INTDATE
 .endif
 
 .if !defined(SLAVE_ONLY)
