@@ -2,8 +2,8 @@
 @sample %%ETCDIR%%/fastcgi_params-dist %%ETCDIR%%/fastcgi_params
 %%ETCDIR%%/koi-utf
 %%ETCDIR%%/koi-win
-%%NAXSI%%%%ETCDIR%%/naxsi_core.rules
 %%MODSECURITY%%%%ETCDIR%%/unicode.mapping
+%%NAXSI%%%%ETCDIR%%/naxsi_core.rules
 @sample %%ETCDIR%%/scgi_params-dist %%ETCDIR%%/scgi_params
 @sample %%ETCDIR%%/uwsgi_params-dist %%ETCDIR%%/uwsgi_params
 %%ETCDIR%%/win-utf
