@@ -40,6 +40,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMATETERMINAL}
+USES+=		mate
 USE_MATE=	desktop
 .endif
 

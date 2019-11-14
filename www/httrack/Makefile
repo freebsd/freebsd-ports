@@ -30,6 +30,7 @@ USES=		alias gmake iconv libtool shebangfix ssl
 
 SHEBANG_FILES=	src/webhttrack
 
+ICONS_USES=	gnome
 ICONS_VARS=	INSTALLS_ICONS=yes
 
 .include <bsd.port.options.mk>

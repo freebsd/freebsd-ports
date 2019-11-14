@@ -39,6 +39,7 @@ NLS_CONFIGURE_OFF=	--disable-nls
 NLS_PLIST_FILES+=	share/locale/${ii}/LC_MESSAGES/aumix.mo
 .endfor
 
+GTK2_USES=	gnome
 GTK2_USE=	GNOME=gtk20
 GTK2_CONFIGURE_OFF=--without-gtk
 

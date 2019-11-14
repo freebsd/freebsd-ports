@@ -13,7 +13,6 @@ COMMENT=	File splitter, GTK and CLI versions
 
 BROKEN=		unfetchable
 
-USE_GNOME=	#
 USES=		gmake pkgconfig
 
 MAKE_ARGS=	CC="${CC}"

@@ -25,6 +25,7 @@ OPTIONS_DEFINE=	SDL DOCS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}
+USES+=		sdl
 USE_SDL=	sdl
 MAKE_ENV+=	BACKEND=SDL
 CPPFLAGS+=	$$(${SDL_CONFIG} --cflags)

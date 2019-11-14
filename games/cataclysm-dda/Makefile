@@ -40,7 +40,7 @@ NCURSES_USES=			ncurses
 SDL_CONFLICTS_INSTALL=		${PORTNAME}-[0-9]*
 SDL_CONFLICTS_INSTALL_OFF=	${PORTNAME}-sdl-[0-9]*
 SDL_USE=			SDL=image2,ttf2
-SDL_USES=			pkgconfig
+SDL_USES=			pkgconfig sdl
 SDL_MAKE_ARGS=			TILES=1 TILESTARGET=cataclysm
 SDL_CPPFLAGS=			$$(sdl2-config --cflags)
 SDL_LDFLAGS=			$$(sdl2-config --libs)

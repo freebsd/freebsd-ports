@@ -59,7 +59,7 @@ GSTREAMER_MAKE_ENV=	USE_GSTREAMER=1
 GSTREAMER_MAKE_ENV_OFF=	USE_GSTREAMER=0
 GSTREAMER_LIB_DEPENDS=	libgstreamer-1.0.so:multimedia/gstreamer1
 GSTREAMER_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygst.py:multimedia/py-gstreamer@${PY_FLAVOR}
-GSTREAMER_USES=		gettext-runtime pkgconfig
+GSTREAMER_USES=		gettext-runtime gnome pkgconfig
 GSTREAMER_USE=		GNOME=glib20
 OPENCV_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cv2.so:graphics/py-opencv@${PY_FLAVOR}
 PIL_DESC=		Text and window rendering support via Pillow

@@ -47,6 +47,7 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_WITH=	pulse
 SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_WITH=	libsamplerate
+SDL_USES=		sdl
 SDL_USE=		sdl=sdl
 SDL_CONFIGURE_WITH=	sdl
 SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile

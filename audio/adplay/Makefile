@@ -37,6 +37,7 @@ ALSA_CONFIGURE_OFF=	--disable-output-alsa
 ALSA_CFLAGS+=		`pkg-config --cflags alsa`
 
 SDL_CONFIGURE_OFF=	--disable-output-sdl
+SDL_USES=		sdl
 SDL_USE=		SDL=sdl,mixer
 
 PLIST_FILES=	bin/adplay %%DATADIR%%/adplug.db man/man1/adplay.1.gz

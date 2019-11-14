@@ -87,6 +87,7 @@ FAAC_LIB_DEPENDS=		libfaac.so:audio/faac
 FAAC_CONFIGURE_ENABLE=		faac
 FAAC_CONFIGURE_ON=		--with-faac-prefix=${LOCALBASE}
 
+LIBXML2_USES=			gnome
 LIBXML2_USE=			GNOME=libxml2
 LIBXML2_CONFIGURE_ENABLE=	libxml2
 

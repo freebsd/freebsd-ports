@@ -174,7 +174,7 @@ NOTIFYDESKTOP_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFYDESKTOP_CONFIGURE_ENABLE=	notify_desktop
 NOTIFYDESKTOP_CONFIGURE_WITH=	libnotify=${LOCALBASE}
 NOTIFYDESKTOP_USE=		GNOME=gdkpixbuf2
-NOTIFYDESKTOP_USES=		gettext-runtime
+NOTIFYDESKTOP_USES=		gettext-runtime gnome
 
 NOTIFYEMAIL_LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 NOTIFYEMAIL_CONFIGURE_ENABLE=	notify_email
