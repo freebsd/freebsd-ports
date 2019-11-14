@@ -3,6 +3,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	3.4.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 
@@ -56,7 +57,7 @@ THIN_DESC=	Use Thin WEB server
 MYSQL_DESC=	MySQL database support (via mysql2 rubygem)
 NO_OPTIONS_SORT=	yes
 
-MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.4.6:databases/rubygem-mysql2
+MYSQL_RUN_DEPENDS=	rubygem-mysql204>=0.4.6<0.5.0:databases/rubygem-mysql204
 POSTGRESQL_RUN_DEPENDS=	rubygem-pg018>=0.18.1:databases/rubygem-pg018
 MARKDOWN_RUN_DEPENDS=	rubygem-redcarpet>=3.4.0:textproc/rubygem-redcarpet
 RMAGIC_RUN_DEPENDS=	rubygem-rmagick>=2.16.0:graphics/rubygem-rmagick
