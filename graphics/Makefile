@@ -250,6 +250,7 @@
     SUBDIR += gle
     SUBDIR += glee
     SUBDIR += glew
+    SUBDIR += glew-wayland
     SUBDIR += glexcess
     SUBDIR += glfw
     SUBDIR += glfw2
