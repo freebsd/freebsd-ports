@@ -3,6 +3,7 @@
 
 PORTNAME=	rabbitmq
 DISTVERSION=	3.8.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -21,6 +22,11 @@ BUILD_DEPENDS=	erlang-runtime21>=21.3:lang/erlang-runtime21 \
 		rsync:net/rsync
 RUN_DEPENDS=	erlang-runtime21>=21.3:lang/erlang-runtime21
 
+USES=		cpe gmake shebangfix tar:xz
+USE_LOCALE=	en_US.UTF-8
+USE_RC_SUBR=	rabbitmq
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	ADMIN
 OPTIONS_SUB=	yes
 
@@ -29,10 +35,6 @@ ADMIN_USES=	python
 ADMIN_USES_OFF=	python:build
 
 ALL_TARGET=	install
-USES=		cpe gmake shebangfix tar:xz
-USE_LOCALE=	en_US.UTF-8
-USE_RC_SUBR=	rabbitmq
-NO_ARCH=	yes
 
 USERS=		rabbitmq
 GROUPS=		rabbitmq
@@ -73,7 +75,7 @@ post-install:
 	${STAGEDIR}${PREFIX}/etc/rabbitmq/advanced.config.sample
 	${INSTALL_DATA} ${WRKSRC}/deps/rabbit/docs/rabbitmq.conf.example \
 	${STAGEDIR}${PREFIX}/etc/rabbitmq/rabbitmq.conf.sample
-.for _file in rabbitmq-defaults rabbitmq-diagnostics rabbitmq-env rabbitmq-plugins rabbitmq-server rabbitmqctl
+.for _file in cuttlefish rabbitmq-defaults rabbitmq-diagnostics rabbitmq-env rabbitmq-plugins rabbitmq-server rabbitmq-upgrade rabbitmqctl
 	${LN} -s ../lib/rabbitmq_server-${PORTVERSION}/sbin/${_file} ${STAGEDIR}${PREFIX}/sbin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/deps/rabbit/docs/*.8  ${STAGEDIR}${MAN1PREFIX}/man/man8

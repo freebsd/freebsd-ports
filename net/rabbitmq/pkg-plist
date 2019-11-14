@@ -180,6 +180,7 @@ lib/rabbitmq_server-%%VERSION%%/ebin/vhost_v1.beam
 lib/rabbitmq_server-%%VERSION%%/escript/rabbitmq-diagnostics
 lib/rabbitmq_server-%%VERSION%%/escript/rabbitmq-plugins
 lib/rabbitmq_server-%%VERSION%%/escript/rabbitmq-queues
+lib/rabbitmq_server-%%VERSION%%/escript/rabbitmq-upgrade
 lib/rabbitmq_server-%%VERSION%%/escript/rabbitmqctl
 lib/rabbitmq_server-%%VERSION%%/include/amqqueue.hrl
 lib/rabbitmq_server-%%VERSION%%/include/amqqueue_v1.hrl
@@ -263,6 +264,7 @@ lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-env
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-plugins
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-queues
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-server
+lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-upgrade
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmqctl
 man/man5/rabbitmq-env.conf.5.gz
 man/man8/rabbitmq-diagnostics.8.gz
@@ -273,11 +275,13 @@ man/man8/rabbitmq-server.8.gz
 man/man8/rabbitmq-service.8.gz
 man/man8/rabbitmq-upgrade.8.gz
 man/man8/rabbitmqctl.8.gz
+sbin/cuttlefish
 sbin/rabbitmq-defaults
 sbin/rabbitmq-diagnostics
 sbin/rabbitmq-env
 sbin/rabbitmq-plugins
 sbin/rabbitmq-server
+sbin/rabbitmq-upgrade
 sbin/rabbitmqctl
 @dir(rabbitmq,rabbitmq,750) /var/log/rabbitmq
 @dir(rabbitmq,rabbitmq,750) /var/db/rabbitmq/mnesia
