@@ -40,6 +40,7 @@ DOXYGEN_CONFIGURE_ENABLE=	full-doc
 
 EBICS_DESC=		Enable EBICS backend
 EBICS_LIB_DEPENDS=	libxmlsec1.so:security/xmlsec1
+EBICS_USES=		gnome
 EBICS_USE=		GNOME=libxml2,libxslt
 EBICS_CONFIGURE_OFF=	--with-backends="aqhbci aqnone aqofxconnect aqpaypal"
 

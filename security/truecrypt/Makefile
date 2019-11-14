@@ -46,6 +46,7 @@ PLIST_FILES+=	%%DOCSDIR%%/License.txt
 .endif
 
 .if ${PORT_OPTIONS:MX11}
+USES+=		gnome
 USE_GNOME=	gtk20
 NOGUI=
 .else

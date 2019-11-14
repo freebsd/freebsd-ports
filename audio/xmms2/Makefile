@@ -137,6 +137,7 @@ SPEEX_CONFIGURE_OFF=	--without-plugins="speex"
 TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
 TREMOR_CONFIGURE_OFF=	--without-plugins="tremor"
 
+VISUAL_USES=		sdl
 VISUAL_USE=		SDL=sdl
 VISUAL_LIB_DEPENDS=	libvisual-0.4.so:graphics/libvisual04
 VISUAL_CONFIGURE_OFF=	--without-optionals="vistest"

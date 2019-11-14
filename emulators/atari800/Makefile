@@ -55,6 +55,7 @@ VERYSLOW_CONFIGURE_ON=	--enable-veryslow
 
 .if ${PORT_OPTIONS:MSDL}
 PKGNAMESUFFIX=	-sdl
+USES+=		sdl
 USE_SDL=	sdl
 CONFIGURE_ARGS+=	--target=sdl
 .else

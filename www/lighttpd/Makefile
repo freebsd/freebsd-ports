@@ -88,6 +88,7 @@ SPAWNFCGI_RUN_DEPENDS=	spawn-fcgi:www/spawn-fcgi
 VALGRIND_BUILD_DEPENDS=	valgrind:devel/valgrind
 VALGRIND_RUN_DEPENDS=	valgrind:devel/valgrind
 VALGRIND_CONFIGURE_WITH=valgrind
+WEBDAV_USES=		gnome
 WEBDAV_USE=		GNOME=libxml2
 WEBDAV_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 			libsqlite3.so:databases/sqlite3

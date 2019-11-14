@@ -65,6 +65,7 @@ CAIRO_CONFIGURE_OFF=	--with-type-engines="xcore,xft"
 
 SIXEL_CONFIGURE_ENABLE=	sixel
 
+REGIS_USES=		sdl
 REGIS_USE=		SDL=ttf
 
 .include <bsd.port.options.mk>

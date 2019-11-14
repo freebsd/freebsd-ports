@@ -25,7 +25,7 @@ OPTIONS_SUB=	yes
 
 GNEE_DESC=	GUI frontend
 GNEE_CONFIGURE_ENABLE=	gui
-GNEE_USES=	pkgconfig
+GNEE_USES=	gnome pkgconfig
 GNEE_USE=	GNOME=gtk20
 
 GNEE_DESKTOP_ENTRIES=	"Gnee" "" "${PORTNAME}.png" \

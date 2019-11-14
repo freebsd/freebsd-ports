@@ -76,6 +76,7 @@ PORT_OPTIONS+=	PULSE
 .endif
 
 .if ${PORT_OPTIONS:MSDL}
+USES+=		sdl
 USE_SDL=	sdl sound
 .endif
 

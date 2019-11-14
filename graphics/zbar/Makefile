@@ -51,10 +51,11 @@ V4L_CONFIGURE_ON=	--enable-video=yes
 V4L_CONFIGURE_OFF=	--enable-video=no
 
 PYTHON_USE=		GNOME=pygtk2
-PYTHON_USES=		python:2.7
+PYTHON_USES=		gnome python:2.7
 PYTHON_CONFIGURE_ON=	--with-python=yes
 PYTHON_CONFIGURE_OFF=	--with-python=no
 
+GTK2_USES=	gnome
 GTK2_USE=	GNOME=gtk20
 GTK2_CONFIGURE_ON=	--with-gtk=yes
 GTK2_CONFIGURE_OFF=	--with-gtk=no

@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 		youtube_dl>0:www/youtube_dl
 #		${PYTHON_PKGNAMEPREFIX}eyed3>=0:audio/py-eyed3@${PY_FLAVOR}
 
-USES=		gettext gmake python:3.5+ shebangfix
+USES=		gettext gmake gnome python:3.5+ shebangfix
 
 USE_GITHUB=	yes
 
@@ -42,7 +42,6 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 GTK3_VARS=	MAKE_ENV+=GPODDER_INSTALL_UIS="cli gtk"
 GTK3_RUN_DEPENDS+=	xdg-open:devel/xdg-utils
-GTK3_USES=	gnome
 GTK3_USE=	GNOME=pygobject3
 
 .if empty(GTK3)

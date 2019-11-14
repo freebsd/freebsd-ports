@@ -105,6 +105,7 @@ SCROBBLER_LIB_DEPENDS=	libcurl.so:ftp/curl
 SCROBBLER_CONFIGURE_ENABLE=	scrobbler2
 SDL_CONFIGURE_ON=	--enable-sdlout --with-libsdl=2
 SDL_CONFIGURE_OFF=	--disable-sdlout
+SDL_USES=		sdl
 SDL_USE=		SDL=sdl2
 SID_LIB_DEPENDS=	libsidplayfp.so:audio/libsidplayfp
 SID_CONFIGURE_ENABLE=	sid

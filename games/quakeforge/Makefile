@@ -60,6 +60,7 @@ JACK_IMPLIES=		CLIENTS
 OPTIMIZED_CFLAGS_CFLAGS=\
 			-O3 -funroll-loops -fomit-frame-pointer -fno-common \
 			-fexpensive-optimizations -fstrict-aliasing -ffast-math
+SDL_USES=		sdl
 SDL_USE=		sdl=sdl
 SDL_CONFIGURE_ON=	--with-sdl-prefix=${LOCALBASE}
 SDL_CONFIGURE_OFF=	--disable-sdl

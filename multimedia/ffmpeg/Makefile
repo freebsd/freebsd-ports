@@ -408,6 +408,7 @@ LIBRTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 LIBRTMP_CONFIGURE_ENABLE=	librtmp
 
 # sdl
+SDL_USES=		sdl
 SDL_USE=		SDL=sdl2
 SDL_CONFIGURE_ENABLE=	sdl2
 

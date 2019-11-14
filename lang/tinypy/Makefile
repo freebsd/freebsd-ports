@@ -30,6 +30,7 @@ PYGAME_DESC=	PyGame support (requires SDL)
 
 .if ${PORT_OPTIONS:MPYGAME}
 PYDISTUTILS_BUILD_TARGET+=	pygame
+USES+=		sdl
 USE_SDL=	sdl
 PORTEXAMPLES=	*
 .endif

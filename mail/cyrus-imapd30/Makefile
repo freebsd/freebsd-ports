@@ -62,6 +62,7 @@ HTTP_LIB_DEPENDS=	libical.so:devel/libical \
 # Need additional patch to opendkim
 #HTTP_LIB_DEPENDS+=	libopendkim.so:mail/opendkim
 #HTTP_CPPFLAGS+=	-I${LOCALBASE}/include/opendkim
+HTTP_USES=		gnome
 HTTP_USE=		GNOME=libxml2
 IDLED_DESC=		Enable IMAP idled support
 IDLED_CONFIGURE_ENABLE=	idled
