@@ -1,5 +1,6 @@
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/d8bf24459b69
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/3a84081cbd98
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/1354c39c78e5
 
 --- configure.orig	2019-11-11 11:47:47 UTC
 +++ configure
@@ -662,7 +663,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/3a84081cbd98
 +#define VE AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_ENCODING_PARAM
 +
 +static const AVOption options[] = {
-+    { "qp", "use constant quantizer mode", OFFSET(quantizer), AV_OPT_TYPE_INT, { .i64 = 100 }, -1, 255, VE },
++    { "qp", "use constant quantizer mode", OFFSET(quantizer), AV_OPT_TYPE_INT, { .i64 = -1 }, -1, 255, VE },
 +    { "speed", "what speed preset to use", OFFSET(speed), AV_OPT_TYPE_INT, { .i64 = -1 }, -1, 10, VE },
 +    { "tiles", "number of tiles encode with", OFFSET(tiles), AV_OPT_TYPE_INT, { .i64 = 0 }, -1, INT64_MAX, VE },
 +    { "tile-rows", "number of tiles rows to encode with", OFFSET(tile_rows), AV_OPT_TYPE_INT, { .i64 = 0 }, -1, INT64_MAX, VE },
