@@ -1,0 +1,13 @@
+https://github.com/rstudio/rstudio/issues/5742
+
+--- src/cpp/core/FilePath.cpp.orig	2019-10-25 22:16:29 UTC
++++ src/cpp/core/FilePath.cpp
+@@ -22,8 +22,6 @@
+ #include <windows.h>
+ #endif
+ 
+-#define BOOST_FILESYSTEM_NO_DEPRECATED
+-
+ #define BOOST_NO_CXX11_SCOPED_ENUMS
+ #include <boost/filesystem.hpp>
+ #undef BOOST_NO_CXX11_SCOPED_ENUMS
