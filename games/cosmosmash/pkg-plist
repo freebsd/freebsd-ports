@@ -9,10 +9,3 @@ share/pixmaps/cosmosmash.png
 %%DATADIR%%/sounds/saucer-shooting.wav
 %%DATADIR%%/sounds/hyperspace.wav
 %%DATADIR%%/sounds/level-finished.wav
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/TODO

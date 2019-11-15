@@ -1,6 +1,6 @@
---- Makefile.in.orig	2016-11-23 17:35:51 UTC
-+++ Makefile.in
-@@ -233,7 +233,7 @@ build_vendor = @build_vendor@
+--- Makefile.in.orig	2019-11-12 21:07:28.232238000 +0100
++++ Makefile.in	2019-11-12 21:08:46.707676000 +0100
+@@ -330,7 +330,7 @@
  builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@
@@ -9,16 +9,14 @@
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
-@@ -269,12 +269,8 @@ pkgconfigdir = $(prefix)/libdata/pkgconf
+@@ -366,10 +366,8 @@
  pkgconfig_DATA = $(PACKAGE)-$(API).pc
  doc_DATA = \
  	AUTHORS \
 -	COPYING \
--	INSTALL \
  	NEWS \
 -	README \
--	THANKS \
--	TODO
+-	THANKS
 +	README
  
  RPMBUILD = rpmbuild

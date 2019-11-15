@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	flatzebra
-PORTVERSION=	0.1.6
-PORTREVISION=	5
+PORTVERSION=	0.1.7
 CATEGORIES=	devel games
 MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Generic game engine for 2D double-buffering animation
 
 LICENSE=	GPLv2+
