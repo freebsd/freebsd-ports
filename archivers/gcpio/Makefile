@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cpio
-PORTVERSION=	2.12
-PORTREVISION=	1
+PORTVERSION=	2.13
 CATEGORIES=	archivers
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	g
@@ -11,6 +10,8 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU cpio copies files to and from archives
 
 LICENSE=	GPLv3
+
+TEST_DEPENDS=	autom4te:devel/autoconf
 
 USES=		cpe tar:bzip2
 
