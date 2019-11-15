@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	duplicity
-PORTVERSION=	0.7.19
+PORTVERSION=	0.8.07
 CATEGORIES=	sysutils
-MASTER_SITES=	http://launchpad.net/duplicity/0.7-series/${PORTVERSION}/+download/
+MASTER_SITES=	http://launchpad.net/duplicity/0.8-series/${PORTVERSION}/+download/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Backup tool that uses librsync and GnuPG
@@ -14,14 +15,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	librsync.so:net/librsync2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0:devel/py-fasteners@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:security/py-paramiko@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 
-USES=		python:2.7 shebangfix
-USE_PYTHON=	autoplist distutils
+USES=		localbase python shebangfix
+USE_PYTHON=	autoplist distutils noflavors
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	duplicity-devel
+CONFLICTS_INSTALL=	duplicity
 
 SHEBANG_FILES=	bin/duplicity bin/rdiffdir
 
@@ -57,7 +62,7 @@ post-patch:
 .endfor
 
 post-patch-NLS-off:
-	@${REINPLACE_CMD} -e '56,67d' \
+	@${REINPLACE_CMD} -e '55,63d' \
 		${WRKSRC}/setup.py
 
 post-patch-FTP-off:
@@ -78,7 +83,7 @@ post-patch-GIO-off:
 	@${RM} ${WRKSRC}/${PORTNAME}/backends/giobackend.py
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/duplicity/_librsync.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/duplicity/_librsync.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

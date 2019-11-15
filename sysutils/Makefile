@@ -277,6 +277,7 @@
     SUBDIR += dunst
     SUBDIR += dupd
     SUBDIR += duplicity
+    SUBDIR += duplicity-devel
     SUBDIR += duply
     SUBDIR += dupmerge
     SUBDIR += dvd+rw-tools
