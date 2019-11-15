@@ -10,6 +10,9 @@ DISTNAME=	jdk-${PORTVERSION}_doc-all
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_VERSION} Documentation
 
+DEPRECATED=	The corresponding JDK port is EoL
+EXPIRATION_DATE=2019-11-28
+
 DOCSDIR?=	${PREFIX}/share/doc/jdk${JDK_VERSION}
 RESTRICTED=	This documentation is under license and export control.
 
