@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	sublime
-PORTVERSION=	3.1.76
+PORTVERSION=	3.2.2
 CATEGORIES=	editors linux
 MASTER_SITES=	http://download.sublimetext.com/
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	3
-DISTNAME_amd64=	sublime_text_3_build_${PORTVERSION:S/.//g}_x64
-DISTNAME_i386=	sublime_text_3_build_${PORTVERSION:S/.//g}_x32
+DISTNAME_amd64=	sublime_text_3_build_3211_x64
+DISTNAME_i386=	sublime_text_3_build_3211_x32
 
 MAINTAINER=	miguelmclara@gmail.com
 COMMENT=	Sophisticated text editor for code, markup and prose
 
 USES=		desktop-file-utils gnome linux tar:bzip2
-USE_LINUX=	xorglibs gtk2
+USE_LINUX=	gtk3
 
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/sublime_text_3
