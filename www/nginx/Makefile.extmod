@@ -247,7 +247,8 @@ PASSENGER_DISTFILES=	passenger-${PASSENGER_NGINX_VER}.tar.gz:passenger
 PASSENGER_VARS=		WRKSRC_passenger=${WRKDIR}/passenger-${PASSENGER_NGINX_VER} \
 			DSO_EXTDIRS+=passenger-${PASSENGER_NGINX_VER}/src/nginx_module
 PASSENGER_EXTRA_PATCHES=${PATCHDIR}/extra-patch-passenger-build-nginx.rb \
-			${PATCHDIR}/extra-patch-passenger-disable-telemetry
+			${PATCHDIR}/extra-patch-passenger-disable-telemetry \
+			${PATCHDIR}/extra-patch-passenger-system-calls
 
 POSTGRES_USES=		pgsql
 POSTGRES_GH_TUPLE=	FRiCKLE:ngx_postgres:1.0rc7:postgres
