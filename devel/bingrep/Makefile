@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bingrep
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -18,16 +17,16 @@ USES=		cargo
 CARGO_CRATES=	aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
 		arrayref-0.3.5 \
-		arrayvec-0.4.12 \
+		arrayvec-0.5.1 \
 		atty-0.2.13 \
-		backtrace-0.3.38 \
-		backtrace-sys-0.1.31 \
+		backtrace-0.3.40 \
+		backtrace-sys-0.1.32 \
 		base64-0.10.1 \
-		bitflags-1.2.0 \
-		blake2b_simd-0.5.8 \
+		bitflags-1.2.1 \
+		blake2b_simd-0.5.9 \
 		bstr-0.2.8 \
 		byteorder-1.3.2 \
-		cc-1.0.45 \
+		cc-1.0.47 \
 		cfg-if-0.1.10 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
@@ -38,29 +37,27 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		csv-core-0.1.6 \
 		dirs-1.0.5 \
 		encode_unicode-0.3.6 \
-		env_logger-0.6.2 \
+		env_logger-0.7.1 \
 		failure-0.1.6 \
 		failure_derive-0.1.6 \
 		fuchsia-cprng-0.1.1 \
 		glob-0.3.0 \
-		goblin-0.0.23 \
+		goblin-0.1.1 \
 		heck-0.3.1 \
 		hexplay-0.2.1 \
 		humantime-1.3.0 \
 		itoa-0.4.4 \
 		lazy_static-1.4.0 \
-		libc-0.2.62 \
+		libc-0.2.65 \
 		log-0.4.8 \
 		memchr-2.2.1 \
 		memrange-0.1.3 \
-		metagoblin-0.2.0 \
-		nodrop-0.1.14 \
+		metagoblin-0.3.0 \
 		plain-0.2.3 \
 		prettytable-rs-0.8.0 \
-		proc-macro2-0.4.30 \
-		proc-macro2-1.0.5 \
+		proc-macro-error-0.2.6 \
+		proc-macro2-1.0.6 \
 		quick-error-1.2.2 \
-		quote-0.6.13 \
 		quote-1.0.2 \
 		rand-0.3.23 \
 		rand-0.4.6 \
@@ -76,19 +73,15 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		rust-argon2-0.5.1 \
 		rustc-demangle-0.1.16 \
 		rustc-serialize-0.3.24 \
-		rustc_version-0.2.3 \
-		ryu-1.0.1 \
-		scroll-0.9.2 \
-		scroll_derive-0.9.5 \
-		semver-0.9.0 \
-		semver-parser-0.7.0 \
-		serde-1.0.101 \
+		ryu-1.0.2 \
+		scroll-0.10.1 \
+		scroll_derive-0.10.1 \
+		serde-1.0.102 \
 		strsim-0.8.0 \
-		structopt-0.2.18 \
-		structopt-derive-0.2.18 \
-		syn-0.15.44 \
-		syn-1.0.5 \
-		synstructure-0.12.1 \
+		structopt-0.3.4 \
+		structopt-derive-0.3.4 \
+		syn-1.0.8 \
+		synstructure-0.12.3 \
 		term-0.5.2 \
 		termcolor-0.3.6 \
 		termcolor-1.0.5 \
@@ -96,9 +89,8 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		theban_interval_tree-0.7.1 \
 		thread_local-0.3.6 \
 		time-0.1.42 \
-		unicode-segmentation-1.3.0 \
+		unicode-segmentation-1.6.0 \
 		unicode-width-0.1.6 \
-		unicode-xid-0.1.0 \
 		unicode-xid-0.2.0 \
 		vec_map-0.8.1 \
 		winapi-0.3.8 \
