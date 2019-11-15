@@ -1,0 +1,5 @@
+Crossplane is reliable and fast NGINX configuration file parser and
+builder, it's quick and reliable way to convert NGINX configurations
+into JSON and back.
+
+WWW: https://github.com/nginxinc/crossplane
