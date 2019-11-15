@@ -24,7 +24,7 @@ OPTIONS_DEFAULT=	MYSQL
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 CPPFLAGS+=	-DwithMYSQL -I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib/mysql -lmysqlclient_r
 CONFIGURE_ARGS+=--enable-mysql

@@ -73,7 +73,7 @@ IPV6_CONFIGURE_OFF=	--disable-ipv6
 LDAP_USE=		openldap=yes
 LDAP_CONFIGURE_ON=	--with-ldap=yes
 LDAP_CONFIGURE_OFF=	--with-ldap=no
-MYSQL_USE=		mysql=yes
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--with-mysql=yes
 MYSQL_CONFIGURE_OFF=	--with-mysql=no
 RRDTOOL_DESC=		Usage graphs support

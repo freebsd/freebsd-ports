@@ -51,7 +51,7 @@ BRO_CONFIGURE_ENABLE=	bro
 GRE_CONFIGURE_ENABLE=	gre
 IPV6_CONFIGURE_ENABLE=	ipv6
 MPLS_CONFIGURE_ENABLE=	mpls
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_CONFIGURE_ON=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql

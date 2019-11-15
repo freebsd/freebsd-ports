@@ -41,7 +41,8 @@ MEMCACHED_DESC=	Use memcached
 IMAGICK_DESC=	Use ImageMagick
 SOCKETS_DESC=	Use sockets
 
-MYSQL_USE=	mysql=client php=mysqli
+MYSQL_USES=	mysql
+MYSQL_USE=	php=mysqli
 PGSQL_USE=	php=pgsql
 SQLITE_USE=	php=sqlite3
 LDAP_USE=	php=ldap

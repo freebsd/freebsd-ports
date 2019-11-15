@@ -54,7 +54,7 @@ MODULES+=	gsl
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 MODULES+=	mysql
 .endif
 

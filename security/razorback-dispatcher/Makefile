@@ -22,9 +22,8 @@ LIB_DEPENDS=	librazorback_api.so:security/razorback-api \
 		libmemcached.so:databases/libmemcached \
 		libcli.so:devel/libcli
 
-USES=		autoreconf libtool pathfix pkgconfig
+USES=		autoreconf libtool mysql pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USE_MYSQL=	yes
 USE_RC_SUBR=	dispatcher dispatcher_safed
 SUB_FILES=	pkg-message
 CPPFLAGS+=	-I${LOCALBASE}/include

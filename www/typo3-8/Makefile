@@ -51,7 +51,7 @@ CURL_USE=	PHP=curl
 GD_USE=		PHP=gd
 GMP_USE=	PHP=gmp
 MBSTRING_USE=	PHP=mbstring
-MYSQL_USE=	MYSQL=server
+MYSQL_USES=	mysql:server
 ZLIB_USE=	PHP=zlib
 
 .include <bsd.port.options.mk>

@@ -41,7 +41,7 @@ ZEROMQ_LIB_DEPENDS=	libczmq.so:net/czmq
 
 INOTIFY_USES=	pkgconfig
 LUA_USES=	readline
-MYSQL_USE=	mysql
+MYSQL_USES=	mysql
 PGSQL_USES=	pgsql
 
 USE_GITHUB=	yes

@@ -32,7 +32,7 @@ DICT_RUBY_CONFIGURE_ENABLE=	dict-ruby
 EST_DESC=		Enable Hyper Estraier dictionary module
 EST_CONFIGURE_WITH=	est
 MYSQL_DESC=		Enable MySQL dictionary module
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_WITH=	mysql
 PYTHON_DESC=		Enable Python module
 PYTHON_USES=		gnome python:2.7

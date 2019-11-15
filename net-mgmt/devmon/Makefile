@@ -27,13 +27,9 @@ SUB_LIST=	USERS=${USERS} \
 
 OPTIONS_DEFINE=	MYSQL DOCS
 
+MYSQL_USES=	mysql
+
 REINPLACE_ARGS=	-i ''
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/run/devmon.pid|/var/run/devmon/devmon.pid|g' ${WRKSRC}/devmon.cfg ${WRKSRC}/modules/dm_config.pm

@@ -44,7 +44,7 @@ OPTIONS_SUB=		yes
 D2_DESC=		Diablo II server (D2CS/D2DBS)
 D2_CONFIGURE_ENABLE=	d2cs d2dbs
 
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_WITH=	mysql
 
 PGSQL_USES=		pgsql

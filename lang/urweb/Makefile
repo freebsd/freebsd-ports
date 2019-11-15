@@ -57,7 +57,7 @@ CONFIGURE_ENV+=	SQHEADER="no"
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 .else
 CONFIGURE_ENV+=	MSHEADER="no"
 .endif

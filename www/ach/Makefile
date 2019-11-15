@@ -14,8 +14,7 @@ BROKEN=		unfetchable
 
 LICENSE=	GPLv3
 
-USE_MYSQL=	yes
-USES=		php tar
+USES=		mysql php tar
 USE_GITHUB=	yes
 GH_ACCOUNT=	Burton
 GH_PROJECT=	Analysis-of-Competing-Hypotheses

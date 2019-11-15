@@ -29,7 +29,7 @@ OPTIONS_DEFAULT=	MYSQL
 OPTIONS_SUB=		yes
 
 MYSQL_DESC=		MySQL plugin
-MYSQL_USE=		mysql=yes
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_WITH=	mysql
 PGSQL_DESC=		PostgreSQL plugin
 PGSQL_USES=		pgsql

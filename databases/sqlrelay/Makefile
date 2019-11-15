@@ -113,7 +113,7 @@ CONFIGURE_ARGS+=	--disable-sqlite
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 CONFIGURE_ARGS+=	--with-mysql-prefix="${LOCALBASE}"
 TOSTRIP+=		libexec/sqlrelay/sqlrconnection_mysql.so
 .else

@@ -45,7 +45,7 @@ USE_RC_SUBR=	refdbd
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 # If libdbi-drivers has been built without MySQL driver, abort
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdmysql.so)
 IGNORE=		rebuild databases/libdbi-drivers with MySQL support

@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=	--disable-libmemcached
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		yes
+USES+=			mysql
 CONFIGURE_ARGS+=	--with-mysql=yes
 .else
 CONFIGURE_ARGS+=	--with-mysql=no

@@ -46,7 +46,7 @@ MAKE_JOBS_UNSAFE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 CFLAGS+=	-DHAVE_MYSQL
 LIBS+=		`${LOCALBASE}/bin/mysql_config --libs`
 DOCFILES+=	README.sql mu-conference.sql

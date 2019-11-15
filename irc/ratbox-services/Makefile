@@ -116,7 +116,7 @@ CONFIGURE_ARGS+=	--enable-sqlite3=${LOCALBASE}
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		yes
+USES+=			mysql
 CONFIGURE_ARGS+=	--enable-mysql=${LOCALBASE}
 .endif
 

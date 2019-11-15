@@ -67,7 +67,7 @@ PLIST_SUB+=	GSL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 MODULES+=	mysql
 PLIST_SUB+=	MYSQL=""
 .else

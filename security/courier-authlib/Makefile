@@ -123,8 +123,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
 OPTIONS_DEFINE+=	DOCS
 
 DOCS=		README.authmysql.html README.authmysql.myownquery
-USES+=		compiler:c11
-USE_MYSQL=	yes
+USES+=		compiler:c11 mysql
 CONFIGURE_ARGS+=--with-authmysql \
 		--with-mysql-libs=${LOCALBASE}/lib/mysql \
 		--with-mysql-includes=${LOCALBASE}/include/mysql
