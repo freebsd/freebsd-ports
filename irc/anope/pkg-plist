@@ -107,6 +107,7 @@ anope/lib/modules/hs_set.so
 anope/lib/modules/hybrid.so
 anope/lib/modules/inspircd12.so
 anope/lib/modules/inspircd20.so
+anope/lib/modules/inspircd3.so
 %%STATS%%anope/lib/modules/irc2sql.so
 %%STATS%%anope/lib/modules/m_chanstats.so
 anope/lib/modules/m_dns.so
