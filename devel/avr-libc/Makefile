@@ -14,11 +14,11 @@ COMMENT=	C and math library for the Atmel AVR controller family
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	avr-as:devel/avr-binutils \
-		avr-ld:devel/avr-binutils \
+BUILD_DEPENDS=	avr-as:devel/binutils@avr \
+		avr-ld:devel/binutils@avr \
 		avr-gcc:devel/avr-gcc
-RUN_DEPENDS=	avr-as:devel/avr-binutils \
-		avr-ld:devel/avr-binutils \
+RUN_DEPENDS=	avr-as:devel/binutils@avr \
+		avr-ld:devel/binutils@avr \
 		avr-gcc:devel/avr-gcc
 
 OPTIONS_DEFINE=	DOXYGEN

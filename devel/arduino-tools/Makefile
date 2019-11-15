@@ -15,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	arduino-avrdude:devel/arduino-avrdude \
 		bossac:devel/bossa \
-		avr-as:devel/avr-binutils \
+		avr-as:devel/binutils@avr \
 		avr-gcc:devel/avr-gcc \
 		${LOCALBASE}/avr/include/avr/io.h:devel/avr-libc \
 		gcc-arm-embedded>0:devel/gcc-arm-embedded \

@@ -15,14 +15,14 @@ LICENSE_COMB=	multi
 BROKEN_aarch64=		Fails to package: cannot find manpages
 BROKEN_mips64=		Fails to configure: cannot compute suffix of object files
 
-BUILD_DEPENDS=	avr-as:devel/avr-binutils \
-		avr-ld:devel/avr-binutils
+BUILD_DEPENDS=	avr-as:devel/binutils@avr \
+		avr-ld:devel/binutils@avr
 LIB_DEPENDS=	libmpfr.so:math/mpfr \
 		libgmp.so:math/gmp \
 		libmpc.so:math/mpc \
 		libisl.so:devel/isl
-RUN_DEPENDS=	avr-as:devel/avr-binutils \
-		avr-ld:devel/avr-binutils
+RUN_DEPENDS=	avr-as:devel/binutils@avr \
+		avr-ld:devel/binutils@avr
 
 USES=		bison compiler:c++11-lang gmake iconv libtool localbase \
 		makeinfo perl5 tar:xz

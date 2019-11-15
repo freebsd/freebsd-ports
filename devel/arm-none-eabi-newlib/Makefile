@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	${NEWLIB_TARGET}-
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Newlib distribution for ${NEWLIB_TARGET} targets
 
-BUILD_DEPENDS+=	${NEWLIB_TARGET}-ar:devel/${NEWLIB_TARGET}-binutils \
-		${NEWLIB_TARGET}-as:devel/${NEWLIB_TARGET}-binutils \
-		${NEWLIB_TARGET}-ld:devel/${NEWLIB_TARGET}-binutils \
+BUILD_DEPENDS+=	${NEWLIB_TARGET}-ar:devel/binutils@${NEWLIB_TARGET:C/-/_/g} \
+		${NEWLIB_TARGET}-as:devel/binutils@${NEWLIB_TARGET:C/-/_/g} \
+		${NEWLIB_TARGET}-ld:devel/binutils@${NEWLIB_TARGET:C/-/_/g} \
 		${LOCALBASE}/bin/${NEWLIB_TARGET}-gcc:devel/${NEWLIB_TARGET}-gcc
 
 NEWLIB_TARGET?=	arm-none-eabi
