@@ -6,7 +6,7 @@
 
 get_repo_sha()
 {
-	curl https://api.github.com/repos/llvm-mirror/$1/branches/master | \
+	curl https://api.github.com/repos/llvm/$1/branches/master | \
 	    jq -r '.commit.sha'
 }
 
@@ -21,11 +21,5 @@ LLVM_MAJOR=	10
 LLVM_RELEASE=	\${LLVM_MAJOR}.0.0
 SNAPDATE=	$(date +%Y%m%d)
 
-LLVM_COMMIT=		$(get_repo_sha llvm)
-CLANG_COMMIT=		$(get_repo_sha clang)
-COMPILER_RT_COMMIT=	$(get_repo_sha compiler-rt)
-EXTRAS_COMMIT=		$(get_repo_sha clang-tools-extra)
-LLD_COMMIT=		$(get_repo_sha lld)
-LLDB_COMMIT=		$(get_repo_sha lldb)
-OPENMP_COMMIT=		$(get_repo_sha openmp)
+LLVM_PROJECT_COMMIT=		$(get_repo_sha llvm-project)
 EOF

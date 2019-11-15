@@ -16,6 +16,10 @@ COMMENT=	Pre seeded toolchain to cross build FreeBSD base
 
 LLVM_SUFFIX?=	-devel
 
+.if ${LLVM_SUFFIX} == "-devel"
+IGNORE=	Subsumed into devel/llvm-devel
+.endif
+
 NO_BUILD=	yes
 
 XCC?=		clang${LLVM_SUFFIX}

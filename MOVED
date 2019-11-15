@@ -13469,3 +13469,4 @@ devel/powerpc64-binutils|devel/binutils@powerpc64|2019-11-05|Moved to a flavored
 devel/riscv64-binutils|devel/binutils@riscv64|2019-11-05|Moved to a flavored version
 devel/s390x-binutils|devel/binutils@s390x|2019-11-05|Moved to a flavored version
 devel/sparc64-binutils|devel/binutils@sparc64|2019-11-05|Moved to a flavored version
+devel/xtoolchain-llvm-devel|devel/llvm-devel|2019-11-15|Subsumed into devel/llvm-devel

@@ -1,5 +1,5 @@
---- tools/clang/lib/Driver/ToolChains/CommonArgs.cpp.orig	2017-05-10 17:18:56.000000000 +0000
-+++ tools/clang/lib/Driver/ToolChains/CommonArgs.cpp	2017-05-10 23:01:17.087686000 +0000
+--- clang/lib/Driver/ToolChains/CommonArgs.cpp.orig	2017-05-10 17:18:56.000000000 +0000
++++ clang/lib/Driver/ToolChains/CommonArgs.cpp	2017-05-10 23:01:17.087686000 +0000
 @@ -441,7 +441,10 @@
  
    switch (TC.getDriver().getOpenMPRuntime(Args)) {

@@ -143,6 +143,7 @@ llvm-devel/bin/dsymutil
 %%EXTRAS%%llvm-devel/bin/find-all-symbols
 %%CLANG%%llvm-devel/bin/git-clang-format
 %%CLANG%%llvm-devel/bin/hmaptool
+%%LLD%%llvm-devel/bin/ld
 %%LLD%%llvm-devel/bin/ld.lld
 %%LLD%%llvm-devel/bin/ld64.lld
 llvm-devel/bin/llc
@@ -518,6 +519,10 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Basic/XRayInstr.h
 %%CLANG%%llvm-devel/include/clang/Basic/XRayLists.h
 %%CLANG%%llvm-devel/include/clang/Basic/arm_fp16.inc
+%%CLANG%%llvm-devel/include/clang/Basic/arm_mve_builtin_aliases.inc
+%%CLANG%%llvm-devel/include/clang/Basic/arm_mve_builtin_cg.inc
+%%CLANG%%llvm-devel/include/clang/Basic/arm_mve_builtin_sema.inc
+%%CLANG%%llvm-devel/include/clang/Basic/arm_mve_builtins.inc
 %%CLANG%%llvm-devel/include/clang/Basic/arm_neon.inc
 %%CLANG%%llvm-devel/include/clang/CodeGen/BackendUtil.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/CGFunctionInfo.h
@@ -762,6 +767,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Tooling/DependencyScanning/DependencyScanningService.h
 %%CLANG%%llvm-devel/include/clang/Tooling/DependencyScanning/DependencyScanningTool.h
 %%CLANG%%llvm-devel/include/clang/Tooling/DependencyScanning/DependencyScanningWorker.h
+%%CLANG%%llvm-devel/include/clang/Tooling/DependencyScanning/ModuleDepCollector.h
 %%CLANG%%llvm-devel/include/clang/Tooling/DiagnosticsYaml.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Execution.h
 %%CLANG%%llvm-devel/include/clang/Tooling/FileMatchTrie.h
@@ -808,7 +814,6 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Tooling/Transformer/SourceCodeBuilders.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Transformer/Stencil.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Transformer/Transformer.h
-%%COMPILER_RT%%llvm-devel/include/fuzzer/FuzzedDataProvider.h
 %%LLD%%llvm-devel/include/lld/Common/Args.h
 %%LLD%%llvm-devel/include/lld/Common/DWARF.h
 %%LLD%%llvm-devel/include/lld/Common/Driver.h
@@ -1387,6 +1392,7 @@ llvm-devel/include/llvm/ADT/DenseMapInfo.h
 llvm-devel/include/llvm/ADT/DenseSet.h
 llvm-devel/include/llvm/ADT/DepthFirstIterator.h
 llvm-devel/include/llvm/ADT/DirectedGraph.h
+llvm-devel/include/llvm/ADT/EnumeratedArray.h
 llvm-devel/include/llvm/ADT/EpochTracker.h
 llvm-devel/include/llvm/ADT/EquivalenceClasses.h
 llvm-devel/include/llvm/ADT/FoldingSet.h
@@ -1710,6 +1716,7 @@ llvm-devel/include/llvm/CodeGen/MachineRegionInfo.h
 llvm-devel/include/llvm/CodeGen/MachineRegisterInfo.h
 llvm-devel/include/llvm/CodeGen/MachineSSAUpdater.h
 llvm-devel/include/llvm/CodeGen/MachineScheduler.h
+llvm-devel/include/llvm/CodeGen/MachineSizeOpts.h
 llvm-devel/include/llvm/CodeGen/MachineTraceMetrics.h
 llvm-devel/include/llvm/CodeGen/MacroFusion.h
 llvm-devel/include/llvm/CodeGen/ModuloSchedule.h
@@ -2046,10 +2053,10 @@ llvm-devel/include/llvm/ExecutionEngine/Orc/OrcError.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/OrcRemoteTargetClient.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/OrcRemoteTargetRPCAPI.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/OrcRemoteTargetServer.h
-llvm-devel/include/llvm/ExecutionEngine/Orc/RPCSerialization.h
-llvm-devel/include/llvm/ExecutionEngine/Orc/RPCUtils.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/RPC/RPCSerialization.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/RPC/RPCUtils.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/RPC/RawByteChannel.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/RTDyldObjectLinkingLayer.h
-llvm-devel/include/llvm/ExecutionEngine/Orc/RawByteChannel.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/RemoteObjectLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/SpeculateAnalyses.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Speculation.h
@@ -2367,6 +2374,7 @@ llvm-devel/include/llvm/Remarks/BitstreamRemarkParser.h
 llvm-devel/include/llvm/Remarks/BitstreamRemarkSerializer.h
 llvm-devel/include/llvm/Remarks/Remark.h
 llvm-devel/include/llvm/Remarks/RemarkFormat.h
+llvm-devel/include/llvm/Remarks/RemarkLinker.h
 llvm-devel/include/llvm/Remarks/RemarkParser.h
 llvm-devel/include/llvm/Remarks/RemarkSerializer.h
 llvm-devel/include/llvm/Remarks/RemarkStringTable.h
@@ -2583,6 +2591,7 @@ llvm-devel/include/llvm/TextAPI/MachO/TextAPIWriter.h
 llvm-devel/include/llvm/ToolDrivers/llvm-dlltool/DlltoolDriver.h
 llvm-devel/include/llvm/ToolDrivers/llvm-lib/LibDriver.h
 llvm-devel/include/llvm/Transforms/AggressiveInstCombine/AggressiveInstCombine.h
+llvm-devel/include/llvm/Transforms/CFGuard.h
 llvm-devel/include/llvm/Transforms/Coroutines.h
 llvm-devel/include/llvm/Transforms/IPO.h
 llvm-devel/include/llvm/Transforms/IPO/AlwaysInliner.h
@@ -2702,6 +2711,7 @@ llvm-devel/include/llvm/Transforms/Utils/CanonicalizeAliases.h
 llvm-devel/include/llvm/Transforms/Utils/Cloning.h
 llvm-devel/include/llvm/Transforms/Utils/CodeExtractor.h
 llvm-devel/include/llvm/Transforms/Utils/CtorUtils.h
+llvm-devel/include/llvm/Transforms/Utils/Debugify.h
 llvm-devel/include/llvm/Transforms/Utils/EntryExitInstrumenter.h
 llvm-devel/include/llvm/Transforms/Utils/EscapeEnumerator.h
 llvm-devel/include/llvm/Transforms/Utils/Evaluator.h
@@ -2765,23 +2775,6 @@ llvm-devel/include/llvm/XRay/RecordPrinter.h
 llvm-devel/include/llvm/XRay/Trace.h
 llvm-devel/include/llvm/XRay/XRayRecord.h
 llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/allocator_interface.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/asan_interface.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/common_interface_defs.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/coverage_interface.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/dfsan_interface.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/hwasan_interface.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/linux_syscall_hooks.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/lsan_interface.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/msan_interface.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/netbsd_syscall_hooks.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/scudo_interface.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/tsan_interface.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/tsan_interface_atomic.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/ubsan_interface.h
-%%COMPILER_RT%%llvm-devel/include/xray/xray_interface.h
-%%COMPILER_RT%%llvm-devel/include/xray/xray_log_interface.h
-%%COMPILER_RT%%llvm-devel/include/xray/xray_records.h
 %%GOLD%%llvm-devel/lib/LLVMgold.so
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_builtin_vars.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_cmath.h
@@ -2800,6 +2793,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm64intr.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm_acle.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm_fp16.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm_mve.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/arm_neon.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/armintr.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/avx2intrin.h
@@ -2847,6 +2841,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/float.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/fma4intrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/fmaintrin.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/fuzzer/FuzzedDataProvider.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/fxsrintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/gfniintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/htmintrin.h
@@ -2892,6 +2887,20 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/rdseedintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/rtmintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/s390intrin.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/allocator_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/asan_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/common_interface_defs.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/coverage_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/dfsan_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/hwasan_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/linux_syscall_hooks.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/lsan_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/msan_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/netbsd_syscall_hooks.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/scudo_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/tsan_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/tsan_interface_atomic.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sanitizer/ubsan_interface.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/sgxintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/shaintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/smmintrin.h
@@ -2909,6 +2918,9 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/x86intrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/xmmintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/xopintrin.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/xray/xray_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/xray/xray_log_interface.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/xray/xray_records.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/xsavecintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/xsaveintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/xsaveoptintrin.h
@@ -2980,6 +2992,7 @@ llvm-devel/lib/libLLVMBinaryFormat.a
 llvm-devel/lib/libLLVMBitReader.a
 llvm-devel/lib/libLLVMBitWriter.a
 llvm-devel/lib/libLLVMBitstreamReader.a
+llvm-devel/lib/libLLVMCFGuard.a
 llvm-devel/lib/libLLVMCodeGen.a
 llvm-devel/lib/libLLVMCore.a
 llvm-devel/lib/libLLVMCoroutines.a
@@ -3036,6 +3049,7 @@ llvm-devel/lib/libLLVMObjCARCOpts.a
 llvm-devel/lib/libLLVMObject.a
 llvm-devel/lib/libLLVMObjectYAML.a
 llvm-devel/lib/libLLVMOption.a
+llvm-devel/lib/libLLVMOrcError.a
 llvm-devel/lib/libLLVMOrcJIT.a
 llvm-devel/lib/libLLVMPasses.a
 llvm-devel/lib/libLLVMPowerPCAsmParser.a
