@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbautostart
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2
 CATEGORIES=	x11
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
