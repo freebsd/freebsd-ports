@@ -1,0 +1,10 @@
+bin/liquibase
+%%DATADIR%%/commons-cli-1.4.jar
+%%DATADIR%%/jaxb-api-2.2.11.jar
+%%DATADIR%%/jaxb-core-2.2.11.jar
+%%DATADIR%%/jaxb-impl-2.2.11.jar
+%%DATADIR%%/liquibase.jar
+%%DATADIR%%/logback-classic-1.2.3.jar
+%%DATADIR%%/logback-core-1.2.3.jar
+%%DATADIR%%/slf4j-api-1.7.28.jar
+%%DATADIR%%/snakeyaml-1.24.jar
