@@ -1,24 +1,24 @@
-%%FASTDFS%%@sample etc/fdfs/mod_fastdfs.conf.sample
-@sample %%ETCDIR%%/fastcgi_params-dist %%ETCDIR%%/fastcgi_params
 %%ETCDIR%%/koi-utf
 %%ETCDIR%%/koi-win
-%%NAXSI%%%%ETCDIR%%/naxsi_core.rules
-@sample %%ETCDIR%%/scgi_params-dist %%ETCDIR%%/scgi_params
-@sample %%ETCDIR%%/uwsgi_params-dist %%ETCDIR%%/uwsgi_params
-%%MODSECURITY%%%%ETCDIR%%/unicode.mapping
 %%ETCDIR%%/win-utf
+%%FASTDFS%%@sample etc/fdfs/mod_fastdfs.conf.sample
+%%MODSECURITY%%%%ETCDIR%%/unicode.mapping
+%%NAXSI%%%%ETCDIR%%/naxsi_core.rules
+@sample %%ETCDIR%%/fastcgi_params-dist %%ETCDIR%%/fastcgi_params
 @sample %%ETCDIR%%/mime.types-dist %%ETCDIR%%/mime.types
 @sample %%ETCDIR%%/nginx.conf-dist %%ETCDIR%%/nginx.conf
+@sample %%ETCDIR%%/scgi_params-dist %%ETCDIR%%/scgi_params
+@sample %%ETCDIR%%/uwsgi_params-dist %%ETCDIR%%/uwsgi_params
 %%DSO%%%%ARRAYVAR%%libexec/nginx/ngx_http_array_var_module.so
 %%DSO%%%%AWS_AUTH%%libexec/nginx/ngx_http_aws_auth_module.so
 %%DSO%%%%BROTLI%%libexec/nginx/ngx_http_brotli_filter_module.so
 %%DSO%%%%BROTLI%%libexec/nginx/ngx_http_brotli_static_module.so
 %%DSO%%%%CLOJURE%%libexec/nginx/ngx_http_clojure_module.so
-%%DSO%%%%CT%%libexec/nginx/ngx_ssl_ct_module.so
 %%DSO%%%%CT%%libexec/nginx/ngx_http_ssl_ct_module.so
-%%DSO%%%%ECHO%%libexec/nginx/ngx_http_echo_module.so
-%%DSO%%%%DYNAMIC_UPSTREAM%%libexec/nginx/ngx_dynamic_upstream_module.so
+%%DSO%%%%CT%%libexec/nginx/ngx_ssl_ct_module.so
 %%DSO%%%%DEVEL_KIT%%libexec/nginx/ndk_http_module.so
+%%DSO%%%%DYNAMIC_UPSTREAM%%libexec/nginx/ngx_dynamic_upstream_module.so
+%%DSO%%%%ECHO%%libexec/nginx/ngx_http_echo_module.so
 %%DSO%%%%ENCRYPTSESSION%%libexec/nginx/ngx_http_encrypted_session_module.so
 %%DSO%%%%FASTDFS%%libexec/nginx/ngx_http_fastdfs_module.so
 %%DSO%%%%FORMINPUT%%libexec/nginx/ngx_http_form_input_module.so
@@ -29,24 +29,22 @@
 %%DSO%%%%HTTP_AUTH_PAM%%libexec/nginx/ngx_http_auth_pam_module.so
 %%DSO%%%%HTTP_EVAL%%libexec/nginx/ngx_http_eval_module.so
 %%DSO%%%%HTTP_FANCYINDEX%%libexec/nginx/ngx_http_fancyindex_module.so
-%%DSO%%%%HTTP%%%%HTTP_GEOIP2%%libexec/nginx/ngx_http_geoip2_module.so
-%%DSO%%%%STREAM%%%%HTTP_GEOIP2%%libexec/nginx/ngx_stream_geoip2_module.so
 %%DSO%%%%HTTP_IMAGE_FILTER%%libexec/nginx/ngx_http_image_filter_module.so
 %%DSO%%%%HTTP_PERL%%libexec/nginx/ngx_http_perl_module.so
 %%DSO%%%%HTTP_PUSH%%libexec/nginx/ngx_nchan_module.so
 %%DSO%%%%HTTP_REDIS%%libexec/nginx/ngx_http_redis_module.so
 %%DSO%%%%HTTP_TARANTOOL%%libexec/nginx/ngx_http_tnt_module.so
-%%DSO%%%%HTTP_UPLOAD%%libexec/nginx/ngx_http_upload_module.so
 %%DSO%%%%HTTP_UPLOAD_PROGRESS%%libexec/nginx/ngx_http_uploadprogress_module.so
+%%DSO%%%%HTTP_UPLOAD%%libexec/nginx/ngx_http_upload_module.so
 %%DSO%%%%HTTP_UPSTREAM_FAIR%%libexec/nginx/ngx_http_upstream_fair_module.so
 %%DSO%%%%HTTP_XSLT%%libexec/nginx/ngx_http_xslt_filter_module.so
+%%DSO%%%%HTTP%%%%HTTP_GEOIP2%%libexec/nginx/ngx_http_geoip2_module.so
+%%DSO%%%%HTTP%%%%NJS%%libexec/nginx/ngx_http_js_module.so
 %%DSO%%%%ICONV%%libexec/nginx/ngx_http_iconv_module.so
 %%DSO%%%%LUA%%libexec/nginx/ngx_http_lua_module.so
 %%DSO%%%%MAIL%%libexec/nginx/ngx_mail_module.so
 %%DSO%%%%MEMC%%libexec/nginx/ngx_http_memc_module.so
 %%DSO%%%%NAXSI%%libexec/nginx/ngx_http_naxsi_module.so
-%%DSO%%%%HTTP%%%%NJS%%libexec/nginx/ngx_http_js_module.so
-%%DSO%%%%STREAM%%%%NJS%%libexec/nginx/ngx_stream_js_module.so
 %%DSO%%%%PASSENGER%%libexec/nginx/ngx_http_passenger_module.so
 %%DSO%%%%REDIS2%%libexec/nginx/ngx_http_redis2_module.so
 %%DSO%%%%RTMP%%libexec/nginx/ngx_rtmp_module.so
@@ -54,8 +52,17 @@
 %%DSO%%%%SHIBBOLETH%%libexec/nginx/ngx_http_shibboleth_module.so
 %%DSO%%%%SMALL_LIGHT%%libexec/nginx/ngx_http_small_light_module.so
 %%DSO%%%%SRCACHE%%libexec/nginx/ngx_http_srcache_filter_module.so
+%%DSO%%%%STREAM%%%%NJS%%libexec/nginx/ngx_stream_js_module.so
 %%DSO%%%%STREAM%%libexec/nginx/ngx_stream_module.so
 %%DSO%%%%VOD%%libexec/nginx/ngx_http_vod_module.so
+%%HTTP_PERL%%%%SITE_ARCH%%/auto/nginx/nginx.so
+%%HTTP_PERL%%%%SITE_ARCH%%/nginx.pm
+%%NJS%%sbin/njs
+sbin/nginx
+share/vim/vimfiles/ftdetect/nginx.vim
+share/vim/vimfiles/ftplugin/nginx.vim
+share/vim/vimfiles/indent/nginx.vim
+share/vim/vimfiles/syntax/nginx.vim
 %%WWW%%@postexec mkdir -p -m 755 %D/www/nginx-dist
 %%WWW%%@postexec if [ ! -d %D/www/nginx/ ] ; then ln -fs %D/www/nginx-dist %D/www/nginx; fi
 %%WWW%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
@@ -63,14 +70,6 @@
 %%WWW%%www/nginx-dist/50x.html
 %%WWW%%@postexec chmod a-w %D/www/nginx-dist
 %%WWW%%@postunexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
-sbin/nginx
-%%NJS%%sbin/njs
-share/vim/vimfiles/ftdetect/nginx.vim
-share/vim/vimfiles/ftplugin/nginx.vim
-share/vim/vimfiles/indent/nginx.vim
-share/vim/vimfiles/syntax/nginx.vim
 @dir %%NGINX_TMPDIR%%
 @dir %%NGINX_LOGDIR%%
 man/man8/nginx.8.gz
-%%HTTP_PERL%%%%SITE_ARCH%%/auto/nginx/nginx.so
-%%HTTP_PERL%%%%SITE_ARCH%%/nginx.pm
