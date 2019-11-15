@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2019-11-14 23:10:03 UTC
++++ Makefile.in
+@@ -2254,7 +2254,7 @@ backup_libcyrus_backup_la_SOURCES = \
+     backup/lcb_sqlconsts.h \
+     backup/lcb_verify.c
+ 
+-backup_libcyrus_backup_la_LIBADD = $(LD_BASIC_ADD)
++backup_libcyrus_backup_la_LIBADD = $(LD_BASIC_ADD) -lm
+ backup_backupd_SOURCES = \
+     imap/mutex_fake.c \
+     imap/sync_support.c \
