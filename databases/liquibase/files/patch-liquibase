@@ -1,6 +1,6 @@
---- liquibase.orig	2018-07-28 21:36:02.294669000 +0200
-+++ liquibase	2018-07-28 21:41:44.302244000 +0200
-@@ -1,55 +1,14 @@
+--- liquibase.orig	2019-11-06 04:45:57 UTC
++++ liquibase
+@@ -1,28 +1,6 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  
@@ -27,42 +27,27 @@
 -  # echo "Liquibase Home: $LIQUIBASE_HOME"
 -fi
 -
-- 
--# build classpath from all jars in lib
--if [ -f /usr/bin/cygpath ]; then
--  CP=.
--  for i in "$LIQUIBASE_HOME"/liquibase*.jar; do
--    i=`cygpath --windows "$i"`
--    CP="$CP;$i"
--  done
--  for i in "$LIQUIBASE_HOME"/lib/*.jar; do
--    i=`cygpath --windows "$i"`
--    CP="$CP;$i"
--  done
--else
++LIQUIBASE_HOME=`readlink -f "$(dirname "$0")/../share/liquibase"`
+  
+ # build classpath from all jars in lib
+ if [ -f /usr/bin/cygpath ]; then
+@@ -36,17 +14,13 @@ if [ -f /usr/bin/cygpath ]; then
+     CP="$CP;$i"
+   done
+ else
 -  if [[ $(uname) = MINGW* ]]; then
--    CP_SEPARATOR=";"
--  else
--    CP_SEPARATOR=":"
--  fi
--  CP=.
++  if [ $(uname) = Msys ]; then
+     CP_SEPARATOR=";"
+   else
+     CP_SEPARATOR=":"
+   fi
+   CP=.
 -  for i in "$LIQUIBASE_HOME"/liquibase*.jar; do
 -    CP="$CP""$CP_SEPARATOR""$i"
 -  done
 -  CP="$CP""$CP_SEPARATOR""$LIQUIBASE_HOME/lib/"
 -  for i in "$LIQUIBASE_HOME"/lib/*.jar; do
--    CP="$CP""$CP_SEPARATOR""$i"
--  done
--fi
-+LIQUIBASE_HOME=`dirname $0`/../share/liquibase
-+CP=.
-+for i in "$LIQUIBASE_HOME=/liquibase*.jat; do
-+	CP="$CP":$i"
-+	done
-+for i in $LIQUIBASE_HOME"/lib/*.jar; do
-+	CP=$CP":$i"
-+	done
-+.fi
- 
- # add any JVM options here
- JAVA_OPTS="${JAVA_OPTS-}"
++  for i in "$LIQUIBASE_HOME"/*.jar; do
+     CP="$CP""$CP_SEPARATOR""$i"
+   done
+ fi
