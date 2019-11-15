@@ -1,5 +1,5 @@
---- tools/clang/include/clang/Driver/Options.td.orig	2019-10-21 21:45:02.000000000 +0100
-+++ tools/clang/include/clang/Driver/Options.td	2019-10-22 00:00:39.833390000 +0100
+--- clang/include/clang/Driver/Options.td.orig	2019-10-21 21:45:02.000000000 +0100
++++ clang/include/clang/Driver/Options.td	2019-10-22 00:00:39.833390000 +0100
 @@ -1186,6 +1186,8 @@
    Flags<[CC1Option]>;
  def fno_use_line_directives : Flag<["-"], "fno-use-line-directives">, Group<f_Group>;

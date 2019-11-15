@@ -1,5 +1,5 @@
---- tools/clang/lib/Headers/CMakeLists.txt.orig
-+++ tools/clang/lib/Headers/CMakeLists.txt
+--- clang/lib/Headers/CMakeLists.txt.orig
++++ clang/lib/Headers/CMakeLists.txt
 @@ -56,7 +56,6 @@
    intrin.h
    inttypes.h

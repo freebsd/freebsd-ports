@@ -1,5 +1,5 @@
---- tools/clang/lib/Basic/Targets/PPC.h.orig	2019-07-09 13:32:26 UTC
-+++ tools/clang/lib/Basic/Targets/PPC.h
+--- clang/lib/Basic/Targets/PPC.h.orig	2019-07-09 13:32:26 UTC
++++ clang/lib/Basic/Targets/PPC.h
 @@ -374,12 +374,29 @@ class LLVM_LIBRARY_VISIBILITY PPC64TargetInfo : public
      IntMaxType = SignedLong;
      Int64Type = SignedLong;
