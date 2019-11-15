@@ -10,7 +10,7 @@ PKGNAMEPREFIX?=	py
 PKGNAMESUFFIX?=	-common
 DISTNAME=	dbus-python-${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	Common files for the Python bindings for the D-BUS messaging system
 
 BUILD_DEPENDS=	dbus-glib>=0:devel/dbus-glib
