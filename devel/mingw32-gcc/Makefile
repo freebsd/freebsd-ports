@@ -15,9 +15,9 @@ COMMENT=	FSF gcc-4 for Windows cross-development
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}as:devel/${PKGNAMEPREFIX}binutils \
+BUILD_DEPENDS=	${PKGNAMEPREFIX}as:devel/binutils@${PKGNAMEPREFIX:C/-$//} \
 		mingwm10.dll:devel/${PKGNAMEPREFIX}bin-msvcrt
-RUN_DEPENDS=	${PKGNAMEPREFIX}as:devel/${PKGNAMEPREFIX}binutils
+RUN_DEPENDS=	${PKGNAMEPREFIX}as:devel/binutils@${PKGNAMEPREFIX:C/-$//}
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc

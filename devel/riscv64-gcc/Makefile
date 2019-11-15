@@ -12,8 +12,8 @@ COMMENT=	Cross GNU Compiler Collection for ${PKGNAMEPREFIX:C/-//g}
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}binutils>0:devel/${PKGNAMEPREFIX}binutils
-RUN_DEPENDS=	${PKGNAMEPREFIX}binutils>0:devel/${PKGNAMEPREFIX}binutils
+BUILD_DEPENDS=	${PKGNAMEPREFIX}binutils>0:devel/binutils@${PKGNAMEPREFIX:C/-$//}
+RUN_DEPENDS=	${PKGNAMEPREFIX}binutils>0:devel/binutils@${PKGNAMEPREFIX:C/-$//}
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc

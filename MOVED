@@ -13456,3 +13456,17 @@ x11/xfwp||2019-11-06|Has expired: Deprecated upstream
 x11/xfindproxy||2019-11-06|Has expired: Deprecated upstream
 security/clamav-milter|security/clamav|2019-11-12|Now that MILTER option is enabled by default, use security/clamav instead
 graphics/py-vips|graphics/py-pyvips|2019-11-12|Rename for better naming
+devel/aarch64-binutils|devel/binutils@aarch64|2019-11-05|Moved to a flavored version
+devel/aarch64-none-elf-binutils|devel/binutils@aarch64_none_elf|2019-11-05|Moved to a flavored version
+devel/amd64-binutils|devel/binutils@amd64|2019-11-05|Moved to a flavored version
+devel/arm-gnueabi-binutils|devel/binutils@arm_gnueabi|2019-11-05|Moved to a flavored version
+devel/arm-none-eabi-binutils|devel/binutils@arm_none_eabi|2019-11-05|Moved to a flavored version
+devel/avr-binutils|devel/binutils@avr|2019-11-05|Moved to a flavored version
+devel/i386-binutils|devel/binutils@i386|2019-11-05|Moved to a flavored version
+devel/mingw32-binutils|devel/binutils@mingw32|2019-11-05|Moved to a flavored version
+devel/mips-binutils|devel/binutils@mips|2019-11-05|Moved to a flavored version
+devel/mips64-binutils|devel/binutils@mips64|2019-11-05|Moved to a flavored version
+devel/powerpc64-binutils|devel/binutils@powerpc64|2019-11-05|Moved to a flavored version
+devel/riscv64-binutils|devel/binutils@riscv64|2019-11-05|Moved to a flavored version
+devel/s390x-binutils|devel/binutils@s390x|2019-11-05|Moved to a flavored version
+devel/sparc64-binutils|devel/binutils@sparc64|2019-11-05|Moved to a flavored version
