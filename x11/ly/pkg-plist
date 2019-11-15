@@ -1,0 +1,6 @@
+bin/ly
+@sample %%ETCDIR%%/config.ini.sample
+%%ETCDIR%%/lang/en.ini
+%%ETCDIR%%/lang/fr.ini
+@sample %%ETCDIR%%/wsetup.sh.sample
+@sample %%ETCDIR%%/xsetup.sh.sample
