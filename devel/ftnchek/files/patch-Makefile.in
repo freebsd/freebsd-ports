@@ -1,5 +1,5 @@
---- Makefile.in.orig	2014-06-14 22:09:43.102302676 +0800
-+++ Makefile.in	2014-06-14 22:11:35.750296619 +0800
+--- Makefile.in.orig	2004-11-14 15:52:12 UTC
++++ Makefile.in
 @@ -491,31 +491,31 @@ average.out: ftnchek.h
  install:	install-exe @INSTALL_MAN@ install-lisp
  
