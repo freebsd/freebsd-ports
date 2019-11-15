@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://poppler.freedesktop.org/
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Poppler encoding data
 
 LICENSE=	MIT ADOBE GPLv2

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	https://people.freedesktop.org/~hadess/
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	MIME types database from the freedesktop.org project
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ PORTVERSION=	0.4.15
 PORTREVISION?=	0
 CATEGORIES?=	net devel
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	Library that provides automatic proxy configuration management
 
 LICENSE=	LGPL21+
