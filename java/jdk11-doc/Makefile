@@ -18,7 +18,7 @@ RESTRICTED=	This documentation is under license and export control.
 WRKSRC=		${WRKDIR}/docs
 JDK_VERSION=		11
 JDK_UPDATE_VERSION=	0
-JDK_PATCH_VERSION=	4
+JDK_PATCH_VERSION=	5
 DOWNLOAD_URL=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 NO_BUILD=	yes
