@@ -28,7 +28,7 @@ GROUPMEMBER_DESC=	Build pam_groupmember
 
 MYSQL_CONFIGURE_ENABLE=	mysql
 MYSQL_DESC=	Build pam_mysql
-MYSQL_USE=	MYSQL
+MYSQL_USES=	mysql
 
 PGSQL_CONFIGURE_ENABLE=	pgsql
 PGSQL_DESC=	Build pam_pgsql

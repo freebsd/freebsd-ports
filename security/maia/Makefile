@@ -135,7 +135,7 @@ PLIST_SUB+=	WEBHOST="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 .endif
 .if ${PORT_OPTIONS:MMYSQL} && ${PORT_OPTIONS:MWEBHOST}
 USE_PHP+=	mysqli
@@ -157,7 +157,7 @@ RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MMYSQLSERVER}
-USE_MYSQL=	server
+USES+=		mysql:server
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}

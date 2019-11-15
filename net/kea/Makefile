@@ -43,7 +43,7 @@ PORTDOCS=	AUTHORS COPYING ChangeLog README \
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL
 OPTIONS_SUB=	yes
-MYSQL_USE=	MYSQL=client
+MYSQL_USES=	mysql
 MYSQL_CONFIGURE_ON=	--with-dhcp-mysql=${LOCALBASE}/bin/mysql_config
 MYSQL_CONFIGURE_OFF=	--without-dhcp-mysql
 PGSQL_USES=	pgsql

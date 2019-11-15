@@ -48,7 +48,7 @@ SNMP_CONFIGURE_ENABLE=		snmp
 CLIENT_CONFIGURE_ENABLE=	client
 CLIENT_LIB_DEPENDS=		libguile.so:lang/guile
 CLIENT_CONFIGURE_OFF=		--without-guile
-MYSQL_USE=			mysql=yes
+MYSQL_USES=			mysql
 MYSQL_CONFIGURE_WITH=		mysql
 PGSQL_USES=			pgsql
 PGSQL_CONFIGURE_WITH=		postgres

@@ -36,7 +36,7 @@ TEST_DEPENDS=	p5-MooseX-Types-LoadableClass>=0:devel/p5-MooseX-Types-LoadableCla
 		p5-Test-Differences>=0:devel/p5-Test-Differences \
 		p5-Test-mysqld>=0:databases/p5-Test-mysqld
 # Also for test:
-#USE_MYSQL+=	server
+#USES+=	mysql:server
 
 NO_ARCH=	yes
 USES=		perl5

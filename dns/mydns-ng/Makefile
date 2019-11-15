@@ -42,7 +42,7 @@ PGSQL_CONFIGURE_ON=	--with-pgsql \
 			--with-pgsql-lib=${LOCALBASE}/lib
 PGSQL_CONFIGURE_OFF=	--without-pgsql
 
-MYSQL_USE=	MYSQL=yes
+MYSQL_USES=	mysql
 MYSQL_CONFIGURE_ON=	--with-mysql \
 			--with-mysql-include=${LOCALBASE}/include/mysql \
 			--with-mysql-lib=${LOCALBASE}/lib/mysql

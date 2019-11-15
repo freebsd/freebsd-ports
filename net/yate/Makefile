@@ -73,8 +73,7 @@ ILBC_CONFIGURE_ENABLE=	ilbc
 ILBC_LIB_DEPENDS=	libilbc.so:net/ilbc
 
 MYSQL_CONFIGURE_WITH=	mysql
-MYSQL_USE=		mysql=yes
-MYSQL_USES=		ssl
+MYSQL_USES=		mysql ssl
 
 PGSQL_CONFIGURE_WITH=	libpq=${LOCALBASE}
 PGSQL_USES=		pgsql

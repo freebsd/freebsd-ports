@@ -41,7 +41,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 SCORCH_VERSION=		43.3d
 SCORCH_REVISION=	# none
 
-MYSQL_USE=	MYSQL=yes
+MYSQL_USES=	mysql
 MYSQL_CONFIGURE_ON=	--with-mysql
 
 PLIST_FILES=	bin/scorched3d \

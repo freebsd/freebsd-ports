@@ -30,7 +30,7 @@ SYBASE_DESC=	Sybase database support
 DRIVER_DESC=	Database drivers
 
 OPTIONS_SUB=	YES
-MYSQL_USE=	MYSQL=YES
+MYSQL_USES=	mysql
 MYSQL_CPPFLAGS=	-I${LOCALBASE}/include/mysql
 MYSQL_LDFLAGS=	-L${LOCALBASE}/lib/mysql
 

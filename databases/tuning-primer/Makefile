@@ -15,9 +15,9 @@ COMMENT=	MySQL performance tuning primer script
 
 LICENSE=	GPLv2
 
+USES=		mysql
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_MYSQL=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

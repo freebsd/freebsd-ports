@@ -43,7 +43,7 @@ MBOXINDICES_CONFIGURE_ENABLE=	mbox-bsd-save-indices
 
 GDBMAUTH_CPPFLAGS=		-I${LOCALBASE}/include
 GDBMAUTH_LIB_DEPENDS=		libgdbm.so:databases/gdbm
-MYSQL_USE=		MYSQL=yes
+MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--enable-auth-mysql \
 			--with-mysql-lib-dir=${LOCALBASE}/lib/mysql \
 			--with-mysql-include-dir=${LOCALBASE}/include/mysql

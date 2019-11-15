@@ -35,7 +35,7 @@ PORTEXAMPLES=	*.sql tsa.conf
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 CONFIGURE_ARGS+=	--enable-mysql=yes
 SRC_FILE+=	db_mysql.c
 AP_INC+=	-I${LOCALBASE}/include/mysql

@@ -13,8 +13,7 @@ COMMENT=	Allows users to use MySQL databases for user authentication
 
 LICENSE=	APACHE10
 
-USE_MYSQL=	yes
-USES=		apache:2.2+
+USES=		apache:2.2+ mysql
 
 SHORTMODNAME=	mysql_auth
 AP_FAST_BUILD=	yes

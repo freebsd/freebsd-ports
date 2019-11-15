@@ -25,9 +25,8 @@ FETCH_ARGS=	-p
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
-USES=		shebangfix tar:tgz
+USES=		mysql shebangfix tar:tgz
 SHEBANG_FILES=	pwhois-updatedb
-USE_MYSQL=	client
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message 512.pwhois-updatedb
 SUB_LIST=	TOUCH="${TOUCH}" RM="${RM}" CHOWN="${CHOWN}" \

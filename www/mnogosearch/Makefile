@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=	--disable-syslog
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .endif
 

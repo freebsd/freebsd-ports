@@ -14,7 +14,7 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 
-USE_MYSQL=	yes
+USES=		mysql
 
 INCLUDEDIRS=	${LOCALBASE}/include:${LOCALBASE}/include/mysql
 LIBDIRS=	${LOCALBASE}/lib

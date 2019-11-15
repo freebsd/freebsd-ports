@@ -44,7 +44,7 @@ CONFIGURE_ENV+=		CC="${CC}"
 
 LDAP_USE=		OPENLDAP=client
 PGSQL_USES=		pgsql
-MYSQL_USE=		MYSQL=client
+MYSQL_USES=		mysql
 MEMCACHED_RUN_DEPENDS=	${LOCALBASE}/bin/memcached:databases/memcached
 
 post-patch:

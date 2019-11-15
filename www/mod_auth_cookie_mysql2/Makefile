@@ -12,8 +12,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows authentication against MySQL database via secure cookie
 
-USE_MYSQL=	yes
-USES=		apache:2.2+
+USES=		apache:2.2+ mysql
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

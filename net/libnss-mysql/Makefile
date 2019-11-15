@@ -13,9 +13,8 @@ COMMENT=	NSS module using a MySQL database for backend
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE}
 INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		libtool mysql
 USE_LDCONFIG=	yes
-USE_MYSQL=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's,$${srcdir}/aux/mkinstalldirs,$${mkinstalldirs},' \

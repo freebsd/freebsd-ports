@@ -15,8 +15,7 @@ PKGNAMESUFFIX=	-sf
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Anti-spam plugin for Postfix (written in C)
 
-USE_MYSQL=	yes
-USES=		gmake
+USES=		gmake mysql
 USE_RC_SUBR=	policyd
 
 REALNAME=	${PKGNAME:C/-${PORTVERSION}.*//}

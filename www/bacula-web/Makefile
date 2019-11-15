@@ -35,7 +35,7 @@ SQLITE_USES=	sqlite
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		yes
+USES+=			mysql
 CONFIGURE_ARGS+=	--with-mysql=yes
 SUB_LIST+=		REQ_MYSQL=mysql
 USE_PHP+=		pdo_mysql

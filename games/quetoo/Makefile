@@ -69,7 +69,7 @@ PLIST_SUB+=	VANCTF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 CONFIGURE_ARGS+=	--with-mysql
 CONFIGURE_ENV+=	MYSQL_LIBS="-L${LOCALBASE}/lib/mysql -lmysqlclient" \
 		MYSQL_CFLAGS="-I${LOCALBASE}/include"

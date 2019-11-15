@@ -269,7 +269,7 @@ LDAP_FILES=		${WRKSRC}/doc/README.ldap \
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		yes
+USES+=		mysql
 
 .if defined(WITH_MYSQL_USER) || defined(WITH_MYSQL_READ_USER) || defined(WITH_MYSQL_UPDATE_USER)
 BROKEN_MYSQL_PARAMS=	true

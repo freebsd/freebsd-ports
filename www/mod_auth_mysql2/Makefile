@@ -14,9 +14,8 @@ COMMENT=	MySQL-based authentication module with VirtualHost support
 
 LICENSE=	APACHE20
 
-USES=		apache:2.2+ tar:tgz
+USES=		apache:2.2+ mysql tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_MYSQL=	yes
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_INC+=	${LOCALBASE}/include/mysql

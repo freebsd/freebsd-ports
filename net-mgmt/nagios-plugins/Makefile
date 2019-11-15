@@ -100,7 +100,7 @@ NETSNMP_CONFIGURE_OFF=	ac_cv_path_PATH_TO_SNMPGET= \
 RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
 RADIUS_CONFIGURE_WITH=	radius
 
-MYSQL_USE=	mysql=yes
+MYSQL_USES=	mysql
 MYSQL_CONFIGURE_WITH=	mysql=${LOCALBASE}
 
 PGSQL_USES=	pgsql
