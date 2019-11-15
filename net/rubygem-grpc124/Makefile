@@ -22,6 +22,8 @@ USE_RUBY=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
+PORTSCOUT=	limit:^1\.24\.
+
 post-extract:
 	@${RM} ${WRKSRC}/Makefile ${WRKSRC}/.yardopts
 	@${RM} -r ${WRKSRC}/etc ${WRKSRC}/include ${WRKSRC}/third_party ${WRKSRC}/src/boringssl ${WRKSRC}/src/core
