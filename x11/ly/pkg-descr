@@ -1,0 +1,5 @@
+Ly is a lightweight TUI (ncurses-like) display manager for Linux and BSD.
+
+It supports both X11 and Wayland sessions.
+
+WWW: https://github.com/cylgom/ly

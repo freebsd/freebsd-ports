@@ -1,0 +1,15 @@
+TIMESTAMP = 1573652164
+SHA256 (cylgom-ly-v0.4.0_GH0.tar.gz) = c4e505be200d54679f27929cffb1f4625c20ab51e8b6ffe7c06b3bccff5fb40d
+SIZE (cylgom-ly-v0.4.0_GH0.tar.gz) = 18807
+SHA256 (cylgom-argoat-36c41f09ecc2a10c9acf35e4194e08b6fa10cf45_GH0.tar.gz) = 5c284cae748b1cec4eef311845f53ad673f91996ec425c6e323f0c40e829e77f
+SIZE (cylgom-argoat-36c41f09ecc2a10c9acf35e4194e08b6fa10cf45_GH0.tar.gz) = 5497
+SHA256 (cylgom-testoasterror-71620b47872b5535f87c908883576d73153a6911_GH0.tar.gz) = bffa1100ffbb7d541a16a9a543e216748fe6f6264fd2b9137738cebcf68d3e8c
+SIZE (cylgom-testoasterror-71620b47872b5535f87c908883576d73153a6911_GH0.tar.gz) = 3360
+SHA256 (cylgom-configator-8227b3a835bf4c7e50a57e4ad6aff620ba0dc349_GH0.tar.gz) = bde1826acb80092bd551985082dc872c7f3e48e03132c377f0e5cdd2f9f331e3
+SIZE (cylgom-configator-8227b3a835bf4c7e50a57e4ad6aff620ba0dc349_GH0.tar.gz) = 4501
+SHA256 (cylgom-ctypes-5dd979d3644ab0c85ca14e72b61e6d3d238d432b_GH0.tar.gz) = 778189ee022a0ad97073372681fb92a7b2a1ecc5a242e99b1f23745f084ee3e1
+SIZE (cylgom-ctypes-5dd979d3644ab0c85ca14e72b61e6d3d238d432b_GH0.tar.gz) = 1242
+SHA256 (cylgom-dragonfail-6b40d1f8b7f6dda9746e688666af623dfbcceb94_GH0.tar.gz) = c185f739e392313c08b0d5fd27e93891b89c36b7b49b83570b601b9cbfbddae1
+SIZE (cylgom-dragonfail-6b40d1f8b7f6dda9746e688666af623dfbcceb94_GH0.tar.gz) = 3348
+SHA256 (cylgom-termbox_next-2312da153e44face7bb45aa2798ec284289c17ca_GH0.tar.gz) = b788c86e1454c32cd218d0478a87def0a4d1322fef407885359d1ed0c343b045
+SIZE (cylgom-termbox_next-2312da153e44face7bb45aa2798ec284289c17ca_GH0.tar.gz) = 23558

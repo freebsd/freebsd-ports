@@ -1,0 +1,47 @@
+--- makefile.orig	2019-09-21 16:00:16 UTC
++++ makefile
+@@ -1,9 +1,9 @@
+ NAME = ly
+ CC = gcc
+ FLAGS = -std=c99 -pedantic -g
+-FLAGS+= -Wall -Wno-unused-parameter -Wextra -Werror=vla -Werror
++FLAGS+= -Wall -Wno-unused-parameter -Wextra -Werror=vla
+ #FLAGS+= -DDEBUG
+-FLAGS+= -DGIT_VERSION_STRING=\"$(shell git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g')\"
++FLAGS+= -DGIT_VERSION_STRING=\"${DISTVERSIONFULL}\"
+ LINK = -lpam -lxcb
+ VALGRIND = --show-leak-kinds=all --track-origins=yes --leak-check=full --suppressions=../res/valgrind.supp
+ CMD = ./$(NAME)
+@@ -12,6 +12,10 @@ OS:= $(shell uname -s)
+ ifeq ($(OS), Linux)
+ 	FLAGS+= -D_DEFAULT_SOURCE
+ endif
++ifeq ($(OS), FreeBSD)
++	FLAGS+= -D_DEFAULT_SOURCE ${CPPFLAGS} ${CFLAGS}
++	LINK+=	${LIBS}
++endif
+ 
+ BIND = bin
+ OBJD = obj
+@@ -68,14 +72,13 @@ leakgrind: $(BIND)/$(NAME)
+ 
+ install: $(BIND)/$(NAME)
+ 	@echo "installing"
+-	@install -dZ ${DESTDIR}/etc/ly
+-	@install -DZ $(BIND)/$(NAME) -t ${DESTDIR}/usr/bin
+-	@install -DZ $(RESD)/xsetup.sh -t ${DESTDIR}/etc/ly
+-	@install -DZ $(RESD)/wsetup.sh -t ${DESTDIR}/etc/ly
+-	@install -DZ $(RESD)/config.ini -t ${DESTDIR}/etc/ly
+-	@install -dZ ${DESTDIR}/etc/ly/lang
+-	@install -DZ $(RESD)/lang/* -t ${DESTDIR}/etc/ly/lang
+-	@install -DZ $(RESD)/ly.service -t ${DESTDIR}/usr/lib/systemd/system
++	@install -dZ ${DESTDIR}${PREFIX}/etc/ly
++	@install -DZ $(BIND)/$(NAME) -t ${DESTDIR}${PREFIX}/bin
++	@install -DZ $(RESD)/xsetup.sh -t ${DESTDIR}${PREFIX}/etc/ly
++	@install -DZ $(RESD)/wsetup.sh -t ${DESTDIR}${PREFIX}/etc/ly
++	@install -DZ $(RESD)/config.ini -t ${DESTDIR}${PREFIX}/etc/ly
++	@install -dZ ${DESTDIR}${PREFIX}/etc/ly/lang
++	@install -DZ $(RESD)/lang/* -t ${DESTDIR}${PREFIX}/etc/ly/lang
+ 
+ uninstall:
+ 	@echo "uninstalling"
