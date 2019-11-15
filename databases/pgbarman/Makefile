@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	barman
+PORTREVISION=	1
 DISTVERSION=	2.9
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PKGNAMEPREFIX}${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	pg
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tutorial.pdf
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} manual.pdf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Backup and recovery manager for PostgreSQL
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv3
 
@@ -31,7 +30,7 @@ NO_ARCH=	yes
 USERS=		barman
 GROUPS=		barman
 
-PORTDOCS=	tutorial.pdf
+PORTDOCS=	manual.pdf
 
 OPTIONS_DEFINE=	DOCS
 
