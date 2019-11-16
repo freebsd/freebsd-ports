@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parole
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
