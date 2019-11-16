@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xrootd
-DISTVERSION=	4.9.1
+DISTVERSION=	4.10.0
 CATEGORIES=	databases
 MASTER_SITES=	http://xrootd.org/download/v${DISTVERSION}/
 
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		cmake gnome localbase:ldflags pkgconfig readline shebangfix ssl
 SHEBANG_GLOB=	*.sh
+SHEBANG_FILES=	utils/cms_monPerf
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
