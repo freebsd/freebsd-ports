@@ -12,8 +12,6 @@ COMMENT=	Library for parsing, sorting, and filtering mail
 
 LICENSE=	LGPL21
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	sodabrew
 

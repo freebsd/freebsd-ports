@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 USE_XORG=	ice sm x11
 TEST_TARGET=	check
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/unix/lang
+WRKSRC_SUBDIR=	unix/lang
 
 PORTDOCS=	ChangeLog README
 PLIST_FILES=	bin/yabasic man/man1/yabasic.1.gz

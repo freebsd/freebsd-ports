@@ -21,9 +21,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${PY_FLAVOR} \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FontManager
-GH_PROJECT=	master
-
-WRKSRC=	${WRKDIR}/${PORTNAME}-0.5.7
 
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes

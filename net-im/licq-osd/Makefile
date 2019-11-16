@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	licq-im
 GH_PROJECT=	licq
 GH_TAGNAME=	f271d55
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}/${PORTNAME}
+WRKSRC_SUBDIR=	${PORTNAME}
 
 LOCALES=	be de cs es fr pt pt_BR ro ru sv sk tr
 PLIST_FILES=	lib/licq/licq_osd.so \
