@@ -3,7 +3,6 @@
 %%PYTHON_SITELIBDIR%%/libxslt.pyo
 %%PYTHON_SITELIBDIR%%/libxsltmod.a
 %%PYTHON_SITELIBDIR%%/libxsltmod.so
-%%DOCSDIR%%/TODO
 %%EXAMPLESDIR%%/basic.py
 %%EXAMPLESDIR%%/exslt.py
 %%EXAMPLESDIR%%/extelem.py

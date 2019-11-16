@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxslt
-PORTVERSION=	1.1.33
+DISTVERSION=	1.1.34
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	http://xmlsoft.org/sources/ \
 		https://mirror.umd.edu/xbmc/build-deps/sources/
