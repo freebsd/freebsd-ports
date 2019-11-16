@@ -12,7 +12,7 @@ MASTER_SITES=	http://savannah.nongnu.org/download/freetype/ \
 		ftp://ftp.freetype.org/freetype/freetype2/
 DISTNAME=	${PORTNAME:S/2//}-${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Free and portable TrueType font rendering engine
 
 LICENSE=	FTL GPLv2+

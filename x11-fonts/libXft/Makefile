@@ -5,7 +5,7 @@ PORTVERSION=	2.3.2
 PORTREVISION=	3
 CATEGORIES=	x11-fonts
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Client-sided font API for X applications
 
 LICENSE=	MIT
