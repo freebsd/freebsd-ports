@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fomp
-DISTVERSION=	1.0.0
+DISTVERSION=	1.2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 PKGNAMESUFFIX=	-lv2
