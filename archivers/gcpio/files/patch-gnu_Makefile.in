@@ -1,6 +1,6 @@
---- gnu/Makefile.in.orig	2015-09-12 11:11:14 UTC
+--- gnu/Makefile.in.orig	2019-11-06 07:29:32 UTC
 +++ gnu/Makefile.in
-@@ -2077,7 +2077,7 @@ inttypes.h: inttypes.in.h $(top_builddir
+@@ -2129,7 +2129,7 @@ inttypes.h: inttypes.in.h $(top_builddir)/config.statu
  # avoid installing it.
  
  all-local: charset.alias ref-add.sed ref-del.sed

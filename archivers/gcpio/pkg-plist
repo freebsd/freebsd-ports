@@ -15,6 +15,7 @@ man/man1/gcpio.1.gz
 %%NLS%%share/locale/ko/LC_MESSAGES/cpio.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/cpio.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/cpio.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/cpio.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/cpio.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/cpio.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/cpio.mo

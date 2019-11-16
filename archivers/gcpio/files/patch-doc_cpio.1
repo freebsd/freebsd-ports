@@ -1,8 +1,8 @@
---- doc/cpio.1.orig	2015-09-12 10:57:30 UTC
+--- doc/cpio.1.orig	2018-06-21 07:12:05 UTC
 +++ doc/cpio.1
 @@ -15,9 +15,9 @@
  .\" along with GNU cpio.  If not, see <http://www.gnu.org/licenses/>.
- .TH CPIO 1 "December 1, 2014" "CPIO" "GNU CPIO"
+ .TH CPIO 1 "June 21, 2018" "CPIO" "GNU CPIO"
  .SH NAME
 -cpio \- copy files to and from archives
 +gcpio \- copy files to and from archives
@@ -21,11 +21,8 @@
  {\fB\-i\fR|\fB\-\-extract\fR} [\fB\-bcdfmnrtsuvBSV\fR] [\fB\-C\fR \fIBYTES\fR]
  [\fB\-E\fR \fIFILE\fR] [\fB\-H\fR \fIFORMAT\fR]
  [\fB\-M\fR \fIMESSAGE\fR] [\fB\-R\fR [\fIUSER\fR][\fB:.\fR][\fIGROUP\fR]]
-@@ -50,9 +50,10 @@ cpio \- copy files to and from archives
- [\fB\-\-force\-local\fR] [\fB\-\-no\-absolute\-filenames\fR] [\fB\-\-sparse\fR]
- [\fB\-\-only\-verify\-crc\fR] [\fB\-\-to\-stdout\fR] [\fB\-\-quiet\fR]
+@@ -52,7 +52,7 @@ cpio \- copy files to and from archives
  [\fB\-\-rsh\-command=\fICOMMAND\fR]
-+[\fB\-\-extract\-over\-symlinks\fR]
  [\fIpattern\fR...] [\fB<\fR \fIarchive\fR]
  
 -.B cpio
@@ -33,7 +30,7 @@
  {\fB\-p\fR|\fB\-\-pass\-through\fR} [\fB\-0adlmuvLV\fR]
  [\fB\-R\fR [\fIUSER\fR][\fB:.\fR][\fIGROUP\fR]]
  [\fB\-\-null\fR] [\fB\-\-reset\-access\-time\fR]
-@@ -63,7 +64,7 @@ cpio \- copy files to and from archives
+@@ -63,7 +63,7 @@ cpio \- copy files to and from archives
  [\fB\-\-no\-preserve\-owner\fR] [\fB\-\-sparse\fR]
  \fIdestination-directory\fR \fB<\fR \fIname-list\fR
  
