@@ -46,6 +46,9 @@ SHLIB_VERSION=	1
 VERSION=	${GST_VERSION}
 WANT_GSTREAMER=	yes
 USES=		gettext gmake gnome libtool:keepla pathfix pkgconfig shebangfix tar:bzip2
+.if defined(USE_XORG)
+USES+=		xorg
+.endif
 USE_GNOME+=	introspection:build
 GNU_CONFIGURE=	yes
 GST_PLUGIN?=	base

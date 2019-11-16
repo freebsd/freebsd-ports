@@ -15,8 +15,7 @@ MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 BUILD_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:multimedia/gstreamer-plugins
 RUN_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:multimedia/gstreamer-plugins
 
-USES+=		xorg
-USE_XORG+=	xdamage
+USE_XORG=	xdamage
 
 gst_good_DIST=	good
 GOOD_GST_DIRS=	gst sys po
