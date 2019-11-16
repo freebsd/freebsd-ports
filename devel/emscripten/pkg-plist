@@ -30,6 +30,7 @@ lib/emscripten/emlink.py
 lib/emscripten/emmake
 lib/emscripten/emmake.py
 lib/emscripten/emranlib
+lib/emscripten/emranlib.py
 lib/emscripten/emrun
 lib/emscripten/emrun.py
 lib/emscripten/emscons
@@ -222,6 +223,7 @@ lib/emscripten/src/memoryprofiler.js
 lib/emscripten/src/mini-lz4.js
 lib/emscripten/src/modules.js
 lib/emscripten/src/node-externs.js
+lib/emscripten/src/node_shell_read.js
 lib/emscripten/src/parseTools.js
 lib/emscripten/src/postamble.js
 lib/emscripten/src/postamble_minimal.js
@@ -260,6 +262,7 @@ lib/emscripten/src/wasm2js.js
 lib/emscripten/src/wasm_offset_converter.js
 lib/emscripten/src/webGLClient.js
 lib/emscripten/src/webGLWorker.js
+lib/emscripten/src/web_or_worker_shell_read.js
 lib/emscripten/src/worker.js
 lib/emscripten/src/wrtcp.js
 lib/emscripten/system/bin/sdl-config
