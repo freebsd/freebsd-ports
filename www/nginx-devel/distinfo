@@ -1,4 +1,4 @@
-TIMESTAMP = 1573612106
+TIMESTAMP = 1573932588
 SHA256 (nginx-1.17.5.tar.gz) = 63ee35e15a75af028ffa1f995e2b9c120b59ef5f1b61a23b8a4c33c262fc10c3
 SIZE (nginx-1.17.5.tar.gz) = 1036056
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -53,8 +53,8 @@ SHA256 (giom-nginx_accept_language_module-2f69842_GH0.tar.gz) = 5534ca63cdfc2a7d
 SIZE (giom-nginx_accept_language_module-2f69842_GH0.tar.gz) = 3393
 SHA256 (atomx-nginx-http-auth-digest-274490c_GH0.tar.gz) = 0839c33c2f8d519f92daae274f62cf87eb68415d562c6500ee3e3721ce80557c
 SIZE (atomx-nginx-http-auth-digest-274490c_GH0.tar.gz) = 17815
-SHA256 (stnoonan-spnego-http-auth-nginx-module-7e028a5_GH0.tar.gz) = 13f9f8ce2e815a14e43c4741af054f96b0714327d9e248dada241d4d3eaee40d
-SIZE (stnoonan-spnego-http-auth-nginx-module-7e028a5_GH0.tar.gz) = 18227
+SHA256 (stnoonan-spnego-http-auth-nginx-module-21bb963_GH0.tar.gz) = 3f7f7e5e4882320ec32211c46dbd924d13307f4d08bc0bad186680c35195973d
+SIZE (stnoonan-spnego-http-auth-nginx-module-21bb963_GH0.tar.gz) = 18140
 SHA256 (kvspb-nginx-auth-ldap-42d195d_GH0.tar.gz) = 78d74697f89821a7ed31c6c672f6c06923bb53a681ebb203eabebb657bdafd80
 SIZE (kvspb-nginx-auth-ldap-42d195d_GH0.tar.gz) = 18455
 SHA256 (sto-ngx_http_auth_pam_module-v1.5.1_GH0.tar.gz) = 77676842919134af88a7b4bfca4470223e3a00d287d17c0dbdc9a114a685b6e7
