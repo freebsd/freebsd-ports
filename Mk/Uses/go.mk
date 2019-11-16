@@ -44,7 +44,7 @@
 #	command
 #
 # GO_BUILDFLAGS
-#	Additional build arguments to be passed to the `go install` command
+#	Additional build arguments to be passed to the `go build` command
 #
 # GO_PORT
 #	The Go port to use.  By default this is lang/go but can be set
@@ -62,6 +62,7 @@ IGNORE=	USES=go has invalid arguments: ${go_ARGS:Nmodules:Nno_targets:Nrun}
 .endif
 
 # Settable variables
+
 .if empty(GO_PKGNAME)
 .  if !empty(GH_SUBDIR)
 GO_PKGNAME=	${GH_SUBDIR:S|^src/||}
@@ -72,18 +73,24 @@ GO_PKGNAME=	${PORTNAME}
 .  endif
 .endif
 GO_TARGET?=	${GO_PKGNAME}
+
 GO_BUILDFLAGS+=	-v -buildmode=exe
+.if !defined(WITH_DEBUG) && empty(GO_BUILDFLAGS:M-ldflags*)
+GO_BUILDFLAGS+=	-ldflags=-s
+.endif
+
 CGO_ENABLED?=	1
 CGO_CFLAGS+=	-I${LOCALBASE}/include
 CGO_LDFLAGS+=	-L${LOCALBASE}/lib
+
 .if ${ARCH} == armv6 || ${ARCH} == armv7
 GOARM?=		${ARCH:C/armv//}
 .endif
 
 # Read-only variables
+
 GO_CMD=		${LOCALBASE}/bin/go
 GO_WRKDIR_BIN=	${WRKDIR}/bin
-
 GO_ENV+=	CGO_ENABLED=${CGO_ENABLED} \
 		CGO_CFLAGS="${CGO_CFLAGS}" \
 		CGO_LDFLAGS="${CGO_LDFLAGS}" \
