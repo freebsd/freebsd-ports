@@ -5,15 +5,13 @@ PORTNAME=	xcite
 PORTVERSION=	1.60
 PORTREVISION=	12
 CATEGORIES=	mail elisp
-MASTER_SITES=	http://www.gentei.org/~yuuji/software/
+MASTER_SITES=	https://www.gentei.org/~yuuji/software/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}.el
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Exciting Cite for any Mail/News reading modes on Emacs
-
-BROKEN=		unfetchable
 
 USES=		emacs
 
