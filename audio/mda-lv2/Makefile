@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mda-lv2
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
