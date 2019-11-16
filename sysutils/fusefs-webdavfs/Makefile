@@ -3,6 +3,7 @@
 
 PORTNAME=	fusefs-webdavfs
 DISTVERSION=	g20181010
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	eugen@FreeBSD.org

@@ -3,6 +3,7 @@
 PORTNAME=	snmp_exporter
 PORTVERSION=	0.14.0
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de

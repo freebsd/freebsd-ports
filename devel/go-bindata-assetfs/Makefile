@@ -2,6 +2,7 @@
 
 PORTNAME=	go-bindata-assetfs
 PORTVERSION=	g20180223
+PORTREVISION=	1
 CATEGORIES=	devel www
 
 MAINTAINER=	egypcio@FreeBSD.org

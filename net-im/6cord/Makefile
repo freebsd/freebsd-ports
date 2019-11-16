@@ -2,6 +2,7 @@
 
 PORTNAME=	6cord
 DISTVERSION=	9.5
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	vulcan@wired.sh

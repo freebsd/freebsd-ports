@@ -2,6 +2,7 @@
 
 PORTNAME=		uchiwa
 PORTVERSION=	0.18.2
+PORTREVISION=	1
 CATEGORIES=		www
 MASTER_SITES=	http://uchiwa.io/
 

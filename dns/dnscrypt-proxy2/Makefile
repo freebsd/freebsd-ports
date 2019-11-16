@@ -2,6 +2,7 @@
 
 PORTNAME=	dnscrypt-proxy
 PORTVERSION=	2.0.31
+PORTREVISION=	1
 CATEGORIES=	dns security
 PKGNAMESUFFIX=	2
 

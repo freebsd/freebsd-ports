@@ -2,6 +2,7 @@
 
 PORTNAME=	webhook
 PORTVERSION=	2.6.9
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	stb@lassitu.de

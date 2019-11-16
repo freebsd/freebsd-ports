@@ -2,6 +2,7 @@
 
 PORTNAME=	sops
 DISTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	security editors
 
 MAINTAINER=	dmgk@FreeBSD.org

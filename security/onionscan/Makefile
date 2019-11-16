@@ -3,6 +3,7 @@
 PORTNAME=	onionscan
 DISTVERSIONPREFIX=	OnionScan-
 DISTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	security net
 
 MAINTAINER=	egypcio@FreeBSD.org
