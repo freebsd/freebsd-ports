@@ -19,5 +19,8 @@ lib/lv2/fomp.lv2/mvclpf4.ttl
 lib/lv2/fomp.lv2/parametric1.ttl
 lib/lv2/fomp.lv2/pulse_vco.ttl
 lib/lv2/fomp.lv2/rec_vco.ttl
+lib/lv2/fomp.lv2/reverb.ttl
+lib/lv2/fomp.lv2/reverb_amb.ttl
+lib/lv2/fomp.lv2/reverbs.so
 lib/lv2/fomp.lv2/saw_vco.ttl
 lib/lv2/fomp.lv2/triple_chorus.ttl
