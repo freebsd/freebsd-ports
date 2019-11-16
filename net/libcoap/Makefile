@@ -31,4 +31,6 @@ DOXYGEN_CONFIGURE_ENABLE=	doxygen
 
 INSTALL_TARGET=	install-strip
 
+PORTSCOUT=	ignore:tinydtls
+
 .include <bsd.port.mk>
