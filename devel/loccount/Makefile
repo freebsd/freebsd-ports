@@ -2,6 +2,7 @@
 
 PORTNAME=	loccount
 DISTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org

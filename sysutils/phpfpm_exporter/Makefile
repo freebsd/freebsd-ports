@@ -3,6 +3,7 @@
 PORTNAME=	phpfpm_exporter
 PORTVERSION=	0.3.3
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	gasol.wu@gmail.com

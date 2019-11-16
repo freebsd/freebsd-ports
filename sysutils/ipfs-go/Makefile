@@ -3,6 +3,7 @@
 PORTNAME=	ipfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.21
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/ipfs/go-ipfs/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-go

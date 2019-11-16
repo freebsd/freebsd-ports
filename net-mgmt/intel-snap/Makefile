@@ -3,6 +3,7 @@
 
 PORTNAME=	intel-snap
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ports@FreeBSD.org

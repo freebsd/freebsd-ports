@@ -2,6 +2,7 @@
 
 PORTNAME=	zfs-snap-diff
 PORTVERSION=	0.0.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ben.lavery@hashbang0.com

@@ -2,6 +2,7 @@
 
 PORTNAME=	jfrog-cli
 PORTVERSION=	1.25.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org

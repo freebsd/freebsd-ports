@@ -4,6 +4,7 @@
 PORTNAME=	pushgateway
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	aduitsis@cpan.org

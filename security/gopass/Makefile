@@ -4,6 +4,7 @@
 PORTNAME=	gopass
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.6
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	sascha@root-login.org

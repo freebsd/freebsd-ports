@@ -3,6 +3,7 @@
 PORTNAME=	terraform-provider-vultr
 PORTVERSION=	0.1.10
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	woodsb02@FreeBSD.org

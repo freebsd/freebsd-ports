@@ -3,6 +3,7 @@
 PORTNAME=		docker-machine
 PORTVERSION=		0.16.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=		1
 CATEGORIES=		sysutils
 
 MAINTAINER=		lifanov@FreeBSD.org
