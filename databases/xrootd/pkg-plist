@@ -84,12 +84,14 @@ include/xrootd/XrdNet/XrdNetOpts.hh
 include/xrootd/XrdNet/XrdNetSockAddr.hh
 include/xrootd/XrdNet/XrdNetSocket.hh
 include/xrootd/XrdNet/XrdNetUtils.hh
+include/xrootd/XrdOfs/XrdOfsPrepare.hh
 include/xrootd/XrdOss/XrdOss.hh
 include/xrootd/XrdOss/XrdOssDefaultSS.hh
 include/xrootd/XrdOss/XrdOssStatInfo.hh
 include/xrootd/XrdOuc/XrdOucBuffer.hh
 include/xrootd/XrdOuc/XrdOucCRC.hh
 include/xrootd/XrdOuc/XrdOucCache.hh
+include/xrootd/XrdOuc/XrdOucCacheCM.hh
 include/xrootd/XrdOuc/XrdOucCacheStats.hh
 include/xrootd/XrdOuc/XrdOucCallBack.hh
 include/xrootd/XrdOuc/XrdOucChain.hh
@@ -200,11 +202,6 @@ lib/libXrdAppUtils.so.1
 lib/libXrdAppUtils.so.1.0.0
 lib/libXrdBlacklistDecision-4.so
 lib/libXrdBwm-4.so
-lib/libXrdCeph-4.so
-lib/libXrdCephPosix.so
-lib/libXrdCephPosix.so.0
-lib/libXrdCephPosix.so.0.0.1
-lib/libXrdCephXattr-4.so
 lib/libXrdCksCalczcrc32-4.so
 lib/libXrdCl.so
 lib/libXrdCl.so.2
@@ -288,6 +285,7 @@ man/man8/xrdpfc_print.8.gz
 man/man8/xrdpwdadmin.8.gz
 man/man8/xrdsssadmin.8.gz
 man/man8/xrootd.8.gz
+%%DATADIR%%/utils/cms_monPerf
 %%DATADIR%%/utils/XrdCmsNotify.pm
 %%DATADIR%%/utils/XrdOlbMonPerf
 %%DATADIR%%/utils/netchk
