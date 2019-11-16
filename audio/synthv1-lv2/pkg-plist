@@ -1,16 +1,7 @@
 bin/synthv1_jack
-lib/libsynthv1.so
-lib/libsynthv1.so.0
-lib/libsynthv1.so.%%SHL2%%
-lib/libsynthv1.so.%%SHL3%%
-lib/libsynthv1_ui.so
-lib/libsynthv1_ui.so.0
-lib/libsynthv1_ui.so.%%SHL2%%
-lib/libsynthv1_ui.so.%%SHL3%%
 lib/lv2/synthv1.lv2/manifest.ttl
 lib/lv2/synthv1.lv2/synthv1.so
 lib/lv2/synthv1.lv2/synthv1.ttl
-lib/lv2/synthv1.lv2/synthv1_ui.so
 lib/lv2/synthv1.lv2/synthv1_ui.ttl
 man/man1/synthv1.1.gz
 man/man1/synthv1.fr.1.gz
