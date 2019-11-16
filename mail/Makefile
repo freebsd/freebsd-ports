@@ -273,16 +273,6 @@
     SUBDIR += opensmtpd
     SUBDIR += opensmtpd-devel
     SUBDIR += opensmtpd-extras
-    SUBDIR += opensmtpd-extras-filter-clamav
-    SUBDIR += opensmtpd-extras-filter-dkim
-    SUBDIR += opensmtpd-extras-filter-dnsbl
-    SUBDIR += opensmtpd-extras-filter-lua
-    SUBDIR += opensmtpd-extras-filter-monkey
-    SUBDIR += opensmtpd-extras-filter-pause
-    SUBDIR += opensmtpd-extras-filter-perl
-    SUBDIR += opensmtpd-extras-filter-python
-    SUBDIR += opensmtpd-extras-filter-regex
-    SUBDIR += opensmtpd-extras-filter-spamassassin
     SUBDIR += opensmtpd-extras-queue-python
     SUBDIR += opensmtpd-extras-queue-ram
     SUBDIR += opensmtpd-extras-scheduler-python
@@ -295,7 +285,6 @@
     SUBDIR += opensmtpd-extras-table-redis
     SUBDIR += opensmtpd-extras-table-socketmap
     SUBDIR += opensmtpd-extras-table-sqlite
-    SUBDIR += opensmtpd-extras-tool-stats
     SUBDIR += openwebmail
     SUBDIR += osbf-lua
     SUBDIR += ovs
