@@ -5,15 +5,13 @@ PORTNAME=	gsuica
 PORTVERSION=	0.9.1
 PORTREVISION=	4
 CATEGORIES=	japanese ruby
-MASTER_SITES=	http://homepage3.nifty.com/slokar/pasori/
+MASTER_SITES=	http://hito.music.coocan.jp/pasori/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GNOME SUICA Viewer
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
