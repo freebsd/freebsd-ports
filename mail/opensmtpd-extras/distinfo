@@ -1,5 +1,3 @@
-TIMESTAMP = 1541745103
-SHA256 (opensmtpd-extras-6.4.0.tar.gz) = cb66986b7c0d0113210f4fb9ca1447b7f50ca088165e6ca61b9015ff0f2d6226
-SIZE (opensmtpd-extras-6.4.0.tar.gz) = 522988
-SHA256 (opensmtpd-extras-201703132115.tar.gz) = 4672afdd756ef279c0adcfcbf8151d6d8a370d5a628a705967373a1c83ee0ef5
-SIZE (opensmtpd-extras-201703132115.tar.gz) = 564165
+TIMESTAMP = 1573830614
+SHA256 (opensmtpd-extras-6.6.0.tar.gz) = 126b023602e8bb222bf24543a056ee0a548343dc86d184669ff9d82dfca1fbdf
+SIZE (opensmtpd-extras-6.6.0.tar.gz) = 124234

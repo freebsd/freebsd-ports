@@ -13470,3 +13470,14 @@ devel/riscv64-binutils|devel/binutils@riscv64|2019-11-05|Moved to a flavored ver
 devel/s390x-binutils|devel/binutils@s390x|2019-11-05|Moved to a flavored version
 devel/sparc64-binutils|devel/binutils@sparc64|2019-11-05|Moved to a flavored version
 devel/xtoolchain-llvm-devel|devel/llvm-devel|2019-11-15|Subsumed into devel/llvm-devel
+mail/opensmtpd-extras-filter-clamav||2019-11-15| Deprecated upstream
+mail/opensmtpd-extras-filter-dkim||2019-11-15| Deprecated upstream
+mail/opensmtpd-extras-filter-dnsbl||2019-11-15| Deprecated upstream
+mail/opensmtpd-extras-filter-lua||2019-11-15| Deprecated upstream
+mail/opensmtpd-extras-filter-monkey||2019-11-15| Deprecated upstream
+mail/opensmtpd-extras-filter-pause||2019-11-15| Deprecated upstream
+mail/opensmtpd-extras-filter-perl||2019-11-15| Deprecated upstream
+mail/opensmtpd-extras-filter-python||2019-11-15| Deprecated upstream
+mail/opensmtpd-extras-filter-regex||2019-11-15| Deprecated upstream
+mail/opensmtpd-extras-filter-spamassassin||2019-11-15| Deprecated upstream
+mail/opensmtpd-extras-tool-stats||2019-11-15| Deprecated upstream
