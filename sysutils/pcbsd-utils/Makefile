@@ -13,6 +13,9 @@ BROKEN=		unfetchable
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=	2019-12-15
+
 RUN_DEPENDS=	sipcalc:net-mgmt/sipcalc \
 		eject:sysutils/eject
 
