@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	re2c:devel/re2c
 
-USES=		cmake
+USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	potassco
 GH_TUPLE=	potassco:clasp:c183473:clasp/clasp
