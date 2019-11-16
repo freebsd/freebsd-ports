@@ -12,6 +12,9 @@ BROKEN=		unfetchable
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=	2019-12-15
+
 RUN_DEPENDS=	${LOCALBASE}/share/pcbsd/scripts/functions.sh:sysutils/pcbsd-libsh \
 		stunnel:security/stunnel
 

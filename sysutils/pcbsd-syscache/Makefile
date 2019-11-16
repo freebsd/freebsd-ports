@@ -11,6 +11,9 @@ COMMENT=	PC-BSD SysCache Utility
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=	2019-12-15
+
 WRKSRC_SUBDIR=	src-sh/syscache
 USE_QT=		core network buildtools qmake
 USES=		pkgconfig qt:5

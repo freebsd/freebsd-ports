@@ -13,6 +13,9 @@ BROKEN=		unfetchable
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=	2019-12-15
+
 RUN_DEPENDS=	syscache:sysutils/pcbsd-syscache \
 		pbi:sysutils/pbi-manager \
 		warden:sysutils/warden \

@@ -10,6 +10,9 @@ COMMENT=	PC-BSD Shell Library
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=	2019-12-15
+
 WRKSRC_SUBDIR=	src-sh/libsh
 USES=		pkgconfig
 NO_BUILD=	yes
