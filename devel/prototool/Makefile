@@ -40,7 +40,7 @@ GH_TUPLE=	\
 		uber-go:atomic:v1.4.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.2.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.10.0:uber_go_zap/vendor/go.uber.org/zap
-GO_PKGNAME=	./cmd/prototool
+GO_TARGET=	./cmd/prototool
 
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/bash_completion.d/prototool \
