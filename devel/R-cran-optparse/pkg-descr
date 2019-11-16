@@ -1,0 +1,4 @@
+Command line parser inspired by Python's 'optparse' library to be used with
+Rscript to write "#!" shebang scripts that accept short and long flag/options.
+
+WWW: https://cran.r-project.org/web/packages/optparse/
