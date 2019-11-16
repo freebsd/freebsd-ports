@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	sane-backends
-PORTVERSION=	1.0.27
-PORTREVISION=	5
+PORTVERSION=	1.0.28
 CATEGORIES=	graphics
-MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/a3ba9fff29253a94e84074917bff581a/ \
-		http://fossies.org/linux/misc/
+MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/9e718daff347826f4cfe21126c8d5091/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
 
 LICENSE=	GPLv2+
@@ -32,8 +30,6 @@ SUB_FILES=	pkg-message
 
 USERS=		saned
 GROUPS=		saned
-
-PORTDOCS=	*
 
 OPTIONS_DEFINE=		AVAHI DOCS GPHOTO IEEE1284 IPV6 NLS SNMP USB V4L
 OPTIONS_DEFAULT=	USB
@@ -60,7 +56,8 @@ V4L_CONFIGURE_WITH=	v4l
 
 post-patch:
 	@${REINPLACE_CMD} -e '/for ac_header in/s|libc.h|sys/endian.h| ; \
-		 s|"$${have_linux_ioctl_defines}"|"$${have_libv4l1}"|' \
+		 s|"$${have_linux_ioctl_defines}"|"$${have_libv4l1}"| ; \
+		 /pthread_t[[:space:]]k;[[:space:]]/s|pthread_t[[:space:]]k;[[:space:]]k[[:space:]]\*[[:space:]]1|pthread_t k; k = (pthread_t) -1|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^dist_doc_DATA/s|COPYING||' \
 		${WRKSRC}/Makefile.in
