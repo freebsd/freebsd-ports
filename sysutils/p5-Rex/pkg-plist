@@ -9,6 +9,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Box.pm
 %%SITE_PERL%%/Rex/Box/Amazon.pm
 %%SITE_PERL%%/Rex/Box/Base.pm
+%%SITE_PERL%%/Rex/Box/Docker.pm
 %%SITE_PERL%%/Rex/Box/KVM.pm
 %%SITE_PERL%%/Rex/Box/VBox.pm
 %%SITE_PERL%%/Rex/CLI.pm
@@ -99,6 +100,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Helper/File/Stat/Win32.pm
 %%SITE_PERL%%/Rex/Helper/Hash.pm
 %%SITE_PERL%%/Rex/Helper/INI.pm
+%%SITE_PERL%%/Rex/Helper/IP.pm
 %%SITE_PERL%%/Rex/Helper/Misc.pm
 %%SITE_PERL%%/Rex/Helper/Path.pm
 %%SITE_PERL%%/Rex/Helper/Rexfile/ParamLookup.pm
@@ -258,8 +260,13 @@ bin/rexify
 %%SITE_PERL%%/Rex/Test.pm
 %%SITE_PERL%%/Rex/Test/Base.pm
 %%SITE_PERL%%/Rex/Test/Base/has_content.pm
+%%SITE_PERL%%/Rex/Test/Base/has_cron.pm
+%%SITE_PERL%%/Rex/Test/Base/has_cron_env.pm
 %%SITE_PERL%%/Rex/Test/Base/has_dir.pm
 %%SITE_PERL%%/Rex/Test/Base/has_file.pm
+%%SITE_PERL%%/Rex/Test/Base/has_file_content.pm
+%%SITE_PERL%%/Rex/Test/Base/has_output.pm
+%%SITE_PERL%%/Rex/Test/Base/has_output_matching.pm
 %%SITE_PERL%%/Rex/Test/Base/has_package.pm
 %%SITE_PERL%%/Rex/Test/Base/has_service_running.pm
 %%SITE_PERL%%/Rex/Test/Base/has_service_stopped.pm
@@ -281,11 +288,15 @@ bin/rexify
 %%SITE_PERL%%/Rex/Virtualization/Docker/daemon.pm
 %%SITE_PERL%%/Rex/Virtualization/Docker/delete.pm
 %%SITE_PERL%%/Rex/Virtualization/Docker/destroy.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/guestinfo.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/images.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/import.pm
 %%SITE_PERL%%/Rex/Virtualization/Docker/info.pm
 %%SITE_PERL%%/Rex/Virtualization/Docker/list.pm
 %%SITE_PERL%%/Rex/Virtualization/Docker/reboot.pm
 %%SITE_PERL%%/Rex/Virtualization/Docker/shutdown.pm
 %%SITE_PERL%%/Rex/Virtualization/Docker/start.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/status.pm
 %%SITE_PERL%%/Rex/Virtualization/LibVirt.pm
 %%SITE_PERL%%/Rex/Virtualization/LibVirt/blklist.pm
 %%SITE_PERL%%/Rex/Virtualization/LibVirt/clone.pm
@@ -305,6 +316,15 @@ bin/rexify
 %%SITE_PERL%%/Rex/Virtualization/LibVirt/start.pm
 %%SITE_PERL%%/Rex/Virtualization/LibVirt/status.pm
 %%SITE_PERL%%/Rex/Virtualization/LibVirt/vncdisplay.pm
+%%SITE_PERL%%/Rex/Virtualization/Lxc.pm
+%%SITE_PERL%%/Rex/Virtualization/Lxc/attach.pm
+%%SITE_PERL%%/Rex/Virtualization/Lxc/copy.pm
+%%SITE_PERL%%/Rex/Virtualization/Lxc/create.pm
+%%SITE_PERL%%/Rex/Virtualization/Lxc/destroy.pm
+%%SITE_PERL%%/Rex/Virtualization/Lxc/info.pm
+%%SITE_PERL%%/Rex/Virtualization/Lxc/list.pm
+%%SITE_PERL%%/Rex/Virtualization/Lxc/start.pm
+%%SITE_PERL%%/Rex/Virtualization/Lxc/stop.pm
 %%SITE_PERL%%/Rex/Virtualization/VBox.pm
 %%SITE_PERL%%/Rex/Virtualization/VBox/bridge.pm
 %%SITE_PERL%%/Rex/Virtualization/VBox/create.pm
@@ -326,6 +346,7 @@ bin/rexify
 %%PERL5_MAN3%%/Rex.3.gz
 %%PERL5_MAN3%%/Rex::Box::Amazon.3.gz
 %%PERL5_MAN3%%/Rex::Box::Base.3.gz
+%%PERL5_MAN3%%/Rex::Box::Docker.3.gz
 %%PERL5_MAN3%%/Rex::Box::KVM.3.gz
 %%PERL5_MAN3%%/Rex::Box::VBox.3.gz
 %%PERL5_MAN3%%/Rex::CMDB.3.gz
@@ -384,4 +405,5 @@ bin/rexify
 %%PERL5_MAN3%%/Rex::Transaction.3.gz
 %%PERL5_MAN3%%/Rex::Virtualization::Docker.3.gz
 %%PERL5_MAN3%%/Rex::Virtualization::LibVirt.3.gz
+%%PERL5_MAN3%%/Rex::Virtualization::Lxc.3.gz
 %%PERL5_MAN3%%/Rex::Virtualization::VBox.3.gz
