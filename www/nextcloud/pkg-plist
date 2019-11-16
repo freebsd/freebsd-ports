@@ -4075,6 +4075,8 @@
 %%WWWDIR%%/apps-pkg/accessibility/js/accessibility.js.map
 %%WWWDIR%%/apps-pkg/accessibility/l10n/af.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/af.json
+%%WWWDIR%%/apps-pkg/accessibility/l10n/ar.js
+%%WWWDIR%%/apps-pkg/accessibility/l10n/ar.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/bg.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/bg.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/ca.js
@@ -4127,6 +4129,8 @@
 %%WWWDIR%%/apps-pkg/accessibility/l10n/ko.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/lt_LT.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/lt_LT.json
+%%WWWDIR%%/apps-pkg/accessibility/l10n/lv.js
+%%WWWDIR%%/apps-pkg/accessibility/l10n/lv.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/mk.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/mk.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/nb.js
@@ -4822,6 +4826,8 @@
 %%WWWDIR%%/apps-pkg/dav/l10n/lt_LT.json
 %%WWWDIR%%/apps-pkg/dav/l10n/lv.js
 %%WWWDIR%%/apps-pkg/dav/l10n/lv.json
+%%WWWDIR%%/apps-pkg/dav/l10n/mk.js
+%%WWWDIR%%/apps-pkg/dav/l10n/mk.json
 %%WWWDIR%%/apps-pkg/dav/l10n/nb.js
 %%WWWDIR%%/apps-pkg/dav/l10n/nb.json
 %%WWWDIR%%/apps-pkg/dav/l10n/nb_NO.js
@@ -7680,6 +7686,7 @@
 %%WWWDIR%%/apps-pkg/files_versions/lib/Events/CreateVersionEvent.php
 %%WWWDIR%%/apps-pkg/files_versions/lib/Expiration.php
 %%WWWDIR%%/apps-pkg/files_versions/lib/Hooks.php
+%%WWWDIR%%/apps-pkg/files_versions/lib/Sabre/Plugin.php
 %%WWWDIR%%/apps-pkg/files_versions/lib/Sabre/RestoreFolder.php
 %%WWWDIR%%/apps-pkg/files_versions/lib/Sabre/RootCollection.php
 %%WWWDIR%%/apps-pkg/files_versions/lib/Sabre/VersionCollection.php
@@ -8279,8 +8286,6 @@
 %%WWWDIR%%/apps-pkg/logreader/js/Search.js
 %%WWWDIR%%/apps-pkg/logreader/js/index.js
 %%WWWDIR%%/apps-pkg/logreader/js/unserialize.js
-%%WWWDIR%%/apps-pkg/logreader/l10n/af.js
-%%WWWDIR%%/apps-pkg/logreader/l10n/af.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/ar.js
 %%WWWDIR%%/apps-pkg/logreader/l10n/ar.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/ast.js
@@ -8341,8 +8346,6 @@
 %%WWWDIR%%/apps-pkg/logreader/l10n/et_EE.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/eu.js
 %%WWWDIR%%/apps-pkg/logreader/l10n/eu.json
-%%WWWDIR%%/apps-pkg/logreader/l10n/fa.js
-%%WWWDIR%%/apps-pkg/logreader/l10n/fa.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/fi.js
 %%WWWDIR%%/apps-pkg/logreader/l10n/fi.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/fr.js
@@ -8391,8 +8394,6 @@
 %%WWWDIR%%/apps-pkg/logreader/l10n/sr.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/sv.js
 %%WWWDIR%%/apps-pkg/logreader/l10n/sv.json
-%%WWWDIR%%/apps-pkg/logreader/l10n/th.js
-%%WWWDIR%%/apps-pkg/logreader/l10n/th.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/tr.js
 %%WWWDIR%%/apps-pkg/logreader/l10n/tr.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/zh_CN.js
@@ -8532,6 +8533,8 @@
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/lt_LT.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/lv.js
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/lv.json
+%%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/mk.js
+%%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/mk.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/nb.js
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/nb.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/nl.js
@@ -9249,6 +9252,8 @@
 %%WWWDIR%%/apps-pkg/recommendations/l10n/ru.json
 %%WWWDIR%%/apps-pkg/recommendations/l10n/sk.js
 %%WWWDIR%%/apps-pkg/recommendations/l10n/sk.json
+%%WWWDIR%%/apps-pkg/recommendations/l10n/sl.js
+%%WWWDIR%%/apps-pkg/recommendations/l10n/sl.json
 %%WWWDIR%%/apps-pkg/recommendations/l10n/sr.js
 %%WWWDIR%%/apps-pkg/recommendations/l10n/sr.json
 %%WWWDIR%%/apps-pkg/recommendations/l10n/sv.js
@@ -10478,6 +10483,8 @@
 %%WWWDIR%%/apps-pkg/text/l10n/de_DE.json
 %%WWWDIR%%/apps-pkg/text/l10n/el.js
 %%WWWDIR%%/apps-pkg/text/l10n/el.json
+%%WWWDIR%%/apps-pkg/text/l10n/eo.js
+%%WWWDIR%%/apps-pkg/text/l10n/eo.json
 %%WWWDIR%%/apps-pkg/text/l10n/es.js
 %%WWWDIR%%/apps-pkg/text/l10n/es.json
 %%WWWDIR%%/apps-pkg/text/l10n/eu.js
@@ -10510,6 +10517,8 @@
 %%WWWDIR%%/apps-pkg/text/l10n/pt_BR.json
 %%WWWDIR%%/apps-pkg/text/l10n/pt_PT.js
 %%WWWDIR%%/apps-pkg/text/l10n/pt_PT.json
+%%WWWDIR%%/apps-pkg/text/l10n/ro.js
+%%WWWDIR%%/apps-pkg/text/l10n/ro.json
 %%WWWDIR%%/apps-pkg/text/l10n/ru.js
 %%WWWDIR%%/apps-pkg/text/l10n/ru.json
 %%WWWDIR%%/apps-pkg/text/l10n/sq.js
@@ -11422,6 +11431,14 @@
 %%WWWDIR%%/apps-pkg/viewer/appinfo/info.xml
 %%WWWDIR%%/apps-pkg/viewer/appinfo/signature.json
 %%WWWDIR%%/apps-pkg/viewer/img/app.svg
+%%WWWDIR%%/apps-pkg/viewer/js/chunks/0-46a26cbede8ce1c05803.js
+%%WWWDIR%%/apps-pkg/viewer/js/chunks/0-46a26cbede8ce1c05803.js.map
+%%WWWDIR%%/apps-pkg/viewer/js/chunks/0-4781b5f3c63244a59ec5.js
+%%WWWDIR%%/apps-pkg/viewer/js/chunks/0-4781b5f3c63244a59ec5.js.map
+%%WWWDIR%%/apps-pkg/viewer/js/chunks/0-5cfb84d66715d0aa06b9.js
+%%WWWDIR%%/apps-pkg/viewer/js/chunks/0-5cfb84d66715d0aa06b9.js.map
+%%WWWDIR%%/apps-pkg/viewer/js/chunks/0-aadd90ccc9081e33d1d4.js
+%%WWWDIR%%/apps-pkg/viewer/js/chunks/0-aadd90ccc9081e33d1d4.js.map
 %%WWWDIR%%/apps-pkg/viewer/js/viewer.js
 %%WWWDIR%%/apps-pkg/viewer/js/viewer.js.map
 %%WWWDIR%%/apps-pkg/viewer/l10n/af.js
@@ -11836,8 +11853,6 @@
 %%WWWDIR%%/core/doc/admin/_images/2fa-admin-settings.png
 %%WWWDIR%%/core/doc/admin/_images/2fa-app-install.png
 %%WWWDIR%%/core/doc/admin/_images/add_storage.png
-%%WWWDIR%%/core/doc/admin/_images/admin_filehandling-1.png
-%%WWWDIR%%/core/doc/admin/_images/admin_filehandling-2.png
 %%WWWDIR%%/core/doc/admin/_images/amazons3.png
 %%WWWDIR%%/core/doc/admin/_images/antivirus-app.png
 %%WWWDIR%%/core/doc/admin/_images/antivirus-config.png
@@ -11969,6 +11984,7 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/antivirus_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/automatic_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/background_jobs_configuration.rst.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration_server/bruteforce_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/caching_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/config_sample_php_parameters.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/email_configuration.rst.txt
@@ -12151,6 +12167,7 @@
 %%WWWDIR%%/core/doc/admin/configuration_server/antivirus_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_server/automatic_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_server/background_jobs_configuration.html
+%%WWWDIR%%/core/doc/admin/configuration_server/bruteforce_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_server/caching_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_server/config_sample_php_parameters.html
 %%WWWDIR%%/core/doc/admin/configuration_server/email_configuration.html
