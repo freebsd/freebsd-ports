@@ -1,16 +1,7 @@
 bin/samplv1_jack
-lib/libsamplv1.so
-lib/libsamplv1.so.0
-lib/libsamplv1.so.%%SHL2%%
-lib/libsamplv1.so.%%SHL3%%
-lib/libsamplv1_ui.so
-lib/libsamplv1_ui.so.0
-lib/libsamplv1_ui.so.%%SHL2%%
-lib/libsamplv1_ui.so.%%SHL3%%
 lib/lv2/samplv1.lv2/manifest.ttl
 lib/lv2/samplv1.lv2/samplv1.so
 lib/lv2/samplv1.lv2/samplv1.ttl
-lib/lv2/samplv1.lv2/samplv1_ui.so
 lib/lv2/samplv1.lv2/samplv1_ui.ttl
 man/man1/samplv1.1.gz
 man/man1/samplv1.fr.1.gz
