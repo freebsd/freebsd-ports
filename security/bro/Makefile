@@ -14,11 +14,15 @@ COMMENT=	System for detecting network intruders in real-time
 LICENSE=	BSD3CLAUSE
 
 BROKEN_powerpc64=	Does not build: error: zero-size array 'names'
+DEPRECATED=	Please migrate to security/zeek
+EXPIRATION_DATE=	2020-06-01
 
 USES=		bison cmake compiler:c++11-lang gettext-runtime ninja perl5 python shebangfix ssl
 
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
 CXXFLAGS+=	-std=c++11 -Wall
+
+CONFLICTS=	zeek
 
 SHEBANG_FILES=	aux/broctl/aux/trace-summary/trace-summary
 
