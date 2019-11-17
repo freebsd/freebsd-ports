@@ -2,7 +2,7 @@
 
 PORTNAME=	modules2tuple
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.0
+DISTVERSION=	1.12.0
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -19,8 +19,5 @@ GH_ACCOUNT=	dmgk
 GO_BUILDFLAGS=	-ldflags="-s -w -X main.version=${PORTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} test ${GO_BUILDFLAGS} ./...
 
 .include <bsd.port.mk>
