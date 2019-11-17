@@ -65,6 +65,7 @@
     SUBDIR += font-elisa8
     SUBDIR += font-genjyuugothic
     SUBDIR += font-genshingothic
+    SUBDIR += font-hackgen
     SUBDIR += font-ipa
     SUBDIR += font-ipa-uigothic
     SUBDIR += font-ipaex
