@@ -1,3 +1,6 @@
 bin/taisei
+share/applications/taisei-replay-viewer.desktop
 share/applications/taisei.desktop
 share/icons/hicolor/128x128/apps/taisei.png
+share/icons/hicolor/256x256/mimetypes/taisei-replay.png
+share/mime/packages/taisei.xml

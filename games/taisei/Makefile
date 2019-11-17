@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	taisei
-PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTVERSION=	1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -20,14 +19,18 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}-project
 
-USES=		cmake compiler:c11 pkgconfig sdl
-CMAKE_ARGS=	-DTAISEI_VERSION_OVERRIDE=${PORTVERSION}
+USES=		compiler:c11 desktop-file-utils meson pkgconfig python:3.6+,build sdl shebangfix shared-mime-info
+SHEBANG_FILES=	scripts/*.py
+MESON_ARGS=	-Dversion_fallback=${PORTVERSION} -Db_lto=false
 USE_SDL=	sdl2 ttf2 mixer2
 
 PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
+
+DOCS_BUILD_DEPENDS=rst2html5.py:textproc/py-docutils
+DOCS_MESON_TRUE=docs
 
 post-install:
 	@${RM} ${STAGEDIR}${DOCSDIR}/COPYING.txt
