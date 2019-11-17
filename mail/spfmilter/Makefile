@@ -16,7 +16,6 @@ LIB_DEPENDS=	libmilter.so:mail/libmilter
 
 USES=		cpe
 GNU_CONFIGURE=	yes
-NO_MTREE=	yes
 CPE_VENDOR=	acme
 
 OPTIONS_DEFAULT=	LIBSPF2
@@ -31,15 +30,11 @@ LIBSPF2_DESC=	Use the libspf2 Sender Policy Framework library
 
 PLIST_FILES=	libexec/spfmilter \
 		etc/rc.d/spfmilter \
-		man/man8/spfmilter.8.gz
-
-DIRS=	${PREFIX}/libexec \
-	${PREFIX}/etc/rc.d \
-	${MANPREFIX}/man/man8 \
-	/var/run/spfmilter
+		man/man8/spfmilter.8.gz \
+		"@dir /var/run/spfmilter"
 
 do-install:
-	${MKDIR} ${DIRS:S,^,${STAGEDIR},}
+	@${MKDIR} ${STAGEDIR}/var/run/spfmilter
 	${INSTALL_PROGRAM} ${WRKSRC}/spfmilter ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKSRC}/rc_scripts/freebsd ${STAGEDIR}${PREFIX}/etc/rc.d/spfmilter
 	${INSTALL_MAN} ${WRKSRC}/spfmilter.8 ${STAGEDIR}${MANPREFIX}/man/man8
