@@ -5,7 +5,7 @@ PORTVERSION=	2.4.20
 PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	https://www.cyrusimap.org/releases/ \
-		ftp://ftp.cyrusimap.org/cyrus-imapd/
+		https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	24
 
 MAINTAINER=	ume@FreeBSD.org
