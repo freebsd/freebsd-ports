@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	fantasque-sans-mono
-PORTVERSION=	1.7.2
-PORTREVISION=	2
+PORTVERSION=	1.8.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/belluzj/fantasque-sans/releases/download/v${PORTVERSION}/
+DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Programming font, designed with functionality in mind
@@ -17,9 +17,6 @@ NO_WRKSUBDIR=	yes
 USES=		fonts
 
 OPTIONS_DEFINE=	DOCS
-
-# For `make makesum' to include all distfiles, it should be run with
-# WITH="$(make -V OPTIONS_SINGLE_VARIANT)".
 
 OPTIONS_SINGLE=	VARIANT
 OPTIONS_SINGLE_VARIANT= NORMAL NOLOOPK LLINE LLINENOLOOPK
@@ -35,6 +32,12 @@ NORMAL_DISTFILES=	FantasqueSansMono-Normal.tar.gz
 NOLOOPK_DISTFILES=	FantasqueSansMono-NoLoopK.tar.gz
 LLINE_DISTFILES=	FantasqueSansMono-LargeLineHeight.tar.gz
 LLINENOLOOPK_DISTFILES=	FantasqueSansMono-LargeLineHeight-NoLoopK.tar.gz
+
+.include <bsd.port.options.mk>
+
+.if make(makesum)
+DISTFILES:=	${OPTIONS_SINGLE_VARIANT:@.opt.@${${.opt.}_DISTFILES}@}
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
