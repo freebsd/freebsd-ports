@@ -40,7 +40,6 @@ GH_TUPLE=	anthonynsimon:bild:v0.11.1:anthonynsimon_bild/vendor/github.com/anthon
 		xyproto:palgen:f8cafa988771:xyproto_palgen/vendor/github.com/xyproto/palgen \
 		xyproto:simpletimed:17a9b15a6cbc:xyproto_simpletimed/vendor/github.com/xyproto/simpletimed \
 		xyproto:xpm:2cc4223960ab:xyproto_xpm/vendor/github.com/xyproto/xpm
-
 GO_TARGET=	./cmd/getdpi \
 		./cmd/lscollection \
 		./cmd/lsmon \
