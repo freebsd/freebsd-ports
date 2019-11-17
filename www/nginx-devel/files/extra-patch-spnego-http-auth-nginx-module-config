@@ -1,5 +1,5 @@
---- ../spnego-http-auth-nginx-module-0c6ff3f/config.orig	2017-04-15 13:07:01.159506000 -0400
-+++ ../spnego-http-auth-nginx-module-7e028a5/config	2018-04-20 00:15:08.515289000 +0200
+--- ../spnego-http-auth-nginx-module-21bb963/config.orig	2017-04-15 13:07:01.159506000 -0400
++++ ../spnego-http-auth-nginx-module-21bb963/config	2018-04-20 00:15:08.515289000 +0200
 @@ -1,9 +1,6 @@
  ngx_addon_name=ngx_http_auth_spnego_module
 -ngx_feature_libs="-lgssapi_krb5 -lkrb5 -lcom_err"
