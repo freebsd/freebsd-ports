@@ -39,11 +39,13 @@ share/ECM/find-modules/rules_engine.py
 share/ECM/find-modules/run-sip.py
 share/ECM/find-modules/sip_generator.py
 share/ECM/kde-modules/KDECMakeSettings.cmake
+share/ECM/kde-modules/KDEClangFormat.cmake
 share/ECM/kde-modules/KDECompilerSettings.cmake
 share/ECM/kde-modules/KDEFrameworkCompilerSettings.cmake
 share/ECM/kde-modules/KDEInstallDirs.cmake
 share/ECM/kde-modules/KDEPackageAppTemplates.cmake
 share/ECM/kde-modules/appstreamtest.cmake
+share/ECM/kde-modules/clang-format.cmake
 share/ECM/kde-modules/prefix.sh.cmake
 share/ECM/modules/ECMAddAppIcon.cmake
 share/ECM/modules/ECMAddQch.cmake
@@ -54,6 +56,7 @@ share/ECM/modules/ECMCreateQmFromPoFiles.cmake
 share/ECM/modules/ECMEnableSanitizers.cmake
 share/ECM/modules/ECMFindModuleHelpers.cmake
 share/ECM/modules/ECMFindQMLModule.cmake.in
+share/ECM/modules/ECMGenerateExportHeader.cmake
 share/ECM/modules/ECMGenerateHeaders.cmake
 share/ECM/modules/ECMGeneratePkgConfigFile.cmake
 share/ECM/modules/ECMGeneratePriFile.cmake
@@ -131,6 +134,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMCreateQmFromPoFiles.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMEnableSanitizers.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMFindModuleHelpers.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMGenerateExportHeader.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMGenerateHeaders.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMGeneratePkgConfigFile.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/module/ECMGeneratePriFile.rst.txt
@@ -219,6 +223,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMCreateQmFromPoFiles.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMEnableSanitizers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMFindModuleHelpers.html
+%%PORTDOCS%%%%DOCSDIR%%/html/module/ECMGenerateExportHeader.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMGenerateHeaders.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMGeneratePkgConfigFile.html
 %%PORTDOCS%%%%DOCSDIR%%/html/module/ECMGeneratePriFile.html

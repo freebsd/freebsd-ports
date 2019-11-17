@@ -2,7 +2,6 @@
 
 PORTNAME=	kcalendarcore
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net kde kde-frameworks
 
