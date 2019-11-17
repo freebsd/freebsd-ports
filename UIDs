@@ -727,7 +727,7 @@ litecoin:*:778:778::0:0:litecoin Daemon:/var/db/litecoin:/usr/sbin/nologin
 bitcoin:*:779:779::0:0:bitcoin Daemon:/var/db/bitcoin:/usr/sbin/nologin
 zetacoin:*:780:780::0:0:ZetaCoin Daemon:/nonexistent:/usr/sbin/nologin
 monero:*:781:781::0:0:Monero Daemon:/var/db/monero:/usr/sbin/nologin
-# free: 782
+zeek:*:782:782::0:0:Zeek Network Security Monitor:/nonexistent:/usr/sbin/nologin
 # free: 783
 # free: 784
 # free: 785

@@ -1,0 +1,81 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: zeek
+# REQUIRE: NETWORKING
+# REQUIRE: LOGIN FILESYSTEMS
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="zeek"
+rcvar=`set_rcvar`
+node=$2
+
+start_cmd="zeek_start"
+stop_cmd="zeek_stop"
+restart_cmd="zeek_restart"
+deploy_cmd="zeek_deploy"
+install_cmd="zeek_install"
+cleanup_cmd="zeek_cleanup"
+restart_cmd="zeek_restart"
+status_cmd="zeek_status"
+
+extra_commands="deploy install cleanup status restart"
+
+: ${zeekctl_program:=%%PREFIX%%/bin/zeekctl}
+
+zeek_enable=${zeek_enable-"NO"}
+
+zeek_start() {
+    if [ ! "${node}" ];
+    then
+        $zeekctl_program start
+    else
+        $zeekctl_program start $node
+    fi
+}
+
+bro_stop() {
+    if [ ! "${node}" ];
+    then
+        $zeekctl_program stop
+    else
+        $zeekctl_program stop $node
+    fi
+}
+
+zeek_restart() {
+    if [ ! "${node}" ];
+    then
+        $zeekctl_program restart
+    else
+        $zeekctl_program restart $node
+    fi
+}
+
+zeek_deploy() {
+    $zeekctl_program deploy
+}
+
+zeek_install() {
+    $zeekctl_program install
+}
+
+zeek_cleanup() {
+    if [ ! "${node}" ];
+    then
+        $zeekctl_program cleanup
+    else
+        $zeekctl_program cleanup ${node}
+    fi
+}
+
+zeek_status() {
+    $zeekctl_program status
+}
+
+load_rc_config $name
+run_rc_command "$1"

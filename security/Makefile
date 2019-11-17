@@ -1329,6 +1329,7 @@
     SUBDIR += yubikey-personalization-gui
     SUBDIR += yubioath-desktop
     SUBDIR += zebedee
+    SUBDIR += zeek
     SUBDIR += zenmap
     SUBDIR += zeronet
     SUBDIR += zxid
