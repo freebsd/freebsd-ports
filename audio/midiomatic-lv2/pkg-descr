@@ -1,0 +1,6 @@
+A collection of MIDI filter, generator and processor plugins.
+* MIDI CCRecorder
+* MIDI PBToCC
+* MIDI SysFilter
+
+WWW: https://github.com/SpotlightKid/midiomatic

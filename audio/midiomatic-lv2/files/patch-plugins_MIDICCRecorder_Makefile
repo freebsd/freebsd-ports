@@ -1,0 +1,51 @@
+--- plugins/MIDICCRecorder/Makefile.orig	2019-11-17 06:07:05 UTC
++++ plugins/MIDICCRecorder/Makefile
+@@ -77,13 +77,13 @@ all: $(TARGETS)
+ 
+ install: all
+ ifeq ($(BUILD_DSSI),true)
+-	@install -Dm755 $(TARGET_DIR)/$(NAME)-dssi$(LIB_EXT) -t $(DESTDIR)$(DSSI_DIR)
++	@install -Dm755 $(TARGET_DIR)/$(NAME)-dssi$(LIB_EXT) $(DESTDIR)$(DSSI_DIR)
+ endif
+ ifeq ($(BUILD_LADSPA),true)
+-	@install -Dm755 $(TARGET_DIR)/$(NAME)-ladspa$(LIB_EXT) -t $(DESTDIR)$(LADSPA_DIR)
++	@install -Dm755 $(TARGET_DIR)/$(NAME)-ladspa$(LIB_EXT) $(DESTDIR)$(LADSPA_DIR)
+ endif
+ ifeq ($(BUILD_VST2),true)
+-	@install -Dm755 $(TARGET_DIR)/$(NAME)-vst$(LIB_EXT) -t $(DESTDIR)$(VST_DIR)
++	@install -Dm755 $(TARGET_DIR)/$(NAME)-vst$(LIB_EXT) $(DESTDIR)$(VST_DIR)
+ endif
+ ifeq ($(BUILD_LV2),true)
+ 	@install -dm755 $(DESTDIR)$(LV2_DIR) && \
+@@ -91,26 +91,26 @@ ifeq ($(BUILD_LV2),true)
+ endif
+ ifeq ($(BUILD_JACK),true)
+ ifeq ($(HAVE_JACK),true)
+-	@install -Dm755 $(TARGET_DIR)/$(NAME)$(APP_EXT) -t $(DESTDIR)$(BINDIR)
++	@install -Dm755 $(TARGET_DIR)/$(NAME)$(APP_EXT) $(DESTDIR)$(BINDIR)
+ endif
+ endif
+ 
+ install-user: all
+ ifeq ($(BUILD_DSSI),true)
+-	@install -Dm755 $(TARGET_DIR)/$(NAME)-dssi$(LIB_EXT) -t $(HOME)/.dssi
++	@install -Dm755 $(TARGET_DIR)/$(NAME)-dssi$(LIB_EXT) $(HOME)/.dssi
+ endif
+ ifeq ($(BUILD_LADSPA),true)
+-	@install -Dm755 $(TARGET_DIR)/$(NAME)-ladspa$(LIB_EXT) -t $(HOME)/.ladspa
++	@install -Dm755 $(TARGET_DIR)/$(NAME)-ladspa$(LIB_EXT) $(HOME)/.ladspa
+ endif
+ ifeq ($(BUILD_VST2),true)
+-	@install -Dm755 $(TARGET_DIR)/$(NAME)-vst$(LIB_EXT) -t $(HOME)/.vst
++	@install -Dm755 $(TARGET_DIR)/$(NAME)-vst$(LIB_EXT) $(HOME)/.vst
+ endif
+ ifeq ($(BUILD_LV2),true)
+ 	@install -dm755 $(HOME)/.lv2 && \
+ 		cp -rf $(TARGET_DIR)/$(NAME).lv2 $(HOME)/.lv2
+ endif
+ ifeq ($(BUILD_JACK),true)
+-	@install -Dm755 $(TARGET_DIR)/$(NAME)$(APP_EXT) -t $(HOME)/bin
++	@install -Dm755 $(TARGET_DIR)/$(NAME)$(APP_EXT) $(HOME)/bin
+ endif
+ 
+ # --------------------------------------------------------------
