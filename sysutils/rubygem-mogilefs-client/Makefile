@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mogilefs-client
-PORTVERSION=	3.12.0
+PORTVERSION=	3.12.1
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
