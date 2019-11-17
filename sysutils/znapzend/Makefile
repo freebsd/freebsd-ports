@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=		znapzend
-PORTVERSION=		0.18.0
+PORTVERSION=		0.19.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=		sysutils
 
-MAINTAINER=	skalmanman@gmail.com
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	ZnapZend is a ZFS centric backup tool
 
 LICENSE=	GPLv3+
