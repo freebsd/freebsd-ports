@@ -1,27 +1,27 @@
 # $FreeBSD$
 
 PORTNAME=	bitter
-PORTVERSION=	20130930
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v.
+DISTVERSION=	2.110
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.huertatipografica.com/free_download/eo0pZGbJPxy2YyRkWQXx?dummy=
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Contemporary serif typeface for text designed for comfortably reading
 
-BROKEN=		unfetchable
-
 LICENSE=	OFL11
 
-FETCH_BEFORE_ARGS=	-o ${DISTFILES}
+USES=		fonts
+USE_GITHUB=	yes
+GH_ACCOUNT=	solmatas
+GH_PROJECT=	Bitter
 
-USES=		fonts zip
+NO_ARCH=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${WRKSRC} && \
+	cd ${WRKSRC}/fonts/otf && \
 		${INSTALL_DATA} *.otf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
