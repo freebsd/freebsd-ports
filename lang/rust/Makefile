@@ -14,9 +14,9 @@ MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://github.com/llvm/llvm-project/releases/download/llvmorg-${COMPILER_RT_VERSION}/:compiler_rt
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
 DISTFILES?=	${NIGHTLY_SUBDIR}${DISTNAME}${EXTRACT_SUFX}:src \
-		${_RUSTC_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}.tar.gz:rust_bootstrap \
-		${_RUST_STD_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}.tar.gz:rust_bootstrap \
-		${_CARGO_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}.tar.gz:cargo_bootstrap \
+		${_RUSTC_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:rust_bootstrap \
+		${_RUST_STD_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:rust_bootstrap \
+		${_CARGO_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:cargo_bootstrap \
 		${DISTFILES_${ARCH}}
 DISTFILES_armv6=	compiler-rt-${COMPILER_RT_VERSION}.src.tar.xz:compiler_rt
 DISTFILES_armv7=	compiler-rt-${COMPILER_RT_VERSION}.src.tar.xz:compiler_rt
@@ -41,7 +41,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
 
-USES=		pkgconfig python:build ssl tar:xz
+USES=		pkgconfig python:3.3+,build ssl tar:xz
 
 CONFLICTS_INSTALL?=	rust-nightly
 
@@ -106,12 +106,12 @@ X_PY_CMD=	${PYTHON_CMD} ${WRKSRC}/x.py
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/build/cache/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${_RUSTC_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}.tar.gz \
-		${WRKSRC}/build/cache/${_RUSTC_BOOTSTRAP}.tar.gz
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${_RUST_STD_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}.tar.gz \
-		${WRKSRC}/build/cache/${_RUST_STD_BOOTSTRAP}.tar.gz
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${_CARGO_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}.tar.gz \
-		${WRKSRC}/build/cache/${_CARGO_BOOTSTRAP}.tar.gz
+	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${_RUSTC_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX} \
+		${WRKSRC}/build/cache/${_RUSTC_BOOTSTRAP}${EXTRACT_SUFX}
+	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${_RUST_STD_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX} \
+		${WRKSRC}/build/cache/${_RUST_STD_BOOTSTRAP}${EXTRACT_SUFX}
+	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/${_CARGO_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX} \
+		${WRKSRC}/build/cache/${_CARGO_BOOTSTRAP}${EXTRACT_SUFX}
 .if ${ARCH} == armv6 || ${ARCH} == armv7
 	${LN} -sf ${WRKDIR}/compiler-rt-${COMPILER_RT_VERSION}.src ${WRKSRC}/src/llvm-project/compiler-rt
 .endif
