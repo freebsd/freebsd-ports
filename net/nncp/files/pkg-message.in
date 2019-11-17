@@ -15,7 +15,7 @@
 - Generate NNCP configuration file using the command:
 
     # umask 077
-    # nncp-cfgnew > %%PREFIX%%/etc/nncp.yaml
+    # nncp-cfgnew > %%PREFIX%%/etc/nncp.hjson
 EOM
 }
 ]

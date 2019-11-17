@@ -11,7 +11,7 @@
 #
 # nncp_caller_enable (bool):	Set to NO by default.
 #				Set it to YES to enable nncp-caller.
-# nncp_caller_config (path):	Set to %%PREFIX%%/etc/nncp.yaml by default.
+# nncp_caller_config (path):	Set to %%PREFIX%%/etc/nncp.hjson by default.
 
 . /etc/rc.subr
 
@@ -21,7 +21,7 @@ rcvar=nncp_caller_enable
 load_rc_config $name
 
 : ${nncp_caller_enable:="NO"}
-: ${nncp_caller_config="%%PREFIX%%/etc/nncp.yaml"}
+: ${nncp_caller_config="%%PREFIX%%/etc/nncp.hjson"}
 
 command=%%PREFIX%%/bin/nncp-caller
 command_args="-quiet -cfg $nncp_caller_config &"

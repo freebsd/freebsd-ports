@@ -2,8 +2,8 @@
 
 [ "$2" = "POST-DEINSTALL" ] || exit 0
 
-if [ -e %%PREFIX%%/etc/nncp.yaml ]; then
-	echo "%%PREFIX%%/etc/nncp.yaml with your private keys is not removed!"
+if [ -e %%PREFIX%%/etc/nncp.hjson ]; then
+	echo "%%PREFIX%%/etc/nncp.hjson with your private keys is not removed!"
 fi
 
 exec rmdir /var/spool/nncp

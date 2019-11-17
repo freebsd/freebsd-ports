@@ -11,7 +11,7 @@
 #
 # nncp_daemon_enable (bool):	Set to NO by default.
 #				Set it to YES to enable nncp-daemon.
-# nncp_daemon_config (path):	Set to %%PREFIX%%/etc/nncp.yaml by default.
+# nncp_daemon_config (path):	Set to %%PREFIX%%/etc/nncp.hjson by default.
 # nncp_daemon_bind (string):	Address:port to bind to
 #				Default is "[::]:5400".
 
@@ -23,7 +23,7 @@ rcvar=nncp_daemon_enable
 load_rc_config $name
 
 : ${nncp_daemon_enable:="NO"}
-: ${nncp_daemon_config="%%PREFIX%%/etc/nncp.yaml"}
+: ${nncp_daemon_config="%%PREFIX%%/etc/nncp.hjson"}
 : ${nncp_daemon_bind="[::]:5400"}
 
 command=%%PREFIX%%/bin/nncp-daemon
