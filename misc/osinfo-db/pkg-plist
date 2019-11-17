@@ -128,6 +128,7 @@ share/osinfo/os/centos.org/centos-6.7.xml
 share/osinfo/os/centos.org/centos-6.8.xml
 share/osinfo/os/centos.org/centos-6.9.xml
 share/osinfo/os/centos.org/centos-7.0.xml
+share/osinfo/os/centos.org/centos-8.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.0.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.1.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.2.xml
@@ -217,12 +218,14 @@ share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.1.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.2.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.3.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.6.xml
+share/osinfo/os/elementary.io/elementary-5.0.xml
 share/osinfo/os/endlessos.com/eos-3.1.xml
 share/osinfo/os/endlessos.com/eos-3.2.xml
 share/osinfo/os/endlessos.com/eos-3.3.xml
 share/osinfo/os/endlessos.com/eos-3.4.xml
 share/osinfo/os/endlessos.com/eos-3.5.xml
 share/osinfo/os/endlessos.com/eos-3.6.xml
+share/osinfo/os/endlessos.com/eos-3.7.xml
 share/osinfo/os/fedoraproject.org/fedora-1.xml
 share/osinfo/os/fedoraproject.org/fedora-10.xml
 share/osinfo/os/fedoraproject.org/fedora-11.xml
@@ -247,6 +250,7 @@ share/osinfo/os/fedoraproject.org/fedora-28.xml
 share/osinfo/os/fedoraproject.org/fedora-29.xml
 share/osinfo/os/fedoraproject.org/fedora-3.xml
 share/osinfo/os/fedoraproject.org/fedora-30.xml
+share/osinfo/os/fedoraproject.org/fedora-31.xml
 share/osinfo/os/fedoraproject.org/fedora-4.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
 share/osinfo/os/fedoraproject.org/fedora-6.xml
@@ -258,6 +262,7 @@ share/osinfo/os/fedoraproject.org/fedora-unknown.xml
 share/osinfo/os/fedoraproject.org/silverblue-28.xml
 share/osinfo/os/fedoraproject.org/silverblue-29.xml
 share/osinfo/os/fedoraproject.org/silverblue-30.xml
+share/osinfo/os/fedoraproject.org/silverblue-31.xml
 share/osinfo/os/freebsd.org/freebsd-1.0.xml
 share/osinfo/os/freebsd.org/freebsd-10.0.xml
 share/osinfo/os/freebsd.org/freebsd-10.1.xml
@@ -267,6 +272,7 @@ share/osinfo/os/freebsd.org/freebsd-10.4.xml
 share/osinfo/os/freebsd.org/freebsd-11.0.xml
 share/osinfo/os/freebsd.org/freebsd-11.1.xml
 share/osinfo/os/freebsd.org/freebsd-11.2.xml
+share/osinfo/os/freebsd.org/freebsd-11.3.xml
 share/osinfo/os/freebsd.org/freebsd-12.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.xml
@@ -364,6 +370,8 @@ share/osinfo/os/mandriva.com/mes-5.0.xml
 share/osinfo/os/mandriva.com/mes-5.1.xml
 share/osinfo/os/microsoft.com/msdos-6.22.xml
 share/osinfo/os/microsoft.com/win-1.0.xml
+share/osinfo/os/microsoft.com/win-10.d/post-installable-drivers.xml
+share/osinfo/os/microsoft.com/win-10.d/pre-installable-drivers.xml
 share/osinfo/os/microsoft.com/win-10.xml
 share/osinfo/os/microsoft.com/win-2.0.xml
 share/osinfo/os/microsoft.com/win-2.1.xml
@@ -377,13 +385,21 @@ share/osinfo/os/microsoft.com/win-2k3r2.xml
 share/osinfo/os/microsoft.com/win-2k8.xml
 share/osinfo/os/microsoft.com/win-2k8r2.xml
 share/osinfo/os/microsoft.com/win-3.1.xml
+share/osinfo/os/microsoft.com/win-7.d/post-installable-drivers.xml
+share/osinfo/os/microsoft.com/win-7.d/pre-installable-drivers.xml
 share/osinfo/os/microsoft.com/win-7.xml
+share/osinfo/os/microsoft.com/win-8.1.d/post-installable-drivers.xml
+share/osinfo/os/microsoft.com/win-8.1.d/pre-installable-drivers.xml
 share/osinfo/os/microsoft.com/win-8.1.xml
+share/osinfo/os/microsoft.com/win-8.d/post-installable-drivers.xml
+share/osinfo/os/microsoft.com/win-8.d/pre-installable-drivers.xml
 share/osinfo/os/microsoft.com/win-8.xml
 share/osinfo/os/microsoft.com/win-95.xml
 share/osinfo/os/microsoft.com/win-98.xml
 share/osinfo/os/microsoft.com/win-me.xml
 share/osinfo/os/microsoft.com/win-vista.xml
+share/osinfo/os/microsoft.com/win-xp.d/post-installable-drivers.xml
+share/osinfo/os/microsoft.com/win-xp.d/pre-installable-drivers.xml
 share/osinfo/os/microsoft.com/win-xp.xml
 share/osinfo/os/microsoft.com/winnt-3.1.xml
 share/osinfo/os/microsoft.com/winnt-3.5.xml
