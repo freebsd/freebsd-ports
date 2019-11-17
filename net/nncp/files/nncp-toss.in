@@ -11,7 +11,7 @@
 #
 # nncp_toss_enable (bool):	Set to NO by default.
 #				Set it to YES to enable nncp-toss.
-# nncp_toss_config (path):	Set to %%PREFIX%%/etc/nncp.yaml by default.
+# nncp_toss_config (path):	Set to %%PREFIX%%/etc/nncp.hjson by default.
 # nncp_toss_cycle   (int):	Repeat tossing after that number of seconds.
 #				Default is "60".
 
@@ -23,7 +23,7 @@ rcvar=nncp_toss_enable
 load_rc_config $name
 
 : ${nncp_toss_enable:="NO"}
-: ${nncp_toss_config="%%PREFIX%%/etc/nncp.yaml"}
+: ${nncp_toss_config="%%PREFIX%%/etc/nncp.hjson"}
 : ${nncp_toss_cycle="60"}
 
 command=%%PREFIX%%/bin/nncp-toss
