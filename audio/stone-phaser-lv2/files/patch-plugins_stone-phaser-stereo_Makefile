@@ -1,0 +1,22 @@
+--- plugins/stone-phaser-stereo/Makefile.orig	2019-11-12 05:51:36 UTC
++++ plugins/stone-phaser-stereo/Makefile
+@@ -158,8 +158,7 @@ ifeq ($(BUILD_VST2),true)
+ 	@install -Dm755 $(TARGET_DIR)/$(NAME)-vst$(LIB_EXT) $(DESTDIR)$(VST_DIR)/$(NAME)-vst$(LIB_EXT)
+ endif
+ ifeq ($(BUILD_LV2),true)
+-	@install -dm755 $(DESTDIR)$(LV2_DIR) && \
+-		cp -rfd $(TARGET_DIR)/$(NAME).lv2 $(DESTDIR)$(LV2_DIR)
++	@cp -rf $(TARGET_DIR)/$(NAME).lv2 $(DESTDIR)$(LV2_DIR)
+ endif
+ ifeq ($(BUILD_JACK),true)
+ ifeq ($(HAVE_JACK),true)
+@@ -184,8 +183,7 @@ ifeq ($(BUILD_VST2),true)
+ 	@install -Dm755 $(TARGET_DIR)/$(NAME)-vst$(LIB_EXT) $(USER_VST_DIR)/$(NAME)-vst$(LIB_EXT)
+ endif
+ ifeq ($(BUILD_LV2),true)
+-	@install -dm755 $(USER_LV2_DIR) && \
+-		cp -rfd $(TARGET_DIR)/$(NAME).lv2 $(USER_LV2_DIR)
++	@cp -rf $(TARGET_DIR)/$(NAME).lv2 $(USER_LV2_DIR)
+ endif
+ ifeq ($(BUILD_JACK),true)
+ ifeq ($(HAVE_JACK),true)
