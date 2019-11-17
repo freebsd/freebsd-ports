@@ -17,6 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	richardlehane
 
 GO_TARGET=	./cmd/sf
+GO_TEST_TARGET=	./cmd/sf
 
 PLIST_FILES=	bin/sf
 
