@@ -491,6 +491,7 @@
     SUBDIR += madplay
     SUBDIR += malint
     SUBDIR += mate-media
+    SUBDIR += mclk-lv2
     SUBDIR += mctoolame-decoder
     SUBDIR += mctoolame-encoder
     SUBDIR += mda-lv2
