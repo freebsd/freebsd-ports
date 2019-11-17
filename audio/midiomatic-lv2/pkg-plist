@@ -1,0 +1,15 @@
+lib/lv2/midiccrecorder.lv2/manifest.ttl
+lib/lv2/midiccrecorder.lv2/midiccrecorder_dsp.so
+lib/lv2/midiccrecorder.lv2/midiccrecorder_dsp.ttl
+lib/lv2/midiccrecorder.lv2/presets.ttl
+lib/lv2/midipbtocc.lv2/manifest.ttl
+lib/lv2/midipbtocc.lv2/midipbtocc_dsp.so
+lib/lv2/midipbtocc.lv2/midipbtocc_dsp.ttl
+lib/lv2/midipbtocc.lv2/presets.ttl
+lib/lv2/midisysfilter.lv2/manifest.ttl
+lib/lv2/midisysfilter.lv2/midisysfilter_dsp.so
+lib/lv2/midisysfilter.lv2/midisysfilter_dsp.ttl
+lib/lv2/midisysfilter.lv2/presets.ttl
+lib/vst/midiccrecorder-vst.so
+lib/vst/midipbtocc-vst.so
+lib/vst/midisysfilter-vst.so

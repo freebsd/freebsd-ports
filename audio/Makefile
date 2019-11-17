@@ -497,6 +497,7 @@
     SUBDIR += mda-lv2
     SUBDIR += mhwaveedit
     SUBDIR += midi-matrix-lv2
+    SUBDIR += midiomatic-lv2
     SUBDIR += midipp
     SUBDIR += mikmod
     SUBDIR += milkytracker
