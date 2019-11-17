@@ -12,12 +12,9 @@ DIST_SUBDIR=	sqlite-ext
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Search large vocabulary for close matches for SQLite
 
-LICENSE=	public
-LICENSE_NAME=	Public Domain
-LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://www.sqlite.org/copyright.html
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	PD
 
-USES=		sqlite:3 zip
+USES=		localbase sqlite:3 zip
 NO_WRKSUBDIR=	yes
 
 SRCFILE=	${DISTNAME}/ext/misc/spellfix.c
@@ -28,13 +25,13 @@ EXTRACT_AFTER_ARGS=	${SRCFILE}
 
 PLIST_FILES=	libexec/${DIST_SUBDIR}/${LIBFILE}
 
-CFLAGS+=	-I${PREFIX}/include -fPIC -shared
+CFLAGS+=	-fPIC -shared
 
 do-build:
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${SRCFILE} -o ${LIBFILE}
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} ${SRCFILE} -o ${LIBFILE}
 
 do-install:
-	${INSTALL} -d ${STAGEDIR}${PREFIX}/libexec/${DIST_SUBDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/${LIBFILE} ${STAGEDIR}${INST_DIR}
+	@${MKDIR} ${STAGEDIR}${INST_DIR}
+	${INSTALL_LIB} ${WRKSRC}/${LIBFILE} ${STAGEDIR}${INST_DIR}/
 
 .include <bsd.port.mk>

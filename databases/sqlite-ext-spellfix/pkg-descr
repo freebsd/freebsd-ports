@@ -10,4 +10,4 @@ Functions:
   editdist, editdist3, spellfix1_translit, spellfix1_phonehash,
   spellfix1_scriptcode
 
-WWW: http://www.sqlite.org/spellfix1.html
+WWW: https://www.sqlite.org/spellfix1.html
