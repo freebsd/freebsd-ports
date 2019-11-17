@@ -1,0 +1,105 @@
+#!/bin/sh
+# $FreeBSD$
+
+catfontsdir()
+{
+    while read _IN
+    do
+      case "${_IN}" in
+      *-misc-hackgen*-*|[0-9]*|"") ;;
+      *)       echo ${_IN} ;;
+      esac
+    done
+}
+
+ROMA=""
+BOLD="ds=y"
+RITA="ai=0.08"
+ROBL="ai=0.08"
+
+make_xlfd()
+{
+	_enc=$1
+	_file=$2
+	_vendor=$3
+	_fname=$4
+	_poc=$5
+	_weight=$6
+
+	case "${_poc}:${_enc}" in
+	p:jisx0201.1976-*)	PFIX="bw=0.5" ;;
+	c:jisx0201.1976-*)	PFIX="bw=0.5" ;;
+	p:*)			PFIX="" ;;
+	c:*)			PFIX="" ;;
+	esac
+
+	set --	""	${_weight}-r \
+		${RITA}	${_weight}-ri \
+		${ROBL}	${_weight}-ro
+	while [ $# != 0 ]; do
+		_prefix="${PFIX}:$1"; shift
+		_variant=$1; shift
+		[ ${index_type} = "scale" -a ${_prefix} != ":" ] && continue
+		printf "%s:%s -%s-%s-%s-normal--0-0-0-0-%s-0-%s\n" \
+		       $_prefix $_file $_vendor "$_fname" $_variant $_poc $_enc
+	done | sed -e 's,::,:,g' -e 's,^:,,'
+}
+
+addentries()
+{
+	for ENC in iso8859-1 iso10646-1 jisx0201.1976-0 jisx0208.1983-0 jisx0208.1990-0 jisx0208.1997-0 jisx0213.2004-1
+	do
+		make_xlfd $ENC HackGen-Regular.ttf misc "hackgen" m medium
+		make_xlfd $ENC HackGen-Bold.ttf misc "hackgen" m bold
+		make_xlfd $ENC HackGenConsole-Regular.ttf misc "hackgenconsole" m medium
+		make_xlfd $ENC HackGenConsole-Bold.ttf misc "hackgenconsole" m bold
+		make_xlfd $ENC HackGen35-Regular.ttf misc "hackgen35" m medium
+		make_xlfd $ENC HackGen35-Bold.ttf misc "hackgen35" m bold
+		make_xlfd $ENC HackGen35Console-Regular.ttf misc "hackgen35console" m medium
+		make_xlfd $ENC HackgEn35Console-Bold.ttf misc "hackgen35console" m bold
+	done
+}
+
+nfonts()
+{
+    _L=0; while read _IN; do _L=$((${_L}+1)); done; echo ${_L}
+}
+
+install_fontsdir()
+{
+	index_type=${1:-"dir"}
+	index="fonts.${index_type}"
+	tmpfile="${index}.tmp"
+	touch ${index}
+	(catfontsdir < ${index}; addentries ${index_type}) > ${tmpfile}
+	nfonts < ${tmpfile} > ${index}
+	cat ${tmpfile} >> ${index}
+	rm -f ${tmpfile}
+}
+
+deinstall_fontsdir()
+{
+	index_type=${1:-"dir"}
+	index="fonts.${index_type}"
+	tmpfile="${index}.tmp"
+	catfontsdir < ${index} > ${tmpfile}
+	nfonts < ${tmpfile} > ${index}
+	cat ${tmpfile} >> ${index}
+	rm -f ${tmpfile}
+	if [ -r ${index} -a $(wc -l < ${index}) = 1 ]; then
+		rm -f ${index}
+	fi
+}
+
+case "$2" in
+POST-INSTALL)
+	cd %%FONTSDIR%%
+	install_fontsdir dir
+	install_fontsdir scale
+	;;
+POST-DEINSTALL)
+	cd %%FONTSDIR%%
+	deinstall_fontsdir dir
+	deinstall_fontsdir scale
+	;;
+esac
