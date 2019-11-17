@@ -6,6 +6,7 @@ include/KF5/KDeclarative/KDeclarative/QmlObject
 include/KF5/KDeclarative/KDeclarative/QmlObjectSharedEngine
 include/KF5/KDeclarative/KQuickAddons/ConfigModule
 include/KF5/KDeclarative/KQuickAddons/ImageTexturesCache
+include/KF5/KDeclarative/KQuickAddons/ManagedConfigModule
 include/KF5/KDeclarative/KQuickAddons/ManagedTextureNode
 include/KF5/KDeclarative/KQuickAddons/QtQuickSettings
 include/KF5/KDeclarative/KQuickAddons/QuickViewSharedEngine
@@ -20,6 +21,7 @@ include/KF5/KDeclarative/kdeclarative/qmlobject.h
 include/KF5/KDeclarative/kdeclarative/qmlobjectsharedengine.h
 include/KF5/KDeclarative/kquickaddons/configmodule.h
 include/KF5/KDeclarative/kquickaddons/imagetexturescache.h
+include/KF5/KDeclarative/kquickaddons/managedconfigmodule.h
 include/KF5/KDeclarative/kquickaddons/managedtexturenode.h
 include/KF5/KDeclarative/kquickaddons/qtquicksettings.h
 include/KF5/KDeclarative/kquickaddons/quickaddons_export.h

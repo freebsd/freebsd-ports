@@ -22,12 +22,12 @@ lib/cmake/KF5I18n/ts-pmap-compile.py
 lib/libKF5I18n.so
 lib/libKF5I18n.so.5
 lib/libKF5I18n.so.%%KDE_FRAMEWORKS_VERSION%%
-%%QT_PLUGINDIR%%/kf5/ktranscript.so
 %%QT_MKSPECDIR%%/modules/qt_KI18n.pri
+%%QT_PLUGINDIR%%/kf5/ktranscript.so
 share/locale/af/LC_MESSAGES/ki18n5.mo
 share/locale/ar/LC_MESSAGES/ki18n5.mo
-share/locale/ast/LC_MESSAGES/ki18n5.mo
 share/locale/as/LC_MESSAGES/ki18n5.mo
+share/locale/ast/LC_MESSAGES/ki18n5.mo
 share/locale/be/LC_MESSAGES/ki18n5.mo
 share/locale/be@latin/LC_MESSAGES/ki18n5.mo
 share/locale/bg/LC_MESSAGES/ki18n5.mo
@@ -150,3 +150,4 @@ share/locale/xh/LC_MESSAGES/ki18n5.mo
 share/locale/zh_CN/LC_MESSAGES/ki18n5.mo
 share/locale/zh_HK/LC_MESSAGES/ki18n5.mo
 share/locale/zh_TW/LC_MESSAGES/ki18n5.mo
+share/qlogging-categories5/ki18n.categories
