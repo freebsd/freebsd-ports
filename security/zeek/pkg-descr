@@ -1,0 +1,15 @@
+Zeek (formerly known as Bro) is an open-source, Unix-based Network
+Intrusion Detection System (NIDS) that passively monitors network
+traffic and looks for suspicious activity. Zeek detects intrusions
+by first parsing network traffic to extract its application-level
+semantics and then executing event-oriented analyzers that compare
+the activity with patterns deemed troublesome. Its analysis includes
+detection of specific attacks (including those defined by signatures,
+but also those defined in terms of events) and unusual activities
+(e.g., certain hosts connecting to certain services, or patterns
+of failed connection attempts).
+
+Zeek is documented in the USENIX 1998 Security Conference proceedings
+(as Bro).
+
+WWW: https://www.zeek.org/
