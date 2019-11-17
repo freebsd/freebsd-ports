@@ -2,8 +2,7 @@
 
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13
-PORTREVISION=	3
+DISTVERSION=	1.14
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +17,6 @@ LIB_DEPENDS=	libceres.so:math/ceres-solver \
 		libcminpack.so:math/cminpack \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
-		libmuparser.so:math/muparser \
 		libnlopt.so:math/nlopt \
 		libopt.so:math/optpp \
 		libtbb.so:devel/tbb \
