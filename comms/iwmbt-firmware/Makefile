@@ -3,9 +3,10 @@
 
 PORTNAME=	iwmbt-firmware
 PORTVERSION=	20190717
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	DEBIAN/pool/non-free/f/firmware-nonfree/
-DISTNAME=	firmware-iwlwifi_${PORTVERSION}-1_all
+DISTNAME=	firmware-iwlwifi_${PORTVERSION}-2_all
 EXTRACT_SUFX=	.deb
 
 MAINTAINER=	wulf@FreeBSD.org
