@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bazel-buildtools
-DISTVERSION=	0.28.0
-PORTREVISION=	1
+DISTVERSION=	0.29.0-14
+DISTVERSIONSUFFIX=	-g195b83e
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,8 @@ GH_ACCOUNT=	bazelbuild
 GH_PROJECT=	buildtools
 GH_TUPLE=	\
 		golang:protobuf:v1.3.1:protobuf/vendor/github.com/golang/protobuf \
-		google:skylark:a5f7082:skylark/vendor/github.com/google/skylark
+		google:skylark:a5f7082:skylark/vendor/github.com/google/skylark \
+		google:starlark-go:aaf7be0:starlark_go/vendor/go.starlark.net
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	./buildifier \
