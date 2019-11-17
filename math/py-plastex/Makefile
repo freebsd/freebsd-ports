@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	plastex
-PORTVERSION=	1.0.0
+PORTVERSION=	2.0
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX Document Processing Framework
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	tiarno
-
 USES=		python
+USE_GITHUB=	yes
 USE_PYTHON=	distutils autoplist
 USE_TEX=	base:run
 
