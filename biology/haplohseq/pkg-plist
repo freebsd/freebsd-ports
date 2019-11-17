@@ -1,0 +1,11 @@
+bin/haplohseq
+%%PORTEXAMPLES%%bin/haplohseq-example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example/example_input/tumor_exome.vcf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example/example_run.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ldmap/hg19.exome.ldmap
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/haplohseq_plot.R
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/ldmap.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/ldmap.py.orig
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/simple_phaser.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/simple_phaser.py.orig
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/example/example_output
