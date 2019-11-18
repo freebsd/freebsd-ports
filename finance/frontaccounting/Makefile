@@ -37,6 +37,10 @@ NLS_USES=		gettext
 
 .include <bsd.port.options.mk>
 
+.if !${PORT_OPTIONS:MAPACHE} && !${PORT_OPTIONS:MLIGHTTPD} && !{PORT_OPTIONS:MNGINX}
+USES+=		php
+.endif
+
 .if !${PORT_OPTIONS:MDOCS}
 PORTDOCSARGS=	'-not -path "./doc*"'
 .endif

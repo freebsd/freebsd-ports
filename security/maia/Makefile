@@ -105,6 +105,7 @@ USES+=		apache:run,2.2+
 .endif
 
 .if ${PORT_OPTIONS:MWEBHOST}
+USES+=		php
 USE_PHP=	bcmath ctype dom gettext hash iconv imap json mbstring \
 		mcrypt pdo pdo_sqlite posix session simplexml sockets \
 		sqlite3 tokenizer xml wddx xmlreader xmlwriter xmlrpc

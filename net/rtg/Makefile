@@ -3,7 +3,7 @@
 
 PORTNAME=	rtg
 PORTVERSION=	0.7.4
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	net
 MASTER_SITES=	SF \
 		ftp://ftpmirror.uk/freebsd-ports/rtg/
@@ -38,7 +38,7 @@ WEB_DESC=	Include PHP-based web client interface pre-requisites
 MYSQL_USES=	mysql:server
 
 WEB_USES=	php
-USE_PHP=	mysqli spl
+WEB_USE=	PHP=mysqli,spl
 
 CFLAGS+=	-fstack-protector
 LDFLAGS+=	-fstack-protector
