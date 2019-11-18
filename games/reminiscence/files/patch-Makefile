@@ -1,6 +1,6 @@
---- Makefile.orig	2017-11-01 12:18:57 UTC
+--- Makefile.orig	2019-10-28 14:14:22 UTC
 +++ Makefile
-@@ -2,12 +2,13 @@
+@@ -2,19 +2,20 @@
  SDL_CFLAGS   := `sdl2-config --cflags`
  SDL_LIBS     := `sdl2-config --libs`
  
@@ -14,8 +14,16 @@
 +TREMOR_LIBS    := `pkg-config --libs vorbisidec`
 +ZLIB_LIBS      := -lz
  
--CXXFLAGS += -Wall -MMD $(SDL_CFLAGS) -DUSE_MODPLUG -DUSE_TREMOR -DUSE_ZLIB
-+CXXFLAGS += -Wall -MMD $(SDL_CFLAGS) $(MODPLUG_CFLAGS) $(TREMOR_CFLAGS) -DUSE_MODPLUG -DUSE_TREMOR -DUSE_ZLIB
+-CXXFLAGS += -Wall -Wpedantic -MMD $(SDL_CFLAGS) -DUSE_MODPLUG -DUSE_STATIC_SCALER -DUSE_TREMOR -DUSE_ZLIB
++CXXFLAGS += -Wall -Wpedantic -MMD $(SDL_CFLAGS) $(MODPLUG_CFLAGS) $(TREMOR_CFLAGS) -DUSE_MODPLUG -DUSE_TREMOR -DUSE_ZLIB
  
- SRCS = collision.cpp cutscene.cpp dynlib.cpp file.cpp fs.cpp game.cpp graphics.cpp main.cpp menu.cpp \
- 	mixer.cpp mod_player.cpp ogg_player.cpp piege.cpp resource.cpp resource_aba.cpp \
+ SRCS = collision.cpp cpc_player.cpp cutscene.cpp decode_mac.cpp dynlib.cpp file.cpp fs.cpp game.cpp graphics.cpp main.cpp \
+ 	menu.cpp mixer.cpp mod_player.cpp ogg_player.cpp piege.cpp protection.cpp resource.cpp resource_aba.cpp \
+ 	resource_mac.cpp scaler.cpp screenshot.cpp seq_player.cpp \
+ 	sfx_player.cpp staticres.cpp systemstub_sdl.cpp unpack.cpp util.cpp video.cpp
+ 
+-SCALERS := scalers/scaler_nearest.cpp scalers/scaler_tv2x.cpp scalers/scaler_xbr.cpp
++#SCALERS := scalers/scaler_nearest.cpp scalers/scaler_tv2x.cpp scalers/scaler_xbr.cpp
+ 
+ OBJS = $(SRCS:.cpp=.o) $(SCALERS:.cpp=.o)
+ DEPS = $(SRCS:.cpp=.d) $(SCALERS:.cpp=.d)
