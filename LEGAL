@@ -45,6 +45,7 @@ Browser*.tar.gz		net/ldapbrowser		No reply from author regarding redistribution 
 bzip-*			archivers/bzip		Some algorithms used may infringe certain US patents.  Opinions differ.  Commercial use could render you liable to unfriendly legal action
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
 arcconf-v*		sysutils/arcconf	May not be redistributed in binary form
+cloudflare-cloudflared*	net/cloudflared		Not sure if we are allowed to redistribute it.
 clustalw-*		biology/clustalw	No commercial use
 consed_linux.tar.gz	biology/consed		Redistribution is not permitted in any form. You must request access permission via e-mail to get the tarball. Free for academic use.
 cos-*			java/cos		Special conditions apply for commercial use
