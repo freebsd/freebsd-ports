@@ -1,0 +1,65 @@
+From d2b17a8aeada96df3304725cd532c76a94ce3cc4 Mon Sep 17 00:00:00 2001
+From: Jaroslaw Staniek <staniek@kde.org>
+Date: Tue, 29 Oct 2019 22:47:56 +0100
+Subject: Autotests: Fix QCOMPARE for QString,const char* and QByteArrya,const
+ char *
+
+FIXED-IN:3.2.1
+---
+ autotests/DateTimeTest.cpp |  1 +
+ autotests/KDbTestUtils.cpp | 10 ++++++++++
+ autotests/KDbTestUtils.h   |  5 +++++
+ 3 files changed, 16 insertions(+)
+
+diff --git a/autotests/DateTimeTest.cpp b/autotests/DateTimeTest.cpp
+index ed655ca..bb32771 100644
+--- ./autotests/DateTimeTest.cpp
++++ ./autotests/DateTimeTest.cpp
+@@ -18,6 +18,7 @@
+ */
+ 
+ #include "DateTimeTest.h"
++#include "KDbTestUtils.h"
+ 
+ #include <QtTest>
+ 
+diff --git a/autotests/KDbTestUtils.cpp b/autotests/KDbTestUtils.cpp
+index 494670a..3c35816 100644
+--- ./autotests/KDbTestUtils.cpp
++++ ./autotests/KDbTestUtils.cpp
+@@ -110,6 +110,16 @@ KDBTESTUTILS_EXPORT bool qCompare(const QStringList &val1, const QStringList &va
+                         : compare_helper(false, "Compared values are not the same", toString(val1),
+                                          toString(val2), actual, expected, file, line);
+ }
++KDBTESTUTILS_EXPORT bool qCompare(const QByteArray &val1, const char *val2, const char *actual,
++                                  const char *expected, const char *file, int line)
++{
++    return qCompare(val1, QByteArray(val2), actual, expected, file, line);
++}
++KDBTESTUTILS_EXPORT bool qCompare(const QString &val1, const char *val2, const char *actual,
++                                  const char *expected, const char *file, int line)
++{
++    return qCompare(val1, QString::fromLatin1(val2), actual, expected, file, line);
++}
+ }
+ 
+ class KDbTestUtils::Private {
+diff --git a/autotests/KDbTestUtils.h b/autotests/KDbTestUtils.h
+index 0462e95..9094f17 100644
+--- ./autotests/KDbTestUtils.h
++++ ./autotests/KDbTestUtils.h
+@@ -79,6 +79,11 @@ KDBTESTUTILS_EXPORT bool qCompare(const QString &val1, const KDbEscapedString &v
+ KDBTESTUTILS_EXPORT bool qCompare(const QStringList &val1, const QStringList &val2,
+                                   const char *actual, const char *expected, const char *file,
+                                   int line);
++
++KDBTESTUTILS_EXPORT bool qCompare(const QByteArray &val1, const char *val2, const char *actual,
++                                  const char *expected, const char *file, int line);
++KDBTESTUTILS_EXPORT bool qCompare(const QString &val1, const char *val2, const char *actual,
++                                  const char *expected, const char *file, int line);
+ }
+ 
+ //! Calls @a call and verifies status of @a resultable
+-- 
+cgit v1.1
+
