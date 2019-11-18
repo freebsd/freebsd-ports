@@ -9,7 +9,11 @@ include/libheif/heif_version.h
 lib/libheif.a
 lib/libheif.so
 lib/libheif.so.1
-lib/libheif.so.1.3.2
+lib/libheif.so.1.6.0
 libdata/pkgconfig/libheif.pc
+%%EXAMPLES%%man/man1/heif-convert.1.gz
+%%EXAMPLES%%man/man1/heif-enc.1.gz
+%%EXAMPLES%%man/man1/heif-info.1.gz
+%%EXAMPLES%%man/man1/heif-thumbnailer.1.gz
 %%EXAMPLES%%share/mime/packages/heif.xml
 %%EXAMPLES%%share/thumbnailers/heif.thumbnailer

@@ -2,11 +2,11 @@
 
 PORTNAME=		libheif
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.3.2
-PORTREVISION=		5
+DISTVERSION=		1.6.0
+PORTREVISION=		0
 CATEGORIES=		graphics
 
-MAINTAINER=		me@sebastiansteinmetz.ch
+MAINTAINER=		freebsd@sebastiansteinmetz.ch
 COMMENT=		Libheif is an ISO/IEC 23008-12:2017 HEIF file format de- and encoder
 
 # N.B., subsequent revisions in Git relicense examples from GPL3+ to MIT.
@@ -21,6 +21,7 @@ GH_PROJECT=		libheif
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 SHEBANG_GLOB=		*.sh
+INSTALL_TARGET=		install-strip
 
 OPTIONS_DEFINE=	EXAMPLES JPEG LIBDE265 PNG THREADS X265
 OPTIONS_DEFAULT=EXAMPLES JPEG LIBDE265 PNG THREADS X265
