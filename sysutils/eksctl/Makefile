@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eksctl
-PORTVERSION=	0.7.0
+PORTVERSION=	0.10.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -35,7 +35,7 @@ GH_TUPLE=	\
 		alecthomas:template:a0175ee3bccc:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:2efee857e7cf:alecthomas_units/vendor/github.com/alecthomas/units \
 		apex:log:v1.1.0:apex_log/vendor/github.com/apex/log \
-		aws:aws-sdk-go:v1.23.15:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.25.37:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bep:debounce:v1.2.0:bep_debounce/vendor/github.com/bep/debounce \
 		bep:gitmap:v1.0.0:bep_gitmap/vendor/github.com/bep/gitmap \
@@ -91,19 +91,19 @@ GH_TUPLE=	\
 		gogo:protobuf:65acae22fc9d:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		gohugoio:hugo:v0.55.6:gohugoio_hugo/vendor/github.com/gohugoio/hugo \
 		golang:appengine:v1.5.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:4def268fd1a4:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:e84da0312774:golang_crypto/vendor/golang.org/x/crypto \
 		golang:gddo:5a2505f3dbf0:golang_gddo/vendor/github.com/golang/gddo \
 		golang:glog:23def4e6c14b:golang_glog/vendor/github.com/golang/glog \
 		golang:groupcache:869f871628b6:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:image:3fc05d484e9f:golang_image/vendor/golang.org/x/image \
-		golang:net:ca1201d0de80:golang_net/vendor/golang.org/x/net \
+		golang:net:cdfb69ac37fc:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:cbf593c0f2f3:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		golang:sync:42b317875d0f:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:3b5209105503:golang_sys/vendor/golang.org/x/sys \
+		golang:text:e6919f6577db:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
-		golang:tools:5aca471b1d59:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:6e04913cbbac:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:20feca13ea86:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
 		google:certificate-transparency-go:v1.0.21:google_certificate_transparency_go/vendor/github.com/google/certificate-transparency-go \
@@ -141,7 +141,7 @@ GH_TUPLE=	\
 		justinbarrick:go-k8s-portforward:d79fe1b9d79d:justinbarrick_go_k8s_portforward/vendor/github.com/justinbarrick/go-k8s-portforward \
 		kamilsk:retry:v4.0.0:kamilsk_retry/vendor/github.com/kamilsk/retry/v4 \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
-		kevinburke:go-bindata:v3.11.0:kevinburke_go_bindata/vendor/github.com/kevinburke/go-bindata \
+		kevinburke:go-bindata:v3.15.0:kevinburke_go_bindata/vendor/github.com/kevinburke/go-bindata \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kr:fs:v0.1.0:kr_fs/vendor/github.com/kr/fs \
 		kr:logfmt:b84e30acd515:kr_logfmt/vendor/github.com/kr/logfmt \
@@ -155,13 +155,13 @@ GH_TUPLE=	\
 		kubernetes:apiserver:cf2f1d68202d:kubernetes_apiserver/vendor/k8s.io/apiserver \
 		kubernetes:cli-runtime:082c0831af2b:kubernetes_cli_runtime/vendor/k8s.io/cli-runtime \
 		kubernetes:client-go:78295b709ec6:kubernetes_client_go/vendor/k8s.io/client-go \
-		kubernetes:code-generator:d0071a119380:kubernetes_code_generator/vendor/k8s.io/code-generator \
+		kubernetes:code-generator:732c9ca86353:kubernetes_code_generator/vendor/k8s.io/code-generator \
 		kubernetes:csi-api:a37926bd2215:kubernetes_csi_api/vendor/k8s.io/csi-api \
-		kubernetes:gengo:7fa3014cb28f:kubernetes_gengo/vendor/k8s.io/gengo \
+		kubernetes:gengo:ebc107f98eab:kubernetes_gengo/vendor/k8s.io/gengo \
 		kubernetes:helm:v2.13.1:kubernetes_helm/vendor/k8s.io/helm \
-		kubernetes:klog:v0.3.3:kubernetes_klog/vendor/k8s.io/klog \
+		kubernetes:klog:v0.4.0:kubernetes_klog/vendor/k8s.io/klog \
 		kubernetes:kops:278e6606534e:kubernetes_kops/vendor/k8s.io/kops \
-		kubernetes:kube-openapi:33be087ad058:kubernetes_kube_openapi/vendor/k8s.io/kube-openapi \
+		kubernetes:kube-openapi:743ec37842bf:kubernetes_kube_openapi/vendor/k8s.io/kube-openapi \
 		kubernetes:kubelet:3556bcde9670:kubernetes_kubelet/vendor/k8s.io/kubelet \
 		kubernetes:kubernetes:v1.12.6:kubernetes_kubernetes/vendor/k8s.io/kubernetes \
 		kubernetes:utils:581e00157fb1:kubernetes_utils/vendor/k8s.io/utils \
@@ -216,7 +216,7 @@ GH_TUPLE=	\
 		spf13:cobra:v0.0.4:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:fsync:12a01e648f05:spf13_fsync/vendor/github.com/spf13/fsync \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
-		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
+		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.3.2:spf13_viper/vendor/github.com/spf13/viper \
 		spotinst:spotinst-sdk-go:fed4677dbf8f:spotinst_spotinst_sdk_go/vendor/github.com/spotinst/spotinst-sdk-go \
 		square:go-jose:v2.2.2:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
