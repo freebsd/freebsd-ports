@@ -1,5 +1,4 @@
 bin/remotebox
-share/applications/remotebox.desktop
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/remotebox.pdf
 share/pixmaps/remotebox.png
