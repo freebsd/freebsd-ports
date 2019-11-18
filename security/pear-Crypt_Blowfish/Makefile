@@ -13,6 +13,7 @@ USES=		pear
 OPTIONS_DEFINE=	MCRYPT
 MCRYPT_DESC=	Additional MCrypt PHP support
 
+MCRYPT_USES=	php
 MCRYPT_USE=	PHP=mcrypt
 
 pre-fetch:

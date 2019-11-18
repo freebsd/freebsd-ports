@@ -17,6 +17,7 @@ FTP_DESC=	Depend on FTP PHP extension
 
 USES=	horde
 
+FTP_USES=	php
 FTP_USE=	PHP=ftp
 
 .include <bsd.port.mk>

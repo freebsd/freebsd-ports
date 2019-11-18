@@ -19,8 +19,11 @@ ZLIB_DESC=	PECL ZLIB support
 
 USES=	pear
 
+CURL_USES=	php
 CURL_USE=	PHP=curl
+FILEINFO_USES=	php
 FILEINFO_USE=	PHP=fileinfo
+ZLIB_USES=	php
 ZLIB_USE=	PHP=zlib
 
 .include <bsd.port.mk>

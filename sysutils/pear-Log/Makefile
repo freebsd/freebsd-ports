@@ -21,6 +21,7 @@ PHP_SQLITE_DESC=	PHP sqlite support (php5 only)
 PEAR_DB_BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB@${PHP_FLAVOR}
 PEAR_MDB2_BUILD_DEPENDS=	${PEARDIR}/MDB2.php:databases/pear-MDB2@${PHP_FLAVOR}
 PEAR_MAIL_BUILD_DEPENDS=	${PEARDIR}/Mail.php:mail/pear-Mail@${PHP_FLAVOR}
+PHP_SQLITE_USES=	php
 PHP_SQLITE_USE=	PHP=sqlite3
 
 .include <bsd.port.mk>

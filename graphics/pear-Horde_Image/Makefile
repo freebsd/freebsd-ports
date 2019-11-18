@@ -17,6 +17,7 @@ USE_HORDE_RUN=	Horde_Exception \
 OPTIONS_DEFINE=	GD
 GD_DESC=	Depend on PHP gd extension
 
-GD_USE=	PHP=gd
+GD_USES=	php
+GD_USE=		PHP=gd
 
 .include <bsd.port.mk>

@@ -15,7 +15,9 @@ OPTIONS_DEFINE=	BCMATH GMP
 BCMATH_DESC=	PHP BCMath extension support
 GMP_DESC=	PHP GMP extension support
 
+BCMATH_USES=	php
 BCMATH_USE=	PHP=bcmath
+GMP_USES=	php
 GMP_USE=	PHP=gmp
 
 .include <bsd.port.mk>
