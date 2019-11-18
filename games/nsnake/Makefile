@@ -2,31 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	nsnake
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	2.2.0
 CATEGORIES=	games
-MASTER_SITES=	http://releases.malikania.fr/nsnake/1.4.0/
+MASTER_SITES=	http://releases.malikania.fr/nsnake/${PORTVERSION}/
 
-MAINTAINER=	demelier.david@gmail.com
+MAINTAINER=	markand@malikania.fr
 COMMENT=	Snake game written in C and ncurses
 
 LICENSE=	ISCL
 
-USES=		ncurses tar:tgz
+USES=		ncurses tar:xz
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c \
-		${LDFLAGS} -lncurses)
+MAKE_ENV=	CC="$CC" \
+		CFLAGS+="$CFLAGS" \
+		LDFLAGS+="$LDFLAGS"
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|VARDIR=.*|VARDIR=/var|' \
+		${WRKSRC}/config.mk
 do-install:
 	(cd ${WRKSRC} \
 		&& ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin \
 		&& ${INSTALL_MAN} ${PORTNAME}.6 ${STAGEDIR}${MANPREFIX}/man/man6)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} CHANGELOG ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} CHANGES.md ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}/var/db/nsnake
 
 .include <bsd.port.mk>
