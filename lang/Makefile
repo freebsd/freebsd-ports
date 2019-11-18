@@ -377,6 +377,7 @@
     SUBDIR += twelf
     SUBDIR += ucc
     SUBDIR += urweb
+    SUBDIR += v
     SUBDIR += v8
     SUBDIR += vala
     SUBDIR += visualworks
