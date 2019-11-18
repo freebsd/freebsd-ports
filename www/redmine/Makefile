@@ -3,7 +3,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	3.4.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 
