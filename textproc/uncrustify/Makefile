@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uncrustify
-PORTVERSION=	0.69.0
-PORTREVISION=	1
+PORTVERSION=	0.70.0
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	textproc
 
@@ -23,7 +22,8 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-# fixes BROKENs above, but may introduce different errors
+# fixes build on gcc archs (unrecognized command line option
+# -std=gnu++0x), but may introduce other errors in future
 post-patch:
 	@${REINPLACE_CMD} -e '/gnu++0x/ d' ${WRKSRC}/CMakeLists.txt
 
