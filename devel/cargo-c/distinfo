@@ -1,6 +1,6 @@
-TIMESTAMP = 1573267851
-SHA256 (rust/crates/cargo-c-0.3.0.tar.gz) = adbc0844cd6ee218c25554006110a616288556db889024e15dbc438436f890bd
-SIZE (rust/crates/cargo-c-0.3.0.tar.gz) = 15961
+TIMESTAMP = 1561470321
+SHA256 (rust/crates/cargo-c-0.3.1.tar.gz) = 6b0f5c382c3c24abf3d9056016d01f4125ddf523c6f1d062e2bf6b2dbe69e2ee
+SIZE (rust/crates/cargo-c-0.3.1.tar.gz) = 15965
 SHA256 (rust/crates/aho-corasick-0.7.6.tar.gz) = 58fb5e95d83b38284460a5fda7d6470aa0b8844d283a0b614b8535e880800d2d
 SIZE (rust/crates/aho-corasick-0.7.6.tar.gz) = 108953
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
