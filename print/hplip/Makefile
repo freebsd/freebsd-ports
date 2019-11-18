@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hplip
-PORTVERSION=	3.19.10
+PORTVERSION=	3.19.11
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -37,7 +37,8 @@ CONFIGURE_ARGS=	--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
 		--with-htmldir=${DOCSDIR} \
 		--with-drvdir=${PREFIX}/share/cups/drv \
 		--disable-qt4
-CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	PYTHONINCLUDEDIR=${PYTHON_INCLUDEDIR}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR}
 LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		DOCS FAX SCAN SNMP X11 XSANE QT5
