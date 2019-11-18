@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chamfer
-DISTVERSION=	s20191106
+DISTVERSION=	s20191115
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -27,7 +27,7 @@ USE_GITHUB=	yes
 USE_XORG=	xcb
 GH_ACCOUNT=	jaelpark
 GH_PROJECT=	${PORTNAME}wm
-GH_TAGNAME=	176bb1d
+GH_TAGNAME=	ed8b707
 CXXFLAGS+=	-Wno-narrowing
 
 post-patch:
@@ -37,6 +37,9 @@ post-patch:
 # XXX https://github.com/mesonbuild/meson/issues/4788
 	@${REINPLACE_CMD} -e '/boost/!s/python3/python-${PYTHON_VER}/' \
 		-e '/boost/s/python3/python${PYTHON_SUFFIX}/' \
+		`if [ ${PYTHON_REL} -lt 3800 ]; then \
+			printf "%s %s" -e '/python.*embed/d'; \
+		 fi` \
 		${WRKSRC}/meson.build
 
 do-install:
