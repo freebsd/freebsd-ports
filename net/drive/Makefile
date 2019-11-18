@@ -4,7 +4,7 @@
 PORTNAME=	drive
 PORTVERSION=	0.3.9.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -23,25 +23,25 @@ PLIST_FILES=	bin/drive
 GH_ACCOUNT=	odeke-em
 GH_TAGNAME=	b868c96
 GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
-		census-instrumentation:opencensus-go:v0.22.1:census_instrumentation_opencensus/vendor/go.opencensus.io \
-		cheggaaa:pb:v1.0.28:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
+		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus/vendor/go.opencensus.io \
+		cheggaaa:pb:v3.0.2:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
-		golang:crypto:71b5226:golang_crypto/vendor/golang.org/x/crypto \
-		golang:groupcache:869f871:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:ba9fcec:golang_net/vendor/golang.org/x/net \
+		golang:crypto:e1110fd:golang_crypto/vendor/golang.org/x/crypto \
+		golang:groupcache:611e8ac:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:net:2180aed:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0f29369:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:749cb33:golang_sys/vendor/golang.org/x/sys \
-		golang:text:3d0f797:golang_text/vendor/golang.org/x/text \
-		google:go-genproto:92dd089:google_go_genproto/vendor/google.golang.org/genproto \
-		google:google-api-go-client:v0.10.0:google_googleapigoclient/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:v0.45.1:googleapis_googlecloudgo/vendor/cloud.google.com/go \
+		golang:sys:52ab431:golang_sys/vendor/golang.org/x/sys \
+		golang:text:4b67af8:golang_text/vendor/golang.org/x/text \
+		google:go-genproto:83cc047:google_go_genproto/vendor/google.golang.org/genproto \
+		google:google-api-go-client:v0.14.0:google_googleapigoclient/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:v0.48.0:googleapis_googlecloudgo/vendor/cloud.google.com/go \
 		googleapis:gax-go:v2.0.5:googleapis_gaxgo/vendor/github.com/googleapis/gax-go \
-		grpc:grpc-go:v1.23.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.25.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:golang-lru:v0.5.3:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
-		mattn:go-colorable:v0.1.2:mattn_gocolorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.9:mattn_goisatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.4:mattn_gorunewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-colorable:v0.1.4:mattn_gocolorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.10:mattn_goisatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.6:mattn_gorunewidth/vendor/github.com/mattn/go-runewidth \
 		mxk:go-flowrate:cca7078:mxk_goflowrate/vendor/github.com/mxk/go-flowrate \
 		odeke-em:cache:baf8e43:odekeem_cache/vendor/github.com/odeke-em/cache \
 		odeke-em:cli-spinner:610063b:odekeem_clispinner/vendor/github.com/odeke-em/cli-spinner \
