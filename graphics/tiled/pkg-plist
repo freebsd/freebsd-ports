@@ -1,4 +1,3 @@
-bin/automappingconverter
 bin/terraingenerator
 bin/tiled
 bin/tmxrasterizer
@@ -9,6 +8,7 @@ lib/libtiled.so.1.0
 lib/libtiled.so.1.0.0
 lib/tiled/plugins/libcsv.so
 lib/tiled/plugins/libdefold.so
+lib/tiled/plugins/libdefoldcollection.so
 lib/tiled/plugins/libdroidcraft.so
 lib/tiled/plugins/libflare.so
 lib/tiled/plugins/libgmx.so
@@ -19,15 +19,12 @@ lib/tiled/plugins/liblua.so
 lib/tiled/plugins/libreplicaisland.so
 lib/tiled/plugins/libtbin.so
 lib/tiled/plugins/libtengine.so
-man/man1/automappingconverter.1.gz
+%%QT_QMLDIR%%/org/mapeditor/Tiled/libtiledquickplugin.so
+%%QT_QMLDIR%%/org/mapeditor/Tiled/qmldir
 man/man1/tiled.1.gz
 man/man1/tmxrasterizer.1.gz
 man/man1/tmxviewer.1.gz
 share/applications/org.mapeditor.Tiled.desktop
-share/icons/hicolor/16x16/apps/tiled.png
-share/icons/hicolor/16x16/mimetypes/application-x-tiled.png
-share/icons/hicolor/32x32/apps/tiled.png
-share/icons/hicolor/32x32/mimetypes/application-x-tiled.png
 share/icons/hicolor/scalable/apps/tiled.svg
 share/icons/hicolor/scalable/mimetypes/application-x-tiled.svg
 share/metainfo/org.mapeditor.Tiled.appdata.xml
@@ -45,6 +42,7 @@ share/thumbnailers/tiled.thumbnailer
 %%DATADIR%%/translations/tiled_hu.qm
 %%DATADIR%%/translations/tiled_it.qm
 %%DATADIR%%/translations/tiled_ja.qm
+%%DATADIR%%/translations/tiled_ko.qm
 %%DATADIR%%/translations/tiled_nb.qm
 %%DATADIR%%/translations/tiled_nl.qm
 %%DATADIR%%/translations/tiled_pl.qm
@@ -54,5 +52,5 @@ share/thumbnailers/tiled.thumbnailer
 %%DATADIR%%/translations/tiled_sv.qm
 %%DATADIR%%/translations/tiled_tr.qm
 %%DATADIR%%/translations/tiled_uk.qm
-%%DATADIR%%/translations/tiled_zh.qm
+%%DATADIR%%/translations/tiled_zh_CN.qm
 %%DATADIR%%/translations/tiled_zh_TW.qm
