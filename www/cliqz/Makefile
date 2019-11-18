@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cliqz
-DISTVERSION=	1.29.3
-PORTREVISION=	1
+DISTVERSION=	1.30.0
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/cdn.cliqz.com/browser-f/APT/:amazon \
 		http://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/${CLIQZ_LAST_BUILD_ID}/:cliqz
@@ -37,24 +36,25 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xt.pc:x11-toolkits/libXt \
 		autoconf-2.13:devel/autoconf213 \
 		bash:shells/bash \
 		graphite2>=1.3.13:graphics/graphite2 \
-		harfbuzz>=2.5.3:print/harfbuzz \
-		icu>=63.1,1:devel/icu \
+		harfbuzz>=2.6.1:print/harfbuzz \
+		icu>=64.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		libvorbis>=1.3.6,3:audio/libvorbis \
 		libvpx>=1.5.0:multimedia/libvpx \
+		${LOCALBASE}/bin/python${PYTHON3_DEFAULT}:lang/python${PYTHON3_DEFAULT:S/.//g} \
 		llvm${LLVM_DEFAULT}>=0:devel/llvm${LLVM_DEFAULT} \
 		nasm:devel/nasm \
 		node:www/node \
 		nspr>=4.21:devel/nspr \
-		nss>=3.39:security/nss \
+		nss>=3.46.1:security/nss \
 		png>=1.6.35:graphics/png \
 		rust-cbindgen>=0.8.7:devel/rust-cbindgen \
-		sqlite3>=3.28.0:databases/sqlite3 \
+		sqlite3>=3.29.0:databases/sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
 		yasm:devel/yasm \
 		zip:archivers/zip
 
-USES=		compiler:c11 desktop-file-utils gmake gnome pkgconfig \
+USES=		compiler:c++17-lang desktop-file-utils gmake gnome pkgconfig \
 		python:2.7,build shebangfix tar:xz xorg
 
 USE_GNOME=	cairo gconf2 gdkpixbuf2 gtk20 gtk30
@@ -74,7 +74,7 @@ SHEBANG_FILES=	magic_build_and_package.sh
 CLIQZ_CHANNEL=		release
 # If the DISTVERSION is updated, make sure to update the last build id from
 # fetch -qo - https://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/lastbuildid
-CLIQZ_LAST_BUILD_ID=	20191011101006
+CLIQZ_LAST_BUILD_ID=	20191113183817
 CLIQZ_ICON=		${PORTNAME}.png
 CLIQZ_ICON_SRC=		${WRKSRC}/mozilla-release/browser/branding/${PORTNAME}/default48.png
 MOZ_DESKTOP=		${WRKSRC}/mozilla-release/toolkit/mozapps/installer/linux/rpm/mozilla.desktop
@@ -84,6 +84,7 @@ MAKE_ENV+=	CQZ_BUILD_ID=${CLIQZ_LAST_BUILD_ID} \
 		CQZ_RELEASE_CHANNEL=${CLIQZ_CHANNEL} \
 		LLVM_CONFIG=llvm-config${LLVM_DEFAULT} \
 		LLVM_OBJDUMP=${LOCALBASE}/llvm${LLVM_DEFAULT}/bin/llvm-objdump \
+		PYTHON3="${LOCALBASE}/bin/python${PYTHON3_DEFAULT}" \
 		MOZBUILD_STATE_PATH=${WRKDIR}
 
 # Configure args passed into mach build system
