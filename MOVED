@@ -13481,3 +13481,4 @@ mail/opensmtpd-extras-filter-python||2019-11-15| Deprecated upstream
 mail/opensmtpd-extras-filter-regex||2019-11-15| Deprecated upstream
 mail/opensmtpd-extras-filter-spamassassin||2019-11-15| Deprecated upstream
 mail/opensmtpd-extras-tool-stats||2019-11-15| Deprecated upstream
+x11-wm/compton-yshui|x11-wm/picom|2019-11-18|Project renamed

@@ -1,10 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	compton
+PORTNAME=	picom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.4
+DISTVERSION=	7.5
 CATEGORIES=	x11-wm
-PKGNAMESUFFIX=	-yshui
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	bd5a5fb56812.patch:-p1 065f9ffd4d35.patch:-p1
@@ -31,7 +30,6 @@ USES=		compiler:c11 meson localbase pkgconfig python:3.4+,run \
 USE_GITHUB=	yes
 USE_XORG=	x11 xcb xext pixman
 GH_ACCOUNT=	yshui
-GH_PROJECT=	picom
 SHEBANG_FILES=	bin/compton-convgen.py
 MESON_ARGS=	-Dunittest=true
 TEST_TARGET=	test
