@@ -16,15 +16,6 @@ Some features found on Windows, macOS and Linux are not implemented:
 - TCP fast open
 - `about:networking` (requires link state notification)
 
-## Crashes on FreeBSD 11.2
-
-Web Content process may frequently crash due to a [kernel bug].
-Either upgrade to FreeBSD 11.3 or try the following workaround:
-
-    $ sysctl net.local.stream.recvspace=16384
-
-[kernel bug]: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=181741
-
 ## Audio backend
 
 To select non-default audio backend open `about:config` page and
