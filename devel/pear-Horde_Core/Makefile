@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Core
-DISTVERSION=	2.31.10
+DISTVERSION=	2.31.11
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
