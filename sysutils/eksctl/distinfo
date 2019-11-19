@@ -1,6 +1,6 @@
-TIMESTAMP = 1574117306
-SHA256 (weaveworks-eksctl-0.10.0_GH0.tar.gz) = 7fea94ea644edc7268a73f19d5bc3566fc2ef17aa1f7cfb72e04748b0e06940a
-SIZE (weaveworks-eksctl-0.10.0_GH0.tar.gz) = 22368331
+TIMESTAMP = 1574203146
+SHA256 (weaveworks-eksctl-0.10.1_GH0.tar.gz) = 0ae389194c2c8d1cbc897fec4f619056828dd949fee05769edd72ae993c61a4b
+SIZE (weaveworks-eksctl-0.10.1_GH0.tar.gz) = 22365918
 SHA256 (Azure-azure-pipeline-go-v0.1.8_GH0.tar.gz) = b06a891cf8efc3f65ce2b447dc42c7814c23af9c3ea1390135b1a998b4c6ba25
 SIZE (Azure-azure-pipeline-go-v0.1.8_GH0.tar.gz) = 15319
 SHA256 (Azure-azure-storage-blob-go-45d0c5e3638e_GH0.tar.gz) = f926e4803dbcfdc95171e7bd410437b276aa43763559df49e5a0681a109b2848
