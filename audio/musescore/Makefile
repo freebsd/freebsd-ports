@@ -3,7 +3,7 @@
 
 PORTNAME=	musescore
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.3
+DISTVERSION=	3.3.2
 CATEGORIES=	audio
 # DISTNAME=	MuseScore-${DISTVERSION}
 
@@ -21,9 +21,10 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
 		pkgconfig qt:5 shared-mime-info
-USE_QT=		core declarative gui widgets opengl concurrent designer help network \
+USE_QT=		core declarative gui widgets opengl concurrent designer help \
+		location network \
 		scripttools svg sql printsupport testlib \
-		xml xmlpatterns \
+		webchannel xml xmlpatterns \
 		buildtools_build linguisttools_build qmake_build uitools_build
 
 USE_GITHUB=	yes

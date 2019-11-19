@@ -1,17 +1,17 @@
 Editorialize. What are they thinking?
 
---- mscore/CMakeLists.txt.orig	2019-01-10 20:08:02 UTC
+--- mscore/CMakeLists.txt.orig	2019-11-14 07:45:52 UTC
 +++ mscore/CMakeLists.txt
-@@ -661,7 +661,7 @@ else (MINGW)
+@@ -739,7 +739,7 @@ else (MINGW)
  
     if ( NOT MSVC )
  ## install qwebengine core
 -      if (NOT APPLE AND USE_WEBENGINE)
 +      if (YOU_CANT_SERIOUSLY_SUGGEST_TO_COPY_WEBENGINE_EXECUTABLES_AROUND)
-          install(FILES
+          install(PROGRAMS
              ${QT_INSTALL_LIBEXECS}/QtWebEngineProcess
              DESTINATION bin
-@@ -674,7 +674,7 @@ else (MINGW)
+@@ -752,7 +752,7 @@ else (MINGW)
              ${QT_INSTALL_TRANSLATIONS}/qtwebengine_locales
              DESTINATION lib/qt5/translations
              )
