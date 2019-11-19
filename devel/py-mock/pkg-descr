@@ -1,9 +1,11 @@
-A Python Mocking and Patching Library for Testing
+mock is a library for testing in Python. It allows you to replace parts of
+your system under test with mock objects and make assertions about how
+they have been used.
 
-mock is a Python module that provides a core Mock class. It is intended to
-reduce the need for creating a host of trivial stubs throughout your test suite.
-After performing an action, you can make assertions about which methods /
-attributes were used and arguments they were called with. You can also specify
-return values and set needed attributes in the normal way.
+mock is now part of the Python standard library, available as
+unittest.mock in Python 3.3 onwards.
 
-WWW: https://pypi.org/project/mock/
+This package contains a rolling backport of the standard library mock code
+compatible with Python 2.7 and 3.4 and up.
+
+WWW: https://mock.readthedocs.org/en/latest/
