@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Pdf
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org
