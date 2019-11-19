@@ -12,6 +12,8 @@ COMMENT=	Text-mode interface for git
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+TEST_DEPENDS=	git:devel/git
+
 USES=		iconv gmake ncurses readline:port
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}
@@ -34,5 +36,11 @@ GIT_VARS_OFF=	PKGMESSAGE="${.CURDIR}/pkg-message-git"
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tig
+
+do-test:
+# Tests fail when running as part of a non-interactive Poudriere
+# build, but using script(1) seems to be a good enough workaround and
+# allows them to run successfully anyway.
+	@/usr/bin/script -q /dev/null ${GMAKE} -C ${WRKSRC} test
 
 .include <bsd.port.mk>
