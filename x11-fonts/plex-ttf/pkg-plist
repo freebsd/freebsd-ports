@@ -1,11 +1,3 @@
-%%FONTSDIR%%/IBMPlexArabic-Bold.ttf
-%%FONTSDIR%%/IBMPlexArabic-ExtraLight.ttf
-%%FONTSDIR%%/IBMPlexArabic-Light.ttf
-%%FONTSDIR%%/IBMPlexArabic-Medium.ttf
-%%FONTSDIR%%/IBMPlexArabic-Regular.ttf
-%%FONTSDIR%%/IBMPlexArabic-SemiBold.ttf
-%%FONTSDIR%%/IBMPlexArabic-Text.ttf
-%%FONTSDIR%%/IBMPlexArabic-Thin.ttf
 %%FONTSDIR%%/IBMPlexMono-Bold.ttf
 %%FONTSDIR%%/IBMPlexMono-BoldItalic.ttf
 %%FONTSDIR%%/IBMPlexMono-ExtraLight.ttf
@@ -38,6 +30,14 @@
 %%FONTSDIR%%/IBMPlexSans-TextItalic.ttf
 %%FONTSDIR%%/IBMPlexSans-Thin.ttf
 %%FONTSDIR%%/IBMPlexSans-ThinItalic.ttf
+%%FONTSDIR%%/IBMPlexSansArabic-Bold.ttf
+%%FONTSDIR%%/IBMPlexSansArabic-ExtraLight.ttf
+%%FONTSDIR%%/IBMPlexSansArabic-Light.ttf
+%%FONTSDIR%%/IBMPlexSansArabic-Medium.ttf
+%%FONTSDIR%%/IBMPlexSansArabic-Regular.ttf
+%%FONTSDIR%%/IBMPlexSansArabic-SemiBold.ttf
+%%FONTSDIR%%/IBMPlexSansArabic-Text.ttf
+%%FONTSDIR%%/IBMPlexSansArabic-Thin.ttf
 %%FONTSDIR%%/IBMPlexSansCondensed-Bold.ttf
 %%FONTSDIR%%/IBMPlexSansCondensed-BoldItalic.ttf
 %%FONTSDIR%%/IBMPlexSansCondensed-ExtraLight.ttf
