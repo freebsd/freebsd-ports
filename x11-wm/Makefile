@@ -27,7 +27,6 @@
     SUBDIR += compizconfig-backend-gconf
     SUBDIR += compizconfig-python
     SUBDIR += compton
-    SUBDIR += compton-yshui
     SUBDIR += ctwm
     SUBDIR += cwm
     SUBDIR += devilspie
@@ -98,6 +97,7 @@
     SUBDIR += peksystray
     SUBDIR += pekwm
     SUBDIR += phluid
+    SUBDIR += picom
     SUBDIR += piewm
     SUBDIR += plasma5-kdecoration
     SUBDIR += plasma5-kwin

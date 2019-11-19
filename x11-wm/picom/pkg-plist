@@ -1,7 +1,10 @@
 bin/compton
 bin/compton-convgen.py
 bin/compton-trans
-@sample etc/xdg/compton.conf.sample
+bin/picom
+bin/picom-trans
+@sample etc/xdg/picom.conf.sample
 share/applications/compton.desktop
+share/applications/picom.desktop
 share/icons/hicolor/48x48/apps/compton.png
 share/icons/hicolor/scalable/apps/compton.svg
