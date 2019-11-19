@@ -3,14 +3,11 @@
 
 PORTNAME=	qgit
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	2.8
-PORTREVISION=	2
+DISTVERSION=	2.9
 CATEGORIES=	devel
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Graphical interface to git repositories
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
