@@ -105,6 +105,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/instruments_uz@Latn.qm
 %%DATADIR%%/locale/instruments_vi.qm
 %%DATADIR%%/locale/instruments_zh_CN.qm
+%%DATADIR%%/locale/instruments_zh_HK.qm
 %%DATADIR%%/locale/instruments_zh_TW.qm
 %%DATADIR%%/locale/languages.xml
 %%DATADIR%%/locale/mscore_af.qm
@@ -171,6 +172,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/mscore_uz@Latn.qm
 %%DATADIR%%/locale/mscore_vi.qm
 %%DATADIR%%/locale/mscore_zh_CN.qm
+%%DATADIR%%/locale/mscore_zh_HK.qm
 %%DATADIR%%/locale/mscore_zh_TW.qm
 %%DATADIR%%/locale/tours_af.qm
 %%DATADIR%%/locale/tours_ar.qm
@@ -237,6 +239,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/tours_uz@Latn.qm
 %%DATADIR%%/locale/tours_vi.qm
 %%DATADIR%%/locale/tours_zh_CN.qm
+%%DATADIR%%/locale/tours_zh_HK.qm
 %%DATADIR%%/locale/tours_zh_TW.qm
 %%DATADIR%%/manual/plugins/manual.css
 %%DATADIR%%/manual/plugins/plugins3.html
