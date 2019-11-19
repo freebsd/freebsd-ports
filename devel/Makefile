@@ -703,6 +703,7 @@
     SUBDIR += fpc-zlib
     SUBDIR += fpp
     SUBDIR += frama-c
+    SUBDIR += freebsd-gcc6
     SUBDIR += frink
     SUBDIR += fsmtrie
     SUBDIR += fstrcmp
