@@ -31,7 +31,8 @@ PYTHON_DESC=		Python bindings
 PYTHON_BINARY_ALIAS=	swig=swig3.0
 PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
 PYTHON_CMAKE_BOOL=	PYTHON_BINDINGS
-PYTHON_USES=		python:2.7
+PYTHON_USES=		python
+PYTHON_USE=		PYTHON=py3kplist
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -45,6 +46,6 @@ post-patch:
 post-install-PYTHON-on:
 	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_ftdi.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_ftdi.so
 
 .include <bsd.port.mk>
