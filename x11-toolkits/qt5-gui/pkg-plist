@@ -749,6 +749,12 @@
 %%QT_INCDIR%%/QtThemeSupport/QtThemeSupportDepends
 %%QT_INCDIR%%/QtThemeSupport/QtThemeSupportVersion
 %%QT_INCDIR%%/QtThemeSupport/qtthemesupportversion.h
+%%QT_INCDIR%%/QtVulkanSupport/%%FULLVER%%/QtVulkanSupport/private/qbasicvulkanplatforminstance_p.h
+%%QT_INCDIR%%/QtVulkanSupport/%%FULLVER%%/QtVulkanSupport/private/qvkconvenience_p.h
+%%QT_INCDIR%%/QtVulkanSupport/QtVulkanSupport
+%%QT_INCDIR%%/QtVulkanSupport/QtVulkanSupportDepends
+%%QT_INCDIR%%/QtVulkanSupport/QtVulkanSupportVersion
+%%QT_INCDIR%%/QtVulkanSupport/qtvulkansupportversion.h
 %%QT_INCDIR%%/QtXkbCommonSupport/%%FULLVER%%/QtXkbCommonSupport/private/qxkbcommon_p.h
 %%QT_INCDIR%%/QtXkbCommonSupport/QtXkbCommonSupport
 %%QT_INCDIR%%/QtXkbCommonSupport/QtXkbCommonSupportDepends
@@ -806,6 +812,8 @@
 %%QT_CMAKEDIR%%/Qt5ServiceSupport/Qt5ServiceSupportConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5ThemeSupport/Qt5ThemeSupportConfig.cmake
 %%QT_CMAKEDIR%%/Qt5ThemeSupport/Qt5ThemeSupportConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5VulkanSupport/Qt5VulkanSupportConfig.cmake
+%%QT_CMAKEDIR%%/Qt5VulkanSupport/Qt5VulkanSupportConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5XcbQpa/Qt5XcbQpaConfig.cmake
 %%QT_CMAKEDIR%%/Qt5XcbQpa/Qt5XcbQpaConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5XkbCommonSupport/Qt5XkbCommonSupportConfig.cmake
@@ -849,6 +857,8 @@
 %%QT_LIBDIR%%/libQt5ServiceSupport.prl
 %%QT_LIBDIR%%/libQt5ThemeSupport.a
 %%QT_LIBDIR%%/libQt5ThemeSupport.prl
+%%QT_LIBDIR%%/libQt5VulkanSupport.a
+%%QT_LIBDIR%%/libQt5VulkanSupport.prl
 %%QT_LIBDIR%%/libQt5XcbQpa.prl
 %%QT_LIBDIR%%/libQt5XcbQpa.so
 %%QT_LIBDIR%%/libQt5XcbQpa.so.5
@@ -873,6 +883,7 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_platformcompositor_support_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_service_support_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_theme_support_private.pri
+%%QT_MKSPECDIR%%/modules/qt_lib_vulkan_support_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_xcb_qpa_lib_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_xkbcommon_support_private.pri
 %%QT_PLUGINDIR%%/generic/libqbsdkeyboardplugin.so
