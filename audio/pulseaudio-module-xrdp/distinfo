@@ -1,3 +1,5 @@
-TIMESTAMP = 1559713403
-SHA256 (neutrinolabs-pulseaudio-module-xrdp-v0.3_GH0.tar.gz) = 11ebe426a93b3a22eeffe460ec643cabe33061757b6b2db5fa8807b2788e1e30
-SIZE (neutrinolabs-pulseaudio-module-xrdp-v0.3_GH0.tar.gz) = 11484
+TIMESTAMP = 1574148859
+SHA256 (xrdp/neutrinolabs-pulseaudio-module-xrdp-v0.4_GH0.tar.gz) = e504d90676c0dd9b9f069b60790f8feb0cc929e2ab1cb1f864c3a49850bed93b
+SIZE (xrdp/neutrinolabs-pulseaudio-module-xrdp-v0.4_GH0.tar.gz) = 11458
+SHA256 (xrdp/c63041f.patch) = 8c9b89d61583b04d1c0ab26f540723638d379432322309b705aa36f6c7514d5c
+SIZE (xrdp/c63041f.patch) = 5434
