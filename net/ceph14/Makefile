@@ -48,7 +48,7 @@ RUN_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}prettytable>=0:devel/py-prettytable@${PY_FLAVOR}
 
-USES=		cmake:noninja fuse gettext-runtime gmake pkgconfig python:3.6 \
+USES=		cmake:noninja fuse gettext-runtime gmake pkgconfig python:3.6+ \
 		shebangfix ssl
 USE_PYTHON=	cython
 USE_OPENLDAP=	yes
