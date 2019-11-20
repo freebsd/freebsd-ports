@@ -13,7 +13,7 @@ COMMENT=	Lightweight pipelining using Python functions as jobs
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:-3.7
+USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
