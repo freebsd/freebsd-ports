@@ -34,18 +34,12 @@ INFO=		gambit
 OPTIONS_DEFINE=	DOCS GCC
 OPTIONS_DEFAULT=GCC
 
-GCC_DESC=	Build with GCC
+GCC_DESC=	Build with GCC from ports
 
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGCC}
-USE_GCC=	any
-.endif
-
-.if ${COMPILER_TYPE} == gcc
-# This is needed because 4.2 < gcc -v < 4.4 has optimisations that make the
-# build take more than 20Gb of virtual memory.
-CFLAGS+=	-fno-move-loop-invariants
+USE_GCC=	yes
 .endif
 
 post-patch:
