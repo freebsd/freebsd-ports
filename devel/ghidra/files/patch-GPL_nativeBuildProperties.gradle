@@ -1,6 +1,6 @@
---- GPL/nativeBuildProperties.gradle.orig	2019-05-16 19:36:27 UTC
+--- GPL/nativeBuildProperties.gradle.orig	2019-10-23 20:54:54 UTC
 +++ GPL/nativeBuildProperties.gradle
-@@ -75,6 +75,10 @@ model {
+@@ -39,6 +39,10 @@ model {
  			architecture 'x86_64'
  			operatingSystem 'osx'
  		}
