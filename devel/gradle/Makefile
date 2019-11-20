@@ -2,24 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	gradle
-PORTVERSION=	5.0
+PORTVERSION=	6.0.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://downloads.gradle.org/distributions/
 EXTRACT_SUFX=	-bin.zip
 
-MAINTAINER=	gasol.wu@gmail.com
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Project automation tool
 
 LICENSE=	APACHE20
 
-NO_ARCH=	yes
 USES=		zip
-JAVA_VERSION=	1.7+
 USE_JAVA=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
-SUB_LIST=	PORTVERSION=${PORTVERSION} \
-		JAVA=${JAVA}
 SUB_FILES=	gradle
+SUB_LIST=	JAVA=${JAVA} \
+		PORTVERSION=${PORTVERSION}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/gradle ${STAGEDIR}${PREFIX}/bin/gradle
