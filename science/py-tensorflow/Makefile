@@ -53,7 +53,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl>=0.7.1:devel/py-absl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>=1.11.2:devel/py-wrapt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.30.0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		python:3.6 shebangfix jpeg ssl
+USES=		python:3.6+ shebangfix jpeg ssl
 SHEBANG_GLOB=	*.py
 USE_GITHUB=	yes
 USE_PYTHON=	distutils
