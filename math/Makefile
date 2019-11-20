@@ -213,6 +213,7 @@
     SUBDIR += eispack
     SUBDIR += elpa
     SUBDIR += emc2
+    SUBDIR += ensmallen
     SUBDIR += ent
     SUBDIR += entropy
     SUBDIR += eprover
