@@ -14,6 +14,8 @@ COMMENT=	Flexible project management web application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+BROKEN=		fails to stage
+
 RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-rails52>=5.2.3:www/rubygem-rails52 \
 		rubygem-rouge>=3.12.0:textproc/rubygem-rouge \
