@@ -25,7 +25,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
-BUILD_DEPENDS=	gradle>=5.0:devel/gradle \
+BUILD_DEPENDS=	gradle5>=5.0:devel/gradle5 \
 	bash:shells/bash \
 	flex:textproc/flex \
 	fop:textproc/fop \
@@ -51,7 +51,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	NationalSecurityAgency
 
 GRADLE_HOME_BASE=	/tmp	# Gradle cache path must be absolute (see https://github.com/gradle/gradle/issues/1338)
-GRADLE_RUN=	${SETENV} ${MAKE_ENV} gradle \
+GRADLE_RUN=	${SETENV} ${MAKE_ENV} gradle5 \
 			--gradle-user-home ${GRADLE_HOME_BASE}/gradle-${PORTNAME} \
 			--no-daemon
 
