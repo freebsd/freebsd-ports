@@ -103,6 +103,7 @@ lib/bglibs/libvmailmgr.a
 %%PORTDOCS%%%%DOCSDIR%%/dir_d44c64559bbebec7f509842c48db8b23.html
 %%PORTDOCS%%%%DOCSDIR%%/dir_f8ab57e0d469b48445b5dfd63bafd7af.html
 %%PORTDOCS%%%%DOCSDIR%%/dns_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/dynsections.js
@@ -110,6 +111,8 @@ lib/bglibs/libvmailmgr.a
 %%PORTDOCS%%%%DOCSDIR%%/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/files.html
 %%PORTDOCS%%%%DOCSDIR%%/fmt_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/folderclosed.png
+%%PORTDOCS%%%%DOCSDIR%%/folderopen.png
 %%PORTDOCS%%%%DOCSDIR%%/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/gcrc_8h_source.html
@@ -148,6 +151,8 @@ lib/bglibs/libvmailmgr.a
 %%PORTDOCS%%%%DOCSDIR%%/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/md4_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/md5_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/menu.js
+%%PORTDOCS%%%%DOCSDIR%%/menudata.js
 %%PORTDOCS%%%%DOCSDIR%%/misc_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/msg_8h_source.html
@@ -167,6 +172,7 @@ lib/bglibs/libvmailmgr.a
 %%PORTDOCS%%%%DOCSDIR%%/sig_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/signalfd_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/socket_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/splitbar.png
 %%PORTDOCS%%%%DOCSDIR%%/str_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/striter_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/structSHA1__CTX.html
@@ -210,6 +216,7 @@ lib/bglibs/libvmailmgr.a
 %%PORTDOCS%%%%DOCSDIR%%/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/trigger_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/ucspi_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/uniondns__result__rrs.html
 %%PORTDOCS%%%%DOCSDIR%%/unix_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/wrap_8h_source.html
 man/man1/bg-installer.1.gz
