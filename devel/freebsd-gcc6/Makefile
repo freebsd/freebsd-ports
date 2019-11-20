@@ -92,39 +92,34 @@ PLIST_SUB+=	PLUGINS="@comment plugin does not build"
 PLIST_SUB+=	PLUGINS=""
 .endif
 
-.if ${TARGETARCH} == "aarch64"
-PLIST_SUB+=	ARM=""
-PLIST_SUB+=	AARCH64=""
-.else
-PLIST_SUB+=	ARM="@comment "
-PLIST_SUB+=	AARCH64="@comment "
-.endif
 .if ${TARGETARCH} == "amd64" || ${TARGETARCH} == "i386"
-PLIST_SUB+=	I386="" \
-		FLOAT_H="@comment "
+PLIST_SUB+=	FLOAT_H="@comment "
 .else
-PLIST_SUB+=	I386="@comment " \
-		FLOAT_H=""
+PLIST_SUB+=	FLOAT_H=""
+.endif
+
+PLIST=		${.CURDIR}/pkg-plist
+
+.if ${TARGETARCH} == "aarch64"
+PLIST+=		${.CURDIR}/pkg-plist.aarch64
+.endif
+.if ${TARGETARCH} == "aarch64" || ${TARGETARCH:Marm*}
+PLIST+=		${.CURDIR}/pkg-plist.arm
 .endif
 .if ${TARGETARCH} == "amd64"
-PLIST_SUB+=	AMD64=""
-.else
-PLIST_SUB+=	AMD64="@comment "
+PLIST+=		${.CURDIR}/pkg-plist.amd64
+.endif
+.if ${TARGETARCH} == "amd64" || ${TARGETARCH} == "i386"
+PLIST+=		${.CURDIR}/pkg-plist.i386
 .endif
 .if ${TARGETARCH:Mmips*}
-PLIST_SUB+=	MIPS=""
-.else
-PLIST_SUB+=	MIPS="@comment "
+PLIST+=		${.CURDIR}/pkg-plist.mips
 .endif
 .if ${TARGETARCH:Mpowerpc*}
-PLIST_SUB+=	POWERPC=""
-.else
-PLIST_SUB+=	POWERPC="@comment "
+PLIST+=		${.CURDIR}/pkg-plist.powerpc
 .endif
 .if ${TARGETARCH} == "sparc64"
-PLIST_SUB+=	SPARC64=""
-.else
-PLIST_SUB+=	SPARC64="@comment "
+PLIST+=		${.CURDIR}/pkg-plist.sparc64
 .endif
 
 post-install:
