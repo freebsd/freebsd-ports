@@ -3,7 +3,7 @@
 
 PORTNAME=	am-utils
 PORTVERSION=	6.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
@@ -42,6 +42,8 @@ OPENLDAP_CONFIGURE_WITH=	ldap
 OPENLDAP_PORTDOCS=		README.ldap ldap-id.txt ldap.schema
 
 OPTIONS_SUB=	yes
+
+USE_RC_SUBR=	amd
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/am-utils.info*
