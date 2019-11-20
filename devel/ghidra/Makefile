@@ -2,9 +2,9 @@
 
 PORTNAME=		ghidra
 DISTVERSIONPREFIX=	Ghidra_
-DISTVERSION=	9.0.4
+DISTVERSION=	9.1
 DISTVERSIONSUFFIX=	_build
-CATEGORIES=		devel security
+CATEGORIES=		devel security java
 MASTER_SITES=	SF/yajsw/yajsw/yajsw-stable-12.12/:yajsw \
 	SF/catacombae/HFSExplorer/0.21/:hfsexplorer \
 	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/android4me/:axml2printer \
@@ -34,21 +34,18 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=	bison shebangfix
 
-OPTIONS_RADIO=	JDK
-OPTIONS_RADIO_JDK=	JDK11 JDK12
-OPTIONS_DEFAULT=	JDK11
-
-JDK11_BUILD_DEPENDS=	${LOCALBASE}/openjdk11/bin/java:java/openjdk11
-JDK11_RUN_DEPENDS=		${LOCALBASE}/openjdk11/bin/java:java/openjdk11
-JDK12_BUILD_DEPENDS=	${LOCALBASE}/openjdk12/bin/java:java/openjdk12
-JDK12_RUN_DEPENDS=		${LOCALBASE}/openjdk12/bin/java:java/openjdk12
-
 SHEBANG_FILES=	Ghidra/RuntimeScripts/Linux/* \
 	Ghidra/RuntimeScripts/Linux/support/* \
-	Ghidra/RuntimeScripts/Linux/server/*
+	Ghidra/RuntimeScripts/Linux/server/* \
+	Ghidra/RuntimeScripts/Common/server/jaas_external_program.example.sh
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NationalSecurityAgency
+
+USE_JAVA=	yes
+JAVA_BUILD=	yes
+JAVA_RUN=	yes
+JAVA_VERSION=	11+
 
 GRADLE_HOME_BASE=	/tmp	# Gradle cache path must be absolute (see https://github.com/gradle/gradle/issues/1338)
 GRADLE_RUN=	${SETENV} ${MAKE_ENV} gradle5 \
@@ -66,8 +63,9 @@ DEV_UPDATE_MODE=	no
 
 .if (${DEV_UPDATE_MODE} == "yes")
 post-build:
-	@cd ${GRADLE_HOME_BASE} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX} gradle-${PORTNAME}
+	cd ${GRADLE_HOME_BASE} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX} gradle-${PORTNAME}
 	@${ECHO} "(!!!) Please upload the Gradle deps archive: ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}"
+	@${RM} -r ${GRADLE_HOME_BASE}/gradle-${PORTNAME}
 .else
 MASTER_SITES+=	https://github.com/sghctoma/ghidra-deps/raw/master/:gradle
 DISTFILES+=		${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}:gradle
@@ -92,18 +90,12 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/share/sgml/docbook/xsl-stylesheets|${LOCALBASE}/share/xsl/docbook/|g" \
 		${WRKSRC}/Ghidra/Features/Decompiler/src/main/doc/*.xsl \
 		${WRKSRC}/Ghidra/Features/FunctionID/src/main/doc/*.xsl
-
-post-patch-JDK11-on:
-	@${ECHO_CMD} "org.gradle.java.home=${LOCALBASE}/openjdk11" > ${WRKSRC}/gradle.properties
-
-post-patch-JDK12-on:
-	@${ECHO_CMD} "org.gradle.java.home=${LOCALBASE}/openjdk12" > ${WRKSRC}/gradle.properties
+	@${REINPLACE_CMD} -e "s|JAVA_HOME_PLACEHOLDER|${JAVA_HOME}|" \
+		${WRKSRC}/Ghidra/RuntimeScripts/Linux/support/launch.sh
+	@${ECHO_CMD} "org.gradle.java.home=${JAVA_HOME}" > ${WRKSRC}/gradle.properties
 
 do-build:
-	cd ${WRKSRC} && ${GRADLE_RUN} yajswDevUnpack buildGhidra
-
-post-build:
-	@${RM} ${GRADLE_HOME_BASE}/gradle-${PORTNAME}
+	@cd ${WRKSRC} && ${GRADLE_RUN} yajswDevUnpack buildGhidra
 
 do-install:
 	@${UNZIP_CMD} -d ${STAGEDIR} ${WRKSRC}/build/dist/*.zip

@@ -1,4 +1,4 @@
---- Ghidra/Features/Decompiler/src/decompile/cpp/types.h.orig	2019-04-03 17:38:23 UTC
+--- Ghidra/Features/Decompiler/src/decompile/cpp/types.h.orig	2019-10-23 20:54:54 UTC
 +++ Ghidra/Features/Decompiler/src/decompile/cpp/types.h
 @@ -101,6 +101,36 @@ typedef char int1;
  typedef uint8 uintp;

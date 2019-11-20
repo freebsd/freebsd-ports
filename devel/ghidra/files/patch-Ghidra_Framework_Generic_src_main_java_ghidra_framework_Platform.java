@@ -1,4 +1,4 @@
---- Ghidra/Framework/Generic/src/main/java/ghidra/framework/Platform.java.orig	2019-04-03 17:38:23 UTC
+--- Ghidra/Framework/Generic/src/main/java/ghidra/framework/Platform.java.orig	2019-10-23 20:54:54 UTC
 +++ Ghidra/Framework/Generic/src/main/java/ghidra/framework/Platform.java
 @@ -70,7 +70,17 @@ public enum Platform {
  	 */
