@@ -4,6 +4,7 @@ include/upnp/Callback.h
 include/upnp/Discovery.h
 include/upnp/Event.h
 include/upnp/EventSubscribe.h
+include/upnp/ExtraHeaders.h
 include/upnp/FileInfo.h
 include/upnp/StateVarComplete.h
 include/upnp/StateVarRequest.h
@@ -28,11 +29,11 @@ include/upnp/upnpconfig.h
 %%TOOLS%%include/upnp/upnptools.h
 lib/libixml.a
 lib/libixml.so
-lib/libixml.so.10
-lib/libixml.so.10.0.1
+lib/libixml.so.11
+lib/libixml.so.11.0.0
 lib/libupnp.a
 lib/libupnp.so
-lib/libupnp.so.13
-lib/libupnp.so.13.0.0
+lib/libupnp.so.15
+lib/libupnp.so.15.0.0
 libdata/pkgconfig/libupnp.pc
 %%PORTDOCS%%%%DOCSDIR%%/UPnP_Programming_Guide.pdf
