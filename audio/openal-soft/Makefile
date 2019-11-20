@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 CONFLICTS=	openal-200[0-9]*
 
 USES=		cmake compiler:c11 tar:bzip2
-USE_BINUTILS=	yes
+LLD_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_DATADIR:STRING="${PREFIX}/etc"
@@ -27,11 +27,8 @@ CMAKE_OFF=	ALSOFT_BACKEND_ALSA \
 CMAKE_ON=	ALSOFT_BACKEND_WAVE \
 		ALSOFT_UTILS
 
-# use gold linker due to some problems with ld.bfd on 12-STABLE,
-# cf. PR 235603
 # do not link with librt and libdl.
-LDFLAGS+=	-fuse-ld=gold \
-		-Wl,--as-needed
+LDFLAGS+=	-Wl,--as-needed
 
 OPTIONS_DEFINE=		EXAMPLES CONFIG JACK OSS PORTAUDIO PULSEAUDIO SDL SNDIO
 OPTIONS_DEFAULT=	OSS
