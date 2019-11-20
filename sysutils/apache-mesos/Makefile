@@ -2,7 +2,7 @@
 
 PORTNAME=	mesos
 PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	APACHE/mesos/${PORTVERSION}
 PKGNAMEPREFIX=	apache-
@@ -13,7 +13,6 @@ COMMENT=	Cluster manager providing resource isolation and sharing
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build
 IGNORE_FreeBSD_11=	does not build
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
