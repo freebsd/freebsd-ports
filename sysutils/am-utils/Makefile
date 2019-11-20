@@ -3,7 +3,7 @@
 
 PORTNAME=	am-utils
 PORTVERSION=	6.2
-PORTREVISION=	5
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
@@ -16,9 +16,10 @@ COMMENT=	Berkeley Automounter Suite of Utilities
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	OPENLDAP DOCS
+OPTIONS_DEFINE=	OPENLDAP DOCS RC
 OPTIONS_DEFAULT=OPENLDAP
 OPENLDAP_DESC=	OpenLDAP support
+RC_DESC=	Use the rc script in this port
 
 USES=		autoreconf:build bison libtool makeinfo perl5
 USE_LDCONFIG=	yes
@@ -43,7 +44,7 @@ OPENLDAP_PORTDOCS=		README.ldap ldap-id.txt ldap.schema
 
 OPTIONS_SUB=	yes
 
-USE_RC_SUBR=	amd
+RC_USE_RC_SUBR=	amd
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/am-utils.info*
