@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/licenses/LICENSE.rst
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		python:-3.6
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
