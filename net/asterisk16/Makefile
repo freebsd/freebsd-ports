@@ -290,6 +290,9 @@ post-configure-NEWG711-on:
 post-configure-OPTIMIZED_CFLAGS-off:
 	@cd ${WRKSRC} && ./menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts
 
+post-configure-OPUS-on:
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable codec_opus_open_source menuselect.makeopts
+
 post-install:
 	@${RM} ${STAGEDIR}${ETCDIR}/*.conf ${STAGEDIR}${ETCDIR}/extensions.ael ${STAGEDIR}${ETCDIR}/extensions.lua
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/ast[a-f]* ${STAGEDIR}${PREFIX}/lib/*.so.* ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules/*.so ${STAGEDIR}${DATADIR}/agi-bin/eagi-*
