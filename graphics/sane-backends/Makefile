@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		gmake jpeg libtool localbase pathfix pkgconfig
+USES=		compiler:c++11-lang gmake jpeg libtool localbase pathfix \
+		pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-locking \
