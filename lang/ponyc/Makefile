@@ -5,7 +5,7 @@ DISTVERSION=	0.33.0
 CATEGORIES=	lang
 
 MAINTAINER=	greg@unrelenting.technology
-COMMENT?=	Pony language compiler
+COMMENT=	Pony language compiler
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,6 +14,17 @@ ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Undefined reference to __atomic_compare_exchange_8
 
 BUILD_DEPENDS=	llvm-link${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+
+FLAVORS=	llvm_dynamic llvm_static
+FLAVOR?=	${FLAVORS:[1]}
+
+llvm_dynamic_RUN_DEPENDS=	llvm-link${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+llvm_dynamic_CONFLICTS_INSTALL=	ponyc-static
+llvm_static_PKGNAMESUFFIX=	-static
+llvm_static_CONFLICTS_INSTALL=	ponyc
+.if ${FLAVOR} == llvm_static
+COMMENT+=			(statically linked with LLVM)
+.endif
 
 USES=		gmake ncurses compiler:c++11-lang
 
@@ -30,19 +41,18 @@ PORTDOCS=	*.md
 MAKE_ENV=	config=release verbose=true default_pic=true \
 		prefix=${PREFIX} arch=${PONYARCH} \
 		LLVM_CONFIG=llvm-config${LLVM_VERSION}
+.if ${FLAVOR} == llvm_dynamic
+MAKE_ENV+=	link=llvm-dynamic
+.else
+MAKE_ENV+=	link=llvm-static
+.endif
 
-CONFLICTS_INSTALL?=	ponyc-static
-
-OPTIONS_DEFINE=			DOCS DTRACE EXAMPLES STATIC
+OPTIONS_DEFINE=			DOCS DTRACE EXAMPLES
 OPTIONS_EXCLUDE_aarch64=	DTRACE
 # Not enabling DTrace by default yet because it breaks --runtimebc ("super LTO"):
 # https://github.com/ponylang/ponyc/issues/2915
 
 DTRACE_MAKE_ENV=		use=dtrace
-
-STATIC_RUN_DEPENDS_OFF=	llvm-link${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-STATIC_MAKE_ENV_OFF=	link=llvm-dynamic
-STATIC_MAKE_ENV=	link=llvm-static
 
 .include <bsd.port.pre.mk>
 
