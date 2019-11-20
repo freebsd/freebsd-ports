@@ -15,7 +15,7 @@ COMMENT=	Data mining toolkit
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	gradle:devel/gradle
+BUILD_DEPENDS=	gradle5:devel/gradle5
 
 USE_JAVA=	yes
 USE_GITHUB=	yes
@@ -41,7 +41,7 @@ post-extract:
 	@cd ${DEPS_CACHE_DIR} && ${TAR} xzf ${DISTDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle5 \
 		--gradle-user-home ${DEPS_CACHE_DIR}/gradle-${PORTNAME} --project-cache-dir ${DEPS_CACHE_DIR}/gradle-${PORTNAME} \
 		--offline --build-cache shadowJar
 

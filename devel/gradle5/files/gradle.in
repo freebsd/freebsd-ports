@@ -1,0 +1,2 @@
+#!/bin/sh
+exec "%%JAVA%%" -Dorg.gradle.native=false $JAVA_OPTS -classpath "%%DATADIR%%/lib/gradle-launcher-%%PORTVERSION%%.jar" org.gradle.launcher.GradleMain "$@"
