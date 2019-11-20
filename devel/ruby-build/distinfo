@@ -1,3 +1,7 @@
-TIMESTAMP = 1573536019
-SHA256 (rbenv-ruby-build-v20191111_GH0.tar.gz) = 9cbadf9c7cb4cd92b05b1d3e8c59937c524748c5c29b05a5b68ee66f84160899
-SIZE (rbenv-ruby-build-v20191111_GH0.tar.gz) = 64144
+TIMESTAMP = 1574256034
+SHA256 (rbenv/rbenv-ruby-build-v20191111_GH0.tar.gz) = 9cbadf9c7cb4cd92b05b1d3e8c59937c524748c5c29b05a5b68ee66f84160899
+SIZE (rbenv/rbenv-ruby-build-v20191111_GH0.tar.gz) = 64144
+SHA256 (rbenv/2fa12aa.patch) = 9c57f04d61e57e1d8bdd10c2d41d89b67ff32dc438a8baec896a5f8bcb29c3a7
+SIZE (rbenv/2fa12aa.patch) = 1559
+SHA256 (rbenv/d6af53e.patch) = 1bf9f37a98127a8c09695b438adcbc44e3d8fa011f3502f7f6528a7b4ed00b21
+SIZE (rbenv/d6af53e.patch) = 1443

@@ -3,7 +3,12 @@
 PORTNAME=	ruby-build
 PORTVERSION=	20191111
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel ruby
+DIST_SUBDIR=	rbenv
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	2fa12aa.patch:-p1 d6af53e.patch:-p1
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Compile and install different ruby versions
