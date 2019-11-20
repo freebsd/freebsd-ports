@@ -3,16 +3,14 @@
 
 PORTNAME=	medit
 PORTVERSION=	2012.02.05
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science graphics
-MASTER_SITES=	http://www.ann.jussieu.fr/~frey/ftp/archives/
+MASTER_SITES=	https://www.ljll.math.upmc.fr/~frey/ftp/archives/
 DISTFILES=	${SOURCETARB} ${LIBTARBALL}
 EXTRACT_ONLY=	${SOURCETARB}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Interactive meshes visualization
-
-BROKEN=		unfetchable
 
 LICENSE=	None
 LICENSE_NAME=	Special grant
@@ -23,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/cfortran.h:lang/cfortran
 
 USES=		gl gmake tar:tgz xorg
 USE_XORG=	x11 xmu xext
-USE_GL=		glut
+USE_GL=		gl glu glut
 MAKEFILE=	makefile
 ALL_TARGET=	${OPSYS}
 MAKE_ENV=	WRKSRC="${WRKSRC}" ARCHI=${OPSYS} ARCH=${ARCH} OSREL=${OSREL}
