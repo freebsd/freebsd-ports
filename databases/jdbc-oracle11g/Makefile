@@ -2,7 +2,7 @@
 
 PORTNAME=	oracle11g
 PORTVERSION=	11.2.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases java
 MASTER_SITES=	# http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-112010-090769.html
 PKGNAMEPREFIX=	jdbc-
@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JDBC drivers for Oracle 11g
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7 1.8
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
