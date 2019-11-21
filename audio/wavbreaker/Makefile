@@ -1,12 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	wavbreaker
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	6b73eb4c5d71.patch:-p1
-PATCHFILES+=	c5df6ded1716.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GUI tool to split WAV and MP3 files
