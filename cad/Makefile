@@ -16,6 +16,7 @@
     SUBDIR += brlcad
     SUBDIR += calculix
     SUBDIR += calculix-ccx
+    SUBDIR += caneda
     SUBDIR += cascade
     SUBDIR += chipvault
     SUBDIR += cura-engine
