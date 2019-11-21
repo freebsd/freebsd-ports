@@ -1,0 +1,10 @@
+--- Makefile.orig
++++ Makefile
+@@ -1,6 +1,6 @@
+ PROG=	bsdec2-image-upload
+ SRCS=	main.c
+-NO_MAN	?=	yes
++MAN	=
+ WARNS	?=	3
+ BINDIR	?=	/usr/local/bin
+ LDADD	+=	-lcrypto -lssl
