@@ -9,7 +9,7 @@ COMMENT=	Solaris Modular Debugger
 
 LICENSE=	CDDL
 
-USES=		uidfix
+USES=		compiler uidfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdjhb
@@ -29,6 +29,15 @@ CFLAGS+=	-DMDB_PREFIX=\\\"${PREFIX}\\\" -g
 
 .if !exists(${SRC_BASE}/cddl/compat) || !exists(${SRC_BASE}/sys/cddl/compat)
 IGNORE=		requires full source tree with CDDL sources
+.endif
+
+.if ${OSVERSION} < 1300015 && ${COMPILER_TYPE} == "clang" && \
+    ${COMPILER_VERSION} >= 80
+# clang 8 cannot compile due to enum redefinitions in kernel.h
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang70:devel/llvm70
+CPP=	${LOCALBASE}/bin/clang-cpp70
+CC=	${LOCALBASE}/bin/clang70
+CXX=	${LOCALBASE}/bin/clang++70
 .endif
 
 pre-install:
