@@ -3,6 +3,7 @@
 
 PORTNAME=	redis
 DISTVERSION=	5.0.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 PKGNAMESUFFIX=	-devel
@@ -64,7 +65,7 @@ USES+=		tcl:build
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
 
-CONFLICTS?=	redis-4.*
+CONFLICTS?=	redis4-4.* redis-5.*
 
 USE_RC_SUBR=	redis sentinel
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb \
