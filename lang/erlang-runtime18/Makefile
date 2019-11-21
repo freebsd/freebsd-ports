@@ -4,6 +4,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	18.3.4.11
+PORTREVISION=	1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime18
 DIST_SUBDIR=	erlang
@@ -12,6 +13,9 @@ MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
 
 LICENSE=	APACHE20
+
+DEPRECATED=	No longer supported upstream, use lang/erlang >=21
+EXPIRATION_DATE=	2020-01-01
 
 USES=		autoreconf:build gmake ncurses perl5
 USE_GITHUB=	yes
