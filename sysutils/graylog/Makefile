@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	graylog
-DISTVERSION=	3.0.2
+DISTVERSION=	3.1.2
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://packages.graylog2.org/releases/graylog/
 
-MAINTAINER=	thomas@bartelmess.io
+MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Tool for centralized log collection
 
 LICENSE=	GPLv3+
