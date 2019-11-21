@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}${DISTVERSIONSUFFIX}
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland screen capture plugin for obs-studio
 
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC:H}/COPYING.md
+
 BUILD_DEPENDS=	${LOCALBASE}/include/obs/obs-module.h:multimedia/obs-studio
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
