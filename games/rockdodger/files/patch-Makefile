@@ -1,33 +1,71 @@
---- ./Makefile.orig	2013-12-28 17:42:18.000000000 +0100
-+++ ./Makefile	2014-03-30 19:00:15.799562742 +0200
-@@ -34,9 +34,9 @@
+--- Makefile.orig	2018-07-28 08:20:48 UTC
++++ Makefile
+@@ -25,7 +25,7 @@ VRELEASE=3
+ VERSION=$(VMAJOR).$(VMINOR).$(VRELEASE)
+ PACKAGENAME=rockdodger
+ 
+-prefix = $(DESTDIR)/usr/local
++prefix = ${PREFIX}
+ INSTALL=/usr/bin/install
+ TMP=/tmp
+ 
+@@ -34,14 +34,14 @@ datarootdir = $(prefix)/share
  datadir = $(datarootdir)
  bindir = $(exec_prefix)/bin
  docdir = $(datarootdir)/doc/$(PACKAGENAME)
 -mandir = $(datarootdir)/man
 -localstatedir = $(prefix)/var
--gamesdir = $(localstatedir)/games
-+mandir =$(prefix)/man
-+#localstatedir = $(prefix)/var
-+gamesdir = $(datarootdir)/$(PACKAGENAME)
++mandir = $(prefix)/man
++localstatedir = /var
+ gamesdir = $(localstatedir)/games
  
  NEWD=$(PACKAGENAME)-$(VERSION)
- COMPILEDATE=$(shell date '+%Y-%m-%d')
-@@ -100,12 +100,12 @@
+ COMPILEDATE=$(shell date --date=@$${SOURCE_DATE_EPOCH:-$$(date +%s)} '+%Y-%m-%d')
+ TARPKGNAME=$(NEWD).pkg.tgz
+-OPTIONS=-DVERSION=\"$(VERSION)\" -DCOMPILEDATE=\"$(COMPILEDATE)\" -Wall `$(SDL_CONFIG) --cflags`
++OPTIONS=-DVERSION=\"$(VERSION)\" -DCOMPILEDATE=\"earth\" -Wall `$(SDL_CONFIG) --cflags`
+ EXENAME=rockdodger
+ 
+ SOUNDLIBRARIES=-lSDL_mixer
+@@ -60,14 +60,9 @@ ifeq ($(profile),1)
+ 	OPTIONS+=-pg
+ endif
+ ifeq ($(debug),0)
+-	OPTIONS+=-O2 -DNDEBUG
+-	ifneq ($(profile),1)
+-		OPTIONS+=-fomit-frame-pointer
+-	endif
+ else
+-	OPTIONS+=-O1 -DDEBUG
+ endif
+-CFLAGS=-MMD -g $(OPTIONS) $(MOREOPTS)
++CFLAGS+=-MMD $(OPTIONS) $(CPPFLAGS)
+ 
+ all:	$(EXENAME) config.h
+ 
+@@ -98,16 +93,16 @@ pkg:	$(EXENAME)
+ 	tar -C $$DTEMP -cvzf $(TARPKGNAME) . && rm -r $$DTEMP)
+ 
  install:	all
- 	$(INSTALL) -d $(bindir) $(gamesdir)
- 	$(INSTALL) $(EXENAME) $(bindir)
+-	$(INSTALL) -d $(bindir) $(gamesdir)
+-	$(INSTALL) $(EXENAME) $(bindir)
 -	-chgrp games $(bindir)/$(EXENAME)
 -	chmod g+s $(bindir)/$(EXENAME)
++	$(INSTALL) -d ${DESTDIR}$(bindir) ${DESTDIR}$(gamesdir)
++	$(INSTALL) $(EXENAME) ${DESTDIR}$(bindir)
 +#	-chgrp games $(bindir)/$(EXENAME)
 +#	chmod g+s $(bindir)/$(EXENAME)
  	$(MAKE) -C data install
 -	touch $(gamesdir)/rockdodger.scores
 -	-chgrp games $(gamesdir)/rockdodger.scores
 -	chmod g+rw $(gamesdir)/rockdodger.scores
-+#	touch $(gamesdir)/rockdodger.scores
+-	mkdir -p $(mandir)/man6
+-	gzip -9n < $(MANPAGE) > $(mandir)/man6/$(MANPAGE).gz
++	touch ${DESTDIR}$(gamesdir)/rockdodger.scores
 +#	-chgrp games $(gamesdir)/rockdodger.scores
 +#	chmod g+rw $(gamesdir)/rockdodger.scores
- 	mkdir -p $(mandir)/man6
- 	gzip  < $(MANPAGE) > $(mandir)/man6/$(MANPAGE).gz
++	mkdir -p ${DESTDIR}$(mandir)/man6
++	gzip -9n < $(MANPAGE) > ${DESTDIR}$(mandir)/man6/$(MANPAGE).gz
  
+ uninstall:
+ 	rm -f $(gamesdir)/rockdodger.scores
