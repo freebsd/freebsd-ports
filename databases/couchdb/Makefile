@@ -3,7 +3,7 @@
 
 PORTNAME=	couchdb
 DISTVERSION=	1.7.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	2
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/couchdb/source/${DISTVERSION}
@@ -14,6 +14,9 @@ COMMENT=	Document database server, accessible via a RESTful JSON API
 
 LICENSE=	APACHE20 BSD3CLAUSE ISCL WTFPL OFL11
 LICENSE_COMB=	multi
+
+DEPRECATED=	No longer supported upstream, move to databases/couchdb2
+EXPIRATION_DATE=	2020-01-01
 
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		libmozjs185.so:lang/spidermonkey185 \

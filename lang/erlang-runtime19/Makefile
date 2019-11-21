@@ -4,6 +4,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	19.3.6.13
+PORTREVISION=	1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime19
 DIST_SUBDIR=	erlang
@@ -13,6 +14,8 @@ COMMENT=	Functional programming language from Ericsson
 
 LICENSE=	APACHE20
 
+DEPRECATED=	No longer supported upstream, use lang/erlang >=21
+EXPIRATION_DATE=	2020-01-01
 BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
 USES=		autoreconf:build gmake ncurses perl5

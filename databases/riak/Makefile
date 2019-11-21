@@ -2,7 +2,7 @@
 
 PORTNAME=	riak
 PORTVERSION=	1.4.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	http://s3.amazonaws.com/downloads.basho.com/riak/${PORTVERSION:R}/${PORTVERSION}/ \
 		http://downloads.basho.com.s3.amazonaws.com/riak/${PORTVERSION:R}/${PORTVERSION}/
@@ -13,6 +13,8 @@ COMMENT=	Open source, distributed, noSQL database
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No longer supported upstream, see riak 2.9.0 and newer
+EXPIRATION_DATE=	2020-01-01
 BROKEN_aarch64=	Does not compile: error: Unknown CPU architecture
 BROKEN_powerpc64=	Does not compile: error: Unknown CPU architecture
 BROKEN_sparc64=	Does not compile: Please implement AtomicPointer for this platform
