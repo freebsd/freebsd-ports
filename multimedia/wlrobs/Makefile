@@ -4,7 +4,7 @@ PORTNAME=	wlrobs
 PORTVERSION=	s20191120
 DISTVERSIONSUFFIX=	-8b4656a90bc7
 CATEGORIES=	multimedia
-MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONSUFFIX:S/^-//}${EXTRACT_SUFX}?dummy=/
+#MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONSUFFIX:S/^-//}${EXTRACT_SUFX}?dummy=/
 MASTER_SITES+=	LOCAL/jbeich # https://todo.sr.ht/~sircmpwn/hg.sr.ht/33
 DISTNAME=	${PORTNAME}${DISTVERSIONSUFFIX}
 
