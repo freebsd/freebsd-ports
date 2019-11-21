@@ -1,2 +1,7 @@
-SHA256 (wavbreaker-0.11.tar.gz) = a1d70fc54f92f20fb4cc2ef01beb8f60bc5e8d1cedde6b1e5f8f453b14ead2d1
-SIZE (wavbreaker-0.11.tar.gz) = 496733
+TIMESTAMP = 1574016889
+SHA256 (thp-wavbreaker-0.12_GH0.tar.gz) = 6546a80ce77739e3fda9637820a529573a8f9a2b18e5a3349330214fefca0b6b
+SIZE (thp-wavbreaker-0.12_GH0.tar.gz) = 385108
+SHA256 (6b73eb4c5d71.patch) = ad209e97ad694ef27a257aaad091b4f776c43004b15c85c12e6d1323ef5a0dcb
+SIZE (6b73eb4c5d71.patch) = 807
+SHA256 (c5df6ded1716.patch) = ca5668fbadee525abc35ead39ea9b344d948b097a0355235e1de758fe19bd457
+SIZE (c5df6ded1716.patch) = 1212
