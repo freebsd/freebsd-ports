@@ -14,7 +14,7 @@
 name="amd"
 desc="Automatically mount filesystems"
 rcvar="amd_enable"
-command="/usr/sbin/${name}"
+command=%%PREFIX%%/sbin/${name}
 start_precmd="amd_precmd"
 command_args="&"
 extra_commands="reload"
