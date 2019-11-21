@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sanoid
-PORTVERSION=	1.0.0.20190619
-PORTREVISION=	2
+PORTVERSION=	1.0.0.20191105
+PORTREVISION=	0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 
@@ -22,7 +22,7 @@ USES=		shebangfix perl5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jimsalterjrs
-GH_TAGNAME=	a90eec3
+GH_TAGNAME=	45d0898
 
 USE_PERL5=	run
 SHEBANG_FILES=	findoid sanoid sleepymutex syncoid
