@@ -1,0 +1,38 @@
+[
+{ type: install
+  message: <<EOM
+You installed OpenHantek: the client for Hantek PC-oscilloscope.
+
+In order for OpenHantek to work you need:
+1. Have compatible device: DSO-6022, DSO-2020, etc.
+2. Make sure that your USB device has permissions for your user.
+   You can achieve this by adding a records like this to your
+   /etc/devd.conf:
+
+notify 100 {
+	match "system"		"USB";
+	match "subsystem"	"DEVICE";
+	match "type"		"ATTACH";
+	match "vendor"	"0x04b4";
+	match "product"	"0x6022";
+	action "/usr/sbin/chown {your-user}:users /dev/usb/8.5.*";
+};
+notify 100 {
+	match "system"		"USB";
+	match "subsystem"	"DEVICE";
+	match "type"		"ATTACH";
+	match "vendor"	"0x04b5";
+	match "product"	"0x6022";
+	action "/usr/sbin/chown {your-user}:users /dev/usb/8.5.*";
+};
+
+The "action" above doesn't use $device-name due to:
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=242111
+
+Also please note that devices like this have two vendor/product id
+combinations, before and after loading the firmware, hence two
+commands above.
+
+EOM
+}
+]
