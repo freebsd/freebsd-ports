@@ -20,7 +20,8 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libksba.so:security/libksba \
 		libnpth.so:devel/npth
 BUILD_DEPENDS=	libassuan>=2.5.1:security/libassuan \
-		libgpg-error>=1.16:security/libgpg-error
+		libgpg-error>=1.16:security/libgpg-error \
+		makeinfo:print/texinfo
 RUN_DEPENDS=	pinentry:security/pinentry
 
 USES=		compiler:c11 cpe gmake iconv pkgconfig readline sqlite tar:bzip2
@@ -44,8 +45,6 @@ LDAP_DESC=	LDAP keyserver interface
 SCDAEMON_DESC=	Enable Smartcard daemon (with libusb)
 SUID_GPG_DESC=	Install GPG with suid
 WKS_SERVER_DESC=Install the Web Key Service server
-
-DOCS_BUILD_DEPENDS=	makeinfo:print/texinfo
 
 GNUTLS_CONFIGURE_ENABLE=gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
