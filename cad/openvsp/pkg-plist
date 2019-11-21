@@ -76,3 +76,17 @@ bin/vspviewer
 %%DATADIR%%/testanimate.vspscript
 %%DATADIR%%/vspIcon.png
 %%DATADIR%%/window.tga
+vspaero_ex/Isolated_Rotor/README.md
+vspaero_ex/Isolated_Rotor/Steady_Rotating_Frame/README.md
+vspaero_ex/Isolated_Rotor/Steady_Rotating_Frame/prop_DegenGeom.vspaero
+vspaero_ex/Isolated_Rotor/Unsteady_Rotating_Blades/README.md
+vspaero_ex/Isolated_Rotor/Unsteady_Rotating_Blades/prop_DegenGeom.groups
+vspaero_ex/Isolated_Rotor/Unsteady_Rotating_Blades/prop_DegenGeom.vspaero
+vspaero_ex/Isolated_Rotor/prop.vsp3
+vspaero_ex/Isolated_Rotor/prop_DegenGeom.csv
+vspaero_ex/README.md
+vspaero_ex/Uber_eCRM-002/README.md
+vspaero_ex/Uber_eCRM-002/uber2.vsp3
+vspaero_ex/Uber_eCRM-002/uber2_DegenGeom.csv
+vspaero_ex/Uber_eCRM-002/uber2_DegenGeom.groups
+vspaero_ex/Uber_eCRM-002/uber2_DegenGeom.vspaero
