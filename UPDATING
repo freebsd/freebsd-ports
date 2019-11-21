@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191108:
+  AFFECTS: users of databases/redis[-devel]
+  AUTHOR: osa@FreeBSD.org
+
+  The databases/redis port has been updated to the recent stable release.
+  Users wanting to stay on v4.x can replace databases/redis with 
+  databases/redis4 with one of the following commands:
+
+  # pkg install databases/redis4
+    or
+  # portmaster -o databases/redis4 databases/redis
+    or
+  # portupgrade -o databases/redis4 databases/redis
+
 20191103:
   AFFECTS: users of www/node
   AUTHOR: bhughes@FreeBSD.org
