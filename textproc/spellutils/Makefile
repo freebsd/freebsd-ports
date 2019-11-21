@@ -5,12 +5,10 @@ PORTNAME=	spellutils
 PORTVERSION=	0.7
 PORTREVISION=	4
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.sourcefiles.org/Utilities/Text_Utilities/
+MASTER_SITES=	LOCAL/thierry
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Programs used to isolate some parts or texts before spell-checking
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
