@@ -102,7 +102,7 @@ PROCESS_CHECK_CONFIGURE_ENABLE=	process-check
 
 POSIX_ACL_CONFIGURE_ENABLE=	posix-acl
 
-PRELUDE_LIB_DEPENDS=		prelude:security/libprelude
+PRELUDE_LIB_DEPENDS=		libprelude.so:security/libprelude
 PRELUDE_CONFIGURE_WITH=		prelude
 
 PTRACE_CONFIGURE_ENABLE=	ptrace
