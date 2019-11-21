@@ -2,7 +2,7 @@
 
 PORTNAME=	openvsp
 DISTVERSIONPREFIX=	${GH_PROJECT}_
-DISTVERSION=	3.19.0
+DISTVERSION=	3.19.1
 CATEGORIES=	cad
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -66,8 +66,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${BUILD_WRKSRC}/${BUILD_PREFIX}/vspIcon.png ${STAGEDIR}${DATADIR}
 	${RM} ${STAGEDIR}${PREFIX}/vspIcon.png ${BUILD_WRKSRC}/${BUILD_PREFIX}/vspIcon.png
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${BUILD_PREFIX}/vsp* ${STAGEDIR}${PREFIX}/bin
-	${RM} ${STAGEDIR}${PREFIX}/vsp*
+.for f in vsp vspaero vspscript vspslicer vspviewer
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${BUILD_PREFIX}/${f} ${STAGEDIR}${PREFIX}/bin
+	${RM} ${STAGEDIR}${PREFIX}/${f}
+.endfor
 .for d in CustomScripts airfoil matlab scripts textures
 	(cd ${BUILD_WRKSRC}/${BUILD_PREFIX}/${d} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${RM} -rf ${STAGEDIR}${PREFIX}/${d}
