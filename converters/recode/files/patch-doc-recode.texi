@@ -1,0 +1,11 @@
+--- doc/recode.texi.old	2019-11-21 09:46:48.892507000 +0000
++++ doc/recode.texi	2019-11-21 09:47:01.878388000 +0000
+@@ -3713,7 +3713,7 @@
+ between HTML and various other charsets.
+ 
+ Here is a list of those HTML variants which @code{recode} supports.
+-Some notes have been provided by François Yergeau @email{yergeau@@alis.com}.
++Some notes have been provided by Francois Yergeau @email{yergeau@@alis.com}.
+ 
+ @table @code
+ @item XML-standalone
