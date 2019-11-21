@@ -19,8 +19,6 @@ lib/tiled/plugins/liblua.so
 lib/tiled/plugins/libreplicaisland.so
 lib/tiled/plugins/libtbin.so
 lib/tiled/plugins/libtengine.so
-%%QT_QMLDIR%%/org/mapeditor/Tiled/libtiledquickplugin.so
-%%QT_QMLDIR%%/org/mapeditor/Tiled/qmldir
 man/man1/tiled.1.gz
 man/man1/tmxrasterizer.1.gz
 man/man1/tmxviewer.1.gz
