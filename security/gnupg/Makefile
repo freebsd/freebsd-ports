@@ -2,7 +2,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	2.2.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -45,6 +45,8 @@ SCDAEMON_DESC=	Enable Smartcard daemon (with libusb)
 SUID_GPG_DESC=	Install GPG with suid
 WKS_SERVER_DESC=Install the Web Key Service server
 
+DOCS_BUILD_DEPENDS=	makeinfo:print/texinfo
+
 GNUTLS_CONFIGURE_ENABLE=gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
@@ -60,6 +62,11 @@ NLS_USES=		gettext
 SCDAEMON_CONFIGURE_ENABLE=	scdaemon
 
 WKS_SERVER_CONFIGURE_ENABLE=	wks-tools
+
+# Touch the texinfo files to force makeinfo to run.  This fixes Linuxisms in
+# the paths in the man pages.
+pre-build:
+	@${TOUCH} ${WRKSRC}/doc/*.texi
 
 post-install:
 	@${MV} ${STAGEDIR}${DATADIR}/help*.txt ${STAGEDIR}${DOCSDIR}
