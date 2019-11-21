@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minetest_game
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 DATADIR=	${PREFIX}/share/minetest/games/${PORTNAME}
 PORTDATA=	*
-PORTDOCS=	README.txt game_api.txt schematic_tables.txt settingtypes.txt
+PORTDOCS=	README.md game_api.txt schematic_tables.txt settingtypes.txt
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
