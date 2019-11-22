@@ -1,18 +1,18 @@
---- mt.h.orig	2014-02-16 09:06:54.000000000 -0500
-+++ mt.h	2014-02-24 14:32:20.000000000 -0500
-@@ -49,8 +49,13 @@
+--- mt.h.orig	2019-11-09 18:07:35 UTC
++++ mt.h
+@@ -60,8 +60,13 @@ typedef enum { SCHEME_TYPE_EDIT = 0, SCHEME_TYPE_FILTE
  #endif
  
- #ifdef UTF8_SUPPORT
+ #if defined(UTF8_SUPPORT) && !defined(__APPLE__)
 -	#include <ncursesw/panel.h>
 -	#include <ncursesw/ncurses.h>
 +	#if defined(__FreeBSD__)
-+	    #include <panel.h>
-+	    #include <curses.h>
++		#include <panel.h>
++		#include <curses.h>
 +	#else
-+	    #include <ncursesw/panel.h>
-+	    #include <ncursesw/ncurses.h>
++		#include <ncursesw/panel.h>
++		#include <ncursesw/ncurses.h>
 +	#endif
  #else
- 	#if defined(sun) || defined(__sun) || defined(scoos) || defined(_HPUX_SOURCE) || defined(AIX) || defined(__CYGWIN__)
- 		#include <ncurses/panel.h>
+ 	#if defined(__APPLE__)
+         #include <ncurses.h>
