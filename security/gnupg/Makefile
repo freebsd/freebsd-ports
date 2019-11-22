@@ -20,11 +20,10 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libksba.so:security/libksba \
 		libnpth.so:devel/npth
 BUILD_DEPENDS=	libassuan>=2.5.1:security/libassuan \
-		libgpg-error>=1.16:security/libgpg-error \
-		makeinfo:print/texinfo
+		libgpg-error>=1.16:security/libgpg-error
 RUN_DEPENDS=	pinentry:security/pinentry
 
-USES=		compiler:c11 cpe gmake iconv pkgconfig readline sqlite tar:bzip2
+USES=		compiler:c11 cpe gmake iconv makeinfo pkgconfig readline sqlite tar:bzip2
 
 CONFLICTS=	gnupg-2.0.* dirmngr-[0-9]*
 CPE_VENDOR=	gnupg
