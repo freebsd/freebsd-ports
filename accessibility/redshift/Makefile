@@ -4,6 +4,7 @@
 PORTNAME=	redshift
 PORTVERSION=	1.12
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	accessibility
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
