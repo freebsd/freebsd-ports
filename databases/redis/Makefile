@@ -3,6 +3,7 @@
 
 PORTNAME=	redis
 PORTVERSION=	5.0.7
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 
