@@ -1,0 +1,15 @@
+Parity is the fastest and most advanced Ethereum client.
+
+Built for mission-critical use: miners, service providers, and
+exchanges need fast synchronisation and maximum uptime.
+
+Parity Ethereum provides the core infrastructure essential for
+speedy and reliable services.
+
+* Clean, modular codebase for easy customisation
+* Advanced CLI-based client
+* Minimal memory and storage footprint
+* Synchronise in hours, not days with Warp Sync
+* Modular for light integration into your service or product
+
+WWW: https://github.com/paritytech/parity-ethereum/
