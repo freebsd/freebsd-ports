@@ -3,7 +3,7 @@
 PORTNAME=		libheif
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.6.0
-PORTREVISION=		0
+PORTREVISION=		1
 CATEGORIES=		graphics
 
 MAINTAINER=		freebsd@sebastiansteinmetz.ch
@@ -40,6 +40,7 @@ LICENSE+=		GPLv3+
 LICENSE_COMB=		multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/examples/COPYING
 USES+=			shared-mime-info
+CONFIGURE_ARGS+=	--disable-go
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
