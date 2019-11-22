@@ -548,6 +548,7 @@
     SUBDIR += mahjong
     SUBDIR += maitretarot
     SUBDIR += manaplus
+    SUBDIR += mancala
     SUBDIR += mangband
     SUBDIR += mari0
     SUBDIR += marsnomercy
