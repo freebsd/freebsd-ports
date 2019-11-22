@@ -20,11 +20,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/mergify
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=	DOCS GIT_SUBVERSION
-
-GIT_SUBVERSION_DESC=	Use devel/git-subversion as backend
-GIT_SUBVERSION_RUN_DEPENDS=	git-subversion>0:devel/git-subversion
-GIT_SUBVERSION_RUN_DEPENDS_OFF=	git:devel/git
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mergify ${STAGEDIR}${PREFIX}/bin
