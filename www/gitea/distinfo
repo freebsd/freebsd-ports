@@ -1,3 +1,3 @@
-TIMESTAMP = 1572471681
-SHA256 (go-gitea-gitea-v1.9.5_GH0.tar.gz) = 0436e54a41af7777249509d0206cac5396b8b841c2ad8b118ab7cebb612e9933
-SIZE (go-gitea-gitea-v1.9.5_GH0.tar.gz) = 25355286
+TIMESTAMP = 1573818626
+SHA256 (go-gitea-gitea-v1.10.0_GH0.tar.gz) = a45044ef8242f5cd0d0d914c9ef1d5f97483bd6985c27efef6d99dbdf38f759d
+SIZE (go-gitea-gitea-v1.10.0_GH0.tar.gz) = 28905929
