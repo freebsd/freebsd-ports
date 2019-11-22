@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	paml
-PORTVERSION=	4.9i
+PORTVERSION=	4.9j
 CATEGORIES=	biology
 MASTER_SITES=	http://abacus.gene.ucl.ac.uk/software/
 DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Phylogenetic Analysis by Maximum Likelihood (PAML)
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv3
 
