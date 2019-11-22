@@ -1372,7 +1372,6 @@
     SUBDIR += libtifiles2
     SUBDIR += libtool
     SUBDIR += libtpl
-    SUBDIR += libtrue
     SUBDIR += libtsm
     SUBDIR += libtuntap
     SUBDIR += libublio
