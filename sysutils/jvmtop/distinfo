@@ -1,2 +1,5 @@
-SHA256 (patric-r-jvmtop-0.8.0_GH0.tar.gz) = 4a11f3ffaa91c40cc8147adc5c7a78b488969a7671943418e16789df418ea0d7
-SIZE (patric-r-jvmtop-0.8.0_GH0.tar.gz) = 98878
+TIMESTAMP = 1574461612
+SHA256 (jvmtop-maven-repository-0.9.0.tar.gz) = 1508e7cdf1cdf352b8aa33f8c578561e5d8b5a93f8d2ddbecc85dcd7707189ee
+SIZE (jvmtop-maven-repository-0.9.0.tar.gz) = 9492237
+SHA256 (patric-r-jvmtop-0.8.0-27-g5693965_GH0.tar.gz) = ee35a33fe9f88b643623346957c869be1929de74e779220b9ecc718c0b16fafe
+SIZE (patric-r-jvmtop-0.8.0-27-g5693965_GH0.tar.gz) = 42869
