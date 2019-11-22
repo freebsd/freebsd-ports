@@ -19,4 +19,5 @@ include/reflex/traits.h
 include/reflex/unicode.h
 include/reflex/utf8.h
 lib/libreflex.a
+lib/libreflexmin.a
 man/man1/reflex.1.gz
