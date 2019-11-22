@@ -15,6 +15,8 @@ COMMENT=	Email script for conky
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	No longer maintained by upstream
+
 RUN_DEPENDS=	conky:sysutils/conky
 
 USES=		python:2.7
