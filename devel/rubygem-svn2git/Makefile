@@ -10,7 +10,7 @@ COMMENT=	Ruby utilities for exporting SVN repo to git
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	git-subversion>0:devel/git-subversion
+RUN_DEPENDS=	git>0:devel/git
 
 CONFLICTS_INSTALL=	svn2git-[0-9]*
 

@@ -10,7 +10,7 @@ DESCR=		${.CURDIR}/pkg-descr
 
 OPTIONS_EXCLUDE=GUI SVN GITWEB CONTRIB P4 CVS PERL
 
-CONFLICTS_INSTALL=	git-[0-9]* git-gui-[0-9]* git-subversion-[0-9]*
+CONFLICTS_INSTALL=	git-[0-9]* git-gui-[0-9]*
 
 DISTINFO_FILE=	${MASTERDIR}/distinfo
 

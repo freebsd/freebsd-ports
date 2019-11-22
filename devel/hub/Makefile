@@ -26,13 +26,6 @@ PLIST_FILES=	bin/hub \
 		share/fish/completions/hub.fish \
 		share/zsh/site-functions/_hub
 
-OPTIONS_DEFINE=		GIT_SUBVERSION
-
-GIT_SUBVERSION_DESC=	Use 'git-subversion' instead of 'git' as backend
-
-GIT_SUBVERSION_RUN_DEPENDS=	git-subversion>0:devel/git-subversion
-GIT_SUBVERSION_RUN_DEPENDS_OFF=	git:devel/git
-
 post-build:
 	(cd ${GO_WRKSRC} && \
 	  ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install ${GO_BUILDFLAGS} ${GO_TARGET}/md2roff-bin)
