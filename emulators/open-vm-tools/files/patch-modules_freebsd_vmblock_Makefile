@@ -1,0 +1,11 @@
+--- modules/freebsd/vmblock/Makefile.orig
++++ modules/freebsd/vmblock/Makefile
+@@ -46,8 +46,6 @@
+ 
+ KMOD    = vmblock
+ PROG    = ../$(KMOD).ko
+-NOMAN   = t
+-NO_MAN  = t
+ KLDMOD  = t
+ 
+ VMBLOCK := $(MAINSRCROOT)/modules/vmblock
