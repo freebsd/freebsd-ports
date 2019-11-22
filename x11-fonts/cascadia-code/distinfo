@@ -1,3 +1,9 @@
-TIMESTAMP = 1570256630
-SHA256 (cascadia-code-1910.04/Cascadia.ttf) = 044f2d1e854f976d0f9a639304d827718aa2b943707873bfff17575dda8f0551
-SIZE (cascadia-code-1910.04/Cascadia.ttf) = 115372
+TIMESTAMP = 1574376329
+SHA256 (cascadia-code-1911.20/Cascadia.ttf) = 2def0097704c114c07e346a91876e5447e8f930c3ad1606e102a8299541b8842
+SIZE (cascadia-code-1911.20/Cascadia.ttf) = 213620
+SHA256 (cascadia-code-1911.20/CascadiaMono.ttf) = 6f63390fe553eca5f25b09a29ddf62e311bba43ed044658ed56accca7ba3259b
+SIZE (cascadia-code-1911.20/CascadiaMono.ttf) = 195460
+SHA256 (cascadia-code-1911.20/CascadiaMonoPL.ttf) = fd15f79cff256424169b2ea3c4363ec638caf24ac08895aa5dbed585dfb392f0
+SIZE (cascadia-code-1911.20/CascadiaMonoPL.ttf) = 211360
+SHA256 (cascadia-code-1911.20/CascadiaPL.ttf) = 432d69686eb4e20c720f023c69e71ab91e3c472932d42bb9bde0ab8254aa8864
+SIZE (cascadia-code-1911.20/CascadiaPL.ttf) = 229520
