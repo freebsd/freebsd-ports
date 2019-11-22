@@ -315,8 +315,8 @@
 %%DATADIR%%/nexus/WEB-INF/web.xml
 %%DATADIR%%/nexus/favicon.ico
 %%DATADIR%%/nexus/favicon.png
-%%DATADIR%%/nexus/images/header_branding.png
-%%DATADIR%%/nexus/images/nexus650x55.png
+%%DATADIR%%/nexus/images/NexusRepoMngr_horiz_white+color@2x.png
+%%DATADIR%%/nexus/images/NexusRepoMngr_withSonatype@3x.png
 %%DATADIR%%/nexus/robots.txt
 @dir(%%USER%%,%%GROUP%%,750) %%RUNDIR%%
 @dir(%%USER%%,%%GROUP%%,750) %%LOGDIR%%
