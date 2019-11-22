@@ -1,0 +1,5 @@
+Toybox combines common command line utilities together
+into a single BSD-licensed executable that's simple, small,
+fast, reasonably standards-compliant, and powerful.
+
+WWW: http://landley.net/toybox/
