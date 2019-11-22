@@ -1,0 +1,5 @@
+Implementation of the simple board game called Mancala.  Contains both a user
+unfriendly character based interface, and a nice, user friendly X11 interface.
+Be warned: If you just bother to read the rules, you may get hooked on this!
+
+WWW: https://shh.thathost.com/pub-unix
