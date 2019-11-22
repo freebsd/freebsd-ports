@@ -1,10 +1,13 @@
 bin/aerc
+man/man1/aerc-search.1.gz
 man/man1/aerc.1.gz
 man/man5/aerc-config.5.gz
 man/man5/aerc-imap.5.gz
 man/man5/aerc-maildir.5.gz
+%%NOTMUCH%%man/man5/aerc-notmuch.5.gz
 man/man5/aerc-sendmail.5.gz
 man/man5/aerc-smtp.5.gz
+man/man7/aerc-templates.7.gz
 man/man7/aerc-tutorial.7.gz
 %%DATADIR%%/accounts.conf
 %%DATADIR%%/aerc.conf
@@ -12,3 +15,5 @@ man/man7/aerc-tutorial.7.gz
 %%DATADIR%%/filters/hldiff
 %%HTML_FILTER%%%%DATADIR%%/filters/html
 %%DATADIR%%/filters/plaintext
+%%DATADIR%%/templates/forward_as_body
+%%DATADIR%%/templates/quoted_reply
