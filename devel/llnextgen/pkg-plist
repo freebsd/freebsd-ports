@@ -1,6 +1,5 @@
 bin/LLnextgen
 man/man1/LLnextgen.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%PORTDOCS%%%%DOCSDIR%%/LLnextgen.pdf
 %%PORTDOCS%%%%DOCSDIR%%/LLnextgen.ps.gz
