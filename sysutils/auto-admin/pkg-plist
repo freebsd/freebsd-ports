@@ -26,7 +26,6 @@ sbin/auto-config-snd-driver
 sbin/auto-db-dir
 sbin/auto-denyhosts-remove-ip
 sbin/auto-denyhosts-setup
-sbin/auto-detect-gpu
 sbin/auto-detect-laptops
 sbin/auto-disable-host-key-prompt
 sbin/auto-disable-service
@@ -40,6 +39,7 @@ sbin/auto-enable-service
 sbin/auto-fastest-mirror
 sbin/auto-fetch-install-media
 sbin/auto-file-secure
+sbin/auto-gpu-setup
 sbin/auto-harden
 sbin/auto-idrac-passwd
 sbin/auto-insert-line
@@ -72,6 +72,7 @@ sbin/auto-ports-setup
 sbin/auto-print-make-variable
 sbin/auto-pxe-installer-setup
 sbin/auto-pxe-node-discover
+sbin/auto-remove-from-group
 sbin/auto-remove-user
 sbin/auto-replace-file
 sbin/auto-restore-ownership
