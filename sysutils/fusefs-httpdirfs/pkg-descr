@@ -1,0 +1,13 @@
+HTTPDirFS stands for Hyper Text Transfer Protocol Directory Filesystem. It may
+be used to to mount HTTP directory listings as if it was a partition.
+
+HTTP connections are reused due to the use of cURL-multi interface. The FUSE
+component runs in multithreaded mode.
+
+There is a permanent cache system which can cache all the file segments that
+have been downloaded.
+
+The support for Airsonic / Subsonic server is also included. This allows the
+user to mount a remote music collection locally.
+
+WWW: https://github.com/fangfufu/httpdirfs

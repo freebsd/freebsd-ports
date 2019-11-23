@@ -2,7 +2,8 @@
 
 PORTNAME=	httpdirfs
 DISTVERSION=	1.2.0
-CATEGORIES=	www
+CATEGORIES=	sysutils
+PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	FUSE filesystem to mount HTTP directory listings, with a permanent cache
@@ -14,11 +15,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
-		libfuse.so:sysutils/fusefs-libs \
 		libgumbo.so:devel/gumbo \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		gmake localbase pkgconfig ssl
+USES=		fuse gmake localbase pkgconfig ssl
 USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	fangfufu
@@ -32,7 +32,7 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/httpdirfs
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/httpdirfs
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

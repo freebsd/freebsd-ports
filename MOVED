@@ -13496,3 +13496,4 @@ databases/rubygem-state_machines-activerecord05|databases/rubygem-state_machines
 devel/rubygem-default_value_for32|devel/rubygem-default_value_for|2019-11-23|Obsolete, use devel/rubygem-default_value_for instead
 www/rubygem-responders2-rails52|www/rubygem-responders-rails52|2019-11-23|Obsolete, please use www/rubygem-responders-rails52 instead
 devel/rubygem-gitlab-default_value_for|devel/rubygem-default_value_for|2019-11-23|Obsolete, please use devel/rubygem-default_value_for instead
+www/httpdirfs|sysutils/fusefs-httpdirfs|2019-11-23|Rename for consistency with other FUSE ports
