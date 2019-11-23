@@ -29,8 +29,13 @@ FAM_DESC=		Filesystem alteration notifications using fam (broken: hangs on NFS)
 FAM_USES=		fam
 FAM_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_FAM
 
+.include <bsd.port.pre.mk>
+# FreeBSD base gained /etc/os-release in r354922, which
+# corresponds to __FreeBSD_version 1300060
+.if ${OSVERSION} < 1300060
 post-patch:
 	${REINPLACE_CMD}  -e '/QStringLiteral/s|/etc/os-release|${LOCALBASE}/etc/os-release|g' \
 		${WRKSRC}/src/lib/util/kosrelease.cpp
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

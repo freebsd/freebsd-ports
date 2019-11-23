@@ -37,7 +37,6 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 RUN_DEPENDS=	gnome-settings-daemon>=3.4.0:sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>=3.2.2:devel/gsettings-desktop-schemas \
 		cantarell-fonts>=0:x11-fonts/cantarell-fonts \
-		etc_os-release>0:sysutils/etc_os-release \
 		gcm-calibrate:graphics/gnome-color-manager
 
 PORTSCOUT=	limitw:1,even
@@ -65,9 +64,16 @@ CHEESE_MESON_TRUE=	cheese
 WAYLAND_MESON_TRUE=	wayland
 WAYLAND_LIB_DEPENDS=	libgudev-1.0.so:devel/libgudev
 
+
+.include <bsd.port.pre.mk>
+# FreeBSD base gained /etc/os-release in r354922, which
+# corresponds to __FreeBSD_version 1300060
+.if ${OSVERSION} < 1300060
+RUN_DEPENDS+=	etc_os-release>0:sysutils/etc_os-release
 post-patch:
 	@${REINPLACE_CMD}  -e 's|/etc/os-release|${LOCALBASE}/etc/os-release|g' \
 		${WRKSRC}/panels/privacy/cc-privacy-panel.c \
 		${WRKSRC}/panels/info/cc-info-overview-panel.c
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
