@@ -13488,3 +13488,4 @@ devel/libtrue||2019-11-22|Has expired: The joke is dead
 devel/rubygem-flipper-active_support_cache_store013|devel/rubygem-flipper-active_support_cache_store|2019-11-23|Obsolete, please use devel/rubygem-flipper-active_support_cache_store
 databases/rubygem-flipper-active_record013|databases/rubygem-flipper-active_record|2019-11-23|Obsolete, please use databases/rubygem-flipper-active_record instead
 devel/rubygem-flipper013|devel/rubygem-flipper|2019-11-23|Obsolete, please use devel/rubygem-flipper instead
+devel/rubygem-google-protobuf371|devel/rubygem-google-protobuf|2019-11-23|Obsolete, please use devel/rubygem-google-protobuf instead
