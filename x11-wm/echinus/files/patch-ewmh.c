@@ -1,6 +1,6 @@
---- ./ewmh.c.orig	2011-09-03 13:09:18.000000000 +0200
-+++ ./ewmh.c	2011-09-03 13:09:46.000000000 +0200
-@@ -218,7 +218,7 @@
+--- ewmh.c.orig	2011-09-19 21:42:25 UTC
++++ ewmh.c
+@@ -222,7 +222,7 @@ ewmh_process_state_atom(Client *c, Atom state, int set
  	CARD32 data[2];
  
  	data[1] = None;

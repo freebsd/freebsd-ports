@@ -1,6 +1,6 @@
---- ./config.mk.orig	2011-08-19 18:19:22.000000000 +0200
-+++ ./config.mk	2011-09-03 13:08:44.000000000 +0200
-@@ -7,12 +7,12 @@
+--- config.mk.orig	2011-09-19 21:42:25 UTC
++++ config.mk
+@@ -7,12 +7,12 @@ VERSION = 0.4.9
  PREFIX?= /usr/local
  BINPREFIX?= ${PREFIX}/bin
  MANPREFIX?= ${PREFIX}/share/man
@@ -16,7 +16,7 @@
  
  # includes and libs
  INCS = -I. -I/usr/include -I${X11INC} `pkg-config --cflags xft`
-@@ -44,4 +44,4 @@
+@@ -44,4 +44,4 @@ LIBS += -lXrandr
  #CFLAGS += -xtarget=ultra
  
  # compiler and linker
