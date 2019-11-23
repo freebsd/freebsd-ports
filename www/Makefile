@@ -253,7 +253,6 @@
     SUBDIR += httpasyncclient
     SUBDIR += httpclient
     SUBDIR += httpcore
-    SUBDIR += httpdirfs
     SUBDIR += httptunnel
     SUBDIR += httrack
     SUBDIR += hypermail
