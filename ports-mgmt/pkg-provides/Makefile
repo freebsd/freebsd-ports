@@ -2,7 +2,7 @@
 
 PORTNAME=	pkg-provides
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -18,11 +18,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
-SUB_FILES=	pkg-message
 SUB_LIST=	LOCALBASE=${LOCALBASE}
 
 GH_ACCOUNT=	rosorio
-GH_TAGNAME=	452ffe6
+GH_TAGNAME=	1378a7f
 
 PLIST_FILES=	lib/pkg/provides.so man/man8/pkg-provides.8.gz
 
