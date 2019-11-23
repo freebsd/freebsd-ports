@@ -7,8 +7,8 @@ bin/dbus-send
 bin/dbus-test-tool
 bin/dbus-update-activation-environment
 bin/dbus-uuidgen
-@sample %%ETCDIR%%-1/session.conf.sample
-@sample %%ETCDIR%%-1/system.conf.sample
+@sample etc/dbus-1/session.conf.sample
+@sample etc/dbus-1/system.conf.sample
 include/dbus-%%VERSION%%/dbus/dbus-address.h
 include/dbus-%%VERSION%%/dbus/dbus-bus.h
 include/dbus-%%VERSION%%/dbus/dbus-connection.h
@@ -32,7 +32,7 @@ lib/dbus-%%VERSION%%/include/dbus/dbus-arch-deps.h
 lib/libdbus-1.a
 lib/libdbus-1.so
 lib/libdbus-1.so.3
-lib/libdbus-1.so.3.19.9
+lib/libdbus-1.so.3.19.11
 libdata/pkgconfig/dbus-1.pc
 @(,%%GROUPS%%,4750) libexec/dbus-daemon-launch-helper
 %%MANPAGES%%man/man1/dbus-cleanup-sockets.1.gz
@@ -44,16 +44,16 @@ libdata/pkgconfig/dbus-1.pc
 %%MANPAGES%%man/man1/dbus-test-tool.1.gz
 %%MANPAGES%%man/man1/dbus-update-activation-environment.1.gz
 %%MANPAGES%%man/man1/dbus-uuidgen.1.gz
-%%DATADIR%%-1/session.conf
-%%DATADIR%%-1/system.conf
+share/dbus-1/session.conf
+share/dbus-1/system.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/GetAllMatchRules.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-session-disable-stats.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-system-enable-stats.conf
 share/xml/dbus-1/busconfig.dtd
 share/xml/dbus-1/introspect.dtd
-@dir share/dbus-1/system-services
 @dir share/dbus-1/services
 @dir share/dbus-1/session.d
+@dir share/dbus-1/system-services
 @dir share/dbus-1/system.d
 @dir /var/lib/dbus
 @dir /var/lib
