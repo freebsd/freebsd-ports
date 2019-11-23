@@ -27,12 +27,14 @@
  int SysInfo::NumberOfProcessors() {
    return g_lazy_number_of_processors.Get().value();
  }
-@@ -225,6 +225,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -225,7 +225,9 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";
+-  } else if (std::string(info.sysname) == "AIX") {
 +  } else if (arch == "arm64") {
 +    arch = "aarch64";
-   } else if (std::string(info.sysname) == "AIX") {
++  } else if (arch == "powerpc" || arch == "powerpc64") {
      arch = "ppc64";
    }
+   return arch;

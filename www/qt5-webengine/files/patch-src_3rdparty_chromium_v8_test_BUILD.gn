@@ -1,0 +1,36 @@
+--- src/3rdparty/chromium/v8/test/BUILD.gn.orig	2019-05-23 12:39:34 UTC
++++ src/3rdparty/chromium/v8/test/BUILD.gn
+@@ -31,7 +31,7 @@ group("gn_all") {
+     deps += [
+       "cctest:cctest",
+       "cctest:generate-bytecode-expectations",
+-      "unittests:unittests",
++      #"unittests:unittests",
+     ]
+   }
+ }
+@@ -80,9 +80,9 @@ group("v8_bot_default") {
+     "mjsunit:v8_mjsunit",
+     "mkgrokdump:mkgrokdump",
+     "preparser:v8_preparser",
+-    "unittests:unittests",
++    #"unittests:unittests",
+     "wasm-js:v8_wasm_js",
+-    "wasm-spec-tests:v8_wasm_spec_tests",
++    #"wasm-spec-tests:v8_wasm_spec_tests",
+     "webkit:v8_webkit",
+   ]
+ }
+@@ -100,9 +100,9 @@ group("v8_default") {
+     "mjsunit:v8_mjsunit",
+     "mkgrokdump:mkgrokdump",
+     "preparser:v8_preparser",
+-    "unittests:unittests",
+-    "wasm-js:v8_wasm_js",
+-    "wasm-spec-tests:v8_wasm_spec_tests",
++    #"unittests:unittests",
++    #"wasm-js:v8_wasm_js",
++    #"wasm-spec-tests:v8_wasm_spec_tests",
+   ]
+ }
+ 

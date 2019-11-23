@@ -1,6 +1,14 @@
---- src/3rdparty/chromium/v8/BUILD.gn.orig	2019-05-23 12:39:34 UTC
-+++ src/3rdparty/chromium/v8/BUILD.gn
-@@ -3169,7 +3169,7 @@ v8_component("v8_libbase") {
+--- src/3rdparty/chromium/v8/BUILD.gn.orig	2019-05-23 14:39:34.000000000 +0200
++++ src/3rdparty/chromium/v8/BUILD.gn	2019-10-27 22:44:17.280181000 +0100
+@@ -3006,7 +3006,6 @@
+   # to implement atomic memory access
+   if (v8_current_cpu == "mips" || v8_current_cpu == "mipsel" ||
+       v8_current_cpu == "mips64" || v8_current_cpu == "mips64el" ||
+-      v8_current_cpu == "ppc" || v8_current_cpu == "ppc64" ||
+       v8_current_cpu == "s390" || v8_current_cpu == "s390x") {
+     libs = [ "atomic" ]
+   }
+@@ -3169,7 +3168,7 @@
      }
    }
  
@@ -9,7 +17,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -3189,6 +3189,12 @@ v8_component("v8_libbase") {
+@@ -3189,6 +3188,12 @@
        "dl",
        "rt",
      ]
@@ -22,7 +30,7 @@
    } else if (is_android) {
      if (current_toolchain == host_toolchain) {
        libs = [
-@@ -3393,6 +3399,7 @@ if (v8_use_snapshot && current_toolchain == v8_snapsho
+@@ -3393,6 +3398,7 @@
        "src/snapshot/embedded-file-writer.h",
        "src/snapshot/mksnapshot.cc",
      ]

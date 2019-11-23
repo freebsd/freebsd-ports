@@ -172,7 +172,8 @@ libdata/pkgconfig/Qt5WebEngine.pc
 libdata/pkgconfig/Qt5WebEngineCore.pc
 libdata/pkgconfig/Qt5WebEngineWidgets.pc
 %%QT_LIBEXECDIR%%/QtWebEngineProcess
-%%QT_DATADIR%%/resources/icudtl.dat
+%%BE%%%%QT_DATADIR%%/resources/icudtb.dat
+%%LE%%%%QT_DATADIR%%/resources/icudtl.dat
 %%QT_DATADIR%%/resources/qtwebengine_devtools_resources.pak
 %%QT_DATADIR%%/resources/qtwebengine_resources.pak
 %%QT_DATADIR%%/resources/qtwebengine_resources_100p.pak

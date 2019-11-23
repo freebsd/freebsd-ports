@@ -1,0 +1,16 @@
+--- src/3rdparty/chromium/third_party/crc32c/BUILD.gn.orig	2019-05-23 12:39:34 UTC
++++ src/3rdparty/chromium/third_party/crc32c/BUILD.gn
+@@ -15,12 +15,9 @@ config("crc32c_config") {
+   ]
+ 
+   defines = [
+-    "BYTE_ORDER_BIG_ENDIAN=0",
++    "BYTE_ORDER_BIG_ENDIAN=__BYTE_ORDER__==__ORDER_BIG_ENDIAN__",
+     "CRC32C_TESTS_BUILT_WITH_GLOG=0",
+   ]
+-
+-  # If we ever support big-endian builds, add logic to conditionally enable
+-  # BYTE_ORDER_BIG_ENDIAN.
+ 
+   if (target_cpu == "x86" || target_cpu == "x64") {
+     defines += [
