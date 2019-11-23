@@ -76,6 +76,7 @@
     SUBDIR += openscad
     SUBDIR += openscad-devel
     SUBDIR += openvsp
+    SUBDIR += oregano
     SUBDIR += p5-GDS2
     SUBDIR += p5-Verilog-Perl
     SUBDIR += pcb

@@ -1,0 +1,5 @@
+oregano is an application for schematic capture and simulation of electronic
+circuits. The actual simulation is performed by Berkeley Spice, GNUcap or the
+new generation ngspice.
+
+WWW: https://ahoi.io/
