@@ -13485,3 +13485,4 @@ x11-wm/compton-yshui|x11-wm/picom|2019-11-18|Project renamed
 lang/ponyc-static|lang/ponyc@llvm_static|2019-11-20|Flavored
 devel/git-subversion|devel/git|2019-11-22|Subversion enabled by default in devel/git
 devel/libtrue||2019-11-22|Has expired: The joke is dead
+devel/rubygem-flipper-active_support_cache_store013|devel/rubygem-flipper-active_support_cache_store|2019-11-23|Obsolete, please use devel/rubygem-flipper-active_support_cache_store
