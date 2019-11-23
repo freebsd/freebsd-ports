@@ -1,0 +1,11 @@
+--- rc.d/pcdm.orig	2019-11-22 22:45:57 UTC
++++ rc.d/pcdm
+@@ -51,7 +51,7 @@ pcdm_start()
+   echo "Starting PCDM."
+   #Start the PCDM login daemon
+   if [ ! -e /var/run/nologin ]; then
+-    ${command} ${pcdm_flags} 
++    /usr/sbin/daemon -S -T pcdm ${command} ${pcdm_flags} 
+   fi
+ }
+ 
