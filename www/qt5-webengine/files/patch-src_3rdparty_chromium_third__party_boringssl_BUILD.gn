@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/boringssl/BUILD.gn.orig	2018-11-13 18:25:11 UTC
-+++ src/3rdparty/chromium/third_party/boringssl/BUILD.gn
-@@ -72,7 +72,7 @@ if (is_win && !is_msan) {
+--- src/3rdparty/chromium/third_party/boringssl/BUILD.gn.orig	2019-05-23 14:39:34.000000000 +0200
++++ src/3rdparty/chromium/third_party/boringssl/BUILD.gn	2019-10-29 02:28:30.690043000 +0100
+@@ -71,7 +77,7 @@
      } else if (current_cpu == "x64") {
        if (is_mac) {
          sources += crypto_sources_mac_x86_64
@@ -9,7 +9,7 @@
          sources += crypto_sources_linux_x86_64
        } else {
          public_configs = [ ":no_asm_config" ]
-@@ -80,13 +80,13 @@ if (is_win && !is_msan) {
+@@ -79,13 +85,13 @@
      } else if (current_cpu == "x86") {
        if (is_mac) {
          sources += crypto_sources_mac_x86
@@ -25,7 +25,7 @@
          sources += crypto_sources_linux_arm
        } else if (is_ios) {
          sources += crypto_sources_ios_arm
-@@ -94,7 +94,7 @@ if (is_win && !is_msan) {
+@@ -93,10 +99,17 @@
          public_configs = [ ":no_asm_config" ]
        }
      } else if (current_cpu == "arm64") {
@@ -34,3 +34,13 @@
          sources += crypto_sources_linux_aarch64
        } else if (is_ios) {
          sources += crypto_sources_ios_aarch64
++      } else {
++        public_configs = [ ":no_asm_config" ]
++      }
++    } else if (current_cpu == "ppc64") {
++      if (is_linux || is_bsd) {
++        # TODO: ppc64 (be) check
++        sources += crypto_sources_linux_ppc64le
+       } else {
+         public_configs = [ ":no_asm_config" ]
+       }

@@ -1,4 +1,4 @@
---- mkspecs/features/platform.prf.orig	2018-11-27 04:10:38 UTC
+--- mkspecs/features/platform.prf.orig	2019-05-24 09:01:39 UTC
 +++ mkspecs/features/platform.prf
 @@ -11,7 +11,7 @@ defineTest(isQtMinimum) {
  
@@ -9,3 +9,11 @@
      if(!gcc:!clang)|intel_icc {
        skipBuild("Qt WebEngine on Linux requires clang or GCC.")
        return(false)
+@@ -84,6 +84,7 @@ defineTest(isArchSupported) {
+     contains(QT_ARCH, "arm")|contains(QT_ARCH, "arm64"): return(true)
+     contains(QT_ARCH, "mips"): return(true)
+ #     contains(QT_ARCH, "mips64"): return(true)
++    contains(QT_ARCH, "power64"): return(true)
+ 
+     skipBuild("QtWebEngine can only be built for x86, x86-64, ARM, Aarch64, and MIPSel architectures.")
+     return(false)

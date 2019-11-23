@@ -1,6 +1,21 @@
---- src/3rdparty/chromium/build/toolchain/linux/BUILD.gn.orig	2018-11-13 18:25:11 UTC
-+++ src/3rdparty/chromium/build/toolchain/linux/BUILD.gn
-@@ -14,7 +14,6 @@ clang_toolchain("clang_arm") {
+--- src/3rdparty/chromium/build/toolchain/linux/BUILD.gn.orig	2019-05-23 14:39:34.000000000 +0200
++++ src/3rdparty/chromium/build/toolchain/linux/BUILD.gn	2019-10-29 02:47:24.026830000 +0100
+@@ -5,6 +5,14 @@
+ import("//build/config/sysroot.gni")
+ import("//build/toolchain/gcc_toolchain.gni")
+ 
++clang_toolchain("clang_ppc64") {
++  enable_linker_map = true
++  toolchain_args = {
++    current_cpu = "ppc64"
++    current_os = "linux"
++  }
++}
++
+ clang_toolchain("clang_arm") {
+   toolprefix = "arm-linux-gnueabihf-"
+   toolchain_args = {
+@@ -14,7 +22,6 @@
  }
  
  clang_toolchain("clang_arm64") {
