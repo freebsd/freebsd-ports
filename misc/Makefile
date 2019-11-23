@@ -410,6 +410,7 @@
     SUBDIR += py-spdx
     SUBDIR += py-spdx-lookup
     SUBDIR += py-spdx-tools
+    SUBDIR += py-tflearn
     SUBDIR += py-toil
     SUBDIR += py-tqdm
     SUBDIR += py-yolk
