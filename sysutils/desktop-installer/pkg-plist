@@ -3,7 +3,6 @@ sbin/battery_shutdown.sh
 sbin/desktop-installer
 %%DATADIR%%/90-vboxguest.fdi
 %%DATADIR%%/GNOME2/xinitrc
-%%DATADIR%%/KDE4/xinitrc
 %%DATADIR%%/KDE5/xinitrc
 %%DATADIR%%/LUMINA/gtkrc
 %%DATADIR%%/LUMINA/xinitrc
