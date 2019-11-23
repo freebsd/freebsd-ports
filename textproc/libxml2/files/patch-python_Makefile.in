@@ -1,6 +1,6 @@
---- python/Makefile.in.orig	2017-09-20 18:23:56 UTC
+--- python/Makefile.in.orig	2019-11-16 14:42:34 UTC
 +++ python/Makefile.in
-@@ -489,7 +489,7 @@ top_srcdir = @top_srcdir@
+@@ -493,7 +493,7 @@ top_srcdir = @top_srcdir@
  
  # Makefile for libxml2 python library
  AUTOMAKE_OPTIONS = 1.4 foreign
@@ -9,7 +9,7 @@
  docsdir = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)
  dist_docs_DATA = TODO
  EXTRA_DIST = \
-@@ -509,7 +509,7 @@ EXTRA_DIST = \
+@@ -513,7 +513,7 @@ EXTRA_DIST = \
  @WITH_PYTHON_TRUE@python_LTLIBRARIES = libxml2mod.la
  @WITH_PYTHON_TRUE@libxml2mod_la_SOURCES = libxml.c libxml_wrap.h libxml2-py.h libxml2-py.c types.c
  @WITH_PYTHON_TRUE@libxml2mod_la_LDFLAGS = $(CYGWIN_EXTRA_LDFLAGS) $(WIN32_EXTRA_LDFLAGS) -module -avoid-version \

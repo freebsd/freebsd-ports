@@ -1,4 +1,4 @@
---- xml2Conf.sh.in.orig	2009-07-30 15:24:35 UTC
+--- xml2Conf.sh.in.orig	2019-10-22 18:28:43 UTC
 +++ xml2Conf.sh.in
 @@ -1,6 +1,12 @@
  #
@@ -11,5 +11,5 @@
 +libdir=@libdir@
 +
  XML2_LIBDIR="@XML_LIBDIR@"
- XML2_LIBS="@XML_LIBS@"
+ XML2_LIBS="@XML_LIBS@ @XML_PRIVATE_LIBS@"
  XML2_INCLUDEDIR="@XML_INCLUDEDIR@"
