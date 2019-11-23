@@ -2,8 +2,7 @@
 
 PORTNAME=	edbrowse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.4
-PORTREVISION=	4
+DISTVERSION=	3.7.6
 CATEGORIES=	www editors
 
 MAINTAINER=	alfix86@gmail.com
@@ -40,7 +39,7 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && \
-		${FIND} . \( -name setup.ebrc -or -name "man-edbrowse*" \) -delete  && \
+		${FIND} . \( -name article.wikipedia -or -name "man-edbrowse*" \) -delete  && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
