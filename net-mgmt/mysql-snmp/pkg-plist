@@ -1,0 +1,11 @@
+@mode 600
+@sample %%ETCDIR%%/my.cnf.sample
+@mode
+man/man1/mysql-snmp.1.gz
+sbin/mysql-snmp
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/opennms/mysql.datacollection-config.xml
+%%DATADIR%%/opennms/mysql.snmp-graph.properties
+%%DATADIR%%/opennms/tools/cacti2MIB.pl
+%%DATADIR%%/opennms/tools/cacti2opennms.pl
+share/snmp/mibs/MYSQL-SERVER-MIB.txt
