@@ -3,6 +3,7 @@
 
 PORTNAME=	system-config-printer
 PORTVERSION=	1.5.12
+PORTREVISION=	1
 CATEGORIES=	print gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -12,6 +13,7 @@ BUILD_DEPENDS=	xmlto:textproc/xmlto \
 		docbook-xml>0:textproc/docbook-xml
 LIB_DEPENDS=	libcups.so:print/cups
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycups>=0:print/py-pycups@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycurl>=0:ftp/py-pycurl@${PY_FLAVOR} \
 		${LOCALBASE}/libexec/cups-pk-helper-mechanism:print/cups-pk-helper
