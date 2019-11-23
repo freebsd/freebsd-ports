@@ -1573,6 +1573,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/format-text-underline.png
 %%DATADIR%%/images/forward.png
 %%DATADIR%%/images/gear.png
+%%DATADIR%%/images/generic-library.png
 %%DATADIR%%/images/gmail_logo.png
 %%DATADIR%%/images/grid.png
 %%DATADIR%%/images/help.png
@@ -1978,6 +1979,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/mime.types
 %%DATADIR%%/mozilla-ca-certs.pem
 %%DATADIR%%/pdf-mathjax-loader.js
+%%DATADIR%%/pdf-preprint.js
 %%DATADIR%%/quick_start/deu.epub
 %%DATADIR%%/quick_start/eng.epub
 %%DATADIR%%/quick_start/fra.epub
