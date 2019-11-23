@@ -186,6 +186,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_scanners/sophos.lua
 %%DATADIR%%/lualib/lua_scanners/spamassassin.lua
 %%DATADIR%%/lualib/lua_scanners/vadesecure.lua
+%%DATADIR%%/lualib/lua_scanners/virustotal.lua
 %%DATADIR%%/lualib/lua_selectors/extractors.lua
 %%DATADIR%%/lualib/lua_selectors/init.lua
 %%DATADIR%%/lualib/lua_selectors/maps.lua
@@ -195,6 +196,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_stat.lua
 %%DATADIR%%/lualib/lua_tcp_sync.lua
 %%DATADIR%%/lualib/lua_util.lua
+%%DATADIR%%/lualib/lua_verdict.lua
 %%DATADIR%%/lualib/lupa.lua
 %%DATADIR%%/lualib/plugins_stats.lua
 %%DATADIR%%/lualib/rescore_utility.lua
