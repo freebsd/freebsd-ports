@@ -2,14 +2,13 @@ bin/nuspell
 include/nuspell/aff_data.hxx
 include/nuspell/dictionary.hxx
 include/nuspell/finder.hxx
-include/nuspell/locale_utils.hxx
-include/nuspell/string_utils.hxx
 include/nuspell/structures.hxx
+include/nuspell/utils.hxx
 lib/cmake/nuspell/NuspellConfig.cmake
 lib/cmake/nuspell/NuspellConfigVersion.cmake
 lib/cmake/nuspell/NuspellTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/nuspell/NuspellTargets.cmake
 lib/libnuspell.so
-lib/libnuspell.so.2
-lib/libnuspell.so.2.3.0
+lib/libnuspell.so.3
+lib/libnuspell.so.3.0.0
 libdata/pkgconfig/nuspell.pc
