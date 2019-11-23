@@ -25,7 +25,7 @@ lib/libmlterm_coreotl.so
 lib/libpobl.a
 lib/libpobl.so
 lib/libpobl.so.2
-lib/libpobl.so.2.0.0
+lib/libpobl.so.2.0.1
 lib/libvte-mlterm.a
 lib/libvte-mlterm.so
 lib/libvte-mlterm.so.9
@@ -40,6 +40,8 @@ lib/mef/libmef_zh.a
 lib/mef/libmef_zh.so
 lib/mlterm/libathena.a
 lib/mlterm/libathena.so
+lib/mlterm/libzmodem.a
+lib/mlterm/libzmodem.so
 %%FRIBIDI%%lib/mlterm/libctl_bidi.a
 %%FRIBIDI%%lib/mlterm/libctl_bidi.so
 lib/mlterm/libctl_iscii.a
