@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	GNU GNU_ALPHA
 
 EXTRA_PATCHES=	${FILESDIR}/git-018df5d:-p1 \
-		${FILESDIR}/git-113e144:-p1
+		${FILESDIR}/git-113e144:-p1 files/git-de640c83e9:-p1
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Utilities, daemons, and filters for processing e-mail
@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	comsatd imap4d pop3d
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 PLIST_SUB+=	LIBVERSION=6.0.0 LIBSUFX=6 VERSION=${PORTVERSION}
 
