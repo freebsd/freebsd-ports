@@ -13492,3 +13492,4 @@ devel/rubygem-google-protobuf371|devel/rubygem-google-protobuf|2019-11-23|Obsole
 mail/rubygem-premailer-rails19-rails52|mail/rubygem-premailer-rails-rails52|2019-11-23|Obsolete, please use mail/rubygem-premailer-rails-rails52 instead
 mail/rubygem-premailer-rails19-rails5|mail/rubygem-premailer-rails-rails5|2019-11-23|Obsolete, please use mail/rubygem-premailer-rails-rails5 instead
 www/rubygem-rack-attack44|www/rubygem-rack-attack|2019-11-23|Obsolete, please use www/rubygem-rack-attack instead
+databases/rubygem-state_machines-activerecord05|databases/rubygem-state_machines-activerecord|2019-11-23|Obsolete, use databases/rubygem-state_machines-activerecord instead
