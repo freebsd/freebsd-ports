@@ -1,4 +1,4 @@
---- buildtools/wafsamba/samba_autoconf.py.orig	2019-03-21 10:12:32 UTC
+--- buildtools/wafsamba/samba_autoconf.py.orig	2019-09-03 13:59:55 UTC
 +++ buildtools/wafsamba/samba_autoconf.py
 @@ -573,7 +573,7 @@ def library_flags(self, libs):
  
@@ -26,11 +26,10 @@
  
          if not res:
              if mandatory:
-@@ -925,6 +928,5 @@ def SAMBA_CHECK_UNDEFINED_SYMBOL_FLAGS(c
+@@ -944,5 +947,5 @@ def SAMBA_CHECK_UNDEFINED_SYMBOL_FLAGS(conf):
          conf.env.undefined_ldflags = conf.ADD_LDFLAGS('-Wl,-no-undefined', testflags=True)
  
-     if not sys.platform.startswith("openbsd") and conf.env.undefined_ignore_ldflags == []:
--        if conf.CHECK_LDFLAGS(['-undefined', 'dynamic_lookup']):
-+        if conf.CHECK_LDFLAGS(['-undefined', 'dynamic_lookup'] + conf.env.WERROR_CFLAGS):
+         if (conf.env.undefined_ignore_ldflags == [] and
+-            conf.CHECK_LDFLAGS(['-undefined', 'dynamic_lookup'])):
++            conf.CHECK_LDFLAGS(['-undefined', 'dynamic_lookup'] + conf.env.WERROR_CFLAGS)):
              conf.env.undefined_ignore_ldflags = ['-undefined', 'dynamic_lookup']
--
