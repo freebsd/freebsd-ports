@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libdmtx
-PORTVERSION=	0.7.4
-PORTREVISION=	11
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.7.5
 CATEGORIES=	graphics
-MASTER_SITES=	SF
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Library for reading and writing Data Matrix barcodes
@@ -13,9 +12,11 @@ COMMENT=	Library for reading and writing Data Matrix barcodes
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6
+USES=		pathfix autoreconf libtool
 
-USES=		tar:bzip2 libtool
+USE_GITHUB=	yes
+GH_ACCOUNT=	dmtx
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
