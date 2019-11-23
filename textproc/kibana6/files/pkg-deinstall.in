@@ -5,7 +5,6 @@ POST-DEINSTALL)
 	if [ -d %%WWWDIR%%/optimize ]; then
 		/usr/bin/find %%WWWDIR%%/optimize/ -delete
 	fi
-	;;
 
 	cat <<EOMSG
 
@@ -17,4 +16,5 @@ data that was in the cluster, then you may wish to delete the
 
 Please ignore this if %%PORTNAME%%%%PKGNAMESUFFIX%% is being upgraded
 EOMSG
+    ;;
 esac
