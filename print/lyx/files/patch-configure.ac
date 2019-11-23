@@ -1,0 +1,26 @@
+--- configure.ac.orig	2019-11-23 15:26:35 UTC
++++ configure.ac
+@@ -364,23 +364,9 @@ AC_DEFINE_UNQUOTED([LYX_RELEASE_PATCH],$lyx_patch,[Pat
+ 
+ AC_CONFIG_FILES([Makefile \
+       lyx.1:lyx.1in \
+-      3rdparty/Makefile \
+-      3rdparty/boost/Makefile \
+-      3rdparty/hunspell/Makefile \
+-      3rdparty/mythes/Makefile \
+-      3rdparty/libiconv/Makefile \
+       $ICONV_ICONV_H_IN \
+-      3rdparty/zlib/Makefile \
+       autotests/Makefile \
+       config/Makefile \
+-      development/Makefile \
+-      development/MacOSX/Makefile \
+-      development/MacOSX/Info.plist \
+-      development/MacOSX/lyxrc.dist \
+-      development/MacOSX/spotlight/Makefile \
+-      development/cygwin/Makefile \
+-      development/cygwin/lyxrc.dist \
+-      development/lyx.spec \
+       lib/lyx.desktop-temp:lib/lyx.desktop.in
+       lib/Makefile \
+       lib/doc/Makefile \

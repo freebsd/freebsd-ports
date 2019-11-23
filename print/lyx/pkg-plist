@@ -5,6 +5,7 @@ man/man1/lyx.1.gz
 man/man1/lyxclient.1.gz
 man/man1/tex2lyx.1.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/de/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/el/LC_MESSAGES/lyx.mo
@@ -270,6 +271,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/examples/PDF-form.lyx
 %%DATADIR%%/examples/aa_sample.lyx
 %%DATADIR%%/examples/aas_sample.lyx
+%%DATADIR%%/examples/aas_sample62.lyx
 %%DATADIR%%/examples/achemso.lyx
 %%DATADIR%%/examples/addressExample.adr
 %%DATADIR%%/examples/amsart-test.lyx
@@ -461,6 +463,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/examples/sweave.lyx
 %%DATADIR%%/examples/thesis/Acknowledgments.lyx
 %%DATADIR%%/examples/thesis/Appendix.lyx
+%%DATADIR%%/examples/thesis/Bibliography.lyx
 %%DATADIR%%/examples/thesis/Summary.lyx
 %%DATADIR%%/examples/thesis/alpha.bst
 %%DATADIR%%/examples/thesis/chapter-1.lyx
@@ -680,6 +683,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/classic/tabular-feature_multirow.png
 %%DATADIR%%/images/classic/tabular-feature_set-all-lines.png
 %%DATADIR%%/images/classic/tabular-feature_set-border-lines.png
+%%DATADIR%%/images/classic/tabular-feature_set-inner-lines.png
 %%DATADIR%%/images/classic/tabular-feature_set-longtabular.png
 %%DATADIR%%/images/classic/tabular-feature_set-rotate-cell.png
 %%DATADIR%%/images/classic/tabular-feature_set-rotate-tabular.png
@@ -2010,6 +2014,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/oxygen/tabular-feature_multirow.svgz
 %%DATADIR%%/images/oxygen/tabular-feature_set-all-lines.svgz
 %%DATADIR%%/images/oxygen/tabular-feature_set-border-lines.svgz
+%%DATADIR%%/images/oxygen/tabular-feature_set-inner-lines.svgz
 %%DATADIR%%/images/oxygen/tabular-feature_set-longtabular.svgz
 %%DATADIR%%/images/oxygen/tabular-feature_toggle-line-bottom.svgz
 %%DATADIR%%/images/oxygen/tabular-feature_toggle-line-left.svgz
@@ -2077,6 +2082,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/images/tabular-feature_multirow.svgz
 %%DATADIR%%/images/tabular-feature_set-all-lines.svgz
 %%DATADIR%%/images/tabular-feature_set-border-lines.svgz
+%%DATADIR%%/images/tabular-feature_set-inner-lines.svgz
 %%DATADIR%%/images/tabular-feature_set-longtabular.svgz
 %%DATADIR%%/images/tabular-feature_set-rotate-cell.svgz
 %%DATADIR%%/images/tabular-feature_set-rotate-tabular.svgz
@@ -2163,6 +2169,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/aapaper.layout
 %%DATADIR%%/layouts/aastex.layout
 %%DATADIR%%/layouts/aastex6.layout
+%%DATADIR%%/layouts/aastex62.layout
 %%DATADIR%%/layouts/achemso.layout
 %%DATADIR%%/layouts/acm-sigs-alt.layout
 %%DATADIR%%/layouts/acm-sigs.inc
@@ -2277,6 +2284,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/layouts/logicalmkup.module
 %%DATADIR%%/layouts/ltugboat.layout
 %%DATADIR%%/layouts/lyxmacros.inc
+%%DATADIR%%/layouts/maa-monthly.layout
 %%DATADIR%%/layouts/memoir.layout
 %%DATADIR%%/layouts/minimalistic.module
 %%DATADIR%%/layouts/moderncv.layout
@@ -2515,6 +2523,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/templates/RJournal.lyx
 %%DATADIR%%/templates/aa.lyx
 %%DATADIR%%/templates/aastex6.lyx
+%%DATADIR%%/templates/aastex62.lyx
 %%DATADIR%%/templates/acmart.lyx
 %%DATADIR%%/templates/beamer-conference-ornate-20min.lyx
 %%DATADIR%%/templates/ctex.lyx
@@ -2532,6 +2541,7 @@ share/icons/hicolor/scalable/apps/lyx.svg
 %%DATADIR%%/templates/koma-letter2.lyx
 %%DATADIR%%/templates/letter.lyx
 %%DATADIR%%/templates/lettre.lyx
+%%DATADIR%%/templates/maa-monthly.lyx
 %%DATADIR%%/templates/obsolete/ACM-SIGS.lyx
 %%DATADIR%%/templates/obsolete/ACM-siggraph.lyx
 %%DATADIR%%/templates/obsolete/ACM-sigplan.lyx

@@ -1,0 +1,19 @@
+--- Makefile.am.orig	2019-11-23 15:26:28 UTC
++++ Makefile.am
+@@ -5,14 +5,14 @@ ACLOCAL_AMFLAGS = -I m4 -I config
+ MAINTAINERCLEANFILES += $(srcdir)/aclocal.m4 $(srcdir)/configure \
+ 	$(srcdir)/config.h.in
+ 
+-DIST_SUBDIRS = 3rdparty autotests m4 config development po src sourcedoc lib
++DIST_SUBDIRS = autotests m4 config po src sourcedoc lib
+ 
+ if BUILD_CLIENT_SUBDIR
+ CLIENT = src/client
+ endif
+ 
+ 
+-SUBDIRS = autotests config development po 3rdparty src sourcedoc lib \
++SUBDIRS = autotests config po src sourcedoc lib \
+ 	$(CLIENT) src/tex2lyx src/convert
+ 
+ 
