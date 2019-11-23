@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -28,10 +28,11 @@ CONFLICTS_INSTALL=	rspamd-devel
 USERS=		rspamd
 GROUPS=		rspamd
 
-OPTIONS_DEFINE=		CGP GPERF
+OPTIONS_DEFINE=		BLAS CGP GPERF
 OPTIONS_DEFINE_amd64=	HYPERSCAN
 OPTIONS_SUB=	yes
 
+BLAS_DESC=		Use OpenBLAS to accelerate KANN
 CGP_DESC=		Install Communigate Pro(tm) helper
 GPERF_DESC=		Google perf-tools profiling
 HYPERSCAN_DESC=		Use hyperscan optimizations (amd64 only)
@@ -51,6 +52,9 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	rspamd
+
+BLAS_CMAKE_ON=	-DENABLE_BLAS=ON
+BLAS_USES=	blaslapack:openblas
 
 GPERF_CMAKE_ON=	-DENABLE_GPERF_TOOLS=ON
 GPERF_LIB_DEPENDS=	libprofiler.so:devel/google-perftools
