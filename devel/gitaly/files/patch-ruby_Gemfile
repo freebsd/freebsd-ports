@@ -1,17 +1,8 @@
---- ruby/Gemfile.orig	2019-08-22 16:24:24 UTC
+--- ruby/Gemfile.orig	2019-11-22 14:21:07 UTC
 +++ ruby/Gemfile
-@@ -7,7 +7,7 @@ gem 'rugged', '~> 0.28'
- gem 'github-linguist', '~> 6.1', require: 'linguist'
- gem 'gitlab-markup', '~> 1.7.0'
- gem 'activesupport', '~> 5.2.3'
--gem 'rdoc', '~> 4.2'
-+gem 'rdoc', '~> 6.0'
- gem 'gitlab-gollum-lib', '~> 4.2.7.7', require: false
- gem 'gitlab-gollum-rugged_adapter', '~> 0.4.4.2', require: false
- gem 'grpc', '~> 1.19.0'
 @@ -24,17 +24,3 @@ gem 'licensee', '~> 8.9.0'
  
- gem 'google-protobuf', '~> 3.7.1'
+ gem 'google-protobuf', '~> 3.8.0'
  
 -group :development, :test do
 -  gem 'rubocop', '~> 0.69', require: false
