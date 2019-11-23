@@ -26,12 +26,14 @@ man/man1/cadabra2python.1.gz
 %%GUI%%%%DATADIR%%/manual/algorithms/einsteinify.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/eliminate_kronecker.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/eliminate_metric.cnb
+%%GUI%%%%DATADIR%%/manual/algorithms/eliminate_vielbein.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/epsilon_to_delta.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/evaluate.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/expand.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/expand_delta.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/expand_diracbar.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/expand_power.cnb
+%%GUI%%%%DATADIR%%/manual/algorithms/explicit_indices.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/factor_in.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/factor_out.cnb
 %%GUI%%%%DATADIR%%/manual/algorithms/fierz.cnb
@@ -82,6 +84,7 @@ man/man1/cadabra2python.1.gz
 %%GUI%%%%DATADIR%%/manual/properties/Indices.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Integer.cnb
 %%GUI%%%%DATADIR%%/manual/properties/InverseMetric.cnb
+%%GUI%%%%DATADIR%%/manual/properties/InverseVielbein.cnb
 %%GUI%%%%DATADIR%%/manual/properties/KroneckerDelta.cnb
 %%GUI%%%%DATADIR%%/manual/properties/LaTeXForm.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Metric.cnb
@@ -98,6 +101,7 @@ man/man1/cadabra2python.1.gz
 %%GUI%%%%DATADIR%%/manual/properties/Symmetric.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Tableau.cnb
 %%GUI%%%%DATADIR%%/manual/properties/TableauSymmetry.cnb
+%%GUI%%%%DATADIR%%/manual/properties/Vielbein.cnb
 %%GUI%%%%DATADIR%%/manual/properties/WeightInherit.cnb
 %%GUI%%%%DATADIR%%/notebook.html
 %%GUI%%%%DATADIR%%/notebook.tex
@@ -108,8 +112,10 @@ man/man1/cadabra2python.1.gz
 %%DATADIR%%/python/cdb/core/solve.cnb
 %%DATADIR%%/python/cdb/gauge_theory/__init__.py
 %%DATADIR%%/python/cdb/gauge_theory/instantons.py
-%%DATADIR%%/python/cdb/relativity/__init__.py
-%%DATADIR%%/python/cdb/relativity/schwarzschild.py
+%%DATADIR%%/python/cdb/relativity/abstract.cnb
+%%DATADIR%%/python/cdb/relativity/schwarzschild.cnb
+%%DATADIR%%/python/cdb/sympy/solvers.cnb
+%%DATADIR%%/python/cdb/utils/develop.cnb
 %%DATADIR%%/python/cdb/utils/node.cnb
 %%DATADIR%%/python/cdb_appdirs.py
 %%GUI%%share/icons/hicolor/128x128/apps/cadabra2-gtk.png
