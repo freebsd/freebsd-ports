@@ -14,6 +14,8 @@ CONFIGURE_ARGS= --without-fop \
 		--without-xsltproc \
 		--disable-specs
 
+OPTIONS_DEFINE=	DOCS
+
 pre-patch:
 	@${MKDIR} ${WRKSRC}/man
 
