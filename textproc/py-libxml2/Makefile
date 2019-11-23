@@ -4,7 +4,7 @@
 CATEGORIES=	textproc gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Python interface for XML parser library for GNOME
 
 MASTERDIR=	${.CURDIR}/../libxml2

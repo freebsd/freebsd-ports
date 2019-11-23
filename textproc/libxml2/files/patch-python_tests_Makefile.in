@@ -1,6 +1,6 @@
---- python/tests/Makefile.in.orig	2017-09-20 18:23:56 UTC
+--- python/tests/Makefile.in.orig	2019-11-16 14:42:34 UTC
 +++ python/tests/Makefile.in
-@@ -385,7 +385,7 @@ target_alias = @target_alias@
+@@ -387,7 +387,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
