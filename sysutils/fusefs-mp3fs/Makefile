@@ -10,20 +10,17 @@ MASTER_SITES=	https://github.com/khenriks/${PORTNAME}/releases/download/v${PORTV
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	stefan.rumetshofer@drei.at
-COMMENT=	FUSE-based filesystem for transcoding flac to mp3 on the fly
+COMMENT=	FUSE-based filesystem for transcoding FLAC to MP3 on the fly
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmp3lame.so:audio/lame \
-		libFLAC.so:audio/flac \
-		libid3tag.so:audio/libid3tag
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libid3tag.so:audio/libid3tag \
+		libmp3lame.so:audio/lame
 
-FETCH_CMD=	fetch -Fpr
-
-CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
+USES=		compiler:c11 fuse localbase pkgconfig
 GNU_CONFIGURE=	yes
-USES=		compiler:c11 fuse pkgconfig
 PLIST_FILES=	bin/mp3fs \
 		man/man1/mp3fs.1.gz
 
