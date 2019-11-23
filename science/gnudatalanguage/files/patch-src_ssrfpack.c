@@ -1,7 +1,7 @@
---- src/ssrfpack.c.orig	2018-04-07 19:40:08 UTC
+--- src/ssrfpack.c.orig	2018-12-01 14:19:52 UTC
 +++ src/ssrfpack.c
-@@ -7,6 +7,10 @@
- #define sincosf(x, s, c) __sincosf(x, s, c)
+@@ -11,6 +11,10 @@
+ #  define sincos(x,s,c) (*s = sin(x), *c = cos(x))
  #endif
  
 +#ifdef __FreeBSD__
