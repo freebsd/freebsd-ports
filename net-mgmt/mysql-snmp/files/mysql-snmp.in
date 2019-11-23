@@ -1,0 +1,33 @@
+#! /bin/sh -
+
+# $FreeBSD$
+#
+# PROVIDE: mysql-snmp
+# REQUIRE: DAEMON mysql
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# mysql_snmp_enable (bool):	Set to NO by default.
+#				Set it to YES to enable mysql_snmp.
+# mysql_snmp_config (path):	Set to %%ETCDIR%%/my.cnf
+#				by default.
+
+. /etc/rc.subr
+
+name="mysql_snmp"
+rcvar="mysql_snmp_enable"
+
+load_rc_config "$name"
+
+: ${mysql_snmp_enable:="NO"}
+: ${mysql_snmp_config="%%ETCDIR%%/my.cnf"}
+
+command_interpreter="%%PERL%%"
+command="%%PREFIX%%/sbin/mysql-snmp"
+pidfile="/var/run/mysql-snmp.pid"
+
+command_args="--config $mysql_snmp_config"
+
+run_rc_command "$1"

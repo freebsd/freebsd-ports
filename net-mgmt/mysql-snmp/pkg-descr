@@ -1,0 +1,7 @@
+mysql-snmp is a MySQL Net-SNMP agent written in Perl, and using the Net-SNMP
+Perl bindings.
+
+It connects to a MySQL server and returns information to Net-SNMP when needed.
+It parses SHOW INNODB STATUS and other MySQL status variables.
+
+WWW: https://github.com/masterzen/mysql-snmp

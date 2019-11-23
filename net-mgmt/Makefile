@@ -132,6 +132,7 @@
     SUBDIR += mrtg
     SUBDIR += mrtg-ping-probe
     SUBDIR += mtrace
+    SUBDIR += mysql-snmp
     SUBDIR += mysqld_exporter
     SUBDIR += nagcon
     SUBDIR += nagios
