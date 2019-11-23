@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	3
 DISTNAME_amd64=	sublime_text_3_build_3211_x64
 DISTNAME_i386=	sublime_text_3_build_3211_x32
 
-MAINTAINER=	miguelmclara@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated text editor for code, markup and prose
 
 USES=		desktop-file-utils gnome linux tar:bzip2
