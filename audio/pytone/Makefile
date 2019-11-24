@@ -12,16 +12,15 @@ DISTNAME=	PyTone-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music jukebox written in Python with a curses GUI
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2  # only
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libao.so:audio/libao
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR}
 
-USES=		ncurses python:2.7
+USES=		localbase ncurses python:2.7
 USE_PYTHON=	autoplist distutils
-
-CFLAGS+=	-I${LOCALBASE}/include
 
 SUB_FILES=	pkg-message
 
