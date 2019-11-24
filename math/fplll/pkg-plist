@@ -16,6 +16,7 @@ include/fplll/gso_gram.h
 include/fplll/gso_interface.h
 include/fplll/hlll.h
 include/fplll/householder.h
+include/fplll/io/thread_pool.hpp
 include/fplll/lll.h
 include/fplll/nr/dpe.h
 include/fplll/nr/matrix.cpp
@@ -43,10 +44,11 @@ include/fplll/sieve/sieve_common.h
 include/fplll/sieve/sieve_gauss.h
 include/fplll/sieve/sieve_gauss_str.h
 include/fplll/svpcvp.h
+include/fplll/threadpool.h
 include/fplll/util.h
 include/fplll/wrapper.h
 lib/libfplll.so
-lib/libfplll.so.5
-lib/libfplll.so.5.0.0
+lib/libfplll.so.6
+lib/libfplll.so.6.0.0
 libdata/pkgconfig/fplll.pc
 %%DATADIR%%/strategies/default.json
