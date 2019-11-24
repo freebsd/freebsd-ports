@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racket
-PORTVERSION=	7.3
+PORTVERSION=	7.5
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -32,7 +32,7 @@ CONFLICTS=	racket-minimal-[0-9]*
 
 USES=		gnome iconv jpeg libtool localbase sqlite tar:tgz
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	-enable-libffi --enable-pthread --enable-places --enable-shared --mandir=${MANDIRS}
+CONFIGURE_ARGS=	-enable-libffi --enable-pthread --enable-places --mandir=${MANDIRS}
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
 PATCH_WRKSRC=	${WRKDIR}/racket-${PORTVERSION}
 USE_LDCONFIG=	yes

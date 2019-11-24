@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racket
-PORTVERSION=	7.3
+PORTVERSION=	7.5
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -33,7 +33,7 @@ MAKE_JOBS_UNSAFE=yes
 CONFLICTS=	racket-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	-enable-libffi --enable-pthread --enable-places --enable-shared --mandir=${MANDIRS}
+CONFIGURE_ARGS=	-enable-libffi --enable-pthread --enable-places --mandir=${MANDIRS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
