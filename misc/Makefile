@@ -413,6 +413,7 @@
     SUBDIR += py-tflearn
     SUBDIR += py-toil
     SUBDIR += py-tqdm
+    SUBDIR += py-tvm
     SUBDIR += py-yolk
     SUBDIR += pylize
     SUBDIR += pyobd
