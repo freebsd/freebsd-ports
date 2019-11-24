@@ -264,6 +264,7 @@
     SUBDIR += printscreen
     SUBDIR += props
     SUBDIR += py-caffeine-ng
+    SUBDIR += py-i3ipc
     SUBDIR += py-pyscreenshot
     SUBDIR += py-pyvirtualdisplay
     SUBDIR += py-qt5-opengl
