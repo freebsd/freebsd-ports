@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 
+NO_ARCH=	yes
+
 PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar \
 		bin/${PORTNAME}
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
@@ -28,7 +30,7 @@ BUILD=	0.9.0
 GH_ACCOUNT=	patric-r
 USE_GITHUB=	yes
 
-pre-build:
+post-extract:
 	@${TAR} -xf ${DISTDIR}/jvmtop-maven-repository-${BUILD}.tar.gz -C ${WRKSRC}
 
 do-build:
