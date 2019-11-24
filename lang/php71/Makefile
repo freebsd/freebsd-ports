@@ -13,7 +13,7 @@ COMMENT=	PHP Scripting Language
 
 LICENSE=	PHP301
 
-USES+=		tar:xz cpe
+USES+=		cpe gnome tar:xz
 CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes
 
@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=--with-layout=GNU \
 		--with-libxml-dir=${LOCALBASE} \
 		--with-pcre-regex=${LOCALBASE} \
 		--program-prefix=""
-USES+=		autoreconf:build gnome
+USES+=		autoreconf:build
 USE_GNOME=	libxml2
 
 # PR230207 Allow relocations against read-only segments (override lld default)
