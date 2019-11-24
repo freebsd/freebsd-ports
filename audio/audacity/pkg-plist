@@ -80,7 +80,6 @@ share/applications/audacity.desktop
 %%DATADIR%%/plug-ins/sample-data-import.ny
 %%DATADIR%%/plug-ins/tremolo.ny
 %%DATADIR%%/plug-ins/vocalrediso.ny
-%%DATADIR%%/plug-ins/vocalremover.ny
 %%DATADIR%%/plug-ins/vocoder.ny
 share/icons/hicolor/16x16/apps/audacity.png
 share/icons/hicolor/22x22/apps/audacity.png

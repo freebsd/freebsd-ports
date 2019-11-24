@@ -1,6 +1,6 @@
 --- lib-src/FileDialog/Makefile.am.orig	2018-10-01 14:07:33 UTC
 +++ lib-src/FileDialog/Makefile.am
-@@ -1,5 +1,7 @@
+@@ -2,5 +2,7 @@
  ACLOCAL_AMFLAGS = -I m4
  
 +SUBDIRS=	$(GTK_SUBDIR) $(MAC_SUBDIR) $(WINDOWS_SUBDIR)
@@ -8,7 +8,7 @@
  lib_LTLIBRARIES = libFileDialog.la
  
  libFileDialog_la_LIBTOOLFLAGS = --tag=CXX
-@@ -8,22 +10,32 @@ libFileDialog_la_LIBADD = $(WX_LIBS)
+@@ -11,22 +13,32 @@ libFileDialog_la_LIBADD = $(WX_LIBS)
  libFileDialog_la_SOURCES = FileDialog.cpp FileDialog.h
  
  if GTK
