@@ -3,7 +3,7 @@
 PORTNAME=	onnx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.0.20191021
-CATEGORIES=	math
+CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Neural Network eXchange
