@@ -13,7 +13,7 @@
 #                                       Default: NO
 # ossec_hids_fetch_connect_time (int):  Time in seconds to wait for the download of the shared configuration to start.
 #                                       Used only by agent installation.
-#                                       Default: 30
+#                                       Default: 40
 # ossec_hids_fetch_read_time (int):     Time in seconds to wait for subsequent download chunks of the shared configuration.
 #                                       Used only by agent installation.
 #                                       Default: 10
@@ -28,7 +28,7 @@ load_rc_config $name
 : ${ossec_hids_enable="NO"}
 : ${ossec_hids_clear_log="NO"}
 : ${ossec_hids_clear_ar_log="NO"}
-: ${ossec_hids_fetch_connect_time=30}
+: ${ossec_hids_fetch_connect_time=40}
 : ${ossec_hids_fetch_read_time=10}
 
 ossec_type="%%OSSEC_TYPE%%"
