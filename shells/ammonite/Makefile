@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ammonite
-DISTVERSION=	1.7.1
+DISTVERSION=	1.8.2
 CATEGORIES=	shells java
 MASTER_SITES=	https://github.com/lihaoyi/Ammonite/releases/download/${PORTVERSION}/
 DISTNAME=	2.12-${PORTVERSION}
