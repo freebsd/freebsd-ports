@@ -55,7 +55,6 @@
     SUBDIR += compat7x
     SUBDIR += compat8x
     SUBDIR += compat9x
-    SUBDIR += console-bridge
     SUBDIR += countrycodes
     SUBDIR += cpuid
     SUBDIR += crosti
@@ -502,8 +501,6 @@
     SUBDIR += unicode-emoji
     SUBDIR += upclient
     SUBDIR += urbit
-    SUBDIR += urdfdom
-    SUBDIR += urdfdom-headers
     SUBDIR += urh
     SUBDIR += us-zipcodes
     SUBDIR += usbids

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libBulletDynamics.so:devel/bullet \
 		libboost_system.so:devel/boost-libs \
 		libccd.so:math/libccd \
-		libconsole_bridge.so:misc/console-bridge \
+		libconsole_bridge.so:devel/ros-console_bridge \
 		libfcl.so:math/fcl \
 		libflann_cpp.so:math/flann \
 		libipopt.so:math/ipopt \
@@ -29,7 +29,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libosg.so:graphics/osg \
 		libnlopt.so:math/nlopt \
 		libtinyxml2.so:textproc/tinyxml2 \
-		liburdfdom_world.so:misc/urdfdom
+		liburdfdom_world.so:devel/ros-urdfdom
 
 USES=		cmake compiler:c++11-lang eigen:3 gl localbase:ldflags \
 		pkgconfig xorg
