@@ -2,29 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	eggdrop
-PORTVERSION=	1.6.21
-PORTREVISION=	1
+PORTVERSION=	1.8.4
+DISTVERSIONPREFIX=	v
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/
-DISTNAME=	${PORTNAME}${PORTVERSION}
-DISTFILES=	${PORTNAME}${PORTVERSION}.tar.bz2
 
 MAINTAINER=	dbaio@FreeBSD.org
-COMMENT=	The most popular open source Internet Relay Chat bot
+COMMENT=	Eggdrop is the most popular Internet Relay Chat (IRC) bot
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	DOCS
+USES=		tcl ssl
 
-USES=		tcl
+USE_GITHUB=	yes
+GH_ACCOUNT=	eggheads
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_SHLIB_VER}.so \
 		--with-tclinc=${LOCALBASE}/include/tcl${TCL_VER}/tcl.h
+
 MAKE_JOBS_UNSAFE=	yes
 LLD_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
-PORTDOCS=	*
+
+CONFLICTS=	eggdrop-devel eggdrop16
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/eggdrop.conf \
@@ -32,8 +36,6 @@ post-patch:
 
 post-configure:
 	@(cd ${WRKSRC}; ${MAKE} config)
-# Workaround broken relative path in SSL-patch
-#	@(cd ${WRKSRC}/src && ${LN} -fs ../config.h)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eggdrop ${STAGEDIR}${PREFIX}/bin
@@ -42,7 +44,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eggdrop
 .for f in assoc.so blowfish.so channels.so compress.so console.so ctcp.so \
 	dns.so filesys.so irc.so notes.so seen.so server.so share.so \
-	transfer.so uptime.so wire.so
+	transfer.so uptime.so
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/lib/eggdrop
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}/help
@@ -52,8 +54,8 @@ do-install:
 	filesys.mod/help/filesys.help irc.mod/help/irc.help \
 	notes.mod/help/notes.help seen.mod/help/seen.help \
 	server.mod/help/server.help share.mod/help/share.help \
-	transfer.mod/help/transfer.help uptime.mod/help/uptime.help \
-	wire.mod/help/wire.help
+	transfer.mod/help/transfer.help uptime.mod/help/uptime.help
+
 	${INSTALL_DATA} ${WRKSRC}/src/mod/${f} ${STAGEDIR}${DATADIR}/help
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}/help/set

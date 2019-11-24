@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191124:
+  AFFECTS: users of irc/eggdrop
+  AUTHOR: dbaio@FreeBSD.org
+
+  The irc/eggdrop port has been updated to 1.8.4 and its config is not
+  backward compatible with 1.6.21. A new port was created to keep 1.6.21
+  version available at irc/eggdrop16 and it will be available for 3 months
+  until users have time to upgrade their configuration.
+
+  More information at:
+  https://raw.githubusercontent.com/eggheads/eggdrop/v1.8.4/NEWS
+
+  If you would like to keep using 1.6.21, please run the following command
+  to update pkg database:
+
+    pkg set -n eggdrop:eggdrop16
+    pkg set -o irc/eggdrop:irc/eggdrop16
+
 20191108:
   AFFECTS: users of databases/redis[-devel]
   AUTHOR: osa@FreeBSD.org
