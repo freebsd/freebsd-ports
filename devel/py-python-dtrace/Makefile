@@ -15,4 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python zip
 USE_PYTHON=	autoplist distutils cython cython_run
 
+.if !exists(${SRC_BASE}/sys/cddl/contrib/opensolaris/uts/common/dtrace.h)
+IGNORE=		you must have "device dtrace" included in your kernel to build this package
+.endif
+
 .include <bsd.port.mk>
