@@ -1,5 +1,4 @@
 bin/check_urdf
-bin/urdf_mem_test
 bin/urdf_to_graphiz
 include/urdf_parser/exportdecl.h
 include/urdf_parser/urdf_parser.h

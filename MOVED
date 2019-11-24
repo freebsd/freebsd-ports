@@ -13498,3 +13498,6 @@ www/httpdirfs|sysutils/fusefs-httpdirfs|2019-11-23|Rename for consistency with o
 math/tvm|misc/tvm|2019-11-24|Move to a more appropriate category
 math/onnx|misc/onnx|2019-11-24|Move to a more appropriate category
 math/py-onnx-tf|misc/py-onnx-tf|2019-11-24|Move to a more appropriate category
+misc/console-bridge|devel/ros-console_bridge|2019-11-24|Use devel/ros-console_bridge instead
+misc/urdfdom-headers|devel/ros-urdfdom_headers|2019-11-24|Use devel/ros-urdfdom_headers instead
+misc/urdfdom|devel/ros-urdfdom|2019-11-24|Use devel/ros-urdfdom instead

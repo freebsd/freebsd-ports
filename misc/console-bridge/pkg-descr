@@ -1,4 +1,0 @@
-A ROS-independent package for logging that seamlessly pipes into
-rosconsole/rosout for ROS-dependent packages.
-
-WWW: https://github.com/ros/console_bridge
