@@ -5,7 +5,9 @@ DISTVERSION=	0.4.1 # Test with biology/unanimity before upgrading!
 PORTREVISION=	3
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+# As of March 2018, unanimity is no longer open source.
+# See https://github.com/PacificBiosciences/ccs.
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=	Core C++ library for Pacific Biosciences tools
 
 LICENSE=	BSD3CLAUSE

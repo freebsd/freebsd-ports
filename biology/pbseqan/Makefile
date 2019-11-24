@@ -4,7 +4,9 @@ PORTNAME=	pbseqan
 DISTVERSION=	g20171011
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+# As of March 2018, unanimity is no longer open source.
+# See https://github.com/PacificBiosciences/ccs.
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=	Pacific Biosciences patched and stripped down SeqAn
 
 LICENSE=	BSD3CLAUSE
