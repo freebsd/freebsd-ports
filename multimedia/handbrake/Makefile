@@ -13,8 +13,7 @@ COMMENT=	Versatile DVD ripper and video transcoder
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	invokes x86 assembler
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 
 BUILD_DEPENDS=	bash:shells/bash \
 		nasm:devel/nasm \
@@ -54,7 +53,7 @@ LIB_DEPENDS+=	libdvdcss.so:multimedia/libdvdcss
 .endif
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf:build compiler:features gmake iconv \
+USES=		autoreconf:build compiler:c11 gmake iconv \
 		libtool:build localbase:ldflags pkgconfig python:2.7,build
 MAKE_ENV=	V=1 ACLOCAL=${LOCALBASE}/bin/aclocal
 
@@ -101,7 +100,7 @@ X11_USE=	gstreamer1=gdkpixbuf,libav \
 		gnome=gtk30,intltool,cairo,gdkpixbuf2
 
 # HandBrake tries to fetch its dependencies during build phase, which is not
-# considered good in FreeBSD.  Instead, we will provided the downloaded files.
+# considered good in FreeBSD.  Instead, we will provide the downloaded files.
 post-extract: .SILENT
 	${MKDIR} ${WRKSRC}/download
 .for f in ${CONTRIB_FILES}
