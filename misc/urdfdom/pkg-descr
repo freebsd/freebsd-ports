@@ -1,4 +1,0 @@
-urdf is a C++ parser for the Unified Robot Description Format (URDF), which is
-an XML format for representing a robot model.
-
-WWW: https://wiki.ros.org/urdf
