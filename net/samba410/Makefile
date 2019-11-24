@@ -71,7 +71,6 @@ USES+=				compiler:c++11-lang iconv localbase:ldflags \
 				perl5 pkgconfig shebangfix ssl waf gettext-runtime
 USE_PERL5=			build
 USE_LDCONFIG=			${SAMBA4_LIBDIR}
-LLD_UNSAFE=			yes
 WAF_CMD=			buildtools/bin/waf
 CONFIGURE_LOG=			bin/config.log
 
