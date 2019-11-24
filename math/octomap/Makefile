@@ -2,8 +2,7 @@
 
 PORTNAME=	octomap
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
-PORTREVISION=	1
+DISTVERSION=	1.9.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/octomap/LICENSE.txt
 LICENSE_FILE_GPLv2=	${WRKSRC}/octovis/LICENSE.txt
 
-BUILD_DEPENDS=		libQGLViewer>0:graphics/libQGLViewer # otherwise it doesn't build, see https://github.com/OctoMap/octomap/issues/225
+BUILD_DEPENDS=	libQGLViewer>0:graphics/libQGLViewer # otherwise it doesn't build, see https://github.com/OctoMap/octomap/issues/225
 
 USES=		cmake localbase:ldflags
 USE_GITHUB=	yes
