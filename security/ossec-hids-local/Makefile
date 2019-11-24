@@ -1,20 +1,14 @@
 # $FreeBSD$
 
-PORTNAME=	ossec-hids
-PORTVERSION=	3.3.0
-PORTREVISION=	0
-CATEGORIES=	security
-PKGNAMESUFFIX=	-${OSSEC_TYPE}
+PKGNAMESUFFIX?=	-${OSSEC_TYPE}
+COMMENT?=	Security tool to monitor and check logs and intrusions - local (standalone) installation
+OSSEC_TYPE?=	local
 
-MAINTAINER=	dominik.lisiak@bemsoft.pl
-COMMENT=	Security tool to monitor and check logs and intrusions
+.include "${.CURDIR}/../ossec-hids/version.mk"
 
-LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler gmake ssl
-
-OSSEC_TYPE?=	local
 
 .if ${OSSEC_TYPE} == local
 CONFLICTS_INSTALL=	ossec-hids-client-* \
@@ -30,7 +24,7 @@ CONFLICTS_INSTALL=	ossec-hids-client-* \
 			ossec-hids-local-*
 .endif
 
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 libevent.so:devel/libevent
 .if ${OSSEC_TYPE} != agent
 RUN_DEPENDS=	expect:lang/expect
 .endif
@@ -41,7 +35,7 @@ ZEROMQ_LIB_DEPENDS=	libczmq.so:net/czmq
 
 INOTIFY_USES=	pkgconfig
 LUA_USES=	readline
-MYSQL_USES=	mysql
+MYSQL_USE=	mysql
 PGSQL_USES=	pgsql
 
 USE_GITHUB=	yes
@@ -135,7 +129,12 @@ FIREWALL_DROP_BIN=	${OSSEC_HOME}/active-response/bin/firewall-drop.sh
 IPFILTER_BIN=		${OSSEC_HOME}/active-response/bin/ipfilter.sh
 RESTART_OSSEC_BIN=	${OSSEC_HOME}/active-response/bin/restart-ossec.sh
 SHARED_DIR=		${OSSEC_HOME}/etc/shared
-INTERNAL_OPTS_CONF=	${OSSEC_HOME}/etc/local_internal_options.conf
+
+SAMPLE_FILES=		${OSSEC_HOME}/etc/local_internal_options.conf \
+			${OSSEC_HOME}/active-response/bin/cloudflare-ban.sh \
+			${OSSEC_HOME}/active-response/bin/ossec-pagerduty.sh \
+			${OSSEC_HOME}/active-response/bin/ossec-slack.sh \
+			${OSSEC_HOME}/active-response/bin/ossec-tweeter.sh
 
 .if empty(USER)
 USER=$$(${ID} -un)
@@ -187,6 +186,9 @@ INOTIFY_CFLAGS=	$$(${PKG_CONFIG} --cflags libinotify)
 INOTIFY_LDFLAGS=$$(${PKG_CONFIG} --libs libinotify)
 
 OSSEC_ARGS+=	TARGET=${OSSEC_TYPE} PCRE2_SYSTEM=yes INSTALL_LOCALTIME=no INSTALL_RESOLVCONF=no
+.if defined(OSSEC_MAX_AGENTS)
+OSSEC_ARGS+=	MAXAGENTS=${OSSEC_MAX_AGENTS}
+.endif
 .if !defined(MAINTAINER_MODE)
 OSSEC_ARGS+=	INSTALL_CMD=install
 .endif
@@ -212,7 +214,9 @@ do-install:
 	@cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${INSTALL_ARGS} install
 
 post-install:
-	@${MV} -f ${STAGEDIR}${INTERNAL_OPTS_CONF} ${STAGEDIR}${INTERNAL_OPTS_CONF}.sample
+.for file_path in ${SAMPLE_FILES}
+	@${MV} -f ${STAGEDIR}${file_path} ${STAGEDIR}${file_path}.sample
+.endfor
 	@${MV} -f ${STAGEDIR}${FIREWALL_DROP_BIN} ${STAGEDIR}${IPFILTER_BIN}
 	@${CP} ${WRKDIR}/restart-ossec.sh ${STAGEDIR}${RESTART_OSSEC_BIN}
 	@${CHMOD} 550 ${STAGEDIR}${RESTART_OSSEC_BIN}

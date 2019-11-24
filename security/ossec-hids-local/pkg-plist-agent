@@ -1,6 +1,7 @@
 @dir(,ossec,0550) %%OSSEC_HOME%%
 @dir(,ossec,0550) %%OSSEC_HOME%%/active-response
 @dir(,ossec,0550) %%OSSEC_HOME%%/active-response/bin
+@sample(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/cloudflare-ban.sh.sample
 @(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/disable-account.sh
 @(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/firewalld-drop.sh
 @(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/host-deny.sh
@@ -9,9 +10,9 @@
 @(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ipfw.sh
 @(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ipfw_mac.sh
 @(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/npf.sh
-@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ossec-pagerduty.sh
-@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ossec-slack.sh
-@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ossec-tweeter.sh
+@sample(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ossec-pagerduty.sh.sample
+@sample(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ossec-slack.sh.sample
+@sample(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ossec-tweeter.sh.sample
 @(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/pf.sh
 @(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/restart-ossec.sh
 @(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/route-null.sh

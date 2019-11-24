@@ -1,19 +1,13 @@
 # $FreeBSD$
 
-PORTNAME=	ossec-hids
-PORTVERSION=	3.3.0
-PORTREVISION=	0
-CATEGORIES=	security
-PKGNAMESUFFIX=	-${OSSEC_TYPE}-config
-
-MAINTAINER=	dominik.lisiak@bemsoft.pl
-COMMENT=	Configuration manager for ossec-hids
-
-LICENSE=	GPLv2
-
+PKGNAMESUFFIX?=	-${OSSEC_TYPE}-config
+COMMENT?=	Configuration manager for ossec-hids-${OSSEC_TYPE}
 OSSEC_TYPE?=	local
 
+.include "${.CURDIR}/../ossec-hids/version.mk"
+
 MASTERDIR?=	${.CURDIR}
+DISTINFO_FILE?=	${MASTERDIR}/../ossec-hids-local/distinfo
 
 .if ${OSSEC_TYPE} == local
 CONFLICTS_INSTALL=	ossec-hids-client-* \
