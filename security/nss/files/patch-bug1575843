@@ -44,17 +44,26 @@ elf_aux_info is similar to getauxval but is nop on aarch64.
      if (getauxval) {
          long hwcaps = getauxval(AT_HWCAP);
          arm_aes_support_ = hwcaps & HWCAP_AES && disable_hw_aes == NULL;
-@@ -145,6 +153,14 @@ CheckARMSupport()
+@@ -145,6 +153,23 @@ CheckARMSupport()
          arm_sha1_support_ = hwcaps & HWCAP_SHA1;
          arm_sha2_support_ = hwcaps & HWCAP_SHA2;
      }
 +#elif defined(__FreeBSD__)
++#ifndef ID_AA64ISAR0_AES_VAL
++#define ID_AA64ISAR0_AES_VAL ID_AA64ISAR0_AES
++#endif
++#ifndef ID_AA64ISAR0_SHA1_VAL
++#define ID_AA64ISAR0_SHA1_VAL ID_AA64ISAR0_SHA1
++#endif
++#ifndef ID_AA64ISAR0_SHA2_VAL
++#define ID_AA64ISAR0_SHA2_VAL ID_AA64ISAR0_SHA2
++#endif
 +    uint64_t id_aa64isar0;
-+    id_aa64isar0 = READ_SPECIALREG(ID_AA64ISAR0_EL1);
-+    arm_aes_support_ = ID_AA64ISAR0_AES(id_aa64isar0) >= ID_AA64ISAR0_AES_BASE && disable_hw_aes == NULL;
-+    arm_pmull_support_ = ID_AA64ISAR0_AES(id_aa64isar0) == ID_AA64ISAR0_AES_PMULL && disable_pmull == NULL;
-+    arm_sha1_support_ = ID_AA64ISAR0_SHA1(id_aa64isar0) == ID_AA64ISAR0_SHA1_BASE;
-+    arm_sha2_support_ = ID_AA64ISAR0_SHA2(id_aa64isar0) >= ID_AA64ISAR0_SHA2_BASE;
++    id_aa64isar0 = READ_SPECIALREG(id_aa64isar0_el1);
++    arm_aes_support_ = ID_AA64ISAR0_AES_VAL(id_aa64isar0) >= ID_AA64ISAR0_AES_BASE && disable_hw_aes == NULL;
++    arm_pmull_support_ = ID_AA64ISAR0_AES_VAL(id_aa64isar0) == ID_AA64ISAR0_AES_PMULL && disable_pmull == NULL;
++    arm_sha1_support_ = ID_AA64ISAR0_SHA1_VAL(id_aa64isar0) == ID_AA64ISAR0_SHA1_BASE;
++    arm_sha2_support_ = ID_AA64ISAR0_SHA2_VAL(id_aa64isar0) >= ID_AA64ISAR0_SHA2_BASE;
 +#endif /* defined(__linux__) */
      /* aarch64 must support NEON. */
      arm_neon_support_ = disable_arm_neon == NULL;
