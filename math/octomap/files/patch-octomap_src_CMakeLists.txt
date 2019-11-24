@@ -1,17 +1,19 @@
---- octomap/src/CMakeLists.txt.orig	2017-04-28 19:49:53 UTC
+--- octomap/src/CMakeLists.txt.orig	2019-11-23 20:56:23 UTC
 +++ octomap/src/CMakeLists.txt
-@@ -16,8 +16,8 @@ set_target_properties( octomap PROPERTIE
+@@ -16,9 +16,9 @@ set_target_properties( octomap PROPERTIES
    VERSION ${OCTOMAP_VERSION}
    SOVERSION ${OCTOMAP_SOVERSION}
  )
 -ADD_LIBRARY( octomap-static STATIC ${octomap_SRCS})
 -SET_TARGET_PROPERTIES(octomap-static PROPERTIES OUTPUT_NAME "octomap") 
+-add_dependencies(octomap-static octomath-static)
 +#ADD_LIBRARY( octomap-static STATIC ${octomap_SRCS})
 +#SET_TARGET_PROPERTIES(octomap-static PROPERTIES OUTPUT_NAME "octomap") 
++#add_dependencies(octomap-static octomath-static)
  
  TARGET_LINK_LIBRARIES(octomap octomath)
  
-@@ -25,7 +25,7 @@ if(NOT EXISTS "${CMAKE_LIBRARY_OUTPUT_DI
+@@ -26,7 +26,7 @@ if(NOT EXISTS "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/cmake
    file(MAKE_DIRECTORY "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/cmake/octomap")
  endif()
  
@@ -20,7 +22,7 @@
    APPEND FILE "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/cmake/octomap/octomap-targets.cmake")
  
  ADD_SUBDIRECTORY( testing )
-@@ -66,7 +66,7 @@ TARGET_LINK_LIBRARIES(intersection_examp
+@@ -67,7 +67,7 @@ TARGET_LINK_LIBRARIES(intersection_example octomap)
  ADD_EXECUTABLE(octree2pointcloud octree2pointcloud.cpp)
  TARGET_LINK_LIBRARIES(octree2pointcloud octomap)
  

@@ -46,13 +46,13 @@ include/octomap/octomap_types.h
 include/octomap/octomap_utils.h
 lib/libdynamicedt3d.so
 lib/libdynamicedt3d.so.1.9
-lib/libdynamicedt3d.so.1.9.0
+lib/libdynamicedt3d.so.1.9.1
 lib/liboctomap.so
 lib/liboctomap.so.1.9
-lib/liboctomap.so.1.9.0
+lib/liboctomap.so.1.9.1
 lib/liboctomath.so
 lib/liboctomath.so.1.9
-lib/liboctomath.so.1.9.0
+lib/liboctomath.so.1.9.1
 libdata/pkgconfig/dynamicEDT3D.pc
 libdata/pkgconfig/octomap.pc
 share/dynamicEDT3D/dynamicEDT3DConfig-version.cmake
