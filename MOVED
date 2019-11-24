@@ -13496,3 +13496,5 @@ www/rubygem-responders2-rails52|www/rubygem-responders-rails52|2019-11-23|Obsole
 devel/rubygem-gitlab-default_value_for|devel/rubygem-default_value_for|2019-11-23|Obsolete, please use devel/rubygem-default_value_for instead
 www/httpdirfs|sysutils/fusefs-httpdirfs|2019-11-23|Rename for consistency with other FUSE ports
 math/tvm|misc/tvm|2019-11-24|Move to a more appropriate category
+math/onnx|misc/onnx|2019-11-24|Move to a more appropriate category
+math/py-onnx-tf|misc/py-onnx-tf|2019-11-24|Move to a more appropriate category

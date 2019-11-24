@@ -263,6 +263,7 @@
     SUBDIR += nut
     SUBDIR += ompl
     SUBDIR += ondir
+    SUBDIR += onnx
     SUBDIR += opencyc
     SUBDIR += openhab2
     SUBDIR += openhab2-addons
@@ -385,6 +386,7 @@
     SUBDIR += py-huepy
     SUBDIR += py-kartograph
     SUBDIR += py-molequeue
+    SUBDIR += py-onnx-tf
     SUBDIR += py-orange3-associate
     SUBDIR += py-orange3-datafusion
     SUBDIR += py-orange3-educational
