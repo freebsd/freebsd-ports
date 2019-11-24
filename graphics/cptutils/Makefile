@@ -12,6 +12,9 @@ COMMENT=	Convert and manipulate colour gradients
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	depends on expired textproc/xml2
+EXPIRATION_DATE=2019-12-31
+
 BUILD_DEPENDS=	gengetopt:devel/gengetopt \
 		gperf:devel/gperf \
 		docbook-xsl>0:textproc/docbook-xsl
