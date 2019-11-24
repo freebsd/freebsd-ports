@@ -1,4 +1,4 @@
---- setup.py.orig	2019-05-11 04:02:35 UTC
+--- setup.py.orig	2019-05-10 21:59:01 UTC
 +++ setup.py
 @@ -295,19 +295,9 @@ package_data_exclude = {
  }
@@ -23,3 +23,16 @@
  ]
  # print(generate_data_files(data_files))
  
+@@ -381,10 +371,10 @@ setup(
+         'requests>=2.21',
+         'PySocks>=1.6.7',
+         'bottle>=0.12.13',
+-        'stem>=1.5.4, <=1.6',
++        'stem>=1.5.4',
+         'tzlocal>=1.5',
+         'futures>=3.2; python_version<"3.0"',
+-        'urllib3>=1.24.2, <1.25'    # '<1.25' due to requests 2.21 requirement
++        'urllib3>=1.21.1,<1.26' # copied (except the exclusions) from requests 2.22
+     ],
+     long_description_content_type='text/x-rst; charset=UTF-8',
+     classifiers=[
