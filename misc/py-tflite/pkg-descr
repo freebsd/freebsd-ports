@@ -1,0 +1,6 @@
+Python package to parse TFLite models (*.tflite) easily.
+
+The tflite package is built to parse the TFLite models from the schema.fbs
+file supplied in the TensorFlow project.
+
+WWW: https://jackwish.net/tflite/
