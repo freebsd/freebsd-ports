@@ -487,6 +487,7 @@
     SUBDIR += ttyrec
     SUBDIR += tudu
     SUBDIR += tvbrowser
+    SUBDIR += tvm
     SUBDIR += typetrainer
     SUBDIR += tzdiff
     SUBDIR += uk-phone
