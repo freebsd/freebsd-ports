@@ -4,8 +4,8 @@
 PORTNAME=	chan_sccp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.2
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-gamma
+DISTVERSIONSUFFIX=	-delta
+PORTREVISION=	2
 CATEGORIES=	net
 PKGNAMEPREFIX=	asterisk-
 
@@ -15,7 +15,11 @@ COMMENT=	Replacement for the SCCP channel driver in Asterisk
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gettext-tools iconv libtool
+FLAVORS=	asterisk13 asterisk16
+FLAVOR?=	${FLAVORS:[1]}
+
+USES=		autoreconf gettext-tools iconv libtool localbase
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	chan-sccp
 GH_PROJECT=	chan-sccp
@@ -35,22 +39,20 @@ PLIST_FILES=	etc/asterisk/sccp.conf.annotated \
 		lib/asterisk/modules/chan_sccp.so \
 		share/asterisk/documentation/thirdparty/chan_sccp-en_US.xml
 
-OPTIONS_DEFINE=		CONFERENCE VIDEO
-OPTIONS_DEFAULT=	AST16 CONFERENCE VIDEO
-OPTIONS_SINGLE=		ASTVER
-OPTIONS_SINGLE_ASTVER=	AST13 AST16
+asterisk13_PKGNAMEPREFIX=	asterisk13-
+asterisk13_CONFLICTS_INSTALL=	asterisk16-chan_sccp
+asterisk13_BUILD_DEPENDS=	asterisk:net/asterisk13
+asterisk13_RUN_DEPENDS=		asterisk:net/asterisk13
 
-ASTVER_DESC=		Which asterisk to build for
-AST13_DESC=		Asterisk 13
-AST16_DESC=		Asterisk 16
-CONFERENCE_DESC=	Enable Conference Support
-VIDEO_DESC=		Enable Video Support
+asterisk16_PKGNAMEPREFIX=	asterisk16-
+asterisk16_CONFLICTS_INSTALL=	asterisk13-chan_sccp
+asterisk16_BUILD_DEPENDS=	asterisk:net/asterisk16
+asterisk16_RUN_DEPENDS=		asterisk:net/asterisk16
 
-AST13_BUILD_DEPENDS=	asterisk13>0:net/asterisk13
-AST13_RUN_DEPENDS=	asterisk13>0:net/asterisk13
-
-AST16_BUILD_DEPENDS=	asterisk16>0:net/asterisk16
-AST16_RUN_DEPENDS=	asterisk16>0:net/asterisk16
+OPTIONS_DEFINE=			CONFERENCE VIDEO
+OPTIONS_DEFAULT=		CONFERENCE VIDEO
+CONFERENCE_DESC=		Enable Conference Support
+VIDEO_DESC=			Enable Video Support
 
 CONFERENCE_CONFIGURE_ENABLE=	conference
 VIDEO_CONFIGURE_ENABLE=		video
