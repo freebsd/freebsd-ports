@@ -1,4 +1,4 @@
-# Created by:				Anders Andersson <anders@hack.org>
+# Created by: Anders Andersson <anders@hack.org>
 # $FreeBSD$
 
 PORTNAME=	oregano
