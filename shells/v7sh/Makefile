@@ -5,24 +5,18 @@ PORTNAME=	v7sh
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	shells
-MASTER_SITES=	ftp://minnie.tuhs.org/UnixArchive/PDP-11/Trees/V7/usr/src/cmd/sh/:s \
-		http://minnie.tuhs.org/UnixTree/V7/usr/src/cmd/sh/:s \
-		ftp://minnie.tuhs.org/UnixArchive/PDP-11/Trees/V7/usr/man/man1/:m \
-		http://minnie.tuhs.org/UnixTree/V7/usr/man/man1/:m
-DISTFILES=	args.c:s blok.c:s brkincr.h:s builtin.c:s cmd.c:s \
-		ctype.c:s ctype.h:s defs.h:s error.c:s expand.c:s \
-		fault.c:s io.c:s mac.h:s macro.c:s main.c:s mode.h:s \
-		msg.c:s name.c:s name.h:s print.c:s service.c:s \
-		setbrk.c:s stak.c:s stak.h:s string.c:s sym.h:s \
-		timeout.h:s word.c:s xec.c:s sh.1:m
+MASTER_SITES=	https://BSDforge.com/projects/source/shells/v7sh/
+DISTFILES=	args.c blok.c brkincr.h builtin.c cmd.c \
+		ctype.c ctype.h defs.h error.c expand.c \
+		fault.c io.c mac.h macro.c main.c mode.h \
+		msg.c name.c name.h print.c service.c \
+		setbrk.c stak.c stak.h string.c sym.h \
+		timeout.h word.c xec.c sh.1
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Implementation of the UNIX 7th Edition shell
 
-BROKEN=		unfetchable
-DEPRECATED=	Unfetchable, unmaintained
-EXPIRATION_DATE=	2019-10-16
 BROKEN_aarch64=	Fails to link: missing sbrk
 
 USES=		uidfix
