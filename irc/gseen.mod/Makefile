@@ -13,9 +13,9 @@ COMMENT=	Seen-module for the eggdrop IRC bot
 
 LICENSE=	GPLv2+
 
-EXTRACT_DEPENDS=${NONEXISTENT}:irc/eggdrop:extract
-BUILD_DEPENDS=	eggdrop:irc/eggdrop
-RUN_DEPENDS=	eggdrop:irc/eggdrop
+EXTRACT_DEPENDS=${NONEXISTENT}:irc/eggdrop16:extract
+BUILD_DEPENDS=	eggdrop:irc/eggdrop16
+RUN_DEPENDS=	eggdrop:irc/eggdrop16
 
 USES=		tcl
 GNU_CONFIGURE=	yes
@@ -30,7 +30,7 @@ SUB_FILES=	pkg-message
 do-extract:
 	@${RM} -r ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@${CP} -R $$(${MAKE} -C ${PORTSDIR}/irc/eggdrop -V WRKSRC) ${WRKSRC}
+	@${CP} -R $$(${MAKE} -C ${PORTSDIR}/irc/eggdrop16 -V WRKSRC) ${WRKSRC}
 	cd ${WRKSRC}/src/mod && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS}
 
 post-extract:

@@ -24,6 +24,7 @@
     SUBDIR += dxirc
     SUBDIR += eggdrop
     SUBDIR += eggdrop-devel
+    SUBDIR += eggdrop16
     SUBDIR += epic4
     SUBDIR += epic5
     SUBDIR += evangeline
