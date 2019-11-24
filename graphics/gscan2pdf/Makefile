@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	2.4.0
+PORTVERSION=	2.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -30,7 +30,6 @@ RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 		xdg-open:devel/xdg-utils \
 		cjb2:graphics/djvulibre \
 		scanimage:graphics/sane-backends \
-		scanadf:graphics/sane-frontends \
 		unpaper:graphics/unpaper \
 		ImageMagick6>0:graphics/ImageMagick6 \
 		p5-HTML-Parser>0:www/p5-HTML-Parser \
@@ -49,7 +48,8 @@ RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 		p5-PDF-API2>0.57:textproc/p5-PDF-API2 \
 		p5-Gtk3>=0.028:x11-toolkits/p5-Gtk3 \
 		p5-Gtk3-SimpleList>=0.17:x11-toolkits/p5-Gtk3-SimpleList \
-		p5-Goo-Canvas2>=0.06:devel/p5-Goo-Canvas2
+		p5-Goo-Canvas2>=0.06:devel/p5-Goo-Canvas2 \
+		p5-Gtk2-Ex-PodViewer>0:x11-toolkits/p5-Gtk2-Ex-PodViewer
 
 USES=		gettext gmake gnome perl5 tar:xz
 

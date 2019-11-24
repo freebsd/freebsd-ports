@@ -25,7 +25,8 @@ bin/gscan2pdf
 %%SITE_PERL%%/Gscan2pdf/Translation.pm
 %%SITE_PERL%%/Gscan2pdf/Unpaper.pm
 man/man1/gscan2pdf.1.gz
-share/applications/gscan2pdf.desktop
+share/applications/net.sourceforge.gscan2pdf.desktop
+%%DATADIR%%/180_degree.svg
 %%DATADIR%%/gscan2pdf-papyrus.svg
 %%DATADIR%%/gscan2pdf.svg
 %%DATADIR%%/hand-tool.svg
@@ -72,5 +73,5 @@ share/locale/tr/LC_MESSAGES/gscan2pdf.mo
 share/locale/uk/LC_MESSAGES/gscan2pdf.mo
 share/locale/zh_CN/LC_MESSAGES/gscan2pdf.mo
 share/locale/zh_TW/LC_MESSAGES/gscan2pdf.mo
-share/metainfo/gscan2pdf.appdata.xml
+share/metainfo/net.sourceforge.gscan2pdf.appdata.xml
 share/pixmaps/gscan2pdf.svg
