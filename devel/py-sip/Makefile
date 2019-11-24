@@ -36,6 +36,8 @@ CONFIGURE_WRKSRC=	${WRKSRC}/default
 BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 
+PYQT_SIPDIR=	${LOCALBASE}/share/PyQt5/${PYTHON_VER}/sip
+
 do-configure:
 	# The default sip 'flavor'
 	${MKDIR} ${CONFIGURE_WRKSRC} &&  \
