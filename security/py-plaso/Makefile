@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plaso
-PORTVERSION=	20190708
+PORTVERSION=	20190916
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/log2timeline/plaso/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -43,22 +43,14 @@ RUN_DEPENDS=	libesedb>=e:devel/libesedb \
 		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=0:textproc/py-xlsxwriter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
+		ca_root_nss>=0:security/ca_root_nss
 
-USES=		python
+USES=		python:3.5+
 USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	distutils autoplist concurrent
 
 NO_ARCH=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.lzma>=0:archivers/py-backports.lzma@${PY_FLAVOR}
-TEST_ENV=	${MAKE_ENV} PYTHONHTTPSVERIFY=0
-.else
-TEST_DEPENDS+=	ca_root_nss>=0:security/ca_root_nss
-.endif
 
 post-patch:
 	${REINPLACE_CMD} "s|'share', 'artifacts'|'share', '${PYTHON_PKGNAMEPREFIX}artifacts'|" \
@@ -72,4 +64,4 @@ do-test:
 	@${TOUCH} ${TEST_WRKSRC}/utils/__init__.py
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} run_tests.py)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
