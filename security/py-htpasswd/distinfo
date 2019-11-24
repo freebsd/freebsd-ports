@@ -1,2 +1,3 @@
-SHA256 (htpasswd-2008.03.05.tar.xz) = 179941e30f8e2b9ff8f4e88e4300ca6e9dcaa761066c4d5444383ecfe3963a13
-SIZE (htpasswd-2008.03.05.tar.xz) = 1640
+TIMESTAMP = 1574603031
+SHA256 (htpasswd.py) = 45e306185b3d9496e28d744ae15a057f8af7b4b244abf204c8063ee9ff9173f6
+SIZE (htpasswd.py) = 3986
