@@ -102,6 +102,7 @@
     SUBDIR += sourcehanserif-sc-otf
     SUBDIR += sourcehanserif-tc-otf
     SUBDIR += sunpinyin
+    SUBDIR += taipeisanstc
     SUBDIR += tin
     SUBDIR += tintin++
     SUBDIR += ttf2pt1
