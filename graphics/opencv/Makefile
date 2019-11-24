@@ -288,7 +288,7 @@ LIB_DEPENDS+=	libopencv_core.so:graphics/opencv-core \
 		libopencv_ml.so:graphics/opencv
 BUILD_DEPENDS+=	${PYNUMPY}
 RUN_DEPENDS+=	${PYNUMPY}
-USES+=		python:2.7
+USES+=		python
 USE_PYTHON=	flavors
 CMAKE_ARGS+=	-DBUILD_opencv_python${PYTHON_MAJOR_VER}:BOOL=ON
 . for module in apps java stitching superres videostab
