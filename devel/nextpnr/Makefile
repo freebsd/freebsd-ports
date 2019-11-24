@@ -10,7 +10,8 @@ COMMENT=	Portable FPGA place and route tool
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	runaway build
+BROKEN_FreeBSD_11_powerpc64=	runaway build
+BROKEN_FreeBSD_12_powerpc64=	runaway build
 
 BUILD_DEPENDS=	${LOCALBASE}/share/trellis/database:devel/trellis \
 		${LOCALBASE}/share/icebox:devel/icestorm
