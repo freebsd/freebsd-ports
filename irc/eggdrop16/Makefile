@@ -1,37 +1,36 @@
-# Created by: Beech Rintoul <beech@FreeBSD.org>
+# Created by: Ulrich Spoerlein <q@uni.de>
 # $FreeBSD$
 
 PORTNAME=	eggdrop
-DISTVERSION=	1.9.0.a.20191117
+PORTVERSION=	1.6.21
 CATEGORIES=	irc
-PKGNAMESUFFIX=	-devel
+MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/
+PKGNAMESUFFIX=	16
+DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTFILES=	${PORTNAME}${PORTVERSION}.tar.bz2
 
 MAINTAINER=	dbaio@FreeBSD.org
-COMMENT=	Eggdrop is the most popular Internet Relay Chat (IRC) bot
+COMMENT=	The most popular open source Internet Relay Chat bot
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tcl ssl
+DEPRECATED=		Outdated, use irc/eggdrop instead
+EXPIRATION_DATE=	2020-02-28
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	eggheads
-GH_TAGNAME=	842ef44
+OPTIONS_DEFINE=	DOCS
 
+USES=		tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_SHLIB_VER}.so \
 		--with-tclinc=${LOCALBASE}/include/tcl${TCL_VER}/tcl.h
-
 MAKE_JOBS_UNSAFE=	yes
 LLD_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
 
-CONFLICTS=	eggdrop eggdrop16
+CONFLICTS=	eggdrop eggdrop-devel
 
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
+PORTDOCS=	*
 
 post-patch:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/eggdrop.conf \
@@ -39,16 +38,18 @@ post-patch:
 
 post-configure:
 	@(cd ${WRKSRC}; ${MAKE} config)
+# Workaround broken relative path in SSL-patch
+#	@(cd ${WRKSRC}/src && ${LN} -fs ../config.h)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eggdrop ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/man1/eggdrop.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man1/eggdrop.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/eggdrop.conf.sample ${STAGEDIR}${PREFIX}/etc
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eggdrop
 .for f in assoc.so blowfish.so channels.so compress.so console.so ctcp.so \
 	dns.so filesys.so irc.so notes.so seen.so server.so share.so \
-	transfer.so uptime.so
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/lib/eggdrop
+	transfer.so uptime.so wire.so
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/lib/eggdrop
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}/help
 .for f in assoc.mod/help/assoc.help channels.mod/help/chaninfo.help \
@@ -57,7 +58,8 @@ do-install:
 	filesys.mod/help/filesys.help irc.mod/help/irc.help \
 	notes.mod/help/notes.help seen.mod/help/seen.help \
 	server.mod/help/server.help share.mod/help/share.help \
-	transfer.mod/help/transfer.help uptime.mod/help/uptime.help
+	transfer.mod/help/transfer.help uptime.mod/help/uptime.help \
+	wire.mod/help/wire.help
 	${INSTALL_DATA} ${WRKSRC}/src/mod/${f} ${STAGEDIR}${DATADIR}/help
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}/help/set
@@ -103,20 +105,18 @@ do-install:
 .for f in banner motd
 	${INSTALL_DATA} ${WRKSRC}/text/${f} ${STAGEDIR}${DATADIR}/text
 .endfor
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eggdrop/*.so
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ABOUT BANS BOTNET BUG-REPORT COMPILE-GUIDE CONTENTS \
 	FIRST-SCRIPT KNOWN-PROBLEMS MODULES PARTYLINE PATCH-HOWTO \
-	TEXT-SUBSTITUTIONS TRICKS Changes1.8 USERS WEIRD-MESSAGES \
+	TEXT-SUBSTITUTIONS TRICKS Changes1.6 USERS WEIRD-MESSAGES \
 	tcl-commands.doc
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	cd ${WRKSRC}/doc/html && ${INSTALL_DATA} *.html ${STAGEDIR}${DOCSDIR}/html
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/settings
-	cd ${WRKSRC}/doc/settings && ${RM} -r CVS \
-		&& ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/settings
+	cd ${WRKSRC}/doc/settings && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/settings
 
 .include <bsd.port.mk>

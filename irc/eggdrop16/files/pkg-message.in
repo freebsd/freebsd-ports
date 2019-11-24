@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+This Port of Eggdrop differs from a normal eggdrop installation, because
+it does respect hier(7). That means your eggdrop.conf goes to
+%%PREFIX%%/etc/eggdrop.conf and .chan, .notes, .user files go to
+%%PREFIX%%/share/eggdrop. Modules will go to %%PREFIX%%/lib/eggdrop and
+documentation can be found in %%PREFIX%%/share/doc/eggdrop, scripts go
+to %%PREFIX%%/share/eggdrop/scripts.
+EOM
+}
+]
