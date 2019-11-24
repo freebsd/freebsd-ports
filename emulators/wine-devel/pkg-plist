@@ -1389,7 +1389,7 @@ lib/wine/dpnsvr.exe.so
 lib/wine/dpvoice.dll.so
 lib/wine/dpwsockx.dll.so
 lib/wine/drmclien.dll.so
-%%STAGING%%lib/wine/dsdmo.dll.so
+lib/wine/dsdmo.dll.so
 lib/wine/dsound.dll.so
 lib/wine/dsquery.dll.so
 lib/wine/dssenh.dll.so
@@ -1841,7 +1841,7 @@ lib/wine/fakedlls/dpnsvr.exe
 lib/wine/fakedlls/dpvoice.dll
 lib/wine/fakedlls/dpwsockx.dll
 lib/wine/fakedlls/drmclien.dll
-%%STAGING%%lib/wine/fakedlls/dsdmo.dll
+lib/wine/fakedlls/dsdmo.dll
 lib/wine/fakedlls/dsound.dll
 lib/wine/fakedlls/dsquery.dll
 lib/wine/fakedlls/dssenh.dll
