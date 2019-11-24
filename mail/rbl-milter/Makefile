@@ -5,12 +5,10 @@ PORTNAME=	rbl-milter
 PORTVERSION=	0.30
 PORTREVISION=	5
 CATEGORIES=	mail
-MASTER_SITES=	http://opensource.confusticate.com/rbl-milter/
+MASTER_SITES=	http://www.gnu-darwin.org/distfiles/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Milter that adds mail header warnings on mail from open-relays
-
-BROKEN=		unfetchable
 
 USES=		gmake
 GNU_CONFIGURE=	yes
