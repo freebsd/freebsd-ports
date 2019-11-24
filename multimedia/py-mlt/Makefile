@@ -5,18 +5,24 @@ PORTREVISION=	0
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-USES=		python:2.7
+USES=		python:2.7 shebangfix
 USE_PYTHON=	flavors
 MASTERDIR=	${.CURDIR:H}/mlt
 SLAVEPORT=	swig Python
 
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	EXAMPLES
+SHEBANG_FILES=	src/swig/python/codecs.py \
+		src/swig/python/switcher.py \
+		src/swig/python/getimage.py \
+		src/swig/python/test_animation.py \
+		src/swig/python/webvfx_generator.py \
+		src/swig/python/play.py \
+		src/swig/python/waveforms.py
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,which python,which ${PYTHON_VERSION},' -e 's,python -c,${PYTHON_VERSION} -c,' \
-			  -e 's,python-config,${PYTHON_VERSION}-config,' ${WRKSRC}/src/swig/python/build
+MAKE_ENV+=	PYTHON="${PYTHON_CMD}"
+
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
