@@ -12,7 +12,7 @@ COMMENT=	User-level file synchronization tool
 LICENSE=	GPLv3
 
 FLAVORS=	x11 nox11
-FLAVOR?=	${FLAVORS[1]}
+FLAVOR?=	${FLAVORS:[1]}
 
 nox11_PKGNAMESUFFIX= -nox11
 nox11_CONFLICTS_INSTALL=	unison

@@ -16,7 +16,7 @@ COMMENT=	User-level file synchronization tool
 LICENSE=	GPLv3
 
 FLAVORS=	x11 nox11
-FLAVOR?=	${FLAVORS[1]}
+FLAVOR?=	${FLAVORS:[1]}
 
 VERSIONSUFFIX=	240
 
