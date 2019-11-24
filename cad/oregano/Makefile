@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	nroff:textproc/groff
 LIB_DEPENDS=	libgoocanvas-2.0.so:graphics/goocanvas2
 
-USES=		desktop-file-utils gettext gnome pkgconfig shared-mime-info waf
+USES=		compiler:c11 desktop-file-utils gettext gnome pkgconfig \
+		shared-mime-info waf
 USE_GITHUB=	yes
 GH_ACCOUNT=	drahnr
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview3 intltool libxml2 pango
