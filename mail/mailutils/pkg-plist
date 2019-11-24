@@ -40,6 +40,7 @@ bin/movemail
 %%MH%%bin/mu-mh/whatnow
 %%MH%%bin/mu-mh/whom
 bin/popauth
+bin/putmail
 bin/readmsg
 bin/sieve
 include/mailutils/acl.h
@@ -163,6 +164,7 @@ include/mailutils/sys/temp_file_stream.h
 include/mailutils/sys/tls-stream.h
 include/mailutils/sys/url.h
 include/mailutils/sys/xscript-stream.h
+include/mailutils/sys/wordsplit.h
 include/mailutils/syslog.h
 include/mailutils/tls.h
 include/mailutils/types.h
@@ -333,11 +335,11 @@ man/man1/pop3d.1.gz
 man/man1/popauth.1.gz
 sbin/comsatd
 sbin/imap4d
-@(root,mail,4755) sbin/maidag
+sbin/lmtpd
+sbin/mda
 sbin/pop3d
 share/aclocal/mailutils.m4
-%%MH%%%%EMACS%%share/emacs/site-lisp/mailutils-mh.el
-%%MH%%%%EMACS%%share/emacs/site-lisp/mailutils-mh.elc
+%%MH%%%%EMACS_SITE_LISPDIR%%/mailutils-mh.el
 %%GUILE%%share/guile/site/2.2/mailutils/guile-procedures.txt
 %%GUILE%%share/guile/site/2.2/mailutils/mailutils.scm
 %%NLS%%share/locale/ca/LC_MESSAGES/mailutils.mo
