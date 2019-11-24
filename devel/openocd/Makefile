@@ -42,7 +42,6 @@ ULINK_DESC=	Support Keil ULINK-JTAG Programmer
 ARMJTAGEW_DESC=	Support Olimex ARM-JTAG-EW Programmer
 BUSPIRATE_DESC=	Support BusPirate Programmer
 STLINK_DESC=	Support STLink Programmer
-TI_ICDI_DESC=	Support TI ICDI JTAG Programmer
 OSBDM_DESC=	Support OSBDM Programmer (JTAG only)
 OPENDOUS_DESC=	Support EStick/OpenDous Programmer
 SYSFSGPIO_DESC=	Support Programming via sysfs GPIOs

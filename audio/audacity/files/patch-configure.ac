@@ -1,6 +1,6 @@
 --- configure.ac.orig	2019-02-24 08:28:05 UTC
 +++ configure.ac
-@@ -204,14 +204,6 @@ if test x$enable_universal_binary = xyes; then
+@@ -200,14 +200,6 @@ if test x$enable_universal_binary = xyes; then
     esac
  fi
  
@@ -15,7 +15,7 @@
  if test x$enable_sse = xyes; then
  
     if test "${ax_cv_cxx_compiler_vendor}" = "gnu"; then
-@@ -243,20 +235,7 @@ dnl check if alloca.h exists. If it does, we need to i
+@@ -239,20 +231,7 @@ dnl check if alloca.h exists. If it does, we need to i
  dnl Solaris builds, by defining HAVE_ALLOCA_H
  AC_CHECK_HEADERS_ONCE(alloca.h)
  
