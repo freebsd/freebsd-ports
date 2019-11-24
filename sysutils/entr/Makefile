@@ -2,6 +2,7 @@
 
 PORTNAME=	entr
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://entrproject.org/code/ \
 		https://bitbucket.org/eradman/entr/get/
@@ -20,5 +21,8 @@ MAKEFILE=	Makefile.bsd
 MAKE_ARGS=	MANPREFIX=${MANPREFIX}/man
 TEST_TARGET=	test
 PLIST_FILES=	bin/entr man/man1/entr.1.gz
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/entr
 
 .include <bsd.port.mk>
