@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yuzu
-PORTVERSION=	s20191119
+PORTVERSION=	s20191123
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	c52f37f25
+GH_TAGNAME=	6a3fc5d2f
 GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
