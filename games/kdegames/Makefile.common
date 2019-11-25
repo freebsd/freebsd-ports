@@ -2,73 +2,62 @@
 # if needed. Option description is also used as port's COMMENT
 # (use COMMENT=	${${PORTNAME}_DESC} for new ports)
 
-KDE_GAMES_ALL=	bomber \
-		bovo \
-		granatier \
-		kapman \
-		katomic \
-		kblackbox \
-		kblocks \
-		kbounce \
-		kbreakout \
-		kdiamond \
-		kfourinline \
-		killbots \
-		kiriki \
-		kjumpingcube \
-		klines \
-		klickety \
-		kmahjongg \
-		kmines \
-		knavalbattle \
-		knetwalk \
-		knights \
-		kolf \
-		kollision \
-		kpat \
-		kshisen \
-		ksirk \
-		ksquares \
-		ktuberling \
-		picmi
+KDE_GAMES_ALL=	BOMBER \
+		BOVO \
+		GRANATIER \
+		KAPMAN \
+		KATOMIC \
+		KBLACKBOX \
+		KBLOCKS \
+		KBOUNCE \
+		KBREAKOUT \
+		KDIAMOND \
+		KFOURINLINE \
+		KILLBOTS \
+		KIRIKI \
+		KJUMPINGCUBE \
+		KLICKETY \
+		KLINES \
+		KMAHJONGG \
+		KMINES \
+		KNAVALBATTLE \
+		KNETWALK \
+		KNIGHTS \
+		KOLF \
+		KOLLISION \
+		KPAT \
+		KSHISEN \
+		KSIRK \
+		KSQUARES \
+		KTUBERLING \
+		PICMI
 
-bomber_DESC=	Arcade Bombing game
-bovo_DESC=	Five-in-a-row Board game
-granatier_DESC=	Bomberman clone
-kajongg_DESC=	Ancient Chinese board game for 4 players
-kapman_DESC=	Pac-Man Clone
-katomic_DESC=	Sokoban-like Logic game
-kblackbox_DESC=	Blackbox Logic game
-kblocks_DESC=	Falling Blocks game
-kbounce_DESC=	Ball Bouncing game
-kbreakout_DESC=	Breakout-like game
-kdiamond_DESC=	Three-in-a-row game
-kfourinline_DESC=	Four-in-a-row Board game
-kgoldrunner_DESC=	Hunt Gold, Dodge Enemies and Solve Puzzles
-kigo_DESC=	Go Board game
-killbots_DESC=	Evade killer robots
-kiriki_DESC=	Yahtzee-like Dice game
-kjumpingcube_DESC=	Territory Capture game
-klines_DESC=	Tactical game
-klickety_DESC=	Tetris themed solitaire
-kmahjongg_DESC=	Mahjongg Solitaire
-kmines_DESC=	Minesweeper-like game
-knavalbattle_DESC=	Ship Sinking game
-knetwalk_DESC=	Network Construction game
-knights_DESC=	Chess game
-kolf_DESC=	Miniature Golf
-kollision_DESC=	Simple ball dodging game
-konquest_DESC=	Galactic Strategy game
-kpat_DESC=	Patience Card game
-kreversi_DESC=	Reversi Board game
-kshisen_DESC=	Shisen-Sho Mahjongg-like Tile game
-ksirk_DESC=	World Domination Strategy game
-ksnakeduel_DESC=	Snake-like game
-kspaceduel_DESC=	Space Arcade game
-ksquares_DESC=	Connect the dots to create squares
-ksudoku_DESC=	Sudoku game
-ktuberling_DESC=	Picture game for Children
-kubrick_DESC=	3-D game based on Rubik's Cube
-lskat_DESC=	Card game
-palapeli_DESC=	Jigsaw puzzle game
-picmi_DESC=	Single player logic-based puzzle game
+BOMBER_DESC=		Arcade Bombing game
+BOVO_DESC=		Five-in-a-row Board game
+GRANATIER_DESC=		Bomberman clone
+KAPMAN_DESC=		Pac-Man Clone
+KATOMIC_DESC=		Sokoban-like Logic game
+KBLACKBOX_DESC=		Blackbox Logic game
+KBLOCKS_DESC=		Falling Blocks game
+KBOUNCE_DESC=		Ball Bouncing game
+KBREAKOUT_DESC=		Breakout-like game
+KDIAMOND_DESC=		Three-in-a-row game
+KFOURINLINE_DESC=	Four-in-a-row Board game
+KILLBOTS_DESC=		Evade killer robots
+KIRIKI_DESC=		Yahtzee-like Dice game
+KJUMPINGCUBE_DESC=	Territory Capture game
+KLINES_DESC=		Tactical game
+KLICKETY_DESC=		Tetris themed solitaire
+KMAHJONGG_DESC=		Mahjongg Solitaire
+KMINES_DESC=		Minesweeper-like game
+KNAVALBATTLE_DESC=	Ship Sinking game
+KNETWALK_DESC=		Network Construction game
+KNIGHTS_DESC=		Chess game
+KOLF_DESC=		Miniature Golf
+KOLLISION_DESC=		Simple ball dodging game
+KPAT_DESC=		Patience Card game
+KSHISEN_DESC=		Shisen-Sho Mahjongg-like Tile game
+KSIRK_DESC=		World Domination Strategy game
+KSQUARES_DESC=		Connect the dots to create squares
+KTUBERLING_DESC=	Picture game for Children
+PICMI_DESC=		Single player logic-based puzzle game
