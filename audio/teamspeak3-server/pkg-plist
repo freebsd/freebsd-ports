@@ -266,7 +266,9 @@ share/teamspeak/server/sql/server_get_byid.sql
 share/teamspeak/server/sql/server_get_byport.sql
 share/teamspeak/server/sql/server_insert.sql
 share/teamspeak/server/sql/server_list.sql
+share/teamspeak/server/sql/server_list_detailed.sql
 share/teamspeak/server/sql/server_list_by_machine_id.sql
+share/teamspeak/server/sql/server_list_by_machine_id_detailed.sql
 share/teamspeak/server/sql/server_snapshot_delete.sql
 share/teamspeak/server/sql/server_snapshot_delete_failed.sql
 share/teamspeak/server/sql/server_update_autostart.sql
