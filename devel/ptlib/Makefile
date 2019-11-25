@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 CONFLICTS=	pwlib-1.*
 
 USES=		autoreconf:build bison compiler:c11 gmake localbase:ldflags \
-		pathfix pkgconfig sdl ssl tar:xz
+		pathfix pkgconfig ssl tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${OPENSSLINC}
@@ -122,6 +122,7 @@ PLIST_SUB+=	VIDEODIR="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSDL}
+USES+=		sdl
 USE_SDL+=	sdl
 CONFIGURE_ARGS+=--enable-sdl
 .else
