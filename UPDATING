@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191125:
+  AFFECTS: users of emulators/qemu
+  AUTHOR: bofh@FreeBSD.org
+
+  emulators/qemu31 has been updated to 4.1.1. Previous 3.1.X branch has 
+  been repocopied to emulators/qemu31. If someone wants to stick with 3.1.X
+  branch please use one of the following command:
+
+  # pkg install emulators/qemu31
+    or
+  # portmaster -o emulators/qemu31 emulators/qemu
+    or
+  # portupgrade -o emulators/qemu31 emulators/qemu
+
 20191124:
   AFFECTS: users of irc/eggdrop
   AUTHOR: dbaio@FreeBSD.org
