@@ -5,7 +5,7 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	${${PORTNAME}_DESC}
+COMMENT=	${${PORTNAME:tu}_DESC}
 
 LIB_DEPENDS=	libKF5KMahjongglib.so:games/libkmahjongg
 
