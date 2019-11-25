@@ -1,0 +1,21 @@
+--- qemu-doc.texi.orig	2019-04-12 03:28:29 UTC
++++ qemu-doc.texi
+@@ -198,7 +198,7 @@ VGA BIOS.
+ QEMU uses YM3812 emulation by Tatsuyuki Satoh.
+ 
+ QEMU uses GUS emulation (GUSEMU32 @url{http://www.deinmeister.de/gusemu/})
+-by Tibor "TS" Schütz.
++by Tibor "TS" Schuetz.
+ 
+ Note that, by default, GUS shares IRQ(7) with parallel ports and so
+ QEMU must be told to not have parallel ports to have working GUS.
+@@ -558,7 +558,8 @@ Send the escape character to the frontend
+ 
+ @c man begin SEEALSO
+ The HTML documentation of QEMU for more precise information and Linux
+-user mode emulator invocation.
++user mode emulator invocation, as well as the FreeBSD host notes in
++@file{pkg-message} in the relevant qemu port directory.
+ @c man end
+ 
+ @c man begin AUTHOR
