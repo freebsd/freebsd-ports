@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvmupdate
-DISTVERSION=	7_00
+DISTVERSION=	7_10
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
@@ -12,8 +12,6 @@ DISTNAME=	700Series_NVMUpdatePackage_v${DISTVERSION}_FreeBSD
 
 MAINTAINER=	freebsd@intel.com
 COMMENT=	NVM Update Utility for Intel(R) Ethernet Adapters
-
-BROKEN=		unfetchable
 
 LICENSE=		IFL IPL
 LICENSE_COMB=		multi
