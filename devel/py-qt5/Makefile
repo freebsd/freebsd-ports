@@ -2,6 +2,7 @@
 
 PORTNAME=	qt5
 PORTVERSION=	${PYQT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,16 +13,17 @@ USES=		metaport python pyqt:5
 USE_PYTHON=	concurrent flavors py3kplist
 
 # Keep these synchronized with _USE_PYQT_ALL / _USE_PYQT5_ONLY in Mk/Use/pyqt.mk
-OPTIONS_DEFINE=	core dbus dbussupport demo designer \
-		designerplugin gui multimedia multimediawidgets \
-		network opengl printsupport qml qscintilla2 quickwidgets \
-		sql serialport svg test webchannel webengine webkit \
-		webkitwidgets widgets xml xmlpatterns
-OPTIONS_DEFAULT=${OPTIONS_DEFINE:Nwebengine}
+# portedit merge -i -e "OPTIONS_DEFINE=$(make -V _USE_PYQT_ALL:tu -V _USE_PYQT5_ONLY:tu | tr '\n' ' ')" .
+OPTIONS_DEFINE=		CORE DBUS DBUSSUPPORT DEMO DESIGNER DESIGNERPLUGIN GUI \
+			HELP MULTIMEDIA MULTIMEDIAWIDGETS NETWORK OPENGL \
+			PRINTSUPPORT QML QSCINTILLA2 QUICKWIDGETS SERIALPORT \
+			SIP SQL SVG TEST WEBCHANNEL WEBENGINE WEBKIT \
+			WEBKITWIDGETS WIDGETS XML XMLPATTERNS
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE:NWEBENGINE}
 
 .for opt in ${OPTIONS_DEFINE}
-${opt}_USE=	PYQT=${opt}_run
-${opt}_DESC=	${py-${opt}_DESC}
+${opt}_USE=	PYQT=${opt:tl}_run
+${opt}_DESC=	${py-${opt:tl}_DESC}
 .endfor
 
 .include <bsd.port.mk>
