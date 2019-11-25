@@ -1,6 +1,6 @@
---- data/CMakeLists.txt.orig	2019-06-10 18:18:22 UTC
+--- data/CMakeLists.txt.orig	2019-11-10 21:19:31 UTC
 +++ data/CMakeLists.txt
-@@ -9,30 +9,30 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/photoflow.de
+@@ -10,30 +10,30 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/photoflow.ap
  if (OpenColorIO_FOUND)
      include(ExternalProject)
  
