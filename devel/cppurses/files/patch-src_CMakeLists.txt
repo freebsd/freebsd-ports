@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2019-11-25 00:40:32 UTC
++++ src/CMakeLists.txt
+@@ -33,7 +33,7 @@ if(${CMAKE_VERSION} VERSION_LESS "3.8")
+     set(CMAKE_CXX_STANDARD 14)
+ endif()
+ 
+-add_library(cppurses STATIC "")
++add_library(cppurses SHARED "")
+ 
+ find_package(Threads REQUIRED)
+ 
