@@ -13,7 +13,7 @@ COMMENT=	Library of Routines for Random Number Generation
 
 USES=		uidfix
 USE_LDCONFIG=	yes
-MAKE_ENV=	NO_PROFILE=true
+MAKE_ENV=	WITHOUT_PROFILE=true
 WRKSRC=		${WRKDIR}/source/randlib.c/src
 PORTDOCS=	Basegen.c.doc randlib.c.chs randlib.c.fdoc
 PLIST_FILES=	include/randlib.h \

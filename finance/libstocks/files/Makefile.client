@@ -1,6 +1,6 @@
 PROG=	libstocks_client
 SRCS=	client.c
-NO_MAN=	1
+MAN=
 PREFIX?=/usr/local
 BINDIR=	${STAGEDIR}${PREFIX}/bin
 

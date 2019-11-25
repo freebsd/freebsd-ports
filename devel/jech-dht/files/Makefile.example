@@ -1,5 +1,5 @@
 PROG=	dht-example
-NO_MAN=	nope, too much to ask
+MAN=
 
 LDADD=	-L. -ldht -lcrypt -lmd
 BINDIR=	${STAGEDIR}${PREFIX}/bin

@@ -1,0 +1,9 @@
+--- lib/Makefile.orig
++++ lib/Makefile
+@@ -13,6 +13,5 @@
+ 
+ PREFIX?=	/usr/local
+ CFLAGS+=	-I${.CURDIR}/../src -I${PREFIX}/include/PCSC
+-NO_MAN=
+ 
+ .include <bsd.lib.mk>

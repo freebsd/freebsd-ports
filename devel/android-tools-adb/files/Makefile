@@ -2,7 +2,7 @@
 
 PROG_CXX=adb
 NOMAN= # DragonFly, NetBSD, OpenBSD
-NO_MAN= # FreeBSD
+MAN= # FreeBSD
 BINDIR?=/usr/bin
 FILESDIR?=${DOCDIR}/${PROG}
 

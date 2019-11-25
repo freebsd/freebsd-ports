@@ -3,7 +3,7 @@
 @@ -0,0 +1,8 @@
 +PROG=	calibrator
 +SRCS=	calibrator.c
-+NO_MAN=	defined
++MAN=
 +
 +CFLAGS+=	-D_ANSI_SOURCE
 +LDADD+=	-lm

@@ -1,5 +1,5 @@
---- src/Makefile.FreeBSD.orig	1997-01-30 10:29:25.000000000 +0900
-+++ src/Makefile.FreeBSD	2014-01-31 10:53:18.000000000 +0900
+--- src/Makefile.FreeBSD.orig	1997-01-30 01:29:25.000000000 +0000
++++ src/Makefile.FreeBSD	2019-11-22 22:25:55.221854000 +0000
 @@ -1,12 +1,17 @@
  # FreeBSD makefile for kon
  # Tatsumi Hosokawa <hosokawa@jp.FreeBSD.org>
@@ -18,15 +18,16 @@
 +.endif
  LIBS+=	-L${.CURDIR}/display -L${.CURDIR}/../lib -ldisplay -lgon
 -NOMAN=	YES
-+MK_MAN=	no
++MAN=
  CFLAGS+=	-I${.CURDIR}/../include
  CLEANFILES=	Makefile
  
-@@ -28,4 +33,7 @@
+@@ -27,5 +32,8 @@
+ .if exists(${.CURDIR}/../.config)
  .include "${.CURDIR}/../.config"
  .endif
- 
++
 +install: ${PROG}
 +	/usr/bin/install -s ${PROG} ${BINDIR}
-+
+ 
  .include <bsd.prog.mk>

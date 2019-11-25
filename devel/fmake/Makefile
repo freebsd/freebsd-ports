@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE # UCB third clause nullified
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-MAKE_ARGS+=	PROG=fmake NO_MAN=yes
+MAKE_ARGS+=	PROG=fmake MAN=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

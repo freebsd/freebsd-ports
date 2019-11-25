@@ -1,0 +1,11 @@
+--- Makefile.orig
++++ Makefile
+@@ -38,7 +38,7 @@
+ INCLUDEDIR=	${PREFIX}/include
+ MKLINT=		no
+ NOGCCERROR=
+-NO_PROFILE=
++MK_PROFILE=	no
+ PTHREAD_LIBS?=	-lpthread
+ 
+ CFLAGS+=	-I${PREFIX}/include -Wall

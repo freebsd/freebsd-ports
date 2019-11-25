@@ -2,7 +2,7 @@ LIB=	pgplot
 
 SHLIB_MAJOR=	5
 SHLIB_MINOR=	2
-NO_PROFILE=	1
+MK_PROFILE=	no
 
 CFLAGS+=	-DPG_PPU -I${PREFIX}/include -I${LOCALBASE}/include 
 LDADD=	-lpng

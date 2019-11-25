@@ -1,7 +1,7 @@
 # PROG_CXX defined on command-line
 
 SRCS=		${PROG_CXX}.cpp
-NO_MAN=		ha-ha
+MAN=
 LDADD=		-L.. -lutp
 CXXFLAGS+=	-I.. -DPOSIX
 

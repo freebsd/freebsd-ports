@@ -25,7 +25,7 @@
 +CFLAGS=         -I. -Wall -I${MLANCOM}
 +LDADD=		-L${MLANLIB} -lmlan
 +DPADD=		${MLANLIB}/libmlan.a
-+NO_MAN=		1
++MAN=
 +SRCS=           ${PROG}.c
 +
 +test:		${PROG}
@@ -43,7 +43,7 @@
 +CFLAGS=         -I. -Wall -I${MLANCOM}
 +LDADD=		-L${MLANLIB} -lmlan
 +DPADD=		${MLANLIB}/libmlan.a
-+NO_MAN=		1
++MAN=
 +SRCS=           ${PROG}.c
 +
 +test:		${PROG}
@@ -61,7 +61,7 @@
 +CFLAGS=         -I. -Wall -I${MLANCOM}
 +LDADD=		-L${MLANLIB} -lmlan
 +DPADD=		${MLANLIB}/libmlan.a
-+NO_MAN=		1
++MAN=
 +SRCS=           ${PROG}.c
 +
 +test:		${PROG}
@@ -79,7 +79,7 @@
 +CFLAGS=         -I. -Wall -I${MLANCOM}
 +LDADD=		-L${MLANLIB} -lmlan
 +DPADD=		${MLANLIB}/libmlan.a
-+NO_MAN=		1
++MAN=
 +SRCS=           ${PROG}.c
 +
 +test:		${PROG}
@@ -97,7 +97,7 @@
 +CFLAGS=         -I. -Wall -I${MLANCOM}
 +LDADD=		-L${MLANLIB} -lmlan
 +DPADD=		${MLANLIB}/libmlan.a
-+NO_MAN=		1
++MAN=
 +SRCS=           ${PROG}.c
 +
 +test:		${PROG}
@@ -115,7 +115,7 @@
 +CFLAGS=         -I. -Wall -I${MLANCOM}
 +LDADD=		-L${MLANLIB} -lmlan
 +DPADD=		${MLANLIB}/libmlan.a
-+NO_MAN=		1
++MAN=
 +SRCS=           ${PROG}.c
 +
 +test:		${PROG}
@@ -133,7 +133,7 @@
 +CFLAGS=         -I. -Wall -I${MLANCOM}
 +LDADD=		-L${MLANLIB} -lmlan
 +DPADD=		${MLANLIB}/libmlan.a
-+NO_MAN=		1
++MAN=
 +SRCS=           ${PROG}.c
 +
 +test:		${PROG}
@@ -151,7 +151,7 @@
 +CFLAGS=         -I. -Wall -I${MLANCOM}
 +LDADD=		-L${MLANLIB} -lmlan
 +DPADD=		${MLANLIB}/libmlan.a
-+NO_MAN=		1
++MAN=
 +SRCS=           ${PROG}.c
 +
 +test:		${PROG}
@@ -165,7 +165,7 @@
 +CFLAGS=         -I. -Wall -I ../../common
 +LDFLAGS=	-L ../../common -L ../../lib/userial
 +LDADD=		-lmlanser -lmlancom 
-+NO_MAN=		true
++MAN=
 +SRCS=           tstfind.c
 +
 +.include	<bsd.prog.mk>
@@ -180,7 +180,7 @@
 +CFLAGS=         -I. -Wall -I${MLANCOM}
 +LDADD=		-L${MLANLIB} -lmlan
 +DPADD=		${MLANLIB}/libmlan.a
-+NO_MAN=		1
++MAN=
 +SRCS=           ${PROG}.c
 +
 +test:		${PROG}
@@ -198,7 +198,7 @@
 +CFLAGS=         -I. -Wall -I${MLANCOM}
 +LDADD=		-L${MLANLIB} -lmlan
 +DPADD=		${MLANLIB}/libmlan.a
-+NO_MAN=		1
++MAN=
 +SRCS=           ${PROG}.c
 +
 +test:		${PROG}
@@ -212,7 +212,7 @@
 +CFLAGS=         -I. -Wall -I ../../common
 +LDFLAGS=	-L ../../common -L ../../lib/userial
 +LDADD=		-lmlanser -lmlancom 
-+NO_MAN=		true
++MAN=
 +SRCS=           tstfind.c
 +
 +.include	<bsd.prog.mk>
@@ -227,7 +227,7 @@
 +CFLAGS=         -I. -Wall -I${MLANCOM}
 +LDADD=		-L${MLANLIB} -lmlan
 +DPADD=		${MLANLIB}/libmlan.a
-+NO_MAN=		1
++MAN=
 +SRCS=           ${PROG}.c
 +
 +test:		${PROG}
@@ -270,7 +270,7 @@
 +MLANLNK=	${.CURDIR}/Link
 +LIB=		mlan
 +CFLAGS=		-I. -Wall -I${MLANCOM}
-+NO_PROFILE=	yes
++MK_PROFILE=	no
 +PREFIX?=	/usr/local
 +LIBDIR=		${PREFIX}/lib
 +

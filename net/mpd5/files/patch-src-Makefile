@@ -1,6 +1,6 @@
---- src/Makefile.orig	2019-10-10 18:24:28 UTC
+--- src/Makefile.orig
 +++ src/Makefile
-@@ -9,9 +9,11 @@
+@@ -9,11 +9,12 @@
  
  PROG?=			mpd5
  PREFIX?=		/usr/local
@@ -8,12 +8,14 @@
  BINDIR?=		${PREFIX}/sbin
  VERSION=		5.8
 -NOMAN=
-+
-+MK_MAN=			no
- NO_MAN=
+-NO_MAN=
  
++MAN=
++
  BINOWN!=		/usr/bin/id -n -u
-@@ -59,9 +61,6 @@ USE_TCP_WRAP=		yes
+ BINGRP!=		/usr/bin/id -n -g
+ 
+@@ -59,9 +60,6 @@
  USE_AUTH_PAM=		yes
  USE_AUTH_SYSTEM=	yes
  
@@ -23,7 +25,7 @@
  # Build without builtin web server.
  #NOWEB=			yes
  
-@@ -71,7 +70,7 @@ SYSLOG_FACILITY=	LOG_DAEMON
+@@ -71,7 +69,7 @@
  
  # Print wide protocol names instead of short names.
  # Comment this line, to save about 10 KB space
@@ -32,7 +34,7 @@
  
  # Reduce some internal structures size to save more memory
  # This is to limit amount of active sessions
-@@ -83,27 +82,27 @@ COPTS+=			-DPROTO_NAME_LIST
+@@ -83,27 +81,27 @@
  ## filter TCP accept connections
  LDADD+=		-lwrap
  DPADD+=		${LIBWRAP}
@@ -64,7 +66,7 @@
  .endif
  
  LDADD+=		-lnetgraph -lutil
-@@ -112,19 +111,12 @@ DPADD+=		${LIBNETGRAPH}
+@@ -112,19 +110,12 @@
  LDADD+=		-L/usr/lib -lradius
  DPADD+=		${LIBRADIUS}
  
@@ -88,7 +90,7 @@
  		-Wcast-align \
  		-Wchar-subscripts \
  		-Wformat \
-@@ -134,15 +126,14 @@ COPTS+=		-Wall \
+@@ -134,15 +125,14 @@
  		-Wnested-externs \
  		-Wpointer-arith \
  		-Wwrite-strings \
@@ -107,7 +109,7 @@
  .endif
  
  # Standard sources
-@@ -154,14 +145,13 @@ STDSRCS=        assert.c auth.c bund.c rep.c ccp.c cha
+@@ -154,14 +144,13 @@
  		util.c vars.c eap.c msoft.c ippool.c
  
  .if defined ( NOWEB )
@@ -124,7 +126,7 @@
  PDPATH1=	contrib/libpdel/util:contrib/libpdel/structs
  PDPATH2=	contrib/libpdel/structs/type
  .if defined ( NOWEB )
-@@ -199,60 +189,59 @@ PDELSRCS+=	http_connection.c \
+@@ -199,60 +188,59 @@
  		string_fp.c \
  		timeout_fp.c
  .endif
@@ -200,7 +202,7 @@
  .endif
  .endif
  
-@@ -261,46 +250,46 @@ COPTS+=         -DUSE_NG_PRED1
+@@ -261,46 +249,46 @@
  .if defined ( ECP_DES )
  SRCS+=		ecp_dese.c
  SRCS+=		ecp_dese_bis.c
@@ -258,7 +260,7 @@
  .endif
  
  # Add in required support files and libraries
-@@ -309,15 +298,12 @@ DPADD+=		${LIBCRYPTO}
+@@ -309,15 +297,12 @@
  
  .if exists ( /usr/lib/libexecinfo.so )
  LDADD+=		-lexecinfo

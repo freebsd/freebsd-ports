@@ -1,0 +1,11 @@
+--- test/expr/Makefile.orig
++++ test/expr/Makefile
+@@ -5,7 +5,7 @@
+ LDADD	+=	 -L../.. -lphk -lm
+ DPADD	+=	../../libphk.a
+ 
+-NO_MAN	=	sorry
++MAN	=
+ 
+ .include <bsd.prog.mk>
+ 

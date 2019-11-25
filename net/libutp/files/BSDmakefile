@@ -1,7 +1,7 @@
 LIB=	utp
 SHLIB_MAJOR=	0
 SRCS=	utp.cpp utp_utils.cpp
-NO_PROFILE=	yes
+MK_PROFILE=	no
 
 CXXFLAGS+=	-fno-exceptions -fno-rtti
 CXXFLAGS+=	-I${.CURDIR} -I${.CURDIR}/utp_config_lib -DPOSIX

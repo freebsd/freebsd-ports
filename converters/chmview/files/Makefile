@@ -7,7 +7,7 @@ LDADD+=		-L${LOCALBASE}/lib -lchm
 
 WARNS?=		6
 
-NO_MAN=		yes
+MAN=
 
 PROG=		chmview
 

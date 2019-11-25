@@ -1,0 +1,14 @@
+--- lib/Makefile.orig
++++ lib/Makefile
+@@ -2,10 +2,9 @@
+ 
+ NOLINT= # defined
+ NOPIC=  # defined
+-NOPROFILE=# defined
+ NO_LINT= # defined
+ NO_PIC=  # defined
+-NO_PROFILE=# defined
++MK_PROFILE=no
+ 
+ LIB=	sup
+ 

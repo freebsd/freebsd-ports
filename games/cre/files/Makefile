@@ -4,7 +4,7 @@
 #
 
 PROG=	cre
-SRCS!=	ls *.[ch]
-NO_MAN=	yes
+SRCS!=	ls *.c
+MAN=
 
 .include <bsd.prog.mk>

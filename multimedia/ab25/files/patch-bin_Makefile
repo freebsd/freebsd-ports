@@ -1,0 +1,10 @@
+--- bin/Makefile.orig
++++ bin/Makefile
+@@ -10,6 +10,6 @@
+ BINDIR?=	${PREFIX}/bin
+ CFLAGS+=	-I${.CURDIR}/../src -I${PREFIX}/include/PCSC \
+ 		-I${PREFIX}/include/ab25
+-NO_MAN=
++MAN=
+ 
+ .include <bsd.prog.mk>

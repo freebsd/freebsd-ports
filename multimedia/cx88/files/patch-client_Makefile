@@ -1,0 +1,11 @@
+--- client/Makefile.orig
++++ client/Makefile
+@@ -21,7 +21,7 @@
+ CXXFLAGS+= -DCX88_USE_IIC
+ .endif
+ 
+-NO_MAN=
++MAN=
+ 
+ LDADD = -L$(LIBTUNER_LIB) -ltuner_static -lezxml -lpthread -ledit
+ 

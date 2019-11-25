@@ -8,8 +8,7 @@ LOCALBASE?=	${PREFIX}
 BINDIR=		${PREFIX}/bin
 CFLAGS+=	-I${LOCALBASE}/include
 LDADD=		-L${LOCALBASE}/lib -liconv
-NO_MAN=
-NOMAN=
+MAN=
 
 .if defined(BSD_INSTALL_PROGRAM)
 install:

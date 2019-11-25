@@ -5,7 +5,7 @@ _OBJS!=	${MAKE} -f Makefile.unix -V OBJS -V QOBJS
 # next to -DHAVE_CONFIG_CPP below: 
 #_OBJS:=	${_OBJS:S/qconfig.o//}
 SRCS:=	${_OBJS:.o=.cpp}
-NO_MAN=	true	# qmake.1 anyone?
+MAN=
 
 .PATH:	${.CURDIR} ${.CURDIR:H}/src/tools
 CXXFLAGS+=-I${.CURDIR:H}/mkspecs/freebsd-g++

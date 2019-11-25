@@ -42,7 +42,7 @@ base system profiling libraries
 .endif
 PLIST_FILES+=	lib/libmissing_p.a
 .else
-MAKE_ENV+=	NO_PROFILE=yes
+MAKE_ENV+=	WITHOUT_PROFILE=yes
 .endif
 
 post-patch:

@@ -40,7 +40,7 @@ base system profiling libraries
 .endif
 PLIST_FILES+=	lib/libeispack_p.a
 .else
-MAKE_ENV+=	NO_PROFILE=yes
+MAKE_ENV+=	WITHOUT_PROFILE=yes
 .endif
 
 SRCS=	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \

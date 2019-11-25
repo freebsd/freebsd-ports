@@ -1,0 +1,11 @@
+--- test/argv/Makefile.orig
++++ test/argv/Makefile
+@@ -4,7 +4,7 @@
+ CFLAGS	+=	-I${.CURDIR}/../..
+ LDADD	+=	 -L../.. -lphk
+ 
+-NO_MAN	=	sorry
++MAN	=
+ 
+ .include <bsd.prog.mk>
+ 

@@ -14,7 +14,6 @@ SRCS=		array_alloc.c \
 INCS=		gdc.h \
 		gdchart.h \
 		gdcpie.h
-NO_MAN=		YES
 PREFIX?=	/usr/local
 LOCALBASE?=	/usr/local
 LIBDIR=		${PREFIX}/lib

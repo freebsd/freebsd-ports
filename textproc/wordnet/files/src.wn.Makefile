@@ -1,6 +1,5 @@
 PROG=		wn
-NO_MAN=		True	# man pages installed separately
-NOMAN=		${NO_MAN}
+MAN=
 
 CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/WordNet\"" \
 		-DDEFAULTBIN="\"${PREFIX}/bin\""

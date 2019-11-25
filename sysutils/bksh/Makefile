@@ -14,6 +14,6 @@ USES=		uidfix
 PLIST_FILES=	bin/bksh
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" ${WRKSRC}/local.mk
+	@${REINPLACE_CMD} -e "s/NOMAN.*/MAN=/" ${WRKSRC}/local.mk
 
 .include <bsd.port.mk>
