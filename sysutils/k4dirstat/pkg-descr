@@ -4,4 +4,4 @@ the Unix du command, but it provides more helpful diagnostic
 information. KDirStat also features some built-in cleanup facilities and
 the ability to include your own cleanup commands or scripts.
 
-WWW: http://bitbucket.org/jeromerobert/k4dirstat/
+WWW: https://github.com/jeromerobert/k4dirstat

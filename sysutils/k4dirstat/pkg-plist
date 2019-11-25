@@ -1,5 +1,4 @@
 bin/k4dirstat
-bin/kdirstat
 man/man1/k4dirstat.1.gz
 share/applications/k4dirstat.desktop
 share/config.kcfg/k4dirstat.kcfg
