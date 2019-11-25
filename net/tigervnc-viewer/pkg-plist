@@ -30,5 +30,6 @@ share/icons/hicolor/scalable/apps/tigervnc.svg
 %%NLS%%share/locale/uk/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/tigervnc.mo
 %%PORTDOCS%%%%DOCSDIR%%/%%TIGERVNC_COMPONENT%%LICENCE.TXT
 %%PORTDOCS%%%%DOCSDIR%%/%%TIGERVNC_COMPONENT%%README.rst
