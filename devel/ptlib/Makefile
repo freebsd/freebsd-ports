@@ -3,7 +3,7 @@
 
 PORTNAME=	ptlib
 PORTVERSION=	2.10.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -68,8 +68,10 @@ PLIST_SUB+=	DEBUG="@comment "
 .if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	libpulse.so:audio/pulseaudio
 CONFIGURE_ARGS+=--enable-pulse
+PLIST_SUB+=	PULSEAUDIO=""
 .else
 CONFIGURE_ARGS+=--disable-pulse
+PLIST_SUB+=	PULSEAUDIO="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MJABBER}
