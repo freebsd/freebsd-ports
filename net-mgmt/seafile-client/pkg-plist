@@ -1,5 +1,6 @@
 bin/seaf-cli
 bin/seaf-daemon
+include/seafile/seafile-error.h
 include/seafile/seafile-object.h
 include/seafile/seafile-rpc.h
 include/seafile/seafile.h
