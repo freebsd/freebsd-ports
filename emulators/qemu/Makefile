@@ -20,12 +20,11 @@ LIB_DEPENDS?=	libnettle.so:security/nettle \
 
 .if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
-USES+=		xorg
+USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t perl5 \
+		pkgconfig python:build tar:xz xorg
 USE_XORG=	pixman
 .endif
 
-USES?=		bison compiler:c11 cpe gmake gnome iconv:wchar_t perl5 \
-		pkgconfig python:build tar:xz
 USE_GNOME=	cairo glib20 libxml2
 USE_PERL5=	build
 
