@@ -1,6 +1,6 @@
---- Makefile.orig	2019-04-12 03:28:28 UTC
+--- Makefile.orig	2019-04-23 18:14:45 UTC
 +++ Makefile
-@@ -353,9 +353,14 @@ LIBS+=-lz $(LIBS_TOOLS)
+@@ -311,9 +311,14 @@ LIBS+=-lz $(LIBS_TOOLS)
  HELPERS-$(call land,$(CONFIG_SOFTMMU),$(CONFIG_LINUX)) = qemu-bridge-helper$(EXESUF)
  
  ifdef BUILD_DOCS
@@ -13,12 +13,12 @@
  DOCS+=docs/interop/qemu-ga-ref.html docs/interop/qemu-ga-ref.txt docs/interop/qemu-ga-ref.7
 +endif
  DOCS+=docs/qemu-block-drivers.7
+ DOCS+=docs/qemu-cpu-models.7
  ifdef CONFIG_VIRTFS
- DOCS+=fsdev/virtfs-proxy-helper.1
-@@ -812,11 +817,13 @@ BLOBS=
- endif
+@@ -742,11 +747,13 @@ install-sphinxdocs: sphinxdocs
+ 	$(call install-manual,interop)
  
- install-doc: $(DOCS)
+ install-doc: $(DOCS) install-sphinxdocs
 +ifndef NOPORTDOCS
  	$(INSTALL_DIR) "$(DESTDIR)$(qemu_docdir)"
  	$(INSTALL_DATA) qemu-doc.html "$(DESTDIR)$(qemu_docdir)"
@@ -29,7 +29,7 @@
  ifdef CONFIG_POSIX
  	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1"
  	$(INSTALL_DATA) qemu.1 "$(DESTDIR)$(mandir)/man1"
-@@ -830,8 +837,10 @@ ifneq ($(TOOLS),)
+@@ -764,8 +771,10 @@ ifdef CONFIG_TRACE_SYSTEMTAP
  endif
  ifneq (,$(findstring qemu-ga,$(TOOLS)))
  	$(INSTALL_DATA) qemu-ga.8 "$(DESTDIR)$(mandir)/man8"
