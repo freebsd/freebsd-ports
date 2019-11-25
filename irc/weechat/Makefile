@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	2.5
-PORTREVISION=	1
+DISTVERSION=	2.6
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -18,6 +17,7 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libgpg-error.so:security/libgpg-error
 
 USES=		cmake:noninja ncurses libtool tar:xz
+USES=		cmake:noninja ncurses libtool
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DLIBDATADIR=${LOCALBASE}/libdata
@@ -77,19 +77,20 @@ TCL_USES=		tcl
 
 .include <bsd.port.pre.mk>
 
-.if !empty(PORT_OPTIONS:MPYTHON) && ${PYTHON_MAJOR_VER} >= 3
-WARNING=	"Using Python 3.x is NOT recommended because many \"official\" scripts won\'t work"
-CMAKE_ARGS+=	-DENABLE_PYTHON3:BOOL=true \
-		-DPYTHON_LIBRARY:FILEPATH=${LOCALBASE}/lib/libpython${PYTHON_VER}m.so
+.if !empty(PORT_OPTIONS:MPYTHON) && ${PYTHON_MAJOR_VER} == 2
+CMAKE_ARGS+=	-DENABLE_PYTHON2:BOOL=true \
+#		-DPYTHON_LIBRARIES=${LOCALBASE}/lib
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${LIBDIR}/../pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' \
+	@${REINPLACE_CMD} 's|$${LIBDIR}/../pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt
 .for f in src/CMakeLists.txt src/core/CMakeLists.txt cmake/*.cmake
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/${f}
 .endfor
+	@${REINPLACE_CMD} 's|python${PYTHON_MAJOR_VER}|python-${PYTHON_VER}|' \
+		${WRKSRC}/cmake/FindPython.cmake
 
 post-patch-ICON-off:
 	@${REINPLACE_CMD} -e '/^# icon$$/,/^$$/d' ${WRKSRC}/CMakeLists.txt
