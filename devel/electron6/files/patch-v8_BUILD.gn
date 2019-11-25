@@ -1,0 +1,32 @@
+--- v8/BUILD.gn.orig	2019-09-16 09:24:25 UTC
++++ v8/BUILD.gn
+@@ -3545,7 +3545,7 @@ v8_component("v8_libbase") {
+     }
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",
+       "src/base/platform/platform-linux.cc",
+@@ -3565,6 +3565,12 @@ v8_component("v8_libbase") {
+       "dl",
+       "rt",
+     ]
++  } else if (is_bsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-freebsd.cc",
++    ]
++    libs = [ "rt", "execinfo" ]
+   } else if (is_android) {
+     if (current_toolchain == host_toolchain) {
+       libs = [
+@@ -3820,6 +3826,7 @@ if (v8_use_snapshot && current_toolchain == v8_snapsho
+       "src/snapshot/embedded/platform-embedded-file-writer-win.h",
+       "src/snapshot/mksnapshot.cc",
+     ]
++    libs = ["execinfo"]
+ 
+     configs = [ ":internal_config" ]
+ 

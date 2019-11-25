@@ -1,0 +1,159 @@
+--- third_party/yasm/yasm_assemble.gni.orig	2019-09-10 10:43:21 UTC
++++ third_party/yasm/yasm_assemble.gni
+@@ -1,105 +1,23 @@
+-# Copyright 2014 The Chromium Authors. All rights reserved.
++# Copyright 2016 The Chromium Authors. All rights reserved.
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.
+ 
+-# This provides the yasm_assemble() template which uses YASM to assemble
+-# assembly files.
+-#
+-# Files to be assembled with YASM should have an extension of .asm.
+-#
+-# Parameters
+-#
+-#   yasm_flags (optional)
+-#       [list of strings] Pass additional flags into YASM. These are appended
+-#       to the command line. Note that the target machine type and system is
+-#       already set up based on the current toolchain so you don't need to
+-#       specify these things (see below).
+-#
+-#       Example: yasm_flags = [ "--force-strict" ]
+-#
+-#   include_dirs (optional)
+-#       [list of dir names] List of additional include dirs. Note that the
+-#       source root and the root generated file dir is always added, just like
+-#       our C++ build sets up.
+-#
+-#       Example: include_dirs = [ "//some/other/path", target_gen_dir ]
+-#
+-#   defines (optional)
+-#       [list of strings] List of defines, as with the native code defines.
+-#
+-#       Example: defines = [ "FOO", "BAR=1" ]
+-#
+-#   inputs, deps, visibility  (optional)
+-#       These have the same meaning as in an action.
+-#
+-# Example
+-#
+-#   yasm_assemble("my_yasm_target") {
+-#     sources = [
+-#       "ultra_optimized_awesome.asm",
+-#     ]
+-#     include_dirs = [ "assembly_include" ]
+-#   }
+-
+-if (is_mac || is_ios) {
+-  if (current_cpu == "x86") {
+-    _yasm_flags = [
+-      "-fmacho32",
+-      "-m",
+-      "x86",
+-    ]
+-  } else if (current_cpu == "x64") {
+-    _yasm_flags = [
+-      "-fmacho64",
+-      "-m",
+-      "amd64",
+-    ]
+-  }
+-} else if (is_posix || is_fuchsia) {
+-  if (current_cpu == "x86") {
+-    _yasm_flags = [
+-      "-felf32",
+-      "-m",
+-      "x86",
+-    ]
+-  } else if (current_cpu == "x64") {
+-    _yasm_flags = [
+-      "-DPIC",
+-      "-felf64",
+-      "-m",
+-      "amd64",
+-    ]
+-  }
+-} else if (is_win) {
+-  if (current_cpu == "x86") {
+-    _yasm_flags = [
+-      "-DPREFIX",
+-      "-fwin32",
+-      "-m",
+-      "x86",
+-    ]
+-  } else if (current_cpu == "x64") {
+-    _yasm_flags = [
+-      "-fwin64",
+-      "-m",
+-      "amd64",
+-    ]
+-  }
++if (current_cpu == "x86") {
++  _yasm_flags = [
++    "-felf32",
++    "-m",
++    "x86",
++  ]
++} else if (current_cpu == "x64") {
++  _yasm_flags = [
++    "-DPIC",
++    "-felf64",
++    "-m",
++    "amd64",
++  ]
+ }
+ 
+-if (is_win) {
+-  asm_obj_extension = "obj"
+-} else {
+-  asm_obj_extension = "o"
+-}
+-
+ template("yasm_assemble") {
+-  assert(defined(invoker.sources), "Need sources defined for $target_name")
+-
+-  # Only depend on YASM on x86 systems. Force compilation of .asm files for
+-  # ARM to fail.
+-  assert(current_cpu == "x86" || current_cpu == "x64")
+-
+   action_name = "${target_name}_action"
+   source_set_name = target_name
+ 
+@@ -114,24 +32,12 @@ template("yasm_assemble") {
+       inputs = invoker.inputs
+     }
+ 
+-    # Executable (first in the args). The binary might be in the root build dir
+-    # (no cross-compiling) or in a toolchain-specific subdirectory of that
+-    # (when cross-compiling).
+-    yasm_label = "//third_party/yasm($host_toolchain)"
+-    args = [ "./" +  # Force current dir.
+-             rebase_path(get_label_info(yasm_label, "root_out_dir") + "/yasm",
+-                         root_build_dir) ]
+-
+-    # Deps.
+-    deps = [
+-      yasm_label,
+-    ]
++    deps = []
+     if (defined(invoker.deps)) {
+       deps += invoker.deps
+     }
+ 
+-    # Flags.
+-    args += _yasm_flags
++    args = [ "yasm" ] + _yasm_flags
+     if (defined(invoker.yasm_flags)) {
+       args += invoker.yasm_flags
+     }
+@@ -188,9 +94,6 @@ template("yasm_assemble") {
+     }
+ 
+     sources = get_target_outputs(":$action_name")
+-
+-    # Do not publicize any header to remove build dependency.
+-    public = []
+ 
+     deps = [
+       ":$action_name",

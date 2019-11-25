@@ -1,0 +1,15 @@
+--- chrome/browser/extensions/BUILD.gn.orig	2019-09-10 11:13:39 UTC
++++ chrome/browser/extensions/BUILD.gn
+@@ -1135,6 +1135,12 @@ jumbo_static_library("extensions") {
+     deps += [ "//chrome/common:service_process_mojom" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "api/image_writer_private/removable_storage_provider_linux.cc",
++    ]
++  }
++
+   if (enable_service_discovery) {
+     sources += [
+       "api/mdns/mdns_api.cc",
