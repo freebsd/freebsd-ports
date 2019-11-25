@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros-console_bridge
-DISTVERSION=	0.4.3
-PORTREVISION=	1
+DISTVERSION=	0.4.4
 CATEGORIES=	devel
 
 MAINTAINER=	trueos@norwegianrockcat.com
