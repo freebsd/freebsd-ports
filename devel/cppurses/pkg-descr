@@ -1,0 +1,11 @@
+CPPurses is a Terminal User Interface(TUI) Library built on top of ncurses.
+It defines a framework of Widgets, Layouts, and Events that let you focus on
+user interface design, while boilerplate common to ncurses applications is
+handled behind the scenes.
+
+CPPurses contains a collection of common Widgets that can be pieced together to
+create a composite application. It is also possible to expand and build on top
+of existing Widgets, or to create completely new Widget types, by overriding a
+few virtual functions.
+
+WWW: https://github.com/a-n-t-h-o-n-y/CPPurses
