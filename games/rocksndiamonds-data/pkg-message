@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+These levels can be used with games/rnd_jue or games/rocksndiamonds.
+
+You can find more levels at
+
+    https://web.archive.org/web/20140110211740/http://www.bd-fans.com/RnD.html
+    http://www.artsoft.org/forum/
+
+and other sites.  Copy them to:
+
+    ~/.rocksndiamonds/levels/yours_username
+    ~/.rnd_jue/levels/yours_username
+
+EOM
+}
+]
