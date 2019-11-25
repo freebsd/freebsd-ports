@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	0.102.0
+PORTVERSION=	0.102.1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libcurl.so:ftp/curl
 
-USES=		autoreconf compiler cpe gmake gnome libtool ncurses pathfix pkgconfig ssl
+USES=		compiler cpe gmake gnome libtool ncurses pathfix pkgconfig ssl
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 USE_LDCONFIG=	yes
 
