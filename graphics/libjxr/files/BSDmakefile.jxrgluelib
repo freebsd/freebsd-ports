@@ -1,6 +1,6 @@
 LIB=		jxrglue
 SHLIB_MAJOR=	1
-NO_PROFILE=	nope
+MK_PROFILE=	no
 LIBDIR=		${PREFIX}/lib
 INCLUDEDIR=	${PREFIX}/include/jxrlib
 INCS=		JXRGlue.h JXRMeta.h JXRTest.h

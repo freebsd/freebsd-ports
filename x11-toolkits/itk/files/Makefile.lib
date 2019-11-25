@@ -1,4 +1,4 @@
-NO_PROFILE=	yes
+MK_PROFILE=	no
 LIB=		itk
 ITK_LIBRARY=	${PREFIX}/lib/itk${MAJOR}.${MINOR}
 CFLAGS+=	-I. -I./../generic \

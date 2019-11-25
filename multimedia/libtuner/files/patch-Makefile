@@ -1,0 +1,11 @@
+--- Makefile.orig
++++ Makefile
+@@ -42,7 +42,7 @@
+ SRCS += tuner_iic_device.h tuner_iic_device.cpp
+ .endif
+ 
+-NO_PROFILE=
++MK_PROFILE = no
+ LIB = tuner_static
+ SHLIB = tuner
+ SHLIB_MAJOR = $(LIBTUNER_MAJOR)

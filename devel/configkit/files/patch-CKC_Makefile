@@ -1,0 +1,11 @@
+--- CKC/Makefile.orig
++++ CKC/Makefile
+@@ -4,7 +4,7 @@
+ SRCS +=		ckc.c
+ SRCS +=		ktype.c
+ 
+-NO_MAN +=	1
++MAN=
+ 
+ BINDIR +=	/usr/local/bin
+ 

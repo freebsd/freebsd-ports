@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program that helps you fix a build interactively
 
 USES=		tar:bzip2 uidfix
-MAKE_ENV=	NO_MAN=yes NO_WERROR="defined"
+MAKE_ENV=	WITHOUT_MAN=yes NO_WERROR="defined"
 
 PLIST_FILES=	bin/replay
 

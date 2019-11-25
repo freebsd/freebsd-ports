@@ -6,7 +6,7 @@ LIBDIR=		${PREFIX}/lib
 SHLIB_MAJOR=	1
 SHLIB_MINOR=	1
 LIB=		st
-NO_PROFILE=	yes
+MK_PROFILE=	no
 
 SRCS=		io.c key.c sched.c stk.c sync.c event.c
 CFLAGS+=	-DFREEBSD -DMD_HAVE_KQUEUE

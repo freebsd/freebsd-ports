@@ -1,0 +1,13 @@
+--- Makefile.orig
++++ Makefile
+@@ -4,8 +4,8 @@
+ SRCS=		pam_jail.c
+ MAN=		pam_jail.8
+ 
+-NO_INSTALLLIB=
+-NO_PROFILE=
++MK_INSTALLLIB=	no
++MK_PROFILE=	no
+ WARNS?=		4
+ SHLIB_NAME?=	${LIB}.so.${SHLIB_MAJOR}
+ LDADD+=		-lpam

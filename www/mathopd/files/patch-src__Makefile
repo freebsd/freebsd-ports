@@ -14,7 +14,7 @@
 +SRCS=	base64.c cgi.c config.c core.c dump.c imap.c log.c main.c \
 +	redirect.c request.c util.c stub.c sendfile.c
 +BINDIR?=	${PREFIX}/sbin
-+NO_MAN=	yes
++MAN=
 +LDADD=	-lcrypt
  
 -# On Solaris, uncomment the following

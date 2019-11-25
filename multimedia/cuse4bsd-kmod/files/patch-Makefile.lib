@@ -1,0 +1,11 @@
+--- Makefile.lib.orig
++++ Makefile.lib
+@@ -31,7 +31,7 @@
+ MAN=		cuse4bsd.3
+ MKLINT=		no
+ NOGCCERROR=
+-NO_PROFILE=
++MK_PROFILE=	no
+ PTHREAD_LIBS?=	-lpthread
+ CFLAGS+=	-D_GNU_SOURCE
+ .if defined(HAVE_DEBUG)

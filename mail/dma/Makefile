@@ -44,7 +44,7 @@ post-patch:
 		${WRKSRC}/dma.8
 	@${REINPLACE_CMD} -e 's, /etc/dma, ${PREFIX}/etc/dma,g' \
 		${WRKSRC}/dma.conf
-	@${REINPLACE_CMD} -e '/^MK_MAN/d' -e 's/^NOMAN/NO_MAN/' \
+	@${REINPLACE_CMD} -e '/^MK_MAN/d' -e 's/^NOMAN.*/MAN=/' \
 		${WRKSRC}/bsd/dma-mbox-create/Makefile
 
 post-install:

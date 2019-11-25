@@ -1,0 +1,11 @@
+--- Makefile.orig
++++ Makefile
+@@ -4,7 +4,7 @@
+ SHLIB_MAJOR=	0
+ PREFIX?= /usr/local
+ LIBDIR= ${PREFIX}/lib
+-NO_PROFILE=	YES
++MK_PROFILE= no
+ INCLUDEDIR= ${PREFIX}/include
+ MAN=
+ SRCS=	g722_decode.c g722_encode.c

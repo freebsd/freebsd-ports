@@ -7,7 +7,7 @@
 -NOPIC= 1
 -NOPROFILE= 1
 +NO_PIC= 1
-+NO_PROFILE= 1
++MK_PROFILE= no
  
  PIPE= -pipe
  

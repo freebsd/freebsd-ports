@@ -2,7 +2,7 @@ LIB=	tifmerge
 
 SHLIB_MAJOR=	1
 SHLIB_MINOR=	0
-NO_PROFILE=	yes
+MK_PROFILE=	no
 
 SRCS=	tifmerge.c
 

@@ -45,7 +45,7 @@ base system profiling libraries
 .endif
 PLIST_FILES+=	lib/liblevmar_p.a
 .else
-MAKE_ENV+=	NO_PROFILE=
+MAKE_ENV+=	WITHOUT_PROFILE=true
 .endif
 
 post-extract:

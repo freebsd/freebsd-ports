@@ -1,0 +1,10 @@
+--- Makefile.orig
++++ Makefile
+@@ -1,6 +1,6 @@
+ PROG	=	dual-dhclient
+ SRCS	=	main.c
+-NO_MAN	?=	yes
++MAN	=
+ BINDIR	?=	/usr/local/sbin
+ 
+ .include <bsd.prog.mk>

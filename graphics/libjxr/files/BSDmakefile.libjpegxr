@@ -1,6 +1,6 @@
 LIB=		jpegxr
 SHLIB_MAJOR=	1
-NO_PROFILE=	nope
+MK_PROFILE=	no
 LIBDIR=		${PREFIX}/lib
 INCLUDEDIR=	${PREFIX}/include/jxrlib
 INCS= 		guiddef.h windowsmediaphoto.h wmsal.h wmspecstring.h	\

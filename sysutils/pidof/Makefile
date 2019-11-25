@@ -17,7 +17,7 @@ CONFLICTS=	psmisc-1*
 PLIST_FILES=	bin/pidof
 
 post-patch:
-	@${REINPLACE_CMD} 's/NOMAN/NO_MAN/ ; /LINKS/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's/NOMAN.*/MAN=/ ; /LINKS/d' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pidof ${STAGEDIR}${PREFIX}/bin

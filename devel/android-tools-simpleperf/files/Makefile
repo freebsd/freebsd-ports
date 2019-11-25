@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PROG_CXX=simpleperf
-NO_MAN=
+MAN=
 BINDIR?=/usr/bin
 
 SRCS+=	callchain.cpp

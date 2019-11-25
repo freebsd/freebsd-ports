@@ -2,7 +2,7 @@ LIB=	trio
 SHLIB_MAJOR=	2
 SHLIB_MINOR=	0
 
-NO_PROFILE=	nope
+MK_PROFILE=	no
 
 INCLUDEDIR=	${PREFIX}/include
 LIBDIR=		${PREFIX}/lib

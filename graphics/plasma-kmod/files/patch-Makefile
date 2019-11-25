@@ -7,6 +7,6 @@
 -NOMAN=
 -CFLAGS+= -I${.CURDIR}/.. -I.
 -CWARNFLAGS= -Wall
-+NO_MAN=
++MAN=
  
  .include <bsd.kmod.mk>

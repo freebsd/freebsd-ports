@@ -24,7 +24,7 @@
 +LDADD+=	-lXpm -lX11 -lXext
 +LDADD+= -L${LOCALBASE}/lib
  
-+NO_MAN=
++MAN=
  
 -.c.o:
 -	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)

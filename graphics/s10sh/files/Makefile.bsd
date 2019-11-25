@@ -1,5 +1,5 @@
 PROG	=	s10sh
-NO_MAN	=	oh...
+MAN	=
 
 SRCS	=	main.c crc.c serial.c common.c bar.c
 

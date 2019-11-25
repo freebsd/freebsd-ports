@@ -1,7 +1,7 @@
 LIB=	udt
 SHLIB_MAJOR=4
 SHLIB_MINOR=10
-NO_PROFILE=	yes	# Ports don't install profile-libraries
+MK_PROFILE=	no	# Ports don't install profile-libraries
 LIBDIR=	${PREFIX}/lib
 INCLUDEDIR=	${PREFIX}/include
 INCS=	udt.h

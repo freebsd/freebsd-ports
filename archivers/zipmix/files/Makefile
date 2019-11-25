@@ -2,6 +2,6 @@
 
 PROG=   zipmix
 
-NO_MAN=	YES
+MAN=
 
 .include <bsd.prog.mk>

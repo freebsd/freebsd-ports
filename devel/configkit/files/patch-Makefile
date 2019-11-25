@@ -1,0 +1,11 @@
+--- Makefile.orig
++++ Makefile
+@@ -23,7 +23,7 @@
+ BINDIR ?=	/usr/local/bin
+ 
+ WARNS ?=	5
+-NO_MAN=	yes
++MAN=
+ 
+ CLEANFILES +=	example.c example.h
+ 
