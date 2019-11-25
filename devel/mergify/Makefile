@@ -2,12 +2,15 @@
 
 PORTNAME=	mergify
 PORTVERSION=	g20180512
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Merge changes from a branch one commit at a time
 
 LICENSE=	BSD2CLAUSE
+
+RUN_DEPENDS=	git:devel/git
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	brooksdavis

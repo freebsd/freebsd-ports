@@ -2,6 +2,7 @@
 
 PORTNAME=	lab
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -10,6 +11,8 @@ COMMENT=	Lab makes it simple to work with repositories on GitLab
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	git:devel/git
 
 USES=		go:modules
 
