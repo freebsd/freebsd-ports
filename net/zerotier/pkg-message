@@ -1,6 +1,10 @@
 [
 { type: install
   message: <<EOM
+Note that ZeroTier 1.4.6+ has a *new* license prohibiting commercial SaaS
+style usage, as well as excluding government organisations. Read the
+license details carefully to ensure your compliance.
+
 First start the zerotier service:
 
 service zerotier start
