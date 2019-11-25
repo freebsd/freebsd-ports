@@ -1,0 +1,17 @@
+Catkin is a collection of cmake macros and code to build ROS packages
+
+From the ROS Wiki:
+
+catkin is the official build system of ROS and the successor to the
+original ROS build system, rosbuild. catkin combines CMake macros and
+Python scripts to provide some functionality on top of CMake's normal
+workflow. catkin was designed to be more conventional than rosbuild,
+allowing for better distribution of packages, better cross-compiling
+support, and better portability. catkin's workflow is very similar to
+CMake's but adds support for automatic 'find package' infrastructure
+and building multiple, dependent projects at the same time.
+
+The name catkin comes from the tail-shaped flower cluster found on
+willow trees -- a reference to Willow Garage where catkin was created.
+
+WWW: https://docs.ros.org/api/catkin/html/
