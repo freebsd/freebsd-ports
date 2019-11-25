@@ -1,0 +1,37 @@
+--- net/BUILD.gn.orig	2019-09-10 11:14:08 UTC
++++ net/BUILD.gn
+@@ -98,7 +98,7 @@ net_configs = [
+   "//build/config/compiler:wexit_time_destructors",
+ ]
+ 
+-if (is_linux) {
++if (is_linux && !is_bsd) {
+   net_configs += [ "//build/config/linux:libresolv" ]
+ }
+ 
+@@ -1919,7 +1919,7 @@ component("net") {
+     }
+ 
+     # Use getifaddrs() on POSIX platforms, except Linux and Android.
+-    if (is_posix && !is_linux && !is_android) {
++    if (is_posix && ((!is_linux && !is_android) || (is_bsd))) {
+       sources += [
+         "base/network_interfaces_getifaddrs.cc",
+         "base/network_interfaces_getifaddrs.h",
+@@ -2012,6 +2012,16 @@ component("net") {
+       ]
+ 
+       sources -= [ "disk_cache/blockfile/file_posix.cc" ]
++    }
++
++    if (is_bsd) {
++      sources -= [
++         "base/address_tracker_linux.cc",
++         "base/address_tracker_linux.h",
++         "base/network_change_notifier_linux.cc",
++         "base/network_change_notifier_linux.h",
++         "base/network_interfaces_linux.cc",
++      ]
+     }
+ 
+     if (is_ios || is_mac) {

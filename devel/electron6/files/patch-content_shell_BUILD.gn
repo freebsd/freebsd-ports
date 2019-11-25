@@ -1,0 +1,11 @@
+--- content/shell/BUILD.gn.orig	2019-09-10 11:14:03 UTC
++++ content/shell/BUILD.gn
+@@ -961,7 +961,7 @@ group("content_shell_crash_test") {
+   if (is_win) {
+     data_deps += [ "//build/win:copy_cdb_to_output" ]
+   }
+-  if (is_posix) {
++  if (is_posix && !is_bsd) {
+     data_deps += [
+       "//third_party/breakpad:dump_syms",
+       "//third_party/breakpad:minidump_stackwalk",

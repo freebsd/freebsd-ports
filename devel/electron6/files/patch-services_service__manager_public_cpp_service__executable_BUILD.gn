@@ -1,0 +1,14 @@
+--- services/service_manager/public/cpp/service_executable/BUILD.gn.orig	2019-09-10 10:42:44 UTC
++++ services/service_manager/public/cpp/service_executable/BUILD.gn
+@@ -29,6 +29,11 @@ source_set("support") {
+       "//sandbox/linux:seccomp_bpf",
+     ]
+   }
++  if (is_bsd) {
++    deps -= [
++      "//sandbox/linux:seccomp_bpf"
++    ]
++  }
+ }
+ 
+ source_set("switches") {

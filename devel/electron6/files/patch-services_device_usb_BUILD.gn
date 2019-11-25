@@ -1,0 +1,11 @@
+--- services/device/usb/BUILD.gn.orig	2019-09-10 11:14:11 UTC
++++ services/device/usb/BUILD.gn
+@@ -111,7 +111,7 @@ static_library("usb") {
+     ]
+   }
+ 
+-  if (is_android || is_chromeos || is_linux) {
++  if ((is_android || is_chromeos || is_linux) && !is_bsd) {
+     sources += [
+       "usb_device_handle_usbfs.cc",
+       "usb_device_handle_usbfs.h",

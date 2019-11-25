@@ -1,0 +1,21 @@
+--- cc/BUILD.gn.orig	2019-09-10 11:13:32 UTC
++++ cc/BUILD.gn
+@@ -566,7 +566,7 @@ cc_test_static_library("test_support") {
+   if (enable_vulkan) {
+     deps += [ "//gpu/vulkan/init" ]
+   }
+-  if (!is_android) {
++  if (!is_android && !is_bsd) {
+     data_deps = [
+       "//third_party/mesa_headers",
+     ]
+@@ -767,9 +767,6 @@ cc_test("cc_unittests") {
+     "//ui/gfx/geometry",
+     "//ui/gl",
+     "//ui/gl:test_support",
+-  ]
+-  data_deps = [
+-    "//third_party/mesa_headers",
+   ]
+ }
+ 
