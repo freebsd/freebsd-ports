@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	photoflow
-DISTVERSION=	0.2.8-1260
-PORTREVISION=	2
+DISTVERSION=	0.2.8-1398
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,6 @@ COMMENT=	Non-destructive photo retouching program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		no matching function for call to 'vips_image_get_blob'
 BROKEN_i386=	see https://github.com/aferrero2707/PhotoFlow/issues/192
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
@@ -26,7 +24,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext gnome jpeg pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	aferrero2707
 GH_PROJECT=	PhotoFlow
-GH_TAGNAME=	da84a071
+GH_TAGNAME=	d92c3989
 USE_GNOME=	atkmm cairomm glib20 glibmm gtk20 gtkmm24 libsigc++20 pangomm
 
 CMAKE_OFF=	BUNDLED_LENSFUN

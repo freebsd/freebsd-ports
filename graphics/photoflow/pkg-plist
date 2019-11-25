@@ -12,6 +12,7 @@ share/icons/hicolor/scalable/apps/photoflow.svg
 share/locale/de/LC_MESSAGES/photoflow.mo
 share/locale/fr/LC_MESSAGES/photoflow.mo
 share/locale/pl/LC_MESSAGES/photoflow.mo
+share/metainfo/photoflow.appdata.xml
 %%DATADIR%%/gmic_def.gmic
 %%DATADIR%%/gmic_film_cluts.gmz
 %%DATADIR%%/help/en/clone_stamp.hlp
