@@ -171,6 +171,7 @@ lib/libpt.so.%%PORTVERSION%%
 %%DEBUG%%lib/libpt_d.so.%%PVERSION_MAJOR%%
 %%DEBUG%%lib/libpt_d.so.%%PORTVERSION%%
 lib/ptlib-%%PORTVERSION%%/devices/sound/oss_pwplugin.so
+%%PULSEAUDIO%%lib/ptlib-%%PORTVERSION%%/devices/sound/pulse_pwplugin.so
 %%BSDVIDEO%%lib/ptlib-%%PORTVERSION%%/devices/videoinput/bsdvideo_pwplugin.so
 %%V4L%%lib/ptlib-%%PORTVERSION%%/devices/videoinput/v4l_pwplugin.so
 %%V4L%%lib/ptlib-%%PORTVERSION%%/devices/videoinput/v4l2_pwplugin.so
