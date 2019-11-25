@@ -202,15 +202,6 @@
  if CONFIG['MOZ_SYSTEM_LIBEVENT']:
      OS_LIBS += CONFIG['MOZ_LIBEVENT_LIBS']
  
-@@ -274,7 +280,7 @@ OS_LIBS += CONFIG['ICONV_LIBS']
- if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('cocoa', 'uikit'):
-     OS_LIBS += CONFIG['TK_LIBS']
- 
--if CONFIG['OS_ARCH'] == 'OpenBSD':
-+if CONFIG['OS_ARCH'] == 'FreeBSD':
-     OS_LIBS += [
-         'sndio',
-     ]
 --- mozilla-release/toolkit/moz.configure.orig	2019-11-13 13:22:25 UTC
 +++ mozilla-release/toolkit/moz.configure
 @@ -931,6 +931,25 @@ add_old_configure_assignment('FT2_LIBS',
