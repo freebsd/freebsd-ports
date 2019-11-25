@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	1
 PKGNAMESUFFIX=	-viewer
 CATEGORIES=	net
 
