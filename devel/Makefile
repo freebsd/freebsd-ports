@@ -5394,6 +5394,7 @@
     SUBDIR += robin-map
     SUBDIR += roboctl
     SUBDIR += robodoc
+    SUBDIR += ros-catkin
     SUBDIR += ros-catkin_pkg
     SUBDIR += ros-console_bridge
     SUBDIR += ros-rosdep
