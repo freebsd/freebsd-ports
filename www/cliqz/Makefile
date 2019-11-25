@@ -2,6 +2,7 @@
 
 PORTNAME=	cliqz
 DISTVERSION=	1.30.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/cdn.cliqz.com/browser-f/APT/:amazon \
 		http://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/${CLIQZ_LAST_BUILD_ID}/:cliqz
@@ -88,14 +89,14 @@ MAKE_ENV+=	CQZ_BUILD_ID=${CLIQZ_LAST_BUILD_ID} \
 		MOZBUILD_STATE_PATH=${WRKDIR}
 
 # Configure args passed into mach build system
-MOZ_CONFIGURE_ARGS+=	"ac_add_options --disable-crashreporter" \
-			"ac_add_options --disable-debug" \
-			"ac_add_options --disable-debug-symbols" \
-			"ac_add_options --disable-tests" \
-			"ac_add_options --disable-updater" \
-			"ac_add_options --libclang-path=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib" \
-			"ac_add_options --with-system-graphite2" \
-			"ac_add_options --with-system-harfbuzz"
+MOZ_CONFIGURE_ARGS+=	"--disable-crashreporter" \
+			"--disable-debug" \
+			"--disable-debug-symbols" \
+			"--disable-tests" \
+			"--disable-updater" \
+			"--libclang-path=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib" \
+			"--with-system-graphite2" \
+			"--with-system-harfbuzz"
 
 .include "${.CURDIR}/Makefile.options"
 
@@ -126,7 +127,7 @@ post-patch:
 		-e '/StartupWMClass/d' \
 		${CLIQZ_DESKTOP}
 .for MOZ_CONFIGURE_ARG in ${MOZ_CONFIGURE_ARGS}
-	@${ECHO_CMD} ${MOZ_CONFIGURE_ARG} >> \
+	@${ECHO_CMD} "ac_add_options" ${MOZ_CONFIGURE_ARG} >> \
 		${WRKSRC}/mozilla-release/browser/config/cliqz.mozconfig;
 .endfor
 # This prevents linker exhausting memory in i386 builds
@@ -142,6 +143,13 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	(cd ${WRKSRC}/obj/dist/${PORTNAME} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	# Check if the wayland lib was generated, this happens if
+	# x11-toolkits/gtk30 has WAYLAND option enabled.
+	@if [ -f ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/libmozwayland.so ]; then \
+		${REINPLACE_CMD} -e 's|%%WAYLAND%%||' ${TMPPLIST}; \
+	else \
+		${REINPLACE_CMD} -e 's|%%WAYLAND%%|@comment |' ${TMPPLIST}; \
+	fi
 	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${PORTNAME}-bin
 	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${PORTNAME}
 

@@ -7,11 +7,11 @@ OPTIONS_DEFAULT=	JACK PULSEAUDIO SNDIO
 AUDIO_DESC=		Choose your audio options
 
 JACK_BUILD_DEPENDS=	${LOCALBASE}/include/jack/jack.h:audio/jack
-JACK_VARS=		MOZ_CONFIGURE_ARGS+=	"ac_add_options --enable-jack"
+JACK_VARS=		MOZ_CONFIGURE_ARGS+="--enable-jack"
 
 PULSEAUDIO_BUILD_DEPENDS=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio
-PULSEAUDIO_VARS=		MOZ_CONFIGURE_ARGS+=	"ac_add_options	--enable-pulseaudio"
-PULSEAUDIO_VARS_OFF=		MOZ_CONFIGURE_ARGS+=	"ac_add_options --disable-pulseaudio"
+PULSEAUDIO_VARS=		MOZ_CONFIGURE_ARGS+="--enable-pulseaudio"
+PULSEAUDIO_VARS_OFF=		MOZ_CONFIGURE_ARGS+="--disable-pulseaudio"
 
 SNDIO_BUILD_DEPENDS+=	${LOCALBASE}/include/sndio.h:audio/sndio
 SNDIO_LIB_DEPENDS+=	libsndio.so:audio/sndio
