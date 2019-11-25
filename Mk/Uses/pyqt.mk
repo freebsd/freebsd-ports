@@ -184,6 +184,7 @@ py-phonon_DESC=		Python bindings for Phonon module
 py-qscintilla2_DESC=	Python bindings for QScintilla2
 py-script_DESC=		Python bindings for QtScript module
 py-scripttools_DESC=	Python bindings for QtScriptTools module
+py-sip_DESC=		Python bindings generator for C and C++ libraries
 py-sql_DESC=		Python bindings for QtSql module
 py-svg_DESC=		Python bindings for QtSvg module
 py-test_DESC=		Python bindings for QtTest module
