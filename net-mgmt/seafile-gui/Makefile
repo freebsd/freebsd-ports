@@ -2,14 +2,11 @@
 
 PORTNAME=	seafile-gui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.1
-PORTREVISION=	2
+DISTVERSION=	7.0.4
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Open Source Cloud Storage (Client)
-
-BROKEN=		unfetchable
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
