@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	botan
-DISTVERSION=	2.12.0
+DISTVERSION=	2.12.1
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	2
@@ -17,10 +17,10 @@ BROKEN_armv6=	include/arm_neon.h:28:2: error: "NEON support not enabled"
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
-USES=		compiler:c++11-lang gmake python:build shebangfix tar:xz
+USES=		compiler:c++11-lang gmake shebangfix tar:xz
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	configure.py src/scripts/install.py
+SHEBANG_FILES=	configure.py src/python/botan2.py src/scripts/install.py
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure.py
@@ -39,9 +39,14 @@ _SHLIBVER=	${DISTVERSION:S/./ /g:[2]}
 PLIST_SUB=	SHLIBVER=${_SHLIBVER}
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		DOCS SQLITE3 SSL
+OPTIONS_DEFINE=		DOCS PYTHON SQLITE3 SSL
 OPTIONS_DEFAULT=	SSL
 OPTIONS_SUB=		yes
+
+PYTHON_USES=		python
+PYTHON_USES_OFF=	python:build
+PYTHON_CONFIGURE_ON=	--with-python-versions=${PYTHON_VER}
+PYTHON_CONFIGURE_OFF=	--no-install-python-module
 
 SQLITE3_USES=		sqlite
 SQLITE3_CONFIGURE_WITH=	sqlite3
@@ -72,6 +77,6 @@ post-patch:
 		${WRKSRC}/src/build-data/cc/clang.txt
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/botan ${STAGEDIR}${PREFIX}/lib/libbotan-2.so.${_SHLIBVER}.${_SHLIBVER}.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/botan ${STAGEDIR}${PREFIX}/lib/libbotan-2.so.${_SHLIBVER}.${_SHLIBVER}.1
 
 .include <bsd.port.mk>
