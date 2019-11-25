@@ -1,0 +1,14 @@
+--- doc/scdaemon.texi.orig	2019-11-20 21:45:47 UTC
++++ doc/scdaemon.texi
+@@ -300,6 +300,11 @@ Note that with the current version of Scdaemon the car
+ down immediately at the next timer tick for any value of @var{n} other
+ than 0.
+ 
++@item --shared-access
++@opindex shared-access
++Open the smart card in shared mode, rather than exclusive.  This will allow
++other applications like PKCS#11 libraries to use the smart card concurrently.
++
+ @item --enable-pinpad-varlen
+ @opindex enable-pinpad-varlen
+ Please specify this option when the card reader supports variable
