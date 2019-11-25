@@ -233,7 +233,7 @@ MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		opt.1 tblgen.1
 
 .if ${PORT_OPTIONS:MPYCLANG}
-PYCLANG_PATTERN=	(clang\/(__init__|cindex|enumerations).py$)
+PYCLANG_PATTERN=	(clang\/(__init__|cindex|enumerations).py)$$
 .endif
 
 .include <bsd.port.pre.mk>
