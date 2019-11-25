@@ -240,3 +240,4 @@ vmd-*			science/vmd		No commercial use: commercial use requires a commercial lic
 msms-*			science/msms		No commercial use, only for use by individuals in scientific research
 unifi-devel-*		net-mgmt/unifi-devel	License restrictions, see https://www.ubnt.com/eula/
 netio*			benchmarks/netio	No commercial use: commercial use requires a commercial license
+zerotier-*	net/zerotier	No SaaS or Govt usage: https://github.com/zerotier/ZeroTierOne/blob/master/LICENSE.txt
