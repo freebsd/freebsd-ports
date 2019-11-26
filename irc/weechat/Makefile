@@ -17,7 +17,6 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libgpg-error.so:security/libgpg-error
 
 USES=		cmake:noninja ncurses libtool tar:xz
-USES=		cmake:noninja ncurses libtool
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DLIBDATADIR=${LOCALBASE}/libdata
