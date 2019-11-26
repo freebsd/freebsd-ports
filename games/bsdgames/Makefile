@@ -2,22 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	bsdgames
-PORTVERSION=	5.5.0
+PORTVERSION=	0.7
 DISTVERSIONPREFIX=	v
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	games
-MASTER_SITES=	https://deb.debian.org/debian/pool/main/b/bsdgames/:deb
-DISTFILES=	${PORTNAME}_2.17.orig.tar.gz:deb
 
 MAINTAINER=	jockl@pianojockl.org
-COMMENT=	Traditional BSD games taken from DragonFly BSD
+COMMENT=	Traditional BSD games taken mostly from DragonFly BSD
 
 LICENSE=	BSD3CLAUSE
 
 USES=		ncurses tar:xz uidfix
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	DragonFlyBSD:bsd
-GH_PROJECT=	DragonFlyBSD:bsd
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	pianojockl
 
 CONFLICTS=	hangman-[0-9]*
 
@@ -47,11 +45,6 @@ GAMESPATH_FILES=backgammon/backgammon/backgammon.6 \
 		hunt/huntd/huntd.6 \
 		phantasia/pathnames.h \
 		wargames/wargames.sh
-
-post-extract:
-	${MV} ${WRKSRC_bsd}/games  ${WRKSRC}
-	${MV} ${WRKDIR}/bsd-games-2.17/sail/*.[ch] ${WRKSRC}/sail/
-	${MV} ${WRKDIR}/bsd-games-2.17/sail/pathnames.h.in ${WRKSRC}/sail/pathnames.h
 
 post-patch:
 	@for f in ${SHAREPATH_FILES}; do \
