@@ -1,2 +1,3 @@
-SHA256 (xrestop-0.4.tar.gz) = 67c2fc94a7ecedbaae0d1837e82e93d1d98f4a6d759828860e552119af3ce257
-SIZE (xrestop-0.4.tar.gz) = 92308
+TIMESTAMP = 1574793402
+SHA256 (xorg/app/app-xrestop-xrestop-0.4_GL0.tar.gz) = 3a49a19ca40adb6b8adc7bb606de89afc7df799102c3c45a45866a3bd4ff6075
+SIZE (xorg/app/app-xrestop-xrestop-0.4_GL0.tar.gz) = 18160
