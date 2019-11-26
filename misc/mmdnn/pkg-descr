@@ -1,0 +1,22 @@
+MMdnn is a set of tools to help users inter-operate among different deep
+learning frameworks. E.g. model conversion and visualization. Convert models
+between Caffe, Keras, MXNet, Tensorflow, CNTK, PyTorch Onnx and CoreML.
+
+A comprehensive, cross-framework solution to convert, visualize and diagnose
+deep neural network models. The "MM" in MMdnn stands for model management and
+"dnn" is an acronym for the deep neural network.
+
+Major features:
+* Find model
+  - We provide a model collection to help you find some popular models
+  - We provide a model visualizer to display the network architecture more
+    intuitively
+* Conversion
+  - We implement a universal converter to convert DNN models between
+    frameworks, which means you can train on one framework and deploy on another
+* Retrain
+  - In the converter, we can generate some training/inference code snippet to
+    simplify the retrain/evaluate work
+* Deployment
+
+WWW: https://github.com/microsoft/MMdnn
