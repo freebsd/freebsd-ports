@@ -52,10 +52,16 @@ OPTIONS_DEFAULT_i386=	JIT
 
 FUTURES_DESC=	Enable futures
 JIT_DESC=	Enable JIT compiler
-JIT_CFLAGS=	-msse -msse2 -mfpmath=sse
 
+FUTURES_IMPLIES=		JIT
 FUTURES_CONFIGURE_ENABLE=	futures
 JIT_CONFIGURE_ENABLE=		jit
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MJIT} && ${ARCH} == "amd64"
+CFLAGS+=	-msse -msse2 -mfpmath=sse
+.endif
 
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
