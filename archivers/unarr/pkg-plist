@@ -1,0 +1,5 @@
+include/unarr.h
+lib/libunarr.so
+lib/libunarr.so.1
+lib/libunarr.so.1.0.0
+libdata/pkgconfig/libunarr.pc

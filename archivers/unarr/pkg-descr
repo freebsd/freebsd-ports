@@ -1,0 +1,13 @@
+It was forked from unarr, which originated as a port of the RAR
+extraction features from The Unarchiver project required for
+extracting images from comic book archives. Zeniko wrote unarr as an
+alternative to libarchive which didn't have support for parsing
+filters or solid compression at the time.
+
+While (lib)unarr was started with the intent of providing unarr with a
+proper cmake based build system suitable for packaging and
+cross-platform development, it's focus has now been extended to
+provide code maintenance and to continue the development of unarr,
+which no longer is maintained.
+
+WWW: https://github.com/selmf/unarr

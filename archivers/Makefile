@@ -234,6 +234,7 @@
     SUBDIR += unalz
     SUBDIR += unarchiver
     SUBDIR += unarj
+    SUBDIR += unarr
     SUBDIR += undms
     SUBDIR += unfoo
     SUBDIR += unlzx
