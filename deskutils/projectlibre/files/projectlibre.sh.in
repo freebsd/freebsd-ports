@@ -5,6 +5,6 @@
 PROJECTLIBRE_HOME="%%DATADIR%%"
 export PROJECTLIBRE_HOME
 cd "%%DATADIR%%"
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "$PROJECTLIBRE_HOME/projectlibre.jar" "$@" > /dev/null 2>&1
+"%%LOCALBASE%%/bin/java" -jar "$PROJECTLIBRE_HOME/projectlibre.jar" "$@" > /dev/null 2>&1
 
 # eof

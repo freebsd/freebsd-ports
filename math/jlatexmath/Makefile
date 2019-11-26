@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${JAVALIBDIR}/xmlgraphics-commons.jar:graphics/xmlgraphics-commons
 
-USE_JAVA=	1.7+
+USE_JAVA=	yes
 
 NO_ARCH=	yes
 NO_BUILD=	yes

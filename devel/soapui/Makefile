@@ -25,7 +25,7 @@ LICENSE_PERMS_EUPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cpe
 CPE_VENDOR=	smartbear
-USE_JAVA=	1.7+
+USE_JAVA=	yes
 WRKSRC=		${WRKDIR}/SoapUI-${PORTVERSION}
 REINPLACE_ARGS=	-i ''
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

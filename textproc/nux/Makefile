@@ -3,7 +3,7 @@
 
 PORTNAME=	nux
 PORTVERSION=	1.6
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://dst.lbl.gov/ACSSoftware/nux/nux-download/releases/
@@ -15,7 +15,6 @@ RUN_DEPENDS=	${JAVALIBDIR}/xom.jar:textproc/xom \
 		${JAVALIBDIR}/saxon9.jar:textproc/saxon-devel
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

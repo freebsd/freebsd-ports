@@ -3,6 +3,7 @@
 
 PORTNAME=	jbidwatcher
 PORTVERSION=	2.5.6
+PORTREVISION=	1
 CATEGORIES=	misc java
 MASTER_SITES=	http://www.jbidwatcher.com/download/
 
@@ -13,7 +14,6 @@ USES=	tar:bzip2
 USE_JAVA=	yes
 USE_ANT=	yes
 ALL_TARGET=	jar
-JAVA_VERSION=	1.6+
 
 SUB_FILES=	jbidwatcher
 SUB_LIST+=	PORTVERSION=${PORTVERSION}

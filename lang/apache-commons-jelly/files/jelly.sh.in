@@ -6,7 +6,7 @@ JELLY_HOME="${JELLY_HOME:-"%%DATADIR%%"}"
 CLASSPATH="${CLASSPATH}:${JELLY_HOME}/lib/forehead-1.0-beta-5.jar"
 FOREHEAD_CONF="${FOREHEAD_CONF:-"${JELLY_HOME}/bin/forehead.conf"}"
 
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" \
+"%%LOCALBASE%%/bin/java" \
 	-classpath "${CLASSPATH}" \
 	-Dforehead.conf.file="${FOREHEAD_CONF}" \
 	-Djelly.home="${JELLY_HOME}" \

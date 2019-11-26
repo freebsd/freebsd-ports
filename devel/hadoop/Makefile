@@ -27,7 +27,6 @@ CONFLICTS_INSTALL=	hadoop2-2*
 USES=		cpe libtool ssl:build
 CPE_VENDOR=	apache
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 USE_ANT=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LDCONFIG=	yes

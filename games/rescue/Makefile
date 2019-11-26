@@ -3,6 +3,7 @@
 
 PORTNAME=	rescue
 PORTVERSION=	1.0.0.3
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/r/R/}%21%20Max/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/r/R/}_${PORTVERSION}
@@ -17,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/gpl.txt
 USES=		dos2unix zip:infozip
 DOS2UNIX_GLOB=	*.txt *.htm *.css *.ini *.xml
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/r/R/}

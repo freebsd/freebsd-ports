@@ -13,7 +13,6 @@ COMMENT=	Elvin Publish/Subscribe Message Bus server based on the Elvin protocol
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if !defined(WITHOUT_COMPILE)

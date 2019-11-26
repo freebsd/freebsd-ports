@@ -43,7 +43,7 @@ JAVA_CATEGORIES=		java
 JAVA_CONFIGURE_ENABLE=		bdjava-jar
 JAVA_CONFIGURE_ENV=		JDK_HOME="${JAVA_HOME}"
 JAVA_USE=			JAVA=yes
-JAVA_VARS=			JAVA_VERSION=1.6+ JAVA_BUILD=yes JAVA_RUN=yes
+JAVA_VARS=			JAVA_BUILD=yes JAVA_RUN=yes
 
 post-patch:
 	@${RLN} ${WRKSRC}/jni/linux ${WRKSRC}/jni/freebsd

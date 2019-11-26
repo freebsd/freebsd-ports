@@ -10,8 +10,7 @@
 #
 # `--cve*` arguments fix https://github.com/jeremylong/DependencyCheck/issues/1171 until the changed URLs
 # get released.
-JAVA_VERSION="%%JAVA_VERSION%%" \
-	"%%LOCALBASE%%/bin/java" \
+"%%LOCALBASE%%/bin/java" \
 	-Dbasedir="/var/cache/owasp-dependency-check" \
 	-jar "%%JAVAJARDIR%%/owasp-dependency-check-%%PORTVERSION%%-jar-with-dependencies.jar" \
 	--cveUrl12Base "https://nvd.nist.gov/feeds/xml/cve/1.2/nvdcve-%d.xml.gz" \

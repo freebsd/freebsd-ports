@@ -14,7 +14,6 @@ COMMENT=	Java benchmark for scientific and numerical computing
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NEED_JAVAC=	yes
 JAVAC_OPTS?=	-O
 

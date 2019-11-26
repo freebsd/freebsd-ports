@@ -6,4 +6,4 @@ CLASSPATH="${ADD_JARS}:${CLASSPATH}:`find "%%DATADIR%%/lib" -name \*.jar | tr "\
 FILE="lib/freemind.jar"
 
 cd "%%DATADIR%%"
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -cp "${CLASSPATH}" -jar "${FILE}"
+"%%LOCALBASE%%/bin/java" -cp "${CLASSPATH}" -jar "${FILE}"

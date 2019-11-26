@@ -18,7 +18,6 @@ GH_ACCOUNT=	technomancy
 
 USES=		shebangfix
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

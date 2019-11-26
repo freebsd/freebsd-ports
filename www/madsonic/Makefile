@@ -60,7 +60,6 @@ APE_RUN_DEPENDS=	mac:audio/mac
 NO_BUILD=	yes
 DISTDATE=	20161208
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 USES=	zip
 USER=	www
 GROUP=	www

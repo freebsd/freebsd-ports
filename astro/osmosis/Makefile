@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/copying.txt
 NO_WRKSUBDIR=	yes
 USES=		tar:tgz
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

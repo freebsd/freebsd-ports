@@ -3,6 +3,7 @@
 
 PORTNAME=	saxon
 PORTVERSION=	9.1.0.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	SF/${PORTNAME}/Saxon-B/${PORTVERSION}:binary	\
@@ -21,7 +22,6 @@ XOM_DESC=	XOM support
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
@@ -50,7 +50,7 @@ RUN_DEPENDS+=	${JAVALIBDIR}/xom.jar:textproc/xom
 .endif
 
 SUB_FILES=	saxon.sh
-SUB_LIST=	SAXON_JARS="${JARFILES:S,^,${JAVAJARDIR}/,}" JAVA_VERSION="${JAVA_VERSION}"
+SUB_LIST=	SAXON_JARS="${JARFILES:S,^,${JAVAJARDIR}/,}"
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JARs in ${JAVAJARDIR}/..."

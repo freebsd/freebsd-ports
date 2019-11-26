@@ -3,6 +3,7 @@
 
 PORTNAME=	java-games-suite
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	SF/javagamessuite
 
@@ -13,7 +14,6 @@ USE_JAVA=	yes
 
 NO_ARCH=	yes
 
-JAVA_VERSION=	1.6+
 PLIST_FILES=	bin/java-games-suite \
 		${JAVAJARDIR}/MM.jar \
 		${JAVAJARDIR}/reversi.jar \

@@ -12,7 +12,7 @@ fi
 
 M2_HOME=${M2_HOME:-"%%DATADIR%%"}
 
-JAVA_VERSION="%%JAVA_VERSION%%" exec "%%LOCALBASE%%/bin/java" $MAVEN_OPTS \
+exec "%%LOCALBASE%%/bin/java" $MAVEN_OPTS \
 	-classpath "${M2_HOME}/boot/%%CLASSWORLDS_JAR%%" \
 	"-Dclassworlds.conf=${M2_HOME}/bin/m2.conf" \
 	"-Dmaven.home=${M2_HOME}" org.codehaus.classworlds.Launcher "$@"

@@ -1,10 +1,6 @@
 #!/bin/sh
 # $FreeBSD$
 
-if [ -z "${JAVA_VERSION}" ]; then
-	JAVA_VERSION="%%JAVA_VERSION%%"
-fi
-
 LOOK_AND_FEEL="%%PLASTIC3D%%"
 
 exec "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%" ${LOOK_AND_FEEL} -jar "%%JDRAWJAR%%" "$@"

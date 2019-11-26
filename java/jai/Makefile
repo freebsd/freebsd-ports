@@ -14,7 +14,6 @@ COMMENT=	High performance image processing libraries for Java
 USES=		cpe zip
 CPE_VENDOR=	oracle
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 NO_BUILD=	yes
 

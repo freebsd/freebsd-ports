@@ -1,9 +1,6 @@
 #!/bin/sh
 
-export JAVA_VERSION
-
 PREFIX="%%PREFIX%%"
-JAVA_VERSION="%%JAVA_VERSION%%"
 JAVAVM="%%JAVAVM%%"
 JAR_DIR="%%JAR_DIR%%"
 JAR_FILE="%%JAR_FILE%%"

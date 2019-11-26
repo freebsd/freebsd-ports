@@ -3,8 +3,6 @@
 # $FreeBSD$
 #
 
-export JAVA_VERSION="%%JAVA_VERSION%%"
-
 cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" -Xmx1024M \
 -cp "libs/robocode.jar:libs/roborumble.jar:libs/codesize-1.1.jar" \
 roborumble.RoboRumbleAtHome ./roborumble/meleerumble.txt "${@}"

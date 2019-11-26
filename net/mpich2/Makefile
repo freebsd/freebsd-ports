@@ -96,7 +96,6 @@ IGNORE=		WITH_JAVA requires WITH_X11
 .endif
 CONFIGURE_ARGS+=	--with-java="${JAVA_HOME}"
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 PLIST_SUB+=	JAVA=""
 PLX11=		""
 BIN2STRIP+=	rlog_check_timeorder rlog_print

@@ -14,7 +14,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_JAVA=	yes
 JAVA_RUN=	yes
-JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 USES=		dos2unix zip

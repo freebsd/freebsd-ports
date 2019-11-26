@@ -19,7 +19,6 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-JAVA_VERSION=	1.6+
 JAVA_OS=	native
 JAVA_RUN=	yes
 

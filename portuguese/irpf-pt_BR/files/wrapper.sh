@@ -3,11 +3,8 @@
 # Under a BSDL license. Copyright by Mario S F Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
 
-export JAVA_VERSION
-
 PREFIX="%%PREFIX%%"
 # java
-JAVA_VERSION="%%JAVA_VERSION%%"
 JAVAVM="%%JAVAVM%%"
 JAR_DIR="%%JAR_DIR%%"
 JAR_FILES="%%JAR_FILES%%"

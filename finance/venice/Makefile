@@ -3,6 +3,7 @@
 
 PORTNAME=	venice
 DISTVERSION=	0.751beta
+PORTREVISION=	1
 CATEGORIES=	finance java
 MASTER_SITES=	SF/mov/${PORTNAME}/0.751%20beta/ \
 		SF/nemysisfreebsdp/:icons
@@ -17,7 +18,6 @@ LICENSE=	GPLv2
 
 USES=		gnome
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PORTDOCS=	*

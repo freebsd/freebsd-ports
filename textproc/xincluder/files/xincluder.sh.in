@@ -12,4 +12,4 @@ case "${IAM}" in
 	*) echo "ERROR!" ; false ;;
 esac
 
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -cp "`"%%LOCALBASE%%/bin/classpath"`" "com.elharo.xml.xinclude.${MAIN_CLASS}" "$@"
+"%%LOCALBASE%%/bin/java" -cp "`"%%LOCALBASE%%/bin/classpath"`" "com.elharo.xml.xinclude.${MAIN_CLASS}" "$@"

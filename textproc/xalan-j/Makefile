@@ -20,7 +20,6 @@ USES=		cpe
 CPE_PRODUCT=	xalan-java
 CPE_VENDOR=	apache
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}

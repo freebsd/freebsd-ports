@@ -28,7 +28,6 @@ OPTIONS_DEFINE=		JAVA
 
 .if ${PORT_OPTIONS:MJAVA}
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 .endif
 
 .include <bsd.port.mk>

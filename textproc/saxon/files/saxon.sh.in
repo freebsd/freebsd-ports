@@ -8,4 +8,4 @@ do
 	SAXON_CLASSPATH="${SAXON_CLASSPATH}:${jarfile}"
 done
 
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -classpath "${SAXON_CLASSPATH}" com.icl.saxon.StyleSheet "$@"
+"%%LOCALBASE%%/bin/java" -classpath "${SAXON_CLASSPATH}" com.icl.saxon.StyleSheet "$@"

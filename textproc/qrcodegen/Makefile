@@ -3,6 +3,7 @@
 
 PORTNAME=	qrcodegen
 PORTVERSION=	1.14.2
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,7 +18,6 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		zip:infozip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 SUB_FILES=	qrcodegen
 
 INSTALLFILES=	FAQ.txt Installation.txt NOTICE QRCodeGen.jar Version.html

@@ -13,7 +13,6 @@ COMMENT=	Linguistic Syntax/Semantics tree drawing editor
 USES=		zip
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 SUB_FILES=	treeform
 
 WRKSRC=		${WRKDIR}/TreeForm

@@ -44,9 +44,6 @@ tomcat_pidfile="tomcat8.pid" # todo replace dynamic with current version
 sendmail_pidfile="sendmail.pid"
 
 OPENEMM_HOME="%%APP_HOME%%"
-#minimal requirements must be set for our javavmwrapper
-JAVA_VERSION="1.7+"
-export JAVA_VERSION
 
 %%APP_SHORTNAME%%_start ()
 {

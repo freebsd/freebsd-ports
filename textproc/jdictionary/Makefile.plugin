@@ -9,9 +9,7 @@ COMMENT?=	JDictionary plugin master port
 RUN_DEPENDS+=	jdictionary:textproc/jdictionary
 
 # WARNING: USE_JAVA is set to be able to use JAVASHAREDIR.
-#          Please make sure that JAVA_VERSION here is the same as in Makefile.
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	#

@@ -20,7 +20,6 @@ CONFLICTS=	springframework-3.2.*
 NO_BUILD=	yes
 USE_JAVA=	yes
 USES=		zip
-JAVA_VERSION=	1.6+
 
 OPTIONS_DEFINE=	DOCS RESRCS
 RESRCS_DESC=	Install resource files

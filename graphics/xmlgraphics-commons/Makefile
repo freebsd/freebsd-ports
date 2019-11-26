@@ -13,7 +13,7 @@ COMMENT=	Several reusable components used by Apache Batik and FOP
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_JAVA=	1.6+
+USE_JAVA=	yes
 
 NO_ARCH=	yes
 NO_BUILD=	yes

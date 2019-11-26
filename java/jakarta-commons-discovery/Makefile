@@ -12,7 +12,6 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Java library for locating resources (including classes)
 
 USE_JAVA=	YES
-JAVA_VERSION=	1.6+
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

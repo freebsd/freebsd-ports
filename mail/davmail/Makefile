@@ -18,7 +18,6 @@ DOS2UNIX_FILES=	build.xml
 NO_ARCH=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 ALL_TARGET=	release
 # 5.3.1
 REVISION=	3079

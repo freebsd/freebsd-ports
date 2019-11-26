@@ -25,7 +25,6 @@ USES=		cpe
 CPE_VENDOR=	sonarsource
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	${DATADIR_REL}/sonar-ant-task.jar

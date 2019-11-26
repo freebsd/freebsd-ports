@@ -1,5 +1,4 @@
 #!/bin/sh
 # $FreeBSD$
 cd %%DATADIR%%
-export JAVA_VERSION="%%JAVA_VERSION%%+"
 exec "%%LOCALBASE%%/bin/java" -cp %%JAVAJARDIR%%/bsh.jar:%%JINJAR%% free.jin.JinApplication "$@"

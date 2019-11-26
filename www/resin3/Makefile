@@ -15,7 +15,6 @@ USES=		libtool python ssl
 USE_JAVA=	yes
 
 # Pass JAVA_HOME as determined by bsd.java.mk
-JAVA_VERSION=	1.6+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-java-home=${JAVA_HOME} \
 		--with-openssl-lib=${OPENSSLLIB} \

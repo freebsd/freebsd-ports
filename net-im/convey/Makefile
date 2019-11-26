@@ -3,7 +3,7 @@
 
 PORTNAME=	convey
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im java
 MASTER_SITES=	http://convey.sourceforge.net/downloads/ \
 		http://nivi.interfree.it/tmp/convey.sourceforge.net/
@@ -14,8 +14,6 @@ COMMENT=	Instant Message (IM) program using the Jabber protocol
 
 USE_ANT=	yes
 USE_JAVA=	yes
-
-JAVA_VERSION=	1.6+
 
 MAKE_ARGS=	-quiet
 

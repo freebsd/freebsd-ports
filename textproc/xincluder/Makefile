@@ -3,7 +3,7 @@
 
 PORTNAME=	xincluder
 PORTVERSION=	1.0.d11
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc java
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/languages/java/javafaq/
 DISTNAME=	${PORTNAME}-1.0d11
@@ -18,7 +18,6 @@ RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:java/jdom \
 		${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

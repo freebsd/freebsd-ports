@@ -18,7 +18,6 @@ RUN_DEPENDS=	p5-Inline>=0.68:devel/p5-Inline \
 		p5-Inline-C>=0.62:devel/p5-Inline-C
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 MAKE_JOBS_UNSAFE=	yes

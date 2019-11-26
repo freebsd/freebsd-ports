@@ -18,7 +18,6 @@ BROKEN_armv7=		fails to build: modbuild.xml: Java returned: 1
 USES=		zip
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 
 OPTIONS_DEFINE=	DOCS

@@ -17,4 +17,4 @@ do
 	SAXON_CLASSPATH="${SAXON_CLASSPATH}:${jarfile}"
 done
 
-JAVA_VERSION="%%JAVA_VERSION%%" exec "%%LOCALBASE%%/bin/java" -classpath "${SAXON_CLASSPATH}" "${LAUNCHER_CLASS}" "$@"
+exec "%%LOCALBASE%%/bin/java" -classpath "${SAXON_CLASSPATH}" "${LAUNCHER_CLASS}" "$@"

@@ -24,7 +24,6 @@ BROKEN_armv7=		fails to compile: PowellOptimizer.java:301: error: Illegal static
 
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 USE_LOCALE=	en_US.ISO8859-1
 
 ALL_TARGET=	jar

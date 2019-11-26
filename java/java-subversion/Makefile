@@ -10,7 +10,6 @@ COMMENT=	Java bindings for Version control system
 USES+=		compiler
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 JAVA_OS=	native
 JAVA_BUILD=	yes
 JAVA_RUN=	yes

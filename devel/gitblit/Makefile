@@ -23,7 +23,6 @@ USERS=		www
 GROUPS=		www
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 
 SUB_FILES=	pkg-message
 PLIST_SUB+=	GB_DATAHOME=${PREFIX}/${PORTNAME} \

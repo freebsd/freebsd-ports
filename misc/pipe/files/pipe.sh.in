@@ -3,4 +3,4 @@
 # $FreeBSD$
 
 cd %%DATADIR%%
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -cp "%%DATADIR%%" RunGui
+"%%LOCALBASE%%/bin/java" -cp "%%DATADIR%%" RunGui

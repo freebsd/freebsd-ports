@@ -4,4 +4,4 @@
 # Java heap size, in megabytes
 JAVA_HEAP_SIZE=32
 
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -mx${JAVA_HEAP_SIZE}m ${JEDIT} -jar "%%DATADIR%%/jedit.jar" "$@"
+"%%LOCALBASE%%/bin/java" -mx${JAVA_HEAP_SIZE}m ${JEDIT} -jar "%%DATADIR%%/jedit.jar" "$@"

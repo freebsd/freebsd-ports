@@ -9,5 +9,4 @@ if [ -z "$1" ]; then
 else
     MAPYRUS_ARGS="$@"
 fi
-JAVA_VERSION="%%JAVA_VERSION%%" \
-	exec "%%LOCALBASE%%/bin/java" ${JAVA_AWT_HEADLESS} -jar "%%DATADIR%%/mapyrus.jar" ${MAPYRUS_ARGS}
+exec "%%LOCALBASE%%/bin/java" ${JAVA_AWT_HEADLESS} -jar "%%DATADIR%%/mapyrus.jar" ${MAPYRUS_ARGS}

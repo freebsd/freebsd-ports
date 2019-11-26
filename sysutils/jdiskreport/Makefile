@@ -11,7 +11,6 @@ COMMENT=	Java program to graphically display disk usage statistics
 
 USES=		zip
 USE_JAVA=	YES
-JAVA_VERSION=	1.6+
 
 PLIST_SUB=	JDISKDIR=${JDISKDIR:S,${PREFIX}/,,g}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}

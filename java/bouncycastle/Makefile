@@ -23,7 +23,6 @@ CPE_PRODUCT=	legion-of-the-bouncy-castle-java-crytography-api
 CPE_VENDOR=	${PORTNAME}
 USE_JAVA=	yes
 USES=		cpe
-JAVA_VERSION=	1.6+
 JDKMVERSION=	1.6 # ${JAVA_PORT_VERSION:C/^([0-9]\.[0-9])(.*)$/\1/}
 JDKNVERSION=	16 # ${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1\2/}
 USE_ANT=	yes

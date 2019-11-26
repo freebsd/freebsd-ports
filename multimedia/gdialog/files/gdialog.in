@@ -13,4 +13,4 @@ case "$#" in
 	;;
 esac
 
-JAVA_VERSION="%%JAVA_VERSION%%" exec "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/GDialog.jar" "$@"
+exec "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/GDialog.jar" "$@"

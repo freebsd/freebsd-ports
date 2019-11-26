@@ -3,7 +3,7 @@
 
 PORTNAME=	jalview
 PORTVERSION=	2.07
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology java
 MASTER_SITES=	http://www.jalview.org/source/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
@@ -12,7 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer and editor for multiple sequence alignments
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	makejars
 WRKSRC=		${WRKDIR}/${PORTNAME}

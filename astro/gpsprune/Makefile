@@ -3,6 +3,7 @@
 
 PORTNAME=	gpsprune
 PORTVERSION=	19.2
+PORTREVISION=	1
 CATEGORIES=	astro java
 MASTER_SITES=	http://activityworkshop.net/software/${PORTNAME}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -20,7 +21,6 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 SUB_FILES=	gpsprune.sh
 SUB_LIST=	JARNAME=${DISTNAME}

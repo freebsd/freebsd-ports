@@ -3,6 +3,7 @@
 
 PORTNAME=	BlackjackClient
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	SF/t-blackjack/
 DISTNAME=	t-blackjack-beta
@@ -14,7 +15,6 @@ LICENSE=	GPLv2
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 PLIST_FILES=	bin/${PORTNAME} \
 		${JAVAJARDIR}/${PORTNAME}.jar
 SUB_FILES=	${PORTNAME}.sh

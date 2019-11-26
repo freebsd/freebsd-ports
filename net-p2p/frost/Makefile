@@ -3,7 +3,7 @@
 
 PORTNAME=	frost
 PORTVERSION=	1.2.0.20090314
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF/jtc${PORTNAME}/${PORTNAME}/14-Mar-2009
@@ -14,7 +14,6 @@ COMMENT=	Freenet client that provides messenger and file services
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -60,7 +59,6 @@ DESKTOP_ENTRIES=	"Frost" "Freenet Client" \
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \
-		s|%%JAVA_VERSION%%|${JAVA_VERSION}|; \
 		s|%%JAVAVM%%|${JAVAVM}|; \
 		s|%%JAR_DIR%%|${JAR_DIR}|; \
 		s|%%JAR_FILE%%|${JAR_FILE}|; \

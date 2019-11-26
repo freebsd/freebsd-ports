@@ -17,7 +17,6 @@ BROKEN_armv7=		fails to compile: build.xml: compilation failed
 
 USES=		tar:bzip2
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 USE_ANT=	yes

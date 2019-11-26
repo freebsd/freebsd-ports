@@ -3,6 +3,7 @@
 
 PORTNAME=	irpf
 PORTVERSION=	2014.1.4
+PORTREVISION=	1
 CATEGORIES=	portuguese finance java
 MASTER_SITES=	http://www28.receita.fazenda.gov.br/publico/programas/IRPF/2014/PGDIRPF2014/Java/zip/
 PKGNAMEPREFIX?=	pt_BR-
@@ -24,7 +25,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME:tu}2014
 
 USE_JAVA=	yes
 JAVA_RUN=	yes
-JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 NO_BUILD=	yes
@@ -94,7 +94,6 @@ post-patch:
 	@${SED} -e  "s|%%JAR_DIR%%|${JAR_DIR}|; \
 		s|%%JAR_FILE%%|${JAR_FILE}|; \
 		s|%%JAR_FILES%%|${JAR_FILES:C/^lib\///}|; \
-		s|%%JAVA_VERSION%%|${JAVA_VERSION}|; \
 		s|%%JAVAVM%%|${JAVAVM}|;s|%%PREFIX%%|${PREFIX}|" \
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
 

@@ -22,7 +22,6 @@ OPTIONS_DEFINE=	DOCS
 USES=		dos2unix zip
 DOS2UNIX_GLOB=	build.xml Makefile.freebsd.txt *.c *.java
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	clean makeDLL dist
 

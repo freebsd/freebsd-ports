@@ -17,7 +17,6 @@ USES=		zip
 NO_BUILD=	yes
 SUB_FILES=	freecol
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 PLIST_FILES=	bin/freecol \
 		${DESKTOPDIR:S,^${PREFIX}/,,}/freecol.desktop

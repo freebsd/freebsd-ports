@@ -3,6 +3,7 @@
 
 PORTNAME=	domination
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/d/D/}/${PORTVERSION}/:game \
 		http://domination.sourceforge.net/maps/
@@ -19,7 +20,6 @@ LICENSE=	GPLv3
 USES=		dos2unix zip:infozip
 DOS2UNIX_GLOB=	*.txt *.ini *.htm *.cards *.map
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/d/D/}

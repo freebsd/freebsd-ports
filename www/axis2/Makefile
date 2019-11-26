@@ -32,7 +32,6 @@ TOMCAT85_VARS=	APPHOME=${LOCALBASE}/apache-tomcat-8.5
 TOMCAT85_RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat85
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 SHAREOWN=	www
 SHAREGRP=	www
 

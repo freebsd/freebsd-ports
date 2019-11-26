@@ -3,6 +3,7 @@
 
 PORTNAME=	robocode
 PORTVERSION=	1.9.3.7
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}-setup.jar
@@ -18,7 +19,6 @@ LICENSE_FILE=	${WRKSRC}/license/epl-v10.html
 USES=		dos2unix zip:infozip
 DOS2UNIX_GLOB=	*.css *.team *.properties package-list MANIFEST.MF
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_EXTRACT=	yes
 JAVA_RUN=	yes
 NO_WRKSUBDIR=	yes

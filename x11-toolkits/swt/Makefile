@@ -24,7 +24,6 @@ USE_GL=		glu gl
 USE_GNOME=	gtk20
 USE_JAVA=	yes
 USE_XORG=	xtst
-JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_ANT=	yes
 MAKE_ARGS+=	-Doutput.jar=${OUTPUT_JAR}

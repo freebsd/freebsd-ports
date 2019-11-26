@@ -16,7 +16,6 @@ LICENSE_TEXT=	Full license can be found at http://www.dbvis.com/eula/
 LICENSE_PERMS=	auto-accept
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 JAVA_VENDOR=	openjdk
 NO_BUILD=	yes
 RESTRICTED=	Redistribution is not permitted

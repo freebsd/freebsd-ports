@@ -4,6 +4,5 @@
 
 JAVA="%%LOCALBASE%%/bin/java"
 JARPATH="%%JAVALIBDIR%%"
-export JAVA_VERSION="%%JAVA_VERSION%%"
 
 exec "${JAVA}" -Xmx1024m -jar "${JARPATH}/%%JARNAME%%" "$@"

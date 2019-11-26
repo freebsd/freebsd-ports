@@ -9,4 +9,4 @@ if [ ! -f ${HOME}/.omegat/omegat.prefs ] ; then
   cp "%%DATADIR%%/omegat.prefs" ${HOME}/.omegat && chmod 644 ${HOME}/.omegat/omegat.prefs
 fi
 
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/OmegaT.jar" "$@"
+"%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/OmegaT.jar" "$@"

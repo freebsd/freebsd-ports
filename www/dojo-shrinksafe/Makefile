@@ -3,6 +3,7 @@
 
 PORTNAME=		shrinksafe
 PORTVERSION=		1.9.0
+PORTREVISION=		1
 CATEGORIES=		www java
 MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/ \
 			LOCAL/glarkin
@@ -13,7 +14,6 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=		JavaScript code compressor
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PKGNAMEPREFIX}${PORTNAME} %%DATADIR%%/shrinksafe.jar \

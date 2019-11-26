@@ -3,7 +3,7 @@
 
 PORTNAME=	devisor
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science java
 MASTER_SITES=	http://www.featflow.de/download/
 DISTNAME=	devisor${PORTVERSION}
@@ -12,7 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Design and Visualization Software Resource for FeatFlow
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes	# Sources are available though
 
 SUB_FILES=	devisorgrid.sh

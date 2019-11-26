@@ -2,5 +2,4 @@
 #
 # $FreeBSD$
 
-JAVA_VERSION="%%JAVA_VERSION%%" \
-	exec "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/CrossIP.jar" "${@}"
+exec "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/CrossIP.jar" "${@}"

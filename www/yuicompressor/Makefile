@@ -3,7 +3,7 @@
 
 PORTNAME=	yuicompressor
 PORTVERSION=	2.4.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www java
 #MASTER_SITES=	http://tml.github.io/yui/
 MASTER_SITES+=	LOCAL/az
@@ -19,7 +19,6 @@ LICENSE_COMB=	multi
 NO_WRKSUBDIR=	yes
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

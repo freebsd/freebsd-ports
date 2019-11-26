@@ -16,7 +16,6 @@ BROKEN_armv7=		fails to package: find: *: No such file or directory
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 OPTIONS_DEFINE=	COMPILE DOCS
 OPTIONS_DEFAULT=COMPILE

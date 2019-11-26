@@ -3,7 +3,7 @@
 
 PORTNAME=	j
 PORTVERSION=	504b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang linux java
 MASTER_SITES=	http://www.jsoftware.com/download/
 PKGNAMEPREFIX=	linux-
@@ -20,7 +20,6 @@ LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
 USES=		linux
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 ONLY_FOR_ARCHS=	i386 amd64
 

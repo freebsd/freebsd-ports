@@ -3,6 +3,7 @@
 
 PORTNAME=	ecj
 PORTVERSION=	4.4.2
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/eclipse/downloads/drops4/R-${PORTVERSION}-${DROPDATE}/
 PKGNAMEPREFIX=	eclipse-
@@ -20,7 +21,6 @@ EXTRACT_AFTER_ARGS=	-C ${WRKSRC}
 
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 SUB_FILES=	ecj.sh
 SUB_LIST=	PORTVERSION=${PORTVERSION}
 NO_WRKSUBDIR=	yes

@@ -2,4 +2,4 @@
 #
 # $FreeBSD$
 
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/jtans_appli-1.0.jar"
+"%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/jtans_appli-1.0.jar"

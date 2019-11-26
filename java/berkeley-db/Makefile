@@ -19,7 +19,6 @@ BROKEN_armv7=		fails to build: build.xml: Java returned: 1
 OPTIONS_DEFINE=	DOCS EXAMPLES TEST
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 USE_ANT=	yes
 MAKE_ENV+=	JAVALIBDIR="${JAVALIBDIR}"
 MAKE_ARGS+=	-cp ${JAVALIBDIR}/junit.jar

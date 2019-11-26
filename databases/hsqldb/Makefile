@@ -12,7 +12,6 @@ COMMENT=	Embeddable SQL database written in Java
 LICENSE=	BSD3CLAUSE
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 USE_ANT=	yes
 USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
