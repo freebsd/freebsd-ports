@@ -13043,3 +13043,4 @@ sysutils/py-azure-cli-sqlvm|sysutils/py-azure-cli|2019-09-30|Has expired: Incorp
 sysutils/py-azure-cli-storage|sysutils/py-azure-cli|2019-09-30|Has expired: Incorporated into azure-cli package
 sysutils/py-azure-cli-vm|sysutils/py-azure-cli|2019-09-30|Has expired: Incorporated into azure-cli package
 x11-toolkits/qt5-canvas3d||2019-10-01|Has been deprecated upstream
+security/clamav-milter|security/clamav|2019-11-12|Now that MILTER option is enabled by default, use security/clamav instead
