@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	roundcube
-DISTVERSION=	1.3.10
+DISTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/${DISTVERSION}/
@@ -55,6 +55,7 @@ SUB_FILES=	newsyslog.conf
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -type f -delete
+	@${RMDIR} ${WRKSRC}/plugins/archive/skins/larry
 
 do-install:
 	-${MKDIR} ${STAGEDIR}${WWWDIR}
