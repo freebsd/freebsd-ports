@@ -264,10 +264,8 @@ MOZ_OPTIONS+=	--disable-pulseaudio
 BUILD_DEPENDS+=	${LOCALBASE}/include/sndio.h:audio/sndio
 post-patch-SNDIO-on:
 	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
-		${MOZSRC}/media/libcubeb/src/moz.build \
-		${MOZSRC}/toolkit/library/moz.build
-	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
-			 ${MOZSRC}/media/libcubeb/gtest/moz.build
+		-e '/DISABLE_LIBSNDIO_DLOPEN/d' \
+		${MOZSRC}/media/libcubeb/src/moz.build
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
