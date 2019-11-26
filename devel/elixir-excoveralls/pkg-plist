@@ -2,6 +2,7 @@ lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Circle.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.ConfServer.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Cover.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Drone.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Github.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.Safe.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.View.PathHelper.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.View.beam
@@ -31,6 +32,7 @@ lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Json.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Circle.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Detail.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Drone.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Github.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Html.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Json.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Post.beam
@@ -46,6 +48,7 @@ lib/elixir/lib/excoveralls/lib/excoveralls/conf_server.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/cover.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/drone.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/exceptions.ex
+lib/elixir/lib/excoveralls/lib/excoveralls/github.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/html.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/html/safe.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/html/view.ex
