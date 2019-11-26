@@ -24,7 +24,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_armv6=		fails to compile: ./lightning/lightning.h:81:2: error: GNU lightning does not support the current target
 BROKEN_armv7=		fails to compile: ./lightning/lightning.h:81:2: error: GNU lightning does not support the current target
-BROKEN_i386=		fails to build: Seg fault (internal error) at 0x606060a
 BROKEN_powerpc64=	fails to build: jit.c: 'JIT_LOCAL4' undeclared (first use in this function)
 NOT_FOR_ARCHS=	aarch64 mips mips64 sparc64
 NOT_FOR_ARCHS_REASON=	not yet ported to this arch
@@ -56,10 +55,16 @@ OPTIONS_DEFAULT_i386=	JIT
 
 FUTURES_DESC=	Enable futures
 JIT_DESC=	Enable JIT compiler
-JIT_CFLAGS=	-msse -msse2 -mfpmath=sse
 
+FUTURES_IMPLIES=		JIT
 FUTURES_CONFIGURE_ENABLE=	futures
 JIT_CONFIGURE_ENABLE=		jit
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MJIT} && ${ARCH} == "amd64"
+CFLAGS+=	-msse -msse2 -mfpmath=sse
+.endif
 
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
