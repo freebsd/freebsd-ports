@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	3.4.7
-PORTREVISION?=	1
+DISTVERSION=	3.4.8
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
