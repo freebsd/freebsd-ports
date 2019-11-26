@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-sdk
-PORTVERSION=	268.0.0
+PORTVERSION=	272.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
@@ -19,7 +19,11 @@ USES=		python:2.7
 WRKSRC=		${WRKDIR}/google-cloud-sdk
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/bq bin/gcloud bin/git-credential-gcloud.sh bin/gsutil
+PLIST_FILES=	bin/bq \
+		bin/docker-credential-gcloud \
+		bin/gcloud \
+		bin/git-credential-gcloud.sh \
+		bin/gsutil
 
 post-extract:
 	@${RM} -r \
@@ -37,7 +41,7 @@ do-build:
 do-install:
 	${RM} -r ${WRKSRC}/help ${WRKSRC}/.install/.download
 	( cd ${WRKSRC} ; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/google-cloud-sdk )
-.for x in bq gcloud git-credential-gcloud.sh gsutil
+.for x in bq docker-credential-gcloud gcloud git-credential-gcloud.sh gsutil
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/google-cloud-sdk/bin/${x}
 	${RLN} ${STAGEDIR}${PREFIX}/google-cloud-sdk/bin/${x} \
 		${STAGEDIR}${PREFIX}/bin/${x}
