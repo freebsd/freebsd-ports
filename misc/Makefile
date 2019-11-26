@@ -248,6 +248,7 @@
     SUBDIR += metromap
     SUBDIR += mime-support
     SUBDIR += mirmon
+    SUBDIR += mmdnn
     SUBDIR += mmv
     SUBDIR += molequeue
     SUBDIR += morse
