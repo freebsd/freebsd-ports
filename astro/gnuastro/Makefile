@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuastro
-PORTVERSION=	0.10
-PORTREVISION=	2
+PORTVERSION=	0.11
 CATEGORIES=	astro
 MASTER_SITES=	GNU
 
@@ -28,10 +27,6 @@ INFO=		${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,gcc,${CC},' ${WRKSRC}/bin/buildprog/buildprog.c
-	@${REINPLACE_CMD} -e 's,/bash,/sh,' ${WRKSRC}/doc/Makefile.in
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/etc -name \*.conf \

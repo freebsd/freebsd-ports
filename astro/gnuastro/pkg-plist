@@ -25,6 +25,7 @@ bin/astwarp
 @sample etc/astmatch.conf.sample
 @sample etc/astmkcatalog.conf.sample
 @sample etc/astmknoise.conf.sample
+@sample etc/astmkprof-3d.conf.sample
 @sample etc/astmkprof.conf.sample
 @sample etc/astnoisechisel.conf.sample
 @sample etc/astsegment.conf.sample
@@ -66,8 +67,8 @@ include/gnuastro/type.h
 include/gnuastro/wcs.h
 lib/libgnuastro.a
 lib/libgnuastro.so
-lib/libgnuastro.so.8
-lib/libgnuastro.so.8.0.0
+lib/libgnuastro.so.9
+lib/libgnuastro.so.9.0.0
 libdata/pkgconfig/gnuastro.pc
 man/man1/astarithmetic.1.gz
 man/man1/astbuildprog.1.gz
