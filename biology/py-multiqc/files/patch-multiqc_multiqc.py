@@ -1,10 +1,9 @@
---- scripts/multiqc.orig	2018-12-21 17:29:54 UTC
-+++ scripts/multiqc
-@@ -6,18 +6,26 @@
- from __future__ import print_function
+--- multiqc/multiqc.py.orig	2019-11-25 15:53:22 UTC
++++ multiqc/multiqc.py
+@@ -11,16 +11,25 @@ from __future__ import print_function
  
  import base64
--import click
+ import click
 +import os
 +import sys
 +
@@ -22,7 +21,6 @@
  import io
  import jinja2
 -import os
- import pkg_resources
  import re
  import shutil
  import subprocess
