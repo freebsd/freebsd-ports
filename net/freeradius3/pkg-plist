@@ -502,6 +502,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/certs/README
 %%EXAMPLESDIR%%/raddb/certs/bootstrap
 %%EXAMPLESDIR%%/raddb/certs/ca.cnf
+%%EXAMPLESDIR%%/raddb/certs/ca.crl
 %%EXAMPLESDIR%%/raddb/certs/ca.der
 %%EXAMPLESDIR%%/raddb/certs/ca.key
 %%EXAMPLESDIR%%/raddb/certs/ca.pem
@@ -578,6 +579,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-available/perl
 %%EXAMPLESDIR%%/raddb/mods-available/preprocess
 %%EXAMPLESDIR%%/raddb/mods-available/python
+%%EXAMPLESDIR%%/raddb/mods-available/python3
 %%EXAMPLESDIR%%/raddb/mods-available/radutmp
 %%EXAMPLESDIR%%/raddb/mods-available/realm
 %%EXAMPLESDIR%%/raddb/mods-available/redis
@@ -636,6 +638,8 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mongo/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql/procedure.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/mysql/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/procedures.sql
@@ -646,6 +650,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/sqlite/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/sqlite/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/main/mongo/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/mssql/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/mssql/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/main/mysql/extras/wimax/queries.conf
@@ -725,6 +730,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/sites-available/channel_bindings
 %%EXAMPLESDIR%%/raddb/sites-available/check-eap-tls
 %%EXAMPLESDIR%%/raddb/sites-available/coa
+%%EXAMPLESDIR%%/raddb/sites-available/coa-relay
 %%EXAMPLESDIR%%/raddb/sites-available/control-socket
 %%EXAMPLESDIR%%/raddb/sites-available/copy-acct-to-home-server
 %%EXAMPLESDIR%%/raddb/sites-available/decoupled-accounting
@@ -822,6 +828,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.extreme
 %%DATADIR%%/dictionary.f5
 %%DATADIR%%/dictionary.fdxtended
+%%DATADIR%%/dictionary.force10
 %%DATADIR%%/dictionary.fortinet
 %%DATADIR%%/dictionary.foundry
 %%DATADIR%%/dictionary.freedhcp
@@ -944,6 +951,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.terena
 %%DATADIR%%/dictionary.trapeze
 %%DATADIR%%/dictionary.travelping
+%%DATADIR%%/dictionary.tripplite
 %%DATADIR%%/dictionary.tropos
 %%DATADIR%%/dictionary.ukerna
 %%DATADIR%%/dictionary.unix
