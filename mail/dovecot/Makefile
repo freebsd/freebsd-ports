@@ -9,7 +9,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	2.3.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.3/
 

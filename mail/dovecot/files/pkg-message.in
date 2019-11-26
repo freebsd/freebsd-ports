@@ -20,6 +20,10 @@
  security.bsd.see_other_uids or .see_other_gids sysctls to 0
  if Dovecot is storing mail for multiple concurrent users (PR 218392).
 
+ Similarly, setting sysctls security.bsd.hardlink_check_uid or
+ security.bsd.hardlink_check_gid to 1 might result in non-working
+ mailboxes, depending on what mailbox locking mechanism is used
+ (PR 242223).
 
  If you want to be able to search within attachments using the
  decode2text plugin, you'll need to install textproc/catdoc, and
