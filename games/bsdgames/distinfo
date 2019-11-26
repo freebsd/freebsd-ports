@@ -1,5 +1,3 @@
-TIMESTAMP = 1557603153
-SHA256 (bsdgames_2.17.orig.tar.gz) = 066f924aef6c1c5ea946f588e36f303021f5dfc093944738f025d8edbc6fff60
-SIZE (bsdgames_2.17.orig.tar.gz) = 2563311
-SHA256 (DragonFlyBSD-DragonFlyBSD-v5.5.0_GH0.tar.gz) = e54ca3fea6e4ae4b384df4718f5ca749e597537112f1b2170e8fb5c296c1720b
-SIZE (DragonFlyBSD-DragonFlyBSD-v5.5.0_GH0.tar.gz) = 137084047
+TIMESTAMP = 1574784789
+SHA256 (pianojockl-bsdgames-v0.7_GH0.tar.gz) = f79dec751ac78cfef5f80453e6c771052eaa9e9e55ab779799b78a82b6e004fc
+SIZE (pianojockl-bsdgames-v0.7_GH0.tar.gz) = 2349706
