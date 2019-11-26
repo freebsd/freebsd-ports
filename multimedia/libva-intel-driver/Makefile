@@ -1,12 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libva-intel-driver
-PORTVERSION=	2.3.0
-PORTREVISION=	4
+DISTVERSION=	2.4.0.pre1
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	f139dafa5917.patch:-p1 # for mesa-libs 18.3+
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VAAPI legacy driver for Intel GMA 4500 (Gen4) or newer
