@@ -24,7 +24,6 @@ RUN_DEPENDS=	bash:shells/bash
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions \
 			LICENSE.txt LICENSE_Apache.txt
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 NO_BUILD=	yes
 NO_ARCH=	yes
 REINPLACE_ARGS=	-i ""

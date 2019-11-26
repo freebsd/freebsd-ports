@@ -21,7 +21,6 @@ USES=		gl tar:bzip2 xorg
 USE_JAVA=	yes
 USE_GL=		gl
 USE_XORG=	xt
-JAVA_VERSION=	1.6+
 JAVA_VENDOR=	openjdk
 USE_ANT=	yes
 LLD_UNSAFE=	yes

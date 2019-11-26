@@ -84,7 +84,7 @@ CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 post-extract:
 	@${CP} ${DISTDIR}/antlr-3.4-complete.jar ${WRKDIR}/antlr3.jar
 	@${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/antlr3
-	@${ECHO_CMD} "JAVA_VERSION=1.7+ exec \"${LOCALBASE}/bin/java\" -classpath \"${WRKDIR}/antlr3.jar\" org.antlr.Tool \"\$$@\"" >> ${WRKDIR}/antlr3
+	@${ECHO_CMD} "exec \"${LOCALBASE}/bin/java\" -classpath \"${WRKDIR}/antlr3.jar\" org.antlr.Tool \"\$$@\"" >> ${WRKDIR}/antlr3
 	@${CHMOD} +x ${WRKDIR}/antlr3
 
 post-patch:

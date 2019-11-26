@@ -38,7 +38,7 @@ concat_lines()
 MAVEN_PROJECTBASEDIR=${MAVEN_BASEDIR:-$(find_maven_basedir)}
 MAVEN_OPTS="$(concat_lines "$MAVEN_PROJECTBASEDIR/.mvn/jvm.config") $MAVEN_OPTS"
 
-JAVA_VERSION="%%JAVA_VERSION%%" exec "%%LOCALBASE%%/bin/java" $MAVEN_OPTS \
+exec "%%LOCALBASE%%/bin/java" $MAVEN_OPTS \
 	-classpath "${M2_HOME}/boot/%%CLASSWORLDS_JAR%%" \
 	"-Dclassworlds.conf=${M2_HOME}/bin/m2.conf" \
 	"-Dmaven.home=${M2_HOME}" \

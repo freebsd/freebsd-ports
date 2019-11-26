@@ -21,7 +21,6 @@ USES=		tar:tgz
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
-JAVA_VERSION=	1.6+
 
 OPTIONS_DEFINE=	CONTRIB DOCS EXAMPLES
 CONTRIB_DESC=	Install contributed jars

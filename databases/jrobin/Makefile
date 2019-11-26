@@ -12,7 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure Java alternative to RRDTool
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 CLASSES=	jrobin

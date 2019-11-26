@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_ARCH=	yes
 
 JAR_FILE=	${WRKSRC}/src/main/java/${PORTNAME}.jar

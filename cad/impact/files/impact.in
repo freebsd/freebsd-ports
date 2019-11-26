@@ -3,5 +3,5 @@
 # $FreeBSD$
 
 cd %%DATADIR%%
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -Xmx1000m -Xss1m -cp .:doc:bin run.Impact "$@"
+"%%LOCALBASE%%/bin/java" -Xmx1000m -Xss1m -cp .:doc:bin run.Impact "$@"
 cd -

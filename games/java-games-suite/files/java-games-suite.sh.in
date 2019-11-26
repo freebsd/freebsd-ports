@@ -2,22 +2,22 @@
 
 case "$1" in
 	mastermind) 
-		JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/MM.jar"
+		"%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/MM.jar"
 		;;
 	reversi) 
-		JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/reversi.jar"
+		"%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/reversi.jar"
 		;;
 	mine) 
-		JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/Mine.jar"
+		"%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/Mine.jar"
 		;;
 	tetris) 
-		JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/Tetris.jar"
+		"%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/Tetris.jar"
 		;;
 	rt) 
-		JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/RT.jar"
+		"%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/RT.jar"
 		;;
 	number) 
-		JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/Number.jar"
+		"%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/Number.jar"
 		;;
 	*) 
 		echo $"Usage: $0 {mastermind|reversi|mine|tetris|rt|number}"

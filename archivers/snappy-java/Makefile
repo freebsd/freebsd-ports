@@ -35,7 +35,6 @@ GH_PROJECT=	snappy-java
 
 USES=		gmake
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	Default_CXX=${CXX}
 

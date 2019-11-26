@@ -28,7 +28,6 @@ RUN_DEPENDS=	${TOMCATHOME}/bin/bootstrap.jar:www/tomcat85 \
 USES=	dos2unix gmake python:2.7,run
 USE_RC_SUBR=	openemm2015
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 
 DOS2UNIX_GLOB=	*.c *.cpp *.h *.java *.xml *.properties
 CC=	clang

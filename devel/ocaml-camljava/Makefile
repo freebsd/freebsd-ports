@@ -13,7 +13,6 @@ COMMENT=	OCaml-Java library interface
 
 USE_OCAML=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^\(JAVAC=\).*,\1${JAVAC},g" \

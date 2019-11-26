@@ -13,7 +13,6 @@ COMMENT=	Open-source Java EE 5 application server
 
 USES=		cpe
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 CPE_VENDOR=	apache
@@ -62,8 +61,7 @@ SUB_LIST=	GERONIMO_HOME=${APP_HOME} \
 		USER=${GERONIMO_USER} \
 		GERONIMO_VERSION=${MAJOR_VER} \
 		GERONIMO_OUT=${GERONIMO_OUT} \
-		JAVA_HOME=${JAVA_HOME} \
-		JAVA_VERSION=${JAVA_VERSION}
+		JAVA_HOME=${JAVA_HOME}
 
 pre-patch:
 	@${ECHO_MSG} "Installation settings:"

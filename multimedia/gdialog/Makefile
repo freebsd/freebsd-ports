@@ -3,6 +3,7 @@
 
 PORTNAME=	gdialog
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	multimedia java
 MASTER_SITES=	SF/${PORTNAME}-x/${PORTNAME}-090400/${PORTVERSION}
 DISTNAME=	GDialog-090400-25
@@ -17,7 +18,6 @@ RUN_DEPENDS=	projectx>=0.90.4.00:multimedia/projectx
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -2,7 +2,5 @@
 #
 # $FreeBSD$
 
-export JAVA_VERSION="%%JAVA_VERSION%%"
-
 cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" \
 -jar "%%DATADIR%%/ArtOfIllusion.jar" "${@}"

@@ -21,7 +21,6 @@ RESTRICTED=	License restrictions -- See http://astah.net/faq/community/enduser-l
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 REVISION=	b4c6e9
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX:S!-!_!}

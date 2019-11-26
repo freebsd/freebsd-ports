@@ -17,7 +17,6 @@ RUN_DEPENDS=	eclipse:java/eclipse
 USES=		zip
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 PLIST_SUB=	\

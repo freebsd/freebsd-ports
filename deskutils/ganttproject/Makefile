@@ -19,7 +19,6 @@ SHEBANG_FILES=	ganttproject
 bash_CMD=	/bin/sh
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 
 NO_ARCH=	yes
 NO_BUILD=	yes

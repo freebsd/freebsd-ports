@@ -3,6 +3,7 @@
 
 PORTNAME=	powerarchitect
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.sqlpower.ca/architect/1.0.8/community/
 DISTNAME=	SQL-Power-Architect-generic-jdbc-${PORTVERSION}
@@ -13,7 +14,6 @@ COMMENT=	Data modeling and profiling tool
 LICENSE=	GPLv3
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PORTDOCS=	*

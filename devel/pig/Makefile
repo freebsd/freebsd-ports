@@ -24,7 +24,6 @@ RUN_DEPENDS=	bash:shells/bash \
 BROKEN=		tries to make outbound http connection during build phase breaking tinderbox.  Software itself does not have known issues, remove this BROKEN line and build your own package
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"

@@ -24,7 +24,6 @@ USE_RC_SUBR=	crashplan
 
 USE_JAVA=	yes
 JAVA_OS=	linux
-JAVA_VERSION=	1.7+
 
 WRKSRC=		${WRKDIR}/crashplan-install
 

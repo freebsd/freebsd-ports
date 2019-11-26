@@ -44,7 +44,6 @@
 #
 
 james_enable="${james_enable:-"NO"}"
-james_java_version="${james_java_version:-"%%JAVA_VERSION%%"}"
 james_home="${james_home:-"%%JAMES_HOME%%"}"
 james_base="${james_base:-"%%JAMES_HOME%%"}"
 james_tmpdir="${james_tmpdir:-"/tmp"}"

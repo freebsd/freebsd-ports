@@ -20,7 +20,6 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 
 USES=		perl5
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 POD2MAN?=	pod2man
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

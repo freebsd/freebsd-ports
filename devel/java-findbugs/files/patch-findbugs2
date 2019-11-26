@@ -1,6 +1,6 @@
---- bin/findbugs2.orig	2010-12-26 13:57:04.000000000 -0800
-+++ bin/findbugs2	2010-12-26 14:00:48.000000000 -0800
-@@ -27,27 +27,11 @@
+--- bin/findbugs2.orig	2009-08-21 20:39:53 UTC
++++ bin/findbugs2
+@@ -27,27 +27,11 @@ done
  dir=`dirname "$program"`
  findbugs_home="$dir/.."
  
@@ -28,7 +28,7 @@
  if [ ! -d "$findbugs_home" ]; then
  	echo "The path $findbugs_home,"
  	echo "which is where I think FindBugs is located,"
-@@ -56,14 +40,7 @@
+@@ -56,14 +40,7 @@ if [ ! -d "$findbugs_home" ]; then
  fi
  
  # Choose default java binary
@@ -44,7 +44,7 @@
  
  # Default UI is GUI2
  fb_launchui="2"
-@@ -133,7 +110,7 @@
+@@ -133,7 +110,7 @@ while [ $# -gt 0 ] && [ "$finishedArgs" = "false" ]; d
  			jvm_user_props="-D$1 $jvm_user_props"
  			shift
  			;;
@@ -53,7 +53,7 @@
  		-D*=*)
  			jvm_user_props="$1 $user_props"
  			shift
-@@ -158,17 +135,9 @@
+@@ -158,18 +135,10 @@ while [ $# -gt 0 ] && [ "$finishedArgs" = "false" ]; d
  
  done
  
@@ -67,9 +67,8 @@
  #
  # Launch JVM
  #
--exec "$fb_javacmd" \
+ exec "$fb_javacmd" \
 -	-classpath "$fb_appjar$fb_pathsep$CLASSPATH" \
-+JAVA_VERSION="1.6+" exec "$fb_javacmd" \
  	-Dfindbugs.home="$findbugs_home" \
  	$jvm_debug $jvm_maxheap $jvm_ea $jvm_conservespace $jvm_user_props \
  	-Dfindbugs.launchUI=$fb_launchui \

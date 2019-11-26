@@ -3,6 +3,7 @@
 
 PORTNAME=	ireport
 PORTVERSION=	3.7.6
+PORTREVISION=	1
 CATEGORIES=	devel databases java
 MASTER_SITES=	SF/${PORTNAME}/iReport/iReport-${PORTVERSION}
 DISTNAME=	iReport-${PORTVERSION}
@@ -12,7 +13,6 @@ COMMENT=	A visual report builder/designer for JasperReports
 
 USES=		dos2unix
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 DOS2UNIX_GLOB=	*.txt
 NO_BUILD=	yes
 
@@ -75,7 +75,7 @@ pre-configure:
 		s|zip |zip|g; s|jar |jar|g' \
 		-e 's|%%JAVA_HOME%%|${JAVA_HOME}|; \
 		s|%%DATADIR%%|${DATADIR}|g; \
-		s|^java |JAVA_VERSION="${JAVA_VERSION}" ${LOCALBASE}/bin/java |' \
+		s|^java |${LOCALBASE}/bin/java |' \
 		${WRKSRC}/bin/startup.sh
 	${REINPLACE_CMD} -e 's|/bin/grep|/usr/bin/grep|' \
 		${WRKSRC}/platform9/lib/nbexec

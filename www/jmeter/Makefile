@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-jmeter
 PORTVERSION=	2.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	APACHE/jmeter/binaries
 
@@ -43,7 +43,6 @@ RUN_DEPENDS=	\
 
 USES=		tar:tgz
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	jmeter.sh

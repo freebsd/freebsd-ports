@@ -3,7 +3,7 @@
 
 PORTNAME=	sisc
 PORTVERSION=	1.16.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang scheme java
 MASTER_SITES=	SF/${PORTNAME}/SISC/${PORTVERSION}
 
@@ -14,7 +14,6 @@ LICENSE=	MPL11 GPLv2+
 LICENSE_COMB=	dual
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_ARCH=	yes
 
@@ -24,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(SISC_HOME=\).*$$|\1${DATADIR}|' \
-		-e 's|\(JAVA=\)java|\1"${LOCALBASE}/bin/java" ; export JAVA_VERSION="${JAVA_VERSION}"|' \
+		-e 's|\(JAVA=\)java|\1"${LOCALBASE}/bin/java"|' \
 		${WRKSRC}/sisc
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' \
 		${WRKSRC}/scheme-src/srfi-22/srfi-22.sh

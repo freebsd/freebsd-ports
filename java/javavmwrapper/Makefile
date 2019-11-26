@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	javavmwrapper
-PORTVERSION=	2.7.3
+PORTVERSION=	2.7.4
 CATEGORIES=	java
 MASTER_SITES=	# none
 DISTFILES=	# none

@@ -16,7 +16,6 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 USES=		gmake tar:tgz
 MAKE_ENV=	JAVA_HOME="${JAVA_HOME}"
 ALL_TARGET=	native

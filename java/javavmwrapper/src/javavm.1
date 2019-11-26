@@ -25,7 +25,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd February 24, 2005
+.Dd November 12, 2019
 .Os
 .Dt JAVAVM 1
 .Sh NAME
@@ -112,16 +112,12 @@ to a version, any Java VM with a version greater than or
 equal to the given version will be used.
 .Pp
 Currently allowed versions are
-.Ql 1.6 ,
-.Ql 1.6+ ,
 .Ql 1.7 ,
 .Ql 1.7+ ,
 .Ql 1.8 ,
 .Ql 1.8+ ,
 .Ql 1.9 ,
 .Ql 1.9+ ,
-.Ql 6 ,
-.Ql 6+ ,
 .Ql 7 ,
 .Ql 7+ ,
 .Ql 8 ,
@@ -202,8 +198,8 @@ Execute MyApp with the most up to date native Java VM that is registered
 with
 .Nm .
 This is necessary if MyApp uses JNI, for instance.
-.It Ev JAVA_VERSION="6 8" Pa %%LOCALBASE%%/bin/java Fl jar Pa MyApp.jar
-Execute MyApp with either a Java VM that is either version 6 or version 8.
+.It Ev JAVA_VERSION="8 11" Pa %%LOCALBASE%%/bin/java Fl jar Pa MyApp.jar
+Execute MyApp with either a Java VM that is either version 8 or version 11.
 .It Ev JAVAVM_DRYRUN=yes Pa %%LOCALBASE%%/bin/java
 Don't invoke the Java VM, but print out information about what would have
 been done.

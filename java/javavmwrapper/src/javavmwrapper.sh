@@ -173,8 +173,7 @@ sortConfiguration () {
             _VM=`dirname "${_VM}"`
             _VM=`dirname "${_VM}"`
             _VM=`basename "${_VM}"`
-            # Consistent version numbering for various install directory names
-            # including 'openjdk6', 'jdk1.6.0', 'linux-sun-jdk1.6.0', etc.
+            # Consistent version numbering for various install directory names.
             VERSION=`echo ${VM} | sed -e 's|[^0-9]*||' \
                                       -e 's|1\.\([0-9][0-9]*\)|\1|' \
                                       -e 's|\([0-9][0-9]*\)\.[0-9]|\1|' \
@@ -506,9 +505,6 @@ setJavaHome() {
         _JAVAVM_VERSION=
         for version in ${JAVA_VERSION}; do
             case "${version}" in
-                *6+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 6 7 8 9 10 11 12"
-                    ;;
                 *7+)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} 7 8 9 10 11 12"
                     ;;
@@ -526,9 +522,6 @@ setJavaHome() {
                     ;;
                 12+)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} 12"
-                    ;;
-                1.6)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 6"
                     ;;
                 1.7)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} 7"

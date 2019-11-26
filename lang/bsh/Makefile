@@ -3,6 +3,7 @@
 
 PORTNAME=	bsh
 DISTVERSION=	2.0b6
+PORTREVISION=	1
 CATEGORIES=	lang java
 
 MAINTAINER=	pfg@FreeBSD.org
@@ -15,7 +16,6 @@ GH_ACCOUNT=	beanshell
 GH_PROJECT=	beanshell
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 USE_ANT=	yes
 ALL_TARGET=	jarall

@@ -3,6 +3,7 @@
 
 PORTNAME=	sweethome3d
 PORTVERSION=	5.4
+PORTREVISION=	1
 CATEGORIES=	cad java
 MASTER_SITES=	SF/${PORTNAME}/SweetHome3D-source/${DISTNAME}/
 DISTNAME=	SweetHome3D-${PORTVERSION}-src
@@ -20,7 +21,6 @@ USES=		zip
 NO_ARCH=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 ALL_TARGET=	jarExecutable
 JARNAME=	SweetHome3D-${PORTVERSION}.jar

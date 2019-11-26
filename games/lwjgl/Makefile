@@ -29,7 +29,6 @@ USES=		dos2unix zip xorg
 DOS2UNIX_REGEX= .*.[^jp][^an][^rg]$
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
-JAVA_VERSION=	1.7+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 USE_ANT=	yes

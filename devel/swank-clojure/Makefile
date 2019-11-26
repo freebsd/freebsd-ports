@@ -11,7 +11,6 @@ COMMENT=	Swank/SLIME support for Clojure
 USE_GITHUB=	yes
 GH_ACCOUNT=	technomancy
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 PLIST_FILES=	%%JAVAJARDIR%%/swank-clojure-1.2.1.jar
 

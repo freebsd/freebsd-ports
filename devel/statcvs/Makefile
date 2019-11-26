@@ -20,7 +20,6 @@ BROKEN_armv7=		fails to compile: build.xml: compilation failed
 USES=		zip
 USE_JAVA=	yes
 USE_ANT=	yes
-JAVA_VERSION=	1.6+
 NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

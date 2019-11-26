@@ -52,7 +52,6 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
 USE_RC_SUBR=	madsonic
-JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 # Don't waste UID/GID and reuse Subsonic's user.
 USERS=		subsonic

@@ -16,7 +16,6 @@ USES=		zip
 NO_BUILD=	yes
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 JAVA_RUN=	yes
 
 PORTDATA=	*

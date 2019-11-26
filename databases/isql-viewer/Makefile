@@ -3,7 +3,7 @@
 
 PORTNAME=	isql-viewer
 PORTVERSION=	2.1.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases java
 MASTER_SITES=	SF/isql/Stand%20Alone%20Jars/Version%20${PORTVERSION}:isql \
 		APACHE/ws/soap/version-2.2:bsf
@@ -19,7 +19,6 @@ RUN_DEPENDS=	${JYTHON_PREFIX}/${JYTHON_JAR}:lang/jython \
 		${JAVALIBDIR}/mysql-connector-java.jar:databases/mysql-connector-java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 ISQL=		iSQL-Viewer
@@ -45,7 +44,6 @@ CLASSPATH=	"${JARFILES:S,^,${JAVAJARDIR}/,}:${JYTHON_PREFIX}/${JYTHON_JAR}:${JAR
 
 do-configure:
 	@${SED} -e 's|%%CLASSPATH%%|${CLASSPATH:C,[[:space:]],:,g}|g'	\
-		-e 's|%%JAVA_VERSION%%|${JAVA_VERSION}|g'	\
 		${FILESDIR}/iSQL-Viewer.sh > ${WRKDIR}/iSQL-Viewer.sh
 
 do-install:

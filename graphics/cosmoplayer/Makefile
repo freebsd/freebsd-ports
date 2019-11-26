@@ -22,7 +22,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror auto-accept
 RUN_DEPENDS=	${JAVALIBDIR}/java40.jar:devel/netscape-java40
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

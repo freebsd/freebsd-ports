@@ -1,4 +1,3 @@
 #!/bin/sh
 # $FreeBSD$
-JAVA_VERSION="%%JAVA_VERSION%%" \
-	exec "%%LOCALBASE%%/bin/java" -jar "%%TRUTHTABLEJAR%%" "$@"
+exec "%%LOCALBASE%%/bin/java" -jar "%%TRUTHTABLEJAR%%" "$@"

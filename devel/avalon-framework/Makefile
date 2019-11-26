@@ -11,7 +11,6 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Apache Avalon core framework for component programming
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

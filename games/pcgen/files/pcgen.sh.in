@@ -4,4 +4,4 @@
 
 [ \! -d "${HOME}/.pcgen" ] && mkdir "${HOME}/.pcgen"
 cd "%%DATADIR%%"
-JAVA_VERSION="%%JAVA_VERSION%%" exec "%%LOCALBASE%%/bin/java" ${PCGEN_OPTS} -jar ./pcgen.jar "$@"
+exec "%%LOCALBASE%%/bin/java" ${PCGEN_OPTS} -jar ./pcgen.jar "$@"

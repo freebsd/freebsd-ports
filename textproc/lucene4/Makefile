@@ -17,7 +17,6 @@ CONFLICTS=	lucene-[0-9].*
 
 USES=		tar:tgz
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

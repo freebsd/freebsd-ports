@@ -21,7 +21,6 @@ NOT_FOR_ARCHS_REASON=	Java not available for this architecture
 USES=		gmake libtool zip
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_OS=	native
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}

@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 
 USES=		dos2unix zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

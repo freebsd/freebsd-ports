@@ -16,7 +16,6 @@ WRKSRC=		${WRKDIR}/Simple\ API\ for\ Binary\ REpresentations\ \(SABRE\)
 USES=		dos2unix zip
 DOS2UNIX_GLOB=	*.xml *.java
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 USE_ANT=	yes
 ALL_TARGET=	dist
 

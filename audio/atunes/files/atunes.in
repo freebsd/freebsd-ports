@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd %%DATADIR%%
-JAVA_VERSION="%%JAVA_VERSION%%" exec %%LOCALBASE%%/bin/java \
+exec %%LOCALBASE%%/bin/java \
     -Dsubstancelaf.windowRoundedCorners=false \
     -Dinsubstantial.looseTableCellRenderers=true -Djava.library.path=./ \
     -Xms128m -Xmx256m -splash:splash.gif \

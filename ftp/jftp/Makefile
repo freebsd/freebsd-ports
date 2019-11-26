@@ -13,7 +13,6 @@ COMMENT=	Java Network Browser
 
 LICENSE=	GPLv2
 
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 USE_JAVA=	yes
 WRKSRC=		${WRKDIR}/j-ftp

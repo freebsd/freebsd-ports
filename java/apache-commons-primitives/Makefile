@@ -14,7 +14,6 @@ COMMENT=	Library supporting Java primitive types
 LICENSE=	APACHE20
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

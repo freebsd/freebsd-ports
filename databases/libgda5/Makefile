@@ -95,7 +95,6 @@ CONFIGURE_ARGS+=	--without-mdb
 
 .if ${LIBGDA5_SLAVE}==jdbc
 USE_JAVA=		yes
-JAVA_VERSION=		1.6+
 JAVA_VENDOR=		bsdjava openjdk
 CFLAGS+=		-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 .else

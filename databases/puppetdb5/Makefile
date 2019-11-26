@@ -30,7 +30,6 @@ SHEBANG_FILES=	ext/bin/puppetdb \
 USE_JAVA=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
-JAVA_VERSION=	1.7+
 
 USERS=		puppetdb
 GROUPS=		puppetdb

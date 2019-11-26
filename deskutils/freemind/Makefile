@@ -3,6 +3,7 @@
 
 PORTNAME=	freemind
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF
@@ -18,7 +19,6 @@ BUILD_DEPENDS=	zip:archivers/zip
 
 USES=		cpe zip:infozip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}-${PORTVERSION}
 DATAFILES=	accessories browser doc lib plugins patterns.xml

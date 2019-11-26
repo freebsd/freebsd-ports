@@ -3,7 +3,7 @@
 
 PORTNAME=	aoi
 PORTVERSION=	3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/${PORTNAME}/ArtOfIllusion/${PORTVERSION} \
 		SF/${PORTNAME}/ArtOfIllusion-manual/${PORTVERSION}:docs
@@ -21,7 +21,6 @@ LIB_DEPENDS=	libjogl.so:graphics/jogl
 USES=		zip
 DOS2UNIX_FILES=	../AoI_Manual/*.html # USES=dos2unix is optional
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/ArtOfIllusion${PORTVERSION:S/.//g}

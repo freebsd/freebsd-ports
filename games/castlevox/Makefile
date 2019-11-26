@@ -3,7 +3,7 @@
 
 PORTNAME=	CastleVox
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games java
 MASTER_SITES=	http://sillysoft.net/download/
 DISTNAME=	${PORTNAME}-linux
@@ -14,7 +14,6 @@ COMMENT=	Fast world domination game
 BROKEN=		unfetchable
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

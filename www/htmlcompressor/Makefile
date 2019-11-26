@@ -3,7 +3,7 @@
 
 PORTNAME=	htmlcompressor
 PORTVERSION=	1.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www java
 MASTER_SITES=	https://github.com/serg472/htmlcompressor/releases/download/${PORTVERSION}/
 EXTRACT_SUFX=	.jar
@@ -21,7 +21,6 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/htmlcompressor %%JAVAJARDIR%%/htmlcompressor.jar
 SUB_FILES=	htmlcompressor
-SUB_LIST+=	JAVA_VERSION=${JAVA_PORT_VERSION:R:C/^([^1])/1.\1/}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}

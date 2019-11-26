@@ -25,7 +25,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd February 24, 2005
+.Dd November 12, 2019
 .Os
 .Dt REGISTERVM 1
 .Sh NAME
@@ -58,12 +58,12 @@ The location of the Java VM wrapper configuration file.
 .El
 .Sh EXAMPLES
 .Bl -tag -width indent
-.It %%PREFIX%%/bin/registervm %%LOCALBASE%%/jdk1.6.0/bin/java
-Register %%LOCALBASE%%/jdk1.6.0/bin/java as a possible choice of
+.It %%PREFIX%%/bin/registervm %%LOCALBASE%%/openjdk11/bin/java
+Register %%LOCALBASE%%/openjdk11/bin/java as a possible choice of
 Java VM for
 .Nm javavm .
-.It %%PREFIX%%/bin/unregistervm %%LOCALBASE%%/jdk1.6.0/bin/java
-Remove %%LOCALBASE%%/jdk1.6.0/bin/java as a possible choice of
+.It %%PREFIX%%/bin/unregistervm %%LOCALBASE%%/openjdk11/bin/java
+Remove %%LOCALBASE%%/openjdk11/bin/java as a possible choice of
 Java VM for
 .Nm javavm .
 .El

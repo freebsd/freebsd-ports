@@ -3,4 +3,4 @@
 # $FreeBSD$
 #
 # Rhino debugger
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -cp "%%RHINOJAR%%" org.mozilla.javascript.tools.debugger.Main $@
+"%%LOCALBASE%%/bin/java" -cp "%%RHINOJAR%%" org.mozilla.javascript.tools.debugger.Main $@

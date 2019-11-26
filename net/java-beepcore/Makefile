@@ -15,7 +15,6 @@ COMMENT=	Implementation of BEEP core and BEEP mapping for TCP in Java
 RUN_DEPENDS=	${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

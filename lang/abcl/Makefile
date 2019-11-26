@@ -21,7 +21,6 @@ SUB_LIST+=	JAVAJARDIR="${JAVAJARDIR}"
 SUB_FILES=	abcl
 
 USE_JAVA=	yes
-JAVA_VERSION=	7+
 USE_ANT=	yes
 
 do-install:

@@ -25,7 +25,6 @@ RUN_DEPENDS=	bash:shells/bash \
 USES=		cpe
 CPE_VENDOR=	apache
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 WRKSRC=		${WRKDIR}/apache-${PORTNAME}-${PORTVERSION}-src
 
 HIVE_USER=	hive

@@ -17,7 +17,6 @@ RUN_DEPENDS=	${JAVALIBDIR}/commons-cli.jar:java/apache-commons-cli
 OPTIONS_DEFINE=	DOCS
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/httpcomponents-core-${DISTVERSION}

@@ -15,7 +15,6 @@ PORTSCOUT=	limitw:1,even	# Second component is even for stable versions.
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

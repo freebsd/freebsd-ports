@@ -11,7 +11,6 @@ COMMENT=	Java Date Chooser
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 USE_ANT=	yes
 WRKSRC=		${WRKDIR}/src
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \

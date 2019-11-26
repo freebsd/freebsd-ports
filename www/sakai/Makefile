@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-7.0/bin/bootstrap.jar:www/tomcat7
 IGNORE=		does not work correctly
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

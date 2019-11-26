@@ -14,7 +14,6 @@ RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:textproc/xerces-j \
 		${JAVALIBDIR}/xalan.jar:textproc/xalan-j
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/XOM
 

@@ -16,7 +16,6 @@ COMMENT=	Prototype OpenMP implementation for Java
 BROKEN=		unfetchable
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

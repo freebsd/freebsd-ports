@@ -3,7 +3,7 @@
 
 PORTNAME=	truthtable
 PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math java
 MASTER_SITES=	http://www.kinostudios.com/java/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -17,7 +17,6 @@ COMMENT=	Truth Tables generator (written in Java)
 BROKEN=		unfetchable
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

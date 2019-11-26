@@ -22,7 +22,6 @@ USES=		cpe zip
 CPE_VENDOR=	sonarsource
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 
 SR=		sonar-runner
 SQ_CLI=		sonar-scanner

@@ -23,7 +23,6 @@ USES=		dos2unix
 USE_JAVA=	yes
 USE_ANT=	yes
 DOS2UNIX_FILES=	build.xml
-JAVA_VERSION=	1.6+
 ALL_TARGET=	dist
 MAKE_ARGS+=	-Dcommons-collections.jar=${JAVALIBDIR}/commons-collections.jar \
 		-Dcommons-logging.jar=${JAVALIBDIR}/commons-logging.jar

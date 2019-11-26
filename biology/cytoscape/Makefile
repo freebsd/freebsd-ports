@@ -24,7 +24,6 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		shebangfix
 SHEBANG_FILES=	gui-distribution/assembly/src/main/bin/cytoscape.sh
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 USE_GITHUB=	yes
 GH_TUPLE=	${PORTNAME}:${PORTNAME}-parent:${DISTVERSION}:p/parent \
 		${PORTNAME}:${PORTNAME}-api:${DISTVERSION}:a/api \

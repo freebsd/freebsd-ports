@@ -29,7 +29,6 @@ CPE_VENDOR=	sonarsource
 DOS2UNIX_GLOB=	*.properties *.conf
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 
 SQ_FILE=	sonar.sh
 SQ_HOME=	${PREFIX}/share/${PORTNAME}

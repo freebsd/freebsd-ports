@@ -22,7 +22,6 @@ USES=		linux shebangfix uniquefiles:dirs zip
 USE_JAVA=	yes
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-JAVA_VERSION=	1.7+
 JAVA_OS=	linux
 NO_BUILD=	yes
 PLIST_SUB=	LINUX_ARCH=${LINUX_ARCH}

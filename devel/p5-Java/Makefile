@@ -15,7 +15,6 @@ USE_RC_SUBR=	javaserver
 USES=		perl5
 USE_PERL5=	configure
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 post-patch:
 	${RM} ${WRKSRC}/java_server_install.pl

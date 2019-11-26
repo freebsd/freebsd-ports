@@ -22,7 +22,6 @@ ONLY_FOR_ARCHS=	amd64
 USE_GITHUB=	yes
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 USE_ANT=	yes
 ALL_TARGET=	dist
 

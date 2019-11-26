@@ -38,7 +38,6 @@ OPTIONS_SUB=	yes
 
 .if ${PORT_OPTIONS:MJAVA}
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_OS=	native
 CONFIGURE_ARGS+=	--with-java=${JAVA_HOME}
 .else

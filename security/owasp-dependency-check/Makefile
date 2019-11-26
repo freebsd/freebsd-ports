@@ -6,6 +6,7 @@
 
 PORTNAME=	owasp-dependency-check
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security java
 MASTER_SITES=	LOCAL/pi/:source2
@@ -23,7 +24,6 @@ GH_ACCOUNT=	jeremylong
 GH_PROJECT=	DependencyCheck
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 
 NO_ARCH=	yes
 

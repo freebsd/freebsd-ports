@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/native
 USES=		libtool ssl
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
-JAVA_VERSION=	1.6+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-java-home=${JAVA_HOME} \

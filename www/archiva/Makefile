@@ -18,7 +18,6 @@ USES=		cpe
 CPE_VENDOR=	apache
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 
 USE_RC_SUBR=	${PORTNAME}
 

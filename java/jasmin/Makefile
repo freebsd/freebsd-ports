@@ -3,6 +3,7 @@
 
 PORTNAME=	jasmin
 PORTVERSION=	2.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	java lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -14,7 +15,6 @@ USES=		dos2unix zip
 USE_ANT=	yes
 ALL_TARGET=	jasmin
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 DOS2UNIX_REGEX=	.*\.(txt|xml|j|class|java|mf|css|bnf|html)
 
 SUB_FILES=	jasmin.sh

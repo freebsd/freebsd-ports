@@ -47,7 +47,6 @@ USES=		charsetfix fortran gmake libtool perl5 pkgconfig readline \
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-JAVA_VERSION=	1.7+
 USE_QT=		core gui help network opengl \
 		qmake_build buildtools_build linguist_build \
 		printsupport sql widgets \

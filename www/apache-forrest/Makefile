@@ -28,8 +28,6 @@ IGNORE_FILES=		! -name *\.bak -and ! -name *\.bat \
 
 INSTALL_WRKSRC=		${WRKSRC}/build
 
-JAVA_VERSION=		1.6+
-
 NO_BUILD=		Yes
 
 PLUGINSDIR=		${DATADIR}/plugins/org.apache.forrest.plugin.output.pdf

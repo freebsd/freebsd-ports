@@ -3,7 +3,7 @@
 
 PORTNAME=	wildfly90
 PORTVERSION=	9.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java www
 MASTER_SITES=	http://download.jboss.org/wildfly/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 
 USE_RC_SUBR=	wildfly90
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 USER=		www
 GROUP=		www
 VAR_DIR?=	/var

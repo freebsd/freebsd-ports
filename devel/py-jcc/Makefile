@@ -24,7 +24,6 @@ USES=		python:-3.6
 USE_PYTHON=	distutils autoplist
 PYDISTUTILS_PKGNAME=	JCC
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_VENDOR=	openjdk
 
 JCC_INCLUDES=	'${JAVA_HOME}/include;${JAVA_HOME}/include/freebsd'

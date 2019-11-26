@@ -18,7 +18,6 @@ BUILD_DEPENDS=	jna>=4.0:devel/jna \
 		junit>=4.8.2:java/junit
 
 USE_JAVA=	YES
-JAVA_VERSION=	1.6+
 USE_ANT=	YES
 ALL_TARGET=	jar
 

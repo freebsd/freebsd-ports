@@ -13,7 +13,6 @@ OPTIONS_DEFINE=	DOCS
 
 USES=		zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 JARFILE=	${PORTNAME}.jar tinycp.jar

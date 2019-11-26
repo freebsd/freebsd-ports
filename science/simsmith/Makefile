@@ -3,6 +3,7 @@
 
 PORTNAME=	simsmith
 PORTVERSION=	9.9
+PORTREVISION=	1
 CATEGORIES=	science hamradio
 MASTER_SITES=	http://ae6ty.com/Smith_Charts_files/ \
 		LOCAL/shurd
@@ -14,7 +15,6 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	A Java-based Smith Chart program
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${DISTNAME}${EXTRACT_SUFX} \

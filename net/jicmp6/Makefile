@@ -10,7 +10,6 @@ COMMENT=	Java native interface (JNI) to ICMPv6
 
 USES=		libtool
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 JAVA_VENDOR=	openjdk
 JAVA_BUILD=	yes
 JAVA_RUN=	yes

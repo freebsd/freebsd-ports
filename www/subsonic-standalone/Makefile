@@ -48,7 +48,6 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
 USE_RC_SUBR=	subsonic
-JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 USERS=		subsonic
 GROUPS=		subsonic

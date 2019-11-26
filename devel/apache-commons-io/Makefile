@@ -14,7 +14,7 @@ COMMENT=	Collection of I/O utilities for Java
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_JAVA=	1.7+
+USE_JAVA=	yes
 
 NO_ARCH=	yes
 NO_BUILD=	yes

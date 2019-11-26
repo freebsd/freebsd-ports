@@ -13,7 +13,6 @@ COMMENT=	High performance collections API for Java
 BROKEN=		unfetchable
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PORTDOCS=	javadocs AUTHORS.txt CHANGES.txt LICENSE.txt README-idea-devel.txt \

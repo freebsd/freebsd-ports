@@ -12,7 +12,6 @@ MAINTAINER=	mike@vee.net
 COMMENT=	XML parser written in Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 USES=		zip

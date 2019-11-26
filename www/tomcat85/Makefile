@@ -18,7 +18,6 @@ RUN_DEPENDS=	jsvc:devel/apache-commons-daemon
 USES=		cpe
 CPE_VENDOR=	apache
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 USE_RC_SUBR=	${PKGBASE:C/-/_/}
 
 NO_ARCH=	yes

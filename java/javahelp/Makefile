@@ -3,6 +3,7 @@
 
 PORTNAME=	javahelp
 PORTVERSION=	2.0.05.20170719
+PORTREVISION=	1
 CATEGORIES=	java devel
 
 MAINTAINER=	makc@FreeBSD.org
@@ -19,7 +20,6 @@ GH_TAGNAME=	3ca862d
 USE_JAVA=	yes
 USE_ANT=	yes
 
-JAVA_VER=	1.${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/}
 TOMCAT_VER?=	8.5
 TOMCAT_PORT=	www/tomcat${TOMCAT_VER:S/.0//:S/.//}
 TOMCAT_DIR=	${LOCALBASE}/apache-tomcat-${TOMCAT_VER}
@@ -30,14 +30,11 @@ MAKE_ARGS=	-Djsp-jar=${TOMCAT_jsp} \
 		-Dfile.reference.jsp-api.jar=${TOMCAT_jsp} \
 		-Dservlet-jar=${TOMCAT_servlet} \
 		-Dfile.reference.servlet-api.jar=${TOMCAT_servlet} \
-		-Djavac.target=${JAVA_VER} \
-		-Ddefault.javac.target=${JAVA_VER} \
 		-Dtomcat-zip-present=true
 
 BUILD_WRKSRC=	${WRKSRC}/javahelp_nbproject
 SUB_FILES=	jhindexer \
 		jhsearch
-SUB_LIST=	JAVA_VER=${JAVA_VER}+
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jhindexer ${WRKDIR}/jhsearch ${STAGEDIR}${PREFIX}/bin/
