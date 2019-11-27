@@ -1,0 +1,8 @@
+KTechlab has been designed to be as easy to use and unintrusive as possible.
+All components and FlowParts have context sensitive help, and simulating
+electronics is as simple as dragging components onto the work area and creating
+connectors that autoroute themselves between their pins. FlowCode allows users
+new to PICs to instantly create their own programs, while the electronic
+simulation allows stepping through a PIC's assembly program inside a circuit.
+
+WWW: https://userbase.kde.org/KTechlab
