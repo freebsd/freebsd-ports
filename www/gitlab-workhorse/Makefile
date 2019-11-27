@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	8.14.0
+PORTVERSION=	8.14.1
 CATEGORIES=	www
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -20,11 +20,12 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-workhorse/tags
-GL_COMMIT=	9d06288b2c6d2630773d3c13794b830e24aa1ca2
+GL_COMMIT=	01bfb916e54cb25154db69f3b4d5481b7b77f16f
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
+# 51dd
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
@@ -72,7 +73,7 @@ GH_TUPLE=	\
 		tinylib:msgp:v1.1.0:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		uber:jaeger-client-go:v2.15.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v1.5.0:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
-		#::v0.0.1-2019.2.2:_/vendor/honnef.co/go/tools
+
 GL_TUPLE=	\
 		gitlab-org:gitaly:a8e2980b1ffe1a728ab13032dc81f90f4b990a03:gitlab_org_gitaly/vendor/gitlab.com/gitlab-org/gitaly \
 		gitlab-org:labkit:905271af7abbfaa1d3549f46ac0394c50cef9b28:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
