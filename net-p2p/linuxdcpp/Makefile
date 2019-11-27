@@ -17,22 +17,18 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:devel/boost-libs
 USES=		compiler:c++11-lang gettext gnome iconv localbase:ldflags \
 		pkgconfig scons ssl tar:bzip2
 USE_GNOME=	libglade2
+INSTALLS_ICONS=	yes
 PORTDOCS=	*
 DESTDIRNAME=	FAKE_ROOT
 
-OPTIONS_DEFINE=	NOTIFY DEBUG DOCS
+OPTIONS_DEFINE=	NOTIFY DOCS
 OPTIONS_DEFAULT=NOTIFY
 
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_MAKE_ARGS_OFF=	libnotify=0
 
-DEBUG_MAKE_ARGS=debug=1
-
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	member access into incomplete type 'dh_st'
-BROKEN_FreeBSD_13=	member access into incomplete type 'dh_st'
+.if defined(WITH_DEBUG)
+MAKE_ARGS+=	debug=1
 .endif
 
 post-patch:
@@ -43,4 +39,4 @@ post-patch:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
