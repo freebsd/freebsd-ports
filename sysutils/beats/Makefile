@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beats
-PORTVERSION=	6.7.1
+PORTVERSION=	6.8.5
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -50,7 +50,15 @@ do-install:
 		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/${GO_TARGET}/${GO_TARGET}.yml \
 		${STAGEDIR}${PREFIX}/etc/${GO_TARGET}.yml.sample
-	${MKDIR} ${STAGEDIR}/var/db/beats/${GO_TARGET}
+	(DEST_COMPONENT_PATH_UNSTAGED=/var/db/beats/${GO_TARGET}/kibana; \
+		DEST_COMPONENT_PATH=${STAGEDIR}$${DEST_COMPONENT_PATH_UNSTAGED}; \
+		${MKDIR} $${DEST_COMPONENT_PATH}; \
+		DASHBOARD_FIND_ARGS="-path */_meta/kibana -type d"; \
+		DASHBOARD_PATHS=$$(${SETENV} ${FIND} ${WRKSRC}/${GO_TARGET} $${DASHBOARD_FIND_ARGS}); \
+		for DASHBOARD_PATH in $${DASHBOARD_PATHS}; \
+		do \
+			(cd $${DASHBOARD_PATH} && ${COPYTREE_SHARE} . $${DEST_COMPONENT_PATH}); \
+		done)
 .endfor
 .for BEATMOD in filebeat metricbeat
 	${MKDIR} ${STAGEDIR}${ETCDIR}/${BEATMOD}.modules.d ${STAGEDIR}${DATADIR}/${BEATMOD}/module
