@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	6.8.4
-PORTREVISION=	0
+PORTVERSION=	6.8.5
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -18,9 +17,10 @@ BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	bash>0:shells/bash \
 		jna>0:devel/jna
 
+USES=		cpe shebangfix
+
 CONFLICTS=	elasticsearch-[0-9]* elasticsearch2-[0-9]* elasticsearch5-[0-9]*
 
-USES=		cpe shebangfix
 NO_ARCH=	yes
 USE_JAVA=	yes
 NO_BUILD=	yes
