@@ -9,8 +9,6 @@
 %%DATADIR%%/ruby/git-hooks/update
 %%DATADIR%%/ruby/gitlab-shell/.codeclimate.yml
 %%DATADIR%%/ruby/gitlab-shell/.gitlab-ci.yml
-%%DATADIR%%/ruby/gitlab-shell/.rubocop.yml
-%%DATADIR%%/ruby/gitlab-shell/.ruby-version
 %%DATADIR%%/ruby/gitlab-shell/CHANGELOG
 %%DATADIR%%/ruby/gitlab-shell/CONTRIBUTING.md
 %%DATADIR%%/ruby/gitlab-shell/Gemfile
@@ -89,7 +87,6 @@
 %%DATADIR%%/ruby/lib/gitaly_server/client.rb
 %%DATADIR%%/ruby/lib/gitaly_server/commit_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/conflicts_service.rb
-%%DATADIR%%/ruby/lib/gitaly_server/diff_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/exception_sanitizer_interceptor.rb
 %%DATADIR%%/ruby/lib/gitaly_server/health_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/operations_service.rb
@@ -155,6 +152,8 @@
 %%DATADIR%%/ruby/proto/gitaly/conflicts_services_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/diff_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/diff_services_pb.rb
+%%DATADIR%%/ruby/proto/gitaly/hook_pb.rb
+%%DATADIR%%/ruby/proto/gitaly/hook_services_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/namespace_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/namespace_services_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/objectpool_pb.rb
@@ -174,8 +173,6 @@
 %%DATADIR%%/ruby/proto/gitaly/smarthttp_services_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/ssh_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/ssh_services_pb.rb
-%%DATADIR%%/ruby/proto/gitaly/storage_pb.rb
-%%DATADIR%%/ruby/proto/gitaly/storage_services_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/version.rb
 %%DATADIR%%/ruby/proto/gitaly/wiki_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/wiki_services_pb.rb
