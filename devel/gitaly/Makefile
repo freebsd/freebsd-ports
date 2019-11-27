@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	1.72.0
+DISTVERSION=	1.72.1
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -41,7 +41,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	b1250c2b9dda443aa5eb146776b4a55df6114456
+GL_COMMIT=	52a09a56236c4d44bc4cc5865ff58dc2e6fa459f
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -103,5 +103,3 @@ do-install:
 	cd ${WRKSRC}/ruby && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/ruby
 
 .include <bsd.port.mk>
-
-
