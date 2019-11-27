@@ -611,6 +611,7 @@
     SUBDIR += logstash-forwarder
     SUBDIR += logstash5
     SUBDIR += logstash6
+    SUBDIR += logstash7
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += lookat
