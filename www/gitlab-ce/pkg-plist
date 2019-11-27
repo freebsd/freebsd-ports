@@ -7306,6 +7306,7 @@
 %%WWWDIR%%/config/initializers/graphql.rb
 %%WWWDIR%%/config/initializers/grpc.rb
 %%WWWDIR%%/config/initializers/hamlit.rb
+%%WWWDIR%%/config/initializers/hangouts_chat_http_override.rb
 %%WWWDIR%%/config/initializers/health_check.rb
 %%WWWDIR%%/config/initializers/hipchat_client_patch.rb
 %%WWWDIR%%/config/initializers/http_hostname_override.rb
@@ -7977,6 +7978,8 @@
 %%WWWDIR%%/db/migrate/20191114173508_add_resolved_attributes_to_vulnerabilities.rb
 %%WWWDIR%%/db/migrate/20191114173602_add_foreign_key_on_resolved_by_id_to_vulnerabilities.rb
 %%WWWDIR%%/db/migrate/20191115091425_create_vulnerability_issue_links.rb
+%%WWWDIR%%/db/migrate/20191120084627_add_encrypted_fields_to_application_settings.rb
+%%WWWDIR%%/db/migrate/20191120115530_encrypt_plaintext_attributes_on_application_settings.rb
 %%WWWDIR%%/db/optional_migrations/composite_primary_keys.rb
 %%WWWDIR%%/db/post_migrate/20180104131052_schedule_set_confidential_note_events_on_webhooks.rb
 %%WWWDIR%%/db/post_migrate/20180119121225_remove_redundant_pipeline_stages.rb
@@ -8113,6 +8116,7 @@
 %%WWWDIR%%/db/post_migrate/20191105140942_add_indices_to_abuse_reports.rb
 %%WWWDIR%%/db/post_migrate/20191112115317_change_vulnerabilities_title_html_to_nullable.rb
 %%WWWDIR%%/db/post_migrate/20191114173624_set_resolved_state_on_vulnerabilities.rb
+%%WWWDIR%%/db/post_migrate/20191122135327_remove_plaintext_columns_from_application_settings.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/doc/README.md
@@ -16496,6 +16500,7 @@
 %%WWWDIR%%/spec/initializers/doorkeeper_spec.rb
 %%WWWDIR%%/spec/initializers/fog_google_https_private_urls_spec.rb
 %%WWWDIR%%/spec/initializers/google_api_client_spec.rb
+%%WWWDIR%%/spec/initializers/hangouts_chat_http_override_spec.rb
 %%WWWDIR%%/spec/initializers/lograge_spec.rb
 %%WWWDIR%%/spec/initializers/rest-client-hostname_override_spec.rb
 %%WWWDIR%%/spec/initializers/secret_token_spec.rb
@@ -18226,6 +18231,7 @@
 %%WWWDIR%%/spec/migrations/drop_duplicate_protected_tags_spec.rb
 %%WWWDIR%%/spec/migrations/encrypt_deploy_tokens_tokens_spec.rb
 %%WWWDIR%%/spec/migrations/encrypt_feature_flags_clients_tokens_spec.rb
+%%WWWDIR%%/spec/migrations/encrypt_plaintext_attributes_on_application_settings_spec.rb
 %%WWWDIR%%/spec/migrations/enqueue_reset_merge_status_second_run_spec.rb
 %%WWWDIR%%/spec/migrations/enqueue_reset_merge_status_spec.rb
 %%WWWDIR%%/spec/migrations/enqueue_verify_pages_domain_workers_spec.rb
@@ -19733,6 +19739,7 @@
 %%WWWDIR%%/spec/support/shared_examples/uploaders/gitlab_uploader_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/uploaders/object_storage_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/url_validator_examples.rb
+%%WWWDIR%%/spec/support/shared_examples/uses_gitlab_url_blocker_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/versioned_description_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/views/nav_sidebar.rb
 %%WWWDIR%%/spec/support/shared_examples/wiki_file_attachments_examples.rb
