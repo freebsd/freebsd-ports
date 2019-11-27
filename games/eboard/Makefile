@@ -33,6 +33,7 @@ INSTALL_TARGET=	install install-man
 
 OPTIONS_DEFINE=	JOYSTICK DOCS
 JOYSTICK_DESC=	Enable joystick support
+JOYSTICK_BUILD_DEPENDS=	${LOCALBASE}/include/linux/joystick.h:devel/evdev-proto
 
 DESKTOP_ENTRIES="eboard" \
 		"Play chess" \
@@ -42,11 +43,6 @@ DESKTOP_ENTRIES="eboard" \
 		true
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MJOYSTICK}
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:devel/linux-js
-RUN_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:devel/linux-js
-.endif
 
 post-extract:
 .for e in ${EXTRAS}
