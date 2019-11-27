@@ -559,6 +559,7 @@
     SUBDIR += nas
     SUBDIR += ncmpc
     SUBDIR += ncmpcpp
+    SUBDIR += ncspot
     SUBDIR += nekobee
     SUBDIR += nekobi-lv2
     SUBDIR += noise-repellent-lv2
