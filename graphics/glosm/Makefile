@@ -3,9 +3,9 @@
 
 PORTNAME=	glosm
 PORTVERSION=	0.0.2
+DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	6
 CATEGORIES=	graphics geography
-MASTER_SITES=	GHC http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D OpenGL renderer for OpenStreetMap
