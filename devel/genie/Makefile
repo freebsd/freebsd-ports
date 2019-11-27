@@ -14,6 +14,7 @@ GH_PROJECT=	GENie
 GH_TAGNAME=	d054bb1
 
 MAKE_ARGS=	-C build/gmake.freebsd config=release CC=${CC} CXX=${CXX}
+MAKE_JOBS_UNSAFE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
 LICENSE=	BSD3CLAUSE
