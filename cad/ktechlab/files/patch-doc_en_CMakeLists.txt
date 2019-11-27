@@ -1,0 +1,5 @@
+--- doc/en/CMakeLists.txt.orig	2019-11-27 18:08:55 UTC
++++ doc/en/CMakeLists.txt
+@@ -1 +1 @@
+-kdoctools_create_handbook(index.docbook INSTALL_DESTINATION ${HTML_INSTALL_DIR}/en SUBDIR ktechlab)
++kdoctools_create_handbook(index.docbook INSTALL_DESTINATION share/doc SUBDIR ktechlab)

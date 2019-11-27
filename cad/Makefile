@@ -57,6 +57,7 @@
     SUBDIR += kicad-library-templates
     SUBDIR += kicad-library-templates-devel
     SUBDIR += klayout
+    SUBDIR += ktechlab
     SUBDIR += ldraw
     SUBDIR += leocad
     SUBDIR += lepton-eda
