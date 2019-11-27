@@ -16,7 +16,6 @@ BROKEN_aarch64=		fails to compile: crt1.c: undefined reference to main
 BROKEN_armv6=		fails to compile: crt1.c: undefined reference to main
 BROKEN_armv7=		fails to compile: crt1.c: undefined reference to main
 BROKEN_mips64=		fails to build: build.sh: clang: not found
-BROKEN_powerpc64=	fails to build: build.sh: clang: not found
 BROKEN_sparc64=		fails to build: build.sh: clang: not found
 
 TOOLS_DESC=	Build and install nimgrep and nimsuggest
@@ -31,9 +30,15 @@ USES=		compiler tar:xz
 
 TLIST=	nimgrep nimsuggest
 
+.if ${ARCH} == "powerpc64"
+.  if defined(PPC_ABI) && ${PPC_ABI} == ELFv1 
+EXTRA_PATCHES=	${PATCHDIR}/elfv1-patch-build.sh
+.  endif
+.endif
+
 post-patch:
-.if ${COMPILER_TYPE} == clang
-	@${REINPLACE_CMD} -e '/cc =/s/gcc/clang/' ${WRKSRC}/config/nim.cfg
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
+	@${REINPLACE_CMD} -e '/cc =/s/clang/gcc/' ${WRKSRC}/config/nim.cfg
 .endif
 
 do-build:
