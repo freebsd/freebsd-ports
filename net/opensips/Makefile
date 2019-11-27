@@ -3,7 +3,7 @@
 
 PORTNAME=		opensips
 DISTVERSION=		2.2.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=		net
 MASTER_SITES=		http://opensips.org/pub/opensips/${PORTVERSION}/
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
 BUILD_DEPENDS=		ginstall:sysutils/coreutils \
 			gtar:archivers/gtar \
 			gm4:devel/m4 \
-			redis-server:databases/redis-devel
+			redis-server:databases/redis
 RUN_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash \
 			${LOCALBASE}/bin/grep:textproc/gnugrep
 

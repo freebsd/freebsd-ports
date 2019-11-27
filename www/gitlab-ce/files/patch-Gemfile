@@ -1,4 +1,4 @@
---- Gemfile.orig	2019-10-22 12:01:49 UTC
+--- Gemfile.orig	2019-11-22 03:17:46 UTC
 +++ Gemfile
 @@ -92,7 +92,6 @@ gem 'graphql', '~> 1.9.11'
  # https://gitlab.com/gitlab-org/gitlab/issues/31747
@@ -16,8 +16,8 @@
 +gem 'rouge', '~> 3.11'
  gem 'truncato', '~> 0.7.11'
  gem 'bootstrap_form', '~> 4.2.0'
- gem 'nokogiri', '~> 1.10.4'
-@@ -225,7 +224,7 @@ gem 'redis-rails', '~> 5.0.2'
+ gem 'nokogiri', '~> 1.10.5'
+@@ -226,7 +225,7 @@ gem 'redis-rails', '~> 5.0.2'
  gem 'discordrb-webhooks-blackst0ne', '~> 3.3', require: false
  
  # HipChat integration
@@ -26,14 +26,13 @@
  
  # Jira integration
  gem 'jira-ruby', '~> 1.7'
-@@ -328,85 +327,6 @@ group :metrics do
+@@ -329,89 +328,6 @@ group :metrics do
    # Prometheus
    gem 'prometheus-client-mmap', '~> 0.9.10'
    gem 'raindrops', '~> 0.18'
 -end
 -
 -group :development do
--  gem 'foreman', '~> 0.84.0'
 -  gem 'brakeman', '~> 4.2', require: false
 -  gem 'danger', '~> 6.0', require: false
 -
@@ -90,7 +89,6 @@
 -
 -  gem 'benchmark-ips', '~> 2.3.0', require: false
 -
--  gem 'license_finder', '~> 5.4', require: false
 -  gem 'knapsack', '~> 1.17'
 -
 -  gem 'stackprof', '~> 0.2.10', require: false
@@ -98,6 +96,11 @@
 -  gem 'simple_po_parser', '~> 1.1.2', require: false
 -
 -  gem 'timecop', '~> 0.8.0'
+-end
+-
+-# Gems required in omnibus-gitlab pipeline
+-group :development, :test, :omnibus do
+-  gem 'license_finder', '~> 5.4', require: false
 -end
 -
 -group :test do
@@ -109,6 +112,7 @@
 -  gem 'concurrent-ruby', '~> 1.1'
 -  gem 'test-prof', '~> 0.10.0'
 -  gem 'rspec_junit_formatter'
+-  gem 'guard-rspec'
  end
  
  gem 'octokit', '~> 4.9'

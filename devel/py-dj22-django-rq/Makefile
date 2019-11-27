@@ -3,6 +3,7 @@
 
 PORTNAME=	django-rq
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj22-
 MASTER_SITES=	CHEESESHOP
@@ -20,7 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
-		redis-server:databases/redis
+		redis-server:databases/redis4
 
 USES=		python:3.5+
 USE_PYTHON=	autoplist distutils

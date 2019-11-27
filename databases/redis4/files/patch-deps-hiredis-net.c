@@ -1,6 +1,6 @@
---- deps/hiredis/net.c.orig	2019-09-25 10:40:18 UTC
-+++ deps/hiredis/net.c
-@@ -135,13 +135,12 @@ int redisKeepAlive(redisContext *c, int interval) {
+--- deps/hiredis/net.c.orig	2017-04-22 07:23:27.000000000 -0400
++++ deps/hiredis/net.c	2017-05-05 20:02:09.292479000 -0400
+@@ -135,13 +135,12 @@
  
      val = interval;
  
@@ -16,7 +16,7 @@
      val = interval;
      if (setsockopt(fd, IPPROTO_TCP, TCP_KEEPIDLE, &val, sizeof(val)) < 0) {
          __redisSetError(c,REDIS_ERR_OTHER,strerror(errno));
-@@ -160,6 +159,27 @@ int redisKeepAlive(redisContext *c, int interval) {
+@@ -160,6 +159,27 @@
          __redisSetError(c,REDIS_ERR_OTHER,strerror(errno));
          return REDIS_ERR;
      }
@@ -44,7 +44,7 @@
  #endif
  #endif
  
-@@ -431,7 +451,7 @@ int redisContextConnectUnix(redisContext *c, const cha
+@@ -431,7 +451,7 @@
      struct sockaddr_un sa;
      long timeout_msec = -1;
  
@@ -53,7 +53,7 @@
          return REDIS_ERR;
      if (redisSetBlocking(c,0) != REDIS_OK)
          return REDIS_ERR;
-@@ -456,7 +476,7 @@ int redisContextConnectUnix(redisContext *c, const cha
+@@ -456,7 +476,7 @@
      if (redisContextTimeoutMsec(c,&timeout_msec) != REDIS_OK)
          return REDIS_ERR;
  
