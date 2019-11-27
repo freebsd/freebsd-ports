@@ -4,8 +4,8 @@
 PORTNAME=	chan_sccp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.2
-DISTVERSIONSUFFIX=	-delta
-PORTREVISION=	2
+DISTVERSIONSUFFIX=	-epsilon
+PORTREVISION=	3
 CATEGORIES=	net
 PKGNAMEPREFIX=	asterisk-
 
@@ -15,7 +15,7 @@ COMMENT=	Replacement for the SCCP channel driver in Asterisk
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	asterisk13 asterisk16
+FLAVORS=	asterisk16 asterisk13
 FLAVOR?=	${FLAVORS:[1]}
 
 USES=		autoreconf gettext-tools iconv libtool localbase
