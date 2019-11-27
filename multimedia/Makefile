@@ -176,6 +176,7 @@
     SUBDIR += kodi
     SUBDIR += kodi-addon-inputstream.adaptive-devel
     SUBDIR += kodi-addon-peripheral-joystick
+    SUBDIR += kodi-addon-peripheral.joystick-devel
     SUBDIR += kodi-addon-pvr-hts
     SUBDIR += kodi-addon-pvr-iptvsimple
     SUBDIR += kodi-addon-vfs.libarchive-devel
