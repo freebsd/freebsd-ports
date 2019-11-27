@@ -2,6 +2,7 @@
 
 PORTNAME=	roundcube
 DISTVERSION=	1.4.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/${DISTVERSION}/
@@ -26,7 +27,7 @@ USES=		cpe php:web,flavors
 CPE_PRODUCT=	webmail
 CPE_VENDOR=	roundcube
 
-USE_PHP=	pcre mbstring session iconv dom xml json intl zip filter openssl fileinfo exif
+USE_PHP=	pcre mbstring session iconv dom xml json intl zip filter openssl fileinfo exif ctype
 
 OPTIONS_DEFINE=	LDAP GD PSPELL NSC DOCS EXAMPLES
 OPTIONS_MULTI=	DB
