@@ -1,0 +1,9 @@
+Ncspot is a Spotify client written in Rust.  It is heavily inspired
+by ncurses MPD clients, such as ncmpc.  It provides a simple and
+resource friendly alternative to the official client as well as
+support for platforms that currently do not have a Spotify client,
+such as the BSDs.
+
+Ncspot requires a Spotify Premium account.
+
+WWW: https://github.com/hrkfdn/ncspot
