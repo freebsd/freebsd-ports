@@ -2,16 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	tfel
-PORTVERSION=	3.1.2
-PORTREVISION=	7
+PORTVERSION=	3.2.1
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/
 PKGNAMESUFFIX=	-mfront
 
 MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	Code generation tool dedicated to material knowledge
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv3
 
@@ -24,17 +21,16 @@ OPTIONS_DEFINE=		DOCS PYTHON
 OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
+PYTHON_USES=		localbase python
 PYTHON_LIB_DEPENDS=	${PY_BOOST}
-PYTHON_USES=		localbase python:2.7
-PYTHON_CMAKE_ARGS=	`-Denable-python=ON -Denable-python-bindings=ON`
-PYTHON_CMAKE_ARGS+=	-Denable-broken-boost-python-module-visibility-handling
+#XXX This looks wrong but it works, the regular method doesn't !
+PYTHON_CMAKE_ON=	-Denable-python=ON -Denable-python-bindings=ON
 
-CMAKE_ARGS+=	-Denable-aster=ON
-CMAKE_ARGS+=	-Denable-calculix=ON
+CMAKE_ON=	enable-aster enable-calculix
 USE_LDCONFIG=	yes
 
 .ifdef PACKAGE_BUILDING
-CMAKE_ARGS+=	-Denable-portable-build=ON
+CMAKE_ON+=	enable-portable-build
 .endif
 
 TEST_TARGET=	check
