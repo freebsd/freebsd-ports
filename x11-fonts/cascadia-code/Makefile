@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cascadia-code
-DISTVERSION=	1911.20
+DISTVERSION=	1911.21
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/microsoft/cascadia-code/releases/download/v${DISTVERSION}/
 DISTFILES=	Cascadia.ttf \
