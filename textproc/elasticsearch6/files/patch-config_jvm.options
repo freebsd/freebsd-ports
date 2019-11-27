@@ -1,5 +1,5 @@
---- config/jvm.options.orig	2019-07-24 08:21:42.000000000 -0700
-+++ config/jvm.options	2019-08-16 13:41:33.818798000 -0700
+--- config/jvm.options.orig	2019-11-13 20:02:23 UTC
++++ config/jvm.options
 @@ -107,13 +107,13 @@
  8:-XX:+PrintGCDateStamps
  8:-XX:+PrintTenuringDistribution
