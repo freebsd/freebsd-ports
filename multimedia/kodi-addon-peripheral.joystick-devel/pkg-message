@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Do not forget install webcamd with joystick support and run it,
+/dev/input/js* device is required.
+EOM
+}
+]
