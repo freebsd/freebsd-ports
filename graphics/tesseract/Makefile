@@ -53,7 +53,6 @@ TOOLS_USE=	GNOME=cairo,glib20,pango
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3 -DNDEBUG||' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/doc/Makefile.am
 
 post-build-TOOLS-on:
 	@cd ${WRKSRC} && ${MAKE} training
