@@ -9,7 +9,6 @@ lib/kritaplugins/krita_shape_artistictext.so
 lib/kritaplugins/krita_shape_image.so
 lib/kritaplugins/krita_shape_paths.so
 lib/kritaplugins/krita_shape_text.so
-lib/kritaplugins/krita_tool_basicflakes.so
 lib/kritaplugins/krita_tool_svgtext.so
 lib/kritaplugins/kritaanimationdocker.so
 lib/kritaplugins/kritaanimationrenderer.so
@@ -32,8 +31,6 @@ lib/kritaplugins/kritacolorspaceconversion.so
 lib/kritaplugins/kritacompositiondocker.so
 lib/kritaplugins/kritaconvertheighttonormalmap.so
 lib/kritaplugins/kritaconvolutionfilters.so
-lib/kritaplugins/kritacsvexport.so
-lib/kritaplugins/kritacsvimport.so
 lib/kritaplugins/kritacurvepaintop.so
 lib/kritaplugins/kritadefaultpaintops.so
 lib/kritaplugins/kritadefaulttools.so
@@ -251,7 +248,6 @@ lib/libkritawidgetutils.so.%%SHLIB_VER%%
 %%QT_QMLDIR%%/org/krita/sketch/libkritasketchplugin.so
 %%QT_QMLDIR%%/org/krita/sketch/qmldir
 share/applications/krita_brush.desktop
-share/applications/krita_csv.desktop
 %%OPENEXR%%share/applications/krita_exr.desktop
 share/applications/krita_gif.desktop
 share/applications/krita_heightmap.desktop
