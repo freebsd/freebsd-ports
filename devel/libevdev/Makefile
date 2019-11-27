@@ -2,6 +2,7 @@
 
 PORTNAME=	libevdev
 PORTVERSION=	1.5.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/
 
