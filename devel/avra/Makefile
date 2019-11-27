@@ -7,36 +7,36 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Macro Assembler for Atmel AVR microcontrollers
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
-USES=		tar:bzip2 gmake
-MAKEFILE=	${WRKSRC}/makefiles/Makefile.linux
+USES=		gmake tar:bzip2
+MAKEFILE=	${BUILD_WRKSRC}/makefiles/Makefile.linux
 MAKE_ARGS=	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+
+BUILD_WRKSRC=	${WRKSRC}/src
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 PORTDATA=	*
 PLIST_FILES=	bin/avra
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/avra ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/avra ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC}/.. && ${COPYTREE_SHARE} includes ${STAGEDIR}${DATADIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} includes ${STAGEDIR}${DATADIR})
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/../doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/../examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
