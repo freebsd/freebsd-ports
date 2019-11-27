@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	desktop-installer
-DISTVERSION=	0.6.8
+DISTVERSION=	0.6.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
