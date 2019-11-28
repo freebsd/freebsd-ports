@@ -8430,6 +8430,10 @@
 %%DATADIR%%/modules/packages3d/LED_SMD.3dshapes/LED_Inolux_IN-PI554FCH_PLCC4_5.0x5.0mm_P3.2mm.wrl
 %%DATADIR%%/modules/packages3d/LED_SMD.3dshapes/LED_RGB_5050-6.step
 %%DATADIR%%/modules/packages3d/LED_SMD.3dshapes/LED_RGB_5050-6.wrl
+%%DATADIR%%/modules/packages3d/LED_SMD.3dshapes/LED_SK6812_PLCC4_5.0x5.0mm_P3.2mm.step
+%%DATADIR%%/modules/packages3d/LED_SMD.3dshapes/LED_SK6812_PLCC4_5.0x5.0mm_P3.2mm.wrl
+%%DATADIR%%/modules/packages3d/LED_SMD.3dshapes/LED_WS2812_PLCC6_5.0x5.0mm_P1.6mm.step
+%%DATADIR%%/modules/packages3d/LED_SMD.3dshapes/LED_WS2812_PLCC6_5.0x5.0mm_P1.6mm.wrl
 %%DATADIR%%/modules/packages3d/LED_SMD.3dshapes/LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm.step
 %%DATADIR%%/modules/packages3d/LED_SMD.3dshapes/LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm.wrl
 %%DATADIR%%/modules/packages3d/LED_THT.3dshapes/LED_D1.8mm_W1.8mm_H2.4mm_Horizontal_O1.27mm_Z1.6mm.step
@@ -9054,6 +9058,8 @@
 %%DATADIR%%/modules/packages3d/Package_DFN_QFN.3dshapes/QFN-28-1EP_5x6mm_P0.5mm_EP3.65x4.65mm.wrl
 %%DATADIR%%/modules/packages3d/Package_DFN_QFN.3dshapes/QFN-28-1EP_6x6mm_P0.65mm_EP4.25x4.25mm.step
 %%DATADIR%%/modules/packages3d/Package_DFN_QFN.3dshapes/QFN-28-1EP_6x6mm_P0.65mm_EP4.25x4.25mm.wrl
+%%DATADIR%%/modules/packages3d/Package_DFN_QFN.3dshapes/QFN-28-1EP_6x6mm_P0.65mm_EP4.8x4.8mm.step
+%%DATADIR%%/modules/packages3d/Package_DFN_QFN.3dshapes/QFN-28-1EP_6x6mm_P0.65mm_EP4.8x4.8mm.wrl
 %%DATADIR%%/modules/packages3d/Package_DFN_QFN.3dshapes/QFN-28_4x4mm_P0.5mm.step
 %%DATADIR%%/modules/packages3d/Package_DFN_QFN.3dshapes/QFN-28_4x4mm_P0.5mm.wrl
 %%DATADIR%%/modules/packages3d/Package_DFN_QFN.3dshapes/QFN-32-1EP_4x4mm_P0.4mm_EP2.65x2.65mm.step
