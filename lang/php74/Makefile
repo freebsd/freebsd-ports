@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	php74
-DISTVERSION=	7.4.0RC6
+DISTVERSION=	7.4.0
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
-MASTER_SITES=	https://downloads.php.net/~derick/
+MASTER_SITES=   PHP/distributions
 DISTNAME=	php-${DISTVERSION}
 
 MAINTAINER=	tz@FreeBSD.org
