@@ -1,0 +1,10 @@
+--- plugin/auth_pam/testing/CMakeLists.txt.orig	2019-11-07 05:52:22 UTC
++++ plugin/auth_pam/testing/CMakeLists.txt
+@@ -5,5 +5,7 @@ SET_TARGET_PROPERTIES (pam_mariadb_mtr PROPERTIES PREF
+ TARGET_LINK_LIBRARIES(pam_mariadb_mtr pam)
+ 
+ SET(dest DESTINATION "${INSTALL_MYSQLTESTDIR}/suite/plugins/pam" COMPONENT Test)
++IF(FALSE)
+ INSTALL(TARGETS pam_mariadb_mtr ${dest})
+ INSTALL(FILES mariadb_mtr.conf RENAME mariadb_mtr ${dest})
++ENDIF()
