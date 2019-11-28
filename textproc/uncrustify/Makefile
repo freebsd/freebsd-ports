@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uncrustify
-PORTVERSION=	0.70.0
+PORTVERSION=	0.70.1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	textproc
 
@@ -19,17 +19,16 @@ CMAKE_ARGS=	-DNoGitVersionString:BOOL=TRUE
 TEST_TARGET=	test
 
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS
+PLIST_FILES=	bin/uncrustify man/man1/uncrustify.1.gz
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 # fixes build on gcc archs (unrecognized command line option
 # -std=gnu++0x), but may introduce other errors in future
 post-patch:
 	@${REINPLACE_CMD} -e '/gnu++0x/ d' ${WRKSRC}/CMakeLists.txt
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/*.cfg ${STAGEDIR}${ETCDIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
