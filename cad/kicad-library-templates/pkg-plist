@@ -1,3 +1,19 @@
+%%DATADIR%%/template/A2_ISO5457-1999_ISO7200-2004-compact_ASMEY1435-2014_EN.kicad_wks
+%%DATADIR%%/template/A2_ISO5457-1999_ISO7200-2004-compact_EN.kicad_wks
+%%DATADIR%%/template/A2_ISO5457-1999_ISO7200-2004_ASMEY1435-2014_EN.kicad_wks
+%%DATADIR%%/template/A2_ISO5457-1999_ISO7200-2004_EN.kicad_wks
+%%DATADIR%%/template/A3_ISO5457-1999_ISO7200-2004-compact_ASMEY1435-2014_EN.kicad_wks
+%%DATADIR%%/template/A3_ISO5457-1999_ISO7200-2004-compact_EN.kicad_wks
+%%DATADIR%%/template/A3_ISO5457-1999_ISO7200-2004_ASMEY1435-2014_EN.kicad_wks
+%%DATADIR%%/template/A3_ISO5457-1999_ISO7200-2004_EN.kicad_wks
+%%DATADIR%%/template/A4-portrait_ISO5457-1999_ISO7200-2004-compact_ASMEY1435-2014_EN.kicad_wks
+%%DATADIR%%/template/A4-portrait_ISO5457-1999_ISO7200-2004-compact_EN.kicad_wks
+%%DATADIR%%/template/A4-portrait_ISO5457-1999_ISO7200-2004_ASMEY1435-2014_EN.kicad_wks
+%%DATADIR%%/template/A4-portrait_ISO5457-1999_ISO7200-2004_EN.kicad_wks
+%%DATADIR%%/template/A4_ISO5457-1999_ISO7200-2004-compact_ASMEY1435-2014_EN.kicad_wks
+%%DATADIR%%/template/A4_ISO5457-1999_ISO7200-2004-compact_EN.kicad_wks
+%%DATADIR%%/template/A4_ISO5457-1999_ISO7200-2004_ASMEY1435-2014_EN.kicad_wks
+%%DATADIR%%/template/A4_ISO5457-1999_ISO7200-2004_EN.kicad_wks
 %%DATADIR%%/template/Arduino_Fio/Arduino_Fio-cache.lib
 %%DATADIR%%/template/Arduino_Fio/Arduino_Fio.kicad_pcb
 %%DATADIR%%/template/Arduino_Fio/Arduino_Fio.net
@@ -116,7 +132,6 @@
 %%DATADIR%%/template/BeagleBone-Black-Cape/meta/brd.png
 %%DATADIR%%/template/BeagleBone-Black-Cape/meta/icon.png
 %%DATADIR%%/template/BeagleBone-Black-Cape/meta/info.html
-%%DATADIR%%/template/BeagleBone-Black-Cape/pwr_BeagleBone.bck
 %%DATADIR%%/template/BeagleBone-Black-Cape/pwr_BeagleBone.dcm
 %%DATADIR%%/template/BeagleBone-Black-Cape/pwr_BeagleBone.lib
 %%DATADIR%%/template/BeagleBone-Black-Cape/sym-lib-table

@@ -250,6 +250,8 @@
 %%DATADIR%%/library/MCU_ST_STM8.lib
 %%DATADIR%%/library/MCU_Texas_MSP430.dcm
 %%DATADIR%%/library/MCU_Texas_MSP430.lib
+%%DATADIR%%/library/MCU_Texas_SimpleLink.dcm
+%%DATADIR%%/library/MCU_Texas_SimpleLink.lib
 %%DATADIR%%/library/MCU_Texas.dcm
 %%DATADIR%%/library/MCU_Texas.lib
 %%DATADIR%%/library/Mechanical.dcm
