@@ -1,0 +1,23 @@
+--- src/makefiles/Makefile.linux.orig	2019-04-24 20:15:58 UTC
++++ src/makefiles/Makefile.linux
+@@ -1,7 +1,7 @@
+-CC = gcc
+-LD = gcc -static
+-CFLAGS = -Wall -O3 $(CDEFS)
+-LDFLAGS = -s
++CC ?= gcc
++CFLAGS ?= -Wall -O3
++CFLAGS += $(CDEFS)
++LDFLAGS ?= -s
+ 
+ SOURCES = avra.c \
+ 	device.c \
+@@ -19,7 +19,7 @@ SOURCES = avra.c \
+ OBJECTS = $(SOURCES:.c=.o)
+ 
+ avra: $(OBJECTS)
+-	$(LD) -o $@ $(OBJECTS) $(LDFLAGS)
++	$(CC) -o $@ $(OBJECTS) $(LDFLAGS)
+ 
+ clean:
+ 	rm -f avra *.o *.p *~
