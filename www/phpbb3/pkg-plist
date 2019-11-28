@@ -998,6 +998,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/merge_duplicate_bbcodes.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/remove_imagick.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/smtp_dynamic_data.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/timezone_p3.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/update_prosilver_bitfield.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_index_p1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_index_p2.php
@@ -1021,6 +1022,8 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v326rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v327.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v327rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v328.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v328rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/exception.php
 %%PHPBBDIR%%/phpbb/db/migration/helper.php
 %%PHPBBDIR%%/phpbb/db/migration/migration.php
@@ -2252,8 +2255,6 @@
 %%PHPBBDIR%%/vendor/ocramius/proxy-manager/tests/language-feature-scripts/null-object-public-property-empty.phpt
 %%PHPBBDIR%%/vendor/ocramius/proxy-manager/tests/language-feature-scripts/remote-object-json-adapter-denies-unknow-method.phpt
 %%PHPBBDIR%%/vendor/paragonie/random_compat/LICENSE
-%%PHPBBDIR%%/vendor/paragonie/random_compat/RATIONALE.md
-%%PHPBBDIR%%/vendor/paragonie/random_compat/build-phar.sh
 %%PHPBBDIR%%/vendor/paragonie/random_compat/composer.json
 %%PHPBBDIR%%/vendor/paragonie/random_compat/lib/byte_safe_strings.php
 %%PHPBBDIR%%/vendor/paragonie/random_compat/lib/cast_to_int.php
@@ -2264,10 +2265,7 @@
 %%PHPBBDIR%%/vendor/paragonie/random_compat/lib/random_bytes_libsodium.php
 %%PHPBBDIR%%/vendor/paragonie/random_compat/lib/random_bytes_libsodium_legacy.php
 %%PHPBBDIR%%/vendor/paragonie/random_compat/lib/random_bytes_mcrypt.php
-%%PHPBBDIR%%/vendor/paragonie/random_compat/lib/random_bytes_openssl.php
 %%PHPBBDIR%%/vendor/paragonie/random_compat/lib/random_int.php
-%%PHPBBDIR%%/vendor/paragonie/random_compat/psalm-autoload.php
-%%PHPBBDIR%%/vendor/paragonie/random_compat/psalm.xml
 %%PHPBBDIR%%/vendor/patchwork/utf8/.gitignore
 %%PHPBBDIR%%/vendor/patchwork/utf8/LICENSE-APACHE
 %%PHPBBDIR%%/vendor/patchwork/utf8/LICENSE-GPL
@@ -3289,6 +3287,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/.php_cs.dist
 %%PHPBBDIR%%/vendor/twig/twig/LICENSE
 %%PHPBBDIR%%/vendor/twig/twig/composer.json
+%%PHPBBDIR%%/vendor/twig/twig/drupal_test.sh
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Autoloader.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/BaseNodeVisitor.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Cache/Filesystem.php
@@ -3532,6 +3531,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/EmbedNode.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/AbstractExpression.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/ArrayExpression.php
+%%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/ArrowFunctionExpression.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/AssignNameExpression.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/Binary/AbstractBinary.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/Binary/AddBinary.php
@@ -3638,6 +3638,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/src/Test/NodeTestCase.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Token.php
 %%PHPBBDIR%%/vendor/twig/twig/src/TokenParser/AbstractTokenParser.php
+%%PHPBBDIR%%/vendor/twig/twig/src/TokenParser/ApplyTokenParser.php
 %%PHPBBDIR%%/vendor/twig/twig/src/TokenParser/AutoEscapeTokenParser.php
 %%PHPBBDIR%%/vendor/twig/twig/src/TokenParser/BlockTokenParser.php
 %%PHPBBDIR%%/vendor/twig/twig/src/TokenParser/DeprecatedTokenParser.php
