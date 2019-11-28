@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	phpbb
-DISTVERSION=	3.2.7
+DISTVERSION=	3.2.8
 CATEGORIES=	www
-MASTER_SITES=	https://www.phpbb.com/files/release/
+MASTER_SITES=	https://download.phpbb.com/pub/release/${PORTVERSION:C/([0-9]+\.[0-9]+).*/\1/}/${PORTVERSION}/
 PKGNAMESUFFIX=	3
 DISTNAME=	phpBB-${PORTVERSION}
 
