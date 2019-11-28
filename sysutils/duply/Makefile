@@ -5,13 +5,11 @@ PORTNAME=	duply
 PORTVERSION=	2.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	https://duply.net/projects/ftplicity/files/latest/download/
+MASTER_SITES=	https://duply.net/projects/ftplicity/files/duply%20%28simple%20duplicity%29/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Shell front end for the duplicity backup tool
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
