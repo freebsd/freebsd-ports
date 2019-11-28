@@ -22,6 +22,7 @@ OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
 PYTHON_USES=		localbase python
+PYTHON_BUILD_DEPENDS=	${LOCALBASE}/include/boost/python.hpp:devel/boost-libs
 PYTHON_LIB_DEPENDS=	${PY_BOOST}
 #XXX This looks wrong but it works, the regular method doesn't !
 PYTHON_CMAKE_ON=	-Denable-python=ON -Denable-python-bindings=ON
