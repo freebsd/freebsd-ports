@@ -2275,6 +2275,7 @@
     SUBDIR += tdom
     SUBDIR += template_
     SUBDIR += templatelite
+    SUBDIR += thirtybees
     SUBDIR += thttpd
     SUBDIR += thumbnail_index
     SUBDIR += thundercache
