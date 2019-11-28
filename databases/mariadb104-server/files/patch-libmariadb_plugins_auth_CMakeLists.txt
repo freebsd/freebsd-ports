@@ -1,24 +1,24 @@
---- libmariadb/plugins/auth/CMakeLists.txt.orig	2018-05-23 20:38:41 UTC
+--- libmariadb/plugins/auth/CMakeLists.txt.orig	2019-11-07 05:52:21 UTC
 +++ libmariadb/plugins/auth/CMakeLists.txt
-@@ -38,6 +38,7 @@ IF(GSSAPI_SOURCES)
-                   LIBRARIES ${GSSAPI_LIBS})
- ENDIF()
+@@ -3,6 +3,7 @@ SET(AUTH_DIR ${CC_SOURCE_DIR}/plugins/auth)
+ INCLUDE_DIRECTORIES(${AUTH_DIR})
+ INCLUDE_DIRECTORIES(${CC_SOURCE_DIR}/include)
  
 +IF(NOT WITHOUT_CLIENT)
- IF(${WITH_SSL} STREQUAL "OPENSSL" OR ${WITH_SSL} STREQUAL "SCHANNEL")
-   IF(WIN32)
-     SET(SHA256_LIBS crypt32)
-@@ -51,6 +52,7 @@ IF(${WITH_SSL} STREQUAL "OPENSSL" OR ${W
-                   SOURCES ${AUTH_DIR}/sha256_pw.c
-                   LIBRARIES ${SHA256_LIBS})
+ SET(CRYPTO_PLUGIN 1)
+ IF(WIN32)
+   SET(CRYPT_SOURCE ${CC_SOURCE_DIR}/libmariadb/secure/win_crypt.c)
+@@ -18,6 +19,7 @@ ELSEIF(WITH_SSL STREQUAL "GNUTLS")
+ ELSE()
+   UNSET(CRYPTO_PLUGIN)
  ENDIF()
 +ENDIF()
  
- # old_password plugin
- REGISTER_PLUGIN(TARGET mysql_old_password
-@@ -60,10 +62,11 @@ REGISTER_PLUGIN(TARGET mysql_old_passwor
+ #native password
+ REGISTER_PLUGIN(TARGET mysql_native_password
+@@ -119,10 +121,11 @@ REGISTER_PLUGIN(TARGET mysql_old_password
+                 DEFAULT STATIC
                  SOURCES ${AUTH_DIR}/old_password.c)
- 
  
 +IF(NOT WITHOUT_CLIENT)
  # Cleartext

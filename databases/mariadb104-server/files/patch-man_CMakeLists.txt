@@ -1,8 +1,8 @@
 Fix up missing WITHOUT_DOCS, WITHOUT_CLIENT options
 
---- man/CMakeLists.txt.orig	2017-05-14 23:13:16 UTC
+--- man/CMakeLists.txt.orig	2019-11-07 05:52:21 UTC
 +++ man/CMakeLists.txt
-@@ -38,7 +38,8 @@ SET(MAN1_TEST mysql-stress-test.pl.1 mys
+@@ -40,10 +40,11 @@ SET(MAN1_TEST mysql-stress-test.pl.1 mysql-test-run.pl
  
  INSTALL(FILES ${MAN1_SERVER} DESTINATION ${INSTALL_MANDIR}/man1 COMPONENT ManPagesServer)
  INSTALL(FILES ${MAN8_SERVER} DESTINATION ${INSTALL_MANDIR}/man8 COMPONENT ManPagesServer)
@@ -12,3 +12,6 @@ Fix up missing WITHOUT_DOCS, WITHOUT_CLIENT options
  INSTALL(FILES ${MAN1_TEST} DESTINATION ${INSTALL_MANDIR}/man1 COMPONENT ManPagesTest)
 -
 +ENDIF()
+ macro(MARIADB_SYMLINK_MANPAGE)
+   list(LENGTH MARIADB_SYMLINK_FROMS _len)
+   math(EXPR _listlen "${_len}-1")

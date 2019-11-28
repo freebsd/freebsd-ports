@@ -309,12 +309,9 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/ukrainian/errmsg.sys
 %%WSREP%%%%DATADIR%%/wsrep.cnf
 %%WSREP%%%%DATADIR%%/wsrep_notify
-%%DOCSDIR%%/CREDITS
 @comment %%DOCSDIR%%/COPYING
-%%DOCSDIR%%/EXCEPTIONS-CLIENT
 %%DOCSDIR%%/INSTALL-BINARY
 %%WSREP%%%%DOCSDIR%%/README-wsrep
-%%DOCSDIR%%/README.md
 @comment %%DOCSDIR%%/THIRDPARTY
 @comment share/groonga-normalizer-mysql/lgpl-2.0.txt
 @comment share/groonga/COPYING
