@@ -19,9 +19,11 @@ handlers:
     backupCount: 10
     filters: [context]
     level: INFO
+    encoding: utf8
   console:
     class: logging.StreamHandler
     formatter: precise
+    filters: [context]
 
 loggers:
     synapse:
