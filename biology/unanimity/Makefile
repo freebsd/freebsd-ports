@@ -11,8 +11,6 @@ CATEGORIES=		biology
 MAINTAINER=     ports@FreeBSD.org
 COMMENT=	Pacific Biosciences consensus library and applications
 
-BROKEN=		unfetchable
-
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
