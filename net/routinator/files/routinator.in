@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: routinator
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=routinator
+desc="RPKI signed route collector and validator"
+rcvar="routinator_enable"
+start_precmd=check_init
+command="%%PREFIX%%/bin/${name}"
+
+load_rc_config ${name}
+
+: ${name_enable=:"NO"}
+: ${wrkdir:="/var/routinator"}
+
+pidfile=${wrkdir}/${name}.pid
+routinator_config=${routinator_conf:-"%%ETCDIR%%/routinator.conf"}
+required_file=${routinator_config}
+command_args="-c ${routinator_config} --rsync-command=%%PREFIX%%/bin/rsync server -d --user %%USERS%% --group %%GROUPS%% --pid-file=${pidfile} --working-dir=${wrkdir}"
+
+check_init() {
+	if [ ! -d ${wrkdir}/tals ]; then
+		echo
+		echo -n "Need to initialize routinator with tals, "
+		echo "see man routinator"
+		echo
+		exit 1
+	fi
+}
+
+run_rc_command "$1"

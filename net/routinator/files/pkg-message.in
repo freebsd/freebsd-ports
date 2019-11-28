@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+
+  Before running the server, the TALS need to be populated and initialized
+  To do so, run 
+
+    sudo -u %%USERS%% -g %%GROUPS%% routinator -c %%ETCDIR%%/routinator.conf init
+
+  and rerun as needed e.g.:
+
+    sudo -u %%USERS%% -g %%GROUPS%% routinator -c %%ETCDIR%%/routinator.conf init --accept-arin-rpa
+
+  See also man(1) routinator
+
+EOM
+}
+]

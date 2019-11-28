@@ -190,7 +190,7 @@ tnc:*:241:241::0:0:aprsd:/nonexistent:/bin/sh
 prosody:*:242:242::0:0:Prosody Jabber Server:/nonexistent:/usr/sbin/nologin
 ot-recorder:*:243:243::0:0:OwnTracks Recorder:/nonexistent:/usr/sbin/nologin
 mastodon:*:244:244::0:0:Mastodon User:/usr/local/www/mastodon:/bin/sh
-# free: 245
+routinator:*:245:245::0:0:Routinator 3000 Pseudo User:/nonexistent:/usr/sbin/nologin
 # free: 246
 fcron:*:247:247::0:0:fcron pseudo-user:/nonexistent:/usr/sbin/nologin
 # free: 248
