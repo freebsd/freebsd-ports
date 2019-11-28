@@ -3,7 +3,7 @@
 
 PORTNAME=	zopfli
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	archivers
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,10 +12,10 @@ COMMENT=	Zopfli Compression Algorithm
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gmake
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-
-USES=		gmake
 
 ALL_TARGET=	${PORTNAME} ${PORTNAME}png \
 		lib${PORTNAME} lib${PORTNAME}png
@@ -27,11 +27,13 @@ USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
+PLIST_SUB=	VERSION=${DISTVERSION}
+
 do-install:
 .for f in ${PORTNAME} ${PORTNAME}png
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.for f in lib${PORTNAME}.so.1.0.2 lib${PORTNAME}png.so.1.0.2
+.for f in lib${PORTNAME}.so.${DISTVERSION} lib${PORTNAME}png.so.${DISTVERSION}
 	${INSTALL_LIB} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/lib
 	${LN} -fs ${f} ${STAGEDIR}${PREFIX}/lib/${f:R:R}
 	${LN} -fs ${f:R:R} ${STAGEDIR}${PREFIX}/lib/${f:R:R:R}
