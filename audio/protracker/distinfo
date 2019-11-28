@@ -1,5 +1,5 @@
-TIMESTAMP = 1567236624
-SHA256 (protracker-2.3d.r191.tar.gz) = 045206c6b1e4eb2973a08d45ed78a247e272d12d9332fc091fa128d329191b3a
-SIZE (protracker-2.3d.r191.tar.gz) = 4703268
-SHA256 (protracker-extras-1.tar.gz) = 51a078f344611f6a41e44bab9a8640f363224c41a8a5432f55aeba3bb49fbdbf
-SIZE (protracker-extras-1.tar.gz) = 1267
+TIMESTAMP = 1574956388
+SHA256 (pt2-clone-b37-code.zip) = d7597ab5b46e57dc5cef8358368758cd11e5260926ed18a79a61fe25f32c5b00
+SIZE (pt2-clone-b37-code.zip) = 6984299
+SHA256 (protracker-extras-1.zip) = 51a69c31ef925aa2432f0d3fd9052ecfa1ffdc4b388231a9ab8472e6e4d07ba0
+SIZE (protracker-extras-1.zip) = 1800
