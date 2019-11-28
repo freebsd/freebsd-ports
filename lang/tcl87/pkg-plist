@@ -245,7 +245,6 @@ lib/tcl%%TCL_VER%%/tclIndex
 lib/tcl%%TCL_VER%%/tclooConfig.sh
 lib/tcl%%TCL_VER%%/tcltest-2.5.1.tm
 lib/tcl%%TCL_VER%%/tm.tcl
-lib/tcl%%TCL_VER%%/tzdata/Asia/Qostanay
 lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man1/tclsh.tcl%%PKGNAMESUFFIX%%.1.gz
 %%TCLMAN%%man/man3/attemptckalloc.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -1396,6 +1395,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Pontianak
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Pyongyang
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Qatar
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Qostanay
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Qyzylorda
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Rangoon
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Asia/Riyadh
