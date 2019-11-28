@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.4.3
+DISTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
 
@@ -11,7 +12,7 @@ COMMENT=	Highly scalable, fault-tolerant distributed file system
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/erlang20/bin/erlc:lang/erlang-runtime20 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/erlang21/bin/erlc:lang/erlang-runtime21 \
 		${LOCALBASE}/bin/cmake:devel/cmake \
 		${LOCALBASE}/lib/libcheck.a:devel/check
 
@@ -63,7 +64,7 @@ DOS2UNIX_FILES=	apps/leo_*/snmp/snmpa_*/leo_*_snmp.config
 
 ALL_TARGET=	release
 MAKE_JOBS_UNSAFE=yes
-MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang20/bin:${PATH}
+MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang21/bin:${PATH}
 
 LEOFS_DEPS=	\
 	DeadZen/goldrush=0.1.9:goldrush \
