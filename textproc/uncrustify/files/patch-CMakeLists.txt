@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-11-15 17:59:39 UTC
++++ CMakeLists.txt
+@@ -465,7 +465,7 @@ else()
+     DESTINATION "${CMAKE_INSTALL_MANDIR}/man1"
+   )
+   install(DIRECTORY "${PROJECT_SOURCE_DIR}/etc/"
+-    DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/uncrustify"
++    DESTINATION "${CMAKE_INSTALL_DOCDIR}/examples"
+     FILES_MATCHING PATTERN "*.cfg"
+   )
+ endif()
