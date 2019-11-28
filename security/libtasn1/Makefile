@@ -15,6 +15,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe pkgconfig pathfix gmake libtool
+USE_CSTD=	c99
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
