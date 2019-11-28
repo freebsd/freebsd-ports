@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gobuffalo
-PORTVERSION=	0.15.1
+PORTVERSION=	0.15.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -29,22 +29,22 @@ GH_TUPLE=	\
 		fatih:structs:v1.1.0:fatih_structs/vendor/github.com/fatih/structs \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-sql-driver:mysql:v1.4.1:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
-		go-yaml:yaml:v2.2.5:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.2.7:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobuffalo:attrs:v0.1.0:gobuffalo_attrs/vendor/github.com/gobuffalo/attrs \
 		gobuffalo:buffalo-pop:v1.23.1:gobuffalo_buffalo_pop/vendor/github.com/gobuffalo/buffalo-pop \
 		gobuffalo:clara:v0.9.1:gobuffalo_clara/vendor/github.com/gobuffalo/clara \
-		gobuffalo:envy:v1.7.1:gobuffalo_envy/vendor/github.com/gobuffalo/envy \
+		gobuffalo:envy:v1.8.1:gobuffalo_envy/vendor/github.com/gobuffalo/envy \
 		gobuffalo:events:v1.4.0:gobuffalo_events/vendor/github.com/gobuffalo/events \
 		gobuffalo:fizz:v1.9.5:gobuffalo_fizz/vendor/github.com/gobuffalo/fizz \
-		gobuffalo:flect:v0.1.6:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
+		gobuffalo:flect:v0.1.7:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
 		gobuffalo:genny:v0.4.1:gobuffalo_genny/vendor/github.com/gobuffalo/genny \
 		gobuffalo:github_flavored_markdown:v1.1.0:gobuffalo_github_flavored_markdown/vendor/github.com/gobuffalo/github_flavored_markdown \
 		gobuffalo:helpers:v0.4.0:gobuffalo_helpers/vendor/github.com/gobuffalo/helpers \
 		gobuffalo:here:v0.4.0:gobuffalo_here/vendor/github.com/gobuffalo/here \
 		gobuffalo:httptest:v1.4.0:gobuffalo_httptest/vendor/github.com/gobuffalo/httptest \
 		gobuffalo:licenser:v1.4.0:gobuffalo_licenser/vendor/github.com/gobuffalo/licenser \
-		gobuffalo:logger:v1.0.1:gobuffalo_logger/vendor/github.com/gobuffalo/logger \
-		gobuffalo:meta:v0.2.0:gobuffalo_meta/vendor/github.com/gobuffalo/meta \
+		gobuffalo:logger:v1.0.3:gobuffalo_logger/vendor/github.com/gobuffalo/logger \
+		gobuffalo:meta:v0.2.1:gobuffalo_meta/vendor/github.com/gobuffalo/meta \
 		gobuffalo:nulls:v0.1.0:gobuffalo_nulls/vendor/github.com/gobuffalo/nulls \
 		gobuffalo:packd:v0.3.0:gobuffalo_packd/vendor/github.com/gobuffalo/packd \
 		gobuffalo:packr:v2.7.1:gobuffalo_packr/vendor/github.com/gobuffalo/packr \
@@ -57,12 +57,12 @@ GH_TUPLE=	\
 		gobuffalo:validate:v2.0.3:gobuffalo_validate/vendor/github.com/gobuffalo/validate \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		golang:appengine:v1.6.1:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:60c769a6c586:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:ac88ee75c92c:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:74dc4d7220e7:golang_net/vendor/golang.org/x/net \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:fde4db37ae7a:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		golang:tools:3a792d9c32b2:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:c1736c0f0a5b:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:a985d3407aa7:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.3.1:google_go_cmp/vendor/github.com/google/go-cmp \
 		gorilla:mux:v1.7.3:gorilla_mux/vendor/github.com/gorilla/mux \
