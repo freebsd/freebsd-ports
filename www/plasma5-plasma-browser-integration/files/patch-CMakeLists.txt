@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-11-28 17:30:00 UTC
++++ CMakeLists.txt
+@@ -71,7 +71,7 @@ configure_file(org.kde.plasma.firefox_integration.json
+ # #chromium
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION ${KDE_INSTALL_FULL_SYSCONFDIR}/chromium/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
+ # #google-chrome
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION ${KDE_INSTALL_FULL_SYSCONFDIR}/opt/chrome/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.chrome_integration.json DESTINATION ${KDE_INSTALL_FULL_SYSCONFDIR}/chrome/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)
+ # firefox
+ 
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.plasma.firefox_integration.json DESTINATION ${MOZILLA_DIR}/native-messaging-hosts/ RENAME org.kde.plasma.browser_integration.json)

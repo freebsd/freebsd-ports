@@ -1,6 +1,6 @@
 bin/plasma-browser-integration-host
+etc/chrome/native-messaging-hosts/org.kde.plasma.browser_integration.json
 etc/chromium/native-messaging-hosts/org.kde.plasma.browser_integration.json
-etc/opt/chrome/native-messaging-hosts/org.kde.plasma.browser_integration.json
 lib/mozilla/native-messaging-hosts/org.kde.plasma.browser_integration.json
 %%QT_PLUGINDIR%%/kf5/kded/browserintegrationreminder.so
 %%QT_PLUGINDIR%%/krunner_browsertabs.so
