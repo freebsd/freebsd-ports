@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	soapui
-PORTVERSION=	5.2.1
+PORTVERSION=	5.5.0
 CATEGORIES=	devel java www
-MASTER_SITES=	http://smartbearsoftware.com/distrib/soapui/${PORTVERSION}/
+MASTER_SITES=	https://s3.amazonaws.com/downloads.eviware/soapuios/${PORTVERSION}/
 DISTNAME=	SoapUI-${PORTVERSION}-linux-bin
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Web service, SOA, and SOAP testing tool
-
-BROKEN=		unfetchable
 
 LICENSE=	EUPL LGPL21 LGPL3 APACHE11 APACHE20 BSD3CLAUSE MPL11 MIT CPL
 LICENSE_COMB=	multi
