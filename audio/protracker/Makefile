@@ -2,23 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	protracker
-PORTVERSION=	2.3d.r${SVN_REV}
+DISTVERSION=	2.b${BETA_VERSION}
+PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	LOCAL/ehaupt
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-extras-1.tar.gz
+MASTER_SITES=	https://16-bits.org/ \
+		LOCAL/ehaupt
+DISTFILES=	pt2-clone-b${BETA_VERSION}-code${EXTRACT_SUFX} \
+		${PORTNAME}-extras-1${EXTRACT_SUFX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Amiga ProTracker clone
 
 LICENSE=	WTFPL
-LICENSE_FILE=	${WRKSRC}/src/COPYING.txt
 
-USES=		localbase:ldflags sdl
+USES=		localbase:ldflags sdl zip
 USE_CSTD=	c99
 USE_SDL=	sdl2
 
-SVN_URL=	https://svn.code.sf.net/p/protracker/code/trunk
-SVN_REV=	191
+BETA_VERSION=	37
 
 CFLAGS_i386+=	-msse2
 LDFLAGS+=	-lSDL2 -lm
@@ -26,6 +27,8 @@ LDFLAGS+=	-lSDL2 -lm
 PLIST_FILES=	bin/protracker man/man1/protracker.1.gz \
 		share/applications/protracker.desktop \
 		share/pixmaps/protracker.png
+
+WRKSRC=		${WRKDIR}/pt2-clone-code
 
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/src/*.c \
@@ -41,15 +44,5 @@ do-install:
 		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-extras-1/*.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
-
-dist:
-	svn checkout -r ${SVN_REV} ${SVN_URL} ${WRKSRC}
-	${TAR} -C ${WRKDIR} -czpf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		--exclude .svn ${DISTNAME}
-
-cklatest:
-	@${ECHO_CMD} "We got: ${SVN_REV}"
-	@${ECHO_CMD} -n "There is: "
-	@svn info ${SVN_URL} | ${SED} -n 's|^Revision:\ \([0-9]*\)|\1|p'
 
 .include <bsd.port.mk>
