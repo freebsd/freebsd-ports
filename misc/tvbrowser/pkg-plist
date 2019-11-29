@@ -20,6 +20,7 @@ share/applications/tvbrowser.desktop
 %%DATADIR%%/imgs/columns_evening.jpg
 %%DATADIR%%/imgs/columns_midday.jpg
 %%DATADIR%%/imgs/desktop.ico
+%%DATADIR%%/imgs/splash.png
 %%DATADIR%%/imgs/time_block_gray.png
 %%DATADIR%%/imgs/time_block_white.png
 %%DATADIR%%/imgs/tvabout.png
@@ -30,6 +31,17 @@ share/applications/tvbrowser.desktop
 %%DATADIR%%/imgs/unknown_channel.png
 %%DATADIR%%/infothemes/tvb_colored.zip
 %%DATADIR%%/infothemes/tvb_default.zip
+%%DATADIR%%/lib/bsh-core-2.0b6.jar
+%%DATADIR%%/lib/commons-codec-1.11.jar
+%%DATADIR%%/lib/commons-lang3-3.8.1.jar
+%%DATADIR%%/lib/commons-net-3.6.jar
+%%DATADIR%%/lib/htmlparser-1.6.jar
+%%DATADIR%%/lib/jgoodies-common-1.4.0.jar
+%%DATADIR%%/lib/jgoodies-forms-1.6.0.jar
+%%DATADIR%%/lib/jgoodies-looks-2.5.2.jar
+%%DATADIR%%/lib/l2fprod-common-tasks-7.3.jar
+%%DATADIR%%/lib/opencsv-2.3.jar
+%%DATADIR%%/lib/texhyphj-1.1.jar
 %%DATADIR%%/linux.properties
 %%DATADIR%%/personas/3b862288-9900-4c09-99e9-b34d5f926a42/footer.jpg
 %%DATADIR%%/personas/3b862288-9900-4c09-99e9-b34d5f926a42/header.jpg

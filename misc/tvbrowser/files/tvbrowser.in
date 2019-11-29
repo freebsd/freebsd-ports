@@ -3,7 +3,8 @@
 echo "Loading TV-Browser:"
 cd %%DATADIR%%
 JAVA_VERSION="%%JAVA_VERSION%%" exec %%LOCALBASE%%/bin/java \
-  -Xms16m -Xmx512m -XX:+IgnoreUnrecognizedVMOptions \
-  --add-modules=ALL-SYSTEM -Dpropertiesfile=linux-properties \
-  -Djava.library.path="%%DATADIR%%" \
-  -Dpropertiesfile=linux.properties -jar tvbrowser.jar "$@"
+  -Xms16m -Xmx1G \
+  --module-path="lib:tvbrowser.jar" \
+  -splash:imgs/splash.png \
+  -Dpropertiesfile=linux-properties \
+  -m tvbrowser/tvbrowser.TVBrowser "$@"
