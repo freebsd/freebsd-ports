@@ -4,12 +4,10 @@
 PORTNAME=	balance
 PORTVERSION=	3.57
 CATEGORIES=	net
-MASTER_SITES=	http://www.inlab.de/
+MASTER_SITES=	https://www.inlab.net/wp-content/uploads/2018/05/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Simple but powerful generic TCP proxy with round robin features
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
