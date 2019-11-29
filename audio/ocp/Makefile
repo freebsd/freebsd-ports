@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ocp
-PORTVERSION=	0.1.21
-PORTREVISION=	5
+PORTVERSION=	0.2.0
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF/opencubicplayer/${DISTNAME} \
+MASTER_SITES=	https://stian.cubic.org/ocp/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -33,7 +32,6 @@ INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	--with-dir-suffix="" \
-		--without-alsa \
 		--libdir=${PREFIX}/lib
 CONFIGURE_ENV=	SHARED_FLAGS="${LDFLAGS} -shared"
 
@@ -41,8 +39,8 @@ INFO=		ocp
 
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 
-OPTIONS_DEFINE=	ADPLUG FLAC MIDI X11 SDL DOCS
-OPTIONS_DEFAULT=ADPLUG FLAC MIDI X11 SDL
+OPTIONS_DEFINE=	ADPLUG ALSA FLAC MIDI OSS X11 SDL DOCS
+OPTIONS_DEFAULT=ADPLUG ALSA FLAC MIDI OSS X11 SDL
 OPTIONS_SUB=	yes
 
 ADPLUG_DESC=	adplug support
@@ -52,15 +50,20 @@ ADPLUG_CONFIGURE_WITH=	adplug
 ADPLUG_LIB_DEPENDS=	libbinio.so:devel/libbinio \
 			libadplug.so:audio/libadplug
 
+ALSA_CONFIGURE_WITH=	alsa
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+
 FLAC_CONFIGURE_WITH=	flac
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 
 MIDI_RUN_DEPENDS=	eawpats>0:audio/eawpats
 
-SDL_CONFIGURE_WITH=	sdl
+OSS_CONFIGURE_WITH=	oss
+
+SDL_CONFIGURE_WITH=	sdl2
 SDL_PLIST_SUB=		DESKTOP=''
 SDL_PLIST_SUB_OFF=	DESKTOP='@comment '
-SDL_USE=		SDL=sdl
+SDL_USE=		SDL=sdl2
 
 X11_CONFIGURE_WITH=	x11
 X11_PLIST_SUB=		XORG='' DESKTOP=''
@@ -72,15 +75,6 @@ SDL_USES=	desktop-file-utils sdl
 X11_USES=	desktop-file-utils xorg
 
 LDFLAGS_i386=	-Wl,-z,notext
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/.*\.cfg|${TIMIDITY_CFG}|' \
-		${WRKSRC}/playgmi/gmitimidity.c
-# conflicts with fnmatch.h from security/heimdal
-	@${REINPLACE_CMD} -e 's|<\(fnmatch.h\)>|"/usr/include/\1"|' \
-		${WRKSRC}/filesel/adb.c \
-		${WRKSRC}/filesel/pfilesel.c
-	@${REINPLACE_CMD} -e '1s|bash|sh|' ${WRKSRC}/ultrafix.sh
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ocp
