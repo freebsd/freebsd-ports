@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	digikam
-DISTVERSION=	6.3.0
-PORTREVISION=	2
+DISTVERSION=	6.4.0
+PORTREVISION=	0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/digikam/${PORTVERSION}
@@ -29,7 +29,8 @@ LIB_DEPENDS=	libKF5KGeoMap.so:astro/libkgeomap \
 		libopencv_core.so:graphics/opencv-core \
 		libpgf.so:graphics/libpgf \
 		libpng.so:graphics/png \
-		libtiff.so:graphics/tiff
+		libtiff.so:graphics/tiff \
+		libx265.so:multimedia/x265
 
 USES=		bison cmake compiler:c++11-lib desktop-file-utils eigen:3 gl \
 		gnome jpeg kde:5 pkgconfig qt:5 shebangfix tar:xz xorg
@@ -100,9 +101,5 @@ WEBENGINE_USE_OFF=	QT=webkit
 WEBENGINE_CMAKE_BOOL=	ENABLE_QWEBENGINE
 
 PLIST_SUB=		SHLIB_VER=${DISTVERSION}
-
-post-extract:
-# Remove localization file already installed by net/libkvkontakte.
-	${RM} ${WRKSRC}/po/*/libkvkontakte.po
 
 .include <bsd.port.mk>
