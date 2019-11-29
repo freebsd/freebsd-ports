@@ -1,0 +1,37 @@
+From 97d955be198ead6380706704cbe0005fffaccf64 Mon Sep 17 00:00:00 2001
+From: Yasuhiro KIMURA <yasu@utahime.org>
+Date: Tue, 5 Nov 2019 16:13:24 +0900
+Subject: [PATCH] Fix incompatibility with recent master branch of Emacs
+
+http://git.savannah.gnu.org/cgit/emacs.git/commit/?id=0e4dd67aae8b10032317a29a6bd99d2d4a64c897
+
+After above commit treepy.el isn't compatible with master branch of
+Emacs.
+
+For example byte-compiling it results in following error messages.
+
+In treepy--with-loc:
+treepy.el:157:35:Warning: `'node' is a malformed function
+treepy.el:157:35:Warning: `'context' is a malformed function
+treepy.el:160:51:Warning: `t' called as a function
+treepy.el:231:1:Error: Invalid function: 'node
+*** Error code 1
+---
+ treepy.el | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git treepy.el treepy.el
+index c60ee9f..08ad93c 100644
+--- treepy.el
++++ treepy.el
+@@ -41,6 +41,7 @@
+ ;;; Code:
+ 
+ (require 'map)
++(require 'cl-lib)
+ 
+ ;;; Walk (recursive tree traversal)
+ 
+-- 
+2.24.0
+
