@@ -58,6 +58,7 @@
 %%WWWDIR%%/vendor/ipl/html/src/Form.php
 %%WWWDIR%%/vendor/ipl/html/src/FormDecorator/DdDtDecorator.php
 %%WWWDIR%%/vendor/ipl/html/src/FormDecorator/DecoratorInterface.php
+%%WWWDIR%%/vendor/ipl/html/src/FormDecorator/DivDecorator.php
 %%WWWDIR%%/vendor/ipl/html/src/FormElement/BaseFormElement.php
 %%WWWDIR%%/vendor/ipl/html/src/FormElement/CheckboxElement.php
 %%WWWDIR%%/vendor/ipl/html/src/FormElement/DateElement.php
@@ -109,6 +110,7 @@
 %%WWWDIR%%/vendor/ipl/sql/src/WhereInterface.php
 %%WWWDIR%%/vendor/ipl/stdlib/LICENSE
 %%WWWDIR%%/vendor/ipl/stdlib/composer.json
+%%WWWDIR%%/vendor/ipl/stdlib/src/Contract/PaginationInterface.php
 %%WWWDIR%%/vendor/ipl/stdlib/src/Contract/ValidatorInterface.php
 %%WWWDIR%%/vendor/ipl/stdlib/src/Contracts/ValidatorInterface.php
 %%WWWDIR%%/vendor/ipl/stdlib/src/EventEmitter.php
@@ -116,8 +118,10 @@
 %%WWWDIR%%/vendor/ipl/stdlib/src/Loader/PluginLoader.php
 %%WWWDIR%%/vendor/ipl/stdlib/src/Loader/PluginLoaderInterface.php
 %%WWWDIR%%/vendor/ipl/stdlib/src/MessageContainer.php
+%%WWWDIR%%/vendor/ipl/stdlib/src/Str.php
 %%WWWDIR%%/vendor/ipl/stdlib/src/functions.php
 %%WWWDIR%%/vendor/ipl/stdlib/src/functions_include.php
+%%WWWDIR%%/vendor/ipl/stdlib/src/polyfill-php71.php
 %%WWWDIR%%/vendor/psr/http-message/LICENSE
 %%WWWDIR%%/vendor/psr/http-message/composer.json
 %%WWWDIR%%/vendor/psr/http-message/src/MessageInterface.php
