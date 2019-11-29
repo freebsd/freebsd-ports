@@ -1,0 +1,21 @@
+This is from the GCC 9 release branch, already part of lang/gcc9-devel
+snapshots and will be in GCC 9.3.
+
+2019-11-12  Segher Boessenkool  <segher@kernel.crashing.org>
+ 
+	* config/rs6000/rs6000.md (rs6000_set_fpscr_drn): Use ULL on big
+	hexadecimal literal.
+
+Index: gcc/config/rs6000/rs6000.md
+===================================================================
+--- gcc/config/rs6000/rs6000.md	(revision 278106)
++++ gcc/config/rs6000/rs6000.md	(revision 278107)
+@@ -6008,7 +6008,7 @@
+       /* Insert new RN mode into FSCPR.  */
+       emit_insn (gen_rs6000_mffs (tmp_df));
+       tmp_di = simplify_gen_subreg (DImode, tmp_df, DFmode, 0);
+-      emit_insn (gen_anddi3 (tmp_di, tmp_di, GEN_INT (0xFFFFFFF8FFFFFFFF)));
++      emit_insn (gen_anddi3 (tmp_di, tmp_di, GEN_INT (0xFFFFFFF8FFFFFFFFULL)));
+       emit_insn (gen_iordi3 (tmp_di, tmp_di, tmp_rn));
+ 
+       /* Need to write to field 7.  The fields are [0:15].  The equation to
