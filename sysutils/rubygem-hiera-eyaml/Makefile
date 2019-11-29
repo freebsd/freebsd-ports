@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiera-eyaml
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
