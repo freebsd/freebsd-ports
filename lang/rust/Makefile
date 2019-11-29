@@ -35,8 +35,7 @@ IGNORE_FreeBSD_11_powerpc64=	is missing a bootstrap for FreeBSD 11.x powerpc64
 ONLY_FOR_ARCHS?=	aarch64 amd64 armv6 armv7 i386 powerpc64
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
-BUILD_DEPENDS=	cmake:devel/cmake \
-		gmake:devel/gmake
+BUILD_DEPENDS=	cmake:devel/cmake
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2

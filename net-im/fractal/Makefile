@@ -12,7 +12,7 @@ COMMENT=	GTK+ Matrix IM client
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-# gmake for the backtrace-sys crate
+# gmake for the gettext-sys crate
 BUILD_DEPENDS=	cargo:lang/${RUST_DEFAULT} \
 		gmake:devel/gmake
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \

@@ -119,10 +119,6 @@ CARGO_TEST_ARGS+=	--release
 CARGO_INSTALL_ARGS+=	--debug
 .endif
 
-.if ${CARGO_CRATES:Mbacktrace-sys-[0-9]*}
-BUILD_DEPENDS+=	gmake:devel/gmake
-.endif
-
 .if ${CARGO_CRATES:Mcmake-[0-9]*}
 BUILD_DEPENDS+=	cmake:devel/cmake
 .endif
