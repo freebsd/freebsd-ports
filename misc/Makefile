@@ -270,6 +270,7 @@
     SUBDIR += openhantek
     SUBDIR += openhmd
     SUBDIR += openmvg
+    SUBDIR += opennn
     SUBDIR += openr2
     SUBDIR += openvdb
     SUBDIR += orange3
