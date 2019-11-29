@@ -1,0 +1,11 @@
+--- opennn/CMakeLists.txt.orig	2019-11-29 00:38:47 UTC
++++ opennn/CMakeLists.txt
+@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 2.8.10)
+ 
+ project(opennn)
+ 
+-add_library(opennn
++add_library(opennn SHARED
+ adaptive_moment_estimation.cpp
+ association_rules.cpp
+ bounding_layer.cpp
