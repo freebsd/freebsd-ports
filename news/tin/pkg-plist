@@ -19,6 +19,7 @@ man/man5/tin_mmdf.5.gz
 %%NLS%%share/locale/da/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/de/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/tin.mo
+%%NLS%%share/locale/es/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/et/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/tin.mo
