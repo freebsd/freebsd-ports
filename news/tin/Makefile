@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tin
-PORTVERSION=	2.4.2
-PORTREVISION=	6
+PORTVERSION=	2.4.3
 CATEGORIES+=	news
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/v${PORTVERSION:R}/ \
@@ -98,6 +97,7 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/tin.defaults \
 		${STAGEDIR}${PREFIX}/etc/tin.defaults.sample
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tin
 	ln -sf tin ${STAGEDIR}${PREFIX}/bin/rtin
 
 .include <bsd.port.mk>
