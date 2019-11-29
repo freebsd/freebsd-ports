@@ -1,4 +1,5 @@
 include/libknet.h
+include/libnozzle.h
 lib/kronosnet/compress_bzip2.a
 lib/kronosnet/compress_bzip2.so
 lib/kronosnet/compress_lz4.a
@@ -11,6 +12,8 @@ lib/kronosnet/compress_lzo2.a
 lib/kronosnet/compress_lzo2.so
 lib/kronosnet/compress_zlib.a
 lib/kronosnet/compress_zlib.so
+lib/kronosnet/compress_zstd.a
+lib/kronosnet/compress_zstd.so
 lib/kronosnet/crypto_openssl.a
 lib/kronosnet/crypto_openssl.so
 lib/kronosnet/crypto_nss.a
@@ -18,8 +21,13 @@ lib/kronosnet/crypto_nss.so
 lib/libknet.a
 lib/libknet.so
 lib/libknet.so.1
-lib/libknet.so.1.1.0
+lib/libknet.so.1.3.0
+lib/libnozzle.a
+lib/libnozzle.so
+lib/libnozzle.so.1
+lib/libnozzle.so.1.0.0
 libdata/pkgconfig/libknet.pc
+libdata/pkgconfig/libnozzle.pc
 %%MANPAGES%%man/man3/knet_addrtostr.3.gz
 %%MANPAGES%%man/man3/knet_get_compress_list.3.gz
 %%MANPAGES%%man/man3/knet_get_crypto_list.3.gz
@@ -31,6 +39,7 @@ libdata/pkgconfig/libknet.pc
 %%MANPAGES%%man/man3/knet_handle_compress.3.gz
 %%MANPAGES%%man/man3/knet_handle_crypto.3.gz
 %%MANPAGES%%man/man3/knet_handle_enable_filter.3.gz
+%%MANPAGES%%man/man3/knet_handle_enable_access_lists.3.gz
 %%MANPAGES%%man/man3/knet_handle_enable_pmtud_notify.3.gz
 %%MANPAGES%%man/man3/knet_handle_enable_sock_notify.3.gz
 %%MANPAGES%%man/man3/knet_handle_free.3.gz
@@ -42,6 +51,7 @@ libdata/pkgconfig/libknet.pc
 %%MANPAGES%%man/man3/knet_handle_new_ex.3.gz
 %%MANPAGES%%man/man3/knet_handle_pmtud_get.3.gz
 %%MANPAGES%%man/man3/knet_handle_pmtud_getfreq.3.gz
+%%MANPAGES%%man/man3/knet_handle_pmtud_set.3.gz
 %%MANPAGES%%man/man3/knet_handle_pmtud_setfreq.3.gz
 %%MANPAGES%%man/man3/knet_handle_remove_datafd.3.gz
 %%MANPAGES%%man/man3/knet_handle_set_transport_reconnect_interval.3.gz
@@ -56,6 +66,8 @@ libdata/pkgconfig/libknet.pc
 %%MANPAGES%%man/man3/knet_host_remove.3.gz
 %%MANPAGES%%man/man3/knet_host_set_name.3.gz
 %%MANPAGES%%man/man3/knet_host_set_policy.3.gz
+%%MANPAGES%%man/man3/knet_link_add_acl.3.gz
+%%MANPAGES%%man/man3/knet_link_clear_acl.3.gz
 %%MANPAGES%%man/man3/knet_link_clear_config.3.gz
 %%MANPAGES%%man/man3/knet_link_get_config.3.gz
 %%MANPAGES%%man/man3/knet_link_get_enable.3.gz
@@ -66,6 +78,8 @@ libdata/pkgconfig/libknet.pc
 %%MANPAGES%%man/man3/knet_link_get_status.3.gz
 %%MANPAGES%%man/man3/knet_link_set_config.3.gz
 %%MANPAGES%%man/man3/knet_link_set_enable.3.gz
+%%MANPAGES%%man/man3/knet_link_insert_acl.3.gz
+%%MANPAGES%%man/man3/knet_link_rm_acl.3.gz
 %%MANPAGES%%man/man3/knet_link_set_ping_timers.3.gz
 %%MANPAGES%%man/man3/knet_link_set_pong_count.3.gz
 %%MANPAGES%%man/man3/knet_link_set_priority.3.gz
@@ -79,6 +93,23 @@ libdata/pkgconfig/libknet.pc
 %%MANPAGES%%man/man3/knet_send.3.gz
 %%MANPAGES%%man/man3/knet_send_sync.3.gz
 %%MANPAGES%%man/man3/knet_strtoaddr.3.gz
+%%MANPAGES%%man/man3/nozzle_add_ip.3.gz
+%%MANPAGES%%man/man3/nozzle_close.3.gz
+%%MANPAGES%%man/man3/nozzle_del_ip.3.gz
+%%MANPAGES%%man/man3/nozzle_get_fd.3.gz
+%%MANPAGES%%man/man3/nozzle_get_handle_by_name.3.gz
+%%MANPAGES%%man/man3/nozzle_get_ips.3.gz
+%%MANPAGES%%man/man3/nozzle_get_mac.3.gz
+%%MANPAGES%%man/man3/nozzle_get_mtu.3.gz
+%%MANPAGES%%man/man3/nozzle_get_name_by_handle.3.gz
+%%MANPAGES%%man/man3/nozzle_open.3.gz
+%%MANPAGES%%man/man3/nozzle_reset_mac.3.gz
+%%MANPAGES%%man/man3/nozzle_reset_mtu.3.gz
+%%MANPAGES%%man/man3/nozzle_run_updown.3.gz
+%%MANPAGES%%man/man3/nozzle_set_down.3.gz
+%%MANPAGES%%man/man3/nozzle_set_mac.3.gz
+%%MANPAGES%%man/man3/nozzle_set_mtu.3.gz
+%%MANPAGES%%man/man3/nozzle_set_up.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.applications
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.libraries
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
