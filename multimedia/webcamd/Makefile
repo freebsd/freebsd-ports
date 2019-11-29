@@ -34,7 +34,7 @@ COMPAT32_DESC=	Enable 32-bit compatibility support
 COMPAT32_MAKE_ARGS=	HAVE_COMPAT32="YES"
 
 .if exists(/usr/lib32/libcuse.so)
-OPTIONS_DEFAULT+= COMPAT32
+OPTIONS_DEFAULT+=	COMPAT32
 .endif
 
 CUSE_DESC=	Use cuse(3) over multimedia/cuse4bsd-kmod
