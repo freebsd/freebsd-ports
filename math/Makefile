@@ -113,6 +113,7 @@
     SUBDIR += SCIP
     SUBDIR += SoPlex
     SUBDIR += aamath
+    SUBDIR += abella
     SUBDIR += abs
     SUBDIR += acalc
     SUBDIR += add
