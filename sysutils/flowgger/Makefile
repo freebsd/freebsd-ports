@@ -12,6 +12,9 @@ COMMENT=	Fast data collector
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# for backtrace-sys < 0.1.24
+BUILD_DEPENDS=	gmake:devel/gmake
+
 USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	jedisct1
