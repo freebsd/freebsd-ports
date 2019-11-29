@@ -243,6 +243,7 @@ include/ags/audio/task/ags_remove_audio_signal.h
 include/ags/audio/task/ags_remove_note.h
 include/ags/audio/task/ags_remove_soundcard.h
 include/ags/audio/task/ags_reset_amplitude.h
+include/ags/audio/task/ags_reset_note.h
 include/ags/audio/task/ags_reset_peak.h
 include/ags/audio/task/ags_resize_audio.h
 include/ags/audio/task/ags_seek_soundcard.h
@@ -266,6 +267,7 @@ include/ags/audio/thread/ags_audio_thread.h
 include/ags/audio/thread/ags_channel_thread.h
 include/ags/audio/thread/ags_export_thread.h
 include/ags/audio/thread/ags_sequencer_thread.h
+include/ags/audio/thread/ags_sf2_loader.h
 include/ags/audio/thread/ags_sfz_loader.h
 include/ags/audio/thread/ags_soundcard_thread.h
 include/ags/audio/thread/ags_wave_loader.h
