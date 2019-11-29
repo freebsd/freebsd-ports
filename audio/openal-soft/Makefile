@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openal-soft
-PORTVERSION=	1.19.1
-PORTREVISION=	3
+PORTVERSION=	1.20.0
 CATEGORIES=	audio
 MASTER_SITES=	https://openal-soft.org/openal-releases/
 
@@ -12,7 +11,9 @@ COMMENT=	Software implementation of the OpenAL specification
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c11 tar:bzip2
+LIB_DEPENDS=	libmysofa.so:audio/libmysofa
+
+USES=		cmake compiler:c++11-lang tar:bzip2
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_DATADIR:STRING="${PREFIX}/etc"
@@ -22,7 +23,12 @@ CMAKE_ON=	ALSOFT_BACKEND_WAVE ALSOFT_UTILS
 
 # do not link with librt and libdl.
 LDFLAGS+=	-Wl,--as-needed
+# fails to link with lld 6, remove after FreeBSD 12.0 EOL
+.if exists(/usr/lib/clang/6.0.1)
 LLD_UNSAFE=	yes
+.endif
+
+PLIST_SUB=	SOVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=		CONFIG EXAMPLES JACK OSS PORTAUDIO PULSEAUDIO SDL SNDIO
 OPTIONS_DEFAULT=	OSS
@@ -55,7 +61,7 @@ SNDIO_CMAKE_BOOL=	ALSOFT_BACKEND_SNDIO ALSOFT_REQUIRE_SNDIO
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/openal|${ETCDIR}|' \
-		${WRKSRC}/Alc/alconfig.c
+		${WRKSRC}/alc/alconfig.cpp
 
 post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
