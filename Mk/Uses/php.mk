@@ -159,7 +159,7 @@ FLAVOR=	${FLAVORS:[1]}
 .    endif
 .  endif
 
-.if ${PHP_VER} == 74 && (${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64)
+.if ${PHP_VER} == 74 && (${ARCH:Mmips*} || (${ARCH:Mpowerpc*} && !exists(/usr/bin/clang)) || ${ARCH} == sparc64)
 USE_GCC=	yes
 .endif
 
