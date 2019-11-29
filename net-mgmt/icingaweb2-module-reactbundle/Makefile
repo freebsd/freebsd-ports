@@ -2,8 +2,7 @@
 
 PORTNAME=	icingaweb2-module-reactbundle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org
