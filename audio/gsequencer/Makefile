@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsequencer
-DISTVERSION=	2.3.15
+DISTVERSION=	2.4.1
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
 
@@ -25,7 +25,7 @@ RUN_DEPENDS=	dssi>0:audio/dssi
 
 USES=		desktop-file-utils gettext-runtime gmake gnome libtool localbase pkgconfig shared-mime-info xorg
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-alsa --enable-oss
+CONFIGURE_ARGS=	--disable-alsa --enable-oss --enable-threads=posix --without-included-regex
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 libxml2 pango
 USE_XORG=	x11
 USE_GCC=	yes # the project uses gnu99 extensions, clang fails even with USE_CSTD=gnu99. Suggestions how to build with clang are welcome.
