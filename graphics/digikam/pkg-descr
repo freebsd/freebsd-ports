@@ -9,6 +9,6 @@ Basic auto-transformations can be deployed on the fly during
 image downloading.
 
 Digikam also uses the very flexible Kipi plugin architecture.
-Install the graphics/kipi-plugins-kde4 port to extend Digikam's features.
+Install the graphics/kipi-plugins port to extend Digikam's features.
 
 WWW: https://www.digikam.org/
