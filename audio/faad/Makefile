@@ -13,12 +13,11 @@ COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf gmake libtool localbase:ldflags
 INSTALL_TARGET=	install-strip
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+LDFLAGS+=	-lpthread
 USE_LDCONFIG=	yes
 
 post-extract:
