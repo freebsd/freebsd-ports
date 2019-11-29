@@ -37,10 +37,14 @@ CMAKE_OFF=	AQUARIA_INTERNAL_FREETYPE \
 		AQUARIA_INTERNAL_TINYXML2 \
 		AQUARIA_INTERNAL_ZLIB
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (vorbis deps)
-LLD_UNSAFE=	yes # XXX ports/219089
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/aquaria
 PORTDATA=	*
+
+# XXX Drop after FreeBSD 12.0 EOL
+.if exists(/usr/lib/clang/6.0.1)
+LLD_UNSAFE=	yes # XXX ports/219089
+.endif
 
 DESKTOP_ENTRIES="${GH_PROJECT}" \
 		"" \
