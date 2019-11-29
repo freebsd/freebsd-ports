@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	6.10.1
+PORTVERSION=	6.11.1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	6
 
@@ -14,11 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=		fails to install: Could not load facter; cannot install
 
 BUILD_DEPENDS=	facter>=3.0:sysutils/facter \
+		rubygem-deep_merge>=1.0:devel/rubygem-deep_merge \
 		rubygem-hiera>=2.0:sysutils/rubygem-hiera \
 		rubygem-json_pure>=0:devel/rubygem-json_pure \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
 RUN_DEPENDS=	facter>=3.0:sysutils/facter \
 		rubygem-concurrent-ruby>0:devel/rubygem-concurrent-ruby \
+		rubygem-deep_merge>0:devel/rubygem-deep_merge \
 		rubygem-gettext-setup>=0:devel/rubygem-gettext-setup \
 		rubygem-hiera>=2.0:sysutils/rubygem-hiera \
 		rubygem-hocon>=0:devel/rubygem-hocon \
