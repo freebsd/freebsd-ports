@@ -77,6 +77,10 @@ LIB_DEPENDS+=	libcares.so:dns/c-ares\
 
 .include <bsd.port.options.mk>
 
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+EXTRA_PATCHES=		${PATCHDIR}/extra-patch-common.gypi
+.endif
+
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085
 BROKEN_SSL+=	base
 .endif
