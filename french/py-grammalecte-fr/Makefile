@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grammalecte-fr
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	french python
 MASTER_SITES=	http://www.dicollecte.org/grammalecte/zip/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
