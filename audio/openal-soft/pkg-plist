@@ -1,6 +1,6 @@
 %%CONFIG%%bin/alsoft-config
 bin/altonegen
-bin/makehrtf
+bin/makemhr
 bin/openal-info
 %%ETCDIR%%/alsoftrc.sample
 %%ETCDIR%%/hrtf/default-44100.mhr
@@ -22,7 +22,7 @@ lib/cmake/OpenAL/OpenALConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/OpenAL/OpenALConfig.cmake
 lib/libopenal.so
 lib/libopenal.so.1
-lib/libopenal.so.1.19.1
+lib/libopenal.so.%%SOVERSION%%
 libdata/pkgconfig/openal.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alffplay.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alhrtf.c
