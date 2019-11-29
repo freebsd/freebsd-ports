@@ -12,6 +12,7 @@ include/postgresql/server/distributed/connection_management.h
 include/postgresql/server/distributed/deparse_shard_query.h
 include/postgresql/server/distributed/deparser.h
 include/postgresql/server/distributed/distributed_deadlock_detection.h
+include/postgresql/server/distributed/distributed_execution_locks.h
 include/postgresql/server/distributed/distributed_planner.h
 include/postgresql/server/distributed/distribution_column.h
 include/postgresql/server/distributed/enterprise.h
@@ -23,10 +24,12 @@ include/postgresql/server/distributed/function_utils.h
 include/postgresql/server/distributed/hash_helpers.h
 include/postgresql/server/distributed/insert_select_executor.h
 include/postgresql/server/distributed/insert_select_planner.h
+include/postgresql/server/distributed/intermediate_result_pruning.h
 include/postgresql/server/distributed/intermediate_results.h
 include/postgresql/server/distributed/listutils.h
 include/postgresql/server/distributed/local_executor.h
 include/postgresql/server/distributed/lock_graph.h
+include/postgresql/server/distributed/log_utils.h
 include/postgresql/server/distributed/maintenanced.h
 include/postgresql/server/distributed/master_metadata_utility.h
 include/postgresql/server/distributed/master_protocol.h
@@ -44,10 +47,8 @@ include/postgresql/server/distributed/multi_partitioning_utils.h
 include/postgresql/server/distributed/multi_physical_planner.h
 include/postgresql/server/distributed/multi_progress.h
 include/postgresql/server/distributed/multi_resowner.h
-include/postgresql/server/distributed/multi_router_executor.h
 include/postgresql/server/distributed/multi_router_planner.h
 include/postgresql/server/distributed/multi_server_executor.h
-include/postgresql/server/distributed/multi_shard_transaction.h
 include/postgresql/server/distributed/pg_dist_colocation.h
 include/postgresql/server/distributed/pg_dist_local_group.h
 include/postgresql/server/distributed/pg_dist_node.h
@@ -56,10 +57,12 @@ include/postgresql/server/distributed/pg_dist_partition.h
 include/postgresql/server/distributed/pg_dist_placement.h
 include/postgresql/server/distributed/pg_dist_shard.h
 include/postgresql/server/distributed/pg_dist_transaction.h
+include/postgresql/server/distributed/placement_access.h
 include/postgresql/server/distributed/placement_connection.h
 include/postgresql/server/distributed/query_colocation_checker.h
 include/postgresql/server/distributed/query_pushdown_planning.h
 include/postgresql/server/distributed/query_stats.h
+include/postgresql/server/distributed/query_utils.h
 include/postgresql/server/distributed/recursive_planning.h
 include/postgresql/server/distributed/reference_table_utils.h
 include/postgresql/server/distributed/relation_access_tracking.h
@@ -76,12 +79,14 @@ include/postgresql/server/distributed/statistics_collection.h
 include/postgresql/server/distributed/subplan_execution.h
 include/postgresql/server/distributed/task_tracker.h
 include/postgresql/server/distributed/task_tracker_protocol.h
+include/postgresql/server/distributed/time_constants.h
 include/postgresql/server/distributed/transaction_identifier.h
 include/postgresql/server/distributed/transaction_management.h
 include/postgresql/server/distributed/transaction_recovery.h
 include/postgresql/server/distributed/transmit.h
 include/postgresql/server/distributed/tuplestore.h
 include/postgresql/server/distributed/version_compat.h
+include/postgresql/server/distributed/worker_create_or_replace.h
 include/postgresql/server/distributed/worker_manager.h
 include/postgresql/server/distributed/worker_protocol.h
 include/postgresql/server/distributed/worker_shard_visibility.h
@@ -143,4 +148,5 @@ share/postgresql/extension/citus--8.2-3--8.2-4.sql
 share/postgresql/extension/citus--8.2-4--8.3-1.sql
 share/postgresql/extension/citus--8.3-1--9.0-1.sql
 share/postgresql/extension/citus--9.0-1--9.0-2.sql
+share/postgresql/extension/citus--9.0-2--9.1-1.sql
 share/postgresql/extension/citus.control
