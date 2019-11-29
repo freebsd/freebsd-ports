@@ -1,19 +1,14 @@
 [
 { type: install
   message: <<EOM
-1) webcamd requires the cuse4bsd(3) or cuse(3) kernel module, depending on
-how webcamd was compiled. Please load this dependency by doing:
+1) webcamd requires the cuse(3) kernel module.
+Please load this dependency by doing:
 
-       # FreeBSD < 11.x, package from ports
-       # kldload cuse4bsd
-or
-       # FreeBSD >= 11.x, part of default kernel build
+       # part of default kernel build
        # kldload cuse
 
 or by adding
 
-       cuse4bsd_load="YES"
-or
        cuse_load="YES"
 
 to your /boot/loader.conf.
