@@ -321,7 +321,6 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 .elif ${ARCH:Mpowerpc*}
 . if ${ARCH} == "powerpc64"
 MOZ_EXPORT+=	UNAME_m="${ARCH}"
-CFLAGS+=	-mminimal-toc
 . endif
 .elif ${ARCH} == "sparc64"
 # Work around miscompilation/mislinkage of the sCanonicalVTable hacks.
