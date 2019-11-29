@@ -3,7 +3,7 @@
 PORTNAME=	pcl
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1.9.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics math
 PKGNAMESUFFIX=	-pointclouds
 
@@ -28,6 +28,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libtiff.so:graphics/tiff
 
 USES=		cmake compiler eigen:3 jpeg python xorg
+LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PointCloudLibrary
 USE_XORG=	x11 xext xt ice sm
