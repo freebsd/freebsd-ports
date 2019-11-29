@@ -1,6 +1,5 @@
 bin/corosync-blackbox
-%%ETCDIR%%/corosync.conf.example
-%%ETCDIR%%/corosync.conf.example.udpu
+@sample %%ETCDIR%%/corosync.conf.example
 etc/logrotate.d/corosync
 include/corosync/cfg.h
 include/corosync/cmap.h
@@ -10,15 +9,11 @@ include/corosync/cpg.h
 include/corosync/hdb.h
 include/corosync/quorum.h
 include/corosync/sam.h
-include/corosync/totem/totem.h
-include/corosync/totem/totemip.h
-include/corosync/totem/totempg.h
-include/corosync/totem/totemstats.h
 include/corosync/votequorum.h
 lib/libcfg.a
 lib/libcfg.so
 lib/libcfg.so.7
-lib/libcfg.so.7.0.0
+lib/libcfg.so.7.1.0
 lib/libcmap.a
 lib/libcmap.so
 lib/libcmap.so.4
@@ -39,10 +34,6 @@ lib/libsam.a
 lib/libsam.so
 lib/libsam.so.4
 lib/libsam.so.4.4.0
-lib/libtotem_pg.a
-lib/libtotem_pg.so
-lib/libtotem_pg.so.5
-lib/libtotem_pg.so.5.0.0
 lib/libvotequorum.a
 lib/libvotequorum.so
 lib/libvotequorum.so.8
@@ -54,7 +45,6 @@ libdata/pkgconfig/libcorosync_common.pc
 libdata/pkgconfig/libcpg.pc
 libdata/pkgconfig/libquorum.pc
 libdata/pkgconfig/libsam.pc
-libdata/pkgconfig/libtotem_pg.pc
 libdata/pkgconfig/libvotequorum.pc
 man/man3/cmap_context_get.3.gz
 man/man3/cmap_context_set.3.gz
@@ -86,10 +76,10 @@ man/man3/cpg_iteration_next.3.gz
 man/man3/cpg_join.3.gz
 man/man3/cpg_leave.3.gz
 man/man3/cpg_local_get.3.gz
-man/man3/cpg_overview.3.gz
 man/man3/cpg_mcast_joined.3.gz
 man/man3/cpg_membership_get.3.gz
 man/man3/cpg_model_initialize.3.gz
+man/man3/cpg_overview.3.gz
 man/man3/cpg_zcb_alloc.3.gz
 man/man3/cpg_zcb_free.3.gz
 man/man3/cpg_zcb_mcast_joined.3.gz
