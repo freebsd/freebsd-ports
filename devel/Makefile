@@ -3886,6 +3886,7 @@
     SUBDIR += pecl-yac
     SUBDIR += pecl-yaconf
     SUBDIR += pecl-zookeeper
+    SUBDIR += pegtl
     SUBDIR += pep8
     SUBDIR += performance
     SUBDIR += perlconsole
