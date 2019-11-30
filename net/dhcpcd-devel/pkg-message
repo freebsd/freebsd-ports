@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+The default FreeBSD kernel does not allow userland to provide IPv6
+Prefix Routes when the kernel is handling Router Advertisements.
+The default dhcpcd configuration will disable the kernel from handling
+Router Advertisements.
+
+See http://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194485 for a patch.
+EOM
+}
+]
