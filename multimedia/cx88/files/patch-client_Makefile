@@ -1,6 +1,6 @@
---- client/Makefile.orig
+--- client/Makefile.orig	2016-10-30 22:50:26 UTC
 +++ client/Makefile
-@@ -21,7 +21,7 @@
+@@ -21,7 +21,7 @@ STRIPFLAGS :=
  CXXFLAGS+= -DCX88_USE_IIC
  .endif
  
@@ -9,3 +9,12 @@
  
  LDADD = -L$(LIBTUNER_LIB) -ltuner_static -lezxml -lpthread -ledit
  
+@@ -32,7 +32,7 @@ LDADD += $(JSON_LDFLAGS)
+ 
+ .if defined(WITH_LINUX_COMPAT)
+ CXXFLAGS += -D_WITH_LINUX_COMPAT
+-LDADD += -L$(LOCALBASE)/lib -lcuse4bsd
++LDADD += -L$(LOCALBASE)/lib -lcuse
+ 
+ .if defined(WITH_HAL)
+ CXXFLAGS += -D_WITH_HAL
