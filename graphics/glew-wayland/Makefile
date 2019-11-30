@@ -22,5 +22,7 @@ slave-post-patch:
 	@${REINPLACE_CMD} 's/Makefile.$$(SYSTEM)/&-egl/' ${WRKSRC}/Makefile
 	@${SED} 's/linux/${OPSYS:tl}/' ${WRKSRC}/config/Makefile.linux-egl \
 		>${WRKSRC}/config/Makefile.${OPSYS:tl}-egl
+# GCC 4.2 doesn't support redefining same typedef
+	@${REINPLACE_CMD} '/typedef.*EGLint;/d' ${WRKSRC}/include/GL/eglew.h
 
 .include "${MASTERDIR}/Makefile"
