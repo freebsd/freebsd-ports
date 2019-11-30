@@ -9,8 +9,6 @@ CATEGORIES=	audio
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Audio LV2 plugin host for Jack and PulseAudio
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/GPL.txt
 
