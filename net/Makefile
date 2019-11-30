@@ -211,6 +211,7 @@
     SUBDIR += grilo
     SUBDIR += grilo-plugins
     SUBDIR += grive2
+    SUBDIR += grpcox
     SUBDIR += grpcui
     SUBDIR += grpcurl
     SUBDIR += grsync

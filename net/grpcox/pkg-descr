@@ -1,0 +1,10 @@
+Turn PCurl into web based UI, extremely easy to use.
+
+Features:
+* Recognize and provide list of services and methods inside it as an options.
+* Automatically recognize schema input and compose it into JSON based.
+  (ensure your gRPC server supports server reflection).
+* Save established connection, and reuse it for next invoke/request (also can
+  close/restart connection).
+
+WWW: https://github.com/gusaul/grpcox
