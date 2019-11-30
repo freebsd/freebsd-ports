@@ -1,0 +1,15 @@
+include/tweeny/dispatcher.h
+include/tweeny/easing.h
+include/tweeny/easingresolve.h
+include/tweeny/int2type.h
+include/tweeny/tween.h
+include/tweeny/tween.tcc
+include/tweeny/tweenone.tcc
+include/tweeny/tweenpoint.h
+include/tweeny/tweenpoint.tcc
+include/tweeny/tweentraits.h
+include/tweeny/tweeny.h
+include/tweeny/tweeny.tcc
+lib/cmake/Tweeny/TweenyConfig.cmake
+lib/cmake/Tweeny/TweenyConfigVersion.cmake
+lib/cmake/Tweeny/TweenyTargets.cmake
