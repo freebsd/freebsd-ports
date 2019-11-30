@@ -18,6 +18,8 @@ LICENSE=	CPAL-1.0
 LICENSE_FILE=	${WRKSRC}/other/LICENSE.txt
 
 BROKEN=	depends on expired www/tomcat8
+DEPRECATED=		marked BROKEN for 4 months; use mail/openemm2015 instead
+EXPIRATION_DATE=	2019-12-26
 BROKEN_powerpc64=	fails to build: gmake[1]: clang: Command not found
 
 LIB_DEPENDS=	libslang.so:devel/libslang2 \
@@ -32,8 +34,11 @@ USE_RC_SUBR=	openemm2013
 USE_JAVA=	yes
 
 DOS2UNIX_GLOB=	*.c *.cpp *.h *.java *.xml *.properties
-CC=	clang
-CXX=	clang++
+# XXX MCL 20190921
+#CC=	clang
+#CXX=	clang++
+CC=	biteme_cc
+CXX=	biteme_cxx
 
 TOMCATVER=	apache-tomcat-8.0
 TOMCATDIR=	${PREFIX}/${TOMCATVER}
