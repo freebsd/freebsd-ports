@@ -37,6 +37,7 @@ bin/svmod
 %%RUNITDIR%%/core-services/95-swap-late.sh
 %%RUNITDIR%%/core-services/99-binmisc.sh
 %%RUNITDIR%%/core-services/99-linux.sh
+%%RUNITDIR%%/core-services/99-os-release.sh
 %%RUNITDIR%%/core-services/99-ports-env.sh
 %%RUNITDIR%%/core-services/99-start-jails.sh
 %%RUNITDIR%%/ctrlaltdel
