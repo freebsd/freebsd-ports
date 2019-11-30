@@ -62,6 +62,7 @@
     SUBDIR += bristol
     SUBDIR += bs2b-lv2
     SUBDIR += bsequencer-lv2
+    SUBDIR += bshapr-lv2
     SUBDIR += cadence
     SUBDIR += calf-lv2
     SUBDIR += cam
