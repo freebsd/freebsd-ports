@@ -40,7 +40,6 @@
     SUBDIR += clutter-gst3
     SUBDIR += cmrt
     SUBDIR += cmrtlib
-    SUBDIR += cuse4bsd-kmod
     SUBDIR += cx88
     SUBDIR += dav1d
     SUBDIR += deforaos-player

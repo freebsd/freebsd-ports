@@ -1,5 +1,0 @@
-Cuse4BSD is a kernel module which allows userland programs to create
-character devices under /dev. Cuse4BSD has full support for read,
-write, ioctl, mmap and poll system calls.
-
-WWW: http://www.selasky.org/hans_petter/cuse4bsd/
