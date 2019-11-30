@@ -1,5 +1,5 @@
---- tools/wfut.cpp.orig	2013-12-07 12:23:30.000000000 +0100
-+++ tools/wfut.cpp	2013-12-07 12:23:32.000000000 +0100
+--- tools/wfut.cpp.orig	2011-01-08 14:51:24 UTC
++++ tools/wfut.cpp
 @@ -7,6 +7,8 @@
  #endif
  
