@@ -1,0 +1,17 @@
+grpcui is a command-line tool that lets you interact with gRPC servers via a
+browser. It's like Postman, but for gRPC APIs instead of REST.
+
+In some ways, this is like an extension to grpcurl. Whereas grpcurl is a
+command-line interface, grpcui provides a web/browser-based GUI. This lets you
+interactively construct requests to send to a gRPC server.
+
+With this tool you can also browse the schema for gRPC services, which is
+presented as a list of available endpoints. This is enabled either by querying a
+server that supports server reflection, by reading proto source files, or by
+loading in compiled "protoset" files (files that contain encoded file descriptor
+protos). In fact, the way the tool transforms JSON request data into a binary
+encoded protobuf is using that very same schema. So, if the server you interact
+with does not support reflection, you will either need the proto source files
+that define the service or need protoset files that grpcui can use.
+
+WWW: https://github.com/fullstorydev/grpcui
