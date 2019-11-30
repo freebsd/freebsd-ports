@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dbus
-DISTVERSION=	1.2.12
+DISTVERSION=	1.2.14
 PORTREVISION?=	0
 CATEGORIES=	devel gnome python
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
