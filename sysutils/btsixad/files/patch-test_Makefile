@@ -1,4 +1,4 @@
---- test/Makefile.orig
+--- test/Makefile.orig	2014-07-27 15:28:06 UTC
 +++ test/Makefile
 @@ -1,6 +1,6 @@
  PROG=test
