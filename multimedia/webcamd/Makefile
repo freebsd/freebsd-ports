@@ -3,6 +3,7 @@
 
 PORTNAME=	webcamd
 PORTVERSION=	5.3.7.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org/distfiles/
@@ -16,19 +17,12 @@ BUILD_DEPENDS=	v4l_compat>=1.0.20100321:multimedia/v4l_compat
 LIB_DEPENDS=	libv4l1.so:multimedia/libv4l
 
 USES=		pkgconfig tar:bzip2 uidfix
-MAKE_ARGS=	LIBDIR="${LOCALBASE}/lib"
+MAKE_ARGS=	LIBDIR="${LOCALBASE}/lib" HAVE_CUSE="YES"
 USE_RC_SUBR=	webcamd
 SUB_FILES=	webcamd.conf
-USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	COMPAT32 CUSE DEBUG HAL VT_CLIENT VT_SERVER DVB INPUT KEYBOARD MOUSE RADIO WEBCAM
+OPTIONS_DEFINE=	COMPAT32 DEBUG HAL VT_CLIENT VT_SERVER DVB INPUT KEYBOARD MOUSE RADIO WEBCAM
 OPTIONS_DEFAULT=DVB HAL INPUT RADIO WEBCAM
-
-.if exists(/usr/lib/libcuse.so)
-OPTIONS_DEFAULT+=	CUSE
-.else
-OPTIONS_EXCLUDE+=	CUSE
-.endif
 
 COMPAT32_DESC=	Enable 32-bit compatibility support
 COMPAT32_MAKE_ARGS=	HAVE_COMPAT32="YES"
@@ -36,13 +30,6 @@ COMPAT32_MAKE_ARGS=	HAVE_COMPAT32="YES"
 .if exists(/usr/lib32/libcuse.so)
 OPTIONS_DEFAULT+=	COMPAT32
 .endif
-
-CUSE_DESC=	Use cuse(3) over multimedia/cuse4bsd-kmod
-CUSE_MAKE_ARGS=		HAVE_CUSE="YES"
-CUSE_SUB_LIST=		LIBCUSE=""
-CUSE_BUILD_DEPENDS_OFF=	cuse4bsd-kmod>=0.1.24:multimedia/cuse4bsd-kmod
-CUSE_LIB_DEPENDS_OFF=	libcuse4bsd.so:multimedia/cuse4bsd-kmod
-CUSE_SUB_LIST_OFF=	LIBCUSE="${LOCALBASE}/lib/libcuse4bsd.so"
 
 HAL_DESC=	Build with HAL and DBUS support
 HAL_LIB_DEPENDS+=	libhal.so:sysutils/hal

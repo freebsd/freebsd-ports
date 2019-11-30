@@ -1,8 +1,8 @@
 Webcamd is a daemon that enables use of hundreds of different USB
-based webcam and DVB USB devices under the FreeBSD-8/9 operating
+based webcam and DVB USB devices under the FreeBSD operating
 system. The webcam daemon is basically an application which is a port
 of Linux USB device drivers into userspace on FreeBSD. The daemon
-currently depends on libc, pthreads, libusb and the CUSE4BSD kernel
+currently depends on libc, pthreads, libusb and the CUSE kernel
 module.
 
 WWW: http://www.selasky.org/hans_petter/video4bsd/
