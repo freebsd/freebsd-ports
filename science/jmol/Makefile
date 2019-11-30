@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Jmol
-DISTVERSION=	14.29.55
+DISTVERSION=	14.30.0
 CATEGORIES=	science java
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/Version%20${DISTVERSION:R}/${PORTNAME}%20${DISTVERSION}/:src \
 		http://${PORTNAME:tl}.svn.sourceforge.net/viewvc/${PORTNAME:tl}/trunk/${PORTNAME}/selfSignedCertificate/:cert
@@ -13,8 +13,6 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-full${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Java 3D viewer for chemical structures
-
-BROKEN=		unfetchable
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
