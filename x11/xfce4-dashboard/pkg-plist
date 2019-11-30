@@ -3,6 +3,7 @@ bin/xfdashboard-settings
 etc/xdg/autostart/xfdashboard-autostart.desktop
 include/xfdashboard/libxfdashboard/action-button.h
 include/xfdashboard/libxfdashboard/actor.h
+include/xfdashboard/libxfdashboard/animation.h
 include/xfdashboard/libxfdashboard/application-button.h
 include/xfdashboard/libxfdashboard/application-database.h
 include/xfdashboard/libxfdashboard/application-tracker.h
@@ -55,12 +56,14 @@ include/xfdashboard/libxfdashboard/stage-interface.h
 include/xfdashboard/libxfdashboard/stage.h
 include/xfdashboard/libxfdashboard/stylable.h
 include/xfdashboard/libxfdashboard/text-box.h
+include/xfdashboard/libxfdashboard/theme-animation.h
 include/xfdashboard/libxfdashboard/theme-css.h
 include/xfdashboard/libxfdashboard/theme-effects.h
 include/xfdashboard/libxfdashboard/theme-layout.h
 include/xfdashboard/libxfdashboard/theme.h
 include/xfdashboard/libxfdashboard/toggle-button.h
 include/xfdashboard/libxfdashboard/tooltip-action.h
+include/xfdashboard/libxfdashboard/transition-group.h
 include/xfdashboard/libxfdashboard/types.h
 include/xfdashboard/libxfdashboard/utils.h
 include/xfdashboard/libxfdashboard/view-manager.h
@@ -83,7 +86,7 @@ include/xfdashboard/libxfdashboard/windows-view.h
 include/xfdashboard/libxfdashboard/workspace-selector.h
 lib/libxfdashboard.so
 lib/libxfdashboard.so.0
-lib/libxfdashboard.so.0.700.5
+lib/libxfdashboard.so.0.700.6
 lib/xfdashboard/plugins/clock-view.so
 lib/xfdashboard/plugins/gnome-shell-search-provider.so
 lib/xfdashboard/plugins/hot-corner.so
