@@ -1,0 +1,11 @@
+--- btsixad/Makefile.orig	2014-07-27 15:28:06 UTC
++++ btsixad/Makefile
+@@ -5,7 +5,7 @@ MAN=btsixad.8
+ CFLAGS+= -pthread -I${LOCALBASE}/include
+ CFLAGS+= -Wno-parentheses
+ LDFLAGS+= -pthread -L${LOCALBASE}/lib
+-LDADD+= -lbluetooth -lsdp -lcuse4bsd
++LDADD+= -lbluetooth -lsdp -lcuse
+ 
+ SCRIPTS=rc.sh
+ SCRIPTSNAME_rc.sh=btsixad

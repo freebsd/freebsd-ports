@@ -1,0 +1,11 @@
+--- btsixad/rc.sh.in.orig	2014-07-27 15:28:06 UTC
++++ btsixad/rc.sh.in
+@@ -15,7 +15,7 @@ extra_commands="attach detach pair"
+ attach_cmd=do_attach
+ detach_cmd=do_detach
+ pair_cmd=do_pair
+-required_modules=cuse4bsd~'\bcuse4bsd\b' # kldstat -m cuse4bsd doesn't work
++required_modules=cuse~'\bcuse\b' # kldstat -m cuse doesn't work
+ 
+ load_rc_config $name
+ 
