@@ -5,12 +5,10 @@ PORTNAME=	stress
 PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	https://people.seas.harvard.edu/~apw/stress/
+MASTER_SITES=	http://repository.timesys.com/buildsources/s/stress/
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Tool to impose load on and stress test Unix-like systems
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv3
 
