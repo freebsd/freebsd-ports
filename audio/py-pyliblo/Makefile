@@ -3,7 +3,7 @@
 
 PORTNAME=	pyliblo
 DISTVERSION=	0.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	http://das.nasophon.de/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	liblo.so:audio/liblo
 
 USES=		python
-USE_PYTHON=	distutils cython
+USE_PYTHON=	distutils concurrent cython
 MAKE_ENV+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 
 post-patch:
