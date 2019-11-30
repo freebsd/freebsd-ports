@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	dmlc-core>0:devel/dmlc-core \
 		rang>0:devel/rang
 
-USES=		cmake localbase
+USES=		cmake compiler:c++11-lang localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
 GH_PROJECT=	incubator-tvm
