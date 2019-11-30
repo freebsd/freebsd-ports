@@ -1,0 +1,11 @@
+Tweeny is an inbetweening library designed for the creation of complex
+animations for games and other beautiful interactive software. It leverages
+features of modern C++ to empower developers with an intuitive API for declaring
+tweenings of any type of value, as long as they support arithmetic operations.
+
+The goal of Tweeny is to provide means to create fluid interpolations when
+animating position, scale, rotation, frames or other values of screen objects,
+by setting their values as the tween starting point and then, after each tween
+step, plugging back the result.
+
+WWW: https://mobius3.github.io/tweeny/
