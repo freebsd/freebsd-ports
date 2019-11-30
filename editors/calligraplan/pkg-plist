@@ -147,6 +147,12 @@ share/kxmlgui5/calligraplanwork/calligraplanwork.rc
 share/kxmlgui5/calligraplanwork/calligraplanwork_readonly.rc
 share/kxmlgui5/calligraplanwork/calligraplanworkui.rc
 share/locale/ar/LC_MESSAGES/calligraplan.mo
+share/locale/ast/LC_MESSAGES/calligraplan.mo
+share/locale/ast/LC_MESSAGES/calligraplan_scheduler_rcps.mo
+share/locale/ast/LC_MESSAGES/calligraplan_scheduler_tj.mo
+share/locale/ast/LC_MESSAGES/calligraplanlibs.mo
+share/locale/ast/LC_MESSAGES/calligraplanwork.mo
+share/locale/ast/LC_MESSAGES/krossmoduleplan.mo
 share/locale/be/LC_MESSAGES/calligraplan.mo
 share/locale/be/LC_MESSAGES/calligraplanlibs.mo
 share/locale/bg/LC_MESSAGES/calligraplan.mo
