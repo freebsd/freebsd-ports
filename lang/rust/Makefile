@@ -78,9 +78,6 @@ _CARGO_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_B
 
 .include <bsd.port.pre.mk>
 
-# Drop after D22039 lands
-PPC_ABI?=	ELFv1
-
 .if exists(${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX})
 EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
 .endif
