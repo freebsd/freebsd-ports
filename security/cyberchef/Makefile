@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyberchef
-PORTVERSION=	9.11.2
+PORTVERSION=	9.11.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
