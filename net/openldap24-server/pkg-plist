@@ -93,6 +93,10 @@
 %%SHA2%%libexec/openldap/pw-sha2.so
 %%SHA2%%libexec/openldap/pw-sha2.so.0
 %%SHA2%%libexec/openldap/pw-sha2.so.0.0.0
+%%PBKDF2%%libexec/openldap/pw-pbkdf2.la
+%%PBKDF2%%libexec/openldap/pw-pbkdf2.so
+%%PBKDF2%%libexec/openldap/pw-pbkdf2.so.0
+%%PBKDF2%%libexec/openldap/pw-pbkdf2.so.0.0.0
 %%SMBPWD%%libexec/openldap/smbk5pwd.la
 %%SMBPWD%%libexec/openldap/smbk5pwd.so
 %%SMBPWD%%libexec/openldap/smbk5pwd.so.0
