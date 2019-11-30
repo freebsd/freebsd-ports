@@ -1,6 +1,6 @@
---- uhidd/Makefile.orig	2012-10-14 00:38:33 UTC
+--- uhidd/Makefile.orig	2012-10-14 19:53:44 UTC
 +++ uhidd/Makefile
-@@ -8,7 +8,7 @@ GENSRCS=	usage_in_page.c usage_page.c
+@@ -8,14 +8,14 @@ GENSRCS=	usage_in_page.c usage_page.c
  CLEANFILES=	${GENSRCS}
  MAN=		uhidd.conf.5 uhidd.8
  
@@ -9,3 +9,11 @@
  
  PREFIX?=	/usr/local
  LOCALBASE?=	/usr/local
+ LIBDIR=		${PREFIX}/lib
+ 
+ DPADD=	${LIBUSB} ${LIBPTHREAD} ${LIBUTIL}
+-LDADD=	-lcuse4bsd -lusb -lpthread -lutil
++LDADD=	-lcuse -lusb -lpthread -lutil
+ 
+ CFLAGS+= -I. -I${.CURDIR} -I${LOCALBASE}/include -g
+ LDFLAGS+= -L${LIBDIR}

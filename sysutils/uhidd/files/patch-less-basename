@@ -12,7 +12,7 @@ Date:   Sun May 29 16:13:33 2016 +0000
     char    *basename(char *);
                             ^
 
---- uhidd/uhidd.c.orig	2012-10-14 19:53:44 UTC
+--- uhidd/uhidd.c.orig	2019-11-30 21:46:32 UTC
 +++ uhidd/uhidd.c
 @@ -174,7 +174,7 @@ main(int argc, char **argv)
  
@@ -50,7 +50,7 @@ Date:   Sun May 29 16:13:33 2016 +0000
  		syslog(LOG_ERR, "%s not found", dev);
  		return (-1);
  	}
-@@ -405,7 +405,7 @@ open_iface(const char *dev, struct libus
+@@ -405,7 +405,7 @@ open_iface(const char *dev, struct libusb20_device *pd
  	e = libusb20_dev_request_sync(pdev, &req, rdesc, &actlen, 0, 0);
  	if (e) {
  		syslog(LOG_ERR, "%s[%d]=> libusb20_dev_request_sync"
@@ -59,7 +59,7 @@ Date:   Sun May 29 16:13:33 2016 +0000
  		return;
  	}
  
-@@ -497,7 +497,7 @@ alloc_hid_interface_be(struct hid_interf
+@@ -497,7 +497,7 @@ alloc_hid_interface_be(struct hid_interface *hi)
  
  	assert(hi != NULL);
  
@@ -86,7 +86,7 @@ Date:   Sun May 29 16:13:33 2016 +0000
  		goto parent_end;
  	}
  
-@@ -628,14 +628,14 @@ hid_interrupt_out(void *context, int rep
+@@ -628,14 +628,14 @@ hid_interrupt_out(void *context, int report_id, char *
  	xfer = libusb20_tr_get_pointer(hi->pdev, x);
  	if (xfer == NULL) {
  		syslog(LOG_ERR, "%s[%d] libusb20_tr_get_pointer failed\n",
@@ -103,7 +103,7 @@ Date:   Sun May 29 16:13:33 2016 +0000
  		return (-1);
  	}
  	
-@@ -720,12 +720,12 @@ hid_set_report(void *context, int report
+@@ -720,12 +720,12 @@ hid_set_report(void *context, int report_id, char *buf
  		e = libusb20_dev_request_sync(hi->pdev, &req, buf, &actlen, 0, 0);
  		if (e && verbose)
  			syslog(LOG_ERR, "%s[%d] libusb20_dev_request_sync failed",
@@ -118,7 +118,7 @@ Date:   Sun May 29 16:13:33 2016 +0000
  		return (-1);
  	}
  	if (verbose) {
---- uhidd/uhidd.h.orig	2012-10-14 19:53:44 UTC
+--- uhidd/uhidd.h.orig	2019-11-30 21:46:32 UTC
 +++ uhidd/uhidd.h
 @@ -227,7 +227,7 @@ struct hid_interface {
  	do {								\
@@ -138,9 +138,9 @@ Date:   Sun May 29 16:13:33 2016 +0000
  		    hi->ndx);						\
  		snprintf(pb2, sizeof(pb2), __VA_ARGS__);		\
  		printf("%s-> %s", pb, pb2);				\
---- uhidd/uhidd_cc.c.orig	2012-10-14 19:53:44 UTC
+--- uhidd/uhidd_cc.c.orig	2019-11-30 21:46:32 UTC
 +++ uhidd/uhidd_cc.c
-@@ -175,11 +175,11 @@ cc_write_keymap_file(struct hid_interfac
+@@ -175,11 +175,11 @@ cc_write_keymap_file(struct hid_interface *hi)
  	int i;
  
  	snprintf(fpath, sizeof(fpath), "/var/run/uhidd.%s/cc_keymap",
@@ -154,7 +154,7 @@ Date:   Sun May 29 16:13:33 2016 +0000
  		return;
  	}
  	fprintf(fp, "0x%04x:0x%04x={\n", hi->vendor_id, hi->product_id);
---- uhidd/uhidd_kbd.c.orig	2012-10-14 19:53:44 UTC
+--- uhidd/uhidd_kbd.c.orig	2019-11-30 21:46:32 UTC
 +++ uhidd/uhidd_kbd.c
 @@ -582,7 +582,7 @@ kbd_attach(struct hid_appcol *ha)
  	/* Open /dev/vkbdctl. */
@@ -174,7 +174,7 @@ Date:   Sun May 29 16:13:33 2016 +0000
  			return (-1);
  		}
  		PRINT1("kbd device name: %s\n", devname(sb.st_rdev, S_IFCHR));
---- uhidd/uhidd_mouse.c.orig	2012-10-14 19:53:44 UTC
+--- uhidd/uhidd_mouse.c.orig	2019-11-30 21:46:32 UTC
 +++ uhidd/uhidd_mouse.c
 @@ -91,7 +91,7 @@ mouse_attach(struct hid_appcol *ha)
  	md->cons_fd = open("/dev/consolectl", O_RDWR);
@@ -185,14 +185,14 @@ Date:   Sun May 29 16:13:33 2016 +0000
  		return (-1);
  	}
  
-@@ -212,5 +212,5 @@ mouse_recv(struct hid_appcol *ha, struct
+@@ -212,5 +212,5 @@ mouse_recv(struct hid_appcol *ha, struct hid_report *h
  
  	if (ioctl(md->cons_fd, CONS_MOUSECTL, &mi) < 0)
  		syslog(LOG_ERR, "%s[%d] could not submit mouse data:"
 -		    " ioctl failed: %m", basename(hi->dev), hi->ndx);
 +		    " ioctl failed: %m", hi->dev, hi->ndx);
  }
---- uhidd/uhidd_vhid.c.orig	2012-10-14 19:53:44 UTC
+--- uhidd/uhidd_vhid.c.orig	2019-11-30 21:46:32 UTC
 +++ uhidd/uhidd_vhid.c
 @@ -97,7 +97,7 @@ vhid_attach(struct hid_appcol *ha)
  	 */
@@ -246,7 +246,7 @@ Date:   Sun May 29 16:13:33 2016 +0000
  		close(vd->vd_fd);
  		return (-1);
  	}
-@@ -189,7 +189,7 @@ vhid_recv_raw(struct hid_appcol *ha, uin
+@@ -189,7 +189,7 @@ vhid_recv_raw(struct hid_appcol *ha, uint8_t *buf, int
  	}
  
  	if (write(vd->vd_fd, buf, len) < 0)
@@ -264,8 +264,27 @@ Date:   Sun May 29 16:13:33 2016 +0000
  			    hi->ndx);
  			for (i = 0; i < len; i++)
  				printf("%d ", buf[i]);
---- uhidd/uhidd_vhid_cuse.c.orig	2012-10-14 19:53:44 UTC
+--- uhidd/uhidd_vhid_cuse.c.orig	2019-11-30 21:46:32 UTC
 +++ uhidd/uhidd_vhid_cuse.c
+@@ -36,15 +36,15 @@ __FBSDID("$FreeBSD$");
+ #include <unistd.h>
+ #include <string.h>
+ #include <syslog.h>
+-#include <cuse4bsd.h>
++#include <cuse.h>
+ #include "uhidd.h"
+ 
+ /*
+- * General Virtual HID device driver. (cuse4bsd version)
++ * General Virtual HID device driver. (cuse version)
+  */
+ 
+ #if CUSE_VERSION < 0x000118
+-#error uhidd requires cuse4bsd version >= 0.1.24
++#error uhidd requires cuse version >= 0.1.24
+ #endif
+ 
+ #ifndef	CUSE_ID_UHIDD
 @@ -192,7 +192,7 @@ vhid_attach(struct hid_appcol *ha)
  		vd->vd_rsz = ha->ha_rsz;
  	} else {
@@ -275,7 +294,7 @@ Date:   Sun May 29 16:13:33 2016 +0000
  		return (-1);
  	}
  
-@@ -468,7 +468,7 @@ vhid_write(struct cuse_dev *cdev, int ff
+@@ -468,7 +468,7 @@ vhid_write(struct cuse_dev *cdev, int fflags, const vo
  		goto write_done;
  
  	if (verbose) {
