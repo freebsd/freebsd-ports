@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# PROVIDE: dhclient dhcpcd
+# KEYWORD: nojail
+#
+
+. /etc/rc.subr
+. /etc/network.subr
+
+name="dhcpcd"
+ifn="$2"
+command="%%PREFIX%%/sbin/dhcpcd"
+command_args="$ifn"
+if [ -n "$ifn" ]; then
+	specific="$(get_if_var $ifn dhcpcd_flags_IF)"
+	if [ -z "$flags" -a -n "$specific" ]; then
+		rc_flags="$specific"
+	fi
+	pidfile="/var/run/dhcpcd/dhcpcd-$ifn.pid"
+else
+	pidfile="$($command -P $rc_flags)"
+	: ${dhcpcd_enable:=NO}
+	rcvar=dhcpcd_enable
+
+fi
+start_precmd="dhcpcd_precmd"
+
+dhcpcd_precmd()
+{
+	# dhcpcd may need local binaries
+	export PATH=${PATH}:/usr/local/sbin:/usr/local/bin
+}
+
+load_rc_config $name
+load_rc_config network
+
+if [ -n "$ifn" ]; then
+	if ! dhcpif $ifn; then
+		err 1 "$ifn is not enabled for DHCP"
+	fi
+fi
+
+run_rc_command "$1"

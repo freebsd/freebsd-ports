@@ -116,6 +116,7 @@
     SUBDIR += dgd-lpmud
     SUBDIR += dhcp6
     SUBDIR += dhcpcd
+    SUBDIR += dhcpcd-devel
     SUBDIR += dhcpcd-ui
     SUBDIR += dhcpd
     SUBDIR += dhcpd-pools
