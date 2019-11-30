@@ -4,14 +4,13 @@
 1) webcamd requires the cuse(3) kernel module.
 Please load this dependency by doing:
 
-       # part of default kernel build
        # kldload cuse
 
 or by adding
 
        cuse_load="YES"
 
-to your /boot/loader.conf.
+to your /boot/loader.conf
 
 2) add webcamd_enable="YES"
 
