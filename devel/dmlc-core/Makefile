@@ -22,9 +22,9 @@ USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 # use clang from ports because otherwise OpenMP isn't detected on some systems (ex. 12.0-RELEASE-p9)
-CPP?=		clang-cpp${LLVM_DEFAULT}
-CC?=		clang${LLVM_DEFAULT}
-CXX?=		clang++${LLVM_DEFAULT}
+CPP=		clang-cpp${LLVM_DEFAULT}
+CC=		clang${LLVM_DEFAULT}
+CXX=		clang++${LLVM_DEFAULT}
 
 .include <bsd.port.options.mk>
 
