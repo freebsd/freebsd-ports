@@ -15,8 +15,6 @@ COMMENT=	Modules for c-icap: virus_scan and srv_url_check
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build
-
 LIB_DEPENDS=	libicapapi.so:www/c-icap \
 		libclamav.so:security/clamav
 
