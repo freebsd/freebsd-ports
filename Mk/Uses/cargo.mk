@@ -241,10 +241,12 @@ cargo-patch-git:
 		${SED} -i.dist -E ${_CARGO_GIT_PATCH_CARGOTOML} {} +
 .endif
 
-.if !target(do-configure) && ${CARGO_CONFIGURE:tl} == "yes"
+.if ${CARGO_CONFIGURE:tl} == "yes"
+_USES_configure+=	250:cargo-configure
+
 # configure hook.  Place a config file for overriding crates-io index
 # by local source directory.
-do-configure:
+cargo-configure:
 	@${MKDIR} ${WRKDIR}/.cargo
 	@${ECHO_CMD} "[source.cargo]" > ${WRKDIR}/.cargo/config
 	@${ECHO_CMD} "directory = '${CARGO_VENDOR_DIR}'" >> ${WRKDIR}/.cargo/config
