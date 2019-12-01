@@ -1,0 +1,5 @@
+RSS-Bridge is a PHP project capable of generating RSS and Atom
+feeds for websites which don't have one. It can be used on
+webservers or as stand alone application in CLI mode.
+
+WWW: https://github.com/RSS-Bridge/rss-bridge
