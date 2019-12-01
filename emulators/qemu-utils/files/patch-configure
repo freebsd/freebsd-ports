@@ -4,7 +4,7 @@
  ##########################################
  # pixman support probe
  
--if test "$want_tools" = "no" -a "$softmmu" = "no"; then
+-if test "$want_tools" = "no" && test "$softmmu" = "no"; then
 +if test "$softmmu" = "no"; then
    pixman_cflags=
    pixman_libs=

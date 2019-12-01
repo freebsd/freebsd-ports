@@ -22,10 +22,9 @@ DESCR=		${.CURDIR}/pkg-descr
 EXTRA_PATCHES=	${.CURDIR}/files/patch-configure
 PKGMESSAGE=
 
-PORTDOCS=	qemu-doc.html qemu-doc.txt
+PORTDOCS=	interop/* specs/*
 
 CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
-		--disable-libssh2 \
 		--mandir=${MANPREFIX}/man \
 		--prefix=${PREFIX} --cc=${CC} --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
@@ -86,5 +85,6 @@ pre-configure:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 	@${RMDIR} ${STAGEDIR}${DATADIR}
+	@${RM} -rf ${STAGEDIR}${PREFIX}/share
 
 .include "${MASTERDIR}/Makefile"
