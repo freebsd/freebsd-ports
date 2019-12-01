@@ -1,4 +1,10 @@
-.PHONY: libdislocator llvm_mode test_llvm_mode
+.PHONY: gcc_plugin install-strip libdislocator llvm_mode test_gcc_plugin test_llvm_mode
+
+install-strip: install
+	@cd ${DESTDIR}${BIN_PATH} && ${STRIP_CMD} ${PROGS}
+	@-${STRIP_CMD} ${DESTDIR}${BIN_PATH}/afl-clang-fast
+	@-${STRIP_CMD} ${DESTDIR}${BIN_PATH}/afl-gcc-fast
+	@cd ${DESTDIR}${HELPER_PATH} && ${STRIP_CMD} afl-as *.so
 
 libdislocator:
 	$(MAKE) -C libdislocator CFLAGS="-I../include ${CFLAGS}"
@@ -8,3 +14,9 @@ llvm_mode:
 
 test_llvm_mode:
 	$(MAKE) -C llvm_mode test_build
+
+gcc_plugin:
+	$(MAKE) -C gcc_plugin CC="${GCC}" CXX="${GXX}"
+
+test_gcc_plugin:
+	$(MAKE) -C gcc_plugin CC="${GCC}" CXX="${GXX}" test_build
