@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To uhnide the keyboard after launch run
 
 $ gdbus call --session \
@@ -5,3 +8,6 @@ $ gdbus call --session \
     --object-path=/sm/puri/OSK0 \
     --method=sm.puri.OSK0.SetVisible \
     true
+EOM
+}
+]

@@ -21,7 +21,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
 USES=		cargo compiler:c11 gettext-tools gnome meson pkgconfig
 USE_GITLAB=	yes
-USE_GNOME=	cairo gtk30
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
 GL_COMMIT=	579ba8ab87f395c550eede40922b498feb245300
