@@ -1926,6 +1926,7 @@
     SUBDIR += retawq
     SUBDIR += riot-web
     SUBDIR += roundup
+    SUBDIR += rss-bridge
     SUBDIR += rsskit
     SUBDIR += rssowl
     SUBDIR += rssroll
