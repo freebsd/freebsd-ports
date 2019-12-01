@@ -254,9 +254,11 @@ makesum:
 .endfor
 	${RM} ${DISTINFO_FILE}.${arch}
 .endfor
+.if ${ONLY_FOR_ARCHS:Mpowerpc64}
 	${MAKE} -D_RUST_MAKESUM_GUARD makesum PPC_ABI=ELFv2 ARCH=powerpc64 DISTINFO_FILE=${DISTINFO_FILE}.powerpc64-elfv2
 	${GREP} ${_RUST_ARCH_powerpc64:Upowerpc64} ${DISTINFO_FILE}.powerpc64-elfv2 >> ${DISTINFO_FILE}.tmp
 	${RM} ${DISTINFO_FILE}.powerpc64-elfv2
+.endif
 	${AWK} '!seen[$$0]++' ${DISTINFO_FILE}.tmp > ${DISTINFO_FILE}
 	${RM} ${DISTINFO_FILE}.tmp
 .endif
