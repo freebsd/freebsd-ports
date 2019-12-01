@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	librepcb
-DISTVERSION=	0.1.2.20191119
+DISTVERSION=	0.1.3
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,6 @@ USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5 shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	LibrePCB
 GH_PROJECT=	LibrePCB
-GH_TAGNAME=	ffa210c
 GH_TUPLE=	\
 		LibrePCB:hoedown:dae7992:hoedown/libs/hoedown \
 		LibrePCB:quazip:e13d52b:quazip/libs/quazip \
