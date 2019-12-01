@@ -25,7 +25,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
 GL_COMMIT=	579ba8ab87f395c550eede40922b498feb245300
-MAKE_ENV=	CARGO_ENV='${CARGO_ENV:N*TARGET_DIR*}'
+MAKE_ENV=	${CARGO_ENV}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-real \
 		share/applications/sm.puri.Squeekboard.desktop
@@ -83,7 +83,7 @@ post-patch:
 # Add --verbose after each cargo subcommand
 # Don't use BSD realpath(1) against non-existing files
 	@${REINPLACE_CMD} -e '/^cargo/ { \
-		  s,^,cmd=$$1; shift; eval export $$CARGO_ENV; ,; \
+		  s,^,cmd=$$1; shift; ,; \
 		  s,"$$@","$$cmd" --verbose &,; }' \
 		-e '/OUT_PATH=/s,=.*,=$$PWD/$$1,' \
 		${WRKSRC}/cargo*.sh
