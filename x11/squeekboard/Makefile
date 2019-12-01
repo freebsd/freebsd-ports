@@ -79,7 +79,6 @@ CARGO_INSTALL=	no
 CARGO_TEST=	no
 
 post-patch:
-# Pass USES=cargo environment to USES=meson
 # Add --verbose after each cargo subcommand
 # Don't use BSD realpath(1) against non-existing files
 	@${REINPLACE_CMD} -e '/^cargo/ { \
