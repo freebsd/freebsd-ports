@@ -27,13 +27,17 @@ TEST_TARGET=	test_build
 
 CONFLICTS_INSTALL=	afl
 
-OPTIONS_DEFINE=		DEBUG DOCS LLVM
+OPTIONS_DEFINE=		DEBUG DOCS GCC LLVM
 OPTIONS_DEFAULT=	LLVM
 # On non-x86 architectures LLVM is mandatory
 OPTIONS_SLAVE=		${ARCH:Namd64:Ni386:S/${ARCH}/LLVM/}
 OPTIONS_SUB=		yes
 
+GCC_DESC=	Build GCC plugin and afl-gcc-fast
 LLVM_DESC=	LLVM-based instrumentation
+
+GCC_BUILD_DEPENDS=	gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
+GCC_RUN_DEPENDS=	gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 
 LLVM_BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 LLVM_RUN_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
@@ -71,11 +75,21 @@ post-patch:
 .endif
 	@${CAT} ${FILESDIR}/Makefile.extra >> ${WRKSRC}/Makefile
 
+post-patch-GCC-on:
+	@${REINPLACE_CMD} \
+		-e 's|"gcc"|"gcc${GCC_DEFAULT}"|g' \
+		-e 's|"g\+\+"|"g\+\+${GCC_DEFAULT}"|g' \
+		${WRKSRC}/gcc_plugin/afl-gcc-fast.c
+
 post-patch-LLVM-on:
 	@${REINPLACE_CMD} \
 		-e 's|"clang"|"clang${LLVM_DEFAULT}"|g' \
 		-e 's|"clang\+\+"|"clang\+\+${LLVM_DEFAULT}"|g' \
 		${WRKSRC}/llvm_mode/afl-clang-fast.c
+
+post-build-GCC-on:
+	@${DO_MAKE_BUILD} -C ${WRKSRC}/gcc_plugin CC=gcc${GCC_DEFAULT} \
+		CXX=g++${GCC_DEFAULT}
 
 post-install:
 .for script in afl-cmin afl-plot afl-whatsup
@@ -85,11 +99,25 @@ post-install:
 .for prog in afl-analyze afl-fuzz afl-gcc afl-gotcpu afl-showmap afl-tmin
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${prog}
 .endfor
-	${INSTALL_LIB} ${WRKSRC}/libdislocator.so \
-		${STAGEDIR}${PREFIX}/lib/afl
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/libdislocator
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/afl/*.so
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/libdislocator
 	${INSTALL_MAN} ${WRKSRC}/libdislocator/README.md \
 		${STAGEDIR}${DOCSDIR}/libdislocator
+
+post-install-GCC-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/afl-g++-fast \
+		${WRKSRC}/afl-gcc-fast \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/afl-g++-fast.8 \
+		${WRKSRC}/afl-gcc-fast.8 \
+		${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_LIB} ${WRKSRC}/afl-gcc-pass.so \
+		${STAGEDIR}${PREFIX}/lib/afl
+	${INSTALL_DATA} ${WRKSRC}/afl-gcc-rt.o \
+		${STAGEDIR}${PREFIX}/lib/afl
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/gcc_plugin
+	${INSTALL_MAN} ${WRKSRC}/gcc_plugin/README.* \
+		${STAGEDIR}${DOCSDIR}/gcc_plugin
 
 post-install-LLVM-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/afl/*.so \
@@ -97,5 +125,9 @@ post-install-LLVM-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/llvm_mode
 	${INSTALL_MAN} ${WRKSRC}/llvm_mode/README.* \
 		${STAGEDIR}${DOCSDIR}/llvm_mode
+
+post-test-GCC-on:
+	@${DO_MAKE_BUILD} -C ${WRKSRC}/gcc_plugin CC=gcc${GCC_DEFAULT} \
+		CXX=g++${GCC_DEFAULT} test_build
 
 .include <bsd.port.mk>
