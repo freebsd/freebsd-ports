@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		cmake:devel/cmake
 
-USES=		gmake gnome pkgconfig xorg
+USES=		compiler:c++11-lang gmake gnome pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	sjaehn
 GH_PROJECT=	BShapr
