@@ -10,6 +10,7 @@ include/simgrid/Exception.hpp
 include/simgrid/actor.h
 include/simgrid/barrier.h
 include/simgrid/chrono.hpp
+include/simgrid/cond.h
 include/simgrid/config.h
 include/simgrid/engine.h
 include/simgrid/forward.h
@@ -34,6 +35,7 @@ include/simgrid/kernel/routing/VivaldiZone.hpp
 include/simgrid/link.h
 include/simgrid/mailbox.h
 include/simgrid/modelchecker.h
+include/simgrid/mutex.h
 include/simgrid/msg.h
 include/simgrid/plugins/dvfs.h
 include/simgrid/plugins/energy.h
@@ -47,6 +49,7 @@ include/simgrid/s4u/Actor.hpp
 include/simgrid/s4u/Barrier.hpp
 include/simgrid/s4u/Comm.hpp
 include/simgrid/s4u/ConditionVariable.hpp
+include/simgrid/s4u/Disk.hpp
 include/simgrid/s4u/Engine.hpp
 include/simgrid/s4u/Exec.hpp
 include/simgrid/s4u/Host.hpp
@@ -114,7 +117,7 @@ include/xbt/utility.hpp
 include/xbt/virtu.h
 include/xbt/xbt_os_time.h
 lib/libsimgrid.so
-lib/libsimgrid.so.3.23.2
+lib/libsimgrid.so.3.24
 lib/simgrid/smpimain
 lib/simgrid/smpireplaymain
 libdata/pkgconfig/simgrid.pc
