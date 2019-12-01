@@ -2,7 +2,6 @@ bin/influx
 bin/influx_inspect
 bin/influx_tsm
 bin/influxd
-bin/influx_store
 bin/influx_stress
 %%MANPAGES%%man/man1/influx.1.gz
 %%MANPAGES%%man/man1/influx_inspect.1.gz
