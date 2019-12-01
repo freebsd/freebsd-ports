@@ -685,6 +685,7 @@
     SUBDIR += py-algopy
     SUBDIR += py-altgraph
     SUBDIR += py-apgl
+    SUBDIR += py-arviz
     SUBDIR += py-autograd
     SUBDIR += py-basemap
     SUBDIR += py-basemap-data
