@@ -1,5 +1,5 @@
-TIMESTAMP = 1572789822
-SHA256 (unifi5-5.12.22/unifi_sysvinit_all.deb) = eb1ec1953df3995aabd474666e75b7532fd11e7c31256ed74bcbec4148b5ff4a
-SIZE (unifi5-5.12.22/unifi_sysvinit_all.deb) = 99195172
-SHA256 (unifi5-5.12.22/javax.activation-api-1.2.0.jar) = 43fdef0b5b6ceb31b0424b208b930c74ab58fac2ceeb7b3f6fd3aeb8b5ca4393
-SIZE (unifi5-5.12.22/javax.activation-api-1.2.0.jar) = 56674
+TIMESTAMP = 1575219109
+SHA256 (unifi5-5.12.35/unifi_sysvinit_all.deb) = 2212b9f87db558e83b2245de76e0d360bae180720e52e654e8cb2a1dfde9c852
+SIZE (unifi5-5.12.35/unifi_sysvinit_all.deb) = 99216262
+SHA256 (unifi5-5.12.35/javax.activation-api-1.2.0.jar) = 43fdef0b5b6ceb31b0424b208b930c74ab58fac2ceeb7b3f6fd3aeb8b5ca4393
+SIZE (unifi5-5.12.35/javax.activation-api-1.2.0.jar) = 56674
