@@ -450,6 +450,10 @@ SVTAV1_LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1
 SVTAV1_CONFIGURE_ON=	--enable-libsvtav1
 SVTAV1_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-AV1/raw/v0.7.5/ffmpeg_plugin/:svtav1
 SVTAV1_PATCHFILES=	0001-Add-ability-for-ffmpeg-to-run-svt-av1.patch:-p1:svtav1
+.if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
+# https://github.com/OpenVisualCloud/SVT-AV1/issues/691
+SVTAV1_LDFLAGS=		-fuse-ld=lld
+.endif
 .if make(makesum)
 .MAKEFLAGS:		WITH+=SVTAV1
 .else
@@ -463,6 +467,9 @@ SVTHEVC_CONFIGURE_ON=	--enable-libsvthevc
 SVTHEVC_PATCH_SITES=	https://github.com/Intel/SVT-HEVC/raw/v1.4.1/ffmpeg_plugin/:svthevc
 SVTHEVC_PATCHFILES=	0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch:-p1:svthevc \
 			0002-doc-Add-libsvt_hevc-encoder-docs.patch:-p1:svthevc
+.if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
+SVTHEVC_LDFLAGS=	-fuse-ld=lld
+.endif
 .if make(makesum)
 .MAKEFLAGS:		WITH+=SVTHEVC
 .else
@@ -475,6 +482,9 @@ SVTVP9_LIB_DEPENDS=	libSvtVp9Enc.so:multimedia/svt-vp9
 SVTVP9_CONFIGURE_ON=	--enable-libsvtvp9
 SVTVP9_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.1.0/ffmpeg_plugin/:svtvp9
 SVTVP9_PATCHFILES=	0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch:-p1:svtvp9
+.if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
+SVTVP9_LDFLAGS=		-fuse-ld=lld
+.endif
 .if make(makesum)
 .MAKEFLAGS:		WITH+=SVTVP9
 .else
