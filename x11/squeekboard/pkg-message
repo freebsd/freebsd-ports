@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-To uhnide the keyboard after launch run
+To unhide the keyboard after launch run
 
 $ gdbus call --session \
     --dest=sm.puri.OSK0 \
