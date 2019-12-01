@@ -13507,3 +13507,12 @@ multimedia/cuse4bsd-kmod||2019-11-30|Removed, in base system on all supported ve
 java/jdk9-doc||2019-11-30|Has expired: The corresponding JDK port is EoL
 java/jdk10-doc||2019-11-30|Has expired: The corresponding JDK port is EoL
 databases/zabbix22-libzbxpgsql|databases/zabbix3-libzbxpgsql|2019-12-01|End-of-Life was August, 2019
+astro/garmindev||2019-12-01|Has expired: This port is useful only with the long expired QLandkarteGT
+net-mgmt/zabbix22-agent|net-mgmt/zabbix3-agent|2019-12-01|Has expired: End of Life was August, 2019
+net-mgmt/zabbix22-frontend|net-mgmt/zabbix3-frontend|2019-12-01|Has expired: End of Life was August, 2019
+net-mgmt/zabbix22-java|net-mgmt/zabbix3-java|2019-12-01|Has expired: End of Life was August, 2019
+net-mgmt/zabbix22-proxy|net-mgmt/zabbix3-proxy|2019-12-01|Has expired: End of Life was August, 2019
+net-mgmt/zabbix22-server|net-mgmt/zabbix3-server|2019-12-01|Has expired: End of Life was August, 2019
+sysutils/fusefs-ext4fuse|sysutils/fusefs-ext2|2019-12-01|Has expired: Please consider using sysutils/fusefs-ext2 as upstream development is stalled.  Contrary to what its name suggests it supports ext2, ext3, ext4 in read/write  mode.
+www/grafana3|www/grafana4|2019-12-01|Has expired: Depends on expired lang/phantomjs
+www/miniminiweb||2019-12-01|Has expired: Upstream no longer available
