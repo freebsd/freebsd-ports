@@ -83,7 +83,7 @@ post-patch:
 # Add --verbose after each cargo subcommand
 # Don't use BSD realpath(1) against non-existing files
 	@${REINPLACE_CMD} -e '/^cargo/ { \
-		  s,^,cmd=$$1; shift; eval export $${CARGO_ENV}; ,; \
+		  s,^,cmd=$$1; shift; eval export $$CARGO_ENV; ,; \
 		  s,"$$@","$$cmd" --verbose &,; }' \
 		-e '/OUT_PATH=/s,=.*,=$$PWD/$$1,' \
 		${WRKSRC}/cargo*.sh
