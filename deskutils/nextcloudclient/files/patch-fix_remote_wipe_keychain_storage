@@ -1,0 +1,85 @@
+From dcc84d35085d790a53b472d1edba663832af238a Mon Sep 17 00:00:00 2001
+From: Michael Schuster <michael@schuster.ms>
+Date: Fri, 29 Nov 2019 04:28:50 +0100
+Subject: [PATCH] Fix remote wipe keychain storage (issue #1592)
+
+The app password for the remote wipe was constantly being written in
+WebFlowCredentials::slotFinished to the keychain, leading to unnecessary
+write and log overhead on the system.
+
+This fix introduces a check to only store the app password once in
+a lifetime of the Account class. Also the method used to store the
+password will be renamed from setAppPassword to writeAppPasswordOnce
+to be more expressive.
+
+Signed-off-by: Michael Schuster <michael@schuster.ms>
+---
+ src/gui/creds/webflowcredentials.cpp | 2 +-
+ src/libsync/account.cpp              | 9 +++++++--
+ src/libsync/account.h                | 5 ++++-
+ 3 files changed, 12 insertions(+), 4 deletions(-)
+
+diff --git a/src/gui/creds/webflowcredentials.cpp b/src/gui/creds/webflowcredentials.cpp
+index 49c80e1ff..e2dc10b35 100644
+--- src/gui/creds/webflowcredentials.cpp
++++ src/gui/creds/webflowcredentials.cpp
+@@ -420,7 +420,7 @@ void WebFlowCredentials::slotFinished(QNetworkReply *reply) {
+         _credentialsValid = true;
+ 
+         /// Used later for remote wipe
+-        _account->setAppPassword(_password);
++        _account->writeAppPasswordOnce(_password);
+     }
+ }
+ 
+diff --git a/src/libsync/account.cpp b/src/libsync/account.cpp
+index 32e58b2e4..33032e3f8 100644
+--- src/libsync/account.cpp
++++ src/libsync/account.cpp
+@@ -513,7 +513,10 @@ void Account::setNonShib(bool nonShib)
+     }
+ }
+ 
+-void Account::setAppPassword(QString appPassword){
++void Account::writeAppPasswordOnce(QString appPassword){
++    if(_wroteAppPassword)
++        return;
++
+     const QString kck = AbstractCredentials::keychainKey(
+                 url().toString(),
+                 davUser() + app_password,
+@@ -524,8 +527,10 @@ void Account::setAppPassword(QString appPassword){
+     job->setInsecureFallback(false);
+     job->setKey(kck);
+     job->setBinaryData(appPassword.toLatin1());
+-    connect(job, &WritePasswordJob::finished, [](Job *) {
++    connect(job, &WritePasswordJob::finished, [this](Job *) {
+         qCInfo(lcAccount) << "appPassword stored in keychain";
++
++        _wroteAppPassword = true;
+     });
+     job->start();
+ }
+diff --git a/src/libsync/account.h b/src/libsync/account.h
+index 1f3e46a96..2b843dca9 100644
+--- src/libsync/account.h
++++ src/libsync/account.h
+@@ -243,7 +243,7 @@ class OWNCLOUDSYNC_EXPORT Account : public QObject
+ 
+     /// Used in RemoteWipe
+     void retrieveAppPassword();
+-    void setAppPassword(QString appPassword);
++    void writeAppPasswordOnce(QString appPassword);
+     void deleteAppPassword();
+ 
+ public slots:
+@@ -319,6 +319,9 @@ protected Q_SLOTS:
+     QString _davPath; // defaults to value from theme, might be overwritten in brandings
+     ClientSideEncryption _e2e;
+ 
++    /// Used in RemoteWipe
++    bool _wroteAppPassword = false;
++
+     friend class AccountManager;
+ };
+ }
