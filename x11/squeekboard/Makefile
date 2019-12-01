@@ -74,6 +74,9 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		xkbcommon-0.4.0 \
 		yaml-rust-0.4.3
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
 
 post-patch:
 # Pass USES=cargo environment to USES=meson
@@ -84,18 +87,5 @@ post-patch:
 		  s,"$$@","$$cmd" --verbose &,; }' \
 		-e '/OUT_PATH=/s,=.*,=$$PWD/$$1,' \
 		${WRKSRC}/cargo*.sh
-
-post-configure:
-# Run USES=meson after USES=cargo configures vendoring
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} \
-		${MAKE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS})
-
-# Let USES=meson handle the rest
-do-build:
-	@${DO_MAKE_BUILD} -C${BUILD_WRKSRC} ${ALL_TARGET}
-do-install:
-	@${DO_MAKE_BUILD} -C${INSTALL_WRKSRC} ${INSTALL_TARGET}
-do-test:
-	@${DO_MAKE_BUILD} -C${TEST_WRKSRC} ${TEST_TARGET}
 
 .include <bsd.port.mk>

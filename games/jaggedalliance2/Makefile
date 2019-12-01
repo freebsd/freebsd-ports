@@ -80,11 +80,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/some/place/where/the/data/is|${DATADIR}|' \
 		${WRKSRC}/rust/src/stracciatella.rs
 
-post-configure:
-	@${MKDIR} ${CONFIGURE_WRKSRC}
-	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} \
-		${CMAKE_ARGS} ${CMAKE_SOURCE_PATH}
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ja2 \
 		${STAGEDIR}${PREFIX}/bin/ja2-launcher \
