@@ -5,13 +5,11 @@ PORTNAME=	gnubg
 PORTVERSION=	1.06.002
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://files.gnubg.org/media/sources/
+MASTER_SITES=	GNU
 DISTFILES=	gnubg-release-${PORTVERSION}-sources.tar.gz
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	GNU Backgammon
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv3
 
