@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysqltuner
-PORTVERSION=	1.7.15
+PORTVERSION=	1.7.17
 CATEGORIES=	databases
 
 MAINTAINER=	pi@FreeBSD.org
