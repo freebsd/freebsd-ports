@@ -1,7 +1,0 @@
-This project provides comprehensive monitoring of PostgreSQL servers using a
-natively compiled Zabbix agent module, written in C.
-
-The module enables discovery and monitoring of tablespaces, databases,
-namespaces, tables, indexes, etc.
-
-WWW: http://cavaliercoder.com/libzbxpgsql/

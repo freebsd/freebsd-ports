@@ -13506,3 +13506,4 @@ lang/gcc7-devel|lang/gcc7|2019-11-28|The GCC 7 branch is end of life, use the fi
 multimedia/cuse4bsd-kmod||2019-11-30|Removed, in base system on all supported versions
 java/jdk9-doc||2019-11-30|Has expired: The corresponding JDK port is EoL
 java/jdk10-doc||2019-11-30|Has expired: The corresponding JDK port is EoL
+databases/zabbix22-libzbxpgsql|databases/zabbix3-libzbxpgsql|2019-12-01|End-of-Life was August, 2019
