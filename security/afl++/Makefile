@@ -22,7 +22,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	vanhauser-thc
 GH_PROJECT=	AFLplusplus
 
+MAKE_ARGS=	STRIP_CMD="${STRIP_CMD}"
 ALL_TARGET=	all libdislocator
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	test_build
 
 CONFLICTS_INSTALL=	afl
@@ -38,6 +40,10 @@ LLVM_DESC=	LLVM-based instrumentation
 
 GCC_BUILD_DEPENDS=	gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 GCC_RUN_DEPENDS=	gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
+GCC_MAKE_ARGS=		GCC=gcc${GCC_DEFAULT} \
+			GXX=g++${GCC_DEFAULT}
+GCC_ALL_TARGET=		gcc_plugin
+GCC_TEST_TARGET=	test_gcc_plugin
 
 LLVM_BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 LLVM_RUN_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
@@ -68,12 +74,15 @@ post-patch:
 # jails works by default.  afl needs shmget() which usually isn't
 # available in jails.
 	@${REINPLACE_CMD} 's@^\(all.*\) test_build@\1@' \
-		${WRKSRC}/Makefile ${WRKSRC}/llvm_mode/Makefile
+		${WRKSRC}/Makefile \
+		${WRKSRC}/gcc_plugin/Makefile \
+		${WRKSRC}/llvm_mode/Makefile
 .if ${ARCH} == "i386"
 	@${REINPLACE_CMD} 's@\(  as_params\[0\] = afl_as ? afl_as : \)\(.*\)@\1(u8*)"${LOCALBASE}/bin/as";@' \
 		${WRKSRC}/src/afl-as.c
 .endif
-	@${CAT} ${FILESDIR}/Makefile.extra >> ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} '/export AFL_CC/d' ${WRKSRC}/test/test.sh
+	@${ECHO_CMD} "include ${FILESDIR}/Makefile.extra" >> ${WRKSRC}/Makefile
 
 post-patch-GCC-on:
 	@${REINPLACE_CMD} \
@@ -87,47 +96,22 @@ post-patch-LLVM-on:
 		-e 's|"clang\+\+"|"clang\+\+${LLVM_DEFAULT}"|g' \
 		${WRKSRC}/llvm_mode/afl-clang-fast.c
 
-post-build-GCC-on:
-	@${DO_MAKE_BUILD} -C ${WRKSRC}/gcc_plugin CC=gcc${GCC_DEFAULT} \
-		CXX=g++${GCC_DEFAULT}
-
 post-install:
-.for script in afl-cmin afl-plot afl-whatsup
-	${INSTALL_SCRIPT} ${WRKSRC}/${script} ${STAGEDIR}${PREFIX}/bin
-.endfor
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/afl/afl-as
-.for prog in afl-analyze afl-fuzz afl-gcc afl-gotcpu afl-showmap afl-tmin
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${prog}
-.endfor
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/afl/*.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/libdislocator
 	${INSTALL_MAN} ${WRKSRC}/libdislocator/README.md \
 		${STAGEDIR}${DOCSDIR}/libdislocator
 
 post-install-GCC-on:
-	${INSTALL_PROGRAM} ${WRKSRC}/afl-g++-fast \
-		${WRKSRC}/afl-gcc-fast \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/afl-g++-fast.8 \
-		${WRKSRC}/afl-gcc-fast.8 \
-		${STAGEDIR}${PREFIX}/man/man8
-	${INSTALL_LIB} ${WRKSRC}/afl-gcc-pass.so \
-		${STAGEDIR}${PREFIX}/lib/afl
-	${INSTALL_DATA} ${WRKSRC}/afl-gcc-rt.o \
-		${STAGEDIR}${PREFIX}/lib/afl
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/gcc_plugin
 	${INSTALL_MAN} ${WRKSRC}/gcc_plugin/README.* \
 		${STAGEDIR}${DOCSDIR}/gcc_plugin
 
 post-install-LLVM-on:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/afl/*.so \
-		${STAGEDIR}${PREFIX}/bin/afl-clang-fast
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/llvm_mode
 	${INSTALL_MAN} ${WRKSRC}/llvm_mode/README.* \
 		${STAGEDIR}${DOCSDIR}/llvm_mode
 
-post-test-GCC-on:
-	@${DO_MAKE_BUILD} -C ${WRKSRC}/gcc_plugin CC=gcc${GCC_DEFAULT} \
-		CXX=g++${GCC_DEFAULT} test_build
+post-test:
+	@cd ${WRKSRC}/test && ./test.sh
 
 .include <bsd.port.mk>
