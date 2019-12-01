@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}theano>=1.0.4:math/py-theano@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.8.4:misc/py-tqdm@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	pymc-devs
 USE_PYTHON=	distutils concurrent autoplist
