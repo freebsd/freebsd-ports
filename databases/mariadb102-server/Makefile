@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.2.26
+PORTVERSION=	10.2.29
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
@@ -24,7 +24,6 @@ LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 SUB_FILES=	pkg-message
 
-SLAVEDIRS=	databases/mariadb102-client
 USES=		bison:build cmake compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh
@@ -92,7 +91,6 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DOPENSSL_ROOT_DIR="${OPENSSLBASE}" \
 		-DOPENSSL_CRYPTO_LIBRARY="${OPENSSLBASE}/lib/libcrypto.so" \
 		-DOPENSSL_SSL_LIBRARY="${OPENSSLBASE}/lib/libssl.so" \
-		-DREMOTEIO_PLUGIN_TYPE="NO" \
 		-DCOMPILATION_COMMENT="FreeBSD Ports" \
 		-DCMAKE_PREFIX_PATH=${PREFIX}
 CMAKE_ON+=	WITH_LIBWRAP WITH_JEMALLOC WITHOUT_DOCS
@@ -182,6 +180,7 @@ post-patch:
 	${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt
 	${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/mysys/my_default.c
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/scripts/mysql_config.sh
+	${MV} ${WRKSRC}/storage/mroonga/version ${WRKSRC}/storage/mroonga/version_txt
 .if ${OPSYS} == DragonFly
 	${CP} ${WRKSRC}/cmake/os/FreeBSD.cmake \
 		${WRKSRC}/cmake/os/DragonFly.cmake

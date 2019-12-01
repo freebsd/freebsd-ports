@@ -1,10 +1,7 @@
-Do NOT use bundled libs, use xz/lzma from base and archivers/snappy from ports
-
---- storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake.orig	2017-05-14 23:13:20 UTC
+--- storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake.orig	2019-11-06 11:18:19 UTC
 +++ storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake
-@@ -34,6 +34,13 @@ if (CMAKE_PROJECT_NAME STREQUAL TokuDB)
-     endif ()
- endif ()
+@@ -1,5 +1,12 @@
+ include(ExternalProject)
  
 +IF (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
 +  include_directories("/usr/include")
@@ -16,7 +13,7 @@ Do NOT use bundled libs, use xz/lzma from base and archivers/snappy from ports
  ## add lzma with an external project
  set(xz_configure_opts --with-pic --enable-static)
  if (APPLE)
-@@ -105,8 +112,15 @@ add_library(lzma STATIC IMPORTED)
+@@ -71,8 +78,15 @@ add_library(lzma STATIC IMPORTED)
  set_target_properties(lzma PROPERTIES IMPORTED_LOCATION
    "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/xz/lib/liblzma.a")
  add_dependencies(lzma build_lzma)
@@ -32,7 +29,7 @@ Do NOT use bundled libs, use xz/lzma from base and archivers/snappy from ports
  ## add snappy with an external project
  set(SNAPPY_SOURCE_DIR "${TokuDB_SOURCE_DIR}/third_party/snappy-1.1.2" CACHE FILEPATH "Where to find sources for snappy.")
  if (NOT EXISTS "${SNAPPY_SOURCE_DIR}/CMakeLists.txt")
-@@ -140,3 +154,4 @@ add_library(snappy STATIC IMPORTED)
+@@ -109,3 +123,4 @@ add_library(snappy STATIC IMPORTED)
  set_target_properties(snappy PROPERTIES IMPORTED_LOCATION
    "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/snappy/lib/libsnappy.a")
  add_dependencies(snappy build_snappy)

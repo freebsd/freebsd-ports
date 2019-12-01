@@ -175,6 +175,7 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/mysql_system_tables.sql
 %%DATADIR%%/mysql_system_tables_data.sql
 %%DATADIR%%/mysql_test_data_timezone.sql
+%%DATADIR%%/mysql_test_db.sql
 %%DATADIR%%/mysql_to_mariadb.sql
 %%DATADIR%%/mysqld_multi.server
 %%DATADIR%%/norwegian-ny/errmsg.sys
