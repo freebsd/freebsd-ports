@@ -514,7 +514,7 @@ EXTRA_PATCHES+=		${FILESDIR}/extrapatch-outlook-servers__slapd__schema_prep.c
 .endif
 
 .if ${PORT_OPTIONS:MKQUEUE}
-USE_AUTOTOOLS+=		autoconf
+BUILD_DEPENDS+=		autoconf>0:devel/autoconf
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-ITS6300
 .endif
 
