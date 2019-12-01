@@ -17,15 +17,14 @@ RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		cmake compiler:c++0x tar:bzip2
 
-OPTIONS_DEFINE=		DOCS PYTHON
-OPTIONS_DEFAULT=	PYTHON
+OPTIONS_DEFINE=		DOCS
+
 OPTIONS_SUB=		yes
 
-PYTHON_USES=		localbase python
-PYTHON_BUILD_DEPENDS=	${LOCALBASE}/include/boost/python.hpp:devel/boost-libs
-PYTHON_LIB_DEPENDS=	${PY_BOOST}
-#XXX This looks wrong but it works, the regular method doesn't !
-PYTHON_CMAKE_ON=	-Denable-python=ON -Denable-python-bindings=ON
+#PYTHON_USES=		localbase python
+#PYTHON_BUILD_DEPENDS=	${LOCALBASE}/include/boost/python.hpp:devel/boost-libs
+#PYTHON_LIB_DEPENDS=	${PY_BOOST}
+#PYTHON_CMAKE_ON=	enable-python enable-python-bindings
 
 CMAKE_ON=	enable-aster enable-calculix
 USE_LDCONFIG=	yes
