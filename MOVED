@@ -9927,7 +9927,6 @@ audio/kscd|audio/kscd-kde4|2018-02-22|Make room for KDE updates
 comms/kremotecontrol|comms/kremotecontrol-kde4|2018-02-22|Make room for KDE updates
 graphics/ksnapshot|graphics/ksnapshot-kde4|2018-02-22|Make room for KDE updates
 graphics/ksaneplugin|graphics/ksaneplugin-kde4|2018-02-22|Make room for KDE updates
-graphics/kqtquickcharts|graphics/kqtquickcharts-kde4|2018-02-22|Make room for KDE updates
 x11/kde4-baseapps|x11/kde-baseapps-kde4|2018-02-22|Make room for KDE updates
 x11/kde4-runtime|x11/kde-runtime-kde4|2018-02-22|Make room for KDE updates
 x11/kde4-workspace|x11/kde-workspace-kde4|2018-02-22|Make room for KDE updates
@@ -11124,7 +11123,6 @@ graphics/kdegraphics-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
 graphics/kdegraphics-svgpart-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
 graphics/kcolorchooser-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
 graphics/okular-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
-graphics/kqtquickcharts-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
 graphics/libkipi-kde4||2018-12-31|Has expired: Qt4 has been EOL since december 2015
 graphics/libkexiv2-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
 graphics/kolourpaint-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
