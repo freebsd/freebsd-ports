@@ -7,7 +7,7 @@ CATEGORIES=	net
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Simple cross platform GUI for rclone
 
-LICENSE=	UNLICENSE
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rclone:net/rclone
