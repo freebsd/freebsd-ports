@@ -22,12 +22,8 @@ USE_LDCONFIG=	yes
 
 INFO=		cln
 
-.include <bsd.port.pre.mk>
+CPPFLAGS_aarch64=	-DNO_ASM
+CPPFLAGS_armv6=	-DNO_ASM
+CPPFLAGS_armv7=	-DNO_ASM
 
-.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
-CPPFLAGS+=	-DNO_ASM
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src_base_low_cl__low__div.cc \
-		${PATCHDIR}/extra-patch-src_base_low_cl__low__mul.cc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
