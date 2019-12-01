@@ -12,7 +12,7 @@ DISTNAME=	eyeD3-${PORTVERSION}
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Python module for processing ID3 tags
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_ARCH=	yes
@@ -29,9 +29,12 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 post-patch:
 	${REINPLACE_CMD} -e 's,bash,sh,g;s,python,${PYTHON_CMD},g' \
 		${WRKSRC}/bin/eyeD3
-post-install:
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
