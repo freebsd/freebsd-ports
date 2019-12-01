@@ -192,6 +192,7 @@ post-patch:
 	${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/mysys/my_default.c
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/scripts/mysql_config.sh \
 		${WRKSRC}/storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake
+	${MV} ${WRKSRC}/storage/mroonga/version ${WRKSRC}/storage/mroonga/version_txt
 .if ${OPSYS} == DragonFly
 	${CP} ${WRKSRC}/cmake/os/FreeBSD.cmake \
 		${WRKSRC}/cmake/os/DragonFly.cmake
