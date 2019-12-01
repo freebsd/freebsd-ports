@@ -2,7 +2,7 @@
 
 PKGNAMESUFFIX=	-utils
 
-MAINTAINER=	asomers@FreeBSD.org
+MAINTAINER=	ken@FreeBSD.org
 COMMENT=	QEMU userland utilities
 
 HAS_CONFIGURE=	yes
