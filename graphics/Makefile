@@ -397,6 +397,7 @@
     SUBDIR += kolourpaint
     SUBDIR += kooka
     SUBDIR += kphotoalbum
+    SUBDIR += kqtquickcharts
     SUBDIR += krita
     SUBDIR += kudu
     SUBDIR += kxstitch
