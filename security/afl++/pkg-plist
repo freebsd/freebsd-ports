@@ -3,6 +3,8 @@ bin/afl-analyze
 %%X86%%bin/afl-clang++
 %%LLVM%%bin/afl-clang-fast
 %%LLVM%%bin/afl-clang-fast++
+%%GCC%%bin/afl-g++-fast
+%%GCC%%bin/afl-gcc-fast
 bin/afl-cmin
 bin/afl-fuzz
 %%X86%%bin/afl-g++
@@ -14,6 +16,8 @@ bin/afl-system-config
 bin/afl-tmin
 bin/afl-whatsup
 %%X86%%lib/afl/afl-as
+%%GCC%%lib/afl/afl-gcc-pass.so
+%%GCC%%lib/afl/afl-gcc-rt.o
 %%LLVM%%lib/afl/afl-llvm-pass.so
 %%X86%%%%LLVM%%lib/afl/afl-llvm-rt-32.o
 %%LLVM%%lib/afl/afl-llvm-rt-64.o
@@ -28,6 +32,8 @@ lib/afl/libdislocator.so
 %%LLVM%%man/man8/afl-clang-fast++.8.gz
 man/man8/afl-cmin.8.gz
 man/man8/afl-fuzz.8.gz
+%%GCC%%man/man8/afl-g++-fast.8.gz
+%%GCC%%man/man8/afl-gcc-fast.8.gz
 man/man8/afl-gcc.8.gz
 man/man8/afl-gotcpu.8.gz
 man/man8/afl-plot.8.gz
@@ -93,6 +99,8 @@ man/man8/afl-whatsup.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/binaryonly_fuzzing.txt
 %%PORTDOCS%%%%DOCSDIR%%/custom_mutator.txt
 %%PORTDOCS%%%%DOCSDIR%%/env_variables.txt
+%%GCC%%%%PORTDOCS%%%%DOCSDIR%%/gcc_plugin/README.gcc.md
+%%GCC%%%%PORTDOCS%%%%DOCSDIR%%/gcc_plugin/README.whitelist.md
 %%PORTDOCS%%%%DOCSDIR%%/historical_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/libdislocator/README.md
 %%PORTDOCS%%%%DOCSDIR%%/life_pro_tips.txt
