@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Please note that that this port only supports ext4 in read-only mode.
-You might want to consider using sysutils/fusefs-ext2 which supports
-ext2, ext3 and ext4 with read write support.
-EOM
-}
-]
