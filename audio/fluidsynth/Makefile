@@ -3,7 +3,7 @@
 
 PORTNAME=	fluidsynth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.8
+DISTVERSION=	2.1.0
 CATEGORIES=	audio
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -18,11 +18,12 @@ GH_ACCOUNT=	FluidSynth
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	enable-midishare
+# would require unreleased libinstpatch >= 1.1.0
+CMAKE_OFF=	enable-libinstpatch enable-midishare
 LDFLAGS+=	-lpthread
 
-OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO READLINE \
-		SNDFILE SNDIO
+OPTIONS_DEFINE=		ALSA DBUS JACK LADSPA LASH PORTAUDIO PULSEAUDIO \
+			READLINE SDL SNDFILE SNDIO
 OPTIONS_DEFAULT=	JACK READLINE
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
@@ -49,6 +50,10 @@ PULSEAUDIO_CMAKE_BOOL=	enable-pulseaudio
 
 READLINE_USES=		readline
 READLINE_CMAKE_BOOL=	enable-readline
+
+SDL_USES=	sdl
+SDL_USE=	SDL=sdl2
+SDL_CMAKE_BOOL=	enable-sdl2
 
 SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CMAKE_BOOL=	enable-libsndfile
