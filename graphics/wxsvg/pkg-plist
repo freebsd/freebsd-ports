@@ -193,5 +193,5 @@ include/wxSVGXML/svgxmlhelpr.h
 lib/libwxsvg.a
 lib/libwxsvg.so
 lib/libwxsvg.so.3
-lib/libwxsvg.so.3.12.4
+lib/libwxsvg.so.3.12.5
 libdata/pkgconfig/libwxsvg.pc
