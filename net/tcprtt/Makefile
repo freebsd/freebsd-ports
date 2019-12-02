@@ -18,7 +18,7 @@ PLIST_FILES=	bin/tcprtt man/man8/${PORTNAME}.8.gz
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300062
-IGNORE=		not supported on older CURRENT, no kernel support
+IGNORE=		requires kernel OSVERSION 1300062 or above
 .endif
 
 do-install:
