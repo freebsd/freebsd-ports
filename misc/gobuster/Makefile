@@ -3,7 +3,7 @@
 PORTNAME=	gobuster
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,7 @@ GH_TUPLE=	google:uuid:c2e93f3:uuid/vendor/github.com/google/uuid \
 		golang:crypto:0e37d00:crypto/vendor/golang.org/x/crypto \
 		spf13:cobra:0.0.5:cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.3:pflag/vendor/github.com/spf13/pflag \
-		golang:sys:d8f5ea2:sys/vendor/golang.org/x/sys
+		golang:sys:33540a1f6037:sys/vendor/golang.org/x/sys
 
 PLIST_FILES=	bin/${PORTNAME}
 
