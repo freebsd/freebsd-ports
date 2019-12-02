@@ -18,6 +18,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	shibatch
 
+CFLAGS_powerpc64=	-mpower8-vector
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64
