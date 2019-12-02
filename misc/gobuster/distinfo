@@ -1,4 +1,4 @@
-TIMESTAMP = 1561094830
+TIMESTAMP = 1575292875
 SHA256 (OJ-gobuster-v3.0.1_GH0.tar.gz) = 9c70c73b4c08b02d1fc722cd82eda3d8ce683de53b08c8bddd31fc5c4d90a977
 SIZE (OJ-gobuster-v3.0.1_GH0.tar.gz) = 29393
 SHA256 (google-uuid-c2e93f3_GH0.tar.gz) = 61a0e56aa49810b3a3a1983d7ce9b09ff2fe3c7e7c807572426bff33ed36d934
@@ -13,5 +13,5 @@ SHA256 (spf13-cobra-0.0.5_GH0.tar.gz) = 79226ce00e2b91306277e679d024eea6d17d0c02
 SIZE (spf13-cobra-0.0.5_GH0.tar.gz) = 111126
 SHA256 (spf13-pflag-v1.0.3_GH0.tar.gz) = 9e57f86f493f04d9077fccd04e7139ebf243dd544e917ab83d35729b3e54a124
 SIZE (spf13-pflag-v1.0.3_GH0.tar.gz) = 46002
-SHA256 (golang-sys-d8f5ea2_GH0.tar.gz) = c7f0817950489b37f350139f12526f67a6a880fd7b63c72c211e7d0abb193659
-SIZE (golang-sys-d8f5ea2_GH0.tar.gz) = 733077
+SHA256 (golang-sys-33540a1f6037_GH0.tar.gz) = 09ebdf007413c2eaddce123137443d08d1848be410c58896e772f0481ec385d5
+SIZE (golang-sys-33540a1f6037_GH0.tar.gz) = 1497659
