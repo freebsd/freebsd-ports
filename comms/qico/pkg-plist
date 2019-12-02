@@ -1,5 +1,31 @@
-%%WITH_QICO_MORDA%%bin/qcc
-etc/qico.conf.sample
-libexec/qico
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.ru
-%%PORTDOCS%%%%DOCSDIR%%/README.ru
+@dir %%DOCSDIR%%
+@dir %%EXAMPLESDIR%%
+@dir %%QBASEDIR%%/fbox
+@dir %%QBASEDIR%%/inbound/unknown
+@dir %%QBASEDIR%%/inbound
+@dir %%QBASEDIR%%/outbound
+@dir %%QBASEDIR%%/qstoutb
+@dir %%QLOGDIR%%
+@dir etc/fido/qico
+@sample etc/fido/qico/qico.conf.sample
+@sample etc/fido/qico/qico.passwd.sample
+@sample etc/fido/qico/qico.substs.sample
+%%DOCSDIR%%/Changes.ru
+%%DOCSDIR%%/FAQ.ru
+%%DOCSDIR%%/README.ru
+%%EXAMPLESDIR%%/koi8r_866.cp
+%%EXAMPLESDIR%%/onchat
+%%EXAMPLESDIR%%/qhistory
+%%EXAMPLESDIR%%/qico.xpm
+%%EXAMPLESDIR%%/qlinks
+%%EXAMPLESDIR%%/sfreq
+%%EXAMPLESDIR%%/stat.run
+%%EXAMPLESDIR%%/synctime
+%%EXAMPLESDIR%%/test.pl
+%%EXAMPLESDIR%%/tossing
+%%QCC%%bin/qcc
+%%QCC%%man/man8/qcc.8.gz
+bin/qctl
+man/man8/qctl.8.gz
+man/man8/qico.8.gz
+sbin/qico
