@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+spotifyt-tui was successfully installed.
+
+Limitations:
+============
+
+This app uses the Web API from Spotify, which doesn't handle streaming itself.
+So you'll need either an official Spotify client open or a lightweight alternative
+such as spotifyd. If you want to play tracks, Spotify requires that you have a
+Premium account. It's recommended you install spotifyd, your machine will be
+registered as a Spotify device that you can control from spotify-tui.
+
+You can think of spotify-tui as more of a "controller" or "frontend" to Spotify,
+with this setup you can control all your Spotify devices.
+EOM
+}
+]

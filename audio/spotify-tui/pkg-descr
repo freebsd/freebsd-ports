@@ -1,0 +1,6 @@
+Spotify terminal client written in rust. Play
+music directly from your terminal, find new
+artists, search for your favourite music and
+more.
+
+WWW: https://github.com/Rigellute/spotify-tui
