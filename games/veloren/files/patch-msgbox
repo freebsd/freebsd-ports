@@ -1,0 +1,33 @@
+https://github.com/bekker/msgbox-rs/commit/2eb984c1519b
+
+--- ../msgbox-rs-d3e12e1cbfcd280bb4de5ad8032bded37d8e573f/Cargo.toml.orig	2019-09-18 06:16:14 UTC
++++ ../msgbox-rs-d3e12e1cbfcd280bb4de5ad8032bded37d8e573f/Cargo.toml
+@@ -27,6 +27,9 @@ user32-sys = "0.2.0"
+ [target.'cfg(target_os = "linux")'.dependencies]
+ gtk = "0.4.1"
+ 
++[target.'cfg(target_os = "freebsd")'.dependencies]
++gtk = "0.4.1"
++
+ [target.'cfg(target_os = "macos")'.dependencies]
+ cocoa = "0.14.0"
+ objc = "0.2"
+--- ../msgbox-rs-d3e12e1cbfcd280bb4de5ad8032bded37d8e573f/src/lib.rs.orig	2019-09-18 06:16:14 UTC
++++ ../msgbox-rs-d3e12e1cbfcd280bb4de5ad8032bded37d8e573f/src/lib.rs
+@@ -4,13 +4,13 @@ pub use icon::IconType;
+ /**
+  * GTK+3
+  */
+-#[cfg(target_os = "linux")]
++#[cfg(any(target_os = "linux", target_os = "freebsd"))]
+ extern crate gtk;
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(any(target_os = "linux", target_os = "freebsd"))]
+ mod linux;
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(any(target_os = "linux", target_os = "freebsd"))]
+ pub use linux::*;
+ 
+ /**
