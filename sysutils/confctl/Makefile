@@ -4,14 +4,13 @@
 PORTNAME=	confctl
 PORTVERSION=	1.2
 CATEGORIES=	sysutils
-MASTER_SITES=	GHC \
-		LOCAL/trasz
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Utility to parse and modify C-like configuration files
 
 LICENSE=	BSD2CLAUSE
 
+USES=		autoreconf
 USE_GITHUB=	yes
 GH_ACCOUNT=	trasz
 GNU_CONFIGURE=	yes
