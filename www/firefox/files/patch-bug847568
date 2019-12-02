@@ -4,7 +4,7 @@ diff --git config/system-headers.mozbuild config/system-headers.mozbuild
 index 7620b4d00623..09d3db5ca8c0 100644
 --- config/system-headers.mozbuild
 +++ config/system-headers.mozbuild
-@@ -1295,6 +1295,19 @@ if CONFIG['MOZ_ENABLE_LIBPROXY']:
+@@ -1299,6 +1299,19 @@ if CONFIG['MOZ_ENABLE_LIBPROXY']:
          'proxy.h',
      ]
  
@@ -28,16 +28,16 @@ diff --git dom/base/moz.build dom/base/moz.build
 index 8e19020315ae..2fcdbb6f7b42 100644
 --- dom/base/moz.build
 +++ dom/base/moz.build
-@@ -539,6 +539,9 @@ if CONFIG['MOZ_BUILD_APP'] in ['browser', 'mobile/andr
+@@ -543,6 +543,9 @@ if CONFIG['MOZ_BUILD_APP'] in ['browser', 'mobile/android', 'xulrunner']:
  if CONFIG['MOZ_X11']:
      CXXFLAGS += CONFIG['TK_CFLAGS']
  
 +if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
 +
- GENERATED_FILES += [
-     'PropertyUseCounterMap.inc',
-     'UseCounterList.h',
+ GeneratedFile('UseCounterList.h', script='gen-usecounters.py',
+               entry_point='use_counter_list', inputs=['UseCounters.conf'])
+ 
 diff --git gfx/graphite2/moz-gr-update.sh gfx/graphite2/moz-gr-update.sh
 index faaab1b17971..04eff5f09882 100644
 --- gfx/graphite2/moz-gr-update.sh
@@ -170,7 +170,7 @@ diff --git netwerk/dns/moz.build netwerk/dns/moz.build
 index 79c26e3e7001..c4d93bc5f7dc 100644
 --- netwerk/dns/moz.build
 +++ netwerk/dns/moz.build
-@@ -90,3 +90,6 @@ USE_LIBS += ['icu']
+@@ -86,3 +86,6 @@ USE_LIBS += ['icu']
  
  if CONFIG['CC_TYPE'] in ('clang', 'gcc'):
      CXXFLAGS += ['-Wno-error=shadow']
@@ -181,10 +181,11 @@ diff --git old-configure.in old-configure.in
 index 95a58b634593..b614eef85c89 100644
 --- old-configure.in
 +++ old-configure.in
-@@ -2665,5 +2665,26 @@ dnl ==================================================
+@@ -2639,6 +2639,27 @@ dnl ========================================================
+ 
  AC_SUBST(MOZ_LINUX_32_SSE2_STARTUP_ERROR)
  
- dnl ========================================================
++dnl ========================================================
 +dnl Check for graphite2
 +dnl ========================================================
 +if test -n "$MOZ_SYSTEM_GRAPHITE2"; then
@@ -205,14 +206,14 @@ index 95a58b634593..b614eef85c89 100644
 +    CFLAGS=$_SAVE_CFLAGS
 +fi
 +
-+dnl ========================================================
+ dnl ========================================================
  dnl Check for pixman and cairo
  dnl ========================================================
 diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 24f940e1ed7e..079a575adec3 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -254,6 +254,12 @@ if CONFIG['MOZ_SYSTEM_PNG']:
+@@ -248,6 +248,12 @@ if CONFIG['MOZ_SYSTEM_PNG']:
  if CONFIG['MOZ_SYSTEM_WEBP']:
      OS_LIBS += CONFIG['MOZ_WEBP_LIBS']
  
@@ -229,7 +230,7 @@ diff --git toolkit/moz.configure toolkit/moz.configure
 index 9297e4d6f501..d8e273887e4b 100644
 --- toolkit/moz.configure
 +++ toolkit/moz.configure
-@@ -927,6 +927,25 @@ add_old_configure_assignment('FT2_LIBS',
+@@ -937,6 +937,25 @@ add_old_configure_assignment('FT2_LIBS',
  add_old_configure_assignment('FT2_CFLAGS',
                               ft2_info.cflags)
  
@@ -248,7 +249,7 @@ index 9297e4d6f501..d8e273887e4b 100644
 +option('--with-system-harfbuzz',
 +       help="Use system harfbuzz (located with pkgconfig)")
 +
-+system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 2.6.1',
++system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 2.6.2',
 +                                    when='--with-system-harfbuzz')
 +
 +set_config('MOZ_SYSTEM_HARFBUZZ', depends_if(system_harfbuzz)(lambda _: True))
