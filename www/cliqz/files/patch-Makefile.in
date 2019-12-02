@@ -1,0 +1,22 @@
+Don't force mach after https://bugzilla.mozilla.org/show_bug.cgi?id=1496746
+
+Patch taken from www/firefox
+
+--- mozilla-release/Makefile.in		2019-11-30 13:22:25 UTC
++++ mozilla-release/Makefile.in
+@@ -55,15 +55,8 @@ $(RUNNABLE_TIERS) binaries:: CLOBBER $(BUILD_BACKEND_FILES)
+ endif
+ endif
+ 
+-ifdef JS_STANDALONE
+ .PHONY: CLOBBER
+ CLOBBER:
+-else
+-CLOBBER: $(topsrcdir)/CLOBBER
+-	@echo 'STOP!  The CLOBBER file has changed.'
+-	@echo 'Please run the build through "mach build".'
+-	@exit 1
+-endif
+ 
+ install_manifests := \
+   $(addprefix dist/,branding include public private xpi-stage) \
