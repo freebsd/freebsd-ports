@@ -40,6 +40,8 @@ OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP
 
 .if !defined(QEMU_USER_STATIC)
 CONFLICTS_INSTALL=	qemu-[0-9]* qemu-devel-*
+.else
+CONFLICTS_INSTALL=	qemu-user-static-devel-*
 .endif
 
 .if defined(QEMU_USER_STATIC)
