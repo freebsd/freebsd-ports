@@ -13,8 +13,8 @@ DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.21:devel/nspr \
-		nss>=3.47:security/nss \
+BUILD_DEPENDS=	nspr>=4.23:devel/nspr \
+		nss>=3.47.1:security/nss \
 		icu>=64.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=2.6.2:print/harfbuzz \
