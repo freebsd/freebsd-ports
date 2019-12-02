@@ -1,4 +1,4 @@
-TIMESTAMP = 1574353336
+TIMESTAMP = 1575324532
 SHA256 (sircmpwn-aerc-0.3.0_SRHT0.tar.gz) = 44d5ab0d5f1195166b351ec59680cc8f4c0eb45da4d44263b138be0a91a512a1
 SIZE (sircmpwn-aerc-0.3.0_SRHT0.tar.gz) = 109525
 SHA256 (sircmpwn-getopt-292febf82fd0_SRHT0.tar.gz) = c00ce65497649a786737098986543a22845c9168dcc21ddcaabd56f04969373c
@@ -41,8 +41,8 @@ SHA256 (golang-oauth2-0f29369cfe45_GH0.tar.gz) = 468421ddfe905216454006b309ebda6
 SIZE (golang-oauth2-0f29369cfe45_GH0.tar.gz) = 45498
 SHA256 (golang-protobuf-v1.3.2_GH0.tar.gz) = c9cda622857a17cf0877c5ba76688a931883e505f40744c9495638b6e3da1f65
 SIZE (golang-protobuf-v1.3.2_GH0.tar.gz) = 312285
-SHA256 (golang-sys-fde4db37ae7a_GH0.tar.gz) = b6aab4e92d5d8fe85ca0dd229bfb75c91290951a3bf3b95087459e5a4eae86a4
-SIZE (golang-sys-fde4db37ae7a_GH0.tar.gz) = 1455218
+SHA256 (golang-sys-33540a1f6037_GH0.tar.gz) = 09ebdf007413c2eaddce123137443d08d1848be410c58896e772f0481ec385d5
+SIZE (golang-sys-33540a1f6037_GH0.tar.gz) = 1497659
 SHA256 (golang-text-v0.3.2_GH0.tar.gz) = 0b9309698f5708531c5377ab1e29b423a6d9e20c55a8d386c3b8283428212f22
 SIZE (golang-text-v0.3.2_GH0.tar.gz) = 7168069
 SHA256 (google-shlex-c34317bd91bf_GH0.tar.gz) = fefaae49749c42aaaf9864fc0a04326a8cc263a42ebfb18b907419b9cfc9f4f1
