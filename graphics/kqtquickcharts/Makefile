@@ -10,7 +10,7 @@ COMMENT=	QtQuick plugin to render interactive charts
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	ecm
 USE_QT=		core declarative network gui \
 		buildtools_build qmake_build
