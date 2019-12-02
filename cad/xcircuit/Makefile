@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.10.13
+PORTVERSION=	3.10.14
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
