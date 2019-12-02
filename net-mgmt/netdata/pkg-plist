@@ -29,6 +29,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/tomcat.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/fping.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/adaptec_raid.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/am2320.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apache.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apcupsd.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/backend.conf.sample
@@ -49,7 +50,9 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/entropy.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/fping.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/fronius.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/gearman.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/haproxy.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/hdfs.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/httpcheck.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ioping.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ipc.conf.sample
@@ -92,11 +95,13 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_resets.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/udp_errors.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/varnish.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vcsa.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vsphere.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/web_log.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/wmi.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/x509check.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/zfs.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/zookeeper.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health_alarm_notify.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health_email_recipients.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/ioping.conf.sample
@@ -104,6 +109,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/node.d.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/adaptec_raid.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/am2320.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/apache.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/beanstalk.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/bind_rndc.conf.sample
@@ -121,6 +127,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/exim.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/fail2ban.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/freeradius.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/gearman.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/go_expvar.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/haproxy.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/hddtemp.conf.sample
@@ -228,7 +235,9 @@ libexec/netdata/plugins.d/python.d.plugin
 libexec/netdata/plugins.d/request.sh
 libexec/netdata/plugins.d/system-info.sh
 libexec/netdata/plugins.d/tc-qos-helper.sh
+libexec/netdata/plugins.d/template_dim.sh
 libexec/netdata/python.d/adaptec_raid.chart.py
+libexec/netdata/python.d/am2320.chart.py
 libexec/netdata/python.d/apache.chart.py
 libexec/netdata/python.d/beanstalk.chart.py
 libexec/netdata/python.d/bind_rndc.chart.py
@@ -246,6 +255,7 @@ libexec/netdata/python.d/example.chart.py
 libexec/netdata/python.d/exim.chart.py
 libexec/netdata/python.d/fail2ban.chart.py
 libexec/netdata/python.d/freeradius.chart.py
+libexec/netdata/python.d/gearman.chart.py
 libexec/netdata/python.d/go_expvar.chart.py
 libexec/netdata/python.d/haproxy.chart.py
 libexec/netdata/python.d/hddtemp.chart.py
@@ -491,6 +501,9 @@ sbin/netdata
 @group
 @sample(netdata,netdata,0640) %%ETCDIR%%/netdata.conf.sample
 @dir(netdata,netdata,0750) %%ETCDIR%%
+@dir(netdata,netdata,0750) %%ETCDIR%%/custom-plugins.d
+@dir(netdata,netdata,0750) %%ETCDIR%%/go.d
+@dir(netdata,netdata,0750) %%ETCDIR%%/ssl
 @dir(netdata,netdata,0750) %%DATADIR%%
 @dir(netdata,netdata,0750) %%DATADIR%%/web
 @dir(netdata,netdata,0750) %%NETDATA_CACHE%%
