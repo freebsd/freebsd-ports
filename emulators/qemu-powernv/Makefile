@@ -2,7 +2,7 @@
 
 PORTNAME=	qemu-powernv
 PORTVERSION=	3.0.50
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://people.freebsd.org/~kbowling/distfiles/
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=		${LOCALBASE}/lib/libfdt.so:sysutils/dtc
 
 USES=		bison:build compiler:c11 gmake gnome libtool makeinfo \
-		pkgconfig python:2.7,build tar:bz2 xorg
+		pkgconfig python:build tar:bz2 xorg
 USE_XORG=	pixman
 USE_GNOME=	glib20
 
