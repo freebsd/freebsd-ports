@@ -1,9 +1,11 @@
-Qico is an FidoNet Technology Network (FTN) compatible mailer for Unix systems.
-It has slightly different architecture than ifcico.
+Qico is an FidoNet Technology Network (FTN) compatible mailer.
+It can work via TCP/IP as well as on modem links.
+Look at sample configs for more information.
 
 Features:
 
   * Support for EMSI, ZModem, ZedZap, Hydra
+  * Support for BinkP
   * Support for 4D Binkley-style, Amiga-style outbound, fileboxes
   * Daemon mode for outgoing calls
   * Substs with support for hidden-lines
