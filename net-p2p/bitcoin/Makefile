@@ -11,6 +11,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bitcoin128.png:icon
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${_DISTFILES:N*.png}
 
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES+=	90916ddf17dc.patch:-p1 # https://github.com/bitcoin/bitcoin/pull/17654
+
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
 
