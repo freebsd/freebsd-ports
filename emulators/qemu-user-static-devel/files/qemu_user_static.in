@@ -1,0 +1,164 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: %%NAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable `%%NAME%%':
+#
+# %%NAME%%_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=%%NAME%%
+rcvar=%%NAME%%_enable
+
+# read configuration and set defaults
+load_rc_config "$name"
+
+: ${%%NAME%%_enable:="NO"}
+
+BINMISCCTL=/usr/sbin/binmiscctl
+QEMU_DIR=%%PREFIX%%/bin
+QEMU_PREFIX=qemu-
+QEMU_SUFFIX=-static
+
+start_cmd=%%NAME%%_start
+stop_cmd=%%NAME%%_stop
+extra_commands=list
+list_cmd="${BINMISCCTL} list"
+
+%%NAME%%_start()
+{
+	# register arm interpreter styled 'arm'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}arm${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add arm --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00" \
+			--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register armv6 interpreter styled 'arm'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}arm${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add armv6 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00" \
+			--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register armv7 interpreter styled 'arm'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}arm${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add armv7 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00" \
+			--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register aarch64 interpreter styled 'aarch64'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}aarch64${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add aarch64 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\xb7\x00" \
+			--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register mips interpreter styled 'mips'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}mips${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add mips --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x01\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x08" \
+			--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register mipsle interpreter styled 'mipsel'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}mipsel${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add mipsel --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x08\x00" \
+			--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register mips64 interpreter styled 'mips64'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}mips64${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add mips64 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x02\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x08" \
+			--mask  "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register powerpc interpreter styled 'ppc'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}ppc${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add powerpc --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x01\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x14" \
+			--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register powerpc64 interpreter styled 'ppc64'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}ppc64${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add powerpc64 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x02\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x15" \
+			--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register riscv64 interpreter styled 'riscv64'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}riscv64${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add riscv64 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\xf3\x00" \
+			--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+	# register sparc64 interpreter styled 'sparc64'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}sparc64${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add sparc64 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x02\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x2b" \
+			--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
+}
+
+%%NAME%%_stop()
+{
+	${BINMISCCTL} remove arm
+	${BINMISCCTL} remove armv6
+	${BINMISCCTL} remove armv7
+	${BINMISCCTL} remove aarch64
+	${BINMISCCTL} remove mips
+	${BINMISCCTL} remove mips64
+	${BINMISCCTL} remove mipsel
+	${BINMISCCTL} remove powerpc
+	${BINMISCCTL} remove powerpc64
+	${BINMISCCTL} remove riscv64
+	${BINMISCCTL} remove sparc64
+}
+
+run_rc_command "$1"
