@@ -3,7 +3,7 @@
 PORTNAME=	dive
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +29,7 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.1.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:crypto:3d3f9f413869:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:adae6a3d119a:golang_net/vendor/golang.org/x/net \
-		golang:sys:93218def8b18:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
 		google:uuid:v1.1.0:google_uuid/vendor/github.com/google/uuid \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
