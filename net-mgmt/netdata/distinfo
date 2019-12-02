@@ -1,3 +1,3 @@
-TIMESTAMP = 1568896571
-SHA256 (firehol-netdata-v1.17.1_GH0.tar.gz) = 032f9001e2b7f774989a200519feeafa3a4d9b7c9e8fb0cfa43e68a8da6ad1bf
-SIZE (firehol-netdata-v1.17.1_GH0.tar.gz) = 3332115
+TIMESTAMP = 1575076612
+SHA256 (netdata-netdata-v1.19.0_GH0.tar.gz) = 007656f639d3544698af503f35550aeb4d4d5a06b81801bf5acf4ac21db68f6e
+SIZE (netdata-netdata-v1.19.0_GH0.tar.gz) = 3443251

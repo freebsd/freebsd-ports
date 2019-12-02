@@ -1,9 +1,10 @@
---- collectors/python.d.plugin/python.d.plugin.in.orig	2019-05-27 21:36:18 UTC
+--- collectors/python.d.plugin/python.d.plugin.in.orig	2019-10-10 13:13:19 UTC
 +++ collectors/python.d.plugin/python.d.plugin.in
-@@ -1,5 +1,5 @@
+@@ -1,6 +1,6 @@
  #!/usr/local/bin/bash
  '''':;
--exec "$(command -v python || command -v python3 || command -v python2 ||
-+exec "$(command -v python || command -v python3.6 || command -v python2.7 ||
- echo "ERROR python IS NOT AVAILABLE IN THIS SYSTEM")" "$0" "$@" # '''
- 
+-pybinary=$(which python || which python3 || which python2)
++pybinary=$(which python || which python3.6 || which python2.7)
+ filtered=()
+ for arg in "$@"
+ do
