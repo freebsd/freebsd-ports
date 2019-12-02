@@ -2,6 +2,6 @@ include/aws/checksums/crc.h
 include/aws/checksums/crc_jni.h
 include/aws/checksums/exports.h
 lib/aws-checksums/cmake/aws-checksums-config.cmake
-lib/aws-checksums/cmake/aws-checksums-targets-release.cmake
-lib/aws-checksums/cmake/aws-checksums-targets.cmake
+lib/aws-checksums/cmake/shared/aws-checksums-targets-release.cmake
+lib/aws-checksums/cmake/shared/aws-checksums-targets.cmake
 lib/libaws-checksums.so

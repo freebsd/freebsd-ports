@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-checksums
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.5
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -21,4 +21,13 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON
 
 USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# clang is crashing on CURRENT due an assertion
+# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=234232
+# and https://bugs.llvm.org/show_bug.cgi?id=40985
+.if ${OSVERSION} >= 1300000
+USE_GCC=	yes
+.endif
+
+.include <bsd.port.post.mk>
