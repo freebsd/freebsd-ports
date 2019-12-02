@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	duktape
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	lang devel
 MASTER_SITES=	https://duktape.org/
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		tar:xz
 
+MAKE_ARGS+=	CC=${CC}
 MAKEFILE=	Makefile.cmdline
 ALL_TARGET=	duk
 
