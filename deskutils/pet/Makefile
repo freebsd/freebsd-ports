@@ -3,7 +3,7 @@
 PORTNAME=	pet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,7 @@ GH_TUPLE=	\
 		golang:net:1e491301e022:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:1e0a3fa8ba9a:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.1.0:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:9527bec2660b:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
 		google:go-github:v15.0.0:google_go_github/vendor/github.com/google/go-github \
 		google:go-querystring:53e6ce116135:google_go_querystring/vendor/github.com/google/go-querystring \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
