@@ -172,6 +172,7 @@ bin/azpainter
 %%NLS%%%%DATADIR%%/tr/en.mtr
 %%NLS%%%%DATADIR%%/tr/es_ES.mtr
 %%NLS%%%%DATADIR%%/tr/fr.mtr
+%%NLS%%%%DATADIR%%/tr/it.mtr
 %%NLS%%%%DATADIR%%/tr/ja.mtr
 %%NLS%%%%DATADIR%%/tr/pt_BR.mtr
 %%NLS%%%%DATADIR%%/tr/ru.mtr
