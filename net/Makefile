@@ -468,6 +468,7 @@
     SUBDIR += mping
     SUBDIR += mptsd
     SUBDIR += mrouted
+    SUBDIR += mrtparse
     SUBDIR += msend
     SUBDIR += mtr
     SUBDIR += mtr-nox11

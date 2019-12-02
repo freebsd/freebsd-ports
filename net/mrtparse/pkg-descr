@@ -1,0 +1,5 @@
+Tool to read and analyze the MRT format data. The MRT format can be used to
+export routing protocol messages, state changes, and routing information base
+contents, and is defined in RFC6396.
+
+WWW: https://github.com/t2mune/mrtparse
