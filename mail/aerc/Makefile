@@ -2,6 +2,7 @@
 
 PORTNAME=	aerc
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -31,7 +32,7 @@ GH_TUPLE=	danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.c
 		golang:net:74dc4d7220e7:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:fde4db37ae7a:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:shlex:c34317bd91bf:google_shlex/vendor/github.com/google/shlex \
 		kyoh86:xdg:v1.0.0:kyoh86_xdg/vendor/github.com/kyoh86/xdg \
@@ -90,5 +91,12 @@ post-patch:
 		-e '/MANDIR/ s,install -m644,${INSTALL_MAN},' \
 		-e '/SHAREDIR/ s,install -m644,${INSTALL_DATA},' \
 		${WRKSRC}/Makefile
+
+.if ${ARCH} == aarch64
+pre-build:
+	cd ${WRKSRC}/vendor/git.sr.ht/~sircmpwn/pty && \
+		${SETENV} GOARCH=arm64 GOOS=${OPSYS:tl} ${SH} mktypes.bash \
+		types_freebsd.go
+.endif
 
 .include <bsd.port.post.mk>
