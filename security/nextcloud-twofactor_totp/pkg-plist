@@ -84,6 +84,8 @@
 %%WWWDIR%%/l10n/gl.json
 %%WWWDIR%%/l10n/he.js
 %%WWWDIR%%/l10n/he.json
+%%WWWDIR%%/l10n/hr.js
+%%WWWDIR%%/l10n/hr.json
 %%WWWDIR%%/l10n/hu.js
 %%WWWDIR%%/l10n/hu.json
 %%WWWDIR%%/l10n/ia.js
@@ -153,7 +155,6 @@
 %%WWWDIR%%/lib/Event/StateChanged.php
 %%WWWDIR%%/lib/Exception/NoTotpSecretFoundException.php
 %%WWWDIR%%/lib/Exception/TotpSecretAlreadySet.php
-%%WWWDIR%%/lib/Listener/IListener.php
 %%WWWDIR%%/lib/Listener/StateChangeActivity.php
 %%WWWDIR%%/lib/Listener/StateChangeRegistryUpdater.php
 %%WWWDIR%%/lib/Migration/Version010501Date20181018124436.php
