@@ -9,7 +9,6 @@ include/fmt/ostream.h
 include/fmt/posix.h
 include/fmt/printf.h
 include/fmt/ranges.h
-include/fmt/safe-duration-cast.h
 lib/cmake/fmt/fmt-config-version.cmake
 lib/cmake/fmt/fmt-config.cmake
 lib/cmake/fmt/fmt-targets-%%CMAKE_BUILD_TYPE%%.cmake
