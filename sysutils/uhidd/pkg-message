@@ -10,9 +10,10 @@ a device, or you should remove some of those entries 'device ums',
 recompile the kernel.
 
 Note that if the USB kernel drivers are compiled as kernel modules,
-you should also remove the relevant devd(8) rules in /etc/devd/usb.conf
-config file, so those modules will not be loaded automatically by devd(8)
-when devices are attached.
+you should also remove the relevant devd(8) rules in /etc/devd/usb.conf,
+adjust devmatch_blacklist in /etc/rc.conf or define UQ_KBD_IGNORE,
+UQ_UMS_IGNORE, UQ_HID_IGNORE via usbconfig(8), so those modules will not
+be loaded automatically by devd(8) when devices are attached.
 
 If you want to run uhidd daemon at the startup, add the following lines to
 /etc/rc.conf:

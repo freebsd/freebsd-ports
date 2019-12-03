@@ -4,8 +4,20 @@
 PORTNAME=	uhidd
 PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	REL-
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	3ddfebf75bbb.patch:-p1
+PATCHFILES+=	9c0b5e3255ec.patch:-p1
+PATCHFILES+=	0d05cd7acadd.patch:-p1
+PATCHFILES+=	c040f483add2.patch:-p1
+PATCHFILES+=	d5af7099c1e9.patch:-p1
+PATCHFILES+=	e9e835c93f53.patch:-p1
+PATCHFILES+=	2ed68916f23b.patch:-p1
+PATCHFILES+=	dd1279592b04.patch:-p1
+PATCHFILES+=	498422ccef03.patch:-p1
+PATCHFILES+=	7022ca4d1a1b.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Userland USB HID device driver using libusb20
