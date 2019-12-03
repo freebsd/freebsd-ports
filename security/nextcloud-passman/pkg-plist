@@ -1304,6 +1304,8 @@
 %%WWWDIR%%/img/icons/font-awesome/youtube.svg
 %%WWWDIR%%/js/passman.min.js
 %%WWWDIR%%/js/settings-admin.js
+%%WWWDIR%%/l10n/ar.js
+%%WWWDIR%%/l10n/ar.json
 %%WWWDIR%%/l10n/ast.js
 %%WWWDIR%%/l10n/ast.json
 %%WWWDIR%%/l10n/bg.js
@@ -1324,6 +1326,8 @@
 %%WWWDIR%%/l10n/el.json
 %%WWWDIR%%/l10n/en_GB.js
 %%WWWDIR%%/l10n/en_GB.json
+%%WWWDIR%%/l10n/eo.js
+%%WWWDIR%%/l10n/eo.json
 %%WWWDIR%%/l10n/es.js
 %%WWWDIR%%/l10n/es.json
 %%WWWDIR%%/l10n/es_419.js
@@ -1370,6 +1374,8 @@
 %%WWWDIR%%/l10n/gl.json
 %%WWWDIR%%/l10n/he.js
 %%WWWDIR%%/l10n/he.json
+%%WWWDIR%%/l10n/hr.js
+%%WWWDIR%%/l10n/hr.json
 %%WWWDIR%%/l10n/hu.js
 %%WWWDIR%%/l10n/hu.json
 %%WWWDIR%%/l10n/hu_HU.js
@@ -1402,6 +1408,8 @@
 %%WWWDIR%%/l10n/ru.json
 %%WWWDIR%%/l10n/sk.js
 %%WWWDIR%%/l10n/sk.json
+%%WWWDIR%%/l10n/sl.js
+%%WWWDIR%%/l10n/sl.json
 %%WWWDIR%%/l10n/sq.js
 %%WWWDIR%%/l10n/sq.json
 %%WWWDIR%%/l10n/sr.js
@@ -1412,6 +1420,8 @@
 %%WWWDIR%%/l10n/tr.json
 %%WWWDIR%%/l10n/zh_CN.js
 %%WWWDIR%%/l10n/zh_CN.json
+%%WWWDIR%%/l10n/zh_TW.js
+%%WWWDIR%%/l10n/zh_TW.json
 %%WWWDIR%%/launch_phpunit.sh.sample
 %%WWWDIR%%/lib/Activity.php
 %%WWWDIR%%/lib/AppInfo/Application.php
