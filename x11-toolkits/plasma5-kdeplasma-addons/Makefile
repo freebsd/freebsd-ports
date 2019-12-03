@@ -16,14 +16,23 @@ USE_KDE=	activities archive attica auth bookmarks codecs completion \
 		plasma-framework plasma-workspace runner service solid \
 		sonnet textwidgets unitconversion widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative graphicaleffects gui location network \
-		printsupport script webchannel webengine widgets x11extras xml \
+		printsupport script webchannel widgets x11extras xml \
 		buildtools_build qmake_build
 
-OPTIONS_DEFINE=	PURPOSE
+OPTIONS_DEFINE=	PURPOSE QTWEBENGINE
 OPTIONS_DEFAULT=	PURPOSE
+OPTIONS_DEFAULT_amd64=	QTWEBENGINE
+OPTIONS_DEFAULT_i386=	QTWEBENGINE
+OPTIONS_DEFAULT_powerpc64=	${OPTIONS_DEFAULT_powerpc64_${OSREL:R}}
+OPTIONS_DEFAULT_powerpc64_13=	WEBENGINE
+OPTIONS_SUB=	YES
 
 PURPOSE_DESC=	Enable 'QuickShare' applet
 PURPOSE_USE=	KDE=purpose
 PURPOSE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5Purpose
+
+QTWEBENGINE_DESC=	Add dependency on qt5-webengine
+QTWEBENGINE_USE=	qt=webengine
+QTWEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngine
 
 .include <bsd.port.mk>
