@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	passman
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.5
 CATEGORIES=	security
 MASTER_SITES=	https://releases.passman.cc/
 PKGNAMEPREFIX=	nextcloud-
