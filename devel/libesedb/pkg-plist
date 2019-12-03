@@ -11,10 +11,8 @@ lib/libesedb.a
 lib/libesedb.so
 lib/libesedb.so.1
 lib/libesedb.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pyesedb.a
-%%PYTHON2_SITELIBDIR%%/pyesedb.so
-%%PYTHON3_SITELIBDIR%%/pyesedb.a
-%%PYTHON3_SITELIBDIR%%/pyesedb.so
+%%PYTHON_SITELIBDIR%%/pyesedb.a
+%%PYTHON_SITELIBDIR%%/pyesedb.so
 libdata/pkgconfig/libesedb.pc
 man/man1/esedbinfo.1.gz
 man/man3/libesedb.3.gz
