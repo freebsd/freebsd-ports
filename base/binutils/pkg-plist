@@ -1,17 +1,10 @@
 bin/as
 bin/ld
 bin/ld.bfd
-%%OBJCOPY%%bin/objcopy
 bin/objdump
-bin/%%BUTARGET%%-as
-bin/%%BUTARGET%%-ld
-bin/%%BUTARGET%%-ld.bfd
-%%OBJCOPY%%bin/%%BUTARGET%%-objcopy
-bin/%%BUTARGET%%-objdump
 %%BUTARGET%%/bin/as
 %%BUTARGET%%/bin/ld
 %%BUTARGET%%/bin/ld.bfd
-%%OBJCOPY%%%%BUTARGET%%/bin/objcopy
 %%BUTARGET%%/bin/objdump
 %%I386%%%%BUTARGET%%/lib/ldscripts/elf_i386.x
 %%I386%%%%BUTARGET%%/lib/ldscripts/elf_i386.xbn
@@ -567,9 +560,4 @@ bin/%%BUTARGET%%-objdump
 %%SPARC%%%%BUTARGET%%/lib/ldscripts/elf64_sparc_fbsd.xu
 share/man/man1/as.1.gz
 share/man/man1/ld.1.gz
-%%OBJCOPY%%share/man/man1/objcopy.1.gz
 share/man/man1/objdump.1.gz
-share/man/man1/%%BUTARGET%%-as.1.gz
-share/man/man1/%%BUTARGET%%-ld.1.gz
-%%OBJCOPY%%share/man/man1/%%BUTARGET%%-objcopy.1.gz
-share/man/man1/%%BUTARGET%%-objdump.1.gz
