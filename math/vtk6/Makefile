@@ -3,7 +3,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	6.2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	6
@@ -23,12 +23,10 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 # TODO
 # * VTK Groups
 
-CONFLICTS=	vtk5 vtk8
+CONFLICTS=	vtk8
 USES=		alias cmake jpeg localbase xorg
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	xt sm ice x11 xext
-CXXFLAGS_powerpc64=	-mminimal-toc
-
 VTK_SHORT_VER=	${PORTVERSION:R}
 PLIST_SUB+=	VER2=${VTK_SHORT_VER}
 
@@ -210,4 +208,10 @@ USE_PERL5+=	build
 CMAKE_ARGS+=	-DBUILD_DOCUMENTATION:BOOL=OFF
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
+CXXFLAGS+=	-mminimal-toc
+.endif
+
+.include <bsd.port.post.mk>
