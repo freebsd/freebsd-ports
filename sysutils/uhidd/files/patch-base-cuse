@@ -1,0 +1,104 @@
+See also https://github.com/kaiwang27/uhidd/commit/4176a6b6c368
+
+--- uhidd/Makefile.orig	2012-10-14 19:53:44 UTC
++++ uhidd/Makefile
+@@ -15,7 +15,7 @@ LOCALBASE?=	/usr/local
+ LIBDIR=		${PREFIX}/lib
+ 
+ DPADD=	${LIBUSB} ${LIBPTHREAD} ${LIBUTIL}
+-LDADD=	-lcuse4bsd -lusb -lpthread -lutil
++LDADD=	-lcuse -lusb -lpthread -lutil
+ 
+ CFLAGS+= -I. -I${.CURDIR} -I${LOCALBASE}/include -g
+ LDFLAGS+= -L${LIBDIR}
+--- uhidd/uhidd.8.orig	2012-10-14 19:53:44 UTC
++++ uhidd/uhidd.8
+@@ -89,7 +89,7 @@ All other HID application collections that don't
+ have a specific driver can be attached by the Virtual Generic HID
+ class driver. The driver creates a virtual USB HID device using
+ the
+-.Xr cuse4bsd 4
++.Xr cuse 4
+ interface, so normal USB HID applications that deal with
+ .Xr uhid 4 ,
+ e.g.
+@@ -114,7 +114,7 @@ foreground. This option is intended for debugging the 
+ .It Fl h
+ Attach the Virtual Generic HID class driver.
+ This option requires that
+-.Xr cuse4bsd 4
++.Xr cuse 4
+ driver loaded as a kernel module.
+ .It Fl H
+ Specify the name of the virtual HID device created by the
+@@ -207,7 +207,7 @@ the in-memory multimedia keymap for device ugen.%u.%u
+ .Sh SEE ALSO
+ .Xr usbhidaction 1 ,
+ .Xr usbhidctl 1 ,
+-.Xr cuse4bsd 3 ,
++.Xr cuse 3 ,
+ .Xr usb 3 ,
+ .Xr usbhid 3 ,
+ .Xr uhid 4 ,
+--- uhidd/uhidd_cuse4bsd.c.orig	2012-10-14 19:53:44 UTC
++++ uhidd/uhidd_cuse4bsd.c
+@@ -29,7 +29,7 @@ __FBSDID("$FreeBSD$");
+ 
+ #include <sys/param.h>
+ #include <sys/wait.h>
+-#include <cuse4bsd.h>
++#include <cuse.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <pthread.h>
+@@ -70,16 +70,16 @@ ucuse_init_again:
+ 		} else {
+ 			if (verbose)
+ 				syslog(LOG_INFO, "Attempt to load kernel"
+-				    " module cuse4bsd.ko...");
+-			status = system("kldload cuse4bsd");
++				    " module cuse.ko...");
++			status = system("kldload cuse");
+ 			if (WEXITSTATUS(status) != 0) {
+-				syslog(LOG_ERR, "Failed to load cuse4bsd"
++				syslog(LOG_ERR, "Failed to load cuse"
+ 				    " kernel module");
+ 				return (-1);
+ 			}
+ 			if (verbose)
+ 				syslog(LOG_INFO, "Successfully loaded"
+-				    " cuse4bsd kernel module");
++				    " cuse kernel module");
+ 			cuse4bsd_load = 1;
+ 			goto ucuse_init_again;
+ 		}
+@@ -88,7 +88,7 @@ ucuse_init_again:
+ 	cuse4bsd_init = 1;
+ 
+ 	if (verbose)
+-		syslog(LOG_INFO, "cuse4bsd initiailzed.");
++		syslog(LOG_INFO, "cuse initiailzed.");
+ 
+ 	return (0);
+ }
+--- uhidd/uhidd_vhid_cuse.c.orig	2012-10-14 19:53:44 UTC
++++ uhidd/uhidd_vhid_cuse.c
+@@ -36,15 +36,15 @@ __FBSDID("$FreeBSD$");
+ #include <unistd.h>
+ #include <string.h>
+ #include <syslog.h>
+-#include <cuse4bsd.h>
++#include <cuse.h>
+ #include "uhidd.h"
+ 
+ /*
+- * General Virtual HID device driver. (cuse4bsd version)
++ * General Virtual HID device driver. (cuse version)
+  */
+ 
+ #if CUSE_VERSION < 0x000118
+-#error uhidd requires cuse4bsd version >= 0.1.24
++#error uhidd requires cuse version >= 0.1.24
+ #endif
+ 
+ #ifndef	CUSE_ID_UHIDD
