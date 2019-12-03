@@ -8,43 +8,42 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
 DISTNAME=	${SRCFILE}
-EXTRACT_SUFX=
+EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Math, string, and aggregate function library for SQLite
 
-USES=		sqlite
+USES=		localbase sqlite
 DIST_SUBDIR=	sqlite-ext
-NO_WRKSUBDIR=	yes
 
 SRCFILE=	extension-functions-${PORTVERSION}.c
 LIBFILE=	libsqlitemiscfuncs.so
 INST_DIR=	${PREFIX}/libexec/${DIST_SUBDIR}
 
 SUB_FILES=	${PORTDOCS}
-SUB_LIST+=	LIBFILE=${LIBFILE}
-
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	${WRKSRC}/
+SUB_LIST=	LIBFILE=${LIBFILE}
 
 PLIST_FILES=	libexec/${DIST_SUBDIR}/${LIBFILE}
 
 PORTDOCS=	README
 
-CFLAGS+=	-I${PREFIX}/include -fPIC -lm -shared
+CFLAGS+=	-fPIC -lm -shared
 
 OPTIONS_DEFINE=	DOCS
 
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${SRCFILE} ${WRKSRC}/
+
 do-build:
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${SRCFILE} -o ${LIBFILE}
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} ${SRCFILE} -o ${LIBFILE}
 
 do-install:
-	@${INSTALL} -d ${STAGEDIR}${PREFIX}/libexec/${DIST_SUBDIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${LIBFILE} ${STAGEDIR}${INST_DIR}
+	@${MKDIR} ${STAGEDIR}${INST_DIR}
+	${INSTALL_LIB} ${WRKSRC}/${LIBFILE} ${STAGEDIR}${INST_DIR}/
 
 post-install-DOCS-on:
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
-	@${CP} ${WRKDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

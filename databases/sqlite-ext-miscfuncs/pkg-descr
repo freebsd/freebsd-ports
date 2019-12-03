@@ -16,4 +16,4 @@ Aggregate functions:
 
   stdev, variance, mode, median, lower_quartile, upper_quartile
 
-WWW: http://www.sqlite.org/contrib
+WWW: https://www.sqlite.org/contrib
