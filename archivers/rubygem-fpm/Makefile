@@ -25,16 +25,10 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
 
 PLIST_FILES=	bin/fpm
 
 post-patch:
-	@${REINPLACE_CMD} -e '/childprocess/ s|= 0.9.0|>&|' ${WRKSRC}/${GEMSPEC}
-	@${REINPLACE_CMD} -e '/clamp/ s|~> 1\.0\.0|~> 1.0|' ${WRKSRC}/${GEMSPEC}
-	@${REINPLACE_CMD} -e '/ruby-xz/ s|~> 0\.2\.3|>= 0|' ${WRKSRC}/${GEMSPEC}
-# Remove backports
-	@${REINPLACE_CMD} -e '/backports/d' ${WRKSRC}/${GEMSPEC}
-	@${REINPLACE_CMD} -e '/require "backports"/d' ${WRKSRC}/lib/fpm/package.rb ${WRKSRC}/lib/fpm/package/*.rb
+	@${RM} ${WRKSRC}/${GEMSPEC}.orig ${WRKSRC}/lib/fpm/package.rb.orig ${WRKSRC}/lib/fpm/package/*.rb.orig
 
 .include <bsd.port.mk>
