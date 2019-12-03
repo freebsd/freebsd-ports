@@ -1,6 +1,6 @@
 --- configure.orig	2016-03-31 13:14:07 UTC
 +++ configure
-@@ -12402,14 +12402,6 @@ else
+@@ -12402,21 +12402,22 @@ else
  $as_echo "yes" >&6; }
  	HAVE_SPEEXDSP="yes"
  fi
@@ -11,23 +11,23 @@
 -  HAVE_SPEEXDSP_TRUE='#'
 -  HAVE_SPEEXDSP_FALSE=
 -fi
+ 
+ 
 -
- 
- 
  # Check whether --with-speex was given.
-@@ -12420,6 +12412,15 @@ else
- fi
- 
- 
+ if test "${with_speex+set}" = set; then :
+   withval=$with_speex; PPH=$withval
+ else
+   PPH="lib"
++fi
++
++
 + if test "$HAVE_SPEEXDSP" = "yes" -a "$PPH" != "no"; then
 +  HAVE_SPEEXDSP_TRUE=
 +  HAVE_SPEEXDSP_FALSE='#'
 +else
 +  HAVE_SPEEXDSP_TRUE='#'
 +  HAVE_SPEEXDSP_FALSE=
-+fi
-+
-+
- USE_LIBSPEEX=""
- if test "$PPH" = "lib"; then
- 	if test "$HAVE_SPEEXDSP" = "yes"; then
+ fi
+ 
+ 

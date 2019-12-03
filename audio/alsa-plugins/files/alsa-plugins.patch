@@ -1,6 +1,6 @@
---- oss/ctl_oss.c.orig	2009-08-31 21:09:41.000000000 +0800
-+++ oss/ctl_oss.c	2009-09-15 01:07:51.000000000 +0800
-@@ -362,7 +366,9 @@
+--- oss/ctl_oss.c.orig	2016-03-31 13:11:29 UTC
++++ oss/ctl_oss.c
+@@ -362,7 +362,9 @@ SND_CTL_PLUGIN_DEFINE_FUNC(oss)
  {
  	snd_config_iterator_t it, next;
  	const char *device = "/dev/mixer";
@@ -10,7 +10,7 @@
  	int i, err, val;
  	snd_ctl_oss_t *oss;
  	
-@@ -399,19 +405,29 @@
+@@ -399,19 +401,29 @@ SND_CTL_PLUGIN_DEFINE_FUNC(oss)
  		goto error;
  	}
  
@@ -40,14 +40,12 @@
  	oss->ext.poll_fd = -1;
  	oss->ext.callback = &oss_ext_callback;
  	oss->ext.private_data = oss;
---- oss/pcm_oss.c.orig	2009-08-31 21:09:41.000000000 +0800
-+++ oss/pcm_oss.c	2009-09-28 14:54:12.000000000 +0800
-@@ -22,17 +22,41 @@
- #include <sys/ioctl.h>
- #include <alsa/asoundlib.h>
+--- oss/pcm_oss.c.orig	2016-03-31 13:11:29 UTC
++++ oss/pcm_oss.c
+@@ -24,15 +24,39 @@
  #include <alsa/pcm_external.h>
  #include <linux/soundcard.h>
-+
+ 
 +#define ARRAY_SIZE(x)	(sizeof(x) / sizeof(*(x)))
 +
 +#ifdef __FreeBSD__
@@ -65,7 +63,7 @@
 +#define FREEBSD_OSS_BLKCNT_MAX	(FREEBSD_OSS_BUFSZ_MAX / FREEBSD_OSS_BUFSZ_MIN)
 +#define FREEBSD_OSS_BLKSZ_MAX	(FREEBSD_OSS_BUFSZ_MAX / FREEBSD_OSS_BLKCNT_MIN)
 +#endif
- 
++
  typedef struct snd_pcm_oss {
  	snd_pcm_ioplug_t io;
  	char *device;
@@ -84,7 +82,7 @@
  	unsigned int frame_bytes;
  } snd_pcm_oss_t;
  
-@@ -49,8 +89,13 @@
+@@ -49,8 +73,13 @@ static snd_pcm_sframes_t oss_write(snd_pcm_ioplug_t *i
  	buf = (char *)areas->addr + (areas->first + areas->step * offset) / 8;
  	size *= oss->frame_bytes;
  	result = write(oss->fd, buf, size);
@@ -98,7 +96,7 @@
  	return result / oss->frame_bytes;
  }
  
-@@ -67,13 +112,79 @@
+@@ -67,14 +96,80 @@ static snd_pcm_sframes_t oss_read(snd_pcm_ioplug_t *io
  	buf = (char *)areas->addr + (areas->first + areas->step * offset) / 8;
  	size *= oss->frame_bytes;
  	result = read(oss->fd, buf, size);
@@ -115,7 +113,7 @@
  static snd_pcm_sframes_t oss_pointer(snd_pcm_ioplug_t *io)
  {
 +#ifdef __FreeBSD__
-+	snd_pcm_oss_t *oss = io->private_data;
+ 	snd_pcm_oss_t *oss = io->private_data;
 +#ifdef FREEBSD_OSS_USE_IO_PTR
 +	struct count_info ci;
 +#endif
@@ -175,10 +173,11 @@
 +
 +	return snd_pcm_bytes_to_frames(io->pcm, oss->ptr);
 +#else
- 	snd_pcm_oss_t *oss = io->private_data;
++	snd_pcm_oss_t *oss = io->private_data;
  	struct count_info info;
  	int ptr;
-@@ -85,20 +196,59 @@
+ 
+@@ -85,20 +180,59 @@ static snd_pcm_sframes_t oss_pointer(snd_pcm_ioplug_t 
  	}
  	ptr = snd_pcm_bytes_to_frames(io->pcm, info.ptr);
  	return ptr;
@@ -238,7 +237,7 @@
  	return 0;
  }
  
-@@ -107,6 +257,10 @@
+@@ -107,6 +241,10 @@ static int oss_stop(snd_pcm_ioplug_t *io)
  	snd_pcm_oss_t *oss = io->private_data;
  	int tmp = 0;
  
@@ -249,7 +248,7 @@
  	ioctl(oss->fd, SNDCTL_DSP_SETTRIGGER, &tmp);
  	return 0;
  }
-@@ -115,16 +269,25 @@
+@@ -115,16 +253,25 @@ static int oss_drain(snd_pcm_ioplug_t *io)
  {
  	snd_pcm_oss_t *oss = io->private_data;
  
@@ -275,12 +274,12 @@
  	ioctl(oss->fd, SNDCTL_DSP_RESET);
  
  	tmp = io->channels;
-@@ -145,16 +308,75 @@
+@@ -145,16 +292,75 @@ static int oss_prepare(snd_pcm_ioplug_t *io)
  	}
  	return 0;
  }
 +#endif
-+
+ 
 +#ifdef __FreeBSD__
 +static const struct {
 +	int oss_format;
@@ -317,7 +316,7 @@
 +	{ AFMT_U32_BE, SND_PCM_FORMAT_U24_BE  },
 +};
 +#endif
- 
++
  static int oss_hw_params(snd_pcm_ioplug_t *io,
  			 snd_pcm_hw_params_t *params ATTRIBUTE_UNUSED)
  {
@@ -351,7 +350,7 @@
  	switch (io->format) {
  	case SND_PCM_FORMAT_U8:
  		oss->format = AFMT_U8;
-@@ -166,9 +388,87 @@
+@@ -166,9 +372,87 @@ static int oss_hw_params(snd_pcm_ioplug_t *io,
  		oss->format = AFMT_S16_BE;
  		break;
  	default:
@@ -439,7 +438,7 @@
  	period_bytes = io->period_size * oss->frame_bytes;
  	oss->period_shift = 0;
  	for (i = 31; i >= 4; i--) {
-@@ -209,6 +509,7 @@
+@@ -209,6 +493,7 @@ static int oss_hw_params(snd_pcm_ioplug_t *io,
  		goto _retry;
  	}
  	oss->fragment_set = 1;
@@ -447,7 +446,7 @@
  
  	if ((flags = fcntl(oss->fd, F_GETFL)) < 0) {
  		err = -errno;
-@@ -229,10 +530,146 @@
+@@ -229,16 +514,152 @@ static int oss_hw_params(snd_pcm_ioplug_t *io,
  	return 0;
  }
  
@@ -456,18 +455,18 @@
  static int oss_hw_constraint(snd_pcm_oss_t *oss)
  {
 +#ifdef __FreeBSD__
-+	snd_pcm_ioplug_t *io = &oss->io; 
-+	static const snd_pcm_access_t access_list[] = {
-+		SND_PCM_ACCESS_RW_INTERLEAVED,
-+		SND_PCM_ACCESS_MMAP_INTERLEAVED
-+	};
+ 	snd_pcm_ioplug_t *io = &oss->io; 
+ 	static const snd_pcm_access_t access_list[] = {
+ 		SND_PCM_ACCESS_RW_INTERLEAVED,
+ 		SND_PCM_ACCESS_MMAP_INTERLEAVED
+ 	};
 +#ifdef FREEBSD_OSS_BLKCNT_P2
 +	unsigned int period_list[30];
 +#endif
 +#ifdef FREEBSD_OSS_BUFSZ_P2
 +	unsigned int bufsz_list[30];
 +#endif
-+	unsigned int nformats;
+ 	unsigned int nformats;
 +	unsigned int format[ARRAY_SIZE(oss_formats_tab)];
 +#if 0
 +	unsigned int nchannels;
@@ -593,10 +592,16 @@
 +
 +	return 0;
 +#else
- 	snd_pcm_ioplug_t *io = &oss->io; 
- 	static const snd_pcm_access_t access_list[] = {
- 		SND_PCM_ACCESS_RW_INTERLEAVED,
-@@ -317,6 +736,7 @@
++	snd_pcm_ioplug_t *io = &oss->io; 
++	static const snd_pcm_access_t access_list[] = {
++		SND_PCM_ACCESS_RW_INTERLEAVED,
++		SND_PCM_ACCESS_MMAP_INTERLEAVED
++	};
++	unsigned int nformats;
+ 	unsigned int format[5];
+ 	unsigned int nchannels;
+ 	unsigned int channel[6];
+@@ -317,6 +738,7 @@ static int oss_hw_constraint(snd_pcm_oss_t *oss)
  		return err;
  
  	return 0;
@@ -604,7 +609,7 @@
  }
  
  
-@@ -324,6 +744,10 @@
+@@ -324,6 +746,10 @@ static int oss_close(snd_pcm_ioplug_t *io)
  {
  	snd_pcm_oss_t *oss = io->private_data;
  
@@ -615,7 +620,7 @@
  	close(oss->fd);
  	free(oss->device);
  	free(oss);
-@@ -337,7 +761,9 @@
+@@ -337,7 +763,9 @@ static const snd_pcm_ioplug_callback_t oss_playback_ca
  	.pointer = oss_pointer,
  	.close = oss_close,
  	.hw_params = oss_hw_params,
@@ -625,7 +630,7 @@
  	.drain = oss_drain,
  };
  
-@@ -348,7 +774,9 @@
+@@ -348,7 +776,9 @@ static const snd_pcm_ioplug_callback_t oss_capture_cal
  	.pointer = oss_pointer,
  	.close = oss_close,
  	.hw_params = oss_hw_params,
@@ -635,7 +640,7 @@
  	.drain = oss_drain,
  };
  
-@@ -360,6 +788,10 @@
+@@ -360,6 +790,10 @@ SND_PCM_PLUGIN_DEFINE_FUNC(oss)
  	int err;
  	snd_pcm_oss_t *oss;
  	

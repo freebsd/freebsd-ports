@@ -1,4 +1,4 @@
---- oss/pcm_oss.c.orig	2019-07-04 14:37:07 UTC
+--- oss/pcm_oss.c.orig	2016-03-31 13:11:29 UTC
 +++ oss/pcm_oss.c
 @@ -22,7 +22,11 @@
  #include <sys/ioctl.h>
@@ -12,7 +12,7 @@
  
  #define ARRAY_SIZE(x)	(sizeof(x) / sizeof(*(x)))
  
-@@ -74,11 +78,19 @@ static snd_pcm_sframes_t oss_write(snd_p
+@@ -74,11 +78,19 @@ static snd_pcm_sframes_t oss_write(snd_pcm_ioplug_t *i
  	size *= oss->frame_bytes;
  	result = write(oss->fd, buf, size);
  #ifdef __FreeBSD__
@@ -36,7 +36,7 @@
  #endif
  	return result / oss->frame_bytes;
  }
-@@ -97,11 +109,19 @@ static snd_pcm_sframes_t oss_read(snd_pc
+@@ -97,11 +109,19 @@ static snd_pcm_sframes_t oss_read(snd_pcm_ioplug_t *io
  	size *= oss->frame_bytes;
  	result = read(oss->fd, buf, size);
  #ifdef __FreeBSD__
@@ -60,7 +60,7 @@
  #endif
  	return result / oss->frame_bytes;
  }
-@@ -258,10 +278,29 @@ static int oss_drain(snd_pcm_ioplug_t *i
+@@ -258,10 +278,29 @@ static int oss_drain(snd_pcm_ioplug_t *io)
  #endif
  
  	if (io->stream == SND_PCM_STREAM_PLAYBACK)
@@ -91,7 +91,7 @@
  #ifndef __FreeBSD__
  static int oss_prepare(snd_pcm_ioplug_t *io)
  {
-@@ -272,7 +311,7 @@ static int oss_prepare(snd_pcm_ioplug_t 
+@@ -272,7 +311,7 @@ static int oss_prepare(snd_pcm_ioplug_t *io)
  	fprintf(stderr, "%s()\n", __func__);
  #endif
  
@@ -100,7 +100,7 @@
  
  	tmp = io->channels;
  	if (ioctl(oss->fd, SNDCTL_DSP_CHANNELS, &tmp) < 0) {
-@@ -380,20 +419,26 @@ static int oss_hw_params(snd_pcm_ioplug_
+@@ -380,20 +419,26 @@ static int oss_hw_params(snd_pcm_ioplug_t *io,
  
  	ioctl(oss->fd, SNDCTL_DSP_RESET);
  
@@ -116,14 +116,14 @@
 +	/* round up to nearest power of two */
 +	while (tmp & (tmp - 1))
 +		tmp += tmp & ~(tmp - 1);
-+
+ 
+-	blkcnt = 2;
 +	/* get logarithmic value */
 +	for (blksz_shift = 0; blksz_shift < 24; blksz_shift++) {
 +		if (tmp == (1 << blksz_shift))
 +			break;
 +	}
- 
--	blkcnt = 2;
++
  	tmp = io->buffer_size * oss->frame_bytes;
  
 -	while (blkcnt < 4096 && (blksz_aligned() * blkcnt) < tmp &&
@@ -137,7 +137,7 @@
  
  	tmp = blksz_shift | (blkcnt << 16);
  	if (ioctl(oss->fd, SNDCTL_DSP_SETFRAGMENT, &tmp) < 0) {
-@@ -767,6 +812,7 @@ static const snd_pcm_ioplug_callback_t o
+@@ -767,6 +812,7 @@ static const snd_pcm_ioplug_callback_t oss_playback_ca
  	.prepare = oss_prepare,
  #endif
  	.drain = oss_drain,
@@ -145,7 +145,7 @@
  };
  
  static const snd_pcm_ioplug_callback_t oss_capture_callback = {
-@@ -780,6 +826,7 @@ static const snd_pcm_ioplug_callback_t o
+@@ -780,6 +826,7 @@ static const snd_pcm_ioplug_callback_t oss_capture_cal
  	.prepare = oss_prepare,
  #endif
  	.drain = oss_drain,

@@ -8,12 +8,12 @@
  #include <termios.h>
  #include <unistd.h>
  
-@@ -38,6 +39,8 @@
+@@ -37,6 +38,8 @@
+ #include <sys/stat.h>
  #include <sys/socket.h>
  #include <sys/un.h>
- 
-+#define AF_FILE     AF_UNIX
 +
++#define AF_FILE     AF_UNIX
+ 
  #define MIN(a, b)     ((a) < (b) ? (a) : (b))
  #define MAX(a, b)     ((a) > (b) ? (a) : (b))
- 
