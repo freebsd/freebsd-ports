@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pacpl
-PORTVERSION=	5.1.0
-PORTREVISION=	2
+PORTVERSION=	6.1.2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -18,13 +17,14 @@ RUN_DEPENDS=	p5-Audio-FLAC-Header>0:audio/p5-Audio-FLAC-Header \
 		p5-CDDB_get>0:audio/p5-CDDB_get \
 		p5-MP3-Tag>0:audio/p5-MP3-Tag \
 		p5-Parallel-ForkManager>0:devel/p5-Parallel-ForkManager \
-		p5-Switch>0:lang/p5-Switch
-
-NO_ARCH=	yes
+		p5-Switch>0:lang/p5-Switch \
+		p5-String-ShellQuote>0:textproc/p5-String-ShellQuote
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	pacpl plugins/gnome/nautilus/PACPL-Convert \
+SHEBANG_FILES=	pacpl.in plugins/gnome/nautilus/PACPL-Convert \
 		plugins/kde/PACPL-Konvert
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=		APE CDPARANOIA DOCS FAAC FAAD FFMPEG KDE4 \
 			LAME LAUDIO MUSEPACK MPLAYER OPTIMFROG OPUS \
@@ -60,15 +60,16 @@ WAVPACK_RUN_DEPENDS=	wavpack:audio/wavpack
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|"/etc/pacpl|"${ETCDIR}| ; \
-		 s|"/usr/share/pacpl|"${DATADIR}| ; \
-		 s|^/etc/pacpl|${ETCDIR}|' ${WRKSRC}/pacpl
+		's|"@sysconfdir@|"${ETCDIR}| ; \
+		 s|"@pkgdatadir@|"${DATADIR}| ; \
+		 s|^/etc/pacpl|${ETCDIR}|' ${WRKSRC}/pacpl.in
 	@${REINPLACE_CMD} -e \
 		's| /etc/pacpl| ${ETCDIR}|' ${WRKSRC}/pacpl.conf
 	@${REINPLACE_CMD} -e \
 		's|=/etc/pacpl|=${ETCDIR}| ; \
 		 s|=/usr/bin|=${PREFIX}/libexec|' \
 		${WRKSRC}/plugins/kde/pacpl.desktop
+	@${MV} ${WRKSRC}/pacpl.in ${WRKSRC}/pacpl
 
 do-build:
 	@(cd ${WRKSRC} && pod2man pacpl pacpl.1)
