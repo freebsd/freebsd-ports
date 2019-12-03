@@ -1,4 +1,3 @@
-# Created by: Steve Wills <swills@rubick>
 # $FreeBSD$
 
 PORTNAME=	albino
@@ -18,10 +17,7 @@ RUN_DEPENDS=	rubygem-posix-spawn>=0.3.6:devel/rubygem-posix-spawn \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem python
-REINPLACE_ARGS=	-i ''
-
-post-patch:
-	@${REINPLACE_CMD} -e '1d' ${WRKSRC}/vendor/multipygmentize
+USES=		gem python shebangfix
+SHEBANG_FILES=	vendor/multipygmentize
 
 .include <bsd.port.mk>
