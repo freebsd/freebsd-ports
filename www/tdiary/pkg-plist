@@ -25,6 +25,8 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/js/highlight.js
 %%WWWDIR%%/js/image.js
 %%WWWDIR%%/js/preview.js
+%%WWWDIR%%/lib/aws/pa_api.rb
+%%WWWDIR%%/lib/aws/sig_v4.rb
 %%WWWDIR%%/lib/tdiary.rb
 %%WWWDIR%%/lib/tdiary/admin.rb
 %%WWWDIR%%/lib/tdiary/application.rb
