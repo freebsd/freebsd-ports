@@ -10,10 +10,8 @@ lib/liblnk.a
 lib/liblnk.so
 lib/liblnk.so.1
 lib/liblnk.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pylnk.a
-%%PYTHON2_SITELIBDIR%%/pylnk.so
-%%PYTHON3_SITELIBDIR%%/pylnk.a
-%%PYTHON3_SITELIBDIR%%/pylnk.so
+%%PYTHON_SITELIBDIR%%/pylnk.a
+%%PYTHON_SITELIBDIR%%/pylnk.so
 libdata/pkgconfig/liblnk.pc
 man/man1/lnkinfo.1.gz
 man/man3/liblnk.3.gz
