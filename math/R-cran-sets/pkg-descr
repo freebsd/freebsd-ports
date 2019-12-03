@@ -1,0 +1,4 @@
+Data structures and basic operations for ordinary sets, generalizations such as
+fuzzy sets, multisets, and fuzzy multisets, customizable sets, and intervals.
+
+WWW: https://cran.r-project.org/web/packages/sets/
