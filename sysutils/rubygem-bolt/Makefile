@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bolt
-PORTVERSION=	1.39.0
+PORTVERSION=	1.40.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	puppet:sysutils/puppet6 \
 		rubygem-net-ssh>=4.0:security/rubygem-net-ssh \
 		rubygem-orchestrator_client>=0.3:net/rubygem-orchestrator_client \
 		rubygem-puppet-resource_api>=0:devel/rubygem-puppet-resource_api \
+		rubygem-puppet-strings>=0:textproc/rubygem-puppet-strings \
 		rubygem-ruby_smb>=0:net/rubygem-ruby_smb \
 		rubygem-terminal-table>=1.8:textproc/rubygem-terminal-table \
 		rubygem-winrm-fs>=1.3:sysutils/rubygem-winrm-fs \
