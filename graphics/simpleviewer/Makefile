@@ -5,29 +5,25 @@ PORTNAME=	simpleviewer
 PORTVERSION=	3.1.7
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/andreyu/simple-viewer-gl/get/
-DISTNAME=	v${PORTVERSION}	# version tag, thus no embedded ${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}	# and hence the need for ${DIST_SUBDIR}
+DISTNAME=	v${PORTVERSION}	# version tag, has no embedded ${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}	# and that's why we need ${DIST_SUBDIR}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Small and simple image viewer based on OpenGL
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
-		libImlib2.so:graphics/imlib2 \
-		libexif.so:graphics/libexif \
-		libfreetype.so:print/freetype2 \
-		libgif.so:graphics/giflib \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libglfw.so:graphics/glfw \
-		liblcms2.so:graphics/lcms2 \
-		libpng.so:graphics/png \
-		libtiff.so:graphics/tiff \
-		libwebp.so:graphics/webp
+		libpng.so:graphics/png
 
-USES=		cmake:insource compiler:c++11-lang gl jpeg pkgconfig tar:bzip2 \
-		xorg
-USE_GL=		glu
+USES=		cmake:insource compiler:c++11-lang gl jpeg pkgconfig \
+		tar:bzip2 xorg
+USE_GL=		gl glu
 USE_XORG=	ice sm x11 xcursor xext xinerama xrandr xxf86vm
+CMAKE_ARGS=	-DAPP_VERSION_MAJOR:STRING=${PORTVERSION:S/./ /g:[1]} \
+		-DAPP_VERSION_MINOR:STRING=${PORTVERSION:S/./ /g:[2]} \
+		-DAPP_VERSION_RELEASE:STRING=${PORTVERSION:S/./ /g:[3]}
 
 WRKSRC=		${WRKDIR}/andreyu-simple-viewer-gl-d8928067922d
 
@@ -37,7 +33,36 @@ PORTDOCS=	README.md
 PORTEXAMPLES=	config.example
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+EXTRA_FEATURES=	CURL GIF IMLIB2 JPEG2000 LCMS2 LIBEXIF OPENEXR TIFF WEBP
+OPTIONS_DEFINE=	DOCS EXAMPLES ${EXTRA_FEATURES}
+OPTIONS_DEFAULT=	${EXTRA_FEATURES}
+
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+CURL_CMAKE_OFF=		-DDISABLE_CURL_SUPPORT:STRING=1
+
+GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
+GIF_CMAKE_OFF=		-DDISABLE_GIF_SUPPORT:STRING=1
+
+IMLIB2_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
+IMLIB2_CMAKE_OFF=	-DDISABLE_IMLIB2_SUPPORT:STRING=1
+
+JPEG2000_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
+JPEG2000_CMAKE_OFF=	-DDISABLE_JPEG2000_SUPPORT:STRING=1
+
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
+LCMS2_CMAKE_OFF=	-DDISABLE_LCMS2_SUPPORT:STRING=1
+
+LIBEXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
+LIBEXIF_CMAKE_OFF=	-DDISABLE_EXIF_SUPPORT:STRING=1
+
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
+OPENEXR_CMAKE_OFF=	-DDISABLE_OPENEXR_SUPPORT:STRING=1
+
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+TIFF_CMAKE_OFF=		-DDISABLE_TIFF_SUPPORT:STRING=1
+
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
+WEBP_CMAKE_OFF=		-DDISABLE_WEBP_SUPPORT:STRING=1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},' \
