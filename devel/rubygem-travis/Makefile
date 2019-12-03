@@ -20,16 +20,13 @@ RUN_DEPENDS=	rubygem-faraday>=0.9:www/rubygem-faraday \
 		rubygem-pusher-client>=0.4:www/rubygem-pusher-client \
 		rubygem-typhoeus>=0.6.8:www/rubygem-typhoeus
 
-NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
-USE_RUBY=	yes
 USES=		gem
 
+NO_ARCH=	yes
+USE_RUBY=	yes
 PLIST_FILES=	bin/travis
 
 post-patch:
-# Remove backports
-	@${REINPLACE_CMD} -e '/backports/d' ${WRKSRC}/${GEMSPEC}
-	@${REINPLACE_CMD} -e "/require 'backports/d" ${WRKSRC}/lib/travis/client.rb
+	@${RM} ${WRKSRC}/${GEMSPEC}.orig ${WRKSRC}/lib/travis/client.rb.orig
 
 .include <bsd.port.mk>
