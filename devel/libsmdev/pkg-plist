@@ -10,10 +10,8 @@ lib/libsmdev.a
 lib/libsmdev.so
 lib/libsmdev.so.1
 lib/libsmdev.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pysmdev.a
-%%PYTHON2_SITELIBDIR%%/pysmdev.so
-%%PYTHON3_SITELIBDIR%%/pysmdev.a
-%%PYTHON3_SITELIBDIR%%/pysmdev.so
+%%PYTHON_SITELIBDIR%%/pysmdev.a
+%%PYTHON_SITELIBDIR%%/pysmdev.so
 libdata/pkgconfig/libsmdev.pc
 man/man1/smdevinfo.1.gz
 man/man3/libsmdev.3.gz
