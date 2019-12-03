@@ -1,24 +1,24 @@
---- libmariadb/plugins/auth/CMakeLists.txt.orig	2018-05-23 20:38:41 UTC
+--- libmariadb/plugins/auth/CMakeLists.txt.orig	2019-11-11 05:31:43 UTC
 +++ libmariadb/plugins/auth/CMakeLists.txt
-@@ -38,6 +38,7 @@ IF(GSSAPI_SOURCES)
-                   LIBRARIES ${GSSAPI_LIBS})
+@@ -75,6 +75,7 @@ IF(CRYPTO_PLUGIN)
+                         ${CRYPT_SOURCE}
+                 LIBRARIES ${CRYPT_LIBS})
+ 
++  IF(NOT WITHOUT_CLIENT)
+   IF(WITH_SSL STREQUAL "GNUTLS" AND NOT WIN32)
+     MESSAGE1(STATUS "sha256_password not supported by GnuTLS due to missing OAEP padding")
+   ELSE()
+@@ -85,6 +86,7 @@ IF(CRYPTO_PLUGIN)
+                     SOURCES ${AUTH_DIR}/sha256_pw.c
+                     LIBRARIES ${CRYPT_LIBS})
+   ENDIF()
++  ENDIF()  
  ENDIF()
  
-+IF(NOT WITHOUT_CLIENT)
- IF(${WITH_SSL} STREQUAL "OPENSSL" OR ${WITH_SSL} STREQUAL "SCHANNEL")
-   IF(WIN32)
-     SET(SHA256_LIBS crypt32)
-@@ -51,6 +52,7 @@ IF(${WITH_SSL} STREQUAL "OPENSSL" OR ${W
-                   SOURCES ${AUTH_DIR}/sha256_pw.c
-                   LIBRARIES ${SHA256_LIBS})
- ENDIF()
-+ENDIF()
- 
- # old_password plugin
- REGISTER_PLUGIN(TARGET mysql_old_password
-@@ -60,10 +62,11 @@ REGISTER_PLUGIN(TARGET mysql_old_passwor
+ #GSSAPI client authentication plugin
+@@ -119,9 +121,11 @@ REGISTER_PLUGIN(TARGET mysql_old_password
+                 DEFAULT STATIC
                  SOURCES ${AUTH_DIR}/old_password.c)
- 
  
 +IF(NOT WITHOUT_CLIENT)
  # Cleartext
@@ -27,5 +27,4 @@
                  CONFIGURATIONS DYNAMIC STATIC OFF
                  DEFAULT DYNAMIC
                  SOURCES ${AUTH_DIR}/mariadb_cleartext.c)
--
 +ENDIF()
