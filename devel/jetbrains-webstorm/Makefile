@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webstorm
-PORTVERSION=	2019.2.4
+PORTVERSION=	2019.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
@@ -32,7 +32,7 @@ SHEBANG_FILES=	bin/printenv.py bin/restart.py \
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/WebStorm-192.7142.35
+WRKSRC=		${WRKDIR}/WebStorm-193.5233.80
 
 SUB_FILES=	webstorm webstorm.desktop pkg-message
 
