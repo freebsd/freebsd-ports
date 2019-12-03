@@ -1,11 +1,28 @@
---- gh.gemspec.orig	2017-07-11 08:13:40 UTC
+--- gh.gemspec.orig	2019-12-03 16:30:22 UTC
 +++ gh.gemspec
-@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+@@ -24,16 +24,14 @@ Gem::Specification.new do |s|
+       s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
+       s.add_development_dependency(%q<webmock>.freeze, [">= 0"])
        s.add_runtime_dependency(%q<faraday>.freeze, ["~> 0.8"])
-       s.add_runtime_dependency(%q<backports>.freeze, [">= 0"])
+-      s.add_runtime_dependency(%q<backports>.freeze, [">= 0"])
        s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.0"])
 -      s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.4.0"])
 +      s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.4"])
        s.add_runtime_dependency(%q<net-http-persistent>.freeze, ["~> 2.9"])
        s.add_runtime_dependency(%q<net-http-pipeline>.freeze, [">= 0"])
      else
+       s.add_dependency(%q<rspec>.freeze, [">= 0"])
+       s.add_dependency(%q<webmock>.freeze, [">= 0"])
+       s.add_dependency(%q<faraday>.freeze, ["~> 0.8"])
+-      s.add_dependency(%q<backports>.freeze, [">= 0"])
+       s.add_dependency(%q<multi_json>.freeze, ["~> 1.0"])
+       s.add_dependency(%q<addressable>.freeze, ["~> 2.4.0"])
+       s.add_dependency(%q<net-http-persistent>.freeze, ["~> 2.9"])
+@@ -43,7 +41,6 @@ Gem::Specification.new do |s|
+     s.add_dependency(%q<rspec>.freeze, [">= 0"])
+     s.add_dependency(%q<webmock>.freeze, [">= 0"])
+     s.add_dependency(%q<faraday>.freeze, ["~> 0.8"])
+-    s.add_dependency(%q<backports>.freeze, [">= 0"])
+     s.add_dependency(%q<multi_json>.freeze, ["~> 1.0"])
+     s.add_dependency(%q<addressable>.freeze, ["~> 2.4.0"])
+     s.add_dependency(%q<net-http-persistent>.freeze, ["~> 2.9"])

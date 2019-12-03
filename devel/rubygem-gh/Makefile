@@ -23,11 +23,8 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
 
 post-patch:
-# Remove backports
-	@${REINPLACE_CMD} -e '/backports/d' ${WRKSRC}/${GEMSPEC}
-	@${REINPLACE_CMD} -e "/require 'backports'/d" ${WRKSRC}/lib/gh.rb ${WRKSRC}/lib/gh/parallel.rb
+	@${RM} ${WRKSRC}/lib/gh.rb.orig ${WRKSRC}/gh.gemspec.orig
 
 .include <bsd.port.mk>
