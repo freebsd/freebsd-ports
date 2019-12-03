@@ -12,7 +12,7 @@ Outputs:
 
   * File (container) format: MP4 (M4V) and MKV
   * Video: H.264 (x264), H.265 (x265), MPEG-2/MPEG-4 (ffmpeg),
-           or Theora (libtheora)
+           VP8, VP9 (libvpx) or Theora (libtheora)
   * Audio: AAC, CoreAudio AAC/HE-AAC (OS X only), MP3, FLAC, AC3, or Vorbis;
     AC-3, DTS, DTS-HD, AAC, and MP3 pass-through
 
