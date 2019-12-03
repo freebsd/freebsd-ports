@@ -7,12 +7,13 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	benchmarks
 
+PATCH_SITES=	https://github.com/gvnn3/${PORTNAME}/commit/
+PATCHFILES=	8d752bd051d43772b92019a65afe3ab6dcbf4b7a.patch:-p1
+
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Hash Algorithm Benchmarking
 
 LICENSE=	MIT
-
-BROKEN_powerpc64=	fails to compile: City.cpp: byteswap.h: No such file or directory
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gvnn3

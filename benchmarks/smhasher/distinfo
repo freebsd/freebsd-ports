@@ -1,2 +1,5 @@
+TIMESTAMP = 1575366985
 SHA256 (gvnn3-smhasher-v1.0_GH0.tar.gz) = cd40a370b59446a4a70be0a6399bd9df4944adf6c1854c23dc0ff61fa7011e76
 SIZE (gvnn3-smhasher-v1.0_GH0.tar.gz) = 61909
+SHA256 (8d752bd051d43772b92019a65afe3ab6dcbf4b7a.patch) = fcd867d5984ab6699ac6ee1e7b94116a31c125b701b5667f094df21ffdf460fe
+SIZE (8d752bd051d43772b92019a65afe3ab6dcbf4b7a.patch) = 655
