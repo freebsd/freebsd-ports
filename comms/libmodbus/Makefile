@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmodbus
-PORTVERSION=	3.1.4
-PORTREVISION=	1
+PORTVERSION=	3.1.6
 CATEGORIES=	comms
 MASTER_SITES=	http://libmodbus.org/site_media/build/
 
