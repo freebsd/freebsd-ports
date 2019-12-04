@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcllib
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	devel tcl
 MASTER_SITES=	https://core.tcl.tk/tcllib/uv/
 
@@ -65,12 +65,6 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	${FIND} ${WRKSRC}/apps -type f ! -name "*.man" | ${XARGS} \
 	   ${REINPLACE_CMD} -e 's,exec tclsh,exec ${TCLSH},' -e 's,/usr/bin/env tclsh,${TCLSH},'
-#
-#	patch(1) adds a newline at eof, so we need to remove it here
-#
-	${AWK} 'NR > 1 { print h } { h = $$0 } END { ORS = ""; print h }' \
-	   ${WRKSRC}/modules/doctools/tests/text/04 > ${WRKSRC}/modules/doctools/tests/text/04.new
-	${MV} ${WRKSRC}/modules/doctools/tests/text/04.new ${WRKSRC}/modules/doctools/tests/text/04
 #
 #	man pages have the .tcllib suffix, so there's no need to have a
 #	tcllib_ prefix too
