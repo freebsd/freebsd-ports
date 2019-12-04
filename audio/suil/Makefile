@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suil
-PORTVERSION=	0.10.2
-PORTREVISION=	3
+PORTVERSION=	0.10.6
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
