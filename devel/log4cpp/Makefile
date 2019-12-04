@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		compiler:c++11-lang gmake libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-html-docs
-REINPLACE_ARGS=	-i ""
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
@@ -29,13 +28,6 @@ DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENABLE=	doxygen
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^MAX_|#MAX_|' \
-		${WRKSRC}/doc/Doxyfile.in
-	@${REINPLACE_CMD} -e \
-		's|$$(prefix)/doc/.*|@docdir@| ; \
-		 s|\([[:blank:]]\)\($$(man3dir)\)|\1$$(DESTDIR)\2| ; \
-		 s|\([[:blank:]]\)\($$(docdir)\)|\1$$(DESTDIR)\2|' \
-		${WRKSRC}/doc/Makefile.in
+	@${RM} ${WRKSRC}/doc/Doxyfile.in.orig ${WRKSRC}/doc/Makefile.in.orig
 
 .include <bsd.port.mk>
