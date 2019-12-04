@@ -917,6 +917,7 @@ share/locale/da/LC_MESSAGES/krunner.mo
 share/locale/da/LC_MESSAGES/ksmserver.mo
 share/locale/da/LC_MESSAGES/libkicker.mo
 share/locale/da/LC_MESSAGES/libkworkspace.mo
+share/locale/da/LC_MESSAGES/libnotificationmanager.mo
 share/locale/da/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -942,6 +943,7 @@ share/locale/da/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/da/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/da/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/da/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/da/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/da/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/da/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/da/LC_MESSAGES/plasma_engine_notifications.mo
