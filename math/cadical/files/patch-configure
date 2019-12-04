@@ -1,0 +1,11 @@
+--- configure.orig	2019-12-04 05:29:57 UTC
++++ configure
+@@ -154,7 +154,7 @@ do
+       CXXFLAGS="`expr \"$1\" : 'CXXFLAGS=\(.*\)'`"
+       ;;
+ 
+-    *) die "invalid option '$1' (try '-h')";;
++    *) ;;
+ 
+   esac
+   shift

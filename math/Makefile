@@ -156,6 +156,7 @@
     SUBDIR += bsdnt
     SUBDIR += btor2tools
     SUBDIR += cadabra2
+    SUBDIR += cadical
     SUBDIR += calc
     SUBDIR += calcoo
     SUBDIR += calctool

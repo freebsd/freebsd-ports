@@ -1,0 +1,4 @@
+The goal of CaDiCaL is to provide a clean and efficient state-of-the-art CDCL
+solver, which is also easy to understand and change.
+
+WWW: http://fmv.jku.at/cadical/
