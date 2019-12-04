@@ -18,7 +18,7 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		pathfix
+USES=		compiler:c11 pathfix
 
 OPTIONS_DEFINE=	TCLMAN TZDATA DEBUG
 OPTIONS_DEFAULT=TCLMAN TZDATA
