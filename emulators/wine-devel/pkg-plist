@@ -155,6 +155,7 @@ include/wine/windows/cmdtxt.idl
 include/wine/windows/cmnquery.h
 include/wine/windows/cmnquery.idl
 include/wine/windows/colinf.idl
+include/wine/windows/colordlg.h
 include/wine/windows/comcat.h
 include/wine/windows/comcat.idl
 include/wine/windows/commctrl.h
@@ -2526,6 +2527,7 @@ lib/wine/libdbgeng.def
 lib/wine/libdbghelp.def
 lib/wine/libdciman32.def
 lib/wine/libddraw.def
+lib/wine/libdhcpcsvc.def
 lib/wine/libdinput.a
 lib/wine/libdinput8.a
 lib/wine/libdmoguids.a
