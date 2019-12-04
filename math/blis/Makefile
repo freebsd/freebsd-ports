@@ -11,8 +11,9 @@ COMMENT=	Software framework for high-performance BLAS-like libraries
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LLVM_VER=	60
 BUILD_DEPENDS=	bash:shells/bash \
-		llvm60>=0:devel/llvm60
+		llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER}
 
 OPTIONS_DEFINE=	PARA CBLAS
 PARA_DESC=	use pthread parallelization
@@ -56,7 +57,7 @@ CONFIGURE_ARGS+=	generic
 PLIST_SUB+=	ARCH="generic"
 .endif
 
-CC=	${LOCALBASE}/bin/clang60
-CXX=	${LOCALBASE}/bin/clang++60
+CC=	${LOCALBASE}/bin/clang${LLVM_VER}
+CXX=	${LOCALBASE}/bin/clang++${LLVM_VER}
 
 .include <bsd.port.mk>
