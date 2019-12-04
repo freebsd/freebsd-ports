@@ -17,6 +17,9 @@ COMMENT=	High-level Python Web Framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Django 2.1 is now End-of-Life (Since December 2 2019). Switch to Django 2.2+ as soon as possible
+EXPIRATION_DATE=	2020-01-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 
 NO_ARCH=	yes
