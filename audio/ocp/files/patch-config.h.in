@@ -1,0 +1,14 @@
+--- config.h.in.orig	2019-11-26 21:41:02 UTC
++++ config.h.in
+@@ -160,9 +160,11 @@
+ 
+ #undef HAVE_RESIZE_TERM
+ 
++/*
+ #if (defined(_X86) || defined(__i386__)) && !defined(__APPLE__)
+ #define I386_ASM 1
+ #endif
++*/
+ 
+ /* #define I386_ASM_EMU 1 */
+ 
