@@ -71,6 +71,7 @@ lib/knot-resolver/kres_modules/prefill.lua
 lib/knot-resolver/kres_modules/priming.lua
 lib/knot-resolver/kres_modules/prometheus.lua
 lib/knot-resolver/kres_modules/rebinding.lua
+lib/knot-resolver/kres_modules/refuse_nord.so
 lib/knot-resolver/kres_modules/renumber.lua
 lib/knot-resolver/kres_modules/serve_stale.lua
 lib/knot-resolver/kres_modules/stats.so
