@@ -1,9 +1,9 @@
---- electron/atom/browser/ui/views/atom_views_delegate.h.orig	2019-09-11 17:30:11 UTC
+--- electron/atom/browser/ui/views/atom_views_delegate.h.orig	2019-11-20 23:42:47 UTC
 +++ electron/atom/browser/ui/views/atom_views_delegate.h
-@@ -37,7 +37,7 @@ class ViewsDelegate : public views::ViewsDelegate {
-   HICON GetDefaultWindowIcon() const override;
-   HICON GetSmallWindowIcon() const override;
+@@ -40,7 +40,7 @@ class ViewsDelegate : public views::ViewsDelegate {
    bool IsWindowInMetro(gfx::NativeWindow window) const override;
+   int GetAppbarAutohideEdges(HMONITOR monitor,
+                              base::OnceClosure callback) override;
 -#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#elif (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    gfx::ImageSkia* GetDefaultWindowIcon() const override;
