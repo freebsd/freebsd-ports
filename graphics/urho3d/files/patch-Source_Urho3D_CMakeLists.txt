@@ -1,0 +1,11 @@
+--- Source/Urho3D/CMakeLists.txt.orig	2019-06-18 23:04:34 UTC
++++ Source/Urho3D/CMakeLists.txt
+@@ -23,6 +23,8 @@
+ # Define target name
+ set (TARGET_NAME Urho3D)
+ 
++add_definitions (-DHAVE_STDINT_H -I/usr/local/include)
++
+ # Generate JSON compilation database format specification
+ if (URHO3D_CLANG_TOOLS OR URHO3D_BINDINGS)
+     set (CMAKE_EXPORT_COMPILE_COMMANDS 1)

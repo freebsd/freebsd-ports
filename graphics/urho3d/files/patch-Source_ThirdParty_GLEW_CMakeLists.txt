@@ -1,0 +1,12 @@
+--- Source/ThirdParty/GLEW/CMakeLists.txt.orig	2019-06-18 21:27:01 UTC
++++ Source/ThirdParty/GLEW/CMakeLists.txt
+@@ -23,6 +23,9 @@
+ # Define target name
+ set (TARGET_NAME GLEW)
+ 
++set(CMAKE_REQUIRED_INCLUDES "/usr/local/include")
++add_definitions (-I/usr/local/include)
++
+ # Define preprocessor macros
+ add_definitions (-DGLEW_STATIC -DGLEW_NO_GLU)
+ 
