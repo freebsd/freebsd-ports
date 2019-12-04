@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dashboard
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.7
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 PKGNAMEPREFIX=	xfce4-
@@ -42,7 +42,5 @@ post-patch:
 # default value
 	${FIND} ${WRKSRC}/data/themes -type f -name 'effects.xml' \
 		| ${XARGS} ${REINPLACE_CMD} -i "" 's|factor">1.0|factor">0.25|'
-	${FIND} ${WRKSRC}/data/themes -type f -name '*.theme.in.in' \
-		| ${XARGS} ${REINPLACE_CMD} -e '/Animations=animations.xml/d'
 
 .include <bsd.port.mk>
