@@ -2,7 +2,7 @@
 
 PORTNAME=	photoprint
 DISTVERSION=	0.4.2-pre2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.blackfiveimaging.co.uk/photoprint/
 
@@ -10,8 +10,6 @@ MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Utility to print multiple images per sheet
 
 LICENSE=	GPLv2
-
-BROKEN=		fails to build
 
 LIB_DEPENDS=	libcups.so:print/cups \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -32,8 +30,6 @@ LIBS+=		-lX11
 INSTALLS_ICONS=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|glib/gstrfuncs.h|glib.h|g' \
-		${WRKSRC}/gp_cppsupport/gprinter.cpp
 	@${REINPLACE_CMD} -e 's|cups/cups.h|cups/ppd.h|g' \
 		${WRKSRC}/stp_support/printerqueues_unix.c
 
