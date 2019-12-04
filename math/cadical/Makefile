@@ -3,6 +3,7 @@
 PORTNAME=	cadical
 DISTVERSION=	1.0.3
 DISTVERSIONSUFFIX=	-cb89cbf
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://fmv.jku.at/${PORTNAME}/
 
@@ -14,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake tar:xz
 GNU_CONFIGURE=	yes
+
+CXXFLAGS+=	-fPIC
 
 MAKEFILE=	makefile
 
