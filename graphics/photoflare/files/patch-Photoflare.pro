@@ -1,5 +1,5 @@
---- PhotoFlare.pro.orig	2019-04-26 18:57:02 UTC
-+++ PhotoFlare.pro
+--- Photoflare.pro.orig	2019-04-26 18:57:02 UTC
++++ Photoflare.pro
 @@ -235,7 +235,7 @@ unix:!macx {
      pixmaps.files = installers/deb/DEBIAN/usr/share/icons/hicolor/48x48/apps/photoflare.png
      desktopentry.path = $${BASEDIR}$${PREFIX}/share/applications
