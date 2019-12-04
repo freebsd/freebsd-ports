@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191204
+  AFFECTS: users of mail/nextcloud-mail
+  AUTHOR: brnrd@FreeBSD.org
+
+  Version 0.20.0 removed the default mail configuration via config.php.
+  All users will be prompted to enter account and SMTP- and IMAP-server
+  details for sending and reading email.
+
 20191126:
   AFFECTS: consumers of net/py-urllib3
   AUTHOR: kai@FreeBSD.org
