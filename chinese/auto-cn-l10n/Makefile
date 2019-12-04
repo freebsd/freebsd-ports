@@ -14,7 +14,6 @@ COMMENT=	The automatic localization for Simplified Chinese zh_CN.eucCN locale
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-REINPLACE_ARGS=	-i ""
 
 OPTIONS_DEFINE=		WQY FIREFLYTTF FCITX SCIM MINICHINPUT RELAXCONF
 OPTIONS_DEFAULT=	WQY SCIM RELAXCONF
@@ -34,8 +33,9 @@ MINICHINPUT_RUN_DEPENDS=chinput:chinese/miniChinput
 RELAXCONF_RUN_DEPENDS=	relaxconf:sysutils/relaxconf
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g; \
+	@${REINPLACE_CMD} -e "s|%%X11BASE%%|${LOCALBASE}|g; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/dot.xselector ${WRKSRC}/dot.xinitrc
+	@${RM} ${WRKSRC}/dot.xselector.bak ${WRKSRC}/dot.xinitrc.bak
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/skel/zh_CN.eucCN
