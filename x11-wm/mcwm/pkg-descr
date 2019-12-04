@@ -5,4 +5,4 @@ It doesn't use the Xlib API at all.
 All functions are available from the keyboard, but the mouse can be
 used for moving,resizing and raise/lower.
 
-WWW: http://hack.org/mc/hacks/mcwm/
+WWW: https://hack.org/mc/hacks/mcwm/
