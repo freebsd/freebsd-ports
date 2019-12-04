@@ -94,6 +94,8 @@ TOKYOCABINET_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 TOKYOCABINET_CONFIGURE_WITH=	tokyocabinet
 
 post-patch:
+	@${REINPLACE_CMD} -e '/MU_AUTHLIBS=/s,-lldap,-llber &,' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/need_charset_alias=/s|true|false|' \
 		${WRKSRC}/lib/gnu/Makefile.in
 	@${REINPLACE_CMD} -e '/chown/,+1s|ch|#&|' ${WRKSRC}/dotlock/Makefile.in
