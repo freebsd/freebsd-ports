@@ -1,17 +1,28 @@
---- CMakeLists.txt.orig	2019-05-30 02:33:58 UTC
+--- CMakeLists.txt.orig	2019-12-02 22:50:20 UTC
 +++ CMakeLists.txt
-@@ -402,11 +402,15 @@ configure_file(
-   ${CMAKE_CURRENT_BINARY_DIR}/src/btorconfig.h)
+@@ -434,20 +434,24 @@ configure_file(
+ # Regression tests
  
- # Enable CTest
+ # Get and configure google test
 +if (BUILD_TESTING)
- enable_testing()
+ include(cmake/googletest.cmake)
+ fetch_googletest(
+     ${PROJECT_SOURCE_DIR}/cmake
+     ${PROJECT_BINARY_DIR}/googletest
+     )
+ 
+-enable_testing()
++  enable_testing()
 +endif(BUILD_TESTING)
+ 
+ #-----------------------------------------------------------------------------#
+ # Source directories
  
  include_directories(src ${CMAKE_CURRENT_BINARY_DIR}/src)
  add_subdirectory(src)
+-add_subdirectory(test)
 +if (BUILD_TESTING)
- add_subdirectory(test)
++  add_subdirectory(test)
 +endif(BUILD_TESTING)
  if(PYTHON)
    add_subdirectory(src/api/python)
