@@ -3,6 +3,7 @@
 
 PORTNAME=	SQL-Translator
 PORTVERSION=	1.60
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +14,8 @@ COMMENT=	Manipulate structured data definitions (SQL and more)
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-ShareDir-Install>=0:devel/p5-File-ShareDir-Install \
-		${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		p5-File-ShareDir-Install>=0:devel/p5-File-ShareDir-Install
 RUN_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-DBI>=1.54:databases/p5-DBI \
 		p5-File-ShareDir>=1:devel/p5-File-ShareDir \
@@ -32,23 +33,17 @@ RUN_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-YAML>=0.66:textproc/p5-YAML
 TEST_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-Test-Differences>=0:devel/p5-Test-Differences \
-		p5-Test-Exception>=0.31:devel/p5-Test-Exception \
-
-OPTIONS_DEFINE=	DIAGRAM
-DIAGRAM_DESC=	Diagram generation support
+		p5-Test-Exception>=0.31:devel/p5-Test-Exception
 
 USES=		perl5
-USE_PERL5=	configure
 
-NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
-
+OPTIONS_DEFINE=		DIAGRAM
+DIAGRAM_DESC=		Diagram generation support
+USE_PERL5=		configure
+NO_ARCH=		yes
 DIAGRAM_BUILD_DEPENDS=	${DIAGRAM_RUN_DEPENDS}
 DIAGRAM_RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD \
 			p5-Graph>=0:math/p5-Graph \
 			p5-GraphViz>=0:graphics/p5-GraphViz
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|@EXPORT|&_OK|' ${WRKSRC}/lib/SQL/Translator/Parser/xSV.pm
 
 .include <bsd.port.mk>
