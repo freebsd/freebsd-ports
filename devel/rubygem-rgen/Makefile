@@ -6,7 +6,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	romain@FreeBSD.org
-COMMENT=	Roby modeling and generator framework
+COMMENT=	Ruby modeling and generator framework
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
