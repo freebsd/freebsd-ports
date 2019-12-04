@@ -28,6 +28,7 @@ include/dovecot-2.3-pigeonhole/sieve/sieve-config.h
 include/dovecot-2.3-pigeonhole/sieve/sieve-dump.h
 include/dovecot-2.3-pigeonhole/sieve/sieve-error-private.h
 include/dovecot-2.3-pigeonhole/sieve/sieve-error.h
+include/dovecot-2.3-pigeonhole/sieve/sieve-execute.h
 include/dovecot-2.3-pigeonhole/sieve/sieve-ext-copy.h
 include/dovecot-2.3-pigeonhole/sieve/sieve-ext-enotify.h
 include/dovecot-2.3-pigeonhole/sieve/sieve-ext-environment.h

@@ -8,8 +8,7 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.3.8
-PORTREVISION=	4
+PORTVERSION=	2.3.9
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.3/
 
@@ -34,8 +33,6 @@ INSTALL_TARGET=	install-strip
 
 USERS=		dovecot dovenull
 GROUPS=		${USERS}
-
-CONFLICTS_INSTALL=	dovecot22
 
 OPTIONS_DEFINE=	LIBSODIUM LIBWRAP LUA LZ4 VPOPMAIL DOCS EXAMPLES
 OPTIONS_DEFAULT=GSSAPI_NONE LIBWRAP
