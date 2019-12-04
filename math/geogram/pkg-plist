@@ -55,6 +55,7 @@ include/geogram1/geogram/basic/process_private.h
 include/geogram1/geogram/basic/progress.h
 include/geogram1/geogram/basic/psm.h
 include/geogram1/geogram/basic/quaternion.h
+include/geogram1/geogram/basic/range.h
 include/geogram1/geogram/basic/smart_pointer.h
 include/geogram1/geogram/basic/stopwatch.h
 include/geogram1/geogram/basic/string.h
@@ -237,6 +238,7 @@ include/geogram1/geogram_gfx/GLUP/GLUP_context.h
 include/geogram1/geogram_gfx/GLUP/GLUP_context_ES.h
 include/geogram1/geogram_gfx/GLUP/GLUP_context_GLSL.h
 include/geogram1/geogram_gfx/GLUP/GLUP_marching_cells.h
+include/geogram1/geogram_gfx/GLUP/GLUP_private.h
 include/geogram1/geogram_gfx/GLUP/shaders/GLUP/ShaderToy.h
 include/geogram1/geogram_gfx/GLUP/shaders/GLUP/constants.h
 include/geogram1/geogram_gfx/GLUP/shaders/GLUP/defs.h
@@ -288,8 +290,8 @@ include/geogram1/geogram_gfx/gui/command.h
 include/geogram1/geogram_gfx/gui/console.h
 include/geogram1/geogram_gfx/gui/events.h
 include/geogram1/geogram_gfx/gui/gui_state.h
-include/geogram1/geogram_gfx/gui/gui_state_bigfont_h.h
-include/geogram1/geogram_gfx/gui/gui_state_bigfont_v.h
+include/geogram1/geogram_gfx/gui/gui_state_h.h
+include/geogram1/geogram_gfx/gui/gui_state_v.h
 include/geogram1/geogram_gfx/gui/simple_application.h
 include/geogram1/geogram_gfx/gui/simple_mesh_application.h
 include/geogram1/geogram_gfx/gui/status_bar.h
@@ -321,10 +323,13 @@ include/geogram1/geogram_gfx/third_party/quicktext/glQuickText.h
 lib/cmake/modules/FindGeogram.cmake
 lib/libgeogram.so
 lib/libgeogram.so.1
-lib/libgeogram.so.1.7.1
+lib/libgeogram.so.1.7.2
 lib/libgeogram_gfx.so
 lib/libgeogram_gfx.so.1
-lib/libgeogram_gfx.so.1.7.1
+lib/libgeogram_gfx.so.1.7.2
+lib/libgeogram_num_3rdparty.so
+lib/libgeogram_num_3rdparty.so.1
+lib/libgeogram_num_3rdparty.so.1.7.2
 libdata/pkgconfig/geogram1.pc
 libdata/pkgconfig/geogram_gfx1.pc
 @dir include/geogram1/geogram_gfx/gui/colormaps
