@@ -35,6 +35,7 @@ bin/pot
 %%DATADIR%%/set-attribute.sh
 %%DATADIR%%/set-cmd.sh
 %%DATADIR%%/set-env.sh
+%%DATADIR%%/set-hook.sh
 %%DATADIR%%/set-hosts.sh
 %%DATADIR%%/set-rss.sh
 %%DATADIR%%/show.sh
