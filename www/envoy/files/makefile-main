@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 LOCALBASE?=	/usr/local
-CXXFLAGS+=	-std=c++14 -Wall -Wextra -Wno-unused-parameter
+CXXFLAGS+=	-std=c++14 -Wall -Wextra -Wno-unused-parameter -DSPDLOG_FMT_EXTERNAL=1
 CPPFLAGS+=	-I. -I../include -I../api -I$(LOCALBASE)/include \
 		-DNDEBUG -DENVOY_SSL_VERSION=\"BoringSSL\" \
 		-DBUILD_SCM_REVISION=\"e95ef6b\" \
 		-DBUILD_SCM_STATUS=\"Modified\"
-LDFLAGS+=	-L$(LOCALBASE)/lib
+LDFLAGS+=	-L$(LOCALBASE)/lib -lfmt
 CCACHE?=	$(shell command -v ccache)
 
 api_OBJS=	../api/envoy/admin/v2alpha/certs.pb.o \

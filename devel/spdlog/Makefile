@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	spdlog
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	b693d0cd915c.patch:-p1
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Super fast C++ logging library
