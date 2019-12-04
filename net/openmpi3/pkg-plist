@@ -78,6 +78,10 @@
 %%MPIDIR%%/include/openmpi/ompi/mpi/cxx/win_inln.h
 %%MPIDIR%%/include/openmpi/ompi/mpiext/affinity/c/mpiext_affinity_c.h
 %%MPIDIR%%/include/openmpi/ompi/mpiext/cuda/c/mpiext_cuda_c.h
+%%MPIDIR%%/lib/libmca_common_dstore.la
+%%MPIDIR%%/lib/libmca_common_dstore.so
+%%MPIDIR%%/lib/libmca_common_dstore.so.1
+%%MPIDIR%%/lib/libmca_common_dstore.so.1.0.0
 %%MPIDIR%%/lib/libmca_common_monitoring.la
 %%MPIDIR%%/lib/libmca_common_monitoring.so
 %%MPIDIR%%/lib/libmca_common_monitoring.so.50
@@ -85,7 +89,7 @@
 %%MPIDIR%%/lib/libmca_common_ompio.la
 %%MPIDIR%%/lib/libmca_common_ompio.so
 %%MPIDIR%%/lib/libmca_common_ompio.so.41
-%%MPIDIR%%/lib/libmca_common_ompio.so.41.9.1
+%%MPIDIR%%/lib/libmca_common_ompio.so.41.9.2
 %%MPIDIR%%/lib/libmca_common_sm.la
 %%MPIDIR%%/lib/libmca_common_sm.so
 %%MPIDIR%%/lib/libmca_common_sm.so.40
@@ -113,11 +117,11 @@
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.40
-%%MPIDIR%%/lib/libopen-pal.so.40.10.4
+%%MPIDIR%%/lib/libopen-pal.so.40.10.5
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so
 %%MPIDIR%%/lib/libopen-rte.so.40
-%%MPIDIR%%/lib/libopen-rte.so.40.10.4
+%%MPIDIR%%/lib/libopen-rte.so.40.10.5
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/ompi_monitoring_prof.la
 %%MPIDIR%%/lib/ompi_monitoring_prof.so
@@ -259,6 +263,8 @@
 %%MPIDIR%%/lib/openmpi/mca_reachable_weighted.so
 %%MPIDIR%%/lib/openmpi/mca_regx_fwd.la
 %%MPIDIR%%/lib/openmpi/mca_regx_fwd.so
+%%MPIDIR%%/lib/openmpi/mca_regx_naive.la
+%%MPIDIR%%/lib/openmpi/mca_regx_naive.so
 %%MPIDIR%%/lib/openmpi/mca_regx_reverse.la
 %%MPIDIR%%/lib/openmpi/mca_regx_reverse.so
 %%MPIDIR%%/lib/openmpi/mca_rmaps_mindist.la
@@ -277,8 +283,6 @@
 %%MPIDIR%%/lib/openmpi/mca_rml_oob.so
 %%MPIDIR%%/lib/openmpi/mca_routed_binomial.la
 %%MPIDIR%%/lib/openmpi/mca_routed_binomial.so
-%%MPIDIR%%/lib/openmpi/mca_routed_debruijn.la
-%%MPIDIR%%/lib/openmpi/mca_routed_debruijn.so
 %%MPIDIR%%/lib/openmpi/mca_routed_direct.la
 %%MPIDIR%%/lib/openmpi/mca_routed_direct.so
 %%MPIDIR%%/lib/openmpi/mca_routed_radix.la
@@ -329,6 +333,8 @@
 %%MPIDIR%%/lib/pmix/mca_bfrops_v21.so
 %%MPIDIR%%/lib/pmix/mca_gds_ds12.la
 %%MPIDIR%%/lib/pmix/mca_gds_ds12.so
+%%MPIDIR%%/lib/pmix/mca_gds_ds21.la
+%%MPIDIR%%/lib/pmix/mca_gds_ds21.so
 %%MPIDIR%%/lib/pmix/mca_gds_hash.la
 %%MPIDIR%%/lib/pmix/mca_gds_hash.so
 %%MPIDIR%%/lib/pmix/mca_preg_native.la
@@ -865,6 +871,7 @@
 %%MPIDIR%%/%%DATADIR%%/help-rcache-base.txt
 %%MPIDIR%%/%%DATADIR%%/help-regex.txt
 %%MPIDIR%%/%%DATADIR%%/help-rmaps_rank_file.txt
+%%MPIDIR%%/%%DATADIR%%/help-state-base.txt
 %%MPIDIR%%/%%DATADIR%%/mpiCC-wrapper-data.txt
 %%MPIDIR%%/%%DATADIR%%/mpic++-wrapper-data.txt
 %%MPIDIR%%/%%DATADIR%%/mpicc-wrapper-data.txt
@@ -873,10 +880,9 @@
 %%MPIDIR%%/%%DATADIR%%/mpif90-wrapper-data.txt
 %%MPIDIR%%/%%DATADIR%%/mpifort-wrapper-data.txt
 %%MPIDIR%%/%%DATADIR%%/openmpi-valgrind.supp
-%%MPIDIR%%/%%DATADIR%%/help-state-base.txt
 %%MPIDIR%%/%%DATADIR%%/ortecc-wrapper-data.txt
-%%MPIDIR%%/share/pmix/help-mca-base.txt
-%%MPIDIR%%/share/pmix/help-mca-var.txt
+%%MPIDIR%%/share/pmix/help-pmix-mca-base.txt
+%%MPIDIR%%/share/pmix/help-pmix-mca-var.txt
 %%MPIDIR%%/share/pmix/help-pmix-psensor-file.txt
 %%MPIDIR%%/share/pmix/help-pmix-psensor-heartbeat.txt
 %%MPIDIR%%/share/pmix/help-pmix-runtime.txt
