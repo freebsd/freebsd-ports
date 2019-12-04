@@ -1,18 +1,21 @@
---- ntpd/ntp.conf.5man.orig	2016-06-02 06:41:03.000000000 -0700
-+++ ntpd/ntp.conf.5man	2017-03-07 22:54:39.255862000 -0800
-@@ -22,12 +22,6 @@
+--- ntpd/ntp.conf.5man.orig	2019-06-07 02:02:03.000000000 -0700
++++ ntpd/ntp.conf.5man	2019-12-04 07:13:11.069497000 -0800
+@@ -22,15 +22,9 @@
  \- Network Time Protocol (NTP) daemon configuration file format
  .SH SYNOPSIS
  \f\*[B-Font]ntp.conf\fP
 -[\f\*[B-Font]\-\-option-name\f[]]
 -[\f\*[B-Font]\-\-option-name\f[] \f\*[I-Font]value\f[]]
--.sp \n(Ppu
--.ne 2
--
--All arguments must be options.
  .sp \n(Ppu
  .ne 2
  
+-All arguments must be options.
+-.sp \n(Ppu
+-.ne 2
+-
+ .SH DESCRIPTION
+ The
+ \f\*[B-Font]ntp.conf\fP
 @@ -190,7 +184,7 @@
  .NOP \f\*[B-Font]pool\f[]
  For type s addresses, this command mobilizes a persistent
@@ -21,4 +24,13 @@
 +In this mode the local clock can be synchronized to the
  remote server, but the remote server can never be synchronized to
  the local clock.
+ .TP 7
+@@ -3110,7 +3104,7 @@
+ when dropping root (the
+ \f\*[B-Font]\-i\f[]
+ option).
+-The default is 32 megabytes on non-Linux machines, and \-1 under Linux.
++The default is \-1.
+ -1 means "do not lock the process into memory".
+ 0 means "lock whatever memory the process wants into memory".
  .TP 7

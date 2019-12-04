@@ -1,5 +1,5 @@
---- ntpd/ntp.conf.html.orig	2019-02-20 09:56:39.000000000 -0800
-+++ ntpd/ntp.conf.html	2019-02-21 19:04:30.444506000 -0800
+--- ntpd/ntp.conf.html.orig	2019-06-07 02:01:58.000000000 -0700
++++ ntpd/ntp.conf.html	2019-12-04 07:13:39.152812000 -0800
 @@ -280,7 +280,7 @@
  <dt><code>pool</code></dt>
  <dd><p>For type s addresses, this command mobilizes a persistent
@@ -8,4 +8,13 @@
 +In this mode the local clock can be synchronized to the
  remote server, but the remote server can never be synchronized to
  the local clock.
+ </p></dd>
+@@ -3094,7 +3094,7 @@
+ when dropping root (the
+ <code>-i</code>
+ option).
+-The default is 32 megabytes on non-Linux machines, and -1 under Linux.
++The default is -1.
+ -1 means &quot;do not lock the process into memory&quot;.
+ 0 means &quot;lock whatever memory the process wants into memory&quot;.
  </p></dd>
