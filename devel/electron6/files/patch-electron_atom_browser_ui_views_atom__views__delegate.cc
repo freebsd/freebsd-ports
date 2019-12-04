@@ -1,4 +1,4 @@
---- electron/atom/browser/ui/views/atom_views_delegate.cc.orig	2019-09-11 17:30:11 UTC
+--- electron/atom/browser/ui/views/atom_views_delegate.cc.orig	2019-11-20 23:42:47 UTC
 +++ electron/atom/browser/ui/views/atom_views_delegate.cc
 @@ -9,7 +9,7 @@
  #include "ui/views/widget/desktop_aura/desktop_native_widget_aura.h"
@@ -18,16 +18,16 @@
  bool IsDesktopEnvironmentUnity() {
    std::unique_ptr<base::Environment> env(base::Environment::Create());
    base::nix::DesktopEnvironment desktop_env =
-@@ -68,7 +68,7 @@ bool ViewsDelegate::IsWindowInMetro(gfx::NativeWindow 
-   return false;
- }
+@@ -53,7 +53,7 @@ void ViewsDelegate::NotifyMenuItemFocused(const base::
+                                           int item_count,
+                                           bool has_submenu) {}
  
--#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#elif (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  gfx::ImageSkia* ViewsDelegate::GetDefaultWindowIcon() const {
    return NULL;
  }
-@@ -100,7 +100,7 @@ void ViewsDelegate::OnBeforeWidgetInit(
+@@ -85,7 +85,7 @@ void ViewsDelegate::OnBeforeWidgetInit(
  }
  
  bool ViewsDelegate::WindowManagerProvidesTitleBar(bool maximized) {

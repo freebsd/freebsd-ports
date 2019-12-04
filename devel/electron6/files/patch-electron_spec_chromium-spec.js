@@ -1,6 +1,6 @@
---- electron/spec/chromium-spec.js.orig	2019-09-11 17:30:11 UTC
+--- electron/spec/chromium-spec.js.orig	2019-11-20 23:42:47 UTC
 +++ electron/spec/chromium-spec.js
-@@ -865,7 +865,7 @@ describe('chromium feature', () => {
+@@ -866,7 +866,7 @@ describe('chromium feature', () => {
      })
  
      it('can be get as context in canvas', () => {
@@ -9,7 +9,7 @@
          // FIXME(alexeykuzmin): Skip the test.
          // this.skip()
          return
-@@ -1549,12 +1549,13 @@ describe('font fallback', () => {
+@@ -1550,12 +1550,13 @@ describe('font fallback', () => {
      expect(fonts[0].familyName).to.equal({
        'win32': 'Arial',
        'darwin': 'Helvetica',
