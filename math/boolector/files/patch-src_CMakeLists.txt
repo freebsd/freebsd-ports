@@ -1,11 +1,11 @@
---- src/CMakeLists.txt.orig	2019-06-14 07:01:21 UTC
+--- src/CMakeLists.txt.orig	2019-12-04 04:46:17 UTC
 +++ src/CMakeLists.txt
-@@ -129,7 +129,7 @@ set_target_properties(boolector-bin
-   PROPERTIES
-     OUTPUT_NAME boolector
-     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
--if(NOT SHARED AND NOT APPLE)
-+if(NOT SHARED AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
-   set_target_properties(boolector-bin
-     PROPERTIES
-       LINK_FLAGS "-static -Wl,--no-export-dynamic"
+@@ -195,7 +195,7 @@ target_link_libraries(btorimc boolector)
+ #-----------------------------------------------------------------------------#
+ # Static binaries
+ 
+-if(NOT BUILD_SHARED_LIBS AND NOT APPLE)
++if(NOT BUILD_SHARED_LIBS AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+   set(BTOR_STATIC_FLAGS "-static")
+   set(STATIC_TARGETS boolector-bin btormc btoruntrace btorimc)
+ 

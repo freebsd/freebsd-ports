@@ -6,4 +6,4 @@ lib/cmake/Boolector/BoolectorConfig.cmake
 lib/cmake/Boolector/BoolectorConfigVersion.cmake
 lib/cmake/Boolector/BoolectorTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Boolector/BoolectorTargets.cmake
-lib/libboolector.a
+lib/libboolector.so
