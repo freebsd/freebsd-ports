@@ -12,6 +12,9 @@ COMMENT=	Yet Another Swagger Generator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
+DEPRECATED=		Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
+EXPIRATION_DATE=	2020-01-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.0.6:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django21>=1.11.7:www/py-django21@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj21-djangorestframework>=3.8:www/py-dj21-djangorestframework@${PY_FLAVOR} \
