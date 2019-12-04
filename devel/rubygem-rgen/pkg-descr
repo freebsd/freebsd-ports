@@ -1,0 +1,5 @@
+RGen is a framework for Model Driven Software Development (MDSD) in Ruby. This
+means that it helps you build Metamodels, instantiate Models, modify and
+transform Models and finally generate arbitrary textual content from it.
+
+WWW: http://ruby-gen.org/

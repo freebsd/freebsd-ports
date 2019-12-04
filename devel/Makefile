@@ -6149,6 +6149,7 @@
     SUBDIR += rubygem-resque
     SUBDIR += rubygem-retriable
     SUBDIR += rubygem-retryable
+    SUBDIR += rubygem-rgen
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rice
     SUBDIR += rubygem-rodzilla
