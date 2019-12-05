@@ -4,7 +4,7 @@
 PORTNAME=	antibody
 PORTVERSION=	4.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -31,6 +31,6 @@ GH_TUPLE=	alecthomas:kingpin:v2.2.6:kingpin/vendor/gopkg.in/alecthomas/kingpin.v
 		golang:crypto:34f6963:crypto/vendor/golang.org/x/crypto \
 		golang:net:d98b1b4:net/vendor/golang.org/x/net \
 		golang:sync:1d60e4:sync/vendor/golang.org/x/sync \
-		golang:sys:7c87d1:sys/vendor/golang.org/x/sys
+		golang:sys:33540a1f6037:sys/vendor/golang.org/x/sys
 
 .include <bsd.port.mk>
