@@ -6,6 +6,9 @@ BEGIN {
 	gl_tuple_len = 0
 	crates_len = 0
 	package_name = "<unknown>"
+	crate_name = "<unknown>"
+	crate_version = "<unknown>"
+	crate_source = "<unknown>"
 
 	gitlab_sites["https://gitlab.com"] = 1
 	gitlab_sites["https://gitlab.freedesktop.org"] = 1
@@ -13,17 +16,35 @@ BEGIN {
 	gitlab_sites["https://gitlab.redox-os.org"] = 1
 }
 
-/^"checksum .* .* \(registry\+.*\)" = ".*"/ {
-	# $2: crate
-	# $3: version
-	# $4: url
-	# $6: checksum
-	crates[crates_len++] = sprintf("%s-%s", $2, $3)
-}
-
 /^name = ".*"/ {
+	crate_name = $3
+	gsub(/"/, "", crate_name)
+
 	package_name = $3
 	gsub("[^a-zA-Z_]", "", package_name)
+}
+
+/^version = ".*"/ {
+	crate_version = $3
+	gsub(/"/, "", crate_version)
+}
+
+/^source = ".*"/ {
+	crate_source = $3
+	gsub(/"/, "", crate_source)
+}
+
+/^\[\[package\]\]$/ {
+	add_crate()
+}
+
+function add_crate() {
+	if (crate_source == "registry+https://github.com/rust-lang/crates.io-index") {
+		crates[crates_len++] = sprintf("%s-%s", crate_name, crate_version)
+	}
+	crate_name = "<unknown>"
+	crate_version = "<unknown>"
+	crate_source = "<unknown>"
 }
 
 function split_url(s) {
@@ -112,6 +133,8 @@ function print_array(start, arr, arrlen) {
 }
 
 END {
+	add_crate()
+
 	if (gh_tuple_len > 0 && ENVIRON["USE_GITHUB"] == "") {
 		printf "USE_GITHUB=\tnodefault\n"
 	}
