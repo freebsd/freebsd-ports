@@ -1,3 +1,5 @@
-TIMESTAMP = 1574955492
-SHA256 (ocp-0.2.0.tar.xz) = f077ed44c2d2522e52d9589f5e172590bdc917d383f637ab1cd4bb3f8373769e
-SIZE (ocp-0.2.0.tar.xz) = 1966552
+TIMESTAMP = 1575554501
+SHA256 (mywave82-opencubicplayer-v0.2.1_GH0.tar.gz) = 49ab335f848e6b76b9c98d929ac2c4567c37c69a2dac14260c863fca260b0293
+SIZE (mywave82-opencubicplayer-v0.2.1_GH0.tar.gz) = 1023061
+SHA256 (mywave82-timidity-77cd92d_GH0.tar.gz) = 66b9fd32dd8587a1b9f423fe324f5d0e6ab697780514861e3e20406905706efa
+SIZE (mywave82-timidity-77cd92d_GH0.tar.gz) = 1763114

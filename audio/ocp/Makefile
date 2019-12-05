@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ocp
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	https://stian.cubic.org/ocp/ \
-		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Legendary Open Cubic Player
@@ -28,6 +27,12 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	mywave82
+GH_PROJECT=	opencubicplayer
+GH_TUPLE=	mywave82:timidity:77cd92d:timidity/playgmi/timidity-git
 
 MAKE_JOBS_UNSAFE=	yes
 
