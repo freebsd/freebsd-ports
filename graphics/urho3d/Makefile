@@ -10,7 +10,7 @@ COMMENT=	Cross-platform 2D and 3D game engine
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:noninja,insource dos2unix gl
+USES=		cmake:noninja,insource dos2unix gl xorg
 USE_GITHUB=	yes
 USE_XORG=	x11 xext
 USE_GL=		gl
