@@ -13,7 +13,7 @@ COMMENT=	Simple CDCL satisfiability solver
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake tar:xz
+USES=		compiler:c++0x gmake tar:xz
 GNU_CONFIGURE=	yes
 
 CXXFLAGS+=	-fPIC
