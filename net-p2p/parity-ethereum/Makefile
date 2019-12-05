@@ -11,6 +11,9 @@ COMMENT=	Fast and advanced Ethereum client
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=		fails to build
+BROKEN_FreeBSD_11=	fails to build
+
 USES=		cargo
 
 USE_GITHUB=	yes
