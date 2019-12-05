@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wdns
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.0
 CATEGORIES=	dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -11,9 +11,9 @@ COMMENT=	Low-level DNS library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+USES=		gmake libtool pathfix pkgconfig python:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
