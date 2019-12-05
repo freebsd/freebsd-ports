@@ -18,14 +18,11 @@ BUILD_DEPENDS=	ocamlopt:lang/ocaml \
 
 USES=		dos2unix shebangfix
 DOS2UNIX_FILES=	source/OMakefile
-SHBANG_GLOB=	run_test
+SHEBANG_GLOB=	run_test
 USE_GITHUB=	yes
 
 EXES=		tjcc tjdepend tjdis tjlink tjsim
 PLIST_FILES=	${EXES:S/^/bin\//}
-
-post-patch:
-	@${FIND} ${WRKSRC} -name run_test | ${XARGS} ${REINPLACE_CMD} 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|'
 
 do-build:
 	@cd ${WRKSRC} && omake
