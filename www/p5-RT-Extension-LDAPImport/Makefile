@@ -37,7 +37,6 @@ USE_PERL5=	configure
 NO_ARCH=	yes
 
 MAN3PREFIX=	${PREFIX}
-MAN3PREFIX=	${PREFIX}
 
 PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 
