@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	idea4bsd
+GH_ACCOUNT=	t6
 GH_PROJECT=	fsnotifier
 GH_TAGNAME=	a04fbff6e21d58fea7a3ed2a6a21e53cbef4b7af
 
