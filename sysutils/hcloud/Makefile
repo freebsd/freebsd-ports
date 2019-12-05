@@ -3,7 +3,7 @@
 PORTNAME=	hcloud
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	uzsolt@uzsolt.hu
@@ -20,7 +20,7 @@ GH_TUPLE=	\
 		dustin:go-humanize:bb3d318650d4:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		fatih:structs:ebf56d35bba7:fatih_structs/vendor/github.com/fatih/structs \
 		golang:crypto:d6449816ce06:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:3b87a42e500a:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
 		gosuri:uilive:ac356e6e42cd:gosuri_uilive/vendor/github.com/gosuri/uilive \
 		gosuri:uiprogress:d0567a9d84a1:gosuri_uiprogress/vendor/github.com/gosuri/uiprogress \
 		hetznercloud:hcloud-go:v1.14.0:hetznercloud_hcloud_go/vendor/github.com/hetznercloud/hcloud-go \
