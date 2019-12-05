@@ -1,0 +1,5 @@
+--- source/compiler/OMakefile.orig	2019-12-03 04:31:49 UTC
++++ source/compiler/OMakefile
+@@ -1 +1,2 @@
++NATIVE_ENABLED = true
+ OCamlGeneratedFiles(lplex.ml lpyacc.ml)
