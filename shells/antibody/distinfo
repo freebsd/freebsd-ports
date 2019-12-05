@@ -1,4 +1,4 @@
-TIMESTAMP = 1570896837
+TIMESTAMP = 1575295716
 SHA256 (getantibody-antibody-v4.2.0_GH0.tar.gz) = 552d94e2a0e5b3b93f8659f0a9ed5bdae4622c46a2418ca2a40573862fc991dc
 SIZE (getantibody-antibody-v4.2.0_GH0.tar.gz) = 52999
 SHA256 (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 4624eae43489de8a71ea60efaf6744c581b6bd62909f7514c484c1ea0efaba5a
@@ -17,5 +17,5 @@ SHA256 (golang-net-d98b1b4_GH0.tar.gz) = d89bfcf4081020eb59d98ce970800317e1c26bf
 SIZE (golang-net-d98b1b4_GH0.tar.gz) = 1100804
 SHA256 (golang-sync-1d60e4_GH0.tar.gz) = 458e700b8639a88d5b113d82a0801dbfdd4f6e731d34aa0c5037359c15fa2118
 SIZE (golang-sync-1d60e4_GH0.tar.gz) = 16329
-SHA256 (golang-sys-7c87d1_GH0.tar.gz) = d91f8d62f478a084dc98166053d651060d07a76f042845ac55b658175a6eb8a7
-SIZE (golang-sys-7c87d1_GH0.tar.gz) = 855188
+SHA256 (golang-sys-33540a1f6037_GH0.tar.gz) = 09ebdf007413c2eaddce123137443d08d1848be410c58896e772f0481ec385d5
+SIZE (golang-sys-33540a1f6037_GH0.tar.gz) = 1497659
