@@ -1,4 +1,4 @@
-TIMESTAMP = 1560481185
+TIMESTAMP = 1575291604
 SHA256 (zaquestion-lab-v0.16.0_GH0.tar.gz) = 7752544cf6222c76d521ea05a17e1131fa59f59165e9e1211cf84ba6f102d161
 SIZE (zaquestion-lab-v0.16.0_GH0.tar.gz) = 90946
 SHA256 (avast-retry-go-5469272a8171_GH0.tar.gz) = 60814cd28ef3facf5afcdb47aeb49deec14d8e8ef09fe9d12fd210903793b9e6
@@ -25,8 +25,8 @@ SHA256 (golang-oauth2-f42d05182288_GH0.tar.gz) = 43de8198f861949f925c870c68c26b6
 SIZE (golang-oauth2-f42d05182288_GH0.tar.gz) = 43233
 SHA256 (golang-protobuf-v1.2.0_GH0.tar.gz) = 157a148ae4e132eb169ec794b6cb43f1002780eeacaea8b0694811d1948fb1ec
 SIZE (golang-protobuf-v1.2.0_GH0.tar.gz) = 332565
-SHA256 (golang-sys-d0be0721c37e_GH0.tar.gz) = 6ad6f9744c7caf5275d91731edec215bc816ce0496243b92ce539954ddf1a29e
-SIZE (golang-sys-d0be0721c37e_GH0.tar.gz) = 1075800
+SHA256 (golang-sys-33540a1f6037_GH0.tar.gz) = 09ebdf007413c2eaddce123137443d08d1848be410c58896e772f0481ec385d5
+SIZE (golang-sys-33540a1f6037_GH0.tar.gz) = 1497659
 SHA256 (golang-text-v0.3.0_GH0.tar.gz) = 8f4c9a048345befc7beccd09267737ee1f55c7b35e5ff80f344ec9e0aa90febb
 SIZE (golang-text-v0.3.0_GH0.tar.gz) = 6102619
 SHA256 (google-go-querystring-v1.0.0_GH0.tar.gz) = 59fdfd4d740c85c60c35d3e09b587cfa2b435e78178ac4a23950afbece7118ed
