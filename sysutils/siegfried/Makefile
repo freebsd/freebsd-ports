@@ -17,8 +17,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	richardlehane
 
 GO_TARGET=	./cmd/sf
-GO_TEST_TARGET=	./cmd/sf
 
 PLIST_FILES=	bin/sf
+
+do-test:
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} test ${GO_BUILDFLAGS} \
+		./cmd/sf
 
 .include <bsd.port.mk>
