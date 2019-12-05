@@ -6,7 +6,7 @@ DISTVERSION=	0.14.0
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
-COMMENT=	Remote repository management made easy
+COMMENT=	Repository management tool (Git, Hg, SVN, Fossil, Bazaar, Darcs)
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
