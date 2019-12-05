@@ -6,4 +6,7 @@ repository URL's host and path.
 You can also list local repositories, jump into local repositories,
 and bulk get repositories by list of URLs.
 
+It supports many contemporary VCS like Git, Mercurial, Fossil, SVN,
+Bazaar, Darcs.
+
 WWW: https://github.com/motemen/ghq
