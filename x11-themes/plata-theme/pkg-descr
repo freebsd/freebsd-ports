@@ -6,6 +6,7 @@ Supported Desktop Environments:
 * Budgie-Desktop  >= 10.4
 * Cinnamon        >= 3.2.0
 * XFce4           >= 4.12.2
+* Mate            >= 1.22 (Marco >= 1.22.2)
 * LXDE            >= 0.99.1 (Gtk 2.x only)
 
 WWW: https://gitlab.com/tista500/plata-theme
