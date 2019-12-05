@@ -118,7 +118,6 @@ SSL_CRTD_IMPLIES=		SSL
 STACKTRACES_CONFIGURE_ENABLE=	stacktraces
 STACKTRACES_EXTRA_PATCHES=	${FILESDIR}/extra-patch-gen-stacktrace
 STACKTRACES_LIB_DEPENDS=	libunwind.so:devel/libunwind
-STACKTRACES_CONFIGURE_ON=	--disable-strict-error-checking
 STACKTRACES_CFLAGS=		-g
 STACKTRACES_LDFLAGS=		-lunwind -L${LOCALBASE}/lib
 STACKTRACES_VARS=		STRIP=""
@@ -188,10 +187,6 @@ VIA_DB_DESC=		Forward/Via database
 WCCPV2_DESC=		Web Cache Coordination Protocol v2
 WCCP_DESC=		Web Cache Coordination Protocol
 
-CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
-CFLAGS+=	-Wno-error=deprecated-declarations
-CFLAGS_gcc=	-Wno-error=stringop-truncation
-
 change_files=	ChangeLog \
 		contrib/nextstep/makepkg \
 		contrib/nextstep/post_install \
@@ -234,7 +229,8 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 		--disable-linux-netfilter \
 		--disable-linux-tproxy \
 		--disable-translation \
-		--disable-arch-native
+		--disable-arch-native \
+		--disable-strict-error-checking
 
 .include <bsd.port.options.mk>
 
