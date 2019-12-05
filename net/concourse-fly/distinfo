@@ -1,3 +1,3 @@
-TIMESTAMP = 1559739976
-SHA256 (concourse-5.2.0.tar.xz) = a602e2ed70175d9e7b77f31b02b77e4dcc516381161896b37e187a11f3fc620a
-SIZE (concourse-5.2.0.tar.xz) = 6762024
+TIMESTAMP = 1575563043
+SHA256 (concourse-5.7.2.tar.xz) = 631bce5871a1656fad79d33c7f876265de2ced0a78b487f07d8b0039978bd7ab
+SIZE (concourse-5.7.2.tar.xz) = 7296208
