@@ -86,12 +86,6 @@ BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>=3.9.0_4:devel/llvm${LLVM_DEFAULT}
 .if ${COMPONENT} != libs
 RUN_DEPENDS+=	llvm${LLVM_DEFAULT}>=3.9.0_4:devel/llvm${LLVM_DEFAULT}
 .endif
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
-CFLAGS+=	-mabi=elfv2
-CXXFLAGS+=	-mabi=elfv2
-CONFIGURE_ENV+=	CC=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
-		CXX=${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
-.endif
 CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib
 CONFIGURE_ARGS+=	--enable-llvm
