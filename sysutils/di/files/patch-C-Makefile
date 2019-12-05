@@ -1,15 +1,6 @@
---- C/Makefile.orig	2019-06-26 16:49:05 UTC
+--- C/Makefile.orig	2019-10-30 18:14:13 UTC
 +++ C/Makefile
-@@ -4,7 +4,7 @@
- #  Copyright 2001-2018 Brad Lanam Walnut Creek CA, USA
- #
- 
--CC = cc
-+CC ?= cc
- # for tests.done
- DC = gdc
- 
-@@ -31,7 +31,7 @@ TEST = test
+@@ -29,7 +29,7 @@ TEST = test
  ###
  # installation options
  #
@@ -18,7 +9,7 @@
  LOCALEDIR = $(prefix)/share/locale
  
  ###
-@@ -180,7 +180,7 @@ bsd43-cc:
+@@ -178,7 +178,7 @@ bsd43-cc:
  	$(MAKE) _MKCONFIG_SHELL=$(MKCONFIG_SHELL) \
  		CC=cc LD=cc EXE_EXT="" OBJ_EXT=".o" \
  		DI_CFLAGS="$(DI_CFLAGS) -O" \
@@ -27,7 +18,7 @@
  
  .PHONY: bsd43-gcc
  bsd43-gcc:
-@@ -194,7 +194,7 @@ bsd43-gcc:
+@@ -192,7 +192,7 @@ bsd43-gcc:
  	$(MAKE) _MKCONFIG_SHELL=$(MKCONFIG_SHELL) \
  		CC=gcc LD=gcc EXE_EXT="" OBJ_EXT=".o" \
  		DI_CFLAGS="$(DI_CFLAGS) -O2" \
