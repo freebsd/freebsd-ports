@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+To play this game, copy Another World game files to %%DATADIR%%.
+
+Supported versions:
+* Amiga and PC DOS releases (Bank*)
+* 15th anniversary edition (Pak01.pak)
+* 20th anniversary edition (game/*)
+* Windows 3.1 release (Bank)
+* 3DO release (GameData/*)
+EOM
+}
+]
