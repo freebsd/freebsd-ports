@@ -2,7 +2,7 @@
 
 PORTNAME=		scarab
 DISTVERSIONPREFIX=      v
-DISTVERSION=            0.1.2
+DISTVERSION=            0.1.3
 CATEGORIES=		sysutils python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
