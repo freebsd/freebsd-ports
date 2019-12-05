@@ -9,4 +9,4 @@ Features
 	- ScanCache speeds up file access
 	- Sends mail to administrator when detect virus
 
-WWW: http://clamfs.sourceforge.net/
+WWW: https://github.com/burghardt/clamfs

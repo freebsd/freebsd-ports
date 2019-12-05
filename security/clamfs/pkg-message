@@ -1,11 +1,16 @@
 [
 { type: install
   message: <<EOM
-In order to use clamfs, you should load fuse.ko module.
+In order to use clamfs, you should load fuse.ko module and start clamd.
 
-Type "sudo kldload fuse.ko"
+Type:
 
-For more info please visit http://clamfs.sourceforge.net
+ sudo kldload fuse.ko
+ sudo service clamav-freshclam onestart
+ sudo service clamav-daemon onestart
+
+For more info please visit:
+ https://github.com/burghardt/clamfs#additional-configuration-steps-for-freebsd
 EOM
 }
 ]

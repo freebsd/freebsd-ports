@@ -2,41 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	clamfs
-PORTVERSION=	1.0.1
-PORTREVISION=	15
+PORTVERSION=	1.1.0
 CATEGORIES=	security
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/burghardt/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	anastasios@mageirias.com
 COMMENT=	User-space fs with on-access antivirus scanning
 
 LICENSE=	GPLv2
 
-BROKEN_armv6=		fails to compile: ./config.hxx:52:17: expected namespace name
-BROKEN_armv7=		fails to compile: ./config.hxx:52:17: expected namespace name
-
-LIB_DEPENDS=	libccgnu2.so:devel/commoncpp \
+LIB_DEPENDS=	libPocoFoundation.so:devel/poco \
 		libPocoNet.so:devel/poco \
+		libPocoXML.so:devel/poco \
 		librlog.so:devel/rlog
 BUILD_DEPENDS=	boost-libs>=1.33:devel/boost-libs
 RUN_DEPENDS=	clamd:security/clamav
 
-GNU_CONFIGURE=	yes
+USES=		compiler:c++11-lib autoreconf fuse
 
-USES=		compiler:c++11-lib fuse
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/clamfs \
 		man/man1/clamfs.1.gz
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-DOCS_PORTDOCS=	*
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror ||g' ${WRKSRC}/configure.ac
 
 post-patch-DOCS-on:
 	@${REINPLACE_CMD} -e '/socket=/s/ctl/sock/' \
-		${WRKSRC}/doc/clamfs.xml
+		${WRKSRC}/doc/clamfs.xml ${WRKSRC}/doc/debug.xml
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/clamfs.xml ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/debug.xml ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
