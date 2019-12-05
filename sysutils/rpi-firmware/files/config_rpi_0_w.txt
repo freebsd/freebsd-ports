@@ -3,4 +3,4 @@ enable_uart=1
 kernel=u-boot.bin
 kernel7=u-boot.bin
 dtoverlay=mmc
-dtoverlay=pi3-disable-bt
+dtoverlay=disable-bt
