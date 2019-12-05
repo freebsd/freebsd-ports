@@ -22,6 +22,7 @@
     SUBDIR += bdftopcf
     SUBDIR += bitstream-vera
     SUBDIR += bitter
+    SUBDIR += blackout
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
     SUBDIR += cascadia-code
