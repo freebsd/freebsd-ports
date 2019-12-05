@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plata-theme
-PORTVERSION=	0.8.8
+PORTVERSION=	0.9.1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@yandex.com
@@ -24,27 +24,23 @@ USE_GNOME=	gdkpixbuf2 gtk30 libxml2
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com
 GL_ACCOUNT=	tista500
-GL_COMMIT=	a23ebd7c53f23db408ac545be9b7e0a9ddf1756e
+GL_COMMIT=	71dbbc322e278b6a0f837733f76a089b7773d34a
 
 NO_ARCH=	yes
 
 SHEBANG_REGEX=	./src/.*\.sh$$
 
 GNU_CONFIGURE=	yes
-# FIXME: Mate support has been re-added in 0.8.6 but it requires marco 1.22.2,
-# which is not yet supported in Ports. So disabling Mate support for now.
-# Will revisit when marco is updated.
 CONFIGURE_ARGS=	--disable-gtk_next \
 		--disable-flashback \
 		--disable-telegram \
 		--disable-tweetdeck \
-		--disable-airforsteam \
-		--disable-mate
+		--disable-airforsteam
 
 PORTDOCS=	README.md README.window-list
 
-OPTIONS_DEFINE=	CINNAMON DOCS GNOME METACITY OPENBOX PARALLEL PLANK XFCE
-OPTIONS_DEFAULT=	CINNAMON GNOME METACITY OPENBOX PARALLEL PLANK XFCE
+OPTIONS_DEFINE=	CINNAMON DOCS GNOME MATE METACITY OPENBOX PARALLEL PLANK XFCE
+OPTIONS_DEFAULT=	CINNAMON GNOME MATE METACITY OPENBOX PARALLEL PLANK XFCE
 OPTIONS_SUB=	yes
 
 CINNAMON_DESC=	Enable Cinnamon support
@@ -52,13 +48,17 @@ CINNAMON_CONFIGURE_ENABLE=	cinnamon
 CINNAMON_IMPLIES=	METACITY
 GNOME_DESC=	Enable Gnome support
 GNOME_CONFIGURE_ENABLE=	gnome
+MATE_DESC=	Enable Mate support
+MATE_CONFIGURE_ENABLE=	mate
+MATE_IMPLIES=	METACITY
+MATE_BUILD_DEPENDS=	${LOCALBASE}/lib/libmarco-private.so:x11-wm/marco
 METACITY_DESC=	Enable Metacity support
 OPENBOX_DESC=	Enable Openbox support
 OPENBOX_CONFIGURE_ENABLE=	openbox
 PARALLEL_DESC=	Enable parallel build
 PARALLEL_BUILD_DEPENDS=	parallel:sysutils/parallel
 PARALLEL_CONFIGURE_ENABLE=	parallel
-PLANK_DESC=	Enale Plank support
+PLANK_DESC=	Enable Plank support
 PLANK_CONFIGURE_ENABLE=	plank
 XFCE_DESC=	Enable Xfce support
 XFCE_CONFIGURE_ENABLE=	xfce
