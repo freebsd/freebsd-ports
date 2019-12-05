@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dav1d
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,7 +19,7 @@ USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
-GL_COMMIT=	bb160f09fa7ad132f4b6a014ac8e168b913ee3ab
+GL_COMMIT=	39667c751d427e447cbe8be783cfecd296659e24
 
 OPTIONS_DEFINE=	SDL TEST
 OPTIONS_SUB=	yes
@@ -31,7 +31,7 @@ SDL_LIB_DEPENDS=	libplacebo.so:graphics/libplacebo \
 			libvulkan.so:graphics/vulkan-loader
 SDL_MESON_TRUE=	enable_examples
 
-TEST_GL_TUPLE=	videolan:dav1d-test-data:738ce981eb579c72eeaa9a4b81c87af98356dde6:testdata/tests/dav1d-test-data
+TEST_GL_TUPLE=	videolan:dav1d-test-data:2475f074090c74ce1862286b2db9c0c5972ecf02:testdata/tests/dav1d-test-data
 TEST_MESON_TRUE=enable_tests testdata_tests
 
 .if make(makesum) # for optional distfiles
