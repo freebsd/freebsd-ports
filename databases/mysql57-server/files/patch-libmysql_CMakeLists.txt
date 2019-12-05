@@ -1,25 +1,26 @@
---- libmysql/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
-+++ libmysql/CMakeLists.txt
-@@ -235,7 +235,7 @@ MESSAGE(STATUS
+--- libmysql/CMakeLists.txt.orig	2019-09-27 09:00:15.000000000 +0200
++++ libmysql/CMakeLists.txt	2019-11-24 17:45:54.008082000 +0100
+@@ -266,7 +266,7 @@
  ADD_SUBDIRECTORY(authentication_ldap)
- 
+   
  # Merge several convenience libraries into one big mysqlclient
--MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS} COMPONENT Development)
-+MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS} COMPONENT Development SKIP_INSTALL)
+-MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development)
++MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development SKIP_INSTALL)
+ TARGET_LINK_LIBRARIES(mysqlclient ${LIBS_TO_LINK})
  
  # Visual Studio users need debug  static library for debug projects
- IF(MSVC)
-@@ -257,7 +257,8 @@ IF(NOT DISABLE_SHARED)
+@@ -312,8 +312,9 @@
    # and link them together into shared library.
-   MERGE_LIBRARIES(libmysql SHARED ${LIBS}
+   MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
      EXPORTS ${CLIENT_API_FUNCTIONS} ${CLIENT_API_FUNCTIONS_UNDOCUMENTED}
 -    COMPONENT SharedLibraries)
 +    COMPONENT SharedLibraries SKIP_INSTALL)
+   TARGET_LINK_LIBRARIES(libmysql ${LIBS_TO_LINK})
 +IF(FALSE)
    IF(UNIX)
      # libtool compatability
      IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
-@@ -313,6 +314,7 @@ ENDIF()
+@@ -369,6 +370,7 @@
  # to initialize api_calls[] array in api_test.c
  #
  SET(CLIENT_API_FUNCTION_LIST "")
