@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	automount
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.7.1
 CATEGORIES=	sysutils
-MASTER_SITES=	https://raw.github.com/vermaden/automount/master/ \
-		LOCAL/madpilot/${PORTNAME}/
+MASTER_SITES=	https://raw.github.com/vermaden/automount/master/
 
 MAINTAINER=	vermaden@interia.pl
 COMMENT=	FreeBSD's devd(8) based automount solution
