@@ -1,0 +1,4 @@
+Kpmenu is a tool written in go used to view a KeePass database via a dmenu, or
+rofi, interface
+
+WWW: https://www.alessiodp.com/kpmenu
