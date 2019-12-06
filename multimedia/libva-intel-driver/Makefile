@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva-intel-driver
-DISTVERSION=	2.4.0.pre1
+DISTVERSION=	2.4.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
