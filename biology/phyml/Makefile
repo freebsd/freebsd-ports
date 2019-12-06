@@ -4,6 +4,7 @@
 PORTNAME=	phyml
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.20190909
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	biology
 
@@ -19,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	stephaneguindon
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-beagle
+CONFIGURE_ARGS=	--disable-beagle --disable-native
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
