@@ -2,7 +2,7 @@
 
 PORTNAME=	paperless
 PORTVERSION=	2.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,12 +13,12 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateparser>=0.7.1:devel/py-dateparser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj21-django-cors-headers>=2.4.0:www/py-dj21-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj21-django-crispy-forms>=1.7.2:www/py-dj21-django-crispy-forms@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj21-django-extensions>=2.1.6:www/py-dj21-django-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj21-django-filter>=2.0.0:www/py-dj21-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj21-djangoql>=0.12.4:www/py-dj21-djangoql@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj21-djangorestframework>=3.9.0:www/py-dj21-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj22-django-cors-headers>=2.4.0:www/py-dj22-django-cors-headers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj22-django-crispy-forms>=1.7.2:www/py-dj22-django-crispy-forms@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj22-django-extensions>=2.1.6:www/py-dj22-django-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj22-django-filter>=2.0.0:www/py-dj22-django-filter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj22-djangoql>=0.12.4:www/py-dj22-djangoql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj22-djangorestframework>=3.9.0:www/py-dj22-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fuzzywuzzy>=0.15.1:devel/py-fuzzywuzzy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langdetect>=1.0.7:textproc/py-langdetect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdftotext>=2.1.1:textproc/py-pdftotext@${PY_FLAVOR} \

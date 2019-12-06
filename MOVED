@@ -13514,3 +13514,5 @@ net-mgmt/zabbix22-server|net-mgmt/zabbix3-server|2019-12-01|Has expired: End of 
 sysutils/fusefs-ext4fuse|sysutils/fusefs-ext2|2019-12-01|Has expired: Please consider using sysutils/fusefs-ext2 as upstream development is stalled.  Contrary to what its name suggests it supports ext2, ext3, ext4 in read/write  mode.
 www/grafana3|www/grafana4|2019-12-01|Has expired: Depends on expired lang/phantomjs
 www/miniminiweb||2019-12-01|Has expired: Upstream no longer available
+www/py-dj21-django-extensions|www/py-dj22-django-extensions|2019-12-06|Renamed to py-dj22-django-extensions because Django 2.1 has reached its End-of-Life
+www/py-dj21-djangoql|www/py-dj22-djangoql|2019-12-06|Renamed to py-dj22-djangoql because Django 2.1 has reached its End-of-Life

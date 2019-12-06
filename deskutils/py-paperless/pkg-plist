@@ -731,7 +731,7 @@ man/man7/paperless.7.gz
 %%WWWDIR%%/static/rest_framework/js/coreapi-0.1.1.js
 %%WWWDIR%%/static/rest_framework/js/csrf.js
 %%WWWDIR%%/static/rest_framework/js/default.js
-%%WWWDIR%%/static/rest_framework/js/jquery-3.3.1.min.js
+%%WWWDIR%%/static/rest_framework/js/jquery-3.4.1.min.js
 %%WWWDIR%%/static/rest_framework/js/prettify-min.js
 @dir(paperless,paperless) %%WWWDIR%%/static
 @dir(paperless,paperless,0700) /var/db/paperless/consume/input

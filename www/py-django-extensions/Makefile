@@ -22,6 +22,6 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj21-django-extensions
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj22-django-extensions
 
 .include <bsd.port.mk>
