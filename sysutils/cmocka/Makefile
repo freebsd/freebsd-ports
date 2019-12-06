@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	cmocka
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.5
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cmocka.org/files/1.1/ \
 		LOCAL/dteske
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	Unit testing framework for C with support for mock objects
 
 LICENSE=	APACHE20
@@ -20,7 +20,7 @@ PLIST_FILES=	include/cmocka.h \
 		lib/cmake/cmocka/cmocka-config.cmake \
 		lib/libcmocka.so \
 		lib/libcmocka.so.0 \
-		lib/libcmocka.so.0.5.1 \
+		lib/libcmocka.so.0.7.0 \
 		libdata/pkgconfig/cmocka.pc
 
 OPTIONS_DEFINE=	STATIC
