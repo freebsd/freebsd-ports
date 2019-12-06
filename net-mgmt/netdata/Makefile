@@ -72,6 +72,7 @@ JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 LTO_DESC=		Use Link-Time Optimization
 LTO_CONFIGURE_ENABLE=	lto
+LTO_USES=		compiler:c11
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MLTO} && ${OPSYS}_${OSREL:R} == FreeBSD_11
