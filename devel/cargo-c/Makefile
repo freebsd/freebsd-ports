@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cargo-c
-DISTVERSION=	0.3.1
+DISTVERSION=	0.4.0
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -23,10 +23,10 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		autocfg-0.1.7 \
 		bitflags-1.2.1 \
 		c2-chacha-0.2.3 \
-		cargo_metadata-0.9.0 \
-		cbindgen-0.9.1 \
+		cargo_metadata-0.9.1 \
+		cbindgen-0.11.0 \
 		cfg-if-0.1.10 \
-		chrono-0.4.9 \
+		chrono-0.4.10 \
 		clap-2.33.0 \
 		env_logger-0.6.2 \
 		getrandom-0.1.13 \
@@ -34,11 +34,11 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		humantime-1.3.0 \
 		itoa-0.4.4 \
 		lazy_static-1.4.0 \
-		libc-0.2.65 \
+		libc-0.2.66 \
 		log-0.4.8 \
 		memchr-2.2.1 \
 		num-integer-0.1.41 \
-		num-traits-0.2.8 \
+		num-traits-0.2.10 \
 		ppv-lite86-0.2.6 \
 		pretty_env_logger-0.3.1 \
 		proc-macro-error-0.2.6 \
@@ -56,21 +56,21 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		ryu-1.0.2 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.102 \
-		serde_derive-1.0.102 \
-		serde_json-1.0.41 \
+		serde-1.0.103 \
+		serde_derive-1.0.103 \
+		serde_json-1.0.44 \
 		strsim-0.8.0 \
-		structopt-0.3.4 \
-		structopt-derive-0.3.4 \
-		syn-1.0.8 \
+		structopt-0.3.5 \
+		structopt-derive-0.3.5 \
+		syn-1.0.11 \
 		tempfile-3.1.0 \
 		termcolor-1.0.5 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
 		time-0.1.42 \
 		toml-0.5.5 \
-		unicode-segmentation-1.5.0 \
-		unicode-width-0.1.6 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.7 \
 		unicode-xid-0.2.0 \
 		vec_map-0.8.1 \
 		wasi-0.7.0 \
