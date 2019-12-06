@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libGLC.so:graphics/quesoglc
 
 GNU_CONFIGURE=	yes
-USES=		gettext-tools gl gmake gnome localbase pkgconfig sdl
+USES=		compiler:c++11-lang gettext-tools gl gmake gnome localbase \
+		pkgconfig sdl
 USE_SDL=	sdl2 image2
 USE_GL=		gl glu
 CONFIGURE_ARGS=	--disable-sdl \
