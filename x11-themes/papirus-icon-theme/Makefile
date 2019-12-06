@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	papirus-icon-theme
-PORTVERSION=	20190720
+PORTVERSION=	20191201
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@yandex.com
@@ -22,6 +22,10 @@ INSTALLS_ICONS=	yes
 PORTDOCS=	AUTHORS README.md
 
 OPTIONS_DEFINE=	DOCS
+
+post-install:
+	cd ${STAGEDIR}${PREFIX} && \
+		${FIND} share/icons -type f -o -type l >> ${TMPPLIST}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
