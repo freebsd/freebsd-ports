@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	ssd_report
-DISTVERSION=	0.2
+DISTVERSION=	0.4
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	SSD health report
 
 LICENSE=	BSD2CLAUSE
