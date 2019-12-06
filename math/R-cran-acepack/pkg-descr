@@ -1,0 +1,5 @@
+acepack provides Alternative Conditional Expectations (ACE) and
+Additivity Variance Stabilization (AVAS) nonparametric methods for
+multiple regression transformations in R.
+
+WWW: https://cran.r-project.org/web/packages/acepack/
