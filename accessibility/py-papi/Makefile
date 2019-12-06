@@ -24,7 +24,7 @@ EXAMPLES=	atkaction.py atkapplication.py atkcapi.c atktext.py atkvalue.py \
 OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -i "" -e 's|: docfiles|: []|g' ${WRKSRC}/setup.py
+	@${RM} ${WRKSRC}/setup.py.orig
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
