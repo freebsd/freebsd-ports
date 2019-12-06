@@ -22,7 +22,7 @@ IGNORE=	USES=kmod takes either no arguments or 'debug'
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=	requires kernel source files in ${SRC_BASE}
+IGNORE=	requires kernel source files in SRC_BASE=${SRC_BASE}
 .endif
 
 CATEGORIES+=	kld
