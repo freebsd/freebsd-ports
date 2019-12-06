@@ -2,7 +2,7 @@
 
 PORTNAME=	Kvantum
 DISTVERSIONPREFIX=	V
-DISTVERSION=	0.12.1
+DISTVERSION=	0.13.0
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	-qt5
 
@@ -20,8 +20,8 @@ GH_ACCOUNT=	tsujan
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_KDE=	windowsystem
-USE_QT=		core gui svg widgets x11extras buildtools_build \
-		linguisttools_build
+USE_QT=		core gui svg widgets x11extras \
+		buildtools_build linguisttools_build
 USE_XORG=	x11 xext
 
 WRKSRC_SUBDIR=	${PORTNAME}
