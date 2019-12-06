@@ -49,5 +49,6 @@ post-install:
 	${LN} -s libperconaserverclient.a ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.a
 	${LN} -s libperconaserverclient.so ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so
 	${LN} -s libperconaserverclient.so.20 ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so.20
+	${LN} -s perconaserverclient.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/mysqlclient.pc
 
 .include "${MASTERDIR}/Makefile"

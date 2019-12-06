@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	percona
-DISTVERSION=	5.7.26-29
-PORTREVISION?=	2
+DISTVERSION=	5.7.27-30
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.7/Percona-Server-${DISTVERSION}/source/tarball/:percona \
 		SF/boost/boost/1.59.0:boost
@@ -18,7 +18,8 @@ COMMENT?=	Multithreaded SQL database (server)
 LICENSE?=	GPLv2+
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
-		liblz4.so:archivers/liblz4
+		liblz4.so:archivers/liblz4 \
+		libzstd.so:archivers/zstd
 
 SLAVEDIRS=	databases/percona57-client \
 		databases/percona57-pam-for-mysql
@@ -44,7 +45,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_MYSQLDATADIR="/var/db/mysql" \
 		-DINSTALL_SECURE_FILE_PRIVDIR="${MY_SECDIR}" \
 		-DINSTALL_MYSQLSHAREDIR="share/mysql" \
-		-DINSTALL_MYSQLTESTDIR="share/mysql/tests" \
+		-DINSTALL_MYSQLTESTDIR="${MY_TESTDIR}" \
 		-DINSTALL_PLUGINDIR="lib/mysql/plugin" \
 		-DINSTALL_SBINDIR="libexec" \
 		-DINSTALL_SCRIPTDIR="bin" \
@@ -53,10 +54,12 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
 		-DWITH_UNIT_TESTS=0 \
 		-DWITH_EDITLINE=system \
+		-DWITH_LIBEVENT=system \
 		-DWITH_LIBWRAP=0 \
 		-DWITH_LZ4=system \
 		-DWITH_ZLIB=system \
-		-DINSTALL_MYSQLTESTDIR=0 \
+		-DWITH_ZSTD=system \
+		-DWITH_ROCKSDB=0 \
 		-DWITH_BOOST="${WRKDIR}/boost_1_59_0"
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
@@ -92,7 +95,7 @@ FASTMTX_DESC=	Replace mutexes with spinlocks
 FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
 INNODBMEMCACHED_DESC=	InnoDB Memcached plugin
 INNODBMEMCACHED_CMAKE_ON=	-DWITH_INNODB_MEMCACHED=1
-OPENSSL_CMAKE_ON=	-DWITH_SSL=system
+OPENSSL_CMAKE_ON=	-DWITH_SSL="${MY_SSL}"
 OPENSSL_USES=	ssl
 TOKUDB_DESC=	TokuDB Engine (experimental)
 TOKUDB_CMAKE_ON=	-DUSE_CTAGS=0
@@ -128,6 +131,12 @@ CMAKE_ARGS+=	-DWITH_AUTHENTICATION_LDAP=0
 
 .include <bsd.port.options.mk>
 
+.if !${SSL_DEFAULT:Mlibressl*}
+MY_TESTSIR=	"share/mysql/tests"
+.else
+MY_TESTDIR=	""
+.endif
+
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
 SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
 .else
@@ -156,6 +165,13 @@ CXXFLAGS+=	-fpermissive
 .if ${ARCH} == "arm"
 BROKEN=		Does not compile on arm
 .endif
+
+.if ${SSL_DEFAULT} == base
+MY_SSL=		system
+.else
+MY_SSL=		${OPENSSLBASE}
+.endif
+
 
 .if ${PORT_OPTIONS:MTOKUDB}
 NOT_FOR_ARCHS=	i386
