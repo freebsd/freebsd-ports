@@ -14,7 +14,8 @@ COMMENT=	Lightweight LLVM python binding for writing JIT compilers
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to compile: clang++: not found
+BROKEN_FreeBSD_11_powerpc64=	fails to compile: clang++: not found
+BROKEN_FreeBSD_12_powerpc64=	fails to compile: clang++: not found
 
 BUILD_DEPENDS=	${PY_ENUM34}
 RUN_DEPENDS=	${PY_ENUM34}
