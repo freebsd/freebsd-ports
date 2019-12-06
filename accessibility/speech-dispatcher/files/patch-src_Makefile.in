@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2019-12-06 16:28:36 UTC
++++ src/Makefile.in
+@@ -382,7 +382,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = common server audio modules api clients tests
++SUBDIRS = common server audio modules api clients
+ all: all-recursive
+ 
+ .SUFFIXES:
