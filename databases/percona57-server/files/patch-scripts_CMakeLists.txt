@@ -3,11 +3,11 @@
 @@ -332,6 +332,8 @@
            GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
            STRING(REGEX REPLACE "^lib" "" lib "${lib}")
-           SET(${var} "${${var}}-l${lib} " ) 
+           SET(${var} "${${var}}-l${lib} " )
 +        ELSEIF(lib STREQUAL "-pthread")
 +          SET(${var} "${${var}}-pthread " )
          ELSE()
-           SET(${var} "${${var}}-l${lib} " ) 
+           SET(${var} "${${var}}-l${lib} " )
          ENDIF()
 @@ -419,7 +421,6 @@
  
@@ -25,6 +25,15 @@
        mysqldumpslow
        mysqld_multi
        mysqld_safe
+@@ -443,7 +443,7 @@
+     ${CMAKE_CURRENT_BINARY_DIR}/${PKGCONFIG_FILE}
+     ESCAPE_QUOTES @ONLY)
+ 
+-  IF(INSTALL_PKGCONFIGDIR)
++  IF(FALSE)
+     MESSAGE(STATUS "INSTALL ${PKGCONFIG_FILE} ${INSTALL_PKGCONFIGDIR}")
+     INSTALL(FILES
+       ${CMAKE_CURRENT_BINARY_DIR}/${PKGCONFIG_FILE}
 @@ -464,7 +464,7 @@
    FOREACH(file ${BIN_SCRIPTS})
      IF(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${file}.sh)

@@ -37,11 +37,11 @@
 @@ -332,6 +337,8 @@
            GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
            STRING(REGEX REPLACE "^lib" "" lib "${lib}")
-           SET(${var} "${${var}}-l${lib} " ) 
+           SET(${var} "${${var}}-l${lib} " )
 +        ELSEIF(lib STREQUAL "-pthread")
 +          SET(${var} "${${var}}-pthread " )
          ELSE()
-           SET(${var} "${${var}}-l${lib} " ) 
+           SET(${var} "${${var}}-l${lib} " )
          ENDIF()
 @@ -417,25 +424,7 @@
    # On Unix, most of the files end up in the bin directory

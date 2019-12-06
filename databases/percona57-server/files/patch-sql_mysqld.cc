@@ -1,6 +1,6 @@
 --- sql/mysqld.cc.orig	2016-11-27 19:44:54 UTC
 +++ sql/mysqld.cc
-@@ -1480,6 +1480,16 @@ static void clean_up_mutexes()
+@@ -1517,6 +1517,16 @@ static void clean_up_mutexes()
  ****************************************************************************/
  
  /* Initialise proxy protocol. */
@@ -17,3 +17,22 @@
  static void set_proxy()
  {
    const char *p;
+@@ -3678,6 +3688,7 @@ static int init_ssl()
+ {
+ #ifdef HAVE_OPENSSL
+ #ifndef HAVE_YASSL
++#ifndef LIBRESSL_VERSION_NUMBER
+   int fips_mode= FIPS_mode();
+   if (fips_mode != 0)
+   {
+@@ -3687,7 +3698,9 @@ static int init_ssl()
+         " Disabling FIPS.");
+     FIPS_mode_set(0);
+   }
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#endif
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || \
++    defined(LIBRESSL_VERSION_NUMBER)
+   CRYPTO_malloc_init();
+ #else /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+   OPENSSL_malloc_init();

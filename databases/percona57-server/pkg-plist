@@ -149,7 +149,6 @@ lib/mysql/plugin/test_udf_services.so
 lib/mysql/plugin/udf_example.so
 lib/mysql/plugin/validate_password.so
 lib/mysql/plugin/version_token.so
-libdata/pkgconfig/LIBMYSQL_OS_OUTPUT_NAME-NOTFOUND.pc
 man/man1/myisamchk.1.gz
 man/man1/myisam_ftdump.1.gz
 man/man1/myisamlog.1.gz
