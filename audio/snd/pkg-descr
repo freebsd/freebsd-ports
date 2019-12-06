@@ -10,4 +10,4 @@ Included with it are some command-line utilities:
 - sndrecord records sound from a microphone.
 - audinfo describes the current state of the audio hardware.
 
-WWW: http://ccrma.stanford.edu/software/snd/
+WWW: https://ccrma.stanford.edu/software/snd/

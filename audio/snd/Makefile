@@ -22,15 +22,12 @@ FFTW3_DESC=	Use FFTW
 GSL_DESC=	Use GNU Scientific Library
 S7_DESC=	Use S7 as the extension language
 
+USES=		localbase:ldflags
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-float-samples
 MAKEFILE=	makefile
 ALL_TARGET=	snd snd-info sndplay
 MAKE_JOBS_UNSAFE=	yes
-
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 FFTW3_LIB_DEPENDS=	libfftw3.so:math/fftw3
 FFTW3_CONFIGURE_WITH=	fftw
