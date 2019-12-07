@@ -1,5 +1,5 @@
-TIMESTAMP = 1573784357
-SHA256 (barman-2.9.tar.gz) = 16cb4ad4bfc5d3fc5197bf70b40bf4390fe5081391ee11d853154cee3b4a6e0c
-SIZE (barman-2.9.tar.gz) = 1218787
+TIMESTAMP = 1575618740
+SHA256 (barman-2.10.tar.gz) = 46e0af093eaf53065b3cfcf3ed5548b1446629d9177ff4941d65c6d96a7ae5e5
+SIZE (barman-2.10.tar.gz) = 1247335
 SHA256 (manual.pdf) = 67ffc0edc6132eb0ec0e3630ba12caeaa21c082ad26af021bbde9b3678c8c664
 SIZE (manual.pdf) = 1317206
