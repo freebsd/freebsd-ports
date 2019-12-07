@@ -1,0 +1,24 @@
+--- example/Makefile.in.orig	2019-10-21 13:36:38 UTC
++++ example/Makefile.in
+@@ -5,6 +5,7 @@ LIBNDPI=../src/lib/libndpi.a
+ LDFLAGS=$(LIBNDPI) @PCAP_LIB@ -lpthread -lm @LDFLAGS@
+ OBJS=ndpiReader.o reader_util.o
+ PREFIX?=@prefix@
++EXAMPLESDIR?=share/examples/ndpi
+ 
+ all: ndpiReader @DPDK_TARGET@
+ 
+@@ -16,10 +17,10 @@ ndpiReader: $(OBJS) $(LIBNDPI)
+ 
+ install:
+ 	mkdir -p $(DESTDIR)$(PREFIX)/bin/
+-	mkdir -p $(DESTDIR)$(PREFIX)/sbin/ndpi
++	mkdir -p $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)/
+ 	cp ndpiReader $(DESTDIR)$(PREFIX)/bin/
+-	cp protos.txt $(DESTDIR)$(PREFIX)/sbin/ndpi/ndpiProtos.txt
+-	cp mining_hosts.txt $(DESTDIR)$(PREFIX)/sbin/ndpi/ndpiCustomCategory.txt
++	cp protos.txt $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)/ndpiProtos.txt
++	cp mining_hosts.txt $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)/ndpiCustomCategory.txt
+ 	[ -f build/app/ndpiReader.dpdk ] && cp build/app/ndpiReader.dpdk $(DESTDIR)$(PREFIX)/bin/ || true
+ 	[ -f ndpiReader.dpdk ] && cp ndpiReader.dpdk $(DESTDIR)$(PREFIX)/bin/ || true
+ 
