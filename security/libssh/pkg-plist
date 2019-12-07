@@ -5,10 +5,11 @@ include/libssh/libsshpp.hpp
 include/libssh/server.h
 include/libssh/sftp.h
 include/libssh/ssh2.h
-lib/cmake/libssh/libssh/libssh-config.cmake
-lib/cmake/libssh/libssh/libssh-config-version.cmake
+lib/cmake/libssh/libssh-config-release.cmake
+lib/cmake/libssh/libssh-config.cmake
+lib/cmake/libssh/libssh-config-version.cmake
 %%STATIC%%lib/libssh.a
 lib/libssh.so
 lib/libssh.so.4
-lib/libssh.so.4.7.3
+lib/libssh.so.4.8.3
 libdata/pkgconfig/libssh.pc
