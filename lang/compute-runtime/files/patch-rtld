@@ -1,0 +1,18 @@
+RTLD_DEEPBIND isn't available on non-Linux
+
+core/os_interface/linux/os_library_linux.cpp: In constructor 'NEO::Linux::OsLibrary::OsLibrary(const string&)':
+core/os_interface/linux/os_library_linux.cpp:35:49: error: 'RTLD_DEEPBIND' was not declared in this scope
+   35 |         constexpr auto dlopenFlag = RTLD_LAZY | RTLD_DEEPBIND;
+      |                                                 ^~~~~~~~~~~~~
+
+--- core/os_interface/linux/os_library_linux.cpp.orig	2019-11-29 14:23:34 UTC
++++ core/os_interface/linux/os_library_linux.cpp
+@@ -29,7 +29,7 @@ OsLibrary::OsLibrary(const std::string &name) {
+     if (name.empty()) {
+         this->handle = dlopen(0, RTLD_LAZY);
+     } else {
+-#ifdef SANITIZER_BUILD
++#if defined(SANITIZER_BUILD) || !defined(__linux__)
+         constexpr auto dlopenFlag = RTLD_LAZY;
+ #else
+         constexpr auto dlopenFlag = RTLD_LAZY | RTLD_DEEPBIND;

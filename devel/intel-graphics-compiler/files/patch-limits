@@ -1,0 +1,16 @@
+<linux/limits.h> is implicitly included via <limits.h> but not required here
+
+IGC/OCLFE/igd_fcl_mcl/source/LoadBuffer.cpp:40:10: fatal error: 'linux/limits.h' file not found
+#include <linux/limits.h>
+         ^~~~~~~~~~~~~~~~
+
+--- IGC/OCLFE/igd_fcl_mcl/source/LoadBuffer.cpp.orig	2019-11-27 01:05:20 UTC
++++ IGC/OCLFE/igd_fcl_mcl/source/LoadBuffer.cpp
+@@ -37,7 +37,6 @@ using namespace llvm;
+ #include <inttypes.h>
+ #include <libgen.h>
+ #include <link.h>
+-#include <linux/limits.h>
+ #include <stddef.h>
+ #include <stdint.h>
+ #include <unistd.h>

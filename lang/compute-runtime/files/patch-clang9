@@ -1,0 +1,76 @@
+ld: error: duplicate symbol: NEO::DebugModeRegisterOffset::registerOffset<NEO::ICLFamily>
+>>> defined at preamble_gen8.cpp
+>>>            preamble_gen8.cpp.o:(NEO::DebugModeRegisterOffset::registerOffset<NEO::ICLFamily>) in archive ../lib/libigdrcl_lib_release.a
+>>> defined at preamble_gen9.cpp
+>>>            preamble_gen9.cpp.o:(.rodata+0x0) in archive ../lib/libigdrcl_lib_release.a
+
+ld: error: duplicate symbol: NEO::DebugModeRegisterOffset::debugEnabledValue<NEO::ICLFamily>
+>>> defined at preamble_gen8.cpp
+>>>            preamble_gen8.cpp.o:(NEO::DebugModeRegisterOffset::debugEnabledValue<NEO::ICLFamily>) in archive ../lib/libigdrcl_lib_release.a
+>>> defined at preamble_gen9.cpp
+>>>            preamble_gen9.cpp.o:(.rodata+0x4) in archive ../lib/libigdrcl_lib_release.a
+
+ld: error: duplicate symbol: NEO::DebugModeRegisterOffset::registerOffset<NEO::ICLFamily>
+>>> defined at preamble_gen8.cpp
+>>>            preamble_gen8.cpp.o:(NEO::DebugModeRegisterOffset::registerOffset<NEO::ICLFamily>) in archive ../lib/libigdrcl_lib_release.a
+>>> defined at command_stream_receiver_hw_gen11.cpp
+>>>            command_stream_receiver_hw_gen11.cpp.o:(.rodata+0x0) in archive ../lib/libigdrcl_lib_release.a
+
+ld: error: duplicate symbol: NEO::DebugModeRegisterOffset::debugEnabledValue<NEO::ICLFamily>
+>>> defined at preamble_gen8.cpp
+>>>            preamble_gen8.cpp.o:(NEO::DebugModeRegisterOffset::debugEnabledValue<NEO::ICLFamily>) in archive ../lib/libigdrcl_lib_release.a
+>>> defined at command_stream_receiver_hw_gen11.cpp
+>>>            command_stream_receiver_hw_gen11.cpp.o:(.rodata+0x4) in archive ../lib/libigdrcl_lib_release.a
+ld: error: duplicate symbol: NEO::DebugModeRegisterOffset::registerOffset<NEO::ICLFamily>
+>>> defined at preamble_gen8.cpp
+>>>            preamble_gen8.cpp.o:(NEO::DebugModeRegisterOffset::registerOffset<NEO::ICLFamily>) in archive ../lib/libigdrcl_lib_release.a
+>>> defined at preamble_gen11.cpp
+>>>            preamble_gen11.cpp.o:(.rodata+0x0) in archive ../lib/libigdrcl_lib_release.a
+
+ld: error: duplicate symbol: NEO::DebugModeRegisterOffset::debugEnabledValue<NEO::ICLFamily>
+>>> defined at preamble_gen8.cpp
+>>>            preamble_gen8.cpp.o:(NEO::DebugModeRegisterOffset::debugEnabledValue<NEO::ICLFamily>) in archive ../lib/libigdrcl_lib_release.a
+>>> defined at preamble_gen11.cpp
+>>>            preamble_gen11.cpp.o:(.rodata+0x4) in archive ../lib/libigdrcl_lib_release.a
+
+ld: error: duplicate symbol: NEO::DebugModeRegisterOffset::registerOffset<NEO::ICLFamily>
+>>> defined at preamble_gen8.cpp
+>>>            preamble_gen8.cpp.o:(NEO::DebugModeRegisterOffset::registerOffset<NEO::ICLFamily>) in archive ../lib/libigdrcl_lib_release.a
+>>> defined at aub_mem_dump_gen12lp.cpp
+>>>            aub_mem_dump_gen12lp.cpp.o:(.rodata+0x0) in archive ../lib/libigdrcl_lib_release.a
+ld: error: duplicate symbol: NEO::DebugModeRegisterOffset::debugEnabledValue<NEO::ICLFamily>
+>>> defined at preamble_gen8.cpp
+>>>            preamble_gen8.cpp.o:(NEO::DebugModeRegisterOffset::debugEnabledValue<NEO::ICLFamily>) in archive ../lib/libigdrcl_lib_release.a
+>>> defined at aub_mem_dump_gen12lp.cpp
+>>>            aub_mem_dump_gen12lp.cpp.o:(.rodata+0x4) in archive ../lib/libigdrcl_lib_release.a
+
+ld: error: duplicate symbol: NEO::DebugModeRegisterOffset::registerOffset<NEO::ICLFamily>
+>>> defined at preamble_gen8.cpp
+>>>            preamble_gen8.cpp.o:(NEO::DebugModeRegisterOffset::registerOffset<NEO::ICLFamily>) in archive ../lib/libigdrcl_lib_release.a
+>>> defined at preamble_gen12lp.cpp
+>>>            preamble_gen12lp.cpp.o:(.rodata+0x0) in archive ../lib/libigdrcl_lib_release.a
+
+ld: error: duplicate symbol: NEO::DebugModeRegisterOffset::debugEnabledValue<NEO::ICLFamily>
+>>> defined at preamble_gen8.cpp
+>>>            preamble_gen8.cpp.o:(NEO::DebugModeRegisterOffset::debugEnabledValue<NEO::ICLFamily>) in archive ../lib/libigdrcl_lib_release.a
+>>> defined at preamble_gen12lp.cpp
+>>>            preamble_gen12lp.cpp.o:(.rodata+0x4) in archive ../lib/libigdrcl_lib_release.a
+
+--- runtime/gen11/reg_configs.h.orig	2019-11-29 14:23:34 UTC
++++ runtime/gen11/reg_configs.h
+@@ -25,9 +25,15 @@ struct L3CNTLRegisterOffset<ICLFamily> {
+ 
+ namespace DebugModeRegisterOffset {
+ template <>
++#ifdef __clang__
++static
++#endif
+ constexpr uint32_t registerOffset<ICLFamily> = 0x20d8;
+ template <>
++#ifdef __clang__
++static
++#endif
+ constexpr uint32_t debugEnabledValue<ICLFamily> = (1 << 5) | (1 << 21);
+ }; // namespace DebugModeRegisterOffset
+ 
+ namespace gen11HdcModeRegister {

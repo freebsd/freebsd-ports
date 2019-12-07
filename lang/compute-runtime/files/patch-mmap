@@ -1,0 +1,31 @@
+Some mmap(2) flags are Linux-specific but otherwise not required
+
+core/os_interface/linux/os_memory_linux.cpp:17:83: error:
+      use of undeclared identifier 'MAP_NORESERVE'
+    return mmapWrapper(0, sizeToReserve, PROT_NONE, MAP_PRIVATE | MAP_ANONYMOUS | MAP_NORESERVE | MAP_...
+                                                                                  ^
+core/os_interface/linux/os_memory_linux.cpp:17:99: error:
+      use of undeclared identifier 'MAP_HUGETLB'
+  ...mmapWrapper(0, sizeToReserve, PROT_NONE, MAP_PRIVATE | MAP_ANONYMOUS | MAP_NORESERVE | MAP_HUGETLB, -1...
+                                                                                            ^
+
+--- core/os_interface/linux/os_memory_linux.cpp.orig	2019-11-22 15:41:47 UTC
++++ core/os_interface/linux/os_memory_linux.cpp
+@@ -7,6 +7,17 @@
+ 
+ #include "core/os_interface/linux/os_memory_linux.h"
+ 
++#ifdef MAP_ALIGNED_SUPER
++#define MAP_HUGETLB MAP_ALIGNED_SUPER // FreeBSD
++#endif
++
++#ifndef MAP_NORESERVE
++#define MAP_NORESERVE 0
++#endif
++#ifndef MAP_HUGETLB
++#define MAP_HUGETLB 0
++#endif
++
+ namespace NEO {
+ 
+ std::unique_ptr<OSMemory> OSMemory::create() {
