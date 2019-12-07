@@ -2,4 +2,4 @@ Basic tools (containers, algorithms) used by other quantstack packages.
 
 xtl is a header-only library.
 
-WWW: https://github.com/QuantStack/xtl
+WWW: https://github.com/xtensor-stack/xtl
