@@ -2,9 +2,13 @@
 
 PORTNAME=	kodi
 DISTVERSION=	19.0.a20191112
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-devel
+
+PATCH_SITES=	https://github.com/xbmc/xbmc/commit/
+PATCHFILES=	d2922c8e4bb6fcaf5a2b3041da9b6303dd1225d4.patch:-p1 \
+		3bbb9f22e4c1a2a37b7d8e73b55361ca0a660a59.patch:-p1
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Award winning media center application
