@@ -2,6 +2,7 @@
 
 PORTNAME=	html-pipeline
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	GitHub HTML processing filters and utilities
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport50>=2:devel/rubygem-activesupport50 \
+RUN_DEPENDS=	rubygem-activesupport52>=2:devel/rubygem-activesupport52 \
 		rubygem-nokogiri>=1.4:textproc/rubygem-nokogiri
 
 USES=		gem

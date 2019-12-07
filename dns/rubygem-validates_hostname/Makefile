@@ -3,7 +3,7 @@
 
 PORTNAME=	validates_hostname
 PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +13,8 @@ COMMENT=	Extension to ActiveRecord::Base for validating hostnames
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activerecord50>=3.0:databases/rubygem-activerecord50 \
-		rubygem-activesupport50>=3.0:devel/rubygem-activesupport50
+RUN_DEPENDS=	rubygem-activerecord52>=3.0:databases/rubygem-activerecord52 \
+		rubygem-activesupport52>=3.0:devel/rubygem-activesupport52
 
 USES=		gem
 USE_RUBY=	yes
