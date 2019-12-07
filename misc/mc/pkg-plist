@@ -211,6 +211,7 @@ man/man1/mcview.1.gz
 %%DATADIR%%/skins/darkfar.ini
 %%DATADIR%%/skins/default.ini
 %%DATADIR%%/skins/double-lines.ini
+%%DATADIR%%/skins/featured-plus.ini
 %%DATADIR%%/skins/featured.ini
 %%DATADIR%%/skins/gotar.ini
 %%DATADIR%%/skins/gray-green-purple256.ini
