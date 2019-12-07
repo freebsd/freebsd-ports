@@ -26,7 +26,7 @@
 +OPT_CFLAGS = # -Ofast - handled by the port CFLAGS
  ifdef IS_GCC
 -OPT_CFLAGS = -Ofast -mtune=generic
-+OPT_CFLAGS = -mtune=generic
++OPT_CFLAGS =
  endif
  ifdef IS_ICPC
  OPT_CFLAGS = -fast
