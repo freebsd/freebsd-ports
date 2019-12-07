@@ -3,6 +3,7 @@
 
 PORTNAME=	inn
 PORTVERSION=	2.6.3
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	ISC/${PORTNAME}
 
@@ -22,7 +23,7 @@ CPE_VENDOR=	isc
 
 CONFLICTS?=	inn-stable-[0-9]* inn-current-[0-9]*
 
-OPTIONS_DEFINE=		BERKELEYDB GNUPG KERBEROS SASL KEYWORDS \
+OPTIONS_DEFINE=		BERKELEYDB GNUPG KERBEROS PYTHON SASL KEYWORDS \
 			LARGE_FILES OPENSSL SETGID_INEWS TAGGED_HASH \
 			UUCP_RNEWS DOCS EXAMPLES
 OPTIONS_DEFAULT=	BERKELEYDB GNUPG KEYWORDS OPENSSL LARGE_FILES \
@@ -30,6 +31,7 @@ OPTIONS_DEFAULT=	BERKELEYDB GNUPG KEYWORDS OPENSSL LARGE_FILES \
 OPTIONS_SUB=		yes
 
 KERBEROS_DESC=		Enable Kerberos v5 (for auth_krb5)
+PYTHON_DESC=		Enable support for embedded Python
 SASL_DESC=		Enable SASL (for imapfeed authentication)
 TAGGED_HASH_DESC=	Use tagged hash table for history
 LARGE_FILES_DESC=	Support for files larger than 2GB
@@ -87,6 +89,10 @@ CONFIGURE_ENV+=		ac_cv_func_krb5_init_ets=yes
 CONFIGURE_ARGS+=	--without-krb5
 .endif
 
+.if ${PORT_OPTIONS:MKEYWORDS}
+CONFIGURE_ARGS+=	--enable-keywords
+.endif
+
 .if ${PORT_OPTIONS:MLARGE_FILES}
 CONFIGURE_ARGS+=	--enable-largefiles
 .    if ${PORT_OPTIONS:MTAGGED_HASH}
@@ -94,8 +100,9 @@ IGNORE=			cannot be compiled with both LARGE_FILES and TAGGED_HASH: please re-ru
 .    endif
 .endif
 
-.if ${PORT_OPTIONS:MKEYWORDS}
-CONFIGURE_ARGS+=	--enable-keywords
+.if ${PORT_OPTIONS:MPYTHON}
+USES=+			python
+CONFIGURE_ARGS+=	--with-python
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
