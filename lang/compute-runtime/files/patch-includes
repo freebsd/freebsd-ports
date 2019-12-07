@@ -1,0 +1,45 @@
+Add missing includes in various places.
+
+runtime/tbx/tbx_sockets_imp.cpp:74:51: error: use of undeclared identifier 'IPPROTO_TCP'
+        m_socket = ::socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+                                                  ^
+runtime/tbx/tbx_sockets_imp.cpp:107:9: error: unknown type name 'sockaddr_in'; did you mean 'sockaddr'?
+        sockaddr_in clientService;
+        ^~~~~~~~~~~
+        sockaddr
+/usr/include/sys/socket.h:328:8: note: 'sockaddr' declared here
+struct sockaddr {
+       ^
+
+unit_tests/main.cpp:116:18: error:
+      variable has incomplete type 'struct sigaction'
+struct sigaction oldSigAbrt;
+                 ^
+unit_tests/main.cpp:116:8: note:
+      forward declaration of 'sigaction'
+struct sigaction oldSigAbrt;
+       ^
+
+--- runtime/tbx/tbx_sockets_imp.cpp.orig	2019-11-22 15:41:47 UTC
++++ runtime/tbx/tbx_sockets_imp.cpp
+@@ -18,6 +18,7 @@ typedef int socklen_t;
+ #else
+ #include <arpa/inet.h>
+ #include <netdb.h>
++#include <netinet/in.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
+--- unit_tests/main.cpp.orig	2019-11-22 15:41:47 UTC
++++ unit_tests/main.cpp
+@@ -32,6 +32,10 @@
+ #include <sstream>
+ #include <thread>
+ 
++#ifndef _WIN32
++#include <signal.h>
++#endif
++
+ #ifdef WIN32
+ const char *fSeparator = "\\";
+ #else

@@ -1,0 +1,5 @@
+The Intel(R) Graphics Compiler for OpenCL(TM) is an LLVM-based
+compiler for OpenCL(TM) targeting Intel Gen graphics hardware
+architecture.
+
+WWW: https://01.org/compute-runtime

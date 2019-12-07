@@ -1,0 +1,18 @@
+SSE2 is not enabled by default on BSDs
+
+core/utilities/clflush.cpp:16:5: error: '_mm_clflush' needs target feature sse2
+    _mm_clflush(ptr);
+    ^
+
+--- core/utilities/clflush.cpp.orig	2019-11-29 14:23:34 UTC
++++ core/utilities/clflush.cpp
+@@ -12,6 +12,9 @@
+ namespace NEO {
+ namespace CpuIntrinsics {
+ 
++#ifdef __GNUC__
++__attribute__((target("sse2")))
++#endif
+ void clFlush(void const *ptr) {
+     _mm_clflush(ptr);
+ }

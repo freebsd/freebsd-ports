@@ -1,0 +1,61 @@
+Try unsynchronized userptr if regular one fails.
+https://github.com/FreeBSDDesktop/DEPRECATED-freebsd-base-graphics/issues/132
+
+Process 51117 stopped
+* thread #1, name = 'clinfo', stop reason = signal SIGABRT
+    frame #0: 0x000000080044fe7a libc.so.7`__sys_thr_kill at thr_kill.S:4
+(lldb) bt
+* thread #1, name = 'clinfo', stop reason = signal SIGABRT
+  * frame #0: 0x000000080044fe7a libc.so.7`__sys_thr_kill at thr_kill.S:4
+    frame #1: 0x000000080044f7e4 libc.so.7`__raise(s=6) at raise.c:52:10
+    frame #2: 0x00000008003b3a89 libc.so.7`abort at abort.c:67:8
+    frame #3: 0x000000080043a711 libc.so.7`__assert(func=<unavailable>, file=<unavailable>, line=<unavailable>, failedexpr=<unavailable>) at assert.c:51:2
+    frame #4: 0x0000000800e255ad libigdrcl.so`NEO::debugBreak(line=58, file="compute-runtime-19.48.14977/runtime/os_interface/linux/drm_memory_manager.cpp") at debug_helpers.cpp:19:9
+    frame #5: 0x000000080104b4e5 libigdrcl.so`NEO::DrmMemoryManager::DrmMemoryManager(this=0x00000008018e7300, mode=gemCloseWorkerActive, forcePinAllowed=true, validateHostPtrMemory=true, executionEnvironment=0x00000008018f6180) at drm_memory_manager.cpp:58:9
+    frame #6: 0x0000000800f07bb1 libigdrcl.so`std::__1::__unique_if<NEO::DrmMemoryManager>::__unique_single std::__1::make_unique<NEO::DrmMemoryManager, NEO::gemCloseWorkerMode, bool, bool, NEO::ExecutionEnvironment&>(__args=0x00007fffffffda4c, __args=0x00007fffffffda4b, __args=0x00007fffffffda4a, __args=0x00000008018f6180) at memory:3003:32
+    frame #7: 0x0000000800f07ad4 libigdrcl.so`NEO::MemoryManager::createMemoryManager(executionEnvironment=0x00000008018f6180) at create_drm_memory_manager.cpp:16:12
+    frame #8: 0x0000000800fbce8b libigdrcl.so`NEO::ExecutionEnvironment::initializeMemoryManager(this=0x00000008018f6180) at execution_environment.cpp:63:25
+    frame #9: 0x0000000801058c9d libigdrcl.so`NEO::Platform::initialize(this=0x00000008025ea0a0) at platform.cpp:144:27
+    frame #10: 0x0000000800e259f2 libigdrcl.so`::clGetPlatformIDs(numEntries=1, platforms=0x0000000800251500, numPlatforms=0x0000000000000000) at api.cpp:82:35
+    frame #11: 0x0000000800e25c54 libigdrcl.so`::clIcdGetPlatformIDsKHR(numEntries=1, platforms=0x0000000800251500, numPlatforms=0x0000000000000000) at api.cpp:112:14
+    frame #12: 0x000000080025d0e0 libOpenCL.so.1`__initClIcd + 3392
+    frame #13: 0x00000008006a61a8 libthr.so.3`_thr_once(once_control=0x000000080026e038, init_routine=(libOpenCL.so.1`__initClIcd)) at thr_once.c:98:2
+    frame #14: 0x000000080025b670 libOpenCL.so.1`clGetPlatformIDs_hid + 320
+    frame #15: 0x000000000020f9cd clinfo`main(argc=<unavailable>, argv=0x00007fffffffe188) at clinfo.c:2656:10
+    frame #16: 0x000000000020713d clinfo`_start(ap=<unavailable>, cleanup=<unavailable>) at crt1.c:76:7
+(lldb) f 5
+frame #5: 0x000000080104b4e5 libigdrcl.so`NEO::DrmMemoryManager::DrmMemoryManager(this=0x00000008018e7300, mode=gemCloseWorkerActive, forcePinAllowed=true, validateHostPtrMemory=true, executionEnvironment=0x00000008018f6180) at drm_memory_manager.cpp:58:9
+   50
+   51       if (forcePinEnabled || validateHostPtrMemory) {
+   52           pinBB = allocUserptr(reinterpret_cast<uintptr_t>(memoryForPinBB), MemoryConstants::pageSize, 0, 0);
+   53       }
+   54
+   55       if (!pinBB) {
+   56           alignedFreeWrapper(memoryForPinBB);
+   57           memoryForPinBB = nullptr;
+-> 58           DEBUG_BREAK_IF(true);
+   59           UNRECOVERABLE_IF(validateHostPtrMemory);
+   60       }
+   61   }
+
+--- runtime/os_interface/linux/drm_memory_manager.cpp.orig	2019-11-29 14:23:34 UTC
++++ runtime/os_interface/linux/drm_memory_manager.cpp
+@@ -141,7 +141,17 @@ NEO::BufferObject *DrmMemoryManager::allocUserptr(uint
+     userptr.flags = static_cast<uint32_t>(flags);
+ 
+     if (this->drm->ioctl(DRM_IOCTL_I915_GEM_USERPTR, &userptr) != 0) {
+-        return nullptr;
++        if (errno == ENODEV && userptr.flags == 0) {
++            userptr.flags = I915_USERPTR_UNSYNCHRONIZED;
++            if (this->drm->ioctl(DRM_IOCTL_I915_GEM_USERPTR, &userptr) != 0) {
++                if (geteuid() != 0) {
++                    printDebugString(true, stderr, "ioctl(I915_GEM_USERPTR) failed. Try running as root but expect poor stability.\n");
++                }
++                return nullptr;
++            }
++        } else {
++	    return nullptr;
++	}
+     }
+ 
+     auto res = new (std::nothrow) BufferObject(this->drm, userptr.handle, rootDeviceIndex);

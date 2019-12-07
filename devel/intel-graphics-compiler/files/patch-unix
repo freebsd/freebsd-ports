@@ -1,0 +1,309 @@
+Relax recent Linux checks for the code works on any non-Windows platform.
+
+CMake Error at IGC/CMakeLists.txt:1974 (message):
+  IGC_OPTION__ARCHITECTURE_TARGET: Target architecture is not specified and
+  cannot be deduced from context.
+
+  Please specify one, e.g.  Windows32, Linux64, Android32, ...
+
+--- IGC/CMakeLists.txt.orig	2019-11-27 01:05:20 UTC
++++ IGC/CMakeLists.txt
+@@ -834,11 +834,11 @@ function(igc_arch_detect targetArchVarName hostArchVar
+       set(_targetArchitecture "Windows32")
+     endif()
+   # Use system processor set by toolchain or CMake.
+-  elseif(ANDROID OR (CMAKE_SYSTEM_NAME MATCHES "Linux")
++  elseif(ANDROID OR (UNIX AND NOT APPLE)
+       )
+     if(ANDROID)
+       set(_targetArchOS "Android")
+-    elseif(CMAKE_SYSTEM_NAME MATCHES "Linux")
++    elseif(UNIX AND NOT APPLE)
+       set(_targetArchOS "Linux")
+     endif()
+ 
+@@ -865,9 +865,9 @@ function(igc_arch_detect targetArchVarName hostArchVar
+       set(_hostArchitecture "Windows32")
+     endif()
+   # Use 'uname -m' to detect kernel architecture.
+-  elseif((CMAKE_HOST_SYSTEM_NAME MATCHES "Linux")
++  elseif((UNIX AND NOT APPLE)
+       )
+-    if(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux")
++    if(UNIX AND NOT APPLE)
+       set(_hostArchOS "Linux")
+     endif()
+ 
+@@ -2171,7 +2171,7 @@ endif()
+ 
+ # NOTE: LLVM_ON_UNIX is also true for Android (CMAKE_SYSTEM_NAME specified by Android toolchain file is also "Linux",
+ # but we should make sure so there is no errors in our assumptions).
+-if((CMAKE_SYSTEM_NAME MATCHES "Linux") OR ANDROID)
++if((UNIX AND NOT APPLE) OR ANDROID)
+   set(LLVM_ON_UNIX ON)
+ else()
+   set(LLVM_ON_UNIX OFF)
+--- 3d/common/iStdLib/File.h.orig	2019-11-27 01:05:20 UTC
++++ 3d/common/iStdLib/File.h
+@@ -105,12 +105,9 @@ inline DWORD GetModuleFileName( char* pFileName, DWORD
+ #elif defined(ISTDLIB_UMD)
+     #if defined(_WIN32)
+         return ::GetModuleFileNameA( NULL, pFileName, bufSize );
+-    #elif defined(__linux__)
++    #else
+         //TODO: add Linux implementation.
+         return 0;
+-    #else
+-        // TO DO: replace with non-Windows version
+-        #error "TODO implement non-Windows equivalent of GetModuleFileName"
+     #endif
+ #else
+     // this compilation path is not intended
+--- 3d/common/iStdLib/Object.h.orig	2019-11-27 01:05:20 UTC
++++ 3d/common/iStdLib/Object.h
+@@ -150,7 +150,7 @@ inline long CObject<CAllocatorType>::Acquire( void )
+     ASSERT( m_RefCount >= 0 );
+     ASSERT( m_RefCount < LONG_MAX );
+ 
+-#if defined(ISTDLIB_MT) && defined(__linux__)
++#if defined(ISTDLIB_MT) && defined(__GNUC__)
+     __sync_fetch_and_add(&m_RefCount, 1);
+ #elif defined(ISTDLIB_MT)
+     ::InterlockedIncrement(&m_RefCount);
+@@ -182,7 +182,7 @@ inline long CObject<CAllocatorType>::Release( void )
+ {
+     ASSERT( m_RefCount > 0 );
+ 
+-#if defined(ISTDLIB_MT) && defined(__linux__)
++#if defined(ISTDLIB_MT) && defined(__GNUC__)
+     __sync_sub_and_fetch(&m_RefCount, 1);
+ #elif defined(ISTDLIB_MT)
+     ::InterlockedDecrement(&m_RefCount);
+--- 3d/common/iStdLib/utility.h.orig	2019-11-27 01:05:20 UTC
++++ 3d/common/iStdLib/utility.h
+@@ -431,7 +431,7 @@ __forceinline DWORD bsr64( const unsigned long long in
+     _BitScanReverse64( &index, static_cast<_int64>( mask ) );
+     return static_cast<DWORD>( index );
+ 
+-#elif defined __linux__
++#elif defined __GNUC__
+     return static_cast<unsigned int>( 63 - __builtin_clzll( mask ) );
+ 
+ #else
+@@ -464,7 +464,7 @@ __forceinline DWORD bsr( const DWORD mask )
+     _BitScanReverse( &index, mask );
+     return static_cast<DWORD>(index);
+ 
+-#elif defined __linux__
++#elif defined __GNUC__
+     return static_cast<unsigned int>( 31 - __builtin_clz( mask ) );
+ 
+ #else
+@@ -497,7 +497,7 @@ __forceinline DWORD bsf64( const unsigned long long in
+     _BitScanForward64( &index, static_cast<_int64>( mask ) );
+     return static_cast<DWORD>( index );
+ 
+-#elif defined __linux__
++#elif defined __GNUC__
+     return static_cast<unsigned int>( __builtin_ffsll( mask ) - 1 );
+ 
+ #else
+@@ -529,7 +529,7 @@ __forceinline DWORD bsf( const DWORD mask )
+     _BitScanForward( &index, mask );
+     return index;
+ 
+-#elif defined __linux__
++#elif defined __GNUC__
+     return static_cast<unsigned int>( __builtin_ffsl( mask ) - 1 );
+ 
+ #else
+--- IGC/AdaptorCommon/customApi.cpp.orig	2019-11-27 01:05:20 UTC
++++ IGC/AdaptorCommon/customApi.cpp
+@@ -457,7 +457,7 @@ namespace IGC
+                 return "";
+             IGCBaseFolder = "/sdcard/intel/igc/";
+ 
+-#elif defined __linux__
++#elif !defined __APPLE__
+         if (!IGC_IS_FLAG_ENABLED(DumpToCustomDir))
+         {
+             IGCBaseFolder = "/tmp/IntelIGC/";
+@@ -560,7 +560,7 @@ namespace IGC
+ 
+                 g_shaderOutputFolder = "";
+ 
+-#elif defined __linux__
++#elif !defined __APPLE__
+             if (!IGC_IS_FLAG_ENABLED(DumpToCurrentDir) && g_shaderOutputFolder == "" && !IGC_IS_FLAG_ENABLED(DumpToCustomDir))
+             {
+                 bool needMkdir = false;
+--- IGC/AdaptorOCL/CLElfLib/CLElfTypes.h.orig	2019-11-27 01:05:20 UTC
++++ IGC/AdaptorOCL/CLElfLib/CLElfTypes.h
+@@ -30,7 +30,7 @@ Abstract:  Defines the types used for ELF headers/sect
+ \******************************************************************************/
+ #pragma once
+ 
+-#if defined(__linux__) && defined(OGL)
++#if !defined(__APPLE__) && !defined(_WIN32) && defined(OGL)
+     #include "os_inc.h"
+ #endif
+ 
+@@ -38,7 +38,7 @@ Abstract:  Defines the types used for ELF headers/sect
+     #include <inttypes.h>
+ #endif
+ 
+-#if defined(__linux__)
++#if !defined(__APPLE__) && !defined(_WIN32)
+     #include "elf.h"
+ #endif
+ 
+--- IGC/AdaptorOCL/OCL/sp/gtpin_igc_ocl.h.orig	2019-11-27 01:05:20 UTC
++++ IGC/AdaptorOCL/OCL/sp/gtpin_igc_ocl.h
+@@ -38,7 +38,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #define MY_CALLINGSTD  _fastcall
+ #define MY_CDECL       _cdecl
+ 
+-#elif defined(ANDROID) || defined (__linux__)
++#elif defined(__GNUC__)
+ 
+ // Linux, Android
+ #define MY_EXTERN_C    extern "C"
+--- IGC/GenISAIntrinsics/GenIntrinsics.h.orig	2019-11-27 01:05:20 UTC
++++ IGC/GenISAIntrinsics/GenIntrinsics.h
+@@ -59,7 +59,7 @@ namespace GenISAIntrinsic {
+   /// using iAny, fAny, vAny, or iPTRAny).  For a declaration of an overloaded
+   /// intrinsic, Tys must provide exactly one type for each overloaded type in
+   /// the intrinsic.
+-#if defined(ANDROID) || defined(__linux__)
++#if defined(__GNUC__)
+   __attribute__ ((visibility ("default"))) Function *getDeclaration(Module *M, ID id, ArrayRef<Type*> Tys = None);
+ #else
+   Function *getDeclaration(Module *M, ID id, ArrayRef<Type*> Tys = None);
+--- IGC/OCLFE/igd_fcl_mcl/source/clang_tb.cpp.orig	2019-11-27 01:05:20 UTC
++++ IGC/OCLFE/igd_fcl_mcl/source/clang_tb.cpp
+@@ -65,9 +65,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #if defined(_WIN32 )|| defined( _WIN64 )
+ #include <direct.h>
+ #include <process.h>
+-#endif
+-
+-#if defined __linux__
++#elif !defined(__APPLE__)
+ #include "iStdLib/File.h"
+ #endif
+ 
+@@ -311,7 +309,7 @@ namespace FCL
+ 
+             IGCBaseFolder = pathBuf;
+         }
+-#elif defined __linux__
++#elif !defined(__APPLE__)
+         if (!FCL_IGC_IS_FLAG_ENABLED(DumpToCustomDir))
+         {
+             IGCBaseFolder = "/tmp/IntelIGC/";
+@@ -387,7 +385,7 @@ namespace FCL
+             iSTD::CreateAppOutputDir(pathBuf, 256, GetBaseIGCOutputFolder(), false, true, !FCL_IGC_IS_FLAG_ENABLED(ShaderDumpPidDisable));
+             g_shaderOutputFolder = pathBuf;
+         }
+-#elif defined __linux__
++#elif !defined(__APPLE__)
+         if (!FCL_IGC_IS_FLAG_ENABLED(DumpToCurrentDir) && g_shaderOutputFolder == "" && !FCL_IGC_IS_FLAG_ENABLED(DumpToCustomDir))
+         {
+             bool needMkdir = true;
+--- IGC/common/LLVMWarningsPop.hpp.orig	2019-11-27 01:05:20 UTC
++++ IGC/common/LLVMWarningsPop.hpp
+@@ -58,6 +58,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #   pragma  warning( pop )
+ #endif
+ 
+-#if defined(__linux__)
++#if defined(__GNUC__)
+ #   pragma GCC diagnostic pop
+ #endif
+--- IGC/common/LLVMWarningsPush.hpp.orig	2019-11-27 01:05:20 UTC
++++ IGC/common/LLVMWarningsPush.hpp
+@@ -55,13 +55,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #   pragma warning( push )
+ #endif
+ 
+-#if defined(__linux__)
++#if defined(__GNUC__)
+ #   pragma GCC diagnostic push
+ #endif
+ 
+ #include <llvm/Config/llvm-config.h>
+ 
+-#if defined(__linux__)
++#if defined(__GNUC__)
+ #    if __GNUC__ > 8
+ #        pragma GCC diagnostic ignored "-Winit-list-lifetime"
+ #    endif
+--- IGC/common/igc_regkeys.hpp.orig	2019-11-27 01:05:20 UTC
++++ IGC/common/igc_regkeys.hpp
+@@ -39,7 +39,7 @@ typedef char debugString[256];
+ #define IGC_DEBUG_VARIABLES
+ #endif
+ 
+-#if defined( __linux__ )
++#if !defined( __APPLE__ ) && !defined( _WIN32 )
+ #define IGC_DEBUG_VARIABLES
+ #endif
+ 
+@@ -67,7 +67,7 @@ struct SRegKeyVariableMetaData
+     }
+ };
+ 
+-#if defined ( __linux__ ) && !defined( _DEBUG ) && !defined( _INTERNAL )
++#if !defined ( _WIN32 ) && !defined( _DEBUG ) && !defined( _INTERNAL )
+ #define LINUX_RELEASE_MODE
+ #endif
+ 
+--- inc/common/Compiler/API/ShaderInstruction.h.orig	2019-11-27 01:05:20 UTC
++++ inc/common/Compiler/API/ShaderInstruction.h
+@@ -39,7 +39,7 @@ namespace USC
+ class CShaderDebugLocationInfo;
+ }
+ 
+-#if defined _DEBUG && !defined __linux__
++#if defined _DEBUG && defined _WIN32
+ #define USC_OPTIMIZING_COMPILER_TESTS
+ #endif
+ 
+--- visa/BuildCISAIRImpl.cpp.orig	2019-11-27 01:05:20 UTC
++++ visa/BuildCISAIRImpl.cpp
+@@ -680,7 +680,6 @@ extern void CISA_delete_buffer(YY_BUFFER_STATE buf);
+ 
+ int CISA_IR_Builder::ParseVISAText(const std::string& visaHeader, const std::string& visaText, const std::string& visaTextFile)
+ {
+-#if defined(__linux__) || defined(_WIN64) || defined(_WIN32)
+     // Direct output of parser to null
+ #if defined(_WIN64) || defined(_WIN32)
+     CISAout = fopen("nul", "w");
+@@ -740,16 +739,11 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
+     }
+ 
+     return CM_SUCCESS;
+-#else
+-    assert(0 && "Asm parsing not supported on this platform");
+-    return CM_FAILURE;
+-#endif
+ }
+ 
+ // Parses inline asm file from ShaderOverride
+ int CISA_IR_Builder::ParseVISAText(const std::string& visaFile)
+ {
+-#if defined(__linux__) || defined(_WIN64) || defined(_WIN32)
+     // Direct output of parser to null
+ #if defined(_WIN64) || defined(_WIN32)
+     CISAout = fopen("nul", "w");
+@@ -775,10 +769,6 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
+         fclose(CISAout);
+     }
+     return CM_SUCCESS;
+-#else
+-    assert(0 && "Asm parsing not supported on this platform");
+-    return CM_FAILURE;
+-#endif
+ }
+ 
+ // default size of the kernel mem manager in bytes
