@@ -39,7 +39,8 @@ OPTIONS_MULTI_BUILD=	CLIENT DEDICATED MASTER
 OPTIONS_DEFAULT=	CLIENT DEDICATED
 
 CLIENT_DESC=	Build client
-CLIENT_USES=		gettext-runtime gl openal:al sdl xorg
+CLIENT_USES=		compiler:c++11-lang gettext-runtime gl openal:al sdl \
+			xorg
 CLIENT_USE=		GL=gl SDL=image,sdl XORG=x11
 CLIENT_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 			libcurl.so:ftp/curl
