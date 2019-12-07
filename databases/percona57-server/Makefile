@@ -132,7 +132,7 @@ CMAKE_ARGS+=	-DWITH_AUTHENTICATION_LDAP=0
 .include <bsd.port.options.mk>
 
 .if !${SSL_DEFAULT:Mlibressl*}
-MY_TESTSIR=	"share/mysql/tests"
+MY_TESTDIR=	"share/mysql/tests"
 .else
 MY_TESTDIR=	""
 .endif
