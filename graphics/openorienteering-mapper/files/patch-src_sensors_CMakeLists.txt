@@ -1,8 +1,8 @@
 Add translation files only if the NLS knob is set
 
---- src/sensors/CMakeLists.txt.orig	2019-10-23 13:52:38.938027000 +0300
-+++ src/sensors/CMakeLists.txt	2019-10-23 13:53:09.513288000 +0300
-@@ -104,7 +104,9 @@
+--- src/sensors/CMakeLists.txt.orig	2019-12-05 06:33:57 UTC
++++ src/sensors/CMakeLists.txt
+@@ -104,7 +104,9 @@ endforeach()
  
  # Translations
  

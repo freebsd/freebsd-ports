@@ -1,8 +1,10 @@
---- src/CMakeLists.txt.orig	2018-12-23 20:55:50 UTC
+Add translation files only if the NLS knob is set
+
+--- src/CMakeLists.txt.orig	2019-12-05 06:33:57 UTC
 +++ src/CMakeLists.txt
-@@ -286,7 +286,9 @@ target_compile_definitions(Mapper_Common PRIVATE
-   # MAPPER_ENABLE_COMPATIBILITY
+@@ -287,7 +287,9 @@ target_compile_definitions(Mapper_Common INTERFACE
  )
+ 
  
 -mapper_translations_sources(${Mapper_Common_SRCS} ${Mapper_Common_HEADERS})
 +if(Mapper_WITH_NLS)

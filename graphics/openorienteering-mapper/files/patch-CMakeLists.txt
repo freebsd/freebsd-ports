@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2018-12-23 20:55:50 UTC
+--- CMakeLists.txt.orig	2019-12-05 06:33:57 UTC
 +++ CMakeLists.txt
-@@ -73,6 +73,11 @@ option(Mapper_DEBUG_TRANSLATIONS "Debug missing transl
+@@ -66,6 +66,11 @@ option(Mapper_DEBUG_TRANSLATIONS "Debug missing transl
  # Used for some Linux distributions which do not provide the polyclipping lib.
  option(Mapper_BUILD_CLIPPER "Build the Clipper package from source" OFF)
  
@@ -12,7 +12,7 @@
  option(Mapper_USE_GDAL   "Use the GDAL library" ON)
  
  if(CMAKE_BUILD_TYPE MATCHES Release|MinSizeRel|RelWithDebInfo)
-@@ -231,10 +236,20 @@ endif()
+@@ -247,10 +252,20 @@ endif()
  
  # Subdirectories
  
@@ -36,7 +36,7 @@
  add_subdirectory("3rd-party/qbezier")
  if(NOT ANDROID)
  	add_subdirectory("3rd-party/qtsingleapplication")
-@@ -254,7 +269,7 @@ if(CMAKE_CROSSCOMPILING)
+@@ -271,7 +286,7 @@ if(CMAKE_CROSSCOMPILING)
  	add_custom_target(TEST_WARNING ALL
  	  COMMENT "Crosscompiling, skipping all tests")
  	add_dependencies(TEST_WARNING Mapper)

@@ -1,6 +1,6 @@
---- packaging/custom_install.cmake.in.orig	2019-10-23 12:42:51.349480000 +0300
-+++ packaging/custom_install.cmake.in	2019-10-23 12:42:57.488297000 +0300
-@@ -122,4 +122,4 @@
+--- packaging/custom_install.cmake.in.orig	2019-12-05 06:33:57 UTC
++++ packaging/custom_install.cmake.in
+@@ -122,4 +122,4 @@ endif()
  set(runtime "")
  set(dirs "@MAPPER_LIB_HINTS@")
  handle_qt_conf()
