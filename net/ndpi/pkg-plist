@@ -1,5 +1,6 @@
 bin/ndpiReader
 include/ndpi/ndpi_api.h
+include/ndpi/ndpi_classify.h
 include/ndpi/ndpi_config.h
 include/ndpi/ndpi_define.h
 include/ndpi/ndpi_includes.h
@@ -14,3 +15,5 @@ lib/libndpi.so
 lib/libndpi.so.%%MAJOR_VER%%
 lib/libndpi.so.%%VER%%.0
 libdata/pkgconfig/libndpi.pc
+%%EXAMPLESDIR%%/ndpiCustomCategory.txt
+%%EXAMPLESDIR%%/ndpiProtos.txt
