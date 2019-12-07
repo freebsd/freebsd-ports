@@ -1,4 +1,4 @@
---- install.sh.orig	2019-10-24 12:53:39 UTC
+--- install.sh.orig	2019-12-04 16:41:41 UTC
 +++ install.sh
 @@ -15,48 +15,14 @@ if [ $# -eq 1 ] ; then
      "--help"|"-h"|"help"|"h")
@@ -19,7 +19,7 @@
 -      libdir=/usr/lib/nim
 -      docdir=/usr/share/nim/doc
 -      datadir=/usr/share/nim/data
--      nimbleDir="/opt/nimble/pkgs/compiler-1.0.2"
+-      nimbleDir="/opt/nimble/pkgs/compiler-1.0.4"
 -      ;;
 -    "/usr/local/bin")
 -      bindir=/usr/local/bin
@@ -27,7 +27,7 @@
 -      libdir=/usr/local/lib/nim
 -      docdir=/usr/local/share/nim/doc
 -      datadir=/usr/local/share/nim/data
--      nimbleDir="/opt/nimble/pkgs/compiler-1.0.2"
+-      nimbleDir="/opt/nimble/pkgs/compiler-1.0.4"
 -      ;;
 -    "/opt")
 -      bindir="/opt/nim/bin"
@@ -35,7 +35,7 @@
 -      libdir="/opt/nim/lib"
 -      docdir="/opt/nim/doc"
 -      datadir="/opt/nim/data"
--      nimbleDir="/opt/nimble/pkgs/compiler-1.0.2"
+-      nimbleDir="/opt/nimble/pkgs/compiler-1.0.4"
 -      mkdir -p /opt/nim
 -      mkdir -p $bindir
 -      mkdir -p $configdir
@@ -54,7 +54,7 @@
        nimbleDir="$1/nim"
        mkdir -p $1/nim
        mkdir -p $bindir
-@@ -925,13 +891,6 @@ chmod 644 $nimbleDir/compiler.nimble
+@@ -923,13 +889,6 @@ chmod 644 $nimbleDir/compiler.nimble
  else
    echo "Nim installation script"
    echo "Usage: [sudo] sh install.sh DIR"
