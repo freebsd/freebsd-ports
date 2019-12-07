@@ -17,7 +17,7 @@ LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 		libHalf.so:graphics/ilmbase \
 		libtbb.so:devel/tbb
 
-USES=		cmake compiler:c++11-lang pkgconfig
+USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	AcademySoftwareFoundation
 USE_LDCONFIG=	yes
