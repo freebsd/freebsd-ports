@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	protobuf-java
-DISTVERSION=	3.11.0
+DISTVERSION=	3.11.1
 CATEGORIES=	devel java
 MASTER_SITES=	http://central.maven.org/maven2/com/google/protobuf/protobuf-java/${DISTVERSION}/
 EXTRACT_SUFX=	.jar
