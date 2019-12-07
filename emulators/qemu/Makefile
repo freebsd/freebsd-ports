@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -23,9 +24,9 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t perl5 \
 		pkgconfig python:build tar:xz xorg
 USE_XORG=	pixman
+USE_GNOME=	cairo glib20 libxml2
 .endif
 
-USE_GNOME=	cairo glib20 libxml2
 USE_PERL5=	build
 
 PORTSCOUT=	limit:^4\.1\.
@@ -87,9 +88,10 @@ VDE_LIB_DEPENDS=	libvdeplug.so:net/vde2
 X11_CONFIGURE_ENABLE=	sdl
 X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
 X11_USES=	sdl
-.if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} != "-utils"
+.if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 X86_TARGETS_USE_OFF=	XORG=pixman,x11
 X86_TARGETS_USES_OFF=	xorg
+INSTALLS_ICONS=		yes
 .endif
 
 PORTDOCS?=	docs interop/.buildinfo interop/* qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
@@ -103,7 +105,6 @@ CONFIGURE_ARGS?=	--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--enable-debug-info --python=${PYTHON_CMD} \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.options.mk>
 
