@@ -3,7 +3,7 @@
 PORTNAME=	edbrowse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.7.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www editors
 
 MAINTAINER=	alfix86@gmail.com
@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
-		libtidy.so:www/tidy-lib \
 		libtidy5.so:www/tidy-html5 \
 		libduktape.so:lang/duktape-lib
 
@@ -29,6 +28,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|set(TIDY_NAMES tidy)|set(TIDY_NAMES tidy5)|g' ${WRKSRC}/CMakeModules/FindTidy.cmake
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man-edbrowse-freebsd.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
