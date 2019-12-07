@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eksctl
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -35,13 +35,13 @@ GH_TUPLE=	\
 		alecthomas:template:a0175ee3bccc:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:2efee857e7cf:alecthomas_units/vendor/github.com/alecthomas/units \
 		apex:log:v1.1.0:apex_log/vendor/github.com/apex/log \
-		aws:aws-sdk-go:v1.25.37:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bep:debounce:v1.2.0:bep_debounce/vendor/github.com/bep/debounce \
 		bep:gitmap:v1.0.0:bep_gitmap/vendor/github.com/bep/gitmap \
 		bep:go-tocss:v0.6.0:bep_go_tocss/vendor/github.com/bep/go-tocss \
 		blakesmith:ar:8bd4349a67f2:blakesmith_ar/vendor/github.com/blakesmith/ar \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
+		bxcodec:faker:v2.0.1:bxcodec_faker/vendor/github.com/bxcodec/faker \
 		caarlos0:ctrlc:v1.0.0:caarlos0_ctrlc/vendor/github.com/caarlos0/ctrlc \
 		campoy:unique:88950e537e7e:campoy_unique/vendor/github.com/campoy/unique \
 		census-instrumentation:opencensus-go:v0.20.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
@@ -114,7 +114,7 @@ GH_TUPLE=	\
 		google:gofuzz:v1.0.0:google_gofuzz/vendor/github.com/google/gofuzz \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		google:wire:v0.2.1:google_wire/vendor/github.com/google/wire \
-		googleapis:gax-go:v2.0.4:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
+		googleapis:gax-go:v2.0.4:googleapis_gax_go_1/vendor/github.com/googleapis/gax-go \
 		googleapis:gnostic:v0.3.0:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
 		googleapis:google-api-go-client:v0.3.2:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.37.4:googleapis_google_cloud_go/vendor/cloud.google.com/go \
@@ -230,6 +230,7 @@ GH_TUPLE=	\
 		vektra:mockery:e78b021dcbb5:vektra_mockery/vendor/github.com/vektra/mockery \
 		vmware:govmomi:v0.19.0:vmware_govmomi/vendor/github.com/vmware/govmomi \
 		voxelbrain:goptions:58cddc247ea2:voxelbrain_goptions/vendor/github.com/voxelbrain/goptions \
+		weaveworks-experiments:aws-sdk-go:d39dadebcc3f:weaveworks_experiments_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		weaveworks:github-release:v0.6.2:weaveworks_github_release/vendor/github.com/weaveworks/github-release \
 		weaveworks:launcher:f1b2830d4f2d:weaveworks_launcher/vendor/github.com/weaveworks/launcher \
 		wellington:go-libsass:c63644206701:wellington_go_libsass/vendor/github.com/wellington/go-libsass \
