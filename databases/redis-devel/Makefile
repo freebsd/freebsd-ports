@@ -11,7 +11,7 @@ COMMENT=	Persistent key-value database with built-in net interface
 
 LICENSE=	BSD3CLAUSE
 
-USES+=		compiler gmake
+USES+=		compiler:c11 gmake
 USE_GITHUB=	yes
 GH_TUPLE= 	antirez:${PORTNAME}:7b5f4b1
 
@@ -100,9 +100,6 @@ post-patch:
 .endif
 .if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUAJIT}
 	@cd ${WRKSRC}/deps/lua/src && ${CP} fpconv.* lua_* strbuf.* ${WRKSRC}/src/
-.endif
-.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-	${REINPLACE_CMD} -e '/pragma/d' ${WRKSRC}/src/lzf_d.c
 .endif
 
 post-build:
