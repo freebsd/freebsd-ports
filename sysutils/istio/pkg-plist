@@ -18,19 +18,19 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio-init/README.md
 %%DATADIR%%/install/kubernetes/helm/istio-init/files/crd-10.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/files/crd-11.yaml
-%%DATADIR%%/install/kubernetes/helm/istio-init/files/crd-12.yaml
+%%DATADIR%%/install/kubernetes/helm/istio-init/files/crd-14.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/files/crd-certmanager-10.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/files/crd-certmanager-11.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/templates/clusterrole.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/templates/clusterrolebinding.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/templates/configmap-crd-10.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/templates/configmap-crd-11.yaml
-%%DATADIR%%/install/kubernetes/helm/istio-init/templates/configmap-crd-12.yaml
+%%DATADIR%%/install/kubernetes/helm/istio-init/templates/configmap-crd-14.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/templates/configmap-crd-certmanager-10.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/templates/configmap-crd-certmanager-11.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/templates/job-crd-10.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/templates/job-crd-11.yaml
-%%DATADIR%%/install/kubernetes/helm/istio-init/templates/job-crd-12.yaml
+%%DATADIR%%/install/kubernetes/helm/istio-init/templates/job-crd-14.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/templates/job-crd-certmanager-10.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/templates/job-crd-certmanager-11.yaml
 %%DATADIR%%/install/kubernetes/helm/istio-init/templates/serviceaccount.yaml
@@ -137,6 +137,7 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio/charts/pilot/templates/autoscale.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/pilot/templates/clusterrole.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/pilot/templates/clusterrolebinding.yaml
+%%DATADIR%%/install/kubernetes/helm/istio/charts/pilot/templates/configmap.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/pilot/templates/deployment.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/pilot/templates/meshexpansion.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/pilot/templates/poddisruptionbudget.yaml
@@ -164,6 +165,7 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/enable-mesh-mtls.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/enable-mesh-permissive.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/meshexpansion.yaml
+%%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/poddisruptionbudget.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/service.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/serviceaccount.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/security/templates/tests/test-citadel-connection.yaml
@@ -190,6 +192,7 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio/charts/tracing/templates/tests/test-tracing-connection.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/charts/tracing/values.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/example-values/README.md
+%%DATADIR%%/install/kubernetes/helm/istio/example-values/values-istio-dns-cert.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/example-values/values-istio-example-sds-vault.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/example-values/values-istio-gateways.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/example-values/values-istio-googleca.yaml
@@ -216,6 +219,7 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio/test-values/values-istio-auth-non-mcp.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/test-values/values-istio-auth-sds.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/test-values/values-istio-auth.yaml
+%%DATADIR%%/install/kubernetes/helm/istio/test-values/values-istio-dns-cert.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/test-values/values-istio-mcp.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/test-values/values-istio-multicluster-split-horizon.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/test-values/values-istio-multicluster.yaml
@@ -224,8 +228,6 @@ bin/istioctl
 %%DATADIR%%/install/kubernetes/helm/istio/test-values/values-istio-one-namespace-trust-domain.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/test-values/values-istio-one-namespace.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/test-values/values-istio.yaml
-%%DATADIR%%/install/kubernetes/helm/istio/values-istio-demo-auth.yaml
-%%DATADIR%%/install/kubernetes/helm/istio/values-istio-demo-common.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/values-istio-demo.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/values-istio-minimal.yaml
 %%DATADIR%%/install/kubernetes/helm/istio/values-istio-remote.yaml
@@ -240,7 +242,6 @@ bin/istioctl
 %%EXAMPLES%%%%DATADIR%%/samples/README.md
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/README.md
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/build_push_update_images.sh
-%%EXAMPLES%%%%DATADIR%%/samples/bookinfo/networking/ROUTING_RULE_MIGRATION.md
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/networking/bookinfo-gateway.yaml
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/networking/certmanager-gateway.yaml
 %%EXAMPLES%%%%DATADIR%%/samples/bookinfo/networking/destination-rule-all-mtls.yaml
@@ -417,6 +418,9 @@ bin/istioctl
 %%EXAMPLES%%%%DATADIR%%/samples/kubernetes-blog/bookinfo-ratings.yaml
 %%EXAMPLES%%%%DATADIR%%/samples/kubernetes-blog/bookinfo-reviews-v2.yaml
 %%EXAMPLES%%%%DATADIR%%/samples/kubernetes-blog/bookinfo-v1.yaml
+%%EXAMPLES%%%%DATADIR%%/samples/multicluster/README.md
+%%EXAMPLES%%%%DATADIR%%/samples/multicluster/setup-bookinfo.sh
+%%EXAMPLES%%%%DATADIR%%/samples/multicluster/setup-mesh.sh
 %%EXAMPLES%%%%DATADIR%%/samples/rawvm/.gitignore
 %%EXAMPLES%%%%DATADIR%%/samples/rawvm/Makefile
 %%EXAMPLES%%%%DATADIR%%/samples/rawvm/README.md
