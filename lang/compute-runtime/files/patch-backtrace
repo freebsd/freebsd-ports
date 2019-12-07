@@ -4,11 +4,6 @@ In file included from offline_compiler/utilities/linux/safety_caller_linux.cpp:1
 offline_compiler/utilities/linux/safety_guard_linux.h:36:25: error: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int' [-Werror,-Wshorten-64-to-32]
         backtraceSize = backtrace(addresses, callstackDepth);
                       ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-core/unit_tests/helpers/memory_management.cpp:113:46: error:
-      implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int'
-      [-Werror,-Wshorten-64-to-32]
-  ...= logTraces ? backtrace(eventAllocation.callstack, AllocationEvent::CallStackSize) : 0;
-     ~             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ld: error: undefined symbol: backtrace
 >>> referenced by safety_caller_linux.cpp
@@ -16,39 +11,6 @@ ld: error: undefined symbol: backtrace
 ld: error: undefined symbol: backtrace_symbols
 >>> referenced by safety_caller_linux.cpp
 >>>               CMakeFiles/ocloc.dir/utilities/linux/safety_caller_linux.cpp.o:(SafetyGuardLinux::sigAction(int, __siginfo*, void*))
-
-ld: error: undefined symbol: backtrace_symbols
->>> referenced by memory_management.cpp
->>>               CMakeFiles/elflib_tests.dir/__/__/core/unit_tests/helpers/memory_management.cpp.o:(MemoryManagement::printCallStack(MemoryManagement::AllocationEvent const&))
-
-ld: error: undefined symbol: backtrace
->>> referenced by memory_management.cpp
->>>               CMakeFiles/elflib_tests.dir/__/__/core/unit_tests/helpers/memory_management.cpp.o:(void* MemoryManagement::allocate<(MemoryManagement::AllocationEvent::EventType)1, (MemoryManagement::AllocationEvent::EventType)2>(unsigned long))
->>> referenced by memory_management.cpp
->>>               CMakeFiles/elflib_tests.dir/__/__/core/unit_tests/helpers/memory_management.cpp.o:(void* MemoryManagement::allocate<(MemoryManagement::AllocationEvent::EventType)3, (MemoryManagement::AllocationEvent::EventType)4>(unsigned long, std::nothrow_t const&))
->>> referenced by memory_management.cpp
->>>               CMakeFiles/elflib_tests.dir/__/__/core/unit_tests/helpers/memory_management.cpp.o:(void* MemoryManagement::allocate<(MemoryManagement::AllocationEvent::EventType)5, (MemoryManagement::AllocationEvent::EventType)6>(unsigned long))
->>> referenced by memory_management.cpp
->>>               CMakeFiles/elflib_tests.dir/__/__/core/unit_tests/helpers/memory_management.cpp.o:(void* MemoryManagement::allocate<(MemoryManagement::AllocationEvent::EventType)7, (MemoryManagement::AllocationEvent::EventType)8>(unsigned long, std::nothrow_t const&))
->>> referenced by memory_management.cpp
->>>               CMakeFiles/elflib_tests.dir/__/__/core/unit_tests/helpers/memory_management.cpp.o:(void MemoryManagement::deallocate<(MemoryManagement::AllocationEvent::EventType)9>(void*))
->>> referenced by memory_management.cpp
->>>               CMakeFiles/elflib_tests.dir/__/__/core/unit_tests/helpers/memory_management.cpp.o:(void MemoryManagement::deallocate<(MemoryManagement::AllocationEvent::EventType)10>(void*))
-
-ld: error: undefined symbol: backtrace
->>> referenced by safety_guard_caller_linux.cpp
->>>               CMakeFiles/ocloc_segfault_test.dir/linux/safety_guard_caller_linux.cpp.o:(SafetyGuardLinux::sigAction(int, __siginfo*, void*))
-
-ld: error: undefined symbol: backtrace_symbols
->>> referenced by safety_guard_caller_linux.cpp
->>>               CMakeFiles/ocloc_segfault_test.dir/linux/safety_guard_caller_linux.cpp.o:(SafetyGuardLinux::sigAction(int, __siginfo*, void*))
-
-ld: error: undefined symbol: backtrace
->>> referenced by safety_caller_linux.cpp
->>>               CMakeFiles/ocloc_tests.dir/__/__/offline_compiler/utilities/linux/safety_caller_linux.cpp.o:(SafetyGuardLinux::sigAction(int, __siginfo*, void*))
-ld: error: undefined symbol: backtrace_symbols
->>> referenced by safety_caller_linux.cpp
->>>               CMakeFiles/ocloc_tests.dir/__/__/offline_compiler/utilities/linux/safety_caller_linux.cpp.o:(SafetyGuardLinux::sigAction(int, __siginfo*, void*))
 
 --- offline_compiler/utilities/linux/safety_guard_linux.h.orig	2019-11-22 15:41:47 UTC
 +++ offline_compiler/utilities/linux/safety_guard_linux.h
@@ -61,35 +23,6 @@ ld: error: undefined symbol: backtrace_symbols
          callstack = backtrace_symbols(addresses, backtraceSize);
  
          for (int i = 0; i < backtraceSize; ++i) {
---- core/unit_tests/helpers/memory_management.cpp.orig	2019-11-22 15:41:47 UTC
-+++ core/unit_tests/helpers/memory_management.cpp
-@@ -110,7 +110,7 @@ static void *allocate(size_t size) {
-         eventAllocation.address = p;
-         eventAllocation.event = typeValid;
- #if defined(__linux__)
--        eventAllocation.frames = logTraces ? backtrace(eventAllocation.callstack, AllocationEvent::CallStackSize) : 0;
-+        eventAllocation.frames = logTraces ? (int)backtrace(eventAllocation.callstack, AllocationEvent::CallStackSize) : 0;
- #elif defined(_WIN32)
-         eventAllocation.frames = logTraces ? CaptureStackBackTrace(0, AllocationEvent::CallStackSize, eventAllocation.callstack, NULL) : 0;
- #else
-@@ -162,7 +162,7 @@ static void *allocate(size_t size, const std::nothrow_
-         eventAllocation.address = p;
-         eventAllocation.size = size;
- #if defined(__linux__)
--        eventAllocation.frames = logTraces ? backtrace(eventAllocation.callstack, AllocationEvent::CallStackSize) : 0;
-+        eventAllocation.frames = logTraces ? (int)backtrace(eventAllocation.callstack, AllocationEvent::CallStackSize) : 0;
- #elif defined(_WIN32)
-         eventAllocation.frames = logTraces ? CaptureStackBackTrace(0, AllocationEvent::CallStackSize, eventAllocation.callstack, NULL) : 0;
- #else
-@@ -207,7 +207,7 @@ static void deallocate(void *p) {
-             eventDeallocation.address = p;
-             eventDeallocation.size = -1;
- #if defined(__linux__)
--            eventDeallocation.frames = logTraces ? backtrace(eventDeallocation.callstack, AllocationEvent::CallStackSize) : 0;
-+            eventDeallocation.frames = logTraces ? (int)backtrace(eventDeallocation.callstack, AllocationEvent::CallStackSize) : 0;
- #elif defined(_WIN32)
-             eventDeallocation.frames = logTraces ? CaptureStackBackTrace(0, AllocationEvent::CallStackSize, eventDeallocation.callstack, NULL) : 0;
- #else
 --- offline_compiler/CMakeLists.txt.orig	2019-11-29 14:23:34 UTC
 +++ offline_compiler/CMakeLists.txt
 @@ -124,6 +124,9 @@ endif()
@@ -102,39 +35,3 @@ ld: error: undefined symbol: backtrace_symbols
  endif()
  
  target_link_libraries(ocloc elflib)
---- unit_tests/elflib/CMakeLists.txt.orig	2019-11-29 14:23:34 UTC
-+++ unit_tests/elflib/CMakeLists.txt
-@@ -21,6 +21,9 @@ set_property(TARGET elflib_tests APPEND_STRING PROPERT
- 
- if(UNIX)
-   target_link_libraries(elflib_tests ${IGDRCL_EXTRA_LIBS})
-+  if(CMAKE_SYSTEM_NAME MATCHES "DragonFly|FreeBSD|NetBSD|OpenBSD")
-+    target_link_libraries(elflib_tests execinfo)
-+  endif()
- endif()
- 
- add_custom_target(run_elflib_tests ALL DEPENDS unit_tests elflib_tests)
---- unit_tests/offline_compiler/segfault_test/CMakeLists.txt.orig	2019-11-29 14:23:34 UTC
-+++ unit_tests/offline_compiler/segfault_test/CMakeLists.txt
-@@ -39,6 +39,9 @@ if(MSVC)
- endif()
- if(UNIX)
-   target_link_libraries(ocloc_segfault_test dl pthread)
-+  if(CMAKE_SYSTEM_NAME MATCHES "DragonFly|FreeBSD|NetBSD|OpenBSD")
-+    target_link_libraries(ocloc_segfault_test execinfo)
-+  endif()
- endif()
- 
- set(CLOC_SEGFAULT_TEST_INCLUDES
---- unit_tests/offline_compiler/CMakeLists.txt.orig	2019-11-29 14:23:34 UTC
-+++ unit_tests/offline_compiler/CMakeLists.txt
-@@ -86,6 +86,9 @@ endif()
- 
- if(UNIX)
-   target_link_libraries(ocloc_tests dl pthread)
-+  if(CMAKE_SYSTEM_NAME MATCHES "DragonFly|FreeBSD|NetBSD|OpenBSD")
-+    target_link_libraries(ocloc_tests execinfo)
-+  endif()
- endif()
- 
- get_property(CLOC_FOLDER TARGET ocloc PROPERTY FOLDER)

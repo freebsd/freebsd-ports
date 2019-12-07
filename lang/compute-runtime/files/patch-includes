@@ -11,15 +11,6 @@ runtime/tbx/tbx_sockets_imp.cpp:107:9: error: unknown type name 'sockaddr_in'; d
 struct sockaddr {
        ^
 
-unit_tests/main.cpp:116:18: error:
-      variable has incomplete type 'struct sigaction'
-struct sigaction oldSigAbrt;
-                 ^
-unit_tests/main.cpp:116:8: note:
-      forward declaration of 'sigaction'
-struct sigaction oldSigAbrt;
-       ^
-
 --- runtime/tbx/tbx_sockets_imp.cpp.orig	2019-11-22 15:41:47 UTC
 +++ runtime/tbx/tbx_sockets_imp.cpp
 @@ -18,6 +18,7 @@ typedef int socklen_t;
@@ -30,16 +21,3 @@ struct sigaction oldSigAbrt;
  #include <stdlib.h>
  #include <string.h>
  #include <unistd.h>
---- unit_tests/main.cpp.orig	2019-11-22 15:41:47 UTC
-+++ unit_tests/main.cpp
-@@ -32,6 +32,10 @@
- #include <sstream>
- #include <thread>
- 
-+#ifndef _WIN32
-+#include <signal.h>
-+#endif
-+
- #ifdef WIN32
- const char *fSeparator = "\\";
- #else
