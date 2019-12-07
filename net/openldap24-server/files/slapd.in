@@ -110,6 +110,14 @@ start_precmd()
     fi
     ;;
   esac
+  echo -n "Performing sanity check on slap configuration: "
+
+  if ${command} -Tt >/dev/null 2>&1; then
+    echo "OK"
+  else
+    echo "FAILED"
+    return 1
+  fi
 }
 
 # adjust ownership of created unix sockets
