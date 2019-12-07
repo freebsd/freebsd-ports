@@ -1022,6 +1022,7 @@
     SUBDIR += py-cjdns
     SUBDIR += py-cloudflare-scrape
     SUBDIR += py-cloudflare-scrape-js2py
+    SUBDIR += py-cloudscraper
     SUBDIR += py-coherence
     SUBDIR += py-confluent-kafka
     SUBDIR += py-cymruwhois

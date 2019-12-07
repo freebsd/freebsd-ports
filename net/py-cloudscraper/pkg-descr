@@ -1,0 +1,14 @@
+A simple Python module to bypass Cloudflare's anti-bot page (also known as "I'm
+Under Attack Mode", or IUAM), implemented with Requests. Cloudflare changes
+their techniques periodically, so I will update this repo frequently.
+
+This can be useful if you wish to scrape or crawl a website protected with
+Cloudflare. Cloudflare's anti-bot page currently just checks if the client
+supports Javascript, though they may add additional techniques in the future.
+
+Due to Cloudflare continually changing and hardening their protection page,
+cloudscraper requires a JavaScript Engine/interpreter to solve Javascript
+challenges. This allows the script to easily impersonate a regular web browser
+without explicitly deobfuscating and parsing Cloudflare's Javascript.
+
+WWW: https://github.com/VeNoMouS/cloudscraper
