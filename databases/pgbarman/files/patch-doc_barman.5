@@ -1,4 +1,4 @@
---- doc/barman.5.orig	2019-05-14 16:37:28 UTC
+--- doc/barman.5.orig	2019-12-02 10:19:28 UTC
 +++ doc/barman.5
 @@ -17,7 +17,7 @@ The system-level Barman configuration file is located 
  .IP
@@ -29,8 +29,8 @@
 +\f[C].conf\f[R] file inside the \f[C]%%PREFIX%%/etc/barman.d\f[R] folder.
  .SH OPTIONS
  .TP
- .B active
-@@ -623,7 +623,7 @@ Here is an example of configuration file:
+ active
+@@ -632,7 +632,7 @@ Here is an example of configuration file:
  \f[C]
  [barman]
  ; Main directory
@@ -39,7 +39,7 @@
  
  ; System user
  barman_user = barman
-@@ -643,13 +643,13 @@ reuse_backup = link
+@@ -652,13 +652,13 @@ reuse_backup = link
  description =  \[dq]Main PostgreSQL Database\[dq]
  
  ; SSH options
