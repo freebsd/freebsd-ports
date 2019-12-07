@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icdiff
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.5
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc
 
