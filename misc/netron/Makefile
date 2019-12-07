@@ -2,7 +2,7 @@
 
 PORTNAME=	netron
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.7
+DISTVERSION=	3.6.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	LOCAL/yuri/:js
 DISTFILES=	netron-${DISTVERSION}-node_modules.tgz:js
@@ -25,7 +25,16 @@ PLIST_SUB=	PYTHON_CPYTHON=cpython-${PYTHON_VER:S/.//}
 post-extract:
 	@${RLN} ${WRKDIR}/node_modules ${WRKSRC}/node_modules
 
-regenerate-node_modules-distfile: # requires npm installed by www/npm
+#
+# To update the netron-${DISTVERSION}-node_modules.tgz archive:
+# 1. Comment out the DISTFILES and post-extract lines
+# 2. Run 'make makesum regenerate-node_modules-distfile clean'
+# 3. Upload the archive
+# 4. Uncomment the lines from step #1
+# 5. Run 'make makesum'
+#
+
+regenerate-node_modules-distfile: patch # requires npm installed by www/npm
 	@${MAKE} clean patch && \
 	cd ${WRKSRC} && \
 	${RM} -r node_modules && \
