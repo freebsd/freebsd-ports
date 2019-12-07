@@ -8484,6 +8484,8 @@
 %%WWWDIR%%/doc/ci/docker/using_kaniko.md
 %%WWWDIR%%/doc/ci/enable_or_disable_ci.md
 %%WWWDIR%%/doc/ci/environments.md
+%%WWWDIR%%/doc/ci/environments/environments_dashboard.md
+%%WWWDIR%%/doc/ci/environments/img/environments_dashboard_v12_5.png
 %%WWWDIR%%/doc/ci/environments/protected_environments.md
 %%WWWDIR%%/doc/ci/examples/README.md
 %%WWWDIR%%/doc/ci/examples/artifactory_and_gitlab/index.md
@@ -11342,6 +11344,7 @@
 %%WWWDIR%%/lib/gitlab/etag_caching/middleware.rb
 %%WWWDIR%%/lib/gitlab/etag_caching/router.rb
 %%WWWDIR%%/lib/gitlab/etag_caching/store.rb
+%%WWWDIR%%/lib/gitlab/exception_log_formatter.rb
 %%WWWDIR%%/lib/gitlab/exclusive_lease.rb
 %%WWWDIR%%/lib/gitlab/exclusive_lease_helpers.rb
 %%WWWDIR%%/lib/gitlab/experimentation.rb
