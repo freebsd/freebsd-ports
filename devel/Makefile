@@ -15,6 +15,7 @@
     SUBDIR += R-cran-R6
     SUBDIR += R-cran-RUnit
     SUBDIR += R-cran-Rcpp
+    SUBDIR += R-cran-RcppProgress
     SUBDIR += R-cran-Rdpack
     SUBDIR += R-cran-abind
     SUBDIR += R-cran-bindr
