@@ -2,8 +2,8 @@ bin/Mapper
 man/man1/Mapper.1.gz
 share/applications/Mapper.desktop
 %%DOCSDIR%%/3rd-party/qtsingleapplication.txt
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/Mapper 0.9.0 Manual.qch
-%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/Mapper 0.9.0 Manual.qhc
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/Mapper 0.9.1 Manual.qch
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/Mapper 0.9.1 Manual.qhc
 %%DOCSDIR%%/common-licenses/GPL-3.txt
 %%DOCSDIR%%/licensing.html
 share/icons/hicolor/128x128/apps/Mapper.png
@@ -38,26 +38,27 @@ share/mime/packages/openorienteering-mapper.xml
 %%DATADIR%%/symbol sets/10000/Course_Design_10000.omap
 %%DATADIR%%/symbol sets/10000/ISMTBOM_10000.omap
 %%DATADIR%%/symbol sets/10000/ISOM 2017-2_10000.omap
-%%DATADIR%%/symbol sets/10000/ISOM2000_10000.omap
-%%DATADIR%%/symbol sets/10000/ISSkiOM_10000.omap
+%%DATADIR%%/symbol sets/10000/ISSkiOM 2019_10000.omap
+%%DATADIR%%/symbol sets/12500/ISSkiOM 2019_12500.omap
 %%DATADIR%%/symbol sets/15000/Course_Design_15000.omap
 %%DATADIR%%/symbol sets/15000/ISMTBOM_15000.omap
 %%DATADIR%%/symbol sets/15000/ISOM 2017-2_15000.omap
-%%DATADIR%%/symbol sets/15000/ISOM2000_15000.omap
-%%DATADIR%%/symbol sets/15000/ISSkiOM_15000.omap
+%%DATADIR%%/symbol sets/15000/ISSkiOM 2019_15000.omap
 %%DATADIR%%/symbol sets/20000/ISMTBOM_20000.omap
 %%DATADIR%%/symbol sets/4000/Course_Design_4000.omap
 %%DATADIR%%/symbol sets/4000/ISSOM_4000.omap
 %%DATADIR%%/symbol sets/5000/Course_Design_5000.omap
 %%DATADIR%%/symbol sets/5000/ISMTBOM_5000.omap
 %%DATADIR%%/symbol sets/5000/ISSOM_5000.omap
-%%DATADIR%%/symbol sets/5000/ISSkiOM_5000.omap
+%%DATADIR%%/symbol sets/5000/ISSkiOM 2019_5000.omap
 %%DATADIR%%/symbol sets/7500/ISMTBOM_7500.omap
+%%DATADIR%%/symbol sets/7500/ISSkiOM 2019_7500.omap
+%%DATADIR%%/symbol sets/ISOM 2017-2-ISSkiOM 2019.crt
 %%DATADIR%%/symbol sets/ISOM2000-ISOM 2017-2.crt
 %%DATADIR%%/symbol sets/ISOM2000-ISSOM.crt
 %%DATADIR%%/symbol sets/OSM-ISOM 2017-2.crt
-%%DATADIR%%/symbol sets/OSM-ISOM2000.crt
 %%DATADIR%%/symbol sets/OSM-ISSOM.crt
+%%DATADIR%%/symbol sets/OSM-ISSkiOM 2019.crt
 %%NLS%%%%DATADIR%%/translations/OpenOrienteering_cs.qm
 %%NLS%%%%DATADIR%%/translations/OpenOrienteering_da.qm
 %%NLS%%%%DATADIR%%/translations/OpenOrienteering_de.qm

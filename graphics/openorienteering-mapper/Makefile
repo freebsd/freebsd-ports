@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openorienteering-mapper
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics geography
 
