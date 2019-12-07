@@ -284,7 +284,6 @@ nim/compiler/cmdlinehelper.nim
 nim/compiler/commands.nim
 nim/compiler/condsyms.nim
 nim/compiler/configuration.nim
-nim/compiler/cursors.nim
 nim/compiler/debuginfo.nim
 nim/compiler/depends.nim
 nim/compiler/dfa.nim
