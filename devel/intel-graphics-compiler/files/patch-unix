@@ -1,4 +1,4 @@
-Relax recent Linux checks for the code works on any non-Windows platform.
+Relax Linux checks for the code works on any non-Windows platform.
 
 CMake Error at IGC/CMakeLists.txt:1974 (message):
   IGC_OPTION__ARCHITECTURE_TARGET: Target architecture is not specified and
