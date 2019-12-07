@@ -3,6 +3,7 @@
 
 PORTNAME=	openid_connect
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ COMMENT=	OpenID Connect Server & Client Library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activemodel5>=0:databases/rubygem-activemodel5 \
+RUN_DEPENDS=	rubygem-activemodel52>=0:databases/rubygem-activemodel52 \
 		rubygem-attr_required>=1.0.0:devel/rubygem-attr_required \
 		rubygem-json-jwt>=1.5.0:www/rubygem-json-jwt \
 		rubygem-rack-oauth2>=1.6.1:security/rubygem-rack-oauth2 \
