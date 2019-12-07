@@ -3,7 +3,7 @@
 
 PORTNAME=	python
 PORTVERSION=	${PYTHON_PORTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -17,7 +17,8 @@ LICENSE=	PSFL
 
 # Resolve sinpi name clash with libm (IEEE-754 violation)
 PATCH_SITES=	https://github.com/python/cpython/commit/
-PATCHFILES=	f57cd8288dbe6aba99c057f37ad6d58f8db75350.patch:-p1
+PATCHFILES=	f57cd8288dbe6aba99c057f37ad6d58f8db75350.patch:-p1 \
+		f9c01a16dae8aa15d264a1937fb589e8598d1c88.patch:-p1
 
 USES=		cpe ncurses pathfix pkgconfig readline:port shebangfix ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
