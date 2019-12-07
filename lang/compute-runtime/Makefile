@@ -20,25 +20,17 @@ USES=		cmake:noninja compiler:c++14-lang pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	intel
+CMAKE_ON=	SKIP_ALL_ULT
 CMAKE_ARGS=	-DNEO_DRIVER_VERSION:STRING="${DISTVERSIONFULL}"
 PLIST_FILES=	etc/OpenCL/vendors/intel.icd \
 		bin/ocloc \
 		lib/intel-opencl/libigdrcl.so
-
-OPTIONS_DEFINE=	TEST
-
-# XXX Unbundle googletest
-TEST_CMAKE_BOOL_OFF=	SKIP_ALL_ULT
-TEST_BROKEN=		many tests fail
 
 post-patch:
 	@${REINPLACE_CMD} -e '/-Werror/d' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/defaults/!s,/etc",${PREFIX}&,' \
 		${WRKSRC}/package.cmake
-# XXX libexecinfo backtraces are incomplete
-	@${REINPLACE_CMD} -e 's/SegFault/DISABLED_&/' \
-		${WRKSRC}/unit_tests/offline_compiler/segfault_test/main.cpp
 
 post-install:
 # install/strip has no effect on install(FILES), so strip manually
