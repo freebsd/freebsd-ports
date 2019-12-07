@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Navigate a mech through a 3D world and fire at enemies
 
-USES=		gl gmake openal:al,alut sdl
+USES=		compiler:c++11-lang gl gmake openal:al,alut sdl
 USE_GL=		gl glu
 USE_SDL=	sdl
 LLD_UNSAFE=	yes
