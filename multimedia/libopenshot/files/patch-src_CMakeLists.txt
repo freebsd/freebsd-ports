@@ -1,19 +1,34 @@
---- src/CMakeLists.txt.orig	2019-05-08 19:16:50 UTC
+--- src/CMakeLists.txt.orig	2019-11-04 12:14:04 UTC
 +++ src/CMakeLists.txt
-@@ -45,6 +45,8 @@ IF (APPLE)
- 	SET(JUCE_PLATFORM_SPECIFIC_LIBRARIES "-framework Carbon -framework Cocoa -framework CoreFoundation -framework CoreAudio -framework CoreMidi -framework IOKit -framework AGL -framework AudioToolbox -framework QuartzCore -lobjc -framework Accelerate")
- ENDIF(APPLE)
+@@ -340,6 +340,11 @@ if (TARGET cppzmq)
+ endif()
+ 
  
 +find_library(EXECINFO_LIBRARY NAMES execinfo)
++if(NOT EXECINFO_LIBRARY)
++	message(FATAL_ERROR "${EXECINFO_LIBRARY}")
++endif(NOT EXECINFO_LIBRARY)
 +
- ################ IMAGE MAGICK ##################
- # Set the Quantum Depth that ImageMagick was built with (default to 16 bits)
- IF (MAGICKCORE_QUANTUM_DEPTH)
-@@ -312,6 +314,7 @@ SET ( REQUIRED_LIBRARIES
- 		${PROFILER}
- 		${JSONCPP_LIBRARY}
- 		${ZMQ_LIBRARIES}
-+		${EXECINFO_LIBRARY}
- 		)
+ ###############  LINK LIBRARY  #################
+ SET ( REQUIRED_LIBRARIES
+ 		${LIBOPENSHOT_AUDIO_LIBRARIES}
+@@ -386,9 +391,11 @@ target_compile_definitions(openshot-example PRIVATE
  
- IF (AVCODEC_FOUND)
+ # Link test executable to the new library
+ target_link_libraries(openshot-example openshot)
++target_link_libraries(openshot-example ${EXECINFO_LIBRARY})
+ 
+ add_executable(openshot-html-test examples/ExampleHtml.cpp)
+ target_link_libraries(openshot-html-test openshot Qt5::Gui)
++target_link_libraries(openshot-html-test ${EXECINFO_LIBRARY})
+ 
+ ############### PLAYER EXECUTABLE ################
+ # Create test executable
+@@ -396,6 +403,7 @@ add_executable(openshot-player Qt/demo/main.cpp)
+ 
+ # Link test executable to the new library
+ target_link_libraries(openshot-player openshot)
++target_link_libraries(openshot-player ${EXECINFO_LIBRARY})
+ 
+ ############### TEST BLACKMAGIC CAPTURE APP ################
+ IF (BLACKMAGIC_FOUND)

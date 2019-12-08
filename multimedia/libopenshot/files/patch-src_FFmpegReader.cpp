@@ -1,6 +1,6 @@
---- src/FFmpegReader.cpp.orig	2019-05-08 19:16:50 UTC
+--- src/FFmpegReader.cpp.orig	2019-11-04 12:14:04 UTC
 +++ src/FFmpegReader.cpp
-@@ -159,7 +159,7 @@ static enum AVPixelFormat get_hw_dec_format(AVCodecCon
+@@ -162,7 +162,7 @@ static enum AVPixelFormat get_hw_dec_format(AVCodecCon
  
  	for (p = pix_fmts; *p != AV_PIX_FMT_NONE; p++) {
  		switch (*p) {
@@ -9,7 +9,7 @@
  			// Linux pix formats
  			case AV_PIX_FMT_VAAPI:
  				hw_de_av_pix_fmt_global = AV_PIX_FMT_VAAPI;
-@@ -312,7 +312,7 @@ void FFmpegReader::Open() {
+@@ -315,7 +315,7 @@ void FFmpegReader::Open() {
  					pCodecCtx->get_format = get_hw_dec_format;
  
  					if (adapter_num < 3 && adapter_num >=0) {
@@ -18,7 +18,7 @@
  						snprintf(adapter,sizeof(adapter),"/dev/dri/renderD%d", adapter_num+128);
  						adapter_ptr = adapter;
  						i_decoder_hw = openshot::Settings::Instance()->HARDWARE_DECODER;
-@@ -375,11 +375,13 @@ void FFmpegReader::Open() {
+@@ -378,11 +378,13 @@ void FFmpegReader::Open() {
  					}
  
  					// Check if it is there and writable
@@ -32,4 +32,4 @@
 +#else
  					if( adapter_ptr != NULL ) {
  #endif
- 						ZmqLogger::Instance()->AppendDebugMethod("Decode Device present using device", "", -1, "", -1, "", -1, "", -1, "", -1, "", -1);
+ 						ZmqLogger::Instance()->AppendDebugMethod("Decode Device present using device");
