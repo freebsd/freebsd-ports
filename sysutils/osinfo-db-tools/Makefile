@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osinfo-db-tools
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://releases.pagure.org/libosinfo/
 
@@ -15,14 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup
 
-USES=		gettext gmake gnome libarchive pkgconfig
+USES=		gettext gmake gnome libarchive pkgconfig tar:xz meson
 USE_GNOME=	glib20 intltool libxml2 libxslt
-
-GNU_CONFIGURE=	yes
-
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
-
-NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>
