@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	zopfli
-DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.0.3
+PORTVERSION=	1.0.3
+DISTVERSIONPREFIX=	zopfli-
+PORTREVISION=	1
 CATEGORIES=	archivers
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Zopfli Compression Algorithm
 
 LICENSE=	APACHE20
@@ -17,29 +18,23 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 
-ALL_TARGET=	${PORTNAME} ${PORTNAME}png \
-		lib${PORTNAME} lib${PORTNAME}png
-MAKE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS} ${LDFLAGS}" \
-		CXXFLAGS="${CXXFLAGS}"
-CFLAGS+=	-fPIC # XXX Convert into an implicit rule
-LDFLAGS+=	-lm
+ALL_TARGET=	libzopfli libzopfli.a libzopflipng libzopflipng.a zopfli zopflipng
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_UNSAFE=	yes
-
-PLIST_SUB=	VERSION=${DISTVERSION}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 do-install:
-.for f in ${PORTNAME} ${PORTNAME}png
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
-.endfor
-.for f in lib${PORTNAME}.so.${DISTVERSION} lib${PORTNAME}png.so.${DISTVERSION}
-	${INSTALL_LIB} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/lib
-	${LN} -fs ${f} ${STAGEDIR}${PREFIX}/lib/${f:R:R}
-	${LN} -fs ${f:R:R} ${STAGEDIR}${PREFIX}/lib/${f:R:R:R}
-.endfor
-	(cd ${WRKSRC}/src && ${COPYTREE_SHARE} \
-		"zopfli zopflipng" ${STAGEDIR}${PREFIX}/include \
-		"-name *.h")
+	${INSTALL_PROGRAM} ${WRKSRC}/zopfli ${WRKSRC}/zopflipng ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/zopfli ${STAGEDIR}${PREFIX}/include/zopflipng/lodepng
+	${INSTALL_DATA} ${WRKSRC}/src/zopfli/*.h ${STAGEDIR}${PREFIX}/include/zopfli
+	${INSTALL_DATA} ${WRKSRC}/src/zopflipng/*.h ${STAGEDIR}${PREFIX}/include/zopflipng
+	${INSTALL_DATA} ${WRKSRC}/src/zopflipng/lodepng/*.h ${STAGEDIR}${PREFIX}/include/zopflipng/lodepng
+	${INSTALL_DATA} ${WRKSRC}/libzopfli.a ${WRKSRC}/libzopflipng.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libzopfli.so.${PORTVERSION} ${WRKSRC}/libzopflipng.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
+	${LN} -s libzopfli.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libzopfli.so
+	${LN} -s libzopfli.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libzopfli.so.${PORTVERSION:R:R}
+	${LN} -s libzopflipng.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libzopflipng.so
+	${LN} -s libzopflipng.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libzopflipng.so.${PORTVERSION:R:R}
 
 .include <bsd.port.mk>
