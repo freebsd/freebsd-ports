@@ -3,6 +3,7 @@
 
 PORTNAME=	yfklog
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/yfklog/ \
 		LOCAL/db
@@ -19,6 +20,8 @@ RUN_DEPENDS=	p5-Curses>=0:devel/p5-Curses \
 		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 		p5-DBI>=0:databases/p5-DBI \
 		hamlib>=0:comms/hamlib \
+		p5-libwww>=0:www/p5-libwww \
+		p5-Net-Telnet>=0:net/p5-Net-Telnet \
 		p5-Net-FTP-File>=0:net/p5-Net-FTP-File
 
 USES=		perl5
