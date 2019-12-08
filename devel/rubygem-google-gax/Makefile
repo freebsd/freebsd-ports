@@ -3,6 +3,7 @@
 
 PORTNAME=	google-gax
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,12 +12,10 @@ COMMENT=	Google API Extensions
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		conflicting run depends, rubygem-grpc124-1.24.0 conflicts with rubygem-grpc-1.24.0
-
 RUN_DEPENDS=	rubygem-google-protobuf>=3.9<4:devel/rubygem-google-protobuf \
 		rubygem-googleapis-common-protos>=1.3.9<2.0:devel/rubygem-googleapis-common-protos \
 		rubygem-googleauth>=0.9<1:security/rubygem-googleauth \
-		rubygem-grpc124>=1.24<2:net/rubygem-grpc124 \
+		rubygem-grpc>=1.24<2:net/rubygem-grpc \
 		rubygem-rly>=0.2.3<0.3:textproc/rubygem-rly
 
 USES=		gem
