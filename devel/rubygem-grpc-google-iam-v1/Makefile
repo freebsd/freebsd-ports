@@ -3,6 +3,7 @@
 
 PORTNAME=	grpc-google-iam-v1
 PORTVERSION=	0.6.9
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,10 +12,8 @@ COMMENT=	Google IAM gRPC client library
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		conflicting run depends, rubygem-grpc124-1.24.0 conflicts with rubygem-grpc-1.24.0
-
 RUN_DEPENDS=	rubygem-googleapis-common-protos>=1.3.1<2.0:devel/rubygem-googleapis-common-protos \
-		rubygem-grpc124>=1.0<2:net/rubygem-grpc124
+		rubygem-grpc>=1.0<2:net/rubygem-grpc
 
 USES=		gem
 USE_RUBY=	yes
