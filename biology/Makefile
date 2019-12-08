@@ -87,6 +87,7 @@
     SUBDIR += p5-Bio-Cluster
     SUBDIR += p5-Bio-Coordinate
     SUBDIR += p5-Bio-DB-EMBL
+    SUBDIR += p5-Bio-DB-NCBIHelper
     SUBDIR += p5-Bio-Das
     SUBDIR += p5-Bio-Das-Lite
     SUBDIR += p5-Bio-FeatureIO

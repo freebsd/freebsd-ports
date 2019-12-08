@@ -1,0 +1,6 @@
+Bio::DB::NCBIHelper provides a single place to setup some common methods for
+querying NCBI web databases. This module just centralizes the methods for
+constructing a URL for querying NCBI GenBank and NCBI GenPept and the common
+HTML stripping done in postprocess_data().
+
+WWW: https://metacpan.org/release/Bio-DB-NCBIHelper
