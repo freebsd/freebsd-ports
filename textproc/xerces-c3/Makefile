@@ -13,7 +13,7 @@ COMMENT=	Validating XML parser from the Apache XML Project
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe iconv libtool pathfix
+USES=		compiler cpe iconv libtool pathfix
 
 CONFIGURE_ARGS=	--enable-netaccessor-socket \
 		--enable-transcoder-iconv \
@@ -31,7 +31,7 @@ CPE_VENDOR=	apache
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:Mpowerpc*}
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 PLIST_SUB+=	MUTEXMGR="PosixMutexMgr"
 .else
 PLIST_SUB+=	MUTEXMGR="StdMutexMgr"
