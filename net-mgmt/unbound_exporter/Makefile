@@ -4,7 +4,7 @@
 PORTNAME=		unbound_exporter
 PORTVERSION=		0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		aduitsis@cpan.org
@@ -27,7 +27,7 @@ GH_TUPLE=		prometheus:client_golang:3fb53d:client_golang/vendor/github.com/prome
 			matttproud:golang_protobuf_extensions:c12348c:extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 			sirupsen:logrus:91da99d:logrus/vendor/github.com/Sirupsen/logrus \
 			golang:crypto:3d3f9f41:crypto/vendor/golang.org/x/crypto \
-			golang:sys:93218def:sys/vendor/golang.org/x/sys
+			golang:sys:33540a1f6037:sys/vendor/golang.org/x/sys
 
 GO_PKGNAME=		github.com/${GH_ACCOUNT}/${PORTNAME}
 
