@@ -251,6 +251,7 @@
     SUBDIR += transfig
     SUBDIR += trueprint
     SUBDIR += ttf2pt1
+    SUBDIR += ttfautohint
     SUBDIR += ttfquery
     SUBDIR += ttftot42
     SUBDIR += txtbdf2ps
