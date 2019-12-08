@@ -1,0 +1,16 @@
+--- src/CMakeLists.txt.orig	2019-10-24 07:05:50 UTC
++++ src/CMakeLists.txt
+@@ -26,8 +26,13 @@
+ 
+ 
+ ############### TEST EXECUTABLES ################
++find_library(EXECINFO_LIBRARY NAMES execinfo)
++if(NOT EXECINFO_LIBRARY)
++	message(FATAL_ERROR "${EXECINFO_LIBRARY}")
++endif(NOT EXECINFO_LIBRARY)
+ add_executable(openshot-audio-test-sound Main.cpp)
+ target_link_libraries(openshot-audio-test-sound openshot-audio)
++target_link_libraries(openshot-audio-test-sound ${EXECINFO_LIBRARY})
+ set_target_properties(openshot-audio-test-sound PROPERTIES
+ 	CXX_STANDARD 11
+ 	CXX_STANDARD_REQUIRED YES
