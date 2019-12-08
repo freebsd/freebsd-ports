@@ -1,40 +1,45 @@
-# Created by: loader <loader@freebsdmall.com>
 # $FreeBSD$
 
 PORTNAME=	jinput
-DISTVERSION=	20110801.r247
+DISTVERSION=	2.0.10
+PORTEPOCH=	1
 CATEGORIES=	games java
-MASTER_SITES=	LOCAL/loader
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	voidanix@420blaze.it
 COMMENT=	Java Game Controller API
 
-BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:games/jutils
-RUN_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:games/jutils
+LICENSE=	BSD2CLAUSE
 
-BROKEN_armv6=		fails to compile: build.xml: compilation failed
-BROKEN_armv7=		fails to compile: build.xml: compilation failed
+BROKEN_armv6=	fails to compile
+BROKEN_armv7=	fails to compile
 
-USES=		tar:bzip2
-USE_JAVA=	yes
-JAVA_OS=	native
-JAVA_VENDOR=	openjdk
-USE_ANT=	yes
-ALL_TARGET=	simple_linux
-NO_ARCH=	yes
+BUILD_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils \
+		mvn:devel/maven
+RUN_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}.jar
+# Using a fork because of maven dependencies
+USE_GITLAB=	yes
+GL_ACCOUNT=	voidanix
+GL_COMMIT=	bf22dd975bbba31f01895332255b63df376894e6
 
-post-patch:
-	@${LN} -sf ${JAVALIBDIR}/jutils/jutils.jar ${WRKSRC}/lib/
+USE_JAVA=	8+
+
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}/${PORTNAME}.jar
+PLIST_DIRS=	${JAVAJARDIR}/${PORTNAME}
+
+MAVEN_ARGS=	-Dmaven.antrun.skip -Dmaven.javadoc.skip -Dmaven.source.skip -Dmaven.test.skip -DskipTests -DskipITs
+MAVEN_REPO=	-Dmaven.repo.local=${WRKSRC}/repository
+
+pre-build:
+	${CP} ${JAVAJARDIR}/jutils/jutils.jar ${WRKSRC}/repository/net/java/jutils/jutils/1/jutils-1.jar
 
 do-build:
-	@(cd ${BUILD_WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${ANT} ${ALL_TARGET})
+	cd ${WRKSRC}; \
+		${SETENV} mvn -P windows,linux,osx,wintab ${MAVEN_REPO} ${MAVEN_ARGS} --offline package
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}.jar \
-		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/uberjar/target/${PORTNAME}-${PORTVERSION}-SNAPSHOT.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/${PORTNAME}.jar
 
 .include <bsd.port.mk>
