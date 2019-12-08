@@ -6,6 +6,8 @@ PORTVERSION=	2.1.5
 CATEGORIES=	graphics
 MASTER_SITES=	OSDN/${PORTNAME}/71988
 
+EXTRA_PATCHES=	${FILESDIR}/git-2564ee5:-p1
+
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	16-bit RGB full color painting application
 
