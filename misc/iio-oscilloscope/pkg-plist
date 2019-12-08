@@ -91,6 +91,8 @@ lib/osc/profiles/LTE5.ini
 lib/osc/profiles/PZSDR1_test.ini
 lib/osc/profiles/PZSDR2_2400TDD_test.ini
 lib/osc/profiles/PZSDR2_test.ini
+lib/osc/scpi.so
+lib/osc/spectrum_analyzer.so
 lib/osc/waveforms/10.txt
 lib/osc/waveforms/11.txt
 lib/osc/waveforms/1M_10M_nyq.txt
