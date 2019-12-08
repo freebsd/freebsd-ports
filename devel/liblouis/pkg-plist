@@ -49,6 +49,7 @@
 %%DATADIR%%/tables/cy-cy-g2.ctb
 %%DATADIR%%/tables/cy.tbl
 %%DATADIR%%/tables/da-dk-6miscChars.cti
+%%DATADIR%%/tables/da-dk-8miscChars.cti
 %%DATADIR%%/tables/da-dk.dis
 %%DATADIR%%/tables/da-dk-g08.ctb
 %%DATADIR%%/tables/da-dk-g16.ctb
@@ -256,6 +257,7 @@
 %%DATADIR%%/tables/nl_BE.tbl
 %%DATADIR%%/tables/nl-NL-g0.utb
 %%DATADIR%%/tables/nl-chardefs.uti
+%%DATADIR%%/tables/nl-comp8.utb
 %%DATADIR%%/tables/nl-g0.uti
 %%DATADIR%%/tables/nl.tbl
 %%DATADIR%%/tables/no-no-8dot-fallback-6dot-g0.utb
@@ -363,7 +365,6 @@
 bin/lou_allround
 bin/lou_checkhyphens
 bin/lou_checktable
-bin/lou_compare
 bin/lou_debug
 bin/lou_maketable
 bin/lou_maketable.d/export_chunked_words.py
@@ -384,8 +385,8 @@ include/liblouis/liblouis.h
 libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
-lib/liblouis.so.19
-lib/liblouis.so.19.0.0
+lib/liblouis.so.20
+lib/liblouis.so.20.0.0
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
