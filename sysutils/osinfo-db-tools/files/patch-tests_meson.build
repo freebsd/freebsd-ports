@@ -1,0 +1,11 @@
+--- tests/meson.build.orig	2019-12-08 07:18:10 UTC
++++ tests/meson.build
+@@ -9,7 +9,7 @@ test(
+ 
+ python = import('python')
+ 
+-python3 = python.find_installation('python3')
++python3 = python.find_installation('python3', required: false)
+ if python3.found()
+     tests = {
+         'export-import': 'test_osinfo_db_export_import.py',
