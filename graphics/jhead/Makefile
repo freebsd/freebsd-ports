@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jhead
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sentex.net/~mwandel/${PORTNAME}/ \
 		LOCAL/sunpoet
