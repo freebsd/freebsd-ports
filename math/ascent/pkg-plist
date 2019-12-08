@@ -20,10 +20,13 @@ include/ascent/integrators/RTAM4.h
 include/ascent/integrators_direct/Euler.h
 include/ascent/integrators_direct/RK4.h
 include/ascent/integrators_modular/Euler.h
+include/ascent/integrators_modular/Heun.h
 include/ascent/integrators_modular/Midpoint.h
 include/ascent/integrators_modular/ModularIntegrators.h
+include/ascent/integrators_modular/NCRK4.h
 include/ascent/integrators_modular/PC233.h
 include/ascent/integrators_modular/RK2.h
+include/ascent/integrators_modular/RK3.h
 include/ascent/integrators_modular/RK4.h
 include/ascent/modular/Link.h
 include/ascent/modular/Module.h
