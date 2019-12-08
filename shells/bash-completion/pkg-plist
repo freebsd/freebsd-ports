@@ -93,6 +93,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/bind
 %%DATADIR%%/completions/bk
 %%DATADIR%%/completions/brctl
+%%DATADIR%%/completions/bsdtar
 %%DATADIR%%/completions/btdownloadcurses.py
 %%DATADIR%%/completions/btdownloadgui.py
 %%DATADIR%%/completions/btdownloadheadless.py
@@ -101,6 +102,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/c++
 %%DATADIR%%/completions/cancel
 %%DATADIR%%/completions/cardctl
+%%DATADIR%%/completions/carton
 %%DATADIR%%/completions/cc
 %%DATADIR%%/completions/ccache
 %%DATADIR%%/completions/ccze
@@ -162,6 +164,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/dhclient
 %%DATADIR%%/completions/dict
 %%DATADIR%%/completions/display
+%%DATADIR%%/completions/dmypy
 %%DATADIR%%/completions/dnssec-keygen
 %%DATADIR%%/completions/dnsspoof
 %%DATADIR%%/completions/dot
@@ -271,6 +274,8 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/groupmod
 %%DATADIR%%/completions/growisofs
 %%DATADIR%%/completions/grpck
+%%DATADIR%%/completions/gssdp-discover
+%%DATADIR%%/completions/gtar
 %%DATADIR%%/completions/gzip
 %%DATADIR%%/completions/hciattach
 %%DATADIR%%/completions/hciconfig
@@ -298,6 +303,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/iftop
 %%DATADIR%%/completions/ifup
 %%DATADIR%%/completions/import
+%%DATADIR%%/completions/influx
 %%DATADIR%%/completions/info
 %%DATADIR%%/completions/inject
 %%DATADIR%%/completions/inotifywait
@@ -630,6 +636,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/sshfs
 %%DATADIR%%/completions/sshmitm
 %%DATADIR%%/completions/sshow
+%%DATADIR%%/completions/star
 %%DATADIR%%/completions/strace
 %%DATADIR%%/completions/stream
 %%DATADIR%%/completions/strings
@@ -695,6 +702,8 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/wget
 %%DATADIR%%/completions/whatis
 %%DATADIR%%/completions/wine
+%%DATADIR%%/completions/wine-development
+%%DATADIR%%/completions/wine-stable
 %%DATADIR%%/completions/withlist
 %%DATADIR%%/completions/wodim
 %%DATADIR%%/completions/wol
@@ -714,6 +723,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/xrandr
 %%DATADIR%%/completions/xrdb
 %%DATADIR%%/completions/xsltproc
+%%DATADIR%%/completions/xvfb-run
 %%DATADIR%%/completions/xvnc4viewer
 %%DATADIR%%/completions/xxd
 %%DATADIR%%/completions/xz
