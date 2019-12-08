@@ -2,7 +2,9 @@
 %%SITE_PERL%%/Bio/ASN1/EntrezGene/Indexer.pm
 %%SITE_PERL%%/Bio/ASN1/Sequence.pm
 %%SITE_PERL%%/Bio/ASN1/Sequence/Indexer.pm
+%%SITE_PERL%%/Bio/SeqIO/entrezgene.pm
 %%PERL5_MAN3%%/Bio::ASN1::EntrezGene.3.gz
 %%PERL5_MAN3%%/Bio::ASN1::EntrezGene::Indexer.3.gz
 %%PERL5_MAN3%%/Bio::ASN1::Sequence.3.gz
 %%PERL5_MAN3%%/Bio::ASN1::Sequence::Indexer.3.gz
+%%PERL5_MAN3%%/Bio::SeqIO::entrezgene.3.gz
