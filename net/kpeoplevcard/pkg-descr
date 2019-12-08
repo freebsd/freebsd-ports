@@ -1,0 +1,5 @@
+kpeoplevcard provides a datasource plugin for KPeople that reads vCard files
+from the local filesystem. It is currently used for KDE Connect and plasma-
+phonebook.
+
+WWW: https://github.com/KDE/kpeoplevcard
