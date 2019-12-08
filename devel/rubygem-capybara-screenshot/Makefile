@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	capybara-screenshot
-PORTVERSION=	1.0.23
+PORTVERSION=	1.0.24
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
