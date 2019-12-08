@@ -12,17 +12,16 @@ COMMENT=	Advanced CPU-based password recovery utility
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.txt
 
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	uses amd64 instructions
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashcat
 
-USE_GCC=	any
-
 USES=		gmake
-
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	uses amd64 instructions
+USE_GCC=	any
 
 ALL_TARGET=	posix64 posixXOP
 
