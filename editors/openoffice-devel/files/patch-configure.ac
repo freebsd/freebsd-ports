@@ -1,0 +1,11 @@
+--- configure.ac.orig	2019-11-07 11:05:12 UTC
++++ configure.ac
+@@ -2291,7 +2291,7 @@ AC_SUBST(COMNAME)
+ 
+ if test "$_os" = "FreeBSD"; then
+     FBSD_GCC_RPATH=
+-    if "$COM" = "GCC"; then
++    if test "$COM" = "GCC"; then
+         rpath=`$CC --print-file-name libstdc++.so`
+         rpath=`realpath $rpath`
+         rpath=`dirname $rpath`

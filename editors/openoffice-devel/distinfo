@@ -5,3 +5,7 @@ SHA256 (openoffice/ApacheOpenOffice.ext_sources.4.x.x.20150707.tar.gz) = 966a833
 SIZE (openoffice/ApacheOpenOffice.ext_sources.4.x.x.20150707.tar.gz) = 28957004
 SHA256 (openoffice/unowinreg.dll) = f563e522922133db9340b0306711c2d8767cc3481dd9e7d9b0d059906d12653c
 SIZE (openoffice/unowinreg.dll) = 6144
+SHA256 (openoffice/d6eef4b4cacb2183f2bf265a5a03a354-boost_1_55_0.tar.bz2) = fff00023dd79486d444c8e29922f4072e1d451fc5a4d2b6075852ead7f2b7b52
+SIZE (openoffice/d6eef4b4cacb2183f2bf265a5a03a354-boost_1_55_0.tar.bz2) = 58146647
+SHA256 (openoffice/d62650a6f908e85643e557a236ea989c-vigra1.6.0.tar.gz) = 1f188ac03a8aa4663223eca8c82f91a55293d066d67127082e29a7dba1a98c9f
+SIZE (openoffice/d62650a6f908e85643e557a236ea989c-vigra1.6.0.tar.gz) = 16525605
