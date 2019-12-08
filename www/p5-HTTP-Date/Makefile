@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-Date
-PORTVERSION=	6.04
+PORTVERSION=	6.05
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,4 +21,11 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 503000
+BUILD_DEPENDS+=	p5-Time-Local>=1.28:devel/p5-Time-Local
+RUN_DEPENDS+=	p5-Time-Local>=1.28:devel/p5-Time-Local
+.endif
+
+.include <bsd.port.post.mk>
