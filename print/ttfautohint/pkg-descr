@@ -1,0 +1,5 @@
+ttfautohint provides a 99% automated hinting process and a platform for finely
+hand-hinting the last 1%. It is ideal for web fonts and supports many scripts:
+Latin, Greek, Arabic, Devanagari, Hebrew, Khmer, Myanmar, Thai, and many more.
+
+WWW: https://www.freetype.org/ttfautohint/

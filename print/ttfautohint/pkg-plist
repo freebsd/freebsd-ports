@@ -1,0 +1,10 @@
+bin/ttfautohint
+include/ttfautohint-coverages.h
+include/ttfautohint-errors.h
+include/ttfautohint-scripts.h
+include/ttfautohint.h
+lib/libttfautohint.a
+lib/libttfautohint.so
+lib/libttfautohint.so.1
+lib/libttfautohint.so.1.0.2
+libdata/pkgconfig/ttfautohint.pc
