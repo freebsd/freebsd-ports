@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	loofah
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
