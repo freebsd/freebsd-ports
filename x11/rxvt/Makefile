@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low memory usage xterm replacement that supports color
 
+DEPRECATED=	Abandonware: stable release 2.6.4 / November 1, 2001 and noo maintainer
+EXPIRATION_DATE=	2020-03-16
+
 USES=		xorg
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
