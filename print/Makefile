@@ -198,6 +198,7 @@
     SUBDIR += py-rtf
     SUBDIR += py-stapler
     SUBDIR += py-trml2pdf
+    SUBDIR += py-ttfautohint-py
     SUBDIR += py-weasyprint
     SUBDIR += qpdf
     SUBDIR += qpdfview
