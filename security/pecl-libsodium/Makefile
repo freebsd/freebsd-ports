@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsodium
-PORTVERSION=	1.0.7
+PORTVERSION=	2.0.22
 CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,7 +12,10 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
-USES=		php:pecl
+USES=		localbase php:pecl
+
+#IGNORE_WITH_PHP=72 73 74
+PHP_MODNAME=	sodium
 
 PORTSCOUT=	limit:^1\.
 
