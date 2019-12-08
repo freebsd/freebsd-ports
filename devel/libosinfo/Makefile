@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosinfo
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.1
 CATEGORIES=	devel
 MASTER_SITES=	https://releases.pagure.org/libosinfo/
 
@@ -17,26 +17,25 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		osinfo-db-import:sysutils/osinfo-db-tools \
 		${LOCALBASE}/share/osinfo/VERSION:misc/osinfo-db
 
-USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix \
-		pkgconfig
+USES=		compiler:c11 gettext gmake gnome libtool pathfix \
+		pkgconfig tar:xz meson
 USE_GNOME=	glib20 libxml2 libxslt introspection:build intlhack
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_ARGS=	--disable-tests --disable-vala \
-		--with-usb-ids-path=${LOCALBASE}/share/usbids/usb.ids \
-		--with-pci-ids-path=${LOCALBASE}/share/pciids/pci.ids
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	-Denable-vala=disabled \
+			-Dwith-usb-ids-path=${LOCALBASE}/share/usbids/usb.ids \
+			-Dwith-pci-ids-path=${LOCALBASE}/share/pciids/pci.ids
 
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=yes
-
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=	nls
-
-SHLIB_VER=	${PORTVERSION:C/(^[0-9])\./0.\100/}
+SHLIB_VER=	0.1007.0
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
+
+OPTIONS_DEFINE=	GTKDOC
+OPTIONS_DEFAULT=	GTKDOC
+OPTIONS_SUB=	yes
+
+GTKDOC_DESC=	Build gtk-doc documentation
+GTKDOC_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+GTKDOC_MESON_TRUE=	enable-gtk-doc
 
 .include <bsd.port.mk>
