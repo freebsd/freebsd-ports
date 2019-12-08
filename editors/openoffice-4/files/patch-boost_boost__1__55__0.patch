@@ -1,0 +1,39 @@
+--- boost/boost_1_55_0.patch.orig	2019-08-14 17:37:07 UTC
++++ boost/boost_1_55_0.patch
+@@ -162,3 +162,36 @@
+          }
+  
+          ////////////////////////////////////////////////////////////////////////
++diff -ur misc/boost_1_55_0/boost/config/compiler/gcc.hpp misc/build/boost_1_55_0/boost/config/compiler/gcc.hpp
++--- misc/boost_1_55_0/boost/config/compiler/gcc.hpp	2013-09-17 09:55:51.000000000 -0700
+++++ misc/build/boost_1_55_0/boost/config/compiler/gcc.hpp
++@@ -137,14 +137,18 @@
++ 
++ // C++0x features in 4.3.n and later
++ //
++-#if (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ > 2)) && defined(__GXX_EXPERIMENTAL_CXX0X__)
+++#if ((__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ > 2)) && defined(__GXX_EXPERIMENTAL_CXX0X__)) || (__cplusplus >= 201103L)
++ // C++0x features are only enabled when -std=c++0x or -std=gnu++0x are
++ // passed on the command line, which in turn defines
++ // __GXX_EXPERIMENTAL_CXX0X__.
++ #  define BOOST_HAS_DECLTYPE
++ #  define BOOST_HAS_RVALUE_REFS
++ #  define BOOST_HAS_STATIC_ASSERT
++-#  define BOOST_HAS_VARIADIC_TMPL
+++#  if (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ > 4))
+++#    define BOOST_HAS_VARIADIC_TMPL
+++#  else
+++#    define BOOST_NO_CXX11_VARIADIC_TEMPLATES
+++#  endif
++ #else
++ #  define BOOST_NO_CXX11_DECLTYPE
++ #  define BOOST_NO_CXX11_FUNCTION_TEMPLATE_DEFAULT_ARGS
++@@ -153,7 +157,7 @@
++ 
++ // Variadic templates compiler:
++ //   http://www.generic-programming.org/~dgregor/cpp/variadic-templates.html
++-#  if defined(__VARIADIC_TEMPLATES) || (__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 4) && defined(__GXX_EXPERIMENTAL_CXX0X__))
+++#  if defined(__VARIADIC_TEMPLATES)
++ #    define BOOST_HAS_VARIADIC_TMPL
++ #  else
++ #    define BOOST_NO_CXX11_VARIADIC_TEMPLATES

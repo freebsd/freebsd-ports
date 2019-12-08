@@ -1,6 +1,6 @@
---- configure.in.orig	2015-10-09 07:11:14 UTC
+--- configure.in.orig	2019-11-12 05:10:21 UTC
 +++ configure.in
-@@ -369,11 +369,11 @@ AC_ARG_WITH(bundled-extension-blobs,
+@@ -367,11 +367,11 @@ AC_ARG_WITH(bundled-extension-blobs,
                            and comply with their distribution requirements by updating the
                            files LICENSE_aggregated and NOTICE_aggregated accordingly
  ],,)
@@ -17,7 +17,7 @@
  AC_ARG_ENABLE(bundled-dictionaries,
  [  --enable-bundled-dictionaries  Download dictionaries (spelling, hyphenation, thesaurus)
                             according to main/extensions.lst and bundle them. Make sure to
-@@ -1540,9 +1540,9 @@ else
+@@ -1538,9 +1538,9 @@ else
  fi
  AC_SUBST(BUNDLED_EXTENSION_BLOBS)
  
