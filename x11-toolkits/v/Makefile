@@ -8,6 +8,7 @@ CATEGORIES=	x11-toolkits devel graphics
 MASTER_SITES=	SF/${PORTNAME}gui/V%20GUI/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}a-patch${EXTRACT_SUFX}
+PKGNAMESUFFIX=	gui
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ GUI development framework for X11 and Microsoft Windows
