@@ -17,6 +17,4 @@ USES=		localbase php:pecl
 #IGNORE_WITH_PHP=72 73 74
 PHP_MODNAME=	sodium
 
-PORTSCOUT=	limit:^1\.
-
 .include <bsd.port.mk>
