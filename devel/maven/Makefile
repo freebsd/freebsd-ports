@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maven
-DISTVERSION=	3.6.1
-PORTREVISION=	1
+DISTVERSION=	3.6.3
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/maven/maven-3/${DISTVERSION}/binaries
 DISTNAME=	apache-maven-${DISTVERSION}-bin
