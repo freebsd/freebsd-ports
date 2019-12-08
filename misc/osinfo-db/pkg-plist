@@ -74,6 +74,7 @@ share/osinfo/os/alpinelinux.org/alpinelinux-3.8.xml
 share/osinfo/os/altlinux.org/alt-8.0.xml
 share/osinfo/os/altlinux.org/alt-8.1.xml
 share/osinfo/os/altlinux.org/alt-8.2.xml
+share/osinfo/os/altlinux.org/alt-9.0.xml
 share/osinfo/os/altlinux.org/alt-p8.starterkits.xml
 share/osinfo/os/altlinux.org/alt-p9.starterkits.xml
 share/osinfo/os/altlinux.org/alt-sisyphus.xml
@@ -88,6 +89,7 @@ share/osinfo/os/altlinux.org/altlinux-5.0.xml
 share/osinfo/os/altlinux.org/altlinux-6.0.xml
 share/osinfo/os/altlinux.org/altlinux-7.0.xml
 share/osinfo/os/android-x86.org/android-x86-8.1.xml
+share/osinfo/os/android-x86.org/android-x86-9.0.xml
 share/osinfo/os/apple.com/macosx-10.0.xml
 share/osinfo/os/apple.com/macosx-10.1.xml
 share/osinfo/os/apple.com/macosx-10.2.xml
@@ -453,6 +455,7 @@ share/osinfo/os/openbsd.org/openbsd-6.2.xml
 share/osinfo/os/openbsd.org/openbsd-6.3.xml
 share/osinfo/os/openbsd.org/openbsd-6.4.xml
 share/osinfo/os/openbsd.org/openbsd-6.5.xml
+share/osinfo/os/openbsd.org/openbsd-6.6.xml
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
 share/osinfo/os/opensuse.org/opensuse-11.0.xml
@@ -575,6 +578,7 @@ share/osinfo/os/redhat.com/rhel-7.6.xml
 share/osinfo/os/redhat.com/rhel-7.7.xml
 share/osinfo/os/redhat.com/rhel-8-unknown.xml
 share/osinfo/os/redhat.com/rhel-8.0.xml
+share/osinfo/os/redhat.com/rhel-8.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
@@ -699,6 +703,7 @@ share/osinfo/os/ubuntu.com/ubuntu-17.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-18.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-18.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-19.04.xml
+share/osinfo/os/ubuntu.com/ubuntu-19.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
