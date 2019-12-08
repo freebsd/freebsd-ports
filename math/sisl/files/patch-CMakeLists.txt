@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-12-08 17:10:19 UTC
++++ CMakeLists.txt
+@@ -16,7 +16,7 @@ INCLUDE_DIRECTORIES(
+ # Make the sisl library
+ 
+ FILE(GLOB sisl_SRCS src/*.c include/*.h)
+-ADD_LIBRARY(sisl ${sisl_SRCS})
++ADD_LIBRARY(sisl SHARED ${sisl_SRCS})
+ IF(CMAKE_COMPILER_IS_GNUCC)
+     TARGET_LINK_LIBRARIES(sisl m)
+ ENDIF(CMAKE_COMPILER_IS_GNUCC)

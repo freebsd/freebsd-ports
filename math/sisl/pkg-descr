@@ -1,0 +1,7 @@
+SISL is a comprehensive NURBS library for the modeling and
+interrogation of curves and surfaces. It is implemented in C.
+
+This software was written by the Geometry Group at SINTEF ICT,
+Department of Applied Mathematics.
+
+WWW: https://github.com/SINTEF-Geometry/SISL
