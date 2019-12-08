@@ -453,6 +453,7 @@
     SUBDIR += nginx-lite
     SUBDIR += nginx-naxsi
     SUBDIR += nginx-prometheus-exporter
+    SUBDIR += nginx-vts-exporter
     SUBDIR += nibbleblog
     SUBDIR += nift
     SUBDIR += node
