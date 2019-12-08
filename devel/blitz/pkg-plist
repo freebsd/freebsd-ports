@@ -3,6 +3,7 @@ include/blitz/array.cc
 include/blitz/array.h
 include/blitz/array/asexpr.cc
 include/blitz/array/asexpr.h
+include/blitz/array/bops.cc
 include/blitz/array/cartesian.h
 include/blitz/array/cgsolve.h
 include/blitz/array/complex.cc
@@ -42,6 +43,7 @@ include/blitz/array/stencilops.h
 include/blitz/array/stencils.cc
 include/blitz/array/stencils.h
 include/blitz/array/storage.h
+include/blitz/array/uops.cc
 include/blitz/array/where.h
 include/blitz/array/zip.h
 include/blitz/bench.cc
@@ -58,12 +60,14 @@ include/blitz/et-forward.h
 include/blitz/etbase.h
 include/blitz/funcs.h
 include/blitz/globeval.cc
-include/blitz/gnu/bzconfig.h
 include/blitz/indexexpr.h
 include/blitz/indexmap-forward.h
 include/blitz/levicivita.h
 include/blitz/limits-hack.h
 include/blitz/listinit.h
+include/blitz/matbops.h
+include/blitz/mathfunc.h
+include/blitz/matuops.h
 include/blitz/memblock.cc
 include/blitz/memblock.h
 include/blitz/meta/dot.h
@@ -79,6 +83,7 @@ include/blitz/numinquire.h
 include/blitz/numtrait.h
 include/blitz/ops.h
 include/blitz/prettyprint.h
+include/blitz/promote-old.h
 include/blitz/promote.h
 include/blitz/range.cc
 include/blitz/range.h
@@ -104,6 +109,10 @@ include/blitz/tvcross.h
 include/blitz/tvecglobs.h
 include/blitz/tvevaluate.h
 include/blitz/update.h
+include/blitz/vecbfn.cc
+include/blitz/vecbops.cc
+include/blitz/vecuops.cc
+include/blitz/vecwhere.cc
 include/blitz/wrap-climits.h
 include/random/F.h
 include/random/beta.h
@@ -116,8 +125,12 @@ include/random/mt.h
 include/random/mtparam.cc
 include/random/normal.h
 include/random/uniform.h
+lib/cmake/blitzConfig.cmake
+lib/cmake/blitzConfigVersion.cmake
+lib/cmake/blitzTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/blitzTargets.cmake
 lib/libblitz.a
 lib/libblitz.so
 lib/libblitz.so.0
-lib/libblitz.so.0.0.0
+lib/libblitz.so.1.0.2
 libdata/pkgconfig/blitz.pc
