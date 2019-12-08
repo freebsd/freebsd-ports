@@ -1,4 +1,3 @@
-etc/rc.d/glassfish
 %%DATADIR%%/META-INF/LICENSE.md
 %%DATADIR%%/META-INF/NOTICE.md
 %%DATADIR%%/README.txt
