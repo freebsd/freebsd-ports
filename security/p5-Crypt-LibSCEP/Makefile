@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-LibSCEP
+PORTVERSION=	0.08
 DISTVERSIONPREFIX=	v
-PORTVERSION=	0.06
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
@@ -13,8 +13,8 @@ COMMENT=	Easy-to-use interface between LibSCEP and Perl programs
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/Readme.md
 
-BUILD_DEPENDS=	libscep>=0.06:security/libscep
-RUN_DEPENDS=	libscep>=0.06:security/libscep
+BUILD_DEPENDS=	libscep>=0.08:security/libscep
+RUN_DEPENDS=	libscep>=0.08:security/libscep
 
 USES=		gmake perl5 ssl
 USE_PERL5=	configure

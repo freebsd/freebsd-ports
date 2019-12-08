@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libscep
+PORTVERSION=	0.08
 DISTVERSIONPREFIX=	v
-PORTVERSION=	0.06
 CATEGORIES=	security
 
 MAINTAINER=	svysh.fbsd@gmail.com
