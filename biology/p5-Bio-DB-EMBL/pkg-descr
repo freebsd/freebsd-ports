@@ -1,0 +1,11 @@
+Bio::DB::EMBL allows the dynamic retrieval of sequence objects Bio::Seq from the
+EMBL database using the dbfetch script at EBI.
+
+In order to make changes transparent we have host type (currently only ebi) and
+location (defaults to ebi) separated out. This allows later additions of more
+servers in different geographical locations.
+
+The functionality of this module is inherited from Bio::DB::DBFetch which
+implements Bio::DB::WebDBSeqI.
+
+WWW: https://metacpan.org/release/Bio-DB-EMBL
