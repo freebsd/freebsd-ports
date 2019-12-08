@@ -1,6 +1,6 @@
-TIMESTAMP = 1575414369
-SHA256 (rust/crates/cbindgen-0.11.0.tar.gz) = d311fcd2cec1a3a71ef9b9f9a183bb31350989042ee9744f3172b29f43ba0aa7
-SIZE (rust/crates/cbindgen-0.11.0.tar.gz) = 135984
+TIMESTAMP = 1575839940
+SHA256 (rust/crates/cbindgen-0.11.1.tar.gz) = e9cc2c99da3dca10bed56232afbd314af93aaa3afa43a9ff0ac59090b3f2a990
+SIZE (rust/crates/cbindgen-0.11.1.tar.gz) = 137331
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
 SIZE (rust/crates/ansi_term-0.11.0.tar.gz) = 17087
 SHA256 (rust/crates/atty-0.2.11.tar.gz) = 9a7d5b8723950951411ee34d271d99dddcc2035a16ab25310ea2c8cfd4369652
