@@ -1,6 +1,18 @@
---- src/Makefile.orig	2017-01-01 23:32:38 UTC
+--- src/Makefile.orig	2018-07-16 09:17:06 UTC
 +++ src/Makefile
-@@ -577,7 +577,7 @@ ifeq ($(SMIF), SDL)
+@@ -554,8 +554,10 @@ LIBS:=
+ LDFLAGS:=
+ INSTALL_SUPPL:=
+ 
+-CFLAGS:=
++#CFLAGS:=
+ # Machine architecture.
++# (Ab)using ARCH is very bad idea and can easily break things!
++override undefine ARCH
+ ifdef ARCH
+   # if does not have leading -march, -mcpu, -mtune, or similar.
+   ifeq ($(filter -march% -mcpu% -mtune% -m%, $(strip $(ARCH))),)
+@@ -598,7 +600,7 @@ ifeq ($(SMIF), SDL)
        # default is Linux, for all unix SDL
        EXENAME:=doomlegacy
        LDFLAGS=-L/usr/X11R6/lib
@@ -9,16 +21,7 @@
        # -L/usr/X11R6/lib is needed by Linux 2.4 and others that still have
        # the GLU libraries in an X11 directory.
        # -lm is needed for pow, powf, and other MATH1 functions.
-@@ -963,7 +963,7 @@ ifdef CDMUS
- endif
- 
- # compiler and linker flags
--CFLAGS:=$(WFLAGS)
-+#CFLAGS:=$(WFLAGS)
- 
- ifdef PROFILEMODE
- # build with gprof profiling information
-@@ -980,11 +980,11 @@ ifdef DEBUG
+@@ -1001,11 +1003,11 @@ ifdef DEBUG
  else
  # build a normal optimized version
    #CFLAGS+=-O3
