@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmpdclient
-PORTVERSION=	2.16
-PORTREVISION=	1
+PORTVERSION=	2.17
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/libmpdclient/2/
 
@@ -19,7 +18,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS DOXYGEN
 OPTIONS_SUB=	yes
-DOXYGEN_IMPLIES=	DOCS
+DOXYGEN_IMPLIES=DOCS
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_MESON_TRUE=	documentation
