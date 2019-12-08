@@ -1,4 +1,4 @@
-TIMESTAMP = 1555770542
+TIMESTAMP = 1575293880
 SHA256 (kumina-unbound_exporter-v0.1-b7e842d893d29200a5108eab717f5ab01d783c0c_GH0.tar.gz) = 315e38fe24b822b9e24ab17d336ff1b5108e8931a646cc962c9b96d70824b9a9
 SIZE (kumina-unbound_exporter-v0.1-b7e842d893d29200a5108eab717f5ab01d783c0c_GH0.tar.gz) = 8215
 SHA256 (prometheus-client_golang-3fb53d_GH0.tar.gz) = 778ce90fdb4610cfc7c6382db9455ba15ca63c48c3f0e21cff9f1d0efeef98d3
@@ -19,5 +19,5 @@ SHA256 (sirupsen-logrus-91da99d_GH0.tar.gz) = fe1633e0563ba4f1c24ad0a056ba71a0e1
 SIZE (sirupsen-logrus-91da99d_GH0.tar.gz) = 37938
 SHA256 (golang-crypto-3d3f9f41_GH0.tar.gz) = 4f7727c350599f8254ebbf9bc98ff5a195628e68cb76df4eb7043d2fd9f431c6
 SIZE (golang-crypto-3d3f9f41_GH0.tar.gz) = 1644603
-SHA256 (golang-sys-93218def_GH0.tar.gz) = 1f7b65290c1953611b298ffd0e926a500af0440a5a8c528e2db5cf55c130da3b
-SIZE (golang-sys-93218def_GH0.tar.gz) = 1111385
+SHA256 (golang-sys-33540a1f6037_GH0.tar.gz) = 09ebdf007413c2eaddce123137443d08d1848be410c58896e772f0481ec385d5
+SIZE (golang-sys-33540a1f6037_GH0.tar.gz) = 1497659
