@@ -1,27 +1,11 @@
---- CMakeLists.txt.orig	2019-04-17 16:56:20 UTC
+--- CMakeLists.txt.orig	2019-10-24 07:05:50 UTC
 +++ CMakeLists.txt
-@@ -147,14 +147,15 @@ ELSE (WIN32)
- 			SET(CMAKE_CXX_FLAGS " ${CMAKE_CXX_FLAGS} -flax-vector-conversions")
+@@ -192,7 +192,7 @@ if(UNIX AND NOT APPLE)
+       INTERFACE_INCLUDE_DIRECTORIES ${ALSA_INCLUDE_DIR}
+       INTERFACE_LINK_LIBRARIES ${ALSA_LIBRARIES})
+   endif()
+-  target_compile_definitions(openshot-audio PUBLIC LINUX)
++  #target_compile_definitions(openshot-audio PUBLIC LINUX)
+   target_link_libraries(openshot-audio PUBLIC ALSA::ALSA)
+ endif()
  
- 		ELSE (APPLE)
--			SET_PROPERTY(GLOBAL PROPERTY JUCE_LINUX "JUCE_LINUX")
-+			#SET_PROPERTY(GLOBAL PROPERTY JUCE_LINUX "JUCE_LINUX")
- 			SET(EXTENSION "cpp")
- 
- 			find_package(ZLIB REQUIRED)
- 			find_package(ALSA REQUIRED)
-+			find_library(EXECINFO_LIBRARY NAMES execinfo)
- 			include_directories(${ZLIB_INCLUDE_DIR} ${ALSA_INCLUDE_DIR})
--			ADD_DEFINITIONS(-DLINUX)
--			SET(JUCE_PLATFORM_SPECIFIC_LIBRARIES ${ZLIB_LIBRARIES} ${ALSA_LIBRARIES})
-+			#ADD_DEFINITIONS(-DLINUX)
-+			SET(JUCE_PLATFORM_SPECIFIC_LIBRARIES ${ZLIB_LIBRARIES} ${ALSA_LIBRARIES} ${EXECINFO_LIBRARY})
- 			SET(CMAKE_CXX_FLAGS " ${CMAKE_CXX_FLAGS} -std=c++11")
- 		ENDIF(APPLE)
- 	ENDIF(UNIX)
-@@ -220,4 +221,4 @@ file(GLOB_RECURSE doc_files ${CMAKE_CURRENT_BINARY_DIR
- INSTALL(FILES ${doc_files} DESTINATION share/doc/libopenshot-audio)
- 
- # Install manpage
--INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/doc/openshot-audio-test-sound.1 DESTINATION share/man/man1)
-+INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/doc/openshot-audio-test-sound.1 DESTINATION man/man1)
