@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf
-PORTVERSION=	4.7.2
+PORTVERSION=	4.7.3
 DISTVERSIONPREFIX=	c-
 CATEGORIES=	science
 MASTER_SITES=	https://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
