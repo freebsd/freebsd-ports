@@ -21,4 +21,6 @@ RUN_DEPENDS=	p5-File-NFSLock>=1.2:devel/p5-File-NFSLock \
 USES=		perl5
 USE_PERL5=	modbuild
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
