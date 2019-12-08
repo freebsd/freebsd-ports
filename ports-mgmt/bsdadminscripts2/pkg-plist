@@ -3,6 +3,7 @@ man/man1/buildflags.awk.1.gz
 man/man1/buildflags.conf.1.gz
 man/man1/buildflags.mk.1.gz
 man/man1/pkg_libchk.1.gz
+man/man1/pkg_validate.1.gz
 man/man8/distviper.8.gz
 man/man8/makeplist.8.gz
 man/man8/pkg_trim.8.gz
@@ -10,6 +11,8 @@ sbin/distviper
 sbin/makeplist
 sbin/pkg_libchk
 sbin/pkg_trim
+sbin/pkg_validate
+%%DATADIR%%/bsda_async.sh
 %%DATADIR%%/bsda_bsdmake.sh
 %%DATADIR%%/bsda_container.sh
 %%DATADIR%%/bsda_dialog.sh
@@ -29,6 +32,7 @@ sbin/pkg_trim
 %%DATADIR%%/pkg_options.sh
 %%DATADIR%%/pkg_query.sh
 %%DATADIR%%/pkg_trim.sh
+%%DATADIR%%/pkg_validate.sh
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/bsda_obj.md
