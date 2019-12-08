@@ -33,7 +33,8 @@ LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libvorbisfile.so:audio/libvorbis \
 		libtheora.so:multimedia/libtheora
 
-USES=		autoreconf compiler gl jpeg lua:51 openal pkgconfig sdl tar:lzma
+USES=		autoreconf compiler:c++11-lang gl jpeg lua:51 openal pkgconfig \
+		sdl tar:lzma
 USE_CXXSTD=	gnu++98
 USE_GL=		gl glu
 USE_SDL=	sdl
