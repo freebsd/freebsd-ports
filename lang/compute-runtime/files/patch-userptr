@@ -1,5 +1,5 @@
 Try unsynchronized userptr if regular one fails.
-https://github.com/FreeBSDDesktop/DEPRECATED-freebsd-base-graphics/issues/132
+https://github.com/FreeBSDDesktop/kms-drm/issues/197
 
 Process 51117 stopped
 * thread #1, name = 'clinfo', stop reason = signal SIGABRT
