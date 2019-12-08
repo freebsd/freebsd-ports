@@ -1,6 +1,6 @@
-TIMESTAMP = 1571604647
-SHA256 (curv3d-curv-0.4-333-ga9a63930_GH0.tar.gz) = 8d2dd636de16c504eb607fe697898c3e28f1accb2a86a09e53582a7047a9d333
-SIZE (curv3d-curv-0.4-333-ga9a63930_GH0.tar.gz) = 16480601
+TIMESTAMP = 1575783420
+SHA256 (curv3d-curv-0.4-417-gf6f8d011_GH0.tar.gz) = c07be558f3ab6619bf32e97f4562bd1ff748028c0bde1b8fd0b8531bc1c27cdb
+SIZE (curv3d-curv-0.4-417-gf6f8d011_GH0.tar.gz) = 16533467
 SHA256 (ocornut-imgui-e0cab56_GH0.tar.gz) = 3a8aa936cf02f39fe49a17aba535b2d3e65a1611725284e62ad4445bbb7d4f2b
 SIZE (ocornut-imgui-e0cab56_GH0.tar.gz) = 1078436
 SHA256 (Tessil-ordered-map-3c14151_GH0.tar.gz) = 389d6032661b95df1e4fc16c0eb3b5fe34416d03d416d99c367e3db4c5280ed0
