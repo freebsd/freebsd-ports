@@ -21,4 +21,3 @@ flang/lib/libflangrti.a
 flang/lib/libflangrti.so
 flang/lib/libompstub.a
 flang/lib/libompstub.so
-libdata/ldconfig/flang
