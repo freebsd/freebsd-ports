@@ -25,8 +25,8 @@ RUN_DEPENDS=	${PY_ENUM34} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=4.3.0:devel/py-traitlets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xarray011>=0.10.7:devel/py-xarray011@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python:3.5+
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
