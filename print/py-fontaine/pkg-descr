@@ -1,0 +1,12 @@
+pyfontaine analyses fonts for their language and character/glyph-set support.
+
+It has a straightforward pythonic set definition format in the internals
+directory.
+
+Additional definitions are downloaded from the Extensis, font-config and Unicode
+websites during installation, and can be updated without reinstalling.
+
+Adding your own definitions is easy. All files in the internals directory are
+auto-detected, so just add definition files there.
+
+WWW: https://github.com/googlefonts/pyfontaine
