@@ -1,3 +1,3 @@
-TIMESTAMP = 1571923709
-SHA256 (rubygem/aws-sdk-cloudwatch-1.30.0.gem) = d4b06cf1ced32e249de0c3d41d7519c91b05c60811afb5e75889bb61749d375c
-SIZE (rubygem/aws-sdk-cloudwatch-1.30.0.gem) = 59904
+TIMESTAMP = 1575794033
+SHA256 (rubygem/aws-sdk-cloudwatch-1.31.0.gem) = c573fbe5323ba030c3f11b42ad3bfefa89b6f45fbe475a08e90e7f48f14c39fb
+SIZE (rubygem/aws-sdk-cloudwatch-1.31.0.gem) = 66560
