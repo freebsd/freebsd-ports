@@ -11,6 +11,8 @@ COMMENT=	Google API Extensions
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		conflicting run depends, rubygem-grpc124-1.24.0 conflicts with rubygem-grpc-1.24.0
+
 RUN_DEPENDS=	rubygem-google-protobuf>=3.9<4:devel/rubygem-google-protobuf \
 		rubygem-googleapis-common-protos>=1.3.9<2.0:devel/rubygem-googleapis-common-protos \
 		rubygem-googleauth>=0.9<1:security/rubygem-googleauth \
