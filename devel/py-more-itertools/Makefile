@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	more-itertools
-PORTVERSION=	7.2.0
+PORTVERSION=	8.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	More routines for operating on iterables, beyond itertools
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.4+
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
