@@ -22,7 +22,6 @@ BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libgeos_c.so:graphics/geos
 
 USES=		localbase:ldflags php:ext
-IGNORE_WITH_PHP=	74
 
 WRKSRC=		${WRKDIR}/php-${PORTNAME}
 
