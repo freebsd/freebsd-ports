@@ -1,7 +1,6 @@
 bin/bp_aacomp
 bin/bp_bioflat_index
 bin/bp_biogetseq
-bin/bp_chaos_plot
 bin/bp_dbsplit
 bin/bp_extract_feature_seq
 bin/bp_fastam9_to_table
@@ -514,7 +513,6 @@ bin/bp_unflatten_seq
 %%PERL5_MAN1%%/bp_aacomp.1.gz
 %%PERL5_MAN1%%/bp_bioflat_index.1.gz
 %%PERL5_MAN1%%/bp_biogetseq.1.gz
-%%PERL5_MAN1%%/bp_chaos_plot.1.gz
 %%PERL5_MAN1%%/bp_dbsplit.1.gz
 %%PERL5_MAN1%%/bp_extract_feature_seq.1.gz
 %%PERL5_MAN1%%/bp_fastam9_to_table.1.gz
