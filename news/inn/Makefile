@@ -101,7 +101,7 @@ IGNORE=			cannot be compiled with both LARGE_FILES and TAGGED_HASH: please re-ru
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USES=+			python
+USES+=			python
 CONFIGURE_ARGS+=	--with-python
 .endif
 
