@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.59.0
+PORTVERSION=	3.60.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -139,6 +139,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-acm>=1<2:devel/rubygem-aws-sdk-acm \
 		rubygem-aws-sdk-mediastoredata>=1<2:devel/rubygem-aws-sdk-mediastoredata \
 		rubygem-aws-sdk-mediatailor>=1<2:devel/rubygem-aws-sdk-mediatailor \
 		rubygem-aws-sdk-migrationhub>=1<2:devel/rubygem-aws-sdk-migrationhub \
+		rubygem-aws-sdk-migrationhubconfig>=1<2:devel/rubygem-aws-sdk-migrationhubconfig \
 		rubygem-aws-sdk-mobile>=1<2:devel/rubygem-aws-sdk-mobile \
 		rubygem-aws-sdk-mq>=1<2:devel/rubygem-aws-sdk-mq \
 		rubygem-aws-sdk-mturk>=1<2:devel/rubygem-aws-sdk-mturk \
