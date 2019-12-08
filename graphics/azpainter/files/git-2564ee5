@@ -1,0 +1,136 @@
+diff --git a/mlib/include/mTextParam.h b/mlib/include/mTextParam.h
+index edd9b6d..aff695c 100644
+--- a/mlib/include/mTextParam.h
++++ b/mlib/include/mTextParam.h
+@@ -27,7 +27,7 @@ extern "C" {
+ typedef struct _mTextParam mTextParam;
+ 
+ void mTextParamFree(mTextParam *p);
+-mTextParam *mTextParamCreate(const char *text,char split,char splitparam);
++mTextParam *mTextParamCreate(const char *text,char split,signed char splitparam);
+ 
+ mBool mTextParamGetInt(mTextParam *p,const char *key,int *dst);
+ mBool mTextParamGetInt_range(mTextParam *p,const char *key,int *dst,int min,int max);
+diff --git a/mlib/include/mUtilStr.h b/mlib/include/mUtilStr.h
+index ccda176..9a95595 100644
+--- a/mlib/include/mUtilStr.h
++++ b/mlib/include/mUtilStr.h
+@@ -55,7 +55,7 @@ mBool mIsMatchString(const char *text,const char *pattern,mBool bNoCase);
+ mBool mIsMatchStringSum(const char *text,const char *pattern,char split,mBool bNoCase);
+ int mGetEqStringIndex(const char *text,const char *enumtext,char split,mBool bNoCase);
+ 
+-char *mGetFormatStrParam(const char *text,const char *key,char split,char paramsplit,mBool bNoCase);
++char *mGetFormatStrParam(const char *text,const char *key,signed char split,signed char paramsplit,mBool bNoCase);
+ 
+ #ifdef __cplusplus
+ }
+diff --git a/mlib/src/mStr.c b/mlib/src/mStr.c
+index 58f7bea..fb7dae8 100644
+--- a/mlib/src/mStr.c
++++ b/mlib/src/mStr.c
+@@ -793,7 +793,8 @@ int mStrSetURIList(mStr *str,const char *uri,mBool localfile)
+ 
+ void mStrSetURLEncode(mStr *str,const char *text)
+ {
+-	char c,flag,m[6];
++	char flag,m[6];
++	signed char c;
+ 	
+ 	mStrEmpty(str);
+ 
+diff --git a/mlib/src/mTextParam.c b/mlib/src/mTextParam.c
+index edae280..31a2dd7 100644
+--- a/mlib/src/mTextParam.c
++++ b/mlib/src/mTextParam.c
+@@ -185,7 +185,7 @@ void mTextParamFree(mTextParam *p)
+  * @param split ';' など、各値を区切る文字
+  * @param splitparam '=' など、キーと値を区切る文字 (-1 で '=') */
+ 
+-mTextParam *mTextParamCreate(const char *text,char split,char splitparam)
++mTextParam *mTextParamCreate(const char *text,char split,signed char splitparam)
+ {
+ 	mTextParam *p;
+ 
+diff --git a/mlib/src/mUtilStr.c b/mlib/src/mUtilStr.c
+index 97aa094..5eb2761 100644
+--- a/mlib/src/mUtilStr.c
++++ b/mlib/src/mUtilStr.c
+@@ -655,7 +655,7 @@ int mGetEqStringIndex(const char *text,const char *enumtext,char split,mBool bNo
+  * @return 確保された文字列。NULL でなし */
+ 
+ char *mGetFormatStrParam(const char *text,const char *key,
+-	char split,char paramsplit,mBool bNoCase)
++	signed char split,signed char paramsplit,mBool bNoCase)
+ {
+ 	const char *pc,*pend,*pkeyend;
+ 	int ret;
+diff --git a/src/configfile.c b/src/configfile.c
+index 028d2c2..affeaa6 100644
+--- a/src/configfile.c
++++ b/src/configfile.c
+@@ -166,7 +166,7 @@ static void _load_draw_rule_record(mIniRead *ini)
+ static void _normalize_panel_layout(ConfigData *cf)
+ {
+ 	char *pc;
+-	char buf[4];
++	signed char buf[4];
+ 	int i,no,pos;
+ 
+ 	//----- ペイン
+diff --git a/src/other/FillPolygon.c b/src/other/FillPolygon.c
+index 4db4832..6e90b33 100644
+--- a/src/other/FillPolygon.c
++++ b/src/other/FillPolygon.c
+@@ -317,7 +317,7 @@ mBool FillPolygon_getIntersection_noAA(FillPolygon *p,int yy)
+ {
+ 	int i,x;
+ 	mDoublePoint *ptbuf,*pt1,*pt2;
+-	char dir;
++	signed char dir;
+ 	double y;
+ 
+ 	//交点クリア
+@@ -413,7 +413,7 @@ static mBool _get_intersection_aa(FillPolygon *p,double y)
+ {
+ 	mDoublePoint *ptbuf,pt1,pt2,pttmp;
+ 	int i,x;
+-	char dir;
++	signed char dir;
+ 
+ 	//交点クリア
+ 
+diff --git a/src/other/undo_compress.c b/src/other/undo_compress.c
+index 31d8e08..38446d3 100644
+--- a/src/other/undo_compress.c
++++ b/src/other/undo_compress.c
+@@ -91,7 +91,7 @@ void UndoByteDecode(uint8_t *dst,uint8_t *src,int srcsize)
+ {
+ 	uint8_t *ps,*psend;
+ 	int len;
+-	char lenb;
++	signed char lenb;
+ 
+ 	ps = src;
+ 	psend = src + srcsize;
+@@ -193,7 +193,7 @@ int UndoWordDecode(uint8_t *dst,uint8_t *src,int srcsize)
+ 	uint8_t *ps,*psend;
+ 	uint16_t *pd,val;
+ 	int len,size;
+-	char lenb;
++	signed char lenb;
+ 
+ 	pd = (uint16_t *)dst;
+ 	ps = src;
+diff --git a/src/widget/DockObject.c b/src/widget/DockObject.c
+index f6ac971..5d9a605 100644
+--- a/src/widget/DockObject.c
++++ b/src/widget/DockObject.c
+@@ -313,7 +313,7 @@ void DockObjects_all_windowMode(int type)
+ 
+ void DockObject_normalize_layout_config()
+ {
+-	char buf[DOCKWIDGET_NUM + 2];
++	signed char buf[DOCKWIDGET_NUM + 2];
+ 	int i,pos,paneno,no;
+ 	char *pc;
+ 
