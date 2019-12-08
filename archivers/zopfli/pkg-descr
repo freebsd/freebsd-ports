@@ -1,6 +1,12 @@
-Zopfli is a new zlib (gzip, deflate) compatible compressor.
-This compressor takes more time (~100x slower), but compresses
-around 5% better than zlib and better than any other zlib-compatible
-compressor we have found.
+Zopfli is a compression library that achieves higher compression density while
+taking longer to compress. The smaller compressed size allows for better space
+utilization, faster data transmission, and lower web page load latencies.
+Furthermore, the smaller compressed size has additional benefits in mobile use,
+such as lower data transfer fees and reduced battery use. The higher data
+density is achieved by using more exhaustive compression techniques, which make
+the compression a lot slower, but do not affect the decompression speed.
+
+Zopfli is bit-stream compatible with compression used in gzip, Zip, PNG, HTTP
+requests, and others.
 
 WWW: https://github.com/google/zopfli

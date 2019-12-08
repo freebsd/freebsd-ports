@@ -16,9 +16,11 @@ include/zopfli/zopfli.h
 include/zopflipng/lodepng/lodepng.h
 include/zopflipng/lodepng/lodepng_util.h
 include/zopflipng/zopflipng_lib.h
+lib/libzopfli.a
 lib/libzopfli.so
 lib/libzopfli.so.1
-lib/libzopfli.so.%%VERSION%%
+lib/libzopfli.so.%%PORTVERSION%%
+lib/libzopflipng.a
 lib/libzopflipng.so
 lib/libzopflipng.so.1
-lib/libzopflipng.so.%%VERSION%%
+lib/libzopflipng.so.%%PORTVERSION%%
