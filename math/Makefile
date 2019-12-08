@@ -845,6 +845,7 @@
     SUBDIR += sfst
     SUBDIR += simd-viterbi
     SUBDIR += singular
+    SUBDIR += sisl
     SUBDIR += slatec
     SUBDIR += sleef
     SUBDIR += slepc
