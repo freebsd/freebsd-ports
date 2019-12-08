@@ -3,6 +3,7 @@
 
 PORTNAME=	Bio-Cluster
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +15,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#TODO: Add Bio::Variation::SNP
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-BioPerl>=0:biology/p5-BioPerl \
+RUN_DEPENDS=	p5-Bio-Variation>=0:biology/p5-Bio-Variation \
+		p5-BioPerl>=0:biology/p5-BioPerl \
 		p5-XML-SAX>=0:textproc/p5-XML-SAX
 
 USES=		perl5
