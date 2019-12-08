@@ -1,8 +1,8 @@
-# Created by: loader <loader@freebsdmall.com>
 # $FreeBSD$
 
 PORTNAME=	jutils
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games java
 
@@ -16,9 +16,9 @@ BUILD_DEPENDS=	mvn:devel/maven
 # Using a fork because of maven dependencies
 USE_GITLAB=	yes
 GL_ACCOUNT=	voidanix
-GL_COMMIT=	3b2f176fdb76126c831a695b579267cf351624f5
+GL_COMMIT=	f950e23e42081308b4be3b0fc4b57d4dbab70dac
 
-USE_JAVA=	yes
+USE_JAVA=	8+
 
 PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}/${PORTNAME}.jar
 PLIST_DIRS=	${JAVAJARDIR}/${PORTNAME}
