@@ -33,30 +33,28 @@ UNICODE_DESC=	Use latest Unicode Character Database
 WOFF_DESC=	Compress/uncompress WOFF webfonts
 
 GRAPHITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lz4>=1.7.4.2:archivers/py-lz4@${PY_FLAVOR}
-
 INTERPOLATABLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR}
-
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.0<5:devel/py-lxml@${PY_FLAVOR} \
-		${PY_TYPING}
-
+			${PY_TYPING}
 PLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR}
-
 SYMFONT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>=0:math/py-sympy@${PY_FLAVOR}
-
 UFO_RUN_DEPENDS=	${PY_ENUM34} \
-		${PYTHON_PKGNAMEPREFIX}fs2>=2.2.0<3:devel/py-fs2@${PY_FLAVOR}
-
+			${PYTHON_PKGNAMEPREFIX}fs2>=2.2.0<3:devel/py-fs2@${PY_FLAVOR}
 WOFF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.1:archivers/py-brotli@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zopfli>=0.1.4:archivers/py-zopfli@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}zopfli>=0.1.4:archivers/py-zopfli@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3400 && ${PORT_OPTIONS:MLXML}
+.if ${PORT_OPTIONS:MLXML}
+.if ${PYTHON_REL} < 3400
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>=3.4.0.3:devel/py-singledispatch@${PY_FLAVOR}
 .endif
+.endif
 
-.if ${PYTHON_REL} < 3800 && ${PORT_OPTIONS:MUNICODE}
+.if ${PORT_OPTIONS:MUNICODE}
+.if ${PYTHON_REL} < 3800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unicodedata2>=12.0.0:devel/py-unicodedata2@${PY_FLAVOR}
+.endif
 .endif
 
 .include <bsd.port.post.mk>
