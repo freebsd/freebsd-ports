@@ -7,8 +7,6 @@ CATEGORIES=	ports-mgmt
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Script to ease creation of rubygem- ports
 
-BROKEN=		unfetchable
-
 RUN_DEPENDS=	gem:devel/ruby-gems
 
 USE_GITHUB=	yes
