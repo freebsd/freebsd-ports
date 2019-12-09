@@ -1,0 +1,10 @@
+virt-what is a shell script which can be used to detect if the program
+is running in a virtual machine.
+
+virt-what supports a very large number of different hypervisor types,
+including common open source hypervisors (KVM, Xen, QEMU, VirtualBox),
+mainframe systems like IBM Systemz, LPAR, z/VM, hardware partitioning
+schemes like Hitachi Virtage, proprietary hypervisors like VMWare,
+Microsoft Hyper-V and much more.
+
+WWW: https://people.redhat.com/~rjones/virt-what/
