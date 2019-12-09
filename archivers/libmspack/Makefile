@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmspack
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.1
 PORTREVISION=	0
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cabextract.org.uk/libmspack/
