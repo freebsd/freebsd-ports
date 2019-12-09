@@ -1,2 +1,4 @@
 bin/opentracker
+bin/opentracker-ipv6
 @sample %%ETCDIR%%/opentracker.conf.sample
+@sample %%ETCDIR%%/opentracker-ipv6.conf.sample
