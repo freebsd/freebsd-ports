@@ -6492,6 +6492,7 @@
     SUBDIR += tdl
     SUBDIR += template-glib
     SUBDIR += termbox
+    SUBDIR += termcolor
     SUBDIR += terminality
     SUBDIR += tevent
     SUBDIR += tevent1
