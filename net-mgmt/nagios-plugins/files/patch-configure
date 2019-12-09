@@ -1,6 +1,6 @@
---- configure.orig	2017-04-19 16:03:27 UTC
+--- configure.orig	2019-12-04 21:53:36 UTC
 +++ configure
-@@ -21973,6 +21973,15 @@ $as_echo "$as_me: error: I don't know ho
+@@ -22045,6 +22045,15 @@ $as_echo "$as_me: error: I don't know how to build a 6
  	fi
  
  
@@ -16,12 +16,3 @@
  elif ps axwwo 'stat comm vsz rss user uid pid ppid args cgroup:256' 2>/dev/null | \
  	egrep -i "^ *STAT +[UCOMAND]+ +VSZ +RSS +USER +UID +PID +PPID +COMMAND +CGROUP" > /dev/null
  then
-@@ -23798,7 +23807,7 @@ then
- 
- 	if $PATH_TO_SWAPINFO -k 2>/dev/null | egrep -i "^Device +1K-blocks +Used +Avail" >/dev/null
- 	then
--		ac_cv_swap_format="%*s %f %*d %f"
-+		ac_cv_swap_format="%*s %lf %*d %lf"
- 		ac_cv_swap_conv=1024
- 		{ $as_echo "$as_me:$LINENO: result: using FreeBSD format swapinfo" >&5
- $as_echo "using FreeBSD format swapinfo" >&6; }

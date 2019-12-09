@@ -55,6 +55,7 @@ libexec/nagios/check_smtp
 %%NETSNMP%%libexec/nagios/check_snmp
 libexec/nagios/check_spop
 libexec/nagios/check_ssh
+libexec/nagios/check_ssl_validity
 libexec/nagios/check_ssmtp
 libexec/nagios/check_swap
 libexec/nagios/check_tcp
@@ -64,6 +65,7 @@ libexec/nagios/check_ups
 libexec/nagios/check_users
 libexec/nagios/check_wave
 libexec/nagios/negate
+libexec/nagios/remove_perfdata
 libexec/nagios/urlize
 libexec/nagios/utils.pm
 libexec/nagios/utils.sh
