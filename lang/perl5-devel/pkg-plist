@@ -502,6 +502,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Tie/File.pm
 %%PRIV_LIB%%/Tie/Handle.pm
 %%PRIV_LIB%%/Tie/Hash.pm
+%%PRIV_LIB%%/Tie/Hash/NamedCapture.pm
 %%PRIV_LIB%%/Tie/Memoize.pm
 %%PRIV_LIB%%/Tie/RefHash.pm
 %%PRIV_LIB%%/Tie/Scalar.pm
@@ -826,7 +827,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/Sub/Util.pm
 %%ARCH_LIB%%/Sys/Hostname.pm
 %%ARCH_LIB%%/Sys/Syslog.pm
-%%ARCH_LIB%%/Tie/Hash/NamedCapture.pm
 %%ARCH_LIB%%/Time/HiRes.pm
 %%ARCH_LIB%%/Time/Piece.pm
 %%ARCH_LIB%%/Time/Seconds.pm
@@ -877,7 +877,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/auto/Storable/Storable.so
 %%ARCH_LIB%%/auto/Sys/Hostname/Hostname.so
 %%ARCH_LIB%%/auto/Sys/Syslog/Syslog.so
-%%ARCH_LIB%%/auto/Tie/Hash/NamedCapture/NamedCapture.so
 %%ARCH_LIB%%/auto/Time/HiRes/HiRes.so
 %%ARCH_LIB%%/auto/Time/Piece/Piece.so
 %%ARCH_LIB%%/auto/Unicode/Collate/Collate.so
@@ -964,6 +963,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5314delta.1.gz
 %%MAN1%%/perl5315delta.1.gz
 %%MAN1%%/perl5316delta.1.gz
+%%MAN1%%/perl5317delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1755,6 +1755,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5314delta.pod
 %%PRIV_LIB%%/pod/perl5315delta.pod
 %%PRIV_LIB%%/pod/perl5316delta.pod
+%%PRIV_LIB%%/pod/perl5317delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -2292,7 +2293,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlIDS.pl
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlIsI.pl
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlNch.pl
-%%PRIV_LIB%%/unicore/lib/Perl/_PerlNon.pl
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlPat.pl
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlPr2.pl
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlPro.pl
