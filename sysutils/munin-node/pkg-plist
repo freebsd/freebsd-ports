@@ -1,4 +1,4 @@
-bin/munindoc
+bin/munin-get
 @sample %%ETCDIR%%/munin-node.conf.sample
 @dir %%ETCDIR%%/plugin-conf.d
 @sample %%ETCDIR%%/plugins.conf.sample %%ETCDIR%%/plugin-conf.d/plugins.conf
@@ -25,10 +25,10 @@ bin/munindoc
 %%SITE_PERL%%/Munin/Plugin.pm
 %%SITE_PERL%%/Munin/Plugin/Pgsql.pm
 %%SITE_PERL%%/Munin/Plugin/SNMP.pm
+man/man1/munin-get.1.gz
 man/man1/munin-node-configure.1.gz
 man/man1/munin-node.1.gz
 man/man1/munin-run.1.gz
-man/man1/munindoc.1.gz
 man/man3/Munin::Node::Config.3.gz
 man/man3/Munin::Node::Configure::Debug.3.gz
 man/man3/Munin::Node::Configure::History.3.gz

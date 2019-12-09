@@ -83,7 +83,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/plugins.conf \
 		${STAGEDIR}${ETCDIR}/plugins.conf.sample
 	(cd ${WRKSRC}/node/blib/bindoc; \
-		${INSTALL_MAN} munin-node-configure.1 munin-node.1 munin-run.1 munindoc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1; \
+		${INSTALL_MAN} munin-node-configure.1 munin-node.1 munin-run.1 ${STAGEDIR}${MAN1PREFIX}/man/man1; \
 	)
 	(cd ${WRKSRC}/build/doc; \
 		${INSTALL_MAN} munin-node.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5; \
