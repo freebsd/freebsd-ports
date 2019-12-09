@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fmtconv
-PORTVERSION=	r20
-PORTREVISION=	4
+PORTVERSION=	r21
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	vapoursynth-
 
