@@ -10998,10 +10998,17 @@ share/foomatic/db/source/printer/Ricoh-Pro_8220S.xml
 share/foomatic/db/source/printer/Ricoh-Pro_8220S_JPN.xml
 share/foomatic/db/source/printer/Ricoh-Pro_8220Y_JPN.xml
 share/foomatic/db/source/printer/Ricoh-Pro_8300S.xml
+share/foomatic/db/source/printer/Ricoh-Pro_8300S_JPN.xml
 share/foomatic/db/source/printer/Ricoh-Pro_8310.xml
+share/foomatic/db/source/printer/Ricoh-Pro_8310HT_JPN.xml
 share/foomatic/db/source/printer/Ricoh-Pro_8310S.xml
+share/foomatic/db/source/printer/Ricoh-Pro_8310S_JPN.xml
+share/foomatic/db/source/printer/Ricoh-Pro_8310Y_JPN.xml
 share/foomatic/db/source/printer/Ricoh-Pro_8320.xml
+share/foomatic/db/source/printer/Ricoh-Pro_8320HT_JPN.xml
 share/foomatic/db/source/printer/Ricoh-Pro_8320S.xml
+share/foomatic/db/source/printer/Ricoh-Pro_8320S_JPN.xml
+share/foomatic/db/source/printer/Ricoh-Pro_8320Y_JPN.xml
 share/foomatic/db/source/printer/Ricoh-Pro_906EX.xml
 share/foomatic/db/source/printer/Ricoh-Pro_907EX.xml
 share/foomatic/db/source/printer/Ricoh-Pro_907EXP.xml
