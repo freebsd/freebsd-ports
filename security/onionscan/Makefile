@@ -3,7 +3,7 @@
 PORTNAME=	onionscan
 DISTVERSIONPREFIX=	OnionScan-
 DISTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -20,7 +20,7 @@ GH_TUPLE=	HouzuoGuo:tiedot:3.4:tiedot/vendor/github.com/HouzuoGuo/tiedot \
 		rwcarlsen:goexif:8d986c0:goexif/vendor/github.com/rwcarlsen/goexif \
 		golang:crypto:0e37d00:crypto/vendor/golang.org/x/crypto \
 		golang:net:26e67e7:net/vendor/golang.org/x/net \
-		golang:sys:1561086:sys/vendor/golang.org/x/sys
+		golang:sys:33540a1:sys/vendor/golang.org/x/sys
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
