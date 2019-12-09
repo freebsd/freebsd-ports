@@ -5,13 +5,10 @@ PORTNAME=	nn
 PORTVERSION=	6.7.3
 PORTREVISION=	1
 CATEGORIES=	news
-MASTER_SITES=	http://www.sourcefiles.org/Internet/News/Usenet_Clients/  \
-		http://www.wa.apana.org.au/~dean/sources/
+MASTER_SITES=	ftp://ftp.nndev.org/pub/nn-${PORTVERSION:R}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Newsreader
-
-BROKEN=		unfetchable
+COMMENT=	Menu based USENET newsreader
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 
