@@ -3,18 +3,18 @@
 
 PORTNAME=	hatop
 PORTVERSION=	0.7.7
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikeg@bsd-box.net
 COMMENT=	Interactive real-time monitoring tool for the HAProxy unix socket
 
 LICENSE=	GPLv3+
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/haproxy:net/haproxy
 
-USES=		python:2.7 shebangfix
+USES=		python:3.6+ shebangfix
 SHEBANG_FILES=	bin/hatop
 NO_BUILD=	yes
 NO_ARCH=	yes
