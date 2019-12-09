@@ -1,6 +1,6 @@
---- Makefile.orig	2019-02-28 14:43:36 UTC
+--- Makefile.orig	2019-11-20 19:39:52 UTC
 +++ Makefile
-@@ -95,60 +95,47 @@ install: install-master-prime install-common-prime ins
+@@ -95,96 +95,77 @@ install: install-master-prime install-common-prime ins
  
  install-pre: $(MAKEFILES)
  	@$(CHECKUSER)
@@ -86,9 +86,8 @@
 +	$(INSTALL) -m 0755 build/master/_bin/munin-cgi-graph $(DESTDIR)$(CGIDIR)/munin-cgi-graph
 +	$(INSTALL) -m 0755 build/master/_bin/munin-cgi-html $(DESTDIR)$(CGIDIR)/munin-cgi-html
  
- # Not ready to be installed yet
- # $(INSTALL) -m 0755 build/master/_bin/munin-gather $(LIBDIR)/
-@@ -158,36 +145,30 @@ install-node-plugins: install-plugins-prime
+ install-node-plugins: install-plugins-prime
+ 
  install-plugins-prime: install-plugins build $(PLUGINS) $(MAKEFILES)
  	@$(CHECKGROUP)
  
@@ -136,7 +135,7 @@
  		fi \
  	done
  
-@@ -198,14 +179,14 @@ install-plugins-java: build-plugins-java
+@@ -195,14 +176,14 @@ install-plugins-java: build-plugins-java
  install-async-prime: install-async
  
  install-async:
@@ -155,7 +154,7 @@
  
  
  install-common-prime: build-common install-common
-@@ -518,7 +499,7 @@ t/install:
+@@ -519,7 +500,7 @@ t/install:
  
  # This builds */Build from Build.PL
  %/Build: %/Build.PL
@@ -164,7 +163,7 @@
  
  build-%: %/Build
  	cd $* && $(PERL) Build
-@@ -534,6 +515,7 @@ install-%: %/Build
+@@ -535,6 +516,7 @@ install-%: %/Build
  		--install_path script=$(BINDIR) \
  		--install_path sbin=$(SBINDIR) \
  		--install_path bindoc=$(MANDIR)/man1 \
