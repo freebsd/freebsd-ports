@@ -464,7 +464,7 @@ SVTAV1_PREVENTS_MSG=	Only one SVT vendor patch can be applied at the same time
 # svt-hevc
 SVTHEVC_LIB_DEPENDS=	libSvtHevcEnc.so:multimedia/svt-hevc
 SVTHEVC_CONFIGURE_ON=	--enable-libsvthevc
-SVTHEVC_PATCH_SITES=	https://github.com/Intel/SVT-HEVC/raw/v1.4.1/ffmpeg_plugin/:svthevc
+SVTHEVC_PATCH_SITES=	https://github.com/Intel/SVT-HEVC/raw/v1.4.2/ffmpeg_plugin/:svthevc
 SVTHEVC_PATCHFILES=	0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch:-p1:svthevc \
 			0002-doc-Add-libsvt_hevc-encoder-docs.patch:-p1:svthevc
 .if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
