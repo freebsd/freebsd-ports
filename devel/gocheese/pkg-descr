@@ -1,0 +1,10 @@
+GoCheese is Python private package repository and caching proxy.
+
+It serves two purposes:
+
+* proxying and caching of missing packages from upstream PyPI, conforming to
+  PEP-0503 (Simple Repository API)
+* hosting of private locally uploaded packages, conforming to Warehouse Legacy
+  API
+
+WWW: http://gocheese.cypherpunks.ru/
