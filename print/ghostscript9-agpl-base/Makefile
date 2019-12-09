@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghostscript
-PORTVERSION=	9.27
-PORTREVISION=	3
+PORTVERSION=	9.50
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${PORTVERSION:S/.//}/
 PKGNAMESUFFIX=	9-agpl-base
@@ -12,7 +11,7 @@ COMMENT=	PostScript and PDF interpreter
 
 LICENSE=	AGPLv3
 
-BUILD_DEPENDS=	jbig2dec>=0.16:graphics/jbig2dec
+BUILD_DEPENDS=	jbig2dec>=0.17:graphics/jbig2dec
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libidn.so:dns/libidn \
@@ -22,15 +21,15 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	poppler-data>=0.4.9:graphics/poppler-data
 
+USES=		cpe gmake iconv jpeg localbase pkgconfig tar:xz
+USE_CSTD=	gnu99
+USE_LDCONFIG=	yes
+
 CONFLICTS_INSTALL= \
 		ghostscript[789]-[0-9]* \
 		ghostscript[789]-nox11-[0-9]* \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
-
-USES=		cpe gmake iconv jpeg localbase pkgconfig tar:xz
-USE_CSTD=	gnu99
-USE_LDCONFIG=	yes
 CPE_VENDOR=	artifex
 DATADIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/${PORTVERSION}

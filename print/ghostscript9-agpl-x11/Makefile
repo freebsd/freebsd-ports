@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghostscript
-PORTVERSION=	9.27
+PORTVERSION=	9.50
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${PORTVERSION:S/.//}/
 PKGNAMESUFFIX=	9-agpl-x11
@@ -14,18 +14,18 @@ LICENSE=	AGPLv3
 BUILD_DEPENDS=	ghostscript9-agpl-base>=${PORTVERSION}:print/ghostscript9-agpl-base
 RUN_DEPENDS=	ghostscript9-agpl-base>=${PORTVERSION}:print/ghostscript9-agpl-base
 
+USES=		cpe gmake iconv localbase pkgconfig tar:xz xorg
+USE_CSTD=	gnu99
+USE_LDCONFIG=	yes
+USE_XORG=	ice sm x11 xext xt
+
 CONFLICTS_INSTALL= \
 		ghostscript[789]-[0-9]* \
 		ghostscript[789]-nox11-[0-9]* \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
-
 DISTINFO_FILE=	${.CURDIR:H}/ghostscript9-agpl-base/distinfo
 PATCHDIR=	${.CURDIR:H}/ghostscript9-agpl-base/files
-USES=		cpe gmake iconv localbase pkgconfig tar:xz xorg
-USE_CSTD=	gnu99
-USE_LDCONFIG=	yes
-USE_XORG=	ice sm x11 xext xt
 CPE_VENDOR=	artifex
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-compile-inits \
