@@ -1,0 +1,8 @@
+%%PYTHON_SITELIBDIR%%/_cracklib.a
+%%PYTHON_SITELIBDIR%%/_cracklib.so
+%%PYTHON_SITELIBDIR%%/cracklib.py
+%%PYTHON_SITELIBDIR%%/cracklib.pyc
+%%PYTHON_SITELIBDIR%%/cracklib.pyo
+%%PYTHON_SITELIBDIR%%/test_cracklib.py
+%%PYTHON_SITELIBDIR%%/test_cracklib.pyc
+%%PYTHON_SITELIBDIR%%/test_cracklib.pyo
