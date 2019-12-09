@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kubectl
-PORTVERSION=	1.16.3
+PORTVERSION=	1.17.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -19,11 +19,11 @@ GH_PROJECT=	kubernetes
 
 GO_PKGNAME=	k8s.io/kubernetes
 GO_TARGET=	${GO_PKGNAME}/cmd/${PORTNAME}
-GO_BUILDFLAGS=	-ldflags="-X k8s.io/kubectl/pkg/version.gitMajor=${PORTVERSION:R:R} \
-		-X k8s.io/kubectl/pkg/version.gitMinor=${PORTVERSION:R:E} \
-		-X k8s.io/kubectl/pkg/version.buildDate=$$(date +'%Y-%m-%dT%H:%M:%SZ') \
-		-X k8s.io/kubectl/pkg/version.gitCommit="" \
-		-X k8s.io/kubectl/pkg/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION} \
+GO_BUILDFLAGS=	-ldflags="-X k8s.io/component-base/version.gitMajor=${PORTVERSION:R:R} \
+		-X k8s.io/component-base/version.gitMinor=${PORTVERSION:R:E} \
+		-X k8s.io/component-base/version.buildDate=$$(date +'%Y-%m-%dT%H:%M:%SZ') \
+		-X k8s.io/component-base/version.gitCommit="" \
+		-X k8s.io/component-base/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION} \
 		-X k8s.io/client-go/pkg/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
