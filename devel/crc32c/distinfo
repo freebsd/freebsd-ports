@@ -1,3 +1,3 @@
-TIMESTAMP = 1563082029
-SHA256 (google-crc32c-1.0.7-8-gfd33bcc_GH0.tar.gz) = 0191df18cb2c1b90c5f70fbd9d3b20b12eaff84b0131fb780dc9f6a49116aa41
-SIZE (google-crc32c-1.0.7-8-gfd33bcc_GH0.tar.gz) = 29652
+TIMESTAMP = 1575620103
+SHA256 (google-crc32c-1.1.1_GH0.tar.gz) = a6533f45b1670b5d59b38a514d82b09c6fb70cc1050467220216335e873074e8
+SIZE (google-crc32c-1.1.1_GH0.tar.gz) = 29829
