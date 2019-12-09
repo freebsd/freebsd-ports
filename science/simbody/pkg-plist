@@ -207,6 +207,7 @@ include/simbody/simmath/internal/OptimizerRep.h
 include/simbody/simmath/internal/OrientedBoundingBox.h
 include/simbody/simmath/internal/ParticleConSurfaceSystem.h
 include/simbody/simmath/internal/SimTKcpodes.h
+include/simbody/simbody/internal/SmoothSphereHalfSpaceForce.h
 include/simbody/simmath/internal/Spline.h
 include/simbody/simmath/internal/SplineFitter.h
 include/simbody/simmath/internal/common.h
@@ -216,10 +217,10 @@ lib/cmake/simbody/SimbodyConfigVersion.cmake
 lib/cmake/simbody/SimbodyTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/simbody/SimbodyTargets.cmake
 lib/libSimTKcommon.so
-lib/libSimTKcommon.so.3.6
+lib/libSimTKcommon.so.3.7
 lib/libSimTKmath.so
-lib/libSimTKmath.so.3.6
+lib/libSimTKmath.so.3.7
 lib/libSimTKsimbody.so
-lib/libSimTKsimbody.so.3.6
+lib/libSimTKsimbody.so.3.7
 libdata/pkgconfig/simbody.pc
 %%VISUALIZER%%libexec/simbody/simbody-visualizer
