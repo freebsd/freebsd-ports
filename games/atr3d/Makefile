@@ -29,7 +29,7 @@ LLD_UNSAFE=	yes
 OPTIONS_DEFINE=	OPENAL
 OPTIONS_DEFAULT=OPENAL
 
-OPENAL_USES=	openal:alut
+OPENAL_USES=	compiler:c++11-lang openal:alut
 OPENAL_CONFIGURE_ENABLE=	sound
 
 pre-patch:
