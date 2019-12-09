@@ -1,0 +1,28 @@
+*** pgadmin/frm/frmQuery.cpp.orig	Thu Jan  7 15:47:32 2016
+--- pgadmin/frm/frmQuery.cpp	Sat May 25 18:03:04 2019
+***************
+*** 1795,1800 ****
+--- 1795,1805 ----
+  
+  void frmQuery::OnPositionStc(wxStyledTextEvent &event)
+  {
++ 	CallAfter(&frmQuery::DoUpdatePositionStc,event);
++ }
++ 
++ void frmQuery::DoUpdatePositionStc(const wxStyledTextEvent &event)
++ {
+  	int selFrom, selTo, selCount;
+  	sqlQuery->GetSelection(&selFrom, &selTo);
+  	selCount = selTo - selFrom;
+*** pgadmin/include/frm/frmQuery.h.orig	Thu Jan  7 15:47:32 2016
+--- pgadmin/include/frm/frmQuery.h	Sat May 25 18:03:56 2019
+***************
+*** 171,176 ****
+--- 171,177 ----
+  
+  	void OnChangeStc(wxStyledTextEvent &event);
+  	void OnPositionStc(wxStyledTextEvent &event);
++ 	void DoUpdatePositionStc(const wxStyledTextEvent &event);
+  	void OnClose(wxCloseEvent &event);
+  	void OnSetFocus(wxFocusEvent &event);
+  	void OnContents(wxCommandEvent &event);
