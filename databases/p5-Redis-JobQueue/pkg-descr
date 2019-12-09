@@ -1,0 +1,12 @@
+The Redis::JobQueue package is a set of Perl modules which allows creation of
+a simple job queue based on Redis server capabilities.
+
+* Supports the automatic creation of job queues, job status monitoring,
+  updating the job data set, obtaining a consistent job from the queue,
+  removing jobs, and the classification of possible errors.
+* Contains various reusable components that can be used separately or together.
+* Provides an object oriented API.
+* Support of storing arbitrary job-related data structures.
+* Simple methods for organizing producer, worker, and consumer clients.
+
+WWW: https://metacpan.org/release/Redis-JobQueue
