@@ -1,0 +1,45 @@
+commit 9ca396abb28b
+Author: Emilio Cobos Álvarez <emilio@crisal.io>
+Date:   Mon Dec 9 12:47:00 2019 +0000
+
+    Bug 1602358 - Fix older builds with newer cbindgen. r=heycam
+    
+    This should be fine to uplift so that downstream doesn't need multiple cbindgen
+    versions.
+---
+ layout/generic/WritingModes.h      |  3 ++-
+ servo/ports/geckolib/cbindgen.toml | 10 ----------
+ 2 files changed, 2 insertions(+), 11 deletions(-)
+
+diff --git layout/generic/WritingModes.h layout/generic/WritingModes.h
+index 1a8d08b191bbb..0671388902f0f 100644
+--- layout/generic/WritingModes.h
++++ layout/generic/WritingModes.h
+@@ -518,7 +518,8 @@ class WritingMode {
+    */
+   void SetDirectionFromBidiLevel(uint8_t level) {
+     if (IS_LEVEL_RTL(level) == IsBidiLTR()) {
+-      mWritingMode ^= StyleWritingMode_RTL | StyleWritingMode_INLINE_REVERSED;
++      mWritingMode.bits ^= static_cast<uint8_t>(
++          (StyleWritingMode_RTL | StyleWritingMode_INLINE_REVERSED).bits);
+     }
+   }
+ 
+diff --git servo/ports/geckolib/cbindgen.toml servo/ports/geckolib/cbindgen.toml
+index bed86498ea125..8a7a9cd7998f1 100644
+--- servo/ports/geckolib/cbindgen.toml
++++ servo/ports/geckolib/cbindgen.toml
+@@ -616,13 +616,3 @@ renaming_overrides_prefixing = true
+   // Get the layout rect, replacing auto right / bottom values for aAutoSize.
+   inline nsRect ToLayoutRect(nscoord aAutoSize = NS_MAXSIZE) const;
+ """
+-
+-"WritingMode" = """
+-  StyleWritingMode operator^(const StyleWritingMode& other) const {
+-    return {static_cast<decltype(bits)>(this->bits ^ other.bits)};
+-  }
+-  StyleWritingMode& operator^=(const StyleWritingMode& other) {
+-    *this = (*this ^ other);
+-    return *this;
+-  }
+-"""
