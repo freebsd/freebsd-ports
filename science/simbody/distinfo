@@ -1,9 +1,5 @@
-TIMESTAMP = 1565239605
-SHA256 (simbody-simbody-Simbody-3.6.1_GH0.tar.gz) = 7716d6ea20b950e71e8535faa4353ac89716c03fd7a445dd802eb6a630796639
-SIZE (simbody-simbody-Simbody-3.6.1_GH0.tar.gz) = 47178543
+TIMESTAMP = 1575905464
+SHA256 (simbody-simbody-Simbody-3.7_GH0.tar.gz) = d371a92d440991400cb8e8e2473277a75307abb916e5aabc14194bea841b804a
+SIZE (simbody-simbody-Simbody-3.7_GH0.tar.gz) = 54026478
 SHA256 (1b306f66bcd15e9bf6b27882e2daa6375ac4cd2e.patch) = 42468083313fc489c763ad2562c7a4baeeca02b7c81f35a94dad3368e4c7c4b8
 SIZE (1b306f66bcd15e9bf6b27882e2daa6375ac4cd2e.patch) = 1473
-SHA256 (eaff90b304291ab9ffdf60d7abfb48e23e102ecb.patch) = 8098b7efa4509a70d1561cad84d3d84549a58a4ac83f3af7d0a94e3cdd7ec4c4
-SIZE (eaff90b304291ab9ffdf60d7abfb48e23e102ecb.patch) = 1350
-SHA256 (54f04cfef5f184c72df479c8c8eddd6d5eaf1f5b.patch) = 0bdd19c64a625a89847702b2a14ceb51828b961989323419bcbcb56ed2b44bd6
-SIZE (54f04cfef5f184c72df479c8c8eddd6d5eaf1f5b.patch) = 1080
