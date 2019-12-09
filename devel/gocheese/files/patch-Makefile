@@ -1,0 +1,11 @@
+--- Makefile.orig	2019-12-09 18:44:34 UTC
++++ Makefile
+@@ -5,7 +5,7 @@ GOPATH != pwd
+ VERSION != cat VERSION
+ 
+ MOD = go.cypherpunks.ru/gocheese/v2
+-LDFLAGS = -X main.Version=$(VERSION)
++LDFLAGS = -s -X main.Version=$(VERSION)
+ 
+ all: gocheese gocheese.info
+ 

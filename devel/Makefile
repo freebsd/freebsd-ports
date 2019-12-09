@@ -864,6 +864,7 @@
     SUBDIR += go-tools
     SUBDIR += gob2
     SUBDIR += gobject-introspection
+    SUBDIR += gocheese
     SUBDIR += godep
     SUBDIR += godot
     SUBDIR += godot-tools
