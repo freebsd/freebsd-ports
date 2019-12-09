@@ -2,6 +2,7 @@
 
 PORTNAME=	simgear
 PORTVERSION=	2019.1.1
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
-		libosg.so:graphics/osg \
+		libosg.so:graphics/osg34 \
 		libexpat.so:textproc/expat2 \
 		libcurl.so:ftp/curl
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	flightgear
 PORTVERSION=	2019.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_thread.so:devel/boost-libs \
 		libfltk.so:x11-toolkits/fltk \
 		libfreetype.so:print/freetype2 \
-		libosg.so:graphics/osg \
+		libosg.so:graphics/osg34 \
 		libspeex.so:audio/speex \
 		libspeexdsp.so:audio/speexdsp \
 		libcurl.so:ftp/curl \

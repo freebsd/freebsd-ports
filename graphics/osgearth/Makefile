@@ -4,7 +4,7 @@
 PORTNAME=	osgearth
 PORTVERSION=	2.10.1
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org
@@ -13,7 +13,7 @@ COMMENT=	C++ terrain rendering toolkit for OpenSceneGraph
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libosg.so:graphics/osg \
+LIB_DEPENDS=	libosg.so:graphics/osg34 \
 		libgdal.so:graphics/gdal \
 		libcurl.so:ftp/curl \
 		libgeos.so:graphics/geos \

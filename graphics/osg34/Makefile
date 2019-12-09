@@ -6,6 +6,7 @@ PORTVERSION=	3.4.1
 DISTVERSIONPREFIX=	OpenSceneGraph-
 PORTREVISION=	12
 CATEGORIES=	graphics
+PKGNAMESUFFIX=	34
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
@@ -22,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openscenegraph
 GH_PROJECT=	OpenSceneGraph
 
-CONFLICTS=	osg-devel
+CONFLICTS=	osg-[0-9]*
 
 USES=		alias cmake compiler:c++11-lang gl jpeg pkgconfig xorg
 USE_GL=		gl glu
