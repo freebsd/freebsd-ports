@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlmap
-PORTVERSION=	1.2.12
+PORTVERSION=	1.3.12
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Automatic SQL injection tool
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/sqlmap/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		python:-2.7 shebangfix
+USES=		python shebangfix
 USE_PYTHON=	autoplist distutils
 
 SHEBANG_FILES=	*.py sqlmap/extra/shutils/*.sh sqlmap/extra/shutils/*.py
