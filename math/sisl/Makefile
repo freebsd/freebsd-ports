@@ -12,7 +12,7 @@ COMMENT=	Spline library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	SINTEF-Geometry
 GH_PROJECT=	SISL
