@@ -522,5 +522,5 @@ share/icons/hicolor/32x32/apps/solarus.png
 share/icons/hicolor/48x48/apps/solarus.png
 share/icons/hicolor/512x512/apps/solarus.png
 share/icons/hicolor/64x64/apps/solarus.png
-share/man/man6/solarus-run.6
-share/man/man6/solarus.6
+man/man6/solarus-run.6.gz
+man/man6/solarus.6.gz
