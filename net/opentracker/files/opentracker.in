@@ -1,29 +1,33 @@
 #!/bin/sh
-
+#
+# $FreeBSD$
+#
 # PROVIDE: opentracker
 # REQUIRE: LOGIN
+# KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf or /etc/rc.conf.local to
 # enable opentracker:
 # opentracker_enable (bool):	Set to "NO" by default.
 # opentracker_config (path):	Set to 
-#				"%%PREFIX%%/etc/opentracker/opentracker.conf"
-#				by default
+#			"%%PREFIX%%/etc/opentracker/opentracker.conf"
+#			by default
 
 . /etc/rc.subr
 
-name="opentracker"
+name=opentracker
 rcvar=opentracker_enable
+desc="Lightweight Bittorrent tracker"
 
 load_rc_config $name
 
-: ${opentracker_enable="NO"}
-: ${opentracker_config="%%PREFIX%%/etc/opentracker/opentracker.conf"}
+: ${opentracker_enable:=NO}
+: ${opentracker_config:="%%PREFIX%%/etc/opentracker/opentracker-ipv6.conf"}
 
-command="/usr/sbin/daemon"
-command_args="-p /var/run/opentracker.pid %%PREFIX%%/bin/opentracker -f ${opentracker_config}"
+command=/usr/sbin/daemon
+pidfile=/var/run/opentracker.pid
+command_args="-p $pidfile %%PREFIX%%/bin/opentracker -f ${opentracker_config}"
 procname="%%PREFIX%%/bin/opentracker"
-pidfile="/var/run/opentracker.pid"
 required_files=${opentracker_config}
 
-run_rc_command "$1"
+run_rc_command $1

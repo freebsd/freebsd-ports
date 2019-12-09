@@ -16,5 +16,13 @@ sysctl kern.ipc.nmbclusters=32768
 sysctl net.inet.tcp.msl=10000
 sysctl kern.maxfiles=10240
 EOM
+
+In order to enable opentracker at boot time;
+
+# sysrc opentracker_enable=yes
+
+Or
+
+# sysrc opentracker_ipv6_enable=yes
 }
 ]

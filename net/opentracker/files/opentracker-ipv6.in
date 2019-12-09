@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: opentracker_ipv6
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf or /etc/rc.conf.local to
+# enable opentracker:
+# opentracker_ipv6_enable (bool):	Set to "NO" by default.
+# opentracker_ipv6_config (path):	Set to 
+#			"%%PREFIX%%/etc/opentracker/opentracker-ipv6.conf"
+#				by default
+
+. /etc/rc.subr
+
+name=opentracker_ipv6
+rcvar=opentracker_ipv6_enable
+desc="Lightweight Bittorrent tracker"
+
+load_rc_config $name
+
+: ${opentracker_ipv6_enable:=NO}
+: ${opentracker_ipv6_config:="%%PREFIX%%/etc/opentracker/opentracker-ipv6.conf"}
+
+command=/usr/sbin/daemon
+pidfile=/var/run/opentracker-ipv6.pid
+command_args="-p $pidfile %%PREFIX%%/bin/opentracker-ipv6 -f ${opentracker_ipv6_config}"
+procname="%%PREFIX%%/bin/opentracker-ipv6"
+required_files=${opentracker_ipv6_config}
+
+run_rc_command $1
