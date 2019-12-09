@@ -600,7 +600,7 @@
     SUBDIR += opensubdiv
     SUBDIR += optar
     SUBDIR += optipng
-    SUBDIR += osg
+    SUBDIR += osg34
     SUBDIR += osg-devel
     SUBDIR += osgearth
     SUBDIR += ossim

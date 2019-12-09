@@ -4,7 +4,7 @@
 PORTNAME=	openmw
 DISTVERSIONPREFIX=	openmw-
 DISTVERSION=	0.45.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libboost_thread.so:devel/boost-libs \
 		libBulletCollision.so:devel/bullet \
 		libMyGUIEngine.so:x11-toolkits/mygui \
-		libosg.so:graphics/osg \
+		libosg.so:graphics/osg34 \
 		libunshield.so:archivers/unshield
 
 USES=		cmake compiler:c++14-lang gl openal pkgconfig qt:5 sdl xorg

@@ -3,7 +3,7 @@
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.8.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		liblz4.so:archivers/liblz4 \
 		liboctomap.so:math/octomap \
 		libode.so:devel/ode \
-		libosg.so:graphics/osg \
+		libosg.so:graphics/osg34 \
 		libnlopt.so:math/nlopt \
 		libtinyxml2.so:textproc/tinyxml2 \
 		liburdfdom_world.so:devel/ros-urdfdom
