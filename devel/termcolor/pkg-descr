@@ -1,0 +1,7 @@
+Termcolor is a header-only C++ library for printing colored messages to the
+terminal. Written just for fun with a help of the Force. Termcolor uses ANSI
+color formatting, so you can use it on every system that is used such terminals
+(most *nix systems, including Linux and Mac OS). On Windows, WinAPI is used
+instead but some limitations are applied.
+
+WWW: https://github.com/ikalnytskyi/termcolor
