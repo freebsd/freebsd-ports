@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	osg
-PORTVERSION=	3.5.1
-PORTREVISION=	13
+PORTVERSION=	3.6.4
+DISTVERSIONPREFIX=	OpenSceneGraph-
 CATEGORIES=	graphics
-MASTER_SITES=	http://trac.openscenegraph.org/downloads/developer_releases/ \
-		http://mirror.amdmi3.ru/distfiles/
-PKGNAMESUFFIX=	-devel
-DISTNAME=	OpenSceneGraph-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
@@ -21,33 +17,38 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-CONFLICTS=	osg
+USE_GITHUB=	yes
+GH_ACCOUNT=	openscenegraph
+GH_PROJECT=	OpenSceneGraph
 
-USES=		alias cmake jpeg gl pkgconfig xorg zip
-USE_GL=		gl glu
+CONFLICTS=	osg34-[0-9]*
+
+USES=		alias cmake jpeg gl localbase pkgconfig xorg
+USE_GL=		gl
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=141 \
-		OPENTHREADS_VERSION=3.3.0 \
-		OPENTHREADS_SHLIBVER=20
-
-PORTSCOUT=	limitw:1,odd
+		OSG_SHLIBVER=160 \
+		OPENTHREADS_VERSION=3.3.1 \
+		OPENTHREADS_SHLIBVER=21
 
 OPTIONS_DEFINE=	CURL FFMPEG FREETYPE GDAL GIF GSTREAMER GTA \
-		JASPER LIBLAS LUA NVTT OPENEXR PDF QT5 SDL \
-		SVG VNC XINE XRANDR
-OPTIONS_DEFAULT=FFMPEG FREETYPE GIF XRANDR
+		JASPER LIBLAS LUA NVTT OPENEXR PDF SDL ASIO \
+		SVG VNC XRANDR XINERAMA FONTCONFIG DCMTK COLLADA
+OPTIONS_DEFAULT=FFMPEG FREETYPE GIF XRANDR XINERAMA FONTCONFIG
+OPTIONS_SUB=		yes
 
-GDAL_DESC=	GDAL support
-GTA_DESC=	GTA file format support
-LIBLAS_DESC=	liblas support
-NVTT_DESC=	Use NVidia texture tools
-SDL_DESC=	Use SDL (joystick support in present3d)
-VNC_DESC=	LibVNCServer support
-
-OPTIONS_SUB=	yes
+ASIO_DESC=		ASIO support (resthttp plugin)
+GDAL_DESC=		GDAL support
+GTA_DESC=		GTA file format support
+LIBLAS_DESC=		liblas support
+NVTT_DESC=		Use NVidia texture tools
+SDL_DESC=		Use SDL (joystick support in present3d)
+VNC_DESC=		LibVNCServer support
+OPENCASCADE_DESC=	OpenCASCADE format support
+DCMTK_DESC=		DICOM format support
+COLLADA_DESC=		COLLADA (dae) format support
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_VARS=		FORCE_REQUIRE+=CURL
@@ -58,6 +59,8 @@ FFMPEG_VARS_OFF=	FORCE_IGNORE+=FFmpeg
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_VARS=		FORCE_REQUIRE+=Freetype
 FREETYPE_VARS_OFF=	FORCE_IGNORE+=Freetype
+FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
+FONTCONFIG_CMAKE_BOOL=	OSG_TEXT_USE_FONTCONFIG
 GDAL_LIB_DEPENDS=	libgdal.so:graphics/gdal
 GDAL_VARS=		FORCE_REQUIRE+=GDAL
 GDAL_VARS_OFF=		FORCE_IGNORE+=GDAL
@@ -65,8 +68,8 @@ GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_VARS=		FORCE_REQUIRE+=GIFLIB
 GIF_VARS_OFF=		FORCE_IGNORE+=GIFLIB
 GSTREAMER_USE=		GNOME=glib20 GSTREAMER1=yes
-GSTREAMER_VARS=		FORCE_REQUIRE+=GStreamer
-GSTREAMER_VARS_OFF=	FORCE_IGNORE+=GStreamer
+GSTREAMER_VARS=		FORCE_REQUIRE+="GStreamer GLIB"
+GSTREAMER_VARS_OFF=	FORCE_IGNORE+="GStreamer GLIB"
 GSTREAMER_BROKEN=	fails when linking gstreamer plugin, with error cannot find -lgstreamer-1.0
 GTA_LIB_DEPENDS=	libgta.so:devel/libgta
 GTA_VARS=		FORCE_REQUIRE+=GTA
@@ -88,48 +91,53 @@ OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
 OPENEXR_VARS=		FORCE_REQUIRE+=OpenEXR
 OPENEXR_VARS_OFF=	FORCE_IGNORE+=OpenEXR
 PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
-PDF_USE=		gnome=cairo
+PDF_USE=		GNOME=cairo
 PDF_VARS=		FORCE_REQUIRE+=Poppler-glib
 PDF_VARS_OFF=		FORCE_IGNORE+=Poppler-glib
-QT5_USES=		qt:5
-QT5_USE=		qt=buildtools_build,core,gui,opengl,qmake_build,webkit
-QT5_CMAKE_ON=		-DDESIRED_QT_VERSION=5
-QT5_VARS=		FORCE_REQUIRE+="Qt5Widgets Qt5WebKitWidgets"
-QT5_VARS_OFF=		FORCE_IGNORE+="Qt5Widgets Qt5WebKitWidgets"
-SDL_USES=		sdl
-SDL_USE=		sdl=sdl
+SDL_USE=		SDL=sdl
 SDL_VARS=		FORCE_REQUIRE+=SDL
 SDL_VARS_OFF=		FORCE_IGNORE+=SDL
-SVG_USES=		gnome
-SVG_USE=		gnome=cairo,librsvg2
+SVG_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
+SVG_USE=		GNOME=cairo
 SVG_VARS=		FORCE_REQUIRE+=RSVG
 SVG_VARS_OFF=		FORCE_IGNORE+=RSVG
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
 VNC_VARS=		FORCE_REQUIRE+=LibVNCServer
 VNC_VARS_OFF=		FORCE_IGNORE+=LibVNCServer
-XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
-XINE_VARS=		FORCE_REQUIRE+=Xine
-XINE_VARS_OFF=		FORCE_IGNORE+=Xine
-XRANDR_CMAKE_ON=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
-XRANDR_CMAKE_OFF=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
-XRANDR_USE=		xorg=xrandr
+XRANDR_CMAKE_BOOL=	OSGVIEWER_USE_XRANDR
+XRANDR_USE=		XORG=xrandr
+XINERAMA_CMAKE_BOOL=	OSGVIEWER_USE_XINERAMA
+XINERAMA_USE=		XORG=xinerama
+#OPENCASCADE_LIB_DEPENDS=libTKBRep.so:cad/opencascade
+#OPENCASCADE_VARS=	FORCE_REQUIRE+=OpenCascade
+#OPENCASCADE_VARS_OFF=	FORCE_IGNORE+=OpenCascade
+#OPENCASCADE_CMAKE_ARGS=	-DOPENCASCADE_LIBRARY_TYPE="Shared"
+DCMTK_LIB_DEPENDS=	libdcmrt.so:graphics/dcmtk \
+			libxml2.so:textproc/libxml2 \
+			libicuuc.so:devel/icu
+DCMTK_USES=		ssl
+DCMTK_VARS=		FORCE_REQUIRE+=DCMTK
+DCMTK_VARS_OFF=		FORCE_IGNORE+=DCMTK
+#ILMBASE_LIB_DEPENDS=	${LOCALBASE}/lib/libImath.so:graphics/ilmbase
+#ILMBASE_VARS=		FORCE_REQUIRE+=ilmbase
+#ILMBASE_VARS_OFF=	FORCE_IGNORE+=ilmbase
+COLLADA_LIB_DEPENDS=	libcollada-dom2.5-dp.so:devel/collada-dom \
+			libboost_filesystem.so:devel/boost-libs
+COLLADA_VARS=		FORCE_REQUIRE+=COLLADA
+COLLADA_VARS_OFF=	FORCE_IGNORE+=COLLADA
+ASIO_BUILD_DEPENDS=	${LOCALBASE}/include/asio.hpp:net/asio
+ASIO_VARS=		FORCE_REQUIRE+=Asio
+ASIO_VARS_OFF=		FORCE_IGNORE+=Asio
 
 # GUI toolkits are only needed for building examples, which are not even installed
-FORCE_IGNORE=	FLTK GLUT FOX Qt3 wxWidgets OpenAL GtkGl SDL2	# only for examples
-FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL FBX		# not in ports
-FORCE_IGNORE+=	OpenVRML					# ports version too old
-FORCE_IGNORE+=	ITK						# ports version doesn't build on 10.x
-FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB		# common & lightweight
+FORCE_IGNORE=	FLTK FOX wxWidgets GtkGl SDL2		# only for examples
+FORCE_IGNORE+=	FBX Inventor				# not in ports
+FORCE_IGNORE+=	ilmbase					# not used
+FORCE_IGNORE+=	OpenCascade				# detection broken
+FORCE_IGNORE+=	ZeroConf				# no avahi support yet
+FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB	# common & lightweight
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT5}
-CMAKE_ARGS+=		-DOSG_USE_QT:BOOL=ON
-PLIST_SUB+=		QT=""
-.else
-CMAKE_ARGS+=		-DOSG_USE_QT:BOOL=OFF
-PLIST_SUB+=		QT="@comment "
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
