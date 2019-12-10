@@ -18,7 +18,7 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libnlopt.so:math/nlopt \
 		libtbb.so:devel/tbb
 
-USES=		cmake eigen:3,build,run
+USES=		cmake compiler:c++11-lang eigen:3,build,run
 USE_GITHUB=	yes
 GH_ACCOUNT=	esa
 USE_LDCONFIG=	yes
