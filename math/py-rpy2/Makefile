@@ -3,6 +3,7 @@
 
 PORTNAME=	rpy2
 DISTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.13.1:devel/py-cffi@${PY_FLAVOR}
 LIB_DEPENDS=	libR.so:math/R \
 		libicui18n.so:devel/icu \
-		libomp.so:devel/openmp \
 		libpcre.so:devel/pcre
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.13.1:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -37,4 +37,10 @@ PLIST_FILES=	${PYTHON_SITELIBDIR}/__pycache__/_rinterface_cffi_abi.cpython-${PYT
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_rinterface_cffi_api.abi3.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang && !exists(/usr/include/omp.h)
+LIB_DEPENDS+=	libomp.so:devel/openmp
+.endif
+
+.include <bsd.port.post.mk>
