@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gramps
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science gnome python
 
@@ -12,13 +12,15 @@ COMMENT=	GTK3-based genealogy program
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
+LIB_DEPENDS=	libgeocode-glib.so:net/geocode-glib \
+		libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb3>0:databases/py-bsddb3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyicu>=1.8:devel/py-pyicu@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygraphviz>=0:graphics/py-pygraphviz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		xdg-open:devel/xdg-utils
 
-USES=		desktop-file-utils gettext gnome python:3.2+ shared-mime-info
+USES=		desktop-file-utils gettext gnome python:3.3+ shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	gramps-project
 USE_GNOME=	cairo gtk30 intltool librsvg2 pango pygobject3
