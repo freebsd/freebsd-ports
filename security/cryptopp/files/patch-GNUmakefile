@@ -2,19 +2,28 @@ We need to export the CRYPTOPP_DISABLE_ASM flag if cryptopp was not built
 with SIMD support. Certain functions prototypes are guarded by this
 flag and build failures will arise in other ports if not set appropriately.
 
---- GNUmakefile.orig	2018-04-08 08:47:12 UTC
+--- GNUmakefile.orig	2019-04-28 23:36:50 UTC
 +++ GNUmakefile
-@@ -90,7 +90,7 @@ SUNCC_512_OR_LATER := $(shell echo "$(SUNCC_VERSION)" 
- SUNCC_513_OR_LATER := $(shell echo "$(SUNCC_VERSION)" | $(GREP) -i -c -E "CC: (Sun|Studio) .* (5\.1[3-9]|5\.[2-9]|6\.)")
+@@ -57,7 +57,7 @@ ifeq ($(SYSTEMX),)
+   SYSTEMX := $(shell uname -s 2>/dev/null)
+ endif
  
- # Enable shared object versioning for Linux
--HAS_SOLIB_VERSION := $(IS_LINUX)
-+HAS_SOLIB_VERSION := 1
+-IS_LINUX := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c "Linux")
++IS_LINUX := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c -E "Linux|FreeBSD")
+ IS_HURD := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c -E "GNU|Hurd")
+ IS_MINGW := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c "MinGW")
+ IS_CYGWIN := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c "Cygwin")
+@@ -742,7 +742,7 @@ endif
  
- # Fixup SunOS
- ifeq ($(IS_SUN),1)
-@@ -957,7 +957,7 @@ libcryptopp.pc:
- 	@echo 'Version: 7.0' >> libcryptopp.pc
+ # Use -pthread whenever it is available. See http://www.hpl.hp.com/techreports/2004/HPL-2004-209.pdf
+ #   http://stackoverflow.com/questions/2127797/gcc-significance-of-pthread-flag-when-compiling
+-ifeq ($(DETECT_FEATURES),1)
++ifeq (1,1)
+  ifeq ($(XLC_COMPILER),1)
+   ifeq ($(findstring -qthreaded,$(CXXFLAGS)),)
+    TPROG = TestPrograms/test_pthreads.cxx
+@@ -1341,7 +1341,7 @@ libcryptopp.pc:
+ 	@echo 'Version: 8.2' >> libcryptopp.pc
  	@echo 'URL: https://cryptopp.com/' >> libcryptopp.pc
  	@echo '' >> libcryptopp.pc
 -	@echo 'Cflags: -I$${includedir}' >> libcryptopp.pc
