@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tty-spinner
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
