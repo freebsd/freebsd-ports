@@ -11,7 +11,7 @@ COMMENT=	V Programming Language
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+USES=		compiler:c11 gmake
 
 LDFLAGS+=	-lm
 
