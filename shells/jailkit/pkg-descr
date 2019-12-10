@@ -1,6 +1,17 @@
 Jailkit is a set of utilities to limit user accounts to specific files
-using chroot() and or specific commands.  Setting up a chroot shell, a
-shell limited to some specific command, or daemon inside a chroot jail
+using chroot() and or specific commands. Setting up a chroot shell, a
+shell limited to some specific command, or a daemon inside a chroot jail
 is a lot easier and can be automated using these utilities.
 
-WWW: http://olivier.sessink.nl/jailkit/
+Jailkit is a specialized tool that is developed with a focus on security.
+It will abort in a secure way if the configuration, the system setup or the
+environment is not 100% secure, and it will send useful log messages that
+explain what is wrong to syslog.
+
+Jailkit is known to be used in network security appliances from several leading
+IT security firms, internet servers from several large enterprise organizations,
+internet servers from internet service providers, as well as many smaller
+companies and private users that need to secure cvs, sftp, shell or daemon
+processes.
+
+WWW: https://olivier.sessink.nl/jailkit/
