@@ -1,5 +1,13 @@
---- Gemfile.orig	2019-11-22 03:17:46 UTC
+--- Gemfile.orig	2019-12-03 11:22:02 UTC
 +++ Gemfile
+@@ -1,6 +1,6 @@
+ source 'https://rubygems.org'
+ 
+-gem 'rails', '5.2.3'
++gem 'rails', '5.2.4'
+ 
+ gem 'bootsnap', '~> 1.4'
+ 
 @@ -92,7 +92,6 @@ gem 'graphql', '~> 1.9.11'
  # https://gitlab.com/gitlab-org/gitlab/issues/31747
  gem 'graphiql-rails', '~> 1.4.10'
