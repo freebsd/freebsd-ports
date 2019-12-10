@@ -678,6 +678,7 @@
     SUBDIR += mgeupsd
     SUBDIR += minikube
     SUBDIR += minimunin
+    SUBDIR += minipot
     SUBDIR += minipro
     SUBDIR += minirsyslogd
     SUBDIR += mixer
