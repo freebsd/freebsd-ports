@@ -6,9 +6,13 @@ man/man1/kak.1.gz
 %%DATADIR%%/colors/default.kak
 %%DATADIR%%/colors/desertex.kak
 %%DATADIR%%/colors/github.kak
+%%DATADIR%%/colors/greyscale.kak
 %%DATADIR%%/colors/gruvbox.kak
+%%DATADIR%%/colors/kaleidoscope-dark.kak
+%%DATADIR%%/colors/kaleidoscope-light.kak
 %%DATADIR%%/colors/lucius.kak
 %%DATADIR%%/colors/palenight.kak
+%%DATADIR%%/colors/plain.kak
 %%DATADIR%%/colors/red-phoenix.kak
 %%DATADIR%%/colors/reeder.kak
 %%DATADIR%%/colors/solarized-dark-termcolors.kak
@@ -52,6 +56,7 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/filetype/cucumber.kak
 %%DATADIR%%/rc/filetype/d.kak
 %%DATADIR%%/rc/filetype/dart.kak
+%%DATADIR%%/rc/filetype/dhall.kak
 %%DATADIR%%/rc/filetype/diff.kak
 %%DATADIR%%/rc/filetype/dockerfile.kak
 %%DATADIR%%/rc/filetype/elixir.kak
@@ -59,8 +64,10 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/filetype/etc.kak
 %%DATADIR%%/rc/filetype/exherbo.kak
 %%DATADIR%%/rc/filetype/fish.kak
+%%DATADIR%%/rc/filetype/fsharp.kak
 %%DATADIR%%/rc/filetype/gas.kak
 %%DATADIR%%/rc/filetype/git.kak
+%%DATADIR%%/rc/filetype/gluon.kak
 %%DATADIR%%/rc/filetype/go.kak
 %%DATADIR%%/rc/filetype/haml.kak
 %%DATADIR%%/rc/filetype/haskell.kak
@@ -76,6 +83,7 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/filetype/kakrc.kak
 %%DATADIR%%/rc/filetype/kickstart.kak
 %%DATADIR%%/rc/filetype/latex.kak
+%%DATADIR%%/rc/filetype/ledger.kak
 %%DATADIR%%/rc/filetype/lisp.kak
 %%DATADIR%%/rc/filetype/lua.kak
 %%DATADIR%%/rc/filetype/mail.kak
@@ -84,6 +92,7 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/filetype/mercurial.kak
 %%DATADIR%%/rc/filetype/moon.kak
 %%DATADIR%%/rc/filetype/nim.kak
+%%DATADIR%%/rc/filetype/nix.kak
 %%DATADIR%%/rc/filetype/ocaml.kak
 %%DATADIR%%/rc/filetype/perl.kak
 %%DATADIR%%/rc/filetype/php.kak
@@ -105,6 +114,7 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/filetype/swift.kak
 %%DATADIR%%/rc/filetype/systemd.kak
 %%DATADIR%%/rc/filetype/taskpaper.kak
+%%DATADIR%%/rc/filetype/terraform.kak
 %%DATADIR%%/rc/filetype/toml.kak
 %%DATADIR%%/rc/filetype/troff.kak
 %%DATADIR%%/rc/filetype/tupfile.kak
@@ -116,7 +126,7 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/tools/comment.kak
 %%DATADIR%%/rc/tools/ctags.kak
 %%DATADIR%%/rc/tools/doc.kak
-%%DATADIR%%/rc/tools/formatter.kak
+%%DATADIR%%/rc/tools/format.kak
 %%DATADIR%%/rc/tools/git.kak
 %%DATADIR%%/rc/tools/go/go-tools.kak
 %%DATADIR%%/rc/tools/grep.kak
