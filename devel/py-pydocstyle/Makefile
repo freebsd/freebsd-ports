@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pydocstyle
-PORTVERSION=	4.0.1
+PORTVERSION=	5.0.0
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snowballstemmer>0:textproc/py-snowballstemmer@${PY_FLAVOR}
 
-USES=		python:3.4+
+USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
