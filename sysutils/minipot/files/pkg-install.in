@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+case $2 in
+	PRE-INSTALL)
+		if [ -r %%PREFIX%%/etc/nomad/server.hcl ]; then
+			cp %%PREFIX%%/etc/nomad/server.hcl %%PREFIX%%/etc/nomad/server.hcl.bkp
+		fi
+		if [ -r %%PREFIX%%/etc/consul.d/agent.json ]; then
+			cp %%PREFIX%%/etc/consul.d/agent.json %%PREFIX%%/etc/consul.d/agent.json.bkp
+		fi
+		if [ -r %%PREFIX%%/etc/traefik.toml ]; then
+			cp %%PREFIX%%/etc/traefik.toml %%PREFIX%%/etc/traefik.toml.bkp
+		fi
+		;;
+esac
+
