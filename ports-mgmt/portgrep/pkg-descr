@@ -1,0 +1,4 @@
+portgrep is a fast parallel ports tree search utility, supporting both
+predefined queries (by MAINTAINER, USES, etc.) and custom regex searches.
+
+WWW: https://github.com/dmgk/portgrep
