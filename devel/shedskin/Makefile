@@ -15,6 +15,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE
 
 BROKEN=		checksum mismatch
+DEPRECATED=	Broken for more than 3 months, unmaintained
+EXPIRATION_DATE=	2020-01-10
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libgc.so:devel/boehm-gc \
 		${LOCALBASE}/lib/libpcre.so:devel/pcre

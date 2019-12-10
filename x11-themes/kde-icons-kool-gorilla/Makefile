@@ -10,6 +10,8 @@ DISTNAME=	Korilla_Icons-v${PORTVERSION}
 COMMENT=	KDE Kool Gorilla iconset
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 3 months, unmaintained
+EXPIRATION_DATE=	2020-01-10
 
 USES=		tar:bzip2
 WRKSRC=		"${WRKDIR}/Kool.Gorilla"

@@ -14,6 +14,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN=		wrong LIB_DEPENDS
+DEPRECATED=	Broken for more than 4 months
+EXPIRATION_DATE=	2020-01-10
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \

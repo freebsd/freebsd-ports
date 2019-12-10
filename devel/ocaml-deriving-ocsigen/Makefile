@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Function derivation library
 
 BROKEN=		old version, incompatible with modern OCaml
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-01-10
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

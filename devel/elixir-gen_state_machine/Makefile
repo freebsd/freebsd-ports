@@ -12,6 +12,8 @@ COMMENT=	Idiomatic Elixir wrapper for gen_statem in OTP 19
 LICENSE=	APACHE20
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-01-10
 
 USES=		elixir
 USE_GITHUB=	yes

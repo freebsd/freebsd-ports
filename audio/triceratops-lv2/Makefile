@@ -15,6 +15,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		fails to configure
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2020-01-10
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \

@@ -12,6 +12,8 @@ COMMENT=	Configuration library for Erlang
 LICENSE=	APACHE20
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-01-10
 
 USES=		erlang:rebar
 USE_GITHUB=	yes

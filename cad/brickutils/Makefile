@@ -20,6 +20,8 @@ COMMENT=	Utility for building models with LEGO
 LICENSE=	GPLv3
 
 BROKEN=		missing RUN_DEPENDS
+DEPRECATED=	Broken for more than 3 months, unmaintained
+EXPIRATION_DATE=	2020-01-10
 
 RUN_DEPENDS=	${LOCALBASE}/share/ldraw/models/car.dat:cad/ldraw \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}

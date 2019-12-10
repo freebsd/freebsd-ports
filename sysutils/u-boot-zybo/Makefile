@@ -3,6 +3,8 @@
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
 BROKEN=		fails to compile
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-01-10
 
 MODEL=		zybo
 BOARD_CONFIG=	zynq_zybo_defconfig

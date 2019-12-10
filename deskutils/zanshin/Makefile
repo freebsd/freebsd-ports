@@ -10,6 +10,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Daily organizer for KDE
 
 BROKEN=		Broken by update to appliations 19.04.2
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2020-01-10
 
 LIB_DEPENDS=	libical.so:devel/libical
 
