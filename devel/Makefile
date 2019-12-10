@@ -205,6 +205,7 @@
     SUBDIR += aws-sdk-cpp
     SUBDIR += aws-sdk-php
     SUBDIR += awscli
+    SUBDIR += axmldec
     SUBDIR += b2
     SUBDIR += babeltrace
     SUBDIR += bam
