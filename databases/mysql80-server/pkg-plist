@@ -136,7 +136,6 @@ lib/mysql/plugin/keyring_udf.so
 lib/mysql/plugin/test_udf_services.so
 lib/mysql/plugin/validate_password.so
 lib/mysql/plugin/version_token.so
-libdata/pkgconfig/LIBMYSQL_OS_OUTPUT_NAME-NOTFOUND.pc
 libexec/mysqld
 man/man1/my_print_defaults.1.gz
 man/man1/myisam_ftdump.1.gz
