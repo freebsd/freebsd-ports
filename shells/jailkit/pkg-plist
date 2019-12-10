@@ -7,7 +7,6 @@ bin/jk_uchroot
 %%ETCDIR%%/jk_uchroot.ini
 %%ETCDIR%%/jk_update.ini
 man/man8/jailkit.8.gz
-man/man8/jk_addjailuser.8.gz
 man/man8/jk_check.8.gz
 man/man8/jk_chrootlaunch.8.gz
 man/man8/jk_chrootsh.8.gz
@@ -20,7 +19,6 @@ man/man8/jk_lsh.8.gz
 man/man8/jk_socketd.8.gz
 man/man8/jk_uchroot.8.gz
 man/man8/jk_update.8.gz
-sbin/jk_addjailuser
 sbin/jk_check
 sbin/jk_chrootlaunch
 @shell sbin/jk_chrootsh
