@@ -42,6 +42,9 @@ share/applications/gnome-genius.desktop
 %%DATADIR%%/examples/newton-sqrt2.gel
 %%DATADIR%%/examples/peano-restrictions.gel
 %%DATADIR%%/examples/peano.gel
+%%DATADIR%%/examples/plane-curves.gel
+%%DATADIR%%/examples/plot-ode-runge-kutta.gel
+%%DATADIR%%/examples/plot-ode-trajectory-runge-kutta.gel
 %%DATADIR%%/examples/riemann-integral-darboux.gel
 %%DATADIR%%/examples/riemann-integral.gel
 %%DATADIR%%/examples/rsa.gel
@@ -806,6 +809,7 @@ share/applications/gnome-genius.desktop
 %%DATADIR%%/help/sv/html/figures/surface_graph.png
 %%DATADIR%%/help/sv/html/index.html
 %%DATADIR%%/plugins/test.plugin
+%%DATADIR%%/xterm
 share/icons/hicolor/16x16/apps/gnome-genius.png
 share/icons/hicolor/22x22/apps/gnome-genius.png
 share/icons/hicolor/24x24/apps/gnome-genius.png
