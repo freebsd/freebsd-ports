@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plaso
-PORTVERSION=	20190916
+PORTVERSION=	20191203
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/log2timeline/plaso/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
