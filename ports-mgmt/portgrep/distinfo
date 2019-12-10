@@ -1,0 +1,7 @@
+TIMESTAMP = 1576017887
+SHA256 (dmgk-portgrep-v1.0.0_GH0.tar.gz) = d6d3844814691d2dc931e3f7a0a7678ad69923fe892ea8ec4cfaaebb860849df
+SIZE (dmgk-portgrep-v1.0.0_GH0.tar.gz) = 8262
+SHA256 (golang-sys-543471e840be_GH0.tar.gz) = 4d797f5647e0f68b313fb9663b0e4310f2d4a9dfa0d98de52902566785ea212b
+SIZE (golang-sys-543471e840be_GH0.tar.gz) = 1494161
+SHA256 (mattn-go-isatty-v0.0.10_GH0.tar.gz) = 55408e1afd78eaa112842ae2263e70703d5b5133feaa17fa477980a87a961fe7
+SIZE (mattn-go-isatty-v0.0.10_GH0.tar.gz) = 4465
