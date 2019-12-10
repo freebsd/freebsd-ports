@@ -9,6 +9,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libcrack.so:security/cracklib
 
 MASTERDIR=	${.CURDIR}/../cracklib
+PLIST=		${.CURDIR}/pkg-plist
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
