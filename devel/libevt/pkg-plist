@@ -11,10 +11,8 @@ lib/libevt.a
 lib/libevt.so
 lib/libevt.so.1
 lib/libevt.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pyevt.a
-%%PYTHON2_SITELIBDIR%%/pyevt.so
-%%PYTHON3_SITELIBDIR%%/pyevt.a
-%%PYTHON3_SITELIBDIR%%/pyevt.so
+%%PYTHON_SITELIBDIR%%/pyevt.a
+%%PYTHON_SITELIBDIR%%/pyevt.so
 libdata/pkgconfig/libevt.pc
 man/man1/evtexport.1.gz
 man/man1/evtinfo.1.gz
