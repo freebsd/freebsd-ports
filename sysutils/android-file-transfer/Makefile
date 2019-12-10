@@ -22,8 +22,6 @@ PLIST_FILES=	"@comment lib/libmtp-ng-static.a"
 OPTIONS_DEFINE=	CLI FUSE QT5
 OPTIONS_DEFAULT=CLI FUSE QT5
 OPTIONS_EXCLUDE?=	QT5 # enslaved until subpackaging
-# XXX http://lists.dragonflybsd.org/pipermail/users/2016-September/313064.html
-OPTIONS_EXCLUDE_DragonFly=	FUSE
 
 CLI_DESC=	CLI (Command-Line Interface) support
 CLI_USES=	readline
