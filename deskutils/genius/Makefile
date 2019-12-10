@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	genius
-PORTVERSION=	1.0.23
-PORTREVISION=	2
+PORTVERSION=	1.0.24
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME \
 		http://ftp.5z.com/pub/genius/
