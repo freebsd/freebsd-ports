@@ -1,5 +1,5 @@
---- src/oroborus.c.orig	Fri Jan 13 00:40:43 2006
-+++ src/oroborus.c	Thu Apr 26 02:11:54 2007
+--- src/oroborus.c.orig	2006-01-12 15:40:43 UTC
++++ src/oroborus.c
 @@ -33,6 +33,7 @@
  #include <stdio.h>
  #include <string.h>

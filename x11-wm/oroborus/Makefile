@@ -11,10 +11,11 @@ MAINTAINER=	matt@peterson.org
 COMMENT=	Small and simple GNOME-compatible window manager
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
 USES=		xorg
-USE_XORG=	xpm
+USE_XORG=	xpm x11 xext sm ice
+GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
