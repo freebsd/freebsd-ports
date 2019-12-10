@@ -1,5 +1,14 @@
---- bin/hatop.orig	2019-12-03 21:58:07 UTC
+--- bin/hatop.orig	2019-12-09 21:46:21 UTC
 +++ bin/hatop
+@@ -404,7 +404,7 @@ class Socket:
+         data = self._socket.recv(HAPROXY_CLI_BUFSIZE)
+         if not data:
+             raise SocketError('error while waiting for prompt')
+-        return data
++        return data.decode()
+ 
+     def connect(self):
+         # Initialize socket connection
 @@ -414,16 +414,16 @@ class Socket:
          # Enter the interactive socket mode. This requires HAProxy 1.4+ and
          # allows us to error out early if connected to an older version.
