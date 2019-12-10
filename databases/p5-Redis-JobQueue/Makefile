@@ -11,7 +11,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Job queue management implemented using Redis server
 
 LICENSE=	ARTPERL10
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-UUID>0:devel/p5-Data-UUID \
