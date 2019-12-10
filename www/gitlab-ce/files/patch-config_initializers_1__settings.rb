@@ -1,6 +1,6 @@
---- config/initializers/1_settings.rb.orig	2019-10-22 12:01:49 UTC
+--- config/initializers/1_settings.rb.orig	2019-12-03 11:22:02 UTC
 +++ config/initializers/1_settings.rb
-@@ -178,12 +178,8 @@ Settings.gitlab['email_smime'] = SmimeSignatureSetting
+@@ -179,12 +179,8 @@ Settings.gitlab['email_smime'] = SmimeSignatureSetting
  Settings.gitlab['base_url']   ||= Settings.__send__(:build_base_gitlab_url)
  Settings.gitlab['url']        ||= Settings.__send__(:build_gitlab_url)
  Settings.gitlab['user']       ||= 'git'
