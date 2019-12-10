@@ -22,7 +22,7 @@ BUILD_DEPENDS=	freetype2>=2.4.5:print/freetype2 \
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		gmake libtool pkgconfig
+USES=		compiler:c++11-lang gmake libtool pkgconfig
 
 CONFIGURE_ARGS=	--with-doc=no --with-qt=no
 GNU_CONFIGURE=	yes
