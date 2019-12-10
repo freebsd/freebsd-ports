@@ -12,6 +12,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This module is required to build Perl RPM packages
 
 BROKEN=		does not build, op_sibling usage. https://rt.cpan.org/Public/Bug/Display.html?id=117350
+DEPRECATED=	Broken for more than 7 months
+EXPIRATION_DATE=	2020-01-10
 
 TEST_DEPENDS=	p5-Try-Tiny>=0:lang/p5-Try-Tiny
 

@@ -16,6 +16,8 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		Could not find 'bundler' (1.13.6)
+DEPRECATED=	Broken for more than 7 months
+EXPIRATION_DATE=	2020-01-10
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:sysutils/rubygem-bundler \

@@ -13,6 +13,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 9 months
+EXPIRATION_DATE=	2020-01-10
 
 BUILD_DEPENDS=	bash:shells/bash \
 		sqlite3:databases/sqlite3

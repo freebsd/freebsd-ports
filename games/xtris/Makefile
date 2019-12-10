@@ -20,6 +20,8 @@ COMMENT=	Multi-player version of a popular game for the X Window system
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 3 months
+EXPIRATION_DATE=	2020-01-10
 RESTRICTED=	Possible trademark infringement
 WRKSRC=		${WRKDIR}/xtris
 USES=		xorg

@@ -10,6 +10,9 @@ COMMENT=	Clustering, registration, and distribution for Elixir
 
 LICENSE=	MIT
 
+DEPRECATED=	Depends on broken and expiring devel/elixir-gen_state_machine
+EXPIRATION_DATE=	2020-01-10
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitwalker

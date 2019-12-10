@@ -40,6 +40,8 @@ OPTIONS_SUB=		yes
 
 MATLAB_CONFIGURE_ENABLE=	matlab
 OCTAVE_BROKEN=		Does not build after octave upgrade in r495225
+DEPRECATED=	Broken for more than 9 months
+EXPIRATION_DATE=	2020-01-10
 OCTAVE_CONFIGURE_ENABLE=	octave
 OCTAVE_LIB_DEPENDS=		liboctave.so:math/octave
 OCTAVE_USES=			compiler:c++14-lang

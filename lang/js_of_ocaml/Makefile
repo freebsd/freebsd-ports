@@ -8,6 +8,9 @@ CATEGORIES=	lang
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml to JavaScript compiler
 
+DEPRECATED=	Depends on broken and expiring devel/ocaml-deriving-ocsigen
+EXPIRATION_DATE=	2020-01-10
+
 BUILD_DEPENDS=	ocaml-lwt>=2.3.0:devel/ocaml-lwt \
 		menhir:devel/menhir \
 		${SA_DIR}/deriving-ocsigen/deriving.a:devel/ocaml-deriving-ocsigen \

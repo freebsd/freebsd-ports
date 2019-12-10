@@ -10,6 +10,9 @@ COMMENT=	CLI Framework for Erlang
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Depends on broken and expiring devel/erlang-cuttlefish
+EXPIRATION_DATE=	2020-01-10
+
 USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	basho

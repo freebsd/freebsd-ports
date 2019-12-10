@@ -19,6 +19,8 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		fails to build with boost 1.70, see bug 237016
+DEPRECATED=	Broken for more than 8 months
+EXPIRATION_DATE=	2020-01-10
 BROKEN_powerpc=		fails to install: runs out of virtual memory
 
 LIB_DEPENDS=	libicuuc.so:devel/icu \

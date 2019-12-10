@@ -13,6 +13,9 @@ COMMENT=	Program to manage GPS data (tracks, waypoints, etc.)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on broken and expiring graphics/mapnik
+EXPIRATION_DATE=	2020-01-10
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \

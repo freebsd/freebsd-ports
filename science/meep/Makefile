@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		very old version, incompatible with Guile 2.2
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-01-10
 
 BUILD_DEPENDS=	harminv:science/harminv \
 		gsed:textproc/gsed
