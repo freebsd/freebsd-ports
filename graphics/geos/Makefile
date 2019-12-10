@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geos
-PORTVERSION=	3.7.2
-PORTREVISION=	1
+PORTVERSION=	3.8.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/geos/ \
 		LOCAL/sunpoet
