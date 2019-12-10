@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysbench
-PORTVERSION=	1.0.18
+PORTVERSION=	1.0.19
 CATEGORIES=	benchmarks databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -14,15 +14,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
 		libluajit-5.1.so:lang/luajit
 
-OPTIONS_DEFINE=	LFS MYSQL PGSQL
-OPTIONS_DEFAULT=LFS MYSQL
+USES=		autoreconf gmake libtool pkgconfig
 
 CONFIGURE_ARGS=	--with-system-ck --with-system-luajit
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake libtool pkgconfig
 
 GH_ACCOUNT=	akopytov
 USE_GITHUB=	yes
+
+OPTIONS_DEFINE=	LFS MYSQL PGSQL
+OPTIONS_DEFAULT=LFS MYSQL
 
 LFS_CONFIGURE_ENABLE=	largefile
 MYSQL_CONFIGURE_WITH=	mysql
