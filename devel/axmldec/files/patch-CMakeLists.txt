@@ -1,0 +1,34 @@
+--- CMakeLists.txt.orig	2017-05-07 19:44:44 UTC
++++ CMakeLists.txt
+@@ -61,23 +61,17 @@ add_definitions(
+ target_link_libraries(axmldec ${Boost_LIBRARIES})
+ 
+ if(ENABLE_APK_LOADING)
+-    find_package(ZLIB REQUIRED)
+-    include_directories(${ZLIB_INCLUDE_DIR})
+-
++    include (FindPkgConfig)
++    if (PKG_CONFIG_FOUND)
++        pkg_check_modules(MINIZIP minizip)
++    endif()
++    include_directories(${MINIZIP_INCLUDE_DIRS})
++    find_library(MINIZIP_FROM_PORTS ${MINIZIP_LIBRARIES}
++        PATHS ${MINIZIP_LIBRARY_DIRS})
+     add_definitions(
+         -DENABLE_APK_LOADING=1
+     )
+-    add_library(minizip STATIC
+-        ${CMAKE_CURRENT_SOURCE_DIR}/external/minizip/unzip.c
+-        ${CMAKE_CURRENT_SOURCE_DIR}/external/minizip/ioapi.c
+-    )
+-    set_target_properties(minizip PROPERTIES
+-        COMPILE_DEFINITIONS "NOUNCRYPT;NOCRYPT")
+-    target_link_libraries(minizip ${ZLIB_LIBRARIES})
+-    set(MINIZIP_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/minizip)
+-    set(MINIZIP_LIBRARIES minizip)
+-    include_directories(SYSTEM ${MINIZIP_INCLUDE_DIR})
+-    target_link_libraries(axmldec ${MINIZIP_LIBRARIES})
++    target_link_libraries(axmldec ${MINIZIP_FROM_PORTS})
+ endif()
+ 
+ #-------------------------------------------------------------------------------
