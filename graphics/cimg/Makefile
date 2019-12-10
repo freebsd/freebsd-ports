@@ -23,7 +23,17 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dtschump
 GH_PROJECT=	CImg
 
-USES=	compiler:c11 xorg
+BUILD_WRKSRC=	${WRKSRC}/examples
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MEXAMPLES}
+USES+=		compiler:c11 gmake pkgconfig:build xorg
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
 
 .if !defined(WITHOUT_LAPACK)
 . if defined(WITH_ATLAS)
@@ -33,17 +43,6 @@ USES+=		blaslapack
 . endif
 .endif
 
-BUILD_WRKSRC=	${WRKSRC}/examples
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MEXAMPLES}
-USES+=		gmake pkgconfig:build
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
 REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	libboard.so:graphics/libboard
 
