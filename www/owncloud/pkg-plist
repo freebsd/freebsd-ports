@@ -1964,8 +1964,6 @@
 %%WWWDIR%%/apps/files_mediaviewer/appinfo/app.php
 %%WWWDIR%%/apps/files_mediaviewer/appinfo/info.xml
 %%WWWDIR%%/apps/files_mediaviewer/appinfo/signature.json
-%%WWWDIR%%/apps/files_mediaviewer/css/files_mediaviewer.css
-%%WWWDIR%%/apps/files_mediaviewer/css/files_mediaviewer.css.map
 %%WWWDIR%%/apps/files_mediaviewer/js/files_mediaviewer.js
 %%WWWDIR%%/apps/files_mediaviewer/js/files_mediaviewer_init.js
 %%WWWDIR%%/apps/files_mediaviewer/templates/settings.php
@@ -3096,6 +3094,8 @@
 %%WWWDIR%%/apps/updatenotification/l10n/lb.json
 %%WWWDIR%%/apps/updatenotification/l10n/lt_LT.js
 %%WWWDIR%%/apps/updatenotification/l10n/lt_LT.json
+%%WWWDIR%%/apps/updatenotification/l10n/lv.js
+%%WWWDIR%%/apps/updatenotification/l10n/lv.json
 %%WWWDIR%%/apps/updatenotification/l10n/mk.js
 %%WWWDIR%%/apps/updatenotification/l10n/mk.json
 %%WWWDIR%%/apps/updatenotification/l10n/nb_NO.js
@@ -3785,7 +3785,6 @@
 %%WWWDIR%%/core/vendor/blueimp-md5/js/demo.js
 %%WWWDIR%%/core/vendor/blueimp-md5/js/md5.js
 %%WWWDIR%%/core/vendor/blueimp-md5/js/md5.min.js
-%%WWWDIR%%/core/vendor/bootstrap/.hound.yml
 %%WWWDIR%%/core/vendor/bootstrap/_config.yml
 %%WWWDIR%%/core/vendor/bootstrap/dist/css/bootstrap-theme.css
 %%WWWDIR%%/core/vendor/bootstrap/dist/css/bootstrap-theme.css.map
@@ -3808,14 +3807,15 @@
 %%WWWDIR%%/core/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf
 %%WWWDIR%%/core/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff
 %%WWWDIR%%/core/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2
+%%WWWDIR%%/core/vendor/bootstrap/grunt/.stylelintrc
+%%WWWDIR%%/core/vendor/bootstrap/grunt/browsers.js
 %%WWWDIR%%/core/vendor/bootstrap/grunt/bs-commonjs-generator.js
 %%WWWDIR%%/core/vendor/bootstrap/grunt/bs-glyphicons-data-generator.js
 %%WWWDIR%%/core/vendor/bootstrap/grunt/bs-lessdoc-parser.js
 %%WWWDIR%%/core/vendor/bootstrap/grunt/bs-raw-files-generator.js
 %%WWWDIR%%/core/vendor/bootstrap/grunt/change-version.js
 %%WWWDIR%%/core/vendor/bootstrap/grunt/configBridge.json
-%%WWWDIR%%/core/vendor/bootstrap/grunt/npm-shrinkwrap.json
-%%WWWDIR%%/core/vendor/bootstrap/grunt/sauce_browsers.yml
+%%WWWDIR%%/core/vendor/bootstrap/grunt/generate-sri.js
 %%WWWDIR%%/core/vendor/bootstrap/js/affix.js
 %%WWWDIR%%/core/vendor/bootstrap/js/alert.js
 %%WWWDIR%%/core/vendor/bootstrap/js/button.js
@@ -3828,8 +3828,6 @@
 %%WWWDIR%%/core/vendor/bootstrap/js/tab.js
 %%WWWDIR%%/core/vendor/bootstrap/js/tooltip.js
 %%WWWDIR%%/core/vendor/bootstrap/js/transition.js
-%%WWWDIR%%/core/vendor/bootstrap/less/.csscomb.json
-%%WWWDIR%%/core/vendor/bootstrap/less/.csslintrc
 %%WWWDIR%%/core/vendor/bootstrap/less/alerts.less
 %%WWWDIR%%/core/vendor/bootstrap/less/badges.less
 %%WWWDIR%%/core/vendor/bootstrap/less/bootstrap.less
@@ -3901,6 +3899,7 @@
 %%WWWDIR%%/core/vendor/bootstrap/less/utilities.less
 %%WWWDIR%%/core/vendor/bootstrap/less/variables.less
 %%WWWDIR%%/core/vendor/bootstrap/less/wells.less
+%%WWWDIR%%/core/vendor/bootstrap/package-lock.json
 %%WWWDIR%%/core/vendor/bootstrap/package.js
 %%WWWDIR%%/core/vendor/bowser/src/bowser.js
 %%WWWDIR%%/core/vendor/bowser/src/useragents.js
@@ -6111,6 +6110,7 @@
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Stmt/UseUse.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Stmt/Use_.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Stmt/While_.php
+%%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/UnionType.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/NodeAbstract.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/NodeDumper.php
@@ -8662,6 +8662,7 @@
 %%WWWDIR%%/lib/private/HTTPHelper.php
 %%WWWDIR%%/lib/private/Helper/EnvironmentHelper.php
 %%WWWDIR%%/lib/private/Helper/LocaleHelper.php
+%%WWWDIR%%/lib/private/Helper/UserTypeHelper.php
 %%WWWDIR%%/lib/private/HintException.php
 %%WWWDIR%%/lib/private/Hooks/BasicEmitter.php
 %%WWWDIR%%/lib/private/Hooks/Emitter.php
@@ -9837,7 +9838,12 @@
 %%WWWDIR%%/updater/vendor/symfony/console/Command/Command.php
 %%WWWDIR%%/updater/vendor/symfony/console/Command/HelpCommand.php
 %%WWWDIR%%/updater/vendor/symfony/console/Command/ListCommand.php
+%%WWWDIR%%/updater/vendor/symfony/console/Command/LockableTrait.php
+%%WWWDIR%%/updater/vendor/symfony/console/CommandLoader/CommandLoaderInterface.php
+%%WWWDIR%%/updater/vendor/symfony/console/CommandLoader/ContainerCommandLoader.php
+%%WWWDIR%%/updater/vendor/symfony/console/CommandLoader/FactoryCommandLoader.php
 %%WWWDIR%%/updater/vendor/symfony/console/ConsoleEvents.php
+%%WWWDIR%%/updater/vendor/symfony/console/DependencyInjection/AddConsoleCommandPass.php
 %%WWWDIR%%/updater/vendor/symfony/console/Descriptor/ApplicationDescription.php
 %%WWWDIR%%/updater/vendor/symfony/console/Descriptor/Descriptor.php
 %%WWWDIR%%/updater/vendor/symfony/console/Descriptor/DescriptorInterface.php
@@ -9846,9 +9852,11 @@
 %%WWWDIR%%/updater/vendor/symfony/console/Descriptor/TextDescriptor.php
 %%WWWDIR%%/updater/vendor/symfony/console/Descriptor/XmlDescriptor.php
 %%WWWDIR%%/updater/vendor/symfony/console/Event/ConsoleCommandEvent.php
+%%WWWDIR%%/updater/vendor/symfony/console/Event/ConsoleErrorEvent.php
 %%WWWDIR%%/updater/vendor/symfony/console/Event/ConsoleEvent.php
 %%WWWDIR%%/updater/vendor/symfony/console/Event/ConsoleExceptionEvent.php
 %%WWWDIR%%/updater/vendor/symfony/console/Event/ConsoleTerminateEvent.php
+%%WWWDIR%%/updater/vendor/symfony/console/EventListener/ErrorListener.php
 %%WWWDIR%%/updater/vendor/symfony/console/Exception/CommandNotFoundException.php
 %%WWWDIR%%/updater/vendor/symfony/console/Exception/ExceptionInterface.php
 %%WWWDIR%%/updater/vendor/symfony/console/Exception/InvalidArgumentException.php
@@ -9862,7 +9870,6 @@
 %%WWWDIR%%/updater/vendor/symfony/console/Formatter/OutputFormatterStyleStack.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/DebugFormatterHelper.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/DescriptorHelper.php
-%%WWWDIR%%/updater/vendor/symfony/console/Helper/DialogHelper.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/FormatterHelper.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/Helper.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/HelperInterface.php
@@ -9870,13 +9877,11 @@
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/InputAwareHelper.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/ProcessHelper.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/ProgressBar.php
-%%WWWDIR%%/updater/vendor/symfony/console/Helper/ProgressHelper.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/ProgressIndicator.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/QuestionHelper.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/SymfonyQuestionHelper.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/Table.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/TableCell.php
-%%WWWDIR%%/updater/vendor/symfony/console/Helper/TableHelper.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/TableSeparator.php
 %%WWWDIR%%/updater/vendor/symfony/console/Helper/TableStyle.php
 %%WWWDIR%%/updater/vendor/symfony/console/Input/ArgvInput.php
@@ -9887,6 +9892,7 @@
 %%WWWDIR%%/updater/vendor/symfony/console/Input/InputDefinition.php
 %%WWWDIR%%/updater/vendor/symfony/console/Input/InputInterface.php
 %%WWWDIR%%/updater/vendor/symfony/console/Input/InputOption.php
+%%WWWDIR%%/updater/vendor/symfony/console/Input/StreamableInputInterface.php
 %%WWWDIR%%/updater/vendor/symfony/console/Input/StringInput.php
 %%WWWDIR%%/updater/vendor/symfony/console/LICENSE
 %%WWWDIR%%/updater/vendor/symfony/console/Logger/ConsoleLogger.php
@@ -9901,10 +9907,10 @@
 %%WWWDIR%%/updater/vendor/symfony/console/Question/ConfirmationQuestion.php
 %%WWWDIR%%/updater/vendor/symfony/console/Question/Question.php
 %%WWWDIR%%/updater/vendor/symfony/console/README.md
-%%WWWDIR%%/updater/vendor/symfony/console/Shell.php
 %%WWWDIR%%/updater/vendor/symfony/console/Style/OutputStyle.php
 %%WWWDIR%%/updater/vendor/symfony/console/Style/StyleInterface.php
 %%WWWDIR%%/updater/vendor/symfony/console/Style/SymfonyStyle.php
+%%WWWDIR%%/updater/vendor/symfony/console/Terminal.php
 %%WWWDIR%%/updater/vendor/symfony/console/Tester/ApplicationTester.php
 %%WWWDIR%%/updater/vendor/symfony/console/Tester/CommandTester.php
 %%WWWDIR%%/updater/vendor/symfony/console/composer.json
@@ -9920,6 +9926,7 @@
 %%WWWDIR%%/updater/vendor/symfony/debug/Exception/FatalThrowableError.php
 %%WWWDIR%%/updater/vendor/symfony/debug/Exception/FlattenException.php
 %%WWWDIR%%/updater/vendor/symfony/debug/Exception/OutOfMemoryException.php
+%%WWWDIR%%/updater/vendor/symfony/debug/Exception/SilencedErrorContext.php
 %%WWWDIR%%/updater/vendor/symfony/debug/Exception/UndefinedFunctionException.php
 %%WWWDIR%%/updater/vendor/symfony/debug/Exception/UndefinedMethodException.php
 %%WWWDIR%%/updater/vendor/symfony/debug/ExceptionHandler.php
@@ -9952,6 +9959,7 @@
 %%WWWDIR%%/updater/vendor/symfony/process/Exception/ProcessTimedOutException.php
 %%WWWDIR%%/updater/vendor/symfony/process/Exception/RuntimeException.php
 %%WWWDIR%%/updater/vendor/symfony/process/ExecutableFinder.php
+%%WWWDIR%%/updater/vendor/symfony/process/InputStream.php
 %%WWWDIR%%/updater/vendor/symfony/process/LICENSE
 %%WWWDIR%%/updater/vendor/symfony/process/PhpExecutableFinder.php
 %%WWWDIR%%/updater/vendor/symfony/process/PhpProcess.php
