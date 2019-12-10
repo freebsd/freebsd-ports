@@ -3,7 +3,7 @@
 
 PORTNAME=	xorriso
 PORTVERSION=	1.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTNAME=	libisoburn-${PORTVERSION}
@@ -35,6 +35,7 @@ LIBACL_DESC=	ACL Support
 LIBJTE_DESC=	Jigdo Support
 XATTR_DESC=	Extended file attribute Support
 
+CDIO_LIB_DEPENDS=		libcdio.so:sysutils/libcdio
 CDIO_CONFIGURE_ENABLE=		libcdio
 DEBUG_CONFIGURE_ENABLE=		debug
 LIBACL_CONFIGURE_ENABLE=	libacl
