@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
 
-USES=		gmake gnome pkgconfig shebangfix xorg
+USES=		compiler:c++0x gmake gnome pkgconfig shebangfix xorg
 SHEBANG_GLOB=	*.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	jpcima
@@ -30,4 +30,12 @@ CFLAGS+=	-I${FILESDIR}
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vst
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+EXTRA_PATCHES=  ${FILESDIR}/extra-patch-dpf_Makefile.base.mk
+.else
+EXTRA_PATCHES=  ${FILESDIR}/extra-patch-nosse-dpf_Makefile.base.mk
+.endif
+
+.include <bsd.port.post.mk>
