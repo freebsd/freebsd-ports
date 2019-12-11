@@ -55,8 +55,8 @@ BINS=		${DIST}/${OPSYS}${OSREL}_OPT.OBJ
 BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
 .endif
 
-.if ${OPSYS} == FreeBSD && ${ARCH} == i386 && ! ${MACHINE_CPU:Msse2}
-USES+=		compiler:c++14-lang # gcm.h
+.if ${ARCH} == powerpc64
+USES+=		compiler:c++11-lang # -mcrypto -mvsx
 .endif
 
 .if ${OPSYS} == FreeBSD && ${ARCH} == amd64
