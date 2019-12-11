@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minikube
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -103,7 +103,7 @@ GH_TUPLE=	\
 		kubernetes:utils:c2654d5206da:kubernetes_utils/vendor/k8s.io/utils \
 		libvirt:libvirt-go:v3.4.0:libvirt_libvirt_go/vendor/github.com/libvirt/libvirt-go \
 		machine-drivers:docker-machine-driver-vmware:v0.1.1:machine_drivers_docker_machine_driver_vmware/vendor/github.com/machine-drivers/docker-machine-driver-vmware \
-		machine-drivers:machine:21bd2f51b8ea:machine_drivers_machine/vendor/github.com/docker/machine \
+		machine-drivers:machine:b39d5b50de51:machine_drivers_machine/vendor/github.com/docker/machine \
 		magiconair:properties:v1.8.0:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
@@ -151,7 +151,7 @@ GH_TUPLE=	\
 
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-X k8s.io/minikube/pkg/version.version=v${PORTVERSION} \
-		-X k8s.io/minikube/pkg/version.isoVersion=v1.5.0 \
+		-X k8s.io/minikube/pkg/version.isoVersion=v1.6.0 \
 		-X k8s.io/minikube/pkg/version.isoPath=minikube/iso"
 
 PLIST_FILES=	bin/${PORTNAME}
