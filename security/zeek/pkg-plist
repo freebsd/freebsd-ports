@@ -541,10 +541,14 @@ include/binpac/binpac_regex.h
 %%BROKER%%include/caf/uri_builder.hpp
 %%BROKER%%include/caf/variant.hpp
 %%BROKER%%include/caf/weak_intrusive_ptr.hpp
-include/paraglob.h
-include/zeek/3rdparty/fifo_map.hpp
+include/paraglob/exceptions.h
+include/paraglob/node.h
+include/paraglob/paraglob.h
+include/paraglob/serializer.h
 include/zeek/3rdparty/json.hpp
 include/zeek/3rdparty/sqlite3.h
+include/zeek/3rdparty/tsl-ordered-map/ordered_hash.h
+include/zeek/3rdparty/tsl-ordered-map/ordered_map.h
 include/zeek/Anon.h
 include/zeek/Attr.h
 include/zeek/Base64.h
