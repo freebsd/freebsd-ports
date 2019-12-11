@@ -13,12 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-USE_GITLAB=	yes
-GL_ACCOUNT=	diamondburned
-GL_COMMIT=	0e534fe84bf5430d99309e50b213002ae545a8a1
-GL_TUPLE=	diamondburned:go-w3m:1b390b8a3d1fd142bcaf77a949223cb36ef84cbc:diamondburned_go_w3m/vendor/gitlab.com/diamondburned/go-w3m \
-		diamondburned:ueberzug-go:7c15a5f63b064530b92411f2850d0fc7fe9059ea:diamondburned_ueberzug_go/vendor/gitlab.com/diamondburned/ueberzug-go
-
 USE_GITHUB=	nodefault
 GH_TUPLE=	BurntSushi:freetype-go:b763ddbfe298:burntsushi_freetype_go/vendor/github.com/BurntSushi/freetype-go \
 		BurntSushi:graphics-go:b43f31a4a966:burntsushi_graphics_go/vendor/github.com/BurntSushi/graphics-go \
@@ -70,16 +64,21 @@ GH_TUPLE=	BurntSushi:freetype-go:b763ddbfe298:burntsushi_freetype_go/vendor/gith
 		valyala:fasttemplate:v1.1.0:valyala_fasttemplate/vendor/github.com/valyala/fasttemplate \
 		zalando:go-keyring:62750a1ff80d:zalando_go_keyring/vendor/github.com/zalando/go-keyring
 
-SUB_FILES=	pkg-message
+USE_GITLAB=	yes
+GL_ACCOUNT=	diamondburned
+GL_COMMIT=	0e534fe84bf5430d99309e50b213002ae545a8a1
+GL_TUPLE=	diamondburned:go-w3m:1b390b8a3d1fd142bcaf77a949223cb36ef84cbc:diamondburned_go_w3m/vendor/gitlab.com/diamondburned/go-w3m \
+		diamondburned:ueberzug-go:7c15a5f63b064530b92411f2850d0fc7fe9059ea:diamondburned_ueberzug_go/vendor/gitlab.com/diamondburned/ueberzug-go
 
+SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME}
 
 PORTDOCS=	README.md
-PORTEXAMPLES=	6cord.toml
+PORTEXAMPLES=	${PORTNAME}.toml
 
-OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-EXAMPLES_DESC=	Install example 6cord configuration file
+EXAMPLES_DESC=	Install example ${PORTNAME} configuration file
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
