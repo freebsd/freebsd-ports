@@ -1,0 +1,59 @@
+--- src/gui/docks/dock_layers.cpp.orig	2018-09-14 06:35:52 UTC
++++ src/gui/docks/dock_layers.cpp
+@@ -118,7 +118,12 @@ Dock_Layers::Dock_Layers():
+ 		for(iter=category_map.begin();iter!=category_map.end();++iter)
+ 		{
+ 			layer_ui_info+=strprintf("<menu action='%s'>%s</menu>",iter->first.c_str(),iter->second.c_str());
+-			action_group_categories->add(Gtk::Action::create(iter->first.c_str(),dgettext("synfig", iter->first.c_str())));
++			//action_group_categories->add(Gtk::Action::create(iter->first.c_str(),dgettext("synfig", iter->first.c_str())));
++			#ifdef ENABLE_NLS
++				action_group_categories->add(Gtk::Action::create(iter->first.c_str(), dgettext("synfig", iter->first.c_str())));
++			#else
++				action_group_categories->add(Gtk::Action::create(iter->first.c_str(), iter->first.c_str()));
++			#endif
+ 		}
+ 
+ 		App::ui_manager()->insert_action_group(action_group_categories);
+--- src/synfigapp/action.cpp.orig	2018-09-14 06:35:52 UTC
++++ src/synfigapp/action.cpp
+@@ -170,9 +170,10 @@ synfigapp::Action::Book *book_;
+ 
+ /* === M E T H O D S ======================================================= */
+ 
++//be.local_name=dgettext("synfigstudio",x::local_name__);
+ #define ADD_ACTION(x) { BookEntry &be(book()[x::name__]); \
+ 	be.name=x::name__; \
+-	be.local_name=dgettext("synfigstudio",x::local_name__); \
++	be.local_name=_(x::local_name__); \
+ 	be.version=x::version__; \
+ 	be.task=x::task__; \
+ 	be.priority=x::priority__; \
+--- src/synfigapp/action.h.orig	2018-09-14 06:35:52 UTC
++++ src/synfigapp/action.h
+@@ -60,9 +60,13 @@
+ 	Action::Base* class::create() { return new class(); } \
+ 	synfig::String class::get_name()const { return name__; }
+ 
++//#define ACTION_INIT(class)				 \
++//	ACTION_INIT_NO_GET_LOCAL_NAME(class) \
++//	synfig::String class::get_local_name()const { return dgettext("synfigstudio",local_name__); }
++
+ #define ACTION_INIT(class)				 \
+ 	ACTION_INIT_NO_GET_LOCAL_NAME(class) \
+-	synfig::String class::get_local_name()const { return dgettext("synfigstudio",local_name__); }
++	synfig::String class::get_local_name()const { return synfiggui_localize(local_name__); }
+ 
+ /* === T Y P E D E F S ===================================================== */
+ 
+--- src/synfigapp/localization.h.orig	2018-09-14 06:35:52 UTC
++++ src/synfigapp/localization.h
+@@ -48,6 +48,9 @@
+ 
+ /* === C L A S S E S & S T R U C T S ======================================= */
+ 
++inline const char* synfiggui_localize(const char *x)
++	{ return _(x); }
++
+ /* === E N D =============================================================== */
+ 
+ #endif

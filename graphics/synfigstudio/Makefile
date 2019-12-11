@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	synfigstudio
-PORTVERSION=	1.2.1
-PORTREVISION=	12
+PORTVERSION=	1.2.2
+DISTVERSIONPREFIX=v
 CATEGORIES=	graphics multimedia
-MASTER_SITES=	SF/synfig/releases/${PORTVERSION}/source
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Vector-based 2D animation software package
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	etl>=0.04.19_1:devel/etl
+BUILD_DEPENDS=	etl>=1.2.2:devel/etl
 LIB_DEPENDS=	libHalf.so:graphics/ilmbase \
 		libIlmImf.so:graphics/openexr \
 		libMagick++-6.so:graphics/ImageMagick6 \
@@ -23,8 +22,15 @@ LIB_DEPENDS=	libHalf.so:graphics/ilmbase \
 		libsynfig.so:devel/synfig
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		compiler:c++11-lang desktop-file-utils gmake gnome libtool \
-		localbase pathfix pkgconfig shared-mime-info
+PORTSCOUT=	limitw:1,even
+
+USES=		autoreconf compiler:c++11-lang desktop-file-utils \
+		gmake gnome libtool localbase pathfix pkgconfig \
+		shared-mime-info
+USE_GITHUB=	yes
+GH_ACCOUNT=	synfig
+GH_PROJECT=	synfig
+WRKSRC_SUBDIR=	synfig-studio
 USE_CXXSTD=	c++11
 USE_GNOME=	gtkmm30 intltool
 GNU_CONFIGURE=	yes
@@ -42,15 +48,9 @@ JACK_CONFIGURE_ENABLE=	jack
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
-		 /optimization_flags/s|CFLAGS=|#CFLAGS=|' \
-		${WRKSRC}/configure
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in AUTHORS ChangeLog INSTALL NEWS README TODO
+.for doc in AUTHORS NEWS README TODO
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${doc} ${STAGEDIR}${DOCSDIR})
 .endfor
 

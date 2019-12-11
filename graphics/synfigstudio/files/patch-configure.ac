@@ -1,0 +1,21 @@
+--- configure.ac.orig	2018-09-14 06:35:52 UTC
++++ configure.ac
+@@ -33,7 +33,6 @@ AX_CXX_COMPILE_STDCXX_11([noext], [optional])
+ AC_LANG([C++])
+ 
+ 
+-AC_ARG_OPTIMIZATION
+ AC_ARG_DEBUG
+ 
+ case "$debug" in
+@@ -75,10 +74,6 @@ AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKA
+ 
+ LOCALEDIR=[${prefix}/${DATADIRNAME}/locale]
+ AC_SUBST(LOCALEDIR)
+-
+-AM_GNU_GETTEXT([external])
+-# This is here so autoreconf will run autopoint
+-AM_GNU_GETTEXT_VERSION([0.15])
+ 
+ case "$host" in
+ 	*mingw* | *cygwin*)

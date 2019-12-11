@@ -53,6 +53,7 @@ include/synfig-1.0/synfig/layers/layer_bitmap.h
 include/synfig-1.0/synfig/layers/layer_composite.h
 include/synfig-1.0/synfig/layers/layer_composite_fork.h
 include/synfig-1.0/synfig/layers/layer_duplicate.h
+include/synfig-1.0/synfig/layers/layer_filtergroup.h
 include/synfig-1.0/synfig/layers/layer_group.h
 include/synfig-1.0/synfig/layers/layer_invisible.h
 include/synfig-1.0/synfig/layers/layer_meshtransform.h
@@ -96,6 +97,7 @@ include/synfig-1.0/synfig/rendering/common/optimizer/optimizerblendseparate.h
 include/synfig-1.0/synfig/rendering/common/optimizer/optimizerblendsplit.h
 include/synfig-1.0/synfig/rendering/common/optimizer/optimizerblendzero.h
 include/synfig-1.0/synfig/rendering/common/optimizer/optimizercalcbounds.h
+include/synfig-1.0/synfig/rendering/common/optimizer/optimizerdraft.h
 include/synfig-1.0/synfig/rendering/common/optimizer/optimizerlinear.h
 include/synfig-1.0/synfig/rendering/common/optimizer/optimizerlist.h
 include/synfig-1.0/synfig/rendering/common/optimizer/optimizerpixelprocessorsplit.h
@@ -154,6 +156,8 @@ include/synfig-1.0/synfig/rendering/software/optimizer/optimizermeshsw.h
 include/synfig-1.0/synfig/rendering/software/optimizer/optimizerpixelcolormatrixsw.h
 include/synfig-1.0/synfig/rendering/software/optimizer/optimizerpixelgammasw.h
 include/synfig-1.0/synfig/rendering/software/optimizer/optimizersurfaceresamplesw.h
+include/synfig-1.0/synfig/rendering/software/rendererdraftsw.h
+include/synfig-1.0/synfig/rendering/software/rendererlowressw.h
 include/synfig-1.0/synfig/rendering/software/renderersafe.h
 include/synfig-1.0/synfig/rendering/software/renderersw.h
 include/synfig-1.0/synfig/rendering/software/surfacesw.h
@@ -297,11 +301,10 @@ lib/synfig/modules/libmod_svg.so
 lib/synfig/modules/libmod_yuv420p.so
 libdata/pkgconfig/synfig.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%NLS%%share/locale/aa_DJ/LC_MESSAGES/synfig.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/synfig.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/synfig.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/synfig.mo
@@ -326,8 +329,10 @@ libdata/pkgconfig/synfig.pc
 %%NLS%%share/locale/it/LC_MESSAGES/synfig.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/synfig.mo
 %%NLS%%share/locale/ja_JP/LC_MESSAGES/synfig.mo
+%%NLS%%share/locale/kab/LC_MESSAGES/synfig.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/synfig.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/synfig.mo
+%%NLS%%share/locale/ne/LC_MESSAGES/synfig.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/synfig.mo
 %%NLS%%share/locale/no_NO/LC_MESSAGES/synfig.mo
 %%NLS%%share/locale/pl_PL/LC_MESSAGES/synfig.mo
