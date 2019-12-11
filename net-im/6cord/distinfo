@@ -1,4 +1,4 @@
-TIMESTAMP = 1572087003
+TIMESTAMP = 1575641662
 SHA256 (BurntSushi-freetype-go-b763ddbfe298_GH0.tar.gz) = 0c24b0d8afa6970de8a4550e71d0facb6bf29d0a5bda5e8ca471436d3b82e20e
 SIZE (BurntSushi-freetype-go-b763ddbfe298_GH0.tar.gz) = 397398
 SHA256 (BurntSushi-graphics-go-b43f31a4a966_GH0.tar.gz) = c56fddcf47ce0ceb235ed4c197440767ff0ef22d5ca2e36286c277b51ce472c1
@@ -51,8 +51,8 @@ SHA256 (golang-crypto-87dc89f01550_GH0.tar.gz) = d81e26d345c6cd9f132fd69547b1420
 SIZE (golang-crypto-87dc89f01550_GH0.tar.gz) = 1709204
 SHA256 (golang-image-e7c1f5e7dbb8_GH0.tar.gz) = 424ce3674771f00cc1112826e745efb121bc378bd9e68eac33bbf2198451ed1e
 SIZE (golang-image-e7c1f5e7dbb8_GH0.tar.gz) = 4895813
-SHA256 (golang-sys-b09406accb47_GH0.tar.gz) = 732651ee709d3443e992f716796c5dac7cbc29a345a8ffe3fb80f505c93503d2
-SIZE (golang-sys-b09406accb47_GH0.tar.gz) = 1496780
+SHA256 (golang-sys-33540a1f6037_GH0.tar.gz) = 09ebdf007413c2eaddce123137443d08d1848be410c58896e772f0481ec385d5
+SIZE (golang-sys-33540a1f6037_GH0.tar.gz) = 1497659
 SHA256 (golang-text-v0.3.2_GH0.tar.gz) = 0b9309698f5708531c5377ab1e29b423a6d9e20c55a8d386c3b8283428212f22
 SIZE (golang-text-v0.3.2_GH0.tar.gz) = 7168069
 SHA256 (gopherjs-gopherjs-d3ddacdb130f_GH0.tar.gz) = 3b4f59f29675886016e12c5eb6d5ceb68050b081713656d2628aa802ebefb774
