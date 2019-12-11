@@ -200,6 +200,7 @@
     SUBDIR += p5-Lingua-JA-Moji
     SUBDIR += p5-Lingua-JA-Numbers
     SUBDIR += p5-Lingua-JA-Regular-Unicode
+    SUBDIR += p5-Lingua-JA-Romanize-Japanese
     SUBDIR += p5-Lingua-JA-Summarize-Extract
     SUBDIR += p5-MeCab
     SUBDIR += p5-Number-Phone-JP

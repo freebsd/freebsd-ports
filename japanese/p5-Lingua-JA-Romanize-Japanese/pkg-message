@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+The dictionary included in this package is created from skk/SKK-JISYO.S included in the official tarball.
+
+To update using a dictionary published online, execute the command below.
+perl -MLingua::JA::Romanize::DictJA -e 'Lingua::JA::Romanize::DictJA->update();'
+EOM
+}
+]
