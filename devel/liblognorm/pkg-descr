@@ -5,4 +5,4 @@ In short words, one will be able to throw arbitrary log message to liblognorm,
 one at a time, and for each message it will output well-defined name-value
 pairs and a set of tags describing the message.
 
-WWW: http://www.liblognorm.com/
+WWW: https://www.liblognorm.com/
