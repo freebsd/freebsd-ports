@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bastille
-PORTVERSION=	0.4.20191025
+PORTVERSION=	0.5.20191128
 CATEGORIES=	sysutils
 
 MAINTAINER=	christer.edwards@gmail.com
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bastillebsd
-GH_TAGNAME=	973c2bc
+GH_TAGNAME=	29565b2
 
 NO_BUILD=	yes
 NO_ARCH=	yes
