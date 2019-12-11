@@ -1,7 +1,7 @@
-TIMESTAMP = 1552876103
-SHA256 (Valloric-YouCompleteMe-g20190314-299f8e4_GH0.tar.gz) = 367b35ab02d615da03285f929cf6c7c1d90778982b1f28d402647d1279a63400
-SIZE (Valloric-YouCompleteMe-g20190314-299f8e4_GH0.tar.gz) = 289525
-SHA256 (Valloric-ycmd-d0eba90_GH0.tar.gz) = 9568fa3200455d418d13007dd460ab349050e0b0b647c14c57ea7331ffde7dee
-SIZE (Valloric-ycmd-d0eba90_GH0.tar.gz) = 4544915
-SHA256 (micbou-regex-d2ef9c4_GH0.tar.gz) = 3d6df6a5e730d43ed7ce965b368ec305274ec6d5bea458a48beb94b96485c066
-SIZE (micbou-regex-d2ef9c4_GH0.tar.gz) = 674328
+TIMESTAMP = 1576048624
+SHA256 (ycm-core-YouCompleteMe-g20191130-1386c6b_GH0.tar.gz) = d5d9a2a63b4c17337c20b1879bebf90041743afab59cfb52cf934ed047291dc4
+SIZE (ycm-core-YouCompleteMe-g20191130-1386c6b_GH0.tar.gz) = 315502
+SHA256 (ycm-core-ycmd-a374320_GH0.tar.gz) = 7b8fc941162b20b1e15b4d7807a69967b26632865bbee7407f213e78f3e9744f
+SIZE (ycm-core-ycmd-a374320_GH0.tar.gz) = 4510540
+SHA256 (ycm-core-regex-cc538bb_GH0.tar.gz) = b26ee13605dae6a30a3b65e224e3dd4f4942acefc419e9109b3f6c5ad0a44ae8
+SIZE (ycm-core-regex-cc538bb_GH0.tar.gz) = 684593
