@@ -5,15 +5,13 @@ PORTNAME=	javatari
 PORTVERSION=	4.1
 PORTREVISION=	1
 CATEGORIES=	emulators java
-MASTER_SITES=	http://javatari.org/java/files/
+MASTER_SITES=	http://javatari.org/old/java/files/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Multiplayer Atari 2600 emulator written in pure Java
-
-BROKEN=		unfetchable
 
 LICENSE=	AGPLv3
 
