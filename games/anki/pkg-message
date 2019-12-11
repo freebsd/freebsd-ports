@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+If games/anki was installed from the official FreeBSD package repository, an
+additional step is required to complete the installation.
+
+This is because the audio/lame port, which is also required by Anki, cannot be
+provided as a package due to an unclear legal situation about its distribution
+in binary form.
+
+To finish the installation, install audio/lame from either ports or a local
+package repository and set it afterwards as automatic via "pkg set -A1 lame".
+EOM
+}
+]
