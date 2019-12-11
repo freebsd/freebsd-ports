@@ -15,6 +15,7 @@ LIB_DEPENDS=	libhangul.so:korean/libhangul \
 
 USES=		gmake gnome libtool pkgconfig python
 USE_GNOME=	gtk30 intlhack pygobject3
+USE_PYTHON=	py3kplist
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	NLS
