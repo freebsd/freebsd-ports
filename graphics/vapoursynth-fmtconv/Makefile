@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fmtconv
-PORTVERSION=	r21
+PORTVERSION=	r22
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	vapoursynth-
 
@@ -11,9 +11,6 @@ COMMENT=	Format conversion tools for Vapoursynth
 LICENSE=	WTFPL
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vapoursynth/VapourSynth.h:multimedia/vapoursynth
-
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	https://github.com/EleonoreMizo/fmtconv/issues/8
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	EleonoreMizo
@@ -37,7 +34,9 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's/x86_64/&|amd64/' \
 		${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's/-O3 //' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's/ -O3//' \
+		-e 's/ -latomic//' \
+		${WRKSRC}/Makefile.am
 
 post-install:
 	(cd ${PATCH_WRKSRC}/doc && ${COPYTREE_SHARE} \
