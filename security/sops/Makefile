@@ -3,6 +3,7 @@
 PORTNAME=	sops
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	security editors
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -27,11 +28,11 @@ GH_TUPLE=	\
 		go-ini:ini:v1.44.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		golang:appengine:v1.6.1:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:4def268fd1a4:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:ca1201d0de80:golang_net/vendor/golang.org/x/net \
+		golang:net:83d349e8ac1a:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:c5567b49c5d0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
 		google:go-genproto:c506a9f90610:google_go_genproto/vendor/google.golang.org/genproto \
