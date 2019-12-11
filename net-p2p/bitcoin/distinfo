@@ -3,5 +3,5 @@ SHA256 (bitcoin/bitcoin-0.19.0.1.tar.gz) = 7ac9f972249a0a16ed01352ca2a199a5448fe
 SIZE (bitcoin/bitcoin-0.19.0.1.tar.gz) = 7386333
 SHA256 (bitcoin/bitcoin128.png) = ad880c8459ecfdb96abe6a4689af06bdd27906e0edcd39d0915482f2da91e722
 SIZE (bitcoin/bitcoin128.png) = 10639
-SHA256 (bitcoin/90916ddf17dc.patch) = 6997e8ee5947ea172fa71d8c7a2f478e120ea4ca7ae1f5edbe4a5714c2e06992
-SIZE (bitcoin/90916ddf17dc.patch) = 1800
+SHA256 (bitcoin/a64e97dd476b.patch) = 7881fce02696f64f03796ce3d09433e4dd029b32204d7f6c290a62fcce6b018d
+SIZE (bitcoin/a64e97dd476b.patch) = 774
