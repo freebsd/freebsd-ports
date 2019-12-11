@@ -1,0 +1,49 @@
+Fix build on FreeBSD/powerpc platforms.
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1602386
+
+--- lib/freebl/Makefile.orig	2019-12-04 01:03:31.000000000 +0100
++++ lib/freebl/Makefile	2019-12-11 16:48:47.959791000 +0100
+@@ -788,5 +788,7 @@
+ endif
+ 
+ ifeq ($(CPU_ARCH),ppc)
+-$(OBJDIR)/$(PROG_PREFIX)gcm-ppc$(OBJ_SUFFIX): CFLAGS += -mcrypto -maltivec
++$(OBJDIR)/$(PROG_PREFIX)gcm-ppc$(OBJ_SUFFIX): CFLAGS += -mcrypto -maltivec -mvsx
++$(OBJDIR)/$(PROG_PREFIX)gcm$(OBJ_SUFFIX): CFLAGS += -mcrypto -maltivec -mvsx
++$(OBJDIR)/$(PROG_PREFIX)rijndael$(OBJ_SUFFIX): CFLAGS += -mcrypto -maltivec -mvsx
+ endif
+--- lib/freebl/blinit.c.orig	2019-12-11 17:45:06.930646000 +0100
++++ lib/freebl/blinit.c	2019-12-11 17:50:04.797680000 +0100
+@@ -393,7 +393,12 @@
+ 
+ #if defined(__powerpc__)
+ 
++#if defined(__FreeBSD__) && __FreeBSD__ < 12
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#else
+ #include <sys/auxv.h>
++#endif
+ 
+ // Defines from cputable.h in Linux kernel - PPC, letting us build on older kernels
+ #ifndef PPC_FEATURE2_VEC_CRYPTO
+@@ -405,7 +410,17 @@
+ {
+     char *disable_hw_crypto = PR_GetEnvSecure("NSS_DISABLE_PPC_GHASH");
+ 
+-    long hwcaps = getauxval(AT_HWCAP2);
++    unsigned long hwcaps = 0;
++#if defined(__linux__)
++    hwcaps = getauxval(AT_HWCAP2);
++#elif defined(__FreeBSD__)
++#  if __FreeBSD__ >= 12
++    elf_aux_info(AT_HWCAP2, &hwcaps, sizeof(hwcaps));
++#  else
++    size_t len = sizeof(hwcaps);
++    sysctlbyname("hw.cpu_features2", &hwcaps, &len, NULL, 0);
++#  endif
++#endif
+ 
+     ppc_crypto_support_ = hwcaps & PPC_FEATURE2_VEC_CRYPTO && disable_hw_crypto == NULL;
+ }
