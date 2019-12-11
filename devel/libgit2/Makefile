@@ -6,7 +6,7 @@
 # Tools/scripts/search_lib_depends_and_bump.sh devel/libgit2
 
 PORTNAME=	libgit2
-PORTVERSION=	0.28.3
+PORTVERSION=	0.28.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
