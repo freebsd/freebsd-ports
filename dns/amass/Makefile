@@ -3,6 +3,7 @@
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,7 +51,7 @@ GH_TUPLE=	\
 		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:06d7bd2c5f4f:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:tools:0337d82405ff:golang_tools/vendor/golang.org/x/tools \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
