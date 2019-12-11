@@ -3,7 +3,7 @@
 
 PORTNAME=	ardour5
 PORTVERSION=	5.12.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/beerml/ardour_releases/raw/master/
 # The original master side points to the latest release only:

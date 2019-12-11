@@ -3,7 +3,7 @@
 
 PORTNAME=	scummvm-tools
 PORTVERSION=	2.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games emulators
 MASTER_SITES=	http://www.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
 

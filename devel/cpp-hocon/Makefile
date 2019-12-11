@@ -2,7 +2,7 @@
 
 PORTNAME=	cpp-hocon
 PORTVERSION=	0.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

@@ -3,7 +3,7 @@
 
 PORTNAME=	libflatarray
 PORTVERSION=	0.3.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	devel science
 MASTER_SITES=	http://www.libgeodecomp.org/archive/
 

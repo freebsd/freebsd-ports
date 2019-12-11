@@ -2,7 +2,7 @@
 
 PORTNAME=	flightgear-terragear
 PORTVERSION=	20171007
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 
 MAINTAINER=	mike.d.ft402@gmail.com

@@ -3,7 +3,7 @@
 
 PORTNAME=	codeblocks
 PORTVERSION=	18.04
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	http://download.tuxfamily.org/bartcoding/FreeBSD/ \
 		${MASTER_SITE_LOCAL}

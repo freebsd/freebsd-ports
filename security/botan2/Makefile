@@ -2,6 +2,7 @@
 
 PORTNAME=	botan
 DISTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	2

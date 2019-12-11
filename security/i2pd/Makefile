@@ -3,6 +3,7 @@
 
 PORTNAME=	i2pd
 PORTVERSION=	2.29.0
+PORTREVISION=	1
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	amdmi3@FreeBSD.org

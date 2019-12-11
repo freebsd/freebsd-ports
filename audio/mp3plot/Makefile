@@ -3,7 +3,7 @@
 
 PORTNAME=	mp3plot
 DISTVERSION=	0.6.0
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	audio
 MASTER_SITES=	http://p.outlyer.net/mp3plot/files/
 
