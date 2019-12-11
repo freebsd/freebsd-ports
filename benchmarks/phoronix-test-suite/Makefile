@@ -3,7 +3,7 @@
 
 PORTNAME=	phoronix-test-suite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0.1
+DISTVERSION=	9.2.0
 CATEGORIES=	benchmarks
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -13,9 +13,10 @@ COMMENT=	Phoronix Benchmarking Suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	sudo:security/sudo
+RUN_DEPENDS=	sudo:security/sudo \
+	bash:shells/bash
 
-USES=		php:cli,build,flavors python
+USES=		php:cli,build,flavors python shebangfix
 USE_GITHUB=	yes
 USE_PHP=	curl dom gd json openssl pcntl posix simplexml zip zlib
 NO_BUILD=	yes
@@ -24,6 +25,10 @@ PORTDATA=	*
 PORTDOCS=	*
 
 NO_ARCH=	yes
+SHEBANG_FILES=	ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/install.sh \
+				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/interim.sh \
+				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/pre.sh \
+				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/post.sh
 
 OPTIONS_DEFINE=	BASH_COMPLETIONS DOCS X11
 OPTIONS_DEFAULT=	X11
