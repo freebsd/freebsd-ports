@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	12.5.3
-PORTREVISION=	1
+PORTVERSION=	12.5.4
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # the rubygems of RUN_DEPENDS matches the order of the Gemfile
 # which makes maintaining this long list much easier!
-MY_DEPENDS=	git>=2.21.0:devel/git \
+MY_DEPENDS=	git>=2.22.2:devel/git \
 	gitlab-shell>=10.2.0:devel/gitlab-shell \
 	gitlab-workhorse>=8.14.1:www/gitlab-workhorse \
 	gitaly>=1.72.1:devel/gitaly \
@@ -239,7 +239,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	225d2e5bb899067bde3caedb1319d39c46d94dc0
+GL_COMMIT=	63af04cacf5e2f2d8446b2dc5367b415884921a6
 
 USERS=	git
 GROUPS=	git
