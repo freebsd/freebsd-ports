@@ -2,4 +2,4 @@ Maximum likelihood estimation of the parameters of a fractionally
 differenced ARIMA(p,d,q) model (Haslett and Raftery, Appl.Statistics,
 1989).
 
-WWW: http://cran.r-project.org/web/packages/fracdiff/
+WWW: https://cran.r-project.org/web/packages/fracdiff/
