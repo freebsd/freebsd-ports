@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Lingua/ZH/Romanize/Cantonese.pm
+%%SITE_PERL%%/Lingua/ZH/Romanize/Cantonese.store
+%%SITE_PERL%%/Lingua/ZH/Romanize/DictZH.pm
+%%SITE_PERL%%/Lingua/ZH/Romanize/Pinyin.pm
+%%SITE_PERL%%/Lingua/ZH/Romanize/Pinyin.store
+%%PERL5_MAN3%%/Lingua::ZH::Romanize::Cantonese.3.gz
+%%PERL5_MAN3%%/Lingua::ZH::Romanize::DictZH.3.gz
+%%PERL5_MAN3%%/Lingua::ZH::Romanize::Pinyin.3.gz

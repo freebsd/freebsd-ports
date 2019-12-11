@@ -80,6 +80,7 @@
     SUBDIR += p5-Lingua-ZH-HanDetect
     SUBDIR += p5-Lingua-ZH-Keywords
     SUBDIR += p5-Lingua-ZH-Numbers
+    SUBDIR += p5-Lingua-ZH-Romanize-Pinyin
     SUBDIR += p5-Lingua-ZH-Segment
     SUBDIR += p5-Lingua-ZH-Summarize
     SUBDIR += p5-Lingua-ZH-TaBE
