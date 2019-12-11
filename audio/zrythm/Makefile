@@ -31,8 +31,8 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		kf5-breeze-icons>0:x11-themes/kf5-breeze-icons
 
-USES=		gettext-tools meson python:3.5+,build gettext-runtime gnome \
-		libtool pkgconfig shebangfix xorg
+USES=		compiler:c11 gettext-tools gettext-runtime gnome libtool \
+		meson pkgconfig python:3.5+,build shebangfix xorg
 #USE_GITLAB=	yes # broken: doesn't require GL_COMMIT any more, see bug#242329
 #GL_SITE=	https://git.zrythm.org
 SHEBANG_FILES=	resources/gen-gtk-gresources-xml.py scripts/collect_translatables.sh scripts/meson_post_install.py
