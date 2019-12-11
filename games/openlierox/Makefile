@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openlierox
-DISTVERSION=	0.58_rc3
-PORTREVISION=	20
+DISTVERSION=	0.58_rc5
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/OpenLieroX%20${DISTVERSION:C/_/%20/}
@@ -18,8 +17,6 @@ USES=		cmake:insource compiler:c++11-lang gnome localbase pkgconfig \
 		sdl tar:bzip2
 USE_SDL=	sdl image
 USE_GNOME=	libxml2
-
-CXXFLAGS+=	-Wno-c++11-narrowing
 
 CMAKE_ARGS=	-DHAWKNL_BUILTIN=YES \
 		-DLIBZIP_BUILTIN=YES \
@@ -50,11 +47,6 @@ DEDICATED_ONLY_LIB_DEPENDS_OFF=	libgd.so:graphics/gd
 post-patch:
 	@${REINPLACE_CMD} -e 's|EXEC_PROGRAM.*OLXVER)|SET(OLXVER "${DISTVERSION}")|; \
 		s|/usr/local|${LOCALBASE}|' ${WRKSRC}/CMakeOlxCommon.cmake
-	@${FIND} ${WRKSRC} \( -name "*.cpp" -o -name "*.h" -o -name "*.cc" \) -print0 | ${XARGS} -0 -n1 \
-		${REINPLACE_CMD} -e '/include.*curl\/types.h/ d'
-# Convert the static_assert calls to regular, C++ ones.
-	@${FIND} ${WRKSRC} \( -name "*.cpp" -o -name "*.h" -o -name "*.cc" \) -print0 | ${XARGS} -0 -n1 \
-		${REINPLACE_CMD} -E -e 's/static_assert\((.+), (.+)\)/static_assert\(\1, "\2"\)/g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/openlierox ${STAGEDIR}${PREFIX}/bin/
@@ -62,7 +54,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/share/OpenLieroX.svg \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
-	@cd ${WRKSRC}/share/gamedir && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
+	@cd ${WRKSRC}/share/gamedir && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/OpenLieroX
 
 do-install-DOCS-on:
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
