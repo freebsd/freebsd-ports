@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	watch
-DISTVERSION=	3.3.15
+DISTVERSION=	3.3.16
 CATEGORIES=	misc
 MASTER_SITES=	SF/procps-ng/Production \
 		LOCAL/ehaupt
