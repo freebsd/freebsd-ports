@@ -11,4 +11,4 @@ gradient, filter, distortion, transformation, fractal and others. Output
 targets include JPEG, PNG, GIF, BMP, PPM, DV, OpenEXR, ffmpeg (MPEG1),
 libavcodec (AVI), imagemagick (MIFF), yuv420p and others.
 
-WWW: http://www.synfig.org/
+WWW: https://www.synfig.org/

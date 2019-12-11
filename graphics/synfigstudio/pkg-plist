@@ -46,6 +46,7 @@ include/synfigapp-0.0/synfigapp/layercopy.h
 include/synfigapp-0.0/synfigapp/layerduplicate.h
 include/synfigapp-0.0/synfigapp/layerembed.h
 include/synfigapp-0.0/synfigapp/layerencapsulate.h
+include/synfigapp-0.0/synfigapp/layerencapsulatefilter.h
 include/synfigapp-0.0/synfigapp/layerencapsulateswitch.h
 include/synfigapp-0.0/synfigapp/layerextract.h
 include/synfigapp-0.0/synfigapp/layerfit.h
@@ -125,8 +126,6 @@ lib/libsynfigapp.so.0.0.0
 share/appdata/synfigstudio.appdata.xml
 share/applications/synfigstudio.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
@@ -138,6 +137,7 @@ share/icons/hicolor/32x32/apps/synfig_icon.png
 share/icons/hicolor/48x48/apps/synfig_icon.png
 share/icons/hicolor/64x64/apps/synfig_icon.png
 share/icons/hicolor/scalable/apps/synfig_icon.svg
+%%NLS%%share/locale/aa_DJ/LC_MESSAGES/synfigstudio.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/synfigstudio.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/synfigstudio.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/synfigstudio.mo
@@ -162,8 +162,10 @@ share/icons/hicolor/scalable/apps/synfig_icon.svg
 %%NLS%%share/locale/it/LC_MESSAGES/synfigstudio.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/synfigstudio.mo
 %%NLS%%share/locale/ja_JP/LC_MESSAGES/synfigstudio.mo
+%%NLS%%share/locale/kab/LC_MESSAGES/synfigstudio.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/synfigstudio.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/synfigstudio.mo
+%%NLS%%share/locale/ne/LC_MESSAGES/synfigstudio.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/synfigstudio.mo
 %%NLS%%share/locale/no_NO/LC_MESSAGES/synfigstudio.mo
 %%NLS%%share/locale/pl_PL/LC_MESSAGES/synfigstudio.mo

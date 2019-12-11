@@ -1,0 +1,21 @@
+--- configure.ac.orig	2018-09-14 06:35:52 UTC
++++ configure.ac
+@@ -47,7 +47,6 @@ AC_C_BIGENDIAN
+ 
+ # -- A R G U M E N T S ----------------------------------------
+ 
+-AC_ARG_OPTIMIZATION
+ AC_ARG_DEBUG
+ AC_ARG_WARNINGS
+ AC_ARG_PROFILING
+@@ -346,10 +345,6 @@ AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKA
+ 
+ localedir="$datadir/locale"
+ AC_SUBST(localedir)
+-
+-AM_GNU_GETTEXT([external])
+-# This is here so autoreconf will run autopoint
+-AM_GNU_GETTEXT_VERSION([0.15])
+ 
+ PKG_CHECK_MODULES(ETL, [ETL >= 1.2.2],,[
+ 	AC_MSG_ERROR([ ** You need to install the ETL (version 1.2.2 or greater).])
