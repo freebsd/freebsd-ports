@@ -2,6 +2,7 @@
 
 PORTNAME=	uhd
 PORTVERSION=	3.14.1.1
+PORTREVISION=	1
 #PORTREVISION=	1
 CATEGORIES=	comms hamradio
 #MASTER_SITES=	http://files.ettus.com/binaries/images/

@@ -3,7 +3,7 @@
 
 PORTNAME=	dnsdist
 DISTVERSION=	1.3.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/ \
 		LOCAL/cpm

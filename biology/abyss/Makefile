@@ -2,7 +2,7 @@
 
 PORTNAME=	abyss
 DISTVERSION=	2.1.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	biology
 MASTER_SITES=	http://www.bcgsc.ca/platform/bioinfo/software/${PORTNAME}/releases/${DISTVERSION}/
 

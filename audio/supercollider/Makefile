@@ -2,7 +2,7 @@
 
 PORTNAME=	supercollider
 DISTVERSION=	3.10.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/supercollider/supercollider/releases/download/Version-${PORTVERSION}/
 DISTNAME=	SuperCollider-${PORTVERSION}-Source-linux

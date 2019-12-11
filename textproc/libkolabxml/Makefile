@@ -2,7 +2,7 @@
 
 PORTNAME=	libkolabxml
 PORTVERSION=	1.1.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	textproc
 MASTER_SITES=	http://mirror.kolabsys.com/pub/releases/
 

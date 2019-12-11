@@ -3,7 +3,7 @@
 
 PORTNAME=	mkhexgrid
 PORTVERSION=	0.1.1
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	games
 MASTER_SITES=	http://www.nomic.net/~uckelman/mkhexgrid/releases/ \
 		http://aaron.daltons.ca/freebsd/

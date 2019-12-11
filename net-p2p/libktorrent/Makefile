@@ -2,6 +2,7 @@
 
 PORTNAME=	libktorrent
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	KDE/stable/ktorrent/5.1.2/
 

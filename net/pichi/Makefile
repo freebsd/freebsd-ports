@@ -2,6 +2,7 @@
 
 PORTNAME=	pichi
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	pichi@elude.in

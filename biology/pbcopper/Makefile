@@ -2,7 +2,7 @@
 
 PORTNAME=	pbcopper
 DISTVERSION=	0.4.1 # Test with biology/unanimity before upgrading!
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	biology
 
 # As of March 2018, unanimity is no longer open source.

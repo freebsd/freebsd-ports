@@ -2,6 +2,7 @@
 
 PORTNAME=	cannonball
 DISTVERSION=	g20191023
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	fox@FreeBSD.org

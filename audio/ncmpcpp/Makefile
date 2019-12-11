@@ -2,7 +2,7 @@
 
 PORTNAME=	ncmpcpp
 DISTVERSION=	0.8.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	https://ncmpcpp.rybczak.net/stable/
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	musikcube
 DISTVERSION=	0.70.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

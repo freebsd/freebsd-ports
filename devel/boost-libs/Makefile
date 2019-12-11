@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	boost-libs
-PORTREVISION=	2
+PORTREVISION=	0
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
@@ -36,6 +36,8 @@ ALL_TARGET=	stage
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_ARGS:NDESTDIR=*:S,^--prefix=,&${STAGEDIR},} ${INSTALL_TARGET}
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/cmake -type f -exec \
+		${REINPLACE_CMD} -i '' -e 's,${STAGEDIR},,' {} +
 # For some reasons BJAM forget about the links
 	@cd ${WRKSRC}/stage/ && ${FIND} lib -type l | ${PAX} -rw -p p ${STAGEDIR}${PREFIX}
 

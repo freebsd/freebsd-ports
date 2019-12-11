@@ -3,6 +3,7 @@
 PORTNAME=	collada-dom
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	trueos@norwegianrockcat.com

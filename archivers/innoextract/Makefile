@@ -2,6 +2,7 @@
 
 PORTNAME=	innoextract
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://constexpr.org/innoextract/files/
 

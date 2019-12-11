@@ -2,7 +2,7 @@
 
 PORTNAME=	colmap
 DISTVERSION=	3.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

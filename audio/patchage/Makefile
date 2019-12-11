@@ -3,7 +3,7 @@
 
 PORTNAME=	patchage
 PORTVERSION=	0.5.0
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/ \
 		http://frugalware.mirrors.tds.net/pub/linux/frugalware/frugalware-current/source/xmultimedia-extra/patchage/

@@ -2,6 +2,7 @@
 
 PORTNAME=	tophat
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	biology python
 MASTER_SITES=	http://ccb.jhu.edu/software/tophat/downloads/
 

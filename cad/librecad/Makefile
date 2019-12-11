@@ -2,7 +2,7 @@
 
 PORTNAME=	librecad
 DISTVERSION=	2.2.0-rc1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	cad
 
 PATCH_SITES_gcc= https://github.com/LibreCAD/LibreCAD/commit/

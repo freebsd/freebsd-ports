@@ -2,7 +2,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	10.1.43
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
