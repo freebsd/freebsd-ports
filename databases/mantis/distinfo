@@ -1,6 +1,6 @@
-TIMESTAMP = 1569575875
-SHA256 (mantisbt-2.22.1.tar.gz) = 3aef0e7d033b7f21e20544dc5101fd81d5dc8f22aea9102440c8e42e9fa9aed9
-SIZE (mantisbt-2.22.1.tar.gz) = 16236764
+TIMESTAMP = 1575969112
+SHA256 (mantisbt-2.23.0.tar.gz) = c11768de0dd6bdb8c6796f38937a34ed0fcc6d8352e4da4effd3c9916ef69dea
+SIZE (mantisbt-2.23.0.tar.gz) = 14996679
 SHA256 (mantisbt-plugins-Activity-99cf873396ebc3fec431c6746dae1a604768f322_GH0.tar.gz) = 7c9a2d08d98854c40e53ec5ae90aa84ea3849843e5dec8fceefd4cbfba6d4c88
 SIZE (mantisbt-plugins-Activity-99cf873396ebc3fec431c6746dae1a604768f322_GH0.tar.gz) = 42861
 SHA256 (mantisbt-plugins-Announce-v2.4.1_GH0.tar.gz) = b87b233afc70d61b4b6c1fdc574cbbd3f2997efdfd4b5cfde1cfebfb6097dbc3
