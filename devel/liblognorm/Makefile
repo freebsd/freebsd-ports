@@ -8,7 +8,10 @@ MASTER_SITES=	http://www.liblognorm.com/download/files/download/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Log normalizer
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21+ APACHE20
+LICENSE_COMB=	multi
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING
+LICENSE_FILE_APACHE20=	${WRKSRC}/COPYING.ASL20
 
 LIB_DEPENDS=	libfastjson.so:devel/libfastjson \
 		libestr.so:devel/libestr
