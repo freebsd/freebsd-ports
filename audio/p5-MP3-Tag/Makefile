@@ -7,13 +7,14 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Module for reading tags of MP3 audio files
 
 USES=		perl5
 USE_PERL5=	configure
+
 NO_ARCH=	yes
 
-CONFLICTS=	p5-tagged-0.*
+CONFLICTS_INSTALL=	p5-tagged
 
 .include <bsd.port.mk>

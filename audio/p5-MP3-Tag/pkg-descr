@@ -1,3 +1,5 @@
-MP3::Tag - Module for reading tags of MP3 audio files
+MP3::Tag is a wrapper module to read different tags of mp3 files. It provides an
+easy way to access the functions of separate modules which do the handling of
+reading/writing the tags itself.
 
 WWW: https://metacpan.org/release/MP3-Tag
