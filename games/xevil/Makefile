@@ -5,8 +5,7 @@ PORTNAME=	xevil
 PORTVERSION=	2.02.r2
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.xevil.com/download/stable/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	http://www.xevil.com/download/stable/
 DISTNAME=	${PORTNAME}src${PORTVERSION:S/.r/r/}
 
 MAINTAINER=	ports@FreeBSD.org
