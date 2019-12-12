@@ -84,6 +84,7 @@ share/mime/packages/xine-ui.xml
 share/pixmaps/xine.xpm
 %%DATADIR%%/oxine/mainmenu
 %%DATADIR%%/oxine/mediamarks
+%%DATADIR%%/skins/xine-ui_logo.mpg
 %%DATADIR%%/skins/xine-ui_logo.png
 %%DATADIR%%/skins/xine_splash.png
 %%DATADIR%%/skins/xinetic/BigArrowDown.png

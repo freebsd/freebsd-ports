@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xine
-PORTVERSION=	0.99.9
-PORTREVISION=	7
+PORTVERSION=	0.99.12
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
@@ -11,12 +10,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 multimedia player
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libxine.so:multimedia/libxine
 
-USES=		desktop-file-utils gmake gnome iconv jpeg pkgconfig readline \
-		shared-mime-info tar:xz xorg
+USES=		desktop-file-utils gmake gnome iconv jpeg localbase pkgconfig \
+		readline shared-mime-info tar:xz xorg
 USE_XORG=	x11 xext xinerama xscrnsaver xt xtst xv xxf86vm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vdr-keys \
@@ -25,8 +25,6 @@ CONFIGURE_ARGS=	--enable-vdr-keys \
 MAKE_ENV=	V=1
 INSTALLS_ICONS=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 LLD_UNSAFE=	yes	# lld disallows preemption of protected visibility syms
 
 DOCSDIR=	${PREFIX}/share/doc/xine-ui
@@ -58,6 +56,9 @@ XFT_CONFIGURE_ENABLE=	xft
 XINE_PLUGINSDIR=	lib/xine/plugins/2.7
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		's/font = */font = *-*-bold-o-*-*-12-*-*-*-*-*-*-*/g' \
+		${WRKSRC}/src/xitk/skins/xinetic/skinconfig
 	@${REINPLACE_CMD} -e \
 		's|<string.h>|<strings.h>|' ${WRKSRC}/src/aaui/main.c
 	@${REINPLACE_CMD} -e \
