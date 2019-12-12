@@ -24,8 +24,12 @@ include/cantor/epsresult.h
 include/cantor/expression.h
 include/cantor/extension.h
 include/cantor/helpresult.h
+include/cantor/htmlresult.h
 include/cantor/imageresult.h
+include/cantor/jupyterutils.h
 include/cantor/latexresult.h
+include/cantor/mimeresult.h
+include/cantor/renderer.h
 include/cantor/result.h
 include/cantor/session.h
 include/cantor/syntaxhelpobject.h
@@ -38,7 +42,7 @@ lib/cmake/Cantor/CantorTargets.cmake
 lib/libcantor_config.so
 lib/libcantor_pythonbackend.so
 lib/libcantorlibs.so
-lib/libcantorlibs.so.23
+lib/libcantorlibs.so.24
 lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_advancedplotassistant.so
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_creatematrixassistant.so
@@ -56,7 +60,6 @@ lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/cantor/backends/cantor_kalgebrabackend.so
 %%LUAJIT%%%%QT_PLUGINDIR%%/cantor/backends/cantor_luabackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_maximabackend.so
-%%QT_PLUGINDIR%%/cantor/backends/cantor_nullbackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_octavebackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_python3backend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_qalculatebackend.so
@@ -67,6 +70,7 @@ lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/cantor/panels/cantor_variablemanagerplugin.so
 %%QT_PLUGINDIR%%/libcantorpart.so
 share/applications/org.kde.cantor.desktop
+%%DATADIR%%/latex/preview.sty
 %%DATADIR%%/maximabackend/cantor-initmaxima.lisp
 %%DATADIR%%/octavebackend/cantor_eigenvectors.m
 %%DATADIR%%/octavebackend/cantor_plot2d.m

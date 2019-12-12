@@ -1,7 +1,6 @@
-share/qlogging-categories5/akonadi-contacts.categories
-share/qlogging-categories5/akonadi-contacts.renamecategories
 include/KF5/Akonadi/Contact/AbstractContactFormatter
 include/KF5/Akonadi/Contact/AbstractContactGroupFormatter
+include/KF5/Akonadi/Contact/AbstractEmailAddressSelectionDialog
 include/KF5/Akonadi/Contact/ContactDefaultActions
 include/KF5/Akonadi/Contact/ContactEditor
 include/KF5/Akonadi/Contact/ContactEditorDialog
@@ -22,15 +21,17 @@ include/KF5/Akonadi/Contact/EmailAddressSelection
 include/KF5/Akonadi/Contact/EmailAddressSelectionDialog
 include/KF5/Akonadi/Contact/EmailAddressSelectionModel
 include/KF5/Akonadi/Contact/EmailAddressSelectionWidget
+include/KF5/Akonadi/Contact/RecipientsEditorManager
+include/KF5/Akonadi/Contact/RecipientsPickerWidget
 include/KF5/Akonadi/Contact/SelectAddressBookDialog
 include/KF5/Akonadi/Contact/StandardContactActionManager
 include/KF5/Akonadi/Contact/StandardContactFormatter
 include/KF5/Akonadi/Contact/StandardContactGroupFormatter
-include/KF5/ContactEditor/AbstractAddressLocationWidget
 include/KF5/ContactEditor/CategoriesEditAbstractWidget
 include/KF5/ContactEditor/ContactEditorPagePlugin
 include/KF5/akonadi/contact/abstractcontactformatter.h
 include/KF5/akonadi/contact/abstractcontactgroupformatter.h
+include/KF5/akonadi/contact/abstractemailaddressselectiondialog.h
 include/KF5/akonadi/contact/akonadi-contact_export.h
 include/KF5/akonadi/contact/contactdefaultactions.h
 include/KF5/akonadi/contact/contacteditor.h
@@ -52,11 +53,12 @@ include/KF5/akonadi/contact/emailaddressselection.h
 include/KF5/akonadi/contact/emailaddressselectiondialog.h
 include/KF5/akonadi/contact/emailaddressselectionmodel.h
 include/KF5/akonadi/contact/emailaddressselectionwidget.h
+include/KF5/akonadi/contact/recipientseditormanager.h
+include/KF5/akonadi/contact/recipientspickerwidget.h
 include/KF5/akonadi/contact/selectaddressbookdialog.h
 include/KF5/akonadi/contact/standardcontactactionmanager.h
 include/KF5/akonadi/contact/standardcontactformatter.h
 include/KF5/akonadi/contact/standardcontactgroupformatter.h
-include/KF5/contacteditor/abstractaddresslocationwidget.h
 include/KF5/contacteditor/categorieseditabstractwidget.h
 include/KF5/contacteditor/contacteditor_export.h
 include/KF5/contacteditor/contacteditorpageplugin.h
@@ -221,3 +223,5 @@ share/locale/zh_CN/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/zh_TW/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/zh_TW/LC_MESSAGES/akonadicontact5.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_akonadicontact_actions.mo
+share/qlogging-categories5/akonadi-contacts.categories
+share/qlogging-categories5/akonadi-contacts.renamecategories

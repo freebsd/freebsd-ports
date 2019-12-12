@@ -15,12 +15,14 @@ share/locale/da/LC_MESSAGES/kcmkamera.mo
 share/locale/de/LC_MESSAGES/kcmkamera.mo
 share/locale/de/LC_MESSAGES/kio5_kamera.mo
 share/locale/el/LC_MESSAGES/kcmkamera.mo
+share/locale/el/LC_MESSAGES/kio5_kamera.mo
 share/locale/en_GB/LC_MESSAGES/kcmkamera.mo
 share/locale/en_GB/LC_MESSAGES/kio5_kamera.mo
 share/locale/eo/LC_MESSAGES/kcmkamera.mo
 share/locale/es/LC_MESSAGES/kcmkamera.mo
 share/locale/es/LC_MESSAGES/kio5_kamera.mo
 share/locale/et/LC_MESSAGES/kcmkamera.mo
+share/locale/et/LC_MESSAGES/kio5_kamera.mo
 share/locale/eu/LC_MESSAGES/kcmkamera.mo
 share/locale/eu/LC_MESSAGES/kio5_kamera.mo
 share/locale/fa/LC_MESSAGES/kcmkamera.mo
@@ -80,4 +82,5 @@ share/locale/zh_CN/LC_MESSAGES/kcmkamera.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_kamera.mo
 share/locale/zh_TW/LC_MESSAGES/kcmkamera.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_kamera.mo
+share/metainfo/org.kde.kamera.metainfo.xml
 share/solid/actions/solid_camera.desktop

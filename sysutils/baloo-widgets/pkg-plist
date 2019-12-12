@@ -12,7 +12,7 @@ lib/cmake/KF5BalooWidgets/KF5BalooWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5BalooWidgets/KF5BalooWidgetsTargets.cmake
 lib/libKF5BalooWidgets.so
 lib/libKF5BalooWidgets.so.5
-lib/libKF5BalooWidgets.so.19.8.3
+lib/libKF5BalooWidgets.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/baloofilepropertiesplugin.so
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/tagsfileitemaction.so
 share/kservices5/baloofilepropertiesplugin.desktop

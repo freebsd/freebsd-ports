@@ -1,5 +1,4 @@
 bin/kolf
-lib/libkolfprivate.so.5.0.0
 share/applications/org.kde.kolf.desktop
 share/icons/hicolor/128x128/apps/kolf.png
 share/icons/hicolor/16x16/apps/kolf.png

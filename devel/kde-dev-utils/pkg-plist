@@ -100,3 +100,5 @@ share/locale/zh_CN/LC_MESSAGES/kpartloader.mo
 share/locale/zh_CN/LC_MESSAGES/kuiviewer.mo
 share/locale/zh_TW/LC_MESSAGES/kpartloader.mo
 share/locale/zh_TW/LC_MESSAGES/kuiviewer.mo
+share/metainfo/org.kde.kuiviewer.metainfo.xml
+share/metainfo/org.kde.kuiviewerpart.metainfo.xml

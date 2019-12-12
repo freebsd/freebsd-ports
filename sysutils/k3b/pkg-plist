@@ -1,5 +1,4 @@
 bin/k3b
-etc/xdg/k3btheme.knsrc
 include/k3b_export.h
 include/k3bactivepipe.h
 include/k3baudiocdtrackdrag.h
@@ -300,6 +299,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-k3b.svgz
 %%DATADIR%%/pics/quant/splash.png
 %%DATADIR%%/pics/quant/welcome_bg.png
 share/knotifications5/k3b.notifyrc
+share/knsrcfiles/k3btheme.knsrc
 share/konqsidebartng/virtual_folders/services/videodvd.desktop
 share/kservices5/ServiceMenus/k3b_create_audio_cd.desktop
 share/kservices5/ServiceMenus/k3b_create_data_project.desktop

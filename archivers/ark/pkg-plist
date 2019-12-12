@@ -1,7 +1,7 @@
 bin/ark
 share/qlogging-categories5/ark.categories
 lib/libkerfuffle.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
-lib/libkerfuffle.so.19.8.3
+lib/libkerfuffle.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/arkpart.so
 %%QT_PLUGINDIR%%/kerfuffle/kerfuffle_cli7z.so
 %%QT_PLUGINDIR%%/kerfuffle/kerfuffle_clirar.so

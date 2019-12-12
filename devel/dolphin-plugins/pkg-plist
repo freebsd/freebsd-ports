@@ -163,3 +163,4 @@ share/locale/zh_TW/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/zh_TW/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/zh_TW/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/zh_TW/LC_MESSAGES/fileviewsvnplugin.mo
+share/metainfo/org.kde.dolphin-plugins.metainfo.xml

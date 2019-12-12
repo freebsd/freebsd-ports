@@ -52,3 +52,4 @@ share/locale/ug/LC_MESSAGES/kfileshare.mo
 share/locale/uk/LC_MESSAGES/kfileshare.mo
 share/locale/zh_CN/LC_MESSAGES/kfileshare.mo
 share/locale/zh_TW/LC_MESSAGES/kfileshare.mo
+share/metainfo/org.kde.kdenetwork-filesharing.metainfo.xml

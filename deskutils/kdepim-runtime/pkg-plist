@@ -4,7 +4,6 @@ bin/akonadi_contacts_resource
 bin/akonadi_davgroupware_resource
 bin/akonadi_ews_resource
 bin/akonadi_ewsmta_resource
-bin/akonadi_facebook_resource
 bin/akonadi_googlecalendar_resource
 bin/akonadi_googlecontacts_resource
 bin/akonadi_ical_resource
@@ -41,7 +40,6 @@ lib/libmaildir.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/akonadi/config/akonotesconfig.so
 %%QT_PLUGINDIR%%/akonadi/config/birthdaysconfig.so
 %%QT_PLUGINDIR%%/akonadi/config/contactsconfig.so
-%%QT_PLUGINDIR%%/akonadi/config/facebookconfig.so
 %%QT_PLUGINDIR%%/akonadi/config/icalconfig.so
 %%QT_PLUGINDIR%%/akonadi/config/icaldirconfig.so
 %%QT_PLUGINDIR%%/akonadi/config/kalarmconfig.so
@@ -92,7 +90,6 @@ share/akonadi/agents/contactsresource.desktop
 share/akonadi/agents/davgroupwareresource.desktop
 share/akonadi/agents/ewsmtaresource.desktop
 share/akonadi/agents/ewsresource.desktop
-share/akonadi/agents/facebookresource.desktop
 share/akonadi/agents/googlecalendarresource.desktop
 share/akonadi/agents/googlecontactsresource.desktop
 share/akonadi/agents/icaldirresource.desktop

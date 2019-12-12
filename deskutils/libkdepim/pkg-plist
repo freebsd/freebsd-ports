@@ -23,7 +23,6 @@ include/KF5/Libkdepim/OverlayWidget
 include/KF5/Libkdepim/PIMMessageBox
 include/KF5/Libkdepim/ProgressDialog
 include/KF5/Libkdepim/ProgressIndicatorLabel
-include/KF5/Libkdepim/ProgressIndicatorWidget
 include/KF5/Libkdepim/ProgressManager
 include/KF5/Libkdepim/ProgressStatusBarWidget
 include/KF5/Libkdepim/RecentAddresses
@@ -63,7 +62,6 @@ include/KF5/libkdepim/overlaywidget.h
 include/KF5/libkdepim/pimmessagebox.h
 include/KF5/libkdepim/progressdialog.h
 include/KF5/libkdepim/progressindicatorlabel.h
-include/KF5/libkdepim/progressindicatorwidget.h
 include/KF5/libkdepim/progressmanager.h
 include/KF5/libkdepim/progressstatusbarwidget.h
 include/KF5/libkdepim/recentaddresses.h

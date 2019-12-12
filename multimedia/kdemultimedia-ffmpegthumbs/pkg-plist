@@ -1,9 +1,11 @@
 %%QT_PLUGINDIR%%/ffmpegthumbs.so
 share/config.kcfg/ffmpegthumbnailersettings5.kcfg
+share/kservices5/ffmpegthumbs.desktop
 share/locale/ca/LC_MESSAGES/ffmpegthumbs.mo
 share/locale/ca@valencia/LC_MESSAGES/ffmpegthumbs.mo
 share/locale/cs/LC_MESSAGES/ffmpegthumbs.mo
 share/locale/de/LC_MESSAGES/ffmpegthumbs.mo
+share/locale/el/LC_MESSAGES/ffmpegthumbs.mo
 share/locale/en_GB/LC_MESSAGES/ffmpegthumbs.mo
 share/locale/es/LC_MESSAGES/ffmpegthumbs.mo
 share/locale/eu/LC_MESSAGES/ffmpegthumbs.mo
@@ -24,4 +26,4 @@ share/locale/uk/LC_MESSAGES/ffmpegthumbs.mo
 share/locale/ru/LC_MESSAGES/ffmpegthumbs.mo
 share/locale/zh_CN/LC_MESSAGES/ffmpegthumbs.mo
 share/locale/zh_TW/LC_MESSAGES/ffmpegthumbs.mo
-share/kservices5/ffmpegthumbs.desktop
+share/metainfo/org.kde.ffmpegthumbs.metainfo.xml

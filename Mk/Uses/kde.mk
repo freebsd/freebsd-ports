@@ -62,8 +62,8 @@ KDE_FRAMEWORKS_VERSION?=	5.64.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=	19.08.3
-KDE_APPLICATIONS_SHLIB_VER?=	5.12.3
+KDE_APPLICATIONS_VERSION?=	19.12.0
+KDE_APPLICATIONS_SHLIB_VER?=	5.13.0
 KDE_APPLICATIONS_BRANCH?=	stable
 # Upstream moves old software to Attic/. Specify the newest applications release there.
 # Only the major version is used for the comparison.
@@ -106,8 +106,10 @@ PORTVERSION?=		${KDE_APPLICATIONS_VERSION}
 # Decide where the file lies on KDE's servers: Check whether the file lies in Attic
 .        if ${KDE_APPLICATIONS_VERSION:R:R} <= ${_KDE_APPLICATIONS_ATTIC_VERSION:R:R}
 MASTER_SITES?=		KDE/Attic/applications/${KDE_APPLICATIONS_VERSION}/src
-.        else
+.        elseif ${KDE_APPLICATIONS_VERSION:R} < 19.12
 MASTER_SITES?=		KDE/${KDE_APPLICATIONS_BRANCH}/applications/${KDE_APPLICATIONS_VERSION}/src
+.        else
+MASTER_SITES?=		KDE/${KDE_APPLICATIONS_BRANCH}/release-service/${KDE_APPLICATIONS_VERSION}/src
 # Let bsd.port.mk create the plist-entries for the documentation.
 # KDE Applications ports install their documentation to
 # ${PREFIX}/share/doc.
