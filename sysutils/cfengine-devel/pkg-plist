@@ -31,8 +31,6 @@ libexec/cfengine/libpromises.so.3.0.6
 %%DOCSDIR%%/examples/arrays.cf
 %%DOCSDIR%%/examples/augment.cf
 %%DOCSDIR%%/examples/backreferences_files.cf
-%%DOCSDIR%%/examples/badpromise.cf
-%%DOCSDIR%%/examples/badtype.cf
 %%DOCSDIR%%/examples/bsdflags.cf
 %%DOCSDIR%%/examples/bundle_return_values.cf
 %%DOCSDIR%%/examples/bundlesequence.cf
@@ -53,7 +51,6 @@ libexec/cfengine/libpromises.so.3.0.6
 %%DOCSDIR%%/examples/container_iteration.cf
 %%DOCSDIR%%/examples/container_key_iteration.cf
 %%DOCSDIR%%/examples/control_expand.cf
-%%DOCSDIR%%/examples/controlclasses.cf
 %%DOCSDIR%%/examples/copy.cf
 %%DOCSDIR%%/examples/copy_classes.cf
 %%DOCSDIR%%/examples/copy_copbl.cf
@@ -108,7 +105,6 @@ libexec/cfengine/libpromises.so.3.0.6
 %%DOCSDIR%%/examples/execresult.cf
 %%DOCSDIR%%/examples/expand.cf
 %%DOCSDIR%%/examples/failedcommand.cf
-%%DOCSDIR%%/examples/failsafe.cf
 %%DOCSDIR%%/examples/file_change_detection.cf
 %%DOCSDIR%%/examples/file_hash.cf
 %%DOCSDIR%%/examples/file_owner_list_template.cf
@@ -173,8 +169,6 @@ libexec/cfengine/libpromises.so.3.0.6
 %%DOCSDIR%%/examples/iteration.cf
 %%DOCSDIR%%/examples/join.cf
 %%DOCSDIR%%/examples/kill_process_running_wrong_user.cf
-%%DOCSDIR%%/examples/knowledge_driver.cf
-%%DOCSDIR%%/examples/knowledge_txt.cf
 %%DOCSDIR%%/examples/lastnode.cf
 %%DOCSDIR%%/examples/ldap.cf
 %%DOCSDIR%%/examples/length.cf
@@ -217,10 +211,6 @@ libexec/cfengine/libpromises.so.3.0.6
 %%DOCSDIR%%/examples/multiple_outcomes.cf
 %%DOCSDIR%%/examples/mustache_classes.cf
 %%DOCSDIR%%/examples/mustache_template_motd.cf
-%%DOCSDIR%%/examples/namespace.cf
-%%DOCSDIR%%/examples/namespace1.cf
-%%DOCSDIR%%/examples/namespace2.cf
-%%DOCSDIR%%/examples/namespace3.cf
 %%DOCSDIR%%/examples/namespace_class1.cf
 %%DOCSDIR%%/examples/namespace_classes.cf
 %%DOCSDIR%%/examples/namespace_var_meta.cf
@@ -229,7 +219,6 @@ libexec/cfengine/libpromises.so.3.0.6
 %%DOCSDIR%%/examples/none.cf
 %%DOCSDIR%%/examples/nth.cf
 %%DOCSDIR%%/examples/null_config.cf
-%%DOCSDIR%%/examples/occurrences.cf
 %%DOCSDIR%%/examples/orchestrate_chain1.cf
 %%DOCSDIR%%/examples/orchestrate_chain2.cf
 %%DOCSDIR%%/examples/orchestrate_delay_trigger.cf
@@ -271,7 +260,6 @@ libexec/cfengine/libpromises.so.3.0.6
 %%DOCSDIR%%/examples/process_signalling.cf
 %%DOCSDIR%%/examples/processes_define_class_based_on_process_runtime.cf
 %%DOCSDIR%%/examples/product.cf
-%%DOCSDIR%%/examples/promise_knowledge.cf
 %%DOCSDIR%%/examples/promises.cf
 %%DOCSDIR%%/examples/quoting.cf
 %%DOCSDIR%%/examples/randomint.cf
@@ -303,9 +291,7 @@ libexec/cfengine/libpromises.so.3.0.6
 %%DOCSDIR%%/examples/rename.cf
 %%DOCSDIR%%/examples/repairedcommand.cf
 %%DOCSDIR%%/examples/report_custom.cf
-%%DOCSDIR%%/examples/report_diffs.cf
 %%DOCSDIR%%/examples/report_state.cf
-%%DOCSDIR%%/examples/reporting.cf
 %%DOCSDIR%%/examples/reports.cf
 %%DOCSDIR%%/examples/reporttofile.cf
 %%DOCSDIR%%/examples/resolveconf.cf
