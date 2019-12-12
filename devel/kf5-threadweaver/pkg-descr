@@ -1,4 +1,8 @@
-KDBusAddons provides convenience classes on top of QtDBus,
-as well as an API to create KDED modules.
+ThreadWeaver is a helper for multithreaded programming. It uses a job-based
+interface to queue tasks and execute them in an efficient way.
 
-WWW: http://api.kde.org/frameworks-api/frameworks5-apidocs/kdbusaddons/html/index.html
+You simply divide the workload into jobs, state the dependencies between the
+jobs and ThreadWeaver will work out the most efficient way of dividing the work
+between threads within a set of resource limits.
+
+WWW: https://api.kde.org/frameworks/threadweaver/html/index.html
