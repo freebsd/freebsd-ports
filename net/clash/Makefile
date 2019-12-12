@@ -3,7 +3,7 @@
 PORTNAME=	clash
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,9 +27,9 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:491137f69257:golang_net/vendor/golang.org/x/net \
+		golang:net:83d349e8ac1a:golang_net/vendor/golang.org/x/net \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:2837fb4f24fe:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
 		gorilla:websocket:v1.4.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		miekg:dns:v1.1.22:miekg_dns/vendor/github.com/miekg/dns \
