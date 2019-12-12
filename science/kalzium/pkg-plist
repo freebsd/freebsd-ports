@@ -54,17 +54,14 @@ share/icons/hicolor/scalable/apps/kalzium.svgz
 %%DATADIR%%/data/htmlview/abundance.png
 %%DATADIR%%/data/htmlview/boilingpoint.png
 %%DATADIR%%/data/htmlview/book.png
-%%DATADIR%%/data/htmlview/characteristics.png
 %%DATADIR%%/data/htmlview/discovery.png
 %%DATADIR%%/data/htmlview/electronaffinity.png
-%%DATADIR%%/data/htmlview/header.png
 %%DATADIR%%/data/htmlview/icons.svg
 %%DATADIR%%/data/htmlview/ionization.png
 %%DATADIR%%/data/htmlview/mass.png
 %%DATADIR%%/data/htmlview/meltingpoint.png
 %%DATADIR%%/data/htmlview/radius.png
 %%DATADIR%%/data/htmlview/structure.png
-%%DATADIR%%/data/htmlview/style.css
 %%DATADIR%%/data/iconsets/school/1.svg
 %%DATADIR%%/data/iconsets/school/10.svg
 %%DATADIR%%/data/iconsets/school/100.svg

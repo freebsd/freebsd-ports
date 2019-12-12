@@ -28,7 +28,6 @@ lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kf5/kio/filter.so
 %%QT_PLUGINDIR%%/kf5/kio/fish.so
 %%QT_PLUGINDIR%%/kf5/kio/info.so
-%%QT_PLUGINDIR%%/kf5/parts/kmanpart.so
 %%QT_PLUGINDIR%%/kf5/kio/man.so
 %%MTP%%%%QT_PLUGINDIR%%/kf5/kio/mtp.so
 %%QT_PLUGINDIR%%/kf5/kio/network.so
@@ -75,7 +74,6 @@ share/kservices5/imagethumbnail.desktop
 share/kservices5/info.protocol
 share/kservices5/jpegthumbnail.desktop
 share/kservices5/kactivitymanagerd_fileitem_linking_plugin.desktop
-share/kservices5/kmanpart.desktop
 share/kservices5/kraorathumbnail.desktop
 share/kservices5/lzma.protocol
 share/kservices5/man.protocol

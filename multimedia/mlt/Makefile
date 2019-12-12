@@ -103,6 +103,8 @@ VIDSTAB_LIB_DEPENDS=	libvidstab.so:multimedia/vid.stab
 VIDSTAB_CONFIGURE_ENABLE=vid.stab
 
 pre-configure:
+	# Remove sdl1 support
+	${RM} -r ${WRKSRC}/src/modules/sdl
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \
 		${WRKSRC}/src/modules/avformat/vdpau.c \
 		${WRKSRC}/src/modules/frei0r/factory.c \

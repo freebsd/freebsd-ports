@@ -10,3 +10,4 @@ lib/libqmobipocket.so.2
 lib/libqmobipocket.so.2.0.0
 %%QT_PLUGINDIR%%/mobithumbnail.so
 share/kservices5/mobithumbnail.desktop
+share/metainfo/org.kde.kdegraphics-mobipocket.metainfo.xml

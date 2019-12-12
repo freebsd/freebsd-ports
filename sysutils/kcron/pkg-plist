@@ -54,3 +54,4 @@ share/locale/uk/LC_MESSAGES/kcron.mo
 share/locale/wa/LC_MESSAGES/kcron.mo
 share/locale/zh_CN/LC_MESSAGES/kcron.mo
 share/locale/zh_TW/LC_MESSAGES/kcron.mo
+share/metainfo/org.kde.kcron.metainfo.xml

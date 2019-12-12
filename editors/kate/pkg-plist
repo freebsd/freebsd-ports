@@ -1,5 +1,6 @@
 bin/kate
 bin/kwrite
+%%QT_PLUGINDIR%%/ktexteditor/externaltoolsplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/katebacktracebrowserplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/katebuildplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/katecloseexceptplugin.so
@@ -17,9 +18,8 @@ bin/kwrite
 %%QT_PLUGINDIR%%/ktexteditor/katesymbolviewerplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/katexmlcheckplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/katexmltoolsplugin.so
-%%QT_PLUGINDIR%%/ktexteditor/kterustcompletionplugin.so
-%%QT_PLUGINDIR%%/ktexteditor/ktexteditor_lumen.so
 %%QT_PLUGINDIR%%/ktexteditor/ktexteditorpreviewplugin.so
+%%QT_PLUGINDIR%%/ktexteditor/lspclientplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/tabswitcherplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/textfilterplugin.so
 %%QT_PLUGINDIR%%/plasma/dataengine/plasma_engine_katesessions.so
@@ -83,7 +83,6 @@ share/locale/ar/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ar/LC_MESSAGES/katetextfilter.mo
 share/locale/ar/LC_MESSAGES/katexmlcheck.mo
 share/locale/ar/LC_MESSAGES/katexmltools.mo
-share/locale/ar/LC_MESSAGES/kterustcompletion.mo
 share/locale/ar/LC_MESSAGES/kwrite.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/ar/LC_MESSAGES/tabswitcherplugin.mo
@@ -106,7 +105,6 @@ share/locale/ast/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ast/LC_MESSAGES/katetextfilter.mo
 share/locale/ast/LC_MESSAGES/katexmlcheck.mo
 share/locale/ast/LC_MESSAGES/katexmltools.mo
-share/locale/ast/LC_MESSAGES/kterustcompletion.mo
 share/locale/ast/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ast/LC_MESSAGES/kwrite.mo
 share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
@@ -146,6 +144,7 @@ share/locale/ca/LC_MESSAGES/kate.mo
 share/locale/ca/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ca/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ca/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/ca/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ca/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ca/LC_MESSAGES/katefiletree.mo
 share/locale/ca/LC_MESSAGES/kategdbplugin.mo
@@ -159,7 +158,6 @@ share/locale/ca/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ca/LC_MESSAGES/katetextfilter.mo
 share/locale/ca/LC_MESSAGES/katexmlcheck.mo
 share/locale/ca/LC_MESSAGES/katexmltools.mo
-share/locale/ca/LC_MESSAGES/kterustcompletion.mo
 share/locale/ca/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ca/LC_MESSAGES/kwrite.mo
 share/locale/ca/LC_MESSAGES/lspclient.mo
@@ -184,7 +182,6 @@ share/locale/ca@valencia/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ca@valencia/LC_MESSAGES/katetextfilter.mo
 share/locale/ca@valencia/LC_MESSAGES/katexmlcheck.mo
 share/locale/ca@valencia/LC_MESSAGES/katexmltools.mo
-share/locale/ca@valencia/LC_MESSAGES/kterustcompletion.mo
 share/locale/ca@valencia/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/kwrite.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
@@ -195,6 +192,7 @@ share/locale/cs/LC_MESSAGES/kate.mo
 share/locale/cs/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/cs/LC_MESSAGES/katebuild-plugin.mo
 share/locale/cs/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/cs/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/cs/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/cs/LC_MESSAGES/katefiletree.mo
 share/locale/cs/LC_MESSAGES/kategdbplugin.mo
@@ -208,7 +206,6 @@ share/locale/cs/LC_MESSAGES/katesymbolviewer.mo
 share/locale/cs/LC_MESSAGES/katetextfilter.mo
 share/locale/cs/LC_MESSAGES/katexmlcheck.mo
 share/locale/cs/LC_MESSAGES/katexmltools.mo
-share/locale/cs/LC_MESSAGES/kterustcompletion.mo
 share/locale/cs/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/cs/LC_MESSAGES/kwrite.mo
 share/locale/cs/LC_MESSAGES/lspclient.mo
@@ -233,7 +230,6 @@ share/locale/da/LC_MESSAGES/katesymbolviewer.mo
 share/locale/da/LC_MESSAGES/katetextfilter.mo
 share/locale/da/LC_MESSAGES/katexmlcheck.mo
 share/locale/da/LC_MESSAGES/katexmltools.mo
-share/locale/da/LC_MESSAGES/kterustcompletion.mo
 share/locale/da/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/da/LC_MESSAGES/kwrite.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
@@ -244,6 +240,7 @@ share/locale/de/LC_MESSAGES/kate.mo
 share/locale/de/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/de/LC_MESSAGES/katebuild-plugin.mo
 share/locale/de/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/de/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/de/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/de/LC_MESSAGES/katefiletree.mo
 share/locale/de/LC_MESSAGES/kategdbplugin.mo
@@ -257,7 +254,6 @@ share/locale/de/LC_MESSAGES/katesymbolviewer.mo
 share/locale/de/LC_MESSAGES/katetextfilter.mo
 share/locale/de/LC_MESSAGES/katexmlcheck.mo
 share/locale/de/LC_MESSAGES/katexmltools.mo
-share/locale/de/LC_MESSAGES/kterustcompletion.mo
 share/locale/de/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/de/LC_MESSAGES/kwrite.mo
 share/locale/de/LC_MESSAGES/lspclient.mo
@@ -269,6 +265,7 @@ share/locale/el/LC_MESSAGES/kate.mo
 share/locale/el/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/el/LC_MESSAGES/katebuild-plugin.mo
 share/locale/el/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/el/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/el/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/el/LC_MESSAGES/katefiletree.mo
 share/locale/el/LC_MESSAGES/kategdbplugin.mo
@@ -282,9 +279,9 @@ share/locale/el/LC_MESSAGES/katesymbolviewer.mo
 share/locale/el/LC_MESSAGES/katetextfilter.mo
 share/locale/el/LC_MESSAGES/katexmlcheck.mo
 share/locale/el/LC_MESSAGES/katexmltools.mo
-share/locale/el/LC_MESSAGES/kterustcompletion.mo
 share/locale/el/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/el/LC_MESSAGES/kwrite.mo
+share/locale/el/LC_MESSAGES/lspclient.mo
 share/locale/el/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/el/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/en_GB/LC_MESSAGES/kate-ctags-plugin.mo
@@ -293,6 +290,7 @@ share/locale/en_GB/LC_MESSAGES/kate.mo
 share/locale/en_GB/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/en_GB/LC_MESSAGES/katebuild-plugin.mo
 share/locale/en_GB/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/en_GB/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/en_GB/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/en_GB/LC_MESSAGES/katefiletree.mo
 share/locale/en_GB/LC_MESSAGES/kategdbplugin.mo
@@ -306,7 +304,6 @@ share/locale/en_GB/LC_MESSAGES/katesymbolviewer.mo
 share/locale/en_GB/LC_MESSAGES/katetextfilter.mo
 share/locale/en_GB/LC_MESSAGES/katexmlcheck.mo
 share/locale/en_GB/LC_MESSAGES/katexmltools.mo
-share/locale/en_GB/LC_MESSAGES/kterustcompletion.mo
 share/locale/en_GB/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/en_GB/LC_MESSAGES/kwrite.mo
 share/locale/en_GB/LC_MESSAGES/lspclient.mo
@@ -329,6 +326,7 @@ share/locale/es/LC_MESSAGES/kate.mo
 share/locale/es/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/es/LC_MESSAGES/katebuild-plugin.mo
 share/locale/es/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/es/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/es/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/es/LC_MESSAGES/katefiletree.mo
 share/locale/es/LC_MESSAGES/kategdbplugin.mo
@@ -342,7 +340,6 @@ share/locale/es/LC_MESSAGES/katesymbolviewer.mo
 share/locale/es/LC_MESSAGES/katetextfilter.mo
 share/locale/es/LC_MESSAGES/katexmlcheck.mo
 share/locale/es/LC_MESSAGES/katexmltools.mo
-share/locale/es/LC_MESSAGES/kterustcompletion.mo
 share/locale/es/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/es/LC_MESSAGES/kwrite.mo
 share/locale/es/LC_MESSAGES/lspclient.mo
@@ -354,6 +351,7 @@ share/locale/et/LC_MESSAGES/kate.mo
 share/locale/et/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/et/LC_MESSAGES/katebuild-plugin.mo
 share/locale/et/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/et/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/et/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/et/LC_MESSAGES/katefiletree.mo
 share/locale/et/LC_MESSAGES/kategdbplugin.mo
@@ -367,8 +365,9 @@ share/locale/et/LC_MESSAGES/katesymbolviewer.mo
 share/locale/et/LC_MESSAGES/katetextfilter.mo
 share/locale/et/LC_MESSAGES/katexmlcheck.mo
 share/locale/et/LC_MESSAGES/katexmltools.mo
-share/locale/et/LC_MESSAGES/kterustcompletion.mo
+share/locale/et/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/et/LC_MESSAGES/kwrite.mo
+share/locale/et/LC_MESSAGES/lspclient.mo
 share/locale/et/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/et/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/eu/LC_MESSAGES/kate-ctags-plugin.mo
@@ -377,6 +376,7 @@ share/locale/eu/LC_MESSAGES/kate.mo
 share/locale/eu/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/eu/LC_MESSAGES/katebuild-plugin.mo
 share/locale/eu/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/eu/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/eu/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/eu/LC_MESSAGES/katefiletree.mo
 share/locale/eu/LC_MESSAGES/kategdbplugin.mo
@@ -390,7 +390,6 @@ share/locale/eu/LC_MESSAGES/katesymbolviewer.mo
 share/locale/eu/LC_MESSAGES/katetextfilter.mo
 share/locale/eu/LC_MESSAGES/katexmlcheck.mo
 share/locale/eu/LC_MESSAGES/katexmltools.mo
-share/locale/eu/LC_MESSAGES/kterustcompletion.mo
 share/locale/eu/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/eu/LC_MESSAGES/kwrite.mo
 share/locale/eu/LC_MESSAGES/lspclient.mo
@@ -414,6 +413,7 @@ share/locale/fi/LC_MESSAGES/kate.mo
 share/locale/fi/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/fi/LC_MESSAGES/katebuild-plugin.mo
 share/locale/fi/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/fi/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/fi/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/fi/LC_MESSAGES/katefiletree.mo
 share/locale/fi/LC_MESSAGES/kategdbplugin.mo
@@ -427,7 +427,6 @@ share/locale/fi/LC_MESSAGES/katesymbolviewer.mo
 share/locale/fi/LC_MESSAGES/katetextfilter.mo
 share/locale/fi/LC_MESSAGES/katexmlcheck.mo
 share/locale/fi/LC_MESSAGES/katexmltools.mo
-share/locale/fi/LC_MESSAGES/kterustcompletion.mo
 share/locale/fi/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/fi/LC_MESSAGES/kwrite.mo
 share/locale/fi/LC_MESSAGES/lspclient.mo
@@ -439,6 +438,7 @@ share/locale/fr/LC_MESSAGES/kate.mo
 share/locale/fr/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/fr/LC_MESSAGES/katebuild-plugin.mo
 share/locale/fr/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/fr/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/fr/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/fr/LC_MESSAGES/katefiletree.mo
 share/locale/fr/LC_MESSAGES/kategdbplugin.mo
@@ -452,7 +452,6 @@ share/locale/fr/LC_MESSAGES/katesymbolviewer.mo
 share/locale/fr/LC_MESSAGES/katetextfilter.mo
 share/locale/fr/LC_MESSAGES/katexmlcheck.mo
 share/locale/fr/LC_MESSAGES/katexmltools.mo
-share/locale/fr/LC_MESSAGES/kterustcompletion.mo
 share/locale/fr/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/fr/LC_MESSAGES/kwrite.mo
 share/locale/fr/LC_MESSAGES/lspclient.mo
@@ -493,7 +492,6 @@ share/locale/gl/LC_MESSAGES/katesymbolviewer.mo
 share/locale/gl/LC_MESSAGES/katetextfilter.mo
 share/locale/gl/LC_MESSAGES/katexmlcheck.mo
 share/locale/gl/LC_MESSAGES/katexmltools.mo
-share/locale/gl/LC_MESSAGES/kterustcompletion.mo
 share/locale/gl/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/gl/LC_MESSAGES/kwrite.mo
 share/locale/gl/LC_MESSAGES/lspclient.mo
@@ -522,7 +520,6 @@ share/locale/hi/LC_MESSAGES/kateopenheader.mo
 share/locale/hi/LC_MESSAGES/katesymbolviewer.mo
 share/locale/hi/LC_MESSAGES/katetextfilter.mo
 share/locale/hi/LC_MESSAGES/katexmltools.mo
-share/locale/hi/LC_MESSAGES/kterustcompletion.mo
 share/locale/hi/LC_MESSAGES/kwrite.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/hr/LC_MESSAGES/kate.mo
@@ -549,7 +546,6 @@ share/locale/hu/LC_MESSAGES/katesql.mo
 share/locale/hu/LC_MESSAGES/katesymbolviewer.mo
 share/locale/hu/LC_MESSAGES/katetextfilter.mo
 share/locale/hu/LC_MESSAGES/katexmltools.mo
-share/locale/hu/LC_MESSAGES/kterustcompletion.mo
 share/locale/hu/LC_MESSAGES/kwrite.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/hu/LC_MESSAGES/tabswitcherplugin.mo
@@ -559,6 +555,7 @@ share/locale/ia/LC_MESSAGES/kate.mo
 share/locale/ia/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ia/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ia/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/ia/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ia/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ia/LC_MESSAGES/katefiletree.mo
 share/locale/ia/LC_MESSAGES/kategdbplugin.mo
@@ -572,9 +569,9 @@ share/locale/ia/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ia/LC_MESSAGES/katetextfilter.mo
 share/locale/ia/LC_MESSAGES/katexmlcheck.mo
 share/locale/ia/LC_MESSAGES/katexmltools.mo
-share/locale/ia/LC_MESSAGES/kterustcompletion.mo
 share/locale/ia/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ia/LC_MESSAGES/kwrite.mo
+share/locale/ia/LC_MESSAGES/lspclient.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/ia/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/id/LC_MESSAGES/kate-ctags-plugin.mo
@@ -596,7 +593,6 @@ share/locale/id/LC_MESSAGES/katesymbolviewer.mo
 share/locale/id/LC_MESSAGES/katetextfilter.mo
 share/locale/id/LC_MESSAGES/katexmlcheck.mo
 share/locale/id/LC_MESSAGES/katexmltools.mo
-share/locale/id/LC_MESSAGES/kterustcompletion.mo
 share/locale/id/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/id/LC_MESSAGES/kwrite.mo
 share/locale/id/LC_MESSAGES/lspclient.mo
@@ -617,6 +613,7 @@ share/locale/it/LC_MESSAGES/kate.mo
 share/locale/it/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/it/LC_MESSAGES/katebuild-plugin.mo
 share/locale/it/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/it/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/it/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/it/LC_MESSAGES/katefiletree.mo
 share/locale/it/LC_MESSAGES/kategdbplugin.mo
@@ -630,7 +627,6 @@ share/locale/it/LC_MESSAGES/katesymbolviewer.mo
 share/locale/it/LC_MESSAGES/katetextfilter.mo
 share/locale/it/LC_MESSAGES/katexmlcheck.mo
 share/locale/it/LC_MESSAGES/katexmltools.mo
-share/locale/it/LC_MESSAGES/kterustcompletion.mo
 share/locale/it/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/it/LC_MESSAGES/kwrite.mo
 share/locale/it/LC_MESSAGES/lspclient.mo
@@ -655,7 +651,6 @@ share/locale/ja/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ja/LC_MESSAGES/katetextfilter.mo
 share/locale/ja/LC_MESSAGES/katexmlcheck.mo
 share/locale/ja/LC_MESSAGES/katexmltools.mo
-share/locale/ja/LC_MESSAGES/kterustcompletion.mo
 share/locale/ja/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ja/LC_MESSAGES/kwrite.mo
 share/locale/ja/LC_MESSAGES/lspclient.mo
@@ -698,6 +693,7 @@ share/locale/ko/LC_MESSAGES/kate.mo
 share/locale/ko/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ko/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ko/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/ko/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ko/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ko/LC_MESSAGES/katefiletree.mo
 share/locale/ko/LC_MESSAGES/kategdbplugin.mo
@@ -711,7 +707,6 @@ share/locale/ko/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ko/LC_MESSAGES/katetextfilter.mo
 share/locale/ko/LC_MESSAGES/katexmlcheck.mo
 share/locale/ko/LC_MESSAGES/katexmltools.mo
-share/locale/ko/LC_MESSAGES/kterustcompletion.mo
 share/locale/ko/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ko/LC_MESSAGES/kwrite.mo
 share/locale/ko/LC_MESSAGES/lspclient.mo
@@ -736,7 +731,6 @@ share/locale/lt/LC_MESSAGES/katesymbolviewer.mo
 share/locale/lt/LC_MESSAGES/katetextfilter.mo
 share/locale/lt/LC_MESSAGES/katexmlcheck.mo
 share/locale/lt/LC_MESSAGES/katexmltools.mo
-share/locale/lt/LC_MESSAGES/kterustcompletion.mo
 share/locale/lt/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/lt/LC_MESSAGES/kwrite.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
@@ -774,7 +768,6 @@ share/locale/ml/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ml/LC_MESSAGES/katetextfilter.mo
 share/locale/ml/LC_MESSAGES/katexmlcheck.mo
 share/locale/ml/LC_MESSAGES/katexmltools.mo
-share/locale/ml/LC_MESSAGES/kterustcompletion.mo
 share/locale/ml/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ml/LC_MESSAGES/kwrite.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
@@ -842,6 +835,7 @@ share/locale/nl/LC_MESSAGES/kate.mo
 share/locale/nl/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/nl/LC_MESSAGES/katebuild-plugin.mo
 share/locale/nl/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/nl/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/nl/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/nl/LC_MESSAGES/katefiletree.mo
 share/locale/nl/LC_MESSAGES/kategdbplugin.mo
@@ -855,7 +849,6 @@ share/locale/nl/LC_MESSAGES/katesymbolviewer.mo
 share/locale/nl/LC_MESSAGES/katetextfilter.mo
 share/locale/nl/LC_MESSAGES/katexmlcheck.mo
 share/locale/nl/LC_MESSAGES/katexmltools.mo
-share/locale/nl/LC_MESSAGES/kterustcompletion.mo
 share/locale/nl/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/nl/LC_MESSAGES/kwrite.mo
 share/locale/nl/LC_MESSAGES/lspclient.mo
@@ -867,6 +860,7 @@ share/locale/nn/LC_MESSAGES/kate.mo
 share/locale/nn/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/nn/LC_MESSAGES/katebuild-plugin.mo
 share/locale/nn/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/nn/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/nn/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/nn/LC_MESSAGES/katefiletree.mo
 share/locale/nn/LC_MESSAGES/kategdbplugin.mo
@@ -880,7 +874,6 @@ share/locale/nn/LC_MESSAGES/katesymbolviewer.mo
 share/locale/nn/LC_MESSAGES/katetextfilter.mo
 share/locale/nn/LC_MESSAGES/katexmlcheck.mo
 share/locale/nn/LC_MESSAGES/katexmltools.mo
-share/locale/nn/LC_MESSAGES/kterustcompletion.mo
 share/locale/nn/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/nn/LC_MESSAGES/kwrite.mo
 share/locale/nn/LC_MESSAGES/lspclient.mo
@@ -912,6 +905,7 @@ share/locale/pl/LC_MESSAGES/kate.mo
 share/locale/pl/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/pl/LC_MESSAGES/katebuild-plugin.mo
 share/locale/pl/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/pl/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/pl/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/pl/LC_MESSAGES/katefiletree.mo
 share/locale/pl/LC_MESSAGES/kategdbplugin.mo
@@ -925,7 +919,6 @@ share/locale/pl/LC_MESSAGES/katesymbolviewer.mo
 share/locale/pl/LC_MESSAGES/katetextfilter.mo
 share/locale/pl/LC_MESSAGES/katexmlcheck.mo
 share/locale/pl/LC_MESSAGES/katexmltools.mo
-share/locale/pl/LC_MESSAGES/kterustcompletion.mo
 share/locale/pl/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/pl/LC_MESSAGES/kwrite.mo
 share/locale/pl/LC_MESSAGES/lspclient.mo
@@ -937,6 +930,7 @@ share/locale/pt/LC_MESSAGES/kate.mo
 share/locale/pt/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/pt/LC_MESSAGES/katebuild-plugin.mo
 share/locale/pt/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/pt/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/pt/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/pt/LC_MESSAGES/katefiletree.mo
 share/locale/pt/LC_MESSAGES/kategdbplugin.mo
@@ -950,7 +944,6 @@ share/locale/pt/LC_MESSAGES/katesymbolviewer.mo
 share/locale/pt/LC_MESSAGES/katetextfilter.mo
 share/locale/pt/LC_MESSAGES/katexmlcheck.mo
 share/locale/pt/LC_MESSAGES/katexmltools.mo
-share/locale/pt/LC_MESSAGES/kterustcompletion.mo
 share/locale/pt/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/pt/LC_MESSAGES/kwrite.mo
 share/locale/pt/LC_MESSAGES/lspclient.mo
@@ -962,6 +955,7 @@ share/locale/pt_BR/LC_MESSAGES/kate.mo
 share/locale/pt_BR/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/pt_BR/LC_MESSAGES/katebuild-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/pt_BR/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/pt_BR/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/pt_BR/LC_MESSAGES/katefiletree.mo
 share/locale/pt_BR/LC_MESSAGES/kategdbplugin.mo
@@ -975,7 +969,6 @@ share/locale/pt_BR/LC_MESSAGES/katesymbolviewer.mo
 share/locale/pt_BR/LC_MESSAGES/katetextfilter.mo
 share/locale/pt_BR/LC_MESSAGES/katexmlcheck.mo
 share/locale/pt_BR/LC_MESSAGES/katexmltools.mo
-share/locale/pt_BR/LC_MESSAGES/kterustcompletion.mo
 share/locale/pt_BR/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/pt_BR/LC_MESSAGES/kwrite.mo
 share/locale/pt_BR/LC_MESSAGES/lspclient.mo
@@ -1007,6 +1000,7 @@ share/locale/ru/LC_MESSAGES/kate.mo
 share/locale/ru/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ru/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ru/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/ru/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ru/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ru/LC_MESSAGES/katefiletree.mo
 share/locale/ru/LC_MESSAGES/kategdbplugin.mo
@@ -1020,7 +1014,6 @@ share/locale/ru/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ru/LC_MESSAGES/katetextfilter.mo
 share/locale/ru/LC_MESSAGES/katexmlcheck.mo
 share/locale/ru/LC_MESSAGES/katexmltools.mo
-share/locale/ru/LC_MESSAGES/kterustcompletion.mo
 share/locale/ru/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ru/LC_MESSAGES/kwrite.mo
 share/locale/ru/LC_MESSAGES/lspclient.mo
@@ -1032,6 +1025,7 @@ share/locale/sk/LC_MESSAGES/kate.mo
 share/locale/sk/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/sk/LC_MESSAGES/katebuild-plugin.mo
 share/locale/sk/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/sk/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/sk/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/sk/LC_MESSAGES/katefiletree.mo
 share/locale/sk/LC_MESSAGES/kategdbplugin.mo
@@ -1045,7 +1039,6 @@ share/locale/sk/LC_MESSAGES/katesymbolviewer.mo
 share/locale/sk/LC_MESSAGES/katetextfilter.mo
 share/locale/sk/LC_MESSAGES/katexmlcheck.mo
 share/locale/sk/LC_MESSAGES/katexmltools.mo
-share/locale/sk/LC_MESSAGES/kterustcompletion.mo
 share/locale/sk/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/sk/LC_MESSAGES/kwrite.mo
 share/locale/sk/LC_MESSAGES/lspclient.mo
@@ -1070,7 +1063,6 @@ share/locale/sl/LC_MESSAGES/katesymbolviewer.mo
 share/locale/sl/LC_MESSAGES/katetextfilter.mo
 share/locale/sl/LC_MESSAGES/katexmlcheck.mo
 share/locale/sl/LC_MESSAGES/katexmltools.mo
-share/locale/sl/LC_MESSAGES/kterustcompletion.mo
 share/locale/sl/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/sl/LC_MESSAGES/kwrite.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
@@ -1094,7 +1086,6 @@ share/locale/sr/LC_MESSAGES/katesymbolviewer.mo
 share/locale/sr/LC_MESSAGES/katetextfilter.mo
 share/locale/sr/LC_MESSAGES/katexmlcheck.mo
 share/locale/sr/LC_MESSAGES/katexmltools.mo
-share/locale/sr/LC_MESSAGES/kterustcompletion.mo
 share/locale/sr/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/sr/LC_MESSAGES/kwrite.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
@@ -1105,6 +1096,7 @@ share/locale/sv/LC_MESSAGES/kate.mo
 share/locale/sv/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/sv/LC_MESSAGES/katebuild-plugin.mo
 share/locale/sv/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/sv/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/sv/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/sv/LC_MESSAGES/katefiletree.mo
 share/locale/sv/LC_MESSAGES/kategdbplugin.mo
@@ -1118,7 +1110,6 @@ share/locale/sv/LC_MESSAGES/katesymbolviewer.mo
 share/locale/sv/LC_MESSAGES/katetextfilter.mo
 share/locale/sv/LC_MESSAGES/katexmlcheck.mo
 share/locale/sv/LC_MESSAGES/katexmltools.mo
-share/locale/sv/LC_MESSAGES/kterustcompletion.mo
 share/locale/sv/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/sv/LC_MESSAGES/kwrite.mo
 share/locale/sv/LC_MESSAGES/lspclient.mo
@@ -1143,7 +1134,6 @@ share/locale/tr/LC_MESSAGES/katesymbolviewer.mo
 share/locale/tr/LC_MESSAGES/katetextfilter.mo
 share/locale/tr/LC_MESSAGES/katexmlcheck.mo
 share/locale/tr/LC_MESSAGES/katexmltools.mo
-share/locale/tr/LC_MESSAGES/kterustcompletion.mo
 share/locale/tr/LC_MESSAGES/kwrite.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/tr/LC_MESSAGES/tabswitcherplugin.mo
@@ -1170,6 +1160,7 @@ share/locale/uk/LC_MESSAGES/kate.mo
 share/locale/uk/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/uk/LC_MESSAGES/katebuild-plugin.mo
 share/locale/uk/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/uk/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/uk/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/uk/LC_MESSAGES/katefiletree.mo
 share/locale/uk/LC_MESSAGES/kategdbplugin.mo
@@ -1183,7 +1174,6 @@ share/locale/uk/LC_MESSAGES/katesymbolviewer.mo
 share/locale/uk/LC_MESSAGES/katetextfilter.mo
 share/locale/uk/LC_MESSAGES/katexmlcheck.mo
 share/locale/uk/LC_MESSAGES/katexmltools.mo
-share/locale/uk/LC_MESSAGES/kterustcompletion.mo
 share/locale/uk/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/uk/LC_MESSAGES/kwrite.mo
 share/locale/uk/LC_MESSAGES/lspclient.mo
@@ -1199,6 +1189,7 @@ share/locale/zh_CN/LC_MESSAGES/kate.mo
 share/locale/zh_CN/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/zh_CN/LC_MESSAGES/katebuild-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/zh_CN/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/zh_CN/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/zh_CN/LC_MESSAGES/katefiletree.mo
 share/locale/zh_CN/LC_MESSAGES/kategdbplugin.mo
@@ -1212,7 +1203,6 @@ share/locale/zh_CN/LC_MESSAGES/katesymbolviewer.mo
 share/locale/zh_CN/LC_MESSAGES/katetextfilter.mo
 share/locale/zh_CN/LC_MESSAGES/katexmlcheck.mo
 share/locale/zh_CN/LC_MESSAGES/katexmltools.mo
-share/locale/zh_CN/LC_MESSAGES/kterustcompletion.mo
 share/locale/zh_CN/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/zh_CN/LC_MESSAGES/kwrite.mo
 share/locale/zh_CN/LC_MESSAGES/lspclient.mo
@@ -1224,6 +1214,7 @@ share/locale/zh_TW/LC_MESSAGES/kate.mo
 share/locale/zh_TW/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/zh_TW/LC_MESSAGES/katebuild-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/zh_TW/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/zh_TW/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/zh_TW/LC_MESSAGES/katefiletree.mo
 share/locale/zh_TW/LC_MESSAGES/kategdbplugin.mo
@@ -1237,7 +1228,6 @@ share/locale/zh_TW/LC_MESSAGES/katesymbolviewer.mo
 share/locale/zh_TW/LC_MESSAGES/katetextfilter.mo
 share/locale/zh_TW/LC_MESSAGES/katexmlcheck.mo
 share/locale/zh_TW/LC_MESSAGES/katexmltools.mo
-share/locale/zh_TW/LC_MESSAGES/kterustcompletion.mo
 share/locale/zh_TW/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kwrite.mo
 share/locale/zh_TW/LC_MESSAGES/lspclient.mo

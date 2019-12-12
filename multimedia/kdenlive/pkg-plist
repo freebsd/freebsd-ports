@@ -108,6 +108,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/agate.xml
 %%DATADIR%%/effects/audiobalance.xml
 %%DATADIR%%/effects/audiopan.xml
+%%DATADIR%%/effects/audiospectrum.xml
 %%DATADIR%%/effects/audiowave.xml
 %%DATADIR%%/effects/audiowaveform.xml
 %%DATADIR%%/effects/automask.xml
@@ -139,6 +140,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/frei0r_colgate.xml
 %%DATADIR%%/effects/frei0r_coloradj_rgb.xml
 %%DATADIR%%/effects/frei0r_colordistance.xml
+%%DATADIR%%/effects/frei0r_colorize.xml
 %%DATADIR%%/effects/frei0r_colortap.xml
 %%DATADIR%%/effects/frei0r_contrast0r.xml
 %%DATADIR%%/effects/frei0r_curves.xml
@@ -147,7 +149,9 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/frei0r_delay0r.xml
 %%DATADIR%%/effects/frei0r_delaygrab.xml
 %%DATADIR%%/effects/frei0r_distort0r.xml
+%%DATADIR%%/effects/frei0r_dither.xml
 %%DATADIR%%/effects/frei0r_edgeglow.xml
+%%DATADIR%%/effects/frei0r_emboss.xml
 %%DATADIR%%/effects/frei0r_equaliz0r.xml
 %%DATADIR%%/effects/frei0r_facebl0r.xml
 %%DATADIR%%/effects/frei0r_facedetect.xml
@@ -170,13 +174,16 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/frei0r_pr0be.xml
 %%DATADIR%%/effects/frei0r_pr0file.xml
 %%DATADIR%%/effects/frei0r_primaries.xml
+%%DATADIR%%/effects/frei0r_rgbnoise.xml
 %%DATADIR%%/effects/frei0r_rgbparade.xml
 %%DATADIR%%/effects/frei0r_saturat0r.xml
 %%DATADIR%%/effects/frei0r_scale0tilt.xml
 %%DATADIR%%/effects/frei0r_scanline0r.xml
 %%DATADIR%%/effects/frei0r_select0r.xml
 %%DATADIR%%/effects/frei0r_sharpness.xml
+%%DATADIR%%/effects/frei0r_sigmoidaltransfer.xml
 %%DATADIR%%/effects/frei0r_sobel.xml
+%%DATADIR%%/effects/frei0r_softglow.xml
 %%DATADIR%%/effects/frei0r_sopsat.xml
 %%DATADIR%%/effects/frei0r_squareblur.xml
 %%DATADIR%%/effects/frei0r_tehroxx0r.xml
@@ -223,6 +230,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/scratchlines.xml
 %%DATADIR%%/effects/selectivecolor.xml
 %%DATADIR%%/effects/sepia.xml
+%%DATADIR%%/effects/shape.xml
 %%DATADIR%%/effects/sox_band.xml
 %%DATADIR%%/effects/sox_bass.xml
 %%DATADIR%%/effects/sox_echo.xml
@@ -231,10 +239,12 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/sox_phaser.xml
 %%DATADIR%%/effects/sox_stretch.xml
 %%DATADIR%%/effects/speed.xml
+%%DATADIR%%/effects/subtitles.xml
 %%DATADIR%%/effects/swapchannels.xml
 %%DATADIR%%/effects/tcolor.xml
 %%DATADIR%%/effects/threshold.xml
 %%DATADIR%%/effects/tracker.xml
+%%DATADIR%%/effects/unsharp.xml
 %%DATADIR%%/effects/update/frei0r.balanc0r.js
 %%DATADIR%%/effects/update/frei0r.cartoon.js
 %%DATADIR%%/effects/update/frei0r.curves.js

@@ -5,7 +5,6 @@ etc/signon-ui/webkit-options.d/www.facebook.com.conf
 %%QT_PLUGINDIR%%/kaccounts/ui/owncloud_plugin_kaccounts.so
 share/accounts/providers/kde/google.provider
 share/accounts/providers/kde/owncloud.provider
-share/accounts/providers/kde/twitter.provider
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/BasicInfo.qml
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/Services.qml
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/main.qml

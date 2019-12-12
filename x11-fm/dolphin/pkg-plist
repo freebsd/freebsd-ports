@@ -51,12 +51,14 @@ share/locale/da/LC_MESSAGES/dolphin.mo
 share/locale/de/LC_MESSAGES/dolphin.mo
 share/locale/de/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/el/LC_MESSAGES/dolphin.mo
+share/locale/el/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/en_GB/LC_MESSAGES/dolphin.mo
 share/locale/en_GB/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/eo/LC_MESSAGES/dolphin.mo
 share/locale/es/LC_MESSAGES/dolphin.mo
 share/locale/es/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/et/LC_MESSAGES/dolphin.mo
+share/locale/et/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/eu/LC_MESSAGES/dolphin.mo
 share/locale/eu/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/fa/LC_MESSAGES/dolphin.mo
@@ -73,6 +75,7 @@ share/locale/hi/LC_MESSAGES/dolphin.mo
 share/locale/hr/LC_MESSAGES/dolphin.mo
 share/locale/hu/LC_MESSAGES/dolphin.mo
 share/locale/ia/LC_MESSAGES/dolphin.mo
+share/locale/ia/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/id/LC_MESSAGES/dolphin.mo
 share/locale/id/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/is/LC_MESSAGES/dolphin.mo
@@ -86,6 +89,7 @@ share/locale/ko/LC_MESSAGES/dolphin.mo
 share/locale/ko/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/lt/LC_MESSAGES/dolphin.mo
 share/locale/lv/LC_MESSAGES/dolphin.mo
+share/locale/lv/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/ml/LC_MESSAGES/dolphin.mo
 share/locale/mr/LC_MESSAGES/dolphin.mo
 share/locale/nb/LC_MESSAGES/dolphin.mo

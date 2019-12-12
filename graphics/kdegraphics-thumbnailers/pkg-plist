@@ -4,3 +4,4 @@
 share/kservices5/blenderthumbnail.desktop
 share/kservices5/gsthumbnail.desktop
 share/kservices5/rawthumbnail.desktop
+share/metainfo/org.kde.kdegraphics-thumbnailers.metainfo.xml

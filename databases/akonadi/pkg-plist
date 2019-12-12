@@ -9,16 +9,19 @@ bin/akonadiselftest
 bin/akonadiserver
 bin/akonaditest
 bin/asapcat
-share/qlogging-categories5/akonadi.categories
-share/qlogging-categories5/akonadi.renamecategories
+etc/apparmor.d/mysqld_akonadi
+etc/apparmor.d/postgresql_akonadi
+etc/apparmor.d/usr.bin.akonadiserver
 etc/xdg/akonadi/mysql-global-mobile.conf
 etc/xdg/akonadi/mysql-global.conf
+include/KF5/AkonadiAgentBase/AccountsIntegration
 include/KF5/AkonadiAgentBase/AgentBase
 include/KF5/AkonadiAgentBase/AgentSearchInterface
 include/KF5/AkonadiAgentBase/PreprocessorBase
 include/KF5/AkonadiAgentBase/ResourceBase
 include/KF5/AkonadiAgentBase/ResourceSettings
 include/KF5/AkonadiAgentBase/TransportResourceBase
+include/KF5/AkonadiAgentBase/accountsintegration.h
 include/KF5/AkonadiAgentBase/agentbase.h
 include/KF5/AkonadiAgentBase/agentsearchinterface.h
 include/KF5/AkonadiAgentBase/akonadiagentbase_export.h
@@ -37,6 +40,7 @@ include/KF5/AkonadiCore/AgentInstanceModel
 include/KF5/AkonadiCore/AgentManager
 include/KF5/AkonadiCore/AgentType
 include/KF5/AkonadiCore/AgentTypeModel
+include/KF5/AkonadiCore/AkOptional
 include/KF5/AkonadiCore/Attribute
 include/KF5/AkonadiCore/AttributeFactory
 include/KF5/AkonadiCore/CachePolicy
@@ -141,6 +145,7 @@ include/KF5/AkonadiCore/agentmanager.h
 include/KF5/AkonadiCore/agenttype.h
 include/KF5/AkonadiCore/agenttypemodel.h
 include/KF5/AkonadiCore/akonadicore_export.h
+include/KF5/AkonadiCore/akoptional.h
 include/KF5/AkonadiCore/attribute.h
 include/KF5/AkonadiCore/attributefactory.h
 include/KF5/AkonadiCore/cachepolicy.h
@@ -163,6 +168,7 @@ include/KF5/AkonadiCore/collectionquotaattribute.h
 include/KF5/AkonadiCore/collectionstatistics.h
 include/KF5/AkonadiCore/collectionstatisticsjob.h
 include/KF5/AkonadiCore/collectionutils.h
+include/KF5/AkonadiCore/config-akonadi.h
 include/KF5/AkonadiCore/control.h
 include/KF5/AkonadiCore/differencesalgorithminterface.h
 include/KF5/AkonadiCore/entityannotationsattribute.h
@@ -198,6 +204,7 @@ include/KF5/AkonadiCore/mimetypechecker.h
 include/KF5/AkonadiCore/monitor.h
 include/KF5/AkonadiCore/newmailnotifierattribute.h
 include/KF5/AkonadiCore/notificationsubscriber.h
+include/KF5/AkonadiCore/optional.hpp
 include/KF5/AkonadiCore/partfetcher.h
 include/KF5/AkonadiCore/persistentsearchattribute.h
 include/KF5/AkonadiCore/pop3resourceattribute.h
@@ -340,7 +347,7 @@ lib/libKF5AkonadiXml.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_AkonadiWidgets.pri
 %%QT_MKSPECDIR%%/modules/qt_AkonadiXml.pri
 %%QT_PLUGINDIR%%/akonadi/akonadi_test_searchplugin.so
-%%QT_PLUGINDIR%%/designer/akonadi5widgets.so
+%%QT_PLUGINDIR%%/designer/akonadiwidgets.so
 %%SQLITE%%%%QT_PLUGINDIR%%/sqldrivers/libqsqlite3.so
 %%DATADIR%%/agents/knutresource.desktop
 share/config.kcfg/resourcebase.kcfg
@@ -463,3 +470,5 @@ share/locale/zh_CN/LC_MESSAGES/libakonadi5.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/zh_TW/LC_MESSAGES/libakonadi5.mo
 share/mime/packages/akonadi-mime.xml
+share/qlogging-categories5/akonadi.categories
+share/qlogging-categories5/akonadi.renamecategories

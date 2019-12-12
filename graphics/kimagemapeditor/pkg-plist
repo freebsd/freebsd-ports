@@ -24,8 +24,6 @@ share/icons/hicolor/scalable/apps/kimagemapeditor.svgz
 %%DATADIR%%/polygoncursor.png
 %%DATADIR%%/removepointcursor.png
 share/kservices5/kimagemapeditorpart.desktop
-share/kxmlgui5/kimagemapeditor/kimagemapeditorpartui.rc
-share/kxmlgui5/kimagemapeditor/kimagemapeditorui.rc
 share/locale/ar/LC_MESSAGES/kimagemapeditor.mo
 share/locale/bg/LC_MESSAGES/kimagemapeditor.mo
 share/locale/bs/LC_MESSAGES/kimagemapeditor.mo

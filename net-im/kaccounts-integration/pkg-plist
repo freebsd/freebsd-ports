@@ -17,10 +17,15 @@ lib/cmake/KAccounts/KAccountsTargets.cmake
 lib/libkaccounts.so
 lib/libkaccounts.so.1
 lib/libkaccounts.so.%%KDE_APPLICATIONS_VERSION%%
-%%QT_PLUGINDIR%%/kcm_kaccounts.so
+%%QT_PLUGINDIR%%/kcms/kcm_kaccounts.so
 %%QT_PLUGINDIR%%/kf5/kded/accounts.so
 %%QT_QMLDIR%%/org/kde/kaccounts/libkaccountsdeclarativeplugin.so
 %%QT_QMLDIR%%/org/kde/kaccounts/qmldir
+share/kpackage/kcms/kcm_kaccounts/contents/ui/Accounts.qml
+share/kpackage/kcms/kcm_kaccounts/contents/ui/AvailableAccounts.qml
+share/kpackage/kcms/kcm_kaccounts/contents/ui/AvailableServices.qml
+share/kpackage/kcms/kcm_kaccounts/metadata.desktop
+share/kpackage/kcms/kcm_kaccounts/metadata.json
 share/kservices5/kcm_kaccounts.desktop
 share/locale/ar/LC_MESSAGES/kaccounts-integration.mo
 share/locale/bs/LC_MESSAGES/kaccounts-integration.mo

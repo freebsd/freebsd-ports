@@ -95,6 +95,7 @@ include/marble/MapWizard.h
 include/marble/MarbleAboutDialog.h
 include/marble/MarbleColors.h
 include/marble/MarbleDebug.h
+include/marble/MarbleDeclarativePlugin.h
 include/marble/MarbleDirs.h
 include/marble/MarbleGlobal.h
 include/marble/MarbleGraphicsGridLayout.h
@@ -164,6 +165,7 @@ include/marble/ViewportParams.h
 include/marble/WaitEditWidget.h
 include/marble/WidgetGraphicsItem.h
 include/marble/geodata_export.h
+include/marble/marble_declarative_export.h
 include/marble/marble_export.h
 lib/cmake/Astro/AstroConfig.cmake
 lib/cmake/Astro/AstroConfigVersion.cmake
@@ -1499,6 +1501,7 @@ share/locale/zh_TW/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 %%DATADIR%%/data/svg/application-x-marble.svg
 %%DATADIR%%/data/svg/bookmark.svg
 %%DATADIR%%/data/svg/coordinate.svg
+%%DATADIR%%/data/svg/dot-circle-regular.svg
 %%DATADIR%%/data/svg/glow.png
 %%DATADIR%%/data/svg/lunarmap.svg
 %%DATADIR%%/data/svg/marble-logo-32dpi.png

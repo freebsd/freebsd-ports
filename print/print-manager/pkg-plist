@@ -106,6 +106,7 @@ share/locale/zh_CN/LC_MESSAGES/print-manager.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/zh_TW/LC_MESSAGES/print-manager.mo
 share/metainfo/org.kde.plasma.printmanager.appdata.xml
+share/metainfo/org.kde.print-manager.metainfo.xml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/config.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/main.xml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PopupDialog.qml
