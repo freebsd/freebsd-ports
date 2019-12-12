@@ -1,0 +1,3 @@
+AWS::Signature4 implement's Amazon Web Service's Signature version 4.
+
+WWW: https://metacpan.org/release/AWS-Signature4
