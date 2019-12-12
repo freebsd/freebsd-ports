@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcdio-paranoia
-PORTVERSION=	10.2+2.0.0
+PORTVERSION=	10.2+2.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/libcdio
 
@@ -18,7 +18,6 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-versioned-libs
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 

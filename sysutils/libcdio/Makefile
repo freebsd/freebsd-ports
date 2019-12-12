@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcdio
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -17,11 +16,9 @@ LIB_DEPENDS=	libcddb.so:audio/libcddb
 TEST_DEPENDS=	genisoimage:sysutils/genisoimage
 
 USES=		cpe gmake iconv libtool localbase \
-		ncurses pathfix perl5 pkgconfig shebangfix
+		ncurses pathfix perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	test/check_bad_iso.sh
-bash_CMD=	${SH}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
