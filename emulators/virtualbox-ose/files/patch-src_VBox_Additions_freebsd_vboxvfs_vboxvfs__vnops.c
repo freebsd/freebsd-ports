@@ -1,5 +1,5 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2017-04-28 16:59:22.000000000 +0200
-+++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c	2017-07-14 14:22:09.045026515 +0200
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2019-10-10 18:06:51 UTC
++++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c
 @@ -1,10 +1,6 @@
 -/* $Id: vboxvfs_vnops.c $ */
 -/** @file
@@ -12,7 +12,7 @@
   *
   * This file is part of VirtualBox Open Source Edition (OSE), as
   * available from http://www.virtualbox.org. This file is free software;
-@@ -14,228 +9,1334 @@
+@@ -14,228 +10,1338 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
   * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
   */
@@ -45,9 +45,13 @@
 -#include <vm/vm.h>
 -#include <vm/vm_extern.h>
 +#include <vm/uma.h>
-+
-+#include "vboxvfs.h"
  
++#include "vboxvfs.h"
++
++#if __FreeBSD_version < 1300063
++#define	VN_IS_DOOMED(vp)	 (((vp)->v_iflag & VI_DOOMED) != 0)
++#endif
++
  /*
   * Prototypes for VBOXVFS vnode operations
   */
@@ -79,10 +83,37 @@
 -static vop_inactive_t   vboxvfs_inactive;
 -static vop_putpages_t   vboxvfs_putpages;
 -static vop_reclaim_t    vboxvfs_reclaim;
--
++static vop_create_t	vboxfs_create;
++static vop_open_t	vboxfs_open;
++static vop_close_t	vboxfs_close;
++static vop_access_t	vboxfs_access;
++static vop_getattr_t	vboxfs_getattr;
++static vop_setattr_t	vboxfs_setattr;
++static vop_read_t	vboxfs_read;
++static vop_readlink_t	vboxfs_readlink;
++static vop_write_t	vboxfs_write;
++static vop_fsync_t	vboxfs_fsync;
++static vop_remove_t	vboxfs_remove;
++static vop_link_t	vboxfs_link;
++static vop_cachedlookup_t	vboxfs_lookup;
++static vop_rename_t	vboxfs_rename;
++static vop_mkdir_t	vboxfs_mkdir;
++static vop_rmdir_t	vboxfs_rmdir;
++static vop_symlink_t	vboxfs_symlink;
++static vop_readdir_t	vboxfs_readdir;
++static vop_print_t	vboxfs_print;
++static vop_pathconf_t	vboxfs_pathconf;
++static vop_advlock_t	vboxfs_advlock;
++static vop_ioctl_t	vboxfs_ioctl;
++static vop_inactive_t	vboxfs_inactive;
++static vop_reclaim_t	vboxfs_reclaim;
++static vop_vptofh_t	vboxfs_vptofh;
+ 
 -struct vop_vector vboxvfs_vnodeops = {
 -    .vop_default    =   &default_vnodeops,
--
++struct vop_vector vboxfs_vnodeops = {
++	.vop_default	= &default_vnodeops,
+ 
 -    .vop_access     =   vboxvfs_access,
 -    .vop_advlock    =   vboxvfs_advlock,
 -    .vop_close      =   vboxvfs_close,
@@ -111,35 +142,6 @@
 -    .vop_strategy   =   vboxvfs_strategy,
 -    .vop_symlink    =   vboxvfs_symlink,
 -    .vop_write      =   vboxvfs_write,
-+static vop_create_t	vboxfs_create;
-+static vop_open_t	vboxfs_open;
-+static vop_close_t	vboxfs_close;
-+static vop_access_t	vboxfs_access;
-+static vop_getattr_t	vboxfs_getattr;
-+static vop_setattr_t	vboxfs_setattr;
-+static vop_read_t	vboxfs_read;
-+static vop_readlink_t	vboxfs_readlink;
-+static vop_write_t	vboxfs_write;
-+static vop_fsync_t	vboxfs_fsync;
-+static vop_remove_t	vboxfs_remove;
-+static vop_link_t	vboxfs_link;
-+static vop_cachedlookup_t	vboxfs_lookup;
-+static vop_rename_t	vboxfs_rename;
-+static vop_mkdir_t	vboxfs_mkdir;
-+static vop_rmdir_t	vboxfs_rmdir;
-+static vop_symlink_t	vboxfs_symlink;
-+static vop_readdir_t	vboxfs_readdir;
-+static vop_print_t	vboxfs_print;
-+static vop_pathconf_t	vboxfs_pathconf;
-+static vop_advlock_t	vboxfs_advlock;
-+static vop_ioctl_t	vboxfs_ioctl;
-+static vop_inactive_t	vboxfs_inactive;
-+static vop_reclaim_t	vboxfs_reclaim;
-+static vop_vptofh_t	vboxfs_vptofh;
-+
-+struct vop_vector vboxfs_vnodeops = {
-+	.vop_default	= &default_vnodeops,
-+
 +	.vop_access	= vboxfs_access,
 +	.vop_advlock	= VOP_EOPNOTSUPP,
 +	.vop_close	= vboxfs_close,
@@ -176,22 +178,14 @@
 +vsfnode_cur_time_usec(void)
  {
 -    return 0;
--}
 +	struct timeval now;
- 
--static int vboxvfs_open(struct vop_open_args *ap)
--{
--    return 0;
--}
++
 +	getmicrotime(&now);
- 
--static int vboxvfs_close(struct vop_close_args *ap)
--{
--    return 0;
++
 +	return (now.tv_sec*1000 + now.tv_usec);
  }
  
--static int vboxvfs_getattr(struct vop_getattr_args *ap)
+-static int vboxvfs_open(struct vop_open_args *ap)
 +static int
 +vsfnode_stat_cached(struct vboxfs_node *np)
  {
@@ -200,18 +194,13 @@
 +	    np->vboxfsmp->sf_stat_ttl * 1000UL;
  }
  
--static int vboxvfs_setattr(struct vop_setattr_args *ap)
+-static int vboxvfs_close(struct vop_close_args *ap)
 +static int
 +vsfnode_update_stat_cache(struct vboxfs_node *np)
  {
 -    return 0;
--}
 +	int error;
- 
--static int vboxvfs_read(struct vop_read_args *ap)
--{
--    return 0;
--}
++
 +	error = sfprov_get_attr(np->vboxfsmp->sf_handle, np->sf_path,
 +	    &np->sf_stat);
 +#if 0
@@ -220,14 +209,11 @@
 +#endif
 +	if (error == 0)
 +		np->sf_stat_time = vsfnode_cur_time_usec();
- 
--static int vboxvfs_write(struct vop_write_args *ap)
--{
--    return 0;
++
 +	return (error);
  }
  
--static int vboxvfs_create(struct vop_create_args *ap)
+-static int vboxvfs_getattr(struct vop_getattr_args *ap)
 +/*
 + * Need to clear v_object for insmntque failure.
 + */
@@ -235,11 +221,7 @@
 +vboxfs_insmntque_dtr(struct vnode *vp, void *dtr_arg)
  {
 -    return 0;
--}
- 
--static int vboxvfs_remove(struct vop_remove_args *ap)
--{
--    return 0;
++
 +	// XXX: vboxfs_destroy_vobject(vp, vp->v_object);
 +	vp->v_object = NULL;
 +	vp->v_data = NULL;
@@ -248,10 +230,7 @@
 +	vput(vp);
  }
  
--static int vboxvfs_rename(struct vop_rename_args *ap)
--{
--    return 0;
--}
+-static int vboxvfs_setattr(struct vop_setattr_args *ap)
 +/*
 + * Allocates a new vnode for the node node or returns a new reference to
 + * an existing one if the node had already a vnode referencing it.  The
@@ -262,7 +241,8 @@
 +int
 +vboxfs_alloc_vp(struct mount *mp, struct vboxfs_node *node, int lkflag,
 +    struct vnode **vpp)
-+{
+ {
+-    return 0;
 +	struct vnode *vp;
 +	int error;
 +
@@ -274,7 +254,7 @@
 +		MPASS((node->sf_vpstate & VBOXFS_VNODE_DOOMED) == 0);
 +		VI_LOCK(vp);
 +		if ((node->sf_type == VDIR && node->sf_parent == NULL) ||
-+		    ((vp->v_iflag & VI_DOOMED) != 0 &&
++		    (VN_IS_DOOMED(vp) &&
 +		    (lkflag & LK_NOWAIT) != 0)) {
 +			VI_UNLOCK(vp);
 +			VBOXFS_NODE_UNLOCK(node);
@@ -282,7 +262,7 @@
 +			vp = NULL;
 +			goto out;
 +		}
-+		if ((vp->v_iflag & VI_DOOMED) != 0) {
++		if (VN_IS_DOOMED(vp)) {
 +			VI_UNLOCK(vp);
 +			node->sf_vpstate |= VBOXFS_VNODE_WRECLAIM;
 +			while ((node->sf_vpstate & VBOXFS_VNODE_WRECLAIM) != 0) {
@@ -406,14 +386,11 @@
 +		VBOXFS_NODE_UNLOCK(node);
 +	}
 +#endif
- 
--static int vboxvfs_link(struct vop_link_args *ap)
--{
--    return EOPNOTSUPP;
++
 +	return error;
  }
  
--static int vboxvfs_symlink(struct vop_symlink_args *ap)
+-static int vboxvfs_read(struct vop_read_args *ap)
 +/*
 + * Destroys the association between the vnode vp and the node it
 + * references.
@@ -421,19 +398,11 @@
 +void
 +vboxfs_free_vp(struct vnode *vp)
  {
--    return EOPNOTSUPP;
--}
-+	struct vboxfs_node *node;
- 
--static int vboxvfs_mknod(struct vop_mknod_args *ap)
--{
--    return EOPNOTSUPP;
--}
-+	node = VP_TO_VBOXFS_NODE(vp);
- 
--static int vboxvfs_mkdir(struct vop_mkdir_args *ap)
--{
 -    return 0;
++	struct vboxfs_node *node;
++
++	node = VP_TO_VBOXFS_NODE(vp);
++
 +	VBOXFS_NODE_ASSERT_LOCKED(node);
 +	node->sf_vnode = NULL;
 +	if ((node->sf_vpstate & VBOXFS_VNODE_WRECLAIM) != 0)
@@ -442,7 +411,7 @@
 +	vp->v_data = NULL;
  }
  
--static int vboxvfs_rmdir(struct vop_rmdir_args *ap)
+-static int vboxvfs_write(struct vop_write_args *ap)
 +/*
 + * Allocate new vboxfs_node and vnode for given file
 + */
@@ -452,54 +421,34 @@
 +    int lkflag, struct vnode **vpp)
  {
 -    return 0;
--}
 +	int error;
 +	struct vboxfs_node *unode;
- 
--static int vboxvfs_readdir(struct vop_readdir_args *ap)
--{
--    return 0;
--}
++
 +	error = vboxfs_alloc_node(vboxfsmp->sf_vfsp, vboxfsmp, fullpath, type,
 +	    vboxfsmp->sf_uid, vboxfsmp->sf_gid, mode, parent, &unode);
- 
--static int vboxvfs_fsync(struct vop_fsync_args *ap)
--{
--    return 0;
--}
++
 +	if (error)
 +		goto out;
- 
--static int vboxvfs_print (struct vop_print_args *ap)
--{
--    return 0;
--}
++
 +	error = vboxfs_alloc_vp(vboxfsmp->sf_vfsp, unode, lkflag, vpp);
 +	if (error)
 +		vboxfs_free_node(vboxfsmp, unode);
- 
--static int vboxvfs_pathconf (struct vop_pathconf_args *ap)
--{
--    return 0;
++
 +out:
 +	return (error);
  }
  
--static int vboxvfs_strategy (struct vop_strategy_args *ap)
+-static int vboxvfs_create(struct vop_create_args *ap)
 +static int
 +vboxfs_vn_get_ino_alloc(struct mount *mp, void *arg, int lkflags,
 +    struct vnode **rvp)
  {
 -    return 0;
--}
- 
--static int vboxvfs_ioctl(struct vop_ioctl_args *ap)
--{
--    return ENOTTY;
++
 +	return (vboxfs_alloc_vp(mp, arg, lkflags, rvp));
  }
  
--static int vboxvfs_getextattr(struct vop_getextattr_args *ap)
+-static int vboxvfs_remove(struct vop_remove_args *ap)
 +/*
 + * Construct a new pathname given an sfnode plus an optional tail
 + * component of length len
@@ -509,13 +458,8 @@
 +sfnode_construct_path(struct vboxfs_node *node, char *tail, int len)
  {
 -    return 0;
--}
 +	char *p;
- 
--static int vboxvfs_advlock(struct vop_advlock_args *ap)
--{
--    return 0;
--}
++
 +	if (len <= 2 && tail[0] == '.' && (len == 1 || tail[1] == '.'))
 +		panic("construct path for %s", tail);
 +	p = malloc(strlen(node->sf_path) + 1 + len + 1, M_VBOXVFS, M_WAITOK);
@@ -523,11 +467,13 @@
 +	strcat(p, "/");
 +	strcat(p, tail);
 +	return (p);
-+}
-+
+ }
+ 
+-static int vboxvfs_rename(struct vop_rename_args *ap)
 +static int
 +vboxfs_access(struct vop_access_args *ap)
-+{
+ {
+-    return 0;
 +	struct vnode *vp = ap->a_vp;
 +	accmode_t accmode = ap->a_accmode;
 +	struct vboxfs_node *node;
@@ -555,32 +501,31 @@
 +	else
 +		error = vsfnode_update_stat_cache(node);
 +	m = (error == 0) ? node->sf_stat.sf_mode : 0;
- 
--static int vboxvfs_lookup(struct vop_lookup_args *ap)
--{
--    return 0;
++
 +	return (vaccess(vp->v_type, m, node->vboxfsmp->sf_uid,
 +	    node->vboxfsmp->sf_gid, accmode, ap->a_cred, NULL));
  }
  
--static int vboxvfs_inactive(struct vop_inactive_args *ap)
+-static int vboxvfs_link(struct vop_link_args *ap)
 +/*
 + * Clears the (cached) directory listing for the node.
 + */
 +static void
 +vfsnode_clear_dir_list(struct vboxfs_node *np)
  {
--    return 0;
+-    return EOPNOTSUPP;
 +	while (np->sf_dir_list != NULL) {
 +		sffs_dirents_t *next = np->sf_dir_list->sf_next;
 +		free(np->sf_dir_list, M_VBOXVFS);
 +		np->sf_dir_list = next;
 +	}
-+}
-+
+ }
+ 
+-static int vboxvfs_symlink(struct vop_symlink_args *ap)
 +static int
 +vboxfs_open(struct vop_open_args *ap)
-+{
+ {
+-    return EOPNOTSUPP;
 +	struct vboxfs_node *np;
 +	sfp_file_t *fp;
 +	int error;
@@ -599,17 +544,21 @@
 +	MPASS(VOP_ISLOCKED(vp));
 +
 +	return (error);
-+}
-+
+ }
+ 
+-static int vboxvfs_mknod(struct vop_mknod_args *ap)
 +static void
 +vfsnode_invalidate_stat_cache(struct vboxfs_node *np)
-+{
+ {
+-    return EOPNOTSUPP;
 +	np->sf_stat_time = 0;
-+}
-+
+ }
+ 
+-static int vboxvfs_mkdir(struct vop_mkdir_args *ap)
 +static int
 +vboxfs_close(struct vop_close_args *ap)
-+{
+ {
+-    return 0;
 +	struct vnode *vp = ap->a_vp;
 +	struct vboxfs_node *np;
 +
@@ -634,11 +583,13 @@
 +	}
 +
 +	return (0);
-+}
-+
+ }
+ 
+-static int vboxvfs_rmdir(struct vop_rmdir_args *ap)
 +static int
 +vboxfs_getattr(struct vop_getattr_args *ap)
-+{
+ {
+-    return 0;
 +	struct vnode 		*vp = ap->a_vp;
 +	struct vattr 		*vap = ap->a_vap;
 +	struct vboxfs_node	*np = VP_TO_VBOXFS_NODE(vp);
@@ -713,11 +664,13 @@
 +
 +done:
 +	return (error);
-+}
-+
+ }
+ 
+-static int vboxvfs_readdir(struct vop_readdir_args *ap)
 +static int
 +vboxfs_setattr(struct vop_setattr_args *ap)
-+{
+ {
+-    return 0;
 +	struct vnode 		*vp = ap->a_vp;
 +	struct vattr 		*vap = ap->a_vap;
 +	struct vboxfs_node	*np = VP_TO_VBOXFS_NODE(vp);
@@ -775,13 +728,15 @@
 +	}
 +
 +	return (error);
-+}
-+
+ }
+ 
+-static int vboxvfs_fsync(struct vop_fsync_args *ap)
 +#define blkoff(vboxfsmp, loc)	((loc) & (vboxfsmp)->bmask)
 +
 +static int
 +vboxfs_read(struct vop_read_args *ap)
-+{
+ {
+-    return 0;
 +	struct vnode		*vp = ap->a_vp;
 +	struct uio 		*uio = ap->a_uio;
 +	struct vboxfs_node	*np = VP_TO_VBOXFS_NODE(vp);
@@ -829,11 +784,13 @@
 +		error = 0;
 +
 +	return (error);
-+}
-+
+ }
+ 
+-static int vboxvfs_print (struct vop_print_args *ap)
 +static int
 +vboxfs_write(struct vop_write_args *ap)
-+{
+ {
+-    return 0;
 +	struct vnode		*vp = ap->a_vp;
 +	struct uio 		*uio = ap->a_uio;
 +	struct vboxfs_node	*np = VP_TO_VBOXFS_NODE(vp);
@@ -888,11 +845,13 @@
 +		error = 0;
 +
 +	return (error);
-+}
-+
+ }
+ 
+-static int vboxvfs_pathconf (struct vop_pathconf_args *ap)
 +static int
 +vboxfs_create(struct vop_create_args *ap)
-+{
+ {
+-    return 0;
 +	struct vnode *dvp = ap->a_dvp;
 +	struct vnode **vpp = ap->a_vpp;
 +	struct componentname *cnp = ap->a_cnp;
@@ -926,11 +885,13 @@
 +	}
 +
 +	return (error);
-+}
-+
+ }
+ 
+-static int vboxvfs_strategy (struct vop_strategy_args *ap)
 +static int
 +vboxfs_remove(struct vop_remove_args *ap)
-+{
+ {
+-    return 0;
 +	struct vnode *dvp = ap->a_dvp;
 +	struct vnode *vp = ap->a_vp;
 +	struct vboxfs_node *np, *dir;
@@ -974,11 +935,13 @@
 +
 +out:
 +	return (error);
-+}
-+
+ }
+ 
+-static int vboxvfs_ioctl(struct vop_ioctl_args *ap)
 +static int
 +vboxfs_rename(struct vop_rename_args *ap)
-+{
+ {
+-    return ENOTTY;
 +	struct vnode *fvp;
 +	struct vnode *fdvp;
 +	struct vnode *tvp;
@@ -1016,17 +979,21 @@
 +	vrele(fdvp);
 +	vrele(fvp);
 +	return (ret);
-+}
-+
+ }
+ 
+-static int vboxvfs_getextattr(struct vop_getextattr_args *ap)
 +static int
 +vboxfs_link(struct vop_link_args *ap)
-+{
+ {
+-    return 0;
 +	return (EOPNOTSUPP);
-+}
-+
+ }
+ 
+-static int vboxvfs_advlock(struct vop_advlock_args *ap)
 +static int
 +vboxfs_symlink(struct vop_symlink_args *ap)
-+{
+ {
+-    return 0;
 +	struct vnode *dvp = ap->a_dvp;
 +	struct vnode **vpp = ap->a_vpp;
 +	struct componentname *cnp = ap->a_cnp;
@@ -1055,11 +1022,13 @@
 +		vfsnode_clear_dir_list(dir);
 +
 +	return (error);
-+}
-+
+ }
+ 
+-static int vboxvfs_lookup(struct vop_lookup_args *ap)
 +static int
 +vboxfs_mkdir(struct vop_mkdir_args *ap)
-+{
+ {
+-    return 0;
 +	struct vnode *dvp = ap->a_dvp;
 +	struct vnode **vpp = ap->a_vpp;
 +	struct componentname *cnp = ap->a_cnp;
@@ -1090,11 +1059,13 @@
 +		vfsnode_clear_dir_list(dir);
 +
 +	return (error);
-+}
-+
+ }
+ 
+-static int vboxvfs_inactive(struct vop_inactive_args *ap)
 +static int
 +vboxfs_rmdir(struct vop_rmdir_args *ap)
-+{
+ {
+-    return 0;
 +	struct vnode *dvp = ap->a_dvp;
 +	struct vnode *vp = ap->a_vp;
 +	struct vboxfs_node *np, *dir;
@@ -1137,11 +1108,13 @@
 +
 +out:
 +	return (error);
-+}
-+
+ }
+ 
+-static int vboxvfs_reclaim(struct vop_reclaim_args *ap)
 +static int
 +vboxfs_readdir(struct vop_readdir_args *ap)
-+{
+ {
+-    return 0;
 +	int *eofp = ap->a_eofflag;
 +	struct vnode *vp = ap->a_vp;
 +	struct uio *uio = ap->a_uio;
@@ -1260,11 +1233,13 @@
 +	if (error != 0)
 +		uio->uio_offset = orig_off;
 +	return (error);
-+}
-+
+ }
+ 
+-static int vboxvfs_getpages(struct vop_getpages_args *ap)
 +static int
 +vboxfs_readlink(struct vop_readlink_args *v)
-+{
+ {
+-    return 0;
 +	struct vnode *vp = v->a_vp;
 +	struct uio *uio = v->a_uio;
 +
@@ -1292,11 +1267,13 @@
 +	if (tmpbuf)
 +		contigfree(tmpbuf, MAXPATHLEN, M_DEVBUF);
 +	return (error);
-+}
-+
+ }
+ 
+-static int vboxvfs_putpages(struct vop_putpages_args *ap)
 +static int
 +vboxfs_fsync(struct vop_fsync_args *ap)
-+{
+ {
+-    return 0;
 +	struct vnode *vp;
 +	struct vboxfs_node *np;
 +	int ret;
@@ -1307,8 +1284,8 @@
 +		return (0);
 +	ret = sfprov_fsync(np->sf_file);
 +	return (ret);
-+}
-+
+ }
+ 
 +static int
 +vboxfs_print(struct vop_print_args *ap)
 +{
@@ -1349,22 +1326,17 @@
 +		break;
 +	}
 +	return (error);
- }
- 
--static int vboxvfs_reclaim(struct vop_reclaim_args *ap)
++}
++
 +/*
 + * File specific ioctls.
 + */
 +static int
 +vboxfs_ioctl(struct vop_ioctl_args *ap)
- {
--    return 0;
++{
 +	return (ENOTTY);
- }
- 
--static int vboxvfs_getpages(struct vop_getpages_args *ap)
--{
--    return 0;
++}
++
 +/*
 + * Lookup an entry in a directory and create a new vnode if found.
 + */
@@ -1495,14 +1467,11 @@
 +	MPASS(vp->v_data == NULL);
 +
 +	return (0);
- }
- 
--static int vboxvfs_putpages(struct vop_putpages_args *ap)
++}
++
 +static int
 +vboxfs_vptofh(struct vop_vptofh_args *ap)
- {
--    return 0;
--}
- 
++{
++
 +	return (EOPNOTSUPP);
 +}
