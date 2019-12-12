@@ -1,12 +1,11 @@
-This module is an implementation of the BGP-4 inter-domain routing
-protocol.  It encapsulates all of the functionality needed to establish
-and maintain a BGP peering session and exchange routing update
-information with the peer.  It aims to provide a simple API to the BGP
-protocol for the purposes of automation, logging, monitoring, testing,
-and similar tasks using the power and flexibility of perl.  The module
-does not implement the functionality of a RIB (Routing Information Base)
-nor does it modify the kernel routing table of the host system.
-However, such operations could be implemented using the API provided by
+This module is an implementation of the BGP-4 inter-domain routing protocol. It
+encapsulates all of the functionality needed to establish and maintain a BGP
+peering session and exchange routing update information with the peer. It aims
+to provide a simple API to the BGP protocol for the purposes of automation,
+logging, monitoring, testing, and similar tasks using the power and flexibility
+of perl. The module does not implement the functionality of a RIB (Routing
+Information Base) nor does it modify the kernel routing table of the host
+system. However, such operations could be implemented using the API provided by
 the module.
 
-WWW: https://metacpan.org/pod/Net::BGP
+WWW: https://metacpan.org/release/Net-BGP
