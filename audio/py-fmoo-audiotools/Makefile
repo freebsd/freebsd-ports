@@ -2,7 +2,7 @@
 
 PORTNAME=	fmoo-audiotools
 PORTVERSION=	3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio python
 MASTER_SITES=	SF/audiotools/audiotools
 DISTNAME=	audiotools-${PORTVERSION}

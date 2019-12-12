@@ -1,6 +1,7 @@
 bin/cd-paranoia
 include/cdio/paranoia/cdda.h
 include/cdio/paranoia/paranoia.h
+include/cdio/paranoia/toc.h
 lib/libcdio_cdda.a
 lib/libcdio_cdda.so
 lib/libcdio_cdda.so.2
