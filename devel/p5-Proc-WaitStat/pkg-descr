@@ -1,4 +1,4 @@
-Proc::WaitStat contains functions for interpreting and acting on
-wait status values.
+Proc::WaitStat contains functions for interpreting and acting on wait status
+values.
 
 WWW: https://metacpan.org/release/Proc-WaitStat
