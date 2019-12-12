@@ -1,0 +1,23 @@
+--- docs/meson.build.orig	2019-07-31 21:41:55 UTC
++++ docs/meson.build
+@@ -45,7 +45,6 @@ if host_system != 'windows'
+     'pangocairo-win32.h',
+     'pangowin32.h',
+   ]
+-else
+   private_headers += [
+     'pangoxft.h',
+     'pangoxft-render.h',
+@@ -68,8 +67,10 @@ if build_pangoft2
+   docdeps += libpangoft2_dep
+ endif
+ 
+-if xft_dep.found()
+-  docdeps += libpangoxft_dep
++if get_option('xft')
++  if xft_dep.found()
++   docdeps += libpangoxft_dep
++  endif
+ endif
+ 
+ if cairo_dep.found()
