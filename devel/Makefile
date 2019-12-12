@@ -5677,6 +5677,7 @@
     SUBDIR += rubygem-aws-sdk-v1
     SUBDIR += rubygem-aws-sdk-waf
     SUBDIR += rubygem-aws-sdk-wafregional
+    SUBDIR += rubygem-aws-sdk-wafv2
     SUBDIR += rubygem-aws-sdk-workdocs
     SUBDIR += rubygem-aws-sdk-worklink
     SUBDIR += rubygem-aws-sdk-workmail
