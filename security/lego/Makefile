@@ -3,6 +3,7 @@
 PORTNAME=	lego
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	matt@matthoran.com
@@ -58,11 +59,11 @@ GH_TUPLE=	\
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		golang:appengine:v1.5.0:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:4def268fd1a4:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:c5a3c61f89f3:golang_net/vendor/golang.org/x/net \
+		golang:net:83d349e8ac1a:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:cbf593c0f2f3:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:c4c64cad1fd0:golang_time/vendor/golang.org/x/time \
 		google:go-genproto:54afdca5d873:google_go_genproto/vendor/google.golang.org/genproto \
