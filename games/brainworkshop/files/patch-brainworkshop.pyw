@@ -1,42 +1,25 @@
---- brainworkshop.pyw.orig	2009-01-17 21:01:40.000000000 +0300
-+++ brainworkshop.pyw	2009-01-19 22:41:15.000000000 +0300
-@@ -49,9 +49,7 @@
+--- brainworkshop.pyw.orig	2019-11-18 21:08:09 UTC
++++ brainworkshop.pyw
+@@ -56,9 +56,9 @@ from datetime import date
+ import gettext
+ if sys.version_info >= (3,0):
+     # TODO check if this is right
+-    gettext.install('messages', localedir='res/i18n')
++    gettext.install('messages', localedir='%%DATADIR%%/i18n')
+ else:
+-    gettext.install('messages', localedir='res/i18n', unicode=True)
++    gettext.install('messages', localedir='%%DATADIR%%/i18n', unicode=True)
+ 
+ # Clinical mode?  Clinical mode sets cfg.JAEGGI_MODE = True, enforces a minimal user
+ # interface, and saves results into a binary file (default 'logfile.dat') which
+@@ -142,9 +142,7 @@ def main_is_frozen():
          hasattr(sys, "importers") # old py2exe
          or imp.is_frozen("__main__")) # tools/freeze
  def get_main_dir():
 -    if main_is_frozen():
 -        return os.path.dirname(sys.executable)
--    return sys.path[0]    
-+    return '/'
- def get_data_dir():
-     try:
-         return sys.argv[sys.argv.index('--datadir') + 1]
-@@ -355,6 +353,9 @@
- except:
-     pass
+-    return sys.path[0]
++    return '%%DATADIR%%'
  
-+if not os.path.exists(FOLDER_DATA):
-+    os.mkdir(FOLDER_DATA)
-+
- if not os.path.isfile(os.path.join(get_data_dir(), CONFIGFILE)):
-     newconfigfile = open(os.path.join(os.path.join(get_data_dir(), CONFIGFILE)), 'w')
-     newconfigfile.write(CONFIGFILE_DEFAULT_CONTENTS)
-@@ -643,17 +644,7 @@
-     print >> sys.stderr, ''.join(str_list)
-     sys.exit(1)
- 
--if USE_MUSIC:
--    try:
--        from pyglet.media import avbin
--    except:
--        USE_MUSIC = False
--        str_list = []
--        str_list.append('\nAVBin not detected. Music disabled.\n')
--        str_list.append('Download AVBin from: http://code.google.com/p/avbin/\n\n')
--        #str_list.append(str(sys.exc_info()))
--        #print >> sys.stderr, ''.join(str_list)
--        print ''.join(str_list)
-+USE_MUSIC = False
-     
- # Initialize resources (sounds and images)
- #
+ def get_settings_path(name):
+     '''Get a directory to save user preferences.
