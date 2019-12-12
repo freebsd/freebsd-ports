@@ -7,4 +7,4 @@ automatically handles syntax errors, help messages and UNIX man page
 generation. It supports programs with single or multiple commands
 (like darcs or git) and respects most of the POSIX and GNU conventions.
 
-WWW: http://erratique.ch/software/cmdliner
+WWW: https://erratique.ch/software/cmdliner
