@@ -13,7 +13,7 @@ COMMENT=	Apache Commons Database Connection Pool
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${JAVALIBDIR}/commons-pool.jar:java/jakarta-commons-pool
+RUN_DEPENDS=	${JAVALIBDIR}/commons-pool.jar:java/apache-commons-pool
 
 OPTIONS_DEFINE=	DOCS
 
