@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vera
-PORTVERSION=	1.22
-PORTREVISION=	1
+PORTVERSION=	1.23
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
@@ -13,6 +12,7 @@ COMMENT=	Virtual Entity of Relevant Acronyms
 LICENSE=	GFDL
 
 USES=		makeinfo
+NO_ARCH=	yes
 
 INFO=		vera
 
