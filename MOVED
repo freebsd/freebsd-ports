@@ -13519,3 +13519,4 @@ www/py-dj21-djangoql|www/py-dj22-djangoql|2019-12-06|Renamed to py-dj22-djangoql
 graphics/osg-devel|graphics/osg|2019-12-10|Updated to latest stable version
 security/kdbx-viewer|security/kdbxviewer|2019-12-10|Renamed to match upstream GitHub repository
 net-im/pidgin-privacy-please||2019-12-10|Has expired: Abandonware
+java/jakarta-commons-pool|java/apache-commons-pool|2019-12-12|Renamed upstream
