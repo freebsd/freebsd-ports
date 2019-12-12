@@ -3,7 +3,7 @@
 
 PORTNAME=	redis
 PORTVERSION=	5.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 
@@ -14,11 +14,12 @@ LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	JEMALLOC TESTS TRIB
 OPTIONS_RADIO=	EXTLUA
-OPTIONS_RADIO_EXTLUA=	LUA LUAJIT
+OPTIONS_RADIO_EXTLUA=	LUA LUAJIT LUAJITOR
 OPTIONS_SUB=	yes
 JEMALLOC_DESC=	Use jemalloc
 LUA_DESC=	Use lang/lua instead of builtin lua
 LUAJIT_DESC=	Use lang/luajit instead of builtin lua
+LUAJITOR_DESC=	Use lang/luajit-openjit instead of builtin lua
 TESTS_DESC=	Install lang/tcl for redis unit tests
 TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
 
@@ -53,7 +54,13 @@ LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.luajit
 .endif
 
-.if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUAJIT}
+.if ${PORT_OPTIONS:MLUAJITOR}
+LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit-openresty
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
+		${PATCHDIR}/extra-patch-deps_lua_src_lua__cjson.c
+.endif
+
+.if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUAJIT} || ${PORT_OPTIONS:MLUAJITOR}
 CFLAGS+=	-fPIC
 LDFLAGS+=	-Wl,-E
 .endif
@@ -96,7 +103,7 @@ post-patch:
 .if ${PORT_OPTIONS:MJEMALLOC}
 	@${REINPLACE_CMD} '35s!Linux!FreeBSD!g' ${WRKSRC}/src/Makefile
 .endif
-.if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUAJIT}
+.if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUAJIT} || ${PORT_OPTIONS:MLUAJITOR}
 	@cd ${WRKSRC}/deps/lua/src && ${CP} fpconv.* lua_* strbuf.* ${WRKSRC}/src/
 .endif
 .if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
