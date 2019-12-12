@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	connectagram
-PORTVERSION=	1.2.9
-PORTREVISION=	4
+PORTVERSION=	1.2.10
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/connectagram/
