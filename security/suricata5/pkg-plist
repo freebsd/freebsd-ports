@@ -56,7 +56,7 @@ man/man1/suricata.1.gz
 %%PYTHON_SITELIBDIR%%/suricata/ctl/test_filestore.pyc
 %%PYTHON_SITELIBDIR%%/suricata/sc/__init__.py
 %%PYTHON_SITELIBDIR%%/suricata/sc/__init__.pyc
-%%PYTHON_SITELIBDIR%%/suricata/sc/__pycache__/specs.cpython-36.pyc
+%%PYTHON_SITELIBDIR%%/suricata/sc/__pycache__/specs.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/suricata/sc/specs.py
 %%PYTHON_SITELIBDIR%%/suricata/sc/suricatasc.py
 %%PYTHON_SITELIBDIR%%/suricata/sc/suricatasc.pyc
