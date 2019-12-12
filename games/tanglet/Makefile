@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tanglet
-PORTVERSION=	1.5.3
-PORTREVISION=	5
+PORTVERSION=	1.5.4
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/tanglet/
