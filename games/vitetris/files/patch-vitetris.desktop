@@ -1,0 +1,11 @@
+--- vitetris.desktop.orig	2019-03-10 15:46:22 UTC
++++ vitetris.desktop
+@@ -3,7 +3,7 @@ Type=Application
+ Encoding=UTF-8
+ Name=vitetris
+ GenericName=Text-mode Tetris
+-Exec=tetris -w 80
++Exec=vitetris -w 80
+ Icon=vitetris
+ Categories=Game;BlocksGame;
+ Terminal=true
