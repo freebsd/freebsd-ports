@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
 
-USES=		gmake pkgconfig shebangfix
+USES=		compiler:c++0x gmake pkgconfig shebangfix
 SHEBANG_GLOB=	*.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	SpotlightKid
