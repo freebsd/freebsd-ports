@@ -1,4 +1,10 @@
-(R)?ex is a server orchestration tool to ease the execution of remote commands.
+Rex is an automation framework that is friendly to any combinations of local and
+remote execution, push and pull style of management, or imperative and
+declarative approach.
 
-WWW: http://rexify.org/
-WWW: https://metacpan.org/pod/Rex
+Its flexibility makes it a great fit for many different use cases, but most
+commonly Rex is used to automate application deployment and data center
+infrastructure management tasks.
+
+WWW: https://www.rexify.org/
+WWW: https://metacpan.org/release/Rex
