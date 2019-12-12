@@ -1,0 +1,51 @@
+--- Makefile.linux.orig	2016-02-16 19:47:56 UTC
++++ Makefile.linux
+@@ -2,7 +2,7 @@
+ #To make a system-wide install add DATADIR=/dir/to/data/ and BINDIR=/dir/to/bin/ to the make command
+ #To compile without OpenGL scaling support, add WITH_OPENGL=false to the make command.
+ 
+-CC = gcc
++CC ?= gcc
+ LD = $(CC)
+ STRIP = strip
+ MAKE = make
+@@ -19,7 +19,7 @@ DEFS = -DDATADIR="\"$(DATADIR)\"" -D_DEFAULT_SOURCE -D
+ #default to /usr/share/man for man page
+ #note: some systems use /usr/local/share/man, others use /usr/local/man
+ #packagers should set the variable accordingly
+-MANDIR = /usr/share/man/
++MANDIR = ${PREFIX}/man/
+ 
+ #Add the PER_USER_FILES define if the DATADIR is set
+ ifneq ($(DATADIR),)
+@@ -32,17 +32,10 @@ ifneq ($(BUILD_NUMBER),)
+   DEFS +=-DBUILD_NUMBER="\"$(BUILD_NUMBER)\""
+ endif
+ 
+-INCS =  -I. -I/usr/include -I/usr/include/SDL
+-CFLAGS= -Wall -Wextra -Werror -std=c99
+-ifeq ($(DEBUG),)
+-  CFLAGS += -O3
+-else
+-  CFLAGS += -g
+-  DEFS +=-DDEBUG
+-endif
++INCS = `sdl-config --cflags`
++CFLAGS+= -Wall -Wextra -std=c99
+ 
+-LDFLAGS=$(CFLAGS)
+-LIBS = -lSDL -lSDL_image -lSDL_mixer -lm -lpthread
++LIBS = `sdl-config --libs` -lSDL_image -lSDL_mixer -lm -lpthread
+ 
+ #Are we compiling with gl?
+ ifneq ($(WITH_OPENGL),false)
+@@ -62,9 +55,6 @@ all: $(TARGET)
+ 
+ $(TARGET): $(OBJS)
+ 	$(LD) $(LDFLAGS) $(OBJS) -o $@ $(LIBS)
+-ifeq ($(DEBUG),)
+-	$(STRIP) $@
+-endif
+ 
+ tools: mkbundle
+ 
