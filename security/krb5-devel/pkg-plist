@@ -23,6 +23,7 @@ bin/uuclient
 include/com_err.h
 include/gssapi.h
 include/gssapi/gssapi.h
+include/gssapi/gssapi_alloc.h
 include/gssapi/gssapi_ext.h
 include/gssapi/gssapi_generic.h
 include/gssapi/gssapi_krb5.h
