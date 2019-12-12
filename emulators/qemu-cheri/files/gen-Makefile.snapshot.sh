@@ -11,7 +11,8 @@ tmpfile=`mktemp -t gen-Makefile.snapshot`
 
 query_repo()
 {
-	curl ${REPOS_URL}/$1/branches/qemu-cheri > $tmpfile
+	branch=${2:-master}
+	curl ${REPOS_URL}/$1/branches/${branch} > $tmpfile
 
 	# Accumulate the dates of the last commits to find the snapshot date
 	committime=`jq -r '.commit.commit.committer.date' $tmpfile`
@@ -28,8 +29,10 @@ query_repo()
 	SHA=`jq -r '.commit.sha' $tmpfile`
 }
 
-query_repo qemu
+query_repo qemu qemu-cheri
 QEMU_COMMIT=$SHA
+query_repo libslirp
+LIBSLIRP_COMMIT=$SHA
 
 cat <<EOF > Makefile.snapshot
 # \$FreeBSD\$
@@ -41,6 +44,7 @@ cat <<EOF > Makefile.snapshot
 SNAPDATE=	${MAX_DATE}
 
 QEMU_COMMIT=		${QEMU_COMMIT}
+LIBSLIRP_COMMIT=	${LIBSLIRP_COMMIT}
 EOF
 
 rm -f $tmpfile

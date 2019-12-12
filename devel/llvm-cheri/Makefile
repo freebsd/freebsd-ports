@@ -231,6 +231,7 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-lib.1 \
 		llvm-link.1 \
 		llvm-lipo.1 \
+		llvm-locstats.1 \
 		llvm-mca.1 \
 		llvm-nm.1 \
 		llvm-objcopy.1 \
