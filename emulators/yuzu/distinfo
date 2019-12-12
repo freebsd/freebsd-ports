@@ -1,4 +1,6 @@
 TIMESTAMP = 1575862105
+SHA256 (libcxx-8.0.0.src.tar.xz) = c2902675e7c84324fb2c1e45489220f250ede016cc3117186785d9dc291f9de2
+SIZE (libcxx-8.0.0.src.tar.xz) = 1752308
 SHA256 (yuzu-emu-yuzu-s20191209-faf5ae6a5_GH0.tar.gz) = 3c6715bb1cf233c6821241142eec7f7bdd834daae677748ecf9f6b843c8b3138
 SIZE (yuzu-emu-yuzu-s20191209-faf5ae6a5_GH0.tar.gz) = 2616667
 SHA256 (yuzu-emu-unicorn-1.0.1-153-g73f45735_GH0.tar.gz) = 8f7b4d8eb998c2a4c146268d83b44fc22ca8d4d276f26d6af1071e51f4b5bd4f
