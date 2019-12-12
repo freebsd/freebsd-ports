@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fasm
-PORTVERSION=	1.73.20
+PORTVERSION=	1.73.21
 CATEGORIES=	lang devel
 MASTER_SITES=	https://flatassembler.net/ \
 		LOCAL/sunpoet
