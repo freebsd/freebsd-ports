@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zookeeper
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
