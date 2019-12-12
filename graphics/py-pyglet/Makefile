@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyglet
-PORTVERSION=	1.2.4
+PORTVERSION=	1.4.8
 CATEGORIES=	graphics multimedia x11-toolkits python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Cross-platform windowing and multimedia library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python zip
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
