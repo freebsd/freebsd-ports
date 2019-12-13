@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--disable-svgalib --disable-fb --disable-alsa --enable-oss \
 
 CFLAGS+=	-idirafter ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/advance
 DATADIR=	${PREFIX}/share/advance
