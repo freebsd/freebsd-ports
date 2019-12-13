@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-zlib --libdir="${PREFIX}/etc" \
 		--enable-ipv6 \
 		--with-mime-libdir=${PREFIX}/etc \
 		${ICONV_CONFIGURE_ARG} \
-		--with-screen=ncursesw
+		--with-screen=${NCURSES_IMPL}
 CPE_VERSION=	${PORTVERSION:C/[pd].+//}
 CPE_UPDATE=	${PORTVERSION:E:C/[0-9]+//:S/p/pre./:S/d/dev./}
 
