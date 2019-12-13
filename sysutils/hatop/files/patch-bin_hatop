@@ -153,6 +153,15 @@
  
  def get_width(width, xmax, ncols, idx):
      # distribute excess space evenly from left to right
+@@ -1709,7 +1709,7 @@ def get_width(width, xmax, ncols, idx):
+             if idx < (xdiff - (xdiff / ncols) * ncols):
+                 width += 1 # compensate rounding
+             width = width + xdiff / ncols
+-    return width
++    return int(width)
+ 
+ def get_cell(width, align, value):
+     s = str(value)
 @@ -1732,7 +1732,7 @@ def get_head(mode):
  def get_screenlines(stat):
      screenlines = []

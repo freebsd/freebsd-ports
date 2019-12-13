@@ -3,7 +3,7 @@
 
 PORTNAME=	hatop
 PORTVERSION=	0.7.7
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils net
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv3+
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/haproxy:net/haproxy
 
-USES=		python:3.6+ shebangfix
+USES=		python:2.7+ shebangfix
 SHEBANG_FILES=	bin/hatop
 NO_BUILD=	yes
 NO_ARCH=	yes
