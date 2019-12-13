@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-qt
-PORTVERSION=	0.9.7
-PORTREVISION=	7
+DISTVERSION=	0.9.8
 CATEGORIES=	net-im
 MASTER_SITES=	https://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMESUFFIX=	5
@@ -18,7 +17,6 @@ LIB_DEPENDS=	libtelepathy-farstream.so:net-im/telepathy-farstream \
 		libtelepathy-glib.so:net-im/telepathy-glib
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:devel/py-dbus@${PY_FLAVOR}
 
-
 USES=		cmake compiler:c++11-lang gettext gnome localbase:ldflags pathfix \
 		pkgconfig python:2.7,build qt:5
 USE_GNOME=	glib20 libxslt:build
@@ -32,13 +30,9 @@ CMAKE_OFF=	ENABLE_EXAMPLES ENABLE_FARSIGHT ENABLE_TESTS
 CMAKE_ARGS=	-DDESIRED_QT_VERSION:STRING=${PKGNAMESUFFIX} \
 		-DQT_QMAKE_EXECUTABLE:FILEPATH=${QMAKE}
 
-SHLIB_SUFFIX=	0
-
 OPTIONS_DEFINE=	DOCS
 
-PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
-		QTVER_SUFFIX="${PKGNAMESUFFIX}" \
-		SHLIB_SUFFIX="${SHLIB_SUFFIX}"
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README html
 # Manually set DOCSDIR, to handle the version suffix
