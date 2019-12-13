@@ -803,6 +803,7 @@
     SUBDIR += py-blockdiagcontrib-cisco
     SUBDIR += py-cairo
     SUBDIR += py-cairocffi
+    SUBDIR += py-cairosvg
     SUBDIR += py-cartopy
     SUBDIR += py-chart
     SUBDIR += py-colour
