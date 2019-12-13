@@ -15,6 +15,6 @@ include/libgxps/gxps.h
 lib/girepository-1.0/GXPS-0.1.typelib
 lib/libgxps.so
 lib/libgxps.so.2
-lib/libgxps.so.2.2.2
+lib/libgxps.so.2.2.3
 libdata/pkgconfig/libgxps.pc
 share/gir-1.0/GXPS-0.1.gir
