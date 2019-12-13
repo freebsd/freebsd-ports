@@ -4,7 +4,7 @@ include/ci_priv.h
 include/dac.h
 include/dac_json.h
 lib/libda.so
-lib/libda.so.%%PORTVERSION%%
+lib/libda.so.2.1.5
 lib/libci.so
 lib/libci.so.1.1.1
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
@@ -19,4 +19,5 @@ lib/libci.so.1.1.1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example3.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example4.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example6.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/util.c
