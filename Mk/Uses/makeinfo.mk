@@ -15,11 +15,8 @@ _INCLUDE_USES_MAKEINFO_MK=	yes
 IGNORE=	USES=makeinfo - expects no arguments
 .endif
 
-.if exists(/usr/bin/makeinfo)
-MAKEINFO?=	/usr/bin/makeinfo
-.else
-BUILD_DEPENDS+=	makeinfo:print/texinfo
+# Depend specifically on makeinfo from ports
+BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:print/texinfo
 MAKEINFO?=	${LOCALBASE}/bin/makeinfo
-.endif
 
 .endif
