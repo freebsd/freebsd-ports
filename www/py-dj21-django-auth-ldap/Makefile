@@ -27,6 +27,9 @@ PORTDOCS=	*
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-auth-ldap \
 			${PYTHON_PKGNAMEPREFIX}dj22-django-auth-ldap
 
+# The 2.1.0 release dropped support for Django 2.1
+PORTSCOUT=      limit:^2\.0\.
+
 OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_VARS=		PYDISTUTILS_BUILD_TARGET+="build_sphinx -a -E"
