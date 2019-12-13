@@ -1,3 +1,3 @@
-TIMESTAMP = 1556216704
-SHA256 (django-filter-2.1.0.tar.gz) = 3dafb7d2810790498895c22a1f31b2375795910680ac9c1432821cbedb1e176d
-SIZE (django-filter-2.1.0.tar.gz) = 142256
+TIMESTAMP = 1576101226
+SHA256 (django-filter-2.2.0.tar.gz) = c3deb57f0dd7ff94d7dce52a047516822013e2b441bed472b722a317658cfd14
+SIZE (django-filter-2.2.0.tar.gz) = 142804
