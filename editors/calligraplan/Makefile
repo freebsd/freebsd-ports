@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	calligraplan
-DISTVERSION=	3.2.1
+DISTVERSION=	3.2.2
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/calligra/${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
