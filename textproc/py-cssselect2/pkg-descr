@@ -1,0 +1,9 @@
+cssselect2 is a straightforward implementation of CSS3 Selectors for markup
+documents (HTML, XML, etc.) that can be read by ElementTree-like parsers
+(including cElementTree, lxml, html5lib, etc.)
+
+Unlike cssselect, it does not translate selectors to XPath and therefore does
+not have all the correctness corner cases that are hard or impossible to fix in
+cssselect.
+
+WWW: https://github.com/Kozea/cssselect2
