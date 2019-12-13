@@ -23,7 +23,6 @@ jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/control/UploadA
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/control/UserSettingsKtrl.class
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/control/UsersKtrl.class
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/db/AuthDB.class
-jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/db/LicenseDB.class
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/db/PrivateKeyDB.class
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/db/ProfileDB.class
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/db/ProfileSystemsDB.class
@@ -60,7 +59,6 @@ jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/util/Encryption
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/util/ExternalAuthUtil$1.class
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/util/ExternalAuthUtil.class
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/util/KeyStoreUtil.class
-jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/util/LicenseUtil.class
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/util/OTPUtil.class
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/util/PasswordUtil.class
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/manage/util/RefreshAllSystemsTask.class
