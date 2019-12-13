@@ -1,3 +1,3 @@
-TIMESTAMP = 1556181024
-SHA256 (django-prometheus-1.0.15.tar.gz) = e8da2eb91cb20cfe0b8130305d34f3503766b7a08a244ce1031c36136beeb7a5
-SIZE (django-prometheus-1.0.15.tar.gz) = 13708
+TIMESTAMP = 1576101609
+SHA256 (django-prometheus-1.1.0.tar.gz) = bb2d4f8acd681fa5787df77e7482391017f0090c70473bccd2aa7cad327800ad
+SIZE (django-prometheus-1.1.0.tar.gz) = 18237
