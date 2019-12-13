@@ -4913,6 +4913,7 @@
     SUBDIR += py-pytest-flakes
     SUBDIR += py-pytest-forked
     SUBDIR += py-pytest-helpers-namespace
+    SUBDIR += py-pytest-isort
     SUBDIR += py-pytest-localserver
     SUBDIR += py-pytest-mock
     SUBDIR += py-pytest-pycodestyle
