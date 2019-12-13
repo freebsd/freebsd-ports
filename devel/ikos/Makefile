@@ -2,8 +2,7 @@
 
 PORTNAME=	ikos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2
-PORTREVISION=	2
+DISTVERSION=	3.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,16 +16,17 @@ LIB_DEPENDS=	libapron.so:math/apron \
 		libboost_system.so:devel/boost-libs \
 		libmpfr.so:math/mpfr \
 		libgmp.so:math/gmp \
-		libppl.so:devel/ppl
+		libppl.so:devel/ppl \
+		libtbb.so:devel/tbb
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		cmake ncurses python sqlite
+USES=		cmake ncurses python:3.6+ sqlite
 USE_PYTHON=	py3kplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	NASA-SW-VnV
 USE_LDCONFIG=	yes
 
-LLVM_VERSION=	80 # ${LLVM_DEFAULT} isn't desirable here since ikos only supports llvm>=70, but LLVM_DEFAULT implies that many/any llvm versions are supported
+LLVM_VERSION=	90 # ${LLVM_DEFAULT} isn't desirable here since ikos only supports llvm>=90, but LLVM_DEFAULT implies that many/any llvm versions are supported
 
 CXXFLAGS+=	-DNDEBUG # https://github.com/NASA-SW-VnV/ikos/issues/36, it also breaks with assert without NDEBUG
 
