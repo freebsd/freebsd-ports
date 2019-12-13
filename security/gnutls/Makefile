@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.6.10
+PORTVERSION=	3.6.11.1
 CATEGORIES=	security net
-MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
+MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R:R}
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
@@ -83,7 +83,7 @@ post-patch:
 		${WRKSRC}/lib/includes/gnutls/pkcs11.h \
 		${WRKSRC}/lib/pkcs11.c \
 		${WRKSRC}/src/p11tool-args.c.bak \
-		${WRKSRC}/src/srptool.c		
+		${WRKSRC}/src/srptool.c
 	@${REINPLACE_CMD} \
 		's,/etc/pkcs11/modules,${PREFIX}/share/p11-kit/modules,' \
 		${WRKSRC}/doc/cha-tokens.texi \

@@ -5,4 +5,4 @@ protocols as well as APIs to parse and write X.509, PKCS #12, OpenPGP and
 other required structures.  It is aimed to be portable and efficient with
 focus on security and interoperability.
 
-WWW: http://www.gnutls.org/
+WWW: https://gnutls.org/
