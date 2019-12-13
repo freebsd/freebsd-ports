@@ -1,0 +1,9 @@
+tinycss2 is a low-level CSS parser and generator: it can parse strings, return
+Python objects representing tokens and blocks, and generate CSS strings
+corresponding to these objects.
+
+Based on the CSS Syntax Level 3 specification, tinycss2 knows the grammar of CSS
+but doesn't know specific rules, properties or values supported in various CSS
+modules.
+
+WWW: https://github.com/Kozea/tinycss2
