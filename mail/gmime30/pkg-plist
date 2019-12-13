@@ -64,7 +64,7 @@ lib/girepository-1.0/GMime-3.0.typelib
 lib/libgmime-3.0.a
 lib/libgmime-3.0.so
 lib/libgmime-3.0.so.0
-lib/libgmime-3.0.so.0.200.0
+lib/libgmime-3.0.so.0.201.4
 libdata/pkgconfig/gmime-3.0.pc
 share/gir-1.0/GMime-3.0.gir
 share/vala/vapi/gmime-3.0.deps
