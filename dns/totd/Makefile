@@ -3,7 +3,7 @@
 
 PORTNAME=	totd
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	https://BSDforge.com/projects/source/dns/totd/
 
@@ -15,8 +15,9 @@ USES=		desthack uidfix
 USE_RC_SUBR=	totd
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	etc/totd.conf.sample sbin/totd \
-		man/man8/totd.8.gz
+PLIST_FILES=	"@sample etc/totd.conf.sample" \
+		man/man8/totd.8.gz \
+		sbin/totd
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ne_mesg.c \
 		${FILESDIR}/extra-patch-tcp_response.c
