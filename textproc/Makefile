@@ -1245,6 +1245,7 @@
     SUBDIR += py-cmarkgfm
     SUBDIR += py-colorclass
     SUBDIR += py-creole
+    SUBDIR += py-cssselect2
     SUBDIR += py-csvkit
     SUBDIR += py-custom_inherit
     SUBDIR += py-dbfread
