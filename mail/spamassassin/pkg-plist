@@ -16,6 +16,7 @@ bin/spamd
 @sample %%ETCDIR%%/v340.pre.sample
 @sample %%ETCDIR%%/v341.pre.sample
 @sample %%ETCDIR%%/v342.pre.sample
+@sample %%ETCDIR%%/v343.pre.sample
 include/libspamc.h
 lib/libspamc.so
 lib/libspamc.so.0
@@ -89,6 +90,7 @@ lib/libspamc.so.0
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/ImageInfo.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/MIMEEval.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/MIMEHeader.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/OLEVBMacro.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/OneLineBodyRuleType.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/PDFInfo.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/PhishTag.pm
@@ -177,11 +179,13 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DCC.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DKIM.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DNSEval.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::FreeMail.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::FromNameSpoof.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::HashBL.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Hashcash.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::MIMEEval.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::MIMEHeader.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::OLEVBMacro.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::PDFInfo.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::PhishTag.3.gz

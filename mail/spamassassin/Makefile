@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spamassassin
-PORTVERSION=	3.4.2
-PORTREVISION?=	3
+PORTVERSION=	3.4.3
 CATEGORIES?=	mail perl5
 MASTER_SITES=	APACHE/spamassassin/source CPAN/Mail
 DISTNAME=	Mail-SpamAssassin-${PORTVERSION}
@@ -146,6 +145,7 @@ post-patch::
 		-e 's,B_CONFDIR)/v340.pre,B_CONFDIR)/v340.pre.sample,g' \
 		-e 's,B_CONFDIR)/v341.pre,B_CONFDIR)/v341.pre.sample,g' \
 		-e 's,B_CONFDIR)/v342.pre,B_CONFDIR)/v342.pre.sample,g' \
+		-e 's,B_CONFDIR)/v343.pre,B_CONFDIR)/v343.pre.sample,g' \
 		-e 's/require DBI/0/' \
 		${WRKSRC}/Makefile.PL
 	${REINPLACE_CMD} -e '/^CC =/d; \
