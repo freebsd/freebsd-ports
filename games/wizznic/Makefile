@@ -3,6 +3,7 @@
 
 PORTNAME=	wizznic
 PORTVERSION=	380
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Source%20Releases/
 DISTNAME=	Wizznic_src_build_${PORTVERSION}
@@ -37,11 +38,11 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "data packs" ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/wizznic.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
 
-do-insall-DOCS-on:
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
 .for f in changelog.txt credits.txt music-score-credits.txt ports.txt readme.txt
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
 .include <bsd.port.mk>
