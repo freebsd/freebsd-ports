@@ -45,7 +45,6 @@
     SUBDIR += cmucl-extra
     SUBDIR += cocor
     SUBDIR += coffeescript
-    SUBDIR += compute-runtime
     SUBDIR += cparser
     SUBDIR += crystal
     SUBDIR += csharp-mode.el
@@ -145,6 +144,7 @@
     SUBDIR += icc
     SUBDIR += ici
     SUBDIR += icon
+    SUBDIR += intel-compute-runtime
     SUBDIR += intercal
     SUBDIR += io
     SUBDIR += io-devel
