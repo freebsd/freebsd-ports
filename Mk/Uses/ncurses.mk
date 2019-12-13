@@ -37,6 +37,9 @@ ncurses_ARGS=	port
 .if ${ncurses_ARGS} == base
 NCURSESBASE=	/usr
 NCURSESINC=	${NCURSESBASE}/include
+.if !exists(/usr/lib/libncursesw.so)
+NCURSES_IMPL=	ncurses
+.endif
 
 .  if exists(${LOCALBASE}/lib/libncurses.so)
 _USES_sanity+=	400:check-depends-ncurses
@@ -85,5 +88,6 @@ LDFLAGS+=	-Wl,-rpath=${NCURSESRPATH}
 .endif
 
 NCURSESLIB=	${NCURSESBASE}/lib
+NCURSES_IMPL?=	ncursesw
 
 .endif
