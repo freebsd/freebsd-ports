@@ -1478,6 +1478,7 @@
     SUBDIR += py-dj22-django-jquery-js
     SUBDIR += py-dj22-django-js-asset
     SUBDIR += py-dj22-django-jsonfield2
+    SUBDIR += py-dj22-django-model-utils
     SUBDIR += py-dj22-django-mptt
     SUBDIR += py-dj22-django-prometheus
     SUBDIR += py-dj22-django-tables2
