@@ -5547,6 +5547,7 @@
     SUBDIR += rubygem-aws-sdk-eks
     SUBDIR += rubygem-aws-sdk-elasticache
     SUBDIR += rubygem-aws-sdk-elasticbeanstalk
+    SUBDIR += rubygem-aws-sdk-elasticinference
     SUBDIR += rubygem-aws-sdk-elasticloadbalancing
     SUBDIR += rubygem-aws-sdk-elasticloadbalancingv2
     SUBDIR += rubygem-aws-sdk-elasticsearchservice
