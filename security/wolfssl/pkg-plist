@@ -99,6 +99,7 @@ include/wolfssl/openssl/aes.h
 include/wolfssl/openssl/asn1.h
 include/wolfssl/openssl/bio.h
 include/wolfssl/openssl/bn.h
+include/wolfssl/openssl/buffer.h
 include/wolfssl/openssl/conf.h
 include/wolfssl/openssl/crypto.h
 include/wolfssl/openssl/des.h
@@ -116,13 +117,16 @@ include/wolfssl/openssl/hmac.h
 include/wolfssl/openssl/lhash.h
 include/wolfssl/openssl/md4.h
 include/wolfssl/openssl/md5.h
+include/wolfssl/openssl/objects.h
 include/wolfssl/openssl/ocsp.h
 include/wolfssl/openssl/opensslconf.h
 include/wolfssl/openssl/opensslv.h
 include/wolfssl/openssl/ossl_typ.h
 include/wolfssl/openssl/pem.h
+include/wolfssl/openssl/pkcs7.h
 include/wolfssl/openssl/pkcs12.h
 include/wolfssl/openssl/rand.h
+include/wolfssl/openssl/rc4.h
 include/wolfssl/openssl/ripemd.h
 include/wolfssl/openssl/rsa.h
 include/wolfssl/openssl/sha.h
@@ -130,6 +134,7 @@ include/wolfssl/openssl/ssl.h
 include/wolfssl/openssl/ssl23.h
 include/wolfssl/openssl/stack.h
 include/wolfssl/openssl/ui.h
+include/wolfssl/openssl/x509_vfy.h
 include/wolfssl/openssl/x509.h
 include/wolfssl/openssl/x509v3.h
 include/wolfssl/options.h
@@ -152,6 +157,7 @@ include/wolfssl/wolfcrypt/cmac.h
 include/wolfssl/wolfcrypt/coding.h
 include/wolfssl/wolfcrypt/compress.h
 include/wolfssl/wolfcrypt/cpuid.h
+include/wolfssl/wolfcrypt/cryptocb.h
 include/wolfssl/wolfcrypt/curve25519.h
 include/wolfssl/wolfcrypt/des3.h
 include/wolfssl/wolfcrypt/dh.h
@@ -201,6 +207,6 @@ include/wolfssl/wolfcrypt/wolfmath.h
 include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
-lib/libwolfssl.so.15
-lib/libwolfssl.so.15.0.0
+lib/libwolfssl.so.23
+lib/libwolfssl.so.23.0.0
 libdata/pkgconfig/wolfssl.pc
