@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.59
-PORTREVISION=	1
+PORTVERSION=	5.61
 CATEGORIES=	x11
 MASTER_SITES=	http://www.sillycycle.com/xlock/ \
 		SF/bsdsrc/${.CURDIR:T}
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 USES=		tar:xz xorg
 USE_XORG=	ice sm x11 xaw xext xpm
 
-CONFIGURE_ARGS=	--without-motif --without-ttf --without-editres \
+CONFIGURE_ARGS=	--without-motif --without-editres \
 		--without-dtsaver --without-rplay --without-nas \
 		--without-gtk --without-esound --disable-setuid \
 		--disable-kerberos4
@@ -27,7 +26,7 @@ PORTDOCS=	README ${PORTNAME}.README
 
 OPTIONS_DEFINE=	MESAGL MB SYSLOG DISABLE_ALLOW_ROOT NICE_ONLY BLANK_ONLY \
 		KERBEROS5 BAD_PAM GTK2 TIME_BOMB CUSTOMIZATION MAGICK JP \
-		XINERAMA DOCS
+		XINERAMA DOCS FREETYPE
 OPTIONS_RADIO=	ONE
 OPTIONS_RADIO_ONE=	PAM XLOCK_GROUP
 OPTIONS_DEFAULT=	MB XINERAMA
@@ -86,8 +85,15 @@ GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libpng16.so:graphics/png
 GTK2_USE=	gnome=cairo,gdkpixbuf2,gtk20
 GTK2_USES=	gnome pkgconfig
+FREETYPE_CONFIGURE_WITH=	ttf
+FREETYPE_LIB_DEPENDS=	libgltt.so:graphics/gltt
+FREETYPE_CFLAGS=	-I${LOCALBASE}/include/gltt
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFREETYPE}
+IGNORE_FreeBSD_11=	FREETYPE support requires FreeBSD version 12+
+.endif
 
 .if defined(XLOCKMORE_LANG)
 CONFIGURE_ARGS+=	--with-lang=${XLOCKMORE_LANG}
