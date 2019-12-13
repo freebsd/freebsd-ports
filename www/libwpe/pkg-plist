@@ -12,5 +12,5 @@ include/wpe-1.0/wpe/wpe-egl.h
 include/wpe-1.0/wpe/wpe.h
 lib/libwpe-1.0.so
 lib/libwpe-1.0.so.1
-lib/libwpe-1.0.so.1.2.2
+lib/libwpe-1.0.so.1.2.3
 libdata/pkgconfig/wpe-1.0.pc
