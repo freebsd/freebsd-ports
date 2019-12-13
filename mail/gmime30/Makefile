@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmime
-PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTVERSION=	3.2.5
 CATEGORIES=	mail
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	30
@@ -16,7 +15,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libassuan.so:security/libassuan \
-		libidn.so:dns/libidn \
+		libidn2.so:dns/libidn2 \
 		libgpg-error.so:security/libgpg-error
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}30
