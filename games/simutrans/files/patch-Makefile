@@ -1,0 +1,19 @@
+--- Makefile.orig	2019-12-03 10:58:12 UTC
++++ Makefile
+@@ -37,7 +37,7 @@ else ifeq ($(OSTYPE),beos)
+   # BeOS (obsolete)
+   LIBS += -lnet
+ else ifeq ($(OSTYPE),freebsd)
+-  CFLAGS  += -I/usr/local/include
++  CFLAGS  += -isystem ${LOCALBASE}/include
+ else ifeq ($(OSTYPE),haiku)
+   # Haiku (needs to activate the GCC 4x)
+   LIBS += -lnetwork -lbe
+@@ -84,7 +84,6 @@ ifdef OPTIMISE
+     endif
+   endif
+ else
+-  CFLAGS += -O
+ endif
+ 
+ ifdef DEBUG

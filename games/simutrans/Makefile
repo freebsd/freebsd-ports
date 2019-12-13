@@ -1,81 +1,66 @@
 # $FreeBSD$
 
 PORTNAME=	simutrans
-DISTVERSION=	120-2-2
+DISTVERSION=	121-0
 CATEGORIES=	games
-MASTER_SITES=	SF/simutrans/simutrans/${DISTVERSION} \
-		SF/simutrans/pak64/${PAK64_SUBDIR}:pak64 \
-		SF/simutrans/pak128/pak128%20for%20${PAK128_SUBDIR}:pak128
-DISTFILES=	simutrans-src-${DISTVERSION}.zip \
-		simulinux-${DISTVERSION}.zip
+MASTER_SITES=	SF/simutrans/simutrans/${DISTVERSION}
+DISTNAME=	simutrans-src-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Transport Simulator
+MAINTAINER=	amdmi3@FreeBSD.org
+COMMENT=	Transportation simulator
 
-LICENSE=	ART10
-LICENSE_FILE=	${WRKSRC}/simutrans/license.txt
+LICENSE=	ART10 MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_ART10=	${WRKSRC}/simutrans/license.txt
+LICENSE_FILE_ART10=	${WRKSRC}/simutrans/license_squirrel.txt
 
-PAK64_DISTVERSION=	120-2
-PAK64_SUBDIR=		120-2
-PAK128_DISTVERSION=	2.6--ST120
-PAK128_SUBDIR=		ST%20120%20%282.6%2C%20completed%20elevated%20tracks%29
-SIMUTRANS_REVISION=	8163
-
-OPTIONS_DEFINE=		DOCS
-OPTIONS_MULTI=		PAK
-OPTIONS_MULTI_PAK=	PAK64 PAK128
-OPTIONS_DEFAULT=	PAK64
-PAK64_DESC=		Default graphics
-PAK128_DESC=		High resolution graphics
+USES=		gmake sdl zip
+USE_SDL=	sdl2 mixer2
 
 # Threading disabled because FreeBSD does not have a static initializer
 # for recursive mutexes.
-MAKE_ARGS=	BACKEND=mixer_sdl \
+MAKE_ENV=	BACKEND=mixer_sdl2 \
 		COLOUR_DEPTH=16 \
 		MULTI_THREAD=0 \
 		OSTYPE=freebsd \
-		FLAGS="-DUSE_C -DREVISION=${SIMUTRANS_REVISION}" \
 		VERBOSE=1
+
 NO_WRKSUBDIR=	yes
-USES=		compiler dos2unix gmake sdl zip
-USE_SDL=	sdl mixer
 
-CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
-CXXFLAGS_clang=	-Wno-c++11-narrowing
-DOS2UNIX_GLOB=	*
-DESKTOP_ENTRIES=Simutrans "" "" simutrans "Game;Simulation;" false
-PLIST_FILES=	bin/simutrans bin/simutrans-bin
+SUB_FILES=	simutrans
+
+PLIST_FILES=	bin/simutrans libexec/simutrans
 PORTDATA=	*
+PORTDOCS=	change_request.txt \
+		history.txt \
+		problem_report.txt \
+		readme.txt \
+		thanks.txt
 
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES=Simutrans "" "" simutrans "Game;Simulation;" false
 
-.if ${PORT_OPTIONS:MPAK64}
-DISTFILES+=	simupak64-${PAK64_DISTVERSION}.zip:pak64
-.endif
+OPTIONS_DEFINE=	DOCS
+OPTIONS_MULTI=	PAKS
+OPTIONS_MULTI_PAKS=	PAK64 PAK128 PAK128_GERMAN
+OPTIONS_DEFAULT=PAK128
 
-.if ${PORT_OPTIONS:MPAK128}
-DISTFILES+=	pak128-${PAK128_DISTVERSION}.zip:pak128
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} 's/-O[^ ]*//' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} 's/simutrans/.simutrans/' ${WRKSRC}/simsys.cc
+PAKS_DESC=			Graphics sets
+PAK64_DESC=			Enable low resolution graphics set
+PAK64_RUN_DEPENDS=		simutrans-pak64>=0:games/simutrans-pak64
+PAK128_DESC=			Enable high resolution graphics set
+PAK128_RUN_DEPENDS=		simutrans-pak128>=0:games/simutrans-pak128
+PAK128_GERMAN_DESC=		Enable german graphics set
+PAK128_GERMAN_RUN_DEPENDS=	simutrans-pak128.german>=0:games/simutrans-pak128.german
 
 do-install:
-	(cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} \
-		"ai config font music script text themes" ${STAGEDIR}${DATADIR})
-.if ${PORT_OPTIONS:MPAK64}
-	(cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} \
-		pak ${STAGEDIR}${DATADIR})
-.endif
-.if ${PORT_OPTIONS:MPAK128}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} pak128 ${STAGEDIR}${DATADIR})
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL_DATA} ${WRKSRC}/simutrans/readme.txt ${STAGEDIR}${DATADIR}
-.endif
+	@cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} \
+		"ai config font music script text themes" ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/build/default/sim \
-		${STAGEDIR}${PREFIX}/bin/simutrans-bin
-	${INSTALL_SCRIPT} ${FILESDIR}/simutrans ${STAGEDIR}${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/libexec/simutrans
+	${INSTALL_SCRIPT} ${WRKDIR}/simutrans ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/simutrans && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
