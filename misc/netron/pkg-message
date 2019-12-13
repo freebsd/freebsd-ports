@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+You installed Netron: a neural network visualizer.
+
+Netron displays graphical user interface through a web browser. It is
+recommended that it is run through the electron (devel/electron6) browser
+to be a standalone app.
+
+In order to do this you can run it with this command line:
+$ BROWSER=electron netron -b {model-file}
+
+EOM
+}
+]
