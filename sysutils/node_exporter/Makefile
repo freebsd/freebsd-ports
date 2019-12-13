@@ -32,7 +32,7 @@ TEST_TARGET=	test
 TEST_ENV=	PROMTOOL=${LOCALBASE}/bin/promtool
 
 BUILD_USER?=	${USER}
-LD_FLAG_X_PREFIX=	-X ${GO_PKGNAME}/vendor/${GO_PKGNAME:H}/common/version
+LD_FLAG_X_PREFIX=	-X ${GO_PKGNAME:H}/common/version
 LD_FLAG_STRING=	-s \
 		${LD_FLAG_X_PREFIX}.Version=${PORTVERSION} \
 		${LD_FLAG_X_PREFIX}.Revision=${PORTREVISION} \
