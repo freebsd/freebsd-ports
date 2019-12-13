@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Date and time library for OCaml
 
+LICENSE=	LGPL21
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_OCAML=	yes
