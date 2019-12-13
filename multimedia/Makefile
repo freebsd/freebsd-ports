@@ -277,6 +277,7 @@
     SUBDIR += mplex
     SUBDIR += mps-youtube
     SUBDIR += mpv
+    SUBDIR += mpv-mpris
     SUBDIR += msdl
     SUBDIR += msopenh264
     SUBDIR += mswebrtc
