@@ -71,6 +71,7 @@ share/wxMaxima/testbench_all_celltypes.wxm
 share/wxMaxima/testbench_automatic_absCells.wxm
 share/wxMaxima/testbench_automatic_atCells.wxm
 share/wxMaxima/testbench_automatic_boxes.wxm
+share/wxMaxima/testbench_automatic_commentBegin.wxm
 share/wxMaxima/testbench_automatic_conjugateCells.wxm
 share/wxMaxima/testbench_automatic_diffCells.wxm
 share/wxMaxima/testbench_automatic_empty_file.wxm
