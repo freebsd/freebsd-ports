@@ -40,4 +40,4 @@ lib/cmake/KF5PulseAudioQt/KF5PulseAudioQtTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5PulseAudioQt/KF5PulseAudioQtTargets.cmake
 lib/libKF5PulseAudioQt.so
 lib/libKF5PulseAudioQt.so.2
-lib/libKF5PulseAudioQt.so.1.1.0
+lib/libKF5PulseAudioQt.so.1.2.0
