@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgxps
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -10,10 +10,13 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GObject based library for rendering XPS documents
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libtiff.so:graphics/tiff \
+		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
-		liblcms2.so:graphics/lcms2
+		libtiff.so:graphics/tiff
 
 USES=		gettext gnome jpeg libarchive localbase meson pkgconfig tar:xz
 USE_LDCONFIG=	yes
