@@ -889,6 +889,7 @@
     SUBDIR += vowpal_wabbit
     SUBDIR += vtk6
     SUBDIR += vtk8
+    SUBDIR += wavelib
     SUBDIR += wcalc
     SUBDIR += wfmath
     SUBDIR += why3

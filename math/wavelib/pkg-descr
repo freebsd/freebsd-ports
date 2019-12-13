@@ -1,0 +1,5 @@
+C Implementation of Discrete Wavelet Transform (DWT,SWT and MODWT), Continuous
+Wavelet transform (CWT) and Discrete Packet Transform (Full Tree Decomposition
+and Best Basis DWPT).
+
+WWW: https://github.com/rafat/wavelib
