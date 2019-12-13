@@ -1,0 +1,21 @@
+# $FreeBSD$
+
+CATEGORIES=	games
+
+MAINTAINER?=	amdmi3@FreeBSD.org
+
+USES?=		zip
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+WRKSRC=		${WRKDIR}/simutrans
+
+DATADIR=	${PREFIX}/share/simutrans
+PORTDATA=	*
+
+.if !target(do-install)
+do-install:
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+.endif
+
+.include <bsd.port.mk>

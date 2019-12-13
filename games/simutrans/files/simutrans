@@ -1,5 +1,0 @@
-#! /bin/sh
-bindir=`dirname "$0"`
-bindir=`realpath "$bindir"`
-cd "$bindir/../share/simutrans"
-exec "$bindir/simutrans-bin" -use_workdir "$@"

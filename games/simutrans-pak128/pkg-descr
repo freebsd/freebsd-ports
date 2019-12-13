@@ -1,0 +1,7 @@
+When Simutrans could only support 64px size graphics, pak128 already
+started. First pak to feature a complex economy and have a very
+wide variety of objects. It contains roughly 7 times more graphic
+data than pak64 and thus requires by far the largest amount of RAM
+and processing power of all Simutrans sets.
+
+WWW: https://www.simutrans.com/
