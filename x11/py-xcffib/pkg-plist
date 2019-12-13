@@ -1,1 +1,5 @@
 %%PYTHON_SITELIBDIR%%/xcffib/_ffi.py
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/xcffib/_ffi.pyc
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/xcffib/_ffi.pyo
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/xcffib/__pycache__/_ffi.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/xcffib/__pycache__/_ffi.cpython-%%PYTHON_SUFFIX%%.pyc
