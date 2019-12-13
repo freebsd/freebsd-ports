@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-prometheus
-PORTVERSION=	1.0.15
+PORTVERSION=	1.1.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,9 @@ COMMENT=	Export Django monitoring metrics for Prometheus.io
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.8:www/py-django111@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.0.21:net-mgmt/py-prometheus-client@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.11:www/py-django111@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.7:net-mgmt/py-prometheus-client@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
