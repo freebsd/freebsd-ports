@@ -4,7 +4,7 @@ PORTNAME=	elisa
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	audio kde kde-applications
 
-MAINTAINER=	kdeg@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Audio player with QML and KDE Plasma integration
 
 LICENSE=	LGPL3+
