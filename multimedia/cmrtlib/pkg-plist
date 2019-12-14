@@ -5,6 +5,7 @@ include/igfxcmrt/cm_rt_def_os.h
 include/igfxcmrt/cm_rt_extension.h
 include/igfxcmrt/cm_rt_g10.h
 include/igfxcmrt/cm_rt_g11.h
+include/igfxcmrt/cm_rt_g12_tgl.h
 include/igfxcmrt/cm_rt_g8.h
 include/igfxcmrt/cm_rt_g9.h
 lib/libigfxcmrt.so
