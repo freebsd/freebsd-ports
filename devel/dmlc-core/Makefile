@@ -2,10 +2,9 @@
 
 PORTNAME=	dmlc-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3-105
-DISTVERSIONSUFFIX=	-g32d9fe7
-PORTREVISION=	3
-CATEGORIES=	devel
+DISTVERSION=	0.3-123
+DISTVERSIONSUFFIX=	-gb3a4c71
+CATEGORIES=	devel # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Common library for scalable and portable distributed machine learning
