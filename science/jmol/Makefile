@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Jmol
-DISTVERSION=	14.30.0
+DISTVERSION=	14.30.1
 CATEGORIES=	science java
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/Version%20${DISTVERSION:R}/${PORTNAME}%20${DISTVERSION}/:src \
 		http://${PORTNAME:tl}.svn.sourceforge.net/viewvc/${PORTNAME:tl}/trunk/${PORTNAME}/selfSignedCertificate/:cert
