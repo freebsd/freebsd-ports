@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	immortal
-PORTVERSION=	0.24.0
+PORTVERSION=	0.24.1
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/immortal/immortal/commit/
-PATCHFILES=	5404a38c88a76541cc6941853c60a91ecedc1456.patch:-p1
 
 MAINTAINER=	nbari@tequila.io
 COMMENT=	Unix cross-platform (OS agnostic) supervisor
