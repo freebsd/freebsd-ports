@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	4.5.0
+PORTVERSION=	4.6.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -19,7 +19,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpodofo.so:graphics/podofo \
 		libmtp.so:multimedia/libmtp \
 		libfreetype.so:print/freetype2 \
-		libhunspell-1.7.so:textproc/hunspell
+		libhunspell-1.7.so:textproc/hunspell \
+		libhyphen.so:textproc/hyphen
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
