@@ -419,6 +419,7 @@
     SUBDIR += py-toil
     SUBDIR += py-tqdm
     SUBDIR += py-tvm
+    SUBDIR += py-xgboost
     SUBDIR += py-yolk
     SUBDIR += pylize
     SUBDIR += pyobd
