@@ -1,8 +1,0 @@
-py-aipy collects together tools for radio astronomical
-interferometry. In addition to pure-python phasing,
-calibration, imaging, and deconvolution code, this package
-includes interfaces to MIRIAD (a Fortran interferometry
-package) and HEALPix (a package for representing spherical
-data sets), and some math/fitting routines from SciPy.
-
-WWW: http://setiathome.berkeley.edu/~aparsons/aipy

@@ -79,7 +79,6 @@
     SUBDIR += pp3
     SUBDIR += ptiger
     SUBDIR += py-RO
-    SUBDIR += py-aipy
     SUBDIR += py-astLib
     SUBDIR += py-astropy
     SUBDIR += py-horoscopegenerator
