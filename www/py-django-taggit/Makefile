@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-taggit
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,7 @@ USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=		yes
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj21-django-taggit
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj21-django-taggit \
+			${PYTHON_PKGNAMEPREFIX}dj22-django-taggit
 
 .include <bsd.port.mk>
