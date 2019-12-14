@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	tvm
-DISTVERSION=	0.6.0.rc0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
