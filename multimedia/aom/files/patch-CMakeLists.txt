@@ -1,0 +1,13 @@
+- Stop linking shared library statically
+
+--- CMakeLists.txt.orig	2019-12-13 22:21:07 UTC
++++ CMakeLists.txt
+@@ -389,7 +389,7 @@ if(CONFIG_AV1_ENCODER)
+       message(FATAL_ERROR "VMAF library not found.")
+     endif()
+     message("-- Found VMAF library: " ${VMAF})
+-    target_link_libraries(aom PRIVATE ${VMAF} -static)
++    target_link_libraries(aom PRIVATE ${VMAF})
+   endif()
+ endif()
+ 
