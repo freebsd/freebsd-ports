@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+To use the sysctl.entryidinputbyname sysctl node and the sysctlbyname_improved
+function, make sure that you have loaded the sysctlbyname_improved kernel 
+module, by doing
+
+	# kldload sysctlbyname_improved
+
+or adding
+
+	sysctlbyname_improved_load="YES"
+
+to your /boot/loader.conf.
+EOM
+}
+]
