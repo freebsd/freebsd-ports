@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astropy>=1.1:astro/py-astropy@${PY_FLAVOR} \
 
 PORTSCOUT=	skipv:0.15,0.17,0.17.1 # incorrect versioning upstream
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
