@@ -21,6 +21,9 @@ USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=		yes
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-taggit
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-taggit \
+			${PYTHON_PKGNAMEPREFIX}dj22-django-taggit
+
+PORTSCOUT=	limit:^1\.1\.
 
 .include <bsd.port.mk>
