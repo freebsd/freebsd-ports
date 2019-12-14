@@ -44,12 +44,12 @@ include/ensmallen_bits/ftml/ftml.hpp
 include/ensmallen_bits/ftml/ftml_impl.hpp
 include/ensmallen_bits/ftml/ftml_update.hpp
 include/ensmallen_bits/function.hpp
-include/ensmallen_bits/function/add_decomposable_evaluate.hpp
-include/ensmallen_bits/function/add_decomposable_evaluate_with_gradient.hpp
-include/ensmallen_bits/function/add_decomposable_gradient.hpp
 include/ensmallen_bits/function/add_evaluate.hpp
 include/ensmallen_bits/function/add_evaluate_with_gradient.hpp
 include/ensmallen_bits/function/add_gradient.hpp
+include/ensmallen_bits/function/add_separable_evaluate.hpp
+include/ensmallen_bits/function/add_separable_evaluate_with_gradient.hpp
+include/ensmallen_bits/function/add_separable_gradient.hpp
 include/ensmallen_bits/function/arma_traits.hpp
 include/ensmallen_bits/function/sfinae_utility.hpp
 include/ensmallen_bits/function/static_checks.hpp
