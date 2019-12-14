@@ -17,6 +17,9 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
+# Support for Python 2.7 and Django 1.11, 2.0 was dropped in the 12.0 release
+PORTSCOUT=	limit:^11\.
+
 post-extract:
 	@${FIND} ${WRKSRC} -name ".DS_Store" -type f -delete
 
