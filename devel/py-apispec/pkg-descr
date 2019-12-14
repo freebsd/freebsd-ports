@@ -1,0 +1,10 @@
+A pluggable API specification generator. Currently supports the OpenAPI
+Specification (f.k.a. the Swagger specification).
+
+Features:
+
+  - Supports the OpenAPI Specification (versions 2 and 3)
+  - Framework-agnostic
+  - Utilities for parsing docstrings
+
+WWW: https://github.com/marshmallow-code/apispec
