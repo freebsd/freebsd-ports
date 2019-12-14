@@ -1,0 +1,34 @@
+--- rabit/CMakeLists.txt.orig	2019-12-14 20:43:47 UTC
++++ rabit/CMakeLists.txt
+@@ -13,7 +13,7 @@ set(DMLC_ROOT ${CMAKE_CURRENT_LIST_DIR}/../dmlc-core)
+ 
+ # moved from xgboost build
+ if(R_LIB OR MINGW OR WIN32)
+-  add_library(rabit src/engine_empty.cc src/c_api.cc)
++  add_library(rabit SHARED src/engine_empty.cc src/c_api.cc)
+   set(rabit_libs rabit)
+   set_target_properties(rabit
+           PROPERTIES CXX_STANDARD 11
+@@ -21,10 +21,10 @@ if(R_LIB OR MINGW OR WIN32)
+           POSITION_INDEPENDENT_CODE ON)
+ else()
+   find_package(Threads REQUIRED)
+-  add_library(rabit_empty src/engine_empty.cc src/c_api.cc)
+-  add_library(rabit_base src/allreduce_base.cc src/engine_base.cc src/c_api.cc)
++  add_library(rabit_empty SHARED src/engine_empty.cc src/c_api.cc)
++  add_library(rabit_base SHARED src/allreduce_base.cc src/engine_base.cc src/c_api.cc)
+ 
+-  add_library(rabit src/allreduce_base.cc src/allreduce_robust.cc src/engine.cc src/c_api.cc)
++  add_library(rabit SHARED src/allreduce_base.cc src/allreduce_robust.cc src/engine.cc src/c_api.cc)
+   add_library(rabit_mock_static src/allreduce_base.cc src/allreduce_robust.cc src/engine_mock.cc src/c_api.cc)
+   add_library(rabit_mock SHARED src/allreduce_base.cc src/allreduce_robust.cc src/engine_mock.cc src/c_api.cc)
+   target_link_libraries(rabit Threads::Threads)
+@@ -43,7 +43,7 @@ if(RABIT_BUILD_MPI)
+   if (NOT MPI_CXX_FOUND)
+     message(FATAL_ERROR "CXX Interface for MPI is required for building MPI backend.")
+   endif (NOT MPI_CXX_FOUND)
+-  add_library(rabit_mpi src/engine_mpi.cc ${MPI_INCLUDE_PATH})
++  add_library(rabit_mpi SHARED src/engine_mpi.cc ${MPI_INCLUDE_PATH})
+   target_link_libraries(rabit_mpi ${MPI_CXX_LIBRARIES})
+   list(APPEND rabit_libs rabit_mpi)
+ endif()

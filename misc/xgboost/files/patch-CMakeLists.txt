@@ -1,0 +1,26 @@
+--- CMakeLists.txt.orig	2019-12-14 20:50:22 UTC
++++ CMakeLists.txt
+@@ -101,16 +101,16 @@ endif (USE_CUDA)
+ 
+ # dmlc-core
+ msvc_use_static_runtime()
+-add_subdirectory(${xgboost_SOURCE_DIR}/dmlc-core)
+-set_target_properties(dmlc PROPERTIES
+-  CXX_STANDARD 11
+-  CXX_STANDARD_REQUIRED ON
+-  POSITION_INDEPENDENT_CODE ON)
+-list(APPEND LINKED_LIBRARIES_PRIVATE dmlc)
++#add_subdirectory(${xgboost_SOURCE_DIR}/dmlc-core)
++#set_target_properties(dmlc PROPERTIES
++#  CXX_STANDARD 11
++#  CXX_STANDARD_REQUIRED ON
++#  POSITION_INDEPENDENT_CODE ON)
++#list(APPEND LINKED_LIBRARIES_PRIVATE dmlc)
+ 
+ # rabit
+ set(RABIT_BUILD_DMLC OFF)
+-set(DMLC_ROOT ${xgboost_SOURCE_DIR}/dmlc-core)
++set(DMLC_ROOT ${CMAKE_INSTALL_PREFIX})
+ set(RABIT_WITH_R_LIB ${R_LIB})
+ add_subdirectory(rabit)
+ 
