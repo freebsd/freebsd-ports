@@ -2,14 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	fluent-bit
-DISTVERSION=	1.3.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.3.4
 CATEGORIES=	sysutils
-MASTER_SITES=   https://fluentbit.io/releases/${DISTVERSION:R}/
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Fast and lightweight data forwarder
 
 LICENSE=	APACHE20
+
+USE_GITHUB=     yes
+GH_ACCOUNT=	fluent
 
 BROKEN_mips=		fails to build: conflicting types for 'restrict'
 BROKEN_mips64=		fails to build: conflicting types for 'restrict'
