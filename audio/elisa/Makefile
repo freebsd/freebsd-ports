@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	adridg@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Audio player with QML and KDE Plasma integration
 
 LICENSE=	LGPL3+
