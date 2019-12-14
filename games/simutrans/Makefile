@@ -12,7 +12,7 @@ COMMENT=	Transportation simulator
 LICENSE=	ART10 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_ART10=	${WRKSRC}/simutrans/license.txt
-LICENSE_FILE_ART10=	${WRKSRC}/simutrans/license_squirrel.txt
+LICENSE_FILE_MIT=	${WRKSRC}/simutrans/license_squirrel.txt
 
 USES=		gmake sdl zip
 USE_SDL=	sdl2 mixer2
