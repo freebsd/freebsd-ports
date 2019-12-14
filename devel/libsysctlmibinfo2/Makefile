@@ -2,6 +2,7 @@
 
 PORTNAME=	libsysctlmibinfo2
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	alfix86@gmail.com
@@ -11,8 +12,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/sysctlinfo.h:sysutils/sysctlinfo-kmod
-RUN_DEPENDS=	${KMODDIR}/sysctlinfo.ko:sysutils/sysctlinfo-kmod
-RUN_DEPENDS=	${KMODDIR}/sysctlbyname_improved.ko:sysutils/sysctlbyname-improved-kmod
+RUN_DEPENDS=	${KMODDIR}/sysctlbyname_improved.ko:sysutils/sysctlbyname-improved-kmod \
+		${KMODDIR}/sysctlinfo.ko:sysutils/sysctlinfo-kmod
 
 USE_LDCONFIG=	yes
 USE_GITLAB=	yes
