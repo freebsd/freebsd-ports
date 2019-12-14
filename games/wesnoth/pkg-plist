@@ -1694,6 +1694,7 @@ share/icons/hicolor/64x64/apps/wesnoth-icon.png
 %%NLS%%man/de/man6/wesnoth.6.gz
 %%NLS%%%%SERVER%%man/de/man6/wesnothd.6.gz
 %%NLS%%man/en_GB/man6/wesnoth.6.gz
+%%NLS%%man/es/man6/wesnoth.6.gz
 %%NLS%%%%SERVER%%man/en_GB/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/es/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/et/man6/wesnothd.6.gz
@@ -1718,9 +1719,12 @@ man/man6/wesnoth.6.gz
 %%NLS%%%%SERVER%%man/sr@ijekavian/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/sr@ijekavianlatin/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/sr@latin/man6/wesnothd.6.gz
+%%NLS%%man/tr/man6/wesnoth.6.gz
+%%NLS%%%%SERVER%%man/tr/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/uk/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/vi/man6/wesnothd.6.gz
 %%NLS%%man/zh_CN/man6/wesnoth.6.gz
+%%NLS%%man/zh_TW/man6/wesnoth.6.gz
 %%NLS%%%%SERVER%%man/zh_CN/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/zh_TW/man6/wesnothd.6.gz
 %%SERVER%%@unexec rmdir /var/run/wesnothd 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/run/wesnothd' to remove it." | fmt
