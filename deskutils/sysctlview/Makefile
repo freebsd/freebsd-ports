@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysctlview
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6
 CATEGORIES=	deskutils
 
 MAINTAINER=	alfix86@gmail.com
@@ -10,9 +10,7 @@ COMMENT=	Show sysctl MIB Tree
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/sysctlinfo.h:sysutils/sysctlinfo-kmod
-LIB_DEPENDS=	libsysctlmibinfo.so:devel/libsysctlmibinfo
-RUN_DEPENDS=	${KMODDIR}/sysctlinfo.ko:sysutils/sysctlinfo-kmod
+LIB_DEPENDS=	libsysctlmibinfo2.so:devel/libsysctlmibinfo2
 
 USES=		compiler:c++11-lang gettext-runtime gnome pkgconfig
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glib20 glibmm glibmm \
@@ -20,7 +18,7 @@ USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glib20 glibmm glibmm \
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
-GL_COMMIT=	abc8074a3d8eb37c98cba38beb1c541a6d9dad26
+GL_COMMIT=	83999ba6dd03f6c96bff8c617e98ca9cf8d4fe45
 
 INSTALLS_ICONS=	yes
 
