@@ -13,6 +13,9 @@ COMMENT=	Peer-to-peer high-performance distributed datastore and mail
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Fails to build with recent versions of python, upstream git repository is gone
+EXPIRATION_DATE=	2020-02-14
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy11>0:databases/py-sqlalchemy11@${PY_FLAVOR}
 
@@ -44,4 +47,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/morphis-cmd ${STAGEDIR}${PREFIX}/bin/morphis
 	${INSTALL_SCRIPT} ${WRKDIR}/morphis-service ${STAGEDIR}${PREFIX}/etc/rc.d/morphis
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 3700
+BROKEN=		fails to build
+.endif
+
+.include <bsd.port.post.mk>
