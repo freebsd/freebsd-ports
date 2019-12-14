@@ -1366,6 +1366,7 @@
     SUBDIR += libstrfunc
     SUBDIR += libstroke
     SUBDIR += libsysctlmibinfo
+    SUBDIR += libsysctlmibinfo2
     SUBDIR += libsysinfo
     SUBDIR += libtai
     SUBDIR += libtap
