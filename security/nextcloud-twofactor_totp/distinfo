@@ -1,3 +1,3 @@
-TIMESTAMP = 1575381287
-SHA256 (nextcloud/twofactor_totp-v4.1.0/twofactor_totp.tar.gz) = 4ab88869c8a3f0b86847e0eea58bcbebdf74e6870b422aa287ebccbc28d61e1c
-SIZE (nextcloud/twofactor_totp-v4.1.0/twofactor_totp.tar.gz) = 723579
+TIMESTAMP = 1576247275
+SHA256 (nextcloud/twofactor_totp-v4.1.1/twofactor_totp.tar.gz) = a46bb7de7f7ae73edc316e7b678ea78ccbad3a9e7df181893ddc69e384c6feb2
+SIZE (nextcloud/twofactor_totp-v4.1.1/twofactor_totp.tar.gz) = 723639
