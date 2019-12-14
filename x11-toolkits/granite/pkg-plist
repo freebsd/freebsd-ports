@@ -213,5 +213,6 @@ share/locale/zh_CN/LC_MESSAGES/granite.mo
 share/locale/zh_HK/LC_MESSAGES/granite.mo
 share/locale/zh_TW/LC_MESSAGES/granite.mo
 share/locale/zu/LC_MESSAGES/granite.mo
+share/metainfo/granite.appdata.xml
 share/vala/vapi/granite.deps
 share/vala/vapi/granite.vapi
