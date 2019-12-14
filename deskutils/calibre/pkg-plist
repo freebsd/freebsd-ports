@@ -449,6 +449,7 @@ lib/calibre/calibre/ebooks/oeb/polish/download.py
 lib/calibre/calibre/ebooks/oeb/polish/embed.py
 lib/calibre/calibre/ebooks/oeb/polish/errors.py
 lib/calibre/calibre/ebooks/oeb/polish/fonts.py
+lib/calibre/calibre/ebooks/oeb/polish/hyphenation.py
 lib/calibre/calibre/ebooks/oeb/polish/images.py
 lib/calibre/calibre/ebooks/oeb/polish/import_book.py
 lib/calibre/calibre/ebooks/oeb/polish/jacket.py
@@ -874,6 +875,7 @@ lib/calibre/calibre/gui2/metadata/single.py
 lib/calibre/calibre/gui2/metadata/single_download.py
 lib/calibre/calibre/gui2/notify.py
 lib/calibre/calibre/gui2/open_with.py
+lib/calibre/calibre/gui2/palette.py
 lib/calibre/calibre/gui2/pin_columns.py
 lib/calibre/calibre/gui2/preferences/__init__.py
 lib/calibre/calibre/gui2/preferences/adding.py
@@ -1142,9 +1144,10 @@ lib/calibre/calibre/plugins/cPalmdoc.so
 lib/calibre/calibre/plugins/certgen.so
 lib/calibre/calibre/plugins/chmlib.so
 lib/calibre/calibre/plugins/freetype.so
-lib/calibre/calibre/plugins/html.so
 lib/calibre/calibre/plugins/html_as_json.so
+lib/calibre/calibre/plugins/html_syntax_highlighter.so
 lib/calibre/calibre/plugins/hunspell.so
+lib/calibre/calibre/plugins/hyphen.so
 lib/calibre/calibre/plugins/icu.so
 lib/calibre/calibre/plugins/imageops.so
 lib/calibre/calibre/plugins/libheadless.so
@@ -1263,6 +1266,10 @@ lib/calibre/calibre/utils/formatter.py
 lib/calibre/calibre/utils/formatter_functions.py
 lib/calibre/calibre/utils/html2text.py
 lib/calibre/calibre/utils/https.py
+lib/calibre/calibre/utils/hyphenation/__init__.py
+lib/calibre/calibre/utils/hyphenation/dictionaries.py
+lib/calibre/calibre/utils/hyphenation/hyphenate.py
+lib/calibre/calibre/utils/hyphenation/test_hyphenation.py
 lib/calibre/calibre/utils/icu.py
 lib/calibre/calibre/utils/icu_test.py
 lib/calibre/calibre/utils/img.py
@@ -1350,16 +1357,16 @@ lib/calibre/calibre/web/feeds/templates.py
 lib/calibre/calibre/web/fetch/__init__.py
 lib/calibre/calibre/web/fetch/simple.py
 lib/calibre/calibre/web/fetch/utils.py
+lib/calibre/calibre_lzma/__init__.py
+lib/calibre/calibre_lzma/errors.py
+lib/calibre/calibre_lzma/lzma1.py
+lib/calibre/calibre_lzma/xz.py
 lib/calibre/css_selectors/__init__.py
 lib/calibre/css_selectors/errors.py
 lib/calibre/css_selectors/ordered_set.py
 lib/calibre/css_selectors/parser.py
 lib/calibre/css_selectors/select.py
 lib/calibre/css_selectors/tests.py
-lib/calibre/lzma/__init__.py
-lib/calibre/lzma/errors.py
-lib/calibre/lzma/lzma1.py
-lib/calibre/lzma/xz.py
 lib/calibre/odf/__init__.py
 lib/calibre/odf/anim.py
 lib/calibre/odf/attrconverters.py
@@ -1482,6 +1489,9 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/fonts/liberation/LiberationSerif-BoldItalic.ttf
 %%DATADIR%%/fonts/liberation/LiberationSerif-Italic.ttf
 %%DATADIR%%/fonts/liberation/LiberationSerif-Regular.ttf
+%%DATADIR%%/hyphenation/dictionaries.tar.xz
+%%DATADIR%%/hyphenation/locales.json
+%%DATADIR%%/hyphenation/sha1sum
 %%DATADIR%%/images.qrc
 %%DATADIR%%/images/add_book.png
 %%DATADIR%%/images/apple-touch-icon.png
@@ -1576,6 +1586,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/generic-library.png
 %%DATADIR%%/images/gmail_logo.png
 %%DATADIR%%/images/grid.png
+%%DATADIR%%/images/h-ellipsis.png
 %%DATADIR%%/images/help.png
 %%DATADIR%%/images/heuristics.png
 %%DATADIR%%/images/highlight_only_off.png
@@ -1662,6 +1673,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/random.png
 %%DATADIR%%/images/rating.png
 %%DATADIR%%/images/reader.png
+%%DATADIR%%/images/reference.png
 %%DATADIR%%/images/remove_books.png
 %%DATADIR%%/images/reports.png
 %%DATADIR%%/images/resize.png
@@ -1701,6 +1713,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/tweaks.png
 %%DATADIR%%/images/unpack-book.png
 %%DATADIR%%/images/user_profile.png
+%%DATADIR%%/images/v-ellipsis.png
 %%DATADIR%%/images/view-image.png
 %%DATADIR%%/images/view-refresh.png
 %%DATADIR%%/images/view.png
