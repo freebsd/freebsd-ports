@@ -3,6 +3,7 @@
 PORTNAME=	mxnet
 DISTVERSION=	1.6.0
 DISTVERSIONSUFFIX=	.rc0
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -41,7 +42,7 @@ OPTIONS_SUB=		yes
 
 CPP_DESC=		Install the C++ binding (cpp-package)
 CPP_CMAKE_BOOL=		USE_CPP_PACKAGE
-CPP_USES=		python
+CPP_USES=		python:build
 CPP_VARS=		BINARY_ALIAS=python=${PYTHON_CMD}
 
 post-patch:
