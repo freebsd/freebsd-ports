@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	traefik
-PORTVERSION=	1.7.19
+PORTVERSION=	1.7.20
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/riggs/${PORTNAME}:webui
@@ -41,7 +41,7 @@ PLIST_FILES=	bin/traefik \
 # Instead, we use the pre-generated from LOCAL.
 # (20180510: the upath module requires node < 10)
 # BUILD_DEPENDS+=	npm:www/npm-node8 \
-#		yarnpkg:www/yarn
+#		yarnpkg:www/yarn-node8
 #USES+=		python:2.7,build
 #build-ui:
 #	@cd ${WRKSRC}/webui; \
