@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LWJGL_JLP_OVRD="/usr/local/lib/lwjgl2.9.3"
+LWJGL_JLP_OVRD="/usr/local/lib/lwjgl"
 LWJGL_OVRD="/usr/local/share/java/classes/lwjgl/lwjgl.jar"
 LWJGL_UTIL_OVRD="/usr/local/share/java/classes/lwjgl/lwjgl_util.jar"
 
