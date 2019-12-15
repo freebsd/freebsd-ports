@@ -889,6 +889,7 @@
     SUBDIR += py-cryptlib_py
     SUBDIR += py-cryptography
     SUBDIR += py-cryptography-vectors
+    SUBDIR += py-ctypescrypto
     SUBDIR += py-cybox
     SUBDIR += py-dfdatetime
     SUBDIR += py-dfvfs

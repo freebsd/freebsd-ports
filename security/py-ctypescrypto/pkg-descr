@@ -1,0 +1,8 @@
+Most of the existing OpenSSL extensions implement interfaces to particular set
+of cryptoalgorthms. This extension takes another approach - it uses
+algorithm-agnostic EVP layer whenever possible, and so it support any algorithms
+which are supported by the underlying library, even this algorithms are
+implemented in the loadable modules (engines). Algorithms which were just added
+to the library should be supported too.
+
+WWW: https://github.com/vbwagner/ctypescrypto
