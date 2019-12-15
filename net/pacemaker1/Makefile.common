@@ -10,6 +10,9 @@ COMMENT=		Scalable High-Availability cluster resource manager
 
 LICENSE=		GPLv2
 
+DEPRECATED=		fails to build with recent versions of python
+EXPIRATION_DATE=	2020-02-15
+
 BUILD_DEPENDS=		bash:shells/bash \
 			getopt>=0:misc/getopt
 LIB_DEPENDS=		libgnutls.so:security/gnutls \
@@ -32,7 +35,7 @@ GH_ACCOUNT=		ClusterLabs
 GH_PROJECT=		pacemaker
 
 USES=			autoreconf corosync gmake gnome libtool ncurses:port pathfix \
-			pkgconfig python shebangfix
+			pkgconfig python:3.6 shebangfix
 USE_BINUTILS=		yes
 USE_GNOME=		glib20
 USE_LDCONFIG=		yes
