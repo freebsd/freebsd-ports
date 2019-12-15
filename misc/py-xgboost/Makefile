@@ -37,6 +37,6 @@ post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/xgboost
 
 fix-plist: # https://github.com/dmlc/xgboost/issues/5118
-	@${REINPLACE_CMD} -e 's|^xgboost/libxgboost.so$$||' ${TMPPLIST}
+	@${REINPLACE_CMD} '/^xgboost\/libxgboost.so$$/d' ${TMPPLIST}
 
 .include <bsd.port.mk>
