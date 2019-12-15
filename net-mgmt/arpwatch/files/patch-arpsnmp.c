@@ -1,39 +1,22 @@
---- arpsnmp.c.orig	2004-01-22 22:25:17 UTC
+--- arpsnmp.c.orig	2019-11-30 18:35:23 UTC
 +++ arpsnmp.c
-@@ -68,6 +68,8 @@ __dead	void usage(void) __attribute__((v
- 
- char *prog;
- 
-+char *Watcher;
-+
- extern int optind;
- extern int opterr;
- extern char *optarg;
-@@ -90,7 +92,7 @@ main(int argc, char **argv)
+@@ -104,7 +104,7 @@ main(int argc, char **argv)
  	}
  
  	opterr = 0;
--	while ((op = getopt(argc, argv, "df:")) != EOF)
-+	while ((op = getopt(argc, argv, "df:m:")) != EOF)
+-	while ((op = getopt(argc, argv, "CdD:f:qsw:W:Z")) != EOF)
++	while ((op = getopt(argc, argv, "CdD:f:m:qsw:W:Z")) != EOF)
  		switch (op) {
  
- 		case 'd':
-@@ -105,6 +107,10 @@ main(int argc, char **argv)
- 			arpfile = optarg;
+ 		case 'C':
+@@ -135,6 +135,10 @@ main(int argc, char **argv)
+ 			++suppress;
  			break;
  
 +		case 'm':
-+			Watcher = optarg;
-+			break;
-+
- 		default:
- 			usage();
- 		}
-@@ -185,6 +191,6 @@ usage(void)
- 
- 	(void)fprintf(stderr, "Version %s\n", version);
- 	(void)fprintf(stderr,
--	    "usage: %s [-d] [-f datafile] file [...]\n", prog);
-+	    "usage: %s [-d] [-f datafile] [-m email] file [...]\n", prog);
- 	exit(1);
- }
++			fprintf(stderr, "%s: WARNING: -m is deprecated,"
++			    " please use -w instead\n", prog);
++			/* fallthrough */
+ 		case 'w':
+ 			watcher = optarg;
+ 			break;

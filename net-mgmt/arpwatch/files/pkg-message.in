@@ -1,12 +1,18 @@
 [
 { type: install
   message: <<EOM
-You can update the ethercodes.dat file executing the following steps
+You can update the ethercodes.dat file executing the following steps:
 
-cd %%PREFIX%%/arpwatch
-fetch -o- http://standards-oui.ieee.org//oui.txt | tr -d "\15" > oui.txt
-./massagevendor oui.txt > ethercodes.dat
-rm oui.txt
+    cd %%PREFIX%%/arpwatch
+    fetch http://standards-oui.ieee.org/oui/oui.csv
+    ./massagevendor oui.csv > ethercodes.dat
+    rm oui.csv
+
+You might also want to disable the ETHERCODES option when building
+to avoid clobbering ethercodes.dat on update or reinstall.
+
+The -m flag is deprecated. If you are using the -m watcher flag,
+please switch to -w.
 EOM
 }
 ]
