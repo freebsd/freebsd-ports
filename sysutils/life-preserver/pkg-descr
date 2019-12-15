@@ -1,5 +1,0 @@
-Life-Preserver provides ZFS snapshot and replication management
-along with restore functionality. Used by PC-BSD and has an optional
-Qt4 based UI interface.
-
-WWW: https://github.com/pcbsd/pcbsd
