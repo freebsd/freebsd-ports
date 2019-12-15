@@ -1,6 +1,6 @@
---- contrib/Makefile.in.orig	2019-05-25 16:13:42 UTC
+--- contrib/Makefile.in.orig	2019-11-30 18:14:24 UTC
 +++ contrib/Makefile.in
-@@ -278,7 +278,7 @@ top_build_prefix = @top_build_prefix@
+@@ -280,7 +280,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  subdir = contrib

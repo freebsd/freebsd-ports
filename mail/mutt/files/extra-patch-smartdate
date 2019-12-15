@@ -1,6 +1,6 @@
---- hdrline.c.orig	2019-05-26 19:28:51 UTC
+--- hdrline.c.orig	2019-11-11 04:00:36 UTC
 +++ hdrline.c
-@@ -249,6 +249,89 @@ static char *apply_subject_mods (ENVELOPE *env)
+@@ -248,6 +248,89 @@ static char *apply_subject_mods (ENVELOPE *env)
   * %Y = `x-label:' field (if present, tree unfolded, and != parent's x-label)
   * %Z = status flags	*/
  
@@ -90,7 +90,7 @@
  static const char *
  hdr_format_str (char *dest,
  		size_t destlen,
-@@ -422,7 +505,13 @@ hdr_format_str (char *dest,
+@@ -421,7 +504,13 @@ hdr_format_str (char *dest,
  
        if (!do_locales)
          setlocale (LC_TIME, "C");
@@ -105,9 +105,9 @@
        if (!do_locales)
          setlocale (LC_TIME, "");
  
---- mutt.h.orig	2019-05-26 19:28:51 UTC
+--- mutt.h.orig	2019-12-06 03:41:43 UTC
 +++ mutt.h
-@@ -164,6 +164,16 @@ typedef enum
+@@ -165,6 +165,16 @@ typedef enum
    MUTT_WRITE_HEADER_MIME
  } mutt_write_header_mode;
  

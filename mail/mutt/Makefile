@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-DISTVERSION=	1.12.2
+DISTVERSION=	1.13.1
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -46,11 +46,10 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	SASL DEBUG DOCS EXAMPLES FLOCK \
-		FORCEBASE64 GPGME GREETING_PATCH HTML ICONV IDN IFDEF_PATCH \
-		LOCALES_FIX MAILBOX_MANPAGES MAILDIR_MTIME_PATCH \
-		NLS NNTP QUOTE_PATCH REVERSE_REPLY_PATCH SMART_DATE \
-		SMTP URLVIEW XML
+OPTIONS_DEFINE=	AUTOCRYPT DEBUG DOCS EXAMPLES FLOCK FORCEBASE64 GPGME \
+		GREETING_PATCH HTML ICONV IDN IFDEF_PATCH LOCALES_FIX \
+		MAILBOX_MANPAGES MAILDIR_MTIME_PATCH NLS QUOTE_PATCH NNTP \
+		REVERSE_REPLY_PATCH SASL SMART_DATE SMTP URLVIEW XML
 
 OPTIONS_SINGLE=	GSSAPI HCACHE SCREEN
 OPTIONS_RADIO=	SPELL
@@ -59,12 +58,17 @@ OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 OPTIONS_SINGLE_HCACHE=	HCACHE_BDB HCACHE_TOKYOCABINET HCACHE_KYOTOCABINET HCACHE_NONE
 OPTIONS_SINGLE_SCREEN=	NCURSES SLANG
 
-SASL_DESC=	SASL authentication
+AUTOCRYPT_DESC=	Convenient End-to-End Encryption
 DEBUG_DESC=	Debugging capabilities
 FLOCK_DESC=	flock() usage
 FORCEBASE64_DESC=	Option to force base64 encoding for compose
 GPGME_DESC=	Gpgme interface
 GREETING_PATCH_DESC=	Greeting support
+HCACHE_BDB_DESC=	Use Berkeley DB (BDB)
+HCACHE_DESC=	Header Cache support
+HCACHE_KYOTOCABINET_DESC=	Use Kyoto Cabinet
+HCACHE_NONE_DESC=	Disable Header Cache
+HCACHE_TOKYOCABINET_DESC=	Use Tokyo Cabinet
 HTML_DESC=	HTML documentation
 IDN_DESC=	International Domain Names (implies ICONV)
 IFDEF_PATCH_DESC=	ifdef feature
@@ -75,32 +79,36 @@ NCURSES_DESC=	Ncurses support
 NLS_DESC=	Native language support (implies ICONV)
 QUOTE_PATCH_DESC=	Extended quoting
 REVERSE_REPLY_PATCH_DESC=	Reverse_reply
+SASL_DESC=	SASL authentication
 SLANG_DESC=	SLANG support
 SMART_DATE_DESC=	Dynamic date formatting with "%@"
 SMTP_DESC=	SMTP relay support
-HCACHE_DESC=	Header Cache support
-HCACHE_BDB_DESC=	Use Berkeley DB (BDB)
-HCACHE_TOKYOCABINET_DESC=	Use Tokyo Cabinet
-HCACHE_KYOTOCABINET_DESC=	Use Kyoto Cabinet
-HCACHE_NONE_DESC=	Disable Header Cache
 URLVIEW_DESC=	Use urlview for the URL selector menu
 XML_DESC=	Use XML tools for rebuilding documentation
 
-OPTIONS_DEFAULT=	GPGME HTML HCACHE_BDB ICONV IDN \
-		IFDEF_PATCH LOCALES_FIX MAILBOX_MANPAGES MAILDIR_MTIME_PATCH \
-		NLS NCURSES QUOTE_PATCH REVERSE_REPLY_PATCH SMART_DATE \
-		SASL SMTP URLVIEW XML GSSAPI_NONE
+OPTIONS_DEFAULT=	AUTOCRYPT GPGME GSSAPI_NONE HCACHE_BDB HTML ICONV IDN \
+		IFDEF_PATCH LOCALES_FIX MAILBOX_MANPAGES MAILDIR_MTIME_PATCH NCURSES \
+		NLS REVERSE_REPLY_PATCH SASL SMART_DATE SMTP URLVIEW XML
+
+.ifmake makesum # for optional distfiles patchfiles
+OPTIONS_OVERRIDE=	${OPTIONS_DEFINE} ${OPTIONS_DEFAULT}
+.MAKEOVERRIDES+=	OPTIONS_OVERRIDE
+.endif
+
+AUTOCRYPT_CONFIGURE_ENABLE=	autocrypt
+AUTOCRYPT_IMPLIES=		GPGME IDN
+AUTOCRYPT_USES=			sqlite:3
+AUTOCRYPT_CONFIGURE_WITH=	sqlite3=${LOCALBASE}
+AUTOCRYPT_DEPENDS=		gnupg>=2.1:security/gnupg \
+				gpgme>=1.8:security/gpgme
+AUTOCRYPT_BUILD_DEPENDS=	${AUTOCRYPT_DEPENDS}
+AUTOCRYPT_RUN_DEPENDS=		${AUTOCRYPT_DEPENDS}
 
 ASPELL_BUILD_DEPENDS=	aspell:textproc/aspell
 ASPELL_RUN_DEPENDS=	aspell:textproc/aspell
 ISPELL_BUILD_DEPENDS=	ispell:textproc/aspell-ispell
 ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
 URLVIEW_RUN_DEPENDS=	urlview:textproc/urlview
-
-.ifmake makesum # for optional distfiles patchfiles
-PORT_DBDIR=		/dev/null
-OPTIONS_DEFAULT+=	${OPTIONS_DEFINE}
-.endif
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 
@@ -167,9 +175,11 @@ SMTP_CONFIGURE_ENABLE=	smtp
 
 GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
 
+QUOTE_PATCH_BROKEN=	QUOTE_PATCH broken on 1.13.0
 QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv \
 	patch-${VVV_PATCH_VERSION}.vvv.quote.xz:vvv
 
+NNTP_BROKEN=	NNTP_PATCH broken on 1.13.0
 NNTP_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.nntp.xz:-p1:vvv
 NNTP_EXTRA_PATCHES=	${PATCHDIR}/extra-nntp-depfiles
 NNTP_CONFIGURE_ON=	--enable-nntp
@@ -183,31 +193,36 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 
 # un/comment as each VERSION is created for PORTVERSION
 VVV_PATCH_VERSION=	1.12.1
-GREETING_PATCH_VERSION=	1.12.1
-
-.if !defined(VVV_PATCH_VERSION)
-VVV_PATCH_VERSION=	${PORTVERSION}
-.endif
-.if !defined(GREETING_PATCH_VERSION)
-GREETING_PATCH_VERSION=	${PORTVERSION}
-.endif
+GREETING_PATCH_VERSION=	1.13.0
 
 post-patch-NNTP-on:
 # Restore timestamps for autotools sources
 	@${TOUCH} -r ${WRKSRC}/configure.ac.orig ${WRKSRC}/configure.ac
 	@${TOUCH} -r ${WRKSRC}/Makefile.am.orig ${WRKSRC}/Makefile.am
 .if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
+.if 	defined(${PATCH_DEBUG})
+		@${ECHO} "===>  Applying ${.TARGET} extra-patch-maildir-mtime-nntp"
+.endif
 	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-mtime-nntp
 .endif
 .if ${PORT_OPTIONS:MFORCEBASE64}
+.if 	defined(PATCH_DEBUG)
+		@${ECHO} "===>  Applying ${.TARGET} extra-patch-forcebase64-nntp"
+.endif
 	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-forcebase64-nntp
 .endif
 
 post-patch-NNTP-off:
 .if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
+.if 	defined(PATCH_DEBUG)
+		@${ECHO} "===>  Applying ${.TARGET} extra-patch-maildir-mtime"
+.endif
 	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-mtime
 .endif
 .if ${PORT_OPTIONS:MFORCEBASE64}
+.if 	defined(PATCH_DEBUG)
+		@${ECHO} "===>  Applying ${.TARGET} extra-patch-forcebase64"
+.endif
 	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-forcebase64
 .endif
 
@@ -216,8 +231,6 @@ post-install:
 
 post-install-NNTP-on:
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog.nntp ${STAGEDIR}${DOCSDIR}
-
-WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 
 pre-configure::
 	@${REINPLACE_CMD} -e 's,?eimdal\*),?eimdal*|\"FreeBSD heimdal\"*),' \
@@ -250,7 +263,7 @@ BUILD_DEPENDS+=	xsltproc:textproc/libxslt \
 .else
 pre-build::
 	@${REINPLACE_CMD} \
-		-e 's,manual.html stamp-doc-rc stamp-doc-chunked manual.txt,stamp-doc-rc,' \
+		-e '/^BUILD_DOC_TARGETS/s/=.*/=/' \
 		${WRKSRC}/doc/Makefile
 .endif
 

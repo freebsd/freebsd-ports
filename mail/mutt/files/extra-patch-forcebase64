@@ -1,20 +1,20 @@
---- init.h.orig	2017-04-12 23:01:17 UTC
+--- init.h.orig	2019-12-08 02:41:29 UTC
 +++ init.h
-@@ -871,6 +871,11 @@ struct option_t MuttVars[] = {
+@@ -1079,6 +1079,11 @@ struct option_t MuttVars[] = {
    ** sent to both the list and your address, resulting in two copies
    ** of the same email for you.
    */
-+  { "force_base64",   DT_BOOL, R_NONE, OPTFORCEBASE64, 0 },
++  { "force_base64",   DT_BOOL, R_NONE, {.l=OPTFORCEBASE64}, {.l=0} },
 +  /*
 +  ** .pp
 +  ** If you need to encode all text parts to base64, set this option.
 +  */
-   { "force_name",	DT_BOOL, R_NONE, OPTFORCENAME, 0 },
+   { "force_name",	DT_BOOL, R_NONE, {.l=OPTFORCENAME}, {.l=0} },
    /*
    ** .pp
---- mutt.h.orig	2017-04-12 23:01:17 UTC
+--- mutt.h.orig	2019-12-08 02:41:29 UTC
 +++ mutt.h
-@@ -355,6 +355,7 @@ enum
+@@ -423,6 +423,7 @@ enum
    OPTFCCCLEAR,
    OPTFLAGSAFE,
    OPTFOLLOWUPTO,
@@ -22,9 +22,9 @@
    OPTFORCENAME,
    OPTFORWDECODE,
    OPTFORWQUOTE,
---- sendlib.c.orig	2017-04-12 23:01:08 UTC
+--- sendlib.c.orig	2019-12-08 02:41:29 UTC
 +++ sendlib.c
-@@ -1171,7 +1171,9 @@ static void mutt_set_encoding (BODY *b, 
+@@ -1218,7 +1218,9 @@ static void mutt_set_encoding (BODY *b, CONTENT *info)
    if (b->type == TYPETEXT)
    {
      char *chsname = mutt_get_body_charset (send_charset, sizeof (send_charset), b);

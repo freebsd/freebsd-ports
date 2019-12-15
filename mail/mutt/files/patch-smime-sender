@@ -1,6 +1,6 @@
---- commands.c.orig	2019-05-25 16:22:39 UTC
+--- commands.c.orig	2019-11-30 21:59:38 UTC
 +++ commands.c
-@@ -266,7 +266,7 @@ int mutt_display_message (HEADER *cur)
+@@ -285,7 +285,7 @@ int mutt_display_message (HEADER *cur)
      {
        if (cur->security & GOODSIGN)
        {
@@ -9,13 +9,13 @@
  	  mutt_message ( _("S/MIME signature successfully verified."));
  	else
  	  mutt_error ( _("S/MIME certificate owner does not match sender."));
---- init.h.orig	2019-06-15 21:17:02 UTC
+--- init.h.orig	2019-12-14 21:58:25 UTC
 +++ init.h
-@@ -3378,6 +3378,15 @@ struct option_t MuttVars[] = {
+@@ -3518,6 +3518,15 @@ struct option_t MuttVars[] = {
    ** to determine the key to use. It will ask you to supply a key, if it can't find one.
    ** (S/MIME only)
    */
-+  { "smime_dont_check_sender",	DT_BOOL, R_NONE, OPTSMIMENOSENDER, 0 },
++  { "smime_dont_check_sender",	DT_BOOL, R_NONE, {.l=OPTSMIMENOSENDER}, {.l=0} },
 +  /*
 +  ** .pp
 +  ** This flag controls wether you want the skip the check for the sender's
@@ -24,12 +24,12 @@
 +  ** longer needs email-addresses as part of the certificates.
 +  ** It is not set by default.
 +  */
-   { "smime_self_encrypt_as",	DT_SYN,  R_NONE, UL "smime_default_key", 0 },
-   { "smime_default_key",		DT_STR,	 R_NONE, UL &SmimeDefaultKey, 0 },
+   { "smime_self_encrypt_as",	DT_SYN,  R_NONE, {.p="smime_default_key"}, {.p=0} },
+   { "smime_default_key",		DT_STR,	 R_NONE, {.p=&SmimeDefaultKey}, {.p=0} },
    /*
---- mutt.h.orig	2019-06-15 21:17:02 UTC
+--- mutt.h.orig	2019-12-14 21:58:25 UTC
 +++ mutt.h
-@@ -567,6 +567,7 @@ enum
+@@ -587,6 +587,7 @@ enum
    OPTSMIMEISDEFAULT,
    OPTSMIMESELFENCRYPT,
    OPTASKCERTLABEL,
