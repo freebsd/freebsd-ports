@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	dhcpcd
-PORTVERSION=	8.99.0.g20191130
+PORTVERSION=	8.99.0.g20191212
 CATEGORIES=	net
 MASTER_SITES=	https://roy.marples.name/cgit/dhcpcd.git/snapshot/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${GITTAG}
-GITTAG=		273915d
+GITTAG=		4a462fa
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	DHCP/IPv4LL/IPv6RS/DHCPv6 client
@@ -22,8 +22,7 @@ USES=		compiler:c11 cpe tar:xz
 CPE_VENDOR=	dhcpcd_project
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/examples \
-		--enable-privsep
-CFLAGS+=	-DDHCPCD_USER='\"_dhcp\"'
+		--privsepuser="_dhcp"
 USE_RC_SUBR=	dhcpcd
 
 post-install:
