@@ -10,9 +10,10 @@ COMMENT=	MPRIS plugin for mpv
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	mpv:multimedia/mpv
 RUN_DEPENDS=	mpv:multimedia/mpv
 
-USES=		gettext-runtime gnome
+USES=		gettext-runtime gnome pkgconfig
 USE_GNOME=	glib20
 USE_GITHUB=	yes
 GH_ACCOUNT=	hoyon
