@@ -68,6 +68,7 @@ man/man5/muttrc.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iconv/iconv.solaris-2.6-cjk.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iconv/iconv.solaris-2.6.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iconv/iconv.solaris-2.7.rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/markdown2html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mutt_xtitle
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgp2.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgp6.rc

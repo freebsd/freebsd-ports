@@ -1,15 +1,15 @@
---- Makefile.in.orig	2019-06-15 16:07:04 UTC
+--- Makefile.in.orig	2019-11-30 18:14:23 UTC
 +++ Makefile.in
-@@ -537,7 +537,7 @@ AUTOMAKE_OPTIONS = 1.6 foreign
- @BUILD_DOC_TRUE@DOC_SUBDIR = doc
- @BUILD_IMAP_TRUE@IMAP_SUBDIR = imap
+@@ -540,7 +540,7 @@ AUTOMAKE_OPTIONS = 1.6 foreign
  @BUILD_IMAP_TRUE@IMAP_INCLUDES = -I$(top_srcdir)/imap
--SUBDIRS = m4 po intl $(DOC_SUBDIR) contrib $(IMAP_SUBDIR)
-+SUBDIRS = m4 po intl contrib $(IMAP_SUBDIR) . $(DOC_SUBDIR)
+ @BUILD_AUTOCRYPT_TRUE@AUTOCRYPT_SUBDIR = autocrypt
+ @BUILD_AUTOCRYPT_TRUE@AUTOCRYPT_INCLUDES = -I$(top_srcdir)/autocrypt
+-SUBDIRS = m4 po intl doc contrib $(IMAP_SUBDIR) $(AUTOCRYPT_SUBDIR)
++SUBDIRS = m4 po intl contrib $(IMAP_SUBDIR) $(AUTOCRYPT_SUBDIR) . doc
  bin_SCRIPTS = muttbug flea $(SMIMEAUX_TARGET)
  @BUILD_HCACHE_TRUE@HCVERSION = hcversion.h
  BUILT_SOURCES = keymap_defs.h patchlist.c reldate.h conststrings.c version.h $(HCVERSION)
-@@ -1676,18 +1676,9 @@ install-exec-hook:
+@@ -1690,18 +1690,9 @@ install-exec-hook:
  		rm -f $(DESTDIR)$(bindir)/mutt.dotlock ;		\
  		ln -sf $(DESTDIR)$(bindir)/mutt_dotlock $(DESTDIR)$(bindir)/mutt.dotlock ; \
  	fi

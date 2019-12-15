@@ -1,6 +1,6 @@
---- doc/mutt.man.orig	2009-02-06 13:52:38.000000000 +0100
-+++ doc/mutt.man	2009-02-06 13:55:05.000000000 +0100
-@@ -67,7 +67,8 @@
+--- doc/mutt.man.orig	2019-05-25 16:22:39 UTC
++++ doc/mutt.man
+@@ -67,7 +67,8 @@ mutt \- The Mutt Mail User Agent
  .PP
  Mutt is a small but very powerful text based program for reading and sending electronic
  mail under unix operating systems, including support for color terminals, MIME,

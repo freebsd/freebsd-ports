@@ -1,8 +1,8 @@
---- doc/Makefile.in.orig	2019-05-25 16:13:43 UTC
+--- doc/Makefile.in.orig	2019-11-30 18:14:24 UTC
 +++ doc/Makefile.in
-@@ -684,14 +684,7 @@ install-data-local: makedoc-all instdoc
- 	-for f in $(HTML_DOCFILES) ; do \
- 		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir) ; \
+@@ -691,14 +691,7 @@ install-data-local: makedoc-all instdoc
+ 	    $(INSTALL) -m 644 $$f $(DESTDIR)$(docdir) ; \
+ 	  fi \
  	done
 -	$(INSTALL) -m 644 Muttrc $(DESTDIR)$(sysconfdir)/Muttrc.dist
 -	-if [ -f $(DESTDIR)$(pkgdatadir)/Muttrc ] ; then \
@@ -16,7 +16,7 @@
  	-if [ -f mutt.info ] ; then \
  	  $(MKDIR_P) $(DESTDIR)$(infodir) ; \
  	  $(INSTALL) -m 644 mutt.info $(DESTDIR)$(infodir) ; \
-@@ -727,9 +720,7 @@ uninstall-local:
+@@ -734,9 +727,7 @@ uninstall-local:
  
  check:
  manual.txt: manual.html
