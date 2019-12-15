@@ -297,7 +297,7 @@ BROKEN=		The WITH_APOP option is deprecated; set WITH_CLEAR_PASSWD instead, APOP
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USES=	pgsql
+USES+=	pgsql
 .endif
 
 .if ${PORT_OPTIONS:MSQL_LOG_TRIM}
