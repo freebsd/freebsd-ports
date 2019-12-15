@@ -497,9 +497,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/all-about-zfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/applications.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-drives.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-kbd-mice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-other.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-peripherals.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-processors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/disks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/funnies.html
@@ -511,7 +511,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/misc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/networking.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/ppp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/security.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/serial.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/support.html

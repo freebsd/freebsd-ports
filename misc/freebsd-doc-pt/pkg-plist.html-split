@@ -323,9 +323,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/all-about-zfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/applications.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-drives.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-kbd-mice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-other.html
+%%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-peripherals.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-processors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/disks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/funnies.html
@@ -337,7 +337,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/legalnotice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/misc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/networking.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/ppp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/security.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/serial.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/support.html
@@ -860,6 +859,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-python.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-qmail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-qmake.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-qt-dist.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-qt.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-readline.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-samba.html
@@ -877,6 +877,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-varnish.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-webplugin.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-xfce.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-xorg-cat.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-xorg.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-zip.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-zope.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses.html
