@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lwjgl
-DISTVERSION=	2.9.3
+DISTVERSION=	2.9.4.20161208
 CATEGORIES=	games java
-MASTER_SITES=	SF/java-game-lib/Official%20Releases/${PORTNAME:tu}%20${PORTVERSION}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-source-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	freebsd@skinc.ru
 COMMENT=	Lightweight Java Game Library
@@ -14,43 +11,39 @@ COMMENT=	Lightweight Java Game Library
 LICENSE=	BSD3CLAUSE
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
-.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
-BROKEN_i386=	ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment
-.endif
 
-BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:games/jutils \
-		${JAVALIBDIR}/jinput/jinput.jar:games/jinput
+BUILD_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils \
+		${JAVAJARDIR}/jinput/jinput.jar:games/jinput
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
+USES=		dos2unix xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	LWJGL
+GH_TAGNAME=	2df01dd
 
-USES=		dos2unix zip xorg
-DOS2UNIX_REGEX= .*.[^jp][^an][^rg]$
+DOS2UNIX_REGEX=	.*.[^jp][^an][^rg]$
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
-JAVA_OS=	native
-JAVA_VENDOR=	openjdk
 USE_ANT=	yes
 USE_XORG=	xcursor xrandr xxf86vm
-MAKE_ENV+=	CLASSPATH=${JAVALIBDIR}/jutils/jutils.jar:${JAVALIBDIR}/jinput/jinput.jar:${WRKSRC}/${DISTNAME}/jar/
+MAKE_ENV+=	CLASSPATH=${JAVAJARDIR}/jutils/jutils.jar:${JAVAJARDIR}/jinput/jinput.jar:${WRKSRC}/${DISTNAME}/jar/
 ALL_TARGET=	jars compile_native
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}.jar \
-		%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}_test.jar \
-		%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}_util.jar \
-		%%JAVAJARDIR%%/${PORTNAME}/${PORTNAME}_util_applet.jar
-PLIST_DIRS=	%%JAVAJARDIR%%/${PORTNAME} \
-		lib/${PORTNAME}${PORTVERSION}
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}/${PORTNAME}.jar \
+		${JAVAJARDIR}/${PORTNAME}/${PORTNAME}_test.jar \
+		${JAVAJARDIR}/${PORTNAME}/${PORTNAME}_util.jar \
+		${JAVAJARDIR}/${PORTNAME}/${PORTNAME}_util_applet.jar
+PLIST_DIRS=	${JAVAJARDIR}/${PORTNAME} \
+		lib/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
-PLIST_FILES+=	lib/${PORTNAME}${PORTVERSION}/lib${PORTNAME}.so
+PLIST_FILES+=	lib/${PORTNAME}/lib${PORTNAME}.so
 .endif
 
 .if ${ARCH} == amd64 || ${ARCH} == powerpc64
-PLIST_FILES+=	lib/${PORTNAME}${PORTVERSION}/lib${PORTNAME}64.so
+PLIST_FILES+=	lib/${PORTNAME}/lib${PORTNAME}64.so
 .endif
 
 .if ${ARCH} == powerpc64
@@ -72,14 +65,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libs/${_jar:T} \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
 .endfor
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .if ${ARCH} == i386
 	${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}.so \
-		${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == powerpc64
 	${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}64.so \
-		${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .endif
 
 .include <bsd.port.post.mk>

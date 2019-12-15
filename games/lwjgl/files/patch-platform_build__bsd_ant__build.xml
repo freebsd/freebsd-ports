@@ -1,6 +1,5 @@
---- platform_build/bsd_ant/build.xml.orig	2015-12-19 18:22:18 UTC
+--- platform_build/bsd_ant/build.xml.orig	2019-12-10 20:24:26
 +++ platform_build/bsd_ant/build.xml
-
 @@ -4,8 +4,8 @@
  	<property name="native" location="../../src/native"/>
  	<property name="libname32" value="liblwjgl.so"/>
@@ -12,3 +11,12 @@
      <property name="cflags32" value="-O2 -Wall -c -fPIC -std=c99 -Wunused"/>
  
  	<target name="clean">
+@@ -39,7 +39,7 @@
+     		<os name="SunOS" />
+     	</condition>
+ 
+-		<property name="linker_flags32" value="${version_script_flags32} -shared -O2 -Wall -o ${libname32} ${libs32} ${xf86vm_lib}"/>
++		<property name="linker_flags32" value="${version_script_flags32} -shared -O2 -Wall -z notext -o ${libname32} ${libs32} ${xf86vm_lib}"/>
+ 		<property name="linker_flags64" value="${version_script_flags64} -shared -O2 -Wall -o ${libname64} ${libs64} ${xf86vm_lib}"/>
+ 
+     	<condition property="build.32bit.only">
