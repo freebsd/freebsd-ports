@@ -1,0 +1,19 @@
+--- 3rdparty/tvm/CMakeLists.txt.orig	2019-12-15 05:56:25 UTC
++++ 3rdparty/tvm/CMakeLists.txt
+@@ -378,11 +378,11 @@ if (INSTALL_DEV)
+     FILES_MATCHING
+     PATTERN "*.h"
+     )
+-  install(
+-    DIRECTORY "3rdparty/dmlc-core/include/." DESTINATION "include"
+-    FILES_MATCHING
+-    PATTERN "*.h"
+-    )
++  #install(
++  #  DIRECTORY "3rdparty/dmlc-core/include/." DESTINATION "include"
++  #  FILES_MATCHING
++  #  PATTERN "*.h"
++  #  )
+   install(
+     DIRECTORY "nnvm/include/." DESTINATION "include"
+     FILES_MATCHING
