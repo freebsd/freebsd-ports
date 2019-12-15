@@ -7,7 +7,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexander.nusov@nfvexpress.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for Linux kernel SCSI target (aka lio)
 
 LICENSE=	APACHE20

@@ -7,7 +7,7 @@ CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexander.nusov@nfvexpress.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client Library for OpenStack Barbican Key Management API
 
 LICENSE=	APACHE20

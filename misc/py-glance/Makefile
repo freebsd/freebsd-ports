@@ -8,7 +8,7 @@ CATEGORIES=	misc python
 MASTER_SITES=	https://tarballs.openstack.org/glance/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexander.nusov@nfvexpress.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenStack Image Service
 
 LICENSE=	APACHE20

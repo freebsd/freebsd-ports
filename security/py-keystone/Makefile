@@ -8,7 +8,7 @@ CATEGORIES=	security python
 MASTER_SITES=	https://tarballs.openstack.org/keystone/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alexander.nusov@nfvexpress.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenStack Keystone / Identity service
 
 LICENSE=	APACHE20
