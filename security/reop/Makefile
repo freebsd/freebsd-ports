@@ -5,17 +5,16 @@ PORTNAME=	reop
 PORTVERSION=	2.1.0
 PORTREVISION=	4
 CATEGORIES=	security
+MASTER_SITES=	https://humungus.tedunangst.com/r/reop/d/
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Reasonable Expectation Of Privacy
 
-BROKEN=		unfetchable
+LICENSE=	ISCL
 
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
-USES=		gmake
-USE_GITHUB=	yes
-GH_ACCOUNT=	tedu
+USES=		gmake tar:tgz
 
 MAKEFILE=	GNUmakefile
 MAKE_ARGS+=	CPPFLAGS="-D_NSIG=NSIG" \
