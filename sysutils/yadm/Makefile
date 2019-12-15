@@ -2,9 +2,10 @@
 
 PORTNAME=	yadm
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	alex@xanderio.de
+MAINTAINER=	vendion@gmail.com
 COMMENT=	Yet Another Dotfiles Manager
 
 LICENSE=	GPLv3+
