@@ -1,0 +1,5 @@
+PyMeeus is a Python implementation of the astronomical algorithms
+described in the classical book "Astronomical Algorithms, 2nd Edition,
+Willmann-Bell Inc. (1998)" by Jean Meeus.
+
+WWW: https://github.com/architest/pymeeus
