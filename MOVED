@@ -13522,3 +13522,11 @@ net-im/pidgin-privacy-please||2019-12-10|Has expired: Abandonware
 java/jakarta-commons-pool|java/apache-commons-pool|2019-12-12|Renamed upstream
 lang/compute-runtime|lang/intel-compute-runtime|2019-12-13|Disambiguate
 astro/py-aipy||2019-12-14|Outdated, depends on outdated py-astropy
+net/samba48|net/samba410|2019-12-15|Has expired: not supported by the upstream
+sysutils/life-preserver||2019-12-15|Has expired: Abandoned upstream
+sysutils/pbi-manager||2019-12-15|Has expired: Abandoned upstream
+sysutils/pcbsd-appweb||2019-12-15|Has expired: Abandoned upstream
+sysutils/pcbsd-libsh||2019-12-15|Has expired: Abandoned upstream
+sysutils/pcbsd-syscache||2019-12-15|Has expired: Abandoned upstream
+sysutils/pcbsd-utils||2019-12-15|Has expired: Abandoned upstream
+sysutils/warden||2019-12-15|Has expired: Abandoned upstream

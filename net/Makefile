@@ -1357,7 +1357,6 @@
     SUBDIR += ryu
     SUBDIR += s3ql
     SUBDIR += samba410
-    SUBDIR += samba48
     SUBDIR += samplicator
     SUBDIR += savvycan
     SUBDIR += sbd

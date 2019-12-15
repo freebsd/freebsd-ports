@@ -1,5 +1,0 @@
-The syscache utility is used by PC-BSD and others to provide fast
-access and retrival of system state data, such as package info, jail
-status, update info and more.
-
-WWW: https://github.com/pcbsd/pcbsd
