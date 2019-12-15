@@ -14,6 +14,9 @@ COMMENT=	OpenStack Image Service
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Fails to build with recent versions of python, unmaintained
+EXPIRATION_DATE=	2020-02-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedxml>=0.5.0:devel/py-defusedxml@${PY_FLAVOR} \
@@ -124,4 +127,10 @@ post-install-DOCS-on:
 			${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 				"! -name .buildinfo -and ! -name objects.inv")
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 3700
+BROKEN=		fails to build
+.endif
+
+.include <bsd.port.post.mk>
