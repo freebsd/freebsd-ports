@@ -3,6 +3,7 @@
 
 PORTNAME=	arpwatch
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://ee.lbl.gov/downloads/arpwatch/ \
 		LOCAL/leres/arpwatch
@@ -44,7 +45,7 @@ MAKE_ARGS=	ARPDIR=${ARPDIR}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/arpwatch
-.for F in ethercodes.dat d.awk duplicates.awk euppertolower.awk e.awk p.awk
+.for F in d.awk duplicates.awk euppertolower.awk e.awk p.awk
 	${INSTALL_DATA} ${WRKSRC}/${F} ${STAGEDIR}${PREFIX}/arpwatch
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${STAGEDIR}${PREFIX}/arpwatch

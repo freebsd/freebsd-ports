@@ -2,7 +2,7 @@ arpwatch/arp2ethers
 arpwatch/d.awk
 arpwatch/duplicates.awk
 arpwatch/e.awk
-arpwatch/ethercodes.dat
+%%ETHERCODES%%arpwatch/ethercodes.dat
 arpwatch/euppertolower.awk
 arpwatch/massagevendor
 arpwatch/p.awk
