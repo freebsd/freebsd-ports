@@ -1,0 +1,10 @@
+PyEphem provides an ephem Python package for performing high-precision
+astronomy computations. The underlying numeric routines are coded in C
+and are the same ones that drive the popular XEphem astronomy application,
+whose author, Elwood Charles Downey, generously gave permission for their
+use in PyEphem. The name ephem is short for the word ephemeris, which is
+the traditional term for a table giving the position of a planet, asteroid,
+or comet for a series of dates.
+
+WWW: https://rhodesmill.org/pyephem/
+WWW: https://pypi.org/project/ephem/
