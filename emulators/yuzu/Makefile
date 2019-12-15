@@ -56,12 +56,12 @@ LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test
 
 # XXX Remove after FreeBSD 11.2/12.0 reach EOL i.e., around 2020-02-01
-#.if make(makesum) || (!exists(/usr/include/c++/v1/charconv) && exists(/usr/lib/libc++.so))
+.if make(makesum) || (!exists(/usr/include/c++/v1/charconv) && exists(/usr/lib/libc++.so))
 MASTER_SITES+=	https://releases.llvm.org/${LLVM_VER}/:libcxx
 DISTFILES+=	libcxx-${LLVM_VER}.src.tar.xz:libcxx
 CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx-${LLVM_VER}.src/include
 LLVM_VER=	8.0.0 # same as FreeBSD 11.3
-#.endif
+.endif
 
 OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK SNDIO
 OPTIONS_DEFAULT=ALSA PULSEAUDIO JACK SNDIO
