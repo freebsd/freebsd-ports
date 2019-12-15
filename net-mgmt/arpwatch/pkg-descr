@@ -2,4 +2,4 @@ This package contains tools that monitors ethernet activity and
 maintains a database of ethernet/ip address pairings. It also reports
 certain changes via email.
 
-WWW: http://ee.lbl.gov/
+WWW: https://ee.lbl.gov/downloads/arpwatch/
