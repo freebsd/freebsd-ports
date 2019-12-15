@@ -6,4 +6,4 @@ a developer spends writing or debugging build definitions is a second wasted.
 So is every second spent waiting for the build system to actually start
 compiling code.
 
-WWW: http://mesonbuild.com
+WWW: https://mesonbuild.com/
