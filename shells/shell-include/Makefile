@@ -12,8 +12,6 @@ COMMENT=	Include system for shell scripts
 
 BROKEN=		unfetchable
 
-USES=		perl5
-
 USES=		perl5 tar:tgz
 USE_PERL5=	build
 NO_BUILD=	yes

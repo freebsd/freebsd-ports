@@ -11,8 +11,7 @@ COMMENT=	Cisco Discovery Protocol Reporter
 
 LICENSE=	GPLv2
 
-USES=		dos2unix
-USES=		tar:tgz
+USES=		dos2unix tar:tgz
 DOS2UNIX_GLOB=	*.c *.h
 LDFLAGS+=	-L${LOCALBASE}/lib -lpcap
 
