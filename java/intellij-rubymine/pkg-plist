@@ -183,7 +183,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/lib/commons-imaging-1.0-RC-1.jar
 %%DATADIR%%/lib/commons-lang-2.4.jar
 %%DATADIR%%/lib/commons-logging-1.2.jar
-%%DATADIR%%/lib/commons-net-%%PYTHON_VER%%.jar
+%%DATADIR%%/lib/commons-net-3.6.jar
 %%DATADIR%%/lib/delight-rhino-sandbox-0.0.9.jar
 %%DATADIR%%/lib/eddsa-0.2.0.jar
 %%DATADIR%%/lib/error_prone_annotations-2.3.1.jar
