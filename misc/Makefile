@@ -254,6 +254,7 @@
     SUBDIR += morse
     SUBDIR += mtail
     SUBDIR += mtx
+    SUBDIR += mxnet
     SUBDIR += najitool
     SUBDIR += netron
     SUBDIR += nms

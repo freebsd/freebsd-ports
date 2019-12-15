@@ -1,0 +1,27 @@
+--- CMakeLists.txt.orig	2019-12-13 19:55:11 UTC
++++ CMakeLists.txt
+@@ -490,6 +490,7 @@ if(USE_JEMALLOC)
+   endif()
+ endif()
+ 
++if (ENABLE_TESTING)
+ include(CTest)
+ set(GTEST_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/googletest/googletest")
+ set(GTEST_INCLUDE_DIR ${GTEST_ROOT}/include)
+@@ -500,6 +501,7 @@ set(GTEST_LIBRARY gtest)
+ 
+ add_subdirectory(${GTEST_ROOT})
+ find_package(GTest REQUIRED)
++endif()
+ 
+ # cudnn detection
+ if(USE_CUDNN AND USE_CUDA)
+@@ -819,7 +821,7 @@ install(TARGETS ${MXNET_INSTALL_TARGETS}
+ #       https://cmake.org/cmake/help/v3.0/module/GNUInstallDirs.html
+ 
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dlpack/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dmlc-core/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
++#install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/dmlc-core/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+ if(USE_MKLDNN)
+   install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/mkldnn/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+ endif()

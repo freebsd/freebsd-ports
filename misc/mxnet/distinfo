@@ -1,0 +1,11 @@
+TIMESTAMP = 1576386254
+SHA256 (apache-incubator-mxnet-1.6.0.rc0_GH0.tar.gz) = a28b76846ef0e8236b6089d8f5b5701afd753d61c5c13854070708e36f78c2fa
+SIZE (apache-incubator-mxnet-1.6.0.rc0_GH0.tar.gz) = 21892252
+SHA256 (apache-incubator-tvm-5d66e7a_GH0.tar.gz) = 394c0643cf360d9ece46c7c6aa47aae987c3a5ad552526f182aaaf25246f7e7b
+SIZE (apache-incubator-tvm-5d66e7a_GH0.tar.gz) = 2950312
+SHA256 (dmlc-dlpack-b90e939_GH0.tar.gz) = 15537e4d18ef85bf560edc4ab53a9689acf7e2e1c1274f432e164fe98b5e5526
+SIZE (dmlc-dlpack-b90e939_GH0.tar.gz) = 39583
+SHA256 (cbd43cab6eef8362bcb1cc91e59b49045c90444c.patch) = bd9267ff0cc84b7ca444a605cf48074b3f8d37801b47c9b4558b999fa4df0c98
+SIZE (cbd43cab6eef8362bcb1cc91e59b49045c90444c.patch) = 722
+SHA256 (89c180d47b407913f0a9948d6e7f55daa523e7aa.patch) = 4c0625c2c81e2997fc4b45bde8038aeb15989349bbe04dad4f29c54dc7cd19e6
+SIZE (89c180d47b407913f0a9948d6e7f55daa523e7aa.patch) = 659
