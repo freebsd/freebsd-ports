@@ -19,8 +19,6 @@ COMMENT=	Ettus Research UHD driver framework
 # is understood and if appropriate, we can add that license here.
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	fails to link: undefined reference to boost function
-
 LIB_DEPENDS=	${PY_BOOST} \
 		libboost_system.so:devel/boost-libs
 BUILD_DEPENDS=	cheetah-analyze:devel/py-cheetah@${PY_FLAVOR} \
