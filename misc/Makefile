@@ -383,6 +383,7 @@
     SUBDIR += py-eemeter
     SUBDIR += py-emoji
     SUBDIR += py-fast-histogram
+    SUBDIR += py-fleep
     SUBDIR += py-fuzzy
     SUBDIR += py-glance
     SUBDIR += py-huepy

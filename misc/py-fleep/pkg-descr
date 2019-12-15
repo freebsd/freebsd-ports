@@ -1,0 +1,4 @@
+fleep is a library that determines file format by file signature (also known as
+"magic number").
+
+WWW: https://github.com/floyernick/fleep-py
