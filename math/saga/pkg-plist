@@ -31,8 +31,8 @@ lib/libsaga_api-%%PORTVERSION%%.so
 lib/libsaga_api.so
 lib/libsaga_gdi-%%PORTVERSION%%.so
 lib/libsaga_gdi.so
-%%PYTHON_SITELIBDIR%%/__pycache__/saga_api.cpython-36.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/__pycache__/saga_api.cpython-36.pyc
+%%PYTHON_SITELIBDIR%%/__pycache__/saga_api.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/__pycache__/saga_api.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/_saga_api-%%PORTVERSION%%.so
 %%PYTHON_SITELIBDIR%%/_saga_api.a
 %%PYTHON_SITELIBDIR%%/_saga_api.so
