@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	istio
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -81,7 +81,7 @@ GH_TUPLE=	\
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
 		golang:sync:1d60e4601c6f:golang_sync_1/vendor/github.com/golang/sync \
-		golang:sys:b09406accb47:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:fead79001313:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
 		golang:tools:70d37148ca0c:golang_tools/vendor/golang.org/x/tools \
