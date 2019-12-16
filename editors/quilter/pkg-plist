@@ -8,6 +8,7 @@ share/com.github.lainsce.quilter/highlight.js/styles/dark.min.css
 share/com.github.lainsce.quilter/highlight.js/styles/default.min.css
 share/com.github.lainsce.quilter/highlight.js/styles/sepia.min.css
 share/fonts/truetype/quilt/QuiltMono.ttf
+share/fonts/truetype/quilt/QuiltVier.ttf
 share/gtksourceview-3.0/styles/quilter-dark.xml
 share/gtksourceview-3.0/styles/quilter-moon.xml
 share/gtksourceview-3.0/styles/quilter-sepia.xml
