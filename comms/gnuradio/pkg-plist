@@ -2070,7 +2070,7 @@ share/applications/gnuradio-grc.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.hacking
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/README.qtgui
-%%PORTDOCS%%%%DOCSDIR%%/README.uhd
+%%UHD%%%%PORTDOCS%%%%DOCSDIR%%/README.uhd
 %%PORTDOCS%%%%DOCSDIR%%/README.vocoder
 %%PORTDOCS%%%%DOCSDIR%%/html/gr-trellis.html
 %%PORTDOCS%%%%DOCSDIR%%/xml/test_tcm.py.xml
