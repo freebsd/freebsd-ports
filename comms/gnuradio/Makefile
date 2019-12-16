@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.8.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/
 
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/yaml/__init__.py:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/gi/__init__.py:devel/py-gobject3@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/cairo/__init__.py:graphics/py-cairo@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/ephem/__init__.py:astro/pyephem@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/mako/__init__.py:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/six.py:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/click/__init__.py:devel/py-click@${PY_FLAVOR} \
@@ -88,7 +87,6 @@ OPTIONS_DEFINE=		DOCS UHD TESTING DOXYGEN
 ##OPTIONS_EXCLUDE_${i386}=	DOXYGEN
 # Yay. building docs is broken on 10 and HEAD too so turn them all off
 OPTIONS_EXCLUDE=	DOXYGEN
-OPTIONS_DEFAULT=	UHD
 OPTIONS_SUB=		yes
 UHD_DESC=	Include UHD support from Ettus
 TESTING_DESC=	Include testing support
