@@ -387,6 +387,7 @@
     SUBDIR += py-fleep
     SUBDIR += py-fuzzy
     SUBDIR += py-glance
+    SUBDIR += py-gluoncv
     SUBDIR += py-huepy
     SUBDIR += py-kartograph
     SUBDIR += py-molequeue

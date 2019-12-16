@@ -1,0 +1,12 @@
+GluonCV provides implementations of state-of-the-art (SOTA) deep learning
+algorithms in computer vision. It aims to help engineers, researchers, and
+students quickly prototype products, validate new ideas and learn computer
+vision.
+
+GluonCV features:
+* training scripts that reproduce SOTA results reported in latest papers
+* a large set of pre-trained models
+* carefully designed APIs and easy to understand implementations
+* community support
+
+WWW: https://gluon-cv.mxnet.io/
