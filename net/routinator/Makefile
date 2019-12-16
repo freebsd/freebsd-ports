@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	routinator
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -51,7 +51,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		c2-chacha-0.2.3 \
 		cc-1.0.47 \
 		cfg-if-0.1.10 \
-		chrono-0.4.9 \
+		chrono-0.4.10 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
 		constant_time_eq-0.1.4 \
@@ -86,7 +86,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		getrandom-0.1.13 \
 		h2-0.1.26 \
 		hermit-abi-0.1.3 \
-		http-0.1.19 \
+		http-0.1.20 \
 		http-body-0.1.0 \
 		httparse-1.3.4 \
 		hyper-0.12.35 \
@@ -101,7 +101,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		lazy_static-1.4.0 \
 		libc-0.2.65 \
 		listenfd-0.3.3 \
-		lock_api-0.3.1 \
+		lock_api-0.3.2 \
 		log-0.4.8 \
 		log-reroute-0.1.4 \
 		matches-0.1.8 \
@@ -111,12 +111,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		mime-0.3.14 \
 		mime_guess-2.0.1 \
 		miniz_oxide-0.3.5 \
-		mio-0.6.19 \
+		mio-0.6.21 \
 		mio-uds-0.6.7 \
 		miow-0.2.1 \
 		net2-0.2.33 \
 		num-integer-0.1.41 \
-		num-traits-0.2.9 \
+		num-traits-0.2.10 \
 		num_cpus-1.11.1 \
 		once_cell-1.2.0 \
 		parking_lot-0.9.0 \
@@ -162,10 +162,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		sct-0.5.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.102 \
-		serde_derive-1.0.102 \
-		serde_json-1.0.41 \
+		serde-1.0.103 \
+		serde_derive-1.0.103 \
+		serde_json-1.0.42 \
 		serde_urlencoded-0.5.5 \
+		signal-hook-0.1.12 \
+		signal-hook-registry-1.2.0 \
 		slab-0.4.2 \
 		smallvec-0.6.13 \
 		socks-0.3.2 \
@@ -173,7 +175,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		string-0.2.1 \
 		strsim-0.8.0 \
 		syn-0.15.44 \
-		syn-1.0.8 \
+		syn-1.0.9 \
 		synstructure-0.12.3 \
 		syslog-4.0.1 \
 		tempfile-3.1.0 \
@@ -184,15 +186,15 @@ CARGO_CRATES=	adler32-1.0.4 \
 		tokio-buf-0.1.1 \
 		tokio-codec-0.1.1 \
 		tokio-current-thread-0.1.6 \
-		tokio-executor-0.1.8 \
+		tokio-executor-0.1.9 \
 		tokio-fs-0.1.6 \
 		tokio-io-0.1.12 \
-		tokio-reactor-0.1.10 \
+		tokio-reactor-0.1.11 \
 		tokio-rustls-0.9.4 \
 		tokio-sync-0.1.7 \
 		tokio-tcp-0.1.3 \
 		tokio-threadpool-0.1.16 \
-		tokio-timer-0.2.11 \
+		tokio-timer-0.2.12 \
 		tokio-udp-0.1.5 \
 		tokio-uds-0.2.5 \
 		toml-0.5.5 \
