@@ -13532,3 +13532,4 @@ sysutils/pcbsd-utils||2019-12-15|Has expired: Abandoned upstream
 sysutils/warden||2019-12-15|Has expired: Abandoned upstream
 devel/glade3|devel/glade|2019-12-16|Overcome by newer version
 devel/glade2|devel/glade|2019-12-16|Overcome by newer version
+devel/goffice010|devel/goffice|2019-12-16|Main port updated to latest version

@@ -3,7 +3,7 @@
 
 PORTNAME=	cutter
 PORTVERSION=	1.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -27,15 +27,10 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	GOFFICE SOUP LCOV NLS
+OPTIONS_DEFINE=	SOUP LCOV NLS
 OPTIONS_SUB=	yes
-GOFFICE_DESC=	GOffice support
 SOUP_DESC=	libsoup support
 LCOV_DESC=	Force dependency on lcov
-
-GOFFICE_CONFIGURE_ENABLE=goffice
-# the 0.8 is part of the library name don't remove it.
-GOFFICE_LIB_DEPENDS=	libgoffice-0.8.so:devel/goffice
 
 LCOV_RUN_DEPENDS=	lcov:devel/lcov
 

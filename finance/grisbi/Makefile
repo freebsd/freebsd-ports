@@ -3,6 +3,7 @@
 
 PORTNAME=	grisbi
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION:R}.x/${PORTVERSION}
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libofx.so:finance/libofx		\
 		libfreetype.so:print/freetype2		\
-		libgoffice-0.10.so:devel/goffice010	\
+		libgoffice-0.10.so:devel/goffice	\
 		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		tar:bzip2 desktop-file-utils gmake gnome iconv localbase	\
