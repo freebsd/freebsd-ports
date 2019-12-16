@@ -1,4 +1,4 @@
---- setup.py.orig	2019-07-30 16:02:34 UTC
+--- setup.py.orig	2019-12-09 13:30:10 UTC
 +++ setup.py
 @@ -61,24 +61,24 @@ setup(
      # It is not considered best practice to use install_requires to pin dependencies to specific versions.
@@ -13,7 +13,8 @@
          "h2>=3.0.1,<4",
          "hyperframe>=5.1.0,<6",
          "kaitaistruct>=0.7,<0.9",
-         "ldap3>=2.5,<2.6",
+-        "ldap3>=2.5,<2.6",
++        "ldap3>=2.5",
          "passlib>=1.6.5",
          "pyasn1>=0.3.1,<0.5",
 -        "pyOpenSSL>=17.5,<18.1",
@@ -24,8 +25,9 @@
 -        "sortedcontainers>=1.5.4,<2.1",
 +        "sortedcontainers>=1.5.4",
          "tornado>=4.3,<5.2",
-         "urwid>=2.0.1,<2.1",
+-        "urwid>=2.0.1,<2.1",
 -        "wsproto>=0.11.0,<0.12.0",
++        "urwid>=2.0.1",
 +        "wsproto>=0.13.0",
      ],
      extras_require={
