@@ -1,6 +1,23 @@
 --- kernel/OS/FreeBSD/os_freebsd.c.orig	2019-03-06 07:52:21 UTC
 +++ kernel/OS/FreeBSD/os_freebsd.c
-@@ -920,15 +920,9 @@ oss_poll (struct cdev *bsd_dev, int events, struct thr
+@@ -15,6 +15,8 @@
+ #include "oss_config.h"
+ #include "midi_core.h"
+ #include <oss_pci.h>
++#include <sys/param.h>
++#include <sys/types.h>
+ #include <sys/conf.h>
+ #include <sys/module.h>
+ #include <sys/proc.h>
+@@ -25,6 +28,7 @@
+ #include <sys/poll.h>
+ #include <sys/param.h>
+ #include <sys/filio.h>
++#include <sys/systm.h>
+ 
+ /* Function prototypes */
+ static d_open_t oss_open;
+@@ -920,15 +923,9 @@ oss_poll (struct cdev *bsd_dev, int events, struct thr
    return ev.revents;
  }
  
