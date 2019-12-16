@@ -18,4 +18,4 @@ Netdot features include:
 	- Netdot can generate configuration files for various other tools,
 	including: Nagios, Sysmon, RANCID, Cacti, ISC BIND and ISC DHCPD.
 
-WWW: http://netdot.uoregon.edu/
+WWW: https://github.com/cvicente/Netdot/
