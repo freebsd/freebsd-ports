@@ -1,3 +1,3 @@
-TIMESTAMP = 1573826961
-SHA256 (cyrus-imapd-2.5.14.tar.gz) = 8eaecdaae0ec6e3952333852bedee449edbd443abac2266df2b6ffb91215a943
-SIZE (cyrus-imapd-2.5.14.tar.gz) = 3125549
+TIMESTAMP = 1576500372
+SHA256 (cyrus-imapd-2.5.15.tar.gz) = fd7771c0ebd1648935b7aaf445bfe9a69b9870b31eac1a03843af34b013791e2
+SIZE (cyrus-imapd-2.5.15.tar.gz) = 3125529
