@@ -35,6 +35,7 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.7_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.8_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.9_features.txt
+%%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.6.0_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_License_History.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Zyn_ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Zyn_HISTORY.txt
@@ -57,10 +58,10 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Vector_Control.txt
 %%PORTDOCS%%%%DOCSDIR%%/Voice_Mod_Oscillators.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshi_Zyn_NRPNs.txt
-%%PORTDOCS%%%%DOCSDIR%%/Yoshimi_1.6.0_features.txt
+%%PORTDOCS%%%%DOCSDIR%%/Yoshimi_1.6.1_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshimi_Only_NRPNs.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshimi_Quote.txt
-%%PORTDOCS%%%%DOCSDIR%%/yoshimi-user-manual-1.6.0.pdf
+%%PORTDOCS%%%%DOCSDIR%%/yoshimi-user-manual-1.6.1.pdf
 share/icons/hicolor/scalable/apps/yoshimi.svg
 share/icons/hicolor/scalable/apps/yoshimi_alt.svg
 share/metainfo/yoshimi.appdata.xml
@@ -910,14 +911,15 @@ share/pixmaps/yoshimi.png
 %%DATADIR%%/banks/chip/0048-Glitch_in_the_Machine.xiz
 %%DATADIR%%/banks/chip/0049-Dings.xiz
 %%DATADIR%%/banks/chip/0050-Ghost_Bells.xiz
+%%DATADIR%%/examples/1st_README.txt
 %%DATADIR%%/examples/CoolSound.txt
 %%DATADIR%%/examples/CoolSound.xvy
 %%DATADIR%%/examples/CrossFade.txt
 %%DATADIR%%/examples/CrossFade.xiz
-%%DATADIR%%/examples/Microtonal Demo.txt
 %%DATADIR%%/examples/Microtonal Keymap Demo.kbm
 %%DATADIR%%/examples/Microtonal Ratio Scale.xsz
 %%DATADIR%%/examples/Microtonal Tuning Demo.scl
+%%DATADIR%%/examples/Microtonal_Demo.txt
 %%DATADIR%%/examples/Original Zyn Patchsets/0km.xmz
 %%DATADIR%%/examples/Original Zyn Patchsets/Arpeggio 1.xmz
 %%DATADIR%%/examples/Original Zyn Patchsets/Arpeggio 2.xmz
