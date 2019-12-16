@@ -3,4 +3,4 @@ presentation. It can also be used to create slides.  It behaves similarly
 to other packages like Prosper, but has the advantage that it works
 together directly with pdflatex, but also with dvips.
 
-WWW: https://bitbucket.org/rivanvx/beamer/wiki/Home
+WWW: https://github.com/josephwright/beamer
