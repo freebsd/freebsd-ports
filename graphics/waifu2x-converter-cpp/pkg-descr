@@ -2,4 +2,4 @@ waifu2x achieves image superresolution for anime-style art using deep
 convolutional neural networks from Torch. waifu2x-converter-cpp
 reimplements its converter function in C++ using OpenCV.
 
-WWW: https://github.com/tanakamura/waifu2x-converter-cpp
+WWW: https://github.com/DeadSix27/waifu2x-converter-cpp
