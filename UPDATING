@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191216:
+  AFFECTS: users of python
+  AUTHOR: antoine@FreeBSD.org
+
+  Default version of python3 and python was switched to 3.7.
+
+  For ports users wanting to keep version 3.6 as default,
+  add DEFAULT_VERSIONS+= python=3.6 python3=3.6 to make.conf
+
 20191204
   AFFECTS: users of mail/nextcloud-mail
   AUTHOR: brnrd@FreeBSD.org
