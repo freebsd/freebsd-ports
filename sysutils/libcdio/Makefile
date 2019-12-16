@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcddb.so:audio/libcddb
 TEST_DEPENDS=	genisoimage:sysutils/genisoimage
 
-USES=		cpe gmake iconv libtool localbase \
+USES=		compiler:c11 cpe gmake iconv libtool localbase \
 		ncurses pathfix perl5 pkgconfig tar:bzip2
 USE_PERL5=	build
 USE_LDCONFIG=	yes
