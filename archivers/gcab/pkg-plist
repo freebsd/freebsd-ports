@@ -12,9 +12,12 @@ libdata/pkgconfig/libgcab-1.0.pc
 man/man1/gcab.1.gz
 share/gir-1.0/GCab-1.0.gir
 share/gtk-doc/html/gcab/annotation-glossary.html
+share/gtk-doc/html/gcab/api-index-0-5.html
+share/gtk-doc/html/gcab/api-index-0-6.html
+share/gtk-doc/html/gcab/api-index-1-0.html
+share/gtk-doc/html/gcab/api-index-deprecated.html
 share/gtk-doc/html/gcab/api-index-full.html
 share/gtk-doc/html/gcab/ch01.html
-share/gtk-doc/html/gcab/deprecated-api-index.html
 share/gtk-doc/html/gcab/gcab-GCabCabinet.html
 share/gtk-doc/html/gcab/gcab-GCabFile.html
 share/gtk-doc/html/gcab/gcab-GCabFolder.html
@@ -33,8 +36,10 @@ share/locale/cs/LC_MESSAGES/gcab.mo
 share/locale/da/LC_MESSAGES/gcab.mo
 share/locale/de/LC_MESSAGES/gcab.mo
 share/locale/el/LC_MESSAGES/gcab.mo
+share/locale/en_GB/LC_MESSAGES/gcab.mo
 share/locale/es/LC_MESSAGES/gcab.mo
 share/locale/eu/LC_MESSAGES/gcab.mo
+share/locale/fi/LC_MESSAGES/gcab.mo
 share/locale/fr/LC_MESSAGES/gcab.mo
 share/locale/fur/LC_MESSAGES/gcab.mo
 share/locale/gl/LC_MESSAGES/gcab.mo
@@ -43,10 +48,12 @@ share/locale/id/LC_MESSAGES/gcab.mo
 share/locale/lt/LC_MESSAGES/gcab.mo
 share/locale/lv/LC_MESSAGES/gcab.mo
 share/locale/nb/LC_MESSAGES/gcab.mo
+share/locale/nl/LC_MESSAGES/gcab.mo
 share/locale/oc/LC_MESSAGES/gcab.mo
 share/locale/pl/LC_MESSAGES/gcab.mo
 share/locale/pt/LC_MESSAGES/gcab.mo
 share/locale/pt_BR/LC_MESSAGES/gcab.mo
+share/locale/ro/LC_MESSAGES/gcab.mo
 share/locale/ru/LC_MESSAGES/gcab.mo
 share/locale/sl/LC_MESSAGES/gcab.mo
 share/locale/sr/LC_MESSAGES/gcab.mo
