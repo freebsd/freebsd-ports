@@ -1,9 +1,8 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/desktop-file-utils/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	desktop-file-utils
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 
@@ -26,12 +25,8 @@ PORT_MIMEDIRS=	${LOCALBASE}/share/applications
 
 MIMEDIRS=	${PORT_MIMEDIRS}
 
-post-patch:
-	@${SED} -e 's|%%MIMEDIRS%%|${MIMEDIRS}| ;\
-		s|%%PORT_MIMEDIRS%%|${PORT_MIMEDIRS}|' \
-		< ${FILESDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
-	@${SED} -e 's|%%PORT_MIMEDIRS%%|${PORT_MIMEDIRS}|' \
-		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+SUB_FILES=	pkg-deinstall pkg-install
+SUB_LIST=	MIMEDIRS="${MIMEDIRS}"
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/desktop-entry-mode.el \
