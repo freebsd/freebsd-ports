@@ -1,0 +1,4 @@
+SQL::NamedPlaceholder is extension of placeholder.
+This enable more readable and robust code.
+
+WWW: https://metacpan.org/release/SQL-NamedPlaceholder
