@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	waifu2x-w2xc
-DISTVERSION=	r6
-PORTREVISION=	5
+DISTVERSION=	r8
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	vapoursynth-
 
@@ -19,15 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	HomeOfVapourSynthEvolution
 GH_PROJECT=	VapourSynth-Waifu2x-w2xc
 
-USES=		compiler:c++11-lib gmake localbase pkgconfig
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--install="${STAGEDIR}${DATADIR}" \
-		--cxx="${CXX}" \
-		--extra-cxxflags="${CPPFLAGS} ${CXXFLAGS}" \
-		--extra-ldflags="${LDFLAGS}" \
-		--extra-libs="${LIBS}"
-MAKEFILE=	GNUmakefile
-MAKE_ARGS=	STRIP="${STRIP_CMD}"
+USES=		compiler:c++14-lang localbase:ldflags meson pkgconfig
 DATADIR=	${PREFIX}/lib/vapoursynth
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 PORTDATA=	lib${PORTNAME}.so models
@@ -36,14 +27,10 @@ PORTDOCS=	*.md
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/\*linux\*/*/' \
-		-e 's/-O3 //; /=.*-mfpmath/d; /-msse/d' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} '/STRIP/s/-x //' ${WRKSRC}/${MAKEFILE}
+# FreeBSD i386 defaults to -march=i686 (i486 with Clang < 9)
+	@${REINPLACE_CMD} '/-msse2/d' ${WRKSRC}/meson.build
 
 post-install:
-	(cd ${WRKSRC}/Waifu2x-w2xc && ${COPYTREE_SHARE} \
-		"${PORTDATA:N*.so}" ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
