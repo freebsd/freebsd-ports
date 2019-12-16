@@ -3,7 +3,7 @@
 PORTNAME=	mxnet
 DISTVERSION=	1.6.0
 DISTVERSIONSUFFIX=	.rc0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc # machine-learning
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -32,18 +32,22 @@ GH_TUPLE=	apache:incubator-tvm:5d66e7a:tvm/3rdparty/tvm \
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	USE_CUDA USE_CUDNN USE_MKLDNN USE_NCCL ENABLE_CUDA_RTC \
-		USE_OPENCV BUILD_CPP_EXAMPLES USE_JEMALLOC USE_MKL_IF_AVAILABLE
+		BUILD_CPP_EXAMPLES USE_JEMALLOC USE_MKL_IF_AVAILABLE
 
 LDFLAGS+=	-pthread -lexecinfo
 
-OPTIONS_DEFINE=		CPP
-OPTIONS_DEFAULT=	CPP
+OPTIONS_DEFINE=		CPP OPENCV
+OPTIONS_DEFAULT=	CPP OPENCV
 OPTIONS_SUB=		yes
 
 CPP_DESC=		Install the C++ binding (cpp-package)
 CPP_CMAKE_BOOL=		USE_CPP_PACKAGE
 CPP_USES=		python:build
 CPP_VARS=		BINARY_ALIAS=python=${PYTHON_CMD}
+
+OPENCV_CMAKE_BOOL=	USE_OPENCV
+OPENCV_LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
+			libopencv_videoio.so:graphics/opencv
 
 post-patch:
 .for lib in mkldnn.h mkldnn_types.h
