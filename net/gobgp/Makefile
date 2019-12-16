@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	gobgp
-PORTVERSION=	2.6.0
+PORTVERSION=	2.11.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net
 DIST_SUBDIR=	gobgp
 
@@ -22,8 +21,7 @@ GO_TARGET=	./cmd/gobgp \
 GH_ACCOUNT=	osrg
 PLIST_FILES=	bin/gobgp libexec/gobgpd
 GH_TUPLE=	\
-		BurntSushi:toml:v0.3.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
-		armon:go-radix:1fca145dffbc:armon_go_radix/vendor/github.com/armon/go-radix \
+		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		coreos:go-systemd:95778dfbb74e:coreos_go_systemd/vendor/github.com/coreos/go-systemd \
 		davecgh:go-spew:v1.1.0:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgryski:go-farm:ac7624ea8da3:dgryski_go_farm/vendor/github.com/dgryski/go-farm \
@@ -31,9 +29,9 @@ GH_TUPLE=	\
 		eapache:queue:v1.0.2:eapache_queue/vendor/github.com/eapache/queue \
 		fsnotify:fsnotify:v1.4.2:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-yaml:yaml:25c4ec802a7d:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:net:eb5bcb51f2a3:golang_net/vendor/golang.org/x/net \
+		golang:net:3b0461eec859:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.0.0:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:4b34438f7a67:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:97732733099d:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:09f6ed296fc6:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
@@ -41,8 +39,9 @@ GH_TUPLE=	\
 		hashicorp:hcl:392dba7d905e:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jessevdk:go-flags:v1.3.0:jessevdk_go_flags/vendor/github.com/jessevdk/go-flags \
-		kr:pretty:cfb55aafdaf3:kr_pretty/vendor/github.com/kr/pretty \
-		kr:text:7cafcd837844:kr_text/vendor/github.com/kr/text \
+		k-sone:critbitgo:48c9e1530131:k_sone_critbitgo/vendor/github.com/k-sone/critbitgo \
+		kr:pretty:v0.1.0:kr_pretty/vendor/github.com/kr/pretty \
+		kr:text:v0.1.0:kr_text/vendor/github.com/kr/text \
 		magiconair:properties:v1.7.3:magiconair_properties/vendor/github.com/magiconair/properties \
 		mitchellh:mapstructure:d0303fe80992:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		pelletier:go-buffruneio:v0.2.0:pelletier_go_buffruneio/vendor/github.com/pelletier/go-buffruneio \
@@ -58,7 +57,6 @@ GH_TUPLE=	\
 		stretchr:testify:v1.1.4:stretchr_testify/vendor/github.com/stretchr/testify \
 		vishvananda:netlink:a95659537721:vishvananda_netlink/vendor/github.com/vishvananda/netlink \
 		vishvananda:netns:86bef332bfc3:vishvananda_netns/vendor/github.com/vishvananda/netns
-
 OPTIONS_DEFINE=	BASH ZSH
 OPTIONS_DEFAULT=BASH ZSH
 
