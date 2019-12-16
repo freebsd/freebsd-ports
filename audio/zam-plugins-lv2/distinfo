@@ -1,5 +1,5 @@
-TIMESTAMP = 1560051677
-SHA256 (zamaudio-zam-plugins-3.11-1-gce45995_GH0.tar.gz) = 5b1a60afae86636d330096e851be11a639fe776583d9a54aca5bba5a57480d05
-SIZE (zamaudio-zam-plugins-3.11-1-gce45995_GH0.tar.gz) = 23926863
+TIMESTAMP = 1576465152
+SHA256 (zamaudio-zam-plugins-3.12_GH0.tar.gz) = e20fec56a781dc4cbba0357afad46d15cdcab980a819db57369f7e9da3ef378a
+SIZE (zamaudio-zam-plugins-3.12_GH0.tar.gz) = 23919689
 SHA256 (DISTRHO-DPF-68b3a57_GH0.tar.gz) = c5e188808d6887119bc5311433558331fd7192cff37f1dbf5ed97f25d44a378a
 SIZE (DISTRHO-DPF-68b3a57_GH0.tar.gz) = 1624216
