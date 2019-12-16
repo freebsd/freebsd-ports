@@ -1,8 +1,0 @@
-Glade is a RAD tool to enable quick & easy development of user interfaces
-for the GTK+ toolkit and the GNOME desktop environment. The user interfaces
-designed in Glade are saved as XML, and by using the GtkBuilder GTK+ object
-these can be loaded by applications dynamically as needed.
-
-This version of Glade targets Gtk+ 2.
-
-WWW: https://glade.gnome.org/
