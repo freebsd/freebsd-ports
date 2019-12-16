@@ -1,6 +1,6 @@
---- vpnc.c.orig	2008-11-19 21:55:51.000000000 +0100
-+++ vpnc.c	2017-11-10 13:09:32.996639000 +0100
-@@ -1160,8 +1160,11 @@
+--- vpnc.c.orig	2008-11-19 20:55:51 UTC
++++ vpnc.c
+@@ -1160,8 +1160,11 @@ static void lifetime_ike_process(struct sa_block *s, s
  		value = a->next->u.attr_16;
  	else if (a->next->af == isakmp_attr_lots && a->next->u.lots.length == 4)
  		value = ntohl(*((uint32_t *) a->next->u.lots.data));
@@ -14,7 +14,7 @@
  	
  	DEBUG(2, printf("got ike lifetime attributes: %d %s\n", value,
  		(a->u.attr_16 == IKE_LIFE_TYPE_SECONDS) ? "seconds" : "kilobyte"));
-@@ -1578,6 +1581,19 @@
+@@ -1578,6 +1581,19 @@ static void do_phase1_am(const char *key_id, const cha
  						seen_natd_them = 1;
  				}
  				break;
@@ -34,7 +34,7 @@
  			default:
  				DEBUG(1, printf("rejecting invalid payload type %d\n", rp->type));
  				reject = ISAKMP_N_INVALID_PAYLOAD_TYPE;
-@@ -2861,28 +2877,34 @@
+@@ -2861,28 +2877,34 @@ static void do_phase2_qm(struct sa_block *s)
  		free(dh_shared_secret);
  		free_isakmp_packet(r);
  		
@@ -86,7 +86,7 @@
  		}
  		
  		s->ipsec.rx.seq_id = s->ipsec.tx.seq_id = 1;
-@@ -3224,9 +3246,14 @@
+@@ -3224,9 +3246,14 @@ void process_late_ike(struct sa_block *s, uint8_t *r_p
  			 */
  			/* FIXME: any cleanup needed??? */
  

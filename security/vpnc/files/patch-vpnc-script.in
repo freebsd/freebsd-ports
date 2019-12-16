@@ -1,6 +1,6 @@
---- vpnc-script.in.orig	2008-11-19 21:55:51.000000000 +0100
-+++ vpnc-script.in	2011-11-10 22:41:12.000000000 +0100
-@@ -48,8 +48,8 @@
+--- vpnc-script.in.orig	2008-11-19 20:55:51 UTC
++++ vpnc-script.in
+@@ -48,8 +48,8 @@ PATH=/sbin:/usr/sbin:$PATH
  
  OS="`uname -s`"
  
@@ -11,7 +11,7 @@
  FULL_SCRIPTNAME=@PREFIX@/sbin/vpnc
  SCRIPTNAME=`basename $FULL_SCRIPTNAME`
  
-@@ -73,7 +73,9 @@
+@@ -73,7 +73,9 @@ else
  	route_syntax_netmask="-netmask"
  fi
  
@@ -22,7 +22,7 @@
  	MODIFYRESOLVCONF=modify_resolvconf_manager
  	RESTORERESOLVCONF=restore_resolvconf_manager
  elif [ -x /sbin/modify_resolvconf ]; then # Mandatory tool on Suse earlier than 11.1
-@@ -420,11 +422,13 @@
+@@ -420,11 +422,13 @@ do_pre_init() {
  			fi
  		fi
  	elif [ "$OS" = "FreeBSD" ]; then

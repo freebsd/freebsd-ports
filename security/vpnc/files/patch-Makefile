@@ -1,5 +1,5 @@
---- Makefile.orig	2008-11-19 21:36:12.000000000 +0100
-+++ Makefile	2008-11-24 01:21:22.000000000 +0100
+--- Makefile.orig	2008-11-19 20:36:12 UTC
++++ Makefile
 @@ -20,15 +20,15 @@
  # $Id: Makefile 312 2008-06-15 18:09:42Z Joerg Mayer $
  
@@ -19,7 +19,7 @@
  OBJS = $(addsuffix .o,$(basename $(SRCS)))
  BINOBJS = $(addsuffix .o,$(BINS))
  BINSRCS = $(addsuffix .c,$(BINS))
-@@ -50,9 +50,7 @@
+@@ -50,9 +50,7 @@ RELEASE_VERSION := $(shell cat VERSION)
  #OPENSSL_GPL_VIOLATION = -DOPENSSL_GPL_VIOLATION
  #OPENSSLLIBS = -lcrypto
  
@@ -30,7 +30,7 @@
  CFLAGS +=  $(shell libgcrypt-config --cflags)
  CPPFLAGS += -DVERSION=\"$(VERSION)\" $(OPENSSL_GPL_VIOLATION)
  LDFLAGS ?= -g
-@@ -78,7 +76,7 @@
+@@ -78,7 +76,7 @@ vpnc-script : vpnc-script.in
  	sed -e 's,@''PREFIX''@,$(PREFIX),g' $< > $@ && chmod 755 $@
  
  cisco-decrypt : cisco-decrypt.o decrypt-utils.o
