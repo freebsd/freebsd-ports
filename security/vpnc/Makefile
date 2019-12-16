@@ -3,7 +3,7 @@
 
 PORTNAME=	vpnc
 PORTVERSION=	0.5.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	security net-vpn
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 		LOCAL/ehaupt
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for Cisco 3000 VPN Concentrator
 
-LICENSE=	GPLv2+ BSD2CLAUSE
+LICENSE=	BSD2CLAUSE GPLv2+
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 RUN_DEPENDS=	vpnc-script:sysutils/vpnc-scripts
 
-USES=		shebangfix gmake perl5
+USES=		gmake perl5 shebangfix
 USE_PERL5=	build
 USE_RC_SUBR=	vpnc
 
@@ -32,9 +32,9 @@ PORTDOCS=	README TODO
 
 MAKE_ENV=	BINS="${EXTRABUILDS}"
 
-OPTIONS_DEFINE=	DECRYPT SSL CISCOVERSION DOCS
-OPTIONS_DEFAULT=DECRYPT
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		CISCOVERSION DECRYPT DOCS SSL
+OPTIONS_DEFAULT=	DECRYPT
+OPTIONS_SUB=		yes
 
 CISCOVERSION_DESC=	Mask linux presentation string
 CISCOVERSION_CFLAGS=	-DCISCO_PATCH_VERSION

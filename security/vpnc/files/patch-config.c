@@ -1,6 +1,6 @@
---- config.c.orig	2008-03-06 17:03:57.000000000 +0100
-+++ config.c	2008-03-06 17:14:29.000000000 +0100
-@@ -257,17 +257,36 @@
+--- config.c.orig	2008-11-19 20:36:12 UTC
++++ config.c
+@@ -163,17 +163,36 @@ static const char *config_def_auth_mode(void)
  
  static const char *config_def_app_version(void)
  {
@@ -43,7 +43,7 @@
  }
  
  static const char *config_def_pid_file(void)
-@@ -538,7 +557,7 @@
+@@ -456,7 +475,7 @@ static char *get_config_filename(const char *name, int
  {
  	char *realname;
  	
@@ -52,7 +52,7 @@
  	return realname;
  }
  
-@@ -757,8 +776,8 @@
+@@ -675,8 +694,8 @@ void do_config(int argc, char **argv)
  	}
  	
  	if (!got_conffile) {
