@@ -37,6 +37,12 @@ UPNP_IGDV2_EXTRA_PATCHES=	${PATCHDIR}/enable_igdv2.patch
 UPNP_STRICT_EXTRA_PATCHES=	${PATCHDIR}/enable_upnp_strict.patch
 LEASEFILE_EXTRA_PATCHES=	${PATCHDIR}/enable_leasefile.patch
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-portinuse.c
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|\(-lssl -lcrypto\)|$$(LDFLAGS) \1|g' \
 	${WRKSRC}/Makefile
