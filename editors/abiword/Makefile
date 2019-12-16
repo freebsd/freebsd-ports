@@ -3,7 +3,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	3.0.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/abiword/${PORTVERSION}/source/
 DIST_SUBDIR=	AbiWord
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libwv.so:textproc/wv \
 		libfribidi.so:converters/fribidi \
-		libgoffice-0.10.so:devel/goffice010
+		libgoffice-0.10.so:devel/goffice
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf:x11-fonts/dejavu
 
 USES=		compiler:c++11-lang desktop-file-utils gmake gnome iconv jpeg \

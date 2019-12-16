@@ -3,6 +3,7 @@
 
 PORTNAME=	gnumeric
 PORTVERSION=	1.12.43
+PORTREVISION=	1
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libgoffice-0.10.so:devel/goffice010 \
+LIB_DEPENDS=	libgoffice-0.10.so:devel/goffice \
 		libfribidi.so:converters/fribidi \
 		libpsiconv.so:converters/psiconv
 

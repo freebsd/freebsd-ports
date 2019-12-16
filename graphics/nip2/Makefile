@@ -3,7 +3,7 @@
 
 PORTNAME=	nip2
 PORTVERSION=	8.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -29,14 +29,11 @@ LDFLAGS+=	-lm
 
 SUB_FILES=	run-nip2.sh
 
-OPTIONS_DEFINE=		DOCS FFTW GOFFICE GRAPHVIZ GSF GSL
-OPTIONS_DEFAULT=	FFTW GOFFICE GRAPHVIZ GSF GSL
+OPTIONS_DEFINE=		DOCS FFTW GRAPHVIZ GSF GSL
+OPTIONS_DEFAULT=	FFTW GRAPHVIZ GSF GSL
 
 FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
 FFTW_CONFIGURE_WITH=	fftw3
-GOFFICE_DESC=		Use libgoffice to show plots
-GOFFICE_LIB_DEPENDS=	libgoffice-*.so:devel/goffice
-GOFFICE_CONFIGURE_WITH=	libgoffice
 GRAPHVIZ_DESC=		Use libgvc to show workspace dependency graphs
 GRAPHVIZ_LIB_DEPENDS=	libgvc.so:graphics/graphviz
 GRAPHVIZ_CONFIGURE_WITH=	libgvc

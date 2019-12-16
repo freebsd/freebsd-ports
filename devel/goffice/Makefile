@@ -1,13 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/goffice/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	goffice
-PORTVERSION=	0.8.17
-PORTREVISION=	9
+PORTVERSION=	0.10.46
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
-PKGNAMESUFFIX=	08
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib/GTK+ set of document centric objects and utilities
@@ -15,29 +12,29 @@ COMMENT=	GLib/GTK+ set of document centric objects and utilities
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	ignore:1
+LIB_DEPENDS=	libspectre.so:print/libspectre \
+		libfribidi.so:converters/fribidi
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
-
-USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomeprefix intlhack gtk20 libgsf
+USES=		gettext gmake gnome libtool pathfix perl5 pkgconfig \
+		shebangfix tar:xz xorg
+USE_GNOME=	cairo gtk30 intlhack introspection:build libgsf librsvg2 libxslt
+USE_XORG=	xrender xext
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-PLIST_SUB=	VERSION=${PORTVERSION} \
-		SHORT_VER=0.8
+CONFIGURE_ARGS=	--with-lasem=no --with-config-backend=gsettings \
+		--enable-compile-warnings=no \
+		--enable-introspection
+USE_PERL5=	build
+SHEBANG_FILES=	${WRKSRC}/tools/introspection-identifier-filter
 
-OPTIONS_DEFINE=	GCONF
-OPTIONS_DEFAULT=GCONF
+PLIST_SUB=	VERSION=${PORTVERSION} SHORT_VER=${PORTVERSION:R}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGCONF}
-USE_GNOME+=	gconf2
-.else
-CONFIGURE_ARGS+=--with-config-backend=keyfile
-.endif
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/goffice/${SHORT_VER}/plugins
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgoffice-0.10.so.*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/goffice/${PORTVERSION}/plugins/*/*.so
 
 .include <bsd.port.mk>
