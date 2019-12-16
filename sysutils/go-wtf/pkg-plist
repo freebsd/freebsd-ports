@@ -1,5 +1,7 @@
 bin/wtf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bargraph_config.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynamic_sizing.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kubernetes_config.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample_config.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/small_config.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uniconfig.yml
