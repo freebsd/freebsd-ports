@@ -1,0 +1,11 @@
+--- libnotify/libnotify.map.orig	2019-04-05 19:06:19 UTC
++++ libnotify/libnotify.map
+@@ -1,6 +1,8 @@
+ {
+ global:
+     notify_*;
++    __progname;
++    environ;
+ local:
+     *;
+ };
