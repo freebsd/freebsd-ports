@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	858fed6eac1d.patch:-p1 # https://github.com/DeadSix27/waifu2x-converter-cpp/pull/215
-PATCHFILES+=	df328119c4a3.patch:-p1 # https://github.com/DeadSix27/waifu2x-converter-cpp/pull/216
+PATCHFILES+=	bd29da31a194.patch:-p1 # https://github.com/DeadSix27/waifu2x-converter-cpp/pull/216
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Scale and denoise images using convolutional neural networks
