@@ -3,5 +3,5 @@ SHA256 (DeadSix27-waifu2x-converter-cpp-v5.3.3_GH0.tar.gz) = 036d82bb4ec2e4a098b
 SIZE (DeadSix27-waifu2x-converter-cpp-v5.3.3_GH0.tar.gz) = 12531204
 SHA256 (858fed6eac1d.patch) = bc1e9c80fbf5b59a4e1630ddc561b839ce66315c4e0a8228b2fea765dce90a09
 SIZE (858fed6eac1d.patch) = 4160
-SHA256 (df328119c4a3.patch) = 353c87e6e1c3f1ca5dd6d09179add4812d95b63080fbe48e11db887a1a1a5792
-SIZE (df328119c4a3.patch) = 2865
+SHA256 (bd29da31a194.patch) = 594fa41d07b9de11fffb9ceb676d7ebdc437c3d4d3abb7c34687bcde42a59111
+SIZE (bd29da31a194.patch) = 3007
