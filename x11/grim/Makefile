@@ -6,6 +6,9 @@ DISTVERSION=	1.2.0
 PORTREVISION=	1
 CATEGORIES=	x11
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	5ebea4eb7308.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Grab images from a Wayland compositor
 
@@ -19,7 +22,6 @@ USES=		compiler:c11 gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo
 GH_ACCOUNT=	emersion
-MESON_ARGS=	-Dwerror=false # https://github.com/emersion/grim/issues/37
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	JPEG MANPAGES

@@ -1,3 +1,5 @@
 TIMESTAMP = 1559587817
 SHA256 (emersion-grim-v1.2.0_GH0.tar.gz) = b184417220497442eaf2b3a4bc2f1e513e83e41bb5279dc3065209f5f2b611b1
 SIZE (emersion-grim-v1.2.0_GH0.tar.gz) = 14445
+SHA256 (5ebea4eb7308.patch) = 5e9ca625e13313d0dfe9bc0ee57061d63a99fe4874628ea1c1d2ab83a96555d6
+SIZE (5ebea4eb7308.patch) = 1271
