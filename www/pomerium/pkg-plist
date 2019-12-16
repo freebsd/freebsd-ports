@@ -1,0 +1,4 @@
+@sample %%ETCDIR%%/config.yaml.sample
+libexec/pomerium
+@dir %%ETCDIR%%
+@dir %%POMERIUMPIDDIR%%

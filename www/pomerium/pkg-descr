@@ -1,0 +1,15 @@
+Pomerium is an identity-aware proxy that enables secure access to internal
+applications. Pomerium provides a standardized interface to add access
+control to applications regardless of whether the application itself has
+authorization or authentication baked-in. Pomerium gateways both internal
+and external requests, and can be used in situations where you'd typically
+reach for a VPN.
+
+Pomerium can be used to:
+
+ - provide a single-sign-on gateway to internal applications.
+ - enforce dynamic access policy based on context, identity, and device state.
+ - aggregate access logs and telemetry data.
+ - a VPN alternative.
+
+WWW: https://pomerium.io/
