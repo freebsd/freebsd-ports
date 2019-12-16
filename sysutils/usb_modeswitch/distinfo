@@ -1,5 +1,5 @@
-TIMESTAMP = 1514770863
-SHA256 (usb-modeswitch-2.5.2.tar.bz2) = abffac09c87eacd78e101545967dc25af7e989745b4276756d45dbf4008a2ea6
-SIZE (usb-modeswitch-2.5.2.tar.bz2) = 259820
-SHA256 (usb-modeswitch-data-20170806.tar.bz2) = ce413ef2a50e648e9c81bc3ea6110e7324a8bf981034fc9ec4467d3562563c2c
-SIZE (usb-modeswitch-data-20170806.tar.bz2) = 32700
+TIMESTAMP = 1576172051
+SHA256 (usb-modeswitch-2.6.0.tar.bz2) = c215236e6bada6e659fc195a31d611ea298a4bdb4d57a0d68c553b56585f8ba3
+SIZE (usb-modeswitch-2.6.0.tar.bz2) = 44971
+SHA256 (usb-modeswitch-data-20191128.tar.bz2) = 3f039b60791c21c7cb15c7986cac89650f076dc274798fa242231b910785eaf9
+SIZE (usb-modeswitch-data-20191128.tar.bz2) = 34069
