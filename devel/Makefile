@@ -828,8 +828,6 @@
     SUBDIR += gitolite2
     SUBDIR += gittrac
     SUBDIR += glade
-    SUBDIR += glade2
-    SUBDIR += glade3
     SUBDIR += glademm
     SUBDIR += glib20
     SUBDIR += glib20-reference
