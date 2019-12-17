@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cargo-c
-DISTVERSION=	0.4.0
+DISTVERSION=	0.5.1
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -81,8 +81,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		wincolor-1.0.2
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/linux/${OPSYS:tl}/' \
-		-e 's,libdir.join("pkgconfig,prefix.join("libdata/pkgconfig,' \
+	@${REINPLACE_CMD} -e 's,libdir.join("pkgconfig,prefix.join("libdata/pkgconfig,' \
 		${WRKSRC}/src/main.rs
 
 .include <bsd.port.mk>
