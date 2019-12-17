@@ -1,0 +1,12 @@
+--- arpwatch.sh.in.orig	2014-07-25 18:42:17 UTC
++++ arpwatch.sh.in
+@@ -47,7 +47,8 @@ arpwatch_precmd()
+ 	if [ $cmd == start ]; then
+ 		prep_datfile ${fn}
+ 	fi
+-	eval options=\$arpwatch_${interface}_options
++	ltr ${interface} . _ _interface
++	eval options=\$arpwatch_${_interface}_options
+ 	command_args="-i ${interface} -f ${fn} -P ${pidfile} ${options}"
+ }
+ 
