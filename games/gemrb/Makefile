@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gemrb
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/${PORTNAME}/GemRB%20Sources/GemRB%20${PORTVERSION:.1=}%20Sources
 
