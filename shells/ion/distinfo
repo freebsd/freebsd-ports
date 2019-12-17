@@ -1,4 +1,4 @@
-TIMESTAMP = 1565075757
+TIMESTAMP = 1576567883
 SHA256 (rust/crates/adler32-1.0.3.tar.gz) = 7e522997b529f05601e05166c07ed17789691f562762c7f3b987263d2dedee5c
 SIZE (rust/crates/adler32-1.0.3.tar.gz) = 5734
 SHA256 (rust/crates/aho-corasick-0.7.4.tar.gz) = 36b7aa1ccb7d7ea3f437cf025a2ab1c47cc6c1bc9fc84918ff449def12f5e282
@@ -187,8 +187,6 @@ SHA256 (rust/crates/libloading-0.5.2.tar.gz) = f2b111a074963af1d37a139918ac6d49a
 SIZE (rust/crates/libloading-0.5.2.tar.gz) = 16420
 SHA256 (rust/crates/line_drawing-0.7.0.tar.gz) = 5cc7ad3d82c845bdb5dde34ffdcc7a5fb4d2996e1e1ee0f19c33bc80e15196b9
 SIZE (rust/crates/line_drawing-0.7.0.tar.gz) = 10452
-SHA256 (rust/crates/liner-0.4.4.tar.gz) = e21c5e49e5d73f18124fd3c751a0823f754c5ae7193cb9e8aa467b03b161241c
-SIZE (rust/crates/liner-0.4.4.tar.gz) = 29857
 SHA256 (rust/crates/lock_api-0.1.5.tar.gz) = 62ebf1391f6acad60e5c8b43706dde4582df75c06698ab44511d15016bc2442c
 SIZE (rust/crates/lock_api-0.1.5.tar.gz) = 16967
 SHA256 (rust/crates/log-0.4.7.tar.gz) = c275b6ad54070ac2d665eef9197db647b32239c9d244bfb6f041a766d00da5b3

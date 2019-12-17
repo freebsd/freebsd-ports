@@ -2,7 +2,7 @@
 
 PORTNAME=	ion
 DISTVERSION=	1.0.5-1355
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	shells
 PKGNAMESUFFIX=	-shell
 
@@ -118,7 +118,6 @@ CARGO_CRATES=	adler32-1.0.3 \
 		libc-0.2.60 \
 		libloading-0.5.2 \
 		line_drawing-0.7.0 \
-		liner-0.4.4 \
 		lock_api-0.1.5 \
 		log-0.4.7 \
 		lzw-0.10.0 \
@@ -260,6 +259,12 @@ CARGO_USE_GITLAB=	yes
 CONFLICTS_INSTALL=	ion
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+# liner-0.4.4 does not build with Rust 1.40.0.  Use the newer copy
+# that is also already available.
+post-patch:
+	@${REINPLACE_CMD} 's,^liner = .*,liner = \{ path = "${WRKSRC_liner}" \},' \
+		${WRKSRC_calculate}/Cargo.toml
 
 post-configure:
 	${ECHO_CMD} ${GL_COMMIT} > ${WRKSRC}/git_revision.txt
