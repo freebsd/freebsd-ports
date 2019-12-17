@@ -79,10 +79,10 @@ JP_CATEGORIES=	japanese
 JP_VARS=	XLOCKMORE_LANG=ja
 MAGICK_CONFIGURE_WITH=	magick
 MAGICK_LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick6 \
-			libpng16.so:graphics/png
+			libpng.so:graphics/png
 GTK2_CONFIGURE_WITH=	gtk2
 GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-			libpng16.so:graphics/png
+			libpng.so:graphics/png
 GTK2_USE=	gnome=cairo,gdkpixbuf2,gtk20
 GTK2_USES=	gnome pkgconfig
 FREETYPE_CONFIGURE_WITH=	ttf
