@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	c++-gtk-utils
-PORTVERSION=	2.2.15
-PORTREVISION=	3
+PORTVERSION=	2.2.18
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/cxx-gtk-utils/cxx-gtk-utils/${PORTVERSION}/
 
@@ -27,7 +26,7 @@ CONFIGURE_ARGS=		--docdir=${DOCSDIR}
 
 PORTDOCS=	*
 
-LIBVERSION=	0.2.0
+LIBVERSION=	0.4.0
 PLIST_SUB=	LIBVERSION=${LIBVERSION}
 
 OPTIONS_DEFINE=	DEBUG DOCS
@@ -38,6 +37,6 @@ post-configure:
 	@${REINPLACE_CMD} '/^SUBDIRS/ s|tests||' ${WRKSRC}/Makefile
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcxx-gtk-utils-2-2.2.so.${LIBVERSION}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcxx-gtk-utils-2-2.2.so.*
 
 .include <bsd.port.mk>
