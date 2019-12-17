@@ -3,12 +3,12 @@
 PORTNAME=	waifu2x-converter-cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	858fed6eac1d.patch:-p1 # https://github.com/DeadSix27/waifu2x-converter-cpp/pull/215
-PATCHFILES+=	6aae91ffc537.patch:-p1 # https://github.com/DeadSix27/waifu2x-converter-cpp/pull/216
+PATCHFILES+=	318c254dde60.patch:-p1 # https://github.com/DeadSix27/waifu2x-converter-cpp/pull/216
 PATCHFILES+=	728310bb4630.patch:-p1 # https://github.com/DeadSix27/waifu2x-converter-cpp/pull/217
 
 MAINTAINER=	jbeich@FreeBSD.org
