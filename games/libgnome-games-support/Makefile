@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgnome-games-support
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
