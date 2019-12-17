@@ -1,4 +1,4 @@
---- electron/atom/browser/api/atom_api_web_contents.cc.orig	2019-11-05 00:13:02 UTC
+--- electron/atom/browser/api/atom_api_web_contents.cc.orig	2019-12-11 16:30:56 UTC
 +++ electron/atom/browser/api/atom_api_web_contents.cc
 @@ -108,7 +108,7 @@
  #include "ui/views/linux_ui/linux_ui.h"
@@ -9,7 +9,7 @@
  #include "third_party/blink/public/mojom/renderer_preferences.mojom.h"
  #include "ui/gfx/font_render_params.h"
  #endif
-@@ -414,7 +414,7 @@ void WebContents::InitWithSessionAndOptions(
+@@ -421,7 +421,7 @@ void WebContents::InitWithSessionAndOptions(
    auto* prefs = web_contents()->GetMutableRendererPrefs();
    prefs->accept_languages = g_browser_process->GetApplicationLocale();
  
