@@ -110,7 +110,7 @@ DIST_SUBDIR=	PECL
 
 PHPBASE?=	${LOCALBASE}
 
-_ALL_PHP_VERSIONS=	71 72 73 74
+_ALL_PHP_VERSIONS=	72 73 74
 
 # Make the already installed PHP the default one.
 .  if exists(${PHPBASE}/etc/php.conf)
@@ -186,9 +186,6 @@ PHP_EXT_DIR=   20180731
 PHP_EXT_INC=    pcre spl
 .    elif ${PHP_VER} == 72
 PHP_EXT_DIR=   20170718
-PHP_EXT_INC=    pcre spl
-.    elif ${PHP_VER} == 71
-PHP_EXT_DIR=   20160303
 PHP_EXT_INC=    pcre spl
 .    else
 # (rene) default to DEFAULT_VERSIONS
@@ -382,7 +379,6 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		sockets spl sqlite3 sysvmsg sysvsem sysvshm \
 		tidy tokenizer xml xmlreader xmlrpc xmlwriter xsl zip zlib
 # version specific components
-_USE_PHP_VER71=	${_USE_PHP_ALL} interbase recode wddx
 _USE_PHP_VER72=	${_USE_PHP_ALL} interbase recode sodium wddx
 _USE_PHP_VER73=	${_USE_PHP_ALL} interbase recode sodium wddx
 _USE_PHP_VER74=	${_USE_PHP_ALL} ffi sodium
