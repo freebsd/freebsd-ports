@@ -46,7 +46,7 @@ load_rc_config ${name}
 pidfile="%%POMERIUMPIDDIR%%${name}.pid"
 procname="%%PREFIX%%/libexec/pomerium"
 command=/usr/sbin/daemon
-command_args="-c -P ${pidfile} -T ${name} ${procname} ${pomerium_options}"
+command_args="-c -p ${pidfile} -T ${name} ${procname} ${pomerium_options}"
 start_precmd="pomerium_precmd"
 
 pomerium_precmd()
