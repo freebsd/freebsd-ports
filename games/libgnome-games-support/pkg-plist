@@ -3,6 +3,7 @@ lib/libgnome-games-support-1.so
 lib/libgnome-games-support-1.so.3
 lib/libgnome-games-support-1.so.3.0.1
 libdata/pkgconfig/libgnome-games-support-1.pc
+share/locale/af/LC_MESSAGES/libgnome-games-support.mo
 share/locale/ar/LC_MESSAGES/libgnome-games-support.mo
 share/locale/be/LC_MESSAGES/libgnome-games-support.mo
 share/locale/bg/LC_MESSAGES/libgnome-games-support.mo
@@ -25,10 +26,12 @@ share/locale/he/LC_MESSAGES/libgnome-games-support.mo
 share/locale/hr/LC_MESSAGES/libgnome-games-support.mo
 share/locale/hu/LC_MESSAGES/libgnome-games-support.mo
 share/locale/id/LC_MESSAGES/libgnome-games-support.mo
+share/locale/is/LC_MESSAGES/libgnome-games-support.mo
 share/locale/it/LC_MESSAGES/libgnome-games-support.mo
 share/locale/ko/LC_MESSAGES/libgnome-games-support.mo
 share/locale/lt/LC_MESSAGES/libgnome-games-support.mo
 share/locale/lv/LC_MESSAGES/libgnome-games-support.mo
+share/locale/mjw/LC_MESSAGES/libgnome-games-support.mo
 share/locale/ml/LC_MESSAGES/libgnome-games-support.mo
 share/locale/nb/LC_MESSAGES/libgnome-games-support.mo
 share/locale/ne/LC_MESSAGES/libgnome-games-support.mo
