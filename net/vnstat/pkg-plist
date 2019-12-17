@@ -3,6 +3,6 @@ sbin/vnstatd
 %%GUI%%bin/vnstati
 @sample etc/vnstat.conf.sample
 man/man1/vnstat.1.gz
-man/man1/vnstatd.1.gz
+man/man8/vnstatd.8.gz
 %%GUI%%man/man1/vnstati.1.gz
 man/man5/vnstat.conf.5.gz
