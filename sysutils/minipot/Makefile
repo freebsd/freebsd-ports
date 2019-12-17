@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minipot
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -21,7 +21,11 @@ GH_ACCOUNT=	pizzamig
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	CACERTS EXAMPLES
+OPTIONS_DEFAULT=	CACERTS EXAMPLES
+
+CACERTS_DESC	=	Install Certification authorities certificates
+CACERTS_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 PORTEXAMPLES=	*
 
