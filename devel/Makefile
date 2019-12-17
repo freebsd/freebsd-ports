@@ -3901,16 +3901,6 @@
     SUBDIR += php-ice37
     SUBDIR += php-libawl
     SUBDIR += php-maxminddb
-    SUBDIR += php71-gettext
-    SUBDIR += php71-intl
-    SUBDIR += php71-json
-    SUBDIR += php71-pcntl
-    SUBDIR += php71-readline
-    SUBDIR += php71-shmop
-    SUBDIR += php71-sysvmsg
-    SUBDIR += php71-sysvsem
-    SUBDIR += php71-sysvshm
-    SUBDIR += php71-tokenizer
     SUBDIR += php72-gettext
     SUBDIR += php72-intl
     SUBDIR += php72-json

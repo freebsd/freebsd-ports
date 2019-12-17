@@ -1168,16 +1168,6 @@
     SUBDIR += perl2html
     SUBDIR += permute
     SUBDIR += php-mecab
-    SUBDIR += php71-ctype
-    SUBDIR += php71-dom
-    SUBDIR += php71-enchant
-    SUBDIR += php71-pspell
-    SUBDIR += php71-simplexml
-    SUBDIR += php71-wddx
-    SUBDIR += php71-xml
-    SUBDIR += php71-xmlreader
-    SUBDIR += php71-xmlwriter
-    SUBDIR += php71-xsl
     SUBDIR += php72-ctype
     SUBDIR += php72-dom
     SUBDIR += php72-enchant
