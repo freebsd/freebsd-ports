@@ -27,7 +27,7 @@ lib/girepository-1.0/Graphene-1.0.typelib
 lib/graphene-1.0/include/graphene-config.h
 lib/libgraphene-1.0.so
 lib/libgraphene-1.0.so.0
-lib/libgraphene-1.0.so.0.800.2
+lib/libgraphene-1.0.so.0.1000.0
 libdata/pkgconfig/graphene-1.0.pc
 libdata/pkgconfig/graphene-gobject-1.0.pc
 share/gir-1.0/Graphene-1.0.gir
