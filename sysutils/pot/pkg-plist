@@ -1,5 +1,7 @@
 bin/pot
 %%ETCDIR%%/flavours/dns.sh
+%%ETCDIR%%/flavours/dns
+%%ETCDIR%%/flavours/fbsd-update.sh
 %%ETCDIR%%/flavours/slim.sh
 @sample %%ETCDIR%%/pot.conf.sample
 %%ETCDIR%%/pot.default.conf
