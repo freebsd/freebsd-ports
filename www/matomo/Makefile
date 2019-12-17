@@ -12,7 +12,6 @@ COMMENT=	Open Source Web Analytics Software Program
 
 LICENSE=	GPLv3
 
-IGNORE_WITH_PHP=71
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 

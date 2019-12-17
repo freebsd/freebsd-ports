@@ -9,8 +9,6 @@ COMMENT=	PHP extension for mcrypt, removed in PHP 7.2
 
 LICENSE=	PHP301
 
-IGNORE_WITH_PHP=	71
-
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libmcrypt.so:security/libmcrypt
 
