@@ -3,7 +3,9 @@
 PORTNAME=	icingaweb2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Next generation web interface for Icinga 1 and 2
@@ -11,16 +13,17 @@ COMMENT=	Next generation web interface for Icinga 1 and 2
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	zf:www/zend-framework1
+USES=		php:build,web,flavors
+USE_PHP=	bcmath bitset ctype curl dom gd gettext hash iconv \
+		json ldap mbstring mcrypt memcache memcached \
+		opcache openssl pcre pdo pdo_sqlite posix \
+		session simplexml soap sockets sqlite3 xml zlib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-
-USES=		php:build
-USE_PHP=	ctype dom gd gettext hash json openssl session sockets
 
 SUB_FILES=	pkg-message
 SUB_LIST=	WWWDIR=${WWWDIR} \
@@ -30,17 +33,18 @@ SUB_LIST=	WWWDIR=${WWWDIR} \
 PLIST_SUB=	WWWOWN=${WWWOWN} \
 		WWWGRP=${WWWGRP}
 
-OPTIONS_DEFINE=		NLS LDAP MYSQL PGSQL PDF EXAMPLES
-OPTIONS_DEFAULT=	LDAP MYSQL PGSQL
+OPTIONS_DEFINE=		NLS LDAP MYSQL PGSQL PDF SQLITE EXAMPLES
+OPTIONS_DEFAULT=	LDAP MYSQL PGSQL SQLITE
 
 PDF_DESC=	Export graphs as PDF
+PDF_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
 
 NLS_USES=	gettext
 NLS_USE=	php=intl
-PGSQL_USE=	PHP=pdo_pgsql,pgsql
-MYSQL_USE=	PHP=pdo_mysql
-LDAP_USE=	PHP=ldap
-PDF_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
+PGSQL_USE=	php=pdo_pgsql,pgsql
+MYSQL_USE=	php=pdo_mysql,mysqli
+SQLITE_USE=	php=pdo_sqlite,sqlite3
+LDAP_USE=	php=ldap
 
 post-patch:
 	${REINPLACE_CMD} 's%\(/etc/icingaweb2\)%${PREFIX}\1%g' \

@@ -3,8 +3,9 @@
 PORTNAME=	icingaweb2-module-director
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Configuration frontend for Icinga 2, integrated automation
@@ -12,13 +13,12 @@ COMMENT=	Configuration frontend for Icinga 2, integrated automation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	icingaweb2>=2.4.1:net-mgmt/icingaweb2
+RUN_DEPENDS=	icingaweb2-${PHP_FLAVOR}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR}
+
+USES=		php:web,flavors
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
-
-USES=		php
-USE_PHP=	yes
 
 NO_BUILD=	yes
 NO_ARCH=	yes
