@@ -13579,7 +13579,7 @@ net/php71-xmlrpc|net/php72-xmlrpc|2019-12-17|Has expired: upstream security supp
 net-mgmt/php71-snmp|net-mgmt/php72-snmp|2019-12-17|Has expired: upstream security support ended
 security/php71-filter|security/php72-filter|2019-12-17|Has expired: upstream security support ended
 security/php71-hash|security/php72-hash|2019-12-17|Has expired: upstream security support ended
-security/php71-mcrypt|security/php72-mcrypt|2019-12-17|Has expired: upstream security support ended
+security/php71-mcrypt||2019-12-17|Has expired: upstream security support ended
 security/php71-openssl|security/php72-openssl|2019-12-17|Has expired: upstream security support ended
 sysutils/php71-fileinfo|sysutils/php72-fileinfo|2019-12-17|Has expired: upstream security support ended
 sysutils/php71-posix|sysutils/php72-posix|2019-12-17|Has expired: upstream security support ended
