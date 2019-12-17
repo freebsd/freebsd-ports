@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webrtcvad>0:audio/py-webrtcvad@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.5+
 USE_GITHUB=	yes
 GH_ACCOUNT=	smacke # tympanix account has another version of the same project requiring tensorflow
 GH_TAGNAME=	d9798a5
