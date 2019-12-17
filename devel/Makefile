@@ -3878,7 +3878,6 @@
     SUBDIR += pecl-protobuf
     SUBDIR += pecl-psr
     SUBDIR += pecl-raphf2
-    SUBDIR += pecl-request
     SUBDIR += pecl-swoole
     SUBDIR += pecl-sync
     SUBDIR += pecl-uploadprogress
