@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	6.0.0.20191212
+PORTVERSION=	6.0.0.20191216
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 USES+=		compiler:c11 gmake
 USE_GITHUB=	yes
-GH_TUPLE= 	antirez:${PORTNAME}:ba28738
+GH_TUPLE= 	antirez:${PORTNAME}:e9b99c7
 
 OPTIONS_DEFINE=	JEMALLOC TESTS TRIB
 OPTIONS_RADIO=	EXTLUA
@@ -53,11 +53,13 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.lua
 
 .if ${PORT_OPTIONS:MLUAJIT}
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
+BUILD_DEPENDS+=	${LOCALBASE}/include/luajit-2.0/lua.h:lang/luajit
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.luajit
 .endif
 
 .if ${PORT_OPTIONS:MLUAJITOR}
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit-openresty
+BUILD_DEPENDS+=	${LOCALBASE}/include/luajit-2.1/lua.h:lang/luajit-openresty
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
 		${PATCHDIR}/extra-patch-deps_lua_src_lua__cjson.c
 .endif
