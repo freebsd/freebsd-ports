@@ -1,0 +1,5 @@
+A WSGI object-dispatching web framework.
+
+Designed to be lean and fast with few dependencies.
+
+WWW: https://github.com/pecan/pecan/
