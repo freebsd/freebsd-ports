@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	vnstat
-PORTVERSION=	2.2
-PORTREVISION=	0
+PORTVERSION=	2.4
 CATEGORIES=	net
 MASTER_SITES=	https://humdi.net/vnstat/
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console-based network traffic monitor
 
 LICENSE=	GPLv2
@@ -39,7 +38,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vnstatd ${STAGEDIR}/${PREFIX}/sbin/vnstatd
 	${INSTALL_DATA} ${WRKSRC}/cfg/vnstat.conf ${STAGEDIR}/${PREFIX}/etc/vnstat.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/man/vnstat.1 ${STAGEDIR}/${MANPREFIX}/man/man1/vnstat.1
-	${INSTALL_MAN} ${WRKSRC}/man/vnstatd.1 ${STAGEDIR}/${MANPREFIX}/man/man1/vnstatd.1
+	${INSTALL_MAN} ${WRKSRC}/man/vnstatd.8 ${STAGEDIR}/${MANPREFIX}/man/man8/vnstatd.8
 	${INSTALL_MAN} ${WRKSRC}/man/vnstat.conf.5 ${STAGEDIR}/${MANPREFIX}/man/man5/vnstat.conf.5
 
 do-install-GUI-on:
