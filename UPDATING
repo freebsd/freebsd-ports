@@ -14,6 +14,10 @@ you update your ports collection, before attempting any port upgrades.
   For ports users wanting to keep version 3.6 as default,
   add DEFAULT_VERSIONS+= python=3.6 python3=3.6 to make.conf
 
+  This may ease the upgrade:
+  # sh
+  # for i in $(pkg query -g %n 'py36-*'); do pkg set -yn ${i}:py37-${i#py36-}; done
+
 20191204
   AFFECTS: users of mail/nextcloud-mail
   AUTHOR: brnrd@FreeBSD.org
