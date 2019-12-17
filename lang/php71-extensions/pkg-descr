@@ -1,7 +1,0 @@
-This is a "meta-port" to install the extensions for PHP 7.1.
-
-Defaults to:
-ctype, dom, filter, hash, iconv, json, pdo, pdo_sqlite, phar, posix,
-session, simplexml, sqlite3, tokenizer, xml, xmlreader and xmlwriter.
-
-WWW: https://www.php.net/

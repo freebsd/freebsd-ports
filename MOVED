@@ -13597,3 +13597,5 @@ www/mod_php71|www/mod_php72|2019-12-17|Has expired: upstream security support en
 www/php71-opcache|www/php72-opcache|2019-12-17|Has expired: upstream security support ended
 www/php71-session|www/php72-session|2019-12-17|Has expired: upstream security support ended
 www/php71-tidy|www/php72-tidy|2019-12-17|Has expired: upstream security support ended
+lang/php71-extensions|lang/php72-extensions|2019-12-17|Has expired: upstream security support ended
+devel/pecl-request||2019-12-17|Has expired: upstream security support ended
