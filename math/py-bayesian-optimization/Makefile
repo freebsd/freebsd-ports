@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.18.0:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.14.0:science/py-scipy@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
