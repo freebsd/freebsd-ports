@@ -3,23 +3,23 @@
 
 PORTNAME=	gtk-doc
 PORTVERSION=	1.29
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Code documentation system, originally for GTK+
 
-BUILD_DEPENDS=	jade:textproc/jade \
-		itstool:textproc/itstool \
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	itstool:textproc/itstool \
 		highlight:textproc/highlight \
 		docbook-xml>0:textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
-		rarian-sk-config:textproc/rarian
-RUN_DEPENDS=	jade:textproc/jade \
-		docbook-xml>0:textproc/docbook-xml \
+		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl
+RUN_DEPENDS=	docbook-xml>0:textproc/docbook-xml \
 		highlight:textproc/highlight \
-		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
-		rarian-sk-config:textproc/rarian
+		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl
 
 DOCBOOK_VERSION=	4.1.2
 
