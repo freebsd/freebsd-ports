@@ -2,6 +2,7 @@
 
 PORTNAME=	yoshimi
 DISTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
