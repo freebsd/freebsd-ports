@@ -2,6 +2,7 @@
 
 PORTNAME=	semantik
 DISTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	https://waf.io/
 
@@ -10,7 +11,7 @@ COMMENT=	Mind mapping tool
 
 LICENSE=	GPLv3
 
-USES=		kde:5 pkgconfig python:3.6 qt:5 shebangfix tar:bzip2 waf \
+USES=		kde:5 pkgconfig python:3.6+ qt:5 shebangfix tar:bzip2 waf \
 		desktop-file-utils gettext shared-mime-info
 USE_KDE=	auth config configwidgets coreaddons i18n iconthemes \
 		kdelibs4support kio sonnet widgetsaddons xmlgui
@@ -25,9 +26,16 @@ CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	${WRKSRC}/src/templates/beamer/wscript \
-		${WRKSRC}/src/templates/pdflatex/wscript \
-		waf
+SHEBANG_FILES=	src/templates/beamer/wscript \
+		src/templates/pdflatex/wscript \
+		src/filters/fvym.py \
+		src/filters/kdissert.py \
+		src/filters/main.py \
+		src/filters/others.py \
+		src/filters/semantik.py \
+		src/sembind.py \
+		waf \
+		wscript
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
