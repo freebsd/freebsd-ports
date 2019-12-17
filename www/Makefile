@@ -1874,6 +1874,7 @@
     SUBDIR += py-w3lib
     SUBDIR += py-wagtail
     SUBDIR += py-waitress
+    SUBDIR += py-webargs
     SUBDIR += py-webassets
     SUBDIR += py-webhelpers
     SUBDIR += py-webob
