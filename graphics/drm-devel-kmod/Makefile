@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drm-devel-kmod
-PORTVERSION=	5.0.g20191120
+PORTVERSION=	5.0.g20191217
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
