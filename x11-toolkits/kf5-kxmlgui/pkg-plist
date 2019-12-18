@@ -1,5 +1,6 @@
 etc/xdg/ui/ui_standards.rc
 include/KF5/KXmlGui/KAboutApplicationDialog
+include/KF5/KXmlGui/KAboutPluginDialog
 include/KF5/KXmlGui/KActionCategory
 include/KF5/KXmlGui/KActionCollection
 include/KF5/KXmlGui/KBugReport
@@ -18,12 +19,11 @@ include/KF5/KXmlGui/KXMLGUIClient
 include/KF5/KXmlGui/KXMLGUIFactory
 include/KF5/KXmlGui/KXmlGuiWindow
 include/KF5/KXmlGui/kaboutapplicationdialog.h
+include/KF5/KXmlGui/kaboutplugindialog.h
 include/KF5/KXmlGui/kactioncategory.h
 include/KF5/KXmlGui/kactioncollection.h
 include/KF5/KXmlGui/kbugreport.h
 include/KF5/KXmlGui/kedittoolbar.h
-include/KF5/KXmlGui/kgesture_p.h
-include/KF5/KXmlGui/kgesturemap_p.h
 include/KF5/KXmlGui/khelpmenu.h
 include/KF5/KXmlGui/kkeysequencewidget.h
 include/KF5/KXmlGui/kmainwindow.h

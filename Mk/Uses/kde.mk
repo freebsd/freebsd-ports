@@ -58,7 +58,7 @@ KDE_PLASMA_VERSION?=		5.17.4
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
-KDE_FRAMEWORKS_VERSION?=	5.64.0
+KDE_FRAMEWORKS_VERSION?=	5.65.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
@@ -182,7 +182,7 @@ _USE_KDE_BOTH=		akonadi attica libkcddb libkcompactdisc libkdcraw libkdegames \
 # that our list of frameworks matches the structure offered upstream.
 _USE_FRAMEWORKS_TIER1=	apidox archive attica5 breeze-icons codecs config \
 			coreaddons dbusaddons dnssd holidays i18n idletime itemmodels \
-			itemviews kirigami2 oxygen-icons5 plotting prison \
+			itemviews kirigami2 kquickcharts oxygen-icons5 plotting prison \
 			qqc2-desktop-style solid sonnet syntaxhighlighting \
 			threadweaver wayland widgetsaddons windowsystem
 # NOT LISTED TIER1: modemmanagerqt networkmanagerqt (not applicable)
@@ -363,7 +363,7 @@ kde-kdeclarative_PORT=		devel/kf5-kdeclarative
 kde-kdeclarative_LIB=		libKF5Declarative.so
 
 kde-kded_PORT=			x11/kf5-kded
-kde-kded_LIB=			libkdeinit5_kded5.so
+kde-kded_PATH=			${KDE_PREFIX}/bin/kded5
 
 kde-kdelibs4support_PORT=	x11/kf5-kdelibs4support
 kde-kdelibs4support_LIB=	libKF5KDELibs4Support.so
@@ -386,6 +386,9 @@ kde-kio_LIB=			libKF5KIOCore.so
 
 kde-kirigami2_PORT=		x11-toolkits/kf5-kirigami2
 kde-kirigami2_PATH=		${QT_QMLDIR}/org/kde/kirigami.2/libkirigamiplugin.so
+
+kde-kquickcharts_PORT=		graphics/kf5-kquickcharts
+kde-kquickcharts_PATH=		${QT_QMLDIR}/org/kde/quickcharts/controls/libchartscontrolsplugin.so
 
 kde-kross_PORT=			lang/kf5-kross
 kde-kross_LIB=			libKF5KrossCore.so

@@ -88,12 +88,15 @@ lib/libKF5NewStuffCore.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/newstuff/qml/private/Rating.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/private/Shadow.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/private/entrygriddelegates/BigPreviewDelegate.qml
+%%QT_QMLDIR%%/org/kde/newstuff/qml/private/entrygriddelegates/FeedbackOverlay.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/private/entrygriddelegates/ThumbDelegate.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qml/private/entrygriddelegates/TileDelegate.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qmldir
 share/kf5/kmoretools/presets-kmoretools/_README.md
 share/kf5/kmoretools/presets-kmoretools/angrysearch.desktop
 share/kf5/kmoretools/presets-kmoretools/catfish.desktop
+share/kf5/kmoretools/presets-kmoretools/com.obsproject.Studio.desktop
+share/kf5/kmoretools/presets-kmoretools/com.obsproject.Studio.png
 share/kf5/kmoretools/presets-kmoretools/com.uploadedlobster.peek.desktop
 share/kf5/kmoretools/presets-kmoretools/ding.desktop
 share/kf5/kmoretools/presets-kmoretools/disk.desktop

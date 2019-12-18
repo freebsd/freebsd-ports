@@ -5,6 +5,7 @@ include/KF5/KItemModels/KDescendantsProxyModel
 include/KF5/KItemModels/KExtraColumnsProxyModel
 include/KF5/KItemModels/KLinkItemSelectionModel
 include/KF5/KItemModels/KModelIndexProxyMapper
+include/KF5/KItemModels/KNumberModel
 include/KF5/KItemModels/KRearrangeColumnsProxyModel
 include/KF5/KItemModels/KRecursiveFilterProxyModel
 include/KF5/KItemModels/KSelectionProxyModel
@@ -16,6 +17,7 @@ include/KF5/KItemModels/kextracolumnsproxymodel.h
 include/KF5/KItemModels/kitemmodels_export.h
 include/KF5/KItemModels/klinkitemselectionmodel.h
 include/KF5/KItemModels/kmodelindexproxymapper.h
+include/KF5/KItemModels/knumbermodel.h
 include/KF5/KItemModels/krearrangecolumnsproxymodel.h
 include/KF5/KItemModels/krecursivefilterproxymodel.h
 include/KF5/KItemModels/kselectionproxymodel.h

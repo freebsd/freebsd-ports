@@ -5095,6 +5095,7 @@ share/icons/breeze-dark/apps/48/atom.svg
 share/icons/breeze-dark/apps/48/audacity.svg
 share/icons/breeze-dark/apps/48/author.svg
 share/icons/breeze-dark/apps/48/babe.svg
+share/icons/breeze-dark/apps/48/baloo.svg
 share/icons/breeze-dark/apps/48/bitcoin128.svg
 share/icons/breeze-dark/apps/48/bittorrent-sync.svg
 share/icons/breeze-dark/apps/48/bleachbit.svg
@@ -5414,6 +5415,7 @@ share/icons/breeze-dark/apps/64/system-file-manager.svg
 share/icons/breeze-dark/apps/64/umbrello.svg
 share/icons/breeze-dark/apps/64/utilities-terminal.svg
 share/icons/breeze-dark/breeze-icons-dark.rcc
+share/icons/breeze-dark/categories/32/applications-all.svg
 share/icons/breeze-dark/categories/32/applications-development.svg
 share/icons/breeze-dark/categories/32/applications-education-language.svg
 share/icons/breeze-dark/categories/32/applications-education-mathematics.svg
@@ -7971,7 +7973,6 @@ share/icons/breeze-dark/places/symbolic/user-desktop-symbolic.svg
 share/icons/breeze-dark/places/symbolic/user-home-symbolic.svg
 share/icons/breeze-dark/places/symbolic/user-trash-symbolic.svg
 share/icons/breeze-dark/preferences/32/amarok_change_language.svg
-share/icons/breeze-dark/preferences/32/baloo.svg
 share/icons/breeze-dark/preferences/32/device-notifier.svg
 share/icons/breeze-dark/preferences/32/drive-removable-media.svg
 share/icons/breeze-dark/preferences/32/face-smile.svg
@@ -7988,6 +7989,7 @@ share/icons/breeze-dark/preferences/32/plasma.svg
 share/icons/breeze-dark/preferences/32/plasmagik.svg
 share/icons/breeze-dark/preferences/32/plasmashell.svg
 share/icons/breeze-dark/preferences/32/podcast-amarok.svg
+share/icons/breeze-dark/preferences/32/preferences-%%CMAKE_BUILD_TYPE%%notes.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-accessibility.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-activities.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-baloo.svg
@@ -8018,6 +8020,7 @@ share/icons/breeze-dark/preferences/32/preferences-desktop-peripherals.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-plasma-theme.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-plasma.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-screensaver.svg
+share/icons/breeze-dark/preferences/32/preferences-desktop-search.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-sound.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-text-to-speech.svg
 share/icons/breeze-dark/preferences/32/preferences-desktop-theme-applications.svg
@@ -8040,7 +8043,6 @@ share/icons/breeze-dark/preferences/32/preferences-kde-connect.svg
 share/icons/breeze-dark/preferences/32/preferences-log.svg
 share/icons/breeze-dark/preferences/32/preferences-other.svg
 share/icons/breeze-dark/preferences/32/preferences-plugin.svg
-share/icons/breeze-dark/preferences/32/preferences-%%CMAKE_BUILD_TYPE%%notes.svg
 share/icons/breeze-dark/preferences/32/preferences-security-apparmor.svg
 share/icons/breeze-dark/preferences/32/preferences-security-firewall.svg
 share/icons/breeze-dark/preferences/32/preferences-security-kerberos.svg
@@ -8105,6 +8107,7 @@ share/icons/breeze-dark/preferences/32/preferences.svg
 share/icons/breeze-dark/preferences/32/system-lock-screen.svg
 share/icons/breeze-dark/preferences/32/system-users.svg
 share/icons/breeze-dark/preferences/32/window-duplicate.svg
+share/icons/breeze-dark/preferences/32/yast-%%CMAKE_BUILD_TYPE%%-notes.svg
 share/icons/breeze-dark/preferences/32/yast-addon-extension.svg
 share/icons/breeze-dark/preferences/32/yast-addon.svg
 share/icons/breeze-dark/preferences/32/yast-alternatives.svg
@@ -8150,7 +8153,6 @@ share/icons/breeze-dark/preferences/32/yast-nis.svg
 share/icons/breeze-dark/preferences/32/yast-ntp-client.svg
 share/icons/breeze-dark/preferences/32/yast-printer.svg
 share/icons/breeze-dark/preferences/32/yast-proxy.svg
-share/icons/breeze-dark/preferences/32/yast-%%CMAKE_BUILD_TYPE%%-notes.svg
 share/icons/breeze-dark/preferences/32/yast-remote.svg
 share/icons/breeze-dark/preferences/32/yast-samba-client.svg
 share/icons/breeze-dark/preferences/32/yast-samba-server.svg
@@ -13612,6 +13614,7 @@ share/icons/breeze/apps/48/atom.svg
 share/icons/breeze/apps/48/audacity.svg
 share/icons/breeze/apps/48/author.svg
 share/icons/breeze/apps/48/babe.svg
+share/icons/breeze/apps/48/baloo.svg
 share/icons/breeze/apps/48/bitcoin128.svg
 share/icons/breeze/apps/48/bittorrent-sync.svg
 share/icons/breeze/apps/48/bleachbit.svg
@@ -14000,6 +14003,7 @@ share/icons/breeze/apps/64/system-file-manager.svg
 share/icons/breeze/apps/64/umbrello.svg
 share/icons/breeze/apps/64/utilities-terminal.svg
 share/icons/breeze/breeze-icons.rcc
+share/icons/breeze/categories/32/applications-all.svg
 share/icons/breeze/categories/32/applications-development.svg
 share/icons/breeze/categories/32/applications-education-language.svg
 share/icons/breeze/categories/32/applications-education-mathematics.svg
@@ -16566,7 +16570,6 @@ share/icons/breeze/places/symbolic/user-desktop-symbolic.svg
 share/icons/breeze/places/symbolic/user-home-symbolic.svg
 share/icons/breeze/places/symbolic/user-trash-symbolic.svg
 share/icons/breeze/preferences/32/amarok_change_language.svg
-share/icons/breeze/preferences/32/baloo.svg
 share/icons/breeze/preferences/32/device-notifier.svg
 share/icons/breeze/preferences/32/drive-removable-media.svg
 share/icons/breeze/preferences/32/face-smile.svg
@@ -16583,6 +16586,7 @@ share/icons/breeze/preferences/32/plasma.svg
 share/icons/breeze/preferences/32/plasmagik.svg
 share/icons/breeze/preferences/32/plasmashell.svg
 share/icons/breeze/preferences/32/podcast-amarok.svg
+share/icons/breeze/preferences/32/preferences-%%CMAKE_BUILD_TYPE%%notes.svg
 share/icons/breeze/preferences/32/preferences-desktop-accessibility.svg
 share/icons/breeze/preferences/32/preferences-desktop-activities.svg
 share/icons/breeze/preferences/32/preferences-desktop-baloo.svg
@@ -16613,6 +16617,7 @@ share/icons/breeze/preferences/32/preferences-desktop-peripherals.svg
 share/icons/breeze/preferences/32/preferences-desktop-plasma-theme.svg
 share/icons/breeze/preferences/32/preferences-desktop-plasma.svg
 share/icons/breeze/preferences/32/preferences-desktop-screensaver.svg
+share/icons/breeze/preferences/32/preferences-desktop-search.svg
 share/icons/breeze/preferences/32/preferences-desktop-sound.svg
 share/icons/breeze/preferences/32/preferences-desktop-text-to-speech.svg
 share/icons/breeze/preferences/32/preferences-desktop-theme-applications.svg
@@ -16635,7 +16640,6 @@ share/icons/breeze/preferences/32/preferences-kde-connect.svg
 share/icons/breeze/preferences/32/preferences-log.svg
 share/icons/breeze/preferences/32/preferences-other.svg
 share/icons/breeze/preferences/32/preferences-plugin.svg
-share/icons/breeze/preferences/32/preferences-%%CMAKE_BUILD_TYPE%%notes.svg
 share/icons/breeze/preferences/32/preferences-security-apparmor.svg
 share/icons/breeze/preferences/32/preferences-security-firewall.svg
 share/icons/breeze/preferences/32/preferences-security-kerberos.svg
@@ -16700,6 +16704,7 @@ share/icons/breeze/preferences/32/preferences.svg
 share/icons/breeze/preferences/32/system-lock-screen.svg
 share/icons/breeze/preferences/32/system-users.svg
 share/icons/breeze/preferences/32/window-duplicate.svg
+share/icons/breeze/preferences/32/yast-%%CMAKE_BUILD_TYPE%%-notes.svg
 share/icons/breeze/preferences/32/yast-addon-extension.svg
 share/icons/breeze/preferences/32/yast-addon.svg
 share/icons/breeze/preferences/32/yast-alternatives.svg
@@ -16745,7 +16750,6 @@ share/icons/breeze/preferences/32/yast-nis.svg
 share/icons/breeze/preferences/32/yast-ntp-client.svg
 share/icons/breeze/preferences/32/yast-printer.svg
 share/icons/breeze/preferences/32/yast-proxy.svg
-share/icons/breeze/preferences/32/yast-%%CMAKE_BUILD_TYPE%%-notes.svg
 share/icons/breeze/preferences/32/yast-remote.svg
 share/icons/breeze/preferences/32/yast-samba-client.svg
 share/icons/breeze/preferences/32/yast-samba-server.svg

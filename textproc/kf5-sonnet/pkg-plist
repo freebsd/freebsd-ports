@@ -36,7 +36,6 @@ lib/libKF5SonnetUi.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/designer/sonnetui5widgets.so
 %%QT_MKSPECDIR%%/modules/qt_SonnetCore.pri
 %%QT_MKSPECDIR%%/modules/qt_SonnetUi.pri
-share/kf5/sonnet/trigrams.map
 share/locale/af/LC_MESSAGES/sonnet5_qt.qm
 share/locale/ar/LC_MESSAGES/sonnet5_qt.qm
 share/locale/as/LC_MESSAGES/sonnet5_qt.qm

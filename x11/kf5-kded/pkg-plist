@@ -1,9 +1,6 @@
 bin/kded5
 lib/cmake/KDED/KDEDConfig.cmake
 lib/cmake/KDED/KDEDConfigVersion.cmake
-lib/cmake/KDED/KDEDTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/KDED/KDEDTargets.cmake
-lib/libkdeinit5_kded5.so
 man/ca/man8/kded5.8.gz
 man/de/man8/kded5.8.gz
 man/es/man8/kded5.8.gz

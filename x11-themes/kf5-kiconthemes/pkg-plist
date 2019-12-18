@@ -25,6 +25,7 @@ lib/libKF5IconThemes.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/iconengines/KIconEnginePlugin.so
 share/locale/af/LC_MESSAGES/kiconthemes5.mo
 share/locale/ar/LC_MESSAGES/kiconthemes5.mo
+share/locale/ast/LC_MESSAGES/kiconthemes5.mo
 share/locale/be/LC_MESSAGES/kiconthemes5.mo
 share/locale/be@latin/LC_MESSAGES/kiconthemes5.mo
 share/locale/bg/LC_MESSAGES/kiconthemes5.mo

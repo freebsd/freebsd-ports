@@ -30,6 +30,7 @@ lib/libexec/kauth/kauth-policy-gen
 %%QT_PLUGINDIR%%/kauth/backend/kauth_backend_plugin.so
 %%QT_PLUGINDIR%%/kauth/helper/kauth_helper_plugin.so
 %%QT_MKSPECDIR%%/modules/qt_KAuth.pri
+%%QT_MKSPECDIR%%/modules/qt_KAuthCore.pri
 share/dbus-1/system.d/org.kde.kf5auth.conf
 share/kf5/kauth/dbus_policy.stub
 share/kf5/kauth/dbus_service.stub
