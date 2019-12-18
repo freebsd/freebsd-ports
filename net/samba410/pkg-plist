@@ -386,9 +386,7 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%SAMBA4_MODULEDIR%%/vfs/expand_msdfs.so
 %%SAMBA4_MODULEDIR%%/vfs/extd_audit.so
 %%SAMBA4_MODULEDIR%%/vfs/fake_perms.so
-%%SAMBA4_MODULEDIR%%/vfs/fruit.so
 %%SAMBA4_MODULEDIR%%/vfs/full_audit.so
-%%SAMBA4_MODULEDIR%%/vfs/glusterfs_fuse.so
 %%SAMBA4_MODULEDIR%%/vfs/linux_xfs_sgid.so
 %%SAMBA4_MODULEDIR%%/vfs/media_harmony.so
 %%SAMBA4_MODULEDIR%%/vfs/netatalk.so
@@ -669,9 +667,7 @@ man/man8/vfs_dirsort.8.gz
 man/man8/vfs_extd_audit.8.gz
 man/man8/vfs_fake_perms.8.gz
 man/man8/vfs_freebsd.8.gz
-man/man8/vfs_fruit.8.gz
 man/man8/vfs_full_audit.8.gz
-man/man8/vfs_glusterfs_fuse.8.gz
 man/man8/vfs_linux_xfs_sgid.8.gz
 man/man8/vfs_media_harmony.8.gz
 man/man8/vfs_netatalk.8.gz
@@ -951,6 +947,7 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/traffic_learner.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/traffic_replay.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/traffic_summary.py
+%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/undoguididx.py
 %%PYTHON_SITELIBDIR%%/samba/tests/common.py
 %%PYTHON_SITELIBDIR%%/samba/tests/complex_expressions.py
 %%PYTHON_SITELIBDIR%%/samba/tests/core.py
@@ -1118,6 +1115,7 @@ man/man8/winbindd.8.gz
 %%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-key-value-samba4.so
 %%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-tdb-err-map-samba4.so
 %%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-tdb-int-samba4.so
+%%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb.so.1
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/asq.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/ldb.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/paged_searches.so

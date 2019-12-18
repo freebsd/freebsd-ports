@@ -1,0 +1,30 @@
+From d01c5bc9fbe316d2358ead6382f4e7e3bf5fc000 Mon Sep 17 00:00:00 2001
+From: Philipp Gesang <philipp.gesang@intra2net.com>
+Date: Tue, 12 Mar 2019 15:51:16 +0100
+Subject: [PATCH] provision: use ASCII quotes
+
+Remove some Unicode quotes that cause problems under the C
+locale.
+
+Signed-off-by: Philipp Gesang <philipp.gesang@intra2net.com>
+Reviewed-by: Douglas Bagnall <douglas.bagnall@catalyst.net.nz>
+---
+ source4/setup/extended-rights.ldif | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/source4/setup/extended-rights.ldif b/source4/setup/extended-rights.ldif
+index ef4c3049601..67417b7d020 100644
+--- a/source4/setup/extended-rights.ldif
++++ b/source4/setup/extended-rights.ldif
+@@ -11,7 +11,7 @@
+ #
+ 
+ # Technical Documentation. Microsoft publishes Open Specifications
+-# documentation (“this documentation”) for protocols, file formats,
++# documentation ("this documentation") for protocols, file formats,
+ # data portability, computer languages, and standards
+ # support. Additionally, overview documents cover inter-protocol
+ # relationships and interactions.
+-- 
+2.18.0
+
