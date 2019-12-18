@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	6.4.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX?=	powerpc64-
@@ -18,6 +18,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpc.so:math/mpc
 BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${PKGNAMEPREFIX:C/-$//:C/-/_/g}
 RUN_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${PKGNAMEPREFIX:C/-$//:C/-/_/g}
+
+CONFLICTS=	${TARGETARCH}-gcc6
 
 USES=	gmake iconv libtool tar:xz makeinfo compiler:c++11-lang
 PLIST_SUB=	TARGETARCH=${PKGNAMEPREFIX:C/-//g} \
