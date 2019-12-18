@@ -13,7 +13,7 @@ COMMENT=	Import CSV, JSON, XML and YAML files for the Icinga Director
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	icingaweb2-${PHP_FLAVOR}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR}
+RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR}
 
 USES=		php:web,flavors
 

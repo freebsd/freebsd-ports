@@ -13,7 +13,7 @@ COMMENT=	Drill-down view for Icinga web 2 based on custom variables
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	icingaweb2-${PHP_FLAVOR}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR}
+RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga

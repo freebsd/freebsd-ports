@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Icinga Web 2 ReactPHP-based 3rd party libraries
 
-RUN_DEPENDS=	icingaweb2-${PHP_FLAVOR}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR}
+RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR}
 
 USES=		php:web,flavors
 

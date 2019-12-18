@@ -13,7 +13,7 @@ COMMENT=	Generic ticket system integration into Icinga web 2
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	icingaweb2-${PHP_FLAVOR}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR}
+RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR}
 
 USES=		php:web,flavors
 

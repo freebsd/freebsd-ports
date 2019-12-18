@@ -13,8 +13,8 @@ COMMENT=	Manage Business Processes in Icinga Web 2
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	icingaweb2-${PHP_FLAVOR}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR} \
-		icingaweb2-module-ipl-${PHP_FLAVOR}>=0.1.1:net-mgmt/icingaweb2-module-ipl@${PHP_FLAVOR}
+RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR} \
+		icingaweb2-module-ipl${PHP_PKGNAMESUFFIX}>=0.1.1:net-mgmt/icingaweb2-module-ipl@${PHP_FLAVOR}
 
 USES=		php:web,flavors
 

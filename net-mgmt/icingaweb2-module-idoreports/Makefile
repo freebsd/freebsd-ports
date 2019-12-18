@@ -13,8 +13,8 @@ COMMENT=	Host and service availability reports for Icinga
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	icingaweb2-${PHP_FLAVOR}>=2.6.0:net-mgmt/icingaweb2@${PHP_FLAVOR} \
-		icingaweb2-module-reporting-${PHP_FLAVOR}>=0.9:net-mgmt/icingaweb2-module-reporting@${PHP_FLAVOR}
+RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.6.0:net-mgmt/icingaweb2@${PHP_FLAVOR} \
+		icingaweb2-module-reporting${PHP_PKGNAMESUFFIX}>=0.9:net-mgmt/icingaweb2-module-reporting@${PHP_FLAVOR}
 
 USES=		php:web,flavors
 
