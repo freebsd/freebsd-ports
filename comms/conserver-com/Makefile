@@ -2,7 +2,7 @@
 
 PORTNAME=	conserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.2.2
+DISTVERSION=	8.2.4
 CATEGORIES=	comms
 PKGNAMESUFFIX=	-com
 
@@ -12,7 +12,7 @@ COMMENT=	Application that allows multiple users to watch serial consoles
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		ssl
+USES=		autoreconf ssl
 USE_GITHUB=	yes
 USE_RC_SUBR=	conserver
 
@@ -37,13 +37,15 @@ GSSAPIONLY_EXTRA_PATCHES=		${FILESDIR}/extra-patch-conserver__master.c
 STRIPREALM_CONFIGURE_WITH=	striprealm
 UDS_CONFIGURE_WITH=	uds
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,impi,ipmi,' ${WRKSRC}/conserver.cf/conserver.cf.man
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/conserver-convert
 
 DEFAULTPORT?=	782
 DEFAULTHOST?=	localhost
+
+post-extract:
+.for file in config.guess config.sub
+	${CP} -f ${TEMPLATES}/${file} ${WRKSRC}
+.endfor
 
 .include <bsd.port.mk>
