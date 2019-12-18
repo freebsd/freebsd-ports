@@ -1,0 +1,4 @@
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/riscv/%%OPSYS%%.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/riscv/riscv-opts.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/riscv/riscv-protos.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/riscv/riscv.h

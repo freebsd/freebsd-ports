@@ -1,0 +1,9 @@
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/loongson-mmiintrin.h
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/loongson.h
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/msa.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/mips/elf.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/mips/%%OPSYS%%.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/mips/mips-opts.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/mips/mips-protos.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/mips/mips.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/vxworks-dummy.h

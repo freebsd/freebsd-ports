@@ -1,0 +1,110 @@
+--- gcc/c-family/c-format.c.orig	2019-02-25 15:43:51.000000000 -0800
++++ gcc/c-family/c-format.c	2019-11-28 17:36:16.788253000 -0800
+@@ -683,6 +683,26 @@ static const format_char_info print_char_table[] =
+   { NULL,  0, STD_C89, NOLENGTHS, NULL, NULL, NULL }
+ };
+ 
++static const format_char_info fbsd_ext_char_info =
++{ NULL,   1, STD_EXT, { T89_C,  BADLEN,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN, BADLEN }, "",      "cR", NULL };
++
++static const format_char_info fbsd_print_char_table[] =
++{
++  /* BSD conversion specifiers.  */
++  /* FreeBSD kernel extensions (src/sys/kern/subr_prf.c).
++     The format %b is supported to decode error registers.
++     Its usage is:	printf("reg=%b\n", regval, "<base><arg>*");
++     which produces:	reg=3<BITTWO,BITONE>
++     The format %D provides a hexdump given a pointer and separator string:
++     ("%6D", ptr, ":")		-> XX:XX:XX:XX:XX:XX
++     ("%*D", len, ptr, " ")	-> XX XX XX XX ...
++   */
++  { "D",   1, STD_EXT, { T89_V,  BADLEN,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN }, "-wp",      "cR", &fbsd_ext_char_info },
++  { "b",   0, STD_EXT, { T89_I,  BADLEN,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-wp",      "",   &fbsd_ext_char_info },
++  { "ry",  0, STD_EXT, { T89_I,  BADLEN,   BADLEN,   T89_L,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-wp0 +#",  "i",  NULL  },
++  { NULL,  0, STD_C89, NOLENGTHS, NULL, NULL, NULL }
++};
++
+ static const format_char_info asm_fprintf_char_table[] =
+ {
+   /* C89 conversion specifiers.  */
+@@ -959,6 +979,12 @@ static const format_kind_info format_types_orig[] =
+     strfmon_flag_specs, strfmon_flag_pairs,
+     FMT_FLAG_ARG_CONVERT, 'w', '#', 'p', 0, 'L', 0,
+     NULL, NULL
++  },
++  { "printf0",  printf_length_specs,  print_char_table, " +#0-'I", NULL,
++    printf_flag_specs, printf_flag_pairs,
++    FMT_FLAG_ARG_CONVERT|FMT_FLAG_DOLLAR_MULTIPLE|FMT_FLAG_USE_DOLLAR|FMT_FLAG_EMPTY_PREC_OK|FMT_FLAG_NULL_FORMAT_OK,
++    'w', 0, 'p', 0, 'L', 0,
++    &integer_type_node, &integer_type_node
+   }
+ };
+ 
+@@ -1572,6 +1598,9 @@ check_format_arg (void *ctx, tree format_tree,
+ 
+   if (integer_zerop (format_tree))
+     {
++      if (!(format_types[info->format_type].flags & FMT_FLAG_NULL_FORMAT_OK))
++	warning (OPT_Wformat_, "null format string");
++
+       /* Skip to first argument to check, so we can see if this format
+ 	 has any arguments (it shouldn't).  */
+       while (arg_num + 1 < info->first_arg_num)
+@@ -2401,6 +2430,13 @@ argument_parser::read_any_length_modifier ()
+   while (fli->name != 0
+ 	 && strncmp (fli->name, format_chars, strlen (fli->name)))
+     fli++;
++
++  /* Make sure FreeBSD's D format char takes preference over new DD
++     length specifier if FreeBSD format extensions are requested.  */
++  if (fli->index == FMT_LEN_D && flag_format_extensions
++      && fki->conversion_specs == print_char_table)
++    while (fli->name != 0)
++      fli++;
+   if (fli->name != 0)
+     {
+       format_chars += strlen (fli->name);
+@@ -2473,6 +2509,14 @@ argument_parser::find_format_char_info (char format_ch
+   while (fci->format_chars != 0
+ 	 && strchr (fci->format_chars, format_char) == 0)
+     ++fci;
++  if (fci->format_chars == 0 && flag_format_extensions
++      && fki->conversion_specs == print_char_table)
++    {
++      fci = fbsd_print_char_table;
++      while (fci->format_chars != 0
++	     && strchr (fci->format_chars, format_char) == 0)
++	++fci;
++    }
+   if (fci->format_chars == 0)
+     {
+       format_warning_at_char (format_string_loc, format_string_cst,
+--- gcc/c-family/c-format.h.orig	2019-01-01 04:31:55.000000000 -0800
++++ gcc/c-family/c-format.h	2019-11-28 17:24:29.601936000 -0800
+@@ -75,11 +75,12 @@ enum
+   FMT_FLAG_DOLLAR_GAP_POINTER_OK = 128,
+   /* The format arg is an opaque object that will be parsed by an external
+      facility.  */
+-  FMT_FLAG_PARSE_ARG_CONVERT_EXTERNAL = 256
++  FMT_FLAG_PARSE_ARG_CONVERT_EXTERNAL = 256,
+   /* Not included here: details of whether width or precision may occur
+      (controlled by width_char and precision_char); details of whether
+      '*' can be used for these (width_type and precision_type); details
+      of whether length modifiers can occur (length_char_specs).  */
++  FMT_FLAG_NULL_FORMAT_OK = 512
+ };
+ 
+ /* Structure describing a length modifier supported in format checking, and
+--- gcc/config/freebsd.opt.orig	2019-01-01 04:31:55.000000000 -0800
++++ gcc/config/freebsd.opt	2019-11-28 17:24:29.602437000 -0800
+@@ -34,6 +34,10 @@ Driver Separate
+ defsym=
+ Driver JoinedOrMissing
+ 
++fformat-extensions
++Common Report Var(flag_format_extensions) Init(0)
++Allow FreeBSD kernel-specific printf format specifiers.
++
+ posix
+ Driver
+ 

@@ -708,6 +708,7 @@
     SUBDIR += fpp
     SUBDIR += frama-c
     SUBDIR += freebsd-gcc6
+    SUBDIR += freebsd-gcc9
     SUBDIR += frink
     SUBDIR += fsmtrie
     SUBDIR += fstrcmp
