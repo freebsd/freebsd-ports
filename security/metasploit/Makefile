@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	5.0.54
+PORTVERSION=	5.0.64
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -16,7 +16,6 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-activerecord4>=4.2.6:databases/rubygem-activerecord4 \
 		rubygem-activesupport4>=4.2.6:devel/rubygem-activesupport4 \
 		rubygem-actionpack4>=4.2.6:www/rubygem-actionpack4 \
-		rubygem-backports>=0:devel/rubygem-backports \
 		rubygem-bcrypt>=0:security/rubygem-bcrypt \
 		rubygem-bundler>=0:sysutils/rubygem-bundler \
 		rubygem-jsobfu>=0:www/rubygem-jsobfu \
@@ -27,7 +26,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=3.0.10_2:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.3.78:security/rubygem-metasploit-payloads \
+		rubygem-metasploit-payloads>=1.3.83:security/rubygem-metasploit-payloads \
 		rubygem-metasploit_payloads-mettle>=0.5.16:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
@@ -89,7 +88,9 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-concurrent-ruby>=0:devel/rubygem-concurrent-ruby \
 		rubygem-aws-sdk-s3>=0:devel/rubygem-aws-sdk-s3 \
 		rubygem-aws-sdk-ec2>=0:devel/rubygem-aws-sdk-ec2 \
-		rubygem-aws-sdk-iam>=0:devel/rubygem-aws-sdk-iam
+		rubygem-aws-sdk-iam>=0:devel/rubygem-aws-sdk-iam \
+		rubygem-faye-websocket>=0:www/rubygem-faye-websocket \
+		rubygem-eventmachine>=0:devel/rubygem-eventmachine
 
 SCRIPTS=	msfconsole msfd msfdb msfrpc msfrpcd msfvenom
 
@@ -134,6 +135,7 @@ post-patch:
 		${WRKSRC}/metasploit-framework.gemspec
 	${REINPLACE_CMD} "/pg/s|, '~> 0.20'||; \
 		/concurrent-ruby/s|,'1.0.5'||; \
+		/faraday/s|, '<= 0.17.0'||; \
 		/bcrypt/s|, '3.1.12'||" ${WRKSRC}/metasploit-framework.gemspec
 
 do-build:
