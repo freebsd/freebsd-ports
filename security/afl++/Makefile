@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	2.58c
+PORTVERSION=	2.59c
 CATEGORIES=	security
 PKGNAMESUFFIX=	++
 
@@ -23,20 +23,21 @@ GH_ACCOUNT=	vanhauser-thc
 GH_PROJECT=	AFLplusplus
 
 MAKE_ARGS=	STRIP_CMD="${STRIP_CMD}"
-ALL_TARGET=	all libdislocator
+ALL_TARGET=	all libdislocator libtokencap
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	test_build
 
 CONFLICTS_INSTALL=	afl
 
-OPTIONS_DEFINE=		DEBUG DOCS GCC LLVM
-OPTIONS_DEFAULT=	LLVM
+OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES GCC LLVM PYTHON
+OPTIONS_DEFAULT=	LLVM PYTHON
 # On non-x86 architectures LLVM is mandatory
 OPTIONS_SLAVE=		${ARCH:Namd64:Ni386:S/${ARCH}/LLVM/}
 OPTIONS_SUB=		yes
 
 GCC_DESC=	Build GCC plugin and afl-gcc-fast
 LLVM_DESC=	LLVM-based instrumentation
+PYTHON_DESC=	Python mutators support
 
 GCC_BUILD_DEPENDS=	gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 GCC_RUN_DEPENDS=	gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
@@ -53,6 +54,9 @@ LLVM_TEST_TARGET=	test_llvm_mode
 LLVM_BINARY_ALIAS=	llvm-config=llvm-config${LLVM_DEFAULT}
 LLVM_VARS=		CC=clang${LLVM_DEFAULT} \
 			CXX=clang++${LLVM_DEFAULT}
+
+PYTHON_USES=		gettext-runtime python:3.7
+PYTHON_MAKE_ARGS_OFF=	PYTHON_INCLUDE=/nonexistent
 
 .include <bsd.port.options.mk>
 
@@ -97,9 +101,12 @@ post-patch-LLVM-on:
 		${WRKSRC}/llvm_mode/afl-clang-fast.c
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/libdislocator
-	${INSTALL_MAN} ${WRKSRC}/libdislocator/README.md \
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/libdislocator \
+		${STAGEDIR}${DOCSDIR}/libtokencap
+	${INSTALL_MAN} ${WRKSRC}/libdislocator/README.dislocator.md \
 		${STAGEDIR}${DOCSDIR}/libdislocator
+	${INSTALL_MAN} ${WRKSRC}/libtokencap/README.tokencap.md \
+		${STAGEDIR}${DOCSDIR}/libtokencap
 
 post-install-GCC-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/gcc_plugin
@@ -111,7 +118,13 @@ post-install-LLVM-on:
 	${INSTALL_MAN} ${WRKSRC}/llvm_mode/README.* \
 		${STAGEDIR}${DOCSDIR}/llvm_mode
 
+post-install-PYTHON-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/python_mutators
+	@cd ${WRKSRC} && \
+		${COPYTREE_SHARE} python_mutators ${STAGEDIR}${EXAMPLESDIR}
+
 post-test:
+# libtokencap test might require security.bsd.unprivileged_proc_debug=1
 	@cd ${WRKSRC}/test && ./test.sh
 
 .include <bsd.port.mk>
