@@ -1,4 +1,4 @@
-.PHONY: gcc_plugin install-strip libdislocator llvm_mode test_gcc_plugin test_llvm_mode
+.PHONY: gcc_plugin install-strip libdislocator libtokencap llvm_mode test_gcc_plugin test_llvm_mode
 
 install-strip: install
 	@cd ${DESTDIR}${BIN_PATH} && ${STRIP_CMD} ${PROGS}
@@ -8,7 +8,10 @@ install-strip: install
 
 libdislocator:
 	$(MAKE) -C libdislocator CFLAGS="-I../include ${CFLAGS}"
-	
+
+libtokencap:
+	$(MAKE) -C libtokencap 
+
 llvm_mode:
 	$(MAKE) -C llvm_mode
 

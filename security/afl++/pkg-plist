@@ -25,6 +25,7 @@ bin/afl-whatsup
 %%X86%%lib/afl/as
 %%LLVM%%lib/afl/compare-transform-pass.so
 lib/afl/libdislocator.so
+lib/afl/libtokencap.so
 %%LLVM%%lib/afl/libLLVMInsTrim.so
 %%LLVM%%lib/afl/split-compares-pass.so
 %%LLVM%%lib/afl/split-switches-pass.so
@@ -89,6 +90,7 @@ man/man8/afl-whatsup.8.gz
 %%DATADIR%%/others/xml/small_document.xml
 %%DATADIR%%/pdf.dict
 %%DATADIR%%/png.dict
+%%DATADIR%%/regexp.dict
 %%DATADIR%%/sql.dict
 %%DATADIR%%/tiff.dict
 %%DATADIR%%/webp.dict
@@ -102,7 +104,8 @@ man/man8/afl-whatsup.8.gz
 %%GCC%%%%PORTDOCS%%%%DOCSDIR%%/gcc_plugin/README.gcc.md
 %%GCC%%%%PORTDOCS%%%%DOCSDIR%%/gcc_plugin/README.whitelist.md
 %%PORTDOCS%%%%DOCSDIR%%/historical_notes.txt
-%%PORTDOCS%%%%DOCSDIR%%/libdislocator/README.md
+%%PORTDOCS%%%%DOCSDIR%%/libdislocator/README.dislocator.md
+%%PORTDOCS%%%%DOCSDIR%%/libtokencap/README.tokencap.md
 %%PORTDOCS%%%%DOCSDIR%%/life_pro_tips.txt
 %%LLVM%%%%PORTDOCS%%%%DOCSDIR%%/llvm_mode/README.md
 %%LLVM%%%%PORTDOCS%%%%DOCSDIR%%/llvm_mode/README.instrim.md
@@ -117,3 +120,9 @@ man/man8/afl-whatsup.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/sister_projects.txt
 %%PORTDOCS%%%%DOCSDIR%%/status_screen.txt
 %%PORTDOCS%%%%DOCSDIR%%/technical_details.txt
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python_mutators/README
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python_mutators/XmlMutatorMin.py
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python_mutators/common.py
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python_mutators/example.py
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python_mutators/simple-chunk-replace.py
+%%PYTHON%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python_mutators/wrapper_afl_min.py
