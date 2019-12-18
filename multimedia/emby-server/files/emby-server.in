@@ -45,6 +45,7 @@ load_rc_config ${name}
 : ${%%RC_NAME%%_ffprobe:="%%PREFIX%%/lib/emby-server/bin/ffprobe"}
 : ${%%RC_NAME%%_pid:="/var/run/%%PORTNAME%%.pid"}
 
+pidfile="${%%RC_NAME%%_pid}"
 procname="%%LOCALBASE%%/bin/mono"
 command="/usr/sbin/daemon"
 command_args="-f -p ${%%RC_NAME%%_pid} ${procname} %%PREFIX%%/lib/emby-server/system/EmbyServer.exe \
