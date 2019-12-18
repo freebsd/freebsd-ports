@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_ART10=	${WRKSRC}/simutrans/license.txt
 LICENSE_FILE_MIT=	${WRKSRC}/simutrans/license_squirrel.txt
 
-USES=		gmake sdl zip
+USES=		compiler:c11 gmake sdl zip
 USE_SDL=	sdl2 mixer2
 
 # Threading disabled because FreeBSD does not have a static initializer
