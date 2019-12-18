@@ -89,10 +89,10 @@ CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp \
 CLANG_PORTDOCS=		clang
 CLANG_PLIST_FILES=	share/toolchains/llvm-devel.mk
 CLANG_SUB_FILES=	xtoolchain.mk
-CLANG_SUB_LIST=		XCC=clang${XCC} \
-			XCXX=clang++${XCXX} \
-			XCPP=clang-cpp${XCPP} \
-			XLD=${LLVM_PREFIX}/bin/ld.lld \
+CLANG_SUB_LIST=		XCC=clang${LLVM_SUFFIX} \
+			XCXX=clang++${LLVM_SUFFIX} \
+			XCPP=clang-cpp${LLVM_SUFFIX} \
+			XLD=ld.lld${LLVM_SUFFIX} \
 			X_COMPILER_TYPE=clang
 CLANG_USE=		GNOME=libxml2
 COMPILER_RT_DESC=	Sanitizer libraries
@@ -261,6 +261,7 @@ PORTDOCS+=	lld
 .if ${PORT_OPTIONS:MLLDB}
 LLVM_ENABLE_PROJECTS+=	lldb
 COMMANDS+=	${LLDB_COMMANDS}
+MAN1SRCS+=	lldb.1
 .endif
 
 .if ${PORT_OPTIONS:MOPENMP}
