@@ -14,7 +14,7 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
 FLAVORS=	native aarch64 aarch64_none_elf amd64 arm_gnueabi arm_none_eabi \
-		avr i386 mingw32 mips mips64 powerpc64 riscv64 s390x sparc64
+		avr i386 mingw32 mips mips64 powerpc powerpc64 riscv64 s390x sparc64
 FLAVOR?=	native
 
 RELRO_CONFIGURE_ON=	--enable-relro
