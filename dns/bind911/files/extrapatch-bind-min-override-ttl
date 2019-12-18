@@ -1,4 +1,4 @@
---- bin/named/config.c.orig	2019-11-06 21:46:22 UTC
+--- bin/named/config.c.orig	2019-12-12 05:17:55 UTC
 +++ bin/named/config.c
 @@ -182,6 +182,8 @@ options {\n\
  "	max-acache-size 16M;\n\
@@ -9,9 +9,9 @@
  	max-clients-per-query 100;\n\
  	max-ncache-ttl 10800; /* 3 hours */\n\
  	max-recursion-depth 7;\n\
---- bin/named/server.c.orig	2019-11-06 21:46:22 UTC
+--- bin/named/server.c.orig	2019-12-12 05:17:55 UTC
 +++ bin/named/server.c
-@@ -3722,6 +3722,16 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
+@@ -3720,6 +3720,16 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
  	}
  
  	obj = NULL;
@@ -28,7 +28,7 @@
  	result = ns_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
  	view->maxcachettl = cfg_obj_asuint32(obj);
---- lib/dns/include/dns/view.h.orig	2019-11-06 21:46:22 UTC
+--- lib/dns/include/dns/view.h.orig	2019-12-12 05:17:55 UTC
 +++ lib/dns/include/dns/view.h
 @@ -152,6 +152,8 @@ struct dns_view {
  	bool			requestnsid;
@@ -39,9 +39,9 @@
  	dns_ttl_t			maxncachettl;
  	uint32_t			nta_lifetime;
  	uint32_t			nta_recheck;
---- lib/dns/resolver.c.orig	2019-11-06 21:46:22 UTC
+--- lib/dns/resolver.c.orig	2019-12-12 05:17:55 UTC
 +++ lib/dns/resolver.c
-@@ -5518,6 +5518,18 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_adb
+@@ -5529,6 +5529,18 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_adb
  		}
  
  		/*
@@ -60,7 +60,7 @@
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl) {
---- lib/isccfg/namedconf.c.orig	2019-11-06 21:46:22 UTC
+--- lib/isccfg/namedconf.c.orig	2019-12-12 05:17:55 UTC
 +++ lib/isccfg/namedconf.c
 @@ -1773,6 +1773,8 @@ view_clauses[] = {
  #endif

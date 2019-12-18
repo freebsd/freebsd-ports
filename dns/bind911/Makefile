@@ -24,7 +24,7 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 USES=	cpe libedit pkgconfig
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.11.13
+ISCVERSION=	9.11.14
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
