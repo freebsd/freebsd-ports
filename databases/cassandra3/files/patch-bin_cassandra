@@ -1,11 +1,20 @@
---- bin/cassandra.orig	2018-09-07 13:43:49 UTC
+--- bin/cassandra.orig	2019-12-13 12:50:29 UTC
 +++ bin/cassandra
-@@ -189,7 +189,7 @@ launch_service()
-     props="$3"
-     class="$4"
-     cassandra_parms="-Dlogback.configurationFile=logback.xml"
--    cassandra_parms="$cassandra_parms -Dcassandra.logdir=$CASSANDRA_HOME/logs"
-+    cassandra_parms="$cassandra_parms -Dcassandra.logdir=/var/log/cassandra"
-     cassandra_parms="$cassandra_parms -Dcassandra.storagedir=$cassandra_storagedir"
+@@ -30,7 +30,7 @@
+ #   JVM_OPTS -- Additional arguments to the JVM for heap size, etc
+ #   JVM_ON_OUT_OF_MEMORY_ERROR_OPT -- The OnOutOfMemoryError JVM option if specified
+ #   CASSANDRA_CONF -- Directory containing Cassandra configuration files.
+-#   CASSANDRA_LOG_DIR -- Directory containing logs(default: $CASSANDRA_HOME/logs).
++#   CASSANDRA_LOG_DIR -- Directory containing logs(default: /var/log/cassandra).
+ #
+ # As a convenience, a fragment of shell is sourced in order to set one or
+ # more of these variables. This so-called `include' can be placed in a 
+@@ -127,7 +127,7 @@ if [ -f "$CASSANDRA_CONF/cassandra-env.sh" ]; then
+ fi
  
-     if [ "x$pidpath" != "x" ]; then
+ if [ -z "$CASSANDRA_LOG_DIR" ]; then
+-  CASSANDRA_LOG_DIR=$CASSANDRA_HOME/logs
++  CASSANDRA_LOG_DIR=/var/log/cassandra
+ fi
+ 
+ # Special-case path variables.
