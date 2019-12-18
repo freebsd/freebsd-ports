@@ -1,0 +1,35 @@
+--- xbmc/platform/freebsd/CPUInfoFreebsd.cpp.orig
++++ xbmc/platform/freebsd/CPUInfoFreebsd.cpp
+@@ -14,11 +14,10 @@
+ #include <array>
+ #include <vector>
+ 
+-#if (defined(__arm__) && defined(HAS_NEON)) || defined(__aarch64__)
+-#include <asm/hwcap.h>
+-#include <sys/auxv.h>
+-#elif defined(__i386__) || defined(__x86_64__)
++#if defined(__i386__) || defined(__x86_64__)
+ #include <cpuid.h>
++#elif __has_include(<sys/auxv.h>)
++#include <sys/auxv.h>
+ #endif
+ 
+ #include <sys/resource.h>
+@@ -155,9 +154,15 @@ CCPUInfoFreebsd::CCPUInfoFreebsd()
+   }
+ #endif
+ 
+-#if defined(HAS_NEON) && defined(__arm__)
+-  if (getauxval(AT_HWCAP) & HWCAP_NEON)
++#if defined(HAS_NEON)
++#if defined(__ARM_NEON)
++  m_cpuFeatures |= CPU_FEATURE_NEON;
++#elif __has_include(<sys/auxv.h>)
++  unsigned long hwcap = 0;
++  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
++  if (hwcap & HWCAP_NEON)
+     m_cpuFeatures |= CPU_FEATURE_NEON;
++#endif
+ #endif
+ }
+ 
