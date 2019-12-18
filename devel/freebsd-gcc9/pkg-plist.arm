@@ -1,0 +1,5 @@
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/arm_acle.h
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/arm_fp16.h
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/arm_neon.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/arm/aarch-common-protos.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/dbxelf.h

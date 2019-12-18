@@ -1,0 +1,8 @@
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/visintrin.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/dbxelf.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/sparc/%%OPSYS%%.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/sparc/sparc-opts.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/sparc/sparc-protos.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/sparc/sparc.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/sparc/sysv4.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/config/vxworks-dummy.h
