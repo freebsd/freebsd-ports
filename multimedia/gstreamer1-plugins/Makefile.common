@@ -44,6 +44,7 @@ BAD_GST_ALL_PLUGINS+= \
 		modplug \
 		mpeg2enc \
 		mplex \
+		msdk \
 		musepack \
 		neon \
 		ofa \
@@ -83,7 +84,6 @@ BAD_GST_NON_PLUGINS= \
 		--disable-directfb \
 		--disable-direct3d \
 		--disable-directsound \
-		--disable-msdk \
 		--disable-nvenc \
 		--disable-nvdec \
 		--disable-sbc \
@@ -360,6 +360,12 @@ gst_mplex_LIB_DEPENDS=	libmplex2.so:multimedia/mjpegtools
 
 # mpg123
 gst_mpg123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
+
+# msdk
+gst_msdk_LIB_DEPENDS=	libgudev-1.0.so:devel/libgudev \
+			libmfx.so:multimedia/intel-media-sdk \
+			libva-drm.so:multimedia/libva
+gst_msdk_GST_PLUGIN_DIR=	sys/msdk
 
 # musepack
 gst_musepack_LIB_DEPENDS=libmpcdec.so:audio/musepack

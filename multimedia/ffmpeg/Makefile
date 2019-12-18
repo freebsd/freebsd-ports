@@ -85,9 +85,9 @@ OPTIONS_RADIO_SSL=	GNUTLS MBEDTLS OPENSSL
 OPTIONS_GROUP=	LICENSE
 OPTIONS_GROUP_LICENSE=	GPL3 NONFREE
 
-OPTIONS_DEFINE_amd64=	BEIGNET MMX SSE SVTAV1 SVTHEVC SVTVP9
+OPTIONS_DEFINE_amd64=	BEIGNET MFX MMX SSE SVTAV1 SVTHEVC SVTVP9
 OPTIONS_DEFINE_armv6=	VFP NEON
-OPTIONS_DEFINE_i386=	BEIGNET MMX SSE
+OPTIONS_DEFINE_i386=	BEIGNET MFX MMX SSE
 OPTIONS_DEFAULT_amd64=	MMX SSE
 OPTIONS_DEFAULT_i386=	MMX SSE
 
@@ -111,6 +111,7 @@ KLVANC_DESC=	Kernel Labs VANC processing
 KVAZAAR_DESC=	H.265 video codec support via Kvazaar
 LICENSE_DESC=	Licensing options
 LV2_DESC=	LV2 audio filtering
+MFX_DESC=	Intel MediaSDK (aka Quick Sync Video)
 MYSOFA_DESC=	SOFAlizer binaural filter
 NEON_DESC=	Media Processing Engine instructions
 NONFREE_DESC=	Allow use of nonfree code
@@ -329,6 +330,10 @@ V4L_CONFIGURE_OFF=		--disable-indev=v4l2 \
 # mbedtls
 MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
 MBEDTLS_CONFIGURE_ENABLE=	mbedtls
+
+# mfx
+MFX_LIB_DEPENDS=	libmfx.so:multimedia/intel-media-sdk
+MFX_CONFIGURE_ENABLE=	libmfx
 
 # mmx support
 MMX_CONFIGURE_ENABLE=	mmx
