@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@$
 LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_DEFAULT} \
 		libxslt.so:textproc/libxslt
 
-USES=		cmake gnome python qt:5 shebangfix tar:xz
+USES=		cmake compiler:c++11-lang gnome python qt:5 shebangfix tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
