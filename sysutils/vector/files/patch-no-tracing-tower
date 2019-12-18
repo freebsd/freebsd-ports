@@ -1,0 +1,59 @@
+USES=cargo struggles with nested git dependencies
+
+--- Cargo.toml.orig	2019-12-14 22:38:32 UTC
++++ Cargo.toml
+@@ -57,7 +57,6 @@ tracing = "0.1.9"
+ tracing-futures = "0.0.1-alpha.1"
+ tracing-subscriber = "0.1.3"
+ tracing-log = "0.1.0"
+-tracing-tower = { git = "https://github.com/tokio-rs/tracing" }
+ 
+ 
+ # Metrics
+--- src/sinks/util/http.rs.orig	2019-12-14 22:33:54 UTC
++++ src/sinks/util/http.rs
+@@ -14,7 +14,6 @@ use tokio::executor::DefaultExecutor;
+ use tower::Service;
+ use tower_hyper::client::Client;
+ use tracing::field;
+-use tracing_tower::{InstrumentableService, InstrumentedService};
+ 
+ pub type RequestBuilder = Box<dyn Fn(Vec<u8>) -> hyper::Request<Vec<u8>> + Sync + Send>;
+ pub type Response = hyper::Response<Bytes>;
+@@ -22,7 +21,7 @@ pub type Error = hyper::Error;
+ 
+ #[derive(Clone)]
+ pub struct HttpService {
+-    inner: InstrumentedService<Client<HttpsConnector<HttpConnector>, Vec<u8>>, Request<Vec<u8>>>,
++    inner: Client<HttpsConnector<HttpConnector>, Vec<u8>>,
+     request_builder: Arc<RequestBuilder>,
+ }
+ 
+@@ -70,7 +69,7 @@ impl HttpServiceBuilder {
+         let client = hyper::Client::builder()
+             .executor(DefaultExecutor::current())
+             .build(https);
+-        let inner = Client::with_client(client).instrument(info_span!("http"));
++        let inner = Client::with_client(client);
+         HttpService {
+             inner,
+             request_builder: Arc::new(Box::new(request_builder)),
+--- src/trace.rs.orig	2019-12-14 22:34:24 UTC
++++ src/trace.rs
+@@ -9,7 +9,6 @@ use tracing_metrics::MetricsSubscriber;
+ use tracing_subscriber::{layer::SubscriberExt, FmtSubscriber};
+ 
+ pub use tracing_futures::Instrument;
+-pub use tracing_tower::{InstrumentableService, InstrumentedService};
+ 
+ pub fn init(color: bool, levels: &str, metrics: Option<metrics::Sink>) {
+     let subscriber = FmtSubscriber::builder()
+--- lib/tracing-metrics/Cargo.toml.orig	2019-12-14 23:03:53 UTC
++++ lib/tracing-metrics/Cargo.toml
+@@ -14,5 +14,5 @@ serde_json = "1.0"
+ futures = "0.1.25"
+ tokio = "0.1.21"
+ hyper = "0.12.18"
+-tracing-futures = { git = "https://github.com/tokio-rs/tracing" }
++tracing-futures = "0.0.1-alpha.1"
+ tracing-subscriber = "0.1.2"
