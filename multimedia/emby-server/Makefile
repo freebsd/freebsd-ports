@@ -1,19 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	emby-server
-PORTVERSION=	4.2.1.0
-PORTREVISION=	3
+PORTVERSION=	4.3.1.0
+PORTREVISION=	0
+FFVERSION=	2019_11_09
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
 DISTNAME=	embyserver-netframework_${PORTVERSION}
 DISTFILES=	${DISTNAME}.zip \
-		ffdetect_4.0.3_x64_freebsd12.tar.xz \
-		ffmpeg-2019_04_09.tar.gz \
+		ffdetect-${FFVERSION}-x64_freebsd12.tar.xz \
+		ffmpeg-${FFVERSION}.tar.gz \
 		license.docx
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTNAME}.zip ffdetect_4.0.3_x64_freebsd12.tar.xz \
-		ffmpeg-2019_04_09.tar.gz
+EXTRACT_ONLY=	${DISTNAME}.zip \
+		ffdetect-${FFVERSION}-x64_freebsd12.tar.xz \
+		ffmpeg-${FFVERSION}.tar.gz
 
 MAINTAINER=	alucryd@archlinux.org
 COMMENT=	Media server to organize, play & stream audio/video to various devices
@@ -60,7 +62,7 @@ SUB_LIST=	GROUP=${GROUPS} \
 USERS=		emby
 GROUPS=		emby
 
-WRKSRC=		${WRKDIR}/ffmpeg-2019_04_09
+WRKSRC=		${WRKDIR}/ffmpeg-${FFVERSION}_public_fixed
 
 MAKE_ENV=	V=1
 NOPRECIOUSMAKEVARS=	yes
