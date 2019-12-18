@@ -161,6 +161,8 @@ share/locale/es/LC_MESSAGES/kio5_timeline.mo
 share/locale/et/LC_MESSAGES/baloo_file5.mo
 share/locale/et/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/et/LC_MESSAGES/balooctl5.mo
+share/locale/et/LC_MESSAGES/baloodb5.mo
+share/locale/et/LC_MESSAGES/balooengine5.mo
 share/locale/et/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/et/LC_MESSAGES/baloosearch5.mo
 share/locale/et/LC_MESSAGES/balooshow5.mo

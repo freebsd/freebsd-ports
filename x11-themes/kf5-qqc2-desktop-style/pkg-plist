@@ -1,5 +1,7 @@
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfig.cmake
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfigVersion.cmake
+lib/cmake/KF5QQC2DesktopStyle/KF5QQC2DesktopStyleConfig.cmake
+lib/cmake/KF5QQC2DesktopStyle/KF5QQC2DesktopStyleConfigVersion.cmake
 %%QT_PLUGINDIR%%/kf5/kirigami/org.kde.desktop.so
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/BusyIndicator.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/Button.qml

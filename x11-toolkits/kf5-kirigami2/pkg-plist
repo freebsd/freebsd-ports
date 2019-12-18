@@ -12,7 +12,7 @@ lib/cmake/KF5Kirigami2/KF5Kirigami2Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5Kirigami2/KF5Kirigami2Targets.cmake
 lib/libKF5Kirigami2.so
 lib/libKF5Kirigami2.so.5
-lib/libKF5Kirigami2.so.5.64.0
+lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_Kirigami2.pri
 %%QT_QMLDIR%%/org/kde/kirigami.2/AboutPage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/AbstractApplicationHeader.qml
@@ -62,11 +62,13 @@ lib/libKF5Kirigami2.so.5.64.0
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionIconGroup.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionMenuItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionsMenu.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionToolBarLayoutDetails.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/BannerImage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/CardsGridViewPrivate.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/CardsListViewPrivate.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ContextDrawerActionItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/CornerShadow.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/private/DefaultCardBackground.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/DefaultListItemBackground.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/EdgeShadow.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/GlobalDrawerActionItem.qml
@@ -120,6 +122,7 @@ share/locale/de/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/el/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/en_GB/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/es/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/et/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/eu/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/fi/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/fr/LC_MESSAGES/libkirigami2plugin_qt.qm

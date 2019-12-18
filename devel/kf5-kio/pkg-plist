@@ -958,6 +958,7 @@ share/kservicetypes5/kurifilterplugin.desktop
 share/kservicetypes5/searchprovider.desktop
 share/kservicetypes5/uasprovider.desktop
 share/locale/af/LC_MESSAGES/kio5.mo
+share/locale/ast/LC_MESSAGES/kio5.mo
 share/locale/ar/LC_MESSAGES/kio5.mo
 share/locale/be/LC_MESSAGES/kio5.mo
 share/locale/be@latin/LC_MESSAGES/kio5.mo

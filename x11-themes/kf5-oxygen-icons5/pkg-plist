@@ -319,6 +319,7 @@ share/icons/oxygen/base/128x128/devices/media-optical-recordable.png
 share/icons/oxygen/base/128x128/devices/media-optical-video.png
 share/icons/oxygen/base/128x128/devices/media-optical.png
 share/icons/oxygen/base/128x128/devices/media-tape.png
+share/icons/oxygen/base/128x128/devices/microphone.png
 share/icons/oxygen/base/128x128/devices/modem.png
 share/icons/oxygen/base/128x128/devices/multimedia-player-apple-ipod.png
 share/icons/oxygen/base/128x128/devices/multimedia-player.png
@@ -7330,6 +7331,7 @@ share/icons/oxygen/base/48x48/devices/media-optical-recordable.png
 share/icons/oxygen/base/48x48/devices/media-optical-video.png
 share/icons/oxygen/base/48x48/devices/media-optical.png
 share/icons/oxygen/base/48x48/devices/media-tape.png
+share/icons/oxygen/base/48x48/devices/microphone.png
 share/icons/oxygen/base/48x48/devices/modem.png
 share/icons/oxygen/base/48x48/devices/multimedia-player-apple-ipod.png
 share/icons/oxygen/base/48x48/devices/multimedia-player.png
@@ -8187,6 +8189,7 @@ share/icons/oxygen/base/64x64/devices/media-optical-recordable.png
 share/icons/oxygen/base/64x64/devices/media-optical-video.png
 share/icons/oxygen/base/64x64/devices/media-optical.png
 share/icons/oxygen/base/64x64/devices/media-tape.png
+share/icons/oxygen/base/64x64/devices/microphone.png
 share/icons/oxygen/base/64x64/devices/modem.png
 share/icons/oxygen/base/64x64/devices/multimedia-player-apple-ipod.png
 share/icons/oxygen/base/64x64/devices/multimedia-player.png
