@@ -9,12 +9,11 @@ MASTER_SITES=	http://nice.freedesktop.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library and transmitter that implements ICE-19
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig
+USES=		gettext gmake gnome libtool localbase:ldflags pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 introspection:build
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_GETIFADDRS
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-DHAVE_GETIFADDRS
 INSTALL_TARGET=	install-strip
 
 .if !defined(LIBNICE_SLAVE)
