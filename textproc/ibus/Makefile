@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:devel/py-dbus@${PY_FLAVOR} \
 		${LOCALBASE}/share/unicode/ucd/NamesList.txt:textproc/UCD \
 		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
-		gtkdocize:textproc/gtk-doc
+		gtkdocize:textproc/gtk-doc \
+		bash:shells/bash
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:devel/py-notify@${PY_FLAVOR} \
 		${LOCALBASE}/share/xml/iso-codes/iso_639.xml:misc/iso-codes \
