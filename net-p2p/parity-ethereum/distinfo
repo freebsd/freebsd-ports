@@ -1,4 +1,4 @@
-TIMESTAMP = 1575564451
+TIMESTAMP = 1576661423
 SHA256 (rust/crates/aes-0.3.2.tar.gz) = 54eb1d8fe354e5fc611daf4f2ea97dd45a765f4f1e4512306ec183ae2e8f20c9
 SIZE (rust/crates/aes-0.3.2.tar.gz) = 84345
 SHA256 (rust/crates/aes-ctr-0.3.0.tar.gz) = d2e5b0458ea3beae0d1d8c0f3946564f8e10f90646cf78c06b4351052058d1ee
@@ -819,8 +819,8 @@ SHA256 (rust/crates/zeroize-0.9.3.tar.gz) = 45af6a010d13e4cf5b54c94ba5a2b2eba559
 SIZE (rust/crates/zeroize-0.9.3.tar.gz) = 9797
 SHA256 (rust/crates/zeroize_derive-0.9.3.tar.gz) = 080616bd0e31f36095288bb0acdf1f78ef02c2fa15527d7e993f2a6c7591643e
 SIZE (rust/crates/zeroize_derive-0.9.3.tar.gz) = 4065
-SHA256 (paritytech-parity-ethereum-v2.5.11_GH0.tar.gz) = c3e5aa5084ddf5cb1fc4a39d5e40d097a35995311fe359844d6d7b5520d1f6c5
-SIZE (paritytech-parity-ethereum-v2.5.11_GH0.tar.gz) = 3398959
+SHA256 (paritytech-parity-ethereum-v2.5.12_GH0.tar.gz) = bf74fe6df60d4a23c3faa0a154669d18a4fdb7dadc71dff75e9dc7c564c2806a
+SIZE (paritytech-parity-ethereum-v2.5.12_GH0.tar.gz) = 3399335
 SHA256 (paritytech-app-dirs-rs-0b37f9481ce29e9d5174ad185bca695b206368eb_GH0.tar.gz) = c18dbbe2e31438f4cda5b05b3c838782288b36cf58d2e68febe78a3797556d96
 SIZE (paritytech-app-dirs-rs-0b37f9481ce29e9d5174ad185bca695b206368eb_GH0.tar.gz) = 9285
 SHA256 (paritytech-bn-6079255e65793038b9a6e5292203eab482737cc2_GH0.tar.gz) = 54ee86c1ead8429d9623ed16b89916729c2c4c0390ab673ce23fc3f5636a4e70
