@@ -1,0 +1,30 @@
+https://github.com/Intel-Media-SDK/MediaSDK/issues/1843
+
+--- samples/sample_hevc_fei_abr/include/dso/bs_reader2.h.orig	2019-10-30 19:56:10 UTC
++++ samples/sample_hevc_fei_abr/include/dso/bs_reader2.h
+@@ -184,7 +184,11 @@ class File : public BufferUpdater (public)
+ 
+ #define BS2_TRO
+ #define BS2_SET(val, var) { var = (val); }
++#ifdef _LIBCPP_VERSION
++#define BS2_TRACE(val, var) {}
++#else
+ #define BS2_TRACE(val, var) {std::ignore = (val);}
++#endif
+ #define BS2_TRACE_STR(str) {std::ignore = (str);}
+ #define BS2_SET_ARR_F(val, var, sz, split, format) \
+     { for (Bs32u _i = 0; _i < (Bs32u)(sz); _i++) (var)[_i] = (val); }
+--- tools/bs_parser_hevc/include/bs_reader2.h.orig	2019-10-30 19:56:10 UTC
++++ tools/bs_parser_hevc/include/bs_reader2.h
+@@ -184,7 +184,11 @@ class File : public BufferUpdater (public)
+ 
+ #define BS2_TRO
+ #define BS2_SET(val, var) { var = (val); }
++#ifdef _LIBCPP_VERSION
++#define BS2_TRACE(val, var) {}
++#else
+ #define BS2_TRACE(val, var) {std::ignore = (val);}
++#endif
+ #define BS2_TRACE_STR(str) {std::ignore = (str);}
+ #define BS2_SET_ARR_F(val, var, sz, split, format) \
+     { for (Bs32u _i = 0; _i < (Bs32u)(sz); _i++) (var)[_i] = (val); }
