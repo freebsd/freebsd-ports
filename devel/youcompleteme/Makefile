@@ -26,7 +26,7 @@ RUN_DEPENDS=	vim:editors/vim \
 		${PYTHON_PKGNAMEPREFIX}waitress>0:www/py-waitress@${PY_FLAVOR} \
 		${PY_FUTURES}
 
-USES=		cmake python
+USES=		cmake compiler:c++11-lang python
 USE_PYTHON=	flavors
 USE_GITHUB=	yes
 GH_ACCOUNT=	ycm-core
