@@ -2,7 +2,7 @@
 
 PORTNAME=	emby-server
 PORTVERSION=	4.2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -32,6 +32,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
 		libgnutls.so:security/gnutls \
+		libmfx.so:multimedia/intel-media-sdk \
 		libogg.so:audio/libogg \
 		libopus.so:audio/opus \
 		libpng.so:graphics/png \
@@ -85,6 +86,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--enable-libdrm \
 		--enable-libfreetype \
 		--enable-libfribidi \
+		--enable-libmfx \
 		--enable-libopus \
 		--enable-libtheora \
 		--enable-libvorbis \
