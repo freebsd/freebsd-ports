@@ -7,7 +7,7 @@ DISTVERSION=	2.1.27
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	beyert@cs.ucr.edu
+MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Rust code completion helper
 
 LICENSE=	MIT
