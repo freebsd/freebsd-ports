@@ -45,7 +45,7 @@ WAYLAND_LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm \
 			libwayland-client.so:graphics/wayland
 WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND
 
-TEST_BUILD_DEPENDS=	googlemock>0:devel/googlemock
+TEST_BUILD_DEPENDS=	googletest>0:devel/googletest
 TEST_USES=		localbase:ldflags
 TEST_CMAKE_BOOL=	BUILD_TESTS USE_SYSTEM_GTEST
 TEST_TEST_TARGET=	test

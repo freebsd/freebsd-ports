@@ -4,6 +4,7 @@
 PORTNAME=	googletest
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,13 +19,16 @@ GH_ACCOUNT=	google
 USES=		cmake compiler:c++11-lib
 USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	BUILD_GMOCK
 
 OPTIONS_DEFINE=	TEST
 
 TEST_USES=		python:build
-TEST_CMAKE_BOOL=	gtest_build_tests
+TEST_CMAKE_BOOL=	gtest_build_tests gmock_build_tests
 TEST_TEST_TARGET=	test
+
+post-install:
+# Drop unused not preprocessed headers
+	${FIND} ${STAGEDIR}${PREFIX} -name '*.pump' -delete
 
 pre-install-TEST-on: do-test
 

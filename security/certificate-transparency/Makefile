@@ -3,7 +3,7 @@
 
 PORTNAME=	certificate-transparency
 PORTVERSION=	20161015
-PORTREVISION=	40
+PORTREVISION=	41
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 		libgtest.so:devel/googletest \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
-		libgmock.so:devel/googlemock \
+		libgmock.so:devel/googletest \
 		libicuuc.so:devel/icu \
 		libjson-c.so:devel/json-c \
 		libleveldb.so:databases/leveldb \

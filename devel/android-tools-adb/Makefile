@@ -53,8 +53,7 @@ MDNSRESPONDER_USES=		localbase:ldflags
 MDNSRESPONDER_LDFLAGS=		-ldns_sd
 MDNSRESPONDER_MAKE_ENV_OFF=	MDNSEXT=_unsupported
 
-TEST_BUILD_DEPENDS+=	googlemock>=1.6.0:devel/googlemock \
-			googletest>=1.6.0:devel/googletest
+TEST_BUILD_DEPENDS+=	googletest>=1.6.0:devel/googletest
 TEST_ALL_TARGET=	adb_test
 
 TEST_PYTHON_DESC=	${TEST_DESC:S/tests/python &/}
