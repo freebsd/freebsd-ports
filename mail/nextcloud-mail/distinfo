@@ -1,3 +1,3 @@
-TIMESTAMP = 1576247086
-SHA256 (nextcloud/mail-v0.20.2/mail.tar.gz) = 00741f06f94f920f44058e50d69db50a37dc48a5e8308a3b0fcb38569c7a9038
-SIZE (nextcloud/mail-v0.20.2/mail.tar.gz) = 5056143
+TIMESTAMP = 1576507877
+SHA256 (nextcloud/mail-v0.20.3/mail.tar.gz) = c5cd2daef7d8ee95271097ccbb3e9229577ef52f946af3555913b6f7e5f8b833
+SIZE (nextcloud/mail-v0.20.3/mail.tar.gz) = 5051563
