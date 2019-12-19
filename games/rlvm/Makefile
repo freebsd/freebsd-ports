@@ -58,7 +58,6 @@ NLS_USES=	gettext
 NLS_EXTRA_PATCHES_OFF=${FILESDIR}/extra-patch-disable-nls
 TEST_USES=	lua:51
 TEST_BUILD_DEPENDS=googletest>=1.7.0:devel/googletest \
-		googlemock>=1.7.0:devel/googlemock \
 		luabind>0:devel/luabind
 TEST_EXTRA_PATCHES_OFF=${FILESDIR}/extra-patch-disable-test
 

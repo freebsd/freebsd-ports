@@ -1,9 +1,17 @@
-Google's framework for writing C++ tests on a variety of platforms
-(Linux, Mac OS X, Windows, Cygwin, Windows CE, and Symbian).
-
-Based on the xUnit architecture. Supports automatic test discovery,
-a rich set of assertions, user-defined assertions, death tests,
-fatal and non-fatal failures, type-parameterized tests, various
+GoogleTest is based on the xUnit architecture. Supports automatic test
+discovery, a rich set of assertions, user-defined assertions, death
+tests, fatal and non-fatal failures, type-parameterized tests, various
 options for running the tests, and XML test report generation.
+
+GoogleMock is inspired by jMock, EasyMock, and Hamcrest, and designed
+with C++'s specifics in mind, Google C++ Mocking Framework (or Google
+Mock for short) is a library for writing and using C++ mock
+classes. Google Mock:
+
+    * lets you create mock classes trivially using simple macros,
+    * supports a rich set of matchers and actions,
+    * handles unordered, partially ordered, or completely ordered expectations,
+    * is extensible by users, and
+    * works on Linux, Windows, and Mac OS X.
 
 WWW: https://github.com/google/googletest

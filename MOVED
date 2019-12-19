@@ -13599,3 +13599,4 @@ www/php71-session|www/php72-session|2019-12-17|Has expired: upstream security su
 www/php71-tidy|www/php72-tidy|2019-12-17|Has expired: upstream security support ended
 lang/php71-extensions|lang/php72-extensions|2019-12-17|Has expired: upstream security support ended
 devel/pecl-request||2019-12-17|Has expired: upstream security support ended
+devel/googlemock||2019-12-19|Merged into devel/googletest

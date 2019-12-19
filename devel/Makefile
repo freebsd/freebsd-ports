@@ -878,7 +878,6 @@
     SUBDIR += google-gdata
     SUBDIR += google-perftools
     SUBDIR += google-styleguide
-    SUBDIR += googlemock
     SUBDIR += googletest
     SUBDIR += goprotobuf
     SUBDIR += gorm
