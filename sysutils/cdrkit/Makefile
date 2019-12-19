@@ -5,13 +5,14 @@ PORTNAME=	cdrkit
 PORTVERSION=	1.1.11
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cdrkit.org/releases/ \
-		http://debburn.alioth.debian.org/
+MASTER_SITES=	http://ponce.cc/slackware/sources/repo/ \
+		http://vault.101011010.xyz/distfiles/ \
+		http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT?=	Command-line CD/DVD writing suite
 
-BROKEN=		unfetchable
+LICENSE=	GPLv2+
 
 RUN_DEPENDS?=	${PORTNAME}-genisoimage>0:sysutils/genisoimage
 
