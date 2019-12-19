@@ -1,4 +1,4 @@
-TIMESTAMP = 1574782712
+TIMESTAMP = 1575315614
 SHA256 (rust/crates/aho-corasick-0.7.6.tar.gz) = 58fb5e95d83b38284460a5fda7d6470aa0b8844d283a0b614b8535e880800d2d
 SIZE (rust/crates/aho-corasick-0.7.6.tar.gz) = 108953
 SHA256 (rust/crates/atk-sys-0.7.0.tar.gz) = c7017e53393e713212aed7aea336b6553be4927f58c37070a56c2fe3d107e489
@@ -87,5 +87,5 @@ SHA256 (rust/crates/xkbcommon-0.4.0.tar.gz) = fda0ea5f7ddabd51deeeda7799bee06274
 SIZE (rust/crates/xkbcommon-0.4.0.tar.gz) = 57500
 SHA256 (rust/crates/yaml-rust-0.4.3.tar.gz) = 65923dd1784f44da1d2c3dbbc5e822045628c590ba72123e1c73d3c230c4434d
 SIZE (rust/crates/yaml-rust-0.4.3.tar.gz) = 45768
-SHA256 (Librem5-squeekboard-579ba8ab87f395c550eede40922b498feb245300_GL0.tar.gz) = da627928426d8d0f457b6ca71d8c70bb00aa71215ddcfce9d9abaf6d989e7d4b
-SIZE (Librem5-squeekboard-579ba8ab87f395c550eede40922b498feb245300_GL0.tar.gz) = 115657
+SHA256 (Librem5-squeekboard-6a164d8119cc6575d6b3bfed7b6295f2ae6c0f38_GL0.tar.gz) = 4fe68d0e0e49c797a68826282da766a22339fe0f50377cbee8398248bfadd28f
+SIZE (Librem5-squeekboard-6a164d8119cc6575d6b3bfed7b6295f2ae6c0f38_GL0.tar.gz) = 118623
