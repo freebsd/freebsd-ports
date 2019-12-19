@@ -3,6 +3,7 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	4.1.4
+PORTREVISION=	1
 CATEGORIES=	print pear
 
 MAINTAINER=	ale@FreeBSD.org
@@ -12,8 +13,9 @@ LIB_DEPENDS=	libpdf.so:print/pdflib
 
 USES=		php:pecl
 
+LICENSE=	PDFlib
 LICENSE_NAME=	PDFlib GmbH General License
-LICENSE_PERM=	none
+LICENSE_PERMS=	none
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_PHP=	gd:build
