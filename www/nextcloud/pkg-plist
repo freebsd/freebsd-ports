@@ -7744,8 +7744,6 @@
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bg.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bg.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bn_IN.php
-%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bs.js
-%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bs.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ca.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ca.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/cs.js
@@ -7834,8 +7832,6 @@
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ko.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ko.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ku_IQ.php
-%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/lb.js
-%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/lb.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/lt_LT.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/lt_LT.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/lv.js
@@ -8858,6 +8854,8 @@
 %%WWWDIR%%/apps-pkg/oauth2/l10n/ru.json
 %%WWWDIR%%/apps-pkg/oauth2/l10n/sk.js
 %%WWWDIR%%/apps-pkg/oauth2/l10n/sk.json
+%%WWWDIR%%/apps-pkg/oauth2/l10n/sl.js
+%%WWWDIR%%/apps-pkg/oauth2/l10n/sl.json
 %%WWWDIR%%/apps-pkg/oauth2/l10n/sq.js
 %%WWWDIR%%/apps-pkg/oauth2/l10n/sq.json
 %%WWWDIR%%/apps-pkg/oauth2/l10n/sr.js
@@ -9145,6 +9143,10 @@
 %%WWWDIR%%/apps-pkg/privacy/l10n/pt_BR.json
 %%WWWDIR%%/apps-pkg/privacy/l10n/ru.js
 %%WWWDIR%%/apps-pkg/privacy/l10n/ru.json
+%%WWWDIR%%/apps-pkg/privacy/l10n/sk.js
+%%WWWDIR%%/apps-pkg/privacy/l10n/sk.json
+%%WWWDIR%%/apps-pkg/privacy/l10n/sl.js
+%%WWWDIR%%/apps-pkg/privacy/l10n/sl.json
 %%WWWDIR%%/apps-pkg/privacy/l10n/sr.js
 %%WWWDIR%%/apps-pkg/privacy/l10n/sr.json
 %%WWWDIR%%/apps-pkg/privacy/l10n/sv.js
@@ -9153,6 +9155,8 @@
 %%WWWDIR%%/apps-pkg/privacy/l10n/tr.json
 %%WWWDIR%%/apps-pkg/privacy/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/privacy/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/privacy/l10n/zh_TW.js
+%%WWWDIR%%/apps-pkg/privacy/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/privacy/lib/Controller/AdminController.php
 %%WWWDIR%%/apps-pkg/privacy/lib/Controller/PersonalController.php
 %%WWWDIR%%/apps-pkg/privacy/lib/Migration/Version100Date20190217131943.php
@@ -9212,6 +9216,8 @@
 %%WWWDIR%%/apps-pkg/recommendations/l10n/el.json
 %%WWWDIR%%/apps-pkg/recommendations/l10n/es.js
 %%WWWDIR%%/apps-pkg/recommendations/l10n/es.json
+%%WWWDIR%%/apps-pkg/recommendations/l10n/eu.js
+%%WWWDIR%%/apps-pkg/recommendations/l10n/eu.json
 %%WWWDIR%%/apps-pkg/recommendations/l10n/fi.js
 %%WWWDIR%%/apps-pkg/recommendations/l10n/fi.json
 %%WWWDIR%%/apps-pkg/recommendations/l10n/fr.js
@@ -10477,6 +10483,8 @@
 %%WWWDIR%%/apps-pkg/text/l10n/ca.json
 %%WWWDIR%%/apps-pkg/text/l10n/cs.js
 %%WWWDIR%%/apps-pkg/text/l10n/cs.json
+%%WWWDIR%%/apps-pkg/text/l10n/da.js
+%%WWWDIR%%/apps-pkg/text/l10n/da.json
 %%WWWDIR%%/apps-pkg/text/l10n/de.js
 %%WWWDIR%%/apps-pkg/text/l10n/de.json
 %%WWWDIR%%/apps-pkg/text/l10n/de_DE.js
@@ -10487,6 +10495,8 @@
 %%WWWDIR%%/apps-pkg/text/l10n/eo.json
 %%WWWDIR%%/apps-pkg/text/l10n/es.js
 %%WWWDIR%%/apps-pkg/text/l10n/es.json
+%%WWWDIR%%/apps-pkg/text/l10n/es_MX.js
+%%WWWDIR%%/apps-pkg/text/l10n/es_MX.json
 %%WWWDIR%%/apps-pkg/text/l10n/eu.js
 %%WWWDIR%%/apps-pkg/text/l10n/eu.json
 %%WWWDIR%%/apps-pkg/text/l10n/fa.js
@@ -10521,6 +10531,8 @@
 %%WWWDIR%%/apps-pkg/text/l10n/ro.json
 %%WWWDIR%%/apps-pkg/text/l10n/ru.js
 %%WWWDIR%%/apps-pkg/text/l10n/ru.json
+%%WWWDIR%%/apps-pkg/text/l10n/sk.js
+%%WWWDIR%%/apps-pkg/text/l10n/sk.json
 %%WWWDIR%%/apps-pkg/text/l10n/sq.js
 %%WWWDIR%%/apps-pkg/text/l10n/sq.json
 %%WWWDIR%%/apps-pkg/text/l10n/sr.js
@@ -10652,6 +10664,8 @@
 %%WWWDIR%%/apps-pkg/theming/l10n/lt_LT.json
 %%WWWDIR%%/apps-pkg/theming/l10n/lv.js
 %%WWWDIR%%/apps-pkg/theming/l10n/lv.json
+%%WWWDIR%%/apps-pkg/theming/l10n/mk.js
+%%WWWDIR%%/apps-pkg/theming/l10n/mk.json
 %%WWWDIR%%/apps-pkg/theming/l10n/mn.js
 %%WWWDIR%%/apps-pkg/theming/l10n/mn.json
 %%WWWDIR%%/apps-pkg/theming/l10n/nb.js
@@ -11596,6 +11610,8 @@
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/es_UY.json
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/et_EE.js
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/et_EE.json
+%%WWWDIR%%/apps-pkg/workflowengine/l10n/eu.js
+%%WWWDIR%%/apps-pkg/workflowengine/l10n/eu.json
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/fa.js
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/fa.json
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/fi.js
@@ -11961,6 +11977,7 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/big_file_upload_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/default_files_configuration.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/encryption_configuration.rst.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration_files/encryption_details.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/external_storage/amazons3.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/external_storage/auth_mechanisms.rst.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_files/external_storage/ftp.rst.txt
@@ -12144,6 +12161,7 @@
 %%WWWDIR%%/core/doc/admin/configuration_files/big_file_upload_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_files/default_files_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_files/encryption_configuration.html
+%%WWWDIR%%/core/doc/admin/configuration_files/encryption_details.html
 %%WWWDIR%%/core/doc/admin/configuration_files/external_storage/amazons3.html
 %%WWWDIR%%/core/doc/admin/configuration_files/external_storage/auth_mechanisms.html
 %%WWWDIR%%/core/doc/admin/configuration_files/external_storage/ftp.html
@@ -12833,8 +12851,6 @@
 %%WWWDIR%%/core/l10n/hr.json
 %%WWWDIR%%/core/l10n/hu.js
 %%WWWDIR%%/core/l10n/hu.json
-%%WWWDIR%%/core/l10n/id.js
-%%WWWDIR%%/core/l10n/id.json
 %%WWWDIR%%/core/l10n/is.js
 %%WWWDIR%%/core/l10n/is.json
 %%WWWDIR%%/core/l10n/it.js
@@ -13219,6 +13235,7 @@
 %%WWWDIR%%/lib/private/Authentication/Exceptions/LoginRequiredException.php
 %%WWWDIR%%/lib/private/Authentication/Exceptions/PasswordLoginForbiddenException.php
 %%WWWDIR%%/lib/private/Authentication/Exceptions/PasswordlessTokenException.php
+%%WWWDIR%%/lib/private/Authentication/Exceptions/TokenPasswordExpiredException.php
 %%WWWDIR%%/lib/private/Authentication/Exceptions/TwoFactorAuthRequiredException.php
 %%WWWDIR%%/lib/private/Authentication/Exceptions/UserAlreadyLoggedInException.php
 %%WWWDIR%%/lib/private/Authentication/Exceptions/WipeTokenException.php
