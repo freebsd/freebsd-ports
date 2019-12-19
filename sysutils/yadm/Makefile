@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yadm
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	vendion@gmail.com
