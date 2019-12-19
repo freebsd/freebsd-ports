@@ -2,7 +2,8 @@
 
 PORTNAME=	netron
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.3
+DISTVERSION=	3.6.5-5
+DISTVERSIONSUFFIX=	-g777f611
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	LOCAL/yuri/:js
 DISTFILES=	netron-${DISTVERSION}-node_modules.tgz:js
