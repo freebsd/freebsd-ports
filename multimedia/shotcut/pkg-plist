@@ -44,6 +44,8 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/audio_mono/meta.qml
 %%DATADIR%%/qml/filters/audio_mute/meta.qml
 %%DATADIR%%/qml/filters/audio_mute/ui.qml
+%%DATADIR%%/qml/filters/audio_noisegate/meta.qml
+%%DATADIR%%/qml/filters/audio_noisegate/ui.qml
 %%DATADIR%%/qml/filters/audio_normalize_1p/meta.qml
 %%DATADIR%%/qml/filters/audio_normalize_1p/ui.qml
 %%DATADIR%%/qml/filters/audio_normalize_2p/meta.qml
@@ -116,6 +118,9 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/glow/meta_movit.qml
 %%DATADIR%%/qml/filters/glow/ui_frei0r.qml
 %%DATADIR%%/qml/filters/glow/ui_movit.qml
+%%DATADIR%%/qml/filters/gradient/meta.qml
+%%DATADIR%%/qml/filters/gradient/ui.qml
+%%DATADIR%%/qml/filters/gradient/vui.qml
 %%DATADIR%%/qml/filters/grain/meta.qml
 %%DATADIR%%/qml/filters/grain/ui.qml
 %%DATADIR%%/qml/filters/grid/meta.qml
@@ -178,6 +183,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/saturation/meta_movit.qml
 %%DATADIR%%/qml/filters/saturation/ui_frei0r.qml
 %%DATADIR%%/qml/filters/saturation/ui_movit.qml
+%%DATADIR%%/qml/filters/scanlines/meta.qml
 %%DATADIR%%/qml/filters/select0r/meta.qml
 %%DATADIR%%/qml/filters/select0r/ui.qml
 %%DATADIR%%/qml/filters/sepia/meta.qml
@@ -242,6 +248,8 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Blank with Web Animations/web-animations.html
 %%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Simple Scroll/simple_scroll.html
 %%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Simple Scroll/simple_scroll_ui.qml
+%%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Two Column Scroll/two_column_scroll.html
+%%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Two Column Scroll/two_column_scroll_ui.qml
 %%DATADIR%%/qml/filters/webvfx/ui.qml
 %%DATADIR%%/qml/filters/webvfx_choppy/choppy.html
 %%DATADIR%%/qml/filters/webvfx_choppy/meta.qml
@@ -280,6 +288,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/white/meta_frei0r.qml
 %%DATADIR%%/qml/filters/white/meta_movit.qml
 %%DATADIR%%/qml/filters/white/ui.qml
+%%DATADIR%%/qml/modules/Shotcut/Controls/GradientControl.qml
 %%DATADIR%%/translations/shotcut_th.qm
 %%DATADIR%%/qml/htmleditor/text_outline.qml
 %%DATADIR%%/qml/htmleditor/text_shadow.qml
