@@ -2,7 +2,7 @@
 
 PORTNAME=	intel-graphics-compiler
 DISTVERSIONPREFIX=	igc-
-DISTVERSION=	1.0.3032
+DISTVERSION=	1.0.3041
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
