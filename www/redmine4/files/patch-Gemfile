@@ -1,11 +1,13 @@
 --- Gemfile.orig	2019-10-19 09:33:33 UTC
 +++ Gemfile
-@@ -3,8 +3,8 @@ source 'https://rubygems.org'
+@@ -2,9 +2,9 @@ source 'https://rubygems.org'
+ 
  gem "bundler", ">= 1.5.0"
  
- gem "rails", "5.2.3"
+-gem "rails", "5.2.3"
 -gem "rouge", "~> 3.3.0"
 -gem "request_store", "1.0.5"
++gem "rails", "5.2.4"
 +gem "rouge", "~> 3.12.0"
 +gem "request_store", ">= 1.0.5"
  gem "mini_mime", "~> 1.0.1"
