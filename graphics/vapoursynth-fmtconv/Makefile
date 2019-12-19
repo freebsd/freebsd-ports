@@ -5,6 +5,11 @@ PORTVERSION=	r22
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	vapoursynth-
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	3b64292dd274.patch:-p1
+PATCHFILES+=	5e0340d35e4d.patch:-p1
+PATCHFILES+=	c62063bc34c6.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Format conversion tools for Vapoursynth
 
@@ -34,9 +39,6 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's/x86_64/&|amd64/' \
 		${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's/ -O3//' \
-		-e 's/ -latomic//' \
-		${WRKSRC}/Makefile.am
 
 post-install:
 	(cd ${PATCH_WRKSRC}/doc && ${COPYTREE_SHARE} \
