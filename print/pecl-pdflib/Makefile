@@ -2,17 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	pdflib
-PORTVERSION=	4.1.3
+PORTVERSION=	4.1.4
 CATEGORIES=	print pear
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	PECL extension to create PDF on the fly
 
-LICENSE=	PHP30
-
 LIB_DEPENDS=	libpdf.so:print/pdflib
 
 USES=		php:pecl
+
+LICENSE_NAME=	PDFlib GmbH General License
+LICENSE_PERM=	none
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_PHP=	gd:build
 PHP_MODNAME=	pdf
 
