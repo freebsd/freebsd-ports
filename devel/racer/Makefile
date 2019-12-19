@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	racer
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.27
-PORTREVISION=	1
+DISTVERSION=	2.1.29
 CATEGORIES=	devel
+MASTER_SITES=	CRATESIO
+DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Rust code completion helper
@@ -14,8 +14,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
 USES=		cargo
-USE_GITHUB=	yes
-GH_ACCOUNT=	racer-rust
 
 PLIST_FILES=	bin/racer
 
@@ -26,25 +24,26 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
 		arrayvec-0.4.11 \
 		atty-0.2.13 \
-		autocfg-0.1.6 \
-		bitflags-1.1.0 \
+		bitflags-1.2.0 \
 		byteorder-1.3.2 \
 		c2-chacha-0.2.2 \
-		cfg-if-0.1.9 \
+		cfg-if-0.1.10 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
 		crossbeam-deque-0.2.0 \
+		crossbeam-deque-0.7.1 \
 		crossbeam-epoch-0.3.1 \
+		crossbeam-epoch-0.7.2 \
+		crossbeam-queue-0.1.2 \
 		crossbeam-utils-0.2.2 \
-		crossbeam-utils-0.6.6 \
+		crossbeam-utils-0.6.5 \
 		derive_more-0.13.0 \
-		either-1.5.2 \
-		ena-0.13.0 \
+		either-1.5.3 \
+		ena-0.13.1 \
 		env_logger-0.6.2 \
-		fuchsia-cprng-0.1.1 \
 		getrandom-0.1.12 \
-		humantime-1.2.0 \
-		indexmap-1.1.0 \
+		humantime-1.3.0 \
+		indexmap-1.2.0 \
 		itertools-0.8.0 \
 		itoa-0.4.4 \
 		jobserver-0.1.17 \
@@ -52,69 +51,78 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
 		libc-0.2.62 \
-		lock_api-0.1.5 \
+		lock_api-0.3.1 \
 		log-0.4.8 \
 		memchr-2.2.1 \
 		memoffset-0.2.1 \
+		memoffset-0.5.1 \
 		nodrop-0.1.13 \
 		num_cpus-1.10.1 \
-		owning_ref-0.4.0 \
-		parking_lot-0.7.1 \
-		parking_lot_core-0.4.0 \
+		parking_lot-0.9.0 \
+		parking_lot_core-0.6.2 \
 		ppv-lite86-0.2.5 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.3 \
+		proc-macro2-1.0.5 \
 		quick-error-1.2.2 \
 		quote-0.6.13 \
 		quote-1.0.2 \
-		rand-0.6.5 \
-		rand-0.7.0 \
-		rand_chacha-0.1.1 \
+		racer-2.1.28 \
+		racer-cargo-metadata-0.1.1 \
+		racer-interner-0.1.0 \
+		racer-testutils-0.1.0 \
+		rand-0.7.2 \
 		rand_chacha-0.2.1 \
-		rand_core-0.3.1 \
-		rand_core-0.4.2 \
 		rand_core-0.5.1 \
-		rand_hc-0.1.0 \
 		rand_hc-0.2.0 \
-		rand_isaac-0.1.1 \
-		rand_jitter-0.1.4 \
-		rand_os-0.1.3 \
-		rand_pcg-0.1.2 \
-		rand_xorshift-0.1.1 \
-		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
 		regex-1.3.1 \
 		regex-syntax-0.6.12 \
 		remove_dir_all-0.5.2 \
 		rls-span-0.5.2 \
-		rustc-ap-arena-583.0.0 \
-		rustc-ap-graphviz-583.0.0 \
-		rustc-ap-rustc_data_structures-583.0.0 \
-		rustc-ap-rustc_errors-583.0.0 \
-		rustc-ap-rustc_lexer-583.0.0 \
-		rustc-ap-rustc_macros-583.0.0 \
-		rustc-ap-rustc_target-583.0.0 \
-		rustc-ap-serialize-583.0.0 \
-		rustc-ap-syntax-583.0.0 \
-		rustc-ap-syntax_pos-583.0.0 \
+		rustc-ap-arena-606.0.0 \
+		rustc-ap-arena-610.0.0 \
+		rustc-ap-graphviz-606.0.0 \
+		rustc-ap-graphviz-610.0.0 \
+		rustc-ap-rustc_data_structures-606.0.0 \
+		rustc-ap-rustc_data_structures-610.0.0 \
+		rustc-ap-rustc_errors-606.0.0 \
+		rustc-ap-rustc_errors-610.0.0 \
+		rustc-ap-rustc_index-606.0.0 \
+		rustc-ap-rustc_index-610.0.0 \
+		rustc-ap-rustc_lexer-606.0.0 \
+		rustc-ap-rustc_lexer-610.0.0 \
+		rustc-ap-rustc_macros-606.0.0 \
+		rustc-ap-rustc_macros-610.0.0 \
+		rustc-ap-rustc_target-606.0.0 \
+		rustc-ap-rustc_target-610.0.0 \
+		rustc-ap-serialize-606.0.0 \
+		rustc-ap-serialize-610.0.0 \
+		rustc-ap-syntax-606.0.0 \
+		rustc-ap-syntax-610.0.0 \
+		rustc-ap-syntax_pos-606.0.0 \
+		rustc-ap-syntax_pos-610.0.0 \
 		rustc-hash-1.0.1 \
 		rustc-rayon-0.2.0 \
+		rustc-rayon-0.3.0 \
 		rustc-rayon-core-0.2.0 \
+		rustc-rayon-core-0.3.0 \
 		rustc_version-0.2.3 \
 		ryu-1.0.0 \
 		scoped-tls-1.0.0 \
 		scopeguard-0.3.3 \
+		scopeguard-1.0.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.99 \
-		serde_derive-1.0.99 \
-		serde_json-1.0.40 \
+		serde-1.0.101 \
+		serde_derive-1.0.101 \
+		serde_json-1.0.41 \
 		smallvec-0.6.10 \
 		stable_deref_trait-1.1.1 \
 		strsim-0.8.0 \
 		syn-0.15.44 \
 		syn-1.0.5 \
 		synstructure-0.10.2 \
+		synstructure-0.12.1 \
 		tempfile-3.1.0 \
 		term_size-0.3.1 \
 		termcolor-1.0.5 \
