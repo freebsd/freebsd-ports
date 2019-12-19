@@ -1,13 +1,15 @@
 - Stop linking shared library statically
+- Depend on C++ runtime to unbreak consumers
 
 --- CMakeLists.txt.orig	2019-12-13 22:21:07 UTC
 +++ CMakeLists.txt
-@@ -389,7 +389,7 @@ if(CONFIG_AV1_ENCODER)
+@@ -389,7 +389,8 @@ if(CONFIG_AV1_ENCODER)
        message(FATAL_ERROR "VMAF library not found.")
      endif()
      message("-- Found VMAF library: " ${VMAF})
 -    target_link_libraries(aom PRIVATE ${VMAF} -static)
 +    target_link_libraries(aom PRIVATE ${VMAF})
++    set_property(TARGET aom PROPERTY LINKER_LANGUAGE CXX)
    endif()
  endif()
  
