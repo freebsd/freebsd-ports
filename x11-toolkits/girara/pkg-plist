@@ -20,6 +20,7 @@ lib/libgirara-gtk3.so
 lib/libgirara-gtk3.so.3
 lib/libgirara-gtk3.so.3.1
 libdata/pkgconfig/girara-gtk3.pc
+%%NLS%%share/locale/ar/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/de/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/el/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/libgirara-gtk3-3.mo
@@ -31,4 +32,5 @@ libdata/pkgconfig/girara-gtk3.pc
 %%NLS%%share/locale/pl/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libgirara-gtk3-3.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/libgirara-gtk3-3.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/libgirara-gtk3-3.mo
