@@ -1,0 +1,15 @@
+The program attempts to obtain the identification and capabilities
+of the currently used CPU, and print the matching set of CPU_FLAGS_*
+flags for Gentoo Linux, but it could be useful for FreeBSD as well.
+
+The output format is compatible both with Portage (package.use) and
+Paludis (use.conf/options.conf).
+
+On x86 platforms, the program issues the CPUID instruction to obtain
+processor capabilities.
+
+On ARM platforms, the userspace processes are not allowed to obtain
+processor information directly.  Instead, the program is relying on
+kernel identification of the CPU provided via the system interfaces.
+
+WWW: https://github.com/mgorny/cpuid2cpuflags
