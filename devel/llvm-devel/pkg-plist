@@ -3150,8 +3150,8 @@ llvm-devel/lib/libLTO.so
 llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 llvm-devel/lib/libRemarks.so
 llvm-devel/lib/libRemarks.so.%%LLVM_MAJOR%%git
-llvm-devel/lib/libarcher.so
-llvm-devel/lib/libarcher_static.a
+%%OPENMP%%llvm-devel/lib/libarcher.so
+%%OPENMP%%llvm-devel/lib/libarcher_static.a
 %%CLANG%%llvm-devel/lib/libclang-cpp.so
 %%CLANG%%llvm-devel/lib/libclang-cpp.so.%%LLVM_MAJOR%%git
 %%CLANG%%llvm-devel/lib/libclang.so
