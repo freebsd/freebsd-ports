@@ -1,0 +1,10 @@
+--- third-party/google-benchmark/test/CMakeLists.txt.orig	2019-12-20 21:45:20 UTC
++++ third-party/google-benchmark/test/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ # Enable the tests
+ 
+-find_package(Threads REQUIRED)
++find_package(Threads)
+ include(CheckCXXCompilerFlag)
+ 
+ # NOTE: Some tests use `<cassert>` to perform the test. Therefore we must

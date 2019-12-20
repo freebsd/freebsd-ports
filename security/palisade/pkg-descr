@@ -1,0 +1,11 @@
+PALISADE is a general lattice cryptography library that currently includes
+efficient implementations of the following lattice cryptography capabilities:
+
+* Homomorphic Encryption (HE): Brakerski/Fan-Vercauteren (3 variants),
+  Brakerski-Gentry-Vaikuntanathan, and Stehle-Steinfeld schemes
+* Proxy Re-Encryption for all HE schemes
+* Digital Signature
+* Identity-Based Encryption
+* Ciphertext-Policy Attribute-Based Encryption
+
+WWW: https://gitlab.com/palisade/palisade-release

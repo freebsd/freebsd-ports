@@ -1,0 +1,59 @@
+--- CMakeLists.txt.orig	2019-12-20 22:38:49 UTC
++++ CMakeLists.txt
+@@ -183,7 +183,7 @@ set(COMPILEFLAGS "-Wall -Werror -O3 -DPALISADE_VERSION
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COMPILEFLAGS}")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILEFLAGS}")
+ 
+-find_package (Git REQUIRED)
++find_package (Git)
+ 
+ find_package (Doxygen QUIET COMPONENTS dot)
+ if (DOXYGEN_FOUND)
+@@ -209,7 +209,9 @@ include_directories( ${THIRDPARTYDIR}/include )
+ include_directories( ${THIRDPARTYDIR}/cereal/include )
+ install(DIRECTORY ${THIRDPARTYDIR}/cereal/include/ DESTINATION include)
+ 
++if (BUILD_TESTING)
+ include_directories( third-party/google-test/googletest third-party/google-test/googletest/include )
++endif()
+ include_directories( ${CMAKE_CURRENT_BINARY_DIR}/third-party/include )
+ 
+ ## for tests
+@@ -426,15 +428,21 @@ add_subdirectory(src/signature)
+ add_subdirectory(src/binfhe)
+ 
+ ### build the google test handlers
++if (BUILD_TESTING)
+ add_subdirectory(third-party/google-test EXCLUDE_FROM_ALL)
++endif()
+ 
+ ### build the google benchmark handlers (just the parts we need)
++if (BUILD_TESTING)
+ set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Enable testing of the benchmark library." FORCE)
+ set(BENCHMARK_ENABLE_INSTALL OFF CACHE BOOL "Enable installation of benchmark. (Projects embedding benchmark may want to turn this OFF.)" FORCE)
+ set(BENCHMARK_ENABLE_GTEST_TESTS OFF CACHE BOOL "Enable building the unit tests which depend on gtest" FORCE)
+ add_subdirectory(third-party/google-benchmark EXCLUDE_FROM_ALL)
++endif()
+ 
++if (BUILD_TESTING)
+ add_subdirectory(benchmark)
++endif()
+ 
+ ## clobber cleans AND cleans the third-party stuff
+ add_custom_target( clobber DEPENDS gmp_clobber ntl_clobber
+@@ -442,6 +450,7 @@ add_custom_target( clobber DEPENDS gmp_clobber ntl_clo
+         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+ )
+ 
++if (BUILD_TESTING)
+ add_custom_target( testall
+ 	DEPENDS core_tests pke_tests abe_tests signature_tests binfhe_tests
+ 	COMMAND echo core: && unittest/core_tests -t
+@@ -450,6 +459,7 @@ add_custom_target( testall
+ 	COMMAND echo signature: && unittest/signature_tests -t
+ 	COMMAND echo binfhe: && unittest/binfhe_tests -t
+ )
++endif()
+ 
+ add_custom_target( alldemos 
+ 	DEPENDS allcoredemos allpkedemos allabedemos allsignaturedemos allbinfhedemos
