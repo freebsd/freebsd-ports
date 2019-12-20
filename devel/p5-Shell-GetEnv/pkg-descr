@@ -1,0 +1,13 @@
+Shell::GetEnv provides facility for obtaining changes made to environment
+variables as the result of running shell scripts.  It does this by causing
+a shell to invoke a series of user provided shell commands (some of which
+might source scripts) and having the shell process store its environment
+(using a short Perl script) into a temporary file, which is parsed by the
+Shell::Getenv.
+
+Communications with the shell subprocess may be done via standard IPC (via
+a pipe), or may be done via the Perl Expect module (necessary if proper
+execution of the shell script requires the shell to be attached to a "real"
+terminal).
+
+WWW: https://metacpan.org/release/Shell-GetEnv
