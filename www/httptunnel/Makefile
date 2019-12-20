@@ -3,7 +3,7 @@
 
 PORTNAME=	httptunnel
 PORTVERSION=	3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.Awfulhak.org/httptunnel/ \
 		ftp://ftp.nocrew.org/pub/nocrew/unix/ \
@@ -19,6 +19,8 @@ CONFIGURE_ARGS=	--quiet
 DEBUG_CONFIGURE_ENABLE=	debug
 
 USE_RC_SUBR=	hts htc
+USERS=		httptunnel
+GROUPS=		httptunnel
 
 PLIST_FILES=	bin/hts bin/htc \
 		man/man1/hts.1.gz man/man1/htc.1.gz
