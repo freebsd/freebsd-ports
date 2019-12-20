@@ -3,7 +3,7 @@
 PORTNAME=	jmx4perl
 PORTVERSION=	1.11
 DISTVERSIONSUFFIX=	_2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ROLAND
@@ -45,9 +45,6 @@ ETC_FILES=	common.cfg \
 		threads.cfg \
 		tomcat.cfg \
 		weblogic.cfg
-
-SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST=	ETC_FILES="${ETC_FILES}"
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
