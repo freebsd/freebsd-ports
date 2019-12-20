@@ -1,10 +1,19 @@
-https://github.com/arvidn/libtorrent/commit/e4b812b50b0a
+From 48fa5343b5d99416ba9606f5f52fba58b93dffe6 Mon Sep 17 00:00:00 2001
+From: Arvid Norberg <arvid@cs.umu.se>
+Date: Wed, 13 Nov 2019 15:36:05 +0000
+Subject: [PATCH] add executor_type to socket_type
 
---- include/libtorrent/socket_type.hpp.orig	2018-10-05 09:19:18 UTC
-+++ include/libtorrent/socket_type.hpp
-@@ -192,6 +192,10 @@ namespace libtorrent
- 		typedef tcp::socket::receive_buffer_size receive_buffer_size;
- 		typedef tcp::socket::send_buffer_size send_buffer_size;
+---
+ include/libtorrent/aux_/socket_type.hpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/include/libtorrent/aux_/socket_type.hpp b/include/libtorrent/aux_/socket_type.hpp
+index 1342d39adf..7cbe90fd68 100644
+--- include/libtorrent/aux_/socket_type.hpp
++++ include/libtorrent/aux_/socket_type.hpp
+@@ -184,6 +184,10 @@ namespace aux {
+ 		using receive_buffer_size = tcp::socket::receive_buffer_size;
+ 		using send_buffer_size = tcp::socket::send_buffer_size;
  
 +#if BOOST_VERSION >= 106600
 +		using executor_type = tcp::socket::executor_type;
