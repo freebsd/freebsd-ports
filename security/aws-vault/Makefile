@@ -2,7 +2,7 @@
 
 PORTNAME=	aws-vault
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.1
+DISTVERSION=	5.0.0
 CATEGORIES=	security
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -21,13 +21,14 @@ GH_TUPLE=	\
 		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/gopkg.in/alecthomas/kingpin.v2 \
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:f65c72e2690d:alecthomas_units/vendor/github.com/alecthomas/units \
-		aws:aws-sdk-go:v1.25.17:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.25.37:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		danieljoos:wincred:v1.0.2:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
 		dvsekhvalnov:jose2go:7f401d37b68a:dvsekhvalnov_jose2go/vendor/github.com/dvsekhvalnov/jose2go \
-		go-ini:ini:v1.49.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		godbus:dbus:4481cbc300e2:godbus_dbus/vendor/github.com/godbus/dbus \
-		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:f8518d3b3627:golang_sys/vendor/golang.org/x/sys \
+		golang:crypto:497ca9f6d64f:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sys:cf1e2d577169:golang_sys/vendor/golang.org/x/sys \
+		google:go-cmp:v0.3.1:google_go_cmp/vendor/github.com/google/go-cmp \
 		gsterjov:go-libsecret:a6f4afe4910c:gsterjov_go_libsecret/vendor/github.com/gsterjov/go-libsecret \
 		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
