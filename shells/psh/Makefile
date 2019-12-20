@@ -3,7 +3,7 @@
 
 PORTNAME=	psh
 PORTVERSION=	1.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	shells perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GREGOR
@@ -15,7 +15,5 @@ RUN_DEPENDS=	${SITE_PERL}/Term/ReadLine/Perl.pm:devel/p5-Term-ReadLine-Perl
 
 USES=		perl5
 USE_PERL5=	configure
-
-SUB_FILES=	pkg-install pkg-deinstall
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-bin/psh
+@shell bin/psh
 %%DATADIR%%/complete/debian
 %%DATADIR%%/complete/perl
 %%DATADIR%%/complete/standard
