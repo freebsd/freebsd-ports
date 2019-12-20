@@ -19,7 +19,6 @@ PREFIX?=	/usr/local
 BINDIR?=	${PREFIX}/bin
 MANDIR?=	${PREFIX}/man/man
 MAN=		blackhole6.1 script6.1 ipv6toolkit.conf.5 ipv6toolkit.7
-NO_MANCOMPRESS=
 
 data/ipv6toolkit.conf:
 	echo "# SI6 Networks' IPv6 Toolkit Configuration File" > ${.TARGET}

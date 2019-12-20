@@ -1,9 +1,16 @@
---- lib/Makefile.orig	2005-11-14 12:12:28 UTC
+--- lib/Makefile.orig
 +++ lib/Makefile
-@@ -9,4 +9,6 @@ NOPROFILE=	yes
- NOPIC=		yes
- MKLINKLIB=	no
+@@ -5,8 +5,10 @@
+ 	iasclt.c commsrv.c commclt.c obexsrv.c obexclt.c options.c \
+ 	actisys.c girbil.c litelink.c jeteye.c sendobex.c redlink.c
  
-+install:
+-NOPROFILE=	yes
+-NOPIC=		yes
+-MKLINKLIB=	no
++MK_PROFILE=	no
++NO_PIC=		yes
++MK_LINKLIB=	no
 +
++install:
+ 
  .include <bsd.lib.mk>

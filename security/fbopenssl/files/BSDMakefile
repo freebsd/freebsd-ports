@@ -9,7 +9,8 @@ LIB=		fbopenssl
 LIBDIR=		${PREFIX}/lib
 SHLIBDIR=	${PREFIX}/lib
 SHLIB_MAJOR=	0
-NO_MAN=
+MAN=
+MK_PROFILE=	no
 
 CFLAGS+=-ansi -I${OPENSSLINC}
 LDADD=	-Wl,-R${OPENSSLLIB} -L${OPENSSLLIB} -lcrypto

@@ -7,7 +7,7 @@ DPADD=		libpasori.a
 LDADD=		-L../lib -lpasori
 
 BINDIR=		${LOCALBASE}/bin
-NO_MAN=
+MAN=
 
 CFLAGS+=	-Wall -W
 
