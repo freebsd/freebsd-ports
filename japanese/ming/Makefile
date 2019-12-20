@@ -19,7 +19,6 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 CONFLICTS=	ming-*
 
 WRKSRC=		${WRKDIR}/jaming-${PORTVERSION}/src
-MAKE_ARGS=	NO_PROFILE=true
 USE_LDCONFIG=	yes
 USES=		bison uidfix
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null

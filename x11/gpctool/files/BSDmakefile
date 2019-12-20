@@ -1,6 +1,5 @@
 PROG=	gpctool
-NO_MAN=	Ha-ha!
-NOMAN=	${NO_MAN}
+MAN=
 
 SRCS=		gpctool.c main.c callbacks.c graphics.c psdump.c
 

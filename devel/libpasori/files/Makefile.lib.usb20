@@ -10,7 +10,7 @@ INCS=		libpasori.h libpasori_com.h libpasori_command.h \
 
 LIBDIR=		${LOCALBASE}/lib
 INCLUDEDIR=	${LOCALBASE}/include 
-NO_PROFILE=
+MK_PROFILE=	no
 SHLIB_MAJOR=	1
 
 CFLAGS+=	-D__LIBPASORI_WITH_LIBUSB

@@ -2,7 +2,7 @@
 
 # LINPACK sources
 LIBDIR= ${PREFIX}/lib
-NOPROFILE= no
+MK_PROFILE= no
 
 SHLIB_MAJOR= 3
 LIB=linpack

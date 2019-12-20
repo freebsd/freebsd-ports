@@ -1,6 +1,6 @@
---- parser/Makefile.orig	Fri Mar 12 23:16:59 2004
-+++ parser/Makefile	Fri Dec 10 21:07:28 2004
-@@ -7,8 +7,8 @@
+--- parser/Makefile.orig
++++ parser/Makefile
+@@ -7,10 +7,10 @@
  MAN=
  SRCS=		bnep.c cmtp.c hidp.c l2cap.c rfcomm.c hci.c parser.c sdp.c
  WARNS?=		2
@@ -9,5 +9,8 @@
 +NO_WERROR=	yes
 +CFLAGS?=	-O2
  
- NOPROFILE=	1
+-NOPROFILE=	1
++MK_PROFILE=	no
+ 
+ .include <bsd.lib.mk>
  

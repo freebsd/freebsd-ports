@@ -4,7 +4,6 @@ PREFIX?=	/usr/local
 LOCALBASE?=	/usr/local
 BINDIR?=	${PREFIX}/bin
 MANDIR?=	${PREFIX}/man/man
-NO_MANCOMPRESS=
 
 CLASS=		SshAskpass
 FILES=		${CLASS}
