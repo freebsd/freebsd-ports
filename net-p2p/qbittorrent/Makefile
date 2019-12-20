@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-DISTVERSION=	4.1.9.1
-PORTREVISION=	1
+DISTVERSION=	4.2.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,11 +20,11 @@ FLAVOR?=	${FLAVORS:[1]}
 nox_PKGNAMESUFFIX=	-nox
 nox_PLIST=		${MASTERDIR}/pkg-plist-nox
 
-USES=			compiler:c++11-lib pkgconfig qmake:no_env qt:5 tar:xz
+USES=			compiler:c++14-lang pkgconfig qmake:no_env qt:5 ssl tar:xz
 GNU_CONFIGURE=		yes
 USE_QT=			core network xml buildtools_build linguisttools_build qmake_build
-CONFIGURE_ARGS=		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 DESTDIRNAME=		INSTALL_ROOT
+CONFIGURE_ENV+=		openssl_CFLAGS="-I${OPENSSLINC}" openssl_LIBS="-L${OPENSSLLIB} -lssl"
 
 .if ${FLAVOR} == default
 USES+=			desktop-file-utils gl
@@ -36,7 +35,7 @@ USE_GL=			gl
 .if ${FLAVOR} == nox
 SUFFIX=			-nox
 COMMENT+=		(web UI version)
-CONFIGURE_ARGS+=	--disable-gui
+CONFIGURE_ARGS=		--disable-gui
 USERS=			qbittorrent
 GROUPS=			qbittorrent
 USE_RC_SUBR=		qbittorrent
