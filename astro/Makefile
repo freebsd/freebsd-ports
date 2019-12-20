@@ -88,6 +88,7 @@
     SUBDIR += py-horoscopegenerator
     SUBDIR += py-metar
     SUBDIR += py-metpy
+    SUBDIR += py-pymeeus
     SUBDIR += py-pymetar
     SUBDIR += py-pysofa
     SUBDIR += py-pywapi
