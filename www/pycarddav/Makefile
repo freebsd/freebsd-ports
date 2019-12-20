@@ -2,7 +2,7 @@
 
 PORTNAME=	pycarddav
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,9 @@ COMMENT=	Simple to use CardDAV CLI client
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=		Deprecated by upstream, please migrate to deskutils/py-khard
+EXPIRATION_DATE=	2020-02-28
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vobject>0:deskutils/py-vobject@${PY_FLAVOR} \
