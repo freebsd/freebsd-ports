@@ -3,6 +3,7 @@
 PORTNAME=	cmrtlib
 DISTVERSIONPREFIX=	intel-media-
 DISTVERSION=	19.4.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +16,6 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
 
 LIB_DEPENDS=	libva.so:multimedia/libva
-RUN_DEPENDS=	libva-intel-media-driver>=${PORTVERSION}:multimedia/libva-intel-media-driver
 
 USES=		cmake compiler:c++11-lib pkgconfig
 USE_GITHUB=	yes
