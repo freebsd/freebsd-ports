@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vdpauinfo
-PORTVERSION=	1.0
+PORTVERSION=	1.3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://people.freedesktop.org/~aplattner/vdpau/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Tool to query VDPAU capabilities
@@ -14,9 +13,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 
-USES=		pkgconfig
+USES=		autoreconf pkgconfig
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.freedesktop.org
+GL_ACCOUNT=	vdpau
+GL_COMMIT=	0bc58c03e61e038ba3b81dfff36cc35cadfae447
 GNU_CONFIGURE=	yes
-
 PLIST_FILES=	bin/vdpauinfo
 
 .include <bsd.port.mk>
