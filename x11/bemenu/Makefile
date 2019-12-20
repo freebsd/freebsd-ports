@@ -4,9 +4,6 @@ PORTNAME=	bemenu
 DISTVERSION=	0.3.0
 CATEGORIES=	x11 wayland
 
-PATCH_SITES=	https://github.com/Cloudef/bemenu/commit/
-PATCHFILES=	0c1e34cf811ef6e70bf2fb7713fa8a2ebd0d574e.patch:-p1
-
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Dynamic menu library and client program inspired by dmenu
 
