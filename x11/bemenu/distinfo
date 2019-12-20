@@ -1,5 +1,3 @@
-TIMESTAMP = 1576831602
-SHA256 (Cloudef-bemenu-0.3.0_GH0.tar.gz) = 9f4fea2ccf6df6e7993dea094cb896bc4c647662729ace268b69dde7ccf6f09e
-SIZE (Cloudef-bemenu-0.3.0_GH0.tar.gz) = 120065
-SHA256 (0c1e34cf811ef6e70bf2fb7713fa8a2ebd0d574e.patch) = c89ac29bc0d4d647de784b370d33fac0c329030632e3136f17ff4975ffcf4fd5
-SIZE (0c1e34cf811ef6e70bf2fb7713fa8a2ebd0d574e.patch) = 756
+TIMESTAMP = 1576848650
+SHA256 (Cloudef-bemenu-0.3.0_GH0.tar.gz) = a57ae85ca14b4adb6c32bc40138d49ec51dd2e2b0d211557c8f92489f4c3fb84
+SIZE (Cloudef-bemenu-0.3.0_GH0.tar.gz) = 120059
