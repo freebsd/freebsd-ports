@@ -85,6 +85,7 @@
     SUBDIR += py-aipy
     SUBDIR += py-astLib
     SUBDIR += py-astropy
+    SUBDIR += py-ephem
     SUBDIR += py-horoscopegenerator
     SUBDIR += py-metar
     SUBDIR += py-metpy
