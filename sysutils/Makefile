@@ -155,11 +155,13 @@
     SUBDIR += cfengine-masterfiles312
     SUBDIR += cfengine-masterfiles313
     SUBDIR += cfengine-masterfiles314
+    SUBDIR += cfengine-masterfiles315
     SUBDIR += cfengine310
     SUBDIR += cfengine311
     SUBDIR += cfengine312
     SUBDIR += cfengine313
     SUBDIR += cfengine314
+    SUBDIR += cfengine315
     SUBDIR += chgrep
     SUBDIR += chyves
     SUBDIR += cinnamon-control-center
