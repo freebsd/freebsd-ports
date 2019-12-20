@@ -3,7 +3,7 @@
 
 PORTNAME=	flowd
 PORTVERSION=	0.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://mindrot.org/files/flowd/
 
