@@ -3,6 +3,15 @@ bin/check_jmx4perl
 bin/j4psh
 bin/jmx4perl
 bin/jolokia
+@sample %%ETCDIR%%/common.cfg.sample
+@sample %%ETCDIR%%/glassfish.cfg.sample
+@sample %%ETCDIR%%/jboss.cfg.sample
+@sample %%ETCDIR%%/jetty.cfg.sample
+@sample %%ETCDIR%%/memory.cfg.sample
+@sample %%ETCDIR%%/metrics.cfg.sample
+@sample %%ETCDIR%%/threads.cfg.sample
+@sample %%ETCDIR%%/tomcat.cfg.sample
+@sample %%ETCDIR%%/weblogic.cfg.sample
 %%PERL5_MAN1%%/cacti_jmx4perl.1.gz
 %%PERL5_MAN1%%/check_jmx4perl.1.gz
 %%PERL5_MAN1%%/j4psh.1.gz
@@ -107,12 +116,3 @@ bin/jolokia
 %%SITE_PERL%%/JMX/Jmx4Perl/Request.pm
 %%SITE_PERL%%/JMX/Jmx4Perl/Response.pm
 %%SITE_PERL%%/JMX/Jmx4Perl/Util.pm
-%%ETCDIR%%/common.cfg.sample
-%%ETCDIR%%/glassfish.cfg.sample
-%%ETCDIR%%/jboss.cfg.sample
-%%ETCDIR%%/jetty.cfg.sample
-%%ETCDIR%%/memory.cfg.sample
-%%ETCDIR%%/metrics.cfg.sample
-%%ETCDIR%%/threads.cfg.sample
-%%ETCDIR%%/tomcat.cfg.sample
-%%ETCDIR%%/weblogic.cfg.sample
