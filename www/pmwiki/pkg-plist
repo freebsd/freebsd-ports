@@ -8,6 +8,7 @@
 %%PMWIKIDIR%%/pub/guiedit/center.gif
 %%PMWIKIDIR%%/pub/guiedit/em.gif
 %%PMWIKIDIR%%/pub/guiedit/extlink.gif
+%%PMWIKIDIR%%/pub/guiedit/fixurl.png
 %%PMWIKIDIR%%/pub/guiedit/guiedit.js
 %%PMWIKIDIR%%/pub/guiedit/h.gif
 %%PMWIKIDIR%%/pub/guiedit/h1.gif
@@ -31,14 +32,7 @@
 %%PMWIKIDIR%%/pub/guiedit/table.gif
 %%PMWIKIDIR%%/pub/guiedit/ul.gif
 %%PMWIKIDIR%%/pub/guiedit/underline.gif
-%%PMWIKIDIR%%/pub/skins/pmwiki/README
-%%PMWIKIDIR%%/pub/skins/pmwiki/pmwiki-32.gif
-%%PMWIKIDIR%%/pub/skins/pmwiki/pmwiki.css
-%%PMWIKIDIR%%/pub/skins/pmwiki/pmwiki.tmpl
-%%PMWIKIDIR%%/pub/skins/print/README
-%%PMWIKIDIR%%/pub/skins/print/print.css
-%%PMWIKIDIR%%/pub/skins/print/print.php
-%%PMWIKIDIR%%/pub/skins/print/print.tmpl
+%%PMWIKIDIR%%/pub/pmwiki-utils.js
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/README
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/skin.css
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/skin.js
@@ -48,6 +42,14 @@
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/xmenu.svg
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/xsearch.svg
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/xwrench.svg
+%%PMWIKIDIR%%/pub/skins/pmwiki/README
+%%PMWIKIDIR%%/pub/skins/pmwiki/pmwiki-32.gif
+%%PMWIKIDIR%%/pub/skins/pmwiki/pmwiki.css
+%%PMWIKIDIR%%/pub/skins/pmwiki/pmwiki.tmpl
+%%PMWIKIDIR%%/pub/skins/print/README
+%%PMWIKIDIR%%/pub/skins/print/print.css
+%%PMWIKIDIR%%/pub/skins/print/print.php
+%%PMWIKIDIR%%/pub/skins/print/print.tmpl
 %%PMWIKIDIR%%/sample-config.php
 %%PMWIKIDIR%%/scripts/.htaccess
 %%PMWIKIDIR%%/scripts/author.php
@@ -99,8 +101,8 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.BackupAndRestore
 %%PMWIKIDIR%%/wikilib.d/PmWiki.BasicEditing
 %%PMWIKIDIR%%/wikilib.d/PmWiki.BasicVariables
-%%PMWIKIDIR%%/wikilib.d/PmWiki.Blocklist
 %%PMWIKIDIR%%/wikilib.d/PmWiki.BlockMarkup
+%%PMWIKIDIR%%/wikilib.d/PmWiki.Blocklist
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Categories
 %%PMWIKIDIR%%/wikilib.d/PmWiki.ChangeLog
 %%PMWIKIDIR%%/wikilib.d/PmWiki.ConditionalMarkup
@@ -171,6 +173,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Skins
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SpecialCharacters
 %%PMWIKIDIR%%/wikilib.d/PmWiki.TableDirectives
+%%PMWIKIDIR%%/wikilib.d/PmWiki.TableOfContents
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Tables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.TextFormattingRules
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Troubleshooting
@@ -216,6 +219,5 @@
 %%PMWIKIDIR%%/wikilib.d/SiteAdmin.GroupAttributes
 %%PMWIKIDIR%%/wikilib.d/SiteAdmin.SiteAdmin
 %%PMWIKIDIR%%/wikilib.d/SiteAdmin.Status
-@dir(%%WWWOWN%%,%%WWWGRP%%,775) %%PMWIKIDIR%%/wiki.d
 @dir %%PMWIKIDIR%%/pub/css
-@dir(%%WWWOWN%%,%%WWWGRP%%) %%PMWIKIDIR%%
+@dir %%PMWIKIDIR%%/wiki.d
