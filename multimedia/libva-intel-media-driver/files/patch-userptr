@@ -1,0 +1,31 @@
+Try unsynchronized userptr if regular one fails.
+https://github.com/FreeBSDDesktop/kms-drm/issues/197
+
+--- media_driver/linux/common/os/i915/mos_bufmgr.c.orig	2019-12-10 08:54:00 UTC
++++ media_driver/linux/common/os/i915/mos_bufmgr.c
+@@ -945,10 +945,15 @@ mos_gem_bo_alloc_userptr(struct mos_bufmgr *bufmgr,
+     userptr.user_size = size;
+     userptr.flags = 0;
+ 
++retry:
+     ret = drmIoctl(bufmgr_gem->fd,
+             DRM_IOCTL_I915_GEM_USERPTR,
+             &userptr);
+     if (ret != 0) {
++        if (errno == ENODEV && userptr.flags == 0) {
++            userptr.flags = I915_USERPTR_UNSYNCHRONIZED;
++            goto retry;
++        }
+         MOS_DBG("bo_create_userptr: "
+             "ioctl failed with user ptr %p size 0x%lx, "
+             "user flags 0x%lx\n", addr, size, flags);
+@@ -1021,6 +1026,9 @@ retry:
+         if (errno == ENODEV && userptr.flags == 0) {
+             userptr.flags = I915_USERPTR_UNSYNCHRONIZED;
+             goto retry;
++        }
++        if (geteuid() != 0) {
++            fprintf(stderr, "%s", "ioctl(I915_GEM_USERPTR) failed. Try running as root but expect poor stability.\n");
+         }
+         free(ptr);
+         return false;
