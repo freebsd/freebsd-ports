@@ -10,9 +10,12 @@
 %%PERL5_MAN3%%/Net::ACME2::HTTP_Tiny.3.gz
 %%PERL5_MAN3%%/Net::ACME2::LetsEncrypt.3.gz
 %%PERL5_MAN3%%/Net::ACME2::Order.3.gz
+%%PERL5_MAN3%%/Net::ACME2::X::ACME.3.gz
+%%PERL5_MAN3%%/Net::ACME2::X::HTTP::Network.3.gz
 %%PERL5_MAN3%%/Net::ACME2::X::HTTP::Protocol.3.gz
 %%SITE_PERL%%/Net/ACME2.pm
 %%SITE_PERL%%/Net/ACME2/AccessorBase.pm
+%%SITE_PERL%%/Net/ACME2/AccountKey.pm
 %%SITE_PERL%%/Net/ACME2/Authorization.pm
 %%SITE_PERL%%/Net/ACME2/Challenge.pm
 %%SITE_PERL%%/Net/ACME2/Challenge/dns_01.pm
