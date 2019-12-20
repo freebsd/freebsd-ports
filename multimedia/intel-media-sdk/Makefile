@@ -3,6 +3,7 @@
 PORTNAME=	intel-media-sdk
 DISTVERSIONPREFIX=	intel-mediasdk-
 DISTVERSION=	19.4.pre2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -18,6 +19,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
 
 LIB_DEPENDS=	libva.so:multimedia/libva
+RUN_DEPENDS=	cmrtlib>0:multimedia/cmrtlib
 
 USES=		cmake compiler:c++11-lib pkgconfig
 USE_GITHUB=	yes
