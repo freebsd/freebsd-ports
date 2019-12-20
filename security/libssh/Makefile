@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libssh
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.3
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.libssh.org/files/0.9/
 
