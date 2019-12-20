@@ -9,6 +9,9 @@ DIST_SUBDIR=	KDE/kdevelop
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python support for KDevelop
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	kdev-pg-qt:devel/kdevelop-pg-qt
 LIB_DEPENDS=	libkdevcmakecommon.so:devel/kdevelop
 
