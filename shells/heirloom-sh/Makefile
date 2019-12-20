@@ -3,6 +3,7 @@
 
 PORTNAME=	heirloom-sh
 PORTVERSION=	050706
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	SF/heirloom/${PORTNAME}/${PORTVERSION}
 
@@ -13,12 +14,9 @@ BROKEN_aarch64=	Fails to link: missing sbrk
 
 USES=		tar:bzip2
 MAKEFILE=	makefile
-PLIST_FILES=	bin/jsh \
+PLIST_FILES=	"@shell bin/jsh" \
 		man/man1/jsh.1.gz
 PORTDOCS=	CALDERA.LICENSE OPENSOLARIS.LICENSE CHANGES README
-
-PKGINSTALL=	pkg-install
-PKGDEINSTALL=	pkg-deinstall
 
 OPTIONS_DEFINE=	DOCS
 
