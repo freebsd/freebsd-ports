@@ -204,6 +204,7 @@
     SUBDIR += cpu-x
     SUBDIR += cpuburn
     SUBDIR += cpuid
+    SUBDIR += cpuid2cpuflags
     SUBDIR += cpulimit
     SUBDIR += cpupdate
     SUBDIR += cramfs
