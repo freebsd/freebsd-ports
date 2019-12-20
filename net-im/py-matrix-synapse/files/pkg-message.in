@@ -27,4 +27,16 @@ If you're upgrading from a previous release of synapse, please read the upgrade
 instructions at %%DOCSDIR%%/UPGRADE.rst
 EOM
 }
+{
+  message: <<EOM
+Running synapse with the sqlite backend is only recommended for testing purposes.
+Future versions of synapse will disable federation by default if sqlite is used.
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+If you're currently using synapse with sqlite and would like to switch to postgres,
+please read the instructions at %%DOCSDIR%%/postgres.md
+EOM
+}
 ]
