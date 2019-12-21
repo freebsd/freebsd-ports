@@ -16,10 +16,6 @@ LICENSE=	BSD3CLAUSE
 USES=		ghostscript:run
 SUB_FILES=	${PORTNAME}.1
 
-#RUN_DEPENDS=	${JAVALIBDIR}/bcmail.jar:java/bouncycastle15 \
-#		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
-#		${JAVALIBDIR}/commons-io.jar:devel/apache-commons-io
-
 NO_BUILD=	yes
 NO_ARCH=	yes
 
@@ -29,13 +25,5 @@ do-install:
 	${INSTALL_SCRIPT} ${DISTDIR}/${PORTNAME}.sh \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKDIR}/shrinkpdf.1 ${STAGEDIR}${MANPREFIX}/man/man1
-
-#	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
-#	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
-#.for f in ${JAR_NAMES}
-#	${INSTALL_DATA} ${DISTDIR}/${f}-${PORTVERSION}.jar \
-#		${STAGEDIR}${JAVAJARDIR}/${f}.jar
-#.endfor
-#	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.mk>
