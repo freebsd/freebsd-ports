@@ -1,0 +1,10 @@
+--- extra/mariabackup/CMakeLists.txt.orig	2019-12-05 22:22:27 UTC
++++ extra/mariabackup/CMakeLists.txt
+@@ -114,6 +114,7 @@ MYSQL_ADD_EXECUTABLE(mbstream
+ TARGET_LINK_LIBRARIES(mbstream
+   mysys
+   crc
++  sql
+ )
+ ADD_DEPENDENCIES(mbstream GenError)
+ 
