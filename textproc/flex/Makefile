@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/westes/flex/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Fast lexical analyzer generator
 
 LICENSE=	BSD3CLAUSE
