@@ -1,0 +1,79 @@
+.\"
+.\" Copyright (c) 2014-2019 Alfred Klomp
+.\" Copyright (c) 2019 Michael Gmelin
+.\"
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE DEVELOPERS ``AS IS'' AND ANY EXPRESS OR
+.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+.\" IN NO EVENT SHALL THE DEVELOPERS BE LIABLE FOR ANY DIRECT, INDIRECT,
+.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.\"
+.\" $FreeBSD$
+.\"
+.Dd December 21, 2019
+.Dt SHRINKPDF 1
+.Os
+.Sh NAME
+.Nm shrinkpdf
+.Nd A simple wrapper around Ghostscript to reduce the file size of PDFs
+.Sh SYNOPSIS
+.Nm
+.Ar infile
+.Op outfile
+.Op resolution_in_dpi
+.Sh DESCRIPTION
+Inspired by some code found in an OpenOffice Python script,
+.Nm
+feeds a PDF through Ghostscript, which performs lossy recompression
+by such methods as downsampling the images to a lower resolution.
+The result should be (but not always is) a much smaller file.
+.Pp
+If invoked without
+.Op outfile ,
+the shrunk file is written to standard output.
+If invoked without
+.Op resolution_in_dpi ,
+a default resolution of 72 dpi is used.
+.Pp
+If both
+.Op infile
+and
+.Op outfile
+are regular files, the script checks if the shrunk output file is actually
+smaller than the input file.
+If it is not, it writes a message to stderr and copies the input to output.
+.Sh EXAMPLES
+Reduce PDF resolution to 72 dpi:
+.Dl $ shrinkpdf myfile.pdf >myfile-72dpi.pdf
+.Pp
+Reduce PDF resolution to 300 dpi:
+.Dl $ shrinkpdf myfile.pdf - 300 >myfile-300dpi.pdf
+.Pp
+Reduce PDF resolution to 150 dpi, specify
+.Op outfile :
+.Dl $ shrinkpdf myfile.pdf myfile-150dpi.pdf 150
+.Sh SEE ALSO
+.Xr gs 1
+.Sh AUTHORS
+.An -nosplit
+.Nm
+was written by Alfred Klomp.
+This manual page was written by
+.An Michael Gmelin Aq Mt grembo@FreeBSD.org
+based on content written by Alfred Klomp.
