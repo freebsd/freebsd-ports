@@ -1,0 +1,7 @@
+Rehearse is a C++ library designed to describe linear optimization problems
+programmatically.
+
+You can describe linear objectives and constraints using native C++ algebraic
+expressions, in a similar way you write a mathematical model on a paper.
+
+WWW: https://projects.coin-or.org/Rehearse
