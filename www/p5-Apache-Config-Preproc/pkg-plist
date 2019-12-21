@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Apache/Config/Preproc.pm
+%%SITE_PERL%%/Apache/Config/Preproc/compact.pm
+%%SITE_PERL%%/Apache/Config/Preproc/ifdefine.pm
+%%SITE_PERL%%/Apache/Config/Preproc/ifmodule.pm
+%%SITE_PERL%%/Apache/Config/Preproc/include.pm
+%%SITE_PERL%%/Apache/Config/Preproc/macro.pm
+%%PERL5_MAN3%%/Apache::Config::Preproc.3.gz
+%%PERL5_MAN3%%/Apache::Config::Preproc::compact.3.gz
+%%PERL5_MAN3%%/Apache::Config::Preproc::ifdefine.3.gz
+%%PERL5_MAN3%%/Apache::Config::Preproc::ifmodule.3.gz
+%%PERL5_MAN3%%/Apache::Config::Preproc::include.3.gz
+%%PERL5_MAN3%%/Apache::Config::Preproc::macro.3.gz

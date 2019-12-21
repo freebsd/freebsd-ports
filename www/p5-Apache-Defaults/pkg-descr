@@ -1,0 +1,6 @@
+This module provides a mechanism for detecting version, default settings,
+and preloaded modules of the Apache httpd server.  It does so by locating
+the server binary, invoking it with appropriate options and analyzing the
+output it produces.
+
+WWW: https://metacpan.org/release/Apache-Defaults

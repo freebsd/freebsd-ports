@@ -1,0 +1,10 @@
+Apache::Config::Preproc reads and parses Apache server configuration file,
+expanding the syntactic constructs selected by the -expand option.  In the
+simplest case, the argument to that option is a reference to the list of
+names.  Each name in the list identifies a module responsible for processing
+specific Apache configuration keywords.  For convenience, most modules are
+named after the keyword they process, so that, e.g. include is responsible
+for inclusion of the files listed with Include and IncludeOptional
+statements.
+
+WWW: https://metacpan.org/release/Apache-Config-Preproc
