@@ -2,9 +2,9 @@
 
 PORTNAME=	cgl
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	0.59.10
-PORTREVISION=	2
+DISTVERSION=	0.60.2
 CATEGORIES=	math
+PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of cut generators for COIN-OR packages that use cuts
