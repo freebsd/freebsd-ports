@@ -219,5 +219,6 @@
 %%PMWIKIDIR%%/wikilib.d/SiteAdmin.GroupAttributes
 %%PMWIKIDIR%%/wikilib.d/SiteAdmin.SiteAdmin
 %%PMWIKIDIR%%/wikilib.d/SiteAdmin.Status
+@dir(%%WWWOWN%%,%%WWWGRP%%,775) %%PMWIKIDIR%%/wiki.d
 @dir %%PMWIKIDIR%%/pub/css
-@dir %%PMWIKIDIR%%/wiki.d
+@dir(%%WWWOWN%%,%%WWWGRP%%) %%PMWIKIDIR%%
