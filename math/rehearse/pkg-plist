@@ -1,0 +1,15 @@
+include/coin/CelBoolVar.h
+include/coin/CelBoolVarArray.h
+include/coin/CelCoefficients.fwd.h
+include/coin/CelExpression.h
+include/coin/CelIntVar.h
+include/coin/CelModel.h
+include/coin/CelNumVar.h
+include/coin/CelNumVarArray.h
+include/coin/CelVariable.h
+include/coin/CelVariableArray.h
+include/coin/RehearseConfig.h
+lib/librehearse.so
+lib/librehearse.so.0
+lib/librehearse.so.0.0.0
+libdata/pkgconfig/rehearse.pc
