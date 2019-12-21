@@ -227,6 +227,7 @@
     SUBDIR += rubygem-ttfunk
     SUBDIR += scribus-devel
     SUBDIR += sgf2tex
+    SUBDIR += shrinkpdf
     SUBDIR += splix
     SUBDIR += system-config-printer
     SUBDIR += t1utils
