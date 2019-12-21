@@ -7,24 +7,20 @@
 #
 # X264_BUILD is the "core" number, and can be found in x264.h.
 #
-# X264_COMMIT is the commit number, and can be found here:
-# https://code.videolan.org/videolan/x264/commits/stable
-#
 # X264_REV requires a checkout the git revision for the version the port
 # is being updated to. Then run version.sh against it.
 #
 # Bumping PORTREVISION for dependent ports? This is useful:
-# cd $PORTSDIR; for x in $(find . -name "Makefile*" -print);
-# do str=$(grep -i x264.so $x); if [[ -n $str ]] { echo "$x" }; done
+#   fgrep -lr --include='*/Makefile*' :multimedia/libx264 $PORTSDIR |
+#   sed 's,/Makefile.*,,' | xargs $PORTSDIR/Tools/scripts/bump-revision.sh
+# or
+#   rg -l :multimedia/libx264 $PORTSDIR | xargs -n1 portedit bump-revision -i
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION?=	2	# 2 in libx264
+PORTREVISION?=	0
 CATEGORIES=	multimedia
-MASTER_SITES=	https://downloads.videolan.org/pub/videolan/x264/snapshots/ \
-		https://samples.mplayerhq.hu/yuv4mpeg2/:pgo
-DISTNAME=	${PORTNAME}-snapshot-${X264_SNAPSHOT}-2245-stable
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://samples.mplayerhq.hu/yuv4mpeg2/:pgo
 DIST_SUBDIR=	x264
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -37,15 +33,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS?=	libx264.so:multimedia/libx264
 
-X264_BUILD=	157
-X264_REV=	2980
-X264_COMMIT=	34c06d1c17ad968fbdda153cb772f77ee31b3095
-X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
-X264_SNAPSHOT=	20190719
+X264_BUILD=	159
+X264_REV=	2991
+X264_GITVER=	${GL_COMMIT:C/^(.{7}).*/\1/}
 
 USES?=		pkgconfig
-USES+=		compiler:c11 gmake localbase shebangfix tar:bzip2
+USES+=		compiler:c11 gmake localbase shebangfix
+USE_GITLAB=	yes
 USE_LDCONFIG=	yes
+GL_SITE=	https://code.videolan.org
+GL_ACCOUNT=	videolan
+GL_COMMIT=	1771b556ee45207f8711744ccbd5d42a3949b14c
 HAS_CONFIGURE=	yes
 SHEBANG_FILES=	configure
 PLIST_FILES?=	bin/x264
