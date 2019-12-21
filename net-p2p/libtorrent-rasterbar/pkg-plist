@@ -18,6 +18,7 @@ include/libtorrent/aux_/container_wrapper.hpp
 include/libtorrent/aux_/cppint_import_export.hpp
 include/libtorrent/aux_/cpuid.hpp
 include/libtorrent/aux_/deferred_handler.hpp
+include/libtorrent/aux_/deprecated.hpp
 include/libtorrent/aux_/deque.hpp
 include/libtorrent/aux_/dev_random.hpp
 include/libtorrent/aux_/disable_warnings_pop.hpp
@@ -247,7 +248,7 @@ lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarConfigVersion.cmake
 lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets.cmake
 lib/libtorrent-rasterbar.so
-lib/libtorrent-rasterbar.so.1.2.2
+lib/libtorrent-rasterbar.so.1.2.3
 lib/libtorrent-rasterbar.so.%%SHLIB_VER%%
 libdata/pkgconfig/libtorrent-rasterbar.pc
 share/cmake/Modules/FindLibtorrentRasterbar.cmake
