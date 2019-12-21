@@ -25,19 +25,16 @@ TARGETARCH=	${ARCH:S/amd64/x86_64/}
 GCC_TARGET=	${TARGETARCH}-unknown-${OPSYS:tl}${OSREL}
 
 PREFIX=		/usr
-CONFIGURE_ENV=	NM=/usr/bin/nm \
-		AS_FOR_TARGET=/usr/bin/as \
-		LD_FOR_TARGET=/usr/bin/ld \
-		NM_FOR_TARGET=/usr/bin/nm
+.for _tool in CC CXX CPP AS AR LD NM OBJCOPY RANLIB SIZE STRINGS
+CONFIGURE_ENV+= ${_tool}_FOR_TARGET="${${_tool}}"
+.endfor
+
 USES=	gmake libtool tar:xz makeinfo
-PLIST_SUB=	TARGETARCH=${TARGETARCH} \
-		OPSYS=${OPSYS:tl} \
+PLIST_SUB=	OPSYS=${OPSYS:tl} \
 		GCC_TARGET=${GCC_TARGET} \
 		GCC_VERSION=${PORTVERSION}
 
-EXTRA_PATCHES+= ${.CURDIR}/../../devel/powerpc64-gcc/files/freebsd-format-extensions
-EXTRA_PATCHES+= ${.CURDIR}/../../devel/powerpc64-gcc/files/freebsd-libdir
-EXTRA_PATCHES+= ${.CURDIR}/../../devel/powerpc64-gcc/files/patch-gcc-freebsd-mips
+EXTRA_PATCHES+= ${.CURDIR}/../../devel/freebsd-gcc6/files
 
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
@@ -67,26 +64,24 @@ CONFIGURE_TARGET=	${HOSTARCH}-unknown-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
-PLIST_SUB+=	I386="" \
-		FLOAT_H="@comment "
+PLIST_SUB+=	FLOAT_H="@comment "
 .else
-PLIST_SUB+=	I386="@comment " \
-		FLOAT_H=""
+PLIST_SUB+=	FLOAT_H=""
 .endif
+
+PLIST=		${.CURDIR}/pkg-plist
+
 .if ${ARCH} == "amd64"
-PLIST_SUB+=	AMD64=""
-.else
-PLIST_SUB+=	AMD64="@comment "
+PLIST+=		${.CURDIR}/pkg-plist.amd64
+.endif
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+PLIST+=		${.CURDIR}/pkg-plist.i386
 .endif
 .if ${ARCH:Mmips*}
-PLIST_SUB+=	MIPS=""
-.else
-PLIST_SUB+=	MIPS="@comment "
+PLIST+=		${.CURDIR}/pkg-plist.mips
 .endif
 .if ${ARCH:Mpowerpc*}
-PLIST_SUB+=	POWERPC=""
-.else
-PLIST_SUB+=	POWERPC="@comment "
+PLIST+=		${.CURDIR}/pkg-plist.powerpc
 .endif
 
 post-extract:
@@ -101,22 +96,13 @@ post-patch:
 		${WRKSRC}//gcc/Makefile.in
 
 post-install:
-	${MV} -f ${STAGEDIR}/usr/bin/gcov-tool ${STAGEDIR}/usr/bin/${GCC_TARGET}-gcov-tool ; \
-	for tool in cpp gcc g++ gcov; do \
-		${MV} -f ${STAGEDIR}/usr/bin/$${tool} ${STAGEDIR}/usr/bin/${GCC_TARGET}-$${tool} ; \
-		${LN} -sf ${GCC_TARGET}-$${tool}  ${STAGEDIR}/usr/bin/$${tool} ; \
-		${MV} -f ${STAGEDIR}/${MANDIR}1/$${tool}.1 ${STAGEDIR}/${MANDIR}1/${GCC_TARGET}-$${tool}.1 ; \
-		${GZIP_CMD} ${STAGEDIR}/${MANDIR}1/${GCC_TARGET}-$${tool}.1 ; \
-		${LN} -sf ${GCC_TARGET}-$${tool}.1.gz ${STAGEDIR}/${MANDIR}1/$${tool}.1.gz ; \
-	done ; \
-	${LN} -sf ${GCC_TARGET}-g++  ${STAGEDIR}/usr/bin/c++ ; \
-	${LN} -sf ${GCC_TARGET}-g++.1.gz ${STAGEDIR}/${MANDIR}1/c++.1.gz
-	${LN} -sf ${GCC_TARGET}-gcc  ${STAGEDIR}/usr/bin/cc ; \
-	${LN} -sf ${GCC_TARGET}-gcc.1.gz ${STAGEDIR}/${MANDIR}1/cc.1.gz
+	${LN} -f ${STAGEDIR}/usr/bin/gcc  ${STAGEDIR}/usr/bin/cc ; \
+	${LN} -sf gcc.1 ${STAGEDIR}/${MANDIR}1/cc.1
+	${LN} -sf g++.1 ${STAGEDIR}/${MANDIR}1/c++.1
 	${RM} -r ${STAGEDIR}/usr/share/info
 	${RM} -r ${STAGEDIR}/usr/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include-fixed
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 	${RM} ${STAGEDIR}/usr/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include/float.h
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
