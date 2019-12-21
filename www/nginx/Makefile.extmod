@@ -37,6 +37,8 @@ DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
 DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:v0.1.11:drizzle
 DRIZZLE_CONFIGURE_ON=	--add-module=${WRKSRC_drizzle}
 
+DYNAMIC_TLS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-dynamic_tls_records
+
 DYNAMIC_UPSTREAM_GH_TUPLE=	cubicdaiya:ngx_dynamic_upstream:cc5dac3:dynamic_upstream
 DYNAMIC_UPSTREAM_VARS=		DSO_EXTMODS+=dynamic_upstream
 
