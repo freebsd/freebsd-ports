@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	robotframework-pabot
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	devel www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
