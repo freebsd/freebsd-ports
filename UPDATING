@@ -14,9 +14,18 @@ you update your ports collection, before attempting any port upgrades.
   For ports users wanting to keep version 3.6 as default,
   add DEFAULT_VERSIONS+= python=3.6 python3=3.6 to make.conf
 
-  This may ease the upgrade:
+  This may ease the upgrade for users of pre-build packages:
   # sh
   # for i in $(pkg query -g %n 'py36-*'); do pkg set -yn ${i}:py37-${i#py36-}; done
+  # pkg upgrade
+
+  For portmaster users:
+  # portmaster -o lang/python37 python36
+  # REINSTALL="$(pkg info -o py36-\* | awk '{printf "%s ", $2}')"
+  # pkg delete -f py36-\*
+  # portmaster $REINSTALL
+  # REBUILD=$(pkg query -g "%n:%dn" '*' | grep py3 | grep -v py37 | cut -d : -f 1 | sort -u)
+  # portmaster $REBUILD
 
 20191204
   AFFECTS: users of mail/nextcloud-mail
