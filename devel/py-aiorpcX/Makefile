@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
 
-# WARNING: Do not upgrade to 0.18.0, this breaks finance/electrum
+# WARNING: Do not upgrade to 0.18.4, this breaks finance/electrum
 
 PORTNAME=	aiorpcX
 PORTVERSION=	0.18.3
