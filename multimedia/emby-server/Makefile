@@ -2,7 +2,7 @@
 
 PORTNAME=	emby-server
 PORTVERSION=	4.3.1.0
-PORTREVISION=	0
+PORTREVISION=	1
 FFVERSION=	2019_11_09
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
