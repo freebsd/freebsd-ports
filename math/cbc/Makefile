@@ -2,9 +2,9 @@
 
 PORTNAME=	cbc
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	2.9.9
-PORTREVISION=	4
+DISTVERSION=	2.10.3
 CATEGORIES=	math
+PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Coin-or Branch and Cut: mixed integer programming solver
