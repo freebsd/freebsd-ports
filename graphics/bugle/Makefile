@@ -12,6 +12,9 @@ COMMENT=	Debugging library for OpenGL
 
 LICENSE=	GPLv2
 
+DEPRECATED=	no longer actively developed; use devel/apitrace instead
+EXPIRATION_DATE=	2020-01-15
+
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		gl libtool pathfix perl5
