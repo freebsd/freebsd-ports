@@ -3,7 +3,7 @@
 
 PORTNAME=	imv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.1
+DISTVERSION=	4.1.0
 CATEGORIES=	graphics
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -13,7 +13,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	a2x:textproc/asciidoc
-LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
+LIB_DEPENDS=	libicuuc.so:devel/icu \
+		libxkbcommon.so:x11/libxkbcommon
 TEST_DEPENDS=	${LOCALBASE}/lib/libcmocka.so:sysutils/cmocka
 
 USES=		compiler:c11 desktop-file-utils gettext-runtime gl gmake gnome \
@@ -42,13 +43,14 @@ PLIST_FILES=	bin/imv \
 		man/man5/imv.5.gz \
 		share/applications/imv.desktop
 
-OPTIONS_DEFINE=		FREEIMAGE JPEG PNG SVG TIFF
-OPTIONS_DEFAULT=	FREEIMAGE SVG WAYLAND X11
+OPTIONS_DEFINE=		FREEIMAGE JPEG NSGIF PNG SVG TIFF
+OPTIONS_DEFAULT=	FREEIMAGE JPEG NSGIF PNG SVG TIFF WAYLAND X11
 OPTIONS_MULTI=		WINDOWS
 OPTIONS_MULTI_WINDOWS=	WAYLAND X11
 OPTIONS_SUB=		yes
 
 FREEIMAGE_DESC=	FreeImage backend (support for many image formats)
+NSGIF_DESC=	NetSurf GIF backend (support for animated GIF)
 WINDOWS_DESC=	Windowing system
 
 FREEIMAGE_LIB_DEPENDS=		libfreeimage.so:graphics/freeimage
@@ -59,12 +61,15 @@ JPEG_LIB_DEPENDS=	libturbojpeg.so:graphics/libjpeg-turbo
 JPEG_MAKE_ARGS_OFF=	BACKEND_LIBJPEG=no
 JPEG_MAKE_ARGS=		BACKEND_LIBJPEG=yes
 
+NSGIF_LIB_DEPENDS=	libnsgif.so:graphics/libnsgif
+NSGIF_MAKE_ARGS_OFF=	BACKEND_LIBNSGIF=no
+NSGIF_MAKE_ARGS=	BACKEND_LIBNSGIF=yes
+
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_MAKE_ARGS_OFF=	BACKEND_LIBPNG=no
 PNG_MAKE_ARGS=		BACKEND_LIBPNG=yes
 
-SVG_USES=		gnome
-SVG_USE=		GNOME=cairo,librsvg2
+SVG_USE=		GNOME=librsvg2
 SVG_MAKE_ARGS_OFF=	BACKEND_LIBRSVG=no
 SVG_MAKE_ARGS=		BACKEND_LIBRSVG=yes
 
