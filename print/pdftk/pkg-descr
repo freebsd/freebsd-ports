@@ -12,8 +12,4 @@ Report on PDF Metrics, including Metadata and Bookmarks
 Uncompress and Re-Compress Page Streams
 Repair Corrupted PDF (Where Possible)
 
-Pdftk is also an example of how to use a library of Java classes
-in a stand-alone C++ program. Specifically, it demonstrates how GCJ and CNI
-allow C++ code to use iText's (itext-paulo) Java classes.
-
-WWW: http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
+WWW: https://gitlab.com/pdftk-java/pdftk
