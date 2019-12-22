@@ -27,8 +27,13 @@ prefer IPv4 over IPv6:
 
 If you upgrade from a pevious version, make a backup of
 	/var/db/openhab2
+read about the breaking changes in the release notes at
+	https://github.com/openhab/openhab-distro/releases/tag/2.5.0
 and run
 	%%PREFIX%%/libexec/openhab2/runtime/bin/update.freebsd
+which takes care about changes for:
+	- Textual Configuration
+	- Next Generation Rule Engine
 EOM
 }
 ]
