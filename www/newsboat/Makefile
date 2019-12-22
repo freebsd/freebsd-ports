@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	newsboat
-PORTVERSION=	2.17.1
-PORTREVISION=	2
+PORTVERSION=	2.18
 CATEGORIES=	www
 MASTER_SITES=	https://newsboat.org/releases/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -112,7 +111,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		section_testing-0.0.4 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		smallvec-0.6.8 \
+		smallvec-0.6.10 \
 		syn-0.15.26 \
 		synstructure-0.10.1 \
 		tempfile-3.0.6 \
@@ -125,12 +124,10 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		unicode-segmentation-1.2.1 \
 		unicode-width-0.1.5 \
 		unicode-xid-0.1.0 \
-		unreachable-1.0.0 \
 		url-1.7.2 \
 		utf8-ranges-1.0.2 \
 		vcpkg-0.2.6 \
 		version_check-0.1.5 \
-		void-1.0.2 \
 		wait-timeout-0.1.5 \
 		winapi-0.2.8 \
 		winapi-0.3.6 \
