@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hexchat
-PORTVERSION=	2.14.2
+PORTVERSION=	2.14.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	irc gnome
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	IRC chat program with GTK and Text Frontend
 
 LICENSE=	GPLv2+
@@ -21,7 +20,8 @@ LIB_DEPENDS=	libproxy.so:net/libproxy \
 RUN_DEPENDS=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:misc/iso-codes
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
-		libtool meson ninja pkgconfig python:3.5+ shebangfix ssl xorg
+		libtool localbase meson ninja pkgconfig python:3.5+ shebangfix \
+		ssl xorg
 USE_GNOME=	cairo gtk20 intltool libxml2
 USE_XORG=	x11
 USE_GITHUB=	yes
@@ -30,8 +30,7 @@ MESON_ARGS=	-Dwith-ssl=true -Dwith-gtk=true -Dwith-python=python-${PYTHON_VER}
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lX11
+LIBS+=		-lX11
 
 SUB_FILES=	pkg-message
 
