@@ -5,15 +5,13 @@ PORTNAME=	ical
 PORTVERSION=	2.2
 PORTREVISION=	5
 CATEGORIES=	deskutils tk
-MASTER_SITES=	ftp://ftp.sunet.se/pub/vendor/sco/skunkware/src/shellutil/
+MASTER_SITES=	http://opal.com/jr/ical/
 
 PATCH_SITES=	http://www.isi.edu/~johnh/SOFTWARE/ICAL/
 PATCHFILES=	ical-2.3.1-upvar.patch
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Calendar application
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
