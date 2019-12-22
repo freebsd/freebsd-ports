@@ -1,4 +1,4 @@
---- meson.build.orig	2018-03-14 02:26:31 UTC
+--- meson.build.orig	2019-12-21 06:38:06 UTC
 +++ meson.build
 @@ -16,11 +16,21 @@ cc = meson.get_compiler('c')
  libgio_dep = dependency('gio-2.0', version: '>= 2.34.0')
@@ -23,7 +23,7 @@
  endif
  
  config_h = configuration_data()
-@@ -49,7 +59,7 @@ config_h.set('GLIB_VERSION_MIN_REQUIRED'
+@@ -49,7 +59,7 @@ config_h.set('GLIB_VERSION_MIN_REQUIRED', 'GLIB_VERSIO
  config_h.set('HAVE_MEMRCHR', cc.has_function('memrchr'))
  config_h.set('HAVE_STRINGS_H', cc.has_header('strings.h'))
  
@@ -32,7 +32,7 @@
    config_h.set('HAVE_X509_GET_SIGNATURE_NID',
      cc.has_function('X509_get_signature_nid', dependencies: libssl_dep)
    )
-@@ -131,9 +141,6 @@ global_ldflags = []
+@@ -129,9 +139,6 @@ global_ldflags = []
  test_ldflags = [
    '-Wl,-z,relro',
    '-Wl,-z,now',
@@ -41,4 +41,4 @@
 -  '-Wl,--nxcompat',
  ]
  foreach ldflag : test_ldflags
-   if cc.has_argument(ldflag) and cc.links('int main (void) { return 0; }', args: ldflag)
+   if meson.version().version_compare('>= 0.46.0')
