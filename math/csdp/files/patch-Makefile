@@ -1,0 +1,33 @@
+--- Makefile.orig	2017-07-25 18:44:57 UTC
++++ Makefile
+@@ -11,11 +11,11 @@
+ #
+ # CFLAGS settings for 64 bit Linux/unix systems.
+ #
+-export CFLAGS=-m64 -march=native -mtune=native -Ofast -fopenmp -ansi -Wall -DBIT64 -DUSEOPENMP -DSETNUMTHREADS -DUSESIGTERM -DUSEGETTIME -I../include
++CFLAGS=$(FREEBSD_CFLAGS) -fopenmp -ansi -Wall -DBIT64 -DUSEOPENMP -DSETNUMTHREADS -DUSESIGTERM -DUSEGETTIME -I../include
+ #
+ # LIBS settings for 64 bit Linux/unix systems.
+ #
+-export LIBS=-static -L../lib -lsdp -llapack -lblas -lm
++LIBS=$(FREEBSD_LIBS) -L../lib -lsdp -llapack -lblas -lm
+ #
+ #
+ # On most systems, this should handle everything.
+@@ -38,11 +38,11 @@ unitTest:
+ #
+ 
+ install:
+-	cp -f solver/csdp /usr/local/bin
+-	cp -f theta/theta /usr/local/bin
+-	cp -f theta/graphtoprob /usr/local/bin
+-	cp -f theta/complement /usr/local/bin
+-	cp -f theta/rand_graph /usr/local/bin
++	cp -f solver/csdp $(DESTDIR)$(PREFIX)/bin
++	cp -f theta/theta $(DESTDIR)$(PREFIX)/bin
++	cp -f theta/graphtoprob $(DESTDIR)$(PREFIX)/bin
++	cp -f theta/complement $(DESTDIR)$(PREFIX)/bin
++	cp -f theta/rand_graph $(DESTDIR)$(PREFIX)/bin
+ 
+ #
+ # Clean out all of the directories.
