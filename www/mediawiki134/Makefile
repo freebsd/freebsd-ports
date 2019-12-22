@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.33.1
+PORTVERSION=	1.34.0
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
-PKGNAMESUFFIX=	133${PHP_PKGNAMESUFFIX}
+PKGNAMESUFFIX=	134${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki13[12]-[0-9]* mediawiki134-[0-9]*
+CONFLICTS=	mediawiki13[1-3]-[0-9]*
 
 USES=		php:flavors shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
@@ -41,7 +41,8 @@ MEMCACHED_DESC=	Use memcached
 IMAGICK_DESC=	Use ImageMagick
 SOCKETS_DESC=	Use sockets
 
-MYSQL_USE=	mysql=client php=mysqli
+MYSQL_USES=	mysql
+MYSQL_USE=	php=mysqli
 PGSQL_USE=	php=pgsql
 SQLITE_USE=	php=sqlite3
 LDAP_USE=	php=ldap
