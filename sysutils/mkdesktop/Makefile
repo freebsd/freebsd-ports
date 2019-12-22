@@ -10,6 +10,9 @@ COMMENT=	Powerful, flexible utility to setup a FreeBSD desktop
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	defunct, will be deleted soon
+EXPIRATION_DATE=2019-12-31
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 
