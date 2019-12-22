@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ip2location
-PORTVERSION=	8.0.7
+PORTVERSION=	8.0.9
 CATEGORIES=	net
 
 MAINTAINER=	zi@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE=	LGPL3
 
 USES=		autoreconf libtool perl5
 USE_GITHUB=	yes
+GH_ACCOUNT=	chrislim2888
 GH_PROJECT=	IP2Location-C-Library
 
 HAS_CONFIGURE=	yes
