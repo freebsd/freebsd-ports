@@ -140,6 +140,7 @@
     SUBDIR += tuxnes
     SUBDIR += uae
     SUBDIR += ucon64
+    SUBDIR += ukncbtl
     SUBDIR += unicorn
     SUBDIR += vba
     SUBDIR += vboxtool
