@@ -37,6 +37,7 @@ etc/radiator/dictionary.sip
 %%SITE_PERL%%/Radius/AuthEMERALD.pm
 %%SITE_PERL%%/Radius/AuthEMERALD4.pm
 %%SITE_PERL%%/Radius/AuthEXTERNAL.pm
+%%SITE_PERL%%/Radius/AuthFAILUREPOLICY.pm
 %%SITE_PERL%%/Radius/AuthFIDELIO.pm
 %%SITE_PERL%%/Radius/AuthFIDELIOHOTSPOT.pm
 %%SITE_PERL%%/Radius/AuthFILE.pm
@@ -88,6 +89,7 @@ etc/radiator/dictionary.sip
 %%SITE_PERL%%/Radius/AuthRADSEC.pm
 %%SITE_PERL%%/Radius/AuthRATELIMIT.pm
 %%SITE_PERL%%/Radius/AuthRATELIMITSOURCE.pm
+%%SITE_PERL%%/Radius/AuthREST.pm
 %%SITE_PERL%%/Radius/AuthRODOPI.pm
 %%SITE_PERL%%/Radius/AuthROUNDROBIN.pm
 %%SITE_PERL%%/Radius/AuthRSAAM.pm
@@ -100,6 +102,7 @@ etc/radiator/dictionary.sip
 %%SITE_PERL%%/Radius/AuthSQL.pm
 %%SITE_PERL%%/Radius/AuthSQLAUTHBY.pm
 %%SITE_PERL%%/Radius/AuthSQLDIGIPASS.pm
+%%SITE_PERL%%/Radius/AuthSQLFAILUREPOLICY.pm
 %%SITE_PERL%%/Radius/AuthSQLHOTP.pm
 %%SITE_PERL%%/Radius/AuthSQLMOTP.pm
 %%SITE_PERL%%/Radius/AuthSQLRADIUS.pm
@@ -160,9 +163,12 @@ etc/radiator/dictionary.sip
 %%SITE_PERL%%/Radius/GossipRedis.pm
 %%SITE_PERL%%/Radius/GossipUDP.pm
 %%SITE_PERL%%/Radius/HOTP.pm
+%%SITE_PERL%%/Radius/HTTPClient.pm
+%%SITE_PERL%%/Radius/HTTPClientConnection.pm
 %%SITE_PERL%%/Radius/HTTPRequest.pm
 %%SITE_PERL%%/Radius/Handler.pm
 %%SITE_PERL%%/Radius/IEEEfp.pm
+%%SITE_PERL%%/Radius/JSON.pm
 %%SITE_PERL%%/Radius/Ldap.pm
 %%SITE_PERL%%/Radius/Log.pm
 %%SITE_PERL%%/Radius/LogEMERALD.pm
@@ -230,6 +236,7 @@ etc/radiator/dictionary.sip
 %%SITE_PERL%%/Radius/RadpwtstGui.pm
 %%SITE_PERL%%/Radius/Rcrypt.pm
 %%SITE_PERL%%/Radius/Realm.pm
+%%SITE_PERL%%/Radius/RealmTable.pm
 %%SITE_PERL%%/Radius/Resolver.pm
 %%SITE_PERL%%/Radius/RuntimeChecks.pm
 %%SITE_PERL%%/Radius/SIP2.pm
@@ -263,6 +270,7 @@ etc/radiator/dictionary.sip
 %%SITE_PERL%%/Radius/StatsLogREDIS.pm
 %%SITE_PERL%%/Radius/StatsLogSQL.pm
 %%SITE_PERL%%/Radius/Stream.pm
+%%SITE_PERL%%/Radius/StreamPool.pm
 %%SITE_PERL%%/Radius/StreamServer.pm
 %%SITE_PERL%%/Radius/StreamTLS.pm
 %%SITE_PERL%%/Radius/Subscription.pm
