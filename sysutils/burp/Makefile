@@ -3,7 +3,7 @@
 
 PORTNAME=	burp
 PORTVERSION?=	2.2.18
-PORTREVISION?=	1	#whenever PORTREVISION is increased, it must be increased for
+PORTREVISION?=	2	#whenever PORTREVISION is increased, it must be increased for
 			#the slave port sysutils/burp-devel too
 CATEGORIES=	sysutils
 
@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash \
 		${LOCALBASE}/include/yajl/yajl_common.h:devel/yajl
 LIB_DEPENDS=	librsync.so:net/librsync2
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake libtool ncurses pkgconfig ssl
 USE_GITHUB=	yes
