@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcache
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5.1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
