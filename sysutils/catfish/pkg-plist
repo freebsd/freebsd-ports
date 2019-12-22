@@ -48,6 +48,7 @@ man/man1/catfish.1.gz
 share/applications/org.xfce.Catfish.desktop
 %%DATADIR%%/ui/AboutCatfishDialog.ui
 %%DATADIR%%/ui/CatfishPreferences.ui
+%%DATADIR%%/ui/CatfishPreferences.ui~
 %%DATADIR%%/ui/CatfishWindow.ui
 %%DATADIR%%/ui/about_catfish_dialog.xml
 %%DATADIR%%/ui/catfish-wl-headerbar.png
@@ -96,6 +97,7 @@ share/locale/pt_BR/LC_MESSAGES/catfish.mo
 share/locale/ru/LC_MESSAGES/catfish.mo
 share/locale/si/LC_MESSAGES/catfish.mo
 share/locale/sk/LC_MESSAGES/catfish.mo
+share/locale/sl/LC_MESSAGES/catfish.mo
 share/locale/sq/LC_MESSAGES/catfish.mo
 share/locale/sr/LC_MESSAGES/catfish.mo
 share/locale/sv/LC_MESSAGES/catfish.mo
