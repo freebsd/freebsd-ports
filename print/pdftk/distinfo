@@ -1,2 +1,5 @@
-SHA256 (pdftk-2.02-src.zip) = 118f6a25fd3acaafb58824dce6f97cdc07e56050e666b90e4c4ef426ea37b8c1
-SIZE (pdftk-2.02-src.zip) = 2239008
+TIMESTAMP = 1577004031
+SHA256 (org/bouncycastle/bcprov-jdk15on/1.51/bcprov-jdk15on-1.51.jar) = 8748f0ec73895f7f18c1a9c13cf754fddddf0451cf472463ef02f93c3e7a7de7
+SIZE (org/bouncycastle/bcprov-jdk15on/1.51/bcprov-jdk15on-1.51.jar) = 2842667
+SHA256 (pdftk-java-pdftk-c98f90e623376942b5a0e9c77345e11710e50509_GL0.tar.gz) = 7afd3ff60062554038d8e035f710838ff0159720315a9fe2198591239dc8f586
+SIZE (pdftk-java-pdftk-c98f90e623376942b5a0e9c77345e11710e50509_GL0.tar.gz) = 1359740
