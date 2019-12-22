@@ -31,7 +31,6 @@
     SUBDIR += chaiscript
     SUBDIR += chez-scheme
     SUBDIR += chibi-scheme
-    SUBDIR += chicken
     SUBDIR += chicken5
     SUBDIR += cim
     SUBDIR += cjs
