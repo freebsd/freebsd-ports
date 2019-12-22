@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191221:
+  AFFECTS: users of misc/openhab2
+  AUTHOR: netchild@FreeBSD.org
+
+  If you upgrade from a pevious version, make a backup of
+        /var/db/openhab2
+  read about the breaking changes in the release notes at
+        https://github.com/openhab/openhab-distro/releases/tag/2.5.0
+  and run
+        %%PREFIX%%/libexec/openhab2/runtime/bin/update.freebsd
+  which takes care about changes for:
+        - Textual Configuration
+        - Next Generation Rule Engine
+
 20191216:
   AFFECTS: users of python
   AUTHOR: antoine@FreeBSD.org
