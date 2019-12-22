@@ -34,6 +34,6 @@ lib/libixml.so.11.0.0
 lib/libupnp.a
 lib/libupnp.so
 lib/libupnp.so.15
-lib/libupnp.so.15.0.0
+lib/libupnp.so.15.0.1
 libdata/pkgconfig/libupnp.pc
 %%PORTDOCS%%%%DOCSDIR%%/UPnP_Programming_Guide.pdf
