@@ -1,0 +1,6 @@
+Homura is a launcher that makes it easy to run windows games/launcher easily on
+FreeBSD by providing the required fixes and workarounds.
+
+The Windows emulation is provided by Wine.
+
+WWW: https://github.com/the-homura-project/homura
