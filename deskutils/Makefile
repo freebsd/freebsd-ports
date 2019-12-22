@@ -140,6 +140,7 @@
     SUBDIR += kontact
     SUBDIR += korganizer
     SUBDIR += kruler
+    SUBDIR += ktimetracker
     SUBDIR += latte-dock
     SUBDIR += libkdepim
     SUBDIR += libopensync-plugin-vformat-devel
