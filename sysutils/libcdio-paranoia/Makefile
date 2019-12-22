@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcdio.so:sysutils/libcdio
 
-USES=		gmake libtool localbase pathfix perl5 pkgconfig tar:bzip2
+USES=		compiler:c11 gmake libtool localbase pathfix perl5 pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
