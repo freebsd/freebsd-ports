@@ -1,5 +1,3 @@
-TIMESTAMP = 1540407929
-SHA256 (Radiator/Radiator-4.21.tgz) = f302b1488a9df9c30607eddac8b11bf3d7fabdb4c638a19e4e4cb8822e3d1159
-SIZE (Radiator/Radiator-4.21.tgz) = 6290329
-SHA256 (Radiator/patches-4.21.tar.gz) = abd5bafa3226014140465d45abbb81e54337ee76ff099b8625dccde815343c19
-SIZE (Radiator/patches-4.21.tar.gz) = 369950
+TIMESTAMP = 1576356134
+SHA256 (Radiator/Radiator-4.24-1.tgz) = 7a890d84ead313ba259e27796ed61cdbe0c924925210581e81d1d28a36dffd25
+SIZE (Radiator/Radiator-4.24-1.tgz) = 8862110
