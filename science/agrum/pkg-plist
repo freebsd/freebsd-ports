@@ -839,10 +839,10 @@ lib/cmake/aGrUM/agrum-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/aGrUM/agrum-targets.cmake
 lib/libagrum.so
 lib/libagrum.so.0
-lib/libagrum.so.0.16.3
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-0.16.3-py%%PYTHON_VER_MAJ%%.egg-info
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-0.16.3.dist-info/METADATA
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-0.16.3.dist-info/WHEEL
+lib/libagrum.so.0.16.4
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-0.16.4-py%%PYTHON_VER_MAJ%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-0.16.4.dist-info/METADATA
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-0.16.4.dist-info/WHEEL
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/_pyAgrum.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/config.py
@@ -859,6 +859,7 @@ lib/libagrum.so.0.16.3
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/bn2roc.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/bn2scores.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/bn_vs_bn.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/classifier.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/dynamicBN.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/ipython.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/notebook.py
