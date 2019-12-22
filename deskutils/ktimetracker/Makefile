@@ -5,7 +5,7 @@ DISTVERSION=	5.0.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src/
 
-MAINTAINER=	kde@FreeBSD.rog
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Todo management and time tracker
 
 LICENSE=	GPLv2
