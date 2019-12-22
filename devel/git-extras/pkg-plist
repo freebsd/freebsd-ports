@@ -8,6 +8,7 @@ bin/git-changelog
 bin/git-chore
 bin/git-clear
 bin/git-clear-soft
+bin/git-coauthor
 bin/git-commits-since
 bin/git-contrib
 bin/git-count
@@ -37,6 +38,7 @@ bin/git-merge-repo
 bin/git-missing
 bin/git-mr
 bin/git-obliterate
+bin/git-paste
 bin/git-pr
 bin/git-psykorebase
 bin/git-pull-request
@@ -76,6 +78,7 @@ man/man1/git-changelog.1.gz
 man/man1/git-chore.1.gz
 man/man1/git-clear-soft.1.gz
 man/man1/git-clear.1.gz
+man/man1/git-coauthor.1.gz
 man/man1/git-commits-since.1.gz
 man/man1/git-contrib.1.gz
 man/man1/git-count.1.gz
@@ -106,6 +109,7 @@ man/man1/git-merge-repo.1.gz
 man/man1/git-missing.1.gz
 man/man1/git-mr.1.gz
 man/man1/git-obliterate.1.gz
+man/man1/git-paste.1.gz
 man/man1/git-pr.1.gz
 man/man1/git-psykorebase.1.gz
 man/man1/git-pull-request.1.gz
