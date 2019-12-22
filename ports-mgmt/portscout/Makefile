@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	portscout
-PORTVERSION=	0.8.1.3
-PORTREVISION=	1
+PORTVERSION=	0.8.1.4
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	koobs@FreeBSD.org
