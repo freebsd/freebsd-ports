@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.29.1
+PORTVERSION=	0.30.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	13
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://waf.io/:waf
@@ -38,27 +37,27 @@ CONFIGURE_ARGS=	--docdir="${EXAMPLESDIR}" \
 		--disable-optimize \
 		--disable-pdf \
 		--disable-rubberband \
+		--disable-shaderc \
 		--disable-vapoursynth \
-		--disable-vapoursynth-lazy \
 		--enable-libmpv-shared
 
-OPTIONS_DEFINE=		ARCHIVE ASS DOCS LCMS2 LUAJIT MANPAGES TEST UCHARDET ZSH EXAMPLES
-OPTIONS_DEFAULT=	ARCHIVE ASS DVDREAD DVDNAV MANPAGES OPENGL UCHARDET \
+OPTIONS_DEFINE=		ARCHIVE ASS DOCS LCMS2 LUAJIT MANPAGES TEST UCHARDET EXAMPLES ZIMG
+OPTIONS_DEFAULT=	ARCHIVE ASS DVDNAV MANPAGES OPENGL UCHARDET \
 			V4L VAAPI VDPAU VULKAN WAYLAND X11 YTDL
 OPTIONS_GROUP=		IN VO AO
-OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L YTDL SMB
+OPTIONS_GROUP_IN=	CDIO DVDNAV LIBBLURAY V4L YTDL SMB
 OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU VULKAN WAYLAND X11
 OPTIONS_GROUP_AO=	ALSA JACK OPENAL PULSEAUDIO SDL SNDIO
 OPTIONS_SUB=		yes
 
 ASS_DESC=		ASS/SSA subtitle and OSD rendering
-DVDREAD_DESC=		DVD Playback support
 DVDNAV_DESC=		DVD menu navigation
 LUAJIT_DESC=		Use LuaJIT instead of Lua scripting language support
 UCHARDET_DESC=		Guess subtitle encoding via uchardet
 VULKAN_DESC=		Vulkan output support
 WAYLAND_DESC=		Wayland (graphics) support
 YTDL_DESC=		Install youtube-dl
+ZIMG_DESC=		"z" library for video scaling
 IN_DESC=		Input
 VO_DESC=		Video Output
 AO_DESC=		Audio Output
@@ -81,11 +80,9 @@ CDIO_CONFIGURE_ON=		--enable-cdda
 DOCS_BUILD_DEPENDS=		rst2html:textproc/py-docutils
 DOCS_CONFIGURE_ON=		--enable-html
 
-DVDNAV_LIB_DEPENDS=		libdvdnav.so:multimedia/libdvdnav
+DVDNAV_LIB_DEPENDS=		libdvdnav.so:multimedia/libdvdnav \
+				libdvdread.so:multimedia/libdvdread
 DVDNAV_CONFIGURE_ON=		--enable-dvdnav
-
-DVDREAD_LIB_DEPENDS=		libdvdread.so:multimedia/libdvdread
-DVDREAD_CONFIGURE_ON=		--enable-dvdread
 
 JACK_LIB_DEPENDS=		libjack.so:audio/jack
 JACK_CONFIGURE_OFF=		--disable-jack
@@ -135,9 +132,8 @@ TEST_UNITTESTFILES=		chmap chmap_sel gl_video
 UCHARDET_LIB_DEPENDS=		libuchardet.so:textproc/uchardet
 UCHARDET_CONFIGURE_OFF=		--disable-uchardet
 
-V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-V4L_LIB_DEPENDS=		libv4l2.so:multimedia/libv4l
-V4L_CONFIGURE_ON=		--enable-tv --enable-dvbin
+V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/dvb/dmx.h:multimedia/v4l_compat
+V4L_CONFIGURE_ON=		--enable-dvbin
 
 VAAPI_LIB_DEPENDS=		libva.so:multimedia/libva
 VAAPI_CONFIGURE_OFF=		--disable-vaapi
@@ -146,9 +142,9 @@ VDPAU_LIB_DEPENDS=		libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_OFF=		--disable-vdpau
 
 VULKAN_BUILD_DEPENDS=		${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers
-VULKAN_LIB_DEPENDS=		libvulkan.so:graphics/vulkan-loader \
-				libshaderc_shared.so:graphics/shaderc
-VULKAN_CONFIGURE_OFF=		--disable-vulkan --disable-shaderc
+VULKAN_LIB_DEPENDS=		libplacebo.so:graphics/libplacebo \
+				libvulkan.so:graphics/vulkan-loader
+VULKAN_CONFIGURE_OFF=		--disable-vulkan --disable-libplacebo
 VULKAN_IMPLIES=			X11
 
 WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.14:graphics/wayland-protocols \
@@ -165,10 +161,8 @@ X11_CONFIGURE_OFF=		--disable-x11
 
 YTDL_RUN_DEPENDS=		youtube-dl:www/youtube_dl
 
-ZSH_USES=			perl5
-ZSH_USE=			PERL5=build
-ZSH_CONFIGURE_ENV=		BIN_PERL="${PERL}"
-ZSH_CONFIGURE_ENABLE=		zsh-comp
+ZIMG_LIB_DEPENDS=		libzimg.so:graphics/sekrit-twc-zimg
+ZIMG_CONFIGURE_OFF=		--disable-zimg
 
 .include <bsd.port.options.mk>
 
