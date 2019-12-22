@@ -43,7 +43,7 @@ FIREBIRD_DEFAULT?=	2.5
 FORTRAN_DEFAULT?=	gfortran
 # Possible values: 3.0.4
 FPC_DEFAULT?=		3.0.4
-# Possible values: 7, 8, 9 (powerpcspe was dropped with GCC 9)
+# Possible values: 8, 9 (powerpcspe was dropped with GCC 9)
 .if ${ARCH} == "powerpcspe"
 GCC_DEFAULT?=		8
 .else
