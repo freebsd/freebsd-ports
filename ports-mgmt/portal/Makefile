@@ -10,8 +10,6 @@ COMMENT=	Front-end to pkg(8)
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_powerpc64=	fails to build: /usr/local/lib/gcc6/include/c++/thread:189: undefined reference to `std::thread::_State::~_State()'
-
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
@@ -19,11 +17,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	culot
 
 USES=		ncurses compiler:c++11-lib
+
+.include <bsd.port.pre.mk>
+
+.if ${NCURSESLIB} != /usr/lib
 CFLAGS+=	-I${NCURSESINC}
 LDFLAGS+=	-L${NCURSESLIB}
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
