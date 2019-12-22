@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Some chicken eggs require the environment variable TZ to be set in
-order to function properly.  See environ(7) for more information.
-EOM
-}
-]
