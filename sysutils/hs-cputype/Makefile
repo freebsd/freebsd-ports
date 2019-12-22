@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cputype
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils haskell
 MASTER_SITES=	https://bitbucket.org/arrowd/cputype/downloads/
 

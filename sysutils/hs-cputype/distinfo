@@ -1,6 +1,6 @@
-TIMESTAMP = 1563192135
-SHA256 (cabal/cputype-0.1.tar.gz) = 85613d8fd56735134b6a434917603f64f9ab75dc224bb2bf661a5ec05e57587d
-SIZE (cabal/cputype-0.1.tar.gz) = 4011
+TIMESTAMP = 1577029075
+SHA256 (cabal/cputype-0.2.tar.gz) = 06da5fa49226f21c2158a99276dc457b96e20244ca9fe2b1a467fc4feedd51f9
+SIZE (cabal/cputype-0.2.tar.gz) = 4067
 SHA256 (cabal/ansi-terminal-0.9.1/ansi-terminal-0.9.1.tar.gz) = 74088e80b33ba680f7c46137d25bfcca6fa8795bc2d097e4e0435b3c41a320fb
 SIZE (cabal/ansi-terminal-0.9.1/ansi-terminal-0.9.1.tar.gz) = 34756
 SHA256 (cabal/ansi-wl-pprint-0.6.9/ansi-wl-pprint-0.6.9.tar.gz) = a7b2e8e7cd3f02f2954e8b17dc60a0ccd889f49e2068ebb15abfa1d42f7a4eac
