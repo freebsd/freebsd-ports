@@ -3,7 +3,7 @@
 
 PORTNAME=	tmux-mem-cpu-load
 PORTVERSION=	3.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -11,8 +11,6 @@ MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	CPU, RAM, and load monitor for use with tmux
 
 LICENSE=	APACHE20
-
-RUN_DEPENDS=	tmux:sysutils/tmux
 
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
