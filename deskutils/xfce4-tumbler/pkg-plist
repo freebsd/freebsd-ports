@@ -77,6 +77,7 @@ share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
 %%NLS%%share/locale/ru/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/si/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/tumbler.mo
