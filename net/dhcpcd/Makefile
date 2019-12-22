@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dhcpcd
-PORTVERSION=	8.1.2
-PORTREVISION=	1
+PORTVERSION=	8.1.4
 CATEGORIES=	net
 MASTER_SITES=	https://roy.marples.name/downloads/dhcpcd/ \
 		https://cflags.cc/roy/dhcpcd/
