@@ -800,6 +800,7 @@
     SUBDIR += py-oops
     SUBDIR += py-oursql
     SUBDIR += py-peewee
+    SUBDIR += py-peewee_migrate
     SUBDIR += py-pg8000
     SUBDIR += py-pg8000-112
     SUBDIR += py-pgcli
