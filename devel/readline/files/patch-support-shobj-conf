@@ -1,20 +1,55 @@
---- support/shobj-conf.orig	2009-10-28 13:20:21 UTC
+--- support/shobj-conf.orig	2016-10-05 20:02:11 UTC
 +++ support/shobj-conf
-@@ -128,17 +128,10 @@
+@@ -123,51 +123,13 @@ sunos5*|solaris2*)
+ 	;;
+ 
+ # All versions of Linux (including Gentoo/FreeBSD) or the semi-mythical GNU Hurd.
+-linux*-*|gnu*-*|k*bsd*-gnu-*|freebsd*-gentoo)
++linux*-*|gnu*-*|k*bsd*-gnu-*|freebsd*|dragonfly*)
  	SHOBJ_CFLAGS=-fPIC
  	SHOBJ_LD='${CC}'
+ 	SHOBJ_LDFLAGS='-shared -Wl,-soname,$@'
  
+ 	SHLIB_XLDFLAGS='-Wl,-rpath,$(libdir) -Wl,-soname,`basename $@ $(SHLIB_MINOR)`'
+ 	SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)$(SHLIB_MINOR)'
+-	;;
+-
+-freebsd2*)
+-	SHOBJ_CFLAGS=-fpic
+-	SHOBJ_LD=ld
+-	SHOBJ_LDFLAGS='-x -Bshareable'
+-
+-	SHLIB_XLDFLAGS='-R$(libdir)'
+-	SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)$(SHLIB_MINOR)'
+-	;;
+-
+-# FreeBSD-3.x ELF
+-freebsd3*|freebsdaout*)
+-	SHOBJ_CFLAGS=-fPIC
+-	SHOBJ_LD='${CC}'
+-
 -	if [ -x /usr/bin/objformat ] && [ "`/usr/bin/objformat`" = "elf" ]; then
- 		SHOBJ_LDFLAGS='-shared -Wl,-soname,$@'
- 
- 		SHLIB_XLDFLAGS='-Wl,-rpath,$(libdir)'
- 		SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)'
+-		SHOBJ_LDFLAGS='-shared -Wl,-soname,$@'
+-
+-		SHLIB_XLDFLAGS='-Wl,-rpath,$(libdir)'
+-		SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)'
 -	else
 -		SHOBJ_LDFLAGS='-shared'
 -
 -		SHLIB_XLDFLAGS='-R$(libdir)'
 -		SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)$(SHLIB_MINOR)'
 -	fi
+-	;;
+-
+-# FreeBSD-4.x and later have only ELF
+-freebsd[4-9]*|freebsd1[0-9]*|freebsdelf*|dragonfly*)
+-	SHOBJ_CFLAGS=-fPIC
+-	SHOBJ_LD='${CC}'
+-
+-	SHOBJ_LDFLAGS='-shared -Wl,-soname,$@'
+-	SHLIB_XLDFLAGS='-Wl,-rpath,$(libdir)'
+-
+-	SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)'
  	;;
  
- # FreeBSD-4.x and later have only ELF
+ # Darwin/MacOS X
