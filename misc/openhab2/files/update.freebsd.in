@@ -4,11 +4,28 @@
 : ${OPENHAB_USERDATA:="/var/db/openhab2/userdata"}
 : ${OPENHAB_RUNTIME:="%%PREFIX%%/libexec/openhab2/runtime"}
 : ${OPENHAB_REPL:="%%PREFIX%%/share/openhab2/etc"}
+: ${OPENHAB_ETC:="%%PREFIX%%/etc/openhab2"}
 
 rm -r $OPENHAB_USERDATA/cache/* $OPENHAB_USERDATA/tmp/*
 rm -r $OPENHAB_USERDATA/kar
 
 for file in $(cat $OPENHAB_RUNTIME/bin/userdata_sysfiles.lst); do
 	cp -pv $OPENHAB_REPL/$file $OPENHAB_USERDATA/etc/$file
+done
+
+FILES="$(grep -R org.eclipse.smarthome ${OPENHAB_ETC} | cut -d : -f 1 | sort -u | grep -v .sample)"
+BKP_SUFFIX=pre_2.5.0
+for file in ${FILES}; do
+	mv -v ${file} ${file}.${BKP_SUFFIX}
+	echo updating content of ${file}, keeping backup in ${file}.${BKP_SUFFIX}
+	sed -e 's/org.eclipse.smarthome.*://g' <${file}.${BKP_SUFFIX} >${file}
+done
+
+for file in ${OPENHAB_USERDATA}/jsondb/automation_rules.json ${OPENHAB_USERDATA}/jsondb/automation_rules_disabled.json  ${OPENHAB_USERDATA}/jsondb/backup/*; do
+	if [ -e ${file} ]; then
+		mv -v ${file} ${file}.${BKP_SUFFIX}
+		echo updating next generation rule engine data in ${file}
+		sed -e 's/org.eclipse.smarthome.automation.dto.RuleDTO/org.eclipse.smarthome.automation.dto.RuleDTO/g' <${file}.${BKP_SUFFIX} >${file} && rm ${file}.${BKP_SUFFIX}
+	fi
 done
 

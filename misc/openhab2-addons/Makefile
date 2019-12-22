@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openhab2-addons
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	misc java
 MASTER_SITES=	https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons%2F${PORTVERSION}/
 DISTNAME=	openhab-addons-${PORTVERSION}
