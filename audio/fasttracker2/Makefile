@@ -3,11 +3,9 @@
 
 PORTNAME=	fasttracker2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.03
+DISTVERSION=	1.04
 CATEGORIES=	audio
-MASTER_SITES=	https://16-bits.org/ \
-		LOCAL/ehaupt
-DISTNAME=	ft2-clone-${DISTVERSIONPREFIX}${PORTVERSION}-code
+DISTNAME=	ft2-clone
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fasttracker II clone
@@ -18,10 +16,12 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/src/LICENSE.txt
 LICENSE_FILE_CC-BY-NC-SA-4.0=	${WRKSRC}/src/gfxdata/bmp/LICENSE.txt
 
-USES=		cmake compiler dos2unix iconv:wchar_t localbase:ldflags sdl zip
+USES=		cmake compiler dos2unix iconv:wchar_t localbase:ldflags sdl
 USE_SDL=	sdl2
 
-WRKSRC=		${WRKDIR}/ft2-clone-code
+USE_GITHUB=	yes
+GH_ACCOUNT=	8bitbubsy
+GH_PROJECT=	ft2-clone
 
 DESKTOP_ENTRIES="FastTracker II" \
 		"${COMMENT}" \
