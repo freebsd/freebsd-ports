@@ -53,7 +53,7 @@ lib/c_icap/srv_ex206.so
 lib/c_icap/sys_logger.so
 lib/libicapapi.so
 lib/libicapapi.so.5
-lib/libicapapi.so.5.0.5
+lib/libicapapi.so.5.0.6
 man/man8/c-icap-client.8.gz
 man/man8/c-icap-config.8.gz
 man/man8/c-icap-libicapapi-config.8.gz
