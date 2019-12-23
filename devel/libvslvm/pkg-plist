@@ -11,10 +11,8 @@ lib/libvslvm.a
 lib/libvslvm.so
 lib/libvslvm.so.1
 lib/libvslvm.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pyvslvm.a
-%%PYTHON2_SITELIBDIR%%/pyvslvm.so
-%%PYTHON3_SITELIBDIR%%/pyvslvm.a
-%%PYTHON3_SITELIBDIR%%/pyvslvm.so
+%%PYTHON_SITELIBDIR%%/pyvslvm.a
+%%PYTHON_SITELIBDIR%%/pyvslvm.so
 libdata/pkgconfig/libvslvm.pc
 man/man1/vslvminfo.1.gz
 man/man3/libvslvm.3.gz
