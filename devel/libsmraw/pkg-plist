@@ -11,10 +11,8 @@ lib/libsmraw.a
 lib/libsmraw.so
 lib/libsmraw.so.1
 lib/libsmraw.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pysmraw.a
-%%PYTHON2_SITELIBDIR%%/pysmraw.so
-%%PYTHON3_SITELIBDIR%%/pysmraw.a
-%%PYTHON3_SITELIBDIR%%/pysmraw.so
+%%PYTHON_SITELIBDIR%%/pysmraw.a
+%%PYTHON_SITELIBDIR%%/pysmraw.so
 libdata/pkgconfig/libsmraw.pc
 man/man1/smrawmount.1.gz
 man/man3/libsmraw.3.gz
