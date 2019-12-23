@@ -11,10 +11,8 @@ lib/libqcow.a
 lib/libqcow.so
 lib/libqcow.so.1
 lib/libqcow.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pyqcow.a
-%%PYTHON2_SITELIBDIR%%/pyqcow.so
-%%PYTHON3_SITELIBDIR%%/pyqcow.a
-%%PYTHON3_SITELIBDIR%%/pyqcow.so
+%%PYTHON_SITELIBDIR%%/pyqcow.a
+%%PYTHON_SITELIBDIR%%/pyqcow.so
 libdata/pkgconfig/libqcow.pc
 man/man1/qcowinfo.1.gz
 man/man3/libqcow.3.gz
