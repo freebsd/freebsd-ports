@@ -25,6 +25,7 @@ man/man1/gcov%%SUFFIX%%.1.gz
 man/man1/gcov-dump%%SUFFIX%%.1.gz
 man/man1/gcov-tool%%SUFFIX%%.1.gz
 man/man1/gfortran%%SUFFIX%%.1.gz
+man/man1/lto-dump%%SUFFIX%%.1.gz
 share/gcc-%%GCC_VERSION%%/python/libstdcxx/__init__.py
 share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/__init__.py
 share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/printers.py
