@@ -829,6 +829,7 @@ otrs/Kernel/System/Console/Command/Admin/WebService/Delete.pm
 otrs/Kernel/System/Console/Command/Admin/WebService/Dump.pm
 otrs/Kernel/System/Console/Command/Admin/WebService/List.pm
 otrs/Kernel/System/Console/Command/Admin/WebService/Update.pm
+otrs/Kernel/System/Console/Command/Dev/Code/CPANAudit.pm
 otrs/Kernel/System/Console/Command/Dev/Code/CPANUpdate.pm
 otrs/Kernel/System/Console/Command/Dev/Code/ContributorsListUpdate.pm
 otrs/Kernel/System/Console/Command/Dev/Code/Generate/ConsoleCommand.pm
@@ -1130,6 +1131,7 @@ otrs/Kernel/System/SupportDataCollector/Plugin/OS/Distribution.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OS/KernelVersion.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OS/Load.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OS/PerlModules.pm
+otrs/Kernel/System/SupportDataCollector/Plugin/OS/PerlModulesAudit.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OS/PerlVersion.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OS/Swap.pm
 otrs/Kernel/System/SupportDataCollector/Plugin/OTRS/ArticleSearchIndexStatus.pm
@@ -1284,6 +1286,7 @@ otrs/Kernel/System/XML/Simple.pm
 otrs/Kernel/System/YAML.pm
 otrs/README.md
 otrs/RELEASE
+otrs/SECURITY.md
 otrs/UPDATING.md
 otrs/bin/Cron.sh
 otrs/bin/cgi-bin/app.psgi
@@ -1309,6 +1312,7 @@ otrs/scripts/DBUpdateTo6.pm
 otrs/scripts/DBUpdateTo6/ACLDeploy.pm
 otrs/scripts/DBUpdateTo6/AddAppointmentCalendarNotification.pm
 otrs/scripts/DBUpdateTo6/Base.pm
+otrs/scripts/DBUpdateTo6/CPANAuditCheck.pm
 otrs/scripts/DBUpdateTo6/CacheCleanup.pm
 otrs/scripts/DBUpdateTo6/CleanGroupUserPermissionValue.pm
 otrs/scripts/DBUpdateTo6/CreateAppointmentCalendarTables.pm
@@ -1326,6 +1330,7 @@ otrs/scripts/DBUpdateTo6/MigrateArticleSearchIndex.pm
 otrs/scripts/DBUpdateTo6/MigrateChatData.pm
 otrs/scripts/DBUpdateTo6/MigrateConfigEffectiveValues.pm
 otrs/scripts/DBUpdateTo6/MigrateGenericAgentJobs.pm
+otrs/scripts/DBUpdateTo6/MigrateModifiedSettings.pm
 otrs/scripts/DBUpdateTo6/MigratePackageRepositoryConfiguration.pm
 otrs/scripts/DBUpdateTo6/MigratePossibleNextActions.pm
 otrs/scripts/DBUpdateTo6/MigratePostMasterData.pm
