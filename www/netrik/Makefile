@@ -22,8 +22,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} "s|^CFLAGS =|CFLAGS?=|" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} "s|ncursesw|${NCURSES_IMPL}|g" ${WRKSRC}/configure
