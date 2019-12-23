@@ -11,10 +11,8 @@ lib/libfsapfs.a
 lib/libfsapfs.so
 lib/libfsapfs.so.1
 lib/libfsapfs.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pyfsapfs.a
-%%PYTHON2_SITELIBDIR%%/pyfsapfs.so
-%%PYTHON3_SITELIBDIR%%/pyfsapfs.a
-%%PYTHON3_SITELIBDIR%%/pyfsapfs.so
+%%PYTHON_SITELIBDIR%%/pyfsapfs.a
+%%PYTHON_SITELIBDIR%%/pyfsapfs.so
 libdata/pkgconfig/libfsapfs.pc
 man/man1/fsapfsinfo.1.gz
 man/man1/fsapfsmount.1.gz
