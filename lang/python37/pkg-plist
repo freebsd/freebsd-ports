@@ -3478,6 +3478,9 @@ lib/python%%XYDOT%%/test/__pycache__/dataclass_module_2.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/dataclass_module_2_str.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/dataclass_module_2_str.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/dataclass_module_2_str.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/dataclass_textanno.cpython-37.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/dataclass_textanno.cpython-37.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/dataclass_textanno.cpython-37.pyc
 lib/python%%XYDOT%%/test/__pycache__/datetimetester.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/datetimetester.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/datetimetester.cpython-%%XY%%.pyc
@@ -4942,6 +4945,7 @@ lib/python%%XYDOT%%/test/dataclass_module_1.py
 lib/python%%XYDOT%%/test/dataclass_module_1_str.py
 lib/python%%XYDOT%%/test/dataclass_module_2.py
 lib/python%%XYDOT%%/test/dataclass_module_2_str.py
+lib/python%%XYDOT%%/test/dataclass_textanno.py
 lib/python%%XYDOT%%/test/datetimetester.py
 lib/python%%XYDOT%%/test/decimaltestdata/abs.decTest
 lib/python%%XYDOT%%/test/decimaltestdata/add.decTest
