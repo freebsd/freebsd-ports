@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsmdev
-DISTVERSION=	alpha-20191112
+DISTVERSION=	alpha-20191221
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libsmdev/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
