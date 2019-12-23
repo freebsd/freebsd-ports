@@ -1,0 +1,20 @@
+--- product.json.orig	2019-10-15 15:03:50 UTC
++++ product.json
+@@ -22,5 +22,16 @@
+ 	"urlProtocol": "code-oss",
+ 	"extensionAllowedProposedApi": [
+ 		"ms-vscode.references-view"
+-	]
++	],
++	"documentationUrl": "https://go.microsoft.com/fwlink/?LinkID=533484",
++	"extensionsGallery": {
++		"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
++		"cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
++		"itemUrl": "https://marketplace.visualstudio.com/items"
++	},
++	"introductoryVideosUrl": "https://go.microsoft.com/fwlink/?linkid=832146",
++	"keyboardShortcutsUrlLinux": "https://go.microsoft.com/fwlink/?linkid=832144",
++	"quality": "stable",
++	"requestFeatureUrl": "https://go.microsoft.com/fwlink/?LinkID=533482",
++	"tipsAndTricksUrl": "https://go.microsoft.com/fwlink/?linkid=852118"
+ }
