@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libevt
-DISTVERSION=	alpha-20191104
+DISTVERSION=	alpha-20191221
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libevt/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfwnt.so:devel/libfwnt \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python \
 		--with-libfwnt=${LOCALBASE} --with-libregf=${LOCALBASE}
-CONFIGURE_ENV= PYTHON_CONFIG=${PYTHON_CMD}-config
+CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
 USES=		libtool pathfix python:3.5+
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
