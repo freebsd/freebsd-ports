@@ -8,9 +8,7 @@ lib/libfwnt.a
 lib/libfwnt.so
 lib/libfwnt.so.1
 lib/libfwnt.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pyfwnt.a
-%%PYTHON2_SITELIBDIR%%/pyfwnt.so
-%%PYTHON3_SITELIBDIR%%/pyfwnt.a
-%%PYTHON3_SITELIBDIR%%/pyfwnt.so
+%%PYTHON_SITELIBDIR%%/pyfwnt.a
+%%PYTHON_SITELIBDIR%%/pyfwnt.so
 libdata/pkgconfig/libfwnt.pc
 man/man3/libfwnt.3.gz
