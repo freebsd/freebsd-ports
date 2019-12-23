@@ -365,7 +365,6 @@
     SUBDIR += mbasecalc
     SUBDIR += mcsim
     SUBDIR += metis
-    SUBDIR += metis-edf
     SUBDIR += metis4
     SUBDIR += mfem
     SUBDIR += mingw32-libgmp
