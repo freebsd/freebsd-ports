@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	otrs
-PORTVERSION=	6.0.19
-PORTREVISION=	1
+DISTVERSION=	6_0_25
+DISTVERSIONPREFIX=	rel-
 CATEGORIES=	www
 
 MAINTAINER=	m.tsatsenko@gmail.com
@@ -55,7 +55,6 @@ USES=		cpe shebangfix perl5 tar:bzip2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OTRS
-GH_TAGNAME=	b7b2693
 
 SHEBANG_FILES=	bin/cgi-bin/*.pl bin/cgi-bin/app.psgi bin/fcgi-bin/*.pl bin/*.pl \
 		scripts/tools/*.pl scripts/*.pl
