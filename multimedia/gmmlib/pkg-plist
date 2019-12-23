@@ -58,6 +58,6 @@ include/igdgmm/inc/umKmInc/sharedata.h
 include/igdgmm/util/g_gfxDebug.h
 include/igdgmm/util/gfxDebug.h
 lib/libigdgmm.so
-lib/libigdgmm.so.12
-lib/libigdgmm.so.12.0.0
+lib/libigdgmm.so.11
+lib/libigdgmm.so.11.1.0
 libdata/pkgconfig/igdgmm.pc
