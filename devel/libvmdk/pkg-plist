@@ -11,10 +11,8 @@ lib/libvmdk.a
 lib/libvmdk.so
 lib/libvmdk.so.1
 lib/libvmdk.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pyvmdk.a
-%%PYTHON2_SITELIBDIR%%/pyvmdk.so
-%%PYTHON3_SITELIBDIR%%/pyvmdk.a
-%%PYTHON3_SITELIBDIR%%/pyvmdk.so
+%%PYTHON_SITELIBDIR%%/pyvmdk.a
+%%PYTHON_SITELIBDIR%%/pyvmdk.so
 libdata/pkgconfig/libvmdk.pc
 man/man1/vmdkinfo.1.gz
 man/man3/libvmdk.3.gz
