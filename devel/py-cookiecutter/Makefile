@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cookiecutter
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.15.2:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}binaryornot>=0.2.0:devel/py-binaryornot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}click>=5.0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click>=7.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}whichcraft>=0.4.0:devel/py-whichcraft@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}poyo>=0.1.0:devel/py-poyo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jinja2-time>=0.1.0:devel/py-jinja2-time@${PY_FLAVOR} \
