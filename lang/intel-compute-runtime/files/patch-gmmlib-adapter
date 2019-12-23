@@ -1,0 +1,171 @@
+https://github.com/intel/compute-runtime/pull/244
+
+In file included from runtime/kernel/kernel.cpp:10:
+core/gmm_helper/gmm_helper.h:42:129: error: use of undeclared identifier 'GmmDestroy'
+    static std::unique_ptr<GmmClientContext> (*createGmmContextWrapperFunc)(HardwareInfo *, decltype(&InitializeGmm), decltype(&GmmDestroy));
+                                                                                                                                ^
+core/gmm_helper/gmm_helper.h:51:15: error: use of undeclared identifier 'GmmDestroy'
+    decltype(&GmmDestroy) destroyGmmFunc;
+              ^
+
+--- core/gmm_helper/gmm_helper.h.orig	2019-12-09 17:18:41 UTC
++++ core/gmm_helper/gmm_helper.h
+@@ -39,7 +39,7 @@ class GmmHelper {
+ 
+     GmmClientContext *getClientContext() const;
+ 
+-    static std::unique_ptr<GmmClientContext> (*createGmmContextWrapperFunc)(HardwareInfo *, decltype(&InitializeGmm), decltype(&GmmDestroy));
++    static std::unique_ptr<GmmClientContext> (*createGmmContextWrapperFunc)(HardwareInfo *, decltype(&InitializeGmm), decltype(&GmmAdapterDestroy));
+ 
+   protected:
+     void loadLib();
+@@ -48,6 +48,6 @@ class GmmHelper {
+     std::unique_ptr<OsLibrary> gmmLib;
+     std::unique_ptr<GmmClientContext> gmmClientContext;
+     decltype(&InitializeGmm) initGmmFunc;
+-    decltype(&GmmDestroy) destroyGmmFunc;
++    decltype(&GmmAdapterDestroy) destroyGmmFunc;
+ };
+ } // namespace NEO
+--- runtime/dll/linux/options.cpp.orig	2019-12-09 17:18:41 UTC
++++ runtime/dll/linux/options.cpp
+@@ -16,8 +16,8 @@ const char *frontEndDllName = FCL_LIBRARY_NAME;
+ const char *igcDllName = IGC_LIBRARY_NAME;
+ const char *libvaDllName = "libva.so.2";
+ const char *gmmDllName = GMM_UMD_DLL;
+-const char *gmmInitFuncName = GMM_INIT_NAME;
+-const char *gmmDestroyFuncName = GMM_DESTROY_NAME;
++const char *gmmInitFuncName = GMM_ADAPTER_INIT_NAME;
++const char *gmmDestroyFuncName = GMM_ADAPTER_DESTROY_NAME;
+ 
+ const char *sysFsPciPath = "/sys/bus/pci/devices/";
+ const char *tbxLibName = "libtbxAccess.so";
+--- runtime/dll/windows/options.cpp.orig	2019-12-09 17:18:41 UTC
++++ runtime/dll/windows/options.cpp
+@@ -14,8 +14,8 @@ const char *frontEndDllName = FCL_LIBRARY_NAME;
+ const char *igcDllName = IGC_LIBRARY_NAME;
+ const char *gdiDllName = "gdi32.dll";
+ const char *gmmDllName = GMM_UMD_DLL;
+-const char *gmmInitFuncName = GMM_INIT_NAME;
+-const char *gmmDestroyFuncName = GMM_DESTROY_NAME;
++const char *gmmInitFuncName = GMM_ADAPTER_INIT_NAME;
++const char *gmmDestroyFuncName = GMM_ADAPTER_DESTROY_NAME;
+ 
+ // Os specific Metrics Library name
+ #if _WIN64
+--- runtime/gmm_helper/client_context/gmm_client_context.cpp.orig	2019-12-09 17:18:41 UTC
++++ runtime/gmm_helper/client_context/gmm_client_context.cpp
+@@ -8,5 +8,5 @@
+ #include "gmm_client_context.h"
+ 
+ namespace NEO {
+-GmmClientContext::GmmClientContext(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmDestroy) destroyFunc) : GmmClientContextBase(hwInfo, initFunc, destroyFunc){};
++GmmClientContext::GmmClientContext(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmAdapterDestroy) destroyFunc) : GmmClientContextBase(hwInfo, initFunc, destroyFunc){};
+ } // namespace NEO
+--- runtime/gmm_helper/client_context/gmm_client_context.h.orig	2019-12-09 17:18:41 UTC
++++ runtime/gmm_helper/client_context/gmm_client_context.h
+@@ -11,6 +11,6 @@
+ namespace NEO {
+ class GmmClientContext : public GmmClientContextBase {
+   public:
+-    GmmClientContext(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmDestroy) destroyFunc);
++    GmmClientContext(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmAdapterDestroy) destroyFunc);
+ };
+ } // namespace NEO
+--- runtime/gmm_helper/client_context/gmm_client_context_base.cpp.orig	2019-12-09 17:18:41 UTC
++++ runtime/gmm_helper/client_context/gmm_client_context_base.cpp
+@@ -16,7 +16,7 @@
+ #include "runtime/platform/platform.h"
+ 
+ namespace NEO {
+-GmmClientContextBase::GmmClientContextBase(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmDestroy) destroyFunc) : destroyFunc(destroyFunc) {
++GmmClientContextBase::GmmClientContextBase(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmAdapterDestroy) destroyFunc) : destroyFunc(destroyFunc) {
+     _SKU_FEATURE_TABLE gmmFtrTable = {};
+     _WA_TABLE gmmWaTable = {};
+     SkuInfoTransfer::transferFtrTableForGmm(&gmmFtrTable, &hwInfo->featureTable);
+--- runtime/gmm_helper/client_context/gmm_client_context_base.h.orig	2019-12-09 17:18:41 UTC
++++ runtime/gmm_helper/client_context/gmm_client_context_base.h
+@@ -24,7 +24,7 @@ class GmmClientContextBase {
+     MOCKABLE_VIRTUAL void destroyResInfoObject(GMM_RESOURCE_INFO *pResInfo);
+     GMM_CLIENT_CONTEXT *getHandle() const;
+     template <typename T>
+-    static std::unique_ptr<GmmClientContext> create(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmDestroy) destroyFunc) {
++    static std::unique_ptr<GmmClientContext> create(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmAdapterDestroy) destroyFunc) {
+         return std::make_unique<T>(hwInfo, initFunc, destroyFunc);
+     }
+ 
+@@ -33,7 +33,7 @@ class GmmClientContextBase {
+ 
+   protected:
+     GMM_CLIENT_CONTEXT *clientContext;
+-    GmmClientContextBase(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmDestroy) destroyFunc);
+-    decltype(&GmmDestroy) destroyFunc;
++    GmmClientContextBase(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmAdapterDestroy) destroyFunc);
++    decltype(&GmmAdapterDestroy) destroyFunc;
+ };
+ } // namespace NEO
+--- runtime/gmm_helper/gmm_interface.cpp.orig	2019-12-09 17:18:41 UTC
++++ runtime/gmm_helper/gmm_interface.cpp
+@@ -21,7 +21,7 @@ void GmmHelper::loadLib() {
+     gmmLib.reset(OsLibrary::load(Os::gmmDllName));
+     UNRECOVERABLE_IF(!gmmLib);
+     initGmmFunc = reinterpret_cast<decltype(&InitializeGmm)>(gmmLib->getProcAddress(Os::gmmInitFuncName));
+-    destroyGmmFunc = reinterpret_cast<decltype(&GmmDestroy)>(gmmLib->getProcAddress(Os::gmmDestroyFuncName));
++    destroyGmmFunc = reinterpret_cast<decltype(&GmmAdapterDestroy)>(gmmLib->getProcAddress(Os::gmmDestroyFuncName));
+     UNRECOVERABLE_IF(!initGmmFunc || !destroyGmmFunc);
+ }
+ } // namespace NEO
+--- unit_tests/main.cpp.orig	2019-12-09 17:18:41 UTC
++++ unit_tests/main.cpp
+@@ -456,8 +456,8 @@ int main(int argc, char **argv) {
+ #endif
+     if (!useMockGmm) {
+         Os::gmmDllName = GMM_UMD_DLL;
+-        Os::gmmInitFuncName = GMM_INIT_NAME;
+-        Os::gmmDestroyFuncName = GMM_DESTROY_NAME;
++        Os::gmmInitFuncName = GMM_ADAPTER_INIT_NAME;
++        Os::gmmDestroyFuncName = GMM_ADAPTER_DESTROY_NAME;
+     } else {
+         GmmHelper::createGmmContextWrapperFunc = GmmClientContextBase::create<MockGmmClientContext>;
+     }
+--- unit_tests/mocks/mock_gmm_client_context.cpp.orig	2019-12-09 17:18:41 UTC
++++ unit_tests/mocks/mock_gmm_client_context.cpp
+@@ -8,6 +8,6 @@
+ #include "mock_gmm_client_context.h"
+ 
+ namespace NEO {
+-MockGmmClientContext::MockGmmClientContext(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmDestroy) destroyFunc) : MockGmmClientContextBase(hwInfo, initFunc, destroyFunc) {
++MockGmmClientContext::MockGmmClientContext(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmAdapterDestroy) destroyFunc) : MockGmmClientContextBase(hwInfo, initFunc, destroyFunc) {
+ }
+ } // namespace NEO
+--- unit_tests/mocks/mock_gmm_client_context.h.orig	2019-12-09 17:18:41 UTC
++++ unit_tests/mocks/mock_gmm_client_context.h
+@@ -11,6 +11,6 @@
+ namespace NEO {
+ class MockGmmClientContext : public MockGmmClientContextBase {
+   public:
+-    MockGmmClientContext(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmDestroy) destroyFunc);
++    MockGmmClientContext(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmAdapterDestroy) destroyFunc);
+ };
+ } // namespace NEO
+--- unit_tests/mocks/mock_gmm_client_context_base.cpp.orig	2019-12-09 17:18:41 UTC
++++ unit_tests/mocks/mock_gmm_client_context_base.cpp
+@@ -8,7 +8,7 @@
+ #include "unit_tests/mocks/mock_gmm_client_context.h"
+ 
+ namespace NEO {
+-MockGmmClientContextBase::MockGmmClientContextBase(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmDestroy) destroyFunc) : GmmClientContext(hwInfo, initFunc, destroyFunc) {
++MockGmmClientContextBase::MockGmmClientContextBase(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmAdapterDestroy) destroyFunc) : GmmClientContext(hwInfo, initFunc, destroyFunc) {
+ }
+ 
+ MEMORY_OBJECT_CONTROL_STATE MockGmmClientContextBase::cachePolicyGetMemoryObject(GMM_RESOURCE_INFO *pResInfo, GMM_RESOURCE_USAGE_TYPE usage) {
+--- unit_tests/mocks/mock_gmm_client_context_base.h.orig	2019-12-09 17:18:41 UTC
++++ unit_tests/mocks/mock_gmm_client_context_base.h
+@@ -24,6 +24,6 @@ class MockGmmClientContextBase : public GmmClientConte
+     uint32_t getMediaSurfaceStateCompressionFormatCalled = 0u;
+ 
+   protected:
+-    MockGmmClientContextBase(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmDestroy) destroyFuncs);
++    MockGmmClientContextBase(HardwareInfo *hwInfo, decltype(&InitializeGmm) initFunc, decltype(&GmmAdapterDestroy) destroyFuncs);
+ };
+ } // namespace NEO
