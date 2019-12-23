@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	certstream
-PORTVERSION=	1.10
-PORTREVISION=	2
+PORTVERSION=	1.11
 CATEGORIES=	security www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +20,5 @@ USES=		python
 USE_PYTHON=	distutils autoplist concurrent
 
 NO_ARCH=	yes
-
-post-patch:
-	@${REINPLACE_CMD} 's,==.*,,' ${WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>
