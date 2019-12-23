@@ -12,7 +12,7 @@ COMMENT=	Terminal based clock
 LICENSE=	BSD3CLAUSE
 
 ALL_TARGET=	tty-clock
-LDFLAGS+=	-lncursesw
+LDFLAGS+=	-l${NCURSRES_IMPL}
 USES=		gmake ncurses pkgconfig
 
 PLIST_FILES=	bin/tty-clock \
