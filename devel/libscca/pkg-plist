@@ -10,10 +10,8 @@ lib/libscca.a
 lib/libscca.so
 lib/libscca.so.1
 lib/libscca.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pyscca.a
-%%PYTHON2_SITELIBDIR%%/pyscca.so
-%%PYTHON3_SITELIBDIR%%/pyscca.a
-%%PYTHON3_SITELIBDIR%%/pyscca.so
+%%PYTHON_SITELIBDIR%%/pyscca.a
+%%PYTHON_SITELIBDIR%%/pyscca.so
 libdata/pkgconfig/libscca.pc
 man/man1/sccainfo.1.gz
 man/man3/libscca.3.gz
