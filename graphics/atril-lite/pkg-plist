@@ -64,7 +64,6 @@ lib/atril/3/backends/pdfdocument.atril-backend
 lib/atril/3/backends/psdocument.atril-backend
 lib/atril/3/backends/tiffdocument.atril-backend
 %%XPS%%lib/atril/3/backends/xpsdocument.atril-backend
-%%CAJA%%lib/caja/extensions-2.0/libatril-properties-page.so
 lib/libatrildocument.so
 lib/libatrildocument.so.3
 lib/libatrildocument.so.%%GTK3_VERSION%%
@@ -115,7 +114,6 @@ share/applications/atril.desktop
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-left.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-right.svg
 %%DATADIR%%/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
-%%CAJA%%share/caja/extensions/libatril-properties-page.caja-extension
 share/gtk-doc/html/atril/EggFindBar.html
 share/gtk-doc/html/atril/EvFileMonitor.html
 share/gtk-doc/html/atril/EvHistory.html
@@ -382,6 +380,9 @@ share/help/ia/atril/legal.xml
 share/help/id/atril/figures/atril_start_window.png
 share/help/id/atril/index.docbook
 share/help/id/atril/legal.xml
+share/help/ie/atril/figures/atril_start_window.png
+share/help/ie/atril/index.docbook
+share/help/ie/atril/legal.xml
 share/help/ig/atril/figures/atril_start_window.png
 share/help/ig/atril/index.docbook
 share/help/ig/atril/legal.xml
@@ -633,6 +634,7 @@ share/locale/hu/LC_MESSAGES/atril.mo
 share/locale/hy/LC_MESSAGES/atril.mo
 share/locale/ia/LC_MESSAGES/atril.mo
 share/locale/id/LC_MESSAGES/atril.mo
+share/locale/ie/LC_MESSAGES/atril.mo
 share/locale/ig/LC_MESSAGES/atril.mo
 share/locale/is/LC_MESSAGES/atril.mo
 share/locale/it/LC_MESSAGES/atril.mo
