@@ -11,10 +11,8 @@ lib/libsigscan.a
 lib/libsigscan.so
 lib/libsigscan.so.1
 lib/libsigscan.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pysigscan.a
-%%PYTHON2_SITELIBDIR%%/pysigscan.so
-%%PYTHON3_SITELIBDIR%%/pysigscan.a
-%%PYTHON3_SITELIBDIR%%/pysigscan.so
+%%PYTHON_SITELIBDIR%%/pysigscan.a
+%%PYTHON_SITELIBDIR%%/pysigscan.so
 libdata/pkgconfig/libsigscan.pc
 man/man1/sigscan.1.gz
 man/man3/libsigscan.3.gz
