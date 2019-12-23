@@ -17,9 +17,12 @@ ONLY_FOR_ARCHS_REASON=	specific to recent x86 processors
 USE_GITHUB=	yes
 GH_ACCOUNT=	yamagi
 
-USES=		gmake
+USES=		gmake ncurses
 
 PLIST_FILES=	man/man8/powermon.8.gz sbin/powermon
+
+post-patch:
+	${REINPLACE_CMD} 's/cursesw/${NCURSES_IMPL}/g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/release/powermon \
