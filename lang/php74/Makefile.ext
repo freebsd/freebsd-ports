@@ -93,8 +93,11 @@ CONFIGURE_ARGS+=--enable-filter \
 .endif
 
 .if ${PHP_MODNAME} == "ftp"
-CONFIGURE_ARGS+=--enable-ftp \
-		--with-openssl-dir=${OPENSSLBASE}
+CONFIGURE_ARGS+=--enable-ftp
+
+CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
+		PHP_OPENSSL=yes
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USES+=		ssl pkgconfig
