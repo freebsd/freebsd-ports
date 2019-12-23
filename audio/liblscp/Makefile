@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblscp
-PORTVERSION=	0.6.0
+DISTVERSION=	0.6.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/qsampler/${PORTNAME}/${PORTVERSION} \
 		http://download.linuxsampler.org/packages/
