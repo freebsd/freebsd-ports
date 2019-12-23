@@ -1,19 +1,19 @@
---- configure.orig	2016-11-07 13:13:19 UTC
+--- configure.orig	2018-12-10 10:32:28 UTC
 +++ configure
-@@ -3006,10 +3006,10 @@ MED_NUM_RELEASE=1
+@@ -3194,10 +3194,10 @@ MEDIMPORT_CMAKE_SO_VERSION="0.3.0"
  #Une modification de HDF_VERSION_NUM
  #demande une modification du test de version ds
  #med_check_hdf5.m4
--HDF_VERSION_REF=5-1.8.11
-+HDF_VERSION_REF=5-1.8.21
+-HDF_VERSION_REF=5-1.10.2
++HDF_VERSION_REF=5-1.10.5
  HDF_VERSION_MAJOR_REF=1
- HDF_VERSION_MINOR_REF=8
--HDF_VERSION_RELEASE_REF=11
-+HDF_VERSION_RELEASE_REF=21
+ HDF_VERSION_MINOR_REF=10
+-HDF_VERSION_RELEASE_REF=2
++HDF_VERSION_RELEASE_REF=5
  
  
  
-@@ -7146,9 +7146,9 @@ _ACEOF
+@@ -7572,9 +7572,9 @@ _ACEOF
        HDF5_VERSION="0"
        if test -n "$HDF5_ABS_PATH" ; then
           HDF5_USED_VER=` grep H5_VERS_INFO $HDF5_ABS_PATH | sed  's/\([^"]*\)\(".*"\)\([^"]*\)/\2/g' `
@@ -24,32 +24,5 @@
 +         H5_VER_MINOR=`  grep '#define *H5_VERS_MINOR' $HDF5_ABS_PATH | gsed  's/^.*H5_VERS_MINOR[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
 +         H5_VER_RELEASE=`grep '#define *H5_VERS_RELEASE' $HDF5_ABS_PATH | gsed  's/^.*H5_VERS_RELEASE[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
           HDF5_VERSION=`  expr 10000 \* ${H5_VER_MAJOR} + 100 \* ${H5_VER_MINOR} + ${H5_VER_RELEASE} `
-          test "0${HDF5_VERSION}" -gt "10899" || test "0${HDF5_VERSION}" -lt "10811" && as_fn_error $? "
+          test "0${HDF5_VERSION}" -gt "11100" || test "0${HDF5_VERSION}" -lt "11002" && as_fn_error $? "
  This HDF5 version ${H5_VER_MAJOR}.${H5_VER_MINOR}.${H5_VER_RELEASE} must not be used with med-fichier${MED_NUM_MAJEUR}.${MED_NUM_MINEUR}.${MED_NUM_RELEASE}.
-@@ -7270,7 +7270,7 @@ done
- 
-       if test "x$with_hdf5_include" = "xno"; then
-         # Extract the first word of "h5dump", so it can be a program name with args.
--set dummy h5dump; ac_word=$2
-+set dummy h5dump-18; ac_word=$2
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
- $as_echo_n "checking for $ac_word... " >&6; }
- if ${ac_cv_path_H5DUMP+:} false; then :
-@@ -7312,7 +7312,7 @@ fi
- 
-       else
-         # Extract the first word of "h5dump", so it can be a program name with args.
--set dummy h5dump; ac_word=$2
-+set dummy h5dump-18; ac_word=$2
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
- $as_echo_n "checking for $ac_word... " >&6; }
- if ${ac_cv_path_H5DUMP+:} false; then :
-@@ -7354,7 +7354,7 @@ fi
- 
-       fi
-       if test "X$H5DUMP" = "Xno"; then
--         as_fn_error $? "Can't find h5dump, please verify your env. var. PATH or use of --with-hdf5bin=<binpath>." "$LINENO" 5
-+         as_fn_error $? "Can't find h5dump-18, please verify your env. var. PATH or use of --with-hdf5bin=<binpath>." "$LINENO" 5
-       fi
- 
- 

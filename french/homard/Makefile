@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	homard
-DISTVERSION=	11.10-1
-PORTREVISION=	2
+DISTVERSION=	11.12-aster2
 CATEGORIES=	french cad linux
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -19,7 +18,7 @@ RESTRICTED=	The free downloading of HOMARD software is only allowed for coupling
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		linux python:2.7 shebangfix
+USES=		linux python:3.6 shebangfix
 SHEBANG_FILES=	${WRKSRC}/ASTER_HOMARD/homard	\
 		${WRKSRC}/homard_base ${WRKSRC}/setup_homard.py
 REINPLACE_ARGS=	-i ""
@@ -33,7 +32,8 @@ HOMARDDIR=	${PREFIX}/${LHOMARDDIR}
 AHPY=		aster_homard_py
 HOMARDSCRIPT=	${PORTNAME}_base
 # This name is requested to run aster's make test
-HOMARDPG=	${PORTNAME:tu}_V${PORTVERSION:R}.out
+#HOMARDPG=	${PORTNAME:tu}_V${PORTVERSION:R}.out
+HOMARDPG=	${PORTNAME:tu}_V11.10.out
 
 DOCS=		A_Lire.txt Readme.txt
 

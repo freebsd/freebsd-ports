@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scotch
-DISTVERSION=	6.0.4-aster5
-PORTREVISION=	3
+DISTVERSION=	6.0.4-aster7
 CATEGORIES=	cad science
 
 MAINTAINER=	thierry@FreeBSD.org
