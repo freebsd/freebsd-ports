@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	teeworlds
-PORTVERSION=	0.7.3.1
+PORTVERSION=	0.7.4
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 USE_GITHUB=	yes
-GH_TUPLE=	teeworlds:teeworlds-translation:1cd4924:translations/datasrc/languages \
+GH_TUPLE=	teeworlds:teeworlds-translation:4ba6f82:translations/datasrc/languages \
 		teeworlds:teeworlds-maps:7fefdb4:maps/datasrc/maps
 
 USES=		cmake cpe pkgconfig python ssl
