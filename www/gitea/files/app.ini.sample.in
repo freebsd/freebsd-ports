@@ -11,7 +11,7 @@
 # choosing, INTERNAL_TOKEN is a 64-byte random number in BASE64 encoding,
 # JWT_SECRET is a 32-byte random number in BASE64 encoding.
 # 
-# Your can generate the token using for example:
+# You can generate the token using for example:
 #   openssl rand -base64 64
 # 
 # You can let Gitea add these to the config for you; you need to make
