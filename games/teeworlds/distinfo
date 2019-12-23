@@ -1,7 +1,7 @@
-TIMESTAMP = 1555964484
-SHA256 (teeworlds-teeworlds-0.7.3.1_GH0.tar.gz) = 62da301f20dfc20e2e480223dc1fc4ea5f9bfbfa6bc304c4c7732071a319ffd4
-SIZE (teeworlds-teeworlds-0.7.3.1_GH0.tar.gz) = 8422909
-SHA256 (teeworlds-teeworlds-translation-1cd4924_GH0.tar.gz) = f43c95361325521af7dcb5be1605f2a1e2e38cfc9a34013a78536592d2868aa5
-SIZE (teeworlds-teeworlds-translation-1cd4924_GH0.tar.gz) = 152911
+TIMESTAMP = 1577119898
+SHA256 (teeworlds-teeworlds-0.7.4_GH0.tar.gz) = 272391773b16eb854c824e23ed04ed9e7f0aa605d585277dc4136193227222b5
+SIZE (teeworlds-teeworlds-0.7.4_GH0.tar.gz) = 8648400
+SHA256 (teeworlds-teeworlds-translation-4ba6f82_GH0.tar.gz) = e4c81e1c431695b51d424687bd09334d32a3558bc8ac423d6264a37d8c718e22
+SIZE (teeworlds-teeworlds-translation-4ba6f82_GH0.tar.gz) = 169085
 SHA256 (teeworlds-teeworlds-maps-7fefdb4_GH0.tar.gz) = 84764b026963e22cc58658837af9a857e11617c92311dafbd75412507bf7073a
 SIZE (teeworlds-teeworlds-maps-7fefdb4_GH0.tar.gz) = 151472
