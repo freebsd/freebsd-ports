@@ -1389,6 +1389,7 @@
     SUBDIR += py-tabletext
     SUBDIR += py-tablib
     SUBDIR += py-terminaltables
+    SUBDIR += py-text-unidecode
     SUBDIR += py-textfsm
     SUBDIR += py-texttable
     SUBDIR += py-tinycss
