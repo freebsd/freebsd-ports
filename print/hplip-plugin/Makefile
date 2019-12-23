@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	hplip-plugin
-PORTVERSION=	3.19.6
+PORTVERSION=	3.19.12
 CATEGORIES=	print
-MASTER_SITES=	https://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/
+MASTER_SITES=	https://developers.hp.com/sites/default/files/
 DISTNAME=	hplip-${DISTVERSION}-plugin
 EXTRACT_SUFX=	.run
 
