@@ -1,0 +1,13 @@
+bin/acmeman
+@sample etc/acmeman.conf.sample
+%%SITE_PERL%%/App/Acmeman.pm
+%%SITE_PERL%%/App/Acmeman/Apache/Layout.pm
+%%SITE_PERL%%/App/Acmeman/Config.pm
+%%SITE_PERL%%/App/Acmeman/Domain.pm
+%%SITE_PERL%%/App/Acmeman/Log.pm
+%%SITE_PERL%%/App/Acmeman/Source.pm
+%%SITE_PERL%%/App/Acmeman/Source/Apache.pm
+%%SITE_PERL%%/App/Acmeman/Source/File.pm
+%%SITE_PERL%%/App/Acmeman/Source/Null.pm
+%%SITE_PERL%%/App/Acmeman/Source/Unconfigured.pm
+%%PERL5_MAN1%%/acmeman.1.gz

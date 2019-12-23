@@ -1,0 +1,12 @@
+Perl module and command line utility for issuing and maintaining the ACME
+(Let's Encrypt) SSL certificates.
+
+While most existing ACME tools take a list of domain names for which to
+issue certificates from their command line or configuration file, acmeman
+gathers domain names directly from the configuration of the HTTP server
+that serves them, so domain name obtains its certificate automatically,
+once the administrator configures the HTTP server to serve it via HTTPS.
+
+The utility is normally run as a cron(8) job.
+
+WWW: https://metacpan.org/release/App-Acmeman
