@@ -432,6 +432,7 @@
     SUBDIR += gkrelltop
     SUBDIR += gksu
     SUBDIR += glogg
+    SUBDIR += glow
     SUBDIR += gnome-control-center
     SUBDIR += gnome-mount
     SUBDIR += gnome-power-manager
