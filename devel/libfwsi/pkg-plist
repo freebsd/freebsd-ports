@@ -9,9 +9,7 @@ lib/libfwsi.a
 lib/libfwsi.so
 lib/libfwsi.so.1
 lib/libfwsi.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pyfwsi.a
-%%PYTHON2_SITELIBDIR%%/pyfwsi.so
-%%PYTHON3_SITELIBDIR%%/pyfwsi.a
-%%PYTHON3_SITELIBDIR%%/pyfwsi.so
+%%PYTHON_SITELIBDIR%%/pyfwsi.a
+%%PYTHON_SITELIBDIR%%/pyfwsi.so
 libdata/pkgconfig/libfwsi.pc
 man/man3/libfwsi.3.gz
