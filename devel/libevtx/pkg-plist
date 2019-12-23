@@ -11,10 +11,8 @@ lib/libevtx.a
 lib/libevtx.so
 lib/libevtx.so.1
 lib/libevtx.so.1.0.0
-%%PYTHON2_SITELIBDIR%%/pyevtx.a
-%%PYTHON2_SITELIBDIR%%/pyevtx.so
-%%PYTHON3_SITELIBDIR%%/pyevtx.a
-%%PYTHON3_SITELIBDIR%%/pyevtx.so
+%%PYTHON_SITELIBDIR%%/pyevtx.a
+%%PYTHON_SITELIBDIR%%/pyevtx.so
 libdata/pkgconfig/libevtx.pc
 man/man1/evtxexport.1.gz
 man/man1/evtxinfo.1.gz
