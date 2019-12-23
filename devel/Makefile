@@ -4411,6 +4411,7 @@
     SUBDIR += py-fabric
     SUBDIR += py-fabric1
     SUBDIR += py-fabric3
+    SUBDIR += py-factory-boy
     SUBDIR += py-fam
     SUBDIR += py-fastcache
     SUBDIR += py-fasteners
