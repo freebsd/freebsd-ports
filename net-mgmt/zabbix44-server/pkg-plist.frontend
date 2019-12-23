@@ -734,7 +734,7 @@
 %%WWWDIR%%/include/views/administration.general.regularexpressions.edit.php
 %%WWWDIR%%/include/views/administration.general.regularexpressions.list.php
 %%WWWDIR%%/include/views/administration.general.trigger.options.edit.php
-%%WWWDIR%%/include/views/administration.general.triggerSeverity.edit.php
+%%WWWDIR%%/include/views/administration.general.trigseverity.edit.php
 %%WWWDIR%%/include/views/administration.general.valuemapping.edit.php
 %%WWWDIR%%/include/views/administration.general.valuemapping.list.php
 %%WWWDIR%%/include/views/administration.general.workingtime.edit.php
@@ -797,7 +797,7 @@
 %%WWWDIR%%/include/views/js/administration.general.iconmap.js.php
 %%WWWDIR%%/include/views/js/administration.general.macros.edit.js.php
 %%WWWDIR%%/include/views/js/administration.general.trigger.options.js.php
-%%WWWDIR%%/include/views/js/administration.general.triggerSeverity.js.php
+%%WWWDIR%%/include/views/js/administration.general.trigseverity.js.php
 %%WWWDIR%%/include/views/js/administration.general.valuemapping.edit.js.php
 %%WWWDIR%%/include/views/js/common.filter.trigger.js.php
 %%WWWDIR%%/include/views/js/common.init.js.php
@@ -877,11 +877,12 @@
 %%WWWDIR%%/js/class.cverticalaccordion.js
 %%WWWDIR%%/js/class.cviewswitcher.js
 %%WWWDIR%%/js/class.localstorage.js
-%%WWWDIR%%/js/class.mapWidget.js
+%%WWWDIR%%/js/class.mapwidget.js
 %%WWWDIR%%/js/class.notification.collection.js
 %%WWWDIR%%/js/class.notification.js
 %%WWWDIR%%/js/class.notifications.audio.js
 %%WWWDIR%%/js/class.notifications.js
+%%WWWDIR%%/js/class.overlaycollection.js
 %%WWWDIR%%/js/class.pmaster.js
 %%WWWDIR%%/js/class.promise.js
 %%WWWDIR%%/js/class.rpc.js
