@@ -1,0 +1,17 @@
+TIMESTAMP = 1576654213
+SHA256 (vscode/node-v6.1.6-headers.tar.gz) = 7abbb0c1a9871e79b70c69bacd8fb6af88b815dac87e1a83722c2d69581a81b9
+SIZE (vscode/node-v6.1.6-headers.tar.gz) = 193752
+SHA256 (vscode/electron-v6.1.6-linux-x64.zip) = fe73c67b2267d7f7c8c5835c2bb1cf913f1ac8dc6314f4a577c7b4502ba9d6d8
+SIZE (vscode/electron-v6.1.6-linux-x64.zip) = 62392920
+SHA256 (vscode/ffmpeg-v6.1.6-linux-x64.zip) = 9c15b53ac93243e355e3eabfdcb8e39fd4516a6dba54a88eea9ae970170301ed
+SIZE (vscode/ffmpeg-v6.1.6-linux-x64.zip) = 3908671
+SHA256 (vscode/node-v12.4.0-headers.tar.gz) = 3a5bbb6ad1a5f3ba912981c13910d7c617bb8fa6b6ae2026d6aee2edcd590a45
+SIZE (vscode/node-v12.4.0-headers.tar.gz) = 549161
+SHA256 (vscode/vscode-ripgrep-1.5.7.tgz) = 4a36021ab54964e7ec9c8a299129cc6a5776c56f6e9b6182698e96f6899c27da
+SIZE (vscode/vscode-ripgrep-1.5.7.tgz) = 5064
+SHA256 (vscode/yarn-offline-cache-1.41.0.tar.gz) = 114679510f0b32501ab3099c63e884707f72a36b3e4544759cbd4d0e41952add
+SIZE (vscode/yarn-offline-cache-1.41.0.tar.gz) = 101417336
+SHA256 (vscode/vscode-marketplace-exts-1.41.0.tar.gz) = b275bd73f3819e6a5f58602bdd693988e335b329a761c9742438513ec3f4fba1
+SIZE (vscode/vscode-marketplace-exts-1.41.0.tar.gz) = 1604382
+SHA256 (vscode/microsoft-vscode-1.41.0_GH0.tar.gz) = 53f096a29dc12ac493f46e6e743f7d3420af8104ad2de0ebcb15ffc123231ee9
+SIZE (vscode/microsoft-vscode-1.41.0_GH0.tar.gz) = 9910227
