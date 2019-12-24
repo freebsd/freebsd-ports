@@ -1,0 +1,5 @@
+Flask extension that provides integration with MongoEngine. It handles
+connection management for your app.  You can also use WTForms as model forms
+for your models.
+
+WWW: https://github.com/mongoengine/flask-mongoengine
