@@ -15,6 +15,9 @@ COMMENT?=	Graphical interface for Code_Aster (server side)
 
 LICENSE=	GPLv2
 
+NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc
+NOT_FOR_ARCHS_REASON=	ARG_MAX is too small for Code_Aster on 32 bits systems
+
 #-----------------------------------------------------------------------
 # You may define these options:
 #
@@ -59,7 +62,7 @@ conf_dir=	${WRKSRC}/etc/astkrc
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ((${OSREL:R} == 12 && ${OSVERSION} < 1201506)	\
+.if ${OPSYS} == FreeBSD && ((${OSREL:R} <= 12 && ${OSVERSION} < 1201506)	\
 			|| (${OSREL:R} > 12 && ${OSVERSION} < 1300068))
 # ASTK is not useful without french/aster
 IGNORE=	a larger value of ARG_MAX is needed for Code_Aster, please upgrade your system
