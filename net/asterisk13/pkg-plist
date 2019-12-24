@@ -262,6 +262,7 @@ include/asterisk/security_events.h
 include/asterisk/security_events_defs.h
 include/asterisk/select.h
 include/asterisk/sem.h
+include/asterisk/serializer.h
 include/asterisk/sha1.h
 include/asterisk/silk.h
 include/asterisk/sip_api.h
