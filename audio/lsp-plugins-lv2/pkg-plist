@@ -92,7 +92,7 @@
 %%JACK%%bin/lsp-plugins-trigger-midi-stereo
 %%JACK%%bin/lsp-plugins-trigger-mono
 %%JACK%%bin/lsp-plugins-trigger-stereo
-%%JACK%%lib/lsp-plugins/lsp-plugins-jack-core-1.1.10.so
+%%JACK%%lib/lsp-plugins/lsp-plugins-jack-core-1.1.13.so
 %%JACK%%lib/lsp-plugins/lsp-plugins-r3d-glx.so
 lib/lv2/lsp-plugins.lv2/comp_delay_mono.ttl
 lib/lv2/lsp-plugins.lv2/comp_delay_stereo.ttl
