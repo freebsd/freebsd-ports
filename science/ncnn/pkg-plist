@@ -3,6 +3,7 @@ include/ncnn/benchmark.h
 include/ncnn/blob.h
 include/ncnn/command.h
 include/ncnn/cpu.h
+include/ncnn/datareader.h
 include/ncnn/gpu.h
 include/ncnn/layer.h
 include/ncnn/layer_type.h
