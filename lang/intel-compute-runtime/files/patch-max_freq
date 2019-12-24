@@ -1,0 +1,44 @@
+/sys/bus/pci/devices doesn't exist as kms-drm exports sysfs via sysctl
+
+  $ clinfo | fgrep clock
+    Max clock frequency                             0MHz
+
+--- runtime/os_interface/linux/drm_neo.cpp.orig	2019-12-09 17:18:41 UTC
++++ runtime/os_interface/linux/drm_neo.cpp
+@@ -16,6 +16,11 @@
+ #include <cstring>
+ #include <fstream>
+ 
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#endif
++
+ namespace NEO {
+ 
+ const char *Drm::sysFsDefaultGpuPath = "/drm/card0";
+@@ -66,6 +71,16 @@ int Drm::getEnabledPooledEu(int &enabled) {
+ 
+ int Drm::getMaxGpuFrequency(int &maxGpuFrequency) {
+     maxGpuFrequency = 0;
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++    char max_freq[PAGE_SIZE];
++    size_t len = sizeof(max_freq);
++
++    if (sysctlbyname("sys.class.drm.card0.gt_max_freq_mhz", &max_freq, &len, NULL, 0)) {
++        return 0;
++    }
++
++    maxGpuFrequency = std::stoi(max_freq);
++#else
+     int deviceID = 0;
+     int ret = getDeviceID(deviceID);
+     if (ret != 0) {
+@@ -87,6 +102,7 @@ int Drm::getMaxGpuFrequency(int &maxGpuFrequency) {
+ 
+     ifs >> maxGpuFrequency;
+     ifs.close();
++#endif
+     return 0;
+ }
+ 
