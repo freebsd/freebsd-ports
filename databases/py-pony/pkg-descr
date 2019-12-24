@@ -1,0 +1,6 @@
+Using Pony object-relational mapper you can concentrate on writing business
+logic of your application and use Python syntax for interacting with the
+database. Pony translates such queries into SQL and executes them in the
+database in the most efficient way.
+
+WWW: https://ponyorm.org/
