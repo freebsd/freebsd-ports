@@ -23,6 +23,7 @@ USES=		bison cmake compiler:c++17-lang python:build
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	intel
+CFLAGS+=	-Wno-macro-redefined # __fastcall
 PLIST_SUB=	ARCH_SUFX=${ARCH:S/i386/32/:S/amd//:S/x86_//}
 
 post-patch:
@@ -36,9 +37,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/clang-\$$/ { s//clang$$/; \
 			s/MAJOR}/&$${LLVM_VERSION_MINOR}/; }' \
 		${WRKSRC}/IGC/BiFModule/CMakeLists.txt
-# Silence -Wmacro-redefined to expose __fastcall misuse
-	@${REINPLACE_CMD} -e '/__fastcall/d' \
-		${WRKSRC}/inc/common/UFO/portable_compiler.h
 # No need to abort on every benign warning enabled by default
 	@${REINPLACE_CMD} -e 's/"-Werror"//; /-Werror/d' \
 		${WRKSRC}/IGC/CMakeLists.txt
