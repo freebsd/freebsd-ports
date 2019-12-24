@@ -65,6 +65,12 @@ post-patch:
 	    -name make.local -or -name soundoff -or -name soundon | \
 	    ${XARGS} ${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g'
 
+pre-build:
+	${MAKE_CMD} -C ${BUILD_WRKSRC}/kernel/OS/FreeBSD \
+		-f /usr/share/mk/bsd.kmod.mk \
+		KMOD=osscore SRCS=os_freebsd.c \
+		device_if.h bus_if.h pci_if.h
+
 do-install:
 	${INSTALL_PROGRAM} ${PROTO_BINDIR}/* ${STAGEDIR}${PREFIX}/bin/
 # @${ECHO_CMD} "OSSLIBDIR=${PREFIX}/lib/oss" > ${PROTO_ETCDIR}/oss.conf
