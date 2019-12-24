@@ -24,6 +24,7 @@
 %%DSO%%%%FORMINPUT%%libexec/nginx/ngx_http_form_input_module.so
 %%DSO%%%%HEADERS_MORE%%libexec/nginx/ngx_http_headers_more_filter_module.so
 %%DSO%%%%HTTP_AUTH_DIGEST%%libexec/nginx/ngx_http_auth_digest_module.so
+%%DSO%%%%HTTP_AUTH_JWT%%libexec/nginx/ngx_http_auth_jwt_module.so
 %%DSO%%%%HTTP_AUTH_KRB5%%libexec/nginx/ngx_http_auth_spnego_module.so
 %%DSO%%%%HTTP_AUTH_LDAP%%libexec/nginx/ngx_http_auth_ldap_module.so
 %%DSO%%%%HTTP_AUTH_PAM%%libexec/nginx/ngx_http_auth_pam_module.so
