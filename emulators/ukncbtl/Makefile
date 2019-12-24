@@ -8,7 +8,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	UKNC (Elektronika MS-0511) emulator
 
 LICENSE=	LGPL3
-LICENSE_FILE=	LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++11-lang gl qmake qt:5
 
