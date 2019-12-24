@@ -3,7 +3,7 @@
 
 PORTNAME=	bazel
 DISTVERSION=	0.29.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=	bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 
 CONFLICTS_INSTALL=	bazel
 
-USES=		python:3.3+,build shebangfix zip:infozip
+USES=		python:3.3+ shebangfix zip:infozip
 
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
