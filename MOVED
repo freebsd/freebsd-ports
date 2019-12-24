@@ -13602,3 +13602,4 @@ devel/googlemock||2019-12-19|Merged into devel/googletest
 lang/chicken|lang/chicken5|2019-12-22|Has expired: Old release; please migrate to lang/chicken5
 math/metis-edf||2019-12-23|No more required by Code_Aster 14.4.0-1
 textproc/py-text-unidecode||2019-12-24|Duplicate of converters/py-text-unidecode
+java/jakarta-bcel|java/apache-bcel|2019-12-24|Renamed upstream

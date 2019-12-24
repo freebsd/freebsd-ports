@@ -3,6 +3,7 @@
 
     COMMENT = Java language support
 
+    SUBDIR += apache-bcel
     SUBDIR += apache-commons-cli
     SUBDIR += apache-commons-collections
     SUBDIR += apache-commons-lang
@@ -42,7 +43,6 @@
     SUBDIR += intellij-ultimate
     SUBDIR += jad
     SUBDIR += jai
-    SUBDIR += jakarta-bcel
     SUBDIR += jakarta-commons-beanutils
     SUBDIR += jakarta-commons-codec
     SUBDIR += jakarta-commons-dbcp
