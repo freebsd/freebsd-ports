@@ -6,15 +6,13 @@ PORTVERSION=	1.01b.19
 CATEGORIES=	misc
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_1.01b.orig
+DISTFILES=	${PORTNAME}_1.01b.orig${EXTRACT_SUFX} \
+		${_debfile}
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${PORTNAME}_1.01b-15.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Move/Copy/Append/Link multiple files
-
-BROKEN=		unfetchable
 
 LICENSE=	Freeware
 LICENSE_NAME=	MMV
@@ -24,8 +22,16 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 CFLAGS+=	-DHAS_DIRENT
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.01b.orig
 
+_debfile=	${PORTNAME}_1.01b-19.debian.tar.xz
+
+pre-patch:
+	${TAR} -C ${WRKDIR} -xvJf ${DISTDIR}/${_debfile} debian/patches
+	cd ${WRKSRC} && while read p ; do \
+		${PATCH} <${WRKDIR}/debian/patches/$$p ; \
+	done <${WRKDIR}/debian/patches/series
+
 do-build:
-	cd ${WRKSRC}; ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mmv ${STAGEDIR}${PREFIX}/bin/

@@ -50,18 +50,6 @@
  		case ESC:
  			if ((c = *(++p)) == '\0') {
  				printf(TRAILESC, from, to, ESC);
-@@ -1215,7 +1220,11 @@ static int keepmatch(ffrom, pathend, pk, needslash, di
- 	getstat(pathbuf, ffrom);
- 	if ((ffrom->fi_stflags & FI_ISDIR) ? !dirs : !fils)
- #endif
-+	{
-+		if (verbose)
-+			printf("ignoring directory %s\n", ffrom->fi_name);
- 		return(0);
-+	}
- 
- 	if (needslash) {
- 		strcpy(pathend + *pk, SLASHSTR);
 @@ -2030,7 +2039,7 @@ static void makerep()
  	repbad = 0;
  	p = fullrep;
@@ -71,12 +59,3 @@
  			c = *(++pat);
  #ifndef IS_MSDOS
  			if (c == 'l') {
-@@ -2828,7 +2837,7 @@ static int getreply(m, failact)
- 	static FILE *tty = NULL;
- 	int c, r;
- 
--	fprintf(stderr, m);
-+	fprintf(stderr, "%s", m);
- 	if (tty == NULL && (tty = fopen(TTY, "r")) == NULL) {
- 		fprintf(stderr, "Can not open %s to get reply.\n", TTY);
- 		if (failact == -1)
