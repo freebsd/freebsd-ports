@@ -9,7 +9,7 @@ CATEGORIES=	lang
 MASTER_SITES=	https://01.org/sites/default/files/
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	OpenCL library for Intel GPUs
+COMMENT=	OpenCL implementation for Intel GPUs
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
