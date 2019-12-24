@@ -31,6 +31,7 @@ CMAKE_OFF=	MEDIA_BUILD_FATAL_WARNINGS BUILD_CMRTLIB
 CMAKE_ARGS=	-DBUILD_TYPE:STRING="${CMAKE_BUILD_TYPE}" \
 		-DARCH:STRING="${ARCH_SUFX}" \
 		-DUFO_MARCH:STRING="${CPUTYPE}"
+CFLAGS+=	-Wno-macro-redefined # __fastcall
 PLIST_FILES=	lib/dri/iHD_drv_video.so
 
 OPTIONS_DEFINE=	TEST X11
@@ -49,9 +50,6 @@ post-patch:
 		${REINPLACE_CMD} -i .gcc.bak '/-fno-tree-pre/d' \
 			${WRKSRC}/media_driver/cmake/linux/media_compile_flags_linux.cmake; \
 	fi
-# Silence -Wmacro-redefined
-	@${REINPLACE_CMD} -e '/__fastcall/d' \
-		${WRKSRC}/media_driver/linux/common/cm/cm_mem_os.h
 
 post-patch-X11-off:
 	@${REINPLACE_CMD} -i .nox11 '/find_package.*X11/d' \
