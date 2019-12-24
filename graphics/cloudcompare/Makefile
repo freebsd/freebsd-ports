@@ -68,8 +68,6 @@ PLUGINS_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libvtkDomainsChemistry-6.2.so:math/vtk6
 PLUGINS_IMPLIES=	SHAPELIB
 
-CXXFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS -mvsx
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},1' ${WRKSRC}/snap/gui/ccViewer.desktop ${WRKSRC}/snap/gui/cloudcompare.desktop
 
