@@ -109,11 +109,11 @@ HTTP_GEOIP2_CFLAGS=		-I${LOCALBASE}/include
 HTTP_GEOIP2_VARS=		DSO_EXTMODS+=geoip2
 HTTP_GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
-HTTP_IP2LOCATION_GH_TUPLE=	ip2location:ip2location-nginx:d47d248:ip2location
+HTTP_IP2LOCATION_GH_TUPLE=	ip2location:ip2location-nginx:7aa49ce:ip2location
 HTTP_IP2LOCATION_LIB_DEPENDS=	libIP2Location.so:net/ip2location
 HTTP_IP2LOCATION_CONFIGURE_ON=	--add-module=${WRKSRC_ip2location}
 
-HTTP_IP2PROXY_GH_TUPLE=		ip2location:ip2proxy-nginx:d6fd05a:ip2proxy
+HTTP_IP2PROXY_GH_TUPLE=		ip2location:ip2proxy-nginx:f9815e3:ip2proxy
 HTTP_IP2PROXY_LIB_DEPENDS=	libIP2Proxy.so:net/ip2proxy
 HTTP_IP2PROXY_CONFIGURE_ON=	--add-module=${WRKSRC_ip2proxy}
 
