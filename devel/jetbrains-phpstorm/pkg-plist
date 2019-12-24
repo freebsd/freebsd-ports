@@ -20,6 +20,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/annotations-17.0.0.jar
 %%DATADIR%%/lib/annotations-java5.jar
 %%DATADIR%%/lib/asm-all-7.0.1.jar
+%%DATADIR%%/lib/assertj-core-3.13.2.jar
 %%DATADIR%%/lib/automaton-1.12-1.jar
 %%DATADIR%%/lib/batik-anim-1.12.0-8.jar
 %%DATADIR%%/lib/batik-awt-util-1.12.0-8.jar
@@ -504,6 +505,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/typings/js-lanuage-api.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/tsconfig.json
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar
+%%DATADIR%%/plugins/JavaScriptLanguage/lib/completion-ranking-js-0.0.1.jar
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/javascript-openapi.jar
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/js-test-common.jar
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/resources_en.jar
