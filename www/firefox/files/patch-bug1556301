@@ -20,16 +20,19 @@ diff --git toolkit/xre/glxtest.cpp toolkit/xre/glxtest.cpp
 index 7b33a5c2b08f0..a1e6036cb6002 100644
 --- toolkit/xre/glxtest.cpp
 +++ toolkit/xre/glxtest.cpp
-@@ -35,6 +35,8 @@
- #include "X11/Xutil.h"
+@@ -36,6 +36,11 @@
  
  #include "mozilla/Unused.h"
+ 
++#ifdef MOZ_WAYLAND
 +#include "nsAppRunner.h"  // for IsWaylandDisabled
 +#include "mozilla/widget/mozwayland.h"
- 
++#endif
++
  // stuff from glx.h
  typedef struct __GLXcontextRec* GLXContext;
-@@ -74,6 +76,15 @@ typedef uint32_t GLenum;
+ typedef XID GLXPixmap;
+@@ -74,6 +79,15 @@ typedef uint32_t GLenum;
  #define GLX_RENDERER_ID_MESA                                   0x818E
  // clang-format on
  
@@ -45,7 +48,7 @@ index 7b33a5c2b08f0..a1e6036cb6002 100644
  namespace mozilla {
  namespace widget {
  // the read end of the pipe, which will be used by GfxInfo
-@@ -118,7 +129,10 @@ static int x_error_handler(Display*, XErrorEvent* ev) {
+@@ -118,7 +132,10 @@ static int x_error_handler(Display*, XErrorEvent* ev) {
  // care about leaking memory
  extern "C" {
  
@@ -57,7 +60,7 @@ index 7b33a5c2b08f0..a1e6036cb6002 100644
    void* libegl = dlopen("libEGL.so.1", RTLD_LAZY);
    if (!libegl) {
      libegl = dlopen("libEGL.so", RTLD_LAZY);
-@@ -164,7 +178,7 @@ static int get_egl_status(char* buf, int bufsize) {
+@@ -164,7 +181,7 @@ static int get_egl_status(char* buf, int bufsize) {
      return 0;
    }
  
@@ -66,7 +69,7 @@ index 7b33a5c2b08f0..a1e6036cb6002 100644
    if (!dpy) {
      dlclose(libegl);
      return 0;
-@@ -177,9 +191,87 @@ static int get_egl_status(char* buf, int bufsize) {
+@@ -177,9 +194,87 @@ static int get_egl_status(char* buf, int bufsize) {
    }
  
    int length = 0;
@@ -155,7 +158,7 @@ index 7b33a5c2b08f0..a1e6036cb6002 100644
    }
  
    eglTerminate(dpy);
-@@ -187,7 +279,7 @@ static int get_egl_status(char* buf, int bufsize) {
+@@ -187,7 +282,7 @@ static int get_egl_status(char* buf, int bufsize) {
    return length;
  }
  
@@ -164,12 +167,13 @@ index 7b33a5c2b08f0..a1e6036cb6002 100644
    // we want to redirect to /dev/null stdout, stderr, and while we're at it,
    // any PR logging file descriptors. To that effect, we redirect all positive
    // file descriptors up to what open() returns here. In particular, 1 is stdout
-@@ -199,8 +291,30 @@ void glxtest() {
+@@ -199,8 +294,32 @@ void glxtest() {
    if (getenv("MOZ_AVOID_OPENGL_ALTOGETHER"))
      fatal_error(
          "The MOZ_AVOID_OPENGL_ALTOGETHER environment variable is defined");
 +}
 +
++#ifdef MOZ_WAYLAND
 +bool wayland_egltest() {
 +  // NOTE: returns false to fall back to X11 when the Wayland socket doesn't
 +  // exist but fails with fatal_error if something actually went wrong
@@ -183,20 +187,21 @@ index 7b33a5c2b08f0..a1e6036cb6002 100644
 +  if (length >= bufsize) {
 +    fatal_error("GL strings length too large for buffer size");
 +  }
-+
-+  ///// Finally write data to the pipe
-+  mozilla::Unused << write(write_end_of_the_pipe, buf, length);
  
 -    ///// Open libGL and load needed symbols /////
++  ///// Finally write data to the pipe
++  mozilla::Unused << write(write_end_of_the_pipe, buf, length);
++
 +  return true;
 +}
++#endif
 +
 +void glxtest() {
 +  ///// Open libGL and load needed symbols /////
  #if defined(__OpenBSD__) || defined(__NetBSD__)
  #  define LIBGL_FILENAME "libGL.so"
  #else
-@@ -401,7 +515,7 @@ void glxtest() {
+@@ -401,7 +520,7 @@ void glxtest() {
    // If we failed to get the driver name from X, try via EGL_MESA_query_driver.
    // We are probably using Wayland.
    if (!gotDriDriver) {
@@ -205,16 +210,17 @@ index 7b33a5c2b08f0..a1e6036cb6002 100644
      if (length >= bufsize) {
        fatal_error("GL strings length too large for buffer size");
      }
-@@ -431,7 +545,11 @@ bool fire_glxtest_process() {
+@@ -431,7 +550,12 @@ bool fire_glxtest_process() {
    if (pid == 0) {
      close(pfd[0]);
      write_end_of_the_pipe = pfd[1];
 -    glxtest();
 +    close_logging();
 +    // TODO: --display command line argument is not properly handled
-+    if (IsWaylandDisabled() || !wayland_egltest()) {
++#ifdef MOZ_WAYLAND
++    if (IsWaylandDisabled() || !wayland_egltest())
++#endif
 +      glxtest();
-+    }
      close(pfd[1]);
      _exit(0);
    }
