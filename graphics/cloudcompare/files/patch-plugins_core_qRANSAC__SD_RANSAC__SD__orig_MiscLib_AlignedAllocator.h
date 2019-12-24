@@ -1,6 +1,6 @@
---- ./plugins/core/qRANSAC_SD/RANSAC_SD_orig/MiscLib/AlignedAllocator.h.orig	2019-01-07 13:59:17.670295000 -0500
-+++ ./plugins/core/qRANSAC_SD/RANSAC_SD_orig/MiscLib/AlignedAllocator.h	2019-01-07 13:59:38.242600000 -0500
-@@ -1,7 +1,7 @@
+--- plugins/core/qRANSAC_SD/RANSAC_SD_orig/MiscLib/AlignedAllocator.h.orig	2019-06-13 21:16:40 UTC
++++ plugins/core/qRANSAC_SD/RANSAC_SD_orig/MiscLib/AlignedAllocator.h
+@@ -1,12 +1,12 @@
  #ifndef MiscLib__ALIGNEDALLOCATOR_HEADER__
  #define MiscLib__ALIGNEDALLOCATOR_HEADER__
  #include <memory>
@@ -9,3 +9,9 @@
  #include <malloc.h>
  #else
  #include <stdlib.h>
+ #endif
+-#include <xmmintrin.h>
++#include <mm_malloc.h>
+ #include <limits>
+ #ifdef max
+ #undef max
