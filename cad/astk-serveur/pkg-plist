@@ -590,7 +590,7 @@
 %%SERV%%%%ASTKDIR%%/unittest/datafiles/with_win_CR.export
 %%SERV%%%%ASTKDIR%%/unittest/run_test.py
 %%SERV%%%%ASTKDIR%%/unittest/test_relocate.py
-%%SERV%%aster/aster-mpihosts
+%%MPI%%%%SERV%%aster/aster-mpihosts
 %%SERV%%%%ETCDIR%%/asrun
 %%SERV%%%%ETCDIR%%/aster
 %%SERV%%%%ETCDIR%%/config_nodename
