@@ -8,6 +8,7 @@ CATEGORIES=	x11-wm
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	bd5a5fb56812.patch:-p1 065f9ffd4d35.patch:-p1
 PATCHFILES+=	9657d52cd709.patch:-p1 de3db23e23be.patch:-p1
+PATCHFILES+=	e54058fcc740.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Lightweight X11 compositor
