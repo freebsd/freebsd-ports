@@ -1,0 +1,4 @@
+Pytest-factoryboy makes it easy to combine factory approach to the test setup
+with the dependency injection, heart of the pytest fixtures.
+
+WWW: https://github.com/pytest-dev/pytest-factoryboy
