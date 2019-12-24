@@ -9,7 +9,7 @@ CATEGORIES=	lang
 MASTER_SITES=	https://01.org/sites/default/files/
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	OpenCL implementation for Intel GPUs
+COMMENT=	Legacy OpenCL implementation for Intel HD (Gen7 to Gen9.5)
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
