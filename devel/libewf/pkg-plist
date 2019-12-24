@@ -17,10 +17,8 @@ lib/libewf.a
 lib/libewf.so
 lib/libewf.so.2
 lib/libewf.so.2.0.0
-%%PYTHON2_SITELIBDIR%%/pyewf.a
-%%PYTHON2_SITELIBDIR%%/pyewf.so
-%%PYTHON3_SITELIBDIR%%/pyewf.a
-%%PYTHON3_SITELIBDIR%%/pyewf.so
+%%PYTHON_SITELIBDIR%%/pyewf.a
+%%PYTHON_SITELIBDIR%%/pyewf.so
 libdata/pkgconfig/libewf.pc
 man/man1/ewfacquire.1.gz
 man/man1/ewfacquirestream.1.gz
