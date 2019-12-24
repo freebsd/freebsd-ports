@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME:S/2/${DISTVERSION}/}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	ANSI C version of the SciMark2 benchmark
 
+LICENSE=	PD
+
 USES=		zip
 
 NO_WRKSUBDIR=	yes
