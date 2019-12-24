@@ -2,8 +2,7 @@
 
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
-PORTREVISION=	1
+DISTVERSION=	1.5.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,18 +24,21 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_COMMIT=	6a164d8119cc6575d6b3bfed7b6295f2ae6c0f38
+GL_COMMIT=	d76deb0655fdf4f60e29dc74bca29efb380d9a8f
 MAKE_ENV=	${CARGO_ENV}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-test-layout \
 		share/applications/sm.puri.Squeekboard.desktop
 
 CARGO_CRATES=	aho-corasick-0.7.6 \
+		ansi_term-0.11.0 \
 		atk-sys-0.7.0 \
+		atty-0.2.13 \
 		bitflags-1.0.4 \
 		cairo-rs-0.5.0 \
 		cairo-sys-rs-0.7.0 \
 		cc-1.0.45 \
+		clap-2.32.0 \
 		dtoa-0.4.4 \
 		fragile-0.3.0 \
 		gdk-0.9.0 \
@@ -66,10 +68,14 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		serde-1.0.101 \
 		serde_derive-1.0.101 \
 		serde_yaml-0.8.9 \
+		strsim-0.7.0 \
 		syn-1.0.5 \
+		textwrap-0.10.0 \
 		thread_local-0.3.6 \
+		unicode-width-0.1.7 \
 		unicode-xid-0.2.0 \
 		utf8-ranges-1.0.4 \
+		vec_map-0.8.1 \
 		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
