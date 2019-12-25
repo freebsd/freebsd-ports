@@ -3,6 +3,7 @@
 
 PORTNAME=	astk
 DISTVERSION=	2019.0-1
+PORTREVISION=	1
 CATEGORIES=	cad
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
@@ -35,7 +36,7 @@ RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:shells/${SHIADEP}
 
 USES=		gettext
 .if !defined(CLIENT_SEUL)
-USES+=		python:3.6 shebangfix tk:build
+USES+=		python:3.6+ shebangfix tk:build
 SHEBANG_FILES=	unittest/run_test.py
 .else
 USES+=		tk
