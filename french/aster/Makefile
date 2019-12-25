@@ -3,6 +3,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -48,7 +49,7 @@ LIB_DEPENDS+=	libhdf5.so:science/hdf5				\
 RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
 		astk-serveur>0:cad/astk-serveur
 
-USES=		bison fortran gettext python:3.6 qt:5 tk
+USES=		bison fortran gettext python:3.6+ qt:5 tk
 USE_BINUTILS=	yes
 USE_QT=		linguisttools_build
 
@@ -88,7 +89,7 @@ INTERACTIVE_SCRIPTS=	check_compilers.py setup.py
 
 .if ${OPSYS} == FreeBSD && ((${OSREL:R} <= 12 && ${OSVERSION} < 1201506)	\
 			|| (${OSREL:R} > 12 && ${OSVERSION} < 1300068))
-BROKEN=	a larger value of ARG_MAX is needed for Code_Aster, please upgrade your system
+#BROKEN=	a larger value of ARG_MAX is needed for Code_Aster, please upgrade your system
 .endif
 
 .if ${ARCH} == "i386"
