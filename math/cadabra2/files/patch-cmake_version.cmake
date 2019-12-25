@@ -1,8 +1,8 @@
---- cmake/version.cmake.orig	2019-02-09 20:39:43 UTC
+--- cmake/version.cmake.orig	2019-12-25 01:28:15 UTC
 +++ cmake/version.cmake
-@@ -4,7 +4,7 @@ set(CADABRA_VERSION_PATCH 4)
- set(CADABRA_VERSION_TWEAK 0)
- set(COPYRIGHT_YEARS "2001-2018")
+@@ -4,7 +4,7 @@ set(CADABRA_VERSION_PATCH 8)
+ set(CADABRA_VERSION_TWEAK 1)
+ set(COPYRIGHT_YEARS "2001-2019")
  math(EXPR SYSTEM_BITS "${CMAKE_SIZEOF_VOID_P} * 8")
 -find_program(GIT git PATHS ${GIT_DIR})
 +#find_program(GIT git PATHS ${GIT_DIR})

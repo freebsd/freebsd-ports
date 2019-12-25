@@ -1,0 +1,10 @@
+--- client_server/CMakeLists.txt.orig	2019-12-25 01:29:04 UTC
++++ client_server/CMakeLists.txt
+@@ -272,6 +272,6 @@ if(NOT MSVC)
+ 	 FILES
+ 	 ../man/man1/cadabra-server.1
+ 	 DESTINATION
+-	 share/man/man1
++	 man/man1
+ 	 )
+ endif()
