@@ -29,7 +29,7 @@ OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
 OPENMP_BROKEN_OFF=	still requires omp.h, see https://github.com/intel/mkl-dnn/issues/581
 
 CXXFLAGS_amd64=	-msse4.1
-CFXXLAGS_i386=	-msse4.1
+CXXFLAGS_i386=	-msse4.1
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
