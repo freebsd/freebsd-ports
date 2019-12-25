@@ -1,15 +1,27 @@
-;; a startup elisp for YaTeX
-;;   -- S. Taoka <taoka@FreeBSD.org>
+;; startup elisp for YaTeX
+;;
 ;; $FreeBSD$
-
-(setq load-path (append (list 
-        "%%PREFIX%%/%%EMACS_SITE_LISPDIR%%/yatex"
-        ) load-path))
+;;
 (setq auto-mode-alist
      (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
 (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
+(cond
+  ((string= current-language-environment "Japanese")
+   (progn
+     (setq YaTeX-help-file "%%PREFIX%%/%%EMACS_SITE_LISPDIR%%/yatex/help/YATEXHLP.jp")
+     (setq tex-command "platex")
+   ))
+  (t
+   (progn
+     (setq YaTeX-help-file "%%PREFIX%%/%%EMACS_SITE_LISPDIR%%/yatex/help/YATEXHLP.eng")
+     (setq tex-command "latex")
+   ))
+)
+(setq YaTeX-use-font-lock t)
+(setq YaTeX-dvipdf-command "dvipdfmx")
+(setq tex-pdfview-command "mupdf")
+
 ;;
-;(setq tex-command "latex")
 ;(setq dvi2-command "xdvi -geo +0+0 -s 3")
 ;; If you use dvipsk as default, you should use the following three lines.
 ;(setq dviprint-from-format "-p %b")
@@ -18,26 +30,7 @@
 ;; specifying a Kanji code for Mule
 ;;   (1=Shift JIS, 2=JIS, 3=EUC)
 ;(setq YaTeX-kanji-code 3)
-;;
 
-;; To highlight buffer, LaTeX commands (e.g. \section{foo})
-(if (featurep 'xemacs)
-    (progn
-      ;;;;;; XEmacs 21 or later ;;;;;;
-    	(setq YaTeX-use-font-lock t)
-      )
-  (if (string-match  "19.34" emacs-version)
-      (progn
-	;;;;;; Emacs 19.34 ;;;;;
-	(setq YaTeX-use-hilit19 t)
-	)
-    (progn
-      ;;;;;; Emacs 20 or later ;;;;;;
-;	(setq YaTeX-use-hilit19 t)
-    	(setq YaTeX-use-font-lock t)
-	)))
-
-;;
 ;;;;;;;; Yahtml (another html-mode) ;;;;;;
 ;(setq auto-mode-alist
 ;      (cons (cons "\\.html$" 'yahtml-mode) auto-mode-alist))
