@@ -12,11 +12,9 @@ COMMENT=	Grid-based manual tiling window manager
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	fails to compile: ruby.h: wrong number of arguments specified for 'deprecated' attribute
-
 BUILD_DEPENDS=	rake:devel/rubygem-rake
 
-USES=		pkgconfig tar:tbz2 xorg
+USES=		compiler:c11 pkgconfig tar:tbz2 xorg
 USE_RUBY=	yes
 USE_XORG=	x11 xft xinerama xpm xrandr xtst
 
