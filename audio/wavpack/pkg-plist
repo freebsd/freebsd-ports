@@ -6,7 +6,7 @@ include/wavpack/wavpack.h
 lib/libwavpack.a
 lib/libwavpack.so
 lib/libwavpack.so.1
-lib/libwavpack.so.1.2.0
+lib/libwavpack.so.1.2.1
 libdata/pkgconfig/wavpack.pc
 man/man1/wavpack.1.gz
 man/man1/wvgain.1.gz
