@@ -18,16 +18,6 @@
            if test -n "${OS_SYS}"; then
  	       ACPIINC="-I${OS_SYS}"
  	   else
-@@ -17683,6 +17683,9 @@
-       *linux*)
-          build_cpufreq_applet=yes
- 	 ;;
-+      i386-*-freebsd*|amd64-*-freebsd*)
-+         build_cpufreq_applet=yes
-+	 ;;
-       *)
-          { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: ${host} is not supported by cpufreq applet, not building" >&5
- $as_echo "$as_me: WARNING: ${host} is not supported by cpufreq applet, not building" >&2;}
 @@ -17949,7 +17952,7 @@
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
