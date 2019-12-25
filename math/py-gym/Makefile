@@ -12,6 +12,8 @@ COMMENT=	OpenAI toolkit for developing and comparing your reinforcement learning
 
 LICENSE=	MIT
 
+BROKEN=		depends on package: ${PYTHON_PKGNAMEPREFIX}pyglet>=1.2.0<1.3.3 - not found
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=1.2.0:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PY_ENUM34} \
 		${PYNUMPY} \
