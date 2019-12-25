@@ -1,9 +1,10 @@
-%%EMACS_SITE_LISPDIR%%/yatex/comment.el
 %%EMACS_SITE_LISPDIR%%/yatex/yahtml.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatex.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatex19.el
+%%EMACS_SITE_LISPDIR%%/yatex/yatex23.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatexadd.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatexenv.el
+%%EMACS_SITE_LISPDIR%%/yatex/yatexflt.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatexgen.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatexhie.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatexhks.el
@@ -11,9 +12,9 @@
 %%EMACS_SITE_LISPDIR%%/yatex/yatexlib.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatexm-o.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatexmth.el
+%%EMACS_SITE_LISPDIR%%/yatex/yatexpkg.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatexprc.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatexsec.el
-%%EMACS_SITE_LISPDIR%%/yatex/yatexpkg.el
-%%EMACS_SITE_LISPDIR%%/YATEXHLP.jp
-%%EMACS_SITE_LISPDIR%%/YATEXHLP.eng
-%%EMACS_SITE_LISPDIR%%/yatex-startup.el
+%%EMACS_SITE_LISPDIR%%/yatex/help/YATEXHLP.eng
+%%EMACS_SITE_LISPDIR%%/yatex/help/YATEXHLP.jp
+%%EMACS_SITE_LISPDIR%%/yatex/yatex-startup.el
