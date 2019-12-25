@@ -2,7 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	5.01.9672
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security net-vpn
 PKGNAMESUFFIX=	5
 DIST_SUBDIR=	${PORTNAME}
@@ -25,6 +25,8 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	SoftEtherVPN
 GH_PROJECT=	SoftEtherVPN
+
+CMAKE_ARGS+=	 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 
 OPTIONS_DEFINE=	DOCS UNLOCK
 
@@ -57,10 +59,6 @@ CFLAGS+=	-DSKIP_CPU_FEATURES
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/include/cpu_features_macros.h:devel/cpu_features
 .endif
-
-pre-configure:
-	# not a GNU configure
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./configure
 
 post-patch:
 	# SoftEther scatters logs, config files and PID files in PREFIX/libexec
