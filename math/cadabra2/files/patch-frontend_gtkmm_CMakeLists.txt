@@ -1,6 +1,6 @@
---- frontend/gtkmm/CMakeLists.txt.orig	2019-02-09 20:40:21 UTC
+--- frontend/gtkmm/CMakeLists.txt.orig	2019-12-10 18:37:37 UTC
 +++ frontend/gtkmm/CMakeLists.txt
-@@ -162,9 +162,9 @@ if (NOT INSTALL_TARGETS_ONLY)
+@@ -168,9 +168,9 @@ if (NOT INSTALL_TARGETS_ONLY)
  	install(FILES    ${CADABRA_IMAGES_DIR}/256x256/cadabra2-gtk.png   DESTINATION ${ICON_PREFIX}/share/icons/hicolor/256x256/apps)
  	install(FILES    ${CADABRA_IMAGES_DIR}/cadabra2-gtk.svg           DESTINATION ${ICON_PREFIX}/share/icons/hicolor/scalable/apps)
  	install(FILES    ${CADABRA_ROOT_DIR}/config/cadabra2-gtk.desktop  DESTINATION ${ICON_PREFIX}/share/applications)
@@ -13,3 +13,11 @@
  
  	# Install shared libraries on Windows. 
  	# https://stackoverflow.com/questions/32662215/how-do-you-install-gtk-3-0-on-windows
+@@ -196,6 +196,6 @@ if(NOT MSVC)
+ 	 FILES
+ 	 ../../man/man1/cadabra2-gtk.1
+ 	 DESTINATION
+-	 share/man/man1
++	 man/man1
+ 	 )
+ endif()

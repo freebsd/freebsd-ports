@@ -1,0 +1,10 @@
+--- core/CMakeLists.txt.orig	2019-12-25 01:29:51 UTC
++++ core/CMakeLists.txt
+@@ -441,6 +441,6 @@ if(NOT MSVC)
+ 	 ../man/man1/cadabra2html.1
+ 	 ../man/man1/cadabra2python.1	 
+ 	 DESTINATION
+-	 share/man/man1
++	 man/man1
+ 	 )
+ endif()

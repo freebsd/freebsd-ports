@@ -1,5 +1,6 @@
 bin/cadabra-server
 bin/cadabra2
+bin/cadabra2latex
 %%GUI%%bin/cadabra2-gtk
 bin/cadabra2cadabra
 bin/cadabra2html
