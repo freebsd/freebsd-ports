@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.61.0
+DISTVERSION=	0.62.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -36,7 +36,6 @@ GH_TUPLE=	\
 		disintegration:gift:v1.2.1:disintegration_gift/vendor/github.com/disintegration/gift \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
-		eknkc:amber:cdade1c07385:eknkc_amber/vendor/github.com/eknkc/amber \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
 		frankban:quicktest:v1.6.0:frankban_quicktest/vendor/github.com/frankban/quicktest \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
@@ -49,7 +48,7 @@ GH_TUPLE=	\
 		golang:oauth2:aaccbc9213b0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:fae7ac547cb7:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:a985d3407aa7:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cloud:v0.15.0:google_go_cloud/vendor/gocloud.dev \
@@ -81,7 +80,7 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		muesli:smartcrop:f6ebaa786a12:muesli_smartcrop/vendor/github.com/muesli/smartcrop \
 		nicksnyder:go-i18n:v1.10.0:nicksnyder_go_i18n/vendor/github.com/nicksnyder/go-i18n \
-		niklasfasching:go-org:v0.1.6:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
+		niklasfasching:go-org:v0.1.9:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
 		olekukonko:tablewriter:d4647c9c7a84:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:v1.4.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -99,9 +98,8 @@ GH_TUPLE=	\
 		tdewolff:minify:v2.6.1:tdewolff_minify/vendor/github.com/tdewolff/minify/v2 \
 		tdewolff:parse:v2.3.14:tdewolff_parse/vendor/github.com/tdewolff/parse/v2 \
 		wellington:go-libsass:c63644206701:wellington_go_libsass/vendor/github.com/wellington/go-libsass \
-		yosssi:ace:v0.0.5:yosssi_ace/vendor/github.com/yosssi/ace \
 		yuin:goldmark-highlighting:78f32c8dd6d5:yuin_goldmark_highlighting/vendor/github.com/yuin/goldmark-highlighting \
-		yuin:goldmark:v1.1.14:yuin_goldmark/vendor/github.com/yuin/goldmark
+		yuin:goldmark:v1.1.18:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 GO_BUILDFLAGS=	-ldflags="\
 		-s -w \
@@ -131,7 +129,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		9b445b9da276eb2ec592212c9e948e861a54cb74
+COMMIT_ID=		6608f1557054a7d0230dff260c1b66bc19e65ec8
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
