@@ -89,7 +89,7 @@ INTERACTIVE_SCRIPTS=	check_compilers.py setup.py
 
 .if ${OPSYS} == FreeBSD && ((${OSREL:R} <= 12 && ${OSVERSION} < 1201506)	\
 			|| (${OSREL:R} > 12 && ${OSVERSION} < 1300068))
-#BROKEN=	a larger value of ARG_MAX is needed for Code_Aster, please upgrade your system
+BROKEN=	a larger value of ARG_MAX is needed for Code_Aster, please upgrade your system
 .endif
 
 .if ${ARCH} == "i386"
