@@ -411,7 +411,7 @@ share/icons/mate/16x16/apps/kuser.png
 share/icons/mate/16x16/apps/kwin.png
 share/icons/mate/16x16/apps/locale.png
 share/icons/mate/16x16/apps/logviewer.png
-share/icons/mate/16x16/apps/mate.png
+share/icons/mate/16x16/apps/mate-desktop.png
 share/icons/mate/16x16/apps/multimedia-volume-control.png
 share/icons/mate/16x16/apps/multimedia.png
 share/icons/mate/16x16/apps/openterm.png
@@ -1562,7 +1562,7 @@ share/icons/mate/22x22/apps/kuser.png
 share/icons/mate/22x22/apps/kwin.png
 share/icons/mate/22x22/apps/locale.png
 share/icons/mate/22x22/apps/logviewer.png
-share/icons/mate/22x22/apps/mate.png
+share/icons/mate/22x22/apps/mate-desktop.png
 share/icons/mate/22x22/apps/multimedia-volume-control.png
 share/icons/mate/22x22/apps/multimedia.png
 share/icons/mate/22x22/apps/openterm.png
@@ -2711,7 +2711,7 @@ share/icons/mate/24x24/apps/kuser.png
 share/icons/mate/24x24/apps/kwin.png
 share/icons/mate/24x24/apps/locale.png
 share/icons/mate/24x24/apps/logviewer.png
-share/icons/mate/24x24/apps/mate.png
+share/icons/mate/24x24/apps/mate-desktop.png
 share/icons/mate/24x24/apps/multimedia-volume-control.png
 share/icons/mate/24x24/apps/multimedia.png
 share/icons/mate/24x24/apps/openterm.png
@@ -4610,7 +4610,7 @@ share/icons/mate/32x32/apps/kuser.png
 share/icons/mate/32x32/apps/kwin.png
 share/icons/mate/32x32/apps/locale.png
 share/icons/mate/32x32/apps/logviewer.png
-share/icons/mate/32x32/apps/mate.png
+share/icons/mate/32x32/apps/mate-desktop.png
 share/icons/mate/32x32/apps/multimedia-volume-control.png
 share/icons/mate/32x32/apps/multimedia.png
 share/icons/mate/32x32/apps/openterm.png
@@ -5752,7 +5752,7 @@ share/icons/mate/48x48/apps/kuser.png
 share/icons/mate/48x48/apps/kwin.png
 share/icons/mate/48x48/apps/locale.png
 share/icons/mate/48x48/apps/logviewer.png
-share/icons/mate/48x48/apps/mate.png
+share/icons/mate/48x48/apps/mate-desktop.png
 share/icons/mate/48x48/apps/multimedia-volume-control.png
 share/icons/mate/48x48/apps/multimedia.png
 share/icons/mate/48x48/apps/openterm.png
@@ -6931,7 +6931,7 @@ share/icons/mate/scalable/apps/goa-panel-symbolic.svg
 share/icons/mate/scalable/apps/help-browser-symbolic.svg
 share/icons/mate/scalable/apps/help-contents-symbolic.svg
 share/icons/mate/scalable/apps/help-faq-symbolic.svg
-share/icons/mate/scalable/apps/mate.svg
+share/icons/mate/scalable/apps/mate-desktop.svg
 share/icons/mate/scalable/apps/multimedia-volume-control-symbolic.svg
 share/icons/mate/scalable/apps/preferences-color-symbolic.svg
 share/icons/mate/scalable/apps/preferences-desktop-accessibility-symbolic.svg
