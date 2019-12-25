@@ -128,11 +128,9 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/util.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.1.0-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.1.1-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.pyc
-@sample %%DATADIR%%/classification.config.sample
-@sample %%DATADIR%%/reference.config.sample
 %%DATADIR%%/rules/app-layer-events.rules
 %%DATADIR%%/rules/decoder-events.rules
 %%DATADIR%%/rules/dhcp-events.rules
@@ -149,6 +147,8 @@ man/man1/suricata.1.gz
 %%DATADIR%%/rules/smtp-events.rules
 %%DATADIR%%/rules/stream-events.rules
 %%DATADIR%%/rules/tls-events.rules
+@sample %%ETCDIR%%/classification.config.sample
+@sample %%ETCDIR%%/reference.config.sample
 @sample %%ETCDIR%%/suricata.yaml.sample
 @sample %%ETCDIR%%/threshold.config.sample
 @dir %%DATADIR%%
