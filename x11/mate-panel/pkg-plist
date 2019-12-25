@@ -423,6 +423,12 @@ share/help/id/mate-clock/legal.xml
 share/help/id/mate-fish/figures/fish_applet.png
 share/help/id/mate-fish/index.docbook
 share/help/id/mate-fish/legal.xml
+share/help/ie/mate-clock/figures/clock_applet.png
+share/help/ie/mate-clock/index.docbook
+share/help/ie/mate-clock/legal.xml
+share/help/ie/mate-fish/figures/fish_applet.png
+share/help/ie/mate-fish/index.docbook
+share/help/ie/mate-fish/legal.xml
 share/help/ig/mate-clock/figures/clock_applet.png
 share/help/ig/mate-clock/index.docbook
 share/help/ig/mate-clock/legal.xml
@@ -943,6 +949,7 @@ share/locale/hu/LC_MESSAGES/mate-panel.mo
 share/locale/hy/LC_MESSAGES/mate-panel.mo
 share/locale/ia/LC_MESSAGES/mate-panel.mo
 share/locale/id/LC_MESSAGES/mate-panel.mo
+share/locale/ie/LC_MESSAGES/mate-panel.mo
 share/locale/ig/LC_MESSAGES/mate-panel.mo
 share/locale/is/LC_MESSAGES/mate-panel.mo
 share/locale/it/LC_MESSAGES/mate-panel.mo
