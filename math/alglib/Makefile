@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	alglib
-DISTVERSION=	3.15.0
+DISTVERSION=	3.16.0
 CATEGORIES=	math science
 MASTER_SITES=	http://www.alglib.net/translator/re/
 EXTRACT_SUFX=	.cpp.gpl.zip
