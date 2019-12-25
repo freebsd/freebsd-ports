@@ -113,12 +113,13 @@ share/nextcloud/i18n/client_fi.qm
 share/nextcloud/i18n/client_fr.qm
 share/nextcloud/i18n/client_gl.qm
 share/nextcloud/i18n/client_he.qm
-share/nextcloud/i18n/client_hu.qm
 share/nextcloud/i18n/client_hr.qm
+share/nextcloud/i18n/client_hu.qm
 share/nextcloud/i18n/client_id.qm
 share/nextcloud/i18n/client_is.qm
 share/nextcloud/i18n/client_it.qm
 share/nextcloud/i18n/client_ja.qm
+share/nextcloud/i18n/client_ko.qm
 share/nextcloud/i18n/client_lt_LT.qm
 share/nextcloud/i18n/client_lv.qm
 share/nextcloud/i18n/client_nb_NO.qm
