@@ -2,7 +2,7 @@
 
 PORTNAME=	mutagen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.2
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +19,7 @@ GH_TUPLE=	\
 		Microsoft:go-winio:3fe4fa31662f:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		bmatcuk:doublestar:v1.1.1:bmatcuk_doublestar/vendor/github.com/bmatcuk/doublestar \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
+		eknkc:basex:v1.0.0:eknkc_basex/vendor/github.com/eknkc/basex \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:crypto:b43e412143f9:golang_crypto/vendor/golang.org/x/crypto \
