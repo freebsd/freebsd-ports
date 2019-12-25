@@ -2,8 +2,7 @@
 
 PORTNAME=	primme
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2
-PORTREVISION=	3
+DISTVERSION=	3.0
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,7 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 USES=		fortran gmake localbase:ldflags python shebangfix
 SHEBANG_FILES=	examples.py tests.py
 USE_GITHUB=	yes
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils cython autoplist
 TEST_TARGET=	test
 
 WRKSRC_SUBDIR=	Python
