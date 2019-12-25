@@ -227,6 +227,7 @@ share/xgreeters/slick-greeter.desktop
 /usr/%%DATADIR%%/badges/sugar-session-0.90.png
 /usr/%%DATADIR%%/badges/sugar-session-0.96.png
 /usr/%%DATADIR%%/badges/sugar-session-0.98.png
+/usr/%%DATADIR%%/badges/sway.svg
 /usr/%%DATADIR%%/badges/trinity.png
 /usr/%%DATADIR%%/badges/twm.png
 /usr/%%DATADIR%%/badges/ubuntu-xorg.svg
