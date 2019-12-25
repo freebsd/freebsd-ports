@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191225:
+  AFFECTS: multimedia/libva-intel-media-driver
+  AUTHOR: jbeich@FreeBSD.org
+
+  As of libva 2.6.0 iHD driver is automatically enabled, so you no
+  longer need to adjust LIBVA_DRIVER_NAME in ~/.profile or ~/.login.
+
 20191221:
   AFFECTS: users of misc/openhab2
   AUTHOR: netchild@FreeBSD.org
