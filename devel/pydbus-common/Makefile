@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 INSTALL_TARGET=	install-strip
 
 .if ${SLAVE_PORT} == no
-USES+=		python:2.7,build
+USES+=		python:build
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
