@@ -2,8 +2,7 @@
 
 PORTNAME=	primme
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2
-PORTREVISION=	2
+DISTVERSION=	3.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,11 +45,14 @@ TEST_TARGET=	all_tests test
 PLIST_FILES=	include/primme.h \
 		include/primme_eigs.h \
 		include/primme_eigs_f77.h \
+		include/primme_eigs_f90.inc \
 		include/primme_f77.h \
+		include/primme_f90.inc \
 		include/primme_svds.h \
 		include/primme_svds_f77.h \
+		include/primme_svds_f90.inc \
 		lib/libprimme.so \
-		lib/libprimme.so.2 \
-		lib/libprimme.so.2.2
+		lib/libprimme.so.3 \
+		lib/libprimme.so.3.0
 
 .include <bsd.port.mk>
