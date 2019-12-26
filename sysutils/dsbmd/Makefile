@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbmd
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
@@ -33,7 +33,7 @@ EXFAT_RUN_DEPENDS=	mount.exfat:sysutils/fusefs-exfat
 EXT4_RUN_DEPENDS=	fuse-ext2:sysutils/fusefs-ext2
 HFS_RUN_DEPENDS=	hfsfuse:sysutils/fusefs-hfsfuse
 LKL_RUN_DEPENDS=	lklfuse:sysutils/fusefs-lkl
-MTP_RUN_DEPENDS=	simple-mtpfs:sysutils/fusefs-simple-mtpfs
+MTP_RUN_DEPENDS=	jmtpfs:sysutils/fusefs-jmtpfs
 NTFS_RUN_DEPENDS=	ntfs-3g:sysutils/fusefs-ntfs
 PTP_RUN_DEPENDS=	gphotofs:graphics/fusefs-gphotofs
 
