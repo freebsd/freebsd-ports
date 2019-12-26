@@ -1,0 +1,280 @@
+https://github.com/yuzu-emu/yuzu/issues/3066
+https://github.com/unicorn-engine/unicorn/commit/f4cc35a24afb
+
+--- externals/unicorn/CREDITS.TXT.orig	2018-01-04 00:41:12 UTC
++++ externals/unicorn/CREDITS.TXT
+@@ -67,3 +67,4 @@ Andrew Dutcher: uc_context_{save, restore} API.
+ Stephen Groat: improved CI setup.
+ David Zimmer: VB6 binding.
+ zhangwm: ARM & ARM64 big endian.
++Huitao Chen (chenhuitao) & KaiJern Lau (xwings): Python3 support for building
+--- externals/unicorn/qemu/configure.orig	2018-01-04 00:41:12 UTC
++++ externals/unicorn/qemu/configure
+@@ -554,9 +554,8 @@ fi
+ 
+ # Note that if the Python conditional here evaluates True we will exit
+ # with status 1 which is a shell 'false' value.
+-if ! $python -c 'import sys; sys.exit(sys.version_info < (2,4) or sys.version_info >= (3,))'; then
++if ! $python -c 'import sys; sys.exit(sys.version_info < (2,4))'; then
+   error_exit "Cannot use '$python', Python 2.4 or later is required." \
+-      "Note that Python 3 or later is not yet supported." \
+       "Use --python=/path/to/python to specify a supported Python."
+ fi
+ 
+--- externals/unicorn/qemu/scripts/ordereddict.py.orig	2018-01-04 00:41:12 UTC
++++ externals/unicorn/qemu/scripts/ordereddict.py
+@@ -20,7 +20,12 @@
+ #     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ #     OTHER DEALINGS IN THE SOFTWARE.
+ 
+-from UserDict import DictMixin
++try:
++    from UserDict import UserDict
++    from UserDict import DictMixin
++except ImportError:
++    from collections import UserDict
++    from collections import MutableMapping as DictMixin
+ 
+ class OrderedDict(dict, DictMixin):
+ 
+@@ -94,9 +99,6 @@ class OrderedDict(dict, DictMixin):
+     pop = DictMixin.pop
+     values = DictMixin.values
+     items = DictMixin.items
+-    iterkeys = DictMixin.iterkeys
+-    itervalues = DictMixin.itervalues
+-    iteritems = DictMixin.iteritems
+ 
+     def __repr__(self):
+         if not self:
+--- externals/unicorn/qemu/scripts/qapi-types.py.orig	2018-01-04 00:41:12 UTC
++++ externals/unicorn/qemu/scripts/qapi-types.py
+@@ -171,7 +171,7 @@ const int %(name)s_qtypes[QTYPE_MAX] = {
+ 
+     for key in members:
+         qapi_type = members[key]
+-        if builtin_type_qtypes.has_key(qapi_type):
++        if qapi_type in builtin_type_qtypes:
+             qtype = builtin_type_qtypes[qapi_type]
+         elif find_struct(qapi_type):
+             qtype = "QTYPE_QDICT"
+@@ -284,8 +284,8 @@ try:
+     opts, args = getopt.gnu_getopt(sys.argv[1:], "chbp:i:o:",
+                                    ["source", "header", "builtins",
+                                     "prefix=", "input-file=", "output-dir="])
+-except getopt.GetoptError, err:
+-    print str(err)
++except getopt.GetoptError as err:
++    print(str(err))
+     sys.exit(1)
+ 
+ output_dir = ""
+@@ -321,7 +321,7 @@ h_file = output_dir + prefix + h_file
+ 
+ try:
+     os.makedirs(output_dir)
+-except os.error, e:
++except os.error as e:
+     if e.errno != errno.EEXIST:
+         raise
+ 
+@@ -329,8 +329,12 @@ def maybe_open(really, name, opt):
+     if really:
+         return open(name, opt)
+     else:
+-        import StringIO
+-        return StringIO.StringIO()
++        try:
++            import StringIO
++            return StringIO.StringIO()
++        except ImportError:
++            from io import StringIO
++            return StringIO()
+ 
+ fdef = maybe_open(do_c, c_file, 'w')
+ fdecl = maybe_open(do_h, h_file, 'w')
+@@ -383,7 +387,8 @@ fdecl.write(mcgen('''
+                   guard=guardname(h_file)))
+ 
+ exprs = parse_schema(input_file)
+-exprs = filter(lambda expr: not expr.has_key('gen'), exprs)
++exprs = filter(lambda expr: 'gen' not in expr, exprs)
++exprs = list(exprs)
+ 
+ fdecl.write(guardstart("QAPI_TYPES_BUILTIN_STRUCT_DECL"))
+ for typename in builtin_types:
+@@ -392,13 +397,13 @@ fdecl.write(guardend("QAPI_TYPES_BUILTIN_STRUCT_DECL")
+ 
+ for expr in exprs:
+     ret = "\n"
+-    if expr.has_key('type'):
++    if 'type' in expr:
+         ret += generate_fwd_struct(expr['type'], expr['data'])
+-    elif expr.has_key('enum'):
++    elif 'enum' in expr:
+         ret += generate_enum(expr['enum'], expr['data']) + "\n"
+         ret += generate_fwd_enum_struct(expr['enum'], expr['data'])
+         fdef.write(generate_enum_lookup(expr['enum'], expr['data']))
+-    elif expr.has_key('union'):
++    elif 'union' in expr:
+         ret += generate_fwd_struct(expr['union'], expr['data']) + "\n"
+         enum_define = discriminator_find_enum_define(expr)
+         if not enum_define:
+@@ -429,19 +434,19 @@ if do_builtins:
+ 
+ for expr in exprs:
+     ret = "\n"
+-    if expr.has_key('type'):
++    if 'type' in expr:
+         ret += generate_struct(expr) + "\n"
+         ret += generate_type_cleanup_decl(expr['type'] + "List")
+         fdef.write(generate_type_cleanup(expr['type'] + "List") + "\n")
+         ret += generate_type_cleanup_decl(expr['type'])
+         fdef.write(generate_type_cleanup(expr['type']) + "\n")
+-    elif expr.has_key('union'):
++    elif 'union' in expr:
+         ret += generate_union(expr)
+         ret += generate_type_cleanup_decl(expr['union'] + "List")
+         fdef.write(generate_type_cleanup(expr['union'] + "List") + "\n")
+         ret += generate_type_cleanup_decl(expr['union'])
+         fdef.write(generate_type_cleanup(expr['union']) + "\n")
+-    elif expr.has_key('enum'):
++    elif 'enum' in expr:
+         ret += generate_type_cleanup_decl(expr['enum'] + "List")
+         fdef.write(generate_type_cleanup(expr['enum'] + "List") + "\n")
+     else:
+--- externals/unicorn/qemu/scripts/qapi-visit.py.orig	2018-01-04 00:41:12 UTC
++++ externals/unicorn/qemu/scripts/qapi-visit.py
+@@ -439,8 +439,8 @@ try:
+     opts, args = getopt.gnu_getopt(sys.argv[1:], "chbp:i:o:",
+                                    ["source", "header", "builtins", "prefix=",
+                                     "input-file=", "output-dir="])
+-except getopt.GetoptError, err:
+-    print str(err)
++except getopt.GetoptError as err:
++    print(str(err))
+     sys.exit(1)
+ 
+ input_file = ""
+@@ -476,7 +476,7 @@ h_file = output_dir + prefix + h_file
+ 
+ try:
+     os.makedirs(output_dir)
+-except os.error, e:
++except os.error as e:
+     if e.errno != errno.EEXIST:
+         raise
+ 
+@@ -484,8 +484,12 @@ def maybe_open(really, name, opt):
+     if really:
+         return open(name, opt)
+     else:
+-        import StringIO
+-        return StringIO.StringIO()
++        try:
++            import StringIO
++            return StringIO.StringIO()
++        except ImportError:
++            from io import StringIO
++            return StringIO()
+ 
+ fdef = maybe_open(do_c, c_file, 'w')
+ fdecl = maybe_open(do_h, h_file, 'w')
+@@ -554,14 +558,14 @@ if do_builtins:
+         fdef.write(generate_visit_list(typename, None))
+ 
+ for expr in exprs:
+-    if expr.has_key('type'):
++    if 'type' in expr:
+         ret = generate_visit_struct(expr)
+         ret += generate_visit_list(expr['type'], expr['data'])
+         fdef.write(ret)
+ 
+         ret = generate_declaration(expr['type'], expr['data'])
+         fdecl.write(ret)
+-    elif expr.has_key('union'):
++    elif 'union' in expr:
+         ret = generate_visit_union(expr)
+         ret += generate_visit_list(expr['union'], expr['data'])
+         fdef.write(ret)
+@@ -573,7 +577,7 @@ for expr in exprs:
+                                      expr['data'].keys())
+         ret += generate_declaration(expr['union'], expr['data'])
+         fdecl.write(ret)
+-    elif expr.has_key('enum'):
++    elif 'enum' in expr:
+         ret = generate_visit_list(expr['enum'], expr['data'])
+         ret += generate_visit_enum(expr['enum'], expr['data'])
+         fdef.write(ret)
+--- externals/unicorn/qemu/scripts/qapi.py.orig	2018-01-04 00:41:12 UTC
++++ externals/unicorn/qemu/scripts/qapi.py
+@@ -16,6 +16,11 @@ from ordereddict import OrderedDict
+ import os
+ import sys
+ 
++try:
++    basestring
++except NameError:
++    basestring = str
++
+ builtin_types = [
+     'str', 'int', 'number', 'bool',
+     'int8', 'int16', 'int32', 'int64',
+@@ -116,7 +121,7 @@ class QAPISchema:
+                     continue
+                 try:
+                     fobj = open(include_path, 'r')
+-                except IOError, e:
++                except IOError as e:
+                     raise QAPIExprError(expr_info,
+                                         '%s: %s' % (e.strerror, include))
+                 exprs_include = QAPISchema(fobj, include, self.include_hist,
+@@ -319,15 +324,15 @@ def check_union(expr, expr_info):
+ def check_exprs(schema):
+     for expr_elem in schema.exprs:
+         expr = expr_elem['expr']
+-        if expr.has_key('union'):
++        if 'union' in expr:
+             check_union(expr, expr_elem['info'])
+-        if expr.has_key('event'):
++        if 'event' in expr:
+             check_event(expr, expr_elem['info'])
+ 
+ def parse_schema(input_file):
+     try:
+         schema = QAPISchema(open(input_file, "r"))
+-    except (QAPISchemaError, QAPIExprError), e:
++    except (QAPISchemaError, QAPIExprError) as e:
+         print >>sys.stderr, e
+         exit(1)
+ 
+@@ -335,24 +340,24 @@ def parse_schema(input_file):
+ 
+     for expr_elem in schema.exprs:
+         expr = expr_elem['expr']
+-        if expr.has_key('enum'):
++        if 'enum' in expr:
+             add_enum(expr['enum'], expr['data'])
+-        elif expr.has_key('union'):
++        elif 'union' in expr:
+             add_union(expr)
+-        elif expr.has_key('type'):
++        elif 'type' in expr:
+             add_struct(expr)
+         exprs.append(expr)
+ 
+     # Try again for hidden UnionKind enum
+     for expr_elem in schema.exprs:
+         expr = expr_elem['expr']
+-        if expr.has_key('union'):
++        if 'union' in expr:
+             if not discriminator_find_enum_define(expr):
+                 add_enum('%sKind' % expr['union'])
+ 
+     try:
+         check_exprs(schema)
+-    except QAPIExprError, e:
++    except QAPIExprError as e:
+         print >>sys.stderr, e
+         exit(1)
+ 
