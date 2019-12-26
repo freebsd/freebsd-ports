@@ -78,7 +78,7 @@ _USE_GNOME_ALL+= atk cairo \
 		gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
 		gtksharp20 gtksourceview2 gvfs libartlgpl2 libbonobo \
 		libbonoboui libglade2 libgnome \
-		libgnomecanvas libgnomekbd libgnomeprint libgnomeprintui \
+		libgnomecanvas libgnomekbd \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt \
 		orbit2 pango pangox-compat pygnome2 pygobject pygtk2 \
@@ -237,12 +237,6 @@ libgnomecanvas_LIB_DEPENDS=	libgnomecanvas-2.so:graphics/libgnomecanvas
 libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2
 
 libartlgpl2_LIB_DEPENDS=	libart_lgpl_2.so:graphics/libart_lgpl
-
-libgnomeprint_LIB_DEPENDS=	libgnomeprint-2-2.so:print/libgnomeprint
-libgnomeprint_USE_GNOME_IMPL=	libbonobo libartlgpl2 gtk20
-
-libgnomeprintui_LIB_DEPENDS=	libgnomeprintui-2-2.so:x11-toolkits/libgnomeprintui
-libgnomeprintui_USE_GNOME_IMPL=	libgnomeprint libgnomecanvas
 
 libgnome_LIB_DEPENDS=	libgnome-2.so:x11/libgnome
 libgnome_USE_GNOME_IMPL=gnomevfs2 libbonobo

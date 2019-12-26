@@ -101,9 +101,6 @@
     SUBDIR += latexdiff
     SUBDIR += lgrind
     SUBDIR += libgnomecups
-    SUBDIR += libgnomeprint
-    SUBDIR += libgnomeprint-reference
-    SUBDIR += libgnomeprintmm
     SUBDIR += libharu
     SUBDIR += libijs
     SUBDIR += libmspub01
