@@ -2,6 +2,7 @@
 
 PORTNAME=	exaile
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	rm@FreeBSD.org
@@ -21,13 +22,14 @@ NO_ARCH=	yes
 USES=		desktop-file-utils gmake gnome python:2.7
 USE_GNOME=	gtk30 librsvg2 pygobject3
 USE_GSTREAMER1=	good faad
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	DOCS NLS UDISKS2 CDDB
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_BUILD_DEPENDS=	help2man:misc/help2man
 NLS_INSTALL_TARGET_OFF=	install_no_locale
 CDDB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cddb>0:audio/py-cddb@${PY_FLAVOR}
-HAL_LIB_DEPENDS=	libhal.so:sysutils/hal
+UDISKS2_DESC=	UDISKS2 implementation for hardware detection
+UDISKS2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsdisks>0:sysutils/bsdisks@${PY_FLAVOR}
 
 MAKE_ENV=	EPREFIX=${PREFIX} \
 		PYTHON2_CMD=${PYTHON_CMD} \
