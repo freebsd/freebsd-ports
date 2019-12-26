@@ -13612,3 +13612,4 @@ x11-toolkits/libgnomeprintuimm||2019-12-26|Gnome2 dependency not used anymore
 print/libgnomeprint||2019-12-26|Gnome2 dependency not used anymore
 print/libgnomeprint-reference||2019-12-26|Gnome2 dependency not used anymore
 print/libgnomeprintmm||2019-12-26|Gnome2 dependency not used anymore
+print/libgnomecups||2019-12-26|Gnome2 dependency not used anymore

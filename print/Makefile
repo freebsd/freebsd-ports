@@ -100,7 +100,6 @@
     SUBDIR += latex2rtf
     SUBDIR += latexdiff
     SUBDIR += lgrind
-    SUBDIR += libgnomecups
     SUBDIR += libharu
     SUBDIR += libijs
     SUBDIR += libmspub01
