@@ -2,8 +2,7 @@
 
 PORTNAME=	spotify-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	1
+DISTVERSION=	0.11.0
 CATEGORIES=	audio
 
 MAINTAINER=	vulcan@wired.sh
@@ -167,8 +166,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		security-framework-sys-0.3.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.103 \
-		serde_derive-1.0.103 \
+		serde-1.0.104 \
+		serde_derive-1.0.104 \
 		serde_json-1.0.41 \
 		serde_urlencoded-0.5.5 \
 		serde_yaml-0.8.11 \
@@ -183,7 +182,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		synstructure-0.12.3 \
 		tempfile-3.1.0 \
 		termcolor-1.0.5 \
-		termion-1.5.3 \
+		termion-1.5.4 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
 		time-0.1.42 \
@@ -199,12 +198,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		tokio-timer-0.2.11 \
 		try-lock-0.2.2 \
 		try_from-0.3.2 \
-		tui-0.6.2 \
+		tui-0.8.0 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.10 \
 		unicode-segmentation-1.6.0 \
-		unicode-width-0.1.6 \
+		unicode-width-0.1.7 \
 		unicode-xid-0.1.0 \
 		unicode-xid-0.2.0 \
 		url-1.7.2 \
@@ -233,9 +232,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 SUB_FILES=	pkg-message
-
-PORTDOCS=	CHANGELOG.md README.md
 PLIST_FILES=	bin/spt
+PORTDOCS=	CHANGELOG.md README.md
 
 OPTIONS_DEFINE=	DOCS SPOTIFYD
 SPOTIFYD_DESC=	Lightweight Spotify client daemon
@@ -247,9 +245,6 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} \
-		${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
