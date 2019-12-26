@@ -3,7 +3,7 @@
 
 PORTNAME=	gretl
 DISTVERSION=	2019a
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
 		libgmp.so:math/gmp \
 		libjson-glib-1.0.so:devel/json-glib \
-		libmpi.so:net/mpich \
 		libmpfr.so:math/mpfr
 
 USES=		fortran gmake gnome localbase libtool ncurses pathfix pkgconfig \
@@ -31,7 +30,7 @@ SSP_CFLAGS?=	-fstack-protector # XXX -strong crashes mklang on 12.0+ i386
 CONFIGURE_ENV=	ac_cv_lib_dl_dlopen="" \
 		LAPACK_LIBS="${LAPACK} ${BLAS}"
 
-OPTIONS_DEFINE=		ADDONS ATLAS GUI NLS ODBC OPENMP R UNZIP
+OPTIONS_DEFINE=		ADDONS ATLAS GUI MPI NLS ODBC OPENMP R UNZIP
 OPTIONS_DEFAULT=	ADDONS GUI OPENMP UNZIP
 OPTIONS_SUB=		yes
 
@@ -58,6 +57,12 @@ GUI_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libfontconfig.so:x11-fonts/fontconfig
 GUI_RUN_DEPENDS=	gnuplot:math/gnuplot
 
+MPI_CONFIGURE_WITH=	mpi
+MPI_CONFIGURE_ENV=	MPICC=${LOCALBASE}/bin/mpicc
+MPI_CONFIGURE_ON=	--with-mpi-include=${LOCALBASE}/include/mpi.h --with-mpi-lib=${LOCALBASE}/lib/libmpi.so
+MPI_LIB_DEPENDS=	libmpi.so:net/mpich
+MPI_BROKEN=		checking mpi.h usability... no # need to investigate
+
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
@@ -81,6 +86,13 @@ CONFIGURE_ARGS+=	--enable-sse2=yes
 CONFIGURE_ARGS+=	--enable-sse2=no
 .endif
 
+.include <bsd.port.pre.mk>
+
+# XXX Drop after FreeBSD 12.0 EOL
+.if !exists(/usr/include/omp.h)
+LIB_DEPENDS+=	libomp.so:devel/openmp
+.endif
+
 post-patch:
 	@${SED} -i '.orig' -E -e '/#include[[:blank:]]+<sys\/socket\.h>/\
 		{x; s/.*/#include <netinet\/in.h>/; H; x;}' \
@@ -97,4 +109,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gretl-gtk2/*.so
 	@${RMDIR} ${STAGEDIR}${DATADIR}/doc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,7 +1,7 @@
 %%GUI%%bin/gretl
 %%GUI%%bin/gretl_x11
 bin/gretlcli
-bin/gretlmpi
+%%MPI%%bin/gretlmpi
 include/gretl/adf_kpss.h
 include/gretl/bhhh_max.h
 include/gretl/bootstrap.h
@@ -34,7 +34,7 @@ include/gretl/gretl_list.h
 include/gretl/gretl_matrix.h
 include/gretl/gretl_midas.h
 include/gretl/gretl_model.h
-include/gretl/gretl_mpi.h
+%%MPI%%include/gretl/gretl_mpi.h
 include/gretl/gretl_normal.h
 include/gretl/gretl_panel.h
 include/gretl/gretl_paths.h
