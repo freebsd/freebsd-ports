@@ -1,8 +1,8 @@
 Prevent *_org.svg files from being generated to avoid plist errors
 
---- Doxyfile.orig	2018-10-17 17:25:08.751146000 +0200
-+++ Doxyfile	2018-10-17 17:25:20.330172000 +0200
-@@ -1237,7 +1237,7 @@
+--- Doxyfile.orig	2019-12-18 22:42:41 UTC
++++ Doxyfile
+@@ -1235,7 +1235,7 @@ DOT_IMAGE_FORMAT       = svg
  # The default value is: NO.
  # This tag requires that the tag HAVE_DOT is set to YES.
  

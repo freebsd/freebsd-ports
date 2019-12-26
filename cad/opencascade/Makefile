@@ -3,6 +3,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	7.4.0
+PORTREVISION=	1
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
