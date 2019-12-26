@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	geoclue
-PORTVERSION=	2.4.12
+PORTVERSION=	2.5.5
 CATEGORIES=	net devel gnome
-MASTER_SITES=	http://www.freedesktop.org/software/geoclue/releases/${PORTVERSION:R}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	D-Bus service that provides location information
@@ -12,19 +11,37 @@ COMMENT=	D-Bus service that provides location information
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup \
 		libnotify.so:devel/libnotify
 
-USES=		gettext gmake gnome libtool localbase pathfix \
-		pkgconfig tar:xz
-USE_GNOME=	glib20 intlhack introspection:build
-GNU_CONFIGURE=	yes
+USES=		gettext gnome meson pkgconfig tar:xz
+
+USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-3g-source \
-		--disable-cdma-source \
-		--disable-nmea-source \
-		--disable-modem-gps-source
-INSTALL_TARGET=	install-strip
+
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.freedesktop.org
+GL_COMMIT=	9519d67c7a9a0e97a75115f9ff99d4fb0bb81b21
+
+MESON_ARGS=	-D3g-source=false \
+		-Dcdma-source=false \
+		-Dnmea-source=false \
+		-Dmodem-gps-source=false
+
+OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	DEMO DOCS
+
+DEMO_DESC=		Install geoclue demo agent
+DEMO_LIB_DEPENDS=	libnotify.so:devel/libnotify
+DEMO_MESON_TRUE=	demo-agent
+
+DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+DOCS_MESON_TRUE=	gtk-doc
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/geoclue/geoclue.conf \
+		${STAGEDIR}${PREFIX}/etc/geoclue/geoclue.conf.sample
 
 .include <bsd.port.mk>
