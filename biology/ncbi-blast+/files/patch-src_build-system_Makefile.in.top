@@ -1,4 +1,4 @@
---- src/build-system/Makefile.in.top.orig	2018-03-27 03:40:40 UTC
+--- src/build-system/Makefile.in.top.orig	2019-12-24 15:03:47 UTC
 +++ src/build-system/Makefile.in.top
 @@ -37,21 +37,21 @@ check: $(PROJECTS)
  	fi
