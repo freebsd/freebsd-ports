@@ -1,0 +1,28 @@
+--- Makefile.orig	2018-02-09 15:54:09 UTC
++++ Makefile
+@@ -6,7 +6,7 @@ EPREFIX        = $(PREFIX)
+ 
+ LIBINSTALLDIR  = $(EPREFIX)/lib
+ DATADIR        = $(PREFIX)/share
+-MANPREFIX      = $(PREFIX)/share
++MANPREFIX     ?= $(PREFIX)/share
+ # /etc if PREFIX is /usr, $PREFIX/etc otherwise.
+ ETCDIR        := $(shell [ "$(PREFIX)" = "/usr" ] && echo /etc || echo "$(PREFIX)/etc")
+ XDGCONFDIR     = $(ETCDIR)/xdg
+@@ -23,6 +23,7 @@ EXAILELIBDIR   = $(DESTDIR)$(LIBINSTALLDIR)/exaile
+ EXAILESHAREDIR = $(DESTDIR)$(DATADIR)/exaile
+ EXAILECONFDIR  = $(DESTDIR)$(XDGCONFDIR)/exaile
+ EXAILEMANDIR   = $(DESTDIR)$(MANPREFIX)/man
++BASHCOMPDIR    = $(ETCDIR)/bash_completion.d
+ 
+ .PHONY: all all_no_locale builddir compile make-install-dirs uninstall \
+ 	install install_no_locale install-target locale install-locale \
+@@ -206,7 +207,7 @@ po/messages.pot: pot
+ #   dash (Debian's /bin/sh) doesn't support it and exits immediately, so we test it in a subshell.
+ # The "export LC_ALL=C" disables any locale-dependent sort behavior.
+ pot:
+-	( ( set -o pipefail 2> /dev/null ) && set -o pipefail ; \
++	( \
+ 	  export LC_ALL=C && cd po && \
+ 	  { find ../xl ../xlgui -name "*.py" | sort && \
+ 	    find ../data/ui -name "*.ui" | sort && \
