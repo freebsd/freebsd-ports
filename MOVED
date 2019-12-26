@@ -13605,3 +13605,4 @@ textproc/py-text-unidecode||2019-12-24|Duplicate of converters/py-text-unidecode
 java/jakarta-bcel|java/apache-bcel|2019-12-24|Renamed upstream
 deskutils/conduit||2019-12-26|Abandonware
 mail/openemm2013|mail/openemm2015|2019-12-26|Has expired: marked BROKEN for 4 months; use mail/openemm2015 instead
+devel/gnome-js-common||2019-12-26|Not used anymore by any gnome components
