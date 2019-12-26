@@ -2,7 +2,7 @@
 
 PORTNAME=	glow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	vulcan@wired.sh
@@ -16,7 +16,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	charmbracelet
 GH_TUPLE=	alecthomas:chroma:v0.7.0:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
-		charmbracelet:glamour:e4c939e29d53:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
+		charmbracelet:glamour:3a479d0c8515:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		golang:net:c0dbc17a3553:golang_net/vendor/golang.org/x/net \
@@ -34,8 +34,9 @@ GH_TUPLE=	alecthomas:chroma:v0.7.0:alecthomas_chroma/vendor/github.com/alecthoma
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
 		yuin:goldmark:v1.1.17:yuin_goldmark/vendor/github.com/yuin/goldmark
 
-PLIST_FILES=	bin/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags="-s -w -X main.Version=${DISTVERSION} -X main.CommitSHA=aa9ca8a"
 
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
