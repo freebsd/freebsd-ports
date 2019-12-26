@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2008-05-23 15:54:07.000000000 +0200
-+++ src/Makefile.in	2008-05-28 16:41:23.857301294 +0200
-@@ -1217,7 +1217,7 @@
+--- src/Makefile.in.orig	2019-12-21 09:41:47 UTC
++++ src/Makefile.in
+@@ -2607,7 +2607,7 @@ info: info-am
  
  info-am:
  
@@ -8,4 +8,4 @@
 +install-data-am: install-pkgdataSCRIPTS
  	@$(NORMAL_INSTALL)
  	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
- 
+ install-dvi: install-dvi-am

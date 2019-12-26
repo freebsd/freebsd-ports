@@ -1,11 +1,11 @@
 Add missing PO variables
 
---- po/Makevars.orig	2015-06-20 21:14:07.000000000 +0000
-+++ po/Makevars	2015-06-20 21:15:13.000000000 +0000
-@@ -23,3 +23,15 @@
+--- po/Makevars.orig	2017-04-21 20:45:54 UTC
++++ po/Makevars
+@@ -53,3 +53,15 @@ MSGID_BUGS_ADDRESS = lftp-bugs@lftp.yar.ru
  # This is the list of locale categories, beyond LC_MESSAGES, for which the
  # message catalogs shall be used.  It is usually empty.
- EXTRA_LOCALE_CATEGORIES =
+ EXTRA_LOCALE_CATEGORIES = 
 +
 +# This tells whether or not to regenerate a PO file when $(DOMAIN).pot
 +# has changed.  Possible values are "yes" and "no".  Set this to no if
