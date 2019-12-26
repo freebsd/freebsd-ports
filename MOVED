@@ -13607,3 +13607,8 @@ deskutils/conduit||2019-12-26|Abandonware
 mail/openemm2013|mail/openemm2015|2019-12-26|Has expired: marked BROKEN for 4 months; use mail/openemm2015 instead
 devel/gnome-js-common||2019-12-26|Not used anymore by any gnome components
 devel/liboobs||2019-12-26|Gnome dependency not used anymore
+x11-toolkits/libgnomeprintui||2019-12-26|Gnome2 dependency not used anymore
+x11-toolkits/libgnomeprintuimm||2019-12-26|Gnome2 dependency not used anymore
+print/libgnomeprint||2019-12-26|Gnome2 dependency not used anymore
+print/libgnomeprint-reference||2019-12-26|Gnome2 dependency not used anymore
+print/libgnomeprintmm||2019-12-26|Gnome2 dependency not used anymore

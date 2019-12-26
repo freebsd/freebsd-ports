@@ -83,8 +83,6 @@
     SUBDIR += libbonoboui-reference
     SUBDIR += libdazzle
     SUBDIR += libgdiplus
-    SUBDIR += libgnomeprintui
-    SUBDIR += libgnomeprintuimm
     SUBDIR += libgnomeui
     SUBDIR += libgnomeui-reference
     SUBDIR += libgnomeuimm26
