@@ -5,5 +5,5 @@ include/libabw-0.1/libabw/AbiDocument.h
 include/libabw-0.1/libabw/libabw.h
 lib/libabw-0.1.so
 lib/libabw-0.1.so.1
-lib/libabw-0.1.so.1.0.2
+lib/libabw-0.1.so.1.0.3
 libdata/pkgconfig/libabw-0.1.pc
