@@ -1,6 +1,6 @@
 bin/xmlroff
-share/xml/libfo-0.6.2/xmlroff.fo
-share/xml/libfo-0.6.2/xmlroff.xml
+share/xml/libfo-0.6.3/xmlroff.fo
+share/xml/libfo-0.6.3/xmlroff.xml
 %%PORTDOCS%%%%DOCSDIR%%/FoArea.html
 %%PORTDOCS%%%%DOCSDIR%%/FoAreaArea.html
 %%PORTDOCS%%%%DOCSDIR%%/FoAreaLayout.html

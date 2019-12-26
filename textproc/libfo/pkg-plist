@@ -13,10 +13,6 @@ include/libfo-0.6/libfo/fo-doc-cairo.h
 include/libfo-0.6/libfo/fo-doc-cairo-private.h
 include/libfo-0.6/libfo/fo-layout-cairo.h
 include/libfo-0.6/libfo/fo-layout-cairo-private.h
-include/libfo-0.6/libfo/fo-doc-gp.h
-include/libfo-0.6/libfo/fo-doc-gp-private.h
-include/libfo-0.6/libfo/fo-layout-gp.h
-include/libfo-0.6/libfo/fo-layout-gp-private.h
 include/libfo-0.6/libfo/fo-doc.h
 include/libfo-0.6/libfo/fo-doc-private.h
 include/libfo-0.6/libfo/fo-utils.h
@@ -41,7 +37,7 @@ include/libfo-0.6/libfo/libfo-compat.h
 lib/libfo-0.6.a
 lib/libfo-0.6.so
 lib/libfo-0.6.so.0
-lib/libfo-0.6.so.0.602.0
+lib/libfo-0.6.so.0.603.0
 libdata/pkgconfig/libfo-0.6.pc
-@xmlcatmgr share/xml/libfo-0.6.2/catalog.xml
-share/xml/libfo-0.6.2/libfo-compat.xsl
+@xmlcatmgr share/xml/libfo-0.6.3/catalog.xml
+share/xml/libfo-0.6.3/libfo-compat.xsl
