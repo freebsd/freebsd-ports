@@ -1,6 +1,7 @@
 etc/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf
 etc/dbus-1/system.d/org.freedesktop.GeoClue2.conf
 %%ETCDIR%%/geoclue.conf
+etc/xdg/autostart/geoclue-demo-agent.desktop
 include/libgeoclue-2.0/gclue-client.h
 include/libgeoclue-2.0/gclue-enum-types.h
 include/libgeoclue-2.0/gclue-enums.h
@@ -17,6 +18,7 @@ libdata/pkgconfig/geoclue-2.0.pc
 libdata/pkgconfig/libgeoclue-2.0.pc
 libexec/geoclue
 libexec/geoclue-2.0/demos/where-am-i
+libexec/geoclue-2.0/demos/agent
 share/applications/geoclue-demo-agent.desktop
 share/applications/geoclue-where-am-i.desktop
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Agent.xml
