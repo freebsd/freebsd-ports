@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-sharp
 PORTVERSION=	2.24.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	mono@FreeBSD.org
@@ -20,7 +20,7 @@ USES=		autoreconf gmake gnome libtool mono pathfix perl5 pkgconfig \
 		shebangfix tar:bzip2 xorg
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-USE_GNOME=	cairo gnomevfs2 gtksharp20 librsvg2 vte libgnomeprintui libgnomeui
+USE_GNOME=	cairo gnomevfs2 gtksharp20 librsvg2 vte libgnomeui
 USE_PERL5=	run
 USE_XORG=	ice sm
 SHEBANG_GLOB=	*.pl
