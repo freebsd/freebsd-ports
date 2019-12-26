@@ -13,9 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_mips=		fails to compile: fatal error: sys/auxv.h file not found
 BROKEN_mips64=		fails to compile: fatal error: sys/auxv.h file not found
-BROKEN_powerpc64=	fails to compile: cc1: error: unrecognized command line option "-Wno-parentheses-equality"
 
-USES=		php:pecl
+USES=		compiler:c++11-lang php:pecl
 
 .include <bsd.port.pre.mk>
 
