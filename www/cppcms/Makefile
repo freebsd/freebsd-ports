@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ web development framework
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	MIT
 
 LIB_DEPENDS=	libpcre.so:devel/pcre

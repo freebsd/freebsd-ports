@@ -8,6 +8,9 @@ CATEGORIES=	x11-toolkits devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility and widget library based on GLib and GTK+ 3
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	valac:lang/vala

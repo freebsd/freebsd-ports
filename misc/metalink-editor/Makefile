@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}editor-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI editor to create and edit metalinks
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 

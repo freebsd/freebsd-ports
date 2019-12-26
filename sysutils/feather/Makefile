@@ -10,6 +10,9 @@ CATEGORIES=	sysutils python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python script for managing tarsnap backups
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
 		tarsnap>=0:sysutils/tarsnap
 

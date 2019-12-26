@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module to parse or write delimeter-separated (e.g. CSV) files
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 DSV_BASEDIR=	${PYTHONPREFIX_SITELIBDIR}/DSV

@@ -10,6 +10,9 @@ MASTER_SITES=	http://launchpadlibrarian.net/53558954/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for LaTeX and friends
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 NO_ARCH=	yes

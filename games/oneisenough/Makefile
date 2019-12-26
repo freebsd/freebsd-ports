@@ -14,6 +14,9 @@ EXTRACT_ONLY=	${PORTNAME}_a${PORTVERSION:S/.//g}_src${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Economic development in the land of the balls
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 

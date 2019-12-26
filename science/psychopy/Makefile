@@ -9,6 +9,9 @@ CATEGORIES=	science python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Psychophysics toolkit for Python
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

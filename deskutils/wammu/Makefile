@@ -11,6 +11,9 @@ MASTER_SITES=	http://dl.cihar.com/wammu/v0/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI manager of contacts, todos, calendar, and messages in your phone
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

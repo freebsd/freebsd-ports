@@ -9,6 +9,9 @@ CATEGORIES=	net-mgmt python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PagerDuty integrations for monitoring monitoring tools
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 

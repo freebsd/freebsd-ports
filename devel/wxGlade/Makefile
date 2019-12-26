@@ -11,6 +11,9 @@ DISTNAME=	wxGlade-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	GUI builder for wxPython/wxWidgets written in Python
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 

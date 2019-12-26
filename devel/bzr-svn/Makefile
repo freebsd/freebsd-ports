@@ -11,6 +11,9 @@ MASTER_SITES=	https://launchpadlibrarian.net/102178824/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for bzr to work with svn
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS+=	bzr:devel/bzr

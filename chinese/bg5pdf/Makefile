@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/chinsan
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Chinese-Big5 encoded files to PDF, using PDFlib
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpdf.so:print/pdflib

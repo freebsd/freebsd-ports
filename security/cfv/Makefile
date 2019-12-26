@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to both test and create .sfv, .csv, and md5sum files
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		python:2.7
 ALL_TARGET=	cfv.wrapper
 INSTALL_TARGET=	install-wrapper

@@ -10,6 +10,9 @@ MASTER_SITES=	https://bitbucket.org/erikg/revelation/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password manager for the GNOME 2 desktop
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \

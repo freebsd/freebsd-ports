@@ -11,6 +11,9 @@ DISTNAME=	TrustedPickle
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrustedPickle is a Python (de)Pickler with a way to verify the data
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	BSD2CLAUSE
 
 USES=		dos2unix python:2.7 tar:tgz

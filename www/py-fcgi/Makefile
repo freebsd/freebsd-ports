@@ -14,6 +14,9 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python FastCGI interface library
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		python:2.7
 NO_WRKSUBDIR=	yes
 

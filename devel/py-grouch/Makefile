@@ -12,6 +12,9 @@ DISTNAME=	Grouch-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for describing and enforcing a Python object schema
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		python:2.7

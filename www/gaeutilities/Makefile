@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility classes to make working with Google App Engine easier
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 RUN_DEPENDS=	google-appengine>=1.2.4_1:www/google-appengine
 
 USES=		python:2.7 # same as www/google-appengine

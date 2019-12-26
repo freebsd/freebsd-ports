@@ -11,6 +11,9 @@ DISTNAME=	sippy-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	SIP Back-to-back user agent (B2BUA) server with Radius support
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 BROKEN=		unfetchable
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}

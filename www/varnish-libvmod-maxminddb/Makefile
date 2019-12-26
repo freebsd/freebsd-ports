@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	varnish-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Varnish Module (vmod) for accessing maxminddb geoip data
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	rst2man:textproc/py-docutils

@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-01jun01
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional programming, lazy expressions, and thread pools for Python
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	LGPL21+
 
 USES=		python:2.7

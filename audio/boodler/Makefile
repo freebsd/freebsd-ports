@@ -11,6 +11,9 @@ DISTFILES=	boodler-153.tar.gz boodler-snd-021902.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programmable soundscape tool
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	LGPL20 # Main program only, sounds have various copyrights
 LICENSE_FILE=	${WRKSRC}/LGPL
 

@@ -13,6 +13,9 @@ DISTNAME=	py-freebsd-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python interface to FreeBSD-specific system libraries
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 

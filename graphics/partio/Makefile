@@ -9,6 +9,9 @@ CATEGORIES=	graphics math
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for manipulating animation particle formats
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	swig3.0:devel/swig30

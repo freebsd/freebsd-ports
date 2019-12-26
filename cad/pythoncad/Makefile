@@ -11,6 +11,9 @@ DISTNAME=	PythonCAD-DS1-R${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source CAD package built designed around Python
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

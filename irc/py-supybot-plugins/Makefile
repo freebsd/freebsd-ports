@@ -12,6 +12,9 @@ DISTNAME=	Supybot-plugins-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official plugin pack for Supybot
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 RUN_DEPENDS=	supybot:irc/py-supybot@${PY_FLAVOR}
 
 USES=		python:2.7 tar:bzip2

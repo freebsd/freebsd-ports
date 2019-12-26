@@ -12,6 +12,9 @@ MASTER_SITES=	http://www.ufoot.org/download/liquidwar/v5/${PORTVERSION}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	You control an army of liquid and have to try and eat your opponents
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

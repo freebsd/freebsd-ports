@@ -11,6 +11,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for executing commands on many hosts in parallel
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/py
 
 USES=		python:2.7

@@ -11,6 +11,9 @@ DISTNAME=	SilverCity-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lexing package for over 20 programming and markup languages
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		dos2unix python:2.7
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	SilverCity

@@ -10,6 +10,9 @@ MASTER_SITES=	SF/pythondirector/pythondirector/pythondirector-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	TCP load balancer written in Python
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 

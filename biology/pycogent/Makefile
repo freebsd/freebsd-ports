@@ -9,6 +9,9 @@ CATEGORIES=	biology python
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Toolkit for statistical analysis of biological sequences
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYNUMPY} \

@@ -10,6 +10,9 @@ MASTER_SITES=	http://insitu.lri.fr/metisse/download/metisse/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Innovative X-based window system
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 

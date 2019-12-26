@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.pykota.com/software/pkpgcounter/download/tarballs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Count pages and ink coverage percent
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

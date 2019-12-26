@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}.berlios
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Little console-based phone book manager
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	MIT
 
 NO_ARCH=	yes

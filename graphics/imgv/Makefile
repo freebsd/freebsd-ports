@@ -11,6 +11,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unique and feature rich Image Viewer
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYGAME} \

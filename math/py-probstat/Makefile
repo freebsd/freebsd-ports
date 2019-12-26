@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Probability And Statistics Utils for Python
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		python:2.7 tar:tgz
 USE_PYTHON=	distutils autoplist
 

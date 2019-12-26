@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-0.6-3b
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to the Unidata NetCDF Library
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS:=	${BUILD_DEPENDS}

@@ -13,6 +13,9 @@ DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure Python implementation of SOAP 1.1
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		python:2.7 shebangfix
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes

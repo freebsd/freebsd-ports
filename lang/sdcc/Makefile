@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small Device C Compiler
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv3
 
 BROKEN_aarch64=		Fails to configure: BFD does not support target aarch64-portbld-freebsd11.0

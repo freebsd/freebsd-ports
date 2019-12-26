@@ -12,6 +12,9 @@ DIST_SUBDIR=		oolite
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Trade and combat space simulator, clone of Elite
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=		CC-BY-NC-SA-3.0 GPLv2 ZLIB
 LICENSE_COMB=		multi
 LICENSE_FILE_CC-BY-NC-SA-3.0=	${WRKSRC}/Doc/LICENSE.TXT

@@ -10,6 +10,9 @@ MASTER_SITES=	http://downloads.egenix.com/python/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible benchmark suite for Python
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

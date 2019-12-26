@@ -10,6 +10,9 @@ MASTER_SITES=	https://dl.exactcode.de/oss/exact-image/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast image processing library
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 BROKEN_armv6=		fails to configure: C++ compiler is not installed or does not work correctly

@@ -9,6 +9,9 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python binding to the X server using xcb
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	BSD3CLAUSE
 
 NO_ARCH=	yes

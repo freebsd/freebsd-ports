@@ -10,6 +10,9 @@ MASTER_SITES=	SF/ptkei2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python/Tk graphical client for Wolfpack Empire servers
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/Pmw/__init__.py:x11-toolkits/py-Pmw@${PY_FLAVOR}
 

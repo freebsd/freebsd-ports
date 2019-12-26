@@ -11,6 +11,9 @@ DISTNAME=	ResourcePackage-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated resource-as-package embedding mechanism
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 

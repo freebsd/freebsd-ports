@@ -14,6 +14,9 @@ EXTRACT_ONLY=	# This space left intentionally empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for manipulating HTML using a Pythonic object model
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	MIT
 
 USES=		python:2.7

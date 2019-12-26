@@ -12,6 +12,9 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION:E}.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python adaptor for the poker-eval toolkit
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 BROKEN=		unfetchable
 
 LICENSE=	GPLv3+

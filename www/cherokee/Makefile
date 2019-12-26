@@ -10,6 +10,9 @@ CATEGORIES=	www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and flexible web server
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 BROKEN_FreeBSD_12=	fails to configure: Unable to detect data struct is used by crypt_r

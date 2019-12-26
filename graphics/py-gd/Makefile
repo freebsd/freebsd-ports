@@ -12,6 +12,9 @@ DISTNAME=	gdmodule-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to the GD library
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LIB_DEPENDS=	libgd.so:graphics/gd
 
 USES=		python:2.7

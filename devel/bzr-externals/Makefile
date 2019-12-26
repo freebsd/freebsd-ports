@@ -11,6 +11,9 @@ MASTER_SITES=	http://launchpadlibrarian.net/91495699/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support external branches like svn:externals
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bzr:devel/bzr

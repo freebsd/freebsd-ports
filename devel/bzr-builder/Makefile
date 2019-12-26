@@ -11,6 +11,9 @@ MASTER_SITES=	http://launchpadlibrarian.net/100761063/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bzr plugin to construct a bzr branch based on a "recipe"
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	bzr:devel/bzr

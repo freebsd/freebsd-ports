@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webapp framework with modpython-based and stand-alone modes
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kid>=0.9.5:devel/py-kid@${PY_FLAVOR}
 # Has optional dependencies on database engines
 # Can optionally use py-lucene (on i386)

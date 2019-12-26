@@ -13,6 +13,9 @@ DISTNAME=	PySyck-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python binding for Syck, a YAML parser and emitter
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsyck.a:textproc/syck
 
 USES=		python:2.7

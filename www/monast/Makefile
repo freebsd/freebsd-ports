@@ -10,6 +10,9 @@ MASTER_SITES=	SF/monast/MonAst%20for%20Asterisk%201.4_1.6/1.4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitoring and an operator panel interface for AsteriskTM
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		python:2.7
 USE_RC_SUBR=	monast
 
