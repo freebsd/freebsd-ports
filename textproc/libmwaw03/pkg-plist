@@ -9,5 +9,5 @@ include/libmwaw-0.3/libmwaw/MWAWDocument.hxx
 include/libmwaw-0.3/libmwaw/libmwaw.hxx
 lib/libmwaw-0.3.so
 lib/libmwaw-0.3.so.3
-lib/libmwaw-0.3.so.3.0.14
+lib/libmwaw-0.3.so.3.0.15
 libdata/pkgconfig/libmwaw-0.3.pc
