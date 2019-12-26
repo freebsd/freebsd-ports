@@ -1,6 +1,6 @@
---- include/tbb/tbb_config.h.orig	2014-08-26 13:28:59.000000000 +0200
-+++ include/tbb/tbb_config.h	2014-09-10 20:19:15.000000000 +0200
-@@ -481,6 +481,10 @@
+--- include/tbb/tbb_config.h.orig	2019-12-18 22:42:41 UTC
++++ include/tbb/tbb_config.h
+@@ -677,6 +677,10 @@ There are four cases that are supported:
          However these functions are not defined anywhere. It seems that this problem was fixed later on
          and RHEL got an updated version of gcc 4.1.2. **/
      #define __TBB_GCC_64BIT_ATOMIC_BUILTINS_BROKEN 1
