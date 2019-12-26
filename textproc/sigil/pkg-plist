@@ -41,6 +41,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/plugin_launchers/python/bookcontainer.py
 %%DATADIR%%/plugin_launchers/python/compatibility_utils.py
 %%DATADIR%%/plugin_launchers/python/epub_utils.py
+%%DATADIR%%/plugin_launchers/python/hrefutils.py
 %%DATADIR%%/plugin_launchers/python/inputcontainer.py
 %%DATADIR%%/plugin_launchers/python/launcher.py
 %%DATADIR%%/plugin_launchers/python/navprocessor.py
@@ -259,6 +260,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/translations/sigil_fr.qm
 %%DATADIR%%/translations/sigil_gl.qm
 %%DATADIR%%/translations/sigil_it.qm
+%%DATADIR%%/translations/sigil_ja.qm
 %%DATADIR%%/translations/sigil_nl.qm
 %%DATADIR%%/translations/sigil_pl.qm
 %%DATADIR%%/translations/sigil_ru.qm
