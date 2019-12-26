@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoclue
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.12
 CATEGORIES=	net devel gnome
 MASTER_SITES=	http://www.freedesktop.org/software/geoclue/releases/${PORTVERSION:R}/
 
@@ -13,7 +13,8 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
-		libsoup-2.4.so:devel/libsoup
+		libsoup-2.4.so:devel/libsoup \
+		libnotify.so:devel/libnotify
 
 USES=		gettext gmake gnome libtool localbase pathfix \
 		pkgconfig tar:xz
