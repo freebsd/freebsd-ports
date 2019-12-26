@@ -552,6 +552,8 @@ include/wine/windows/mprerror.h
 include/wine/windows/msacm.h
 include/wine/windows/msacmdlg.h
 include/wine/windows/msacmdrv.h
+include/wine/windows/msado15_backcompat.h
+include/wine/windows/msado15_backcompat.idl
 include/wine/windows/msasn1.h
 include/wine/windows/mscat.h
 include/wine/windows/mscoree.h
@@ -1266,6 +1268,7 @@ lib/wine/capi2032.dll.so
 lib/wine/cards.dll.so
 lib/wine/cdosys.dll.so
 lib/wine/cfgmgr32.dll.so
+lib/wine/chcp.com.so
 lib/wine/clock.exe.so
 lib/wine/clusapi.dll.so
 lib/wine/cmd.exe.so
@@ -1718,6 +1721,7 @@ lib/wine/fakedlls/capi2032.dll
 lib/wine/fakedlls/cards.dll
 lib/wine/fakedlls/cdosys.dll
 lib/wine/fakedlls/cfgmgr32.dll
+lib/wine/fakedlls/chcp.com
 lib/wine/fakedlls/clock.exe
 lib/wine/fakedlls/clusapi.dll
 lib/wine/fakedlls/cmd.exe
@@ -2020,6 +2024,7 @@ lib/wine/fakedlls/mprapi.dll
 %%WINE32%%lib/wine/fakedlls/msacm.dll16
 lib/wine/fakedlls/msacm32.dll
 lib/wine/fakedlls/msacm32.drv
+lib/wine/fakedlls/msado15.dll
 lib/wine/fakedlls/msadp32.acm
 lib/wine/fakedlls/msasn1.dll
 lib/wine/fakedlls/mscat32.dll
@@ -2120,6 +2125,7 @@ lib/wine/fakedlls/ntprint.dll
 %%WINE64%%%%STAGING%%lib/wine/fakedlls/nvencodeapi64.dll
 lib/wine/fakedlls/objsel.dll
 lib/wine/fakedlls/odbc32.dll
+lib/wine/fakedlls/odbcbcp.dll
 lib/wine/fakedlls/odbccp32.dll
 lib/wine/fakedlls/odbccu32.dll
 %%WINE32%%lib/wine/fakedlls/ole2.dll16
@@ -2718,6 +2724,7 @@ lib/wine/mprapi.dll.so
 %%WINE32%%lib/wine/msacm.dll16.so
 lib/wine/msacm32.dll.so
 lib/wine/msacm32.drv.so
+lib/wine/msado15.dll.so
 lib/wine/msadp32.acm.so
 lib/wine/msasn1.dll.so
 lib/wine/mscat32.dll.so
@@ -2818,6 +2825,7 @@ lib/wine/ntprint.dll.so
 %%WINE64%%%%STAGING%%lib/wine/nvencodeapi64.dll.so
 lib/wine/objsel.dll.so
 lib/wine/odbc32.dll.so
+lib/wine/odbcbcp.dll.so
 lib/wine/odbccp32.dll.so
 lib/wine/odbccu32.dll.so
 %%WINE32%%lib/wine/ole2.dll16.so
