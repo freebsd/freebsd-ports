@@ -29,7 +29,7 @@ NLS_BUILD_DEPENDS=	help2man:misc/help2man
 NLS_INSTALL_TARGET_OFF=	install_no_locale
 CDDB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cddb>0:audio/py-cddb@${PY_FLAVOR}
 UDISKS2_DESC=	UDISKS2 implementation for hardware detection
-UDISKS2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsdisks>0:sysutils/bsdisks@${PY_FLAVOR}
+UDISKS2_RUN_DEPENDS=	${LOCALBASE}bin/bsdisks:sysutils/bsdisks
 
 MAKE_ENV=	EPREFIX=${PREFIX} \
 		PYTHON2_CMD=${PYTHON_CMD} \
