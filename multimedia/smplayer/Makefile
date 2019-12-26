@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smplayer
-DISTVERSION=	19.5.0
+DISTVERSION=	19.10.2
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
@@ -12,11 +12,12 @@ COMMENT=	Complete front-end based on Qt for mplayer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
-USES=		cpe compiler:c++11-lang desktop-file-utils dos2unix gmake \
-		qmake qt:5 tar:bzip2 xorg
+USES=		cpe compiler:c++11-lang desktop-file-utils dos2unix gl \
+		gmake qmake qt:5 tar:bzip2 xorg
+USE_GL=		gl
 USE_QT=		buildtools_build linguisttools_build \
 		core dbus gui network script widgets xml
-USE_XORG=	x11
+USE_XORG=	x11 xext
 
 CPE_VENDOR=	ricardo_villalba
 DOS2UNIX_REGEX=	.*.[^p][^n][^g]$
