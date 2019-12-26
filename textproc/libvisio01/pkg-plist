@@ -8,5 +8,5 @@ include/libvisio-0.1/libvisio/VisioDocument.h
 include/libvisio-0.1/libvisio/libvisio.h
 lib/libvisio-0.1.so
 lib/libvisio-0.1.so.1
-lib/libvisio-0.1.so.1.0.6
+lib/libvisio-0.1.so.1.0.7
 libdata/pkgconfig/libvisio-0.1.pc
