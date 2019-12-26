@@ -32,7 +32,6 @@
     SUBDIR += chart
     SUBDIR += cherrytree
     SUBDIR += clipit
-    SUBDIR += conduit
     SUBDIR += conkyemail
     SUBDIR += conkyforecast
     SUBDIR += copyq
