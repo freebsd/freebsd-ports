@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20191226:
+  AFFECTS: users of sysutils/dsbmd
+  AUTHOR: mk@freeshell.de
+
+  With version 1.10 dsbmd now uses sysutils/fusefs-jmtpfs for mounting
+  MTP devices. Please adjust your dsbmd.conf or recreate it from the new
+  dsbmd.conf.sample.
+
 20191225:
   AFFECTS: multimedia/libva-intel-media-driver
   AUTHOR: jbeich@FreeBSD.org
