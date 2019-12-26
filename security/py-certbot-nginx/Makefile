@@ -30,7 +30,7 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAV
 			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/certbot_nginx/constants.py
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/certbot_nginx/_internal/configurator.py
 
 .include "${.CURDIR}/../py-acme/version.mk"
 .include <bsd.port.mk>
