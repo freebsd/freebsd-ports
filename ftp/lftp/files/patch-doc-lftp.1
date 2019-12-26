@@ -1,143 +1,143 @@
---- doc/lftp.1.orig	2013-02-04 11:27:43.000000000 +0100
-+++ doc/lftp.1	2013-02-04 11:28:09.000000000 +0100
-@@ -166,7 +166,7 @@
+--- doc/lftp.1.orig	2019-08-26 20:28:00 UTC
++++ doc/lftp.1
+@@ -165,7 +165,7 @@ any command that accepts input URLs using the \fIbm:si
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  add <name> [<loc>]	T{
  add current place or given location to bookmarks and bind to given name
  T}
-@@ -184,7 +184,7 @@
+@@ -184,7 +184,7 @@ The following subcommands are recognized:
  .Sp
- .in +0.5i
+ .RE
  .TS
 -l	lx	.
 +l	l	.
  stat	print cache status (default)
  on|off	turn on/off caching
  flush	flush cache
-@@ -294,7 +294,7 @@
+@@ -423,7 +423,7 @@ instances of \fIrfile\fP (and \-o \fIlfile\fP). Does n
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  \-c	continue, reget
  \-E	delete source files after successful transfer
  \-e	delete target file before the transfer
-@@ -321,7 +321,7 @@
+@@ -452,7 +452,7 @@ Transfer a single file. Options:
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  \-o <lfile>	T{
  destination file name (default - basename of rfile)
  T}
-@@ -346,7 +346,7 @@
+@@ -479,7 +479,7 @@ Glob given patterns containing metacharacters and pass
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  \-f	plain files (default)
  \-d	directories
  \-a	all types
-@@ -416,7 +416,7 @@
+@@ -585,7 +585,7 @@ Gets selected files with expanded wildcards.
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  \-c	continue, reget.
  \-d	T{
  create directories the same as file names and get the files into them instead of current directory.
-@@ -439,7 +439,7 @@
+@@ -619,7 +619,7 @@ name of the source directory is appended.
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l1	l	lx	.
 +l1	l	l	.
  \-c,	\-\-continue	T{
  continue a mirror job if possible
  T}
-@@ -624,7 +624,7 @@
+@@ -871,7 +871,7 @@ local name as remote one. This can be changed by `\-d'
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  \-c	continue, reput
  \-d	T{
  create directories the same as in file names and put the files into them instead of current directory
-@@ -672,7 +672,7 @@
+@@ -959,7 +959,7 @@ Options:
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  \-c	T{
  continue transfer. Requires \fIlfile.lftp-pget-status\fP file.
  T}
-@@ -694,7 +694,7 @@
+@@ -984,7 +984,7 @@ of \fIlfile\fP is used as remote name. Does not expand
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  \-o <rfile>	T{
  specifies remote file name (default - basename of lfile)
  T}
-@@ -749,7 +749,7 @@
+@@ -1042,7 +1042,7 @@ destination is given.
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  \-q	Be quiet.
  \-v	Be verbose.
  \-Q	T{
-@@ -770,7 +770,7 @@
+@@ -1064,7 +1064,7 @@ Examples:
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  queue \-d 3	Delete the third item in the queue.
  queue \-m 6 4	T{
  Move the sixth item in the queue before the fourth.
-@@ -833,7 +833,7 @@
+@@ -1128,7 +1128,7 @@ Default delay is one second, default command is empty.
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  \-c <count>	maximum number of iterations
  \-d <delay>	delay between iterations
  \-\-while\-ok	stop when command exits with non-zero code
-@@ -880,7 +880,7 @@
+@@ -1176,7 +1176,7 @@ It can be changed by options:
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  \-a	list all settings, including default values
  \-d	list only default values, not necessary current ones
  .TE
-@@ -939,7 +939,7 @@
+@@ -1236,7 +1236,7 @@ Options:
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
  \-O <directory>	T{
  specifies base directory where files should be placed
  T}
-@@ -1157,7 +1157,7 @@
+@@ -1514,7 +1514,7 @@ The following escapes are supported:
  .Sp
- .in +0.5i
+ .RS
  .TS
 -l	lx	.
 +l	l	.
