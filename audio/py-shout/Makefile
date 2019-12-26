@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings for libshout2
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 

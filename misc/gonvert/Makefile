@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.unihedron.com/projects/gonvert/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Conversion utility that allows conversion between many units
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 

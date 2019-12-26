@@ -12,6 +12,9 @@ DISTNAME=	pyexcelerator-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library for generating Excel 97/2000/XP/2003 files
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		python:2.7 zip

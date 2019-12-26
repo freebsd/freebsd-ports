@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.equi4.com/pub/mk/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ embedded database engine with Python and Tcl support
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../license.terms
 

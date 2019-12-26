@@ -13,6 +13,9 @@ DISTNAME=	Bitten-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Continuous integration for Trac
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 

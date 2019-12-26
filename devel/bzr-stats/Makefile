@@ -11,6 +11,9 @@ MASTER_SITES=	http://launchpadlibrarian.net/65203347/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple statistics plugin for bzr
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 BUILD_DEPENDS=	bzr:devel/bzr
 RUN_DEPENDS=	bzr:devel/bzr
 

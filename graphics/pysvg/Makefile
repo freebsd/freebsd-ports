@@ -10,6 +10,9 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	pySVG - creating svg with python
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	BSD2CLAUSE
 
 USES=	zip python:2.7

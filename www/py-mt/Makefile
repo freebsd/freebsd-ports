@@ -12,6 +12,9 @@ DISTNAME=	PyMT-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module which provides Movable Type XML-RPC connectivity
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	PSFL  # says License: python
 
 USES=		python:2.7

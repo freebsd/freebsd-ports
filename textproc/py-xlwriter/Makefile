@@ -11,6 +11,9 @@ DISTNAME=	pyXLWriter-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library for generating Excel-compatible spreadsheets
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 

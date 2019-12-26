@@ -12,6 +12,9 @@ DISTNAME=	mpdBrowser-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ client for the Music Player Daemon (MPD)
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:audio/py-mpd@${PY_FLAVOR}

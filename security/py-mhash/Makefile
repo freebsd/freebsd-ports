@@ -12,6 +12,9 @@ DISTNAME=	python-mhash-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python mhash module
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

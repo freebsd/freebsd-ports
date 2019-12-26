@@ -9,6 +9,9 @@ DISTNAME=	TaskCoach-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Friendly task manager
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 

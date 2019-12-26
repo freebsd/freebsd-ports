@@ -12,6 +12,9 @@ DISTNAME=	irc-transport-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xmpp to irc transport
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:net-im/py-xmpppy@${PY_FLAVOR} \

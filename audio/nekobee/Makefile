@@ -9,6 +9,9 @@ CATEGORIES=	audio
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DSSI plugin that emulates the sound of the TB-303 Bassline
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:audio/dssi

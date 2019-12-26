@@ -10,6 +10,9 @@ MASTER_SITES=	http://randomwalker.info/gretools/${PORTVERSION:R}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME vocabulary builder
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

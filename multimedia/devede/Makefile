@@ -10,6 +10,9 @@ CATEGORIES=	multimedia
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create video DVDs, VCDs, sVCDs, or CVDs from any number of video files
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv3+
 
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \

@@ -11,6 +11,9 @@ MASTER_SITES=	http://launchpadlibrarian.net/96912507/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bzr plugin to incrementally upload changes to a dumb server
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bzr:devel/bzr

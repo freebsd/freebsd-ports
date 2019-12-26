@@ -10,6 +10,9 @@ MASTER_SITES=	https://github.com/mypaint/mypaint/releases/download/${PORTVERSION
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast painting/scribbling program
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2+ ISCL
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING

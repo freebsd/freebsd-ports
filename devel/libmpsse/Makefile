@@ -8,6 +8,9 @@ CATEGORIES=	devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source library for SPI/I2C control via FTDI chips
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../docs/LICENSE
 

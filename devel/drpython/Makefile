@@ -12,6 +12,9 @@ DISTNAME=	DrPython_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly customizable cross-platform ide to aid programming in Python
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}

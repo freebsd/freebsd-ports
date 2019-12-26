@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.tundraware.com/Software/mailfmt/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remove leading quotations from mail/news and wrap lines to fixed width
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	TundraWare
 LICENSE_NAME=	TundraWare license
 LICENSE_FILE=	${WRKSRC}/mailfmt-license.txt

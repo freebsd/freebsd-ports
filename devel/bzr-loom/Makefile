@@ -11,6 +11,9 @@ MASTER_SITES=	http://launchpadlibrarian.net/94514373/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bazaar plugin to assist in developing focused patches
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bzr:devel/bzr

@@ -13,6 +13,9 @@ DISTNAME=	tre-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface for the tre regular expressions library
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LIB_DEPENDS=	libtre.so:textproc/libtre
 
 LICENSE=	BSD2CLAUSE

@@ -12,6 +12,9 @@ DISTNAME=	pytvgrab-lib-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to write grabbers of tv scheduling collections
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 

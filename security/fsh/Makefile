@@ -12,6 +12,9 @@ MASTER_SITES=	http://www.lysator.liu.se/fsh/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast remote command execution
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		python:2.7
 GNU_CONFIGURE=	yes
 

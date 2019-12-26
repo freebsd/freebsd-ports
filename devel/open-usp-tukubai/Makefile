@@ -10,6 +10,9 @@ MASTER_SITES=	https://uec.usp-lab.com/TUKUBAI/DOWNLOAD/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open usp Tukubai is OSS version of Tukubai commands set
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

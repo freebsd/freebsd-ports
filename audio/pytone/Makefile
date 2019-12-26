@@ -12,6 +12,9 @@ DISTNAME=	PyTone-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music jukebox written in Python with a curses GUI
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2  # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 

@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-sdk
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive and innovative Ajax application framework
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	LGPL3 EPL
 LICENSE_COMB=	dual
 

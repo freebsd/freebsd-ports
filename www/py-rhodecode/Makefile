@@ -12,6 +12,9 @@ DISTNAME=	RhodeCode-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and powerful management tool for Mercurial and GIT
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PasteScript>=1.6.3:www/py-pastescript@${PY_FLAVOR}

@@ -10,6 +10,9 @@ MASTER_SITES=	http://hewgill.com/ljdump/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to download LiveJournal entries and comments
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	ZLIB
 
 PORTSCOUT=	skipv:1.5.1	# 1.5.1 is identical to 1.5 + our patches

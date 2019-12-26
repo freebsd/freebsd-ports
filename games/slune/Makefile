@@ -10,6 +10,9 @@ DISTNAME=	Slune-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D racing game with car-crashing and lots of action
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcal3d.so:graphics/cal3d

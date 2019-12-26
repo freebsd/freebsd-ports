@@ -12,6 +12,9 @@ DISTNAME=	PyProlog-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python extension embedding SWI-Prolog
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 BUILD_DEPENDS=	swipl:lang/swi-pl
 RUN_DEPENDS=	swipl:lang/swi-pl
 

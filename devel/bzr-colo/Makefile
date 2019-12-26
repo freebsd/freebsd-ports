@@ -11,6 +11,9 @@ MASTER_SITES=	https://launchpadlibrarian.net/91504187/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for bzr to support colocated branches
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bzr:devel/bzr

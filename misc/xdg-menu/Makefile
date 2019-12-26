@@ -15,6 +15,9 @@ EXTRACT_ONLY=	XDG-Menu-${DISTVERSION}.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ROX panel applet that displays an applications menu button
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Help/COPYING
 

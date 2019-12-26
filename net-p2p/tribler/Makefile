@@ -11,6 +11,9 @@ DISTNAME=	Tribler-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Streaming capable P2P network client based on BitTorrent
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi
 

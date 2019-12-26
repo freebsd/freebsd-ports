@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	-${PYTHON_PKGNAMEPREFIX:S/-//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Highlighter for HTML
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		python:2.7 shebangfix
 USE_PYTHON=	distutils autoplist
 

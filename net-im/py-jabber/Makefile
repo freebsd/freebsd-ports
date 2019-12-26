@@ -11,6 +11,9 @@ DISTNAME=	jabberpy-${PORTVERSION}-0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Jabber library
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/jabber.pth

@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python package for scripting emacs
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 
 USES=		emacs python:2.7

@@ -12,6 +12,9 @@ DISTNAME=	gnuplot-py-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to gnuplot plotting program
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	LGPL21
 
 BUILD_DEPENDS=	${PYNUMPY}

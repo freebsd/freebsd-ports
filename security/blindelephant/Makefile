@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-${PORTREVISION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fingerprint the web applications used by a web site
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	LGPL3
 
 USES=		python:2.7 tar:bzip2

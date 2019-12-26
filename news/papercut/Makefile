@@ -10,6 +10,9 @@ MASTER_SITES=	http://pessoal.org/papercut/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Papercut is a news server written in Python, using a MySQL backend
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

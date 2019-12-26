@@ -13,6 +13,9 @@ GH_ACCOUNT=	nsf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Openbox hotkey editor, written in Python and PyGTK
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	MIT
 
 RUN_DEPENDS=	py27-gtk2>=2.14:x11-toolkits/py-gtk2

@@ -12,6 +12,9 @@ DISTNAME=	pyRXP-${PORTVERSION:S/./-/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast validating XML parser for Python
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 NO_WRKSUBDIR=	yes

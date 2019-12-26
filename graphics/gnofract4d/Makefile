@@ -10,6 +10,9 @@ CATEGORIES=	graphics gnome
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 

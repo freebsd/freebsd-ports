@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	-python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light Color Management System (python bindings)
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	MIT
 
 LIB_DEPENDS=	liblcms.so:graphics/lcms

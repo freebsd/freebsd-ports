@@ -9,6 +9,9 @@ MASTER_SITES=	http://launchpadlibrarian.net/43860543/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-track non-linear audio editing
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

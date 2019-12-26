@@ -11,6 +11,9 @@ DISTNAME=	polyorb-gpl-${YEAR}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CORBA, SOAP, Ada 95 Distributed System Annex middleware
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	xmlada>=3.2:textproc/xmlada

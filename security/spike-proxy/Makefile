@@ -11,6 +11,9 @@ DISTNAME=	SP${PORTVERSION:tl:C/\.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool looking for vulnerabilities in web applications
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 

@@ -12,6 +12,9 @@ DISTNAME=	twofishmodule-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twofish cryptographic module for Python
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 USES=		python:2.7 shebangfix
 SHEBANG_FILES=	cryptfile.py decryptfile.py
 GNU_CONFIGURE=	yes

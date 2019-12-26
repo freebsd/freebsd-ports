@@ -12,6 +12,9 @@ DISTNAME=	thrift-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Facebook Bassline
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-01-27
+
 LICENSE=	APACHE20
 
 LIB_DEPENDS=	libthrift.so:devel/thrift-cpp
