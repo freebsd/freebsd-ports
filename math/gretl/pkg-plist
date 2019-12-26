@@ -78,6 +78,7 @@ include/gretl/uservar.h
 include/gretl/var.h
 include/gretl/varprint.h
 include/gretl/vartest.h
+lib/gretl-gtk2/admm.so
 lib/gretl-gtk2/anova.so
 lib/gretl-gtk2/arbond.so
 lib/gretl-gtk2/arma.so
@@ -126,8 +127,8 @@ lib/gretl-gtk2/vif.so
 %%GUI%%lib/gretl-gtk2/xlsx_import.so
 %%GUI%%lib/gretl-gtk2/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.28
-lib/libgretl-1.0.so.28.0.0
+lib/libgretl-1.0.so.31
+lib/libgretl-1.0.so.31.0.0
 libdata/pkgconfig/gretl.pc
 man/man1/gretl.1.gz
 %%GUI%%share/appdata/gretl.appdata.xml
@@ -337,6 +338,7 @@ man/man1/gretl.1.gz
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/plain.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/restr_example.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/simple_C.inp
+%%ADDONS%%%%DATADIR%%/functions/SVAR/examples/simple_C_wild.inp
 %%DATADIR%%/functions/criteria.gfn
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/dbnomics.gfn
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/dbnomics.pdf
@@ -348,6 +350,7 @@ man/man1/gretl.1.gz
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/get_other_example.inp
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/get_series_example.inp
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/get_single_example.inp
+%%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/print_dims.inp
 %%ADDONS%%%%DATADIR%%/functions/extra/extra.gfn
 %%ADDONS%%%%DATADIR%%/functions/extra/extra.pdf
 %%ADDONS%%%%DATADIR%%/functions/gig/examples/IBM.gdt
@@ -412,6 +415,7 @@ man/man1/gretl.1.gz
 %%DATADIR%%/helpfigs/arlags.png
 %%DATADIR%%/helpfigs/autocorr.png
 %%DATADIR%%/helpfigs/bic_orig.png
+%%DATADIR%%/helpfigs/cumulate.png
 %%DATADIR%%/helpfigs/dffit.png
 %%DATADIR%%/helpfigs/ell.png
 %%DATADIR%%/helpfigs/garch_h.png
@@ -438,6 +442,7 @@ man/man1/gretl.1.gz
 %%DATADIR%%/helpfigs/syssigma1.png
 %%DATADIR%%/helpfigs/syssigma2.png
 %%DATADIR%%/helpfigs/vif.png
+%%DATADIR%%/helpfigs/wlsr2.png
 %%DATADIR%%/scripts/greene/greene11_3.inp
 %%DATADIR%%/scripts/greene/greene12_1.inp
 %%DATADIR%%/scripts/greene/greene14_1.inp
@@ -452,6 +457,8 @@ man/man1/gretl.1.gz
 %%DATADIR%%/scripts/greene/greene9_1.inp
 %%DATADIR%%/scripts/greene/greene9_3.inp
 %%DATADIR%%/scripts/greene/ps_descriptions
+%%DATADIR%%/scripts/misc/BSMestim.inp
+%%DATADIR%%/scripts/misc/LLTestim.inp
 %%DATADIR%%/scripts/misc/arbond91.inp
 %%DATADIR%%/scripts/misc/armaloop.inp
 %%DATADIR%%/scripts/misc/bbond98.inp
