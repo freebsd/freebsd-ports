@@ -2,7 +2,7 @@
 
 PORTNAME=	yuzu
 PORTVERSION=	s20191225
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -41,7 +41,7 @@ GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
 		facebook:zstd:v1.3.8:zstd/externals/zstd \
 		fmtlib:fmt:6.0.0-56-g4b8f8fac:fmt/externals/fmt \
-		kinetiknz:cubeb:cubeb-0.2-1151-g9eb4c89:cubeb/externals/cubeb \
+		kinetiknz:cubeb:cubeb-0.2-1171-gaa63601:cubeb/externals/cubeb \
 		lz4:lz4:v1.8.0-8-g4db65c1:lz4/externals/lz4 \
 		madler:zlib:v1.2.11:zlib/externals/zlib/zlib \
 		nih-at:libzip:rel-1-5-2-93-g89bd6d63:libzip/externals/libzip/libzip \
