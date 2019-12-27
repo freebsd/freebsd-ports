@@ -30,9 +30,6 @@ lib/liblink-grammar.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/linkgrammar/linkgrammar.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/linkgrammar/linkgrammar.pyo
 libdata/pkgconfig/link-grammar.pc
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/ady/4.0.affix
 %%DATADIR%%/ady/4.0.constituent-knowledge
 %%DATADIR%%/ady/4.0.dict
@@ -48,8 +45,8 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/any/4.0.dict
 %%DATADIR%%/any/4.0.knowledge
 %%DATADIR%%/any/4.0.regex
-%%DATADIR%%/any/affix-punc
 %%DATADIR%%/any/README.md
+%%DATADIR%%/any/affix-punc
 %%DATADIR%%/ar/4.0.affix
 %%DATADIR%%/ar/4.0.constituent-knowledge
 %%DATADIR%%/ar/4.0.dict
@@ -84,11 +81,17 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/ar/words/words.numbers
 %%DATADIR%%/ar/words/words.prep
 %%DATADIR%%/ar/words/words.years
+%%DATADIR%%/command-help-en.txt
 %%DATADIR%%/de/4.0.affix
 %%DATADIR%%/de/4.0.constituent-knowledge
 %%DATADIR%%/de/4.0.dict
 %%DATADIR%%/de/4.0.knowledge
 %%DATADIR%%/de/4.0.regex
+%%DATADIR%%/demo-sql/4.0.affix
+%%DATADIR%%/demo-sql/4.0.constituent-knowledge
+%%DATADIR%%/demo-sql/4.0.knowledge
+%%DATADIR%%/demo-sql/4.0.regex
+%%DATADIR%%/demo-sql/dict.db
 %%DATADIR%%/en/4.0.affix
 %%DATADIR%%/en/4.0.constituent-knowledge
 %%DATADIR%%/en/4.0.dict
@@ -152,6 +155,10 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/en/words/words.v.10.2
 %%DATADIR%%/en/words/words.v.10.3
 %%DATADIR%%/en/words/words.v.10.4
+%%DATADIR%%/en/words/words.v.11.1
+%%DATADIR%%/en/words/words.v.11.2
+%%DATADIR%%/en/words/words.v.11.3
+%%DATADIR%%/en/words/words.v.11.4
 %%DATADIR%%/en/words/words.v.2.1
 %%DATADIR%%/en/words/words.v.2.2
 %%DATADIR%%/en/words/words.v.2.3
@@ -199,6 +206,7 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/he/4.0.affix
 %%DATADIR%%/he/4.0.constituent-knowledge
 %%DATADIR%%/he/4.0.dict
+%%DATADIR%%/he/4.0.dict.m4
 %%DATADIR%%/he/4.0.knowledge
 %%DATADIR%%/he/4.0.regex
 %%DATADIR%%/id/4.0.affix
