@@ -27,8 +27,8 @@ core/gmm_helper/gmm_helper.h:51:15: error: use of undeclared identifier 'GmmDest
 +    decltype(&GmmAdapterDestroy) destroyGmmFunc;
  };
  } // namespace NEO
---- runtime/dll/linux/options.cpp.orig	2019-12-09 17:18:41 UTC
-+++ runtime/dll/linux/options.cpp
+--- runtime/dll/linux/options_linux.cpp.orig	2019-12-17 11:00:10 UTC
++++ runtime/dll/linux/options_linux.cpp
 @@ -16,8 +16,8 @@ const char *frontEndDllName = FCL_LIBRARY_NAME;
  const char *igcDllName = IGC_LIBRARY_NAME;
  const char *libvaDllName = "libva.so.2";
@@ -40,8 +40,8 @@ core/gmm_helper/gmm_helper.h:51:15: error: use of undeclared identifier 'GmmDest
  
  const char *sysFsPciPath = "/sys/bus/pci/devices/";
  const char *tbxLibName = "libtbxAccess.so";
---- runtime/dll/windows/options.cpp.orig	2019-12-09 17:18:41 UTC
-+++ runtime/dll/windows/options.cpp
+--- runtime/dll/windows/options_windows.cpp.orig	2019-12-17 11:00:10 UTC
++++ runtime/dll/windows/options_windows.cpp
 @@ -14,8 +14,8 @@ const char *frontEndDllName = FCL_LIBRARY_NAME;
  const char *igcDllName = IGC_LIBRARY_NAME;
  const char *gdiDllName = "gdi32.dll";
