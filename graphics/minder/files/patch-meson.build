@@ -1,12 +1,12 @@
 Remove unused libarchive dependency
 
---- meson.build.orig	2019-04-10 04:39:47 UTC
+--- meson.build.orig	2019-12-27 05:24:27 UTC
 +++ meson.build
-@@ -51,7 +51,6 @@ dependencies = [
+@@ -61,7 +61,6 @@ dependencies = [
      dependency('granite'),
      dependency('gtk+-3.0'),
      dependency('libxml-2.0'),
 -    dependency('libarchive'),
+     dependency('gtksourceview-3.0'),
+     libmarkdown,
      math_dep
- ]
- 
