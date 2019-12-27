@@ -55,7 +55,6 @@ ATLAS_DESC=		ATLAS BLAS implementation
 CAIROPANGO_DESC=	Cairo graphics device and Pango multi-language text
 FLANG_DESC=		Use experimental flang instead of default Fortran compiler
 GHOSTSCRIPT_DESC=	Graphics device for bitmap files via Ghostscript
-INFO_DESC=		GNU info manuals
 JPEG_DESC=		JPEG graphics device
 LDOUBLE_DESC=		Long double data type
 LETTER_DESC=		US letter paper
