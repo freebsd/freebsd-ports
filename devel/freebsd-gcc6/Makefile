@@ -98,7 +98,7 @@ PLIST_SUB+=	FLOAT_H="@comment "
 PLIST_SUB+=	FLOAT_H=""
 .endif
 
-PLIST=		${.CURDIR}/pkg-plist
+PLIST=		${.CURDIR}/pkg-plist ${.CURDIR}/pkg-plist.common
 
 .if ${TARGETARCH} == "aarch64"
 PLIST+=		${.CURDIR}/pkg-plist.aarch64
