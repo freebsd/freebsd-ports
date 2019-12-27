@@ -15,6 +15,7 @@ include/xlsxwriter/shared_strings.h
 include/xlsxwriter/styles.h
 include/xlsxwriter/theme.h
 include/xlsxwriter/third_party/ioapi.h
+include/xlsxwriter/third_party/md5.h
 include/xlsxwriter/third_party/queue.h
 include/xlsxwriter/third_party/tmpfileplus.h
 include/xlsxwriter/third_party/tree.h
