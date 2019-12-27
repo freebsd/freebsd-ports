@@ -11,6 +11,8 @@ COMMENT=	PALISADE lattice cryptography library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.md
 
+BROKEN_i386=	fails to build: a declaration of 'Mul128' must be available
+
 BUILD_DEPENDS=	autoconf:devel/autoconf # possibly a mistake in the project
 
 USES=		cmake:noninja localbase
