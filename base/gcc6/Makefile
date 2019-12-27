@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	6.4.0
-PORTREVISION=	2
+PORTVERSION=	6.5.0
 CATEGORIES=	base
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION} \
 		http://www.mpfr.org/mpfr-3.1.6/:mpfr \
@@ -14,6 +13,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		gmp-6.1.2.tar.xz:gmp \
 		mpc-1.0.3.tar.gz:mpc
 PKGNAMEPREFIX=	${OPSYS:tl}-
+PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	GNU Compiler Collection
@@ -23,6 +23,7 @@ LICENSE_COMB=	multi
 
 TARGETARCH=	${ARCH:S/amd64/x86_64/}
 GCC_TARGET=	${TARGETARCH}-unknown-${OPSYS:tl}${OSREL}
+SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
 
 PREFIX=		/usr
 .for _tool in CC CXX CPP AS AR LD NM OBJCOPY RANLIB SIZE STRINGS
@@ -34,7 +35,8 @@ PLIST_SUB=	OPSYS=${OPSYS:tl} \
 		GCC_TARGET=${GCC_TARGET} \
 		GCC_VERSION=${PORTVERSION}
 
-EXTRA_PATCHES+= ${.CURDIR}/../../devel/freebsd-gcc6/files
+GCC_PORTDIR=	${.CURDIR}/../../devel/freebsd-gcc${SUFFIX}
+EXTRA_PATCHES+= ${GCC_PORTDIR}/files
 
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
@@ -63,25 +65,38 @@ CONFIGURE_TARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_TARGET=	${HOSTARCH}-unknown-${OPSYS:tl}${OSREL}
 .endif
 
+PLIST_SUB+=	LTO=""
+
+PLIST_SUB+=	PLUGINS=""
+
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 PLIST_SUB+=	FLOAT_H="@comment "
 .else
 PLIST_SUB+=	FLOAT_H=""
 .endif
 
-PLIST=		${.CURDIR}/pkg-plist
+PLIST=		${.CURDIR}/pkg-plist ${GCC_PORTDIR}/pkg-plist.common
 
+.if ${TARGETARCH} == "aarch64"
+PLIST+=		${GCC_PORTDIR}/pkg-plist.aarch64
+.endif
+.if ${TARGETARCH} == "aarch64" || ${TARGETARCH:Marm*}
+PLIST+=		${GCC_PORTDIR}/pkg-plist.arm
+.endif
 .if ${ARCH} == "amd64"
-PLIST+=		${.CURDIR}/pkg-plist.amd64
+PLIST+=		${GCC_PORTDIR}/pkg-plist.amd64
 .endif
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
-PLIST+=		${.CURDIR}/pkg-plist.i386
+PLIST+=		${GCC_PORTDIR}/pkg-plist.i386
 .endif
 .if ${ARCH:Mmips*}
-PLIST+=		${.CURDIR}/pkg-plist.mips
+PLIST+=		${GCC_PORTDIR}/pkg-plist.mips
 .endif
 .if ${ARCH:Mpowerpc*}
-PLIST+=		${.CURDIR}/pkg-plist.powerpc
+PLIST+=		${GCC_PORTDIR}/pkg-plist.powerpc
+.endif
+.if ${TARGETARCH} == "sparc64"
+PLIST+=		${GCC_PORTDIR}/pkg-plist.sparc64
 .endif
 
 post-extract:
