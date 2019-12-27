@@ -1,0 +1,16 @@
+--- Makefile.orig	2016-07-08 14:49:08 UTC
++++ Makefile
+@@ -5,7 +5,12 @@ RM?=		rm
+ MAN=		${PROG}.1.gz
+ PROG=		dialog4ports
+ CFLAGS+=	-Wall -pedantic
+-LDADD+=		-lncursesw -lm
++.if exists(/usr/lib/libncursesw.so)
++LDADD+=		-lncursesw
++.else
++LDADD+=		-lncurses
++.endif
++LDADD+=		-lm
+ PREFIX?=	/usr/local
+ BINDIR=		${PREFIX}/bin
+ MAN1DIR=	${PREFIX}/man/man1
