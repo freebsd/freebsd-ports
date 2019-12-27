@@ -8,6 +8,7 @@ share/icons/hicolor/scalable/apps/texstudio.svg
 %%DATADIR%%/block_selection.png
 %%DATADIR%%/compile_toolbar.png
 %%DATADIR%%/configure_build.png
+%%DATADIR%%/configure_commands.png
 %%DATADIR%%/configure_completion.png
 %%DATADIR%%/configure_customToolbar.png
 %%DATADIR%%/configure_customizeMenu.png
@@ -48,9 +49,12 @@ share/icons/hicolor/scalable/apps/texstudio.svg
 %%DATADIR%%/en_US.stopWords
 %%DATADIR%%/es_ES.aff
 %%DATADIR%%/es_ES.dic
+%%DATADIR%%/format_example.png
 %%DATADIR%%/fr_FR.aff
 %%DATADIR%%/fr_FR.dic
 %%DATADIR%%/fr_FR.stopWords
+%%DATADIR%%/it_IT.aff
+%%DATADIR%%/it_IT.dic
 %%DATADIR%%/hu_HU.aff
 %%DATADIR%%/hu_HU.dic
 %%DATADIR%%/latex2e.css
@@ -65,6 +69,7 @@ share/icons/hicolor/scalable/apps/texstudio.svg
 %%DATADIR%%/qt_pl.qm
 %%DATADIR%%/qt_zh.qm
 %%DATADIR%%/spellcheck_menu.png
+%%DATADIR%%/spellcheck_options.png
 %%DATADIR%%/tabletemplate_fullyframed_firstBold.js
 %%DATADIR%%/tabletemplate_fullyframed_firstBold.png
 %%DATADIR%%/tabletemplate_fullyframed_longtable.js
@@ -134,8 +139,10 @@ share/icons/hicolor/scalable/apps/texstudio.svg
 %%DATADIR%%/texstudio_ko_KR.qm
 %%DATADIR%%/texstudio_nl.qm
 %%DATADIR%%/texstudio_pl.qm
+%%DATADIR%%/texstudio_pt.qm
 %%DATADIR%%/texstudio_pt_BR.qm
 %%DATADIR%%/texstudio_ru_RU.qm
+%%DATADIR%%/texstudio_sk.qm
 %%DATADIR%%/texstudio_sv.qm
 %%DATADIR%%/texstudio_tr_TR.qm
 %%DATADIR%%/texstudio_uk.qm
@@ -144,6 +151,7 @@ share/icons/hicolor/scalable/apps/texstudio.svg
 %%DATADIR%%/th_de_DE_v2.dat
 %%DATADIR%%/th_en_US_v2.dat
 %%DATADIR%%/th_fr_FR_v2.dat
+%%DATADIR%%/th_it_IT_v2.dat
 %%DATADIR%%/thesaurus.png
 %%DATADIR%%/usermanual.css
 %%DATADIR%%/usermanual_en.html
