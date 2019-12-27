@@ -1,4 +1,4 @@
-TIMESTAMP = 1576006561
+TIMESTAMP = 1577450174
 SHA256 (OWASP-Amass-v3.4.2_GH0.tar.gz) = 7eab2423b65e2815a32aa6eae4118564f47dcda492dfe151bf0ce90dc01e4334
 SIZE (OWASP-Amass-v3.4.2_GH0.tar.gz) = 9656400
 SHA256 (PuerkitoBio-goquery-v1.5.0_GH0.tar.gz) = 0307341d56ae12648584b3990fb1e84f465870247e46aff00381c98c5ad231c7
@@ -59,8 +59,8 @@ SHA256 (golang-appengine-v1.6.1_GH0.tar.gz) = 1755aaf4c6246579337bf1bc4f834ef00c
 SIZE (golang-appengine-v1.6.1_GH0.tar.gz) = 333353
 SHA256 (golang-crypto-34f69633bfdc_GH0.tar.gz) = c3fa0760971622af64c3b7a3319291d997f2f0d53a5c90c17d25eaeba7f0371a
 SIZE (golang-crypto-34f69633bfdc_GH0.tar.gz) = 1708053
-SHA256 (golang-net-aa69164e4478_GH0.tar.gz) = b538bbdda3b9f7c93b6bbac94874d8fa85d25e43577f3b356fd825f39410be0f
-SIZE (golang-net-aa69164e4478_GH0.tar.gz) = 1100688
+SHA256 (golang-net-83d349e8ac1a_GH0.tar.gz) = 5752c376bc6383bf2055281336101c062b881f17ded2e960d718c8256023f9c7
+SIZE (golang-net-83d349e8ac1a_GH0.tar.gz) = 1103298
 SHA256 (golang-oauth2-0f29369cfe45_GH0.tar.gz) = 468421ddfe905216454006b309ebda6e97aa6089265b995bce4259d6a9efd141
 SIZE (golang-oauth2-0f29369cfe45_GH0.tar.gz) = 45498
 SHA256 (golang-protobuf-v1.3.1_GH0.tar.gz) = 3f3a6123054a9847093c119895f1660612f301fe95358f3a6a1a33fd0933e6cf
