@@ -19,7 +19,6 @@
 %%DATADIR%%/ruby/gitlab-shell/bin/check
 %%DATADIR%%/ruby/gitlab-shell/bin/dump-config
 %%DATADIR%%/ruby/gitlab-shell/bin/test-logger
-%%DATADIR%%/ruby/gitlab-shell/config.yml.example
 %%DATADIR%%/ruby/gitlab-shell/lib/gitlab_access.rb
 %%DATADIR%%/ruby/gitlab-shell/lib/gitlab_access_status.rb
 %%DATADIR%%/ruby/gitlab-shell/lib/gitlab_config.rb
@@ -160,6 +159,8 @@
 %%DATADIR%%/ruby/proto/gitaly/objectpool_services_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/operations_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/operations_services_pb.rb
+%%DATADIR%%/ruby/proto/gitaly/praefect_pb.rb
+%%DATADIR%%/ruby/proto/gitaly/praefect_services_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/ref_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/ref_services_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/remote_pb.rb
@@ -222,10 +223,10 @@
 %%DATADIR%%/ruby/spec/support/helpers/seed_repo.rb
 %%DATADIR%%/ruby/spec/support/sentry.rb
 %%DATADIR%%/ruby/spec/test_repo_helper.rb
-@(,,555) %%DATADIR%%/ruby/git-hooks/gitlab-shell-hook
-@(,,555) %%DATADIR%%/ruby/gitlab-shell/hooks/post-receive
-@(,,555) %%DATADIR%%/ruby/gitlab-shell/hooks/pre-receive
-@(,,555) %%DATADIR%%/ruby/gitlab-shell/hooks/update
+@(,,755) %%DATADIR%%/ruby/git-hooks/gitlab-shell-hook
+@(,,755) %%DATADIR%%/ruby/gitlab-shell/hooks/post-receive
+@(,,755) %%DATADIR%%/ruby/gitlab-shell/hooks/pre-receive
+@(,,755) %%DATADIR%%/ruby/gitlab-shell/hooks/update
 @(,,555) %%DATADIR%%/bin/gitaly
 @(,,555) %%DATADIR%%/bin/gitaly-debug
 @(,,555) %%DATADIR%%/bin/gitaly-hooks
@@ -233,3 +234,4 @@
 @(,,555) %%DATADIR%%/bin/gitaly-wrapper
 @(,,555) %%DATADIR%%/bin/praefect
 @sample %%DATADIR%%/config.toml.sample
+@sample %%DATADIR%%/ruby/gitlab-shell/config.yml.sample

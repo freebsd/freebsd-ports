@@ -1,4 +1,4 @@
---- config.toml.example.orig	2019-11-18 19:41:52 UTC
+--- config.toml.example.orig	2019-12-19 16:43:27 UTC
 +++ config.toml.example
 @@ -2,10 +2,10 @@
  # Documentation lives at https://docs.gitlab.com/ee/administration/gitaly/ and
@@ -13,7 +13,7 @@
  
  # # Optional: listen on a TCP socket. This is insecure (no authentication)
  # listen_addr = "localhost:9999"
-@@ -24,13 +24,13 @@ bin_dir = "/home/git/gitaly"
+@@ -29,13 +29,13 @@ bin_dir = "/home/git/gitaly"
  # key_path = '/home/git/key.pem'
  
  # # Git settings
@@ -30,7 +30,16 @@
  
  # # You can optionally configure more storages for this Gitaly instance to serve up
  #
-@@ -60,7 +60,7 @@ dir = "/home/git/gitlab/log"
+@@ -47,7 +47,7 @@ path = "/home/git/repositories"
+ # # You can optionally configure Gitaly to output JSON-formatted log messages to stdout
+ # [logging]
+ # # The directory where Gitaly stores extra log files
+-dir = "/home/git/gitlab/log"
++dir = "%%PREFIX%%/www/gitlab-ce/log"
+ # format = "json"
+ # # Optional: Set log level to only log entries with that severity or above
+ # # One of, in order: debug, info, warn, errror, fatal, panic
+@@ -65,7 +65,7 @@ dir = "/home/git/gitlab/log"
  
  [gitaly-ruby]
  # The directory where gitaly-ruby is installed
@@ -39,7 +48,7 @@
  
  # # Gitaly-ruby resident set size (RSS) that triggers a memory restart (bytes)
  # max_rss = 200000000
-@@ -80,7 +80,7 @@ dir = "/home/git/gitaly/ruby"
+@@ -85,7 +85,7 @@ dir = "/home/git/gitaly/ruby"
  
  [gitlab-shell]
  # The directory where gitlab-shell is installed
