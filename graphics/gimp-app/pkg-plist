@@ -299,7 +299,6 @@ libexec/gimp/2.2/plug-ins/color-enhance/color-enhance
 libexec/gimp/2.2/plug-ins/colorify/colorify
 libexec/gimp/2.2/plug-ins/colormap-remap/colormap-remap
 libexec/gimp/2.2/plug-ins/compose/compose
-libexec/gimp/2.2/plug-ins/contrast-normalize/contrast-normalize
 libexec/gimp/2.2/plug-ins/contrast-retinex/contrast-retinex
 libexec/gimp/2.2/plug-ins/crop-zealous/crop-zealous
 libexec/gimp/2.2/plug-ins/curve-bend/curve-bend
@@ -308,7 +307,6 @@ libexec/gimp/2.2/plug-ins/depth-merge/depth-merge
 libexec/gimp/2.2/plug-ins/despeckle/despeckle
 libexec/gimp/2.2/plug-ins/destripe/destripe
 libexec/gimp/2.2/plug-ins/edge-dog/edge-dog
-libexec/gimp/2.2/plug-ins/edge-neon/edge-neon
 libexec/gimp/2.2/plug-ins/emboss/emboss
 %%AA%%libexec/gimp/2.2/plug-ins/file-aa/file-aa
 libexec/gimp/2.2/plug-ins/file-bmp/file-bmp
@@ -383,9 +381,7 @@ libexec/gimp/2.2/plug-ins/map-object/map-object
 libexec/gimp/2.2/plug-ins/max-rgb/max-rgb
 libexec/gimp/2.2/plug-ins/metadata-editor/metadata-editor
 libexec/gimp/2.2/plug-ins/metadata-viewer/metadata-viewer
-libexec/gimp/2.2/plug-ins/newsprint/newsprint
 libexec/gimp/2.2/plug-ins/nl-filter/nl-filter
-libexec/gimp/2.2/plug-ins/oilify/oilify
 libexec/gimp/2.2/plug-ins/pagecurl/pagecurl
 libexec/gimp/2.2/plug-ins/photocopy/photocopy
 libexec/gimp/2.2/plug-ins/plugin-browser/plugin-browser
@@ -427,6 +423,7 @@ share/doc/gimp/libgimp/GimpProcBrowserDialog.html
 share/doc/gimp/libgimp/GimpProgressBar.html
 share/doc/gimp/libgimp/GimpSelectButton.html
 share/doc/gimp/libgimp/GimpZoomPreview.html
+share/doc/gimp/libgimp/api-index-2-10-14.html
 share/doc/gimp/libgimp/api-index-2-10-2.html
 share/doc/gimp/libgimp/api-index-2-10-4.html
 share/doc/gimp/libgimp/api-index-2-10-6.html
@@ -526,6 +523,7 @@ share/doc/gimp/libgimp/right.png
 share/doc/gimp/libgimp/style.css
 share/doc/gimp/libgimp/up-insensitive.png
 share/doc/gimp/libgimp/up.png
+share/doc/gimp/libgimpbase/api-index-2-10-10.html
 share/doc/gimp/libgimpbase/api-index-2-10.html
 share/doc/gimp/libgimpbase/api-index-2-2.html
 share/doc/gimp/libgimpbase/api-index-2-4.html
@@ -536,6 +534,8 @@ share/doc/gimp/libgimpbase/home.png
 share/doc/gimp/libgimpbase/index.html
 share/doc/gimp/libgimpbase/left-insensitive.png
 share/doc/gimp/libgimpbase/left.png
+share/doc/gimp/libgimpbase/libgimpbase-GimpMetadata.html
+share/doc/gimp/libgimpbase/libgimpbase-GimpParasite.html
 share/doc/gimp/libgimpbase/libgimpbase-GimpValueArray.html
 share/doc/gimp/libgimpbase/libgimpbase-gimpbaseenums.html
 share/doc/gimp/libgimpbase/libgimpbase-gimpbasetypes.html
@@ -545,9 +545,7 @@ share/doc/gimp/libgimpbase/libgimpbase-gimpdatafiles.html
 share/doc/gimp/libgimpbase/libgimpbase-gimpenv.html
 share/doc/gimp/libgimpbase/libgimpbase-gimplimits.html
 share/doc/gimp/libgimpbase/libgimpbase-gimpmemsize.html
-share/doc/gimp/libgimpbase/libgimpbase-gimpmetadata.html
 share/doc/gimp/libgimpbase/libgimpbase-gimpparam.html
-share/doc/gimp/libgimpbase/libgimpbase-gimpparasite.html
 share/doc/gimp/libgimpbase/libgimpbase-gimpparasiteio.html
 share/doc/gimp/libgimpbase/libgimpbase-gimprectangle.html
 share/doc/gimp/libgimpbase/libgimpbase-gimpsignal.html
@@ -561,6 +559,7 @@ share/doc/gimp/libgimpbase/right.png
 share/doc/gimp/libgimpbase/style.css
 share/doc/gimp/libgimpbase/up-insensitive.png
 share/doc/gimp/libgimpbase/up.png
+share/doc/gimp/libgimpcolor/GimpColorManaged.html
 share/doc/gimp/libgimpcolor/api-index-2-10.html
 share/doc/gimp/libgimpcolor/api-index-2-2.html
 share/doc/gimp/libgimpcolor/api-index-2-4.html
@@ -576,7 +575,6 @@ share/doc/gimp/libgimpcolor/libgimpcolor-GimpAdaptiveSupersample.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpBilinear.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpCMYK.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpCairo.html
-share/doc/gimp/libgimpcolor/libgimpcolor-GimpColorManaged.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpColorProfile.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpColorSpace.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpColorTransform.html
