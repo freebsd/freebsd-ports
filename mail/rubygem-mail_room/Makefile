@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mail_room
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,10 @@ COMMENT=	This mail_room will proxy email (gmail) from IMAP to a delivery method
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/mail_room
 
