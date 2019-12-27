@@ -1,4 +1,4 @@
---- bin/sbt.orig	2019-10-14 14:34:15 UTC
+--- bin/sbt.orig	2019-12-26 02:47:03 UTC
 +++ bin/sbt
 @@ -76,7 +76,7 @@ cygwinpath() {
  
@@ -18,7 +18,7 @@
  }
  
  acquire_sbt_jar () {
-@@ -281,14 +281,14 @@ getPreloaded() {
+@@ -286,14 +286,14 @@ getPreloaded() {
  }
  
  syncPreloaded() {
@@ -29,13 +29,13 @@
      # FIXME: better $init_sbt_version detection
      init_sbt_version="$(ls -1 "$source_preloaded/org/scala-sbt/sbt/")"
    fi
-   [[ -f "$target_preloaded/org.scala-sbt/sbt/$init_sbt_version/jars/sbt.jar" ]] || {
+   [[ -f "$target_preloaded/org/scala-sbt/sbt/$init_sbt_version/" ]] || {
 -    # lib/local-preloaded exists (This is optional)
 +    # local-preloaded exists (This is optional)
      [[ -d "$source_preloaded" ]] && {
        command -v rsync >/dev/null 2>&1 && {
          mkdir -p "$target_preloaded"
-@@ -408,8 +408,8 @@ run() {
+@@ -413,8 +413,8 @@ run() {
  
  declare -r noshare_opts="-Dsbt.global.base=project/.sbtboot -Dsbt.boot.directory=project/.boot -Dsbt.ivy.home=project/.ivy"
  declare -r sbt_opts_file=".sbtopts"
@@ -46,7 +46,7 @@
  declare -r etc_file="${SBT_ETC_FILE:-$etc_sbt_opts_file}"
  declare -r dist_sbt_opts_file="${sbt_home}/conf/sbtopts"
  declare -r win_sbt_opts_file="${sbt_home}/conf/sbtconfig.txt"
-@@ -459,7 +459,7 @@ Usage: `basename "$0"` [options]
+@@ -462,7 +462,7 @@ Usage: `basename "$0"` [options]
    SBT_OPTS            environment variable, if unset uses "$default_sbt_opts"
    .sbtopts            if this file exists in the current directory, its contents
                        are prepended to the runner args
