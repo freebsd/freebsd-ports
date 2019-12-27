@@ -13,11 +13,9 @@ system memory.
 =====================
 Since Version 2.9.1 the following prerequisites have to be met:
 
-1. You need a mounted /proc directory. Either mount it manually or add it to your /etc/fstab file:
-	fstab: proc /proc procfs rw 0 0
-	manually: # mount -t procfs proc /proc
-2. You need a loaded mqueuefs module:
-	manual load: kldload mqueuefs (as root!)
+You need a mounted /proc directory. Either mount it manually or add it to your /etc/fstab file:
+ fstab: proc /proc procfs rw 0 0
+ manually: # mount -t procfs proc /proc
 EOM
 }
 ]
