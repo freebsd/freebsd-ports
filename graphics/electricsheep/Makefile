@@ -3,7 +3,7 @@
 
 PORTNAME=	electricsheep
 DISTVERSION=	2.7 # configure.ac says that the version is 2.7b33
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
