@@ -1,0 +1,25 @@
+--- Makefile.orig	2019-11-07 12:56:23 UTC
++++ Makefile
+@@ -19,18 +19,12 @@ CPPFLAGS+=-D$(PLATFORM) -DVERSION=\"$(VERSION)\" $(DEB
+ # build dependency files while compile (*.d)
+ CPPFLAGS+= -MMD -MP
+ 
+-
+-ifeq ($(PLATFORM),Darwin)
+-    LDFLAGS+=-lpanel $(NCURSES_LIB) -lutil -lm
++ifeq ($(NCURSES_IMPL),ncursesw)
++LDFLAGS+=-lpanelw -lncursesw -lutil -lm
+ else
+-ifeq ($(UTF8_SUPPORT),yes)
+-    LDFLAGS+=-lpanelw -lncursesw -lutil -lm
+-    CPPFLAGS+=-DUTF8_SUPPORT
+-else
+-    LDFLAGS+=-lpanel -lncurses -lutil -lm
++LDFLAGS+=-lpanel -lncurses -lutil -lm
+ endif
+-endif
+-
++CPPFLAGS+=-DUTF8_SUPPORT
+ 
+ OBJS:=utils.o mt.o error.o my_pty.o term.o scrollback.o help.o mem.o cv.o selbox.o stripstring.o color.o misc.o ui.o exec.o diff.o config.o cmdline.o globals.o history.o clipboard.o
+ DEPENDS:= $(OBJS:%.o=%.d)

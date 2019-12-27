@@ -18,13 +18,9 @@ USES=		alias gmake ncurses tar:tgz
 PLIST_FILES=	bin/multitail etc/multitail.conf.sample \
 		man/man1/multitail.1.gz
 PORTDOCS=	readme.txt license.txt
+MAKE_ARGS=	NCURSES_IMPL="${NCURSES_IMPL}"
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,$$(DESTDIR)/etc/multitail.conf,${PREFIX}/etc/multitail.conf,' \
-		-e 's/CC=gcc/CC?=gcc/' \
-		${WRKSRC}/mt.c ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/multitail ${STAGEDIR}${PREFIX}/bin/
