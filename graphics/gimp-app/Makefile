@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gimp-app
-PORTVERSION=	2.10.12
-PORTREVISION=	5
+PORTVERSION=	2.10.14
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	GIMP/gimp/v${PORTVERSION:R}
@@ -69,7 +68,7 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--without-webkit \
 		--enable-default-binary
 CONFIGURE_ENV=	GIMP_THREAD_LIBS=-lpthread
-LIBS+=		-lexecinfo
+LIBS+=		-lexecinfo -lm
 CPE_PRODUCT=	gimp
 CPE_VENDOR=	gnu
 
