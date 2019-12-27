@@ -1023,6 +1023,9 @@
     SUBDIR += py-supervisor
     SUBDIR += py-tarsnapper
     SUBDIR += py-tmuxp
+    SUBDIR += py-upt
+    SUBDIR += py-upt-freebsd
+    SUBDIR += py-upt-pypi
     SUBDIR += py-uptime
     SUBDIR += py-zdaemon
     SUBDIR += pydf
