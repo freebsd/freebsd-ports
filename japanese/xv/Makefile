@@ -17,6 +17,8 @@ PLIST_FILES=	bin/ja-xv
 
 OPTIONS_EXCLUDE=	DOCS
 
+PORTREVISION=	1
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xv ${STAGEDIR}${PREFIX}/bin/ja-xv
 

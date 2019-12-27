@@ -2,34 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	jasper
-PORTVERSION=	1.900.1
-PORTREVISION=	17
+PORTVERSION=	2.0.16
+DISTVERSIONPREFIX=	version-
 CATEGORIES=	graphics
-MASTER_SITES=	https://www.ece.uvic.ca/~frodo/jasper/software/ \
-		ftp://ftp.imagemagick.org/pub/ImageMagick/delegates/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the codec specified in the JPEG-2000 standard
 
 LICENSE=	MIT
 
-OPTIONS_DEFINE=	OPENGL UUID DOCS
-OPTIONS_DEFAULT=UUID
+OPTIONS_DEFINE=	OPENGL DOCS
+OPTIONS_DEFAULT=	OPENGL
 OPTIONS_SUB=	yes
-UUID_DESC=	UUID support (required by GDAL)
 
-CONFIGURE_ARGS=	--enable-shared --enable-static
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		jpeg libtool:keepla localbase zip
+USES=		cmake jpeg localbase
 
-OPENGL_CONFIGURE_ENABLE=opengl
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	mdadams
+
+OPENGL_CMAKE_BOOL=	JAS_ENABLE_OPENGL
 OPENGL_USES=		gl xorg
 OPENGL_USE=		GL=glut XORG=x11,xext,xi,xmu
-UUID_EXTRA_PATCHES=	${PATCHDIR}/uuid.patch
 
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
+CMAKE_ARGS=	-DJAS_ENABLE_JPEG=true \
+		-DJAS_ENABLE_AUTOMATIC_DEPENDENCIES=false \
+		-DCMAKE_SKIP_RPATH=true
+
+DOCSDIR=	${PREFIX}/share/doc/JasPer
+
+post-install-DOCS-off:
+	rm -rf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

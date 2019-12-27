@@ -3,7 +3,7 @@
 
 PORTNAME=	xv
 PORTVERSION=	3.10a
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/:base \
 		SF/png-mng/XV%20jumbo%20patches/20070520
