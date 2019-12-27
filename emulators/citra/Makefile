@@ -2,8 +2,12 @@
 
 PORTNAME=	citra
 PORTVERSION=	s20191218
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	emulators
+
+PATCH_SITES=	https://github.com/kinetiknz/cubeb/commit/:cubeb
+PATCHFILES+=	c0a9ea4cc6e2.patch:-p1:cubeb
+PATCH_DIST_STRIP=	-d ${WRKSRC_cubeb}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo 3DS emulator/debugger
