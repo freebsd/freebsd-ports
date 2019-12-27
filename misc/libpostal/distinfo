@@ -1,3 +1,5 @@
-TIMESTAMP = 1554382755
+TIMESTAMP = 1577449742
 SHA256 (openvenues-libpostal-v1.1-alpha_GH0.tar.gz) = c8a88eed70d8c09f68e1e69bcad35cb397e6ef11b3314e18a87b314c0a5b4e3a
 SIZE (openvenues-libpostal-v1.1-alpha_GH0.tar.gz) = 5602195
+SHA256 (21601eb4b8941b8d6d9b795b1d6db4bd376f5b28.patch) = 523539ca2f537b3eacbb339998d08633c47153ccba3c4b8cdfe9662c0f910830
+SIZE (21601eb4b8941b8d6d9b795b1d6db4bd376f5b28.patch) = 2593
