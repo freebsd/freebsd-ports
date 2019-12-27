@@ -1,0 +1,20 @@
+--- ruby/gitlab-shell/config.yml.example.orig	2019-12-22 08:37:33 UTC
++++ ruby/gitlab-shell/config.yml.example
+@@ -25,7 +25,7 @@ http_settings:
+   self_signed_cert: false
+ 
+ # File used as authorized_keys for gitlab user
+-auth_file: "/home/git/.ssh/authorized_keys"
++auth_file: "%%PREFIX%%/git/.ssh/authorized_keys"
+ 
+ # File that contains the secret key for verifying access to GitLab.
+ # Default is .gitlab_shell_secret in the gitlab-shell directory.
+@@ -37,7 +37,7 @@ auth_file: "/home/git/.ssh/authorized_keys"
+ 
+ # Log file.
+ # Default is gitlab-shell.log in the root directory.
+-# log_file: "/home/git/gitlab-shell/gitlab-shell.log"
++log_file: "/var/log/gitlab-shell/gitlab-shell.log"
+ 
+ # Log level. INFO by default
+ log_level: INFO
