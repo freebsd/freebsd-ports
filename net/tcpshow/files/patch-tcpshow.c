@@ -1,5 +1,5 @@
---- tcpshow.c.orig	Tue Jun 12 17:51:10 2007
-+++ tcpshow.c	Tue Jun 12 18:27:37 2007
+--- tcpshow.c.orig	2019-12-27 02:43:00 UTC
++++ tcpshow.c
 @@ -189,6 +189,7 @@
  /****==========------------------------------------------------==========****/
  #endif
@@ -16,7 +16,7 @@
  
  
  /* Some general defines.                                                    */
-@@ -362,18 +364,20 @@
+@@ -362,18 +364,21 @@ typedef unsigned char uchar;
  #if !defined(NOETHERNAMES)
  // mr980118 ether_ntohost() and related functions aren't prototyped in the
  // standard include directory.
@@ -36,10 +36,11 @@
  static boolean cookedFlag = FALSE;
 -static uint2 dataLen = 0;
 +static int2 dataLen = 0;               // tm020221 must be 'signed'.
++static unsigned captLen = 0;
  static char *dfltCookArgs[] = {
     COOKER, "-enx", "-s10240", "-r-", (char *)NULL
  };
-@@ -512,7 +516,9 @@
+@@ -512,7 +517,9 @@ static char *deltaTime (double *prevTime
        return "";
     }
  
@@ -50,7 +51,7 @@
     *prevTime = currTime;
  
     // Convert the delta time to daytime representation.
-@@ -790,25 +796,38 @@
+@@ -790,25 +797,38 @@ static char *getPkt () {
     static boolean beenHereAlready = FALSE;
     static char pktBuf[MAXPKT+1];
  
@@ -67,12 +68,6 @@
 -   elif (!beenHereAlready) {           /* setjmp() won't have been called   */
 -      beenHereAlready = TRUE;          /*  before reading 1st packet        */
 -      return pkt = pktBuf;
--   }
--   else {
--      if (dataLen > 0)
--         printf("\n\t<*** Rest of data missing from packet dump ***>\n");
--      pkt = pktBuf;
--      longjmp(jmpBuf, 1);
 +   // tm020221
 +   // In these days, tcpdump produces much of irregular outputs.
 +   // I had a work around by making logical change to original.
@@ -93,7 +88,12 @@
 +       pkt = pktBuf;
 +       longjmp(jmpBuf, 1);
 +     }
-+   }
+    }
+-   else {
+-      if (dataLen > 0)
+-         printf("\n\t<*** Rest of data missing from packet dump ***>\n");
+-      pkt = pktBuf;
+-      longjmp(jmpBuf, 1);
 +   elif (PTN_DATA(pktBuf)) {
 +     if (nPktsShown > 0)
 +       return pkt = rmWSpace(pktBuf);
@@ -102,7 +102,7 @@
  
  }
  
-@@ -1125,7 +1144,9 @@
+@@ -1125,7 +1145,9 @@ static char *icmpExtras (
  static char *icmpType (uint1 type) {
  
     char *descr;
@@ -112,7 +112,7 @@
  
     switch (type) {
      case ECHO_REPLY:  descr = "echo-reply";              break;
-@@ -1143,7 +1164,7 @@
+@@ -1143,7 +1165,7 @@ static char *icmpType (uint1 type) {
      case INFO_REPLY:  descr = "information-reply";       break;
      case MASK_REQ:    descr = "address-mask-request";    break;
      case MASK_REPLY:  descr = "address-mask-reply";      break;
@@ -121,7 +121,7 @@
     }
  
     return descr;
-@@ -1241,6 +1262,15 @@
+@@ -1241,6 +1263,15 @@ static char *ipProto (uint1 code) {
  
  }
  
@@ -137,7 +137,7 @@
  
  /****==========------------------------------------------------==========****/
  /*                                                                          */
-@@ -1248,7 +1278,7 @@
+@@ -1248,7 +1279,7 @@ static char *ipProto (uint1 code) {
  /*                                                                          */
  /****==========------------------------------------------------==========****/
  
@@ -146,7 +146,7 @@
  
     /* Command line options.                                                 */
     while (--argc > 0 && **++argv == '-')
-@@ -1281,15 +1311,23 @@
+@@ -1281,15 +1312,23 @@ void main (int argc, char **argv) {
        }
        else error("Unknown command line flag");
  
@@ -172,7 +172,7 @@
  
  }
  
-@@ -1336,7 +1374,7 @@
+@@ -1336,7 +1375,7 @@ static char *portName (uint2 port, char 
  	 name = number;
        }
     /* The crappy manpage doesn't say the port must be in net byte order.    */
@@ -181,7 +181,7 @@
        name = service->s_name;
     elif (!wantNumber)
        name = unknown;
-@@ -1371,6 +1409,9 @@
+@@ -1371,6 +1410,9 @@ static char *rmWSpace (reg char *pktBuf)
     }
     *cleanBuf = '\0';
  
@@ -191,7 +191,7 @@
     return cleanPkt;
  
  }
-@@ -1572,7 +1613,7 @@
+@@ -1572,7 +1614,7 @@ static char *showHdr (char *p) {
     char eFromName[MAX_HOSTNAMELEN+1];  // Sender Ethernet name
     char eTo[ETHER_ADDRLEN+1];          /* Destination Ethernet address      */
     char eToName[MAX_HOSTNAMELEN+1];    // Target Ethernet name
@@ -200,7 +200,7 @@
     static double prevTime;             // Timestamp of previous packet
     char time[16];                      /* Packet timestamp                  */
  
-@@ -1580,25 +1621,50 @@
+@@ -1580,25 +1622,55 @@ static char *showHdr (char *p) {
     if (ppFlag) {
        (void)sscanf(p, "%s", time);
        etherType = ETHER_PROTO_IP;      /* tcpdump doesn't supply link type  */
@@ -218,11 +218,16 @@
  
     (void)sscanf(p, "%s %s %s %s", time, eFrom, eTo, eType);
 -   (void)etherProto(eType, &etherType);
++   captLen = 0;
 +
 +   /* decode output from tcpdump-3.8.x and later */
 +   /* format: TIME MACSRC > MACDST, ethertype TYPE (0xCODE), ... */
 +   if (*eTo == '>') {
 +     char *s;
++     
++     if ((s = strstr(p, "length ")) != NULL)
++       (void)sscanf(s + 7, "%u", &captLen);
++     
 +     (void)sscanf(p, "%s %s > %17s", time, eFrom, eTo);
 +     if ((s = strstr(p, "ethertype ")) != NULL) {
 +       strlcpy(eType, s+10, sizeof(eType));
@@ -254,7 +259,7 @@
        if (terseFlag) {
           printf("TIME:\t%s%s\n", time, deltaTime(&prevTime, time));
           printf(
-@@ -1614,6 +1680,7 @@
+@@ -1614,6 +1686,7 @@ static char *showHdr (char *p) {
           if (!noEtherNames) printf(" (%s)", etherName(eTo, FALSE));
           printf("\n\tEncapsulated Protocol:\t\t%s\n", etherProto(eType, 0));
        }
@@ -262,7 +267,16 @@
  
     return getPkt();
  
-@@ -1778,7 +1845,7 @@
+@@ -1718,6 +1791,8 @@ static char *showIp (char *p) {
+    (void)strcpy(sIp, ipAddr(&p)); nSkipped += 4;
+    (void)strcpy(dIp, ipAddr(&p)); nSkipped += 4;
+    hLen     = (ver & 0x0F) * 4;
++   if (dgramLen == 0 && captLen >= 14)
++     dgramLen = captLen - 14;
+    dataLen  = dgramLen - hLen;
+ 
+    (void)strcpy(sHostName, hostName(sIp, TRUE));
+@@ -1778,7 +1853,7 @@ static char *showIp (char *p) {
  static void showPkt (reg char *p) {
  
     char *warnMsg = "<*** No decode support for encapsulated protocol ***>";
@@ -271,7 +285,7 @@
  
     prSep();
     printf("Packet %d\n", ++nPktsShown);
-@@ -1807,6 +1874,31 @@
+@@ -1807,6 +1882,31 @@ static void showPkt (reg char *p) {
  	 p = showIcmp(p);
  	 p = showData(p);
  	 break;
@@ -303,7 +317,7 @@
         default:
  	 printf("\t%s\n", warnMsg);
  	 nextPkt();                    /* Doesn't return                    */
-@@ -1826,7 +1918,7 @@
+@@ -1826,7 +1926,7 @@ static void showPkt (reg char *p) {
     }
     /* Note that if getPkt() returns here, then the line read isn't the      */
     /* start of a new packet, i.e. there's spurious data.                    */
@@ -312,7 +326,7 @@
        if (sFlag) printf("\t<*** Spurious data at end: \"%s\" ***>\n", p);
        nextPkt();
     }
-@@ -1996,10 +2088,10 @@
+@@ -1996,10 +2096,10 @@ static char *showTcp (char *p) {
  
     if (terseFlag) {
        printf(
@@ -326,7 +340,7 @@
        printf(
           "\thlen=%d (data=%u) UAPRSF=%s%s%s%s%s%s",
           hLen, dataLen,
-@@ -2016,9 +2108,9 @@
+@@ -2016,9 +2116,9 @@ static char *showTcp (char *p) {
        if (!noPortNames) printf(" (%s)", portName(sPort, "tcp", FALSE));
        printf("\n\tDestination Port:\t\t%d", dPort);
        if (!noPortNames) printf(" (%s)", portName(dPort, "tcp", FALSE));
