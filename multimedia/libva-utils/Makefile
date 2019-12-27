@@ -2,38 +2,36 @@
 
 PORTNAME=	libva-utils
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
-MAINTAINER=	madpilot@FreeBSD.org
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	4aeb5254a191.patch:-p1 # https://github.com/intel/libva-utils/pull/183
+PATCHFILES+=	520ea5582c9a.patch:-p1 # https://github.com/intel/libva-utils/pull/184
+PATCHFILES+=	24a87768547a.patch:-p1 # https://github.com/intel/libva-utils/pull/184
+PATCHFILES+=	fde08663af79.patch:-p1 # https://github.com/intel/libva-utils/pull/184
+
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Collection of tests and utilities for VAAPI
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libva.so:multimedia/libva \
-		libdrm.so:graphics/libdrm
+LIB_DEPENDS=	libva-drm.so:multimedia/libva
 
-USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig tar:bzip2
-
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-
+USES=		compiler:c++11-lang meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 
-OPTIONS_DEFINE=	DEBUG WAYLAND X11
+OPTIONS_DEFINE=	WAYLAND X11
 OPTIONS_DEFAULT=WAYLAND X11
-WAYLAND_DESC=	Support wayland protocol
 OPTIONS_SUB=	yes
 
-DEBUG_CFLAGS=		-D_DEBUG
-DEBUG_CFLAGS_OFF=	-DNDEBUG
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+WAYLAND_MESON_TRUE=	wayland
 
-WAYLAND_CONFIGURE_ENABLE=	wayland
-WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland
-
-X11_CONFIGURE_ENABLE=		x11
-X11_USES=			xorg
-X11_USE=			XORG=x11,xext,xfixes
+X11_USES=		xorg
+X11_USE=		XORG=x11,xext,xfixes
+X11_MESON_TRUE=		x11
 
 .include <bsd.port.mk>
