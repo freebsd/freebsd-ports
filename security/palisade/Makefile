@@ -2,7 +2,7 @@
 
 PORTNAME=	palisade
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0.b.20191219
+DISTVERSION=	1.7.c.20191227
 CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ USES=		cmake:noninja localbase
 USE_GITLAB=	yes
 USE_GITHUB=	nodefault
 GL_PROJECT=	palisade-development
-GL_COMMIT=	db57986b98596b176ca4d1f8426fb4d9af35515c
+GL_COMMIT=	5d4f7a3ff66006966bf16c67f3da2e4e6936e39f
 GH_TUPLE=	\
 		JerryRyan:cereal:181fbcd3:cereal/third-party/cereal \
 		google:benchmark:c50ac68c:benchmark/third-party/google-benchmark \
@@ -28,13 +28,14 @@ GH_TUPLE=	\
 USE_GCC=	any # clang fails: fatal error: 'quadmath.h' file not found
 USE_LDCONFIG=	yes
 
-TEST_TARGET=	testall
-
-CMAKE_ON=	BUILD_TESTING
+CMAKE_OFF=	BUILD_UNITTESTS
 
 CXXFLAGS+=	-I${WRKSRC}/third-party/google-test/googletest
 
-post-extract: # post-extract to not interfere with patches in files/, see https://gitlab.com/palisade/palisade-release/issues/4
-	@${FIND} ${WRKSRC} -name CMakeLists.txt | ${XARGS} ${REINPLACE_CMD} -e 's|DESTINATION palisade/|DESTINATION |'
+do-test:
+	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_UNITTESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} testall
 
 .include <bsd.port.mk>
