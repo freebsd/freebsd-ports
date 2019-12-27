@@ -166,6 +166,7 @@ IDN_DESC?=		International Domain Names support
 IMAGEMAGICK_DESC?=	ImageMagick image processing support
 IMLIB_DESC?=		Imlib image library support
 IMLIB2_DESC?=		Imlib 2 image library support
+INFO_DESC?=		Build and/or install info documentation
 INI_DESC?=		INI file/format/parser support
 IODBC_DESC?=		ODBC backend via iODBC
 IPV4_DESC?=		IPv4 protocol support
