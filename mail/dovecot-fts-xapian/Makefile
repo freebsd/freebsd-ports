@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fts-xapian
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	mail
 PKGNAMEPREFIX=	dovecot-
 
