@@ -1,0 +1,5 @@
+A unified CLI tool that converts a package from a language-specific package
+manager (such as PyPI or NPM) to an almost ready-to-use package for Free
+Unix-based operating systems (such as a GNU/Linux distribution or *BSD).
+
+WWW: https://framagit.org/upt/upt
