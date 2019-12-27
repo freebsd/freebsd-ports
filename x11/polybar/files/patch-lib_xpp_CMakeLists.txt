@@ -5,7 +5,7 @@
  # Loop through a hardcoded list of python executables to locate the python module "xcbgen"
  #
 -foreach(CURRENT_EXECUTABLE python python3 python2 python2.7)
-+foreach(CURRENT_EXECUTABLE python python3 python3.5 python3.6 python3.7 python2 python2.7)
++foreach(CURRENT_EXECUTABLE python python3 python3.5 python3.6 python3.7)
    message(STATUS "Searching for xcbgen with " ${CURRENT_EXECUTABLE})
  
    execute_process(COMMAND "${CURRENT_EXECUTABLE}" "-c"
