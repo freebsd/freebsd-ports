@@ -13,7 +13,6 @@
 %%DATADIR%%/.gitlab/CODEOWNERS
 @(,,555) %%DATADIR%%/bin/authorized_keys
 @(,,555) %%DATADIR%%/bin/check
-@(,,555) %%DATADIR%%/bin/compile
 @(,,555) %%DATADIR%%/bin/gitlab-shell
 @(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-keys-check
 @(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-principals-check
@@ -32,8 +31,5 @@
 %%DATADIR%%/spec/support/gitlab_shell_setup.rb
 %%DATADIR%%/spec/support/http_unix_server.rb
 %%DATADIR%%/support/gitlab_config.rb
-%%DATADIR%%/support/go-format
-%%DATADIR%%/support/go-test
-%%DATADIR%%/support/go_build.rb
 %%DATADIR%%/support/truncate_repositories.sh
 @dir(git,,755) /var/log/gitlab-shell
