@@ -13,14 +13,12 @@ COMMENT=	Command line editor library
 
 LICENSE=	BSD2CLAUSE
 
-USES=		libtool ncurses pathfix
+USES=		libtool localbase ncurses pathfix
 EDITVERSION=	3.1
-EDITDATE=	20190324
+EDITDATE=	20191211
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--enable-widec
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS_INSTALL=	editline-*
 

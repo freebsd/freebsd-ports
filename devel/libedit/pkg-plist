@@ -3,7 +3,7 @@ include/histedit.h
 lib/libedit.a
 lib/libedit.so
 lib/libedit.so.0
-lib/libedit.so.0.0.60
+lib/libedit.so.0.0.62
 libdata/pkgconfig/libedit.pc
 man/man3/editline.3.gz
 man/man3/el_deletestr.3.gz
