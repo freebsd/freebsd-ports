@@ -1,4 +1,4 @@
---- requirements.txt.orig	2018-09-21 23:39:29 UTC
+--- requirements.txt.orig	2019-12-27 04:38:42 UTC
 +++ requirements.txt
 @@ -2,5 +2,4 @@ Cython
  numexpr
