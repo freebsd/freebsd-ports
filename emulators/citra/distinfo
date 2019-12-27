@@ -31,3 +31,5 @@ SHA256 (weidai11-cryptopp-CRYPTOPP_7_0_0-23-gf320e7d9_GH0.tar.gz) = 1d6f029b83a2
 SIZE (weidai11-cryptopp-CRYPTOPP_7_0_0-23-gf320e7d9_GH0.tar.gz) = 7209489
 SHA256 (wwylele-teakra-e6ea0ea_GH0.tar.gz) = 114851491219d09dd116e34ffce2432c3b83f8869080dcbe24e9a99850df37a3
 SIZE (wwylele-teakra-e6ea0ea_GH0.tar.gz) = 562458
+SHA256 (c0a9ea4cc6e2.patch) = abcd581daaa44d8eb0744cdc6f1999fcfec33894fbc236d94b55e42ecabd1478
+SIZE (c0a9ea4cc6e2.patch) = 1211
