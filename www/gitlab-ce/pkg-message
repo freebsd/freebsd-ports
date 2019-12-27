@@ -18,9 +18,9 @@ EOM
 {
   message: <<EOM
 If you just installed an major upgrade of GitLab, for example you
-switched from 11.8.x to 11.9.x, please follow the instructions in the guide at:
+switched from 12.5.x to 12.6.x, please follow the instructions in the guide at:
 
-https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/12.4-12.5-freebsd.md
+https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/12.5-12.6-freebsd.md
 
 If you just installed an minor upgrade of GitLab please follow
 the instructions in the guide at:
