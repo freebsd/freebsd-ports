@@ -1,0 +1,8 @@
+--- doc/CMakeLists.txt.orig	2019-03-12 18:04:35 UTC
++++ doc/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-if (DOXYGEN_FOUND)
++if (XXX_DOXYGEN_FOUND)
+ 
+ 	configure_file("${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in"
+ 	  "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile" @ONLY)
