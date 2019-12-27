@@ -1,5 +1,6 @@
 bin/com.github.phase1geo.minder
 share/applications/com.github.phase1geo.minder.desktop
+share/gtksourceview-3.0/styles/com.github.phase1geo.minder.xml
 share/icons/hicolor/128x128/apps/com.github.phase1geo.minder.svg
 share/icons/hicolor/16x16/apps/com.github.phase1geo.minder.svg
 share/icons/hicolor/24x24/apps/com.github.phase1geo.minder.svg
