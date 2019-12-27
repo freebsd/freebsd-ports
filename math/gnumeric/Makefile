@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.12.43
-PORTREVISION=	1
+PORTVERSION=	1.12.46
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,7 +13,8 @@ COMMENT=	GNOME spreadsheet program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	itstool:textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		ginstall:sysutils/coreutils
 LIB_DEPENDS=	libgoffice-0.10.so:devel/goffice \
 		libfribidi.so:converters/fribidi \
 		libpsiconv.so:converters/psiconv
@@ -38,7 +38,8 @@ GLIB_SCHEMAS=	org.gnome.gnumeric.dialogs.gschema.xml \
 
 SHEBANG_FILES=	plugins/perl-func/perl_func.pl
 
-BINARY_ALIAS=	python=${PYTHON_CMD}
+BINARY_ALIAS=	python=${PYTHON_CMD} \
+		install=ginstall
 
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		GOFFICE=0.10 \
