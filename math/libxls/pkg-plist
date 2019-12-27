@@ -9,6 +9,6 @@ include/xls.h
 include/libxls/endian.h
 lib/libxlsreader.so
 lib/libxlsreader.so.1
-lib/libxlsreader.so.1.5.1
+lib/libxlsreader.so.1.5.2
 libdata/pkgconfig/libxls.pc
 man/man1/xls2csv.1.gz
