@@ -2,7 +2,7 @@
 
 PORTNAME=	mpich
 PORTVERSION=	3.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net parallel
 MASTER_SITES=	https://www.mpich.org/static/downloads/${DISTVERSION}/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libhwloc.so:devel/hwloc
 CONFLICTS=	lam-7.* mpd-[0-9]* mpiexec-0.* mpich2-[0-9]*
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		compiler:c11 libtool pkgconfig
+USES=		compiler:c11 libtool perl5 pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		DOCS FORTRAN
