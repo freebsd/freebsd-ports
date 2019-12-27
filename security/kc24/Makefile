@@ -33,7 +33,7 @@ LIBEDIT_MAKE_ENV+=	EDITLINE=y
 READLINE_USES=		readline
 READLINE_MAKE_ENV+=	READLINE=y
 
-USES+=			pkgconfig ssl uidfix
+USES+=			pkgconfig ncurses ssl uidfix
 USE_GITHUB=		yes
 GH_ACCOUNT=		levaidaniel
 
@@ -42,6 +42,6 @@ PLIST_FILES=		bin/kc man/man1/kc.1.gz
 MAKE_ENV+=		BUNDLED_BCRYPT=y
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|pkg-config|${LOCALBASE}/bin/pkgconf|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-lncursesw|-l${NCURSES_IMPL}|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
