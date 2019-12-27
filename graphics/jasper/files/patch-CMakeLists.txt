@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2019-03-12 18:04:35 UTC
++++ CMakeLists.txt
+@@ -267,8 +267,8 @@ message("JAS_HAVE_LIBJPEG: ${JAS_HAVE_LIBJPEG}")
+ # Check for the OpenGL and GLUT libraries.
+ ################################################################################
+ 
+-find_package(OpenGL ${JAS_REQUIRED})
+ message("JAS_ENABLE_OPENGL: ${JAS_ENABLE_OPENGL}")
++find_package(OpenGL ${JAS_OPENGL_REQUIRED})
+ message("OpenGL library found: ${OPENGL_FOUND}")
+ if (JAS_ENABLE_OPENGL AND OPENGL_FOUND)
+ 	set(JAS_HAVE_OPENGL 0)
