@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	3.0.6
+PORTVERSION=	3.2.0
 PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
@@ -61,11 +61,11 @@ PLIST_SUB+=		${x:tu}=bin/$x \
 
 OPTIONS_DEFINE=		GUI RTP SNMP MAXMIND LUA DECRYPT ANDROIDDUMP CARES SSHDUMP CISCODUMP
 
-OPTIONS_SINGLE=		KERBEROS
+OPTIONS_SINGLE=		GSSAPI
 
-OPTIONS_SINGLE_KERBEROS=KRB_BASE KRB_HEIMDAL KRB_MIT KRB_NONE
+OPTIONS_SINGLE_GSSAPI=GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 
-OPTIONS_DEFAULT?=	GUI SNMP MAXMIND KRB_BASE DECRYPT
+OPTIONS_DEFAULT?=	GUI SNMP MAXMIND GSSAPI_BASE DECRYPT
 
 GUI_DESC=		Enable Qt 5 based Wireshark GUI
 RTP_DESC=		Enable support for playing back RTP streams
@@ -73,11 +73,11 @@ DECRYPT_DESC=		Decryption support for SSL and IPSec
 ANDROIDDUMP_DESC=	Build androiddump extcap tool
 MAXMIND_DESC=		Enable MaxMindDB-based GeoIP geolocation support
 CARES_DESC=		Enable support for asynchronous DNS via c-ares
-KERBEROS_DESC=		Kerberos dissection support
-KRB_BASE_DESC=		Kerberos support via base system
-KRB_HEIMDAL_DESC=	Kerberos support via security/heimdal
-KRB_MIT_DESC=		Kerberos support via security/krb5
-KRB_NONE_DESC=		Disable Kerberos support
+GSSAPI_DESC=		Kerberos dissection support
+GSSAPI_BASE_DESC=		Kerberos support via base system
+GSSAPI_HEIMDAL_DESC=	Kerberos support via security/heimdal
+GSSAPI_MIT_DESC=		Kerberos support via security/krb5
+GSSAPI_NONE_DESC=		Disable Kerberos support
 SSHDUMP_DESC=		Build sshdump extcap tool
 CISCODUMP_DESC=		Build ciscodump extcap tool
 
@@ -85,9 +85,9 @@ GUI_USES=		qt:5
 GUI_USE=	qt=core,gui,multimedia,widgets,printsupport,svg,buildtools_build,linguisttools_build,qmake_build
 
 LUA_USES=		lua:5[1-2]
-KRB_BASE_USES=		gssapi
-KRB_HEIMDAL_USES=	gssapi:heimdal
-KRB_MIT_USES=		gssapi:mit
+GSSAPI_BASE_USES=		gssapi
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal
+GSSAPI_MIT_USES=		gssapi:mit
 
 RTP_LIB_DEPENDS=	libspandsp.so:comms/spandsp
 RTP_CPPFLAGS=		-I${LOCALBASE}/include
@@ -99,9 +99,9 @@ DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 SSHDUMP_LIB_DEPENDS=	libssh.so:security/libssh
 CISCODUMP_LIB_DEPENDS=	libssh.so:security/libssh
 
-KRB_NONE_CMAKE_ON=	-DENABLE_KERBEROS=OFF
-KRB_NONE_CMAKE_OFF=	-DENABLE_KERBEROS=ON
-KRB_NONE_CONFIGURE_ENV_OFF=	KRB5_CONFIG=${KRB5CONFIG}
+GSSAPI_NONE_CMAKE_ON=	-DENABLE_KERBEROS=OFF
+GSSAPI_NONE_CMAKE_OFF=	-DENABLE_KERBEROS=ON
+GSSAPI_NONE_CONFIGURE_ENV_OFF=	KRB5_CONFIG=${KRB5CONFIG}
 
 LUA_CMAKE_ON=	-DENABLE_LUA=ON
 LUA_CMAKE_OFF=	-DENABLE_LUA=OFF
@@ -180,7 +180,7 @@ PLIST_SUB+=	CISCODUMP_LIB="@comment " \
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MKRB_BASE} && exists(${LOCALBASE}/include/krb5.h)
+.if ${PORT_OPTIONS:MGSSAPI_BASE} && exists(${LOCALBASE}/include/krb5.h)
 IGNORE=			cannot build with base Kerberos if krb5 port is installed. \
 			Use ``make config'' to choose a different option
 .endif
