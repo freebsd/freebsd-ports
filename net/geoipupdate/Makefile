@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoipupdate
-PORTVERSION=	4.1.4
+PORTVERSION=	4.1.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
