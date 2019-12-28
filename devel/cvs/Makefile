@@ -40,8 +40,13 @@ WRKSRC=		${WRKDIR}/call/cvs-build
 DESTDIRNAME=	NADA
 MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,/info/,/${INFO_PATH}/,g" ${WRKSRC}/Makefile.inc
+.if !${PORT_OPTIONS:MINFO}
+	@${REINPLACE_CMD} -e "s,doc,,g" ${WRKSRC}/Makefile
+.endif
 pre-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/contrib
 
