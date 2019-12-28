@@ -1,0 +1,7 @@
+TIMESTAMP = 1577534378
+SHA256 (FiloSottile-age-v1.0.0-beta2_GH0.tar.gz) = ca0fcfe45415c03c637c2332231f1793bf4dbd6a03e663a71ef2b7554647d763
+SIZE (FiloSottile-age-v1.0.0-beta2_GH0.tar.gz) = 19958
+SHA256 (Filosottile-go-9090b284250b_GH0.tar.gz) = a2f640d4e1f822e95427550c700b85344b0076f15bff567ecf4c3ea14b089eee
+SIZE (Filosottile-go-9090b284250b_GH0.tar.gz) = 1714485
+SHA256 (golang-sys-97732733099d_GH0.tar.gz) = 8d60fa6ab0c2b099f2c7d6f8c0a5df177c5c524183a2a38e0e8d2d18cde53532
+SIZE (golang-sys-97732733099d_GH0.tar.gz) = 1350239
