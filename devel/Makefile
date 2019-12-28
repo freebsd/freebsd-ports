@@ -6249,6 +6249,7 @@
     SUBDIR += rubygem-sprockets-rails-rails50
     SUBDIR += rubygem-sprockets-rails-rails52
     SUBDIR += rubygem-sprockets-sass
+    SUBDIR += rubygem-sprockets2
     SUBDIR += rubygem-sprockets3
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
