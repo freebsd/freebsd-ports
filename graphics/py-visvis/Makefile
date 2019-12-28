@@ -1,0 +1,37 @@
+# Created by: Rainer Hurling <rhurlin@gwdg.de>
+# $FreeBSD$
+
+PORTNAME=	visvis
+PORTVERSION=	1.12.2
+CATEGORIES=	graphics python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	rhurlin@gwdg.de
+COMMENT=	Object oriented approach to visualization of 1D to 4D data
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/license.txt
+
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyside2>=0:devel/pyside2@${PY_FLAVOR}
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+
+USES=		gl python pyqt:5
+USE_GL=		gl
+USE_PYQT=	core gui
+USE_PYTHON=	autoplist distutils
+USE_WX=		3.0+
+
+NO_ARCH=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 3400
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}imageio>=0:graphics/py-imageio@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}imageio24>=0:graphics/py-imageio24@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
