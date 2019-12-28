@@ -115,7 +115,7 @@ LIBMNG_CONFIGURE_WITH=	libmng
 
 OPENEXR_CONFIGURE_WITH=	openexr
 OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
-			libIex-2_3.so:graphics/ilmbase
+			libIex.so:graphics/ilmbase
 
 OPENJPEG_DESC=		Enhanced JPEG (jpeg2000) graphics support
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
