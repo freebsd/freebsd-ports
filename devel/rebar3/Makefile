@@ -2,6 +2,7 @@
 
 PORTNAME=	rebar3
 PORTVERSION=	3.13.0
+PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
