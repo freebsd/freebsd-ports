@@ -1,3 +1,5 @@
-TIMESTAMP = 1553852666
-SHA256 (libqalculate-3.0.0.tar.gz) = 2882edd45016a6bcbf33120dd0b83676221a1d58af73f7f4cd6bbec4e1a26b1e
-SIZE (libqalculate-3.0.0.tar.gz) = 2035840
+TIMESTAMP = 1577561845
+SHA256 (libqalculate-3.6.0.tar.gz) = 66b38ed6460f0cd6a1b16ba4145c0396c995939da0ed78f15736f8cd794969b2
+SIZE (libqalculate-3.6.0.tar.gz) = 2151679
+SHA256 (6f1aae9c99c41f5e0d4ef08fa69a2118c98d8a54.patch) = decdf974ccc318486636b4b84ee1eb66596e7bf98726af806e2243b08e9c5a3e
+SIZE (6f1aae9c99c41f5e0d4ef08fa69a2118c98d8a54.patch) = 800
