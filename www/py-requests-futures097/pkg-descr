@@ -1,0 +1,4 @@
+Small add-on for the python requests http library. Makes use of python
+3.2's concurrent.futures or the backport for prior versions of python.
+
+WWW: https://github.com/ross/requests-futures
