@@ -11,12 +11,13 @@ COMMENT=	Provides a simple interface on top of CouchDBs RESTful HTTP API
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-mime-types>=1.15:misc/rubygem-mime-types \
-		rubygem-multi_json>=1.7:devel/rubygem-multi_json \
-		rubygem-httpclient>=2.8:www/rubygem-httpclient
+RUN_DEPENDS=	rubygem-httpclient>=2.8<3:www/rubygem-httpclient \
+		rubygem-mime-types>=1.15:misc/rubygem-mime-types \
+		rubygem-multi_json>=1.7<2:devel/rubygem-multi_json
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
