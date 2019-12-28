@@ -15825,6 +15825,7 @@
 %%WWWDIR%%/spec/finders/branches_finder_spec.rb
 %%WWWDIR%%/spec/finders/cluster_ancestors_finder_spec.rb
 %%WWWDIR%%/spec/finders/clusters/knative_services_finder_spec.rb
+%%WWWDIR%%/spec/finders/clusters/knative_serving_namespace_finder_spec.rb
 %%WWWDIR%%/spec/finders/clusters/kubernetes_namespace_finder_spec.rb
 %%WWWDIR%%/spec/finders/clusters_finder_spec.rb
 %%WWWDIR%%/spec/finders/concerns/finder_methods_spec.rb
