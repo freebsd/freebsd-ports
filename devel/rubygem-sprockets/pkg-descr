@@ -1,6 +1,6 @@
-Sprockets is a Ruby library that preprocesses and concatenates
-JavaScript source files. It takes any number of source files
-and preprocesses them line-by-line in order to build a single
-concatenation.
+Sprockets is a Ruby library for compiling and serving web assets. It features
+declarative dependency management for JavaScript and CSS assets, as well as a
+powerful preprocessor pipeline that allows you to write assets in languages like
+CoffeeScript, Sass and SCSS.
 
 WWW: https://github.com/rails/sprockets
