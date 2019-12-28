@@ -3,7 +3,7 @@
 
 PORTNAME=	devil
 PORTVERSION=	1.7.8
-PORTREVISION=	24
+PORTREVISION=	25
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/openil/DevIL/${PORTVERSION}
@@ -12,7 +12,7 @@ DISTNAME=	DevIL-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Full featured cross-platform image library
 
-USES=		alias autoreconf gmake libtool localbase pkgconfig xorg
+USES=		alias autoreconf gmake libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ILU --enable-ILUT \
 		--disable-allegro --disable-directx8 --disable-directx9 \
@@ -61,9 +61,9 @@ EXR_CONFIGURE_ENABLE=	exr
 #SQUISH_CONFIGURE_WITH=	libsquish
 NVTT_LIB_DEPENDS=	libnvtt.so:graphics/nvidia-texture-tools
 NVTT_CONFIGURE_WITH=	nvtt
-X11_USES=		gl
-X11_USE=		GL=glut
-X11_CONFIGURE_OFF=	--disable-opengl --disable-x11 --disable-xpm --disable-shm
+X11_USES=		gl xorg
+X11_USE=		GL=gl,glu,glut XORG=x11,xext,xmu,xi,xrender,sm,ice
+X11_CONFIGURE_OFF=	--disable-opengl --disable-x11 --disable-xpm --disable-shm --disable-render
 SDL_USES=		sdl
 SDL_USE=		SDL=sdl
 SDL_CONFIGURE_OFF=	--disable-sdl
