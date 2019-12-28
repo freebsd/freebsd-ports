@@ -12,11 +12,12 @@ COMMENT=	Powerful web-framework wrapper for Rack
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-rack16>=1.6.4:www/rubygem-rack16
+RUN_DEPENDS=	rubygem-rack16>=1.6.4<1.7:www/rubygem-rack16
+
+USES=		gem shebangfix
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem shebangfix
 
 SHEBANG_FILES=	.load_gemset
 
