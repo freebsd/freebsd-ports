@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-model-utils
-PORTVERSION=	3.2.0
+PORTVERSION=	4.0.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj22-
@@ -13,10 +13,10 @@ COMMENT=	Django model mixins and utilities
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.0.1:www/py-django22@${PY_FLAVOR}
 
-USES=		python:3.5+
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python:3.6+
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
