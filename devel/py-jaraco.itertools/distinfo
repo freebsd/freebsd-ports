@@ -1,3 +1,3 @@
-TIMESTAMP = 1553866859
-SHA256 (jaraco.itertools-4.4.2.tar.gz) = fdc00c2755a5abac65484d431098e44e163af57fae05d284bf8af9329d43bd7f
-SIZE (jaraco.itertools-4.4.2.tar.gz) = 19431
+TIMESTAMP = 1577145755
+SHA256 (jaraco.itertools-5.0.0.tar.gz) = 6447d567f57efe5efea386265c7864652e9530830a1b80f43e60b4f222b9ab84
+SIZE (jaraco.itertools-5.0.0.tar.gz) = 19517
