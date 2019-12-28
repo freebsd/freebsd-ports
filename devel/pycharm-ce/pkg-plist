@@ -44,7 +44,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/annotations-17.0.0.jar
 %%DATADIR%%/lib/annotations-java5.jar
 %%DATADIR%%/lib/asm-all-7.0.1.jar
-%%DATADIR%%/lib/async-profiler-1.5-1.jar
+%%DATADIR%%/lib/assertj-core-3.13.2.jar
 %%DATADIR%%/lib/automaton-1.12-1.jar
 %%DATADIR%%/lib/batik-anim-1.12.0-8.jar
 %%DATADIR%%/lib/batik-awt-util-1.12.0-8.jar
@@ -220,6 +220,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/xmlrpc-2.0.1.jar
 %%DATADIR%%/lib/xpp3_min-1.1.4c.jar
 %%DATADIR%%/lib/xstream-1.4.11.1.jar
+%%DATADIR%%/lib/xz-1.8.jar
 %%DATADIR%%/license/LICENSE.txt
 %%DATADIR%%/license/NOTICE.txt
 %%DATADIR%%/license/XStream_license.txt
