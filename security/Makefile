@@ -20,6 +20,7 @@
     SUBDIR += afl
     SUBDIR += afl++
     SUBDIR += afterglow
+    SUBDIR += age
     SUBDIR += aide
     SUBDIR += akmos
     SUBDIR += amap
