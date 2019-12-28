@@ -82,6 +82,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/ant/lib/libraries.properties
 %%DATADIR%%/lib/ant/src.zip
 %%DATADIR%%/lib/asm-all-7.0.1.jar
+%%DATADIR%%/lib/assertj-core-3.13.2.jar
 %%DATADIR%%/lib/automaton-1.12-1.jar
 %%DATADIR%%/lib/baksmali-2.2.4.jar
 %%DATADIR%%/lib/batik-anim-1.12.0-8.jar
@@ -258,6 +259,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/stax-ex-1.8.jar
 %%DATADIR%%/lib/streamex-0.6.8.jar
 %%DATADIR%%/lib/swingx-core-1.6.2-2.jar
+%%DATADIR%%/lib/tips-intellij-idea-community-193.4.jar
 %%DATADIR%%/lib/trang-core.jar
 %%DATADIR%%/lib/trilead-ssh2-build-217-jenkins-14.jar
 %%DATADIR%%/lib/trove4j.jar
