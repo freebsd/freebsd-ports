@@ -3,6 +3,7 @@
 
 PORTNAME=	sprockets-sass
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,11 +12,12 @@ COMMENT=	Implements a sprockets-aware sass importer
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-sprockets>=2.0:devel/rubygem-sprockets \
-		rubygem-tilt1>=1.1:devel/rubygem-tilt1
+RUN_DEPENDS=	rubygem-sprockets2>=2.0<3:devel/rubygem-sprockets2 \
+		rubygem-tilt1>=1.1<2:devel/rubygem-tilt1
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
