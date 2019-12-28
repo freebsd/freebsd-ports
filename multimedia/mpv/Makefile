@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.30.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	0.31.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://waf.io/:waf
@@ -58,7 +57,7 @@ UCHARDET_DESC=		Guess subtitle encoding via uchardet
 VULKAN_DESC=		Vulkan output support
 WAYLAND_DESC=		Wayland (graphics) support
 YTDL_DESC=		Install youtube-dl
-ZIMG_DESC=		"z" library for video scaling
+ZIMG_DESC=		High quality software scaling via "z" library
 IN_DESC=		Input
 VO_DESC=		Video Output
 AO_DESC=		Audio Output
@@ -126,9 +125,7 @@ SNDIO_CONFIGURE_OFF=		--disable-sndio
 SMB_USES=			samba:lib
 SMB_CONFIGURE_ON=		--enable-libsmbclient
 
-TEST_BUILD_DEPENDS=		cmocka>=1.1.0:sysutils/cmocka
-TEST_CONFIGURE_ON=		--enable-test
-TEST_UNITTESTFILES=		chmap chmap_sel gl_video
+TEST_CONFIGURE_ON=		--enable-tests
 
 UCHARDET_LIB_DEPENDS=		libuchardet.so:textproc/uchardet
 UCHARDET_CONFIGURE_OFF=		--disable-uchardet
@@ -180,17 +177,13 @@ post-patch:
 		${WRKSRC}/wscript
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
 		${WRKSRC}/wscript_build.py
-	@${REINPLACE_CMD} -e 's|DBL_EPSILON|FLT_EPSILON|'g \
-		${WRKSRC}/test/test_helpers.h
 
 post-patch-MANPAGES-on:
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
 
 pre-install-TEST-on:
-.for test in ${TEST_UNITTESTFILES}
-	cd ${WRKSRC}/build/test && ./${test}
-.endfor
+	@(cd ${WRKSRC} && ${SETENV} ${TEST_ENV} build/mpv --unittest=all-simple)
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mpv
