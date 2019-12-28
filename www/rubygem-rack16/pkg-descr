@@ -1,4 +1,6 @@
-Rack provides an minimal interface between webservers supporting Ruby
-and Ruby frameworks.
+Rack provides a minimal, modular and adaptable interface for developing web
+applications in Ruby. By wrapping HTTP requests and responses in the simplest
+way possible, it unifies and distills the API for web servers, web frameworks,
+and software in between (the so-called middleware) into a single method call.
 
-WWW: http://rack.github.io/
+WWW: https://github.com/rack/rack
