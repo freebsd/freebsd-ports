@@ -12,7 +12,7 @@ COMMENT=	Contributed Rack Middleware and Utilities
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-rack>=2.0:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=2.0,3<3,3:www/rubygem-rack
 
 USES=		gem
 USE_RUBY=	yes
