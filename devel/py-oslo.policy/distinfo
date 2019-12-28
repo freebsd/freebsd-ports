@@ -1,3 +1,3 @@
-TIMESTAMP = 1575793945
-SHA256 (oslo.policy-2.4.0.tar.gz) = 16b82cf5f41af6aff1c48e9d7ca54366bdd9f4ff129bcd9fd12cc716dabbb12d
-SIZE (oslo.policy-2.4.0.tar.gz) = 93305
+TIMESTAMP = 1577145763
+SHA256 (oslo.policy-2.4.1.tar.gz) = c2a2e334688e10831129303d636e5511ea0ec12ebe02826a7911195cf1f3acae
+SIZE (oslo.policy-2.4.1.tar.gz) = 93126
