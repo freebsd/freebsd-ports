@@ -24,7 +24,7 @@ LIB_DEPENDS=	libagg.so:graphics/agg \
 		libpng.so:graphics/png \
 		libgif.so:graphics/giflib \
 		libjasper.so:graphics/jasper \
-		libImath-2_3.so:graphics/ilmbase \
+		libImath.so:graphics/ilmbase \
 		libIlmImf.so:graphics/openexr \
 		liblcms.so:graphics/lcms \
 		libfreetype.so:print/freetype2 \
