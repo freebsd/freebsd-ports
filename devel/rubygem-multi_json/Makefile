@@ -2,25 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	multi_json
-PORTVERSION=	1.13.1
+PORTVERSION=	1.14.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby library provide swappable JSON backends
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	JSON JSON_PURE YAJL_RUBY
 OPTIONS_DEFAULT=JSON_PURE
 JSON_DESC=	JSON implementation as a Ruby extension in C
 JSON_PURE_DESC=	JSON implementation in pure Ruby
 YAJL_RUBY_DESC=	Yajl JSON stream-based parser library
-
-NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 JSON_RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json
 JSON_PURE_RUN_DEPENDS=	rubygem-json_pure>=0:devel/rubygem-json_pure
