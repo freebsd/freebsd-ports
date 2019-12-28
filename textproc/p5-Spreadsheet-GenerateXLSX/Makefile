@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Spreadsheet-GenerateXLSX
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Excel-Writer-XLSX>=0:textproc/p5-Excel-Writer-XLSX \
 		p5-Ref-Util>=0:devel/p5-Ref-Util
-TEST_DEPENDS=	p5-Test-Needs>=0:devel/p5-Test-Needs
+TEST_DEPENDS=	p5-Test-Needs>=0:devel/p5-Test-Needs \
+		p5-Test-Warn>=0.36:devel/p5-Test-Warn
 
 USES=		perl5
 USE_PERL5=	configure
