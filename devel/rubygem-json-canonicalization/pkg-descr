@@ -1,0 +1,13 @@
+JSON::Canonicalization is an implementation of the JSON Canonicalization Scheme
+for Ruby.
+
+Cryptographic operations like hashing and signing depend on that the target data
+does not change during serialization, transport, or parsing. By applying the
+rules defined by JCS (JSON Canonicalization Scheme), data provided in the JSON
+[RFC8259] format can be exchanged "as is", while still being subject to secure
+cryptographic operations. JCS achieves this by building on the serialization
+formats for JSON primitives as defined by ECMAScript [ES6], constraining JSON
+data to the I-JSON [RFC7493] subset, and through a platform independent property
+sorting scheme.
+
+WWW: https://github.com/dryruby/json-canonicalization
