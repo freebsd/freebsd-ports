@@ -1,5 +1,6 @@
 bin/mp-5
 man/man1/mp-5.1.gz
+%%GUI%%share/applications/minimum-profit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
@@ -35,10 +36,11 @@ man/man1/mp-5.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mpsl_overview.txt
 %%PORTDOCS%%%%DOCSDIR%%/mpsl_quickref.ps
 %%PORTDOCS%%%%DOCSDIR%%/mpsl_quickref.txt
+%%PORTDOCS%%%%DOCSDIR%%/mptxt_format.txt
+%%GUI%%share/icons/hicolor/48x48/apps/minimum-profit.png
 %%NLS%%share/locale/de/LC_MESSAGES/minimum-profit.mo
 %%NLS%%share/locale/es/LC_MESSAGES/minimum-profit.mo
 %%NLS%%share/locale/it/LC_MESSAGES/minimum-profit.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/minimum-profit.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/minimum-profit.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/minimum-profit.mo
-%%GUI%%share/pixmaps/mp.png

@@ -1,6 +1,6 @@
---- config.sh.orig	2019-02-15 07:23:10 UTC
+--- config.sh.orig	2019-07-02 05:57:45 UTC
 +++ config.sh
-@@ -38,6 +38,7 @@ while [ $# -gt 0 ] ; do
+@@ -40,6 +40,7 @@ while [ $# -gt 0 ] ; do
      case $1 in
      --without-curses)    WITHOUT_CURSES=1 ;;
      --without-gtk)       WITHOUT_GTK=1 ;;
@@ -8,14 +8,14 @@
      --without-win32)     WITHOUT_WIN32=1 ;;
      --with-kde4)         WITHOUT_KDE4=0 ;;
      --without-qt)        WITHOUT_QT5=1 && WITHOUT_QT4=1 ;;
-@@ -73,6 +74,7 @@ if [ "$CONFIG_HELP" = "1" ] ; then
-     echo "--prefix=PREFIX       Installation prefix ($PREFIX)."
-     echo "--without-curses      Disable curses (text) interface detection."
-     echo "--without-gtk         Disable GTK interface detection."
-+    echo "--with-gtk=GTKVER     Enable GTK where GTKVER=(2|3)."
-     echo "--without-win32       Disable win32 interface detection."
-     echo "--with-kde4           Enable KDE4 interface detection."
-     echo "--without-qt          Disable Qt interface detection."
+@@ -75,6 +76,7 @@ if [ "$CONFIG_HELP" = "1" ] ; then
+     echo "--prefix=PREFIX         Installation prefix ($PREFIX)."
+     echo "--without-curses        Disable curses (text) interface detection."
+     echo "--without-gtk           Disable GTK interface detection."
++    echo "--with-gtk=GTKVER       Enable GTK where GTKVER=(2|3)."
+     echo "--without-win32         Disable win32 interface detection."
+     echo "--with-kde4             Enable KDE4 interface detection."
+     echo "--without-qt            Disable Qt interface detection."
 @@ -250,11 +252,11 @@ echo -n "Testing for ncursesw... "
  if [ "$WITHOUT_CURSES" = "1" ] ; then
      echo "Disabled"
