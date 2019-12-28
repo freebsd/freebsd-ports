@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-Hogan
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Clone>=0.37:devel/p5-Clone \
+		p5-Ref-Util>=0.204:devel/p5-Ref-Util \
 		p5-Text-Trim>=1.02:textproc/p5-Text-Trim
 TEST_DEPENDS=	p5-Data-Visitor>=0.30:devel/p5-Data-Visitor \
 		p5-Path-Tiny>=0.059:devel/p5-Path-Tiny \
