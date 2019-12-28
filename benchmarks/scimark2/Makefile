@@ -12,10 +12,13 @@ DISTNAME=	${PORTNAME}src
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Java benchmark for scientific and numerical computing
 
+LICENSE=	PD
+
 USES=		zip
 USE_JAVA=	yes
 NEED_JAVAC=	yes
 JAVAC_OPTS?=	-O
+NO_ARCH=	yes
 
 LSMDIR=		share/java/scimark2
 SMDIR=		${PREFIX}/${LSMDIR}
