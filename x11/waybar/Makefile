@@ -1,24 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	waybar
-DISTVERSION=	0.8.0
-PORTREVISION=	4
+DISTVERSION=	0.9.0
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 # https://github.com/Alexays/Waybar/pull/425
-PATCHFILES+=	a85ae0da0580.patch:-p1
-PATCHFILES+=	f0dfa34e651c.patch:-p1
-PATCHFILES+=	25d4420904bd.patch:-p1
-PATCHFILES+=	bf0d2621504e.patch:-p1
-PATCHFILES+=	82844ce8a6f3.patch:-p1
-PATCHFILES+=	7bc3577137af.patch:-p1
-PATCHFILES+=	96ef80d06c00.patch:-p1
-PATCHFILES+=	cf114a111fe0.patch:-p1
-PATCHFILES+=	684d9121a721.patch:-p1
-PATCHFILES+=	f1b288adf8b5.patch:-p1
-# https://github.com/Alexays/Waybar/pull/???
-PATCHFILES+=	0b008154d9de.patch:-p1
+PATCHFILES+=	2e9d80139411.patch:-p1
+PATCHFILES+=	9ba4bfcb20f2.patch:-p1
+PATCHFILES+=	2155d9560887.patch:-p1
+PATCHFILES+=	abc17ff5393c.patch:-p1
+PATCHFILES+=	d3ad69814f28.patch:-p1
+PATCHFILES+=	4ceefa8ed4d9.patch:-p1
+PATCHFILES+=	7675d81f3205.patch:-p1
+PATCHFILES+=	4a151db3a433.patch:-p1
+PATCHFILES+=	e9263a38841b.patch:-p1
+PATCHFILES+=	acb51ccef3ab.patch:-p1
+PATCHFILES+=	6349d48af076.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Highly customizable Wayland bar for Sway and wlroots-based compositors
@@ -42,11 +40,15 @@ PLIST_FILES=	bin/${PORTNAME} \
 		etc/xdg/${PORTNAME}/config \
 		etc/xdg/${PORTNAME}/style.css
 
-OPTIONS_DEFINE=	DBUS MANPAGES MPD PULSEAUDIO UDEV
-OPTIONS_DEFAULT=DBUS MANPAGES MPD PULSEAUDIO UDEV
+OPTIONS_DEFINE=	DBUS GLS MANPAGES MPD PULSEAUDIO UDEV
+OPTIONS_DEFAULT=DBUS GLS MANPAGES MPD PULSEAUDIO UDEV
 
 DBUS_LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
 DBUS_MESON_ENABLED=	dbusmenu-gtk
+
+GLS_DESC=		Use gtk-layer-shell library for popups support
+GLS_LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
+GLS_MESON_ENABLED=	gtk-layer-shell
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
@@ -55,6 +57,7 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-clock.5.gz \
 			man/man5/${PORTNAME}-cpu.5.gz \
 			man/man5/${PORTNAME}-custom.5.gz \
+			man/man5/${PORTNAME}-disk.5.gz \
 			man/man5/${PORTNAME}-idle-inhibitor.5.gz \
 			man/man5/${PORTNAME}-memory.5.gz \
 			man/man5/${PORTNAME}-mpd.5.gz \
