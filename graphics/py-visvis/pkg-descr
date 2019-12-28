@@ -1,0 +1,13 @@
+Visvis is a pure Python library for visualization of 1D to 4D data in an object
+oriented way. Essentially, visvis is an object oriented layer of Python on top
+of OpenGL, thereby combining the power of OpenGL with the usability of Python.
+A Matlab-like interface in the form of a set of functions allows easy creation
+of objects (e.g. plot(), imshow(), volshow(), surf()).
+
+With visvis a range of different data can be visualized by simply adding world
+objects to a scene (or axes). These world objects can be anything from plots
+(lines with markers), to images, 3D rendered volumes, shaded meshes, or you can
+program your own world object class. If required, these data can also be moved
+in time.
+
+WWW: https://github.com/almarklein/visvis
