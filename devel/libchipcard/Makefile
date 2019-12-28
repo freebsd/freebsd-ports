@@ -4,12 +4,10 @@
 PORTNAME=	libchipcard
 PORTVERSION=	5.0.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www2.aquamaniac.de/sites/download/download.php?package=02&release=200&file=01&dummy=/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/158/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for easy access to chipcards
-
-BROKEN=		unfetchable
 
 LICENSE=	LGPL21
 
