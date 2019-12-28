@@ -1,5 +1,5 @@
 bin/qalculate-gtk
-share/appdata/qalculate-gtk.appdata.xml
+man/man1/qalculate-gtk.1.gz
 share/applications/qalculate-gtk.desktop
 %%DOCSDIR%%/html/figures/calculation-history.png
 %%DOCSDIR%%/html/figures/calculator-buttons.png
@@ -18,16 +18,19 @@ share/applications/qalculate-gtk.desktop
 %%DOCSDIR%%/html/figures/mainwindow.png
 %%DOCSDIR%%/html/figures/plot-data.png
 %%DOCSDIR%%/html/figures/plot-settings.png
+%%DOCSDIR%%/html/figures/programming-keypad.png
 %%DOCSDIR%%/html/figures/rpn-mode.png
 %%DOCSDIR%%/html/figures/store-variable.png
 %%DOCSDIR%%/html/figures/unit-manager.png
 %%DOCSDIR%%/html/figures/variable-manager.png
+%%DOCSDIR%%/html/figures/variance-formula.svg
 %%DOCSDIR%%/html/index.html
 %%DOCSDIR%%/html/qalculate-definitions-functions.html
 %%DOCSDIR%%/html/qalculate-definitions-units.html
 %%DOCSDIR%%/html/qalculate-definitions-variables.html
 %%DOCSDIR%%/html/qalculate-expressions.html
 %%DOCSDIR%%/html/qalculate-functions.html
+%%DOCSDIR%%/html/qalculate-interval-arithmetic.html
 %%DOCSDIR%%/html/qalculate-introduction.html
 %%DOCSDIR%%/html/qalculate-mode.html
 %%DOCSDIR%%/html/qalculate-plotting.html
@@ -36,4 +39,5 @@ share/applications/qalculate-gtk.desktop
 %%DOCSDIR%%/html/qalculate-variables.html
 %%NLS%%share/locale/nl/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/qalculate-gtk.mo
+share/metainfo/qalculate-gtk.appdata.xml
 share/pixmaps/qalculate.png
