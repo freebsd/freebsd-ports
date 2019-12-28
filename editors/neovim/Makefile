@@ -29,6 +29,7 @@ USES=		cmake iconv pathfix pkgconfig
 USE_GITHUB=	yes
 GH_TUPLE=	libmpack:libmpack:1.0.5:libmpack \
 		libmpack:libmpack-lua:1.0.7:libmpack_lua
+PORTSCOUT=	limit:^[0-9\.v]+$$
 
 CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
 		-DCMAKE_INSTALL_MANDIR:PATH="${MANPREFIX}/man" \
