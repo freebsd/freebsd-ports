@@ -151,7 +151,7 @@ lib/libgwengui-cpp.so.0
 lib/libgwengui-cpp.so.0.0.0
 lib/libgwenhywfar.so
 lib/libgwenhywfar.so.%%GWEN_SHLIB_VER%%
-lib/libgwenhywfar.so.%%GWEN_SHLIB_VER%%.19.1
+lib/libgwenhywfar.so.%%GWEN_SHLIB_VER%%.19.3
 libdata/pkgconfig/gwenhywfar.pc
 share/aclocal/gwenhywfar.m4
 %%DATADIR%%/ca-bundle.crt
