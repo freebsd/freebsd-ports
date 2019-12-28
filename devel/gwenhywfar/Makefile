@@ -4,7 +4,7 @@ PORTNAME=	gwenhywfar
 PORTVERSION=	4.20.0
 PORTREVISION?=	2
 CATEGORIES=	devel net security
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=208&file=02&dummy=/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/10/
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Multi-platform helper library for networking and security applications
