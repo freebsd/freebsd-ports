@@ -5756,6 +5756,7 @@
     SUBDIR += rubygem-countries
     SUBDIR += rubygem-crack
     SUBDIR += rubygem-cri
+    SUBDIR += rubygem-csv
     SUBDIR += rubygem-cucumber
     SUBDIR += rubygem-cucumber-core
     SUBDIR += rubygem-cucumber-expressions
