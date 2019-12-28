@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/sbruno:amd
 PKGNAMEPREFIX=	devcpu-
-DISTFILES=	amd64-microcode.20191021.tar.xz:amd
+DISTFILES=	amd64-microcode.20191228.tar.xz:amd
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Intel and AMD CPUs microcode updates
