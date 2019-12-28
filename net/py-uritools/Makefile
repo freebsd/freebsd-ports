@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uritools
-PORTVERSION=	2.2.0
+PORTVERSION=	3.0.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,9 @@ COMMENT=	RFC 3986 compliant, Unicode-aware, scheme-agnostic replacement for urlp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PY_IPADDRESS}
+USES=		python:3.5+
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist concurrent distutils
-USES=		python
 
 .include <bsd.port.mk>
