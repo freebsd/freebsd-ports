@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	rack
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 PORTEPOCH=	3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rack, a Ruby Webserver Interface
 
 LICENSE=	MIT
