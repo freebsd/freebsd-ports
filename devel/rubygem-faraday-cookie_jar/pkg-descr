@@ -1,0 +1,3 @@
+Faraday::CookieJar is a faraday middleware to manage client-side cookies.
+
+WWW: https://github.com/miyagawa/faraday-cookie_jar
