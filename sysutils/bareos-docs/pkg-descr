@@ -1,8 +1,0 @@
-Bareos (BackupArchivingRecoveryOpenSourced) is a reliable network open source
-software to backup, archive and restore files from all major operating systems.
-The fork was founded 2010 out of the bacula.org project. The fork has been
-actively developed and many new features have been added.
-
-This port installs the latest documentation for Bareos.
-
-WWW: http://www.bareos.org/
