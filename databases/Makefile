@@ -659,7 +659,7 @@
     SUBDIR += phpliteadmin
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
-    SUBDIR += phpmyadmin-devel
+    SUBDIR += phpmyadmin5
     SUBDIR += phppgadmin
     SUBDIR += pldebugger
     SUBDIR += plpgsql_check
