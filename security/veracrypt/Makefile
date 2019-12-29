@@ -1,11 +1,11 @@
+
 # $FreeBSD$
 
 PORTNAME=	veracrypt
-PORTVERSION=	1.23
-PORTREVISION=	4
+PORTVERSION=	1.24
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/v/V/:S/c/C/}%20${PORTVERSION}/
-DISTNAME=	${PORTNAME:S/v/V/:S/c/C/}_${PORTVERSION}_Source
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/v/V/:S/c/C/}%20${PORTVERSION}-Update3/
+DISTNAME=	${PORTNAME:S/v/V/:S/c/C/}_${PORTVERSION}-Update3_Source
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Open-source disk encryption software based on Truecrypt
