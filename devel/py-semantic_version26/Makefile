@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	26
 
-MAINTAINER=	sunpoeter@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library provides a few tools to handle SemVer in Python
 
 LICENSE=	MIT
