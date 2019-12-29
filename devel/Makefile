@@ -5511,6 +5511,7 @@
     SUBDIR += rubygem-aws-sdk-codecommit
     SUBDIR += rubygem-aws-sdk-codedeploy
     SUBDIR += rubygem-aws-sdk-codeguruprofiler
+    SUBDIR += rubygem-aws-sdk-codegurureviewer
     SUBDIR += rubygem-aws-sdk-codepipeline
     SUBDIR += rubygem-aws-sdk-codestar
     SUBDIR += rubygem-aws-sdk-codestarnotifications
