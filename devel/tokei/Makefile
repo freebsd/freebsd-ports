@@ -2,8 +2,7 @@
 
 PORTNAME=	tokei
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.1.0
-PORTREVISION=	1
+DISTVERSION=	10.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -36,7 +35,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		bytecount-0.5.1 \
 		byteorder-1.3.2 \
 		c2-chacha-0.2.3 \
-		cc-1.0.47 \
+		cc-1.0.48 \
 		cfg-if-0.1.10 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
@@ -45,7 +44,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		crossbeam-channel-0.4.0 \
 		crossbeam-deque-0.7.2 \
 		crossbeam-epoch-0.8.0 \
-		crossbeam-queue-0.1.2 \
+		crossbeam-queue-0.2.1 \
 		crossbeam-utils-0.6.6 \
 		crossbeam-utils-0.7.0 \
 		digest-0.8.1 \
@@ -53,7 +52,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		dirs-sys-0.3.4 \
 		dtoa-0.4.4 \
 		either-1.5.3 \
-		encoding_rs-0.8.20 \
+		encoding_rs-0.8.22 \
 		encoding_rs_io-0.1.6 \
 		env_logger-0.7.1 \
 		failure-0.1.6 \
@@ -63,14 +62,14 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		fuchsia-cprng-0.1.1 \
 		generic-array-0.12.3 \
 		getrandom-0.1.13 \
-		git2-0.10.1 \
+		git2-0.11.0 \
 		globset-0.4.4 \
 		grep-matcher-0.1.3 \
 		grep-searcher-0.1.6 \
 		half-1.4.0 \
 		handlebars-2.0.2 \
 		hashbrown-0.5.0 \
-		hermit-abi-0.1.3 \
+		hermit-abi-0.1.5 \
 		hex-0.4.0 \
 		humantime-1.3.0 \
 		idna-0.2.0 \
@@ -79,18 +78,17 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		jobserver-0.1.17 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.65 \
-		libgit2-sys-0.9.1 \
+		libc-0.2.66 \
+		libgit2-sys-0.10.0 \
 		libz-sys-1.0.25 \
 		linked-hash-map-0.5.2 \
 		log-0.4.8 \
 		maplit-1.0.2 \
 		matches-0.1.8 \
-		maybe-uninit-2.0.0 \
 		memchr-2.2.1 \
 		memmap-0.7.0 \
 		memoffset-0.5.3 \
-		num_cpus-1.11.0 \
+		num_cpus-1.11.1 \
 		opaque-debug-0.2.3 \
 		percent-encoding-2.1.0 \
 		pest-2.1.2 \
@@ -109,8 +107,8 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
 		rand_os-0.1.3 \
-		rayon-1.2.0 \
-		rayon-core-1.6.0 \
+		rayon-1.3.0 \
+		rayon-core-1.7.0 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
 		redox_users-0.3.1 \
@@ -125,15 +123,15 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		scopeguard-1.0.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.102 \
+		serde-1.0.104 \
 		serde_cbor-0.10.2 \
-		serde_derive-1.0.102 \
-		serde_json-1.0.41 \
+		serde_derive-1.0.104 \
+		serde_json-1.0.44 \
 		serde_yaml-0.8.11 \
 		sha-1-0.8.1 \
-		smallvec-0.6.13 \
+		smallvec-1.1.0 \
 		strsim-0.8.0 \
-		syn-1.0.8 \
+		syn-1.0.11 \
 		synstructure-0.12.3 \
 		tempfile-3.1.0 \
 		term_size-0.3.1 \
@@ -144,11 +142,11 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		typenum-1.11.2 \
 		ucd-trie-0.1.2 \
 		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.9 \
-		unicode-width-0.1.6 \
+		unicode-normalization-0.1.11 \
+		unicode-width-0.1.7 \
 		unicode-xid-0.2.0 \
 		url-2.1.0 \
-		vcpkg-0.2.7 \
+		vcpkg-0.2.8 \
 		vec_map-0.8.1 \
 		walkdir-2.2.9 \
 		wasi-0.7.0 \
