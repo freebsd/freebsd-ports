@@ -6026,6 +6026,7 @@
     SUBDIR += rubygem-mongo
     SUBDIR += rubygem-mono_logger
     SUBDIR += rubygem-ms_rest
+    SUBDIR += rubygem-ms_rest_azure
     SUBDIR += rubygem-msgpack
     SUBDIR += rubygem-mspec
     SUBDIR += rubygem-multi_json
