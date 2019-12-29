@@ -5985,6 +5985,7 @@
     SUBDIR += rubygem-local_time-rails5
     SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile
+    SUBDIR += rubygem-logger
     SUBDIR += rubygem-logging
     SUBDIR += rubygem-logster
     SUBDIR += rubygem-loquacious

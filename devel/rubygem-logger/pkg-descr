@@ -1,0 +1,10 @@
+Logger is a simple but powerful logging utility to output messages in your Ruby
+program.
+
+Logger has the following features:
+- Print messages to different levels such as info and error
+- Auto-rolling of log files
+- Setting the format of log messages
+- Specifying a program name in conjunction with the message
+
+WWW: https://github.com/ruby/logger
