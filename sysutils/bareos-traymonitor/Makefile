@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	bareos
-PORTREVISION=	1
 PKGNAMESUFFIX=	-traymonitor
 
 COMMENT=	Backup archiving recovery open sourced (traymonitor)

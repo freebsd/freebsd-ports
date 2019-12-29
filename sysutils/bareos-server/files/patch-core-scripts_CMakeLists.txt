@@ -1,12 +1,12 @@
---- core/scripts/CMakeLists.txt	2019-05-08 19:49:45.595270000 -0500
-+++ core/scripts/CMakeLists.txt	2019-05-08 19:51:39.443730000 -0500
-@@ -17,28 +17,29 @@
+--- core/scripts/CMakeLists.txt	2019-12-12 12:04:14.000000000 -0500
++++ core/scripts/CMakeLists.txt	2019-12-28 16:23:36.207715000 -0500
+@@ -17,36 +17,37 @@
  #   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  #   02110-1301, USA.
  
 +IF(client-only)
 +   INSTALL(FILES
-+            btraceback
++            bareos btraceback
 +            PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
 +                                    GROUP_READ GROUP_EXECUTE
 +                                    WORLD_READ WORLD_EXECUTE
@@ -19,18 +19,33 @@
 -                                 WORLD_READ WORLD_EXECUTE
 -         DESTINATION "${sbindir}")
 +   INSTALL(FILES
++	    bareos-ctl-fd
++            PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
++                        GROUP_READ GROUP_EXECUTE
++                        WORLD_READ WORLD_EXECUTE
++            DESTINATION "${scriptdir}"
++	    COMPONENT filedaemon)
+ 
+-INSTALL(FILES
+-	 bareos-ctl-fd
+-         PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+-                     GROUP_READ GROUP_EXECUTE
+-                     WORLD_READ WORLD_EXECUTE
+-         DESTINATION "${scriptdir}"
+-	 COMPONENT filedaemon)
++   INSTALL(FILES
 +            bareos
 +            btraceback.gdb
 +            btraceback.dbx
 +            btraceback.mdb
 +            bareos-config
 +            bareos-config-lib.sh
-+            bareos-ctl-fd
 +            bareos-ctl-funcs
 +            PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
 +                        GROUP_READ GROUP_EXECUTE
 +                        WORLD_READ WORLD_EXECUTE
-+            DESTINATION "${scriptdir}")
++            DESTINATION "${scriptdir}"
++   	   )
 +ENDIF()
  
 -INSTALL(FILES
@@ -40,17 +55,17 @@
 -         btraceback.mdb
 -         bareos-config
 -         bareos-config-lib.sh
--         bareos-ctl-fd
 -         bareos-ctl-funcs
 -         PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
 -                     GROUP_READ GROUP_EXECUTE
 -                     WORLD_READ WORLD_EXECUTE
--         DESTINATION "${scriptdir}")
+-         DESTINATION "${scriptdir}"
+-	)
 -
  IF(NOT client-only)
     INSTALL(FILES
           mtx-changer
-@@ -47,7 +48,6 @@
+@@ -55,7 +56,6 @@
           bareos-glusterfind-wrapper
           bareos-ctl-dir
           bareos-ctl-sd

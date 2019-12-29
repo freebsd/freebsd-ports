@@ -41,6 +41,8 @@ man/man1/bconsole.1.gz
 man/man8/bareos-fd.8.gz
 man/man8/bareos.8.gz
 @group bareos
+sbin/bareos
+@group bareos
 sbin/bareos-fd
 @group bareos
 sbin/bconsole
