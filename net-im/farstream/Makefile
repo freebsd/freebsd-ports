@@ -7,11 +7,10 @@ PORTREVISION=	1
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://freedesktop.org/software/farstream/releases/farstream/
 
-PATCH_SITES=	https://gitlab.collabora.com/farstream/farstream/commit/
-PATCHFILES=	11dde55cbaf5179e8e1885cf1483e538a8d5a4a9.patch:-p1
-
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of GStreamer modules and libraries for videoconferencing
+
+LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libnice.so:net-im/libnice
 RUN_DEPENDS=	libnice-gst1>=0:net-im/libnice-gst1
