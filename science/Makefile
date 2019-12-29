@@ -239,6 +239,7 @@
     SUBDIR += py-coards
     SUBDIR += py-dlib
     SUBDIR += py-eccodes-python
+    SUBDIR += py-geomet
     SUBDIR += py-geometer
     SUBDIR += py-gpaw
     SUBDIR += py-gsd

@@ -1,0 +1,8 @@
+GeoMet converts GeoJSON to WKT/WKB (Well-Known Text/Binary), and vice versa.
+Extended WKB/WKT are also supported. Conversion functions are exposed through
+idiomatic load/loads/dump/dumps interfaces.
+
+GeoMet is intended to cover all common use cases for dealing with 2D, 3D, and 4D
+geometries (including 'Z', 'M', and 'ZM').
+
+WWW: https://github.com/geomet/geomet
