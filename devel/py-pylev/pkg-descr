@@ -1,0 +1,6 @@
+pylev is a pure Python Levenshtein implementation that's not freaking GPL'd.
+
+It is based off the Wikipedia code samples at
+http://en.wikipedia.org/wiki/Levenshtein_distance.
+
+WWW: https://github.com/toastdriven/pylev
