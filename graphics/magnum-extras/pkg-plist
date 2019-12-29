@@ -28,6 +28,7 @@ include/Magnum/Ui/configure.h
 include/Magnum/Ui/visibility.h
 lib/libMagnumUi.so
 lib/libMagnumUi.so.2
-lib/libMagnumUi.so.2.2
+lib/libMagnumUi.so.2.3
+share/applications/magnum-player.desktop
 share/cmake/MagnumExtras/FindMagnumExtras.cmake
 share/cmake/MagnumExtras/MagnumExtrasConfig.cmake
