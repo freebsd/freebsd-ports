@@ -3,7 +3,7 @@
 
 PORTNAME=	ilmbase
 PORTVERSION=	2.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics devel
 MASTER_SITES=	https://github.com/openexr/openexr/releases/download/v${PORTVERSION}/
 
