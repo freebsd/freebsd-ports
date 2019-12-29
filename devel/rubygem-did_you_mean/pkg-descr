@@ -1,0 +1,4 @@
+The gem that has been saving people from typos since 2014. Ruby 2.3 and later
+will automatically require this gem when a Ruby process starts up.
+
+WWW: https://github.com/ruby/did_you_mean
