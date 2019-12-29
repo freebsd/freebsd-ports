@@ -1,4 +1,4 @@
---- exrenvmap/main.cpp.orig	2014-08-10 04:24:00 UTC
+--- exrenvmap/main.cpp.orig	2018-08-10 01:35:00 UTC
 +++ exrenvmap/main.cpp
 @@ -47,6 +47,7 @@
  #include <ImfHeader.h>

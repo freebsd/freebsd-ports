@@ -1,4 +1,4 @@
---- IlmImfUtilTest/main.cpp.orig	2014-08-10 04:24:00 UTC
+--- IlmImfUtilTest/main.cpp.orig	2018-08-10 01:34:59 UTC
 +++ IlmImfUtilTest/main.cpp
 @@ -46,7 +46,7 @@
  #include <cstring>
