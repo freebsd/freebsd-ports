@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foolscap
-PORTVERSION=	0.13.1
-PORTREVISION=	2
+PORTVERSION=	0.13.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +16,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=16.0.0:devel/py-twisted@${PY_FLAVOR}
 
-NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
