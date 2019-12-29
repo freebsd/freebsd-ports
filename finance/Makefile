@@ -96,6 +96,7 @@
     SUBDIR += py-pycoin
     SUBDIR += py-python-bitcoinlib
     SUBDIR += py-python-obelisk
+    SUBDIR += py-quantecon
     SUBDIR += py-stripe
     SUBDIR += py-ta-lib
     SUBDIR += py-vatnumber
