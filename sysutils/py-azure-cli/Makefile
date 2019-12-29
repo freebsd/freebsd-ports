@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli
-PORTVERSION=	2.0.77
-PORTREVISION=	1
+PORTVERSION=	2.0.78
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-batch>=8.0:devel/py-azure-batch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-cli-core>=2.0.77:sysutils/py-azure-cli-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-cli-core>=2.0.78:sysutils/py-azure-cli-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-telemetry>=1.0.2:sysutils/py-azure-cli-telemetry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cosmos>=3.0.2:devel/py-azure-cosmos@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-datalake-store>=0.0.45:devel/py-azure-datalake-store@${PY_FLAVOR} \
@@ -72,7 +71,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-redis>=6.0:devel/py-azure-mgmt-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-relay>=0.1.0:devel/py-azure-mgmt-relay@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-reservations>=0.6.0:devel/py-azure-mgmt-reservations@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-resource>=4.0:devel/py-azure-mgmt-resource@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-resource>=6.0:devel/py-azure-mgmt-resource@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-search>=2.0:devel/py-azure-mgmt-search@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-security>=0.1.0:devel/py-azure-mgmt-security@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-servicebus>=0.6.0:devel/py-azure-mgmt-servicebus@${PY_FLAVOR} \
