@@ -13615,4 +13615,4 @@ print/libgnomeprintmm||2019-12-26|Gnome2 dependency not used anymore
 print/libgnomecups||2019-12-26|Gnome2 dependency not used anymore
 devel/rubygem-gitlab-peek-rails52|devel/rubygem-peek-rails52|2019-12-28|Has expired: use devel/rubygem-peek-rails52 instead
 devel/rubygem-numerizer01|devel/rubygem-numerizer|2019-12-28|Has expired: use devel/rubygem-numerizer instead
-databases/phpmyadmin-devel|devel/phpmyadmin5|2019-12-29|Move to phpmyadmin5
+databases/phpmyadmin-devel|databases/phpmyadmin5|2019-12-29|Move to phpmyadmin5
