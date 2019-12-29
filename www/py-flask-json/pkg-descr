@@ -1,0 +1,9 @@
+Flask-JSON is a simple extension that adds better JSON support to Flask
+application.
+
+Features:
+- Works on python 2.6, 2.7, 3.3+ and Flask 0.10+.
+- More ways to generate JSON responses (comparing to plain Flask).
+- Extended JSON encoding support.
+
+WWW: https://github.com/skozlovf/flask-json
