@@ -32,19 +32,25 @@ USES=		cmake desktop-file-utils compiler:gcc-c++11-lib gnome \
 
 DOS2UNIX_REGEX=	.*\.(cc|h)
 USE_GNOME=	gtkmm30 librsvg2
-USE_GCC=	9+
+
+# Binutils required for LTO (base ar/nm/ld/ranlib don't work)
 USE_BINUTILS=	yes
 
-# gcc needs -flto=${MAKE_JOBS_NUMBER} for parallel link
-#   and does not understand -flto=thin
+# As of 2019-09-29, this port is known to be miscompiled by clang90
+# (SIGSEGV or SIBGUS).
+#
+# FreeBSD 11.2/12.0's base clang 6.0.1 emits worse code with
+# considerably higher processing times, and on i386 additional calls to
+# __atomic_*(), so we shall stick to GCC 9.x for now
+USE_GCC=	9+
+
+_LTO_FLAGS=	-flto=${MAKE_JOBS_NUMBER}
+# gcc needs -flto=${MAKE_JOBS_NUMBER} for parallel link (fixed in GCC 10?)
+#     and does not understand -flto=thin
 #   
 # llvm/clang needs -flto=thin and will automatically parallelize the link
 #
-# As of 2019-09-29, this port is known to be micompiled by clang90 (SIGSEGV or SIBGUS)
-# FreeBSD 12.0's base clang 6.0.1 emits worse code with considerably higher
-# processing times.
-# so we shall stick to GCC 9.x for now
-_LTO_FLAGS=	-flto=${MAKE_JOBS_NUMBER}
+# XXX re _AR/_RANLIB: might be worth checking if plain binutils is good
 _AR=		${CC:S/gcc/gcc-ar/}
 _RANLIB=	${CC:S/gcc/gcc-ranlib/}
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${_LTO_FLAGS} ${_OPT_FLAGS}
@@ -116,11 +122,13 @@ STRIP=
 .endif
 
 _OPT_FLAGS=	-O3 -funroll-loops
-# GCC 5.4 includes -fexpensive-optimizations in -O2 already
+# GCC >= 5.4 includes -fexpensive-optimizations in -O2 already
 .if (${ARCH} == i386) || (${ARCH} == amd64)
+# and SSE2 has been around since the years 2000...2003 latest
 _OPT_FLAGS+=	-msse2
 .endif
 
+# workaround for values on the stack that cause SIGBUS on SSE2:
 .if ${ARCH} == i386
 _OPT_FLAGS+=	-mstackrealign
 .endif
@@ -133,14 +141,22 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#DESTINATION "$${CMAKE_INSTALL_PREFIX}/share/man/man1"#DESTINATION "${MANPREFIX}/man/man1/"#' \
 		${WRKSRC}/CMakeLists.txt
 
+TESTIMAGES=	${FILESDIR}/../testimages
+
 # paranoia: run rawtherapee --help to be sure it finds all its
 # shared libraries (this hinges on proper RPATH setting and propagation)
 post-install:
 	@${ECHO_MSG} "===> Running smoke tests"
-	@TMP=$$(mktemp -d -t ${PORTNAME}) && trap "rc=$$? ; ${RM} -rf \"$$TMP\" ; exit \$$rc" 0 && \
+	@(set -x ; TMP=$$(${MKTEMP} -d -t ${PORTNAME}) && trap "rc=$$? ; ${RM} -rf \"$$TMP\" ; exit \$$rc" 0 && \
 	${SETENV} LANG= LC_ALL=C LANGUAGE= DISPLAY= HOME="$$TMP" ${STAGEDIR}${PREFIX}/bin/rawtherapee --help 2>&1 \
 	    | ${EGREP} -q "RawTherapee, version ${PKGVERSION:C/_.*//:C/,.*//}|cannot open display:" && \
 	${SETENV} LANG= LC_ALL=C LANGUAGE= DISPLAY= HOME="$$TMP" ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli --version 2>&1 \
-	    | ${EGREP} -q "RawTherapee, version ${PKGVERSION:C/_.*//:C/,.*//}"
+	    | ${EGREP} -q "RawTherapee, version ${PKGVERSION:C/_.*//:C/,.*//}" && \
+	if test -n "$(TESTIMAGES)" ; then \
+	  time ${SETENV} LANG= LC_ALL=C LANGUAGE= DISPLAY= HOME="$$TMP" ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli \
+		-o "$$TMP" -q -f -c $(TESTIMAGES) && \
+	  time ${SETENV} LANG= LC_ALL=C LANGUAGE= DISPLAY= HOME="$$TMP" ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli \
+		-o "$$TMP" -q -s -Y -c $(TESTIMAGES) ; \
+	fi )
 
 .include <bsd.port.post.mk>
