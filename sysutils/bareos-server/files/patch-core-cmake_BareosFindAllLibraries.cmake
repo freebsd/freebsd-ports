@@ -9,8 +9,8 @@
 -   find_package(PythonInterp)
 -   INCLUDE(FindPythonLibs)
 +   if (python)
-+     # make sure we get python 2 not 3
-+     set(Python_ADDITIONAL_VERSIONS 2.5 2.6 2.7 2.8 2.9)
++     # make sure we get python 2 or 3
++     set(Python_ADDITIONAL_VERSIONS 3.5 3.6 3.7 3.8 2.7)
 +     find_package(PythonInterp)
 +     INCLUDE(FindPythonLibs)
  

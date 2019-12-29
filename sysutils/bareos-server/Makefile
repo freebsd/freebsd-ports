@@ -2,8 +2,8 @@
 
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	18.2.6
-PORTREVISION?=	1
+DISTVERSION=	18.2.7
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -33,7 +33,7 @@ SHEBANG_LANG=	perl
 SHEBANG_FILES=	${WRKSRC}/core/src/cats/make_catalog_backup.pl.in
 
 CPPFLAGS+=	-I${LOCALBASE}/readline -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -ljansson
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_SINGLE=		CRYPTO
@@ -66,7 +66,7 @@ SCSICRYPTO_CMAKE_ON=	-Dscsi-crypto=ON
 SCSICRYPTO_CMAKE_OFF=	-Dscsi-crypto=OFF
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
-PYTHON_USES=		python:2.7
+PYTHON_USES=		python
 PYTHON_CMAKE_ON=	-Dpython=ON
 PYTHON_CMAKE_OFF=	-Dpython=OFF
 PYTHON_PLUGIN=		yes
@@ -192,7 +192,7 @@ MP1+=	bsmtp.1 bregex.1 bwild.1 bareos-tray-monitor.1
 MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
-	@${REINPLACE_CMD}  '21d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD}  '42d' ${WRKSRC}/CMakeLists.txt
 .if ${PKGNAMESUFFIX} == "-server"
 	@${REINPLACE_CMD}  '25d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif
