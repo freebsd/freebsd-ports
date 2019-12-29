@@ -2,7 +2,7 @@
 
 PORTNAME=       bareos
 DISTVERSIONPREFIX=      Release/
-DISTVERSION=    18.2.6
+DISTVERSION=    18.2.7
 CATEGORIES?=    www sysutils
 PKGNAMESUFFIX= -webui
 
@@ -41,7 +41,8 @@ post-extract:
 	${MV} ${WRKSRC}/webui/module/Application/view/layout/login.phtml.in ${WRKSRC}/webui/module/Application/view/layout/login.phtml
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/|${LOCALBASE}/etc/|g' ${WRKSRC}/webui/config/autoload/global.php
+	@${REINPLACE_CMD} -e 's|/etc/|${LOCALBASE}/etc/|g' -e 's|@WEBUICONFDIR@|${ETCDIR}|g' -e \
+		's|@dirport@|9101|g' ${WRKSRC}/webui/config/autoload/global.php
 	@${REINPLACE_CMD} -e 's|@BAREOS_FULL_VERSION@|${PORTVERSION}|g' ${WRKSRC}/webui/version.php
 
 do-install:
