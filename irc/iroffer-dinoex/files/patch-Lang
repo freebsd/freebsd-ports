@@ -1,0 +1,21 @@
+diff -u -r1.17 Lang
+--- Lang	20 Dec 2018 07:17:50 -0000	1.17
++++ Lang	29 Dec 2019 11:16:25 -0000
+@@ -32,14 +32,12 @@
+ then
+ 	charset="${2}"
+ else
+-	# autodetect
++	charset="utf-8"
+ 	case "${LANG}" in
+-	*.ISO8859-*)
++	*.ISO8859-*|*.ISO_8859-*)
++		# autodetect
+ 		charset="latin1"
+ 		;;
+-	*.UTF-8*|*.utf-8*)
+-		charset="utf-8"
+-		;;
+ 	esac
+ fi
+ utf8="cat"
