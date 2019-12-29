@@ -2,8 +2,8 @@
 
 PORTNAME=	bareos17
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	17.2.7
-PORTREVISION?=	4
+DISTVERSION=	17.2.8
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -110,7 +110,8 @@ CONFIGURE_ARGS+=--with-tcp-wrappers=/usr/lib \
 .if defined(WITH_CLIENT_ONLY)
 LMDB_CONFIGURE_ON=	--enable-lmdb=yes
 LMDB_CONFIGURE_OFF=	--enable-lmdb=no
-LMDB_CFLAGS=		-DMDB_DSYNC=O_SYNC
+LMDB_CFLAGS=		-DMDB_DSYNC=O_SYNC \
+			-DMDB_USE_POSIX_MUTEX=1
 
 CONFIGURE_ARGS+=--with-fd-user=root \
 		--with-fd-group=wheel
@@ -194,6 +195,7 @@ post-patch:
 #	Default bconsole.conf is in ${ETCDIR}
 	@${REINPLACE_CMD} -e 's|^MAN8 =|MAN8 ?=|g' -e 's|^MAN1 =|MAN1 ?=|g' ${WRKSRC}/manpages/Makefile.in
 	@${REINPLACE_CMD} -e 's|_NONSHARED||g' ${WRKSRC}/src/filed/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/bin/python-config|${PYTHON_CMD}-config|g' ${WRKSRC}/configure
 .if defined(WITH_CLIENT_ONLY)
 	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)scripts\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\(.*$${MKDIR} $${DESTDIR}$${scriptdir}\)|#\1|g' ${WRKSRC}/Makefile.in

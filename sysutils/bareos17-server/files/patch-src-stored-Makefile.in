@@ -43,7 +43,7 @@
  	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L. -L../lib -o $@ $(TAPEOBJS) \
  	   -lbareossd -lbareoscfg -lbareos $(DLIB) -lm $(LIBS) $(GETTEXT_LIBS) \
 -	   $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
-+	   $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED)
++	   $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) $(JANSSON_LDFLAGS)
  
  bls: Makefile libbareossd$(DEFAULT_ARCHIVE_TYPE) $(BLSOBJS) \
 -     ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
@@ -56,7 +56,7 @@
  	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L. -L../lib -L../findlib -o $@ $(BLSOBJS) $(DLIB) \
  	   -lbareossd -lbareosfind -lbareoscfg -lbareos -lm $(LIBS) $(GETTEXT_LIBS) \
 -	   $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
-+	   $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED)
++	   $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) $(JANSSON_LDFLAGS)
  
  bextract: Makefile libbareossd$(DEFAULT_ARCHIVE_TYPE) $(BEXTOBJS) \
 -          ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
@@ -69,7 +69,7 @@
  	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L. -L../lib -L../findlib -o $@ $(BEXTOBJS) $(DLIB) \
  	   -lbareossd -lbareosfind -lbareoscfg -lbareos -lm $(LIBS) $(SD_LIBS) $(BEXTRACT_LIBS) \
 -	   $(GETTEXT_LIBS) $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
-+	   $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED)
++	   $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) $(JANSSON_LDFLAGS)
  
  bscan:	Makefile libbareossd$(DEFAULT_ARCHIVE_TYPE) $(SCNOBJS) \
 -        ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
@@ -90,7 +90,7 @@
  	@echo "Linking $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L. -L../lib -o $@ $(COPYOBJS) \
 -	   -lbareossd -lbareoscfg -lbareos -lm $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
-+	   -lbareossd -lbareoscfg -lbareos -lm $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED)
++	   -lbareossd -lbareoscfg -lbareos -lm $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) $(JANSSON_LDFLAGS)
  
  Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
  	cd $(topdir) \
