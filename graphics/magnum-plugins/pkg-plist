@@ -55,7 +55,7 @@ include/MagnumPlugins/TinyGltfImporter/TinyGltfImporter.h
 include/MagnumPlugins/TinyGltfImporter/configure.h
 lib/libMagnumOpenDdl.so
 lib/libMagnumOpenDdl.so.2
-lib/libMagnumOpenDdl.so.2.2
+lib/libMagnumOpenDdl.so.2.3
 lib/magnum/audioimporters/DrFlacAudioImporter.conf
 lib/magnum/audioimporters/DrFlacAudioImporter.so
 lib/magnum/audioimporters/DrWavAudioImporter.conf

@@ -6,4 +6,4 @@ bin/magnum-text
 bin/magnum-triangle
 bin/magnum-triangle-plain-glfw
 bin/magnum-viewer
-share/magnum/examples/viewer/scene.ogex
+share/magnum/examples/viewer/scene.glb
