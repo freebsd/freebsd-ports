@@ -250,6 +250,7 @@
     SUBDIR += mirmon
     SUBDIR += mmdnn
     SUBDIR += mmv
+    SUBDIR += mnn
     SUBDIR += molequeue
     SUBDIR += morse
     SUBDIR += mtail
