@@ -1,0 +1,9 @@
+TOML Kit is a 0.5.0-compliant TOML library.
+
+It includes a parser that preserves all comments, indentations, whitespace and
+internal element ordering, and makes them accessible and editable via an
+intuitive API.
+
+You can also create new TOML documents from scratch using the provided helpers.
+
+WWW: https://github.com/sdispater/tomlkit
