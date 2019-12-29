@@ -14,6 +14,9 @@ DIST_SUBDIR=		oracle
 MAINTAINER=		pi@FreeBSD.org
 COMMENT=		Oracle 10 32 Bit Linux InstantClient SQLPlus for RDBMS 8.1.2+
 
+DEPRECATED=		Depends on deprecated Centos 6 framework
+EXPIRATION_DATE=	2019-12-31
+
 ONLY_FOR_ARCHS=		i386 amd64
 NO_BUILD=		yes
 DISTINFO_FILE=		${MASTERDIR}/distinfo.i386
