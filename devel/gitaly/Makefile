@@ -2,7 +2,7 @@
 
 PORTNAME=	gitaly
 DISTVERSION=	1.77.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -22,7 +22,7 @@ MY_DEPENDS=	git>=2.21:devel/git \
 		rubygem-gitlab-gollum-lib>=4.2.7.7<4.2.8.0:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.2<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
 		rubygem-grpc>=1.24.0<1.25.0:net/rubygem-grpc \
-		rubygem-sentry-raven>=2.9.0<2.10.0:devel/rubygem-sentry-raven \
+		rubygem-sentry-raven29>=2.9.0<2.10.0:devel/rubygem-sentry-raven29 \
 		rubygem-faraday>=0.12<1.0:www/rubygem-faraday \
 		rubygem-rbtrace>0:devel/rubygem-rbtrace \
 		rubygem-gitlab-labkit>=0.5.0<0.6.0:devel/rubygem-gitlab-labkit \
