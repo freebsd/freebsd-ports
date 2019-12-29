@@ -34,7 +34,7 @@ LIB_DEPENDS=	libagg.so:graphics/agg \
 #broken headers on c++ in base system:
 CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include
 USES=		gmake jpeg perl5 pkgconfig python:2.7 tar:bzip2 xorg
-USE_CXXSTD=	c++03
+USE_CXXSTD=	c++11
 USE_XORG=	x11
 HAS_CONFIGURE=	yes
 INSTALL_WRKSRC=	${WRKSRC}/objdir
