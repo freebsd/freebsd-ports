@@ -1,7 +1,4 @@
-If your application code creates duplicate jobs, sidekiq-unique-jobs can ensure
-only a single copy of a job is in Redis.  For instance, perhaps you create a job
-to sync an address change with a 3rd party system every time a form is
-submitted. If the form is submitted twice, you don't need to create the second
-job if the first job is still pending.
+The goal of this gem is to ensure your Sidekiq jobs are unique. We do this by
+creating unique keys in Redis based on how you configure uniqueness.
 
 WWW: https://github.com/mhenrixon/sidekiq-unique-jobs
