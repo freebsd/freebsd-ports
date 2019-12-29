@@ -1,4 +1,4 @@
---- IlmImfTest/testOptimizedInterleavePatterns.cpp.orig	2014-08-10 02:03:49 UTC
+--- IlmImfTest/testOptimizedInterleavePatterns.cpp.orig	2018-08-10 01:34:59 UTC
 +++ IlmImfTest/testOptimizedInterleavePatterns.cpp
 @@ -226,7 +226,8 @@ bool compare(const FrameBuffer& asRead,
                      writtenHalf=half(i.slice().fillValue);

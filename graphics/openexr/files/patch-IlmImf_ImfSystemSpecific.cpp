@@ -1,4 +1,4 @@
---- IlmImf/ImfSystemSpecific.cpp.orig	2017-11-17 23:00:24 UTC
+--- IlmImf/ImfSystemSpecific.cpp.orig	2018-08-10 01:34:58 UTC
 +++ IlmImf/ImfSystemSpecific.cpp
 @@ -44,11 +44,23 @@ namespace {
      // Helper functions for gcc + SSE enabled

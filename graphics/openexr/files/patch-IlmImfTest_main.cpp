@@ -1,4 +1,4 @@
---- IlmImfTest/main.cpp.orig	2014-08-10 04:23:59 UTC
+--- IlmImfTest/main.cpp.orig	2018-08-10 01:34:59 UTC
 +++ IlmImfTest/main.cpp
 @@ -100,7 +100,7 @@
  #include <string.h>
