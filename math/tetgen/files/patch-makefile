@@ -1,5 +1,5 @@
---- makefile.orig	2013-11-06 15:26:24.000000000 -0500
-+++ makefile	2014-08-29 10:51:57.000000000 -0500
+--- makefile.orig	2013-11-06 20:26:24 UTC
++++ makefile
 @@ -11,7 +11,7 @@
  # CXX should be set to the name of your favorite C++ compiler.
  # ===========================================================
@@ -9,16 +9,22 @@
  #CXX = icpc
  #CXX = CC
  
-@@ -19,7 +19,7 @@
+@@ -19,11 +19,12 @@ CXX = g++
  # -O2, -O3 ... to find the best optimization level.
  # ===================================================================
  
 -CXXFLAGS = -O3
 +CXXFLAGS ?= -O3
++ARFLAGS ?= -crD 
  
  # PREDCXXFLAGS is for compiling J. Shewchuk's predicates. 
  
-@@ -36,7 +36,7 @@
+-PREDCXXFLAGS = -O0
++PREDCXXFLAGS? = -O0
+ 
+ # SWITCHES is a list of switches to compile TetGen.
+ # =================================================
+@@ -36,7 +37,7 @@ PREDCXXFLAGS = -O0
  #   down the speed of TetGen.  They can be skipped by define the -DNDEBUG
  #   switch.
  
@@ -27,3 +33,36 @@
  
  # RM should be set to the name of your favorite rm (file deletion program).
  
+@@ -44,19 +45,20 @@ RM = /bin/rm
+ 
+ # The action starts here.
+ 
+-tetgen:	tetgen.cxx predicates.o
+-	$(CXX) $(CXXFLAGS) $(SWITCHES) -o tetgen tetgen.cxx predicates.o -lm
+-
+-tetlib: tetgen.cxx predicates.o
+-	$(CXX) $(CXXFLAGS) $(SWITCHES) -DTETLIBRARY -c tetgen.cxx
+-	ar r libtet.a tetgen.o predicates.o
+-
++LIBS=	-lm
++tetgen:	tetgen.o predicates.o
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o ${.TARGET} ${.ALLSRC} ${LIBS}
++tetgen.o: tetgen.cxx
++	$(CXX) $(CXXFLAGS) $(SWITCHES) -c -o ${.TARGET} ${.ALLSRC}
+ predicates.o: predicates.cxx
+-	$(CXX) $(PREDCXXFLAGS) -c predicates.cxx
++	$(CXX) $(CXXFLAGS) $(PREDCXXFLAGS) $(SWITCHES) -c -o ${.TARGET} ${.ALLSRC}
+ 
+-clean:
+-	$(RM) *.o *.a tetgen *~
++tetgen_lib.o: tetgen.cxx
++	$(CXX) $(CXXFLAGS) $(SWITCHES) -DTETLIBRARY -c -o ${.TARGET} ${.ALLSRC}
++libtet.a: tetgen_lib.o predicates.o
++	$(AR) $(ARFLAGS) ${.TARGET} ${.ALLSRC}
+ 
++tetlib: libtet.a
+ 
+-
+-
++clean:
++	$(RM) -f *.o *.a tetgen *~
