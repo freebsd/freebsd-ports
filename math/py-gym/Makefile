@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gym
-PORTVERSION=	0.15.3
-PORTREVISION=	1
+PORTVERSION=	0.15.4
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,5 +25,9 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|, 'opencv-python'||" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e '/opencv-python/d' ${WRKSRC}/gym.egg-info/requires.txt
 
 .include <bsd.port.mk>
