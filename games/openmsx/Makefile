@@ -15,13 +15,16 @@ MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Free alternative music for OpenTTD game engine
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		zip
 NO_BUILD=	yes
+NO_ARCH=	yes
+
+WRKSRC=		${WRKDIR}/openmsx-${PORTVERSION}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/openttd/baseset/openmsx
-	${INSTALL_DATA} ${WRKDIR}/openmsx-${PORTVERSION}/* \
-		${STAGEDIR}${PREFIX}/share/openttd/baseset/openmsx
+	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${PREFIX}/share/openttd/baseset/openmsx
 
 .include <bsd.port.mk>
