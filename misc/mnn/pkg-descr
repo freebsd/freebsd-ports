@@ -1,0 +1,4 @@
+MNN is a lightweight deep neural network inference engine. It loads models and
+do inference on devices.
+
+WWW: https://github.com/alibaba/MNN
