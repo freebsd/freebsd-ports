@@ -4289,6 +4289,7 @@
     SUBDIR += py-circuits
     SUBDIR += py-cjson
     SUBDIR += py-cld
+    SUBDIR += py-cleo
     SUBDIR += py-cli-helpers
     SUBDIR += py-cliapp
     SUBDIR += py-click
