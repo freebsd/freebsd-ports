@@ -1,0 +1,9 @@
+Pastel is a simple library to help you colorize strings in your terminal.
+
+It comes bundled with predefined styles:
+- info: green
+- comment: yellow
+- question: black on cyan
+- error: white on red
+
+WWW: https://github.com/sdispater/pastel
