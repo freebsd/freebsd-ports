@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN=		STL feature 'filesystem' isn't available # '
 .endif
 
+IGNORE_FreeBSD_11=	getline isn't available on 11 by simply including <stdio.h> as its manpage says #'
+
 BUILD_DEPENDS=	rang>0:devel/rang
 LIB_DEPENDS=	libyaml-cpp.so:devel/yaml-cpp
 
