@@ -1,0 +1,56 @@
+From 11dde55cbaf5179e8e1885cf1483e538a8d5a4a9 Mon Sep 17 00:00:00 2001
+From: Jakub Adam <jakub.adam@ktknet.cz>
+Date: Thu, 14 Apr 2016 15:17:50 +0200
+Subject: [PATCH] rtpbitrateadapter: should make no adaption by default
+
+Description of "bitrate" property says 0 (the default value) means
+the element performs no adaption, and so one would assume it would
+remain passive until "bitrate" is set to some nonzero value. However,
+when "bitrate" is left unset, the adapter instead requests video in tiny
+128x96 resolution on its sink pad.
+
+In order for fs_rtp_bitrate_adapter_getcaps() to return peer_caps by
+default, the value of FsRtpBitrateAdapter::bitrate has to be initialized
+to G_MAXUINT.
+
+Also fix the comments to say that MAXUINT is no adaptation.
+
+https://bugs.freedesktop.org/show_bug.cgi?id=99183
+---
+ gst/fsrtpconference/fs-rtp-bitrate-adapter.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/gst/fsrtpconference/fs-rtp-bitrate-adapter.c b/gst/fsrtpconference/fs-rtp-bitrate-adapter.c
+index e8684fd5..99ea03a0 100644
+--- ./gst/fsrtpconference/fs-rtp-bitrate-adapter.c~
++++ ./gst/fsrtpconference/fs-rtp-bitrate-adapter.c
+@@ -55,6 +55,7 @@ enum
+ };
+ 
+ #define PROP_INTERVAL_DEFAULT (10 * GST_SECOND)
++#define PROP_BITRATE_DEFAULT (G_MAXUINT)
+ 
+ static void fs_rtp_bitrate_adapter_finalize (GObject *object);
+ static void fs_rtp_bitrate_adapter_set_property (GObject *object,
+@@ -105,8 +106,8 @@ fs_rtp_bitrate_adapter_class_init (FsRtpBitrateAdapterClass *klass)
+       PROP_BITRATE,
+       g_param_spec_uint ("bitrate",
+           "Bitrate to adapt for",
+-          "The bitrate to adapt for (0 means no adaption)",
+-          0, G_MAXUINT, 0,
++          "The bitrate to adapt for (MAXUINT means no adaption)",
++          0, G_MAXUINT, PROP_BITRATE_DEFAULT,
+           G_PARAM_WRITABLE | G_PARAM_STATIC_STRINGS));
+ 
+  g_object_class_install_property (gobject_class,
+@@ -161,6 +162,7 @@ fs_rtp_bitrate_adapter_init (FsRtpBitrateAdapter *self)
+   self->system_clock = gst_system_clock_obtain ();
+   self->interval = PROP_INTERVAL_DEFAULT;
+ 
++  self->bitrate = PROP_BITRATE_DEFAULT;
+   self->last_bitrate = G_MAXUINT;
+ }
+ 
+-- 
+2.22.2
+
