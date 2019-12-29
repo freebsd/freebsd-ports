@@ -10,7 +10,10 @@ CATEGORIES=	graphics
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the codec specified in the JPEG-2000 standard
 
-LICENSE=	MIT
+LICENSE=	JASPER
+LICENSE_NAME=	JasPer License Version 2.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE=	OPENGL DOCS
 OPTIONS_DEFAULT=	OPENGL
