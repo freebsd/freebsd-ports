@@ -1,5 +1,5 @@
---- src/stored/Makefile.in	2016-10-16 10:14:36.000000000 -0500
-+++ src/stored/Makefile.in	2016-11-09 15:54:32.944172000 -0500
+--- src/stored/Makefile.in	2019-12-12 11:12:41.000000000 -0500
++++ src/stored/Makefile.in	2019-12-28 15:51:03.744493000 -0500
 @@ -93,6 +93,7 @@
  INCLUDES += -I$(srcdir) -I$(basedir) -I$(basedir)/include
  
@@ -8,43 +8,76 @@
  
  DEBUG = @DEBUG@
  GETTEXT_LIBS = @LIBINTL@
-@@ -170,7 +171,7 @@
+@@ -164,17 +165,17 @@
+ 	$(NO_ECHO)$(LIBTOOL_COMPILE) $(CXX) $(DEFS) $(DEBUG) -c $(WCFLAGS) $(CPPFLAGS) $(JANSSON_CPPFLAGS) $(INCLUDES) $(DINCLUDE) $(CXXFLAGS) $<
+ 
+ bareos-sd: Makefile libbareossd$(DEFAULT_ARCHIVE_TYPE) $(SDOBJS) \
+-	   ../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
+-	   ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
++	   $(LOCALBASE)/lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
++	   $(LOCALBASE)/lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
+ 	   @NDMP_DEPS@
  	@echo "Linking $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -L. -L../lib -o $@ $(SDOBJS) \
  	   $(NDMP_LIBS) -lbareossd -lbareoscfg -lbareos -lm $(DLIB) $(LIBS) $(WRAPLIBS) \
 -	   $(SD_LIBS) $(GETTEXT_LIBS) $(COMPRESS_LIBS) $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
-+	   $(SD_LIBS) $(GETTEXT_LIBS) $(COMPRESS_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) ${JANSSON_LDFLAGS}
++	   $(SD_LIBS) $(GETTEXT_LIBS) $(COMPRESS_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) $(JANSSON_LDFLAGS)
  
  static-bareos-sd: Makefile libbareossd$(DEFAULT_ARCHIVE_TYPE) $(SDOBJS) \
- 	          ../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
-@@ -192,7 +193,7 @@
+-	          ../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
+-	          ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
++	          $(LOCALBASE)/lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
++	          $(LOCALBASE)/lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
+ 	          @NDMP_DEPS@
+ 	@echo "Linking $@ ..."
+ 	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -static -L. -L../lib -o $@ $(SDOBJS) \
+@@ -187,46 +188,47 @@
+ 	$(NO_ECHO)$(CXX) $(DEFS) $(DEBUG) -c $(WCFLAGS) $(CPPFLAGS) -I../lib $(INCLUDES) $(DINCLUDE) $(CXXFLAGS) $<
+ 
+ btape: Makefile libbareossd$(DEFAULT_ARCHIVE_TYPE) $(TAPEOBJS) \
+-       ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
+-       ../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE)
++       $(LOCALBASE)/lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
++       $(LOCALBASE)/lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE)
  	@echo "Linking $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L. -L../lib -o $@ $(TAPEOBJS) \
  	   -lbareossd -lbareoscfg -lbareos $(DLIB) -lm $(LIBS) $(GETTEXT_LIBS) \
 -	   $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
-+	   $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED)
++	   $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) $(JANSSON_LDFLAGS)
  
  bls: Makefile libbareossd$(DEFAULT_ARCHIVE_TYPE) $(BLSOBJS) \
-      ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
-@@ -201,7 +202,7 @@
+-     ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
+-     ../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
+-     ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE)
++     $(LOCALBASE)/lib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
++     $(LOCALBASE)/lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
++     $(LOCALBASE)/lib/libbareos$(DEFAULT_ARCHIVE_TYPE)
  	@echo "Linking $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L. -L../lib -L../findlib -o $@ $(BLSOBJS) $(DLIB) \
  	   -lbareossd -lbareosfind -lbareoscfg -lbareos -lm $(LIBS) $(GETTEXT_LIBS) \
 -	   $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
-+	   $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED)
++	   $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) $(JANSSON_LDFLAGS)
  
  bextract: Makefile libbareossd$(DEFAULT_ARCHIVE_TYPE) $(BEXTOBJS) \
-           ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
-@@ -210,7 +211,7 @@
+-          ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
+-	  ../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
+-          ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE)
++          $(LOCALBASE)/lib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
++	  $(LOCALBASE)/lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
++          $(LOCALBASE)/lib/libbareos$(DEFAULT_ARCHIVE_TYPE)
  	@echo "Linking $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L. -L../lib -L../findlib -o $@ $(BEXTOBJS) $(DLIB) \
  	   -lbareossd -lbareosfind -lbareoscfg -lbareos -lm $(LIBS) $(SD_LIBS) $(BEXTRACT_LIBS) \
 -	   $(GETTEXT_LIBS) $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
-+	   $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED)
++	   $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) $(JANSSON_LDFLAGS)
  
  bscan:	Makefile libbareossd$(DEFAULT_ARCHIVE_TYPE) $(SCNOBJS) \
-         ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
-@@ -220,13 +221,13 @@
+-        ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
+-	../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
++        $(LOCALBASE)/lib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
++	$(LOCALBASE)/lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
+ 	../cats/libbareossql$(DEFAULT_ARCHIVE_TYPE) \
+ 	../cats/libbareoscats$(DEFAULT_ARCHIVE_TYPE)
  	@echo "Linking $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L. -L../lib -L../cats -L../findlib -o $@ $(SCNOBJS) \
  	   -lbareossql -lbareoscats $(DB_LIBS) -lbareossd -lbareosfind -lbareoscfg -lbareos -lm $(LIBS) $(SD_LIBS) \
@@ -52,15 +85,17 @@
 +	   $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) ${JANSSON_LDFLAGS}
  
  bcopy:	Makefile libbareossd$(DEFAULT_ARCHIVE_TYPE) $(COPYOBJS) \
- 	../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE)
+-	../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE)
++	$(LOCALBASE)/lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) $(LOCALBASE)/lib/libbareos$(DEFAULT_ARCHIVE_TYPE)
  	@echo "Linking $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L. -L../lib -o $@ $(COPYOBJS) \
 -	   -lbareossd -lbareoscfg -lbareos -lm $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
-+	   -lbareossd -lbareoscfg -lbareos -lm $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED)
++	   -lbareossd -lbareoscfg -lbareos -lm $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) \
++	   $(JANSSON_LDFLAGS)
  
  Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
  	cd $(topdir) \
-@@ -259,8 +260,8 @@
+@@ -259,8 +261,8 @@
  	            destconf="$$RESDIR/$$RES.new"; \
  	            echo "    $$RESTYPE/$$RES as \"$$destconf\" (keep existing)"; \
  	         else \

@@ -6,8 +6,6 @@
 @group bareos
 @sample %%ETCDIR%%/bareos-fd.d/messages/Standard.conf.sample
 @group bareos
-%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
-%%PYTHON%%@group bareos
 %%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.sample
 %%PYTHON%%@group bareos
 %%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/job/restore-ldap.conf.sample
