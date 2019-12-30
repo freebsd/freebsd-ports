@@ -1,8 +1,6 @@
-%%DATADIR%%/VL-PGothic-Regular.ttf
-%%DATADIR%%/VL-Gothic-Regular.ttf
+%%FONTSDIR%%/VL-PGothic-Regular.ttf
+%%FONTSDIR%%/VL-Gothic-Regular.ttf
 etc/fonts/conf.avail/20-unhint-vlgothic.conf
 etc/fonts/conf.avail/62-fonts-vlgothic.conf
 etc/fonts/conf.d/20-unhint-vlgothic.conf
 etc/fonts/conf.d/62-fonts-vlgothic.conf
-%%FONTSDIR%%/VL-PGothic-Regular.ttf
-%%FONTSDIR%%/VL-Gothic-Regular.ttf
