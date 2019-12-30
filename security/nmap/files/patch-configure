@@ -1,6 +1,6 @@
---- configure.orig	2017-07-31 19:09:47 UTC
+--- configure.orig	2019-05-24 18:28:49 UTC
 +++ configure
-@@ -2583,7 +2583,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLA
+@@ -2542,7 +2542,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $
  ac_compiler_gnu=$ac_cv_c_compiler_gnu
  if test -n "$ac_tool_prefix"; then
    # Extract the first word of "${ac_tool_prefix}gcc", so it can be a program name with args.
@@ -9,7 +9,7 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
  $as_echo_n "checking for $ac_word... " >&6; }
  if ${ac_cv_prog_CC+:} false; then :
-@@ -3416,7 +3416,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLA
+@@ -3375,7 +3375,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $
  ac_compiler_gnu=$ac_cv_c_compiler_gnu
  if test -n "$ac_tool_prefix"; then
    # Extract the first word of "${ac_tool_prefix}gcc", so it can be a program name with args.
@@ -18,3 +18,12 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
  $as_echo_n "checking for $ac_word... " >&6; }
  if ${ac_cv_prog_CC+:} false; then :
+@@ -6365,7 +6365,7 @@ if test $have_libpcap != yes; then
+   else
+     CPPFLAGS="$CPPFLAGS -I\$(top_srcdir)/$libpcapdir"
+   fi
+-  LIBPCAP_LIBS='$(LIBPCAPDIR)/libpcap.a'
++  LIBPCAP_LIBS='$(LIBPCAPDIR)/libpcap.a -libverbs'
+   PCAP_BUILD="build-pcap"
+   PCAP_CLEAN="clean-pcap"
+   PCAP_DIST_CLEAN="distclean-pcap"
