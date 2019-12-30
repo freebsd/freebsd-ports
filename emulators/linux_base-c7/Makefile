@@ -2,6 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nfilesystem-*:C/:[^:]+$//}
@@ -44,27 +45,27 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		krb5-libs-1.15.1-37.el7_7.2 \
 		libacl-2.2.51-14.el7 \
 		libattr-2.4.46-13.el7 \
-		libblkid-2.23.2-61.el7 \
+		libblkid-2.23.2-61.el7_7.1 \
 		libcap-2.22-10.el7 \
 		libcom_err-1.42.9-16.el7 \
 		libdb-5.3.21-25.el7 \
 		libffi-3.0.13-18.el7 \
 		libgcc-4.8.5-39.el7 \
 		libidn-1.28-4.el7 \
-		libmount-2.23.2-61.el7 \
+		libmount-2.23.2-61.el7_7.1 \
 		libselinux-2.5-14.1.el7 \
 		libsepol-2.5-10.el7 \
 		libstdc++-4.8.5-39.el7 \
-		libuuid-2.23.2-61.el7 \
+		libuuid-2.23.2-61.el7_7.1 \
 		ncurses-libs-5.9-14.20130511.el7_4 \
-		nss-softokn-freebl-3.44.0-5.el7 \
+		nss-softokn-freebl-3.44.0-8.el7_7 \
 		openssl-libs-1.0.2k-19.el7 \
 		pcre-8.32-17.el7 \
 		popt-1.13-16.el7 \
 		readline-6.2-11.el7 \
 		redhat-lsb-core-4.1-27.el7.centos.1 \
 		slang-2.2.4-11.el7 \
-		util-linux-2.23.2-61.el7 \
+		util-linux-2.23.2-61.el7_7.1 \
 		xz-libs-5.2.2-1.el7 \
 		zlib-1.2.7-18.el7
 SHARE_DISTNAMES=basesystem-10.0-7.el7.centos \
@@ -101,7 +102,7 @@ SRC_DISTFILES=	acl-2.2.51-14.el7${SRC_SUFX}:SOURCE \
 		libselinux-2.5-14.1.el7${SRC_SUFX}:SOURCE \
 		libsepol-2.5-10.el7${SRC_SUFX}:SOURCE \
 		ncurses-5.9-14.20130511.el7_4${SRC_SUFX}:SOURCE \
-		nss-softokn-3.44.0-5.el7${SRC_SUFX}:SOURCE \
+		nss-softokn-3.44.0-8.el7_7${SRC_SUFX}:SOURCE \
 		openssl-1.0.2k-19.el7${SRC_SUFX}:SOURCE \
 		pcre-8.32-17.el7${SRC_SUFX}:SOURCE \
 		popt-1.13-16.el7${SRC_SUFX}:SOURCE \
@@ -112,7 +113,7 @@ SRC_DISTFILES=	acl-2.2.51-14.el7${SRC_SUFX}:SOURCE \
 		setup-2.8.71-10.el7${SRC_SUFX}:SOURCE \
 		slang-2.2.4-11.el7${SRC_SUFX}:SOURCE \
 		texinfo-5.1-5.el7${SRC_SUFX}:SOURCE \
-		util-linux-2.23.2-61.el7${SRC_SUFX}:SOURCE \
+		util-linux-2.23.2-61.el7_7.1${SRC_SUFX}:SOURCE \
 		which-2.20-7.el7${SRC_SUFX}:SOURCE \
 		xz-5.2.2-1.el7${SRC_SUFX}:SOURCE \
 		zlib-1.2.7-18.el7${SRC_SUFX}:SOURCE
