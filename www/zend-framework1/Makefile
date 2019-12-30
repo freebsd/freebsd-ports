@@ -3,6 +3,7 @@
 
 PORTNAME=	ZendFramework
 PORTVERSION=	1.12.16
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://packages.zendframework.com/releases/${DISTNAME}/
 PKGNAMESUFFIX=	1
