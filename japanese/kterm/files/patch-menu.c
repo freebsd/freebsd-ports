@@ -1,6 +1,6 @@
---- menu.c.orig	2013-01-20 15:02:29.000000000 +0900
-+++ menu.c	2013-01-20 15:02:56.000000000 +0900
-@@ -843,6 +843,7 @@
+--- menu.c.orig	2016-11-04 21:41:21 UTC
++++ menu.c
+@@ -843,6 +843,7 @@ static void do_jismode (gw, closure, data)
      update_eucmode();
      update_sjismode();
      update_utf8mode();
@@ -8,7 +8,7 @@
  }
  
  
-@@ -867,6 +868,7 @@
+@@ -867,6 +868,7 @@ static void do_eucmode (gw, closure, data)
  	update_eucmode();
  	update_sjismode();
  	update_utf8mode();
@@ -16,7 +16,7 @@
      }
  }
  
-@@ -891,6 +893,7 @@
+@@ -891,6 +893,7 @@ static void do_sjismode (gw, closure, data)
  	update_eucmode();
  	update_sjismode();
  	update_utf8mode();

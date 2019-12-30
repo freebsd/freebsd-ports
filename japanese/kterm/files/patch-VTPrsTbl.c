@@ -1,6 +1,6 @@
---- VTPrsTbl.c.orig	Wed Nov 13 23:56:22 2002
-+++ VTPrsTbl.c	Wed Nov 13 01:10:07 2002
-@@ -490,7 +490,7 @@
+--- VTPrsTbl.c.orig	2016-11-04 21:41:21 UTC
++++ VTPrsTbl.c
+@@ -490,7 +490,7 @@ CASE_GROUND_STATE,
  CASE_GROUND_STATE,
  CASE_GROUND_STATE,
  /*	X		Y		Z		[	*/
