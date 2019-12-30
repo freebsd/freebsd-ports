@@ -3,7 +3,7 @@
 
 PORTNAME=	kaname12
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	LOCAL/hrs
 PKGNAMEPREFIX=	ja-font-
@@ -14,12 +14,15 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	12-dot Kanji font
 
+LICENSE=	PD
+
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts
+FONTPATHSPEC=	${FONTNAME}:unscaled:pri=60
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
-SUB_FILES=	Makefile pkg-message
+SUB_FILES=	Makefile
 MAKEFILE=	${WRKDIR}/Makefile
 PORTDOCS=	readme readme.kaname_bdf kaname.doc \
 		readme.knm gijutsu-siryou.doc
