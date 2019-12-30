@@ -1,0 +1,4 @@
+ruby2_keywords provides empty Module#ruby2_keywords method, for the forward
+source-level compatibility against ruby2.7 and ruby3.
+
+WWW: https://github.com/ruby/ruby2_keywords
