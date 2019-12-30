@@ -17,6 +17,7 @@
 @sample %%ETCDIR%%.d/charon/curve25519.conf.sample
 @sample %%ETCDIR%%.d/charon/des.conf.sample
 @sample %%ETCDIR%%.d/charon/dnskey.conf.sample
+@sample %%ETCDIR%%.d/charon/drbg.conf.sample
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka-3gpp2.conf.sample
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka.conf.sample
 %%EAPDYNAMIC%%@sample %%ETCDIR%%.d/charon/eap-dynamic.conf.sample
@@ -140,6 +141,8 @@ lib/ipsec/plugins/libstrongswan-des.la
 lib/ipsec/plugins/libstrongswan-des.so
 lib/ipsec/plugins/libstrongswan-dnskey.la
 lib/ipsec/plugins/libstrongswan-dnskey.so
+lib/ipsec/plugins/libstrongswan-drbg.la
+lib/ipsec/plugins/libstrongswan-drbg.so
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka-3gpp2.la
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka-3gpp2.so
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka.la
@@ -305,6 +308,7 @@ sbin/ipsec
 %%DATADIR%%/templates/config/plugins/curve25519.conf
 %%DATADIR%%/templates/config/plugins/des.conf
 %%DATADIR%%/templates/config/plugins/dnskey.conf
+%%DATADIR%%/templates/config/plugins/drbg.conf
 %%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/eap-aka-3gpp2.conf
 %%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/eap-aka.conf
 %%EAPDYNAMIC%%%%DATADIR%%/templates/config/plugins/eap-dynamic.conf
