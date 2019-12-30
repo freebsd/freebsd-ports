@@ -1,5 +1,7 @@
 etc/fonts/conf.avail/20-unhint-rounded-mgenplus.conf
 etc/fonts/conf.avail/62-fonts-rounded-mgenplus.conf
+etc/fonts/conf.d/20-unhint-rounded-mgenplus.conf
+etc/fonts/conf.d/62-fonts-rounded-mgenplus.conf
 %%ROUNDED_MGENPLUS_1C%%%%FONTSDIR%%/rounded-mgenplus-1c-black.ttf
 %%ROUNDED_MGENPLUS_1C%%%%FONTSDIR%%/rounded-mgenplus-1c-bold.ttf
 %%ROUNDED_MGENPLUS_1C%%%%FONTSDIR%%/rounded-mgenplus-1c-heavy.ttf
