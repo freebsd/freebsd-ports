@@ -1,12 +1,8 @@
-%%DATADIR%%/ipamp.otf
-%%DATADIR%%/ipam.otf
-%%DATADIR%%/ipagp.otf
-%%DATADIR%%/ipag.otf
-etc/fonts/conf.avail/20-unhint-ipa.conf
-etc/fonts/conf.avail/62-fonts-ipa.conf
-etc/fonts/conf.d/20-unhint-ipa.conf
-etc/fonts/conf.d/62-fonts-ipa.conf
 %%FONTSDIR%%/ipag.otf
 %%FONTSDIR%%/ipagp.otf
 %%FONTSDIR%%/ipam.otf
 %%FONTSDIR%%/ipamp.otf
+etc/fonts/conf.avail/20-unhint-ipa.conf
+etc/fonts/conf.avail/62-fonts-ipa.conf
+etc/fonts/conf.d/20-unhint-ipa.conf
+etc/fonts/conf.d/62-fonts-ipa.conf
