@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.66.0
+PORTVERSION=	3.67.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -76,6 +76,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-docdb>=1<2:devel/rubygem-aws-sdk-docdb \
 		rubygem-aws-sdk-dynamodb>=1<2:devel/rubygem-aws-sdk-dynamodb \
 		rubygem-aws-sdk-dynamodbstreams>=1<2:devel/rubygem-aws-sdk-dynamodbstreams \
+		rubygem-aws-sdk-ebs>=1<2:devel/rubygem-aws-sdk-ebs \
 		rubygem-aws-sdk-ec2>=1<2:devel/rubygem-aws-sdk-ec2 \
 		rubygem-aws-sdk-ec2instanceconnect>=1<2:devel/rubygem-aws-sdk-ec2instanceconnect \
 		rubygem-aws-sdk-ecr>=1<2:devel/rubygem-aws-sdk-ecr \
