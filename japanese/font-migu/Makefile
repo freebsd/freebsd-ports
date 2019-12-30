@@ -2,7 +2,7 @@
 
 PORTNAME=	migu
 PORTVERSION=	1.0.20130617
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	OSDN/mix-mplus-ipa/59022
 PKGNAMEPREFIX=	ja-font-
@@ -14,16 +14,19 @@ DISTFILES=	${PORTNAME}-1p-${PORTVERSION:E}${EXTRACT_SUFX} \
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Another Japanese font set based on MigMix
 
+LICENSE=	IPAFONTLICv1.0
+LICENSE_NAME=	IPA Font License Agreement v1.0
+LICENSE_FILE=	${WRKDIR}/${PORTNAME}-1m-${PORTVERSION:E}/ipag00303/IPA_Font_License_Agreement_v1.0.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USES=		fonts:fc zip
-FONTNAME=	TTF
+FONTPATHSPEC=	${FONTNAME}:pri=60
 NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
-DATADIR=	${PREFIX}/share/font-${PORTNAME}
-PORTDOCS=	IPA_Font_License_Agreement_v1.0.txt Readme_ipag00303.txt \
-		migu-README.txt
+PORTDOCS=	Readme_ipag00303.txt migu-README.txt
 
 OPTIONS_DEFINE=	DOCS
 
@@ -32,25 +35,22 @@ do-install:
 	    ${INSTALL_DATA} ipag00303/*.txt \
 		${PORTNAME}-README.txt \
 		${WRKDIR}
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} \
 	    ${WRKDIR}/${PORTNAME}-1p-${PORTVERSION:E}/*.ttf \
 	    ${WRKDIR}/${PORTNAME}-1c-${PORTVERSION:E}/*.ttf \
 	    ${WRKDIR}/${PORTNAME}-1m-${PORTVERSION:E}/*.ttf \
 	    ${WRKDIR}/${PORTNAME}-2m-${PORTVERSION:E}/*.ttf \
-	    ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${STAGEDIR}${FONTSDIR} && ${LN} -s -f \
-	    ../../../${DATADIR_REL}/migu*.ttf .
+	    ${STAGEDIR}${FONTSDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
-	${INSTALL_DATA} ${FILESDIR}/20-unhint-${PORTNAME}.conf \
-	    ${FILESDIR}/62-fonts-${PORTNAME}.conf \
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-${FONTNAME}.conf \
+	    ${FILESDIR}/62-fonts-${FONTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail
-	${LN} -s -f ../conf.avail/20-unhint-${PORTNAME}.conf \
-	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
-	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
-	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+	${LN} -s -f ../conf.avail/20-unhint-${FONTNAME}.conf \
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${FONTNAME}.conf
+	${LN} -s -f ../conf.avail/62-fonts-${FONTNAME}.conf \
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${FONTNAME}.conf
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
