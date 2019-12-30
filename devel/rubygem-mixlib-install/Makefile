@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mixlib-install
-PORTVERSION=	3.11.21
+PORTVERSION=	3.11.24
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
