@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	charls
-PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTVERSION=	2.1.0
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ JPEG-LS library implementation
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/License.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cmake compiler:c++14-lang
 

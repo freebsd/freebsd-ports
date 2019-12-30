@@ -1,5 +1,9 @@
-include/CharLS/charls.h
-include/CharLS/publictypes.h
-lib/libCharLS.so
-lib/libCharLS.so.2
-lib/libCharLS.so.2.0
+include/charls/api_abi.h
+include/charls/charls.h
+include/charls/charls_legacy.h
+include/charls/jpegls_error.h
+include/charls/public_types.h
+include/charls/version.h
+lib/libcharls.so
+lib/libcharls.so.2
+lib/libcharls.so.2.1.0
