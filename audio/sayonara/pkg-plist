@@ -1,6 +1,4 @@
 bin/sayonara
-lib/sayonara/libsayonara_somafm.so
-lib/sayonara/libsayonara_soundcloud.so
 man/man1/sayonara.1.gz
 share/appdata/sayonara.appdata.xml
 share/applications/sayonara.desktop
@@ -42,6 +40,7 @@ share/pixmaps/sayonara.png
 %%DATADIR%%/translations/icons/pt_PT.png
 %%DATADIR%%/translations/icons/ro_RO.png
 %%DATADIR%%/translations/icons/ru_RU.png
+%%DATADIR%%/translations/icons/sk_SK.png
 %%DATADIR%%/translations/icons/tr_TR.png
 %%DATADIR%%/translations/icons/uk_UA.png
 %%DATADIR%%/translations/icons/zh_CN.png
@@ -61,6 +60,7 @@ share/pixmaps/sayonara.png
 %%DATADIR%%/translations/sayonara_lang_pt_PT.qm
 %%DATADIR%%/translations/sayonara_lang_ro_RO.qm
 %%DATADIR%%/translations/sayonara_lang_ru_RU.qm
+%%DATADIR%%/translations/sayonara_lang_sk_SK.qm
 %%DATADIR%%/translations/sayonara_lang_tr_TR.qm
 %%DATADIR%%/translations/sayonara_lang_uk_UA.qm
 %%DATADIR%%/translations/sayonara_lang_zh_CN.qm
