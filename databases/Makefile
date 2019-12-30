@@ -615,7 +615,6 @@
     SUBDIR += pgtune
     SUBDIR += pguri
     SUBDIR += pgworksheet
-    SUBDIR += php-memcache
     SUBDIR += php-tarantool
     SUBDIR += php-xapian
     SUBDIR += php72-dba
