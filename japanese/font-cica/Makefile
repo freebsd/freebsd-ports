@@ -2,7 +2,7 @@
 
 PORTNAME=	cica
 PORTVERSION=	5.0.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	https://github.com/miiton/Cica/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	ja-font-
@@ -14,7 +14,7 @@ COMMENT=	Cica Japanese monospaced fonts for programming
 LICENSE=	OFL11
 
 USES=		fonts:fc zip
-FONTNAME=	cica
+FONTPATHSPEC=	${FONTNAME}:pri=60
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -41,13 +41,13 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTSDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
-	${INSTALL_DATA} ${FILESDIR}/20-unhint-${PORTNAME}.conf \
-	    ${FILESDIR}/62-fonts-${PORTNAME}.conf \
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-${FONTNAME}.conf \
+	    ${FILESDIR}/62-fonts-${FONTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail
-	${LN} -s -f ../conf.avail/20-unhint-${PORTNAME}.conf \
-	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
-	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
-	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+	${LN} -s -f ../conf.avail/20-unhint-${FONTNAME}.conf \
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${FONTNAME}.conf
+	${LN} -s -f ../conf.avail/62-fonts-${FONTNAME}.conf \
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${FONTNAME}.conf
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
