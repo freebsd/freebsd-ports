@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	remmina
-DISTVERSION=	1.3.5
+DISTVERSION=	1.3.9
 CATEGORIES=	net gnome
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -21,14 +21,15 @@ USES=		cmake compiler:c11 desktop-file-utils gettext gnome localbase:ldflags pat
 USE_GITLAB=	yes
 GL_ACCOUNT=	Remmina
 GL_PROJECT=	Remmina
-GL_COMMIT=	e1a0ffd30a0d8e35ed86ec81ecb4719bb870d62c
+GL_COMMIT=	0606fee3f396e28d18dedf202fedcb064ce27ee6
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_XORG=	ice sm x11 xext xkbfile
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	--build=build \
 		-DWITH_APPINDICATOR:BOOL=false
-SHEBANG_FILES=	data/desktop/remmina-file-wrapper.sh.in
+SHEBANG_FILES=	data/desktop/remmina-file-wrapper.in
+bash_CMD=	${SH}
 
 OPTIONS_DEFINE=		AVAHI GCRYPT NLS SSH TERM
 OPTIONS_DEFAULT=	AVAHI GCRYPT SSH TERM
