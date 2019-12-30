@@ -6,7 +6,7 @@ DISTVERSION=	3.1
 PORTREVISION=	2
 CATEGORIES=	java www
 MASTER_SITES=	APACHE/httpcomponents/${PORTNAME}/source
-PKGNAMEPREFIX=	jakarta-
+PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
@@ -15,9 +15,9 @@ COMMENT=	Package implementing the client side of the HTTP standard
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
-BUILD_DEPENDS+=	${JAVALIBDIR}/commons-codec.jar:java/jakarta-commons-codec
+BUILD_DEPENDS+=	${JAVALIBDIR}/commons-codec.jar:java/apache-commons-codec
 RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
-RUN_DEPENDS+=	${JAVALIBDIR}/commons-codec.jar:java/jakarta-commons-codec
+RUN_DEPENDS+=	${JAVALIBDIR}/commons-codec.jar:java/apache-commons-codec
 
 OPTIONS_DEFINE=	DOCS
 

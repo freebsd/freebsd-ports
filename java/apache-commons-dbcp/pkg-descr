@@ -20,4 +20,4 @@ The DBCP Component
    The commons-dbcp package relies on code in the commons-pool package to
    provide the underlying object pool mechanisms that it utilizes.
 
-WWW: http://commons.apache.org/dbcp/
+WWW: https://commons.apache.org/dbcp/

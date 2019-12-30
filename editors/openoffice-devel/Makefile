@@ -210,8 +210,8 @@ WIKI_PUBLISHER_CONFIGURE_WITH=						\
 	commons-codec-jar=${JAVALIBDIR}/commons-codec.jar		\
 	commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar
 WIKI_PUBLISHER_JAR_DEPENDS=						\
-	${JAVALIBDIR}/commons-codec.jar:java/jakarta-commons-codec	\
-	${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient
+	${JAVALIBDIR}/commons-codec.jar:java/apache-commons-codec	\
+	${JAVALIBDIR}/commons-httpclient.jar:java/apache-commons-httpclient
 WIKI_PUBLISHER_BUILD_DEPENDS=	${WIKI_PUBLISHER_JAR_DEPENDS}
 WIKI_PUBLISHER_RUN_DEPENDS=	${WIKI_PUBLISHER_JAR_DEPENDS}
 

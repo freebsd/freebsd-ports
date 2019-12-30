@@ -17,9 +17,9 @@ LICENSE=	APACHE20
 # the 3rd-party ones:
 RUN_DEPENDS=	\
 		${JAVALIBDIR}/avalon-framework.jar:devel/avalon-framework	\
-		${JAVALIBDIR}/commons-codec.jar:java/jakarta-commons-codec	\
+		${JAVALIBDIR}/commons-codec.jar:java/apache-commons-codec	\
 		${JAVALIBDIR}/commons-collections.jar:java/apache-commons-collections	\
-		${JAVALIBDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient	\
+		${JAVALIBDIR}/commons-httpclient.jar:java/apache-commons-httpclient	\
 		${JAVALIBDIR}/commons-io.jar:devel/apache-commons-io \
 		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang	\
 		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging	\
