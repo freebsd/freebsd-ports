@@ -3,7 +3,7 @@
 
 PORTNAME=	marumoji
 PORTVERSION=	1.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	LOCAL/hrs/${PORTNAME}
 PKGNAMEPREFIX=	ja-font-
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	mkbold:x11-fonts/mkbold-mkitalic \
 		bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts:fc
-FONTNAME=	marumoji
+FONTPATHSPEC=	${FONTNAME}:unscaled:pri=60
 NO_ARCH=	yes
 MAKE_ENV=	FONTSDIR=${FONTSDIR:S,${PREFIX},,}
 SUB_FILES=	Makefile pkg-install
