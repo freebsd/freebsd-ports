@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nethack36
-PORTVERSION=	3.6.2
-PORTREVISION=	1
+PORTVERSION=	3.6.4
 CATEGORIES=	games
 MASTER_SITES=	https://nethack.org/download/${PORTVERSION}/
 DISTNAME=	${TRUEPORTNAME}-${PORTVERSION:S/.//g}-src
@@ -18,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		alias compiler:c11 gmake ncurses tar:tgz
 
-WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/NetHack-NetHack-${PORTVERSION}_Released
 
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}" \
