@@ -8,22 +8,25 @@ CATEGORIES=	databases
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
 
-LIB_DEPENDS=	libxslt.so:textproc/libxslt \
-		libxml2.so:textproc/libxml2
-
 MASTERDIR=	${.CURDIR}/../postgresql96-server
 
-USES=		bison pgsql:9.6
+USES=		bison pgsql:9.6 ssl
 
 BUILD_DIRS=	src/port src/include src/common contrib
 INSTALL_DIRS=	contrib
 
 SLAVE_ONLY=	yes
 COMPONENT=	-contrib
-CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl --disable-nls --with-uuid=bsd
+CONFIGURE_ARGS+=--with-openssl --disable-nls --with-uuid=bsd
 LDFLAGS+=	-lpthread -L${PREFIX}/lib
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS XML
+OPTIONS_DEFAULT=XML
+OPTIONS_SUB=	yes
+
+XML_LIB_DEPENDS=libxslt.so:textproc/libxslt \
+		libxml2.so:textproc/libxml2
+XML_CONFIGURE_WITH=	libxml libxslt
 
 post-configure: 
 		@cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} symlinks
