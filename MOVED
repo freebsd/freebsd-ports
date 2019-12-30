@@ -13616,3 +13616,4 @@ devel/rubygem-gitlab-peek-rails52|devel/rubygem-peek-rails52|2019-12-28|Has expi
 devel/rubygem-numerizer01|devel/rubygem-numerizer|2019-12-28|Has expired: use devel/rubygem-numerizer instead
 databases/phpmyadmin-devel|databases/phpmyadmin5|2019-12-29|Move to phpmyadmin5
 sysutils/bareos-docs||2019-12-29|PDF is not available anymore. Bareos documentation can be found at https://docs.bareos.org/
+databases/php-memcache|databases/pecl-memcache|2019-12-30|Development from websupport.sk is the official PECL repository now
