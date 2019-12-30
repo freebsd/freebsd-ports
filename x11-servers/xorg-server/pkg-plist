@@ -187,3 +187,4 @@ man/man5/xorg.conf.5.gz
 man/man5/xorg.conf.d.5.gz
 share/aclocal/xorg-server.m4
 @dir etc/X11/xorg.conf.d
+@dir %%FONTPATHD%%
