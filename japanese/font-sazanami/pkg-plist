@@ -1,8 +1,6 @@
-%%DATADIR%%/sazanami-mincho.ttf
-%%DATADIR%%/sazanami-gothic.ttf
+%%FONTSDIR%%/sazanami-mincho.ttf
+%%FONTSDIR%%/sazanami-gothic.ttf
 etc/fonts/conf.avail/20-unhint-sazanami.conf
 etc/fonts/conf.avail/62-fonts-sazanami.conf
 etc/fonts/conf.d/20-unhint-sazanami.conf
 etc/fonts/conf.d/62-fonts-sazanami.conf
-%%FONTSDIR%%/sazanami-mincho.ttf
-%%FONTSDIR%%/sazanami-gothic.ttf
