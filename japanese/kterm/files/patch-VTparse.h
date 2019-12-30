@@ -1,5 +1,5 @@
---- VTparse.h.orig	Wed Nov 13 23:56:22 2002
-+++ VTparse.h	Wed Nov 13 01:07:07 2002
+--- VTparse.h.orig	2016-11-04 21:41:21 UTC
++++ VTparse.h
 @@ -118,3 +118,4 @@
  #define CASE_SCS_STATE 77
  #define CASE_GSET_VERSION_STATE 78

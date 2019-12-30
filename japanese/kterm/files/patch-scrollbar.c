@@ -1,6 +1,6 @@
---- scrollbar.c.orig	Thu Feb 13 02:06:51 2003
-+++ scrollbar.c	Thu Feb 13 02:07:58 2003
-@@ -46,6 +46,7 @@
+--- scrollbar.c.orig	2016-11-04 21:41:21 UTC
++++ scrollbar.c
+@@ -49,6 +49,7 @@ extern int BackgroundPixmapIsOn;
  static void ScrollTextTo();
  static void ScrollTextUpDownBy();
  
@@ -8,7 +8,7 @@
  
  /* resize the text window for a terminal screen, modifying the
   * appropriate WM_SIZE_HINTS and taking advantage of bit gravity.
-@@ -535,6 +536,7 @@
+@@ -555,6 +556,7 @@ void HandleScrollForward (gw, event, params, nparams)
      XtermWidget w = (XtermWidget) gw;
      register TScreen *screen = &w->screen;
  
@@ -16,7 +16,7 @@
      ScrollTextUpDownBy (gw, (XtPointer) NULL,
  			(XtPointer)params_to_pixels (screen, params, (int) *nparams));
      return;
-@@ -551,6 +553,7 @@
+@@ -571,6 +573,7 @@ void HandleScrollBack (gw, event, params, nparams)
      XtermWidget w = (XtermWidget) gw;
      register TScreen *screen = &w->screen;
  
@@ -24,4 +24,3 @@
      ScrollTextUpDownBy (gw, (XtPointer) NULL,
  			(XtPointer)-params_to_pixels (screen, params, (int) *nparams));
      return;
-

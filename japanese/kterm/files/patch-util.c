@@ -1,5 +1,5 @@
---- util.c.orig	Wed Nov 13 23:56:22 2002
-+++ util.c	Wed Nov 13 23:53:41 2002
+--- util.c.orig	2016-11-04 21:41:21 UTC
++++ util.c
 @@ -36,6 +36,7 @@
  
  #include <stdio.h>
@@ -8,7 +8,7 @@
  static void horizontal_copy_area();
  static void vertical_copy_area();
  
-@@ -706,6 +707,54 @@
+@@ -706,6 +707,54 @@ register TScreen *screen;
  /* 
   * Clear last part of cursor's line, inclusive.
   */

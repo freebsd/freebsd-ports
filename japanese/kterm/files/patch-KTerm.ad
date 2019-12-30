@@ -1,6 +1,6 @@
---- KTerm.ad.old	Tue Feb  5 02:02:39 2002
-+++ KTerm.ad	Mon Feb  4 21:54:16 2002
-@@ -51,37 +51,43 @@
+--- KTerm.ad.orig	2016-11-04 21:41:21 UTC
++++ KTerm.ad
+@@ -52,37 +52,43 @@ KTerm.JoinSession:False
  
  *fontMenu.Label:  VT Fonts
  *fontMenu*fontdefault*Label:	Default
@@ -69,7 +69,7 @@
  *fontMenu*fontescape*Label:	Escape Sequence
  *fontMenu*fontsel*Label:		Selection
  !fontescape and fontsel overridden by application
-@@ -131,5 +137,18 @@
+@@ -132,5 +138,18 @@ KTerm.JoinSession:False
  *tek4014*font3: 6x13
  *tek4014*fontSmall: 6x10
  
