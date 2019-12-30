@@ -1,7 +1,7 @@
-TIMESTAMP = 1556538804
-SHA256 (centos/fribidi-1.0.2-1.el7.i686.rpm) = e550e6e29712e7889a41b78bc773f85b0736e2354f1aa86b5c654672ae22c94c
-SIZE (centos/fribidi-1.0.2-1.el7.i686.rpm) = 81340
-SHA256 (centos/fribidi-1.0.2-1.el7.x86_64.rpm) = d6a7aead16257679507e3f8935409c2e2b11d886fac6c8e3f99547abc2a1529f
-SIZE (centos/fribidi-1.0.2-1.el7.x86_64.rpm) = 81284
-SHA256 (centos/fribidi-1.0.2-1.el7.src.rpm) = 6cd338014384da42e6ea8dbbc0351ff432dcb4708a4093d82d89b8e951c2a1e4
-SIZE (centos/fribidi-1.0.2-1.el7.src.rpm) = 1395728
+TIMESTAMP = 1577704578
+SHA256 (centos/fribidi-1.0.2-1.el7_7.1.i686.rpm) = 067acb5347113d423523dc63ac23348163422108aee38d644e8fa6cc1cbce210
+SIZE (centos/fribidi-1.0.2-1.el7_7.1.i686.rpm) = 81464
+SHA256 (centos/fribidi-1.0.2-1.el7_7.1.x86_64.rpm) = 4f465f6e5d04990c70f786cb6e432bad2ef2094fd06f71213fedaa8bb51ac668
+SIZE (centos/fribidi-1.0.2-1.el7_7.1.x86_64.rpm) = 81360
+SHA256 (centos/fribidi-1.0.2-1.el7_7.1.src.rpm) = d7924c38e439c672c88308ccb038ab572ddf1cc67bb3fdd1a4309c4b6ee8b62e
+SIZE (centos/fribidi-1.0.2-1.el7_7.1.src.rpm) = 1396634
