@@ -1,51 +1,49 @@
 # $FreeBSD$
 
-PORTNAME=	ipa-uigothic
+PORTNAME=	ipa
 PORTVERSION=	00203
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/old/
+MASTER_SITES=	https://ipafont.ipa.go.jp/IPAfont/old/
 PKGNAMEPREFIX=	ja-font-
+PKGNAMESUFFIX=	-uigothic
 DISTNAME=	IPAfont${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IPA Japanese fonts, UIGothic
 
-# ja-font-mplus-ipa-1.0.20060520.p1 has an old ipagui.ttf
-CONFLICTS=	ja-font-mplus-ipa-1.0.20060520.p1 \
-		ja-ipa-ttfonts-[0-9]*
+LICENSE=	IPAFONTLICOLD
+LICENSE_NAME=	IPA Font License Agreement (old)
+LICENSE_FILE=	${WRKSRC}/enduser_license.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		fonts:fc zip
-FONTNAME=	TTF
+FONTNAME=	${PORTNAME}${PKGNAMESUFFIX}
+FONTPATHSPEC=	${FONTNAME}:pri=60
 NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
-DATADIR=	${PREFIX}/share/font-${PORTNAME}
-PORTDOCS=	enduser_license.txt \
-		Readme${PORTVERSION}.txt
+PORTDOCS=	Readme${PORTVERSION}.txt
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/ipagui.ttf ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${STAGEDIR}${FONTSDIR} && ${LN} -s -f \
-	    ../../../${DATADIR_REL}/ipagui.ttf .
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail \
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ipagui.ttf ${STAGEDIR}${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
-	${INSTALL_DATA} ${FILESDIR}/20-unhint-${PORTNAME}.conf \
-	    ${FILESDIR}/62-fonts-${PORTNAME}.conf \
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-${FONTNAME}.conf \
+	    ${FILESDIR}/62-fonts-${FONTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail
-	${LN} -s -f ../conf.avail/20-unhint-${PORTNAME}.conf \
-	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${PORTNAME}.conf
-	${LN} -s -f ../conf.avail/62-fonts-${PORTNAME}.conf \
-	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${PORTNAME}.conf
+	${LN} -s -f ../conf.avail/20-unhint-${FONTNAME}.conf \
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${FONTNAME}.conf
+	${LN} -s -f ../conf.avail/62-fonts-${FONTNAME}.conf \
+	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${FONTNAME}.conf
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
