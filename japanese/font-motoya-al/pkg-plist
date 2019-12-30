@@ -1,8 +1,6 @@
-%%DATADIR%%/MTLc3m.ttf
-%%DATADIR%%/MTLmr3m.ttf
+%%FONTSDIR%%/MTLc3m.ttf
+%%FONTSDIR%%/MTLmr3m.ttf
 etc/fonts/conf.avail/20-unhint-motoya-al.conf
 etc/fonts/conf.avail/62-fonts-motoya-al.conf
 etc/fonts/conf.d/20-unhint-motoya-al.conf
 etc/fonts/conf.d/62-fonts-motoya-al.conf
-%%FONTSDIR%%/MTLc3m.ttf
-%%FONTSDIR%%/MTLmr3m.ttf
