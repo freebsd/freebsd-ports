@@ -17,6 +17,7 @@ share/icons/hicolor/64x64/apps/qterminal.png
 %%DATADIR%%/translations/qterminal_gl.qm
 %%DATADIR%%/translations/qterminal_he.qm
 %%DATADIR%%/translations/qterminal_hu.qm
+%%DATADIR%%/translations/qterminal_id.qm
 %%DATADIR%%/translations/qterminal_it.qm
 %%DATADIR%%/translations/qterminal_ja.qm
 %%DATADIR%%/translations/qterminal_ko_KR.qm
