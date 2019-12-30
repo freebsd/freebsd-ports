@@ -1,0 +1,11 @@
+--- nping/configure.orig	2019-01-31 23:28:21 UTC
++++ nping/configure
+@@ -5356,7 +5356,7 @@ if test $have_libpcap != yes; then
+     LDFLAGS="-L$libpcapdir $LDFLAGS"
+     CPPFLAGS="$CPPFLAGS -I$libpcapdir"
+   fi
+-  LIBPCAP_LIBS='$(LIBPCAPDIR)/libpcap.a'
++  LIBPCAP_LIBS='$(LIBPCAPDIR)/libpcap.a -libverbs'
+   PCAP_DEPENDS='$(LIBPCAPDIR)/libpcap.a'
+   PCAP_BUILD="build-pcap"
+   PCAP_CLEAN="clean-pcap"

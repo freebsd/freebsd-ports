@@ -39,7 +39,6 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/base32.lua
 %%DATADIR%%/nselib/base64.lua
 %%DATADIR%%/nselib/bin.lua
-%%DATADIR%%/nselib/bit.lua
 %%DATADIR%%/nselib/bitcoin.lua
 %%DATADIR%%/nselib/bits.lua
 %%DATADIR%%/nselib/bittorrent.lua
@@ -127,6 +126,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/isns.lua
 %%DATADIR%%/nselib/jdwp.lua
 %%DATADIR%%/nselib/json.lua
+%%DATADIR%%/nselib/knx.lua
 %%DATADIR%%/nselib/ldap.lua
 %%DATADIR%%/nselib/lfs.luadoc
 %%DATADIR%%/nselib/libssh2-utility.lua
@@ -155,6 +155,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/nrpc.lua
 %%DATADIR%%/nselib/nsedebug.lua
 %%DATADIR%%/nselib/omp2.lua
+%%DATADIR%%/nselib/oops.lua
 %%DATADIR%%/nselib/openssl.luadoc
 %%DATADIR%%/nselib/ospf.lua
 %%DATADIR%%/nselib/packet.lua
@@ -164,6 +165,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/pppoe.lua
 %%DATADIR%%/nselib/proxy.lua
 %%DATADIR%%/nselib/punycode.lua
+%%DATADIR%%/nselib/rand.lua
 %%DATADIR%%/nselib/rdp.lua
 %%DATADIR%%/nselib/re.lua
 %%DATADIR%%/nselib/redis.lua
@@ -190,8 +192,10 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/stdnse.lua
 %%DATADIR%%/nselib/strbuf.lua
 %%DATADIR%%/nselib/strict.lua
+%%DATADIR%%/nselib/stringaux.lua
 %%DATADIR%%/nselib/stun.lua
 %%DATADIR%%/nselib/tab.lua
+%%DATADIR%%/nselib/tableaux.lua
 %%DATADIR%%/nselib/target.lua
 %%DATADIR%%/nselib/tftp.lua
 %%DATADIR%%/nselib/tls.lua
@@ -245,7 +249,9 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/broadcast-dns-service-discovery.nse
 %%DATADIR%%/scripts/broadcast-dropbox-listener.nse
 %%DATADIR%%/scripts/broadcast-eigrp-discovery.nse
+%%DATADIR%%/scripts/broadcast-hid-discoveryd.nse
 %%DATADIR%%/scripts/broadcast-igmp-discovery.nse
+%%DATADIR%%/scripts/broadcast-jenkins-discover.nse
 %%DATADIR%%/scripts/broadcast-listener.nse
 %%DATADIR%%/scripts/broadcast-ms-sql-discover.nse
 %%DATADIR%%/scripts/broadcast-netbios-master-browser.nse
@@ -359,7 +365,6 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/hnap-info.nse
 %%DATADIR%%/scripts/hostmap-bfk.nse
 %%DATADIR%%/scripts/hostmap-crtsh.nse
-%%DATADIR%%/scripts/hostmap-ip2hosts.nse
 %%DATADIR%%/scripts/hostmap-robtex.nse
 %%DATADIR%%/scripts/http-adobe-coldfusion-apsa1301.nse
 %%DATADIR%%/scripts/http-affiliate-id.nse
@@ -409,6 +414,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-google-malware.nse
 %%DATADIR%%/scripts/http-grep.nse
 %%DATADIR%%/scripts/http-headers.nse
+%%DATADIR%%/scripts/http-hp-ilo-info.nse
 %%DATADIR%%/scripts/http-huawei-hg5xx-vuln.nse
 %%DATADIR%%/scripts/http-icloud-findmyiphone.nse
 %%DATADIR%%/scripts/http-icloud-sendmsg.nse
@@ -440,6 +446,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-robots.txt.nse
 %%DATADIR%%/scripts/http-robtex-reverse-ip.nse
 %%DATADIR%%/scripts/http-robtex-shared-ns.nse
+%%DATADIR%%/scripts/http-sap-netweaver-leak.nse
 %%DATADIR%%/scripts/http-security-headers.nse
 %%DATADIR%%/scripts/http-server-header.nse
 %%DATADIR%%/scripts/http-shellshock.nse
@@ -493,6 +500,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/http-wordpress-enum.nse
 %%DATADIR%%/scripts/http-wordpress-users.nse
 %%DATADIR%%/scripts/http-xssed.nse
+%%DATADIR%%/scripts/https-redirect.nse
 %%DATADIR%%/scripts/iax2-brute.nse
 %%DATADIR%%/scripts/iax2-version.nse
 %%DATADIR%%/scripts/icap-info.nse
@@ -542,6 +550,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/lexmark-config.nse
 %%DATADIR%%/scripts/llmnr-resolve.nse
 %%DATADIR%%/scripts/lltd-discovery.nse
+%%DATADIR%%/scripts/lu-enum.nse
 %%DATADIR%%/scripts/maxdb-info.nse
 %%DATADIR%%/scripts/mcafee-epo-agent.nse
 %%DATADIR%%/scripts/membase-brute.nse
@@ -638,6 +647,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/quake3-info.nse
 %%DATADIR%%/scripts/quake3-master-getservers.nse
 %%DATADIR%%/scripts/rdp-enum-encryption.nse
+%%DATADIR%%/scripts/rdp-ntlm-info.nse
 %%DATADIR%%/scripts/rdp-vuln-ms12-020.nse
 %%DATADIR%%/scripts/realvnc-auth-bypass.nse
 %%DATADIR%%/scripts/redis-brute.nse
@@ -699,6 +709,8 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/smb-vuln-ms10-061.nse
 %%DATADIR%%/scripts/smb-vuln-ms17-010.nse
 %%DATADIR%%/scripts/smb-vuln-regsvc-dos.nse
+%%DATADIR%%/scripts/smb-vuln-webexec.nse
+%%DATADIR%%/scripts/smb-webexec-exploit.nse
 %%DATADIR%%/scripts/smb2-capabilities.nse
 %%DATADIR%%/scripts/smb2-security-mode.nse
 %%DATADIR%%/scripts/smb2-time.nse
@@ -775,6 +787,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/traceroute-geolocation.nse
 %%DATADIR%%/scripts/tso-brute.nse
 %%DATADIR%%/scripts/tso-enum.nse
+%%DATADIR%%/scripts/ubiquiti-discovery.nse
 %%DATADIR%%/scripts/unittest.nse
 %%DATADIR%%/scripts/unusual-port.nse
 %%DATADIR%%/scripts/upnp-info.nse
@@ -788,6 +801,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/vnc-title.nse
 %%DATADIR%%/scripts/voldemort-info.nse
 %%DATADIR%%/scripts/vtam-enum.nse
+%%DATADIR%%/scripts/vulners.nse
 %%DATADIR%%/scripts/vuze-dht-info.nse
 %%DATADIR%%/scripts/wdb-version.nse
 %%DATADIR%%/scripts/weblogic-t3-info.nse
