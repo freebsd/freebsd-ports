@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+To make WildFly bind to all interfaces add this to rc.conf:
+
+%%APP_SHORTNAME%%_args="-Djboss.bind.address=0.0.0.0"
+
+See http://wildscribe.github.io/ for additional startup properties.
+
+To change JVM args, edit appropriate standalone.conf.
+
+
+
+To add the initial admin user:
+
+%%APP_HOME%%/bin/add-user.sh
+
+
+
+Standard output and error are redirected to %%APP_SHORTNAME%%_log_stdout and %%APP_SHORTNAME%%_log_stderr respectively. This is very handy to detect startup errors but in production could be advisible to avoid it
+because by default they are never rotated, to accomplish it add this to rc.conf
+
+%%APP_SHORTNAME%%_log_stdout="/dev/null"
+%%APP_SHORTNAME%%_log_stderr="/dev/null"
+
+Ordinary logs are located at %%APP_HOME%%/standalone/log/server.log 
+
+
+EOM
+}
+]
