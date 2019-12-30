@@ -1,6 +1,6 @@
---- CalculiX.h.orig	2018-12-15 14:30:31 UTC
+--- CalculiX.h.orig	2019-11-25 17:54:53 UTC
 +++ CalculiX.h
-@@ -18,12 +18,14 @@
+@@ -17,12 +17,14 @@
  
  #include <pthread.h>
  
@@ -17,7 +17,7 @@
  #define FORTRAN(A,B) A##_  B
  #elif ARCH == IRIX || ARCH == IRIX64
  #define FORTRAN(A,B) A##_##B
-@@ -31,7 +33,7 @@
+@@ -30,7 +32,7 @@
  #define FORTRAN(A,B) A##B
  #endif
  

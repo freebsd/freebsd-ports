@@ -1,4 +1,4 @@
---- date.pl.orig	2018-12-15 14:30:33 UTC
+--- date.pl.orig	2019-11-25 17:54:53 UTC
 +++ date.pl
 @@ -1,6 +1,7 @@
  #!/usr/bin/env perl
@@ -7,5 +7,5 @@
 +use POSIX qw(strftime);
 +chomp(my $date = strftime("%Y-%m-%d", gmtime($ENV{SOURCE_DATE_EPOCH} || time)));
  
- # inserting the date into ccx_2.15.c
+ # inserting the date into ccx_2.16.c
  

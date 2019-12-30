@@ -39,6 +39,7 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img36.png
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img37.png
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img38.png
+%%PORTDOCS%%%%DOCSDIR%%/cgx/img39.png
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img4.png
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img5.png
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img6.png
@@ -222,7 +223,13 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node253.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node254.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node255.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node256.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node257.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node258.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node259.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node26.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node260.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node261.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node27.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node28.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node29.html
@@ -303,7 +310,7 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node97.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node98.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node99.html
-%%PORTDOCS%%%%DOCSDIR%%/cgx_2.15.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cgx_2.16.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/OpenFOAM/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/OpenFOAM/couette/0.00100001/T
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/OpenFOAM/couette/0.00100001/U
@@ -349,13 +356,11 @@ bin/cgx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/airfoil/ISAAC/isaac.fbl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/airfoil/ccx/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/airfoil/ccx/clean
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/airfoil/ccx/rae2822.cvg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/airfoil/ccx/rae2822.inp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/airfoil/ccx/rae2822_penta.fbd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/airfoil/ccx/rae2822f.cvg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/airfoil/ccx/rae2822_penta.inp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/airfoil/ccx/send.fbl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/airfoil/ccx/send_penta.fbl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/airfoil/ccx/send_tr3u.fbl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/airfoil/rae2822.fbd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/cylinder.fbd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/disc.fbd
@@ -417,4 +422,5 @@ bin/cgx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbine/mesh.fbl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbine/send.fbl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/userDataset/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userDataset/generate.fbl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userDataset/normals.fbl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userDataset/temperature.fbl

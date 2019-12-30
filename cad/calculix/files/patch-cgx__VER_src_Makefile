@@ -1,5 +1,5 @@
---- cgx_2.15/src/Makefile.orig	2017-03-11 16:25:39 UTC
-+++ cgx_2.15/src/Makefile
+--- cgx_2.16/src/Makefile.orig	2017-03-11 16:25:39 UTC
++++ cgx_2.16/src/Makefile
 @@ -4,11 +4,11 @@ CFLAGS = -O2 -Wall \
    -I/usr/include/GL \
    -I../../libSNL/src \
