@@ -1,5 +1,6 @@
 include/catch2/catch.hpp
 include/catch2/catch_reporter_automake.hpp
+include/catch2/catch_reporter_sonarqube.hpp
 include/catch2/catch_reporter_tap.hpp
 include/catch2/catch_reporter_teamcity.hpp
 lib/cmake/Catch2/Catch.cmake
