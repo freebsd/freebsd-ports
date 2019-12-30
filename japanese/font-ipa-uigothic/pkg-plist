@@ -1,6 +1,5 @@
-%%DATADIR%%/ipagui.ttf
+%%FONTSDIR%%/ipagui.ttf
 etc/fonts/conf.avail/20-unhint-ipa-uigothic.conf
 etc/fonts/conf.avail/62-fonts-ipa-uigothic.conf
 etc/fonts/conf.d/20-unhint-ipa-uigothic.conf
 etc/fonts/conf.d/62-fonts-ipa-uigothic.conf
-%%FONTSDIR%%/ipagui.ttf
