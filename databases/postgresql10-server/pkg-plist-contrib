@@ -36,7 +36,7 @@ lib/postgresql/pg_visibility.so
 lib/postgresql/pgcrypto.so
 lib/postgresql/pgrowlocks.so
 lib/postgresql/pgstattuple.so
-lib/postgresql/pgxml.so
+%%XML%%lib/postgresql/pgxml.so
 lib/postgresql/postgres_fdw.so
 lib/postgresql/refint.so
 lib/postgresql/seg.so
@@ -244,9 +244,9 @@ lib/postgresql/uuid-ossp.so
 %%DATADIR%%/extension/uuid-ossp--1.1.sql
 %%DATADIR%%/extension/uuid-ossp--unpackaged--1.0.sql
 %%DATADIR%%/extension/uuid-ossp.control
-%%DATADIR%%/extension/xml2--1.0--1.1.sql
-%%DATADIR%%/extension/xml2--1.1.sql
-%%DATADIR%%/extension/xml2--unpackaged--1.0.sql
-%%DATADIR%%/extension/xml2.control
+%%XML%%%%DATADIR%%/extension/xml2--1.0--1.1.sql
+%%XML%%%%DATADIR%%/extension/xml2--1.1.sql
+%%XML%%%%DATADIR%%/extension/xml2--unpackaged--1.0.sql
+%%XML%%%%DATADIR%%/extension/xml2.control
 %%DATADIR%%/tsearch_data/unaccent.rules
 %%DATADIR%%/tsearch_data/xsyn_sample.rules
