@@ -9,4 +9,4 @@ lib/cmake/Olm/OlmTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Olm/OlmTargets.cmake
 lib/libolm.so
 lib/libolm.so.3
-lib/libolm.so.3.1.2
+lib/libolm.so.3.1.4
