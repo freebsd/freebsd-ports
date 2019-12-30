@@ -14,7 +14,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Shinonome Japanese fonts, 12/14/16 dots
 
 LICENSE=	PD
-LICESE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
