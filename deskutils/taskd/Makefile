@@ -11,6 +11,7 @@ MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Multi-user server for taskwarrior
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 RUN_DEPENDS=	bash:shells/bash

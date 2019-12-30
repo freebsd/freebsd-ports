@@ -3,4 +3,4 @@ The task server provides a multi-user, multi-client repository for Taskwarrior
 process, and provides several services, primarily the synchronization of tasks
 between the clients.
 
-WWW: http://taskwarrior.org
+WWW: https://taskwarrior.org/
