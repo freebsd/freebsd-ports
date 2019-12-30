@@ -2,7 +2,7 @@
 
 PORTNAME=	ayu18
 PORTVERSION=	1.3.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	OSDN/x-tt/8535/:goth \
 		OSDN/x-tt/8494/:min
@@ -13,13 +13,16 @@ DISTFILES=	ayu18gothic-1.3a${EXTRACT_SUFX}:goth \
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Ayu 18-dot Kanji font
 
+LICENSE=	PD
+
 BUILD_DEPENDS=	mkitalic:x11-fonts/mkbold-mkitalic \
 		bdftopcf:x11-fonts/bdftopcf
 
 USES=		fonts
+FONTPATHSPEC=	${FONTNAME}:unscaled:pri=60
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
-SUB_FILES=	Makefile pkg-message
+SUB_FILES=	Makefile
 MAKEFILE=	${WRKDIR}/Makefile
 PORTDOCS=	README.txt
 
