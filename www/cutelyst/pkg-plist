@@ -107,6 +107,7 @@ include/cutelyst2-qt5/Cutelyst/stats.h
 include/cutelyst2-qt5/Cutelyst/upload.h
 include/cutelyst2-qt5/Cutelyst/utils.h
 include/cutelyst2-qt5/Cutelyst/view.h
+include/cutelyst2-qt5/Cutelyst/view_p.h
 lib/cmake/Cutelyst2Qt5/Cutelyst2Qt5Config.cmake
 lib/cmake/Cutelyst2Qt5/Cutelyst2Qt5ConfigVersion.cmake
 lib/cmake/Cutelyst2Qt5/Cutelyst2Qt5Targets-release.cmake
@@ -165,9 +166,16 @@ libdata/pkgconfig/Cutelyst2Qt5WSGI.pc
 man/man1/cutelyst-wsgi2.1.gz
 man/man1/cutelyst2.1.gz
 man/man5/Cutelyst2Qt5Session.5.gz
+%%DATADIR%%2/translations/cutelystcmd.de.qm
+%%DATADIR%%2/translations/cutelystcore.de.qm
+%%DATADIR%%2/translations/cutelystwsgi.de.qm
 %%DATADIR%%2/translations/cutelystcmd.en.qm
 %%DATADIR%%2/translations/cutelystcore.en.qm
 %%DATADIR%%2/translations/cutelystwsgi.en.qm
+%%DATADIR%%2/translations/plugin_csrfprotection.de.qm
+%%DATADIR%%2/translations/plugin_memcached.de.qm
+%%DATADIR%%2/translations/plugin_utils_validator.de.qm
+%%DATADIR%%2/translations/plugin_view_grantlee.de.qm
 %%DATADIR%%2/translations/plugin_csrfprotection.en.qm
 %%DATADIR%%2/translations/plugin_memcached.en.qm
 %%DATADIR%%2/translations/plugin_utils_validator.en.qm
