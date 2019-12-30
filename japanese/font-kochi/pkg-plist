@@ -1,8 +1,6 @@
-%%DATADIR%%/kochi-mincho-subst.ttf
-%%DATADIR%%/kochi-gothic-subst.ttf
+%%FONTSDIR%%/kochi-mincho-subst.ttf
+%%FONTSDIR%%/kochi-gothic-subst.ttf
 etc/fonts/conf.avail/20-unhint-kochi.conf
 etc/fonts/conf.avail/62-fonts-kochi.conf
 etc/fonts/conf.d/20-unhint-kochi.conf
 etc/fonts/conf.d/62-fonts-kochi.conf
-%%FONTSDIR%%/kochi-mincho-subst.ttf
-%%FONTSDIR%%/kochi-gothic-subst.ttf

@@ -3,7 +3,7 @@
 
 PORTNAME=	kochi
 PORTVERSION=	20030809
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	OSDN/efont/5411/
 PKGNAMEPREFIX=	ja-font-
@@ -12,25 +12,26 @@ DISTNAME=	${PORTNAME}-substitute-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Kochi Japanese TrueType font
 
+LICENSE=	COPYINGATTACHED
+LICENSE_NAME=	Free redistribution with copyright document attached
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=  dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USES=		fonts:fc tar:bzip2
-FONTNAME=	TTF
+FONTPATHSPEC=	${FONTNAME}:pri=60
 NO_ARCH=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
-DATADIR=	${PREFIX}/share/font-${PORTNAME}
-PLIST_SUB=	DATADIR=share/font-${PORTNAME}
-PORTDOCS=	README.ja COPYING docs
+PLIST_SUB=	FONTSDIR="${FONTSDIR}"
+PORTDOCS=	README.ja docs
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${STAGEDIR}${FONTSDIR} && ${LN} -s -f \
-	    ../../../${DATADIR_REL}/*.ttf .
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-${PORTNAME}.conf \
