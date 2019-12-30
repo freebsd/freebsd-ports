@@ -12,7 +12,7 @@ COMMENT=	Particle-based numerical modelling software
 
 LICENSE=	APACHE20
 
-BROKEN_FreeBSD_13=	The upstream doesn't answer bug reports: https://bugs.launchpad.net/esys-particle/+bug/1808617
+BROKEN=	The upstream doesn't answer bug reports: https://bugs.launchpad.net/esys-particle/+bug/1808617
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libmpi.so:net/mpich
