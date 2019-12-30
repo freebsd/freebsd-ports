@@ -1,0 +1,22 @@
+# $FreeBSD$
+#
+SRCS!=	${MAKE} -VBDFFILES -f Makefile.in
+
+.SUFFIXES:
+.SUFFIXES: .pcf .bdf
+.bdf.pcf:
+	%%BDFTOPCF%% -o ${.TARGET} ${.IMPSRC}
+
+.for S in ${SRCS:S/.bdf$//}
+$S.pcf.gz: $S.pcf
+	%%GZIP_CMD%% ${.ALLSRC} > ${.TARGET}
+.endfor
+
+all: ${SRCS:S/.bdf$/.pcf.gz/}
+
+install:
+	mkdir -p %%STAGEDIR%%%%FONTSDIR%%
+	%%INSTALL_DATA%% ${SRCS:S/.bdf$/.pcf.gz/} \
+	    fonts.alias %%STAGEDIR%%%%FONTSDIR%%
+
+.PATH: bdf
