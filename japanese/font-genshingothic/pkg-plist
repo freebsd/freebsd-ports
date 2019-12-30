@@ -1,5 +1,7 @@
 etc/fonts/conf.avail/20-unhint-genshingothic.conf
 etc/fonts/conf.avail/62-fonts-genshingothic.conf
+etc/fonts/conf.d/20-unhint-genshingothic.conf
+etc/fonts/conf.d/62-fonts-genshingothic.conf
 %%FONTSDIR%%/GenShinGothic-Bold.ttf
 %%FONTSDIR%%/GenShinGothic-ExtraLight.ttf
 %%FONTSDIR%%/GenShinGothic-Heavy.ttf
