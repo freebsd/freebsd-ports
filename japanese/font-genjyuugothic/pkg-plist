@@ -1,5 +1,7 @@
 etc/fonts/conf.avail/20-unhint-genjyuugothic.conf
 etc/fonts/conf.avail/62-fonts-genjyuugothic.conf
+etc/fonts/conf.d/20-unhint-genjyuugothic.conf
+etc/fonts/conf.d/62-fonts-genjyuugothic.conf
 %%FONTSDIR%%/GenJyuuGothic-Bold.ttf
 %%FONTSDIR%%/GenJyuuGothic-ExtraLight.ttf
 %%FONTSDIR%%/GenJyuuGothic-Heavy.ttf
