@@ -1,7 +1,6 @@
 bin/lxqt-config-globalkeyshortcuts
 bin/lxqt-globalkeysd
 etc/xdg/autostart/lxqt-globalkeyshortcuts.desktop
-etc/xdg/lxqt/globalkeyshortcuts.conf
 %%LXQT_INCLUDEDIR%%-globalkeys-ui/LXQtGlobalKeysUi/ShortcutSelector
 %%LXQT_INCLUDEDIR%%-globalkeys-ui/shortcut_selector.h
 %%LXQT_INCLUDEDIR%%-globalkeys-ui/shortcutselector.h
@@ -14,10 +13,10 @@ etc/xdg/lxqt/globalkeyshortcuts.conf
 %%LXQT_INCLUDEDIR%%-globalkeys/lxqtglobalkeys.h
 lib/liblxqt-globalkeys-ui.so
 lib/liblxqt-globalkeys-ui.so.0
-lib/liblxqt-globalkeys-ui.so.%%VERSION%%
+lib/liblxqt-globalkeys-ui.so.0.14.1
 lib/liblxqt-globalkeys.so
 lib/liblxqt-globalkeys.so.0
-lib/liblxqt-globalkeys.so.%%VERSION%%
+lib/liblxqt-globalkeys.so.0.14.1
 libdata/pkgconfig/lxqt-globalkeys-ui.pc
 libdata/pkgconfig/lxqt-globalkeys.pc
 share/applications/lxqt-config-globalkeyshortcuts.desktop
@@ -29,13 +28,16 @@ share/cmake/lxqt-globalkeys/lxqt-globalkeys-config-version.cmake
 share/cmake/lxqt-globalkeys/lxqt-globalkeys-config.cmake
 share/cmake/lxqt-globalkeys/lxqt-globalkeys-targets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/lxqt-globalkeys/lxqt-globalkeys-targets.cmake
+%%LXQT_SHAREDIR%%/globalkeyshortcuts.conf
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_ar.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_ast.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_ca.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_cs.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_cy.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_da.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_de.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_el.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_en_GB.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_eo.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_es_VE.qm
@@ -57,6 +59,7 @@ share/cmake/lxqt-globalkeys/lxqt-globalkeys-targets.cmake
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_pt_BR.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_ro_RO.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_ru.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_sk_SK.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_sl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_th_TH.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_tr.qm

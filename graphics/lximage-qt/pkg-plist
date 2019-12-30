@@ -9,6 +9,7 @@ share/icons/hicolor/48x48/apps/lximage-qt.png
 %%DATADIR%%/translations/lximage-qt_da.qm
 %%DATADIR%%/translations/lximage-qt_de.qm
 %%DATADIR%%/translations/lximage-qt_el.qm
+%%DATADIR%%/translations/lximage-qt_en_GB.qm
 %%DATADIR%%/translations/lximage-qt_es.qm
 %%DATADIR%%/translations/lximage-qt_fr.qm
 %%DATADIR%%/translations/lximage-qt_gl.qm

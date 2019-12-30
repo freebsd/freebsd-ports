@@ -1,3 +1,4 @@
+bin/qtxdg-mat
 %%QT_INCDIR%%xdg/XdgAction
 %%QT_INCDIR%%xdg/XdgAutoStart
 %%QT_INCDIR%%xdg/XdgDesktopFile
@@ -5,6 +6,7 @@
 %%QT_INCDIR%%xdg/XdgIcon
 %%QT_INCDIR%%xdg/XdgMenu
 %%QT_INCDIR%%xdg/XdgMenuWidget
+%%QT_INCDIR%%xdg/XdgMimeApps
 %%QT_INCDIR%%xdg/XdgMimeType
 %%QT_INCDIR%%xdg/XmlHelper
 %%QT_INCDIR%%xdg/xdgaction.h
@@ -15,6 +17,7 @@
 %%QT_INCDIR%%xdg/xdgmacros.h
 %%QT_INCDIR%%xdg/xdgmenu.h
 %%QT_INCDIR%%xdg/xdgmenuwidget.h
+%%QT_INCDIR%%xdg/xdgmimeapps.h
 %%QT_INCDIR%%xdg/xdgmimetype.h
 %%QT_INCDIR%%xdg/xmlhelper.h
 %%QT_INCDIR%%xdgiconloader/%%VERSION%%/private/xdgiconloader/xdgiconloader_p.h

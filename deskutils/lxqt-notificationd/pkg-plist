@@ -52,4 +52,5 @@ share/applications/lxqt-config-notificationd.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-notificationd/lxqt-notificationd_ru_RU.qm
 %%LXQT_TRANSLATIONS%%/lxqt-notificationd/lxqt-notificationd_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-notificationd/lxqt-notificationd_uk.qm
+%%LXQT_TRANSLATIONS%%/lxqt-notificationd/lxqt-notificationd_zh_CN.qm
 %%LXQT_TRANSLATIONS%%/lxqt-notificationd/lxqt-notificationd_zh_TW.qm

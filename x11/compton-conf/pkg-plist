@@ -8,6 +8,7 @@ share/applications/compton-conf.desktop
 %%DATADIR%%/translations/compton-conf_da.qm
 %%DATADIR%%/translations/compton-conf_de.qm
 %%DATADIR%%/translations/compton-conf_el.qm
+%%DATADIR%%/translations/compton-conf_en_GB.qm
 %%DATADIR%%/translations/compton-conf_es.qm
 %%DATADIR%%/translations/compton-conf_eu.qm
 %%DATADIR%%/translations/compton-conf_fr.qm

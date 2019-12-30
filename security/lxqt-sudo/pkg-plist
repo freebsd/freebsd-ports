@@ -29,5 +29,6 @@ man/man1/lxsudo.1.gz
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_sk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_uk.qm
+%%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_vi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_zh_CN.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_zh_TW.qm
