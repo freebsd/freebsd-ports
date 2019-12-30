@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xvid
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.7
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.xvid.com/downloads/
