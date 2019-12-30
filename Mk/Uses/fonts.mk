@@ -65,11 +65,10 @@ PLIST_FILES+=	"@${fonts_ARGS} ${FONTSDIR}"
 .if defined(FONTPATHSPEC) && !empty(FONTPATHSPEC)
 FONTPATHD?=	${LOCALBASE}/etc/X11/fontpath.d
 PLIST_FILES+=	"${FONTPATHD}/${FONTPATHSPEC}"
-post-install-fontpathd:
+_USES_install+=	690:fonts-install-fontpathd
+fonts-install-fontpathd:
 	@${MKDIR} ${STAGEDIR}${FONTPATHD}
-	${LN} -s -f ../../../${FONTSDIR:S,^${PREFIX}/,,} \
-	    ${STAGEDIR}${FONTPATHD}/${FONTPATHSPEC}
-post-install: post-install-fontpathd
+	${RLN} ${STAGEDIR}${FONTSDIR} ${STAGEDIR}${FONTPATHD}/${FONTPATHSPEC}
 .endif
 SUB_LIST+=	FONTSDIR="${FONTSDIR}"
 PLIST_SUB+=	FONTSDIR="${FONTSDIR:S,^${PREFIX}/,,}"
