@@ -100,6 +100,15 @@ POUDRIERE_EXTRACT_ONLY=	yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} \
 			vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}
 POUDRIERE_EXTRA_PATCHES=	${FILESDIR}/extra-patch-build_gulpfile.extensions.js
 
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "The limit imposed by poudriere(8) for the maximum number of files allowed to be"
+	@${ECHO_MSG} "opened by a jail (default 1024) is exceeded during the build of ${PORTNAME}."
+	@${ECHO_MSG} "To successfully build ${PORTNAME} with poudriere(8), you must add the following"
+	@${ECHO_MSG} "line to poudriere.conf:"
+	@${ECHO_MSG} "MAX_FILES_${PORTNAME}=4096"
+	@${ECHO_MSG} ""
+
 post-extract:
 	${MKDIR} ${WRKDIR}/vscode-ripgrep
 	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/vscode-ripgrep-${VSCODE_RIPGREP_VER}.tgz \
