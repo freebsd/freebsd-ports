@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	debhelper
-PORTVERSION=	12.7.2
+PORTVERSION=	12.7.3
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -13,14 +13,14 @@ COMMENT=	Helper programs for debian/rules
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL
 
-PORTSCOUT=	limit:^[0-9\.]*$$
-
 USES=		gmake perl5 shebangfix tar:xz
 
 MAKE_ARGS=	PREFIX=${PREFIX} SITE_PERL=${PREFIX}/${SITE_PERL_REL}
 NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 SHEBANG_FILES=	dh*
 
