@@ -32,4 +32,7 @@ post-install:
 	${LN} -s ${script}.py-${PYTHON_VER} ${STAGEDIR}${PREFIX}/bin/${script}
 .endfor
 
+do-test:
+	cd ${WRKSRC} && ${PYTHON_CMD} test/alltests.py --verbose
+
 .include <bsd.port.mk>
