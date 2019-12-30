@@ -58,12 +58,13 @@ OPTIONS_DEFAULT=	CONTRIB P4 CVS PERL GITWEB ICONV CURL SEND_EMAIL PCRE \
 			SUBTREE SVN
 OPTIONS_SUB=	yes
 
-GITWEB_DESC=	Install gitweb
 CONTRIB_DESC=	Install contributed scripts
+CURL_DESC=	Install curl support (provides HTTPS transport)
+CVS_DESC=	Enable CVS support
+GITWEB_DESC=	Install gitweb
+HTMLDOCS_DESC=	Install additional documentation
 P4_DESC=	Enable Perforce support
 PCRE2_DESC=	Use Perl Compatible Regular Expressions (v2)
-CVS_DESC=	Enable CVS support
-HTMLDOCS_DESC=	Install additional documentation
 SEND_EMAIL_DESC=Enable the git-send-email(1) script
 SUBTREE_DESC=	Install git-subtree
 
