@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${JAVALIBDIR}/httpcore.jar:www/httpcore \
 		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
-		${JAVALIBDIR}/commons-codec.jar:java/jakarta-commons-codec
+		${JAVALIBDIR}/commons-codec.jar:java/apache-commons-codec
 
 OPTIONS_DEFINE=	DOCS
 
