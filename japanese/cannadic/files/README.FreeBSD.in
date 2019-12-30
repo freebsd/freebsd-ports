@@ -1,0 +1,45 @@
+かんな辞書 FreeBSD ports インストールマニュアル
+
+このマニュアルは，かんな辞書を FreeBSD ports でインストールする場合に，
+手動で行わなければならないことを，かんな辞書のマニュアルから抜粋したものです．
+
+
+1) 辞書登録ファイルの %%PREFIX%%/share/canna/dic/canna/dics.dir に、
+   %%PREFIX%%/share/canna/dic/canna/dics.dir.gpl_canna の内容を追加します。
+
+# cd %%PREFIX%%/share/canna/dic/canna
+# cp dics.dir dics.dir.orig
+# cat dics.dir.gpl_canna >> dics.dir
+
+2) cannaserver を停止，起動します。
+
+(かんなサーバ停止)
+# %%PREFIX%%/etc/rc.d/canna stop
+
+(cannaserverが停止していることを確認してください。停止していなければ
+ killコマンドでプロセスを停止させてください)
+
+(かんなサーバ起動)
+# %%PREFIX%%/etc/rc.d/canna start
+
+3) ユーザ権限に戻って、ホームディレクトリに存在する各ユーザの .canna の
+   (use-dictionary ...) の部分に "gcanna" "gcannaf" の二行を付け足して
+   ください。抜粋するとこんな感じです。
+
+(use-dictionary
+ "gcanna"  ← これを追加
+ "gcannaf"  ← これを追加
+ ;;"iroha" ← 上位互換なので iroha はコメントアウトしてもかまいません
+ "fuzokugo"
+ "hojomwd"
+ "hojoswd"
+ :bushu "bushu"
+ :user "user"
+ )
+
+4) 最後に頻度辞書を作成します。既に同名のユーザ辞書がインストールされている
+   場合、辞書を上書きするかどうか質問されます。必ず yes を選択してください。
+
+$ mkdic -fq gcanna
+Personal learning file of dictionary "gcanna" exists. Do you overwrite it ? (y/n)
+

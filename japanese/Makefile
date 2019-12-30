@@ -24,6 +24,7 @@
     SUBDIR += bugzilla50
     SUBDIR += canna-lib
     SUBDIR += canna-server
+    SUBDIR += cannadic
     SUBDIR += cdrom2
     SUBDIR += celrw
     SUBDIR += chasen-base
