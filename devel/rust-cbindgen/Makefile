@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cbindgen
-DISTVERSION=	0.12.0
-PORTREVISION=	1
+DISTVERSION=	0.12.1
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 PKGNAMEPREFIX=	rust-
@@ -20,47 +19,38 @@ USES=		cargo
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	ansi_term-0.11.0 \
-		atty-0.2.11 \
-		autocfg-0.1.4 \
-		bitflags-1.1.0 \
-		cfg-if-0.1.9 \
+		atty-0.2.13 \
+		bitflags-1.2.1 \
+		c2-chacha-0.2.3 \
+		cfg-if-0.1.10 \
 		clap-2.33.0 \
-		cloudabi-0.0.3 \
-		fuchsia-cprng-0.1.1 \
+		getrandom-0.1.13 \
 		itoa-0.4.4 \
-		libc-0.2.58 \
-		log-0.4.6 \
-		numtoa-0.1.0 \
-		proc-macro2-1.0.0 \
-		quote-1.0.0 \
-		rand-0.6.5 \
-		rand_chacha-0.1.1 \
-		rand_core-0.3.1 \
-		rand_core-0.4.0 \
-		rand_hc-0.1.0 \
-		rand_isaac-0.1.1 \
-		rand_jitter-0.1.4 \
-		rand_os-0.1.3 \
-		rand_pcg-0.1.2 \
-		rand_xorshift-0.1.1 \
-		rdrand-0.4.0 \
-		redox_syscall-0.1.54 \
-		redox_termios-0.1.1 \
+		libc-0.2.66 \
+		log-0.4.8 \
+		ppv-lite86-0.2.6 \
+		proc-macro2-1.0.6 \
+		quote-1.0.2 \
+		rand-0.7.2 \
+		rand_chacha-0.2.1 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
+		redox_syscall-0.1.56 \
 		remove_dir_all-0.5.2 \
-		ryu-0.2.8 \
-		serde-1.0.93 \
-		serde_derive-1.0.99 \
-		serde_json-1.0.39 \
+		ryu-1.0.2 \
+		serde-1.0.104 \
+		serde_derive-1.0.104 \
+		serde_json-1.0.44 \
 		strsim-0.8.0 \
-		syn-1.0.1 \
-		tempfile-3.0.8 \
-		termion-1.5.3 \
+		syn-1.0.11 \
+		tempfile-3.1.0 \
 		textwrap-0.11.0 \
-		toml-0.5.1 \
-		unicode-width-0.1.5 \
+		toml-0.5.5 \
+		unicode-width-0.1.7 \
 		unicode-xid-0.2.0 \
 		vec_map-0.8.1 \
-		winapi-0.3.7 \
+		wasi-0.7.0 \
+		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
