@@ -1,7 +1,7 @@
 # Created by: John Merryweather Cooper et al
 # $FreeBSD$
 
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-postgres
 

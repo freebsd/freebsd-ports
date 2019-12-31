@@ -20,7 +20,14 @@
 
    * editors/fpc-ide
 
-5) Enjoy it ;)
+5) This port add support to fp compiler to get value from FPC_LDPATH 
+   environment variable. By default fp compiler use %%LOCALBASE%%/bin/ld.bfd for 
+   linking binaries. If you want change this, just must be define FPC_LDPATH 
+   with path to ld tool that will be used by fp compiler. Take on mind that fpc 
+   only works with binutils on this moment but could work with another ld tool
+   later on next versions of freepascal
+
+6) Enjoy it ;)
 EOM
 }
 ]

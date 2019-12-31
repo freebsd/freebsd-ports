@@ -3,7 +3,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	3.0.4
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -28,7 +28,7 @@ USE_BINUTILS=	yes
 BOOTVER=	3.0.4
 MANVER=		3.0.4
 
-LDPATH=		"${LOCALBASE}/bin/ld.bfd"
+FPC_LDPATH?=	"${LOCALBASE}/bin/ld.bfd"
 
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	fpc-svn
@@ -72,7 +72,8 @@ MAKE_ARGS+=	FPCMAKE=${NEWFPCMAKE} \
 		INSTALL="${INSTALL_DATA}" \
 		INSTALLEXE="${INSTALL_PROGRAM}" \
 		INSTALLSCR="${INSTALL_SCRIPT}" \
-		INSTALL_PREFIX=${STAGEDIR}${PREFIX}
+		INSTALL_PREFIX=${STAGEDIR}${PREFIX} \
+		FPC_LDPATH=${FPC_LDPATH}
 NEWPPC=		PP=${WRKSRC}/compiler/${PPNAME}
 NEWFPC=		FPC=${WRKSRC}/compiler/${PPNAME}
 BOOTDIR=	${PPNAME}-${BOOTVER}-${OPSYS:tl}
@@ -106,13 +107,15 @@ post-patch:
 .if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -i "" -e 's|900044|${OSVERSION}|g' \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.as
+	@${REINPLACE_CMD} -i "" -e 's|197|477|g' \
+		${WRKSRC}/rtl/freebsd/sysnr.inc
 .else
 	@${REINPLACE_CMD} -i "" -e 's|400000|${DFLYVERSION}|g' \
 		${WRKSRC}/rtl/dragonfly/${FPC_ARCH}/*.as
 .endif
 .if empty(ICONV_LIB)
 	@${REINPLACE_CMD} -e "s|s<>'c'|(s<>'c') and (s<>'iconv')|" \
-			-e "s|%%LDPATH%%|${LDPATH}|g" \
+			-e "s|%%FPC_LDPATH%%|${FPC_LDPATH}|g" \
 				${WRKDIR}/${FPCSRCDIR}/compiler/systems/t_bsd.pas
 	@${REINPLACE_CMD} -e 's|defined(bsd) and not ||' \
 		${WRKDIR}/${FPCSRCDIR}/rtl/unix/cwstring.pp
