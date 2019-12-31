@@ -3,14 +3,14 @@
 
 PORTNAME=	linux_libusb
 PORTVERSION=	11.0r${FSVN_REV}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel linux
 MASTER_SITES=	LOCAL/nox
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux-compatibility libusb
 
-BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:devel/linux-c6-devtools
+BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:devel/linux-c7-devtools
 
 USES=		tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64
