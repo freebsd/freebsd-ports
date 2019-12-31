@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Depends on expiring devel/openmp
-EXPIRATION_DATE=	2019-12-31
+EXPIRATION_DATE=	2020-02-01
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		openblas>0:math/openblas \
