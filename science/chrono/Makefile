@@ -12,6 +12,9 @@ COMMENT=	C++ library for multi-physics simulation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expiring devel/openmp
+EXPIRATION_DATE=2020-02-01
+
 BROKEN_i386=	use of overloaded operator '[]' is ambiguous (with operand types 'chrono::quaternion' and 'int'): https://github.com/projectchrono/chrono/issues/158
 
 BUILD_DEPENDS=	openmpi>0:net/openmpi
