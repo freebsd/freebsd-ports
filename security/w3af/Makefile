@@ -3,7 +3,7 @@
 
 PORTNAME=	w3af
 PORTVERSION=	1.6.49
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security python www
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/doc/GPL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}soappy>=0:net/py-soappy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zeep>=0:net/py-zeep@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fpconst>0:math/py-fpconst@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nltk>0:textproc/py-nltk@${PY_FLAVOR} \
