@@ -63,7 +63,6 @@
     SUBDIR += lib765
     SUBDIR += libdsk
     SUBDIR += libspectrum
-    SUBDIR += linux-c6
     SUBDIR += linux-c7
     SUBDIR += linux-power9-functional-sim
     SUBDIR += linux_base-c6
