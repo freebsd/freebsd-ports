@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+To configure lightningd system-wide and to start it at boot time:
+
+Copy %%PREFIX%%/etc/lightningd-bitcoin.conf.sample
+to - %%PREFIX%%/etc/lightningd-bitcoin.conf and edit according to your setup.
+See "lightningd --help" for more information.
+
+Add lightningd_enable="YES" to %%LOCALBASE%%/etc/rc.conf.d/lightningd.
+See rc.conf(5) and %%LOCALBASE%%/etc/rc.d/lightningd for more information.
+EOM
+}
+]

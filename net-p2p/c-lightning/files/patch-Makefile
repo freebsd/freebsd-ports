@@ -1,0 +1,32 @@
+--- Makefile.orig	2019-12-08 14:26:28 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+ #! /usr/bin/make
+ 
+ # Extract version from git, or if we're from a zipfile, use dirname
+-VERSION=$(shell git describe --always --dirty=-modded --abbrev=7 2>/dev/null || pwd | sed -n 's,.*/clightning-\(v[0-9.rc]*\)$$,\1,p')
++VERSION=$(shell git describe --always --dirty=-modded --abbrev=7 2>/dev/null || pwd | sed -n 's|.*/c\{0,1\}lightning-v\{0,1\}\([0-9a-f.rc]*\)$$|\1|gp')
+ 
+ ifeq ($(VERSION),)
+ $(error "ERROR: git is required for generating version information")
+@@ -453,7 +453,7 @@ pkglibexecdir = $(libexecdir)/$(PKGNAME)
+ plugindir = $(pkglibexecdir)/plugins
+ datadir = $(PREFIX)/share
+ docdir = $(datadir)/doc/$(PKGNAME)
+-mandir = $(datadir)/man
++mandir = $(PREFIX)/man
+ man1dir = $(mandir)/man1
+ man5dir = $(mandir)/man5
+ man7dir = $(mandir)/man7
+@@ -462,7 +462,11 @@ man8dir = $(mandir)/man8
+ # Commands
+ MKDIR_P = mkdir -p
+ INSTALL = install
++ifeq ($(DEVELOPER),1)
+ INSTALL_PROGRAM = $(INSTALL)
++else
++INSTALL_PROGRAM = $(INSTALL) -s
++endif
+ INSTALL_DATA = $(INSTALL) -m 644
+ 
+ # Tags needed by some package systems.
