@@ -38,6 +38,32 @@ index 8e19020315ae..2fcdbb6f7b42 100644
  GeneratedFile('UseCounterList.h', script='gen-usecounters.py',
                entry_point='use_counter_list', inputs=['UseCounters.conf'])
  
+diff --git gfx/graphite2/geckoextra/moz.build gfx/graphite2/geckoextra/moz.build
+new file mode 100644
+index 0000000000000..24e8d7a03274a
+--- /dev/null
++++ gfx/graphite2/geckoextra/moz.build
+@@ -0,0 +1,20 @@
++# -*- Mode: python; indent-tabs-mode: nil; tab-width: 40 -*-
++# vim: set filetype=python:
++# This Source Code Form is subject to the terms of the Mozilla Public
++# License, v. 2.0. If a copy of the MPL was not distributed with this
++# file, You can obtain one at http://mozilla.org/MPL/2.0/.
++
++EXPORTS.graphite2 += [
++    'include/GraphiteExtra.h',
++]
++
++UNIFIED_SOURCES += [
++    '../geckoextra/src/GraphiteExtra.cpp',
++]
++
++CXXFLAGS += CONFIG['MOZ_GRAPHITE2_CFLAGS']
++
++# Match bundled graphite2 configuration
++AllowCompilerWarnings()
++
++FINAL_LIBRARY = 'gkmedias'
 diff --git gfx/graphite2/moz-gr-update.sh gfx/graphite2/moz-gr-update.sh
 index faaab1b17971..04eff5f09882 100644
 --- gfx/graphite2/moz-gr-update.sh
@@ -85,11 +111,13 @@ diff --git gfx/moz.build gfx/moz.build
 index 771f652e837a..3b358d84e384 100644
 --- gfx/moz.build
 +++ gfx/moz.build
-@@ -13,6 +13,12 @@ with Files('wr/**'):
+@@ -13,6 +13,14 @@ with Files('wr/**'):
  if CONFIG['MOZ_TREE_CAIRO']:
      DIRS += ['cairo']
  
-+if not CONFIG['MOZ_SYSTEM_GRAPHITE2']:
++if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
++    DIRS += ['graphite2/geckoextra']
++else:
 +    DIRS += ['graphite2/src' ]
 +
 +if not CONFIG['MOZ_SYSTEM_HARFBUZZ']:
@@ -98,7 +126,7 @@ index 771f652e837a..3b358d84e384 100644
  DIRS += [
      '2d',
      'ycbcr',
-@@ -21,8 +27,6 @@ DIRS += [
+@@ -21,8 +29,6 @@ DIRS += [
      'qcms',
      'gl',
      'layers',

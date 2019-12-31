@@ -372,6 +372,9 @@ gecko-post-patch:
 		-e 's|share/mozilla/extensions|lib/xpi|g' \
 		${MOZSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${MOZSRC}/toolkit/xre/nsXREDirProvider.cpp
+# Disable vendor checksums like lang/rust
+	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
+		${MOZSRC}/third_party/rust/*/.cargo-checksum.json
 
 post-install-script: gecko-create-plist
 
