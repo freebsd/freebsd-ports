@@ -30,7 +30,7 @@ status_precmd="softflowd_precommand $@"
 poll_precmd="softflowd_precommand $@"
 rcvar_precmd="softflowd_precommand $@"
 stop_cmd="softflowd_stop"
-command="%%PREFIX%%/sbin/softflowd"
+command="%%PREFIX%%/bin/softflowd"
 _pidprefix="/var/run/softflowd"
 if [ -n $2 ]; then
     pidfile="${_pidprefix}.${2}.pid"
@@ -76,7 +76,7 @@ softflowd_precommand ()
 
 softflowd_stop()
 {
-	%%PREFIX%%/sbin/softflowctl -c ${ctlfile} shutdown
+	%%PREFIX%%/bin/softflowctl -c ${ctlfile} shutdown
 }
 
 run_rc_command "$1"
