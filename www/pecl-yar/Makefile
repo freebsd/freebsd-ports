@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yar
-DISTVERSION=	2.0.5
+DISTVERSION=	2.0.6
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		localbase php:pecl
 USE_PHP=	json:build curl:build
-IGNORE_WITH_PHP=	74
 
 OPTIONS_DEFINE=	MSGPACK
 MSGPACK_DESC=	Enable MSGPACK module
