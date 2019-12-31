@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sway
-DISTVERSION=	1.2
-PORTREVISION=	4
+DISTVERSION=	1.3-rc1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.14:graphics/wayland-protocols \
-		wlroots>=0.6.0:x11-toolkits/wlroots
+		wlroots>=0.9.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libevdev.so:devel/libevdev \
 		libpcre.so:devel/pcre \
@@ -23,8 +22,9 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	swaybg:x11/swaybg
 
-USES=		compiler:c11 gnome meson pkgconfig xorg
+USES=		compiler:c11 gl gnome meson pkgconfig xorg
 USE_GITHUB=	yes
+USE_GL=		glesv2
 USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	swaywm
