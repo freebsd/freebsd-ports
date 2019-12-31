@@ -1,0 +1,199 @@
+https://github.com/swaywm/sway/commit/d19f4f7bf866
+https://github.com/swaywm/sway/commit/1d3cbe9f2782
+https://github.com/swaywm/sway/commit/6e0565e9de42
+
+--- sway/config/output.c.orig	2019-08-27 04:46:22 UTC
++++ sway/config/output.c
+@@ -201,12 +201,13 @@ struct output_config *store_output_config(struct outpu
+ 	return oc;
+ }
+ 
+-static bool set_mode(struct wlr_output *output, int width, int height,
++static void set_mode(struct wlr_output *output, int width, int height,
+ 		float refresh_rate) {
+ 	int mhz = (int)(refresh_rate * 1000);
+ 	if (wl_list_empty(&output->modes)) {
+ 		sway_log(SWAY_DEBUG, "Assigning custom mode to %s", output->name);
+-		return wlr_output_set_custom_mode(output, width, height, mhz);
++		wlr_output_set_custom_mode(output, width, height, mhz);
++		return;
+ 	}
+ 
+ 	struct wlr_output_mode *mode, *best = NULL;
+@@ -226,7 +227,7 @@ static bool set_mode(struct wlr_output *output, int wi
+ 	} else {
+ 		sway_log(SWAY_DEBUG, "Assigning configured mode to %s", output->name);
+ 	}
+-	return wlr_output_set_mode(output, best);
++	wlr_output_set_mode(output, best);
+ }
+ 
+ bool apply_output_config(struct output_config *oc, struct sway_output *output) {
+@@ -243,11 +244,12 @@ bool apply_output_config(struct output_config *oc, str
+ 			wlr_output_layout_remove(root->output_layout, wlr_output);
+ 		}
+ 		wlr_output_enable(wlr_output, false);
+-		return true;
++		return wlr_output_commit(wlr_output);
+ 	} else if (!output->enabled) {
+ 		// Output is not enabled. Enable it, output_enable will call us again.
+ 		if (!oc || oc->dpms_state != DPMS_OFF) {
+ 			wlr_output_enable(wlr_output, true);
++			wlr_output_commit(wlr_output);
+ 		}
+ 		output_enable(output, oc);
+ 		return true;
+@@ -258,27 +260,15 @@ bool apply_output_config(struct output_config *oc, str
+ 		wlr_output_enable(wlr_output, true);
+ 	}
+ 
+-	bool modeset_success;
++	struct wlr_output_mode *preferred_mode =
++		wlr_output_preferred_mode(wlr_output);
+ 	if (oc && oc->width > 0 && oc->height > 0) {
+ 		sway_log(SWAY_DEBUG, "Set %s mode to %dx%d (%f GHz)", oc->name, oc->width,
+ 			oc->height, oc->refresh_rate);
+-		modeset_success =
+-			set_mode(wlr_output, oc->width, oc->height, oc->refresh_rate);
+-	} else if (!wl_list_empty(&wlr_output->modes)) {
+-		struct wlr_output_mode *mode =
+-			wl_container_of(wlr_output->modes.prev, mode, link);
+-		modeset_success = wlr_output_set_mode(wlr_output, mode);
+-	} else {
+-		// Output doesn't support modes
+-		modeset_success = true;
++		set_mode(wlr_output, oc->width, oc->height, oc->refresh_rate);
++	} else if (preferred_mode != NULL) {
++		wlr_output_set_mode(wlr_output, preferred_mode);
+ 	}
+-	if (!modeset_success) {
+-		// Failed to modeset, maybe the output is missing a CRTC. Leave the
+-		// output disabled for now and try again when the output gets the mode
+-		// we asked for.
+-		sway_log(SWAY_ERROR, "Failed to modeset output %s", wlr_output->name);
+-		return false;
+-	}
+ 
+ 	if (oc && oc->scale > 0) {
+ 		sway_log(SWAY_DEBUG, "Set %s scale to %f", oc->name, oc->scale);
+@@ -297,6 +287,14 @@ bool apply_output_config(struct output_config *oc, str
+ 		wlr_output_set_transform(wlr_output, oc->transform);
+ 	}
+ 
++	if (!wlr_output_commit(wlr_output)) {
++		// Failed to modeset, maybe the output is missing a CRTC. Leave the
++		// output disabled for now and try again when the output gets the mode
++		// we asked for.
++		sway_log(SWAY_ERROR, "Failed to modeset output %s", wlr_output->name);
++		return false;
++	}
++
+ 	// Find position for it
+ 	if (oc && (oc->x != -1 || oc->y != -1)) {
+ 		sway_log(SWAY_DEBUG, "Set %s position to %d, %d", oc->name, oc->x, oc->y);
+@@ -316,6 +314,7 @@ bool apply_output_config(struct output_config *oc, str
+ 	if (oc && oc->dpms_state == DPMS_OFF) {
+ 		sway_log(SWAY_DEBUG, "Turning off screen");
+ 		wlr_output_enable(wlr_output, false);
++		wlr_output_commit(wlr_output);
+ 	}
+ 
+ 	return true;
+@@ -324,12 +323,12 @@ bool apply_output_config(struct output_config *oc, str
+ static void default_output_config(struct output_config *oc,
+ 		struct wlr_output *wlr_output) {
+ 	oc->enabled = 1;
+-	if (!wl_list_empty(&wlr_output->modes)) {
+-		struct wlr_output_mode *mode =
+-			wl_container_of(wlr_output->modes.prev, mode, link);
+-		oc->width = mode->width;
+-		oc->height = mode->height;
+-		oc->refresh_rate = mode->refresh;
++	struct wlr_output_mode *preferred_mode =
++		wlr_output_preferred_mode(wlr_output);
++	if (preferred_mode != NULL) {
++		oc->width = preferred_mode->width;
++		oc->height = preferred_mode->height;
++		oc->refresh_rate = preferred_mode->refresh;
+ 	}
+ 	oc->x = oc->y = -1;
+ 	oc->scale = 1;
+
+
+--- sway/desktop/layer_shell.c.orig	2019-08-27 04:46:22 UTC
++++ sway/desktop/layer_shell.c
+@@ -486,7 +486,9 @@ void handle_layer_shell_surface(struct wl_listener *li
+ 	struct wlr_layer_surface_v1 *layer_surface = data;
+ 	sway_log(SWAY_DEBUG, "new layer surface: namespace %s layer %d anchor %d "
+ 			"size %dx%d margin %d,%d,%d,%d",
+-		layer_surface->namespace, layer_surface->layer, layer_surface->layer,
++		layer_surface->namespace,
++		layer_surface->client_pending.layer,
++		layer_surface->client_pending.layer,
+ 		layer_surface->client_pending.desired_width,
+ 		layer_surface->client_pending.desired_height,
+ 		layer_surface->client_pending.margin.top,
+@@ -543,7 +545,8 @@ void handle_layer_shell_surface(struct wl_listener *li
+ 	sway_layer->output_destroy.notify = handle_output_destroy;
+ 	wl_signal_add(&output->events.destroy, &sway_layer->output_destroy);
+ 
+-	wl_list_insert(&output->layers[layer_surface->layer], &sway_layer->link);
++	wl_list_insert(&output->layers[layer_surface->client_pending.layer],
++			&sway_layer->link);
+ 
+ 	// Temporarily set the layer's current state to client_pending
+ 	// So that we can easily arrange it
+--- sway/desktop/output.c.orig	2019-08-27 04:46:22 UTC
++++ sway/desktop/output.c
+@@ -375,7 +375,7 @@ bool output_has_opaque_overlay_layer_surface(struct sw
+ 	struct wlr_layer_surface_v1 *wlr_layer_surface_v1;
+ 	wl_list_for_each(wlr_layer_surface_v1, &server.layer_shell->surfaces, link) {
+ 		if (wlr_layer_surface_v1->output != output->wlr_output ||
+-				wlr_layer_surface_v1->layer != ZWLR_LAYER_SHELL_V1_LAYER_OVERLAY) {
++				wlr_layer_surface_v1->current.layer != ZWLR_LAYER_SHELL_V1_LAYER_OVERLAY) {
+ 			continue;
+ 		}
+ 		struct wlr_surface *wlr_surface = wlr_layer_surface_v1->surface;
+@@ -653,31 +653,12 @@ static void handle_scale(struct wl_listener *listener,
+ 	update_output_manager_config(output->server);
+ }
+ 
+-static void send_presented_iterator(struct sway_output *output,
+-		struct wlr_surface *surface, struct wlr_box *box, float rotation,
+-		void *data) {
+-	struct wlr_presentation_event *event = data;
+-	wlr_presentation_send_surface_presented(server.presentation,
+-		surface, event);
+-}
+-
+ static void handle_present(struct wl_listener *listener, void *data) {
+ 	struct sway_output *output = wl_container_of(listener, output, present);
+-	struct wlr_output_event_present *output_event = data;
+ 
+ 	if (!output->enabled) {
+ 		return;
+ 	}
+-
+-	struct wlr_presentation_event event = {
+-		.output = output->wlr_output,
+-		.tv_sec = (uint64_t)output_event->when->tv_sec,
+-		.tv_nsec = (uint32_t)output_event->when->tv_nsec,
+-		.refresh = (uint32_t)output_event->refresh,
+-		.seq = (uint64_t)output_event->seq,
+-		.flags = output_event->flags,
+-	};
+-	output_for_each_surface(output, send_presented_iterator, &event);
+ }
+ 
+ void handle_new_output(struct wl_listener *listener, void *data) {
+--- sway/input/seat.c.orig	2019-08-27 04:46:22 UTC
++++ sway/input/seat.c
+@@ -1089,7 +1089,7 @@ void seat_set_focus_layer(struct sway_seat *seat,
+ 		return;
+ 	}
+ 	seat_set_focus_surface(seat, layer->surface, true);
+-	if (layer->layer >= ZWLR_LAYER_SHELL_V1_LAYER_TOP) {
++	if (layer->current.layer >= ZWLR_LAYER_SHELL_V1_LAYER_TOP) {
+ 		seat->focused_layer = layer;
+ 	}
+ }

@@ -5,6 +5,7 @@ include/wlr/backend/interface.h
 include/wlr/backend/libinput.h
 include/wlr/backend/multi.h
 include/wlr/backend/noop.h
+include/wlr/backend/rdp.h
 include/wlr/backend/session.h
 include/wlr/backend/session/interface.h
 include/wlr/backend/wayland.h
@@ -42,6 +43,7 @@ include/wlr/types/wlr_input_device.h
 include/wlr/types/wlr_input_inhibitor.h
 include/wlr/types/wlr_input_method_v2.h
 include/wlr/types/wlr_keyboard.h
+include/wlr/types/wlr_keyboard_group.h
 include/wlr/types/wlr_layer_shell_v1.h
 include/wlr/types/wlr_linux_dmabuf_v1.h
 include/wlr/types/wlr_list.h
@@ -69,6 +71,7 @@ include/wlr/types/wlr_tablet_v2.h
 include/wlr/types/wlr_text_input_v3.h
 include/wlr/types/wlr_touch.h
 include/wlr/types/wlr_virtual_keyboard_v1.h
+include/wlr/types/wlr_virtual_pointer_v1.h
 include/wlr/types/wlr_xcursor_manager.h
 include/wlr/types/wlr_xdg_decoration_v1.h
 include/wlr/types/wlr_xdg_output_v1.h
@@ -81,6 +84,6 @@ include/wlr/version.h
 include/wlr/xcursor.h
 %%X11%%include/wlr/xwayland.h
 lib/libwlroots.so
-lib/libwlroots.so.3
-lib/libwlroots.so.3.6.1
+lib/libwlroots.so.4
+lib/libwlroots.so.4.7.1
 libdata/pkgconfig/wlroots.pc
