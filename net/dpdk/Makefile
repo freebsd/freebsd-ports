@@ -2,6 +2,7 @@
 
 PORTNAME=	dpdk
 DISTVERSION=	19.11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://fast.dpdk.org/rel/
 
@@ -14,7 +15,7 @@ ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	Only works on 64-bit x86 hardware
 
 LIB_DEPENDS=	libjansson.so:devel/jansson \
-		libcrypto.so:security/openssl
+		libcrypto.so:security/openssl111
 
 USES=		meson kmod shebangfix tar:xz
 MESON_ARGS=	-Dmachine=default -Ddefault_library=shared
