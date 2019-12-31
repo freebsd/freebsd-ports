@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_mips=	Fails to build: redefinition of GC_register_dynamic_libraries
 BROKEN_mips64=	Fails to build: redefinition of GC_register_dynamic_libraries
 
-USES=		gmake iconv makeinfo tar:tgz
+USES=		compiler:c11 gmake iconv makeinfo tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-local=${LOCALBASE} ${ICONV_CONFIGURE_BASE:S/lib//}
 USE_LDCONFIG=	yes
