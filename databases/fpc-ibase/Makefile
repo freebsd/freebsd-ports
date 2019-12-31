@@ -1,7 +1,7 @@
 # Created by: John Merryweather Cooper
 # $FreeBSD$
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-ibase
 

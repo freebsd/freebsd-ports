@@ -1,8 +1,8 @@
 # $FreeBSD$
 
+PORTREVISION=	4
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-js
-PORTREVISION=	3
 
 COMMENT=	Free Pascal Javascript scanner/parser/syntax tree (FCL)
 

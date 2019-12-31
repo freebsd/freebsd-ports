@@ -1,8 +1,8 @@
 # $FreeBSD$
 
+PORTREVISION=	4
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-passrc
-PORTREVISION=	3
 
 COMMENT=	Free Pascal language parsing library (FPC)
 

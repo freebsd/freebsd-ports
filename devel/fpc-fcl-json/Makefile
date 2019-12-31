@@ -1,8 +1,8 @@
 # $FreeBSD$
 
+PORTREVISION=	4
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-json
-PORTREVISION=	3
 
 COMMENT=	Free Pascal JavaScript Object Notation implemenation (FCL)
 
