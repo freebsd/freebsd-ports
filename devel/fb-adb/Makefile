@@ -3,7 +3,7 @@
 PORTNAME=	fb-adb
 DISTVERSION=	1.4.4-126
 DISTVERSIONSUFFIX=	-g6fd78ae
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel comms
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -52,6 +52,8 @@ OPTIONS_DEFAULT=NDK
 OPTIONS_EXCLUDE=${ARCH:Namd64:Ni386:C/.+/NDK/}
 OPTIONS_EXCLUDE_DragonFly=NDK
 
+NDK_BROKEN_OFF=	incomplete dependencies
+
 ASSERT_CONFIGURE_ENABLE=checking
 BASH_DESC=		Install JSON parser used by bash-completion
 BASH_RUN_DEPENDS=	jq:textproc/jq
@@ -76,8 +78,7 @@ NDK_SHELL=		${LINUXBASE}/bin/sh
 NDK_CONFIGURE_ENV=	ANDROID_NDK="${WRKSRC_ndk}" \
 			ANDROID_NDK_SHELL="${NDK_SHELL}" \
 			NDK_TMPDIR="${WRKDIR}"
-NDK_BUILD_DEPENDS_OFF=	${LOCALBASE}/android/ARMv7/bin/arm-aux-linux-androideabi-gcc:lang/gnatdroid-armv7 \
-			${LOCALBASE}/android-x86/x86_32/bin/i686-aux-linux-android-gcc:lang/gnatdroid-x86
+NDK_BUILD_DEPENDS_OFF=	${LOCALBASE}/android/ARMv7/bin/arm-aux-linux-androideabi-gcc:lang/gnatdroid-armv7
 NDK_CONFIGURE_ENV_OFF=	PATH="${NDK_BUILD_DEPENDS_OFF:C/:.*//:H:ts:}:$$PATH"
 NDK_CONFIGURE_OFF=	--with-android-ndk=system
 
