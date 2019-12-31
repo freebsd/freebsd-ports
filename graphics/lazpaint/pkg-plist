@@ -9,6 +9,7 @@ bin/lazpaint
 %%DATADIR%%/i18n/lazpaint.lv.po
 %%DATADIR%%/i18n/lazpaint.nl.po
 %%DATADIR%%/i18n/lazpaint.po
+%%DATADIR%%/i18n/lazpaint.pot
 %%DATADIR%%/i18n/lazpaint.pt_BR.po
 %%DATADIR%%/i18n/lazpaint.ru.po
 %%DATADIR%%/i18n/lazpaint.sv.po
