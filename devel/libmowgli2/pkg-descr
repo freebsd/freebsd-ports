@@ -5,4 +5,4 @@ some of the slow GLib list manipulation functions), or stand alone. It
 also provides a powerful hook system and convenient logging for your code,
 as well as a high performance block allocator.
 
-WWW: http://atheme.org/projects/libmowgli.html
+WWW: https://github.com/atheme/libmowgli-2

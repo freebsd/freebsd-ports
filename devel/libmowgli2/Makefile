@@ -9,6 +9,9 @@ CATEGORIES=	devel
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Development framework for C
 
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	atheme
 GH_PROJECT=	libmowgli-2
