@@ -5,7 +5,7 @@ PORTVERSION=	0.94j
 PORTREVISION=	2
 CATEGORIES=	math
 
-MAINTAINER=	phascolarctos@protonmail.ch
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	C implementation of the Double Description Method of Motzkin et al
 
 LICENSE=	GPLv2+

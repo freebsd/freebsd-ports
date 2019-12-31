@@ -5,7 +5,7 @@ PORTNAME=	blitz++
 PORTVERSION=	1.0.2
 CATEGORIES=	math
 
-MAINTAINER=	phascolarctos@protonmail.ch
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	C++ class library for scientific computing
 
 LICENSE=	ART20 BSD3CLAUSE LGPL3+

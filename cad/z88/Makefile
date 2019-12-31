@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	15
 CATEGORIES=	cad
 
-MAINTAINER=	phascolarctos@protonmail.ch
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Compact Finite Element Analysis System
 
 LICENSE=	GPLv2+
