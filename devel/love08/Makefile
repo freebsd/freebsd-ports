@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 PORTSCOUT=	limit:^0\.8\.
 
-USES=		gl gmake openal dos2unix lua:51 sdl
+USES=		compiler:c++11-lang gl gmake openal dos2unix lua:51 sdl
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
