@@ -119,7 +119,6 @@
     SUBDIR += gnatdroid-binutils-x86
     SUBDIR += gnatdroid-sysroot
     SUBDIR += gnatdroid-sysroot-x86
-    SUBDIR += gnatdroid-x86
     SUBDIR += gnu-apl
     SUBDIR += gnu-cobol
     SUBDIR += gnustep-base

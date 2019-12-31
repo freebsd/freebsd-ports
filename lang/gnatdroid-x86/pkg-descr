@@ -1,6 +1,0 @@
-The gnatdroid-x86 port builds a C/Ada cross-compiler based on GCC 6
-that targets the Android operating system (up to version 6.0, API level
-23) running on x86 or x86_64 architecture.  This produces binaries that
-run natively on x86-based Android devices.
-
-WWW: http://www.dragonlace.net
