@@ -47,7 +47,7 @@
 @@ -97,9 +100,12 @@ TARGET_LINK_LIBRARIES(mysqlslap perconas
  
  MYSQL_ADD_EXECUTABLE(mysql_config_editor mysql_config_editor.cc)
- TARGET_LINK_LIBRARIES(mysql_config_editor perconaserverclient)
+ TARGET_LINK_LIBRARIES(mysql_config_editor ${FORCE_SSL_SOLARIS} perconaserverclient)
 +ENDIF()
  
 +IF(FALSE)
