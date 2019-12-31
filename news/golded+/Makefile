@@ -3,18 +3,20 @@
 
 PORTNAME=	golded+
 PORTVERSION=	1.1.5.a${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES=	news mail
-MASTER_SITES=	SF/golded-plus/Golded%2B%201.1.5%20snapshots/2016.03.22
+MASTER_SITES=	SF/golded-plus/Golded%2B%201.1.5%20snapshots/${_SNAPDATE}
 DISTNAME=	gpsrc-115-${SNAPDATE}
-EXTRACT_SUFX=	.tgz
-SNAPDATE=	20160322
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	GoldEd+ (FTN message editor)
 
-USES=		gmake ncurses
+LICENSE=	GPLv2 LGPL20
+LICENSE_COMB=	multi
 
+USES=		gmake ncurses tar:tgz
+
+_SNAPDATE=	2017.03.03
+SNAPDATE=	${_SNAPDATE:S/.//g}
 WRKSRC=		${WRKDIR}/golded-plus/${PORTNAME}
 
 DOCS=		copying copying.lib license.txt notework.txt rusfaq.txt\
