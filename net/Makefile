@@ -1122,7 +1122,6 @@
     SUBDIR += py-suds-jurko
     SUBDIR += py-terminado
     SUBDIR += py-tofu
-    SUBDIR += py-tweepy
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
     SUBDIR += py-txrestapi

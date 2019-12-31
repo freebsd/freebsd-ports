@@ -1,9 +1,0 @@
---- test_requirements.txt.orig	2015-11-20 05:42:25 UTC
-+++ test_requirements.txt
-@@ -1,4 +1,2 @@
--tox>=1.7.2
--vcrpy==1.1.2
--mock==1.0.1
--unittest2   # Comment this line out if using Python 3.
-+vcrpy>=1.1.2
-+mock>=1.0.1
