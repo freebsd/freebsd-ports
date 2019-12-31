@@ -4,13 +4,11 @@
 PORTNAME=	bas2tap
 PORTVERSION=	2.6
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.worldofspectrum.org/pub/sinclair/tools/generic/
+MASTER_SITES=	https://live.worldofspectrum.org/files/download/4e49dd79ef083d8/
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//}-generic
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Convert 48k/128k ZX Spectrum BASIC text files to TAP files
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
