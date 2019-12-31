@@ -5,8 +5,8 @@ sysctlbyname-improved.
 This library provides:
 
  * an API to wrap the internal sysctl nodes of sysctlinfo and
-   sysctlbyname-improved,
- * defines a handy userland MIB object representation
+   sysctlbyname-improved
+ * a handy userland MIB object representation
  * functions to build object-list and object-tree
 
 The advantages to use sysctlmibinfo2 are:
