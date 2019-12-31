@@ -15,6 +15,7 @@
 %%WWWDIR%%/mod/activity/languages/nl.php
 %%WWWDIR%%/mod/activity/languages/ro_ro.php
 %%WWWDIR%%/mod/activity/languages/ru.php
+%%WWWDIR%%/mod/activity/languages/sv.php
 %%WWWDIR%%/mod/activity/manifest.xml
 %%WWWDIR%%/mod/activity/start.php
 %%WWWDIR%%/mod/activity/tests/phpunit/unit/Elgg/Activity/TranslatorUnitTest.php
@@ -36,7 +37,6 @@
 %%WWWDIR%%/mod/blog/actions/blog/save.php
 %%WWWDIR%%/mod/blog/classes/Elgg/Blog/Seeder.php
 %%WWWDIR%%/mod/blog/classes/ElggBlog.php
-%%WWWDIR%%/mod/blog/composer.json
 %%WWWDIR%%/mod/blog/elgg-plugin.php
 %%WWWDIR%%/mod/blog/languages/ca.php
 %%WWWDIR%%/mod/blog/languages/cs.php
@@ -59,6 +59,7 @@
 %%WWWDIR%%/mod/blog/languages/ro_ro.php
 %%WWWDIR%%/mod/blog/languages/ru.php
 %%WWWDIR%%/mod/blog/languages/sr.php
+%%WWWDIR%%/mod/blog/languages/sv.php
 %%WWWDIR%%/mod/blog/languages/tr.php
 %%WWWDIR%%/mod/blog/manifest.xml
 %%WWWDIR%%/mod/blog/start.php
@@ -99,7 +100,6 @@
 %%WWWDIR%%/mod/bookmarks/actions/bookmarks/save.php
 %%WWWDIR%%/mod/bookmarks/classes/Elgg/Bookmarks/Seeder.php
 %%WWWDIR%%/mod/bookmarks/classes/ElggBookmark.php
-%%WWWDIR%%/mod/bookmarks/composer.json
 %%WWWDIR%%/mod/bookmarks/elgg-plugin.php
 %%WWWDIR%%/mod/bookmarks/languages/de.php
 %%WWWDIR%%/mod/bookmarks/languages/en.php
@@ -147,7 +147,6 @@
 %%WWWDIR%%/mod/bookmarks/views/rss/bookmarks/listing/owner.php
 %%WWWDIR%%/mod/bookmarks/views/rss/object/bookmarks.php
 %%WWWDIR%%/mod/ckeditor/README.md
-%%WWWDIR%%/mod/ckeditor/composer.json
 %%WWWDIR%%/mod/ckeditor/elgg-plugin.php
 %%WWWDIR%%/mod/ckeditor/languages/ca.php
 %%WWWDIR%%/mod/ckeditor/languages/cs.php
@@ -183,13 +182,11 @@
 %%WWWDIR%%/mod/ckeditor/views/default/elgg/ckeditor/config.js
 %%WWWDIR%%/mod/ckeditor/views/default/elgg/ckeditor/config/simple.js
 %%WWWDIR%%/mod/ckeditor/views/default/elgg/wysiwyg.css
-%%WWWDIR%%/mod/custom_index/composer.json
 %%WWWDIR%%/mod/custom_index/manifest.xml
 %%WWWDIR%%/mod/custom_index/tests/phpunit/unit/Elgg/CustomIndex/ManifestParsingTest.php
 %%WWWDIR%%/mod/custom_index/tests/phpunit/unit/Elgg/CustomIndex/ViewStackTest.php
 %%WWWDIR%%/mod/custom_index/views/default/custom_index/content.php
 %%WWWDIR%%/mod/custom_index/views/default/resources/index.php
-%%WWWDIR%%/mod/dashboard/composer.json
 %%WWWDIR%%/mod/dashboard/elgg-plugin.php
 %%WWWDIR%%/mod/dashboard/manifest.xml
 %%WWWDIR%%/mod/dashboard/start.php
@@ -204,7 +201,6 @@
 %%WWWDIR%%/mod/developers/classes/Elgg/DevelopersPlugin/ErrorLogHtmlFormatter.php
 %%WWWDIR%%/mod/developers/classes/Elgg/DevelopersPlugin/Hooks.php
 %%WWWDIR%%/mod/developers/classes/ThemeSandboxObject.php
-%%WWWDIR%%/mod/developers/composer.json
 %%WWWDIR%%/mod/developers/elgg-plugin.php
 %%WWWDIR%%/mod/developers/languages/cs.php
 %%WWWDIR%%/mod/developers/languages/de.php
@@ -320,7 +316,6 @@
 %%WWWDIR%%/mod/developers/views/default/theme_sandbox/typography/paragraph.php
 %%WWWDIR%%/mod/developers/views/failsafe/messages/exceptions/admin_exception.php
 %%WWWDIR%%/mod/diagnostics/actions/diagnostics/download.php
-%%WWWDIR%%/mod/diagnostics/composer.json
 %%WWWDIR%%/mod/diagnostics/elgg-plugin.php
 %%WWWDIR%%/mod/diagnostics/languages/de.php
 %%WWWDIR%%/mod/diagnostics/languages/en.php
@@ -340,7 +335,6 @@
 %%WWWDIR%%/mod/discussions/classes/Elgg/Discussions/Upgrades/MigrateDiscussionReply.php
 %%WWWDIR%%/mod/discussions/classes/Elgg/Discussions/Upgrades/MigrateDiscussionReplyRiver.php
 %%WWWDIR%%/mod/discussions/classes/ElggDiscussion.php
-%%WWWDIR%%/mod/discussions/composer.json
 %%WWWDIR%%/mod/discussions/elgg-plugin.php
 %%WWWDIR%%/mod/discussions/languages/de.php
 %%WWWDIR%%/mod/discussions/languages/en.php
@@ -352,6 +346,7 @@
 %%WWWDIR%%/mod/discussions/languages/ru.php
 %%WWWDIR%%/mod/discussions/manifest.xml
 %%WWWDIR%%/mod/discussions/start.php
+%%WWWDIR%%/mod/discussions/tests/integration/Elgg/Discussions/RouteResponseTest.php
 %%WWWDIR%%/mod/discussions/tests/phpunit/unit/Elgg/Discussions/ManifestParsingTest.php
 %%WWWDIR%%/mod/discussions/tests/phpunit/unit/Elgg/Discussions/StaticConfigTest.php
 %%WWWDIR%%/mod/discussions/tests/phpunit/unit/Elgg/Discussions/TranslatorUnitTest.php
@@ -376,7 +371,6 @@
 %%WWWDIR%%/mod/discussions/views/rss/discussion/listing/group.php
 %%WWWDIR%%/mod/discussions/views/rss/discussion/listing/owner.php
 %%WWWDIR%%/mod/embed/README.md
-%%WWWDIR%%/mod/embed/composer.json
 %%WWWDIR%%/mod/embed/elgg-plugin.php
 %%WWWDIR%%/mod/embed/languages/ca.php
 %%WWWDIR%%/mod/embed/languages/cmn.php
@@ -412,7 +406,6 @@
 %%WWWDIR%%/mod/embed/views/default/navigation/menu/embed.php
 %%WWWDIR%%/mod/embed/views/default/resources/embed/embed.php
 %%WWWDIR%%/mod/externalpages/actions/expages/edit.php
-%%WWWDIR%%/mod/externalpages/composer.json
 %%WWWDIR%%/mod/externalpages/elgg-plugin.php
 %%WWWDIR%%/mod/externalpages/languages/ca.php
 %%WWWDIR%%/mod/externalpages/languages/cmn.php
@@ -446,7 +439,6 @@
 %%WWWDIR%%/mod/externalpages/views/default/resources/expages.php
 %%WWWDIR%%/mod/file/actions/file/upload.php
 %%WWWDIR%%/mod/file/classes/Elgg/File/Seeder.php
-%%WWWDIR%%/mod/file/composer.json
 %%WWWDIR%%/mod/file/elgg-plugin.php
 %%WWWDIR%%/mod/file/languages/cs.php
 %%WWWDIR%%/mod/file/languages/da.php
@@ -526,6 +518,14 @@
 %%WWWDIR%%/mod/file/views/rss/file/listing/owner.php
 %%WWWDIR%%/mod/friends/actions/friends/add.php
 %%WWWDIR%%/mod/friends/actions/friends/remove.php
+%%WWWDIR%%/mod/friends/classes/Elgg/Friends/Actions/AcceptFriendRequestController.php
+%%WWWDIR%%/mod/friends/classes/Elgg/Friends/Actions/AddFriendController.php
+%%WWWDIR%%/mod/friends/classes/Elgg/Friends/Actions/DeclineFriendRequestController.php
+%%WWWDIR%%/mod/friends/classes/Elgg/Friends/Actions/RevokeFriendRequestController.php
+%%WWWDIR%%/mod/friends/classes/Elgg/Friends/FilterMenu.php
+%%WWWDIR%%/mod/friends/classes/Elgg/Friends/Notifications.php
+%%WWWDIR%%/mod/friends/classes/Elgg/Friends/RelationshipMenu.php
+%%WWWDIR%%/mod/friends/classes/Elgg/Friends/Relationships.php
 %%WWWDIR%%/mod/friends/elgg-plugin.php
 %%WWWDIR%%/mod/friends/languages/de.php
 %%WWWDIR%%/mod/friends/languages/en.php
@@ -538,12 +538,17 @@
 %%WWWDIR%%/mod/friends/languages/ru.php
 %%WWWDIR%%/mod/friends/manifest.xml
 %%WWWDIR%%/mod/friends/start.php
+%%WWWDIR%%/mod/friends/tests/phpunit/integration/Elgg/Friends/WriteAccessTest.php
 %%WWWDIR%%/mod/friends/tests/phpunit/unit/Elgg/Friends/ManifestParsingTest.php
 %%WWWDIR%%/mod/friends/tests/phpunit/unit/Elgg/Friends/StaticConfigTest.php
 %%WWWDIR%%/mod/friends/tests/phpunit/unit/Elgg/Friends/TranslatorUnitTest.php
 %%WWWDIR%%/mod/friends/tests/phpunit/unit/Elgg/Friends/ViewStackTest.php
+%%WWWDIR%%/mod/friends/views/default/plugins/friends/settings.php
+%%WWWDIR%%/mod/friends/views/default/relationship/friendrequest.php
 %%WWWDIR%%/mod/friends/views/default/resources/friends/index.php
 %%WWWDIR%%/mod/friends/views/default/resources/friends/of.php
+%%WWWDIR%%/mod/friends/views/default/resources/friends/pending.php
+%%WWWDIR%%/mod/friends/views/default/resources/friends/sent.php
 %%WWWDIR%%/mod/friends/views/default/widgets/friends/content.php
 %%WWWDIR%%/mod/friends/views/default/widgets/friends/edit.php
 %%WWWDIR%%/mod/friends_collections/actions/friends/collections/delete.php
@@ -554,7 +559,7 @@
 %%WWWDIR%%/mod/friends_collections/classes/Elgg/Friends/Collections/EntityMenuHandler.php
 %%WWWDIR%%/mod/friends_collections/classes/Elgg/Friends/Collections/PageMenuHandler.php
 %%WWWDIR%%/mod/friends_collections/classes/Elgg/Friends/Collections/UrlHandler.php
-%%WWWDIR%%/mod/friends_collections/composer.json
+%%WWWDIR%%/mod/friends_collections/classes/Elgg/Friends/Collections/WriteAccess.php
 %%WWWDIR%%/mod/friends_collections/elgg-plugin.php
 %%WWWDIR%%/mod/friends_collections/languages/de.php
 %%WWWDIR%%/mod/friends_collections/languages/en.php
@@ -563,6 +568,7 @@
 %%WWWDIR%%/mod/friends_collections/languages/nl.php
 %%WWWDIR%%/mod/friends_collections/manifest.xml
 %%WWWDIR%%/mod/friends_collections/start.php
+%%WWWDIR%%/mod/friends_collections/tests/phpunit/integration/Elgg/FriendsCollections/WriteAccessTest.php
 %%WWWDIR%%/mod/friends_collections/tests/phpunit/unit/Elgg/FriendsCollections/ManifestParsingTest.php
 %%WWWDIR%%/mod/friends_collections/tests/phpunit/unit/Elgg/FriendsCollections/StaticConfigTest.php
 %%WWWDIR%%/mod/friends_collections/tests/phpunit/unit/Elgg/FriendsCollections/TranslatorUnitTest.php
@@ -581,7 +587,6 @@
 %%WWWDIR%%/mod/garbagecollector/classes/Elgg/GarbageCollector/GarbageCollector.php
 %%WWWDIR%%/mod/garbagecollector/classes/Elgg/GarbageCollector/OptimizeCommand.php
 %%WWWDIR%%/mod/garbagecollector/classes/Elgg/GarbageCollector/RegisterCliCommands.php
-%%WWWDIR%%/mod/garbagecollector/composer.json
 %%WWWDIR%%/mod/garbagecollector/elgg-plugin.php
 %%WWWDIR%%/mod/garbagecollector/elgg-services.php
 %%WWWDIR%%/mod/garbagecollector/languages/de.php
@@ -605,8 +610,9 @@
 %%WWWDIR%%/mod/groups/actions/groups/membership/join.php
 %%WWWDIR%%/mod/groups/actions/groups/membership/leave.php
 %%WWWDIR%%/mod/groups/actions/groups/membership/remove.php
+%%WWWDIR%%/mod/groups/classes/Elgg/Groups/Access.php
+%%WWWDIR%%/mod/groups/classes/Elgg/Groups/Middleware/LimitedGroupCreation.php
 %%WWWDIR%%/mod/groups/classes/Elgg/Groups/Upgrades/GroupIconTransfer.php
-%%WWWDIR%%/mod/groups/composer.json
 %%WWWDIR%%/mod/groups/elgg-plugin.php
 %%WWWDIR%%/mod/groups/languages/cs.php
 %%WWWDIR%%/mod/groups/languages/da.php
@@ -645,6 +651,7 @@
 %%WWWDIR%%/mod/groups/views/default/groups/edit/tools.php
 %%WWWDIR%%/mod/groups/views/default/groups/groups.css
 %%WWWDIR%%/mod/groups/views/default/groups/invitationrequests.php
+%%WWWDIR%%/mod/groups/views/default/groups/invite/user_html.php
 %%WWWDIR%%/mod/groups/views/default/groups/listing/alpha.php
 %%WWWDIR%%/mod/groups/views/default/groups/listing/featured.php
 %%WWWDIR%%/mod/groups/views/default/groups/listing/newest.php
@@ -671,11 +678,14 @@
 %%WWWDIR%%/mod/groups/views/default/icon/group/default/tiny.gif
 %%WWWDIR%%/mod/groups/views/default/icon/group/default/topbar.gif
 %%WWWDIR%%/mod/groups/views/default/plugins/groups/settings.php
+%%WWWDIR%%/mod/groups/views/default/relationship/invited.php
+%%WWWDIR%%/mod/groups/views/default/relationship/membership_request.php
 %%WWWDIR%%/mod/groups/views/default/resources/groups/add.php
 %%WWWDIR%%/mod/groups/views/default/resources/groups/all.php
 %%WWWDIR%%/mod/groups/views/default/resources/groups/edit.php
 %%WWWDIR%%/mod/groups/views/default/resources/groups/invitations.php
 %%WWWDIR%%/mod/groups/views/default/resources/groups/invite.php
+%%WWWDIR%%/mod/groups/views/default/resources/groups/invites.php
 %%WWWDIR%%/mod/groups/views/default/resources/groups/member.php
 %%WWWDIR%%/mod/groups/views/default/resources/groups/members.php
 %%WWWDIR%%/mod/groups/views/default/resources/groups/owner.php
@@ -686,6 +696,7 @@
 %%WWWDIR%%/mod/groups/views/default/widgets/a_users_groups/content.php
 %%WWWDIR%%/mod/groups/views/default/widgets/a_users_groups/edit.php
 %%WWWDIR%%/mod/groups/views/json/groups/profile/layout.php
+%%WWWDIR%%/mod/groups/views/json/livesearch/user/group_invite.php
 %%WWWDIR%%/mod/groups/views/json/resources/livesearch/group_members.php
 %%WWWDIR%%/mod/groups/views/rss/groups/listing/alpha.php
 %%WWWDIR%%/mod/groups/views/rss/groups/listing/featured.php
@@ -693,7 +704,6 @@
 %%WWWDIR%%/mod/groups/views/rss/groups/listing/popular.php
 %%WWWDIR%%/mod/groups/views/rss/groups/profile/layout.php
 %%WWWDIR%%/mod/invitefriends/actions/friends/invite.php
-%%WWWDIR%%/mod/invitefriends/composer.json
 %%WWWDIR%%/mod/invitefriends/elgg-plugin.php
 %%WWWDIR%%/mod/invitefriends/languages/cs.php
 %%WWWDIR%%/mod/invitefriends/languages/de.php
@@ -722,7 +732,6 @@
 %%WWWDIR%%/mod/likes/classes/Elgg/Likes/JsConfigHandler.php
 %%WWWDIR%%/mod/likes/classes/Elgg/Likes/Preloader.php
 %%WWWDIR%%/mod/likes/classes/Elgg/Likes/Upgrades/PublicLikesAnnotations.php
-%%WWWDIR%%/mod/likes/composer.json
 %%WWWDIR%%/mod/likes/elgg-plugin.php
 %%WWWDIR%%/mod/likes/languages/ca.php
 %%WWWDIR%%/mod/likes/languages/cmn.php
@@ -769,7 +778,6 @@
 %%WWWDIR%%/mod/login_as/manifest.xml
 %%WWWDIR%%/mod/login_as/start.php
 %%WWWDIR%%/mod/login_as/views/default/login_as/topbar_return.php
-%%WWWDIR%%/mod/members/composer.json
 %%WWWDIR%%/mod/members/elgg-plugin.php
 %%WWWDIR%%/mod/members/languages/cs.php
 %%WWWDIR%%/mod/members/languages/da.php
@@ -801,7 +809,6 @@
 %%WWWDIR%%/mod/members/views/default/resources/members/search.php
 %%WWWDIR%%/mod/messageboard/actions/messageboard/add.php
 %%WWWDIR%%/mod/messageboard/actions/messageboard/delete.php
-%%WWWDIR%%/mod/messageboard/composer.json
 %%WWWDIR%%/mod/messageboard/elgg-plugin.php
 %%WWWDIR%%/mod/messageboard/languages/ca.php
 %%WWWDIR%%/mod/messageboard/languages/cmn.php
@@ -835,7 +842,6 @@
 %%WWWDIR%%/mod/messages/actions/messages/process.php
 %%WWWDIR%%/mod/messages/actions/messages/send.php
 %%WWWDIR%%/mod/messages/classes/ElggMessage.php
-%%WWWDIR%%/mod/messages/composer.json
 %%WWWDIR%%/mod/messages/elgg-plugin.php
 %%WWWDIR%%/mod/messages/languages/cs.php
 %%WWWDIR%%/mod/messages/languages/da.php
@@ -873,7 +879,6 @@
 %%WWWDIR%%/mod/messages/views/default/resources/messages/sent.php
 %%WWWDIR%%/mod/notifications/actions/notifications/settings.php
 %%WWWDIR%%/mod/notifications/actions/notifications/subscriptions.php
-%%WWWDIR%%/mod/notifications/composer.json
 %%WWWDIR%%/mod/notifications/elgg-plugin.php
 %%WWWDIR%%/mod/notifications/languages/ca.php
 %%WWWDIR%%/mod/notifications/languages/cmn.php
@@ -918,7 +923,6 @@
 %%WWWDIR%%/mod/pages/classes/Elgg/Pages/Seeder.php
 %%WWWDIR%%/mod/pages/classes/Elgg/Pages/Upgrades/MigratePageTop.php
 %%WWWDIR%%/mod/pages/classes/ElggPage.php
-%%WWWDIR%%/mod/pages/composer.json
 %%WWWDIR%%/mod/pages/elgg-plugin.php
 %%WWWDIR%%/mod/pages/languages/cs.php
 %%WWWDIR%%/mod/pages/languages/da.php
@@ -983,7 +987,6 @@
 %%WWWDIR%%/mod/profile/actions/profile/fields/reorder.php
 %%WWWDIR%%/mod/profile/actions/profile/fields/reset.php
 %%WWWDIR%%/mod/profile/classes/ElggPlugin/Profile/AnnotationMigration.php
-%%WWWDIR%%/mod/profile/composer.json
 %%WWWDIR%%/mod/profile/elgg-plugin.php
 %%WWWDIR%%/mod/profile/languages/de.php
 %%WWWDIR%%/mod/profile/languages/en.php
@@ -1014,7 +1017,6 @@
 %%WWWDIR%%/mod/reportedcontent/actions/reportedcontent/archive.php
 %%WWWDIR%%/mod/reportedcontent/actions/reportedcontent/delete.php
 %%WWWDIR%%/mod/reportedcontent/classes/ElggReportedContent.php
-%%WWWDIR%%/mod/reportedcontent/composer.json
 %%WWWDIR%%/mod/reportedcontent/elgg-plugin.php
 %%WWWDIR%%/mod/reportedcontent/graphics/icon_reportthis.gif
 %%WWWDIR%%/mod/reportedcontent/languages/ca.php
@@ -1051,7 +1053,6 @@
 %%WWWDIR%%/mod/search/classes/Elgg/Search/Formatter.php
 %%WWWDIR%%/mod/search/classes/Elgg/Search/Highlighter.php
 %%WWWDIR%%/mod/search/classes/Elgg/Search/Search.php
-%%WWWDIR%%/mod/search/composer.json
 %%WWWDIR%%/mod/search/elgg-plugin.php
 %%WWWDIR%%/mod/search/languages/cs.php
 %%WWWDIR%%/mod/search/languages/da.php
@@ -1092,7 +1093,6 @@
 %%WWWDIR%%/mod/site_notifications/actions/site_notifications/process.php
 %%WWWDIR%%/mod/site_notifications/classes/SiteNotification.php
 %%WWWDIR%%/mod/site_notifications/classes/SiteNotificationFactory.php
-%%WWWDIR%%/mod/site_notifications/composer.json
 %%WWWDIR%%/mod/site_notifications/elgg-plugin.php
 %%WWWDIR%%/mod/site_notifications/languages/cs.php
 %%WWWDIR%%/mod/site_notifications/languages/de.php
@@ -1123,7 +1123,6 @@
 %%WWWDIR%%/mod/system_log/classes/Elgg/SystemLog/SystemLog.php
 %%WWWDIR%%/mod/system_log/classes/Elgg/SystemLog/SystemLogEntry.php
 %%WWWDIR%%/mod/system_log/classes/Elgg/SystemLog/SystemLogQuery.php
-%%WWWDIR%%/mod/system_log/composer.json
 %%WWWDIR%%/mod/system_log/elgg-plugin.php
 %%WWWDIR%%/mod/system_log/elgg-services.php
 %%WWWDIR%%/mod/system_log/languages/de.php
@@ -1145,7 +1144,6 @@
 %%WWWDIR%%/mod/system_log/views/default/logbrowser/refine.php
 %%WWWDIR%%/mod/system_log/views/default/logbrowser/table.php
 %%WWWDIR%%/mod/system_log/views/default/plugins/system_log/settings.php
-%%WWWDIR%%/mod/tagcloud/composer.json
 %%WWWDIR%%/mod/tagcloud/elgg-plugin.php
 %%WWWDIR%%/mod/tagcloud/languages/de.php
 %%WWWDIR%%/mod/tagcloud/languages/en.php
@@ -1168,7 +1166,6 @@
 %%WWWDIR%%/mod/thewire/actions/thewire/add.php
 %%WWWDIR%%/mod/thewire/actions/thewire/delete.php
 %%WWWDIR%%/mod/thewire/classes/ElggWire.php
-%%WWWDIR%%/mod/thewire/composer.json
 %%WWWDIR%%/mod/thewire/elgg-plugin.php
 %%WWWDIR%%/mod/thewire/languages/cs.php
 %%WWWDIR%%/mod/thewire/languages/da.php
@@ -1216,7 +1213,8 @@
 %%WWWDIR%%/mod/thewire/views/rss/object/thewire.php
 %%WWWDIR%%/mod/thewire/views/rss/search/object/thewire/entity.php
 %%WWWDIR%%/mod/uservalidationbyemail/actions/uservalidationbyemail/resend_validation.php
-%%WWWDIR%%/mod/uservalidationbyemail/composer.json
+%%WWWDIR%%/mod/uservalidationbyemail/classes/Elgg/UserValidationByEmail/ConfirmController.php
+%%WWWDIR%%/mod/uservalidationbyemail/classes/Elgg/UserValidationByEmail/Upgrades/TrackValidationStatus.php
 %%WWWDIR%%/mod/uservalidationbyemail/elgg-plugin.php
 %%WWWDIR%%/mod/uservalidationbyemail/languages/cs.php
 %%WWWDIR%%/mod/uservalidationbyemail/languages/da.php
@@ -1235,21 +1233,26 @@
 %%WWWDIR%%/mod/uservalidationbyemail/lib/functions.php
 %%WWWDIR%%/mod/uservalidationbyemail/manifest.xml
 %%WWWDIR%%/mod/uservalidationbyemail/start.php
+%%WWWDIR%%/mod/uservalidationbyemail/tests/phpunit/integration/Elgg/UserValidationByEmail/RegistrationIntegrationTest.php
 %%WWWDIR%%/mod/uservalidationbyemail/tests/phpunit/unit/Elgg/UserValidationByEmail/ManifestParsingTest.php
 %%WWWDIR%%/mod/uservalidationbyemail/tests/phpunit/unit/Elgg/UserValidationByEmail/StaticConfigTest.php
 %%WWWDIR%%/mod/uservalidationbyemail/tests/phpunit/unit/Elgg/UserValidationByEmail/TranslatorUnitTest.php
 %%WWWDIR%%/mod/uservalidationbyemail/tests/phpunit/unit/Elgg/UserValidationByEmail/ViewStackTest.php
 %%WWWDIR%%/mod/uservalidationbyemail/views/default/elgg/uservalidationbyemail.js
-%%WWWDIR%%/mod/uservalidationbyemail/views/default/resources/uservalidationbyemail/confirm.php
 %%WWWDIR%%/mod/uservalidationbyemail/views/default/resources/uservalidationbyemail/emailsent.php
 %%WWWDIR%%/mod/web_services/README.md
+%%WWWDIR%%/mod/web_services/actions/webservices/api_key/edit.php
+%%WWWDIR%%/mod/web_services/actions/webservices/api_key/regenerate.php
 %%WWWDIR%%/mod/web_services/classes/APIException.php
+%%WWWDIR%%/mod/web_services/classes/Elgg/WebServices/AdminPageMenu.php
+%%WWWDIR%%/mod/web_services/classes/Elgg/WebServices/ApiKeyForm.php
+%%WWWDIR%%/mod/web_services/classes/Elgg/WebServices/EntityMenu.php
+%%WWWDIR%%/mod/web_services/classes/ElggApiKey.php
 %%WWWDIR%%/mod/web_services/classes/ElggHMACCache.php
 %%WWWDIR%%/mod/web_services/classes/ErrorResult.php
 %%WWWDIR%%/mod/web_services/classes/GenericResult.php
 %%WWWDIR%%/mod/web_services/classes/NotImplementedException.php
 %%WWWDIR%%/mod/web_services/classes/SuccessResult.php
-%%WWWDIR%%/mod/web_services/composer.json
 %%WWWDIR%%/mod/web_services/elgg-plugin.php
 %%WWWDIR%%/mod/web_services/languages/cs.php
 %%WWWDIR%%/mod/web_services/languages/de.php
@@ -1268,10 +1271,19 @@
 %%WWWDIR%%/mod/web_services/manifest.xml
 %%WWWDIR%%/mod/web_services/start.php
 %%WWWDIR%%/mod/web_services/tests/phpunit/integration/Elgg/WebServices/ApiTest.php
+%%WWWDIR%%/mod/web_services/tests/phpunit/integration/Elgg/WebServices/ElggApiKeyIntegrationTest.php
 %%WWWDIR%%/mod/web_services/tests/phpunit/unit/Elgg/WebServices/ManifestParsingTest.php
 %%WWWDIR%%/mod/web_services/tests/phpunit/unit/Elgg/WebServices/TranslatorUnitTest.php
 %%WWWDIR%%/mod/web_services/tests/phpunit/unit/Elgg/WebServices/ViewStackTest.php
+%%WWWDIR%%/mod/web_services/views/default/admin/configure_utilities/ws_list.php
+%%WWWDIR%%/mod/web_services/views/default/admin/configure_utilities/ws_tokens.php
 %%WWWDIR%%/mod/web_services/views/default/api/output.php
+%%WWWDIR%%/mod/web_services/views/default/forms/webservices/api_key/edit.php
+%%WWWDIR%%/mod/web_services/views/default/object/api_key.php
+%%WWWDIR%%/mod/web_services/views/default/resources/webservices/api_key/add.php
+%%WWWDIR%%/mod/web_services/views/default/resources/webservices/api_key/edit.php
+%%WWWDIR%%/mod/web_services/views/default/webservices/admin.css
+%%WWWDIR%%/mod/web_services/views/default/webservices/service.php
 %%WWWDIR%%/mod/web_services/views/json/api/output.php
 %%WWWDIR%%/phpunit.xml
 %%WWWDIR%%/upgrade.php
@@ -1357,6 +1369,10 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/less/regular.less
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/less/solid.less
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/less/v4-shims.less
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/metadata/categories.yml
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/metadata/icons.yml
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/metadata/shims.yml
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/metadata/sponsors.yml
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/package.json
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/scss/_animated.scss
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/scss/_bordered-pulled.scss
@@ -1428,6 +1444,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/btc.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/buffer.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/buromobelexperte.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/buy-n-large.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/buysellads.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/canadian-maple-leaf.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/cc-amazon-pay.svg
@@ -1515,6 +1532,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/fedex.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/fedora.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/figma.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/firefox-browser.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/firefox.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/first-order-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/first-order.svg
@@ -1577,6 +1595,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/houzz.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/html5.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/hubspot.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/ideal.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/imdb.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/instagram.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/intercom.svg
@@ -1618,6 +1637,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/markdown.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/mastodon.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/maxcdn.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/mdb.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/medapps.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/medium-m.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/medium.svg
@@ -1625,6 +1645,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/meetup.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/megaport.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/mendeley.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/microblog.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/microsoft.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/mix.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/mixcloud.svg
@@ -1647,6 +1668,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/openid.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/opera.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/optin-monster.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/orcid.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/osi.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/page4.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/pagelines.svg
@@ -1662,6 +1684,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/pied-piper-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/pied-piper-hat.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/pied-piper-pp.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/pied-piper-square.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/pied-piper.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/pinterest-p.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/pinterest-square.svg
@@ -1738,6 +1761,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/superpowers.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/supple.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/suse.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/swift.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/symfony.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/teamspeak.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/telegram-plane.svg
@@ -1759,7 +1783,9 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/uber.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/ubuntu.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/uikit.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/umbraco.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/uniregistry.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/unity.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/untappd.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/ups.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/brands/usb.svg
@@ -2014,6 +2040,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/backspace.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/backward.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/bacon.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/bahai.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/balance-scale-left.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/balance-scale-right.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/balance-scale.svg
@@ -2098,6 +2125,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/car-crash.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/car-side.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/car.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/caravan.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/caret-down.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/caret-left.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/caret-right.svg
@@ -2181,6 +2209,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/comments.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/compact-disc.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/compass.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/compress-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/compress-arrows-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/compress.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/concierge-bell.svg
@@ -2257,6 +2286,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/exclamation-circle.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/exclamation-triangle.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/exclamation.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/expand-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/expand-arrows-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/expand.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/external-link-alt.svg
@@ -2391,6 +2421,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/hanukiah.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/hard-hat.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/hashtag.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/hat-cowboy-side.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/hat-cowboy.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/hat-wizard.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/haykal.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/hdd.svg
@@ -2536,6 +2568,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/motorcycle.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/mountain.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/mouse-pointer.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/mouse.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/mug-hot.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/music.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/network-wired.svg
@@ -2628,6 +2661,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/rainbow.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/random.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/receipt.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/record-vinyl.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/recycle.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/redo-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/redo.svg
@@ -2822,6 +2856,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/tractor.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/trademark.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/traffic-light.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/trailer.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/train.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/tram.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/fontawesome-free/svgs/solid/transgender-alt.svg
@@ -3040,6 +3075,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faBuffer.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faBuromobelexperte.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faBuromobelexperte.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faBuyNLarge.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faBuyNLarge.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faBuysellads.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faBuysellads.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faCanadianMapleLeaf.d.ts
@@ -3216,6 +3253,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faFigma.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faFirefox.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faFirefox.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faFirefoxBrowser.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faFirefoxBrowser.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faFirstOrder.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faFirstOrder.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faFirstOrderAlt.d.ts
@@ -3338,6 +3377,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faHtml5.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faHubspot.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faHubspot.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faIdeal.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faIdeal.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faImdb.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faImdb.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faInstagram.d.ts
@@ -3420,6 +3461,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMastodon.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMaxcdn.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMaxcdn.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMdb.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMdb.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMedapps.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMedapps.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMedium.d.ts
@@ -3434,6 +3477,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMegaport.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMendeley.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMendeley.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMicroblog.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMicroblog.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMicrosoft.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMicrosoft.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faMix.d.ts
@@ -3478,6 +3523,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faOpera.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faOptinMonster.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faOptinMonster.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faOrcid.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faOrcid.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faOsi.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faOsi.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faPage4.d.ts
@@ -3510,6 +3557,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faPiedPiperHat.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faPiedPiperPp.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faPiedPiperPp.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faPiedPiperSquare.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faPiedPiperSquare.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faPinterest.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faPinterest.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faPinterestP.d.ts
@@ -3660,6 +3709,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faSupple.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faSuse.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faSuse.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faSwift.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faSwift.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faSymfony.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faSymfony.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faTeamspeak.d.ts
@@ -3702,8 +3753,12 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faUbuntu.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faUikit.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faUikit.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faUmbraco.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faUmbraco.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faUniregistry.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faUniregistry.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faUnity.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faUnity.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faUntappd.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faUntappd.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-brands-svg-icons/faUps.d.ts
@@ -4224,6 +4279,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faBackward.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faBacon.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faBacon.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faBahai.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faBahai.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faBalanceScale.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faBalanceScale.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faBalanceScaleLeft.d.ts
@@ -4392,6 +4449,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCarCrash.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCarSide.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCarSide.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCaravan.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCaravan.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCaretDown.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCaretDown.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCaretLeft.d.ts
@@ -4560,6 +4619,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCompass.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCompress.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCompress.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCompressAlt.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCompressAlt.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCompressArrowsAlt.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faCompressArrowsAlt.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faConciergeBell.d.ts
@@ -4712,6 +4773,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faExclamationTriangle.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faExpand.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faExpand.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faExpandAlt.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faExpandAlt.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faExpandArrowsAlt.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faExpandArrowsAlt.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faExternalLinkAlt.d.ts
@@ -4978,6 +5041,10 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faHardHat.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faHashtag.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faHashtag.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faHatCowboy.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faHatCowboy.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faHatCowboySide.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faHatCowboySide.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faHatWizard.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faHatWizard.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faHaykal.d.ts
@@ -5266,6 +5333,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faMotorcycle.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faMountain.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faMountain.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faMouse.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faMouse.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faMousePointer.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faMousePointer.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faMugHot.d.ts
@@ -5452,6 +5521,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faRandom.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faReceipt.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faReceipt.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faRecordVinyl.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faRecordVinyl.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faRecycle.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faRecycle.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faRedo.d.ts
@@ -5840,6 +5911,8 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faTrademark.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faTrafficLight.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faTrafficLight.js
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faTrailer.d.ts
+%%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faTrailer.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faTrain.d.ts
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faTrain.js
 %%WWWDIR%%/vendor/bower-asset/fontawesome/js-packages/@fortawesome/free-solid-svg-icons/faTram.d.ts
@@ -6148,6 +6221,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/btc.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/buffer.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/buromobelexperte.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/buy-n-large.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/buysellads.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/canadian-maple-leaf.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/cc-amazon-pay.svg
@@ -6235,6 +6309,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/fedex.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/fedora.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/figma.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/firefox-browser.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/firefox.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/first-order-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/first-order.svg
@@ -6297,6 +6372,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/houzz.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/html5.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/hubspot.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/ideal.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/imdb.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/instagram.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/intercom.svg
@@ -6338,6 +6414,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/markdown.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/mastodon.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/maxcdn.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/mdb.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/medapps.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/medium-m.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/medium.svg
@@ -6345,6 +6422,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/meetup.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/megaport.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/mendeley.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/microblog.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/microsoft.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/mix.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/mixcloud.svg
@@ -6354,7 +6432,6 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/napster.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/neos.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/nimblr.svg
-%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/nintendo-switch.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/node-js.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/node.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/npm.svg
@@ -6367,6 +6444,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/openid.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/opera.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/optin-monster.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/orcid.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/osi.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/page4.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/pagelines.svg
@@ -6382,6 +6460,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/pied-piper-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/pied-piper-hat.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/pied-piper-pp.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/pied-piper-square.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/pied-piper.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/pinterest-p.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/pinterest-square.svg
@@ -6458,6 +6537,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/superpowers.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/supple.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/suse.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/swift.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/symfony.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/teamspeak.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/telegram-plane.svg
@@ -6479,7 +6559,9 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/uber.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/ubuntu.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/uikit.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/umbraco.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/uniregistry.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/unity.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/untappd.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/ups.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/brands/usb.svg
@@ -6734,6 +6816,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/backspace.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/backward.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/bacon.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/bahai.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/balance-scale-left.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/balance-scale-right.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/balance-scale.svg
@@ -6818,6 +6901,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/car-crash.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/car-side.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/car.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/caravan.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/caret-down.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/caret-left.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/caret-right.svg
@@ -6901,6 +6985,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/comments.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/compact-disc.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/compass.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/compress-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/compress-arrows-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/compress.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/concierge-bell.svg
@@ -6977,6 +7062,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/exclamation-circle.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/exclamation-triangle.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/exclamation.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/expand-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/expand-arrows-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/expand.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/external-link-alt.svg
@@ -7111,8 +7197,9 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/hanukiah.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/hard-hat.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/hashtag.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/hat-cowboy-side.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/hat-cowboy.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/hat-wizard.svg
-%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/haykal.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/hdd.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/heading.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/headphones-alt.svg
@@ -7256,6 +7343,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/motorcycle.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/mountain.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/mouse-pointer.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/mouse.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/mug-hot.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/music.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/network-wired.svg
@@ -7348,6 +7436,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/rainbow.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/random.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/receipt.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/record-vinyl.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/recycle.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/redo-alt.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/redo.svg
@@ -7542,6 +7631,7 @@
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/tractor.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/trademark.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/traffic-light.svg
+%%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/trailer.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/train.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/tram.svg
 %%WWWDIR%%/vendor/bower-asset/fontawesome/svgs/solid/transgender-alt.svg
@@ -11872,7 +11962,6 @@
 %%WWWDIR%%/vendor/doctrine/cache/README.md
 %%WWWDIR%%/vendor/doctrine/cache/UPGRADE.md
 %%WWWDIR%%/vendor/doctrine/cache/composer.json
-%%WWWDIR%%/vendor/doctrine/cache/docs/en/index.rst
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ApcCache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ApcuCache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ArrayCache.php
@@ -11886,6 +11975,7 @@
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/FlushableCache.php
+%%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/InvalidCacheId.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/LegacyMongoDBCache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/MemcacheCache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/MemcachedCache.php
@@ -11897,7 +11987,6 @@
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/PhpFileCache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/PredisCache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/RedisCache.php
-%%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/RiakCache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/SQLite3Cache.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/Version.php
 %%WWWDIR%%/vendor/doctrine/cache/lib/Doctrine/Common/Cache/VoidCache.php
@@ -12162,13 +12251,10 @@
 %%WWWDIR%%/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/VarDateTimeType.php
 %%WWWDIR%%/vendor/doctrine/dbal/lib/Doctrine/DBAL/Version.php
 %%WWWDIR%%/vendor/doctrine/dbal/lib/Doctrine/DBAL/VersionAwarePlatformDriver.php
-%%WWWDIR%%/vendor/doctrine/event-manager/.scrutinizer.yml
+%%WWWDIR%%/vendor/doctrine/event-manager/.doctrine-project.json
 %%WWWDIR%%/vendor/doctrine/event-manager/LICENSE
 %%WWWDIR%%/vendor/doctrine/event-manager/README.md
 %%WWWDIR%%/vendor/doctrine/event-manager/composer.json
-%%WWWDIR%%/vendor/doctrine/event-manager/docs/en/index.rst
-%%WWWDIR%%/vendor/doctrine/event-manager/docs/en/reference/index.rst
-%%WWWDIR%%/vendor/doctrine/event-manager/docs/en/sidebar.rst
 %%WWWDIR%%/vendor/doctrine/event-manager/lib/Doctrine/Common/EventArgs.php
 %%WWWDIR%%/vendor/doctrine/event-manager/lib/Doctrine/Common/EventManager.php
 %%WWWDIR%%/vendor/doctrine/event-manager/lib/Doctrine/Common/EventSubscriber.php
@@ -12323,6 +12409,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/docs/appendix/upgrade-notes/2.2-to-2.3.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/appendix/upgrade-notes/2.x-to-3.0.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/appendix/upgrade-notes/3.0-to-3.1.rst
+%%WWWDIR%%/vendor/elgg/elgg/docs/appendix/upgrade-notes/3.1-to-3.2.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/conf.py
 %%WWWDIR%%/vendor/elgg/elgg/docs/contribute/code.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/contribute/core/index.rst
@@ -12387,14 +12474,13 @@
 %%WWWDIR%%/vendor/elgg/elgg/docs/guides/walled-garden.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/guides/web-services.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/guides/web-services/hmac.rst
+%%WWWDIR%%/vendor/elgg/elgg/docs/guides/web-services/result.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/guides/widgets.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/index.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/info/composer.json
-%%WWWDIR%%/vendor/elgg/elgg/docs/info/config.php
 %%WWWDIR%%/vendor/elgg/elgg/docs/info/manifest.xml
 %%WWWDIR%%/vendor/elgg/elgg/docs/intro/development.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/intro/elgg-cli.rst
-%%WWWDIR%%/vendor/elgg/elgg/docs/intro/features.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/intro/index.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/intro/install.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/intro/install/cloud9.rst
@@ -12468,6 +12554,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/docs/plugins/dashboard.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/plugins/diagnostics.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/plugins/file.rst
+%%WWWDIR%%/vendor/elgg/elgg/docs/plugins/friends.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/plugins/groups.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/plugins/images/dashboard.jpg
 %%WWWDIR%%/vendor/elgg/elgg/docs/plugins/images/file.jpg
@@ -12610,6 +12697,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Database/QueryExecuting.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Database/QueryFiltering.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Database/QueryOptions.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Database/Relationships.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Database/RelationshipsTable.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Database/Repository.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Database/River.php
@@ -12652,6 +12740,8 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/EntityPreloader.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Event.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/EventsService.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Exceptions/Security/InvalidPasswordCharacterRequirementsException.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Exceptions/Security/InvalidPasswordLengthException.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Export/AccessCollection.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Export/Data.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Export/Entity.php
@@ -12755,10 +12845,13 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/Middleware/AjaxGatekeeper.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/Middleware/CsrfFirewall.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/Middleware/Gatekeeper.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/Middleware/GroupPageOwnerCanEditGatekeeper.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/Middleware/LoggedOutGatekeeper.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/Middleware/PageOwnerCanEditGatekeeper.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/Middleware/RewriteTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/Middleware/SignedRequestGatekeeper.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/Middleware/UpgradeGatekeeper.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/Middleware/UserPageOwnerCanEditGatekeeper.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/Middleware/WalledGarden.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/RequestContext.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Router/Route.php
@@ -12777,6 +12870,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Security/Csrf.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Security/Hmac.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Security/HmacFactory.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Security/PasswordGeneratorService.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Security/UrlSigner.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Services/AjaxResponse.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Structs/Collection.php
@@ -12956,6 +13050,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/schema/migrations/20181107091651_add_entities_subtype_index.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/schema/migrations/20190125082345_entities_add_type_subtype_index.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/schema/migrations/20190606111641_entities_add_type_subtype_container_and_owner_indexes.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/schema/migrations/20191015125417_set_river_enabled_to_yes.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/services.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/README.md
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/ActionResponseTestCase.php
@@ -13023,6 +13118,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Database/EntityDatesTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Database/MultibyteTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Database/QueryBuilderIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Database/RelationshipsTableIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Database/SeedingTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Http/ResponseFactoryIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/I18n/TranslatorIntegrationTest.php
@@ -13067,7 +13163,12 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/IntegrationTestCaseTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Lib/PageOwnerIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/PersistentLoginServiceIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Router/Middleware/GroupPageOwnerCanEditGatekeeperIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Router/Middleware/PageOwnerCanEditGatekeeperIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Router/Middleware/UserPageOwnerCanEditGatekeeperIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Search/SearchServiceIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Security/PasswordGeneratorServiceIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Users/AccountServiceIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/ElggAccessCollectionUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/ElggObjectIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/ElggPluginIntegrationTest.php
@@ -13132,7 +13233,8 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Database/PluginsUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Database/QueryBuilderTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Database/QueryOptionsTest.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Database/RelationshipsUnitTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Database/RelationshipsRepositoryTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Database/RelationshipsTableUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Database/RiverRepositoryTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/DatabaseTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/DeprecationWrapperTest.php
@@ -13191,10 +13293,12 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Notifications/SubscriptionsServiceUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/PersistentLoginUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/PluginHooksServiceTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/RequestUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/RouteMatchingTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Router/RouteRegistrationServiceUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/RouterUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Search/SearchServiceTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Security/PasswordGeneratorServiceUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Security/UrlSignerTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Structs/Collection/InMemoryUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/SystemMessagesServiceUnitTest.php
@@ -13284,6 +13388,12 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/test_files/class_scanner/4.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/test_files/commit_messages/invalid_format.txt
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/test_files/commit_messages/valid.txt
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/test_files/database/clauses/CallableGroupBy.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/test_files/database/clauses/CallableHaving.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/test_files/database/clauses/CallableJoin.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/test_files/database/clauses/CallableOrderBy.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/test_files/database/clauses/CallableSelect.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/test_files/database/clauses/CallableWhere.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/test_files/dataroot/1/1/300x300.jpg
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/test_files/dataroot/1/1/300x600.jpg
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/test_files/dataroot/1/1/400x300.gif
@@ -13394,6 +13504,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/languages/nl.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/languages/ro_ro.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/languages/ru.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/activity/languages/sv.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/manifest.xml
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/start.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/tests/phpunit/unit/Elgg/Activity/TranslatorUnitTest.php
@@ -13415,7 +13526,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/actions/blog/save.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/classes/Elgg/Blog/Seeder.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/classes/ElggBlog.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/blog/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/ca.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/cs.php
@@ -13438,6 +13548,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/ro_ro.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/ru.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/sr.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/sv.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/tr.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/manifest.xml
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/start.php
@@ -13478,7 +13589,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/actions/bookmarks/save.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/classes/Elgg/Bookmarks/Seeder.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/classes/ElggBookmark.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/languages/de.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/languages/en.php
@@ -13526,7 +13636,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/views/rss/bookmarks/listing/owner.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/views/rss/object/bookmarks.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/README.md
-%%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/languages/ca.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/languages/cs.php
@@ -13562,13 +13671,11 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/views/default/elgg/ckeditor/config.js
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/views/default/elgg/ckeditor/config/simple.js
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/views/default/elgg/wysiwyg.css
-%%WWWDIR%%/vendor/elgg/elgg/mod/custom_index/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/custom_index/manifest.xml
 %%WWWDIR%%/vendor/elgg/elgg/mod/custom_index/tests/phpunit/unit/Elgg/CustomIndex/ManifestParsingTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/custom_index/tests/phpunit/unit/Elgg/CustomIndex/ViewStackTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/custom_index/views/default/custom_index/content.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/custom_index/views/default/resources/index.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/dashboard/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/dashboard/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/dashboard/manifest.xml
 %%WWWDIR%%/vendor/elgg/elgg/mod/dashboard/start.php
@@ -13583,7 +13690,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/developers/classes/Elgg/DevelopersPlugin/ErrorLogHtmlFormatter.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/developers/classes/Elgg/DevelopersPlugin/Hooks.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/developers/classes/ThemeSandboxObject.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/developers/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/developers/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/developers/languages/cs.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/developers/languages/de.php
@@ -13699,7 +13805,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/developers/views/default/theme_sandbox/typography/paragraph.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/developers/views/failsafe/messages/exceptions/admin_exception.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/diagnostics/actions/diagnostics/download.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/diagnostics/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/diagnostics/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/diagnostics/languages/de.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/diagnostics/languages/en.php
@@ -13719,7 +13824,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/classes/Elgg/Discussions/Upgrades/MigrateDiscussionReply.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/classes/Elgg/Discussions/Upgrades/MigrateDiscussionReplyRiver.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/classes/ElggDiscussion.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/discussions/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/languages/de.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/languages/en.php
@@ -13731,6 +13835,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/languages/ru.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/manifest.xml
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/start.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/discussions/tests/integration/Elgg/Discussions/RouteResponseTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/tests/phpunit/unit/Elgg/Discussions/ManifestParsingTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/tests/phpunit/unit/Elgg/Discussions/StaticConfigTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/tests/phpunit/unit/Elgg/Discussions/TranslatorUnitTest.php
@@ -13755,7 +13860,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/views/rss/discussion/listing/group.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/views/rss/discussion/listing/owner.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/embed/README.md
-%%WWWDIR%%/vendor/elgg/elgg/mod/embed/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/embed/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/embed/languages/ca.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/embed/languages/cmn.php
@@ -13791,7 +13895,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/embed/views/default/navigation/menu/embed.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/embed/views/default/resources/embed/embed.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/externalpages/actions/expages/edit.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/externalpages/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/externalpages/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/externalpages/languages/ca.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/externalpages/languages/cmn.php
@@ -13825,7 +13928,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/externalpages/views/default/resources/expages.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/file/actions/file/upload.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/file/classes/Elgg/File/Seeder.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/file/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/file/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/file/languages/cs.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/file/languages/da.php
@@ -13905,6 +14007,14 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/file/views/rss/file/listing/owner.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/actions/friends/add.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/actions/friends/remove.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/classes/Elgg/Friends/Actions/AcceptFriendRequestController.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/classes/Elgg/Friends/Actions/AddFriendController.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/classes/Elgg/Friends/Actions/DeclineFriendRequestController.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/classes/Elgg/Friends/Actions/RevokeFriendRequestController.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/classes/Elgg/Friends/FilterMenu.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/classes/Elgg/Friends/Notifications.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/classes/Elgg/Friends/RelationshipMenu.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/classes/Elgg/Friends/Relationships.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/languages/de.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/languages/en.php
@@ -13917,12 +14027,17 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/languages/ru.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/manifest.xml
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/start.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/tests/phpunit/integration/Elgg/Friends/WriteAccessTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/tests/phpunit/unit/Elgg/Friends/ManifestParsingTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/tests/phpunit/unit/Elgg/Friends/StaticConfigTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/tests/phpunit/unit/Elgg/Friends/TranslatorUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/tests/phpunit/unit/Elgg/Friends/ViewStackTest.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/views/default/plugins/friends/settings.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/views/default/relationship/friendrequest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/views/default/resources/friends/index.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/views/default/resources/friends/of.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/views/default/resources/friends/pending.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends/views/default/resources/friends/sent.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/views/default/widgets/friends/content.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends/views/default/widgets/friends/edit.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/actions/friends/collections/delete.php
@@ -13933,7 +14048,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/classes/Elgg/Friends/Collections/EntityMenuHandler.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/classes/Elgg/Friends/Collections/PageMenuHandler.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/classes/Elgg/Friends/Collections/UrlHandler.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/composer.json
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/classes/Elgg/Friends/Collections/WriteAccess.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/languages/de.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/languages/en.php
@@ -13942,6 +14057,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/languages/nl.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/manifest.xml
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/start.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/tests/phpunit/integration/Elgg/FriendsCollections/WriteAccessTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/tests/phpunit/unit/Elgg/FriendsCollections/ManifestParsingTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/tests/phpunit/unit/Elgg/FriendsCollections/StaticConfigTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/friends_collections/tests/phpunit/unit/Elgg/FriendsCollections/TranslatorUnitTest.php
@@ -13960,7 +14076,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/garbagecollector/classes/Elgg/GarbageCollector/GarbageCollector.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/garbagecollector/classes/Elgg/GarbageCollector/OptimizeCommand.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/garbagecollector/classes/Elgg/GarbageCollector/RegisterCliCommands.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/garbagecollector/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/garbagecollector/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/garbagecollector/elgg-services.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/garbagecollector/languages/de.php
@@ -13984,8 +14099,9 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/actions/groups/membership/join.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/actions/groups/membership/leave.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/actions/groups/membership/remove.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/groups/classes/Elgg/Groups/Access.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/groups/classes/Elgg/Groups/Middleware/LimitedGroupCreation.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/classes/Elgg/Groups/Upgrades/GroupIconTransfer.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/groups/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/languages/cs.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/languages/da.php
@@ -14024,6 +14140,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/groups/edit/tools.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/groups/groups.css
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/groups/invitationrequests.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/groups/invite/user_html.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/groups/listing/alpha.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/groups/listing/featured.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/groups/listing/newest.php
@@ -14050,11 +14167,14 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/icon/group/default/tiny.gif
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/icon/group/default/topbar.gif
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/plugins/groups/settings.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/relationship/invited.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/relationship/membership_request.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/resources/groups/add.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/resources/groups/all.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/resources/groups/edit.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/resources/groups/invitations.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/resources/groups/invite.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/resources/groups/invites.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/resources/groups/member.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/resources/groups/members.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/resources/groups/owner.php
@@ -14065,6 +14185,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/widgets/a_users_groups/content.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/default/widgets/a_users_groups/edit.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/json/groups/profile/layout.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/json/livesearch/user/group_invite.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/json/resources/livesearch/group_members.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/rss/groups/listing/alpha.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/rss/groups/listing/featured.php
@@ -14072,7 +14193,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/rss/groups/listing/popular.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/groups/views/rss/groups/profile/layout.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/invitefriends/actions/friends/invite.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/invitefriends/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/invitefriends/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/invitefriends/languages/cs.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/invitefriends/languages/de.php
@@ -14101,7 +14221,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/classes/Elgg/Likes/JsConfigHandler.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/classes/Elgg/Likes/Preloader.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/classes/Elgg/Likes/Upgrades/PublicLikesAnnotations.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/likes/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/languages/ca.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/languages/cmn.php
@@ -14132,7 +14251,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/views/default/likes/before_lists.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/views/default/likes/button.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/views/default/likes/popup.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/members/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/members/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/members/languages/cs.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/members/languages/da.php
@@ -14164,7 +14282,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/members/views/default/resources/members/search.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/messageboard/actions/messageboard/add.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/messageboard/actions/messageboard/delete.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/messageboard/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/messageboard/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/messageboard/languages/ca.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/messageboard/languages/cmn.php
@@ -14198,7 +14315,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/messages/actions/messages/process.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/messages/actions/messages/send.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/messages/classes/ElggMessage.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/messages/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/messages/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/messages/languages/cs.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/messages/languages/da.php
@@ -14236,7 +14352,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/messages/views/default/resources/messages/sent.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/notifications/actions/notifications/settings.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/notifications/actions/notifications/subscriptions.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/notifications/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/notifications/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/notifications/languages/ca.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/notifications/languages/cmn.php
@@ -14281,7 +14396,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/pages/classes/Elgg/Pages/Seeder.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/pages/classes/Elgg/Pages/Upgrades/MigratePageTop.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/pages/classes/ElggPage.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/pages/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/pages/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/pages/languages/cs.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/pages/languages/da.php
@@ -14346,7 +14460,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/profile/actions/profile/fields/reorder.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/profile/actions/profile/fields/reset.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/profile/classes/ElggPlugin/Profile/AnnotationMigration.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/profile/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/profile/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/profile/languages/de.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/profile/languages/en.php
@@ -14377,7 +14490,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/reportedcontent/actions/reportedcontent/archive.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/reportedcontent/actions/reportedcontent/delete.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/reportedcontent/classes/ElggReportedContent.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/reportedcontent/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/reportedcontent/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/reportedcontent/graphics/icon_reportthis.gif
 %%WWWDIR%%/vendor/elgg/elgg/mod/reportedcontent/languages/ca.php
@@ -14414,7 +14526,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/search/classes/Elgg/Search/Formatter.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/search/classes/Elgg/Search/Highlighter.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/search/classes/Elgg/Search/Search.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/search/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/search/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/search/languages/cs.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/search/languages/da.php
@@ -14455,7 +14566,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/site_notifications/actions/site_notifications/process.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/site_notifications/classes/SiteNotification.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/site_notifications/classes/SiteNotificationFactory.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/site_notifications/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/site_notifications/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/site_notifications/languages/cs.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/site_notifications/languages/de.php
@@ -14486,7 +14596,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/system_log/classes/Elgg/SystemLog/SystemLog.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/system_log/classes/Elgg/SystemLog/SystemLogEntry.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/system_log/classes/Elgg/SystemLog/SystemLogQuery.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/system_log/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/system_log/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/system_log/elgg-services.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/system_log/languages/de.php
@@ -14508,7 +14617,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/system_log/views/default/logbrowser/refine.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/system_log/views/default/logbrowser/table.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/system_log/views/default/plugins/system_log/settings.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/tagcloud/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/tagcloud/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/tagcloud/languages/de.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/tagcloud/languages/en.php
@@ -14531,7 +14639,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/thewire/actions/thewire/add.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/thewire/actions/thewire/delete.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/thewire/classes/ElggWire.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/thewire/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/thewire/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/thewire/languages/cs.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/thewire/languages/da.php
@@ -14579,7 +14686,8 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/thewire/views/rss/object/thewire.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/thewire/views/rss/search/object/thewire/entity.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/actions/uservalidationbyemail/resend_validation.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/composer.json
+%%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/classes/Elgg/UserValidationByEmail/ConfirmController.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/classes/Elgg/UserValidationByEmail/Upgrades/TrackValidationStatus.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/languages/cs.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/languages/da.php
@@ -14598,21 +14706,26 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/lib/functions.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/manifest.xml
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/start.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/tests/phpunit/integration/Elgg/UserValidationByEmail/RegistrationIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/tests/phpunit/unit/Elgg/UserValidationByEmail/ManifestParsingTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/tests/phpunit/unit/Elgg/UserValidationByEmail/StaticConfigTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/tests/phpunit/unit/Elgg/UserValidationByEmail/TranslatorUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/tests/phpunit/unit/Elgg/UserValidationByEmail/ViewStackTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/views/default/elgg/uservalidationbyemail.js
-%%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/views/default/resources/uservalidationbyemail/confirm.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/uservalidationbyemail/views/default/resources/uservalidationbyemail/emailsent.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/README.md
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/actions/webservices/api_key/edit.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/actions/webservices/api_key/regenerate.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/classes/APIException.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/classes/Elgg/WebServices/AdminPageMenu.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/classes/Elgg/WebServices/ApiKeyForm.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/classes/Elgg/WebServices/EntityMenu.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/classes/ElggApiKey.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/classes/ElggHMACCache.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/classes/ErrorResult.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/classes/GenericResult.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/classes/NotImplementedException.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/classes/SuccessResult.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/composer.json
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/elgg-plugin.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/languages/cs.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/languages/de.php
@@ -14631,10 +14744,19 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/manifest.xml
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/start.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/tests/phpunit/integration/Elgg/WebServices/ApiTest.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/tests/phpunit/integration/Elgg/WebServices/ElggApiKeyIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/tests/phpunit/unit/Elgg/WebServices/ManifestParsingTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/tests/phpunit/unit/Elgg/WebServices/TranslatorUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/tests/phpunit/unit/Elgg/WebServices/ViewStackTest.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/views/default/admin/configure_utilities/ws_list.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/views/default/admin/configure_utilities/ws_tokens.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/views/default/api/output.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/views/default/forms/webservices/api_key/edit.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/views/default/object/api_key.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/views/default/resources/webservices/api_key/add.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/views/default/resources/webservices/api_key/edit.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/views/default/webservices/admin.css
+%%WWWDIR%%/vendor/elgg/elgg/mod/web_services/views/default/webservices/service.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/web_services/views/json/api/output.php
 %%WWWDIR%%/vendor/elgg/elgg/package-lock.json
 %%WWWDIR%%/vendor/elgg/elgg/package.json
@@ -14806,6 +14928,10 @@
 %%WWWDIR%%/vendor/elgg/elgg/views/default/errors/default.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/forms/admin/menu/save.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/forms/admin/security/settings.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/forms/admin/security/settings/account.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/forms/admin/security/settings/hardening.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/forms/admin/security/settings/notifications.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/forms/admin/security/settings/site_secret.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/forms/admin/site/set_maintenance_mode.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/forms/admin/site/set_robots.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/forms/admin/site/settings.php
@@ -15045,10 +15171,19 @@
 %%WWWDIR%%/vendor/elgg/elgg/views/default/page/layouts/widgets/add_button.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/page/maintenance.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/page/walled_garden.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/relationship/default.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/relationship/elements/summary.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/relationship/elements/summary/content.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/relationship/elements/summary/icon.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/relationship/elements/summary/metadata.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/relationship/elements/summary/subtitle.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/relationship/elements/summary/title.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/relationship/member.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/resources/account/change_password.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/resources/account/forgotten_password.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/resources/account/login.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/resources/account/register.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/resources/account/validation_pending.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/resources/admin/plugin_text_file.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/resources/avatar/edit.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/resources/comments/edit.php
@@ -15108,6 +15243,8 @@
 %%WWWDIR%%/vendor/elgg/elgg/views/installation/install/pages/settings.php
 %%WWWDIR%%/vendor/elgg/elgg/views/installation/install/pages/welcome.php
 %%WWWDIR%%/vendor/elgg/elgg/views/installation/page/default.php
+%%WWWDIR%%/vendor/elgg/elgg/views/installation/page/elements/body.php
+%%WWWDIR%%/vendor/elgg/elgg/views/installation/page/elements/head.php
 %%WWWDIR%%/vendor/elgg/elgg/views/installation/page/elements/sidebar.php
 %%WWWDIR%%/vendor/elgg/elgg/views/json/group/default.php
 %%WWWDIR%%/vendor/elgg/elgg/views/json/messages/exceptions/admin_exception.php
@@ -15145,15 +15282,13 @@
 %%WWWDIR%%/vendor/elgg/elgg/views/rss/river/item.php
 %%WWWDIR%%/vendor/elgg/elgg/views/rss/user/default.php
 %%WWWDIR%%/vendor/elgg/elgg/yarn.lock
-%%WWWDIR%%/vendor/fzaninotto/faker/.gitignore
-%%WWWDIR%%/vendor/fzaninotto/faker/.travis.yml
+%%WWWDIR%%/vendor/fzaninotto/faker/.github/ISSUE_TEMPLATE/bug_report.md
+%%WWWDIR%%/vendor/fzaninotto/faker/.travis/xdebug.sh
 %%WWWDIR%%/vendor/fzaninotto/faker/CHANGELOG.md
-%%WWWDIR%%/vendor/fzaninotto/faker/CONTRIBUTING.md
 %%WWWDIR%%/vendor/fzaninotto/faker/LICENSE
-%%WWWDIR%%/vendor/fzaninotto/faker/Makefile
 %%WWWDIR%%/vendor/fzaninotto/faker/composer.json
-%%WWWDIR%%/vendor/fzaninotto/faker/phpunit.xml.dist
 %%WWWDIR%%/vendor/fzaninotto/faker/readme.md
+%%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Calculator/Ean.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Calculator/Iban.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Calculator/Inn.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Calculator/Luhn.php
@@ -15317,6 +15452,7 @@
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/es_AR/Person.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/es_AR/PhoneNumber.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/es_ES/Address.php
+%%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/es_ES/Color.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/es_ES/Company.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/es_ES/Internet.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/es_ES/Payment.php
@@ -15332,6 +15468,7 @@
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/es_VE/Internet.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/es_VE/Person.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/es_VE/PhoneNumber.php
+%%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/et_EE/Person.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/fa_IR/Address.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/fa_IR/Company.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/fa_IR/Internet.php
@@ -15353,6 +15490,7 @@
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/fr_CA/Address.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/fr_CA/Company.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/fr_CA/Person.php
+%%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/fr_CA/Text.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/fr_CH/Address.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/fr_CH/Company.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/fr_CH/Internet.php
@@ -15390,6 +15528,7 @@
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/hy_AM/Person.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/hy_AM/PhoneNumber.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/id_ID/Address.php
+%%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/id_ID/Color.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/id_ID/Company.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/id_ID/Internet.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/id_ID/Person.php
@@ -15507,6 +15646,8 @@
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/pt_BR/PhoneNumber.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/pt_BR/check_digit.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/pt_PT/Address.php
+%%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/pt_PT/Company.php
+%%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/pt_PT/Internet.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/pt_PT/Payment.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/pt_PT/Person.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/pt_PT/PhoneNumber.php
@@ -15559,6 +15700,7 @@
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/th_TH/Company.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/th_TH/Internet.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/th_TH/Payment.php
+%%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/th_TH/Person.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/th_TH/PhoneNumber.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/tr_TR/Address.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/Provider/tr_TR/Color.php
@@ -15601,129 +15743,61 @@
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/UniqueGenerator.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/Faker/ValidGenerator.php
 %%WWWDIR%%/vendor/fzaninotto/faker/src/autoload.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Calculator/IbanTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Calculator/InnTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Calculator/LuhnTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Calculator/TCNoTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/DefaultGeneratorTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/GeneratorTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/BarcodeTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/BaseTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/BiasedTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ColorTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/CompanyTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/DateTimeTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/HtmlLoremTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ImageTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/LocalizationTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/LoremTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/MiscellaneousTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/PaymentTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ProviderOverrideTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/TextTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/UserAgentTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/UuidTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ar_JO/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ar_SA/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/at_AT/PaymentTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/bg_BG/PaymentTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/bn_BD/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/cs_CZ/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/da_DK/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/de_AT/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/de_AT/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/de_CH/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/de_CH/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/de_CH/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/de_DE/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/el_GR/TextTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_AU/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_CA/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_GB/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_IN/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_NG/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_NG/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_NG/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_NG/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_NZ/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_PH/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_SG/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_SG/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_UG/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_US/CompanyTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_US/PaymentTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_US/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_US/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_ZA/CompanyTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_ZA/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_ZA/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/en_ZA/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/es_ES/PaymentTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/es_ES/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/es_ES/TextTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/es_PE/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/es_VE/CompanyTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/es_VE/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/fi_FI/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/fi_FI/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/fr_BE/PaymentTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/fr_CH/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/fr_CH/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/fr_CH/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/fr_FR/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/fr_FR/CompanyTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/fr_FR/PaymentTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/fr_FR/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/fr_FR/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/fr_FR/TextTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/id_ID/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/it_CH/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/it_CH/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/it_CH/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/it_IT/CompanyTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/it_IT/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ja_JP/InternetTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ja_JP/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ja_JP/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ka_GE/TextTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/kk_KZ/CompanyTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/kk_KZ/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/kk_KZ/TextTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ko_KR/TextTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/mn_MN/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ms_MY/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/nl_BE/PaymentTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/nl_BE/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/nl_NL/CompanyTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/nl_NL/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/pl_PL/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/pl_PL/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/pt_BR/CompanyTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/pt_BR/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/pt_PT/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/pt_PT/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/pt_PT/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ro_RO/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ro_RO/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ru_RU/CompanyTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/ru_RU/TextTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/sv_SE/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/tr_TR/CompanyTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/tr_TR/PaymentTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/tr_TR/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/tr_TR/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/uk_UA/AddressTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/uk_UA/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/uk_UA/PhoneNumberTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/zh_TW/CompanyTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/zh_TW/PersonTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/Faker/Provider/zh_TW/TextTest.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/documentor.php
-%%WWWDIR%%/vendor/fzaninotto/faker/test/test.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/.gitignore
+%%WWWDIR%%/vendor/hackzilla/password-generator/.travis.yml
+%%WWWDIR%%/vendor/hackzilla/password-generator/Exception/CharactersNotFoundException.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Exception/FileNotFoundException.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Exception/ImpossibleMinMaxLimitsException.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Exception/ImpossiblePasswordLengthException.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Exception/InvalidOptionException.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Exception/InvalidOptionTypeException.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Exception/NotEnoughWordsException.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Exception/WordsNotFoundException.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Generator/AbstractPasswordGenerator.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Generator/ComputerPasswordGenerator.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Generator/DummyPasswordGenerator.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Generator/HumanPasswordGenerator.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Generator/HybridPasswordGenerator.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Generator/PasswordGeneratorInterface.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Generator/PronounceablePasswordGenerator.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Generator/RequirementPasswordGenerator.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Makefile
+%%WWWDIR%%/vendor/hackzilla/password-generator/Model/CharacterSet.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Model/Option/BooleanOption.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Model/Option/IntegerOption.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Model/Option/Option.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Model/Option/OptionInterface.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Model/Option/StringOption.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/README.md
+%%WWWDIR%%/vendor/hackzilla/password-generator/RandomGenerator/NoRandomGenerator.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/RandomGenerator/Php5RandomGenerator.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/RandomGenerator/Php7RandomGenerator.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/RandomGenerator/RandomGeneratorInterface.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Generator/AbstractPasswordGeneratorClass.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Generator/AbstractPasswordGeneratorTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Generator/ComputerPasswordGeneratorTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Generator/Data/WordList/empty.txt
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Generator/Data/WordList/simple.txt
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Generator/DummyPasswordGeneratorTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Generator/HumanPasswordGeneratorClass.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Generator/HumanPasswordGeneratorTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Generator/HybridPasswordGeneratorTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Generator/PronounceablePasswordGeneratorTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Generator/RequirementPasswordGeneratorTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Model/CharacterSetTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Model/Option/BooleanOptionTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Model/Option/IntegerOptionTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Model/Option/OptionClass.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Model/Option/OptionTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/Model/Option/StringOptionTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/RandomGenerator/NoPasswordGeneratorTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/RandomGenerator/Php5RandomGeneratorTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/RandomGenerator/Php7RandomGeneratorTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/ReadMeTest.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/Tests/bootstrap.php
+%%WWWDIR%%/vendor/hackzilla/password-generator/composer.json
+%%WWWDIR%%/vendor/hackzilla/password-generator/phpunit.xml.dist
+%%WWWDIR%%/vendor/hackzilla/password-generator/travis.phpunit.xml
 %%WWWDIR%%/vendor/imagine/imagine/.travis/gmagick.sh
 %%WWWDIR%%/vendor/imagine/imagine/.travis/imagick.sh
 %%WWWDIR%%/vendor/imagine/imagine/CHANGELOG.md
@@ -15847,11 +15921,9 @@
 %%WWWDIR%%/vendor/league/flysystem-memory/README.md
 %%WWWDIR%%/vendor/league/flysystem-memory/composer.json
 %%WWWDIR%%/vendor/league/flysystem-memory/src/MemoryAdapter.php
-%%WWWDIR%%/vendor/league/flysystem/.php_cs.dist
 %%WWWDIR%%/vendor/league/flysystem/LICENSE
 %%WWWDIR%%/vendor/league/flysystem/composer.json
 %%WWWDIR%%/vendor/league/flysystem/deprecations.md
-%%WWWDIR%%/vendor/league/flysystem/phpstan.php
 %%WWWDIR%%/vendor/league/flysystem/src/Adapter/AbstractAdapter.php
 %%WWWDIR%%/vendor/league/flysystem/src/Adapter/AbstractFtpAdapter.php
 %%WWWDIR%%/vendor/league/flysystem/src/Adapter/CanOverwriteFiles.php
@@ -15898,7 +15970,10 @@
 %%WWWDIR%%/vendor/league/flysystem/src/Util/ContentListingFormatter.php
 %%WWWDIR%%/vendor/league/flysystem/src/Util/MimeType.php
 %%WWWDIR%%/vendor/league/flysystem/src/Util/StreamHasher.php
+%%WWWDIR%%/vendor/michelf/php-markdown/.editorconfig
 %%WWWDIR%%/vendor/michelf/php-markdown/.gitignore
+%%WWWDIR%%/vendor/michelf/php-markdown/.scrutinizer.yml
+%%WWWDIR%%/vendor/michelf/php-markdown/.travis.yml
 %%WWWDIR%%/vendor/michelf/php-markdown/License.md
 %%WWWDIR%%/vendor/michelf/php-markdown/Michelf/Markdown.inc.php
 %%WWWDIR%%/vendor/michelf/php-markdown/Michelf/Markdown.php
@@ -15909,6 +15984,131 @@
 %%WWWDIR%%/vendor/michelf/php-markdown/Readme.md
 %%WWWDIR%%/vendor/michelf/php-markdown/Readme.php
 %%WWWDIR%%/vendor/michelf/php-markdown/composer.json
+%%WWWDIR%%/vendor/michelf/php-markdown/phpunit.xml.dist
+%%WWWDIR%%/vendor/michelf/php-markdown/test/bootstrap.php
+%%WWWDIR%%/vendor/michelf/php-markdown/test/helpers/MarkdownTestHelper.php
+%%WWWDIR%%/vendor/michelf/php-markdown/test/integration/PhpMarkdownTest.php
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Amps and angle encoding.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Amps and angle encoding.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Auto links.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Auto links.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Backslash escapes.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Backslash escapes.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Blockquotes with code blocks.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Blockquotes with code blocks.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Code Blocks.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Code Blocks.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Code Spans.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Code Spans.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Hard-wrapped paragraphs with list-like lines.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Hard-wrapped paragraphs with list-like lines.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Horizontal rules.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Horizontal rules.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Images.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Images.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Inline HTML (Advanced).text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Inline HTML (Advanced).xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Inline HTML (Simple).html
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Inline HTML (Simple).text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Inline HTML comments.html
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Inline HTML comments.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Links, inline style.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Links, inline style.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Links, reference style.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Links, reference style.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Links, shortcut references.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Links, shortcut references.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Literal quotes in titles.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Literal quotes in titles.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Markdown Documentation - Basics.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Markdown Documentation - Basics.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Markdown Documentation - Syntax.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Markdown Documentation - Syntax.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Nested blockquotes.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Nested blockquotes.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Ordered and unordered lists.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Ordered and unordered lists.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Strong and em together.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Strong and em together.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Tabs.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Tabs.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Tidyness.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/markdown.mdtest/Tidyness.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Abbr.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Abbr.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Backtick Fenced Code Blocks Special Cases.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Backtick Fenced Code Blocks Special Cases.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Backtick Fenced Code Blocks.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Backtick Fenced Code Blocks.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Definition Lists.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Definition Lists.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Emphasis.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Emphasis.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Footnotes.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Footnotes.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Headers with attributes.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Headers with attributes.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Inline HTML with Markdown content.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Inline HTML with Markdown content.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Link & Image Attributes.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Link & Image Attributes.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Tables.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Tables.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Tilde Fenced Code Blocks Special Cases.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Tilde Fenced Code Blocks Special Cases.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Tilde Fenced Code Blocks.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown-extra.mdtest/Tilde Fenced Code Blocks.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Adjacent Lists.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Adjacent Lists.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Auto Links.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Auto Links.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Backslash escapes.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Backslash escapes.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code Spans.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code Spans.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code block in a list item.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code block in a list item.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code block on second line.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code block on second line.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code block regressions.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Code block regressions.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Email auto links.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Email auto links.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Emphasis.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Emphasis.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Empty List Item.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Empty List Item.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Headers.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Headers.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Horizontal Rules.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Horizontal Rules.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Inline HTML (Simple).html
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Inline HTML (Simple).text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Inline HTML (Span).text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Inline HTML (Span).xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Inline HTML comments.html
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Inline HTML comments.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Ins & del.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Ins & del.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Links, inline style.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Links, inline style.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/MD5 Hashes.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/MD5 Hashes.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Mixed OLs and ULs.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Mixed OLs and ULs.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Nesting.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Nesting.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/PHP-Specific Bugs.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/PHP-Specific Bugs.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Parens in URL.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Parens in URL.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Quotes in attributes.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Quotes in attributes.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Tight blocks.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/Tight blocks.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/XML empty tag.text
+%%WWWDIR%%/vendor/michelf/php-markdown/test/resources/php-markdown.mdtest/XML empty tag.xhtml
+%%WWWDIR%%/vendor/michelf/php-markdown/test/unit/MarkdownExtraTest.php
 %%WWWDIR%%/vendor/misd/linkify/.gitignore
 %%WWWDIR%%/vendor/misd/linkify/.travis.yml
 %%WWWDIR%%/vendor/misd/linkify/CHANGELOG.md
@@ -15931,17 +16131,10 @@
 %%WWWDIR%%/vendor/misd/linkify/tests/data/ignore.json
 %%WWWDIR%%/vendor/misd/linkify/tests/data/url-options.json
 %%WWWDIR%%/vendor/misd/linkify/tests/data/url.json
-%%WWWDIR%%/vendor/monolog/monolog/.php_cs
 %%WWWDIR%%/vendor/monolog/monolog/CHANGELOG.md
 %%WWWDIR%%/vendor/monolog/monolog/LICENSE
 %%WWWDIR%%/vendor/monolog/monolog/README.md
 %%WWWDIR%%/vendor/monolog/monolog/composer.json
-%%WWWDIR%%/vendor/monolog/monolog/doc/01-usage.md
-%%WWWDIR%%/vendor/monolog/monolog/doc/02-handlers-formatters-processors.md
-%%WWWDIR%%/vendor/monolog/monolog/doc/03-utilities.md
-%%WWWDIR%%/vendor/monolog/monolog/doc/04-extending.md
-%%WWWDIR%%/vendor/monolog/monolog/doc/sockets.md
-%%WWWDIR%%/vendor/monolog/monolog/phpunit.xml.dist
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/ErrorHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter/ElasticaFormatter.php
@@ -15981,6 +16174,8 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FirePHPHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FleepHookHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FlowdockHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FormattableHandlerInterface.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FormattableHandlerTrait.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/GelfHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/GroupHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/HandlerInterface.php
@@ -15998,6 +16193,8 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/NewRelicHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/NullHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/PHPConsoleHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/ProcessableHandlerInterface.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/ProcessableHandlerTrait.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/PsrHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/PushoverHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/RavenHandler.php
@@ -16035,88 +16232,6 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/ResettableInterface.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/SignalHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Utils.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/ErrorHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/ChromePHPFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/ElasticaFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/FlowdockFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/FluentdFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/GelfMessageFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/JsonFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/LineFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/LogglyFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/LogstashFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/MongoDBFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/NormalizerFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/ScalarFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Formatter/WildfireFormatterTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/AbstractHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/AbstractProcessingHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/AmqpHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/BrowserConsoleHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/BufferHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/ChromePHPHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/CouchDBHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/DeduplicationHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/DoctrineCouchDBHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/DynamoDbHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/ElasticSearchHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/ErrorLogHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/FilterHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/FingersCrossedHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/FirePHPHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/Fixtures/.gitkeep
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/FleepHookHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/FlowdockHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/GelfHandlerLegacyTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/GelfHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/GelfMockMessagePublisher.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/GroupHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/HandlerWrapperTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/HipChatHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/InsightOpsHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/LogEntriesHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/MailHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/MockRavenClient.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/MongoDBHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/NativeMailerHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/NewRelicHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/NullHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/PHPConsoleHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/PsrHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/PushoverHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/RavenHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/RedisHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/RollbarHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/RotatingFileHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/SamplingHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/Slack/SlackRecordTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/SlackHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/SlackWebhookHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/SlackbotHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/SocketHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/StreamHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/SwiftMailerHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/SyslogHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/SyslogUdpHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/TestHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/UdpSocketTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/WhatFailureGroupHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Handler/ZendMonitorHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/LoggerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Processor/GitProcessorTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Processor/IntrospectionProcessorTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Processor/MemoryPeakUsageProcessorTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Processor/MemoryUsageProcessorTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Processor/MercurialProcessorTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Processor/ProcessIdProcessorTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Processor/PsrLogMessageProcessorTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Processor/TagProcessorTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Processor/UidProcessorTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/Processor/WebProcessorTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/PsrLogCompatTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/RegistryTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/SignalHandlerTest.php
-%%WWWDIR%%/vendor/monolog/monolog/tests/Monolog/TestCase.php
 %%WWWDIR%%/vendor/mrclay/minify/HISTORY.txt
 %%WWWDIR%%/vendor/mrclay/minify/LICENSE.txt
 %%WWWDIR%%/vendor/mrclay/minify/MIN.txt
@@ -16812,6 +16927,7 @@
 %%WWWDIR%%/vendor/symfony/console/Tests/CommandLoader/FactoryCommandLoaderTest.php
 %%WWWDIR%%/vendor/symfony/console/Tests/DependencyInjection/AddConsoleCommandPassTest.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/AbstractDescriptorTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/ApplicationDescriptionTest.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/JsonDescriptorTest.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/MarkdownDescriptorTest.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/ObjectsProvider.php
@@ -16835,6 +16951,7 @@
 %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo5Command.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo6Command.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooHiddenCommand.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooLock2Command.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooLockCommand.php
 %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooOptCommand.php
@@ -17196,6 +17313,7 @@
 %%WWWDIR%%/vendor/symfony/http-foundation/Tests/ExpressionRequestMatcherTest.php
 %%WWWDIR%%/vendor/symfony/http-foundation/Tests/File/FakeFile.php
 %%WWWDIR%%/vendor/symfony/http-foundation/Tests/File/FileTest.php
+%%WWWDIR%%/vendor/symfony/http-foundation/Tests/File/Fixtures/-test
 %%WWWDIR%%/vendor/symfony/http-foundation/Tests/File/Fixtures/.unknownextension
 %%WWWDIR%%/vendor/symfony/http-foundation/Tests/File/Fixtures/case-sensitive-mime-type.xlsm
 %%WWWDIR%%/vendor/symfony/http-foundation/Tests/File/Fixtures/directory/.empty
@@ -17891,70 +18009,10 @@
 %%WWWDIR%%/vendor/zendframework/zend-stdlib/src/StringWrapper/Native.php
 %%WWWDIR%%/vendor/zendframework/zend-stdlib/src/StringWrapper/StringWrapperInterface.php
 %%WWWDIR%%/vendor/zendframework/zend-validator/CHANGELOG.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/CONDUCT.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/CONTRIBUTING.md
 %%WWWDIR%%/vendor/zendframework/zend-validator/LICENSE.md
 %%WWWDIR%%/vendor/zendframework/zend-validator/README.md
 %%WWWDIR%%/vendor/zendframework/zend-validator/bin/update_hostname_validator.php
 %%WWWDIR%%/vendor/zendframework/zend-validator/composer.json
-%%WWWDIR%%/vendor/zendframework/zend-validator/composer.lock
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/index.html
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/index.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/intro.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/messages.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/set.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validator-chains.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/barcode.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/between.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/callback.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/credit-card.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/date.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/db.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/digits.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/email-address.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/explode.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/count.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/crc32.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/exclude-extension.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/exclude-mime-type.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/exists.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/extension.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/files-size.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/hash.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/image-size.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/intro.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/is-compressed.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/is-image.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/md5.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/mime-type.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/not-exists.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/sha1.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/size.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/upload-file.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/upload.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/file/word-count.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/greater-than.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/hex.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/hostname.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/iban.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/identical.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/in-array.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/ip.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/is-countable.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/isbn.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/isinstanceof.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/less-than.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/not-empty.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/regex.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/sitemap.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/step.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/string-length.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/timezone.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/uri.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/validators/uuid.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/doc/book/writing-validators.md
-%%WWWDIR%%/vendor/zendframework/zend-validator/mkdocs.yml
-%%WWWDIR%%/vendor/zendframework/zend-validator/phpcs.xml
 %%WWWDIR%%/vendor/zendframework/zend-validator/src/AbstractValidator.php
 %%WWWDIR%%/vendor/zendframework/zend-validator/src/Barcode.php
 %%WWWDIR%%/vendor/zendframework/zend-validator/src/Barcode/AbstractAdapter.php
@@ -18067,11 +18125,4 @@
 %%WWWDIR%%/vendor/zendframework/zend-validator/src/ValidatorPluginManagerAwareInterface.php
 %%WWWDIR%%/vendor/zendframework/zend-validator/src/ValidatorPluginManagerFactory.php
 %%WWWDIR%%/vendor/zendframework/zend-validator/src/ValidatorProviderInterface.php
-@owner %%WWWOWN%%
-@group %%WWWGRP%%
-@mode 755
-@dir %%WWWDIR%%/elgg-config
 @dir %%WWWDIR%%/data
-@mode
-@owner
-@group
