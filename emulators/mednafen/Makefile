@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mednafen
-PORTVERSION=	1.22.1
-PORTREVISION=	2
+PORTVERSION=	1.22.2
 PORTEPOCH=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	https://mednafen.github.io/releases/files/
@@ -72,6 +71,10 @@ PSX_CONFIGURE_ENABLE=psx
 SMS_CONFIGURE_ENABLE=sms
 SWAN_CONFIGURE_ENABLE=wswan
 VB_CONFIGURE_ENABLE=vb
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|versionsort|alphasort|g' \
+		${WRKSRC}/src/drivers/Joystick_Linux.cpp
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
