@@ -1,6 +1,6 @@
---- app/proc_globdata.pas	2019-07-18 15:40:29.000000000 -0500
-+++ app/proc_globdata.pas	2019-07-20 23:37:23.078548000 -0500
-@@ -857,6 +857,9 @@
+--- app/proc_globdata.pas	2019-12-25 06:22:53.000000000 -0500
++++ app/proc_globdata.pas	2019-12-31 02:48:45.328993000 -0500
+@@ -916,6 +916,9 @@
    Result:=
      {$ifdef linux} 
      '/usr/share/cudatext'
@@ -10,19 +10,30 @@
      {$else} 
        {$ifdef darwin} 
        ExtractFileDir(OpDirExe)+'/Resources'
-@@ -1032,6 +1035,15 @@
-         '/usr/share/cudatext/data',
-         '/usr/share/cudatext/readme',
-         '/usr/share/cudatext/settings_default'
-+        ], S);
-+      {$endif}
-+      {$ifdef freebsd}
-+      RunCommand('cp', ['-R',
+@@ -986,6 +989,10 @@
+   OpDirLocal:= AppDir_Home+'Library/Application Support/CudaText';
+   CreateDirUTF8(OpDirLocal);
+   {$endif}
++  {$ifdef freebsd}
++  OpDirLocal:= AppDir_Home + '.config/' + 'cudatext';
++  CreateDirUTF8(OpDirLocal);
++  {$endif}
+ 
+   AppDir_Settings:= OpDirLocal+DirectorySeparator+'settings';
+   CreateDirUTF8(AppDir_Settings);
+@@ -1001,6 +1008,15 @@
+           '/usr/share/cudatext/data',
+           '/usr/share/cudatext/settings_default'
+           ], S);
++  {$endif}
++  {$ifdef freebsd}
++    RunCommand('cp', ['-R',
 +        '%%DATADIR%%/py',
 +        '%%DATADIR%%/data',
 +        '%%DATADIR%%/readme',
 +        '%%DATADIR%%/settings_default',
 +        OpDirLocal
-         ], S);
-       {$endif}
-       {$ifdef darwin}
++         ], S);
+   {$endif}
+   {$ifdef darwin}
+   if IsDistroUpdateNeeded then
