@@ -52,8 +52,6 @@ OPTIONS_DEFAULT=NDK
 OPTIONS_EXCLUDE=${ARCH:Namd64:Ni386:C/.+/NDK/}
 OPTIONS_EXCLUDE_DragonFly=NDK
 
-NDK_BROKEN_OFF=	incomplete dependencies
-
 ASSERT_CONFIGURE_ENABLE=checking
 BASH_DESC=		Install JSON parser used by bash-completion
 BASH_RUN_DEPENDS=	jq:textproc/jq
@@ -100,5 +98,8 @@ post-patch-NDK-on:
 post-patch-NDK-off:
 	@${REINPLACE_CMD} -i '.aux.bak' -e 's/linux-android/aux-&/' \
 		${WRKSRC}/stub-*/configure
+# XXX lang/gnatdroid-x86 no longer exists
+	@${REINPLACE_CMD} -i '.x86-off.bak' -e 's/stub-x86[^,]*, //g' \
+		${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
