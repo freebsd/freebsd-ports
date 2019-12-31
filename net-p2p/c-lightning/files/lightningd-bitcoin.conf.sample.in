@@ -1,0 +1,22 @@
+# An example lightningd config using Tor hidden service.
+#
+# Before starting lightningd configure Tor by adding the following 3 lines
+# to %%LOCALBASE%%/etc/tor/torrc:
+# HiddenServiceDir /var/db/tor/lightningd-bitcoin/
+# HiddenServiceVersion 3
+# HiddenServicePort 1234 127.0.0.1:5678
+# and restart the tor daemon. Then see the hidden service name from
+# /var/db/tor/lightningd-bitcoin/hostname and put it in announce-addr below.
+#
+# See "lightningd --help" for all possible options.
+#
+always-use-proxy=true
+announce-addr=my-tor-hidden-service.onion:1234
+bind-addr=127.0.0.1:5678
+bitcoin-rpcconnect=127.0.0.1
+bitcoin-rpcpassword=...
+bitcoin-rpcport=...
+bitcoin-rpcuser=...
+log-file=lightningd.log
+network=bitcoin
+proxy=127.0.0.1:9050

@@ -1,0 +1,44 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: lightningd
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+# Add the following to %%LOCALBASE%%/etc/rc.conf.d/lightningd to influence
+# the behavior of this script (default values are listed):
+#
+# lightningd_enable="NO"  # change to "YES" to enable
+# lightningd_user="%%U%%"
+# lightningd_group="%%G%%"
+# lightningd_base_dir="%%LIGHTNINGD_BASE_DIR%%"
+# lightningd_network="bitcoin"
+# lightningd_conf="%%PREFIX%%/etc/lightningd-${lightningd_network}.conf"
+# lightningd_extra_args=""  # See lightningd --help
+
+. /etc/rc.subr
+
+name="lightningd"
+rcvar=lightningd_enable
+
+load_rc_config ${name}
+
+: ${lightningd_enable:="NO"}
+: ${lightningd_user:="%%U%%"}
+: ${lightningd_group:="%%G%%"}
+: ${lightningd_base_dir:="%%LIGHTNINGD_BASE_DIR%%"}
+: ${lightningd_network:="bitcoin"}
+: ${lightningd_conf:="%%PREFIX%%/etc/${name}-${lightningd_network}.conf"}
+
+pidfile="${lightningd_base_dir}/lightningd-${lightningd_network}.pid"
+command="%%PREFIX%%/bin/lightningd"
+command_args=""
+command_args="${command_args} --lightning-dir=${lightningd_base_dir}"
+command_args="${command_args} --network=${lightningd_network}"
+command_args="${command_args} --daemon"
+
+if [ -e "${lightningd_conf}" ] ; then
+	command_args="${command_args} --conf=${lightningd_conf}"
+fi
+
+run_rc_command "$1"
