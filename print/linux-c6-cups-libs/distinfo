@@ -1,7 +1,0 @@
-TIMESTAMP = 1555676045
-SHA256 (centos/cups-libs-1.4.2-81.el6_10.i686.rpm) = e18fe7c6c2ceac124d33d36d3798c6728d44c66c53e372a390575bfb6f1cb3fc
-SIZE (centos/cups-libs-1.4.2-81.el6_10.i686.rpm) = 340752
-SHA256 (centos/cups-libs-1.4.2-81.el6_10.x86_64.rpm) = e1253ae8c62c1d1f5fdb219efae54045e77ca75892f5c068f946250962837618
-SIZE (centos/cups-libs-1.4.2-81.el6_10.x86_64.rpm) = 330580
-SHA256 (centos/cups-1.4.2-81.el6_10.src.rpm) = f3122ab37e83fd2e4a21235d17b666c4ede19f6125f115a691094188cdc38d08
-SIZE (centos/cups-1.4.2-81.el6_10.src.rpm) = 4687927

@@ -1,7 +1,0 @@
-include/eventlog/evtlog.h
-include/eventlog/evtmaps.h
-lib/libevtlog.a
-lib/libevtlog.so
-lib/libevtlog.so.0
-lib/libevtlog.so.0.0.0
-libdata/pkgconfig/eventlog.pc

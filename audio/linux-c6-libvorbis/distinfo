@@ -1,7 +1,0 @@
-TIMESTAMP = 1523959794
-SHA256 (centos/libvorbis-1.2.3-5.el6_9.1.i686.rpm) = 2e06e17e114f1fb82b38494b2a749d03a24ab1ad4c7bd5802ca8c7d6d604dcdb
-SIZE (centos/libvorbis-1.2.3-5.el6_9.1.i686.rpm) = 160652
-SHA256 (centos/libvorbis-1.2.3-5.el6_9.1.x86_64.rpm) = e2b276ee079787afa938fc33d26255a167e592670303c74656e84b96c09ace5b
-SIZE (centos/libvorbis-1.2.3-5.el6_9.1.x86_64.rpm) = 171820
-SHA256 (centos/libvorbis-1.2.3-5.el6_9.1.src.rpm) = cf05cdba31b5c0bd71bbe2e333821dc586a9c2eddd8a6fe762c4d35ee836934d
-SIZE (centos/libvorbis-1.2.3-5.el6_9.1.src.rpm) = 1209099

@@ -1,7 +1,0 @@
-TIMESTAMP = 1485516053
-SHA256 (centos/libsoup-2.34.3-5.el6.i686.rpm) = e552af55a0842d3d854ebbfa551b88dae1d08513cdbca06493d87cac8b715f02
-SIZE (centos/libsoup-2.34.3-5.el6.i686.rpm) = 191720
-SHA256 (centos/libsoup-2.34.3-5.el6.x86_64.rpm) = b499e68b71efdf4a9b2304b4b71a087d7d1d860e49236e58e860700a0ca690e2
-SIZE (centos/libsoup-2.34.3-5.el6.x86_64.rpm) = 192984
-SHA256 (centos/libsoup-2.34.3-5.el6.src.rpm) = aab4786b3871b6c35eb8808493bd8e33e2a37aa30898c99355992ecf64ad6f1a
-SIZE (centos/libsoup-2.34.3-5.el6.src.rpm) = 719916

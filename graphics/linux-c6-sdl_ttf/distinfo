@@ -1,7 +1,0 @@
-TIMESTAMP = 1485611062
-SHA256 (centos/SDL_ttf-2.0.11-6.el6.i686.rpm) = d6f344c7f3e50f6b072fb7fb39aa7882cdf621b6f1cee62ec9fa09647802b1a7
-SIZE (centos/SDL_ttf-2.0.11-6.el6.i686.rpm) = 21752
-SHA256 (centos/SDL_ttf-2.0.11-6.el6.x86_64.rpm) = e1661d0ffdf707118070fbbe5085144ab1d17b22e0c785373f5c6f59a1157f5c
-SIZE (centos/SDL_ttf-2.0.11-6.el6.x86_64.rpm) = 21896
-SHA256 (centos/SDL_ttf-2.0.11-6.el6.src.rpm) = 6c940edece8b714623f049cb2a4dd163f5fc8ef6c1b0d1778113df0bbbce004e
-SIZE (centos/SDL_ttf-2.0.11-6.el6.src.rpm) = 4058837

@@ -1,7 +1,0 @@
-TIMESTAMP = 1532349625
-SHA256 (centos/gnutls-2.12.23-22.el6.i686.rpm) = 98a8d4ee4f094aea78f036e9356349a79b0d0a64f7e08268717e20f2963ee454
-SIZE (centos/gnutls-2.12.23-22.el6.i686.rpm) = 392168
-SHA256 (centos/gnutls-2.12.23-22.el6.x86_64.rpm) = 8e7170cc1a879fde86c5280aa1cbc646d95e9926add022f2019f590d28b5aec5
-SIZE (centos/gnutls-2.12.23-22.el6.x86_64.rpm) = 398728
-SHA256 (centos/gnutls-2.12.23-22.el6.src.rpm) = 580f58775b659e69fe74aaff447a30fe09fabbb71d59f400742b89a022504108
-SIZE (centos/gnutls-2.12.23-22.el6.src.rpm) = 8911477

@@ -1,4 +1,0 @@
-The audit package contains the user space utilities for storing and searching
-the audit records generate by the audit subsystem in the Linux kernel.
-
-WWW: https://github.com/linux-audit/audit-userspace

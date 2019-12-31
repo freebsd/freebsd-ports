@@ -160,7 +160,6 @@ OptimFROG*		audio/optimfrog		No commercial use
 oracle/*		databases/jdbc-oracle11g	This software is under license and export controls
 oracle/sqldeveloper*	databases/sqldeveloper	This software is under license and export controls
 oracle/instantclient-basic-linux*	databases/linux-oracle-instantclient-basic	Packaging prohibited by Oracle license
-oracle/instantclient-sqlplus-linux*	databases/linux-oracle-instantclient-sqlplus	Packaging prohibited by Oracle license
 pcsv*fb.tar.gz		lang/petite-chez	User must accept license terms before installation
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distribution
 ppsmall-*		archivers/ppunpack	No commercial redistribution

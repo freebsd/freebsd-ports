@@ -1,6 +1,0 @@
-usr/bin/dbus-binding-tool
-usr/lib/libdbus-glib-1.so.2
-usr/lib/libdbus-glib-1.so.2.1.0
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS

@@ -237,8 +237,6 @@
     SUBDIR += libxine
     SUBDIR += libxspf
     SUBDIR += libzen
-    SUBDIR += linux-c6-libtheora
-    SUBDIR += linux-c6-libv4l
     SUBDIR += linux-c7-libtheora
     SUBDIR += linux-c7-libv4l
     SUBDIR += linux-tsmuxer

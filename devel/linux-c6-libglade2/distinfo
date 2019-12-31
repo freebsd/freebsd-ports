@@ -1,7 +1,0 @@
-TIMESTAMP = 1485515160
-SHA256 (centos/libglade2-2.6.4-3.1.el6.i686.rpm) = 0d4afe4280e4cbbf7ead05f8ceddb49c40898b1de9e8dac4a69fc07313814a78
-SIZE (centos/libglade2-2.6.4-3.1.el6.i686.rpm) = 60960
-SHA256 (centos/libglade2-2.6.4-3.1.el6.x86_64.rpm) = 29fc2725c6a810cb3b49047afac2526a2799afcff61d47f47f95a9cb6eb20e3b
-SIZE (centos/libglade2-2.6.4-3.1.el6.x86_64.rpm) = 60936
-SHA256 (centos/libglade2-2.6.4-3.1.el6.src.rpm) = 1a68ad52cb5dd9a7bdf5b511d5ac1d9d12ec4f19d93373d9bdb04b4afd753bbb
-SIZE (centos/libglade2-2.6.4-3.1.el6.src.rpm) = 371348

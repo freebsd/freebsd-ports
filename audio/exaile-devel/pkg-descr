@@ -1,7 +1,0 @@
-Exaile is a music manager and player for GTK+ written in Python. It
-incorporates automatic fetching of album art, lyrics fetching, artist/album
-information via Wikipedia, Last.fm scrobbling, support for many portable
-media players including iPods, internet radio such as shoutcast, and tabbed
-playlists.
-
-WWW: https://www.exaile.org/

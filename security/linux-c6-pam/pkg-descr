@@ -1,6 +1,0 @@
-PAM is a system of libraries that handle the authentication tasks of
-applications (services) on the system. The library provides a stable
-general API that privilege granting programs (such as login(1) and su(1)) defer
-to to perform standard authentication tasks.
-
-WWW: https://www.linux-pam.org/

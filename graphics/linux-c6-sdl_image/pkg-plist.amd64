@@ -1,8 +1,0 @@
-usr/bin/showimage
-usr/lib/libSDL_image-1.2.so.0
-usr/lib/libSDL_image-1.2.so.0.8.4
-usr/lib64/libSDL_image-1.2.so.0
-usr/lib64/libSDL_image-1.2.so.0.8.4
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README

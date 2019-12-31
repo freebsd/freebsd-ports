@@ -1,7 +1,0 @@
-TIMESTAMP = 1539546720
-SHA256 (centos/pam-1.1.1-24.el6.i686.rpm) = 6e72d56fa9159c3fee0d0975c4ecf40cff9ad98a510331f5f3de5ece3f064c03
-SIZE (centos/pam-1.1.1-24.el6.i686.rpm) = 675396
-SHA256 (centos/pam-1.1.1-24.el6.x86_64.rpm) = 095709ce23bc6a9b3f129271b91c0eeb686a3ea1408b2083a9dd81496f244e48
-SIZE (centos/pam-1.1.1-24.el6.x86_64.rpm) = 675144
-SHA256 (centos/pam-1.1.1-24.el6.src.rpm) = 0f840065fb7be23a1fde0e651d0526e8c763e2d09b92fb463005b291db9b340f
-SIZE (centos/pam-1.1.1-24.el6.src.rpm) = 1310692
