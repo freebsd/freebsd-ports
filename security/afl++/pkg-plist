@@ -22,11 +22,15 @@ bin/afl-whatsup
 %%X86%%%%LLVM%%lib/afl/afl-llvm-rt-32.o
 %%LLVM%%lib/afl/afl-llvm-rt-64.o
 %%LLVM%%lib/afl/afl-llvm-rt.o
+%%X86%%lib/afl/argvfuzz32.so
+lib/afl/argvfuzz64.so
 %%X86%%lib/afl/as
 %%LLVM%%lib/afl/compare-transform-pass.so
 lib/afl/libdislocator.so
 lib/afl/libtokencap.so
 %%LLVM%%lib/afl/libLLVMInsTrim.so
+%%X86%%lib/afl/socketfuzz32.so
+lib/afl/socketfuzz64.so
 %%LLVM%%lib/afl/split-compares-pass.so
 %%LLVM%%lib/afl/split-switches-pass.so
 %%LLVM%%man/man8/afl-clang-fast.8.gz
