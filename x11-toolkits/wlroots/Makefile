@@ -1,12 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	wlroots
-DISTVERSION=	0.8.1
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	x11-toolkits
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	fc6c0ca12e94.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library
@@ -46,6 +42,7 @@ CONSOLEKIT_PATCHFILES=	ac65ec72a2f2.patch:-p1:ck2 # see #1467 upstream
 CONSOLEKIT_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 			libconsolekit.so:sysutils/consolekit2
 CONSOLEKIT_MESON_ENABLED=	consolekit2
+CONSOLEKIT_BROKEN=	fails to build with wlroots 0.9
 .if make(makesum)
 .MAKEFLAGS:		WITH+=CONSOLEKIT
 .endif
