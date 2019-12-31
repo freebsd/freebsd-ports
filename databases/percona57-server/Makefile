@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	percona
-DISTVERSION=	5.7.27-30
+DISTVERSION=	5.7.28-31
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.7/Percona-Server-${DISTVERSION}/source/tarball/:percona \
@@ -12,7 +12,7 @@ DISTNAME=	percona-server-${DISTVERSION}
 DISTFILES=	percona-server-${DISTVERSION}${EXTRACT_SUFX}:percona \
 		boost_1_59_0${EXTRACT_SUFX}:boost
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE?=	GPLv2+
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 SLAVEDIRS=	databases/percona57-client \
 		databases/percona57-pam-for-mysql
 USES=		bison:build cmake:insource,noninja compiler:c11 \
-		cpe libedit localbase perl5 shebangfix
+		cpe libedit localbase perl5 shebangfix ssl
 
 MY_DBDIR=	/var/db/mysql
 MY_SECDIR=	/var/db/mysql_secure
@@ -45,7 +45,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_MYSQLDATADIR="/var/db/mysql" \
 		-DINSTALL_SECURE_FILE_PRIVDIR="${MY_SECDIR}" \
 		-DINSTALL_MYSQLSHAREDIR="share/mysql" \
-		-DINSTALL_MYSQLTESTDIR="${MY_TESTDIR}" \
+		-DINSTALL_MYSQLTESTDIR=0 \
 		-DINSTALL_PLUGINDIR="lib/mysql/plugin" \
 		-DINSTALL_SBINDIR="libexec" \
 		-DINSTALL_SCRIPTDIR="bin" \
@@ -131,11 +131,11 @@ CMAKE_ARGS+=	-DWITH_AUTHENTICATION_LDAP=0
 
 .include <bsd.port.options.mk>
 
-.if !${SSL_DEFAULT:Mlibressl*}
-MY_TESTDIR=	"share/mysql/tests"
-.else
-MY_TESTDIR=	""
-.endif
+#.if !${SSL_DEFAULT:Mlibressl*}
+#MY_TESTDIR=	"share/mysql/tests"
+#.else
+#MY_TESTDIR=	""
+#.endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
 SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""

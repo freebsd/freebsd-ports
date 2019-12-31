@@ -20,11 +20,11 @@
 @@ -3678,6 +3688,7 @@ static int init_ssl()
  {
  #ifdef HAVE_OPENSSL
- #ifndef HAVE_YASSL
 +#ifndef LIBRESSL_VERSION_NUMBER
    int fips_mode= FIPS_mode();
    if (fips_mode != 0)
    {
+     /* FIPS is enabled, Log warning and Disable it now */
 @@ -3687,7 +3698,9 @@ static int init_ssl()
          " Disabling FIPS.");
      FIPS_mode_set(0);
