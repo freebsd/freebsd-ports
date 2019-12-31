@@ -13627,7 +13627,7 @@ audio/linux-c6-alsa-lib|audio/linux-c7-alsa-lib|2019-12-31|Has expired: Supersed
 audio/linux-c6-alsa-plugins-oss|audio/linux-c7-alsa-plugins-oss|2019-12-31|Has expired: Superseded by CentOS 7
 audio/linux-c6-alsa-plugins-pulseaudio|audio/linux-c7-alsa-plugins-pulseaudio|2019-12-31|Has expired: Superseded by CentOS 7
 audio/linux-c6-alsa-utils|audio/linux-c7-alsa-utils|2019-12-31|Has expired: Superseded by CentOS 7
-audio/linux-c6-flac|audio/linux-c7-flac-libs|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-flac|audio/linux-c7-flac|2019-12-31|Has expired: Superseded by CentOS 7
 audio/linux-c6-libaudiofile|audio/linux-c7-audiofile|2019-12-31|Has expired: Superseded by CentOS 7
 audio/linux-c6-libogg|audio/linux-c7-libogg|2019-12-31|Has expired: Superseded by CentOS 7
 audio/linux-c6-libsndfile|audio/linux-c7-libsndfile|2019-12-31|Has expired: Superseded by CentOS 7
@@ -13641,7 +13641,7 @@ audio/linux-c6-sdl_mixer|audio/linux-c7-sdl_mixer|2019-12-31|Has expired: Supers
 databases/linux-c6-sqlite3|databases/linux-c7-sqlite3|2019-12-31|Has expired: Superseded by CentOS 7
 databases/linux-oracle-instantclient-sqlplus||2019-12-31|Has expired: Depends on deprecated Centos 6 framework
 devel/linux-c6-dbus-glib|devel/linux-c7-dbus-glib|2019-12-31|Has expired: Superseded by CentOS 7
-devel/linux-c6-dbus-libs|devel/linux-c7-dubs-libs|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-dbus-libs|devel/linux-c7-dbus-libs|2019-12-31|Has expired: Superseded by CentOS 7
 devel/linux-c6-devtools|devel/linux-c7-devtools|2019-12-31|Has expired: Superseded by CentOS 7
 devel/linux-c6-elfutils-libelf|devel/linux-c7-elfutils-libelf|2019-12-31|Has expired: Superseded by CentOS 7
 devel/linux-c6-icu|devel/linux-c7-icu|2019-12-31|Has expired: Superseded by CentOS 7
@@ -13689,8 +13689,8 @@ security/linux-c6-libgpg-error|security/linux-c7-libgpg-error|2019-12-31|Has exp
 security/linux-c6-libssh2|security/linux-c7-libssh2|2019-12-31|Has expired: Superseded by CentOS 7
 security/linux-c6-libtasn1|security/linux-c7-libtasn1|2019-12-31|Has expired: Superseded by CentOS 7
 security/linux-c6-nss|security/linux-c7-nss|2019-12-31|Has expired: Superseded by CentOS 7
-security/linux-c6-openssl|security/linux-c7-openssl|2019-12-31|Has expired: Superseded by CentOS 7
-security/linux-c6-pam|security/linux-c7-pam|2019-12-31|Has expired: Superseded by CentOS 7
+security/linux-c6-openssl|emulators/linux_base-c7|2019-12-31|Has expired: Superseded by CentOS 7
+security/linux-c6-pam||2019-12-31|Has expired: Superseded by CentOS 7
 security/openssl||2019-12-31|Has expired: OpenSSL 1.0.2 is End-of-Life 2019-12-31 at which  time this port will update to 1.1.1 branch
 sysutils/eventlog||2019-12-31|Has expired: No longer supported by Balabit
 sysutils/linux-c6-lttng-ust|sysutils/linux-c7-lttng-ust|2019-12-31|Has expired: Superseded by CentOS 7
