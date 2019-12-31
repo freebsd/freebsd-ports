@@ -1,4 +1,10 @@
 include/ensmallen.hpp
+include/ensmallen_bits/ada_bound/ada_bound.hpp
+include/ensmallen_bits/ada_bound/ada_bound_impl.hpp
+include/ensmallen_bits/ada_bound/ada_bound_update.hpp
+include/ensmallen_bits/ada_bound/ams_bound_update.hpp
+include/ensmallen_bits/lookahead/lookahead.hpp
+include/ensmallen_bits/lookahead/lookahead_impl.hpp
 include/ensmallen_bits/ada_delta/ada_delta.hpp
 include/ensmallen_bits/ada_delta/ada_delta_impl.hpp
 include/ensmallen_bits/ada_delta/ada_delta_update.hpp
