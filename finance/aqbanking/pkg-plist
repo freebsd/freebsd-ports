@@ -178,7 +178,7 @@ lib/cmake/aqbanking-%%AQB_MAJ_MIN_VER%%/aqbanking-config-version.cmake
 lib/cmake/aqbanking-%%AQB_MAJ_MIN_VER%%/aqbanking-config.cmake
 lib/libaqbanking.so
 lib/libaqbanking.so.%%AQB_SHLIB_VER%%
-lib/libaqbanking.so.%%AQB_SHLIB_VER%%.6.8
+lib/libaqbanking.so.%%AQB_SHLIB_VER%%.7.10
 lib/libaqbankingpp.so
 lib/libaqbankingpp.so.0
 lib/libaqbankingpp.so.0.0.0
@@ -190,7 +190,7 @@ lib/libaqhbci.so.24
 lib/libaqhbci.so.24.0.1
 lib/libaqnone.so
 lib/libaqnone.so.%%AQB_SHLIB_VER%%
-lib/libaqnone.so.%%AQB_SHLIB_VER%%.6.8
+lib/libaqnone.so.%%AQB_SHLIB_VER%%.7.10
 lib/libaqofxconnect.so
 lib/libaqofxconnect.so.7
 lib/libaqofxconnect.so.7.0.2
