@@ -17,7 +17,6 @@ USE_LINUX_RPM=	yes
 
 CONFLICTS=	linux-c6-${PORTNAME}47-[0-9]*
 DATADIR=	${PREFIX}/usr/share/${PORTNAME}4
-DESCR=		${.CURDIR}/../../devel/linux-c6-qt47/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 
