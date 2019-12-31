@@ -21,8 +21,8 @@
 #   USE_GCC=	yes			# port requires a current version of GCC
 #							# as defined in bsd.default-versions.mk.
 #   USE_GCC=	any			# port requires GCC 4.2 or later.
-#   USE_GCC=	7+			# port requires GCC 7 or later.
-#   USE_GCC=	6			# port requires GCC 6.
+#   USE_GCC=	9+			# port requires GCC 9 or later.
+#   USE_GCC=	8			# port requires GCC 8.
 #
 # If you are wondering what your port exactly does, use "make test-gcc"
 # to see some debugging.
@@ -35,13 +35,12 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 # ascending order and in sync with the table below. 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-GCCVERSIONS=	040200 040800 060000 070000 080000 090000
+GCCVERSIONS=	040200 040800 070000 080000 090000
 
 # The first field is the OSVERSION in which it disappeared from the base.
 # The second field is the version as USE_GCC would use.
 GCCVERSION_040200=	9999999 4.2
 GCCVERSION_040800=	      0 4.8
-GCCVERSION_060000=	      0 6
 GCCVERSION_070000=	      0 7
 GCCVERSION_080000=	      0 8
 GCCVERSION_090000=	      0 9
