@@ -689,11 +689,9 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_palette/lang/ru_RU/LC_MESSAGES/cuda_palette.po
 %%DATADIR%%/py/cuda_project_man/__init__.py
 %%DATADIR%%/py/cuda_project_man/install.inf
-%%DATADIR%%/py/cuda_project_man/pathlib.py
 %%DATADIR%%/py/cuda_project_man/projman_dlg.py
 %%DATADIR%%/py/cuda_project_man/readme/history.txt
 %%DATADIR%%/py/cuda_project_man/readme/license.txt
-%%DATADIR%%/py/cuda_project_man/readme/license_pathlib.txt
 %%DATADIR%%/py/cuda_project_man/readme/readme.txt
 %%DATADIR%%/py/cuda_show_unsaved/__init__.py
 %%DATADIR%%/py/cuda_show_unsaved/install.inf
@@ -729,6 +727,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_tabs_list/readme/readme.txt
 %%DATADIR%%/py/cuda_testing_dlg_proc/__init__.py
 %%DATADIR%%/py/cuda_testing_dlg_proc/install.inf
+%%DATADIR%%/py/cuda_testing_dlg_proc/repro_labels.py
 %%DATADIR%%/py/cuda_testing_dlg_proc/testcall.py
 %%DATADIR%%/py/cuda_testing_gaps/__init__.py
 %%DATADIR%%/py/cuda_testing_gaps/install.inf
@@ -817,6 +816,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/sys/urllib3/connection.py
 %%DATADIR%%/py/sys/urllib3/connectionpool.py
 %%DATADIR%%/py/sys/urllib3/contrib/__init__.py
+%%DATADIR%%/py/sys/urllib3/contrib/_appengine_environ.py
 %%DATADIR%%/py/sys/urllib3/contrib/_securetransport/__init__.py
 %%DATADIR%%/py/sys/urllib3/contrib/_securetransport/bindings.py
 %%DATADIR%%/py/sys/urllib3/contrib/_securetransport/low_level.py
@@ -831,7 +831,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/sys/urllib3/packages/__init__.py
 %%DATADIR%%/py/sys/urllib3/packages/backports/__init__.py
 %%DATADIR%%/py/sys/urllib3/packages/backports/makefile.py
-%%DATADIR%%/py/sys/urllib3/packages/ordered_dict.py
 %%DATADIR%%/py/sys/urllib3/packages/six.py
 %%DATADIR%%/py/sys/urllib3/packages/ssl_match_hostname/__init__.py
 %%DATADIR%%/py/sys/urllib3/packages/ssl_match_hostname/_implementation.py
@@ -881,12 +880,14 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/synwrite-lexer-editor.png
 %%DATADIR%%/settings_default/default.json
 %%DATADIR%%/settings_default/lexer Assembly.json
+%%DATADIR%%/settings_default/lexer Bash script.json
 %%DATADIR%%/settings_default/lexer C++.json
 %%DATADIR%%/settings_default/lexer C.json
 %%DATADIR%%/settings_default/lexer CSS.json
 %%DATADIR%%/settings_default/lexer JSON.json
 %%DATADIR%%/settings_default/lexer JavaScript.json
 %%DATADIR%%/settings_default/lexer Lua.json
+%%DATADIR%%/settings_default/lexer PHP.json
 %%DATADIR%%/settings_default/lexer Pascal.json
 %%DATADIR%%/settings_default/lexer Python.json
 %%DATADIR%%/settings_default/lexer Ruby.json

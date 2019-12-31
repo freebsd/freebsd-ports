@@ -1,38 +1,37 @@
 # $FreeBSD$
 
 PORTNAME=	cudatext
-PORTVERSION=	1.84.2
-PORTREVISION=	1
+PORTVERSION=	1.92.0
 CATEGORIES=	editors
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Cross-platform text editor, written in Lazarus
 
-BROKEN=		unfetchable
-
 LICENSE=	MPL20
 
-USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors xorg
+USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors python xorg
 USE_FPC=	chm fcl-base fcl-image fcl-json fcl-stl fcl-xml pasjpeg rtl-objpas x11
 USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	Alexey-T
 GH_PROJECT=	CudaText
 GH_TUPLE=	Alexey-T:Python-for-Lazarus:586eec1:python4lazarus/python4lazarus \
-		Alexey-T:ATFlatControls:34fd9d3:atflatcontrols/atflatcontrols  \
-		Alexey-T:ATSynEdit:3ff9ac0:atsynedit/atsynedit \
+		Alexey-T:ATFlatControls:ee25077:atflatcontrols/atflatcontrols  \
+		Alexey-T:ATSynEdit:3a2f413:atsynedit/atsynedit \
 		Alexey-T:Emmet-Pascal:0defe41:emmet/emmet \
-		Alexey-T:EControl_v1:3a20fbb:econtrol/econtrol \
-		Alexey-T:ATSynEdit_Ex_v1:6355c6f:atsyneditex/atsyneditex \
-		Alexey-T:ATSynEdit_Cmp:2e7ac8f:atsyneditcmp/atsyneditcmp \
+		Alexey-T:EControl:92b35f5:econtrol/econtrol \
+		Alexey-T:ATSynEdit_Ex:1ee4a75:atsyneditex/atsyneditex \
+		Alexey-T:ATSynEdit_Cmp:51a7103:atsyneditcmp/atsyneditcmp \
 		Alexey-T:ATBinHex-Lazarus:cad0408:atbinhex/atbinhex \
-		Alexey-T:UniqueInstance:753f823:uniqueinstance/uniqueinstance
+		Alexey-T:UniqueInstance:753f823:uniqueinstance/uniqueinstance \
+		Alexey-T:EncConv:3eb181f:encconv/encconv
 
 DOS2UNIX_FILES=	app/settings_default/default.json setup/debfiles/cudatext.desktop
 
 LAZARUS_PROJECT_FILES=	atflatcontrols/atflatcontrols/atflatcontrols_package.lpk
 LAZARUS_PROJECT_FILES+=	python4lazarus/python4lazarus/python4lazarus_package.lpk
+LAZARUS_PROJECT_FILES+= encconv/encconv/encconv_package.lpk
 LAZARUS_PROJECT_FILES+=	atsynedit/atsynedit/atsynedit_package.lpk
 LAZARUS_PROJECT_FILES+=	emmet/emmet/emmet_package.lpk
 LAZARUS_PROJECT_FILES+=	econtrol/econtrol/econtrol_package.lpk
