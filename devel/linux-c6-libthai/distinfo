@@ -1,7 +1,0 @@
-TIMESTAMP = 1485516180
-SHA256 (centos/libthai-0.1.12-3.el6.i686.rpm) = 5ce4bb31dd76f4ae49eeb396226738c83b98b20f0e2d56070e14a2edd9bf0091
-SIZE (centos/libthai-0.1.12-3.el6.i686.rpm) = 187600
-SHA256 (centos/libthai-0.1.12-3.el6.x86_64.rpm) = 3217a2b6885dd35ff4213498dd054cd1e4322f44832a9deab85f26ec10f493c5
-SIZE (centos/libthai-0.1.12-3.el6.x86_64.rpm) = 186972
-SHA256 (centos/libthai-0.1.12-3.el6.src.rpm) = 82d495eca1aa80b74f65808cfdebcc6836ac99c774826cf97c033a2a62b92fd2
-SIZE (centos/libthai-0.1.12-3.el6.src.rpm) = 851771

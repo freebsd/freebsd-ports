@@ -1,7 +1,0 @@
-This port contains packages from a near-minimal installation of CentOS 6
-Linux.  These packages, in conjunction with the Linux kernel module,
-form the basis of the Linux compatibility environment. It is designed to
-provide a nice user experience by using the FreeBSD configuration for
-corresponding Linux stuff where possible. Because of this any work which
-needs to chroot into the Linux base may not work as expected (no fallthrough
-to the FreeBSD config possible).

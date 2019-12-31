@@ -1,7 +1,0 @@
-TIMESTAMP = 1517428695
-SHA256 (centos/libunwind-1.1-3.el6.i686.rpm) = b8ea40adefa430f28736541f34aa3b204fe6f4558bafe36a01cfdf3bc8a55d01
-SIZE (centos/libunwind-1.1-3.el6.i686.rpm) = 53724
-SHA256 (centos/libunwind-1.1-3.el6.x86_64.rpm) = 542478a089408d384d9d558eba80552c9698c6729914ebc429a96145ce3a9f20
-SIZE (centos/libunwind-1.1-3.el6.x86_64.rpm) = 55836
-SHA256 (centos/libunwind-1.1-3.el6.src.rpm) = 4819f3c9a37430c8d1916f9f56c068555f74edb93e2ae14aff37ab915ca71e1e
-SIZE (centos/libunwind-1.1-3.el6.src.rpm) = 1126451

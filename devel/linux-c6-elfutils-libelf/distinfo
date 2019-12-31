@@ -1,7 +1,0 @@
-TIMESTAMP = 1485514344
-SHA256 (centos/elfutils-libelf-0.164-2.el6.i686.rpm) = 7be7d2b0d1c241c169701c4b79f3d207e22304ff2e587a24cff63189044359e6
-SIZE (centos/elfutils-libelf-0.164-2.el6.i686.rpm) = 208736
-SHA256 (centos/elfutils-libelf-0.164-2.el6.x86_64.rpm) = 9aef2e01d012032410de2602cc41eef4e478f95acb500ea8012f7ce79e24c4d8
-SIZE (centos/elfutils-libelf-0.164-2.el6.x86_64.rpm) = 201916
-SHA256 (centos/elfutils-0.164-2.el6.src.rpm) = 9bb190818fd55b4edbc52f561a0aa48cc4d7b85aef49cec18ead53d8a14f704d
-SIZE (centos/elfutils-0.164-2.el6.src.rpm) = 6094351

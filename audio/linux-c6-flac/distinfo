@@ -1,7 +1,0 @@
-TIMESTAMP = 1485445595
-SHA256 (centos/flac-1.2.1-7.el6_6.i686.rpm) = 205a76001ac677e76ca9455fdebf2ddcdaaaf9cff8523651db23a8c1e444d03e
-SIZE (centos/flac-1.2.1-7.el6_6.i686.rpm) = 259432
-SHA256 (centos/flac-1.2.1-7.el6_6.x86_64.rpm) = 7211ff37e92c809f2d12ce6ea81059087df14fdfd2f59c2eba810d7b47112767
-SIZE (centos/flac-1.2.1-7.el6_6.x86_64.rpm) = 248252
-SHA256 (centos/flac-1.2.1-7.el6_6.src.rpm) = 6c5a6bf61baa48c63f2f529d836888f7b5b2efce964dd212bde4bb1cd74d9282
-SIZE (centos/flac-1.2.1-7.el6_6.src.rpm) = 2016484

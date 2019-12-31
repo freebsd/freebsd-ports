@@ -1,7 +1,0 @@
-TIMESTAMP = 1515426757
-SHA256 (centos/userspace-rcu-0.7.7-1.el6.i686.rpm) = 0e7de375478dd1d48b152d491e9c0d00d59bbd8395e0b2b11202191bcdbde032
-SIZE (centos/userspace-rcu-0.7.7-1.el6.i686.rpm) = 60660
-SHA256 (centos/userspace-rcu-0.7.7-1.el6.x86_64.rpm) = 56f05b388a424103d5a6d543e83b8e3fb643f406885d7829213124188b04cb7c
-SIZE (centos/userspace-rcu-0.7.7-1.el6.x86_64.rpm) = 61684
-SHA256 (centos/userspace-rcu-0.7.7-1.el6.src.rpm) = 14f03c64eab41c4f27497f1d1dc2d04b9a322feee79d33cf9db5e2a89e990117
-SIZE (centos/userspace-rcu-0.7.7-1.el6.src.rpm) = 388947

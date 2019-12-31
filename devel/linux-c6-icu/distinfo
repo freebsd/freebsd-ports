@@ -1,7 +1,0 @@
-TIMESTAMP = 1517426417
-SHA256 (centos/libicu-4.2.1-14.el6.i686.rpm) = d0efb73f5b534ca2c9a7809c62f19643d7ac821397741d1bc1cd533314c80daa
-SIZE (centos/libicu-4.2.1-14.el6.i686.rpm) = 5212140
-SHA256 (centos/libicu-4.2.1-14.el6.x86_64.rpm) = af74050d678f790a112e61a542295e49926f4516850d8026238a6f3cb52f409c
-SIZE (centos/libicu-4.2.1-14.el6.x86_64.rpm) = 5157464
-SHA256 (centos/icu-4.2.1-14.el6.src.rpm) = 3be7a7e71a8d8eeb07fef31f9362922bb09bf95c6684db632c57a015c38dfaf2
-SIZE (centos/icu-4.2.1-14.el6.src.rpm) = 12276736

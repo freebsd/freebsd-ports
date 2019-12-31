@@ -1,5 +1,0 @@
-usr/bin/sqlite3
-usr/lib/libsqlite3.so.0
-usr/lib/libsqlite3.so.0.8.6
-%%PORTDOCS%%%%DOCSDIR%%/README
-usr/share/man/man1/sqlite3.1.gz

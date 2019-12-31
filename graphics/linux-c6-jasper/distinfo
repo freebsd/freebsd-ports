@@ -1,7 +1,0 @@
-TIMESTAMP = 1532349419
-SHA256 (centos/jasper-libs-1.900.1-22.el6.i686.rpm) = 80890891dd50a02b9226e5d1d966c74cfa63afe9aa138450649e124c460e0279
-SIZE (centos/jasper-libs-1.900.1-22.el6.i686.rpm) = 141748
-SHA256 (centos/jasper-libs-1.900.1-22.el6.x86_64.rpm) = abf853c780eb0b91cd03d11ff45bfca0cbef5acc8e3c3397e175a8bacde1f8f9
-SIZE (centos/jasper-libs-1.900.1-22.el6.x86_64.rpm) = 141848
-SHA256 (centos/jasper-1.900.1-22.el6.src.rpm) = 2a03817f971d1c5c5f58a3997c79ebe0085d30da67d44b89ecc39a965402b50d
-SIZE (centos/jasper-1.900.1-22.el6.src.rpm) = 1424537

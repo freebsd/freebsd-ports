@@ -1,7 +1,0 @@
-TIMESTAMP = 1515427058
-SHA256 (centos/lttng-ust-2.4.1-1.el6.i686.rpm) = 83b3202654c99dea190e22005ad78e1478d2ce1be102ee02fde61b017a39d11c
-SIZE (centos/lttng-ust-2.4.1-1.el6.i686.rpm) = 165952
-SHA256 (centos/lttng-ust-2.4.1-1.el6.x86_64.rpm) = cb40bc2cda65e72e40fcc4fdb29f8c7d38f2e55248762edfd04d8023d8e10b4b
-SIZE (centos/lttng-ust-2.4.1-1.el6.x86_64.rpm) = 166360
-SHA256 (centos/lttng-ust-2.4.1-1.el6.src.rpm) = 7dfc79d2b2b38be933d9fc6d3221dc352454e02a0117127d9a126d768231c19c
-SIZE (centos/lttng-ust-2.4.1-1.el6.src.rpm) = 584640

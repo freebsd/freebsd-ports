@@ -1,7 +1,0 @@
-TIMESTAMP = 1485438803
-SHA256 (centos/atk-1.30.0-1.el6.i686.rpm) = 1fb6cdc8bdeaab448dc07d6c326fe402e3170e7b4e9fff84de45c6fc9aeee216
-SIZE (centos/atk-1.30.0-1.el6.i686.rpm) = 198868
-SHA256 (centos/atk-1.30.0-1.el6.x86_64.rpm) = 0627b9fa757608512a7f7fd0f887717212e58f3d8af8e0ca338af73a38d9b65b
-SIZE (centos/atk-1.30.0-1.el6.x86_64.rpm) = 200052
-SHA256 (centos/atk-1.30.0-1.el6.src.rpm) = fc87523ecb6cb944f9452a9da4385c73346acc3714ea494d3110245c4fbce12a
-SIZE (centos/atk-1.30.0-1.el6.src.rpm) = 758480

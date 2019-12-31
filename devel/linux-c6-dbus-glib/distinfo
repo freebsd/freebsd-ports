@@ -1,7 +1,0 @@
-TIMESTAMP = 1485512563
-SHA256 (centos/dbus-glib-0.86-6.el6.i686.rpm) = e1cb0f93ab95f372e8f1db1f5cb478bef50162df83529b30df86d3a2230b15ad
-SIZE (centos/dbus-glib-0.86-6.el6.i686.rpm) = 174260
-SHA256 (centos/dbus-glib-0.86-6.el6.x86_64.rpm) = ac65cfb655e0882ef77326bc1bb9b2eafe8d2c3d945aaa781e9f9ef1ed314a88
-SIZE (centos/dbus-glib-0.86-6.el6.x86_64.rpm) = 173696
-SHA256 (centos/dbus-glib-0.86-6.el6.src.rpm) = 64debf22fe3655502f1afa6e27451b0de83a3a8ac922470ce5694087f656c82f
-SIZE (centos/dbus-glib-0.86-6.el6.src.rpm) = 717593

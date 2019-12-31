@@ -1,7 +1,0 @@
-TIMESTAMP = 1485446288
-SHA256 (centos/audiofile-0.2.6-11.1.el6.i686.rpm) = 0c69612801fba085f31d4efb86516249349ef468629af48497de3480ed02394c
-SIZE (centos/audiofile-0.2.6-11.1.el6.i686.rpm) = 98100
-SHA256 (centos/audiofile-0.2.6-11.1.el6.x86_64.rpm) = 528b304107d7004939cbb7060151091b81eb4696111f0510418e8444a707d89d
-SIZE (centos/audiofile-0.2.6-11.1.el6.x86_64.rpm) = 97244
-SHA256 (centos/audiofile-0.2.6-11.1.el6.src.rpm) = fc01779d488a6430cfe2c437d996cfd42025a1864f2b15bd241325ecafc05f5b
-SIZE (centos/audiofile-0.2.6-11.1.el6.src.rpm) = 291993

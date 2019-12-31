@@ -1,8 +1,0 @@
-These tools are used to convert XML and HTML to and from a line-oriented
-format more amenable to processing by classic Unix pipeline processing
-tools, like grep, sed, awk, cut, shell scripts, and so forth.
-
-The line-oriented format used by these tools looks very much like, but
-is not quite precisely the same as XPath.
-
-WWW: http://www.ofb.net/~egnor/xml2/

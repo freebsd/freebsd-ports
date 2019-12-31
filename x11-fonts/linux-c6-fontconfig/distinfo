@@ -1,7 +1,0 @@
-TIMESTAMP = 1485624655
-SHA256 (centos/fontconfig-2.8.0-5.el6.i686.rpm) = 09cee79c086775d03e0219dc92d82f2803d6936bfe44f0c71f4ff7c33918d4f8
-SIZE (centos/fontconfig-2.8.0-5.el6.i686.rpm) = 190768
-SHA256 (centos/fontconfig-2.8.0-5.el6.x86_64.rpm) = 6a915b6e1ad740994aa9688d70a67ff2b6b72e0ced668794aeb27b2d0f2e237b
-SIZE (centos/fontconfig-2.8.0-5.el6.x86_64.rpm) = 189964
-SHA256 (centos/fontconfig-2.8.0-5.el6.src.rpm) = 8a737297dbb39f12c67f88db1b21b37ef97bed2ca00fa0975b16e264d6953a33
-SIZE (centos/fontconfig-2.8.0-5.el6.src.rpm) = 1565935

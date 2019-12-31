@@ -183,8 +183,6 @@
     SUBDIR += lightdm
     SUBDIR += lightdm-gtk-greeter
     SUBDIR += lilyterm
-    SUBDIR += linux-c6-pixman
-    SUBDIR += linux-c6-xorg-libs
     SUBDIR += linux-c7-libxkbcommon
     SUBDIR += linux-c7-pixman
     SUBDIR += linux-c7-xorg-libs

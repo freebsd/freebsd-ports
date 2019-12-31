@@ -1,7 +1,0 @@
-TIMESTAMP = 1492275799
-SHA256 (centos/openmotif-2.3.3-9.el6.i686.rpm) = 775ce5c711450be88181289c10ab80bc4aafbe3e1671872a4f3ff92b4fb234ea
-SIZE (centos/openmotif-2.3.3-9.el6.i686.rpm) = 1417496
-SHA256 (centos/openmotif-2.3.3-9.el6.x86_64.rpm) = df9a79bb0d7b2866436c7e18ec00e0ed3f93fa681a7f7901c53294dbecc2b6fa
-SIZE (centos/openmotif-2.3.3-9.el6.x86_64.rpm) = 1417404
-SHA256 (centos/openmotif-2.3.3-9.el6.src.rpm) = 0e3ba1af2a3605d1f1910d2a0c58eeaf016f5d90a7d114c6264eeabb369ffaed
-SIZE (centos/openmotif-2.3.3-9.el6.src.rpm) = 6060225

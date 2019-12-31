@@ -1,6 +1,0 @@
-usr/bin/xmlwf
-usr/lib/libexpat.so.1
-usr/lib/libexpat.so.1.5.2
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-usr/share/man/man1/xmlwf.1.gz

@@ -1,7 +1,0 @@
-TIMESTAMP = 1485449225
-SHA256 (centos/libmikmod-3.2.0-10.beta2.el6.i686.rpm) = b8092168a549a2966bdd9a388d13560e9af66deccd7e65b26fa487413e163382
-SIZE (centos/libmikmod-3.2.0-10.beta2.el6.i686.rpm) = 163544
-SHA256 (centos/libmikmod-3.2.0-10.beta2.el6.x86_64.rpm) = d567bd9b175d76f7b468c8459082dfcdef2eba020ab44a597c614d9da6a0ed41
-SIZE (centos/libmikmod-3.2.0-10.beta2.el6.x86_64.rpm) = 164048
-SHA256 (centos/libmikmod-3.2.0-10.beta2.el6.src.rpm) = 61c1ccfe2d9afd2b942fe7ffa2a36d0c8b5a713bd71e8c578df55ef3a053e00e
-SIZE (centos/libmikmod-3.2.0-10.beta2.el6.src.rpm) = 559890

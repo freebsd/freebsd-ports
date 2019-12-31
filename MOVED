@@ -13621,3 +13621,96 @@ java/jakarta-commons-codec|java/apache-commons-codec|2019-12-30|Renamed upstream
 java/jakarta-commons-dbcp|java/apache-commons-dbcp|2019-12-30|Renamed upstream
 java/jakarta-commons-httpclient|java/apache-commons-httpclient|2019-12-30|Renamed upstream
 emulators/linux-c6|emulators/linux-c7|2019-12-31|Removed, part of expired CentOS 6 infrastructure
+accessibility/linux-c6-atk|accessibility/linux-c7-atk|2019-12-31|Has expired: Superseded by CentOS 7
+audio/exaile-devel|audio/exaile|2019-12-31|Has expired: this port is older than audio/exaile
+audio/linux-c6-alsa-lib|audio/linux-c7-alsa-lib|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-alsa-plugins-oss|audio/linux-c7-alsa-plugins-oss|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-alsa-plugins-pulseaudio|audio/linux-c7-alsa-plugins-pulseaudio|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-alsa-utils|audio/linux-c7-alsa-utils|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-flac|audio/linux-c7-flac-libs|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-libaudiofile|audio/linux-c7-audiofile|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-libogg|audio/linux-c7-libogg|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-libsndfile|audio/linux-c7-libsndfile|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-libvorbis|audio/linux-c7-libvorbis|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-mikmod||2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-nas-libs||2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-openal-soft|audio/linux-c7-openal-soft|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-pulseaudio-libs|audio/linux-c7-pulseaudio-libs|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-pulseaudio-utils|audio/linux-c7-pulseaudio-utils|2019-12-31|Has expired: Superseded by CentOS 7
+audio/linux-c6-sdl_mixer|audio/linux-c7-sdl_mixer|2019-12-31|Has expired: Superseded by CentOS 7
+databases/linux-c6-sqlite3|databases/linux-c7-sqlite3|2019-12-31|Has expired: Superseded by CentOS 7
+databases/linux-oracle-instantclient-sqlplus||2019-12-31|Has expired: Depends on deprecated Centos 6 framework
+devel/linux-c6-dbus-glib|devel/linux-c7-dbus-glib|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-dbus-libs|devel/linux-c7-dubs-libs|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-devtools|devel/linux-c7-devtools|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-elfutils-libelf|devel/linux-c7-elfutils-libelf|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-icu|devel/linux-c7-icu|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-libgfortran|devel/linux-c7-libgfortran|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-libglade2|devel/linux-c7-libglade2|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-libpciaccess|devel/linux-c7-libpciaccess|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-libsigc++20|devel/linux-c7-libsigc++20|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-libsoup||2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-libthai|devel/linux-c7-libthai|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-libunwind|devel/linux-c7-libunwind|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-nspr|devel/linux-c7-nspr|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-qt47|devel/linux-c7-qt|2019-12-31|Has expired: Superseded by CentOS 7
+devel/linux-c6-sdl12|devel/linux-c7-sdl12|2019-12-31|Has expired: Superseded by CentOS 7
+dns/linux-c6-libasyncns|dns/linux-c7-libasyncns|2019-12-31|Has expired: Superseded by CentOS 7
+emulators/linux_base-c6|emulators/linux_base-c7|2019-12-31|Has expired: Superseded by CentOS 7
+ftp/linux-c6-curl|ftp/linux-c7-curl|2019-12-31|Has expired: Superseded by CentOS 7
+graphics/cptutils||2019-12-31|Has expired: depends on expired textproc/xml2
+graphics/linux-c6-cairo|graphics/linux-c7-cairo|2019-12-31|Has expired: Superseded by CentOS 7
+graphics/linux-c6-dri|graphics/linux-c7-dri|2019-12-31|Has expired: Superseded by CentOS 7
+graphics/linux-c6-gdk-pixbuf2|graphics/linux-c7-gdk-pixbuf2|2019-12-31|Has expired: Superseded by CentOS 7
+graphics/linux-c6-glx-utils|graphics/linux-c7-glx-utils|2019-12-31|Has expired: Superseded by CentOS 7
+graphics/linux-c6-jasper|graphics/linux-c7-jasper|2019-12-31|Has expired: Superseded by CentOS 7
+graphics/linux-c6-jpeg|graphics/linux-c7-jpeg|2019-12-31|Has expired: Superseded by CentOS 7
+graphics/linux-c6-png|graphics/linux-c7-png|2019-12-31|Has expired: Superseded by CentOS 7
+graphics/linux-c6-sdl_image|graphics/linux-c7-sdl_image|2019-12-31|Has expired: Superseded by CentOS 7
+graphics/linux-c6-sdl_ttf|graphics/linux-c7-sdl_ttf|2019-12-31|Has expired: Superseded by CentOS 7
+graphics/linux-c6-tiff|graphics/linux-c7-tiff|2019-12-31|Has expired: Superseded by CentOS 7
+lang/linux-c6-tcl85|lang/linux-c7-tcl85|2019-12-31|Has expired: Superseded by CentOS 7
+math/blazeiterative||2019-12-31|Has expired: Depends on expiring devel/openmp
+multimedia/linux-c6-libtheora|multimedia/linux-c7-libtheora|2019-12-31|Has expired: Superseded by CentOS 7
+multimedia/linux-c6-libv4l|multimedia/linux-c7-libv4l|2019-12-31|Has expired: Superseded by CentOS 7
+net/linux-c6-avahi-libs|net/linux-c7-avahi-libs|2019-12-31|Has expired: Superseded by CentOS 7
+net/linux-c6-openldap|net/linux-c7-openldap|2019-12-31|Has expired: Superseded by CentOS 7
+net/linux-c6-tcp_wrappers-libs|net/linux-c7-tcp_wrappers-libs|2019-12-31|Has expired: Superseded by CentOS 7
+net/py-soappy|net/py-zeep|2019-12-31|Has expired: Please consider using net/py-zeep as upstream development is stalled  and recommends using another stalled library stud
+print/linux-c6-cups-libs|print/linux-c7-cups-libs|2019-12-31|Has expired: Superseded by CentOS 7
+science/openmx||2019-12-31|Has expired: Depends on expiring devel/openmp
+science/py-PyFR||2019-12-31|Has expired: Depends on expiring devel/openmp
+science/py-phono3py||2019-12-31|Has expired: Depends on expiring devel/openmp
+security/linux-c6-audit-libs||2019-12-31|Has expired: Superseded by CentOS 7
+security/linux-c6-cyrus-sasl2|security/linux-c7-cyrus-sasl2|2019-12-31|Has expired: Superseded by CentOS 7
+security/linux-c6-gnutls|security/linux-c7-gnutls|2019-12-31|Has expired: Superseded by CentOS 7
+security/linux-c6-libgcrypt|security/linux-c7-libgcrypt|2019-12-31|Has expired: Superseded by CentOS 7
+security/linux-c6-libgpg-error|security/linux-c7-libgpg-error|2019-12-31|Has expired: Superseded by CentOS 7
+security/linux-c6-libssh2|security/linux-c7-libssh2|2019-12-31|Has expired: Superseded by CentOS 7
+security/linux-c6-libtasn1|security/linux-c7-libtasn1|2019-12-31|Has expired: Superseded by CentOS 7
+security/linux-c6-nss|security/linux-c7-nss|2019-12-31|Has expired: Superseded by CentOS 7
+security/linux-c6-openssl|security/linux-c7-openssl|2019-12-31|Has expired: Superseded by CentOS 7
+security/linux-c6-pam|security/linux-c7-pam|2019-12-31|Has expired: Superseded by CentOS 7
+security/openssl||2019-12-31|Has expired: OpenSSL 1.0.2 is End-of-Life 2019-12-31 at which  time this port will update to 1.1.1 branch
+sysutils/eventlog||2019-12-31|Has expired: No longer supported by Balabit
+sysutils/linux-c6-lttng-ust|sysutils/linux-c7-lttng-ust|2019-12-31|Has expired: Superseded by CentOS 7
+sysutils/linux-c6-userspace-rcu|sysutils/linux-c7-userspace-rcu|2019-12-31|Has expired: Superseded by CentOS 7
+sysutils/mkdesktop||2019-12-31|Has expired: defunct, will be deleted soon
+sysutils/syslog-ng311|sysutils/syslog-ng|2019-12-31|Has expired: No longer supported by Balabit
+sysutils/syslog-ng315|sysutils/syslog-ng|2019-12-31|Has expired: No longer supported by Balabit
+sysutils/syslog-ng317|sysutils/syslog-ng|2019-12-31|Has expired: No longer supported by Balabit
+sysutils/syslog-ng318|sysutils/syslog-ng|2019-12-31|Has expired: No longer supported by Balabit
+sysutils/syslog-ng319|sysutils/syslog-ng|2019-12-31|Has expired: No longer supported by Balabit
+textproc/linux-c6-aspell|textproc/linux-c7-aspell|2019-12-31|Has expired: Superseded by CentOS 7
+textproc/linux-c6-expat|textproc/linux-c7-expat|2019-12-31|Has expired: Superseded by CentOS 7
+textproc/linux-c6-libxml2|textproc/linux-c7-libxml2|2019-12-31|Has expired: Superseded by CentOS 7
+textproc/xml2||2019-12-31|Has expired: Unfetchable, unmaintained
+www/linux-c6-qt47-webkit|www/linux-c7-qtwebkit|2019-12-31|Has expired: Superseded by CentOS 7
+x11/linux-c6-pixman|x11/linux-c7-pixman|2019-12-31|Has expired: Superseded by CentOS 7
+x11/linux-c6-xorg-libs|x11/linux-c7-xorg-libs|2019-12-31|Has expired: Superseded by CentOS 7
+x11-fonts/linux-c6-fontconfig|x11-fonts/linux-c7-fontconfig|2019-12-31|Has expired: Superseded by CentOS 7
+x11-toolkits/linux-c6-gtk2|x11-toolkits/linux-c7-gtk2|2019-12-31|Has expired: Superseded by CentOS 7
+x11-toolkits/linux-c6-openmotif|x11-toolkits/linux-c7-openmotif|2019-12-31|Has expired: Superseded by CentOS 7
+x11-toolkits/linux-c6-pango|x11-toolkits/linux-c7-pango|2019-12-31|Has expired: Superseded by CentOS 7
+x11-toolkits/linux-c6-qt47-x11|x11-toolkits/linux-c7-qt-x11|2019-12-31|Has expired: Superseded by CentOS 7
+x11-toolkits/linux-c6-tk85|x11-toolkits/linux-c7-tk85|2019-12-31|Has expired: Superseded by CentOS 7
