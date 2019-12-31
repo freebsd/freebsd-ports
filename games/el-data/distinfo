@@ -1,7 +1,7 @@
-TIMESTAMP = 1532763438
-SHA256 (el/el_linux_install_195.sh) = ff45c755db2aeec2ab69f72473216cae25e7530112664c46d65aac0749d13ddb
-SIZE (el/el_linux_install_195.sh) = 57317916
-SHA256 (el/EL_sound_191.zip) = e73046ab03c916d562cda2d243427969678e3bb7a22d98c3b44646b4c3ae5da7
-SIZE (el/EL_sound_191.zip) = 42979628
+TIMESTAMP = 1577818906
+SHA256 (el/el_195_p4_data_files.zip) = 9391d4b012e1a393d841e41c54dc7c6efe1ac915eb1c6b6a1fd5bf24e440c7b8
+SIZE (el/el_195_p4_data_files.zip) = 63874246
+SHA256 (el/EL_sound_191.zip) = 1d7e2e31849b8bcc9519cd431047e1c01fe462840decf59550c7eb57ba6f9399
+SIZE (el/EL_sound_191.zip) = 42979627
 SHA256 (el/EL_music_full.zip) = 1ea4de25081034ac684aaebf127ab6ca8524ba5367532863d84d63837dd631ec
 SIZE (el/EL_music_full.zip) = 65511882
