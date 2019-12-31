@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		cmake shebangfix
+USES=		cmake compiler:c++11-lang shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	alibaba
 GH_PROJECT=	MNN
