@@ -26,7 +26,7 @@ CMAKE_ARGS=	-DFONTCONFIG_LIBRARIES=${LOCALBASE}/lib/libfontconfig.so \
 		-DOPENSSL_LIBRARIES=${OPENSSLDIR}
 CMAKE_ON=	PODOFO_BUILD_SHARED PODOFO_BUILD_STATIC
 USE_LDCONFIG=	yes
-USES=		cmake compiler dos2unix pkgconfig ssl
+USES=		cmake compiler:c++11-lang dos2unix pkgconfig ssl
 
 DOS2UNIX_FILES=	cmake/modules/FindFREETYPE.cmake
 
