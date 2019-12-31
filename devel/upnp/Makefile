@@ -7,7 +7,7 @@ DISTVERSION=	1.10.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	phascolarctos@protonmail.ch
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Universal Plug and Play Software Development Kit
 
 LICENSE=	BSD3CLAUSE

@@ -7,7 +7,7 @@ PORTREVISION?=	2	#whenever PORTREVISION is increased, it must be increased for
 			#the slave port sysutils/burp-devel too
 CATEGORIES=	sysutils
 
-MAINTAINER=	phascolarctos@protonmail.ch
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Network backup and restore program
 
 LICENSE=	AGPLv3 PD

@@ -6,7 +6,7 @@ PORTVERSION=	19.12.2
 DISTVERSIONPREFIX=	Version-
 CATEGORIES=	math
 
-MAINTAINER=	phascolarctos@protonmail.ch
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	WxWidgets GUI for the computer algebra system maxima
 
 LICENSE=	GPLv2

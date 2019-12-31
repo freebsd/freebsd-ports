@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
-MAINTAINER=	phascolarctos@protonmail.ch
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	DjVu base libraries and utilities
 
 LICENSE=	GPLv2+

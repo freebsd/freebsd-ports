@@ -4,7 +4,7 @@ PORTNAME=	dreamchess
 DISTVERSION=	0.3.0
 CATEGORIES=	games
 
-MAINTAINER=	phascolarctos@protonmail.ch
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	OpenGL chess game
 
 LICENSE=	GPLv3+ BSD2CLAUSE BSD3CLAUSE
