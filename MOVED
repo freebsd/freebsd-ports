@@ -13714,3 +13714,4 @@ x11-toolkits/linux-c6-openmotif|x11-toolkits/linux-c7-openmotif|2019-12-31|Has e
 x11-toolkits/linux-c6-pango|x11-toolkits/linux-c7-pango|2019-12-31|Has expired: Superseded by CentOS 7
 x11-toolkits/linux-c6-qt47-x11|x11-toolkits/linux-c7-qt-x11|2019-12-31|Has expired: Superseded by CentOS 7
 x11-toolkits/linux-c6-tk85|x11-toolkits/linux-c7-tk85|2019-12-31|Has expired: Superseded by CentOS 7
+lang/gnatdroid-x86||2019-12-31|Has expired: Unfetchable, unmaintained
