@@ -13620,3 +13620,4 @@ databases/php-memcache|databases/pecl-memcache|2019-12-30|Development from websu
 java/jakarta-commons-codec|java/apache-commons-codec|2019-12-30|Renamed upstream
 java/jakarta-commons-dbcp|java/apache-commons-dbcp|2019-12-30|Renamed upstream
 java/jakarta-commons-httpclient|java/apache-commons-httpclient|2019-12-30|Renamed upstream
+emulators/linux-c6|emulators/linux-c7|2019-12-31|Removed, part of expired CentOS 6 infrastructure
