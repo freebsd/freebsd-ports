@@ -4,7 +4,8 @@ install-strip: install
 	@cd ${DESTDIR}${BIN_PATH} && ${STRIP_CMD} ${PROGS}
 	@-${STRIP_CMD} ${DESTDIR}${BIN_PATH}/afl-clang-fast
 	@-${STRIP_CMD} ${DESTDIR}${BIN_PATH}/afl-gcc-fast
-	@cd ${DESTDIR}${HELPER_PATH} && ${STRIP_CMD} afl-as *.so
+# XXX: strip(1) trips up when stripping all things in HELPER_PATH in one go?
+	@cd ${DESTDIR}${HELPER_PATH} && for f in afl-as *.so; do ${STRIP_CMD} $${f}; done
 
 libdislocator:
 	$(MAKE) -C libdislocator CFLAGS="-I../include ${CFLAGS}"
