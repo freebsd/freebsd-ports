@@ -1,19 +1,25 @@
 # $FreeBSD$
 
 PORTNAME=	OpenFodder
-DISTVERSION=	1.5.3
+DISTVERSION=	1.6.0
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Open source port of Cannon Fodder
 
-LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
+LICENSE=	BSD3CLAUSE GPLv3+ LGPL21+ MIT ZLIB
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/COPYING.BSD.txt
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LGPLv2.1.txt
+LICENSE_FILE_MIT=	${WRKSRC}/COPYING.MIT.txt
+LICENSE_FILE_ZLIB=	${WRKSRC}/COPYING.ZLIB.txt
 
 USES=		compiler:c++14-lang sdl
 USE_GITHUB=	yes
 USE_SDL=	mixer2
-GH_TUPLE=	${PORTNAME}:data:1.6.0:data
+GH_TUPLE=	${PORTNAME}:data:1.7.0:data/Run \
+		${PORTNAME}:scripts:c6f3076:scripts/Run/Scripts
 GH_PROJECT=	${PORTNAME:tl}
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
@@ -39,7 +45,7 @@ post-patch:
 		-e 's,%%h,${DISTVERSIONFULL},' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},' \
-		${WRKSRC}/Source/stdafx.cpp
+		${WRKSRC}/Source/ResourceMan.cpp
 
 post-build-ICONS-on:
 	@for size in 16x16 24x24 32x32 48x48 57x57; do \
@@ -56,8 +62,8 @@ do-test:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Run/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
-	(cd ${WRKSRC_data} && ${COPYTREE_SHARE} "${PORTDATA}" \
-		${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/Run && ${COPYTREE_SHARE} "${PORTDATA}" \
+		 ${STAGEDIR}${DATADIR} "! -name ${PORTNAME} -type f")
 
 do-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" \
