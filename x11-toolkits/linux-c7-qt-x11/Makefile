@@ -20,7 +20,6 @@ LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
 
 CONFLICTS=	linux-c6-qt47-x11-[0-9]*
 DATADIR=	${PREFIX}/usr/share/${PORTNAME}4
-DESCR=		${.CURDIR}/../../devel/linux-c6-qt47/pkg-descr
 
 post-patch:
 	@${RM} -r ${WRKSRC}/usr/share/icons
