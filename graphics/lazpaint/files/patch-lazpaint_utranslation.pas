@@ -1,29 +1,19 @@
---- lazpaint/utranslation.pas	2018-04-26 00:02:18.729349000 -0500
-+++ lazpaint/utranslation.pas	2018-04-26 00:17:20.943460000 -0500
-@@ -8,7 +8,7 @@
-   {$ifdef Darwin}
-   MacOSAll,
-  {$endif}
--  Classes, SysUtils, UConfig, IniFiles;
-+  Classes, SysUtils, UConfig, IniFiles, LazFileUtils, LazUTF8;
- 
- {*************** Language ****************}
- const
-@@ -62,7 +62,7 @@
-       result := GetResourcesPath+'i18n'+PathDelim
-     else
+--- lazpaint/utranslation.pas	2019-12-30 23:16:40.903045000 -0500
++++ lazpaint/utranslation.pas	2019-12-30 23:26:13.503822000 -0500
+@@ -60,10 +60,13 @@
+   {$ELSE}
+     {$IFDEF DARWIN}
+     if DirectoryExists(GetResourcesPath+'i18n') then
+-      result := GetResourcesPath+'i18n'+PathDelim
+-    else
++      result := GetResourcesPath+'i18n'+PathDelim;
      {$ENDIF}
--    result:='i18n'+PathDelim;
-+    result:='%%DATADIR%%'+PathDelim+'i18n'+PathDelim;
+-    result:=ExtractFilePath(Application.ExeName)+'i18n'+PathDelim;
++    {$IFDEF FREEBSD}
++      result:='%%DATADIR%%'+PathDelim+'i18n'+PathDelim;
++    {$ELSE}
++      result:=ExtractFilePath(Application.ExeName)+'i18n'+PathDelim;
++    {$ENDIF}
    {$ENDIF}
- end;
- 
-@@ -76,7 +76,7 @@
- begin
-   Lang:='';
-   FallbackLang:='';
--  LCLGetLanguageIDs(Lang,FallbackLang);
-+  LazGetLanguageIDs(Lang,FallbackLang);
-   result := FallbackLang;
  end;
  
