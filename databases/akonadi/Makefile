@@ -2,6 +2,7 @@
 
 PORTNAME=	akonadi
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	databases kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -28,13 +29,16 @@ CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_SUB=		yes
+OPTIONS_DEFAULT=	MYSQL
 
 MYSQL_DESC=		Install MySQL Qt plugin and server
 MYSQL_USES=	mysql:server qt:5
 MYSQL_USE=		QT=sql-mysql_run
+MYSQL_CMAKE_BOOL=	AKONADI_BUILD_MYSQL
 
 PGSQL_DESC=		Install PostgreSQL Qt plugin
 # Do not add a dependency on PostgreSQL server as someone preferring
@@ -43,16 +47,35 @@ PGSQL_DESC=		Install PostgreSQL Qt plugin
 #PGSQL_USE=	PGSQL=server
 PGSQL_USES=	qt:5
 PGSQL_USE=		QT=sql-pgsql_run
+PGSQL_CMAKE_BOOL=	AKONADI_BUILD_PGSQL
 
 SQLITE_DESC=		Enable SQLite backend
 SQLITE_USES=		qt:5 sqlite:3
 SQLITE_USE=		QT=sql-sqlite3_run
-SQLITE_CMAKE_ON=	-DAKONADI_BUILD_QSQLITE:BOOL=ON
-SQLITE_CMAKE_OFF=	-DAKONADI_BUILD_QSQLITE:BOOL=OFF
+SQLITE_CMAKE_BOOL=	AKONADI_BUILD_QSQLITE
 
-OPTIONS_DEFAULT=	MYSQL
+.include <bsd.port.options.mk>
 
-OPTIONS_DEFINE=	DOCS
+# Multiple backends may be enabled, but there can be only
+# one default. Set a default (the user can change it locally)
+# based on the selected backends, preferring MySQL (if enabled).
+#
+# If you build this port with only a single backend selected,
+# that one will be the default. This is useful for users of SQLite.
+.if ${PORT_OPTIONS:MMYSQL}
+CMAKE_ARGS+=	-DDATABASE_BACKEND=MYSQL
+.else
+.  if ${PORT_OPTIONS:MPGSQL}
+CMAKE_ARGS+=	-DDATABASE_BACKEND=POSTGRES
+.  else
+.    if ${PORT_OPTIONS:MSQLITE}
+CMAKE_ARGS+=	-DDATABASE_BACKEND=SQLITE
+.    else
+# Nothing else selected, very odd
+CMAKE_ARGS+=	-DDATABASE_BACKEND=MYSQL
+.    endif
+.  endif
+.endif
 
 post-patch:
 # To avoid overflow, MySQL settings need to be lower than
