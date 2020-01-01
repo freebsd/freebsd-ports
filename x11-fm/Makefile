@@ -31,7 +31,6 @@
     SUBDIR += sushi
     SUBDIR += tdfsb
     SUBDIR += thunar
-    SUBDIR += thunar-vfs
     SUBDIR += twander
     SUBDIR += wcmcommander
     SUBDIR += worker

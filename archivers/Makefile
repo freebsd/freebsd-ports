@@ -216,7 +216,6 @@
     SUBDIR += snappy
     SUBDIR += snappy-java
     SUBDIR += snzip
-    SUBDIR += squeeze
     SUBDIR += squsq
     SUBDIR += star
     SUBDIR += stuffit

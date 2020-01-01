@@ -13716,3 +13716,5 @@ x11-toolkits/linux-c6-qt47-x11|x11-toolkits/linux-c7-qt-x11|2019-12-31|Has expir
 x11-toolkits/linux-c6-tk85|x11-toolkits/linux-c7-tk85|2019-12-31|Has expired: Superseded by CentOS 7
 lang/gnatdroid-x86||2019-12-31|Has expired: Unfetchable, unmaintained
 net/py-tweepy||2019-12-31|Has expired: Broken for more than 6 months
+archivers/squeeze|archivers/xarchiver|2020-01-01|Removed, dead upstream and depends on expired x11-fm/thunar-vfs
+x11-fm/thunar-vfs||2020-01-01|Has expired: Functionality included in Thunar
