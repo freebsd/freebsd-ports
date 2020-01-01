@@ -11,6 +11,8 @@ COMMENT=	SDR receiver using liquidsdr
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+
 RUN_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/lib/libEGL.so:graphics/mesa-libs \
 		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
