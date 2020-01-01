@@ -29,6 +29,7 @@ share/gnome/help/gnucash-guide/C/figures/accts_DefaultIncomeAccounts.png
 share/gnome/help/gnucash-guide/C/figures/accts_toplevel.png
 share/gnome/help/gnucash-guide/C/figures/accts_tree.png
 share/gnome/help/gnucash-guide/C/figures/basics_AccountRelationships.png
+share/gnome/help/gnucash-guide/C/figures/basics_AccountRelationships.svg
 share/gnome/help/gnucash-guide/C/figures/basics_Accounts.png
 share/gnome/help/gnucash-guide/C/figures/basics_AccountsSampleQIF.png
 share/gnome/help/gnucash-guide/C/figures/basics_CheckAccount.png
@@ -244,6 +245,7 @@ share/gnome/help/gnucash-guide/de/figures/accts_DefaultIncomeAccounts.png
 share/gnome/help/gnucash-guide/de/figures/accts_toplevel.png
 share/gnome/help/gnucash-guide/de/figures/accts_tree.png
 share/gnome/help/gnucash-guide/de/figures/basics_AccountRelationships.png
+share/gnome/help/gnucash-guide/de/figures/basics_AccountRelationships.svg
 share/gnome/help/gnucash-guide/de/figures/basics_Accounts.png
 share/gnome/help/gnucash-guide/de/figures/basics_AccountsSampleQIF.png
 share/gnome/help/gnucash-guide/de/figures/basics_CheckAccount.png
@@ -447,6 +449,7 @@ share/gnome/help/gnucash-guide/it/figures/accts_DefaultIncomeAccounts.png
 share/gnome/help/gnucash-guide/it/figures/accts_toplevel.png
 share/gnome/help/gnucash-guide/it/figures/accts_tree.png
 share/gnome/help/gnucash-guide/it/figures/basics_AccountRelationships.png
+share/gnome/help/gnucash-guide/it/figures/basics_AccountRelationships.svg
 share/gnome/help/gnucash-guide/it/figures/basics_Accounts.png
 share/gnome/help/gnucash-guide/it/figures/basics_AccountsSampleQIF.png
 share/gnome/help/gnucash-guide/it/figures/basics_CheckAccount.png
@@ -635,6 +638,7 @@ share/gnome/help/gnucash-guide/ja/figures/accts_DefaultIncomeAccounts.png
 share/gnome/help/gnucash-guide/ja/figures/accts_toplevel.png
 share/gnome/help/gnucash-guide/ja/figures/accts_tree.png
 share/gnome/help/gnucash-guide/ja/figures/basics_AccountRelationships.png
+share/gnome/help/gnucash-guide/ja/figures/basics_AccountRelationships.svg
 share/gnome/help/gnucash-guide/ja/figures/basics_Accounts.png
 share/gnome/help/gnucash-guide/ja/figures/basics_AccountsSampleQIF.png
 share/gnome/help/gnucash-guide/ja/figures/basics_CheckAccount.png
@@ -849,6 +853,7 @@ share/gnome/help/gnucash-guide/pt/figures/accts_DefaultIncomeAccounts.png
 share/gnome/help/gnucash-guide/pt/figures/accts_toplevel.png
 share/gnome/help/gnucash-guide/pt/figures/accts_tree.png
 share/gnome/help/gnucash-guide/pt/figures/basics_AccountRelationships.png
+share/gnome/help/gnucash-guide/pt/figures/basics_AccountRelationships.svg
 share/gnome/help/gnucash-guide/pt/figures/basics_Accounts.png
 share/gnome/help/gnucash-guide/pt/figures/basics_AccountsSampleQIF.png
 share/gnome/help/gnucash-guide/pt/figures/basics_CheckAccount.png
@@ -1044,6 +1049,7 @@ share/gnome/help/gnucash-guide/ru/figures/accts_DefaultIncomeAccounts.png
 share/gnome/help/gnucash-guide/ru/figures/accts_toplevel.png
 share/gnome/help/gnucash-guide/ru/figures/accts_tree.png
 share/gnome/help/gnucash-guide/ru/figures/basics_AccountRelationships.png
+share/gnome/help/gnucash-guide/ru/figures/basics_AccountRelationships.svg
 share/gnome/help/gnucash-guide/ru/figures/basics_Accounts.png
 share/gnome/help/gnucash-guide/ru/figures/basics_AccountsSampleQIF.png
 share/gnome/help/gnucash-guide/ru/figures/basics_CheckAccount.png
@@ -1248,6 +1254,15 @@ share/gnome/help/gnucash-help/C/figures/Help_Book_Options_Accounts.png
 share/gnome/help/gnucash-help/C/figures/Help_Book_Options_Budgeting.png
 share/gnome/help/gnucash-help/C/figures/Help_Book_Options_Business.png
 share/gnome/help/gnucash-help/C/figures/Help_Book_Options_Counters.png
+share/gnome/help/gnucash-help/C/figures/Help_CSV_Import_Transactions_Delete.png
+share/gnome/help/gnucash-help/C/figures/Help_CSV_Import_Transactions_Save.png
+share/gnome/help/gnucash-help/C/figures/Help_CSV_Import_transactions_Preview.png
+share/gnome/help/gnucash-help/C/figures/Help_CSV_Transaction_Import_Assistant.png
+share/gnome/help/gnucash-help/C/figures/Help_Choose_Export_Settings.png
+share/gnome/help/gnucash-help/C/figures/Help_Import_Map_Editor.png
+share/gnome/help/gnucash-help/C/figures/Help_Import_MatchPicker.png
+share/gnome/help/gnucash-help/C/figures/Help_Import_QIF_Druid.png
+share/gnome/help/gnucash-help/C/figures/Help_Import_Transaction_matcher_1.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_AccntPeriod.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_Accnts.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_Business.png
