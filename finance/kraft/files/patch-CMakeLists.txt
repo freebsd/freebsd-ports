@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2020-01-01 20:22:21 UTC
++++ CMakeLists.txt
+@@ -60,7 +60,8 @@ endif()
+ 
+ find_package(Ctemplate REQUIRED)
+ 
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-suggest-override")
++# Not applicable to base clang in 12.0
++# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-suggest-override")
+ # disable the warning about null-pointer zero. FIXME.
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-zero-as-null-pointer-constant")
+ #option(QTINDICATE_DISABLE "Disable support for notifications via indicator")

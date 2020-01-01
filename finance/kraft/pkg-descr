@@ -1,0 +1,23 @@
+Kraft is a free software project that helps to create office documents
+especially for small enterprise operators such as handcrafters. These
+features are provided:
+
+ - Customer management, deeply integrated in the KDE infrastructure
+   using KAddressbook
+ - Automatted creation of offers, invoices and similar documents
+ - Text templates
+ - Material management
+
+Kraft comes with a very clear and simple user interface. The central
+form to work on a document provides a good overview over the entire
+document but avoids overwhelming display of not needed information.
+In the Focus there is always the currently important area such as
+document header, item list or document footer.
+
+Kraft supports calculated items in documents, items with manually
+entered pricing and On-Demand and alternative items.
+Documents can be copied completely to shorten the step to create similar
+documents. Followup documents such as an invoice following an offer can
+be created from the predocuments easily.
+
+WWW: http://volle-kraft-voraus.de/

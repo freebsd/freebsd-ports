@@ -38,6 +38,7 @@
     SUBDIR += homebank
     SUBDIR += jgnash
     SUBDIR += kmymoney
+    SUBDIR += kraft
     SUBDIR += ktoblzcheck
     SUBDIR += ledger
     SUBDIR += ledgersmb12
