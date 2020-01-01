@@ -1,0 +1,14 @@
+This adds a configure knob to Qt itself, which responds to the
+FreeBSD Makefile knobs; otherwise, we can't turn off finding
+OpenAL when it is installed.
+
+--- src/multimedia/configure.json.orig	2019-10-15 04:21:48 UTC
++++ src/multimedia/configure.json
+@@ -12,6 +12,7 @@
+             "directshow": { "type": "boolean" },
+             "wmf": { "type": "boolean" },
+             "gstreamer": { "type": "optionalString", "values": [ "no", "yes", "0.10", "1.0" ] },
++            "openal": "boolean",
+             "pulseaudio": "boolean"
+         }
+     },
