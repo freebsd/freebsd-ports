@@ -1,7 +1,0 @@
-Couchdb is a document database server, accessible via a RESTful JSON API. It has
-an ad-hoc and schema-free with a flat address space. CouchDB is distributed,
-featuring robust, incremental replication with bi-directional conflict detection
-and management. It features a table oriented reporting engine that uses
-Javascript as a query language.
-
-WWW: http://couchdb.org/
