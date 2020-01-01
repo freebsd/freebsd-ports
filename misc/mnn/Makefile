@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mnn
-DISTVERSION=	0.2.1.5
+DISTVERSION=	0.2.1.6
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +20,9 @@ USE_LDCONFIG=	yes
 
 CXXFLAGS+=	-pthread
 LDFLAGS+=	-pthread
+
+CFLAGS+=	-fPIC # workaround for https://github.com/alibaba/MNN/issues/553
+CXXFLAGS+=	-fPIC
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
