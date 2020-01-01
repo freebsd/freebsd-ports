@@ -39,7 +39,6 @@
     SUBDIR += android-file-transfer-qt5
     SUBDIR += ansible
     SUBDIR += ansible-sysrc
-    SUBDIR += ansible1
     SUBDIR += ansible23
     SUBDIR += ansible24
     SUBDIR += ansible25
@@ -119,7 +118,6 @@
     SUBDIR += bsdhwmon
     SUBDIR += bsdinfo
     SUBDIR += bsdisks
-    SUBDIR += bsdploy
     SUBDIR += bsdstats
     SUBDIR += bstack
     SUBDIR += btsixad
@@ -992,7 +990,6 @@
     SUBDIR += py-packet-python
     SUBDIR += py-pkginfo
     SUBDIR += py-ploy
-    SUBDIR += py-ploy_ansible
     SUBDIR += py-ploy_ec2
     SUBDIR += py-ploy_ezjail
     SUBDIR += py-ploy_fabric
