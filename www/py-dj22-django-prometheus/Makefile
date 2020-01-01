@@ -2,6 +2,7 @@
 
 PORTNAME=	django-prometheus
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj22-
@@ -31,6 +32,6 @@ MEMCACHED_DESC=		Memcached distributed memory caching support
 MEMCACHED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>=0:databases/py-python-memcached@${PY_FLAVOR}
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mysqlclient>=0:databases/py-mysqlclient@${PY_FLAVOR}
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=0:databases/py-psycopg2@${PY_FLAVOR}
-REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-redis>=4.8:www/py-django-redis@${PY_FLAVOR}
+REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dj22-django-redis>=4.8:www/py-dj22-django-redis@${PY_FLAVOR}
 
 .include <bsd.port.mk>
