@@ -12,9 +12,6 @@ COMMENT=	C++ math library for dense and sparse arithmetic
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expiring devel/openmp
-EXPIRATION_DATE=	2020-02-01
-
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		openblas>0:math/openblas \
 		openmp>0:devel/openmp
