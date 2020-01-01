@@ -3,6 +3,7 @@
 
 PORTNAME=	sidekiq
 PORTVERSION=	5.2.7
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	5
@@ -23,8 +24,12 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/sidekiq bin/sidekiqctl
+PLIST_FILES=	bin/sidekiq5 bin/sidekiqctl5
 
 PORTSCOUT=	limit:^5\.
+
+post-patch:
+	@${MV} ${WRKSRC}/bin/sidekiq ${WRKSRC}/bin/sidekiq5
+	@${MV} ${WRKSRC}/bin/sidekiqctl ${WRKSRC}/bin/sidekiqctl5
 
 .include <bsd.port.mk>

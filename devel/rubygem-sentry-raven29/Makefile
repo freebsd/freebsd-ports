@@ -3,6 +3,7 @@
 
 PORTNAME=	sentry-raven
 PORTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	29
@@ -20,8 +21,11 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/raven
+PLIST_FILES=	bin/raven29
 
 PORTSCOUT=	limit:^2\.9\.
+
+post-patch:
+	@${MV} ${WRKSRC}/exe/raven ${WRKSRC}/exe/raven29
 
 .include <bsd.port.mk>
