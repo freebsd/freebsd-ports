@@ -11,6 +11,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	The "meta-port" for version 2 of the Python interpreter
 
+DEPRECATED=	EOLed upstream
+EXPIRATION_DATE=	2020-12-31
+
 USES=		python:run
 
 NO_ARCH=	yes
