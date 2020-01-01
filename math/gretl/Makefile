@@ -18,8 +18,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjson-glib-1.0.so:devel/json-glib \
 		libmpfr.so:math/mpfr
 
-USES=		fortran gmake gnome localbase libtool ncurses pathfix pkgconfig \
-		readline tar:xz
+USES=		compiler:c11 fortran gmake gnome localbase libtool ncurses \
+		pathfix pkgconfig readline tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -69,7 +69,7 @@ ODBC_CONFIGURE_WITH=	odbc
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 OPENMP_CONFIGURE_ENABLE=	openmp
-OPENMP_USES=		compiler:openmp
+OPENMP_USE=		GCC=yes
 
 R_DESC=			libR support
 R_CONFIGURE_WITH=	libR
