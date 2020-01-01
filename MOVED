@@ -13687,7 +13687,6 @@ security/linux-c6-libtasn1|security/linux-c7-libtasn1|2019-12-31|Has expired: Su
 security/linux-c6-nss|security/linux-c7-nss|2019-12-31|Has expired: Superseded by CentOS 7
 security/linux-c6-openssl|emulators/linux_base-c7|2019-12-31|Has expired: Superseded by CentOS 7
 security/linux-c6-pam||2019-12-31|Has expired: Superseded by CentOS 7
-security/openssl||2019-12-31|Has expired: OpenSSL 1.0.2 is End-of-Life 2019-12-31 at which  time this port will update to 1.1.1 branch
 sysutils/eventlog||2019-12-31|Has expired: No longer supported by Balabit
 sysutils/linux-c6-lttng-ust|sysutils/linux-c7-lttng-ust|2019-12-31|Has expired: Superseded by CentOS 7
 sysutils/linux-c6-userspace-rcu|sysutils/linux-c7-userspace-rcu|2019-12-31|Has expired: Superseded by CentOS 7
