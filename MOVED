@@ -9972,9 +9972,9 @@ devel/alf||2018-03-02|Has expired: Abandonware, unused in the ports tree
 net/remmina-plugin-gnome|net/remmina-plugin-secret|2018-03-04|Renamed upstream
 databases/php71-memcache|databases/php-memcache@php71|2018-03-08|Merge into a flavorized version
 databases/php72-memcache|databases/php-memcache@php72|2018-03-08|Merge into a flavorized version
-ftp/php71-fastdfs|ftp/php-fastdfs@php71|2018-03-08|Merge into flavorized version
+ftp/php71-fastdfs|ftp/php-fastdfs@php72|2018-03-08|Merge into flavorized version
 ftp/php72-fastdfs|ftp/php-fastdfs@php72|2018-03-08|Merge into flavorized version
-www/unit-php71|www/unit-php@php71|2018-03-08|Merge into flavorized version
+www/unit-php71|www/unit-php@php72|2018-03-08|Merge into flavorized version
 www/unit-php72|www/unit-php@php72|2018-03-08|Merge into flavorized version
 databases/php70-memcached|databases/php-memcached|2018-03-08|Move to flavorized version
 www/openxmldir||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user
