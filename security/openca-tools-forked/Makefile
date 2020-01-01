@@ -12,7 +12,7 @@ COMMENT=	Tools to deal with SCEP and PKCS7 messages
 
 LICENSE=	APACHE20
 
-BROKEN_SSL=	openssl111
+BROKEN_SSL=	openssl
 
 USES=		gmake perl5 ssl
 

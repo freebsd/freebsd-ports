@@ -52,7 +52,7 @@ CRYP_OPEN_CONFIGURE_ON=	--with-crypto-backend=openssl --with-openssl=${OPENSSLBA
 
 .include <bsd.port.options.mk>
 
-.if ${SSL_DEFAULT:Mlibressl*} || ${SSL_DEFAULT:Mopenssl111}
+.if ${SSL_DEFAULT:Mlibressl*} || ${SSL_DEFAULT:Mopenssl}
 CONFIGURE_ARGS+=	--disable-gost
 .endif
 
