@@ -148,6 +148,7 @@
     SUBDIR += blas
     SUBDIR += blasfeo
     SUBDIR += blaze
+    SUBDIR += blazeiterative
     SUBDIR += blis
     SUBDIR += blitz++
     SUBDIR += blocksolve95

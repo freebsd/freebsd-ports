@@ -13670,7 +13670,6 @@ graphics/linux-c6-sdl_image|graphics/linux-c7-sdl_image|2019-12-31|Has expired: 
 graphics/linux-c6-sdl_ttf|graphics/linux-c7-sdl_ttf|2019-12-31|Has expired: Superseded by CentOS 7
 graphics/linux-c6-tiff|graphics/linux-c7-tiff|2019-12-31|Has expired: Superseded by CentOS 7
 lang/linux-c6-tcl85|lang/linux-c7-tcl85|2019-12-31|Has expired: Superseded by CentOS 7
-math/blazeiterative||2019-12-31|Has expired: Depends on expiring devel/openmp
 multimedia/linux-c6-libtheora|multimedia/linux-c7-libtheora|2019-12-31|Has expired: Superseded by CentOS 7
 multimedia/linux-c6-libv4l|multimedia/linux-c7-libv4l|2019-12-31|Has expired: Superseded by CentOS 7
 net/linux-c6-avahi-libs|net/linux-c7-avahi-libs|2019-12-31|Has expired: Superseded by CentOS 7
@@ -13678,9 +13677,6 @@ net/linux-c6-openldap|net/linux-c7-openldap|2019-12-31|Has expired: Superseded b
 net/linux-c6-tcp_wrappers-libs|net/linux-c7-tcp_wrappers-libs|2019-12-31|Has expired: Superseded by CentOS 7
 net/py-soappy|net/py-zeep|2019-12-31|Has expired: Please consider using net/py-zeep as upstream development is stalled  and recommends using another stalled library stud
 print/linux-c6-cups-libs|print/linux-c7-cups-libs|2019-12-31|Has expired: Superseded by CentOS 7
-science/openmx||2019-12-31|Has expired: Depends on expiring devel/openmp
-science/py-PyFR||2019-12-31|Has expired: Depends on expiring devel/openmp
-science/py-phono3py||2019-12-31|Has expired: Depends on expiring devel/openmp
 security/linux-c6-audit-libs||2019-12-31|Has expired: Superseded by CentOS 7
 security/linux-c6-cyrus-sasl2|security/linux-c7-cyrus-sasl2|2019-12-31|Has expired: Superseded by CentOS 7
 security/linux-c6-gnutls|security/linux-c7-gnutls|2019-12-31|Has expired: Superseded by CentOS 7
