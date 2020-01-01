@@ -5,6 +5,9 @@ DISTVERSIONPREFIX=	intel-${PORTNAME}-
 DISTVERSION=	19.4.1
 CATEGORIES=	multimedia
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	f17dd87c7f57.patch:-p1 # https://github.com/intel/gmmlib/pull/67
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Memory Management Library
 
@@ -21,9 +24,7 @@ GH_ACCOUNT=	intel
 CMAKE_ARGS=	-DBUILD_TYPE:STRING="${CMAKE_BUILD_TYPE}" \
 		-DGMMLIB_MARCH:STRING="${CPUTYPE}"
 
-OPTIONS_DEFINE=	DEBUG TEST
-
-DEBUG_CFLAGS=	-D_DEBUG
+OPTIONS_DEFINE=	TEST
 
 # XXX Unbundle googletest
 TEST_CMAKE_BOOL=	RUN_TEST_SUITE
