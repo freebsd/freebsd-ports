@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	hexchat:irc/hexchat
 RUN_DEPENDS=	hexchat:irc/hexchat
 
-USES=		gnome pkgconfig ssl tar:bz2
+USES=		tar:bz2 pkgconfig ssl gnome
 USE_GNOME=	glib20
 
 CFLAGS+=	-I${LOCALBASE}/include/glib-2.0

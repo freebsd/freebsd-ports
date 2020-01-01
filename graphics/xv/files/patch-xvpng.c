@@ -480,8 +480,8 @@
 -      commentsize += strlen(info_ptr->text[i].key) + 1 +
 -                     info_ptr->text[i].text_length + 2;
 +    for (i = 0; i < _num_text; i++)
-+      commentsize += strlen(_text[i].key) + 1 +
-+                     _text[i].text_length + 2;
++      commentsize += strlen(_text[i].key) + 2 +
++                     _text[i].text_length + _text[i].itxt_length + 1;
  
      if ((pinfo->comment = malloc(commentsize)) == NULL) {
        png_warning(png_ptr,"can't allocate comment string");
