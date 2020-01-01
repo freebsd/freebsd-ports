@@ -18,8 +18,8 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		alias compiler:c11 pkgconfig ncurses
 
-CFLAGS+=	-I${NCURSESINC}
-LDFLAGS+=	-L${NCURSESLIB}
+CFLAGS+=	-I${NCURSESINC} -I${LOCALBASE}/include
+LDFLAGS+=	-L${NCURSESLIB} -L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO
 
@@ -46,9 +46,6 @@ TOKYOCABINET_BTREE_CONFIGURE_ON=	--enable-tcb=btree
 TOKYOCABINET_MHASH_CONFIGURE_ON=	--enable-tcb=memhash
 TOKYOCABINET_BTREE_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 TOKYOCABINET_MHASH_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
-
-post-patch:
-	@${REINPLACE_CMD} -e "s/=ncursesw/=${NCURSES_IMPL}/g" ${WRKSRC}/configure
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
