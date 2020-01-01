@@ -40,6 +40,7 @@ share/pixmaps/quiterss.png
 %%DATADIR%%/lang/quiterss_zh_TW.qm
 %%DATADIR%%/sound/notification.wav
 %%DATADIR%%/style/Rstyle_v1.2.css
+%%DATADIR%%/style/dark.qss
 %%DATADIR%%/style/gray.qss
 %%DATADIR%%/style/green.qss
 %%DATADIR%%/style/news.css
@@ -48,3 +49,4 @@ share/pixmaps/quiterss.png
 %%DATADIR%%/style/purple.qss
 %%DATADIR%%/style/system.qss
 %%DATADIR%%/style/system2.qss
+%%DATADIR%%/style/web_dark.css

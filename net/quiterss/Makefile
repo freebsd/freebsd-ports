@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quiterss
-PORTVERSION=	0.19.1
+PORTVERSION=	0.19.2
 CATEGORIES=	net
 MASTER_SITES=	http://quiterss.org/files/${PORTVERSION}/
 DISTNAME=	QuiteRSS-${PORTVERSION}-src
@@ -13,10 +13,11 @@ COMMENT=	Open-source cross-platform RSS/Atom news feeds reader
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang desktop-file-utils pkgconfig \
+USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig \
 		qmake:outsource qt:5 sqlite
 USE_QT=		buildtools_build linguisttools_build core xml gui widgets \
 		network multimedia printsupport webkit sql sql-sqlite3_run
+USE_GL=		gl
 
 NO_WRKSUBDIR=	yes
 
