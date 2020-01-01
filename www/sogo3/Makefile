@@ -3,13 +3,16 @@
 
 PORTNAME=		sogo3
 PORTVERSION=		3.2.10
-PORTREVISION=	8
+PORTREVISION=		9
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
 
 MAINTAINER=		acm@FreeBSD.org
 COMMENT=		Groupware server with a focus on scalability and open standards
+
+DEPRECATED=		Deprecated, replaced by www/sogo4
+EXPIRATION_DATE=	2020-01-31
 
 LICENSE=		GPLv2
 
