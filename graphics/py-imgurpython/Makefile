@@ -11,6 +11,9 @@ COMMENT=	Python client for the Imgur API
 
 LICENSE=	MIT
 
+DEPRECATED=	No longer supported by upstream
+EXPIRATION_DATE=2020-01-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
 NO_ARCH=	yes
