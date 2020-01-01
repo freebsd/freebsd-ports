@@ -42,7 +42,7 @@ GMP_CONFIGURE_WITH=	gnump
 
 .include <bsd.port.pre.mk>
 
-.if (${OPSYS} == FreeBSD && ${OSVERSION} > 1200084) || ${SSL_DEFAULT:Mopenssl111} || ${SSL_DEFAULT:M*-devel}
+.if (${OPSYS} == FreeBSD && ${OSVERSION} > 1200084) || ${SSL_DEFAULT:Mopenssl} || ${SSL_DEFAULT:M*-devel}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-openssl11
 .endif
 

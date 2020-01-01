@@ -39,7 +39,7 @@ X11_CONFIGURE_WITH=x
 USES+=		ssl
 .endif
 
-.if (${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085) || ${SSL_DEFAULT} == openssl111
+.if (${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085) || ${SSL_DEFAULT} == openssl
 # Requires LibreSSL for old SSL interface
 BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
 CPPFLAGS+=		-nostdinc -I/usr/include -I${WRKDIR}/libressl/include
@@ -52,8 +52,8 @@ pre-configure:
 	@cd `${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl`${PREFIX} \
 	    && ${FIND} -E . ! -name *.so\* | ${CPIO} -dump ${WRKDIR}/libressl >/dev/null 2>&1
 .else
-BROKEN_SSL=	openssl111
-BROKEN_SSL_REASON_openssl111=	incomplete definition of type 'struct rsa_st'
+BROKEN_SSL=	openssl
+BROKEN_SSL_REASON_openssl=	incomplete definition of type 'struct rsa_st'
 .endif
 
 post-patch:

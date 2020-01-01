@@ -31,8 +31,8 @@ UNSAFESSL_ALL_TARGET=	sslscan
 
 .include <bsd.port.pre.mk>
 
-.if empty(PORT_OPTIONS:MUNSAFESSL) && ${SSL_DEFAULT:Mopenssl111}
-BROKEN=		Does not build with openssl111
+.if empty(PORT_OPTIONS:MUNSAFESSL) && ${SSL_DEFAULT:Mopenssl}
+BROKEN=		Does not build with openssl
 .endif
 
 .include <bsd.port.post.mk>

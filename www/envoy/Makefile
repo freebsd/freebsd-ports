@@ -13,7 +13,7 @@ COMMENT=	Edge and service proxy for cloud-native applications
 LICENSE=	APACHE20
 
 BROKEN_i386=	makes a lot of 64-bit assumptions (patches welcome)
-BROKEN_SSL=	base openssl openssl111 libressl libressl-devel
+BROKEN_SSL=	base openssl libressl libressl-devel
 BROKEN_SSL_REASON=	requires BoringSSL
 
 BUILD_DEPENDS=	${LOCALBASE}/include/absl/base/thread_annotations.h:devel/abseil \

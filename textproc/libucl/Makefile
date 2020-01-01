@@ -54,7 +54,7 @@ UTILS_CONFIGURE_ENABLE=	utils
 .include <bsd.port.options.mk>
 
 # https://github.com/vstakhov/libucl/issues/203
-.if ${PORT_OPTIONS:MSIGNATURES} && ((${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == openssl111)
+.if ${PORT_OPTIONS:MSIGNATURES} && ((${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == openssl)
 BROKEN=	Signatures checking support does not build with OpenSSL 1.1.1
 .endif
 
