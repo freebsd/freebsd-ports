@@ -18,8 +18,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtidy.so:www/tidy-lib \
 		libxslt.so:textproc/libxslt
 
-BROKEN_SSL=	openssl111
-BROKEN_SSL_REASON_openssl111=	member access into incomplete type 'DH' (aka 'dh_st')
+BROKEN_SSL=	openssl
+BROKEN_SSL_REASON_openssl=	member access into incomplete type 'DH' (aka 'dh_st')
 
 USES=		gmake libtool localbase:ldflags pathfix \
 		pkgconfig ssl

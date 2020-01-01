@@ -13,7 +13,7 @@ COMMENT=	Verifier performing validation in the DNS notify/transfer-chain
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=	openssl111
+BROKEN_SSL=	openssl
 
 USE_RC_SUBR=	credns
 

@@ -17,7 +17,7 @@ MASTERDIR=	${.CURDIR}/../xmms2
 USES=		python:2.7 ssl
 USE_PYTHON=	flavors
 
-BROKEN_SSL=	openssl111
+BROKEN_SSL=	openssl
 
 PLIST=		${.CURDIR}/pkg-plist
 

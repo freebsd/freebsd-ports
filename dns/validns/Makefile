@@ -12,7 +12,7 @@ COMMENT=	High performance DNS/DNSSEC zone validator
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_SSL=	openssl111
+BROKEN_SSL=	openssl
 
 LIB_DEPENDS=	libJudy.so:devel/judy
 

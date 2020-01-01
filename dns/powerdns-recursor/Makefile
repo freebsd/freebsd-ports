@@ -51,7 +51,7 @@ SETUID_VARS=		GROUPS=pdns \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} != openssl111
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} != openssl
 CONFIGURE_ARGS+=	--enable-libdecaf \
 			--enable-libsodium
 LIB_DEPENDS+=		libdecaf.so:security/libdecaf \
