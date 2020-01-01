@@ -22,6 +22,7 @@ man/man1/tarantoolctl.1.gz
 %%DATADIR%%/luarocks/cfg.lua
 %%DATADIR%%/luarocks/command_line.lua
 %%DATADIR%%/luarocks/config_cmd.lua
+%%DATADIR%%/luarocks/core/hardcoded.lua
 %%DATADIR%%/luarocks/deps.lua
 %%DATADIR%%/luarocks/dir.lua
 %%DATADIR%%/luarocks/doc.lua
@@ -68,7 +69,6 @@ man/man1/tarantoolctl.1.gz
 %%DATADIR%%/luarocks/require.lua
 %%DATADIR%%/luarocks/search.lua
 %%DATADIR%%/luarocks/show.lua
-%%DATADIR%%/luarocks/site_config.lua
 %%DATADIR%%/luarocks/tools/patch.lua
 %%DATADIR%%/luarocks/tools/tar.lua
 %%DATADIR%%/luarocks/tools/zip.lua
