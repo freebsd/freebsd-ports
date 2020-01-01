@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.67.0
+PORTVERSION=	3.68.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -128,6 +128,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-kinesisvideo>=1<2:devel/rubygem-aws-sdk-kinesisvideo \
 		rubygem-aws-sdk-kinesisvideoarchivedmedia>=1<2:devel/rubygem-aws-sdk-kinesisvideoarchivedmedia \
 		rubygem-aws-sdk-kinesisvideomedia>=1<2:devel/rubygem-aws-sdk-kinesisvideomedia \
+		rubygem-aws-sdk-kinesisvideosignalingchannels>=1<2:devel/rubygem-aws-sdk-kinesisvideosignalingchannels \
 		rubygem-aws-sdk-kms>=1<2:devel/rubygem-aws-sdk-kms \
 		rubygem-aws-sdk-lakeformation>=1<2:devel/rubygem-aws-sdk-lakeformation \
 		rubygem-aws-sdk-lambda>=1<2:devel/rubygem-aws-sdk-lambda \
