@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	5
+PORTREVISION=	6
 PKGNAMESUFFIX=		-activesync
 
 MAINTAINER=		acm@FreeBSD.org
