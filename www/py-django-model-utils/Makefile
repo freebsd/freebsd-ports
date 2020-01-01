@@ -20,6 +20,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+# django-model-utils 4.0.0+ requires Django 2.0+
 PORTSCOUT=	limit:^3\.
 
 .include <bsd.port.mk>
