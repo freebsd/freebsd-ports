@@ -3,7 +3,7 @@
 PORTNAME=	cwm
 DISTVERSION=	6.3
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://chneukirchen.org/releases/
+MASTER_SITES=	https://leahneukirchen.org/releases/
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Minimalistic window manager for X11 based on evilwm

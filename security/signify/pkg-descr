@@ -6,4 +6,4 @@ non-standard OpenBSD tools.
 This port comes with OpenBSD's release public keys allowing you to
 verify an OpenBSD release before installation.
 
-WWW: https://github.com/chneukirchen/outils/
+WWW: https://github.com/leahneukirchen/outils/

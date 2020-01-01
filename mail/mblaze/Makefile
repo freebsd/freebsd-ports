@@ -15,7 +15,7 @@ USES=		gmake perl5
 USE_GITHUB=	yes
 USE_PERL5=	test
 
-GH_ACCOUNT=	chneukirchen
+GH_ACCOUNT=	leahneukirchen
 MAKEFILE=	GNUmakefile
 TEST_TARGET=	check
 

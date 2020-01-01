@@ -19,4 +19,4 @@ Benefits over cron(8):
 - variable slack
 - ad-hoc usage possible, just run the program from command line
 
-WWW: https://github.com/chneukirchen/snooze
+WWW: https://github.com/leahneukirchen/snooze
