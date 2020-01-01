@@ -26,8 +26,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 
 CONFLICTS=	gnash-devel-[0-9]*
 
-USES=		cpe tar:bzip2 compiler:c++11-lang autoreconf gl gmake gnome \
-		libtool pkgconfig jpeg gnome gl desktop-file-utils xorg
+USES=		cpe tar:bzip2 compiler:c++11-lang autoreconf gmake libtool \
+		pkgconfig jpeg gnome gl desktop-file-utils xorg
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 WANT_GSTREAMER=	yes
