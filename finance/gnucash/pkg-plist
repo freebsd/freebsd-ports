@@ -294,6 +294,8 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/invoice.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/job-report.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/locale-specific/de_DE.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/locale-specific/us.go
+lib/gnucash/scm/ccache/2.2/gnucash/report/new-aging.go
+lib/gnucash/scm/ccache/2.2/gnucash/report/new-owner-report.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/owner-report.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/payables.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/receipt.go
@@ -332,12 +334,10 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/portfolio.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/price-scatter.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/reconcile-report.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/register.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/sx-summary.go
 %%TEST%%lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/test/test-cash-flow.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/transaction.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/trial-balance.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-easy.go
-lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-fancy.go
+lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-css.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-footer.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-head-or-tail.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/stylesheet-plain.go
@@ -1105,6 +1105,8 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/scm/gnucash/report/job-report.scm
 %%DATADIR%%/scm/gnucash/report/locale-specific/de_DE.scm
 %%DATADIR%%/scm/gnucash/report/locale-specific/us.scm
+%%DATADIR%%/scm/gnucash/report/new-aging.scm
+%%DATADIR%%/scm/gnucash/report/new-owner-report.scm
 %%DATADIR%%/scm/gnucash/report/owner-report.scm
 %%DATADIR%%/scm/gnucash/report/payables.scm
 %%DATADIR%%/scm/gnucash/report/receipt.css
@@ -1145,12 +1147,10 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/scm/gnucash/report/standard-reports/price-scatter.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/reconcile-report.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/register.scm
-%%DATADIR%%/scm/gnucash/report/standard-reports/sx-summary.scm
 %%TEST%%%%DATADIR%%/scm/gnucash/report/standard-reports/test/test-cash-flow.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/transaction.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/trial-balance.scm
-%%DATADIR%%/scm/gnucash/report/stylesheet-easy.scm
-%%DATADIR%%/scm/gnucash/report/stylesheet-fancy.scm
+%%DATADIR%%/scm/gnucash/report/stylesheet-css.scm
 %%DATADIR%%/scm/gnucash/report/stylesheet-footer.scm
 %%DATADIR%%/scm/gnucash/report/stylesheet-head-or-tail.scm
 %%DATADIR%%/scm/gnucash/report/stylesheet-plain.scm
