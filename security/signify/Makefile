@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
 USE_GITHUB=	yes
-GH_ACCOUNT=	chneukirchen
+GH_ACCOUNT=	leahneukirchen
 GH_PROJECT=	outils
 
 ALL_TARGET=	src/usr.bin/signify/signify

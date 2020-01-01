@@ -11,7 +11,7 @@ COMMENT=	Run a command at a particular time
 LICENSE=	CC0-1.0
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	chneukirchen
+GH_ACCOUNT=	leahneukirchen
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" MANDIR="${PREFIX}/man"
 

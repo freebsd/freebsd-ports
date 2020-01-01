@@ -8,4 +8,4 @@ Benefits over xargs:
 - No shell involved unless -s is used.
 - {} replacing possible with multiple arguments.
 
-WWW: https://github.com/chneukirchen/xe/
+WWW: https://github.com/leahneukirchen/xe/
