@@ -100,6 +100,7 @@
     SUBDIR += mlan3
     SUBDIR += morse
     SUBDIR += multimon-ng
+    SUBDIR += nanovna-saver
     SUBDIR += nasawash
     SUBDIR += ncid
     SUBDIR += nec2c
