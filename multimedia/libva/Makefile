@@ -42,4 +42,7 @@ X11_USES=		xorg
 X11_USE=		XORG=x11,xorgproto,xext,xfixes
 X11_MESON_YES=		with_x11
 
+post-patch:
+	@${REINPLACE_CMD} 's,/etc,${PREFIX}&,' ${WRKSRC}/va/va.c
+
 .include <bsd.port.mk>
