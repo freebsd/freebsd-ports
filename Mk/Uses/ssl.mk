@@ -10,7 +10,7 @@
 #
 # DEFAULT_VERSIONS+=	ssl=<openssl variant>
 #
-# Variants being base, openssl, openssl111, libressl, and libressl-devel.
+# Variants being base, openssl, libressl, and libressl-devel.
 #
 # The Makefile sets these variables:
 # OPENSSLBASE		- "/usr" or ${LOCALBASE}

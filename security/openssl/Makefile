@@ -3,10 +3,10 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.1.1d
+PORTEPOCH=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
-PKGNAMESUFFIX=	111
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
