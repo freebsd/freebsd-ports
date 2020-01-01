@@ -1,10 +1,10 @@
-TIMESTAMP = 1577187622
-SHA256 (charmbracelet-glow-v0.1.3_GH0.tar.gz) = 3c7e531bb2b04c62f302dd84547493c73fa1fc5c83282fa23405a5da82182797
-SIZE (charmbracelet-glow-v0.1.3_GH0.tar.gz) = 493449
+TIMESTAMP = 1577906995
+SHA256 (charmbracelet-glow-v0.1.6_GH0.tar.gz) = a0848b1f4865251e445b6d88e98cbc44a4dfa835fc0a705fb79c1ed372bef2bc
+SIZE (charmbracelet-glow-v0.1.6_GH0.tar.gz) = 493549
 SHA256 (alecthomas-chroma-v0.7.0_GH0.tar.gz) = 845c2fa532ec6dcc77e4e0c659def1b4724fd6bd15bb935b779970667fb40cd3
 SIZE (alecthomas-chroma-v0.7.0_GH0.tar.gz) = 8457919
-SHA256 (charmbracelet-glamour-3a479d0c8515_GH0.tar.gz) = 92c8170c50ddcbec3b853f61be8180e7cbbfc68d4c968fc4b5a993e24c6bebdc
-SIZE (charmbracelet-glamour-3a479d0c8515_GH0.tar.gz) = 497285
+SHA256 (charmbracelet-glamour-3bd1742b4822_GH0.tar.gz) = a8d92d59f9f1400b34bbd0b8050296f28ec819a4c0efde7d145b8bd844a553de
+SIZE (charmbracelet-glamour-3bd1742b4822_GH0.tar.gz) = 513071
 SHA256 (danwakefield-fnmatch-cbb64ac3d964_GH0.tar.gz) = 7ebff38d382142f9220d2cfcb4731d0ae90cdef71238c94a15c35f8aa746007f
 SIZE (danwakefield-fnmatch-cbb64ac3d964_GH0.tar.gz) = 4955
 SHA256 (dlclark-regexp2-v1.2.0_GH0.tar.gz) = 9b4d25630d0ce86bcd518d79ce47365a84c7c75de2334b2708f1bddcc1df47fe
