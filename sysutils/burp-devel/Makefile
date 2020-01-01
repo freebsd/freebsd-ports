@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTVERSION=	2.3.18
-PORTREVISION=	1	#this is a slave port that needs PORTREVISION to be tracked separately
+PORTVERSION=	2.3.20
+PORTREVISION=	0	#this is a slave port that needs PORTREVISION to be tracked separately
 PKGNAMESUFFIX=	-devel
 
 COMMENT=	Network backup and restore program (development)
