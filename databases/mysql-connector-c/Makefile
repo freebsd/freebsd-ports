@@ -13,8 +13,8 @@ COMMENT=	MySQL database connector for C
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_SSL=	openssl111
-BROKEN_SSL_REASON_openssl111=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
+BROKEN_SSL=	openssl
+BROKEN_SSL_REASON_openssl=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
 
 USES=		cmake compiler:features mysql ssl
 CMAKE_ARGS+=	-DOPENSSL_INCLUDE_DIR="${OPENSSLINC}"

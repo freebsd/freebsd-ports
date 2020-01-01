@@ -16,7 +16,7 @@ COMMENT=	Library for posting electronic mail
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-BROKEN_SSL=	openssl111
+BROKEN_SSL=	openssl
 
 USES=		gmake libtool tar:bzip2
 GNU_CONFIGURE=	yes

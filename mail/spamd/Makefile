@@ -12,7 +12,7 @@ COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_SSL=	openssl111
+BROKEN_SSL=	openssl
 
 USE_RC_SUBR?=	obspamd obspamlogd
 USES=		ssl

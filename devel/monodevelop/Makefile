@@ -84,7 +84,7 @@ EXPIRATION_DATE=	2020-01-10
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	fails to compile: incomplete definition of type 'struct bio_st'
 BROKEN_FreeBSD_13=	fails to compile: incomplete definition of type 'struct bio_st'
-.elif ${SSL_DEFAULT} == openssl111
+.elif ${SSL_DEFAULT} == openssl
 BROKEN=			fails to compile: incomplete definition of type 'struct bio_st'
 .endif
 

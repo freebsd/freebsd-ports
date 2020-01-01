@@ -20,8 +20,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 
 DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
 
-BROKEN_SSL=	openssl111
-BROKEN_SSL_REASON_openssl111=	'configure: error: "Error: libcrypto required."'
+BROKEN_SSL=	openssl
+BROKEN_SSL_REASON_openssl=	'configure: error: "Error: libcrypto required."'
 
 USES=			autoreconf pkgconfig gmake compiler:c++11-lang \
 			libtool pathfix ssl

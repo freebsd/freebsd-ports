@@ -11,8 +11,8 @@ MASTER_SITES=	GNU/gnu-arch \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Original arch source control management CLI written in C
 
-BROKEN_SSL=	openssl111
-BROKEN_SSL_REASON_openssl111=	incomplete definition of type 'struct X509_name_entry_st'
+BROKEN_SSL=	openssl
+BROKEN_SSL_REASON_openssl=	incomplete definition of type 'struct X509_name_entry_st'
 
 BUILD_DEPENDS=	gpatch:devel/patch \
 		gdiff:textproc/diffutils \
