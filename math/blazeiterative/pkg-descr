@@ -1,0 +1,21 @@
+A set of iterative linear system solvers intended for use with the Blaze
+library, a high-performance C++ linear algebra library. The API is currently
+based on a tag-dispatch system to choose a particular algorithm.
+
+Currently implemented algorithms:
+* Conjugate Gradient (CG)
+* BiCGSTAB
+
+Planned algorithms:
+* Preconditioned CG
+* Preconditioned BiCGSTAB
+* (Preconditioned) BiCGSTAB(l)
+* GMRES
+* Arnoldi
+* Lanczos
+
+Potential algorithms (if sufficient interest):
+* LSQR
+* LSMR
+
+WWW: https://github.com/tjolsen/BlazeIterative

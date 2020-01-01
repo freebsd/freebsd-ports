@@ -1,0 +1,9 @@
+This software calculates phonon-phonon interaction and related properties using
+the supercell approach. For example, the following physical properties are
+obtained:
+* Lattice thermal conductivity (RTA and direct solution of LBTE)
+* Phonon lifetime/linewidth
+* Imaginary part of self energy
+* Joint density of states (JDOS) and weighted-JDOS
+
+WWW: https://atztogo.github.io/phono3py/
