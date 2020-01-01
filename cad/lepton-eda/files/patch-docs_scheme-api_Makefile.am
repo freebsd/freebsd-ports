@@ -1,0 +1,14 @@
+--- docs/scheme-api/Makefile.am.orig	2019-10-09 16:39:51 UTC
++++ docs/scheme-api/Makefile.am
+@@ -4,10 +4,8 @@ AM_MAKEINFOHTMLFLAGS = --css-ref=lepton-
+ 
+ EXTRA_DIST = lepton-scheme.css
+ 
+-html-local:
++all: all-am html
+ 	$(MKDIR_P) $(builddir)/lepton-scheme.html/
+ 	cp -fv $(srcdir)/lepton-scheme.css $(builddir)/lepton-scheme.html/
+ 
+-all-local: html
+-
+ install-data-local: install-html
