@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200101:
+  AFFECTS: users of security/openssl and security/openssl111
+  AUTHOR: brnrd@FreeBSD.org
+
+  The openssl port was removed on 2019-12-31, subsequently the openssl111
+  port was renamed to openssl on 2020-01-01.
+
+  The shared library version of OpenSSL has been bumped.
+
+  Users of DEFAULT_VERSIONS= ssl=openssl111 must update this to
+  ssl=openssl. 
+
+  You must rebuild all ports that depend on OpenSSL if you use OpenSSL
+  from ports.
+
 20191226:
   AFFECTS: users of sysutils/dsbmd
   AUTHOR: mk@freeshell.de
