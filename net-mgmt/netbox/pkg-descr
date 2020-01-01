@@ -12,4 +12,4 @@ management:
 - Data circuits - Long-haul communications circuits and providers
 - Secrets - Encrypted storage of sensitive credentials
 
-WWW: https://github.com/digitalocean/netbox
+WWW: https://github.com/netbox-community/netbox
