@@ -3,13 +3,16 @@
 
 PORTNAME=		sope3
 PORTVERSION=		3.2.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=		devel gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOPE-${PORTVERSION}
 
 MAINTAINER=		acm@FreeBSD.org
 COMMENT=		Extensive set of GNUstep web application frameworks
+
+DEPRECATED=		Deprecated, replaced by devel/sope4
+EXPIRATION_DATE=	2020-01-31
 
 LICENSE=		LGPL20
 
