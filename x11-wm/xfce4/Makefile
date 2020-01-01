@@ -16,7 +16,7 @@ RUN_DEPENDS=	xfwm4:x11-wm/xfce4-wm \
 
 USES=	metaport
 
-OPTIONS_DEFINE=		APPFINDER GREYBIRD GTK2ENGINE ICONS LIGHTDM MOUSEPAD NOTIFY ORAGE PRINT SQUEEZE \
+OPTIONS_DEFINE=		APPFINDER GREYBIRD GTK2ENGINE ICONS LIGHTDM MOUSEPAD NOTIFY ORAGE PRINT \
 			TERMINAL XPM
 OPTIONS_DEFAULT=	APPFINDER GREYBIRD ICONS MOUSEPAD NOTIFY TERMINAL
 APPFINDER_RUN_DEPENDS=	xfce4-appfinder:misc/xfce4-appfinder
@@ -34,8 +34,6 @@ NOTIFY_RUN_DEPENDS=	xfce4-notifyd-config:deskutils/xfce4-notifyd
 ORAGE_RUN_DEPENDS=	orage:deskutils/orage
 ORAGE_DESC=		Calendar
 PRINT_RUN_DEPENDS=	xfprint4:print/xfce4-print
-SQUEEZE_RUN_DEPENDS=	squeeze:archivers/squeeze
-SQUEEZE_DESC=		Archive manager
 TERMINAL_RUN_DEPENDS=	xfce4-terminal:x11/xfce4-terminal
 TERMINAL_DESC=		Terminal emulator
 XPM_RUN_DEPENDS=	xfce4-power-manager:sysutils/xfce4-power-manager
