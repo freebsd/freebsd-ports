@@ -3,7 +3,7 @@
 
 PORTNAME=	graphene
 PORTVERSION=	2.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aniso8601>=3<7:devel/py-aniso8601@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphql-core2>=2.1<3:devel/py-graphql-core2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}graphql-relay>=2<3:devel/py-graphql-relay@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}graphql-relay2>=2<3:devel/py-graphql-relay2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0<2:devel/py-six@${PY_FLAVOR}
 
 USES=		python
