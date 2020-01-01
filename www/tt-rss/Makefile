@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	g20191009
+PORTVERSION=	g20191222
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	https://git.tt-rss.org/git/tt-rss/archive/
+MASTER_SITES=	https://git.tt-rss.org/fox/tt-rss/archive/
 DISTNAME=	${GIT_TAGNAME}
 DIST_SUBDIR=	${PORTNAME}
 
@@ -21,7 +21,7 @@ REINPLACE_ARGS=	-i ""
 SHEBANG_FILES=	lib/dojo-src/rebuild-dojo.sh utils/extract-i18n-js.pl
 WRKSRC=		${WRKDIR}/tt-rss
 
-GIT_TAGNAME=	81bf1125a
+GIT_TAGNAME=	5448a9462
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -68,7 +68,6 @@ PHP2FIX=	config.php-dist update.php update_daemon2.php
 SCRIPTS=	update.php update_daemon2.php
 
 pre-configure:
-	${REINPLACE_CMD} -E "1,/define.*VERSION_STATIC/s/([0-9]+\.[0-9]+)/\1 (${GIT_TAGNAME})/" ${WRKSRC}/include/version.php
 .for script in ${PHP2FIX}
 	${REINPLACE_CMD} -e 's|/usr/bin/php|${LOCALBASE}/bin/php|'	\
 		-e 's|/usr/bin/env php| ${LOCALBASE}/bin/php|'		\
@@ -88,6 +87,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/icons/	# Not used for fresh installation
 	${TOUCH} ${STAGEDIR}${WWWDIR}/icons/.empty
 	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${STAGEDIR}${DATADIR}
+	${ECHO} "${OPSYS}:${PORTVERSION}:${GIT_TAGNAME}" > "${STAGEDIR}${WWWDIR}/version_static.txt"
 
 	${MV} ${STAGEDIR}${WWWDIR}/config.php-dist ${STAGEDIR}${WWWDIR}/config.php.sample
 

@@ -93,7 +93,6 @@
 %%WWWDIR%%/include/sanity_check.php
 %%WWWDIR%%/include/sanity_config.php
 %%WWWDIR%%/include/sessions.php
-%%WWWDIR%%/include/version.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/index.php
 %%WWWDIR%%/js/AppBase.js
@@ -2289,6 +2288,8 @@
 %%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/el_GR/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/el_GR/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/eo/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/eo/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/es_LA/LC_MESSAGES/messages.mo
@@ -2299,6 +2300,7 @@
 %%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/hu_HU/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/hu_HU/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/id/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.mo
@@ -2560,6 +2562,7 @@
 %%WWWDIR%%/schema/versions/mysql/136.sql
 %%WWWDIR%%/schema/versions/mysql/137.sql
 %%WWWDIR%%/schema/versions/mysql/138.sql
+%%WWWDIR%%/schema/versions/mysql/139.sql
 %%WWWDIR%%/schema/versions/pgsql/3.sql
 %%WWWDIR%%/schema/versions/pgsql/4.sql
 %%WWWDIR%%/schema/versions/pgsql/5.sql
@@ -2696,6 +2699,7 @@
 %%WWWDIR%%/schema/versions/pgsql/136.sql
 %%WWWDIR%%/schema/versions/pgsql/137.sql
 %%WWWDIR%%/schema/versions/pgsql/138.sql
+%%WWWDIR%%/schema/versions/pgsql/139.sql
 %%WWWDIR%%/templates/digest_template.txt
 %%WWWDIR%%/templates/digest_template_html.txt
 %%WWWDIR%%/templates/email_article_template.txt
@@ -2704,12 +2708,14 @@
 %%WWWDIR%%/templates/otp_disabled_template.txt
 %%WWWDIR%%/templates/password_change_template.txt
 %%WWWDIR%%/templates/resetpass_link_template.txt
-%%WWWDIR%%/tests/ApiTest.php
 %%WWWDIR%%/themes.local/.empty
 %%WWWDIR%%/themes/.empty
 %%WWWDIR%%/themes/compact.css
 %%WWWDIR%%/themes/compact.css.map
 %%WWWDIR%%/themes/compact.less
+%%WWWDIR%%/themes/light.css
+%%WWWDIR%%/themes/light.css.map
+%%WWWDIR%%/themes/light.less
 %%WWWDIR%%/themes/night.css
 %%WWWDIR%%/themes/night.css.map
 %%WWWDIR%%/themes/night.less
@@ -2717,16 +2723,11 @@
 %%WWWDIR%%/themes/night_blue.css
 %%WWWDIR%%/themes/night_blue.css.map
 %%WWWDIR%%/themes/night_blue.less
+%%WWWDIR%%/version_static.txt
 @mode u=rx
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
 %%WWWDIR%%/utils/extract-i18n-js.pl
-%%WWWDIR%%/utils/gitlab-ci/check-schema.sh
-%%WWWDIR%%/utils/gitlab-ci/config-template.php
-%%WWWDIR%%/utils/gitlab-ci/nginx-default
-%%WWWDIR%%/utils/gitlab-ci/php-lint.sh
-%%WWWDIR%%/utils/gitlab-ci/phpmd-ruleset.xml
-%%WWWDIR%%/utils/gitlab-ci/phpmd.sh
 @mode
 %%WWWDIR%%/utils/localized_schema.txt
 @mode u=rx
@@ -2753,11 +2754,9 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/vendor/Psr/Log/Test
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/vendor/Psr/Log
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/vendor/OTPHP
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/utils/gitlab-ci
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/utils
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/themes.local
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/themes
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tests
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/templates
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/schema/versions/pgsql
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/schema/versions/mysql
