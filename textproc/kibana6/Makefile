@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kibana
-PORTVERSION=	6.8.5
+PORTVERSION=	6.8.6
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
