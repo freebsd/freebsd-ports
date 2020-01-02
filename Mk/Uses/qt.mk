@@ -16,6 +16,8 @@
 # USE_QT		- List of Qt modules to depend on, with optional '_build'
 #			  and '_run' suffixes. Define it empty to include this file
 #			  without depending on Qt ports.
+#
+# MAINTAINER:	kde@FreeBSD.org
 
 .if !defined(_QT_MK_INCLUDED)
 _QT_MK_INCLUDED=	qt.mk

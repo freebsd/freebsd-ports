@@ -10,6 +10,8 @@
 #
 # Usage
 #    qt-dist:<version>[,yes|modulename]
+#
+# MAINTAINER:	kde@FreeBSD.org
 
 .if !defined(_QT_DIST_MK_INCLUDED)
 _QT_DIST_MK_INCLUDED=	qt-dist.mk
