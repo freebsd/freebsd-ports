@@ -19,7 +19,7 @@ COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 LIB_DEPENDS=	libpng.so:graphics/png
 
 EXTRAS=		1pl2 2
-USES=		gnome perl5 pkgconfig shebangfix tar:bzip2
+USES=		compiler:c++11-lang gnome perl5 pkgconfig shebangfix tar:bzip2
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
 USE_GNOME=	gtk20
@@ -51,7 +51,7 @@ post-extract:
 .endfor
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,g++,${CXX},' -e 's,-O6,${CXXFLAGS},' \
+	@${REINPLACE_CMD} -e 's,g++,${CXX},' -e 's|-O6|${CXXFLAGS}|' \
 		${WRKSRC}/configure
 
 .if empty(PORT_OPTIONS:MJOYSTICK)
