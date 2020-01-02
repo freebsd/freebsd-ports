@@ -7,7 +7,7 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.a
  Bundle-Vendor: %providerName
 -Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.aarch64;singleton:=true
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.aarch64;singleton:=true
- Bundle-Version: 1.1.1000.qualifier
+ Bundle-Version: 1.1.1100.qualifier
  Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.5.0)"
 -Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=aarch64))
 -Bundle-Localization: launcher.gtk.linux.aarch64
@@ -23,7 +23,7 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.a
    <groupId>org.eclipse.equinox</groupId>
 -  <artifactId>org.eclipse.equinox.launcher.gtk.linux.aarch64</artifactId>
 +  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.aarch64</artifactId>
-   <version>1.1.1000-SNAPSHOT</version>
+   <version>1.1.1100-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
    <properties>
@@ -31,7 +31,7 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.a
 +    <os>freebsd</os>
      <ws>gtk</ws>
      <arch>aarch64</arch>
-   </properties>
+     <skipAPIAnalysis>true</skipAPIAnalysis>
 diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.amd64/.project rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.amd64/.project
 --- rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
@@ -52,7 +52,7 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.a
  Bundle-Vendor: %providerName
 -Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.x86_64;singleton:=true
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.amd64;singleton:=true
- Bundle-Version: 1.1.1000.qualifier
+ Bundle-Version: 1.1.1100.qualifier
  Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.6.0)"
 -Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=x86_64))
 -Bundle-Localization: launcher.gtk.linux.x86_64
@@ -72,13 +72,13 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.a
 diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.amd64/pom.xml rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.amd64/pom.xml
 --- rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -18,13 +18,13 @@
+@@ -18,14 +18,14 @@
      <relativePath>../../launcher-binary-parent</relativePath>
    </parent>
    <groupId>org.eclipse.equinox</groupId>
 -  <artifactId>org.eclipse.equinox.launcher.gtk.linux.x86_64</artifactId>
 +  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.amd64</artifactId>
-   <version>1.1.1000-SNAPSHOT</version>
+   <version>1.1.1100-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
    <properties>
@@ -87,88 +87,7 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.a
      <ws>gtk</ws>
 -    <arch>x86_64</arch>
 +    <arch>amd64</arch>
-   </properties>
- </project>
-diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.armv7/META-INF/MANIFEST.MF rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.armv7/META-INF/MANIFEST.MF
---- rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.armv7/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-+++ rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.armv7/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-@@ -2,9 +2,9 @@
- Bundle-ManifestVersion: 2
- Bundle-Name: %pluginName
- Bundle-Vendor: %providerName
--Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.arm;singleton:=true
-+Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.armv7;singleton:=true
- Bundle-Version: 1.1.1000.qualifier
- Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.5.0)"
--Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=arm))
--Bundle-Localization: launcher.gtk.linux.arm
-+Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=armv7))
-+Bundle-Localization: launcher.gtk.freebsd.armv7
- Eclipse-BundleShape: dir
-diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.armv7/pom.xml rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.armv7/pom.xml
---- rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.armv7/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.armv7/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -18,13 +18,13 @@
-     <relativePath>../../launcher-binary-parent</relativePath>
-   </parent>
-   <groupId>org.eclipse.equinox</groupId>
--  <artifactId>org.eclipse.equinox.launcher.gtk.linux.arm</artifactId>
-+  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.armv7</artifactId>
-   <version>1.1.1000-SNAPSHOT</version>
-   <packaging>eclipse-plugin</packaging>
- 
-   <properties>
--    <os>linux</os>
-+    <os>freebsd</os>
-     <ws>gtk</ws>
--    <arch>arm</arch>
-+    <arch>armv7</arch>
-   </properties>
- </project>
-diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.i386/META-INF/MANIFEST.MF rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.i386/META-INF/MANIFEST.MF
---- rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.i386/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-+++ rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.i386/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-@@ -2,9 +2,9 @@
- Bundle-ManifestVersion: 2
- Bundle-Name: %pluginName
- Bundle-Vendor: %providerName
--Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.x86;singleton:=true
-+Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.i386;singleton:=true
- Bundle-Version: 1.1.1000.qualifier
- Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.6.0)"
--Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=x86))
--Bundle-Localization: launcher.gtk.linux.x86
-+Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=i386))
-+Bundle-Localization: launcher.gtk.freebsd.i386
- Eclipse-BundleShape: dir
-diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.i386/launcher.gtk.linux.x86.properties rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.i386/launcher.gtk.linux.x86.properties
---- rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.i386/launcher.gtk.linux.x86.properties	0000-00-00 00:00:00.000000000 +0000
-+++ rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.i386/launcher.gtk.linux.x86.properties	0000-00-00 00:00:00.000000000 +0000
-@@ -11,5 +11,5 @@
- # Contributors:
- #     IBM Corporation - initial API and implementation
- ###############################################################################
--pluginName = Equinox Launcher Linux X86 Fragment
-+pluginName = Equinox Launcher FreeBSD/i386 Fragment
- providerName = Eclipse.org - Equinox
-diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.i386/pom.xml rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.i386/pom.xml
---- rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.i386/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.i386/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -18,13 +18,13 @@
-     <relativePath>../../launcher-binary-parent</relativePath>
-   </parent>
-   <groupId>org.eclipse.equinox</groupId>
--  <artifactId>org.eclipse.equinox.launcher.gtk.linux.x86</artifactId>
-+  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.i386</artifactId>
-   <version>1.1.1000-SNAPSHOT</version>
-   <packaging>eclipse-plugin</packaging>
- 
-   <properties>
--    <os>linux</os>
-+    <os>freebsd</os>
-     <ws>gtk</ws>
--    <arch>x86</arch>
-+    <arch>i386</arch>
+     <skipAPIAnalysis>true</skipAPIAnalysis>
    </properties>
  </project>
 diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.powerpc64/.project rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.powerpc64/.project
@@ -191,7 +110,7 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.p
  Bundle-Vendor: %providerName
 -Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.ppc64le;singleton:=true
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.powerpc64;singleton:=true
- Bundle-Version: 1.1.1000.qualifier
+ Bundle-Version: 1.1.1100.qualifier
  Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.6.0)"
 -Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=ppc64le))
 -Bundle-Localization: launcher.gtk.linux.ppc64le
@@ -201,13 +120,13 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.p
 diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.powerpc64/pom.xml rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.powerpc64/pom.xml
 --- rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.powerpc64/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.powerpc64/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -18,13 +18,13 @@
+@@ -18,14 +18,14 @@
      <relativePath>../../launcher-binary-parent</relativePath>
    </parent>
    <groupId>org.eclipse.equinox</groupId>
 -  <artifactId>org.eclipse.equinox.launcher.gtk.linux.ppc64le</artifactId>
 +  <artifactId>org.eclipse.equinox.launcher.gtk.freebsd.powerpc64</artifactId>
-   <version>1.1.1000-SNAPSHOT</version>
+   <version>1.1.1100-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
    <properties>
@@ -216,65 +135,9 @@ diff -ru rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.freebsd.p
      <ws>gtk</ws>
 -    <arch>ppc64le</arch>
 +    <arch>powerpc64</arch>
+     <skipAPIAnalysis>true</skipAPIAnalysis>
    </properties>
  </project>
-diff -ru rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/internal/framework/EquinoxConfiguration.java rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/internal/framework/EquinoxConfiguration.java
---- rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/internal/framework/EquinoxConfiguration.java	0000-00-00 00:00:00.000000000 +0000
-+++ rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/internal/framework/EquinoxConfiguration.java	0000-00-00 00:00:00.000000000 +0000
-@@ -78,6 +78,7 @@
- 	// this internally to be Solaris.
- 	private static final String INTERNAL_OS_SUNOS = "SunOS"; //$NON-NLS-1$
- 	private static final String INTERNAL_OS_LINUX = "Linux"; //$NON-NLS-1$
-+	private static final String INTERNAL_OS_FREEBSD = "FreeBSD"; //$NON-NLS-1$
- 	private static final String INTERNAL_OS_MACOSX = "Mac OS"; //$NON-NLS-1$
- 	private static final String INTERNAL_OS_AIX = "AIX"; //$NON-NLS-1$
- 	private static final String INTERNAL_OS_HPUX = "HP-UX"; //$NON-NLS-1$
-@@ -746,7 +747,7 @@
- 		// setup default values for known OSes if nothing was specified
- 		if (osName.equals(Constants.OS_WIN32))
- 			return Constants.WS_WIN32;
--		if (osName.equals(Constants.OS_LINUX))
-+		if (osName.equals(Constants.OS_LINUX) || osName.equals(Constants.OS_FREEBSD))
- 			return Constants.WS_GTK;
- 		if (osName.equals(Constants.OS_MACOSX))
- 			return Constants.WS_COCOA;
-@@ -769,6 +770,8 @@
- 		// EXCEPTION: All mappings of SunOS convert to Solaris
- 		if (osName.equalsIgnoreCase(INTERNAL_OS_SUNOS))
- 			return Constants.OS_SOLARIS;
-+		if (osName.equalsIgnoreCase(INTERNAL_OS_FREEBSD))
-+			return Constants.OS_FREEBSD;
- 		if (osName.equalsIgnoreCase(INTERNAL_OS_LINUX))
- 			return Constants.OS_LINUX;
- 		if (osName.equalsIgnoreCase(INTERNAL_OS_QNX))
-diff -ru rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/util/TextProcessor.java rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/util/TextProcessor.java
---- rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/util/TextProcessor.java	0000-00-00 00:00:00.000000000 +0000
-+++ rt.equinox.framework/bundles/org.eclipse.osgi/container/src/org/eclipse/osgi/util/TextProcessor.java	0000-00-00 00:00:00.000000000 +0000
-@@ -80,7 +80,7 @@
- 
- 		if ("iw".equals(lang) || "he".equals(lang) || "ar".equals(lang) || "fa".equals(lang) || "ur".equals(lang)) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
- 			String osName = System.getProperty("os.name").toLowerCase(); //$NON-NLS-1$
--			if (osName.startsWith("windows") || osName.startsWith("linux") || osName.startsWith("mac")) { //$NON-NLS-1$	//$NON-NLS-2$ //$NON-NLS-3$
-+			if (osName.startsWith("freebsd") || osName.startsWith("windows") || osName.startsWith("linux") || osName.startsWith("mac")) { //$NON-NLS-1$	//$NON-NLS-2$ //$NON-NLS-3$
- 				IS_PROCESSING_NEEDED = true;
- 			}
- 		}
-diff -ru rt.equinox.framework/bundles/org.eclipse.osgi/supplement/src/org/eclipse/osgi/service/environment/Constants.java rt.equinox.framework/bundles/org.eclipse.osgi/supplement/src/org/eclipse/osgi/service/environment/Constants.java
---- rt.equinox.framework/bundles/org.eclipse.osgi/supplement/src/org/eclipse/osgi/service/environment/Constants.java	0000-00-00 00:00:00.000000000 +0000
-+++ rt.equinox.framework/bundles/org.eclipse.osgi/supplement/src/org/eclipse/osgi/service/environment/Constants.java	0000-00-00 00:00:00.000000000 +0000
-@@ -26,6 +26,12 @@
- 	//TODO These constants need to be aligned with the OSGi ones. See page 64-588 of the spec
- 
- 	/**
-+	 * Constant string (value "freebsd") indicating the platform is running on a
-+	 * FreeBSD-based operating system.
-+	 */
-+	public static final String OS_FREEBSD = "freebsd";//$NON-NLS-1$
-+
-+	/**
- 	 * Constant string (value "win32") indicating the platform is running on a
- 	 * Window 32-bit operating system (e.g., Windows 98, NT, 2000).
- 	 */
 diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/build.properties rt.equinox.framework/features/org.eclipse.equinox.executable.feature/build.properties
 --- rt.equinox.framework/features/org.eclipse.equinox.executable.feature/build.properties	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.framework/features/org.eclipse.equinox.executable.feature/build.properties	0000-00-00 00:00:00.000000000 +0000
@@ -297,7 +160,7 @@ diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/bu
 diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/feature.xml rt.equinox.framework/features/org.eclipse.equinox.executable.feature/feature.xml
 --- rt.equinox.framework/features/org.eclipse.equinox.executable.feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.framework/features/org.eclipse.equinox.executable.feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -32,20 +32,20 @@
+@@ -33,20 +33,20 @@
           fragment="true"/>
  
     <plugin
@@ -327,7 +190,7 @@ diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/fe
 diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/library/gtk/build.sh rt.equinox.framework/features/org.eclipse.equinox.executable.feature/library/gtk/build.sh
 --- rt.equinox.framework/features/org.eclipse.equinox.executable.feature/library/gtk/build.sh	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.framework/features/org.eclipse.equinox.executable.feature/library/gtk/build.sh	0000-00-00 00:00:00.000000000 +0000
-@@ -126,8 +126,13 @@
+@@ -112,8 +112,13 @@
  				;;
  		esac
  		;;
@@ -342,18 +205,7 @@ diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/li
  	;;
  esac
  export CC
-@@ -149,7 +154,9 @@
- 	export JAVA_HOME
- fi
- 
--if [ $defaultOSArch = "ppc64le" ];  then
-+if [ $defaultOSArch = "amd64" ];  then
-+	export M_ARCH=-m64
-+elif [ $defaultOSArch = "ppc64le" ];  then
- 	M_ARCH=-m64
- 	export M_ARCH
- elif [ "$defaultOSArch" = "s390" ];  then
-@@ -169,19 +176,20 @@
+@@ -146,19 +151,20 @@
  
  LIBRARY_DIR="$EXEC_DIR/../org.eclipse.equinox.launcher.$defaultWS.$defaultOS.$defaultOSArch"
  OUTPUT_DIR="$EXEC_DIR/bin/$defaultWS/$defaultOS/$defaultOSArch"
@@ -381,7 +233,7 @@ diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/li
 diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/library/gtk/make_linux.mak rt.equinox.framework/features/org.eclipse.equinox.executable.feature/library/gtk/make_linux.mak
 --- rt.equinox.framework/features/org.eclipse.equinox.executable.feature/library/gtk/make_linux.mak	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.framework/features/org.eclipse.equinox.executable.feature/library/gtk/make_linux.mak	0000-00-00 00:00:00.000000000 +0000
-@@ -91,10 +91,11 @@
+@@ -81,10 +81,11 @@
   -DGTK3_LIB="\"libgtk-3.so.0\"" -DGDK3_LIB="\"libgdk-3.so.0\"" \
   -DPIXBUF_LIB="\"libgdk_pixbuf-2.0.so.0\"" -DGOBJ_LIB="\"libgobject-2.0.so.0\"" \
   -DGIO_LIB="\"libgio-2.0.so.0\"" -DGLIB_LIB="\"libglib-2.0.so.0\""
@@ -396,7 +248,7 @@ diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/li
  	-DDEFAULT_OS="\"$(DEFAULT_OS)\"" \
  	-DDEFAULT_OS_ARCH="\"$(DEFAULT_OS_ARCH)\"" \
  	-DDEFAULT_WS="\"$(DEFAULT_WS)\"" \
-@@ -102,7 +103,8 @@
+@@ -92,7 +93,8 @@
  	$(GTK_LIBS) \
  	-I. \
  	-I.. \
@@ -406,7 +258,7 @@ diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/li
  	`pkg-config --cflags gtk+-3.0`
  
  all: $(EXEC) $(DLL)
-@@ -140,11 +142,11 @@
+@@ -130,11 +132,11 @@
  
  $(EXEC): $(MAIN_OBJS) $(COMMON_OBJS)
  	$(info Linking and generating: $(EXEC))
@@ -457,28 +309,9 @@ diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/re
 diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/resources/build.xml rt.equinox.framework/features/org.eclipse.equinox.executable.feature/resources/build.xml
 --- rt.equinox.framework/features/org.eclipse.equinox.executable.feature/resources/build.xml	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.framework/features/org.eclipse.equinox.executable.feature/resources/build.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -118,13 +118,13 @@
+@@ -76,29 +76,29 @@
  		<chmod perm="755" dir="${feature.base}/macosx.cocoa.x86_64/${collectingFolder}" includes="${launcherName}" />
  		<chmod perm="755" dir="${feature.base}/macosx.cocoa.x86_64/${collectingFolder}" includes="Eclipse.app/Contents/MacOS/launcher" />
- 	</target>
--	<target name="rootFileslinux_gtk_x86">
--		<mkdir dir="${feature.base}/linux.gtk.x86/${collectingFolder}"/>
--		<copy todir="${feature.base}/linux.gtk.x86/${collectingFolder}" failonerror="true" overwrite="true">
--			<fileset dir="${basedir}/bin/gtk/linux/x86" includes="**"			/>
-+	<target name="rootFilesfreebsd_gtk_i386">
-+		<mkdir dir="${feature.base}/freebsd.gtk.i386/${collectingFolder}"/>
-+		<copy todir="${feature.base}/freebsd.gtk.i386/${collectingFolder}" failonerror="true" overwrite="true">
-+			<fileset dir="${basedir}/bin/gtk/freebsd/i386" includes="**"			/>
- 			<fileset dir="${basedir}/gtk_root" includes="**"			/>
- 		</copy>
--		<chmod perm="755" dir="${feature.base}/linux.gtk.x86/${collectingFolder}" includes="launcher" />
-+		<chmod perm="755" dir="${feature.base}/freebsd.gtk.i386/${collectingFolder}" includes="launcher" />
- 	</target>
- 	<target name="rootFileslinux_gtk_ppc">
- 		<mkdir dir="${feature.base}/linux.gtk.ppc/${collectingFolder}"/>
-@@ -134,37 +134,37 @@
- 		</copy>
- 		<chmod perm="755" dir="${feature.base}/linux.gtk.ppc/${collectingFolder}" includes="launcher" />
  	</target>
 -	<target name="rootFileslinux_gtk_ppc64le">
 -		<mkdir dir="${feature.base}/linux.gtk.ppc64le/${collectingFolder}"/>
@@ -493,24 +326,11 @@ diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/re
 -		<chmod perm="755" dir="${feature.base}/linux.gtk.ppc64le/${collectingFolder}" includes="launcher" />
 +		<chmod perm="755" dir="${feature.base}/freebsd.gtk.powerpc64/${collectingFolder}" includes="launcher" />
  	</target>
--        <target name="rootFileslinux_gtk_arm">
--		<mkdir dir="${feature.base}/linux.gtk.arm/${collectingFolder}"/>
--		<copy todir="${feature.base}/linux.gtk.arm/${collectingFolder}" failonerror="true" overwrite="true">
--			<fileset dir="${basedir}/bin/gtk/linux/arm" includes="**"			/>
-+        <target name="rootFilesfreebsd_gtk_armv7">
-+		<mkdir dir="${feature.base}/freebsd.gtk.armv7/${collectingFolder}"/>
-+		<copy todir="${feature.base}/freebsd.gtk.armv7/${collectingFolder}" failonerror="true" overwrite="true">
-+			<fileset dir="${basedir}/bin/gtk/freebsd/armv7" includes="**"			/>
- 			<fileset dir="${basedir}/gtk_root" includes="**"			/>
- 		</copy>
--		<chmod perm="755" dir="${feature.base}/linux.gtk.arm/${collectingFolder}" includes="launcher" />
-+		<chmod perm="755" dir="${feature.base}/freebsd.gtk.armv7/${collectingFolder}" includes="launcher" />
- 	</target>
--        <target name="rootFileslinux_gtk_aarch64">
+-    <target name="rootFileslinux_gtk_aarch64">
 -		<mkdir dir="${feature.base}/linux.gtk.aarch64/${collectingFolder}"/>
 -		<copy todir="${feature.base}/linux.gtk.aarch64/${collectingFolder}" failonerror="true" overwrite="true">
 -			<fileset dir="${basedir}/bin/gtk/linux/aarch64" includes="**"			/>
-+        <target name="rootFilesfreebsd_gtk_aarch64">
++    <target name="rootFilesfreebsd_gtk_aarch64">
 +		<mkdir dir="${feature.base}/freebsd.gtk.aarch64/${collectingFolder}"/>
 +		<copy todir="${feature.base}/freebsd.gtk.aarch64/${collectingFolder}" failonerror="true" overwrite="true">
 +			<fileset dir="${basedir}/bin/gtk/freebsd/aarch64" includes="**"			/>
@@ -534,15 +354,17 @@ diff -ru rt.equinox.framework/features/org.eclipse.equinox.executable.feature/re
  	</target>
  	<target name="rootFileslinux_gtk_ia64">
  		<mkdir dir="${feature.base}/linux.gtk.ia64/${collectingFolder}"/>
-@@ -212,7 +212,7 @@
+@@ -138,8 +138,8 @@
  	<target name="rootFilesgroup_group_group">
  		<antcall target="rootFileswin32_win32_x86_64"/>
  		<antcall target="rootFilesmacosx_cocoa_x86_64"/>
 -		<antcall target="rootFileslinux_gtk_ppc64le"/>
-+		<antcall target="rootFileslinux_gtk_powerpc64"/>
- 		<antcall target="rootFileslinux_gtk_x86_64"/>
+-		<antcall target="rootFileslinux_gtk_x86_64"/>
++		<antcall target="rootFilesfreebsd_gtk_powerpc64"/>
++		<antcall target="rootFilesfreebsd_gtk_amd64"/>
  	</target>
  
+ 	<target name="zip.distribution" depends="init" description="Create a zip containing all the plug-ins and features for the feature: org.eclipse.platform.launchers.">
 diff -ru rt.equinox.framework/pom.xml rt.equinox.framework/pom.xml
 --- rt.equinox.framework/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.framework/pom.xml	0000-00-00 00:00:00.000000000 +0000

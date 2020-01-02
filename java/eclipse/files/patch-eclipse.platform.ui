@@ -1,7 +1,7 @@
 diff -ru eclipse.platform.ui/bundles/org.eclipse.e4.ui.swt.gtk/pom.xml eclipse.platform.ui/bundles/org.eclipse.e4.ui.swt.gtk/pom.xml
 --- eclipse.platform.ui/bundles/org.eclipse.e4.ui.swt.gtk/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.ui/bundles/org.eclipse.e4.ui.swt.gtk/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -32,9 +32,9 @@
+@@ -37,9 +37,9 @@
            <resolver>p2</resolver>
            <environments>
              <environment>
@@ -81,32 +81,24 @@ diff -ru eclipse.platform.ui/bundles/org.eclipse.ui.forms/src/org/eclipse/ui/int
 diff -ru eclipse.platform.ui/bundles/org.eclipse.ui.themes/plugin.xml eclipse.platform.ui/bundles/org.eclipse.ui.themes/plugin.xml
 --- eclipse.platform.ui/bundles/org.eclipse.ui.themes/plugin.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.ui/bundles/org.eclipse.ui.themes/plugin.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -12,6 +12,12 @@
-         basestylesheeturi="css/e4-dark.css"
+@@ -12,7 +12,7 @@
+         basestylesheeturi="css/e4-dark_linux.css"
          id="org.eclipse.e4.ui.css.theme.e4_dark"
          label="%theme.dark"
+-        os="linux">
 +        os="freebsd">
-+    </theme>
-+    <theme
-+        basestylesheeturi="css/e4-dark.css"
-+        id="org.eclipse.e4.ui.css.theme.e4_dark"
-+        label="%theme.dark"
-         os="linux">
      </theme>
      <theme
-@@ -34,6 +40,12 @@
-         os="macosx"
-         os_version="10.14">
-     </theme>
-+      <theme
-+            basestylesheeturi="css/e4_default_gtk.css"
-+            id="org.eclipse.e4.ui.css.theme.e4_default"
-+            label="%theme.gtk"
-+            os="freebsd">
-+      </theme>
-       <theme
+         basestylesheeturi="css/e4-dark_win.css"
+@@ -37,7 +37,7 @@
              basestylesheeturi="css/e4_default_gtk.css"
              id="org.eclipse.e4.ui.css.theme.e4_default"
+             label="%theme.gtk"
+-            os="linux">
++            os="freebsd">
+       </theme>
+       <theme
+             basestylesheeturi="css/e4_default_mac.css"
 diff -ru eclipse.platform.ui/bundles/org.eclipse.urischeme/src/org/eclipse/urischeme/IOperatingSystemRegistration.java eclipse.platform.ui/bundles/org.eclipse.urischeme/src/org/eclipse/urischeme/IOperatingSystemRegistration.java
 --- eclipse.platform.ui/bundles/org.eclipse.urischeme/src/org/eclipse/urischeme/IOperatingSystemRegistration.java	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.ui/bundles/org.eclipse.urischeme/src/org/eclipse/urischeme/IOperatingSystemRegistration.java	0000-00-00 00:00:00.000000000 +0000

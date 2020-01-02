@@ -68,7 +68,7 @@ diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-I
  Bundle-Localization: fragment
 -Bundle-SymbolicName: org.eclipse.core.net.linux.x86_64;singleton:=true
 +Bundle-SymbolicName: org.eclipse.core.net.freebsd.amd64;singleton:=true
- Bundle-Version: 1.2.300.qualifier
+ Bundle-Version: 1.2.400.qualifier
  Fragment-Host: org.eclipse.core.net;bundle-version="1.1.0"
 -Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=x86_64))
 +Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=amd64))
@@ -84,10 +84,10 @@ diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/pom.xm
    <groupId>org.eclipse.core</groupId>
 -  <artifactId>org.eclipse.core.net.linux.x86_64</artifactId>
 +  <artifactId>org.eclipse.core.net.freebsd.amd64</artifactId>
-   <version>1.2.300-SNAPSHOT</version>
+   <version>1.2.400-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
-@@ -30,9 +30,9 @@
+@@ -34,9 +34,9 @@
          <configuration>
            <environments>
              <environment>
@@ -99,7 +99,7 @@ diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/pom.xm
              </environment>
            </environments>
          </configuration>
-@@ -47,7 +47,7 @@
+@@ -51,7 +51,7 @@
          <property>
            <!-- This has to be hardcoded. Profiles are not allowed to use pom defined properties :-( -->
            <name>native</name>
@@ -108,7 +108,7 @@ diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/pom.xm
          </property>
        </activation>
        <build>
-@@ -60,9 +60,9 @@
+@@ -64,9 +64,9 @@
                  <phase>process-resources</phase>
                  <configuration>
                    <target>

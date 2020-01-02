@@ -57,7 +57,7 @@ diff -ru rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/r
        <plugin id="org.eclipse.equinox.security.ui"/>
        <plugin id="org.eclipse.equinox.simpleconfigurator"/>
        <plugin id="org.eclipse.equinox.simpleconfigurator.manipulator"/>
-@@ -134,7 +134,7 @@
+@@ -133,7 +133,7 @@
        <plugin id="org.eclipse.osgi.util"/>
        <plugin id="org.eclipse.swt"/>
        <plugin id="org.eclipse.swt.cocoa.macosx.x86_64" fragment="true"/>

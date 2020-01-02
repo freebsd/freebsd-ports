@@ -13,7 +13,7 @@ diff -ru eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclip
 diff -ru eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/runtime/Platform.java eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/runtime/Platform.java
 --- eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/runtime/Platform.java	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/runtime/Platform.java	0000-00-00 00:00:00.000000000 +0000
-@@ -207,6 +207,8 @@
+@@ -208,6 +208,8 @@
  	 */
  	public static final String OS_LINUX = "linux";//$NON-NLS-1$
  

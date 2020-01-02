@@ -1,0 +1,12 @@
+diff -ru eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml
+--- eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -1298,7 +1298,7 @@
+             %blockSelectionModeFont.description
+          </description>
+          <fontValue
+-               os="linux"
++               os="freebsd"
+                value="Monospace-regular-10"
+                ws="gtk">
+          </fontValue>
