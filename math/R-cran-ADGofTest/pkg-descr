@@ -1,0 +1,4 @@
+Anderson-Darling GoF test in R with p-value calculation based on Marsaglia's
+2004 paper "Evaluating the Anderson-Darling Distribution."
+
+WWW: https://cran.r-project.org/web/packages/ADGofTest/
