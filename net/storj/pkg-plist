@@ -1,0 +1,14 @@
+bin/certificates
+bin/gateway
+bin/inspector
+bin/linksharing
+bin/s3-benchmark
+bin/satellite
+bin/segment-reaper
+bin/statreceiver
+bin/storagenode
+bin/storagenode-updater
+bin/storj-identity
+bin/storj-sim
+bin/uplink
+bin/versioncontrol
