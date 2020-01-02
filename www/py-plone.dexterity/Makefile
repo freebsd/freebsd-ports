@@ -10,6 +10,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Flexible CMF content
 
+DEPRECATED=	Outdated version of plone 4.3 (legacy), uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.alterego>0:www/py-plone.alterego@${PY_FLAVOR} \

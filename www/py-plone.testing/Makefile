@@ -10,6 +10,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Testing infrastructure for Zope and Plone projects
 
+DEPRECATED=	Outdated version of plone 4.3 (legacy), uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.testing>=0:devel/py-zope.testing@${PY_FLAVOR}

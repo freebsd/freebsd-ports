@@ -10,6 +10,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Manage secrets
 
+DEPRECATED=	Outdated version of plone 4.3 (legacy), uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=0:databases/zodb3@${PY_FLAVOR} \

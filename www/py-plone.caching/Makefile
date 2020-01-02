@@ -10,6 +10,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope 2 integration for z3c.caching
 
+DEPRECATED=	Outdated version of plone 4.3 (legacy), uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}z3c.caching>=0:devel/py-z3c.caching@${PY_FLAVOR} \

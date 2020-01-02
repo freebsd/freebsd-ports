@@ -10,6 +10,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	User-configurable, blob-aware image scaling for Plone
 
+DEPRECATED=	Outdated version of plone 4.3 (legacy), uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.scale>0:www/py-plone.scale@${PY_FLAVOR} \
