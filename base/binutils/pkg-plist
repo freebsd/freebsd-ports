@@ -561,3 +561,4 @@ bin/objdump
 share/man/man1/as.1.gz
 share/man/man1/ld.1.gz
 share/man/man1/objdump.1.gz
+share/toolchains/freebsd-binutils.mk
