@@ -12,6 +12,9 @@ DISTNAME=	trytond_purchase_invoice_line_standalone-${PORTVERSION}
 MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Purchase Invoice Line Standalone Module)
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond28_purchase>=2.8.0:finance/trytond28_purchase \

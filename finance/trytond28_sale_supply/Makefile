@@ -12,6 +12,9 @@ DISTNAME=	trytond_sale_supply-${PORTVERSION}
 MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Sale Supply Module)
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond28_sale>=2.8.1:finance/trytond28_sale

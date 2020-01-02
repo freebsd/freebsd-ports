@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	28
 MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Server)
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
