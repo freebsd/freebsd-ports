@@ -14,6 +14,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSER
 
+EXTRA_PATCHES=	${PATCHDIR}/cpu-detection.patch:-p1
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libbabl-0.1.so:x11/babl \
 		libjson-glib-1.0.so:devel/json-glib \
