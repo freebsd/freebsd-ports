@@ -3,7 +3,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -39,6 +39,7 @@ BUILD_DEPENDS+=	astk-serveur>0:cad/astk-serveur	\
 		${LOCALBASE}/lib/libscotch.a:cad/scotch		\
 		gnproc:sysutils/coreutils			\
 		bash:shells/bash				\
+		xterm:x11/xterm					\
 		${PYNUMPY}
 #		pylupdate5:textproc/py-qt5-xml
 LIB_DEPENDS+=	libhdf5.so:science/hdf5				\
@@ -47,7 +48,8 @@ LIB_DEPENDS+=	libhdf5.so:science/hdf5				\
 #		libAsterInterface.so:science/mfront
 #		libAsterInterface.so:science/tfel
 RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
-		astk-serveur>0:cad/astk-serveur
+		astk-serveur>0:cad/astk-serveur			\
+		xterm:x11/xterm
 
 USES=		bison fortran gettext python:3.6+ qt:5 tk
 USE_BINUTILS=	yes
@@ -366,6 +368,8 @@ pre-build:
 .for pp in ${POSTPY2FIX}
 	${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' ${WRKDIR}/post_patches/${pp}
 .endfor
+	${REINPLACE_CMD} -e "s|%%WRKDIR%%|${WRKDIR}|"	\
+		${WRKDIR}/post_patches/post-patch-bibfor__jeveux__jedebu.F90
 
 do-build:
 	(cd ${BUILD_WRKSRC} &&	\
