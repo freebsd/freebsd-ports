@@ -1,3 +1,3 @@
-TIMESTAMP = 1574583674
-SHA256 (logstash-6.8.5.tar.gz) = c67b4cbf4dd28ecf6580a2e31769855b56a38f9f4db507341e6ca27edd27656d
-SIZE (logstash-6.8.5.tar.gz) = 172214102
+TIMESTAMP = 1577361271
+SHA256 (logstash-6.8.6.tar.gz) = 2ece03699ad081eb0742bf6638e6ee363fb55c30db9fed97f165f62397f2cb05
+SIZE (logstash-6.8.6.tar.gz) = 173707250
