@@ -21,7 +21,7 @@ LIB_DEPENDS=	libclutter-glx-1.0.so:graphics/clutter \
 		libjson-glib-1.0.so:devel/json-glib \
 		libatspi.so:accessibility/at-spi2-core \
 		libdbus-1.so:devel/dbus
-RUN_DEPENDS=	py3?-atspi>=2.1.91:accessibility/py-atspi@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atspi>=2.1.91:accessibility/py-atspi@${PY_FLAVOR}
 
 USES=		gettext gl gmake gnome libtool localbase pathfix \
 		pkgconfig python:3.3+ shebangfix tar:xz xorg
