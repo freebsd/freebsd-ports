@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cqrlog
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	comms hamradio
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -38,9 +37,11 @@ MAKE_ENV+=	LAZBUILD_CMD="${LAZBUILD_CMD}" \
 
 NO_LAZBUILD=	yes
 LAZBUILD_ARGS=	-d --pcp=.
-LAZARUS_NO_FLAVORS=qt5
 INSTALLS_ICONS=	yes
 DOS2UNIX_WRKSRC=${WRKSRC}/src/synapse/
+
+gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
 
 post-extract:
 	@${RM} -r ${WRKSRC}/src/lnet/lib/openssl.pas
@@ -62,7 +63,8 @@ post-patch:
 	${REINPLACE_CMD} -e s!%%DATADIR%%!${DATADIR}!g \
 		${WRKSRC}/src/dData.pas ${WRKSRC}/src/fGrayline.pas
 	${REINPLACE_CMD} -e s!Linux!FreeBSD!g \
-		${WRKSRC}/src/fMain.lfm
+		${WRKSRC}/src/fMain.lfm ${WRKSRC}/src/fNewQSO.lfm \
+		${WRKSRC}/src/dUtils.pas
 	${REINPLACE_CMD} -e s!%%OPENSSLLIB%%!${OPENSSLLIB}!g \
 		${WRKSRC}/src/synapse/ssl_openssl_lib.pas
 	${RM} -r ${WRKSRC}/src/mysql
