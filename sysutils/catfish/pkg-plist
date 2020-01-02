@@ -1,8 +1,5 @@
 bin/catfish
 man/man1/catfish.1.gz
-%%PYTHON_SITELIBDIR%%/catfish/AboutCatfishDialog.py
-%%PYTHON_SITELIBDIR%%/catfish/AboutCatfishDialog.pyc
-%%PYTHON_SITELIBDIR%%/catfish/AboutCatfishDialog.pyo
 %%PYTHON_SITELIBDIR%%/catfish/CatfishPrefsDialog.py
 %%PYTHON_SITELIBDIR%%/catfish/CatfishPrefsDialog.pyc
 %%PYTHON_SITELIBDIR%%/catfish/CatfishPrefsDialog.pyo
@@ -15,9 +12,6 @@ man/man1/catfish.1.gz
 %%PYTHON_SITELIBDIR%%/catfish/__init__.py
 %%PYTHON_SITELIBDIR%%/catfish/__init__.pyc
 %%PYTHON_SITELIBDIR%%/catfish/__init__.pyo
-%%PYTHON_SITELIBDIR%%/catfish_lib/AboutDialog.py
-%%PYTHON_SITELIBDIR%%/catfish_lib/AboutDialog.pyc
-%%PYTHON_SITELIBDIR%%/catfish_lib/AboutDialog.pyo
 %%PYTHON_SITELIBDIR%%/catfish_lib/Builder.py
 %%PYTHON_SITELIBDIR%%/catfish_lib/Builder.pyc
 %%PYTHON_SITELIBDIR%%/catfish_lib/Builder.pyo
@@ -46,11 +40,8 @@ man/man1/catfish.1.gz
 %%PYTHON_SITELIBDIR%%/catfish_lib/helpers.pyc
 %%PYTHON_SITELIBDIR%%/catfish_lib/helpers.pyo
 share/applications/org.xfce.Catfish.desktop
-%%DATADIR%%/ui/AboutCatfishDialog.ui
 %%DATADIR%%/ui/CatfishPreferences.ui
-%%DATADIR%%/ui/CatfishPreferences.ui~
 %%DATADIR%%/ui/CatfishWindow.ui
-%%DATADIR%%/ui/about_catfish_dialog.xml
 %%DATADIR%%/ui/catfish-wl-headerbar.png
 %%DATADIR%%/ui/catfish-wl-titlebar.png
 %%DATADIR%%/ui/catfish_preferences.xml

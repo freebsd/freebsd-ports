@@ -1,4 +1,4 @@
---- catfish_lib/catfishconfig.py.orig	2019-08-11 17:51:09 UTC
+--- catfish_lib/catfishconfig.py.orig	2020-01-01 18:29:00 UTC
 +++ catfish_lib/catfishconfig.py
 @@ -17,6 +17,7 @@
  #   with this program.  If not, see <https://www.gnu.org/licenses/>.
@@ -17,6 +17,6 @@
 +    __locate_db_path__ = '/var/lib/mlocate/mlocate.db'
 +elif 'bsd' in sys.platform or sys.platform.startswith('dragonfly'):
 +    __locate_db_path__ = '/var/db/locate.database'
- __license__ = 'GPL-3+'
- __version__ = '1.4.9'
- 
+ __license__ = 'GPL-2+'
+ __version__ = '1.4.12'
+ __url__ = 'https://docs.xfce.org/apps/catfish/start'
