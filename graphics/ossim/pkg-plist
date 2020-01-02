@@ -873,6 +873,7 @@ include/ossim/support_data/ossimLasPointRecordInterface.h
 include/ossim/support_data/ossimNitfAcftbTag.h
 include/ossim/support_data/ossimNitfAimidbTag.h
 include/ossim/support_data/ossimNitfBlockaTag.h
+include/ossim/support_data/ossimNitfCamsdaTag.h
 include/ossim/support_data/ossimNitfCommon.h
 include/ossim/support_data/ossimNitfCompressionHeader.h
 include/ossim/support_data/ossimNitfCsccgaTag.h
@@ -914,7 +915,11 @@ include/ossim/support_data/ossimNitfJ2klraTag.h
 include/ossim/support_data/ossimNitfLabelHeader.h
 include/ossim/support_data/ossimNitfLabelHeaderV2_0.h
 include/ossim/support_data/ossimNitfLocalCartographicTag.h
+include/ossim/support_data/ossimNitfMicidaTag.h
+include/ossim/support_data/ossimNitfMimcsaTag.h
 include/ossim/support_data/ossimNitfMstgtaTag.h
+include/ossim/support_data/ossimNitfMtimfaTag.h
+include/ossim/support_data/ossimNitfMtimsaTag.h
 include/ossim/support_data/ossimNitfNameConversionTables.h
 include/ossim/support_data/ossimNitfPiaimcTag.h
 include/ossim/support_data/ossimNitfProjectionParameterTag.h
@@ -943,6 +948,7 @@ include/ossim/support_data/ossimNitfTagInformation.h
 include/ossim/support_data/ossimNitfTextHeader.h
 include/ossim/support_data/ossimNitfTextHeaderV2_0.h
 include/ossim/support_data/ossimNitfTextHeaderV2_1.h
+include/ossim/support_data/ossimNitfTmintaTag.h
 include/ossim/support_data/ossimNitfUnknownTag.h
 include/ossim/support_data/ossimNitfUse00aTag.h
 include/ossim/support_data/ossimNitfVqCompressionHeader.h
