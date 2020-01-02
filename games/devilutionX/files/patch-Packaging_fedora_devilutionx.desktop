@@ -1,0 +1,18 @@
+--- Packaging/fedora/devilutionx.desktop.orig	2019-12-27 16:29:35 UTC
++++ Packaging/fedora/devilutionx.desktop
+@@ -1,11 +1,11 @@
+ [Desktop Entry]
+-Name=devilutionX
++Name=DevilutionX
+ GenericName=DevilutionX
+-Comment=Play Diablo I on Linux
++Comment=Play Diablo I
+ Exec=devilutionx
+-Icon=devilutionx.png
++Icon=devilutionx
+ Terminal=false
+ Type=Application
+ X-DCOP-ServiceType=Multi
+ X-KDE-StartupNotify=true
+-Categories=Qt;Game;RolePlaying;
++Categories=Game;RolePlaying;

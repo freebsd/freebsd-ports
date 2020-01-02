@@ -1,41 +1,42 @@
 # $FreeBSD$
 
 PORTNAME=	devilutionX
-PORTVERSION=	0.5.0
-PORTREVISION=	0
+PORTVERSION=	1.0.0
 CATEGORIES=	games
 
 MAINTAINER=	benny.goemans@gmail.com
-COMMENT=	Open-source implementation of Diablo Game engine
+COMMENT=	Diablo I engine for modern operating systems
 
 LICENSE=	UNLICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${LOCALBASE}/share/fonts/CharisSIL/CharisSIL-B.ttf:x11-fonts/charis
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		cmake compiler:c++11-lang dos2unix sdl
 USE_SDL=	mixer2 sdl2 ttf2
-
-PLIST_FILES=	bin/devilutionx
-
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	diasurgical
+DOS2UNIX_GLOB=	*.c *.h CMakeLists.txt
+INSTALLS_ICONS=	yes
 
-OPTIONS_DEFAULT=	RELEASE
+CXXFLAGS+=	-DTTF_FONT_PATH=\\\"${LOCALBASE}/share/fonts/CharisSIL/CharisSIL-B.ttf\\\"
+CMAKE_ARGS+=	-D CMAKE_INSTALL_BINDIR:PATH=${BINDIR} \
+		-D CMAKE_INSTALL_SHAREDIR:PATH=${PREFIX}/share \
+		-D GIT_TAG=${PORTVERSION}
 
-OPTIONS_SINGLE=		TYPE
-OPTIONS_SINGLE_TYPE=	NIGHTLY RELEASE
+.if defined(WITH_DEBUG)
+CMAKE_ARGS+=	-D NIGHTLY_BUILD:BOOL=ON
+.else
+CMAKE_ARGS+=	-D BINARY_RELEASE:BOOL=ON
+.endif
 
-RELEASE_DESC=	Build a release build
-NIGHTLY_DESC=	Build a debug build
-
-RELEASE_CMAKE_BOOL=	BINARY_RELEASE
-NIGHTLY_CMAKE_BOOL=	NIGHTLY_BUILD
-
-DESKTOP_ENTRIES=	"DevilutionX" \
-			"" \
-			"" \
-			"devilutionx" \
-			"Game;AdventureGame;" \
-			false
+PLIST_FILES=	bin/devilutionx \
+		share/applications/devilutionx.desktop \
+		share/icons/hicolor/16x16/apps/devilutionx.png \
+		share/icons/hicolor/32x32/apps/devilutionx.png \
+		share/icons/hicolor/48x48/apps/devilutionx.png
 
 .include <bsd.port.mk>
