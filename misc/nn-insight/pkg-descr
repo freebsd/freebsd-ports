@@ -1,0 +1,6 @@
+nn-insight visualizes how neural networks work.
+
+It graphically shows the structure of the network, allows to select or paste
+an image, perform computations with it, and inspect results of the computation.
+
+WWW: https://github.com/yurivict/nn-insight
