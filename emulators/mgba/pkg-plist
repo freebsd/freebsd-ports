@@ -2,7 +2,7 @@ bin/mgba
 %%QT5%%bin/mgba-qt
 include/mgba/flags.h
 lib/libmgba.so.0.7
-lib/libmgba.so.0.7.0
+lib/libmgba.so.0.7.3
 %%LIBRETRO%%lib/libretro/mgba_libretro.so
 %%QT5%%man/man6/mgba-qt.6.gz
 man/man6/mgba.6.gz
