@@ -2,8 +2,8 @@
 
 PORTNAME=	rav1e
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
-PORTREVISION?=	1
+DISTVERSION=	0.2.1
+PORTREVISION?=	0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -54,7 +54,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		criterion-plot-0.4.0 \
 		crossbeam-deque-0.7.2 \
 		crossbeam-epoch-0.8.0 \
-		crossbeam-queue-0.2.0 \
+		crossbeam-queue-0.2.1 \
 		crossbeam-utils-0.7.0 \
 		csv-1.1.1 \
 		csv-core-0.1.6 \
@@ -67,6 +67,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		env_logger-0.6.2 \
 		err-derive-0.2.1 \
 		error-chain-0.10.0 \
+		fern-0.5.9 \
 		getrandom-0.1.13 \
 		glob-0.3.0 \
 		hermit-abi-0.1.5 \
@@ -100,10 +101,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		png-0.15.2 \
 		ppv-lite86-0.2.6 \
 		pretty_assertions-0.6.1 \
-		pretty_env_logger-0.3.1 \
 		proc-macro-error-0.2.6 \
 		proc-macro-hack-0.5.11 \
-		proc-macro2-1.0.6 \
+		proc-macro2-1.0.7 \
 		quick-error-1.2.2 \
 		quote-1.0.2 \
 		rand-0.7.2 \
@@ -112,8 +112,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		rand_hc-0.2.0 \
 		rand_os-0.2.2 \
 		rand_xoshiro-0.3.1 \
-		rayon-1.2.1 \
-		rayon-core-1.6.1 \
+		rayon-1.3.0 \
+		rayon-core-1.7.0 \
 		redox_syscall-0.1.56 \
 		regex-1.3.1 \
 		regex-automata-0.1.8 \
@@ -139,14 +139,14 @@ CARGO_CRATES=	adler32-1.0.4 \
 		signal-hook-registry-1.2.0 \
 		simd_helpers-0.1.0 \
 		strsim-0.8.0 \
-		syn-1.0.11 \
+		syn-1.0.12 \
 		synstructure-0.12.3 \
 		termcolor-1.0.5 \
 		termios-0.3.1 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
 		time-0.1.42 \
-		tinytemplate-1.0.2 \
+		tinytemplate-1.0.3 \
 		toml-0.2.1 \
 		toml-0.5.5 \
 		unicode-width-0.1.7 \
