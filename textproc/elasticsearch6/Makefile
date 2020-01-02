@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	6.8.5
+PORTVERSION=	6.8.6
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/ \
-		http://mirrors.rit.edu/zi/
+		https://ftp.sk.freebsd.org/pub/local/distfiles/
 PKGNAMESUFFIX=	6
 
 MAINTAINER=	elastic@FreeBSD.org
@@ -125,6 +125,8 @@ post-install:
 	${ECHO} "@sample ${ETCDIR}/elasticsearch.yml.sample" >> ${TMPPLIST}
 	${ECHO} "@sample ${ETCDIR}/log4j2.properties.sample" >> ${TMPPLIST}
 	${ECHO} "@sample ${ETCDIR}/jvm.options.sample" >> ${TMPPLIST}
+	${ECHO} "@sample ${ETCDIR}/roles.yml.sample" >> ${TMPPLIST}
+	${ECHO} "@sample ${ETCDIR}/role_mapping.yml.sample" >> ${TMPPLIST}
 	${FIND} -s ${STAGEDIR}${PREFIX}/lib/elasticsearch -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	${ECHO} "@dir lib/elasticsearch/plugins" >> ${TMPPLIST}
