@@ -26,6 +26,9 @@ UNICODE_CONFIGURE_ENABLE=	watch8bit
 
 PLIST_FILES=	bin/${PKGBASE} man/man1/gnu-watch.1.gz
 
+post-patch:
+	${REINPLACE_CMD} 's/ncursesw/${NCURSES_IMPL}/g' ${WRKSRC}/configure.ac
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PKGBASE}
