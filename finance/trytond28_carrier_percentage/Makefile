@@ -12,6 +12,9 @@ DISTNAME=	trytond_carrier_percentage-${PORTVERSION}
 MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Carrier Percentage Module)
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond28_carrier>=2.8.0:finance/trytond28_carrier \

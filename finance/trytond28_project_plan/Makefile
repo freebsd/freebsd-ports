@@ -12,6 +12,9 @@ DISTNAME=	trytond_project_plan-${PORTVERSION}
 MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Project Plan Module)
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond28_project>=2.8.0:finance/trytond28_project

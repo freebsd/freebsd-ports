@@ -12,6 +12,9 @@ DISTNAME=	trytond_ldap_connection-${PORTVERSION}
 MAINTAINER=	matthias@petermann.it
 COMMENT=	Tryton Application Platform (LDAP Connection Module)
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond28>=2.8.2:finance/trytond28 \

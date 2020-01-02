@@ -12,6 +12,9 @@ DISTNAME=	trytond_stock_inventory_location-${PORTVERSION}
 MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Stock Inventory Location Module)
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond28_stock>=2.8.2:finance/trytond28_stock

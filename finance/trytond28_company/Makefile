@@ -12,6 +12,9 @@ DISTNAME=	trytond_company-${PORTVERSION}
 MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Company Module)
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	trytond28_party>=2.8.0:finance/trytond28_party \

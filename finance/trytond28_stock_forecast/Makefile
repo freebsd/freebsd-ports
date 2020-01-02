@@ -12,6 +12,9 @@ DISTNAME=	trytond_stock_forecast-${PORTVERSION}
 MAINTAINER=	matthias@petermann-it.de
 COMMENT=	Tryton Application Platform (Stock Forecast Module)
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-03
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil@${PY_FLAVOR} \
