@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	softether
-DISTVERSION=	4.31-9727-beta
+DISTVERSION=	4.32-9731-beta
 CATEGORIES=	security net-vpn
-MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2019.11.18-tree/Source_Code/
+MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2020.01.01-tree/Source_Code/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}
 
