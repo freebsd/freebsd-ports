@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --enable-utf8
 CONFIGURE_ENV+=	NCURSESW_CFLAGS="-I${NCURSESINC}" \
-		NCURSESW_LIBS="-L${NCURSESLIB} -lncursesw"
+		NCURSESW_LIBS="-L${NCURSESLIB} -l${NCURSES_IMPL}"
 
 MAKE_ARGS+=	install_htmlmanDATA=install-htmlmanDATA
 
