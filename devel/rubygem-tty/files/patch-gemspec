@@ -1,4 +1,4 @@
---- tty.gemspec.orig	2019-10-19 16:23:05 UTC
+--- tty.gemspec.orig	2020-01-02 15:09:52 UTC
 +++ tty.gemspec
 @@ -24,7 +24,7 @@ Gem::Specification.new do |s|
      s.specification_version = 4
@@ -9,6 +9,15 @@
        s.add_runtime_dependency(%q<tty-color>.freeze, ["~> 0.5"])
        s.add_runtime_dependency(%q<tty-command>.freeze, ["~> 0.9.0"])
        s.add_runtime_dependency(%q<tty-config>.freeze, ["~> 0.3.2"])
+@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<tty-editor>.freeze, ["~> 0.5"])
+       s.add_runtime_dependency(%q<tty-file>.freeze, ["~> 0.8.0"])
+       s.add_runtime_dependency(%q<tty-font>.freeze, ["~> 0.4.0"])
+-      s.add_runtime_dependency(%q<tty-logger>.freeze, ["~> 0.2.0"])
++      s.add_runtime_dependency(%q<tty-logger>.freeze, ["~> 0.2"])
+       s.add_runtime_dependency(%q<tty-markdown>.freeze, ["~> 0.6.0"])
+       s.add_runtime_dependency(%q<tty-pager>.freeze, ["~> 0.12"])
+       s.add_runtime_dependency(%q<tty-pie>.freeze, ["~> 0.3.0"])
 @@ -47,7 +47,7 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<equatable>.freeze, ["~> 0.5"])
        s.add_runtime_dependency(%q<pastel>.freeze, ["~> 0.7.2"])
