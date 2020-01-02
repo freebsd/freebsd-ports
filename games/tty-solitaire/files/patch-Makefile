@@ -1,0 +1,16 @@
+--- Makefile.orig	2018-11-10 05:00:46 UTC
++++ Makefile
+@@ -6,10 +6,11 @@ CFLAGS += -W -Wall -pedantic -ansi -std=c99 -DVERSION=
+ 
+ # OS X installs ncurses with wide character support, but not as "libncurses".
+ ifeq ($(shell uname -s),Darwin)
+-	LDFLAGS += -lncurses
++	NCURSES = -lncurses
+ else
+-	LDFLAGS += -lncursesw
++	NCURSES = -lncursesw
+ endif
++LDFLAGS += $(NCURSES)
+ 
+ PREFIX ?= /usr/local
+ 
