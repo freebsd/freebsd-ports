@@ -1,6 +1,6 @@
---- configure.orig	2015-05-03 17:29:57 UTC
-+++ configure
-@@ -3675,10 +3675,6 @@ case "${target}" in
+--- configure.orig	2017-01-09 13:01:26.582656000 -0800
++++ configure	2019-03-26 14:29:44.995174000 -0700
+@@ -3717,10 +3717,6 @@ case "${target}" in
    *-*-dragonfly*)
      ;;
    *-*-freebsd*)
@@ -11,3 +11,16 @@
      ;;
    *-*-kaos*)
      # Remove unsupported stuff on all kaOS configurations.
+@@ -5450,12 +5446,6 @@ $as_echo "$as_me: WARNING: trying to bootstrap a cross
+     as_fn_error "invalid option for --enable-bootstrap" "$LINENO" 5
+     ;;
+ esac
+-
+-# When bootstrapping with GCC, build stage 1 in C++98 mode to ensure that a
+-# C++98 compiler can still start the bootstrap.
+-if test "$enable_bootstrap:$GXX" = "yes:yes"; then
+-  CXX="$CXX -std=gnu++98"
+-fi
+ 
+ # Used for setting $lt_cv_objdir
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for objdir" >&5

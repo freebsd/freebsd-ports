@@ -2,6 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	6.5.0
+PORTREVISION=	1
 CATEGORIES=	base
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION} \
 		http://www.mpfr.org/mpfr-3.1.6/:mpfr \
@@ -32,6 +33,7 @@ CONFIGURE_ENV+= ${_tool}_FOR_TARGET="${${_tool}}"
 
 USES=	gmake libtool tar:xz makeinfo
 PLIST_SUB=	OPSYS=${OPSYS:tl} \
+		SUFFIX=${SUFFIX} \
 		GCC_TARGET=${GCC_TARGET} \
 		GCC_VERSION=${PORTVERSION}
 
@@ -47,6 +49,7 @@ CONFIGURE_ARGS+=	\
 		--disable-nls \
 		--without-headers \
 		--with-gxx-include-dir=/usr/include/c++/v1/ \
+		--with-sysroot="/" \
 		--with-build-sysroot=${CROSS_SYSROOT} \
 		-with-pkgversion="GNU Collection for FreeBSD"
 
@@ -119,5 +122,7 @@ post-install:
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 	${RM} ${STAGEDIR}/usr/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include/float.h
 .endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains
+	${INSTALL_DATA} ${FILESDIR}/freebsd-gcc.mk ${STAGEDIR}${PREFIX}/share/toolchains/freebsd-gcc${SUFFIX}.mk
 
 .include <bsd.port.post.mk>

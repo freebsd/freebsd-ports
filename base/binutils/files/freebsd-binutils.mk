@@ -1,0 +1,4 @@
+CROSS_BINUTILS_PREFIX=/usr/bin/
+export WITH_PORT_BASE_BINUTILS=yes
+export WITHOUT_BINUTILS=yes
+export WITHOUT_LLD_IS_LD=yes
