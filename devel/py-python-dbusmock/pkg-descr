@@ -1,0 +1,7 @@
+With this program/Python library you can easily create mock objects on
+D-Bus. This is useful for writing tests for software which talks to
+D-Bus services such as upower, systemd, logind, gnome-session or
+others, and it is hard (or impossible without root privileges) to set
+the state of the real services to what you expect in your tests.
+
+WWW: https://pypi.org/project/python-dbusmock
