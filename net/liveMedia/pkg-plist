@@ -1,4 +1,5 @@
 bin/MPEG2TransportStreamIndexer
+bin/live555HLSProxy
 bin/live555MediaServer
 bin/live555ProxyServer
 bin/openRTSP
@@ -195,6 +196,7 @@ include/liveMedia/SimpleRTPSource.hh
 include/liveMedia/StreamReplicator.hh
 include/liveMedia/T140TextRTPSink.hh
 include/liveMedia/TCPStreamSink.hh
+include/liveMedia/TLSState.hh
 include/liveMedia/TextRTPSink.hh
 include/liveMedia/TheoraVideoRTPSink.hh
 include/liveMedia/TheoraVideoRTPSource.hh
