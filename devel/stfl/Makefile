@@ -22,7 +22,8 @@ MAKE_ENV=	LDLIBS="${LDFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Os||;/gcc/d;/-MM/s|-I.|$${CFLAGS}|; \
-		/pkgconfig/s|$$(libdir)|libdata|' \
+		/pkgconfig/s|$$(libdir)|libdata| ; \
+		s/-lncursesw/-l${NCURSES_IMPL}/g' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/Libs.private/s|$$| ${ICONV_LIB}|' \
 		${WRKSRC}/stfl.pc.in
