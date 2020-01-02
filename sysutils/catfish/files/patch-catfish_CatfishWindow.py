@@ -1,14 +1,6 @@
---- catfish/CatfishWindow.py.orig	2019-07-27 11:21:22 UTC
+--- catfish/CatfishWindow.py.orig	2020-01-01 18:26:21 UTC
 +++ catfish/CatfishWindow.py
-@@ -22,6 +22,7 @@ import logging
- import mimetypes
- import os
- import subprocess
-+import sys
- import time
- from locale import gettext as _
- from shutil import copy2, rmtree
-@@ -738,9 +739,15 @@ class CatfishWindow(Window):
+@@ -822,9 +822,15 @@ class CatfishWindow(Window):
          self.update_index_unlock.set_sensitive(False)
  
          if SudoDialog.prefer_pkexec():
