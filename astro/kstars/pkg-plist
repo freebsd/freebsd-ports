@@ -594,6 +594,8 @@ share/doc/HTML/it/kstars/devicemanager.png
 share/doc/HTML/it/kstars/dumpmode.docbook
 share/doc/HTML/it/kstars/ecliptic.docbook
 share/doc/HTML/it/kstars/ekos-logs.docbook
+share/doc/HTML/it/kstars/ekos-setup.docbook
+share/doc/HTML/it/kstars/ekos-tutorials.docbook
 share/doc/HTML/it/kstars/ellipticalgalaxies.docbook
 share/doc/HTML/it/kstars/epoch.docbook
 share/doc/HTML/it/kstars/equinox.docbook
