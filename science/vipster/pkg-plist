@@ -20,6 +20,8 @@ include/vipster/io/orca/param.h
 include/vipster/io/orca/plugin.h
 include/vipster/io/parameters.h
 include/vipster/io/plugin.h
+include/vipster/io/poscar/config.h
+include/vipster/io/poscar/plugin.h
 include/vipster/io/pwinput/config.h
 include/vipster/io/pwinput/param.h
 include/vipster/io/pwinput/plugin.h
@@ -30,7 +32,7 @@ include/vipster/io/xyz/config.h
 include/vipster/io/xyz/plugin.h
 include/vipster/kpoints.h
 include/vipster/molecule.h
-include/vipster/pse.h
+include/vipster/periodictable.h
 include/vipster/pyvipster.h
 include/vipster/settings.h
 include/vipster/step.h
@@ -41,7 +43,7 @@ include/vipster/vec.h
 include/vipster/version.h
 lib/libvipster.so
 lib/libvipster.so.1
-lib/libvipster.so.1.15
+lib/libvipster.so.1.18
 %%DESKTOP%%share/applications/vipster.desktop
 %%DESKTOP%%share/icons/hicolor/128x128/apps/vipster.png
 %%DESKTOP%%share/metainfo/vipster.appdata.xml

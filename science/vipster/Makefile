@@ -2,14 +2,12 @@
 
 PORTNAME=	vipster
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16b
-PORTREVISION=	1
+DISTVERSION=	1.18b-75
+DISTVERSIONSUFFIX=	-gfa5853f
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Crystalline and molecular structure visualisation program
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
