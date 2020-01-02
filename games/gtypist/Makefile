@@ -36,5 +36,6 @@ post-patch:
 		${WRKSRC}/src/script.c \
 		${WRKSRC}/src/gtypist.c \
 		${WRKSRC}/src/utf8.c
+	${REINPLACE_CMD} -e 's/-lncursesw/-l${NCURSES_IMPL}/g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
