@@ -50,6 +50,9 @@ MAKE_ENV+=	SSL=no
 MAKE_ENV+=	TFO=yes
 .endif
 
+post-patch-NCURSES-on:
+	@${REINPLACE_CMD} "s/lncursesw/l${NCURSES_IMPL}/g" ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
