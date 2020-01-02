@@ -9,6 +9,8 @@ COMMENT=	Lightweight deep neural network inference engine
 
 LICENSE=	APACHE20
 
+BROKEN_i386=	always_inline function '_mm_set1_ps' requires target feature 'sse', but would be inlined into function 'Vec4' that is compiled without support for 'sse'
+
 BUILD_DEPENDS=	bash:shells/bash
 
 USES=		cmake compiler:c++11-lang shebangfix
