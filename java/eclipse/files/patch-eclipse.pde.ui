@@ -1,7 +1,7 @@
 diff -ru eclipse.pde.ui/ui/org.eclipse.pde.ui.templates/templates_3.5/E4Application/$pluginId$.product eclipse.pde.ui/ui/org.eclipse.pde.ui.templates/templates_3.5/E4Application/$pluginId$.product
 --- eclipse.pde.ui/ui/org.eclipse.pde.ui.templates/templates_3.5/E4Application/$pluginId$.product	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.pde.ui/ui/org.eclipse.pde.ui.templates/templates_3.5/E4Application/$pluginId$.product	0000-00-00 00:00:00.000000000 +0000
-@@ -80,8 +80,8 @@
+@@ -81,8 +81,8 @@
        <plugin id="org.eclipse.osgi.util"/>
        <plugin id="org.eclipse.swt"/>
        <plugin id="org.eclipse.swt.cocoa.macosx.x86_64" fragment="true"/>

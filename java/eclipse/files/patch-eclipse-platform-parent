@@ -5,24 +5,15 @@ diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
        'eclipiserun-repo' repository, such as for computing .api-descriptions and
        generating API Tools reports.
      -->
--    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.12-I-builds/</eclipserun-repo>
-+    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.12/</eclipserun-repo>
+-    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.14-I-builds/</eclipserun-repo>
++    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.14/</eclipserun-repo>
      
--    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.12-I-builds</comparator.repo>
-+    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.12</comparator.repo>
+-    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.14-I-builds</comparator.repo>
++    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.14</comparator.repo>
  
      <!--
        NOTE: this EMF and ECF URL must match exactly what is in the eclipse-sdk-prereqs.target file.
-@@ -100,7 +100,7 @@
-       it).
-       And, of course, in the PDE target file, the URL is expected to be the actual URL, not a variable.
-     -->
--    <emf-repo.url>https://download.eclipse.org/modeling/emf/emf/builds/milestone/S201905280646</emf-repo.url>
-+    <emf-repo.url>https://download.eclipse.org/modeling/emf/emf/builds/release/2.18</emf-repo.url>
- 
-     <ecf-repo.url>https://download.eclipse.org/rt/ecf/3.14.5/site.p2/</ecf-repo.url>
- 
-@@ -262,14 +262,14 @@
+@@ -263,14 +263,14 @@
            </target>
            <environments>
              <environment>
@@ -41,12 +32,12 @@ diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
              </environment>
              <environment>
                <os>win32</os>
-@@ -657,7 +657,7 @@
+@@ -635,7 +635,7 @@
            For maintenance streams should always be "M-builds".
            Ideally, this value would be provided by the environment, see bug 489789.
          -->
--        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.12-I-builds</eclipse-p2-repo.url>
-+        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.12</eclipse-p2-repo.url>
+-        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.14-I-builds</eclipse-p2-repo.url>
++        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.14</eclipse-p2-repo.url>
        </properties>
        <repositories>
          <repository>

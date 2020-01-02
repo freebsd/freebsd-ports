@@ -46,4 +46,3 @@ done
 
 # Clean up binaries
 rm -rf rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux
-find . -name '*.so' -delete

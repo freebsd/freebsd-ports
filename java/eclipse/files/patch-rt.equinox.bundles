@@ -30,7 +30,7 @@ diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/M
  Bundle-Name: %fragmentName
 -Bundle-SymbolicName: org.eclipse.equinox.security.linux.x86_64;singleton:=true
 +Bundle-SymbolicName: org.eclipse.equinox.security.freebsd.amd64;singleton:=true
- Bundle-Version: 1.1.200.qualifier
+ Bundle-Version: 1.1.300.qualifier
  Bundle-Vendor: %providerName
  Fragment-Host: org.eclipse.equinox.security;bundle-version="[1.0.0,2.0.0)"
  Bundle-RequiredExecutionEnvironment: JavaSE-1.8
@@ -49,24 +49,20 @@ diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/k
  LIBSECRET_CFLAGS = `pkg-config --cflags libsecret-1`
  LIBSECRET_LIBS = `pkg-config --libs libsecret-1`
  
--CFLAGS = -shared -fPIC -I"${JAVA_HOME}/include" -I"${JAVA_HOME}/include/linux"
-+CFLAGS = -shared -fPIC -I"${JAVA_HOME}/include" -I"${JAVA_HOME}/include/freebsd"
+-CFLAGS := $(CFLAGS) -fPIC -I"${JAVA_HOME}/include" -I"${JAVA_HOME}/include/linux" $(LIBSECRET_CFLAGS)
++CFLAGS := $(CFLAGS) -fPIC -I"${JAVA_HOME}/include" -I"${JAVA_HOME}/include/freebsd" $(LIBSECRET_CFLAGS)
+ LDFLAGS := $(LDFLAGS) -shared $(LIBSECRET_LIBS)
  
  all: ../libkeystorelinuxnative.so
- 
-@@ -9,10 +9,10 @@
+@@ -10,7 +10,7 @@
  	rm ../libkeystorelinuxnative.so ../target/keystoreLinuxNative.o
- 	
- ../libkeystorelinuxnative.so: ../target/keystoreLinuxNative.o
--	$(CC) $(CFLAGS) -o $@ $< $(LIBSECRET_LIBS)
-+	$(CC) $(CFLAGS) -s -o $@ $< $(LIBSECRET_LIBS)
- 	
- ../target/keystoreLinuxNative.o: ../target keystoreLinuxNative.c
--	$(CC) -c -fPIC -I"${JAVA_HOME}/include" -I"${JAVA_HOME}/include/linux" -o $@ $(TESTFLAGS) $(LIBSECRET_CFLAGS) keystoreLinuxNative.c
-+	$(CC) -c -fPIC -I"${JAVA_HOME}/include" -I"${JAVA_HOME}/include/freebsd" -o $@ $(TESTFLAGS) $(LIBSECRET_CFLAGS) keystoreLinuxNative.c
  
- ../target: 
- 	mkdir -p ../target
+ ../libkeystorelinuxnative.so: ../target/keystoreLinuxNative.o
+-	$(CC) $(LDFLAGS) -o $@ $<
++	$(CC) $(LDFLAGS) -s -o $@ $<
+ 
+ ../target/keystoreLinuxNative.o: ../target keystoreLinuxNative.c
+ 	$(CC) -c $(CFLAGS) -o $@ $(TESTFLAGS) keystoreLinuxNative.c
 diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/pom.xml rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/pom.xml
 --- rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
@@ -76,10 +72,10 @@ diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/p
    <groupId>org.eclipse.equinox</groupId>
 -  <artifactId>org.eclipse.equinox.security.linux.x86_64</artifactId>
 +  <artifactId>org.eclipse.equinox.security.freebsd.amd64</artifactId>
-   <version>1.1.200-SNAPSHOT</version>
+   <version>1.1.300-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
-@@ -31,9 +31,9 @@
+@@ -35,9 +35,9 @@
            <resolver>p2</resolver>
            <environments>
              <environment>
@@ -91,7 +87,7 @@ diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/p
              </environment>
            </environments>
          </configuration>
-@@ -47,7 +47,7 @@
+@@ -51,7 +51,7 @@
          <property>
            <!-- This has to be hardcoded. Profiles are not allowed to use pom defined properties :-( -->
            <name>native</name>
@@ -100,7 +96,7 @@ diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/p
          </property>
        </activation>
        <build>
-@@ -60,7 +60,7 @@
+@@ -64,7 +64,7 @@
                  <phase>process-resources</phase>
                  <configuration>
                    <target>
@@ -166,7 +162,7 @@ diff -ru rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/feature.xml rt
 diff -ru rt.equinox.bundles/pom.xml rt.equinox.bundles/pom.xml
 --- rt.equinox.bundles/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.bundles/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -90,7 +90,7 @@
+@@ -89,7 +89,7 @@
      <module>bundles/org.eclipse.equinox.security</module>
      <module>bundles/org.eclipse.equinox.security.macosx</module>
      <module>bundles/org.eclipse.equinox.security.win32.x86_64</module>

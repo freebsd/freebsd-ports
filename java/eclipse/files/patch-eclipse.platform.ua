@@ -35,15 +35,15 @@ diff -ru eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal
  			prefs
  					.put("custom_browser_path", //$NON-NLS-1$
  							"\"C:\\Program Files\\Internet Explorer\\IEXPLORE.EXE\" %1"); //$NON-NLS-1$
--		} else if (os.indexOf("linux") != -1) { //$NON-NLS-1$
-+		} else if (os.indexOf("linux") != -1 || os.indexOf("freebsd") != -1) { //$NON-NLS-1$
+-		} else if (os.contains("linux")) { //$NON-NLS-1$
++		} else if (os.contains("linux") || os.contains("freebsd")) { //$NON-NLS-1$
  			prefs.put("custom_browser_path", //$NON-NLS-1$
  					"konqueror %1"); //$NON-NLS-1$
  		} else {
 diff -ru eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal/browser/BrowserManager.java eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal/browser/BrowserManager.java
 --- eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal/browser/BrowserManager.java	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.ua/org.eclipse.help.base/src/org/eclipse/help/internal/browser/BrowserManager.java	0000-00-00 00:00:00.000000000 +0000
-@@ -103,6 +103,7 @@
+@@ -102,6 +102,7 @@
  				setDefaultBrowserID(BROWSER_ID_SYSTEM);
  			} else if (Constants.OS_AIX.equalsIgnoreCase(os)
  					|| (Constants.OS_HPUX.equalsIgnoreCase(os))

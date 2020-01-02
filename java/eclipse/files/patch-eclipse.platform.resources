@@ -67,7 +67,7 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
    <version>1.2.300-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
-@@ -33,9 +33,9 @@
+@@ -37,9 +37,9 @@
            <resolver>p2</resolver>
            <environments>
              <environment>
@@ -79,7 +79,7 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
              </environment>
            </environments>
          </configuration>
-@@ -50,7 +50,7 @@
+@@ -54,7 +54,7 @@
          <property>
            <!-- This has to be hardcoded. Profiles are not allowed to use pom defined properties :-( -->
            <name>native</name>
@@ -88,7 +88,7 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
          </property>
        </activation>
        <build>
-@@ -63,10 +63,10 @@
+@@ -67,10 +67,10 @@
                  <phase>process-resources</phase>
                  <configuration>
                    <target>
@@ -99,67 +99,6 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
 +                    <exec executable="gmake" newenvironment="false" dir="../org.eclipse.core.filesystem/natives/unix/freebsd/"/>
 +           <mkdir dir="os/freebsd/amd64/"/>
 +           <copy todir="os/freebsd/amd64/">
-+           <fileset dir="../org.eclipse.core.filesystem/natives/unix/freebsd/">
-                <include name="libunixfile_*.so"/>
-            </fileset>
-            </copy>
-diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.i386/META-INF/MANIFEST.MF eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.i386/META-INF/MANIFEST.MF
---- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.i386/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.i386/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-@@ -1,9 +1,9 @@
- Manifest-Version: 1.0
- Bundle-ManifestVersion: 2
- Bundle-Name: %fragmentName
--Bundle-SymbolicName: org.eclipse.core.filesystem.linux.x86; singleton:=true
-+Bundle-SymbolicName: org.eclipse.core.filesystem.freebsd.i386; singleton:=true
- Bundle-Version: 1.4.300.qualifier
- Bundle-Vendor: %providerName
- Fragment-Host: org.eclipse.core.filesystem;bundle-version="[1.7.200,2.0.0)"
- Bundle-Localization: fragment
--Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=x86))
-+Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=i386))
-diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.i386/pom.xml eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.i386/pom.xml
---- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.i386/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.i386/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -18,7 +18,7 @@
-     <relativePath>../../</relativePath>
-   </parent>
-   <groupId>org.eclipse.core</groupId>
--  <artifactId>org.eclipse.core.filesystem.linux.x86</artifactId>
-+  <artifactId>org.eclipse.core.filesystem.freebsd.i386</artifactId>
-   <version>1.4.300-SNAPSHOT</version>
-   <packaging>eclipse-plugin</packaging>
- 
-@@ -33,9 +33,9 @@
-           <resolver>p2</resolver>
-           <environments>
-             <environment>
--              <os>linux</os>
-+              <os>freebsd</os>
-               <ws>gtk</ws>
--              <arch>x86</arch>
-+              <arch>i386</arch>
-             </environment>
-           </environments>
-         </configuration>
-@@ -50,7 +50,7 @@
-         <property>
-           <!-- This has to be hardcoded. Profiles are not allowed to use pom defined properties :-( -->
-           <name>native</name>
--          <value>gtk.linux.x86</value>
-+          <value>gtk.freebsd.i386</value>
-         </property>
-       </activation>
-       <build>
-@@ -63,9 +63,9 @@
-                 <phase>process-resources</phase>
-                 <configuration>
-                   <target>
--                    <exec executable="make" newenvironment="false" dir="../org.eclipse.core.filesystem/natives/unix/linux/"/>
--           <copy todir="os/linux/x86">
--           <fileset dir="../org.eclipse.core.filesystem/natives/unix/linux/">
-+                    <exec executable="gmake" newenvironment="false" dir="../org.eclipse.core.filesystem/natives/unix/freebsd/"/>
-+           <copy todir="os/freebsd/i386">
 +           <fileset dir="../org.eclipse.core.filesystem/natives/unix/freebsd/">
                 <include name="libunixfile_*.so"/>
             </fileset>
@@ -191,7 +130,7 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
    <version>1.4.100-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
-@@ -33,9 +33,9 @@
+@@ -37,9 +37,9 @@
            <resolver>p2</resolver>
            <environments>
              <environment>

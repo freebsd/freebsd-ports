@@ -8,9 +8,9 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse/getBaseBuilderAndTo
 -      value="eclipse-platform-${eclispeBaseLabel}-linux-gtk-x86_64.tar.gz" />
 +      value="eclipse-platform-${eclispeBaseLabel}-freebsd-gtk-amd64.tar.gz" />
  
-     <!--
-       mavenproperties.properties is produced during the build and contains
-@@ -334,4 +334,4 @@
+      <!-- the following setting is just to make sure we have a reasonable "fallback" value, such as when
+       using this script on Hudson to do "clean up" of repositories. Should change it to "well known" version,
+@@ -308,4 +308,4 @@
        file="${settingsDir}/org.eclipse.core.net.prefs" />
    </target>
  
@@ -98,23 +98,23 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/mai
  org.eclipse.equinox.p2.reconciler.tests.platform.archive.win32-x86_64=\${basedir}\\\\eclipse-platform-${buildId}-win32-x86_64.zip
  org.eclipse.equinox.p2.reconciler.tests.platform.archive.macosx-x86_64=\${basedir}/eclipse-platform-${buildId}-macosx-cocoa-x86_64.tar.gz
  
--org.eclipse.equinox.p2.reconciler.tests.lastrelease.platform.archive.linux-x86_64=\${basedir}/eclipse-platform-4.11-linux-gtk-x86_64.tar.gz
-+org.eclipse.equinox.p2.reconciler.tests.lastrelease.platform.archive.freebsd-amd64=\${basedir}/eclipse-platform-4.11-freebsd-gtk-amd64.tar.gz
- org.eclipse.equinox.p2.reconciler.tests.lastrelease.platform.archive.win32-x86_64=\${basedir}\\\\eclipse-platform-4.11-win32-x86_64.zip
- org.eclipse.equinox.p2.reconciler.tests.lastrelease.platform.archive.macosx-x86_64=\${basedir}/eclipse-platform-4.11-macosx-cocoa-x86_64.tar.gz
+-org.eclipse.equinox.p2.reconciler.tests.lastrelease.platform.archive.linux-x86_64=\${basedir}/eclipse-platform-4.13-linux-gtk-x86_64.tar.gz
++org.eclipse.equinox.p2.reconciler.tests.lastrelease.platform.archive.freebsd-amd64=\${basedir}/eclipse-platform-4.13-freebsd-gtk-amd64.tar.gz
+ org.eclipse.equinox.p2.reconciler.tests.lastrelease.platform.archive.win32-x86_64=\${basedir}\\\\eclipse-platform-4.13-win32-x86_64.zip
+ org.eclipse.equinox.p2.reconciler.tests.lastrelease.platform.archive.macosx-x86_64=\${basedir}/eclipse-platform-4.13-macosx-cocoa-x86_64.tar.gz
  
 diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/scripts/getPreviousRelease.sh eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/scripts/getPreviousRelease.sh
 --- eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/scripts/getPreviousRelease.sh	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/scripts/getPreviousRelease.sh	0000-00-00 00:00:00.000000000 +0000
-@@ -8,9 +8,9 @@
+@@ -7,9 +7,9 @@
+ 
  
  mkdir -p workarea/${buildId}/eclipse-testing
- #cp /home/files/buildzips/oxygen/R/R-4.11-201903070500/eclipse-SDK-4.11-linux-gtk-x86_64.tar.gz ./workarea/${buildId}/eclipse-testing/
--cp /home/files/buildzips/oxygen/R/R-4.11-201903070500/eclipse-platform-4.11-linux-gtk-x86_64.tar.gz ./workarea/${buildId}/eclipse-testing/platformLocation/
-+cp /home/files/buildzips/oxygen/R/R-4.11-201903070500/eclipse-platform-4.11-freebsd-gtk-amd64.tar.gz ./workarea/${buildId}/eclipse-testing/platformLocation/
+-cp /home/files/buildzips/oxygen/R/R-4.13-201909161045/eclipse-platform-4.13-linux-gtk-x86_64.tar.gz ./workarea/${buildId}/eclipse-testing/platformLocation/
++cp /home/files/buildzips/oxygen/R/R-4.13-201909161045/eclipse-platform-4.13-freebsd-gtk-amd64.tar.gz ./workarea/${buildId}/eclipse-testing/platformLocation/
  
--cp ../../eclipse-SDK-${buildId}-linux-gtk-x86_64.tar.gz workarea/${buildId}/eclipse-testing/
-+cp ../../eclipse-SDK-${buildId}-freebsd-gtk-amd64.tar.gz workarea/${buildId}/eclipse-testing/
+-cp /home/files/buildzips/oxygen/R/R-4.13-201909161045/eclipse-SDK-4.13-linux-gtk-x86_64.tar.gz ./workarea/${buildId}/eclipse-testing/
++cp /home/files/buildzips/oxygen/R/R-4.13-201909161045/eclipse-SDK-4.13-freebsd-gtk-amd64.tar.gz ./workarea/${buildId}/eclipse-testing/
  
  cp eclipse-junit-tests-${buildId}.zip workarea/${buildId}/eclipse-testing/
  
@@ -142,8 +142,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/
 -      <linux icon="icon.xpm"/>
 +      <freebsd icon="icon.xpm"/>
        <macosx icon="rt.icns"/>
-       <win useIco="true">
-          <ico path="rt.ico"/>
+       <win useIco="false">
+          <bmp/>
 diff -ru eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml
 --- eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml	0000-00-00 00:00:00.000000000 +0000
@@ -178,8 +178,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/platform/platform.product e
 -      <linux icon="icons/icon.xpm"/>
 +      <freebsd icon="icons/icon.xpm"/>
        <macosx icon="icons/Eclipse.icns"/>
-       <win useIco="true">
-          <ico path="icons/eclipse.ico"/>
+       <win useIco="false">
+          <bmp/>
 diff -ru eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml
 --- eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml	0000-00-00 00:00:00.000000000 +0000
@@ -202,8 +202,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/platform.sdk/platform.sdk.p
 -      <linux icon="icons/icon.xpm"/>
 +      <freebsd icon="icons/icon.xpm"/>
        <macosx icon="icons/Eclipse.icns"/>
-       <win useIco="true">
-          <ico path="icons/eclipse.ico"/>
+       <win useIco="false">
+          <bmp/>
 diff -ru eclipse.platform.releng.tychoeclipsebuilder/pom.xml eclipse.platform.releng.tychoeclipsebuilder/pom.xml
 --- eclipse.platform.releng.tychoeclipsebuilder/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.releng.tychoeclipsebuilder/pom.xml	0000-00-00 00:00:00.000000000 +0000
@@ -227,8 +227,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/rcp/rcp.product eclipse.pla
 -      <linux icon="icons/icon.xpm"/>
 +      <freebsd icon="icons/icon.xpm"/>
        <macosx icon="icons/Eclipse.icns"/>
-       <win useIco="true">
-          <ico path="icons/eclipse.ico"/>
+       <win useIco="false">
+          <bmp/>
 diff -ru eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties
 --- eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties	0000-00-00 00:00:00.000000000 +0000
@@ -258,8 +258,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/rcp.sdk/rcp.sdk.product ecl
 -      <linux icon="icons/icon.xpm"/>
 +      <freebsd icon="icons/icon.xpm"/>
        <macosx icon="icons/Eclipse.icns"/>
-       <win useIco="true">
-          <ico path="icons/eclipse.ico"/>
+       <win useIco="false">
+          <bmp/>
 diff -ru eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml
 --- eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml	0000-00-00 00:00:00.000000000 +0000
@@ -282,5 +282,5 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.product eclipse.pla
 -      <linux icon="icons/icon.xpm"/>
 +      <freebsd icon="icons/icon.xpm"/>
        <macosx icon="icons/Eclipse.icns"/>
-       <win useIco="true">
-          <ico path="icons/eclipse.ico"/>
+       <win useIco="false">
+          <bmp/>
