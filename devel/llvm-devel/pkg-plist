@@ -557,6 +557,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Driver/DriverDiagnostic.h
 %%CLANG%%llvm-devel/include/clang/Driver/Job.h
 %%CLANG%%llvm-devel/include/clang/Driver/Multilib.h
+%%CLANG%%llvm-devel/include/clang/Driver/OptionUtils.h
 %%CLANG%%llvm-devel/include/clang/Driver/Options.h
 %%CLANG%%llvm-devel/include/clang/Driver/Options.inc
 %%CLANG%%llvm-devel/include/clang/Driver/Phases.h
@@ -1189,7 +1190,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Symbol/ClangASTImporter.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/ClangASTMetadata.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/ClangExternalASTSourceCallbacks.h
-%%LLDB%%llvm-devel/include/lldb/Symbol/ClangExternalASTSourceCommon.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/ClangUtil.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/CompactUnwindInfo.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/CompileUnit.h
@@ -2475,6 +2475,7 @@ llvm-devel/include/llvm/Support/Errno.h
 llvm-devel/include/llvm/Support/Error.h
 llvm-devel/include/llvm/Support/ErrorHandling.h
 llvm-devel/include/llvm/Support/ErrorOr.h
+llvm-devel/include/llvm/Support/Extension.def
 llvm-devel/include/llvm/Support/FileCheck.h
 llvm-devel/include/llvm/Support/FileCollector.h
 llvm-devel/include/llvm/Support/FileOutputBuffer.h
@@ -3000,6 +3001,7 @@ llvm-devel/lib/cmake/llvm/LLVMProcessSources.cmake
 llvm-devel/lib/cmake/llvm/TableGen.cmake
 llvm-devel/lib/cmake/llvm/UseLibtool.cmake
 llvm-devel/lib/cmake/llvm/VersionFromVCS.cmake
+llvm-devel/lib/libBye.a
 llvm-devel/lib/libLLVM-%%LLVM_MAJOR%%git.so
 llvm-devel/lib/libLLVM-%%LLVM_RELEASE%%git.so
 llvm-devel/lib/libLLVM.so
