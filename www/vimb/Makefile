@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vimb
-DISTVERSION=	3.5.0
+DISTVERSION=	3.6.0
 CATEGORIES=	www
 
 MAINTAINER=	tobik@FreeBSD.org
