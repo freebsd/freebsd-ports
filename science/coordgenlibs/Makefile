@@ -2,8 +2,7 @@
 
 PORTNAME=	coordgenlibs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
-PORTREVISION=	4
+DISTVERSION=	1.3.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,5 +18,7 @@ USES=		cmake compiler:c++11-lang localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	schrodinger
 USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-Dmaeparser_DIR=${LOCALBASE}/lib/cmake
 
 .include <bsd.port.mk>
