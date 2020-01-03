@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	coccinelle
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://coccinelle.lip6.fr/distrib/
 
@@ -21,7 +20,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 USE_OCAML=	3.0+
 USE_OCAML_CAMLP4=yes
 
-USES=		gmake perl5 pkgconfig:build python shebangfix tar:tgz
+USES=		autoreconf gmake perl5 pkgconfig:build python shebangfix
+BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake
 SHEBANG_FILES=	tools/pycocci
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
@@ -29,8 +29,8 @@ CONFIGURE_ENV=	PYTHON="${PYTHON_CMD}" PYVER="${PYTHON_VER}"
 MAKE_ARGS=	PYTHON_VERSION="${PYTHON_VER}"
 
 post-install:
-	# FIXME: Stripping spatch(1) breaks the executable.
-	# ${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/coccinelle/spatch
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spatch
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spgen
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/coccinelle/*.so
 
 .include <bsd.port.mk>
