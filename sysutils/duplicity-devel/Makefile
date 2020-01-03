@@ -3,6 +3,7 @@
 
 PORTNAME=	duplicity
 PORTVERSION=	0.8.08
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.8-series/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-devel
@@ -48,7 +49,7 @@ S3_DESC=		Amazon S3 backend
 
 FTP_RUN_DEPENDS=	ncftp>=3.2.2:ftp/ncftp3
 FTPS_RUN_DEPENDS=	lftp>=3.7.15:ftp/lftp
-GDOCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:devel/py-gdata@${PY_FLAVOR}
+GDOCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydrive>0:devel/py-pydrive@${PY_FLAVOR}
 GIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject>0:devel/py-gobject@${PY_FLAVOR} \
 					dbus>0:devel/dbus
 GNUPG_RUN_DEPENDS=	gnupg1>=1.4.7:security/gnupg1
