@@ -1,14 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	9.0.0
-PORTREVISION=	2
+DISTVERSION=	9.0.1
+PORTREVISION=	0
 CATEGORIES=	devel lang
-.if ${DISTVERSION:M*rc*}
-MASTER_SITES=  https://prereleases.llvm.org/${LLVM_RELEASE}/${RCDIR}
-.else
-MASTER_SITES=	https://releases.llvm.org/${LLVM_RELEASE}/
-.endif
+MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION}/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
 DISTFILES=	${PORTNAME}-${DISTVERSION}.src${EXTRACT_SUFX}
@@ -89,7 +85,7 @@ BE_${BE}_PLIST_FILES=	${_BE_LIBS_${BE}:O:S/$/.a/:S|^|${LLVM_PREFIX:S|${PREFIX}/|
 .endfor
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES=	${PATCHDIR}/clang
-CLANG_DISTFILES=	cfe-${DISTVERSION}.src${EXTRACT_SUFX}
+CLANG_DISTFILES=	clang-${DISTVERSION}.src${EXTRACT_SUFX}
 CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
 CLANG_PORTDOCS=		clang
 CLANG_USE=		GNOME=libxml2
@@ -499,9 +495,6 @@ post-install-DOCS-off:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
 .endif
-
-post-install-LLD-on:
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/BinaryFormat/WasmRelocs
 
 post-install-CLANG-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
