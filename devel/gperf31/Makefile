@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	31
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Generates perfect hash functions for sets of keywords
 
+DEPRECATED=	No longer needed, use devel/gperf
+EXPIRATION_DATE=	2020-01-31
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
