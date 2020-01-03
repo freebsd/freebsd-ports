@@ -1,0 +1,11 @@
+--- bin/background_jobs.orig	2020-01-02 22:36:53 UTC
++++ bin/background_jobs
+@@ -45,7 +45,7 @@ start_sidekiq()
+     cmd="${cmd} ${chpst} -P"
+   fi
+ 
+-  ${cmd} bundle exec sidekiq -C "${sidekiq_config}" -e $RAILS_ENV "$@"
++  ${cmd} bundle exec sidekiq5 -C "${sidekiq_config}" -e $RAILS_ENV "$@"
+ }
+ 
+ load_ok()
