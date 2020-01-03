@@ -1,6 +1,6 @@
---- samples/sample.conf.in.orig	2007-11-16 17:58:32.000000000 +0100
-+++ samples/sample.conf.in	2013-10-05 15:30:39.997329900 +0200
-@@ -53,9 +53,9 @@
+--- samples/sample.conf.in.orig	2007-11-16 16:58:32 UTC
++++ samples/sample.conf.in
+@@ -53,9 +53,9 @@ dest local {
  }
  
  dest adult {

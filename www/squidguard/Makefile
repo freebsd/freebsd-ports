@@ -4,17 +4,14 @@ PORTNAME=	squidGuard
 PORTVERSION=	1.4
 PORTREVISION=	15
 CATEGORIES=	www
-MASTER_SITES=	http://www.squidguard.org/Downloads/:a \
-		http://www.squidguard.org/Downloads/Contrib/:b
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:a \
-		squidGuard-1.4-quoted_string_support.diff:b \
-		squidGuard-1.4-dnsbl.patch:b
+MASTER_SITES=	LOCAL/garga/squidguard/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		squidGuard-1.4-quoted_string_support.diff \
+		squidGuard-1.4-dnsbl.patch
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Fast redirector for squid
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
