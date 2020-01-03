@@ -18,8 +18,6 @@ COMMENT=	Ruby extension library to use Thomas Boutell's gd library
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgd.so:graphics/gd
 
-BROKEN_RUBY20=	yes
-
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
