@@ -1,6 +1,6 @@
---- lib/dbd/pg/database.rb.orig	2018-04-15 06:18:20 UTC
+--- lib/dbd/pg/database.rb.orig	2020-01-03 12:38:44 UTC
 +++ lib/dbd/pg/database.rb
-@@ -48,7 +48,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+@@ -48,7 +48,7 @@ class DBI::DBD::Pg::Database < DBI::BaseDatabase
          hash['tty'] ||= ''
          hash['port'] = hash['port'].to_i unless hash['port'].nil? 
  
@@ -9,7 +9,7 @@
                                   hash['dbname'] || hash['database'], user, auth)
  
          @exec_method = :exec
-@@ -78,7 +78,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+@@ -78,7 +78,7 @@ class DBI::DBD::Pg::Database < DBI::BaseDatabase
  
          self['AutoCommit'] = true    # Postgres starts in unchained mode (AutoCommit=on) by default 
  
@@ -18,7 +18,7 @@
          raise DBI::OperationalError.new(err.message)
      end
  
-@@ -96,7 +96,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+@@ -96,7 +96,7 @@ class DBI::DBD::Pg::Database < DBI::BaseDatabase
          else
              return false
          end
@@ -27,7 +27,28 @@
          return false
      ensure
          answer.clear if answer
-@@ -426,7 +426,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+@@ -383,9 +383,6 @@ class DBI::DBD::Pg::Database < DBI::BaseDatabase
+                         end
+                 }
+         end 
+-        # additional conversions
+-        @type_map[705]  ||= DBI::Type::Varchar       # select 'hallo'
+-        @type_map[1114] ||= DBI::Type::Timestamp # TIMESTAMP WITHOUT TIME ZONE
+ 
+         # remap array subtypes
+         @type_map.each_key do |key|
+@@ -399,6 +396,10 @@ class DBI::DBD::Pg::Database < DBI::BaseDatabase
+                 end
+             end
+         end
++
++        # additional conversions
++        @type_map[1114] ||= DBI::Type::Timestamp # TIMESTAMP WITHOUT TIME ZONE
++        @type_map[705]  ||= DBI::Type::Varchar       # select 'hallo'
+     end
+ 
+     public
+@@ -426,7 +427,7 @@ class DBI::DBD::Pg::Database < DBI::BaseDatabase
      def __blob_import(file)
          start_transaction unless @in_transaction
          @connection.lo_import(file)
@@ -36,7 +57,7 @@
          raise DBI::DatabaseError.new(err.message) 
      end
  
-@@ -436,27 +436,27 @@ class DBI::DBD::Pg::Database < DBI::Base
+@@ -436,27 +437,27 @@ class DBI::DBD::Pg::Database < DBI::BaseDatabase
      def __blob_export(oid, file)
          start_transaction unless @in_transaction
          @connection.lo_export(oid.to_i, file)
@@ -69,7 +90,7 @@
          raise DBI::DatabaseError.new(err.message) 
      end
  
-@@ -466,7 +466,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+@@ -466,7 +467,7 @@ class DBI::DBD::Pg::Database < DBI::BaseDatabase
      def __blob_unlink(oid)
          start_transaction unless @in_transaction
          @connection.lo_unlink(oid.to_i)
@@ -78,7 +99,7 @@
          raise DBI::DatabaseError.new(err.message) 
      end
  
-@@ -474,7 +474,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+@@ -474,7 +475,7 @@ class DBI::DBD::Pg::Database < DBI::BaseDatabase
      # Read a BLOB and return the data.
      #
      def __blob_read(oid, length)
@@ -87,7 +108,7 @@
  
          if length.nil?
              data = @connection.lo_read(blob)
-@@ -485,7 +485,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+@@ -485,7 +486,7 @@ class DBI::DBD::Pg::Database < DBI::BaseDatabase
          # FIXME it doesn't like to close here either.
          # @connection.lo_close(blob)
          data
@@ -96,7 +117,7 @@
          raise DBI::DatabaseError.new(err.message) 
      end
  
-@@ -494,14 +494,14 @@ class DBI::DBD::Pg::Database < DBI::Base
+@@ -494,14 +495,14 @@ class DBI::DBD::Pg::Database < DBI::BaseDatabase
      #
      def __blob_write(oid, value)
          start_transaction unless @in_transaction
@@ -113,7 +134,7 @@
          raise DBI::DatabaseError.new(err.message)
      end
  
-@@ -510,7 +510,7 @@ class DBI::DBD::Pg::Database < DBI::Base
+@@ -510,7 +511,7 @@ class DBI::DBD::Pg::Database < DBI::BaseDatabase
      #
      def __set_notice_processor(proc)
          @connection.set_notice_processor proc
