@@ -13,6 +13,9 @@ COMMENT=	Tools for access to scanners, digitals camera, frame grabbers etc
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Unmaintained upstream, no consumers left
+EXPIRATION_DATE=	2020-03-31
+
 LIB_DEPENDS=	libsane.so:graphics/sane-backends
 
 USES=		gmake gnome pkgconfig
