@@ -1,5 +1,14 @@
---- bin/background_jobs.orig	2020-01-02 22:36:53 UTC
+--- bin/background_jobs.orig	2020-01-02 15:06:44 UTC
 +++ bin/background_jobs
+@@ -14,7 +14,7 @@ warn()
+ 
+ stop()
+ {
+-  bundle exec sidekiqctl stop $sidekiq_pidfile >> $sidekiq_logfile 2>&1
++  bundle exec sidekiqctl5 stop $sidekiq_pidfile >> $sidekiq_logfile 2>&1
+ }
+ 
+ killall()
 @@ -45,7 +45,7 @@ start_sidekiq()
      cmd="${cmd} ${chpst} -P"
    fi
