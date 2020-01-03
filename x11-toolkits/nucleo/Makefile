@@ -13,6 +13,9 @@ COMMENT=	Toolkit to explore video and human-computer interaction
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+DEPRECATED=	Unmaintained, only used by deprecated x11/metisse
+EXPIRATION_DATE=	2020-01-27
+
 .if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 BROKEN=		ld: error: /wrkdirs/usr/ports/x11-toolkits/nucleo/work/nucleo-0.7.6/nucleo/.libs/libNucleo.so: undefined reference to XCloseDisplay
 .endif
