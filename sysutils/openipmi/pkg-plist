@@ -30,6 +30,7 @@ include/OpenIPMI/internal/locked_list.h
 include/OpenIPMI/internal/md2.h
 include/OpenIPMI/internal/md5.h
 include/OpenIPMI/internal/opq.h
+include/OpenIPMI/ipmbserv.h
 include/OpenIPMI/ipmi_addr.h
 include/OpenIPMI/ipmi_auth.h
 include/OpenIPMI/ipmi_bits.h
