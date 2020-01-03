@@ -10,6 +10,10 @@ COMMENT=	Command line interface tool to manage tags in music files
 
 LICENSE=	BSD2CLAUSE
 
+.if exists(/usr/lib/libc++.so) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+BROKEN=		ld: undefined reference to symbol '__cxa_demangle@@CXXABI_1.3' (try adding -lcxxrt)
+.endif
+
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
 USE_GITHUB=	yes
