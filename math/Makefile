@@ -37,6 +37,7 @@
     SUBDIR += R-cran-VGAM
     SUBDIR += R-cran-Zelig
     SUBDIR += R-cran-acepack
+    SUBDIR += R-cran-alabama
     SUBDIR += R-cran-assertthat
     SUBDIR += R-cran-backports
     SUBDIR += R-cran-bdsmatrix
