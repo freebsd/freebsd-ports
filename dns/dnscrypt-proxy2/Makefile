@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	2.0.34
+PORTVERSION=	2.0.36
 CATEGORIES=	dns security
 PKGNAMESUFFIX=	2
 
