@@ -26,7 +26,7 @@ asterisk16_CONFLICTS_INSTALL=	asterisk13-flite
 asterisk16_BUILD_DEPENDS=	asterisk:net/asterisk16
 asterisk16_RUN_DEPENDS=		asterisk:net/asterisk16
 
-USES=		compiler gmake localbase
+USES=		compiler:c11 gmake localbase
 INSTALL_TARGET=	install samples
 
 USE_GITHUB=	yes
