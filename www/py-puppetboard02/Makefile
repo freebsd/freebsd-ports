@@ -13,7 +13,8 @@ COMMENT=	Web interface to PuppetDB
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Consider switching to www/py-puppetboard03
+DEPRECATED=	Use www/py-puppetboard instead
+EXPIRATION_DATE=2020-04-01
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-WTF>=0.9.4:www/py-flask-wtf@${PY_FLAVOR} \
