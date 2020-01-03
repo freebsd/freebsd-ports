@@ -25,7 +25,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd March 30, 2019
+.Dd January 3, 2020
 .Dt PAPERLESS 7
 .Os
 .Sh NAME
@@ -130,7 +130,7 @@ web server, e.g., nginx + uwsgi.
 .Pp
 Install and configure uwsgi:
 .Pp
-.Dl "pkg install uwsgi-py36"
+.Dl "pkg install uwsgi"
 .Dl "mkdir -p %%PREFIX%%/etc/uwsgi"
 .Dl "cp %%EXAMPLESDIR%%/uwsgi.ini \\"
 .Dl "    %%PREFIX%%/etc/uwsgi/paperless.ini"
