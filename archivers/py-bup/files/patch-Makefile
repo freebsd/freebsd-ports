@@ -1,6 +1,15 @@
---- Makefile.orig	2017-03-26 22:24:25 UTC
+--- Makefile.orig	2019-08-25 17:32:03 UTC
 +++ Makefile
-@@ -80,7 +80,7 @@ man_html := $(patsubst %.md,%.html,$(man
+@@ -25,7 +25,7 @@ current_sampledata := t/sampledata/var/rev/v$(sampleda
+ os := $(shell ($(pf); uname | sed 's/[-_].*//') $(isok))
+ os := $(call shout,$(os),Unable to determine OS)
+ 
+-CFLAGS := -Wall -O2 -Werror -Wno-unknown-pragmas $(PYINCLUDE) $(CFLAGS)
++CFLAGS := -Wall -O2 -Wno-unknown-pragmas $(PYINCLUDE) $(CFLAGS)
+ CFLAGS := -D_FILE_OFFSET_BITS=64 $(CFLAGS)
+ SOEXT:=.so
+ 
+@@ -84,7 +84,7 @@ man_html := $(patsubst %.md,%.html,$(man_md))
  
  INSTALL=install
  PREFIX=/usr/local
