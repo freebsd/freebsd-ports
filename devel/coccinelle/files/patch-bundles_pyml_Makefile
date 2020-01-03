@@ -1,0 +1,26 @@
+--- bundles/pyml/Makefile.orig	2018-08-31 14:36:59 UTC
++++ bundles/pyml/Makefile
+@@ -21,16 +21,18 @@ CLEANOTHERS=pyml-current/generate pyml-current/generat
+ 	pyml-current/pyml.cma pyml-current/pyml.cmxa \
+ 	pyml-current/dllpyml_stubs.so
+ 
+-ARCH:=$(shell uname)
++UNAME_ARCH:=$(shell uname)
+ 
+-ifeq ($(ARCH),Linux)
++ifeq ($(UNAME_ARCH),Linux)
+ 	PYML_ARCH=pyml_arch_linux.ml
+-else ifeq ($(ARCH),Darwin)
++else ifeq ($(UNAME_ARCH),Darwin)
+ 	PYML_ARCH=pyml_arch_darwin.ml
+-else ifeq ($(findstring CYGWIN,$(ARCH)),CYGWIN)
++else ifeq ($(UNAME_ARCH),FreeBSD)
++	PYML_ARCH=pyml_arch_freebsd.ml
++else ifeq ($(findstring CYGWIN,$(UNAME_ARCH)),CYGWIN)
+ 	PYML_ARCH=pyml_arch_cygwin.ml
+ else
+-	$(error Unsupported OS $(ARCH)
++	$(error Unsupported OS $(UNAME_ARCH))
+ endif
+ 
+ include ../Makefile.bundles
