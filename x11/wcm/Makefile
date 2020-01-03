@@ -2,7 +2,7 @@
 
 PORTNAME=	wcm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3
+DISTVERSION=	0.3.1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,7 +11,9 @@ COMMENT=	Wayfire Config Manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libwf-config.so:devel/wf-config
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
+LIB_DEPENDS=	libevdev.so:devel/libevdev \
+		libwf-config.so:devel/wf-config
 
 CONFLICTS_INSTALL=	wcmcommander # bin/wcm
 
