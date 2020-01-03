@@ -3,7 +3,7 @@
 
 PORTNAME=	handbrake
 DISTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 DIST_SUBDIR=	${PORTNAME}
 
@@ -80,12 +80,14 @@ NOPRECIOUSMAKEVARS=	yes			# for ffmpeg and x264
 # Enforce linking to bundled libraries instead of system libraries
 LDFLAGS+=	-L${BUILD_WRKSRC}/contrib/lib
 
-OPTIONS_DEFINE=		FDK_AAC X11
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFINE=		FDK_AAC MFX X11
+OPTIONS_DEFAULT=	MFX X11
+OPTIONS_EXCLUDE_powerpc64=	MFX
 
 OPTIONS_SUB=	yes
 
 FDK_AAC_DESC=	Enable non-free Fraunhofer FDK AAC codec
+MFX_DESC=	Intel MediaSDK (aka Quick Sync Video)
 X11_DESC=	Build GTK+3 based GUI program
 
 FDK_AAC_CONFIGURE_ENABLE=	fdk-aac
@@ -93,6 +95,10 @@ FDK_AAC_VARS=			LICENSE+=FDK_AAC LICENSE_COMB=multi
 LICENSE_NAME_FDK_AAC=		Software License for The Fraunhofer FDK AAC Codec Library for Android
 LICENSE_FILE_FDK_AAC=		${WRKDIR}/${DISTFILES:Mfdk*:R:R}/NOTICE
 LICENSE_PERMS_FDK_AAC=		dist-mirror pkg-mirror auto-accept
+
+MFX_LIB_DEPENDS=	libmfx.so:multimedia/intel-media-sdk \
+			libva-drm.so:multimedia/libva
+MFX_CONFIGURE_ON=	--enable-qsv
 
 X11_CONFIGURE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 X11_MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
