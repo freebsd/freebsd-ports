@@ -14,7 +14,6 @@ LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_mips64=		fails to compile: KeccakP-1600-opt64.c: error: Not yet implemented
-BROKEN_powerpc64=	fails to compile: KeccakP-1600-opt64.c: error: Not yet implemented
 
 # Actually Python 2.7,3.4+
 USES=		python
