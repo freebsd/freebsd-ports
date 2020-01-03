@@ -2,7 +2,7 @@
 
 PORTNAME=	clash
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.0
+DISTVERSION=	0.17.1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,14 +25,14 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.2.7:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		golang:crypto:e9b2fee46413:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:e7e4b65ae663:golang_net/vendor/golang.org/x/net \
+		golang:net:c0dbc17a3553:golang_net/vendor/golang.org/x/net \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:2837fb4f24fe:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:c709ea063b76:golang_sys/vendor/golang.org/x/sys \
 		gorilla:websocket:v1.4.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
-		miekg:dns:v1.1.24:miekg_dns/vendor/github.com/miekg/dns \
-		oschwald:geoip2-golang:v1.3.0:oschwald_geoip2_golang/vendor/github.com/oschwald/geoip2-golang \
-		oschwald:maxminddb-golang:v1.5.0:oschwald_maxminddb_golang/vendor/github.com/oschwald/maxminddb-golang \
+		miekg:dns:v1.1.26:miekg_dns/vendor/github.com/miekg/dns \
+		oschwald:geoip2-golang:v1.4.0:oschwald_geoip2_golang/vendor/github.com/oschwald/geoip2-golang \
+		oschwald:maxminddb-golang:v1.6.0:oschwald_maxminddb_golang/vendor/github.com/oschwald/maxminddb-golang \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify
