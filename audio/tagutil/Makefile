@@ -10,10 +10,6 @@ COMMENT=	Command line interface tool to manage tags in music files
 
 LICENSE=	BSD2CLAUSE
 
-.if exists(/usr/lib/libc++.so) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-BROKEN=		ld: undefined reference to symbol '__cxa_demangle@@CXXABI_1.3' (try adding -lcxxrt)
-.endif
-
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
 USE_GITHUB=	yes
@@ -41,6 +37,9 @@ OGG_LIB_DEPENDS=\
 	libvorbisfile.so:audio/libvorbis \
 	libogg.so:audio/libogg
 OGG_CMAKE_OFF=	-DWITHOUT_OGGVORBIS=yes
+.if exists(/usr/lib/libc++.so) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+TAGLIB_BROKEN=		ld: undefined reference to symbol '__cxa_demangle@@CXXABI_1.3' (try adding -lcxxrt)
+.endif
 TAGLIB_LIB_DEPENDS=	libtag_c.so:audio/taglib
 TAGLIB_CMAKE_OFF=	-DWITHOUT_TAGLIB=yes
 
