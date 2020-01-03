@@ -1,0 +1,21 @@
+--- contrib/ffmpeg/module.defs.orig	2019-11-09 20:44:32 UTC
++++ contrib/ffmpeg/module.defs
+@@ -1,7 +1,9 @@
+ __deps__ := BZIP2 ZLIB FDKAAC LIBDAV1D LIBVPX LAME LIBOPUS LIBSPEEX XZ
+ ifeq (1,$(FEATURE.qsv))
++ifeq (,$(filter $(HOST.system),freebsd))
+ __deps__ += LIBMFX
+ endif
++endif
+ ifeq (1,$(FEATURE.vce))
+ __deps__ += AMF
+ endif
+@@ -60,7 +62,7 @@ FFMPEG.CONFIGURE.extra = \
+     --cc="$(FFMPEG.GCC.gcc)" \
+     --extra-ldflags="$(call fn.ARGS,FFMPEG.GCC,*archs *sysroot *minver ?extra) -L$(call fn.ABSOLUTE,$(CONTRIB.build/)lib)"
+ 
+-ifeq (1-linux,$(FEATURE.qsv)-$(HOST.system))
++ifneq (,$(filter $(FEATURE.qsv)-$(HOST.system),1-linux 1-freebsd))
+     FFMPEG.CONFIGURE.extra += --enable-vaapi
+     FFMPEG.CONFIGURE.extra += --disable-xlib
+ else

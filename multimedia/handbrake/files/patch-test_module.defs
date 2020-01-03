@@ -1,0 +1,11 @@
+--- test/module.defs.orig	2019-11-09 20:44:32 UTC
++++ test/module.defs
+@@ -25,7 +25,7 @@ endif
+ 
+ ifeq (1,$(FEATURE.qsv))
+     TEST.GCC.l += mfx
+-ifeq ($(HOST.system),linux)
++ifneq (,$(filter $(HOST.system),linux freebsd))
+     TEST.GCC.l += va va-drm
+ endif
+ endif

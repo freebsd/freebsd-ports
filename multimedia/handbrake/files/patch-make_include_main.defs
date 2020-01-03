@@ -1,0 +1,13 @@
+--- make/include/main.defs.orig	2019-11-09 20:44:32 UTC
++++ make/include/main.defs
+@@ -52,8 +52,10 @@ MODULES += contrib/libdvdread
+ MODULES += contrib/libdvdnav
+ MODULES += contrib/libbluray
+ 
++ifneq (,$(filter $(HOST.system),freebsd))
+ ifeq (1,$(FEATURE.qsv))
+     MODULES += contrib/libmfx
++endif
+ endif
+ 
+ ifeq (1,$(FEATURE.vce))

@@ -1,0 +1,12 @@
+--- gtk/configure.ac.orig	2019-11-09 20:44:32 UTC
++++ gtk/configure.ac
+@@ -227,6 +227,9 @@ case $host in
+     ;;
+   *-*-freebsd*)
+     HB_LIBS="$HB_LIBS -lpthread"
++    if test "x$use_qsv" = "xyes" ; then
++        HB_LIBS="$HB_LIBS -lva -lva-drm"
++    fi
+     ;;
+   *-*-netbsd*)
+     HB_LIBS="$HB_LIBS -pthread"

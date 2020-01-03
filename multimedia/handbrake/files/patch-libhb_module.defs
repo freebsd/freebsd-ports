@@ -1,0 +1,32 @@
+--- libhb/module.defs.orig	2019-11-09 20:44:32 UTC
++++ libhb/module.defs
+@@ -1,12 +1,16 @@
+ __deps__ := A52DEC BZIP2 LIBVPX FFMPEG FREETYPE LAME LIBASS LIBDCA \
+     LIBDVDREAD LIBDVDNAV LIBICONV LIBSAMPLERATE LIBTHEORA LIBVORBIS LIBOGG \
+-    LIBXML2 X264 X265 ZLIB LIBBLURAY FDKAAC LIBMFX LIBGNURX JANSSON \
++    LIBXML2 X264 X265 ZLIB LIBBLURAY FDKAAC LIBGNURX JANSSON \
+     HARFBUZZ LIBOPUS LIBSPEEX LIBDAV1D
+ 
+ ifeq (,$(filter $(HOST.system),darwin cygwin mingw))
+     __deps__ += FONTCONFIG
+ endif
+ 
++ifeq (,$(filter $(HOST.system),freebsd))
++    __deps__ += LIBMFX
++endif
++
+ $(eval $(call import.MODULE.defs,LIBHB,libhb,$(__deps__)))
+ $(eval $(call import.GCC,LIBHB))
+ 
+@@ -111,7 +115,11 @@ LIBHB.dll.libs += $(CONTRIB.build/)lib/libfdk-aac.a
+ endif
+ 
+ ifeq (1,$(FEATURE.qsv))
++ifeq (,$(filter $(HOST.system),freebsd))
+ LIBHB.dll.libs += $(CONTRIB.build/)lib/libmfx.a
++else
++    LIBHB.GCC.l += mfx
++endif
+ endif
+ 
+ ifeq (1,$(FEATURE.x265))
