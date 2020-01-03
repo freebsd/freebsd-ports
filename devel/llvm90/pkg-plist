@@ -2729,10 +2729,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%COMPILER_RT%%llvm%%LLVM_SUFFIX%%/include/xray/xray_interface.h
 %%COMPILER_RT%%llvm%%LLVM_SUFFIX%%/include/xray/xray_log_interface.h
 %%COMPILER_RT%%llvm%%LLVM_SUFFIX%%/include/xray/xray_records.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/CheckerDependencyHandlingAnalyzerPlugin.so
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/CheckerOptionHandlingAnalyzerPlugin.so
 %%GOLD%%llvm%%LLVM_SUFFIX%%/lib/LLVMgold.so
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/SampleAnalyzerPlugin.so
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_builtin_vars.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_cmath.h
 %%CLANG%%%%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_complex_builtins.h
