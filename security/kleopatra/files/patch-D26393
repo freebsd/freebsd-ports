@@ -1,0 +1,47 @@
+Submitted upstream as D26393, see also
+	https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=242670
+	https://bugs.kde.org/show_bug.cgi?id=415168
+
+diff --git src/commands/command_p.h src/commands/command_p.h
+index d9acbaae..0a16161e 100644
+--- src/commands/command_p.h
++++ src/commands/command_p.h
+@@ -37,6 +37,7 @@
+ #include "view/keylistcontroller.h"
+ 
+ #include <Libkleo/KeyListModel>
++#include <Libkleo/KeyRearrangeColumnsProxyModel>
+ 
+ #include <KMessageBox>
+ 
+@@ -73,7 +74,7 @@ public:
+     }
+     KeyListModelInterface *model() const
+     {
+-        return view_ ? dynamic_cast<KeyListModelInterface *>(view_->model()) : nullptr;
++        return view_ ? dynamic_cast<KeyListModelInterface *>(dynamic_cast<KeyRearrangeColumnsProxyModel*>(view_->model())) : nullptr;
+     }
+     KeyListController *controller() const
+     {
+diff --git src/dialogs/lookupcertificatesdialog.cpp src/dialogs/lookupcertificatesdialog.cpp
+index 4f7b0246..313c4f9f 100644
+--- src/dialogs/lookupcertificatesdialog.cpp
++++ src/dialogs/lookupcertificatesdialog.cpp
+@@ -37,6 +37,8 @@
+ #include "ui_lookupcertificatesdialog.h"
+ 
+ #include <Libkleo/KeyListModel>
++#include <Libkleo/KeyRearrangeColumnsProxyModel>
++
+ #include <KConfigGroup>
+ #include <gpgme++/key.h>
+ 
+@@ -99,7 +101,7 @@ private:
+         if (!view) {
+             return std::vector<Key>();
+         }
+-        const auto *const model = dynamic_cast<KeyListModelInterface*>(view->model());
++        const auto *const model = dynamic_cast<KeyListModelInterface*>(dynamic_cast<KeyRearrangeColumnsProxyModel*>(view->model()));
+         Q_ASSERT(model);
+         const QItemSelectionModel *const sm = view->selectionModel();
+         Q_ASSERT(sm);
