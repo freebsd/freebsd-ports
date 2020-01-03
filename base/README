@@ -5,26 +5,26 @@ How to cross build initial toolchain
 Example with sparc64
 
 1/ install a cross toolchain
-pkg install sparc64-xtoolchain-gcc
+pkg install sparc64-gcc6
 
 2/ cross build world
-make CROSS_TOOLCHAIN=sparc64-gcc TARGET=sparc64 TARGET_ARCH=sparc64 buildworld
+make CROSS_TOOLCHAIN=sparc64-gcc6 TARGET=sparc64 TARGET_ARCH=sparc64 buildworld
 
 3/ install the world in a sysroot
-make CROSS_TOOLCHAIN=sparc64-gcc TARGET=sparc64 TARGET_ARCH=sparc64 installworld DESTDIR=/sysroots/sparc64
+make CROSS_TOOLCHAIN=sparc64-gcc6 TARGET=sparc64 TARGET_ARCH=sparc64 installworld DESTDIR=/sysroots/sparc64
 
 4/ build the required port
 $ cd base/binutils
-make CROSS_TOOLCHAIN=sparc64-gcc CROSS_SYSROOT=/sysroots/sparc64 package
+make CROSS_TOOLCHAIN=sparc64-gcc6 CROSS_SYSROOT=/sysroots/sparc64 package
 
-$ cd base/gcc
-make CROSS_TOOLCHAIN=sparc64-gcc CROSS_SYSROOT=/sysroots/sparc64 package
+$ cd base/gcc6
+make CROSS_TOOLCHAIN=sparc64-gcc6 CROSS_SYSROOT=/sysroots/sparc64 package
 
-the package are in base/gcc/work/pkg/*.txz and base/binutils/work/pkg/*.txz
+The packages are in base/gcc6/work/pkg/*.txz and base/binutils/work/pkg/*.txz
 
 To add a plist for a new binutils target
 $ cd base/binutils
-make CROSS_TOOLCHAIN=sparc64-gcc CROSS_SYSROOT=/sysroots/sparc64 makeplist > pkg-plist
+make CROSS_TOOLCHAIN=sparc64-gcc6 CROSS_SYSROOT=/sysroots/sparc64 makeplist > pkg-plist
 
 edit the pkg-plist and remove everything which base does not provide via the
 elftoolchain
