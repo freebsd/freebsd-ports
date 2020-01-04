@@ -1,7 +1,6 @@
-NBTscan is a program for scanning IP networks for NetBIOS name
-information. It sends NetBIOS status query to each address in
-supplied range and lists received information in human readable
-form. For each responded host it lists IP address, NetBIOS computer
-name, logged-in user name and MAC address.
+NBTscan is a program for scanning IP networks for NetBIOS name information. It
+sends NetBIOS status query to each address in supplied range and lists received
+information in human readable form. For each responded host it lists IP address,
+NetBIOS computer name, logged-in user name and MAC address (such as Ethernet).
 
-WWW: http://www.inetcat.net/software/nbtscan.html
+WWW: https://github.com/resurrecting-open-source-projects/nbtscan

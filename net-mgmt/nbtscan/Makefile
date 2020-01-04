@@ -2,30 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	nbtscan
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.inetcat.net/software/ \
-		GENTOO
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	NetBIOS name network scanner
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		autoreconf
+
 GNU_CONFIGURE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}a
-ALL_TARGET=	nbtscan
+PLIST_FILES=	bin/nbtscan \
+		man/man1/nbtscan.1.gz
+PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nbtscan ${STAGEDIR}${PREFIX}/bin
+GH_ACCOUNT=	resurrecting-open-source-projects
+USE_GITHUB=	yes
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
