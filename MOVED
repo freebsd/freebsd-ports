@@ -13725,3 +13725,4 @@ lang/erlang-runtime18|lang/erlang-runtime21|2020-01-01|Has expired: No longer su
 lang/erlang-runtime19|lang/erlang-runtime21|2020-01-01|Has expired: No longer supported upstream, use lang/erlang >=21
 security/openssl111|security/openssl|2020-01-01|Upgrade security/openssl to 1.1.1 as promised in deprecation message
 devel/gperf31|devel/gperf|2020-01-04|No longer needed as devel/gperf has been updated to 3.1
+devel/yosys|cad/yosys|2020-01-04|Move to a proper category

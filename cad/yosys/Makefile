@@ -4,7 +4,7 @@
 PORTNAME=	yosys
 DISTVERSIONPREFIX=	yosys-
 DISTVERSION=	0.9
-CATEGORIES=	devel
+CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Yosys Open SYnthesis Suite
