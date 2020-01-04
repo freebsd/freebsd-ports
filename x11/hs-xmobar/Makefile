@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmobar
-PORTVERSION=	0.29.5
-PORTREVISION=	1
+PORTVERSION=	0.32
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,13 +18,11 @@ OPTIONS_DEFAULT=	XFT UTF8
 XFT_DESC=		Use Xft to render text (UTF-8 support included)
 XFT_CABAL_FLAGS=	with_xft
 XFT_USE_CABAL=		utf8-string-1.0.1.1_3 X11-xft-0.3.1
-XFT_USES=		xorg
 XFT_USE=		xorg=xft
 XFT_IMPLIES=		UTF8
 
 XPM_DESC=		Use Xpm to render icons
 XPM_CABAL_FLAGS=	with_xpm
-XPM_USES=		xorg
 XPM_USE=		xorg=xpm
 
 UTF8_DESC=		UTF-8 support
@@ -34,7 +31,7 @@ UTF8_USE_CABAL=		utf8-string-1.0.1.1_3
 
 MPD_DESC=		Music Player Daemon support
 MPD_CABAL_FLAGS=	with_mpd
-MPD_USE_CABAL=		libmpd-0.9.0.9
+MPD_USE_CABAL=		libmpd-0.9.0.10 safe-exceptions-0.1.7.0_5
 
 INOTIFY_DESC=		inotify support (required for the Mail and MBox plugins)
 INOTIFY_CABAL_FLAGS=	with_inotify
@@ -54,7 +51,7 @@ UVMETER_CABAL_FLAGS=	with_uvmeter
 
 USE_XORG=	xrandr xrender xscrnsaver xinerama xext x11
 
-USE_CABAL=	X11-1.9 X11-xft-0.3.1 async-2.2.1_1 data-default-0.7.1.1 \
+USE_CABAL=	X11-1.9.1 X11-xft-0.3.1 async-2.2.1_1 data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 data-default-instances-containers-0.0.1 \
 		data-default-instances-dlist-0.0.1 hashable-1.2.7.0_1 \
 		data-default-instances-old-locale-0.0.1 dlist-0.8.0.5 \
