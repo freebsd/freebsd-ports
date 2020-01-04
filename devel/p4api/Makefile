@@ -22,7 +22,8 @@ COMMENT=	Perforce API (static libraries and header files)
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to build: /bin/sh: clang++: not found
+BROKEN_FreeBSD_11_powerpc64=	fails to build: /bin/sh: clang++: not found
+BROKEN_FreeBSD_12_powerpc64=	fails to build: /bin/sh: clang++: not found
 
 BUILD_DEPENDS=	${JAM}:devel/jam
 
