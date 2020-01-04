@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=libctemplate.so:textproc/google-ctemplate
 
-USES=		cmake kde:5 qt:5
+USES=		cmake compiler:c++11-lang kde:5 qt:5
 USE_KDE=	akonadi akonadicontacts \
 		auth codecs config configwidgets contacts coreaddons \
 		i18n itemmodels widgetsaddons
