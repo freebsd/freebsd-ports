@@ -5,7 +5,7 @@ PORTNAME=	lattice-ice40-tools
 PORTVERSION=	g20181021
 CATEGORIES=	devel
 
-MAINTAINER=	jsorocil@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source tools for Lattice iCE40 FPGAs
 
 RUN_DEPENDS=	abc:cad/abc \

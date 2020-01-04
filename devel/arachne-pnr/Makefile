@@ -6,7 +6,7 @@ PORTVERSION=	g20181021
 PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	jsorocil@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Place and route tool for FPGAs
 
 LICENSE=	MIT
