@@ -7,10 +7,12 @@ Any bug reports or request of new feature should be addressed at:
 Make sure that the %%PREFIX%%/etc/doas.conf have someting simular like this:
 
     permit nopass keepenv root
-    permit :wheel 
+    permit :wheel
     permit nopass keepenv :wheel cmd netcardmgr
     permit nopass keepenv :wheel cmd ifconfig
     permit nopass keepenv :wheel cmd service
+    permit nopass keepenv :wheel cmd wpa_supplicant
+    permit nopass keepenv :wheel cmd killall args wpa_supplicant
 
 When rebooting it should automaticaly start is the desktop support xdg and make
 sure that the user using NetworkMgr is in the wheel group.
