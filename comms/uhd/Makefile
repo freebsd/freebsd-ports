@@ -40,7 +40,6 @@ BROKEN_FreeBSD_12_armv7=	fails to configure: Could not find standard set_new_han
 BROKEN_FreeBSD_13_aarch64=	fails to configure: Could not find standard set_new_handler function
 BROKEN_FreeBSD_13_armv6=	fails to configure: Could not find standard set_new_handler function
 BROKEN_FreeBSD_13_armv7=	fails to configure: Could not find standard set_new_handler function
-BROKEN_powerpc64=		fails to link: undefined reference to boost function
 
 USE_LDCONFIG=		yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
