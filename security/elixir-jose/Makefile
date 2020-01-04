@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jose
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	security
 PKGNAMEPREFIX=	elixir-
 
@@ -17,8 +17,7 @@ GH_PROJECT=	erlang-jose
 DOCSDIR=	${PREFIX}/share/doc/elixir-${PORTNAME}
 NO_ARCH=	yes
 
-MIX_BUILD_DEPS=	converters/erlang-base64url \
-		security/erlang-jose
+MIX_BUILD_DEPS=	security/erlang-jose
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 
 OPTIONS_DEFINE=	DOCS
