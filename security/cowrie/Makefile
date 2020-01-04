@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cowrie
-DISTVERSION=	1.9.7
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.2
 CATEGORIES=	security python
 
 MAINTAINER=	yuri@FreeBSD.org
