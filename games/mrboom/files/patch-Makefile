@@ -1,0 +1,24 @@
+--- Makefile.orig	2020-01-04 15:37:33 UTC
++++ Makefile
+@@ -4,7 +4,6 @@ AR             := ar
+ INSTALL        := install
+ RM             := rm
+ STRIP          := strip
+-GIT_VERSION := " $(shell git rev-parse --short HEAD)"
+ BINDIR	       ?= bin
+ LIBDIR         ?= lib
+ DATADIR        ?= share
+@@ -500,11 +499,11 @@ clean:
+ 	rm -f *.d */*.d */*/*.d */*/*/*.d */*/*/*/*.d */*/*/*/*/*.d
+ 
+ strip:
+-	$(STRIP) $(TARGET_NAME).out
++	$(STRIP) $(TARGET_NAME)
+ 
+ install: strip
+ 	$(INSTALL) -m 0755 -d $(DESTDIR)$(PREFIX)/$(BINDIR)
+-	$(INSTALL) -m 555 $(TARGET_NAME).out $(DESTDIR)$(PREFIX)/$(BINDIR)/$(TARGET_NAME)
++	$(INSTALL) -m 555 $(TARGET_NAME) $(DESTDIR)$(PREFIX)/$(BINDIR)/$(TARGET_NAME)
+ 	$(INSTALL) -m 0755 -d $(DESTDIR)$(PREFIX)/$(MANDIR)
+ 	$(INSTALL) -m 644 Assets/$(TARGET_NAME).6 $(DESTDIR)$(PREFIX)/$(MANDIR) 
+ 
