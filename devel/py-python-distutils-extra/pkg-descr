@@ -1,4 +1,4 @@
 Enables you to easily integrate gettext support, themed icons and scrollkeeper
 based documentation into Python's distutils.
 
-WWW: https://launchpad.net/python-distutils-extra
+WWW: https://salsa.debian.org/python-team/modules/python-distutils-extra
