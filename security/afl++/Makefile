@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 # In theory afl supports non-x86 architectures with the LLVM plugin.
 # This has only been run tested on aarch64 so far.
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64
 ONLY_FOR_ARCHS_REASON=	uses x86-only instrumentation or requires complete LLVM support
 
 USES=		gmake tar:tgz
