@@ -6,47 +6,95 @@
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
-# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
-# to enable this service:
+# Add consul_enable="YES" to /etc/rc.conf to enable Consul
 #
-# consul_enable (bool):	Set to NO by default.
-#				Set it to YES to enable consul.
-# consul_user (user):        Set user to run consul.
-#                               Default is "consul".
-# consul_group (group):      Set group to run consul.
-#                               Default is "consul".
-# consul_dir (dir):          Set dir to run consul in.
-#                               Default is "/var/db/consul".
+# Additional variables you can define are:
+#
+# consul_user (string):       Set user to run consul.
+#                             Default is "%%CONSUL_USER%%".
+# consul_group (string):      Set group to run consul.
+#                             Default is "%%CONSUL_GROUP%%".
+# consul_pidfile (string):    Set full path to pid file
+#                             Default is "/var/run/consul.pid"
+# consul_configtest (string): Set to yes to enable Consul config validation
+#                             Set to NO by default
+# consul_datadir (dir):       Set dir to run consul in.
+#                             Default is "%%CONSUL_DATADIR%%"
+# consul_syslog_output_enable (bool):  Set to YES to enable syslog output
+#                                      Default is "NO". See daemon(8).
+# consul_syslog_output_priority (str): Set syslog priority if syslog enabled.
+#                                      Default is "info". See daemon(8).
+# consul_syslog_output_facility (str): Set to YES to enable syslog output
+#                                      Default is "daemon". See daemon(8).
+#
+# see rc.subr(8) for additional variables and options
+#
 
 . /etc/rc.subr
 
 name=consul
 rcvar=consul_enable
-extra_commands="reload configtest"
 
 load_rc_config $name
 
 : ${consul_enable:="NO"}
-: ${consul_user:="consul"}
-: ${consul_group:="consul"}
-: ${consul_dir:="/var/db/consul"}
+: ${consul_syslog_output_enable:="NO"}
+: ${consul_user:="%%CONSUL_USER%%"}
+: ${consul_group:="%%CONSUL_GROUP%%"}
+: ${consul_pidfile:="/var/run/${name}.pid"}
+: ${consul_configtest:="NO"}
+: ${consul_datadir:="%%CONSUL_DATADIR%%"}
 
-pidfile=/var/run/consul.pid
+start_precmd="consul_start_precmd"
+extra_commands="reload configtest"
+configtest_cmd="consul_checkconfig"
+
+# backwards compatibility
+if [ -n "${consul_dir}" ]; then
+        consul_datadir=${consul_dir}
+fi
+
+if checkyesno consul_syslog_output_enable; then
+        consul_syslog_output_flags="-T ${name}"
+
+        if [ -n "${consul_syslog_output_priority}" ]; then
+                consul_syslog_output_flags="${consul_syslog_output_flags} -s ${consul_syslog_output_priority}"
+        fi  
+
+        if [ -n "${consul_syslog_output_facility}" ]; then
+                consul_syslog_output_flags="${consul_syslog_output_flags} -l ${consul_syslog_output_facility}"
+        fi  
+fi  
+
+if checkyesno consul_configtest; then
+        restart_precmd="consul_checkconfig"
+        reload_precmd="consul_checkconfig"
+fi
+
+pidfile=${consul_pidfile}
 procname="%%PREFIX%%/bin/consul"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} /usr/bin/env ${consul_env} ${procname} agent -data-dir=${consul_dir} -config-dir=%%PREFIX%%/etc/consul.d ${consul_args}"
+command_args="-f -t ${name} ${consul_syslog_output_flags} -p ${pidfile} /usr/bin/env ${consul_env} ${procname} agent -data-dir=${consul_datadir} -config-dir=%%ETCDIR%% ${consul_args}"
 
-start_precmd=consul_startprecmd
-
-consul_startprecmd()
+consul_start_precmd()
 {
         if [ ! -e ${pidfile} ]; then
-                install -o ${consul_user} -g ${consul_group} /dev/null ${pidfile};
+                install -o ${consul_user} -g ${consul_group} /dev/null ${pidfile}
         fi
 
-        if [ ! -d ${consul_dir} ]; then
-                install -d -o ${consul_user} -g ${consul_group} ${consul_dir}
+        if [ ! -d ${consul_datadir} ]; then
+                install -d -m 0750 -o ${consul_user} -g ${consul_group} ${consul_datadir}
         fi
+
+        if [ ! -d %%ETCDIR%% ]; then
+		install -d -m 0750 -o ${consul_user} -g ${consul_group} %%ETCDIR%%
+	fi
+}
+
+consul_checkconfig()
+{
+	echo "Performing sanity check on ${name} configuration:"
+	eval ${procname} validate "%%ETCDIR%%"
 }
 
 run_rc_command "$1"

@@ -1,3 +1,3 @@
-TIMESTAMP = 1572039537
-SHA256 (hashicorp-consul-v1.6.1_GH0.tar.gz) = c02a8a9a8b775066cdc33765bbf928f3dd20e3cc0f61cf41f35ed5f0e12a8749
-SIZE (hashicorp-consul-v1.6.1_GH0.tar.gz) = 22621651
+TIMESTAMP = 1576365597
+SHA256 (hashicorp-consul-v1.6.2_GH0.tar.gz) = 98ba4f3e271536954deb118fe88bfcbd3c6150defeee8a2b946a4dff98594a75
+SIZE (hashicorp-consul-v1.6.2_GH0.tar.gz) = 22041280
