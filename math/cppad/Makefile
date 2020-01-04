@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cppad
-DISTVERSION=	20200000.0
+DISTVERSION=	20200000.1
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -17,8 +17,5 @@ GH_PROJECT=	CppAD
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-Dcppad_prefix=${PREFIX}
-
-post-stage:
-	@${RMDIR} ${STAGEDIR}${PREFIX}/include/cppad/utility/omh
 
 .include <bsd.port.mk>
