@@ -19,4 +19,9 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	GRPC
+GRPC_DESC=	gRPC support
+
+GRPC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>=1.0.0:devel/py-grpcio@${PY_FLAVOR}
+
 .include <bsd.port.mk>
