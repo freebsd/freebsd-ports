@@ -17,7 +17,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		${LOCALBASE}/include/sqlext.h:databases/unixODBC \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
-		gperf31>=3.1:devel/gperf31 \
+		gperf>=3.1:devel/gperf \
 		mdds>=1.4:devel/mdds \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
@@ -270,7 +270,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		FLEX=${LOCALBASE}/bin/flex \
 		GNUTAR="${TAR}" \
-		GPERF=${LOCALBASE}/bin/gperf31 \
 		ICU_CFLAGS="`icu-config --cflags`" \
 		ICU_LIBS="`icu-config --ldflags`" \
 		OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \

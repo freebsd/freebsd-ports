@@ -883,7 +883,6 @@
     SUBDIR += goswagger
     SUBDIR += govendor
     SUBDIR += gperf
-    SUBDIR += gperf31
     SUBDIR += gpm
     SUBDIR += gprbuild
     SUBDIR += gputils
