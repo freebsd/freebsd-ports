@@ -13,14 +13,13 @@ COMMENT=	Very fast and configurable open source SIP proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build: /bin/sh: clang: not found
-
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libxml2.so:textproc/libxml2 \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-USES=		gmake ncurses pkgconfig python:3.5+ readline shebangfix
+USES=		compiler:c11 gmake ncurses pkgconfig python:3.5+ readline \
+		shebangfix
 
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	utils/kamctl/dbtextdb/dbtextdb.py \
