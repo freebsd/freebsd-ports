@@ -11,6 +11,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Convenience uid/gid helper function used in Zope2
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-05
+
 LICENSE=	ZPL21
 
 USES=		python zip

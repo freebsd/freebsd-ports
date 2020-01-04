@@ -11,6 +11,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Provides the <!--#mime--> tag for DocumentTemplate
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-05
+
 LICENSE=	ZPL21
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DocumentTemplate>=0:devel/py-DocumentTemplate@${PY_FLAVOR}
