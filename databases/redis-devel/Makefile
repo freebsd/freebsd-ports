@@ -3,6 +3,7 @@
 
 PORTNAME=	redis
 PORTVERSION=	6.0.0.20200101
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
@@ -15,7 +16,7 @@ USES+=		compiler:c11 gmake
 USE_GITHUB=	yes
 GH_TUPLE= 	antirez:${PORTNAME}:0af467d
 
-OPTIONS_DEFINE=	JEMALLOC TESTS TRIB
+OPTIONS_DEFINE=	JEMALLOC TESTS TLS TRIB
 OPTIONS_RADIO=	EXTLUA
 OPTIONS_RADIO_EXTLUA=	LUA LUAJIT LUAJITOR
 OPTIONS_SUB=	yes
@@ -23,12 +24,39 @@ JEMALLOC_DESC=	Use jemalloc
 LUA_DESC=	Use lang/lua instead of builtin lua
 LUAJIT_DESC=	Use lang/luajit instead of builtin lua
 LUAJITOR_DESC=	Use lang/luajit-openresty instead of builtin lua
+TLS_DESC=	Use TLS (openssl req.)
 TESTS_DESC=	Install lang/tcl for redis unit tests
 TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
 
-MAKE_ENV=	"V=yo"
+MAKE_ENV=	V=yo
 
-.include <bsd.port.options.mk>
+JEMALLOC_MAKE_ENV=	USE_JEMALLOC=yes
+
+LUA_USE=		lua=51
+LUA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.lua
+LUA_VARS=		_addflags=true
+
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
+LUAJIT_BUILD_DEPENDS=	${LOCALBASE}/include/luajit-2.0/lua.h:lang/luajit
+LUAJIT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit
+LUAJIT_VARS=		_addflags=true
+
+LUAJITOR_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+LUAJITOR_BUILD_DEPENDS=	${LOCALBASE}/include/luajit-2.1/lua.h:lang/luajit-openresty
+LUAJITOR_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
+			${PATCHDIR}/extra-patch-deps_lua_src_lua__cjson.c
+LUAJITOR_VARS=		_addflags=true
+
+TESTS_USES=	tcl:build
+
+TLS_USES=	ssl
+TLS_MAKE_ENV=	BUILD_TLS=yes
+
+TRIB_CATEGORIES=	ruby
+TRIB_USE=		ruby=yes
+TRIB_RUN_DEPENDS=	rubygem-redis>=2.2:databases/rubygem-redis
+
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386 && ! ${CFLAGS:M-march=*}
 # Needed for __atomic_fetch_add_8
@@ -36,41 +64,9 @@ USE_GCC=	yes
 CFLAGS+=	-march=i586
 .endif
 
-.if ${PORT_OPTIONS:MJEMALLOC}
-MAKE_ENV+=	"USE_JEMALLOC=yes"
-.endif
-
-.if ${PORT_OPTIONS:MTRIB}
-CATEGORIES+=	ruby
-USE_RUBY=	yes
-RUN_DEPENDS=	rubygem-redis>=2.2:databases/rubygem-redis
-.endif
-
-.if ${PORT_OPTIONS:MLUA}
-USES+=		lua:51
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.lua
-.endif
-
-.if ${PORT_OPTIONS:MLUAJIT}
-LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
-BUILD_DEPENDS+=	${LOCALBASE}/include/luajit-2.0/lua.h:lang/luajit
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.luajit
-.endif
-
-.if ${PORT_OPTIONS:MLUAJITOR}
-LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit-openresty
-BUILD_DEPENDS+=	${LOCALBASE}/include/luajit-2.1/lua.h:lang/luajit-openresty
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
-		${PATCHDIR}/extra-patch-deps_lua_src_lua__cjson.c
-.endif
-
-.if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUAJIT} || ${PORT_OPTIONS:MLUAJITOR}
-CFLAGS+=	-fPIC
-LDFLAGS+=	-Wl,-E
-.endif
-
-.if ${PORT_OPTIONS:MTESTS}
-USES+=		tcl:build
+.if defined(_addflags)
+CFLAGS=		-fPIC
+LDFLAGS=	-Wl,-E
 .endif
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
@@ -101,15 +97,15 @@ PLIST_SUB+=	REDIS_USER=${USERS} \
 	REDIS_DBDIR=${REDIS_DBDIR} \
 	REDIS_RUNDIR=${REDIS_RUNDIR}
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${PORT_OPTIONS:MJEMALLOC}
+post-patch-JEMALLOC-on:
 	@${REINPLACE_CMD} '35s!Linux!FreeBSD!g' ${WRKSRC}/src/Makefile
-.endif
-.if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUAJIT} || ${PORT_OPTIONS:MLUAJITOR}
+
+copy-lua-files:
 	@cd ${WRKSRC}/deps/lua/src && ${CP} fpconv.* lua_* strbuf.* ${WRKSRC}/src/
-.endif
+
+post-patch-LUA-on:	copy-lua-files
+post-patch-LUAJIT-on:	copy-lua-files
+post-patch-LUAJITOR-on:	copy-lua-files
 
 post-build:
 	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -117,14 +113,14 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${BIN_FILES:C!^!${WRKSRC}/src/!} ${STAGEDIR}${PREFIX}/bin/
-.if ${PORT_OPTIONS:MTRIB}
-	${INSTALL_SCRIPT} ${WRKSRC}/src/redis-trib.rb ${STAGEDIR}${PREFIX}/bin/
-.endif
 	${INSTALL_DATA} ${WRKDIR}/redis.conf ${STAGEDIR}${PREFIX}/etc/redis.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/sentinel.conf ${STAGEDIR}${PREFIX}/etc/sentinel.conf.sample
 	${MKDIR} ${STAGEDIR}${REDIS_LOGDIR} \
 		${STAGEDIR}${REDIS_DBDIR} \
 		${STAGEDIR}${REDIS_RUNDIR}
+
+do-install-TRIB-on:
+	${INSTALL_SCRIPT} ${WRKSRC}/src/redis-trib.rb ${STAGEDIR}${PREFIX}/bin/
 
 do-test:
 	@cd ${WRKSRC} && ${TCLSH} tests/test_helper.tcl
