@@ -69,6 +69,7 @@ OPTIONS_DEFINE_powerpc64=	OPENMP
 OPTIONS_DEFAULT=	BE_AMDGPU BE_STANDARD CLANG EXTRAS LIT LLD LLD_LINK LLDB PYCLANG
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
+OPTIONS_DEFAULT_powerpc64=	${PPC_ABI:tu:MELFV2} OPENMP
 OPTIONS_SINGLE=		BACKENDS
 OPTIONS_SINGLE_BACKENDS=BE_FREEBSD BE_NATIVE BE_STANDARD
 OPTIONS_SUB=	yes
@@ -214,13 +215,6 @@ EXTRAS_LIBS=	libclangApplyReplacements \
 EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
 
 .include <bsd.port.options.mk>
-
-# PPC_ABI variable is only defined after including bsd.port.options.mk
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
-OPTIONS_DEFAULT_powerpc64=	ELFV2 OPENMP
-.else
-OPTIONS_DEFAULT_powerpc64=	OPENMP
-.endif
 
 # keep in sync with /usr/src/lib/clang/clang.build.mk
 # ----------- start of sync block ------------------
