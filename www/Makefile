@@ -1662,6 +1662,7 @@
     SUBDIR += py-google
     SUBDIR += py-google-api-core
     SUBDIR += py-google-api-python-client
+    SUBDIR += py-google-cloud-bigtable
     SUBDIR += py-google-cloud-core
     SUBDIR += py-google-cloud-dlp
     SUBDIR += py-google-cloud-logging
