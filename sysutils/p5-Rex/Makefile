@@ -44,6 +44,8 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 SHEBANG_FILES=	lib/Rex/Commands/templates/append_if_no_such_line.tpl.pl
 
 .include <bsd.port.mk>
