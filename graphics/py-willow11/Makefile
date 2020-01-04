@@ -15,6 +15,9 @@ COMMENT=	Wrapper that combines multiple Python image libraries into one API
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use graphics/py-willow instead
+EXPIRATION_DATE=2020-01-31
+
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
