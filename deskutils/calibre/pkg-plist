@@ -1346,6 +1346,7 @@ lib/calibre/calibre/utils/wmf/__init__.py
 lib/calibre/calibre/utils/wmf/emf.py
 lib/calibre/calibre/utils/wmf/parse.py
 lib/calibre/calibre/utils/wordcount.py
+lib/calibre/calibre/utils/xml_parse.py
 lib/calibre/calibre/utils/zipfile.py
 lib/calibre/calibre/web/__init__.py
 lib/calibre/calibre/web/feeds/__init__.py
@@ -1498,6 +1499,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/arrow-down.png
 %%DATADIR%%/images/arrow-up.png
 %%DATADIR%%/images/auto-reload.png
+%%DATADIR%%/images/auto-scroll.png
 %%DATADIR%%/images/auto_author_sort.png
 %%DATADIR%%/images/back.png
 %%DATADIR%%/images/beautify.png
