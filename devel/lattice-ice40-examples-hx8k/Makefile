@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	abc:cad/abc \
 		arachne-pnr:devel/arachne-pnr \
 		icepack:devel/icestorm \
-		yosys:devel/yosys
+		yosys:cad/yosys
 
 USES=		gmake
 USE_GITHUB=	yes
