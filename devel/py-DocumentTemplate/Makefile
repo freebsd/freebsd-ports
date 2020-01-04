@@ -11,6 +11,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Document Templating Markup Language (DTML)
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-05
+
 LICENSE=	ZPL21
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>=0:security/py-AccessControl@${PY_FLAVOR} \

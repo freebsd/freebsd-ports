@@ -10,6 +10,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope.sendmail integration for Zope 2
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-05
+
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
