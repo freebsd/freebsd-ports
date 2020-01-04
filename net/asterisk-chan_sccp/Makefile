@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 FLAVORS=	asterisk16 asterisk13
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		autoreconf gettext-tools iconv libtool localbase
+USES=		autoreconf compiler:c11 gettext-tools iconv libtool localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chan-sccp
