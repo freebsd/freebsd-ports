@@ -1,0 +1,6 @@
+The Cloud Speech API enables developers to convert audio to text by applying
+powerful neural network models. The API recognizes over 80 languages and
+variants, to support your global user base.
+
+WWW: https://github.com/googleapis/google-cloud-python
+WWW: https://github.com/googleapis/google-cloud-python/tree/master/speech
