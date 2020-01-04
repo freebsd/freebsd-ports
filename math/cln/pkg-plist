@@ -80,6 +80,6 @@ include/cln/version.h
 lib/libcln.a
 lib/libcln.so
 lib/libcln.so.6
-lib/libcln.so.6.0.4
+lib/libcln.so.6.0.6
 libdata/pkgconfig/cln.pc
 man/man1/pi.1.gz
