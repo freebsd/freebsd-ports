@@ -12,9 +12,13 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libluajit-5.1.so:lang/luajit \
 		libicui18n.so:devel/icu \
-		libsodium.so:security/libsodium
+		libsodium.so:security/libsodium \
+		${LIB_DEPENDS_${ARCH}}
+LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
+LIB_DEPENDS_armv7=	libluajit-5.1.so:lang/luajit
+LIB_DEPENDS_i386=	libluajit-5.1.so:lang/luajit
+LIB_DEPENDS_powerpc=	libluajit-5.1.so:lang/luajit
 BUILD_DEPENDS=	ragel:devel/ragel
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
