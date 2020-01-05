@@ -1,0 +1,28 @@
+[
+{ type: upgrade
+  maximum_version: 4.1.5
+  message: <<UPGRADE
+The free GeoIP2 databases now require a (free)
+registered account.
+
+See: https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+Register for an account: https://www.maxmind.com/en/geolite2/signup
+Get a license key: https://www.maxmind.com/en/accounts/155743/license-key
+
+Place the generated account key and license key
+into %%DATADIR%%/GeoIP.conf
+UPGRADE
+}
+{ type: install
+  message: <<INSTALL
+You must register for a (free) MaxMind account
+to download the free GeoIP2 databases.
+
+Register for an account: https://www.maxmind.com/en/geolite2/signup
+Get a license key: https://www.maxmind.com/en/accounts/155743/license-key
+
+Place the generated account key and license key
+into %%DATADIR%%/GeoIP.conf
+INSTALL
+}
+]
