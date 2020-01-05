@@ -13,6 +13,7 @@ COMMENT=	Tools for access to scanners, digitals camera, frame grabbers etc
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
 DEPRECATED=	Unmaintained upstream, no consumers left
 EXPIRATION_DATE=	2020-03-31
 

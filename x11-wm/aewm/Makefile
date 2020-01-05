@@ -10,6 +10,8 @@ MASTER_SITES=	https://www.red-bean.com/decklin/aewm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICCCM-compliant window manager based on 9wm
 
+BROKEN=		unfetchable
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

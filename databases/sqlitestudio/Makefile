@@ -10,6 +10,8 @@ MASTER_SITES=	http://sqlitestudio.pl/files/sqlitestudio3/complete/tar/
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SQLite database GUI manager
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/coreSQLiteStudio/licenses/sqlitestudio_license.txt
 

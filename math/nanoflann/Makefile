@@ -8,6 +8,8 @@ CATEGORIES=	math
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Header-only library for Nearest Neighbor (NN) search with KD-trees
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 

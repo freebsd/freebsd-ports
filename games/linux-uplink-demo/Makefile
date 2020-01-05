@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.sh
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High tech computer crime and industrial espionage on the Internet
 
+BROKEN=		unfetchable
+
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux
 USE_LINUX=	dri jpeg sdl12 sdlmixer

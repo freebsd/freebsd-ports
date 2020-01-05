@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	-lv2
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software percussion synthesizer
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

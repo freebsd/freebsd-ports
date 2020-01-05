@@ -10,6 +10,8 @@ MASTER_SITES=	https://git.cinelerra-gg.org/git?p=goodguy/cinelerra.git;a=snapsho
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Professional video editing and compositing environment
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${BUILD_WRKSRC}/COPYING
 

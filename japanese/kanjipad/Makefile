@@ -10,6 +10,8 @@ MASTER_SITES=	http://fishsoup.net/software/kanjipad/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Handwriting recognition
 
+BROKEN=		unfetchable
+
 USES=		gmake gnome perl5 pkgconfig
 USE_GNOME=	gtk20
 MAKE_ARGS=	OPTIMIZE="${CFLAGS}" PREFIX="${PREFIX}" \

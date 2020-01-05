@@ -14,6 +14,8 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-full${EXTRACT_SUFX}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Java 3D viewer for chemical structures
 
+BROKEN=		unfetchable
+
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 

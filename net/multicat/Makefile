@@ -9,6 +9,8 @@ MASTER_SITES=	https://get.videolan.org/multicat/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and efficient multicast and transport stream manipulation
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

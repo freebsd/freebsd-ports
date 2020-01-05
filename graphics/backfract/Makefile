@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.igoweb.org/~wms/comp/backfract/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fractal image animated wallpaper program
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2+
 
 USES=		xorg
