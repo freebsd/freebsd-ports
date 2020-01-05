@@ -1,5 +1,5 @@
-TIMESTAMP = 1536500711
-SHA256 (openexr-2.3.0.tar.gz) = fd6cb3a87f8c1a233be17b94c74799e6241d50fc5efd4df75c7a4b9cf4e25ea6
-SIZE (openexr-2.3.0.tar.gz) = 18412067
+TIMESTAMP = 1577537381
 SHA256 (openexr-2.2.0-comp_dwa-test-images.tar.xz) = bbb8ff547e9b68f0dfb1e8804a7ad984978c2b15897988399cc68176e99dd63a
 SIZE (openexr-2.2.0-comp_dwa-test-images.tar.xz) = 653768
+SHA256 (AcademySoftwareFoundation-openexr-2.4.0-v2.4.0_GH0.tar.gz) = 4904c5ea7914a58f60a5e2fbc397be67e7a25c380d7d07c1c31a3eefff1c92f1
+SIZE (AcademySoftwareFoundation-openexr-2.4.0-v2.4.0_GH0.tar.gz) = 26806627
