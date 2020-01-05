@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mtr
-PORTVERSION=	0.92
-PORTREVISION=	1
+PORTVERSION=	0.93
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
-MASTER_SITES=	https://www.bitwizard.nl/mtr/files/ \
-		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traceroute and ping in a single network diagnostic tool
@@ -14,16 +12,19 @@ COMMENT=	Traceroute and ping in a single network diagnostic tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		autoreconf ncurses pkgconfig
+
+GNU_CONFIGURE=	yes
+LDFLAGS+=	-lncurses
+
+GH_ACCOUNT=	traviscross
+USE_GITHUB=	yes
+
 CONFLICTS_INSTALL?=	mtr-nox11
 
 OPTIONS_DEFINE=	IPV6 X11
 OPTIONS_DEFAULT=X11
 X11_DESC=	Build X11-enabled mtr
-
-USES=		autoreconf ncurses pkgconfig
-
-GNU_CONFIGURE=	yes
-LDFLAGS+=	-lncurses
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 X11_CONFIGURE_WITH=	gtk
@@ -31,9 +32,7 @@ X11_USE=		GNOME=gtk20
 X11_USES=		gnome
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|getopt.*$$(OBJEXT)||g; s|getopt.*[ch]||g; /getopt.*Po/d' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|m4_esyscmd(\[build-aux/git-version-gen \.tarball-version\])|${PORTVERSION}|' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/ui/mtr.c
 
 post-install:
 	@${ECHO_MSG} ""
