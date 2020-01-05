@@ -57,9 +57,13 @@ include/OpenEXR/half.h
 include/OpenEXR/halfExport.h
 include/OpenEXR/halfFunction.h
 include/OpenEXR/halfLimits.h
+lib/cmake/IlmBase/IlmBaseConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/IlmBase/IlmBaseConfig.cmake
+lib/cmake/IlmBase/IlmBaseConfigVersion.cmake
+lib/libHalf-%%MAJORVER%%.so
+lib/libHalf-%%MAJORVER%%.so.%%VER%%
+lib/libHalf-%%MAJORVER%%.so.%%VER%%.0.0
 lib/libHalf.so
-lib/libHalf.so.%%VER%%
-lib/libHalf.so.%%VER%%.0.0
 lib/libIex-%%MAJORVER%%.so
 lib/libIex-%%MAJORVER%%.so.%%VER%%
 lib/libIex-%%MAJORVER%%.so.%%VER%%.0.0

@@ -1,0 +1,24 @@
+From fe2fccde18bc35db11895718d0b77d3f23d427b5 Mon Sep 17 00:00:00 2001
+From: Kimball Thurston <kdt3rd@gmail.com>
+Date: Tue, 5 Nov 2019 21:42:45 +1300
+Subject: [PATCH] Fix #595 and others, issue with pkgconfig generation under
+ cmake
+
+autoconf seems to automatically insert the ${prefix} variable reference
+when emitting the pkg-config file. Make cmake rules conform to that
+pattern.
+--- config/CMakeLists.txt.orig	2019-09-18 01:02:06 UTC
++++ config/CMakeLists.txt
+@@ -71,9 +71,9 @@ if(ILMBASE_INSTALL_PKG_CONFIG)
+   # use a helper function to avoid variable pollution, but pretty simple
+   function(ilmbase_pkg_config_help pcinfile)
+     set(prefix ${CMAKE_INSTALL_PREFIX})
+-    set(exec_prefix ${CMAKE_INSTALL_BINDIR})
+-    set(libdir ${CMAKE_INSTALL_LIBDIR})
+-    set(includedir ${CMAKE_INSTALL_INCLUDEDIR})
++    set(exec_prefix "\${prefix}")
++    set(libdir "\${exec_prefix}/${CMAKE_INSTALL_LIBDIR}")
++    set(includedir "\${prefix}/${CMAKE_INSTALL_INCLUDEDIR}")
+     set(LIB_SUFFIX_DASH ${ILMBASE_LIB_SUFFIX})
+     if(TARGET Threads::Threads)
+       # hrm, can't use properties as they end up as generator expressions

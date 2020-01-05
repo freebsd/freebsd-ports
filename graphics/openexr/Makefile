@@ -2,13 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	openexr
-PORTVERSION=	2.3.0
-PORTREVISION=	3
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics devel
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/:dist \
-		LOCAL/mandree/:test
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:dist \
-		${PORTNAME}-2.2.0-comp_dwa-test-images.tar.xz:test
+MASTER_SITES=	LOCAL/mandree/:test
+DISTFILES=	${PORTNAME}-2.2.0-comp_dwa-test-images.tar.xz:test
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
@@ -16,15 +13,14 @@ COMMENT=	High dynamic-range (HDR) image file format
 LICENSE=	BSD3CLAUSE
 
 # exact version required to avoid hard-to-debug issues
-LIB_DEPENDS=	libImath-2_3.so.24:graphics/ilmbase
+LIB_DEPENDS=	libImath-2_4.so.24:graphics/ilmbase
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-USES=		compiler:c++14-lang gmake libtool pathfix pkgconfig
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-ilmbasetest --enable-imfexamples
+USES=		cmake compiler:c++14-lang libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
+
+USE_GITHUB=	yes
+GH_TUPLE=	AcademySoftwareFoundation:openexr:v2.4.0
 
 CPPFLAGS+=	-I. -I../IlmImf
 # must be linked with -l{thr|pthread} explicitly
@@ -33,14 +29,17 @@ LDFLAGS+=	-lpthread
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	AUTHORS ChangeLog NEWS README.md
+DOCSRCDIR1=	${WRKSRC}/..
+DOC_FILES1=	CHANGES.md CONTRIBUTING.md GOVERNANCE.md LICENSE.md SECURITY.md \
+		CODE_OF_CONDUCT.md CONTRIBUTORS.md README.md
 
 DOCSRCDIR2=	${WRKSRC}/doc
-DOC_FILES2=	*.pdf
+DOC_FILES2=	*.odt *.pdf
 
 OPTIONS_DEFINE=		DOCS EXAMPLES LARGE_STACK
 LARGE_STACK_DESC=	Enable sys-dependent large stack optimizations
+
+WRKSRC_SUBDIR=	OpenEXR
 
 OPTIONS_SUB=	yes
 
@@ -52,23 +51,14 @@ LARGE_STACK_CONFIGURE_ENABLE=	large-stack
 USE_GCC=	yes
 .endif
 
-MAJORVER=	2_3
+MAJORVER=	2_4
 VER=		24
 
 PLIST_SUB+=	MAJORVER=${MAJORVER}
 PLIST_SUB+=	VER=${VER}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|== x|= x|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} \
-		-e 's|$$(datadir)/doc/OpenEXR-@OPENEXR_VERSION@/examples|$$(prefix)/share/examples/${PORTNAME}|' \
-		${WRKSRC}/IlmImfExamples/Makefile.in
-	@${REINPLACE_CMD} -e 's|$$(datadir)/doc/OpenEXR-@OPENEXR_VERSION@||' \
-		-e 's|$$(EXTRA_DIST)||' \
-		${WRKSRC}/doc/Makefile.am ${WRKSRC}/doc/Makefile.in
-
-# too many reports about compilation failures, so sanity check C++
-# library
+# too many reports about compilation failures, so
+# sanity check we are using the same C++ standard library
 _ilm_libcxx=${COMPILER_FEATURES:Mlib*c++}
 pre-configure:
 	@${READELF} -d ${LOCALBASE}/lib/libImath.so \
@@ -82,20 +72,28 @@ post-install:
 	${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/lib/libIlmImf-${MAJORVER}.so.${VER} \
 		${STAGEDIR}${PREFIX}/lib/libIlmImfUtil-${MAJORVER}.so.${VER}
+.for i in libIlmImf libIlmImfUtil
+	${LN} -s ${i}-${MAJORVER}.so.${VER} ${STAGEDIR}${PREFIX}/lib/${i}.so
+.endfor
 
 post-install-EXAMPLES-on:
 	${MV} \
-		${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}/examples/ ${STAGEDIR}${EXAMPLESDIR}
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME} 2>/dev/null || :
+		${STAGEDIR}${PREFIX}/share/doc/OpenEXR/examples/ ${STAGEDIR}${EXAMPLESDIR}
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc/OpenEXR 2>/dev/null || :
 
 post-install-EXAMPLES-off:
-	${RM} -R ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME}/examples/
+	${RM} -R ${STAGEDIR}${PREFIX}/share/doc/OpenEXR/examples/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR}
+	${MV} ${STAGEDIR}${DOCSDIR}/../OpenEXR/[a-df-zA-Z]* ${STAGEDIR}${DOCSDIR}
 
 post-install-DOCS-off:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME} 2>/dev/null || :
+
+regression-test check:
+	cd ${BUILD_WRKSRC} && ctest -j ${MAKE_JOBS_NUMBER}
+
 .include <bsd.port.post.mk>
