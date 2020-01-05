@@ -183,6 +183,8 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svg
 %%DATADIR%%/icons/application/64x64/apps/keepassxc-unlocked.png
 %%DATADIR%%/icons/application/64x64/apps/keepassxc.png
 %%DATADIR%%/icons/application/64x64/mimetypes/application-x-keepassxc.png
+%%DATADIR%%/icons/application/scalable/actions/object-locked.svg
+%%DATADIR%%/icons/application/scalable/actions/object-unlocked.svg
 %%DATADIR%%/icons/application/scalable/apps/freedesktop.svg
 %%DATADIR%%/icons/application/scalable/apps/keepassxc-dark.svg
 %%DATADIR%%/icons/application/scalable/apps/keepassxc-locked.svg
