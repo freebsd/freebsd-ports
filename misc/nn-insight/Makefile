@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nn-insight
-DISTVERSION=	0.1.1
+DISTVERSION=	0.1.2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
