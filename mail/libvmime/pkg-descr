@@ -1,3 +1,9 @@
-libvmime is a MIME manipulation library.
+VMime is a powerful C++ class library for working with RFC-822 and MIME messages
+and Internet messaging services like IMAP, POP or SMTP.
+
+With VMime you can parse, generate and modify messages, and also connect to
+store and transport services to receive or send messages over the Internet. The
+library offers all the features to build a complete mail client.
 
 WWW: https://www.vmime.org/
+WWW: https://github.com/kisli/vmime
