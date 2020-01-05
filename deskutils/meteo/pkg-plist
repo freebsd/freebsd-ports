@@ -1,4 +1,5 @@
 bin/com.gitlab.bitseater.meteo
+man/man1/com.gitlab.bitseater.meteo.1.gz
 share/applications/com.gitlab.bitseater.meteo.desktop
 share/icons/hicolor/128x128/apps/com.gitlab.bitseater.meteo.svg
 share/icons/hicolor/128x128@2/apps/com.gitlab.bitseater.meteo.svg

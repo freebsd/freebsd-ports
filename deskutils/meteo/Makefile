@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	meteo
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	deskutils
 
 MAINTAINER=	tagattie@yandex.com
@@ -24,7 +23,7 @@ USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig \
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	bitseater
-GL_COMMIT=	c83cea9a31901911ed5f8d87756d33a36b547457
+GL_COMMIT=	2c90bd8ab6d07c8c72e61efc03f90aa4d809e8e0
 
 USE_GNOME=	gtk30
 
