@@ -2,40 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	frotz
-PORTVERSION=	2.44
+PORTVERSION=	2.50
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Infocom games interpreter
+MAINTAINER=	dave@661.org
+COMMENT=	Infocom Z-machine games interpreter
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	DavidGriffith
+USE_GITLAB=	yes
+GL_ACCOUNT=	DavidGriffith
+GL_COMMIT=	9867a1f14da1e9c0707492d2ac74d1e8ffdd3a64
 
 USES=		gmake ncurses
 
-MAKE_ARGS=	-e CURSES="${LDFLAGS} -lncurses"
 MAKE_ENV=	OPTS="${CFLAGS}" CONFIG_DIR="${PREFIX}/etc"
+
+ALL_TARGET=	nosound dumb
+INSTALL_TARGET=	frotz
 
 PLIST_FILES=	bin/frotz \
 		man/man6/frotz.6.gz
 
-PORTDOCS=	AUTHORS BUGS ChangeLog HOW_TO_PLAY README
+PORTDOCS=	AUTHORS ChangeLog HOW_TO_PLAY README
 PORTEXAMPLES=	frotz.conf-big frotz.conf-small
 
-OPTIONS_DEFINE=		DOCS EXAMPLES DUMB OSS
-OPTIONS_DEFAULT=	OSS
+OPTIONS_DEFINE=		DOCS EXAMPLES DUMB
 DUMB_DESC=		Install dfrotz (dumb frotz)
 
-OSS_MAKE_ENV=		SOUND_DEFS='-DOSS_SOUND -DSOUND_DEV=\"/dev/dsp\"'
 DUMB_PLIST_FILES=	bin/dfrotz \
 			man/man6/dfrotz.6.gz
 DUMB_PORTDOCS=	DUMB
-
-pre-build-OSS-on:
-	cd ${WRKSRC} && ${DO_MAKE_BUILD} soundcard.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
