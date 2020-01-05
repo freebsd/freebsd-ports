@@ -20,10 +20,8 @@ LIB_DEPENDS=	libode.so:devel/ode \
 		libcurl.so:ftp/curl \
 		libxdg-basedir.so:x11/libxdg-basedir
 
-BROKEN_powerpc64=	fails to compile: hashtable.h: no match for call to __gnu_cxx::hash
-
 GNU_CONFIGURE=	yes
-USES=		compiler:features dos2unix gl gmake gnome jpeg localbase lua:51 sdl sqlite xorg
+USES=		compiler:c++11-lang dos2unix gl gmake gnome jpeg localbase lua:51 sdl sqlite xorg
 USE_GNOME=	libxml2
 USE_SDL=	sdl mixer ttf net
 USE_GL=		gl glu
@@ -58,12 +56,6 @@ ASIAN_TTF_CONFIGURE_OFF=--without-asian-ttf-file
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-BROKEN=		does not build with gcc 4.2
-.endif
-
 post-extract:
 	@${RM} -r ${WRKSRC}/src/ode
 
@@ -76,4 +68,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
