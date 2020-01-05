@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2020-01-04 02:53:57 UTC
++++ src/CMakeLists.txt
+@@ -1,6 +1,7 @@
+ project(cascade C CXX)
+ 
+-include_directories(${FLEX_INCLUDE_DIRS})
++#include_directories(${FLEX_INCLUDE_DIRS}) # cmake always finds base flex header:  https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=243068
++include_directories(${CMAKE_INSTALL_PREFIX}/include/flex)
+ include_directories(${CMAKE_CURRENT_BINARY_DIR})
+ 
+ if(${BISON_VERSION} VERSION_GREATER 3.2.9) 

@@ -18,6 +18,7 @@
     SUBDIR += calculix-ccx
     SUBDIR += caneda
     SUBDIR += cascade
+    SUBDIR += cascade-compiler
     SUBDIR += chipvault
     SUBDIR += cura-engine
     SUBDIR += digital

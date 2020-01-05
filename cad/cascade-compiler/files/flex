@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+# call the real flex
+flex.real "$@"
+
+# update the FlexLexer.h include that the above command must have created
+find ${FREEBSD_WRKSRC} -name "*.cc" | xargs sed -i '' 's|#include <FlexLexer.h>|#include <${FREEBSD_LOCALBASE}/include/flex/FlexLexer.h>|'
