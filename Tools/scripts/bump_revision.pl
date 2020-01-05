@@ -160,8 +160,8 @@ my %index = ();
 
 	$port = $b[-2]."/".$b[-1];
 
-	@{ $index{$port} }{'portname', 'portnameversion', 'portdir', 'comment', 'deps'}
-	    = ($b[-1], $a[0], $a[1], $a[3], ());
+	@{ $index{$port} }{'portname', 'portnameversion', 'origin', 'comment', 'deps'}
+	    = ($b[-1], $a[0], $port, $a[3], ());
 
 	if ($a[8]) {
 	    @b = split(" ", $a[8]);
@@ -202,13 +202,15 @@ foreach my $PORT (@ARGV) {
     #
     {
 	print "Searching for ports depending on $PORT\n";
+	my $count = 0;
 
 	foreach my $p (keys(%index)) {
 	    if (defined $index{$p}{'deps'}{$PORTNAMEVERSION}) {
 		$DEPPORTS{$p} = 1;
+		++$count;
 	    }
 	}
-	print "- Found ", scalar keys(%DEPPORTS), " ports depending on $PORT.\n";
+	print "- Found $count ports depending on $PORT.\n";
     }
 }
 
@@ -221,7 +223,7 @@ sub direct_dependency($@) {
     my @lines = <F>;
     chomp @lines;
     my $deps = join(" ", @lines);
-    my %deps = map { $_ =~ s[/usr/ports/][]; ($_ => 1) } split " ", $deps;
+    my %deps = map { $_ =~ s[/usr/ports/][]; $_ =~ s[$portsdir/][]; ($_ => 1) } split " ", $deps;
     if ($!) { die "cannot read depends from make: $!"; }
     close F or die "cannot read depends from make: $!";
     my $required = grep { $_ } map { defined $deps{$_} } @requisites;
