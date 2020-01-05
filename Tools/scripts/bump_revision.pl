@@ -11,7 +11,7 @@
 # ports tree, such as /usr/ports.
 #
 # The shebang line above includes -T (taint) to be more distrustful 
-# about the envionment, for security reasons, and is considered
+# about the environment, for security reasons, and is considered
 # good Perl practice.
 #
 # You can use either the -l (shaLlow, avoid grandparent dependencies,
