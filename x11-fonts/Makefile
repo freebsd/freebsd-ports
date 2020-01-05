@@ -199,6 +199,7 @@
     SUBDIR += py-glyphsLib
     SUBDIR += py-ufo2ft
     SUBDIR += py-ufoLib
+    SUBDIR += py-ufolint
     SUBDIR += raleway
     SUBDIR += roboto-fonts-ttf
     SUBDIR += sgifonts

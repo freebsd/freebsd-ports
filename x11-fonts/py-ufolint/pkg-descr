@@ -1,0 +1,15 @@
+ufolint is a source file linter for typeface development in Unified Font Object
+(UFO) source code. It was designed for continuous integration testing of UFO
+source contributions to typeface projects.
+
+The application performs a UFO version specific static analysis of the source
+text files against the UFO v2 and v3 specifications for issues.
+
+These tests are performed through a combination of public methods in the
+fontTools.ufoLib library and additional tests that are implemented in the
+ufolint application. ufolint catches exceptions raised in the ufoLib public read
+methods for all *.plist file types and all ufoLib validations performed on
+*.glif files. These are returned to users with informative error messages that
+indicate the filepath(s) of concern and exit status code 1.
+
+WWW: https://github.com/source-foundry/ufolint
