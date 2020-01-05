@@ -1,3 +1,13 @@
-TIMESTAMP = 1555988368
-SHA256 (elves-elvish-v0.12_GH0.tar.gz) = edd03f4acf50beb03a663804e4da8b9d13805d471245c47c1b71f24c125cb9a2
-SIZE (elves-elvish-v0.12_GH0.tar.gz) = 1274675
+TIMESTAMP = 1578054713
+SHA256 (elves-elvish-v0.13_GH0.tar.gz) = 07d2205546186bd6c196653f14552ce07d6d9661a9fa437cf0caac4fe66bf749
+SIZE (elves-elvish-v0.13_GH0.tar.gz) = 1234652
+SHA256 (boltdb-bolt-v1.3.1_GH0.tar.gz) = b5ae498b780f535a5d308c188dee1329b3536275d29ad6758876084c0b8586a8
+SIZE (boltdb-bolt-v1.3.1_GH0.tar.gz) = 83437
+SHA256 (golang-sys-ff2a66f350ce_GH0.tar.gz) = fa3cdff60485c54d0a17b526a61fb023b620e407422a6e5d56acae684fc262fe
+SIZE (golang-sys-ff2a66f350ce_GH0.tar.gz) = 795354
+SHA256 (kr-pty-v1.1.4_GH0.tar.gz) = f69af477ac2df39246ab64f4bf61767015d493a98a74d5f4da40131f0fe6af7a
+SIZE (kr-pty-v1.1.4_GH0.tar.gz) = 5819
+SHA256 (mattn-go-isatty-v0.0.7_GH0.tar.gz) = 80b6b3e4fee3b15864f23d622129c17ba222786f8c93bb01f8805f3cb91dfefe
+SIZE (mattn-go-isatty-v0.0.7_GH0.tar.gz) = 3559
+SHA256 (xiaq-persistent-a1d9ac4077fc_GH0.tar.gz) = 43f431d16d4bef10b1fc6e72f61b3f60f3f0198f8384befba9742b582d2a61aa
+SIZE (xiaq-persistent-a1d9ac4077fc_GH0.tar.gz) = 19502
