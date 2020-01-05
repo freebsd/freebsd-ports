@@ -16,4 +16,4 @@ This package only brings Boehm-GC libraries with threading support.
 
 ps: garbage collection is addictive.
 
-WWW: http://www.hboehm.info/gc/
+WWW: https://www.hboehm.info/gc/
