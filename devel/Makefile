@@ -5130,6 +5130,7 @@
     SUBDIR += py-typed-ast
     SUBDIR += py-typing
     SUBDIR += py-typing-extensions
+    SUBDIR += py-typing-inspect
     SUBDIR += py-tzlocal
     SUBDIR += py-u-msgpack-python
     SUBDIR += py-ua_parser
