@@ -1,0 +1,10 @@
+bin/ots-fuzzer
+bin/ots-idempotent
+bin/ots-perf
+bin/ots-sanitize
+bin/ots-side-by-side
+bin/ots-validator-checker
+lib/libots.a
+lib/libots.so
+lib/libots.so.8
+lib/libots.so.8.0.0
