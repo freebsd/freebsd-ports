@@ -5148,6 +5148,7 @@
     SUBDIR += py-urwidtrees
     SUBDIR += py-usb
     SUBDIR += py-user_agents
+    SUBDIR += py-userpath
     SUBDIR += py-utils
     SUBDIR += py-uvloop
     SUBDIR += py-validators
