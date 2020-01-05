@@ -12,10 +12,11 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.md
 
 BROKEN_i386=	fails to build: a declaration of 'Mul128' must be available
+BROKEN_powerpc64=	fails to build: math/native_int/binint.h:510:11: error: Architecture not supported for MultD()
 
 BUILD_DEPENDS=	autoconf:devel/autoconf # possibly a mistake in the project
 
-USES=		cmake:noninja localbase
+USES=		cmake:noninja compiler:c++11-lang localbase
 USE_GITLAB=	yes
 USE_GITHUB=	nodefault
 GL_PROJECT=	palisade-development
