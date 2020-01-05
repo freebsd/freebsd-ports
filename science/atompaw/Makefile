@@ -9,8 +9,6 @@ MASTER_SITES=	http://users.wfu.edu/natalie/papers/pwpaw/
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for projector augmented wave functions for molecular simulations
 
-BROKEN=		unfetchable
-
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	liblapack.so:math/lapack \
