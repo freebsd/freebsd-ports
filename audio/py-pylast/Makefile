@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pylast
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,8 @@ COMMENT=	Python interface to Last.fm and Libre.fm
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 
 USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
