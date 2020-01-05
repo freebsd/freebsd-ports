@@ -1,10 +1,10 @@
-TIMESTAMP = 1573888141
+TIMESTAMP = 1578125693
 SHA256 (yitsushi-totp-cli-v1.1.8_GH0.tar.gz) = f5e1aefcb3a8e5407be0d6525e80b02fbca7d0c528fc53cb626b6aa88b8057db
 SIZE (yitsushi-totp-cli-v1.1.8_GH0.tar.gz) = 23432
-SHA256 (golang-crypto-e1110fd_GH0.tar.gz) = 87f99f532af6e6e85c5cf8d8cc6863171d582008e0869a3507923da028e997f1
-SIZE (golang-crypto-e1110fd_GH0.tar.gz) = 1711607
-SHA256 (golang-sys-52ab431_GH0.tar.gz) = 4ae94faada4c284a36d2de183f5fc43d26279b7682c448681c4c27697b9ae44b
-SIZE (golang-sys-52ab431_GH0.tar.gz) = 1514616
+SHA256 (golang-crypto-53104e6_GH0.tar.gz) = 2a0ced77bf8839954575c77d71ee65fd5159a7ecb3b0d112c8094d226cf9d433
+SIZE (golang-crypto-53104e6_GH0.tar.gz) = 1720857
+SHA256 (golang-sys-a1369af_GH0.tar.gz) = 2b3534e4c43b31193b3c754b6e5296054d77bc2373161dfac69fc95c22152398
+SIZE (golang-sys-a1369af_GH0.tar.gz) = 1535410
 SHA256 (kardianos-osext-2bc1f35_GH0.tar.gz) = 1b771589ecc12d1449c5f9f7754b2149369cc76ca42eee0386b8c9a7434ceca9
 SIZE (kardianos-osext-2bc1f35_GH0.tar.gz) = 4899
 SHA256 (mitchellh-go-homedir-v1.1.0_GH0.tar.gz) = 646671c73a84a8dfb4a5a76b80c7b63549ffefa906524d45077301bc7da76600
