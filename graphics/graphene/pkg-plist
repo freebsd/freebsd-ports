@@ -61,6 +61,7 @@ share/gir-1.0/Graphene-1.0.gir
 %%PORTDOCS%%share/gtk-doc/html/graphene/ix04.html
 %%PORTDOCS%%share/gtk-doc/html/graphene/ix05.html
 %%PORTDOCS%%share/gtk-doc/html/graphene/ix06.html
+%%PORTDOCS%%share/gtk-doc/html/graphene/ix07.html
 %%PORTDOCS%%share/gtk-doc/html/graphene/left-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/graphene/left.png
 %%PORTDOCS%%share/gtk-doc/html/graphene/rectangle-intersection.png
