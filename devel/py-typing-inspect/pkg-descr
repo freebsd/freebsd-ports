@@ -1,0 +1,5 @@
+The typing_inspect module defines experimental API for runtime inspection of
+types defined in the Python standard typing module. Works with typing version
+3.7.4 and later.
+
+WWW: https://github.com/ilevkivskyi/typing_inspect
