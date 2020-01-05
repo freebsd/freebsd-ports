@@ -1,0 +1,5 @@
+Ever wanted to release a cool new app but found it difficult to add its location
+to PATH for users? Me too! This tool does that for you on all major operating
+systems and does not require elevated privileges!
+
+WWW: https://github.com/ofek/userpath
