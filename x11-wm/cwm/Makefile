@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cwm
-DISTVERSION=	6.3
+DISTVERSION=	6.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://leahneukirchen.org/releases/
 
@@ -13,30 +13,17 @@ LICENSE=	ISCL
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		pkgconfig shebangfix xorg
-USE_XORG=	x11 xft xinerama xrandr
-
+USES=		pkgconfig xorg
+USE_XORG=	x11 xft xrandr
+MAKE_ARGS=	MANPREFIX="${MANPREFIX}/man"
 PLIST_FILES=	bin/cwm \
-		bin/cwm-migrate-config.pl \
 		man/man1/cwm.1.gz \
 		man/man5/cwmrc.5.gz
-SHEBANG_FILES=	migrate-config.pl
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} 's@/usr/X11R6@${LOCALBASE}@' ${WRKSRC}/cwmrc.5
-	@${REINPLACE_CMD} -e 's@strlcpy.o strlcat.o@@' \
-		-e 's@strtonum.o@@' ${WRKSRC}/Makefile
-.if ${OPSYS} == FreeBSD
-	@${REINPLACE_CMD} 's@reallocarray.o@@' ${WRKSRC}/Makefile
-.endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cwm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/migrate-config.pl \
-		${STAGEDIR}${PREFIX}/bin/cwm-migrate-config.pl
-	${INSTALL_MAN} ${WRKSRC}/cwm.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/cwmrc.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cwm
 
 .include <bsd.port.mk>
