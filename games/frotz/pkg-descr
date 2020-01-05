@@ -2,9 +2,9 @@ An interpreter for all Infocom games. Complies with standard
 1.0 of Graham Nelson's specification. Frotz runs text adventures
 which come in so-called story files: ZORK1.DAT, TRINITY.DAT,
 CURSES.Z5, JIGSAW.Z8, ARTHUR.ZIP etc. It is possible to play
-Atari ST, Amiga or Macintosh games on your PC once you manage
-to transfer the story files.  There is an increasing number
-of new games available on the Internet. Check the if-archive
-at ftp.ifarchive.org.
+Atari ST, Amiga or Macintosh games on your computer once you
+manage to transfer the story files.  There is an increasing
+number of new games available on the Internet. Check the
+if-archive at http://ifarchive.org/
 
-WWW: https://github.com/DavidGriffith/frotz
+WWW: https://gitlab.com/DavidGriffith/frotz
