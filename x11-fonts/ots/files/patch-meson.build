@@ -1,0 +1,183 @@
+--- meson.build.orig	2019-08-30 08:38:31 UTC
++++ meson.build
+@@ -1,6 +1,6 @@
+ project('ots', 'c', 'cpp',
+   version: '8.0.0',
+-  default_options : ['cpp_std=c++11', 'default_library=static'],
++  default_options : ['cpp_std=c++11', 'default_library=both'],
+ )
+ 
+ cxx = meson.get_compiler('cpp')
+@@ -38,52 +38,52 @@ configure_file(output: 'config.h',
+                configuration: conf)
+ 
+ 
+-brotli_includes = ['third_party/brotli/c/include']
+-libbrotli = library('brotli',
+-  'third_party/brotli/c/common/constants.h',
+-  'third_party/brotli/c/common/dictionary.c',
+-  'third_party/brotli/c/common/dictionary.h',
+-  'third_party/brotli/c/common/transform.c',
+-  'third_party/brotli/c/common/transform.h',
+-  'third_party/brotli/c/common/version.h',
+-  'third_party/brotli/c/dec/bit_reader.c',
+-  'third_party/brotli/c/dec/bit_reader.h',
+-  'third_party/brotli/c/dec/decode.c',
+-  'third_party/brotli/c/dec/huffman.c',
+-  'third_party/brotli/c/dec/huffman.h',
+-  'third_party/brotli/c/dec/prefix.h',
+-  'third_party/brotli/c/dec/state.c',
+-  'third_party/brotli/c/dec/state.h',
+-  'third_party/brotli/c/include/brotli/decode.h',
+-  'third_party/brotli/c/include/brotli/port.h',
+-  'third_party/brotli/c/include/brotli/types.h',
+-  include_directories: include_directories(brotli_includes),
+-)
++#brotli_includes = ['third_party/brotli/c/include']
++#libbrotli = library('brotli',
++#  'third_party/brotli/c/common/constants.h',
++#  'third_party/brotli/c/common/dictionary.c',
++#  'third_party/brotli/c/common/dictionary.h',
++#  'third_party/brotli/c/common/transform.c',
++#  'third_party/brotli/c/common/transform.h',
++#  'third_party/brotli/c/common/version.h',
++#  'third_party/brotli/c/dec/bit_reader.c',
++#  'third_party/brotli/c/dec/bit_reader.h',
++#  'third_party/brotli/c/dec/decode.c',
++#  'third_party/brotli/c/dec/huffman.c',
++#  'third_party/brotli/c/dec/huffman.h',
++#  'third_party/brotli/c/dec/prefix.h',
++#  'third_party/brotli/c/dec/state.c',
++#  'third_party/brotli/c/dec/state.h',
++#  'third_party/brotli/c/include/brotli/decode.h',
++#  'third_party/brotli/c/include/brotli/port.h',
++#  'third_party/brotli/c/include/brotli/types.h',
++#  include_directories: include_directories(brotli_includes),
++#)
+ 
+ 
+-woff2_includes = ['third_party/brotli/c/include', 'third_party/woff2/include']
+-libwoff2 = library('woff2',
+-  'third_party/woff2/include/woff2/decode.h',
+-  'third_party/woff2/include/woff2/output.h',
+-  'third_party/woff2/src/buffer.h',
+-  'third_party/woff2/src/port.h',
+-  'third_party/woff2/src/round.h',
+-  'third_party/woff2/src/store_bytes.h',
+-  'third_party/woff2/src/table_tags.cc',
+-  'third_party/woff2/src/table_tags.h',
+-  'third_party/woff2/src/variable_length.cc',
+-  'third_party/woff2/src/variable_length.h',
+-  'third_party/woff2/src/woff2_common.cc',
+-  'third_party/woff2/src/woff2_common.h',
+-  'third_party/woff2/src/woff2_dec.cc',
+-  'third_party/woff2/src/woff2_out.cc',
+-  include_directories: include_directories(woff2_includes),
+-)
++#woff2_includes = ['third_party/brotli/c/include', 'third_party/woff2/include']
++#libwoff2 = library('woff2',
++#  'third_party/woff2/include/woff2/decode.h',
++#  'third_party/woff2/include/woff2/output.h',
++#  'third_party/woff2/src/buffer.h',
++#  'third_party/woff2/src/port.h',
++#  'third_party/woff2/src/round.h',
++#  'third_party/woff2/src/store_bytes.h',
++#  'third_party/woff2/src/table_tags.cc',
++#  'third_party/woff2/src/table_tags.h',
++#  'third_party/woff2/src/variable_length.cc',
++#  'third_party/woff2/src/variable_length.h',
++#  'third_party/woff2/src/woff2_common.cc',
++#  'third_party/woff2/src/woff2_common.h',
++#  'third_party/woff2/src/woff2_dec.cc',
++#  'third_party/woff2/src/woff2_out.cc',
++#  include_directories: include_directories(woff2_includes),
++#)
+ 
+ 
+ ots_includes = [
+   'include',
+-  'third_party/woff2/include',
++  '%%LOCALBASE%%/include/woff2',
+ ]
+ 
+ ots_sources = [
+@@ -167,10 +167,10 @@ ots_sources = [
+   'src/vvar.h',
+ ]
+ 
+-ots_libs = [libbrotli, libwoff2]
++#ots_libs = [libbrotli, libwoff2]
+ 
+ if get_option('graphite')
+-  ots_includes += ['third_party/lz4/lib']
++  ots_includes += ['%%LOCALBASE%%/include']
+   ots_sources += [
+     'src/feat.cc',
+     'src/feat.h',
+@@ -186,21 +186,27 @@ if get_option('graphite')
+     'src/sill.h',
+     'src/sill.cc',
+   ]
+-  liblz4 = library('lz4',
+-    'third_party/lz4/lib/lz4.c',
+-    'third_party/lz4/lib/lz4.h',
+-  )
+-  ots_libs += [liblz4]
++#  liblz4 = library('lz4',
++#    'third_party/lz4/lib/lz4.c',
++#    'third_party/lz4/lib/lz4.h',
++#  )
++#  ots_libs += [liblz4]
+ endif
+ 
++libbrotlicommon = dependency('libbrotlicommon')
++libbrotlidec = dependency('libbrotlidec')
++libwoff2common = dependency('libwoff2common')
++libwoff2dec = dependency('libwoff2dec')
++liblz4 = dependency('liblz4')
+ zlib = dependency('zlib', fallback : ['zlib', 'zlib_dep'])
+ 
+ libots = library('ots',
+   ots_sources,
+   include_directories: include_directories(ots_includes),
+-  link_with: ots_libs,
+   cpp_args : '-DHAVE_CONFIG_H',
+-  dependencies: zlib,
++  dependencies: [libbrotlicommon, libbrotlidec, libwoff2common, libwoff2dec, liblz4, zlib],
++  version : meson.project_version(),
++  install: true,
+ )
+ 
+ 
+@@ -226,6 +232,7 @@ executable('ots-fuzzer',
+   cpp_args: fuzzer_defines,
+   link_with: libots,
+   link_args: fuzzer_ldflags,
++  install: true,
+ )
+ 
+ 
+@@ -291,12 +298,13 @@ endif
+ 
+ 
+ gtest = dependency('gtest', fallback: ['gtest', 'gtest_main_dep'])
++gtest_main = dependency('gtest_main')
+ 
+ cff_charstring = executable('cff_charstring',
+   'tests/cff_charstring_test.cc',
+   include_directories: include_directories(['include', 'src']),
+   link_with: libots,
+-  dependencies: gtest,
++  dependencies: [gtest, gtest_main],
+ )
+ 
+ test('cff_charstring', cff_charstring)
+@@ -306,7 +314,7 @@ layout_common_table = executable('layout_common_table'
+   'tests/layout_common_table_test.cc',
+   include_directories: include_directories(['include', 'src']),
+   link_with: libots,
+-  dependencies: gtest,
++  dependencies: [gtest, gtest_main],
+ )
+ 
+ test('layout_common_table', layout_common_table)
