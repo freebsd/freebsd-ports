@@ -2,37 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	github-backup-utils
-PORTVERSION=	2.8.3
+PORTVERSION=	2.19.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GitHub Enterprise Backup Utilities
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	git>0:devel/git \
-		rsync>0:net/rsync
+RUN_DEPENDS=	bash:shells/bash \
+		git:devel/git \
+		rsync:net/rsync
 
-USES=	shebangfix
-SHEBANG_FILES=	share/github-backup-utils/*
+USES=		shebangfix
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+SUB_FILES=	pkg-message
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	github
 GH_PROJECT=	backup-utils
-SUB_FILES=	pkg-message
-NO_BUILD=	yes
+
+SHEBANG_FILES=	bin/* share/github-backup-utils/*
 
 post-patch:
-	${REINPLACE_CMD} -e \
-		's|/etc/github-backup-utils/backup.config|${PREFIX}/etc/github.backup.config|g' \
-		${WRKSRC}/share/${PORTNAME}/ghe-backup-config
+	@${REINPLACE_CMD} -e 's|/etc/github-backup-utils/backup.config|${PREFIX}/etc/github.backup.config|g' ${WRKSRC}/share/github-backup-utils/ghe-backup-config
 
 do-install:
 	(cd ${WRKSRC}/bin && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/share/${PORTNAME} && ${COPYTREE_BIN} . ${STAGEDIR}${DATADIR})
-	${INSTALL_DATA} ${WRKSRC}/backup.config-example \
-		${STAGEDIR}${PREFIX}/etc/github.backup.config.sample
+	${INSTALL_DATA} ${WRKSRC}/backup.config-example ${STAGEDIR}${PREFIX}/etc/github.backup.config.sample
+	(cd ${WRKSRC}/share/github-backup-utils && ${COPYTREE_BIN} . ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
