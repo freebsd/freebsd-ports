@@ -18,5 +18,5 @@ include/barvinok/set.h
 include/barvinok/util.h
 lib/libbarvinok.so
 lib/libbarvinok.so.23
-lib/libbarvinok.so.23.0.8
+lib/libbarvinok.so.23.0.9
 libdata/pkgconfig/barvinok.pc
