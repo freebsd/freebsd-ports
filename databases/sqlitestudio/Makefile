@@ -2,18 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitestudio
-DISTVERSION=	3.2.1
-PORTREVISION=	8
+DISTVERSION=	3.2.1-705
+DISTVERSIONSUFFIX=	-gaf49fd61
 CATEGORIES=	databases
-MASTER_SITES=	http://sqlitestudio.pl/files/sqlitestudio3/complete/tar/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SQLite database GUI manager
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/coreSQLiteStudio/licenses/sqlitestudio_license.txt
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 OPTIONS_GROUP=		PLUGINS
 OPTIONS_DEFAULT=	${OPTIONS_GROUP_PLUGINS}
@@ -31,13 +28,15 @@ PLUGIN${p:C/([A-Z])/_\1/g:tu}_VARS=	PLUGIN_DIRS+=${p}
 PLUGIN_DB_SQLITE_CIPHER_USES=		ssl
 PLUGIN_PRINTING_USE=			QT=printsupport
 
-WRKSRC=		${WRKDIR}/SQLiteStudio3
-
 USES=		compiler:c++11-lib gl gmake ncurses qmake qt:5 readline sqlite
+USE_GITHUB=	yes
+GH_ACCOUNT=	pawelsalawa
 USE_CXXSTD=	c++11
 USE_QT=		core concurrent gui network script sql sql-sqlite3_run svg widgets xml \
 		uitools buildtools_build linguisttools_build
 USE_GL=		gl
+
+WRKSRC_SUBDIR=	SQLiteStudio3
 
 CXXFLAGS+=	-I${WRKSRC}/coreSQLiteStudio
 
@@ -53,28 +52,25 @@ post-patch:
 		${WRKSRC}/dirs.pri
 	@${REINPLACE_CMD} -e 's|pluginDirs += QDir(CFG->getConfigDir()).absoluteFilePath("plugins");|pluginDirs += "${LOCALBASE}/lib/sqlitestudio";|' \
 		${WRKSRC}/coreSQLiteStudio/services/impl/pluginmanagerimpl.cpp
-	# Patch from http://bugs.sqlitestudio.pl/index.rvt?id=3102
-	@${REINPLACE_CMD} -e 's|^include(.*|include($$$$PWD/../../SQLiteStudio3/plugins.pri)|' \
-		${WRKDIR}/Plugins/DbSqliteCipher/DbSqliteCipher.pro
 
 post-configure:
 	# Fix for a suspected bug in qmake: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=210418
 	@${REINPLACE_CMD} -E 's|SUBLIBS) -L[^ ]+|SUBLIBS) |' ${WRKSRC}/sqlitestudio/Makefile
 	@${REINPLACE_CMD} -E 's|LIBS)$$|LIBS) -L${PREFIX}/lib|' ${WRKSRC}/sqlitestudio/Makefile
 	@for plugin in ${PLUGIN_DIRS}; do \
-	  cd ${WRKDIR}/Plugins/$$plugin && \
+	  cd ${WRKSRC}/../Plugins/$$plugin && \
 	  ${SETENV} ${QMAKE_ENV} ${_QMAKE} ${QMAKE_ARGS} ${QMAKE_SOURCE_PATH}; \
 	done;
 
 post-build:
 	@for plugin in ${PLUGIN_DIRS}; do \
-	  cd ${WRKDIR}/Plugins/$$plugin && \
+	  cd ${WRKSRC}/../Plugins/$$plugin && \
 	  ${DO_MAKE_BUILD} ${ALL_TARGET}; \
 	done;
 
 post-install:
 	@for plugin in ${PLUGIN_DIRS}; do \
-	  cd ${WRKDIR}/Plugins/$$plugin && \
+	  cd ${WRKSRC}/../Plugins/$$plugin && \
 	  ${SETENV} ${MAKE_ENV} ${FAKEROOT} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}; \
 	done;
 	# install icons for the .desktop file to work
