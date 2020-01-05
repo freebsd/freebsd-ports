@@ -1,0 +1,15 @@
+Commandlines is a Python library for command line application development that
+supports command line argument parsing, command string validation testing, &
+application logic. It has no external dependencies and provides broad Python
+interpreter support.
+
+The library supports application development with POSIX guideline compliant[*]
+command argument styles, the GNU argument style extensions to the POSIX
+guidelines (including long option syntax and variable position of options among
+arguments), and command suite style application arguments that include one or
+more sub-commands to the executable.
+
+[*] with the exception of the short single option-argument definition syntax
+that does not include an intervening space character (e.g. -ofile)
+
+WWW: https://github.com/chrissimpkins/commandlines

@@ -4301,6 +4301,7 @@
     SUBDIR += py-colorful
     SUBDIR += py-colorlog
     SUBDIR += py-columnize
+    SUBDIR += py-commandlines
     SUBDIR += py-conditional
     SUBDIR += py-configargparse
     SUBDIR += py-configobj
