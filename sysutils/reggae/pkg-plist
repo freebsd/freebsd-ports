@@ -18,6 +18,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/cbsd-profile/skel/etc/master.passwd
 %%DATADIR%%/cbsd-profile/skel/etc/motd
 %%DATADIR%%/cbsd-profile/skel/etc/passwd
+%%DATADIR%%/cbsd-profile/skel/etc/pkg/FreeBSD.conf
 %%DATADIR%%/cbsd-profile/skel/etc/pwd.db
 %%DATADIR%%/cbsd-profile/skel/etc/rc.conf
 %%DATADIR%%/cbsd-profile/skel/etc/spwd.db
@@ -91,7 +92,14 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/ansible/group_vars/all.tpl
 %%DATADIR%%/templates/ansible/inventory.local.tpl
 %%DATADIR%%/templates/ansible/inventory.remote.tpl
+%%DATADIR%%/templates/cbsd-bhyve.conf.tpl
+%%DATADIR%%/templates/cbsd-vnet.conf.tpl
 %%DATADIR%%/templates/cbsd.conf.tpl
+%%DATADIR%%/templates/cloud-devops.sh
+%%DATADIR%%/templates/cloud-init/meta-data
+%%DATADIR%%/templates/cloud-init/user-data
+%%DATADIR%%/templates/cloud-initial.sh
+%%DATADIR%%/templates/devfs.rules
 %%DATADIR%%/templates/dhcpd-hook.sh
 %%DATADIR%%/templates/dhcpd.conf
 %%DATADIR%%/templates/export-ports.sh
@@ -108,6 +116,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/reggae-register.sh
 %%DATADIR%%/templates/resolvconf.conf
 %%DATADIR%%/templates/setup-vm.sh
+%%DATADIR%%/templates/sudoers
 %%DATADIR%%/templates/unbound.conf
 %%DATADIR%%/templates/unbound_cbsd.conf
 %%DATADIR%%/templates/unbound_cbsd.zone
