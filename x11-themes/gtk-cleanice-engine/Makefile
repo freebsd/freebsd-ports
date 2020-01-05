@@ -14,6 +14,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplistic GTK+ 2.x theme engine
 
+BROKEN=		unfetchable
+
 USES=		gnome libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20

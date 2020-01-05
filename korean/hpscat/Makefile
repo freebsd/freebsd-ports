@@ -17,6 +17,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ked.tar.gz:ked
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hangul Text Printing Utility
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	hcode:korean/hcode
 
 FONTDIR=	${PREFIX}/${FONTDIR_REL}

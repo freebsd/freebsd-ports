@@ -9,6 +9,8 @@ MASTER_SITES=	https://github.com/oracle/opengrok/releases/download/${PORTVERSION
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and powerful code search and cross-reference engine
 
+BROKEN=		unfetchable
+
 LICENSE=	CDDL APACHE20
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt

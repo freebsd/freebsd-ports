@@ -11,6 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emails posts from subscribed RSS/Atom newsfeeds
 
+BROKEN=		unfetchable
 DEPRECATED=	Unmaintained, uses EOLed python27
 EXPIRATION_DATE=	2020-01-27
 

@@ -10,6 +10,8 @@ MASTER_SITES=	http://assets.keltia.net/calife/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight alternative to sudo
 
+BROKEN=		unfetchable
+
 LICENSE=	GPLv2
 
 USES=		tar:xz

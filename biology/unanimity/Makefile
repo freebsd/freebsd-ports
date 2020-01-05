@@ -11,6 +11,7 @@ CATEGORIES=		biology
 MAINTAINER=     ports@FreeBSD.org
 COMMENT=	Pacific Biosciences consensus library and applications
 
+BROKEN=		unfetchable
 DEPRECATED=	Unmaintained, uses EOLed python27
 EXPIRATION_DATE=	2020-01-27
 

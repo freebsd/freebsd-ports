@@ -9,6 +9,8 @@ MASTER_SITES=	http://v3.sk/~lkundrak/dev86/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	16-bit assembler and loader
 
+BROKEN=		unfetchable
+
 CONFLICTS=	bcc-[0-9]* dev86-[0-9]*
 
 PLIST_FILES=	bin/as86 bin/catimage bin/ld86 bin/objchop bin/objdump86 \

@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.ongs.co.jp/software/xdtp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML document transfer program
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
