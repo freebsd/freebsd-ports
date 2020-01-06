@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	papirus-icon-theme
-PORTVERSION=	20191201
+PORTVERSION=	20200102
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@yandex.com
