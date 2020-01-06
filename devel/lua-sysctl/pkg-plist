@@ -1,4 +1,4 @@
-%%PORTDOCS%%%%DOCSDIR%%/lua52-sysctl/README.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%LUA_MODLIBDIR%%/sysctl.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/i.lua
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-all.lua
