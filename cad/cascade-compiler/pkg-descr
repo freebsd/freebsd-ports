@@ -1,0 +1,11 @@
+Cascade is a novel solution to the problem that FPGAs take a long time to
+program, with complex programs taking hours to be compiled to run on FPGA.
+Cascade is a first just-in-time compiler for Verilog. Cascade executes code
+immediately in a software simulator, and performs compilation in the
+background. When compilation is finished, the code is moved into hardware, and
+from the user's perspective it simply gets faster over time. Cascade's ability
+to move code back and forth between software and hardware also makes it the
+first platform to provide generic support for the execution of unsynthesizable
+Verilog from hardware.
+
+WWW: https://github.com/vmware/cascade
