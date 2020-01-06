@@ -6,7 +6,7 @@ DISTVERSION=	2.1.1
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	SSH server auditing
 
 LICENSE=	MIT
