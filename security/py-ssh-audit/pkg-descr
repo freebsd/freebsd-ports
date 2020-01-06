@@ -4,9 +4,9 @@ Features:
 * SSH1 and SSH2 protocol server support;
 * grab banner, recognize device or software and operating system,
 	detect compression;
-* gather key-exchange, host-key, encryption and 
+* gather key-exchange, host-key, encryption and
 	message authentication code algorithms;
-* output algorithm information 
+* output algorithm information
 	(available since, removed/disabled, unsafe/weak/legacy, etc);
 * output algorithm recommendations
 	(append or remove based on recognized software version);
