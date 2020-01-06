@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200106:
+  AFFECTS: users of net/gnatsd
+  AUTHOR: olgeni@FreeBSD.org
+
+  net/gnatsd has been replaced by net/nats-server to reflect the
+  new naming upstream.
+
+  All options in rc.conf should be renamed by replacing 'gnats'
+  with 'nats' (nats_enable, nats_user, nats_options).
+
 20200101:
   AFFECTS: users of security/openssl and security/openssl111
   AUTHOR: brnrd@FreeBSD.org
