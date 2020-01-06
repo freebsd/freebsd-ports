@@ -9,6 +9,7 @@ bin/RNAaliduplex
 bin/RNAalifold
 bin/RNAcofold
 bin/RNAdistance
+bin/RNAdos
 bin/RNAduplex
 bin/RNAeval
 bin/RNAfold
@@ -184,6 +185,7 @@ man/man1/RNAaliduplex.1.gz
 man/man1/RNAalifold.1.gz
 man/man1/RNAcofold.1.gz
 man/man1/RNAdistance.1.gz
+man/man1/RNAdos.1.gz
 man/man1/RNAduplex.1.gz
 man/man1/RNAeval.1.gz
 man/man1/RNAfold.1.gz
@@ -203,6 +205,7 @@ man/man1/RNAsubopt.1.gz
 man/man1/RNAup.1.gz
 man/man1/ct2db.1.gz
 man/man1/kinwalker.1.gz
+share/ViennaRNA/2Dlandscape.R
 share/ViennaRNA/2Dlandscape_mfe.gri
 share/ViennaRNA/2Dlandscape_pf.gri
 share/ViennaRNA/DoxygenLayout.xml
@@ -220,6 +223,7 @@ share/ViennaRNA/dna_mathews1999.par
 share/ViennaRNA/dna_mathews2004.par
 share/ViennaRNA/rna_andronescu2007.par
 share/ViennaRNA/rna_langdon2018.par
+share/ViennaRNA/rna_misc_special_hairpins.par
 share/ViennaRNA/rna_turner1999.par
 share/ViennaRNA/rna_turner2004.par
 share/ViennaRNA/viennarna.bib
