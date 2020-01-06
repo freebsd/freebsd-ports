@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Compile
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EGILES
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Devel-CheckOS>=0:devel/p5-Devel-CheckOS \
 		p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require
 
+NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
