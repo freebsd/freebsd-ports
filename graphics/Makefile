@@ -101,6 +101,7 @@
     SUBDIR += compupic
     SUBDIR += converseen
     SUBDIR += cosmoplayer
+    SUBDIR += cptutils
     SUBDIR += crw
     SUBDIR += curator
     SUBDIR += cuttlefish
