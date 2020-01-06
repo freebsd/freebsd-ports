@@ -13,6 +13,8 @@ COMMENT=	FLAPW code for atomic computations in quantum chemistry and physics
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build with cmake-3.16.0
+
 LIB_DEPENDS=	libopenblas.so:math/openblas
 
 USES=		cmake:noninja fortran gnome localbase:ldflags tar:tgz
