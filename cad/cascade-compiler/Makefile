@@ -1,12 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	cascade
-PORTVERSION=	g20200105
+PORTVERSION=	g20200105.1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-compiler
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	efe9940dcb93a6db6347ffd99225d52449e27c4d.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Just-In-Time Compiler for Verilog from VMware Research
@@ -22,7 +19,7 @@ TEST_DEPENDS=	benchmark>0:devel/benchmark \
 USES=		bison cmake compiler:c++17-lang localbase:ldflags ncurses perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	vmware
-GH_TAGNAME=	09fb6020329fc1d6d49b32ce3bbef241c52059f9
+GH_TAGNAME=	f4f7ae8bd1dd379790c0e58c286df90b8d1cdcde
 
 MAKE_ENV=	FREEBSD_WRKSRC=${WRKSRC} FREEBSD_LOCALBASE=${LOCALBASE}
 
@@ -35,8 +32,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.h" | ${XARGS} ${REINPLACE_CMD} -i '' 's|#include <FlexLexer.h>|#include <${LOCALBASE}/include/flex/FlexLexer.h>|'
 	# don't need bash: https://github.com/vmware/cascade/issues/207
 	@${FIND} ${WRKSRC} -name "*.sh" | ${XARGS} ${REINPLACE_CMD} -i '' 's|#!/bin/bash|#!/bin/sh|'
-	# replace the C++ compiler executable with CXX: https://github.com/vmware/cascade/issues/208
-	@${FIND} ${WRKSRC} -name "*.sh" | ${XARGS} ${REINPLACE_CMD} -i '' 's|g++ |${CXX} |'
 
 do-test:
 	cd ${BUILD_WRKSRC} && \
