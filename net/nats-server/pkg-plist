@@ -1,18 +1,28 @@
-bin/gnatsd
-@sample etc/gnatsd.conf.sample
+bin/nats-server
+@sample etc/nats.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/configs/accounts.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/authorization.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/certs/cert.new.pem
 %%PORTDOCS%%%%DOCSDIR%%/configs/certs/key.new.pem
 %%PORTDOCS%%%%DOCSDIR%%/configs/certs/key.pem
 %%PORTDOCS%%%%DOCSDIR%%/configs/certs/server.pem
 %%PORTDOCS%%%%DOCSDIR%%/configs/cluster.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/gwa.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/gwb.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/gws.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/include_bad_conf_check_a.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/include_bad_conf_check_b.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/include_conf_check_a.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/include_conf_check_b.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/include_conf_check_c.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/listen-1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/listen.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/listen_port.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/listen_port_with_colon.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/malformed_cluster_address.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/malformed_listen_address.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/multiple_errors.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/multiple_users.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/new_style_authorization.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/authorization_1.conf

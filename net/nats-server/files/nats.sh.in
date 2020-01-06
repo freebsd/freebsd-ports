@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# PROVIDE: nats
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run NATS:
+#
+# nats_enable (bool):		Set it to "YES" to enable nats server.
+#				Default is "NO".
+# nats_user:			User name to run as. default "nobody"
+# nats_options:			Options to pass nats server
+#
+
+. /etc/rc.subr
+
+name="nats"
+rcvar=`set_rcvar`
+
+load_rc_config ${name}
+: ${nats_enable="NO"}
+: ${nats_user="nobody"}
+: ${nats_options="-c %%PREFIX%%/etc/nats.conf"}
+
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/bin/nats-server
+command_args="${procname} ${nats_options}"
+
+run_rc_command "$1"
