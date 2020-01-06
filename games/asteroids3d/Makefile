@@ -14,12 +14,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	First-person shooter blowing up asteroids in 3D space
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		autoreconf gl gnome tar:bzip2
+USES=		autoreconf gl gnome tar:bzip2 xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	with_gamesdir="${PREFIX}/bin" with_gamedatadir="${DATADIR}"
 USE_GL=		glut
