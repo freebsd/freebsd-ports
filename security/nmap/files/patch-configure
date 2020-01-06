@@ -18,12 +18,3 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
  $as_echo_n "checking for $ac_word... " >&6; }
  if ${ac_cv_prog_CC+:} false; then :
-@@ -6365,7 +6365,7 @@ if test $have_libpcap != yes; then
-   else
-     CPPFLAGS="$CPPFLAGS -I\$(top_srcdir)/$libpcapdir"
-   fi
--  LIBPCAP_LIBS='$(LIBPCAPDIR)/libpcap.a'
-+  LIBPCAP_LIBS='$(LIBPCAPDIR)/libpcap.a -libverbs'
-   PCAP_BUILD="build-pcap"
-   PCAP_CLEAN="clean-pcap"
-   PCAP_DIST_CLEAN="distclean-pcap"
