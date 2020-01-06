@@ -1,26 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=	go-bindata
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Generates Go code from any file
 
+LICENSE=	CC0-1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		go
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	jteeuwen
-GH_TAGNAME=	a0ff256
-GH_SUBDIR=	src/github.com/jteeuwen/go-bindata
+GH_SUBDIR=	src/github.com/go-bindata/go-bindata
 
 GO_TARGET=	./go-bindata
 
 PLIST_FILES=	bin/go-bindata
 
-PORTDOCS=	CONTRIBUTING.md LICENSE README.md
+PORTDOCS=	CONTRIBUTING.md README.md
 
 OPTIONS_DEFINE=	DOCS
 
