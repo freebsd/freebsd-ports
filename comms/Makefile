@@ -199,6 +199,7 @@
     SUBDIR += uartlirc
     SUBDIR += uhd
     SUBDIR += uird
+    SUBDIR += ujprog
     SUBDIR += unixcw
     SUBDIR += usbmuxd
     SUBDIR += viewfax
