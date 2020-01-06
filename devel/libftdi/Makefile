@@ -6,7 +6,7 @@ PORTREVISION=	16
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library (using libusb) to talk to FTDI chips
 
 LICENSE=	GPLv2 LGPL21
