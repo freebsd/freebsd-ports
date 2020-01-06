@@ -1,0 +1,51 @@
+--- lib/bgfx-cmake/CMakeLists.txt.orig	2018-04-24 22:09:30 UTC
++++ lib/bgfx-cmake/CMakeLists.txt
+@@ -7,6 +7,8 @@ endif()
+ 
+ if(APPLE)
+     include_directories("bx/include/compat/osx")
++elseif(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++    include_directories("bx/include/compat/freebsd")
+ endif()
+ 
+ # -------------------- 3rd party -----------------------
+@@ -115,18 +117,17 @@ if(APPLE)
+     list(APPEND OPENGL_LIBRARIES "${COCOA_LIBRARY}" "${METAL_LIBRARY}" "${QUARTZ_LIBRARY}")
+ else()
+     if(NOT ANDROID)
+-        set(OPENGL_LIBRARIES "GL")
++        find_package(OpenGL REQUIRED)
+     endif()
+ endif()
+ 
+ if(ANDROID)
+     target_link_libraries(bgfx log dl)
+ elseif(UNIX)
+-    set(DL "")
+-    if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+-        set(DL dl)
+-    endif()
+-    target_link_libraries(bgfx ${OPENGL_LIBRARIES} pthread ${DL})
++    find_package(X11 REQUIRED)
++
++    target_link_libraries(bgfx ${X11_LIBRARIES} ${OPENGL_LIBRARIES} pthread ${CMAKE_DL_LIBS})
++    target_link_libraries(bx pthread ${CMAKE_DL_LIBS})
+ endif()
+ 
+ target_include_directories(bx PUBLIC bx/include)
+@@ -139,6 +140,8 @@ if(APPLE)
+     target_include_directories(bgfx PRIVATE ${MALLOC_INCLUDE_DIR})
+ endif()
+ 
++target_include_directories(bgfx PRIVATE ${OPENGL_INCLUDE_DIR})
++
+ # ------------------ Common library ----------------------
+ file(GLOB COMMON_SRC
+     "./bgfx/examples/common/bounds.cpp"
+@@ -164,4 +167,6 @@ target_include_directories(bgfx_common PUBLIC bgfx/exa
+ 
+ if(APPLE)
+     target_include_directories(bgfx_common PRIVATE ${MALLOC_INCLUDE_DIR})
++elseif(UNIX)
++    target_include_directories(bgfx_common PRIVATE ${X11_INCLUDE_DIR}) # entry_x11.cpp
+ endif()
