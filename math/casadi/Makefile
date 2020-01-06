@@ -19,6 +19,10 @@ CXXFLAGS+=	-fPIC
 
 CMAKE_OFF=	WITH_DEEPBIND WITH_BUILD_BLASFEO
 
+# cmake-3.16: disable build of examples (they are not installed anyways),
+# and fail due to not setting up the linker environment properly:
+CMAKE_OFF+=	WITH_EXAMPLES
+
 OPTIONS_DEFINE=		BLASFEO BONMIN CLANG IPOPT LAPACK QPOASES
 OPTIONS_DEFAULT=	BLASFEO BONMIN IPOPT LAPACK QPOASES
 OPTIONS_SUB=		yes
