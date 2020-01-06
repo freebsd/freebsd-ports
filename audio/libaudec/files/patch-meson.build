@@ -1,0 +1,11 @@
+--- meson.build.orig	2020-01-06 04:43:34 UTC
++++ meson.build
+@@ -160,7 +160,7 @@ config_h_dep = declare_dependency (
+   )
+ audec_deps += config_h_dep
+ 
+-audec = static_library (
++audec = shared_library (
+   'audec',
+   sources: srcs,
+   dependencies: [
