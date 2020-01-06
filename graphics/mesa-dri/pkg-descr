@@ -4,4 +4,4 @@ With a X Server configured for DRI, they allow direct rendering of hardware-
 accelerated OpenGL. This package also includes the software renderer, either
 llvmpipe or classic SWrast.
 
-WWW: http://www.mesa3d.org/
+WWW: https://www.mesa3d.org/
