@@ -15,8 +15,6 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for the block building game
 
-BROKEN=		unfetchable
-
 RUN_DEPENDS=	${JAVALIBDIR}/lwjgl/lwjgl.jar:games/lwjgl \
 		xrandr:x11/xrandr
 
