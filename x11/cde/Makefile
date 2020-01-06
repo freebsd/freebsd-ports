@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cde
-DISTVERSION=	2.3.0
-PORTREVISION=	3
+DISTVERSION=	2.3.1
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 
@@ -11,9 +10,6 @@ COMMENT=	Common Desktop Environment
 
 LICENSE=	LGPL21
 
-.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
-BROKEN=		Fails to build: ld: error: ../../../exports/lib/libDtHelp.so: undefined reference to jpeg_CreateDecompress
-.endif
 BROKEN_mips64=		fails to build: ./config/imake/imake: No such file or directory
 BROKEN_powerpc64=	fails to build: ./config/imake/imake: No such file or directory
 
@@ -28,10 +24,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig \
 		xrdb:x11/xrdb \
 		xset:x11/xset
 
-USES=		iconv:wchar_t motif perl5 shebangfix tcl:85 xorg
+USES=		iconv:wchar_t jpeg motif perl5 shebangfix tcl:86 xorg
 SHEBANG_LANG=	pl ksh tcl
-SHEBANG_FILES=	programs/dtdocbook/sgmls/sgmls.pl \
-		programs/dtinfo/tools/bin/ccdate \
+SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate \
 		programs/dtdocbook/doc2sdl/docbook.tcl \
 		programs/dtdocbook/doc2sdl/dtdocbook
 USE_LDCONFIG=	${PREFIX}/dt/lib
@@ -73,8 +68,9 @@ post-patch:
 # Fix all hardcoded path
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|g' \
 		${WRKSRC}/config/cf/Imake.tmpl \
-		${WRKSRC}/programs/dtdocbook/sgmls/sgmls.pl \
 		${WRKSRC}/programs/dtinfo/tools/bin/ccdate
+	@${REINPLACE_CMD} -e 's|/bin/ksh|${LOCALBASE}/bin/ksh93|g' \
+		${WRKSRC}/programs/dtopen/dtopen.src
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/dt|${LOCALBASE}/dt|g ; \
 		s|/etc/dt|${LOCALBASE}/etc/dt|g'

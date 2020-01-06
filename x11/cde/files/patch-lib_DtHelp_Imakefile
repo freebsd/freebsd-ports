@@ -1,0 +1,11 @@
+--- lib/DtHelp/Imakefile.orig	2019-12-15 16:29:42.835693000 +0100
++++ lib/DtHelp/Imakefile	2019-12-15 16:29:57.238969000 +0100
+@@ -42,6 +42,8 @@ DEFINES = -DDTLIB $(LOCAL_DEFINES) \
+ REQUIREDLIBS = SharedDtHelpReqs
+ #endif
+ 
++REQUIREDLIBS += -ljpeg
++
+ HEADERS = \
+         CanvasP.h       CanvasSegP.h    Help.h \
+         HelpDialog.h    HelpDialogP.h   HelpP.h \
