@@ -10,8 +10,8 @@ include/vpx/vpx_frame_buffer.h
 include/vpx/vpx_image.h
 include/vpx/vpx_integer.h
 lib/libvpx.a
-%%SHARED%%lib/libvpx.so
-%%SHARED%%lib/libvpx.so.6
-%%SHARED%%lib/libvpx.so.6.2
-%%SHARED%%lib/libvpx.so.6.2.0
+lib/libvpx.so
+lib/libvpx.so.6
+lib/libvpx.so.6.2
+lib/libvpx.so.6.2.0
 libdata/pkgconfig/vpx.pc
