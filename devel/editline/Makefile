@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	editline
-PORTVERSION=	1.16.1
+PORTVERSION=	1.17.0
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,9 +21,11 @@ USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-# Rename to libeditline.3 to avoid conflict with libedit
 post-patch:
-	@${REINPLACE_CMD} 's|editline.3|lib&|' ${WRKSRC}/man/Makefile.am
+# Do not install LICENSE to DOCSDIR
+	@${REINPLACE_CMD} -e '/doc_DATA/ s| LICENSE||' ${WRKSRC}/Makefile.am
+# Rename editline.3 to libeditline.3 to avoid conflict with libedit
+	@${REINPLACE_CMD} -e 's|editline.3|lib&|' ${WRKSRC}/man/Makefile.am
 	@${MV} ${WRKSRC}/man/editline.3 ${WRKSRC}/man/libeditline.3
 
 .include <bsd.port.mk>

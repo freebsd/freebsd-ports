@@ -2,8 +2,7 @@ include/editline.h
 lib/libeditline.a
 lib/libeditline.so
 lib/libeditline.so.1
-lib/libeditline.so.1.0.1
+lib/libeditline.so.1.0.2
 libdata/pkgconfig/libeditline.pc
 man/man3/libeditline.3.gz
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.md
