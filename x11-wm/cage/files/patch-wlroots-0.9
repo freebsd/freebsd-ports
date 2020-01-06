@@ -1,4 +1,5 @@
 https://github.com/Hjdskes/cage/commit/33bb3c818c59
+https://github.com/Hjdskes/cage/commit/51e6c760da51
 
 --- cage.c.orig	2019-06-03 17:55:52 UTC
 +++ cage.c
@@ -18,3 +19,15 @@ https://github.com/Hjdskes/cage/commit/33bb3c818c59
  	wlr_output_layout_destroy(server.output_layout);
  	/* This function is not null-safe, but we only ever get here
  	   with a proper wl_display. */
+--- output.c.orig	2019-06-03 17:55:52 UTC
++++ output.c
+@@ -386,6 +386,9 @@ handle_new_output(struct wl_listener *listener, void *
+ 	/* Place the cursor in the center of the screen. */
+ 	wlr_cursor_warp(server->seat->cursor, NULL, wlr_output->width / 2, wlr_output->height / 2);
+ 	wlr_output_damage_add_whole(server->output->damage);
++
++	wlr_output_enable(wlr_output, true);
++	wlr_output_commit(wlr_output);
+ }
+ 
+ void
