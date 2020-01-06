@@ -26,9 +26,7 @@ SHEBANG_FILES=	build/make/ads2gas.pl
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-install-docs \
 		--disable-install-srcs \
-		--enable-pic \
-		--enable-vp8 \
-		--enable-vp9
+		--enable-pic
 MAKE_ARGS+=	verbose=yes
 ALL_TARGET=	# empty
 
