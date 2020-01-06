@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cacti
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/ \
 		ftp://ftpmirror.uk/freebsd-ports/cacti/
@@ -55,12 +55,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}/var/log/cacti
 	${MKDIR} ${STAGEDIR}/var/db/cacti/rra
 	${MKDIR} ${STAGEDIR}/var/db/cacti/scripts
-	${CP} -R ${WRKSRC}/* ${STAGEDIR}/${PREFIX}/${CACTIDIR}
-	if [ -f ${PREFIX}/${CACTIDIR}/include/db-settings.php ]; then \
-		${ECHO_CMD} "======================================================================="; \
-		${ECHO_CMD} "WARNING! You have to move DB settings from"; \
-		${ECHO_CMD} "${PREFIX}/${CACTIDIR}/include/db-settings.php file to"; \
-		${ECHO_CMD} "${PREFIX}/${CACTIDIR}/include/config.php and remove db-settings.php"; \
-	fi
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${CACTIDIR} "! -name '.git\*'"
 
 .include <bsd.port.mk>
