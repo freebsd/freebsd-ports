@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Future/Exception.pm
 %%SITE_PERL%%/Future/Mutex.pm
 %%SITE_PERL%%/Future/Phrasebook.pod
+%%SITE_PERL%%/Future/Queue.pm
 %%SITE_PERL%%/Future/Utils.pm
 %%SITE_PERL%%/Test/Future.pm
 %%SITE_PERL%%/Test/Future/Deferred.pm
@@ -9,6 +10,7 @@
 %%PERL5_MAN3%%/Future::Exception.3.gz
 %%PERL5_MAN3%%/Future::Mutex.3.gz
 %%PERL5_MAN3%%/Future::Phrasebook.3.gz
+%%PERL5_MAN3%%/Future::Queue.3.gz
 %%PERL5_MAN3%%/Future::Utils.3.gz
 %%PERL5_MAN3%%/Test::Future.3.gz
 %%PERL5_MAN3%%/Test::Future::Deferred.3.gz
