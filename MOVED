@@ -13724,3 +13724,4 @@ security/openssl111|security/openssl|2020-01-01|Upgrade security/openssl to 1.1.
 devel/gperf31|devel/gperf|2020-01-04|No longer needed as devel/gperf has been updated to 3.1
 devel/yosys|cad/yosys|2020-01-04|Move to a proper category
 cad/ujprog|comms/ujprog|2020-01-05|Move to a proper category
+net/gnatsd|net/nats-server|2020-01-06|Renamed upstream
