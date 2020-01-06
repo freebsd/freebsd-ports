@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	11.50
+PORTVERSION=	11.70
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://sno.phy.queensu.ca/~phil/exiftool/ \
 		CPAN
@@ -15,10 +15,11 @@ COMMENT=	Perl module for getting EXIF data from image files
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-CONFLICTS_INSTALL=	p5-Image-ExifTool-devel
-
 USES=		perl5
 USE_PERL5=	configure
+
+CONFLICTS_INSTALL=	p5-Image-ExifTool-devel
+
 NO_ARCH=	yes
 
 PORTDOCS=	*
