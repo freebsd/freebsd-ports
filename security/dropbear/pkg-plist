@@ -1,4 +1,5 @@
 bin/dbclient
+bin/dbscp
 bin/dropbearconvert
 bin/dropbearkey
 man/man1/dbclient.1.gz
