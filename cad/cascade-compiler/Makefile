@@ -19,7 +19,7 @@ RUN_DEPENDS=	verilator:cad/verilator
 TEST_DEPENDS=	benchmark>0:devel/benchmark \
 		googletest>0:devel/googletest
 
-USES=		bison cmake localbase:ldflags ncurses perl5
+USES=		bison cmake compiler:c++17-lang localbase:ldflags ncurses perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	vmware
 GH_TAGNAME=	09fb6020329fc1d6d49b32ce3bbef241c52059f9
