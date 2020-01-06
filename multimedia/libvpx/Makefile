@@ -54,7 +54,7 @@ SHARED_CONFIGURE_ON=	--enable-shared
 
 SIZE_LIMIT_DESC=	Maximum size allowed by decoder: ${SIZE_LIMIT}
 SIZE_LIMIT_CONFIGURE_ON=--size-limit=${SIZE_LIMIT}
-SIZE_LIMIT?=		16384x16384 # Chromium; Firefox has 4000x3000
+SIZE_LIMIT?=		16384x16384 # Chromium; Firefox has 8192x4608
 
 TEST_CONFIGURE_OFF=	--disable-unit-tests
 
