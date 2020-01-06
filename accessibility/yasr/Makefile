@@ -30,9 +30,6 @@ PLIST_FILES=	bin/yasr \
 		%%NLS%%share/locale/es/LC_MESSAGES/yasr.mo \
 		%%NLS%%share/locale/fr/LC_MESSAGES/yasr.mo
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/csh|' ${WRKSRC}/yasr.conf
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
