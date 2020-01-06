@@ -1,0 +1,11 @@
+--- Cargo.toml.orig	2020-01-06 02:35:12 UTC
++++ Cargo.toml
+@@ -30,7 +30,7 @@ log = "0.4.1"
+ log-panics = { version = "2.0", features = ["with-backtrace"], optional = true }
+ num-rational = { version = "0.2.1", default-features = false, features = ["serde"] }
+ oorandom = { version = "11.0.1" }
+-sdl2 = { version = "0.32.2", features = ["bundled"], optional = true }
++sdl2 = { version = "0.32.2", features = [], optional = true }
+ serde = { version = "1.0", features = ["derive"] }
+ serde_json = "1.0"
+ simplelog = { version = "0.5.2", default-features = false, features = [], optional = true }
