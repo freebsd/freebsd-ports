@@ -43,11 +43,12 @@ MULTIRES_DESC=		Enable multi-resolution encoding
 MULTIRES_CONFIGURE_ON=	--enable-multi-res-encoding
 
 POSTPROC_DESC=		Enable postprocessing
-POSTPROC_CONFIGURE_ON=	--enable-postproc --enable-vp9-postproc	\
+POSTPROC_CONFIGURE_ON=	--enable-vp9-postproc \
 			--enable-vp9-temporal-denoising
+POSTPROC_CONFIGURE_OFF=	--disable-postproc
 
 RTCPU_DESC=		Detect CPU capabilities at runtime
-RTCPU_CONFIGURE_ON=	--enable-runtime-cpu-detect
+RTCPU_CONFIGURE_OFF=	--disable-runtime-cpu-detect
 
 SHARED_DESC=		Enable shared-library support
 SHARED_CONFIGURE_ON=	--enable-shared
