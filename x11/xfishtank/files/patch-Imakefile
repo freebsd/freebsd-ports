@@ -1,5 +1,5 @@
---- Imakefile.orig	Wed Dec 16 09:04:35 1992
-+++ Imakefile	Wed Nov  1 09:40:40 2000
+--- Imakefile.orig	1992-12-16 00:04:35 UTC
++++ Imakefile
 @@ -2,12 +2,12 @@
  LOCAL_LIBRARIES = $(XLIB)
          DEPLIBS = $(DEPXLIB)
