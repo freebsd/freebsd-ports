@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://maniacsvault.net/ecwolf/files/ecwolf/1.x/
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Source port for Wolfenstein 3D, Spear of Destiny
 
 LICENSE=	GPLv2

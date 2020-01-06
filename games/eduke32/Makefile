@@ -10,11 +10,11 @@ MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNR
 		http://burnbit.com/download/447717/:hrp \
 		http://www.duke4.org/files/nightfright/related/:related \
 		ftp://ftp.3drealms.com/share/:shareware \
-		https://anongoth.pl/:voxel
+		https://FreeBSD.org/:voxel
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}:eduke32
 EXTRACT_ONLY=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
 
 LICENSE=	GPLv2 BUILDLIC

@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://git.suckless.org/sbase/snapshot/
 DISTNAME=	${PORTNAME}-4b9c664
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Collection of UNIX tools that are portable across UNIX-like systems
 
 BROKEN=		unfetchable
