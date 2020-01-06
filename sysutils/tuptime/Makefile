@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tuptime
-DISTVERSION=	4.0.0
+DISTVERSION=	4.1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jeremy@smart-serv.net
