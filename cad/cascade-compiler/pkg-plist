@@ -60,8 +60,10 @@ include/cascade/target/core/avmm/de10/de10_gpio.h
 include/cascade/target/core/avmm/de10/de10_led.h
 include/cascade/target/core/avmm/de10/de10_logic.h
 include/cascade/target/core/avmm/de10/de10_pad.h
+include/cascade/target/core/avmm/de10/hps.h
 include/cascade/target/core/avmm/de10/io.h
 include/cascade/target/core/avmm/de10/quartus_server.h
+include/cascade/target/core/avmm/de10/socal.h
 include/cascade/target/core/avmm/machinify.h
 include/cascade/target/core/avmm/rewrite.h
 include/cascade/target/core/avmm/text_mangle.h
@@ -209,8 +211,6 @@ lib/libcascade.a
 %%DATADIR%%/de10/generate_hps_qsys_header.sh
 %%DATADIR%%/de10/hps_common_board_info.xml
 %%DATADIR%%/de10/hps_sdram_p0_summary.csv
-%%DATADIR%%/de10/include/hps.h
-%%DATADIR%%/de10/include/socal.h
 %%DATADIR%%/de10/ip/altsource_probe/hps_reset.qip
 %%DATADIR%%/de10/ip/altsource_probe/hps_reset.v
 %%DATADIR%%/de10/ip/altsource_probe/hps_reset_bb.v
