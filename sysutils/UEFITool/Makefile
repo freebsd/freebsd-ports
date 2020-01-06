@@ -1,4 +1,4 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
+# Created by: Piotr Kubaj <pkubaj@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	UEFITool
@@ -7,7 +7,7 @@ DISTVERSION=	55
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	UEFI images parser
 
 LICENSE=	MIT

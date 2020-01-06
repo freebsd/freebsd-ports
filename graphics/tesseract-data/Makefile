@@ -5,7 +5,7 @@ PORTNAME=	tesseract-data
 PORTVERSION=	4.0.0
 CATEGORIES=	graphics
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Trained language data for the Tesseract OCR engine
 
 LICENSE=	APACHE20

@@ -9,7 +9,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.jikos.cz/~mikulas/links/download/
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Lynx-like text WWW browser
 
 LICENSE=	GPLv2+

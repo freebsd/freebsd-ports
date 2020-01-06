@@ -1,11 +1,11 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
+# Created by: Piotr Kubaj <pkubaj@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	rawgl
 PORTVERSION=	g20180321
 CATEGORIES=	games
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Another World engine reimplementation
 
 LICENSE=	NONE
