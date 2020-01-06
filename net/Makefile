@@ -188,7 +188,6 @@
     SUBDIR += glflow
     SUBDIR += glib-networking
     SUBDIR += glusterfs
-    SUBDIR += gnatsd
     SUBDIR += gnet2
     SUBDIR += gnetcat
     SUBDIR += gnome-nettool
