@@ -372,6 +372,7 @@
     SUBDIR += libamrnb
     SUBDIR += libamrwb
     SUBDIR += libao
+    SUBDIR += libaudec
     SUBDIR += libaudiofile
     SUBDIR += libbpm
     SUBDIR += libbs2b
