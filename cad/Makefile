@@ -106,7 +106,6 @@
     SUBDIR += tkgate
     SUBDIR += tochnog
     SUBDIR += transcalc
-    SUBDIR += ujprog
     SUBDIR += varkon
     SUBDIR += verilator
     SUBDIR += verilog-mode.el
