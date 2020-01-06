@@ -206,6 +206,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Pkg/SunOS/OpenCSW.pm
 %%SITE_PERL%%/Rex/Pkg/SunOS/pkg.pm
 %%SITE_PERL%%/Rex/Pkg/Ubuntu.pm
+%%SITE_PERL%%/Rex/Pkg/VoidLinux.pm
 %%SITE_PERL%%/Rex/PkgConf.pm
 %%SITE_PERL%%/Rex/PkgConf/Base.pm
 %%SITE_PERL%%/Rex/PkgConf/Debian.pm
@@ -245,6 +246,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Service/SunOS.pm
 %%SITE_PERL%%/Rex/Service/SunOS/svcadm.pm
 %%SITE_PERL%%/Rex/Service/Ubuntu.pm
+%%SITE_PERL%%/Rex/Service/VoidLinux.pm
 %%SITE_PERL%%/Rex/Shared/Var.pm
 %%SITE_PERL%%/Rex/Shared/Var/Array.pm
 %%SITE_PERL%%/Rex/Shared/Var/Common.pm
