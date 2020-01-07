@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2019-11-04 12:14:04 UTC
+--- src/CMakeLists.txt.orig	2019-12-19 13:04:31 UTC
 +++ src/CMakeLists.txt
-@@ -340,6 +340,11 @@ if (TARGET cppzmq)
+@@ -358,6 +358,11 @@ if (TARGET cppzmq)
  endif()
  
  
@@ -10,9 +10,9 @@
 +endif(NOT EXECINFO_LIBRARY)
 +
  ###############  LINK LIBRARY  #################
- SET ( REQUIRED_LIBRARIES
- 		${LIBOPENSHOT_AUDIO_LIBRARIES}
-@@ -386,9 +391,11 @@ target_compile_definitions(openshot-example PRIVATE
+ # Link remaining dependency libraries
+ target_link_libraries(openshot PUBLIC
+@@ -396,9 +401,11 @@ target_compile_definitions(openshot-example PRIVATE
  
  # Link test executable to the new library
  target_link_libraries(openshot-example openshot)
@@ -24,7 +24,7 @@
  
  ############### PLAYER EXECUTABLE ################
  # Create test executable
-@@ -396,6 +403,7 @@ add_executable(openshot-player Qt/demo/main.cpp)
+@@ -406,6 +413,7 @@ add_executable(openshot-player Qt/demo/main.cpp)
  
  # Link test executable to the new library
  target_link_libraries(openshot-player openshot)

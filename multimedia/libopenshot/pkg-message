@@ -1,0 +1,12 @@
+[
+{
+  type: install
+  message: <<EOM
+If OpenMP causes a problem, define the environment variable OMP_THREAD_LIMIT, set it to 1, and then run the program.
+It loses performance, but increases stability.
+
+An example
+env OMP_THREAD_LIMIT=1 openshot-qt
+EOM
+}
+]
