@@ -12,6 +12,8 @@ COMMENT=	Go vendor tool that works with the standard vendor file
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_aarch64=	fails to compile, needs vendor/golang.org/x/sys 33540a1f6037 or later
+
 USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	kardianos
