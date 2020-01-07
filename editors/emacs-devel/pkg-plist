@@ -46,6 +46,7 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.24
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.25
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.26
+%%DATADIR%%/%%EMACS_VER%%/etc/NEWS.27
 %%DATADIR%%/%%EMACS_VER%%/etc/NEXTSTEP
 %%DATADIR%%/%%EMACS_VER%%/etc/NXML-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/ORG-NEWS
@@ -4043,6 +4044,7 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-25.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-26.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-27.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-28.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/msdos.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/msdos.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/nsgui.h

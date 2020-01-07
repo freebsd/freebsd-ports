@@ -2,7 +2,7 @@
 
 PORTNAME=	markdown-mode.el
 PORTVERSION=	2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	http://jblevins.org/projects/markdown-mode/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
