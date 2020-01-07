@@ -13655,7 +13655,6 @@ devel/linux-c6-sdl12|devel/linux-c7-sdl12|2019-12-31|Has expired: Superseded by 
 dns/linux-c6-libasyncns|dns/linux-c7-libasyncns|2019-12-31|Has expired: Superseded by CentOS 7
 emulators/linux_base-c6|emulators/linux_base-c7|2019-12-31|Has expired: Superseded by CentOS 7
 ftp/linux-c6-curl|ftp/linux-c7-curl|2019-12-31|Has expired: Superseded by CentOS 7
-graphics/cptutils||2019-12-31|Has expired: depends on expired textproc/xml2
 graphics/linux-c6-cairo|graphics/linux-c7-cairo|2019-12-31|Has expired: Superseded by CentOS 7
 graphics/linux-c6-dri|graphics/linux-c7-dri|2019-12-31|Has expired: Superseded by CentOS 7
 graphics/linux-c6-gdk-pixbuf2|graphics/linux-c7-gdk-pixbuf2|2019-12-31|Has expired: Superseded by CentOS 7
