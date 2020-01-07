@@ -1,4 +1,4 @@
---- src/FFmpegReader.cpp.orig	2019-11-04 12:14:04 UTC
+--- src/FFmpegReader.cpp.orig	2019-12-19 13:04:31 UTC
 +++ src/FFmpegReader.cpp
 @@ -162,7 +162,7 @@ static enum AVPixelFormat get_hw_dec_format(AVCodecCon
  
