@@ -82,6 +82,8 @@ CMAKE_ARGS+=	-DLD_RAW_FLAGS:STRING=-m${LD_EMULATION}
 # keep in sync with all platforms where libunwind is available
 .if (${ARCH} == amd64 || ${ARCH} == i386)
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
+.else
+CMAKE_ARGS+=	-DSTACK_TRACE:BOOL=OFF
 .endif
 
 CMAKE_ARGS+=	-DMANUAL_SUBMODULES:BOOL=ON
