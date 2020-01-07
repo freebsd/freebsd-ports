@@ -10,6 +10,8 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Binary file explorer
 
 BROKEN=		unfetchable
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-08
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:devel/hachoir-parser \
 		${PYTHON_SITELIBDIR}/urwid/__init__.py:devel/py-urwid@${PY_FLAVOR}
