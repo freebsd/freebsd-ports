@@ -1,6 +1,18 @@
 [
 {
   message: <<EOF
+The `prometheus_sd_kubernetes_cache_*` metrics were removed.
+The `prometheus_sd_kubernetes_workqueue_latency_seconds` and
+`prometheus_sd_kubernetes_workqueue_work_duration_seconds` now show correct
+values in seconds.
+The `query` label on `prometheus_remote_storage_*` metrics has been changed to
+`remote_name` and `url`.
+EOF
+  maximum_version: "2.15"
+  type: upgrade
+}
+{
+  message: <<EOF
 The `prometheus_tsdb_wal_reader_corruption_errors` metric was renamed to
 `prometheus_tsdb_wal_reader_corruption_errors_total`.
 EOF
