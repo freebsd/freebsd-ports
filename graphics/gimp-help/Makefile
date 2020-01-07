@@ -12,6 +12,9 @@ COMMENT=	Meta port for the GIMP User Manual
 
 LICENSE=	GFDL
 
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-08
+
 USES=		metaport
 
 LANG_ALL_HTML=	ca da de el en en_GB es fr it ja ko nl nn \
