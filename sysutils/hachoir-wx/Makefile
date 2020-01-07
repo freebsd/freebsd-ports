@@ -11,6 +11,8 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Hachoir GUI
 
 BROKEN=		unfetchable
+DEPRECATED=	Outdated, uses EOLed python27
+EXPIRATION_DATE=	2020-02-08
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:devel/hachoir-parser
 
