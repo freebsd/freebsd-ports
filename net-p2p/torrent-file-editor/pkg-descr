@@ -1,10 +1,13 @@
-This is a Qt-based GUI tool designed to create and edit .torrent files.
-Some of its features:
+Cross-platform Qt-based GUI program intended to create and edit .torrent
+and uTorrent .dat files; replacement for BEncode Editor which has modern
+design and extra features:
 
-  - Create .torrent file from scratch
-  - Edit .torrent file in user-friendly way
-  - Edit .torrent file in JSON format
-  - Add, remove, and interchange files in .torrent file
+  - Create .torrent file from scratch; add, remove, change file
+    order in the existing .torrent file
+  - Change main .torrent file information: name, comment, publisher,
+    URL, creation date, tracker list, and author
+  - Edit .torrent file in JSON format or as a binary tree
   - Support for different encodings
+  - Translated to many languages; has command line mode
 
 WWW: https://torrent-file-editor.github.io/
