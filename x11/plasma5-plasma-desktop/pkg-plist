@@ -2595,6 +2595,8 @@ share/locale/hu/LC_MESSAGES/kcm_desktoptheme.mo
 share/locale/hu/LC_MESSAGES/kcm_fonts.mo
 share/locale/hu/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/hu/LC_MESSAGES/kcm_lookandfeel.mo
+share/locale/hu/LC_MESSAGES/kcm_nightcolor.mo
+share/locale/hu/LC_MESSAGES/kcm_notifications.mo
 share/locale/hu/LC_MESSAGES/kcm_search.mo
 share/locale/hu/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/hu/LC_MESSAGES/kcm_splashscreen.mo
@@ -2607,6 +2609,7 @@ share/locale/hu/LC_MESSAGES/kcmkclock.mo
 share/locale/hu/LC_MESSAGES/kcmkeyboard.mo
 share/locale/hu/LC_MESSAGES/kcmkeys.mo
 share/locale/hu/LC_MESSAGES/kcmmouse.mo
+share/locale/hu/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/hu/LC_MESSAGES/kcmsmserver.mo
 share/locale/hu/LC_MESSAGES/kcmstyle.mo
 share/locale/hu/LC_MESSAGES/kfontinst.mo
@@ -2648,6 +2651,8 @@ share/locale/ia/LC_MESSAGES/kcm_desktoptheme.mo
 share/locale/ia/LC_MESSAGES/kcm_fonts.mo
 share/locale/ia/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/ia/LC_MESSAGES/kcm_lookandfeel.mo
+share/locale/ia/LC_MESSAGES/kcm_nightcolor.mo
+share/locale/ia/LC_MESSAGES/kcm_notifications.mo
 share/locale/ia/LC_MESSAGES/kcm_search.mo
 share/locale/ia/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ia/LC_MESSAGES/kcm_splashscreen.mo
