@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	noise-repellent
-DISTVERSION=	0.1.4
+DISTVERSION=	0.1.5-3
+DISTVERSIONSUFFIX=	-g7f5a8fb
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
-USES=		gmake pkgconfig
+USES=		meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	lucianodato
 
