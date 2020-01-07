@@ -3,6 +3,7 @@
 
 PORTNAME=	go
 PORTVERSION=	g20191217
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
 		LOCAL/dmgk:bootstrap
@@ -50,7 +51,7 @@ GO387_DESC=	Do not generate code with SSE2 (for old x86 CPU)
 GO387_VARS=	GO386=387
 
 BINARIES=	go gofmt
-BOOTSTRAP_TAG=	go1.13beta1-1224-g45b4ed7577
+BOOTSTRAP_TAG=	go1.14beta1
 
 GOARCH_aarch64=	arm64
 GOARCH_amd64=	amd64
