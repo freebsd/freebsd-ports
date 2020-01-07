@@ -115,7 +115,6 @@ share/doc/HTML/ca/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/ca/kcontrol/kwindecoration/index.docbook
 share/doc/HTML/ca/kcontrol/kwindecoration/main.png
 share/doc/HTML/ca/kcontrol/kwineffects/configure-effects.png
-share/doc/HTML/ca/kcontrol/kwineffects/configure-filter.png
 share/doc/HTML/ca/kcontrol/kwineffects/dialog-information.png
 share/doc/HTML/ca/kcontrol/kwineffects/index.cache.bz2
 share/doc/HTML/ca/kcontrol/kwineffects/index.docbook
@@ -841,12 +840,16 @@ share/locale/hu/LC_MESSAGES/kcmkwm.mo
 share/locale/hu/LC_MESSAGES/kwin.mo
 share/locale/hu/LC_MESSAGES/kwin_clients.mo
 share/locale/hu/LC_MESSAGES/kwin_effects.mo
+share/locale/hu/LC_MESSAGES/kcm_kwin_effects.mo
+share/locale/hu/LC_MESSAGES/kcmkwincommon.mo
 share/locale/hu/LC_MESSAGES/kwin_scripting.mo
 share/locale/hu/LC_MESSAGES/kwin_scripts.mo
+share/locale/ia/LC_MESSAGES/kcm_kwin_effects.mo
 share/locale/ia/LC_MESSAGES/kcm-kwin-scripts.mo
 share/locale/ia/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/ia/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/ia/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/ia/LC_MESSAGES/kcmkwincommon.mo
 share/locale/ia/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/ia/LC_MESSAGES/kcmkwinrules.mo
 share/locale/ia/LC_MESSAGES/kcmkwinscreenedges.mo
