@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.2<2.3:www/py-django22@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}dj22-django-prometheus>=1.0.15:www/py-dj22-django-prometheus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj22-django-rq>=2.1.0:devel/py-dj22-django-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj22-django-tables2>=2.0.6:www/py-dj22-django-tables2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-django-taggit>=1.1.0:www/py-dj22-django-taggit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj22-django-taggit>=0:www/py-dj22-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj22-django-taggit-serializer>=0.1.7:www/py-dj22-django-taggit-serializer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj22-django-timezone-field>=3.0:www/py-dj22-django-timezone-field@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj22-djangorestframework>=3.9.4:www/py-dj22-djangorestframework@${PY_FLAVOR} \
