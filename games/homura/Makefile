@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	homura
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	games
 
 MAINTAINER=	Alexander88207@protonmail.com
