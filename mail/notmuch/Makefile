@@ -3,7 +3,7 @@
 
 PORTNAME=	notmuch
 PORTVERSION=	0.29.1
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
 

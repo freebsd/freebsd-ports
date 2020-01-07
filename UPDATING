@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200107:
+  AFFECTS: Users of *-emacs27-* packages
+  AUTHOR: ashish@FreeBSD.org
+
+  There is a major version bump in 28.0.50, therefore to upgrade all the
+  packages dependent on editors/emacs-devel, please use the following commands:
+
+    # sh
+    # for i in $(pkg query -g %n '*-emacs27*'); do \
+        nn=$(echo "$i" | sed -e 's/emacs27/emacs28/'); \
+        pkg set -yn "$i":"$nn"; done;
+    # pkg upgrade
+
 20200106:
   AFFECTS: users of net/gnatsd
   AUTHOR: olgeni@FreeBSD.org
