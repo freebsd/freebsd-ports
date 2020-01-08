@@ -1,5 +1,5 @@
-Client for the OpenStack Neutron API. There's a Python API (the neutronclient
-module), and a command-line script (neutron). Each implements 100% of the
-OpenStack Neutron API.
+This is a client library for Neutron built on the Neutron API. It provides a
+Python API (the neutronclient module) and a command-line tool (neutron).
 
-WWW: https://docs.openstack.org/python-neutronclient/
+WWW: https://docs.openstack.org/python-neutronclient/latest/
+WWW: https://github.com/openstack/python-neutronclient
