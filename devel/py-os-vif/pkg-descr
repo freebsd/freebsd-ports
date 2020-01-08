@@ -1,3 +1,13 @@
-A library for plugging and unplugging virtual interfaces in OpenStack.
+os-vif is a library for plugging and unplugging virtual interfaces (VIFs) in
+OpenStack. It provides:
+- Versioned objects that represent various types of virtual interfaces and their
+  components
+-  Base VIF plugin class that supplies a plug() and unplug() interface
+-  Plugins for two networking backends - Open vSwitch and Linux Bridge
 
-WWW: https://pypi.org/project/os-vif/
+os-vif is intended to define a common model for representing VIF types in
+OpenStack. With the exception of the two included plugins, all plugins for other
+networking backends are maintained in separate code repositories.
+
+WWW: https://docs.openstack.org/os-vif/latest/
+WWW: https://github.com/openstack/os-vif
