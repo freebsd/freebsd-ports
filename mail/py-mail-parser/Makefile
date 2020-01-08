@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mail-parser
-PORTVERSION=	3.9.3
-PORTREVISION=	1
+PORTVERSION=	3.10.0
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +21,8 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|==.*||' ${WRKSRC}/requirements.txt ${WRKSRC}/mail_parser.egg-info/requires.txt
 
 .include <bsd.port.mk>
