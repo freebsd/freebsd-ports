@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: xdm
+# REQUIRE: LOGIN moused
+# KEYWORD: nojail shutdown
+#
+# Add the following line to /etc/rc.conf to enable xdm:
+# xdm_enable="YES"
+#
+# Alternatively, edit /etc/ttys and change the line below
+#   ttyv8   "/usr/X11R6/bin/xdm -nodaemon"  xterm   off secure
+# to this:
+#   ttyv8   "/usr/X11R6/bin/xdm -nodaemon"  xterm   on secure
+
+. /etc/rc.subr
+
+name="xdm"
+rcvar=xdm_enable
+desc="X.org X display manager"
+
+load_rc_config $name
+
+: ${xdm_enable:=NO}
+
+command=%%PREFIX%%/bin/$name
+pidfile=/var/run/$name.pid
+
+run_rc_command $1
