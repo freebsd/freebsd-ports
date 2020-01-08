@@ -1,5 +1,5 @@
 cliff is a framework for building command line programs. It uses setuptools
-entry points to provide subcommands, output formatters, and other
-extensions.
+entry points to provide subcommands, output formatters, and other extensions.
 
-WWW: https://docs.openstack.org/cliff/
+WWW: https://docs.openstack.org/cliff/latest/
+WWW: https://github.com/openstack/cliff
