@@ -1,4 +1,4 @@
---- cmake/os/FreeBSD.cmake.orig	2019-06-25 10:23:30 UTC
+--- cmake/os/FreeBSD.cmake.orig	2019-09-20 08:30:51 UTC
 +++ cmake/os/FreeBSD.cmake
 @@ -45,8 +45,20 @@ IF(NOT FORCE_UNSUPPORTED_COMPILER)
        MESSAGE(FATAL_ERROR
@@ -22,4 +22,4 @@
 +    ENDIF()
    ENDIF()
  ENDIF()
-
+ 

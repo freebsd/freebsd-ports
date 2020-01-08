@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=		mysql
-PORTVERSION=		8.0.17
-PORTREVISION?=		2
+PORTVERSION=		8.0.18
+PORTREVISION?=		0
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
 PKGNAMESUFFIX?=		80-server
@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
 SLAVEDIRS=	databases/mysql80-client
 USES=		bison:build cmake:noninja compiler:c++14-lang cpe \
-		libedit localbase perl5 pkgconfig shebangfix ssl
+		libedit localbase ncurses perl5 pkgconfig shebangfix ssl
 
 USE_PERL5=	run
 
@@ -26,10 +26,11 @@ MY_DBDIR=	/var/db/mysql
 MY_SECDIR=	/var/db/mysql_secure
 MY_TMPDIR=	/var/db/mysql_tmpdir
 
-LIB_DEPENDS+=	libevent.so:devel/libevent \
+LIB_DEPENDS+=	libcurl.so:ftp/curl \
+		libevent.so:devel/libevent \
 		libicutu.so:devel/icu \
 		liblz4.so:archivers/liblz4 \
-		libre2.so:devel/re2 \
+		libzstd.so:archivers/zstd \
 		libprotobuf.so:devel/protobuf \
 		libunwind.so:devel/libunwind
 
@@ -51,7 +52,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_MYSQLDATADIR="${MY_DBDIR}" \
 		-DINSTALL_MYSQLKEYRINGDIR="etc/mysql/keyring" \
 		-DINSTALL_MYSQLSHAREDIR="share/mysql" \
-		-DINSTALL_MYSQLTESTDIR="share/mysql/tests" \
+		-DINSTALL_MYSQLTESTDIR="" \
 		-DINSTALL_PLUGINDIR="lib/mysql/plugin" \
 		-DINSTALL_SBINDIR="libexec" \
 		-DINSTALL_SCRIPTDIR="bin" \
@@ -65,11 +66,13 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_LIBEVENT=system \
 		-DWITH_LZ4=system \
 		-DWITH_ICU=system \
-		-DWITH_RE2=system \
+		-DWITH_CURL=system \
+		-DWITH_ZLIB=system \
+		-DWITH_ZSTD=system \
 		-DWITH_PROTOBUF=system \
+		-DWITH_SSL=${OPENSSLBASE} \
 		-DBUILD_BUNDLED_ZLIB=0 \
 		-DBUILD_BUNDLED_LZ4=0 \
-		-DINSTALL_MYSQLTESTDIR=0
 
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
@@ -105,14 +108,14 @@ GROUPS=		mysql
 
 USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 
-MMAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1 \
-		mysql.server.1 mysql_convert_table_format.1 mysql_fix_extensions.1 \
-		mysql_install_db.1 mysql_plugin.1 mysql_secure_installation.1 mysql_setpermission.1 \
-		mysql_tzinfo_to_sql.1 mysql_upgrade.1 mysql_zap.1 mysqlbug.1 \
-		mysqld_multi.1 mysqld_safe.1 mysqldumpslow.1 mysqlhotcopy.1 mysqlman.1 \
-		mysqltest.1 perror.1 replace.1 resolve_stack_dump.1 resolveip.1
+MMAN1=		ibd2sdi.1 innochecksum.1 my_print_defaults.1 myisam_ftdump.1 myisamchk.1 \
+		myisamlog.1 myisampack.1 mysql_secure_installation.1 mysql_ssl_rsa_setup.1 \
+		mysql_tzinfo_to_sql.1 mysql_upgrade.1 mysql.server.1 mysqldumpslow.1 mysqld_multi.1 \
+		mysqld_safe.1 mysqlrouter_passwd.1 mysqlrouter_plugin_info.1 mysqlrouter.1
+MMAN8=		mysqld.8
 
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
+CMAKE_ARGS+=	-DWITHOUT_CLIENTLIBS="ON"
 
 OPTIONS_GROUP=		STORAGE
 OPTIONS_GROUP_STORAGE=	ARCHIVE BLACKHOLE EXAMPLE FEDERATED INNOBASE PARTITION PERFSCHEMA
@@ -156,17 +159,8 @@ SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
-CMAKE_ARGS+=		-DWITH_SSL=system
-.else
-CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
-.endif
-
 post-extract:
 	@${RM} -rv ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
-
-post-patch:
-	@${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
 
 .if !defined(CLIENT_ONLY)
 post-install:

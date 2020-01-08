@@ -1,6 +1,15 @@
---- scripts/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
+--- scripts/CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
 +++ scripts/CMakeLists.txt
-@@ -347,6 +347,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
+@@ -327,7 +327,7 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
+     LIST(REMOVE_DUPLICATES ${target}_LIB_DEPENDS)
+     FOREACH(lib ${${target}_LIB_DEPENDS})
+       # Filter out "general", it is not a library, just CMake hint
+-      IF(NOT lib STREQUAL "general" AND NOT ${var}  MATCHES "-l${lib} ")
++      IF(NOT lib STREQUAL "general" AND NOT ${var}  MATCHES "-l${lib} " AND NOT lib STREQUAL "imported_openssl" AND NOT lib STREQUAL "imported_crypto")
+         IF (lib MATCHES "^\\-l")
+           SET(${var} "${${var}} ${lib} ")
+         ELSEIF (lib MATCHES "^\\-L")
+@@ -337,6 +337,8 @@ MACRO(EXTRACT_LINK_LIBRARIES target var)
            GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
            STRING(REGEX REPLACE "^lib" "" lib "${lib}")
            SET(${var} "${${var}}-l${lib} " )
@@ -9,11 +18,8 @@
          ELSE()
            SET(${var} "${${var}}-l${lib} " )
          ENDIF()
-@@ -430,14 +432,13 @@ ELSE()
-   # On Unix, most of the files end up in the bin directory
-   SET(mysql_config_COMPONENT COMPONENT Development)
+@@ -423,18 +425,23 @@ ELSE()
  
-+
    IF(WITH_SYSTEMD)
      SET(BIN_SCRIPTS
 -      mysql_config
@@ -25,16 +31,29 @@
        mysqldumpslow
        mysqld_multi
        mysqld_safe
-@@ -485,7 +486,7 @@
+       )
+   ENDIF()
+ 
++  IF(NOT WITHOUT_CLIENTLIBS)
++    SET(BIN_SCRIPTS
++      ${BIN_SCRIPTS}
++      mysql_config
++    )
++  ENDIF(NOT WITHOUT_CLIENTLIBS)
++
+   SET(PKGCONFIG_FILE ${LIBMYSQL_OS_OUTPUT_NAME}.pc)
+   STRING(REGEX REPLACE "/mysql$" "" PKGCONFIG_DIR "${INSTALL_LIBDIR}")
+   SET(PKGCONFIG_DIR "${PKGCONFIG_DIR}/pkgconfig")
+@@ -449,7 +456,7 @@ ELSE()
      ${CMAKE_CURRENT_BINARY_DIR}/${PKGCONFIG_FILE}
      ESCAPE_QUOTES @ONLY)
  
 -  IF(INSTALL_PKGCONFIGDIR)
-+  IF(FALSE)
++  IF(INSTALL_PKGCONFIGDIR AND NOT WITHOUT_CLIENTLIBS)
      MESSAGE(STATUS "INSTALL ${PKGCONFIG_FILE} ${INSTALL_PKGCONFIGDIR}")
      INSTALL(FILES
        ${CMAKE_CURRENT_BINARY_DIR}/${PKGCONFIG_FILE}
-@@ -498,7 +499,7 @@
+@@ -462,7 +469,7 @@ ELSE()
    FOREACH(file ${BIN_SCRIPTS})
      IF(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${file}.sh)
        CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${file}.sh
