@@ -26,8 +26,6 @@ RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
 		p5-IPC-Run>=0:devel/p5-IPC-Run \
 		p5-XML-Twig>=0:textproc/p5-XML-Twig
 
-CONFLICTS=	p5-bioperl-run-1.[13579]*
-
 OPTIONS_DEFINE=	DOCS
 
 USES=		perl5 shebangfix
