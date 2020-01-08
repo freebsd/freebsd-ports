@@ -1,3 +1,23 @@
-wsgi_intercept installs a WSGI application in place of a real URI for testing.
+Testing a WSGI application sometimes involves starting a server at a local host
+and port, then pointing your test code to that address. Instead, this library
+lets you intercept calls to any specific host/port combination and redirect them
+into a WSGI application importable by your test program. Thus, you can avoid
+spawning multiple processes or threads to test your Web app.
 
-WWW: https://pypi.org/project/wsgi_intercept/
+wsgi_intercept works with a variety of HTTP clients in Python 2.7, 3.5 and
+beyond, and in pypy.
+- urllib2
+- urllib.request
+- httplib
+- http.client
+- httplib2
+- requests
+- urllib3
+
+wsgi_intercept works by replacing httplib.HTTPConnection with a subclass,
+wsgi_intercept.WSGI_HTTPConnection. This class then redirects specific
+server/port combinations into a WSGI application by emulating a socket. If no
+intercept is registered for the host and port requested, those requests are
+passed on to the standard handler.
+
+WWW: https://github.com/cdent/wsgi-intercept
