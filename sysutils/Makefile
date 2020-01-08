@@ -961,6 +961,7 @@
     SUBDIR += py-borgmatic
     SUBDIR += py-cdmi
     SUBDIR += py-cpuinfo
+    SUBDIR += py-cron-descriptor
     SUBDIR += py-croniter
     SUBDIR += py-crontab
     SUBDIR += py-diffoscope
