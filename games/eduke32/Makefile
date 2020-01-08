@@ -10,7 +10,7 @@ MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNR
 		http://burnbit.com/download/447717/:hrp \
 		http://www.duke4.org/files/nightfright/related/:related \
 		ftp://ftp.3drealms.com/share/:shareware \
-		https://FreeBSD.org/:voxel
+		https://anongoth.pl/:voxel
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}:eduke32
 EXTRACT_ONLY=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}
 
