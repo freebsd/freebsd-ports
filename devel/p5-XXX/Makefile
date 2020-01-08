@@ -1,0 +1,26 @@
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	XXX
+PORTVERSION=	0.33
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:TINITA
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	See Your Data in the Nude
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-YAML>=0:textproc/p5-YAML
+
+USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>
