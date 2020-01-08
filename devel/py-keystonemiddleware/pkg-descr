@@ -1,6 +1,7 @@
-Provides middleware for integrating with the OpenStack Identity API and handling
-authorization enforcement based upon the data within the OpenStack Identity
-tokens. Also included is middleware that provides the ability to create audit
-events based on API requests.
+This package contains middleware modules designed to provide authentication and
+authorization features to web services other than Keystone. The most prominent
+module is keystonemiddleware.auth_token. This package does not expose any CLI or
+Python API features.
 
-WWW: https://docs.openstack.org/keystonemiddleware/
+WWW: https://docs.openstack.org/keystonemiddleware/latest/
+WWW: https://github.com/openstack/keystonemiddleware
