@@ -1,0 +1,18 @@
+Pyroute2 is a pure Python netlink library. It requires only Python stdlib, no
+3rd party libraries. The library was started as an RTNL protocol implementation,
+so the name is pyroute2, but now it supports many netlink protocols. Some
+supported netlink families and protocols:
+- rtnl, network settings --- addresses, routes, traffic controls
+- nfnetlink --- netfilter API: ipset, nftables, ...
+- ipq --- simplest userspace packet filtering, iptables QUEUE target
+- devlink --- manage and monitor devlink-enabled hardware
+- generic --- generic netlink families
+  - nl80211 --- wireless functions API (basic support)
+  - taskstats --- extended process statistics
+  - acpi_events --- ACPI events monitoring
+  - thermal_events --- thermal events monitoring
+  - VFS_DQUOT --- disk quota events monitoring
+
+Starting with 0.5.2 the library supports also PF_ROUTE sockets on BSD systems.
+
+WWW: https://github.com/svinota/pyroute2
