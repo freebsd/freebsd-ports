@@ -1,8 +1,7 @@
-Websockify was formerly named wsproxy and was part of the noVNC project.
+websockify was formerly named wsproxy and was part of the noVNC project.
 
-At the most basic level, websockify just translates WebSockets traffic
-to normal socket traffic. Websockify accepts the WebSockets handshake,
-parses it, and then begins forwarding traffic between the client and
-the target in both directions.
+At the most basic level, websockify just translates WebSockets traffic to normal
+socket traffic. Websockify accepts the WebSockets handshake, parses it, and then
+begins forwarding traffic between the client and the target in both directions.
 
-WWW: https://pypi.org/project/websockify/
+WWW: https://github.com/novnc/websockify
