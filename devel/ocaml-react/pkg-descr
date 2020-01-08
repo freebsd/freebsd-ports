@@ -3,4 +3,4 @@ support to programs with time varying values: applicative events and signals.
 React doesn't define any primitive event or signal, this lets the client
 choose the concrete timeline.
 
-WWW: http://erratique.ch/software/react
+WWW: https://erratique.ch/software/react
