@@ -1,6 +1,15 @@
-The OpenStackSDK is a collection of libraries for building applications to work
-with OpenStack clouds. The project aims to provide a consistent and complete set
-of interactions with OpenStack's many services, along with complete
-documentation, examples, and tools.
+openstacksdk is a client library for building applications to work with
+OpenStack clouds. The project aims to provide a consistent and complete set of
+interactions with OpenStack's many services, along with complete documentation,
+examples, and tools.
 
-WWW: https://docs.openstack.org/openstacksdk/
+It also contains an abstraction interface layer. Clouds can do many things, but
+there are probably only about 10 of them that most people care about with any
+regularity. If you want to do complicated things, the per-service oriented
+portions of the SDK are for you. However, if what you want is to be able to
+write an application that talks to clouds no matter what crazy choices the
+deployer has made in an attempt to be more hipster than their self-entitled
+narcissist peers, then the Cloud Abstraction layer is for you.
+
+WWW: https://docs.openstack.org/openstacksdk/latest/
+WWW: https://github.com/openstack/openstacksdk
