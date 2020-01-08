@@ -1,3 +1,8 @@
-Extra features for standard library cmd module.
+cmd2 is a tool for building interactive command line applications in Python. Its
+goal is to make it quick and easy for developers to build feature-rich and
+user-friendly interactive command line applications. It provides a simple API
+which is an extension of Python's built-in cmd module. cmd2 provides a wealth of
+features on top of cmd to make your life easier and eliminates much of the
+boilerplate code which would be necessary when using cmd.
 
-WWW: https://pypi.org/project/cmd2/
+WWW: https://github.com/python-cmd2/cmd2
