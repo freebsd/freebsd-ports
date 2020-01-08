@@ -3,7 +3,7 @@
 
 PORTNAME=	phoronix-test-suite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.2.0
+DISTVERSION=	9.2.1
 CATEGORIES=	benchmarks
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -25,7 +25,11 @@ PORTDATA=	*
 PORTDOCS=	*
 
 NO_ARCH=	yes
-SHEBANG_FILES=	ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/install.sh \
+SHEBANG_FILES=	ob-cache/test-profiles/pts/shadowofthetombraider-1.0.0/install.sh \
+				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.0/interim.sh \
+				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.0/pre.sh \
+				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.0/post.sh \
+				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/install.sh \
 				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/interim.sh \
 				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/pre.sh \
 				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/post.sh
