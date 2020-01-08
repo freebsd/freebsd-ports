@@ -21,4 +21,6 @@ RUN_DEPENDS=	p5-Email-Simple>=1.998:mail/p5-Email-Simple \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
