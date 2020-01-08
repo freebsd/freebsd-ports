@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	squirrel-sql
-PORTVERSION=	3.9.1
+PORTVERSION=	4.0.0
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}-plainzip
 DISTNAME=	squirrelsql-${PORTVERSION}-optional
@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 USES=		zip
 
-USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+USE_JAVA=	8+
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
