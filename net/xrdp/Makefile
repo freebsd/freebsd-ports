@@ -21,7 +21,8 @@ RUN_DEPENDS=	xterm:x11/xterm \
 		${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
 		${LOCALBASE}/lib/pulse-13.0/modules/module-xrdp-sink.so:audio/pulseaudio-module-xrdp
 
-USES=		autoreconf:build jpeg localbase libtool pkgconfig ssl xorg
+USES=		autoreconf:build compiler:c11 jpeg localbase libtool pkgconfig \
+		ssl xorg
 USE_XORG=	ice pixman sm x11 xfixes xrandr
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
