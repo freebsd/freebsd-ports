@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-storage
-PORTVERSION=	1.25.0
+PORTVERSION=	1.25.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
