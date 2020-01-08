@@ -7,7 +7,6 @@ bin/bp_flanks
 %%SITE_PERL%%/Bio/Variation/IO.pm
 %%SITE_PERL%%/Bio/Variation/IO/flat.pm
 %%SITE_PERL%%/Bio/Variation/IO/xml.pm
-%%SITE_PERL%%/Bio/Variation/README
 %%SITE_PERL%%/Bio/Variation/RNAChange.pm
 %%SITE_PERL%%/Bio/Variation/SNP.pm
 %%SITE_PERL%%/Bio/Variation/SeqDiff.pm

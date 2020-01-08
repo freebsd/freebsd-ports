@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Bio-Variation
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Bio-DB-EMBL>=0:biology/p5-Bio-DB-EMBL \
-		p5-Bio-DB-NCBIHelper>=0:biology/p5-Bio-DB-NCBIHelper \
-		p5-BioPerl>=0:biology/p5-BioPerl \
+RUN_DEPENDS=	p5-BioPerl>=0:biology/p5-BioPerl \
 		p5-IO-String>=0:devel/p5-IO-String \
 		p5-XML-Twig>=0:textproc/p5-XML-Twig \
 		p5-XML-Writer>=0.400:textproc/p5-XML-Writer
