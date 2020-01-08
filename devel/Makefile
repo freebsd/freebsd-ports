@@ -6299,6 +6299,7 @@
     SUBDIR += rubygem-sumbur
     SUBDIR += rubygem-sundawg_country_codes
     SUBDIR += rubygem-svn2git
+    SUBDIR += rubygem-sync
     SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-table_print
