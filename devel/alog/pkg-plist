@@ -2,6 +2,8 @@ include/alog/alog-active_logger.adb
 include/alog/alog-active_logger.ads
 include/alog/alog-controlled_map.adb
 include/alog/alog-controlled_map.ads
+include/alog/alog-dst_filter.adb
+include/alog/alog-dst_filter.ads
 include/alog/alog-exceptions.ads
 include/alog/alog-facilities-file_descriptor.adb
 include/alog/alog-facilities-file_descriptor.ads
@@ -19,8 +21,6 @@ include/alog/alog-maps.adb
 include/alog/alog-maps.ads
 include/alog/alog-policy_db.adb
 include/alog/alog-policy_db.ads
-include/alog/alog-policy_db-types.adb
-include/alog/alog-policy_db-types.ads
 include/alog/alog-protected_containers.adb
 include/alog/alog-protected_containers.ads
 include/alog/alog-tasked_logger.adb
@@ -33,6 +33,7 @@ include/alog/alog.ads
 include/alog/glue_syslog.c
 lib/alog/alog-active_logger.ali
 lib/alog/alog-controlled_map.ali
+lib/alog/alog-dst_filter.ali
 lib/alog/alog-exceptions.ali
 lib/alog/alog-facilities-file_descriptor.ali
 lib/alog/alog-facilities-syslog.ali
@@ -42,7 +43,6 @@ lib/alog/alog-log_request.ali
 lib/alog/alog-logger.ali
 lib/alog/alog-maps.ali
 lib/alog/alog-policy_db.ali
-lib/alog/alog-policy_db-types.ali
 lib/alog/alog-protected_containers.ali
 lib/alog/alog-tasked_logger.ali
 lib/alog/alog-transforms-casing.ali

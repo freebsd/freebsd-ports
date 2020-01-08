@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	alog
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libalog-${PORTVERSION}
@@ -26,9 +26,9 @@ TEST_DESC=	Run unit test suite before installation
 NO_OPTIONS_SORT=yes
 
 DOCS_USES=		gmake
-DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
-			source-highlight:textproc/source-highlight
+DOCS_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 DOCS_ALL_TARGET=	doc
+
 TEST_BUILD_DEPENDS=	${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
 TEST_ALL_TARGET=	tests
 
