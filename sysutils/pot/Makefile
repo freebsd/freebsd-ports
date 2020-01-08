@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pot
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -42,13 +42,13 @@ do-install:
 		${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/pot/pot.conf.sample \
 		${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/pot/flavours/dns.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/etc/pot/flavours/dns.sh \
 		${STAGEDIR}${ETCDIR}/flavours
 	${INSTALL_DATA} ${WRKSRC}/etc/pot/flavours/dns \
 		${STAGEDIR}${ETCDIR}/flavours
-	${INSTALL_DATA} ${WRKSRC}/etc/pot/flavours/fbsd-update.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/etc/pot/flavours/fbsd-update.sh \
 		${STAGEDIR}${ETCDIR}/flavours
-	${INSTALL_DATA} ${WRKSRC}/etc/pot/flavours/slim.sh \
+	${INSTALL_SCRIPT} ${WRKSRC}/etc/pot/flavours/slim.sh \
 		${STAGEDIR}${ETCDIR}/flavours
 
 do-install-ZSH-on:
@@ -59,6 +59,8 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/share/doc/pot/Installation.md \
 		${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/share/doc/pot/QuickStart.md \
+		${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/share/doc/pot/Images.md \
 		${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
