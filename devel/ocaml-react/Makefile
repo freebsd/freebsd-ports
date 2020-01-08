@@ -10,22 +10,13 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml module for functional reactive programming
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 
 USES=		tar:tbz
-USE_OCAML=		yes
-OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=	X11
-
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MX11)
-OCAMLC_DEPEND=		ocaml-notk>=3.11:${OCAMLC_PORT}
-.else
-OCAMLC_DEPEND=		ocaml>=3.11:${OCAMLC_PORT}
-.endif
+USE_OCAML=	yes
 
 USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes
