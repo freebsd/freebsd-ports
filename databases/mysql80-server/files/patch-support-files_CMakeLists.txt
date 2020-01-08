@@ -1,13 +1,27 @@
---- support-files/CMakeLists.txt.orig	2019-06-25 10:23:30 UTC
+--- support-files/CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
 +++ support-files/CMakeLists.txt
-@@ -24,8 +24,10 @@ IF(NOT UNIX)
+@@ -24,8 +24,9 @@ IF(NOT UNIX)
    RETURN()
  ENDIF()
  
-+IF(FALSE)
- INSTALL(FILES mysql.m4
-   DESTINATION ${INSTALL_SHAREDIR}/aclocal COMPONENT Development)
-+ENDIF()
+-INSTALL(FILES mysql.m4
+-  DESTINATION ${INSTALL_SHAREDIR}/aclocal COMPONENT Development)
++IF(NOT WITHOUT_CLIENTLIBS)
++  INSTALL(FILES mysql.m4 DESTINATION ${INSTALL_SHAREDIR}/aclocal COMPONENT Development)
++ENDIF(NOT WITHOUT_CLIENTLIBS)
  
  SET(localstatedir "${MYSQL_DATADIR}")
-
+ 
+@@ -39,6 +40,7 @@ ELSE()
+   SET (PIDOF "pgrep -d' ' -f")
+ ENDIF()
+ 
++IF(NOT WITHOUT_SERVER)
+ FOREACH(script
+     mysql.server
+     mysqld_multi.server
+@@ -54,3 +56,4 @@ FOREACH(script
+     GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+     )
+ ENDFOREACH()
++ENDIF()

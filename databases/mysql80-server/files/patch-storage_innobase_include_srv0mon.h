@@ -1,6 +1,6 @@
---- storage/innobase/include/srv0mon.h.orig	2016-03-28 18:06:12 UTC
+--- storage/innobase/include/srv0mon.h.orig	2019-09-20 08:30:51 UTC
 +++ storage/innobase/include/srv0mon.h
-@@ -34,6 +34,10 @@ Created 12/15/2009	Jimmy Yang
+@@ -40,6 +40,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
  /* Required for FreeBSD so that INT64_MAX is defined. */
  #define __STDC_LIMIT_MACROS
  #endif /* __STDC_LIMIT_MACROS */

@@ -1,6 +1,6 @@
---- mysys/my_default.cc.orig	2016-08-25 11:52:06 UTC
+--- mysys/my_default.cc.orig	2019-09-20 08:30:51 UTC
 +++ mysys/my_default.cc
-@@ -114,7 +114,7 @@ static my_bool defaults_already_read= FA
+@@ -203,7 +203,7 @@ bool no_defaults = false;
  
  /* Which directories are searched for options (and in which order) */
  
@@ -9,7 +9,7 @@
  #define DEFAULT_DIRS_SIZE (MAX_DEFAULT_DIRS + 1) /* Terminate with NULL */
  static const char **default_directories = NULL;
  
-@@ -914,6 +914,14 @@ static int search_default_file_with_ext(
+@@ -909,6 +909,14 @@ static int search_default_file_with_ext(Process_option
        return 1; /* Ignore wrong files */
    }
  
@@ -24,7 +24,7 @@
    while (mysql_file_getline(buff, sizeof(buff) - 1, fp, is_login_file)) {
      line++;
      /* Ignore comment and empty lines */
-@@ -1252,7 +1260,8 @@ void my_print_default_files(const char *
+@@ -1228,7 +1236,8 @@ void my_print_default_files(const char *conf_file) {
              end[(strlen(end) - 1)] = ' ';
            else
              strxmov(end, conf_file, *ext, " ", NullS);
@@ -34,23 +34,25 @@
          }
        }
      }
-@@ -1411,13 +1420,8 @@ static const char **init_default_directo
+@@ -1565,14 +1574,9 @@ static const char **init_default_directories(MEM_ROOT 
  
  #else
  
 -  errors += add_directory(alloc, "/etc/", dirs);
 -  errors += add_directory(alloc, "/etc/mysql/", dirs);
--
++  errors += add_directory(alloc, "/usr/local/etc/", dirs);
++  errors += add_directory(alloc, "/usr/local/etc/mysql/", dirs);
+ 
 -#if defined(DEFAULT_SYSCONFDIR)
 -  if (DEFAULT_SYSCONFDIR[0])
 -    errors += add_directory(alloc, DEFAULT_SYSCONFDIR, dirs);
 -#endif /* DEFAULT_SYSCONFDIR */
-+  errors += add_directory(alloc, "/usr/local/etc/", dirs);
-+  errors += add_directory(alloc, "/usr/local/etc/mysql/", dirs);
- 
+-
  #endif
  
-@@ -1488,7 +1492,7 @@ int check_file_permissions(const char *f
+   if ((env = getenv("MYSQL_HOME"))) errors += add_directory(alloc, env, dirs);
+@@ -1635,7 +1639,7 @@ int check_file_permissions(const char *file_name, bool
+ #if !defined(_WIN32)
    MY_STAT stat_info;
  
 -  if (!my_stat(file_name, &stat_info, MYF(0))) return 1;
