@@ -369,6 +369,8 @@ include/wine/windows/dxgi1_6.h
 include/wine/windows/dxgi1_6.idl
 include/wine/windows/dxgicommon.h
 include/wine/windows/dxgicommon.idl
+include/wine/windows/dxgidebug.h
+include/wine/windows/dxgidebug.idl
 include/wine/windows/dxgiformat.h
 include/wine/windows/dxgiformat.idl
 include/wine/windows/dxgitype.h
