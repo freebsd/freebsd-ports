@@ -121,6 +121,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/chroma_hold.xml
 %%DATADIR%%/effects/crop.xml
 %%DATADIR%%/effects/dust.xml
+%%DATADIR%%/effects/dynamic_loudness.xml
 %%DATADIR%%/effects/dynamictext.xml
 %%DATADIR%%/effects/fade_from_black.xml
 %%DATADIR%%/effects/fade_to_black.xml
