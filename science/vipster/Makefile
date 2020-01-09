@@ -4,6 +4,7 @@ PORTNAME=	vipster
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.18b-75
 DISTVERSIONSUFFIX=	-gfa5853f
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +13,7 @@ COMMENT=	Crystalline and molecular structure visualisation program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	sgsaenger
 USE_LDCONFIG=	yes
@@ -28,6 +29,12 @@ DESKTOP_USE=		QT=core,gui,widgets,buildtools_build,qmake_build
 
 PYTHON_CMAKE_BOOL=	PYTHON
 PYTHON_BROKEN=		Bundles pybind11: https://github.com/sgsaenger/vipster/issues/23
+
+# use clang from ports because older clang (clang-6) lacks the c++17 feature std::mmap::extract
+BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+CPP=		clang-cpp${LLVM_DEFAULT}
+CC=		clang${LLVM_DEFAULT}
+CXX=		clang++${LLVM_DEFAULT}
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
