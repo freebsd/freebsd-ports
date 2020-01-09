@@ -592,6 +592,7 @@
     SUBDIR += lineakd
     SUBDIR += linrename
     SUBDIR += linux-c7-lttng-ust
+    SUBDIR += linux-c7-numactl-libs
     SUBDIR += linux-c7-userspace-rcu
     SUBDIR += linux-crashplan
     SUBDIR += linux-rkbin
