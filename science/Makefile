@@ -39,6 +39,7 @@
     SUBDIR += buddy
     SUBDIR += cdcl
     SUBDIR += cdf
+    SUBDIR += cdk
     SUBDIR += cdo
     SUBDIR += cgnslib
     SUBDIR += cgribex

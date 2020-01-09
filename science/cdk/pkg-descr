@@ -1,0 +1,13 @@
+The CDK is an open-source Java software for cheminformatics and bioinformatics.
+
+Key Features:
+* Molecule and reaction valence bond representation.
+* Read and write file formats: SMILES, SDF, InChI, Mol2, CML, and others.
+* Efficient molecule processing algorithms: Ring Finding, Kekulisation, Aromaticity.
+* Coordinate generation and rendering.
+* Canonical identifiers for fast exact searching.
+* Substructure and SMARTS pattern searching.
+* ECFP, Daylight, MACCS, and other fingerprint methods for similarity searching.
+* QSAR descriptor calculations
+
+WWW: https://cdk.github.io/
