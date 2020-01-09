@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=--disable-dtrace
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
+.if (defined(PPC_ABI) && ${PPC_ABI} == ELFv1) || ${ARCH} == powerpc
 USE_GCC=	yes
 .endif
 
