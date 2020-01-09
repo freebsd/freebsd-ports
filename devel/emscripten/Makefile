@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	emscripten
-DISTVERSION=	1.39.4
+DISTVERSION=	1.39.5
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,5 +49,6 @@ do-install:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${s} ${STAGEDIR}${PREFIX}/bin/${s}
 .endfor
 	${RM} -rf ${STAGEDIR}${PREFIX}/lib/emscripten/system/lib/pkgconfig
+	${RM} -rf ${STAGEDIR}${PREFIX}/lib/emscripten/tools/websocket_to_posix_proxy
 
 .include <bsd.port.mk>
