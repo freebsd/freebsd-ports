@@ -68,9 +68,7 @@ _ZOPE_VERSION=	${_ZOPE_PORTBRANCH} # just to avoid version sanity checking.
 
 ZOPE_VERSION?=	${_ZOPE_VERSION}
 
-.if !defined(PYTHON_VERSION)
-PYTHON_VERSION=	${_PYTHON_VER_REQUIRED}
-.elif ${PYTHON_VERSION} != ${_PYTHON_VER_REQUIRED}
+.if ${PYTHON_VERSION} != ${_PYTHON_VER_REQUIRED}
 IGNORE+=	Zope requires Python ${_PYTHON_VER_REQUIRED}.\
 			But you or a port dependency specified ${PYTHON_VERSION}
 .endif # !defined(PYTHON_VERSION)
