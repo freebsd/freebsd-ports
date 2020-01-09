@@ -60,7 +60,7 @@ FONTS=	${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-R.ttf:x11-fonts/gentium-
 	${LOCALBASE}/share/fonts/Lohit/Lohit-Bengali.ttf:x11-fonts/lohit \
 	${LOCALBASE}/share/fonts/dejavu/DejaVuSansMono.ttf:x11-fonts/dejavu
 FONTS_CJK=${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:chinese/arphicttf \
-	${LOCALBASE}/share/fonts/OTF/ipam.otf:japanese/font-ipa \
+	${LOCALBASE}/share/fonts/ipa/ipam.otf:japanese/font-ipa \
 	${LOCALBASE}/share/fonts/nanum-ttf/NanumBarunGothic.ttf:korean/nanumfonts-ttf
 
 .include <bsd.port.options.mk>

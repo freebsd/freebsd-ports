@@ -32,7 +32,7 @@ PDF_DESC=	Enable PDF output
 
 OPTIONS_DEFAULT=	PDF
 
-IPAFONT_RUN_DEPENDS=	${LOCALBASE}/share/font-ipa/ipag.otf:japanese/font-ipa
+IPAFONT_RUN_DEPENDS=	${LOCALBASE}/share/font/ipa/ipag.otf:japanese/font-ipa
 PDF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${PY_FLAVOR}
 
 post-patch:
