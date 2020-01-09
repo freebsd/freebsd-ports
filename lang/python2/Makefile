@@ -14,11 +14,10 @@ COMMENT=	The "meta-port" for version 2 of the Python interpreter
 DEPRECATED=	EOLed upstream
 EXPIRATION_DATE=	2020-12-31
 
-USES=		python:run
+USES=		python:2.7,run
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-PYTHON_VERSION=	python${PYTHON2_DEFAULT}
 
 PLIST_FILES=	bin/2to3-${PYTHON_MAJOR_VER} \
 		bin/idle${PYTHON_MAJOR_VER} \
@@ -28,8 +27,6 @@ PLIST_FILES=	bin/2to3-${PYTHON_MAJOR_VER} \
 		libdata/pkgconfig/python${PYTHON_MAJOR_VER}.pc
 
 .include <bsd.port.pre.mk>
-
-RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 
 do-install:
 .for file in idle pydoc python
