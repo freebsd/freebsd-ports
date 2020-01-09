@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 COMMENT=	GStreamer OpenExr codec plugin
 
+USES+=		compiler:c++11-lang
 GST_PLUGIN=	openexr
 DIST=		bad
 
