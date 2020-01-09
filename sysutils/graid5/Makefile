@@ -11,8 +11,6 @@ COMMENT=	RAID5 geom class
 
 LICENSE=	BSD2CLAUSE
 
-NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
-
 MAINVERSION=1.3
 VERSIONDATE=20140711.62
 
