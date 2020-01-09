@@ -459,10 +459,6 @@ PY_FLAVOR=	py${_PYTHON_VERSION:S/.//}
 # try to find a different one, if the passed version fits into
 # the supported version range.
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
-.if !defined(PYTHON_NO_DEPENDS) && \
-    ${PYTHON_VERSION} != python${PYTHON_DEFAULT}
-DEPENDS_ARGS+=		PYTHON_VERSION=${PYTHON_VERSION}
-.endif
 
 # NOTE:
 #
