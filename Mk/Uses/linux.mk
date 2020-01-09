@@ -79,6 +79,7 @@ _linux_${linux_ARGS}_icu=		linux-${linux_ARGS}-icu>0:devel/linux-${linux_ARGS}-i
 _linux_${linux_ARGS}_jasper=		linux-${linux_ARGS}-jasper-libs>0:graphics/linux-${linux_ARGS}-jasper
 _linux_c7_jbigkit=			linux-c7-jbigkit-libs>0:graphics/linux-c7-jbigkit
 _linux_${linux_ARGS}_jpeg=		linux-${linux_ARGS}-jpeg>0:graphics/linux-${linux_ARGS}-jpeg
+_linux_c7_libaio=			linux-c7-libaio>0:devel/linux-c7-libaio
 _linux_${linux_ARGS}_libasyncns=	linux-${linux_ARGS}-libasyncns>0:dns/linux-${linux_ARGS}-libasyncns
 _linux_c7_libaudiofile=			linux-c7-audiofile>0:audio/linux-c7-audiofile
 _linux_c7_libdrm=			linux-c7-libdrm>0:graphics/linux-c7-libdrm

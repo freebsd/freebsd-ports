@@ -1417,6 +1417,7 @@
     SUBDIR += linux-c7-elfutils-libelf
     SUBDIR += linux-c7-elfutils-libs
     SUBDIR += linux-c7-icu
+    SUBDIR += linux-c7-libaio
     SUBDIR += linux-c7-libgfortran
     SUBDIR += linux-c7-libglade2
     SUBDIR += linux-c7-libpciaccess

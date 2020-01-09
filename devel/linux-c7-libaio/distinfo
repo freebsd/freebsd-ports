@@ -1,0 +1,7 @@
+TIMESTAMP = 1577701345
+SHA256 (centos/libaio-0.3.109-13.el7.i686.rpm) = 88bc9543de3eb8fbb955993a06212ba1e6e7e68f9a486e7564eeddff282a7c11
+SIZE (centos/libaio-0.3.109-13.el7.i686.rpm) = 24912
+SHA256 (centos/libaio-0.3.109-13.el7.x86_64.rpm) = 231e5a08dbd34a71a7e34f00818126b4cc0bd550481bf5f7c579119c88c52bbf
+SIZE (centos/libaio-0.3.109-13.el7.x86_64.rpm) = 24744
+SHA256 (centos/libaio-0.3.109-13.el7.src.rpm) = b8761f586b95dd977b89fc88dc6340c2129efbd4b77cf0022f6caf7cc5b01e1a
+SIZE (centos/libaio-0.3.109-13.el7.src.rpm) = 68237
