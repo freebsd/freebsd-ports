@@ -5,7 +5,7 @@ PORTVERSION=	3.6.1
 PORTREVISION=	9
 CATEGORIES=	graphics
 
-MAINTAINER=	bsd@tuxproject.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast, and free image viewer
 
 LICENSE=	GPLv3
