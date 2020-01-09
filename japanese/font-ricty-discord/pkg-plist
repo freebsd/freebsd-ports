@@ -1,0 +1,9 @@
+%%FONTSDIR%%/fonts.dir
+%%FONTSDIR%%/RictyDiscord-Bold.ttf
+%%FONTSDIR%%/RictyDiscord-BoldOblique.ttf
+%%FONTSDIR%%/RictyDiscord-Oblique.ttf
+%%FONTSDIR%%/RictyDiscord-Regular.ttf
+etc/fonts/conf.avail/20-unhint-ricty-discord.conf
+etc/fonts/conf.avail/62-fonts-ricty-discord.conf
+etc/fonts/conf.d/20-unhint-ricty-discord.conf
+etc/fonts/conf.d/62-fonts-ricty-discord.conf
