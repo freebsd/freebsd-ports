@@ -1,6 +1,6 @@
-TIMESTAMP = 1565948132
-SHA256 (ceph-ceph-v13.2.6_GH0.tar.gz) = a4ed5599cd4ea045b79e691a2bc61fceab977f51b25a6e460139cf42891de2be
-SIZE (ceph-ceph-v13.2.6_GH0.tar.gz) = 13323448
+TIMESTAMP = 1577200637
+SHA256 (ceph-ceph-v13.2.8_GH0.tar.gz) = fcb198bfd632e57203fd4116b15450a9c31f253ed3ddd2b718a2dd35efd34591
+SIZE (ceph-ceph-v13.2.8_GH0.tar.gz) = 13394132
 SHA256 (ceph-ceph-erasure-code-corpus-2d7d78b_GH0.tar.gz) = 8ab8f36f3e0a720c882b8bb4abb3f2e26bd6b025cc263119207f7d2eb3b1e490
 SIZE (ceph-ceph-erasure-code-corpus-2d7d78b_GH0.tar.gz) = 3685656
 SHA256 (ceph-ceph-object-corpus-e32bf8c_GH0.tar.gz) = 79ff0d1b9f959c9f5264a0dff193105d71885615deaa9c8469902400fd82d214
