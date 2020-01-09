@@ -1,0 +1,5 @@
+TIMESTAMP = 1578560238
+SHA256 (cdk-2.3-deps.tar.gz) = d3df87bc95d2302f92b60bc1e6fd5172c341aae2f831f263f6508de2f31bcf99
+SIZE (cdk-2.3-deps.tar.gz) = 63038171
+SHA256 (cdk-cdk-cdk-2.3_GH0.tar.gz) = 169772895f6d49c5a66e32da059e1d63f5cd77aa3ffdeed4942dcd76eb8d399d
+SIZE (cdk-cdk-cdk-2.3_GH0.tar.gz) = 26499872
