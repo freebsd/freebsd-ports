@@ -38,11 +38,11 @@ NO_ARCH=	yes
 
 .if ${PYTHON_REL} < 3000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}contextlib2>=0.4.0:devel/py-contextlib2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}networkx>=2.1.0<2.3:math/py-networkx@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}networkx>=2.1.0,1<2.3,1:math/py-networkx@${PY_FLAVOR}
 .endif
 
 .if ${PYTHON_REL} >= 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}networkx>=2.1.0:math/py-networkx@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}networkx>=2.1.0,1:math/py-networkx@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
