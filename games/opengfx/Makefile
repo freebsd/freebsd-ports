@@ -11,6 +11,7 @@ MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Free alternative graphics for OpenTTD game engine
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		zip
 
