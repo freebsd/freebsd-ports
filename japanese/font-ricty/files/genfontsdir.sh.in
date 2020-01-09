@@ -1,16 +1,5 @@
 #!/bin/sh
-
-catfontsdir ()
-{
-    while read _IN
-    do
-      case "${_IN}" in
-%%RICTY%%   *-Ricty-*) ;;
-%%DISCORD%% *-Ricty\ Discord-*) ;;
-      *)       echo ${_IN} ;;
-      esac
-    done
-}
+# $FreeBSD$
 
 ROMA=""
 BOLD="ds=y"
@@ -27,6 +16,7 @@ make_xlfd()
 	_fname=$4
 	_poc=$5
 	_weight=$6
+	_obli=$7
 
 	case "${_poc}:${_enc}" in
 	p:jisx0201.1976-*)	PFIX="bw=0.5" ;;
@@ -36,33 +26,31 @@ make_xlfd()
 	esac
 
 	case $_weight in
+	bold-o)
+	set --	""	bold-o
+	;;
 	bold)
 	set --	""	bold-r \
 		${ITAL} bold-i \
-		${OBLI}	bold-o \
 		${RITA}	bold-ri \
 		${ROBL}	bold-ro
-	while [ $# != 0 ]; do
-		_prefix="${PFIX}:$1"; shift
-		_variant=$1; shift
-		printf "%s:%s -%s-%s-%s-normal--0-0-0-0-%s-0-%s\n" \
-			$_prefix $_file $_vendor "$_fname" $_variant $_poc $_enc
-	done | sed -e 's,::,:,g' -e 's,^:,,'
+	;;
+	medium-o)
+	set --	""	medium-o
 	;;
 	medium)
 	set --	""	medium-r \
 		${ITAL}	medium-i \
-		${OBLI}	medium-o \
 		${RITA}	medium-ri \
 		${ROBL}	medium-ro
+	;;
+	esac
 	while [ $# != 0 ]; do
 		_prefix="${PFIX}:$1"; shift
 		_variant=$1; shift
 		printf "%s:%s -%s-%s-%s-normal--0-0-0-0-%s-0-%s\n" \
 			$_prefix $_file $_vendor "$_fname" $_variant $_poc $_enc
 	done | sed -e 's,::,:,g' -e 's,^:,,'
-	;;
-	esac
 }
 
 addentries ()
@@ -70,10 +58,14 @@ addentries ()
 	for ENC in iso8859-1 iso10646-1 jisx0201.1976-0 jisx0208.1983-0 jisx0208.1990-0
 	do
 		%%RICTY%%make_xlfd $ENC Ricty-Regular.ttf ipa "Ricty" p medium
+		%%RICTY%%make_xlfd $ENC Ricty-Oblique.ttf ipa "Ricty" p medium-o
 		%%RICTY%%make_xlfd $ENC Ricty-Bold.ttf ipa "Ricty" p bold
+		%%RICTY%%make_xlfd $ENC Ricty-BoldOblique.ttf ipa "Ricty" p bold-o
 
 		%%DISCORD%%make_xlfd $ENC RictyDiscord-Regular.ttf ipa "Ricty Discord" p medium
+		%%DISCORD%%make_xlfd $ENC RictyDiscord-Oblique.ttf ipa "Ricty Discord" p medium-o
 		%%DISCORD%%make_xlfd $ENC RictyDiscord-Bold.ttf ipa "Ricty Discord" p bold
+		%%DISCORD%%make_xlfd $ENC RictyDiscord-BoldOblique.ttf ipa "Ricty Discord" p bold-o
 	done
 }
 
@@ -82,23 +74,7 @@ nfonts ()
     _L=0; while read _IN; do _L=$((${_L}+1)); done; echo ${_L}
 }
 
-case "$2" in
-POST-INSTALL)
-	cd ${FONTSDIR}
-	touch fonts.dir
-	(sed 1d fonts.dir | catfontsdir; addentries) > fonts.dir.tmp
-	nfonts < fonts.dir.tmp > fonts.dir
-	cat fonts.dir.tmp >> fonts.dir
-	rm -f fonts.dir.tmp
-	;;
-POST-DEINSTALL)
-	cd ${FONTSDIR}
-	sed 1d fonts.dir | catfontsdir > fonts.dir.tmp
-	nfonts < fonts.dir.tmp > fonts.dir
-	cat fonts.dir.tmp >> fonts.dir
-	rm -f fonts.dir.tmp
-	if [ -r fonts.dir -a `wc -l < fonts.dir` = 1 ]; then
-		rm -f fonts.dir
-	fi
-	;;
-esac
+addentries > fonts.dir.tmp
+nfonts < fonts.dir.tmp > fonts.dir
+cat fonts.dir.tmp >> fonts.dir
+rm -f fonts.dir.tmp
