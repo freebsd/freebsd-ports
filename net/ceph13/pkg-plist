@@ -127,17 +127,17 @@ lib/ceph/mgr/dashboard/controllers/summary.py
 lib/ceph/mgr/dashboard/controllers/task.py
 lib/ceph/mgr/dashboard/controllers/tcmu_iscsi.py
 lib/ceph/mgr/dashboard/exceptions.py
+lib/ceph/mgr/dashboard/frontend/.editorconfig
+lib/ceph/mgr/dashboard/frontend/angular.json
 lib/ceph/mgr/dashboard/frontend/e2e/cluster/monitors.e2e-spec.ts
 lib/ceph/mgr/dashboard/frontend/e2e/cluster/monitors.po.ts
 lib/ceph/mgr/dashboard/frontend/e2e/cluster/osds.e2e-spec.ts
 lib/ceph/mgr/dashboard/frontend/e2e/cluster/osds.po.ts
 lib/ceph/mgr/dashboard/frontend/e2e/helper.po.ts
 lib/ceph/mgr/dashboard/frontend/e2e/tsconfig.e2e.json
-lib/ceph/mgr/dashboard/frontend/.editorconfig
-lib/ceph/mgr/dashboard/frontend/angular.json
 lib/ceph/mgr/dashboard/frontend/karma.conf.js
-lib/ceph/mgr/dashboard/frontend/package.json
 lib/ceph/mgr/dashboard/frontend/package-lock.json
+lib/ceph/mgr/dashboard/frontend/package.json
 lib/ceph/mgr/dashboard/frontend/protractor.conf.js
 lib/ceph/mgr/dashboard/frontend/proxy.conf.json.sample
 lib/ceph/mgr/dashboard/frontend/src/app/app-routing.module.ts
@@ -537,6 +537,7 @@ lib/ceph/mgr/dashboard/tests/test_notification.py
 lib/ceph/mgr/dashboard/tests/test_rbd_mirroring.py
 lib/ceph/mgr/dashboard/tests/test_rest_client.py
 lib/ceph/mgr/dashboard/tests/test_rest_tasks.py
+lib/ceph/mgr/dashboard/tests/test_rgw_client.py
 lib/ceph/mgr/dashboard/tests/test_settings.py
 lib/ceph/mgr/dashboard/tests/test_task.py
 lib/ceph/mgr/dashboard/tests/test_tcmu_iscsi.py
@@ -609,6 +610,8 @@ lib/librgw.so.2.0.0
 %%PYTHON_SITELIBDIR%%/ceph_detect_init/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ceph_detect_init/alpine/__init__.py
 %%PYTHON_SITELIBDIR%%/ceph_detect_init/alpine/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ceph_detect_init/alt/__init__.py
+%%PYTHON_SITELIBDIR%%/ceph_detect_init/alt/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ceph_detect_init/arch/__init__.py
 %%PYTHON_SITELIBDIR%%/ceph_detect_init/arch/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ceph_detect_init/centos/__init__.py
