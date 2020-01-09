@@ -5,8 +5,8 @@ Date:   Wed Jan 8 15:06:00 2020 -0800
     Bug 1550891 - re-add SHM_ANON support in IPC shared memory, freezing via capabilities
 ---
  config/system-headers.mozbuild               |  1 +
- ipc/chromium/src/base/shared_memory_posix.cc | 16 +++++++++++++---
- 2 files changed, 14 insertions(+), 3 deletions(-)
+ ipc/chromium/src/base/shared_memory_posix.cc | 20 +++++++++++++++++---
+ 2 files changed, 18 insertions(+), 3 deletions(-)
 
 diff --git config/system-headers.mozbuild config/system-headers.mozbuild
 index 88afca1070f86..beff3e2542c9f 100644
@@ -21,10 +21,21 @@ index 88afca1070f86..beff3e2542c9f 100644
      'sys/cfgodm.h',
      'sys/elf.h',
 diff --git ipc/chromium/src/base/shared_memory_posix.cc ipc/chromium/src/base/shared_memory_posix.cc
-index 0be9cce0b4bed..6ef69686e1ca8 100644
+index 0be9cce0b4bed..89e67483e4c16 100644
 --- ipc/chromium/src/base/shared_memory_posix.cc
 +++ ipc/chromium/src/base/shared_memory_posix.cc
-@@ -148,7 +148,7 @@ static int SafeShmUnlink(bool freezeable, const char* name) {
+@@ -16,6 +16,10 @@
+ #  include <linux/ashmem.h>
+ #endif
+ 
++#ifdef __FreeBSD__
++#  include <sys/capsicum.h>
++#endif
++
+ #include "base/eintr_wrapper.h"
+ #include "base/logging.h"
+ #include "base/string_util.h"
+@@ -148,7 +152,7 @@ static int SafeShmUnlink(bool freezeable, const char* name) {
    }
  }
  
@@ -33,7 +44,7 @@ index 0be9cce0b4bed..6ef69686e1ca8 100644
  static int SafeShmOpen(bool freezeable, const char* name, int oflag, int mode) {
    return shm_open(name, oflag, mode);
  }
-@@ -160,7 +160,7 @@ static int SafeShmUnlink(bool freezeable, const char* name) {
+@@ -160,7 +164,7 @@ static int SafeShmUnlink(bool freezeable, const char* name) {
  
  // static
  bool SharedMemory::AppendPosixShmPrefix(std::string* str, pid_t pid) {
@@ -42,7 +53,7 @@ index 0be9cce0b4bed..6ef69686e1ca8 100644
    return false;
  #else
    *str += '/';
-@@ -186,7 +186,7 @@ bool SharedMemory::AppendPosixShmPrefix(std::string* str, pid_t pid) {
+@@ -186,7 +190,7 @@ bool SharedMemory::AppendPosixShmPrefix(std::string* str, pid_t pid) {
    // enough for this.
    StringAppendF(str, "org.mozilla.ipc.%d.", static_cast<int>(pid));
    return true;
@@ -51,7 +62,7 @@ index 0be9cce0b4bed..6ef69686e1ca8 100644
  }
  
  bool SharedMemory::CreateInternal(size_t size, bool freezeable) {
-@@ -212,6 +212,9 @@ bool SharedMemory::CreateInternal(size_t size, bool freezeable) {
+@@ -212,6 +216,9 @@ bool SharedMemory::CreateInternal(size_t size, bool freezeable) {
      return false;
    }
    needs_truncate = false;
@@ -61,7 +72,7 @@ index 0be9cce0b4bed..6ef69686e1ca8 100644
  #else
    // Generic Unix: shm_open + shm_unlink
    do {
-@@ -275,6 +278,13 @@ bool SharedMemory::Freeze() {
+@@ -275,6 +282,13 @@ bool SharedMemory::Freeze() {
      CHROMIUM_LOG(WARNING) << "failed to freeze shm: " << strerror(errno);
      return false;
    }
