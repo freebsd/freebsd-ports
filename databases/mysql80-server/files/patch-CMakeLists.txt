@@ -1,35 +1,76 @@
---- CMakeLists.txt.orig	2019-01-21 19:00:53 UTC
+--- CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
 +++ CMakeLists.txt
-@@ -1045,7 +1045,6 @@ IF(UNIX)
+@@ -1181,10 +1181,10 @@ ENDIF()
+ MYSQL_CHECK_SSL()
+ MYSQL_CHECK_SSL_DLLS()
+ 
+-# Add system/bundled editline.
+-MYSQL_CHECK_EDITLINE()
+ # Add libevent
+-MYSQL_CHECK_LIBEVENT()
++IF(NOT WITHOUT_SERVER)
++  MYSQL_CHECK_LIBEVENT()
++ENDIF()
+ # Add lz4 library
+ MYSQL_CHECK_LZ4()
+ # Add icu library
+@@ -1273,7 +1273,9 @@ IF(WITH_UNIT_TESTS)
+   INCLUDE(googletest)
  ENDIF()
  
+-ADD_SUBDIRECTORY(include)
++IF(NOT WITHOUT_CLIENTLIBS)
++  ADD_SUBDIRECTORY(include)
++ENDIF(NOT WITHOUT_CLIENTLIBS)
+ ADD_SUBDIRECTORY(strings)
+ ADD_SUBDIRECTORY(vio)
+ ADD_SUBDIRECTORY(mysys)
+@@ -1314,24 +1316,29 @@ IF(WITH_UNIT_TESTS)
+   ADD_SUBDIRECTORY(unittest/mytap/t)
+ ENDIF()
+ 
+-ADD_SUBDIRECTORY(client)
++IF(NOT WITHOUT_TOOLS)
++  # Add system/bundled editline
++  MYSQL_CHECK_EDITLINE()
++  ADD_SUBDIRECTORY(client)
++ENDIF(NOT WITHOUT_TOOLS)
++
+ ADD_SUBDIRECTORY(utilities)
+-ADD_SUBDIRECTORY(share)
+ ADD_SUBDIRECTORY(libservices)
+ 
  IF(NOT WITHOUT_SERVER)
--  ADD_SUBDIRECTORY(testclients)
+   ADD_SUBDIRECTORY(testclients)
++  ADD_SUBDIRECTORY(share)
    ADD_SUBDIRECTORY(sql)
  ENDIF()
  
-@@ -1054,8 +1053,6 @@ ENDIF()
+ # scripts/mysql_config depends on client and server targets loaded above.
+ # It is referenced by some of the directories below, so we insert it here.
  ADD_SUBDIRECTORY(scripts)
++ADD_SUBDIRECTORY(support-files)
  
  IF(NOT WITHOUT_SERVER)
--  ADD_SUBDIRECTORY(mysql-test)
--  ADD_SUBDIRECTORY(mysql-test/lib/My/SafeProcess)
-   ADD_SUBDIRECTORY(support-files)
+   ADD_SUBDIRECTORY(mysql-test)
+   ADD_SUBDIRECTORY(mysql-test/lib/My/SafeProcess)
+-  ADD_SUBDIRECTORY(support-files)
    IF(EXISTS ${CMAKE_SOURCE_DIR}/internal/CMakeLists.txt)
      ADD_SUBDIRECTORY(internal)
-@@ -1152,6 +1149,7 @@ ENDIF()
- #
- # RPM installs documentation directly from the source tree
- #
+   ENDIF()
+@@ -1440,6 +1447,7 @@ IF(PACK_SEPARATE_COMPONENTS)
+   SET(CPACK_COMPONENTS_GROUPING IGNORE)
+ ENDIF()
+ 
 +IF(FALSE)
- IF(NOT INSTALL_LAYOUT MATCHES "RPM")
-   INSTALL(FILES README LICENSE DESTINATION ${INSTALL_DOCREADMEDIR} COMPONENT Readme)
-   INSTALL(FILES ${CMAKE_BINARY_DIR}/Docs/INFO_SRC ${CMAKE_BINARY_DIR}/Docs/INFO_BIN DESTINATION ${INSTALL_DOCDIR})
-@@ -1170,6 +1168,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
+ IF(UNIX)
+   INSTALL(FILES
+     Docs/mysql.info
+@@ -1474,6 +1482,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
+     PATTERN "sp-imp-spec.txt" EXCLUDE
      PATTERN "README.build" EXCLUDE
    )
- ENDIF()
 +ENDIF()
+ ENDIF()
  
  # Now that we're done with all ADD_SUBDIRECTORY and thus all feature tests,
- # we can safely enable ASan on Clang/Win32 if needed.

@@ -1,4 +1,4 @@
---- libservices/CMakeLists.txt.orig	2019-06-25 10:23:30 UTC
+--- libservices/CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
 +++ libservices/CMakeLists.txt
 @@ -45,7 +45,9 @@ SET(MYSQLSERVICES_SOURCES
    plugin_registry_service.c)
@@ -10,4 +10,3 @@
      DESTINATION ${INSTALL_LIBDIR} COMPONENT Development)
 +ENDIF()
  ENDIF()
-

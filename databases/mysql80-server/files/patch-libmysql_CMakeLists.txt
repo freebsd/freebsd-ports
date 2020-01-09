@@ -1,31 +1,70 @@
---- libmysql/CMakeLists.txt.orig	2018-12-20 20:14:03 UTC
+--- libmysql/CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
 +++ libmysql/CMakeLists.txt
-@@ -239,7 +239,7 @@ MESSAGE(STATUS "Creating LDAP authentica
- ADD_SUBDIRECTORY(authentication_ldap)
-   
- # Merge several convenience libraries into one big mysqlclient
+@@ -192,6 +192,11 @@ IF (WIN32 AND OPENSSL_APPLINK_C)
+   )
+ ENDIF()
+ 
++INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compile_flags.cmake)
++IF (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  ADD_COMPILE_FLAGS(${CLIENT_SOURCES} COMPILE_FLAGS "-fPIC")
++ENDIF()
++
+ #
+ # Include protocol tracing infrastructure and the test
+ # trace plugin if enabled by build options.
+@@ -240,12 +245,17 @@ IF(WIN32)
+   LIST(APPEND LIBS_TO_MERGE auth_win_client)
+ ENDIF()
+ 
+-# LDAP authentication SASL client plugin
+-MESSAGE(STATUS "Creating LDAP authentication SASL client library.")
+-ADD_SUBDIRECTORY(authentication_ldap)
+-  
+-# Merge several convenience libraries into one big mysqlclient
 -MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development)
-+MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development SKIP_INSTALL)
++IF(WITHOUT_CLIENTLIBS)
++  # Merge several convenience libraries into one big mysqlclient
++  MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development SKIP_INSTALL)
++ELSE(WITHOUT_CLIENTLIBS)
++  # LDAP authentication SASL client plugin
++  MESSAGE(STATUS "Creating LDAP authentication SASL client library.")
++  ADD_SUBDIRECTORY(authentication_ldap)
++
++  # Merge several convenience libraries into one big mysqlclient
++  MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development)
++ENDIF(WITHOUT_CLIENTLIBS)
  TARGET_LINK_LIBRARIES(mysqlclient PRIVATE ${LIBS_TO_LINK})
  
  # Visual Studio users need debug  static library for debug projects
-@@ -280,9 +280,10 @@ IF(NOT DISABLE_SHARED)
-   # and link them together into shared library.
-   MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
-     EXPORTS ${CLIENT_API_FUNCTIONS} ${CLIENT_API_FUNCTIONS_UNDOCUMENTED} ${CLIENT_API_NONBLOCKING_FUNCTIONS}
--    COMPONENT SharedLibraries)
-+    COMPONENT SharedLibraries SKIP_INSTALL)
-   TARGET_LINK_LIBRARIES(libmysql PRIVATE ${LIBS_TO_LINK})
+@@ -281,12 +291,22 @@ ENDIF()
  
-+IF(FALSE)
-   IF(WIN32)
-     # So that libmysql_api_test below can find the .dll
-     ADD_CUSTOM_COMMAND(TARGET libmysql POST_BUILD
-@@ -338,6 +339,7 @@ ENDIF()
- # to initialize api_calls[] array in api_test.c
- #
- SET(CLIENT_API_FUNCTION_LIST "")
-+ ENDIF()
- FOREACH(api ${CLIENT_API_FUNCTIONS})
-   SET(CLIENT_API_FUNCTION_LIST "${CLIENT_API_FUNCTION_LIST} ${api},")
- ENDFOREACH()
+ # Merge several convenience libraries into one big mysqlclient
+ # and link them together into shared library.
++IF(WITHOUT_CLIENTLIBS)
+ MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
+   EXPORTS
+   ${CLIENT_API_FUNCTIONS}
+   ${CLIENT_API_FUNCTIONS_UNDOCUMENTED}
+   ${CLIENT_API_NONBLOCKING_FUNCTIONS}
++  COMPONENT SharedLibraries
++  SKIP_INSTALL )
++ELSE(WITHOUT_CLIENTLIBS)
++MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
++  EXPORTS
++  ${CLIENT_API_FUNCTIONS}
++  ${CLIENT_API_FUNCTIONS_UNDOCUMENTED}
++  ${CLIENT_API_NONBLOCKING_FUNCTIONS}
+   COMPONENT SharedLibraries)
++ENDIF(WITHOUT_CLIENTLIBS)
+ TARGET_LINK_LIBRARIES(libmysql PRIVATE ${LIBS_TO_LINK})
+ 
+ IF(WIN32)
+@@ -300,7 +320,7 @@ ENDIF()
+ 
+ IF(UNIX)
+   # libtool compatability
+-  IF(FREEBSD OR APPLE)
++  IF(FREEBSD OR APPLE OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD|DragonFly")
+     SET(OS_SHARED_LIB_VERSION "${SHARED_LIB_MAJOR_VERSION}")
+   ELSE()
+     SET(OS_SHARED_LIB_VERSION

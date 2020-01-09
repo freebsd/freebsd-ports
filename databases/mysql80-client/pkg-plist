@@ -1,7 +1,7 @@
+bin/my_print_defaults
 bin/mysql
 bin/mysql_config
 bin/mysql_config_editor
-bin/mysql_ssl_rsa_setup
 bin/mysqladmin
 bin/mysqlbinlog
 bin/mysqlcheck
@@ -10,6 +10,8 @@ bin/mysqlimport
 bin/mysqlpump
 bin/mysqlshow
 bin/mysqlslap
+bin/perror
+bin/zlib_decompress
 include/mysql/base64.h
 include/mysql/big_endian.h
 include/mysql/c_string_less.h
@@ -41,6 +43,7 @@ include/mysql/my_check_opt.h
 include/mysql/my_command.h
 include/mysql/my_compare.h
 include/mysql/my_compiler.h
+include/mysql/my_compress.h
 include/mysql/my_dbug.h
 include/mysql/my_default.h
 include/mysql/my_dir.h
@@ -181,8 +184,10 @@ lib/mysql/libmysqlclient.so.21
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.21
+%%SASLCLIENT%%lib/mysql/plugin/authentication_ldap_sasl_client.so
 libdata/pkgconfig/mysqlclient.pc
 man/man1/comp_err.1.gz
+man/man1/lz4_decompress.1.gz
 man/man1/mysql.1.gz
 man/man1/mysql_config.1.gz
 man/man1/mysql_config_editor.1.gz
@@ -191,6 +196,10 @@ man/man1/mysqlbinlog.1.gz
 man/man1/mysqlcheck.1.gz
 man/man1/mysqldump.1.gz
 man/man1/mysqlimport.1.gz
+man/man1/mysqlman.1.gz
+man/man1/mysqlpump.1.gz
 man/man1/mysqlshow.1.gz
 man/man1/mysqlslap.1.gz
+man/man1/perror.1.gz
+man/man1/zlib_decompress.1.gz
 share/aclocal/mysql.m4

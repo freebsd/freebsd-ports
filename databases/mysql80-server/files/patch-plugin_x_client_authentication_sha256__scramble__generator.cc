@@ -1,7 +1,7 @@
---- plugin/x/client/sha256_scramble_generator.cc.orig	2018-05-09 14:20:16 UTC
-+++ plugin/x/client/sha256_scramble_generator.cc
-@@ -97,7 +97,7 @@ bool SHA256_digest::retrieve_digest(unsi
-     DBUG_RETURN(true);
+--- plugin/x/client/authentication/sha256_scramble_generator.cc.orig	2019-09-20 08:30:51 UTC
++++ plugin/x/client/authentication/sha256_scramble_generator.cc
+@@ -97,7 +97,7 @@ bool SHA256_digest::retrieve_digest(unsigned char *dig
+     return true;
    }
    m_ok = EVP_DigestFinal_ex(md_context, m_digest, nullptr);
 -#if OPENSSL_VERSION_NUMBER < 0x10100000L
