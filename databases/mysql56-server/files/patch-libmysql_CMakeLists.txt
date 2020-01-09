@@ -1,15 +1,15 @@
---- libmysql/CMakeLists.txt.orig	2013-07-10 18:17:29.000000000 +0200
-+++ libmysql/CMakeLists.txt	2013-08-12 08:59:49.000000000 +0200
-@@ -173,7 +173,7 @@
+--- libmysql/CMakeLists.txt.orig	2020-01-01 21:38:55.670126000 +0100
++++ libmysql/CMakeLists.txt	2020-01-01 21:47:51.799099000 +0100
+@@ -205,7 +205,7 @@ IF(WIN32)
  ENDIF()
  
  # Merge several convenience libraries into one big mysqlclient
--MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development)
-+MERGE_LIBRARIES(mysqlclient STATIC ${LIBS} COMPONENT Development NOINSTALL)
+-MERGE_LIBRARIES(mysqlclient STATIC ${LIBS_TO_MERGE} COMPONENT Development)
++MERGE_LIBRARIES(mysqlclient STATIC ${LIBS_TO_MERGE} COMPONENT Development NOINSTALL)
+ TARGET_LINK_LIBRARIES(mysqlclient ${LIBS_TO_LINK})
  
  # Visual Studio users need debug  static library for debug projects
- IF(MSVC)
-@@ -200,19 +200,22 @@
+@@ -234,20 +234,23 @@ IF(UNIX)
    ENDMACRO()
  ENDIF()
  
@@ -25,15 +25,16 @@
  IF(NOT DISABLE_SHARED)
    # Merge several convenience libraries into one big mysqlclient
    # and link them together into shared library.
-   MERGE_LIBRARIES(libmysql SHARED ${LIBS}
+   MERGE_LIBRARIES(libmysql SHARED ${LIBS_TO_MERGE}
      EXPORTS ${CLIENT_API_FUNCTIONS}
 -    COMPONENT SharedLibraries)
-+    COMPONENT SharedLibraries NOINSTALL)
-+ IF(FALSE)
++	COMPONENT SharedLibraries NOINSTALL)
+   TARGET_LINK_LIBRARIES(libmysql ${LIBS_TO_LINK})
++  IF(FALSE)
    IF(UNIX)
      # libtool compatability
      IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
-@@ -271,4 +274,5 @@
+@@ -316,4 +319,5 @@ IF(NOT DISABLE_SHARED)
          ${INSTALL_LIBDIR} SharedLibraries)
      ENDFOREACH()
    ENDIF()
