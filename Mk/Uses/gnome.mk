@@ -104,7 +104,7 @@ USE_LOCALE?=	en_US.UTF-8
 GNOME_MAKEFILEIN?=	Makefile.in
 SCROLLKEEPER_DIR=	/var/db/rarian
 
-referencehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in" -type f | ${XARGS} ${REINPLACE_CMD} -e \
+referencehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in" -type f | ${XARGS} ${FRAMEWORK_REINPLACE_CMD} -e \
 				"s|test \"\$$\$$installfiles\" = '\$$(srcdir)/html/\*'|:|"
 
 GNOME_HTML_DIR?=	${PREFIX}/share/doc
@@ -313,12 +313,12 @@ pygnome2_USE_GNOME_IMPL=libgnomeui pygtk2
 
 intltool_BUILD_DEPENDS=	${LOCALBASE}/bin/intltool-extract:textproc/intltool
 
-intlhack_PRE_PATCH=	${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} \
+intlhack_PRE_PATCH=	${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${FRAMEWORK_REINPLACE_CMD} \
 			's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
 			 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";| ; \
 			 s|/usr/bin/iconv|${ICONV_CMD}|g ; \
 			 s|unpack *[(]'"'"'U\*'"'"'|unpack ('"'"'C*'"'"'|' ; \
-			${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} \
+			${FIND} ${WRKSRC} -name configure | ${XARGS} ${FRAMEWORK_REINPLACE_CMD} \
 			's/DATADIRNAME=lib/DATADIRNAME=share/'
 intlhack_USE_GNOME_IMPL=intltool
 
