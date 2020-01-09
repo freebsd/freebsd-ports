@@ -1,0 +1,12 @@
+--- gas/configure.tgt.orig	2020-01-07 16:52:58.735417000 +0100
++++ gas/configure.tgt	2020-01-07 16:54:02.168703000 +0100
+@@ -392,7 +392,8 @@
+ 
+   sparc-*-linux-*)			fmt=elf em=linux ;;
+   sparc-*-solaris*)			fmt=elf em=solaris ;;
+-  sparc-*-*bsd*)			fmt=elf em=nbsd ;;
++  sparc-*-freebsd*)                     fmt=elf em=freebsd ;;
++  sparc-*-netbsd* | sparc-*-openbsd*)   fmt=elf em=nbsd ;;
+ 
+   spu-*-elf)				fmt=elf ;;
+ 
