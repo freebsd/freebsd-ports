@@ -28,7 +28,7 @@ _USES_patch+=	190:pathfix
 pathfix:
 .if ${USES:Mcmake*}
 .for file in ${PATHFIX_CMAKELISTSTXT}
-	@${FIND} ${PATHFIX_WRKSRC} -name "${file}" -type f | ${XARGS} ${REINPLACE_CMD} -e \
+	@${FIND} ${PATHFIX_WRKSRC} -name "${file}" -type f | ${XARGS} ${FRAMEWORK_REINPLACE_CMD} -e \
 		's|[{]CMAKE_INSTALL_LIBDIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
 		s|[{]CMAKE_INSTALL_DATAROOTDIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
 		s|[{]INSTALL_LIB_DIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
@@ -43,7 +43,7 @@ pathfix:
 .endfor
 .else
 .for file in ${PATHFIX_MAKEFILEIN}
-	@${FIND} ${PATHFIX_WRKSRC} -name "${file}" -type f | ${XARGS} ${REINPLACE_CMD} -e \
+	@${FIND} ${PATHFIX_WRKSRC} -name "${file}" -type f | ${XARGS} ${FRAMEWORK_REINPLACE_CMD} -e \
 		's|[(]libdir[)]/locale|(prefix)/share/locale|g ; \
 		s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 		s|[(]LIBDIR[)]/pkgconfig|(PREFIX)/libdata/pkgconfig|g ; \
