@@ -25,7 +25,7 @@ SHEBANG_FILES=	bin/waagent bin/waagent2.0
 USE_GITHUB=	yes
 GH_ACCOUNT=	Azure
 GH_PROJECT=	WALinuxAgent
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils noflavors
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/etc/waagent,${PREFIX}/etc/waagent,g" \

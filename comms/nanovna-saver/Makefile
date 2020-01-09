@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USES=		python:3.3+ pyqt:5 qt:5
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist noflavors
 USE_PYQT=	core_run gui_run widgets_run
 QT5_USE=	core gui widgets
 
