@@ -330,26 +330,7 @@ DEV_ERROR+=		"USES=python:2 is no longer supported, use USES=python:2.7"
 DEV_ERROR+=		"USES=python:3 is no longer supported, use USES=python:3.5+ or an appropriate version range"
 .endif  # ${_PYTHON_ARGS} == "2"
 
-.if defined(PYTHON_VERSION)
-# A port/user requests a specific python version for its dependencies via
-# DEPENDS_ARGS, since it requires the specific python version itself.
-# Several things can happen now:
-#	a) the dependency supports the requested version -> everything's fine
-#	b) the dependency does not support the requested version
-#		1) the dependency works in a way that the different python
-#		   versions do not matter -> everything's fine
-#		2) the dependency is likely to break due to the conflict
-#		   nothing's fine
-#
-# b.2) needs to be resolved. Due to the complexity of how different pieces of
-# software are built, we can't solve this automatically. Instead, let's assume
-# that maintainers know what they are doing and assume PYTHON_VERSION to be a
-# hint. Just warn maintainers, if the versions do not match
-# (_PYTHON_VERSION_NONSUPPORTED).
-_PYTHON_VERSION:=	${PYTHON_VERSION:S/^python//}
-.else
 _PYTHON_VERSION:=	${PYTHON_DEFAULT}
-.endif # defined(PYTHON_VERSION)
 
 # Validate Python version whether it meets the version restriction.
 _PYTHON_VERSION_CHECK:=		${_PYTHON_ARGS:C/^([1-9]\.[0-9])$/\1-\1/}
@@ -374,10 +355,6 @@ _PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MAXIMUM} at most
 
 # If we have an unsupported version of Python, try another.
 .if defined(_PYTHON_VERSION_NONSUPPORTED)
-.if defined(PYTHON_VERSION) || defined(PYTHON_CMD)
-_PV:=		${_PYTHON_VERSION}	# preserve the specified python version
-IGNORE=		needs Python ${_PYTHON_VERSION_NONSUPPORTED}, but ${_PV} was specified
-.endif # defined(PYTHON_VERSION) || defined(PYTHON_CMD)
 .undef _PYTHON_VERSION
 .for ver in ${PYTHON2_DEFAULT} ${PYTHON3_DEFAULT} ${_PYTHON_VERSIONS}
 __VER=		${ver}
@@ -454,21 +431,7 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 # - From PYTHON_DEFAULT
 PY_FLAVOR=	py${_PYTHON_VERSION:S/.//}
 
-# Pass PYTHON_VERSION down the dependency chain. This ensures that
-# port A -> B -> C all will use the same python version and do not
-# try to find a different one, if the passed version fits into
-# the supported version range.
-PYTHON_VERSION?=	python${_PYTHON_VERSION}
-
-# NOTE:
-#
-#  PYTHON_VERSION will hold whatever is passed down the dependency chain.
-#  If a user runs `make PYTHON_VERSION=python3.5, PYTHON_VERSION will be
-#  set to 'python3.5'. A port however may require a different version,
-#  which is stored (above) in _PYTHON_VERSION.
-#  Every python bit below hence should use python${_PYTHON_VERSION}, since
-#  this is the value, the _port_ requires
-#
+PYTHON_VERSION=	python${_PYTHON_VERSION}
 
 # Got the correct python version, set some publicly accessible variables
 PYTHON_VER=		${_PYTHON_VERSION}
@@ -553,7 +516,7 @@ DEV_WARNING+=	"USE_PYTHON=concurrent when only one of Python 2 or 3 is supported
 _USES_POST+=		uniquefiles:dirs
 .if defined(_PYTHON_FEATURE_FLAVORS) && ${FLAVOR} == ${FLAVORS:[1]}
 UNIQUE_DEFAULT_LINKS=	yes
-.elif !defined(_PYTHON_FEATURE_FLAVORS) && ${PYTHON_VERSION} == python${PYTHON_DEFAULT}
+.elif !defined(_PYTHON_FEATURE_FLAVORS) && ${_PYTHON_VERSION} == ${PYTHON_DEFAULT}
 UNIQUE_DEFAULT_LINKS=	yes
 .else
 UNIQUE_DEFAULT_LINKS=	no
