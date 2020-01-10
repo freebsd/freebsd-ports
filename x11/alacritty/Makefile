@@ -2,8 +2,7 @@
 
 PORTNAME=	alacritty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
-PORTREVISION=	1
+DISTVERSION=	0.4.1
 CATEGORIES=	x11
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -19,8 +18,7 @@ TEST_DEPENDS=	dejavu>0:x11-fonts/dejavu
 USES=		cargo localbase:ldflags python:3.6+,build ssl:build xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	jwilm
-GH_TUPLE=	chrisduerr:glutin:7e479dca8be6244b96e2a080714fc4babf7fe30d:glutin \
-		rust-windowing:winit:a95ebc5ee6a085140c57735aab44bcfff7f839ea:winit
+GH_TUPLE=	rust-windowing:winit:d1c6506865c7bddbb5fb4d80a613e43ddc1370b5:winit
 USE_XORG=	xcb
 
 CARGO_CRATES=	adler32-1.0.4 \
@@ -48,9 +46,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		bzip2-sys-0.1.7 \
 		c2-chacha-0.2.3 \
 		calloop-0.4.4 \
-		cc-1.0.47 \
+		cc-1.0.48 \
 		cexpr-0.2.3 \
-		cfg-if-0.1.9 \
+		cfg-if-0.1.10 \
 		cgl-0.3.2 \
 		clang-sys-0.22.0 \
 		clap-2.33.0 \
@@ -58,7 +56,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		cloudabi-0.0.3 \
 		cmake-0.1.42 \
 		cocoa-0.19.1 \
-		color_quant-1.0.1 \
 		constant_time_eq-0.1.4 \
 		core-foundation-0.6.4 \
 		core-foundation-sys-0.6.2 \
@@ -66,11 +63,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		core-text-13.3.2 \
 		core-video-sys-0.1.3 \
 		crc32fast-1.2.0 \
-		crossbeam-deque-0.7.2 \
-		crossbeam-epoch-0.8.0 \
-		crossbeam-queue-0.2.0 \
 		crossbeam-utils-0.6.6 \
-		crossbeam-utils-0.7.0 \
 		deflate-0.7.20 \
 		dirs-2.0.2 \
 		dirs-sys-0.3.4 \
@@ -78,13 +71,11 @@ CARGO_CRATES=	adler32-1.0.4 \
 		dlib-0.4.1 \
 		downcast-rs-1.1.1 \
 		dtoa-0.4.4 \
-		dunce-1.0.0 \
 		dwrote-0.9.0 \
-		either-1.5.3 \
 		embed-resource-1.3.1 \
 		env_logger-0.5.13 \
 		env_logger-0.7.1 \
-		euclid-0.20.4 \
+		euclid-0.20.7 \
 		expat-sys-2.1.6 \
 		failure-0.1.6 \
 		failure_derive-0.1.6 \
@@ -104,12 +95,18 @@ CARGO_CRATES=	adler32-1.0.4 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		getrandom-0.1.13 \
-		gif-0.10.3 \
+		gl_generator-0.11.0 \
 		gl_generator-0.13.1 \
 		gl_generator-0.14.0 \
 		glob-0.2.11 \
-		hermit-abi-0.1.3 \
-		http_req-0.5.3 \
+		glutin-0.22.0-alpha5 \
+		glutin_egl_sys-0.1.4 \
+		glutin_emscripten_sys-0.1.0 \
+		glutin_gles2_sys-0.1.3 \
+		glutin_glx_sys-0.1.5 \
+		glutin_wgl_sys-0.1.3 \
+		hermit-abi-0.1.6 \
+		http_req-0.5.4 \
 		humantime-1.3.0 \
 		idna-0.2.0 \
 		image-0.22.3 \
@@ -120,30 +117,27 @@ CARGO_CRATES=	adler32-1.0.4 \
 		iovec-0.1.4 \
 		itoa-0.4.4 \
 		jobserver-0.1.17 \
-		jpeg-decoder-0.1.16 \
 		kernel32-sys-0.2.2 \
 		khronos_api-3.1.0 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
-		libc-0.2.65 \
+		libc-0.2.66 \
 		libloading-0.5.2 \
 		libz-sys-1.0.25 \
 		line_drawing-0.7.0 \
 		linked-hash-map-0.5.2 \
-		lock_api-0.3.1 \
+		lock_api-0.3.3 \
 		log-0.4.8 \
-		lzw-0.10.0 \
 		malloc_buf-0.0.6 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
 		memchr-1.0.2 \
 		memchr-2.2.1 \
 		memmap-0.7.0 \
-		memoffset-0.5.3 \
 		miniz_oxide-0.3.5 \
-		mio-0.6.20 \
+		mio-0.6.21 \
 		mio-anonymous-pipes-0.1.0 \
-		mio-extras-2.0.5 \
+		mio-extras-2.0.6 \
 		mio-named-pipes-0.1.6 \
 		miow-0.2.1 \
 		miow-0.3.3 \
@@ -155,7 +149,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		nom-3.2.1 \
 		nom-4.2.3 \
 		notify-4.0.14 \
-		num-derive-0.2.5 \
 		num-integer-0.1.41 \
 		num-iter-0.1.39 \
 		num-rational-0.2.2 \
@@ -170,7 +163,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		ordered-float-1.0.2 \
 		osmesa-sys-0.1.2 \
 		parking_lot-0.9.0 \
+		parking_lot-0.10.0 \
 		parking_lot_core-0.6.2 \
+		parking_lot_core-0.7.0 \
 		peeking_take_while-0.1.2 \
 		percent-encoding-2.1.0 \
 		phf-0.7.24 \
@@ -178,12 +173,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		phf_generator-0.7.24 \
 		phf_shared-0.7.24 \
 		pkg-config-0.3.17 \
-		png-0.15.1 \
+		png-0.15.2 \
 		podio-0.1.6 \
 		ppv-lite86-0.2.6 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.6 \
-		quick-error-1.2.2 \
+		proc-macro2-1.0.7 \
+		quick-error-1.2.3 \
 		quote-0.3.15 \
 		quote-0.6.13 \
 		quote-1.0.2 \
@@ -201,9 +196,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		rand_os-0.1.3 \
 		rand_pcg-0.1.2 \
 		rand_xorshift-0.1.1 \
-		raw-window-handle-0.3.1 \
-		rayon-1.2.1 \
-		rayon-core-1.6.1 \
+		raw-window-handle-0.3.3 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
 		redox_users-0.3.1 \
@@ -221,53 +214,50 @@ CARGO_CRATES=	adler32-1.0.4 \
 		ryu-1.0.2 \
 		same-file-1.0.5 \
 		schannel-0.1.16 \
-		scoped_threadpool-0.1.9 \
 		scopeguard-1.0.0 \
 		security-framework-0.3.4 \
 		security-framework-sys-0.3.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.102 \
-		serde_derive-1.0.102 \
-		serde_json-1.0.41 \
+		serde-1.0.104 \
+		serde_derive-1.0.104 \
+		serde_json-1.0.44 \
 		serde_yaml-0.8.11 \
 		servo-fontconfig-0.4.0 \
-		servo-fontconfig-sys-4.0.7 \
+		servo-fontconfig-sys-4.0.9 \
 		shared_library-0.1.9 \
 		signal-hook-0.1.12 \
 		signal-hook-registry-1.2.0 \
 		siphasher-0.2.3 \
 		slab-0.4.2 \
 		smallvec-0.6.13 \
-		smallvec-1.0.0 \
+		smallvec-1.1.0 \
 		smithay-client-toolkit-0.6.4 \
 		smithay-clipboard-0.3.6 \
 		socket2-0.3.11 \
 		spsc-buffer-0.1.1 \
 		stb_truetype-0.3.1 \
 		strsim-0.8.0 \
-		syn-0.15.44 \
-		syn-1.0.8 \
+		syn-1.0.13 \
 		synstructure-0.12.3 \
 		tempfile-3.1.0 \
 		termcolor-1.0.5 \
 		terminfo-0.6.1 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
-		tiff-0.3.1 \
 		time-0.1.42 \
 		ucd-util-0.1.5 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.11 \
-		unicode-width-0.1.6 \
+		unicode-width-0.1.7 \
 		unicode-xid-0.1.0 \
 		unicode-xid-0.2.0 \
 		url-2.1.0 \
-		urlocator-0.1.1 \
+		urlocator-0.1.2 \
 		utf8-ranges-1.0.4 \
 		utf8parse-0.1.1 \
-		vcpkg-0.2.7 \
+		vcpkg-0.2.8 \
 		vec_map-0.8.1 \
 		version_check-0.1.5 \
 		version_check-0.9.1 \
@@ -283,7 +273,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		wayland-scanner-0.23.6 \
 		wayland-sys-0.23.6 \
 		which-1.0.5 \
-		widestring-0.4.0 \
 		winapi-0.2.8 \
 		winapi-0.3.8 \
 		winapi-build-0.1.1 \
@@ -294,15 +283,14 @@ CARGO_CRATES=	adler32-1.0.4 \
 		winpty-sys-0.4.3 \
 		winreg-0.6.2 \
 		ws2_32-sys-0.2.1 \
-		x11-clipboard-0.3.3 \
+		x11-clipboard-0.4.0 \
 		x11-dl-2.18.4 \
-		xcb-0.8.2 \
+		xcb-0.9.0 \
 		xdg-2.2.0 \
 		xml-rs-0.8.0 \
 		yaml-rust-0.4.3 \
 		zip-0.5.3
 CARGO_USE_GITHUB=	yes
-CARGO_GIT_SUBDIR=	glutin:glutin:glutin
 
 CARGO_INSTALL_PATH=	alacritty
 
