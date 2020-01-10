@@ -1,4 +1,0 @@
-Js_of_ocaml is a compiler of OCaml bytecode to Javascript. It makes it
-possible to run Ocaml programs in a Web browser.
-
-WWW: http://ocsigen.org/js_of_ocaml/

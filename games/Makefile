@@ -888,7 +888,6 @@
     SUBDIR += stendhal
     SUBDIR += stockfish
     SUBDIR += stonesoup
-    SUBDIR += stonesoup-sdl
     SUBDIR += stormbaancoureur
     SUBDIR += stransball2
     SUBDIR += stratagus
@@ -1113,7 +1112,6 @@
     SUBDIR += xtgyoretsu
     SUBDIR += xtic
     SUBDIR += xtriangles
-    SUBDIR += xtris
     SUBDIR += xtrojka
     SUBDIR += xtron
     SUBDIR += xtruco

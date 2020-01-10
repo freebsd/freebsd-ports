@@ -1,5 +1,0 @@
-gen_rpc uses a mailbox-per-node architecture and gen_tcp processes
-to parallelize data reception from multiple nodes without blocking
-the VM's distributed port.
-
-WWW: https://github.com/priestjim/gen_rpc

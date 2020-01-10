@@ -743,7 +743,6 @@
     SUBDIR += sidplayer
     SUBDIR += simplemod
     SUBDIR += siren
-    SUBDIR += slv2
     SUBDIR += snack
     SUBDIR += snd
     SUBDIR += sndio
@@ -818,7 +817,6 @@
     SUBDIR += toolame
     SUBDIR += tosha
     SUBDIR += traverso
-    SUBDIR += triceratops-lv2
     SUBDIR += trommler
     SUBDIR += tse3
     SUBDIR += tta

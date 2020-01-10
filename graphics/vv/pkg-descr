@@ -1,9 +1,0 @@
-Open-source and cross platform image viewer, designed for fast and simple
-visualization of spatio-temporal images: 2D, 2D+t, 3D and 3D+t (or 4D) images.
-
-VV is designed for qualitative evaluation of image registration and deformation
-field visualization. It contains several tools for superimposing images using
-complementary colors or transparency, visualizing vector fields and defining
-landmarks.
-
-WWW: https://www.creatis.insa-lyon.fr/rio/vv/

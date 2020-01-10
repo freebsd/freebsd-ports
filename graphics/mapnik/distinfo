@@ -1,7 +1,0 @@
-TIMESTAMP = 1448548335
-SHA256 (mapnik-v3.0.9.tar.bz2) = 3a3f67532b05f8a527a5bab32effd7dd5aa59165c7e24505268f6d827955d3da
-SIZE (mapnik-v3.0.9.tar.bz2) = 75213927
-SHA256 (1ddfe6c31548.patch) = fab754996485dc607108a4fd69d0df82414928eb5a210b329a84f47e90da0c8a
-SIZE (1ddfe6c31548.patch) = 2148
-SHA256 (c067eb7eec32.patch) = ac00d86197bba3ea5d6f72d23ea336412effd29ce779cedd8acafbcc563b81dc
-SIZE (c067eb7eec32.patch) = 2405

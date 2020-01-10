@@ -1,4 +1,0 @@
-bootfile=ubldr
-loadaddr=0x02000000
-fdt_file=board.dtb
-uenvcmd=echo Booting FreeBSD from SD Card: ; fatload mmc 0 ${loadaddr} ${bootfile} && bootelf ${loadaddr}
