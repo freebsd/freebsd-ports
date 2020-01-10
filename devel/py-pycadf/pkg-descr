@@ -1,5 +1,7 @@
-Provides an auditing data model based on the Cloud Auditing Data Federation
-specification, primarily for use by OpenStack. The goal is to establish strict
-expectations about what auditors can expect from audit notifications.
+This library provides an auditing data model based on the Cloud Auditing Data
+Federation specification, primarily for use by OpenStack. The goal is to
+establish strict expectations about what auditors can expect from audit
+notifications.
 
-WWW: https://docs.openstack.org/pycadf/
+WWW: https://docs.openstack.org/pycadf/latest/
+WWW: https://github.com/openstack/pycadf
