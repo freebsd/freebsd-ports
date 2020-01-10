@@ -17,14 +17,13 @@ LICENSE_FILE=	${WRKSRC}/ARX_PUBLIC_LICENSE.txt
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/foreach.hpp:devel/boost-libs
 
-USES=		cmake gl openal sdl tar:xz
+USES=		cmake compiler:c++11-lang gl openal sdl tar:xz
 USE_SDL=	sdl
 USE_GL=		gl glew
 LLD_UNSAFE=	yes
 CMAKE_ARGS=	-DDATA_DIR=arx \
 		-DSTRICT_USE=ON \
 		-DBUILD_CRASHREPORTER=OFF
-CFLAGS_powerpc64+=	-mminimal-toc
 
 SUB_FILES=	pkg-message
 
@@ -32,6 +31,12 @@ PORTDOCS=	AUTHORS CHANGELOG README.md
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
+
+.include <bsd.port.pre.mk>
+
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
+CFLAGS+=	-mminimal-toc
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
@@ -42,4 +47,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
