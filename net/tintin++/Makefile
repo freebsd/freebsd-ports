@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tintin++
-PORTVERSION=	2.01.92
+PORTVERSION=	2.02.00
 CATEGORIES+=	net games
-MASTER_SITES=	SF/tintin/TinTin%2B%2B%20Source%20Code/${PORTVERSION:C|.$||}/
+MASTER_SITES=	SF/tintin/TinTin%2B%2B%20Source%20Code/${PORTVERSION:C|.$||}/ \
+		https://github.com/scandum/tintin/releases/download/${PORTVERSION}/
 DISTNAME=	tintin-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
