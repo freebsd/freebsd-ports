@@ -13723,3 +13723,28 @@ devel/gperf31|devel/gperf|2020-01-04|No longer needed as devel/gperf has been up
 devel/yosys|cad/yosys|2020-01-04|Move to a proper category
 cad/ujprog|comms/ujprog|2020-01-05|Move to a proper category
 net/gnatsd|net/nats-server|2020-01-06|Renamed upstream
+astro/viking||2020-01-10|Has expired: Depends on broken and expiring graphics/mapnik
+audio/slv2||2020-01-10|Has expired: Broken for more than 5 months
+audio/triceratops-lv2||2020-01-10|Has expired: Broken for more than 5 months
+cad/brickutils||2020-01-10|Has expired: Broken for more than 3 months, unmaintained
+deskutils/zanshin||2020-01-10|Has expired: Broken for more than 5 months
+devel/elixir-gen_state_machine||2020-01-10|Has expired: Broken for more than 6 months
+devel/elixir-swarm||2020-01-10|Has expired: Depends on broken and expiring devel/elixir-gen_state_machine
+devel/erlang-clique||2020-01-10|Has expired: Depends on broken and expiring devel/erlang-cuttlefish
+devel/erlang-gen_rpc||2020-01-10|Has expired: Broken for more than 6 months
+devel/erlang-msgpack||2020-01-10|Has expired: Broken for more than 6 months
+devel/ocaml-deriving-ocsigen||2020-01-10|Has expired: Broken for more than 6 months
+devel/p5-rpm-build-perl||2020-01-10|Has expired: Broken for more than 7 months
+devel/shedskin||2020-01-10|Has expired: Broken for more than 3 months, unmaintained
+games/stonesoup-sdl||2020-01-10|Has expired: Broken for more than 8 months
+games/xtris||2020-01-10|Has expired: Broken for more than 3 months
+graphics/mapnik||2020-01-10|Has expired: Broken for more than 8 months
+graphics/vv||2020-01-10|Has expired: Broken for more than 4 months
+lang/js_of_ocaml||2020-01-10|Has expired: Depends on broken and expiring devel/ocaml-deriving-ocsigen
+lang/rubinius||2020-01-10|Has expired: Broken for more than 7 months
+math/dynare||2020-01-10|Has expired: Broken for more than 9 months
+science/meep||2020-01-10|Has expired: Broken for more than 6 months
+sysutils/hfm||2020-01-10|Has expired: Broken for more than 4 months
+sysutils/u-boot-zedboard||2020-01-10|Has expired: Broken for more than 6 months
+sysutils/u-boot-zybo||2020-01-10|Has expired: Broken for more than 6 months
+x11-themes/kde-icons-kool-gorilla||2020-01-10|Has expired: Broken for more than 3 months, unmaintained

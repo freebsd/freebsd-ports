@@ -1,6 +1,0 @@
-Clique is an opinionated framework for building command line
-interfaces in Erlang. It provides users with an interface that gives
-them enough power to build complex CLIs, but enough constraint to
-make them appear consistent.
-
-WWW: https://github.com/basho/clique

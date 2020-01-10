@@ -1,6 +1,0 @@
-Extension to OCaml for deriving functions from type declarations. Includes
-derivers for pretty-printing, type-safe marshalling with structure-sharing,
-dynamic typing, equality, and more. This is a version of the deriving library
-adapted for use with Ocsigen.
-
-WWW: https://github.com/ocsigen/deriving
