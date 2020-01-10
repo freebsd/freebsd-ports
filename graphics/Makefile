@@ -1042,6 +1042,7 @@
     SUBDIR += vkd3d
     SUBDIR += volpack
     SUBDIR += vp
+    SUBDIR += vpaint
     SUBDIR += vulkan-loader
     SUBDIR += vv
     SUBDIR += waffle
