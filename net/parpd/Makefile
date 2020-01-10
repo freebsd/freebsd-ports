@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	parpd
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.iks-jena.de/pub/mitarb/lutz/parpd/
 
