@@ -1,6 +1,6 @@
---- dialects/freebsd/dnode2.c.orig	2019-05-08 00:32:25.000000000 -0700
-+++ dialects/freebsd/dnode2.c	2020-01-05 20:22:25.621138000 -0800
-@@ -49,7 +49,13 @@
+--- dialects/freebsd/dnode2.c.orig	2019-05-08 07:32:25 UTC
++++ dialects/freebsd/dnode2.c
+@@ -49,7 +49,13 @@ static char *rcsid = "$Id: dnode2.c,v 1.7 2018/02/14 1
   *
   * Note: clang's complaint about VOP_FSYNC can't be avoided.
   */
