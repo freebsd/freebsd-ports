@@ -168,6 +168,7 @@
     SUBDIR += art
     SUBDIR += artifactory
     SUBDIR += asl
+    SUBDIR += asmjit
     SUBDIR += asmutils
     SUBDIR += asmx
     SUBDIR += astah-community
