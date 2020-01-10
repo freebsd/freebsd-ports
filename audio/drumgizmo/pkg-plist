@@ -1,4 +1,3 @@
-bin/dgreftest
 bin/dgvalidator
 bin/drumgizmo
 lib/lv2/drumgizmo.lv2/drumgizmo.so
