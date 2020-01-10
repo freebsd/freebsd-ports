@@ -11,7 +11,7 @@ include/dwg_api.h
 lib/libredwg.a
 lib/libredwg.so
 lib/libredwg.so.0
-lib/libredwg.so.0.0.9
+lib/libredwg.so.0.0.10
 libdata/pkgconfig/libredwg.pc
 man/man1/dwg2SVG.1.gz
 man/man1/dwg2dxf.1.gz
