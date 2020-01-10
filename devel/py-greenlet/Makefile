@@ -13,7 +13,7 @@ COMMENT=	Light-weight microthreads for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=		mips mips64 powerpc64
+NOT_FOR_ARCHS=		mips mips64
 NOT_FOR_ARCHS_REASON=	greenlet needs to be ported to this platform
 
 USES=		python
