@@ -16,7 +16,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
-BROKEN_powerpc64=	fails to link: undefined reference to `boost::re_detail_106900::cpp_regex_traits_implementation<char>::transform(char const*, char const*) const'
+BROKEN_FreeBSD_11_powerpc64=	fails to pass tests
+BROKEN_FreeBSD_12_powerpc64=	fails to pass tests
 BROKEN_sparc64=		fails to link
 
 USES=		cmake:noninja iconv ssl
