@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mustermann-grape
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +11,7 @@ COMMENT=	Adds Grape style patterns to Mustermman
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-mustermann>=1.0<2:devel/rubygem-mustermann
+RUN_DEPENDS=	rubygem-mustermann>=1.0:devel/rubygem-mustermann
 
 USES=		gem
 USE_RUBY=	yes
