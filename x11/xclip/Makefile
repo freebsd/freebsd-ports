@@ -5,7 +5,7 @@ PORTNAME=	xclip
 PORTVERSION=	0.13
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Interface to X selections ("the clipboard") from the command line
 
 LICENSE=	GPLv2
