@@ -19,6 +19,7 @@ include/botan-2/botan/asn1_time.h
 include/botan-2/botan/assert.h
 include/botan-2/botan/atomic.h
 include/botan-2/botan/auto_rng.h
+include/botan-2/botan/b64_filt.h
 include/botan-2/botan/base32.h
 include/botan-2/botan/base58.h
 include/botan-2/botan/base64.h
@@ -123,6 +124,7 @@ include/botan-2/botan/gost_3411.h
 include/botan-2/botan/hash.h
 include/botan-2/botan/hash_id.h
 include/botan-2/botan/hex.h
+include/botan-2/botan/hex_filt.h
 include/botan-2/botan/hkdf.h
 include/botan-2/botan/hmac.h
 include/botan-2/botan/hmac_drbg.h
@@ -220,6 +222,7 @@ include/botan-2/botan/rfc6979.h
 include/botan-2/botan/rmd160.h
 include/botan-2/botan/rng.h
 include/botan-2/botan/rotate.h
+include/botan-2/botan/roughtime.h
 include/botan-2/botan/rsa.h
 include/botan-2/botan/salsa20.h
 include/botan-2/botan/scan_name.h
@@ -316,6 +319,6 @@ include/botan-2/botan/zlib.h
 lib/libbotan-2.a
 lib/libbotan-2.so
 lib/libbotan-2.so.%%SHLIBVER%%
-lib/libbotan-2.so.%%SHLIBVER%%.%%SHLIBVER%%.1
+lib/libbotan-2.so.%%SHLIBVER%%.%%SHLIBVER%%.%%SHLIBVERPATCH%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/botan2.py
 libdata/pkgconfig/botan-2.pc
