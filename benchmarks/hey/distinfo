@@ -1,7 +1,3 @@
-TIMESTAMP = 1548751798
-SHA256 (rakyll-hey-v0.1.1_GH0.tar.gz) = c068017b8299fbfa4d386e6f98fb1a4ecca2be49cee41ae9dffcf60be4c2ed0b
-SIZE (rakyll-hey-v0.1.1_GH0.tar.gz) = 14283
-SHA256 (golang-net-04a2e54_GH0.tar.gz) = c5242b0eac35a3460dbaa3c19c518f802ec82ce9a025bb41dab7a8ef7dcc45c2
-SIZE (golang-net-04a2e54_GH0.tar.gz) = 967090
-SHA256 (golang-text-v0.3.0_GH0.tar.gz) = 8f4c9a048345befc7beccd09267737ee1f55c7b35e5ff80f344ec9e0aa90febb
-SIZE (golang-text-v0.3.0_GH0.tar.gz) = 6102619
+TIMESTAMP = 1578677070
+SHA256 (rakyll-hey-v0.1.2_GH0.tar.gz) = 7eb18da813c98c995fc101cecc464a9f715a2c4266b77191c69c8d5504ccad19
+SIZE (rakyll-hey-v0.1.2_GH0.tar.gz) = 446073
