@@ -6,6 +6,7 @@ include/cupsfilters/colord.h
 include/cupsfilters/colormanager.h
 include/cupsfilters/driver.h
 include/cupsfilters/image.h
+include/cupsfilters/ipp.h
 include/cupsfilters/pdftoippprinter.h
 include/cupsfilters/ppdgenerator.h
 include/cupsfilters/raster.h
@@ -25,8 +26,8 @@ lib/libfontembed.so.1.0.0
 libdata/pkgconfig/libcupsfilters.pc
 libdata/pkgconfig/libfontembed.pc
 libexec/cups/backend/beh
-%%BRAILLE%%libexec/cups/backend/cups-brf
-libexec/cups/backend/driverless
+%%BRAILLE%%@(,,0700) libexec/cups/backend/cups-brf
+@(,,0700) libexec/cups/backend/driverless
 libexec/cups/backend/implicitclass
 libexec/cups/backend/parallel
 libexec/cups/backend/serial
