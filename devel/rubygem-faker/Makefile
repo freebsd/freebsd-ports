@@ -2,6 +2,7 @@
 
 PORTNAME=	faker
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Library for generating fake data: names, addresses, phone numbers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-RUN_DEPENDS=	rubygem-i18n>=1.6,2<1.8,2:devel/rubygem-i18n
+RUN_DEPENDS=	rubygem-i18n>=1.6,2<1.9,2:devel/rubygem-i18n
 
 USES=		gem
 USE_RUBY=	yes
