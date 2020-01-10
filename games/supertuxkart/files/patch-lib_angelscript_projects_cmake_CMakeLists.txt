@@ -1,10 +1,10 @@
---- lib/angelscript/projects/cmake/CMakeLists.txt.orig	2019-10-12 16:56:04 UTC
+--- lib/angelscript/projects/cmake/CMakeLists.txt.orig	2020-01-03 18:47:06 UTC
 +++ lib/angelscript/projects/cmake/CMakeLists.txt
-@@ -111,7 +111,6 @@ if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "^arm")
-     enable_language(ASM)
+@@ -112,7 +112,6 @@ if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "^arm")
      if(CMAKE_ASM_COMPILER_WORKS)
          set(ANGELSCRIPT_SOURCE ${ANGELSCRIPT_SOURCE} ../../source/as_callfunc_arm.cpp ../../source/as_callfunc_arm_gcc.S)
--        set_property(SOURCE ../../source/as_callfunc_arm_gcc.S APPEND PROPERTY COMPILE_FLAGS " -Wa,-mimplicit-it=always")
+         if (NOT IOS)
+-            set_property(SOURCE ../../source/as_callfunc_arm_gcc.S APPEND PROPERTY COMPILE_FLAGS " -Wa,-mimplicit-it=always")
+         endif()
      else()
          message(FATAL ERROR "ARM target requires a working assembler")
-     endif()
