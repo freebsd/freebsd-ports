@@ -13,7 +13,7 @@ COMMENT=	Crystalline and molecular structure visualisation program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake compiler
 USE_GITHUB=	yes
 GH_ACCOUNT=	sgsaenger
 USE_LDCONFIG=	yes
@@ -31,10 +31,18 @@ PYTHON_CMAKE_BOOL=	PYTHON
 PYTHON_BROKEN=		Bundles pybind11: https://github.com/sgsaenger/vipster/issues/23
 
 # use clang from ports because older clang (clang-6) lacks the c++17 feature std::mmap::extract
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CPP=		clang-cpp${LLVM_DEFAULT}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
+
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+LLVM_VER=	${LLVM_DEFAULT}
+BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
+CPP=		clang-cpp${LLVM_VER}
+CC=		clang${LLVM_VER}
+CXX=		clang++${LLVM_VER}
+.else
+USE_GCC=	yes
+.endif
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
@@ -42,4 +50,4 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
