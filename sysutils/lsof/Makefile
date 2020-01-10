@@ -1,6 +1,9 @@
 # Created by: David O'Brien <obrien@FreeBSD.org>
 # $FreeBSD$
 
+# note: If someone has a fix for a particular ARCH please feel free
+#       to commit it.  I (ler) don't have access to all the ARCH's
+
 PORTNAME=	lsof
 DISTVERSION=	4.93.2
 PORTREVISION=	9
@@ -29,6 +32,13 @@ SHEBANG_FILES=	scripts/sort_res.perl5
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
+
+# PPC64 needs -lzpool for reasons unknown.  If someone can 
+# figure out why, I (ler) am all ears.
+.if ${ARCH} == powerpc64
+CONFIGURE_ENV+= LSOF_CFGL="-lzpool"
+. endif
+
 
 .if !exists(${SRC_BASE}/sys/kern/kern_lockf.c)
 IGNORE+=		requires kernel sources
