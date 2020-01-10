@@ -1,0 +1,10 @@
+Blend2D is a high performance 2D vector graphics engine written in C++ and
+released under the Zlib license. It has a built-in JIT compiler that generates
+optimized pipelines at runtime. Additionally, the engine features a new
+rasterizer that has been written from scratch. It delivers superior performance
+while quality is comparable to rasterizers used by AGG and FreeType. The
+performance has been optimized by using an innovative approach to index data
+that is built during rasterization and scanned during composition. The
+rasterizer is robust and excels in rendering complex vector art and text.
+
+WWW: https://blend2d.com/

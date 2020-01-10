@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2020-01-10 05:21:39 UTC
++++ CMakeLists.txt
+@@ -299,7 +299,7 @@ if ("${CMAKE_SYSTEM_NAME}" MATCHES "Linux")
+ endif()
+ 
+ # Find asmjit dependency if building with JIT support.
+-if (NOT BLEND2D_BUILD_NO_JIT)
++if (FALSE AND NOT BLEND2D_BUILD_NO_JIT)
+   if (NOT DEFINED ASMJIT_DIR)
+     foreach(dir "${BLEND2D_DIR}/3rdparty/asmjit"
+                 "${CMAKE_CURRENT_LIST_DIR}/../asmjit")

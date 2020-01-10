@@ -67,6 +67,7 @@
     SUBDIR += barcode
     SUBDIR += batik
     SUBDIR += bitmap
+    SUBDIR += blend2d
     SUBDIR += blender
     SUBDIR += blender-doc
     SUBDIR += bmeps
