@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncnn
-DISTVERSION=	20191223
+DISTVERSION=	20200106
 CATEGORIES=	science # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
