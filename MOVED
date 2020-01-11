@@ -13726,7 +13726,6 @@ net/gnatsd|net/nats-server|2020-01-06|Renamed upstream
 astro/viking||2020-01-10|Has expired: Depends on broken and expiring graphics/mapnik
 audio/slv2||2020-01-10|Has expired: Broken for more than 5 months (last version 0.6.6 released in 2009, replaced by lilv)
 cad/brickutils||2020-01-10|Has expired: Broken for more than 3 months, unmaintained
-deskutils/zanshin||2020-01-10|Has expired: Broken for more than 5 months
 devel/elixir-gen_state_machine||2020-01-10|Has expired: Broken for more than 6 months
 devel/elixir-swarm||2020-01-10|Has expired: Depends on broken and expiring devel/elixir-gen_state_machine
 devel/erlang-clique||2020-01-10|Has expired: Depends on broken and expiring devel/erlang-cuttlefish
