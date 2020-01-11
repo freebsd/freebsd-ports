@@ -1,0 +1,15 @@
+Sample client for SamDrucker, which will store lists of packages installed on
+hosts.
+
+SamDrucker is a collection of small components which create a centralized list
+of all packages on all hosts.
+
+Each component is designed to be:
+
+* small
+* simple
+* easily written
+* flexiable
+* few, if any, dependencies
+
+WWW: https://github.com/dlangille/SamDrucker

@@ -1,0 +1,6 @@
+bin/samdrucker.sh
+etc/periodic/daily/999-samdrucker-client
+@sample etc/samdrucker/samdrucker.conf.sample
+
+@dir etc/periodic/daily
+@dir etc/samdrucker
