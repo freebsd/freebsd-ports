@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ddtrace
-PORTVERSION=	0.32.1
+PORTVERSION=	0.32.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,4 +29,10 @@ OPENTRACING_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}opentracing>=2.0.0:devel/py-opent
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/ddtrace/vendor/msgpack/_cmsgpack.so ${STAGEDIR}${PYTHON_SITELIBDIR}/ddtrace/vendor/wrapt/_wrappers.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}funcsigs>=0:devel/py-funcsigs@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
