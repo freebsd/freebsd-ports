@@ -1,6 +1,6 @@
-TIMESTAMP = 1576478405
-SHA256 (projectdiscovery-subfinder-v2.2.4_GH0.tar.gz) = 358377e44b505ba07e1dc140545eb37bc93edea090541a937feda715f51740d7
-SIZE (projectdiscovery-subfinder-v2.2.4_GH0.tar.gz) = 1057282
+TIMESTAMP = 1578730803
+SHA256 (projectdiscovery-subfinder-v2.3.0_GH0.tar.gz) = 177bd4173ab5d5f9f7640e02fab1ce19e437dcbdfaf96657377563afa308a039
+SIZE (projectdiscovery-subfinder-v2.3.0_GH0.tar.gz) = 1057098
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
 SIZE (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 42152
 SHA256 (go-yaml-yaml-4206685974f2_GH0.tar.gz) = f4ede03105a42a61971a4329f26566de17c1c21a20cdb5e3c99eb8a0c827fbcc
