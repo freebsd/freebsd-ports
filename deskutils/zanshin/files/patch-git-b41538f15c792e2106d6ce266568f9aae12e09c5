@@ -1,0 +1,30 @@
+From b41538f15c792e2106d6ce266568f9aae12e09c5 Mon Sep 17 00:00:00 2001
+From: Harald Sitter <sitter@kde.org>
+Date: Fri, 9 Mar 2018 17:18:01 +0100
+Subject: [PATCH] fix appdata to use new (working) screenshot location
+
+Reviewers: ervin
+
+Reviewed By: ervin
+
+Differential Revision: https://phabricator.kde.org/D11178
+---
+ src/zanshin/app/org.kde.zanshin.appdata.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/zanshin/app/org.kde.zanshin.appdata.xml b/src/zanshin/app/org.kde.zanshin.appdata.xml
+index 9273ed36..c2b8cfa1 100644
+--- src/zanshin/app/org.kde.zanshin.appdata.xml
++++ src/zanshin/app/org.kde.zanshin.appdata.xml
+@@ -157,7 +157,7 @@
+   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=zanshin</url>
+   <screenshots>
+     <screenshot type="default">
+-      <image>http://kde.org/images/screenshots/zanshin.png</image>
++      <image>https://cdn.kde.org/screenshots/zanshin/zanshin.png</image>
+     </screenshot>
+   </screenshots>
+   <project_group>KDE</project_group>
+-- 
+2.19.1
+

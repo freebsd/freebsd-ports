@@ -1,0 +1,162 @@
+From 3d73d1733190245c23b921c0da11aac0d783345d Mon Sep 17 00:00:00 2001
+From: David Faure <faure@kde.org>
+Date: Sat, 27 Jul 2019 19:31:42 +0200
+Subject: [PATCH] Fix compilation with latest KCalCore API changes (Attachment
+ now a value class)
+
+---
+ src/akonadi/akonadiserializer.cpp             | 25 ++++++++++++++++++
+ tests/units/akonadi/akonadiserializertest.cpp | 26 +++++++++++++++++++
+ 2 files changed, 51 insertions(+)
+
+--- src/akonadi/akonadiserializer.cpp
++++ src/akonadi/akonadiserializer.cpp
+@@ -243,6 +243,19 @@ void Serializer::updateTaskFromItem(Doma
+     attachments.reserve(attachmentsInput.size());
+     std::transform(attachmentsInput.cbegin(), attachmentsInput.cend(),
+                    std::back_inserter(attachments),
++#if KCALCORE_VERSION >= QT_VERSION_CHECK(5, 11, 90)
++                   [&mimeDb] (const KCalCore::Attachment &attach) {
++                       Domain::Task::Attachment attachment;
++                       if (attach.isUri())
++                           attachment.setUri(QUrl(attach.uri()));
++                       else
++                           attachment.setData(attach.decodedData());
++                       attachment.setLabel(attach.label());
++                       attachment.setMimeType(attach.mimeType());
++                       attachment.setIconName(mimeDb.mimeTypeForName(attach.mimeType()).iconName());
++                       return attachment;
++                   });
++#else
+                    [&mimeDb] (const KCalCore::Attachment::Ptr &attach) {
+                        Domain::Task::Attachment attachment;
+                        if (attach->isUri())
+@@ -254,6 +267,7 @@ void Serializer::updateTaskFromItem(Doma
+                        attachment.setIconName(mimeDb.mimeTypeForName(attach->mimeType()).iconName());
+                        return attachment;
+                    });
++#endif
+     task->setAttachments(attachments);
+ 
+     if (todo->attendeeCount() > 0) {
+@@ -328,6 +342,15 @@ Akonadi::Item Serializer::createItemFrom
+     }
+ 
+     for (const auto &attachment : task->attachments()) {
++#if KCALCORE_VERSION >= QT_VERSION_CHECK(5, 11, 90)
++        KCalCore::Attachment attach(QByteArray{});
++        if (attachment.isUri())
++            attach.setUri(attachment.uri().toString());
++        else
++            attach.setDecodedData(attachment.data());
++        attach.setMimeType(attachment.mimeType());
++        attach.setLabel(attachment.label());
++#else
+         KCalCore::Attachment::Ptr attach(new KCalCore::Attachment(QByteArray()));
+         if (attachment.isUri())
+             attach->setUri(attachment.uri().toString());
+@@ -335,6 +358,7 @@ Akonadi::Item Serializer::createItemFrom
+             attach->setDecodedData(attachment.data());
+         attach->setMimeType(attachment.mimeType());
+         attach->setLabel(attachment.label());
++#endif
+         todo->addAttachment(attach);
+     }
+ 
+--- tests/units/akonadi/akonadiserializertest.cpp
++++ tests/units/akonadi/akonadiserializertest.cpp
+@@ -574,10 +574,17 @@ private slots:
+         setTodoDates(todo, startDate, dueDate);
+         todo->setRelatedTo(QStringLiteral("my-uid"));
+         if (!delegateName.isEmpty() || !delegateEmail.isEmpty()) {
++#if KCALCORE_VERSION >= QT_VERSION_CHECK(5, 11, 90)
++            KCalCore::Attendee attendee(delegateName,
++                                        delegateEmail,
++                                        true,
++                                        KCalCore::Attendee::Accepted);
++#else
+             KCalCore::Attendee::Ptr attendee(new KCalCore::Attendee(delegateName,
+                                                                     delegateEmail,
+                                                                     true,
+                                                                     KCalCore::Attendee::Accepted));
++#endif
+             todo->addAttendee(attendee);
+         }
+ 
+@@ -700,10 +707,17 @@ private slots:
+         setTodoDates(originalTodo, QDateTime(QDate(2013, 11, 24)), QDateTime(QDate(2014, 03, 01)));
+ 
+         originalTodo->setRelatedTo(QStringLiteral("my-uid"));
++#if KCALCORE_VERSION >= QT_VERSION_CHECK(5, 11, 90)
++        KCalCore::Attendee originalAttendee(QStringLiteral("John Doe"),
++                                            QStringLiteral("j@d.com"),
++                                            true,
++                                            KCalCore::Attendee::Accepted);
++#else
+         KCalCore::Attendee::Ptr originalAttendee(new KCalCore::Attendee(QStringLiteral("John Doe"),
+                                                                         QStringLiteral("j@d.com"),
+                                                                         true,
+                                                                         KCalCore::Attendee::Accepted));
++#endif
+         originalTodo->addAttendee(originalAttendee);
+ 
+         // ... as payload of an item...
+@@ -762,6 +776,15 @@ private slots:
+             updatedTodo->recurrence()->setDaily(1);
+ 
+         for (int i = 0; i < updatedAttachmentData.size(); i++) {
++#if KCALCORE_VERSION >= QT_VERSION_CHECK(5, 11, 90)
++            KCalCore::Attachment attachment(QByteArray{});
++            if (!updatedAttachmentData.at(i).isEmpty())
++                attachment.setDecodedData(updatedAttachmentData.at(i));
++            else
++                attachment.setUri(updatedAttachmentUris.at(i));
++            attachment.setMimeType(updatedAttachmentMimeTypes.at(i));
++            attachment.setLabel(updatedAttachmentLabels.at(i));
++#else
+             KCalCore::Attachment::Ptr attachment(new KCalCore::Attachment(QByteArray()));
+             if (!updatedAttachmentData.at(i).isEmpty())
+                 attachment->setDecodedData(updatedAttachmentData.at(i));
+@@ -769,14 +792,22 @@ private slots:
+                 attachment->setUri(updatedAttachmentUris.at(i));
+             attachment->setMimeType(updatedAttachmentMimeTypes.at(i));
+             attachment->setLabel(updatedAttachmentLabels.at(i));
++#endif
+             updatedTodo->addAttachment(attachment);
+         }
+ 
+         if (!updatedDelegateName.isEmpty() || !updatedDelegateEmail.isEmpty()) {
++#if KCALCORE_VERSION >= QT_VERSION_CHECK(5, 11, 90)
++            KCalCore::Attendee::Ptr updatedAttendee(updatedDelegateName,
++                                                    updatedDelegateEmail,
++                                                    true,
++                                                    KCalCore::Attendee::Accepted);
++#else
+             KCalCore::Attendee::Ptr updatedAttendee(new KCalCore::Attendee(updatedDelegateName,
+                                                                            updatedDelegateEmail,
+                                                                            true,
+                                                                            KCalCore::Attendee::Accepted));
++#endif
+             updatedTodo->addAttendee(updatedAttendee);
+         }
+         if (updatedRunning) {
+@@ -1293,11 +1324,19 @@ private slots:
+         QCOMPARE(todo->attachments().size(), attachments.size());
+         for (int i = 0; i < attachments.size(); i++) {
+             auto attachment = todo->attachments().at(i);
++#if KCALCORE_VERSION >= QT_VERSION_CHECK(5, 11, 90)
++            QCOMPARE(attachment.isUri(), attachments.at(i).isUri());
++            QCOMPARE(QUrl(attachment.uri()), attachments.at(i).uri());
++            QCOMPARE(attachment.decodedData(), attachments.at(i).data());
++            QCOMPARE(attachment.label(), attachments.at(i).label());
++            QCOMPARE(attachment.mimeType(), attachments.at(i).mimeType());
++#else
+             QCOMPARE(attachment->isUri(), attachments.at(i).isUri());
+             QCOMPARE(QUrl(attachment->uri()), attachments.at(i).uri());
+             QCOMPARE(attachment->decodedData(), attachments.at(i).data());
+             QCOMPARE(attachment->label(), attachments.at(i).label());
+             QCOMPARE(attachment->mimeType(), attachments.at(i).mimeType());
++#endif
+         }
+ 
+         if (delegate.isValid()) {

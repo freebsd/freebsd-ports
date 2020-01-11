@@ -1,0 +1,103 @@
+From 0d3760b646d15e66f43a6a48546eae11cbf84497 Mon Sep 17 00:00:00 2001
+From: Kevin Ottens <ervin@kde.org>
+Date: Sun, 25 Aug 2019 15:38:49 +0200
+Subject: [PATCH] Make it build both with pre and post 19.08.0 KCalCore
+
+Summary:
+Obviously this assumes a compiler supporting __has_include in C++14
+mode, but that should be the case in most target platforms nowadays.
+Beside this is hopefully temporary measure.
+
+Reviewers: dfaure
+
+Differential Revision: https://phabricator.kde.org/D23443
+---
+ src/akonadi/akonadiserializer.cpp             | 4 ++++
+ tests/units/akonadi/akonadiserializertest.cpp | 4 ++++
+ 2 files changed, 8 insertions(+)
+
+--- src/akonadi/akonadiserializer.cpp
++++ src/akonadi/akonadiserializer.cpp
+@@ -30,7 +30,11 @@
+ #include <AkonadiCore/Item>
+ #include <Akonadi/Notes/NoteUtils>
+ #include <KCalCore/Todo>
++#if __has_include(<kcalcore_version.h>)
+ #include <kcalcore_version.h>
++#else
++#include <kcalendarcore_version.h>
++#endif
+ #include <KMime/Message>
+ #include <QMimeDatabase>
+ #if KCALCORE_VERSION < QT_VERSION_CHECK(5, 6, 80)
+--- tests/units/akonadi/akonadiserializertest.cpp
++++ tests/units/akonadi/akonadiserializertest.cpp
+@@ -34,7 +34,11 @@
+ #include <Akonadi/Notes/NoteUtils>
+ #include <AkonadiCore/Tag>
+ #include <KCalCore/Todo>
++#if __has_include(<kcalcore_version.h>)
+ #include <kcalcore_version.h>
++#else
++#include <kcalendarcore_version.h>
++#endif
+ #include <KMime/Message>
+ 
+ Q_DECLARE_METATYPE(Akonadi::Item*)
+--- tests/benchmarks/serializerTest.cpp
++++ tests/benchmarks/serializerTest.cpp
+@@ -24,7 +24,11 @@
+ #include <testlib/qtest_zanshin.h>
+ #include <AkonadiCore/Item>
+ #include <KCalCore/Todo>
++#if __has_include(<kcalcore_version.h>)
+ #include <kcalcore_version.h>
++#else
++#include <kcalendarcore_version.h>
++#endif
+ #include "domain/task.h"
+ #include "akonadi/akonadiserializer.h"
+ 
+--- tests/testlib/akonadistoragetestbase.cpp
++++ tests/testlib/akonadistoragetestbase.cpp
+@@ -31,7 +31,11 @@
+ 
+ #include <KCalCore/Todo>
+ #include <KCalCore/ICalFormat>
++#if __has_include(<kcalcore_version.h>)
+ #include <kcalcore_version.h>
++#else
++#include <kcalendarcore_version.h>
++#endif
+ #if KCALCORE_VERSION < QT_VERSION_CHECK(5, 6, 80)
+ #include <KDateTime>
+ #endif
+--- tests/testlib/gentodo.cpp
++++ tests/testlib/gentodo.cpp
+@@ -25,7 +25,11 @@
+ 
+ #include <KCalCore/Todo>
+ #include <QDate>
++#if __has_include(<kcalcore_version.h>)
+ #include <kcalcore_version.h>
++#else
++#include <kcalendarcore_version.h>
++#endif
+ #if KCALCORE_VERSION < QT_VERSION_CHECK(5, 6, 80)
+ #include <KDateTime>
+ #endif
+--- tests/units/testlib/gentodotest.cpp
++++ tests/units/testlib/gentodotest.cpp
+@@ -24,8 +24,11 @@
+ #include "testlib/gentodo.h"
+ 
+ #include <KCalCore/Todo>
++#if __has_include(<kcalcore_version.h>)
+ #include <kcalcore_version.h>
+-
++#else
++#include <kcalendarcore_version.h>
++#endif
+ #include <testlib/qtest_zanshin.h>
+ 
+ using namespace Testlib;

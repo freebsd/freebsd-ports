@@ -1,0 +1,37 @@
+From 0d1e500a88998e3419b3605ddc6435f5be22b056 Mon Sep 17 00:00:00 2001
+From: Harald Sitter <sitter@kde.org>
+Date: Mon, 12 Mar 2018 14:31:59 +0100
+Subject: [PATCH] don't set a zanshin screenshot for renku
+
+Summary:
+I also couldn't find a screenshot of renku, so kill the screenshot
+definition entirely in the absence of one.
+
+Reviewers: ervin
+
+Reviewed By: ervin
+
+Differential Revision: https://phabricator.kde.org/D11264
+---
+ src/renku/app/org.kde.renku.appdata.xml | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/src/renku/app/org.kde.renku.appdata.xml b/src/renku/app/org.kde.renku.appdata.xml
+index 82479cee..e1f1062e 100644
+--- src/renku/app/org.kde.renku.appdata.xml
++++ src/renku/app/org.kde.renku.appdata.xml
+@@ -150,11 +150,6 @@
+   </description>
+   <url type="homepage">http://zanshin.kde.org</url>
+   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=zanshin</url>
+-  <screenshots>
+-    <screenshot type="default">
+-      <image>http://kde.org/images/screenshots/zanshin.png</image>
+-    </screenshot>
+-  </screenshots>
+   <project_group>KDE</project_group>
+   <provides>
+     <binary>renku</binary>
+-- 
+2.19.1
+
