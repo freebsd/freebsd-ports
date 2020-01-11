@@ -36,9 +36,18 @@ command_args=""
 command_args="${command_args} --lightning-dir=${lightningd_base_dir}"
 command_args="${command_args} --network=${lightningd_network}"
 command_args="${command_args} --daemon"
+# service(8) would execute us with LOCALBASE stripped out from PATH,
+# thus specify the full path to bitcoin-cli.
+command_args="${command_args} --bitcoin-cli=%%LOCALBASE%%/bin/bitcoin-cli"
+# bitcoin-cli(1) tries to create its "datadir" (by default ${HOME}/.bitcoin)
+# if it does not exist. Provide something that already exists to avoid the
+# creation of unnecessary empty directories.
+command_args="${command_args} --bitcoin-datadir=${lightningd_base_dir}"
 
 if [ -e "${lightningd_conf}" ] ; then
 	command_args="${command_args} --conf=${lightningd_conf}"
 fi
+
+command_args="${command_args} ${lightningd_extra_args}"
 
 run_rc_command "$1"
