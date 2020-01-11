@@ -14,7 +14,7 @@ COMMENT=	JSON (JavaScript Object Notation) implementation in C
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf compiler:c11 cpe gmake libtool pathfix pkgconfig
+USES=		autoreconf compiler:c11 cpe libtool pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
