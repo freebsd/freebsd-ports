@@ -514,6 +514,7 @@
     SUBDIR += py-managesieve3
     SUBDIR += py-milter
     SUBDIR += py-notmuch
+    SUBDIR += py-postfix-mta-sts-resolver
     SUBDIR += py-ppolicy
     SUBDIR += py-premailer
     SUBDIR += py-pymailq
