@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cherrytree
-DISTVERSION=	0.38.10
+DISTVERSION=	0.38.11
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.giuspen.com/software/
 
