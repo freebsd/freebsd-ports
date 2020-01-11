@@ -4,14 +4,13 @@
 #  devel/kdev-php
 #  devel/kdev-python
 PORTNAME=	kdevelop
-DISTVERSION=	5.4.5
-PORTREVISION=	2
+DISTVERSION=	5.4.6
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Plugin extensible IDE for KDE
+COMMENT=	Plugin extensible IDE for C/C++ and other languages
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
