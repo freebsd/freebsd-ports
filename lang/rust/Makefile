@@ -147,6 +147,7 @@ do-configure:
 	@${ECHO_CMD} 'extended=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'python="${PYTHON_CMD}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'docs=${_RUST_BUILD_DOCS}' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'verbose=2' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[install]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'prefix="${PREFIX}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'sysconfdir="${PREFIX}/etc"' >> ${WRKSRC}/config.toml
@@ -154,6 +155,7 @@ do-configure:
 	@${ECHO_CMD} '[rust]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'channel="${PKGNAMESUFFIX:Ustable:S/^-//}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
 .if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
 	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml
@@ -179,7 +181,6 @@ do-build:
 	cd ${WRKSRC} && \
 	${SETENV} ${X_PY_ENV} \
 	${X_PY_CMD} build \
-		--verbose \
 		--config ./config.toml \
 		--jobs ${MAKE_JOBS_NUMBER}
 
@@ -188,7 +189,6 @@ do-install:
 	${SETENV} ${X_PY_ENV} \
 		DESTDIR=${STAGEDIR} \
 	${X_PY_CMD} 'install' \
-		--verbose \
 		--config ./config.toml \
 		--jobs ${MAKE_JOBS_NUMBER}
 
@@ -243,7 +243,6 @@ do-test:
 	${SETENV} ${X_PY_ENV} \
 		ALLOW_NONZERO_RLIMIT_CORE=1 \
 	${X_PY_CMD} test \
-		--verbose \
 		--config ./config.toml \
 		--jobs ${MAKE_JOBS_NUMBER}
 
