@@ -21,6 +21,7 @@
 
 name=strongswan
 desc="Strongswan IPsec startup script"
+required_modules="ipsec"
 rcvar=strongswan_enable
 
 load_rc_config $name
