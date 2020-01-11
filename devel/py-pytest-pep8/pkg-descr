@@ -1,0 +1,4 @@
+This plugin allows to configure on a per-project and per-file basis which
+errors or warnings to care about.
+
+WWW: https://bitbucket.org/pytest-dev/pytest-pep8
