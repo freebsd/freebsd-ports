@@ -9,4 +9,4 @@ other packages like VTK. Offscreen rendering is useful for a
 number of things, such as batch processing, parallel processing, and
 remote processing.
 
-WWW: http://www.mesa3d.org/
+WWW: https://www.mesa3d.org/
