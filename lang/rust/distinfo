@@ -1,4 +1,4 @@
-TIMESTAMP = 1576623023
+TIMESTAMP = 1578730697
 SHA256 (rust/rustc-1.40.0-src.tar.xz) = 6e2aa3a91697f4b225c6b394cbae6b97666f061dba491f666a5281698fe2aace
 SIZE (rust/rustc-1.40.0-src.tar.xz) = 92306352
 SHA256 (rust/2019-11-07/rustc-1.39.0-aarch64-unknown-freebsd.tar.xz) = 44098962a570e05d691d3b7c3337b873b1e1f22ac49fd19c0d5d3362c0008eb5
@@ -39,9 +39,9 @@ SHA256 (rust/2019-11-07/rust-std-1.39.0-powerpc64-unknown-freebsd-elfv1.tar.xz) 
 SIZE (rust/2019-11-07/rust-std-1.39.0-powerpc64-unknown-freebsd-elfv1.tar.xz) = 164834720
 SHA256 (rust/2019-11-07/cargo-0.40.0-powerpc64-unknown-freebsd-elfv1.tar.xz) = 707eef9bac71a44db8e1d64c70a771fbac1f81f7ca58a2e3025ec1cc4d263b18
 SIZE (rust/2019-11-07/cargo-0.40.0-powerpc64-unknown-freebsd-elfv1.tar.xz) = 3423776
-SHA256 (rust/2019-11-07/rustc-1.39.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = e615095f1fb2017938147da213d04444b785ae34128c4aa9099996f0de610a52
-SIZE (rust/2019-11-07/rustc-1.39.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 24519864
-SHA256 (rust/2019-11-07/rust-std-1.39.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = fb83397a7b6abfcf292ed50f8c277617c2e77686778ca853ca2228f7aa5d7a84
-SIZE (rust/2019-11-07/rust-std-1.39.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 163807368
-SHA256 (rust/2019-11-07/cargo-0.40.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = aeebed336e09121f4d8803b5b6c2814a0901773a65bce9bd091a06d6082ac978
-SIZE (rust/2019-11-07/cargo-0.40.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 2753592
+SHA256 (rust/2019-11-07/rustc-1.39.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 65a7eed0737ae94e54d60a0cf5cc67634fb8ddd978bdfb0ce4e5f46d309daa0a
+SIZE (rust/2019-11-07/rustc-1.39.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 24483956
+SHA256 (rust/2019-11-07/rust-std-1.39.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 60782554de07997c25bf2aa279b44baa8009158b25cc3c5364b1496a2d40f2a4
+SIZE (rust/2019-11-07/rust-std-1.39.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 163926244
+SHA256 (rust/2019-11-07/cargo-0.40.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 75ecd88d83e8f394ce33f0213b622a045cbcfc55973f4b5140403de298f73968
+SIZE (rust/2019-11-07/cargo-0.40.0-powerpc64-unknown-freebsd-elfv2.tar.xz) = 3268696
