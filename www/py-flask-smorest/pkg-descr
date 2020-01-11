@@ -1,0 +1,11 @@
+REST API framework built upon Flask and marshmallow.
+
+  - Serialization, deserialization and validation using marshmallow Schema
+  - Explicit validation error messages returned in response
+  - Database-agnostic
+  - OpenAPI (Swagger) specification automatically generated and exposed with
+    ReDoc or Swagger UI
+  - Pagination
+  - ETag
+
+WWW: https://github.com/marshmallow-code/flask-smorest
