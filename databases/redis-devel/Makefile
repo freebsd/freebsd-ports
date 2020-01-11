@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	6.0.0.20200101
-PORTREVISION=	1
+PORTVERSION=	6.0.0.20200110
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
@@ -14,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 USES+=		compiler:c11 gmake
 USE_GITHUB=	yes
-GH_TUPLE= 	antirez:${PORTNAME}:0af467d
+GH_TUPLE= 	antirez:${PORTNAME}:8105f91
 
 OPTIONS_DEFINE=	JEMALLOC TESTS TLS TRIB
 OPTIONS_RADIO=	EXTLUA
@@ -100,12 +99,10 @@ PLIST_SUB+=	REDIS_USER=${USERS} \
 post-patch-JEMALLOC-on:
 	@${REINPLACE_CMD} '35s!Linux!FreeBSD!g' ${WRKSRC}/src/Makefile
 
-copy-lua-files:
+post-patch-LUA-on:
 	@cd ${WRKSRC}/deps/lua/src && ${CP} fpconv.* lua_* strbuf.* ${WRKSRC}/src/
-
-post-patch-LUA-on:	copy-lua-files
-post-patch-LUAJIT-on:	copy-lua-files
-post-patch-LUAJITOR-on:	copy-lua-files
+post-patch-LUAJIT-on:	post-patch-LUA-on
+post-patch-LUAJITOR-on:	post-patch-LUA-on
 
 post-build:
 	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
