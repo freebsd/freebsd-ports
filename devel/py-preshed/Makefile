@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	preshed
-PORTVERSION=	2.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,8 @@ COMMENT=	Cython hash table
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cymem>0:devel/py-cymem@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cymem>=2.0.2,<2.1.0:devel/py-cymem@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}murmurhash>=0.28.0,<1.1.0:devel/py-murmurhash@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
