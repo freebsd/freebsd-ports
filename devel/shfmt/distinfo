@@ -1,6 +1,6 @@
-TIMESTAMP = 1576505630
-SHA256 (mvdan-sh-v3.0.0_GH0.tar.gz) = 8bfd0d4b4d532d0b6ecd77f94c91d1f6da47b26a4453ed5c7567826113424116
-SIZE (mvdan-sh-v3.0.0_GH0.tar.gz) = 182624
+TIMESTAMP = 1578735484
+SHA256 (mvdan-sh-v3.0.1_GH0.tar.gz) = 4cca3d8a40e5132a4764a3bf7bcf335288ebff8a4a74e130f9359605e6f07544
+SIZE (mvdan-sh-v3.0.1_GH0.tar.gz) = 182967
 SHA256 (go-errgo-errgo-v2.1.0_GH0.tar.gz) = f6b10d77db65cb5a6c425be0f695e43b98e3e10ec83340209ac5bf4bf5c1b837
 SIZE (go-errgo-errgo-v2.1.0_GH0.tar.gz) = 9927
 SHA256 (golang-crypto-34f69633bfdc_GH0.tar.gz) = c3fa0760971622af64c3b7a3319291d997f2f0d53a5c90c17d25eaeba7f0371a
