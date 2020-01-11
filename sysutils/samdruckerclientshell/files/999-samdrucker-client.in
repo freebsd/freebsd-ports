@@ -1,0 +1,25 @@
+#!/bin/sh -
+#
+# $FreeBSD$
+#
+
+if [ -r /etc/defaults/periodic.conf ]; then
+	. /etc/defaults/periodic.conf
+	source_periodic_confs
+fi
+
+rc=0
+
+case "${samdrucker_client_enable:-YES}" in
+[Yy][Ee][Ss])
+	anticongestion
+	if ! %%PREFIX%%/bin/samdrucker.sh ; then
+		echo 'ouch, something went wrong with /usr/local/bin/samdrucker.sh'
+		rc=2
+	fi
+	;;
+*)
+	;;
+esac
+
+exit $rc

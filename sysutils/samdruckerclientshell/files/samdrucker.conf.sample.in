@@ -1,0 +1,2 @@
+SAMDRUCKER_URL="https://samdrucker.example.org/samdrucker.php"
+SAMDRUCKER_ARG="packages"
