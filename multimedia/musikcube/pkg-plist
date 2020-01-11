@@ -3,6 +3,7 @@ bin/musikcubed
 include/musikcube/core/sdk/DataBuffer.h
 include/musikcube/core/sdk/HttpClient.h
 include/musikcube/core/sdk/IAnalyzer.h
+include/musikcube/core/sdk/IBlockingEncoder.h
 include/musikcube/core/sdk/IBuffer.h
 include/musikcube/core/sdk/IBufferProvider.h
 include/musikcube/core/sdk/IDSP.h
@@ -30,6 +31,7 @@ include/musikcube/core/sdk/IPreferences.h
 include/musikcube/core/sdk/IResource.h
 include/musikcube/core/sdk/ISchema.h
 include/musikcube/core/sdk/ISpectrumVisualizer.h
+include/musikcube/core/sdk/IStreamingEncoder.h
 include/musikcube/core/sdk/ITagReader.h
 include/musikcube/core/sdk/ITagStore.h
 include/musikcube/core/sdk/ITrack.h
@@ -44,6 +46,7 @@ include/musikcube/core/sdk/constants.h
 %%DATADIR%%/locales/fr_FR.json
 %%DATADIR%%/locales/it_IT.json
 %%DATADIR%%/locales/ru_RU.json
+%%DATADIR%%/locales/zh_CN.json
 %%DATADIR%%/musikcube
 %%DATADIR%%/musikcubed
 %%DATADIR%%/plugins/libffmpegdecoder.so

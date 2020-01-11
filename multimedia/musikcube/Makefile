@@ -1,12 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	musikcube
-DISTVERSION=	0.70.0
-PORTREVISION=	1
+DISTVERSION=	0.80.0
 CATEGORIES=	multimedia audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	0c6c3f7a7bd5.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terminal-based music player, audio engine, metadata indexer, server
