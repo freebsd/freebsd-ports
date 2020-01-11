@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: mta_sts
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# mta_sts_enable (bool):	Set to NO by default.
+# 		     		Set it to YES to enable mta_sts.
+# mta_sts_config (path):	Set to %%PREFIX%%/etc/mta-sts-daemon.yml
+#				by default.
+
+. /etc/rc.subr
+
+name=mta_sts
+rcvar=mta_sts_enable
+
+load_rc_config $name
+
+: ${mta_sts_enable:="NO"}
+: ${mta_sts_config="%%PREFIX%%/etc/mta-sts-daemon.yml"}
+: ${mta_sts_user="nobody"}
+
+pidfile=/var/run/${name}.pid
+command=%%PREFIX%%/bin/mta-sts-daemon
+command_interpreter="%%PYTHON_CMD%%"
+
+start_cmd="${name}_start"
+
+mta_sts_start()
+{
+	/usr/sbin/daemon -u "${mta_sts_user}" -p "${pidfile}" "${command}" -c "${mta_sts_config}"
+}
+
+run_rc_command "$1"

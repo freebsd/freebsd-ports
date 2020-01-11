@@ -1,0 +1,12 @@
+Daemon which provides TLS client policy for Postfix via socketmap, according to
+domain MTA-STS policy. Current support of RFC8461 is limited - daemon lacks
+some minor features:
+
+  - Proactive policy fetch
+  - Fetch error reporting
+  - Fetch ratelimit (but actual fetch rate partially restricted with cache_grace config option).
+
+Server has configurable cache backend which allows to store cached STS policies
+in memory (internal), file (sqlite) or in Redis database (redis).
+
+WWW: https://pypi.python.org/pypi/postfix-mta-sts-resolver
