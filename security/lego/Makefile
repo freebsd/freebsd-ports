@@ -2,8 +2,7 @@
 
 PORTNAME=	lego
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.0
-PORTREVISION=	1
+DISTVERSION=	3.3.0
 CATEGORIES=	security
 
 MAINTAINER=	matt@matthoran.com
@@ -41,7 +40,7 @@ GH_TUPLE=	\
 		aws:aws-sdk-go:v1.23.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		cenkalti:backoff:v3.0.0:cenkalti_backoff/vendor/github.com/cenkalti/backoff/v3 \
 		census-ecosystem:opencensus-go-exporter-ocagent:v0.4.12:census_ecosystem_opencensus_go_exporter_ocagent/vendor/contrib.go.opencensus.io/exporter/ocagent \
-		census-instrumentation:opencensus-go:v0.21.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		census-instrumentation:opencensus-go:v0.22.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		census-instrumentation:opencensus-proto:v0.2.0:census_instrumentation_opencensus_proto/vendor/github.com/census-instrumentation/opencensus-proto \
 		cloudflare:cloudflare-go:v0.10.2:cloudflare_cloudflare_go/vendor/github.com/cloudflare/cloudflare-go \
 		cpu:goacmedns:v0.0.1:cpu_goacmedns/vendor/github.com/cpu/goacmedns \
@@ -57,24 +56,24 @@ GH_TUPLE=	\
 		go-resty:resty:v1.12.0:go_resty_resty/vendor/gopkg.in/resty.v1 \
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
-		golang:appengine:v1.5.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:4def268fd1a4:golang_crypto/vendor/golang.org/x/crypto \
+		golang:appengine:v1.6.1:golang_appengine/vendor/google.golang.org/appengine \
+		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:83d349e8ac1a:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
+		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:cbf593c0f2f3:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:c4c64cad1fd0:golang_time/vendor/golang.org/x/time \
-		google:go-genproto:54afdca5d873:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:4f79533eabd1:google_go_genproto/vendor/google.golang.org/genproto \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
-		googleapis:google-api-go-client:v0.8.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:v0.38.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		googleapis:google-api-go-client:v0.14.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:v0.50.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gophercloud:gophercloud:v0.3.0:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
 		grpc-ecosystem:grpc-gateway:v1.8.5:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
-		grpc:grpc-go:v1.20.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.21.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:golang-lru:v0.5.3:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		iij:doapi:0bbf12d6d7df:iij_doapi/vendor/github.com/iij/doapi \
 		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
@@ -92,6 +91,7 @@ GH_TUPLE=	\
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		namedotcom:go:08470befbe04:namedotcom_go/vendor/github.com/namedotcom/go \
 		nrdcg:auroradns:v1.0.0:nrdcg_auroradns/vendor/github.com/nrdcg/auroradns \
+		nrdcg:dnspod-go:v0.3.0:nrdcg_dnspod_go/vendor/github.com/nrdcg/dnspod-go \
 		nrdcg:goinwx:v0.6.1:nrdcg_goinwx/vendor/github.com/nrdcg/goinwx \
 		nrdcg:namesilo:v0.2.1:nrdcg_namesilo/vendor/github.com/nrdcg/namesilo \
 		ns1:ns1-go:b51389932cbc:ns1_ns1_go/vendor/gopkg.in/ns1/ns1-go.v2 \
