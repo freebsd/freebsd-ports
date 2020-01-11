@@ -13724,7 +13724,7 @@ devel/yosys|cad/yosys|2020-01-04|Move to a proper category
 cad/ujprog|comms/ujprog|2020-01-05|Move to a proper category
 net/gnatsd|net/nats-server|2020-01-06|Renamed upstream
 astro/viking||2020-01-10|Has expired: Depends on broken and expiring graphics/mapnik
-audio/slv2||2020-01-10|Has expired: Broken for more than 5 months
+audio/slv2||2020-01-10|Has expired: Broken for more than 5 months (last version 0.6.6 released in 2009, replaced by lilv)
 cad/brickutils||2020-01-10|Has expired: Broken for more than 3 months, unmaintained
 deskutils/zanshin||2020-01-10|Has expired: Broken for more than 5 months
 devel/elixir-gen_state_machine||2020-01-10|Has expired: Broken for more than 6 months
