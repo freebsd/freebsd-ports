@@ -17,7 +17,6 @@ LIB_DEPENDS=	libImath-2_4.so.24:graphics/ilmbase
 
 USES=		cmake compiler:c++14-lang libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-TEST_TARGET=	check
 
 USE_GITHUB=	yes
 GH_TUPLE=	AcademySoftwareFoundation:openexr:v2.4.0
@@ -93,7 +92,7 @@ post-install-DOCS-on:
 post-install-DOCS-off:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME} 2>/dev/null || :
 
-regression-test check:
+regression-test check test:
 	cd ${BUILD_WRKSRC} && ctest -j ${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.post.mk>
