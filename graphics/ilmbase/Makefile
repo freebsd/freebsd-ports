@@ -22,11 +22,6 @@ USE_GITHUB=	yes
 GH_TUPLE=	AcademySoftwareFoundation:openexr:v2.4.0
 WRKSRC_SUBDIR=	IlmBase
 
-# libtool links C++ libraries with -nostdlib, which prevents -pthread from
-# having an effect (at least with clang). Make sure we also pass -lpthread so
-# we do link against libthr.so.
-TEST_TARGET=	check
-
 PORTDOCS=	README.md
 OPTIONS_DEFINE=		DOCS LARGE_STACK
 LARGE_STACK_DESC=	Enable sys-dependent large stack optimizations
@@ -46,7 +41,7 @@ PLIST_SUB+=	VER=${VER}
 
 HALF_BIN=	eLut toFloat
 
-regression-test regression check::
+test regression-test regression check::
 	cd ${BUILD_WRKSRC} && ctest
 
 post-install:
