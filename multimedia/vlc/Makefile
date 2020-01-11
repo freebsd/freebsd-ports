@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	3.0.8
-PORTREVISION=	15
+PORTREVISION=	16
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -200,6 +200,7 @@ LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_CONFIGURE_ENABLE=	lirc
 LIRC_CONFIGURE_ENV=	LIBS_lirc="-L${LOCALBASE}/lib -llirc_client"
 
+LIVEMEDIA_USES=		ssl
 LIVEMEDIA_LIB_DEPENDS=	libliveMedia.so:net/liveMedia
 LIVEMEDIA_CONFIGURE_ENABLE=	live555
 LIVEMEDIA_CONFIGURE_ENV= \
@@ -209,7 +210,8 @@ LIVEMEDIA_CONFIGURE_ENV= \
 			-I${LOCALBASE}/include/BasicUsageEnvironment" \
 	LIVE555_LIBS="-L${LOCALBASE}/lib -lliveMedia \
 			-lgroupsock -lBasicUsageEnvironment \
-			-lUsageEnvironment"
+			-lUsageEnvironment \
+			-L${OPENSSLLIB} -lssl -lcrypto"
 
 LUA_USES=		lua
 LUA_CONFIGURE_ENABLE=	lua
