@@ -1,0 +1,21 @@
+Description: KDEPIM 19.08 does not add AkonadiContacts indirectly
+  previous versions add the depdendency to AkonadiContacts indirectly,
+  and we didn't need to search for AkonadiContact on our own. That chagned with
+  19.08. Upstream has refactored a lot of code, so this depdendency isn't
+  needed anymore.
+Author: Hefee <hefee@debian.org>
+Origin: debian
+Forwarded: not-needed
+Last-Update: 2014-02-17
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -66,6 +66,7 @@ include_directories (
+ )
+ 
+ find_package(KF5 REQUIRED COMPONENTS
++    AkonadiContact
+     AkonadiCalendar
+     AkonadiNotes
+     AkonadiSearch
