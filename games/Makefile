@@ -990,6 +990,7 @@
     SUBDIR += volleyball
     SUBDIR += vor
     SUBDIR += vultures-eye
+    SUBDIR += vvvvvv
     SUBDIR += wanderer
     SUBDIR += wargus
     SUBDIR += warmux

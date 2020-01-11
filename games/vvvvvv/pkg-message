@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+VVVVVV requires the data files from an official copy.
+
+Take the data.zip file and put it in ~/.local/share/VVVVVV
+EOM
+}
+]
