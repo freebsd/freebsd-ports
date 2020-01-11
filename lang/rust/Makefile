@@ -141,32 +141,38 @@ post-patch-SOURCES-off:
 	@${REINPLACE_CMD} -e 's/config.tools.*"src".*/false;/' \
 		${WRKSRC}/src/bootstrap/install.rs
 
-.if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
-CCACHE_VALUE=	"${CCACHE_BIN}"
-.else
-CCACHE_VALUE=	false
-.endif
-
 do-configure:
-	${SED} -E \
-		-e 's,%PREFIX%,${PREFIX},' \
-		-e 's,%SYSCONFDIR%,${PREFIX}/etc,' \
-		-e 's,%MANDIR%,${MANPREFIX}/man,' \
-		-e 's,%PYTHON_CMD%,${PYTHON_CMD},' \
-		-e 's,%CHANNEL%,${PKGNAMESUFFIX:Ustable:S/^-//},' \
-		-e 's,%TARGET%,${_RUST_TARGET},' \
-		-e 's,%CCACHE%,${CCACHE_VALUE},' \
-		-e 's,%CC%,${CC},' \
-		-e 's,%CXX%,${CXX},' \
-		-e 's,%DOCS%,${_RUST_BUILD_DOCS},' \
-		< ${FILESDIR}/config.toml \
-		> ${WRKSRC}/config.toml
+	@${ECHO_CMD} '[build]' > ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'vendor=true' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'extended=true' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'python="${PYTHON_CMD}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'docs=${_RUST_BUILD_DOCS}' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'verbose=2' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} '[install]' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'prefix="${PREFIX}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'sysconfdir="${PREFIX}/etc"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'mandir="${MANPREFIX}/man"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} '[rust]' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'channel="${PKGNAMESUFFIX:Ustable:S/^-//}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
+.if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
+	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml
+.else
+	@${ECHO_CMD} 'ccache=false' >> ${WRKSRC}/config.toml
+.endif
 # no need to build a crosscompiler for these targets
 .if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == powerpc64
-	@${REINPLACE_CMD} -e 's,^#targets =.*,targets = "${_LLVM_TARGET}",' \
-		-e 's,^#experimental-targets =.*,experimental-targets = "",' \
-		${WRKSRC}/config.toml
+	@${ECHO_CMD} 'targets="${_LLVM_TARGET}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'experimental-targets=""' >> ${WRKSRC}/config.toml
 .endif
+	@${ECHO_CMD} '[target.${_RUST_TARGET}]' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'cc="${CC}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'cxx="${CXX}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'linker="${CC}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} '[dist]' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'src-tarball=false' >> ${WRKSRC}/config.toml
 	@${REINPLACE_CMD} -e 's,%CC%,${CC},g' \
 		${WRKSRC}/src/librustc_llvm/build.rs \
 		${WRKSRC}/src/bootstrap/native.rs
@@ -175,7 +181,6 @@ do-build:
 	cd ${WRKSRC} && \
 	${SETENV} ${X_PY_ENV} \
 	${X_PY_CMD} build \
-		--verbose \
 		--config ./config.toml \
 		--jobs ${MAKE_JOBS_NUMBER}
 
@@ -184,7 +189,6 @@ do-install:
 	${SETENV} ${X_PY_ENV} \
 		DESTDIR=${STAGEDIR} \
 	${X_PY_CMD} 'install' \
-		--verbose \
 		--config ./config.toml \
 		--jobs ${MAKE_JOBS_NUMBER}
 
@@ -239,7 +243,6 @@ do-test:
 	${SETENV} ${X_PY_ENV} \
 		ALLOW_NONZERO_RLIMIT_CORE=1 \
 	${X_PY_CMD} test \
-		--verbose \
 		--config ./config.toml \
 		--jobs ${MAKE_JOBS_NUMBER}
 
