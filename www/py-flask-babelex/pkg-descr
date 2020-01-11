@@ -1,0 +1,8 @@
+This is fork of official Flask-Babel extension with following features:
+
+  - Possible to use multiple language catalogs in one Flask application
+  - Localization domains: your extension can package localization file(s)
+    and use them if necessary
+  - Does not reload localizations for each request
+
+WWW: https://github.com/mrjoes/flask-babelex

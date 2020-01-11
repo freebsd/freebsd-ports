@@ -1626,6 +1626,7 @@
     SUBDIR += py-flask-api
     SUBDIR += py-flask-apscheduler
     SUBDIR += py-flask-assets
+    SUBDIR += py-flask-babelex
     SUBDIR += py-flask-bootstrap
     SUBDIR += py-flask-cache
     SUBDIR += py-flask-collect
