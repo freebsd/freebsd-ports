@@ -6,8 +6,6 @@ PKGNAMESUFFIX=	-${FLAVOR:U:S/_/-/}
 DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
 CATEGORIES=	devel python
 
-BROKEN_powerpc64=	fails to link: libstdc++.so.6: version GLIBCXX_3.4.14 required by /usr/local/lib/qt4/libqscintilla2_qt4.so.13 not found
-
 # Note to MAINTAINER: this should be converted to USES=pyqt, USE_PYQT=[...]
 RUN_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY_FLAVOR}
 
