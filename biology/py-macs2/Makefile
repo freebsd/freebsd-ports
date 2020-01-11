@@ -1,28 +1,25 @@
 # $FreeBSD$
 
-PORTNAME=	macs2
-PORTVERSION=	2.1.0.p20170505
-PORTREVISION=	3
-CATEGORIES=	biology python
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PORTNAME=		macs2
+DISTVERSIONPREFIX=	v
+DISTVERSION=		2.2.6
+CATEGORIES=		biology python
+PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Analysis of chromatin immunoprecipitation (ChIP) sequences
+COMMENT=	Identify transcription factor binding sites
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYNUMPY}
 
-USES=		python:2.7
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	taoliu
 GH_PROJECT=	MACS
-GH_TAGNAME=	6946b2f
-
-PYSETUP=	setup_w_cython.py
 
 post-stage:
 	${STRIP_CMD} \
