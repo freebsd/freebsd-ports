@@ -255,7 +255,6 @@
     SUBDIR += docker
     SUBDIR += docker-compose
     SUBDIR += docker-credential-pass
-    SUBDIR += docker-freebsd
     SUBDIR += docker-machine
     SUBDIR += doctl
     SUBDIR += doinkd
