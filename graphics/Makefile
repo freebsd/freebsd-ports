@@ -1043,6 +1043,7 @@
     SUBDIR += vp
     SUBDIR += vpaint
     SUBDIR += vulkan-loader
+    SUBDIR += vv
     SUBDIR += waffle
     SUBDIR += waifu2x-converter-cpp
     SUBDIR += waifu2x-ncnn-vulkan
