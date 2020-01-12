@@ -1,0 +1,5 @@
+Generic helper tool to build app in a distributable formats. Used by
+electron-builder but applicable not only for building Electron
+applications.
+
+WWW: https://github.com/develar/app-builder
