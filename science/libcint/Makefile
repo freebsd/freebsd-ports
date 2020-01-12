@@ -2,8 +2,7 @@
 
 PORTNAME=	libcint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.15
-PORTREVISION=	1
+DISTVERSION=	3.0.19
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +19,7 @@ GH_ACCOUNT=	sunqm
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/cint.h \
+		include/cint_funcs.h \
 		lib/libcint.so \
 		lib/libcint.so.${PORTVERSION:R:R} \
 		lib/libcint.so.${PORTVERSION}
