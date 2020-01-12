@@ -1,9 +1,6 @@
 [
 { type: install
   message: <<EOM
-When building Crystal code with the --release flag, add the --no-debug flag to
-avoid LLVM assertion errors.
-
 Install textproc/libyaml for YAML support, math/gmp for BigInt support,
 textproc/libxml2 for XML support.
 EOM
