@@ -1,0 +1,48 @@
+--- common/autoconf/flags.m4.orig	2019-07-11 17:47:26.232244000 +0200
++++ common/autoconf/flags.m4	2019-07-11 17:48:11.252733000 +0200
+@@ -563,7 +563,7 @@ AC_DEFUN_ONCE([FLAGS_SETUP_COMPILER_FLAGS_FOR_JDK],
+       CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DVM_BIG_ENDIAN"
+     fi
+   fi
+-  if test "x$OPENJDK_TARGET_CPU" = xppc64le; then
++  if test "x$OPENJDK_TARGET_CPU" = xppc64; then
+     CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DABI_ELFv2"
+   fi
+   
+--- common/autoconf/generated-configure.sh.orig	2019-07-11 17:47:33.640280000 +0200
++++ common/autoconf/generated-configure.sh	2019-07-11 17:49:51.392598000 +0200
+@@ -41992,7 +41992,7 @@ $as_echo "$supports" >&6; }
+       CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DVM_BIG_ENDIAN"
+     fi
+   fi
+-  if test "x$OPENJDK_TARGET_CPU" = xppc64le; then
++  if test "x$OPENJDK_TARGET_CPU" = xppc64; then
+     CCXXFLAGS_JDK="$CCXXFLAGS_JDK -DABI_ELFv2"
+   fi
+ 
+--- hotspot/make/bsd/makefiles/ppc64.make.orig	2019-07-11 22:27:35.314715000 +0200
++++ hotspot/make/bsd/makefiles/ppc64.make	2019-07-12 11:28:56.070546000 +0200
+@@ -37,11 +37,8 @@ ifeq ($(filter $(OPENJDK_TARGET_CPU_ENDIAN),big little
+ endif
+ 
+ ifeq ($(OPENJDK_TARGET_CPU_ENDIAN),big)
+-  # fixes `relocation truncated to fit' error for gcc 4.1.
+-  CFLAGS += -mminimal-toc
+-
+   # finds use ppc64 instructions, but schedule for power5
+-  CFLAGS += -mcpu=powerpc64 -mtune=power5 -minsert-sched-nops=regroup_exact -mno-multiple -mno-string
++  CFLAGS += -mcpu=powerpc64 -mtune=power5 -DABI_ELFv2
+ else
+   # Little endian machine uses ELFv2 ABI.
+   CFLAGS += -DVM_LITTLE_ENDIAN -DABI_ELFv2
+--- hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp.orig	2019-07-12 11:49:27.065494000 +0200
++++ hotspot/src/cpu/ppc/vm/sharedRuntime_ppc.cpp	2019-07-12 11:49:34.924308000 +0200
+@@ -42,8 +42,6 @@
+ #include "opto/runtime.hpp"
+ #endif
+ 
+-#include <alloca.h>
+-
+ #define __ masm->
+ 
+ #ifdef PRODUCT
