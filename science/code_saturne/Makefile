@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	code_saturne
-PORTVERSION=	5.3.3
-PORTREVISION=	2
+PORTVERSION=	6.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science parallel
 
@@ -18,7 +17,8 @@ LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo	\
 		libhdf5.so:science/hdf5		\
 		libomp.so:devel/openmp		\
 		libmedC.so:french/med
-RUN_DEPENDS=	xmgrace:math/grace	\
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}	\
+		xmgrace:math/grace	\
 		bash:shells/bash	\
 		xterm:x11/xterm
 
@@ -33,17 +33,20 @@ USE_PYQT=	core gui sip widgets xml_build
 SHEBANG_FILES=	install_saturne.py tests/unittests.py bin/*.py build-aux/*.py
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-salome --without-salome-yacs --without-salome-kernel	\
+		--without-salome-gui
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python=${PYTHON_CMD} \
 		pyrcc5=pyrcc5-${PYTHON_VER} \
 		pyuic5=pyuic5-${PYTHON_VER}
 
-OPTIONS_DEFINE=		DOCS EXAMPLES ATLAS BATCH MPI
-OPTIONS_DEFAULT=	BATCH MPI METIS
+OPTIONS_DEFINE=		DOCS EXAMPLES BATCH BLAS MPI
+OPTIONS_DEFAULT=	BATCH BLAS MPI METIS
 OPTIONS_RADIO=		METIS
 OPTIONS_RADIO_METIS=	METIS PARMETIS
-ATLAS_USES=		blaslapack:atlas
-ATLAS_CONFIGURE_ON=	--with-blas=yes --with-blas-type=ATLAS
+BLAS_USES=		blaslapack
+BLAS_CONFIGURE_ON=	--with-blas=yes --with-blas-type=BLAS
+BLAS_LIB_DEPENDS=	libcblas.so:math/cblas
 BATCH_DESC=		Use Torque to submit batches
 BATCH_RUN_DEPENDS=	pbs-config:sysutils/torque
 MPI_LIB_DEPENDS=	libmpi.so:net/mpich
