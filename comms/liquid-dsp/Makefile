@@ -2,7 +2,7 @@
 
 PORTNAME=	liquid-dsp
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 #PORTREVISION=	1
 CATEGORIES=	comms
 
@@ -15,11 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float
 
+USES=		autoreconf:build gmake #gettext-tools iconv:wchar_t libtool
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jgaeddert
-GH_TAGNAME=		4c9a751
+GH_TAGNAME=		4892ebb
 
-USES=		autoreconf:build gmake #gettext-tools iconv:wchar_t libtool
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 #USE_LDCONFIG=	yes
