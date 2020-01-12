@@ -2,6 +2,7 @@ bin/MPEG2TransportStreamIndexer
 bin/live555HLSProxy
 bin/live555MediaServer
 bin/live555ProxyServer
+bin/mikeyParse
 bin/openRTSP
 bin/playSIP
 bin/registerRTSPStream
