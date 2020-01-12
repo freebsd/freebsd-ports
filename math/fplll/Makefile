@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fplll
-DISTVERSION=	5.3.0
+DISTVERSION=	5.3.2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
