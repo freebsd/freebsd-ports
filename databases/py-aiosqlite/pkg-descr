@@ -1,0 +1,12 @@
+aiosqlite allows interaction with SQLite databases on the main AsyncIO event
+loop without blocking execution of other coroutines while waiting for queries
+or data fetches. It does this by using a single, shared thread per connection.
+This thread executes all actions within a shared request queue to prevent
+overlapping actions.
+
+Connection objects are proxies to the real connections, contain the shared
+execution thread, and provide context managers to handle automatically closing
+connections. Cursors are similarly proxies to the real cursors, and provide
+async iterators to query results.
+
+WWW: https://pypi.python.org/pypi/aiosqlite
