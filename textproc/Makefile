@@ -35,6 +35,7 @@
     SUBDIR += af-aspell
     SUBDIR += aft
     SUBDIR += agrep
+    SUBDIR += aha
     SUBDIR += aiksaurus
     SUBDIR += align
     SUBDIR += am-aspell
