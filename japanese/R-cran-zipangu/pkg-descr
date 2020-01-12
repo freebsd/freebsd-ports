@@ -1,0 +1,6 @@
+Some data treated by the Japanese R user require unique operations
+and processing. These are caused by address, Kanji, and traditional
+year representations. 'zipangu' transforms specific to Japan into
+something more general one.
+
+WWW: https://cran.r-project.org/web/packages/zipangu/
