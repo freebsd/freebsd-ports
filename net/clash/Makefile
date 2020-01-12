@@ -39,6 +39,8 @@ GH_TUPLE=	\
 
 PLIST_FILES=	bin/${PORTNAME}
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 pre-patch:
 	@cd ${WRKSRC} && ${CP} proxy/redir/tcp_linux.go proxy/redir/tcp_freebsd.go
 
