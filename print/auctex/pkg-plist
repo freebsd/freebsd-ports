@@ -51,6 +51,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/images/viewdvi.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/images/viewpdf.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/images/viewps.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/latex-flymake.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/latex-flymake.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/latex.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/latex.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/multi-prompt.el
@@ -112,12 +114,16 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/amstext.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/amsthm.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/amsthm.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/arabxetex.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/arabxetex.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/array.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/array.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/article.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/article.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/attachfile.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/attachfile.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/australian.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/australian.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/austrian.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/austrian.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/babel.el
@@ -126,6 +132,10 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/baskervaldx.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/beamer.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/beamer.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/beamerarticle.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/beamerarticle.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/beamerswitch.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/beamerswitch.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/biblatex.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/biblatex.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/bicaption.el
@@ -144,12 +154,18 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/book.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/booktabs.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/booktabs.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/breqn.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/breqn.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/bulgarian.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/bulgarian.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/canadian.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/canadian.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/captcont.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/captcont.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/caption.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/caption.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/changelog.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/changelog.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/cleveref.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/cleveref.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/color.el
@@ -168,6 +184,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/czech.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/danish.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/danish.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/dashundergaps.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/dashundergaps.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/dcolumn.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/dcolumn.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/dinbrief.el
@@ -220,6 +238,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/filecontents.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/flashcards.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/flashcards.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/floatrow.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/floatrow.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/foils.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/foils.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/fontaxes.el
@@ -238,6 +258,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/french.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/frenchb.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/frenchb.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/fvextra.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/fvextra.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/geometry.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/geometry.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/german.el
@@ -282,6 +304,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/jsarticle.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/jsbook.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/jsbook.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/jsreport.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/jsreport.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/jura.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/jura.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/jurabib.el
@@ -306,6 +330,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/lscape.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ltablex.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ltablex.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ltugboat.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ltugboat.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ltx-base.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ltx-base.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ltxdoc.el
@@ -318,6 +344,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/luatextra.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/makeidx.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/makeidx.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/marginnote.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/marginnote.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/mathtools.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/mathtools.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/mdframed.el
@@ -340,6 +368,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/mn2e.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/mnras.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/mnras.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/moodle.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/moodle.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/multicol.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/multicol.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/multido.el
@@ -348,6 +378,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/multind.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/multirow.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/multirow.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/multitoc.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/multitoc.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/nameref.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/nameref.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/natbib.el
@@ -368,6 +400,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/newtxtext.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/newtxttt.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/newtxttt.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/newzealand.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/newzealand.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ngerman.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ngerman.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/nicefrac.el
@@ -376,6 +410,10 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/nomencl.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ntheorem.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ntheorem.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ocg-p.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ocg-p.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ocgx.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ocgx.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/paracol.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/paracol.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/paralist.el
@@ -400,6 +438,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/polski.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/polyglossia.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/polyglossia.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/preview.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/preview.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/prosper.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/prosper.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/psfig.el
@@ -414,6 +454,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/pst-slpe.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/pstricks.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/pstricks.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/pythontex.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/pythontex.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ragged2e.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ragged2e.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/relsize.el
@@ -444,6 +486,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/slides.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/slovak.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/slovak.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/sourcecodepro.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/sourcecodepro.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/splitidx.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/splitidx.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/subcaption.el
@@ -458,6 +502,10 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/tabularx.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/tabulary.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/tabulary.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/tarticle.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/tarticle.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/tbook.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/tbook.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/tcolorbox.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/tcolorbox.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/tcolorboxlib-raster.el
@@ -468,6 +516,10 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/textpos.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/theorem.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/theorem.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/thm-restate.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/thm-restate.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/thmtools.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/thmtools.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/tikz.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/tikz.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/titleps.el
@@ -478,6 +530,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/titletoc.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/transparent.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/transparent.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/treport.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/treport.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ulem.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/ulem.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/unicode-math.el
@@ -498,6 +552,10 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/wrapfig.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/xcolor.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/xcolor.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/xkcdcolors.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/xkcdcolors.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/xltabular.el
+%%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/xltabular.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/xparse.el
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/xparse.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/auctex/style/xspace.el
