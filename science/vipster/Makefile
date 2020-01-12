@@ -44,6 +44,8 @@ CXX=		clang++${LLVM_VER}
 USE_GCC=	yes
 .endif
 
+PORTSCOUT=	limit:^[0-9][0-9a-z\.]*$$
+
 do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DTESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
