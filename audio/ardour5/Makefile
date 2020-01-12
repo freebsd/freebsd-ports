@@ -49,7 +49,6 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 BROKEN_aarch64=		fails to configure: Could not find the program gas,as,gcc
-BROKEN_powerpc64=	fails to compile: configuration_variable.cc: 'strtof' is not a member of 'std'
 
 PLIST_SUB=	ARDOURVERSION=${PORTVERSION}
 
@@ -104,6 +103,8 @@ post-install:
 WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse' --dist-target=i386
 .elif ${ARCH} == "amd64"
 WITH_ARCH_FLAGS=	--arch='-msse -mfpmath=sse' --dist-target=x86_64
+.elif ${ARCH} == "powerpc64"
+LLD_UNSAFE=	yes
 .endif
 
 .if defined(WITH_ARCH_FLAGS)
