@@ -12,9 +12,9 @@ COMMENT=	TLS client policy for Postfix according to domain MTA-STS policy
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>0:dns/py-aiodns@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=1.1.1:dns/py-aiodns@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.4.4:www/py-aiohttp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.12:devel/py-yaml@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		python:3.5+
@@ -25,8 +25,8 @@ GH_ACCOUNT=	Snawoot
 
 OPTIONS_DEFINE=	REDIS SQLITE
 
-REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioredis>0:databases/py-aioredis@${PY_FLAVOR}
-SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosqlite>0:databases/py-aiosqlite@${PY_FLAVOR}
+REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioredis>=1.2.0:databases/py-aioredis@${PY_FLAVOR}
+SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosqlite>=1.10.0:databases/py-aiosqlite@${PY_FLAVOR}
 
 USE_RC_SUBR=	mta_sts
 
