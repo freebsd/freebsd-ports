@@ -1,0 +1,3 @@
+dry-equalizer defines equality, equivalency and hash methods automatically.
+
+WWW: https://github.com/dry-rb/dry-equalizer
