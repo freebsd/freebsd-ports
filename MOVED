@@ -13746,3 +13746,4 @@ sysutils/u-boot-zedboard||2020-01-10|Has expired: Broken for more than 6 months
 sysutils/u-boot-zybo||2020-01-10|Has expired: Broken for more than 6 months
 x11-themes/kde-icons-kool-gorilla||2020-01-10|Has expired: Broken for more than 3 months, unmaintained
 sysutils/docker-freebsd||2020-01-11|Has expired: Broken for more than 9 months
+science/molden|biology/molden|The duplicate port was removed in rev.505268
