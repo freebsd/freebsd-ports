@@ -1,27 +1,7 @@
---- CMakeLists.txt.orig	2018-12-12 19:23:43 UTC
+--- CMakeLists.txt.orig	2020-01-11 09:18:32 UTC
 +++ CMakeLists.txt
-@@ -164,8 +164,8 @@ endif()
- 
- # set -Werror if in Debug configuration
- if(NOT MSVC AND NOT WASM)
--set(CMAKE_CXX_FLAGS_RELEASE "-O3 ")
--set(CMAKE_C_FLAGS_RELEASE "-O3 ")
-+#set(CMAKE_CXX_FLAGS_RELEASE "-O3 ")
-+#set(CMAKE_C_FLAGS_RELEASE "-O3 ")
- if(${CMAKE_BUILD_TYPE} MATCHES "Debug")
- set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Wall -Werror -Wno-missing-field-initializers")
- set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -Wno-missing-field-initializers")
-@@ -206,7 +206,7 @@ execute_process (
-      OUTPUT_VARIABLE PYTHON_USER_SITE_PACKAGES
-    )
- 
--SET(PYTHON_MODULE_INSTALL_DIR ${PYTHON_USER_SITE_PACKAGES} CACHE PATH "Python module install dir")
-+#SET(PYTHON_MODULE_INSTALL_DIR ${PYTHON_USER_SITE_PACKAGES} CACHE PATH "Python module install dir")
- 
- set(JAVA_MODULE_INSTALL_DIR ${LIBRARY_INSTALL_DIR} CACHE PATH "Java module install dir")
- set(LUA_MODULE_INSTALL_DIR ${LIBRARY_INSTALL_DIR} CACHE PATH "Lua module install dir")
-@@ -378,7 +378,7 @@ set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -stdlib=libc+
- set_target_properties(${CSOUNDLIB} PROPERTIES CXX_COMPILE_FLAGS  "-std=c++11")
+@@ -291,7 +291,7 @@ if(APPLE)
+     set_target_properties(${CSOUNDLIB} PROPERTIES CXX_COMPILE_FLAGS  "-std=c++11")
  endif()
  
 -if(CMAKE_SYSTEM_NAME MATCHES "Linux")
@@ -29,31 +9,21 @@
      set(LINUX YES)
  else()
      set(LINUX NO)
-@@ -527,9 +527,11 @@ find_package(FLTK )
+@@ -438,9 +438,11 @@ find_package(FLTK)
  #        LIST_REPLACE(FLTK_LIBRARIES 2 "fltk_images_SHARED")
  #    endif()
  #endif()
--find_package(FAUST)
++if (BUILD_FAUST_OPCODES)
+ find_package(FAUST)
 -find_package(Java)
 -find_package(JNI)
-+if (BUILD_FAUST_OPCODES)
-+  find_package(FAUST)
 +endif()
 +#find_package(Java)
 +#find_package(JNI)
- find_package(LIBLO)
- find_package(LUAJIT)
  find_package(MUSICXML)
-@@ -540,7 +542,7 @@ find_package(MUSICXML)
+ find_package(VSTSDK2X)
  
- find_package(PORTSMF)
- find_package(PythonLibs 2.7)
--if(NOT STK_LOCAL)
-+if(BUILD_STK_OPCODES AND NOT STK_LOCAL)
-     find_package(STK)
- endif()
- find_package(SWIG)
-@@ -1251,11 +1253,11 @@ if(USE_CURL AND CURL_FOUND)
+@@ -1182,11 +1184,11 @@ if(USE_CURL AND CURL_FOUND)
  endif()
  
  # Linux does not have a separate libintl, it is part of libc
@@ -67,14 +37,3 @@
          list(APPEND libcsound_LIBS ${LIBINTL_LIBRARY})
      endif()
      list(APPEND libcsound_CFLAGS -DGNU_GETTEXT)
-@@ -1275,8 +1277,8 @@ endif()
- 
- if(LINUX)
-     message(STATUS "Building on Linux.")
--    add_definitions(-DLINUX -DPIPES -DNO_FLTK_THREADS -D_GNU_SOURCE -DHAVE_SOCKETS)
--    list(APPEND libcsound_LIBS m dl)
-+    add_definitions(-DLINUX -DPIPES -DNO_FLTK_THREADS  -DHAVE_SOCKETS)
-+    list(APPEND libcsound_LIBS m)
- 
-     find_library(LIBRT_LIBRARY rt)
- 
