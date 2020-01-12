@@ -1,0 +1,4 @@
+This module provides various memoizing collections and decorators, including
+variants of the Python Standard Library's @lru_cache function decorator.
+
+WWW: https://github.com/tkem/cachetools
