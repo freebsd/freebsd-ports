@@ -29,4 +29,6 @@ CXXFLAGS+=	-I${LOCALBASE}/lib/glib-2.0/include
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 .include <bsd.port.mk>
