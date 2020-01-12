@@ -1,0 +1,45 @@
+--- Makefile.orig	2020-01-12 12:25:35 UTC
++++ Makefile
+@@ -18,7 +18,7 @@ MD5SUM = md5sum
+ TINYGO ?= tinygo
+ 
+ # Use CCACHE for LLVM if possible
+-ifneq (, $(shell which ccache))
++ifneq (, $(CCACHE_DIR))
+     LLVM_OPTION += '-DLLVM_CCACHE_BUILD=ON'
+ endif
+ 
+@@ -99,13 +99,13 @@ fmt-check:
+ gen-device: gen-device-avr gen-device-nrf gen-device-sam gen-device-sifive gen-device-stm32
+ 
+ gen-device-avr:
+-	$(GO) build -o ./build/gen-device-avr ./tools/gen-device-avr/
++	$(GO) build -mod=vendor -o ./build/gen-device-avr ./tools/gen-device-avr/
+ 	./build/gen-device-avr lib/avr/packs/atmega src/device/avr/
+ 	./build/gen-device-avr lib/avr/packs/tiny src/device/avr/
+ 	@GO111MODULE=off $(GO) fmt ./src/device/avr
+ 
+ build/gen-device-svd: ./tools/gen-device-svd/*.go
+-	$(GO) build -o $@ ./tools/gen-device-svd/
++	$(GO) build -mod=vendor -o $@ ./tools/gen-device-svd/
+ 
+ gen-device-nrf: build/gen-device-svd
+ 	./build/gen-device-svd -source=https://github.com/NordicSemiconductor/nrfx/tree/master/mdk lib/nrfx/mdk/ src/device/nrf/
+@@ -142,10 +142,10 @@ $(LLVM_BUILDDIR): $(LLVM_BUILDDIR)/build.ninja
+ # Build the Go compiler.
+ tinygo:
+ 	@if [ ! -f "$(LLVM_BUILDDIR)/bin/llvm-config" ]; then echo "Fetch and build LLVM first by running:"; echo "  make llvm-source"; echo "  make $(LLVM_BUILDDIR)"; exit 1; fi
+-	CGO_CPPFLAGS="$(CGO_CPPFLAGS)" CGO_CXXFLAGS="$(CGO_CXXFLAGS)" CGO_LDFLAGS="$(CGO_LDFLAGS)" $(GO) build -o build/tinygo$(EXE) -tags byollvm .
++	CGO_CPPFLAGS="$(CGO_CPPFLAGS)" CGO_CXXFLAGS="$(CGO_CXXFLAGS)" CGO_LDFLAGS="$(CGO_LDFLAGS)" $(GO) build -o build/tinygo$(EXE) -tags byollvm -mod=vendor .
+ 
+ test:
+-	CGO_CPPFLAGS="$(CGO_CPPFLAGS)" CGO_CXXFLAGS="$(CGO_CXXFLAGS)" CGO_LDFLAGS="$(CGO_LDFLAGS)" $(GO) test -v -tags byollvm ./cgo ./compileopts ./interp ./transform .
++	CGO_CPPFLAGS="$(CGO_CPPFLAGS)" CGO_CXXFLAGS="$(CGO_CXXFLAGS)" CGO_LDFLAGS="$(CGO_LDFLAGS)" $(GO) test -v -tags byollvm -mod=vendor ./cgo ./compileopts ./interp ./transform .
+ 
+ tinygo-test:
+ 	cd tests/tinygotest && tinygo test
+@@ -280,4 +280,3 @@ release: tinygo gen-device
+ 	./build/tinygo build-builtins -target=armv6m-none-eabi  -o build/release/tinygo/pkg/armv6m-none-eabi/compiler-rt.a
+ 	./build/tinygo build-builtins -target=armv7m-none-eabi  -o build/release/tinygo/pkg/armv7m-none-eabi/compiler-rt.a
+ 	./build/tinygo build-builtins -target=armv7em-none-eabi -o build/release/tinygo/pkg/armv7em-none-eabi/compiler-rt.a
+-	tar -czf build/release.tar.gz -C build/release tinygo

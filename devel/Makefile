@@ -6539,6 +6539,7 @@
     SUBDIR += tigcc
     SUBDIR += tijmp
     SUBDIR += tinycbor
+    SUBDIR += tinygo
     SUBDIR += tinylaf
     SUBDIR += tkcon
     SUBDIR += tkcvs
