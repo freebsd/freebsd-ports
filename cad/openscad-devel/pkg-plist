@@ -1,6 +1,11 @@
 bin/openscad
 man/man1/openscad.1.gz
 share/applications/openscad.desktop
+share/icons/hicolor/128x128/apps/openscad.png
+share/icons/hicolor/256x256/apps/openscad.png
+share/icons/hicolor/48x48/apps/openscad.png
+share/icons/hicolor/512x512/apps/openscad.png
+share/icons/hicolor/64x64/apps/openscad.png
 share/metainfo/org.openscad.OpenSCAD.appdata.xml
 share/mime/packages/openscad.xml
 %%DATADIR%%/color-schemes/editor/dark-background.json
@@ -109,11 +114,11 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/locale/pl/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/ru/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/uk/LC_MESSAGES/openscad.mo
+%%DATADIR%%/locale/zh_CN/LC_MESSAGES/openscad.mo
 %%DATADIR%%/templates/difference.json
 %%DATADIR%%/templates/for.json
 %%DATADIR%%/templates/function.json
 %%DATADIR%%/templates/module.json
 %%DATADIR%%/templates/rotate.json
 %%DATADIR%%/templates/translate.json
-share/pixmaps/openscad.png
 @dir %%DATADIR%%/libraries/MCAD
