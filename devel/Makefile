@@ -5814,6 +5814,7 @@
     SUBDIR += rubygem-docile
     SUBDIR += rubygem-dry-configurable
     SUBDIR += rubygem-dry-container
+    SUBDIR += rubygem-dry-core
     SUBDIR += rubygem-dry-inflector
     SUBDIR += rubygem-drydock
     SUBDIR += rubygem-dynflow
