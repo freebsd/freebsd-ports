@@ -49,6 +49,6 @@ include/fplll/util.h
 include/fplll/wrapper.h
 lib/libfplll.so
 lib/libfplll.so.6
-lib/libfplll.so.6.0.0
+lib/libfplll.so.6.0.2
 libdata/pkgconfig/fplll.pc
 %%DATADIR%%/strategies/default.json
