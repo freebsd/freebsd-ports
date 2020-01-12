@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mbdyn
-PORTVERSION=	1.7.2
-PORTREVISION=	8
+PORTVERSION=	1.7.3
 CATEGORIES=	science
 MASTER_SITES=	https://www.mbdyn.org/userfiles/downloads/
 
