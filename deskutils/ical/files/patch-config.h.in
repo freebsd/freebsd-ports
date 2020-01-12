@@ -1,43 +1,23 @@
---- config.h.in.orig	1995-07-02 22:12:55 UTC
+--- config.h.in.orig	2004-03-11 11:26:55 UTC
 +++ config.h.in
-@@ -5,26 +5,26 @@
+@@ -5,14 +5,14 @@
  #undef pid_t
  
  #undef SIZEOF_LONG
 -#undef HAVE_STRING_H
 -#undef HAVE_LIMITS_H
-+#define HAVE_STRING_H 1
-+#define HAVE_LIMITS_H 1
++#define HAVE_STRING_H	1
++#define HAVE_LIMITS_H	1
  
 -#undef HAVE_FSYNC
-+#define HAVE_FSYNC 1
++#define HAVE_FSYNC	1
  
 -#undef HAVE_STRERROR
--#undef HAVE_STRERROR_PROTO
--#undef HAVE_SYS_ERRLIST_PROTO
-+#define HAVE_STRERROR 1
-+#define HAVE_STRERROR_PROTO 1
-+#define HAVE_SYS_ERRLIST_PROTO 1
- 
--#undef HAVE_GETTIMEOFDAY_PROTO
-+#define HAVE_GETTIMEOFDAY_PROTO 1
- 
--#undef HAVE_GETHOSTID
--#undef HAVE_GETHOSTID_PROTO
-+#define HAVE_GETHOSTID 1
-+#define HAVE_GETHOSTID_PROTO 1
++#define HAVE_STRERROR	1
  
 -#undef HAVE_UNAME
 -#undef HAVE_SYS_UTSNAME_H
--#undef HAVE_GETHOSTNAME_PROTO
-+#define HAVE_UNAME 1
-+#define HAVE_SYS_UTSNAME_H 1
-+#define HAVE_GETHOSTNAME_PROTO 1
- 
--#undef HAVE_GETPID_PROTO
-+#define HAVE_GETPID_PROTO 1
- 
--#undef HAVE_STRNCASECMP_PROTO
-+#define HAVE_STRNCASECMP_PROTO 1
++#define HAVE_UNAME	1
++#define HAVE_SYS_UTSNAME_H	1
  
  #endif /* _CONFIG_H_IN */

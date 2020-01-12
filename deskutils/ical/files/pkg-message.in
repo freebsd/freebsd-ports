@@ -1,0 +1,4 @@
+Ical has been updated to version %%VERSION%%.
+
+Any users who source Ical code in their ~/.tk/ical/user.tcl file
+should update the file paths to "%%PREFIX%%/lib/ical/v%%VERSION%%/".
