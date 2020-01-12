@@ -1,0 +1,10 @@
+--- libs/fst/wscript.orig	2020-01-11 19:16:19 UTC
++++ libs/fst/wscript
+@@ -82,7 +82,6 @@ def build(bld):
+ 
+     obj.includes  = [ '../pbd/', '../ardour/', '.' ]
+     obj.defines = [
+-        '_POSIX_SOURCE',
+         'USE_WS_PREFIX',
+         'VST_SCANNER_APP',
+         'PACKAGE="' + I18N_PACKAGE + str(bld.env['MAJOR']) + '"',
