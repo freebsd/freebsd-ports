@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	greybird
-PORTVERSION=	3.22.10
+PORTVERSION=	3.22.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
@@ -13,7 +13,11 @@ COMMENT=	Gtk and xfwm4 themes for the Xfce Desktop
 LICENSE=	GPLv2 CC-BY-SA-3.0
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	sassc:textproc/sassc
 RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:x11-themes/gtk-murrine-engine
+
+USES=		gnome meson pkgconfig python:3.5+,build
+USE_GNOME=	gdkpixbuf2:build glib20:build librsvg2:build
 
 PORTSCOUT=	limit:^3\.22\.
 
@@ -29,19 +33,8 @@ OPTIONS_SUB=		yes
 
 NOTIFYD_DESC=	Install xfce4-notifyd theme
 
-post-patch:
-	@${RM} ${WRKSRC}/gtk-?.0/*.orig
-
-do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/Greybird
-.for dir in gtk-2.0 gtk-3.0 plank xfwm4
-	@cd ${WRKSRC} && \
-		${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/share/themes/Greybird
-.endfor
-
-do-install-NOTIFYD-on:
-	@cd ${WRKSRC} && \
-		${COPYTREE_SHARE} xfce-notify-4.0/ \
-		${STAGEDIR}${PREFIX}/share/themes/Greybird
+post-patch-NOTIFYD-off:
+	${REINPLACE_CMD} -e 's|install_data(xfce_notify_|#install_data(xfce_notify_|g' \
+		${WRKSRC}/light/meson.build
 
 .include <bsd.port.mk>

@@ -1,0 +1,107 @@
+--- dark/meson.build.orig	2019-12-03 23:26:07 UTC
++++ dark/meson.build
+@@ -155,43 +155,6 @@ gtk3_assets = files([
+ ])
+ 
+ #
+-# GNOME Shell Files
+-#
+-
+-#
+-# Metacity Files
+-#
+-
+-metacity_files = files([
+-    'metacity-1/metacity-theme-3.xml',
+-    'metacity-1/close_focused_pressed.png',
+-    'metacity-1/unmaximize_focused_pressed.png',
+-    'metacity-1/shade_unfocused.png',
+-    'metacity-1/unmaximize_unfocused.png',
+-    'metacity-1/unmaximize_focused_prelight.png',
+-    'metacity-1/maximize_focused_prelight.png',
+-    'metacity-1/maximize_focused_pressed.png',
+-    'metacity-1/close_focused_prelight.png',
+-    'metacity-1/unshade_focused_prelight.png',
+-    'metacity-1/close_focused_normal.png',
+-    'metacity-1/unshade_unfocused.png',
+-    'metacity-1/minimize_unfocused.png',
+-    'metacity-1/metacity-theme-2.xml',
+-    'metacity-1/maximize_focused_normal.png',
+-    'metacity-1/unshade_focused_normal.png',
+-    'metacity-1/minimize_focused_prelight.png',
+-    'metacity-1/shade_focused_normal.png',
+-    'metacity-1/maximize_unfocused.png',
+-    'metacity-1/unshade_focused_pressed.png',
+-    'metacity-1/minimize_focused_pressed.png',
+-    'metacity-1/close_unfocused.png',
+-    'metacity-1/unmaximize_focused_normal.png',
+-    'metacity-1/shade_focused_pressed.png',
+-    'metacity-1/shade_focused_prelight.png',
+-    'metacity-1/minimize_focused_normal.png'
+-])
+-
+-#
+ # Xfwm4 Files
+ #
+ 
+@@ -445,40 +408,6 @@ plank_files = files([
+ ])
+ 
+ #
+-# Unity files
+-#
+-unity_files = files([
+-    'unity/close_focused_normal.png',
+-    'unity/close_focused_prelight.png',
+-    'unity/close_focused_pressed.png',
+-    'unity/close.png',
+-    'unity/close_unfocused.png',
+-    'unity/close_unfocused_prelight.png',
+-    'unity/close_unfocused_pressed.png',
+-    'unity/maximize_focused_normal.png',
+-    'unity/maximize_focused_prelight.png',
+-    'unity/maximize_focused_pressed.png',
+-    'unity/maximize.png',
+-    'unity/maximize_unfocused.png',
+-    'unity/maximize_unfocused_prelight.png',
+-    'unity/maximize_unfocused_pressed.png',
+-    'unity/minimize_focused_normal.png',
+-    'unity/minimize_focused_prelight.png',
+-    'unity/minimize_focused_pressed.png',
+-    'unity/minimize.png',
+-    'unity/minimize_unfocused.png',
+-    'unity/minimize_unfocused_prelight.png',
+-    'unity/minimize_unfocused_pressed.png',
+-    'unity/unmaximize_focused_normal.png',
+-    'unity/unmaximize_focused_prelight.png',
+-    'unity/unmaximize_focused_pressed.png',
+-    'unity/unmaximize.png',
+-    'unity/unmaximize_unfocused.png',
+-    'unity/unmaximize_unfocused_prelight.png',
+-    'unity/unmaximize_unfocused_pressed.png'
+-])
+-
+-#
+ #   Installing
+ #
+ 
+@@ -531,13 +460,10 @@ install_data(gtk3_assets, install_dir : join_paths (th
+ 
+ # we don't want to install these in the flatpak
+ if not get_option('flatpak')
+-    install_data('Greybird.emerald', rename: 'Greybird-dark.emerald', install_dir : theme_path)
+     install_data(gtk2_files, install_dir : join_paths(theme_path, 'gtk-2.0'))
+     install_data(gtk2_apps, install_dir : join_paths(theme_path, 'gtk-2.0/apps'))
+     install_data(gtk2_thunar, install_dir : join_paths(theme_path, 'gtk-2.0/apps/thunar'))
+     install_data(gtk2_assets, install_dir : join_paths(theme_path, 'gtk-2.0/assets'))
+-    install_data(['gnome-shell/gnome-shell.css'], install_dir : join_paths (theme_path, 'gnome-shell'))
+-    install_data(metacity_files, install_dir : join_paths (theme_path, 'metacity-1'))
+     install_data(xfwm4_files, install_dir : join_paths (theme_path, 'xfwm4'))
+     install_data(xfwm4_a11y_files, install_dir : join_paths (a11y_theme_path, 'xfwm4'))
+     # we're not installing xfwm compact for dark
+@@ -546,5 +472,4 @@ if not get_option('flatpak')
+     # install_data(xfce_notify_files, install_dir : join_paths (theme_path, 'xfce-notify-4.0'))
+     # install_data(xfce_notify_bright_files, install_dir : join_paths (bright_theme_path, 'xfce-notify-4.0_bright'))
+     install_data(plank_files, install_dir : join_paths (theme_path, 'plank'))
+-    install_data(unity_files, install_dir : join_paths (theme_path, 'unity'))
+ endif
