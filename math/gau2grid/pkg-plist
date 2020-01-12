@@ -1,7 +1,7 @@
 include/gau2grid/gau2grid.h
 include/gau2grid/gau2grid_pragma.h
 lib/libgg.so
-lib/libgg.so.1
+lib/libgg.so.2
 share/cmake/gau2grid/gau2gridConfig.cmake
 share/cmake/gau2grid/gau2gridConfigVersion.cmake
 share/cmake/gau2grid/gau2gridTargets-%%CMAKE_BUILD_TYPE%%.cmake
