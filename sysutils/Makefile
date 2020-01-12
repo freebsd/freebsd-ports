@@ -557,6 +557,7 @@
     SUBDIR += kfloppy
     SUBDIR += khelpcenter
     SUBDIR += kiconvtool
+    SUBDIR += kio-fuse
     SUBDIR += kldfind
     SUBDIR += kldpatch
     SUBDIR += kops
