@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qcad
-PORTVERSION=	3.22.0.12
-PORTREVISION=	1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	3.24.1.0
 #PORTREVISION=
+DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
 
@@ -57,9 +56,6 @@ CFLAGS_i386= -fPIC
 CXXFLAGS_i386= -fPIC
 
 pre-configure:
-	${MKDIR} ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-5.13.2
-	${CP} ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-5.13.0/qt-labs-qtscriptgenerator-5.13.0.pro \
-	      ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-5.13.2/qt-labs-qtscriptgenerator-5.13.2.pro
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
 		${WRKSRC}/src/core/RS.cpp
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
