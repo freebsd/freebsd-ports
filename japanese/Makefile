@@ -7,6 +7,7 @@
     SUBDIR += CGdic-fpw
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
+    SUBDIR += R-cran-zipangu
     SUBDIR += Wnn6-lib
     SUBDIR += Wnn7-lib
     SUBDIR += a2ps
