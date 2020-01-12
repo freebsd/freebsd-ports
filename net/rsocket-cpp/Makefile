@@ -33,6 +33,8 @@ USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTS BUILD_EXAMPLES
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 post-install: # https://github.com/rsocket/rsocket-cpp/issues/890
 	@cd ${STAGEDIR}${LOCALBASE} && ${RM} -r include/rsocket/examples include/rsocket/test include/yarpl/cmake include/yarpl/perf include/yarpl/test
 
