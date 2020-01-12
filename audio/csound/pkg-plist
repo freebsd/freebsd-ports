@@ -49,6 +49,7 @@ include/csound/csound_threaded.hpp
 include/csound/csound_type_system.h
 include/csound/cwindow.h
 include/csound/filebuilding.h
+include/csound/find_opcode.h
 include/csound/float-version.h
 include/csound/interlocks.h
 include/csound/modload.h
@@ -80,6 +81,7 @@ lib/csound/plugins64-6.0/libfractalnoise.so
 lib/csound/plugins64-6.0/libframebuffer.so
 lib/csound/plugins64-6.0/libftsamplebank.so
 lib/csound/plugins64-6.0/libgetftargs.so
+lib/csound/plugins64-6.0/libgtf.so
 %%IMAGE%%lib/csound/plugins64-6.0/libimage.so
 lib/csound/plugins64-6.0/libipmidi.so
 %%JACK%%lib/csound/plugins64-6.0/libjackTransport.so

@@ -1,6 +1,6 @@
---- Top/csound.c.orig	2018-11-07 14:05:23 UTC
+--- Top/csound.c.orig	2020-01-11 09:18:32 UTC
 +++ Top/csound.c
-@@ -60,10 +60,14 @@
+@@ -61,10 +61,14 @@
  //#include "cs_par_dispatch.h"
  #include "find_opcode.h"
  
@@ -16,16 +16,7 @@
  #include "csound_standard_types.h"
  
  #include "csdebug.h"
-@@ -405,7 +409,7 @@ static const CSOUND cenviron_ = {
-     rewriteheader,
-     csoundLoadSoundFile,
-     fdrecord,
--    fdclose,
-+    fd__close,
-     csoundCreateFileHandle,
-     csoundGetFileName,
-     csoundFileClose,
-@@ -3755,7 +3759,7 @@ void csoundNotifyFileOpened(CSOUND* csou
+@@ -3773,7 +3777,7 @@ void csoundNotifyFileOpened(CSOUND* csound, const char
  /* ------------------------------------ */
  
  #if defined(HAVE_RDTSC)
@@ -34,7 +25,7 @@
  #undef HAVE_RDTSC
  #endif
  #endif
-@@ -3768,6 +3772,13 @@ static double timeResolutionSeconds = -1
+@@ -3786,6 +3790,13 @@ static double timeResolutionSeconds = -1.0;
  static int getTimeResolution(void)
  {
  #if defined(HAVE_RDTSC)
@@ -48,7 +39,7 @@
      FILE    *f;
      char    buf[256];
  
-@@ -3803,9 +3814,14 @@ static int getTimeResolution(void)
+@@ -3821,9 +3832,14 @@ static int getTimeResolution(void)
        }
      }
      fclose(f);
