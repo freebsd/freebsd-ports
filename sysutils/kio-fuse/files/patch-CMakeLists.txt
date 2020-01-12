@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2020-01-12 09:41:08 UTC
++++ CMakeLists.txt
+@@ -58,7 +58,9 @@ target_compile_definitions(kio-fuse PRIVATE FUSE_USE_V
+ target_link_options(kio-fuse PRIVATE ${FUSE3_LDFLAGS})
+ target_link_libraries(kio-fuse PRIVATE Qt5::Core KF5::KIOCore ${FUSE3_LIBRARIES})
+ install(TARGETS kio-fuse DESTINATION ${KDE_INSTALL_FULL_LIBEXECDIR})
+-install(FILES kio-fuse-tmpfiles.conf DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/tmpfiles.d)
++if(LINUX)
++	install(FILES kio-fuse-tmpfiles.conf DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/tmpfiles.d)
++endif()
+ kdbusaddons_generate_dbus_service_file(kio-fuse org.kde.KIOFuse ${KDE_INSTALL_FULL_LIBEXECDIR})
+ 
+ feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

@@ -1,0 +1,9 @@
+KioFuse allows you to mount remote directories into the root hierarchy of your
+local file system, thereby exposing KDE's advanced access capabilities (SSH,
+SAMBA/Windows, FTP, TAR/GZip/BZip2, WebDav, etc) to POSIX-compliant
+applications such as Firefox, OpenOffice, GNOME apps, shell utilities and more.
+
+KioFuse works by acting as a bridge between KDE's KIO filesystem design and
+FUSE.
+
+WWW: https://github.com/KDE/kio-fuse
