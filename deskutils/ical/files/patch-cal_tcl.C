@@ -49,15 +49,6 @@
      { 0,		0, 0, 0			}
  };
  
-@@ -281,7 +281,7 @@ static int parse_items(Tcl_Interp* tcl, Calendar_Tcl* 
- 
-     if ((argc >= 2) && (strcmp(argv[0], "-items") == 0)) {
- 	int count;
--	char** list;
-+	CONST84 char** list;
- 	if (Tcl_SplitList(tcl, argv[1], &count, &list) != TCL_OK) {
- 	    TCL_Error(tcl, "invalid item list");
- 	}
 @@ -516,7 +516,7 @@ static int cal_ronly(ClientData c, Tcl_Interp* tcl, in
  	TCL_Error(tcl, "no such calendar");
      }

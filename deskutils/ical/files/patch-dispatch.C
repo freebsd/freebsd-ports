@@ -5,7 +5,7 @@
  		TCL_Error(tcl, "too many arguments");
  	    }
 -	    return entry->handler(c, tcl, argc, argv);
-+	    return entry->handler(c, tcl, argc, (CONST84 char **)argv);
++	    return entry->handler(c, tcl, argc, (const char **)argv);
  	}
      }
  
