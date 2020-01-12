@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grape
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport52>=0:devel/rubygem-activesupport52 \
 		rubygem-builder>=0:devel/rubygem-builder \
+		rubygem-dry-types>=1.1:devel/rubygem-dry-types \
 		rubygem-mustermann-grape>=1.0.0<1.1:devel/rubygem-mustermann-grape \
 		rubygem-rack>=1.3.0:www/rubygem-rack \
 		rubygem-rack-accept>=0:www/rubygem-rack-accept \
