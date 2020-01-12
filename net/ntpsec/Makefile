@@ -16,6 +16,8 @@ USE_GITHUB=	yes
 
 MAKE_ENV=	NOSYNC=1 # workaround for the console problem: https://gitlab.com/NTPsec/ntpsec/issues/599
 
+PORTSCOUT=	limit:^[0-9_\.]*$$
+
 post-install: # autoplist: plist varies depending on the python version
 	@cd ${STAGEDIR}${PREFIX} && \
 		${FIND} * -type f -or -type l | ${SED} -e 's|^man/.*|&.gz|' >> ${TMPPLIST}
