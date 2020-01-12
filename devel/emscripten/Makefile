@@ -2,6 +2,7 @@
 
 PORTNAME=	emscripten
 DISTVERSION=	1.39.5
+PORTREVISION=	1
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +12,8 @@ LICENSE=	MIT NCSA
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	llvm-devel>0:devel/llvm-devel \
-		node:www/node
+		node:www/node \
+		binaryen>0:devel/binaryen
 		# the upstream requires to use either the latest llvm version, or their own llvm fork called emscripten-fastcomp
 
 USES=		python shebangfix
