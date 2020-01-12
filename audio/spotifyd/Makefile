@@ -2,8 +2,7 @@
 
 PORTNAME=	spotifyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.20
-PORTREVISION=	3
+DISTVERSION=	0.2.23
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -17,11 +16,6 @@ LIB_DEPENDS=	libogg.so:audio/libogg
 USES=		cargo ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	Spotifyd
-GH_TUPLE=	plietar:dns-parser:1d3e5a5591bc72eb061c23bd426c4a25f2f73791:dnsparser \
-		librespot-org:librespot:551daadc44a39336e1c643d1e300d38cdd8426d5:librespot \
-		plietar:rust-mdns:66a74033da6c9f1a06e7b0a29f4544fd189d6479:mdns \
-		TeXitoi:structopt:0c888e962d842f2c90c6c290d3a2a40947b37005:structopt \
-		plietar:rust-tremor:5958cc302e78f535dad90e9665da981ddff4000a:tremor
 USE_RC_SUBR=	spotifyd
 
 CARGO_CRATES=	adler32-1.0.4 \
@@ -37,43 +31,40 @@ CARGO_CRATES=	adler32-1.0.4 \
 		alsa-sys-0.1.2 \
 		ansi_term-0.11.0 \
 		approx-0.3.2 \
-		arc-swap-0.4.3 \
-		arrayref-0.3.5 \
-		arrayvec-0.4.12 \
-		atty-0.2.13 \
+		arc-swap-0.4.4 \
+		atty-0.2.14 \
 		autocfg-0.1.7 \
+		autocfg-1.0.0 \
 		backtrace-0.3.40 \
 		backtrace-sys-0.1.32 \
-		base64-0.10.1 \
+		base-x-0.2.6 \
 		base64-0.9.3 \
+		base64-0.10.1 \
 		bindgen-0.51.1 \
 		bit-set-0.5.1 \
 		bit-vec-0.5.1 \
 		bitflags-0.3.3 \
 		bitflags-0.9.1 \
 		bitflags-1.2.1 \
-		blake2b_simd-0.5.8 \
 		block-buffer-0.7.3 \
 		block-cipher-trait-0.6.2 \
 		block-modes-0.3.3 \
-		block-padding-0.1.4 \
+		block-padding-0.1.5 \
 		boxfnonce-0.1.1 \
+		bumpalo-3.1.2 \
 		byte-tools-0.3.1 \
 		bytecount-0.4.0 \
-		byteorder-0.5.3 \
 		byteorder-1.3.2 \
 		bytes-0.4.12 \
 		c2-chacha-0.2.3 \
-		c_linked_list-1.1.1 \
 		cargo_metadata-0.6.4 \
-		cc-1.0.46 \
-		cexpr-0.3.5 \
+		cc-1.0.50 \
+		cexpr-0.3.6 \
 		cfg-if-0.1.10 \
-		chrono-0.4.9 \
+		chrono-0.4.10 \
 		clang-sys-0.28.1 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
-		constant_time_eq-0.1.4 \
 		cookie-0.12.0 \
 		cookie_store-0.7.0 \
 		core-foundation-0.6.4 \
@@ -83,10 +74,11 @@ CARGO_CRATES=	adler32-1.0.4 \
 		coreaudio-sys-0.2.3 \
 		cpal-0.8.2 \
 		crc32fast-1.2.0 \
-		crossbeam-deque-0.7.1 \
-		crossbeam-epoch-0.7.2 \
+		crossbeam-deque-0.7.2 \
+		crossbeam-epoch-0.8.0 \
 		crossbeam-queue-0.1.2 \
 		crossbeam-utils-0.6.6 \
+		crossbeam-utils-0.7.0 \
 		crypto-mac-0.7.0 \
 		ctr-0.3.2 \
 		daemonize-0.4.1 \
@@ -99,21 +91,20 @@ CARGO_CRATES=	adler32-1.0.4 \
 		derive_builder-0.7.2 \
 		derive_builder_core-0.5.0 \
 		digest-0.8.1 \
-		dirs-2.0.2 \
-		dirs-sys-0.3.4 \
+		discard-1.0.4 \
 		dotenv-0.13.0 \
 		dtoa-0.4.4 \
 		either-1.5.3 \
-		encoding_rs-0.8.20 \
+		encoding_rs-0.8.22 \
 		env_logger-0.6.2 \
 		env_logger-0.7.1 \
 		error-chain-0.11.0 \
 		error-chain-0.12.1 \
-		extprim-1.7.0 \
 		failure-0.1.6 \
 		failure_derive-0.1.6 \
 		fake-simd-0.1.2 \
-		flate2-1.0.12 \
+		fern-0.5.9 \
+		flate2-1.0.13 \
 		fnv-1.0.6 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -124,21 +115,19 @@ CARGO_CRATES=	adler32-1.0.4 \
 		futures-cpupool-0.1.8 \
 		gcc-0.3.55 \
 		generic-array-0.12.3 \
-		get_if_addrs-0.5.3 \
-		get_if_addrs-sys-0.1.1 \
-		gethostname-0.2.0 \
+		gethostname-0.2.1 \
 		getopts-0.2.21 \
-		getrandom-0.1.13 \
+		getrandom-0.1.14 \
 		glob-0.2.11 \
 		glob-0.3.0 \
 		h2-0.1.26 \
 		heck-0.3.1 \
-		hermit-abi-0.1.3 \
+		hermit-abi-0.1.6 \
 		hex-0.3.2 \
 		hex-0.4.0 \
 		hkdf-0.7.1 \
 		hmac-0.7.1 \
-		http-0.1.19 \
+		http-0.1.21 \
 		http-body-0.1.0 \
 		httparse-1.3.4 \
 		humantime-1.3.0 \
@@ -151,30 +140,40 @@ CARGO_CRATES=	adler32-1.0.4 \
 		idna-0.2.0 \
 		indexmap-1.3.0 \
 		iovec-0.1.4 \
-		itertools-0.8.1 \
+		itertools-0.8.2 \
 		itoa-0.4.4 \
 		kernel32-sys-0.2.2 \
 		keyring-0.7.1 \
 		language-tags-0.2.2 \
 		lazy_static-1.4.0 \
 		lewton-0.9.4 \
-		libc-0.2.65 \
+		libc-0.2.66 \
 		libdbus-sys-0.2.1 \
 		libloading-0.5.2 \
 		libm-0.1.4 \
+		libmdns-0.2.4 \
 		libpulse-sys-0.0.0 \
+		librespot-0.1.0 \
+		librespot-audio-0.1.0 \
+		librespot-connect-0.1.0 \
+		librespot-core-0.1.0 \
+		librespot-metadata-0.1.0 \
+		librespot-playback-0.1.0 \
+		librespot-protocol-0.1.0 \
+		librespot-tremor-0.1.0 \
 		linear-map-1.2.0 \
-		lock_api-0.3.1 \
+		lock_api-0.3.3 \
 		log-0.3.9 \
 		log-0.4.8 \
 		matches-0.1.8 \
 		matrixmultiply-0.2.3 \
-		memchr-2.2.1 \
-		memoffset-0.5.2 \
-		mime-0.3.14 \
+		maybe-uninit-2.0.0 \
+		memchr-2.3.0 \
+		memoffset-0.5.3 \
+		mime-0.3.16 \
 		mime_guess-2.0.1 \
 		miniz_oxide-0.3.5 \
-		mio-0.6.19 \
+		mio-0.6.21 \
 		mio-named-pipes-0.1.6 \
 		mio-uds-0.6.7 \
 		miow-0.2.1 \
@@ -183,25 +182,24 @@ CARGO_CRATES=	adler32-1.0.4 \
 		nalgebra-0.18.1 \
 		native-tls-0.2.3 \
 		net2-0.2.33 \
-		nix-0.11.1 \
-		nix-0.14.1 \
 		nix-0.9.0 \
-		nodrop-0.1.14 \
+		nix-0.10.0 \
+		nix-0.14.1 \
 		nom-4.2.3 \
-		num-0.2.0 \
-		num-bigint-0.2.3 \
-		num-complex-0.2.3 \
-		num-integer-0.1.41 \
-		num-iter-0.1.39 \
-		num-rational-0.2.2 \
-		num-traits-0.2.8 \
-		num_cpus-1.11.0 \
+		num-0.2.1 \
+		num-bigint-0.2.5 \
+		num-complex-0.2.4 \
+		num-integer-0.1.42 \
+		num-iter-0.1.40 \
+		num-rational-0.2.3 \
+		num-traits-0.2.11 \
+		num_cpus-1.11.1 \
 		ogg-0.7.0 \
 		ogg-sys-0.0.9 \
 		opaque-debug-0.2.3 \
-		openssl-0.10.25 \
+		openssl-0.10.26 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.52 \
+		openssl-sys-0.9.53 \
 		parking_lot-0.9.0 \
 		parking_lot_core-0.6.2 \
 		pbkdf2-0.3.0 \
@@ -212,22 +210,23 @@ CARGO_CRATES=	adler32-1.0.4 \
 		portaudio-rs-0.3.1 \
 		portaudio-sys-0.1.1 \
 		ppv-lite86-0.2.6 \
-		proc-macro-error-0.2.6 \
+		proc-macro-error-0.4.4 \
+		proc-macro-error-attr-0.4.3 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.6 \
-		protobuf-2.8.1 \
-		protobuf-codegen-2.8.1 \
-		protobuf-codegen-pure-2.8.1 \
-		publicsuffix-1.5.3 \
+		proc-macro2-1.0.7 \
+		protobuf-2.10.0 \
+		protobuf-codegen-2.10.0 \
+		protobuf-codegen-pure-2.10.0 \
+		publicsuffix-1.5.4 \
 		pulldown-cmark-0.2.0 \
-		quick-error-1.2.2 \
+		quick-error-1.2.3 \
 		quote-0.6.13 \
 		quote-1.0.2 \
 		rand-0.3.23 \
 		rand-0.4.6 \
 		rand-0.5.6 \
 		rand-0.6.5 \
-		rand-0.7.2 \
+		rand-0.7.3 \
 		rand_chacha-0.1.1 \
 		rand_chacha-0.2.1 \
 		rand_core-0.3.1 \
@@ -244,9 +243,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		rawpointer-0.2.1 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
-		redox_users-0.3.1 \
-		regex-1.3.1 \
-		regex-syntax-0.6.12 \
+		regex-1.3.3 \
+		regex-syntax-0.6.13 \
 		relay-0.1.1 \
 		remove_dir_all-0.5.2 \
 		reqwest-0.9.17 \
@@ -254,115 +252,126 @@ CARGO_CRATES=	adler32-1.0.4 \
 		rodio-0.9.0 \
 		rpassword-3.0.2 \
 		rspotify-0.7.0 \
-		rust-argon2-0.5.1 \
 		rustc-demangle-0.1.16 \
 		rustc-hash-1.0.1 \
 		rustc-serialize-0.3.24 \
 		rustc_version-0.2.3 \
+		rustversion-1.0.1 \
 		ryu-1.0.2 \
 		safemem-0.3.3 \
-		same-file-1.0.5 \
+		same-file-1.0.6 \
 		schannel-0.1.16 \
 		scoped-tls-0.1.2 \
 		scopeguard-1.0.0 \
 		secret-service-1.0.0 \
-		security-framework-0.3.1 \
-		security-framework-sys-0.3.1 \
+		security-framework-0.3.4 \
+		security-framework-sys-0.3.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.102 \
-		serde_derive-1.0.102 \
+		serde-1.0.104 \
+		serde_derive-1.0.104 \
 		serde_ini-0.2.0 \
-		serde_json-1.0.41 \
+		serde_json-1.0.44 \
 		serde_urlencoded-0.5.5 \
-		sha-1-0.8.1 \
-		sha2-0.8.0 \
+		sha-1-0.8.2 \
+		sha1-0.6.0 \
+		sha2-0.8.1 \
 		shannon-0.2.0 \
 		shlex-0.1.1 \
-		signal-hook-0.1.11 \
-		signal-hook-registry-1.1.1 \
-		simplelog-0.7.4 \
+		signal-hook-0.1.12 \
+		signal-hook-registry-1.2.0 \
 		skeptic-0.13.4 \
 		slab-0.3.0 \
 		slab-0.4.2 \
 		smallvec-0.2.1 \
-		smallvec-0.6.12 \
+		smallvec-0.6.13 \
+		smallvec-1.1.0 \
 		socket2-0.2.4 \
 		socket2-0.3.11 \
 		stdweb-0.1.3 \
+		stdweb-0.4.20 \
+		stdweb-derive-0.5.3 \
+		stdweb-internal-macros-0.2.9 \
+		stdweb-internal-runtime-0.1.5 \
 		stream-cipher-0.3.2 \
 		string-0.2.1 \
 		strsim-0.7.0 \
 		strsim-0.8.0 \
+		structopt-0.3.7 \
+		structopt-derive-0.4.0 \
 		subtle-1.0.0 \
 		syn-0.15.44 \
-		syn-1.0.7 \
-		synstructure-0.12.1 \
+		syn-1.0.13 \
+		syn-mid-0.4.0 \
+		synstructure-0.12.3 \
 		syslog-4.0.1 \
 		take-0.1.0 \
 		tempdir-0.3.7 \
 		tempfile-3.1.0 \
-		term-0.6.1 \
-		termcolor-1.0.5 \
+		termcolor-1.1.0 \
 		textwrap-0.11.0 \
-		thread_local-0.3.6 \
+		thread_local-1.0.1 \
 		time-0.1.42 \
 		tokio-0.1.22 \
 		tokio-buf-0.1.1 \
 		tokio-codec-0.1.1 \
 		tokio-core-0.1.17 \
 		tokio-current-thread-0.1.6 \
-		tokio-executor-0.1.8 \
+		tokio-executor-0.1.9 \
 		tokio-fs-0.1.6 \
 		tokio-io-0.1.12 \
 		tokio-process-0.2.4 \
 		tokio-proto-0.1.1 \
-		tokio-reactor-0.1.10 \
+		tokio-reactor-0.1.11 \
 		tokio-service-0.1.0 \
 		tokio-signal-0.1.5 \
 		tokio-signal-0.2.7 \
 		tokio-sync-0.1.7 \
 		tokio-tcp-0.1.3 \
-		tokio-threadpool-0.1.16 \
-		tokio-timer-0.2.11 \
+		tokio-threadpool-0.1.17 \
+		tokio-timer-0.2.12 \
 		tokio-udp-0.1.5 \
 		tokio-uds-0.2.5 \
 		try-lock-0.1.0 \
 		try-lock-0.2.2 \
 		try_from-0.3.2 \
 		typenum-1.11.2 \
-		unicase-2.5.1 \
+		unicase-2.6.0 \
 		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.8 \
-		unicode-segmentation-1.5.0 \
-		unicode-width-0.1.6 \
+		unicode-normalization-0.1.11 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.7 \
 		unicode-xid-0.1.0 \
 		unicode-xid-0.2.0 \
 		url-1.7.2 \
-		url-2.1.0 \
+		url-2.1.1 \
 		uuid-0.7.4 \
-		vcpkg-0.2.7 \
+		vcpkg-0.2.8 \
 		vec_map-0.8.1 \
 		vergen-3.0.4 \
 		version_check-0.1.5 \
+		version_check-0.9.1 \
 		void-1.0.2 \
-		walkdir-2.2.9 \
+		walkdir-2.3.0 \
 		want-0.0.4 \
 		want-0.2.0 \
-		wasi-0.7.0 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.58 \
+		wasm-bindgen-backend-0.2.58 \
+		wasm-bindgen-macro-0.2.58 \
+		wasm-bindgen-macro-support-0.2.58 \
+		wasm-bindgen-shared-0.2.58 \
 		webbrowser-0.5.2 \
-		whoami-0.5.3 \
+		whoami-0.6.0 \
 		widestring-0.4.0 \
 		winapi-0.2.8 \
 		winapi-0.3.8 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.2 \
+		winapi-util-0.1.3 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		wincolor-1.0.2 \
 		ws2_32-sys-0.2.1 \
 		xdg-2.2.0
-CARGO_USE_GITHUB=	yes
 
 CARGO_BUILD_ARGS=	--no-default-features
 CARGO_INSTALL_ARGS=	--no-default-features
