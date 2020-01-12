@@ -26,7 +26,7 @@ PYSCRIPTS=	em++ emar emcc em-config emconfigure emmake emranlib emrun emscons
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-PORTSCOUT=	skipv:i64
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -E " \
