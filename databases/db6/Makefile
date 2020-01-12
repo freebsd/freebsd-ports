@@ -36,6 +36,9 @@ PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 USE_LDCONFIG=	yes
 PLIST_SUB=	BDBMAJ=${BDBMAJ} BDBVER=${BDBVER}
 MAKE_ARGS+=	docdir=${DOCSDIR}
+# we use REINPLACE_CMD with a glob that matches
+# too broadly, suppress 'sed failed' warnings:
+REWARNFILE=	/dev/null
 
 OPTIONS_DEFINE=	CRYPTO DEBUG L10N SQL JAVA TCL DOCS
 OPTIONS_DEFAULT=CRYPTO
@@ -54,7 +57,11 @@ L10N_CONFIGURE_ENABLE=	localization
 SQL_CONFIGURE_ENABLE=	sql sql_codegen
 SQL_VARS=		DBLIBS+=libdb_sql
 JAVA_USE=		java
-JAVA_VARS=		DBLIBS+=libdb_java
+# db6 is only compatible with openjdk 7 or 8,
+# openjdk 11 or newer and cause IllegalArgument
+# exceptions during build even if the version check
+# in dist/configure is disabled or fixed:
+JAVA_VARS=		DBLIBS+=libdb_java JAVA_VERSION="7 8"
 JAVA_CONFIGURE_ENABLE=	java
 JAVA_CPPFLAGS=		-I"${JAVA_HOME}/include"
 JAVA_CONFIGURE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}" JAVA="${JAVA}"
