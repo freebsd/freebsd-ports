@@ -49,10 +49,6 @@ X11_LIB_DEPENDS=	libva-x11.so:multimedia/libva
 post-patch:
 	@${REINPLACE_CMD} -e '/-D__linux__/d' \
 		${WRKSRC}/media_driver/cmake/linux/media_compile_flags_linux.cmake
-	@if [ ${CHOSEN_COMPILER_TYPE} != gcc ]; then \
-		${REINPLACE_CMD} -i .gcc.bak '/-fno-tree-pre/d' \
-			${WRKSRC}/media_driver/cmake/linux/media_compile_flags_linux.cmake; \
-	fi
 
 post-patch-X11-off:
 	@${REINPLACE_CMD} -i .nox11 '/find_package.*X11/d' \
