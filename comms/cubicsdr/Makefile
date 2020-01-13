@@ -2,7 +2,7 @@
 
 PORTNAME=	cubicsdr
 DISTVERSION=	0.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -10,8 +10,6 @@ COMMENT=	SDR receiver using liquidsdr
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		fails to build
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/lib/libEGL.so:graphics/mesa-libs \
@@ -38,11 +36,11 @@ CMAKE_ARGS+=	-DUSE_HAMLIB=1
 .endif
 
 CMAKE_ARGS+=	-DwxWidgets_CONFIG_EXECUTABLE=${LOCALBASE}/bin/wxgtk3u-3.1-config
-# if Only I could just do
-#USE_WX=		3.1
-#WX_COMPS=	wx
+USE_WX=		3.1
+WX_COMPS=	wx
 USE_GITHUB=	yes
 GH_ACCOUNT=	cjcliffe
 GH_PROJECT=	CubicSDR
+GH_TAGNAME=	9c32b97
 
 .include <bsd.port.post.mk>
