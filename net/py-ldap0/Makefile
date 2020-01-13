@@ -11,7 +11,7 @@ COMMENT=	Module package for implementing LDAP clients
 
 LICENSE=	PSFL
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.4.5:devel/py-pyasn1-modules@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.4.5:devel/py-pyasn1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0.2.5:devel/py-pyasn1-modules@${PY_FLAVOR}
 # OpenLDAP needs SASL option enabled
 # Cyrus needs PLAIN / CRAM-MD5 / DIGEST-MD5 enabled
