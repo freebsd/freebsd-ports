@@ -45,7 +45,6 @@ bin/abyss-overlap
 bin/abyss-paired-dbg
 bin/abyss-pe
 bin/abyss-samtoafg
-bin/abyss-samtobreak
 bin/abyss-scaffold
 bin/abyss-sealer
 bin/abyss-stack-size

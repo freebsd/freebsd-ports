@@ -1,13 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	abyss
-DISTVERSION=	2.1.5
-PORTREVISION=	6
+DISTVERSION=	2.2.3
 CATEGORIES=	biology
-MASTER_SITES=	http://www.bcgsc.ca/platform/bioinfo/software/${PORTNAME}/releases/${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/bcgsc/${PORTNAME}/commit/
-PATCHFILES=	25eb9d2a914fb211fdfe04fcda5593f29fd23ff5.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Assembly By Short Sequences: parallel, paired-end sequence assembler
@@ -24,11 +19,13 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 RUN_DEPENDS=	bash:shells/bash \
 		gmake:devel/gmake
 
-USES=		compiler:c++11-lang gmake iconv:wchar_t localbase:ldflags shebangfix sqlite
-SHEBANG_FILES=	bin/${PORTNAME}-*
+USES=		autoreconf compiler:c++11-lang gmake iconv:wchar_t localbase:ldflags shebangfix sqlite
+SHEBANG_FILES=	bin/${PORTNAME}-* DataBase/abyss-db-txt
 SHEBANG_LANG=	make
 make_OLD_CMD=	/usr/bin/make
 make_CMD=	${PREFIX}/bin/gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	bcgsc
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-sparsehash # configure fails to find std::hash, reported to the ML: https://groups.google.com/forum/#!topic/trans-abyss/SZDBKR5bKxs
 
