@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-DISTVERSION=	1.13.2
+DISTVERSION=	1.13.3
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -193,7 +193,7 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 
 # un/comment as each VERSION is created for PORTVERSION
 VVV_PATCH_VERSION=	1.12.1
-GREETING_PATCH_VERSION=	1.13.1
+GREETING_PATCH_VERSION=	1.13.2
 
 post-patch-NNTP-on:
 # Restore timestamps for autotools sources
