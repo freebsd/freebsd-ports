@@ -1,3 +1,6 @@
-Lightweight SOAP client written in Python (jurko's fork).
+Based on the original 'suds' project by Jeff Ortel (jortel at redhat
+dot com) hosted at 'http://fedorahosted.org/suds'.
 
-WWW: https://pypi.org/project/suds-jurko/
+'Suds' is a lightweight SOAP-based web service client for Python
+
+WWW: https://bitbucket.org/jurko/suds
