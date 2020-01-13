@@ -1,0 +1,11 @@
+PyNamecheap is a Namecheap API client in Python.
+
+This client supports:
+- Registering a domain
+- Checking domain name availability
+- Listing domains you have registered
+- Getting contact information for a domain
+- Setting DNS info to default values
+- Set DNS host records
+
+WWW: https://github.com/Bemmu/PyNamecheap
