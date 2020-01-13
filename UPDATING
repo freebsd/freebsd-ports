@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200109:
+  AFFECTS: www/firefox
+  AUTHOR: gecko@FreeBSD.org
+
+  Firefox requires Capsicum since r522464 for IPC and in future will
+  require Capsicum for process sandboxing. If you use a custom kernel
+  make sure to copy the following lines from GENERIC kernel:
+
+    options 	CAPABILITY_MODE		# Capsicum capability mode
+    options 	CAPABILITIES		# Capsicum capabilities
+
 20200107:
   AFFECTS: Users of *-emacs27-* packages
   AUTHOR: ashish@FreeBSD.org
