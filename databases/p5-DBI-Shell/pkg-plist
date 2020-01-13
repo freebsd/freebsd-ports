@@ -8,8 +8,8 @@ bin/dbish
 %%SITE_PERL%%/DBI/Shell/SQLMinus.pm
 %%SITE_PERL%%/DBI/Shell/Spool.pm
 %%SITE_PERL%%/DBI/Shell/Timing.pm
+%%PERL5_MAN1%%/dbish.1.gz
 %%PERL5_MAN3%%/DBI::Format.3.gz
 %%PERL5_MAN3%%/DBI::Format::CSV.3.gz
 %%PERL5_MAN3%%/DBI::Format::SQLMinus.3.gz
 %%PERL5_MAN3%%/DBI::Shell.3.gz
-%%PERL5_MAN1%%/dbish.1.gz
