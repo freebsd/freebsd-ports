@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	polyamorous
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Extraction of shared code from the Active Record Hackery gems
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activerecord5>=5.0:databases/rubygem-activerecord5
+RUN_DEPENDS=	rubygem-activerecord52>=5.2.1:databases/rubygem-activerecord52
 
 USES=		gem
 USE_RUBY=	yes
