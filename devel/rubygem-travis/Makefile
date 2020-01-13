@@ -21,9 +21,9 @@ RUN_DEPENDS=	rubygem-faraday>=0.9:www/rubygem-faraday \
 		rubygem-typhoeus>=0.6.8:www/rubygem-typhoeus
 
 USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 PLIST_FILES=	bin/travis
 
 post-patch:
