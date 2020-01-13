@@ -2,7 +2,7 @@
 
 PORTNAME=	drm_info
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,5 +18,12 @@ USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ascent12
 PLIST_FILES=	bin/${PORTNAME}
+
+OPTIONS_DEFINE=	PCI
+OPTIONS_DEFAULT=PCI
+
+PCI_DESC=		Print PCI device names via libpci
+PCI_LIB_DEPENDS=	libpci.so:devel/libpci
+PCI_MESON_ENABLED=	libpci
 
 .include <bsd.port.mk>
