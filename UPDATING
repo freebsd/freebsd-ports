@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200113:
+  AFFECTS: users of python and net/samba410, devel/talloc, devel/tevent, databases/tdb, databases/ldb*
+  AUTHOR: timur@FreeBSD.org
+
+  In the entry 20191216 for the Python update the filtering constrains
+  are too limiting and omit the Samba supplimentary libraries, which do
+  have Python bindings to the default Python 3.x version. With the update
+  of the default Python3 version you also need to rebuild all the
+  supplimentary Samba libraries and samba410 itself.
+
+  For portmaster users it would be enough to run:
+
+  # portmaster devel/talloc devel/tevent databases/tdb databases/ldb15 net/samba410
+
+
 20200109:
   AFFECTS: www/firefox
   AUTHOR: gecko@FreeBSD.org
