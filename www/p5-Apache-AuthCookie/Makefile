@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Apache-AuthCookie
-PORTVERSION=	3.27
+PORTVERSION=	3.28
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,9 +22,10 @@ RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=1.39:www/mod_perl2 \
 		p5-WWW-Form-UrlEncoded>=0:www/p5-WWW-Form-UrlEncoded
 TEST_DEPENDS=	p5-URI>=1.71:net/p5-URI
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		apache:2.2+ perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
