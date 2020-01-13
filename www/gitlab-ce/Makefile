@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	12.6.2
-PORTREVISION=	1
+PORTVERSION=	12.6.3
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -188,7 +188,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-derailed_benchmarks>0:benchmarks/rubygem-derailed_benchmarks \
 	rubygem-method_source>=0.8<1.0:devel/rubygem-method_source \
 	rubygem-influxdb>=0.2<1.0:databases/rubygem-influxdb \
-	rubygem-prometheus-client-mmap>=0.9.10<0.10.0:devel/rubygem-prometheus-client-mmap \
+	rubygem-prometheus-client-mmap>=0.10.0<0.11.0:devel/rubygem-prometheus-client-mmap \
 	rubygem-raindrops>=0.18<1.0:www/rubygem-raindrops \
 	rubygem-octokit>=4.9<5.0:net/rubygem-octokit \
 	rubygem-mail_room>=0.10.0<0.11.0:mail/rubygem-mail_room \
@@ -240,7 +240,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	3041661dec5d75d18b06ffa26e82bdfff3132f21
+GL_COMMIT=	13cad23a0e426acf2bbecc498ac4ede2ccac94a5
 
 USERS=	git
 GROUPS=	git
