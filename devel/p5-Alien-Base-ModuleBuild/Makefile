@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Alien-Base-ModuleBuild
-PORTVERSION=	1.06
+PORTVERSION=	1.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,5 +24,7 @@ TEST_DEPENDS=	p5-Test2-Suite>=0.000118:devel/p5-Test2-Suite \
 
 USES=		perl5
 USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
