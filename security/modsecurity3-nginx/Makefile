@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
 
+USES=		compiler:c11
 USE_GITHUB=	nodefault
 GH_TUPLE=	SpiderLabs:ModSecurity-nginx:d7101e1:modsecurity3
 
