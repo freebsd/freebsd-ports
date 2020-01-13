@@ -22,6 +22,7 @@ include/rumur/parser.yy.hh
 include/rumur/position.hh
 include/rumur/resolve-symbols.h
 include/rumur/rumur.h
+include/rumur/rumur-get-version.h
 include/rumur/scanner.h
 include/rumur/stack.hh
 include/rumur/traverse.h
