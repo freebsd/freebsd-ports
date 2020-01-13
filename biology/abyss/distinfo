@@ -1,5 +1,3 @@
-TIMESTAMP = 1561103807
-SHA256 (abyss-2.1.5.tar.gz) = 65bfc8241e6ff5adf7601ae4ae93a75e3db86d6bff5d593c75aaff7f0ef41757
-SIZE (abyss-2.1.5.tar.gz) = 1201318
-SHA256 (25eb9d2a914fb211fdfe04fcda5593f29fd23ff5.patch) = 93ad66c42610c4fba8cfbe256a2ab689bf4a76974c3b97a9e1094863614ad934
-SIZE (25eb9d2a914fb211fdfe04fcda5593f29fd23ff5.patch) = 1701
+TIMESTAMP = 1578886491
+SHA256 (bcgsc-abyss-2.2.3_GH0.tar.gz) = c7b93290b2ccffcf2f3ca42262621c636108f6dbc21f5684ebeeb4f682200675
+SIZE (bcgsc-abyss-2.2.3_GH0.tar.gz) = 1203318
