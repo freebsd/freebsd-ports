@@ -1,5 +1,3 @@
-TIMESTAMP = 1578729699
-SHA256 (clangen-musikcube-0.80.0_GH0.tar.gz) = 6e3a8e4221d2d4d7cbccc905eaab5155c8c2d17b46119b021ba4468d2248662b
-SIZE (clangen-musikcube-0.80.0_GH0.tar.gz) = 9077287
-SHA256 (0c6c3f7a7bd5.patch) = 5c259cac33e05a10dc1f41502e39bd1e1a2883db037a84f499d25d9b4184a7e7
-SIZE (0c6c3f7a7bd5.patch) = 4585
+TIMESTAMP = 1578887504
+SHA256 (clangen-musikcube-0.83.0_GH0.tar.gz) = 7841db0358d691fed768d10a7cbb2bfaace85c2a744ad59a65ce581ca972a426
+SIZE (clangen-musikcube-0.83.0_GH0.tar.gz) = 9078299
