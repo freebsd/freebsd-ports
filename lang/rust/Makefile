@@ -142,6 +142,9 @@ post-patch-SOURCES-off:
 		${WRKSRC}/src/bootstrap/install.rs
 
 do-configure:
+# Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
+	@${SETENV} CC="${CC}" OPSYS="${OPSYS}" OSVERSION="${OSVERSION}" WRKDIR="${WRKDIR}" \
+		${SH} ${SCRIPTSDIR}/rust-compat11-canary.sh
 	@${ECHO_CMD} '[build]' > ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'vendor=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'extended=true' >> ${WRKSRC}/config.toml

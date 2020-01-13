@@ -247,6 +247,9 @@ _USES_configure+=	250:cargo-configure
 # configure hook.  Place a config file for overriding crates-io index
 # by local source directory.
 cargo-configure:
+# Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
+	@${SETENV} CC="${CC}" OPSYS="${OPSYS}" OSVERSION="${OSVERSION}" WRKDIR="${WRKDIR}" \
+		${SH} ${SCRIPTSDIR}/rust-compat11-canary.sh
 	@${MKDIR} ${WRKDIR}/.cargo
 	@${ECHO_CMD} "[source.cargo]" > ${WRKDIR}/.cargo/config
 	@${ECHO_CMD} "directory = '${CARGO_VENDOR_DIR}'" >> ${WRKDIR}/.cargo/config
