@@ -19,6 +19,8 @@ GH_ACCOUNT=	TerryCavanagh
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	cb3640e5
 
+ONLY_FOR_ARCH=	amd64
+
 WRKSRC_SUBDIR=	desktop_version
 
 USE_SDL=	sdl2 mixer2
