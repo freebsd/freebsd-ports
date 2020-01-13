@@ -376,6 +376,11 @@ gecko-post-patch:
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
 		${MOZSRC}/third_party/rust/*/.cargo-checksum.json
 
+pre-configure-script:
+# Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
+	@${SETENV} CC="${CC}" OPSYS="${OPSYS}" OSVERSION="${OSVERSION}" WRKDIR="${WRKDIR}" \
+		${SH} ${SCRIPTSDIR}/rust-compat11-canary.sh
+
 post-install-script: gecko-create-plist
 
 gecko-create-plist:
