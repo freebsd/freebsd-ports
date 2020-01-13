@@ -3,7 +3,7 @@
 PORTNAME=		libjson-rpc-cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.1.0
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		net www devel
 
 MAINTAINER=	greg@unrelenting.technology

@@ -3,6 +3,7 @@
 PORTNAME=	ossim
 DISTVERSIONPREFIX=	Neptune-
 DISTVERSION=	2.10.1
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org
