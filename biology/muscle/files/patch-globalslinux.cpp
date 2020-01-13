@@ -1,5 +1,5 @@
---- globalslinux.cpp.orig	Tue Nov 30 05:09:50 2004
-+++ globalslinux.cpp	Mon Jul  4 11:13:18 2005
+--- globalslinux.cpp.orig	2020-01-09 04:20:25 UTC
++++ globalslinux.cpp
 @@ -7,6 +7,12 @@
  #include <errno.h>
  #include <stdio.h>
@@ -13,7 +13,7 @@
  
  const int ONE_MB = 1000000;
  const int MEM_WARNING_THRESHOLD = 20*ONE_MB;
-@@ -39,6 +45,34 @@
+@@ -39,6 +45,34 @@ const char *GetCmdLine()
  	return szCmdLine;
  	}
  
@@ -48,7 +48,7 @@
  double GetMemUseMB()
  	{
  	static char statm[64];
-@@ -83,6 +117,7 @@
+@@ -74,6 +108,7 @@ double GetMemUseMB()
  
  	return ((double) Pages * (double) PageSize)/1e6;
  	}
@@ -56,7 +56,7 @@
  
  void SaveCmdLine(int argc, char *argv[])
  	{
-@@ -118,6 +153,28 @@
+@@ -109,6 +144,28 @@ void CheckMemUse()
  		dPeakMemUseMB = dMB;
  	}
  
@@ -85,7 +85,7 @@
  double GetRAMSizeMB()
  	{
  	const double DEFAULT_RAM = 500;
-@@ -168,5 +225,6 @@
+@@ -159,5 +216,6 @@ double GetRAMSizeMB()
  	int Bytes = atoi(pMem+9)*1000;
  	return ((double) Bytes)/1e6;
  	}
