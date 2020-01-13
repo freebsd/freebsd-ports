@@ -4146,8 +4146,6 @@
 %%WWWDIR%%/app/finders/branches_finder.rb
 %%WWWDIR%%/app/finders/cluster_ancestors_finder.rb
 %%WWWDIR%%/app/finders/clusters/knative_services_finder.rb
-%%WWWDIR%%/app/finders/clusters/knative_serving_namespace_finder.rb
-%%WWWDIR%%/app/finders/clusters/knative_version_role_binding_finder.rb
 %%WWWDIR%%/app/finders/clusters/kubernetes_namespace_finder.rb
 %%WWWDIR%%/app/finders/clusters_finder.rb
 %%WWWDIR%%/app/finders/concerns/created_at_filter.rb
@@ -11938,7 +11936,6 @@
 %%WWWDIR%%/lib/gitlab/json_logger.rb
 %%WWWDIR%%/lib/gitlab/jwt_authenticatable.rb
 %%WWWDIR%%/lib/gitlab/kubernetes.rb
-%%WWWDIR%%/lib/gitlab/kubernetes/cluster_role.rb
 %%WWWDIR%%/lib/gitlab/kubernetes/cluster_role_binding.rb
 %%WWWDIR%%/lib/gitlab/kubernetes/config_map.rb
 %%WWWDIR%%/lib/gitlab/kubernetes/config_maps/aws_node_auth.rb
@@ -15825,7 +15822,6 @@
 %%WWWDIR%%/spec/finders/branches_finder_spec.rb
 %%WWWDIR%%/spec/finders/cluster_ancestors_finder_spec.rb
 %%WWWDIR%%/spec/finders/clusters/knative_services_finder_spec.rb
-%%WWWDIR%%/spec/finders/clusters/knative_serving_namespace_finder_spec.rb
 %%WWWDIR%%/spec/finders/clusters/kubernetes_namespace_finder_spec.rb
 %%WWWDIR%%/spec/finders/clusters_finder_spec.rb
 %%WWWDIR%%/spec/finders/concerns/finder_methods_spec.rb
