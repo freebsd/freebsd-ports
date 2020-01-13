@@ -9,4 +9,4 @@ uses.
 With this module, setters with type checks should be as fast as an
 equivalent check in Moose.
 
-WWW: https://metacpan.org/pod/MooX::TypeTiny
+WWW: https://metacpan.org/release/MooX-TypeTiny
