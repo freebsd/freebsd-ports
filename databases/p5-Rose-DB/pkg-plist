@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Rose/DB/Constants.pm
 %%SITE_PERL%%/Rose/DB/Generic.pm
 %%SITE_PERL%%/Rose/DB/Informix.pm
+%%SITE_PERL%%/Rose/DB/MariaDB.pm
 %%SITE_PERL%%/Rose/DB/MySQL.pm
 %%SITE_PERL%%/Rose/DB/Oracle.pm
 %%SITE_PERL%%/Rose/DB/Pg.pm
@@ -17,6 +18,7 @@
 %%PERL5_MAN3%%/Rose::DB::Constants.3.gz
 %%PERL5_MAN3%%/Rose::DB::Generic.3.gz
 %%PERL5_MAN3%%/Rose::DB::Informix.3.gz
+%%PERL5_MAN3%%/Rose::DB::MariaDB.3.gz
 %%PERL5_MAN3%%/Rose::DB::MySQL.3.gz
 %%PERL5_MAN3%%/Rose::DB::Oracle.3.gz
 %%PERL5_MAN3%%/Rose::DB::Pg.3.gz
