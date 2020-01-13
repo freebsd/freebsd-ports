@@ -1,0 +1,80 @@
+--- genre.dat.in.orig	2004-01-23 10:41:32.000000000 +0100
++++ genre.dat.in	2020-01-12 22:50:01.267560000 +0100
+@@ -22,7 +22,7 @@
+ /*
+  * These are the ID3 genre names, taken as a combination of names from ID3v1
+  * (listed in Appendix A of the ID3 tag version 2.4.0 informal standard) and
+- * the extensions made by Winamp as of version 2.80.
++ * the extensions made by Winamp as of version 5.6.
+  */
+ 
+ /* ID3v1 names (0-79) */
+@@ -115,7 +115,7 @@
+ National Folk
+ Swing
+ Fast-Fusion
+-Bebob
++Bebop
+ Latin
+ Revival
+ Celtic
+@@ -159,7 +159,7 @@
+ Goa
+ Drum & Bass
+ Club-House
+-Hardcore
++Hardcore Techno
+ Terror
+ Indie
+ BritPop
+@@ -176,5 +176,49 @@
+ Salsa
+ Thrash Metal
+ Anime
+-JPop
++Jpop
+ Synthpop
++Abstract
++Art Rock
++Baroque
++Bhangra
++Big Beat
++Breakbeat
++Chillout
++Downtempo
++Dub
++EBM
++Eclectic
++Electro
++Electroclash
++Emo
++Experimental
++Garage
++Global
++IDM
++Illbient
++Industro-Goth
++Jam Band
++Krautrock
++Leftfield
++Lounge
++Math Rock
++New Romantic
++Nu-Breakz
++Post-Punk
++Post-Rock
++Psytrance
++Shoegaze
++Space Rock
++Trop Rock
++World Music
++Neoclassical
++Audiobook
++Audio Theatre
++Neue Deutsche Welle
++Podcast
++Indie-Rock
++G-Funk
++Dubstep
++Garage Rock
++Psybient
