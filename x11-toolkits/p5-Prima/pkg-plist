@@ -73,6 +73,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Image/TransparencyControl.pm
 %%SITE_ARCH%%/Prima/Image/gif.pm
 %%SITE_ARCH%%/Prima/Image/jpeg.pm
+%%SITE_ARCH%%/Prima/Image/png.pm
 %%SITE_ARCH%%/Prima/Image/tiff.fm
 %%SITE_ARCH%%/Prima/Image/tiff.pm
 %%SITE_ARCH%%/Prima/Image/webp.pm
@@ -293,6 +294,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/printdialog.gif
 %%SITE_ARCH%%/Prima/rop1.gif
 %%SITE_ARCH%%/Prima/rop2.gif
+%%SITE_ARCH%%/Prima/rop3.png
 %%SITE_ARCH%%/Prima/scalings.gif
 %%SITE_ARCH%%/Prima/spinner.gif
 %%SITE_ARCH%%/Prima/sys/XQuartz.pm
@@ -361,6 +363,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Image::TransparencyControl.3.gz
 %%PERL5_MAN3%%/Prima::Image::gif.3.gz
 %%PERL5_MAN3%%/Prima::Image::jpeg.3.gz
+%%PERL5_MAN3%%/Prima::Image::png.3.gz
 %%PERL5_MAN3%%/Prima::Image::tiff.3.gz
 %%PERL5_MAN3%%/Prima::Image::webp.3.gz
 %%PERL5_MAN3%%/Prima::ImageDialog.3.gz
