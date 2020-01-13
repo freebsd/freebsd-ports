@@ -4,7 +4,7 @@ PORTNAME=	openjdk8
 PORTVERSION=	${DISTVERSION_${JDK_ARCH}}
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/jkim \
-		http://people.freebsd.org/~pkubaj/
+		LOCAL/pkubaj
 PKGNAMEPREFIX=	bootstrap-
 DISTNAME=	${JDK_PORT}-${JDK_ARCH}-${PORTVERSION}
 
