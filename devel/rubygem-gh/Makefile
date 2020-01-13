@@ -25,6 +25,6 @@ USE_RUBY=	yes
 NO_ARCH=	yes
 
 post-patch:
-	@${RM} ${WRKSRC}/lib/gh.rb.orig ${WRKSRC}/gh.gemspec.orig
+	@${RM} ${WRKSRC}/gh.gemspec.orig
 
 .include <bsd.port.mk>
