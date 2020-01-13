@@ -644,7 +644,7 @@ PY_PATHLIB=
 .endif
 
 .if ${PYTHON_REL} < 3300
-PY_IPADDRESS=	${PYTHON_PKGNAMEPREFIX}ipaddress>0:net/py-ipaddress@${PY_FLAVOR}
+PY_IPADDRESS=	${PYTHON_PKGNAMEPREFIX}ipaddress>=1.0.23:net/py-ipaddress@${PY_FLAVOR}
 .else
 PY_IPADDRESS=
 .endif
