@@ -26,10 +26,17 @@ LDFLAGS+=	-pthread
 CFLAGS+=	-fPIC # workaround for https://github.com/alibaba/MNN/issues/553
 CXXFLAGS+=	-fPIC
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CMAKE_ARGS+=	-DMNN_USE_AVX:BOOL=OFF \
+		-DMNN_USE_SSE:BOOL=OFF
+.endif
+
 do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DMNN_BUILD_TEST:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		(cd ${BUILD_WRKSRC} && ./run_test.out)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
