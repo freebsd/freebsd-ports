@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpi-firmware
-PORTVERSION=	1.20190925.g20191122
+PORTVERSION=	1.20190925.g20200109
 CATEGORIES=	sysutils
 
 MAINTAINER=	uboot@FreeBSD.org
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	raspberrypi gonzoua:pscimon
 GH_PROJECT=	firmware rpi3-psci-monitor:pscimon
 FW_TAG=		2042453
-PSCI_TAG=	6bfbaff
+PSCI_TAG=	558620c
 GH_TAGNAME=	${FW_TAG} ${PSCI_TAG}:pscimon
 
 BUILD_WRKSRC=	${WRKSRC_pscimon}
