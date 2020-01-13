@@ -2444,7 +2444,6 @@
     SUBDIR += w3mir
     SUBDIR += waccess
     SUBDIR += wadcomblog
-    SUBDIR += web2ldap
     SUBDIR += webalizer
     SUBDIR += webbrowser
     SUBDIR += webcheck
