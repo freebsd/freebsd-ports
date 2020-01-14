@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsigrok
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libsigrok/
 

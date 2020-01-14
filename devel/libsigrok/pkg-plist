@@ -6,11 +6,11 @@ include/libsigrokcxx/libsigrokcxx.hpp
 lib/libsigrok.a
 lib/libsigrok.so
 lib/libsigrok.so.4
-lib/libsigrok.so.4.1.0
+lib/libsigrok.so.4.1.1
 lib/libsigrokcxx.a
 lib/libsigrokcxx.so
 lib/libsigrokcxx.so.4
-lib/libsigrokcxx.so.4.1.0
+lib/libsigrokcxx.so.4.1.1
 libdata/pkgconfig/libsigrok.pc
 libdata/pkgconfig/libsigrokcxx.pc
 share/icons/hicolor/48x48/mimetypes/libsigrok.png
