@@ -1,66 +1,64 @@
 # Created by: GreenDog <fiziologus@gmail.com>
 # $FreeBSD$
 
-PORTNAME=		fife
-PORTVERSION=		0.4.1
-PORTREVISION=		15
-CATEGORIES=		games
-PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
+PORTNAME=	fife
+PORTVERSION=	0.4.2
+CATEGORIES=	games
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=		fiziologus@gmail.com
-COMMENT=		Flexible Isometric Free Engine
+MAINTAINER=	fiziologus@gmail.com
+COMMENT=	Flexible Isometric Free Engine
 
-LICENSE=		LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=		libvorbisfile.so:audio/libvorbis \
-			libtinyxml.so:textproc/tinyxml \
-			libboost_filesystem.so:devel/boost-libs \
-			libpng.so:graphics/png
+LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
+		libtinyxml.so:textproc/tinyxml \
+		libboost_filesystem.so:devel/boost-libs \
+		libpng.so:graphics/png
 
-USES=			cmake compiler:c++11-lang gl openal:al pkgconfig sdl xorg
-USE_GL=			gl
-USE_SDL=		sdl2 ttf2 image2
-USE_XORG=		xcursor
+USES=		cmake compiler:c++11-lang gl openal:al pkgconfig sdl xorg
+USE_GL=		gl glew
+USE_LDCONFIG=	yes
+USE_SDL=	sdl2 ttf2 image2
+USE_XORG=	xcursor
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fifengine
 GH_PROJECT=	fifengine
 
-OPTIONS_DEFINE=		ZIP LOGGING
+OPTIONS_DEFINE=	LOGGING
 
 OPTIONS_MULTI=		GUISS COMP
+OPTIONS_MULTI_GUISS=	FIFECHAN CEGUI
+OPTIONS_MULTI_COMP=	PYTHON LIBRARY
+OPTIONS_DEFAULT=	FIFECHAN LOGGING PYTHON
 
 OPTIONS_SUB=		yes
 
-OPTIONS_MULTI_GUISS=	FIFECHAN CEGUI
 GUISS_DESC=		GUI subsystem
 FIFECHAN_DESC=		Fifechan GUI subsystem
 CEGUI_DESC=		Crazy Eddi's GUI subsystem (must be build with OpenGL)
 
-ZIP_DESC=		ZIP archive support
 LOGGING_DESC=		Logging
 
-OPTIONS_MULTI_COMP=	PYTHON LIBRARY
 COMP_DESC=		Building components
 PYTHON_DESC=		Build python extension module (need for unknown-horizons)
 LIBRARY_DESC=		Build and install files for directly develop with C++
-
-OPTIONS_DEFAULT=	FIFECHAN ZIP LOGGING PYTHON
 
 FIFECHAN_CMAKE_BOOL=	fifechan
 FIFECHAN_LIB_DEPENDS=	libfifechan_sdl.so:devel/fifechan
 
 CEGUI_CMAKE_BOOL=	cegui
 CEGUI_LIB_DEPENDS=	libCEGUIBase-0.so:graphics/cegui
-CEGUI_USE=		gl=glew
 
-ZIP_CMAKE_BOOL=		zip
 LOGGING_CMAKE_BOOL=	logging
 
 PYTHON_CMAKE_BOOL=	build-python
-PYTHON_USES=		python:2.7
+PYTHON_USES=		python
 PYTHON_USE=		python=flavors
 PYTHON_BUILD_DEPENDS=	${LOCALBASE}/bin/swig3.0:devel/swig30
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 
 LIBRARY_CMAKE_BOOL=	build-library
 # For static library build
