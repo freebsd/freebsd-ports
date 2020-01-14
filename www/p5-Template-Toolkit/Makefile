@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Template-Toolkit
-PORTVERSION=	3.003
+PORTVERSION=	3.004
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	CPAN \
 		http://www.template-toolkit.org/download/
