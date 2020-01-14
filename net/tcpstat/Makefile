@@ -6,7 +6,7 @@ PORTVERSION=	1.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.frenchfries.net/paul/tcpstat/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Program to report various network statistics
 
 LICENSE=	BSD2CLAUSE
