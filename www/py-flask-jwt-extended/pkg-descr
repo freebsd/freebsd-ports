@@ -1,0 +1,13 @@
+Flask-JWT-Extended not only adds support for using JSON Web Tokens (JWT) to
+Flask for protecting views, but also many helpful (and optional) features built
+in to make working with JSON Web Tokens easier. These include:
+
+  - Support for adding custom claims to JSON Web Tokens
+  - Custom claims validation on received tokens
+  - Creating tokens from complex objects or complex object from received tokens
+  - Refresh tokens
+  - Token freshness and separate view decorators to only allow fresh tokens
+  - Token revoking/blacklisting
+  - Storing tokens in cookies and CSRF protection
+
+WWW: https://github.com/coleifer/flask-peewee
