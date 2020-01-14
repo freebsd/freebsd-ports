@@ -13,6 +13,9 @@ COMMENT=	Internationalizing and localizing software for Zope 2
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-18
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-gettext>0:textproc/py-python-gettext@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.annotation>=0:devel/py-zope.annotation@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.component>=0:devel/py-zope.component@${PY_FLAVOR} \

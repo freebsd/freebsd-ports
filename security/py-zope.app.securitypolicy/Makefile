@@ -13,6 +13,9 @@ COMMENT=	ZMI-based management views for zope.securitypolicy
 
 LICENSE=	ZPL21
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-18
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.annotation>=0:devel/py-zope.annotation@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.app.authentication>=3.8:security/py-zope.app.authentication@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.app.form>=0:devel/py-zope.app.form@${PY_FLAVOR} \

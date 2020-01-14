@@ -13,6 +13,9 @@ COMMENT=	Local Zope Component Support
 
 LICENSE=	ZPL21
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-18
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.site>=0:devel/py-zope.site@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.app.container>=0:devel/py-zope.app.container@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.app.pagetemplate>=0:devel/py-zope.app.pagetemplate@${PY_FLAVOR} \

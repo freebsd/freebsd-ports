@@ -13,6 +13,9 @@ COMMENT=	ZMI UI for zope.generations
 
 LICENSE=	ZPL21
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-18
+
 RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=0:databases/zodb3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.app.publication>=0:devel/py-zope.app.publication@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.app.renderer>=0:devel/py-zope.app.renderer@${PY_FLAVOR} \
