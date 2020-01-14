@@ -1,6 +1,6 @@
-TIMESTAMP = 1578401124
-SHA256 (tdewolff-minify-v2.7.0_GH0.tar.gz) = a1c3f0a9080f912ac9718876896c4eda9a92dec74e87b3de23694b716a5ccb99
-SIZE (tdewolff-minify-v2.7.0_GH0.tar.gz) = 2301621
+TIMESTAMP = 1579009867
+SHA256 (tdewolff-minify-v2.7.1_GH0.tar.gz) = 21bac6097f74d8ee000a351c48b21b16fb70a34676d14fb50512954b7930e93f
+SIZE (tdewolff-minify-v2.7.1_GH0.tar.gz) = 2301815
 SHA256 (dustin-go-humanize-v1.0.0_GH0.tar.gz) = e4540bd50ac855143b4f2e509313079c50cf5d8774f09cc10dbca5ae9803d8ba
 SIZE (dustin-go-humanize-v1.0.0_GH0.tar.gz) = 17260
 SHA256 (fsnotify-fsnotify-v1.4.7_GH0.tar.gz) = b7530d973d0ab0e58ad8ce1b9a4b963d6f57b3d72f2f9e13d49846976361b1cd
