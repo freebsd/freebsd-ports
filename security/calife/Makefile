@@ -5,7 +5,7 @@ PORTNAME=	calife
 PORTVERSION=	3.0.6
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://assets.keltia.net/calife/
+MASTER_SITES=	https://assets.keltia.net/calife/
 
 MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	Lightweight alternative to sudo
