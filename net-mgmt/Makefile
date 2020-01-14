@@ -70,7 +70,6 @@
     SUBDIR += ettercap
     SUBDIR += fastnetmon
     SUBDIR += fetchconfig
-    SUBDIR += flow-extract
     SUBDIR += flow-tools
     SUBDIR += flowd
     SUBDIR += flowviewer
