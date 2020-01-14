@@ -7,4 +7,6 @@ bin/chamfer
 %%DATADIR%%/shaders/frame_geometry.spv
 %%DATADIR%%/shaders/frame_vertex.spv
 %%DATADIR%%/shaders/solid_fragment.spv
+%%DATADIR%%/shaders/text_fragment.spv
+%%DATADIR%%/shaders/text_vertex.spv
 share/xsessions/chamfer.desktop
