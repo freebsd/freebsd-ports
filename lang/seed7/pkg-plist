@@ -124,6 +124,7 @@ lib/seed7/lib/html_ent.s7i
 lib/seed7/lib/html.s7i
 lib/seed7/lib/http_response.s7i
 lib/seed7/lib/httpserv.s7i
+lib/seed7/lib/ico.s7i
 lib/seed7/lib/idxarray.s7i
 lib/seed7/lib/image.s7i
 lib/seed7/lib/inflate.s7i
