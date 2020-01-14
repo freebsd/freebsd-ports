@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	binaryen
-DISTVERSION=	1.38.32
-PORTREVISION=	1
+DISTVERSIONPREFIX=	version_
+DISTVERSION=	90
 CATEGORIES=	devel
 
 MAINTAINER=	greg@unrelenting.technology
@@ -15,6 +15,8 @@ USES=		cmake python:2.7,build compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	WebAssembly
 USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DBINARYEN_VERSION_INFO=${DISTVERSION}
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
