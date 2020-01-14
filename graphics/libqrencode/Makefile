@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libqrencode
-DISTVERSION=	4.0.0
+DISTVERSION=	4.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -26,7 +26,7 @@ PLIST_FILES=	bin/qrencode \
 		include/qrencode.h \
 		lib/libqrencode.so \
 		lib/libqrencode.so.4 \
-		lib/libqrencode.so.4.0.0 \
+		lib/libqrencode.so.${PORTVERSION} \
 		libdata/pkgconfig/libqrencode.pc \
 		man/man1/qrencode.1.gz
 
