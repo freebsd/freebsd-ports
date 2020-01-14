@@ -13,6 +13,8 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Generic notifier/event scheduler abstraction
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 LICENSE=	LGPL20
 

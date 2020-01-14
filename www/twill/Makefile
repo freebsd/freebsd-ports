@@ -11,6 +11,8 @@ MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	Simple scripting language for Web browsing
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist

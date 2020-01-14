@@ -13,6 +13,8 @@ MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Open-Source Chinese and Japanese Handwriting Recognition
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 LICENSE=	GPLv2
 

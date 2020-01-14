@@ -12,6 +12,8 @@ MAINTAINER=	jim@ohlste.in
 COMMENT=	Multithreaded "column-oriented" SQL databasee
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 LICENSE=	MonetDB_License
 LICENSE_NAME=	MonetDB Public License Version 1.1
