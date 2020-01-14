@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chamfer
-DISTVERSION=	s20191115
-PORTREVISION=	1
+DISTVERSION=	s20200112
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,12 +10,16 @@ COMMENT=	Tiling X11 window manager with Vulkan compositor
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers \
+BUILD_DEPENDS=	spirv-opt:devel/spirv-tools \
+		vulkan-headers>0:devel/vulkan-headers \
 		glslc:graphics/shaderc \
 		glm>0:math/glm
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		${PY_BOOST} \
 		libvulkan.so:graphics/vulkan-loader \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxcb-icccm.so:x11/xcb-util-wm
@@ -28,7 +31,7 @@ USE_GITHUB=	yes
 USE_XORG=	xcb
 GH_ACCOUNT=	jaelpark
 GH_PROJECT=	${PORTNAME}wm
-GH_TAGNAME=	ed8b707
+GH_TAGNAME=	78168e0
 CXXFLAGS+=	-Wno-narrowing
 
 post-patch:

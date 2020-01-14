@@ -1,11 +1,11 @@
 - Add default shader path
 
---- src/main.cpp.orig	2019-08-02 19:10:02 UTC
+--- src/main.cpp.orig	2020-01-11 22:22:06 UTC
 +++ src/main.cpp
-@@ -806,7 +806,7 @@ int main(sint argc, const char **pargv){	
- 	args::ValueFlag<uint> deviceIndexOpt(group_comp,"id","GPU to use by its index. By default the first device in the list of enumerated GPUs will be used.",{"device-index"});
+@@ -817,7 +817,7 @@ int main(sint argc, const char **pargv){	
  	args::Flag debugLayersOpt(group_comp,"debugLayers","Enable Vulkan debug layers.",{"debug-layers",'l'},false);
  	args::Flag noScissoringOpt(group_comp,"noScissoring","Disable scissoring optimization.",{"no-scissoring"},false);
+ 	args::Flag noHostMemoryImportOpt(group_comp,"noHostMemoryImport","Disable host shared memory import.",{"no-host-memory-import"},false);
 -	args::ValueFlagList<std::string> shaderPaths(group_comp,"path","Shader lookup path. SPIR-V shader objects are identified by an '.spv' extension. Multiple paths may be specified.",{"shader-path"});
 +	args::ValueFlagList<std::string> shaderPaths(group_comp,"path","Shader lookup path. SPIR-V shader objects are identified by an '.spv' extension. Multiple paths may be specified.",{"shader-path"},{"/usr/share/chamfer/shaders"});
  
