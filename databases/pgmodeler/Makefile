@@ -6,7 +6,7 @@ PORTVERSION=	0.9.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	PostgreSQL Database Modeler
 
 LICENSE=	GPLv3

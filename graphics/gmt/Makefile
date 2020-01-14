@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/legacy
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${GSHHG_DISTNAME}.tar.gz:gshhg
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Generic Mapping Tools - data processing and display software package
 
 LICENSE=	GPLv2 LGPL3

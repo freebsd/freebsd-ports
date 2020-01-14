@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	gmt gmt/legacy
 DISTNAME=	gmt-${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Generic Mapping Tools - data processing and display software package
 
 LICENSE=	GPLv3 LGPL3

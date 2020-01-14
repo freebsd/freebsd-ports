@@ -1,4 +1,4 @@
-# Created by: Loïc BARTOLETTI <coder@tuxfamily.org>
+# Created by: Loïc BARTOLETTI <lbartoletti@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	sfcgal
@@ -7,7 +7,7 @@ DISTVERSION=	1.3.7
 PORTREVISION=	2
 CATEGORIES=	databases math graphics
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Wrapper library around CGAL for PostGIS
 
 LICENSE=	GPLv2

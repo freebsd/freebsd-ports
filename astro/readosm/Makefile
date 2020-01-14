@@ -1,4 +1,4 @@
-# Created by: Loïc BARTOLETTI <coder@tuxfamily.org>
+# Created by: Loïc BARTOLETTI <lbartoletti@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	readosm
@@ -7,7 +7,7 @@ CATEGORIES=	astro geography devel
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 DISTNAME=	${PORTNAME}-${PORTVERSION}e
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Extract valid data from within an Open Street Map input file
 
 LICENSE=	MPL11 LGPL21 GPLv2

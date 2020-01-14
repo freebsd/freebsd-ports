@@ -1,4 +1,4 @@
-# Created by: lbartoletti <coder@tuxfamily.org>
+# Created by: lbartoletti <lbartoletti@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libreatlas
@@ -7,7 +7,7 @@ PORTREVISION=	24
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Open Source Geography Education application
 
 LICENSE=	GPLv3

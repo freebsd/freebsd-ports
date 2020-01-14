@@ -1,4 +1,4 @@
-# Created by: lbartoletti <coder@tuxfamily.org>
+# Created by: lbartoletti <lbartoletti@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pyspatialite
@@ -9,7 +9,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP/source/p/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	DB-API 2.0 interface for SQLite 3.x with Spatialite
 
 LICENSE=	ZLIB

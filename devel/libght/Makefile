@@ -1,4 +1,4 @@
-# Created by: lbartoletti <lbartoletti@tuxfamily.org>
+# Created by: lbartoletti <lbartoletti@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libght
@@ -7,7 +7,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel geography
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	GeoHashTree library for storing and accessing multi-dimensional point clouds
 
 LICENSE=	BSD3CLAUSE

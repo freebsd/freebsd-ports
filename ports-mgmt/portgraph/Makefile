@@ -5,7 +5,7 @@ PORTVERSION=	0.0.1
 CATEGORIES=	ports-mgmt python
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Create a dependencies graph of a(all) port(s)
 
 LICENSE=	BSD2CLAUSE

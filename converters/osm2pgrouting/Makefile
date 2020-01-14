@@ -6,7 +6,7 @@ DISTVERSION=	2.3.6
 PORTREVISION=	4
 CATEGORIES=	converters databases geography
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Import OSM data into pgRouting database
 
 LICENSE=	GPLv2
