@@ -13,6 +13,9 @@ COMMENT=		Talloc based event loop library
 
 LICENSE=		LGPL3
 
+DEPRECATED=	Old version, uses EOLed python27
+EXPIRATION_DATE=	2020-02-15
+
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 BUILD_DEPENDS=		talloc1>=2.1.11:devel/talloc1
