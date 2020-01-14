@@ -1,55 +1,41 @@
-Detect ARM CPU features on FreeBSD.
+commit fbde548e8114
+Author: Greg V <greg@unrelenting.technology>
+Date:   Tue Jan 14 16:25:56 2020 +0000
 
-elf_aux_info is similar to getauxval but is nop on aarch64.
+    Bug 1575843 - Detect AArch64 CPU features on FreeBSD r=jcj
+    
+    Environment checks are reogranized to be separate from platform code
+        to make it impossible to forget to check disable_FEATURE on one platform
+        but not the other.
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D55386
+---
+ lib/freebl/blinit.c | 48 +++++++++++++++++++++++++++++++++++++-----------
+ 1 file changed, 37 insertions(+), 11 deletions(-)
 
---- lib/freebl/blinit.c.orig	2020-01-03 20:27:43 UTC
+diff --git lib/freebl/blinit.c lib/freebl/blinit.c
+index 050b32113e..4723d3bb16 100644
+--- lib/freebl/blinit.c
 +++ lib/freebl/blinit.c
-@@ -101,8 +101,8 @@ CheckX86CPUSupport()
- #ifndef __has_include
- #define __has_include(x) 0
- #endif
--#if (__has_include(<sys/auxv.h>) || defined(__linux__)) && \
--    defined(__GNUC__) && __GNUC__ >= 2 && defined(__ELF__)
-+#if defined(__linux__)
-+#if defined(__GNUC__) && __GNUC__ >= 2 && defined(__ELF__)
- /* This might be conflict with host compiler */
- #if !defined(__ANDROID__)
- #include <sys/auxv.h>
-@@ -111,6 +111,10 @@ extern unsigned long getauxval(unsigned long type) __a
- #else
- static unsigned long (*getauxval)(unsigned long) = NULL;
- #endif /* defined(__GNUC__) && __GNUC__ >= 2 && defined(__ELF__)*/
-+#elif defined(__FreeBSD__) && __has_include(<sys/auxv.h>)
-+#include <sys/auxv.h>
-+#define HAVE_ELF_AUX_INFO
-+#endif /* defined(__linux__) */
- 
- #ifndef AT_HWCAP2
- #define AT_HWCAP2 26
-@@ -123,6 +127,9 @@ static unsigned long (*getauxval)(unsigned long) = NUL
+@@ -133,6 +133,8 @@ static unsigned long (*getauxval)(unsigned long) = NULL;
  /* clang-format on */
  
  #if defined(__aarch64__)
-+#if defined(__FreeBSD__)
-+#include <machine/armreg.h>
-+#endif
++
++#if defined(__linux__)
  // Defines from hwcap.h in Linux kernel - ARM64
  #ifndef HWCAP_AES
  #define HWCAP_AES (1 << 3)
-@@ -149,7 +156,7 @@ CheckARMSupport()
-     arm_pmull_support_ = arm_crypto_support && disable_pmull == NULL;
-     arm_sha1_support_ = arm_crypto_support;
-     arm_sha2_support_ = arm_crypto_support;
--#else
-+#elif defined(__linux__)
-     if (getauxval) {
-         long hwcaps = getauxval(AT_HWCAP);
-         arm_aes_support_ = hwcaps & HWCAP_AES && disable_hw_aes == NULL;
-@@ -157,7 +164,23 @@ CheckARMSupport()
-         arm_sha1_support_ = hwcaps & HWCAP_SHA1;
-         arm_sha2_support_ = hwcaps & HWCAP_SHA2;
-     }
-+#elif defined(__FreeBSD__)
+@@ -146,30 +148,54 @@ static unsigned long (*getauxval)(unsigned long) = NULL;
+ #ifndef HWCAP_SHA2
+ #define HWCAP_SHA2 (1 << 6)
+ #endif
++#endif /* defined(__linux__) */
++
++#if defined(__FreeBSD__)
++#include <stdint.h>
++#include <machine/armreg.h>
++// Support for older version of armreg.h
 +#ifndef ID_AA64ISAR0_AES_VAL
 +#define ID_AA64ISAR0_AES_VAL ID_AA64ISAR0_AES
 +#endif
@@ -59,63 +45,50 @@ elf_aux_info is similar to getauxval but is nop on aarch64.
 +#ifndef ID_AA64ISAR0_SHA2_VAL
 +#define ID_AA64ISAR0_SHA2_VAL ID_AA64ISAR0_SHA2
 +#endif
-+    uint64_t id_aa64isar0;
-+    id_aa64isar0 = READ_SPECIALREG(id_aa64isar0_el1);
-+    arm_aes_support_ = ID_AA64ISAR0_AES_VAL(id_aa64isar0) >= ID_AA64ISAR0_AES_BASE && disable_hw_aes == NULL;
-+    arm_pmull_support_ = ID_AA64ISAR0_AES_VAL(id_aa64isar0) == ID_AA64ISAR0_AES_PMULL && disable_pmull == NULL;
-+    arm_sha1_support_ = ID_AA64ISAR0_SHA1_VAL(id_aa64isar0) == ID_AA64ISAR0_SHA1_BASE;
-+    arm_sha2_support_ = ID_AA64ISAR0_SHA2_VAL(id_aa64isar0) >= ID_AA64ISAR0_SHA2_BASE;
- #endif
-     /* aarch64 must support NEON. */
-     arm_neon_support_ = disable_arm_neon == NULL;
- }
-@@ -200,7 +223,7 @@ GetNeonSupport()
-     // If no getauxval, compiler generate NEON instruction by default,
-     // we should allow NOEN support.
-     return PR_TRUE;
--#elif !defined(__ANDROID__)
-+#elif defined(__linux__) && !defined(__ANDROID__)
-     // Android's cpu-features.c detects features by the following logic
-     //
-     // - Call getauxval(AT_HWCAP)
-@@ -214,6 +237,10 @@ GetNeonSupport()
-     if (getauxval) {
-         return (getauxval(AT_HWCAP) & HWCAP_NEON);
-     }
-+#elif defined(__FreeBSD__) && defined(HAVE_ELF_AUX_INFO)
-+    unsigned long hwcap = 0;
-+    elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
-+    return (hwcap & HWCAP_NEON);
- #endif /* defined(__ARM_NEON) || defined(__ARM_NEON__) */
-     return PR_FALSE;
- }
-@@ -262,6 +289,7 @@ void
++#endif /* defined(__FreeBSD__) */
+ 
+ void
  CheckARMSupport()
  {
-     char *disable_hw_aes = PR_GetEnvSecure("NSS_DISABLE_HW_AES");
-+#if defined(__linux__)
+-    char *disable_arm_neon = PR_GetEnvSecure("NSS_DISABLE_ARM_NEON");
+-    char *disable_hw_aes = PR_GetEnvSecure("NSS_DISABLE_HW_AES");
+-    char *disable_pmull = PR_GetEnvSecure("NSS_DISABLE_PMULL");
+ #if defined(_WIN64)
+     BOOL arm_crypto_support = IsProcessorFeaturePresent(PF_ARM_V8_CRYPTO_INSTRUCTIONS_AVAILABLE);
+-    arm_aes_support_ = arm_crypto_support && disable_hw_aes == NULL;
+-    arm_pmull_support_ = arm_crypto_support && disable_pmull == NULL;
++    arm_aes_support_ = arm_crypto_support;
++    arm_pmull_support_ = arm_crypto_support;
+     arm_sha1_support_ = arm_crypto_support;
+     arm_sha2_support_ = arm_crypto_support;
+-#else
++#elif defined(__linux__)
      if (getauxval) {
-         // Android's cpu-features.c uses AT_HWCAP2 for newer features.
-         // AT_HWCAP2 is implemented on newer devices / kernel, so we can trust
-@@ -270,13 +298,19 @@ CheckARMSupport()
-         // AT_HWCAP2 isn't supported by glibc or Linux kernel, getauxval will
-         // returns 0.
-         long hwcaps = getauxval(AT_HWCAP2);
--#ifdef __linux__
-         if (!hwcaps) {
-             // Some ARMv8 devices may not implement AT_HWCAP2. So we also
-             // read /proc/cpuinfo if AT_HWCAP2 is 0.
-             hwcaps = ReadCPUInfoForHWCAP2();
-         }
--#endif
-+#elif defined(__FreeBSD__) && defined(HAVE_ELF_AUX_INFO)
-+    unsigned long hwcaps = 0;
-+    elf_aux_info(AT_HWCAP2, &hwcaps, sizeof(hwcaps));
-+    {
-+#else
-+    if (0) {
-+        unsigned long hwcaps = 0;
-+#endif /* defined(__linux__) */
-         arm_aes_support_ = hwcaps & HWCAP2_AES && disable_hw_aes == NULL;
-         arm_pmull_support_ = hwcaps & HWCAP2_PMULL;
-         arm_sha1_support_ = hwcaps & HWCAP2_SHA1;
+         long hwcaps = getauxval(AT_HWCAP);
+-        arm_aes_support_ = hwcaps & HWCAP_AES && disable_hw_aes == NULL;
+-        arm_pmull_support_ = hwcaps & HWCAP_PMULL && disable_pmull == NULL;
+-        arm_sha1_support_ = hwcaps & HWCAP_SHA1;
+-        arm_sha2_support_ = hwcaps & HWCAP_SHA2;
++        arm_aes_support_ = (hwcaps & HWCAP_AES) == HWCAP_AES;
++        arm_pmull_support_ = (hwcaps & HWCAP_PMULL) == HWCAP_PMULL;
++        arm_sha1_support_ = (hwcaps & HWCAP_SHA1) == HWCAP_SHA1;
++        arm_sha2_support_ = (hwcaps & HWCAP_SHA2) == HWCAP_SHA2;
++    }
++#elif defined(__FreeBSD__)
++    /* qemu-user does not support register access from userspace */
++    if (PR_GetEnvSecure("QEMU_EMULATING") == NULL) {
++        uint64_t isar0 = READ_SPECIALREG(id_aa64isar0_el1);
++        arm_aes_support_ = ID_AA64ISAR0_AES_VAL(isar0) >= ID_AA64ISAR0_AES_BASE;
++        arm_pmull_support_ = ID_AA64ISAR0_AES_VAL(isar0) >= ID_AA64ISAR0_AES_PMULL;
++        arm_sha1_support_ = ID_AA64ISAR0_SHA1_VAL(isar0) >= ID_AA64ISAR0_SHA1_BASE;
++        arm_sha2_support_ = ID_AA64ISAR0_SHA2_VAL(isar0) >= ID_AA64ISAR0_SHA2_BASE;
+     }
+ #endif
+     /* aarch64 must support NEON. */
+-    arm_neon_support_ = disable_arm_neon == NULL;
++    arm_neon_support_ = PR_GetEnvSecure("NSS_DISABLE_ARM_NEON") == NULL;
++    arm_aes_support_ &= PR_GetEnvSecure("NSS_DISABLE_HW_AES") == NULL;
++    arm_pmull_support_ &= PR_GetEnvSecure("NSS_DISABLE_PMULL") == NULL;
+ }
+ #endif /* defined(__aarch64__) */
+ 
