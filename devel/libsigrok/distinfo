@@ -1,3 +1,3 @@
-TIMESTAMP = 1539542675
-SHA256 (libsigrok-0.5.1.tar.gz) = e40fde7af98d29e922e9d3cbe0a6c0569889153fc31e47b8b1afe4d846292b9c
-SIZE (libsigrok-0.5.1.tar.gz) = 1664813
+TIMESTAMP = 1579031765
+SHA256 (libsigrok-0.5.2.tar.gz) = 4d341f90b6220d3e8cb251dacf726c41165285612248f2c52d15df4590a1ce3c
+SIZE (libsigrok-0.5.2.tar.gz) = 1779465
