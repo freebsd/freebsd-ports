@@ -2,6 +2,7 @@ include/xlsxwriter.h
 include/xlsxwriter/app.h
 include/xlsxwriter/chart.h
 include/xlsxwriter/chartsheet.h
+include/xlsxwriter/comment.h
 include/xlsxwriter/common.h
 include/xlsxwriter/content_types.h
 include/xlsxwriter/core.h
@@ -21,6 +22,7 @@ include/xlsxwriter/third_party/tmpfileplus.h
 include/xlsxwriter/third_party/tree.h
 include/xlsxwriter/third_party/zip.h
 include/xlsxwriter/utility.h
+include/xlsxwriter/vml.h
 include/xlsxwriter/workbook.h
 include/xlsxwriter/worksheet.h
 include/xlsxwriter/xmlwriter.h
