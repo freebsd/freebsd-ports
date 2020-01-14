@@ -3,6 +3,7 @@
 
 PORTNAME=	Flask-SAML
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	security www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +13,20 @@ COMMENT=	SAML authentication for Flask web apps
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>0.8.0:www/py-flask@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}blinker>=1.1:devel/py-blinker@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pysaml2>4.0.0:security/py-pysaml2@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.8.0:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}blinker>=1.1:devel/py-blinker@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3600
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pysaml24>=4.0.0<5:security/py-pysaml24@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pysaml2>=4.0.0<5:security/py-pysaml2@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
