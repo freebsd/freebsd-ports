@@ -2,7 +2,7 @@
 
 PORTNAME=	gemma
 DISTVERSION=	0.98.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,8 +11,7 @@ COMMENT=	Genome-wide Efficient Mixed Model Association
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcblas.so:math/cblas \
-		libgsl.so:math/gsl
+LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		blaslapack:openblas compiler:c++11-lang eigen:3 gmake \
 		localbase:ldflags
@@ -21,12 +20,11 @@ GH_ACCOUNT=	genetics-statistics
 GH_PROJECT=	GEMMA
 
 MAKEFILE=	${FILESDIR}/Makefile
-CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -DOPENBLAS -DOPENBLAS_LEGACY
-LDFLAGS+=	-lopenblas
+# Assuming openblas is built with pthreads, not openmp
+CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -DOPENBLAS -pthread
+LDFLAGS+=	-lopenblasp -pthread
 
 OPTIONS_DEFINE=	EXAMPLES
-
-BROKEN=		Conflict between math/gsl and math/cblas constant redeclarations
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|../bin/gemma|../gemma|' ${WRKSRC}/test/*.sh
