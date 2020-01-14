@@ -1,0 +1,4 @@
+Solid now has UDisks2 backend turned on by default. If you want to use it, install
+sysutils/bsdisks package and **disable** hald (set hald_enable="NO" in rc.conf or
+just remove the package). If you want to stay with hald, don't install bsdisks, as
+you'll get duplicated entries for removable disks.
