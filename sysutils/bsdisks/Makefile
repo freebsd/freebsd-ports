@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdisks
-DISTVERSION=	0.12
+DISTVERSION=	0.13
 CATEGORIES=	sysutils
 MASTER_SITES=	https://bitbucket.org/arrowd/bsdisks/downloads/
 
