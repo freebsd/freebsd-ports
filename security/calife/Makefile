@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://assets.keltia.net/calife/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	Lightweight alternative to sudo
 
 LICENSE=	GPLv2
