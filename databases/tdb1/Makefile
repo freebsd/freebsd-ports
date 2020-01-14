@@ -13,6 +13,9 @@ COMMENT=		Trivial Database
 
 LICENSE=		GPLv3
 
+DEPRECATED=	Old version, uses EOLed python27
+EXPIRATION_DATE=	2020-02-15
+
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 CONFLICTS_INSTALL=	tdb-*
