@@ -18,7 +18,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		compiler:c++11-lang gnome pkgconfig waf
+USES=		compiler:c++11-lang gnome pkgconfig python:2.7,build waf
 USE_GNOME=	cairo cairomm gdkpixbuf2 gtk20 gtkmm24
 NO_WRKSUBDIR=	yes
 LDFLAGS_i386=	-Wl,-znotext
