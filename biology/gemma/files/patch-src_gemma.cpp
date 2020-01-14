@@ -1,5 +1,18 @@
---- src/gemma.cpp.orig	2019-04-18 21:03:48 UTC
+--- src/gemma.cpp.orig	2018-12-11 05:34:29 UTC
 +++ src/gemma.cpp
+@@ -75,9 +75,9 @@ void gemma_gsl_error_handler (const char * reason,
+   std::raise(SIGINT); // keep the stack trace for gdb
+ }
+ 
+-#if defined(OPENBLAS) && !defined(OPENBLAS_LEGACY)
+-#include <openblas_config.h>
+-#endif
++//#if defined(OPENBLAS) && !defined(OPENBLAS_LEGACY)
++//#include <openblas_config.h>
++//#endif
+ 
+ void GEMMA::PrintHeader(void) {
+ 
 @@ -154,7 +154,7 @@ void GEMMA::PrintHelp(size_t option) {
  
    if (option == 0) {
@@ -164,3 +177,12 @@
           << endl;
      cout << endl;
    }
+@@ -3148,7 +3148,7 @@ void GEMMA::WriteLog(int argc, char **argv, PARAM &cPa
+ #ifdef OPENBLAS
+ 
+   #ifndef OPENBLAS_LEGACY
+-  outfile << "## OpenBlas         =" << OPENBLAS_VERSION << " - " << openblas_get_config() << endl;
++  //outfile << "## OpenBlas         =" << OPENBLAS_VERSION << " - " << openblas_get_config() << endl;
+   outfile << "##   arch           = " << openblas_get_corename() << endl;
+   outfile << "##   threads        = " << openblas_get_num_threads() << endl;
+   #else
