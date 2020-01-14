@@ -11,7 +11,7 @@ COMMENT=	NACK-Oriented Reliable Multicast (NORM)
 
 WRKSRC=		${WRKDIR}/norm-${DISTVERSION}
 
-USES=		waf tar:tgz libtool
+USES=		libtool python:2.7,build tar:tgz waf
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/normApi.h lib/libnorm.so lib/libnorm.so.1 \
 		lib/libnorm.so.1.0.0

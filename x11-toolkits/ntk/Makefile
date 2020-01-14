@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 
-USES=		gnome jpeg localbase:ldflags pkgconfig waf xorg
+USES=		gnome jpeg localbase:ldflags pkgconfig python:2.7,build waf xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	original-male
 USE_GNOME=	cairo

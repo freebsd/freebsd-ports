@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
-USES=		waf pkgconfig tar:bz2
+USES=		pkgconfig python:2.7,build tar:bz2 waf
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/blop.lv2/*.so

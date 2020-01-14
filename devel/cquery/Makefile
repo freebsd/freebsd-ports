@@ -14,7 +14,7 @@ LICENSE=	MIT
 BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_DEFAULT}
 
-USES=		compiler:c++14-lang waf
+USES=		compiler:c++14-lang python:2.7,build waf
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cquery-project

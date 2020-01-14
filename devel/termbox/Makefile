@@ -12,7 +12,7 @@ COMMENT=	Legacy-free alternative to ncurses
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		waf
+USES=		python:2.7,build waf
 USE_GITHUB=	yes
 GH_ACCOUNT=	nsf
 USE_LDCONFIG=	yes

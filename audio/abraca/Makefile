@@ -19,7 +19,7 @@ LIB_DEPENDS=	libxmmsclient.so:audio/xmms2 \
 RUN_DEPENDS=	gnome-themes-extra>=3.0.0:x11-themes/gnome-themes-extra \
 		gnome-icon-theme>=0:misc/gnome-icon-theme
 
-USES=		gnome pkgconfig tar:bzip2 waf
+USES=		gnome pkgconfig python:2.7,build tar:bzip2 waf
 USE_GNOME=	gtk30 intltool
 
 MAKE_ARGS=	MANDIR=${MANPREFIX}/man

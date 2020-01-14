@@ -11,7 +11,7 @@ LICENSE=	LGPL20+
 
 LIB_DEPENDS=	libwebp.so:graphics/webp
 
-USES=		gnome perl5 pkgconfig waf
+USES=		gnome perl5 pkgconfig python:2.7,build waf
 USE_GNOME=	gdkpixbuf2
 USE_GITHUB=	yes
 GH_ACCOUNT=	aruiz

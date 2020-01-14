@@ -23,7 +23,7 @@ LIB_DEPENDS=	liblilv-0.so:audio/lilv \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		compiler:c++11-lang gnome pkgconfig qmake:no_configure,no_env \
+USES=		compiler:c++11-lang gnome pkgconfig python:2.7,build qmake:no_configure,no_env \
 		qt:5 tar:bz2 waf
 CONFIGURE_ARGS=	--no-qt4
 USE_CXXSTD=	c++11
