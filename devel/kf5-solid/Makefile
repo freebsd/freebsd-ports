@@ -2,6 +2,7 @@
 
 PORTNAME=	solid
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,9 +13,6 @@ USE_KDE=	ecm
 USE_QT=		buildtools_build concurrent core dbus declarative gui linguisttools \
 		network qmake_build testlib widgets xml
 
-OPTIONS_DEFINE=		BSDISKS
-BSDISKS_DESC=		Use bsdisks instead of hald to mount drives
-BSDISKS_CMAKE_BOOL=	EXPERIMENTAL_BSDISKS
-BSDISKS_RUN_DEPENDS=	bsdisks:sysutils/bsdisks
+CMAKE_ON=	EXPERIMENTAL_BSDISKS
 
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2019-12-07 21:50:54 UTC
++++ CMakeLists.txt
+@@ -117,9 +117,8 @@ elseif (NOT ANDROID)
+     endif()
+     if(EXPERIMENTAL_BSDISKS)
+         add_device_backend(udisks2)
+-    else()
+-        add_device_backend(hal)
+     endif()
++    add_device_backend(hal)
+ endif()
+ add_device_backends_cmake()
+ 
