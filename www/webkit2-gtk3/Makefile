@@ -36,7 +36,7 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 PORTSCOUT=	limitw:1,even
 
 USES=		bison cmake compiler:c++14-lang gettext gl gnome gperf \
-		jpeg localbase:ldflags perl5 pkgconfig python:2.7,build \
+		jpeg localbase:ldflags perl5 pkgconfig python:build \
 		sqlite tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build libxml2 libxslt
 USE_GL=		gl egl glesv2
