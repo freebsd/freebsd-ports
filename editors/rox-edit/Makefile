@@ -10,6 +10,9 @@ DISTNAME=	edit-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Text editor for the ROX desktop
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-16
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Edit/Help/COPYING
 
