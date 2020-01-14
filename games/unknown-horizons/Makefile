@@ -9,7 +9,6 @@ MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Real time simulation game
 
 LICENSE=	GPLv2+
-LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/licenses/GPL
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
