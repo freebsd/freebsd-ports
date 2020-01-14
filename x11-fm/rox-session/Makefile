@@ -9,6 +9,9 @@ MASTER_SITES=	SF/rox/ROX-Session/${PORTVERSION}/
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Simple session manager for the ROX desktop
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-16
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Help/COPYING
 

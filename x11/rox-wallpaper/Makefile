@@ -10,6 +10,9 @@ DISTNAME=	Wallpaper-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Wallpaper management tool for the ROX desktop
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-16
+
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer \
 		${PYTHON_PKGNAMEPREFIX}roxlib>=0:devel/py-roxlib@${PY_FLAVOR}
 
