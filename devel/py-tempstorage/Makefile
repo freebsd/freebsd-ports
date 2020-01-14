@@ -13,6 +13,9 @@ COMMENT=	RAM-based storage for ZODB
 
 LICENSE=	ZPL21
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-18
+
 RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=3.9.0:databases/zodb3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.testing>0:devel/py-zope.testing@${PY_FLAVOR}
 

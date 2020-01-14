@@ -11,7 +11,13 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Advanced form and widget framework for Zope 3
 
 LICENSE=	ZPL21
+
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-18
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-18
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.browser>=0:devel/py-zope.browser@${PY_FLAVOR} \

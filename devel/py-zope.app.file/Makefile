@@ -12,6 +12,9 @@ COMMENT=	File and Image -- Zope 3 Content Components
 
 LICENSE=	ZPL21
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-18
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}transaction>0:devel/py-transaction@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.app.publication>0:devel/py-zope.app.publication@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.contenttype>0:devel/py-zope.contenttype@${PY_FLAVOR} \

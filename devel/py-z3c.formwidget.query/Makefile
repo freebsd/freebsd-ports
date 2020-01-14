@@ -11,7 +11,13 @@ MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Source query widget for z3c.form
 
 LICENSE=	ZPL21
+
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-18
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-18
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}z3c.form>=0:devel/py-z3c.form@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${PY_FLAVOR} \

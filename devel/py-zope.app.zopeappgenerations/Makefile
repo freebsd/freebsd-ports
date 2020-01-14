@@ -13,6 +13,9 @@ COMMENT=	Zope Application ZODB Update Generations
 
 LICENSE=	ZPL21
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-18
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.annotation>=0:devel/py-zope.annotation@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.app.authentication>=0:security/py-zope.app.authentication@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.app.component>=0:devel/py-zope.app.component@${PY_FLAVOR} \
