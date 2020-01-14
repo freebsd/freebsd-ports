@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler libtool gmake ncurses
+USES=		autoreconf compiler:c11 libtool gmake ncurses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	machinezone
@@ -24,10 +24,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-BROKEN=		is marked as broken with GCC: src/tcpkali_atomic.h unconditionally includes x86 assembler
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
