@@ -14,6 +14,8 @@ MAINTAINER=	gaod@hychen.org
 COMMENT=	Provides delete permission to Trac normal user
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 LICENSE=	BSD3CLAUSE
 

@@ -10,6 +10,8 @@ MAINTAINER=	alan@wave2.co.uk
 COMMENT=	Planet is a flexible feed aggregator - and more!
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/Tidy/Tidy.py:devel/py-mx-experimental \
 		${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${PY_FLAVOR}

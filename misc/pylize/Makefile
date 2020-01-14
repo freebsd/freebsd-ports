@@ -13,6 +13,8 @@ MAINTAINER=	dryice@dryice.name
 COMMENT=	Presentation generation tool
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/HTMLgen.py:www/py-HTMLgen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \

@@ -7,6 +7,8 @@ MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Python-based GUI to configure fetchmail
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual

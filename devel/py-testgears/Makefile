@@ -13,6 +13,8 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python module to run tests written as simple functions
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist

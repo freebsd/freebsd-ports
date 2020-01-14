@@ -12,6 +12,8 @@ MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Support for having child-tickets in Trac
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

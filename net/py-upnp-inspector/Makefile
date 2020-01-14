@@ -12,6 +12,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	UPnP Device and Service analyzer
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENCE

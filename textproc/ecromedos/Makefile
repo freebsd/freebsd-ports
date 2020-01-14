@@ -11,6 +11,8 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Document preparation system that allows concurrent publication
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 LICENSE=	GPLv2
 

@@ -12,6 +12,8 @@ MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	C++ class library for the automatic layout of diagrams
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 LICENSE=		GPLv2 GPLv3
 LICENSE_COMB=		dual

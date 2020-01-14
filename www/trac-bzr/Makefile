@@ -13,6 +13,8 @@ MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Bazaar-NG plugin for Trac
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken, uses EOLed python27
+EXPIRATION_DATE=	2020-02-19
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
