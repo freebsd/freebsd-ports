@@ -10,6 +10,9 @@ MASTER_SITES=	http://decibel.silent-blade.org/uploads/Main/
 MAINTAINER=	somicide@gmail.com
 COMMENT=	Fast GTK+ audio player with an clean and user friendly interface
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-17
+
 BROKEN=		unfetchable
 
 LICENSE=	GPLv2
