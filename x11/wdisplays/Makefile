@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wdisplays
-PORTVERSION=	s20191026
+PORTVERSION=	s20200112
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +18,9 @@ USES=		compiler:c11 gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gtk30
 GH_ACCOUNT=	cyclopsian
-GH_TAGNAME=	22669ed
-PLIST_FILES=	bin/${PORTNAME}
+GH_TAGNAME=	ba331ca
+PLIST_FILES=	bin/${PORTNAME} \
+		share/applications/com.github.${GH_ACCOUNT}.${GH_PROJECT}.desktop \
+		share/icons/hicolor/scalable/apps/${PORTNAME}.svg
 
 .include <bsd.port.mk>
