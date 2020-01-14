@@ -1,4 +1,4 @@
-# Created by: Loïc BARTOLETTI <lbartoletti@tuxfamily.org>
+# Created by: Loïc BARTOLETTI <lbartoletti@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gtfslib
@@ -7,7 +7,7 @@ CATEGORIES=	devel python databases geography
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Library for reading GTFS-based transit data in Python
 
 LICENSE=	GPLv3+

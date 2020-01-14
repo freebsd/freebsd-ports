@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 		ftp://ftp.scc.u-tokai.ac.jp/pub/gmt/:gshhg
 MASTER_SITE_SUBDIR=	gmt gmt/legacy
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Digital Chart of the World for GMT 5 or later
 
 LICENSE=	GPLv3 LGPL3

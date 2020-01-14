@@ -1,4 +1,4 @@
-# Created by: lbartoletti <coder@tuxfamily.org>
+# Created by: lbartoletti <lbartoletti@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	quiterss
@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://quiterss.org/files/${PORTVERSION}/
 DISTNAME=	QuiteRSS-${PORTVERSION}-src
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Open-source cross-platform RSS/Atom news feeds reader
 
 LICENSE=	GPLv3

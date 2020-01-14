@@ -6,7 +6,7 @@ PORTVERSION=	2.6
 PORTREVISION=	3
 CATEGORIES=	textproc
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 
 LICENSE=	GPLv2

@@ -8,7 +8,7 @@ CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/libspatialite-sources/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Spatial Extensions for SQLite
 
 LICENSE=	MPL11 LGPL20 GPLv2

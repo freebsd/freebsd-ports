@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 		ftp://ftp.scc.u-tokai.ac.jp/pub/gmt/:gshhg
 MASTER_SITE_SUBDIR=	gmt gmt/legacy
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Global Self-consistent, Hierarchical, High-resolution Geography
 
 LICENSE=	GPLv3 LGPL3

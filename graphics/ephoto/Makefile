@@ -7,7 +7,7 @@ CATEGORIES=	graphics enlightenment
 MASTER_SITES=	https://download.enlightenment.org/rel/apps/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Comprehensive Image Viewer Using EFL
 
 LICENSE=	BSD2CLAUSE

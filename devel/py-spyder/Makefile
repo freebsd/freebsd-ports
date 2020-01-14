@@ -8,7 +8,7 @@ PORTREVISION=	7
 CATEGORIES=	devel science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Scientific PYthon Development EnviRonment, an alternative to IDLE
 
 LICENSE=	MIT

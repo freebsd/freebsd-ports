@@ -1,4 +1,4 @@
-# Created by: lbartoletti <coder@tuxfamily.org>
+# Created by: lbartoletti <lbartoletti@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	librasterlite2
@@ -8,7 +8,7 @@ PORTREVISION=	5
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Library that stores and retrieves raster coverages using a SpatiaLite
 
 LICENSE=	MPL11 GPLv2 LGPL21

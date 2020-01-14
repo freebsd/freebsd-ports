@@ -1,4 +1,4 @@
-# Created by: Loïc Bartoletti <lbartoletti@tuxfamily.org>
+# Created by: Loïc Bartoletti <lbartoletti@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	codeblocks
@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.tuxfamily.org/bartcoding/FreeBSD/ \
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${SVN_REV}
 
-MAINTAINER=	lbartoletti@tuxfamily.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Open source, cross-platform, free C/C++ IDE
 
 LICENSE=	GPLv3 LGPL3
