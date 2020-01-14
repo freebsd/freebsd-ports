@@ -200,6 +200,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-bs.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ca.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ccp.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-ceb.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-chr.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-cs.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-cy.dict
@@ -246,6 +247,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-km.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-kn.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ko.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-kok.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ku.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ky.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-lo.dict
@@ -278,11 +280,13 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-so.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sq.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sr.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-sr_Cyrl.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sr_Cyrl_BA.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sr_Latn.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sr_Latn_BA.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sv.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sw.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-sw_KE.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ta.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-te.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-th.dict
