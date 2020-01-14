@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seed7
-DISTVERSION=	05_20190818
+DISTVERSION=	05_20191229
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
@@ -44,12 +44,18 @@ PORTDOCS=	*
 MAKEFILE=	mk_freebsd.mk
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' \
-		-e 's|^CFLAGS = |CFLAGS = -I${NCURSESINC} |' \
-		${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} \
+	    -e 's|%%LOCALBASE%%|${LOCALBASE}|g;' \
+	    -e 's|^CFLAGS = |CFLAGS = -I${NCURSESINC} |' \
+	    ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} \
+	    -e 's|/opt/X11/include|${LOCALBASE}/include|' \
+	    ${WRKSRC}/chkccomp.c
+
+do-configure:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} depend
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} depend
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} s7 s7c
 
 do-install:
