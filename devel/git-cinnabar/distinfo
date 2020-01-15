@@ -1,3 +1,5 @@
 TIMESTAMP = 1561957068
 SHA256 (glandium-git-cinnabar-0.5.2_GH0.tar.gz) = e88ef4e55a06a7cb770c26f679c6f7c182f7986611cbfede1215c42e34f7031c
 SIZE (glandium-git-cinnabar-0.5.2_GH0.tar.gz) = 167168
+SHA256 (9b89584e9d40.patch) = e1ad2c7627d70ddb462d1ad17b6343cfb3e2ac1339ed014d23c0d00a0d1af936
+SIZE (9b89584e9d40.patch) = 831
