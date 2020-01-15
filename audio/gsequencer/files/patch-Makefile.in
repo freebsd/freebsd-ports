@@ -1,6 +1,6 @@
---- Makefile.in.orig	2019-02-17 01:56:10 UTC
+--- Makefile.in.orig	2020-01-14 11:22:47 UTC
 +++ Makefile.in
-@@ -5957,7 +5957,7 @@ nobase_include_HEADERS = $(libags_la_HEA
+@@ -6745,7 +6745,7 @@ nobase_include_HEADERS = $(libags_la_HEADERS_0) $(liba
  
  # doc
  # docdir = $(datadir)/doc/gsequencer
@@ -9,9 +9,9 @@
  
  # documentation
  manpages = \
-@@ -23930,7 +23930,7 @@ install-data-local:
+@@ -26443,7 +26443,7 @@ install-data-local:
  	install -c -p -m 644 $(top_srcdir)/application-x-gsequencer.xml $(DESTDIR)/$(datadir)/mime/packages/gsequencer.xml
- 	install -c -p -m 644 $(top_srcdir)/gsequencer.appdata.xml $(DESTDIR)/$(datadir)/metainfo/
+ 	install -c -p -m 644 $(top_srcdir)/org.nongnu.gsequencer.gsequencer.appdata.xml $(DESTDIR)/$(datadir)/metainfo/
  	mkdir -p $(DESTDIR)/$(docdir)/
 -	gzip -9 -c $(top_srcdir)/ChangeLog > $(DESTDIR)/$(docdir)/changelog.gz
 +	#gzip -9 -c $(top_srcdir)/ChangeLog > $(DESTDIR)/$(docdir)/changelog.gz
