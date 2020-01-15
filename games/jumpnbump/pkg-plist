@@ -9,5 +9,5 @@ share/icons/jumpnbump.png
 %%DATADIR%%/jumpbump.dat
 %%LAUNCHER%%%%DATADIR%%/jumpnbump_menu.glade
 %%NLS%%share/locale/fr/LC_MESSAGES/jumpnbump-menu.mo
-share/man/man6/jumpnbump.6
+share/man/man6/jumpnbump.6.gz
 share/metainfo/jumpnbump.appdata.xml

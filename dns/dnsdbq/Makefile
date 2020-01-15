@@ -27,6 +27,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man ${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
-PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

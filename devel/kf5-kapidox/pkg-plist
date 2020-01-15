@@ -79,6 +79,6 @@ bin/kapidox_generate
 %%PYTHON_SITELIBDIR%%/kapidox/preprocessing.pyc
 %%PYTHON_SITELIBDIR%%/kapidox/utils.py
 %%PYTHON_SITELIBDIR%%/kapidox/utils.pyc
-share/man/man1/depdiagram-generate-all.1
-share/man/man1/depdiagram-generate.1
-share/man/man1/depdiagram-prepare.1
+share/man/man1/depdiagram-generate-all.1.gz
+share/man/man1/depdiagram-generate.1.gz
+share/man/man1/depdiagram-prepare.1.gz

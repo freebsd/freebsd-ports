@@ -4,7 +4,7 @@ lib/libnomacsCore.so.3
 lib/libnomacsCore.so.3.6.0
 share/appdata/nomacs.appdata.xml
 share/applications/nomacs.desktop
-share/man/man1/nomacs.1
+share/man/man1/nomacs.1.gz
 %%DATADIR%%/translations/nomacs_als.qm
 %%DATADIR%%/translations/nomacs_ar.qm
 %%DATADIR%%/translations/nomacs_az.qm

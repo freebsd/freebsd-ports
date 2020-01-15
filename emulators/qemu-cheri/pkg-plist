@@ -6,9 +6,9 @@ bin/qemu-system-cheri
 %%PORTDOCS%%%%DOCSDIR%%/qemu-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/qemu-tech.html
 %%PORTDOCS%%%%DOCSDIR%%/qmp-commands.txt
-share/man/man1/qemu-img.1
-share/man/man1/qemu.1
-share/man/man8/qemu-nbd.8
+share/man/man1/qemu-img.1.gz
+share/man/man1/qemu.1.gz
+share/man/man8/qemu-nbd.8.gz
 %%DATADIR%%/QEMU,cgthree.bin
 %%DATADIR%%/QEMU,tcx.bin
 %%DATADIR%%/acpi-dsdt.aml

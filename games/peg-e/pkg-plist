@@ -11,7 +11,7 @@ share/icons/hicolor/48x48/apps/peg-e.png
 share/icons/hicolor/512x512/apps/peg-e.png
 share/icons/hicolor/64x64/apps/peg-e.png
 share/icons/hicolor/scalable/apps/peg-e.svg
-share/man/man6/peg-e.6
+share/man/man6/peg-e.6.gz
 share/metainfo/peg-e.appdata.xml
 %%DATADIR%%/icons/hicolor/16x16/document-new.png
 %%DATADIR%%/icons/hicolor/16x16/edit-redo.png
