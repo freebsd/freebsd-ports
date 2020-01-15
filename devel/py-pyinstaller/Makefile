@@ -56,10 +56,9 @@ pre-build:
 		${PYTHON_CMD} waf all
 
 do-install-MANPAGES-on:
-	@${MKDIR} ${STAGEDIR}${MANDIRS}/man1
 	( cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} man ${MAKE_ARGS})
 	( cd ${WRKSRC}/doc/_build/man ; ${INSTALL_MAN} pyi-makespec.1 pyinstaller.1 \
-		${STAGEDIR}${MANDIRS}/man1 )
+		${STAGEDIR}${PREFIX}/share/man/man1 )
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
