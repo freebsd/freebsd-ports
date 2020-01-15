@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	guitarix
-DISTVERSION=	0.38.1
-PORTREVISION=	4
+DISTVERSION=	0.39.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 PKGNAMESUFFIX=	-lv2
@@ -15,6 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
+		faust:audio/faust \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
 		ladspa>0:audio/ladspa # https://sourceforge.net/p/guitarix/bugs/61/
@@ -54,5 +54,6 @@ NLS_USE=	GNOME=intltool
 
 post-stage: # https://sourceforge.net/p/guitarix/bugs/60/
 	@${RM} -r ${STAGEDIR}/applications
+	@${FIND} ${STAGEDIR}${PREFIX} -name "*.so" | ${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.mk>

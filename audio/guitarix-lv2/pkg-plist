@@ -44,7 +44,7 @@ lib/lv2/gx_chorus.lv2/manifest.ttl
 lib/lv2/gx_colwah.lv2/gx_colwah.so
 lib/lv2/gx_colwah.lv2/gx_colwah.ttl
 lib/lv2/gx_colwah.lv2/gx_colwah_gui.so
-lib/lv2/gx_colwah.lv2/manifest.ttl
+lib/lv2/gx_wah.lv2/manifest.ttl
 lib/lv2/gx_compressor.lv2/gx_compressor.so
 lib/lv2/gx_compressor.lv2/gx_compressor.ttl
 lib/lv2/gx_compressor.lv2/gx_compressor_gui.so
