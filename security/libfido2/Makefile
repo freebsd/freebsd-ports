@@ -26,7 +26,6 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/libcrypto/d' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/man/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|endian.h|sys/&|' ${WRKSRC}/CMakeLists.txt ${WRKSRC}/openbsd-compat/openbsd-compat.h
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 	@${REINPLACE_CMD} -e '/-Wno-unused-result/d; /-Wno-discarded-qualifiers/d' ${WRKSRC}/CMakeLists.txt
