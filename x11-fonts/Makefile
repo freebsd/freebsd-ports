@@ -123,6 +123,7 @@
     SUBDIR += intlfonts
     SUBDIR += iosevka
     SUBDIR += isabella
+    SUBDIR += jetbrains-mono
     SUBDIR += jmk-x11-fonts
     SUBDIR += junction
     SUBDIR += junicode
