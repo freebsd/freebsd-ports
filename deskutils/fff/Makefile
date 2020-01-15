@@ -19,6 +19,6 @@ GH_ACCOUNT=	dylanaraps
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-PLIST_FILES=	bin/fff share/man/man1/fff.1
+PLIST_FILES=	bin/fff share/man/man1/fff.1.gz
 
 .include <bsd.port.mk>

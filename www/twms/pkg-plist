@@ -46,7 +46,7 @@ bin/twms
 %%PYTHON_SITELIBDIR%%/twms/twms.pyc
 %%PYTHON_SITELIBDIR%%/twms/twms.pyo
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-share/man/man1/twms.1
+share/man/man1/twms.1.gz
 %%DATADIR%%/irs_nxt.jpg
 %%DATADIR%%/tools/compile_correction.py
 %%DATADIR%%/tools/decompile_correction.py

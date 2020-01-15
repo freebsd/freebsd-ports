@@ -140,5 +140,5 @@ share/doc/ganesha/config_samples/rgw.conf
 share/doc/ganesha/config_samples/rgw_bucket.conf
 share/doc/ganesha/config_samples/vfs.conf
 share/doc/ganesha/config_samples/xfs.conf
-share/man/man8/ganesha_conf.8
+share/man/man8/ganesha_conf.8.gz
 @dir /var/run/ganesha

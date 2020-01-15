@@ -14,7 +14,7 @@ share/icons/hicolor/48x48/apps/tanglet.png
 share/icons/hicolor/512x512/apps/tanglet.png
 share/icons/hicolor/64x64/apps/tanglet.png
 share/icons/hicolor/scalable/apps/tanglet.svg
-share/man/man6/tanglet.6
+share/man/man6/tanglet.6.gz
 share/metainfo/tanglet.appdata.xml
 share/mime/packages/tanglet.xml
 share/pixmaps/tanglet.xpm

@@ -135,9 +135,9 @@ share/locale/eo/LC_MESSAGES/oyranos.mo
 share/locale/eu/LC_MESSAGES/oyranos.mo
 share/locale/fr/LC_MESSAGES/oyranos.mo
 share/locale/ru/LC_MESSAGES/oyranos.mo
-share/man/man1/oyranos-image-display.1
-share/man/man1/oyranos-xforms-fltk.1
-share/man/man1/oyranos-xforms-modules.1
+share/man/man1/oyranos-image-display.1.gz
+share/man/man1/oyranos-xforms-fltk.1.gz
+share/man/man1/oyranos-xforms-modules.1.gz
 share/pixmaps/lcms_logo2.png
 share/pixmaps/oyranos_logo.png
 share/pixmaps/qcmsevents.svg

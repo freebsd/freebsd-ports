@@ -197,9 +197,9 @@ libdata/pkgconfig/plplot.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.pkg-config
 %%PORTDOCS%%%%DOCSDIR%%/README.release
 %%PORTDOCS%%%%DOCSDIR%%/README.wxwidgets
-%%TCLTK%%share/man/man1/plserver.1
-%%TCLTK%%share/man/man1/pltcl.1
-%%TCLTK%%share/man/man1/pltek.1
+%%TCLTK%%share/man/man1/plserver.1.gz
+%%TCLTK%%share/man/man1/pltcl.1.gz
+%%TCLTK%%share/man/man1/pltek.1.gz
 %%DATADIR%%/cmap0_alternate.pal
 %%DATADIR%%/cmap0_black_on_white.pal
 %%DATADIR%%/cmap0_default.pal

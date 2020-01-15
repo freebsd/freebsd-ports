@@ -22,7 +22,7 @@ sbin/openvasmd
 %%PORTDOCS%%%%DOCSDIR%%/example-openvas-manage-certs.conf
 %%PORTDOCS%%%%DOCSDIR%%/html/omp.html
 %%PGSQL%%%%PORTDOCS%%%%DOCSDIR%%/postgres-HOWTO
-share/man/man1/openvas-manage-certs.1
+share/man/man1/openvas-manage-certs.1.gz
 share/openvas/cert/cert_bund_getbyname.xsl
 share/openvas/cert/cert_bund_update.xsl
 share/openvas/cert/cert_db_init.sql
