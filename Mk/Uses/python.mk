@@ -535,7 +535,7 @@ _UNIQUE_FIND_SUFFIX_FILES=	${SED} -e 's|^${PREFIX}/||' ${TMPPLIST} 2>/dev/null
 UNIQUE_FIND_SUFFIX_FILES+=	${_UNIQUE_FIND_SUFFIX_FILES} | \
 				${EGREP} -he '^bin/.*$$|^sbin/.*$$|^libexec/.*$$'
 UNIQUE_FIND_SUFFIX_MAN_FILES+=	${_UNIQUE_FIND_SUFFIX_FILES} | \
-				${EGREP} -he '^man/man[1-9ln]/.*$$'
+				${EGREP} -he '^man/man[1-9ln]/.*$$|^share/man/man[1-9ln]/.*$$'
 .endif # defined(_PYTHON_FEATURE_CONCURRENT)
 
 _CURRENTPORT:=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
@@ -592,6 +592,7 @@ add-plist-pymod:
 	@${SED} -e 's|^${STAGEDIR}${PREFIX}/||' \
 		-e 's|^${PREFIX}/||' \
 		-e 's|^\(man/.*man[0-9]\)/\(.*\.[0-9]\)$$|\1/\2.gz|' \
+		-e 's|^\(share/man/.*man[0-9]\)/\(.*\.[0-9]\)$$|\1/\2.gz|' \
 		-e 's|[[:alnum:]|[:space:]]*/\.\./*||g; s|/\./|/|g' \
 		${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
 
