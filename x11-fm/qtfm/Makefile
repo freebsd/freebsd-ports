@@ -22,7 +22,7 @@ USE_QT=		concurrent core dbus gui widgets \
 USE_GITHUB=	yes
 GH_ACCOUNT=	rodlie
 
-QMAKE_ARGS=	MANDIR=${MANDIRS} \
+QMAKE_ARGS=	MANDIR=${PREFIX}/share/man \
 		PREFIX=${PREFIX} \
 		XDGDIR=${PREFIX}/etc/xdg \
 		DOCDIR=${DOCSDIR}

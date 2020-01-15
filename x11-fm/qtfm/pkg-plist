@@ -1,8 +1,8 @@
 bin/qtfm
 bin/qtfm-tray
 etc/xdg/autostart/qtfm-tray.desktop
-man/man1/qtfm-tray.1.gz
-man/man1/qtfm.1.gz
+share/man/man1/qtfm-tray.1.gz
+share/man/man1/qtfm.1.gz
 share/applications/qtfm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
