@@ -1,5 +1,5 @@
 bin/lxqt-openssh-askpass
-man/man1/lxqt-openssh-askpass.1.gz
+share/man/man1/lxqt-openssh-askpass.1.gz
 %%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_ar.qm
 %%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_ca.qm
 %%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_cs.qm

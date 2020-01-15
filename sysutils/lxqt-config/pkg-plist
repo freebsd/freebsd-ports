@@ -7,9 +7,9 @@ bin/lxqt-config-locale
 bin/lxqt-config-monitor
 etc/xdg/menus/lxqt-config.menu
 lib/lxqt-config/liblxqt-config-cursor.so
-man/man1/lxqt-config-appearance.1.gz
-man/man1/lxqt-config-mouse.1.gz
-man/man1/lxqt-config.1.gz
+share/man/man1/lxqt-config-appearance.1.gz
+share/man/man1/lxqt-config-mouse.1.gz
+share/man/man1/lxqt-config.1.gz
 share/applications/lxqt-config-appearance.desktop
 share/applications/lxqt-config-brightness.desktop
 share/applications/lxqt-config-file-associations.desktop
