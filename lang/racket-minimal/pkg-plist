@@ -27,8 +27,8 @@ lib/racket/mzdyn3m.o
 lib/racket/starter
 lib/racket/starter-sh
 lib/racket/system.rktd
-man/man1/racket.1.gz
-man/man1/raco.1.gz
+share/man/man1/racket.1.gz
+share/man/man1/raco.1.gz
 %%DATADIR%%/COPYING-libscheme.txt
 %%DATADIR%%/COPYING.txt
 %%DATADIR%%/COPYING_LESSER.txt

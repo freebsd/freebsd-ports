@@ -37,7 +37,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-libffi \
 		--enable-places \
 		--enable-pthread \
-		--mandir=${MANDIRS}
+		--mandir=${PREFIX}/share/man
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
 PATCH_WRKSRC=	${WRKDIR}/racket-${PORTVERSION}
 USE_LDCONFIG=	yes
