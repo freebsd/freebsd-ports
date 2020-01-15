@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20200115:
+AUTHOR: bapt@FreeBSD.org
+
+  ${PREFIX}/share/man is now a valid location for manpages ${PREFIX}/man being
+  considered as deprecated.
+
 20191009:
 AUTHOR: bapt@FreeBSD.org
 
