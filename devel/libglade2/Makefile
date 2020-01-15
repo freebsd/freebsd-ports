@@ -3,7 +3,7 @@
 
 PORTNAME=	libglade2
 PORTVERSION=	2.6.4
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME:S/2$//}/${PORTVERSION:C/..$//}
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
@@ -37,23 +37,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	XMLCATALOG="${LOCALBASE}/bin/xmlcatalog" \
 		CATALOG_PORTS_XML="${LOCALBASE}/share/xml/catalog.ports"
 
-OPTIONS_DEFINE=	PYTHON
-OPTIONS_DEFAULT=PYTHON
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=		python:2.7
-PLIST_SUB+=	PYTHON=""
-.else
-PLIST_SUB+=	PYTHON="@comment "
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib-2.0|gmodule-2.0 glib-2.0|g' \
 		${WRKSRC}/configure
-
-post-patch-PYTHON-off:
 	@${REINPLACE_CMD} -E 's/in (python.*)+ none/in none/' \
 		${WRKSRC}/configure
 
