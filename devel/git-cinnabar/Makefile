@@ -2,8 +2,11 @@
 
 PORTNAME=	git-cinnabar
 DISTVERSION=	0.5.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	9b89584e9d40.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Git remote helper to interact with Mercurial repositories
