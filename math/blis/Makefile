@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blis
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Software framework for high-performance BLAS-like libraries
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LLVM_VER=	60
+LLVM_VER=	90
 BUILD_DEPENDS=	bash:shells/bash \
 		llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER}
 
