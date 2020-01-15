@@ -81,5 +81,5 @@ share/dbus-1/system-services/net.reactivated.Fprint.service
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/fprintd.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/fprintd.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/fprintd.mo
-man/man1/fprintd.1.gz
+share/man/man1/fprintd.1.gz
 share/polkit-1/actions/net.reactivated.fprint.device.policy
