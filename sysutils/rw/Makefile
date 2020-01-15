@@ -13,9 +13,7 @@ COMMENT=	Simple replacement for dd wth standard command line flags
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PLIST_FILES=	bin/rw man/man1/rw.1.gz
-
-MAKE_ENV=	MANDIR=${MANDIRS}
+PLIST_FILES=	bin/rw share/man/man1/rw.1.gz
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
