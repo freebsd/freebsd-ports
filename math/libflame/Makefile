@@ -11,13 +11,13 @@ COMMENT=	FLAME dense linear algebra library
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 ONLY_FOR_ARCHS_REASON=	make system does not support other architectures yet
 
 BUILD_DEPENDS=	bash:shells/bash
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		compiler:c11 gmake
 USE_CSTD=	c99
 USE_LDCONFIG=	yes
 
