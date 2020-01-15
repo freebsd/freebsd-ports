@@ -29,9 +29,4 @@ OPTIONS_DEFINE=	DOCS
 
 PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS:N--single-version-externally-managed}
 
-post-install:
-	${MV} ${STAGEDIR}${PREFIX}/share/man/man1 ${STAGEDIR}${PREFIX}/man
-	${RMDIR} ${STAGEDIR}${PREFIX}/share/man
-	${GZIP_CMD} ${STAGEDIR}${PREFIX}/man/man1/*
-
 .include <bsd.port.post.mk>
