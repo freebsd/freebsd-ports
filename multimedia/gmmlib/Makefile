@@ -15,6 +15,7 @@ PATCHFILES+=	492c1eea16ab.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	62cbd18f9ab6.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	4261462b0586.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	6cb8a44dcc55.patch:-p1 # https://github.com/intel/gmmlib/pull/68
+PATCHFILES+=	9eb781d74b12.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Memory Management Library
