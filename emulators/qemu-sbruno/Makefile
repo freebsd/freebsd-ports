@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.11.50.g20191211
+PORTREVISION=	1
 CATEGORIES=	emulators
 PKGNAMESUFFIX?=	-sbruno
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -75,7 +76,7 @@ CONFIGURE_ARGS+=	--disable-libssh2
 PORTDOCS=	docs qemu-doc.html
 
 .if defined(QEMU_USER_STATIC)
-.if ${ARCH} != "amd64"
+.if ${ARCH} != "amd64" && ${ARCH} != "powerpc64"
 CONFIGURE_ARGS+=	--target-list=i386-bsd-user,sparc-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user,ppc-bsd-user
 .else
 CONFIGURE_ARGS+=	--target-list=i386-bsd-user,x86_64-bsd-user,sparc-bsd-user,sparc64-bsd-user,arm-bsd-user,mips-bsd-user,mipsel-bsd-user,mips64-bsd-user,mips64el-bsd-user,ppc-bsd-user,ppc64-bsd-user,aarch64-bsd-user
