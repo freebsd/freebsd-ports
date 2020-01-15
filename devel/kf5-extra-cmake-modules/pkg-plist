@@ -116,6 +116,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindXCB.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/index.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/kde-module/KDECMakeSettings.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/kde-module/KDEClangFormat.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/kde-module/KDECompilerSettings.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/kde-module/KDEFrameworkCompilerSettings.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/kde-module/KDEInstallDirs.rst.txt
@@ -205,6 +206,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/kde-module/KDECMakeSettings.html
+%%PORTDOCS%%%%DOCSDIR%%/html/kde-module/KDEClangFormat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/kde-module/KDECompilerSettings.html
 %%PORTDOCS%%%%DOCSDIR%%/html/kde-module/KDEFrameworkCompilerSettings.html
 %%PORTDOCS%%%%DOCSDIR%%/html/kde-module/KDEInstallDirs.html

@@ -1,5 +1,6 @@
 include/KF5/KItemModels/KBreadcrumbSelectionModel
 include/KF5/KItemModels/KCheckableProxyModel
+include/KF5/KItemModels/KColumnHeadersModel
 include/KF5/KItemModels/KConcatenateRowsProxyModel
 include/KF5/KItemModels/KDescendantsProxyModel
 include/KF5/KItemModels/KExtraColumnsProxyModel
@@ -11,6 +12,7 @@ include/KF5/KItemModels/KRecursiveFilterProxyModel
 include/KF5/KItemModels/KSelectionProxyModel
 include/KF5/KItemModels/kbreadcrumbselectionmodel.h
 include/KF5/KItemModels/kcheckableproxymodel.h
+include/KF5/KItemModels/kcolumnheadersmodel.h
 include/KF5/KItemModels/kconcatenaterowsproxymodel.h
 include/KF5/KItemModels/kdescendantsproxymodel.h
 include/KF5/KItemModels/kextracolumnsproxymodel.h
