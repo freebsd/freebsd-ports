@@ -2,8 +2,8 @@ include/blis/blis.h
 include/blis/cblas.h
 lib/libblis.a
 lib/libblis.so
-lib/libblis.so.2
-lib/libblis.so.2.0.0
+lib/libblis.so.3
+lib/libblis.so.3.0.0
 %%DATADIR%%/common.mk
 %%DATADIR%%/config.mk
 %%DATADIR%%/config/%%ARCH%%/make_defs.mk
