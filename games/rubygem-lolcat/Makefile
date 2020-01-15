@@ -21,7 +21,7 @@ USE_RUBY=	yes
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/lolcat \
-		man/man6/lolcat.6.gz
+		share/man/man6/lolcat.6.gz
 
 post-build:
 	@${REINPLACE_CMD} -e 's|man/lolcat.6|&.gz|' ${WRKSRC}/${GEMSPEC}
