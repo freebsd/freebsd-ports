@@ -24,7 +24,6 @@
     SUBDIR += dinotrace
     SUBDIR += electric
     SUBDIR += electric-ng
-    SUBDIR += elmerfem
     SUBDIR += fasm
     SUBDIR += feappv
     SUBDIR += fidocadj
