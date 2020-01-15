@@ -4,7 +4,7 @@ PORTNAME=	aphelia
 DISTVERSION=	g20190913
 CATEGORIES=	x11-wm
 
-MAINTAINER=	hyun@caffeinated.codes
+MAINTAINER=	ed.arrakis@gmail.com
 COMMENT=	Light, single-file, minimalist window manager for X11
 
 LICENSE=	MIT
