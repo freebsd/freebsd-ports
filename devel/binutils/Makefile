@@ -15,7 +15,8 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
 FLAVORS=	native aarch64 aarch64_none_elf amd64 arm_gnueabi arm_none_eabi \
-		avr i386 mingw32 mips mips64 powerpc powerpc64 riscv64 s390x sparc64
+		avr i386 mingw32 mips mips64 powerpc powerpc64 riscv64 \
+		riscv64_none_elf s390x sparc64
 FLAVOR?=	native
 
 RELRO_CONFIGURE_ON=	--enable-relro
@@ -65,7 +66,7 @@ INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/share/info
 BROKEN_mips=		fails to configure: error: C compiler cannot create executables
 BROKEN_mips64=		fails to configure: error: C compiler cannot create executables
 BROKEN_powerpc64=	fails to configure: error: C compiler cannot create executables
-.elif ${FLAVOR} == aarch64_none_elf || ${FLAVOR} == arm_none_eabi || ${FLAVOR} == mingw32 || ${FLAVOR} == avr
+.elif ${FLAVOR} == aarch64_none_elf || ${FLAVOR} == arm_none_eabi || ${FLAVOR} == riscv64_none_elf || ${FLAVOR} == mingw32 || ${FLAVOR} == avr
 BUTARGET=	${FLAVOR:C/_/-/g}
 .elif ${FLAVOR} == amd64
 BUTARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}
