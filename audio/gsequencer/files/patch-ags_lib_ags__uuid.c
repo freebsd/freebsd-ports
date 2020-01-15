@@ -1,11 +1,11 @@
---- ags/lib/ags_uuid.c.orig	2019-02-11 23:41:39 UTC
+--- ags/lib/ags_uuid.c.orig	2020-01-14 00:52:03 UTC
 +++ ags/lib/ags_uuid.c
-@@ -117,7 +117,7 @@ ags_uuid_generate(AgsUUID *ptr)
+@@ -119,7 +119,7 @@ ags_uuid_generate(AgsUUID *ptr)
      return;
    }
  
--  uuid_generate_time_safe(ptr[0]);
-+  uuid_generate_time(ptr[0]); // uuid_generate_time_safe() is missing in FreeBSD's libuuid.so
+-  uuid_generate_time_safe(ptr->data);
++  uuid_generate_time(ptr->data); // uuid_generate_time_safe() is missing in FreeBSD's libuuid.so
  }
  
  /**

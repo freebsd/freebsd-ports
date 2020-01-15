@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsequencer
-DISTVERSION=	2.4.8
+DISTVERSION=	3.0.1
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
 
@@ -20,13 +20,15 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libinstpatch-1.0.so:audio/libinstpatch \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libsoup-2.4.so:devel/libsoup \
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	dssi>0:audio/dssi
 
 USES=		desktop-file-utils gettext-runtime gmake gnome libtool localbase pkgconfig shared-mime-info xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa --enable-oss --enable-threads=posix --without-included-regex
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 libxml2 pango
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 libxml2 pango
 USE_XORG=	x11
 USE_GCC=	yes # the project uses gnu99 extensions, clang fails even with USE_CSTD=gnu99. Suggestions how to build with clang are welcome.
 USE_CSTD=	gnu99
@@ -50,6 +52,6 @@ PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
 post-install:
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc-base
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc-base ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
