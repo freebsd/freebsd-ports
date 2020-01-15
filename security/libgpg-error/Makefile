@@ -14,23 +14,25 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
-USES=		gmake libtool tar:bzip2
+USES=		libtool tar:bzip2
 
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
-MAKE_JOBS_UNSAFE=	yes
 CPP+=			-P
 CONFIGURE_ARGS=		--enable-static=yes
 INSTALL_TARGET=		install-strip
 DOCS=		AUTHORS ChangeLog NEWS README
 INFO=		gpgrt
 
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	DOCS NLS TEST
 OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG} --with-libintl-prefix=${LOCALBASE}
 NLS_USES=		gettext iconv
+
+TEST_CONFIGURE_ENABLE=	tests
+TEST_TARGET=	check
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
