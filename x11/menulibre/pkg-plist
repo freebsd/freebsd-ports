@@ -45,8 +45,8 @@ bin/menulibre-menu-validate
 %%PYTHON_SITELIBDIR%%/menulibre_lib/__pycache__/menulibreconfig.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/menulibre_lib/helpers.py
 %%PYTHON_SITELIBDIR%%/menulibre_lib/menulibreconfig.py
-man/man1/menulibre-menu-validate.1.gz
-man/man1/menulibre.1.gz
+share/man/man1/menulibre-menu-validate.1.gz
+share/man/man1/menulibre.1.gz
 share/applications/menulibre.desktop
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
