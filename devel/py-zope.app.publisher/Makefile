@@ -13,6 +13,9 @@ COMMENT=	Means for configuration of Zope 3 style views and resources
 
 LICENSE=	ZPL21
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-20
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.browsermenu>=0:devel/py-zope.browsermenu@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.browserpage>=0:devel/py-zope.browserpage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.browserresource>=0:devel/py-zope.browserresource@${PY_FLAVOR} \

@@ -13,6 +13,9 @@ COMMENT=	zope.formlib integration for Zope 2
 
 LICENSE=	ZPL21
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-20
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}transaction>=0:devel/py-transaction@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.app.form>=0:devel/py-zope.app.form@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.browser>=0:devel/py-zope.browser@${PY_FLAVOR} \

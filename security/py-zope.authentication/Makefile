@@ -13,6 +13,9 @@ COMMENT=	Definition of authentication basics for the Zope Framework
 
 LICENSE=	ZPL21
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-20
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.browser>=0:devel/py-zope.browser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.component>=3.6.0:devel/py-zope.component@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.i18nmessageid>=0:textproc/py-zope.i18nmessageid@${PY_FLAVOR} \

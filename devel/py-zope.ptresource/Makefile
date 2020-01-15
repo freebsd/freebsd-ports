@@ -13,6 +13,9 @@ COMMENT=	Page template resource plugin for zope.browserresource
 
 LICENSE=	ZPL21
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-20
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.browserresource>=0:devel/py-zope.browserresource@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.pagetemplate>=0:devel/py-zope.pagetemplate@${PY_FLAVOR} \

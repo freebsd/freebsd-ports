@@ -13,6 +13,9 @@ COMMENT=	The Original Zope 3 Form Framework
 
 LICENSE=	ZPL21
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-20
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}transaction>=0:devel/py-transaction@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.formlib>=4.0:devel/py-zope.formlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.browser>=1.1:devel/py-zope.browser@${PY_FLAVOR} \
