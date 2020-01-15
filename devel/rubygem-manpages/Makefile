@@ -20,12 +20,4 @@ NO_ARCH=	yes
 SHEBANG_FILES=	rbenv/rbenv_hook_install.sh \
 		rbenv/remove_hook_folders.sh
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/share/man|/man|' \
-		${WRKSRC}/README.md \
-		${WRKSRC}/lib/rubygems/commands/manpages_command.rb \
-		${WRKSRC}/lib/rubygems_plugin.rb \
-		${WRKSRC}/rbenv/hooks/version-name-change-man.bash \
-		${WRKSRC}/rbenv/vars.sh
-
 .include <bsd.port.mk>
