@@ -18,11 +18,10 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	wasted
 
-MAKE_ARGS=		MANDIR="${MANDIRS}"
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/stud \
-		man/man8/stud.8.gz
+		share/man/man8/stud.8.gz
 
 .include <bsd.port.pre.mk>
 
