@@ -21,7 +21,6 @@ bin/mysqlrouter_plugin_info
 bin/mysqltest
 bin/mysqltest_safe_process
 bin/mysqlxtest
-lib/mysql/libmysqlharness.a
 lib/mysql/libmysqlharness.so
 lib/mysql/libmysqlharness.so.1
 lib/mysql/libmysqlrouter.so
@@ -75,6 +74,7 @@ lib/mysql/plugin/component_test_sys_var_service_same.so
 lib/mysql/plugin/component_test_sys_var_service_str.so
 lib/mysql/plugin/component_test_system_variable_source.so
 lib/mysql/plugin/component_test_udf_registration.so
+@comment lib/mysql/plugin/component_test_udf_services.so
 lib/mysql/plugin/component_udf_reg_3_func.so
 lib/mysql/plugin/component_udf_reg_avg_func.so
 lib/mysql/plugin/component_udf_reg_int_func.so
@@ -91,6 +91,7 @@ lib/mysql/plugin/ddl_rewriter.so
 lib/mysql/plugin/group_replication.so
 %%NO_EXAMPLE%%lib/mysql/plugin/ha_example.so
 lib/mysql/plugin/ha_mock.so
+lib/mysql/plugin/component_test_udf_services.so
 lib/mysql/plugin/keyring_file.so
 lib/mysql/plugin/libdaemon_example.so
 lib/mysql/plugin/libtest_framework.so
@@ -190,7 +191,6 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/dictionary.txt
 %%DATADIR%%/dutch/errmsg.sys
 %%DATADIR%%/english/errmsg.sys
-%%DATADIR%%/errmsg-utf8.txt
 %%DATADIR%%/estonian/errmsg.sys
 %%DATADIR%%/french/errmsg.sys
 %%DATADIR%%/german/errmsg.sys
@@ -201,6 +201,8 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/italian/errmsg.sys
 %%DATADIR%%/japanese/errmsg.sys
 %%DATADIR%%/korean/errmsg.sys
+%%DATADIR%%/messages_to_clients.txt
+%%DATADIR%%/messages_to_error_log.txt
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql.server
 %%DATADIR%%/mysqld_multi.server

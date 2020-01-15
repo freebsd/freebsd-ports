@@ -1,6 +1,6 @@
---- include/CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
+--- include/CMakeLists.txt.orig	2019-12-09 19:53:17 UTC
 +++ include/CMakeLists.txt
-@@ -37,10 +37,171 @@ SET(HEADERS
+@@ -37,10 +37,173 @@ SET(HEADERS
    ${CMAKE_CURRENT_BINARY_DIR}/mysql_version.h
    ${CMAKE_CURRENT_BINARY_DIR}/mysqld_error.h
    field_types.h
@@ -13,7 +13,9 @@
 +  dur_prop.h
 +  errmsg.h
 +  ft_global.h
++  guard.h
 +  heap.h
++  integer_digits.h
 +  keycache.h
 +  lex_string.h
 +  lf.h
@@ -110,6 +112,7 @@
 +  sslopt-case.h
 +  sslopt-longopts.h
 +  sslopt-vars.h
++  tables_contained_in.h
 +  template_utils.h
 +  thr_cond.h
 +  thr_lock.h
@@ -127,7 +130,6 @@
 +  mysql/client_authentication.h
 +  mysql/client_plugin.h.pp
 +  mysql/com_data.h
-+  mysql/get_password.h
 +  mysql/group_replication_priv.h
 +  mysql/innodb_priv.h
 +  mysql/mysql_lex_string.h
