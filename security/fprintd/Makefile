@@ -25,7 +25,7 @@ GH_PROJECT=	libfprint-${PORTNAME}
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-MAKE_ARGS=	sysconfdir="${ETCDIR}/" mandir="${MANDIRS}"
+MAKE_ARGS=	sysconfdir="${ETCDIR}/"
 
 OPTIONS_DEFINE=	NLS PAM
 OPTIONS_SUB=	yes
