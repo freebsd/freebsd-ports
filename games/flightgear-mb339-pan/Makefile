@@ -11,8 +11,6 @@ DISTNAME=	mb339pan_${PORTVERSION}
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Simulation of the MB-339 PAN aerobatic jet
 
-BROKEN_powerpc64=	fails to build: runaway process
-
 RUN_DEPENDS=	${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 RESTRICTED=	Redistribution prohibited
