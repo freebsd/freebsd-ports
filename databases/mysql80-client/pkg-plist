@@ -1,3 +1,4 @@
+bin/comp_err
 bin/my_print_defaults
 bin/mysql
 bin/mysql_config
@@ -22,7 +23,9 @@ include/mysql/dur_prop.h
 include/mysql/errmsg.h
 include/mysql/field_types.h
 include/mysql/ft_global.h
+include/mysql/guard.h
 include/mysql/heap.h
+include/mysql/integer_digits.h
 include/mysql/keycache.h
 include/mysql/lex_string.h
 include/mysql/lf.h
@@ -89,7 +92,6 @@ include/mysql/mysql/client_authentication.h
 include/mysql/mysql/client_plugin.h
 include/mysql/mysql/client_plugin.h.pp
 include/mysql/mysql/com_data.h
-include/mysql/mysql/get_password.h
 include/mysql/mysql/group_replication_priv.h
 include/mysql/mysql/innodb_priv.h
 include/mysql/mysql/mysql_lex_string.h
@@ -169,6 +171,7 @@ include/mysql/sql_string.h
 include/mysql/sslopt-case.h
 include/mysql/sslopt-longopts.h
 include/mysql/sslopt-vars.h
+include/mysql/tables_contained_in.h
 include/mysql/template_utils.h
 include/mysql/thr_cond.h
 include/mysql/thr_lock.h

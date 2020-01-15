@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2019-09-20 08:30:51 UTC
 +++ CMakeLists.txt
-@@ -1181,10 +1181,10 @@ ENDIF()
+@@ -1191,10 +1191,10 @@ ENDIF()
  MYSQL_CHECK_SSL()
  MYSQL_CHECK_SSL_DLLS()
  
@@ -14,7 +14,7 @@
  # Add lz4 library
  MYSQL_CHECK_LZ4()
  # Add icu library
-@@ -1273,7 +1273,9 @@ IF(WITH_UNIT_TESTS)
+@@ -1283,7 +1283,9 @@ IF(WITH_UNIT_TESTS)
    INCLUDE(googletest)
  ENDIF()
  
@@ -25,7 +25,7 @@
  ADD_SUBDIRECTORY(strings)
  ADD_SUBDIRECTORY(vio)
  ADD_SUBDIRECTORY(mysys)
-@@ -1314,24 +1316,29 @@ IF(WITH_UNIT_TESTS)
+@@ -1324,12 +1326,17 @@ IF(WITH_UNIT_TESTS)
    ADD_SUBDIRECTORY(unittest/mytap/t)
  ENDIF()
  
@@ -41,11 +41,11 @@
  ADD_SUBDIRECTORY(libservices)
  
  IF(NOT WITHOUT_SERVER)
-   ADD_SUBDIRECTORY(testclients)
 +  ADD_SUBDIRECTORY(share)
+   ADD_SUBDIRECTORY(testclients)
    ADD_SUBDIRECTORY(sql)
  ENDIF()
- 
+@@ -1351,11 +1358,11 @@ ENDIF()
  # scripts/mysql_config depends on client and server targets loaded above.
  # It is referenced by some of the directories below, so we insert it here.
  ADD_SUBDIRECTORY(scripts)
@@ -58,7 +58,7 @@
    IF(EXISTS ${CMAKE_SOURCE_DIR}/internal/CMakeLists.txt)
      ADD_SUBDIRECTORY(internal)
    ENDIF()
-@@ -1440,6 +1447,7 @@ IF(PACK_SEPARATE_COMPONENTS)
+@@ -1464,6 +1471,7 @@ IF(PACK_SEPARATE_COMPONENTS)
    SET(CPACK_COMPONENTS_GROUPING IGNORE)
  ENDIF()
  
@@ -66,7 +66,7 @@
  IF(UNIX)
    INSTALL(FILES
      Docs/mysql.info
-@@ -1474,6 +1482,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
+@@ -1498,6 +1506,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
      PATTERN "sp-imp-spec.txt" EXCLUDE
      PATTERN "README.build" EXCLUDE
    )

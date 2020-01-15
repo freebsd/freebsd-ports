@@ -32,3 +32,13 @@
      case 0:
        return TlsVersion::AUTO;
      default:
+@@ -230,7 +234,8 @@ TlsContext::InfoCallback TlsContext::info_callback() c
+ }
+ 
+ int TlsContext::security_level() const {
+-#if OPENSSL_VERSION_NUMBER >= ROUTER_OPENSSL_VERSION(1, 1, 0)
++#if OPENSSL_VERSION_NUMBER >= ROUTER_OPENSSL_VERSION(1, 1, 0) && \
++    !defined(LIBRESSL_VERSION_NUMBER)
+   return SSL_CTX_get_security_level(ssl_ctx_.get());
+ #else
+   return 0;

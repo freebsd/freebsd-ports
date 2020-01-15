@@ -1,0 +1,10 @@
+--- router/src/harness/src/CMakeLists.txt.orig	2019-12-09 19:53:17 UTC
++++ router/src/harness/src/CMakeLists.txt
+@@ -200,7 +200,6 @@ IF(NOT WIN32)
+   INSTALL(TARGETS harness-library
+     LIBRARY
+     DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router
+-    NAMELINK_SKIP
+     )
+ ELSE()
+   INSTALL(TARGETS harness-library
