@@ -1,10 +1,18 @@
---- Makefile.in.in.orig	2018-07-28 10:44:16 UTC
+--- Makefile.in.in.orig	2020-01-15 03:06:15 UTC
 +++ Makefile.in.in
-@@ -56,7 +56,7 @@ install: all
+@@ -60,11 +60,12 @@ install: all xfce4-panel-profiles.1.gz
+ 	install -d $(DESTDIR)/$(PREFIX)/share/metainfo
  	install data/metainfo/*.xml $(DESTDIR)/$(PREFIX)/share/metainfo
  
- 	cp -rf locale $(DESTDIR)/$(PREFIX)/share
+-	cp -rf locale $(DESTDIR)/$(PREFIX)/share
 -	ln -sf $(PREFIX)/share/locale $(DESTDIR)/$(PREFIX)/share/$(APPNAME)/locale
++	install -d $(DESTDIR)/$(PREFIX)/man/man1
++	install xfce4-panel-profiles.1.gz $(DESTDIR)/$(PREFIX)/man/man1
+ 
+-	install -d $(DESTDIR)/$(PREFIX)/share/man/man1
+-	install xfce4-panel-profiles.1.gz $(DESTDIR)/$(PREFIX)/share/man/man1
++install-locale: install
++	cp -rf locale $(DESTDIR)/$(PREFIX)/share
 +#	ln -sf $(PREFIX)/share/locale $(DESTDIR)/$(PREFIX)/share/$(APPNAME)/locale
  
  uninstall:
