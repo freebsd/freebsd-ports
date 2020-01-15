@@ -2,5 +2,5 @@
 @(root,mail,4554) libexec/dma-mbox-create
 @sample(root,mail,0644) etc/dma/dma.conf.sample
 @sample(root,mail,0640) etc/dma/auth.conf.sample
-man/man8/dma.8.gz
+share/man/man8/dma.8.gz
 %%VARDIR%%@dir(root,mail,770) /var/spool/dma
