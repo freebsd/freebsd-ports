@@ -75,7 +75,6 @@
     SUBDIR += box
     SUBDIR += boxer
     SUBDIR += bsd-plotutils
-    SUBDIR += bugle
     SUBDIR += c-a-i-r
     SUBDIR += cadubi
     SUBDIR += caffe
