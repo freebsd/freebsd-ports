@@ -1,0 +1,10 @@
+--- router/src/router/src/CMakeLists.txt.orig	2019-12-09 19:53:17 UTC
++++ router/src/router/src/CMakeLists.txt
+@@ -119,7 +119,6 @@ INSTALL(TARGETS router_lib
+   RUNTIME DESTINATION ${ROUTER_INSTALL_BINDIR} COMPONENT Router
+   ARCHIVE DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router
+   LIBRARY DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router
+-  NAMELINK_SKIP
+   )
+ 
+ MYSQL_ADD_EXECUTABLE(mysqlrouter_keyring

@@ -12,16 +12,16 @@
  
  SET(localstatedir "${MYSQL_DATADIR}")
  
-@@ -39,6 +40,7 @@ ELSE()
-   SET (PIDOF "pgrep -d' ' -f")
- ENDIF()
+@@ -45,6 +46,7 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysql.serve
+ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysql-log-rotate.in
+   ${CMAKE_CURRENT_BINARY_DIR}/mysql-log-rotate @ONLY)
  
 +IF(NOT WITHOUT_SERVER)
- FOREACH(script
-     mysql.server
-     mysqld_multi.server
-@@ -54,3 +56,4 @@ FOREACH(script
-     GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
-     )
- ENDFOREACH()
+ INSTALL_SCRIPT(${CMAKE_CURRENT_BINARY_DIR}/mysql.server
+   COMPONENT Server_Scripts
+   DESTINATION ${INSTALL_SUPPORTFILESDIR}
+@@ -62,3 +64,4 @@ INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/mysql-log-ro
+   OWNER_READ OWNER_WRITE
+   GROUP_READ WORLD_READ
+   )
 +ENDIF()
