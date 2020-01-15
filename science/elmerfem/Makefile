@@ -4,10 +4,10 @@
 PORTNAME=	elmerfem
 PORTVERSION=	8.4
 DISTVERSIONPREFIX=	release-
-CATEGORIES=	cad science
+CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Finite element software for multiphysical problems
+COMMENT=	Multiphysical simulation software
 
 LICENSE=	GPLv2
 
@@ -15,12 +15,11 @@ LIB_DEPENDS=	libparpack.so:math/arpack-ng \
 		libmetis.so:math/metis \
 		libmpich.so:net/mpich
 
+USES=		blaslapack:netlib cmake fortran tcl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ElmerCSC
-
-USES=		blaslapack:netlib cmake fortran tcl
-
 USE_LDCONFIG=	${PREFIX}/lib/elmersolver
+
 ALL_TARGET=	# empty
 
 CMAKE_ARGS=	-DELMER_FEM_REVISION:STRING=f6bfdc9

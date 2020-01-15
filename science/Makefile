@@ -70,6 +70,7 @@
     SUBDIR += dvc
     SUBDIR += eccodes
     SUBDIR += elk
+    SUBDIR += elmerfem
     SUBDIR += epte
     SUBDIR += erd
     SUBDIR += erkale
