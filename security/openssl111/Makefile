@@ -14,6 +14,9 @@ COMMENT=	TLSv1.3 capable SSL and crypto library
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Moved to security/openssl in head
+EXPIRATION_DATE=2020-03-31
+
 CONFLICTS_INSTALL=	libressl-[0-9]* \
 			libressl-devel-[0-9]* \
 			openssl-[0-9]*
