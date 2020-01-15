@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2020-01-15 20:28:56 UTC
++++ CMakeLists.txt
+@@ -151,7 +151,7 @@ endif ()
+ # Top level setup for external backends
+ ExternalBackendsInit()
+ 
+-find_package(LLVM CONFIG)
++find_package(LLVM ${FREEBSD_LLVM_VERSION} CONFIG)
+ if(NOT LLVM_FOUND OR LLVM_VERSION VERSION_LESS 7.0)
+   message(SEND_ERROR "LLVM >= 7.0 is required to build Glow")
+ endif()
