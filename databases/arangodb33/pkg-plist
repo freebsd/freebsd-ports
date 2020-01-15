@@ -17,16 +17,16 @@ bin/foxx-manager
 @sample %%ETCDIR%%/arangorestore.conf.sample
 @sample %%ETCDIR%%/arangosh.conf.sample
 @sample %%ETCDIR%%/foxx-manager.conf.sample
-man/man1/arangobench.1.gz
-man/man1/arangodump.1.gz
-man/man1/arangoexport.1.gz
-man/man1/arangoimp.1.gz
-man/man1/arangorestore.1.gz
-man/man1/arangosh.1.gz
-man/man8/arango-dfdb.8.gz
-man/man8/arangod.8.gz
-man/man8/foxx-manager.8.gz
-man/man8/rcarangod.8.gz
+share/man/man1/arangobench.1.gz
+share/man/man1/arangodump.1.gz
+share/man/man1/arangoexport.1.gz
+share/man/man1/arangoimp.1.gz
+share/man/man1/arangorestore.1.gz
+share/man/man1/arangosh.1.gz
+share/man/man8/arango-dfdb.8.gz
+share/man/man8/arangod.8.gz
+share/man/man8/foxx-manager.8.gz
+share/man/man8/rcarangod.8.gz
 sbin/arango-dfdb
 sbin/arango-init-database
 sbin/arango-secure-installation
