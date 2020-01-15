@@ -13751,3 +13751,4 @@ www/web2ldap||2020-01-13|Broken: unfechable and missing dependencies
 net-mgmt/flow-extract||2020-01-14|Has expired: marked BROKEN for more than 6 months
 textproc/pootle||2020-01-14|Has expired: Unamaintained, marked BROKEN for more than 5 months
 cad/elmerfem|science/elmerfem|2020-01-15|Move to a proper category
+graphics/bugle|devel/apitrace|2020-01-15|Has expired: no longer actively developed; use devel/apitrace instead
