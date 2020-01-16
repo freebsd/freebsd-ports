@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kakoune
-DISTVERSION=	2019.12.10
+DISTVERSION=	2020.01.16
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/mawww/kakoune/releases/download/v${DISTVERSION}/
 

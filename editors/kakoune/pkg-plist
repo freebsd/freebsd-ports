@@ -77,6 +77,7 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/filetype/ini.kak
 %%DATADIR%%/rc/filetype/java.kak
 %%DATADIR%%/rc/filetype/javascript.kak
+%%DATADIR%%/rc/filetype/jinja.kak
 %%DATADIR%%/rc/filetype/json.kak
 %%DATADIR%%/rc/filetype/julia.kak
 %%DATADIR%%/rc/filetype/just.kak
