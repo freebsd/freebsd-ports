@@ -7,6 +7,10 @@ share/com.github.lainsce.quilter/highlight.js/lib/highlight.min.js
 share/com.github.lainsce.quilter/highlight.js/styles/dark.min.css
 share/com.github.lainsce.quilter/highlight.js/styles/default.min.css
 share/com.github.lainsce.quilter/highlight.js/styles/sepia.min.css
+share/com.github.lainsce.quilter/katex/katex.css
+share/com.github.lainsce.quilter/katex/katex.js
+share/com.github.lainsce.quilter/katex/render.js
+share/locale/ru/LC_MESSAGES/com.github.lainsce.quilter.mo
 share/fonts/truetype/quilt/QuiltMono.ttf
 share/fonts/truetype/quilt/QuiltVier.ttf
 share/gtksourceview-3.0/styles/quilter-dark.xml
