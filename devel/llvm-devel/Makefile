@@ -276,6 +276,13 @@ CMAKE_ARGS+=	-DLLVM_ENABLE_PROJECTS="${LLVM_ENABLE_PROJECTS:ts;}"
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/Makefile.COMMANDS"
 
+.if ${OPSYS} == "FreeBSD" && ${OSREL} < 13
+LDFLAGS_i386=-fuse-ld=lld
+.endif
+.if ${OPSYS} == "FreeBSD" && ${OSREL} < 12
+LDFLAGS_amd64=-fuse-ld=lld
+.endif
+
 .if defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE=	RelWithDebInfo
 STRIP=
