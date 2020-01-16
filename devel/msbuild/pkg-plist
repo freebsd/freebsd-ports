@@ -459,4 +459,4 @@ lib/mono/xbuild/Microsoft/Microsoft.NET.Build.Extensions/tools/net46/zh-Hant/Mic
 lib/mono/xbuild/Microsoft/Portable/VisualStudio/v15.0/Microsoft.Portable.CurrentVersion.props
 lib/mono/xbuild/Mono.Build.Tasks.dll
 lib/mono/xbuild/Mono.Build.Tasks.pdb
-share/man/man1/msbuild.1
+share/man/man1/msbuild.1.gz
