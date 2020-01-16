@@ -28,7 +28,7 @@ NO_ARCH=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS ZEITGEIST
-OPTIONS_DEFAULT=ZEITGEIST POLKIT
+OPTIONS_DEFAULT=POLKIT
 OPTIONS_MULTI=	PRIVILEGES
 OPTIONS_MULTI_PRIVILEGES=	POLKIT SUDO
 
@@ -38,13 +38,8 @@ POLKIT_RUN_DEPENDS=	pkexec:sysutils/polkit
 SUDO_DESC=	Provide sudo support
 SUDO_RUN_DEPENDS=	sudo:security/sudo
 
-ZEITGEIST_DESC=	Provide recent search suggestions
+ZEITGEIST_DESC=	Provide recent search suggestions (broken)
 ZEITGEIST_LIB_DEPENDS=	libzeitgeist-2.0.so:sysutils/zeitgeist
-
-post-install:
-	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/catfish.1 ${STAGEDIR}${PREFIX}/man/man1/catfish.1
-	(cd ${STAGEDIR}${PREFIX}/share && ${RMDIR} -p man/man1)
-	${GZIP} ${STAGEDIR}${PREFIX}/man/man1/catfish.1
 
 .include <bsd.port.pre.mk>
 
