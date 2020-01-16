@@ -4,4 +4,4 @@ Cryptography Research Group at Microsoft Research. SEAL is written in standard
 C++; it has no external dependencies, so it is easy to compile in many
 different environments. SEAL is licensed under the MIT license.
 
-WWW: http://sealcrypto.org
+WWW: https://www.microsoft.com/en-us/research/project/microsoft-seal/
