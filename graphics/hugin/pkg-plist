@@ -97,8 +97,6 @@ share/applications/pto_gen.desktop
 %%DATADIR%%/data/plugins-templates/dual_use.py
 %%DATADIR%%/data/plugins-templates/plugin_skeleton.py
 %%DATADIR%%/data/plugins/README_woa.txt
-%%DATADIR%%/data/plugins/crop_cp.py
-%%DATADIR%%/data/plugins/shooting_pattern.py
 %%DATADIR%%/data/plugins/top_five.py
 %%DATADIR%%/data/plugins/woa.py
 %%DATADIR%%/data/scanned.assistant
