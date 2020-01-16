@@ -2,7 +2,7 @@
 
 PORTNAME=	nnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.1
+DISTVERSION=	2.9
 CATEGORIES=	misc shells
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -57,7 +57,7 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/scripts
-	cd ${WRKSRC}/misc && ${COPYTREE_SHARE} "clipboard-copier natool nlaunch nlay quitcd" \
+	cd ${WRKSRC}/misc && ${COPYTREE_SHARE} "natool quitcd" \
 		${STAGEDIR}${EXAMPLESDIR}/scripts
 	cd ${WRKSRC} && ${COPYTREE_SHARE} plugins ${STAGEDIR}${EXAMPLESDIR}
 
