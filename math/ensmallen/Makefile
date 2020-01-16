@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ensmallen
-DISTVERSION=	2.11.1
+DISTVERSION=	2.11.2
 CATEGORIES=	math
 MASTER_SITES=	https://ensmallen.org/files/
 
