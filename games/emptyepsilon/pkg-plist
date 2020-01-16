@@ -181,7 +181,9 @@ bin/emptyepsilon
 %%DATADIR%%/resources/radar_ktlitan_queen.png
 %%DATADIR%%/resources/radar_ktlitan_scout.png
 %%DATADIR%%/resources/radar_ktlitan_worker.png
+%%DATADIR%%/resources/radar_laser.png
 %%DATADIR%%/resources/radar_missile_cruiser.png
+%%DATADIR%%/resources/radar_piranha.png
 %%DATADIR%%/resources/radar_striker.png
 %%DATADIR%%/resources/radar_transport.png
 %%DATADIR%%/resources/radar_tug.png
