@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.7.5
+PORTVERSION=	2.7.6
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -46,13 +46,15 @@ OPTIONS_DEFAULT=HUNSPELL
 
 HUNSPELL_RUN_DEPENDS=	hunspell:textproc/hunspell
 
-SPELL2FIX=	engine/hunspell_suggest.py setup/user_transliteration.py	\
+SPELL2FIX=	engine/itb_util.py setup/user_transliteration.py
+PY2FIX=		setup/user_transliteration.py tests/test_m17n_db_info.py	\
+		tests/test_itb.py tests/test_compose_sequences.py		\
+		tests/test_hunspell_suggest.py tests/test_keyvals_to_keycodes.py\
+		tests/test_m17n_translit.py tests/test_emoji_unicode_version.py	\
+		tests/test_emoji_similar.py tests/test_emoji_candidates.py
+SHR2FIX=	engine/itb_util.py engine/itb_emoji.py engine/hunspell_table.py	\
+		tests/test_compose_sequences.py typing-booster.appdata.xml	\
 		setup/user_transliteration.py
-DATA2FIX=	setup/main.py engine/tabsqlitedb.py engine/main.py
-PY2FIX=		setup/user_transliteration.py
-M17N2FIX=	setup/main.py engine/itb_util.py engine/hunspell_table.py
-SHR2FIX=	engine/tabsqlitedb.py engine/itb_util.py engine/itb_emoji.py	\
-		engine/hunspell_table.py engine/main.py setup/user_transliteration.py
 COMP2DEL=	engine/Makefile setup/Makefile
 
 pre-configure:
@@ -63,15 +65,8 @@ pre-configure:
 .for f in ${PY2FIX}
 	${REINPLACE_CMD} -e 's|/usr/bin/python3| ${PYTHON_CMD}|' ${WRKSRC}/${f}
 .endfor
-.for f in ${DATA2FIX}
-	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/${f}
-.endfor
-.for f in ${M17N2FIX}
-	${REINPLACE_CMD} -e 's|/usr/share/m17n|${LOCALBASE}/share/m17n|'	\
-		${WRKSRC}/${f}
-.endfor
 	${REINPLACE_CMD} -e 's|/usr/libexec|${PREFIX}/libexec|'	\
-		${WRKSRC}/engine/main.py
+		${WRKSRC}/typing-booster.appdata.xml
 .for f in ${SHR2FIX}
 	${REINPLACE_CMD} -e 's|/usr/share/ibus-typing-booster|${DATADIR}|'	\
 		-e 's|/usr/share|${LOCALBASE}/share|' ${WRKSRC}/${f}
