@@ -1,6 +1,6 @@
---- ui/views/selection_controller.cc.orig	2019-06-04 18:55:50 UTC
+--- ui/views/selection_controller.cc.orig	2019-12-16 21:51:09 UTC
 +++ ui/views/selection_controller.cc
-@@ -21,7 +21,7 @@ SelectionController::SelectionController(SelectionCont
+@@ -22,7 +22,7 @@ SelectionController::SelectionController(SelectionCont
        delegate_(delegate),
        handles_selection_clipboard_(false) {
  // On Linux, update the selection clipboard on a text selection.

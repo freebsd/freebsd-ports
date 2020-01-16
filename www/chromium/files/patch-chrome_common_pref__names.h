@@ -1,6 +1,6 @@
---- chrome/common/pref_names.h.orig	2019-10-21 19:06:26 UTC
+--- chrome/common/pref_names.h.orig	2019-12-16 21:51:24 UTC
 +++ chrome/common/pref_names.h
-@@ -326,7 +326,7 @@ extern const char kHistoryMenuPromoShown[];
+@@ -330,7 +330,7 @@ extern const char kHistoryMenuPromoShown[];
  extern const char kForceGoogleSafeSearch[];
  extern const char kForceYouTubeRestrict[];
  extern const char kAllowedDomainsForApps[];
@@ -9,7 +9,7 @@
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -357,7 +357,7 @@ extern const char kDefaultBrowserSettingEnabled[];
+@@ -361,7 +361,7 @@ extern const char kDefaultBrowserSettingEnabled[];
  #if defined(OS_MACOSX)
  extern const char kShowUpdatePromotionInfoBar[];
  #endif
@@ -18,7 +18,7 @@
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -511,7 +511,7 @@ extern const char kAppWindowPlacement[];
+@@ -523,7 +523,7 @@ extern const char kAppWindowPlacement[];
  extern const char kDownloadDefaultDirectory[];
  extern const char kDownloadExtensionsToOpen[];
  extern const char kDownloadDirUpgraded[];
@@ -27,7 +27,7 @@
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
-@@ -708,9 +708,9 @@ extern const char kGSSAPILibraryName[];
+@@ -729,9 +729,9 @@ extern const char kGSSAPILibraryName[];
  extern const char kAuthAndroidNegotiateAccountType[];
  extern const char kAllowCrossOriginAuthPrompt[];
  

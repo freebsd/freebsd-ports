@@ -1,6 +1,11 @@
---- components/crash/content/app/BUILD.gn.orig	2019-10-21 19:06:28 UTC
+--- components/crash/content/app/BUILD.gn.orig	2019-12-16 21:51:25 UTC
 +++ components/crash/content/app/BUILD.gn
-@@ -54,7 +54,7 @@ static_library("app") {
+@@ -51,17 +51,20 @@ static_library("app") {
+     "crashpad_win.cc",
+   ]
+ 
+-  if (is_mac || is_win || is_android || is_linux) {
++  if ((is_mac || is_win || is_android || is_linux) && !is_bsd) {
      sources += [ "crashpad.cc" ]
    }
  
@@ -9,7 +14,25 @@
      sources += [
        "breakpad_linux.cc",
        "breakpad_linux.h",
-@@ -98,7 +98,7 @@ static_library("app") {
+       "breakpad_linux_impl.h",
+     ]
+   }
++  if (is_bsd) {
++    sources -= [ "crashpad_linux.cc" ]
++  }
+ 
+   defines = [ "CRASH_IMPLEMENTATION" ]
+ 
+@@ -73,7 +76,7 @@ static_library("app") {
+     "//build:branding_buildflags",
+   ]
+ 
+-  if (is_mac || is_win || is_android || is_linux) {
++  if ((is_mac || is_win || is_android || is_linux) && !is_bsd) {
+     deps += [
+       "//third_party/crashpad/crashpad/client",
+       "//third_party/crashpad/crashpad/util",
+@@ -99,7 +102,7 @@ static_library("app") {
      ]
    }
  
@@ -18,3 +41,12 @@
      deps += [ "//third_party/breakpad:client" ]
    }
  
+@@ -130,7 +133,7 @@ static_library("app") {
+     libs = [ "log" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     data_deps = [
+       "//third_party/crashpad/crashpad/handler:crashpad_handler",
+     ]

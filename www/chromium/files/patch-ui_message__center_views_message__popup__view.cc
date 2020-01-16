@@ -1,6 +1,6 @@
---- ui/message_center/views/message_popup_view.cc.orig	2019-09-09 21:55:47 UTC
+--- ui/message_center/views/message_popup_view.cc.orig	2019-12-16 21:51:34 UTC
 +++ ui/message_center/views/message_popup_view.cc
-@@ -106,7 +106,7 @@ void MessagePopupView::AutoCollapse() {
+@@ -101,7 +101,7 @@ void MessagePopupView::AutoCollapse() {
  void MessagePopupView::Show() {
    views::Widget::InitParams params(views::Widget::InitParams::TYPE_POPUP);
    params.z_order = ui::ZOrderLevel::kFloatingWindow;

@@ -1,6 +1,6 @@
---- v8/src/base/platform/platform-posix.cc.orig	2019-09-09 21:57:07 UTC
+--- v8/src/base/platform/platform-posix.cc.orig	2019-12-16 21:56:22 UTC
 +++ v8/src/base/platform/platform-posix.cc
-@@ -382,7 +382,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
+@@ -383,7 +383,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
  
  // static
  bool OS::HasLazyCommits() {
@@ -9,7 +9,7 @@
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -513,6 +513,12 @@ int OS::GetCurrentThreadId() {
+@@ -514,6 +514,12 @@ int OS::GetCurrentThreadId() {
    return static_cast<int>(syscall(__NR_gettid));
  #elif V8_OS_ANDROID
    return static_cast<int>(gettid());

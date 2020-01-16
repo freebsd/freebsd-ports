@@ -1,8 +1,8 @@
---- ui/webui/resources/js/cr.js.orig	2019-09-09 21:55:47 UTC
+--- ui/webui/resources/js/cr.js.orig	2019-12-16 21:51:34 UTC
 +++ ui/webui/resources/js/cr.js
-@@ -436,6 +436,11 @@ var cr = cr || function(global) {
-     get doc() {
-       return document;
+@@ -437,6 +437,11 @@ var cr = cr || function(global) {
+     get isMac() {
+       return /Mac/.test(navigator.platform);
      },
 +    
 +    /** Whether this is on *BSD. */
@@ -10,5 +10,5 @@
 +      return /BSD/.test(navigator.userAgent);
 +    },
  
-     /** Whether we are using a Mac or not. */
-     get isMac() {
+     /** Whether this is on the Windows platform or not. */
+     get isWindows() {

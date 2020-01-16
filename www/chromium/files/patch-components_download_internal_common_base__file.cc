@@ -1,6 +1,6 @@
---- components/download/internal/common/base_file.cc.orig	2019-10-21 19:06:28 UTC
+--- components/download/internal/common/base_file.cc.orig	2019-12-16 21:50:45 UTC
 +++ components/download/internal/common/base_file.cc
-@@ -593,7 +593,7 @@ GURL GetEffectiveAuthorityURL(const GURL& source_url,
+@@ -603,7 +603,7 @@ GURL GetEffectiveAuthorityURL(const GURL& source_url,
  
  }  // namespace
  
@@ -9,7 +9,7 @@
  
  DownloadInterruptReason BaseFile::AnnotateWithSourceInformationSync(
      const std::string& client_guid,
-@@ -611,7 +611,7 @@ DownloadInterruptReason BaseFile::AnnotateWithSourceIn
+@@ -621,7 +621,7 @@ DownloadInterruptReason BaseFile::AnnotateWithSourceIn
  
    return QuarantineFileResultToReason(result);
  }

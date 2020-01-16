@@ -1,4 +1,4 @@
---- base/trace_event/malloc_dump_provider.cc.orig	2019-04-30 22:22:28 UTC
+--- base/trace_event/malloc_dump_provider.cc.orig	2019-12-16 21:50:40 UTC
 +++ base/trace_event/malloc_dump_provider.cc
 @@ -17,6 +17,8 @@
  
@@ -18,4 +18,4 @@
 +  allocated_objects_size = 0;
  #else
    struct mallinfo info = mallinfo();
-   DCHECK_GE(info.arena + info.hblkhd, info.uordblks);
+ #if !defined(ADDRESS_SANITIZER) && !defined(THREAD_SANITIZER)

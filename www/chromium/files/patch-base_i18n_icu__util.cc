@@ -1,4 +1,4 @@
---- base/i18n/icu_util.cc.orig	2019-07-24 18:58:02 UTC
+--- base/i18n/icu_util.cc.orig	2019-12-16 21:51:21 UTC
 +++ base/i18n/icu_util.cc
 @@ -20,7 +20,7 @@
  #include "build/build_config.h"
@@ -9,7 +9,7 @@
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  #endif
  
-@@ -285,7 +285,7 @@ bool InitializeICU() {
+@@ -365,7 +365,7 @@ bool InitializeICU() {
  // TODO(jungshik): Some callers do not care about tz at all. If necessary,
  // add a boolean argument to this function to init'd the default tz only
  // when requested.

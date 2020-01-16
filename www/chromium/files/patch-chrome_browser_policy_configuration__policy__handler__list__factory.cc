@@ -1,4 +1,4 @@
---- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2019-10-21 19:06:22 UTC
+--- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2019-12-16 21:51:23 UTC
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
 @@ -113,7 +113,7 @@
  #endif
@@ -9,7 +9,7 @@
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
  
-@@ -333,11 +333,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -352,11 +352,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      prefs::kSafeBrowsingSendFilesForMalwareCheck,
      base::Value::Type::INTEGER
    },
@@ -23,7 +23,7 @@
  #if defined(OS_POSIX)
    { key::kNtlmV2Enabled,
      prefs::kNtlmV2Enabled,
-@@ -1064,7 +1064,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1141,7 +1141,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -32,7 +32,7 @@
    { key::kAlternativeBrowserPath,
      browser_switcher::prefs::kAlternativeBrowserPath,
      base::Value::Type::STRING },
-@@ -1125,7 +1125,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1205,7 +1205,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      browser_switcher::prefs::kChromeParameters,
      base::Value::Type::LIST },
  #endif

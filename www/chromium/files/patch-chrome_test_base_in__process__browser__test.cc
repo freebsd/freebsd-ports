@@ -1,6 +1,6 @@
---- chrome/test/base/in_process_browser_test.cc.orig	2019-09-09 21:55:11 UTC
+--- chrome/test/base/in_process_browser_test.cc.orig	2019-12-16 21:51:24 UTC
 +++ chrome/test/base/in_process_browser_test.cc
-@@ -76,6 +76,10 @@
+@@ -77,6 +77,10 @@
  #include "chrome/test/base/scoped_bundle_swizzler_mac.h"
  #endif
  
@@ -11,7 +11,7 @@
  #if defined(OS_WIN)
  #include "base/win/scoped_com_initializer.h"
  #include "base/win/windows_version.h"
-@@ -103,7 +107,7 @@
+@@ -104,7 +108,7 @@
  #include "ui/events/test/event_generator.h"
  #endif  // defined(OS_CHROMEOS)
  
