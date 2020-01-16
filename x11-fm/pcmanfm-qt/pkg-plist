@@ -1,6 +1,6 @@
 bin/pcmanfm-qt
 etc/xdg/autostart/lxqt-desktop.desktop
-man/man1/pcmanfm-qt.1.gz
+share/man/man1/pcmanfm-qt.1.gz
 share/applications/pcmanfm-qt-desktop-pref.desktop
 share/applications/pcmanfm-qt.desktop
 @sample %%DATADIR%%/lxqt/settings.conf.sample
