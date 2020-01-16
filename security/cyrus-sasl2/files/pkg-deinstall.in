@@ -16,7 +16,8 @@ CYRUS_GROUP=${CYRUS_GROUP:=%%CYRUS_GROUP%%}
 # delete sasldb database
 delete_sasldb() {
 	if [ -f ${SASLDB_NAME} ] ; then
-		if [ `${PKG_PREFIX}/sbin/sasldblistusers2 | wc -l` -eq 0 ]; then
+		result=$(${PKG_PREFIX}/sbin/sasldblistusers2)
+		if [ $? -eq 0 -a -z "${result}" ]; then
 			rm ${SASLDB_NAME}
 			if [ -f ${SASLDB_NAME}-lock ] ; then
 				rm ${SASLDB_NAME}-lock
