@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2019-10-21 19:06:18 UTC
+--- base/BUILD.gn.orig	2019-12-16 21:51:21 UTC
 +++ base/BUILD.gn
-@@ -1266,7 +1266,7 @@ jumbo_component("base") {
+@@ -1274,7 +1274,7 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -9,7 +9,7 @@
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
-@@ -1292,7 +1292,7 @@ jumbo_component("base") {
+@@ -1300,7 +1300,7 @@ jumbo_component("base") {
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
        ]
        deps += [ "//base/allocator:tcmalloc" ]
@@ -18,7 +18,7 @@
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
      } else if (is_android && use_allocator == "none") {
        sources += [
-@@ -1893,6 +1893,33 @@ jumbo_component("base") {
+@@ -1903,6 +1903,33 @@ jumbo_component("base") {
      }
    }
  
@@ -52,7 +52,7 @@
    # iOS
    if (is_ios) {
      set_sources_assignment_filter([])
-@@ -3041,6 +3068,12 @@ test("base_unittests") {
+@@ -3071,6 +3098,12 @@ test("base_unittests") {
      ]
      set_sources_assignment_filter(sources_assignment_filter)
    }

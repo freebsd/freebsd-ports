@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/new_tab_button.cc.orig	2019-10-21 19:06:24 UTC
+--- chrome/browser/ui/views/tabs/new_tab_button.cc.orig	2019-12-16 21:51:24 UTC
 +++ chrome/browser/ui/views/tabs/new_tab_button.cc
-@@ -69,7 +69,7 @@ const gfx::Size NewTabButton::kButtonSize{28, 28};
+@@ -84,7 +84,7 @@ class NewTabButton::HighlightPathGenerator
  NewTabButton::NewTabButton(TabStrip* tab_strip, views::ButtonListener* listener)
      : views::ImageButton(listener), tab_strip_(tab_strip) {
    set_animate_on_state_change(true);

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/tab.cc.orig	2019-10-21 19:06:24 UTC
+--- chrome/browser/ui/views/tabs/tab.cc.orig	2019-12-16 21:51:24 UTC
 +++ chrome/browser/ui/views/tabs/tab.cc
-@@ -512,7 +512,7 @@ void Tab::OnMouseCaptureLost() {
+@@ -550,7 +550,7 @@ void Tab::OnMouseCaptureLost() {
  void Tab::OnMouseMoved(const ui::MouseEvent& event) {
    tab_style_->SetHoverLocation(event.location());
    controller_->OnMouseEventInTab(this, event);
@@ -9,7 +9,7 @@
    MaybeUpdateHoverStatus(event);
  #endif
  }
-@@ -522,7 +522,7 @@ void Tab::OnMouseEntered(const ui::MouseEvent& event) 
+@@ -560,7 +560,7 @@ void Tab::OnMouseEntered(const ui::MouseEvent& event) 
  }
  
  void Tab::MaybeUpdateHoverStatus(const ui::MouseEvent& event) {

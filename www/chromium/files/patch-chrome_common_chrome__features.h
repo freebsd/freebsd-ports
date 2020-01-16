@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.h.orig	2019-10-21 19:06:25 UTC
+--- chrome/common/chrome_features.h.orig	2019-12-16 21:51:24 UTC
 +++ chrome/common/chrome_features.h
-@@ -64,10 +64,10 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -67,10 +67,10 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kAutoFetchOnNetErrorPage;
  #endif
  
@@ -13,7 +13,7 @@
  
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBlockPromptsIfDismissedOften;
-@@ -86,7 +86,7 @@ extern const base::Feature kBundledConnectionHelpFeatu
+@@ -89,7 +89,7 @@ extern const base::Feature kBundledConnectionHelpFeatu
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kCaptionSettings;
  

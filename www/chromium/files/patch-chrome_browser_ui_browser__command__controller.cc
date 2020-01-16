@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2019-10-21 19:06:24 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2019-12-16 21:51:24 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
 @@ -81,7 +81,7 @@
  #include "chrome/browser/ui/browser_commands_chromeos.h"
@@ -18,7 +18,7 @@
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-@@ -467,7 +467,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -472,7 +472,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
        break;
  #endif
  
@@ -27,7 +27,7 @@
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
-@@ -925,7 +925,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -945,7 +945,7 @@ void BrowserCommandController::InitCommandState() {
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_2, true);
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_3, true);
  #endif

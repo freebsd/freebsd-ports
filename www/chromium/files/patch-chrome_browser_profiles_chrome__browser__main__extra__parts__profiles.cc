@@ -1,6 +1,6 @@
---- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2019-10-21 19:06:22 UTC
+--- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2019-12-16 21:51:23 UTC
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -181,7 +181,7 @@
+@@ -186,7 +186,7 @@
  #include "chrome/browser/safe_browsing/advanced_protection_status_manager_factory.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/sync/sync_clipboard_service_factory.h"
  #endif
  
-@@ -336,7 +336,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -352,7 +352,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    MediaGalleriesPreferencesFactory::GetInstance();
  #endif
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -18,8 +18,8 @@
    metrics::DesktopProfileSessionDurationsServiceFactory::GetInstance();
  #endif
    ModelTypeStoreServiceFactory::GetInstance();
-@@ -398,7 +398,7 @@ void ChromeBrowserMainExtraPartsProfiles::
-   SpellcheckServiceFactory::GetInstance();
+@@ -415,7 +415,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+   StorageNotificationServiceFactory::GetInstance();
  #endif
    suggestions::SuggestionsServiceFactory::GetInstance();
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)

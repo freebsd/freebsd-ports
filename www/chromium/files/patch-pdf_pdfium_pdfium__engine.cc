@@ -1,6 +1,6 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2019-10-21 19:06:39 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2019-12-16 21:51:27 UTC
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -53,7 +53,7 @@
+@@ -52,7 +52,7 @@
  #include "ui/gfx/geometry/rect.h"
  #include "v8/include/v8.h"
  
@@ -9,7 +9,7 @@
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
-@@ -378,7 +378,7 @@ bool InitializeSDK(bool enable_v8) {
+@@ -377,7 +377,7 @@ void InitializeSDK(bool enable_v8) {
    config.m_v8EmbedderSlot = gin::kEmbedderPDFium;
    FPDF_InitLibraryWithConfig(&config);
  
@@ -18,7 +18,7 @@
    InitializeLinuxFontMapper();
  #endif
  
-@@ -414,7 +414,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client, 
+@@ -411,7 +411,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client, 
    IFSDK_PAUSE::user = nullptr;
    IFSDK_PAUSE::NeedToPauseNow = Pause_NeedToPauseNow;
  
@@ -27,7 +27,7 @@
    // PreviewModeClient does not know its pp::Instance.
    SetLastInstance(client_->GetPluginInstance());
  #endif
-@@ -870,7 +870,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
+@@ -867,7 +867,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
  
    KillFormFocus();
  
@@ -36,7 +36,7 @@
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -2696,7 +2696,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -2798,7 +2798,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK(image_data);
  
    last_progressive_start_time_ = base::Time::Now();
@@ -45,7 +45,7 @@
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -3190,7 +3190,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3292,7 +3292,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form(), FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

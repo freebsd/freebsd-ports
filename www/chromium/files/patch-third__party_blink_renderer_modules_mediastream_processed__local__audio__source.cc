@@ -1,15 +1,6 @@
---- third_party/blink/renderer/modules/mediastream/processed_local_audio_source.cc.orig	2019-10-30 16:30:37 UTC
+--- third_party/blink/renderer/modules/mediastream/processed_local_audio_source.cc.orig	2019-12-16 21:51:29 UTC
 +++ third_party/blink/renderer/modules/mediastream/processed_local_audio_source.cc
-@@ -84,7 +84,7 @@ void LogAudioProcesingProperties(
- }  // namespace
- 
- bool IsApmInAudioServiceEnabled() {
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
-   return base::FeatureList::IsEnabled(features::kWebRtcApmInAudioService);
- #else
-   return false;
-@@ -427,7 +427,7 @@ void ProcessedLocalAudioSource::CaptureUsingProcessor(
+@@ -421,7 +421,7 @@ void ProcessedLocalAudioSource::CaptureUsingProcessor(
      bool key_pressed) {
  #if defined(OS_WIN) || defined(OS_MACOSX)
    DCHECK_LE(volume, 1.0);

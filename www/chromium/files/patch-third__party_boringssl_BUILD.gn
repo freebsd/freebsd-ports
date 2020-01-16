@@ -1,6 +1,6 @@
---- third_party/boringssl/BUILD.gn.orig	2019-04-30 22:23:27 UTC
+--- third_party/boringssl/BUILD.gn.orig	2019-12-16 21:51:04 UTC
 +++ third_party/boringssl/BUILD.gn
-@@ -74,7 +74,7 @@ if (is_win && !is_msan && current_cpu != "arm64") {
+@@ -71,7 +71,7 @@ if (is_win && !is_msan && current_cpu != "arm64") {
      } else if (current_cpu == "x64") {
        if (is_mac) {
          sources += crypto_sources_mac_x86_64
@@ -9,7 +9,7 @@
          sources += crypto_sources_linux_x86_64
        } else {
          public_configs = [ ":no_asm_config" ]
-@@ -82,13 +82,13 @@ if (is_win && !is_msan && current_cpu != "arm64") {
+@@ -79,13 +79,13 @@ if (is_win && !is_msan && current_cpu != "arm64") {
      } else if (current_cpu == "x86") {
        if (is_mac) {
          sources += crypto_sources_mac_x86
@@ -25,7 +25,7 @@
          sources += crypto_sources_linux_arm
        } else if (is_ios) {
          sources += crypto_sources_ios_arm
-@@ -96,7 +96,7 @@ if (is_win && !is_msan && current_cpu != "arm64") {
+@@ -93,7 +93,7 @@ if (is_win && !is_msan && current_cpu != "arm64") {
          public_configs = [ ":no_asm_config" ]
        }
      } else if (current_cpu == "arm64") {

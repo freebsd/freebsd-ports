@@ -1,4 +1,4 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2019-03-11 22:00:56 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2019-12-16 21:51:25 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -16,7 +16,7 @@
  #include <wincred.h>
@@ -18,7 +18,7 @@
  #include <limits.h>  // For HOST_NAME_MAX
  #endif
  
-@@ -52,7 +52,7 @@
+@@ -57,7 +57,7 @@
  #include "base/system/sys_info.h"
  #endif
  
@@ -27,7 +27,7 @@
  #include "base/system/sys_info.h"
  #endif
  
-@@ -61,11 +61,24 @@ namespace policy {
+@@ -66,11 +66,24 @@ namespace policy {
  namespace em = enterprise_management;
  
  std::string GetMachineName() {
@@ -53,16 +53,16 @@
  #elif defined(OS_MACOSX)
    // Do not use NSHost currentHost, as it's very slow. http://crbug.com/138570
    SCDynamicStoreContext context = {0, NULL, NULL, NULL};
-@@ -111,7 +124,7 @@ std::string GetMachineName() {
+@@ -116,7 +129,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_MACOSX)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -134,7 +147,7 @@ std::string GetOSArchitecture() {
+@@ -139,7 +152,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

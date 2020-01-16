@@ -1,6 +1,6 @@
---- components/autofill/core/browser/personal_data_manager.cc.orig	2019-10-21 19:06:28 UTC
+--- components/autofill/core/browser/personal_data_manager.cc.orig	2019-12-16 21:51:25 UTC
 +++ components/autofill/core/browser/personal_data_manager.cc
-@@ -1925,10 +1925,10 @@ bool PersonalDataManager::IsServerCard(const CreditCar
+@@ -1819,10 +1819,10 @@ bool PersonalDataManager::IsServerCard(const CreditCar
  
  bool PersonalDataManager::ShouldShowCardsFromAccountOption() const {
  // The feature is only for Linux, Windows and Mac.

@@ -1,4 +1,4 @@
---- tools/gn/build/gen.py.orig	2019-09-09 21:59:05 UTC
+--- tools/gn/build/gen.py.orig	2019-12-16 21:58:04 UTC
 +++ tools/gn/build/gen.py
 @@ -69,6 +69,9 @@ class Platform(object):
    def is_aix(self):
@@ -10,7 +10,7 @@
    def is_posix(self):
      return self._platform in ['linux', 'freebsd', 'darwin', 'aix', 'openbsd']
  
-@@ -337,6 +340,11 @@ def WriteGNNinja(path, platform, host, options):
+@@ -341,6 +344,11 @@ def WriteGNNinja(path, platform, host, options):
      elif platform.is_aix():
        cflags_cc.append('-maix64')
        ldflags.append('-maix64')

@@ -1,6 +1,15 @@
---- base/system/sys_info.h.orig	2019-06-04 18:55:15 UTC
+--- base/system/sys_info.h.orig	2019-12-16 21:50:40 UTC
 +++ base/system/sys_info.h
-@@ -192,7 +192,7 @@ class BASE_EXPORT SysInfo {
+@@ -188,6 +188,8 @@ class BASE_EXPORT SysInfo {
+   // See also SysUtils.java, method isLowEndDevice.
+   static bool IsLowEndDevice();
+ 
++  static uint64_t MaxSharedMemorySize();
++
+  private:
+   FRIEND_TEST_ALL_PREFIXES(SysInfoTest, AmountOfAvailablePhysicalMemory);
+   FRIEND_TEST_ALL_PREFIXES(debug::SystemMetricsTest, ParseMeminfo);
+@@ -197,7 +199,7 @@ class BASE_EXPORT SysInfo {
    static bool IsLowEndDeviceImpl();
    static HardwareInfo GetHardwareInfoSync();
  

@@ -1,6 +1,6 @@
---- tools/gn/tools/gn/exec_process.cc.orig	2019-03-11 22:12:13 UTC
+--- tools/gn/tools/gn/exec_process.cc.orig	2019-12-16 21:58:04 UTC
 +++ tools/gn/tools/gn/exec_process.cc
-@@ -29,6 +29,10 @@
+@@ -30,6 +30,10 @@
  #include "base/posix/file_descriptor_shuffle.h"
  #endif
  

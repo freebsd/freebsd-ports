@@ -1,6 +1,6 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2019-10-21 19:06:33 UTC
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2019-12-16 21:51:26 UTC
 +++ content/renderer/renderer_blink_platform_impl.cc
-@@ -102,7 +102,7 @@
+@@ -104,7 +104,7 @@
  
  #if defined(OS_MACOSX)
  #include "content/child/child_process_sandbox_support_impl_mac.h"
@@ -26,8 +26,8 @@
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    if (sandboxEnabled()) {
  #if defined(OS_MACOSX)
-     std::unique_ptr<service_manager::Connector> sandbox_connector;
-@@ -224,7 +224,7 @@ RendererBlinkPlatformImpl::~RendererBlinkPlatformImpl(
+     sandbox_support_ = std::make_unique<WebSandboxSupportMac>();
+@@ -217,7 +217,7 @@ RendererBlinkPlatformImpl::~RendererBlinkPlatformImpl(
  }
  
  void RendererBlinkPlatformImpl::Shutdown() {
@@ -36,7 +36,7 @@
    // SandboxSupport contains a map of OutOfProcessFont objects, which hold
    // WebStrings and WebVectors, which become invalidated when blink is shut
    // down. Hence, we need to clear that map now, just before blink::shutdown()
-@@ -289,7 +289,7 @@ RendererBlinkPlatformImpl::CreateNetworkURLLoaderFacto
+@@ -282,7 +282,7 @@ RendererBlinkPlatformImpl::CreateNetworkURLLoaderFacto
  
  void RendererBlinkPlatformImpl::SetDisplayThreadPriority(
      base::PlatformThreadId thread_id) {
@@ -45,7 +45,7 @@
    if (RenderThreadImpl* render_thread = RenderThreadImpl::current()) {
      render_thread->render_message_filter()->SetThreadPriority(
          thread_id, base::ThreadPriority::DISPLAY);
-@@ -302,7 +302,7 @@ blink::BlameContext* RendererBlinkPlatformImpl::GetTop
+@@ -295,7 +295,7 @@ blink::BlameContext* RendererBlinkPlatformImpl::GetTop
  }
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::GetSandboxSupport() {
