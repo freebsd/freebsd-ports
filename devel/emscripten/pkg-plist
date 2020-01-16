@@ -182,6 +182,7 @@ lib/emscripten/src/library_browser.js
 lib/emscripten/src/library_cyberdwarf.js
 lib/emscripten/src/library_debugger_toolkit.js
 lib/emscripten/src/library_egl.js
+lib/emscripten/src/library_emmalloc.js
 lib/emscripten/src/library_exceptions.js
 lib/emscripten/src/library_exceptions_stub.js
 lib/emscripten/src/library_fetch.js
@@ -201,6 +202,7 @@ lib/emscripten/src/library_noderawfs.js
 lib/emscripten/src/library_openal.js
 lib/emscripten/src/library_path.js
 lib/emscripten/src/library_pipefs.js
+lib/emscripten/src/promise_polyfill.js
 lib/emscripten/src/library_proxyfs.js
 lib/emscripten/src/library_pthread.js
 lib/emscripten/src/library_pthread_stub.js
@@ -256,6 +258,8 @@ lib/emscripten/src/source_map_support.js
 lib/emscripten/src/spidermonkey-externs.js
 lib/emscripten/src/struct_info.json
 lib/emscripten/src/support.js
+lib/emscripten/system/include/emscripten/emmalloc.h
+lib/emscripten/system/include/emscripten/heap.h
 lib/emscripten/src/threadprofiler.js
 lib/emscripten/src/utility.js
 lib/emscripten/src/v8-externs.js
