@@ -50,7 +50,7 @@ AUTOPANOSIFTC_DESC=	Install graphics/autopano-sift-c
 AUTOPANOSIFTC_RUN_DEPENDS=	autopano:graphics/autopano-sift-c
 
 PYTHON_DESC=		Python Scripting Interface
-PYTHON_USES=		python:3.6
+PYTHON_USES=		python
 PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
 PYTHON_BINARY_ALIAS=	swig=swig3.0
 PYTHON_CMAKE_ON=	-DBUILD_HSI=ON
