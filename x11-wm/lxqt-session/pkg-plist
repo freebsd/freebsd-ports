@@ -4,10 +4,10 @@ bin/lxqt-session
 bin/startlxqt
 etc/xdg/autostart/lxqt-xscreensaver-autostart.desktop
 etc/xdg/openbox/lxqt-rc.xml
-man/man1/lxqt-config-session.1.gz
-man/man1/lxqt-leave.1.gz
-man/man1/lxqt-session.1.gz
-man/man1/startlxqt.1.gz
+share/man/man1/lxqt-config-session.1.gz
+share/man/man1/lxqt-leave.1.gz
+share/man/man1/lxqt-session.1.gz
+share/man/man1/startlxqt.1.gz
 share/applications/lxqt-config-session.desktop
 share/applications/lxqt-hibernate.desktop
 share/applications/lxqt-leave.desktop
