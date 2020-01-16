@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsequencer
-DISTVERSION=	3.0.1
+DISTVERSION=	3.0.3
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
 
@@ -52,6 +52,6 @@ PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
 post-install:
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc-base ${STAGEDIR}${DOCSDIR}
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc-base
 
 .include <bsd.port.mk>
