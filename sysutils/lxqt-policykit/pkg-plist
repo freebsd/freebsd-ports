@@ -1,6 +1,6 @@
 bin/lxqt-policykit-agent
 etc/xdg/autostart/lxqt-policykit-agent.desktop
-man/man1/lxqt-policykit-agent.1.gz
+share/man/man1/lxqt-policykit-agent.1.gz
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_ar.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_ca.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_cs.qm
