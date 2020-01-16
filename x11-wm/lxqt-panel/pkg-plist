@@ -12,7 +12,7 @@ lib/lxqt-panel/libkbindicator.so
 %%MOUNT%%lib/lxqt-panel/libmount.so
 lib/lxqt-panel/libsysstat.so
 %%SOUND%%lib/lxqt-panel/libvolume.so
-man/man1/lxqt-panel.1.gz
+share/man/man1/lxqt-panel.1.gz
 share/desktop-directories/lxqt-leave.directory
 share/desktop-directories/lxqt-settings.directory
 %%LXQT_SHAREDIR%%/lxqt-panel/colorpicker.desktop
