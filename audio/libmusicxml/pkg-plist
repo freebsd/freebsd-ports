@@ -220,7 +220,7 @@ include/libmusicxml/xmlvisitor.h
 lib/libmusicxml2.a
 lib/libmusicxml2.so
 lib/libmusicxml2.so.3
-lib/libmusicxml2.so.3.1.7
+lib/libmusicxml2.so.3.1.8
 %%DATADIR%%/doc/MaintainerSGuideToXml2ly.pdf
 %%DATADIR%%/doc/libmusicxml2.pdf
 %%DATADIR%%/doc/userSGuideToXml2ly.pdf
