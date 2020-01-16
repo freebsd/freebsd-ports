@@ -1,3 +1,3 @@
-TIMESTAMP = 1574526465
-SHA256 (asyncpg-0.20.0.tar.gz) = aa02dce5d5b801cff7dd2d99b767f5db312858f527ec1764777aad1fdefb5a7a
-SIZE (asyncpg-0.20.0.tar.gz) = 733110
+TIMESTAMP = 1579208121
+SHA256 (asyncpg-0.20.1.tar.gz) = 394bf19bdddbba07a38cd6fb526ebf66e120444d6b3097332b78efd5b26495b0
+SIZE (asyncpg-0.20.1.tar.gz) = 734341
