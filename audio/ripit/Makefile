@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ripit.pl ${STAGEDIR}${PREFIX}/bin/ripit
-	${INSTALL_MAN} ${WRKSRC}/ripit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ripit.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/config ${STAGEDIR}${EXAMPLESDIR}/config
 

@@ -38,7 +38,7 @@
 +#MANSECT = n
 +PREFIX ?= /usr/local
 +BINDIR = ${PREFIX}/bin
-+MANDIR = ${PREFIX}/man/ja
++MANDIR = ${PREFIX}/share/man/ja
 +MANSECT = 1
  
 -INSTALL = install

@@ -13,6 +13,6 @@ LIBDIR=		${PREFIX}/lib
 INCLUDEDIR=	${PREFIX}/include
 
 MAN3=	lzxcomp.3
-MANDIR=	${PREFIX}/man/man
+MANDIR=	${PREFIX}/share/man/man
 
 .include <bsd.lib.mk>

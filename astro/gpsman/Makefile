@@ -31,7 +31,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gpsman.tcl ${STAGEDIR}${PREFIX}/bin/gpsman
-	${INSTALL_MAN} ${WRKSRC}/man/man1/gpsman.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/gpsman.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${GPSMANDIR}/gmsrc/gmicons ${STAGEDIR}${GPSMANDIR}/util
 	${INSTALL_DATA} ${WRKSRC}/gmsrc/*.tcl ${STAGEDIR}${GPSMANDIR}/gmsrc
 	${INSTALL_DATA} ${WRKSRC}/gmsrc/gmicons/* ${STAGEDIR}${GPSMANDIR}/gmsrc/gmicons

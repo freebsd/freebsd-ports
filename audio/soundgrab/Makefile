@@ -23,11 +23,11 @@ NO_BUILD=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	src/soundgrab
 
-PLIST_FILES=	bin/soundgrab man/man1/soundgrab.1.gz
+PLIST_FILES=	bin/soundgrab share/man/man1/soundgrab.1.gz
 
 do-install:
 	@pod2man ${WRKSRC}/src/soundgrab ${WRKSRC}/src/soundgrab.1
 	${INSTALL_SCRIPT} ${WRKSRC}/src/soundgrab ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/src/soundgrab.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/src/soundgrab.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

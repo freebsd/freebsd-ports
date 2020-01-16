@@ -9,12 +9,3 @@
  CFLAGS := -D_FILE_OFFSET_BITS=64 $(CFLAGS)
  SOEXT:=.so
  
-@@ -84,7 +84,7 @@ man_html := $(patsubst %.md,%.html,$(man_md))
- 
- INSTALL=install
- PREFIX=/usr/local
--MANDIR=$(PREFIX)/share/man
-+MANDIR=$(PREFIX)/man
- DOCDIR=$(PREFIX)/share/doc/bup
- BINDIR=$(PREFIX)/bin
- LIBDIR=$(PREFIX)/lib/bup

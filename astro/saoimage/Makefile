@@ -16,7 +16,7 @@ ALL_TARGET=	${OPSYS}
 USES=		xorg
 USE_XORG=	x11
 
-PLIST_FILES=	bin/saoimage etc/imtoolrc.sample man/man1/saoimage.1.gz
+PLIST_FILES=	bin/saoimage etc/imtoolrc.sample share/man/man1/saoimage.1.gz
 
 post-patch:
 	# MFLAGS is reserved by make
@@ -25,6 +25,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/saoimage ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/imtoolrc ${STAGEDIR}${PREFIX}/etc/imtoolrc.sample
-	${INSTALL_MAN} ${WRKSRC}/doc/saoimage.man ${STAGEDIR}${MAN1PREFIX}/man/man1/saoimage.1
+	${INSTALL_MAN} ${WRKSRC}/doc/saoimage.man ${STAGEDIR}${PREFIX}/share/man/man1/saoimage.1
 
 .include <bsd.port.mk>

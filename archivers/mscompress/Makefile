@@ -16,12 +16,13 @@ USES=		tar:bzip2
 HAS_CONFIGURE=	yes
 
 PLIST_FILES=	bin/mscompress bin/msexpand \
-		man/man1/mscompress.1.gz man/man1/msexpand.1.gz
+		share/man/man1/mscompress.1.gz \
+		share/man/man1/msexpand.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mscompress ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/msexpand ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mscompress.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/msexpand.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mscompress.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/msexpand.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

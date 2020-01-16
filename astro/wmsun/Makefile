@@ -22,11 +22,11 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		INCDIR="-I${LOCALBASE}/include" LIBDIR="-L${LOCALBASE}/lib"
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_FILES=	bin/wmsun man/man1/wmsun.1.gz
+PLIST_FILES=	bin/wmsun share/man/man1/wmsun.1.gz
 WRKSRC=		${WRKDIR}/dockapps-a1e67bd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmsun ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmsun.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/wmsun.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
 bin/darkice
 @sample etc/darkice.cfg.sample
-man/man1/darkice.1.gz
-man/man5/darkice.cfg.5.gz
+share/man/man1/darkice.1.gz
+share/man/man5/darkice.cfg.5.gz

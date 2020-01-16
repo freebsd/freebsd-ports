@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/dannyboy
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD-player with text-based user interface
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 USES=		ncurses
 MAKE_ARGS=	CFLAGS="${CFLAGS} -c -ansi"	\
 		LFLAGS="${LDFLAGS} -lncurses"   \
@@ -19,7 +22,7 @@ MAKE_ARGS=	CFLAGS="${CFLAGS} -c -ansi"	\
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/cdplay \
-		man/man1/cdplay.1.gz
+		share/man/man1/cdplay.1.gz
 
 post-patch:
 	${REINPLACE_CMD}			\
@@ -31,6 +34,6 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cdplay ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cdplay.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cdplay.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

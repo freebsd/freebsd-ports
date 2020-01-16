@@ -17,10 +17,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		compiler:openmp tar:xz
-PLIST_FILES=	bin/pxz man/man1/pxz.1.gz
+PLIST_FILES=	bin/pxz share/man/man1/pxz.1.gz
 
 MAKE_ENV+=	BINDIR=${PREFIX}/bin \
-		MANDIR=${MANPREFIX}/man
+		MANDIR=${PREFIX}/share/man
 
 MAKE_ARGS+=	CC="${CC}"
 
