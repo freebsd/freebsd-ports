@@ -6,13 +6,8 @@ sbin/desktop-installer
 %%DATADIR%%/KDE5/xinitrc
 %%DATADIR%%/LUMINA/gtkrc
 %%DATADIR%%/LUMINA/xinitrc
-%%DATADIR%%/LXDE/GiveConsole
-%%DATADIR%%/LXDE/Xsetup_0
-%%DATADIR%%/LXDE/Xstartup
-%%DATADIR%%/LXDE/beastie.xpm
-%%DATADIR%%/LXDE/bsd_background.jpg
-%%DATADIR%%/LXDE/xdmshutdown
 %%DATADIR%%/LXDE/xinitrc
+%%DATADIR%%/LXQT/xinitrc
 %%DATADIR%%/MATE/xinitrc
 %%DATADIR%%/Scripts/battery_shutdown.sh
 %%DATADIR%%/XDM/GiveConsole
