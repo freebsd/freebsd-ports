@@ -1,4 +1,4 @@
---- third_party/pdfium/third_party/base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2019-06-04 18:58:01 UTC
+--- third_party/pdfium/third_party/base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2020-01-07 21:54:50 UTC
 +++ third_party/pdfium/third_party/base/allocator/partition_allocator/page_allocator_internals_posix.h
 @@ -13,7 +13,7 @@
  #if defined(OS_MACOSX)

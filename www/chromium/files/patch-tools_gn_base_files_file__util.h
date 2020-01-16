@@ -1,6 +1,6 @@
---- tools/gn/base/files/file_util.h.orig	2019-06-04 19:02:25 UTC
+--- tools/gn/base/files/file_util.h.orig	2019-12-16 21:58:04 UTC
 +++ tools/gn/base/files/file_util.h
-@@ -361,7 +361,7 @@ bool VerifyPathControlledByAdmin(const base::FilePath&
+@@ -360,7 +360,7 @@ bool VerifyPathControlledByAdmin(const base::FilePath&
  // the directory |path|, in the number of FilePath::CharType, or -1 on failure.
  int GetMaximumPathComponentLength(const base::FilePath& path);
  

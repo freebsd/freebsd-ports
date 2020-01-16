@@ -1,6 +1,6 @@
---- ipc/ipc_channel_mojo.cc.orig	2019-06-04 18:55:25 UTC
+--- ipc/ipc_channel_mojo.cc.orig	2019-12-16 21:51:27 UTC
 +++ ipc/ipc_channel_mojo.cc
-@@ -64,10 +64,10 @@ class MojoChannelFactory : public ChannelFactory {
+@@ -65,10 +65,10 @@ class MojoChannelFactory : public ChannelFactory {
  };
  
  base::ProcessId GetSelfPID() {

@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/wtf/threading_pthreads.cc.orig	2019-10-21 19:06:45 UTC
+--- third_party/blink/renderer/platform/wtf/threading_pthreads.cc.orig	2019-12-16 21:50:53 UTC
 +++ third_party/blink/renderer/platform/wtf/threading_pthreads.cc
-@@ -51,12 +51,17 @@
+@@ -50,12 +50,17 @@
  #include <objc/objc-auto.h>
  #endif
  

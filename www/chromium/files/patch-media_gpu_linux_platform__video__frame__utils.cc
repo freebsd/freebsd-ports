@@ -1,20 +1,45 @@
---- media/gpu/linux/platform_video_frame_utils.cc.orig	2019-09-09 21:55:20 UTC
+--- media/gpu/linux/platform_video_frame_utils.cc.orig	2019-12-16 21:51:27 UTC
 +++ media/gpu/linux/platform_video_frame_utils.cc
-@@ -121,7 +121,7 @@ gfx::GpuMemoryBufferHandle CreateGpuMemoryBufferHandle
-   DCHECK(video_frame);
+@@ -19,16 +19,16 @@
+ #include "ui/gfx/linux/native_pixmap_dmabuf.h"
+ #include "ui/gfx/native_pixmap.h"
  
-   gfx::GpuMemoryBufferHandle handle;
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   handle.type = gfx::NATIVE_PIXMAP;
- 
-   std::vector<base::ScopedFD> duped_fds =
-@@ -136,7 +136,7 @@ gfx::GpuMemoryBufferHandle CreateGpuMemoryBufferHandle
-   }
- #else
-   NOTREACHED();
+ #include "gpu/ipc/common/gpu_client_ids.h"
+ #include "gpu/ipc/service/gpu_memory_buffer_factory.h"
 -#endif  // defined(OS_LINUX)
 +#endif  // defined(OS_LINUX) || defined(OS_BSD)
-   return handle;
- }
  
+ namespace media {
+ 
+ namespace {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ 
+ scoped_refptr<VideoFrame> CreateVideoFrameGpu(
+     gpu::GpuMemoryBufferFactory* factory,
+@@ -92,7 +92,7 @@ scoped_refptr<VideoFrame> CreateVideoFrameGpu(
+                      gpu::kPlatformVideoFramePoolClientId));
+   return frame;
+ }
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
+ 
+ }  // namespace
+ 
+@@ -104,11 +104,11 @@ scoped_refptr<VideoFrame> CreatePlatformVideoFrame(
+     const gfx::Size& natural_size,
+     base::TimeDelta timestamp,
+     gfx::BufferUsage buffer_usage) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   return CreateVideoFrameGpu(gpu_memory_buffer_factory, pixel_format,
+                              coded_size, visible_rect, natural_size, timestamp,
+                              buffer_usage);
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
+   NOTREACHED();
+   return nullptr;
+ }

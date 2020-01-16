@@ -1,17 +1,6 @@
---- chrome/browser/ui/views/first_run_dialog.cc.orig	2019-09-09 21:55:11 UTC
+--- chrome/browser/ui/views/first_run_dialog.cc.orig	2019-12-16 21:51:24 UTC
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -37,8 +37,10 @@
- namespace {
- 
- void InitCrashReporterIfEnabled(bool enabled) {
-+#if !defined(OS_BSD)
-   if (enabled)
-     breakpad::InitCrashReporter(std::string());
-+#endif
- }
- 
- }  // namespace
-@@ -108,8 +110,10 @@ std::unique_ptr<views::View> FirstRunDialog::CreateExt
+@@ -115,8 +115,10 @@ std::unique_ptr<views::View> FirstRunDialog::CreateExt
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  

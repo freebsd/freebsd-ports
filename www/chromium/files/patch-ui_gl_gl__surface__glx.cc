@@ -1,6 +1,6 @@
---- ui/gl/gl_surface_glx.cc.orig	2019-09-09 21:55:47 UTC
+--- ui/gl/gl_surface_glx.cc.orig	2019-12-16 21:51:34 UTC
 +++ ui/gl/gl_surface_glx.cc
-@@ -461,7 +461,10 @@ bool GLSurfaceGLX::InitializeOneOff() {
+@@ -459,7 +459,10 @@ bool GLSurfaceGLX::InitializeOneOff() {
      return false;
    }
  

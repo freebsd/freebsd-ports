@@ -1,6 +1,6 @@
---- third_party/webrtc/modules/audio_device/BUILD.gn.orig	2019-10-21 19:09:18 UTC
+--- third_party/webrtc/modules/audio_device/BUILD.gn.orig	2019-12-16 21:56:20 UTC
 +++ third_party/webrtc/modules/audio_device/BUILD.gn
-@@ -265,7 +265,7 @@ rtc_source_set("audio_device_impl") {
+@@ -263,7 +263,7 @@ rtc_source_set("audio_device_impl") {
      if (rtc_use_dummy_audio_file_devices) {
        defines += [ "WEBRTC_DUMMY_FILE_DEVICES" ]
      } else {

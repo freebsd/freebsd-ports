@@ -1,4 +1,4 @@
---- net/base/address_tracker_linux.cc.orig	2019-06-04 18:55:26 UTC
+--- net/base/address_tracker_linux.cc.orig	2019-12-16 21:51:27 UTC
 +++ net/base/address_tracker_linux.cc
 @@ -21,96 +21,10 @@
  namespace net {
@@ -123,15 +123,15 @@
  
  NetworkChangeNotifier::ConnectionType
  AddressTrackerLinux::GetCurrentConnectionType() {
-@@ -318,6 +235,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
+@@ -318,6 +235,7 @@ void AddressTrackerLinux::HandleMessage(const char* bu
                                          bool* address_changed,
                                          bool* link_changed,
                                          bool* tunnel_changed) {
 +#if !defined(OS_FREEBSD)
    DCHECK(buffer);
-   for (struct nlmsghdr* header = reinterpret_cast<struct nlmsghdr*>(buffer);
-        NLMSG_OK(header, length);
-@@ -414,6 +332,10 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
+   for (const struct nlmsghdr* header =
+            reinterpret_cast<const struct nlmsghdr*>(buffer);
+@@ -414,6 +332,10 @@ void AddressTrackerLinux::HandleMessage(const char* bu
          break;
      }
    }

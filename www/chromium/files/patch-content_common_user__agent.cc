@@ -1,6 +1,6 @@
---- content/common/user_agent.cc.orig	2019-09-09 21:55:16 UTC
+--- content/common/user_agent.cc.orig	2019-12-16 21:51:26 UTC
 +++ content/common/user_agent.cc
-@@ -124,6 +124,14 @@ std::string BuildOSCpuInfo(bool include_android_build_
+@@ -128,6 +128,14 @@ std::string BuildOSCpuInfo(bool include_android_build_
  #endif
    );
  

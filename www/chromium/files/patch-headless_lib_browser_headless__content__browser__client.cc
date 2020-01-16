@@ -1,6 +1,6 @@
---- headless/lib/browser/headless_content_browser_client.cc.orig	2019-10-21 19:06:35 UTC
+--- headless/lib/browser/headless_content_browser_client.cc.orig	2019-12-16 21:51:26 UTC
 +++ headless/lib/browser/headless_content_browser_client.cc
-@@ -165,7 +165,7 @@ HeadlessContentBrowserClient::GetGeneratedCodeCacheSet
+@@ -166,7 +166,7 @@ HeadlessContentBrowserClient::GetGeneratedCodeCacheSet
    return content::GeneratedCodeCacheSettings(true, 0, context->GetPath());
  }
  
@@ -9,7 +9,7 @@
  void HeadlessContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -176,7 +176,7 @@ void HeadlessContentBrowserClient::GetAdditionalMapped
+@@ -177,7 +177,7 @@ void HeadlessContentBrowserClient::GetAdditionalMapped
      mappings->Share(service_manager::kCrashDumpSignal, crash_signal_fd);
  #endif  // defined(HEADLESS_USE_BREAKPAD)
  }

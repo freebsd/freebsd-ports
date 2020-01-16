@@ -1,6 +1,6 @@
---- chrome/app/google_chrome_strings.grd.orig	2019-10-21 19:06:20 UTC
+--- chrome/app/google_chrome_strings.grd.orig	2019-12-16 21:51:22 UTC
 +++ chrome/app/google_chrome_strings.grd
-@@ -706,7 +706,7 @@ Signing in anyway will merge Chrome information like b
+@@ -614,7 +614,7 @@ Google Chrome is unable to recover your settings.
        </if>
  
        <!-- about:browser-switch strings -->
@@ -9,7 +9,7 @@
          <message name="IDS_ABOUT_BROWSER_SWITCH_DESCRIPTION_UNKNOWN_BROWSER" desc="Description shown while waiting for an alternative browser to open, when the browser name is not auto-detected">
            Your system administrator has configured Google Chrome to open an alternative browser to access <ph name="TARGET_URL_HOSTNAME">$1<ex>example.com</ex></ph>.
          </message>
-@@ -837,7 +837,7 @@ Signing in anyway will merge Chrome information like b
+@@ -725,7 +725,7 @@ Google Chrome is unable to recover your settings.
        </message>
  
        <!-- ProcessSingleton -->
@@ -18,7 +18,7 @@
          <message name="IDS_PROFILE_IN_USE_POSIX" desc="Message shown when the browser cannot start because the profile is in use on a different host.">
            The profile appears to be in use by another Google Chrome process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>).  Chrome has locked the profile so that it doesn't get corrupted.  If you are sure no other processes are using this profile, you can unlock the profile and relaunch Chrome.
          </message>
-@@ -1088,7 +1088,7 @@ Signing in anyway will merge Chrome information like b
+@@ -965,7 +965,7 @@ Google Chrome is unable to recover your settings.
        </message>
  
        <!-- Plugin Placeholders -->

@@ -1,6 +1,6 @@
---- base/logging_unittest.cc.orig	2019-10-21 19:06:18 UTC
+--- base/logging_unittest.cc.orig	2019-12-16 21:51:21 UTC
 +++ base/logging_unittest.cc
-@@ -590,7 +590,7 @@ void CheckCrashTestSighandler(int, siginfo_t* info, vo
+@@ -591,7 +591,7 @@ void CheckCrashTestSighandler(int, siginfo_t* info, vo
    // need the arch-specific boilerplate below, which is inspired by breakpad.
    // At the same time, on OSX, ucontext.h is deprecated but si_addr works fine.
    uintptr_t crash_addr = 0;

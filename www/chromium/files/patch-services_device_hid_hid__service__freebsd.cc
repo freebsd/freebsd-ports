@@ -1,4 +1,4 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2019-10-30 16:46:42 UTC
+--- services/device/hid/hid_service_freebsd.cc.orig	2019-12-17 20:07:49 UTC
 +++ services/device/hid/hid_service_freebsd.cc
 @@ -0,0 +1,375 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
@@ -47,7 +47,7 @@
 +        callback(callback),
 +        task_runner(base::ThreadTaskRunnerHandle::Get()),
 +        blocking_task_runner(
-+            base::CreateSequencedTaskRunnerWithTraits(kBlockingTaskTraits)) {}
++            base::CreateSequencedTaskRunner(kBlockingTaskTraits)) {}
 +  ~ConnectParams() {}
 +
 +  scoped_refptr<HidDeviceInfo> device_info;
@@ -297,7 +297,7 @@
 +HidServiceFreeBSD::HidServiceFreeBSD()
 +    : task_runner_(base::ThreadTaskRunnerHandle::Get()),
 +      blocking_task_runner_(
-+          base::CreateSequencedTaskRunnerWithTraits(kBlockingTaskTraits)),
++          base::CreateSequencedTaskRunner(kBlockingTaskTraits)),
 +      weak_factory_(this) {
 +  helper_ = std::make_unique<BlockingTaskHelper>(weak_factory_.GetWeakPtr());
 +  blocking_task_runner_->PostTask(

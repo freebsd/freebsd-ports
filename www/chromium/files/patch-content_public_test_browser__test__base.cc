@@ -1,6 +1,6 @@
---- content/public/test/browser_test_base.cc.orig	2019-10-21 19:06:32 UTC
+--- content/public/test/browser_test_base.cc.orig	2019-12-16 21:51:26 UTC
 +++ content/public/test/browser_test_base.cc
-@@ -96,6 +96,10 @@
+@@ -97,6 +97,10 @@
  #include "ui/views/test/event_generator_delegate_mac.h"
  #endif
  

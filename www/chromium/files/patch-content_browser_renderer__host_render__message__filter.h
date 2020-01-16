@@ -1,7 +1,7 @@
---- content/browser/renderer_host/render_message_filter.h.orig	2019-10-21 19:06:32 UTC
+--- content/browser/renderer_host/render_message_filter.h.orig	2019-12-16 21:50:47 UTC
 +++ content/browser/renderer_host/render_message_filter.h
-@@ -86,14 +86,14 @@ class CONTENT_EXPORT RenderMessageFilter
-                               mojom::WidgetPtr widget,
+@@ -87,14 +87,14 @@ class CONTENT_EXPORT RenderMessageFilter
+                               mojo::PendingRemote<mojom::Widget> widget,
                                CreateFullscreenWidgetCallback callback) override;
    void HasGpuProcess(HasGpuProcessCallback callback) override;
 -#if defined(OS_LINUX)

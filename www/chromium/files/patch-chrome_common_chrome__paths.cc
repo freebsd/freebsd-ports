@@ -1,6 +1,6 @@
---- chrome/common/chrome_paths.cc.orig	2019-10-21 19:06:25 UTC
+--- chrome/common/chrome_paths.cc.orig	2019-12-16 21:50:44 UTC
 +++ chrome/common/chrome_paths.cc
-@@ -52,21 +52,21 @@ const base::FilePath::CharType kPepperFlashSystemBaseD
+@@ -51,21 +51,21 @@ const base::FilePath::CharType kPepperFlashSystemBaseD
      FILE_PATH_LITERAL("Internet Plug-Ins/PepperFlashPlayer");
  #endif
  
@@ -24,9 +24,9 @@
 -#endif  // defined(OS_LINUX)
 +#endif  // defined(OS_LINUX) || defined(OS_BSD)
  
- #if defined(OS_CHROMEOS)
- const base::FilePath::CharType kChromeOSComponentFlash[] = FILE_PATH_LITERAL(
-@@ -197,7 +197,7 @@ bool PathProvider(int key, base::FilePath* result) {
+ #if defined(OS_LINUX) && BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT)
+ // The name of the hint file that tells the latest component updated Widevine
+@@ -204,7 +204,7 @@ bool PathProvider(int key, base::FilePath* result) {
          return false;
        break;
      case chrome::DIR_DEFAULT_DOWNLOADS_SAFE:
@@ -35,7 +35,7 @@
        if (!GetUserDownloadsDirectorySafe(&cur))
          return false;
        break;
-@@ -489,7 +489,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -502,7 +502,7 @@ bool PathProvider(int key, base::FilePath* result) {
      }
  #endif
  #if defined(OS_CHROMEOS) || \
@@ -44,7 +44,7 @@
      case chrome::DIR_USER_EXTERNAL_EXTENSIONS: {
        if (!base::PathService::Get(chrome::DIR_USER_DATA, &cur))
          return false;
-@@ -497,7 +497,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -510,7 +510,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
      }
  #endif
@@ -53,7 +53,7 @@
      case chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS: {
        cur = base::FilePath(kFilepathSinglePrefExtensions);
        break;
-@@ -532,7 +532,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -545,7 +545,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #endif
        break;
  
@@ -62,7 +62,7 @@
      case chrome::DIR_NATIVE_MESSAGING:
  #if defined(OS_MACOSX)
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-@@ -546,6 +546,9 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -559,6 +559,9 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
        cur = base::FilePath(FILE_PATH_LITERAL(
            "/etc/opt/chrome/native-messaging-hosts"));
@@ -72,7 +72,7 @@
  #else
        cur = base::FilePath(FILE_PATH_LITERAL(
            "/etc/chromium/native-messaging-hosts"));
-@@ -558,7 +561,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -571,7 +574,7 @@ bool PathProvider(int key, base::FilePath* result) {
          return false;
        cur = cur.Append(FILE_PATH_LITERAL("NativeMessagingHosts"));
        break;
@@ -81,7 +81,7 @@
  #if !defined(OS_ANDROID)
      case chrome::DIR_GLOBAL_GCM_STORE:
        if (!base::PathService::Get(chrome::DIR_USER_DATA, &cur))
-@@ -566,7 +569,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -579,7 +582,7 @@ bool PathProvider(int key, base::FilePath* result) {
        cur = cur.Append(kGCMStoreDirname);
        break;
  #endif  // !defined(OS_ANDROID)
@@ -90,7 +90,7 @@
      case chrome::FILE_COMPONENT_FLASH_HINT:
        if (!base::PathService::Get(
                chrome::DIR_COMPONENT_UPDATED_PEPPER_FLASH_PLUGIN, &cur)) {
-@@ -574,7 +577,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -587,7 +590,7 @@ bool PathProvider(int key, base::FilePath* result) {
        }
        cur = cur.Append(kComponentUpdatedFlashHint);
        break;

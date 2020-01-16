@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_init.cc.orig	2019-10-21 19:06:35 UTC
+--- gpu/ipc/service/gpu_init.cc.orig	2019-12-16 21:51:26 UTC
 +++ gpu/ipc/service/gpu_init.cc
 @@ -109,7 +109,7 @@ void InitializePlatformOverlaySettings(GPUInfo* gpu_in
  #endif
@@ -45,7 +45,7 @@
  
    base::TimeTicks before_initialize_one_off = base::TimeTicks::Now();
  
-@@ -304,14 +304,14 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -280,14 +280,14 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    }
    if (gl_initialized && use_swiftshader &&
        gl::GetGLImplementation() != gl::kGLImplementationSwiftShaderGL) {
@@ -62,25 +62,25 @@
    }
    if (!gl_initialized)
      gl_initialized = gl::init::InitializeGLNoExtensionsOneOff();
-@@ -337,7 +337,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
-         command_line, gpu_feature_info_,
-         gpu_preferences_.disable_software_rasterizer, false);
-     if (use_swiftshader) {
+@@ -314,7 +314,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+           command_line, gpu_feature_info_,
+           gpu_preferences_.disable_software_rasterizer, false);
+       if (use_swiftshader) {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-       VLOG(1) << "Quit GPU process launch to fallback to SwiftShader cleanly "
-               << "on Linux";
-       return false;
-@@ -348,7 +348,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
-                 << "failed";
+         VLOG(1) << "Quit GPU process launch to fallback to SwiftShader cleanly "
+                 << "on Linux";
          return false;
-       }
+@@ -326,7 +326,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+               << "failed";
+           return false;
+         }
 -#endif  // OS_LINUX
 +#endif  // OS_LINUX || OS_BSD
-     }
-   }
- 
-@@ -377,7 +377,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+       }
+     } else {  // use_swiftshader == true
+       switch (gpu_preferences_.use_vulkan) {
+@@ -413,7 +413,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
  
    InitializePlatformOverlaySettings(&gpu_info_);
  
@@ -89,7 +89,7 @@
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -396,7 +396,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -432,7 +432,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
        return false;
      }
    }
@@ -98,7 +98,7 @@
  
    if (use_swiftshader) {
      AdjustInfoToSwiftShader();
-@@ -569,7 +569,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -604,7 +604,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
  
    InitializePlatformOverlaySettings(&gpu_info_);
  
@@ -107,7 +107,7 @@
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -589,7 +589,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -624,7 +624,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
        }
      }
    }
