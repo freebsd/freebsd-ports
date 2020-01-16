@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	quilter
-DISTVERSION=	2.0.5
+DISTVERSION=	2.1.0
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
