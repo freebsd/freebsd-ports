@@ -413,9 +413,9 @@ include/ags/widget/ags_widget_marshal.h
 lib/girepository-1.0/Ags-3.0.typelib
 lib/girepository-1.0/AgsAudio-3.0.typelib
 lib/girepository-1.0/AgsGui-3.0.typelib
-lib/gsequencer/libgsequencer.so
-lib/gsequencer/libgsequencer.so.0
-lib/gsequencer/libgsequencer.so.0.0.1
+lib/libgsequencer.so
+lib/libgsequencer.so.0
+lib/libgsequencer.so.0.0.1
 lib/libags.so
 lib/libags.so.3
 lib/libags.so.3.0.0
@@ -434,6 +434,7 @@ lib/libags_thread.so.3.0.0
 libdata/pkgconfig/libags.pc
 libdata/pkgconfig/libags_audio.pc
 libdata/pkgconfig/libags_gui.pc
+libdata/pkgconfig/libgsequencer.pc
 man/man1/gsequencer.1.gz
 man/man1/midi2xml.1.gz
 share/applications/gsequencer.desktop
