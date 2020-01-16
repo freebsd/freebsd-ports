@@ -20,7 +20,7 @@ LICENSE=	PD
 USES=		cpe
 EXTRA_DEFINES=	-DSYS_IS_UNIX -DSYS_HAS_MKDIR
 
-PLIST_FILES=	bin/unzoo man/man1/unzoo.1.gz
+PLIST_FILES=	bin/unzoo share/man/man1/unzoo.1.gz
 
 CFLAGS+=	-trigraphs
 
@@ -35,6 +35,6 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

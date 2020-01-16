@@ -27,7 +27,7 @@ PORTDOCS=	README WHERE
 MANPAGES=	unzip.1 funzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 PLIST_FILES=	bin/unzip bin/funzip bin/unzipsfx bin/zipgrep \
 		bin/zipinfo
-PLIST_FILES+=	${MANPAGES:C|^(.*)\.([1-9])$|man/man\2/\1.\2.gz|}
+PLIST_FILES+=	${MANPAGES:C|^(.*)\.([1-9])$|share/man/man\2/\1.\2.gz|}
 
 LOCAL_UNZIP=	${CFLAGS} -DACORN_FTYPE_NFS -DWILD_STOP_AT_DIR \
 		-DUNICODE_SUPPORT -DUTF8_MAYBE_NATIVE -D_MBCS \
@@ -93,9 +93,9 @@ do-install:
 	${LN} -sf unzip ${STAGEDIR}${PREFIX}/bin/zipinfo
 	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/unzip.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MANPAGES:Nunzip.1:Ninfo-unzip.1} \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

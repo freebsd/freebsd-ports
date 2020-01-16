@@ -31,12 +31,7 @@ USE_QT=		core gui widgets buildtools_build
 USE_GNOME=	atk atkmm cairo cairomm pango pangomm libsigc++20 \
 		gdkpixbuf2 glib20 glibmm  gtk20 gtk30 gtkmm24
 
-post-patch:
-		@${REINPLACE_CMD} 's|$${MANDIR}|${MAN1PREFIX}/man|' \
-			${WRKSRC}/wscript
-
 post-install:
-		@${GZIP_CMD} ${STAGEDIR}${MAN1PREFIX}/man/man1/*
 		@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jalv*
 
 .include <bsd.port.mk>

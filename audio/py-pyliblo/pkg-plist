@@ -1,5 +1,5 @@
 bin/dump_osc
 bin/send_osc
-man/man1/dump_osc.1.gz
-man/man1/send_osc.1.gz
+share/man/man1/dump_osc.1.gz
+share/man/man1/send_osc.1.gz
 %%PYTHON_SITELIBDIR%%/liblo.so

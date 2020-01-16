@@ -20,7 +20,7 @@ BUILD_DEPENDS=	bash:shells/bash git>=1.5.3.1:devel/git
 
 USES=		python:2.7 gmake
 
-PLIST_SUB=	MANDIR=${PREFIX}/man
+PLIST_SUB=	MANDIR=${PREFIX}/share/man
 
 OPTIONS_DEFINE=	TORNADO DOCS
 OPTIONS_DEFAULT=	DOC
@@ -35,10 +35,7 @@ TEST_TARGET=		test
 MAKE_ARGS=	PANDOC="${PANDOC}"
 USE_GITHUB=	yes
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/bup/bup/*.so
-	test -z ${DOCS} || ${GZIP_CMD} ${STAGEDIR}${MANDIRS}/man1/bup*.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

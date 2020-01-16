@@ -61,7 +61,7 @@ do-install:
 	${LN} -sf 7z ${STAGEDIR}${PREFIX}/bin/7zr
 
 	(cd ${WRKSRC}/man1 && \
-		${INSTALL_MAN} 7z*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1)
+		${INSTALL_MAN} 7z*.1 ${STAGEDIR}${PREFIX}/share/man/man1)
 
 do-install-DOCS-on:
 	(cd ${WRKSRC}/DOC && \

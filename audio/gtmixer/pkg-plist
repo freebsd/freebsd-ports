@@ -1,5 +1,5 @@
 bin/gtmixer
-man/man1/gtmixer.1.gz
+share/man/man1/gtmixer.1.gz
 %%DATADIR%%/icons/tray/1.png
 %%DATADIR%%/icons/tray/2.png
 %%DATADIR%%/icons/tray/273.png

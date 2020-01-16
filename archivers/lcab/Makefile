@@ -15,7 +15,7 @@ LICENSE=	GPLv2+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
-PLIST_FILES=	bin/lcab man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/lcab share/man/man1/${PORTNAME}.1.gz
 
 pre-build:
 	@${REINPLACE_CMD} -e 's|1.0b11|1.0b12|' ${WRKSRC}/mytypes.h
@@ -25,6 +25,6 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

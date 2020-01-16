@@ -20,7 +20,7 @@ USE_GNOME=	gtk20
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gtmixer
 	${CP} -r ${WRKSRC}/icons ${STAGEDIR}${PREFIX}/share/gtmixer/
-	${INSTALL_MAN} ${WRKSRC}/gtmixer.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/gtmixer.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

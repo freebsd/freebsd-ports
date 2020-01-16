@@ -23,10 +23,10 @@ LIB_DEPENDS=	libargtable2.so:devel/argtable \
 USES=		gmake localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeremysalwen
-PLIST_FILES=	bin/lv2file man/man1/lv2file.1.gz
+PLIST_FILES=	bin/lv2file share/man/man1/lv2file.1.gz
 
 post-install:
-		${INSTALL_MAN} ${WRKSRC}/debian/lv2file.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+		${INSTALL_MAN} ${WRKSRC}/debian/lv2file.1 ${STAGEDIR}${PREFIX}/share/man/man1
 		@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lv2file
 
 .include <bsd.port.mk>
