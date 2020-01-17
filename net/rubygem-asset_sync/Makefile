@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asset_sync
-PORTVERSION=	2.8.2
+PORTVERSION=	2.9.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
