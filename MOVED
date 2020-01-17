@@ -10805,7 +10805,6 @@ math/surf||2018-12-21|Has expired: Uses obsolete glib12
 math/msieve||2018-12-21|Has expired: Broken for more than 6 months
 math/octave-forge-fl-core||2018-12-21|Has expired: Broken for more than 6 months
 math/octave-forge-pdb||2018-12-21|Has expired: Broken for more than 6 months
-math/octave-forge-audio||2018-12-21|Has expired: Broken for more than 6 months
 math/geg||2018-12-21|Has expired: Uses obsolete glib12
 x11/gdkxft||2018-12-21|Has expired: Uses obsolete glib12
 x11/gtk-theme-switch||2018-12-21|Has expired: Uses obsolete glib12
