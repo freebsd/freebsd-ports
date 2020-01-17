@@ -100,6 +100,7 @@ lib/saga/libstatistics_kriging.so
 lib/saga/libstatistics_points.so
 lib/saga/libstatistics_regression.so
 lib/saga/libta_channels.so
+lib/saga/libta_cliffmetrics.so
 lib/saga/libta_compound.so
 lib/saga/libta_hydrology.so
 lib/saga/libta_lighting.so
@@ -134,7 +135,7 @@ share/pixmaps/saga.png
 @mode 0666
 %%DATADIR%%/helper/make_arcsaga_toolboxes.bat
 %%DATADIR%%/helper/make_python_api.bat
-%%DATADIR%%/helper/make_python_api_x64.bat
+%%DATADIR%%/helper/make_python_api_all.bat
 %%DATADIR%%/helper/make_saga_release.bat
 %%DATADIR%%/helper/make_saga_snapshot.bat
 %%DATADIR%%/helper/make_tools_interface.bat
@@ -149,6 +150,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/python/examples/06_xyz2shp.py
 %%DATADIR%%/python/examples/07_grid_tpi.py
 %%DATADIR%%/python/examples/saga_helper.py
+%%DATADIR%%/python/examples/test_all.bat
 %%DATADIR%%/python/helpers/print_version.py
 %%DATADIR%%/python/helpers/saga_cmd_param_interface/environment.py
 %%DATADIR%%/python/helpers/saga_cmd_param_interface/param_interface.py
@@ -168,23 +170,18 @@ share/pixmaps/saga.png
 %%DATADIR%%/saga.ger.txt
 %%DATADIR%%/saga.lng.txt
 %%DATADIR%%/saga.png
+%%DATADIR%%/saga.rus.txt
 %%DATADIR%%/saga_prj.dic
 %%DATADIR%%/saga_prj.srs
 %%DATADIR%%/saga_tip.txt
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/Makefile
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/Makefile.am
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/TLB_Interface.cpp
-%%DATADIR%%/templates/template4saga-tools/my_tool_library/TLB_Interface.h
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool.cpp
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool.h
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool_library.cbp
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool_library.layout
-%%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool_library_link2bin.vcxproj
-%%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool_library_link2bin.vcxproj.filters
-%%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool_library_link2src.vcxproj
-%%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool_library_link2src.vcxproj.filters
-%%DATADIR%%/templates/template4saga-tools/my_tools_link2bin.vc14.sln
-%%DATADIR%%/templates/template4saga-tools/my_tools_link2src.vc14.sln
+%%DATADIR%%/templates/template4saga-tools/my_tools.vc14.sln
 %%DATADIR%%/templates/template4saga-tools/readme.txt
 %%DATADIR%%/toolchains/climate.xml
 %%DATADIR%%/toolchains/cluster_terrain.xml
@@ -211,6 +208,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/toolchains/shapes_select_delete.xml
 %%DATADIR%%/toolchains/sieve_and_clump.xml
 %%DATADIR%%/toolchains/ta_flow_accumulation.xml
+%%DATADIR%%/toolchains/ta_ls_factor.xml
 %%DATADIR%%/toolchains/ta_summits.xml
 %%DATADIR%%/toolchains/temperature_downscaling.xml
 %%DATADIR%%/toolchains/temperature_downscaling_bulk.xml
