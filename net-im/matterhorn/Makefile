@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	matterhorn
-PORTVERSION=	50200.5.0
+PORTVERSION=	50200.6.0
 CATEGORIES=	net-im
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -73,7 +73,7 @@ USE_CABAL=	aeson-1.4.5.0 \
 		hxt-regex-xmlschema-9.2.0.3_1 \
 		hxt-unicode-9.0.2.4 \
 		integer-logarithms-1.0.3_1 \
-		mattermost-api-50200.2.0 \
+		mattermost-api-50200.3.0 \
 		megaparsec-7.0.5 \
 		memory-0.15.0_1 \
 		microlens-0.4.10_1 \
@@ -132,7 +132,7 @@ USE_CABAL=	aeson-1.4.5.0 \
 		uuid-1.3.13_3 \
 		uuid-types-1.0.3_2 \
 		vector-0.12.0.3_2 \
-		vty-5.25.1 \
+		vty-5.26 \
 		websockets-0.12.5.3 \
 		word-wrap-0.4.1_1 \
 		x509-1.7.5_1 \
