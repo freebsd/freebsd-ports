@@ -2,6 +2,7 @@
 
 PORTNAME=	glow
 DISTVERSION=	g20200115
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 PKGNAMESUFFIX=	-nn-compiler
 
@@ -10,6 +11,8 @@ COMMENT=	Machine learning compiler and execution engine
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	non-constant-expression cannot be narrowed from type 'dim_t', see https://github.com/pytorch/glow/issues/4024
 
 LIB_DEPENDS=	libLLVM-${LLVM_VER:R}.so:devel/llvm${LLVM_VER:S/.//} \
 		libglog.so:devel/glog \
@@ -32,7 +35,7 @@ CMAKE_OFF=	GLOW_BUILD_EXAMPLES GLOW_BUILD_TESTS
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
-LLVM_VER=	8.0
+LLVM_VER=	${LLVM_DEFAULT:C/(.)(.)/\1.\2/}
 
 do-install: # https://github.com/pytorch/glow/issues/3461
 		cd ${WRKSRC} && ${COPYTREE_SHARE} include ${STAGEDIR}${PREFIX}
