@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	igbinary
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	converters
 
 MAINTAINER=	sunpoet@FreeBSD.org
