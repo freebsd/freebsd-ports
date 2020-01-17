@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-DISTVERSION=	4.2.0
-PORTREVISION=	1
+DISTVERSION=	4.2.1
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
@@ -69,7 +68,7 @@ GEOIP_VARS=		MODULES+=geoip
 
 LUABACKEND_VARS=	MODULES+=lua2
 
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit-openresty
 LUAJIT_USES_OFF=	lua
 LUAJIT_CONFIGURE_ON=	--with-lua=luajit
 
@@ -126,7 +125,7 @@ LIB_DEPENDS+=		libdecaf.so:security/libdecaf \
 
 post-install::
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${STAGEDIR}${LOCALBASE}/sbin/pdns_server --module-dir=${STAGEDIR}${LOCALBASE}/lib/pdns --launch="pipe bind ${MODULES}" --config > ${STAGEDIR}${EXAMPLESDIR}/pdns.conf
+	@${STAGEDIR}${PREFIX}/sbin/pdns_server --module-dir=${STAGEDIR}${PREFIX}/lib/pdns --launch="pipe bind ${MODULES}" --config > ${STAGEDIR}${EXAMPLESDIR}/pdns.conf
 	@${REINPLACE_CMD} -e 's;${STAGEDIR};;' -i '' ${STAGEDIR}${EXAMPLESDIR}/pdns.conf
 
 .include <bsd.port.post.mk>
