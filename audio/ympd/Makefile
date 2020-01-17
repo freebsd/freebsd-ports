@@ -20,6 +20,6 @@ GH_ACCOUNT=	notandy
 USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} \
-		share/man/man1/${PORTNAME}.1
+		share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>
