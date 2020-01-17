@@ -18,4 +18,4 @@ share/applications/qtel.desktop
 %%DATADIR%%/translations/qtel_fr.qm
 %%DATADIR%%/sounds/connect.raw
 share/icons/link.xpm
-man/man1/qtel.1.gz
+share/man/man1/qtel.1.gz
