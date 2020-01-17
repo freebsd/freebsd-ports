@@ -1,0 +1,122 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: recorderd
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable:
+# recorderd_enable (bool)         Set to "NO" by default.
+#                                 Set it to "YES" to enable recorderd
+# recorderd_options (str)         Set to "" by default
+# recorderd_user (str)            Set to "%%RECORDERD_USER%%" by default.
+# recorderd_group (str)           Set to "%%RECORDERD_GROUP%%" by default.
+# recorderd_config_file (str)     Set to "%%PREFIX%%/etc/${name}.conf" by default.
+# recorderd_data_dir (str)        Set to "%%RECORDERD_DATA%%" by default.
+# recorderd_run_dir (str)         Set to "%%RECORDERD_RUN%%" by default.
+# recorderd_syslog_enable (bool)  Set to "NO" by default.
+#                                 Set it to "YES" to enable syslog stdout/stderr
+# recorderdlimits_enable (bool)   Set to "NO" by default.
+#                                 Set it to "YES" to enable recorderdlimits
+# recorderdlimits_args (str)      Set to "-e -U ${recorderd_user}" by default
+
+. /etc/rc.subr
+
+name="recorderd"
+rcvar=recorderd_enable
+
+load_rc_config ${name}
+
+: ${recorderd_enable:="NO"}
+: ${recorderd_options:=""}
+: ${recorderd_user:="%%RECORDERD_USER%%"}
+: ${recorderd_group:="%%RECORDERD_GROUP%%"}
+: ${recorderd_config_file:="%%PREFIX%%/etc/${name}.conf"}
+: ${recorderd_data_dir:="%%RECORDERD_DATA%%"}
+: ${recorderd_run_dir:="%%RECORDERD_RUN%%"}
+: ${recorderd_syslog_enable:="NO"}
+
+: ${recorderdlimits_enable:="NO"}
+: ${recorderdlimits_args:="-e -U ${recorderd_user}"}
+
+start_precmd="${name}_precmd"
+restart_precmd="${name}_checkconfig"
+stop_postcmd="${name}_poststop"
+keygen_cmd="${name}_keygen"
+keygen_precmd="${name}_checkconfig"
+
+extra_commands='keygen'
+
+pidfile="${recorderd_run_dir}/${name}.pid"
+
+# recorderd creates it own PID file so need to remove  if stale
+lock_file="${recorderd_data_dir}/${name}.pid"
+
+required_files="${recorderd_config_file}"
+
+_recorderd_program="%%PREFIX%%/sbin/recorderd"
+_recorderd_arguments="--quiet --config-file=${recorderd_config_file} ${recorderd_options}"
+
+command="/usr/sbin/daemon"
+command_args="-f"
+checkyesno recorderd_syslog_enable && command_args="-S -T recorderd"
+command_args="${command_args} -P ${pidfile} -R 60 -- ${_recorderd_program} ${_recorderd_arguments}"
+#procname=${_recorderd_program} # do not override procname as program runs under daemon
+
+
+recorderd_checkdirs()
+{
+  local dir
+  for dir in "${recorderd_data_dir}" "${recorderd_run_dir}"
+  do
+    [ -d "${dir}" ] || install -d -o "${recorderd_user}" -g "${recorderd_group}" -m 770 "${dir}"
+  done
+  cd "${recorderd_data_dir}"
+}
+
+recorderd_checkconfig()
+{
+  recorderd_checkdirs
+
+  #echo "Performing sanity check on recorderd configuration:"
+  #eval ${command} ${recorderd_flags} -t
+}
+
+recorderd_precmd()
+{
+  recorderd_checkconfig
+
+  if [ -e "${lock_file}" ]
+  then
+    pid=$(check_pidfile "${lock_file}" "${_recorderd_program}")
+    if [ -n "${pid}" ]
+    then
+      echo "another recorderd is running on pid: ${pid}"
+    else
+      rm -f "${lock_file}"
+    fi
+  fi
+
+  if checkyesno recorderdlimits_enable
+  then
+    eval $(/usr/bin/limits ${recorderdlimits_args}) 2>/dev/null
+  else
+    return 0
+  fi
+}
+
+recorderd_poststop()
+{
+    rm -f "${pidfile}"
+    rm -f "${lock_file}"
+}
+
+recorderd_keygen()
+{
+  for c in generate-identity
+  do
+    su -m "${recorderd_user}" -c "${_recorderd_program} ${_recorderd_arguments} ${c} ${recorderd_data_dir}"
+  done
+}
+
+run_rc_command "$1"
