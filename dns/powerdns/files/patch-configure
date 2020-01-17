@@ -1,6 +1,6 @@
---- configure.orig	2019-03-22 11:48:09 UTC
+--- configure.orig	2019-11-29 19:23:06 UTC
 +++ configure
-@@ -18170,8 +18170,10 @@ fi
+@@ -19757,8 +19757,10 @@ fi
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking for openssl/crypto.h in $ssldir" >&5
  $as_echo_n "checking for openssl/crypto.h in $ssldir... " >&6; }
              if test -f "$ssldir/include/openssl/crypto.h"; then
