@@ -1,0 +1,16 @@
+The perp package provides a set of daemons and utilities to reliably start,
+monitor, log, and control a collection of persistent processes.
+
+A "persistent process" is any program intended to be long-running, highly
+available, and purpose critical. Also known and often described as a "service",
+a persistent process normally provides some essential, on-demand system
+service. Programs that serve email, domain name queries, and http requests are
+all examples of services that are normally run as persistent processes.
+
+These are the programs that you want to start at system boot, and to continue
+running for as long as the system itself. These are the programs you need
+running in uninterrupted service, day and night, forever and ever.
+
+perp helps make sure that they do.
+
+WWW: http://b0llix.net/perp/
