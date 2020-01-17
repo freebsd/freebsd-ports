@@ -10,8 +10,6 @@ MASTER_SITES=	ftp://ftp.suse.com/pub/projects/deltarpm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that generates delta RPMs
 
-BROKEN=		unfetchable
-
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	librpm.so:archivers/rpm4
