@@ -18,6 +18,9 @@ DOS2UNIX_GLOB=	*.cpp
 
 PLIST_FILES=	bin/muscle
 
+post-patch:
+	${MV} ${WRKSRC}/subfams.cpp ${WRKSRC}/subfams.cpp.not_to_be_compiled
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/muscle ${STAGEDIR}${PREFIX}/bin
 
