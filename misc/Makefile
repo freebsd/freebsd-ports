@@ -31,6 +31,7 @@
     SUBDIR += bottlerocket
     SUBDIR += box2d
     SUBDIR += boxes
+    SUBDIR += broot
     SUBDIR += brs
     SUBDIR += bsod
     SUBDIR += buffer
