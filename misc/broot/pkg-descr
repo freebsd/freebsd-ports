@@ -1,0 +1,6 @@
+Feature-rich terminal file manager written in rust
+which allows: filtering, searching, viewing and
+manipulation of files and directories - and much
+much more.
+
+WWW: https://dystroy.org/broot/
