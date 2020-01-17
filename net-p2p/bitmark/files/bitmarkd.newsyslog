@@ -1,0 +1,2 @@
+# bitmarkd syslog rotation
+/var/lib/bitmarkd/log/bitmarkd.syslog	root:wheel	644	7	1000	*	CJ

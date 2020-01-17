@@ -817,8 +817,8 @@ ebusd:*:854:854::0:0:eBUS Daemon user:/nonexistent:/usr/sbin/nologin
 # free: 869
 # free: 870
 archiva:*:871:871::0:0:Apache Archiva Daemon:/nonexistent:/usr/sbin/nologin
-# free: 872
-# free: 873
+bitmark:*:872:872::0:0:Bitmark Property System:/var/lib/bitmarkd:/usr/sbin/nologin
+bitmark-recorder:*:873:873::0:0:Bitmark Property Recorder:/var/lib/recorderd:/usr/sbin/nologin
 # free: 874
 # free: 875
 # free: 876

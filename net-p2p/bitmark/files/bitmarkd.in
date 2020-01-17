@@ -1,0 +1,158 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: bitmarkd
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable:
+# bitmarkd_enable (bool)          Set to "NO" by default.
+#                                 Set it to "YES" to enable bitmarkd
+# bitmarkd_options (str)          Set to "" by default
+# bitmarkd_user (str)             Set to "%%BITMARKD_USER%%" by default.
+# bitmarkd_group (str)            Set to "%%BITMARKD_GROUP%%" by default.
+# bitmarkd_config_file (str)      Set to "%%PREFIX%%/etc/${name}.conf" by default.
+# bitmarkd_data_dir (str)         Set to "%%BITMARKD_DATA%%" by default.
+# bitmarkd_run_dir (str)          Set to "%%BITMARKD_RUN%%" by default.
+# bitmarkd_syslog_enable (bool)   Set to "NO" by default.
+#                                 Set it to "YES" to enable syslog stdout/stderr
+# bitmarkd_ec2_ipv4_enable (bool) Set to NO by default.
+#                                 Set it to"YES" to fetch EC2 public IPv4.
+# bitmarkd_ec2_url (str)
+#   Set to "http://169.254.169.254/2016-09-02/meta-data/public-ipv4" by default.
+#   Expects this to return just the IPv4 address.
+# bitmarkd_ec2_cmd (str)          Set to "fetch -q -o -" by default.
+# bitmarkdlimits_enable (bool)    Set to "NO" by default.
+#                                 Set it to "YES" to enable bitmarkdlimits
+# bitmarkdlimits_args (str)       Set to "-e -U ${bitmarkd_user}" by default
+
+. /etc/rc.subr
+
+name="bitmarkd"
+rcvar=bitmarkd_enable
+
+load_rc_config ${name}
+
+: ${bitmarkd_enable:="NO"}
+: ${bitmarkd_options:=""}
+: ${bitmarkd_user:="%%BITMARKD_USER%%"}
+: ${bitmarkd_group:="%%BITMARKD_GROUP%%"}
+: ${bitmarkd_config_file:="%%PREFIX%%/etc/${name}.conf"}
+: ${bitmarkd_data_dir:="%%BITMARKD_DATA%%"}
+: ${bitmarkd_run_dir:="%%BITMARKD_RUN%%"}
+: ${bitmarkd_syslog_enable:="NO"}
+
+: ${bitmarkd_ec2_ipv4_enable:="NO"}
+: ${bitmarkd_ec2_url:="http://169.254.169.254/2016-09-02/meta-data/public-ipv4"}
+: ${bitmarkd_ec2_cmd:="fetch -q -o -"}
+
+: ${bitmarkdlimits_enable:="NO"}
+: ${bitmarkdlimits_args:="-e -U ${bitmarkd_user}"}
+
+start_precmd="${name}_precmd"
+restart_precmd="${name}_checkconfig"
+stop_postcmd="${name}_poststop"
+keygen_cmd="${name}_keygen"
+keygen_precmd="${name}_checkconfig"
+dns_cmd="${name}_dns"
+dns_precmd="${name}_checkconfig"
+clearcache_cmd="${name}_clearcache"
+clearcache_precmd="${name}_precmd"
+
+extra_commands='keygen dns clearcache'
+
+pidfile="${bitmarkd_run_dir}/${name}.pid"
+
+# bitmarkd creates its own PID file so need to remove if stale
+lock_file="${bitmarkd_data_dir}/${name}.pid"
+
+required_files="${bitmarkd_config_file}"
+
+_bitmarkd_program="%%PREFIX%%/sbin/bitmarkd"
+_bitmarkd_arguments="--quiet --config-file=${bitmarkd_config_file} ${bitmarkd_options}"
+
+command="/usr/sbin/daemon"
+command_args="-f"
+checkyesno bitmarkd_syslog_enable && command_args="-S -T bitmarkd"
+command_args="${command_args} -P ${pidfile} -R 60 -- ${_bitmarkd_program} ${_bitmarkd_arguments}"
+#procname=${_bitmarkd_program} # do not override procname as program runs under daemon
+
+# list of items for keygen
+generate_list='gen-peer-identity gen-proof-identity gen-rpc-cert'
+
+
+bitmarkd_checkdirs()
+{
+  local dir
+  for dir in "${bitmarkd_data_dir}" "${bitmarkd_run_dir}"
+  do
+    [ -d "${dir}" ] || install -d -o "${bitmarkd_user}" -g "${bitmarkd_group}" -m 770 "${dir}"
+  done
+  cd "${bitmarkd_data_dir}"
+}
+
+bitmarkd_checkconfig()
+{
+  bitmarkd_checkdirs
+
+  #echo "Performing sanity check on bitmarkd configuration:"
+  #eval ${command} ${bitmarkd_flags} -t
+
+  # set environment for bitmarkd to access the currently assigned EC2 public IPv4
+  if checkyesno bitmarkd_ec2_ipv4_enable
+  then
+    PUBLIC_IPV4=$(${bitmarkd_ec2_cmd} "${bitmarkd_ec2_url}")
+    export PUBLIC_IPV4
+  fi
+}
+
+bitmarkd_precmd()
+{
+  bitmarkd_checkconfig
+
+  pid=$(check_pidfile "${pidfile}" "${command}")
+  if [ -n "${pid}" ]
+  then
+    echo "another bitmarkd is running on pid: ${pid}"
+    return 1
+  else
+    rm -f "${pidfile}"
+  fi
+
+  if checkyesno bitmarkdlimits_enable
+  then
+    eval $(/usr/bin/limits ${bitmarkdlimits_args}) 2>/dev/null
+  else
+    return 0
+  fi
+}
+
+bitmarkd_poststop()
+{
+    rm -f "${pidfile}"
+    rm -f "${lock_file}"
+}
+
+bitmarkd_keygen()
+{
+  for c in ${generate_list}
+  do
+    su -m "${bitmarkd_user}" -c "${_bitmarkd_program} ${_bitmarkd_arguments} ${c} ${bitmarkd_data_dir}"
+  done
+}
+
+bitmarkd_dns()
+{
+  su -m "${bitmarkd_user}" -c "${_bitmarkd_program} ${_bitmarkd_arguments} dns-txt"
+}
+
+bitmarkd_clearcache()
+{
+  local file
+  for file in "${bitmarkd_data_dir}/"*.cache
+  do
+    [ -f "${file}" ] && rm "${file}"
+  done
+}
+
+run_rc_command "$1"
