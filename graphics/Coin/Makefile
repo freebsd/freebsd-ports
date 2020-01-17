@@ -2,20 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	Coin
-PORTVERSION=	3.1.3
-PORTREVISION=	12
+PORTVERSION=	4.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	C++ 3D graphics library based on the Open Inventor 2.1 API
+MAINTAINER=	cmt@FreeBSD.org
+COMMENT=	C++ 3D graphics library based on the Open Inventor API
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
+LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 LIB_DEPENDS=	libsimage.so:graphics/simage
 
 USES=		gl openal:al libtool pathfix xorg
+
+USE_GITHUB=     yes
+GH_ACCOUNT=	coin3d
+GH_PROJECT=	coin
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
+
 USE_GL=		gl
 USE_XORG=	ice sm x11 xext xt
 GNU_CONFIGURE=	yes

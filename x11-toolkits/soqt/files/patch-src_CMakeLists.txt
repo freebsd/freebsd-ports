@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2020-01-15 22:43:40 UTC
++++ src/CMakeLists.txt
+@@ -149,7 +149,7 @@ if(NOT SO${GUI}_BUILD_MAC_FRAMEWORK)
+   target_include_directories(${PROJECT_NAME} INTERFACE $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+ endif()
+ 
+-target_link_libraries(${PROJECT_NAME} PUBLIC Coin::Coin ${SOQT_QT_TARGETS} ${OPENGL_LIBRARIES})
++target_link_libraries(${PROJECT_NAME} PUBLIC Coin ${SOQT_QT_TARGETS} ${OPENGL_LIBRARIES})
+ 
+ if(X11_FOUND)
+   target_include_directories(${PROJECT_NAME} PUBLIC ${X11_INCLUDE_DIR})

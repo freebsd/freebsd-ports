@@ -1,12 +1,11 @@
 Coin3D
 
-Coin is a 3D graphics library with a C++ Application Programming
-Interface based on the Open Inventor 2.1 API.  Open Inventor, for those
-who are not familiar with it, is an OpenGL-based, retain-mode, 3D model
-scene-graph rendering and interaction library, which has become the de
-facto standard graphics library for 3D visualization and visual
-simulation software in the scientific and engineering community.
+Coin3D is a high-level, retained-mode toolkit for effective 3D graphics
+development.  It is API compatible with Open Inventor 2.1.
 
-New versions are published under the BSD 3-clause license.
+Open Inventor, for those who are not familiar with it, is an OpenGL-based,
+retain-mode, 3D model scene-graph rendering and interaction library, which
+has become the de-facto standard graphics library for 3D visualization and
+visual simulation software in the scientific and engineering community.
 
-WWW: https://bitbucket.org/Coin3D/coin/wiki/Home
+WWW: https://github.com/coin3d
