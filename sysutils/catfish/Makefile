@@ -21,7 +21,7 @@ BUILD_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext-tools gnome python:3.4+ tar:bz2
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils noflavors
 USE_GNOME=	gtk30 intltool pygobject3
 
 NO_ARCH=	yes
