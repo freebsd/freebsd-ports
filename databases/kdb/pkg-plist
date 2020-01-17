@@ -134,7 +134,7 @@ lib/libKDb3.so.4.2.0
 %%MYSQL%%%%QT_PLUGINDIR%%/kdb3/kdb_mysqldriver.so
 %%PGSQL%%%%QT_PLUGINDIR%%/kdb3/kdb_postgresqldriver.so
 %%SQLITE%%%%QT_PLUGINDIR%%/kdb3/kdb_sqlitedriver.so
-%%QT_PLUGINDIR%%/kdb3/sqlite3/kdb_sqlite_icu.so
+%%SQLITE%%%%QT_PLUGINDIR%%/kdb3/sqlite3/kdb_sqlite_icu.so
 libdata/pkgconfig/KDb3.pc
 %%MYSQL%%share/locale/ast/LC_MESSAGES/kdb_mysqldriver_qt.qm
 %%PGSQL%%share/locale/ast/LC_MESSAGES/kdb_postgresqldriver_qt.qm
