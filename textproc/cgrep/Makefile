@@ -32,4 +32,6 @@ USE_CABAL=	StateVar-1.1.1.1 aeson-1.4.2.0 ansi-terminal-0.9 async-2.2.1_1 \
 		uuid-types-1.0.3 vector-0.12.0.2 vector-algorithms-0.8.0.1 \
 		yaml-0.11.0.0
 
+CONFLICTS_INSTALL=	codesearch
+
 .include <bsd.port.mk>
