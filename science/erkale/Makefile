@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erkale
-DISTVERSION=	g20191120
+DISTVERSION=	g20200110
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +29,7 @@ serial_PKGNAMESUFFIX=	-serial
 USES=		cmake:noninja fortran pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	susilehtola
-GH_TAGNAME=	2afb257548dbd8246aac921d0d9dce7ecb744a6f
+GH_TAGNAME=	0d0c895b0d9bcbcb523e7d7c3a11f590d18827d2
 USE_LDCONFIG=	yes
 
 TEST_TARGET=	test
