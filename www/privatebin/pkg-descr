@@ -1,20 +1,20 @@
-PrivateBin is a minimalist, open source online pastebin where the server 
+PrivateBin is a minimalist, open source online pastebin where the server
 has zero knowledge of pasted data.
 
-Data is encrypted/decrypted in the browser using 256bit AES in Galois 
+Data is encrypted/decrypted in the browser using 256bit AES in Galois
 Counter mode.
 
-This is a fork of ZeroBin, originally developed by Sebastien Sauvage. 
-It was refactored to allow easier and cleaner extensions and has now much 
-more features than the original. It is however still fully compatible to 
-the original ZeroBin 0.19 data storage scheme. Therefore such installations 
+This is a fork of ZeroBin, originally developed by Sebastien Sauvage.
+It was refactored to allow easier and cleaner extensions and has now much
+more features than the original. It is however still fully compatible to
+the original ZeroBin 0.19 data storage scheme. Therefore such installations
 can be upgraded to this fork without losing any data.
 
 Since the Javascript code that performs the encryption must be protected
 during transmission, access to PrivateBin must only be possible over
 HTTPS (e.g. enforced by use of HSTS and/or HPKP).
 
-See https://github.com/PrivateBin/PrivateBin/wiki/Configuration for 
+See https://github.com/PrivateBin/PrivateBin/wiki/Configuration for
 configuration options available in "cfg/conf.php".
 
 WWW: https://privatebin.info/

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	privatebin
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	www security
 
 MAINTAINER=	se@FreeBSD.org
@@ -11,10 +11,11 @@ COMMENT=	Simple end-to-end encrypting zero-knowledge paste-bin server
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+USES=		php
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USES=		php
 USE_PHP=	gd hash json wddx zlib
 USE_GITHUB=	yes
 GH_PROJECT=	PrivateBin
