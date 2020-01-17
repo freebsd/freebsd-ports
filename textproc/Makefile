@@ -92,6 +92,7 @@
     SUBDIR += cmark
     SUBDIR += coccigrep
     SUBDIR += code2html
+    SUBDIR += codesearch
     SUBDIR += codespell
     SUBDIR += colordiff
     SUBDIR += confetti
