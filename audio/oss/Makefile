@@ -3,7 +3,7 @@
 
 PORTNAME=	oss
 DISTVERSION=	4.2-build2019
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
@@ -22,12 +22,6 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		gnome tar:bzip2 kmod pkgconfig
 USE_GNOME=	gtk20 cairo gdkpixbuf2
 USE_RC_SUBR=	oss
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} > 1300067
-BROKEN=	Still uses removed timeout interface and needs updating
-.endif
 
 HAS_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
