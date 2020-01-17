@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-statici18n
-PORTVERSION=	1.8.3
+PORTVERSION=	1.9.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=0:www/py-django111@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-appconf>=0.6:www/py-django-appconf@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}django-appconf>=0.6:www/py-django-appconf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
