@@ -2,9 +2,9 @@
 
 PORTNAME=	victor-mono
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://rubjo.github.io/${PORTNAME}/
+MASTER_SITES=	https://github.com/rubjo/victor-mono/raw/${DISTVERSIONFULL}/public/
 PKGNAMESUFFIX=	-ttf
 DISTNAME=	VictorMonoAll
 
