@@ -3,16 +3,21 @@
 # $FreeBSD$
 #
 # PROVIDE: xdm
-# REQUIRE: LOGIN moused
+# REQUIRE: LOGIN
 # KEYWORD: nojail shutdown
 #
 # Add the following line to /etc/rc.conf to enable xdm:
 # xdm_enable="YES"
 #
+# Optionally, you can set the vty that it appears on
+# (only useful in the unlikely event that you already have
+#  them allocated in /etc/ttys)
+# xdm_tty=ttyv8
+#
 # Alternatively, edit /etc/ttys and change the line below
-#   ttyv8   "/usr/X11R6/bin/xdm -nodaemon"  xterm   off secure
+#   ttyv8   "%%PREFIX%%/bin/xdm -nodaemon"  xterm   off secure
 # to this:
-#   ttyv8   "/usr/X11R6/bin/xdm -nodaemon"  xterm   on secure
+#   ttyv8   "%%PREFIX%%/bin/xdm -nodaemon"  xterm   on secure
 
 . /etc/rc.subr
 
@@ -23,8 +28,17 @@ desc="X.org X display manager"
 load_rc_config $name
 
 : ${xdm_enable:=NO}
+: ${xdm_tty:=ttyv8}
 
 command=%%PREFIX%%/bin/$name
 pidfile=/var/run/$name.pid
+start_precmd=xdm_set_vty
+
+xdm_set_vty()
+{
+	# X views vt as starting at 01, not ttyv0
+	vtarg=`printf vt%02d $((${xdm_tty#ttyv} + 1))`
+	command_args="-server \":0 local %%PREFIX%%/bin/X :0 $vtarg\""
+}
 
 run_rc_command $1
