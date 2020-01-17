@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django_compressor
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,9 @@ COMMENT=	Compresses linked and inline JavaScript/CSS into a single cached file
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}versiontools>=1.8.2:devel/py-versiontools@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-appconf>=0.4:www/py-django-appconf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rcssmin>=0:archivers/py-rcssmin@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rjsmin>=0:archivers/py-rjsmin@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-appconf>=1.0.2:www/py-django-appconf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rcssmin>=1.0.6:archivers/py-rcssmin@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rjsmin>=1.1.0:archivers/py-rjsmin@${PY_FLAVOR}
 
 USES=		python${PY_SLIMIT}
 USE_PYTHON=	autoplist distutils
