@@ -5,6 +5,4 @@ with a C++ Application Programming Interface. Coin uses scene-graph data
 structures to render real-time graphics suitable for mostly all kinds of
 scientific and engineering visualization applications.
 
-This is a forked version provided by the FreeCAD project.
-
-WWW: https://pypi.org/project/Pivy/
+WWW: https://github.com/coin3d/pivy

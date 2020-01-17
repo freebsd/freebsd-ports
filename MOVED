@@ -11923,7 +11923,6 @@ x11-toolkits/qt4-gui||2019-03-16|Has expired: Qt4 has been EOL since december 20
 x11-toolkits/qt4pas||2019-03-16|Has expired: Qt4 has been EOL since december 2015
 x11-toolkits/qwt5||2019-03-16|Has expired: Qt4 has been EOL since december 2015
 x11-toolkits/qwt5-designerplugin||2019-03-16|Has expired: Qt4 has been EOL since december 2015
-x11-toolkits/soqt||2019-03-16|Has expired: Qt4 has been EOL since december 2015
 x11-wm/qlwm||2019-03-16|Has expired: Qt4 has been EOL since december 2015
 audio/dream||2019-03-16|Has expired: Qt4 has been EOL since december 2015
 audio/liblastfm||2019-03-16|Has expired: Qt4 has been EOL since december 2015
@@ -11937,7 +11936,6 @@ graphics/iccexamin||2019-03-16|Has expired: Qt4 has been EOL since december 2015
 graphics/openfx-io||2019-03-16|Has expired: Qt4 has been EOL since december 2015
 security/yubikey-piv-manager||2019-03-16|Has expired: Qt4 has been EOL since december 2015
 textproc/xxdiff-scripts||2019-03-16|Has expired: Qt4 has been EOL since december 2015
-graphics/py-pivy||2019-03-16|Has expired: Qt4 has been EOL since december 2015
 security/pinentry-qt4||2019-03-17|Has expired: Qt4 has been EOL since december 2015
 www/libsocialweb||2019-03-23|Project was archived upstream
 www/vimb-gtk2|www/vimb|2019-03-24|Merged into www/vimb
@@ -13750,3 +13748,5 @@ net-mgmt/flow-extract||2020-01-14|Has expired: marked BROKEN for more than 6 mon
 textproc/pootle||2020-01-14|Has expired: Unamaintained, marked BROKEN for more than 5 months
 cad/elmerfem|science/elmerfem|2020-01-15|Move to a proper category
 graphics/bugle|devel/apitrace|2020-01-15|Has expired: no longer actively developed; use devel/apitrace instead
+x11-toolkits/soqt-devel|x11-toolkits/soqt|2020-01-17|This is now the stable version
+graphics/py-pivy-devel|graphics/py-pivy|2020-01-17|This is now the stable version

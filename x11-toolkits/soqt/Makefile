@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	SoQt
-PORTVERSION=	1.6.0a
-PORTREVISION=	1
-PKGNAMESUFFIX=	-devel
-DISTNAME=	soqt_${PORTVERSION}
+PORTVERSION=	1.6.0
+PORTEPOCH=		1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	https://github.com/FreeCAD/pivy/releases/download/0.6.4/
-DIST_SUBDIR=	KDE
+# cannot use GITHUB - submodules required
+MASTER_SITES=	https://bitbucket.org/Coin3D/soqt/downloads/
+DISTNAME=	soqt-${PORTVERSION}-src
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Qt5-fork of the SoQt toolkit library for Coin
@@ -17,10 +16,8 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libCoin.so:graphics/Coin
 
-CONFLICTS_INSTALL=	SoQt
-
 USES=		cmake compiler:c++11-lang dos2unix gl libtool \
-		localbase:ldflags pathfix pkgconfig qmake:no_env qt:5 xorg
+		localbase:ldflags pathfix pkgconfig qmake:no_env qt:5 xorg zip
 USE_QT=		buildtools core gui opengl qmake widgets
 USE_GL=		gl
 USE_XORG=	ice sm x11 xext xi
