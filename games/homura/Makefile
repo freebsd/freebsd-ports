@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	homura
-PORTVERSION=	3.3
+PORTVERSION=	3.4.1
 CATEGORIES=	games
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -22,8 +22,7 @@ RUN_DEPENDS=	zenity:x11/zenity \
 		webfonts>=0:x11-fonts/webfonts \
 		winetricks:emulators/winetricks \
 		vulkaninfo:devel/vulkan-tools \
-		glxinfo:graphics/mesa-demos \
-		noto>=0:x11-fonts/noto
+		glxinfo:graphics/mesa-demos
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	the-homura-project
