@@ -233,8 +233,8 @@ MODSECURITY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
 MODSECURITY_VARS=		WRKSRC_modsecurity=${WRKDIR}/modsecurity-${MODSECURITY_VERSION}
 MODSECURITY_CONFIGURE_ON=	--add-module=${WRKDIR}/modsecurity-${MODSECURITY_VERSION}/nginx/modsecurity
 
-MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
-MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:71ede63:modsec
+MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3-nginx
+MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:v1.0.1:modsec
 MODSECURITY3_CONFIGURE_ON=	--add-module=${WRKSRC_modsec}
 
 NAXSI_NGINX_VER=	0.56
