@@ -10,6 +10,8 @@ COMMENT=	Assembly By Short Sequences: parallel, paired-end sequence assembler
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	result of comparison of constant 18446744073709551615 with expression of type 'size_t', see https://github.com/bcgsc/abyss/issues/310
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:devel/boost-libs \
 		ghc:lang/ghc \
 		pandoc:textproc/hs-pandoc # pandoc is required just for one man page: abyss-sealer
