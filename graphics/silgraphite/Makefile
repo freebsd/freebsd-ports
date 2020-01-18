@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Font engine for complex non-Roman writing systems
 
+# /usr/include/c++/v1/type_traits:3699:9: error: no matching constructor for initialization of 'gr3ooo::Segment'
+BROKEN_FreeBSD_13=	no matching constructor for initialization of 'gr3ooo::Segment'
+
 LICENSE=	CPL05 LGPL21+
 LICENSE_COMB=	dual
 LICENSE_FILE_CPL05=	${WRKSRC}/license/License_CPLv05.txt
