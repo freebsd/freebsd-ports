@@ -1,0 +1,4 @@
+This filter performs a SenderScore lookup and allows OpenSMTPD to either
+block or slow down a session based on the reputation of the source IP address.
+
+WWW: https://github.com/poolpOrg/filter-senderscore
