@@ -10,6 +10,8 @@ COMMENT=	Library for analyzing the results produced by ABINIT
 
 LICENSE=	GPLv2
 
+BROKEN=		missing build depends
+
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}apscheduler>=2.1.0:devel/py-apscheduler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html2text>0:textproc/py-html2text@${PY_FLAVOR} \
