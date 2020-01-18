@@ -11,6 +11,8 @@ COMMENT=	Implementation of homomorphic encryption
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	no matching function for call to 'assertEq', see https://github.com/homenc/HElib/issues/342
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libntl.so:math/ntl
 
