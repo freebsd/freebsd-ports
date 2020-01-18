@@ -10,6 +10,8 @@ COMMENT=	Library for counting the number of integer points in polytopes
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libglpk.so:math/glpk \
 		libgmp.so:math/gmp \
 		libisl.so:devel/isl \
