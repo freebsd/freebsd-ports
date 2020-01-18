@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	RCurl
-DISTVERSION=	1.95-4.12
-PORTREVISION=	1
+DISTVERSION=	1.95-4.13
 CATEGORIES=	ftp
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	General network client interface for R
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD2CLAUSE
 
 CRAN_DEPENDS=	R-cran-bitops>0:devel/R-cran-bitops
 BUILD_DEPENDS=	curl-config:ftp/curl \
