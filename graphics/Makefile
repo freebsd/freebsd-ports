@@ -952,6 +952,7 @@
     SUBDIR += rubygem-rsvg2
     SUBDIR += rubygem-ruby-graphviz
     SUBDIR += rubygem-scruffy
+    SUBDIR += rx
     SUBDIR += s10sh
     SUBDIR += s2tc
     SUBDIR += sage
