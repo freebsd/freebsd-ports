@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymatgen
-DISTVERSION=	2019.2.28
-PORTREVISION=	1
+DISTVERSION=	2019.10.16
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}monty>=0.9.6:devel/py-monty@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}networkx>=2.1:math/py-networkx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}palettable>=2.1.1:misc/py-palettable@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}monty>=3.0.2:devel/py-monty@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}networkx>=2.2:math/py-networkx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}palettable>=3.1.1:misc/py-palettable@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydispatcher>=2.0.5:devel/py-pydispatcher@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
