@@ -5,7 +5,7 @@ PORTNAME=	pdftk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.9
 CATEGORIES=	print java
-MASTER_SITES=	http://repo.maven.apache.org/maven2/:bcprov
+MASTER_SITES=	https://repo.maven.apache.org/maven2/:bcprov
 DISTFILES=	${_BCPROV_JAR}:bcprov
 
 MAINTAINER=	tobik@FreeBSD.org
