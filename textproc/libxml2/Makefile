@@ -21,7 +21,7 @@ LICENSE_FILE_TRIO=	${FILESDIR}/LICENSE.TRIO
 LICENSE_PERMS_TRIO=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
-USES=		compiler cpe iconv libtool pathfix pkgconfig shebangfix
+USES+=		compiler cpe iconv libtool pathfix pkgconfig shebangfix
 CPE_VENDOR=	xmlsoft
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-iconv=${ICONV_PREFIX} \
