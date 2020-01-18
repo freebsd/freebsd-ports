@@ -1,0 +1,9 @@
+[
+{
+	message: <<EOM
+This module is still in development and may not be fully stable. Use at own
+risk.
+EOM
+	type: install
+}
+]

@@ -1,0 +1,12 @@
+Python based Zabbix API utility containing helper functions and CLI
+capabilities.
+
+Takes inspiration from existing Python-Zabbix API modules like
+lukecyca/pyzabbix and adubkov/py-zabbix.
+
+While this module can be used in a similar way, the aim is to add a few out of
+the box helper functions and CLI handling for a more "batteries included"
+module. For example GraphImage as described in usage which enables saving
+Zabbix graphs which is not possible via the API at this time.
+
+WWW: https://pypi.org/project/pybix/
