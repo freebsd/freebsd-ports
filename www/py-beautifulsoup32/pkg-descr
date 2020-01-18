@@ -9,4 +9,4 @@ locally well-formed, you can use this library to find and process the
 well-formed part of it. The BeautifulSoup class has heuristics for
 obtaining a sensible parse tree in the face of common HTML errors.
 
-WWW: http://www.crummy.com/software/BeautifulSoup/
+WWW: https://www.crummy.com/software/BeautifulSoup/
