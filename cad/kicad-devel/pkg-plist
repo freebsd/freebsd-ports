@@ -176,7 +176,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.kicad_pcb
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.pro
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.sch
-%%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/DB9FC.kicad_mod
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/FSUPCMS.kicad_mod
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/JACK_ALIM.kicad_mod
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/SM1206POL.kicad_mod
