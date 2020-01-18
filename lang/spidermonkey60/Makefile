@@ -52,6 +52,11 @@ CONFIGURE_ENV=	HOST_CC=${CC} HOST_CXX=${CXX}
 CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
 .endif
 
+.if ${ARCH} == i386
+# ld: error: undefined symbol: __atomic_load
+USE_GCC=	9+
+.endif
+
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/libjs_static.ajs
 	${LN} -fs libmozjs-${SP_VER}.so ${STAGEDIR}${PREFIX}/lib/libmozjs-${SP_VER}.so.1
