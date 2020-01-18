@@ -1,0 +1,22 @@
+Re-apply type annotations from .pyi stubs to your codebase.
+
+It's smart enough to do the following:
+- reapply typing imports
+- reapply function argument annotations
+- reapply function return value annotations
+- reapply method argument and return value annotations
+- reapply function-level variable annotations
+- reapply module-level name annotations
+- reapply module-level type aliases
+- reapply class-level field annotations
+- reapply instance-level field annotations
+- validate existing source annotations against the .pyi file
+- validate source function signatures against the .pyi file
+- read function signature type comments in .pyi files
+- read variable type comments in .pyi files
+- consider existing source type comments as annotations
+- remove duplicate type comments from source when annotations are applied
+- normalize remaining type comments in the source to annotations; this is done
+  even if the corresponding .pyi file is missing
+
+WWW: https://github.com/ambv/retype
