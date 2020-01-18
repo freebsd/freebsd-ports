@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	privatebin
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	www security
 
 MAINTAINER=	se@FreeBSD.org

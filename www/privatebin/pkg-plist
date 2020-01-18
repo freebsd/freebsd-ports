@@ -4,7 +4,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY.md
-
 %%WWWDIR%%/.htaccess.disabled
 %%WWWDIR%%/browserconfig.xml
 %%WWWDIR%%/cfg/.htaccess
@@ -40,6 +39,7 @@
 %%WWWDIR%%/i18n/pt.json
 %%WWWDIR%%/i18n/ru.json
 %%WWWDIR%%/i18n/sl.json
+%%WWWDIR%%/i18n/uk.json
 %%WWWDIR%%/i18n/zh.json
 %%WWWDIR%%/img/android-chrome-192x192.png
 %%WWWDIR%%/img/android-chrome-512x512.png
@@ -50,6 +50,7 @@
 %%WWWDIR%%/img/favicon.ico
 %%WWWDIR%%/img/icon.svg
 %%WWWDIR%%/img/icon_clone.png
+%%WWWDIR%%/img/icon_email.png
 %%WWWDIR%%/img/icon_new.png
 %%WWWDIR%%/img/icon_qr.png
 %%WWWDIR%%/img/icon_raw.png
@@ -65,7 +66,7 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/index.php.bak
 %%WWWDIR%%/index.php.orig
-%%WWWDIR%%/js/base-x-3.0.5.1.js
+%%WWWDIR%%/js/base-x-3.0.7.js
 %%WWWDIR%%/js/base64-1.7.js
 %%WWWDIR%%/js/bootstrap-3.3.7.js
 %%WWWDIR%%/js/comment.jsonld
@@ -78,7 +79,7 @@
 %%WWWDIR%%/js/pastemeta.jsonld
 %%WWWDIR%%/js/prettify.js
 %%WWWDIR%%/js/privatebin.js
-%%WWWDIR%%/js/purify-2.0.1.js
+%%WWWDIR%%/js/purify-2.0.7.js
 %%WWWDIR%%/js/rawinflate-0.3.js
 %%WWWDIR%%/js/showdown-1.9.1.js
 %%WWWDIR%%/js/types.jsonld
