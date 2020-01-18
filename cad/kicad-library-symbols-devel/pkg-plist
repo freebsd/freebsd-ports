@@ -36,6 +36,8 @@
 %%DATADIR%%/library/Battery_Management.lib
 %%DATADIR%%/library/CPLD_Altera.dcm
 %%DATADIR%%/library/CPLD_Altera.lib
+%%DATADIR%%/library/CPLD_Microchip.dcm
+%%DATADIR%%/library/CPLD_Microchip.lib
 %%DATADIR%%/library/CPLD_Xilinx.dcm
 %%DATADIR%%/library/CPLD_Xilinx.lib
 %%DATADIR%%/library/CPU.dcm
@@ -186,6 +188,8 @@
 %%DATADIR%%/library/MCU_Microchip_PIC24.lib
 %%DATADIR%%/library/MCU_Microchip_PIC32.dcm
 %%DATADIR%%/library/MCU_Microchip_PIC32.lib
+%%DATADIR%%/library/MCU_Microchip_SAMA.dcm
+%%DATADIR%%/library/MCU_Microchip_SAMA.lib
 %%DATADIR%%/library/MCU_Microchip_SAMD.dcm
 %%DATADIR%%/library/MCU_Microchip_SAMD.lib
 %%DATADIR%%/library/MCU_Microchip_SAME.dcm
