@@ -12,6 +12,7 @@ COMMENT=	Fast and simple 4D image viewer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	googletest>0:devel/googletest # error: unable to find library -lGTest::GTest, see https://github.com/open-vv/vv/issues/74
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		libgdcmCommon.so:devel/gdcm \
