@@ -1,0 +1,7 @@
+This is an actively maintained fork of Chris (defunkt) Wanstrath's gem colored
+(textproc/rubygem-colord), which appears to be no longer supported.
+
+This fork comes with a slightly spruced up syntax, some additional features,
+and a test suite written in RSpec.
+
+WWW: http://rubygems.org/gems/colored2
