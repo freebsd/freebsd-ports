@@ -13750,3 +13750,4 @@ cad/elmerfem|science/elmerfem|2020-01-15|Move to a proper category
 graphics/bugle|devel/apitrace|2020-01-15|Has expired: no longer actively developed; use devel/apitrace instead
 x11-toolkits/soqt-devel|x11-toolkits/soqt|2020-01-17|This is now the stable version
 graphics/py-pivy-devel|graphics/py-pivy|2020-01-17|This is now the stable version
+net/py-coherence||2020-01-18|Missing dependencies
