@@ -11,6 +11,8 @@ COMMENT=	OpenZFS kernel module for FreeBSD
 
 LICENSE=	CDDL
 
+BROKEN=		fails to build
+
 USES=		kmod
 USE_GITHUB=	yes
 GH_ACCOUNT=	zfsonfreebsd
