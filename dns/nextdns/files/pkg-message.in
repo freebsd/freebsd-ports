@@ -1,0 +1,20 @@
+[
+{
+  type: install
+  message: <<EOM
+To configure NextDNS, run the following command as root:
+
+    nextdns install -config <your_conf_id>
+
+By default, nextdns listen on localhost only. To setup on a server,
+add the -listen :53 option in order to listen on all interfaces.
+
+Go on https://nextdns.io to create a custom configuration ID.
+
+Then setup your DNS manually to 127.0.0.1 or by running as root:
+
+    nextdns activate
+
+EOM
+}
+]

@@ -109,6 +109,7 @@
     SUBDIR += mydns
     SUBDIR += mydns-ng
     SUBDIR += namesilo_ddns
+    SUBDIR += nextdns
     SUBDIR += noip
     SUBDIR += nsd
     SUBDIR += nsec3walker
