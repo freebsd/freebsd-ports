@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ x"$2" != x"DEINSTALL" ]; then
+    exit 0
+fi
+
+${PKG_PREFIX}/nextdns uninstall >/dev/null 2>/dev/null
+rm -f ${PKG_PREFIX}/etc/nextdns.conf
+
+exit 0
