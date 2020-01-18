@@ -6,6 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	0d033c074b63.patch:-p1 # https://github.com/intel/libva-utils/pull/185
 PATCHFILES+=	4aeb5254a191.patch:-p1 # https://github.com/intel/libva-utils/pull/183
 PATCHFILES+=	520ea5582c9a.patch:-p1 # https://github.com/intel/libva-utils/pull/184
 PATCHFILES+=	24a87768547a.patch:-p1 # https://github.com/intel/libva-utils/pull/184
