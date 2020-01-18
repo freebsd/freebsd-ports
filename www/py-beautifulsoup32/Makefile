@@ -13,8 +13,11 @@ DISTNAME=	BeautifulSoup-${PORTVERSION}
 MAINTAINER=	mwm@mired.org
 COMMENT=	HTML/XML Parser for Python
 
+LICENSE=	BSD3CLAUSE
+
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
+NO_ARCH=	yes
 
 CONFLICTS=	py[0-9]*-beautifulsoup-3.0.*
 
