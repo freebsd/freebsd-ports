@@ -1,0 +1,4 @@
+This filter implements the Rspamd protocol and allows OpenSMTPD to request an
+Rspamd analysis of an SMTP transaction before a message is committed to queue.
+
+WWW: https://github.com/poolpOrg/filter-rspamd
