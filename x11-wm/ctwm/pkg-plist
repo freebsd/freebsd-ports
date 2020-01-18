@@ -1,5 +1,5 @@
 bin/ctwm
-man/man1/ctwm.1.gz
+share/man/man1/ctwm.1.gz
 %%DATADIR%%/images/3D_Expand15.xpm
 %%DATADIR%%/images/3D_Iconify15.xpm
 %%DATADIR%%/images/3D_Lightning15.xpm
