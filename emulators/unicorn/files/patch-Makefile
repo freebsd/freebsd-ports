@@ -1,7 +1,7 @@
---- Makefile.orig	2017-04-20 06:14:24 UTC
+--- Makefile.orig	2019-10-08 02:44:50 UTC
 +++ Makefile
-@@ -72,9 +72,9 @@ V ?= 0
- MACOS_UNIVERSAL ?= yes
+@@ -75,9 +75,9 @@ V ?= 0
+ MACOS_UNIVERSAL ?= no
  
  ifeq ($(UNICORN_DEBUG),yes)
 -CFLAGS += -g
@@ -12,7 +12,7 @@
  UNICORN_QEMU_FLAGS += --disable-debug-info
  endif
  
-@@ -181,7 +181,7 @@ LIBDIRARCH ?= lib
+@@ -195,7 +195,7 @@ LIBDIRARCH ?= lib
  # Or better, pass 'LIBDIRARCH=lib64' to 'make install/uninstall' via 'make.sh'.
  #LIBDIRARCH ?= lib64
  

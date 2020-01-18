@@ -2,6 +2,7 @@ include/unicorn/arm.h
 include/unicorn/arm64.h
 include/unicorn/m68k.h
 include/unicorn/mips.h
+include/unicorn/platform.h
 include/unicorn/sparc.h
 include/unicorn/unicorn.h
 include/unicorn/x86.h
