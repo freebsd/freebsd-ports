@@ -2,6 +2,7 @@
 
 PORTNAME=	caffeine-ng
 DISTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	x11 python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +30,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR} \
 
 USES=		desktop-file-utils gettext-tools gnome python:3.3+
 USE_GNOME=	gdkpixbuf2 gtk30 pygobject3
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
