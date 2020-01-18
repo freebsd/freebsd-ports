@@ -13751,3 +13751,4 @@ graphics/bugle|devel/apitrace|2020-01-15|Has expired: no longer actively develop
 x11-toolkits/soqt-devel|x11-toolkits/soqt|2020-01-17|This is now the stable version
 graphics/py-pivy-devel|graphics/py-pivy|2020-01-17|This is now the stable version
 net/py-coherence||2020-01-18|Missing dependencies
+net/py-upnp-inspector||2020-01-18|Missing dependencies
