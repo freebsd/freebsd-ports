@@ -284,6 +284,7 @@
     SUBDIR += opensmtpd-extras-table-redis
     SUBDIR += opensmtpd-extras-table-socketmap
     SUBDIR += opensmtpd-extras-table-sqlite
+    SUBDIR += opensmtpd-filter-rspamd
     SUBDIR += openwebmail
     SUBDIR += osbf-lua
     SUBDIR += ovs
