@@ -5073,6 +5073,7 @@
     SUBDIR += py-strategies
     SUBDIR += py-streamparse
     SUBDIR += py-strict-rfc3339
+    SUBDIR += py-stringcase
     SUBDIR += py-structlog
     SUBDIR += py-stsci.distutils
     SUBDIR += py-subprocess32
