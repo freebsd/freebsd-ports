@@ -1,0 +1,5 @@
+MonkeyType collects runtime types of function arguments and return values, and
+can automatically generate stub files or even add draft type annotations
+directly to your Python code based on the types collected at runtime.
+
+WWW: https://github.com/Instagram/MonkeyType
