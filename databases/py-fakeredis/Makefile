@@ -6,7 +6,7 @@ CATEGORIES=	databases
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fake version of databases/py-redis for unit testing
 
 LICENSE=	BSD3CLAUSE

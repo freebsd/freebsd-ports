@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/rene
 PKGNAMEPREFIX=	gettext-
 # Bundled in fedora gettext srpm
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alter gettext po files in special ways
 
 LICENSE=	GPLv2+
