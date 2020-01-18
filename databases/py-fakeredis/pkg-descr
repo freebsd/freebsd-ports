@@ -1,8 +1,7 @@
-fakeredis is a pure python implementation of the redis-py python client that
-simulates talking to a redis server. This was created for a single purpose:
-to write unittests. Setting up redis is not hard, but many times you want to
-write unittests that do not talk to an external server (such as redis). This
-module now allows tests to simply use this module as a reasonable substitute
-for redis.
+fakeredis is a pure Python implementation of the redis-py python client that
+simulates talking to a redis server. This was created for a single purpose: to
+write unittests. Setting up redis is not hard, but many times you want to write
+unittests that do not talk to an external server (such as redis). This module
+now allows tests to simply use this module as a reasonable substitute for redis.
 
 WWW: https://github.com/jamesls/fakeredis
