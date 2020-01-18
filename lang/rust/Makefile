@@ -124,6 +124,7 @@ post-patch:
 # places where they are recorded.
 	@${REINPLACE_CMD} -e 's,^date:.*,date: ${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}},' \
 		-e 's,^rustc:.*,rustc: ${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}},' \
+		-e '/^rustfmt:/d' \
 		-e 's,^cargo:.*,cargo: ${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}},' \
 		${WRKSRC}/src/stage0.txt
 	@${ECHO_MSG} "Bootstrap date and version after patching:"
