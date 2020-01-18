@@ -1,0 +1,5 @@
+Utility to split files into encrypted fragments
+(using the shamir secret sharing scheme) so that
+you don't need to remember a passcode.
+
+WWW: https://github.com/jesseduffield/horcrux
