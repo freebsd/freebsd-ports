@@ -6,22 +6,20 @@ PORTVERSION?=	1.40.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
-		https://static.rust-lang.org/dist/:rust_bootstrap \
-		LOCAL/tobik/rust:rust_bootstrap \
-		https://static.rust-lang.org/dist/:cargo_bootstrap \
-		LOCAL/tobik/rust:cargo_bootstrap \
+		https://static.rust-lang.org/dist/:bootstrap \
+		LOCAL/tobik/rust:bootstrap \
 		https://releases.llvm.org/${COMPILER_RT_VERSION}/:compiler_rt \
 		https://github.com/llvm/llvm-project/releases/download/llvmorg-${COMPILER_RT_VERSION}/:compiler_rt
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
 DISTFILES?=	${NIGHTLY_SUBDIR}${DISTNAME}${EXTRACT_SUFX}:src \
-		${_RUSTC_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:rust_bootstrap \
-		${_RUST_STD_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:rust_bootstrap \
-		${_CARGO_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:cargo_bootstrap \
+		${_RUSTC_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:bootstrap \
+		${_RUST_STD_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:bootstrap \
+		${_CARGO_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:bootstrap \
 		${DISTFILES_${ARCH}}
 DISTFILES_armv6=	compiler-rt-${COMPILER_RT_VERSION}.src.tar.xz:compiler_rt
 DISTFILES_armv7=	compiler-rt-${COMPILER_RT_VERSION}.src.tar.xz:compiler_rt
 DIST_SUBDIR?=	rust
-EXTRACT_ONLY?=	${DISTFILES:N*\:*bootstrap:C/:.*//}
+EXTRACT_ONLY?=	${DISTFILES:N*\:bootstrap:C/:.*//}
 
 MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Language with a focus on memory safety and concurrency
@@ -255,15 +253,12 @@ makesum:
 	${MAKE} -D_RUST_MAKESUM_GUARD makesum ARCH=${ONLY_FOR_ARCHS:O:[1]} DISTINFO_FILE=${DISTINFO_FILE}.tmp
 .for arch in ${ONLY_FOR_ARCHS:O:[2..-1]}
 	${MAKE} -D_RUST_MAKESUM_GUARD makesum PPC_ABI=ELFv1 ARCH=${arch} DISTINFO_FILE=${DISTINFO_FILE}.${arch}
-	${GREP} ${_RUST_ARCH_${arch}:U${arch}} ${DISTINFO_FILE}.${arch} >> ${DISTINFO_FILE}.tmp
-.for file in ${DISTFILES_${arch}}
-	${GREP} ${file:S,:, ,:[1]} ${DISTINFO_FILE}.${arch} >> ${DISTINFO_FILE}.tmp
-.endfor
+	${SED} 1d ${DISTINFO_FILE}.${arch} >> ${DISTINFO_FILE}.tmp
 	${RM} ${DISTINFO_FILE}.${arch}
 .endfor
 .if ${ONLY_FOR_ARCHS:Mpowerpc64}
 	${MAKE} -D_RUST_MAKESUM_GUARD makesum PPC_ABI=ELFv2 ARCH=powerpc64 DISTINFO_FILE=${DISTINFO_FILE}.powerpc64-elfv2
-	${GREP} ${_RUST_ARCH_powerpc64:Upowerpc64} ${DISTINFO_FILE}.powerpc64-elfv2 >> ${DISTINFO_FILE}.tmp
+	${SED} 1d ${DISTINFO_FILE}.powerpc64-elfv2 >> ${DISTINFO_FILE}.tmp
 	${RM} ${DISTINFO_FILE}.powerpc64-elfv2
 .endif
 	${AWK} '!seen[$$0]++' ${DISTINFO_FILE}.tmp > ${DISTINFO_FILE}
