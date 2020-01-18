@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openhab2
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 #PORTREVISION=	3
 CATEGORIES=	misc java
 MASTER_SITES=	https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F${PORTVERSION}/
@@ -63,5 +63,9 @@ do-install:
 .endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/update.freebsd ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/runtime/bin/
 	(cd ${WRKSRC}/userdata && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/${PORTNAME})
+
+gen-plist:
+	${FIND} ${STAGEDIR} -type f | sed -e "s:${STAGEDIR}${PREFIX}/::g" | sort -u | grep libexec/ >pkg-plist.new
+	egrep '^(@|#|%)' pkg-plist >>pkg-plist.new
 
 .include <bsd.port.mk>
