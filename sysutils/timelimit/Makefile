@@ -12,15 +12,15 @@ COMMENT=	Limit the absolute execution time of a process
 
 LICENSE=	BSD2CLAUSE
 
-# bin/timelimit man/man1/timelimit.1.gz
+# bin/timelimit
 CONFLICTS_INSTALL=	netpipes
 
 USES=		tar:xz
 
-PLIST_FILES=	bin/timelimit man/man1/timelimit.1.gz
+PLIST_FILES=	bin/timelimit share/man/man1/timelimit.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/timelimit ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/timelimit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKSRC}/timelimit.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
