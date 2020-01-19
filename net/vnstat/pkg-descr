@@ -1,7 +1,7 @@
-vnStat is a console-based network traffic monitor. It keeps a log of
-hourly, daily and monthly network traffic for the selected interface(s).
-However, it isn't a packet sniffer. The traffic information is analyzed
-from the proc(5) filesystem. That way vnStat can be used even
-without root permissions.
+vnStat is a console-based network traffic monitor for Linux and BSD that keeps a
+log of network traffic for the selected interface(s). It uses the network
+interface statistics provided by the kernel as information source. This means
+that vnStat won't actually be sniffing any traffic and also ensures light use of
+system resources regardless of network traffic rate.
 
-WWW: http://humdi.net/vnstat/
+WWW: https://humdi.net/vnstat/
