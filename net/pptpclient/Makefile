@@ -14,18 +14,19 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5
-USE_RC_SUBR=	pptp
+
 CFLAGS+=	-DUSER_PPP
 MAKE_ARGS=	CC="${CC}" DEBUG="" OPTIMIZE="${CFLAGS}" PPPD=/usr/sbin/ppp
+USE_RC_SUBR=	pptp
 
-PLIST_FILES=	man/man8/pptp.8.gz sbin/pptp
+PLIST_FILES=	share/man/man8/pptp.8.gz sbin/pptp
 PORTEXAMPLES=	README ppp.conf
 
 OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pptp ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/pptp.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/pptp.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
