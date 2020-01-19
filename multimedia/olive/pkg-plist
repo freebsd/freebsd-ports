@@ -20,50 +20,47 @@ share/mime/packages/org.olivevideoeditor.Olive.xml
 %%DATADIR%%/effects/boxblur.xml
 %%DATADIR%%/effects/bulge.frag
 %%DATADIR%%/effects/bulge.xml
+%%DATADIR%%/effects/chromakey.frag
+%%DATADIR%%/effects/chromakey.xml
 %%DATADIR%%/effects/chromaticaberration.frag
 %%DATADIR%%/effects/chromaticaberration.xml
+%%DATADIR%%/effects/colorcorrection.frag
+%%DATADIR%%/effects/colorcorrection.xml
+%%DATADIR%%/effects/colorsel.frag
+%%DATADIR%%/effects/colorsel.xml
+%%DATADIR%%/effects/common.frag
+%%DATADIR%%/effects/common.vert
 %%DATADIR%%/effects/crop.frag
 %%DATADIR%%/effects/crop.xml
+%%DATADIR%%/effects/crossstitch.frag
+%%DATADIR%%/effects/crossstitch.xml
 %%DATADIR%%/effects/despill.frag
 %%DATADIR%%/effects/despill.xml
 %%DATADIR%%/effects/directionalblur.frag
 %%DATADIR%%/effects/directionalblur.xml
+%%DATADIR%%/effects/dropshadow.xml.disabled
+%%DATADIR%%/effects/emboss.frag
+%%DATADIR%%/effects/emboss.xml
+%%DATADIR%%/effects/findedges.frag
+%%DATADIR%%/effects/findedges.xml.disabled
+%%DATADIR%%/effects/fisheye.frag
+%%DATADIR%%/effects/fisheye.xml
 %%DATADIR%%/effects/flip.frag
 %%DATADIR%%/effects/flip.xml
 %%DATADIR%%/effects/gaussianblur.frag
 %%DATADIR%%/effects/gaussianblur.xml
-%%DATADIR%%/effects/need checking/chromakey.frag
-%%DATADIR%%/effects/need checking/chromakey.xml
-%%DATADIR%%/effects/need checking/colorcorrection.frag
-%%DATADIR%%/effects/need checking/colorcorrection.xml
-%%DATADIR%%/effects/need checking/colorsel.frag
-%%DATADIR%%/effects/need checking/colorsel.xml
-%%DATADIR%%/effects/need checking/common.frag
-%%DATADIR%%/effects/need checking/common.vert
-%%DATADIR%%/effects/need checking/crossstitch.frag
-%%DATADIR%%/effects/need checking/crossstitch.xml
-%%DATADIR%%/effects/need checking/emboss.frag
-%%DATADIR%%/effects/need checking/emboss.xml
-%%DATADIR%%/effects/need checking/findedges.frag
-%%DATADIR%%/effects/need checking/findedges.xml.disabled
-%%DATADIR%%/effects/need checking/fisheye.frag
-%%DATADIR%%/effects/need checking/fisheye.xml
-%%DATADIR%%/effects/need checking/huesatbri.frag
-%%DATADIR%%/effects/need checking/huesatbri.xml
-%%DATADIR%%/effects/need checking/invert.frag
-%%DATADIR%%/effects/need checking/invert.xml
-%%DATADIR%%/effects/need checking/lumakey.frag
-%%DATADIR%%/effects/need checking/lumakey.xml
-%%DATADIR%%/effects/need checking/posterize.frag
-%%DATADIR%%/effects/need checking/posterize.xml
-%%DATADIR%%/effects/need checking/toonify.frag
-%%DATADIR%%/effects/need checking/toonify.xml
-%%DATADIR%%/effects/need checking/volumetriclight.frag
-%%DATADIR%%/effects/need checking/volumetriclight.xml
+%%DATADIR%%/effects/huesatbri.frag
+%%DATADIR%%/effects/huesatbri.xml
+%%DATADIR%%/effects/invert.frag
+%%DATADIR%%/effects/invert.xml
+%%DATADIR%%/effects/lumakey.frag
+%%DATADIR%%/effects/lumakey.xml
 %%DATADIR%%/effects/noise.frag
 %%DATADIR%%/effects/noise.xml
 %%DATADIR%%/effects/pixelate.frag
 %%DATADIR%%/effects/pixelate.xml
+%%DATADIR%%/effects/posterize.frag
+%%DATADIR%%/effects/posterize.xml
 %%DATADIR%%/effects/radialblur.frag
 %%DATADIR%%/effects/radialblur.xml
 %%DATADIR%%/effects/ripple.frag
@@ -74,7 +71,11 @@ share/mime/packages/org.olivevideoeditor.Olive.xml
 %%DATADIR%%/effects/swirl.xml
 %%DATADIR%%/effects/tile.frag
 %%DATADIR%%/effects/tile.xml
+%%DATADIR%%/effects/toonify.frag
+%%DATADIR%%/effects/toonify.xml
 %%DATADIR%%/effects/vignette.frag
 %%DATADIR%%/effects/vignette.xml
+%%DATADIR%%/effects/volumetriclight.frag
+%%DATADIR%%/effects/volumetriclight.xml
 %%DATADIR%%/effects/wave.frag
 %%DATADIR%%/effects/wave.xml
