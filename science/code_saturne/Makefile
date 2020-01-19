@@ -4,6 +4,7 @@
 PORTNAME=	code_saturne
 PORTVERSION=	6.0.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	science parallel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -15,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo	\
 		libcgns.so:science/cgnslib	\
 		libhdf5.so:science/hdf5		\
-		libomp.so:devel/openmp		\
 		libmedC.so:french/med
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}	\
 		xmgrace:math/grace	\
@@ -73,6 +73,11 @@ TERM?=		vt100	# Default value needed for tput in jail or tinderbox
 # /libsaturne.so:
 # undefined reference to `__atomic_compare_exchange'
 CONFIGURE_ARGS+=	--disable-openmp
+.endif
+
+.if ${OPSYS} == FreeBSD && ((${OSREL:R} == 12 && ${OSVERSION} < 1200506)	\
+			|| (${OSREL:R} == 11 && ${OSVERSION} < 346296))
+BROKEN=	at least openmp 8.0.0 final release is needed
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
