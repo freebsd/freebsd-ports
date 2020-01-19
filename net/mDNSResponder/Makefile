@@ -22,7 +22,7 @@ USES=		cpe gmake
 ALL_TARGET=	all dnsextd
 BUILD_WRKSRC=	${WRKSRC}/mDNSPosix
 INSTALL_WRKSRC=	${WRKSRC}/mDNSPosix
-MAKE_ARGS=	LDCONFIG=${TRUE} LOCALBASE=${PREFIX} MAN_PATH=${MANPREFIX}/man STRIP=${STRIP_CMD} os=freebsd
+MAKE_ARGS=	LDCONFIG=${TRUE} LOCALBASE=${PREFIX} MAN_PATH=${PREFIX}/share/man STRIP=${STRIP_CMD} os=freebsd
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	mdnsd mdnsresponderposix
@@ -45,8 +45,8 @@ post-patch-IPV6-off:
 
 post-install:
 	cd ${WRKSRC}/mDNSPosix/build/prod/ && ${INSTALL_PROGRAM} ${EXTRA_BIN} ${STAGEDIR}${PREFIX}/bin/
-	cd ${WRKSRC}/mDNSShared/ && ${INSTALL_MAN} ${EXTRA_MAN1} ${STAGEDIR}${PREFIX}/man/man1/
-	cd ${WRKSRC}/mDNSShared/ && ${INSTALL_MAN} ${EXTRA_MAN8} ${STAGEDIR}${PREFIX}/man/man8/
+	cd ${WRKSRC}/mDNSShared/ && ${INSTALL_MAN} ${EXTRA_MAN1} ${STAGEDIR}${PREFIX}/share/man/man1/
+	cd ${WRKSRC}/mDNSShared/ && ${INSTALL_MAN} ${EXTRA_MAN8} ${STAGEDIR}${PREFIX}/share/man/man8/
 	cd ${WRKSRC}/mDNSPosix/build/prod/ && ${INSTALL_PROGRAM} ${EXTRA_SBIN} ${STAGEDIR}${PREFIX}/sbin/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dns-sd
 
