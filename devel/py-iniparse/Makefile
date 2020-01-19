@@ -8,19 +8,20 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Better INI parser for Python
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Accessing and Modifying INI files
+
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
+
+PORTDOCS=	Changelog README
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		python
-USE_PYTHON=	distutils autoplist
-
-PORTDOCS=	Changelog README
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
