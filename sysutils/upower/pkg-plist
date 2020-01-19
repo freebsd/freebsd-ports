@@ -1,6 +1,5 @@
 bin/upower
 etc/UPower/UPower.conf
-etc/dbus-1/system.d/org.freedesktop.UPower.conf
 include/libupower-glib/up-autocleanups.h
 include/libupower-glib/up-client.h
 include/libupower-glib/up-device.h
@@ -25,6 +24,7 @@ share/dbus-1/interfaces/org.freedesktop.UPower.Device.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.KbdBacklight.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.Wakeups.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.xml
+share/dbus-1/system.d/org.freedesktop.UPower.conf
 share/dbus-1/system-services/org.freedesktop.UPower.service
 share/gir-1.0/UPowerGlib-1.0.gir
 share/locale/fr/LC_MESSAGES/upower.mo
