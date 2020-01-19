@@ -1,0 +1,8 @@
+bin/findorule
+%%SITE_PERL%%/File/Find/Object/Rule.pm
+%%SITE_PERL%%/File/Find/Object/Rule/Extending.pod
+%%SITE_PERL%%/File/Find/Object/Rule/Procedural.pod
+%%PERL5_MAN1%%/findorule.1.gz
+%%PERL5_MAN3%%/File::Find::Object::Rule.3.gz
+%%PERL5_MAN3%%/File::Find::Object::Rule::Extending.3.gz
+%%PERL5_MAN3%%/File::Find::Object::Rule::Procedural.3.gz
