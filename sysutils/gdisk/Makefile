@@ -40,11 +40,11 @@ UTF16_LIB_DEPENDS=	libicuuc.so:devel/icu
 do-install:
 .for i in fixparts gdisk sgdisk
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${i}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${i}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 .endfor
 
 do-install-CGDISK-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/cgdisk ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/cgdisk.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/cgdisk.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 sbin/fixparts
 sbin/gdisk
 sbin/sgdisk
-%%CGDISK%%man/man8/cgdisk.8.gz
-man/man8/fixparts.8.gz
-man/man8/gdisk.8.gz
-man/man8/sgdisk.8.gz
+%%CGDISK%%share/man/man8/cgdisk.8.gz
+share/man/man8/fixparts.8.gz
+share/man/man8/gdisk.8.gz
+share/man/man8/sgdisk.8.gz
