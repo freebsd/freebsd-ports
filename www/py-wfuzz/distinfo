@@ -1,3 +1,3 @@
-TIMESTAMP = 1560622330
-SHA256 (wfuzz-2.4.tar.gz) = 6845c0ce80cb2831ceec4b7e6a9df7904f050ee1c2ba80f64fbc6faf887f1b6b
-SIZE (wfuzz-2.4.tar.gz) = 100038
+TIMESTAMP = 1579424825
+SHA256 (wfuzz-2.4.4.tar.gz) = d14c1ab184fc7d1ecbfc01bd3ec91a9f3bc6a7307287077661279468acdaf1a1
+SIZE (wfuzz-2.4.4.tar.gz) = 100734
