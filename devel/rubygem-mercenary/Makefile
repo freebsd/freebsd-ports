@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mercenary
-PORTVERSION=	0.3.6
+PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,6 +17,6 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-SHEBANG_FILES=	script/console script/examples
+SHEBANG_FILES=	script/console script/examples script/fmt
 
 .include <bsd.port.mk>
