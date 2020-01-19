@@ -11,10 +11,11 @@ COMMENT=	View and edit files in hexadecimal or ASCII
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
 USES=		autoreconf ncurses
 
-PLIST_FILES=	bin/hexedit man/man1/hexedit.1.gz
+GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/hexedit share/man/man1/hexedit.1.gz
 
 GH_ACCOUNT=	pixel
 USE_GITHUB=	yes
@@ -24,6 +25,6 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
