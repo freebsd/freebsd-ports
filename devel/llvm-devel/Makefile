@@ -70,7 +70,7 @@ GH_TAGNAME=	${LLVM_PROJECT_COMMIT}
 
 .include "Makefile.snapshot"
 
-OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD LLDB ELFV2
+OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD LLDB
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
 OPTIONS_DEFAULT=	CLANG EXTRAS LIT LLD LLDB
@@ -121,8 +121,6 @@ OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
-ELFV2_DESC=		[PowerPC64] Use OpenPOWER ELF ABI v2 by default
-ELFV2_EXTRA_PATCHES=	${PATCHDIR}/ppc64-elfv2
 
 PLIST_SUB+=	LLVM_MAJOR=${LLVM_MAJOR} \
 		LLVM_RELEASE=${LLVM_RELEASE}
@@ -197,12 +195,6 @@ EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}|${EX
 
 .include <bsd.port.options.mk>
 
-# PPC_ABI variable is only defined after including bsd.port.options.mk
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
-OPTIONS_DEFAULT_powerpc64=      ELFV2
-.endif
-
-
 # keep in sync with /usr/src/lib/clang/clang.build.mk 
 # ----------- start of sync block ------------------
 # Armv6 and armv7 uses hard float abi, unless the CPUTYPE has soft in it.
@@ -235,7 +227,7 @@ USES+=	gnome
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
 LLVM_ENABLE_PROJECTS+=	compiler-rt
-COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/fuzzer)
+COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/fuzzer|profile\/InstrProfData.inc)
 .endif
 
 .if ${PORT_OPTIONS:MEXTRAS}
