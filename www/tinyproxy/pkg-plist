@@ -1,7 +1,7 @@
 @sample etc/tinyproxy.conf.sample
-man/man5/tinyproxy.conf.5.gz
-man/man8/tinyproxy.8.gz
 sbin/tinyproxy
 %%DATADIR%%/debug.html
 %%DATADIR%%/default.html
 %%DATADIR%%/stats.html
+share/man/man5/tinyproxy.conf.5.gz
+share/man/man8/tinyproxy.8.gz

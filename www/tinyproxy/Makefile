@@ -40,7 +40,7 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/tinyproxy.conf ${STAGEDIR}${PREFIX}/etc/tinyproxy.conf.sample
-	${INSTALL_MAN} ${FILESDIR}/tinyproxy.conf.5 ${STAGEDIR}${PREFIX}/man/man5/
-	${INSTALL_MAN} ${FILESDIR}/tinyproxy.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${FILESDIR}/tinyproxy.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5/
+	${INSTALL_MAN} ${FILESDIR}/tinyproxy.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 .include <bsd.port.mk>
