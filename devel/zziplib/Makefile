@@ -4,7 +4,7 @@
 PORTNAME=	zziplib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.69
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,12 +17,11 @@ LICENSE_FILE_MPL11=	${WRKSRC}/docs/COPYING.MPL
 
 BUILD_DEPENDS=	zip:archivers/zip
 
-USES=		libtool pathfix pkgconfig python:2.7,build shebangfix
+USES=		libtool pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	gdraheim
 GH_PROJECT=	zziplib
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	docs/*.py
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--srcdir=${WRKSRC}
