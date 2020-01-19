@@ -7,9 +7,9 @@ bin/mDNSResponderPosix
 include/dns_sd.h
 lib/libdns_sd.so
 lib/libdns_sd.so.1
-man/man1/dns-sd.1.gz
-man/man8/dnsextd.8.gz
-man/man8/mDNSResponderPosix.8.gz
-man/man8/mdnsd.8.gz
 sbin/dnsextd
 sbin/mdnsd
+share/man/man1/dns-sd.1.gz
+share/man/man8/dnsextd.8.gz
+share/man/man8/mDNSResponderPosix.8.gz
+share/man/man8/mdnsd.8.gz
