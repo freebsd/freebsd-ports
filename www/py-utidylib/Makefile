@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to tidy-lib
 
 LICENSE=	MIT
@@ -23,6 +23,8 @@ LIB_DEPENDS=	libtidy.so:www/tidy-lib
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \
