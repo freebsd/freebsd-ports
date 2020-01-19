@@ -16,6 +16,6 @@ LIB_DEPENDS=	libid3.so:audio/id3lib
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/id3v2 \
-		man/man1/id3v2.1.gz
+		share/man/man1/id3v2.1.gz
 
 .include <bsd.port.mk>
