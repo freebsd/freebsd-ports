@@ -23,7 +23,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/pdfoutline \
-		man/man1/pdfoutline.1.gz
+		share/man/man1/pdfoutline.1.gz
 
 GH_ACCOUNT=	eugmes
 GH_PROJECT=	fntsample
@@ -37,6 +37,6 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pdfoutline ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/pdfoutline.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/pdfoutline.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
