@@ -20,7 +20,7 @@ LIBS+=		-ljasper -ljpeg -llcms2 -lm
 USES=		jpeg localbase tar:xz
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 do-build:
 	@cd ${WRKSRC}/ && ${CC} -o ${PORTNAME} ${CPPFLAGS} ${CFLAGS} \
@@ -28,7 +28,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 # maintainer section:
 
