@@ -5,15 +5,12 @@ PORTNAME=	CNS11643-font
 PORTVERSION=	98.1
 PORTREVISION=	6
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	http://www.cns11643.gov.tw/AIDB/file.do?path=download/%E5%AD%97%E5%9E%8B%E4%B8%8B%E8%BC%89%601q%60%E5%85%A8%E5%AD%97%E5%BA%AB%E6%AD%A3%E6%A5%B7%E9%AB%94/name/:kai \
-		http://www.cns11643.gov.tw/AIDB/file.do?path=download/%E5%AD%97%E5%9E%8B%E4%B8%8B%E8%BC%89%601q%60%E5%85%A8%E5%AD%97%E5%BA%AB%E6%AD%A3%E5%AE%8B%E9%AB%94/name/:sung
-DISTFILES=	TW-Kai-98_1.ttf:kai TW-Sung-98_1.ttf:sung
+MASTER_SITES=	https://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/CNS11643-font/
+DISTFILES=	TW-Kai-98_1.ttf TW-Sung-98_1.ttf
 EXTRACT_ONLY=
 
 MAINTAINER=	lhd@cs.nctu.edu.tw
 COMMENT=	Combine of Kai and Sung with CNS11643 TrueType Fonts
-
-BROKEN=		unfetchable
 
 LICENSE=	CC_BY-ND_3.0_TW
 LICENSE_NAME=	Creative Commons Attribution-NoDerivs 3.0 Taiwan License
