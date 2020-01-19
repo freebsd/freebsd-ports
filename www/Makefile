@@ -443,6 +443,7 @@
     SUBDIR += nextcloud
     SUBDIR += nextcloud-calendar
     SUBDIR += nextcloud-contacts
+    SUBDIR += nextcloud-deck
     SUBDIR += nextcloud-notes
     SUBDIR += nextcloud-tasks
     SUBDIR += nghttp2
