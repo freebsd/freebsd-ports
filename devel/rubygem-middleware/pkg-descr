@@ -1,0 +1,4 @@
+Middleware is a generalized library for using middleware patterns within your
+Ruby projects.
+
+WWW: https://github.com/mitchellh/middleware
