@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xhtml2pdf
-PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTVERSION=	0.2.4
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,8 +24,5 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|setup_requires=|tests_require=|' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
