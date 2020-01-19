@@ -1,4 +1,4 @@
---- olive.pro.orig	2019-08-28 03:49:22 UTC
+--- olive.pro.orig	2019-11-11 06:05:02 UTC
 +++ olive.pro
 @@ -28,23 +28,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
  #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
@@ -36,7 +36,7 @@
 +#        GITHASHVAR = $$system(sh $$PWD/debian/gitfromlog.sh $$PWD/debian/changelog)
 +#    }
 +#
-+    DEFINES += GITHASH=\\"\"undefined\\"\"
++#    DEFINES += GITHASH=\\"\"$$GITHASHVAR\\"\"
 +#}
  
  CONFIG += c++11
