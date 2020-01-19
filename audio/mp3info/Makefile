@@ -20,7 +20,7 @@ PORTSCOUT=	skipv:0.8.5
 ALL_TARGET=	mp3info
 USES=		ncurses tar:tgz
 
-PLIST_FILES=	bin/mp3info man/man1/mp3info.1.gz
+PLIST_FILES=	bin/mp3info share/man/man1/mp3info.1.gz
 PORTDOCS=	ChangeLog README mp3info.txt
 
 GTK2_ALL_TARGET=	gmp3info
@@ -30,7 +30,7 @@ GTK2_USES=		gnome pkgconfig
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp3info ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/mp3info.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/mp3info.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-install-GTK2-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmp3info ${STAGEDIR}${PREFIX}/bin/
