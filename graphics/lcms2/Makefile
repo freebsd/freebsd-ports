@@ -14,19 +14,20 @@ COMMENT=	Accurate, fast, and small-footprint color management engine
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	DOCS JPEGICC TIFFICC
-OPTIONS_DEFAULT=JPEGICC TIFFICC
-OPTIONS_SUB=	yes
-JPEGICC_DESC=	Build color profile applier for JPEG
-TIFFICC_DESC=	Build color profile applier for TIFF
+USES=		libtool localbase:ldflags pathfix
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		libtool localbase:ldflags pathfix
 
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS JPEGICC TIFFICC
+OPTIONS_DEFAULT=JPEGICC TIFFICC
+OPTIONS_SUB=	yes
+JPEGICC_DESC=	Build color profile applier for JPEG
+TIFFICC_DESC=	Build color profile applier for TIFF
 
 JPEGICC_CONFIGURE_WITH=	jpeg
 JPEGICC_USES=		jpeg
@@ -34,7 +35,7 @@ TIFFICC_CONFIGURE_WITH=	tiff
 TIFFICC_LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 post-install:
-	cd ${WRKSRC}/utils/ && ${INSTALL_MAN} linkicc/linkicc.1 psicc/psicc.1 transicc/transicc.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/utils/linkicc/linkicc.1 ${WRKSRC}/utils/psicc/psicc.1 ${WRKSRC}/utils/transicc/transicc.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
