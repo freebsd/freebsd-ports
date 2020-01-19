@@ -2,7 +2,7 @@
 
 PORTNAME=	octopress
 PORTVERSION=	3.0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-jekyll3>=2.0:www/rubygem-jekyll3 \
-		rubygem-mercenary>=0.3.2<0.4:devel/rubygem-mercenary \
+		rubygem-mercenary>=0.3.2<1:devel/rubygem-mercenary \
 		rubygem-octopress-deploy>=0:net/rubygem-octopress-deploy \
 		rubygem-octopress-escape-code>=2.0<3:textproc/rubygem-octopress-escape-code \
 		rubygem-octopress-hooks>=2.0<3:devel/rubygem-octopress-hooks \
