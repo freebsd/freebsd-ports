@@ -3429,6 +3429,7 @@
     SUBDIR += p5-Test-Time
     SUBDIR += p5-Test-Timer
     SUBDIR += p5-Test-TinyMocker
+    SUBDIR += p5-Test-TrailingSpace
     SUBDIR += p5-Test-Trap
     SUBDIR += p5-Test-UNIXSock
     SUBDIR += p5-Test-Unit
