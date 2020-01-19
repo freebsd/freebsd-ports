@@ -2354,6 +2354,7 @@
     SUBDIR += p5-File-FcntlLock
     SUBDIR += p5-File-Find-Closures
     SUBDIR += p5-File-Find-Object
+    SUBDIR += p5-File-Find-Object-Rule
     SUBDIR += p5-File-Find-Rule
     SUBDIR += p5-File-Find-Rule-Filesys-Virtual
     SUBDIR += p5-File-Find-Rule-Perl
