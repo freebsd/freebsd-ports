@@ -12,6 +12,8 @@ MAINTAINER=	w.schwarzenfeld@utanet.at
 COMMENT=	Simple optical character recognition solution
 
 BROKEN=		unfetchable
+DEPRECATED=	unfetchable, author not reachable, seems discontinued
+EXPIRATION_DATE=	2020-02-15
 
 LICENSE=	GPLv3
 
