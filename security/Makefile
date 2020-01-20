@@ -959,7 +959,7 @@
     SUBDIR += py-pydeep
     SUBDIR += py-pyelliptic
     SUBDIR += py-pylibacl
-    SUBDIR += py-pymacaroons-pynacl
+    SUBDIR += py-pymacaroons
     SUBDIR += py-pynacl
     SUBDIR += py-pyotp
     SUBDIR += py-pyptlib
