@@ -4,12 +4,4 @@ lib/kodi/addons/inputstream.adaptive/inputstream.adaptive.so.%%SOVERSION%%
 lib/kodi/addons/inputstream.adaptive/libssd_wv.so
 share/kodi/addons/inputstream.adaptive/addon.xml
 share/kodi/addons/inputstream.adaptive/changelog.txt
-share/kodi/addons/inputstream.adaptive/resources/language/resource.language.de_de/strings.po
-share/kodi/addons/inputstream.adaptive/resources/language/resource.language.en_gb/strings.po
-share/kodi/addons/inputstream.adaptive/resources/language/resource.language.es_es/strings.po
-share/kodi/addons/inputstream.adaptive/resources/language/resource.language.fr_fr/strings.po
-share/kodi/addons/inputstream.adaptive/resources/language/resource.language.it_it/strings.po
-share/kodi/addons/inputstream.adaptive/resources/language/resource.language.nl_nl/strings.po
-share/kodi/addons/inputstream.adaptive/resources/language/resource.language.ru_ru/strings.po
-share/kodi/addons/inputstream.adaptive/resources/language/resource.language.sv_se/strings.po
 share/kodi/addons/inputstream.adaptive/resources/settings.xml

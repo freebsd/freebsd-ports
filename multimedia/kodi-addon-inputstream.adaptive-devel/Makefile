@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	inputstream.adaptive
-DISTVERSION=	2.5.3
+DISTVERSION=	2.5.4
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	kodi-addon-
 PKGNAMESUFFIX=	-devel
@@ -26,5 +25,8 @@ PLIST_SUB=	SOVERSION=${DISTVERSION}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/kodi/addons/inputstream.adaptive/libssd_wv.so
+	@cd ${STAGEDIR}${PREFIX} && \
+		${FIND} share/kodi/addons/inputstream.adaptive/resources/language \
+		-name strings.po >> ${TMPPLIST}
 
 .include <bsd.port.mk>
