@@ -6,7 +6,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mikael.urankar@gmail.com
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	ASN.1 library with a focus on performance and a pythonic API
 
 LICENSE=	MIT
