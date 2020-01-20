@@ -11,11 +11,6 @@ COMMENT=	Python libzfs bindings
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_mips=		fails to build: libzfs.c: error: convert_for_assignment: incompatible type for argument 3 of zfs_path_to_zhandle
-BROKEN_mips64=		fails to build: libzfs.c: error: convert_for_assignment: incompatible type for argument 3 of zfs_path_to_zhandle
-BROKEN_FreeBSD_11_powerpc64=	fails to build: libzfs.c: error: convert_for_assignment: incompatible type for argument 3 of zfs_path_to_zhandle
-BROKEN_FreeBSD_12_powerpc64=	fails to build: libzfs.c: error: convert_for_assignment: incompatible type for argument 3 of zfs_path_to_zhandle
-
 RUN_DEPENDS=	${PY_ENUM34}
 
 USE_GITHUB=     yes
@@ -24,7 +19,7 @@ GH_PROJECT=	py-libzfs
 GH_TAGNAME=	2991805
 
 HAS_CONFIGURE=	yes
-USES=		python
+USES=		compiler:c11 python
 USE_PYTHON=	autoplist distutils cython
 
 CONFIGURE_ENV=	freebsd_src=${SRC_BASE}
