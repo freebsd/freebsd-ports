@@ -1691,6 +1691,7 @@
     SUBDIR += py-http-parser
     SUBDIR += py-httpie
     SUBDIR += py-httplib2
+    SUBDIR += py-httptools
     SUBDIR += py-hyper
     SUBDIR += py-hyperframe
     SUBDIR += py-hyperlink
