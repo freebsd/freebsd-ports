@@ -31,7 +31,7 @@ ATLAS_USES_OFF=		blaslapack
 ATLAS_CONFIGURE_OFF=--with-blas=blas --with-lapack=lapack
 
 post-patch:
-	@${REINPLACE_CMD}-e \
+	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|doc|| ; \
 		 s|^pkgdata_DATA|#pkgdata_DATA|' ${WRKSRC}/Makefile.in
 

@@ -58,7 +58,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e "\|/home/karypis/|d" \
 	${WRKSRC}/programs/CMakeLists.txt
 .if ${ARCH:M*64*}
-	@${REINPLACE_CMD}-e \
+	@${REINPLACE_CMD} -e \
 		's|IDXTYPEWIDTH 32|IDXTYPEWIDTH 64|' \
 		${WRKSRC}/include/metis.h
 .endif
