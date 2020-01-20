@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 MAINTAINER=	pf@itwf.pl
 COMMENT=	LDAP support for the Lua language
 
-USES=		gmake lua
+USES?=		gmake lua
 USE_OPENLDAP=	yes
 
 # the CPPFLAGS fixes builds where PREFIX != LOCALBASE
@@ -29,6 +29,8 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/lualdap.so.${PORTVERSION} ${STAGEDIR}${LUA_MODLIBDIR}/${PORTNAME}.so
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/us/* ${STAGEDIR}${DOCSDIR}
 

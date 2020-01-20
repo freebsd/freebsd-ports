@@ -421,6 +421,7 @@
     SUBDIR += lla
     SUBDIR += ltm
     SUBDIR += lualdap
+    SUBDIR += lualdap-51
     SUBDIR += luasocket
     SUBDIR += luasocket-51
     SUBDIR += luasocket-53
