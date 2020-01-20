@@ -2,7 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.9
+DISTVERSION=	0.12.0
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -89,6 +89,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		open-1.3.2 \
 		parking_lot-0.10.0 \
 		parking_lot_core-0.7.0 \
+		pathdiff-0.1.0 \
 		proc-macro2-1.0.6 \
 		quote-1.0.2 \
 		rand_core-0.3.1 \
