@@ -1032,7 +1032,7 @@ NOTPHONY?=
 FLAVORS?=
 FLAVOR?=
 OVERLAYS?=
-REWARNFILE?=	${WRKDIR}/reinplace_warnings.txt
+REWARNFILE=	${WRKDIR}/reinplace_warnings.txt
 # Disallow forced FLAVOR as make argument since we cannot change it to the
 # proper default.
 .if empty(FLAVOR) && !empty(.MAKEOVERRIDES:MFLAVOR)
