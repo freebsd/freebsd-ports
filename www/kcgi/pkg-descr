@@ -3,4 +3,4 @@ designed to be secure and auditable. See a Comparison of CGI Libraries in C for
 alternatives. To start, download kcgi.tgz and run make install into your PREFIX
 of choice. The kcgi(3) manpage documents usage. kcgi is a BSD.lv project
 
-WWW: http://kristaps.bsd.lv/kcgi/
+WWW: https://kristaps.bsd.lv/kcgi/
