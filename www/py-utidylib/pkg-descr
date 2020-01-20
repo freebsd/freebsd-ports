@@ -1,4 +1,8 @@
-This is uTidylib, the Python wrapper for the HTML cleaning library named
-TidyLib:
+This is fork of uTidylib with permission with original author. Originally it
+incorporated patches from Debian and other distributions, now it also brings
+compatibility with recent html-tidy versions and works with Python 3.
 
-WWW: https://github.com/xdissent/utidylib
+This is uTidylib, the Python wrapper for the HTML cleaning library named
+TidyLib. It supports both original Tidy and new HTML5 enabled Tidy.
+
+WWW: https://github.com/nijel/utidylib
