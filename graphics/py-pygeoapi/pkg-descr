@@ -1,0 +1,7 @@
+pygeoapi is a Python server implementation of the OGC API suite of standards.
+The project emerged as part of the next generation OGC API efforts in 2018 and
+provides the capability for organizations to deploy an RESTful OGC API endpoint
+using OpenAPI, GeoJSON, and HTML. pygeoapi is open source and released under an
+MIT license.
+
+WWW: https://pygeoapi.io/
