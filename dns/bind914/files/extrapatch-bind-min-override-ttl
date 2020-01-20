@@ -1,3 +1,5 @@
+- Add the override-cache-ttl config knob.
+
 --- bin/named/config.c.orig	2019-12-12 06:12:17 UTC
 +++ bin/named/config.c
 @@ -181,6 +181,7 @@ options {\n\

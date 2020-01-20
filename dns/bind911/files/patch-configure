@@ -1,3 +1,7 @@
+- Axe the kerberos/gssapi discovery code to make sure it uses the correct
+  libraries.
+- Cleanup the BDB discovery code to find more recent versions.
+
 --- configure.orig	2019-12-12 05:17:55 UTC
 +++ configure
 @@ -15646,27 +15646,9 @@ done
