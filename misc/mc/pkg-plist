@@ -180,6 +180,7 @@ man/man1/mcview.1.gz
 %%NLS%%%%DATADIR%%/hints/mc.hint.hu
 %%NLS%%%%DATADIR%%/hints/mc.hint.ia
 %%NLS%%%%DATADIR%%/hints/mc.hint.id
+%%NLS%%%%DATADIR%%/hints/mc.hint.ie
 %%NLS%%%%DATADIR%%/hints/mc.hint.it
 %%NLS%%%%DATADIR%%/hints/mc.hint.it_IT
 %%NLS%%%%DATADIR%%/hints/mc.hint.ja
@@ -187,6 +188,9 @@ man/man1/mcview.1.gz
 %%NLS%%%%DATADIR%%/hints/mc.hint.kk
 %%NLS%%%%DATADIR%%/hints/mc.hint.ko
 %%NLS%%%%DATADIR%%/hints/mc.hint.lt
+%%NLS%%%%DATADIR%%/hints/mc.hint.lv
+%%NLS%%%%DATADIR%%/hints/mc.hint.mn
+%%NLS%%%%DATADIR%%/hints/mc.hint.nb
 %%NLS%%%%DATADIR%%/hints/mc.hint.nl
 %%NLS%%%%DATADIR%%/hints/mc.hint.pl
 %%NLS%%%%DATADIR%%/hints/mc.hint.pt
@@ -199,12 +203,16 @@ man/man1/mcview.1.gz
 %%NLS%%%%DATADIR%%/hints/mc.hint.sv
 %%NLS%%%%DATADIR%%/hints/mc.hint.sv_SE
 %%NLS%%%%DATADIR%%/hints/mc.hint.szl
+%%NLS%%%%DATADIR%%/hints/mc.hint.ta
 %%NLS%%%%DATADIR%%/hints/mc.hint.te
 %%NLS%%%%DATADIR%%/hints/mc.hint.tr
 %%NLS%%%%DATADIR%%/hints/mc.hint.uk
 %%NLS%%%%DATADIR%%/hints/mc.hint.uz
+%%NLS%%%%DATADIR%%/hints/mc.hint.vi
+%%NLS%%%%DATADIR%%/hints/mc.hint.wa
 %%NLS%%%%DATADIR%%/hints/mc.hint.zh
 %%NLS%%%%DATADIR%%/hints/mc.hint.zh_CN
+%%NLS%%%%DATADIR%%/hints/mc.hint.zh_TW
 %%ICONV%%%%DATADIR%%/mc.charsets
 %%DATADIR%%/mc.lib
 %%DATADIR%%/skins/dark.ini
@@ -216,6 +224,7 @@ man/man1/mcview.1.gz
 %%DATADIR%%/skins/gotar.ini
 %%DATADIR%%/skins/gray-green-purple256.ini
 %%DATADIR%%/skins/gray-orange-blue256.ini
+%%DATADIR%%/skins/julia256.ini
 %%DATADIR%%/skins/mc46.ini
 %%DATADIR%%/skins/modarcon16-defbg.ini
 %%DATADIR%%/skins/modarcon16.ini
@@ -321,6 +330,7 @@ man/man1/mcview.1.gz
 %%EDITOR%%%%DATADIR%%/syntax/verilog.syntax
 %%EDITOR%%%%DATADIR%%/syntax/vhdl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/xml.syntax
+%%EDITOR%%%%DATADIR%%/syntax/yabasic.syntax
 %%EDITOR%%%%DATADIR%%/syntax/yaml.syntax
 %%EDITOR%%%%DATADIR%%/syntax/yum-repo.syntax
 %%EDITOR%%%%DATADIR%%/syntax/yxx.syntax
