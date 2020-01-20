@@ -128,7 +128,7 @@ post-install-DOCS-on:
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 	@if [ -n "${PORT_OPTIONS:MVSPIPE}" ]; then \
 		${INSTALL_MAN} -v ${WRKSRC}/doc/_build/man/vspipe.1 \
-			${STAGEDIR}${MAN1PREFIX}/man/man1; \
+			${STAGEDIR}${PREFIX}/share/man/man1; \
 	fi
 
 .include <bsd.port.mk>
