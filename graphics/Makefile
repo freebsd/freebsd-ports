@@ -422,6 +422,7 @@
     SUBDIR += libafterimage
     SUBDIR += libansilove
     SUBDIR += libart_lgpl
+    SUBDIR += libavif
     SUBDIR += libboard
     SUBDIR += libbpg
     SUBDIR += libcaca
