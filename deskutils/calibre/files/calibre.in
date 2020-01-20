@@ -31,6 +31,8 @@
 
 . /etc/rc.subr
 
+export PATH=$PATH:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin
+
 name=calibre
 rcvar=calibre_enable
 
