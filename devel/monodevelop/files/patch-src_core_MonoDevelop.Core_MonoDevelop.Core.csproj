@@ -1,6 +1,6 @@
---- src/core/MonoDevelop.Core/MonoDevelop.Core.csproj.orig	2018-08-20 11:35:04 UTC
+--- src/core/MonoDevelop.Core/MonoDevelop.Core.csproj.orig	2018-10-05 16:10:10 UTC
 +++ src/core/MonoDevelop.Core/MonoDevelop.Core.csproj
-@@ -809,9 +809,6 @@
+@@ -810,9 +810,6 @@
    </ItemGroup>
    <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
    <Target Name="BeforeBuild" Inputs="BuildVariables.cs.in; $(MSBuildProjectDirectory)\..\..\..\..\version.config" Outputs="BuildVariables.cs" Condition="Exists('$(MSBuildProjectDirectory)\..\..\..\..\version.config')">

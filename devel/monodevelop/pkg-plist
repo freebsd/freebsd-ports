@@ -686,9 +686,9 @@ lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.Subversion.xml
 lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.dll
 lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.pdb
 lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.xml
+lib/monodevelop/AddIns/VersionControl/libgit2-e8b8948.so.0.26.8
+lib/monodevelop/AddIns/VersionControl/libgit2-e8b8948.so.26
 lib/monodevelop/AddIns/VersionControl/libgit2-e8b8948.so
-lib/monodevelop/AddIns/VersionControl/libgit2-e8b8948.so.0.23.0
-lib/monodevelop/AddIns/VersionControl/libgit2-e8b8948.so.23
 lib/monodevelop/AddIns/VersionControl/libgit2.license.txt
 lib/monodevelop/AddIns/VersionControl/libssh2.license.txt
 lib/monodevelop/AddIns/Xml/MonoDevelop.Xml.dll
