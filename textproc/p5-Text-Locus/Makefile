@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-Locus
-PORTVERSION=	1.01
+PORTVERSION=	1.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Class for representing locations in text files
 
 LICENSE=	GPLv3+
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone
 
 USES=		perl5
