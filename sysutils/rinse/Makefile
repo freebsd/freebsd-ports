@@ -33,7 +33,6 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr,,g' \
-		-e 's,/share/man,/man,g' \
 		-e '/cache/s/PREFIX/DESTDIR/' \
 		-e '/^include VERSION/d' \
 		-e '/scripts\.common/s/*/&.sh/' \

@@ -72,21 +72,20 @@ SNDIO_CMAKE_BOOL=	USE_SNDIO
 SDL_CMAKE_BOOL=	ENABLE_SDL2
 SDL_PLIST_FILES=bin/${PORTNAME} \
 		bin/${PORTNAME}-room \
-		man/man6/${PORTNAME}.6.gz
+		share/man/man6/${PORTNAME}.6.gz
 
 QT5_USES=	desktop-file-utils qt:5 shared-mime-info
 QT5_USE=	QT=qmake_build,buildtools_build,concurrent_build,core,gui,multimedia,opengl,widgets
 QT5_CMAKE_BOOL=	ENABLE_QT
 QT5_PLIST_FILES=bin/${PORTNAME}-qt \
 		"@comment bin/${PORTNAME}-room" \
-		man/man6/${PORTNAME}-qt.6.gz \
 		share/applications/${PORTNAME}.desktop \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
+		share/man/man6/${PORTNAME}-qt.6.gz \
 		share/mime/packages/${PORTNAME}.xml
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,share/man,man,' \
-		-e '/check_submodules_present()/d' \
+	@${REINPLACE_CMD} -e '/check_submodules_present()/d' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \

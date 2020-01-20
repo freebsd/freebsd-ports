@@ -1,5 +1,4 @@
 bin/baka-mplayer
-man/man1/baka-mplayer.1.gz
 share/applications/baka-mplayer.desktop
 %%NLS%%%%DATADIR%%/translations/baka-mplayer_de.qm
 %%NLS%%%%DATADIR%%/translations/baka-mplayer_es.qm
@@ -22,4 +21,5 @@ share/icons/hicolor/512x512/apps/baka-mplayer.png
 share/icons/hicolor/64x64/apps/baka-mplayer.png
 share/icons/hicolor/96x96/apps/baka-mplayer.png
 share/icons/hicolor/scalable/apps/baka-mplayer.svg
+share/man/man1/baka-mplayer.1.gz
 share/pixmaps/baka-mplayer.svg

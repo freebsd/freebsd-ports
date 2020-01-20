@@ -2,13 +2,13 @@ bin/YACReader
 bin/YACReaderLibrary
 bin/YACReaderLibraryServer
 lib/systemd/user/yacreaderlibraryserver.service
-man/man1/YACReader.1.gz
-man/man1/YACReaderLibrary.1.gz
 share/applications/YACReader.desktop
 share/applications/YACReaderLibrary.desktop
 %%DOCSDIR%%/CHANGELOG.md
 share/icons/hicolor/scalable/apps/YACReader.svg
 share/icons/hicolor/scalable/apps/YACReaderLibrary.svg
+share/man/man1/YACReader.1.gz
+share/man/man1/YACReaderLibrary.1.gz
 %%DATADIR%%/languages/yacreader_de.qm
 %%DATADIR%%/languages/yacreader_es.qm
 %%DATADIR%%/languages/yacreader_fr.qm

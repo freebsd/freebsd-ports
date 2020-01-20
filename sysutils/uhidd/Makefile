@@ -28,7 +28,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kaiwang27
 
 USES=		uidfix
-MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man"
+MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/share/man/man"
 MAKE_ARGS=	LIBDIR="${LOCALBASE}/lib"
 USE_RC_SUBR=	uhidd
 

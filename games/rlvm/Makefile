@@ -80,7 +80,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.6 \
-		${STAGEDIR}${MAN6PREFIX}/man/man6
+		${STAGEDIR}${PREFIX}/share/man/man6
 	${INSTALL_DATA} ${WRKSRC}/src/platforms/gtk/${PORTNAME}.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	@(cd ${WRKSRC}/resources && for f in */${PORTNAME}.png; do \

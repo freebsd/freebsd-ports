@@ -4,7 +4,6 @@ bin/openra-d2k
 bin/openra-d2k-server
 bin/openra-ra
 bin/openra-ra-server
-man/man6/openra.6.gz
 share/applications/openra-cnc.desktop
 share/applications/openra-d2k.desktop
 share/applications/openra-ra.desktop
@@ -25,6 +24,7 @@ share/icons/hicolor/64x64/apps/openra-d2k.png
 share/icons/hicolor/64x64/apps/openra-ra.png
 share/icons/hicolor/scalable/apps/openra-cnc.svg
 share/icons/hicolor/scalable/apps/openra-ra.svg
+share/man/man6/openra.6.gz
 share/mime/packages/openra-cnc.xml
 share/mime/packages/openra-d2k.xml
 share/mime/packages/openra-ra.xml

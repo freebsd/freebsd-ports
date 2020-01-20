@@ -74,6 +74,6 @@ etc/bash_completion.d/rinse
 %%DATADIR%%/rhel-5/post-install.sh
 %%DATADIR%%/slc-5/post-install.sh
 %%DATADIR%%/slc-6/post-install.sh
-man/man8/rinse.8.gz
 sbin/rinse
+share/man/man8/rinse.8.gz
 @dir /var/cache/rinse

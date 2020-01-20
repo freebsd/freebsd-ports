@@ -44,7 +44,7 @@ USE_SDL=	sdl2
 NUGET_LAYOUT=	flat
 NUGET_PACKAGEDIR=${WRKSRC}/thirdparty/download
 SHEBANG_FILES=	launch-dedicated.sh
-MAKE_ENV=	prefix="${PREFIX}" mandir="${PREFIX}/man" \
+MAKE_ENV=	prefix="${PREFIX}" \
 		gameinstalldir="${DATADIR}"
 ALL_TARGET=	all
 INSTALL_TARGET=	install install-man-page \

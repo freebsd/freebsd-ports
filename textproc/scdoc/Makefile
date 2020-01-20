@@ -12,13 +12,12 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
-MAKE_ENV=	MANDIR='$$(_INSTDIR)/man' \
-		PCDIR='$$(_INSTDIR)/libdata/pkgconfig'
+MAKE_ENV=	PCDIR='$$(_INSTDIR)/libdata/pkgconfig'
 TEST_TARGET=	check
 PLIST_FILES=	bin/${PORTNAME} \
 		libdata/pkgconfig/${PORTNAME}.pc \
-		man/man1/${PORTNAME}.1.gz \
-		man/man5/${PORTNAME}.5.gz
+		share/man/man1/${PORTNAME}.1.gz \
+		share/man/man5/${PORTNAME}.5.gz
 
 post-patch:
 	@${REINPLACE_CMD} '/-static/d' ${WRKSRC}/Makefile
