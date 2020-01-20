@@ -10,7 +10,7 @@ CATEGORIES=	net
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	IPv4 and IPv6 socket support for the Lua language
+COMMENT=	Socket support for the Lua language
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
