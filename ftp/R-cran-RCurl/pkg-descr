@@ -4,4 +4,4 @@ servers, post forms, use HTTPS (the secure HTTP), use persistent
 connections, upload files, use binary content, handle redirects,
 password authentication, etc.
 
-WWW: http://www.omegahat.org/RCurl/
+WWW: https://cran.r-project.org/web/packages/RCurl/
