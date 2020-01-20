@@ -1,4 +1,4 @@
 %%DEVD%%@sample etc/devd/uhidd-devd.conf.sample
-man/man5/uhidd.conf.5.gz
-man/man8/uhidd.8.gz
 sbin/uhidd
+share/man/man5/uhidd.conf.5.gz
+share/man/man8/uhidd.8.gz

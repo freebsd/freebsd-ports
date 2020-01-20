@@ -1,5 +1,4 @@
 bin/ppsspp
-man/man1/ppsspp.1.gz
 share/icons/hicolor/128x128/apps/ppsspp.png
 share/icons/hicolor/16x16/apps/ppsspp.png
 share/icons/hicolor/24x24/apps/ppsspp.png
@@ -10,3 +9,4 @@ share/icons/hicolor/512x512/apps/ppsspp.png
 share/icons/hicolor/64x64/apps/ppsspp.png
 share/icons/hicolor/96x96/apps/ppsspp.png
 share/icons/hicolor/scalable/apps/ppsspp.svg
+share/man/man1/ppsspp.1.gz

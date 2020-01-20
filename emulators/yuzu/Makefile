@@ -96,8 +96,7 @@ QT5_PLIST_FILES=bin/${PORTNAME} \
 		share/mime/packages/${PORTNAME}.xml
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,share/man,man,' \
-		-e '/check_submodules_present()/d' \
+	@${REINPLACE_CMD} -e '/check_submodules_present()/d' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \

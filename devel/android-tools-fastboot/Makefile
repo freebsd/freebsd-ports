@@ -30,9 +30,9 @@ MAKEFILE?=	${.CURDIR}/files/Makefile
 MAKE_ENV=	BINDIR="${PREFIX}/bin" EXTRADIR="${FILESDIR}" \
 		FILESDIR="${DOCSDIR}" \
 		VERSION="${DISTVERSION}${DISTVERSIONSUFFIX}" \
-		MANDIR="${PREFIX}/man/man"
+		MANDIR="${PREFIX}/share/man/man"
 PLIST_FILES=	bin/fastboot \
-		man/man1/fastboot.1.gz
+		share/man/man1/fastboot.1.gz
 PORTDOCS=	*
 SUB_FILES=	pkg-message
 

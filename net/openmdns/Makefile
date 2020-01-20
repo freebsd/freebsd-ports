@@ -20,15 +20,15 @@ USES=		localbase uidfix
 USE_RC_SUBR=	mdnsd
 MAKE_ENV=	LDADD="${LIBS}"
 MAKE_ARGS=	BINDIR="${PREFIX}/sbin" \
-		MANDIR="${PREFIX}/man/man"
+		MANDIR="${PREFIX}/share/man/man"
 CFLAGS+=	-D__dead=__dead2
 LDFLAGS+=	-Wl,--as-needed # -lutil
 LIBS+=		-lopenbsd
 SUB_LIST=	COMMENT="${COMMENT}"
 PLIST_FILES=	sbin/mdnsctl \
 		sbin/mdnsd \
-		man/man8/mdnsctl.8.gz \
-		man/man8/mdnsd.8.gz
+		share/man/man8/mdnsctl.8.gz \
+		share/man/man8/mdnsd.8.gz
 PORTDOCS=	*
 
 USERS=		_mdnsd

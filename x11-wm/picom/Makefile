@@ -59,12 +59,10 @@ DBUS_MESON_TRUE=	dbus
 
 DOCS_BUILD_DEPENDS=	a2x:textproc/asciidoc
 DOCS_MESON_TRUE=	build_docs
-DOCS_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
-			man/man1/${PORTNAME}-trans.1.gz
+DOCS_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
+			share/man/man1/${PORTNAME}-trans.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e '/install_dir/s,share/man,man,' \
-		${WRKSRC}/man/meson.build
 	@${REINPLACE_CMD} -e '/config_system_dir/s,/etc,${PREFIX}&,' \
 		${WRKSRC}/src/config_libconfig.c
 # Extract (snapshot) version from the port instead of meson.build
