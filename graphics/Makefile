@@ -891,6 +891,7 @@
     SUBDIR += qgis
     SUBDIR += qgis-ltr
     SUBDIR += qiv
+    SUBDIR += qr-code-generator
     SUBDIR += qt5-3d
     SUBDIR += qt5-graphicaleffects
     SUBDIR += qt5-imageformats
