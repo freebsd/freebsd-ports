@@ -156,12 +156,12 @@ libexec/trafficserver/tcpinfo.so
 libexec/trafficserver/test_cppapi.so
 libexec/trafficserver/tls_bridge.so
 libexec/trafficserver/traffic_dump.so
-libexec/trafficserver/tslua.so
+%%LUAJIT%%libexec/trafficserver/tslua.so
 libexec/trafficserver/tsmemcache.so
 libexec/trafficserver/url_sig.so
 libexec/trafficserver/xdebug.so
-lib/perl5/amd64-freebsd-thread-multi/auto/Apache/TS/.packlist
-lib/perl5/amd64-freebsd-thread-multi/perllocal.pod
+lib/perl5/%%ARCH%%-freebsd-thread-multi/auto/Apache/TS/.packlist
+lib/perl5/%%ARCH%%-freebsd-thread-multi/perllocal.pod
 lib/perl5/Apache/TS.pm
 lib/perl5/Apache/TS/AdminClient.pm
 lib/perl5/Apache/TS/Config.pm
