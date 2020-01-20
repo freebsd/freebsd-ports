@@ -1,0 +1,12 @@
+Uvicorn is a lightning-fast ASGI server implementation, using uvloop and
+httptools.
+
+Until recently Python has lacked a minimal low-level server/application
+interface for asyncio frameworks. The ASGI specification fills this gap, and
+means we're now able to start building a common set of tooling usable across all
+asyncio frameworks.
+
+Uvicorn currently supports HTTP/1.1 and WebSockets. Support for HTTP/2 is
+planned.
+
+WWW: https://github.com/encode/uvicorn
