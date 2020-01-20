@@ -6,7 +6,7 @@ CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	52
 
-MAINTAINER=	mikael.urankar@gmail.com
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Helper for generating HTML mails in Rails applications
 
 LICENSE=	MIT

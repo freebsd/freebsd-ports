@@ -6,7 +6,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	44
 
-MAINTAINER=	mikael.urankar@gmail.com
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 LICENSE=	GPLv2
