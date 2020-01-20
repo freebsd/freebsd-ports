@@ -1,0 +1,11 @@
+An immutable mapping type for Python.
+
+The underlying datastructure is a Hash Array Mapped Trie (HAMT) used in Clojure,
+Scala, Haskell, and other functional languages. This implementation is used in
+CPython 3.7 in the contextvars module (see PEP 550 and PEP 567 for more
+details).
+
+Immutable mappings based on HAMT have O(log N) performance for both set() and
+get() operations, which is essentially O(1) for relatively small mappings.
+
+WWW: https://github.com/MagicStack/immutables
