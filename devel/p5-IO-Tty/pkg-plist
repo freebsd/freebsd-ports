@@ -1,7 +1,7 @@
-%%PERL5_MAN3%%/IO::Pty.3.gz
-%%PERL5_MAN3%%/IO::Tty.3.gz
-%%PERL5_MAN3%%/IO::Tty::Constant.3.gz
 %%SITE_ARCH%%/IO/Pty.pm
 %%SITE_ARCH%%/IO/Tty.pm
 %%SITE_ARCH%%/IO/Tty/Constant.pm
 %%SITE_ARCH%%/auto/IO/Tty/Tty.so
+%%PERL5_MAN3%%/IO::Pty.3.gz
+%%PERL5_MAN3%%/IO::Tty.3.gz
+%%PERL5_MAN3%%/IO::Tty::Constant.3.gz
