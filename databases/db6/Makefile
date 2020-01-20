@@ -36,9 +36,6 @@ PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 USE_LDCONFIG=	yes
 PLIST_SUB=	BDBMAJ=${BDBMAJ} BDBVER=${BDBVER}
 MAKE_ARGS+=	docdir=${DOCSDIR}
-# we use REINPLACE_CMD with a glob that matches
-# too broadly, suppress 'sed failed' warnings:
-REWARNFILE=	/dev/null
 
 OPTIONS_DEFINE=	CRYPTO DEBUG L10N SQL JAVA TCL DOCS
 OPTIONS_DEFAULT=CRYPTO
