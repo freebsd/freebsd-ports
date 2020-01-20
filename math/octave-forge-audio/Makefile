@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS+=	librtmidi.so:audio/rtmidi
 
+USES=		pkgconfig
+
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${DISTNAME}
