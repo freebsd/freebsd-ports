@@ -2,6 +2,7 @@
 
 PORTNAME=	weboob
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,10 +31,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		wget:ftp/wget \
 		gpg2:security/gnupg
 
-py27_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mechanize>0:www/py-mechanize@${PY_FLAVOR}
-py27_RUN_DEPENDS:=	${py27_BUILD_DEPENDS}
-
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
