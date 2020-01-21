@@ -1175,14 +1175,14 @@ lib/webmin/authentic-theme/CHANGELOG.md
 lib/webmin/authentic-theme/FUNDING.yml
 lib/webmin/authentic-theme/LICENSE
 lib/webmin/authentic-theme/THEME.pgp
-lib/webmin/authentic-theme/authentic-funcs.pm
-lib/webmin/authentic-theme/authentic-init.pm
-lib/webmin/authentic-theme/authentic-lib.pm
-lib/webmin/authentic-theme/authentic.pm
-lib/webmin/authentic-theme/buttons.pm
+lib/webmin/authentic-theme/authentic-funcs.pl
+lib/webmin/authentic-theme/authentic-init.pl
+lib/webmin/authentic-theme/authentic-lib.pl
+lib/webmin/authentic-theme/authentic.pl
+lib/webmin/authentic-theme/buttons.pl
 lib/webmin/authentic-theme/config
 lib/webmin/authentic-theme/extensions/csf.min.js
-lib/webmin/authentic-theme/extensions/csf/csf-lib.pm
+lib/webmin/authentic-theme/extensions/csf/csf-lib.pl
 lib/webmin/authentic-theme/extensions/csf/csf.min.css
 lib/webmin/authentic-theme/extensions/csf/csf.min.css.gz
 lib/webmin/authentic-theme/extensions/csf/csf.min.js
@@ -1202,7 +1202,7 @@ lib/webmin/authentic-theme/extensions/file-manager/delete.cgi
 lib/webmin/authentic-theme/extensions/file-manager/download.cgi
 lib/webmin/authentic-theme/extensions/file-manager/extract.cgi
 lib/webmin/authentic-theme/extensions/file-manager/fetcher.cgi
-lib/webmin/authentic-theme/extensions/file-manager/file-manager-lib.pm
+lib/webmin/authentic-theme/extensions/file-manager/file-manager-lib.pl
 lib/webmin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js
 lib/webmin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js.gz
 lib/webmin/authentic-theme/extensions/file-manager/file-manager.min.js
@@ -1216,7 +1216,7 @@ lib/webmin/authentic-theme/extensions/file-manager/rename.cgi
 lib/webmin/authentic-theme/extensions/file-manager/search.cgi
 lib/webmin/authentic-theme/extensions/file-manager/tree.cgi
 lib/webmin/authentic-theme/extensions/mail/folders.cgi
-lib/webmin/authentic-theme/extensions/mail/mail-lib.pm
+lib/webmin/authentic-theme/extensions/mail/mail-lib.pl
 lib/webmin/authentic-theme/extensions/mail/mail.min.css
 lib/webmin/authentic-theme/extensions/mail/mail.min.css.gz
 lib/webmin/authentic-theme/extensions/mail/mail.min.js
@@ -2233,7 +2233,7 @@ lib/webmin/authentic-theme/lib/Async.pm
 lib/webmin/authentic-theme/lib/File/BaseDir.pm
 lib/webmin/authentic-theme/lib/File/Grep.pm
 lib/webmin/authentic-theme/lib/File/MimeInfo.pm
-lib/webmin/authentic-theme/navigation.pm
+lib/webmin/authentic-theme/navigation.pl
 lib/webmin/authentic-theme/pam_login.cgi
 lib/webmin/authentic-theme/password_form.cgi
 lib/webmin/authentic-theme/session_login.cgi
@@ -2247,7 +2247,7 @@ lib/webmin/authentic-theme/settings-favorites_save.cgi
 lib/webmin/authentic-theme/settings-logos.cgi
 lib/webmin/authentic-theme/settings-logos_save.cgi
 lib/webmin/authentic-theme/settings-user.cgi
-lib/webmin/authentic-theme/settings.pm
+lib/webmin/authentic-theme/settings.pl
 lib/webmin/authentic-theme/stats.cgi
 lib/webmin/authentic-theme/sysinfo.cgi
 lib/webmin/authentic-theme/theme-update.sh
@@ -26955,6 +26955,7 @@ lib/webmin/webmin-init
 lib/webmin/webmin-pam
 lib/webmin/webmin-search-lib.pl
 lib/webmin/webmin/CHANGELOG
+lib/webmin/webmin/acme_tiny.py
 lib/webmin/webmin/adminupgrade
 lib/webmin/webmin/backup_config.pl
 lib/webmin/webmin/bootup.cgi
