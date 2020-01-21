@@ -10,6 +10,9 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Editor for the freedesktop.org menu specification
 
+LICENSE=	LGPL20+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake gnome localbase mate pathfix pkgconfig \
@@ -18,6 +21,7 @@ USE_MATE=	menus
 USE_GNOME=	gtk30 intltool pygobject3
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
