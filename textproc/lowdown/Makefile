@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lowdown
-PORTVERSION=	0.4.6
+PORTVERSION=	0.5.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://kristaps.bsd.lv/lowdown/snapshots/
 
@@ -12,7 +12,7 @@ LICENSE=	ISCL
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdiff.a:textproc/libdiff
 LDFLAGS+=	-lmd
-MAKE_ARGS=	LDFLAGS="${LDFLAGS}"
+MAKE_ARGS=	LDFLAGS="${LDFLAGS}" MANDIR=${PREFIX}/share/man
 
 HAS_CONFIGURE=	yes
 
