@@ -1,9 +1,12 @@
 # Created by: David O'Brien <obrien@FreeBSD.org>
 # $FreeBSD$
 
+# note: If someone has a fix for a particular ARCH please feel free
+#       to commit it.  I (ler) don't have access to all the ARCH's
+
 PORTNAME=	lsof
 DISTVERSION=	4.93.2
-PORTREVISION=	6
+PORTREVISION=	9
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 
@@ -22,6 +25,17 @@ HAS_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	lsof-org
 
+OPTIONS_DEFINE_powerpc64=	AIM BOOKE
+OPTIONS_DEFAULT_powerpc64=	AIM
+
+AIM_DESC=	Set for AIM hardware
+AIM_CFLAGS=	-DAIM
+BOOKE_DESC=	Set for BOOKE hardware
+BOOKE_CFLAGS=	-DBOOKE
+
+CFLAGS_powerpc=	-DAIM
+CFLAGS_powerpcspe=	-DBOOKE
+
 SHEBANG_FILES=	scripts/sort_res.perl5
 
 .include <bsd.port.pre.mk>
@@ -29,6 +43,12 @@ SHEBANG_FILES=	scripts/sort_res.perl5
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
+
+# PPC64 needs -lzpool for reasons unknown.  If someone can
+# figure out why, I (ler) am all ears.
+.if ${ARCH} == powerpc64 || ${ARCH} == powerpc
+CONFIGURE_ENV+=	LSOF_CFGL="-lzpool"
+. endif
 
 .if !exists(${SRC_BASE}/sys/kern/kern_lockf.c)
 IGNORE+=		requires kernel sources
