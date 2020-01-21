@@ -2,21 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	jwasm
-PORTVERSION=	211a
+PORTVERSION=	2.13
+PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/JWasm%20Source%20Code
-DISTNAME=	JWasm${PORTVERSION}s
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Fork of OpenWatcom x86 assembler with AMD64 support
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	OpenWatcom
+LICENSE_NAME=	Sybase Open Watcom Public License version 1.0
+LICENSE_FILE=	${WRKSRC}/License.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-NO_WRKSUBDIR=	yes
+USES=		alias dos2unix gmake
 
-USES=		alias dos2unix gmake zip
+USE_GITHUB=     yes
+GH_ACCOUNT=	JWasm
+GH_PROJECT=	${GH_ACCOUNT}
+
+OPTIONS_DEFINE=	DOCS
+
 MAKEFILE=	GccUnix.mak
 
 PORTDOCS=	*
