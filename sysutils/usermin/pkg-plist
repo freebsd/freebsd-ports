@@ -162,13 +162,13 @@ lib/usermin/authentic-theme/404.cgi
 lib/usermin/authentic-theme/FUNDING.yml
 lib/usermin/authentic-theme/LICENSE
 lib/usermin/authentic-theme/THEME.pgp
-lib/usermin/authentic-theme/authentic-funcs.pm
-lib/usermin/authentic-theme/authentic-init.pm
-lib/usermin/authentic-theme/authentic-lib.pm
-lib/usermin/authentic-theme/authentic.pm
-lib/usermin/authentic-theme/buttons.pm
+lib/usermin/authentic-theme/authentic-funcs.pl
+lib/usermin/authentic-theme/authentic-init.pl
+lib/usermin/authentic-theme/authentic-lib.pl
+lib/usermin/authentic-theme/authentic.pl
+lib/usermin/authentic-theme/buttons.pl
 lib/usermin/authentic-theme/config
-lib/usermin/authentic-theme/extensions/csf/csf-lib.pm
+lib/usermin/authentic-theme/extensions/csf/csf-lib.pl
 lib/usermin/authentic-theme/extensions/csf/csf.min.css
 lib/usermin/authentic-theme/extensions/csf/csf.min.css.gz
 lib/usermin/authentic-theme/extensions/csf/csf.min.js
@@ -188,7 +188,7 @@ lib/usermin/authentic-theme/extensions/file-manager/delete.cgi
 lib/usermin/authentic-theme/extensions/file-manager/download.cgi
 lib/usermin/authentic-theme/extensions/file-manager/extract.cgi
 lib/usermin/authentic-theme/extensions/file-manager/fetcher.cgi
-lib/usermin/authentic-theme/extensions/file-manager/file-manager-lib.pm
+lib/usermin/authentic-theme/extensions/file-manager/file-manager-lib.pl
 lib/usermin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js
 lib/usermin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js.gz
 lib/usermin/authentic-theme/extensions/file-manager/file-manager.min.js
@@ -202,7 +202,7 @@ lib/usermin/authentic-theme/extensions/file-manager/rename.cgi
 lib/usermin/authentic-theme/extensions/file-manager/search.cgi
 lib/usermin/authentic-theme/extensions/file-manager/tree.cgi
 lib/usermin/authentic-theme/extensions/mail/folders.cgi
-lib/usermin/authentic-theme/extensions/mail/mail-lib.pm
+lib/usermin/authentic-theme/extensions/mail/mail-lib.pl
 lib/usermin/authentic-theme/extensions/mail/mail.min.css
 lib/usermin/authentic-theme/extensions/mail/mail.min.css.gz
 lib/usermin/authentic-theme/extensions/mail/mail.min.js
@@ -1219,7 +1219,7 @@ lib/usermin/authentic-theme/lib/Async.pm
 lib/usermin/authentic-theme/lib/File/BaseDir.pm
 lib/usermin/authentic-theme/lib/File/Grep.pm
 lib/usermin/authentic-theme/lib/File/MimeInfo.pm
-lib/usermin/authentic-theme/navigation.pm
+lib/usermin/authentic-theme/navigation.pl
 lib/usermin/authentic-theme/pam_login.cgi
 lib/usermin/authentic-theme/password_form.cgi
 lib/usermin/authentic-theme/session_login.cgi
@@ -1233,7 +1233,7 @@ lib/usermin/authentic-theme/settings-favorites_save.cgi
 lib/usermin/authentic-theme/settings-logos.cgi
 lib/usermin/authentic-theme/settings-logos_save.cgi
 lib/usermin/authentic-theme/settings-user.cgi
-lib/usermin/authentic-theme/settings.pm
+lib/usermin/authentic-theme/settings.pl
 lib/usermin/authentic-theme/stats.cgi
 lib/usermin/authentic-theme/sysinfo.cgi
 lib/usermin/authentic-theme/theme-update.sh
