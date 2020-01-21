@@ -8,13 +8,11 @@ bin/upgrade_send_spool.pl
 %%ETCDIR%%/README
 libexec/sympa/Conf.pm
 libexec/sympa/Sympa.pm
-libexec/sympa/Sympa/Alarm.pm
 libexec/sympa/Sympa/Aliases.pm
 libexec/sympa/Sympa/Aliases/CheckSMTP.pm
 libexec/sympa/Sympa/Aliases/External.pm
 libexec/sympa/Sympa/Aliases/Template.pm
 libexec/sympa/Sympa/Archive.pm
-libexec/sympa/Sympa/Bulk.pm
 libexec/sympa/Sympa/CommandDef.pm
 libexec/sympa/Sympa/ConfDef.pm
 libexec/sympa/Sympa/Config.pm
@@ -33,7 +31,14 @@ libexec/sympa/Sympa/DatabaseDriver/Oracle/St.pm
 libexec/sympa/Sympa/DatabaseDriver/PostgreSQL.pm
 libexec/sympa/Sympa/DatabaseDriver/SQLite.pm
 libexec/sympa/Sympa/DatabaseManager.pm
-libexec/sympa/Sympa/Datasource.pm
+libexec/sympa/Sympa/DataSource.pm
+libexec/sympa/Sympa/DataSource/File.pm
+libexec/sympa/Sympa/DataSource/LDAP.pm
+libexec/sympa/Sympa/DataSource/LDAP2.pm
+libexec/sympa/Sympa/DataSource/List.pm
+libexec/sympa/Sympa/DataSource/RemoteDump.pm
+libexec/sympa/Sympa/DataSource/RemoteFile.pm
+libexec/sympa/Sympa/DataSource/SQL.pm
 libexec/sympa/Sympa/Family.pm
 libexec/sympa/Sympa/HTML/FormatText.pm
 libexec/sympa/Sympa/HTMLDecorator.pm
@@ -74,6 +79,7 @@ libexec/sympa/Sympa/Request/Handler/global_set.pm
 libexec/sympa/Sympa/Request/Handler/global_signoff.pm
 libexec/sympa/Sympa/Request/Handler/help.pm
 libexec/sympa/Sympa/Request/Handler/import.pm
+libexec/sympa/Sympa/Request/Handler/include.pm
 libexec/sympa/Sympa/Request/Handler/index.pm
 libexec/sympa/Sympa/Request/Handler/info.pm
 libexec/sympa/Sympa/Request/Handler/invite.pm
@@ -119,7 +125,6 @@ libexec/sympa/Sympa/Spindle/ProcessRequest.pm
 libexec/sympa/Sympa/Spindle/ProcessTask.pm
 libexec/sympa/Sympa/Spindle/ProcessTemplate.pm
 libexec/sympa/Sympa/Spindle/ResendArchive.pm
-libexec/sympa/Sympa/Spindle/ToAlarm.pm
 libexec/sympa/Sympa/Spindle/ToArchive.pm
 libexec/sympa/Sympa/Spindle/ToAuth.pm
 libexec/sympa/Sympa/Spindle/ToAuthOwner.pm
@@ -127,6 +132,7 @@ libexec/sympa/Sympa/Spindle/ToDigest.pm
 libexec/sympa/Sympa/Spindle/ToEditor.pm
 libexec/sympa/Sympa/Spindle/ToHeld.pm
 libexec/sympa/Sympa/Spindle/ToList.pm
+libexec/sympa/Sympa/Spindle/ToListmaster.pm
 libexec/sympa/Sympa/Spindle/ToMailer.pm
 libexec/sympa/Sympa/Spindle/ToModeration.pm
 libexec/sympa/Sympa/Spindle/ToOutgoing.pm
@@ -142,8 +148,11 @@ libexec/sympa/Sympa/Spool/Digest.pm
 libexec/sympa/Sympa/Spool/Digest/Collection.pm
 libexec/sympa/Sympa/Spool/Held.pm
 libexec/sympa/Sympa/Spool/Incoming.pm
+libexec/sympa/Sympa/Spool/Listmaster.pm
 libexec/sympa/Sympa/Spool/Moderation.pm
+libexec/sympa/Sympa/Spool/Outgoing.pm
 libexec/sympa/Sympa/Spool/Task.pm
+libexec/sympa/Sympa/Spool/Topic.pm
 libexec/sympa/Sympa/Task.pm
 libexec/sympa/Sympa/Template.pm
 libexec/sympa/Sympa/Ticket.pm
@@ -155,7 +164,6 @@ libexec/sympa/Sympa/Tools/Password.pm
 libexec/sympa/Sympa/Tools/SMIME.pm
 libexec/sympa/Sympa/Tools/Text.pm
 libexec/sympa/Sympa/Tools/Time.pm
-libexec/sympa/Sympa/Topic.pm
 libexec/sympa/Sympa/Tracking.pm
 libexec/sympa/Sympa/Upgrade.pm
 libexec/sympa/Sympa/User.pm
@@ -212,13 +220,11 @@ man/man1/upgrade_send_spool.1.gz
 man/man1/upgrade_shared_repository.1.gz
 man/man1/upgrade_sympa_password.1.gz
 man/man3/Sympa.3Sympa.gz
-man/man3/Sympa::Alarm.3Sympa.gz
 man/man3/Sympa::Aliases.3Sympa.gz
 man/man3/Sympa::Aliases::CheckSMTP.3Sympa.gz
 man/man3/Sympa::Aliases::External.3Sympa.gz
 man/man3/Sympa::Aliases::Template.3Sympa.gz
 man/man3/Sympa::Archive.3Sympa.gz
-man/man3/Sympa::Bulk.3Sympa.gz
 man/man3/Sympa::CommandDef.3Sympa.gz
 man/man3/Sympa::ConfDef.3Sympa.gz
 man/man3/Sympa::Config.3Sympa.gz
@@ -236,6 +242,15 @@ man/man3/Sympa::DatabaseDriver::Oracle::St.3Sympa.gz
 man/man3/Sympa::DatabaseDriver::PostgreSQL.3Sympa.gz
 man/man3/Sympa::DatabaseDriver::SQLite.3Sympa.gz
 man/man3/Sympa::DatabaseManager.3Sympa.gz
+man/man3/Sympa::DataSource.3Sympa.gz
+man/man3/Sympa::DataSource::File.3Sympa.gz
+man/man3/Sympa::DataSource::LDAP.3Sympa.gz
+man/man3/Sympa::DataSource::LDAP2.3Sympa.gz
+man/man3/Sympa::DataSource::List.3Sympa.gz
+man/man3/Sympa::DataSource::RemoteDump.3Sympa.gz
+man/man3/Sympa::DataSource::RemoteFile.3Sympa.gz
+man/man3/Sympa::DataSource::SQL.3Sympa.gz
+man/man3/Sympa::Family.3Sympa.gz
 man/man3/Sympa::HTMLDecorator.3Sympa.gz
 man/man3/Sympa::HTMLSanitizer.3Sympa.gz
 man/man3/Sympa::Internals::Workflow.3Sympa.gz
@@ -272,6 +287,7 @@ man/man3/Sympa::Request::Handler::global_set.3Sympa.gz
 man/man3/Sympa::Request::Handler::global_signoff.3Sympa.gz
 man/man3/Sympa::Request::Handler::help.3Sympa.gz
 man/man3/Sympa::Request::Handler::import.3Sympa.gz
+man/man3/Sympa::Request::Handler::include.3Sympa.gz
 man/man3/Sympa::Request::Handler::index.3Sympa.gz
 man/man3/Sympa::Request::Handler::info.3Sympa.gz
 man/man3/Sympa::Request::Handler::invite.3Sympa.gz
@@ -316,7 +332,6 @@ man/man3/Sympa::Spindle::ProcessRequest.3Sympa.gz
 man/man3/Sympa::Spindle::ProcessTask.3Sympa.gz
 man/man3/Sympa::Spindle::ProcessTemplate.3Sympa.gz
 man/man3/Sympa::Spindle::ResendArchive.3Sympa.gz
-man/man3/Sympa::Spindle::ToAlarm.3Sympa.gz
 man/man3/Sympa::Spindle::ToArchive.3Sympa.gz
 man/man3/Sympa::Spindle::ToAuth.3Sympa.gz
 man/man3/Sympa::Spindle::ToAuthOwner.3Sympa.gz
@@ -324,6 +339,7 @@ man/man3/Sympa::Spindle::ToDigest.3Sympa.gz
 man/man3/Sympa::Spindle::ToEditor.3Sympa.gz
 man/man3/Sympa::Spindle::ToHeld.3Sympa.gz
 man/man3/Sympa::Spindle::ToList.3Sympa.gz
+man/man3/Sympa::Spindle::ToListmaster.3Sympa.gz
 man/man3/Sympa::Spindle::ToMailer.3Sympa.gz
 man/man3/Sympa::Spindle::ToModeration.3Sympa.gz
 man/man3/Sympa::Spindle::ToOutgoing.3Sympa.gz
@@ -339,8 +355,11 @@ man/man3/Sympa::Spool::Digest.3Sympa.gz
 man/man3/Sympa::Spool::Digest::Collection.3Sympa.gz
 man/man3/Sympa::Spool::Held.3Sympa.gz
 man/man3/Sympa::Spool::Incoming.3Sympa.gz
+man/man3/Sympa::Spool::Listmaster.3Sympa.gz
 man/man3/Sympa::Spool::Moderation.3Sympa.gz
+man/man3/Sympa::Spool::Outgoing.3Sympa.gz
 man/man3/Sympa::Spool::Task.3Sympa.gz
+man/man3/Sympa::Spool::Topic.3Sympa.gz
 man/man3/Sympa::Task.3Sympa.gz
 man/man3/Sympa::Template.3Sympa.gz
 man/man3/Sympa::Ticket.3Sympa.gz
@@ -348,7 +367,6 @@ man/man3/Sympa::Tools::Domains.3Sympa.gz
 man/man3/Sympa::Tools::File.3Sympa.gz
 man/man3/Sympa::Tools::Text.3Sympa.gz
 man/man3/Sympa::Tools::Time.3Sympa.gz
-man/man3/Sympa::Topic.3Sympa.gz
 man/man3/Sympa::Tracking.3Sympa.gz
 man/man3/Sympa::User.3Sympa.gz
 man/man3/Sympa::WWW::Marc::Search.3Sympa.gz
@@ -458,8 +476,6 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/create_list_templates/hotline/config.tt2
 %%DATADIR%%/defaults/create_list_templates/html-news-letter/comment.tt2
 %%DATADIR%%/defaults/create_list_templates/html-news-letter/config.tt2
-%%DATADIR%%/defaults/create_list_templates/intranet_list/comment.tt2
-%%DATADIR%%/defaults/create_list_templates/intranet_list/config.tt2
 %%DATADIR%%/defaults/create_list_templates/news-letter/comment.tt2
 %%DATADIR%%/defaults/create_list_templates/news-letter/config.tt2
 %%DATADIR%%/defaults/create_list_templates/private_working_group/comment.tt2
@@ -526,7 +542,6 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/scenari/archive_mail_access.private
 %%DATADIR%%/defaults/scenari/archive_mail_access.public
 %%DATADIR%%/defaults/scenari/archive_web_access.closed
-%%DATADIR%%/defaults/scenari/archive_web_access.intranet
 %%DATADIR%%/defaults/scenari/archive_web_access.listmaster
 %%DATADIR%%/defaults/scenari/archive_web_access.owner
 %%DATADIR%%/defaults/scenari/archive_web_access.private
@@ -534,7 +549,6 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/scenari/automatic_list_creation.family_owner
 %%DATADIR%%/defaults/scenari/automatic_list_creation.listmaster
 %%DATADIR%%/defaults/scenari/automatic_list_creation.public
-%%DATADIR%%/defaults/scenari/create_list.intranet
 %%DATADIR%%/defaults/scenari/create_list.listmaster
 %%DATADIR%%/defaults/scenari/create_list.public_listmaster
 %%DATADIR%%/defaults/scenari/d_edit.editor
@@ -568,7 +582,6 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/scenari/remind.owner
 %%DATADIR%%/defaults/scenari/remind.ownerdkim
 %%DATADIR%%/defaults/scenari/review.closed
-%%DATADIR%%/defaults/scenari/review.intranet
 %%DATADIR%%/defaults/scenari/review.listmaster
 %%DATADIR%%/defaults/scenari/review.owner
 %%DATADIR%%/defaults/scenari/review.private
@@ -579,8 +592,6 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/scenari/send.editorkey
 %%DATADIR%%/defaults/scenari/send.editorkeyonly
 %%DATADIR%%/defaults/scenari/send.editorkeyonlyauth
-%%DATADIR%%/defaults/scenari/send.intranet
-%%DATADIR%%/defaults/scenari/send.intranetorprivate
 %%DATADIR%%/defaults/scenari/send.newsletter
 %%DATADIR%%/defaults/scenari/send.newsletterkeyonly
 %%DATADIR%%/defaults/scenari/send.owner
@@ -606,8 +617,6 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/scenari/subscribe.auth_ownerdkim
 %%DATADIR%%/defaults/scenari/subscribe.authdkim
 %%DATADIR%%/defaults/scenari/subscribe.closed
-%%DATADIR%%/defaults/scenari/subscribe.intranet
-%%DATADIR%%/defaults/scenari/subscribe.intranetorowner
 %%DATADIR%%/defaults/scenari/subscribe.open
 %%DATADIR%%/defaults/scenari/subscribe.open_notify
 %%DATADIR%%/defaults/scenari/subscribe.open_quiet
@@ -628,7 +637,6 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/scenari/unsubscribe.open_notify
 %%DATADIR%%/defaults/scenari/unsubscribe.owner
 %%DATADIR%%/defaults/scenari/visibility.conceal
-%%DATADIR%%/defaults/scenari/visibility.intranet
 %%DATADIR%%/defaults/scenari/visibility.noconceal
 %%DATADIR%%/defaults/scenari/visibility.secret
 %%DATADIR%%/defaults/sympa.wsdl
@@ -842,14 +850,9 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/static/fonts/font-awesome/css/font-awesome.css
 %%DATADIR%%/static/fonts/font-awesome/css/font-awesome.min.css
 %%DATADIR%%/static/fonts/font-awesome/fonts/FontAwesome.otf
-%%DATADIR%%/static/fonts/font-awesome/fonts/fontawesome-webfont.eot
-%%DATADIR%%/static/fonts/font-awesome/fonts/fontawesome-webfont.svg
-%%DATADIR%%/static/fonts/font-awesome/fonts/fontawesome-webfont.ttf
 %%DATADIR%%/static/fonts/font-awesome/fonts/fontawesome-webfont.woff
 %%DATADIR%%/static/fonts/font-awesome/fonts/fontawesome-webfont.woff2
 %%DATADIR%%/static/fonts/foundation-icons/foundation-icons.css
-%%DATADIR%%/static/fonts/foundation-icons/foundation-icons.eot
-%%DATADIR%%/static/fonts/foundation-icons/foundation-icons.svg
 %%DATADIR%%/static/fonts/foundation-icons/foundation-icons.ttf
 %%DATADIR%%/static/fonts/foundation-icons/foundation-icons.woff
 %%DATADIR%%/static/icons/favicon_sympa.png
@@ -895,6 +898,7 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/static/js/jquery.js
 %%DATADIR%%/static/js/respondjs/respond.min.js
 %%DATADIR%%/static/js/sympa.js
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
 @dir %%ETCDIR%%/create_list_templates
 @dir %%ETCDIR%%/custom_actions
 @dir %%ETCDIR%%/custom_conditions
