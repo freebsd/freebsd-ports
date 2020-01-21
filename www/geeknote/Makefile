@@ -3,7 +3,7 @@
 
 PORTNAME=	geeknote
 DISTVERSION=	0.2a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 
 MAINTAINER=	koobs@FreeBSD.org
@@ -12,7 +12,7 @@ COMMENT=	Command line client for Evernote
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}evernote>=1.17:www/py-evernote@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}html2text>0:textproc/py-html2text@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}html2text2018>0:textproc/py-html2text2018@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown2>0:textproc/py-markdown2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.0:www/py-beautifulsoup@${PY_FLAVOR} \
