@@ -1,8 +1,22 @@
-Fixes random crashes (especially reproducible when moving in dense
-forests), still relevant for 5.0.1
---- src/CMakeLists.txt.orig	2019-03-31 20:57:45 UTC
+--- src/CMakeLists.txt.orig	2020-01-11 18:29:02 UTC
 +++ src/CMakeLists.txt
-@@ -729,7 +729,6 @@ else()
+@@ -485,6 +485,7 @@ if (CMAKE_VERSION VERSION_GREATER 3.8.1)
+ endif()
+ 
+ include_directories(
++	${JSON_INCLUDE_DIR}
+ 	${PROJECT_BINARY_DIR}
+ 	${PROJECT_SOURCE_DIR}
+ 	${IRRLICHT_INCLUDE_DIR}
+@@ -495,7 +496,6 @@ include_directories(
+ 	${SQLITE3_INCLUDE_DIR}
+ 	${LUA_INCLUDE_DIR}
+ 	${GMP_INCLUDE_DIR}
+-	${JSON_INCLUDE_DIR}
+ 	${X11_INCLUDE_DIR}
+ 	${PROJECT_SOURCE_DIR}/script
+ )
+@@ -715,7 +715,6 @@ else()
  
  	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -Wall -pipe -funroll-loops")
  	if(CMAKE_SYSTEM_NAME MATCHES "(Darwin|BSD|DragonFly)")
