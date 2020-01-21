@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	alpine
-DISTVERSION=	2.21.99999
-PORTREVISION=	1
+DISTVERSION=	2.22
 CATEGORIES?=	mail news
 MASTER_SITES=	http://repo.or.cz/alpine.git/snapshot/${GIT_COMMIT}${EXTRACT_SUFX}?dummy=/
 
@@ -31,7 +30,7 @@ CONFIGURE_ARGS+=	--with-debug-level=2 \
 MAKE_ARGS+=		CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
 # When you update please double check that the commit corresponds to
 # the actual version you've set in PORTVERSION.
-GIT_COMMIT=		abeb2c25935ef8c75f1e5deef0f81276754dc975
+GIT_COMMIT=		99948a254e2c2352547b962cbd1c23738e7af6b3
 GIT_COMMIT_SHORT=	${GIT_COMMIT:C/^(.......).*/\1/}
 WRKSRC=			${WRKDIR}/alpine-${GIT_COMMIT_SHORT}
 
