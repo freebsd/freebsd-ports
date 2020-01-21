@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minetest
-PORTVERSION=	5.1.0
+PORTVERSION=	5.1.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -10,8 +10,6 @@ COMMENT=	Near-infinite-world block sandbox game
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/doc/lgpl-2.1.txt
-
-BROKEN=		fails to link
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libgmp.so:math/gmp
