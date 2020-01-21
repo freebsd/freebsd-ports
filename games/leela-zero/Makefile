@@ -12,8 +12,7 @@ COMMENT=	Go engine without human-provided knowledge based on AlphaGo Zero paper
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	cblas>0:math/cblas \
-		opencl>0:devel/opencl
+BUILD_DEPENDS=	opencl>0:devel/opencl
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libopenblas.so:math/openblas \
 		libOpenCL.so:devel/ocl-icd

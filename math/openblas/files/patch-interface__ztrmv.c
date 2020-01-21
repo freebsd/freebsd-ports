@@ -1,6 +1,6 @@
---- interface/ztrmv.c.orig	2016-09-01 03:58:42 UTC
+--- interface/ztrmv.c.orig	2019-04-29 17:22:19 UTC
 +++ interface/ztrmv.c
-@@ -242,7 +242,7 @@ void CNAME(enum CBLAS_ORDER order, enum 
+@@ -245,7 +245,7 @@ void CNAME(enum CBLAS_ORDER order, enum CBLAS_UPLO Upl
    else
  #endif
    {
