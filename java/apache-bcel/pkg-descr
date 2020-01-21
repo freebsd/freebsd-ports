@@ -1,4 +1,4 @@
-The Byte Code Engineering Library (formerly known as JavaClass) is
+The Byte Code Engineering Library (Apache Commons BCEL) is
 intended to give users a convenient possibility to analyze, create,
 and manipulate (binary) Java class files (those ending with
 .class). Classes are represented by objects which contain all the

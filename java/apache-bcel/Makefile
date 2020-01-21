@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	Library for generating Java bytecode
+COMMENT=	Apache Commons Byte Code Engineering Library
 
 LICENSE=	APACHE20
 
