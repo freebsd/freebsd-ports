@@ -1,5 +1,5 @@
 include/ansilove.h
 lib/libansilove.so
 lib/libansilove.so.1
-lib/libansilove.so.1.1.7
+lib/libansilove.so.%%PORTVERSION%%
 man/man3/libansilove.3.gz
