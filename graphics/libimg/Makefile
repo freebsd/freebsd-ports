@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libimg
-PORTVERSION=	1.4.7
-CATEGORIES?=	graphics tk
+PORTVERSION=	1.4.9
+CATEGORIES?=	graphics tk tcl
 MASTER_SITES=	SF/tkimg/tkimg/${PORTVERSION:R}/tkimg%20${PORTVERSION}
-DISTNAME=	Img-Source-${PORTVERSION}
+DISTNAME=	Img-${PORTVERSION}-Source
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Library of image format handlers for Tk4.1 and later
@@ -21,18 +21,18 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+USES=		autoreconf jpeg tk:tea xorg dos2unix
 
-USES=		autoreconf jpeg tk:tea xorg zip
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 USE_XORG=	x11 xext xft xrender xscrnsaver
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SUB=	yes
+WRKSRC=		${WRKDIR}/Img-${PORTVERSION}
+DOS2UNIX_GLOB=	*.[ch] *.tcl *.msg *.in *.test license.terms
 
 # We don't need the bundled libraries:
-EXTRACT_AFTER_ARGS=	-x '*/libz/*' -x zlib \
-		-x 'config.*' -x Makefile \
-		-x '*/compat/*' -x '*/libtiff/*' \
-		-x '*/libjpeg/*' -x '*/libpng/*' -a -d ${WRKDIR}
+EXTRACT_AFTER_ARGS= --exclude 'config.*' --exclude Makefile	\
+		--exclude 'compat' --exclude win
 MAKE_ARGS+=	INSTALL_ROOT="${STAGEDIR}"
 CONFIGURE_ENV=	WRKDIR="${WRKDIR}"
 
@@ -42,9 +42,6 @@ post-patch:
 .for d in jpeg png tiff zlib
 	${TOUCH} ${WRKDIR}/$dtclConfig.sh
 .endfor
-
-pre-configure:
-	${CHMOD} +x ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
 .for l in jpeg png tiff
