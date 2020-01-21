@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	jetbrains-mono
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://download.jetbrains.com/fonts/
+MASTER_SITES=	https://github.com/JetBrains/JetBrainsMono/releases/download/${PORTVERSION}/
 DISTNAME=	JetBrainsMono-${DISTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -19,7 +19,7 @@ NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${STAGEDIR}${FONTSDIR}
 	${LS} ${STAGEDIR}${FONTSDIR}/*.ttf | ${SED} -e's,^${STAGEDIR},,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
