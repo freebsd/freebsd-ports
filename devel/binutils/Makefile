@@ -63,7 +63,6 @@ INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/share/info
 .if ${FLAVOR} == aarch64
 BROKEN_mips=		fails to configure: error: C compiler cannot create executables
 BROKEN_mips64=		fails to configure: error: C compiler cannot create executables
-BROKEN_powerpc64=	fails to configure: error: C compiler cannot create executables
 .elif ${FLAVOR} == aarch64_none_elf || ${FLAVOR} == arm_none_eabi || ${FLAVOR} == mingw32 || ${FLAVOR} == avr
 BUTARGET=	${FLAVOR:C/_/-/g}
 .elif ${FLAVOR} == amd64
