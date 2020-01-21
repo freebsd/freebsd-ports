@@ -425,6 +425,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsARM.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsBPF.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsHexagon.def
+%%CLANG%%llvm-devel/include/clang/Basic/BuiltinsHexagonDep.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsLe64.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsMips.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsNEON.def
@@ -681,6 +682,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Sema/Scope.h
 %%CLANG%%llvm-devel/include/clang/Sema/ScopeInfo.h
 %%CLANG%%llvm-devel/include/clang/Sema/Sema.h
+%%CLANG%%llvm-devel/include/clang/Sema/SemaConcept.h
 %%CLANG%%llvm-devel/include/clang/Sema/SemaConsumer.h
 %%CLANG%%llvm-devel/include/clang/Sema/SemaDiagnostic.h
 %%CLANG%%llvm-devel/include/clang/Sema/SemaFixItUtils.h
@@ -1697,6 +1699,7 @@ llvm-devel/include/llvm/CodeGen/LiveStacks.h
 llvm-devel/include/llvm/CodeGen/LiveVariables.h
 llvm-devel/include/llvm/CodeGen/LoopTraversal.h
 llvm-devel/include/llvm/CodeGen/LowLevelType.h
+llvm-devel/include/llvm/CodeGen/MIRFormatter.h
 llvm-devel/include/llvm/CodeGen/MIRParser/MIParser.h
 llvm-devel/include/llvm/CodeGen/MIRParser/MIRParser.h
 llvm-devel/include/llvm/CodeGen/MIRPrinter.h
@@ -1798,6 +1801,9 @@ llvm-devel/include/llvm/Config/Disassemblers.def
 llvm-devel/include/llvm/Config/Targets.def
 llvm-devel/include/llvm/Config/abi-breaking.h
 llvm-devel/include/llvm/Config/llvm-config.h
+llvm-devel/include/llvm/DWARFLinker/DWARFLinker.h
+llvm-devel/include/llvm/DWARFLinker/DWARFLinkerCompileUnit.h
+llvm-devel/include/llvm/DWARFLinker/DWARFLinkerDeclContext.h
 llvm-devel/include/llvm/DebugInfo/CodeView/AppendingTypeTableBuilder.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVRecord.h
 llvm-devel/include/llvm/DebugInfo/CodeView/CVSymbolVisitor.h
@@ -2161,6 +2167,7 @@ llvm-devel/include/llvm/IR/IntrinsicsBPF.h
 llvm-devel/include/llvm/IR/IntrinsicsBPF.td
 llvm-devel/include/llvm/IR/IntrinsicsHexagon.h
 llvm-devel/include/llvm/IR/IntrinsicsHexagon.td
+llvm-devel/include/llvm/IR/IntrinsicsHexagonDep.td
 llvm-devel/include/llvm/IR/IntrinsicsMips.h
 llvm-devel/include/llvm/IR/IntrinsicsMips.td
 llvm-devel/include/llvm/IR/IntrinsicsNVPTX.h
@@ -2650,6 +2657,7 @@ llvm-devel/include/llvm/Transforms/IPO/InferFunctionAttrs.h
 llvm-devel/include/llvm/Transforms/IPO/Inliner.h
 llvm-devel/include/llvm/Transforms/IPO/Internalize.h
 llvm-devel/include/llvm/Transforms/IPO/LowerTypeTests.h
+llvm-devel/include/llvm/Transforms/IPO/MergeFunctions.h
 llvm-devel/include/llvm/Transforms/IPO/PartialInlining.h
 llvm-devel/include/llvm/Transforms/IPO/PassManagerBuilder.h
 llvm-devel/include/llvm/Transforms/IPO/SCCP.h
@@ -2738,6 +2746,7 @@ llvm-devel/include/llvm/Transforms/Scalar/SpeculativeExecution.h
 llvm-devel/include/llvm/Transforms/Scalar/TailRecursionElimination.h
 llvm-devel/include/llvm/Transforms/Scalar/WarnMissedTransforms.h
 llvm-devel/include/llvm/Transforms/Utils.h
+llvm-devel/include/llvm/Transforms/Utils/AMDGPUEmitPrintf.h
 llvm-devel/include/llvm/Transforms/Utils/ASanStackFrameLayout.h
 llvm-devel/include/llvm/Transforms/Utils/AddDiscriminators.h
 llvm-devel/include/llvm/Transforms/Utils/BasicBlockUtils.h
@@ -2924,7 +2933,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/ppc_wrappers/tmmintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/ppc_wrappers/xmmintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/prfchwintrin.h
-%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/profile/InstrProfData.inc
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/profile/InstrProfData.inc
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/ptwriteintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/rdseedintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/rtmintrin.h
@@ -3039,6 +3048,7 @@ llvm-devel/lib/libLLVMCodeGen.a
 llvm-devel/lib/libLLVMCore.a
 llvm-devel/lib/libLLVMCoroutines.a
 llvm-devel/lib/libLLVMCoverage.a
+llvm-devel/lib/libLLVMDWARFLinker.a
 llvm-devel/lib/libLLVMDebugInfoCodeView.a
 llvm-devel/lib/libLLVMDebugInfoDWARF.a
 llvm-devel/lib/libLLVMDebugInfoGSYM.a
