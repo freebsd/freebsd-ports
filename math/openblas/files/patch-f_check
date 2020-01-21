@@ -1,6 +1,6 @@
---- f_check.orig	2015-10-27 20:44:50 UTC
+--- f_check.orig	2018-12-02 22:41:17 UTC
 +++ f_check
-@@ -261,7 +261,7 @@ if ($link ne "") {
+@@ -288,7 +288,7 @@ if ($link ne "") {
  
      foreach $flags (@flags) {
  	if (
@@ -9,7 +9,7 @@
  	    && ($flags !~ /^-LIST:/)
  	    && ($flags !~ /^-LANG:/)
  	    ) {
-@@ -292,7 +292,7 @@ if ($link ne "") {
+@@ -317,7 +317,7 @@ if ($link ne "") {
  	}
  
  	if (

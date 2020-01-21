@@ -22,7 +22,7 @@ GH_PROJECT=	GEMMA
 MAKEFILE=	${FILESDIR}/Makefile
 # Assuming openblas is built with pthreads, not openmp
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 -DOPENBLAS -pthread
-LDFLAGS+=	-lopenblasp -pthread
+LDFLAGS+=	-lopenblas -pthread
 
 OPTIONS_DEFINE=	EXAMPLES
 

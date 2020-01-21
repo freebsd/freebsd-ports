@@ -1,6 +1,6 @@
---- c_check.orig	2015-10-27 20:44:50 UTC
+--- c_check.orig	2019-04-29 17:22:19 UTC
 +++ c_check
-@@ -235,7 +235,7 @@ open(CONFFILE, "> $config"  ) || die "Ca
+@@ -320,7 +320,7 @@ open(CONFFILE, "> $config"  ) || die "Can't create $co
  # print $data, "\n";
  
  print MAKEFILE "OSNAME=$os\n";
