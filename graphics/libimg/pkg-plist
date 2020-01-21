@@ -29,6 +29,7 @@ man/mann/img.n.gz
 lib/Img/libtkimg%%PORTVERSION%%.so
 lib/Img/libtkimgbmp%%PORTVERSION%%.so
 lib/Img/libtkimgdted%%PORTVERSION%%.so
+lib/Img/libtkimgflir%%PORTVERSION%%.so
 lib/Img/libtkimggif%%PORTVERSION%%.so
 lib/Img/libtkimgico%%PORTVERSION%%.so
 lib/Img/libtkimgjpeg%%PORTVERSION%%.so
