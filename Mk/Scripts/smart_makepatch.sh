@@ -69,7 +69,7 @@ std_patch_filename() {
 patchdir_files_list() {
 	if [ -d "${PATCHDIR}" ]; then
 		(cd ${PATCHDIR} && \
-			find ./* -type f -name "patch-*" -maxdepth 0 \
+			find . -type f -name "patch-*" -maxdepth 0 \
 			2>/dev/null | sed -e 's,^\./,,; /\.orig$/d'
 		)
 	fi;
@@ -186,7 +186,7 @@ regenerate_patches() {
 	local ORIG
 	local new_list
 	new_list=$(cd "${PATCH_WRKSRC}" && \
-		find -s ./* -type f -name '*.orig' 2>/dev/null)
+		find -s . -type f -name '*.orig' 2>/dev/null)
 	(cd "${PATCH_WRKSRC}" && for F in ${new_list}; do
 		ORIG=${F#./}
 		NEW=${ORIG%.orig}
@@ -216,7 +216,7 @@ stage_patches() {
 	local P
 	local name
 	local patch_list
-	patch_list=$(cd ${REGENNED} && find ./* -name "patch-*" 2>/dev/null)
+	patch_list=$(cd ${REGENNED} && find . -name "patch-*" 2>/dev/null)
 	for P in ${patch_list}; do
 		P=${P#./}
 		name=$(get_patch_name ${P})
