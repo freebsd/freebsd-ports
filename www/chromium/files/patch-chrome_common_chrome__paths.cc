@@ -35,6 +35,16 @@
        if (!GetUserDownloadsDirectorySafe(&cur))
          return false;
        break;
+@@ -482,6 +482,9 @@ bool PathProvider(int key, base::FilePath* result) {
+     case chrome::DIR_POLICY_FILES: {
+ #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
+       cur = base::FilePath(FILE_PATH_LITERAL("/etc/opt/chrome/policies"));
++#elif defined(OS_BSD)
++      cur = base::FilePath(FILE_PATH_LITERAL(
++          "/usr/local/etc/chrome/policies"));
+ #else
+       cur = base::FilePath(FILE_PATH_LITERAL("/etc/chromium/policies"));
+ #endif
 @@ -502,7 +502,7 @@ bool PathProvider(int key, base::FilePath* result) {
      }
  #endif
