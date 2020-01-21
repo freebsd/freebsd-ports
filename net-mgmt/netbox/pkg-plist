@@ -6,6 +6,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/custom-scripts.md
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/export-templates.md
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/graphs.md
+%%PORTDOCS%%%%DOCSDIR%%/additional-features/napalm.md
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/prometheus-metrics.md
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/reports.md
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/tags.md
@@ -99,6 +100,7 @@
 %%DATADIR%%/circuits/tables.py
 %%DATADIR%%/circuits/tests/__init__.py
 %%DATADIR%%/circuits/tests/test_api.py
+%%DATADIR%%/circuits/tests/test_filters.py
 %%DATADIR%%/circuits/tests/test_views.py
 %%DATADIR%%/circuits/urls.py
 %%DATADIR%%/circuits/views.py
@@ -202,6 +204,7 @@
 %%DATADIR%%/dcim/tables.py
 %%DATADIR%%/dcim/tests/__init__.py
 %%DATADIR%%/dcim/tests/test_api.py
+%%DATADIR%%/dcim/tests/test_filters.py
 %%DATADIR%%/dcim/tests/test_forms.py
 %%DATADIR%%/dcim/tests/test_models.py
 %%DATADIR%%/dcim/tests/test_natural_ordering.py
@@ -268,6 +271,7 @@
 %%DATADIR%%/extras/tests/test_api.py
 %%DATADIR%%/extras/tests/test_changelog.py
 %%DATADIR%%/extras/tests/test_customfields.py
+%%DATADIR%%/extras/tests/test_filters.py
 %%DATADIR%%/extras/tests/test_scripts.py
 %%DATADIR%%/extras/tests/test_tags.py
 %%DATADIR%%/extras/tests/test_views.py
@@ -326,6 +330,7 @@
 %%DATADIR%%/ipam/tables.py
 %%DATADIR%%/ipam/tests/__init__.py
 %%DATADIR%%/ipam/tests/test_api.py
+%%DATADIR%%/ipam/tests/test_filters.py
 %%DATADIR%%/ipam/tests/test_models.py
 %%DATADIR%%/ipam/tests/test_views.py
 %%DATADIR%%/ipam/urls.py
@@ -427,6 +432,7 @@
 %%DATADIR%%/project-static/js/cabletrace.js
 %%DATADIR%%/project-static/js/forms.js
 %%DATADIR%%/project-static/js/graphs.js
+%%DATADIR%%/project-static/js/interface_toggles.js
 %%DATADIR%%/project-static/js/jquery-3.4.1.min.js
 %%DATADIR%%/project-static/js/livesearch.js
 %%DATADIR%%/project-static/js/secrets.js
@@ -525,6 +531,7 @@
 %%DATADIR%%/secrets/templatetags/secret_helpers.py
 %%DATADIR%%/secrets/tests/__init__.py
 %%DATADIR%%/secrets/tests/test_api.py
+%%DATADIR%%/secrets/tests/test_filters.py
 %%DATADIR%%/secrets/tests/test_models.py
 %%DATADIR%%/secrets/tests/test_views.py
 %%DATADIR%%/secrets/urls.py
@@ -658,6 +665,7 @@
 %%DATADIR%%/templates/ipam/aggregate_list.html
 %%DATADIR%%/templates/ipam/inc/ipadress_edit_header.html
 %%DATADIR%%/templates/ipam/inc/service.html
+%%DATADIR%%/templates/ipam/inc/toggle_available.html
 %%DATADIR%%/templates/ipam/inc/vlangroup_header.html
 %%DATADIR%%/templates/ipam/ipaddress.html
 %%DATADIR%%/templates/ipam/ipaddress_assign.html
@@ -757,6 +765,7 @@
 %%DATADIR%%/tenancy/tables.py
 %%DATADIR%%/tenancy/tests/__init__.py
 %%DATADIR%%/tenancy/tests/test_api.py
+%%DATADIR%%/tenancy/tests/test_filters.py
 %%DATADIR%%/tenancy/tests/test_views.py
 %%DATADIR%%/tenancy/urls.py
 %%DATADIR%%/tenancy/views.py
@@ -811,6 +820,7 @@
 %%DATADIR%%/utilities/tests/__init__.py
 %%DATADIR%%/utilities/tests/test_api.py
 %%DATADIR%%/utilities/tests/test_filters.py
+%%DATADIR%%/utilities/tests/test_forms.py
 %%DATADIR%%/utilities/tests/test_managers.py
 %%DATADIR%%/utilities/tests/test_utils.py
 %%DATADIR%%/utilities/utils.py
@@ -842,6 +852,7 @@
 %%DATADIR%%/virtualization/tables.py
 %%DATADIR%%/virtualization/tests/__init__.py
 %%DATADIR%%/virtualization/tests/test_api.py
+%%DATADIR%%/virtualization/tests/test_filters.py
 %%DATADIR%%/virtualization/tests/test_views.py
 %%DATADIR%%/virtualization/urls.py
 %%DATADIR%%/virtualization/views.py
