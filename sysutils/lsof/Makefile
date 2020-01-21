@@ -25,6 +25,17 @@ HAS_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	lsof-org
 
+OPTIONS_DEFINE_powerpc64=	AIM BOOKE
+OPTIONS_DEFAULT_powerpc64=	AIM
+
+AIM_DESC=	Set for AIM hardware
+AIM_CFLAGS=	-DAIM
+BOOKE_DESC=	Set for BOOKE hardware
+BOOKE_CFLAGS=	-DBOOKE
+
+CFLAGS_powerpc=	-DAIM
+CFLAGS_powerpcspe=	-DBOOKE
+
 SHEBANG_FILES=	scripts/sort_res.perl5
 
 .include <bsd.port.pre.mk>
@@ -33,12 +44,11 @@ CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
 
-# PPC64 needs -lzpool for reasons unknown.  If someone can 
+# PPC64 needs -lzpool for reasons unknown.  If someone can
 # figure out why, I (ler) am all ears.
-.if ${ARCH} == powerpc64
-CONFIGURE_ENV+= LSOF_CFGL="-lzpool"
+.if ${ARCH} == powerpc64 || ${ARCH} == powerpc
+CONFIGURE_ENV+=	LSOF_CFGL="-lzpool"
 . endif
-
 
 .if !exists(${SRC_BASE}/sys/kern/kern_lockf.c)
 IGNORE+=		requires kernel sources
