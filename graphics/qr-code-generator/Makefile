@@ -10,7 +10,7 @@ COMMENT=	High-quality QR Code generator library
 
 LICENSE=	MIT
 
-USES=	gmake
+USES=		compiler:c++11-lang gmake
 
 USE_LDCONFIG=	yes
 
