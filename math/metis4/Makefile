@@ -16,6 +16,9 @@ LICENSE_NAME=	University of Minnesota METIS License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	auto-accept
 
+DEPRECATED=	EOL: use math/metis instead
+EXPIRATION_DATE=	2020-02-20
+
 CONFLICTS=	metis-5* metis-edf-[0-9]*
 
 USE_LDCONFIG=	yes
