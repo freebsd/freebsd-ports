@@ -1446,6 +1446,7 @@
     SUBDIR += tcpsplit
     SUBDIR += tcpstat
     SUBDIR += tcptestsuite
+    SUBDIR += tcptrace
     SUBDIR += tcptraceroute
     SUBDIR += tcpview
     SUBDIR += tcpwatch
