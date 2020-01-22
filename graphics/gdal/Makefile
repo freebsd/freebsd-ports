@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	2.4.4
+PORTVERSION=	3.0.3
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -114,8 +114,7 @@ OPENJPEG_CONFIGURE_WITH=openjpeg
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 PCRE_CONFIGURE_WITH=	pcre
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-PGSQL_CONFIGURE_OFF=	--with-pg=no
-PGSQL_CONFIGURE_ON=	--with-pg=${LOCALBASE}/bin/pg_config
+PGSQL_CONFIGURE_WITH=	pg
 PGSQL_USES=		pgsql
 PODOFO_CONFIGURE_WITH=	podofo
 PODOFO_LIB_DEPENDS=	libpodofo.so:graphics/podofo
