@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calculix
-PORTVERSION=	2.16
+PORTVERSION=	2.16.1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -22,7 +22,7 @@ USE_GL=		gl glu # uses its own glut
 
 DIST_SOURCES=	cgx_${PORTVERSION}.all${EXTRACT_SUFX}
 DIST_HTM=	cgx_${PORTVERSION}.htm${EXTRACT_SUFX}
-DIST_PDF=	cgx_${PORTVERSION}.pdf
+DIST_PDF=	cgx_2.16.pdf
 DIST_EXAMPLES=	cgx_${PORTVERSION}.exa${EXTRACT_SUFX}
 
 WRKSRC=		${WRKDIR}/CalculiX
@@ -75,7 +75,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/cgx
 	@(cd ${WRKSRC}/${CGX_VER}/doc/cgx && ${COPYTREE_SHARE} . \
 	  ${STAGEDIR}${DOCSDIR}/cgx)
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cgx_${PORTVERSION}.pdf \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DIST_PDF} \
 	  ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
