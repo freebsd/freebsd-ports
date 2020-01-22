@@ -11,6 +11,9 @@ DISTFILES=	large.tgz:lapack_tmg \
 		timing.tgz:lapack_tmg
 DIST_SUBDIR=	openblas
 
+PATCH_SITES=	https://github.com/xianyi/OpenBLAS/commit/
+PATCHFILES=	3e67017ac8f0246f5fc14572ca663fb0968d1046.patch:-p1
+
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Optimized BLAS library based on GotoBLAS2
 
