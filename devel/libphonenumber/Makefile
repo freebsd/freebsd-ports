@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libicui18n.so:devel/icu \
 		libprotobuf.so:devel/protobuf
 
-USES=		cmake:noninja
+USES=		cmake:noninja compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	googlei18n
 
