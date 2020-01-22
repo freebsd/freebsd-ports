@@ -135,8 +135,8 @@ lib/libpoppler-cpp.so
 lib/libpoppler-cpp.so.0
 lib/libpoppler-cpp.so.0.7.0
 lib/libpoppler.so
-lib/libpoppler.so.92
-lib/libpoppler.so.92.0.0
+lib/libpoppler.so.94
+lib/libpoppler.so.94.0.0
 libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-cpp.pc
 libdata/pkgconfig/poppler-splash.pc

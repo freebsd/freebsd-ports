@@ -1,4 +1,4 @@
---- scribus/plugins/import/pdf/slaoutput.h.orig	2019-10-27 16:12:47 UTC
+--- scribus/plugins/import/pdf/slaoutput.h.orig	2020-01-18 17:22:17 UTC
 +++ scribus/plugins/import/pdf/slaoutput.h
 @@ -229,7 +229,7 @@ class SlaOutputDev : public OutputDev (public)
  
@@ -20,3 +20,12 @@
  	void  endType3Char(GfxState * /*state*/) override;
  	void  type3D0(GfxState * /*state*/, double /*wx*/, double /*wy*/) override;
  	void  type3D1(GfxState * /*state*/, double /*wx*/, double /*wy*/, double /*llx*/, double /*lly*/, double /*urx*/, double /*ury*/) override;
+@@ -282,7 +282,7 @@ class SlaOutputDev : public OutputDev (public)
+ 	void getPenState(GfxState *state);
+ 	QString getColor(GfxColorSpace *color_space, POPPLER_CONST_070 GfxColor *color, int *shade);
+ 	QString getAnnotationColor(const AnnotColor *color);
+-	QString convertPath(GfxPath *path);
++	QString convertPath(const GfxPath *path);
+ 	int getBlendMode(GfxState *state);
+ 	void applyMask(PageItem *ite);
+ 	void pushGroup(const QString& maskName = "", GBool forSoftMask = gFalse, GBool alpha = gFalse, bool inverted = false);

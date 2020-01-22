@@ -2,7 +2,7 @@
 
 PORTNAME=	diffpdf
 PORTVERSION=	2.1.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.qtrac.eu/
 

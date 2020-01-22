@@ -1,6 +1,24 @@
---- scribus/plugins/import/pdf/slaoutput.cpp.orig	2019-10-27 16:14:24 UTC
+--- scribus/plugins/import/pdf/slaoutput.cpp.orig	2020-01-18 17:22:17 UTC
 +++ scribus/plugins/import/pdf/slaoutput.cpp
-@@ -2784,7 +2784,7 @@ void SlaOutputDev::drawMaskedImage(GfxState *state, Ob
+@@ -1224,16 +1224,7 @@ void SlaOutputDev::startDoc(PDFDoc *doc, XRef *xrefA, 
+ 	catalog = catA;
+ 	pdfDoc = doc;
+ 	updateGUICounter = 0;
+-	m_fontEngine = new SplashFontEngine(
+-#if HAVE_T1LIB_H
+-	globalParams->getEnableT1lib(),
+-#endif
+-#if HAVE_FREETYPE_H
+-	globalParams->getEnableFreeType(),
+-	true,
+-	true,
+-#endif
+-	true);
++	m_fontEngine = new SplashFontEngine(true, true, true, true);
+ }
+ 
+ void SlaOutputDev::startPage(int pageNum, GfxState *, XRef *)
+@@ -2784,7 +2775,7 @@ void SlaOutputDev::drawMaskedImage(GfxState *state, Ob
  	delete[] mbuffer;
  }
  
@@ -9,7 +27,7 @@
  {
  	ImageStream * imgStr = new ImageStream(str, width, colorMap->getNumPixelComps(), colorMap->getBits());
  //	qDebug() << "Image Components" << colorMap->getNumPixelComps() << "Mask" << maskColors;
-@@ -3365,7 +3365,7 @@ err1:
+@@ -3365,7 +3356,7 @@ err1:
  		fontsrc->unref();
  }
  
@@ -18,7 +36,7 @@
  {
  	double x1, y1, x2, y2;
  	int render;
-@@ -3452,7 +3452,7 @@ void SlaOutputDev::drawChar(GfxState *state, double x,
+@@ -3452,7 +3443,7 @@ void SlaOutputDev::drawChar(GfxState *state, double x,
  	}
  }
  
@@ -27,3 +45,21 @@
  {
  //	qDebug() << "beginType3Char";
  	GfxFont *gfxFont;
+@@ -3705,7 +3696,7 @@ QString SlaOutputDev::getAnnotationColor(const AnnotCo
+ 	return fNam;
+ }
+ 
+-QString SlaOutputDev::convertPath(GfxPath *path)
++QString SlaOutputDev::convertPath(const GfxPath *path)
+ {
+ 	if (! path)
+ 		return QString();
+@@ -3715,7 +3706,7 @@ QString SlaOutputDev::convertPath(GfxPath *path)
+ 
+ 	for (int i = 0; i < path->getNumSubpaths(); ++i)
+ 	{
+-		GfxSubpath * subpath = path->getSubpath(i);
++		const GfxSubpath * subpath = path->getSubpath(i);
+ 		if (subpath->getNumPoints() > 0)
+ 		{
+ 			output += QString("M %1 %2").arg(subpath->getX(0)).arg(subpath->getY(0));
