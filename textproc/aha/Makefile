@@ -10,6 +10,7 @@ COMMENT=	Ansi HTML Adapter
 LICENSE=	LGPL20+ MPL11
 LICENSE_COMB=	dual
 
+USES=		compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	theZiz
 
