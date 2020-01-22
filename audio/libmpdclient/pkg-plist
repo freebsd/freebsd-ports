@@ -38,7 +38,7 @@ include/mpd/tag.h
 include/mpd/version.h
 lib/libmpdclient.so
 lib/libmpdclient.so.2
-lib/libmpdclient.so.2.17
+lib/libmpdclient.so.2.18
 libdata/pkgconfig/libmpdclient.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
