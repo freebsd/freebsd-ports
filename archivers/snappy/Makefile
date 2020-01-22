@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	snappy
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	archivers
 
 MAINTAINER=	vanilla@FreeBSD.org
