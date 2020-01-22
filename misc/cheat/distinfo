@@ -1,8 +1,8 @@
-TIMESTAMP = 1577760104
-SHA256 (cheat-cheat-3.2.2_GH0.tar.gz) = 9a756b249ae9a9ea7beb2149a57a6556b145075e97c4c90b52ea6492334a5c7e
-SIZE (cheat-cheat-3.2.2_GH0.tar.gz) = 1982793
-SHA256 (alecthomas-chroma-v0.7.0_GH0.tar.gz) = 845c2fa532ec6dcc77e4e0c659def1b4724fd6bd15bb935b779970667fb40cd3
-SIZE (alecthomas-chroma-v0.7.0_GH0.tar.gz) = 8457919
+TIMESTAMP = 1579669342
+SHA256 (cheat-cheat-3.3.0_GH0.tar.gz) = 0a9a6c2acf330409d3538590778aca730f2731360edfab4da2459a94d3c92248
+SIZE (cheat-cheat-3.3.0_GH0.tar.gz) = 1984792
+SHA256 (alecthomas-chroma-v0.7.1_GH0.tar.gz) = 962d3f29a445b07ad86bb596f447d9dd572da5073ac99c10eef4066580aa1d26
+SIZE (alecthomas-chroma-v0.7.1_GH0.tar.gz) = 597331
 SHA256 (danwakefield-fnmatch-cbb64ac3d964_GH0.tar.gz) = 7ebff38d382142f9220d2cfcb4731d0ae90cdef71238c94a15c35f8aa746007f
 SIZE (danwakefield-fnmatch-cbb64ac3d964_GH0.tar.gz) = 4955
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e

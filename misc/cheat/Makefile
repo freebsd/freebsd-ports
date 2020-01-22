@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cheat
-DISTVERSION=	3.2.2
+DISTVERSION=	3.3.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		go:modules
 USE_GITHUB=	yes
 GH_TUPLE=	\
-		alecthomas:chroma:v0.7.0:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+		alecthomas:chroma:v0.7.1:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dlclark:regexp2:v1.1.6:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
