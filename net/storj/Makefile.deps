@@ -6,11 +6,12 @@ GH_TUPLE=	\
 		VividCortex:ewma:v1.1.1:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
 		alessio:shellescape:b115ca0f9053:alessio_shellescape/vendor/github.com/alessio/shellescape \
 		alicebob:gopher-json:5a6b3ba71ee6:alicebob_gopher_json/vendor/github.com/alicebob/gopher-json \
-		alicebob:miniredis:3657542c8629:alicebob_miniredis/vendor/github.com/alicebob/miniredis \
+		alicebob:miniredis:v2.5.0:alicebob_miniredis/vendor/github.com/alicebob/miniredis \
 		beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		btcsuite:btcutil:ab6388e0c60a:btcsuite_btcutil/vendor/github.com/btcsuite/btcutil \
+		calebcase:tmpfile:v1.0.1:calebcase_tmpfile/vendor/github.com/calebcase/tmpfile \
 		cheggaaa:pb:73ae1d68fe0b:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
 		cheggaaa:pb:v3.0.1:cheggaaa_pb_1/vendor/github.com/cheggaaa/pb/v3 \
 		cloudfoundry:gosigar:v1.1.0:cloudfoundry_gosigar/vendor/github.com/cloudfoundry/gosigar \
@@ -35,15 +36,14 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-migrate:migrate:v4.7.0:golang_migrate_migrate/vendor/github.com/golang-migrate/migrate/v4 \
 		golang:appengine:v1.6.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:227b76d455e7:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:53104e6ec876:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:c8589233b77d:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:b4ddaad3f8a3:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:ef85f5a75ddf:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
-		golang:tools:905c8ffbfa41:golang_tools/vendor/golang.org/x/tools \
+		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		gomodule:redigo:v2.0.0:gomodule_redigo/vendor/github.com/gomodule/redigo \
 		google:go-cmp:v0.3.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:c506a9f90610:google_go_genproto/vendor/google.golang.org/genproto \
@@ -63,7 +63,7 @@ GH_TUPLE=	\
 		jtolds:monkit-hw:0f753668cf20:jtolds_monkit_hw/vendor/github.com/jtolds/monkit-hw \
 		klauspost:cpuid:e7e905edc00e:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		klauspost:reedsolomon:925cb01d6510:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
-		lib:pq:v1.0.0:lib_pq/vendor/github.com/lib/pq \
+		lib:pq:v1.3.0:lib_pq/vendor/github.com/lib/pq \
 		loov:hrtime:37a208e8344e:loov_hrtime/vendor/github.com/loov/hrtime \
 		loov:plot:e59891ae1271:loov_plot/vendor/github.com/loov/plot \
 		magiconair:properties:v1.8.0:magiconair_properties/vendor/github.com/magiconair/properties \
@@ -116,6 +116,7 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
+		storj:common:ccc8474e4234:storj_common/vendor/storj.io/common \
 		storj:drpc:2171c57838d2:storj_drpc/vendor/storj.io/drpc \
 		storj:grpc-go:1c4561bf5127:storj_grpc_go/vendor/google.golang.org/grpc \
 		streadway:amqp:70e15c650864:streadway_amqp/vendor/github.com/streadway/amqp \
