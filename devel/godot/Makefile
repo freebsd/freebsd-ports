@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	godot
-DISTVERSION=	3.1.1
+DISTVERSION=	3.1.2
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	2
 CATEGORIES=	devel games
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -29,7 +28,8 @@ USE_GL=		gl glew glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	godotengine
 
-MAKE_ARGS+=		platform=x11 builtin_libpng=False builtin_openssl=False verbose=True
+MAKE_ARGS+=		platform=x11 builtin_libpng=False \
+			builtin_openssl=False verbose=True
 MAKE_ARGS+=		${MAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
 MAKE_ARGS_clang=	use_llvm=True
 CXXFLAGS+=		-DRTAUDIO_ENABLED
@@ -48,8 +48,8 @@ AUDIO_DESC=		Audio support
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_MAKE_ARGS=		alsa=True
 EXAMPLES_GH_PROJECT=	godot-demo-projects:DEMOS
-# master at 23/3
-EXAMPLES_GH_TAGNAME=	17e80079e3fc:DEMOS
+# master at 13/12
+EXAMPLES_GH_TAGNAME=	c34a2b423bcb:DEMOS
 EXAMPLES_PORTEXAMPLES=	*
 # mono support doesn't build at present
 MONO_USES=		mono:nuget
@@ -77,8 +77,9 @@ PLIST_FILES=		bin/${GODOTFILE}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != aarch64 && ${ARCH} != amd64 && ${ARCH} != i386 && ${ARCH} != armv6 && ${ARCH} != armv7
-LIB_DEPENDS+= libvpx.so:multimedia/libvpx
-MAKE_ARGS+= builtin_libvpx=False
+# use system libvpx on archs that break with built-in
+LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
+MAKE_ARGS+=		builtin_libvpx=False
 .endif
 
 post-patch:
