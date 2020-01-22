@@ -5,7 +5,6 @@ include/wlr/backend/interface.h
 include/wlr/backend/libinput.h
 include/wlr/backend/multi.h
 include/wlr/backend/noop.h
-include/wlr/backend/rdp.h
 include/wlr/backend/session.h
 include/wlr/backend/session/interface.h
 include/wlr/backend/wayland.h
@@ -84,6 +83,6 @@ include/wlr/version.h
 include/wlr/xcursor.h
 %%X11%%include/wlr/xwayland.h
 lib/libwlroots.so
-lib/libwlroots.so.4
-lib/libwlroots.so.4.8.1
+lib/libwlroots.so.5
+lib/libwlroots.so.5.9.1
 libdata/pkgconfig/wlroots.pc

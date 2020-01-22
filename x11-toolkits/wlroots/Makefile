@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wlroots
-DISTVERSION=	0.9.1
+DISTVERSION=	0.10.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -32,8 +32,8 @@ MESON_ARGS=	-Dexamples=false
 LLD_UNSAFE=	yes
 .endif
 
-OPTIONS_DEFINE=	CONSOLEKIT FREERDP X11
-OPTIONS_DEFAULT=FREERDP X11
+OPTIONS_DEFINE=	CONSOLEKIT X11
+OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
 
 CONSOLEKIT_DESC=	DRM sessions without root using ConsoleKit2
@@ -46,18 +46,10 @@ CONSOLEKIT_MESON_ENABLED=	consolekit2
 .MAKEFLAGS:		WITH+=CONSOLEKIT
 .endif
 
-FREERDP_DESC=	RDP backend with freerdp
-FREERDP_LIB_DEPENDS=	libfreerdp2.so:net/freerdp
-FREERDP_MESON_ENABLED=	freerdp
-
 X11_LIB_DEPENDS=libxcb-errors.so:x11/xcb-util-errors \
 		libxcb-icccm.so:x11/xcb-util-wm
 X11_RUN_DEPENDS=Xwayland:x11-servers/xwayland
 X11_USE=	XORG=x11,xcb
 X11_MESON_ENABLED=x11-backend xcb-icccm xwayland
-
-post-patch:
-# Ignore unused dependencies
-	@${REINPLACE_CMD} '/examples/d' ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
