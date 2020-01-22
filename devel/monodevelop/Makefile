@@ -73,7 +73,8 @@ GH_TUPLE=	mono:RefactoringEssentials:0148f6a:1/external/RefactoringEssentials \
 INSTALL_TARGET=	install-strip
 MAKE_ENV=	DOTNET_MSBUILD_SDK_RESOLVER_SDKS_DIR= \
 		XDG_CACHE_HOME=${WRKDIR} \
-		OPENSSL_ROOT_DIR=${OPENSSLBASE}
+		OPENSSL_ROOT_DIR=${OPENSSLBASE} \
+		MONO_REGISTRY_PATH=${WRKDIR}
 MAKE_JOBS_UNSAFE=Build parallelization not implemented
 WRKSRC_SUBDIR=	main
 PORTSCOUT=	limit:^\d+\.\d+\.[1-9].*
