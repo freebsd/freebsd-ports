@@ -1,5 +1,4 @@
 bin/protoc
-include/google/protobuf/stubs/map_util.h
 include/google/protobuf/any.h
 include/google/protobuf/any.pb.h
 include/google/protobuf/any.proto
@@ -50,6 +49,7 @@ include/google/protobuf/implicit_weak_message.h
 include/google/protobuf/inlined_string_field.h
 include/google/protobuf/io/coded_stream.h
 include/google/protobuf/io/gzip_stream.h
+include/google/protobuf/io/io_win32.h
 include/google/protobuf/io/printer.h
 include/google/protobuf/io/strtod.h
 include/google/protobuf/io/tokenizer.h
@@ -87,6 +87,7 @@ include/google/protobuf/stubs/fastmem.h
 include/google/protobuf/stubs/hash.h
 include/google/protobuf/stubs/logging.h
 include/google/protobuf/stubs/macros.h
+include/google/protobuf/stubs/map_util.h
 include/google/protobuf/stubs/mutex.h
 include/google/protobuf/stubs/once.h
 include/google/protobuf/stubs/platform_macros.h
@@ -116,15 +117,15 @@ include/google/protobuf/wrappers.pb.h
 include/google/protobuf/wrappers.proto
 lib/libprotobuf-lite.a
 lib/libprotobuf-lite.so
-lib/libprotobuf-lite.so.20
-lib/libprotobuf-lite.so.20.0.2
+lib/libprotobuf-lite.so.22
+lib/libprotobuf-lite.so.22.0.2
 lib/libprotobuf.a
 lib/libprotobuf.so
-lib/libprotobuf.so.20
-lib/libprotobuf.so.20.0.2
+lib/libprotobuf.so.22
+lib/libprotobuf.so.22.0.2
 lib/libprotoc.a
 lib/libprotoc.so
-lib/libprotoc.so.20
-lib/libprotoc.so.20.0.2
+lib/libprotoc.so.22
+lib/libprotoc.so.22.0.2
 libdata/pkgconfig/protobuf-lite.pc
 libdata/pkgconfig/protobuf.pc
