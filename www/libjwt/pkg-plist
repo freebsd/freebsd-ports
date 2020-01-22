@@ -1,6 +1,8 @@
+bin/jwtauth
+bin/jwtgen
 include/jwt.h
 lib/libjwt.a
 lib/libjwt.so
 lib/libjwt.so.0
-lib/libjwt.so.0.6.0
+lib/libjwt.so.0.7.0
 libdata/pkgconfig/libjwt.pc
