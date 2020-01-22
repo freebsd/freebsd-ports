@@ -3,7 +3,7 @@
 
 PORTNAME=	emacs
 DISTVERSION=	26.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
@@ -225,6 +225,10 @@ XWIDGETS_CONFIGURE_WITH=	xwidgets
 # has graphics/ImageMagick been compiled with OPENMP?
 .if ${PORT_OPTIONS:MMAGICK} && ${:!${GREP} -sc " \-fopenmp " ${LOCALBASE}/libdata/pkgconfig/ImageMagick.pc || true!} == "1"
 USES+=		compiler:openmp
+.endif
+
+.if ${ARCH} == powerpc64
+USE_GCC=	any
 .endif
 
 .if !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MGTK3} && !${PORT_OPTIONS:MMOTIF} \
