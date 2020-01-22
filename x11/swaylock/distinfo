@@ -1,5 +1,3 @@
-TIMESTAMP = 1556548667
-SHA256 (swaywm-swaylock-1.4_GH0.tar.gz) = 8e6ad33d16370084f5242fd19e0ad631deaeb636cd9699cb8561ca9f18751440
-SIZE (swaywm-swaylock-1.4_GH0.tar.gz) = 34288
-SHA256 (45c587e93ca1.patch) = f587fcfd1f541bcea6b35e3737ea922a0c8d9ef6b9d680f70e1e306f0309953d
-SIZE (45c587e93ca1.patch) = 509
+TIMESTAMP = 1579709987
+SHA256 (swaywm-swaylock-1.5_GH0.tar.gz) = 37b9c70e5698e8872b0b964a7454ecdb0f1a9e06b686eecf2b6c54f7f64a3f42
+SIZE (swaywm-swaylock-1.5_GH0.tar.gz) = 35350
