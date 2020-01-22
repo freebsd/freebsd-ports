@@ -21,17 +21,16 @@
 -    CFLAGS = env.get('CFLAGS', '')
 -    env['CFLAGS'] = ''
 -
--    env.Append(CFLAGS=str(CFLAGS).split())
 +    env['CC'] = os.environ['CC']
 +    env['CXX'] = os.environ['CXX']
 +    
 +    CFLAGS = os.environ['CFLAGS']
 +    env['CFLAGS'] = []
-+    env.Append(CFLAGS=string.split(str(CFLAGS)))
+     env.Append(CFLAGS=str(CFLAGS).split())
 +    
 +    CCFLAGS = os.environ['CXXFLAGS']
 +    env['CCFLAGS'] = []
-+    env.Append(CCFLAGS=string.split(str(CCFLAGS)))
++    env.Append(CCFLAGS=str(CCFLAGS).split())
  
      LINKFLAGS = env.get('LINKFLAGS', '')
      env['LINKFLAGS'] = ''
