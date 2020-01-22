@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	storj
-PORTVERSION=	0.28.4
+PORTVERSION=	0.29.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -28,6 +28,7 @@ post-patch:
 		${WRKSRC}/vendor/github.com/minio/minio/pkg/event/target/nats.go
 
 post-stage:
+# Avoid conflict with `graphics/mesa-demos'
 	@${MV} ${STAGEDIR}${PREFIX}/bin/identity \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-identity
 
