@@ -2,7 +2,7 @@
 
 PORTNAME=	lumina-pdf
 DISTVERSION=	1.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 MAINTAINER=	ken@ixsystems.com

@@ -3,7 +3,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.92.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
@@ -94,5 +94,11 @@ post-patch:
 	# Fix with poppler 0.73
 	@${REINPLACE_CMD} -E '/#include "goo\/gtypes.h"/d' \
 		${WRKSRC}/src/extension/internal/pdfinput/pdf-parser.h
+	# Fix build with poppler 0.83
+	${REINPLACE_CMD} -e 's|(GfxPath|(const GfxPath|g' \
+			  -e 's|GfxSubpath|const GfxSubpath|g' \
+			  -e 's|new GlobalParams()|std::unique_ptr<GlobalParams>(new GlobalParams())|g' \
+			  -e 's|new GlobalParams(poppler_datadir)|std::unique_ptr<GlobalParams>(new GlobalParams(poppler_datadir))|g' \
+		${WRKSRC}/src/extension/internal/pdfinput/*.cpp
 
 .include <bsd.port.mk>
