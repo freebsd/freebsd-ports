@@ -7,7 +7,7 @@ MASTER_SITES=	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distributio
 PKGNAMESUFFIX=	9
 DISTNAME=	jetty-distribution-${PORTVERSION}.${JDVDATE}
 
-MAINTAINER=	dharrigan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured web server implemented entirely in Java
 
 LICENSE=	APACHE20 EPL
