@@ -8,4 +8,4 @@ Functions are also provided to fold over the characters of UTF encoded
 OCaml string values and to directly encode characters in OCaml Buffer.t
 values.
 
-WWW: http://erratique.ch/software/uutf
+WWW: https://erratique.ch/software/uutf
