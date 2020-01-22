@@ -1,4 +1,8 @@
 %%SITE_PERL%%/Commandable.pm
+%%SITE_PERL%%/Commandable/Finder.pod
+%%SITE_PERL%%/Commandable/Finder/Packages.pm
 %%SITE_PERL%%/Commandable/Invocation.pm
 %%PERL5_MAN3%%/Commandable.3.gz
+%%PERL5_MAN3%%/Commandable::Finder.3.gz
+%%PERL5_MAN3%%/Commandable::Finder::Packages.3.gz
 %%PERL5_MAN3%%/Commandable::Invocation.3.gz
