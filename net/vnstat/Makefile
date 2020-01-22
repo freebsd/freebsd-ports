@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vnstat
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	net
 MASTER_SITES=	https://humdi.net/vnstat/
 
