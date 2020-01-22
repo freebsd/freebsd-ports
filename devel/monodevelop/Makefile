@@ -4,7 +4,7 @@
 PORTNAME=	monodevelop
 PORTVERSION=	7.6.11.7
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	mono@FreeBSD.org
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libgdiplus.a:x11-toolkits/libgdiplus \
 		exctags:devel/ctags \
 		git:devel/git \
 		svn:devel/subversion \
-		fsharpc:lang/fsharp
+		fsharpc:lang/fsharp # msbuild
 
 # main/external/fsharpbinding/paket.lock
 NUGET_FEEDS=	NUGET ROSLYN ROSLYN_FOR_VS_FOR_MAC  TEMPLATING VS_IMPL VS_EDITOR VSSDK VSTEST
@@ -44,7 +44,9 @@ PAKET_DEPENDS=	ExtCore=0.8.46 \
 		System.Reactive.Interfaces=3.1.1 \
 		System.Reactive.Linq=3.1.1 \
 		System.Reflection.Metadata=1.4.2 \
-		System.ValueTuple=4.4.0
+		System.ValueTuple=4.4.0 \
+		YamlDotNet.Signed=4.0.1-pre291
+
 PAKET_PACKAGEDIR=${WRKSRC}/external/fsharpbinding/packages
 
 USES=		autoreconf desktop-file-utils gettext gmake gnome mono:nuget pathfix pkgconfig shared-mime-info ssl
@@ -57,11 +59,11 @@ CONFIGURE_ARGS=	--enable-release --disable-update-mimedb --disable-update-deskto
 INSTALL=	/usr/bin/install
 USE_GITHUB=	yes
 GH_ACCOUNT=	mono
-GH_TUPLE=	icsharpcode:RefactoringEssentials:0148f6a:1/external/RefactoringEssentials \
+GH_TUPLE=	mono:RefactoringEssentials:0148f6a:1/external/RefactoringEssentials \
 		mono:debugger-libs:cd477ba:3/external/debugger-libs \
 		mono:guiunit:dd094e7:4/external/guiunit \
 		mono:libgit-binary:d8b2aca:6/external/libgit-binary \
-		mono:libgit2:e8b8948:7/external/libgit2 \
+		mono:libgit2:71efcb3:7/external/libgit2 \
 		mono:libgit2sharp:319fa36:8/external/libgit2sharp \
 		mono:mono-addins:293cbf2:9/external/mono-addins \
 		icsharpcode:NRefactory:0607a4a:10/external/nrefactory \
@@ -71,24 +73,13 @@ GH_TUPLE=	icsharpcode:RefactoringEssentials:0148f6a:1/external/RefactoringEssent
 INSTALL_TARGET=	install-strip
 MAKE_ENV=	DOTNET_MSBUILD_SDK_RESOLVER_SDKS_DIR= \
 		XDG_CACHE_HOME=${WRKDIR} \
-		OPENSSL_ROOT_DIR=${OPENSSLBASE}
+		OPENSSL_ROOT_DIR=${OPENSSLBASE} \
+		MONO_REGISTRY_PATH=${WRKDIR}
 MAKE_JOBS_UNSAFE=Build parallelization not implemented
 WRKSRC_SUBDIR=	main
 PORTSCOUT=	limit:^\d+\.\d+\.[1-9].*
 
-.include <bsd.port.pre.mk>
-
-BROKEN=			checksum and size mismatch
-DEPRECATED=	Broken for more than 3 months
-EXPIRATION_DATE=	2020-01-10
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	fails to compile: incomplete definition of type 'struct bio_st'
-BROKEN_FreeBSD_13=	fails to compile: incomplete definition of type 'struct bio_st'
-.elif ${SSL_DEFAULT} == openssl111
-BROKEN=			fails to compile: incomplete definition of type 'struct bio_st'
-.endif
-
 post-patch:
 	${ECHO} "Release ID: ${PORTVERSION}" > ${WRKSRC}/buildinfo
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

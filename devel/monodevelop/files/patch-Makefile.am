@@ -1,6 +1,6 @@
---- Makefile.am.orig	2018-06-30 13:47:45 UTC
+--- Makefile.am.orig	2019-12-28 00:41:38 UTC
 +++ Makefile.am
-@@ -29,8 +29,6 @@ NUGET_RESTORE = mono external/nuget-bina
+@@ -29,8 +29,6 @@ NUGET_RESTORE = mono external/nuget-binary/nuget.exe r
  restore-packages:
  	@$(NUGET_RESTORE)
  	msbuild /t:Restore /p:RestoreDisableParallel=true external/RefactoringEssentials/RefactoringEssentials/RefactoringEssentials.csproj
