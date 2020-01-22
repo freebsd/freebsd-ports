@@ -95,6 +95,10 @@ ALL_TARGET+=	\
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == powerpc64
+USE_GCC=	yes
+.endif
+
 post-patch:
 	@${SED} \
 		-e "s|%%PREFIX%%|${PREFIX}|" \
