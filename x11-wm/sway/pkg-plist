@@ -25,9 +25,9 @@ share/backgrounds/sway/Sway_Wallpaper_Blue_768x1024_Portrait.png
 share/bash-completion/completions/sway
 share/bash-completion/completions/swaybar
 share/bash-completion/completions/swaymsg
-share/fish/completions/sway.fish
-share/fish/completions/swaymsg.fish
-share/fish/completions/swaynag.fish
+share/fish/vendor_completions.d/sway.fish
+share/fish/vendor_completions.d/swaymsg.fish
+share/fish/vendor_completions.d/swaynag.fish
 share/wayland-sessions/sway.desktop
 share/zsh/site-functions/_sway
 share/zsh/site-functions/_swaymsg
