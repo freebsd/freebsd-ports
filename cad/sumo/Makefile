@@ -2,6 +2,7 @@
 
 PORTNAME=	sumo
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dlr.de/ts/en/Portaldata/16/Resources/projekte/sumo/
 DISTFILES=	${PORTNAME}-src-${DISTVERSIONFULL}${EXTRACT_SUFX}
