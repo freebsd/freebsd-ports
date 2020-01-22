@@ -19,7 +19,7 @@ RUN_DEPENDS=	m4>=1.4.16,1:devel/m4
 OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
 
-USES=		charsetfix localbase makeinfo perl5 tar:xz
+USES=		charsetfix compiler:c11 localbase makeinfo perl5 tar:xz
 USE_PERL5=	build
 
 CONFIGURE_ARGS=	--disable-yacc --enable-relocatable
