@@ -38,7 +38,7 @@ INSTALL_TARGET=	install-strip
 
 .if ${PORT_OPTIONS:MOPENSSL}
 USES	+=	ssl
-CONFIGURE_ARGS+=	--enable-openssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=	--with-tls=openssl
 .endif
 
 CONFIGURE_ARGS+=	\
