@@ -176,6 +176,7 @@
     SUBDIR += pslib
     SUBDIR += pstotext
     SUBDIR += psutils
+    SUBDIR += py-font-v
     SUBDIR += py-fontaine
     SUBDIR += py-fonttools
     SUBDIR += py-fonttools3
