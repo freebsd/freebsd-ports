@@ -1,131 +1,177 @@
 # $FreeBSD$
 
 PORTNAME=	flowgger
-DISTVERSION=	0.2.6-28
-DISTVERSIONSUFFIX=	-gab572a0
-PORTREVISION=	17
+DISTVERSION=	0.2.9
 CATEGORIES=	sysutils
+MASTER_SITES=	CRATESIO
+DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Fast data collector
 
-LICENSE=	MPL20
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# for backtrace-sys < 0.1.24
-BUILD_DEPENDS=	gmake:devel/gmake
+BUILD_DEPENDS=	capnp:devel/capnproto
 
 USES=		cargo ssl
-USE_GITHUB=	yes
-GH_ACCOUNT=	jedisct1
-GH_TUPLE=	Manishearth:rust-clippy:387efd459c0ad3db7af15f1a573057b8587f9748:clippy \
-		zonyitoo:coio-rs:f5f6f4044a7cceff387ace0f04ffeb3bc3ab979a:coio \
-		spicavigo:kafka-rust:9a3b427bd702810bcd13cf60e58cb18d5f403c1a:kafka
-
-# Bumped openssl crates to 0.9.21 manually to support LibreSSL 2.6.x
-CARGO_CRATES=	ansi_term-0.9.0 \
-		atty-0.2.2 \
-		backtrace-0.3.3 \
-		backtrace-sys-0.1.14 \
-		bitflags-0.7.0 \
-		bitflags-0.9.1 \
-		build_const-0.2.0 \
+CARGO_CRATES=	adler32-1.0.4 \
+		ansi_term-0.11.0 \
+		ascii-0.9.3 \
+		atty-0.2.13 \
+		autocfg-0.1.6 \
+		backtrace-0.3.38 \
+		backtrace-sys-0.1.31 \
+		bitflags-1.2.0 \
+		build_const-0.2.1 \
 		byteorder-0.5.3 \
-		byteorder-1.1.0 \
-		capnp-0.8.11 \
-		capnpc-0.8.7 \
-		cargo_metadata-0.2.3 \
-		cc-1.0.0 \
-		cfg-if-0.1.2 \
-		chrono-0.4.0 \
-		clap-2.26.2 \
-		context-2.0.0 \
-		conv-0.3.3 \
-		crc-1.5.0 \
-		crc-core-0.1.0 \
-		custom_derive-0.1.7 \
-		dbghelp-sys-0.2.0 \
-		deque-0.3.2 \
+		byteorder-1.3.2 \
+		bytes-0.4.12 \
+		c2-chacha-0.2.2 \
+		capnp-0.10.3 \
+		capnpc-0.10.2 \
+		cc-1.0.45 \
+		cfg-if-0.1.10 \
+		chrono-0.4.9 \
+		clap-2.33.0 \
+		cloudabi-0.0.3 \
+		combine-3.8.1 \
+		crc-1.8.1 \
+		crc32fast-1.2.0 \
+		crossbeam-0.7.3 \
+		crossbeam-channel-0.4.0 \
+		crossbeam-deque-0.7.2 \
+		crossbeam-epoch-0.8.0 \
+		crossbeam-queue-0.2.1 \
+		crossbeam-utils-0.6.6 \
+		crossbeam-utils-0.7.0 \
 		dtoa-0.2.2 \
-		dtoa-0.4.2 \
-		either-1.1.0 \
+		either-1.5.3 \
 		error-chain-0.10.0 \
+		filetime-0.2.7 \
 		flate2-0.2.20 \
-		fnv-1.0.5 \
+		flate2-1.0.11 \
+		fnv-1.0.6 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
-		gcc-0.3.54 \
-		getopts-0.2.15 \
-		idna-0.1.4 \
-		iovec-0.1.0 \
-		itertools-0.6.3 \
+		fsevent-0.4.0 \
+		fsevent-sys-2.0.1 \
+		fuchsia-cprng-0.1.1 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		futures-0.1.29 \
+		generator-0.6.19 \
+		getrandom-0.1.12 \
+		glob-0.3.0 \
+		idna-0.1.5 \
+		inotify-0.6.1 \
+		inotify-sys-0.1.3 \
+		iovec-0.1.2 \
 		itoa-0.1.1 \
-		itoa-0.3.4 \
+		kafka-0.8.0 \
 		kernel32-sys-0.2.2 \
-		lazy_static-0.2.8 \
-		lazy_static-1.2.0 \
-		lazycell-0.5.1 \
-		libc-0.2.49 \
-		linked-hash-map-0.4.2 \
-		log-0.3.8 \
-		magenta-0.1.1 \
-		magenta-sys-0.1.1 \
-		matches-0.1.6 \
-		miniz-sys-0.1.10 \
-		mio-0.6.10 \
+		lazy_static-1.4.0 \
+		lazycell-1.2.1 \
+		libc-0.2.62 \
+		lock_api-0.1.5 \
+		log-0.3.9 \
+		log-0.4.8 \
+		matches-0.1.8 \
+		may-0.3.14 \
+		may_queue-0.1.7 \
+		memchr-2.2.1 \
+		memoffset-0.5.3 \
+		miniz-sys-0.1.12 \
+		miniz_oxide-0.3.2 \
+		mio-0.6.19 \
+		mio-extras-2.0.5 \
 		miow-0.2.1 \
-		net2-0.2.31 \
-		num-0.1.40 \
-		num-integer-0.1.35 \
-		num-iter-0.1.34 \
-		num-traits-0.1.40 \
-		openssl-0.9.24 \
-		openssl-sys-0.9.39 \
-		percent-encoding-1.0.0 \
-		pkg-config-0.3.9 \
-		pulldown-cmark-0.0.15 \
-		quine-mc_cluskey-0.2.4 \
-		quote-0.3.15 \
-		rand-0.3.16 \
-		redis-0.8.0 \
-		redox_syscall-0.1.31 \
-		ref_slice-1.1.1 \
-		regex-syntax-0.4.1 \
-		rustc-demangle-0.1.5 \
-		rustc-serialize-0.3.24 \
-		semver-0.6.0 \
+		miow-0.3.3 \
+		net2-0.2.33 \
+		nix-0.15.0 \
+		notify-4.0.13 \
+		num-integer-0.1.41 \
+		num-traits-0.1.43 \
+		num-traits-0.2.8 \
+		num_cpus-1.10.1 \
+		openssl-0.10.24 \
+		openssl-sys-0.9.49 \
+		owning_ref-0.4.0 \
+		parking_lot-0.7.1 \
+		parking_lot_core-0.4.0 \
+		percent-encoding-1.0.1 \
+		pkg-config-0.3.16 \
+		ppv-lite86-0.2.5 \
+		rand-0.4.6 \
+		rand-0.5.6 \
+		rand-0.6.5 \
+		rand-0.7.2 \
+		rand_chacha-0.1.1 \
+		rand_chacha-0.2.1 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.1.0 \
+		rand_hc-0.2.0 \
+		rand_isaac-0.1.1 \
+		rand_jitter-0.1.4 \
+		rand_os-0.1.3 \
+		rand_pcg-0.1.2 \
+		rand_xorshift-0.1.1 \
+		rdrand-0.4.0 \
+		redis-0.10.0 \
+		redox_syscall-0.1.56 \
+		ref_slice-1.2.0 \
+		remove_dir_all-0.5.2 \
+		rustc-demangle-0.1.16 \
+		rustc_version-0.2.3 \
+		same-file-1.0.5 \
+		scopeguard-0.3.3 \
+		scopeguard-1.0.0 \
+		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		serde-0.8.23 \
-		serde-1.0.15 \
-		serde_derive-1.0.15 \
-		serde_derive_internals-0.16.0 \
+		serde-1.0.101 \
 		serde_json-0.8.6 \
-		serde_json-1.0.3 \
-		sha1-0.2.0 \
-		slab-0.3.0 \
-		snap-0.2.2 \
-		strsim-0.6.0 \
-		syn-0.11.11 \
-		synom-0.11.3 \
-		term_size-0.3.0 \
-		textwrap-0.8.0 \
-		time-0.1.38 \
-		toml-0.2.1 \
-		toml-0.4.5 \
-		twox-hash-1.1.0 \
+		sha1-0.6.0 \
+		slab-0.4.2 \
+		smallvec-0.6.10 \
+		snap-0.2.5 \
+		socket2-0.3.11 \
+		stable_deref_trait-1.1.1 \
+		strsim-0.8.0 \
+		tempdir-0.3.7 \
+		textwrap-0.11.0 \
+		time-0.1.42 \
+		tokio-codec-0.1.1 \
+		tokio-executor-0.1.8 \
+		tokio-io-0.1.12 \
+		tokio-reactor-0.1.9 \
+		tokio-sync-0.1.6 \
+		tokio-tcp-0.1.3 \
+		toml-0.5.3 \
+		twox-hash-1.5.0 \
 		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.5 \
-		unicode-width-0.1.4 \
-		unicode-xid-0.0.4 \
-		url-1.5.1 \
-		vcpkg-0.2.2 \
-		vec_map-0.8.0 \
+		unicode-normalization-0.1.8 \
+		unicode-width-0.1.6 \
+		unreachable-1.0.0 \
+		url-1.7.2 \
+		vcpkg-0.2.7 \
+		vec_map-0.8.1 \
+		void-1.0.2 \
+		walkdir-2.2.9 \
+		wasi-0.7.0 \
 		winapi-0.2.8 \
+		winapi-0.3.8 \
 		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.2 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		ws2_32-sys-0.2.1
-CARGO_USE_GITHUB=	yes
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/flowgger.toml ${STAGEDIR}${PREFIX}/etc/flowgger.toml.sample
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/flowgger
+	${INSTALL_DATA} ${WRKSRC}/flowgger.toml \
+		${STAGEDIR}${PREFIX}/etc/flowgger.toml.sample
 
 .include <bsd.port.mk>
