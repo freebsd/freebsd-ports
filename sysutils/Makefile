@@ -879,8 +879,8 @@
     SUBDIR += pear-Translation2
     SUBDIR += pecl-proctitle
     SUBDIR += pefs-kmod
-    SUBDIR += personality
     SUBDIR += perp
+    SUBDIR += personality
     SUBDIR += pesign
     SUBDIR += pfetch
     SUBDIR += pflogx
