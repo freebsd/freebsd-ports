@@ -1259,6 +1259,7 @@
     SUBDIR += py-excelerator
     SUBDIR += py-feedparser
     SUBDIR += py-fingerprints
+    SUBDIR += py-ftfy
     SUBDIR += py-gambit-elasticsearch
     SUBDIR += py-genshi
     SUBDIR += py-gensim
