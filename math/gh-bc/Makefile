@@ -2,6 +2,7 @@
 
 PORTNAME=	bc
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMEPREFIX=	gh-
 
@@ -28,9 +29,12 @@ CFLAGS+=	--std=c99
 CONFLICTS_INSTALL=	gnubc-[0-9]*
 
 post-extract:
-		for f in ${WRKSRC}/locales/*.ISO-8859-*; do \
-			${LN} $${f} $$(echo $${f} | ${SED} -e 's/ISO-8859/ISO8859/'); \
-		done
+		${LN} ${WRKSRC}/locales/pt_PT.ISO-8859-1.msg ${WRKSRC}/locales/pt_PT.ISO8859-1.msg
+		${LN} ${WRKSRC}/locales/pt_PT.ISO-8859-1.msg ${WRKSRC}/locales/pt_PT.ISO8859-15.msg
+		${LN} ${WRKSRC}/locales/pt_PT.ISO-8859-1.msg ${WRKSRC}/locales/pt_BR.ISO8859-1.msg
+		${RM} ${WRKSRC}/locales/pt_BR.UTF-8.msg
+		${LN} ${WRKSRC}/locales/pt_PT.UTF-8.msg ${WRKSRC}/locales/pt_BR.UTF-8.msg
+
 pre-build:
 		${INSTALL_SCRIPT} ${WRKSRC}/gen/strgen.sh ${WRKSRC}/gen/strgen
 
