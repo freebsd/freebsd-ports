@@ -1,0 +1,5 @@
+isbnlib is a (pure) python library that provides several useful methods and
+functions to validate, clean, transform, hyphenate and get metadata for ISBN
+strings. Its origin was as the core of isbntools.
+
+WWW: https://github.com/xlcnd/isbnlib
