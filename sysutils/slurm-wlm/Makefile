@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-DISTVERSION=	19.05.1-2
-PORTREVISION=	2
+DISTVERSION=	19.05.5
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		liblz4.so:archivers/liblz4
 
 USES=		compiler:c11 gmake gnome libtool lua pkgconfig python:build \
-		readline:port shebangfix tar:bz2
+		readline:port shebangfix ssl tar:bz2
 USE_LDCONFIG=	yes
 USE_PERL5=	configure
 USE_RC_SUBR=	slurmctld slurmd
@@ -105,18 +104,10 @@ pre-configure:
 		${WRKSRC}/contribs/cray/slurm.conf.template \
 		${WRKSRC}/doc/man/man1/strigger.1 \
 		${WRKSRC}/doc/man/man5/slurm.conf.5
-	@${REINPLACE_CMD} \
-		-e 's|=linux|=FreeBSD|g' \
-		-e 's|run/slurmctld.pid|run/slurm/slurmctld.pid|' \
-		-e 's|run/slurmd.pid|run/slurm/slurd.pid|' \
-		-e 's|SlurmdSpoolDir=.*|SlurmdSpoolDir=/var/spool/slurmd|' \
-		-e 's|StateSaveLocation=.*|StateSaveLocation=/var/run/slurm|' \
-		${WRKSRC}/etc/slurm.conf.example
 
 	@${REINPLACE_CMD} -e 's|"/proc|"/compat/linux/proc|g' \
 		${WRKSRC}/src/slurmd/slurmstepd/req.c \
 		${WRKSRC}/src/slurmd/slurmstepd/pdebug.c \
-		${WRKSRC}/src/slurmd/slurmd/get_mach_stat.c \
 		${WRKSRC}/src/slurmd/common/xcpuinfo.c \
 		${WRKSRC}/src/slurmd/common/xcgroup.c \
 		${WRKSRC}/src/slurmd/common/set_oomadj.c \
@@ -128,7 +119,6 @@ pre-configure:
 		${WRKSRC}/src/plugins/jobacct_gather/common/common_jag.c \
 		${WRKSRC}/src/plugins/jobacct_gather/linux/jobacct_gather_linux.c \
 		${WRKSRC}/src/plugins/switch/cray_aries/scaling.c \
-		${WRKSRC}/src/plugins/switch/cray_aries/switch_cray_aries.c \
 		${WRKSRC}/src/plugins/proctrack/cray_aries/proctrack_cray_aries.c \
 		${WRKSRC}/src/plugins/proctrack/cgroup/proctrack_cgroup.c \
 		${WRKSRC}/src/plugins/proctrack/pgid/proctrack_pgid.c \

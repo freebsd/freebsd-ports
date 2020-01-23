@@ -1,4 +1,4 @@
---- etc/slurm.conf.example.orig	2019-07-11 00:40:34 UTC
+--- etc/slurm.conf.example.orig	2020-01-18 17:40:31 UTC
 +++ etc/slurm.conf.example
 @@ -8,8 +8,8 @@
  #
@@ -11,7 +11,7 @@
  #ControlAddr=
  #BackupController=
  #BackupAddr=
-@@ -21,12 +21,12 @@ SlurmdPort=6818
+@@ -21,20 +21,20 @@ SlurmdPort=6818
  AuthType=auth/munge
  #JobCredentialPrivateKey=
  #JobCredentialPublicCertificate=
@@ -28,16 +28,28 @@
  ProctrackType=proctrack/pgid
  #PluginDir=
  #FirstJobId=
-@@ -42,7 +42,7 @@ ReturnToService=0
+ ReturnToService=0
+ #MaxJobCount=
+ #PlugStackConfig=
+-#PropagatePrioProcess=
+-#PropagateResourceLimits=
++#PropagatePrioProcess
++PropagateResourceLimits=none
+ #PropagateResourceLimitsExcept=
+ #Prolog=
+ #Epilog=
+@@ -42,7 +42,9 @@ ReturnToService=0
  #SrunEpilog=
  #TaskProlog=
  #TaskEpilog=
 -#TaskPlugin=
-+TaskPlugin=task/none
++TaskPlugin=task/affinity
++TaskPluginParam=cores
++# For debugging: TaskPluginParam=cores,verbose
  #TrackWCKey=no
  #TreeWidth=50
  #TmpFS=
-@@ -57,7 +57,8 @@ KillWait=30
+@@ -57,7 +59,8 @@ KillWait=30
  Waittime=0
  #
  # SCHEDULING
@@ -46,14 +58,14 @@
 +SchedulerParameters=defer
  #SchedulerAuth=
  #SelectType=select/linear
- FastSchedule=1
-@@ -72,22 +73,22 @@ FastSchedule=1
+ #PriorityType=priority/multifactor
+@@ -71,22 +74,29 @@ SchedulerType=sched/backfill
  #
  # LOGGING
- SlurmctldDebug=3
+ SlurmctldDebug=info
 -SlurmctldLogFile=/var/log/slurmctld.log
 +SlurmctldLogFile=/var/log/slurm/slurmctld
- SlurmdDebug=3
+ SlurmdDebug=info
 -SlurmdLogFile=/var/log/slurmd.log
 +SlurmdLogFile=/var/log/slurm/slurmd
  JobCompType=jobcomp/none
@@ -66,13 +78,20 @@
  #
 -#AccountingStorageType=accounting_storage/slurmdbd
 +AccountingStorageType=accounting_storage/filetxt
++AccountingStorageLoc=/home/slurm/Accounting
++AccountingStoreJobComment=YES
  #AccountingStorageHost=
--#AccountingStorageLoc=
-+AccountingStorageLoc=/var/log/slurm/slurm_accounting.log
+ #AccountingStorageLoc=
  #AccountingStoragePass=
  #AccountingStorageUser=
  #
  # COMPUTE NODES
 -NodeName=linux[1-32] Procs=1 State=UNKNOWN
-+NodeName=beastie[1-32] Procs=1 State=UNKNOWN
- PartitionName=debug Nodes=ALL Default=YES MaxTime=INFINITE State=UP
+-PartitionName=debug Nodes=ALL Default=YES MaxTime=INFINITE State=UP
++# Set RealMemory < avail memory in /var/run/dmesg.boot
++# Note that it may change slightly following freebsd-update
++# NodeName=compute-[001-032] Sockets=2 CoresPerSocket=6 RealMemory=30000 State=UNKNOWN
++# NodeName=compute-256g-[001-002] Sockets=2 CoresPerSocket=6 RealMemory=250000 State=UNKNOWN
++# PartitionName=debug Nodes=ALL Default=NO MaxTime=INFINITE State=UP
++# PartitionName=batch Nodes=compute-[001-032] Default=YES MaxTime=INFINITE State=UP
++# PartitionName=256g Nodes=compute-256g-[001-002] Default=NO MaxTime=INFINITE State=UP
