@@ -85,7 +85,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/lib/intellij-dvcs.jar
 %%DATADIR%%/lib/intellij-test-discovery-agent-1.0.508.jar
 %%DATADIR%%/lib/intellij-xml.jar
-%%DATADIR%%/lib/ion-java-1.5.0-1.jar
+%%DATADIR%%/lib/ion-java-1.5.2-2.jar
 %%DATADIR%%/lib/isorelax-20030108.jar
 %%DATADIR%%/lib/istack-commons-runtime-3.0.7.jar
 %%DATADIR%%/lib/j2objc-annotations-1.1.jar
