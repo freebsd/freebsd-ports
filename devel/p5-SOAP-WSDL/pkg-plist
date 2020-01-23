@@ -1,3 +1,4 @@
+bin/wsdl2perl.pl
 %%SITE_PERL%%/SOAP/WSDL.pm
 %%SITE_PERL%%/SOAP/WSDL/Base.pm
 %%SITE_PERL%%/SOAP/WSDL/Binding.pm
@@ -187,6 +188,7 @@
 %%SITE_PERL%%/SOAP/WSDL/XSD/Typelib/SimpleType.pm
 %%SITE_PERL%%/SOAP/WSDL/XSD/WhiteSpace.pm
 %%SITE_PERL%%/SOAP/test_html.pl
+%%PERL5_MAN1%%/wsdl2perl.pl.1.gz
 %%PERL5_MAN3%%/SOAP::WSDL.3.gz
 %%PERL5_MAN3%%/SOAP::WSDL::Client.3.gz
 %%PERL5_MAN3%%/SOAP::WSDL::Client::Base.3.gz
