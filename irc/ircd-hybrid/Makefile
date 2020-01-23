@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ircd-hybrid
-PORTVERSION=	8.2.26
+PORTVERSION=	8.2.27
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -32,6 +32,8 @@ ASSERT_DESC=	Enable parts of the debugging code
 
 OPENSSL_DESC=	Enable openssl - allows use of CHALLENGE and encrypted links
 
+INSTALL_TARGET=	install-strip
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
@@ -43,5 +45,8 @@ CONFIGURE_ARGS+=	\
 	--sysconfdir=${PREFIX}/etc/ircd-hybrid \
 	--datarootdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION} \
 	--localstatedir=/var
+
+post-install:
+	@${MV} ${STAGEDIR}${PREFIX}/bin/mkpasswd ${STAGEDIR}${PREFIX}/bin/ircd-hybrid-mkpasswd
 
 .include <bsd.port.mk>

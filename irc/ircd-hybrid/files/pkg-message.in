@@ -4,6 +4,11 @@
 ircd-hybrid has now been installed.
 
 *** IMPORTANT: ***
+mkpasswd has been renamed to ircd-hybrid-mkpasswd to avoid conflicts with
+other packages.
+
+	mkpasswd -> ircd-hybrid-mkpasswd
+
 Please read the INSTALL file for more information.
 
 You should now copy %%PREFIX%%/etc/ircd-hybrid/reference.conf to
