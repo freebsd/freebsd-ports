@@ -47,5 +47,8 @@ share/nls/fr_CH.UTF-8/bc.cat
 share/nls/fr_FR.ISO8859-1/bc.cat
 share/nls/fr_FR.ISO8859-15/bc.cat
 share/nls/fr_FR.UTF-8/bc.cat
+share/nls/pt_BR.ISO8859-1/bc.cat
 share/nls/pt_BR.UTF-8/bc.cat
+share/nls/pt_PT.ISO8859-1/bc.cat
+share/nls/pt_PT.ISO8859-15/bc.cat
 share/nls/pt_PT.UTF-8/bc.cat
