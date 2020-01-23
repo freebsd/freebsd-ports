@@ -69,7 +69,7 @@ std_patch_filename() {
 patchdir_files_list() {
 	if [ -d "${PATCHDIR}" ]; then
 		(cd ${PATCHDIR} && \
-			find . -type f -name "patch-*" -maxdepth 0 \
+			find -s . -type f -name "patch-*" -maxdepth 1 \
 			2>/dev/null | sed -e 's,^\./,,; /\.orig$/d'
 		)
 	fi;
@@ -216,7 +216,7 @@ stage_patches() {
 	local P
 	local name
 	local patch_list
-	patch_list=$(cd ${REGENNED} && find . -name "patch-*" 2>/dev/null)
+	patch_list=$(cd ${REGENNED} && find -s . -name "patch-*" 2>/dev/null)
 	for P in ${patch_list}; do
 		P=${P#./}
 		name=$(get_patch_name ${P})
