@@ -51,7 +51,7 @@ TOOLS_USE=	GNOME=cairo,glib20,pango
 
 .include <bsd.port.pre.mk>
 
-.if ${OSREL:R} >= 12 && ${OSVERSION} < 1201000
+.if ${OSVERSION} < 1201000
 OPENMP_LIB_DEPENDS=libomp.so:devel/openmp
 .endif
 
