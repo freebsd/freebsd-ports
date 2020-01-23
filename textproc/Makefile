@@ -1273,6 +1273,7 @@
     SUBDIR += py-hyperestraier-python
     SUBDIR += py-hypua2jamo
     SUBDIR += py-isbnlib
+    SUBDIR += py-isbntools
     SUBDIR += py-jaxml
     SUBDIR += py-jsonslicer
     SUBDIR += py-jsx-lexer
