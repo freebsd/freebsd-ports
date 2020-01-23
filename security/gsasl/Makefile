@@ -17,11 +17,9 @@ LIB_DEPENDS=	libidn.so:dns/libidn \
 USES=		charsetfix libtool localbase:ldflags pathfix perl5 pkgconfig
 USE_PERL5=	build
 
-#CPPFLAGS+=	-nostdinc -I/usr/include -I${LOCALBASE}/include
 CPPFLAGS+=	-nostdinc -I/usr/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-#LDFLAGS+=	-L/usr/lib -L${LOCALBASE}/lib
 LDFLAGS+=	-L/usr/lib
 USE_LDCONFIG=	yes
 
@@ -35,9 +33,6 @@ NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^en@/d' ${WRKSRC}/lib/po/LINGUAS ${WRKSRC}/po/LINGUAS
-
-x-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgsasl.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/reference
