@@ -1272,6 +1272,7 @@
     SUBDIR += py-hunspell
     SUBDIR += py-hyperestraier-python
     SUBDIR += py-hypua2jamo
+    SUBDIR += py-isbnlib
     SUBDIR += py-jaxml
     SUBDIR += py-jsonslicer
     SUBDIR += py-jsx-lexer
