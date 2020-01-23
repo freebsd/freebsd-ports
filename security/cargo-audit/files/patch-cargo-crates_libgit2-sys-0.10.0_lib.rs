@@ -1,7 +1,7 @@
 Revert to libgit2 0.28 API per https://github.com/rust-lang/git2-rs/issues/458
 
---- cargo-crates/libgit2-sys-0.9.1/lib.rs.orig	2019-08-16 20:27:18 UTC
-+++ cargo-crates/libgit2-sys-0.9.1/lib.rs
+--- cargo-crates/libgit2-sys-0.10.0/lib.rs.orig	2019-08-16 20:27:18 UTC
++++ cargo-crates/libgit2-sys-0.10.0/lib.rs
 @@ -331,7 +331,6 @@ pub struct git_remote_callbacks {
      pub push_negotiation: Option<git_push_negotiation>,
      pub transport: Option<git_transport_cb>,
