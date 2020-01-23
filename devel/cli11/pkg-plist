@@ -7,7 +7,6 @@ include/CLI/Formatter.hpp
 include/CLI/FormatterFwd.hpp
 include/CLI/Macros.hpp
 include/CLI/Option.hpp
-include/CLI/Optional.hpp
 include/CLI/Split.hpp
 include/CLI/StringTools.hpp
 include/CLI/Timer.hpp
