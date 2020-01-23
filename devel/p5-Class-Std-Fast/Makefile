@@ -16,9 +16,11 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Class-Std>=0.0.9:devel/p5-Class-Std
+RUN_DEPENDS=	p5-Class-Std>=0.0.8:devel/p5-Class-Std
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
