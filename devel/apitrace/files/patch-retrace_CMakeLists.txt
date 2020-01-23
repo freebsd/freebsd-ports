@@ -1,4 +1,4 @@
---- retrace/CMakeLists.txt.orig	2017-10-13 17:18:18 UTC
+--- retrace/CMakeLists.txt.orig	2019-11-26 14:27:11 UTC
 +++ retrace/CMakeLists.txt
 @@ -123,6 +123,7 @@ if (WIN32 OR APPLE OR X11_FOUND)
          retrace_common
@@ -8,7 +8,7 @@
          glproc_gl
      )
  
-@@ -169,6 +170,7 @@ if (ENABLE_EGL AND X11_FOUND AND NOT WIN
+@@ -169,6 +170,7 @@ if (ENABLE_EGL AND X11_FOUND AND NOT WIN32 AND NOT APP
          retrace_common
          glretrace_common
          glhelpers
@@ -16,3 +16,11 @@
          glproc_egl
          ${X11_X11_LIB}
          ${CMAKE_THREAD_LIBS_INIT}
+@@ -184,6 +186,7 @@ if (ENABLE_EGL AND ENABLE_WAFFLE)
+ 
+     add_dependencies (eglretrace glproc)
+     include_directories (${Waffle_INCLUDE_DIRS})
++    target_link_directories (eglretrace PRIVATE ${Waffle_LIBRARY_DIRS})
+ 
+     target_link_libraries (eglretrace
+         retrace_common
