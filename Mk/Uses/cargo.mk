@@ -283,7 +283,9 @@ do-install:
 		--root "${STAGEDIR}${PREFIX}" \
 		--verbose \
 		${CARGO_INSTALL_ARGS}
+# Replace with --no-track once it is part of lang/rust 
 	@${RM} -- "${STAGEDIR}${PREFIX}/.crates.toml"
+	@${RM} -- "${STAGEDIR}${PREFIX}/.crates2.json"
 .  endfor
 .endif
 
