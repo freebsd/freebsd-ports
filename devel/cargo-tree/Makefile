@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cargo-tree
-DISTVERSION=	0.26.0
-PORTREVISION=	3
+DISTVERSION=	0.28.0
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -21,161 +20,144 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		cargo ssl
 
-CARGO_CRATES=	\
-		adler32-1.0.3 \
-		aho-corasick-0.6.10 \
-		aho-corasick-0.7.3 \
+CARGO_CRATES=	adler32-1.0.4 \
+		aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
-		atty-0.2.11 \
-		autocfg-0.1.2 \
-		backtrace-0.3.15 \
-		backtrace-sys-0.1.28 \
-		bitflags-1.0.4 \
-		byteorder-1.3.1 \
-		bytes-0.4.12 \
+		atty-0.2.13 \
+		autocfg-0.1.7 \
+		backtrace-0.3.40 \
+		backtrace-sys-0.1.32 \
+		bitflags-1.2.1 \
+		bstr-0.2.8 \
 		bytesize-1.0.0 \
-		cargo-0.35.0 \
-		cc-1.0.35 \
-		cfg-if-0.1.7 \
+		c2-chacha-0.2.3 \
+		cargo-0.41.0 \
+		cargo-platform-0.1.0 \
+		cc-1.0.48 \
+		cfg-if-0.1.10 \
 		clap-2.33.0 \
-		cloudabi-0.0.3 \
 		commoncrypto-0.2.0 \
 		commoncrypto-sys-0.2.0 \
 		core-foundation-0.6.4 \
 		core-foundation-sys-0.6.2 \
-		crates-io-0.23.0 \
+		crates-io-0.29.0 \
 		crc32fast-1.2.0 \
-		crossbeam-channel-0.3.8 \
-		crossbeam-utils-0.6.5 \
+		crossbeam-channel-0.3.9 \
+		crossbeam-utils-0.6.6 \
 		crypto-hash-0.3.4 \
-		curl-0.4.20 \
-		curl-sys-0.4.17 \
-		env_logger-0.6.1 \
-		failure-0.1.5 \
-		failure_derive-0.1.5 \
-		filetime-0.2.4 \
+		curl-0.4.25 \
+		curl-sys-0.4.24 \
+		env_logger-0.7.1 \
+		failure-0.1.6 \
+		failure_derive-0.1.6 \
+		filetime-0.2.8 \
 		fixedbitset-0.1.9 \
-		flate2-1.0.7 \
+		flate2-1.0.13 \
 		fnv-1.0.6 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		fs2-0.4.3 \
-		fuchsia-cprng-0.1.1 \
-		fwdansi-1.0.1 \
-		git2-0.8.0 \
-		git2-curl-0.9.0 \
-		glob-0.2.11 \
-		globset-0.4.2 \
+		fwdansi-1.1.0 \
+		getrandom-0.1.13 \
+		git2-0.10.2 \
+		git2-curl-0.11.0 \
+		glob-0.3.0 \
+		globset-0.4.4 \
 		heck-0.3.1 \
+		hermit-abi-0.1.5 \
 		hex-0.3.2 \
-		home-0.3.4 \
-		http-0.1.17 \
-		humantime-1.2.0 \
-		idna-0.1.5 \
-		ignore-0.4.6 \
-		im-rc-12.3.4 \
-		iovec-0.1.2 \
-		itoa-0.4.3 \
-		jobserver-0.1.13 \
-		kernel32-sys-0.2.2 \
-		lazy_static-1.3.0 \
+		hex-0.4.0 \
+		home-0.5.1 \
+		humantime-1.3.0 \
+		idna-0.2.0 \
+		ignore-0.4.10 \
+		im-rc-13.0.0 \
+		itoa-0.4.4 \
+		jobserver-0.1.17 \
+		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
-		libc-0.2.51 \
-		libgit2-sys-0.7.11 \
-		libnghttp2-sys-0.1.1 \
-		libssh2-sys-0.2.11 \
+		libc-0.2.66 \
+		libgit2-sys-0.9.2 \
+		libnghttp2-sys-0.1.2 \
+		libssh2-sys-0.2.13 \
 		libz-sys-1.0.25 \
-		log-0.4.6 \
+		log-0.4.8 \
 		matches-0.1.8 \
-		memchr-2.2.0 \
-		miniz_oxide-0.3.2 \
-		miniz_oxide_c_api-0.2.3 \
-		miniz-sys-0.1.11 \
+		memchr-2.2.1 \
+		miniz_oxide-0.3.5 \
 		miow-0.3.3 \
-		num_cpus-1.10.0 \
-		numtoa-0.1.0 \
-		opener-0.3.2 \
-		openssl-0.10.20 \
+		num_cpus-1.11.1 \
+		opener-0.4.1 \
+		openssl-0.10.26 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.43 \
+		openssl-sys-0.9.53 \
 		ordermap-0.3.5 \
-		percent-encoding-1.0.1 \
+		percent-encoding-2.1.0 \
 		petgraph-0.4.13 \
-		pkg-config-0.3.14 \
-		proc-macro2-0.4.27 \
+		pkg-config-0.3.17 \
+		ppv-lite86-0.2.6 \
+		proc-macro-error-0.2.6 \
+		proc-macro2-1.0.6 \
 		quick-error-1.2.2 \
-		quote-0.6.12 \
-		rand-0.6.5 \
-		rand_chacha-0.1.1 \
-		rand_core-0.3.1 \
-		rand_core-0.4.0 \
-		rand_hc-0.1.0 \
-		rand_isaac-0.1.1 \
-		rand_jitter-0.1.3 \
-		rand_os-0.1.3 \
-		rand_pcg-0.1.2 \
-		rand_xorshift-0.1.1 \
-		rdrand-0.4.0 \
+		quote-1.0.2 \
+		rand-0.7.2 \
+		rand_chacha-0.2.1 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
 		redox_syscall-0.1.56 \
-		redox_termios-0.1.1 \
-		regex-1.1.5 \
-		regex-syntax-0.6.6 \
-		remove_dir_all-0.5.1 \
-		rustc-demangle-0.1.13 \
+		regex-1.3.1 \
+		regex-syntax-0.6.12 \
+		remove_dir_all-0.5.2 \
+		rustc-demangle-0.1.16 \
 		rustc-workspace-hack-1.0.0 \
 		rustc_version-0.2.3 \
-		rustfix-0.4.5 \
-		ryu-0.2.7 \
-		same-file-1.0.4 \
-		schannel-0.1.15 \
-		scopeguard-0.3.0 \
+		rustfix-0.4.6 \
+		ryu-1.0.2 \
+		same-file-1.0.5 \
+		schannel-0.1.16 \
+		scopeguard-1.0.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.90 \
-		serde_derive-1.0.90 \
-		serde_ignored-0.0.4 \
-		serde_json-1.0.39 \
+		serde-1.0.104 \
+		serde_derive-1.0.104 \
+		serde_ignored-0.1.1 \
+		serde_json-1.0.44 \
 		shell-escape-0.1.4 \
-		sized-chunks-0.1.2 \
-		smallvec-0.6.9 \
-		socket2-0.3.8 \
+		sized-chunks-0.3.1 \
+		smallvec-1.1.0 \
+		socket2-0.3.11 \
+		strip-ansi-escapes-0.1.0 \
 		strsim-0.8.0 \
-		structopt-0.2.15 \
-		structopt-derive-0.2.15 \
-		syn-0.15.30 \
-		synstructure-0.10.1 \
-		tar-0.4.22 \
-		tempfile-3.0.7 \
-		termcolor-1.0.4 \
-		termion-1.5.3 \
+		structopt-0.3.5 \
+		structopt-derive-0.3.5 \
+		syn-1.0.11 \
+		synstructure-0.12.3 \
+		tar-0.4.26 \
+		tempfile-3.1.0 \
+		termcolor-1.0.5 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
-		toml-0.4.10 \
-		typenum-1.10.0 \
-		ucd-util-0.1.3 \
+		toml-0.5.5 \
+		typenum-1.11.2 \
 		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.8 \
-		unicode-segmentation-1.2.1 \
-		unicode-xid-0.1.0 \
-		unicode-width-0.1.5 \
-		url-1.7.2 \
-		url_serde-0.2.0 \
-		utf8-ranges-1.0.2 \
-		vcpkg-0.2.7 \
+		unicode-normalization-0.1.11 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.7 \
+		unicode-xid-0.2.0 \
+		url-2.1.0 \
+		utf8parse-0.1.1 \
+		vcpkg-0.2.8 \
 		vec_map-0.8.1 \
-		walkdir-2.2.7 \
-		winapi-0.2.7 \
-		winapi-0.3.3 \
-		winapi-0.3.4 \
-		winapi-build-0.1.1 \
-		winapi-util-0.1.2 \
-		winapi-i686-pc-windows-gnu-0.3.0 \
+		vte-0.3.3 \
+		walkdir-2.2.9 \
+		wasi-0.7.0 \
+		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.3.0 \
+		winapi-util-0.1.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		wincolor-1.0.2
 
-PLIST_FILES=	bin/cargo-tree
+PLIST_FILES=	bin/${PORTNAME}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cargo-tree
