@@ -1,5 +1,5 @@
 bin/ircd
-bin/mkpasswd
+bin/ircd-hybrid-mkpasswd
 %%ETCDIR%%/reference.conf
 lib/ircd-hybrid/modules/autoload/m_accept.la
 lib/ircd-hybrid/modules/autoload/m_accept.so
