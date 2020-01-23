@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS+=	librtmidi.so:audio/rtmidi
 
-USES=		pkgconfig
+USES=		compiler:c++11-lang pkgconfig
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
