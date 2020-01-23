@@ -27,6 +27,10 @@ CFLAGS+=	--std=c99
 
 CONFLICTS_INSTALL=	gnubc-[0-9]*
 
+post-extract:
+		for f in ${WRKSRC}/locales/*.ISO-8859-*; do \
+			${LN} $${f} $$(echo $${f} | ${SED} -e 's/ISO-8859/ISO8859/'); \
+		done
 pre-build:
 		${INSTALL_SCRIPT} ${WRKSRC}/gen/strgen.sh ${WRKSRC}/gen/strgen
 
