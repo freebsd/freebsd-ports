@@ -51,7 +51,7 @@ TOOLS_USE=	GNOME=cairo,glib20,pango
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1201000
+.if ${CHOSEN_COMPILER_TYPE} == clang && !exists(/usr/include/omp.h)
 OPENMP_LIB_DEPENDS=libomp.so:devel/openmp
 .endif
 
