@@ -63,6 +63,7 @@ include/pcl-%%SHL2%%/pcl/2d/impl/convolution.hpp
 include/pcl-%%SHL2%%/pcl/2d/impl/edge.hpp
 include/pcl-%%SHL2%%/pcl/2d/impl/morphology.hpp
 include/pcl-%%SHL2%%/pcl/2d/kernel.h
+include/pcl-%%SHL2%%/pcl/2d/impl/kernel.hpp
 include/pcl-%%SHL2%%/pcl/2d/morphology.h
 include/pcl-%%SHL2%%/pcl/ModelCoefficients.h
 include/pcl-%%SHL2%%/pcl/PCLHeader.h
@@ -349,6 +350,7 @@ include/pcl-%%SHL2%%/pcl/io/debayer.h
 include/pcl-%%SHL2%%/pcl/io/eigen.h
 include/pcl-%%SHL2%%/pcl/io/file_grabber.h
 include/pcl-%%SHL2%%/pcl/io/file_io.h
+include/pcl-%%SHL2%%/pcl/io/fotonic_grabber.h
 include/pcl-%%SHL2%%/pcl/io/grabber.h
 include/pcl-%%SHL2%%/pcl/io/hdl_grabber.h
 include/pcl-%%SHL2%%/pcl/io/ifs_io.h
@@ -412,6 +414,7 @@ include/pcl-%%SHL2%%/pcl/keypoints/susan.h
 include/pcl-%%SHL2%%/pcl/keypoints/trajkovic_2d.h
 include/pcl-%%SHL2%%/pcl/keypoints/trajkovic_3d.h
 include/pcl-%%SHL2%%/pcl/keypoints/uniform_sampling.h
+include/pcl-%%SHL2%%/pcl/make_shared.h
 include/pcl-%%SHL2%%/pcl/ml/branch_estimator.h
 include/pcl-%%SHL2%%/pcl/ml/densecrf.h
 include/pcl-%%SHL2%%/pcl/ml/dt/decision_forest.h
@@ -645,6 +648,8 @@ include/pcl-%%SHL2%%/pcl/registration/impl/transformation_estimation_point_to_pl
 include/pcl-%%SHL2%%/pcl/registration/impl/transformation_estimation_point_to_plane_weighted.hpp
 include/pcl-%%SHL2%%/pcl/registration/impl/transformation_estimation_svd.hpp
 include/pcl-%%SHL2%%/pcl/registration/impl/transformation_estimation_svd_scale.hpp
+include/pcl-%%SHL2%%/pcl/registration/impl/transformation_estimation_symmetric_point_to_plane_lls.hpp
+include/pcl-%%SHL2%%/pcl/registration/transformation_estimation_symmetric_point_to_plane_lls.h
 include/pcl-%%SHL2%%/pcl/registration/impl/transformation_validation_euclidean.hpp
 include/pcl-%%SHL2%%/pcl/registration/incremental_registration.h
 include/pcl-%%SHL2%%/pcl/registration/joint_icp.h
@@ -811,7 +816,6 @@ include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/function_data.h
 include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/function_data.hpp
 include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/geometry.h
 include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/geometry.hpp
-include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/hash.h
 include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/marching_cubes_poisson.h
 include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/mat.h
 include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/mat.hpp
@@ -819,6 +823,7 @@ include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/multi_grid_octree_data.h
 include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/multi_grid_octree_data.hpp
 include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/octree_poisson.h
 include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/octree_poisson.hpp
+include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/poisson_exceptions.h
 include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/polynomial.h
 include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/polynomial.hpp
 include/pcl-%%SHL2%%/pcl/surface/3rdparty/poisson4/ppolynomial.h
@@ -863,7 +868,6 @@ include/pcl-%%SHL2%%/pcl/surface/simplification_remove_unused_vertices.h
 include/pcl-%%SHL2%%/pcl/surface/surfel_smoothing.h
 include/pcl-%%SHL2%%/pcl/surface/texture_mapping.h
 include/pcl-%%SHL2%%/pcl/tracking/approx_nearest_pair_point_cloud_coherence.h
-include/pcl-%%SHL2%%/pcl/tracking/boost.h
 include/pcl-%%SHL2%%/pcl/tracking/coherence.h
 include/pcl-%%SHL2%%/pcl/tracking/distance_coherence.h
 include/pcl-%%SHL2%%/pcl/tracking/hsv_color_coherence.h
@@ -958,24 +962,20 @@ libdata/pkgconfig/pcl_segmentation-%%SHL2%%.pc
 libdata/pkgconfig/pcl_stereo-%%SHL2%%.pc
 libdata/pkgconfig/pcl_surface-%%SHL2%%.pc
 libdata/pkgconfig/pcl_tracking-%%SHL2%%.pc
+%%DATADIR%%/Modules/FindClangFormat.cmake
 %%DATADIR%%/Modules/FindDSSDK.cmake
 %%DATADIR%%/Modules/FindEigen.cmake
 %%DATADIR%%/Modules/FindEnsenso.cmake
 %%DATADIR%%/Modules/FindFLANN.cmake
-%%DATADIR%%/Modules/FindFZAPI.cmake
-%%DATADIR%%/Modules/FindG2O.cmake
-%%DATADIR%%/Modules/FindGLEW.cmake
-%%DATADIR%%/Modules/FindGTSAM.cmake
-%%DATADIR%%/Modules/FindGtest.cmake
 %%DATADIR%%/Modules/FindOpenNI.cmake
 %%DATADIR%%/Modules/FindOpenNI2.cmake
 %%DATADIR%%/Modules/FindPcap.cmake
-%%DATADIR%%/Modules/FindQVTK.cmake
 %%DATADIR%%/Modules/FindQhull.cmake
 %%DATADIR%%/Modules/FindRSSDK.cmake
+%%DATADIR%%/Modules/FindRSSDK2.cmake
 %%DATADIR%%/Modules/FindSphinx.cmake
-%%DATADIR%%/Modules/FindSuiteSparse.cmake
 %%DATADIR%%/Modules/FinddavidSDK.cmake
 %%DATADIR%%/Modules/Findlibusb-1.0.cmake
+%%DATADIR%%/Modules/UseCompilerCache.cmake
 %%DATADIR%%/PCLConfig.cmake
 %%DATADIR%%/PCLConfigVersion.cmake
