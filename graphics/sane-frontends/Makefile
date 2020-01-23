@@ -5,15 +5,14 @@ PORTNAME=	sane-frontends
 PORTVERSION=	1.0.14
 PORTREVISION=	10
 CATEGORIES=	graphics
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/1140/ \
-		ftp://ftp2.sane-project.org/pub/sane/
+MASTER_SITES=	https://alioth-archive.debian.org/releases/sane/sane-frontends/${PORTVERSION}/ \
+		https://www.ibiblio.org/pub/linux/apps/graphics/capture/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for access to scanners, digitals camera, frame grabbers etc
 
 LICENSE=	GPLv2+
 
-BROKEN=		unfetchable
 DEPRECATED=	Unmaintained upstream, no consumers left
 EXPIRATION_DATE=	2020-03-31
 
