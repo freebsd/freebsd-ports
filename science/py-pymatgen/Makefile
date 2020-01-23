@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>0:devel/py-tabulate@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}netCDF4>0:science/py-netCDF4@${PY_FLAVOR} # see https://github.com/materialsproject/pymatgen/issues/1386
 
-USES=		python:3.5+
+USES=		compiler:c++11-lang python:3.5+
 USE_PYTHON=	distutils concurrent autoplist
 
 .include <bsd.port.mk>
