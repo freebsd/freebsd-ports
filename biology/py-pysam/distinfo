@@ -1,3 +1,3 @@
-TIMESTAMP = 1567266301
-SHA256 (pysam-0.15.3.tar.gz) = a98dd0a164aa664b1ab30a36f653752f00e93c13deeb66868597f4b2a30f7265
-SIZE (pysam-0.15.3.tar.gz) = 3221249
+TIMESTAMP = 1579747726
+SHA256 (pysam-0.15.4.tar.gz) = a535e15cbd6e27f4ab74cabca30ca1df7eea283cb91d3b536d47fe113fee066f
+SIZE (pysam-0.15.4.tar.gz) = 1605385
