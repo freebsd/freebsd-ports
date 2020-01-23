@@ -1,7 +1,13 @@
 Tds_fdw is a PostgreSQL foreign data wrapper that can connect to databases that
 use the Tabular Data Stream (TDS) protocol, such as Sybase databases and
-Microsoft SQL server. The current version does not yet support JOIN push-down, 
-or write operations. It does support WHERE and column pushdowns when
-match_column_names is enabled.
+Microsoft SQL server.
+
+This foreign data wrapper requires a library that implements the DB-Library
+interface, such as FreeTDS. This has been tested with FreeTDS, but not the
+proprietary implementations of DB-Library.
+
+The current version does not yet support JOIN push-down, or write operations.
+
+It does support WHERE and column pushdowns when match_column_names is enabled.
 
 WWW: https://github.com/tds-fdw/tds_fdw
