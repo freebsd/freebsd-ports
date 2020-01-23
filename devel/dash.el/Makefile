@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dash.el
-PORTVERSION=	2.16.0
-PORTREVISION=	1
+PORTVERSION=	2.17.0
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -16,12 +15,18 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	magnars
 
 NO_ARCH=	yes
-NO_BUILD=	yes
-PLIST_FILES=	${EMACS_SITE_LISPDIR}/dash.el \
-		${EMACS_SITE_LISPDIR}/dash-functional.el
+PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/dash.el \
+		${EMACS_VERSION_SITE_LISPDIR}/dash.elc \
+		${EMACS_VERSION_SITE_LISPDIR}/dash-functional.el \
+		${EMACS_VERSION_SITE_LISPDIR}/dash-functional.elc
+
+do-build:
+	(cd ${WRKSRC} \
+	&& ${EMACS_CMD} -Q -batch -L . -f batch-byte-compile *.el)
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PLIST_FILES:M*.el:T} \
-	    ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR})
+	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.el* \
+	    ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR})
 
 .include <bsd.port.mk>
