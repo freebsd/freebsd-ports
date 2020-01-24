@@ -16,13 +16,15 @@ CONFLICTS_INSTALL=	rust
 # Which source to pull:
 #   https://static.rust-lang.org/dist/${NIGHTLY_DATE}/rustc-nightly-src.tar.gz
 #   https://static.rust-lang.org/dist/channel-rust-nightly.toml
-NIGHTLY_DATE=			2020-01-18
+NIGHTLY_DATE=			2020-01-24
 NIGHTLY_SUBDIR=			${NIGHTLY_DATE}/
 
 # See WRKSRC/src/stage0.txt for this date
-BOOTSTRAPS_DATE=		2020-01-15
-RUST_BOOTSTRAP_VERSION=		beta
-CARGO_BOOTSTRAP_VERSION=	beta
+# XXX: Keep on nightly after 2020-01-24 for 13.0 i386 until beta has
+# https://github.com/rust-lang/rust/commit/de388032555b697d1b0ef197241886ab90ac39b2
+BOOTSTRAPS_DATE=		${NIGHTLY_DATE}
+RUST_BOOTSTRAP_VERSION=		nightly
+CARGO_BOOTSTRAP_VERSION=	nightly
 
 CARGO_VENDOR_DIR=	${WRKSRC}/vendor
 
