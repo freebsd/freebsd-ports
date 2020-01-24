@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-11-28 08:45:08 UTC
+--- CMakeLists.txt.orig	2020-01-24 07:28:45 UTC
 +++ CMakeLists.txt
-@@ -1353,7 +1353,7 @@ endif()
+@@ -1347,7 +1347,7 @@ endif()
  # Install alsoft.conf configuration file
  IF(ALSOFT_CONFIG)
      INSTALL(FILES alsoftrc.sample
@@ -9,16 +9,16 @@
      MESSAGE(STATUS "Installing sample configuration")
      MESSAGE(STATUS "")
  ENDIF()
-@@ -1361,7 +1361,7 @@ ENDIF()
+@@ -1355,7 +1355,7 @@ ENDIF()
  # Install HRTF definitions
  IF(ALSOFT_HRTF_DEFS)
-     INSTALL(FILES hrtf/default-44100.mhr hrtf/default-48000.mhr
+     INSTALL(FILES "hrtf/Default HRTF.mhr"
 -        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal/hrtf)
 +        DESTINATION ${CMAKE_INSTALL_DATADIR}/openal-soft/hrtf)
      MESSAGE(STATUS "Installing HRTF definitions")
      MESSAGE(STATUS "")
  ENDIF()
-@@ -1376,7 +1376,7 @@ IF(ALSOFT_AMBDEC_PRESETS)
+@@ -1370,7 +1370,7 @@ IF(ALSOFT_AMBDEC_PRESETS)
          presets/rectangle.ambdec
          presets/square.ambdec
          presets/presets.txt
