@@ -131,8 +131,8 @@
     SUBDIR += analitza
     SUBDIR += ann
     SUBDIR += antic
-    SUBDIR += apc
     SUBDIR += apache-commons-math
+    SUBDIR += apc
     SUBDIR += apron
     SUBDIR += arb
     SUBDIR += aribas
