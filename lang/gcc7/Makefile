@@ -29,8 +29,6 @@ USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:xz
 USE_BINUTILS=	yes
 USE_PERL5=	build
 
-CONFLICTS=	gcc7-devel-7.*
-
 CPE_VENDOR=	gnu
 
 GCC_VERSION=	${PORTVERSION}
