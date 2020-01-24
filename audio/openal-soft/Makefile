@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openal-soft
-PORTVERSION=	1.20.0
+PORTVERSION=	1.20.1
 CATEGORIES=	audio
 MASTER_SITES=	https://openal-soft.org/openal-releases/
 
