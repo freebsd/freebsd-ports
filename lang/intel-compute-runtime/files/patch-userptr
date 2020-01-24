@@ -38,16 +38,16 @@ frame #5: 0x000000080104b4e5 libigdrcl.so`NEO::DrmMemoryManager::DrmMemoryManage
    60       }
    61   }
 
---- runtime/os_interface/linux/drm_memory_manager.cpp.orig	2019-11-29 14:23:34 UTC
+--- runtime/os_interface/linux/drm_memory_manager.cpp.orig	2020-01-15 11:27:15 UTC
 +++ runtime/os_interface/linux/drm_memory_manager.cpp
 @@ -141,7 +141,17 @@ NEO::BufferObject *DrmMemoryManager::allocUserptr(uint
      userptr.flags = static_cast<uint32_t>(flags);
  
-     if (this->drm->ioctl(DRM_IOCTL_I915_GEM_USERPTR, &userptr) != 0) {
+     if (this->getDrm(rootDeviceIndex).ioctl(DRM_IOCTL_I915_GEM_USERPTR, &userptr) != 0) {
 -        return nullptr;
 +        if (errno == ENODEV && userptr.flags == 0) {
 +            userptr.flags = I915_USERPTR_UNSYNCHRONIZED;
-+            if (this->drm->ioctl(DRM_IOCTL_I915_GEM_USERPTR, &userptr) != 0) {
++            if (this->getDrm(rootDeviceIndex).ioctl(DRM_IOCTL_I915_GEM_USERPTR, &userptr) != 0) {
 +                if (geteuid() != 0) {
 +                    printDebugString(true, stderr, "%s", "ioctl(I915_GEM_USERPTR) failed. Try running as root but expect poor stability.\n");
 +                }
@@ -58,4 +58,4 @@ frame #5: 0x000000080104b4e5 libigdrcl.so`NEO::DrmMemoryManager::DrmMemoryManage
 +        }
      }
  
-     auto res = new (std::nothrow) BufferObject(this->drm, userptr.handle, rootDeviceIndex);
+     auto res = new (std::nothrow) BufferObject(&getDrm(rootDeviceIndex), userptr.handle, rootDeviceIndex);
