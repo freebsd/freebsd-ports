@@ -1,0 +1,25 @@
+From 6d424d2b10b8f8b04197d1edc686d61cdf5154db Mon Sep 17 00:00:00 2001
+From: Reio Remma <reio@mrstuudio.ee>
+Date: Thu, 19 Dec 2019 18:55:30 +0200
+Subject: [PATCH] Fix building with MySQL 8.0.1.
+
+---
+ extras/tables/table-mysql/table_mysql.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git ./extras/tables/table-mysql/table_mysql.c ./extras/tables/table-mysql/table_mysql.c
+index a58fdf1..257a713 100644
+--- ./extras/tables/table-mysql/table_mysql.c
++++ ./extras/tables/table-mysql/table_mysql.c
+@@ -243,7 +243,11 @@ config_connect(struct config *conf)
+ 		{ "query_addrname",	1 },
+ 		{ "query_mailaddrmap",	1 },
+ 	};
++#if MYSQL_VERSION_ID >= 80001
++	bool reconn;
++#else
+ 	my_bool	 reconn;
++#endif
+ 	size_t	 i;
+ 	char	*host, *username, *password, *database, *q;
+ 
