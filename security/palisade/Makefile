@@ -2,7 +2,7 @@
 
 PORTNAME=	palisade
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.d
+DISTVERSION=	1.7.4
 CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,8 +19,8 @@ BUILD_DEPENDS=	autoconf:devel/autoconf # possibly a mistake in the project
 USES=		cmake:noninja compiler:c++11-lang localbase
 USE_GITLAB=	yes
 USE_GITHUB=	nodefault
-GL_PROJECT=	palisade-development
-GL_COMMIT=	1d2912912e31332ccc6e35b0f91280e57e250954
+GL_PROJECT=	palisade-release
+GL_COMMIT=	87e7ffd1ef035dfd1c07460a35aac7050a948092
 GH_TUPLE=	\
 		JerryRyan:cereal:181fbcd3:cereal/third-party/cereal \
 		google:benchmark:c50ac68c:benchmark/third-party/google-benchmark \
