@@ -164,6 +164,7 @@
     SUBDIR += elasticsearch5
     SUBDIR += elasticsearch5-search-guard
     SUBDIR += elasticsearch6
+    SUBDIR += elasticsearch7
     SUBDIR += elixir-earmark
     SUBDIR += elixir-funnel
     SUBDIR += elixir-sweet_xml
