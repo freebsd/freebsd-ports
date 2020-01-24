@@ -51,8 +51,16 @@ CMAKE_ARGS=	-DUNIX_STRUCTURE:BOOL=ON \
 		-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}"
 CFLAGS+=	-D_WITH_GETLINE
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != powerpc
+PLIST_SUB+=	LUAJIT="@comment "
+.else
+PLIST_SUB+=	LUAJIT=""
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's| 3.4)| ${PYTHON_VER})|' \
 		${WRKSRC}/cmake/Modules/FindPythonDeps.cmake
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
