@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clementine
-DISTVERSION=	1.3.1-661
-DISTVERSIONSUFFIX=	-g4ff370ce1
-PORTREVISION=	12
+DISTVERSION=	1.4.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
 
@@ -40,6 +38,8 @@ USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 GH_ACCOUNT=	clementine-player
 GH_PROJECT=	Clementine
+GH_TAGNAME=     1.4.0rc1
+
 
 USE_GL=		gl glew glu
 USE_XORG=	x11
