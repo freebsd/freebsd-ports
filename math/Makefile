@@ -869,6 +869,7 @@
     SUBDIR += suitesparse
     SUBDIR += sundials
     SUBDIR += superlu
+    SUBDIR += superlu_mt
     SUBDIR += symmetrica
     SUBDIR += symphony
     SUBDIR += tablix
