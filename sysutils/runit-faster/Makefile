@@ -3,6 +3,7 @@
 
 PORTNAME=	runit
 DISTVERSION=	2.1.3.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/t6/freebsd-runit/releases/download/v${DISTVERSION}/ \
 		LOCAL/tobik
@@ -28,6 +29,7 @@ TEST_TARGET=	check
 
 CONFLICTS_INSTALL=	runit
 
+SUB_LIST=	RUNITDIR=${RUNITDIR}
 PLIST_SUB=	RUNITDIR=${RUNITDIR}
 PORTDOCS=	*
 
