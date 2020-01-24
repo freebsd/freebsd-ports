@@ -1,0 +1,17 @@
+Commons Math is a library of lightweight, self-contained mathematics and
+statistics components addressing the most common problems not available in the
+Java programming language or Commons Lang.
+
+Guiding principles:
+
+ * Real-world application use cases determine development priority.
+ * This package emphasizes small, easily integrated components rather than
+	large libraries with complex dependencies and configurations.
+ * All algorithms are fully documented and follow generally accepted best
+	practices.
+ * In situations where multiple standard algorithms exist, a Strategy pattern
+	is used to support multiple implementations.
+ * Limited dependencies. No external dependencies beyond Commons components
+	and the core Java platform.
+
+WWW: http://commons.apache.org/proper/commons-math/
