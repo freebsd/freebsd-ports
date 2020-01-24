@@ -1,7 +1,7 @@
-TIMESTAMP = 1568503524
-SHA256 (cppit-jucipp-2c0df4ae3c83135dc28a51eabf48e3c2c80750b0_GL0.tar.gz) = cf6b1c45cee90afc860af43dd700e52ee45ade2aabec53c223603baef46a4f53
-SIZE (cppit-jucipp-2c0df4ae3c83135dc28a51eabf48e3c2c80750b0_GL0.tar.gz) = 593441
-SHA256 (cppit-libclangmm-687b9c231d850504ec515acb9ccab73f26c34063_GL0.tar.gz) = a2cd9292fc56a718ea752816345e76b74a154242015212e3a886d3d92edeaef8
-SIZE (cppit-libclangmm-687b9c231d850504ec515acb9ccab73f26c34063_GL0.tar.gz) = 18062
+TIMESTAMP = 1579837845
+SHA256 (cppit-jucipp-22b7c68c9f740f5db1c93c699068568fc87b3a07_GL0.tar.gz) = 79bf904bdda91270432951007b0bdfdbb2549574df3e2198635d47f4fd05a8a1
+SIZE (cppit-jucipp-22b7c68c9f740f5db1c93c699068568fc87b3a07_GL0.tar.gz) = 595298
+SHA256 (cppit-libclangmm-a0316826f7f0c91949c6e11376fd4e92e39a008c_GL0.tar.gz) = a3bfe989404c7b85374a32ddca2d98eec0b0ffa946f5637ee3ad1c3285a8cd2c
+SIZE (cppit-libclangmm-a0316826f7f0c91949c6e11376fd4e92e39a008c_GL0.tar.gz) = 18087
 SHA256 (eidheim-tiny-process-library-a6773276efdbc322f1abb0159301f5502647eb52_GL0.tar.gz) = 01ce5414d310d09dfd84838e3efc13d791ff6b02079c195ce4c5d6948b9135e4
 SIZE (eidheim-tiny-process-library-a6773276efdbc322f1abb0159301f5502647eb52_GL0.tar.gz) = 11073
