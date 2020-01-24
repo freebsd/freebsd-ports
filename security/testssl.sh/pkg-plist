@@ -9,6 +9,7 @@ man/man1/testssl.1.gz
 %%DATADIR%%/etc/ca_hashes.txt
 %%DATADIR%%/etc/cipher-mapping.txt
 %%DATADIR%%/etc/client-simulation.txt
+%%DATADIR%%/etc/client-simulation.wiresharked.md
 %%DATADIR%%/etc/client-simulation.wiresharked.txt
 %%DATADIR%%/etc/common-primes.txt
 %%DATADIR%%/etc/curves.txt
