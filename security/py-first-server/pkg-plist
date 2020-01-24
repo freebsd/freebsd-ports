@@ -17,6 +17,8 @@
 %%WWWDIR%%/first_core/disassembly/__init__.py
 %%WWWDIR%%/first_core/engines/__init__.py
 %%WWWDIR%%/first_core/engines/basic_masking.py
+@comment %%WWWDIR%%/first_core/engines/catalog1.py
+@comment %%WWWDIR%%/first_core/engines/catalog1lib.py
 %%WWWDIR%%/first_core/engines/exact_match.py
 %%WWWDIR%%/first_core/engines/mnemonic_hash.py
 %%WWWDIR%%/first_core/engines/results.py
