@@ -113,7 +113,7 @@ lib/obs-plugins/obs-x264.so
 lib/obs-plugins/rtmp-services.so
 lib/obs-plugins/text-freetype2.so
 lib/obs-scripting/_obspython.so
-lib/obs-scripting/obslua.so
+%%LUAJIT%%lib/obs-scripting/obslua.so
 lib/obs-scripting/obspython.py
 libdata/pkgconfig/libobs.pc
 share/applications/com.obsproject.Studio.desktop
