@@ -435,6 +435,7 @@ lib/calibre/calibre/ebooks/oeb/polish/__init__.py
 lib/calibre/calibre/ebooks/oeb/polish/cascade.py
 lib/calibre/calibre/ebooks/oeb/polish/check/__init__.py
 lib/calibre/calibre/ebooks/oeb/polish/check/base.py
+lib/calibre/calibre/ebooks/oeb/polish/check/css.py
 lib/calibre/calibre/ebooks/oeb/polish/check/fonts.py
 lib/calibre/calibre/ebooks/oeb/polish/check/images.py
 lib/calibre/calibre/ebooks/oeb/polish/check/links.py
@@ -1097,6 +1098,7 @@ lib/calibre/calibre/gui2/viewer/main.py
 lib/calibre/calibre/gui2/viewer/mathjax.py
 lib/calibre/calibre/gui2/viewer/overlay.py
 lib/calibre/calibre/gui2/viewer/printing.py
+lib/calibre/calibre/gui2/viewer/search.py
 lib/calibre/calibre/gui2/viewer/shortcuts.py
 lib/calibre/calibre/gui2/viewer/toc.py
 lib/calibre/calibre/gui2/viewer/toolbars.py
@@ -1458,6 +1460,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/content-server/mobile.css
 %%DATADIR%%/content-server/reset.css
 %%DATADIR%%/csscolorparser.js
+%%DATADIR%%/csslint.js
 %%DATADIR%%/default_tweaks.py
 %%DATADIR%%/dictionaries/en-GB/en-GB.aff
 %%DATADIR%%/dictionaries/en-GB/en-GB.dic
@@ -1511,6 +1514,8 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/chapters.png
 %%DATADIR%%/images/character-set.png
 %%DATADIR%%/images/clear_left.png
+%%DATADIR%%/images/close-for-dark-theme.png
+%%DATADIR%%/images/close-for-light-theme.png
 %%DATADIR%%/images/code.png
 %%DATADIR%%/images/column.png
 %%DATADIR%%/images/compress-image.png
