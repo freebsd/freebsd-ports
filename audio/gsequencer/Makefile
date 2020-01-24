@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsequencer
-DISTVERSION=	3.0.7
+DISTVERSION=	3.0.9
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
 
@@ -43,7 +43,13 @@ INSTALLS_ICONS=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=			JACK PULSEAUDIO
+OPTIONS_DEFINE=			DOCS JACK PULSEAUDIO
+
+DOCS_CONFIGURE_ON=		HTMLHELP_XSL=${LOCALBASE}/share/xsl/docbook/htmlhelp/htmlhelp.xsl --docdir=${DOCSDIR} --enable-single-docdir
+DOCS_BUILD_DEPENDS=		docbook-xsl>0:textproc/docbook-xsl
+DOCS_USE=			GNOME=libxslt:build
+DOCS_ALL_TARGET=		html
+DOCS_INSTALL_TARGET=		install-html
 
 JACK_CONFIGURE_ENABLE=		jack
 JACK_LIB_DEPENDS=		libjack.so:audio/jack
@@ -51,7 +57,6 @@ JACK_LIB_DEPENDS=		libjack.so:audio/jack
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
-post-install:
-	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc-base
+PORTDOCS=	*
 
 .include <bsd.port.mk>
