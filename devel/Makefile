@@ -305,6 +305,7 @@
     SUBDIR += cdecl
     SUBDIR += cdialog
     SUBDIR += cdk
+    SUBDIR += cereal
     SUBDIR += cervisia
     SUBDIR += cflow
     SUBDIR += cflow2vcg
