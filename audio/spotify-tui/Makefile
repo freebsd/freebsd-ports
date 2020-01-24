@@ -2,7 +2,7 @@
 
 PORTNAME=	spotify-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
+DISTVERSION=	0.12.0
 CATEGORIES=	audio
 
 MAINTAINER=	vulcan@wired.sh
@@ -19,11 +19,12 @@ USE_XORG=	xcb
 CARGO_CRATES=	adler32-1.0.4 \
 		aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
+		arc-swap-0.4.4 \
 		arrayref-0.3.5 \
 		arrayvec-0.5.1 \
 		atty-0.2.13 \
 		autocfg-0.1.7 \
-		backtrace-0.3.40 \
+		backtrace-0.3.42 \
 		backtrace-sys-0.1.32 \
 		base64-0.10.1 \
 		bitflags-1.2.1 \
@@ -51,6 +52,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		crossbeam-queue-0.1.2 \
 		crossbeam-utils-0.6.6 \
 		crossbeam-utils-0.7.0 \
+		crossterm-0.14.2 \
+		crossterm_winapi-0.5.1 \
 		darling-0.9.0 \
 		darling_core-0.9.0 \
 		darling_macro-0.9.0 \
@@ -78,7 +81,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		getrandom-0.1.13 \
 		h2-0.1.26 \
 		hermit-abi-0.1.3 \
-		http-0.1.19 \
+		http-0.1.21 \
 		http-body-0.1.0 \
 		httparse-1.3.4 \
 		humantime-1.3.0 \
@@ -112,7 +115,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		num-integer-0.1.41 \
 		num-traits-0.2.9 \
 		num_cpus-1.11.1 \
-		numtoa-0.1.0 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
@@ -120,7 +122,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		openssl-probe-0.1.2 \
 		openssl-sys-0.9.52 \
 		parking_lot-0.9.0 \
+		parking_lot-0.10.0 \
 		parking_lot_core-0.6.2 \
+		parking_lot_core-0.7.0 \
 		percent-encoding-1.0.1 \
 		percent-encoding-2.1.0 \
 		pkg-config-0.3.17 \
@@ -148,7 +152,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		random-0.12.2 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
-		redox_termios-0.1.1 \
 		redox_users-0.3.1 \
 		regex-1.3.1 \
 		regex-syntax-0.6.12 \
@@ -171,6 +174,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		serde_json-1.0.41 \
 		serde_urlencoded-0.5.5 \
 		serde_yaml-0.8.11 \
+		signal-hook-0.1.12 \
+		signal-hook-registry-1.2.0 \
 		slab-0.4.2 \
 		smallvec-0.6.13 \
 		smallvec-1.0.0 \
@@ -182,7 +187,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		synstructure-0.12.3 \
 		tempfile-3.1.0 \
 		termcolor-1.0.5 \
-		termion-1.5.4 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
 		time-0.1.42 \
