@@ -82,6 +82,7 @@
     SUBDIR += p5-Verilog-Perl
     SUBDIR += pcb
     SUBDIR += pdnmesh
+    SUBDIR += PrusaSlicer
     SUBDIR += py-gdspy
     SUBDIR += py-lcapy
     SUBDIR += py-phidl
