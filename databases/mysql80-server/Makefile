@@ -9,7 +9,7 @@ MASTER_SITES=		MYSQL/MySQL-8.0
 PKGNAMESUFFIX?=		80-server
 DISTNAME=		${PORTNAME}-boost-${PORTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=		mmokhi@FreeBSD.org
+MAINTAINER=		joneum@FreeBSD.org
 COMMENT?=		Multithreaded SQL database (server)
 
 LICENSE=		GPLv2
