@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	statsmodels
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,21 +12,22 @@ COMMENT=	Complement to SciPy for statistical computations
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29:lang/cython@${PY_FLAVOR} \
+		${RUN_DEPENDS}
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pandas>=0.19:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}patsy>=0.4.0:math/py-patsy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0.18:science/py-scipy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pandas>=0.21:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}patsy>=0.5:math/py-patsy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR}
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-USES=		python shebangfix
+USES=		python:3.5+ shebangfix
 USE_PYTHON=	autoplist concurrent cython distutils
 
 PORTDOCS=	README.rst README_l1.txt
 PORTEXAMPLES=	*
 
 SHEBANG_GLOB=	*.py
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
