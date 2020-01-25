@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	timeliness
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
