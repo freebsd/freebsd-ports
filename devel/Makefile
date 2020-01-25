@@ -4652,7 +4652,7 @@
     SUBDIR += py-medikit
     SUBDIR += py-meliae
     SUBDIR += py-memory_profiler
-    SUBDIR += py-microversion-parse
+    SUBDIR += py-microversion_parse
     SUBDIR += py-minimongo
     SUBDIR += py-minio
     SUBDIR += py-mock
