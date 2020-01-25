@@ -1,0 +1,4 @@
+python-mpd2 is a Python library which provides a client interface for the Music
+Player Daemon.
+
+WWW: https://github.com/Mic92/python-mpd2

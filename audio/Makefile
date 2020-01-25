@@ -659,7 +659,6 @@
     SUBDIR += py-id3
     SUBDIR += py-karaoke
     SUBDIR += py-mpd
-    SUBDIR += py-mpd2
     SUBDIR += py-music21
     SUBDIR += py-musicbrainzngs
     SUBDIR += py-mutagen
@@ -673,6 +672,7 @@
     SUBDIR += py-pyliblo
     SUBDIR += py-pymad
     SUBDIR += py-pysndfile
+    SUBDIR += py-python-mpd2
     SUBDIR += py-shout
     SUBDIR += py-soundcloud
     SUBDIR += py-sounddevice
