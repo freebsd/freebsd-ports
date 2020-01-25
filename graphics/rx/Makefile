@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	meowhash crate only supports x86_64
+ONLY_FOR_ARCHS_REASON=	meowhash crate only supports x86_64, see https://github.com/bodil/meowhash-rs/issues/5
 
 USES=		cargo xorg
 USE_GITHUB=	yes
