@@ -6,6 +6,7 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/AlCu.adp
 %%DATADIR%%/potentials/AlCu.bop.table
 %%DATADIR%%/potentials/AlCu.eam.alloy
+%%DATADIR%%/potentials/AlCuH.bop.table
 %%DATADIR%%/potentials/AlFe_mm.eam.fs
 %%DATADIR%%/potentials/AlO.eam.alloy
 %%DATADIR%%/potentials/AlO.streitz
@@ -18,10 +19,13 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Au_u3.eam
 %%DATADIR%%/potentials/BN.extep
 %%DATADIR%%/potentials/BNC.tersoff
+%%DATADIR%%/potentials/BNC_MBD_bulk.ILP
+%%DATADIR%%/potentials/BNC_TS_bulk.ILP
 %%DATADIR%%/potentials/BNCH-old.ILP
 %%DATADIR%%/potentials/BNCH.ILP
 %%DATADIR%%/potentials/C.drip
 %%DATADIR%%/potentials/C.lcbop
+%%DATADIR%%/potentials/C_10_10.mesocnt
 %%DATADIR%%/potentials/CC.KC
 %%DATADIR%%/potentials/CC.KC-full
 %%DATADIR%%/potentials/CC.Lebedeva
