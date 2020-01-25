@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpci
-PORTVERSION=	3.6.2
+PORTVERSION=	3.6.3
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
 		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
@@ -17,10 +17,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids
 
+USES=		gmake tar:xz
+
 ALL_TARGET=	lib/libpci.a
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
-USES=		gmake tar:xz
 
 PLIST_FILES=	${LIBPCI_FILES} \
 		lib/libpci.so
