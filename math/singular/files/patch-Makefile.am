@@ -1,0 +1,12 @@
+--- Makefile.am.orig	2020-01-25 04:04:36 UTC
++++ Makefile.am
+@@ -27,7 +27,8 @@ configheaderdir = ${includedir}/singular
+ nodist_configheader_HEADERS = singularconfig.h
+ DISTCLEANFILES = $(nodist_configheader_HEADERS)
+ 
+-dist_man1_MANS = doc/Singular.man doc/ESingular.man doc/TSingular.man
++# man pages are broken, see https://github.com/Singular/Sources/issues/975
++#dist_man1_MANS = doc/Singular.man doc/ESingular.man doc/TSingular.man
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = Singular.pc
