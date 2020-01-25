@@ -39,7 +39,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	rekall
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
