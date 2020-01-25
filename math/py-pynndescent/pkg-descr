@@ -1,0 +1,6 @@
+A Python nearest neighbor descent for approximate nearest neighbors.
+This is a relatively straightforward python implementation of Nearest
+Neighbor Descent for k-neighbor-graph construction and approximate
+nearest neighbor search.
+
+WWW: https://github.com/lmcinnes/pynndescent
