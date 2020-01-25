@@ -178,6 +178,7 @@
     SUBDIR += psutils
     SUBDIR += py-font-v
     SUBDIR += py-fontaine
+    SUBDIR += py-fontbakery
     SUBDIR += py-fonttools
     SUBDIR += py-fonttools3
     SUBDIR += py-fpdf
