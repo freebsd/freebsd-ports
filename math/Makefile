@@ -796,6 +796,7 @@
     SUBDIR += py-spectral
     SUBDIR += py-spot
     SUBDIR += py-statsmodels
+    SUBDIR += py-statsmodels010
     SUBDIR += py-svgmath
     SUBDIR += py-sym
     SUBDIR += py-symcxx
