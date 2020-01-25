@@ -2,6 +2,7 @@
 %%ETCDIR%%/koi-win
 %%ETCDIR%%/win-utf
 %%FASTDFS%%@sample etc/fdfs/mod_fastdfs.conf.sample
+%%LINK%%include/ngx_link_func_module.h
 %%MODSECURITY%%%%ETCDIR%%/unicode.mapping
 %%NAXSI%%%%ETCDIR%%/naxsi_core.rules
 @sample %%ETCDIR%%/fastcgi_params-dist %%ETCDIR%%/fastcgi_params

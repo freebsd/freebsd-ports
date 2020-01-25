@@ -78,6 +78,7 @@ HTTP_ZIP_DESC=			3rd party http_zip module
 ICONV_DESC=			3rd party iconv module
 IPV6_DESC=			Enable IPv6 support
 LET_DESC=			3rd party let module
+LINK_DESC=			3rd party link function module
 LUA_DESC=			3rd party lua module
 MAILGRP_DESC=			Modules that require MAIL module
 MAIL_DESC=			Enable IMAP4/POP3/SMTP proxy module
