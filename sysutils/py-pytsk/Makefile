@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pytsk
-PORTVERSION=	20190507
-PORTREVISION=	2
+PORTVERSION=	20200117
 CATEGORIES=	sysutils security devel python
-MASTER_SITES=	CHEESESHOP \
-		https://github.com/py4n6/pytsk/releases/download/${PORTVERSION}/
+MASTER_SITES=	CHEESESHOP
+#		https://github.com/py4n6/pytsk/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}3-${PORTVERSION}
 
@@ -19,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libtalloc.so:devel/talloc \
 		libtsk.so:sysutils/sleuthkit
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 
 post-extract:
