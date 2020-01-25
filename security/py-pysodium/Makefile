@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysodium
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.4.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper for libsodium providing high level crypto primitives
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
