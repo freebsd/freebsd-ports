@@ -13752,3 +13752,4 @@ net/py-upnp-inspector||2020-01-18|Missing dependency: net/py-coherence is python
 security/py-pymacaroons-pynacl|security/py-pymacaroons|2020-01-20|Rename to match upstream naming
 math/jakarta-commons-math3|apache-commons-math|2020-01-24|Renamed upstream
 audio/py-mpd2|audio/py-python-mpd2|2020-01-25|Rename to match upstream naming
+devel/py-microversion-parse|devel/py-microversion_parse|2020-01-25|Rename to match upstream naming
