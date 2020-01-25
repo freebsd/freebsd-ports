@@ -42,6 +42,11 @@ USES=		pkgconfig python:3.3+,build ssl tar:xz
 
 CONFLICTS_INSTALL?=	rust-nightly
 
+# lang/rust-bootstrap builds the bundled libgit2 and using the patch
+# to fix runtime with system libgit2 is incompatible with it.  Keep
+# it separate.
+EXTRA_PATCHES=	${PATCHDIR}/libgit2
+
 PLIST_FILES=	lib/rustlib/components \
 		lib/rustlib/rust-installer-version
 
