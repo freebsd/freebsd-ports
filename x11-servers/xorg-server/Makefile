@@ -22,9 +22,10 @@ SLAVE_PORT?=	no
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	SUID
 OPTIONS_RADIO=	CONF
-OPTIONS_RADIO_CONF=	DEVD HAL
+OPTIONS_RADIO_CONF=	DEVD HAL UDEV
 DEVD_DESC=	Use devd for autoconfiguration of input devices
 HAL_DESC=	Use hald for autoconfiguration of input devices
+UDEV_DESC=	Use udev via libudev-devd for autoconfiguration of input devices
 SUID_DESC=	Install the Xorg server with setuid bit set
 OPTIONS_DEFAULT=DEVD SUID
 
@@ -52,7 +53,7 @@ USE_XORG+=	pixman xau xdmcp xfont xkbfile xorgproto xshmfence xtrans
 CONFIGURE_ARGS+=--without-doxygen --without-xmlto --without-fop \
 		--with-default-font-path="$$(${DEFAULT_FONTPATH_CMD})" \
 		--localstatedir=/var --with-shared-memory-dir=/tmp \
-		--disable-config-udev --disable-config-udev-kms \
+		--disable-config-udev-kms --disable-systemd-logind \
 		--without-dtrace --enable-glamor
 INSTALL_TARGET=	install-strip
 
@@ -90,6 +91,13 @@ LIB_DEPENDS+=	libhal.so:sysutils/hal
 CONFIGURE_ARGS+=	--enable-config-hal
 .else
 CONFIGURE_ARGS+=	--disable-config-hal
+.endif
+
+.if ${PORT_OPTIONS:MUDEV}
+LIB_DEPENDS+=	libudev.so:devel/libudev-devd
+CONFIGURE_ARGS+= --enable-config-udev
+.else
+CONFIGURE_ARGS+= --disable-config-udev
 .endif
 
 # We handle Xorg setuid in the plist. This allows to build xorg-server as a user.
