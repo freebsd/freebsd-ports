@@ -22,7 +22,7 @@ LIB_DEPENDS=	libnspr4.so:devel/nspr \
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
 USES=		compiler:c++11-lang cpe cmake:insource gnome jpeg libtool \
-		localbase:ldflags pathfix pkgconfig tar:xz
+		localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
 USE_GNOME=	cairo libxml2
 USE_LDCONFIG=	yes
@@ -33,7 +33,7 @@ CMAKE_ON=	ENABLE_LIBJPEG  \
 		ENABLE_ZLIB \
 		ENABLE_NSS \
 		ENABLE_SPLASH
-
+CMAKE_OFF=	BUILD_GTK_TESTS
 
 # Slave ports.
 _POPPLER_SLAVES=	library glib qt5 utils
