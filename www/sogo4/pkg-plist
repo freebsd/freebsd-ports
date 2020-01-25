@@ -733,7 +733,7 @@ GNUstep/Local/Library/Libraries/sogo/libSOGo.so
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.4
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.4.2
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.4.3
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.%%VERSION%%
 GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
@@ -1857,6 +1857,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/Common/loc.filter.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/mdColors.app.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/navController.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/range.filter.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgAutogrow.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgAvatarImage.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgBlockToggle.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/sgCheckmark.directive.js
@@ -2056,6 +2057,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/scayt/d
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/scayt/dialogs/toolbar.css
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/table/dialogs/table.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/tabletools/dialogs/tableCell.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/widget/images/handle.png
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/wsc/LICENSE.md
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/wsc/dialogs/ciframe.html
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/wsc/dialogs/tmpFrameset.html
