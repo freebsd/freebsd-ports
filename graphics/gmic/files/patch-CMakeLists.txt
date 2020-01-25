@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2018-12-06 08:43:18 UTC
+--- CMakeLists.txt.orig	2020-01-23 17:04:38 UTC
 +++ CMakeLists.txt
-@@ -108,7 +108,7 @@ set(COMPILE_FLAGS "-Dgmic_build -Dcimg_u
+@@ -108,7 +108,7 @@ set(COMPILE_FLAGS "-Dgmic_build -Dcimg_use_vt100 -Dgmi
  if(APPLE)
     set(COMPILE_FLAGS "${COMPILE_FLAGS} -mmacosx-version-min=10.8 -stdlib=libc++ -Wno-error=c++11-narrowing -Wc++11-extensions -fpermissive")
  else()
@@ -9,13 +9,13 @@
  endif()
  
  if(NOT "${PRERELEASE_TAG}" STREQUAL "")
-@@ -237,8 +237,9 @@ endif()
+@@ -247,8 +247,9 @@ endif()
  
  # CImg.h header
  if(NOT EXISTS ${CMAKE_SOURCE_DIR}/src/CImg.h)
--  file(DOWNLOAD https://framagit.org/dtschump/CImg/raw/master/CImg.h ${CMAKE_SOURCE_DIR}/src/CImg.h)
+-  file(DOWNLOAD https://github.com/dtschump/CImg/raw/master/CImg.h ${CMAKE_SOURCE_DIR}/src/CImg.h)
 -  execute_process(COMMAND ${CMAKE_COMMAND} -E touch ${CMAKE_SOURCE_DIR}/src/CImg.h)
-+  #file(DOWNLOAD https://framagit.org/dtschump/CImg/raw/master/CImg.h ${CMAKE_SOURCE_DIR}/src/CImg.h)
++  #file(DOWNLOAD https://github.com/dtschump/CImg/raw/master/CImg.h ${CMAKE_SOURCE_DIR}/src/CImg.h)
 +  #execute_process(COMMAND ${CMAKE_COMMAND} -E touch ${CMAKE_SOURCE_DIR}/src/CImg.h)
 +  execute_process(COMMAND ln -s ${CMAKE_INSTALL_PREFIX}/include/CImg.h ${CMAKE_SOURCE_DIR}/src/CImg.h)
  endif()
