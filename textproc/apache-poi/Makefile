@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	poi
-PORTVERSION=	3.15
+PORTVERSION=	4.1.1
 CATEGORIES=	textproc devel java
 MASTER_SITES=	APACHE/${PORTNAME}/release/bin
 PKGNAMEPREFIX=	apache-
@@ -14,20 +14,21 @@ COMMENT=	Java API To Access Microsoft Format Files
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_JAVA=	yes
-NO_BUILD=	yes
-NO_ARCH=	yes
-RELEASE_DATE=	20160924
-JARNAMES=	examples excelant scratchpad ooxml ooxml-schemas
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		cpe
 CPE_VENDOR=	apache
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+USE_JAVA=	yes
+NO_BUILD=	yes
+NO_ARCH=	yes
+RELEASE_DATE=	20191023
+JARNAMES=	examples excelant scratchpad ooxml ooxml-schemas
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar
 PORTDOCS=	*
 
 .for i in ${JARNAMES}
-PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}-${i}.jar
+PLIST_FILES+=	${JAVAJARDIR}/${PORTNAME}-${i}.jar
 .endfor
 
 OPTIONS_DEFINE=	DOCS
