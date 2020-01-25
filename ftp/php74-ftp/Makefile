@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	1
 CATEGORIES=	ftp
 
 MASTERDIR=	${.CURDIR}/../../lang/php74
