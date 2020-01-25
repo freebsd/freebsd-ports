@@ -2,6 +2,7 @@
 
 PORTNAME=	linguist
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -20,6 +21,8 @@ DESKTOP_ENTRIES="Qt 5 Linguist" "" \
 
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/src/${PORTNAME}/${PORTNAME}
+
+QT_BINARIES=	yes
 
 post-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/images/icons/linguist-128-32.png \

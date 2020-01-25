@@ -2,6 +2,7 @@
 
 PORTNAME=	help
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -15,5 +16,7 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 BUILD_WRKSRC=	${WRKSRC}/src/assistant
 INSTALL_WRKSRC=	${WRKSRC}/src/assistant
+
+QT_BINARIES=	yes
 
 .include <bsd.port.mk>

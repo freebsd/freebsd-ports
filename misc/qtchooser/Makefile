@@ -2,6 +2,7 @@
 
 PORTNAME=	qtchooser
 PORTVERSION=	66
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	QT/official_releases/${PORTNAME}
 DIST_SUBDIR=	KDE/Qt/qtchooser
@@ -15,6 +16,10 @@ LICENSE_COMB=	dual
 USES=		gmake tar:xz
 DESTDIRNAME=	INSTALL_ROOT
 MAKE_ARGS=	prefix=${PREFIX}
+
+SUB_FILES=	update-qtchooser-wrapper
+# Keep this synchronized with qt.mk
+SUB_LIST=	QT_SUPPORTED="5"
 
 # bin/linguist
 CONFLICTS_INSTALL=	rubygem-github-linguist rubygem-github-linguist47 rubygem-gitlab-linguist
@@ -44,5 +49,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/qtchooser.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 # Create the default profile.
 	cd ${STAGEDIR}/${QT_QTCHOOSERDIR} && ${LN} -s qt5.conf default.conf
+	${INSTALL_SCRIPT} ${WRKDIR}/update-qtchooser-wrapper \
+		${STAGEDIR}${PREFIX}/bin/update-qtchooser-wrapper
+
 
 .include <bsd.port.mk>

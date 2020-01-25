@@ -1,6 +1,10 @@
---- Makefile.orig	2018-10-08 18:18:42 UTC
+--- Makefile.orig	2018-05-04 07:41:32 UTC
 +++ Makefile
-@@ -70,8 +70,8 @@ install:
+@@ -66,12 +66,11 @@ distclean:
+ 
+ install:
+ 	cd src/qtchooser && $(MAKE) install
+-	for tool in $(TOOLS); do ln -sf qtchooser "$(INSTALL_ROOT)$(bindir)/$$tool"; done
  	case `uname -s` in Darwin) \
  	    for tool in $(MACTOOLS); do ln -sf qtchooser "$(INSTALL_ROOT)$(bindir)/$$tool"; done \
  	;; esac
