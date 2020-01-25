@@ -14653,6 +14653,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib1/local.98.39.def
 %%DATADIR%%/definitions/grib1/local.98.4.def
 %%DATADIR%%/definitions/grib1/local.98.40.def
+%%DATADIR%%/definitions/grib1/local.98.49.def
 %%DATADIR%%/definitions/grib1/local.98.5.def
 %%DATADIR%%/definitions/grib1/local.98.50.def
 %%DATADIR%%/definitions/grib1/local.98.6.def
@@ -14986,7 +14987,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/0/4.2.2.3.table
 %%DATADIR%%/definitions/grib2/tables/0/4.2.3.0.table
 %%DATADIR%%/definitions/grib2/tables/0/4.2.3.1.table
-%%DATADIR%%/definitions/grib2/tables/0/4.2.table
 %%DATADIR%%/definitions/grib2/tables/0/4.201.table
 %%DATADIR%%/definitions/grib2/tables/0/4.202.table
 %%DATADIR%%/definitions/grib2/tables/0/4.203.table
@@ -15027,7 +15027,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/0/5.8.table
 %%DATADIR%%/definitions/grib2/tables/0/5.9.table
 %%DATADIR%%/definitions/grib2/tables/0/6.0.table
-%%DATADIR%%/definitions/grib2/tables/0/stepType.table
 %%DATADIR%%/definitions/grib2/tables/1.0.table
 %%DATADIR%%/definitions/grib2/tables/1/0.0.table
 %%DATADIR%%/definitions/grib2/tables/1/1.0.table
@@ -15091,7 +15090,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/1/4.2.2.3.table
 %%DATADIR%%/definitions/grib2/tables/1/4.2.3.0.table
 %%DATADIR%%/definitions/grib2/tables/1/4.2.3.1.table
-%%DATADIR%%/definitions/grib2/tables/1/4.2.table
 %%DATADIR%%/definitions/grib2/tables/1/4.201.table
 %%DATADIR%%/definitions/grib2/tables/1/4.202.table
 %%DATADIR%%/definitions/grib2/tables/1/4.203.table
@@ -15132,7 +15130,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/1/5.8.table
 %%DATADIR%%/definitions/grib2/tables/1/5.9.table
 %%DATADIR%%/definitions/grib2/tables/1/6.0.table
-%%DATADIR%%/definitions/grib2/tables/1/stepType.table
 %%DATADIR%%/definitions/grib2/tables/10/0.0.table
 %%DATADIR%%/definitions/grib2/tables/10/1.0.table
 %%DATADIR%%/definitions/grib2/tables/10/1.1.table
@@ -15201,7 +15198,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/10/4.2.2.4.table
 %%DATADIR%%/definitions/grib2/tables/10/4.2.3.0.table
 %%DATADIR%%/definitions/grib2/tables/10/4.2.3.1.table
-%%DATADIR%%/definitions/grib2/tables/10/4.2.table
 %%DATADIR%%/definitions/grib2/tables/10/4.201.table
 %%DATADIR%%/definitions/grib2/tables/10/4.202.table
 %%DATADIR%%/definitions/grib2/tables/10/4.203.table
@@ -16439,7 +16435,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/2/4.2.2.3.table
 %%DATADIR%%/definitions/grib2/tables/2/4.2.3.0.table
 %%DATADIR%%/definitions/grib2/tables/2/4.2.3.1.table
-%%DATADIR%%/definitions/grib2/tables/2/4.2.table
 %%DATADIR%%/definitions/grib2/tables/2/4.201.table
 %%DATADIR%%/definitions/grib2/tables/2/4.202.table
 %%DATADIR%%/definitions/grib2/tables/2/4.203.table
@@ -16480,7 +16475,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/2/5.8.table
 %%DATADIR%%/definitions/grib2/tables/2/5.9.table
 %%DATADIR%%/definitions/grib2/tables/2/6.0.table
-%%DATADIR%%/definitions/grib2/tables/2/stepType.table
 %%DATADIR%%/definitions/grib2/tables/20/0.0.table
 %%DATADIR%%/definitions/grib2/tables/20/1.0.table
 %%DATADIR%%/definitions/grib2/tables/20/1.1.table
@@ -17080,7 +17074,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/3/4.2.2.3.table
 %%DATADIR%%/definitions/grib2/tables/3/4.2.3.0.table
 %%DATADIR%%/definitions/grib2/tables/3/4.2.3.1.table
-%%DATADIR%%/definitions/grib2/tables/3/4.2.table
 %%DATADIR%%/definitions/grib2/tables/3/4.201.table
 %%DATADIR%%/definitions/grib2/tables/3/4.202.table
 %%DATADIR%%/definitions/grib2/tables/3/4.203.table
@@ -17186,7 +17179,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/4/4.2.2.3.table
 %%DATADIR%%/definitions/grib2/tables/4/4.2.3.0.table
 %%DATADIR%%/definitions/grib2/tables/4/4.2.3.1.table
-%%DATADIR%%/definitions/grib2/tables/4/4.2.table
 %%DATADIR%%/definitions/grib2/tables/4/4.201.table
 %%DATADIR%%/definitions/grib2/tables/4/4.202.table
 %%DATADIR%%/definitions/grib2/tables/4/4.203.table
@@ -17294,7 +17286,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/5/4.2.2.3.table
 %%DATADIR%%/definitions/grib2/tables/5/4.2.3.0.table
 %%DATADIR%%/definitions/grib2/tables/5/4.2.3.1.table
-%%DATADIR%%/definitions/grib2/tables/5/4.2.table
 %%DATADIR%%/definitions/grib2/tables/5/4.201.table
 %%DATADIR%%/definitions/grib2/tables/5/4.202.table
 %%DATADIR%%/definitions/grib2/tables/5/4.203.table
@@ -17408,7 +17399,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/6/4.2.2.4.table
 %%DATADIR%%/definitions/grib2/tables/6/4.2.3.0.table
 %%DATADIR%%/definitions/grib2/tables/6/4.2.3.1.table
-%%DATADIR%%/definitions/grib2/tables/6/4.2.table
 %%DATADIR%%/definitions/grib2/tables/6/4.201.table
 %%DATADIR%%/definitions/grib2/tables/6/4.202.table
 %%DATADIR%%/definitions/grib2/tables/6/4.203.table
@@ -17522,7 +17512,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/7/4.2.2.4.table
 %%DATADIR%%/definitions/grib2/tables/7/4.2.3.0.table
 %%DATADIR%%/definitions/grib2/tables/7/4.2.3.1.table
-%%DATADIR%%/definitions/grib2/tables/7/4.2.table
 %%DATADIR%%/definitions/grib2/tables/7/4.201.table
 %%DATADIR%%/definitions/grib2/tables/7/4.202.table
 %%DATADIR%%/definitions/grib2/tables/7/4.203.table
@@ -17638,7 +17627,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/8/4.2.2.4.table
 %%DATADIR%%/definitions/grib2/tables/8/4.2.3.0.table
 %%DATADIR%%/definitions/grib2/tables/8/4.2.3.1.table
-%%DATADIR%%/definitions/grib2/tables/8/4.2.table
 %%DATADIR%%/definitions/grib2/tables/8/4.201.table
 %%DATADIR%%/definitions/grib2/tables/8/4.202.table
 %%DATADIR%%/definitions/grib2/tables/8/4.203.table
@@ -17755,7 +17743,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/9/4.2.2.4.table
 %%DATADIR%%/definitions/grib2/tables/9/4.2.3.0.table
 %%DATADIR%%/definitions/grib2/tables/9/4.2.3.1.table
-%%DATADIR%%/definitions/grib2/tables/9/4.2.table
 %%DATADIR%%/definitions/grib2/tables/9/4.201.table
 %%DATADIR%%/definitions/grib2/tables/9/4.202.table
 %%DATADIR%%/definitions/grib2/tables/9/4.203.table
@@ -18263,7 +18250,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib3/tables/0/5.8.table
 %%DATADIR%%/definitions/grib3/tables/0/5.9.table
 %%DATADIR%%/definitions/grib3/tables/0/6.0.table
-%%DATADIR%%/definitions/grib3/tables/0/stepType.table
 %%DATADIR%%/definitions/grib3/tables/1.0.table
 %%DATADIR%%/definitions/grib3/tables/1/0.0.table
 %%DATADIR%%/definitions/grib3/tables/1/1.0.table
@@ -18386,7 +18372,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib3/tables/1/7.3.1.0.table
 %%DATADIR%%/definitions/grib3/tables/1/7.3.1.1.table
 %%DATADIR%%/definitions/grib3/tables/1/7.3.1.2.table
-%%DATADIR%%/definitions/grib3/tables/1/stepType.table
 %%DATADIR%%/definitions/grib3/tables/local/ecmf/4/1.2.table
 %%DATADIR%%/definitions/grib3/tables/local/ecmf/obstat.1.0.table
 %%DATADIR%%/definitions/grib3/tables/local/ecmf/obstat.10.0.table
@@ -18880,6 +18865,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/metar/wind_shear.def
 %%DATADIR%%/definitions/metar/wrong_delayed.def
 %%DATADIR%%/definitions/param_id.table
+%%DATADIR%%/definitions/param_limits.def
 %%DATADIR%%/definitions/parameters_version.def
 %%DATADIR%%/definitions/stepUnits.table
 %%DATADIR%%/definitions/tide/boot.def
@@ -18898,6 +18884,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/ifs_samples/grib1/GRIB2.tmpl
 %%DATADIR%%/ifs_samples/grib1/budg.tmpl
 %%DATADIR%%/ifs_samples/grib1/clusters_grib1.tmpl
+%%DATADIR%%/ifs_samples/grib1/diag.tmpl
 %%DATADIR%%/ifs_samples/grib1/gg_ml.tmpl
 %%DATADIR%%/ifs_samples/grib1/gg_sfc.tmpl
 %%DATADIR%%/ifs_samples/grib1/gg_sfc_grib1.tmpl
@@ -19023,6 +19010,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/ifs_samples/grib1_mlgrib2/GRIB2.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2/budg.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2/clusters_grib1.tmpl
+%%DATADIR%%/ifs_samples/grib1_mlgrib2/diag.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2/gg_ml.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2/gg_sfc.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2/gg_sfc_grib1.tmpl
@@ -19148,6 +19136,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/GRIB2.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/budg.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/clusters_grib1.tmpl
+%%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/diag.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/gg_ml.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/gg_sfc.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/gg_sfc_grib1.tmpl
@@ -19273,6 +19262,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/samples/GRIB2.tmpl
 %%DATADIR%%/samples/budg.tmpl
 %%DATADIR%%/samples/clusters_grib1.tmpl
+%%DATADIR%%/samples/diag.tmpl
 %%DATADIR%%/samples/gg_sfc_grib1.tmpl
 %%DATADIR%%/samples/gg_sfc_grib2.tmpl
 %%DATADIR%%/samples/lambert_bf_grib2.tmpl
