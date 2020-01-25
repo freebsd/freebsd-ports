@@ -2,7 +2,7 @@
 
 PORTNAME=	FFaudioConverter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27
+DISTVERSION=	0.28
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
