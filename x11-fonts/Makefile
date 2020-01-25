@@ -198,6 +198,7 @@
     SUBDIR += py-fontMath
     SUBDIR += py-fontmake
     SUBDIR += py-glyphsLib
+    SUBDIR += py-opentype-sanitizer
     SUBDIR += py-ufo2ft
     SUBDIR += py-ufoLib
     SUBDIR += py-ufolint
