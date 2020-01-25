@@ -2,7 +2,7 @@
 
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0
+DISTVERSION=	1.8.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,10 +21,10 @@ RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
 USES=		cargo compiler:c11 gettext-tools gnome meson pkgconfig
 USE_GITLAB=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 gtk30
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_COMMIT=	273423f6268087a5931626fdef07a5616ae0df43
+GL_COMMIT=	dca0e55557d75151790cb974ae45839f8627d815
 MAKE_ENV=	${CARGO_ENV}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-entry \
@@ -38,7 +38,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		bitflags-1.0.4 \
 		cairo-rs-0.5.0 \
 		cairo-sys-rs-0.7.0 \
-		cc-1.0.49 \
+		cc-1.0.50 \
 		clap-2.32.0 \
 		dtoa-0.4.4 \
 		fragile-0.3.0 \
@@ -58,7 +58,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		libc-0.2.66 \
 		linked-hash-map-0.5.2 \
 		maplit-1.0.2 \
-		memchr-2.2.1 \
+		memchr-2.3.0 \
 		memmap-0.7.0 \
 		pango-0.5.0 \
 		pango-sys-0.7.0 \
@@ -66,7 +66,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		proc-macro2-1.0.7 \
 		quote-1.0.2 \
 		regex-1.1.9 \
-		regex-syntax-0.6.12 \
+		regex-syntax-0.6.13 \
 		serde-1.0.104 \
 		serde_derive-1.0.104 \
 		serde_yaml-0.8.11 \
