@@ -13751,3 +13751,4 @@ net/py-coherence||2020-01-18|fails with python-3.X, and python-2.7 is EOLed (GH 
 net/py-upnp-inspector||2020-01-18|Missing dependency: net/py-coherence is python-2.7-only
 security/py-pymacaroons-pynacl|security/py-pymacaroons|2020-01-20|Rename to match upstream naming
 math/jakarta-commons-math3|apache-commons-math|2020-01-24|Renamed upstream
+audio/py-mpd2|audio/py-python-mpd2|2020-01-25|Rename to match upstream naming
