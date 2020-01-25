@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	proby
-DISTVERSION=	0.3.0
+DISTVERSION=	0.4.0
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,17 +33,24 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		ansi_term-0.11.0 \
 		anyhow-1.0.26 \
 		arc-swap-0.4.4 \
+		arrayref-0.3.5 \
+		arrayvec-0.5.1 \
+		assert_cmd-0.12.0 \
 		async-trait-0.1.22 \
 		atty-0.2.14 \
+		autocfg-0.1.7 \
 		autocfg-1.0.0 \
 		awc-1.0.1 \
 		backtrace-0.3.42 \
 		backtrace-sys-0.1.32 \
 		base64-0.11.0 \
 		bitflags-1.2.1 \
+		blake2b_simd-0.5.10 \
 		brotli-sys-0.3.2 \
 		brotli2-0.3.2 \
+		bumpalo-3.1.2 \
 		byteorder-1.3.2 \
+		bytes-0.4.12 \
 		bytes-0.5.4 \
 		bytestring-0.1.4 \
 		c2-chacha-0.2.3 \
@@ -52,45 +59,69 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		chrono-0.4.10 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
+		constant_time_eq-0.1.5 \
 		copyless-0.1.4 \
 		crc32fast-1.2.0 \
+		crossbeam-channel-0.3.9 \
+		crossbeam-utils-0.6.6 \
+		crossbeam-utils-0.7.0 \
+		curl-0.4.25 \
+		curl-sys-0.4.25 \
 		derive_more-0.99.2 \
+		difference-2.0.0 \
+		dirs-2.0.2 \
+		dirs-sys-0.3.4 \
+		doc-comment-0.3.1 \
 		dtoa-0.4.4 \
 		either-1.5.3 \
 		encoding_rs-0.8.22 \
 		enum-as-inner-0.3.0 \
+		escargot-0.5.0 \
 		failure-0.1.6 \
 		failure_derive-0.1.6 \
 		flate2-1.0.13 \
 		fnv-1.0.6 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
+		futures-0.1.29 \
 		futures-0.3.1 \
 		futures-channel-0.3.1 \
+		futures-channel-preview-0.3.0-alpha.19 \
 		futures-core-0.3.1 \
+		futures-core-preview-0.3.0-alpha.19 \
 		futures-executor-0.3.1 \
+		futures-executor-preview-0.3.0-alpha.19 \
 		futures-io-0.3.1 \
+		futures-io-preview-0.3.0-alpha.19 \
 		futures-macro-0.3.1 \
+		futures-preview-0.3.0-alpha.19 \
 		futures-sink-0.3.1 \
+		futures-sink-preview-0.3.0-alpha.19 \
 		futures-task-0.3.1 \
 		futures-util-0.3.1 \
+		futures-util-preview-0.3.0-alpha.19 \
 		fxhash-0.2.1 \
 		getrandom-0.1.14 \
 		h2-0.2.1 \
 		heck-0.3.1 \
 		hermit-abi-0.1.6 \
 		hostname-0.1.5 \
+		http-0.1.21 \
 		http-0.2.0 \
 		httparse-1.3.4 \
 		idna-0.2.0 \
 		indexmap-1.3.1 \
 		iovec-0.1.4 \
 		ipconfig-0.2.1 \
-		itoa-0.4.4 \
+		isahc-0.7.6 \
+		itoa-0.4.5 \
+		js-sys-0.3.35 \
 		kernel32-sys-0.2.2 \
 		language-tags-0.2.2 \
 		lazy_static-1.4.0 \
 		libc-0.2.66 \
+		libnghttp2-sys-0.1.2 \
+		libz-sys-1.0.25 \
 		linked-hash-map-0.5.2 \
 		lock_api-0.3.3 \
 		log-0.4.8 \
@@ -98,14 +129,18 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		matches-0.1.8 \
 		memchr-2.3.0 \
 		mime-0.3.16 \
+		mime_guess-2.0.1 \
 		miniz_oxide-0.3.5 \
 		mio-0.6.21 \
 		mio-uds-0.6.7 \
 		miow-0.2.1 \
 		net2-0.2.33 \
+		nom-4.2.3 \
 		num-integer-0.1.42 \
 		num-traits-0.2.11 \
 		num_cpus-1.12.0 \
+		openssl-probe-0.1.2 \
+		openssl-sys-0.9.53 \
 		parking_lot-0.10.0 \
 		parking_lot_core-0.7.0 \
 		percent-encoding-2.1.0 \
@@ -113,7 +148,12 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		pin-project-internal-0.4.7 \
 		pin-project-lite-0.1.4 \
 		pin-utils-0.1.0-alpha.4 \
+		pkg-config-0.3.17 \
+		port_check-0.1.5 \
 		ppv-lite86-0.2.6 \
+		predicates-1.0.2 \
+		predicates-core-1.0.0 \
+		predicates-tree-1.0.0 \
 		proc-macro-error-0.4.5 \
 		proc-macro-error-attr-0.4.5 \
 		proc-macro-hack-0.5.11 \
@@ -126,12 +166,15 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
 		redox_syscall-0.1.56 \
+		redox_users-0.3.4 \
 		regex-1.3.3 \
 		regex-syntax-0.6.13 \
 		resolv-conf-0.6.2 \
+		rust-argon2-0.7.0 \
 		rustc-demangle-0.1.16 \
 		rustversion-1.0.2 \
 		ryu-1.0.2 \
+		schannel-0.1.16 \
 		scopeguard-1.0.0 \
 		serde-1.0.104 \
 		serde_derive-1.0.104 \
@@ -141,31 +184,51 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		serde_with_macros-1.1.0 \
 		sha1-0.6.0 \
 		signal-hook-registry-1.2.0 \
+		simplelog-0.7.4 \
 		slab-0.4.2 \
+		sluice-0.4.2 \
 		smallvec-1.1.0 \
 		socket2-0.3.11 \
+		sourcefile-0.1.4 \
 		strsim-0.8.0 \
 		structopt-0.3.8 \
 		structopt-derive-0.4.1 \
+		surf-1.0.3 \
 		syn-1.0.14 \
 		syn-mid-0.4.0 \
 		synstructure-0.12.3 \
+		term-0.6.1 \
 		textwrap-0.11.0 \
 		thread_local-1.0.1 \
 		threadpool-1.7.1 \
 		time-0.1.42 \
 		tokio-0.2.10 \
+		tokio-io-0.1.12 \
 		tokio-util-0.2.0 \
+		treeline-0.1.0 \
 		trust-dns-proto-0.18.0-alpha.2 \
 		trust-dns-resolver-0.18.0-alpha.2 \
+		unicase-2.6.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.12 \
 		unicode-segmentation-1.6.0 \
 		unicode-width-0.1.7 \
 		unicode-xid-0.2.0 \
 		url-2.1.1 \
+		vcpkg-0.2.8 \
 		vec_map-0.8.1 \
+		version_check-0.1.5 \
+		version_check-0.9.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.58 \
+		wasm-bindgen-backend-0.2.58 \
+		wasm-bindgen-futures-0.3.27 \
+		wasm-bindgen-macro-0.2.58 \
+		wasm-bindgen-macro-support-0.2.58 \
+		wasm-bindgen-shared-0.2.58 \
+		wasm-bindgen-webidl-0.2.58 \
+		web-sys-0.3.35 \
+		weedle-0.10.0 \
 		widestring-0.4.0 \
 		winapi-0.2.8 \
 		winapi-0.3.8 \
