@@ -1,3 +1,4 @@
-Programmatically open an editor, capture the result.
+python-editor is a library that provides the editor module for programmatically
+interfacing with your system’s $EDITOR.
 
 WWW: https://github.com/fmoo/python-editor
