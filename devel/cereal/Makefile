@@ -22,4 +22,7 @@ GH_ACCOUNT=	USCiLab
 
 CFLAGS+=	-Wno-unused-private-field
 
+CMAKE_ON=	SKIP_PORTABILITY_TEST
+CMAKE_OFF=	WITH_WERROR
+
 .include <bsd.port.mk>
