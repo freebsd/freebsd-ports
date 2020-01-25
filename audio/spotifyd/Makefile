@@ -2,7 +2,7 @@
 
 PORTNAME=	spotifyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.23
+DISTVERSION=	0.2.24
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -37,7 +37,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		autocfg-1.0.0 \
 		backtrace-0.3.40 \
 		backtrace-sys-0.1.32 \
-		base-x-0.2.6 \
 		base64-0.9.3 \
 		base64-0.10.1 \
 		bindgen-0.51.1 \
@@ -51,7 +50,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		block-modes-0.3.3 \
 		block-padding-0.1.5 \
 		boxfnonce-0.1.1 \
-		bumpalo-3.1.2 \
 		byte-tools-0.3.1 \
 		bytecount-0.4.0 \
 		byteorder-1.3.2 \
@@ -91,7 +89,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		derive_builder-0.7.2 \
 		derive_builder_core-0.5.0 \
 		digest-0.8.1 \
-		discard-1.0.4 \
 		dotenv-0.13.0 \
 		dtoa-0.4.4 \
 		either-1.5.3 \
@@ -274,7 +271,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		serde_json-1.0.44 \
 		serde_urlencoded-0.5.5 \
 		sha-1-0.8.2 \
-		sha1-0.6.0 \
 		sha2-0.8.1 \
 		shannon-0.2.0 \
 		shlex-0.1.1 \
@@ -289,16 +285,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		socket2-0.2.4 \
 		socket2-0.3.11 \
 		stdweb-0.1.3 \
-		stdweb-0.4.20 \
-		stdweb-derive-0.5.3 \
-		stdweb-internal-macros-0.2.9 \
-		stdweb-internal-runtime-0.1.5 \
 		stream-cipher-0.3.2 \
 		string-0.2.1 \
 		strsim-0.7.0 \
 		strsim-0.8.0 \
-		structopt-0.3.7 \
-		structopt-derive-0.4.0 \
+		structopt-0.3.8 \
+		structopt-derive-0.4.1 \
 		subtle-1.0.0 \
 		syn-0.15.44 \
 		syn-1.0.13 \
@@ -356,13 +348,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		want-0.0.4 \
 		want-0.2.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.58 \
-		wasm-bindgen-backend-0.2.58 \
-		wasm-bindgen-macro-0.2.58 \
-		wasm-bindgen-macro-support-0.2.58 \
-		wasm-bindgen-shared-0.2.58 \
 		webbrowser-0.5.2 \
-		whoami-0.6.0 \
+		whoami-0.7.0 \
 		widestring-0.4.0 \
 		winapi-0.2.8 \
 		winapi-0.3.8 \
