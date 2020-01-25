@@ -17,7 +17,7 @@ PATCHDIR=	${.CURDIR}/files
 RUN_DEPENDS=	xkeyboard-config>=2.5:x11/xkeyboard-config
 
 SLAVE_PORT=	yes
-OPTIONS_EXCLUDE=DEVD HAL SUID
+OPTIONS_EXCLUDE=DEVD HAL SUID UDEV
 
 USE_XORG=	x11 xext xfont2
 
