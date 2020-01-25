@@ -1,4 +1,4 @@
-TIMESTAMP = 1579616428
+TIMESTAMP = 1579980602
 SHA256 (nginx-1.17.8.tar.gz) = 97d23ecf6d5150b30e284b40e8a6f7e3bb5be6b601e373a4d013768d5a25965b
 SIZE (nginx-1.17.8.tar.gz) = 1038627
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -61,6 +61,8 @@ SHA256 (sto-ngx_http_auth_pam_module-v1.5.1_GH0.tar.gz) = 77676842919134af88a7b4
 SIZE (sto-ngx_http_auth_pam_module-v1.5.1_GH0.tar.gz) = 6863
 SHA256 (arut-nginx-dav-ext-module-v3.0.0_GH0.tar.gz) = d2499d94d82d4e4eac8425d799e52883131ae86a956524040ff2fd230ef9f859
 SIZE (arut-nginx-dav-ext-module-v3.0.0_GH0.tar.gz) = 14558
+SHA256 (Taymindis-nginx-link-function-3.2.1_GH0.tar.gz) = d5460002dcda8e67a10027866255842a064225bb1dbcddb2db8cb18bb3fa511a
+SIZE (Taymindis-nginx-link-function-3.2.1_GH0.tar.gz) = 127676
 SHA256 (openresty-nginx-eval-module-582bd25_GH0.tar.gz) = 014bedb2b334ba8e8e23b4c660590357f8055dbed7b9b017e4cc2937876a8822
 SIZE (openresty-nginx-eval-module-582bd25_GH0.tar.gz) = 14849
 SHA256 (aperezdc-ngx-fancyindex-v0.4.3_GH0.tar.gz) = 81698fb0c1ec9f906ce308c055d5d248085caf390f4b92516c1ec93f87c886d4
