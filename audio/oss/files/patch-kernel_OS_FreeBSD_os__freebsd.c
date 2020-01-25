@@ -110,15 +110,24 @@
    return 0;
  }
  
-@@ -659,6 +683,11 @@ soundcard_detach (void)
- 
+@@ -656,6 +680,11 @@ soundcard_detach (void)
    if (refcount > 0 || open_devices > 0)
      return EBUSY;
-+
+ 
 +  for (i = 0; i < MAX_TMOUTS; ++i)
 +	callout_drain(&tmouts[i].timer);
 +
 +  mtx_destroy(&oss_timeout_mutex);
- 
++
    oss_unload_drivers ();
  
+   osdev_delete (core_osdev);
+@@ -920,7 +949,7 @@ oss_poll (struct cdev *bsd_dev, int events, struct thr
+   return ev.revents;
+ }
+ 
+-#if defined(D_VERSION_03) && (D_VERSION == D_VERSION_03)
++#if 1
+ static int
+ oss_mmap (struct cdev *bsd_dev, vm_ooffset_t offset, vm_paddr_t * paddr,
+ 	  int nprot, vm_memattr_t *memattr)
