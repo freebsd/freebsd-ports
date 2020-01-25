@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+# Generated with `make gomod-vendor'
 GH_TUPLE=	\
 		Shopify:go-lua:48449c60c0a9:shopify_go_lua/vendor/github.com/Shopify/go-lua \
 		Shopify:sarama:v1.18.0:shopify_sarama/vendor/gopkg.in/Shopify/sarama.v1 \
@@ -61,6 +62,7 @@ GH_TUPLE=	\
 		jackc:pgx:v3.2.0:jackc_pgx/vendor/github.com/jackc/pgx \
 		jtolds:go-luar:0786921db8c0:jtolds_go_luar/vendor/github.com/jtolds/go-luar \
 		jtolds:monkit-hw:0f753668cf20:jtolds_monkit_hw/vendor/github.com/jtolds/monkit-hw \
+		jtolds:tracetagger:32e72f1f7180:jtolds_tracetagger/vendor/github.com/jtolds/tracetagger \
 		klauspost:cpuid:e7e905edc00e:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		klauspost:reedsolomon:925cb01d6510:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
 		lib:pq:v1.3.0:lib_pq/vendor/github.com/lib/pq \
@@ -71,7 +73,7 @@ GH_TUPLE=	\
 		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.9:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mattn:go-sqlite3:v1.10.0:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		mattn:go-sqlite3:v2.0.2:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		minio:cli:v1.3.0:minio_cli/vendor/github.com/minio/cli \
 		minio:dsync:439a0961af70:minio_dsync/vendor/github.com/minio/dsync \
@@ -107,7 +109,7 @@ GH_TUPLE=	\
 		segmentio:go-prompt:f0d19b6901ad:segmentio_go_prompt/vendor/github.com/segmentio/go-prompt \
 		skyrings:skyring-common:d1c0bb1cbd5e:skyrings_skyring_common/vendor/github.com/skyrings/skyring-common \
 		spacemonkeygo:errors:9064522e9fd1:spacemonkeygo_errors/vendor/github.com/spacemonkeygo/errors \
-		spacemonkeygo:monkit:cf5a9e6f8fd2:spacemonkeygo_monkit/vendor/gopkg.in/spacemonkeygo/monkit.v2 \
+		spacemonkeygo:monkit:09813957f0a8:spacemonkeygo_monkit/vendor/gopkg.in/spacemonkeygo/monkit.v2 \
 		spacemonkeygo:monotime:e3f48a95f98a:spacemonkeygo_monotime/vendor/github.com/spacemonkeygo/monotime \
 		spacemonkeygo:spacelog:2296661a0572:spacemonkeygo_spacelog/vendor/github.com/spacemonkeygo/spacelog \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
@@ -116,9 +118,10 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:ccc8474e4234:storj_common/vendor/storj.io/common \
+		storj:common:8dcdd4c9d250:storj_common/vendor/storj.io/common \
 		storj:drpc:2171c57838d2:storj_drpc/vendor/storj.io/drpc \
 		storj:grpc-go:1c4561bf5127:storj_grpc_go/vendor/google.golang.org/grpc \
+		storj:uplink:69086b6ee4a8:storj_uplink/vendor/storj.io/uplink \
 		streadway:amqp:70e15c650864:streadway_amqp/vendor/github.com/streadway/amqp \
 		stretchr:testify:v1.3.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v63.1.1:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
