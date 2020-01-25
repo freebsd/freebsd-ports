@@ -1,6 +1,14 @@
---- src/threading.h.orig	2019-10-12 07:24:29 UTC
+--- src/threading.h.orig	2020-01-19 14:23:41 UTC
 +++ src/threading.h
-@@ -102,7 +102,7 @@ INLINE void thread_get_name(char *name) { // Always re
+@@ -19,6 +19,7 @@
+ #                                                                            #
+ *****************************************************************************/
+ 
++#undef WITH_PTHREAD_NP https://github.com/pikvm/ustreamer/issues/12
+ 
+ #pragma once
+ 
+@@ -102,7 +103,7 @@ INLINE void thread_get_name(char *name) { // Always re
  #	endif
  	if (retval < 0) {
  #endif
