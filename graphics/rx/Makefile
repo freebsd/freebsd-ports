@@ -12,6 +12,9 @@ COMMENT=	Modern and minimalist pixel editor implemented in rust
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	meowhash crate only supports x86_64
+
 USES=		cargo xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudhead
