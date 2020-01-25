@@ -1,9 +1,6 @@
 %%SITE_PERL%%/Sisimai.pm
 %%SITE_PERL%%/Sisimai/ARF.pm
 %%SITE_PERL%%/Sisimai/Address.pm
-%%SITE_PERL%%/Sisimai/Bite.pm
-%%SITE_PERL%%/Sisimai/Bite/Email.pm
-%%SITE_PERL%%/Sisimai/Bite/JSON.pm
 %%SITE_PERL%%/Sisimai/Data.pm
 %%SITE_PERL%%/Sisimai/Data/JSON.pm
 %%SITE_PERL%%/Sisimai/Data/YAML.pm
@@ -69,11 +66,7 @@
 %%SITE_PERL%%/Sisimai/Mail/Memory.pm
 %%SITE_PERL%%/Sisimai/Mail/STDIN.pm
 %%SITE_PERL%%/Sisimai/Message.pm
-%%SITE_PERL%%/Sisimai/Message/Email.pm
-%%SITE_PERL%%/Sisimai/Message/JSON.pm
 %%SITE_PERL%%/Sisimai/Order.pm
-%%SITE_PERL%%/Sisimai/Order/Email.pm
-%%SITE_PERL%%/Sisimai/Order/JSON.pm
 %%SITE_PERL%%/Sisimai/RFC1894.pm
 %%SITE_PERL%%/Sisimai/RFC3464.pm
 %%SITE_PERL%%/Sisimai/RFC3834.pm
@@ -125,9 +118,6 @@
 %%PERL5_MAN3%%/Sisimai.3.gz
 %%PERL5_MAN3%%/Sisimai::ARF.3.gz
 %%PERL5_MAN3%%/Sisimai::Address.3.gz
-%%PERL5_MAN3%%/Sisimai::Bite.3.gz
-%%PERL5_MAN3%%/Sisimai::Bite::Email.3.gz
-%%PERL5_MAN3%%/Sisimai::Bite::JSON.3.gz
 %%PERL5_MAN3%%/Sisimai::Data.3.gz
 %%PERL5_MAN3%%/Sisimai::Data::JSON.3.gz
 %%PERL5_MAN3%%/Sisimai::Data::YAML.3.gz
@@ -193,11 +183,7 @@
 %%PERL5_MAN3%%/Sisimai::Mail::Memory.3.gz
 %%PERL5_MAN3%%/Sisimai::Mail::STDIN.3.gz
 %%PERL5_MAN3%%/Sisimai::Message.3.gz
-%%PERL5_MAN3%%/Sisimai::Message::Email.3.gz
-%%PERL5_MAN3%%/Sisimai::Message::JSON.3.gz
 %%PERL5_MAN3%%/Sisimai::Order.3.gz
-%%PERL5_MAN3%%/Sisimai::Order::Email.3.gz
-%%PERL5_MAN3%%/Sisimai::Order::JSON.3.gz
 %%PERL5_MAN3%%/Sisimai::RFC1894.3.gz
 %%PERL5_MAN3%%/Sisimai::RFC3464.3.gz
 %%PERL5_MAN3%%/Sisimai::RFC3834.3.gz
