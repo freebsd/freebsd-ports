@@ -1,0 +1,181 @@
+# $FreeBSD$
+
+PORTNAME=	proby
+DISTVERSION=	0.3.0
+CATEGORIES=	net
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Check whether hosts are reachable on certain ports
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	svenstaro
+
+CARGO_CRATES=	actix-codec-0.2.0 \
+		actix-connect-1.0.2 \
+		actix-http-1.0.1 \
+		actix-macros-0.1.1 \
+		actix-router-0.2.4 \
+		actix-rt-1.0.0 \
+		actix-server-1.0.1 \
+		actix-service-1.0.5 \
+		actix-testing-1.0.0 \
+		actix-threadpool-0.3.1 \
+		actix-tls-1.0.0 \
+		actix-utils-1.0.6 \
+		actix-web-2.0.0 \
+		actix-web-codegen-0.2.0 \
+		adler32-1.0.4 \
+		aho-corasick-0.7.6 \
+		ansi_term-0.11.0 \
+		anyhow-1.0.26 \
+		arc-swap-0.4.4 \
+		async-trait-0.1.22 \
+		atty-0.2.14 \
+		autocfg-1.0.0 \
+		awc-1.0.1 \
+		backtrace-0.3.42 \
+		backtrace-sys-0.1.32 \
+		base64-0.11.0 \
+		bitflags-1.2.1 \
+		brotli-sys-0.3.2 \
+		brotli2-0.3.2 \
+		byteorder-1.3.2 \
+		bytes-0.5.4 \
+		bytestring-0.1.4 \
+		c2-chacha-0.2.3 \
+		cc-1.0.50 \
+		cfg-if-0.1.10 \
+		chrono-0.4.10 \
+		clap-2.33.0 \
+		cloudabi-0.0.3 \
+		copyless-0.1.4 \
+		crc32fast-1.2.0 \
+		derive_more-0.99.2 \
+		dtoa-0.4.4 \
+		either-1.5.3 \
+		encoding_rs-0.8.22 \
+		enum-as-inner-0.3.0 \
+		failure-0.1.6 \
+		failure_derive-0.1.6 \
+		flate2-1.0.13 \
+		fnv-1.0.6 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		futures-0.3.1 \
+		futures-channel-0.3.1 \
+		futures-core-0.3.1 \
+		futures-executor-0.3.1 \
+		futures-io-0.3.1 \
+		futures-macro-0.3.1 \
+		futures-sink-0.3.1 \
+		futures-task-0.3.1 \
+		futures-util-0.3.1 \
+		fxhash-0.2.1 \
+		getrandom-0.1.14 \
+		h2-0.2.1 \
+		heck-0.3.1 \
+		hermit-abi-0.1.6 \
+		hostname-0.1.5 \
+		http-0.2.0 \
+		httparse-1.3.4 \
+		idna-0.2.0 \
+		indexmap-1.3.1 \
+		iovec-0.1.4 \
+		ipconfig-0.2.1 \
+		itoa-0.4.4 \
+		kernel32-sys-0.2.2 \
+		language-tags-0.2.2 \
+		lazy_static-1.4.0 \
+		libc-0.2.66 \
+		linked-hash-map-0.5.2 \
+		lock_api-0.3.3 \
+		log-0.4.8 \
+		lru-cache-0.1.2 \
+		matches-0.1.8 \
+		memchr-2.3.0 \
+		mime-0.3.16 \
+		miniz_oxide-0.3.5 \
+		mio-0.6.21 \
+		mio-uds-0.6.7 \
+		miow-0.2.1 \
+		net2-0.2.33 \
+		num-integer-0.1.42 \
+		num-traits-0.2.11 \
+		num_cpus-1.12.0 \
+		parking_lot-0.10.0 \
+		parking_lot_core-0.7.0 \
+		percent-encoding-2.1.0 \
+		pin-project-0.4.7 \
+		pin-project-internal-0.4.7 \
+		pin-project-lite-0.1.4 \
+		pin-utils-0.1.0-alpha.4 \
+		ppv-lite86-0.2.6 \
+		proc-macro-error-0.4.5 \
+		proc-macro-error-attr-0.4.5 \
+		proc-macro-hack-0.5.11 \
+		proc-macro-nested-0.1.3 \
+		proc-macro2-1.0.8 \
+		quick-error-1.2.3 \
+		quote-1.0.2 \
+		rand-0.7.3 \
+		rand_chacha-0.2.1 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
+		redox_syscall-0.1.56 \
+		regex-1.3.3 \
+		regex-syntax-0.6.13 \
+		resolv-conf-0.6.2 \
+		rustc-demangle-0.1.16 \
+		rustversion-1.0.2 \
+		ryu-1.0.2 \
+		scopeguard-1.0.0 \
+		serde-1.0.104 \
+		serde_derive-1.0.104 \
+		serde_json-1.0.45 \
+		serde_urlencoded-0.6.1 \
+		serde_with-1.4.0 \
+		serde_with_macros-1.1.0 \
+		sha1-0.6.0 \
+		signal-hook-registry-1.2.0 \
+		slab-0.4.2 \
+		smallvec-1.1.0 \
+		socket2-0.3.11 \
+		strsim-0.8.0 \
+		structopt-0.3.8 \
+		structopt-derive-0.4.1 \
+		syn-1.0.14 \
+		syn-mid-0.4.0 \
+		synstructure-0.12.3 \
+		textwrap-0.11.0 \
+		thread_local-1.0.1 \
+		threadpool-1.7.1 \
+		time-0.1.42 \
+		tokio-0.2.10 \
+		tokio-util-0.2.0 \
+		trust-dns-proto-0.18.0-alpha.2 \
+		trust-dns-resolver-0.18.0-alpha.2 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.12 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.7 \
+		unicode-xid-0.2.0 \
+		url-2.1.1 \
+		vec_map-0.8.1 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		widestring-0.4.0 \
+		winapi-0.2.8 \
+		winapi-0.3.8 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		winreg-0.6.2 \
+		winutil-0.1.1 \
+		ws2_32-sys-0.2.1
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>
