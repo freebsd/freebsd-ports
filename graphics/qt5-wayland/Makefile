@@ -2,6 +2,7 @@
 
 PORTNAME=	wayland
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	qt5-
 
@@ -22,5 +23,7 @@ USE_QT=		core dbus gui declarative \
 USE_XORG=       x11 xcomposite
 
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
+
+QT_BINARIES=	yes
 
 .include <bsd.port.mk>

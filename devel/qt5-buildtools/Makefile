@@ -2,6 +2,7 @@
 
 PORTNAME=	buildtools
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -12,6 +13,7 @@ USES=		compiler:c++11-lang libtool perl5 qmake:no_env qt-dist:5,base
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-no-gui -no-xcb
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
+QT_BINARIES=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src/tools/bootstrap
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

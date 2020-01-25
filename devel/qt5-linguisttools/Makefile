@@ -2,6 +2,7 @@
 
 PORTNAME=	linguisttools
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -13,6 +14,8 @@ USE_QT=		core xml buildtools_build declarative_build
 
 BUILD_WRKSRC=	${WRKSRC}/src/linguist
 INSTALL_WRKSRC=	${WRKSRC}/src/linguist
+
+QT_BINARIES=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/SUBDIRS.*linguist/ d' \

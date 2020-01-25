@@ -2,6 +2,7 @@
 
 PORTNAME=	qdbusviewer
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -18,6 +19,8 @@ DESKTOP_ENTRIES="Qt 5 D-Bus Viewer" "" \
 
 BUILD_WRKSRC=	${WRKSRC}/src/qdbus/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
+
+QT_BINARIES=	yes
 
 post-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/images/qdbusviewer-128.png \

@@ -18,7 +18,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -110,6 +110,8 @@ MAKE_ENV+=	CC="${CC}" CXX="${CXX}"			\
 		C_INCLUDE_PATH=${LOCALBASE}/include	\
 		CPLUS_INCLUDE_PATH=${LOCALBASE}/include	\
 		${CONFIGURE_ENV}
+
+QT_BINARIES=	yes
 
 .include <bsd.port.pre.mk>
 

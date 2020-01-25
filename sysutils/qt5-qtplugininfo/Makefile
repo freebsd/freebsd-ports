@@ -2,6 +2,7 @@
 
 PORTNAME=	qtplugininfo
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	qt5-
 
@@ -18,6 +19,8 @@ PLIST_FILES=	${QT_BINDIR}/qtplugininfo
 # will look for a lot more dependencies for other tools such as lupdate, which
 # we do not really have to depend on.
 WRKSRC_SUBDIR=	src/${PORTNAME}
+
+QT_BINARIES=	yes
 
 post-patch:
 	${CP} ${WRKSRC}/../../.qmake.conf ${WRKSRC}

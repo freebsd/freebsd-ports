@@ -2,6 +2,7 @@
 
 PORTNAME=	qev
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11
 PKGNAMEPREFIX=	qt5-
 
@@ -12,6 +13,8 @@ USES=		compiler:c++11-lang qmake qt-dist:5,tools
 USE_QT=		core widgets
 
 WRKSRC_SUBDIR=	src/${PORTNAME}
+
+QT_BINARIES=	yes
 
 # qev is not connected to qttool's build system, so we cannot just run qmake qt-dist:5,tools
 # and set {BUILD,INSTALL}_WRKSRC.

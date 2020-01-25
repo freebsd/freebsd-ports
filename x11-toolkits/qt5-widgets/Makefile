@@ -2,6 +2,7 @@
 
 PORTNAME=	widgets
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
@@ -19,6 +20,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 MORE_WRKSRCS=	src/tools/uic
 
+QT_BINARIES=	yes
 QT_DEFINES=	ACCESSIBILITY WIDGETS XSYNC
 QT_CONFIG=	accessibility accessibility-atspi-bridge xlib
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	qdbus
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -13,5 +14,7 @@ USE_QT=		core dbus xml buildtools_build
 
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
+
+QT_BINARIES=	yes
 
 .include <bsd.port.mk>

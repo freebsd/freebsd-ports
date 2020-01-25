@@ -384,4 +384,15 @@ qt-post-install:
 .    endif # ${QT_CONFIG:N-*}
 .  endif # M5
 
+# Handle misc/qtchooser wrapper installation and deinstallation
+# If a port installs Qt version-specific binaries (e.g. "designer" which existed as a Qt4 application
+# and exists as a Qt5 application and will probably be a Qt6 application) which should have a
+# qtchooser-based wrapper, the port should set `QT_BINARIES=yes`.
+#
+# When QT_BINARIES is set to yes, compatibility symlinks (designer -> qtchooser, so that
+# qtchooser can run designer-qt5 or whatever is the selected Qt version) are installed by the port.
+.  if defined(QT_BINARIES)
+	${ECHO_CMD} '@postexec if type update-qtchooser-wrapper >/dev/null 2>&1; then update-qtchooser-wrapper; fi' >> ${TMPPLIST}
+	${ECHO_CMD} '@postunexec if type update-qtchooser-wrapper >/dev/null 2>&1; then update-qtchooser-wrapper; fi' >> ${TMPPLIST}
+.  endif
 .endif # defined(_QT_DIST_MK_INCLUDED)
