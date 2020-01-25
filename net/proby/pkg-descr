@@ -1,0 +1,7 @@
+Check whether hosts are reachable on certain ports and return result on HTTP.
+
+Its intended purpose is to be a bridge server for services that can only probe
+container or application health on HTTP. Oh, and it's just a single binary that
+works everywhere.
+
+WWW: https://github.com/svenstaro/proby
