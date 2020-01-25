@@ -1,3 +1,4 @@
-API for Linux kernel SCSI target (aka LIO)
+rtslib-fb is an object-based Python library for configuring the LIO generic SCSI
+target, present in 3.x Linux kernel versions.
 
-WWW: https://pypi.org/project/rtslib-fb/
+WWW: https://github.com/open-iscsi/rtslib-fb
