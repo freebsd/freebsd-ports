@@ -121,6 +121,15 @@
  pm_sv             () { [ -n "$PM_SU_VERBOSE" ] && echo -e "===>>> SU $*"; }
  
  # Do this here so we can have a reasonably good guess.
+@@ -359,7 +360,7 @@ pm_sv             () { [ -n "$PM_SU_VERBOSE" ] && echo
+ if [ "$$" -eq "$PM_PARENT_PID" ]; then
+ 	if [ -z "$pd" ]; then
+ 		if [ -z "$PORTSDIR" ]; then
+-			pd=`pm_make_b -f/usr/share/mk/bsd.port.mk -V PORTSDIR 2>/dev/null`
++			pd=`pm_make_b -f/usr/share/mk/bsd.port.mk -V PORTSDIR 2>/dev/null` || pd=""
+ 			[ -z "$pd" ] && pm_isdir /usr/ports && pd=/usr/ports
+ 		else
+ 			pd=$PORTSDIR
 @@ -433,6 +434,8 @@ usage () {
  	echo ''
  	echo "$progname --list-origins"
