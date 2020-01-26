@@ -88,17 +88,5 @@ post-patch:
 	# Third entry in the table of interpreters is basename of executable
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_VERSION}|3' \
 		${WRKSRC}/src/extension/implementation/script.cpp
-	# Obtained from Arch Linux
-	@${REINPLACE_CMD} -e 's|gTrue|true|g' -e 's|gFalse|false|g' -e 's|GBool|bool|g' \
-		${WRKSRC}/src/extension/internal/pdfinput/pdf-parser.*
-	# Fix with poppler 0.73
-	@${REINPLACE_CMD} -E '/#include "goo\/gtypes.h"/d' \
-		${WRKSRC}/src/extension/internal/pdfinput/pdf-parser.h
-	# Fix build with poppler 0.83
-	${REINPLACE_CMD} -e 's|(GfxPath|(const GfxPath|g' \
-			  -e 's|GfxSubpath|const GfxSubpath|g' \
-			  -e 's|new GlobalParams()|std::unique_ptr<GlobalParams>(new GlobalParams())|g' \
-			  -e 's|new GlobalParams(poppler_datadir)|std::unique_ptr<GlobalParams>(new GlobalParams(poppler_datadir))|g' \
-		${WRKSRC}/src/extension/internal/pdfinput/*.cpp
 
 .include <bsd.port.mk>
