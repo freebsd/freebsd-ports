@@ -1,6 +1,6 @@
-TIMESTAMP = 1576102249
-SHA256 (kubernetes-minikube-v1.6.1_GH0.tar.gz) = ae68e7ea30a9820be69ceb6428adb49ffc52ddb829cfc445dd906ba9169b6bad
-SIZE (kubernetes-minikube-v1.6.1_GH0.tar.gz) = 78447692
+TIMESTAMP = 1578929818
+SHA256 (kubernetes-minikube-v1.6.2_GH0.tar.gz) = 256fc1f8e848d388e3de7452876fe94bbe3c3fee5981ba65ed6cc651f0dcec4f
+SIZE (kubernetes-minikube-v1.6.2_GH0.tar.gz) = 78450821
 SHA256 (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = ee1ebe2efef498be1c558bf71e143289db2d21e2d42592503ad2d4a989006821
 SIZE (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = 20946
 SHA256 (MakeNowJust-heredoc-bb23615498cd_GH0.tar.gz) = be00f2aedeb443f9768f767b44e3ceab6d68ce6d45cb00468c61d5fcaff3823a
