@@ -52,9 +52,6 @@ share/pixmaps/text-x-wxmathml.svg
 share/pixmaps/text-x-wxmaxima-batch.svg
 share/pixmaps/wxmaxima-16.xpm
 share/pixmaps/wxmaxima-32.xpm
-share/wxMaxima/COPYING
-share/wxMaxima/README
-share/wxMaxima/README.md
 share/wxMaxima/a.png
 share/wxMaxima/all-celltypes.wxmx
 share/wxMaxima/autosave.cfg
