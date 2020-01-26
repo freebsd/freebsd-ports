@@ -2,7 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.12.1
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	canop
 
@@ -126,7 +125,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		syn-1.0.7 \
 		synstructure-0.12.1 \
 		term-0.6.1 \
-		termimad-0.8.10 \
+		termimad-0.8.11 \
 		textwrap-0.11.0 \
 		thiserror-1.0.4 \
 		thiserror-impl-1.0.4 \
