@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tty-color
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
