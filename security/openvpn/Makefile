@@ -35,11 +35,11 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CPPFLAGS+=		-DPLUGIN_LIBDIR=\\\"${PREFIX}/lib/openvpn/plugins\\\"
 
 OPTIONS_DEFINE=		PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME \
-			TEST LZ4 SMALL TUNNELBLICK
-OPTIONS_DEFAULT=	EASYRSA OPENSSL TEST LZ4
+			TEST LZ4 LZO SMALL TUNNELBLICK
+OPTIONS_DEFAULT=	EASYRSA OPENSSL TEST LZ4 LZO
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	OPENSSL MBEDTLS
-PKCS11_DESC=		Use security/pkcs11-helper
+PKCS11_DESC=		Use security/pkcs11-helper (OpenSSL only)
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
 MBEDTLS_DESC=		SSL/TLS via mbedTLS (lacks TLS v1.3)
 TUNNELBLICK_DESC=	Tunnelblick XOR scramble patch (READ HELP!)
@@ -56,19 +56,22 @@ PKCS11_PREVENTS_MSG=	OpenVPN cannot use pkcs11-helper with mbedTLS. Disable PKCS
 TUNNELBLICK_EXTRA_PATCHES=	${FILESDIR}/extra-tunnelblick-openvpn_xorpatch
 
 X509ALTUSERNAME_CONFIGURE_ENABLE=	x509-alt-username
-
 X509ALTUSERNAME_PREVENTS=	MBEDTLS
 X509ALTUSERNAME_PREVENTS_MSG=	OpenVPN ${DISTVERSION} cannot use --x509-username-field with mbedTLS. Disable X509ALTUSERNAME, or use OpenSSL instead
 
 OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ON=	--with-crypto-library=openssl
 
-LZ4_CONFIGURE_OFF=	--disable-lz4
-
-SMALL_CONFIGURE_ON=	--enable-small
-
 MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
 MBEDTLS_CONFIGURE_ON=	--with-crypto-library=mbedtls
+
+LZO_CONFIGURE_ENABLE=	lzo
+LZO_LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
+
+LZ4_CONFIGURE_ENABLE=	lz4
+LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
+
+SMALL_CONFIGURE_ENABLE=	small
 
 USE_RC_SUBR=		openvpn
 
@@ -78,15 +81,24 @@ SUB_FILES=		pkg-message openvpn-client
 CFLAGS+=		-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
-LIB_DEPENDS+=		liblzo2.so:archivers/lzo2
-
-LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
-
 PORTDOCS=		*
 PORTEXAMPLES=		*
 
 TEST_ALL_TARGET=	check
 TEST_TEST_TARGET_OFF=	check
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMBEDTLS}
+_tlslibs=libmbedtls libmbedx509 libmbedcrypto
+.else
+# OpenSSL
+_tlslibs=libssl libcrypto
+.endif
+
+.if ! ${PORT_OPTIONS:MLZ4} && ! ${PORT_OPTIONS:MLZO}
+CONFIGURE_ARGS+=	--enable-comp-stub
+.endif
 
 pre-configure:
 .ifdef (LOG_OPENVPN)
@@ -104,15 +116,6 @@ post-configure:
 	${REINPLACE_CMD} '/^CFLAGS =/s/$$/ -fPIC/' \
 	    ${WRKSRC}/src/plugins/auth-pam/Makefile \
 	    ${WRKSRC}/src/plugins/down-root/Makefile
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMBEDTLS}
-_tlslibs=libmbedtls libmbedx509 libmbedcrypto
-.else
-# OpenSSL
-_tlslibs=libssl libcrypto
-.endif
 
 # sanity check that we don't inherit incompatible SSL libs through,
 # for instance, pkcs11-helper:
