@@ -18,4 +18,12 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	HTML5LIB LXML
+HTML5LIB_DESC=	Use html5lib as backing engine
+LXML_DESC=	Use lxml as backing engine
+
+HTML5LIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.4.1<5:www/py-beautifulsoup@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}html5lib>=0.999<1.0.2:www/py-html5lib@${PY_FLAVOR}
+LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.2.0<5:devel/py-lxml@${PY_FLAVOR}
+
 .include <bsd.port.mk>
