@@ -815,6 +815,15 @@
  		\<)	# Could happen if ports tree is out of date
  			use_package=up_old_tree
  			pm_v "===>>> Available package ($latest_pv)"
+@@ -3603,7 +3644,7 @@ if [ -z "$use_package" ]; then
+ 
+ 	pm_cd_pd $portdir
+ 	export_flavor $(flavor_part $portdir)
+-	[ -z "$DONT_PRE_CLEAN" ] && { pm_make clean NOCLEANDEPENDS=ncd ||
++	[ -z "$DONT_PRE_CLEAN" ] && { pm_make_s clean NOCLEANDEPENDS=ncd ||
+ 		fail 'make clean failed'; }
+ 
+ 	fl_read=`echo ${TMPDIR}/f-${PM_PARENT_PID}-fetchlog-${portdir#*/}.*`
 @@ -3632,19 +3673,27 @@ if [ -z "$use_package" ]; then
  
  # Return flavor for named pkg (must be executed in port directory!)
