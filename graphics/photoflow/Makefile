@@ -2,6 +2,7 @@
 
 PORTNAME=	photoflow
 DISTVERSION=	0.2.8-1398
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
