@@ -2,9 +2,9 @@
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=233909
 # TODO: Upstream
 
---- certbot/compat/misc.py.orig	2019-04-04 22:02:08 UTC
+--- certbot/compat/misc.py.orig	2020-01-14 18:41:31 UTC
 +++ certbot/compat/misc.py
-@@ -129,6 +129,11 @@ LINUX_DEFAULT_FOLDERS = {
+@@ -74,6 +74,11 @@ LINUX_DEFAULT_FOLDERS = {
      'work': '/var/lib/letsencrypt',
      'logs': '/var/log/letsencrypt',
  }
@@ -16,7 +16,7 @@
  
  
  def get_default_folder(folder_type):
-@@ -142,8 +147,13 @@ def get_default_folder(folder_type):
+@@ -88,8 +93,13 @@ def get_default_folder(folder_type):
  
      """
      if os.name != 'nt':
