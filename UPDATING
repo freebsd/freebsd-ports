@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200126:
+  AFFECTS: users of sysutils/helm
+  AUTHOR: danilo@FreeBSD.org
+
+  The Helm project have deprecated the Tiller utility in Helm 3. If you are using
+  Helm 2 you will need to migrate the configuration to be compatible with Helm 3.
+  Please, refer to the following documentation for more information about the
+  migration process:
+
+  https://helm.sh/blog/migrate-from-helm-v2-to-helm-v3/
+
+  Note that the 2to3 plugin binary is not available for FreeBSD and you will need
+  to compile it yourself.
+
 20200113:
   AFFECTS: users of python and net/samba410, devel/talloc, devel/tevent, databases/tdb, databases/ldb*
   AUTHOR: timur@FreeBSD.org
