@@ -50,3 +50,11 @@
  .It Fl o Ar <new port dir in /usr/ports> <installed port>
  replace the installed port with a port from a different origin
  .It [-R] Fl r Ar name/glob of port directory in /var/db/pkg
+@@ -603,6 +613,7 @@ variable must be set to a directory where the
+ superuser has write permissions.
+ Other useful variables include:
+ .Bd -literal
++PORTSDIR		(default /usr/ports)
+ MASTER_SITE_INDEX	(default http://www.FreeBSD.org/ports/)
+ FETCHINDEX		(default fetch -am -o)
+ INDEXDIR		(default $PORTSDIR, or $TMPDIR for --index-only)
