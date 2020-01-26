@@ -1,7 +1,0 @@
-[
-{ type: upgrade
-  message: <<EOM
-Be sure to upgrade Tiller with 'helm init --upgrade'.
-EOM
-}
-]
