@@ -5,6 +5,7 @@ include/fth/ficltokens.h
 include/fth/fth-config.h
 include/fth/fth-lib.h
 include/fth/fth.h
+include/fth/mp.h
 lib/fth/dbm.so
 lib/libfth.so
 man/man1/fth.1.gz

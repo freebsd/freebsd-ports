@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fth
-DISTVERSION=	1.3.9
+DISTVERSION=	1.4.1
 CATEGORIES=	lang
 MASTER_SITES=	SF/fth/fth/${DISTVERSION}/
 
@@ -24,11 +24,4 @@ TECLA_DESC=		Use tecla command-line editing
 TECLA_CONFIGURE_WITH=	tecla
 TECLA_LIB_DEPENDS=	libtecla.so:devel/libtecla
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	variable has incomplete type 'BIGNUM' (aka 'struct bignum_st')
-BROKEN_FreeBSD_13=	variable has incomplete type 'BIGNUM' (aka 'struct bignum_st')
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
