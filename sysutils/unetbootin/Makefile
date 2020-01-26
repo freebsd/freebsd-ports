@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unetbootin
-PORTVERSION=	661
+PORTVERSION=	677
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}

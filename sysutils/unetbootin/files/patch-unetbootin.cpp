@@ -1,4 +1,4 @@
---- unetbootin.cpp.orig	2018-04-28 01:24:54 UTC
+--- unetbootin.cpp.orig	2019-09-29 00:26:32 UTC
 +++ unetbootin.cpp
 @@ -9,6 +9,11 @@ This program is distributed in the hope that it will b
  
@@ -539,7 +539,7 @@
  	}
      else if (srcfName == "mbr.bin")
  	{
-@@ -3516,11 +3535,19 @@ void unetbootin::runinst()
+@@ -3516,11 +3535,26 @@ void unetbootin::runinst()
  	}
  	if (installType == tr("USB Drive"))
  	{
@@ -552,6 +552,13 @@
 +#endif
 +#ifdef Q_OS_FREEBSD
 +		QStringList driveinfo = driveselect->currentText().split(":");
++		if (driveinfo.size() < 2) {
++			QTextStream out(stdout);
++			out << "/!\\ Target drive must be passed as "
++			    "<device-name>:<mount-point>" << endl << flush;
++			QApplication::exit();
++			exit(1);
++		}
 +		targetDev = driveinfo.at(0);
 +		installDir = ginstallDir = "";
 +		targetDrive = QString("%1/").arg(driveinfo.at(1));
@@ -559,7 +566,7 @@
  	}
  #ifdef Q_OS_LINUX
  	if (targetDev.contains(QRegExp("p\\d$")))
-@@ -3528,7 +3555,7 @@ void unetbootin::runinst()
+@@ -3528,7 +3562,7 @@ void unetbootin::runinst()
  	else
  		rawtargetDev = QString(targetDev).remove(QRegExp("\\d$"));
  #endif
@@ -568,25 +575,7 @@
  	rawtargetDev = QString(targetDev).remove(QRegExp("s\\d$"));
  #endif
  	#endif
-@@ -3724,7 +3751,7 @@ void unetbootin::writegrub2cfg()
- 	QString menulstxt = QString(
- 	"%9\n\n"
- #ifndef NODEFAULTBOOT
--	"\nmenuentry \""UNETBOOTINB"\" {\n"
-+	"\nmenuentry \"" UNETBOOTINB "\" {\n"
- 	"\tset root=%8\n"
- 	"\t%1 %2 %3 %4\n"
- 	"\t%5 %6 %7\n"
-@@ -3845,7 +3872,7 @@ void unetbootin::runinsthdd()
- 	"timeout 10\n"
- 	#endif
- #ifndef NODEFAULTBOOT
--	"\ntitle "UNETBOOTINB"\n"
-+	"\ntitle " UNETBOOTINB "\n"
- 	#ifdef Q_OS_WIN32
- 	"find --set-root %3\n"
- 	#endif
-@@ -4281,21 +4308,47 @@ void unetbootin::runinstusb()
+@@ -4281,21 +4315,47 @@ void unetbootin::runinstusb()
              instIndvfl("libutil.c32", QString("%1libutil.c32").arg(targetPath));
              instIndvfl("libcom32.c32", QString("%1libcom32.c32").arg(targetPath));
          }
@@ -645,7 +634,7 @@
  	if (this->persistenceSpaceMB > 0)
  	{
  		pdesc1->setText(tr("Setting up persistence"));
-@@ -4334,6 +4387,20 @@ void unetbootin::fininstall()
+@@ -4334,6 +4394,20 @@ void unetbootin::fininstall()
  		rmFile(mke2fscommand);
  #endif
  	}
@@ -666,16 +655,7 @@
  	pdesc1->setText("");
  	progresslayer->setEnabled(false);
  	progresslayer->hide();
-@@ -4343,7 +4410,7 @@ void unetbootin::fininstall()
- 	sdesc4->setText(QString("<b>%1 %2</b>").arg(sdesc4->text()).arg(trcurrent));
- 	if (installType == tr("Hard Disk"))
- 	{
--		rebootmsgtext->setText(tr("After rebooting, select the "UNETBOOTINB" menu entry to boot.%1").arg(postinstmsg));
-+		rebootmsgtext->setText(tr("After rebooting, select the " UNETBOOTINB " menu entry to boot.%1").arg(postinstmsg));
- 	}
- 	if (installType == tr("USB Drive"))
- 	{
-@@ -4357,7 +4424,8 @@ void unetbootin::fininstall()
+@@ -4357,7 +4431,8 @@ void unetbootin::fininstall()
      finishLogging();
  	if (exitOnCompletion)
  	{
