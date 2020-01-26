@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	latte-dock
-DISTVERSION=	0.9.7
+DISTVERSION=	0.9.8
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/stable/latte-dock
 
