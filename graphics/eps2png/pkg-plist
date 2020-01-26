@@ -1,2 +1,4 @@
 bin/eps2png
+%%SITE_PERL%%/App/eps2png.pm
 %%PERL5_MAN1%%/eps2png.1.gz
+%%PERL5_MAN3%%/App::eps2png.3.gz
