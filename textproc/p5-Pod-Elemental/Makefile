@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Elemental
-PORTVERSION=	0.103004
+PORTVERSION=	0.103005
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Treating a Pod document as a tree of elements
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
