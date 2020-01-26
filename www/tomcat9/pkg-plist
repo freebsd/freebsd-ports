@@ -22,6 +22,7 @@
 %%T%%/lib/annotations-api.jar
 %%T%%/lib/catalina-ant.jar
 %%T%%/lib/catalina-ha.jar
+%%T%%/lib/catalina-ssi.jar
 %%T%%/lib/catalina-storeconfig.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
