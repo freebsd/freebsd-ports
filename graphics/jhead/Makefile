@@ -10,8 +10,6 @@ MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	EXIF JPEG header manipulation tool
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		jpeg:run
 
 MAKEFILE=	makefile
@@ -19,6 +17,8 @@ MAKEFILE=	makefile
 PLIST_FILES=	bin/jhead \
 		share/man/man1/jhead.1.gz
 PORTDOCS=	usage.html
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS=/d' ${WRKSRC}/${MAKEFILE}
