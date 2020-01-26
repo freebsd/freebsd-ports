@@ -43,6 +43,21 @@
  		echo "===>>> Done displaying pkg-message files" ; echo '' ) | $PAGER ;;
  	esac
  
+@@ -243,12 +245,12 @@ parent_exit () {
+ 	fi
+ 
+ 	if [ -n "$1" -a -n "${PM_NEEDS_UPDATE# }" -a -n "$PM_BUILDING" -a -z "$FETCH_ONLY" ]; then
+-		echo "$progname <flags>${PM_NEEDS_UPDATE}" > ${TMPDIR}/portmasterfail.txt
++		echo "$progname <flags>${PM_NEEDS_UPDATE}" > ~/portmasterfail.txt
+ 		echo ''
+ 		echo "===>>> You can restart from the point of failure with this command line:"
+ 		echo "       $progname <flags>${PM_NEEDS_UPDATE}"
+ 		echo ''
+-		echo "This command has been saved to ${TMPDIR}/portmasterfail.txt"
++		echo "This command has been saved to ~/portmasterfail.txt"
+ 		echo ''
+ 	fi
+ }
 @@ -260,7 +262,7 @@ safe_exit () {
  		parent_exit $1
  	else
