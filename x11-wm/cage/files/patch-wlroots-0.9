@@ -21,7 +21,15 @@ https://github.com/Hjdskes/cage/commit/51e6c760da51
  	   with a proper wl_display. */
 --- output.c.orig	2019-06-03 17:55:52 UTC
 +++ output.c
-@@ -386,6 +386,9 @@ handle_new_output(struct wl_listener *listener, void *
+@@ -207,6 +207,7 @@ handle_output_damage_frame(struct wl_listener *listene
+ 	}
+ 
+ 	if (!needs_frame) {
++		wlr_output_rollback(output->wlr_output);
+ 		wlr_log(WLR_DEBUG, "Output doesn't need frame and isn't damaged");
+ 		goto buffer_damage_finish;
+ 	}
+@@ -386,6 +387,9 @@ handle_new_output(struct wl_listener *listener, void *
  	/* Place the cursor in the center of the screen. */
  	wlr_cursor_warp(server->seat->cursor, NULL, wlr_output->width / 2, wlr_output->height / 2);
  	wlr_output_damage_add_whole(server->output->damage);
