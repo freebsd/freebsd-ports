@@ -13,6 +13,7 @@ include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-onvif-server.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-params.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-permissions.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-sdp.h
+include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-server-object.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-server-prelude.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-server.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-session-media.h

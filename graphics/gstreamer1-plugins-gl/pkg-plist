@@ -2,6 +2,7 @@ include/gstreamer-%%VERSION%%/gst/gl/egl/gstegl.h
 include/gstreamer-%%VERSION%%/gst/gl/egl/gsteglimage.h
 include/gstreamer-%%VERSION%%/gst/gl/egl/gstgldisplay_egl.h
 include/gstreamer-%%VERSION%%/gst/gl/egl/gstglmemoryegl.h
+include/gstreamer-%%VERSION%%/gst/gl/gl-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/gl/gl-prelude.h
 include/gstreamer-%%VERSION%%/gst/gl/gl.h
 include/gstreamer-%%VERSION%%/gst/gl/glprototypes/all_functions.h

@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTREVISION=	0
-CATEGORIES=	audio
+CATEGORIES=	graphics
 
-COMMENT=	Gstreamer OpenSPC plugin
+COMMENT=	GStreamer Qt videosink plugin
 
-GST_PLUGIN=	spc
-DIST=		bad
+GST_PLUGIN=	qt
+DIST=		good
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-transcoder
-PORTVERSION=	1.14.1
+PORTVERSION=	1.16.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	kwm@FreeBSD.org

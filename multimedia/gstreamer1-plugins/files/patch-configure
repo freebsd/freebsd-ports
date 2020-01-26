@@ -1,0 +1,109 @@
+--- configure.orig	2019-03-02 18:59:35.242374000 +0100
++++ configure	2019-03-02 19:00:32.651461000 +0100
+@@ -33987,54 +33987,9 @@
+ _ACEOF
+ 
+     fi
+-    if test "x$FOUND_CDPARANOIA" = "xyes";
+-    then
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for paranoia_cachemodel_size in -lcdda_paranoia" >&5
+-$as_echo_n "checking for paranoia_cachemodel_size in -lcdda_paranoia... " >&6; }
+-if ${ac_cv_lib_cdda_paranoia_paranoia_cachemodel_size+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcdda_paranoia -lcdda_interface $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+ 
+-/* Override any GCC internal prototype to avoid an error.
+-   Use char because int might match the return type of a GCC
+-   builtin and then its argument prototype would still apply.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-char paranoia_cachemodel_size ();
+-int
+-main ()
+-{
+-return paranoia_cachemodel_size ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_cdda_paranoia_paranoia_cachemodel_size=yes
+-else
+-  ac_cv_lib_cdda_paranoia_paranoia_cachemodel_size=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_cdda_paranoia_paranoia_cachemodel_size" >&5
+-$as_echo "$ac_cv_lib_cdda_paranoia_paranoia_cachemodel_size" >&6; }
+-if test "x$ac_cv_lib_cdda_paranoia_paranoia_cachemodel_size" = xyes; then :
+-  :
+-else
+-  HAVE_CDPARANOIA=no
+-fi
+ 
+-    fi
+ 
+-
+-
+ elif test $pkg_failed = untried; then
+ 
+ 
+@@ -34176,51 +34131,6 @@
+ cat >>confdefs.h <<_ACEOF
+ #define CDPARANOIA_HEADERS_IN_DIR /**/
+ _ACEOF
+-
+-    fi
+-    if test "x$FOUND_CDPARANOIA" = "xyes";
+-    then
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for paranoia_cachemodel_size in -lcdda_paranoia" >&5
+-$as_echo_n "checking for paranoia_cachemodel_size in -lcdda_paranoia... " >&6; }
+-if ${ac_cv_lib_cdda_paranoia_paranoia_cachemodel_size+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcdda_paranoia -lcdda_interface $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-/* Override any GCC internal prototype to avoid an error.
+-   Use char because int might match the return type of a GCC
+-   builtin and then its argument prototype would still apply.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-char paranoia_cachemodel_size ();
+-int
+-main ()
+-{
+-return paranoia_cachemodel_size ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_cdda_paranoia_paranoia_cachemodel_size=yes
+-else
+-  ac_cv_lib_cdda_paranoia_paranoia_cachemodel_size=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_cdda_paranoia_paranoia_cachemodel_size" >&5
+-$as_echo "$ac_cv_lib_cdda_paranoia_paranoia_cachemodel_size" >&6; }
+-if test "x$ac_cv_lib_cdda_paranoia_paranoia_cachemodel_size" = xyes; then :
+-  :
+-else
+-  HAVE_CDPARANOIA=no
+-fi
+ 
+     fi
+ 

@@ -69,6 +69,7 @@ share/locale/hu/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/id/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/ky/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/lv/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/mt/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo

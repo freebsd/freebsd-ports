@@ -1,5 +1,6 @@
 include/gstreamer-%%VERSION%%/gst/audio/audio-bad-prelude.h
 include/gstreamer-%%VERSION%%/gst/audio/gstnonstreamaudiodecoder.h
+include/gstreamer-%%VERSION%%/gst/audio/gstplanaraudioadapter.h
 include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/basecamerabinsrc-prelude.h
 include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstbasecamerasrc.h
 include/gstreamer-%%VERSION%%/gst/basecamerabinsrc/gstcamerabin-enum.h
@@ -40,13 +41,13 @@ include/gstreamer-%%VERSION%%/gst/player/gstplayer-visualization.h
 include/gstreamer-%%VERSION%%/gst/player/gstplayer.h
 include/gstreamer-%%VERSION%%/gst/player/player-prelude.h
 include/gstreamer-%%VERSION%%/gst/player/player.h
+include/gstreamer-%%VERSION%%/gst/sctp/sctp-prelude.h
+include/gstreamer-%%VERSION%%/gst/sctp/sctpreceivemeta.h
+include/gstreamer-%%VERSION%%/gst/sctp/sctpsendmeta.h
 include/gstreamer-%%VERSION%%/gst/uridownloader/gstfragment.h
 include/gstreamer-%%VERSION%%/gst/uridownloader/gsturidownloader.h
 include/gstreamer-%%VERSION%%/gst/uridownloader/gsturidownloader_debug.h
 include/gstreamer-%%VERSION%%/gst/uridownloader/uridownloader-prelude.h
-include/gstreamer-%%VERSION%%/gst/video/gstvideoaggregator.h
-include/gstreamer-%%VERSION%%/gst/video/gstvideoaggregatorpad.h
-include/gstreamer-%%VERSION%%/gst/video/video-bad-prelude.h
 include/gstreamer-%%VERSION%%/gst/webrtc/dtlstransport.h
 include/gstreamer-%%VERSION%%/gst/webrtc/icetransport.h
 include/gstreamer-%%VERSION%%/gst/webrtc/rtcsessiondescription.h
@@ -75,7 +76,6 @@ lib/gstreamer-%%VERSION%%/libgstbayer.so
 lib/gstreamer-%%VERSION%%/libgstbz2.so
 lib/gstreamer-%%VERSION%%/libgstcamerabin.so
 lib/gstreamer-%%VERSION%%/libgstcoloreffects.so
-lib/gstreamer-%%VERSION%%/libgstcompositor.so
 lib/gstreamer-%%VERSION%%/libgstdebugutilsbad.so
 lib/gstreamer-%%VERSION%%/libgstdvb.so
 lib/gstreamer-%%VERSION%%/libgstdvbsuboverlay.so
@@ -116,7 +116,6 @@ lib/gstreamer-%%VERSION%%/libgstshm.so
 lib/gstreamer-%%VERSION%%/libgstsiren.so
 lib/gstreamer-%%VERSION%%/libgstsmooth.so
 lib/gstreamer-%%VERSION%%/libgstspeed.so
-lib/gstreamer-%%VERSION%%/libgststereo.so
 lib/gstreamer-%%VERSION%%/libgstsubenc.so
 lib/gstreamer-%%VERSION%%/libgsttimecode.so
 lib/gstreamer-%%VERSION%%/libgstvideofiltersbad.so
@@ -132,9 +131,6 @@ lib/libgstadaptivedemux-%%VERSION%%.so.%%SOVERSION%%
 lib/libgstbadaudio-%%VERSION%%.so
 lib/libgstbadaudio-%%VERSION%%.so.0
 lib/libgstbadaudio-%%VERSION%%.so.%%SOVERSION%%
-lib/libgstbadvideo-%%VERSION%%.so
-lib/libgstbadvideo-%%VERSION%%.so.0
-lib/libgstbadvideo-%%VERSION%%.so.%%SOVERSION%%
 lib/libgstbasecamerabinsrc-%%VERSION%%.so
 lib/libgstbasecamerabinsrc-%%VERSION%%.so.0
 lib/libgstbasecamerabinsrc-%%VERSION%%.so.%%SOVERSION%%
@@ -156,6 +152,9 @@ lib/libgstphotography-%%VERSION%%.so.%%SOVERSION%%
 lib/libgstplayer-%%VERSION%%.so
 lib/libgstplayer-%%VERSION%%.so.0
 lib/libgstplayer-%%VERSION%%.so.%%SOVERSION%%
+lib/libgstsctp-%%VERSION%%.so
+lib/libgstsctp-%%VERSION%%.so.0
+lib/libgstsctp-%%VERSION%%.so.%%SOVERSION%%
 lib/libgsturidownloader-%%VERSION%%.so
 lib/libgsturidownloader-%%VERSION%%.so.0
 lib/libgsturidownloader-%%VERSION%%.so.%%SOVERSION%%
@@ -163,12 +162,12 @@ lib/libgstwebrtc-%%VERSION%%.so
 lib/libgstwebrtc-%%VERSION%%.so.0
 lib/libgstwebrtc-%%VERSION%%.so.%%SOVERSION%%
 libdata/pkgconfig/gstreamer-bad-audio-%%VERSION%%.pc
-libdata/pkgconfig/gstreamer-bad-video-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-codecparsers-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-insertbin-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-mpegts-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-player-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-plugins-bad-%%VERSION%%.pc
+libdata/pkgconfig/gstreamer-sctp-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-webrtc-%%VERSION%%.pc
 share/gir-1.0/GstInsertBin-%%VERSION%%.gir
 share/gir-1.0/GstMpegts-%%VERSION%%.gir
@@ -176,6 +175,7 @@ share/gir-1.0/GstPlayer-%%VERSION%%.gir
 share/gir-1.0/GstWebRTC-%%VERSION%%.gir
 %%DATADIR%%-%%VERSION%%/presets/GstFreeverb.prs
 share/locale/af/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
+share/locale/ast/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/gst-plugins-bad-%%VERSION%%.mo

@@ -104,7 +104,6 @@ _GSTREAMER_PLUGINS= \
 		sidplay \
 		soundtouch \
 		soup \
-		spc \
 		speex \
 		taglib \
 		theora \
@@ -135,6 +134,7 @@ _GSTREAMER_PLUGINS+= \
 		nas \
 		python \
 		schroedinger \
+		spc \
 		sdl \
 		vdpau \
 		vp8 \
@@ -168,6 +168,7 @@ _GSTREAMER_PLUGINS+= \
 		openjpeg \
 		openmpt \
 		png \
+		qt \
 		rsvg \
 		rtmp \
 		smoothstreaming \
@@ -406,6 +407,9 @@ openmpt_IMPL=		bad
 
 png_DEPENDS=	graphics/gstreamer-plugins-png
 png_IMPL=	good
+
+qt_DEPENDS=	graphics/gstreamer-plugins-qt
+qt_IMPL=	good
 
 rsvg_DEPENDS=	graphics/gstreamer-plugins-rsvg
 rsvg_IMPL=	bad
