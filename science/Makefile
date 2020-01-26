@@ -245,6 +245,7 @@
     SUBDIR += py-geometer
     SUBDIR += py-gpaw
     SUBDIR += py-gsd
+    SUBDIR += py-h5json
     SUBDIR += py-h5py
     SUBDIR += py-hcluster
     SUBDIR += py-kinematics
