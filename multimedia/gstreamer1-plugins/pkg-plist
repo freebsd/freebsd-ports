@@ -11,6 +11,7 @@ include/gstreamer-%%VERSION%%/gst/app/app-prelude.h
 include/gstreamer-%%VERSION%%/gst/app/app.h
 include/gstreamer-%%VERSION%%/gst/app/gstappsink.h
 include/gstreamer-%%VERSION%%/gst/app/gstappsrc.h
+include/gstreamer-%%VERSION%%/gst/audio/audio-buffer.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-channel-mixer.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-channels.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-converter.h
@@ -68,6 +69,7 @@ include/gstreamer-%%VERSION%%/gst/rtp/gstrtpbasepayload.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtpbuffer.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtpdefs.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtphdrext.h
+include/gstreamer-%%VERSION%%/gst/rtp/gstrtpmeta.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtppayloads.h
 include/gstreamer-%%VERSION%%/gst/rtp/rtp-prelude.h
 include/gstreamer-%%VERSION%%/gst/rtp/rtp.h
@@ -96,6 +98,7 @@ include/gstreamer-%%VERSION%%/gst/tag/xmpwriter.h
 include/gstreamer-%%VERSION%%/gst/video/colorbalance.h
 include/gstreamer-%%VERSION%%/gst/video/colorbalancechannel.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideoaffinetransformationmeta.h
+include/gstreamer-%%VERSION%%/gst/video/gstvideoaggregator.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideodecoder.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideoencoder.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideofilter.h
@@ -105,6 +108,7 @@ include/gstreamer-%%VERSION%%/gst/video/gstvideosink.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideotimecode.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideoutils.h
 include/gstreamer-%%VERSION%%/gst/video/navigation.h
+include/gstreamer-%%VERSION%%/gst/video/video-anc.h
 include/gstreamer-%%VERSION%%/gst/video/video-blend.h
 include/gstreamer-%%VERSION%%/gst/video/video-chroma.h
 include/gstreamer-%%VERSION%%/gst/video/video-color.h
@@ -141,8 +145,10 @@ lib/gstreamer-%%VERSION%%/libgstaudiomixer.so
 lib/gstreamer-%%VERSION%%/libgstaudiorate.so
 lib/gstreamer-%%VERSION%%/libgstaudioresample.so
 lib/gstreamer-%%VERSION%%/libgstaudiotestsrc.so
+lib/gstreamer-%%VERSION%%/libgstcompositor.so
 lib/gstreamer-%%VERSION%%/libgstencoding.so
 lib/gstreamer-%%VERSION%%/libgstgio.so
+lib/gstreamer-%%VERSION%%/libgstoverlaycomposition.so
 lib/gstreamer-%%VERSION%%/libgstpbtypes.so
 lib/gstreamer-%%VERSION%%/libgstplayback.so
 lib/gstreamer-%%VERSION%%/libgstrawparse.so

@@ -44,9 +44,10 @@ lib/gst-validate-launcher/python/launcher/apps/gstcheck.pyo
 lib/gst-validate-launcher/python/launcher/apps/gstvalidate.py
 lib/gst-validate-launcher/python/launcher/apps/gstvalidate.pyc
 lib/gst-validate-launcher/python/launcher/apps/gstvalidate.pyo
+lib/gst-validate-launcher/python/launcher/apps/pyunittest.py
+lib/gst-validate-launcher/python/launcher/apps/pyunittest.pyc
+lib/gst-validate-launcher/python/launcher/apps/pyunittest.pyo
 lib/gst-validate-launcher/python/launcher/baseclasses.py
-lib/gst-validate-launcher/python/launcher/baseclasses.pyc
-lib/gst-validate-launcher/python/launcher/baseclasses.pyo
 lib/gst-validate-launcher/python/launcher/config.py
 lib/gst-validate-launcher/python/launcher/config.pyc
 lib/gst-validate-launcher/python/launcher/config.pyo
@@ -65,6 +66,9 @@ lib/gst-validate-launcher/python/launcher/reporters.pyo
 lib/gst-validate-launcher/python/launcher/testsuites/check.py
 lib/gst-validate-launcher/python/launcher/testsuites/check.pyc
 lib/gst-validate-launcher/python/launcher/testsuites/check.pyo
+lib/gst-validate-launcher/python/launcher/testsuites/pyunittest.py
+lib/gst-validate-launcher/python/launcher/testsuites/pyunittest.pyc
+lib/gst-validate-launcher/python/launcher/testsuites/pyunittest.pyo
 lib/gst-validate-launcher/python/launcher/utils.py
 lib/gst-validate-launcher/python/launcher/utils.pyc
 lib/gst-validate-launcher/python/launcher/utils.pyo
@@ -73,6 +77,7 @@ lib/gst-validate-launcher/python/launcher/vfb_server.pyc
 lib/gst-validate-launcher/python/launcher/vfb_server.pyo
 lib/gstreamer-%%VERSION%%/libgstvalidatetracer.so
 lib/gstreamer-%%VERSION%%/validate/libgstvalidatefaultinjection.so
+lib/gstreamer-%%VERSION%%/validate/libgstvalidateflow.so
 lib/gstreamer-%%VERSION%%/validate/libgstvalidategapplication.so
 lib/gstreamer-%%VERSION%%/validate/libgstvalidategtk.so
 lib/gstreamer-%%VERSION%%/validate/libgstvalidatessim.so
@@ -98,9 +103,11 @@ share/gstreamer-%%VERSION%%/validate/scenarios/disable_subtitle_track_while_paus
 share/gstreamer-%%VERSION%%/validate/scenarios/fast_backward.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/fast_forward.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/force_key_unit.scenario
+share/gstreamer-%%VERSION%%/validate/scenarios/includes/default-seek-flags.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/pause_resume.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/play_15s.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/reverse_playback.scenario
+share/gstreamer-%%VERSION%%/validate/scenarios/rtsp_overrides/includes/default-seek-flags.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/scrub_backward_seeking.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/scrub_backward_seeking_full.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/scrub_forward_seeking.scenario

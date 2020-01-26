@@ -1,7 +1,6 @@
 lib/gstreamer-1.0/libgstlibav.so
 share/gtk-doc/html/gst-libav-plugins-1.0/ch01.html
 share/gtk-doc/html/gst-libav-plugins-1.0/ch02.html
-share/gtk-doc/html/gst-libav-plugins-1.0/ch03.html
 share/gtk-doc/html/gst-libav-plugins-1.0/gst-libav-plugins-1.0.devhelp2
 share/gtk-doc/html/gst-libav-plugins-1.0/gst-libav-plugins-GstFFMpegAudDec.html
 share/gtk-doc/html/gst-libav-plugins-1.0/gst-libav-plugins-GstFFMpegAudEnc.html

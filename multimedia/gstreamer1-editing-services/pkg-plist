@@ -33,7 +33,6 @@ include/gstreamer-%%VERSION%%/ges/ges-pitivi-formatter.h
 include/gstreamer-%%VERSION%%/ges/ges-prelude.h
 include/gstreamer-%%VERSION%%/ges/ges-project.h
 include/gstreamer-%%VERSION%%/ges/ges-screenshot.h
-include/gstreamer-%%VERSION%%/ges/ges-smart-adder.h
 include/gstreamer-%%VERSION%%/ges/ges-source-clip.h
 include/gstreamer-%%VERSION%%/ges/ges-source.h
 include/gstreamer-%%VERSION%%/ges/ges-test-clip.h
@@ -61,6 +60,7 @@ include/gstreamer-%%VERSION%%/ges/ges-video-uri-source.h
 include/gstreamer-%%VERSION%%/ges/ges-xml-formatter.h
 include/gstreamer-%%VERSION%%/ges/ges.h
 lib/girepository-1.0/GES-%%VERSION%%.typelib
+lib/gstreamer-%%VERSION%%/libgstges.so
 lib/gstreamer-%%VERSION%%/libgstnle.so
 lib/libges-%%VERSION%%.so
 lib/libges-%%VERSION%%.so.0

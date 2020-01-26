@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer libx265 based H265 plugin

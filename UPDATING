@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20200126:
+  AFFECTS: users of multimedia/gstreamer1-plugins[-bad]
+  AUTHOR: kwm@freebsd.org
+
+  In GStreamer 1.16 some files moved from the gstreamer1-plugins-bad package
+  to the gstreamer1-plugins package. 
+
+  If your using a tool like portmaster or portupgrade delete the old -bad
+  port and then follow the normal upgrade method.
+  # pkg delete -f gstreamer1-plugins-bad
+
+20200126:
   AFFECTS: users of sysutils/helm
   AUTHOR: danilo@FreeBSD.org
 

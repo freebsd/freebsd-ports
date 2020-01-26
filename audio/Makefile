@@ -304,7 +304,6 @@
     SUBDIR += gstreamer1-plugins-sndfile
     SUBDIR += gstreamer1-plugins-sndio
     SUBDIR += gstreamer1-plugins-soundtouch
-    SUBDIR += gstreamer1-plugins-spc
     SUBDIR += gstreamer1-plugins-speex
     SUBDIR += gstreamer1-plugins-taglib
     SUBDIR += gstreamer1-plugins-twolame
