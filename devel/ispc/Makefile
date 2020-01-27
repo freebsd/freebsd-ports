@@ -3,8 +3,8 @@
 
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.0
-PORTREVISION=	2
+DISTVERSION=	1.12.0-116
+DISTVERSIONSUFFIX=	-g98cd1326
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,16 +16,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	only available for x86 architectures
 
+BUILD_DEPENDS=	m4:devel/m4
 LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_DEFAULT}
 
-USES=		bison cmake python:build shebangfix
+USES=		bison cmake compiler:c++14-lang python:build shebangfix
 USE_GITHUB=	yes
 SHEBANG_FILES=	*.py
 
 CONFIGURE_ENV=	PATH=${LOCALBASE}/llvm${LLVM_DEFAULT}/bin:${PATH}
 CMAKE_OFF=	ISPC_INCLUDE_EXAMPLES
 
-BINARY_ALIAS=	python=${PYTHON_CMD}
+BINARY_ALIAS=	python=${PYTHON_CMD} m4=${LOCALBASE}/bin/gm4
 
 PLIST_FILES=	bin/ispc \
 		bin/check_isa
@@ -44,8 +45,8 @@ run-examples:
 
 .include <bsd.port.options.mk>
 
-.if ${LLVM_DEFAULT:S,-devel,990,} >= 90
-LLVM_DEFAULT=	80
-.endif
+#.if ${LLVM_DEFAULT:S,-devel,990,} >= 90
+#LLVM_DEFAULT=	80
+#.endif
 
 .include <bsd.port.mk>
