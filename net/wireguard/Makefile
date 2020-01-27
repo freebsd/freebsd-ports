@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wireguard
-PORTVERSION=	1.0.20191226
+PORTVERSION=	1.0.20200121
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-tools/snapshot/
 DISTNAME=	wireguard-tools-${PORTVERSION}
@@ -20,7 +20,6 @@ USE_RC_SUBR=	${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-ALL_TARGET=
 MAKE_ARGS=	WITH_WGQUICK=yes WITH_BASHCOMPLETION=yes
 MAKE_ENV+=	MANDIR="${MANPREFIX}/man" \
 		SYSCONFDIR="${PREFIX}/etc"
