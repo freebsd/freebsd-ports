@@ -5753,6 +5753,7 @@
     SUBDIR += rubygem-azure_mgmt_kusto
     SUBDIR += rubygem-azure_mgmt_labservices
     SUBDIR += rubygem-azure_mgmt_links
+    SUBDIR += rubygem-azure_mgmt_locks
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
