@@ -5700,6 +5700,7 @@
     SUBDIR += rubygem-azure_cognitiveservices_spellcheck
     SUBDIR += rubygem-azure_cognitiveservices_textanalytics
     SUBDIR += rubygem-azure_cognitiveservices_videosearch
+    SUBDIR += rubygem-azure_cognitiveservices_visualsearch
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
