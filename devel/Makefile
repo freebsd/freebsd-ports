@@ -5788,6 +5788,7 @@
     SUBDIR += rubygem-azure_mgmt_reservations
     SUBDIR += rubygem-azure_mgmt_resource_health
     SUBDIR += rubygem-azure_mgmt_resourcegraph
+    SUBDIR += rubygem-azure_mgmt_resources
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf

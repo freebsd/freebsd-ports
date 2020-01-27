@@ -1,0 +1,8 @@
+Microsoft Azure Resource Management Client Library for Ruby.
+
+This project provides a Ruby gem for easy access to the Azure ARM Resources API.
+With this gem you can create/update/list/delete resources, resource groups,
+resource providers and deployments.
+
+WWW: https://github.com/Azure/azure-sdk-for-ruby
+WWW: https://github.com/Azure/azure-sdk-for-ruby/tree/master/management/azure_mgmt_resources
