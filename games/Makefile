@@ -945,7 +945,6 @@
     SUBDIR += vavoom
     SUBDIR += vavoom-extras
     SUBDIR += vectoroids
-    SUBDIR += vegastrike-data
     SUBDIR += veloren
     SUBDIR += violetland
     SUBDIR += viruskiller
