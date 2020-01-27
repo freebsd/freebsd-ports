@@ -5748,6 +5748,7 @@
     SUBDIR += rubygem-azure_mgmt_hdinsight
     SUBDIR += rubygem-azure_mgmt_import_export
     SUBDIR += rubygem-azure_mgmt_iot_central
+    SUBDIR += rubygem-azure_mgmt_iot_hub
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
