@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-DISTVERSION=	3.31.0
+DISTVERSION=	3.30.1
+PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	https://www.sqlite.org/2020/ http://www2.sqlite.org/2020/ http://www3.sqlite.org/2020/
+MASTER_SITES=	https://www.sqlite.org/2019/ http://www2.sqlite.org/2019/ http://www3.sqlite.org/2019/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
 
 MAINTAINER=	pavelivolkov@gmail.com
@@ -24,7 +25,7 @@ OPTIONS_DEFINE=		FTS4 URI URI_AUTHORITY METADATA \
 			DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS \
 			EXTENSION ARMOR STMT DBPAGE DBSTAT FTS5 RBU NULL_TRIM \
 			LIKENOTBLOB STSHELL FTS3_TOKEN UNKNOWN_SQL SORT_REF \
-			NORMALIZE DQS TRUSTED_SCHEMA
+			NORMALIZE DQS
 OPTIONS_SINGLE=		RAMT
 OPTIONS_RADIO=		STAT
 OPTIONS_GROUP=		OPT_EXT OPT_FUNC UNICODE RTREEG RL
@@ -92,9 +93,6 @@ STMT_DESC=		Prepared statement scan status
 
 # https://www.sqlite.org/compile.html#enable_sorter_references
 SORT_REF_DESC=		To use references in the sorter
-
-# https://www.sqlite.org/compile.html#trusted_schema
-TRUSTED_SCHEMA_DESC=	SQL functions & virtual tables are considered unsafe
 
 # https://www.sqlite.org/tempfiles.html#tempstore
 OPTIONS_SINGLE_RAMT=	TS0 TS1 TS2 TS3
@@ -193,8 +191,6 @@ EXTENSION_CONFIGURE_ENABLE=	dynamic-extensions
 
 THREADS_CONFIGURE_ENABLE=	threadsafe
 THREADS_LIBS=		-lpthread
-
-TRUSTED_SCHEMA_CPPFLAGS=	-DSQLITE_TRUSTED_SCHEMA=0
 
 ICU_BUILD_DEPENDS=	${LOCALBASE}/bin/icu-config:devel/icu
 ICU_LIB_DEPENDS=	libicudata.so:devel/icu
