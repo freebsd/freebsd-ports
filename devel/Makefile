@@ -5803,6 +5803,7 @@
     SUBDIR += rubygem-azure_mgmt_storage
     SUBDIR += rubygem-azure_mgmt_storagecache
     SUBDIR += rubygem-azure_mgmt_storagesync
+    SUBDIR += rubygem-azure_mgmt_stream_analytics
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
