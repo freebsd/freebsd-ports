@@ -1,22 +1,30 @@
 # $FreeBSD$
 
 PORTNAME=	infernal
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	biology
 MASTER_SITES=	http://eddylab.org/infernal/
 
-MAINTAINER=	mzaki@niid.go.jp
+MAINTAINER=	mzaki@e-mail.ne.jp
 COMMENT=	Search sequence databases for structural RNA homologs
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpcspe
 ONLY_FOR_ARCHS_REASON=	requires SSE2 or AltiVec instructions
 
-USES=		gmake
+USES=		compiler:c11 gmake perl5 python:3.5+,test shebangfix
+
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	V=1
+
+TEST_TARGET=	check
+USE_PERL5=	test
+SHEBANG_GLOB=	*.pl *.py
+SHEBANG_FILES=	easel/devkit/*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES TEST
 
 DOCFILES=	Userguide.pdf
 EXAMPLES=	5S_rRNA.c.cm 5S_rRNA.sto \
@@ -27,13 +35,16 @@ EXAMPLES=	5S_rRNA.c.cm 5S_rRNA.sto \
 		tRNA5-hand.c.cm tRNA5-hand.sto tRNA5-mrum.out \
 		tRNA5-noss.sto tRNA5.c.cm tRNA5.sto
 
-OPTIONS_DEFINE=	DOCS EXAMPLES TEST
+TEST_VARS=	use_perl5=build
+TEST_BUILD_DEPENDS=	${PYTHON_VERSION}:lang/python${PYTHON_SUFFIX}
 
-TEST_TEST_TARGET=	check
-TEST_USES=	shebangfix perl5
-TEST_VARS=	shebang_glob=*.pl shebang_files=easel/devkit/* use_perl5=build
+post-build-TEST-on:	pre-test do-test
 
-post-build-TEST-on:	do-test
+pre-test:
+	${FIND} ${WRKSRC} -type f \( -name Makefile -or -name sqc \) -exec ${GREP} -q 'python3 ' {} \; -print | ${XARGS} ${SED} -i.bak 's/python3 /${PYTHON_VERSION} /'
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

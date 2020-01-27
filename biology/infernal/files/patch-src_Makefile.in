@@ -1,0 +1,19 @@
+--- src/Makefile.in.orig	2019-11-19 19:28:55 UTC
++++ src/Makefile.in
+@@ -27,6 +27,7 @@ CC             = @CC@
+ CFLAGS         = @CFLAGS@
+ PTHREAD_CFLAGS = @PTHREAD_CFLAGS@ 
+ PIC_CFLAGS     = @PIC_CFLAGS@
++SIMD_CFLAGS    = @SSE_CFLAGS@ @VMX_CFLAGS@
+ CPPFLAGS       = @CPPFLAGS@
+ LDFLAGS        = @LDFLAGS@
+ DEFS           = @DEFS@
+@@ -200,7 +201,7 @@ ${PROGS}: % : %.o libinfernal.a ../${HMM
+ 	${QUIET_GEN}${CC} ${CFLAGS} ${PTHREAD_CFLAGS} ${PIC_CFLAGS} ${DEFS} ${LDFLAGS} ${MYLIBDIRS} -o $@ $@.o ${MPILIBS} ${LIBS}
+ 
+ .c.o:
+-	${QUIET_CC}${CC} ${CFLAGS} ${PTHREAD_CFLAGS} ${PIC_CFLAGS} ${DEFS} ${CPPFLAGS} ${MYINCDIRS} -o $@ -c $<
++	${QUIET_CC}${CC} ${CFLAGS} ${PTHREAD_CFLAGS} ${PIC_CFLAGS} ${SIMD_CFLAGS} ${DEFS} ${CPPFLAGS} ${MYINCDIRS} -o $@ -c $<
+ 
+ ${ITESTS}: % : %.o libinfernal.a ../${HMMERDIR}/src/libhmmer.a ../${ESLDIR}/libeasel.a ${HDRS} config.h
+ 	${QUIET_GEN}${CC} ${CFLAGS} ${PTHREAD_CFLAGS} ${PIC_CFLAGS} ${DEFS} ${LDFLAGS} ${MYLIBDIRS} -o $@ $@.o ${MPILIBS} ${LIBS}
