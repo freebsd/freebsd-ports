@@ -5751,6 +5751,7 @@
     SUBDIR += rubygem-azure_mgmt_iot_hub
     SUBDIR += rubygem-azure_mgmt_key_vault
     SUBDIR += rubygem-azure_mgmt_kusto
+    SUBDIR += rubygem-azure_mgmt_labservices
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
