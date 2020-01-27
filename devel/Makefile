@@ -5759,6 +5759,7 @@
     SUBDIR += rubygem-azure_mgmt_machine_learning_services
     SUBDIR += rubygem-azure_mgmt_maintenance
     SUBDIR += rubygem-azure_mgmt_managed_applications
+    SUBDIR += rubygem-azure_mgmt_mariadb
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
