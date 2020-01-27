@@ -5743,6 +5743,7 @@
     SUBDIR += rubygem-azure_mgmt_edgegateway
     SUBDIR += rubygem-azure_mgmt_event_grid
     SUBDIR += rubygem-azure_mgmt_event_hub
+    SUBDIR += rubygem-azure_mgmt_features
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
