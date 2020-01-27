@@ -24,7 +24,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/0001-provision-use-ASCII-quotes.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.10.11
+SAMBA4_VERSION=			4.10.13
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -302,6 +302,7 @@ NSUPDATE_RUN_DEPENDS=		samba-nsupdate:dns/samba-nsupdate
 DEBUG_CONFIGURE_ON=		--verbose --enable-debug
 DEBUG_MAKE_ARGS=		--verbose
 DEBUG_FLAGS=			-g -ggdb3 -O0
+DEBUG_VARS=			WITH_DEBUG=yes
 
 MEMORY_DEBUG_IMPLIES=		DEBUG
 MEMORY_DEBUG_CONFIGURE_ENV=	ADDITIONAL_CFLAGS="-DENABLE_JEMALLOC `pkg-config --cflags jemalloc`" ADDITIONAL_LDFLAGS="`pkg-config --libs jemalloc`"
