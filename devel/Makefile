@@ -5726,6 +5726,7 @@
     SUBDIR += rubygem-azure_mgmt_consumption
     SUBDIR += rubygem-azure_mgmt_container_instance
     SUBDIR += rubygem-azure_mgmt_container_registry
+    SUBDIR += rubygem-azure_mgmt_container_service
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
