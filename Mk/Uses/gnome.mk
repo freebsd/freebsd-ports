@@ -74,7 +74,7 @@ _USE_GNOME_ALL= intlhack intltool introspection \
 # GNOME 2 components
 _USE_GNOME_ALL+= atk cairo \
 		gdkpixbuf2 gconf2 glib20 \
-		gnomedocutils gnomesharp20 \
+		gnomesharp20 \
 		gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
 		gtksharp20 gtksourceview2 gvfs libartlgpl2 libbonobo \
 		libbonoboui libglade2 libgnome \
@@ -334,10 +334,6 @@ evolutiondataserver3_USE_GNOME_IMPL=	libxml2 gtk30
 gnomemenus3_BUILD_DEPENDS=	gnome-menus>=3.2.0:x11/gnome-menus
 gnomemenus3_RUN_DEPENDS=	gnome-menus>=3.2.0:x11/gnome-menus
 gnomemenus3_USE_GNOME_IMPL=	glib20
-
-gnomedocutils_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-doc-utils.pc:textproc/gnome-doc-utils
-gnomedocutils_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-doc-utils.pc:textproc/gnome-doc-utils
-gnomedocutils_USE_GNOME_IMPL=	libxslt
 
 gtksharp10_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-sharp.pc:x11-toolkits/gtk-sharp10
 gtksharp10_RUN_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/gtk-sharp.pc:x11-toolkits/gtk-sharp10

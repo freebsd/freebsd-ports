@@ -3,7 +3,7 @@
 
 PORTNAME=	muffin
 PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm gnome
 DIST_SUBDIR=	gnome3
 
@@ -23,7 +23,7 @@ USES=		autoreconf:build gettext gmake gnome libtool pathfix pkgconfig \
 		python:2.7 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-USE_GNOME=	gconf2 gnomedocutils gnomeprefix gtk30 \
+USE_GNOME=	gconf2 gnomeprefix gtk30 \
 		intlhack introspection:build
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm
 USE_LDCONFIG=	yes

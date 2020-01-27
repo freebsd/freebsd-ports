@@ -9,10 +9,6 @@ share/pixmaps/gq/hide.xpm
 share/pixmaps/gq/new.xpm
 share/pixmaps/gq/textview.png
 share/pixmaps/gq/warning.xpm
-share/gnome/help/gq-manual/C/gq-manual.xml
-share/gnome/help/gq-manual/C/legal.xml
-share/gnome/help/gq-manual/de/gq-manual.xml
-share/gnome/help/gq-manual/de/legal.xml
 share/icons/hicolor/16x16/apps/ldap-group.png
 share/icons/hicolor/16x16/apps/ldap-organization.png
 share/icons/hicolor/16x16/apps/ldap-person.png
@@ -20,5 +16,3 @@ share/locale/cs/LC_MESSAGES/gq.mo
 share/locale/de/LC_MESSAGES/gq.mo
 share/locale/ja/LC_MESSAGES/gq.mo
 share/locale/zh_CN/LC_MESSAGES/gq.mo
-share/omf/gq-manual/gq-manual-C.omf
-share/omf/gq-manual/gq-manual-de.omf

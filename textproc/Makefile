@@ -219,7 +219,6 @@
     SUBDIR += gladtex
     SUBDIR += glark
     SUBDIR += gmetadom
-    SUBDIR += gnome-doc-utils
     SUBDIR += gnugrep
     SUBDIR += goldendict
     SUBDIR += google-ctemplate

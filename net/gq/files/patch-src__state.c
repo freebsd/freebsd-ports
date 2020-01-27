@@ -1,5 +1,5 @@
---- src/state.c.orig	2008-01-09 16:35:12.000000000 +0000
-+++ src/state.c	2013-03-06 13:32:20.000000000 +0000
+--- src/state.c.orig	2008-01-09 16:35:12 UTC
++++ src/state.c
 @@ -36,7 +36,7 @@
  #include <errno.h>
  
@@ -9,7 +9,7 @@
  #include <gtk/gtk.h>
  
  #include "configfile.h"
-@@ -806,7 +806,7 @@
+@@ -806,7 +806,7 @@ static void state_valueE(struct parser_context *ctx,
  	}
      }
  

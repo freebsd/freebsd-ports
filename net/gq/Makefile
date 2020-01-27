@@ -3,7 +3,7 @@
 
 PORTNAME=	gq
 PORTVERSION=	1.3.4
-PORTREVISION=	13
+PORTREVISION=	14
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}client/GQ%20Unstable/${PORTVERSION}
@@ -17,7 +17,7 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring
 
-USE_GNOME=	intltool libglade2 gnomedocutils
+USE_GNOME=	intltool libglade2
 USE_OPENLDAP=	yes
 USES=		desktop-file-utils gettext gmake gnome pkgconfig \
 		shared-mime-info ssl

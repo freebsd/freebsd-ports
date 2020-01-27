@@ -3,7 +3,7 @@
 
 PORTNAME=	libdbusmenu
 PORTVERSION=	16.04.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/243440794/ \
 	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
@@ -22,9 +22,9 @@ BUILD_DEPENDS=	vapigen:lang/vala \
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 
 GNU_CONFIGURE=	yes
-USES=		compiler gmake gnome libtool pathfix pkgconfig python:run \
-		shebangfix xorg
-USE_GNOME=	gnomedocutils:build glib20 intltool intlhack libxslt \
+USES=		compiler gettext-tools:build,run gmake gnome libtool pathfix \
+		pkgconfig python:run shebangfix xorg
+USE_GNOME=	glib20 intltool intlhack libxslt \
 		introspection:build gtk30
 USE_XORG=	x11
 USE_LDCONFIG=	yes

@@ -3,6 +3,7 @@
 
 PORTNAME=	mp3splt-gtk
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libmp3splt.so:audio/libmp3splt \
 
 INSTALLS_OMF=	yes
 USE_GSTREAMER1=	yes
-USE_GNOME=	gnomedocutils gtk30
+USE_GNOME=	gtk30
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gmake gnome pkgconfig
 

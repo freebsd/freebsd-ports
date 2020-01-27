@@ -3,7 +3,7 @@
 
 PORTNAME=		xvidcap
 PORTVERSION=		1.1.7
-PORTREVISION=		11
+PORTREVISION=		12
 PORTEPOCH=		1
 CATEGORIES=		sysutils multimedia
 MASTER_SITES=		SF
@@ -13,8 +13,7 @@ COMMENT=		Capture your X display to individual frames or MPEG video
 
 LICENSE=		GPLv3
 
-BUILD_DEPENDS=		xml2po:textproc/gnome-doc-utils	\
-			scrollkeeper-config:textproc/rarian
+BUILD_DEPENDS=		scrollkeeper-config:textproc/rarian
 LIB_DEPENDS=		libdbus-1.so:devel/dbus			\
 			libfreetype.so:print/freetype2		\
 			libswscale.so:multimedia/ffmpeg		\

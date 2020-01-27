@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-01-19 22:22:50 UTC
++++ Makefile.in
+@@ -310,7 +310,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = src data po help
++SUBDIRS = src data po
+ gstpbdir = $(pkglibdir)
+ EXTRA_DIST = \
+ 	autogen.sh			\

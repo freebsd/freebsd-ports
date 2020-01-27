@@ -4,7 +4,7 @@
 
 PORTNAME=	policykit-gnome
 PORTVERSION=	0.9.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 DISTNAME=	PolicyKit-gnome-${PORTVERSION}
@@ -15,7 +15,7 @@ COMMENT=	GNOME frontend to the PolicyKit framework
 LIB_DEPENDS=	libpolkit.so:sysutils/policykit
 
 USES=		gettext gmake gnome libtool:keepla pathfix pkgconfig tar:bzip2
-USE_GNOME=	gconf2 gnomedocutils intlhack
+USE_GNOME=	gconf2 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
