@@ -5768,6 +5768,7 @@
     SUBDIR += rubygem-azure_mgmt_msi
     SUBDIR += rubygem-azure_mgmt_mysql
     SUBDIR += rubygem-azure_mgmt_netapp
+    SUBDIR += rubygem-azure_mgmt_network
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
