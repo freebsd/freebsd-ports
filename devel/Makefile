@@ -5674,6 +5674,7 @@
     SUBDIR += rubygem-axiom-types
     SUBDIR += rubygem-azure-storage
     SUBDIR += rubygem-azure-storage-blob
+    SUBDIR += rubygem-azure-storage-common
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
