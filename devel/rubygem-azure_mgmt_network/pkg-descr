@@ -1,0 +1,8 @@
+Microsoft Azure Network Management Client Library for Ruby.
+
+This project provides a Ruby gem for easy access to the Azure ARM Network API.
+With this gem you can create/update/list/delete virtual networks, subnets, load
+balancers and network interfaces.
+
+WWW: https://github.com/Azure/azure-sdk-for-ruby
+WWW: https://github.com/Azure/azure-sdk-for-ruby/tree/master/management/azure_mgmt_network
