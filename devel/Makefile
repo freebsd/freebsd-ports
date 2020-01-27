@@ -5760,6 +5760,7 @@
     SUBDIR += rubygem-azure_mgmt_maintenance
     SUBDIR += rubygem-azure_mgmt_managed_applications
     SUBDIR += rubygem-azure_mgmt_mariadb
+    SUBDIR += rubygem-azure_mgmt_marketplace_ordering
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
