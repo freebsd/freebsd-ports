@@ -42,7 +42,6 @@
     SUBDIR += e16
     SUBDIR += e16-docs
     SUBDIR += echinus
-    SUBDIR += ede
     SUBDIR += emerald
     SUBDIR += enlightenment
     SUBDIR += epplets
@@ -84,11 +83,8 @@
     SUBDIR += muffin
     SUBDIR += mutter
     SUBDIR += nickleby
-    SUBDIR += obapps
     SUBDIR += obconf
     SUBDIR += obconf-qt
-    SUBDIR += obkey
-    SUBDIR += obmenu
     SUBDIR += obpager
     SUBDIR += olvwm
     SUBDIR += openbox
@@ -101,7 +97,6 @@
     SUBDIR += piewm
     SUBDIR += plasma5-kdecoration
     SUBDIR += plasma5-kwin
-    SUBDIR += plwm
     SUBDIR += pwm
     SUBDIR += qtile
     SUBDIR += ratmen

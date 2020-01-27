@@ -1,8 +1,0 @@
-bin/obkey
-%%PYTHON_SITELIBDIR%%/obkey_classes.py
-%%PYTHON_SITELIBDIR%%/obkey_classes.pyc
-%%PYTHON_SITELIBDIR%%/obkey_classes.pyo
-share/locale/uk/LC_MESSAGES/obkey.mo
-share/applications/obkey.desktop
-share/obkey/icons/add_child.png
-share/obkey/icons/add_sibling.png

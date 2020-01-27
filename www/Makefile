@@ -68,7 +68,6 @@
     SUBDIR += cgiwrap
     SUBDIR += checkbot
     SUBDIR += chems
-    SUBDIR += cherokee
     SUBDIR += choqok
     SUBDIR += chpasswd
     SUBDIR += chrome-gnome-shell
@@ -85,7 +84,6 @@
     SUBDIR += colly
     SUBDIR += coppermine
     SUBDIR += cplanet
-    SUBDIR += cppcms
     SUBDIR += cpr
     SUBDIR += crawl
     SUBDIR += crp
@@ -174,7 +172,6 @@
     SUBDIR += fswiki
     SUBDIR += g-cows
     SUBDIR += g-gcl
-    SUBDIR += gaeutilities
     SUBDIR += gallery2
     SUBDIR += gatling
     SUBDIR += gauche-makiki
@@ -200,7 +197,6 @@
     SUBDIR += gobuffalo
     SUBDIR += gohugo
     SUBDIR += google-appengine
-    SUBDIR += google-sitemapgen
     SUBDIR += googlebook_dl
     SUBDIR += googler
     SUBDIR += goose
@@ -270,7 +266,6 @@
     SUBDIR += jmeter
     SUBDIR += joomla3
     SUBDIR += jspwiki
-    SUBDIR += jtoolkit
     SUBDIR += jwt-cli
     SUBDIR += kanboard
     SUBDIR += kannel
@@ -302,7 +297,6 @@
     SUBDIR += lighttpd
     SUBDIR += lighttpd-mod_h264_streaming
     SUBDIR += linkcheck
-    SUBDIR += linkchecker
     SUBDIR += linklint
     SUBDIR += links
     SUBDIR += links1
@@ -311,7 +305,6 @@
     SUBDIR += linux-opera
     SUBDIR += litmus
     SUBDIR += ljdeps
-    SUBDIR += ljdump
     SUBDIR += logtools
     SUBDIR += lua-resty-core
     SUBDIR += lua-resty-lrucache
@@ -418,7 +411,6 @@
     SUBDIR += mohawk
     SUBDIR += moinmoin
     SUBDIR += moinmoincli
-    SUBDIR += monast
     SUBDIR += mongoose
     SUBDIR += mongrel2
     SUBDIR += moodle35
@@ -1559,7 +1551,6 @@
     SUBDIR += py-django-otp
     SUBDIR += py-django-otp-yubikey
     SUBDIR += py-django-overextends
-    SUBDIR += py-django-paging
     SUBDIR += py-django-photologue
     SUBDIR += py-django-picklefield
     SUBDIR += py-django-pipeline
@@ -1619,7 +1610,6 @@
     SUBDIR += py-evernote
     SUBDIR += py-fake-useragent
     SUBDIR += py-falcon
-    SUBDIR += py-fcgi
     SUBDIR += py-fedex
     SUBDIR += py-feedgenerator
     SUBDIR += py-flask
@@ -1688,7 +1678,6 @@
     SUBDIR += py-html5-parser
     SUBDIR += py-html5lib
     SUBDIR += py-httmock
-    SUBDIR += py-http-parser
     SUBDIR += py-httpie
     SUBDIR += py-httplib2
     SUBDIR += py-httptools
@@ -1707,9 +1696,7 @@
     SUBDIR += py-libsass
     SUBDIR += py-livereload
     SUBDIR += py-mechanize
-    SUBDIR += py-meld
     SUBDIR += py-meld3
-    SUBDIR += py-mt
     SUBDIR += py-multidict
     SUBDIR += py-mwoauth
     SUBDIR += py-nevow
@@ -1843,7 +1830,6 @@
     SUBDIR += py-restclient
     SUBDIR += py-rfc3986
     SUBDIR += py-rfc3987
-    SUBDIR += py-rhodecode
     SUBDIR += py-rollbar
     SUBDIR += py-routes
     SUBDIR += py-rules
@@ -1910,7 +1896,6 @@
     SUBDIR += pyjamas
     SUBDIR += qdecoder
     SUBDIR += qhttpengine
-    SUBDIR += qooxdoo
     SUBDIR += qt5-webchannel
     SUBDIR += qt5-webengine
     SUBDIR += qt5-webglplugin
@@ -2430,7 +2415,6 @@
     SUBDIR += varnish-libvmod-awsrest
     SUBDIR += varnish-libvmod-digest
     SUBDIR += varnish-libvmod-dynamic
-    SUBDIR += varnish-libvmod-maxminddb
     SUBDIR += varnish-modules
     SUBDIR += varnish-nagios
     SUBDIR += varnish4
