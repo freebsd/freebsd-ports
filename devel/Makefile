@@ -5801,6 +5801,7 @@
     SUBDIR += rubygem-azure_mgmt_sqlvirtualmachine
     SUBDIR += rubygem-azure_mgmt_stor_simple8000_series
     SUBDIR += rubygem-azure_mgmt_storage
+    SUBDIR += rubygem-azure_mgmt_storagecache
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
