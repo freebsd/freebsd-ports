@@ -1,9 +1,0 @@
-PALM is a library for using Google's protocol buffers in Python. It has
-a fast core written in C with a thin Cython binding to Python. The goal
-of palm was to make improvements to the Google reference implementation,
-namely:
-
- * Make the library significantly faster
- * Clean up the API
-
-WWW: https://github.com/bumptech/palm/

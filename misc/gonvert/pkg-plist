@@ -1,7 +1,0 @@
-bin/gonvert
-share/applications/gonvert.desktop
-%%DATADIR%%/gonvert.glade
-%%DATADIR%%/pixmaps/gonvert-icon_alternative.png
-%%DATADIR%%/pixmaps/gonvert.png
-%%NLS%%share/locale/pl/LC_MESSAGES/gonvert.mo
-share/pixmaps/gonvert.png

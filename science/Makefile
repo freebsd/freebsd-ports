@@ -97,7 +97,6 @@
     SUBDIR += gromacs
     SUBDIR += gsmc
     SUBDIR += gtamsanalyzer
-    SUBDIR += gwyddion
     SUBDIR += h5utils
     SUBDIR += h5z-zfp
     SUBDIR += harminv
@@ -217,7 +216,6 @@
     SUBDIR += paraview
     SUBDIR += pcmsolver
     SUBDIR += pnetcdf
-    SUBDIR += psychopy
     SUBDIR += pulseview
     SUBDIR += py-DendroPy
     SUBDIR += py-GPy
@@ -247,7 +245,6 @@
     SUBDIR += py-gsd
     SUBDIR += py-h5json
     SUBDIR += py-h5py
-    SUBDIR += py-hcluster
     SUBDIR += py-kinematics
     SUBDIR += py-lifelines
     SUBDIR += py-mdp
@@ -273,7 +270,6 @@
     SUBDIR += py-pyosf
     SUBDIR += py-pysal
     SUBDIR += py-pyteomics
-    SUBDIR += py-pyteomics.biolccc
     SUBDIR += py-qcelemental
     SUBDIR += py-qcengine
     SUBDIR += py-qspin
@@ -293,7 +289,6 @@
     SUBDIR += py-veusz
     SUBDIR += py-ws2300
     SUBDIR += pybrain
-    SUBDIR += pycdf
     SUBDIR += pynn
     SUBDIR += qbox
     SUBDIR += qcl

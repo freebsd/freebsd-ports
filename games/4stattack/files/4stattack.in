@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-#
-
-cd "%%DATADIR%%"
-exec %%PYTHON_CMD%% ./4stattack.py -ini ~/.4stattackrc "${@}"

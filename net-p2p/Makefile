@@ -93,7 +93,6 @@
     SUBDIR += transmission-gtk
     SUBDIR += transmission-qt
     SUBDIR += transmission-remote-gui
-    SUBDIR += tribler
     SUBDIR += uhub
     SUBDIR += vuze
     SUBDIR += xmrig

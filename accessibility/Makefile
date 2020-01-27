@@ -20,7 +20,6 @@
     SUBDIR += linux-c7-atk
     SUBDIR += orca
     SUBDIR += py-atspi
-    SUBDIR += py-papi
     SUBDIR += py-speech-dispatcher
     SUBDIR += qt5-speech
     SUBDIR += redshift

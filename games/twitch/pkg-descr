@@ -1,9 +1,0 @@
-Twitch - a GPL arcade game by David Clark <silenus@telus.net>.
-
-Twitch is an overhead 2-d shooter, reminiscent of games like Robotron or Tron:
-Deadly Disks. The player has entered the fortress of the evil Hippopoticus,
-and is trying to rescue the fair Lady Penelope from his clutches. I wrote
-Twitch as a proof-of-concept: namely that Python, properly written, is fast
-enough to create a playable, cross-platform arcade game.
-
-WWW: https://sourceforge.net/projects/twitch/

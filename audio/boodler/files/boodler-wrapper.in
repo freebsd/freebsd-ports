@@ -1,8 +1,0 @@
-#!/bin/sh
-
-booroot=%%DATADIR%%
-
-export BOODLER_SOUND_PATH=${booroot}/boodler-snd/
-export BOODLER_EFFECTS_PATH=${booroot}/effects/
-
-%%PYTHON_CMD%% ${booroot}/boodler.py "$@"

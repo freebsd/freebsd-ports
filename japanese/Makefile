@@ -131,7 +131,6 @@
     SUBDIR += jstrings
     SUBDIR += jvim3
     SUBDIR += kakasi
-    SUBDIR += kana-no-quiz
     SUBDIR += kanjipad
     SUBDIR += kasumi
     SUBDIR += kbanner

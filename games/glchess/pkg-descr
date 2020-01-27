@@ -1,6 +1,0 @@
-glChess is a 3D OpenGL based chess game that interfaces via the Chess Engine
-Communication Protocol (CECP) by Tim Mann. This means it can currently use
-Crafty and GNU Chess as AIs. You can also play Human vs. Human, but so far
-not over a network.
-
-WWW: https://sourceforge.net/projects/glchess/

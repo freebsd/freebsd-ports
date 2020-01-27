@@ -1,6 +1,0 @@
-Pymp is a lean, flexible frontend to MPlayer written in Python.
-It supports simple playlists, web streams, and anything else that MPlayer does.
-Pymp aims to blend in with your desktop environment, not stand out as many
-skinned players do.
-
-WWW: https://github.com/jdolan/pymp

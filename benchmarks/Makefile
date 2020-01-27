@@ -68,7 +68,6 @@
     SUBDIR += py-naarad
     SUBDIR += py-throughpy
     SUBDIR += py-zopkio
-    SUBDIR += pybench
     SUBDIR += raidtest
     SUBDIR += ramspeed
     SUBDIR += randomio

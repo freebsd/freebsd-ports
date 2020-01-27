@@ -1,4 +1,0 @@
-py-mwlib.rl provides a library for writing pdf documents from mediawiki
-articles which were parsed by the mwlib library.
-
-WWW: https://pypi.org/project/mwlib.rl/

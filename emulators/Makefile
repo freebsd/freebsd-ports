@@ -15,7 +15,6 @@
     SUBDIR += bochs
     SUBDIR += bsvc
     SUBDIR += cannonball
-    SUBDIR += catapult
     SUBDIR += cinc
     SUBDIR += cingb
     SUBDIR += citra
@@ -29,7 +28,6 @@
     SUBDIR += dosbox
     SUBDIR += dtcyber
     SUBDIR += dynagen
-    SUBDIR += dynagui
     SUBDIR += dynamips-community
     SUBDIR += e-uae
     SUBDIR += edumips64

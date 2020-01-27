@@ -222,7 +222,6 @@
     SUBDIR += gstreamer1-plugins-libmms
     SUBDIR += gstreamer1-plugins-srtp
     SUBDIR += gtk-vnc
-    SUBDIR += gtknetcat
     SUBDIR += guacamole-server
     SUBDIR += gupnp
     SUBDIR += gupnp-av
@@ -517,7 +516,6 @@
     SUBDIR += nss_ldap
     SUBDIR += nsscache
     SUBDIR += ntimed
-    SUBDIR += ntlmaps
     SUBDIR += ntopng
     SUBDIR += ntp
     SUBDIR += ntp-devel
@@ -990,7 +988,6 @@
     SUBDIR += pktanon
     SUBDIR += pload
     SUBDIR += plugdaemon
-    SUBDIR += polyorb
     SUBDIR += poptop
     SUBDIR += portfwd
     SUBDIR += pptpclient
@@ -1141,11 +1138,9 @@
     SUBDIR += py-zeep
     SUBDIR += py-zeroconf
     SUBDIR += py-zope.proxy
-    SUBDIR += py-zsi
     SUBDIR += pygopherd
     SUBDIR += pynids
     SUBDIR += pyrad
-    SUBDIR += pythondirector
     SUBDIR += qadsl
     SUBDIR += qoauth-qt5
     SUBDIR += qt5-network
@@ -1380,7 +1375,6 @@
     SUBDIR += sie-nmsg
     SUBDIR += simpleproxy
     SUBDIR += sip_scenario
-    SUBDIR += sippy_b2bua
     SUBDIR += siproxd
     SUBDIR += sipsak
     SUBDIR += skstream

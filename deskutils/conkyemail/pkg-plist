@@ -1,8 +1,0 @@
-bin/conkyEmail
-%%DATADIR%%/conkyEmail.py
-%%DATADIR%%/example/conkyrc
-%%DATADIR%%/example/conkyEmail.template
-@comment %%PYTHON_SITELIBDIR%%/conkyemail-%%PYTHON_VER%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
-@comment %%PYTHON_SITELIBDIR%%/conkyemail-%%PYTHON_VER%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-@comment %%PYTHON_SITELIBDIR%%/conkyemail-%%PYTHON_VER%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-@comment %%PYTHON_SITELIBDIR%%/conkyemail-%%PYTHON_VER%%-py%%PYTHON_VER%%.egg-info/top_level.txt

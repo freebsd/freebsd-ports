@@ -58,7 +58,6 @@
     SUBDIR += beets
     SUBDIR += blop
     SUBDIR += blop-lv2
-    SUBDIR += boodler
     SUBDIR += bristol
     SUBDIR += bs2b-lv2
     SUBDIR += bsequencer-lv2
@@ -112,7 +111,6 @@
     SUBDIR += decibel-audio-player
     SUBDIR += dekagen
     SUBDIR += denemo
-    SUBDIR += dir2ogg
     SUBDIR += discid
     SUBDIR += dpf-plugins-lv2
     SUBDIR += drumgizmo
@@ -351,7 +349,6 @@
     SUBDIR += jalv-select
     SUBDIR += jamin
     SUBDIR += jid3lib
-    SUBDIR += jokosher
     SUBDIR += juk
     SUBDIR += juke
     SUBDIR += julius
@@ -523,7 +520,6 @@
     SUBDIR += mp3val
     SUBDIR += mp3wrap
     SUBDIR += mpdas
-    SUBDIR += mpdbrowser
     SUBDIR += mpdcon
     SUBDIR += mpdscribble
     SUBDIR += mpg123
@@ -545,7 +541,6 @@
     SUBDIR += ncmpc
     SUBDIR += ncmpcpp
     SUBDIR += ncspot
-    SUBDIR += nekobee
     SUBDIR += nekobi-lv2
     SUBDIR += noise-repellent-lv2
     SUBDIR += normalize
@@ -609,7 +604,6 @@
     SUBDIR += padthv1-lv2
     SUBDIR += paman
     SUBDIR += paprefs
-    SUBDIR += patchage
     SUBDIR += pavucontrol
     SUBDIR += pavucontrol-qt
     SUBDIR += pavumeter
@@ -643,7 +637,6 @@
     SUBDIR += pulseeffects
     SUBDIR += py-SoundFile
     SUBDIR += py-al
-    SUBDIR += py-ao
     SUBDIR += py-apetag
     SUBDIR += py-aubio
     SUBDIR += py-audioread
@@ -655,7 +648,6 @@
     SUBDIR += py-gmusicapi
     SUBDIR += py-gmusicproxy
     SUBDIR += py-hsaudiotag
-    SUBDIR += py-id3
     SUBDIR += py-karaoke
     SUBDIR += py-mpd
     SUBDIR += py-music21
@@ -672,18 +664,15 @@
     SUBDIR += py-pymad
     SUBDIR += py-pysndfile
     SUBDIR += py-python-mpd2
-    SUBDIR += py-shout
     SUBDIR += py-soundcloud
     SUBDIR += py-sounddevice
     SUBDIR += py-soundscrape
     SUBDIR += py-speechrecognition
-    SUBDIR += py-speex
     SUBDIR += py-tagpy
     SUBDIR += py-vorbis
     SUBDIR += py-wavio
     SUBDIR += py-webrtcvad
     SUBDIR += py-xmms2
-    SUBDIR += pytone
     SUBDIR += qaudiosonar
     SUBDIR += qjackctl
     SUBDIR += qmidiarp
@@ -746,7 +735,6 @@
     SUBDIR += snd
     SUBDIR += sndio
     SUBDIR += so-synth-lv2
-    SUBDIR += solfege
     SUBDIR += somafm-cli
     SUBDIR += sonata
     SUBDIR += sonic-visualiser
@@ -817,7 +805,6 @@
     SUBDIR += tosha
     SUBDIR += traverso
     SUBDIR += triceratops-lv2
-    SUBDIR += trommler
     SUBDIR += tse3
     SUBDIR += tta
     SUBDIR += tuneradio

@@ -1,5 +1,0 @@
-%%PYTHON_SITELIBDIR%%/Pymacs.py
-%%PYTHON_SITELIBDIR%%/Pymacs.pyc
-%%PYTHON_SITELIBDIR%%/Pymacs.pyo
-%%EMACS_SITE_LISPDIR%%/pymacs.el
-%%EMACS_SITE_LISPDIR%%/pymacs.elc

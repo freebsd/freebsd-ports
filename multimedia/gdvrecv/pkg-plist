@@ -1,9 +1,0 @@
-bin/dvrecv
-bin/gdvrecv
-%%PYTHON_SITELIBDIR%%/firewire.so
-%%PYTHON_SITELIBDIR%%/avc_crom/__init__.py
-%%PYTHON_SITELIBDIR%%/avc_crom/__init__.pyc
-%%PYTHON_SITELIBDIR%%/avc_crom/__init__.pyo
-share/pixmaps/gdvrecv/camcorder.png
-share/pixmaps/gdvrecv/dv.png
-share/misc/OUI.db
