@@ -5776,6 +5776,7 @@
     SUBDIR += rubygem-azure_mgmt_policy
     SUBDIR += rubygem-azure_mgmt_policy_insights
     SUBDIR += rubygem-azure_mgmt_portal
+    SUBDIR += rubygem-azure_mgmt_postgresql
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
