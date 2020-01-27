@@ -1,3 +1,5 @@
+Ignore autofs too.
+
 --- plugins/node.d.freebsd/df.in.orig	2018-06-29 00:50:01 UTC
 +++ plugins/node.d.freebsd/df.in
 @@ -24,7 +24,7 @@ if [ "$1" = "autoconf" ]; then

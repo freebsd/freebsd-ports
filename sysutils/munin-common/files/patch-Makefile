@@ -1,3 +1,5 @@
+Install things at the correct places.
+
 --- Makefile.orig	2019-11-20 19:39:52 UTC
 +++ Makefile
 @@ -95,96 +95,77 @@ install: install-master-prime install-common-prime ins

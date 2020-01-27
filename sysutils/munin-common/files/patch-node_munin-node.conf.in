@@ -1,3 +1,6 @@
+FreeBSD uses wheel as gid 0
+Ignore .sample files, they're sample from packages.
+
 --- node/munin-node.conf.in.orig	2014-11-24 21:46:24 UTC
 +++ node/munin-node.conf.in
 @@ -10,7 +10,7 @@ background 1

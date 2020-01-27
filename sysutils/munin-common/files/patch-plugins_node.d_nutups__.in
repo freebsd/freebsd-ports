@@ -1,3 +1,5 @@
+Allow overriding some variables.
+
 --- plugins/node.d/nutups_.in.orig	2018-07-24 11:34:38 UTC
 +++ plugins/node.d/nutups_.in
 @@ -7,21 +7,25 @@

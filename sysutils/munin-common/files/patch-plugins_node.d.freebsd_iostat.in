@@ -1,3 +1,6 @@
+- iostat returns kB, not MB.
+- Remove silly limits on IO
+
 --- plugins/node.d.freebsd/iostat.in.orig	2014-11-24 21:46:24 UTC
 +++ plugins/node.d.freebsd/iostat.in
 @@ -41,7 +41,7 @@ fi
