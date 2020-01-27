@@ -42,11 +42,6 @@ USES=		pkgconfig python:3.3+,build ssl tar:xz
 
 CONFLICTS_INSTALL?=	rust-nightly
 
-# lang/rust-bootstrap builds the bundled libgit2 and using the patch
-# to fix runtime with system libgit2 is incompatible with it.  Keep
-# it separate.
-EXTRA_PATCHES=	${PATCHDIR}/libgit2
-
 PLIST_FILES=	lib/rustlib/components \
 		lib/rustlib/rust-installer-version
 
@@ -81,6 +76,12 @@ _CARGO_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_B
 
 .include <bsd.port.pre.mk>
 
+.if exists(${PATCHDIR}/libgit2)
+# lang/rust-bootstrap builds the bundled libgit2 and using the patch
+# to fix runtime with system libgit2 is incompatible with it.  Keep
+# it separate.
+EXTRA_PATCHES+=	${PATCHDIR}/libgit2
+.endif
 .if exists(${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX})
 EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
 .endif
