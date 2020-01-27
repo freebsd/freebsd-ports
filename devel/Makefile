@@ -5676,6 +5676,7 @@
     SUBDIR += rubygem-azure-storage-blob
     SUBDIR += rubygem-azure-storage-common
     SUBDIR += rubygem-azure-storage-file
+    SUBDIR += rubygem-azure-storage-queue
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
