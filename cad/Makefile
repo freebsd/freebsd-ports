@@ -89,7 +89,6 @@
     SUBDIR += py-pycam
     SUBDIR += py-pyfda
     SUBDIR += python-gdsii
-    SUBDIR += pythoncad
     SUBDIR += qcad
     SUBDIR += qelectrotech
     SUBDIR += qmls

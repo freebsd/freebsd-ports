@@ -1,4 +1,0 @@
-This is a Python wrapper module for the libao, an audio abstraction library
-that lets you output to different devices using the same interface.
-
-WWW: http://ekyo.nerim.net/software/pyogg/index.html

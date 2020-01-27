@@ -1,8 +1,0 @@
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/MODULES
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/ppolicy.sql
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/TESTS
-sbin/ppolicy.tap
-etc/ppolicy.conf

@@ -1,5 +1,0 @@
-Gnome OSD is a new small project to create an OSD (On-Screen-Display)
-infrastructure, similar to XOSD. It includes a command-line client,
-and sample xchat and rhythmbox plugins.
-
-WWW: https://launchpad.net/gnome-osd

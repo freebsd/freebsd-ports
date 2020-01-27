@@ -51,7 +51,6 @@
     SUBDIR += belier
     SUBDIR += bfbtester
     SUBDIR += binwalk
-    SUBDIR += blindelephant
     SUBDIR += boringssl
     SUBDIR += botan110
     SUBDIR += botan2
@@ -72,7 +71,6 @@
     SUBDIR += ccsrch
     SUBDIR += certificate-transparency
     SUBDIR += cfs
-    SUBDIR += cfv
     SUBDIR += chaosreader
     SUBDIR += checkpassword
     SUBDIR += checkpassword-pam
@@ -163,7 +161,6 @@
     SUBDIR += fprintd
     SUBDIR += fragroute
     SUBDIR += fragrouter
-    SUBDIR += fsh
     SUBDIR += fswatch
     SUBDIR += ftimes
     SUBDIR += fuzz
@@ -172,7 +169,6 @@
     SUBDIR += fwknop
     SUBDIR += fwlogwatch
     SUBDIR += gag
-    SUBDIR += gcipher
     SUBDIR += gcr
     SUBDIR += git-crypt
     SUBDIR += git-remote-gcrypt

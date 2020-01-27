@@ -159,13 +159,11 @@
     SUBDIR += gnome-icon-theme
     SUBDIR += gnome-icon-theme-extras
     SUBDIR += gnome-mime-data
-    SUBDIR += gnome-osd
     SUBDIR += gnome-user-docs
     SUBDIR += gnu-watch
     SUBDIR += gnuls
     SUBDIR += gobuster
     SUBDIR += gone
-    SUBDIR += gonvert
     SUBDIR += gplink
     SUBDIR += gpsim
     SUBDIR += granulate
@@ -245,7 +243,6 @@
     SUBDIR += mc-nox11
     SUBDIR += mdp
     SUBDIR += metalink-checker
-    SUBDIR += metalink-editor
     SUBDIR += metalink-tools
     SUBDIR += metromap
     SUBDIR += mime-support
@@ -379,7 +376,6 @@
     SUBDIR += py-QSpectrumAnalyzer
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
-    SUBDIR += py-YABT
     SUBDIR += py-cinder
     SUBDIR += py-colorbrewer
     SUBDIR += py-colored
@@ -539,7 +535,6 @@
     SUBDIR += wotsap
     SUBDIR += xdelta
     SUBDIR += xdelta3
-    SUBDIR += xdg-menu
     SUBDIR += xfce4-appfinder
     SUBDIR += xfce4-weather-plugin
     SUBDIR += xfce4-wm-themes

@@ -32,11 +32,9 @@
     SUBDIR += chart
     SUBDIR += cherrytree
     SUBDIR += clipit
-    SUBDIR += conkyemail
     SUBDIR += conkyforecast
     SUBDIR += copyq
     SUBDIR += countdown
-    SUBDIR += cycle
     SUBDIR += dailystrips
     SUBDIR += deforaos-todo
     SUBDIR += devd-notifier
@@ -45,7 +43,6 @@
     SUBDIR += dosage
     SUBDIR += easystroke
     SUBDIR += egroupware
-    SUBDIR += everygui
     SUBDIR += fasd
     SUBDIR += fbreader
     SUBDIR += fet
@@ -55,7 +52,6 @@
     SUBDIR += freemind
     SUBDIR += freeplane
     SUBDIR += ganttproject
-    SUBDIR += ganyremote
     SUBDIR += gbirthday
     SUBDIR += gcal
     SUBDIR += gcalcli
@@ -210,7 +206,6 @@
     SUBDIR += py-vdirsyncer
     SUBDIR += py-vobject
     SUBDIR += pybookreader
-    SUBDIR += pypanel
     SUBDIR += qlipper
     SUBDIR += qownnotes
     SUBDIR += recoll
@@ -232,17 +227,14 @@
     SUBDIR += syncthingtray
     SUBDIR += sysctlview
     SUBDIR += systempreferences
-    SUBDIR += taskcoach
     SUBDIR += taskd
     SUBDIR += tasksh
     SUBDIR += taskwarrior
     SUBDIR += teapot
-    SUBDIR += tel
     SUBDIR += terminal-image-viewer
     SUBDIR += thinkingrock
     SUBDIR += timewarrior
     SUBDIR += tine20
-    SUBDIR += tnote
     SUBDIR += todo
     SUBDIR += tomboy
     SUBDIR += tomboy-plugin-latex
@@ -254,8 +246,6 @@
     SUBDIR += treesheets
     SUBDIR += virt-manager
     SUBDIR += vit
-    SUBDIR += vnc2flv
-    SUBDIR += wammu
     SUBDIR += when
     SUBDIR += wmpinboard
     SUBDIR += wyrd

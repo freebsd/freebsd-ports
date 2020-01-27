@@ -1,7 +1,0 @@
-METAKIT is a curious mix of flatfile, relational and OODBMS features with a
-small footprint, and a big following.  For those who don't need a heavy-duty
-SQL solution, it is tight and fast for <100,000 items, with a snazzy ability
-to dynamically change data structures on the fly.  Interfaces are available
-for Tcl and Python, with Perl support promised soon.
-
-WWW: http://www.equi4.com/metakit/

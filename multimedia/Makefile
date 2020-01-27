@@ -43,7 +43,6 @@
     SUBDIR += cx88
     SUBDIR += dav1d
     SUBDIR += deforaos-player
-    SUBDIR += devede
     SUBDIR += din
     SUBDIR += dirac
     SUBDIR += dragon
@@ -76,7 +75,6 @@
     SUBDIR += gaupol
     SUBDIR += gavl
     SUBDIR += gdialog
-    SUBDIR += gdvrecv
     SUBDIR += gmerlin
     SUBDIR += gmimms
     SUBDIR += gmmlib
@@ -259,7 +257,6 @@
     SUBDIR += mkxvcd
     SUBDIR += mlt
     SUBDIR += mlt-qt5
-    SUBDIR += mmpython
     SUBDIR += mmsclient
     SUBDIR += mmsrip
     SUBDIR += motion
@@ -351,7 +348,6 @@
     SUBDIR += py-soco
     SUBDIR += py-subliminal
     SUBDIR += py-tvnamer
-    SUBDIR += pymp
     SUBDIR += qmmp-plugin-pack-qt5
     SUBDIR += qmmp-qt5
     SUBDIR += qt-faststart

@@ -1,3 +1,0 @@
-#!/bin/sh
-
-%%PYTHON_CMD%% %%PREFIX%%/share/ptkei/empire.py $*

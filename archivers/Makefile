@@ -173,7 +173,6 @@
     SUBDIR += py-brotlipy
     SUBDIR += py-bup
     SUBDIR += py-bz2file
-    SUBDIR += py-czipfile
     SUBDIR += py-libarchive-c
     SUBDIR += py-librtfcomp
     SUBDIR += py-lz4

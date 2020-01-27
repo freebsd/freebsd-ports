@@ -216,7 +216,6 @@
     SUBDIR += bazel
     SUBDIR += bazel-buildtools
     SUBDIR += bazel029
-    SUBDIR += bbfreeze
     SUBDIR += bbfreeze-loader
     SUBDIR += bcc
     SUBDIR += bcpp
@@ -266,19 +265,7 @@
     SUBDIR += byacc
     SUBDIR += byaccj
     SUBDIR += bzr
-    SUBDIR += bzr-builder
-    SUBDIR += bzr-colo
-    SUBDIR += bzr-externals
     SUBDIR += bzr-fastimport
-    SUBDIR += bzr-git
-    SUBDIR += bzr-gtk
-    SUBDIR += bzr-loom
-    SUBDIR += bzr-pipeline
-    SUBDIR += bzr-rewrite
-    SUBDIR += bzr-scmproj
-    SUBDIR += bzr-stats
-    SUBDIR += bzr-svn
-    SUBDIR += bzr-upload
     SUBDIR += bzrtools
     SUBDIR += c2mdoc
     SUBDIR += caf
@@ -494,7 +481,6 @@
     SUBDIR += distcc
     SUBDIR += distel
     SUBDIR += distorm
-    SUBDIR += ditrack
     SUBDIR += djgpp-binutils
     SUBDIR += djgpp-crx
     SUBDIR += dlib
@@ -511,7 +497,6 @@
     SUBDIR += dparser
     SUBDIR += dragon
     SUBDIR += dreampie
-    SUBDIR += drpython
     SUBDIR += ds2
     SUBDIR += dsymbol
     SUBDIR += dub
@@ -589,7 +574,6 @@
     SUBDIR += entt
     SUBDIR += epl.el
     SUBDIR += epm
-    SUBDIR += epydoc
     SUBDIR += eric6
     SUBDIR += eris
     SUBDIR += erlang-backoff
@@ -650,7 +634,6 @@
     SUBDIR += fam
     SUBDIR += fastcrc
     SUBDIR += fb-adb
-    SUBDIR += fb303
     SUBDIR += fc++
     SUBDIR += fhist
     SUBDIR += fifechan
@@ -669,7 +652,6 @@
     SUBDIR += flyspray
     SUBDIR += fmake
     SUBDIR += fnccheck
-    SUBDIR += fnorb
     SUBDIR += folly
     SUBDIR += fortran-utils
     SUBDIR += fortytwo-encore
@@ -723,7 +705,6 @@
     SUBDIR += gamin
     SUBDIR += gauche-readline
     SUBDIR += gaul
-    SUBDIR += gazpacho
     SUBDIR += gb
     SUBDIR += gcc-arm-embedded
     SUBDIR += gcc-msp430-ti-toolchain
@@ -1271,7 +1252,6 @@
     SUBDIR += libmowgli
     SUBDIR += libmowgli2
     SUBDIR += libmpcbdm
-    SUBDIR += libmpsse
     SUBDIR += libmsiecf
     SUBDIR += libmsocket
     SUBDIR += libmtdev
@@ -1647,7 +1627,6 @@
     SUBDIR += oniguruma
     SUBDIR += oozie
     SUBDIR += open-beagle
-    SUBDIR += open-usp-tukubai
     SUBDIR += opencl
     SUBDIR += opencl-clang
     SUBDIR += opencvs
@@ -3920,7 +3899,6 @@
     SUBDIR += php74-sysvsem
     SUBDIR += php74-sysvshm
     SUBDIR += php74-tokenizer
-    SUBDIR += phpbt
     SUBDIR += phpsh
     SUBDIR += phpunit6
     SUBDIR += phpunit7
@@ -4096,7 +4074,6 @@
     SUBDIR += py-akismet
     SUBDIR += py-amalgamate
     SUBDIR += py-aniso8601
-    SUBDIR += py-anonfunc
     SUBDIR += py-antlr4-python2-runtime
     SUBDIR += py-antlr4-python3-runtime
     SUBDIR += py-anyconfig
@@ -4228,7 +4205,6 @@
     SUBDIR += py-billiard
     SUBDIR += py-binaryornot
     SUBDIR += py-biplist
-    SUBDIR += py-bison
     SUBDIR += py-bitarray
     SUBDIR += py-bitstring
     SUBDIR += py-black
@@ -4437,7 +4413,6 @@
     SUBDIR += py-flufl.i18n
     SUBDIR += py-flufl.lock
     SUBDIR += py-foolscap
-    SUBDIR += py-fortran
     SUBDIR += py-freebsd
     SUBDIR += py-freebsd-sysctl
     SUBDIR += py-freenas.dispatcher
@@ -4498,7 +4473,6 @@
     SUBDIR += py-graphql-relay2
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
-    SUBDIR += py-grouch
     SUBDIR += py-grpc-google-iam-v1
     SUBDIR += py-grpcio
     SUBDIR += py-grpcio-gcp
@@ -4674,20 +4648,17 @@
     SUBDIR += py-murmurhash
     SUBDIR += py-mwlib
     SUBDIR += py-mwlib.ext
-    SUBDIR += py-mwlib.rl
     SUBDIR += py-mx-experimental
     SUBDIR += py-mygpoclient
     SUBDIR += py-mypy
     SUBDIR += py-mypy-protobuf
     SUBDIR += py-mypy_extensions
-    SUBDIR += py-nagioscheck
     SUBDIR += py-naiveBayesClassifier
     SUBDIR += py-nanotime
     SUBDIR += py-natsort
     SUBDIR += py-natural
     SUBDIR += py-nbconvert
     SUBDIR += py-nbformat
-    SUBDIR += py-ncurses
     SUBDIR += py-nodeenv
     SUBDIR += py-nose
     SUBDIR += py-nose-cov
@@ -4699,7 +4670,6 @@
     SUBDIR += py-notify2
     SUBDIR += py-num2words
     SUBDIR += py-numba
-    SUBDIR += py-ocempgui
     SUBDIR += py-oci
     SUBDIR += py-odfpy
     SUBDIR += py-offtrac
@@ -4751,7 +4721,6 @@
     SUBDIR += py-ovsdbapp
     SUBDIR += py-p4python
     SUBDIR += py-packaging
-    SUBDIR += py-palm
     SUBDIR += py-parallax
     SUBDIR += py-parsedatetime
     SUBDIR += py-parver
@@ -4847,7 +4816,6 @@
     SUBDIR += py-pydocstyle
     SUBDIR += py-pydoop
     SUBDIR += py-pydrive
-    SUBDIR += py-pyechonest
     SUBDIR += py-pyee
     SUBDIR += py-pyelftools
     SUBDIR += py-pyev
@@ -4998,12 +4966,10 @@
     SUBDIR += py-requestsexceptions
     SUBDIR += py-resolver
     SUBDIR += py-resource
-    SUBDIR += py-resourcepackage
     SUBDIR += py-responses
     SUBDIR += py-retrying
     SUBDIR += py-retype
     SUBDIR += py-riak_pb
-    SUBDIR += py-rlcompleter2
     SUBDIR += py-robotframework
     SUBDIR += py-robotframework-databaselibrary
     SUBDIR += py-robotframework-pabot
@@ -5065,7 +5031,6 @@
     SUBDIR += py-snakeviz
     SUBDIR += py-sortedcontainers
     SUBDIR += py-sourcemap
-    SUBDIR += py-spark
     SUBDIR += py-speaklater
     SUBDIR += py-spyder
     SUBDIR += py-sqlcc
@@ -5210,7 +5175,6 @@
     SUBDIR += py-xdis
     SUBDIR += py-xerox
     SUBDIR += py-xmltodict
-    SUBDIR += py-xoltar-toolkit
     SUBDIR += py-xxhash
     SUBDIR += py-yaml
     SUBDIR += py-yamllint
@@ -5236,7 +5200,6 @@
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
     SUBDIR += py-zipp
-    SUBDIR += py-zkpython
     SUBDIR += py-zope.annotation
     SUBDIR += py-zope.app.applicationcontrol
     SUBDIR += py-zope.app.appsetup
@@ -5316,14 +5279,12 @@
     SUBDIR += pybugz
     SUBDIR += pycanberra
     SUBDIR += pycharm-ce
-    SUBDIR += pychecker
     SUBDIR += pycos
     SUBDIR += pycount
     SUBDIR += pydbus-common
     SUBDIR += pygobject3-common
     SUBDIR += pylint
     SUBDIR += pylint1
-    SUBDIR += pymacs
     SUBDIR += pyobfuscate
     SUBDIR += pyotherside-qt5
     SUBDIR += pyrex
@@ -6580,7 +6541,6 @@
     SUBDIR += tokei
     SUBDIR += tortoisehg
     SUBDIR += tpasm
-    SUBDIR += trac-bitten
     SUBDIR += tradcpp
     SUBDIR += treepy.el
     SUBDIR += trellis
@@ -6630,7 +6590,6 @@
     SUBDIR += wininfo
     SUBDIR += wizardkit
     SUBDIR += woff2
-    SUBDIR += wxGlade
     SUBDIR += wxformbuilder
     SUBDIR += xa65
     SUBDIR += xbyak

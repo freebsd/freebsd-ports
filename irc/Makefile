@@ -97,7 +97,6 @@
     SUBDIR += py-irc
     SUBDIR += py-limnoria
     SUBDIR += py-supybot
-    SUBDIR += py-supybot-plugins
     SUBDIR += quassel
     SUBDIR += quassel-core
     SUBDIR += quirc

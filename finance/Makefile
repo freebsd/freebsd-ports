@@ -45,7 +45,6 @@
     SUBDIR += libofx
     SUBDIR += libstocks
     SUBDIR += moneymanagerex
-    SUBDIR += mybudget
     SUBDIR += myphpmoney
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-MaxMind-CreditCardFraudDetection
@@ -106,7 +105,6 @@
     SUBDIR += quantlib
     SUBDIR += quickfix
     SUBDIR += rubygem-money
-    SUBDIR += sabernetdcs-client
     SUBDIR += skrooge
     SUBDIR += sql-ledger
     SUBDIR += tryton28

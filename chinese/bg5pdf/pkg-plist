@@ -1,6 +1,0 @@
-bin/bg5pdf
-bin/gbpdf
-%%PYTHON_SITELIBDIR%%/bg5pdflib.so
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/genTest.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.big5
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.big5.pdf

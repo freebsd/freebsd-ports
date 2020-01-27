@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Version=1.0
-Name=4st Attack
-GenericName=4st Attack game
-Comment=Connect four stones in a straight line
-Icon=4stattack
-Exec=4stattack
-Categories=Game;StrategyGame;

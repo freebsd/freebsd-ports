@@ -139,7 +139,6 @@
     SUBDIR += py-gammu
     SUBDIR += py-hidapi
     SUBDIR += py-libconcord
-    SUBDIR += py-libimobiledevice
     SUBDIR += py-lirc
     SUBDIR += py-qt5-serialport
     SUBDIR += py-serial
