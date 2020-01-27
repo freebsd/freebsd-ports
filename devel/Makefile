@@ -5763,6 +5763,7 @@
     SUBDIR += rubygem-azure_mgmt_marketplace_ordering
     SUBDIR += rubygem-azure_mgmt_media_services
     SUBDIR += rubygem-azure_mgmt_migrate
+    SUBDIR += rubygem-azure_mgmt_mixedreality
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
