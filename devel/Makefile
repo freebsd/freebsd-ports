@@ -5791,6 +5791,7 @@
     SUBDIR += rubygem-azure_mgmt_resources
     SUBDIR += rubygem-azure_mgmt_resources_management
     SUBDIR += rubygem-azure_mgmt_scheduler
+    SUBDIR += rubygem-azure_mgmt_search
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
