@@ -13,12 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libicui18n.so:devel/icu \
-		libsodium.so:security/libsodium \
-		${LIB_DEPENDS_${ARCH}}
-LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
-LIB_DEPENDS_armv7=	libluajit-5.1.so:lang/luajit
-LIB_DEPENDS_i386=	libluajit-5.1.so:lang/luajit
-LIB_DEPENDS_powerpc=	libluajit-5.1.so:lang/luajit
+		libsodium.so:security/libsodium
 BUILD_DEPENDS=	ragel:devel/ragel
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
@@ -33,14 +28,19 @@ CONFLICTS_INSTALL=	rspamd
 USERS=		rspamd
 GROUPS=		rspamd
 
-OPTIONS_DEFINE=		BLAS CGP GPERF
+OPTIONS_DEFINE=		BLAS CGP GPERF LUAJIT
 OPTIONS_DEFINE_amd64=	HYPERSCAN
+OPTIONS_DEFAULT_amd64=  LUAJIT
+OPTIONS_DEFAULT_armv7=  LUAJIT
+OPTIONS_DEFAULT_i386=   LUAJIT
+OPTIONS_DEFAULT_powerpc=        LUAJIT
 OPTIONS_SUB=	yes
 
 BLAS_DESC=		Use OpenBLAS to accelerate KANN
 CGP_DESC=		Install Communigate Pro(tm) helper
 GPERF_DESC=		Google perf-tools profiling
 HYPERSCAN_DESC=		Use hyperscan optimizations (amd64 only)
+LUAJIT_DESC=    Use LuaJIT instead of standard Lua
 
 SUB_FILES=	pkg-message rspamd.newsyslog.conf.sample
 PLIST_SUB+=	ETCDIR=etc/rspamd \
@@ -71,6 +71,9 @@ GPERF_LIB_DEPENDS=	libprofiler.so:devel/google-perftools
 
 HYPERSCAN_CMAKE_ON=	-DENABLE_HYPERSCAN=ON
 HYPERSCAN_LIB_DEPENDS=	libhs.so:devel/hyperscan
+
+LUAJIT_LIB_DEPENDS=     libluajit-5.1.so:lang/luajit
+LUAJIT_USES_OFF=        lua:51
 
 CGP_RUN_DEPENDS+=	\
 	p5-AnyEvent-HTTP>=0:www/p5-AnyEvent-HTTP \
