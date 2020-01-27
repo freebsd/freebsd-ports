@@ -1,3 +1,5 @@
+awk works just fine here.
+
 --- plugins/node.d/multips_memory.in.orig	2018-09-21 02:11:11 UTC
 +++ plugins/node.d/multips_memory.in
 @@ -137,7 +137,7 @@ fi
