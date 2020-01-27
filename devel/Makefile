@@ -5723,6 +5723,7 @@
     SUBDIR += rubygem-azure_mgmt_cognitive_services
     SUBDIR += rubygem-azure_mgmt_commerce
     SUBDIR += rubygem-azure_mgmt_compute
+    SUBDIR += rubygem-azure_mgmt_consumption
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
