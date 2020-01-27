@@ -5716,6 +5716,7 @@
     SUBDIR += rubygem-azure_mgmt_automation
     SUBDIR += rubygem-azure_mgmt_azurestack
     SUBDIR += rubygem-azure_mgmt_batch
+    SUBDIR += rubygem-azure_mgmt_batchai
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
