@@ -5764,6 +5764,7 @@
     SUBDIR += rubygem-azure_mgmt_media_services
     SUBDIR += rubygem-azure_mgmt_migrate
     SUBDIR += rubygem-azure_mgmt_mixedreality
+    SUBDIR += rubygem-azure_mgmt_monitor
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
