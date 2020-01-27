@@ -5688,6 +5688,7 @@
     SUBDIR += rubygem-azure_cognitiveservices_customvisiontraining
     SUBDIR += rubygem-azure_cognitiveservices_entitysearch
     SUBDIR += rubygem-azure_cognitiveservices_face
+    SUBDIR += rubygem-azure_cognitiveservices_formrecognizer
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
