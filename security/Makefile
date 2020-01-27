@@ -226,6 +226,7 @@
     SUBDIR += idea
     SUBDIR += identify
     SUBDIR += ike
+    SUBDIR += imds-filter
     SUBDIR += integrit
     SUBDIR += ipfcount
     SUBDIR += ipfilter2dshield

@@ -1,0 +1,12 @@
+imds-filterd (pronounced "I M D S Filter D") is a pair of utilities which
+work together to intercept and filter requests to the EC2 Instance Metadata
+Service -- or theoretically any other service at 169.254.169.254:80.
+
+It validates requests against a configured ruleset which specifies whether
+given users and groups should be allowed or denied access to certain prefixes
+in the Instance Metadata Service.  For example, "root" could be granted
+access to everything; most unprivileged users granted access to everything
+except IAM role credentials; but the www user denied access to the entire
+Instance Metadata Service in order to guard against SSRF and similar attacks.
+
+WWW: http://github.com/cperciva/imds-filterd

@@ -194,7 +194,7 @@ sems:*:250:
 # free: 251
 # free: 252
 _adsuck:*:253:
-# free: 254
+imds:*:254:
 _i2pd:*:255:
 _tor:*:256:
 _smtpd:*:257:
