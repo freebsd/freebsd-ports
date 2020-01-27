@@ -1068,12 +1068,14 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/visualize_drs.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/visualize.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_upgradedns_lmdb.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba3sam.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samdb_api.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samdb.py
 %%PYTHON_SITELIBDIR%%/samba/tests/security.py
 %%PYTHON_SITELIBDIR%%/samba/tests/smb.py
 %%PYTHON_SITELIBDIR%%/samba/tests/smbd_base.py
+%%PYTHON_SITELIBDIR%%/samba/tests/smbd_fuzztest.py
 %%PYTHON_SITELIBDIR%%/samba/tests/source.py
 %%PYTHON_SITELIBDIR%%/samba/tests/strings.py
 %%PYTHON_SITELIBDIR%%/samba/tests/subunitrun.py
