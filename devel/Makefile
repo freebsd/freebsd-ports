@@ -5806,6 +5806,7 @@
     SUBDIR += rubygem-azure_mgmt_stream_analytics
     SUBDIR += rubygem-azure_mgmt_subscriptions
     SUBDIR += rubygem-azure_mgmt_time_series_insights
+    SUBDIR += rubygem-azure_mgmt_traffic_manager
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
