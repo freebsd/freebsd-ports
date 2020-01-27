@@ -5772,6 +5772,7 @@
     SUBDIR += rubygem-azure_mgmt_notification_hubs
     SUBDIR += rubygem-azure_mgmt_operational_insights
     SUBDIR += rubygem-azure_mgmt_operations_management
+    SUBDIR += rubygem-azure_mgmt_peering
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
