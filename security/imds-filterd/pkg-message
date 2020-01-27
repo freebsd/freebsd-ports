@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+To enable imds-filterd, add imds_filterd_enable=YES to /etc/rc.conf.
+
+To configure imds-filterd, edit $PREFIX/etc/imds.conf.
+
+imds-filterd ships with configurations for syslogd and newsyslog which log
+accesses to the Instance Metadata Service to /var/log/imds.log and rotate
+this file upon reaching 1 MB; these settings can be modified via
+$PREFIX/etc/{syslog.d, newsyslog.conf.d}/imds.conf.
+EOM
+}
+]
