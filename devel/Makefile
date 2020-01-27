@@ -5769,6 +5769,7 @@
     SUBDIR += rubygem-azure_mgmt_mysql
     SUBDIR += rubygem-azure_mgmt_netapp
     SUBDIR += rubygem-azure_mgmt_network
+    SUBDIR += rubygem-azure_mgmt_notification_hubs
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
