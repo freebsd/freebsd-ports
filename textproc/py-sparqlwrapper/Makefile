@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sparqlwrapper
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.5
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +21,5 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 USE_LOCALE=	en_US.UTF-8
-
-post-patch:
-	@${REINPLACE_CMD} '/keepalive/d' ${WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>
