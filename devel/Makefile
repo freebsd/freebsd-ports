@@ -5756,6 +5756,7 @@
     SUBDIR += rubygem-azure_mgmt_locks
     SUBDIR += rubygem-azure_mgmt_logic
     SUBDIR += rubygem-azure_mgmt_machine_learning
+    SUBDIR += rubygem-azure_mgmt_machine_learning_services
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
