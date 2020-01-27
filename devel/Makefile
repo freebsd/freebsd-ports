@@ -5809,6 +5809,7 @@
     SUBDIR += rubygem-azure_mgmt_traffic_manager
     SUBDIR += rubygem-azure_mgmt_vmware_cloudsimple
     SUBDIR += rubygem-azure_mgmt_web
+    SUBDIR += rubygem-azure_sdk
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
