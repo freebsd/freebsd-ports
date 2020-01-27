@@ -1,0 +1,11 @@
+HTTP::Throwable provides a set of strongly-typed, PSGI-friendly exception
+implementations corresponding to the HTTP error status code (4xx-5xx) as well as
+the redirection codes (3xx).
+
+This particular package (HTTP::Throwable) is the shared role for all the
+exceptions involved. It's not intended that you use HTTP::Throwable directly,
+although you can, and instructions for using it correctly are given below.
+Instead, you probably want to use HTTP::Throwable::Factory, which will assemble
+exception classes from roles needed to build an exception for your use case.
+
+WWW: https://metacpan.org/release/HTTP-Throwable
