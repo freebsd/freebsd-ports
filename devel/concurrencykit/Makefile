@@ -8,6 +8,9 @@ MASTER_SITES=	http://concurrencykit.org/releases/ \
 		http://repnop.org/releases/
 DISTNAME=	ck-${PORTVERSION}
 
+PATCH_SITES=	https://github.com/${PORTNAME}/ck/commit/
+PATCHFILES=	999d4612e873bb19867ad1d7043c9c18c7c4d3b9.patch:-p1
+
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Lock-free data structures for high performance concurrent systems
 
