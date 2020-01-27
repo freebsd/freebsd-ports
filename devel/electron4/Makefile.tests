@@ -1,35 +1,5 @@
 # $FreeBSD$
 
-TEST_TARGETS=	base_unittests \
-		chromedriver_unittests \
-		crypto_unittests \
-		printing_unittests \
-		url_unittests
-
-#		capture_unittests \
-#		cc_unittests \
-#		compositor_unittests \
-#		content_unittests \
-#		dbus_unittests \
-#		display_unittests \
-#		events_unittests \
-#		gin_unittests \
-#		gl_unittests \
-#		gpu_unittests \
-#		headless_unittests \
-#		media_unittests \
-#		media_mojo_unittests \
-#		midi_unittests \
-#		mojo_unittests \
-#		net_unittests \
-#		ppapi_unittests \
-#		skia_unittests \
-#		sql_unittests \
-#		storage_unittests \
-#		ui_base_unittests \
-#		url_ipc_unittests \
-#		unittests \
-
 TEST_MODULES=	electron\ module \
 		app\ module \
 		autoUpdater\ module \
