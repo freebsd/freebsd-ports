@@ -4,7 +4,8 @@ PORTNAME=	crosextrafonts
 PORTVERSION=	20130214
 PORTREVISION=	4
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://gsdview.appspot.com/chromeos-localmirror/distfiles/
+MASTER_SITES=	https://gsdview.appspot.com/chromeos-localmirror/distfiles/ \
+		https://commondatastorage.googleapis.com/chromeos-localmirror/distfiles
 PKGNAMESUFFIX=	-caladea
 
 MAINTAINER=	office@FreeBSD.org
