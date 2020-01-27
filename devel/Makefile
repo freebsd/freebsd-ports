@@ -5796,6 +5796,7 @@
     SUBDIR += rubygem-azure_mgmt_serialconsole
     SUBDIR += rubygem-azure_mgmt_service_bus
     SUBDIR += rubygem-azure_mgmt_service_fabric
+    SUBDIR += rubygem-azure_mgmt_signalr
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
