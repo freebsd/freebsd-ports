@@ -5678,6 +5678,7 @@
     SUBDIR += rubygem-azure-storage-file
     SUBDIR += rubygem-azure-storage-queue
     SUBDIR += rubygem-azure-storage-table
+    SUBDIR += rubygem-azure_cognitiveservices_anomalydetector
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
