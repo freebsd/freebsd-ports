@@ -5721,6 +5721,7 @@
     SUBDIR += rubygem-azure_mgmt_bot_service
     SUBDIR += rubygem-azure_mgmt_cdn
     SUBDIR += rubygem-azure_mgmt_cognitive_services
+    SUBDIR += rubygem-azure_mgmt_commerce
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
