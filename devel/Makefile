@@ -5779,6 +5779,7 @@
     SUBDIR += rubygem-azure_mgmt_postgresql
     SUBDIR += rubygem-azure_mgmt_powerbi_dedicated
     SUBDIR += rubygem-azure_mgmt_powerbi_embedded
+    SUBDIR += rubygem-azure_mgmt_privatedns
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
