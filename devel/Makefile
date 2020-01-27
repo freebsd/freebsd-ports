@@ -5727,6 +5727,7 @@
     SUBDIR += rubygem-azure_mgmt_container_instance
     SUBDIR += rubygem-azure_mgmt_container_registry
     SUBDIR += rubygem-azure_mgmt_container_service
+    SUBDIR += rubygem-azure_mgmt_cosmosdb
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
