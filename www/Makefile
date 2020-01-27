@@ -1675,6 +1675,7 @@
     SUBDIR += py-h2
     SUBDIR += py-horizon
     SUBDIR += py-hpack
+    SUBDIR += py-hstspreload
     SUBDIR += py-html
     SUBDIR += py-html5-parser
     SUBDIR += py-html5lib
