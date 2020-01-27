@@ -5703,6 +5703,7 @@
     SUBDIR += rubygem-azure_cognitiveservices_visualsearch
     SUBDIR += rubygem-azure_cognitiveservices_websearch
     SUBDIR += rubygem-azure_event_grid
+    SUBDIR += rubygem-azure_graph_rbac
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
