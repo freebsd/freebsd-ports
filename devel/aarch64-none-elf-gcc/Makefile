@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX?=	aarch64-none-elf-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	manu@FreeBSD.org
 COMMENT=	GNU Compiler Collection for bare metal arm cross-development
 
 LICENSE=	GPLv3 GPLv3RLE
