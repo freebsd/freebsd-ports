@@ -5735,6 +5735,7 @@
     SUBDIR += rubygem-azure_mgmt_databox
     SUBDIR += rubygem-azure_mgmt_datalake_analytics
     SUBDIR += rubygem-azure_mgmt_datalake_store
+    SUBDIR += rubygem-azure_mgmt_datashare
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
