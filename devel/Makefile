@@ -5798,6 +5798,7 @@
     SUBDIR += rubygem-azure_mgmt_service_fabric
     SUBDIR += rubygem-azure_mgmt_signalr
     SUBDIR += rubygem-azure_mgmt_sql
+    SUBDIR += rubygem-azure_mgmt_sqlvirtualmachine
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
