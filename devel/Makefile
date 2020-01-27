@@ -5699,6 +5699,7 @@
     SUBDIR += rubygem-azure_cognitiveservices_qnamakerruntime
     SUBDIR += rubygem-azure_cognitiveservices_spellcheck
     SUBDIR += rubygem-azure_cognitiveservices_textanalytics
+    SUBDIR += rubygem-azure_cognitiveservices_videosearch
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
