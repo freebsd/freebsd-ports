@@ -1,6 +1,15 @@
 --- configure.orig	2012-06-06 11:58:57 UTC
 +++ configure
-@@ -19695,6 +19695,8 @@ echo "${ECHO_T}could not figure out how 
+@@ -3459,7 +3459,7 @@ PLATFORM="-DPDF_PLATFORM=\\\"\"$ac_sys_system\"\\\""
+ WITH_LARGE_FILES=no
+ WITH_64BIT=no
+ WITH_UNIVERSAL=no
+-JAVA_COMPATIBILITY="-source 1.4"
++JAVA_COMPATIBILITY="-source 6"
+ 
+ case $ac_sys_system in
+             aix*|AIX*)
+@@ -19695,6 +19695,8 @@ echo "${ECHO_T}could not figure out how to run perl" >
  	aix*|AIX*)   PERLLINK="-L$PERLINCLUDE -lperl $PERLLINK";;
  	osf1*|OSF1*) PERLLINK="-L$PERLINCLUDE -lperl $PERLLINK";;
  	darwin|Darwin*) PERLLINK="-L$PERLINCLUDE -lperl $PERLLINK";;
@@ -9,13 +18,13 @@
  	*) ;;
      esac
  
-@@ -21408,6 +21410,9 @@ fi
+@@ -21407,6 +21409,9 @@ fi
+ 
  if test "$WITH_CXX" = "yes" ; then
      BINDINGS="$BINDINGS cpp"
- fi
++fi
 +if test "$WITH_PERL" = "yes" ; then
 +    BINDINGS="$BINDINGS perl"
-+fi
+ fi
  if test "$WITH_JAVA" = "yes" ; then
      BINDINGS="$BINDINGS java"
-     PLOPBINDINGS="$PLOPBINDINGS java"
