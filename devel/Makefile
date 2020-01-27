@@ -5785,6 +5785,7 @@
     SUBDIR += rubygem-azure_mgmt_recovery_services_site_recovery
     SUBDIR += rubygem-azure_mgmt_redis
     SUBDIR += rubygem-azure_mgmt_relay
+    SUBDIR += rubygem-azure_mgmt_reservations
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
