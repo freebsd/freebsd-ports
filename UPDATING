@@ -144,6 +144,8 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster $REINSTALL
   # REBUILD=$(pkg query -g "%n:%dn" '*' | grep py3 | grep -v py37 | cut -d : -f 1 | sort -u)
   # portmaster $REBUILD
+  # REBUILD2=$(pkg list | grep python-36 | xargs pkg which | awk '{print $6}' | sort -u)
+  # portmaster $REBUILD2
 
 20191204
   AFFECTS: users of mail/nextcloud-mail
