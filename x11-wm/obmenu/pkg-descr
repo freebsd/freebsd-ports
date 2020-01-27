@@ -1,9 +1,0 @@
-Obmenu is a menu editor designed for Openbox.  It's easy to use, allowing
-you to get the most out of the powerful Openbox menu system, while hiding
-the xml layout from the user.
-
-It can install dynamic menus (pipe menus), such as Gnome menus or a
-quick-navigator.  You can also use the obxml module to easily write pipe
-menus of your own in Python.
-
-WWW: http://obmenu.sourceforge.net/

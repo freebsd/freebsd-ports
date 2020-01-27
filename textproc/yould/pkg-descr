@@ -1,6 +1,0 @@
-Yould is a generator for pronounceable random words.  The engine uses
-Markov chains with two letter transitions. This distribution includes
-trained engines for several languages: English, Dutch, Finnish, Italian,
-French and German.
-
-WWW: http://ygingras.net/yould

@@ -239,7 +239,6 @@
     SUBDIR += kbfsd
     SUBDIR += kc24
     SUBDIR += kdbxviewer
-    SUBDIR += kedpm
     SUBDIR += keepass
     SUBDIR += keepass-plugin-keepassrpc
     SUBDIR += keepassx-devel
@@ -729,7 +728,6 @@
     SUBDIR += pam_yubico
     SUBDIR += pamtester
     SUBDIR += paperkey
-    SUBDIR += parano
     SUBDIR += passivedns
     SUBDIR += pbc
     SUBDIR += pbnj
@@ -873,7 +871,6 @@
     SUBDIR += py-ckcc-protocol
     SUBDIR += py-cpe
     SUBDIR += py-cracklib
-    SUBDIR += py-cryptkit
     SUBDIR += py-cryptlib_py
     SUBDIR += py-cryptography
     SUBDIR += py-cryptography-vectors
@@ -887,7 +884,6 @@
     SUBDIR += py-ed25519ll
     SUBDIR += py-exscript
     SUBDIR += py-fail2ban
-    SUBDIR += py-fchksum
     SUBDIR += py-fido2
     SUBDIR += py-first-server
     SUBDIR += py-flask-httpauth
@@ -917,7 +913,6 @@
     SUBDIR += py-m2crypto
     SUBDIR += py-maec
     SUBDIR += py-mcrypt
-    SUBDIR += py-mhash
     SUBDIR += py-mixbox
     SUBDIR += py-mnemonic
     SUBDIR += py-msoffcrypto-tool
@@ -943,7 +938,6 @@
     SUBDIR += py-plone.protect
     SUBDIR += py-plone.session
     SUBDIR += py-potr
-    SUBDIR += py-pow
     SUBDIR += py-pyaes
     SUBDIR += py-pyaff4
     SUBDIR += py-pyaxo
@@ -952,7 +946,6 @@
     SUBDIR += py-pycrypto
     SUBDIR += py-pycryptodome
     SUBDIR += py-pycryptodomex
-    SUBDIR += py-pycryptopp
     SUBDIR += py-pydeep
     SUBDIR += py-pyelliptic
     SUBDIR += py-pylibacl
@@ -1000,10 +993,8 @@
     SUBDIR += py-taxii2-client
     SUBDIR += py-tlslite
     SUBDIR += py-trezor
-    SUBDIR += py-trustedpickle
     SUBDIR += py-trustme
     SUBDIR += py-tuf
-    SUBDIR += py-twofish
     SUBDIR += py-txtorcon
     SUBDIR += py-virustotal-api
     SUBDIR += py-volatility
@@ -1054,7 +1045,6 @@
     SUBDIR += reop
     SUBDIR += retranslator
     SUBDIR += revealrk
-    SUBDIR += revelation
     SUBDIR += rhash
     SUBDIR += ridl
     SUBDIR += rifiuti2
@@ -1212,7 +1202,6 @@
     SUBDIR += sops
     SUBDIR += spass
     SUBDIR += spass-qt5
-    SUBDIR += spike-proxy
     SUBDIR += spybye
     SUBDIR += sqlmap
     SUBDIR += sqlninja
@@ -1278,7 +1267,6 @@
     SUBDIR += tsshbatch
     SUBDIR += tthsum
     SUBDIR += u2f-devd
-    SUBDIR += umit
     SUBDIR += unhide
     SUBDIR += unicornscan
     SUBDIR += unssh
