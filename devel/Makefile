@@ -5707,6 +5707,7 @@
     SUBDIR += rubygem-azure_key_vault
     SUBDIR += rubygem-azure_mgmt_adhybridhealth_service
     SUBDIR += rubygem-azure_mgmt_advisor
+    SUBDIR += rubygem-azure_mgmt_alerts_management
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
