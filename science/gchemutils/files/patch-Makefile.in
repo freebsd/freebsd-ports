@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-03-10 23:12:16.000000000 +0100
-+++ Makefile.in	2014-03-10 23:14:08.000000000 +0100
-@@ -927,7 +927,6 @@
+--- Makefile.in.orig	2020-01-19 23:15:40 UTC
++++ Makefile.in
+@@ -944,7 +944,6 @@ info-am:
  
  install-data-am: install-mimeDATA
  	@$(NORMAL_INSTALL)

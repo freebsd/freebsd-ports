@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-subtitles
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libenchant.so:textproc/enchant \
 USES=		cpe desktop-file-utils gmake gnome libtool localbase mono \
 		pkgconfig
 CPE_VENDOR=	pedro_castro
-USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20 gnomedocutils intltool
+USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20 intltool
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
 GCONF_SCHEMAS=	gnome-subtitles.schemas

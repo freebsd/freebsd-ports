@@ -1,14 +1,14 @@
---- src/GnomeSubtitles/Execution/gnome-subtitles.in.orig	2008-05-11 18:14:09.000000000 +0200
-+++ src/GnomeSubtitles/Execution/gnome-subtitles.in	2008-05-19 22:58:24.691677625 +0200
+--- src/GnomeSubtitles/Execution/gnome-subtitles.in.orig	2010-10-01 23:29:05 UTC
++++ src/GnomeSubtitles/Execution/gnome-subtitles.in
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  
  prefix=@prefix@
  exec_prefix=@exec_prefix@
-@@ -8,5 +8,5 @@
+@@ -8,5 +8,5 @@ sublibdir=@SUBLIB_DLL_DIR@
  
- export LD_LIBRARY_PATH="$libdir/gnome-subtitles:$LD_LIBRARY_PATH"
+ export LD_LIBRARY_PATH=$libdir/gnome-subtitles${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
  export MONO_PATH=$sublibdir:$MONO_PATH
 -exec -a gnome-subtitles @MONO@ $libdir/gnome-subtitles/gnome-subtitles.exe "$@"
 +exec @MONO@ $libdir/gnome-subtitles/gnome-subtitles.exe "$@"

@@ -1,8 +1,8 @@
---- configure.orig	2013-09-15 18:26:16 UTC
+--- configure.orig	2011-11-21 13:58:28 UTC
 +++ configure
-@@ -13562,33 +13562,9 @@ if test -z "$AM_DEFAULT_VERBOSITY"; then
+@@ -12790,33 +12790,9 @@ $as_echo "no" >&6; }
+ 	fi
  fi
- 
  
 -gdu_cv_version_required=0.3.2
  
@@ -34,7 +34,7 @@
  # Check whether --with-help-dir was given.
  if test "${with_help_dir+set}" = set; then :
    withval=$with_help_dir;
-@@ -13628,25 +13604,15 @@ else
+@@ -12856,25 +12832,15 @@ else
    enable_scrollkeeper=yes
  fi
  
@@ -60,14 +60,3 @@
  
  
  
-@@ -13674,8 +13640,8 @@ needed_assemblies="Mono.Posix Mono.Cairo Mono.CSharp"
- for i in $needed_assemblies; do
-   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $i.dll" >&5
- $as_echo_n "checking for $i.dll... " >&6; }
--  if test ! \( -e `$PKG_CONFIG --variable=prefix mono`/lib/mono/2.0/$i.dll -o -e `$PKG_CONFIG --variable=prefix mono`/lib64/mono/2.0/$i.dll \); then
--	if test ! \( -e `$PKG_CONFIG --variable=prefix mono`/lib/mono/4.0/$i.dll -o -e `$PKG_CONFIG --variable=prefix mono`/lib64/mono/4.0/$i.dll \); then
-+  if test ! \( -e `$PKG_CONFIG --variable=prefix mono`/lib/mono/2.0-api/$i.dll -o -e `$PKG_CONFIG --variable=prefix mono`/lib64/mono/2.0-api/$i.dll \); then
-+	if test ! \( -e `$PKG_CONFIG --variable=prefix mono`/lib/mono/4.0-api/$i.dll -o -e `$PKG_CONFIG --variable=prefix mono`/lib64/mono/4.0-api/$i.dll \); then
- 		as_fn_error $? "missing required mono 2.0/4.0 DLL: $i.dll" "$LINENO" 5
- 	else
- 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: found" >&5

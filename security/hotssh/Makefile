@@ -3,7 +3,7 @@
 
 PORTNAME=	hotssh
 PORTVERSION=	0.2.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vte>=0:x11-toolkits/py-vte@${PY_FLAVOR}
 
-USE_GNOME=	glib20 gnomedocutils intltool libxslt pygobject pygtk2
+USE_GNOME=	glib20 intltool libxslt pygobject pygtk2
 USES=		gettext gnome python:2.7 tar:bzip2 waf
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes

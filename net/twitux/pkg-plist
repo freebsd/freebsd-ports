@@ -6,12 +6,8 @@ lib/locale/ja/LC_MESSAGES/twitux.mo
 lib/locale/pt/LC_MESSAGES/twitux.mo
 lib/locale/sv/LC_MESSAGES/twitux.mo
 share/applications/twitux.desktop
-share/gnome/help/twitux/C/figures/client.png
-share/gnome/help/twitux/C/legal.xml
-share/gnome/help/twitux/C/twitux.xml
 share/icons/hicolor/48x48/apps/twitux.png
 share/icons/hicolor/scalable/apps/twitux.svg
-share/omf/twitux/twitux-C.omf
 share/twitux/account_dlg.xml
 share/twitux/add_friend_dlg.xml
 share/twitux/lists_dlg.xml

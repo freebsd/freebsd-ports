@@ -3,7 +3,7 @@
 
 PORTNAME=	tomboy
 PORTVERSION=	1.15.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-sharp-glib-2.0.pc:devel/dbus-sh
 		mautil:devel/mono-addins
 
 USES=		cpe gettext gmake gnome libtool mono pathfix pkgconfig tar:xz
-USE_GNOME=	intlhack gnomeprefix gnomedocutils gnomesharp20
+USE_GNOME=	intlhack gnomeprefix gnomesharp20
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes

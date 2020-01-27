@@ -3,6 +3,7 @@
 
 PORTNAME=	shotwell
 PORTVERSION=	0.30.8
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 
@@ -33,7 +34,7 @@ LIB_DEPENDS=	libgio-2.0.so:devel/glib20 \
 
 USES=		gettext desktop-file-utils gnome meson ninja pkgconfig \
 		python:3.4+,build shebangfix sqlite tar:xz xorg
-USE_GNOME=	cairo dconf gtk30 gnomedocutils
+USE_GNOME=	cairo dconf gtk30
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11

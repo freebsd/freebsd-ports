@@ -1,6 +1,4 @@
-diff --git src/gq-tab-schema.c src/gq-tab-schema.c
-index b0f16e6..29219c0 100644
---- src/gq-tab-schema.c
+--- src/gq-tab-schema.c.orig	2008-01-09 16:35:12 UTC
 +++ src/gq-tab-schema.c
 @@ -1902,7 +1902,6 @@ gq_tab_schema_init(GqTabSchema* self)
  
