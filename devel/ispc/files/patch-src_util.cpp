@@ -1,12 +1,11 @@
---- src/util.cpp.orig	2019-04-20 16:26:13 UTC
+--- src/util.cpp.orig	2020-01-25 02:15:35 UTC
 +++ src/util.cpp
-@@ -43,7 +43,9 @@
- #include <malloc.h> // for alloca()
- #endif
- #else
-+#if !defined(ISPC_IS_FREEBSD)
+@@ -41,6 +41,8 @@
+ #ifdef ISPC_HOST_IS_LINUX
  #include <alloca.h>
-+#endif
  #include <unistd.h>
- #endif
- #include <stdio.h>
++#elif defined(ISPC_HOST_IS_FREEBSD)
++#include <unistd.h>
+ #elif defined(ISPC_HOST_IS_WINDOWS)
+ #include <malloc.h>
+ #include <shlwapi.h>

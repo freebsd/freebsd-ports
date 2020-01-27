@@ -1,9 +1,8 @@
 ISPC devs insist on using dump() functions which LLVM devs consider a debug functionality, and it isn't available in the LLVM packages.
 
---- src/opt.cpp.orig	2019-03-02 06:22:00 UTC
---- src/opt.cpp.orig	2019-04-20 16:07:05 UTC
+--- src/opt.cpp.orig	2020-01-25 02:15:35 UTC
 +++ src/opt.cpp
-@@ -175,7 +175,7 @@ static llvm::Pass *CreatePromoteLocalToP
+@@ -144,7 +144,7 @@ static llvm::Pass *CreateFixBooleanSelectPass();
                                                                         getenv("FUNC"), strlen(getenv("FUNC")))))) {    \
          fprintf(stderr, "Start of " NAME "\n");                                                                        \
          fprintf(stderr, "---------------\n");                                                                          \
@@ -12,7 +11,7 @@ ISPC devs insist on using dump() functions which LLVM devs consider a debug func
          fprintf(stderr, "---------------\n\n");                                                                        \
      } else /* eat semicolon */
  
-@@ -185,7 +185,7 @@ static llvm::Pass *CreatePromoteLocalToP
+@@ -154,7 +154,7 @@ static llvm::Pass *CreateFixBooleanSelectPass();
                                                                         getenv("FUNC"), strlen(getenv("FUNC")))))) {    \
          fprintf(stderr, "End of " NAME " %s\n", modifiedAny ? "** CHANGES **" : "");                                   \
          fprintf(stderr, "---------------\n");                                                                          \
@@ -21,7 +20,7 @@ ISPC devs insist on using dump() functions which LLVM devs consider a debug func
          fprintf(stderr, "---------------\n\n");                                                                        \
      } else /* eat semicolon */
  #else
-@@ -505,7 +505,7 @@ void Optimize(llvm::Module *module, int 
+@@ -442,7 +442,7 @@ void Optimize(llvm::Module *module, int optLevel) {
  #ifndef ISPC_NO_DUMPS
      if (g->debugPrint) {
          printf("*** Code going into optimization ***\n");
@@ -30,7 +29,7 @@ ISPC devs insist on using dump() functions which LLVM devs consider a debug func
      }
  #endif
      DebugPassManager optPM;
-@@ -892,7 +892,7 @@ void Optimize(llvm::Module *module, int 
+@@ -655,7 +655,7 @@ void Optimize(llvm::Module *module, int optLevel) {
  #ifndef ISPC_NO_DUMPS
      if (g->debugPrint) {
          printf("\n*****\nFINAL OUTPUT\n*****\n");
@@ -39,7 +38,7 @@ ISPC devs insist on using dump() functions which LLVM devs consider a debug func
      }
  #endif
  }
-@@ -1944,11 +1944,11 @@ lExtractUniformsFromOffset(llvm::Value *
+@@ -1728,11 +1728,11 @@ lExtractUniformsFromOffset(llvm::Value **basePtr, llvm
                             llvm::Value *offsetScale,
                             llvm::Instruction *insertBefore) {
  #if 1
@@ -54,7 +53,7 @@ ISPC devs insist on using dump() functions which LLVM devs consider a debug func
      printf("-----\n");
  #endif
  
-@@ -4394,7 +4394,7 @@ char DebugPass::ID = 0;
+@@ -4217,7 +4217,7 @@ char DebugPass::ID = 0;
  bool DebugPass::runOnModule(llvm::Module &module) {
      fprintf(stderr, "%s", str_output);
      fflush(stderr);
