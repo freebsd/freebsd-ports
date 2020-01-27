@@ -5745,6 +5745,7 @@
     SUBDIR += rubygem-azure_mgmt_event_hub
     SUBDIR += rubygem-azure_mgmt_features
     SUBDIR += rubygem-azure_mgmt_hanaonazure
+    SUBDIR += rubygem-azure_mgmt_hdinsight
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
