@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jetty
-PORTVERSION=	9.4.20
+PORTVERSION=	9.4.24
 CATEGORIES=	www java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/${PORTVERSION}.${JDVDATE}/
 PKGNAMESUFFIX=	9
@@ -18,7 +18,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 CONFLICTS=	jetty-8.*
 
-JDVDATE=	v20190813
+JDVDATE=	v20191120
 USE_JAVA=	yes
 NO_ARCH=	yes
 USES=		shebangfix
