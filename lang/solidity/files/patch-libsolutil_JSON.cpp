@@ -1,6 +1,6 @@
---- libdevcore/JSON.cpp.orig	2018-05-16 14:30:44 UTC
-+++ libdevcore/JSON.cpp
-@@ -27,10 +27,12 @@
+--- libsolutil/JSON.cpp.orig	2020-01-27 15:36:51 UTC
++++ libsolutil/JSON.cpp
+@@ -31,10 +31,12 @@
  
  using namespace std;
  
@@ -11,5 +11,5 @@
  );
 +*/
  
- namespace dev
+ namespace solidity::util
  {
