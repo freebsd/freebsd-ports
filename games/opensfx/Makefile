@@ -20,6 +20,7 @@ LICENSE_PERMS=	auto-accept
 
 USES=		zip
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/openttd/baseset/opensfx
