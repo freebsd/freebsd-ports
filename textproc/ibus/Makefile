@@ -3,7 +3,7 @@
 
 PORTNAME=	ibus
 PORTVERSION=	1.5.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -18,13 +18,13 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:devel/py-dbus@${PY_FLAVOR} \
 		gtkdocize:textproc/gtk-doc \
 		bash:shells/bash
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:devel/py-dbus@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:devel/py-notify@${PY_FLAVOR} \
 		${LOCALBASE}/share/xml/iso-codes/iso_639.xml:misc/iso-codes \
 		setxkbmap:x11/setxkbmap
 
-USES=		autoreconf compiler cpe gmake gnome libtool localbase pathfix pkgconfig python:2.7 shebangfix
+USES=		autoreconf compiler cpe gmake gnome libtool localbase pathfix pkgconfig python:3.5+ shebangfix
 USE_GNOME=	glib20 intltool librsvg2 pygobject3
 USE_LDCONFIG=	yes
+USE_PYTHON=	py3kplist
 
 SHEBANG_GLOB=	*.sh
 
@@ -35,18 +35,18 @@ INSTALLS_ICONS=	yes
 OPTIONS_SUB=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc	\
-		--with-ucd-dir=${LOCALBASE}/share/unicode/ucd
+		--with-ucd-dir=${LOCALBASE}/share/unicode/ucd \
+		--disable-python2 --disable-python-library
 
-OPTIONS_DEFINE=	NLS GTK2 GTK3 VALA GINTRO PYTHON_LIB DOCS XIM ENGINE EMOJI
+OPTIONS_DEFINE=	NLS GTK2 GTK3 VALA GINTRO DOCS XIM ENGINE EMOJI
 OPTIONS_RADIO=	CONFIG
 OPTIONS_RADIO_CONFIG=	GCONF DCONF
-OPTIONS_DEFAULT=	GTK2 GTK3 VALA GINTRO PYTHON_LIB DCONF XIM ENGINE EMOJI
+OPTIONS_DEFAULT=	GTK2 GTK3 VALA GINTRO DCONF XIM ENGINE EMOJI
 
 GTK2_DESC=	Install GTK2 client
 GTK3_DESC=	Install GTK3 client and panel
 VALA_DESC=	Install vala binding
 GINTRO_DESC=	Install GObject Introspection data
-PYTHON_LIB_DESC=	Install ibus Python libraries
 GCONF_DESC=	Use GConf for configuration
 DCONF_DESC=	Use dconf for configuration
 XIM_DESC=	Install XIM server
@@ -78,9 +78,6 @@ VALA_IMPLIES=		GINTRO
 GINTRO_BUILD_DEPENDS=	gobject-introspection>=0.6.8:devel/gobject-introspection
 GINTRO_RUN_DEPENDS=	gobject-introspection>=0.6.8:devel/gobject-introspection
 GINTRO_CONFIGURE_ENABLE=	introspection
-
-PYTHON_LIB_USE=			GNOME=pygtk2
-PYTHON_LIB_CONFIGURE_ENABLE=	python-library
 
 GCONF_USE=		GNOME=gconf2
 GCONF_CONFIGURE_ENABLE=	gconf
