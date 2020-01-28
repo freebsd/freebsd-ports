@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	solidity
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ethereum/solidity/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp
 USES=		cmake compiler:c++14-lang
 
 OPTIONS_DEFINE=	Z3 CVC4
-OPTIONS_DEFAULT=CVC4
+OPTIONS_DEFAULT=Z3 CVC4
 Z3_DESC=	SMT Checker via Z3
 CVC4_DESC=	SMT Checker via CVC4
 Z3_LIB_DEPENDS=		libz3.so:math/z3
