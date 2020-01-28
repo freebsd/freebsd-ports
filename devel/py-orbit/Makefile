@@ -14,6 +14,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python bindings for ORBit2
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-28
+
 CONFLICTS=	py*-omniorb-[0-9]*
 
 USES=		gmake gnome libtool pathfix pkgconfig python:2.7 tar:bzip2
