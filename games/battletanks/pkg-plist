@@ -1,0 +1,9 @@
+bin/btanks
+bin/bted
+man/man6/btanks.6.gz
+lib/btanks/libbt_objects.so
+lib/libbtanks_engine.so
+lib/libclunk.so
+lib/libmrt.so
+lib/libsdlx.so
+%%DATADIR%%/resources.dat

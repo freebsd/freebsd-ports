@@ -77,6 +77,7 @@
     SUBDIR += bass
     SUBDIR += bastet
     SUBDIR += battalion
+    SUBDIR += battletanks
     SUBDIR += belooted
     SUBDIR += beret
     SUBDIR += billardgl
