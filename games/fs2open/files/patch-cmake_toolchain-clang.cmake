@@ -1,7 +1,7 @@
---- cmake/toolchain-clang.cmake.orig	2017-08-22 16:56:27 UTC
+--- cmake/toolchain-clang.cmake.orig	2020-01-25 16:45:09 UTC
 +++ cmake/toolchain-clang.cmake
-@@ -8,8 +8,8 @@ option(CLANG_ENABLE_LEAK_CHECK "Enable -fsanitize=leak
- option(CLANG_ENABLE_ADDRESS_SANITIZER "Enable -fsanitize=address" OFF)
+@@ -10,8 +10,8 @@ option(CLANG_ENABLE_ADDRESS_SANITIZER "Enable -fsaniti
+ option(CLANG_USE_LIBCXX "Use libc++" OFF)
  
  # These are the default values
 -set(C_BASE_FLAGS "-march=native -pipe")
@@ -11,16 +11,7 @@
  
  # For C and C++, the values can be overwritten independently
  if(DEFINED ENV{CXXFLAGS})
-@@ -80,7 +80,7 @@ if(SUPPORTS_SHIFT_NEGATIVE_VALUE)
- 	set(COMPILER_FLAGS "${COMPILER_FLAGS} -Wno-shift-negative-value")
- endif()
- 
--set(COMPILER_FLAGS_RELEASE "-O2 -Wno-unused-variable")
-+set(COMPILER_FLAGS_RELEASE "-Wno-unused-variable")
- 
- set(COMPILER_FLAGS_DEBUG "-O0 -g -Wshadow")
- 
-@@ -93,9 +93,6 @@ set(CMAKE_C_FLAGS_RELEASE ${COMPILER_FLAGS_RELEASE})
+@@ -95,9 +95,6 @@ set(CMAKE_C_FLAGS_RELEASE ${COMPILER_FLAGS_RELEASE})
  
  set(CMAKE_CXX_FLAGS_DEBUG ${COMPILER_FLAGS_DEBUG})
  set(CMAKE_C_FLAGS_DEBUG ${COMPILER_FLAGS_DEBUG})
@@ -28,5 +19,5 @@
 -
 -set(CMAKE_EXE_LINKER_FLAGS "")
  
- if (SANITIZE_FLAGS)
- 	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${SANITIZE_FLAGS}")
+ if (CLANG_USE_LIBCXX)
+ 	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lc++abi")

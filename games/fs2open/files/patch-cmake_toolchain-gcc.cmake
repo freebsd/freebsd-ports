@@ -1,4 +1,4 @@
---- cmake/toolchain-gcc.cmake.orig	2017-08-22 16:56:27 UTC
+--- cmake/toolchain-gcc.cmake.orig	2020-01-25 16:45:09 UTC
 +++ cmake/toolchain-gcc.cmake
 @@ -10,8 +10,8 @@ option(GCC_ENABLE_ADDRESS_SANITIZER "Enable -fsanitize
  option(GCC_ENABLE_SANITIZE_UNDEFINED "Enable -fsanitize=undefined" OFF)
@@ -11,16 +11,7 @@
  
  # For C and C++, the values can be overwritten independently
  if(DEFINED ENV{CFLAGS})
-@@ -87,7 +87,7 @@ set(COMPILER_FLAGS "${COMPILER_FLAGS} -Wno-deprecated 
- 
- set(COMPILER_FLAGS "${COMPILER_FLAGS} -Wno-unused-parameter")
- 
--set(COMPILER_FLAGS_RELEASE "-O2 -Wno-unused-variable -Wno-unused-but-set-variable -Wno-array-bounds -Wno-empty-body -Wno-clobbered")
-+set(COMPILER_FLAGS_RELEASE "-Wno-unused-variable -Wno-unused-but-set-variable -Wno-array-bounds -Wno-empty-body -Wno-clobbered")
- 
- set(COMPILER_FLAGS_DEBUG "-O0 -g -Wshadow")
- 
-@@ -100,8 +100,6 @@ set(CMAKE_C_FLAGS_RELEASE ${COMPILER_FLAGS_RELEASE})
+@@ -107,8 +107,6 @@ set(CMAKE_C_FLAGS_RELEASE ${COMPILER_FLAGS_RELEASE})
  
  set(CMAKE_CXX_FLAGS_DEBUG ${COMPILER_FLAGS_DEBUG})
  set(CMAKE_C_FLAGS_DEBUG ${COMPILER_FLAGS_DEBUG})
