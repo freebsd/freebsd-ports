@@ -15,6 +15,9 @@ COMMENT=	Old-school, puzzle game similar to Solomon's Key
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 RUN_DEPENDS=	${PYGAME}
 
 USES=		python:2.7 shebangfix

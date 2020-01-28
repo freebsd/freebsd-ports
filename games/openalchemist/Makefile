@@ -15,6 +15,9 @@ LICENSE=	GPLv2+ CC-BY-SA-2.0
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libclanCore.so:devel/clanlib1 \
 		libpng.so:graphics/png

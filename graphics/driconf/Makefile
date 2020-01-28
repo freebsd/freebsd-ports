@@ -11,6 +11,9 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.orig.tar.gz
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Configuration program for DRI drivers
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2 \
 		xdriinfo:x11/xdriinfo
 

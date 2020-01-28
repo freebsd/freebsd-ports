@@ -10,6 +10,9 @@ COMMENT=	Bittorrent client using Python, GTK2, and libtorrent-rasterbar
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus@${PY_FLAVOR} \
 		${PYGAME} \
 		${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:devel/py-notify@${PY_FLAVOR} \

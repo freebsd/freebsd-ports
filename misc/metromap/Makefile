@@ -14,6 +14,9 @@ COMMENT=	Simple application for finding paths in different subways maps
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 USES=		gettext gmake gnome python:2.7 shebangfix tar:bzip2
 SHEBANG_FILES=	metromap.py modules/*.py
 USE_GNOME=	pygtk2

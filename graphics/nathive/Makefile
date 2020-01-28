@@ -13,6 +13,9 @@ COMMENT=	Lightweight image editor
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 USES=		gmake gnome python:2.7 shebangfix tar:tgz
 SHEBANG_GLOB=	*.py *.cy
 USE_GNOME=	pygtk2
