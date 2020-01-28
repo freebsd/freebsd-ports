@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	entr
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://entrproject.org/code/
 
