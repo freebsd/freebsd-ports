@@ -13,6 +13,9 @@ COMMENT=	HotSSH is an interface to Secure Shell, for GNOME and OpenSSH
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-28
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:devel/dbus-glib \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \

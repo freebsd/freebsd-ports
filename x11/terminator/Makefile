@@ -12,6 +12,9 @@ COMMENT=	Multiple GNOME terminals in one window
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-28
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0:devel/py-notify@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/keybinder/_keybinder.so:x11/keybinder \
 		${PYTHON_PKGNAMEPREFIX}vte>=0:x11-toolkits/py-vte@${PY_FLAVOR} \
