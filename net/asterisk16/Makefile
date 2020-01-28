@@ -2,6 +2,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	16.7.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -17,7 +18,7 @@ COMMENT=	Open Source PBX and telephony toolkit
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+LIB_DEPENDS=	libuuid.so:misc/libuuid \
 		libjansson.so:devel/jansson
 
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386 powerpc powerpc64 sparc64
@@ -176,7 +177,7 @@ RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
 
 SNMP_CONFIGURE_WITH=	netsnmp
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp \
-			libpkg.so:ports-mgmt/pkg
+			libpkg.so:${PKG_ORIGIN}
 
 SPANDSP_CONFIGURE_WITH=	spandsp
 SPANDSP_LIB_DEPENDS=	libspandsp.so:comms/spandsp \

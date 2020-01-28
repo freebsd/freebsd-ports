@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	flex:textproc/flex
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp \
-		libpkg.so:ports-mgmt/pkg
+		libpkg.so:${PKG_ORIGIN}
 
 USES=		autoreconf bison libtool ssl
 USE_GITHUB=	yes
