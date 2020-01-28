@@ -3,9 +3,9 @@ loops in Ninja. I don't see much value in the PCH here, so
 just zero them out. (Neither do I understand how ninja ends
 up with the dependency loop; make handles this without complaint)
 
---- CMakeLists.txt.orig	2018-12-24 13:27:49 UTC
+--- CMakeLists.txt.orig	2020-01-25 12:18:16 UTC
 +++ CMakeLists.txt
-@@ -727,8 +727,8 @@ precompiled_header(QT_INCLUDES all ${BUILD_PCH})
+@@ -750,8 +750,8 @@ precompiled_header(QT_INCLUDES all ${BUILD_PCH})
  # MSVC does not require these targets, as all.h is not copied and the
  #   PCH generation is done per-project
  if (NOT MSVC)
