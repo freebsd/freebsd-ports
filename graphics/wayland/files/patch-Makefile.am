@@ -1,4 +1,4 @@
---- Makefile.am.orig	2018-04-10 14:53:32 UTC
+--- Makefile.am.orig	2019-03-21 00:55:25 UTC
 +++ Makefile.am
 @@ -71,7 +71,7 @@ nodist_include_HEADERS =			\
  	protocol/wayland-client-protocol.h
@@ -18,12 +18,12 @@
  libwayland_client_la_LDFLAGS = -version-info 3:0:3
  libwayland_client_la_SOURCES =			\
  	src/wayland-client.c
-@@ -223,7 +223,7 @@ libtest_runner_la_LIBADD =			\
- 	libwayland-util.la			\
+@@ -227,7 +227,7 @@ libtest_runner_la_LIBADD =			\
  	libwayland-client.la			\
  	libwayland-server.la			\
+ 	libtest-helpers.la			\
 -	-lrt -ldl $(FFI_LIBS)
 +	-lrt $(DL_LIBS) $(FFI_LIBS) $(EPOLLSHIM_LIBS)
  
- 
  array_test_SOURCES = tests/array-test.c
+ array_test_LDADD = libtest-runner.la
