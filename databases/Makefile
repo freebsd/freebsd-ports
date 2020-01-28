@@ -77,6 +77,7 @@
     SUBDIR += firebird25-server
     SUBDIR += fortytwo-bdb
     SUBDIR += foundationdb
+    SUBDIR += foundationdb-devel
     SUBDIR += fpc-dblib
     SUBDIR += fpc-fpindexer
     SUBDIR += fpc-gdbm
