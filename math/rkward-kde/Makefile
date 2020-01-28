@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rkward
-DISTVERSION=	0.7.0b
-PORTREVISION=	6
+PORTVERSION=	0.7.1
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION:C/b//}/src
 PKGNAMESUFFIX=	-kde
@@ -14,6 +13,7 @@ COMMENT=	IDE/GUI for the R-project
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libR.so:math/R
+TEST_DEPENDS=	${LR_MOD_DIR}/FAdist/INDEX:science/R-cran-FAdist
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext fortran \
 		kde:5 php:cli qt:5 shared-mime-info xorg
@@ -27,42 +27,38 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash	
 
 CFLAGS+=	-I${LOCALBASE}/include
 
+LR_MOD_DIR=	${LOCALBASE}/lib/R/library
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
 
-OPTIONS_DEFINE=	RECDEP DOCS NLS
+OPTIONS_DEFINE=	DOCS NLS INSTTEST RECDEP
+INSTTEST_DESC=	Install rkwardtests R package
 RECDEP_DESC=	Recommended runtime dependencies
 OPTIONS_DEFAULT=RECDEP
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-NLS=		""
-.else
-NLS=		"@comment "
-.endif
-PLIST_SUB+=	NLS=${NLS}
-
 .if ${PORT_OPTIONS:MRECDEP}
-LR_MOD_DIR=	${LOCALBASE}/lib/R/library
 RUN_DEPENDS+=	${LR_MOD_DIR}/R2HTML/INDEX:textproc/R-cran-R2HTML	\
 		${LR_MOD_DIR}/XML/INDEX:textproc/R-cran-XML		\
 		${LR_MOD_DIR}/gdata/INDEX:devel/R-cran-gdata		\
 		${LR_MOD_DIR}/mvtnorm/INDEX:math/R-cran-mvtnorm		\
+		${LR_MOD_DIR}/nortest/INDEX:math/R-cran-nortest		\
 		${LR_MOD_DIR}/outliers/INDEX:math/R-cran-outliers	\
+		${LR_MOD_DIR}/qcc/INDEX:graphics/R-cran-qcc		\
 		${LR_MOD_DIR}/tseries/INDEX:finance/R-cran-tseries	\
 		${LR_MOD_DIR}/car/INDEX:math/R-cran-car
 .endif
 
+.if ${PORT_OPTIONS:MINSTTEST}
+R_LIB_DIR=	lib/R/library
+R_COMMAND=	${LOCALBASE}/bin/R
+.endif
+
 pre-configure:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'	\
-		${WRKSRC}/rkward/rbackend/rkfrontendtransmitter.cpp
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(doc)|#ADD_SUBDIRECTORY(doc)|'	\
 		${WRKSRC}/CMakeLists.txt
-.else
-#Fix build with kdelibs>=4.5.0
-	${REINPLACE_CMD} -e 's,V4.1-Based Variant V1.0,V4.2-Based Variant V1.1,g' \
-		${WRKSRC}/doc/rkward/index.docbook
 .endif
 .if ! ${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(po)|#ADD_SUBDIRECTORY(po)|'	\
@@ -74,12 +70,17 @@ pre-configure:
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/share/apps/katepart/syntax/r.xml # Conflicts with kate
+.if ${PORT_OPTIONS:MINSTTEST}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${R_LIB_DIR}
+	(cd ${WRKSRC}/rkward/rbackend/rpackages/rkwardtests &&	\
+	${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE &&	\
+	${R_COMMAND} CMD INSTALL -l ${STAGEDIR}${PREFIX}/${R_LIB_DIR} . )
+.endif
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
-	@${ECHO_MSG} "To pass the tests, some CRAN packages like R2HTML"
-	@${ECHO_MSG} "must be installed."
-	(cd ${WRKSRC}/tests && KDE_LANG=en_US make plugintests)
+	(cd ${WRKSRC}/tests &&	\
+	KDE_LANG=en_US ${PREFIX}/bin/${PORTNAME}  --evaluate source\(\"all_tests.R\"\) )
 .endif
 
 .include <bsd.port.mk>
