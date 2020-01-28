@@ -3,10 +3,10 @@
 
 PORTNAME=	foundationdb
 PORTVERSION=	6.1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Distributed, transactional key-value store
 
 LICENSE=	APACHE20
