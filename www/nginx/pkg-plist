@@ -2,6 +2,7 @@
 @sample %%ETCDIR%%/fastcgi_params-dist %%ETCDIR%%/fastcgi_params
 %%ETCDIR%%/koi-utf
 %%ETCDIR%%/koi-win
+%%LINK%%include/ngx_link_func_module.h
 %%MODSECURITY%%%%ETCDIR%%/unicode.mapping
 %%NAXSI%%%%ETCDIR%%/naxsi_core.rules
 @sample %%ETCDIR%%/scgi_params-dist %%ETCDIR%%/scgi_params

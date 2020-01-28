@@ -3,7 +3,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.16.1
-PORTREVISION?=	9
+PORTREVISION?=	10
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -351,6 +351,9 @@ do-install-DSO-on:
 do-install-FASTDFS-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fdfs
 	${INSTALL_DATA} ${WRKSRC_fastdfs}/src/mod_fastdfs.conf ${STAGEDIR}${PREFIX}/etc/fdfs/mod_fastdfs.conf.sample
+
+do-install-LINK-on:
+	${INSTALL_DATA} ${WRKSRC_link}/src/ngx_link_func_module.h ${STAGEDIR}${PREFIX}/include
 
 do-install-MODSECURITY-on:
 	${INSTALL_DATA} \

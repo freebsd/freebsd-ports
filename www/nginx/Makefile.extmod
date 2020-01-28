@@ -22,7 +22,7 @@ CACHE_PURGE_CONFIGURE_ON=	--add-module=${WRKDIR}/ngx_cache_purge-2.3
 CLOJURE_CATEGORIES+=	java
 CLOJURE_USE=		JAVA=yes JAVA_OS=native JAVA_VERSION=1.8 \
 			JAVA_VENDOR=openjdk JAVA_BUILD=yes JAVA_RUN=yes
-CLOJURE_GH_TUPLE=	nginx-clojure:nginx-clojure:v0.4.5:clojure
+CLOJURE_GH_TUPLE=	nginx-clojure:nginx-clojure:v0.5.1:clojure
 CLOJURE_CONFIGURE_ENV=	"JNI_INCS=-I${LOCALBASE}/openjdk8/include -I${LOCALBASE}/openjdk8/include/freebsd"
 CLOJURE_VARS=		DSO_EXTMODS+=clojure CLOJURE_SUBDIR=/src/c
 
@@ -45,7 +45,7 @@ DYNAMIC_UPSTREAM_VARS=		DSO_EXTMODS+=dynamic_upstream
 DEVEL_KIT_GH_TUPLE=		simpl:ngx_devel_kit:v0.3.1:devel_kit
 DEVEL_KIT_VARS=			FIRST_DSO_EXTMODS+=devel_kit
 
-ECHO_GH_TUPLE=		openresty:echo-nginx-module:32859fc:echo
+ECHO_GH_TUPLE=		openresty:echo-nginx-module:996412d:echo
 ECHO_VARS=		DSO_EXTMODS+=echo
 
 ENCRYPTSESSION_IMPLIES=		DEVEL_KIT
@@ -210,6 +210,8 @@ LET_CONFIGURE_ON=	--add-module=${WRKSRC_let}
 
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.1:link
 LINK_CONFIGURE_ON=	--add-module=${WRKSRC_link}
+LINK_EXTRA_PATCHES=     ${PATCHDIR}/extra-patch-nginx-link-function-config \
+				${PATCHDIR}/extra-patch-ngx_link_func_module.c
 
 LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
@@ -244,7 +246,7 @@ NAXSI_NGINX_VER=	0.56
 NAXSI_GH_TUPLE=		nbs-system:naxsi:${NAXSI_NGINX_VER}:naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 
-NJS_GH_TUPLE=		nginx:njs:b2f0f5d:njs
+NJS_GH_TUPLE=		nginx:njs:19ff812:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
 PASSENGER_NGINX_VER=	6.0.4
