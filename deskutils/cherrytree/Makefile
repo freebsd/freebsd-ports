@@ -10,6 +10,9 @@ COMMENT=	Hierarchical note taking application
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-02-28
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtksourceview>0:x11-toolkits/py-gtksourceview
 
 USES=		desktop-file-utils gettext-tools python:2.7 shared-mime-info shebangfix tar:xz
