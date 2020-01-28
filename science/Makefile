@@ -10,6 +10,7 @@
     SUBDIR += R-cran-AMORE
     SUBDIR += R-cran-DCluster
     SUBDIR += R-cran-Epi
+    SUBDIR += R-cran-FAdist
     SUBDIR += R-cran-bayesm
     SUBDIR += R-cran-cmprsk
     SUBDIR += R-cran-e1071
