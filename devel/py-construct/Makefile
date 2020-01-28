@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	construct
-PORTVERSION=	2.9.45
+PORTVERSION=	2.10.55
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	antoine@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Python module for parsing and building of data structures
 
 LICENSE=	MIT
