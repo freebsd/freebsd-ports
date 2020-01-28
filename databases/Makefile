@@ -71,6 +71,7 @@
     SUBDIR += erlang-couchbeam
     SUBDIR += erlang-epgsql
     SUBDIR += erlang-eredis
+    SUBDIR += erlfdb
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
     SUBDIR += firebird25-client
