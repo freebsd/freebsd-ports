@@ -11,6 +11,9 @@ DISTNAME=	PyBookReader-${PORTVERSION}
 MAINTAINER=	ufo@februality.com
 COMMENT=	Program for reading e-books
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${PY_FLAVOR}
 
 USES=		gnome python:2.7

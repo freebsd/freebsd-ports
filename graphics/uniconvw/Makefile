@@ -16,6 +16,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/src/GNU_GPL_v2
 LICENSE_FILE_LGPL20+ =	${WRKSRC}/src/GNU_LGPL_v2
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:graphics/sk1libs \
 		${PYTHON_SITELIBDIR}/uniconvertor/__init__.py:graphics/uniconvertor \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:x11-toolkits/py-gtk2@${PY_FLAVOR}

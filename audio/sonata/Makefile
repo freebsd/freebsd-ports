@@ -12,6 +12,9 @@ COMMENT=	Elegant music player for MPD
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:audio/py-mpd@${PY_FLAVOR}
 
 USES=		gettext gnome pkgconfig python:2.7

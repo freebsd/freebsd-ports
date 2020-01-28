@@ -10,6 +10,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	File manager extensions for the Cinnamon desktop
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 BUILD_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
 		gtkdocize:textproc/gtk-doc \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils@${PY_FLAVOR} \

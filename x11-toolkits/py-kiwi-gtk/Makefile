@@ -12,6 +12,9 @@ COMMENT=	Framework and a set of enhanced widgets based on PyGTK
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 NO_ARCH=	yes

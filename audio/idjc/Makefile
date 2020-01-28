@@ -12,6 +12,9 @@ COMMENT=	Shoutcast/Icecast DJ Console
 
 LICENSE=	LGPL20
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libjack.so:audio/jack \

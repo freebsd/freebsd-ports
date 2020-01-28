@@ -13,6 +13,9 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GooCanvas python bindings
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 LIB_DEPENDS=	libgoocanvas.so:graphics/goocanvas
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/goocanvasmodule.so \

@@ -10,6 +10,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Client stacker popup widget for GTK+ toolkit
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR}
 LIB_DEPENDS=	libcroco-0.6.so:textproc/libcroco
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR}

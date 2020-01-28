@@ -13,6 +13,9 @@ COMMENT=	Mathematical function graph plotter
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 USES=		gnome python
 USE_GITHUB=	yes
 GH_ACCOUNT=	thomasfuhringer

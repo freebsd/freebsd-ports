@@ -12,6 +12,9 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	arundel@FreeBSD.org
 COMMENT=	PyRoom is a clone of WriteRoom and features "distraction-free writing"
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-01
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR}
 
 USES=		gettext gnome python:2.7
