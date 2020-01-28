@@ -2,45 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-anthy
-PORTVERSION=	1.2.7
-PORTREVISION=	7
+PORTVERSION=	1.5.11
 CATEGORIES=	japanese
 MASTER_SITES=	https://github.com/ibus/ibus-anthy/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	ja-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Anthy engine for IBus
 
-DEPRECATED=	Unmaintained, uses EOLed python27
-EXPIRATION_DATE=	2020-01-27
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libanthy.so:japanese/anthy \
 		libibus-1.0.so:textproc/ibus
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:devel/py-notify
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake gnome libtool pkgconfig python:2.7
-USE_GNOME=	intltool pygtk2
-BINARY_ALIAS=	swig=swig3.0
-
-LOCALBASE_REPLACE_FILES= \
-		engine/engine.py \
-		setup/anthyprefs.py \
-		setup/main.py
-
-INCLUDEDIR_REPLACE_FILES= \
-		engine/Makefile.am \
-		engine/Makefile.in
-
-post-patch:
-	cd ${WRKSRC} && \
-                ${REINPLACE_CMD} "s,@@LOCALBASE@@,${LOCALBASE},g" \
-                ${LOCALBASE_REPLACE_FILES} && \
-                ${REINPLACE_CMD} "s,@@INCLUDEDIR@@,${INCLUDEDIR},g" \
-                ${INCLUDEDIR_REPLACE_FILES}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_anthy.so
+INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS+=--with-layout=default
+USES=		gettext gmake gnome libtool pkgconfig python:3.6+
+USE_GNOME=	pygobject3
+INSTALLS_ICONS=	yes
+GLIB_SCHEMAS=	org.freedesktop.ibus.engine.anthy.gschema.xml
 
 .include <bsd.port.mk>
