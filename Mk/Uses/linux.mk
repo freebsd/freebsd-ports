@@ -61,6 +61,7 @@ _linux_${linux_ARGS}_cyrus-sasl2=	linux-${linux_ARGS}-cyrus-sasl-lib>0:security/
 _linux_${linux_ARGS}_dbusglib=		linux-${linux_ARGS}-dbus-glib>0:devel/linux-${linux_ARGS}-dbus-glib
 _linux_${linux_ARGS}_dbuslibs=		linux-${linux_ARGS}-dbus-libs>0:devel/linux-${linux_ARGS}-dbus-libs
 _linux_${linux_ARGS}_devtools=		linux-${linux_ARGS}-devtools>0:devel/linux-${linux_ARGS}-devtools
+_linux_c7_dosfstools=			linux-c7-dosfstools>0:sysutils/linux-c7-dosfstools
 _linux_${linux_ARGS}_dri=		linux-${linux_ARGS}-dri>0:graphics/linux-${linux_ARGS}-dri
 _linux_${linux_ARGS}_elfutils-libelf=	linux-${linux_ARGS}-elfutils-libelf>0:devel/linux-${linux_ARGS}-elfutils-libelf
 _linux_c7_elfutils-libs=		linux-c7-elfutils-libs>0:devel/linux-c7-elfutils-libs
