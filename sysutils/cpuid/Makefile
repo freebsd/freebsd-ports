@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cpuid
-DISTVERSION=	20200122
+DISTVERSION=	20200127
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.etallen.com/cpuid/
