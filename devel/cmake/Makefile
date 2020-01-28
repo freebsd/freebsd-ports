@@ -40,7 +40,7 @@ MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 MANPAGES_CONFIGURE_ON=	--sphinx-man
 
 CPACK_DESC=		Enable FreeBSD generator in CPack (experimental)
-CPACK_LIB_DEPENDS=	libpkg.so:ports-mgmt/pkg
+CPACK_LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN}
 CPACK_USES_OFF=		libarchive
 # When CPACK is on, uses base libarchive and won't pass stage-qa
 
