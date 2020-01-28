@@ -1,0 +1,10 @@
+--- sdlx/SConscript.orig	2007-11-16 08:26:16.000000000 +0100
++++ sdlx/SConscript	2008-04-10 23:54:03.000000000 +0200
+@@ -14,7 +14,6 @@
+ 	#c_map_env.Append(CXXFLAGS=['-fforce-addr', '-fprefetch-loop-arrays'])
+ 	c_map = c_map_env.SharedObject('c_map.cpp')
+ 	#libs.append('GL')
+-	libs.append('rt')
+ 	libs.append('X11')
+ 	env.Append(LINKFLAGS=' -Wl,-rpath-link build/' + env['mode'] + '/mrt')
+ else: 
