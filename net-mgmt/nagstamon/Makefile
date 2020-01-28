@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagstamon
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	https://nagstamon.ifw-dresden.de/files/stable/ \
 		LOCAL/ehaupt
@@ -14,7 +14,8 @@ COMMENT=	Nagios status monitor for your desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>=2.0:sysutils/py-psutil@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.2.1:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
