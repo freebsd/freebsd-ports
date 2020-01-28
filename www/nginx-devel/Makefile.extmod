@@ -241,6 +241,9 @@ NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NJS_GH_TUPLE=		nginx:njs:0.3.8:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
+OPENTRACING_GH_TUPLE=	opentracing-contrib:nginx-opentracing:v0.9.0:opentracing
+OPENTRACING_VARS=	DSO_EXTMODS+=opentracing OPENTRACING_SUBDIR=/opentracing
+
 PASSENGER_NGINX_VER=	6.0.4
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USE=		ruby=yes
