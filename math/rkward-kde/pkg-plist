@@ -1,47 +1,26 @@
 bin/rkward
-lib/R/library/rkward/CITATION
-lib/R/library/rkward/DESCRIPTION
-lib/R/library/rkward/INDEX
-lib/R/library/rkward/Meta/Rd.rds
-lib/R/library/rkward/Meta/features.rds
-lib/R/library/rkward/Meta/hsearch.rds
-lib/R/library/rkward/Meta/links.rds
-lib/R/library/rkward/Meta/nsInfo.rds
-lib/R/library/rkward/Meta/package.rds
-lib/R/library/rkward/NAMESPACE
-lib/R/library/rkward/R/rkward
-lib/R/library/rkward/R/rkward.rdb
-lib/R/library/rkward/R/rkward.rdx
-lib/R/library/rkward/help/AnIndex
-lib/R/library/rkward/help/aliases.rds
-lib/R/library/rkward/help/paths.rds
-lib/R/library/rkward/help/rkward.rdb
-lib/R/library/rkward/help/rkward.rdx
-lib/R/library/rkward/html/00Index.html
-lib/R/library/rkward/html/R.css
-lib/R/library/rkwardtests/CITATION
-lib/R/library/rkwardtests/DESCRIPTION
-lib/R/library/rkwardtests/INDEX
-lib/R/library/rkwardtests/Meta/Rd.rds
-lib/R/library/rkwardtests/Meta/features.rds
-lib/R/library/rkwardtests/Meta/hsearch.rds
-lib/R/library/rkwardtests/Meta/links.rds
-lib/R/library/rkwardtests/Meta/nsInfo.rds
-lib/R/library/rkwardtests/Meta/package.rds
-lib/R/library/rkwardtests/NAMESPACE
-lib/R/library/rkwardtests/R/rkwardtests
-lib/R/library/rkwardtests/R/rkwardtests.rdb
-lib/R/library/rkwardtests/R/rkwardtests.rdx
-lib/R/library/rkwardtests/help/AnIndex
-lib/R/library/rkwardtests/help/aliases.rds
-lib/R/library/rkwardtests/help/paths.rds
-lib/R/library/rkwardtests/help/rkwardtests.rdb
-lib/R/library/rkwardtests/help/rkwardtests.rdx
-lib/R/library/rkwardtests/html/00Index.html
-lib/R/library/rkwardtests/html/R.css
 lib/libexec/rkward.rbackend
+%%INSTTEST%%lib/R/library/rkwardtests/CITATION
+%%INSTTEST%%lib/R/library/rkwardtests/DESCRIPTION
+%%INSTTEST%%lib/R/library/rkwardtests/help/aliases.rds
+%%INSTTEST%%lib/R/library/rkwardtests/help/AnIndex
+%%INSTTEST%%lib/R/library/rkwardtests/help/paths.rds
+%%INSTTEST%%lib/R/library/rkwardtests/help/rkwardtests.rdb
+%%INSTTEST%%lib/R/library/rkwardtests/help/rkwardtests.rdx
+%%INSTTEST%%lib/R/library/rkwardtests/html/00Index.html
+%%INSTTEST%%lib/R/library/rkwardtests/html/R.css
+%%INSTTEST%%lib/R/library/rkwardtests/INDEX
+%%INSTTEST%%lib/R/library/rkwardtests/Meta/features.rds
+%%INSTTEST%%lib/R/library/rkwardtests/Meta/hsearch.rds
+%%INSTTEST%%lib/R/library/rkwardtests/Meta/links.rds
+%%INSTTEST%%lib/R/library/rkwardtests/Meta/nsInfo.rds
+%%INSTTEST%%lib/R/library/rkwardtests/Meta/package.rds
+%%INSTTEST%%lib/R/library/rkwardtests/Meta/Rd.rds
+%%INSTTEST%%lib/R/library/rkwardtests/NAMESPACE
+%%INSTTEST%%lib/R/library/rkwardtests/R/rkwardtests
+%%INSTTEST%%lib/R/library/rkwardtests/R/rkwardtests.rdb
+%%INSTTEST%%lib/R/library/rkwardtests/R/rkwardtests.rdx
 man/man1/rkward.1.gz
-share/applications/org.kde.rkward-open.desktop
 share/applications/org.kde.rkward.desktop
 %%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
 %%PORTDOCS%%%%DOCSDIR%%/index.docbook
@@ -57,23 +36,13 @@ share/icons/hicolor/48x48/apps/rkward.png
 share/icons/hicolor/64x64/apps/rkward.png
 share/icons/hicolor/scalable/apps/rkward.svgz
 share/kservices5/rkward.protocol
-share/kxmlgui5/rkward/detachedwindowcontainer.rc
-share/kxmlgui5/rkward/rkcatchedx11windowpart.rc
-share/kxmlgui5/rkward/rkcommandeditorwindowpart.rc
-share/kxmlgui5/rkward/rkcommandlogpart.rc
-share/kxmlgui5/rkward/rkconsolepart.rc
-share/kxmlgui5/rkward/rkdummypart.rc
-share/kxmlgui5/rkward/rkeditordataframepart.rc
-share/kxmlgui5/rkward/rkhelpwindow.rc
-share/kxmlgui5/rkward/rkoutputwindow.rc
-share/kxmlgui5/rkward/rkstandardactions.rc
-share/kxmlgui5/rkward/rktoplevelwindowgui.rc
-share/kxmlgui5/rkward/rkwardui.rc
 %%NLS%%share/locale/ca/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/de/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/es/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/it/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/rkward.mo
@@ -82,6 +51,7 @@ share/kxmlgui5/rkward/rkwardui.rc
 %%NLS%%share/locale/tr/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/x-test/LC_MESSAGES/rkward.mo
+share/metainfo/org.kde.rkward.appdata.xml
 share/mime/packages/vnd.rkward.r.xml
 share/org.kde.syntax-highlighting/syntax/r.xml
 share/org.kde.syntax-highlighting/syntax/rkward.xml
@@ -108,6 +78,9 @@ share/org.kde.syntax-highlighting/syntax/rkward.xml
 %%DATADIR%%/00saveload/import/source.js
 %%DATADIR%%/00saveload/import/source.rkh
 %%DATADIR%%/00saveload/import/source.xml
+%%DATADIR%%/00saveload/save/ExportRMarkdown.js
+%%DATADIR%%/00saveload/save/ExportRMarkdown.rkh
+%%DATADIR%%/00saveload/save/ExportRMarkdown.xml
 %%DATADIR%%/00saveload/save/save.js
 %%DATADIR%%/00saveload/save/save.rkh
 %%DATADIR%%/00saveload/save/save.xml
@@ -575,7 +548,33 @@ share/org.kde.syntax-highlighting/syntax/rkward.xml
 %%DATADIR%%/plots/stripchart_plot.js
 %%DATADIR%%/plots/stripchart_plot.xml
 %%DATADIR%%/pluginmap_meta.inc
+%%DATADIR%%/po/ca/LC_MESSAGES/rkward__analysis.mo
+%%DATADIR%%/po/ca/LC_MESSAGES/rkward__data.mo
+%%DATADIR%%/po/ca/LC_MESSAGES/rkward__distributions.mo
+%%DATADIR%%/po/ca/LC_MESSAGES/rkward__embedded.mo
+%%DATADIR%%/po/ca/LC_MESSAGES/rkward__graphics_device.mo
 %%DATADIR%%/po/ca/LC_MESSAGES/rkward__import_export.mo
+%%DATADIR%%/po/ca/LC_MESSAGES/rkward__item_response_theory.mo
+%%DATADIR%%/po/ca/LC_MESSAGES/rkward__pages.mo
+%%DATADIR%%/po/ca/LC_MESSAGES/rkward__plots.mo
+%%DATADIR%%/po/ca@valencia/LC_MESSAGES/rkward__analysis.mo
+%%DATADIR%%/po/ca@valencia/LC_MESSAGES/rkward__data.mo
+%%DATADIR%%/po/ca@valencia/LC_MESSAGES/rkward__distributions.mo
+%%DATADIR%%/po/ca@valencia/LC_MESSAGES/rkward__embedded.mo
+%%DATADIR%%/po/ca@valencia/LC_MESSAGES/rkward__graphics_device.mo
+%%DATADIR%%/po/ca@valencia/LC_MESSAGES/rkward__import_export.mo
+%%DATADIR%%/po/ca@valencia/LC_MESSAGES/rkward__item_response_theory.mo
+%%DATADIR%%/po/ca@valencia/LC_MESSAGES/rkward__pages.mo
+%%DATADIR%%/po/ca@valencia/LC_MESSAGES/rkward__plots.mo
+%%DATADIR%%/po/en_GB/LC_MESSAGES/rkward__analysis.mo
+%%DATADIR%%/po/en_GB/LC_MESSAGES/rkward__data.mo
+%%DATADIR%%/po/en_GB/LC_MESSAGES/rkward__distributions.mo
+%%DATADIR%%/po/en_GB/LC_MESSAGES/rkward__embedded.mo
+%%DATADIR%%/po/en_GB/LC_MESSAGES/rkward__graphics_device.mo
+%%DATADIR%%/po/en_GB/LC_MESSAGES/rkward__import_export.mo
+%%DATADIR%%/po/en_GB/LC_MESSAGES/rkward__item_response_theory.mo
+%%DATADIR%%/po/en_GB/LC_MESSAGES/rkward__pages.mo
+%%DATADIR%%/po/en_GB/LC_MESSAGES/rkward__plots.mo
 %%DATADIR%%/po/es/LC_MESSAGES/rkward__analysis.mo
 %%DATADIR%%/po/es/LC_MESSAGES/rkward__data.mo
 %%DATADIR%%/po/es/LC_MESSAGES/rkward__distributions.mo
@@ -585,8 +584,13 @@ share/org.kde.syntax-highlighting/syntax/rkward.xml
 %%DATADIR%%/po/es/LC_MESSAGES/rkward__item_response_theory.mo
 %%DATADIR%%/po/es/LC_MESSAGES/rkward__pages.mo
 %%DATADIR%%/po/es/LC_MESSAGES/rkward__plots.mo
+%%DATADIR%%/po/gl/LC_MESSAGES/rkward__analysis.mo
 %%DATADIR%%/po/gl/LC_MESSAGES/rkward__data.mo
+%%DATADIR%%/po/gl/LC_MESSAGES/rkward__distributions.mo
+%%DATADIR%%/po/gl/LC_MESSAGES/rkward__embedded.mo
 %%DATADIR%%/po/gl/LC_MESSAGES/rkward__graphics_device.mo
+%%DATADIR%%/po/gl/LC_MESSAGES/rkward__import_export.mo
+%%DATADIR%%/po/gl/LC_MESSAGES/rkward__item_response_theory.mo
 %%DATADIR%%/po/gl/LC_MESSAGES/rkward__pages.mo
 %%DATADIR%%/po/gl/LC_MESSAGES/rkward__plots.mo
 %%DATADIR%%/po/nl/LC_MESSAGES/rkward__analysis.mo
@@ -653,9 +657,13 @@ share/org.kde.syntax-highlighting/syntax/rkward.xml
 %%DATADIR%%/po/x-test/LC_MESSAGES/rkward__pages.mo
 %%DATADIR%%/po/x-test/LC_MESSAGES/rkward__plots.mo
 %%DATADIR%%/resource.ver
+%%DATADIR%%/rkwarddev_scripts/README_how_to_use_rkwarddev_scripts.md
 %%DATADIR%%/rkwarddev_scripts/rkwarddev_power_plugin_script.R
+%%DATADIR%%/rkwarddev_scripts/rkwarddev_rk.RMarkdown_plugin_script.R
 %%DATADIR%%/rkwarddev_scripts/subset_dataframe.R
 %%DATADIR%%/rkwarddev_scripts/write_csv.R
+%%DATADIR%%/rpackages/rkward.tgz
+%%DATADIR%%/rpackages/rkwardtests.tgz
 %%DATADIR%%/simple_anova/code.js
 %%DATADIR%%/simple_anova/description.xml
 %%DATADIR%%/testing/matrix1.js
@@ -683,15 +691,3 @@ share/org.kde.syntax-highlighting/syntax/rkward.xml
 %%DATADIR%%/x11device/grid.js
 %%DATADIR%%/x11device/grid.rkh
 %%DATADIR%%/x11device/grid.xml
-%%NLS%%@dir share/locale/ast/LC_MESSAGES
-%%NLS%%@dir %%DATADIR%%/po/ast/LC_MESSAGES
-%%NLS%%@dir %%DATADIR%%/po/bs/LC_MESSAGES
-%%NLS%%@dir %%DATADIR%%/po/ca@valencia/LC_MESSAGES
-%%NLS%%@dir %%DATADIR%%/po/cs/LC_MESSAGES
-%%NLS%%@dir %%DATADIR%%/po/de/LC_MESSAGES
-%%NLS%%@dir %%DATADIR%%/po/fi/LC_MESSAGES
-%%NLS%%@dir %%DATADIR%%/po/fr/LC_MESSAGES
-%%NLS%%@dir %%DATADIR%%/po/ja/LC_MESSAGES
-%%NLS%%@dir %%DATADIR%%/po/lt/LC_MESSAGES
-%%NLS%%@dir %%DATADIR%%/po/sk/LC_MESSAGES
-%%NLS%%@dir %%DATADIR%%/po/zh_CN/LC_MESSAGES
