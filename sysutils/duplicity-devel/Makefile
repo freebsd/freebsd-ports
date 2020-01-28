@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	duplicity
-PORTVERSION=	0.8.08
-PORTREVISION=	1
+PORTVERSION=	0.8.10
+DISTVERSIONSUFFIX=	fin1558
 CATEGORIES=	sysutils
-MASTER_SITES=	http://launchpad.net/duplicity/0.8-series/${PORTVERSION}/+download/
+MASTER_SITES=	https://code.launchpad.net/duplicity/0.8-series/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	dbaio@FreeBSD.org
