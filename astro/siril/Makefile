@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	siril
-DISTVERSION=	0.9.10
-PORTREVISION=	7
+DISTVERSION=	0.9.12
 CATEGORIES=	astro graphics
 MASTER_SITES=	https://free-astro.org/download/
 
@@ -34,8 +33,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 intltool pango
 INSTALLS_ICONS=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 OPTIONS_DEFINE=			OPENMP
 OPTIONS_DEFAULT=		OPENMP
 
@@ -44,8 +41,8 @@ OPENMP_LIB_DEPENDS=		libomp.so:devel/openmp
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/appdata ${STAGEDIR}${PREFIX}/share/mime/packages
-	${INSTALL_DATA} ${WRKSRC}/platform-specific/linux/org.free-astro.siril.desktop ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
-	${INSTALL_DATA} ${WRKSRC}/platform-specific/linux/org.free-astro.siril.appdata.xml ${STAGEDIR}${PREFIX}/share/appdata/${PORTNAME}.appdata.xml
+	${INSTALL_DATA} ${WRKSRC}/platform-specific/linux/org.free_astro.siril.desktop ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
+	${INSTALL_DATA} ${WRKSRC}/platform-specific/linux/org.free_astro.siril.appdata.xml ${STAGEDIR}${PREFIX}/share/appdata/${PORTNAME}.appdata.xml
 	${INSTALL_DATA} ${WRKSRC}/platform-specific/linux/siril.xml ${STAGEDIR}${PREFIX}/share/mime/packages/
 	cd ${WRKSRC}/pixmaps && ${COPYTREE_SHARE} icons ${STAGEDIR}${PREFIX}/share/
 

@@ -1,11 +1,11 @@
---- Makefile.am.orig	2019-01-16 08:56:00 UTC
+--- Makefile.am.orig	2019-05-27 09:16:07 UTC
 +++ Makefile.am
-@@ -20,8 +20,6 @@ install-data-local:
- 	$(INSTALL_DATA) src/gui/siril3.glade $(DESTDIR)$(pkgdatadir)
- 	$(INSTALL_DATA) src/gui/gtk_old.css $(DESTDIR)$(pkgdatadir)
- 	$(INSTALL_DATA) src/gui/gtk.css $(DESTDIR)$(pkgdatadir)
--	$(mkinstalldirs) $(DESTDIR)$(docdir)
--	$(INSTALL_DATA) AUTHORS LICENSE.md $(DESTDIR)$(docdir)
- 	$(mkinstalldirs) $(DESTDIR)$(mandir)/man1
- 	$(INSTALL_DATA) siril.1.gz $(DESTDIR)$(mandir)/man1
- 	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/scripts/
+@@ -21,7 +21,7 @@ scripts_DATA = scripts/DSLR_preprocessing.ssf \
+ 	3rdparty/scripts/en/DSLR_Preprocessing_NoFlat_NoDark.ssf \
+ 	3rdparty/scripts/en/DSLR_Preprocessing_NoFlat.ssf
+ 
+-doc_DATA = AUTHORS \
++#doc_DATA = AUTHORS \
+ 	LICENSE.md
+ 
+ man_MANS = siril.1.gz
