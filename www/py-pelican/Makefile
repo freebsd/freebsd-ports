@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pelican
-PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTVERSION=	4.2.0
 CATEGORIES=	www textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jlaffaye@FreeBSD.org
+MAINTAINER=	andreas@bilke.org
 COMMENT=	Static site generator written in Python
 
 LICENSE=	GPLv3
