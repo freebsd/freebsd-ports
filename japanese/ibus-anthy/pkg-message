@@ -3,24 +3,23 @@
   message: <<EOM
 ibus-anthy installation finished. To use ibus-anthy, please do the following:
 
-If you are using bash or zsh, please add following lines to your $HOME/.bashrc or
-$HOME/.zshrc:
+If you are using bash, please add following lines to your $HOME/.bashrc:
 
 export XIM=ibus
 export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=xim
+export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export XIM_PROGRAM="ibus-daemon"
-export XIM_ARGS="-r --daemonize --xim"
+export XIM_ARGS="--daemonize --xim"
 
 If you are using tcsh, please add following lines to your $HOME/.cshrc:
 
 setenv XIM ibus
 setenv GTK_IM_MODULE ibus
-setenv QT_IM_MODULE xim
+setenv QT_IM_MODULE ibus
 setenv XMODIFIERS @im=ibus
 setenv XIM_PROGRAM ibus-daemon
-setenv XIM_ARGS "-r --daemonize --xim"
+setenv XIM_ARGS "--daemonize --xim"
 
 If you are using KDE4, you may create a shell script in $HOME/.kde4/env,
 and add following lines:
@@ -28,14 +27,19 @@ and add following lines:
 #!/bin/sh
 export XIM=ibus
 export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=xim
+export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export XIM_PROGRAM="ibus-daemon"
-export XIM_ARGS="-r --daemonize --xim"
+export XIM_ARGS="--daemonize --xim"
 
-If ibus cannot start or the panel does not appear, please ensure
-that you are using up-to-date python.
-There's a bug in python 2.5, which may prevent the panel from appearing.
+-------------
+
+If you cannot launch the IM selection panel by hitting "Super+space"
+(usually "Win+space"), run the "ibus-setup" command and add "Japanese -
+Anthy" via the Imput Method tab.
+
+You may also add "ibus-daemon --daemonize --xim" to your ~/.xinitrc or
+~/.xsession .
 EOM
 }
 ]
