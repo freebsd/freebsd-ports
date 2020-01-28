@@ -17,7 +17,7 @@ LICENSE_FILE =	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		libnetsnmp.so:net-mgmt/net-snmp \
 		libpkg.so:${PKG_ORIGIN} \
-		libuuid.so:misc/libuuid
+		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		autoreconf fuse gnome libtool:build pkgconfig ssl
 

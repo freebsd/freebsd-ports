@@ -18,7 +18,7 @@ COMMENT=	Open Source PBX and telephony toolkit
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libuuid.so:misc/libuuid \
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
 
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386 powerpc powerpc64 sparc64
