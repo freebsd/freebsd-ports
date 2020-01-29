@@ -11,8 +11,6 @@ COMMENT=	Simple RSS/RDF feed reader
 
 LICENSE=	GPLv2
 
-BROKEN=		fails to build
-
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
@@ -30,6 +28,11 @@ USE_GNOME=	cairo dconf:run gtk30 intltool introspection \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-introspection
+
+# Introspection starts the program, but it may hang or crash-abort
+# without an X server because the Webkit compositor tries to initialize
+# a graphics backend
+MAKE_ENV+= WEBKIT_DISABLE_COMPOSITING_MODE=1
 
 GLIB_SCHEMAS=	net.sf.liferea.gschema.xml
 INSTALLS_ICONS=	yes
