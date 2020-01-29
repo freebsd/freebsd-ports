@@ -211,14 +211,3 @@ lib/libwolfssl.so
 lib/libwolfssl.so.24
 lib/libwolfssl.so.24.0.0
 libdata/pkgconfig/wolfssl.pc
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/example/client.c
-%%PORTDOCS%%%%DOCSDIR%%/example/echoclient.c
-%%PORTDOCS%%%%DOCSDIR%%/example/echoserver.c
-%%PORTDOCS%%%%DOCSDIR%%/example/sctp-client-dtls.c
-%%PORTDOCS%%%%DOCSDIR%%/example/sctp-client.c
-%%PORTDOCS%%%%DOCSDIR%%/example/sctp-server-dtls.c
-%%PORTDOCS%%%%DOCSDIR%%/example/sctp-server.c
-%%PORTDOCS%%%%DOCSDIR%%/example/server.c
-%%PORTDOCS%%%%DOCSDIR%%/example/tls_bench.c
-%%PORTDOCS%%%%DOCSDIR%%/taoCert.txt
