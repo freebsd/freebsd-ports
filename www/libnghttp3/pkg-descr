@@ -1,0 +1,10 @@
+nghttp3 is an implementation of HTTP/3 mapping over QUIC and QPACK in C. It does
+not depend on any particular QUIC transport implementation.
+
+The HTTP/3 library implements HTTP/3 draft-24. It can exchange basic HTTP
+request, response and server push, but does not fully implement the
+specification at the moment.
+
+The QPACK library implements QPACK draft-11. It supports dynamic table.
+
+WWW: https://github.com/ngtcp2/nghttp3
