@@ -290,6 +290,7 @@
     SUBDIR += libjwt
     SUBDIR += libmicrohttpd
     SUBDIR += libnghttp2
+    SUBDIR += libnghttp3
     SUBDIR += libresonic-standalone
     SUBDIR += libwpe
     SUBDIR += libwww
