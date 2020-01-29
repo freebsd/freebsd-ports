@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE GPLv3+
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pathfix perl5 pkgconfig python:2.7,build shebangfix tar:bzip2
+USES=		libtool pathfix perl5 pkgconfig python:build shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_RC_SUBR=	pcscd
