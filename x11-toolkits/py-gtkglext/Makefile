@@ -12,6 +12,9 @@ DISTNAME=	pygtkglext-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python binding for GtkGLExt
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-02
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:graphics/py-PyOpenGL@${PY_FLAVOR}
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:graphics/py-PyOpenGL@${PY_FLAVOR}

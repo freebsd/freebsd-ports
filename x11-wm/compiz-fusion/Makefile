@@ -12,6 +12,9 @@ COMMENT=	Metaport of compiz-fusion
 LICENSE=	GPLv2+ LGPL21+ MIT
 LICENSE_COMB=	multi
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-02
+
 LIB_DEPENDS=	libcompizconfig.so:x11-wm/libcompizconfig
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz \
 		${LOCALBASE}/lib/compiz/libanimation.so:x11-wm/compiz-plugins-main \
