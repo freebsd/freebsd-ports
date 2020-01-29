@@ -2,7 +2,11 @@
 
 PORTNAME=	wlroots
 DISTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	f0594fb73225.patch:-p1 144d2041adfb.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library
