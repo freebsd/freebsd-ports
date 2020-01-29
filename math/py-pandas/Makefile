@@ -8,7 +8,7 @@ CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	john@saltant.com
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Flexible, high-performance data analysis in Python
 
 LICENSE=	BSD3CLAUSE
