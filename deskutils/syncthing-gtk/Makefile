@@ -10,6 +10,9 @@ COMMENT=	Python based GUI for Syncthing
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-02
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyinotify>0:devel/py-pyinotify@${PY_FLAVOR} \

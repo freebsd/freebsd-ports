@@ -11,6 +11,9 @@ COMMENT=	Xpra gives you persistent remote applications for X
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-02
+
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}gtk2>2:x11-toolkits/py-gtk2@${PY_FLAVOR} \
 		brotli:archivers/brotli

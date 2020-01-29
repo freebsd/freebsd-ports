@@ -10,6 +10,9 @@ COMMENT=	Run an X application scaled via Xpra (useful on HiDPI screens)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-02
+
 RUN_DEPENDS=	bash:shells/bash \
 		xpra:x11/xpra \
 		xrandr:x11/xrandr \

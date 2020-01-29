@@ -13,6 +13,9 @@ COMMENT=	Python/GTK based settings manager for CompizConfig
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-02
+
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compizconfig-python.pc:x11-wm/compizconfig-python
 
 USES=		gettext gmake gnome python:2.7 tar:bzip2
