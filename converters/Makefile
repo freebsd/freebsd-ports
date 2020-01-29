@@ -156,6 +156,7 @@
     SUBDIR += py-text-unidecode
     SUBDIR += py-unidecode
     SUBDIR += py-webencodings
+    SUBDIR += py-zfec
     SUBDIR += rcctools
     SUBDIR += recode
     SUBDIR += rubygem-base32
