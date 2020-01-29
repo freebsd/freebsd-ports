@@ -2,8 +2,7 @@
 
 PORTNAME=	vector
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSION=	0.7.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	greg@unrelenting.technology
@@ -24,7 +23,8 @@ PLIST_FILES=	bin/vector
 
 GH_TUPLE=		timberio:leveldb:64265815bcf1b69f30e6cb35bf687fbd6dd64afb:leveldb \
 			timberio:leveldb-sys:0f226b0cce86aff28f255ef89082916e4fdda4c7:leveldbsys \
-			timberio:rlua:c41bfa06cfaf3df543796d3104ec910dd1a24c44:rlua
+			timberio:rlua:c41bfa06cfaf3df543796d3104ec910dd1a24c44:rlua \
+			tokio-rs:tracing:8720792dbdf3158c4dbfcaf879e28da7af67c3f7:tracingfutures
 CARGO_CRATES=	adler32-1.0.4 \
 		aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
@@ -38,6 +38,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		autocfg-0.1.7 \
 		backtrace-0.3.40 \
 		backtrace-sys-0.1.32 \
+		base64-0.9.3 \
 		base64-0.10.1 \
 		base64-0.11.0 \
 		bit-set-0.5.1 \
@@ -71,7 +72,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		crc-1.8.1 \
 		crc32fast-1.2.0 \
 		criterion-0.2.11 \
+		criterion-0.3.0 \
 		criterion-plot-0.3.1 \
+		criterion-plot-0.4.0 \
 		crossbeam-channel-0.3.9 \
 		crossbeam-deque-0.7.1 \
 		crossbeam-epoch-0.7.2 \
@@ -90,8 +93,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		difference-2.0.0 \
 		digest-0.8.1 \
 		dirs-1.0.5 \
-		dlopen-0.1.8 \
-		dlopen_derive-0.1.4 \
 		doc-comment-0.3.1 \
 		dtoa-0.4.4 \
 		either-1.5.3 \
@@ -103,6 +104,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		env_logger-0.6.2 \
 		erased-serde-0.3.9 \
 		error-chain-0.12.1 \
+		evmap-7.1.2 \
 		exitcode-1.1.2 \
 		failure-0.1.6 \
 		failure_derive-0.1.6 \
@@ -120,7 +122,14 @@ CARGO_CRATES=	adler32-1.0.4 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		futures-0.1.29 \
+		futures-0.3.1 \
+		futures-channel-0.3.1 \
+		futures-core-0.3.1 \
 		futures-cpupool-0.1.8 \
+		futures-io-0.3.1 \
+		futures-sink-0.3.1 \
+		futures-task-0.3.1 \
+		futures-util-0.3.1 \
 		futures01-0.1.29 \
 		generic-array-0.12.3 \
 		getrandom-0.1.13 \
@@ -128,6 +137,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		git2-0.10.1 \
 		glob-0.2.11 \
 		glob-0.3.0 \
+		goauth-0.6.0 \
 		grok-1.0.1 \
 		h2-0.1.26 \
 		hashbrown-0.1.8 \
@@ -163,8 +173,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		jemalloc-sys-0.3.2 \
 		jemallocator-0.3.2 \
 		jobserver-0.1.17 \
+		k8s-openapi-0.5.1 \
 		kernel32-sys-0.2.2 \
-		lazy_static-0.2.11 \
+		kube-0.16.1 \
 		lazy_static-1.4.0 \
 		leveldb-sys-2.0.5 \
 		lexical-core-0.4.6 \
@@ -180,6 +191,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		log-0.3.9 \
 		log-0.4.8 \
 		lz4-sys-1.8.3 \
+		logfmt-0.0.2 \
 		lru-cache-0.1.2 \
 		matchers-0.0.1 \
 		matches-0.1.8 \
@@ -217,6 +229,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		openssl-probe-0.1.2 \
 		openssl-src-111.6.0+1.1.1d \
 		openssl-sys-0.9.53 \
+		ordered-float-1.0.2 \
 		output_vt100-0.1.2 \
 		owning_ref-0.4.0 \
 		parking_lot-0.7.1 \
@@ -230,6 +243,9 @@ CARGO_CRATES=	adler32-1.0.4 \
 		phf_codegen-0.7.24 \
 		phf_generator-0.7.24 \
 		phf_shared-0.7.24 \
+		pin-project-0.4.6 \
+		pin-project-internal-0.4.6 \
+		pin-utils-0.1.0-alpha.4 \
 		pkg-config-0.3.16 \
 		ppv-lite86-0.2.6 \
 		precomputed-hash-0.1.1 \
@@ -237,7 +253,6 @@ CARGO_CRATES=	adler32-1.0.4 \
 		proc-macro-hack-0.5.11 \
 		proc-macro2-0.4.30 \
 		proc-macro2-1.0.6 \
-		prometheus-0.4.2 \
 		proptest-0.9.4 \
 		prost-0.4.0 \
 		prost-0.5.0 \
@@ -246,12 +261,10 @@ CARGO_CRATES=	adler32-1.0.4 \
 		prost-derive-0.5.0 \
 		prost-types-0.4.0 \
 		prost-types-0.5.0 \
-		protobuf-2.8.1 \
 		publicsuffix-1.5.3 \
 		rdkafka-0.22.0 \
 		rdkafka-sys-1.2.2 \
 		quanta-0.2.0 \
-		quick-error-0.2.2 \
 		quick-error-1.2.2 \
 		quickcheck-0.6.2 \
 		quote-0.3.15 \
@@ -272,9 +285,11 @@ CARGO_CRATES=	adler32-1.0.4 \
 		rand_isaac-0.1.1 \
 		rand_jitter-0.1.4 \
 		rand_os-0.1.3 \
+		rand_os-0.2.2 \
 		rand_pcg-0.1.2 \
 		rand_xorshift-0.1.1 \
 		rand_xoshiro-0.1.0 \
+		rand_xoshiro-0.3.1 \
 		rayon-1.2.0 \
 		rayon-core-1.6.0 \
 		rdrand-0.4.0 \
@@ -289,9 +304,11 @@ CARGO_CRATES=	adler32-1.0.4 \
 		rusoto_cloudwatch-0.41.0 \
 		rusoto_core-0.41.0 \
 		rusoto_credential-0.41.1 \
+		rusoto_firehose-0.41.0 \
 		rusoto_kinesis-0.41.0 \
 		rusoto_logs-0.41.0 \
 		rusoto_s3-0.41.0 \
+		rusoto_sts-0.41.0 \
 		rusqlite-0.20.0 \
 		rust-argon2-0.5.1 \
 		rustc-demangle-0.1.16 \
@@ -311,10 +328,12 @@ CARGO_CRATES=	adler32-1.0.4 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		serde-1.0.102 \
+		serde-value-0.6.0 \
 		serde_derive-1.0.102 \
 		serde_json-1.0.41 \
 		serde_urlencoded-0.5.5 \
 		serde_urlencoded-0.6.1 \
+		serde_yaml-0.8.11 \
 		sha-1-0.8.1 \
 		sha2-0.8.0 \
 		shiplift-0.6.0 \
@@ -324,10 +343,11 @@ CARGO_CRATES=	adler32-1.0.4 \
 		siphasher-0.2.3 \
 		slab-0.4.2 \
 		smallvec-0.6.12 \
+		smallvec-1.0.0 \
+		smpl_jwt-0.4.0 \
 		snafu-0.4.4 \
 		snafu-derive-0.4.4 \
 		socket2-0.3.11 \
-		spin-0.4.10 \
 		spin-0.5.2 \
 		stable_deref_trait-1.1.1 \
 		static_assertions-0.3.4 \
@@ -394,7 +414,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		tracing-0.1.10 \
 		tracing-attributes-0.1.5 \
 		tracing-core-0.1.7 \
-		tracing-futures-0.0.1-alpha.1 \
+		tracing-futures-0.2.0 \
 		tracing-log-0.1.1 \
 		tracing-subscriber-0.1.6 \
 		trust-dns-0.17.0 \
@@ -447,8 +467,11 @@ CARGO_CRATES=	adler32-1.0.4 \
 		winutil-0.1.1 \
 		ws2_32-sys-0.2.1 \
 		xattr-0.2.2 \
-		xml-rs-0.8.0
+		xml-rs-0.8.0 \
+		yaml-rust-0.4.3
 CARGO_USE_GITHUB=	yes
+CARGO_GIT_SUBDIR=	tracingfutures:tracing-futures:tracing-futures \
+			tracingfutures:tracing-tower:tracing-tower
 
 post-patch:
 	${REINPLACE_CMD} -e 's|.probe("lua")|.probe("lua-5.3")|' \
