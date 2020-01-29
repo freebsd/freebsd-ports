@@ -29,6 +29,6 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(packaging *\)~=\( *19.0\)|\1>=\2|' ${WRKSRC}/setup.py ${WRKSRC}/medikit.egg-info/requires.txt
+	@${REINPLACE_CMD} -e 's|\(packaging *\)~=\( *19.0\)|\1>=\2|' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
