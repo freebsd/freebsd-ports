@@ -1,0 +1,14 @@
+--- lib/globalshortcut/CMakeLists.txt.orig	2018-12-31 18:07:36 UTC
++++ lib/globalshortcut/CMakeLists.txt
+@@ -16,6 +16,11 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+     find_package(Qt5 5.5.0 REQUIRED X11Extras)
+     set(SRC ${SRC} src/hotkeymanager_x11.cpp)
+     set(LIB ${LIB} Qt5::X11Extras X11)
++elseif(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++    find_package(Qt5 5.5.0 REQUIRED X11Extras)
++    find_package(X11 REQUIRED)
++    set(SRC ${SRC} src/hotkeymanager_x11.cpp)
++    set(LIB ${LIB} Qt5::X11Extras ${X11_LIBRARIES})
+ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+     set(SRC ${SRC} src/hotkey/hotkeymanager_win.cpp)
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DUNICODE")

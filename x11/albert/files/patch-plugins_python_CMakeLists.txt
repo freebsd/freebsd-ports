@@ -1,0 +1,11 @@
+--- plugins/python/CMakeLists.txt.orig	2018-12-31 15:24:22 UTC
++++ plugins/python/CMakeLists.txt
+@@ -5,7 +5,7 @@ PROJECT(python)
+ FILE(GLOB_RECURSE SRC src/*)
+ 
+ find_package(Qt5 5.5.0 REQUIRED COMPONENTS Widgets)
+-add_subdirectory(pybind11)
++find_package(pybind11 REQUIRED)
+ 
+ add_library(${PROJECT_NAME} SHARED ${SRC} ${PROJECT_NAME}.qrc metadata.json)
+ 

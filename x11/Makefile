@@ -8,6 +8,7 @@
     SUBDIR += 9menu
     SUBDIR += admiral
     SUBDIR += alacritty
+    SUBDIR += albert
     SUBDIR += alltray
     SUBDIR += alttab
     SUBDIR += aminal

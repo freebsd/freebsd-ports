@@ -1,0 +1,80 @@
+bin/albert
+lib/albert/libalbert.so
+lib/albert/libxdg.so
+lib/albert/plugins/libapplications.so
+lib/albert/plugins/libcalculator.so
+lib/albert/plugins/libchromebookmarks.so
+lib/albert/plugins/libexternalextensions.so
+lib/albert/plugins/libfiles.so
+lib/albert/plugins/libfirefoxbookmarks.so
+lib/albert/plugins/libhashgenerator.so
+lib/albert/plugins/libmpris.so
+lib/albert/plugins/libpython.so
+lib/albert/plugins/libqmlboxmodel.so
+lib/albert/plugins/libsnippets.so
+lib/albert/plugins/libssh.so
+lib/albert/plugins/libsystem.so
+lib/albert/plugins/libterminal.so
+lib/albert/plugins/libwebsearch.so
+lib/albert/plugins/libwidgetboxmodel.so
+%%DATADIR%%/org.albert.frontend.qmlboxmodel/styles/BoxModel/DesktopListView.qml
+%%DATADIR%%/org.albert.frontend.qmlboxmodel/styles/BoxModel/HistoryTextInput.qml
+%%DATADIR%%/org.albert.frontend.qmlboxmodel/styles/BoxModel/ItemViewDelegate.qml
+%%DATADIR%%/org.albert.frontend.qmlboxmodel/styles/BoxModel/MainComponent.qml
+%%DATADIR%%/org.albert.frontend.qmlboxmodel/styles/BoxModel/Preferences.qml
+%%DATADIR%%/org.albert.frontend.qmlboxmodel/styles/BoxModel/SettingsButton.qml
+%%DATADIR%%/org.albert.frontend.qmlboxmodel/styles/BoxModel/fonts/Roboto-Thin.ttf
+%%DATADIR%%/org.albert.frontend.qmlboxmodel/styles/BoxModel/gear.svg
+%%DATADIR%%/org.albert.frontend.qmlboxmodel/styles/BoxModel/metadata.json
+%%DATADIR%%/org.albert.frontend.qmlboxmodel/styles/BoxModel/themes.js
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/ArcTemplate.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/ArcTemplate.sh
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/SpotlightTemplate.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/SpotlightTemplate.sh
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/StandardThemeTemplate.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/StandardThemeTemplate.sh
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Adapta.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Arc Blue.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Arc Dark Blue.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Arc Dark Grey.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Arc Grey.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Bright.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/BrightBlue.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/BrightGreen.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/BrightMagenta.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/BrightMint.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/BrightOrange.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/BrightViolet.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Dark.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/DarkBlue.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/DarkGreen.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/DarkMagenta.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/DarkMint.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/DarkOrange.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/DarkViolet.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Elementary.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Numix Rounded.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Numix.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedBrightBlue.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedBrightCyan.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedBrightGreen.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedBrightMagenta.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedBrightOrange.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedBrightRed.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedBrightViolet.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedBrightYellow.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedDarkBlue.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedDarkCyan.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedDarkGreen.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedDarkMagenta.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedDarkOrange.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedDarkRed.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedDarkViolet.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/SolarizedDarkYellow.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Spotlight Dark.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Spotlight.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Yosemite Dark.qss
+%%DATADIR%%/org.albert.frontend.widgetboxmodel/themes/Yosemite.qss
+share/applications/albert.desktop
+share/icons/hicolor/scalable/apps/albert.svg
+@dir %%DATADIR%%/org.albert.extension.python/modules
