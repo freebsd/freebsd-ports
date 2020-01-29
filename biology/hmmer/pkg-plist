@@ -6,6 +6,7 @@ bin/hmmemit
 bin/hmmfetch
 bin/hmmlogo
 bin/hmmpgmd
+bin/hmmpgmd_shard
 bin/hmmpress
 bin/hmmscan
 bin/hmmsearch
@@ -19,12 +20,14 @@ bin/phmmer
 man/man1/alimask.1.gz
 man/man1/hmmalign.1.gz
 man/man1/hmmbuild.1.gz
+man/man1/hmmc2.1.gz
 man/man1/hmmconvert.1.gz
 man/man1/hmmemit.1.gz
 man/man1/hmmer.1.gz
 man/man1/hmmfetch.1.gz
 man/man1/hmmlogo.1.gz
 man/man1/hmmpgmd.1.gz
+man/man1/hmmpgmd_shard.1.gz
 man/man1/hmmpress.1.gz
 man/man1/hmmscan.1.gz
 man/man1/hmmsearch.1.gz
