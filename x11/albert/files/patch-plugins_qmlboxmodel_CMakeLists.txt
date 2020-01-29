@@ -1,0 +1,19 @@
+--- plugins/qmlboxmodel/CMakeLists.txt.orig	2018-12-31 15:24:22 UTC
++++ plugins/qmlboxmodel/CMakeLists.txt
+@@ -5,6 +5,7 @@ project(qmlboxmodel)
+ file(GLOB_RECURSE SRC src/*)
+ 
+ find_package(Qt5 5.5.0 REQUIRED COMPONENTS Widgets Qml Quick)
++find_package(X11)
+ 
+ add_library(${PROJECT_NAME} SHARED ${SRC} metadata.json)
+ 
+@@ -16,7 +17,7 @@ target_link_libraries(${PROJECT_NAME}
+         Qt5::Quick
+         Qt5::Widgets
+         albert::lib
+-        Xext
++	${X11_Xext_LIB}
+ )
+ 
+ install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/albert/plugins)

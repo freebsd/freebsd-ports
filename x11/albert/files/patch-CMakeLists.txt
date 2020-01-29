@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2018-12-31 18:07:36 UTC
++++ CMakeLists.txt
+@@ -18,7 +18,9 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_AUTOUIC ON)
+ set(CMAKE_AUTORCC ON)
++SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} -Xlinker --export-dynamic")
+ 
++
+ # Set standard
+ set(CMAKE_CXX_STANDARD 14)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+@@ -135,8 +137,8 @@ install(TARGETS ${TARGET_NAME_LIB} ${TARGET_NAME_BIN}
+ )
+ 
+ # Do platform specific post target stuff
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+     # Install desktop entry and icon
+    install(FILES resources/albert.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications )
+    install(FILES resources/icons/albert.svg DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps)
+-endif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++endif()
