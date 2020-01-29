@@ -23,6 +23,6 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|==|>=|' ${WRKSRC}/requirements.txt ${WRKSRC}/mail_parser.egg-info/requires.txt
+	@${REINPLACE_CMD} -e 's|==|>=|' ${WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>
