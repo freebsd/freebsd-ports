@@ -10,9 +10,9 @@ ask() {
     question=$1
     default=$2
 
-    if [ -z "${PACKAGE_BUILDING}" -a x${BATCH} = xno ]; then
+    if [ x${BATCH} = xno ]; then
 	read -p "${question} (y/n) [${default}]? " answer
-        [ "${answer}" ] && default=${answer}
+	[ "${answer}" ] && default=${answer}
     fi
     echo ${default}
 }
@@ -102,18 +102,20 @@ entry_ndtp=ndtp
 port_ndtp=2010/tcp
 comment_ndtp='Network Dictionary Transfer Protocol'
 
-echo "************************************************************************"
-if checkall ${file} ${entrylist}; then
-    echo "This system has already all entries for EBNETD in ${file}."
-else
-    echo "This system doesn't have some of entries for EBNETD in ${file}."
-    if yesno "  Would you like to add them automatically?" y; then
-	cp -f ${file} ${back}
-	echo "    The original file is saved as ${back}."
-	add ${file} ${entry_ebnet} ${port_ebnet} ${comment_ebnet}
-	add ${file} ${entry_ndtp} ${port_ndtp} ${comment_ndtp}
+if [ -z "${PACKAGE_BUILDING}" ]; then
+    echo "************************************************************************"
+    if checkall ${file} ${entrylist}; then
+	echo "This system has already all entries for EBNETD in ${file}."
+    else
+	echo "This system doesn't have some of entries for EBNETD in ${file}."
+	if yesno "  Would you like to add them automatically?" y; then
+	    cp -f ${file} ${back}
+	    echo "    The original file is saved as ${back}."
+	    add ${file} ${entry_ebnet} ${port_ebnet} ${comment_ebnet}
+	    add ${file} ${entry_ndtp} ${port_ndtp} ${comment_ndtp}
+	fi
     fi
+    echo "************************************************************************"
 fi
-echo "************************************************************************"
 
 exit 0
