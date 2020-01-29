@@ -8,6 +8,7 @@
     SUBDIR += apache-commons-codec
     SUBDIR += apache-commons-collections
     SUBDIR += apache-commons-dbcp
+    SUBDIR += apache-commons-discovery
     SUBDIR += apache-commons-httpclient
     SUBDIR += apache-commons-lang
     SUBDIR += apache-commons-lang3
@@ -47,7 +48,6 @@
     SUBDIR += jad
     SUBDIR += jai
     SUBDIR += jakarta-commons-beanutils
-    SUBDIR += jakarta-commons-discovery
     SUBDIR += jakarta-oro
     SUBDIR += jakarta-regexp
     SUBDIR += jasmin
