@@ -105,6 +105,8 @@ bin/prerm-systemd
 bin/prerm-systemd-restart
 bin/prerm-usrlocal
 bin/prerm-wm
+%%SITE_PERL%%/DH/AddonAPI.pm
+%%SITE_PERL%%/DH/SequenceState.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/ant.pm
 %%SITE_PERL%%/Debian/Debhelper/Buildsystem/autoconf.pm

@@ -1,6 +1,6 @@
---- dh_perl.orig	2015-09-19 09:06:22 UTC
+--- dh_perl.orig	2020-01-14 20:45:22 UTC
 +++ dh_perl
-@@ -143,8 +143,8 @@ foreach my $package (@{$dh{DOPACKAGES}})
+@@ -165,8 +165,8 @@ foreach my $package (@{$dh{DOPACKAGES}}) {
  	# only one directory is installed into.
  	foreach my $dir ("$tmp/$vendorlib", "$tmp/$vendorarch") {
  		if (-d $dir) {

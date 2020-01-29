@@ -1,6 +1,6 @@
---- dh_fixperms.orig	2017-10-21 17:51:53 UTC
+--- dh_fixperms.orig	2019-01-10 07:03:38 UTC
 +++ dh_fixperms
-@@ -101,7 +101,7 @@ on_pkgs_in_parallel {
+@@ -108,7 +108,7 @@ on_pkgs_in_parallel {
  
  		# General permissions fixing.
  		complex_doit("find $tmp ${find_exclude_options} -print0",
