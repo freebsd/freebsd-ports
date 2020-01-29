@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hmmer
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	biology
 MASTER_SITES=	http://eddylab.org/software/hmmer/
 
-MAINTAINER=	mzaki@niid.go.jp
+MAINTAINER=	mzaki@e-mail.ne.jp
 COMMENT=	Profile hidden Markov models for biological sequence analysis
 
 LICENSE=	BSD3CLAUSE
@@ -16,14 +15,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpcspe
 ONLY_FOR_ARCHS_REASON=	requires SSE2 or AltiVec instructions
 
-USES=		compiler:c11 gmake perl5 shebangfix
+USES=		compiler:c11 gmake perl5 python:3.5+,test shebangfix
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	V=1
 
 TEST_TARGET=	check
 USE_PERL5=	test
-SHEBANG_GLOB=	*.pl
+SHEBANG_GLOB=	*.pl *.py
 SHEBANG_FILES=	easel/devkit/*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES TEST
@@ -34,8 +33,12 @@ EXAMPLES=	7LESS_DROME HBB_HUMAN MADE1.hmm MADE1.sto \
 		globins4.hmm globins4.sto globins45.fa
 
 TEST_VARS=	use_perl5=build
+TEST_BUILD_DEPENDS=	${PYTHON_VERSION}:lang/python${PYTHON_SUFFIX}
 
-post-build-TEST-on:	do-test
+post-build-TEST-on:	pre-test do-test
+
+pre-test:
+	${FIND} ${WRKSRC} -type f \( -name Makefile -or -name sqc \) -exec ${GREP} -q 'python3 ' {} \; -print | ${XARGS} ${SED} -i.bak 's/python3 /${PYTHON_VERSION} /'
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
