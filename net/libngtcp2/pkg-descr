@@ -1,0 +1,4 @@
+ngtcp2 project is an effort to implement QUIC protocol which is now being
+discussed in IETF QUICWG for its standardization.
+
+WWW: https://github.com/ngtcp2/ngtcp2
