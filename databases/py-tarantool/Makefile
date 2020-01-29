@@ -18,9 +18,8 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|msgpack-python|msgpack|' ${WRKSRC}/setup.py ${WRKSRC}/tarantool.egg-info/requires.txt
+	@${REINPLACE_CMD} -e 's|msgpack-python|msgpack|' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
