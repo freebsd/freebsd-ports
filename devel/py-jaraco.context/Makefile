@@ -22,7 +22,7 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e '/jaraco.apt/d; /yg.lockfile/d' ${WRKSRC}/setup.cfg ${WRKSRC}/jaraco.context.egg-info/requires.txt
+	@${REINPLACE_CMD} -e '/jaraco.apt/d; /yg.lockfile/d' ${WRKSRC}/setup.cfg
 
 .include <bsd.port.pre.mk>
 
