@@ -6,6 +6,7 @@ snapshots and will be in GCC 9.3.
 	* config/rs6000/rs6000.md (rs6000_set_fpscr_drn): Use ULL on big
 	hexadecimal literal.
 
+--- UTC
 Index: gcc/config/rs6000/rs6000.md
 ===================================================================
 --- gcc/config/rs6000/rs6000.md	(revision 278106)
