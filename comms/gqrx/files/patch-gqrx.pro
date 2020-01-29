@@ -1,6 +1,6 @@
---- gqrx.pro.orig	2018-05-16 23:32:13.000000000 +0200
-+++ gqrx.pro	2019-08-20 22:57:38.783794000 +0200
-@@ -267,7 +267,7 @@
+--- gqrx.pro.orig	2020-01-27 20:45:16 UTC
++++ gqrx.pro
+@@ -290,7 +290,7 @@ INCPATH += src/
  
  unix:!macx {
      LIBS += -lboost_system$$BOOST_SUFFIX -lboost_program_options$$BOOST_SUFFIX
