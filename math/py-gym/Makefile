@@ -28,6 +28,5 @@ NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|, 'opencv-python'||" ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e '/opencv-python/d' ${WRKSRC}/gym.egg-info/requires.txt
 
 .include <bsd.port.mk>
