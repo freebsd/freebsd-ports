@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast 2D tank arcade game with multiplayer and split-screen modes
 
 LICENSE=	GPLv2+
@@ -34,13 +34,14 @@ DESKTOP_ENTRIES="Battle Tanks" "" "" "${PORTNAME}" "Game;ArcadeGame;" ""
 
 OPTIONS_DEFINE=	DOCS
 
-pre-build:
-# Regenerate `sl08.h' after we patch `sl08.py' (as patching the header itself
-# would have resulted in a larger diff and gratuitous difference with Debian)
-	@cd ${WRKSRC} && ${PYTHON_CMD} engine/sl08/sl08.py > engine/sl08/sl08.h
-
 post-patch:
-	@${REINPLACE_CMD} -e "s/lua5.1/lua-${LUA_VER}/g" ${WRKSRC}/engine/SConscript
+	@${REINPLACE_CMD} -e 's/lua5\.1/lua-${LUA_VER}/' \
+		${WRKSRC}/engine/SConscript
+
+pre-build:
+# Regenerate `sl08.h' after we patch `sl08.py' (patching the header itself
+# would've resulted in a larger diff and gratuitous difference with Debian)
+	cd ${WRKSRC} && ${PYTHON_CMD} engine/sl08/sl08.py > engine/sl08/sl08.h
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.6 \
