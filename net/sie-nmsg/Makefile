@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sie-nmsg
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
