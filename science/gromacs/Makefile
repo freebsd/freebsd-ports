@@ -17,7 +17,7 @@ BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchan
 BUILD_DEPENDS=	boost-libs>=1.44:devel/boost-libs
 LIB_DEPENDS=	libhwloc.so:devel/hwloc
 
-USES=		cmake compiler:c++11-lang fortran gnome perl5 pkgconfig shebangfix xorg
+USES=		cmake compiler:c++14-lang fortran gnome perl5 pkgconfig shebangfix xorg
 SHEBANG_FILES=	admin/*.sh scripts/*.pl scripts/*.sh src/gromacs/selection/*.sh
 bash_CMD=	${SH}
 USE_GNOME=	libxml2
