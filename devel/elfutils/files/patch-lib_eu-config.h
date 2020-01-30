@@ -1,6 +1,6 @@
 --- lib/eu-config.h.orig	2015-06-11 11:38:55 UTC
 +++ lib/eu-config.h
-@@ -187,4 +187,171 @@ asm (".section predict_data, \"aw\"; .pr
+@@ -187,4 +187,180 @@ asm (".section predict_data, \"aw\"; .pr
  #endif
  
  
@@ -10,6 +10,7 @@
 +#include <limits.h>
 +#include <stdarg.h>
 +#include <stdint.h>
++#include <stdio.h>
 +#include <stdlib.h>
 +#include <string.h>
 +#include <wchar.h>
@@ -130,7 +131,15 @@
 +#define	bswap_32	bswap32
 +#define	bswap_64	bswap64
 +
++/*
++ * Future versions of FreeBSD will provide proper versions of these _unlocked
++ * variants.  These can and should be used instead, but won't be available
++ * until FreeBSD 11.4 and 12.2, at which point we should limit the scope of
++ * these to DragonFlyBSD.
++ */
++#ifndef fputc_unlocked
 +#define	fputc_unlocked	putc_unlocked
++#endif
 +#define	fputs_unlocked	fputs
 +#define	fwrite_unlocked	fwrite
 +#define	fread_unlocked	fread
