@@ -14,6 +14,8 @@ COMMENT=	Rust semantic analysis server powered by Racer
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with Rust 1.41.0
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	jwilm

@@ -43,7 +43,7 @@ DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}.tar.gz:cargo_${_crate:C/[^a-zA-Z0-9_]
 
 CARGO_BUILDDEP?=	yes
 .if ${CARGO_BUILDDEP:tl} == "yes"
-BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.40.0:lang/${RUST_DEFAULT}
+BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.41.0:lang/${RUST_DEFAULT}
 .endif
 
 # Location of cargo binary (default to lang/rust's Cargo binary)
@@ -56,6 +56,7 @@ CARGO_TARGET_DIR?=	${WRKDIR}/target
 #  - CARGO_HOME: local cache of the registry index
 #  - CARGO_BUILD_JOBS: configure number of jobs to run
 #  - CARGO_TARGET_DIR: location of where to place all generated artifacts
+#  - RUST_BACKTRACE: produce backtraces when something in the build panics
 #  - RUSTC: path of rustc binary (default to lang/rust)
 #  - RUSTDOC: path of rustdoc binary (default to lang/rust)
 #  - RUSTFLAGS: custom flags to pass to all compiler invocations that Cargo performs
@@ -63,6 +64,7 @@ CARGO_ENV+= \
 	CARGO_HOME=${WRKDIR}/cargo-home \
 	CARGO_BUILD_JOBS=${MAKE_JOBS_NUMBER} \
 	CARGO_TARGET_DIR=${CARGO_TARGET_DIR} \
+	RUST_BACKTRACE=1 \
 	RUSTC=${LOCALBASE}/bin/rustc \
 	RUSTDOC=${LOCALBASE}/bin/rustdoc \
 	RUSTFLAGS="${RUSTFLAGS} -C linker=${CC:Q} ${LDFLAGS:C/.+/-C link-arg=&/}"
@@ -279,13 +281,11 @@ do-build:
 do-install:
 .  for path in ${CARGO_INSTALL_PATH}
 	@${CARGO_CARGO_RUN} install \
+		--no-track \
 		--path "${path}" \
 		--root "${STAGEDIR}${PREFIX}" \
 		--verbose \
 		${CARGO_INSTALL_ARGS}
-# Replace with --no-track once it is part of lang/rust 
-	@${RM} -- "${STAGEDIR}${PREFIX}/.crates.toml"
-	@${RM} -- "${STAGEDIR}${PREFIX}/.crates2.json"
 .  endfor
 .endif
 
