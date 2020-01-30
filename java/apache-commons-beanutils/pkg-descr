@@ -1,0 +1,5 @@
+JavaBeans utility library. It provides wrappers around getters
+and setters for a property in an object for classes that conform
+to the JavaBeans naming standard.
+
+WWW: http://jakarta.apache.org/commons/beanutils/
