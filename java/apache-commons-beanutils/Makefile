@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	commons-beanutils
-PORTVERSION=	1.9.2
-PORTREVISION=	1
+PORTVERSION=	1.9.4
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE_COMMONS_SOURCE
-PKGNAMEPREFIX=	jakarta-
+PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -28,7 +27,7 @@ MAKE_ARGS+=	-Dcommons-collections.jar=${JAVALIBDIR}/commons-collections.jar \
 		-Dcommons-logging.jar=${JAVALIBDIR}/commons-logging.jar
 
 JARFILE=	${PORTNAME}.jar
-PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
+PLIST_FILES=	${JAVAJARDIR}/${JARFILE}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -40,6 +39,9 @@ OTHERDOCS=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt
 PORTDOCS=	${APIDOCS} ${OTHERDOCS}
 .endif
 
+pre-build:
+	@${REINPLACE_CMD} -e 's!1.9.3-SNAPSHOT!${PORTVERSION}!g;' \
+		${WRKSRC}/build.xml
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVALIBDIR}/${JARFILE}
 .if ${PORT_OPTIONS:MDOCS}

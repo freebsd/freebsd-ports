@@ -4,6 +4,7 @@
     COMMENT = Java language support
 
     SUBDIR += apache-bcel
+    SUBDIR += apache-commons-beanutils
     SUBDIR += apache-commons-cli
     SUBDIR += apache-commons-codec
     SUBDIR += apache-commons-collections
@@ -47,7 +48,6 @@
     SUBDIR += intellij-ultimate
     SUBDIR += jad
     SUBDIR += jai
-    SUBDIR += jakarta-commons-beanutils
     SUBDIR += jakarta-oro
     SUBDIR += jakarta-regexp
     SUBDIR += jasmin
