@@ -13,8 +13,8 @@ COMMENT=	Intel's compiler for high-performance SIMD programming
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	only available for x86 architectures
+ONLY_FOR_ARCHS=		aarch64 amd64 i386
+ONLY_FOR_ARCHS_REASON=	only available for these architectures
 
 BUILD_DEPENDS=	m4:devel/m4
 LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_DEFAULT}
