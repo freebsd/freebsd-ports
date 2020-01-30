@@ -3,7 +3,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.45.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -29,6 +29,9 @@ USE_LDCONFIG=	${PREFIX}/lib/e2fsprogs
 .endif
 GNU_CONFIGURE=	yes
 LLD_UNSAFE=	yes
+
+# while we use the system blkid, we need to --enable-libblkid
+# so that the tools get built:
 CONFIGURE_ARGS?=--disable-fsck \
 		--disable-e2initrd-helper \
 		--disable-libuuid \
@@ -40,6 +43,7 @@ CONFIGURE_ARGS?=--disable-fsck \
 		--with-root-prefix='${PREFIX}' \
 		--without-included-gettext \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib -Wl,--rpath -Wl,${LOCALBASE}/lib/e2fsprogs'
+CONFIGURE_ENV?=	LIBS='${LIBS} -lexecinfo -lelf'
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
 MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
@@ -75,6 +79,14 @@ LIB_DEPENDS+=	libuuid.so:misc/e2fsprogs-libuuid
 
 PORTDOCS=	NOTICE README RELEASE-NOTES SUBMITTING-PATCHES
 .endif
+
+# even under DEVELOPER, no REINPLACE_CMD warnings desired
+# it simply makes no sense to warn about dozens of files
+# for systematic edits that run over files that don't need the edits.
+# a "warn if nothing was edited by one command" would be acceptable,
+# but until we have that in the framework, just
+# avoid Tools/scripts/sed_checked altogether:
+REINPLACE_CMD=	${SED} ${REINPLACE_ARGS}
 
 PKGDEINSTALL=	${PKGINSTALL}
 
@@ -227,6 +239,7 @@ post-build:
 	cd ${WRKSRC}/e2fsck && ${RM} -f e2fsck \
 		&& ${MAKE_CMD} e2fsck V=1 \
 		LIBS="../lib/libsupport.a ../lib/libext2fs.a ../lib/libcom_err.a \
+		/usr/lib/libexecinfo.a /usr/lib/libelf.a \
 		${LOCALBASE}/lib/libblkid.a ${LOCALBASE}/lib/libuuid.a ${libintl} ../lib/libe2p.a" \
 		LIBMAGIC=/usr/lib/libmagic.a\ -lz
 # Regression check: avoid a port (not upstream!) regression from 1.40.5,
