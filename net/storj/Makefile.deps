@@ -107,6 +107,7 @@ GH_TUPLE=	\
 		rcrowley:go-metrics:3113b8401b8a:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		rs:cors:v1.5.0:rs_cors/vendor/github.com/rs/cors \
 		segmentio:go-prompt:f0d19b6901ad:segmentio_go_prompt/vendor/github.com/segmentio/go-prompt \
+		shopspring:decimal:408a2507e114:shopspring_decimal/vendor/github.com/shopspring/decimal \
 		skyrings:skyring-common:d1c0bb1cbd5e:skyrings_skyring_common/vendor/github.com/skyrings/skyring-common \
 		spacemonkeygo:errors:9064522e9fd1:spacemonkeygo_errors/vendor/github.com/spacemonkeygo/errors \
 		spacemonkeygo:monkit:09813957f0a8:spacemonkeygo_monkit/vendor/gopkg.in/spacemonkeygo/monkit.v2 \
@@ -118,10 +119,10 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:8dcdd4c9d250:storj_common/vendor/storj.io/common \
+		storj:common:5b2cd8f217e2:storj_common/vendor/storj.io/common \
 		storj:drpc:2171c57838d2:storj_drpc/vendor/storj.io/drpc \
 		storj:grpc-go:1c4561bf5127:storj_grpc_go/vendor/google.golang.org/grpc \
-		storj:uplink:69086b6ee4a8:storj_uplink/vendor/storj.io/uplink \
+		storj:uplink:7a4b7876e16b:storj_uplink/vendor/storj.io/uplink \
 		streadway:amqp:70e15c650864:streadway_amqp/vendor/github.com/streadway/amqp \
 		stretchr:testify:v1.3.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v63.1.1:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
