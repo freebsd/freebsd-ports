@@ -10,7 +10,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: kwm@freebsd.org
 
   In GStreamer 1.16 some files moved from the gstreamer1-plugins-bad package
-  to the gstreamer1-plugins package. 
+  to the gstreamer1-plugins package.
 
   If your using a tool like portmaster or portupgrade delete the old -bad
   port and then follow the normal upgrade method.
@@ -89,7 +89,7 @@ you update your ports collection, before attempting any port upgrades.
   The shared library version of OpenSSL has been bumped.
 
   Users of DEFAULT_VERSIONS= ssl=openssl111 must update this to
-  ssl=openssl. 
+  ssl=openssl.
 
   You must rebuild all ports that depend on OpenSSL if you use OpenSSL
   from ports.
@@ -181,7 +181,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of emulators/qemu
   AUTHOR: bofh@FreeBSD.org
 
-  emulators/qemu31 has been updated to 4.1.1. Previous 3.1.X branch has 
+  emulators/qemu31 has been updated to 4.1.1. Previous 3.1.X branch has
   been repocopied to emulators/qemu31. If someone wants to stick with 3.1.X
   branch please use one of the following command:
 
@@ -214,7 +214,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: osa@FreeBSD.org
 
   The databases/redis port has been updated to the recent stable release.
-  Users wanting to stay on v4.x can replace databases/redis with 
+  Users wanting to stay on v4.x can replace databases/redis with
   databases/redis4 with one of the following commands:
 
   # pkg install databases/redis4
