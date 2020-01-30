@@ -2,6 +2,7 @@
 
 PORTNAME=	sabredav
 PORTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	meyser@xenet.de
@@ -9,15 +10,15 @@ COMMENT=	WebDav, CalDav and Carddav Server/Framework written in PHP
 
 LICENSE=	BSD3CLAUSE
 
+USES=			cpe php
+USE_PHP=		dom simplexml mbstring pcre spl ctype iconv xmlwriter
+USE_GITHUB=		yes
+
 OPTIONS_MULTI=		DATABASE
 OPTIONS_MULTI_DATABASE=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	MYSQL
 
-USES=			cpe php
 CPE_VENDOR=		fruux
-USE_PHP=		dom simplexml mbstring pcre spl ctype iconv xmlwriter
-
-USE_GITHUB=		yes
 GH_ACCOUNT=		fruux
 GH_PROJECT=		sabre-dav
 
