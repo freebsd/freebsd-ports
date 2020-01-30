@@ -2,6 +2,7 @@
 
 PORTNAME=	Osi
 DISTVERSION=	0.108.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/${PORTNAME}/
 PKGNAMEPREFIX=	coin-or-

@@ -3,7 +3,7 @@
 
 PORTNAME=	CoinMP
 PORTVERSION=	1.8.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/CoinMP/
 

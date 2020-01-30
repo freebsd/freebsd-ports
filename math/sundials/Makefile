@@ -2,7 +2,7 @@
 
 PORTNAME=	sundials
 DISTVERSION=	3.1.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	https://computation.llnl.gov/projects/sundials/download/
 
