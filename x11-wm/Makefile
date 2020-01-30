@@ -65,6 +65,7 @@
     SUBDIR += ion
     SUBDIR += jewel
     SUBDIR += jwm
+    SUBDIR += kickshaw
     SUBDIR += larswm
     SUBDIR += libcompizconfig
     SUBDIR += libdockapp
