@@ -358,6 +358,7 @@
     SUBDIR += x3270
     SUBDIR += xaniroc
     SUBDIR += xantfarm
+    SUBDIR += xapps
     SUBDIR += xascii
     SUBDIR += xauth
     SUBDIR += xautolock
