@@ -3,7 +3,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	7.6.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	databases geography
 MASTER_SITES=	https://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \

@@ -4,7 +4,7 @@
 PORTNAME=	code_saturne
 PORTVERSION=	6.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science parallel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -45,8 +45,8 @@ OPTIONS_DEFAULT=	BATCH BLAS MPI METIS
 OPTIONS_RADIO=		METIS
 OPTIONS_RADIO_METIS=	METIS PARMETIS
 BLAS_USES=		blaslapack
-BLAS_CONFIGURE_ON=	--with-blas=yes --with-blas-type=BLAS
-BLAS_LIB_DEPENDS=	libcblas.so:math/cblas
+BLAS_CONFIGURE_ON=	--with-blas=yes --with-blas-lib=${LOCALBASE}/lib --with-blas-libs=-lopenblas
+BLAS_LIB_DEPENDS=	libopenblas.so:math/openblas
 BATCH_DESC=		Use Torque to submit batches
 BATCH_RUN_DEPENDS=	pbs-config:sysutils/torque
 MPI_LIB_DEPENDS=	libmpi.so:net/mpich

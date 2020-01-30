@@ -3,6 +3,7 @@
 PORTNAME=	simbody
 DISTVERSIONPREFIX=	Simbody-
 DISTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	science biology
 
 PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
