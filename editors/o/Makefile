@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	o
-DISTVERSION=	2.16.0
+DISTVERSION=	2.16.3
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,8 +20,8 @@ GH_TUPLE=	\
 		pkg:term:aa71e9d9e942:pkg_term/vendor/github.com/pkg/term \
 		sourcegraph:annotate:f4cad6c6324d:sourcegraph_annotate/vendor/github.com/sourcegraph/annotate \
 		xyproto:syntax:64354a20998a:xyproto_syntax/vendor/github.com/xyproto/syntax \
-		xyproto:textoutput:v1.9.3:xyproto_textoutput/vendor/github.com/xyproto/textoutput \
-		xyproto:vt100:v1.8.2:xyproto_vt100/vendor/github.com/xyproto/vt100
+		xyproto:textoutput:v1.9.4:xyproto_textoutput/vendor/github.com/xyproto/textoutput \
+		xyproto:vt100:v1.8.3:xyproto_vt100/vendor/github.com/xyproto/vt100
 
 PLIST_FILES=	bin/o
 
