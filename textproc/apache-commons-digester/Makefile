@@ -3,7 +3,7 @@
 
 PORTNAME=	commons-digester
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc java devel
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	apache-
@@ -24,7 +24,7 @@ NO_ARCH=	yes
 USE_JAVA=	yes
 
 JARFILE=	${PORTNAME}.jar
-PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
+PLIST_FILES=	${JAVAJARDIR}/${JARFILE}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -33,7 +33,7 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-JAR_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:java/jakarta-commons-beanutils \
+JAR_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:java/apache-commons-beanutils \
 		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
 		${JAVALIBDIR}/commons-collections.jar:java/apache-commons-collections \
 		${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j

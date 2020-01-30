@@ -3,6 +3,7 @@
 
 PORTNAME=	commons-configuration
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	apache-
@@ -13,7 +14,7 @@ COMMENT=	Java package for the reading of configuration/preferences files
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:java/jakarta-commons-beanutils \
+RUN_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:java/apache-commons-beanutils \
 		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang \
 		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
 
