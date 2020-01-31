@@ -1,4 +1,4 @@
---- src/inotifywatch.c.orig	2018-01-06 11:10:51 UTC
+--- src/inotifywatch.c.orig	2020-01-30 00:04:48 UTC
 +++ src/inotifywatch.c
 @@ -12,6 +12,9 @@
  #include <errno.h>
@@ -21,7 +21,7 @@
      signal(SIGINT, handle_impatient_user);
  
      // Parse commandline options, aborting if something goes wrong
-@@ -110,11 +117,27 @@ int main(int argc, char **argv) {
+@@ -110,10 +117,26 @@ int main(int argc, char **argv) {
          return EXIT_FAILURE;
      }
  
@@ -41,11 +41,10 @@
          warn_inotify_init_error();
          return EXIT_FAILURE;
      }
- 
++
 +#ifdef __FreeBSD__
 +    pthread_sigmask(SIG_SETMASK, &oset, NULL);
 +#endif // __FreeBSD__
-+
+ 
      // Attempt to watch file
      // If events is still 0, make it all events.
-     if (!events)
