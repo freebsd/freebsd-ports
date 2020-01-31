@@ -1450,7 +1450,6 @@
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
     SUBDIR += py-ddgr
-    SUBDIR += py-dj21-djangorestframework
     SUBDIR += py-dj22-django-auth-ldap
     SUBDIR += py-dj22-django-cacheops
     SUBDIR += py-dj22-django-cors-headers
@@ -1580,7 +1579,6 @@
     SUBDIR += py-django-webpack-loader
     SUBDIR += py-django-widget-tweaks
     SUBDIR += py-django111
-    SUBDIR += py-django21
     SUBDIR += py-django22
     SUBDIR += py-django30
     SUBDIR += py-django_compressor
@@ -2246,7 +2244,6 @@
     SUBDIR += snarf
     SUBDIR += sogo2
     SUBDIR += sogo2-activesync
-    SUBDIR += sogo3
     SUBDIR += sogo4
     SUBDIR += sogo4-activesync
     SUBDIR += spawn-fcgi
