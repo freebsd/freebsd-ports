@@ -14003,4 +14003,4 @@ x11-wm/plwm||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 games/vegastrike-data||2020-01-27|Removed
 textproc/gnome-doc-utils||2020-01-27|Abandoned upstream, Python 2.7 only
 java/jakarta-commons-discovery|java/apache-commons-discovery|2020-01-29|Renamed upstream
-java/jakarta-commons-commons-beanutils|apache-commons-beanutils|2020-01-30|Renamed upstream
+java/jakarta-commons-commons-beanutils|java/apache-commons-beanutils|2020-01-30|Renamed upstream
