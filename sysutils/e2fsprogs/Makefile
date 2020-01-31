@@ -3,7 +3,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.45.5
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -51,7 +51,7 @@ MAKE_ENV+=	CHECK_CMD=@true
 .if !defined(MASTERDIR)
 INSTALL_TARGET=		install install-libs
 
-OPTIONS_DEFINE=		DOCS NLS FUSEFS PARALLELTESTS SLOWTESTS BASHTESTS
+OPTIONS_DEFINE=		DOCS NLS FUSEFS PARALLELTESTS SLOWTESTS BASHTESTS LIBUNWIND
 OPTIONS_EXCLUDE+=	EXAMPLES
 OPTIONS_SUB=		yes
 
@@ -66,6 +66,7 @@ ALLTESTS_DESC=	Run most self-tests (needs more RAM/disk space)
 PARALLELTESTS_DESC=	Parallelize self-tests (needs more disk space)
 SLOWTESTS_DESC=	Enable slow tests that are skipped by default
 BASHTESTS_DESC=	Enable tests that require the GNU bash shell
+LIBUNWIND_DESC=	Backtrace with libunwind (do set WITH_DEBUG=yes!)
 
 FUSEFS_CONFIGURE_ENABLE=	fuse2fs
 
@@ -76,6 +77,11 @@ BASH_CMD=	${LOCALBASE}/bin/bash
 LIB_DEPENDS+=	libblkid.so:misc/e2fsprogs-libblkid
 LIB_DEPENDS+=	libss.so:devel/e2fsprogs-libss
 LIB_DEPENDS+=	libuuid.so:misc/e2fsprogs-libuuid
+
+LIBUNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
+LIBUNWIND_LIBS+=	-lunwind
+LIBUNWIND_LDFLAGS+=	-rdynamic
+LIBUNWIND_EXTRA_PATCHES=${FILESDIR}/extrapatch-e2fsck_sigcatcher.c
 
 PORTDOCS=	NOTICE README RELEASE-NOTES SUBMITTING-PATCHES
 .endif
@@ -94,9 +100,10 @@ MAKE_ARGS+=	V=1
 
 .include <bsd.port.options.mk>
 
-. if ${ARCH} == powerpc64
-# Fix powerpc64 SIGSEGV,
-# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=231570
+. if ! empty(ARCH:Mpowerpc*)
+# Fix powerpc64/powerpc SIGSEGV,
+# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=231570 (ppc64)
+# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=242798 (ppc32 - untested)
 USES+=		compiler:c11
 . endif
 
@@ -231,6 +238,10 @@ _check_target=check
 _check_timeout=180
 .endif
 
+.if ${PORT_OPTIONS:MLIBUNWIND}
+_staticlibs+=${LOCALBASE}/lib/libunwind.a /usr/lib/liblzma.a
+.endif
+
 post-build:
 # Relink e2fsck statically - We need to make sure that tools for the root file
 # system are statically linked against anything that is outside the root fs,
@@ -239,7 +250,7 @@ post-build:
 	cd ${WRKSRC}/e2fsck && ${RM} -f e2fsck \
 		&& ${MAKE_CMD} e2fsck V=1 \
 		LIBS="../lib/libsupport.a ../lib/libext2fs.a ../lib/libcom_err.a \
-		/usr/lib/libexecinfo.a /usr/lib/libelf.a \
+		${_staticlibs} /usr/lib/libexecinfo.a /usr/lib/libelf.a \
 		${LOCALBASE}/lib/libblkid.a ${LOCALBASE}/lib/libuuid.a ${libintl} ../lib/libe2p.a" \
 		LIBMAGIC=/usr/lib/libmagic.a\ -lz
 # Regression check: avoid a port (not upstream!) regression from 1.40.5,
