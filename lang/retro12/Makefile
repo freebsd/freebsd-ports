@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	retro12
-DISTVERSION=	2019.10
+DISTVERSION=	2020.1
 CATEGORIES=	lang
 MASTER_SITES=	http://forthworks.com/retro/r/ \
 		https://forthworks.com/retro/r/
@@ -13,7 +13,7 @@ COMMENT=	Clean, elegant, and pragmatic dialect of Forth
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		ncurses shebangfix
+USES=		shebangfix
 USE_CSTD=	c99
 
 SHEBANG_FILES=	example/Atua*
@@ -35,13 +35,14 @@ PLIST_FILES=	bin/retro \
 		bin/retro-document \
 		bin/retro-embedimage \
 		bin/retro-extend \
+		bin/retro-locate \
 		bin/retro-muri \
 		bin/retro-tags \
 		bin/retro-unu
 
 PORTDATA=	glossary.retro ngaImage tests words.tsv
 
-PORTDOCS=	README RELEASE-NOTES doc
+PORTDOCS=	README RELEASE-NOTES RETRO-Book.md words.tsv
 
 PORTEXAMPLES=	example
 
