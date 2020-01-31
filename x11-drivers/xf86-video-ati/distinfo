@@ -1,3 +1,3 @@
-TIMESTAMP = 1557591433
-SHA256 (xorg/driver/xf86-video-ati-19.0.1.tar.bz2) = 5cb6015d8664546ad1311bc9c363d7bc41ebf60e7046ceb44dd38e5b707961b0
-SIZE (xorg/driver/xf86-video-ati-19.0.1.tar.bz2) = 902825
+TIMESTAMP = 1571519275
+SHA256 (xorg/driver/xf86-video-ati-19.1.0.tar.bz2) = 659f5a1629eea5f5334d9b39b18e6807a63aa1efa33c1236d9cc53acbb223c49
+SIZE (xorg/driver/xf86-video-ati-19.1.0.tar.bz2) = 904558

@@ -1,3 +1,3 @@
-TIMESTAMP = 1557591513
-SHA256 (xorg/driver/xf86-video-amdgpu-19.0.1.tar.bz2) = aaa197196aadcb12e93e10a2aa03c9aedc9ba7b27c2643a8ef620d41e2d1c6d5
-SIZE (xorg/driver/xf86-video-amdgpu-19.0.1.tar.bz2) = 440534
+TIMESTAMP = 1571519600
+SHA256 (xorg/driver/xf86-video-amdgpu-19.1.0.tar.bz2) = 4f0ea4e0ae61995ac2b7c72433d31deab63b60c78763020aaa1b28696124fe5d
+SIZE (xorg/driver/xf86-video-amdgpu-19.1.0.tar.bz2) = 441746
