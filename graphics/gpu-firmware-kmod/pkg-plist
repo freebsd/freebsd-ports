@@ -92,14 +92,20 @@
 /%%KMODDIR%%/amdgpu_navi10_sdma_bin.ko
 /%%KMODDIR%%/amdgpu_navi10_smc_bin.ko
 /%%KMODDIR%%/amdgpu_navi10_sos_bin.ko
+/%%KMODDIR%%/amdgpu_navi10_ta_bin.ko
 /%%KMODDIR%%/amdgpu_navi10_vcn_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_asd_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_ce_bin.ko
+/%%KMODDIR%%/amdgpu_navi14_ce_wks_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_gpu_info_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_me_bin.ko
+/%%KMODDIR%%/amdgpu_navi14_me_wks_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_mec2_bin.ko
+/%%KMODDIR%%/amdgpu_navi14_mec2_wks_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_mec_bin.ko
+/%%KMODDIR%%/amdgpu_navi14_mec_wks_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_pfp_bin.ko
+/%%KMODDIR%%/amdgpu_navi14_pfp_wks_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_rlc_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_sdma1_bin.ko
 /%%KMODDIR%%/amdgpu_navi14_sdma_bin.ko
@@ -123,6 +129,7 @@
 /%%KMODDIR%%/amdgpu_picasso_rlc_am4_bin.ko
 /%%KMODDIR%%/amdgpu_picasso_rlc_bin.ko
 /%%KMODDIR%%/amdgpu_picasso_sdma_bin.ko
+/%%KMODDIR%%/amdgpu_picasso_ta_bin.ko
 /%%KMODDIR%%/amdgpu_picasso_vcn_bin.ko
 /%%KMODDIR%%/amdgpu_pitcairn_ce_bin.ko
 /%%KMODDIR%%/amdgpu_pitcairn_k_smc_bin.ko
@@ -201,6 +208,7 @@
 /%%KMODDIR%%/amdgpu_raven2_pfp_bin.ko
 /%%KMODDIR%%/amdgpu_raven2_rlc_bin.ko
 /%%KMODDIR%%/amdgpu_raven2_sdma_bin.ko
+/%%KMODDIR%%/amdgpu_raven2_ta_bin.ko
 /%%KMODDIR%%/amdgpu_raven2_vcn_bin.ko
 /%%KMODDIR%%/amdgpu_raven_asd_bin.ko
 /%%KMODDIR%%/amdgpu_raven_ce_bin.ko
@@ -213,6 +221,7 @@
 /%%KMODDIR%%/amdgpu_raven_pfp_bin.ko
 /%%KMODDIR%%/amdgpu_raven_rlc_bin.ko
 /%%KMODDIR%%/amdgpu_raven_sdma_bin.ko
+/%%KMODDIR%%/amdgpu_raven_ta_bin.ko
 /%%KMODDIR%%/amdgpu_raven_vcn_bin.ko
 /%%KMODDIR%%/amdgpu_si58_mc_bin.ko
 /%%KMODDIR%%/amdgpu_stoney_ce_bin.ko
@@ -326,6 +335,7 @@
 /%%KMODDIR%%/i915_skl_dmc_ver1_26_bin.ko
 /%%KMODDIR%%/i915_skl_dmc_ver1_27_bin.ko
 /%%KMODDIR%%/i915_skl_guc_ver6_1_bin.ko
+/%%KMODDIR%%/i915_skl_guc_ver9_33_bin.ko
 /%%KMODDIR%%/i915_skl_huc_ver01_07_bin.ko
 /%%KMODDIR%%/radeon_ARUBA_me_bin.ko
 /%%KMODDIR%%/radeon_ARUBA_pfp_bin.ko
