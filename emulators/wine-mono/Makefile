@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine-mono
-DISTVERSION=	4.7.5
+DISTVERSION=	4.9.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://dl.winehq.org/wine/wine-mono/${DISTVERSION}/
 EXTRACT_SUFX=	.msi
