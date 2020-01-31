@@ -1,6 +1,6 @@
---- node.gypi.orig	2019-12-18 17:26:46 UTC
+--- node.gypi.orig	2020-01-07 22:07:51 UTC
 +++ node.gypi
-@@ -330,6 +330,9 @@
+@@ -328,6 +328,9 @@
          ['openssl_fips != "" or openssl_is_fips=="true"', {
            'defines': [ 'NODE_FIPS_MODE' ],
          }],
