@@ -35,6 +35,7 @@
 %%WWWDIR%%/app/controllers/CControllerExportXml.php
 %%WWWDIR%%/app/controllers/CControllerFavouriteCreate.php
 %%WWWDIR%%/app/controllers/CControllerFavouriteDelete.php
+%%WWWDIR%%/app/controllers/CControllerHostMacrosList.php
 %%WWWDIR%%/app/controllers/CControllerMapView.php
 %%WWWDIR%%/app/controllers/CControllerMediatypeCreate.php
 %%WWWDIR%%/app/controllers/CControllerMediatypeDelete.php
@@ -135,6 +136,8 @@
 %%WWWDIR%%/app/views/administration.userprofile.edit.js.php
 %%WWWDIR%%/app/views/dashboard.properties.edit.php
 %%WWWDIR%%/app/views/dashboard.sharing.edit.php
+%%WWWDIR%%/app/views/hostmacros.list.html.php
+%%WWWDIR%%/app/views/hostmacros.list.php
 %%WWWDIR%%/app/views/layout.csv.php
 %%WWWDIR%%/app/views/layout.htmlpage.footer.php
 %%WWWDIR%%/app/views/layout.htmlpage.header.php
@@ -788,7 +791,6 @@
 %%WWWDIR%%/include/views/general.browserwarning.php
 %%WWWDIR%%/include/views/general.login.php
 %%WWWDIR%%/include/views/general.warning.php
-%%WWWDIR%%/include/views/hostmacros.php
 %%WWWDIR%%/include/views/inventory.host.list.php
 %%WWWDIR%%/include/views/inventory.host.view.php
 %%WWWDIR%%/include/views/js/adm.regexprs.edit.js.php
@@ -828,7 +830,6 @@
 %%WWWDIR%%/include/views/js/configuration.triggers.edit.js.php
 %%WWWDIR%%/include/views/js/configuration.triggers.list.js.php
 %%WWWDIR%%/include/views/js/editabletable.js.php
-%%WWWDIR%%/include/views/js/hostmacros.js.php
 %%WWWDIR%%/include/views/js/item.preprocessing.js.php
 %%WWWDIR%%/include/views/js/monitoring.latest.js.php
 %%WWWDIR%%/include/views/js/monitoring.screen.edit.js.php
