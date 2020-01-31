@@ -1,8 +1,8 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 # $FreeBSD$
 
-PORTNAME=	inotify-tools
-DISTVERSION=	3.20.1
+PORTNAME=	inotify-tools # new fork https://github.com/ericcurtin/inotify-tools
+DISTVERSION=	3.20.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,6 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		autoreconf gmake libtool localbase
 USE_GITHUB=	yes
-GH_ACCOUNT=	rvoicilas
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doxygen
 USE_LDCONFIG=	yes
@@ -37,5 +36,11 @@ post-build-STATIC-on:
 post-install-STATIC-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/inotifywait.static ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/inotifywatch.static ${STAGEDIR}${PREFIX}/bin
+
+do-test: # Some tests are known to fail: https://github.com/inotify-tools/inotify-tools/issues/108
+	@${ECHO} "unit test"
+	@cd ${WRKSRC}/libinotifytools/src && ${GMAKE} test && ./test
+	@${ECHO} "integration test"
+	@cd ${WRKSRC}/t && ${GMAKE}
 
 .include <bsd.port.mk>
