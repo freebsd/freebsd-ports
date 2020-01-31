@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PY_ENUM34} \
 py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}singledispatch>0:devel/py-singledispatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}funcsigs>0:devel/py-funcsigs@${PY_FLAVOR}
 
-USES=		python fortran localbase
+USES=		compiler:c++11-lang python fortran localbase
 USE_PYTHON=	distutils concurrent autoplist
 
 post-install:
