@@ -9,6 +9,6 @@ lib/cmake/openblas/OpenBLASConfig.cmake
 lib/cmake/openblas/OpenBLASConfigVersion.cmake
 lib/libopenblas.a
 lib/libopenblas.so
-lib/libopenblasp-r%%PORTVERSION%%.a
-lib/libopenblasp-r%%PORTVERSION%%.so
+%%DYNARCH%%lib/libopenblasp-r%%PORTVERSION%%.a
+%%DYNARCH%%lib/libopenblasp-r%%PORTVERSION%%.so
 libdata/pkgconfig/openblas.pc
