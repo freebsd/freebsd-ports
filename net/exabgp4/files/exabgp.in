@@ -1,0 +1,70 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: exabgp
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line(s) to /etc/rc.conf to enable exabgp:
+#
+# exabgp_enable="YES"
+
+. /etc/rc.subr
+
+name=exabgp
+rcvar=exabgp_enable
+
+load_rc_config $name
+
+exabgp_enable=${exabgp_enable:-"NO"}
+exabgp_conf=${exabgp_conf:-"%%ETCDIR%%/exabgp.conf"}
+
+pidfile=/var/run/${name}/${name}.pid
+
+required_files=${exabgp_conf}
+
+command="%%PYTHON_CMD%%"
+command_args="-m exabgp --root %%PREFIX%% -e %%ETCDIR%%/${name}.env ${exabgp_conf} 1>/dev/null"
+
+configtest_cmd="exabgp_configtest"
+start_precmd="exabgp_precmd"
+reload_precmd="exabgp_configtest"
+restart_precmd="exabgp_configtest"
+reload_all_cmd="exabgp_reload_all"
+reload_all_precmd="exabgp_configtest"
+extra_commands="configtest reload reload_all"
+sig_reload="USR1"
+
+exabgp_reload_all()
+{
+    	echo "Reloading exabgp configuration and processes."
+	kill -USR2 $rc_pid
+}
+
+exabgp_configtest()
+{
+	echo "Performing sanity check on ${name} configuration."
+	result=$(env exabgp.log.configuration=true exabgp.daemon.daemonize=false exabgp.log.level=ERR exabgp.log.destination=stdout ${command} -m ${name} --root %%PREFIX%% --test ${exabgp_conf} 2>&1)
+	if [ ! -z "${result}" ]; then
+		echo "${result}"
+		err 1 "Failed to validate configuration file, aborting."
+	fi
+}
+
+exabgp_precmd()
+{
+	install -d -o _bgpd -g _bgpd -m 755 /var/run/${name}
+	install -d -o _bgpd -g _bgpd -m 755 /var/log/${name}
+	if [ ! -p /var/run/${name}/exabgp.in ]; then
+		mkfifo -m 660 /var/run/${name}/exabgp.in
+	fi
+	if [ ! -p /var/run/${name}/exabgp.out ]; then
+		mkfifo -m 660 /var/run/${name}/exabgp.out
+	fi
+	chown _bgpd:_bgpd /var/run/${name}/exabgp.in /var/run/${name}/exabgp.out
+	exabgp_configtest
+	rm -f ${pidfile}
+}
+
+run_rc_command "$1"

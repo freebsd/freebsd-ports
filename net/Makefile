@@ -150,6 +150,7 @@
     SUBDIR += etrace
     SUBDIR += eventviews
     SUBDIR += exabgp
+    SUBDIR += exabgp4
     SUBDIR += exaddos
     SUBDIR += fb
     SUBDIR += fiche
