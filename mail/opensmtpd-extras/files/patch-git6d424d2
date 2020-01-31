@@ -3,19 +3,24 @@ From: Reio Remma <reio@mrstuudio.ee>
 Date: Thu, 19 Dec 2019 18:55:30 +0200
 Subject: [PATCH] Fix building with MySQL 8.0.1.
 
+From 337e64706c9d7f8e00d710b855fe5e5373354d65 Mon Sep 17 00:00:00 2001
+From: adufray <github@adufray.com>
+Date: Wed, 29 Jan 2020 09:47:04 -0600
+Subject: [PATCH] Fix builds for MariaDB users
+
 ---
  extras/tables/table-mysql/table_mysql.c | 4 ++++
  1 file changed, 4 insertions(+)
 
 diff --git ./extras/tables/table-mysql/table_mysql.c ./extras/tables/table-mysql/table_mysql.c
-index a58fdf1..257a713 100644
+index a58fdf1..53fb7b7 100644
 --- ./extras/tables/table-mysql/table_mysql.c
 +++ ./extras/tables/table-mysql/table_mysql.c
 @@ -243,7 +243,11 @@ config_connect(struct config *conf)
  		{ "query_addrname",	1 },
  		{ "query_mailaddrmap",	1 },
  	};
-+#if MYSQL_VERSION_ID >= 80001
++#if !defined(MARIADB_BASE_VERSION) && MYSQL_VERSION_ID >= 80001
 +	bool reconn;
 +#else
  	my_bool	 reconn;
