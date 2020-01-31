@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	squirrelmail
-PORTVERSION=	20180404
+PORTVERSION=	20190904
 CATEGORIES=	mail www
 MASTER_SITES=	http://snapshots.squirrelmail.org/ \
 	http://freebsd.uzsolt.hu/src/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}_0202-SVN.stable
+DISTNAME=	${PORTNAME}-${PORTVERSION}_0200-SVN.stable
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	uzsolt@uzsolt.hu
@@ -19,8 +19,10 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 USES=		cpe gettext perl5 php:web,flavors tar:bzip2
 USE_PHP=	session hash gettext mbstring pcre openssl xml
 USE_PERL5=	run
-NO_ARCH=	yes
+
 PORTSCOUT=	ignore:1
+
+NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.stable/${PORTNAME}
 
