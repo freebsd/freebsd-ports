@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.63.1
+DISTVERSION=	0.63.2
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -132,7 +132,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		ce9aceb7495670d4a8a3c0c2fa5be6d2a718a802
+COMMIT_ID=		934ee21fac4f26968965d6e87e306905370a6c32
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
