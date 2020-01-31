@@ -254,6 +254,7 @@
     SUBDIR += wordgrinder
     SUBDIR += wxhexeditor
     SUBDIR += xcoral
+    SUBDIR += xed
     SUBDIR += xi-core
     SUBDIR += xi-term
     SUBDIR += xmlcopyeditor
