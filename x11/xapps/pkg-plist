@@ -15,7 +15,6 @@ lib/libxapp.so.1.6.10
 libdata/pkgconfig/xapp.pc
 share/gir-1.0/XApp-1.0.gir
 share/glade/catalogs/xapp-glade-catalog.xml
-share/glib-2.0/schemas/org.x.apps.gschema.xml
 share/icons/hicolor/scalable/actions/add-files-to-archive-symbolic.svg
 share/icons/hicolor/scalable/actions/category-search-symbolic.svg
 share/icons/hicolor/scalable/actions/extract-archive-symbolic.svg

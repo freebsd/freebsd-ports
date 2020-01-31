@@ -3,9 +3,10 @@
 
 PORTNAME=	xapps
 PORTVERSION=	1.6.10
+PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Cross-desktop libraries and common resources
 
 LICENSE=	LGPL3
@@ -19,6 +20,7 @@ GH_ACCOUNT=	linuxmint
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_LDCONFIG=	yes
 USE_XORG=	x11
+GLIB_SCHEMAS=	org.x.apps.gschema.xml
 INSTALLS_ICONS=	yes
 SHEBANG_FILES=	libxapp/g-codegen.py libxapp/install_generated_header.py \
 		makedoc schemas/meson_install_schemas.py
@@ -26,8 +28,8 @@ SHEBANG_FILES=	libxapp/g-codegen.py libxapp/install_generated_header.py \
 post-extract:
 # Do not install auxiliary scripts and adjust icons installation path
 	@${RM} -r ${WRKSRC}/files/usr/bin
-	@${MKDIR} ${WRKSRC}/files/${PREFIX}
-	@${MV} ${WRKSRC}/files/usr/share ${WRKSRC}/files/${PREFIX}
+	@${MKDIR} ${WRKSRC}/files${PREFIX}
+	@${MV} ${WRKSRC}/files/usr/share ${WRKSRC}/files${PREFIX}
 
 post-patch:
 # Do not build non-essential optional components for the moment
