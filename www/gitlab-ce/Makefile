@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	12.6.4
+PORTVERSION=	12.6.6
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # which makes maintaining this long list much easier!
 MY_DEPENDS=	git>=2.22.2:devel/git \
 	gitlab-shell>=10.3.0:devel/gitlab-shell \
-	gitlab-workhorse>=8.18.0:www/gitlab-workhorse \
+	gitlab-workhorse>=8.20.0:www/gitlab-workhorse \
 	gitaly>=1.77.0:devel/gitaly \
 	gitlab-pages>=1.12.0:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
@@ -64,7 +64,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-attr_encrypted>=3.1.0<3.2.0:security/rubygem-attr_encrypted \
 	rubygem-u2f0>=0.2.1<0.3.0:net/rubygem-u2f0 \
 	rubygem-validates_hostname>=1.0.6<1.1.0:dns/rubygem-validates_hostname \
-	rubygem-rubyzip>=1.3.0<1.4.0:archivers/rubygem-rubyzip \
+	rubygem-rubyzip>=2.0.0<2.1.0:archivers/rubygem-rubyzip \
 	rubygem-acme-client>=2.0.2<2.1.0:security/rubygem-acme-client \
 	rubygem-browser>=2.5<3.0:www/rubygem-browser \
 	rubygem-gpgme>=2.0.19<2.1.0:security/rubygem-gpgme \
@@ -72,7 +72,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-net-ldap>0:net/rubygem-net-ldap \
 	rubygem-grape11>=1.1.0<1.2.0:devel/rubygem-grape11 \
 	rubygem-grape-entity>=0.7.1<0.8.0,1:devel/rubygem-grape-entity \
-	rubygem-rack-cors>=1.0.0<1.1.0:www/rubygem-rack-cors \
+	rubygem-rack-cors>=1.0.6<1.1.0:www/rubygem-rack-cors \
 	rubygem-graphql>=1.9.11<1.10.0:devel/rubygem-graphql \
 	rubygem-graphiql-rails>=1.4.10<1.5.0:devel/rubygem-graphiql-rails \
 	rubygem-apollo_upload_server>=2.0.0.b.3<2.1.0:net/rubygem-apollo_upload_server \
@@ -103,7 +103,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-github-markup17>=1.7.0<1.8.0:textproc/rubygem-github-markup17 \
 	rubygem-commonmarker>=0.20<1.0:textproc/rubygem-commonmarker \
 	rubygem-redcloth>=4.3.2<4.4.0:www/rubygem-redcloth \
-	rubygem-rdoc>=6.0<7.0:devel/rubygem-rdoc \
+	rubygem-rdoc>=6.1.2<6.2:devel/rubygem-rdoc \
 	rubygem-org-ruby>=0.9.12<0.10.0:textproc/rubygem-org-ruby \
 	rubygem-creole>=0.5.0<0.6.0:textproc/rubygem-creole \
 	rubygem-wikicloth081>=0.8.1<0.8.2:textproc/rubygem-wikicloth081 \
@@ -240,7 +240,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	70900054dfe381ccca7d570d431d96705e6b6473
+GL_COMMIT=	114d26c615cd6305270b0f29d11b177ab9e655c0
 
 USERS=	git
 GROUPS=	git
