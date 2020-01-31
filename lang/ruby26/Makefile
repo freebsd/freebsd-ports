@@ -23,7 +23,7 @@ BUILD_DEPENDS=	libffi>=0:devel/libffi
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 RUN_DEPENDS=	libffi>=0:devel/libffi
 
-USES=		autoreconf cpe ssl tar:xz
+USES=		autoreconf compiler cpe ssl tar:xz
 
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=--disable-dtrace
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
-.if (defined(PPC_ABI) && ${PPC_ABI} == ELFv1) || ${ARCH} == powerpc
+.if (defined(PPC_ABI) && ${PPC_ABI} == ELFv1) || (${ARCH} == powerpc && ${CHOSEN_COMPILER_TYPE} == clang)
 USE_GCC=	yes
 .endif
 
