@@ -10,6 +10,7 @@ MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Panel for the LXQt desktop
 
 LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt \
 		libxkbcommon.so:x11/libxkbcommon \
