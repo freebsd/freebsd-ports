@@ -14004,3 +14004,23 @@ games/vegastrike-data||2020-01-27|Removed
 textproc/gnome-doc-utils||2020-01-27|Abandoned upstream, Python 2.7 only
 java/jakarta-commons-discovery|java/apache-commons-discovery|2020-01-29|Renamed upstream
 java/jakarta-commons-commons-beanutils|java/apache-commons-beanutils|2020-01-30|Renamed upstream
+www/py-dj21-django-auth-ldap|www/py-dj22-django-auth-ldap|2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
+www/py-dj21-django-crispy-forms|www/py-dj22-django-crispy-forms|2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
+www/sogo3-activesync|www/sogo4|2020-01-31|Has expired: Deprecated, replaced by www/sogo4
+devel/sope3|devel/sope4|2020-01-31|Has expired: Deprecated, replaced by devel/sope4
+www/py-dj21-django-mptt|www/py-dj22-django-mptt|2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
+graphics/py-willow11|graphics/py-willow|2020-01-31|Has expired: Use graphics/py-willow instead
+www/py-dj21-django-tables2|www/py-dj22-django-tables2|2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
+www/py-dj21-django-debug-toolbar|www/py-dj22-django-debug-toolbar|2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
+security/krb5-115|security/krb5|2020-01-31|Has expired: EOL one year after the release of krb5 1.17
+www/py-dj21-django-taggit|www/py-dj22-django-taggit|2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
+www/py-dj21-django-cors-headers|www/py-dj22-django-cors-headers|2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
+graphics/py-imgurpython||2020-01-31|Has expired: No longer supported by upstream
+www/py-dj21-django-taggit-serializer|www/py-dj22-django-taggit-serializer|2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
+www/py-dj21-django-filter|www/py-dj22-django-filter|2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
+www/py-dj21-django-timezone-field|www/py-dj22-django-timezone-field|2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
+devel/py-xarray011|devel/py-xarray|2020-01-31|Has expired: Use devel/py-xarray instead
+www/py-django-modelcluster4|www/py-django-modelcluster|2020-01-31|Has expired: Use www/py-django-modelcluster instead
+devel/py-semantic_version26|devel/py-semantic_version|2020-01-31|Has expired: Use devel/py-semantic_version instead
+www/py-dj21-django-js-asset|www/py-dj22-django-js-asset|2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
+www/py-dj21-drf-yasg||2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019) and no longer supported. Switch to Django 2.2+ versions of this port as soon as possible
