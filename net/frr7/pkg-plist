@@ -143,7 +143,7 @@ lib/libfrrospfapiclient.so.0.0.0
 %%MANPAGES%%man/man8/frr-watchfrr.8.gz
 %%MANPAGES%%%%VTYSH%%man/man1/vtysh.1.gz
 %%MANPAGES%%man/man8/frr-bgpd.8.gz
-%%MANPAGES%%%%LDPD%%man/man8/ldpd.8.gz
+%%MANPAGES%%%%LDPD%%man/man8/frr-ldpd.8.gz
 %%MANPAGES%%man/man8/frr-ospf6d.8.gz
 %%MANPAGES%%man/man8/frr-ospfd.8.gz
 %%MANPAGES%%man/man8/frr-pbrd.8.gz
