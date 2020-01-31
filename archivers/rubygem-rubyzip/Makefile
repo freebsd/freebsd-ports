@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubyzip
-PORTVERSION=	1.3.0
+PORTVERSION=	2.0.0
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
