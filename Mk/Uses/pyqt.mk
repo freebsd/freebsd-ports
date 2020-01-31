@@ -81,7 +81,8 @@ _USE_PYQT_ALL=		core dbus dbussupport demo designer designerplugin \
 			sql svg test webkit xml xmlpatterns sip
 # List of components only in pyqt5
 _USE_PYQT5_ONLY=	multimediawidgets printsupport qml quickwidgets \
-			serialport webchannel webengine webkitwidgets widgets
+			serialport webchannel webengine webkitwidgets \
+			websockets widgets
 
 # Unversioned variables for the rest of the file
 PYQT_VERSION=		${PYQT${_PYQT_VERSION}_VERSION}
@@ -118,6 +119,7 @@ py-test_PATH=		${PYQT_PY_RELNAME}-test>=${PYQT_VERSION}
 py-webchannel_PATH=	${PYQT_PY_RELNAME}-webchannel>=${PYQT_VERSION}
 py-webengine_PATH=	${PYQT_PY_RELNAME}-webengine>=5.12.1
 py-webkit_PATH=		${PYQT_PY_RELNAME}-webkit>=${PYQT_VERSION}
+py-websockets_PATH=	${PYQT_PY_RELNAME}-websockets>=${PYQT_VERSION}
 py-xml_PATH=		${PYQT_PY_RELNAME}-xml>=${PYQT_VERSION}
 py-xmlpatterns_PATH=	${PYQT_PY_RELNAME}-xmlpatterns>=${PYQT_VERSION}
 
@@ -155,6 +157,7 @@ py-test_PORT=		devel/${PYQT_RELNAME}-test
 py-webchannel_PORT=	www/${PYQT_RELNAME}-webchannel
 py-webengine_PORT=	www/${PYQT_RELNAME}-webengine
 py-webkit_PORT=		www/${PYQT_RELNAME}-webkit
+py-websockets_PORT=	www/${PYQT_RELNAME}-websockets
 py-xml_PORT=		textproc/${PYQT_RELNAME}-xml
 py-xmlpatterns_PORT=	textproc/${PYQT_RELNAME}-xmlpatterns
 
