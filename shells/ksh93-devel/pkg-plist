@@ -1,8 +1,9 @@
 @shell bin/ksh%%93%%
+@shell bin/rksh%%93%%
 bin/shcomp%%93%%
 man/man1/ksh%%93%%.1.gz
 share/ksh/config.ksh
-share/ksh/functions/_cd
+share/ksh/functions/cd
 share/ksh/functions/_ksh_print_help
 share/ksh/functions/dirs
 share/ksh/functions/man
