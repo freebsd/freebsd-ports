@@ -1,0 +1,15 @@
+Flask-Security allows you to quickly add common security mechanisms to your
+Flask application. They include:
+
+  - Session based authentication
+  - Role management
+  - Password hashing
+  - Basic HTTP authentication
+  - Token based authentication
+  - Token based account activation (optional)
+  - Token based password recovery / resetting (optional)
+  - User registration (optional)
+  - Login tracking (optional)
+  - JSON/Ajax Support
+
+WWW: https://github.com/mattupstate/flask-security
