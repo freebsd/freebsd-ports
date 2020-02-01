@@ -18,23 +18,10 @@ SETUP BEFORE FIRST USE:
 Documentation: https://zrepl.github.io/
 Changelog:     https://zrepl.github.io/master/changelog.html
 
-WARNING - BREAKING CHANGES WITH THE ZREPL 0.1.X RELEASE:
-There are a number of breaking changes this release. To ensure zrepl
-continues to function correctly, ensure you read the changelog, and then
-perform the following on both sides of the replication:
-- Stop the zrepl service:    # service zrepl stop
-- Upgrade the zrepl package: # pkg upgrade zrepl
-- Modify the zrepl config:   # vi %%PREFIX%%/etc/zrepl/zrepl.yml
-- Check the configuration:   # service zrepl configtest
-- Start the zrepl service:   # service zrepl start
-- Monitor the zrepl service: # zrepl status
-
 DANGER - SNAPSHOT PRUNING REQUIRES EXPLICIT KEEP RULES:
-For any ZFS snapshot that you want to keep, at least one rule must match. This
-is different from previous releases where pruning only affected snapshots with
-the configured snapshotting prefix. Make sure that snapshots to be kept or
-ignored by zrepl are covered, e.g. by using the regex keep rule.
-This also applies to snapshots taken by means other than zrepl (e.g. manually).
+For any ZFS snapshot that you want to keep, at least one rule must match.
+This also applies to snapshots taken by means other than zrepl
+(e.g. snapshots taken manually or via boot environment tools).
 EOM
 }
 ]

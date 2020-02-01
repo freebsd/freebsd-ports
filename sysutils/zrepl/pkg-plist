@@ -1,14 +1,17 @@
 bin/zrepl
-@sample etc/newsyslog.conf.d/zrepl.conf.sample
-@sample etc/syslog.d/zrepl.conf.sample
 @sample %%ETCDIR%%/zrepl.yml.sample
-%%DATADIR%%/samples/grafana-prometheus-zrepl-0.1.json
-%%DATADIR%%/samples/local.yml
-%%DATADIR%%/samples/pull.yml
-%%DATADIR%%/samples/pull_ssh.yml
-%%DATADIR%%/samples/push.yml
-%%DATADIR%%/samples/sink.yml
-%%DATADIR%%/samples/snap.yml
-%%DATADIR%%/samples/source.yml
-%%DATADIR%%/samples/source_ssh.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/template.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grafana-prometheus-zrepl-0.1.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/local.yml
+@sample %%EXAMPLESDIR%%/newsyslog.conf etc/newsyslog.conf.d/zrepl.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pull.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pull_ssh.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/push.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sink.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/snap.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/source.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/source_ssh.yml
+@sample %%EXAMPLESDIR%%/syslog.conf etc/syslog.d/zrepl.conf
+@dir etc/newsyslog.conf.d
+@dir etc/syslog.d
 @dir(root,wheel,0750) /var/run/zrepl
