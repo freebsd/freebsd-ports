@@ -60,7 +60,7 @@ include/coin/BonTypes.hpp
 include/coin/BonminConfig.h
 lib/libbonmin.so
 lib/libbonmin.so.4
-lib/libbonmin.so.4.8.7
+lib/libbonmin.so.4.8.8
 libdata/pkgconfig/bonmin.pc
 share/coin/doc/Bonmin/AUTHORS
 share/coin/doc/Bonmin/LICENSE
