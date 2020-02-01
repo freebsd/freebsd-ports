@@ -1,0 +1,9 @@
+TIMESTAMP = 1575900712
+SHA256 (browsh_1.6.4_freebsd_386) = 60541fd77e6c8d7afa0b1305f3651c6b62e49c14e328db7bb09593ac33dda191
+SIZE (browsh_1.6.4_freebsd_386) = 7773664
+SHA256 (browsh_1.6.4_freebsd_amd64) = f5aadc13a130063fef62844a58e9e69247c8986b5290e73328da4514dbd2a7b4
+SIZE (browsh_1.6.4_freebsd_amd64) = 9050048
+SHA256 (browsh_1.6.4_freebsd_armv6) = f15f4f4cb28f8dc1b969cb7179c2a3c34bad9c0b9aeea7ede9d944f3ca2d62cc
+SIZE (browsh_1.6.4_freebsd_armv6) = 7796728
+SHA256 (browsh_1.6.4_freebsd_armv7) = 31c6237e0570ca7e53140c4ec1d745d27f8083f07f7bd9d7f065434f60d32e45
+SIZE (browsh_1.6.4_freebsd_armv7) = 7796728
