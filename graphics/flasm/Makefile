@@ -2,6 +2,7 @@
 
 PORTNAME=	flasm
 PORTVERSION=	1.62
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/kuriyama \
 		http://www.nowrap.de/download/
