@@ -1,0 +1,18 @@
+--- keywords.gperf.orig	2020-01-07 17:04:30 UTC
++++ keywords.gperf
+@@ -11,7 +11,7 @@ All rights reserved. See LICENSE.TXT for terms of use.
+ #ifdef MEMWATCH
+ #include "memwatch.h"
+ #endif
+-struct keyword *in_word_set(register const char *str, register unsigned int len);
++struct keyword *in_word_set(register const char *str, register size_t len);
+ %}
+ struct keyword {}
+ %%
+@@ -266,4 +266,4 @@ hexdata,                0,              HEXDATA
+ off,                    0,              OFF
+ from,                   0,              FROM
+ recursion,              0,              RECURSION
+-timeout,                0,              TIMEOUT
+\ No newline at end of file
++timeout,                0,              TIMEOUT
