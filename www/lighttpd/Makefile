@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.54
+PORTVERSION=	1.4.55
 CATEGORIES?=	www
 MASTER_SITES?=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
