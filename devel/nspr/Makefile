@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nspr
-DISTVERSION=	4.24
+DISTVERSION=	4.25
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/v${PORTVERSION}/src
 
@@ -39,7 +39,7 @@ post-install:
 do-test-TEST-on:
 	${TEST_WRKSRC}/lib/tests/string
 	${TEST_WRKSRC}/lib/tests/base64t
-	cd ${TEST_WRKSRC}/pr/tests && ${WRKSRC}/pr/tests/runtests.sh
+	(cd ${TEST_WRKSRC}/pr/tests && ${WRKSRC}/pr/tests/runtests.sh ${TEST_WRKSRC}/dist)
 	# The test below is commented out, because arena requires
 	# command-line arguments. If you can provide reasonable values
 	# for it, please contact ${MAINTAINER}. Thank you.
