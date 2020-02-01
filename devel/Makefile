@@ -4307,6 +4307,7 @@
     SUBDIR += py-configobj
     SUBDIR += py-configparser
     SUBDIR += py-confusable_homoglyphs
+    SUBDIR += py-confuse
     SUBDIR += py-constantly
     SUBDIR += py-construct
     SUBDIR += py-contextlib2
