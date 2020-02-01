@@ -4,14 +4,11 @@
 PORTNAME=	udfclient
 PORTVERSION=	0.8.8
 CATEGORIES=	sysutils
-MASTER_SITES=	OPENBSD/distfiles \
-		LOCAL/miwi
+MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/
 DISTFILES=	UDFclient.${PORTVERSION}.tgz
 
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Tools for UDF filesystem
-
-BROKEN=		unfetchable
 
 LICENSE=	ClArtistic
 
@@ -36,8 +33,7 @@ UDFCLIENTFS_NAME=	udfclientfs
 UDFCLIENTFS_VERSION=	0.6
 UDFCLIENTFS_DIR=	${WRKDIR}/udfclientfs
 
-MASTER_SITES+=	http://www.icyb.net.ua/~avg/distfiles/:fuse \
-		LOCAL/avg:fuse
+MASTER_SITES+=	LOCAL/avg:fuse
 DISTFILES+=	${UDFCLIENTFS_NAME}-${UDFCLIENTFS_VERSION}.tgz:fuse
 EXTRA_PATCHES+=	${UDFCLIENTFS_DIR}/${UDFCLIENTFS_NAME}.patch
 PATCH_ARGS+=	--ignore-whitespace
