@@ -1,3 +1,4 @@
+bin/zabbix_js
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/ibm_db2/data.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/ibm_db2/images.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/ibm_db2/schema.sql
