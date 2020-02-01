@@ -1,0 +1,32 @@
+
+$FreeBSD$
+
+--- tools/clang/tools/clang-format/git-clang-format.orig
++++ tools/clang/tools/clang-format/git-clang-format
+@@ -90,7 +90,7 @@
+     usage=usage, formatter_class=argparse.RawDescriptionHelpFormatter,
+     description=desc)
+   p.add_argument('--binary',
+-                 default=config.get('clangformat.binary', 'clang-format'),
++                 default=config.get('clangformat.binary', 'clang-format%%LLVM_SUFFIX%%'),
+                  help='path to clang-format'),
+   p.add_argument('--commit',
+                  default=config.get('clangformat.commit', 'HEAD'),
+@@ -344,7 +344,7 @@
+ 
+ 
+ def run_clang_format_and_save_to_tree(changed_lines, revision=None,
+-                                      binary='clang-format', style=None):
++                                      binary='clang-format%%LLVM_SUFFIX%%', style=None):
+   """Run clang-format on each file and save the result to a git tree.
+ 
+   Returns the object ID (SHA-1) of the created tree."""
+@@ -397,7 +397,7 @@
+ 
+ 
+ def clang_format_to_blob(filename, line_ranges, revision=None,
+-                         binary='clang-format', style=None):
++                         binary='clang-format%%LLVM_SUFFIX%%', style=None):
+   """Run clang-format on the given file and save the result to a git blob.
+ 
+   Runs on the file in `revision` if not None, or on the file in the working
