@@ -45,6 +45,7 @@
     SUBDIR += libswift
     SUBDIR += libtorrent
     SUBDIR += libtorrent-rasterbar
+    SUBDIR += libtorrent-rasterbar11
     SUBDIR += lidarr
     SUBDIR += linuxdcpp
     SUBDIR += litecoin
@@ -70,6 +71,7 @@
     SUBDIR += parity-ethereum
     SUBDIR += phex
     SUBDIR += py-libtorrent-rasterbar
+    SUBDIR += py-libtorrent-rasterbar11
     SUBDIR += py-py2play
     SUBDIR += py-transmissionrpc
     SUBDIR += py-tremc
