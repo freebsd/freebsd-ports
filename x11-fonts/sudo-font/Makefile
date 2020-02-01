@@ -2,10 +2,9 @@
 
 PORTNAME=	sudo-font
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.40
+DISTVERSION=	0.41
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://www.kutilek.de/download/ \
-		https://github.com/jenskutilek/sudo-font/releases/download/${DISTVERSIONFULL}/
+MASTER_SITES=	https://github.com/jenskutilek/sudo-font/raw/${DISTVERSIONFULL}/dist/
 DISTNAME=	sudo
 
 MAINTAINER=	0mp@FreeBSD.org
