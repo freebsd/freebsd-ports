@@ -3,6 +3,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 DISTVERSION=	1.1.14
+PORTREVISION=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-${PORTVERSION:S/./_/g}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +15,11 @@ COMMENT=	Python bindings for libtorrent-rasterbar
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../COPYING
 
-LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
+LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar11 \
 		${PY_BOOST}
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}-libtorrent-rasterbar
+BROKEN=		Broken upstream, doesn't install anything, see https://github.com/arvidn/libtorrent/issues/4204 #'
 
 USES=		compiler:c11 iconv localbase python
 USE_PYTHON=	distutils autoplist
