@@ -33,6 +33,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_config_transformer.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_ctl.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_db_sup.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_doc.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_hooks.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_http.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_http_ws.beam
@@ -48,6 +49,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_old_config.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_option.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_options.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_options_doc.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_pkix.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_piefxis.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_redis.beam
@@ -416,7 +418,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jiffy-%%JIFFY_VER%%/ebin/jiffy.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jiffy-%%JIFFY_VER%%/ebin/jiffy_utf8.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jiffy-%%JIFFY_VER%%/priv/jiffy.so
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/LICENSE
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/LICENSE.md
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose.app
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_app.beam
@@ -433,6 +435,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve448_libdecaf.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve448_unsupported.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_json.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_json_jason.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_json_jiffy.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_json_jsone.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_json_jsx.beam
@@ -508,6 +511,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_sha3_unsupported.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_sup.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/include/jose.hrl
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/include/jose_compat.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/include/jose_jwe.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/include/jose_jwk.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/include/jose_jws.hrl
@@ -833,6 +837,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/fr.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/gl.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/he.msg
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/hu.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/id.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/it.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/ja.msg
@@ -854,6 +859,7 @@
 sbin/%%PORTNAME%%ctl
 %%DATADIR%%/captcha.sh
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%man/man5/%%PORTNAME%%.yml.5.gz
 @dir /var/log/%%PORTNAME%%
 @dir /var/run/%%PORTNAME%%ctl
 @dir /var/spool/%%PORTNAME%%

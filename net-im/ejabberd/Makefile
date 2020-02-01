@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	19.09.1
+PORTVERSION=	20.01
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -43,7 +43,7 @@ GH_TUPLE=	erlang-lager:lager:${LAGER_VER}:lager/deps/lager \
 		potatosalad:erlang-jose:${JOSE_VER}:jose/deps/jose \
 		processone:eimp:${EIMP_VER}:eimp/deps/eimp \
 		DeadZen:goldrush:${GOLDRUSH_VER}:goldrush/deps/goldrush \
-		dvv:base64url:f2c64ed8:base64url/deps/base64url \
+		dvv:base64url:v${BASE64URL_VER}:base64url/deps/base64url \
 		processone:ezlib:${EZLIB_VER}:ezlib/deps/ezlib \
 		processone:pkix:${PKIX_VER}:pkix/deps/pkix \
 		processone:mqtree:${MQTREE_VER}:mqtree/deps/mqtree \
@@ -94,35 +94,35 @@ SUB_LIST=	${SUBS} \
 		EJABBERD_LIBDIR=${EJABBERD_LIBDIR}
 SHEBANG_FILES=	${WRKSRC}/ejabberdctl.template
 
-BASE64URL_VER=	0.0.1
-CACHE_TAB_VER=	1.0.20
-EIMP_VER=	1.0.12
+BASE64URL_VER=	1.0
+CACHE_TAB_VER=	1.0.21
+EIMP_VER=	1.0.13
 EPAM_VER=	1.0.6
 EREDIS_VER=	1.0.8
-ESIP_VER=	1.0.30
+ESIP_VER=	1.0.31
 EZLIB_VER=	1.0.6
-FAST_TLS_VER=	1.1.2
-FAST_XML_VER=	1.1.37
-FAST_YAML_VER=	1.0.21
+FAST_TLS_VER=	1.1.3
+FAST_XML_VER=	1.1.38
+FAST_YAML_VER=	1.0.22
 GOLDRUSH_VER=	0.1.9
 IDNA_VER=	6.0.0
 JIFFY_VER=	0.14.8
-JOSE_VER=	1.8.4
+JOSE_VER=	1.9.0
 LAGER_VER=	3.6.10
 LUERL_VER=	0.3
-MQTREE_VER=	1.0.5
-P1_ACME_VER=	1.0.1
-P1_MYSQL_VER=	1.0.11
+MQTREE_VER=	1.0.6
+P1_ACME_VER=	1.0.3
+P1_MYSQL_VER=	1.0.12
 P1_OAUTH2_VER=	0.6.5
 P1_PGSQL_VER=	1.1.8
-P1_UTILS_VER=	1.0.16
+P1_UTILS_VER=	1.0.17
 PKIX_VER=	1.0.4
 SQLITE3_VER=	1.1.6
 STRINGPREP_VER=	1.0.17
-STUN_VER=	1.0.29
+STUN_VER=	1.0.30
 UNICODE_UTIL_COMPAT_VER=	0.4.1
-XMPP_VER=	1.4.2
-YCONF_VER=	1.0.1
+XMPP_VER=	1.4.4
+YCONF_VER=	1.0.2
 
 OPTIONS_SUB=		yes
 SIP_DESC=	SIP support
@@ -163,6 +163,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,^convert,${LOCALBASE}/bin/convert,' ${WRKSRC}/tools/captcha.sh
 	@${REINPLACE_CMD} -e 's,%%PORTVERSION%%,${PORTVERSION},' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e '/vsn/s/git/"${JIFFY_VER}"/' ${WRKSRC}/deps/jiffy/src/jiffy.app.src
+	@${REINPLACE_CMD} -e '/vsn/s/0.0.1/${BASE64URL_VER}/' ${WRKSRC}/deps/base64url/src/base64url.app.src
 
 pre-configure:
 	cd ${WRKSRC} && ${SH} autogen.sh
