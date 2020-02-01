@@ -20,8 +20,8 @@ share/applications/xca.desktop
 share/mime/packages/xca.xml
 share/pixmaps/xca-32x32.xpm
 %%DATADIR%%/CA.xca
-%%DATADIR%%/HTTPS_client.xca
-%%DATADIR%%/HTTPS_server.xca
+%%DATADIR%%/TLS_client.xca
+%%DATADIR%%/TLS_server.xca
 %%DATADIR%%/dn.txt
 %%DATADIR%%/eku.txt
 %%DATADIR%%/oids.txt
@@ -29,8 +29,12 @@ share/pixmaps/xca-32x32.xpm
 %%DATADIR%%/xca_es.qm
 %%DATADIR%%/xca_fr.qm
 %%DATADIR%%/xca_hr.qm
+%%DATADIR%%/xca_it.qm
+%%DATADIR%%/xca_ja.qm
+%%DATADIR%%/xca_nl.qm
 %%DATADIR%%/xca_pl.qm
 %%DATADIR%%/xca_pt_BR.qm
 %%DATADIR%%/xca_ru.qm
 %%DATADIR%%/xca_sk.qm
 %%DATADIR%%/xca_tr.qm
+%%DATADIR%%/xca_zh_CN.qm
