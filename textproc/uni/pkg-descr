@@ -1,0 +1,10 @@
+uni queries the Unicode database from the commandline.
+
+There are four commands: identify codepoints in a string, search for codepoints,
+print codepoints by class, block, or range, and emoji to find emojis.
+
+It includes full support for Unicode 12.1 (May 2019) with full Emoji support (a
+surprisingly large amount of emoji pickers don't deal with emoji sequences very
+well).
+
+WWW: https://github.com/arp242/uni
