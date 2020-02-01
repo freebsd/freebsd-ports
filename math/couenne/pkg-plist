@@ -84,7 +84,7 @@ include/coin/CouenneVTObject.hpp
 include/coin/CouenneVarObject.hpp
 lib/libCouenne.so
 lib/libCouenne.so.1
-lib/libCouenne.so.1.4.7
+lib/libCouenne.so.1.4.8
 libdata/pkgconfig/couenne.pc
 share/coin/doc/Couenne/AUTHORS
 share/coin/doc/Couenne/LICENSE
