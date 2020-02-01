@@ -16,7 +16,8 @@ LIB_DEPENDS=	libpeas-1.0.so:devel/libpeas \
 		libxapp.so:x11/xapps
 RUN_DEPENDS=	${LOCALBASE}/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml:devel/gsettings-desktop-schemas
 
-USES=		desktop-file-utils gettext-tools gnome meson pkgconfig xorg
+USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome meson \
+		pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview3 \
