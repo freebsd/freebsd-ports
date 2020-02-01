@@ -2,18 +2,16 @@
 
 PORTNAME=	openra
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	20191117
+DISTVERSION=	20200202
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/SDL2-CS/releases/download/20190907/:SDL2_CS \
 		https://github.com/${GH_ACCOUNT}/OpenAL-CS/releases/download/20190907/:OpenAL_CS \
-		https://github.com/${GH_ACCOUNT}/Eluant/releases/download/20160124/:Eluant \
-		https://geolite.maxmind.com/download/geoip/database/:GeoLite2
+		https://github.com/${GH_ACCOUNT}/Eluant/releases/download/20160124/:Eluant
 DISTFILES=	SDL2-CS.dll:SDL2_CS \
 		SDL2-CS.dll.config:SDL2_CS \
 		OpenAL-CS.dll:OpenAL_CS \
 		OpenAL-CS.dll.config:OpenAL_CS \
-		Eluant.dll:Eluant \
-		GeoLite2-Country_20191105${EXTRACT_SUFX}:GeoLite2
+		Eluant.dll:Eluant
 EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.config:N*.dll:N*.nupkg}
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -58,9 +56,7 @@ TEST_ALL_TARGET=test
 
 post-extract:
 	${CP} ${DISTFILES:C/:.*//:N*.nupkg:N*.tar*:S,^,${_DISTDIR}/,} \
-		${WRKDIR}/GeoLite2-*/*.mmdb \
 		${NUGET_PACKAGEDIR}
-	${GZIP_CMD} ${NUGET_PACKAGEDIR}/*.mmdb
 
 post-patch:
 	${REINPLACE_CMD} \
