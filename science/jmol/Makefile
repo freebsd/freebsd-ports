@@ -2,22 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Jmol
-DISTVERSION=	14.30.1
+DISTVERSION=	14.30.2
 CATEGORIES=	science java
-MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/Version%20${DISTVERSION:R}/${PORTNAME}%20${DISTVERSION}/:src \
-		http://${PORTNAME:tl}.svn.sourceforge.net/viewvc/${PORTNAME:tl}/trunk/${PORTNAME}/selfSignedCertificate/:cert
-DISTFILES=	${PORTNAME}-${DISTVERSION}-full${EXTRACT_SUFX}:src \
-		selfSignedCertificate.cer:cert \
-		selfSignedCertificate.store:cert
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-full${EXTRACT_SUFX}
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/Version%20${DISTVERSION:R}/${PORTNAME}%20${DISTVERSION}/
+DISTFILES=	${PORTNAME}-${DISTVERSION}-full${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Java 3D viewer for chemical structures
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-BROKEN=		unfetchable
 
 USE_JAVA=	yes
 USE_ANT=	yes
@@ -40,11 +34,6 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
 DESKTOP_ENTRIES="${PORTNAME}" "" "" "${PORTNAME:tl}" "" false
-
-post-extract:
-	@${MKDIR} ${SIGN_DIR}
-	@${CP} ${DISTDIR}/selfSignedCertificate.cer ${SIGN_DIR}
-	@${CP} ${DISTDIR}/selfSignedCertificate.store ${SIGN_DIR}
 
 post-patch:
 	@${REINPLACE_CMD} 's|<input message="private property file.*||' ${WRKSRC}/build.xml
