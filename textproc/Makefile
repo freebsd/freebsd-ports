@@ -1771,6 +1771,7 @@
     SUBDIR += uml2svg
     SUBDIR += uncle
     SUBDIR += uncrustify
+    SUBDIR += uni
     SUBDIR += uni2ascii
     SUBDIR += unoconv
     SUBDIR += unroff
