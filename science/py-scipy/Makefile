@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scipy
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	science python
 MASTER_SITES=	https://docs.scipy.org/doc/scipy-${PORTVERSION:R}.1/:doc \
 		CHEESESHOP:source \
@@ -19,19 +18,23 @@ COMMENT=	Scientific tools for Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}pybind11>=2.4.3:devel/py-pybind11@${PY_FLAVOR}
+LIB_DEPENDS=	libblas.so:math/blas \
+		liblapack.so:math/lapack \
+		libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		fortran python shebangfix
+USES=		fortran python:3.5+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
-
-LDFLAGS+=	-shared
-PYDISTUTILS_BUILDARGS=	--fcompiler=gnu95
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
-
-PORTDOCS=	scipy-ref-${PORTVERSION:R}.1.pdf
+PYDISTUTILS_BUILDARGS=	--fcompiler=gnu95
 
 SHEBANG_FILES=	scipy/sparse/linalg/isolve/tests/test_gcrotmk.py
+
+LDFLAGS+=	-shared
+
+PORTDOCS=	scipy-ref-${PORTVERSION:R}.1.pdf
 
 OPTIONS_DEFINE=	DOCS
 
