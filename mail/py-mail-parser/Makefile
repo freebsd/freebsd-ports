@@ -23,7 +23,4 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|==|>=|; /ipaddress/ s|$$|; python_version < '3.3'|" ${WRKSRC}/requirements.txt
-
 .include <bsd.port.mk>
