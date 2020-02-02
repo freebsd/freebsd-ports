@@ -3,6 +3,7 @@
 
 PORTNAME=	help2man
 PORTVERSION=	1.47.12
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
@@ -24,7 +25,7 @@ OPTIONS_DEFINE=	NLS
 
 NLS_BUILD_DEPENDS=	p5-Locale-gettext>=0:devel/p5-Locale-gettext
 NLS_CONFIGURE_ENABLE=	nls
-NLS_PLIST_FILES=	lib/bindtextdomain.so
+NLS_PLIST_FILES=	lib/help2man/bindtextdomain.so
 NLS_RUN_DEPENDS=	p5-Locale-gettext>=0:devel/p5-Locale-gettext
 NLS_USES=		gettext
 NLS_VARS=		CONFIGURE_FAIL_MESSAGE="Rebuild lang/${PERL_PORT} and devel/p5-Locale-gettext manually before contacting maintainer."
@@ -37,8 +38,5 @@ NLS_INFO+=		help2man-${lang}
 NLS_PLIST_FILES+=	man/${lang}/man1/help2man.1.gz \
 			share/locale/${lang}/LC_MESSAGES/help2man.mo
 .endfor
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^pkglibdir/ s|/help2man$$||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
