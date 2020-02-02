@@ -12,4 +12,11 @@
 %%PERL5_MAN3%%/Alien::Base::ModuleBuild.3.gz
 %%PERL5_MAN3%%/Alien::Base::ModuleBuild::API.3.gz
 %%PERL5_MAN3%%/Alien::Base::ModuleBuild::Authoring.3.gz
+%%PERL5_MAN3%%/Alien::Base::ModuleBuild::Cabinet.3.gz
 %%PERL5_MAN3%%/Alien::Base::ModuleBuild::FAQ.3.gz
+%%PERL5_MAN3%%/Alien::Base::ModuleBuild::File.3.gz
+%%PERL5_MAN3%%/Alien::Base::ModuleBuild::Repository.3.gz
+%%PERL5_MAN3%%/Alien::Base::ModuleBuild::Repository::FTP.3.gz
+%%PERL5_MAN3%%/Alien::Base::ModuleBuild::Repository::HTTP.3.gz
+%%PERL5_MAN3%%/Alien::Base::ModuleBuild::Repository::Local.3.gz
+%%PERL5_MAN3%%/Alien::Base::ModuleBuild::Utils.3.gz
