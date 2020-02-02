@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Minion/Command/minion.pm
 %%SITE_PERL%%/Minion/Command/minion/job.pm
 %%SITE_PERL%%/Minion/Command/minion/worker.pm
+%%SITE_PERL%%/Minion/Iterator.pm
 %%SITE_PERL%%/Minion/Job.pm
 %%SITE_PERL%%/Minion/Worker.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Minion.pm
@@ -50,6 +51,7 @@
 %%PERL5_MAN3%%/Minion::Command::minion.3.gz
 %%PERL5_MAN3%%/Minion::Command::minion::job.3.gz
 %%PERL5_MAN3%%/Minion::Command::minion::worker.3.gz
+%%PERL5_MAN3%%/Minion::Iterator.3.gz
 %%PERL5_MAN3%%/Minion::Job.3.gz
 %%PERL5_MAN3%%/Minion::Worker.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugin::Minion.3.gz
