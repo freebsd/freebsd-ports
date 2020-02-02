@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	1.77.0
-PORTREVISION=	1
+DISTVERSION=	1.83.0
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -18,14 +18,14 @@ MY_DEPENDS=	git>=2.21:devel/git \
 		rubygem-github-linguist>=7.5<8.0:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.7.0<1.8.0:textproc/rubygem-gitlab-markup \
 		rubygem-activesupport52>=5.2.3<5.3.0:devel/rubygem-activesupport52 \
-		rubygem-rdoc>=6.0<7.0:devel/rubygem-rdoc \
+		rubygem-rdoc>=6.1<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.7<4.2.8.0:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.2<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
 		rubygem-grpc>=1.24.0<1.25.0:net/rubygem-grpc \
 		rubygem-sentry-raven29>=2.9.0<2.10.0:devel/rubygem-sentry-raven29 \
 		rubygem-faraday>=0.12<1.0:www/rubygem-faraday \
 		rubygem-rbtrace>0:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.5.0<0.6.0:devel/rubygem-gitlab-labkit \
+		rubygem-gitlab-labkit>=0.8.0<0.9.0:devel/rubygem-gitlab-labkit \
 		rubygem-licensee8>=8.9.0<8.10.0:devel/rubygem-licensee8 \
 		rubygem-google-protobuf38>=3.8.0<3.9.0:devel/rubygem-google-protobuf38
 BUILD_DEPENDS=	gem:devel/ruby-gems \
@@ -41,7 +41,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	a4b6c71d4b7c1588587345e2dfe0c6bd7cc63a83
+GL_COMMIT=	f63adf19271e150a338eb90479b7afeb94340ed9
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -56,11 +56,11 @@ GH_TUPLE=	\
 		codahale:hdrhistogram:3a0bb77429bd:codahale_hdrhistogram/vendor/github.com/codahale/hdrhistogram \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		getsentry:sentry-go:v0.3.0:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
-		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:4def268fd1a4:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:d28f0bde5980:golang_net/vendor/golang.org/x/net \
+		go-gorp:gorp:v1.7.2:go_gorp_gorp/vendor/gopkg.in/gorp.v1 \
+		go-yaml:yaml:v2.2.5:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		golang:net:3b0461eec859:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
+		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:fde4db37ae7a:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:bd91e49a0898:google_go_genproto/vendor/google.golang.org/genproto \
@@ -82,15 +82,15 @@ GH_TUPLE=	\
 		prometheus:client_model:fd36f4220a90:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.4.1:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.0.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		rubenv:sql-migrate:06338513c237:rubenv_sql_migrate/vendor/github.com/rubenv/sql-migrate \
 		sebest:xff:6c115e0ffa35:sebest_xff/vendor/github.com/sebest/xff \
-		sirupsen:logrus:v1.3.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		tinylib:msgp:v1.1.0:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		uber:jaeger-client-go:v2.15.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v1.5.0:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 
-GL_TUPLE=	\
-		gitlab-org:labkit:3253d7975ca73714779c0a1fc95a27fb678071b6:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+GL_TUPLE=	gitlab-org:labkit:3253d7975ca73714779c0a1fc95a27fb678071b6:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
@@ -108,4 +108,3 @@ do-install:
 	cd ${WRKSRC}/ruby && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/ruby
 
 .include <bsd.port.mk>
-

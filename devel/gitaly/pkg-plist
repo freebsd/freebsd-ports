@@ -119,6 +119,7 @@
 %%DATADIR%%/ruby/lib/gitlab/git/operation_service.rb
 %%DATADIR%%/ruby/lib/gitlab/git/path_helper.rb
 %%DATADIR%%/ruby/lib/gitlab/git/popen.rb
+%%DATADIR%%/ruby/lib/gitlab/git/push_options.rb
 %%DATADIR%%/ruby/lib/gitlab/git/ref.rb
 %%DATADIR%%/ruby/lib/gitlab/git/remote_mirror.rb
 %%DATADIR%%/ruby/lib/gitlab/git/remote_repository.rb
@@ -198,6 +199,7 @@
 %%DATADIR%%/ruby/spec/lib/gitlab/git/index_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/lfs_changes_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/popen_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/push_options_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/remote_mirror_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/remote_repository_client_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/remote_repository_spec.rb
@@ -213,6 +215,7 @@
 %%DATADIR%%/ruby/spec/lib/gitlab/git/user_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/wiki_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/worktree_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/ref_matcher_spec.rb
 %%DATADIR%%/ruby/spec/spec_helper.rb
 %%DATADIR%%/ruby/spec/support/generate-seed-repo-rb
