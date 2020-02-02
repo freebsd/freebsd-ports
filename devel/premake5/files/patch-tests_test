@@ -1,0 +1,6 @@
+--- tests/test.orig	2019-10-20 12:36:40 UTC
++++ tests/test
+@@ -1,2 +1,2 @@
+ #!/bin/sh
+-cd `dirname $0` && ../bin/debug/premake5 /file=../premake5.lua /scripts=.. $1 $2 $3 test
++cd `dirname $0` && ../bin/release/premake5 /file=../premake5.lua /scripts=.. $1 $2 $3 test
