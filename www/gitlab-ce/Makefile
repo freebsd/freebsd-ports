@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	12.7.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -64,7 +64,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-attr_encrypted>=3.1.0<3.2.0:security/rubygem-attr_encrypted \
 	rubygem-u2f0>=0.2.1<0.3.0:net/rubygem-u2f0 \
 	rubygem-validates_hostname>=1.0.6<1.1.0:dns/rubygem-validates_hostname \
-	rubygem-rubyzip>=2.0.0<2.1.0:archivers/rubygem-rubyzip \
+	rubygem-rubyzip20>=2.0.0<2.1.0:archivers/rubygem-rubyzip20 \
 	rubygem-acme-client>=2.0.2<2.1.0:security/rubygem-acme-client \
 	rubygem-browser>=2.5<3.0:www/rubygem-browser \
 	rubygem-gpgme>=2.0.19<2.1.0:security/rubygem-gpgme \
