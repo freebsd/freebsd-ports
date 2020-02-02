@@ -6,7 +6,7 @@
 # Mk/Uses/perl5.mk.
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.4229
+PORTVERSION=	0.4231
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,12 +21,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-PAR-Dist>=0.17:devel/p5-PAR-Dist
 
-PORTSCOUT=	skipv:0.31011,0.31012
-
 USES=		perl5
 USE_PERL5=	modbuild
 
 NO_ARCH=	yes
+
+PORTSCOUT=	skipv:0.31011,0.31012
 
 post-patch:
 	@${RM} ${WRKSRC}/bin/config_data
