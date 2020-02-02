@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lv2lint
-DISTVERSION=	g20190403
-PORTREVISION=	1
+DISTVERSION=	0.4.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +20,6 @@ RUN_DEPENDS=	curl>0:ftp/curl \
 USES=		compiler:c++11-lang meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMusicKontrollers
-GH_TAGNAME=	3c24394
 
 PLIST_FILES=	bin/lv2lint \
 		man/man1/lv2lint.1.gz
