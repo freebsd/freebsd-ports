@@ -20,6 +20,9 @@ COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Upstream end-of-life 2020-04-11, switch to a newer version
+EXPIRATION_DATE=	2020-04-11
+
 SUB_FILES=	pkg-message
 
 USES+=		cmake:insource,noninja compiler:c++11-lang shebangfix ssl
