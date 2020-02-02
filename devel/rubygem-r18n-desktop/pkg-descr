@@ -1,0 +1,7 @@
+R18n Desktop is a tool to translate your desktop application to several
+languages.
+
+It is just a wrapper for R18n core library. See R18n documentation for more
+information.
+
+WWW: https://github.com/r18n/r18n/tree/master/r18n-desktop
