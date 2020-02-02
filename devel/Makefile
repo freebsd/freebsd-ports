@@ -6259,6 +6259,7 @@
     SUBDIR += rubygem-puppet-resource_api
     SUBDIR += rubygem-pygments.rb
     SUBDIR += rubygem-r18n-core
+    SUBDIR += rubygem-r18n-rails
     SUBDIR += rubygem-rabl
     SUBDIR += rubygem-rabl-rails50
     SUBDIR += rubygem-racc
