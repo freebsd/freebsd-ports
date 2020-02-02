@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	6.0.0.20200113
+PORTVERSION=	6.0.0.20200130
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 USES+=		compiler:c11 gmake
 USE_GITHUB=	yes
-GH_TUPLE= 	antirez:${PORTNAME}:2d7dc71
+GH_TUPLE= 	antirez:${PORTNAME}:53ac8c7
 
 OPTIONS_DEFINE=	JEMALLOC TESTS TLS TRIB
 OPTIONS_RADIO=	EXTLUA
@@ -27,7 +27,7 @@ TLS_DESC=	Use TLS (openssl req.)
 TESTS_DESC=	Install lang/tcl for redis unit tests
 TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
 
-MAKE_ENV=	V=yo
+MAKE_ENV=	V=yo OPTIMIZATION=
 
 JEMALLOC_MAKE_ENV=	USE_JEMALLOC=yes
 
