@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Stochastic
-DISTVERSION=	1.1.6
+DISTVERSION=	1.1.7
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/Data/
 PKGNAMEPREFIX=	coin-or-
