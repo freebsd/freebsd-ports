@@ -6,6 +6,10 @@ PORTVERSION=	2.1.0
 CATEGORIES=	games emulators
 MASTER_SITES=	http://www.scummvm.org/frs/scummvm/${PORTVERSION}/
 
+PATCH_SITES=	https://github.com/scummvm/scummvm/commit/
+PATCHFILES=	8593a9e1e4e8dd1f5dfac9b1304a417df9a742e6.patch:-p1 \
+		68758a879e0c8ecc0d40962516d4e808aa4e15e5.patch:-p1
+
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Interpreter for several adventure games
 
