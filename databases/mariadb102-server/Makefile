@@ -22,6 +22,10 @@ LICENSE_NAME_PerconaFT=	PerconaFT patents license
 LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
 LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=		Port will be removed when 10.5 is added, please\
+			switch to a newer version
+EXPIRATION_DATE=	2020-07-01
+
 SUB_FILES=	pkg-message
 
 USES=		bison:build cmake compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl

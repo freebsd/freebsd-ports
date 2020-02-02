@@ -14,6 +14,10 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirror.switch.ch/mirror/${SITESDIR}/
 PKGNAMESUFFIX?=	101-server
 
+DEPRECATED=		Port will be removed when 10.5 is added, please\
+			switch to a newer version
+EXPIRATION_DATE=	2020-07-01
+
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
