@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	12.6.6
+PORTVERSION=	12.7.5
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # the rubygems of RUN_DEPENDS matches the order of the Gemfile
 # which makes maintaining this long list much easier!
 MY_DEPENDS=	git>=2.22.2:devel/git \
-	gitlab-shell>=10.3.0:devel/gitlab-shell \
+	gitlab-shell>=11.0.0:devel/gitlab-shell \
 	gitlab-workhorse>=8.20.0:www/gitlab-workhorse \
-	gitaly>=1.77.0:devel/gitaly \
+	gitaly>=1.83.0:devel/gitaly \
 	gitlab-pages>=1.12.0:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
 	yarn>=1.10.0:www/yarn \
@@ -29,7 +29,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-default_value_for>=3.3.0<3.4.0:devel/rubygem-default_value_for \
 	rubygem-pg>=1.1<2:databases/rubygem-pg \
 	rubygem-rugged>=0.28<1.0:devel/rubygem-rugged \
-	rubygem-grape-path-helpers>=1.1<2.0:devel/rubygem-grape-path-helpers \
+	rubygem-grape-path-helpers>=1.2<2.0:devel/rubygem-grape-path-helpers \
 	rubygem-faraday>=0.12<1.0:www/rubygem-faraday \
 	rubygem-marginalia>=1.8.0<1.9:databases/rubygem-marginalia \
 	rubygem-devise-rails52>=4.6<5.0:devel/rubygem-devise-rails52 \
@@ -92,13 +92,13 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-google-api-client>=0.23<1.0:devel/rubygem-google-api-client \
 	rubygem-unf>=0.1.4<0.2.0:textproc/rubygem-unf \
 	rubygem-seed-fu>=2.3.7<2.4.0:databases/rubygem-seed-fu \
-	rubygem-elasticsearch-model019>=0.1.9<0.2.0:textproc/rubygem-elasticsearch-model019 \
-	rubygem-elasticsearch-rails019>=0.1.9<0.2.0:textproc/rubygem-elasticsearch-rails019 \
-	rubygem-elasticsearch-api503=5.0.3:textproc/rubygem-elasticsearch-api503 \
+	rubygem-elasticsearch-model6>=6.1<7:textproc/rubygem-elasticsearch-model6 \
+	rubygem-elasticsearch-rails6>=6.1<7:textproc/rubygem-elasticsearch-rails6 \
+	rubygem-elasticsearch-api6>=6.1<7:textproc/rubygem-elasticsearch-api6 \
 	rubygem-aws-sdk>0:devel/rubygem-aws-sdk \
 	rubygem-faraday_middleware-aws-signers-v4>0:devel/rubygem-faraday_middleware-aws-signers-v4 \
 	rubygem-html-pipeline>=2.12<3.0:textproc/rubygem-html-pipeline \
-	rubygem-deckar01-task_list>=2.2.1<2.3.0:www/rubygem-deckar01-task_list \
+	rubygem-deckar01-task_list=2.3.1:www/rubygem-deckar01-task_list \
 	rubygem-gitlab-markup>=1.7.0<1.8.0:textproc/rubygem-gitlab-markup \
 	rubygem-github-markup17>=1.7.0<1.8.0:textproc/rubygem-github-markup17 \
 	rubygem-commonmarker>=0.20<1.0:textproc/rubygem-commonmarker \
@@ -109,7 +109,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-wikicloth081>=0.8.1<0.8.2:textproc/rubygem-wikicloth081 \
 	rubygem-asciidoctor>=2.0.10<2.1.0:textproc/rubygem-asciidoctor \
 	rubygem-asciidoctor-include-ext>=0.3.1<0.4.0:textproc/rubygem-asciidoctor-include-ext \
-	rubygem-asciidoctor-plantuml009=0.0.9.:textproc/rubygem-asciidoctor-plantuml009 \
+	rubygem-asciidoctor-plantuml=0.0.10.:textproc/rubygem-asciidoctor-plantuml \
 	rubygem-rouge>=3.11.0<4:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.11<0.8.0:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=4.2.0<4.3.0:devel/rubygem-bootstrap_form \
@@ -151,7 +151,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-hangouts-chat>=0.0.5<0.1.0:net/rubygem-hangouts-chat \
 	rubygem-asana>=0.9<1.0:www/rubygem-asana \
 	rubygem-ruby-fogbugz021>=0.2.1<0.3.0:devel/rubygem-ruby-fogbugz021 \
-	rubygem-kubeclient>=4.4.0<4.5.0:www/rubygem-kubeclient \
+	rubygem-kubeclient>=4.6.0<4.7.0:www/rubygem-kubeclient \
 	rubygem-sanitize>=4.6<5.0:textproc/rubygem-sanitize \
 	rubygem-babosa>=1.0.2<1.1.0:textproc/rubygem-babosa \
 	rubygem-loofah>=2.2<3.0:textproc/rubygem-loofah \
@@ -166,7 +166,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-rack-proxy>=0.6.0<0.7.0:www/rubygem-rack-proxy \
 	rubygem-sassc-rails-rails52>=2.1.0<2.2.0:textproc/rubygem-sassc-rails-rails52 \
 	rubygem-uglifier27>=2.7.2<2.8.0:www/rubygem-uglifier27 \
-	rubygem-addressable25>=2.5.2<2.6.0:www/rubygem-addressable25 \
+	rubygem-addressable>=2.7<3:www/rubygem-addressable \
 	rubygem-font-awesome-rails-rails52>=4.7<5.0:devel/rubygem-font-awesome-rails-rails52 \
 	rubygem-gemojione>=3.3<4.0:graphics/rubygem-gemojione \
 	rubygem-gon-rails52>=6.2<7.0:www/rubygem-gon-rails52 \
@@ -176,7 +176,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-rack-attack>=6.2.0<6.3.0:www/rubygem-rack-attack \
 	rubygem-sentry-raven>=2.9<3.0:devel/rubygem-sentry-raven \
 	rubygem-premailer-rails-rails52>=1.10.3<1.11.0:mail/rubygem-premailer-rails-rails52 \
-	rubygem-gitlab-labkit>=0.5<1.0:devel/rubygem-gitlab-labkit \
+	rubygem-gitlab-labkit=0.8.0:devel/rubygem-gitlab-labkit \
 	rubygem-ruby_parser>=3.8<4.0:devel/rubygem-ruby_parser \
 	rubygem-rails-i18n-rails52>=5.1<6.0:devel/rubygem-rails-i18n-rails52 \
 	rubygem-gettext_i18n_rails>=1.8.0<1.9.0:devel/rubygem-gettext_i18n_rails \
@@ -190,7 +190,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-influxdb>=0.2<1.0:databases/rubygem-influxdb \
 	rubygem-prometheus-client-mmap>=0.10.0<0.11.0:devel/rubygem-prometheus-client-mmap \
 	rubygem-raindrops>=0.18<1.0:www/rubygem-raindrops \
-	rubygem-octokit>=4.9<5.0:net/rubygem-octokit \
+	rubygem-octokit>=4.15<5.0:net/rubygem-octokit \
 	rubygem-mail_room>=0.10.0<0.11.0:mail/rubygem-mail_room \
 	rubygem-email_reply_trimmer>=0.1<1.0:mail/rubygem-email_reply_trimmer \
 	rubygem-html2text>=0:textproc/rubygem-html2text \
@@ -208,7 +208,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-sshkey>=2.0<3.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2<2.0:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0<2.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly>=1.73.0<1.74:net/rubygem-gitaly \
+	rubygem-gitaly>=1.81.0<1.82:net/rubygem-gitaly \
 	rubygem-grpc>=1.24.0<1.25.0:net/rubygem-grpc \
 	rubygem-google-protobuf38>=3.8.0<3.9.0:devel/rubygem-google-protobuf38 \
 	rubygem-toml-rb10>=1.0.0<1.1.0:www/rubygem-toml-rb10 \
@@ -220,7 +220,9 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-grape_logging>=1.7<2.0:devel/rubygem-grape_logging \
 	rubygem-gitlab-net-dns>=0.9.1<0.10:dns/rubygem-gitlab-net-dns \
 	rubygem-countries>=3.0.0<4.0.0:devel/rubygem-countries \
-	rubygem-retriable>=3.1.2<3.2.0:devel/rubygem-retriable
+	rubygem-retriable>=3.1.2<3.2.0:devel/rubygem-retriable \
+	rubygem-liquid>=4.0<5:textproc/rubygem-liquid \
+	rubygem-lru_redux>0:devel/rubygem-lru_redux
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
@@ -240,7 +242,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	114d26c615cd6305270b0f29d11b177ab9e655c0
+GL_COMMIT=	b0fe37ef58e19bc6f5d1db99f2ddc809f180a6f5
 
 USERS=	git
 GROUPS=	git
