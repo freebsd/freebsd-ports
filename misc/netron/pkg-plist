@@ -48,6 +48,7 @@ bin/netron
 %%PYTHON_SITELIBDIR%%/netron/keras.js
 %%PYTHON_SITELIBDIR%%/netron/long.js
 %%PYTHON_SITELIBDIR%%/netron/marked.min.js
+%%PYTHON_SITELIBDIR%%/netron/mediapipe.js
 %%PYTHON_SITELIBDIR%%/netron/mlnet-metadata.json
 %%PYTHON_SITELIBDIR%%/netron/mlnet.js
 %%PYTHON_SITELIBDIR%%/netron/mnn-metadata.json
@@ -85,8 +86,6 @@ bin/netron
 %%PYTHON_SITELIBDIR%%/netron/tflite.js
 %%PYTHON_SITELIBDIR%%/netron/torch-metadata.json
 %%PYTHON_SITELIBDIR%%/netron/torch.js
-%%PYTHON_SITELIBDIR%%/netron/torchscript-metadata.json
-%%PYTHON_SITELIBDIR%%/netron/torchscript.js
 %%PYTHON_SITELIBDIR%%/netron/view-grapher.css
 %%PYTHON_SITELIBDIR%%/netron/view-grapher.js
 %%PYTHON_SITELIBDIR%%/netron/view-sidebar.css
