@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yoshimi
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.0.1
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -26,6 +26,9 @@ USE_GNOME=	cairo
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 LDFLAGS+=		-Wl,--as-needed
+
+PORTDATA=	*
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
