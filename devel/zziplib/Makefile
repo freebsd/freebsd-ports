@@ -7,7 +7,7 @@ DISTVERSION=	0.13.69
 PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to provide transparent read access to zipped files
 
 LICENSE=	LGPL21 MPL11
