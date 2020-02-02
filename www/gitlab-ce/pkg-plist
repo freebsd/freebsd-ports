@@ -11664,6 +11664,7 @@
 %%WWWDIR%%/lib/gitlab/git/conflict/parser.rb
 %%WWWDIR%%/lib/gitlab/git/conflict/resolution.rb
 %%WWWDIR%%/lib/gitlab/git/conflict/resolver.rb
+%%WWWDIR%%/lib/gitlab/git/cross_repo_comparer.rb
 %%WWWDIR%%/lib/gitlab/git/diff.rb
 %%WWWDIR%%/lib/gitlab/git/diff_collection.rb
 %%WWWDIR%%/lib/gitlab/git/diff_stats_collection.rb
@@ -12050,6 +12051,7 @@
 %%WWWDIR%%/lib/gitlab/multi_collection_paginator.rb
 %%WWWDIR%%/lib/gitlab/namespace_sanitizer.rb
 %%WWWDIR%%/lib/gitlab/namespaced_session_store.rb
+%%WWWDIR%%/lib/gitlab/no_cache_headers.rb
 %%WWWDIR%%/lib/gitlab/noteable_metadata.rb
 %%WWWDIR%%/lib/gitlab/null_request_store.rb
 %%WWWDIR%%/lib/gitlab/object_hierarchy.rb
@@ -17586,6 +17588,7 @@
 %%WWWDIR%%/spec/lib/gitlab/anonymous_session_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/app_logger_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/application_rate_limiter_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/asciidoc/include_processor_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/asciidoc_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/auth/activity_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/auth/auth_finders_spec.rb
@@ -18036,6 +18039,7 @@
 %%WWWDIR%%/spec/lib/gitlab/git/compare_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/git/conflict/file_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/git/conflict/parser_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/git/cross_repo_comparer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/git/diff_collection_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/git/diff_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/git/diff_stats_collection_spec.rb
@@ -18336,6 +18340,7 @@
 %%WWWDIR%%/spec/lib/gitlab/middleware/release_env_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/multi_collection_paginator_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/namespaced_session_store_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/no_cache_headers_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/noteable_metadata_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/null_request_store_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/object_hierarchy_spec.rb
@@ -20044,6 +20049,7 @@
 %%WWWDIR%%/spec/support/shared_contexts/merge_request_create.rb
 %%WWWDIR%%/spec/support/shared_contexts/merge_request_edit.rb
 %%WWWDIR%%/spec/support/shared_contexts/merge_requests_allowing_collaboration.rb
+%%WWWDIR%%/spec/support/shared_contexts/pages_zip_with_spoofed_size_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/policies/group_policy_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/policies/project_policy_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/policies/project_policy_table_shared_context.rb
