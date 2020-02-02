@@ -1,6 +1,6 @@
-TIMESTAMP = 1580348097
-SHA256 (storj-storj-v0.31.9_GH0.tar.gz) = 308a3918aecc7227fe7f3b708ba58402af916d0cae4046ce7ea505553dec990a
-SIZE (storj-storj-v0.31.9_GH0.tar.gz) = 4244550
+TIMESTAMP = 1580408879
+SHA256 (storj-storj-v0.31.12_GH0.tar.gz) = 5cb8360eee9f39db2b109c014bbce111f24749e4348fde790cb385bb4a2d2f67
+SIZE (storj-storj-v0.31.12_GH0.tar.gz) = 4244698
 SHA256 (Shopify-go-lua-48449c60c0a9_GH0.tar.gz) = 569f99a1facdf56d2e67cd4fb5a2fb2f342f85376f3a5cd8cdb6b3ce67cb5eee
 SIZE (Shopify-go-lua-48449c60c0a9_GH0.tar.gz) = 443863
 SHA256 (Shopify-sarama-v1.18.0_GH0.tar.gz) = 9fb0aca4c8e70548d1e17ba2e1c12c9c7920ffca7b9ae62e174b18b09a6d603c
