@@ -939,6 +939,7 @@
     SUBDIR += rubygem-rmagick
     SUBDIR += rubygem-rsvg2
     SUBDIR += rubygem-ruby-graphviz
+    SUBDIR += rubygem-ruby-vips
     SUBDIR += rubygem-scruffy
     SUBDIR += rx
     SUBDIR += s10sh
