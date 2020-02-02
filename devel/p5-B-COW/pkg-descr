@@ -1,0 +1,12 @@
+B::COW provides some naive additional B helpers to check the COW status of one
+SvPV.
+
+A COWed SvPV is sharing its string (the PV) with other SvPVs. It's a (kind of)
+Read Only C string, that would be Copied On Write (COW). More than one SV can
+share the same PV, but when one PV need to alter it, it would perform a copy of
+it, decrease the COWREFCNT counter. One SV can then drop the COW flag when it's
+the only one holding a pointer to the PV. The COWREFCNT is stored at the end of
+the PV, after the the "\0". That value is limited to 255, when we reach 255, a
+new PV would be created,
+
+WWW: https://metacpan.org/release/B-COW

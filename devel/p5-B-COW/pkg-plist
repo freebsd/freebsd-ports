@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/B/COW.pm
+%%SITE_ARCH%%/auto/B/COW/COW.so
+%%PERL5_MAN3%%/B::COW.3.gz
