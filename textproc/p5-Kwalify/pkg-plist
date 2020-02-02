@@ -1,6 +1,6 @@
 bin/pkwalify
-%%PERL5_MAN3%%/Kwalify.3.gz
-%%PERL5_MAN3%%/Schema::Kwalify.3.gz
 %%SITE_PERL%%/Kwalify.pm
 %%SITE_PERL%%/Schema/Kwalify.pm
 %%PERL5_MAN1%%/pkwalify.1.gz
+%%PERL5_MAN3%%/Kwalify.3.gz
+%%PERL5_MAN3%%/Schema::Kwalify.3.gz
