@@ -12963,10 +12963,7 @@ mail/fetchmail64|mail/fetchmail|2019-09-28|mail/fetchmail now provides the same 
 devel/rubygem-grape_logging181|devel/rubygem-grape_logging|2019-09-29|Obsolete, please use devel/rubygem-grape_logging
 devel/py-pip-tools3|devel/py-pip-tools|2019-09-30|Use devel/py-pip-tools instead
 textproc/py-openpyxl24|textproc/py-openpyxl|2019-09-30|Has expired: Use textproc/py-openpyxl instead
-textproc/rubygem-elasticsearch-api6|textproc/rubygem-elasticsearch-api|2019-09-30|Has expired: Usetextproc/rubygem-elasticsearch-api instead
-textproc/rubygem-elasticsearch-transport6|textproc/rubygem-elasticsearch-transport|2019-09-30|Has expired: Usetextproc/rubygem-elasticsearch-transport instead
 textproc/rubygem-elasticsearch-xpack6|textproc/rubygem-elasticsearch-xpack|2019-09-30|Has expired: Usetextproc/rubygem-elasticsearch-xpack instead
-textproc/rubygem-elasticsearch6|textproc/rubygem-elasticsearch|2019-09-30|Has expired: Usetextproc/rubygem-elasticsearch instead
 devel/rubygem-sprockets-rails|devel/rubygem-sprockets-rails-rails4|2019-09-30|Rename to match our rubygem- port naming
 java/linux-oracle-jdk9|java/openjdk11|2019-09-30|Has expired: No longer maintained upstream, please migrate to openjdk11
 java/linux-oracle-jdk10|java/openjdk11|2019-09-30|Has expired: No longer maintained upstream, please migrate to openjdk11
