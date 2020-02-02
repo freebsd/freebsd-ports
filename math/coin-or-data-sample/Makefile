@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Sample
-DISTVERSION=	1.2.11
+DISTVERSION=	1.2.12
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/Data/
 PKGNAMEPREFIX=	coin-or-
