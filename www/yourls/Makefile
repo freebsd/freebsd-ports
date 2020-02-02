@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yourls
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -33,7 +33,7 @@ MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 genplist: do-clean extract
 	@${ECHO} "@owner www" > ${MS_PLIST}
 	@${ECHO} "@group www" >> ${MS_PLIST}
-	@cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
+	@cd ${WRKSRC}/ && ${FIND} -s . -type f | ${SED} 's|^\.|%%WWWDIR%%|' >> ${MS_PLIST}
 	@${ECHO} "@owner" >> ${MS_PLIST}
 	@${ECHO} "@group" >> ${MS_PLIST}
 	@${INSTALL} -m 600 ${MS_PLIST} ${PLIST}

@@ -36,6 +36,7 @@
 %%WWWDIR%%/images/share.png
 %%WWWDIR%%/images/twitter.png
 %%WWWDIR%%/images/yourls-logo.png
+%%WWWDIR%%/images/yourls-logo.svg
 %%WWWDIR%%/includes/Admin/Logger.php
 %%WWWDIR%%/includes/Config/Config.php
 %%WWWDIR%%/includes/Config/Init.php
@@ -543,6 +544,8 @@
 %%WWWDIR%%/user/plugins/random-bg/img/bg_life.png
 %%WWWDIR%%/user/plugins/random-bg/img/bg_yourls.png
 %%WWWDIR%%/user/plugins/random-bg/plugin.php
+%%WWWDIR%%/user/plugins/random-shorturls/README.md
+%%WWWDIR%%/user/plugins/random-shorturls/plugin.php
 %%WWWDIR%%/user/plugins/sample-page/README.md
 %%WWWDIR%%/user/plugins/sample-page/plugin.php
 %%WWWDIR%%/user/plugins/sample-plugin/README.md
