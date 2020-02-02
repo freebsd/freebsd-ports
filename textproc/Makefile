@@ -1499,7 +1499,6 @@
     SUBDIR += rubygem-diffy31
     SUBDIR += rubygem-docdiff
     SUBDIR += rubygem-elasticsearch
-    SUBDIR += rubygem-elasticsearch6
     SUBDIR += rubygem-elasticsearch-api
     SUBDIR += rubygem-elasticsearch-api503
     SUBDIR += rubygem-elasticsearch-api6
@@ -1513,8 +1512,10 @@
     SUBDIR += rubygem-elasticsearch-rails6
     SUBDIR += rubygem-elasticsearch-transport
     SUBDIR += rubygem-elasticsearch-transport503
+    SUBDIR += rubygem-elasticsearch-transport6
     SUBDIR += rubygem-elasticsearch-xpack
     SUBDIR += rubygem-elasticsearch503
+    SUBDIR += rubygem-elasticsearch6
     SUBDIR += rubygem-emot
     SUBDIR += rubygem-escape_utils
     SUBDIR += rubygem-escape_utils11
