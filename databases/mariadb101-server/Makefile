@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.1.43
-PORTREVISION=	2
+PORTVERSION=	10.1.44
+PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -128,9 +128,11 @@ CONNECT_EXTRA_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONNECT_EXTRA_USES=	gnome
 CONNECT_EXTRA_USE=	gnome=libxml2
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI=NO
+LZ4_BROKEN=		LZ4 compression broken in 10.1, use a newer release
 LZ4_CMAKE_ON=		-DGRN_WITH_LZ4=ON  -DWITH_INNODB_LZ4=ON
 LZ4_CMAKE_OFF=		-DGRN_WITH_LZ4=OFF -DWITH_INNODB_LZ4=OFF
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
+LZO_BROKEN=		LZO compression broken in 10.1, use a newer release
 LZO_CMAKE_ON=		-DWITH_INNODB_LZO=ON
 LZO_CMAKE_OFF=		-DWITH_INNODB_LZO=OFF
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
@@ -140,10 +142,10 @@ MROONGA_VARS=		LICENSE+=LGPL20 LICENSE_COMB=multi
 MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
+SNAPPY_BROKEN=		Snappy compression broken in 10.1, use a newer release
 SNAPPY_CMAKE_ON=	-DWITH_INNODB_SNAPPY=ON
 SNAPPY_CMAKE_OFF=	-DWITH_INNODB_SNAPPY=OFF
 SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
-TOKUDB_IMPLIES=		SNAPPY
 TOKUDB_PORTDOCS=	README.md
 TOKUDB_VARS=		LICENSE+=PerconaFT LICENSE_COMB=multi
 ZMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
