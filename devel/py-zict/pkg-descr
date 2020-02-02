@@ -1,0 +1,14 @@
+Zict: Composable Mutable Mappings
+
+The dictionary / mutable mapping interface is powerful and multi-faceted.
+- We store data in different locations such as in-memory, on disk, in archive
+  files, etc..
+- We manage old data with different policies like LRU, random eviction, etc..
+- We might encode or transform data as it arrives or departs the dictionary
+  through compression, encoding, etc..
+
+To this end we build abstract MutableMapping classes that consume and build on
+other MutableMappings. We can compose several of these with each other to form
+intuitive interfaces over complex storage systems policies.
+
+WWW: https://github.com/dask/zict

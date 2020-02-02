@@ -5204,6 +5204,7 @@
     SUBDIR += py-zc.buildout
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
+    SUBDIR += py-zict
     SUBDIR += py-zipp
     SUBDIR += py-zope.annotation
     SUBDIR += py-zope.app.applicationcontrol
