@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kaminari
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails52
@@ -13,13 +13,14 @@ COMMENT=	Sophisticated paginator for Rails 4+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport52>0:devel/rubygem-activesupport52 \
+RUN_DEPENDS=	rubygem-activesupport52>=4.1.0:devel/rubygem-activesupport52 \
 		rubygem-kaminari-actionview-rails52>=${PORTVERSION}:www/rubygem-kaminari-actionview-rails52 \
 		rubygem-kaminari-activerecord-rails52>=${PORTVERSION}:www/rubygem-kaminari-activerecord-rails52 \
 		rubygem-kaminari-core>=${PORTVERSION}:www/rubygem-kaminari-core
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
