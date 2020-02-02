@@ -1,0 +1,5 @@
+Cross-platform software for producing Veroboard (stripboard), Perfboard, and
+single-sided PCB layouts. Automatically prevents short circuits and checks for
+open circuits.
+
+WWW: https://sourceforge.net/projects/veroroute/
