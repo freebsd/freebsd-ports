@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	EXIF JPEG header manipulation tool
 
+LICENSE=	PD
+
 USES=		jpeg:run
 
 MAKEFILE=	makefile
