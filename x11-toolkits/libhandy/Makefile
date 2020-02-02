@@ -5,9 +5,6 @@ PORTVERSION=	0.0.10
 CATEGORIES=	x11-toolkits gnome
 DIST_SUBDIR=	gnome
 
-PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/commit/
-PATCHFILES+=	e1c500dd02b1.patch:-p1
-
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library with GTK+ widgets for mobile phones
 
