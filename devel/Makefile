@@ -4324,6 +4324,7 @@
     SUBDIR += py-dal
     SUBDIR += py-darcsver
     SUBDIR += py-darts.util.lru
+    SUBDIR += py-dask
     SUBDIR += py-dataclasses
     SUBDIR += py-datatest
     SUBDIR += py-dateparser
