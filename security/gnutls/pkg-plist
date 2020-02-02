@@ -32,7 +32,7 @@ include/gnutls/x509.h
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.26.1
+lib/libgnutls.so.30.26.2
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.28
 lib/libgnutlsxx.so.28.1.0
@@ -162,6 +162,8 @@ man/man3/gnutls_certificate_type_get2.3.gz
 man/man3/gnutls_certificate_type_get_id.3.gz
 man/man3/gnutls_certificate_type_get_name.3.gz
 man/man3/gnutls_certificate_type_list.3.gz
+man/man3/gnutls_certificate_verification_profile_get_id.3.gz
+man/man3/gnutls_certificate_verification_profile_get_name.3.gz
 man/man3/gnutls_certificate_verification_status_print.3.gz
 man/man3/gnutls_certificate_verify_peers.3.gz
 man/man3/gnutls_certificate_verify_peers2.3.gz
@@ -312,6 +314,7 @@ man/man3/gnutls_hmac.3.gz
 man/man3/gnutls_hmac_copy.3.gz
 man/man3/gnutls_hmac_deinit.3.gz
 man/man3/gnutls_hmac_fast.3.gz
+man/man3/gnutls_hmac_get_key_size.3.gz
 man/man3/gnutls_hmac_get_len.3.gz
 man/man3/gnutls_hmac_init.3.gz
 man/man3/gnutls_hmac_output.3.gz

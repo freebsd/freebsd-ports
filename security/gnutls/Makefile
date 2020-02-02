@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.6.11.1
+PORTVERSION=	3.6.12
 CATEGORIES=	security net
-MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R:R}
+MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
