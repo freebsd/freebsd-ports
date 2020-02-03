@@ -22,16 +22,24 @@ USE_XORG=	ice sm x11
 GLIB_SCHEMAS=	org.x.reader.gschema.xml
 INSTALLS_ICONS=	yes
 
-MESON_ARGS=	-Depub=false -Dtests=false
+MATHJAX_DIR=	${LOCALBASE}/www/MathJax
+MESON_ARGS=	-Dtests=false
 
-OPTIONS_DEFINE=	DJVU KEYRING PDF PS TIFF XPS
+OPTIONS_DEFINE=	DJVU EPUB KEYRING PDF PS TIFF XPS
 OPTIONS_DEFAULT=	DJVU KEYRING PDF TIFF XPS
+EPUB_DESC=	EPUB e-book format support
 KEYRING_DESC=	Password-protected document support
 XPS_DESC=	XPS document support
 OPTIONS_SUB=	yes
 
 DJVU_LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
 DJVU_MESON_ON=		-Ddjvu=true
+
+EPUB_BUILD_DEPENDS=	${MATHJAX_DIR}/MathJax.js:www/mathjax
+EPUB_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
+EPUB_RUN_DEPENDS=	${EPUB_BUILD_DEPENDS}
+EPUB_MESON_ON=		-Dmathjax-directory=${MATHJAX_DIR}
+EPUB_MESON_OFF=		-Depub=false
 
 KEYRING_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 KEYRING_MESON_OFF=	-Dkeyring=false

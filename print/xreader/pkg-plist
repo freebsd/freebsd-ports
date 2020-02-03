@@ -57,7 +57,9 @@ lib/libxreaderview.so
 lib/libxreaderview.so.3
 lib/libxreaderview.so.3.0.0
 %%DJVU%%lib/xreader/3/backends/djvudocument.xreader-backend
+%%EPUB%%lib/xreader/3/backends/epubdocument.xreader-backend
 %%DJVU%%lib/xreader/3/backends/libdjvudocument.so
+%%EPUB%%lib/xreader/3/backends/libepubdocument.so
 %%PDF%%lib/xreader/3/backends/libpdfdocument.so
 %%PS%%lib/xreader/3/backends/libpsdocument.so
 %%TIFF%%lib/xreader/3/backends/libtiffdocument.so
