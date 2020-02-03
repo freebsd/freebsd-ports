@@ -3985,9 +3985,6 @@
     SUBDIR += py-PeachPy
     SUBDIR += py-Persistence
     SUBDIR += py-Pint
-    SUBDIR += py-Products.ATContentTypes
-    SUBDIR += py-Products.ATReferenceBrowserWidget
-    SUBDIR += py-Products.Archetypes
     SUBDIR += py-Products.BTreeFolder2
     SUBDIR += py-Products.CMFActionIcons
     SUBDIR += py-Products.CMFCalendar
@@ -3999,7 +3996,6 @@
     SUBDIR += py-Products.CMFFormController
     SUBDIR += py-Products.CMFPlacefulWorkflow
     SUBDIR += py-Products.CMFQuickInstallerTool
-    SUBDIR += py-Products.CMFTestCase
     SUBDIR += py-Products.CMFUid
     SUBDIR += py-Products.DCWorkflow
     SUBDIR += py-Products.ExtendedPathIndex
@@ -4009,17 +4005,12 @@
     SUBDIR += py-Products.LDAPMultiPlugins
     SUBDIR += py-Products.LDAPUserFolder
     SUBDIR += py-Products.MIMETools
-    SUBDIR += py-Products.Marshall
     SUBDIR += py-Products.MimetypesRegistry
     SUBDIR += py-Products.OFSP
-    SUBDIR += py-Products.PasswordResetTool
     SUBDIR += py-Products.PlacelessTranslationService
     SUBDIR += py-Products.PloneLanguageTool
-    SUBDIR += py-Products.PloneTestCase
     SUBDIR += py-Products.PluginRegistry
-    SUBDIR += py-Products.PortalTransforms
     SUBDIR += py-Products.PythonScripts
-    SUBDIR += py-Products.ResourceRegistries
     SUBDIR += py-Products.StandardCacheManagers
     SUBDIR += py-Products.ZCTextIndex
     SUBDIR += py-Products.ZCatalog
@@ -4090,9 +4081,6 @@
     SUBDIR += py-applicationinsights
     SUBDIR += py-apptools
     SUBDIR += py-apscheduler
-    SUBDIR += py-archetypes.querywidget
-    SUBDIR += py-archetypes.referencebrowserwidget
-    SUBDIR += py-archetypes.schemaextender
     SUBDIR += py-argcomplete
     SUBDIR += py-argh
     SUBDIR += py-argparse
@@ -4398,7 +4386,6 @@
     SUBDIR += py-fbprophet
     SUBDIR += py-filemagic
     SUBDIR += py-first
-    SUBDIR += py-five.customerize
     SUBDIR += py-five.formlib
     SUBDIR += py-five.globalrequest
     SUBDIR += py-five.localsitemanager
