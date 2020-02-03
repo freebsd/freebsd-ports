@@ -1,4 +1,3 @@
-etc/xdg/kdevpythonsupport.categories
 lib/libkdevpythoncompletion.so
 lib/libkdevpythonduchain.so
 lib/libkdevpythonparser.so
@@ -179,3 +178,4 @@ share/locale/uk/LC_MESSAGES/kdevpython.mo
 share/locale/zh_CN/LC_MESSAGES/kdevpython.mo
 share/locale/zh_TW/LC_MESSAGES/kdevpython.mo
 share/metainfo/org.kde.kdev-python.metainfo.xml
+share/qlogging-categories5/kdevpythonsupport.categories

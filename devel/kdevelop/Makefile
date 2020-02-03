@@ -4,7 +4,7 @@
 #  devel/kdev-php
 #  devel/kdev-python
 PORTNAME=	kdevelop
-DISTVERSION=	5.4.6
+DISTVERSION=	5.5.0
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop
@@ -43,8 +43,8 @@ SHEBANG_FILES=	kdevplatform/util/kdevplatform_shell_environment.sh \
 CMAKE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0074=NEW -DLLVM_ROOT=${LOCALBASE}/llvm${LLVM_DEFAULT}
 
 # Versioning values, to reduce plist churn
-PLATFORM_VER=	32
-SO_VER=		54
+PLATFORM_VER=	33
+SO_VER=		55
 PLIST_SUB+=	PLATFORM_VER=${PLATFORM_VER} SO_VER=${SO_VER} SO_VER_LONG=${DISTVERSION}
 
 OPTIONS_DEFINE=	WEBENGINE
