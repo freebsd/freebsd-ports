@@ -3,6 +3,7 @@
 
 PORTNAME=	azure_sdk
 PORTVERSION=	0.51.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -30,7 +31,7 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_cognitiveservices_luisruntime>=0.18.0<0.19:devel/rubygem-azure_cognitiveservices_luisruntime \
 		rubygem-azure_cognitiveservices_newssearch>=0.18.1<0.19:devel/rubygem-azure_cognitiveservices_newssearch \
 		rubygem-azure_cognitiveservices_personalizer>=0.17.0<0.18:devel/rubygem-azure_cognitiveservices_personalizer \
-		rubygem-azure_cognitiveservices_qnamaker>=0.17.2<0.18:devel/rubygem-azure_cognitiveservices_qnamaker \
+		rubygem-azure_cognitiveservices_qnamaker>=0.17.2<1:devel/rubygem-azure_cognitiveservices_qnamaker \
 		rubygem-azure_cognitiveservices_qnamakerruntime>=0.17.0<0.18:devel/rubygem-azure_cognitiveservices_qnamakerruntime \
 		rubygem-azure_cognitiveservices_spellcheck>=0.18.1<0.19:devel/rubygem-azure_cognitiveservices_spellcheck \
 		rubygem-azure_cognitiveservices_textanalytics>=0.17.3<0.18:devel/rubygem-azure_cognitiveservices_textanalytics \
