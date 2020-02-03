@@ -2,7 +2,7 @@
 
 PORTNAME=	luatex
 PORTVERSION=	0.80.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
