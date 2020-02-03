@@ -11,6 +11,8 @@ COMMENT=	Maildirs extension for Mu4e
 
 LICENSE=	GPLv3
 
+BROKEN=		mu4e-maildirs-extension.el:517:1:Error: Invalid function: (func-or-shortcut)
+
 BUILD_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>0:devel/dash.el@${EMACS_FLAVOR} \
 		mu4e${EMACS_PKGNAMESUFFIX}>0:mail/mu4e@${EMACS_FLAVOR}
 RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>0:devel/dash.el@${EMACS_FLAVOR} \
