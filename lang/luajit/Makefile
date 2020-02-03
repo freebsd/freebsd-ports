@@ -5,7 +5,7 @@ PORTNAME=	luajit
 DISTVERSION=	2.0.5
 PORTREVISION=	4
 CATEGORIES=	lang
-MASTER_SITES=	http://luajit.org/download/
+MASTER_SITES=	https://luajit.org/download/
 DISTNAME=	LuaJIT-${DISTVERSION}
 
 MAINTAINER=	osa@FreeBSD.org
