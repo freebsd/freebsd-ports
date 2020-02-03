@@ -29,7 +29,10 @@ pacemaker_precmd()
 
 	export PATH="${PATH}:/usr/local/sbin:/usr/local/bin"
 	export PCMK_ipc_buffer=${pacemaker_ipc_buffer}
-	export PCMK_ipc_type=socket
+
+	# https://bugs.clusterlabs.org/show_bug.cgi?id=5397
+	#
+	#export PCMK_ipc_type=socket
 }
 
 run_rc_command "$1"
