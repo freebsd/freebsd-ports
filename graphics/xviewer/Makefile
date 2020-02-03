@@ -16,8 +16,8 @@ BUILD_DEPENDS=	intltool-update:textproc/intltool \
 LIB_DEPENDS=	libcinnamon-desktop.so:x11/cinnamon-desktop \
 		libpeas-1.0.so:devel/libpeas
 
-USES=		autoreconf desktop-file-utils gettext-tools gmake gnome \
-		libtool localbase pkgconfig
+USES=		autoreconf compiler:c++11-lang desktop-file-utils gettext-tools \
+		gmake gnome libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
