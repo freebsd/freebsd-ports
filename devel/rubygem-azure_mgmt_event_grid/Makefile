@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_mgmt_event_grid
-PORTVERSION=	0.17.9
+PORTVERSION=	0.17.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
