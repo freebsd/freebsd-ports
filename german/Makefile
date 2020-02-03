@@ -22,7 +22,6 @@
     SUBDIR += mythes
     SUBDIR += phone
     SUBDIR += schwobifyer
-    SUBDIR += trytond28_account_de_skr03
     SUBDIR += unix-connect
     SUBDIR += webalizer2
     SUBDIR += wordpress

@@ -1,4 +1,0 @@
-This package provides a simple decorator to help synchronize methods across
-threads, to avoid problems of concurrent access.
-
-WWW: https://pypi.org/project/plone.synchronize/
