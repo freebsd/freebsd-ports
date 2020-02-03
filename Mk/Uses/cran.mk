@@ -9,7 +9,7 @@
 # auto-plist	The pkg-plist is to be automatically generated
 # compiles	The port has code that needs to be compiled
 #
-# MAINTAINER=	dbn@FreeBSD.org
+# MAINTAINER=	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_CRAN_MK)
 _INCLUDE_USES_CRAN_MK=	yes
