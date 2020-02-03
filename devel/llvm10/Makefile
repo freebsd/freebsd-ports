@@ -20,8 +20,6 @@ LICENSE_NAME_LLVM2=	Apache License 2.0 with LLVM Exceptions
 LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE:=	${LICENSE:NARM}
 
-BROKEN=		fails to patch: devel/llvm10/files/lld: No such file or directory
-
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 LLVM_MAJOR=	${LLVM_RELEASE:C/\.[0-9]\.[0-9]$//}
 LLVM_SUFFIX=	${LLVM_MAJOR}
@@ -127,7 +125,6 @@ LIT_DESC=		Install lit and FileCheck test tools
 LIT_VARS=		_USES_PYTHON=python:3.6+
 LLD_DESC=		Install lld, the LLVM linker
 LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
-LLD_EXTRA_PATCHES=	${PATCHDIR}/lld
 LLD_LINK_DESC=		Link ld.lld as ld to clang uses it
 LLD_LINK_IMPLIES=	LLD
 LLDB_BUILD_DEPENDS=	swig3.0:devel/swig30 \
