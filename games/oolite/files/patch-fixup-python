@@ -1,0 +1,33 @@
+# Patch for Python 3.x support, created with using 2to3 program.
+
+--- deps/mozilla/js/src/build/cl.py.orig	2014-05-17 17:57:43 UTC
++++ deps/mozilla/js/src/build/cl.py
+@@ -51,7 +51,7 @@ def InvokeClWithDependencyGeneration(cmd
+             break
+ 
+     if target == None:
+-        print >>sys.stderr, "No target set" and sys.exit(1)
++        print("No target set" and sys.exit(1), file=sys.stderr)
+ 
+     # The deps target lives here
+     depstarget = os.path.basename(target) + ".pp"
+@@ -90,7 +90,7 @@ def InvokeClWithDependencyGeneration(cmd
+ 
+     f = open(depstarget, "w")
+     for dep in sorted(deps):
+-        print >>f, "%s: %s" % (target, dep)
++        print("%s: %s" % (target, dep), file=f)
+ 
+ if __name__ == "__main__":
+     InvokeClWithDependencyGeneration(sys.argv[1:])
+--- deps/mozilla/js/src/imacro_asm.py.orig	2014-05-17 17:57:43 UTC
++++ deps/mozilla/js/src/imacro_asm.py
+@@ -456,7 +456,7 @@ def assemble(filename, outfile):
+ if __name__ == '__main__':
+     import sys
+     if len(sys.argv) != 3:
+-        print "usage: python imacro_asm.py infile.jsasm outfile.c.out"
++        print("usage: python imacro_asm.py infile.jsasm outfile.c.out")
+         sys.exit(1)
+ 
+     f = open(sys.argv[2], 'w')
