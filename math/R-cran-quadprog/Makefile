@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	dbn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functions to solve Quadratic Programming Problems
 
 LICENSE=	GPLv2 GPLv3

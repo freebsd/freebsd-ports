@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	dbn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Swiss-Army Knife for Data I/O
 
 LICENSE=	GPLv2
