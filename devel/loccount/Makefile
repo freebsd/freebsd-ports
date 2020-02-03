@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	loccount
-DISTVERSION=	2.8
+DISTVERSION=	2.9
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,14 +12,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	a2x:textproc/asciidoc
 
-USES=		gmake go python:2.7,build
+USES=		gmake go python:3.5+,build
 USE_GITLAB=	yes
 GL_ACCOUNT=	esr
-GL_COMMIT=	7b453bb11473af641aac8e3f5616c91528431b9f
+GL_COMMIT=	637e87621156d494919e6738748291018e54aa28
 
 GO_PKGNAME=	gitlab.com/${GL_ACCOUNT}/${PORTNAME}
 
-BINARY_ALIAS=	python2=${PYTHON_CMD}
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
