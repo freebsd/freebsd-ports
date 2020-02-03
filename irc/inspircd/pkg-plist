@@ -9,6 +9,10 @@ bin/inspircd-genssl
 @sample %%ETCDIR%%/examples/opermotd.txt.example %%ETCDIR%%/opermotd.txt
 @sample %%ETCDIR%%/examples/opers.conf.example %%ETCDIR%%/opers.conf
 @sample %%ETCDIR%%/examples/quotes.txt.example %%ETCDIR%%/quotes.txt
+%%ETCDIR%%/examples/codepages/ascii.conf.example
+%%ETCDIR%%/examples/codepages/latin1.conf.example
+%%ETCDIR%%/examples/codepages/rfc1459.conf.example
+%%ETCDIR%%/examples/codepages/strict-rfc1459.conf.example
 %%ETCDIR%%/examples/providers/irccloud.conf.example
 %%ETCDIR%%/examples/providers/kiwiirc-com.conf.example
 %%ETCDIR%%/examples/services/anope.conf.example
@@ -71,6 +75,7 @@ libexec/inspircd/modules/m_classban.so
 libexec/inspircd/modules/m_clearchan.so
 libexec/inspircd/modules/m_cloaking.so
 libexec/inspircd/modules/m_clones.so
+libexec/inspircd/modules/m_codepage.so
 libexec/inspircd/modules/m_commonchans.so
 libexec/inspircd/modules/m_conn_join.so
 libexec/inspircd/modules/m_conn_umodes.so
@@ -117,6 +122,7 @@ libexec/inspircd/modules/m_ircv3_chghost.so
 libexec/inspircd/modules/m_ircv3_ctctags.so
 libexec/inspircd/modules/m_ircv3_echomessage.so
 libexec/inspircd/modules/m_ircv3_invitenotify.so
+libexec/inspircd/modules/m_ircv3_labeledresponse.so
 libexec/inspircd/modules/m_ircv3_msgid.so
 libexec/inspircd/modules/m_ircv3_servertime.so
 libexec/inspircd/modules/m_ircv3_sts.so

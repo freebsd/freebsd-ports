@@ -1,6 +1,6 @@
---- configure.orig	2019-07-05 09:09:06 UTC
+--- configure.orig	2020-01-31 12:49:58 UTC
 +++ configure
-@@ -207,57 +207,10 @@ if (defined $opt_system) {
+@@ -208,57 +208,10 @@ if (defined $opt_system) {
  	$config{SCRIPT_DIR}  = $opt_script_dir  // $config{SCRIPT_DIR}  // $config{BASE_DIR};
  }
  
