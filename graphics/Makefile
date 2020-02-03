@@ -1074,6 +1074,7 @@
     SUBDIR += xtexcad
     SUBDIR += xv
     SUBDIR += xv-m17n
+    SUBDIR += xviewer
     SUBDIR += xwpick
     SUBDIR += xzgv
     SUBDIR += yacreader
