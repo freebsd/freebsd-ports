@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant
-PORTVERSION=	2.2.6
+PORTVERSION=	2.2.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -22,7 +21,7 @@ RUN_DEPENDS=	rubygem-bcrypt_pbkdf>=1.0.0:security/rubygem-bcrypt_pbkdf \
 		rubygem-ed25519>=1.2.4:security/rubygem-ed25519 \
 		rubygem-erubis>=2.7.0:www/rubygem-erubis \
 		rubygem-hashicorp-checkpoint>=0.1.5:www/rubygem-hashicorp-checkpoint \
-		rubygem-i18n>=1.1.1:devel/rubygem-i18n \
+		rubygem-i18n>=1.1:devel/rubygem-i18n \
 		rubygem-listen>=3.1.5:devel/rubygem-listen \
 		rubygem-log4r>=1.1.9:sysutils/rubygem-log4r \
 		rubygem-net-scp>=1.2.0:security/rubygem-net-scp \
@@ -30,7 +29,7 @@ RUN_DEPENDS=	rubygem-bcrypt_pbkdf>=1.0.0:security/rubygem-bcrypt_pbkdf \
 		rubygem-net-ssh>=5.1.0:security/rubygem-net-ssh \
 		rubygem-rb-kqueue>=0.2.0:devel/rubygem-rb-kqueue \
 		rubygem-rest-client>=1.6.0:www/rubygem-rest-client \
-		rubygem-rubyzip12>=1.2.2:archivers/rubygem-rubyzip12 \
+		rubygem-rubyzip>=1.3:archivers/rubygem-rubyzip \
 		rubygem-vagrant_cloud>=2.0.3:sysutils/rubygem-vagrant_cloud \
 		rubygem-wdm>=0.1.0:devel/rubygem-wdm \
 		rubygem-winrm>=2.1:sysutils/rubygem-winrm \
