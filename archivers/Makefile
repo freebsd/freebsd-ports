@@ -205,7 +205,6 @@
     SUBDIR += rubygem-minitar-cli
     SUBDIR += rubygem-ruby-xz
     SUBDIR += rubygem-rubyzip
-    SUBDIR += rubygem-rubyzip12
     SUBDIR += rubygem-rubyzip13
     SUBDIR += rubygem-rubyzip2
     SUBDIR += rubygem-rubyzip20
