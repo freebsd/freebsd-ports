@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	20200125
+PORTVERSION=	20200202
 CATEGORIES=	polish textproc
 MASTER_SITES=	https://sjp.pl/slownik/ort/ \
 		LOCAL/sunpoet/${PORTNAME}
