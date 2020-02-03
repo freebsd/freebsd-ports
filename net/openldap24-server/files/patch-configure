@@ -1,6 +1,6 @@
---- configure.orig	2011-06-30 08:13:36.000000000 -0700
-+++ configure	2011-07-01 16:50:58.734235092 -0700
-@@ -21600,7 +21600,7 @@
+--- configure.orig	2020-01-30 17:58:35 UTC
++++ configure
+@@ -21657,7 +21657,7 @@ if test "${ac_cv_lib_iodbc_SQLDriverConnect+set}" = se
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +9,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -21648,7 +21648,7 @@
+@@ -21705,7 +21705,7 @@ if test "${ac_cv_lib_odbc_SQLDriverConnect+set}" = set
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,12 +18,3 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -21938,7 +21938,7 @@
- 		cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
--#include <unicode/utypes.h>
-+#include <unicode/utypes.h-disabled>
- 
- int
- main ()
