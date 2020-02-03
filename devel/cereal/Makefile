@@ -16,7 +16,7 @@ BUILD_DEPENDS=	boost-libs>=1.69:devel/boost-libs \
 		cmake>=2.6.2:devel/cmake \
 		ninja>=1.8.2:devel/ninja
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	USCiLab
 
