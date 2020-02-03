@@ -29,6 +29,7 @@ NLS_PLIST_FILES=	lib/help2man/bindtextdomain.so
 NLS_RUN_DEPENDS=	p5-Locale-gettext>=0:devel/p5-Locale-gettext
 NLS_USES=		gettext
 NLS_VARS=		CONFIGURE_FAIL_MESSAGE="Rebuild lang/${PERL_PORT} and devel/p5-Locale-gettext manually before contacting maintainer."
+NLS_VARS_OFF=		NO_ARCH=yes
 
 .for lang in de es fr pl pt_BR sv ta uk zh_CN
 NLS_INFO+=		help2man-${lang}
