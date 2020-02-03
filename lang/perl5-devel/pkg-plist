@@ -1294,7 +1294,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/ExtUtils::Typemaps::InputMap.3.gz
 %%MAN3%%/ExtUtils::Typemaps::OutputMap.3.gz
 %%MAN3%%/ExtUtils::Typemaps::Type.3.gz
-%%MAN3%%/ExtUtils::XSSymSet.3.gz
 %%MAN3%%/ExtUtils::testlib.3.gz
 %%MAN3%%/Fatal.3.gz
 %%MAN3%%/Fcntl.3.gz
@@ -1971,6 +1970,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Age/V11.pl
 %%PRIV_LIB%%/unicore/lib/Age/V110.pl
 %%PRIV_LIB%%/unicore/lib/Age/V120.pl
+%%PRIV_LIB%%/unicore/lib/Age/V130.pl
 %%PRIV_LIB%%/unicore/lib/Age/V20.pl
 %%PRIV_LIB%%/unicore/lib/Age/V30.pl
 %%PRIV_LIB%%/unicore/lib/Age/V31.pl
@@ -2044,12 +2044,17 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Dt/Sub.pl
 %%PRIV_LIB%%/unicore/lib/Dt/Sup.pl
 %%PRIV_LIB%%/unicore/lib/Dt/Vert.pl
+%%PRIV_LIB%%/unicore/lib/EBase/Y.pl
+%%PRIV_LIB%%/unicore/lib/EComp/Y.pl
+%%PRIV_LIB%%/unicore/lib/EPres/Y.pl
 %%PRIV_LIB%%/unicore/lib/Ea/A.pl
 %%PRIV_LIB%%/unicore/lib/Ea/H.pl
 %%PRIV_LIB%%/unicore/lib/Ea/N.pl
 %%PRIV_LIB%%/unicore/lib/Ea/Na.pl
 %%PRIV_LIB%%/unicore/lib/Ea/W.pl
+%%PRIV_LIB%%/unicore/lib/Emoji/Y.pl
 %%PRIV_LIB%%/unicore/lib/Ext/Y.pl
+%%PRIV_LIB%%/unicore/lib/ExtPict/Y.pl
 %%PRIV_LIB%%/unicore/lib/GCB/CN.pl
 %%PRIV_LIB%%/unicore/lib/GCB/EX.pl
 %%PRIV_LIB%%/unicore/lib/GCB/LV.pl
@@ -2101,6 +2106,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/In/11_0.pl
 %%PRIV_LIB%%/unicore/lib/In/12_0.pl
 %%PRIV_LIB%%/unicore/lib/In/12_1.pl
+%%PRIV_LIB%%/unicore/lib/In/13_0.pl
 %%PRIV_LIB%%/unicore/lib/In/2_0.pl
 %%PRIV_LIB%%/unicore/lib/In/2_1.pl
 %%PRIV_LIB%%/unicore/lib/In/3_0.pl
@@ -2119,6 +2125,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/In/8_0.pl
 %%PRIV_LIB%%/unicore/lib/In/9_0.pl
 %%PRIV_LIB%%/unicore/lib/InPC/Bottom.pl
+%%PRIV_LIB%%/unicore/lib/InPC/BottomAn.pl
 %%PRIV_LIB%%/unicore/lib/InPC/Left.pl
 %%PRIV_LIB%%/unicore/lib/InPC/LeftAndR.pl
 %%PRIV_LIB%%/unicore/lib/InPC/NA.pl
@@ -2139,6 +2146,8 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/InSC/Consona5.pl
 %%PRIV_LIB%%/unicore/lib/InSC/Consona6.pl
 %%PRIV_LIB%%/unicore/lib/InSC/Consona7.pl
+%%PRIV_LIB%%/unicore/lib/InSC/Consona8.pl
+%%PRIV_LIB%%/unicore/lib/InSC/Consona9.pl
 %%PRIV_LIB%%/unicore/lib/InSC/Consonan.pl
 %%PRIV_LIB%%/unicore/lib/InSC/Invisibl.pl
 %%PRIV_LIB%%/unicore/lib/InSC/Nukta.pl
@@ -2183,7 +2192,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Lb/CJ.pl
 %%PRIV_LIB%%/unicore/lib/Lb/CL.pl
 %%PRIV_LIB%%/unicore/lib/Lb/CM.pl
-%%PRIV_LIB%%/unicore/lib/Lb/EB.pl
 %%PRIV_LIB%%/unicore/lib/Lb/EX.pl
 %%PRIV_LIB%%/unicore/lib/Lb/GL.pl
 %%PRIV_LIB%%/unicore/lib/Lb/ID.pl
@@ -2316,7 +2324,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/SD/Y.pl
 %%PRIV_LIB%%/unicore/lib/STerm/Y.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Arab.pl
-%%PRIV_LIB%%/unicore/lib/Sc/Armn.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Beng.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Cprt.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Cyrl.pl
@@ -2360,6 +2367,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Scx/Cprt.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Cyrl.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Deva.pl
+%%PRIV_LIB%%/unicore/lib/Scx/Diak.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Dupl.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Ethi.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Geor.pl
@@ -2404,11 +2412,13 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Scx/Takr.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Talu.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Taml.pl
+%%PRIV_LIB%%/unicore/lib/Scx/Tang.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Telu.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Thaa.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Tibt.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Tirh.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Xsux.pl
+%%PRIV_LIB%%/unicore/lib/Scx/Yezi.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Yi.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Zinh.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Zyyy.pl
