@@ -11,12 +11,13 @@ COMMENT=	Helper for generating HTML mails in Rails applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-railties4>=3.0:www/rubygem-railties4 \
-		rubygem-roadie>=3.1:mail/rubygem-roadie
+RUN_DEPENDS=	rubygem-railties4>=3.0<5.3:www/rubygem-railties4 \
+		rubygem-roadie>=3.1<4:mail/rubygem-roadie
+
+USES=		gem shebangfix
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem shebangfix
 
 SHEBANG_FILES=	setup.sh
 
