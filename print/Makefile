@@ -259,6 +259,7 @@
     SUBDIR += xmbibtex
     SUBDIR += xpdfopen
     SUBDIR += xpp
+    SUBDIR += xreader
     SUBDIR += xtexsh
     SUBDIR += yatex
 
