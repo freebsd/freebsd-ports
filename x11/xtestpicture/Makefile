@@ -5,12 +5,10 @@ PORTNAME=	xtestpicture
 PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
+MASTER_SITES=	LOCAL/joerg
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Create a full-screen image to adjust your monitor
-
-BROKEN=		unfetchable
 
 USES=		imake xorg
 USE_XORG=	x11 xext
