@@ -5,7 +5,7 @@ PORTNAME=	lattice-ice40-examples-hx8k
 PORTVERSION=	g20180310
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	manu@FreeBSD.org
 COMMENT=	Lattice iCE40 FPGA examples for the Olimex HX8K board
 
 LICENSE=	APACHE20
