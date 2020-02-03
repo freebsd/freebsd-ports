@@ -1,9 +1,6 @@
 bin/grafx2
 share/applications/grafx2.desktop
-%%DATADIR%%/fonts/5pxtinyfont.png
 %%DATADIR%%/fonts/8pxfont.png
-%%DATADIR%%/fonts/GrafX2_Black.gif
-%%DATADIR%%/fonts/GrafX2_Dark.gif
 %%DATADIR%%/fonts/PF_Arma_5__.png
 %%DATADIR%%/fonts/PF_Easta_7_.png
 %%DATADIR%%/fonts/PF_Easta_7__.png
@@ -19,9 +16,11 @@ share/applications/grafx2.desktop
 %%DATADIR%%/fonts/PF_Westa_7_.png
 %%DATADIR%%/fonts/PF_Westa_7__.png
 %%DATADIR%%/fonts/Tuffy.ttf
-%%DATADIR%%/fonts/colorfont.pcx
 %%DATADIR%%/gfx2.gif
 %%DATADIR%%/gfx2def.ini
+%%DATADIR%%/gfx2.png
+%%DATADIR%%/skins/unicode_0390-03C9.png
+%%DATADIR%%/skins/unicode_3040-309F.png
 %%LUA%%%%DATADIR%%/scripts/samples/brush/ApplyColor.lua
 %%LUA%%%%DATADIR%%/scripts/samples/brush/Fisheye.lua
 %%LUA%%%%DATADIR%%/scripts/samples/brush/GrayscaleAvg.lua
