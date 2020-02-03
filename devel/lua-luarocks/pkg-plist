@@ -7,6 +7,7 @@ bin/luarocks-admin
 %%LUA_MODSHAREDIR%%/luarocks/admin/cmd/refresh_cache.lua
 %%LUA_MODSHAREDIR%%/luarocks/admin/cmd/remove.lua
 %%LUA_MODSHAREDIR%%/luarocks/admin/index.lua
+%%LUA_MODSHAREDIR%%/luarocks/argparse.lua
 %%LUA_MODSHAREDIR%%/luarocks/build.lua
 %%LUA_MODSHAREDIR%%/luarocks/build/builtin.lua
 %%LUA_MODSHAREDIR%%/luarocks/build/cmake.lua
@@ -17,7 +18,6 @@ bin/luarocks-admin
 %%LUA_MODSHAREDIR%%/luarocks/cmd/config.lua
 %%LUA_MODSHAREDIR%%/luarocks/cmd/doc.lua
 %%LUA_MODSHAREDIR%%/luarocks/cmd/download.lua
-%%LUA_MODSHAREDIR%%/luarocks/cmd/help.lua
 %%LUA_MODSHAREDIR%%/luarocks/cmd/init.lua
 %%LUA_MODSHAREDIR%%/luarocks/cmd/install.lua
 %%LUA_MODSHAREDIR%%/luarocks/cmd/lint.lua
@@ -40,8 +40,10 @@ bin/luarocks-admin
 %%LUA_MODSHAREDIR%%/luarocks/core/manif.lua
 %%LUA_MODSHAREDIR%%/luarocks/core/path.lua
 %%LUA_MODSHAREDIR%%/luarocks/core/persist.lua
+%%LUA_MODSHAREDIR%%/luarocks/core/sysdetect.lua
 %%LUA_MODSHAREDIR%%/luarocks/core/util.lua
 %%LUA_MODSHAREDIR%%/luarocks/core/vers.lua
+%%LUA_MODSHAREDIR%%/luarocks/deplocks.lua
 %%LUA_MODSHAREDIR%%/luarocks/deps.lua
 %%LUA_MODSHAREDIR%%/luarocks/dir.lua
 %%LUA_MODSHAREDIR%%/luarocks/download.lua
@@ -59,12 +61,14 @@ bin/luarocks-admin
 %%LUA_MODSHAREDIR%%/luarocks/fetch/sscm.lua
 %%LUA_MODSHAREDIR%%/luarocks/fetch/svn.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs.lua
+%%LUA_MODSHAREDIR%%/luarocks/fs/freebsd.lua
+%%LUA_MODSHAREDIR%%/luarocks/fs/linux.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/lua.lua
+%%LUA_MODSHAREDIR%%/luarocks/fs/macosx.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/tools.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/unix.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/unix/tools.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/win32.lua
-%%LUA_MODSHAREDIR%%/luarocks/fs/win32/pe-parser.lua
 %%LUA_MODSHAREDIR%%/luarocks/fs/win32/tools.lua
 %%LUA_MODSHAREDIR%%/luarocks/fun.lua
 %%LUA_MODSHAREDIR%%/luarocks/loader.lua
@@ -80,6 +84,7 @@ bin/luarocks-admin
 %%LUA_MODSHAREDIR%%/luarocks/results.lua
 %%LUA_MODSHAREDIR%%/luarocks/rockspecs.lua
 %%LUA_MODSHAREDIR%%/luarocks/search.lua
+%%LUA_MODSHAREDIR%%/luarocks/signing.lua
 %%LUA_MODSHAREDIR%%/luarocks/test.lua
 %%LUA_MODSHAREDIR%%/luarocks/test/busted.lua
 %%LUA_MODSHAREDIR%%/luarocks/test/command.lua

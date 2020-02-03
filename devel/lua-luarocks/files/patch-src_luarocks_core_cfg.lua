@@ -3,9 +3,9 @@
 - Prefer system compiler over GCC on BSDs/Solaris
 - OpenBSD uses Clang by default, so don't pass GCC RPATH
 
---- src/luarocks/core/cfg.lua.orig	2018-08-14 16:30:42 UTC
+--- src/luarocks/core/cfg.lua.orig	2020-01-28 15:54:42 UTC
 +++ src/luarocks/core/cfg.lua
-@@ -35,6 +35,7 @@ local platform_order = {
+@@ -36,6 +36,7 @@ local platform_order = {
     "netbsd",
     "openbsd",
     "freebsd",
@@ -13,15 +13,15 @@
     "linux",
     "macosx",
     "cygwin",
-@@ -154,6 +155,7 @@ end
- local function make_platforms(system)
-    if system then
-       if system == "Linux"            then return { unix = true, linux = true }
-+      elseif system == "DragonFly"    then return { unix = true, bsd = true, dragonfly = true }
-       elseif system == "FreeBSD"      then return { unix = true, bsd = true, freebsd = true }
-       elseif system == "OpenBSD"      then return { unix = true, bsd = true, openbsd = true }
-       elseif system == "NetBSD"       then return { unix = true, bsd = true, netbsd = true }
-@@ -357,13 +359,13 @@ local function make_defaults(lua_version, target_cpu, 
+@@ -157,6 +158,7 @@ end
+ 
+ local platform_sets = {
+    freebsd = { unix = true, bsd = true, freebsd = true },
++   dragonfly = { unix = true, bsd = true, dragonfly = true },
+    openbsd = { unix = true, bsd = true, openbsd = true },
+    solaris = { unix = true, solaris = true },
+    windows = { windows = true, win32 = true },
+@@ -365,12 +367,13 @@ local function make_defaults(lua_version, target_cpu, 
        defaults.external_lib_extension = "so"
        defaults.obj_extension = "o"
        defaults.external_deps_dirs = { "/usr/local", "/usr", "/" }
@@ -35,19 +35,11 @@
 +      defaults.variables.LD = os.getenv("CC") or defaults.variables.CC
        defaults.gcc_rpath = true
 -      defaults.variables.LIBFLAG = "-shared"
--
 +      defaults.variables.LIBFLAG = (os.getenv("LDFLAGS") or "").." -shared"
-       defaults.external_deps_patterns = {
-          bin = { "?" },
-          lib = { "lib?.a", "lib?.so", "lib?.so.*" },
-@@ -449,15 +451,18 @@ local function make_defaults(lua_version, target_cpu, 
-       end
-    end
+       defaults.variables.TEST = "test"
  
-+   if platforms.dragonfly then
-+      defaults.arch = "dragonfly-"..target_cpu
-+   end
-+
+       defaults.external_deps_patterns = {
+@@ -457,12 +460,15 @@ local function make_defaults(lua_version, target_cpu, 
     if platforms.freebsd then
        defaults.arch = "freebsd-"..target_cpu
        defaults.gcc_rpath = false
@@ -55,6 +47,10 @@
 -      defaults.variables.LD = "cc"
     end
  
++   if platforms.dragonfly then
++     defaults.arch = "dragonfly-"..target_cpu
++   end
++
     if platforms.openbsd then
        defaults.arch = "openbsd-"..target_cpu
 +      defaults.gcc_rpath = false
