@@ -178,6 +178,7 @@
     SUBDIR += gnome-ssh-askpass
     SUBDIR += gnomint
     SUBDIR += gnupg
+    SUBDIR += gnupg-pkcs11-scd
     SUBDIR += gnupg1
     SUBDIR += gnutls
     SUBDIR += go-cve-dictionary

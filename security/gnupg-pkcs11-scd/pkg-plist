@@ -1,0 +1,3 @@
+bin/gnupg-pkcs11-scd
+man/man1/gnupg-pkcs11-scd.1.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnupg-pkcs11-scd.conf
