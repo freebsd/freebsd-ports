@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Storage Blob Client Library for Ruby
 
-LICENSE=	APACHE20
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-azure-core>=0.1.13<0.2:net/rubygem-azure-core \
 		rubygem-azure-storage-common>=1.0<2:devel/rubygem-azure-storage-common \
