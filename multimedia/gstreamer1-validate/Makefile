@@ -13,7 +13,7 @@ COMMENT=	Gstreamer element validation suite
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libgstrtspserver-1.0.so:multimedia/gstreamer1-rtsp-server
 
-USES=		gettext-runtime gmake gnome libtool pathfix \
+USES=		compiler:c11 gettext-runtime gmake gnome libtool pathfix \
 		pkgconfig python:2.7 shebangfix tar:xz
 SHEBANG_FILES=	tools/gst-validate-launcher.in
 USE_LDCONFIG=	yes
