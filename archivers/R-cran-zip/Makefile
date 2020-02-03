@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	archivers
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	dbn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-Platform 'zip' Compression
 
 LICENSE=	CC0-1.0

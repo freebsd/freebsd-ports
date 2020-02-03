@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	dbn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Match Regular Expressions with a Nicer 'API'
 
 LICENSE=	MIT

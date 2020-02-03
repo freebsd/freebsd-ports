@@ -6,7 +6,7 @@ PORTVERSION=	1.0+20151228
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	dbn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subset of a well-known texture compression scheme
 
 LICENSE=	MIT
