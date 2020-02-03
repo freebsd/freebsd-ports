@@ -1,6 +1,5 @@
 bin/okteta
 bin/struct2osd
-etc/xdg/okteta-structures.knsrc
 include/KastenControllers/Kasten/ClipboardControllerFactory
 include/KastenControllers/Kasten/CloseControllerFactory
 include/KastenControllers/Kasten/CopyAsControllerFactory
@@ -529,6 +528,7 @@ share/doc/HTML/uk/okteta/index.docbook
 share/icons/hicolor/16x16/apps/okteta.png
 share/icons/hicolor/32x32/apps/okteta.png
 share/icons/hicolor/48x48/apps/okteta.png
+share/knsrcfiles/okteta-structures.knsrc
 share/kservices5/oktetapart.desktop
 share/locale/ar/LC_MESSAGES/libkasten.mo
 share/locale/ar/LC_MESSAGES/liboktetacore.mo
@@ -780,7 +780,6 @@ share/locale/ru/LC_MESSAGES/liboktetagui.mo
 share/locale/ru/LC_MESSAGES/liboktetakasten.mo
 share/locale/ru/LC_MESSAGES/okteta.mo
 share/locale/ru/LC_MESSAGES/oktetapart.mo
-share/locale/se/LC_MESSAGES/oktetapart.mo
 share/locale/sk/LC_MESSAGES/libkasten.mo
 share/locale/sk/LC_MESSAGES/liboktetacore.mo
 share/locale/sk/LC_MESSAGES/liboktetagui.mo
