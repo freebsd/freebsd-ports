@@ -1,0 +1,10 @@
+--- tools/Makefile.orig	2019-12-17 14:23:09 UTC
++++ tools/Makefile
+@@ -15,7 +15,6 @@ SUBDIRS-y += examples
+ SUBDIRS-y += hotplug
+ SUBDIRS-y += xentrace
+ SUBDIRS-$(CONFIG_XCUTILS) += xcutils
+-SUBDIRS-$(CONFIG_X86) += firmware
+ SUBDIRS-y += console
+ SUBDIRS-y += xenmon
+ SUBDIRS-y += xenstat
