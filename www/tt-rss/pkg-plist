@@ -15,7 +15,6 @@
 %%WWWDIR%%/classes/article.php
 %%WWWDIR%%/classes/auth/base.php
 %%WWWDIR%%/classes/backend.php
-%%WWWDIR%%/classes/ccache.php
 %%WWWDIR%%/classes/counters.php
 %%WWWDIR%%/classes/db.php
 %%WWWDIR%%/classes/db/mysqli.php
@@ -119,6 +118,7 @@
 %%WWWDIR%%/js/index.html
 %%WWWDIR%%/js/prefs.js
 %%WWWDIR%%/js/tt-rss.js
+%%WWWDIR%%/js/utility.js
 %%WWWDIR%%/lib/CheckBoxStoreModel.js
 %%WWWDIR%%/lib/CheckBoxTree.js
 %%WWWDIR%%/lib/MiniTemplator.class.php
