@@ -5354,7 +5354,7 @@
     SUBDIR += replxx
     SUBDIR += resolv_wrapper
     SUBDIR += rhtvision
-    SUBDIR += riscv32-unknown-gcc
+    SUBDIR += riscv32-unknown-elf-gcc
     SUBDIR += riscv64-gcc
     SUBDIR += riscv64-none-elf-gcc
     SUBDIR += riscv64-xtoolchain-gcc
