@@ -1,4 +1,4 @@
-A batch converter that transforms UNIX-style manpages from the
-DocBook SGML DTD into nroff/troff -man macros.
+A batch converter that transforms UNIX-style manpages from the DocBook SGML DTD
+into nroff/troff -man macros.
 
-WWW: http://www.oasis-open.org/docbook/tools/dtm/
+WWW: https://www.oasis-open.org/docbook/tools/dtm/
