@@ -14,4 +14,6 @@ COMMENT=	Line wrapping to form simple paragraphs
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
