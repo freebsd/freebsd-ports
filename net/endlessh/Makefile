@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	endlessh
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net
 
 MAINTAINER=	brnrd@FreeBSD.org
