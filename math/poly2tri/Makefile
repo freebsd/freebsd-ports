@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 
-USES=		gl localbase:ldflags waf
+USES=		compiler:c11 gl localbase:ldflags waf
 USE_GITHUB=	yes
 GH_ACCOUNT=	jhasse
 GH_TAGNAME=	e6e63dd29ef0805b3e40fe1832c2f1fe2307943a
