@@ -6,7 +6,7 @@ PORTVERSION=	1.13
 CATEGORIES=	devel
 MASTER_SITES=	https://kronosnet.org/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Network abstraction layer designed for high availability
 
 LICENSE=	GPLv2
