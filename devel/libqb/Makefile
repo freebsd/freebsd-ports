@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=		libqb
-PORTVERSION=		1.0.3
-PORTREVISION=		1
+PORTVERSION=		1.0.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=		devel
-MASTER_SITES=		https://github.com/ClusterLabs/libqb/releases/download/v${PORTVERSION}/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		egypcio@FreeBSD.org
 COMMENT=		High performance logging, tracing, ipc, and polling library
 
 LICENSE=		LGPL21
@@ -20,9 +19,12 @@ GROUPS=			haclient
 QB_SOCKET_DIR?=		/var/run/qb
 PLIST_SUB+=		QB_SOCKET_DIR=${QB_SOCKET_DIR}
 
+USES=			autoreconf gmake libtool pathfix pkgconfig tar:xz
 USE_BINUTILS=		yes
 USE_LDCONFIG=		yes
-USES=			autoreconf gmake libtool pathfix pkgconfig tar:xz
+USE_GITHUB=		yes
+GH_ACCOUNT=		ClusterLabs
+
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-socket-dir=${QB_SOCKET_DIR}
 LDFLAGS+=		-B${LOCALBASE}/bin
