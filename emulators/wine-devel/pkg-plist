@@ -302,8 +302,8 @@ include/wine/windows/dimm.h
 include/wine/windows/dimm.idl
 include/wine/windows/dinput.h
 include/wine/windows/dinputd.h
-%%STAGING%%include/wine/windows/directmanipulation.h
-%%STAGING%%include/wine/windows/directmanipulation.idl
+include/wine/windows/directmanipulation.h
+include/wine/windows/directmanipulation.idl
 include/wine/windows/dispdib.h
 include/wine/windows/dispex.h
 include/wine/windows/dispex.idl
@@ -974,6 +974,7 @@ include/wine/windows/wtypes.idl
 include/wine/windows/wuapi.h
 include/wine/windows/wuapi.idl
 include/wine/windows/x3daudio.h
+include/wine/windows/xact3wb.h
 include/wine/windows/xapo.h
 include/wine/windows/xapo.idl
 include/wine/windows/xapofx.h
@@ -2292,6 +2293,7 @@ lib/wine/fakedlls/vcomp120.dll
 lib/wine/fakedlls/vcomp140.dll
 lib/wine/fakedlls/vcomp90.dll
 lib/wine/fakedlls/vcruntime140.dll
+lib/wine/fakedlls/vcruntime140_1.dll
 %%WINE32%%lib/wine/fakedlls/vdhcp.vxd
 lib/wine/fakedlls/vdmdbg.dll
 %%WINE32%%lib/wine/fakedlls/ver.dll16
@@ -2992,6 +2994,7 @@ lib/wine/vcomp120.dll.so
 lib/wine/vcomp140.dll.so
 lib/wine/vcomp90.dll.so
 lib/wine/vcruntime140.dll.so
+lib/wine/vcruntime140_1.dll.so
 %%WINE32%%lib/wine/vdhcp.vxd.so
 lib/wine/vdmdbg.dll.so
 %%WINE32%%lib/wine/ver.dll16.so
