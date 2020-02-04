@@ -1,6 +1,6 @@
---- src/window.c.orig	2010-12-12 14:56:25.000000000 +0100
-+++ src/window.c	2011-12-28 16:07:59.000000000 +0100
-@@ -66,6 +66,7 @@ static const char *CE, *Al, *Dl, *AL, *D
+--- src/window.c.orig	2010-12-12 13:56:25 UTC
++++ src/window.c
+@@ -66,6 +66,7 @@ static const char *CE, *Al, *Dl, *AL, *DL;
  static const char *CS, *SF, *SR, *VB, *BL;
  static const char *VE, *VI, *KS, *KE;
  static const char *CD, *CL, *IC, *DC;

@@ -4,9 +4,7 @@
 PORTNAME=	minicom
 PORTVERSION=	2.7.1
 CATEGORIES=	comms
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4215/ \
-		http://alioth.debian.org/frs/download.php/file/4215/ \
-		http://fossies.org/linux/misc/
+MASTER_SITES=	https://fossies.org/linux/misc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MS-DOS Telix serial communication program "workalike"
@@ -14,11 +12,6 @@ COMMENT=	MS-DOS Telix serial communication program "workalike"
 LICENSE=	GPLv2+
 
 RUN_DEPENDS=	lrz:comms/lrzsz
-
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_SUB=	yes
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=	nls
 
 USES=		iconv ncurses
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -29,6 +22,11 @@ CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--enable-lock-dir=/var/spool/lock \
 			--enable-dfl-port=/dev/cuau0
 
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+
 post-patch:
 	${REINPLACE_CMD} -e "s@/usr/local/bin/@${LOCALBASE}/bin/@; \
 		s@/sz@/lsz@;s@/sb@/lsb@;s@/sx@/lsx@;s@/rz@/lrz@; \
@@ -38,6 +36,8 @@ post-patch:
 
 post-install:
 	${INSTALL} -d -m 0755 ${STAGEDIR}${PREFIX}/etc/minicom
+
+post-install-DOCS-on:
 	${INSTALL} -d -m 0755 ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}/

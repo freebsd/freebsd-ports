@@ -1,5 +1,5 @@
---- src/updown.c.orig	2013-12-08 11:25:06.000000000 +0100
-+++ src/updown.c	2014-01-02 20:30:33.000000000 +0100
+--- src/updown.c.orig	2013-12-08 10:25:06 UTC
++++ src/updown.c
 @@ -298,7 +298,7 @@ void updown(int what, int nr)
      do_log("%s", cmdline);   /* jl 22.06.97 */
  
