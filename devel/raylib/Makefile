@@ -31,10 +31,16 @@ PLIST_FILES=	include/raylib.h \
 		lib/libraylib.so.2 \
 		libdata/pkgconfig/raylib.pc
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == powerpc64
+USE_GCC=	any
+.endif
+
 post-patch: # the equivalent of https://github.com/raysan5/raylib/pull/558 for the -dev branch
 	@${REINPLACE_CMD} -e 's|if(NOT glfw3_FOUND)|if(NOT glfw3_FOUND AND NOT USE_EXTERNAL_GLFW)|' ${WRKSRC}/src/CMakeLists.txt
 
 post-extract: # remove bundled files
 	@${RM} -r ${WRKSRC}/src/external/glfw ${WRKSRC}/src/external/include ${WRKSRC}/src/rglfw.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
