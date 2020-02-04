@@ -1,202 +1,136 @@
-libexec/fidogate/areafix.help
-libexec/fidogate/areasbbssync
-libexec/fidogate/charset.bin
-libexec/fidogate/charset.map
-@(%%FIDOGATE_USER%%,news,4755) libexec/fidogate/ffx
-libexec/fidogate/ffxmail
-libexec/fidogate/ffxnews
-libexec/fidogate/ffxqt
-libexec/fidogate/ffxrmail
+@owner news
+@group news
+bin/areasbbssync
+bin/areassucksync
+bin/ftnaf
+bin/ftnafutil
+bin/ftnexpire
+bin/ftnfattach
+bin/ftngenpkt
+bin/ftnhatch
+bin/ftnoutpkt
+bin/hosts2dns
+bin/logcheck
+bin/logdaily
+bin/logreport
+bin/logsendmail
+bin/logstat
+bin/ngoper
+bin/nl-autoupd
+bin/nl-del
+bin/nl-diff
+bin/out-attach
+bin/out-freq
+bin/out-ls
+bin/out-manip
+bin/out-rm0
+bin/out-rmbsy
+bin/outb
+bin/outb-kill
+bin/pktdebug
+bin/pktmore
+bin/pkttmpl
+bin/recvuu
+bin/runchklock
+bin/runinc
+bin/senduu
+bin/senduumail
+bin/sumcrc
+etc/fido/gate/areafix.help.rus
+etc/fido/gate/areas.sample
+etc/fido/gate/bounce.acl
+etc/fido/gate/bounce.acl_netmail
+etc/fido/gate/bounce.addrinto
+etc/fido/gate/bounce.down
+etc/fido/gate/bounce.insecure
+etc/fido/gate/bounce.noto
+etc/fido/gate/bounce.restricted
+@sample etc/fido/gate/acl.sample
+@sample etc/fido/gate/aliases.sample
+@sample etc/fido/gate/areafix.help.sample
+@sample etc/fido/gate/fidogate.conf.sample
+@sample etc/fido/gate/fidokill.sample
+@sample etc/fido/gate/ftnacl.sample
+@sample etc/fido/gate/hosts.sample
+@sample etc/fido/gate/packing.sample
+@sample etc/fido/gate/passwd.sample
+@sample etc/fido/gate/routing.sample
+@sample etc/fido/gate/spyes.sample
+@sample etc/fido/gate/uplinks.sample
+etc/newsyslog.conf.d/fidogate.conf
+libexec/fidogate/confval
 libexec/fidogate/ftn2ftn
 libexec/fidogate/ftn2rfc
-libexec/fidogate/ftnaf
-@(%%FIDOGATE_USER%%,news,4755) libexec/fidogate/ftnafmail
+libexec/fidogate/ftnafmail
 libexec/fidogate/ftnafpkt
-libexec/fidogate/ftnafutil
-libexec/fidogate/ftnbsy
-libexec/fidogate/ftnconfig
-libexec/fidogate/ftnexpire
-libexec/fidogate/ftnfattach
 libexec/fidogate/ftnflo
-libexec/fidogate/ftnhatch
 libexec/fidogate/ftnin
 libexec/fidogate/ftninpost
 libexec/fidogate/ftninrecomb
-libexec/fidogate/ftnlock
-libexec/fidogate/ftnlog
-@(%%FIDOGATE_USER%%,news,4755) libexec/fidogate/ftnmail
-libexec/fidogate/ftnoutpkt
+libexec/fidogate/ftnmail
 libexec/fidogate/ftnpack
 libexec/fidogate/ftnroute
-libexec/fidogate/ftnseq
 libexec/fidogate/ftntick
 libexec/fidogate/ftntickpost
 libexec/fidogate/ftntoss
-libexec/fidogate/latest
-libexec/fidogate/logcheck
-libexec/fidogate/logdaily
-libexec/fidogate/logreport
-libexec/fidogate/logsendmail
-libexec/fidogate/logsendmail2
-libexec/fidogate/logstat
-libexec/fidogate/nl-autoupd
-libexec/fidogate/nl-check
-libexec/fidogate/nl-del
-libexec/fidogate/nl-diff
-libexec/fidogate/out-freq
-libexec/fidogate/out-ls
-libexec/fidogate/out-manip
-libexec/fidogate/out-rm0
-libexec/fidogate/out-rmbsy
-libexec/fidogate/outb
-libexec/fidogate/outb-kill
-libexec/fidogate/pktdebug
-libexec/fidogate/pktmore
+libexec/fidogate/report_traffic
 libexec/fidogate/rfc2ftn
-libexec/fidogate/runafutil
-libexec/fidogate/runchklock
-libexec/fidogate/runffx
-libexec/fidogate/rungate
-libexec/fidogate/runin
-libexec/fidogate/runmail
-libexec/fidogate/runnews
-libexec/fidogate/runout
-libexec/fidogate/runpoll
-libexec/fidogate/runpoll-binkd
-libexec/fidogate/runpoll-orodruin
-libexec/fidogate/runtoss
-libexec/fidogate/rununpack
-libexec/fidogate/send-ffx
 libexec/fidogate/send-fidogate
-libexec/fidogate/sumcrc
-%%PORTDOCS%%%%DOCSDIR%%/dirs.html
-%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0018.txt
-%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0028.txt
-%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0035.txt
-%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0039.004
-%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0043.002
-%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0047.001
-%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0048.002
-%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0054.txt
-%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0057.002
-%%PORTDOCS%%%%DOCSDIR%%/fido/fts-0001.015
-%%PORTDOCS%%%%DOCSDIR%%/fido/fts-0004.txt
-%%PORTDOCS%%%%DOCSDIR%%/fido/fts-0009.001
+@dir %%BTBASEDIR%%
+@dir %%BTBASEDIR%%/fbox
+@dir %%BTBASEDIR%%/in
+@dir %%BTBASEDIR%%/in/bad
+@dir %%BTBASEDIR%%/in/tmpunpack
+@dir %%BTBASEDIR%%/out
+@dir %%BTBASEDIR%%/pin
+@dir %%BTBASEDIR%%/pin/bad
+@dir %%BTBASEDIR%%/pin/tmpunpack
+@dir %%BTBASEDIR%%/tick
+@dir %%LOCKDIR%%
+@dir %%LOGDIR2%%
+@dir %%LOGDIR%%
+@dir %%SPOOLDIR2%%
+@dir %%SPOOLDIR%%
+@dir %%SPOOLDIR%%/ftpin
+@dir %%SPOOLDIR%%/outpkt
+@dir %%SPOOLDIR%%/outpkt/mail
+@dir %%SPOOLDIR%%/outpkt/news
+@dir %%SPOOLDIR%%/outrfc/mail
+@dir %%SPOOLDIR%%/outrfc
+@dir %%SPOOLDIR%%/outrfc/news
+@dir %%SPOOLDIR%%/toss
+@dir %%SPOOLDIR%%/toss/bad
+@dir %%SPOOLDIR%%/toss/pack
+@dir %%SPOOLDIR%%/toss/route
+@dir %%SPOOLDIR%%/toss/toss
+@dir %%SPOOLDIR%%/uuin
+@dir %%VARDIR%%
+@dir %%VARDIR%%/seq
+@sample %%VARDIR%%/areas.bbs.sample
+@sample %%VARDIR%%/fareas.bbs.sample
+@owner
+@group
+%%PORTDOCS%%@dir %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/Changes.ru
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.ru
+%%PORTDOCS%%%%DOCSDIR%%/FAQ_fidogate
+%%PORTDOCS%%%%DOCSDIR%%/FIDOGATE_ftrack
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.ru
+%%PORTDOCS%%%%DOCSDIR%%/README.snp
 %%PORTDOCS%%%%DOCSDIR%%/fidogate.texi
 %%PORTDOCS%%%%DOCSDIR%%/fidogate.txt
-%%PORTDOCS%%%%DOCSDIR%%/gatebau/msgid.sgml
-%%PORTDOCS%%%%DOCSDIR%%/gatebau/msgid.tex
-%%PORTDOCS%%%%DOCSDIR%%/gatebau/msgid.txt
-%%PORTDOCS%%%%DOCSDIR%%/gatebau94.txt
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-1.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-10.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-11.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-12.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-13.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-2.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-3.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-4.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-5.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-6.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-7.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-8.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-9.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode.html
-%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode.sgml
-%%PORTDOCS%%%%DOCSDIR%%/howto/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/html/ANNOUNCE
-%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_1.html
-%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_3.html
-%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_4.html
-%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_5.html
-%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_7.html
-%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_abt.html
-%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_ovr.html
-%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_toc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gate.cgi
-%%PORTDOCS%%%%DOCSDIR%%/html/msgid-1.html
-%%PORTDOCS%%%%DOCSDIR%%/html/msgid-2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/msgid-3.html
-%%PORTDOCS%%%%DOCSDIR%%/html/msgid-4.html
-%%PORTDOCS%%%%DOCSDIR%%/html/msgid-5.html
-%%PORTDOCS%%%%DOCSDIR%%/html/msgid-6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/msgid-7.html
-%%PORTDOCS%%%%DOCSDIR%%/html/msgid.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/info/fidogate.info
-%%PORTDOCS%%%%DOCSDIR%%/kludge-rfc.doc
-%%PORTDOCS%%%%DOCSDIR%%/misc/ifmail-and-fidogate.doc
-%%PORTDOCS%%%%DOCSDIR%%/misc/roland.doc
-%%PORTDOCS%%%%DOCSDIR%%/misc/smail.doc
-%%PORTDOCS%%%%DOCSDIR%%/misc/smail2.doc
-%%PORTDOCS%%%%DOCSDIR%%/misc/smail3.doc
-%%PORTDOCS%%%%DOCSDIR%%/misc/unpack-script.doc
 %%PORTDOCS%%%%DOCSDIR%%/msgid.doc
-%%PORTDOCS%%%%DOCSDIR%%/qmail.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc-index.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc1036.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc1123.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2045.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2046.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2047.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2048.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2049.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc822.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/son-of-1036.html
-%%PORTDOCS%%%%DOCSDIR%%/template.html
-%%PORTDOCS%%%%DOCSDIR%%/texinfo.tex
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/aliases
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/areas
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/bounce.down
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/bounce.insecure
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/bounce.noto
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/bounce.restricted
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/fidogate.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/hosts
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/packing
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/passwd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/routing
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/aliases
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/areas
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/areas.bbs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/fareas.bbs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/fidogate.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/hosts
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/packing
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/passwd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/routing
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/areas
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/areas.bbs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/fidogate.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/newsfeeds
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/packing
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/routing
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/aliases
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/areas
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/areas.bbs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/fareas.bbs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/fidogate.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/hosts
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/newsfeeds.fidogate
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/packing
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/passwd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/routing
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/README.WIN32
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/aliases
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/areas
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/areas.bbs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/config.make
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/fareas.bbs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/fidogate.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/hosts
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/packing
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/passwd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/routing
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/test-win32
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/inn
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/postfix
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/sendmail
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exim/exim.conf.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exim/ftntable_1304
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exim/ftntable_1309
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exim/ftntable_local
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inn/newsfeeds.fidogate
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/postfix/master.cf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/postfix/transport
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendmail/ftn.m4

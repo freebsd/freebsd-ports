@@ -1,75 +1,106 @@
 # $FreeBSD$
 
 PORTNAME=	fidogate
-PORTVERSION=	4.4.10
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	5.7
 CATEGORIES=	news mail
-MASTER_SITES=	SF \
-		ftp://ftp.fu-berlin.de/unix/news/fidogate/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	admin@5034.ru
 COMMENT=	Fido-Internet Gateway and Tosser
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-MAKE_JOBS_UNSAFE=	yes
+USES=	autoreconf perl5 iconv
 
-USES=		gmake perl5
-MAKE_ARGS=	OWNER=${UID} GROUP=$$(id -g)
-PLIST_SUB=	FIDOGATE_USER=${FIDOGATE_RUNAS}
+CONFLICTS=	fidogate-4* fidogate4-4*
 
-FIXDEST=	. doc doc/gatebau doc/html scripts/areas \
-		scripts/maintenance scripts/misc scripts/nodelist \
-		scripts/outbound scripts/run scripts/www src/areafix \
-		src/charset src/ffx src/gate src/tick src/toss src/util
-DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
-		msgid.doc qmail.txt texinfo.tex dirs.html index.html \
-		template.html fido howto misc rfc gatebau/msgid.sgml \
-		gatebau/msgid.tex gatebau/msgid.txt
+USE_GITHUB=	yes
+GH_ACCOUNT=	ykaliuta
+GH_PROJECT=	fidogate
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--libexec=${PREFIX}/libexec/fidogate \
+		--sysconfdir=${PREFIX}/etc/fido/gate \
+		--with-lockdir=${LOCKDIR} \
+		--with-logdir=${LOGDIR} \
+		--with-vardir=${VARDIR} \
+		--with-spooldir=${SPOOLDIR} \
+		--with-btbasedir=${BTBASEDIR} \
+		${ICONV_CONFIGURE_BASE}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+INSTALL_TARGET=	install-strip
 
-FIDOGATE_RUNAS?=	news
+DOCS=	doc/README.ru doc/README doc/FAQ.ru doc/old/ChangeLog doc/old/Changes.ru \
+	doc/old/FAQ_fidogate doc/old/FIDOGATE_ftrack doc/old/README.snp \
+	doc/old/fidogate.txt doc/old/fidogate.texi doc/old/msgid.doc
 
-.include <bsd.port.options.mk>
+PLIST_SUB+=	SPOOLDIR=${SPOOLDIR} \
+		SPOOLDIR2=${SPOOLDIR:S=/gate$==} \
+		BTBASEDIR=${BTBASEDIR} \
+		LOGDIR=${LOGDIR} \
+		LOGDIR2=${LOGDIR:S=/gate$==} \
+		LOCKDIR=${LOCKDIR} \
+		VARDIR=${VARDIR} \
+		PREFIX=${PREFIX}
 
-post-patch:
-	${REINPLACE_CMD} -e 's| .(PREFIX)| $$(DESTDIR)$$(PREFIX)|g' \
-		${FIXDEST:S,$,/Makefile,S,^,${WRKSRC}/,}
+OPTIONS_DEFINE=	INN DESCDIR ALIASES DBC DNT_NETMAIL FMSGID AVAIL BEST_AKA DOCS EXAMPLES
+SPOOLDIR?=	/var/spool/fido/gate
+BTBASEDIR?=	/var/spool/fido/bt
+LOCKDIR?=	/var/run/fidogate
+LOGDIR?=	/var/log/fido/gate
+VARDIR?=	/var/db/fidogate
 
-pre-configure:
-	${TOUCH} ${WRKSRC}/doc/fidogate.info
-	${RM} ${WRKSRC}/doc/fidogate.info-?
-	${RM} ${WRKSRC}/doc/fidogate.txt
-	${REINPLACE_CMD} -e "s|[.]info-|.info|" ${WRKSRC}/doc/Makefile
-	${REINPLACE_CMD} -e "s|.{PREFIX}|${PREFIX}|g" \
-		 -e "s|.{LOCALBASE}|${LOCALBASE}|g" \
-		 -e "s|^CC|#CC|" ${WRKSRC}/config.make
-.if !${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} -e "s|test doc|test|" \
-		-e "s|cp ANNOUNCE|#cp ANNOUNCE|" \
-		 ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e "s|run www|run|" ${WRKSRC}/scripts/Makefile
-.endif
+OPTIONS_DEFAULT=	INN DESCDIR FMSGID AVAIL BEST_AKA
+NO_OPTIONS_SORT=yes
 
-pre-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/fidogate
+INN_BUILD_DEPENDS=	${PREFIX}/news/bin/innconfval:news/inn
+INN_CONFIGURE_OFF=	--without-news
+DESCDIR_CONFIGURE_OFF=	--disable-desc-dir
+ALIASES_CONFIGURE_ON=	--enable-aliases-local
+DBC_CONFIGURE_ON=	--enable-dbc-history
+DNT_NETMAIL_CONFIGURE_ON=	--enable-dnt-netmail
+FMSGID_CONFIGURE_OFF=	--disable-fs-msgid
+AVAIL_CONFIGURE_OFF=	--disable-af-avail
+BEST_AKA_CONFIGURE_ON=	--enable-best-aka
 
-pre-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/html \
-		${STAGEDIR}${DOCSDIR}/info \
-		${STAGEDIR}${DOCSDIR}/fido \
-		${STAGEDIR}${DOCSDIR}/howto \
-		${STAGEDIR}${DOCSDIR}/misc \
-		${STAGEDIR}${DOCSDIR}/gatebau
+INN_DESC=	INN news server support
+DESCDIR_DESC=	put file descriptions into files.bbs
+ALIASES_DESC=	rewrite addresses found in ALIASES
+DBC_DESC=	use msgid correspond data base
+DNT_NETMAIL_DESC=	do not toss netmail
+FMSGID_DESC=	set gate msgid into outgoing messages
+AVAIL_DESC=	change behaviour of areafix command "%list" and "%avail"
+BEST_AKA_DESC=	best AKA select
+
+post-install:
+	${MKDIR} ${STAGEDIR}${LOGDIR}
+	${MKDIR} ${STAGEDIR}${LOCKDIR}
+	${MKDIR} ${STAGEDIR}${VARDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	${INSTALL_DATA} ${FILESDIR}/fidogate.conf-newsyslog \
+	${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/fidogate.conf
+	${MKDIR} ${STAGEDIR}${BTBASEDIR}/fbox \
+		${STAGEDIR}${BTBASEDIR}/out
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${TAR} -C ${WRKSRC}/doc -cf - ${DOCLIST} | ${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -
+.for a in ${DOCS}
+	${INSTALL_DATA}	${WRKSRC}/${a} ${STAGEDIR}${DOCSDIR}
+.endfor
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+.for a in exim inn postfix sendmail
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${a}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/news/inn/newsfeeds.fidogate ${STAGEDIR}${EXAMPLESDIR}/inn/newsfeeds.fidogate
+	${INSTALL_DATA} ${WRKSRC}/doc/mailer/postfix/master.cf ${STAGEDIR}${EXAMPLESDIR}/postfix/master.cf
+	${INSTALL_DATA} ${WRKSRC}/doc/mailer/postfix/transport ${STAGEDIR}${EXAMPLESDIR}/postfix/transport
+	${INSTALL_DATA} ${WRKSRC}/doc/mailer/sendmail/mailer/ftn.m4 ${STAGEDIR}${EXAMPLESDIR}/sendmail/ftn.m4
+	${INSTALL_DATA} ${WRKSRC}/doc/mailer/exim/exim.conf.in ${STAGEDIR}${EXAMPLESDIR}/exim/exim.conf.in
+	${INSTALL_DATA} ${WRKSRC}/doc/mailer/exim/ftntable_1304 ${STAGEDIR}${EXAMPLESDIR}/exim/ftntable_1304
+	${INSTALL_DATA} ${WRKSRC}/doc/mailer/exim/ftntable_1309 ${STAGEDIR}${EXAMPLESDIR}/exim/ftntable_1309
+	${INSTALL_DATA} ${WRKSRC}/doc/mailer/exim/ftntable_local ${STAGEDIR}${EXAMPLESDIR}/exim/ftntable_local
 
 post-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${TAR} -C ${WRKSRC}/examples -cf - . | ${TAR} -C ${STAGEDIR}${EXAMPLESDIR} -xf -
 
 .include <bsd.port.mk>
