@@ -2,35 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	tinyrpc
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Modular RPC Libray
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Small, modular, transport and protocol neutral RPC library
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gevent>0:devel/py-gevent@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	HTTP WSGI ZEROMQ
-
-OPTIONS_DEFAULT=	HTTP
-
-HTTP_DESC=	HTTP support
+OPTIONS_DEFINE=	GEVENT HTTPCLIENT WEBSOCKET WSGI ZEROMQ
+OPTIONS_DEFAULT=GEVENT HTTPCLIENT
+GEVENT_DESC=	Gevent support
+HTTPCLIENT_DESC=HTTP client support
+WEBSOCKET_DESC=	WebSocket support
 WSGI_DESC=	WSGI support
 ZEROMQ_DESC=	ZeroMQ support
 
-HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent-websocket>0:www/py-gevent-websocket@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
-WSGI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR}
-ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>0:net/py-pyzmq@${PY_FLAVOR}
+GEVENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${PY_FLAVOR}
+HTTPCLIENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent-websocket>=0:www/py-gevent-websocket@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}websocket-client>=0:www/py-websocket-client@${PY_FLAVOR}
+WEBSOCKET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent-websocket>=0:www/py-gevent-websocket@${PY_FLAVOR}
+WSGI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>=0:www/py-werkzeug@${PY_FLAVOR}
+ZEROMQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>=0:net/py-pyzmq@${PY_FLAVOR}
 
 .include <bsd.port.mk>
+
