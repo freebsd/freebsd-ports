@@ -129,14 +129,14 @@ fi
 # Switch to the app_user if it is not he/she who is running the script.
 if [ "$USER" != "$app_user" ]; then
   # Regenerate the Gemfile.lock for all related products
-  echo "Regenerate Gitlab Gemfile.lock"
+  # echo "Regenerate Gitlab Gemfile.lock"
   rm -f "${app_root}"/Gemfile.lock
   if ! su -l root -c "cd ${app_root} && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
     echo "Could not create Gemfile.lock for gitlab, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
     exit 1
   fi
   chown git "${app_root}"/Gemfile.lock
-  echo "Regenerate Gitaly Gemfile.lock"
+  # echo "Regenerate Gitaly Gemfile.lock"
   rm -f "${gitaly_dir}"/ruby/Gemfile.lock
   if ! su -l root -c "cd ${gitaly_dir}/ruby && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
     echo "Could not create Gemfile.lock for gitaly, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
@@ -563,56 +563,6 @@ restart_gitlab(){
 }
 
 
-### Finally the input handling.
-
-case $gitlab_enable in
-  [yY][eE][sS])
-    case "$1" in
-      start|quietstart|faststart)
-        start_gitlab
-        ;;
-      stop|faststop)
-        stop_gitlab
-        ;;
-      restart)
-        restart_gitlab
-        ;;
-      reload|force-reload)
-	reload_gitlab
-        ;;
-      status)
-        print_status
-        exit $gitlab_status
-        ;;
-      *)
-        echo "Usage: service gitlab {start|quietstart|faststop|stop|restart|reload|onestart|onestop|onerestart|onreload|status}"
-        exit 1
-        ;;
-    esac
-    ;;
-  *)
-    case "$1" in
-      onestart)
-        start_gitlab
-        ;;
-      onestop)
-        stop_gitlab
-        ;;
-      onerestart)
-        restart_gitlab
-        ;;
-      onreload)
-        reload_gitlab
-        ;;
-      status)
-        print_status
-        exit $gitlab_status
-        ;;
-      *)
-        echo "Usage: service gitlab {start|quietstart|faststop|stop|restart|reload|onestart|onestop|onerestart|onreload|status}"
-        exit 1
-        ;;
-    esac
-esac
+run_rc_command "$1"
 
 exit
