@@ -1,0 +1,74 @@
+[
+{ type: install
+  message: <<EOM
+bareos server was installed
+
+1) Sample files are installed in %%PREFIX%%/etc/bareos/bareos-dir.d/ and
+   %%PREFIX%%/etc/bareos/bareos-sd.d/ directories
+
+2) Add bareos_dir_enable="YES" and bareos_sd_enable="YES" to /etc/rc.conf.
+
+3) If you want to retain old configuration scheme, you must add the following
+   to /etc/rc.conf
+
+  bareos_dir_config="%%PREFIX%%/etc/bareos/bareos-dir.conf"
+  bareos_sd_config="%%PREFIX%%/etc/bareos/bareos-sd.conf"
+
+4) Important information about new version of bareos can be found in the
+   ReleaseNotes.
+
+   https://github.com/bareos/bareos/blob/master/README.md
+
+NOTE:
+
+An auto-changer manipulation script based on FreeBSDs
+chio command is included and installed at
+
+  %%PREFIX%%/sbin/chio-bareos
+
+Please have a look at it if you want to use an
+autochanger. You have to configure the usage in
+
+  %%PREFIX%%/etc/bareos/bareos-dir.conf or
+  %%PREFIX%%/etc/bareos/bareos-dir.d/storage/
+
+Take care of correct permissions for changer and
+tape device (e.g. /dev/ch0 and /dev/n[r]sa0) i.e.
+they must be accessible by user bareos.
+
+Due to lack of some features in the FreeBSD tape driver
+implementation you MUST add some OS dependent options to
+the bareos-sd.conf file:
+
+  Hardware End of Medium = no;
+  Backward Space Record  = no;
+  Backward Space File    = no;
+
+With 2 filemarks at EOT (see man mt):
+  Fast Forward Space File = no;
+  BSF at EOM = yes;
+  TWO EOF    = yes;
+
+With 1 filemarks at EOT (see man mt):
+  Fast Forward Space File = yes;
+  BSF at EOM = no;
+  TWO EOF   = no;
+
+NOTE: YOU CAN SWITCH EOT model ONLY when starting
+      from scratch with EMPTY tapes.
+
+It is also important that all the scripts accessed
+by RunBeforeJob and RunAfterJob will be executed by
+the user bareos.  Check your permissions.
+
+For USB support read the bareos manual. It could be necessary
+to configure/compile a new kernel.
+
+Look at %%PREFIX%%/lib/bareos/scripts/update_bareos_tables for
+database update procedure.
+
+If you are using sqlite you need to run the make_sqlite_tables script as
+the bareos user. Do this using 'sudo su -m bareos'.
+EOM
+}
+]

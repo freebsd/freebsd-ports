@@ -1,0 +1,21 @@
+--- core/src/dird/CMakeLists.txt	2019-05-08 21:45:45.893113000 -0500
++++ core/src/dird/CMakeLists.txt	2019-05-08 21:47:00.616203000 -0500
+@@ -77,6 +77,9 @@
+    bareosfind
+    ${LMDB_LIBS}
+    ${NDMP_LIBS}
++   ${OPENSSL_LIBRARIES}
++   ${PTHREAD_LIBRARIES}
++   ${JANSSON_LIBRARIES}
+ )
+ 
+ IF(HAVE_WIN32)
+@@ -92,7 +95,7 @@
+ add_executable(bareos-dbcheck ${DBCHKSRCS})
+ SET(DBCHECK_LIBRARIES bareossql bareos bareosfind bareoscats)
+ 
+-target_link_libraries(bareos-dbcheck ${DBCHECK_LIBRARIES})
++target_link_libraries(bareos-dbcheck ${DBCHECK_LIBRARIES} ${OPENSSL_LIBRARIES} ${PTHREAD_LIBRARIES} ${JANSSON_LIBRARIES})
+ 
+ # is not built by default
+ 

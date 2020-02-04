@@ -1,0 +1,47 @@
+--- core/src/stored/CMakeLists.txt	2019-12-12 12:04:14.000000000 -0500
++++ core/src/stored/CMakeLists.txt	2019-12-28 17:19:55.461762000 -0500
+@@ -193,6 +193,8 @@
+ target_link_libraries(bareos-sd
+    stored_objects
+    ${BAREOS_SD_LIBRARIES}
++   ${JANSSON_LIBRARIES}
++   ${PTHREAD_LIBRARIES}
+    )
+ 
+ add_executable(bls ${BLSSRCS})
+@@ -203,6 +205,8 @@
+ add_executable(bextract ${BEXTRACTSRS})
+ target_link_libraries(bextract
+    bareossd bareosfind bareos 
++   ${JANSSON_LIBRARIES}
++   ${PTHREAD_LIBRARIES}
+     )
+ 
+ add_executable(bscan ${BSCANSRCS})
+@@ -213,6 +217,8 @@
+ add_executable(btape ${BTAPESRCS})
+ target_link_libraries(btape
+    bareossd bareos 
++   ${JANSSON_LIBRARIES}
++   ${PTHREAD_LIBRARIES}
+     )
+ 
+ add_executable(bcopy ${BCOPYSRCS})
+@@ -220,6 +226,8 @@
+ 
+ target_link_libraries(bcopy
+    bareossd bareos 
++   ${JANSSON_LIBRARIES}
++   ${PTHREAD_LIBRARIES}
+     )
+ 
+ INSTALL(TARGETS bareossd DESTINATION ${libdir})
+@@ -232,7 +240,7 @@
+ install(CODE "set(SRC_DIR \"${PROJECT_SOURCE_DIR}\")")
+ install(SCRIPT ${PROJECT_SOURCE_DIR}/cmake/install-stored-configfiles.cmake)
+ 
+-INSTALL(DIRECTORY DESTINATION "../${archivedir}")
++INSTALL(DIRECTORY DESTINATION "${archivedir}")
+ 
+ IF(${HAVE_DYNAMIC_SD_BACKENDS})
+ add_subdirectory(backends)

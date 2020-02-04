@@ -1,0 +1,25 @@
+--- core/src/CMakeLists.txt	2019-05-08 21:29:08.173605000 -0500
++++ core/src/CMakeLists.txt	2019-05-08 21:42:27.597876000 -0500
+@@ -30,13 +30,16 @@
+    add_subdirectory(stored)
+ ENDIF()
+ 
+-add_subdirectory(console)
+-IF(${HAVE_LMDB})
+-add_subdirectory(lmdb)
++IF(client-only)
++   add_subdirectory(console)
++   IF(${HAVE_LMDB})
++      add_subdirectory(lmdb)
++   ENDIF()
++   add_subdirectory(lib)
++   add_subdirectory(findlib)
++   add_subdirectory(filed)
+ ENDIF()
+-add_subdirectory(lib)
+-add_subdirectory(findlib)
+-add_subdirectory(filed)
++
+ add_subdirectory(plugins)
+ 
+ if (${traymonitor})
