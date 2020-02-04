@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=v
 PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	dpejesh@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCF Compliant Resource Agents
 
 LICENSE=	GPLv2
