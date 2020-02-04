@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Amazon-S3
-PORTVERSION=	0.87
+PORTVERSION=	0.88
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Use the Amazon S3 - Simple Storage Service
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
