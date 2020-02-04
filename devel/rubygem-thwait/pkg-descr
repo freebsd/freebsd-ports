@@ -1,0 +1,6 @@
+ThreadsWait watches for termination of multiple threads. Basic functionality
+(wait until specified threads have terminated) can be accessed through the class
+method ThreadsWait::all_waits. Finer control can be gained using instance
+methods.
+
+WWW: https://github.com/ruby/thwait
