@@ -14,6 +14,8 @@
 %%WWWDIR%%/init_autoloader.php
 %%WWWDIR%%/module/Application/Module.php
 %%WWWDIR%%/module/Application/autoload_classmap.php
+%%WWWDIR%%/module/Application/config/commands.csv
+%%WWWDIR%%/module/Application/config/module.commands.php
 %%WWWDIR%%/module/Application/config/module.config.php
 %%WWWDIR%%/module/Application/language/cn_CN.mo
 %%WWWDIR%%/module/Application/language/cn_CN.po
@@ -33,6 +35,8 @@
 %%WWWDIR%%/module/Application/language/it_IT.po
 %%WWWDIR%%/module/Application/language/nl_BE.mo
 %%WWWDIR%%/module/Application/language/nl_BE.po
+%%WWWDIR%%/module/Application/language/pl_PL.mo
+%%WWWDIR%%/module/Application/language/pl_PL.po
 %%WWWDIR%%/module/Application/language/pt_BR.mo
 %%WWWDIR%%/module/Application/language/pt_BR.po
 %%WWWDIR%%/module/Application/language/ru_RU.mo
@@ -77,6 +81,13 @@
 %%WWWDIR%%/module/Client/view/client/client/details.phtml
 %%WWWDIR%%/module/Client/view/client/client/index.phtml
 %%WWWDIR%%/module/Client/view/client/client/status.phtml
+%%WWWDIR%%/module/Console/Module.php
+%%WWWDIR%%/module/Console/autoload_classmap.php
+%%WWWDIR%%/module/Console/config/module.config.php
+%%WWWDIR%%/module/Console/src/Console/Controller/ConsoleController.php
+%%WWWDIR%%/module/Console/src/Console/Model/Console.php
+%%WWWDIR%%/module/Console/src/Console/Model/ConsoleModel.php
+%%WWWDIR%%/module/Console/view/console/console/index.phtml
 %%WWWDIR%%/module/Dashboard/Module.php
 %%WWWDIR%%/module/Dashboard/autoload_classmap.php
 %%WWWDIR%%/module/Dashboard/config/module.config.php
@@ -95,7 +106,6 @@
 %%WWWDIR%%/module/Director/src/Director/Controller/DirectorController.php
 %%WWWDIR%%/module/Director/src/Director/Model/Director.php
 %%WWWDIR%%/module/Director/src/Director/Model/DirectorModel.php
-%%WWWDIR%%/module/Director/view/director/director/console.phtml
 %%WWWDIR%%/module/Director/view/director/director/index.phtml
 %%WWWDIR%%/module/Director/view/director/director/messages.phtml
 %%WWWDIR%%/module/Fileset/Module.php
@@ -144,6 +154,7 @@
 %%WWWDIR%%/module/Restore/src/Restore/Model/RestoreModel.php
 %%WWWDIR%%/module/Restore/view/restore/restore/filebrowser.phtml
 %%WWWDIR%%/module/Restore/view/restore/restore/index.phtml
+%%WWWDIR%%/module/Restore/view/restore/restore/versions.phtml
 %%WWWDIR%%/module/Schedule/Module.php
 %%WWWDIR%%/module/Schedule/autoload_classmap.php
 %%WWWDIR%%/module/Schedule/config/module.config.php
@@ -227,10 +238,8 @@
 %%WWWDIR%%/public/js/html5shiv.js
 %%WWWDIR%%/public/js/i_core.js
 %%WWWDIR%%/public/js/i_core.min.js
-%%WWWDIR%%/public/js/i_core.min.js.map
 %%WWWDIR%%/public/js/i_gettext.js
 %%WWWDIR%%/public/js/i_gettext.min.js
-%%WWWDIR%%/public/js/i_gettext.min.js.map
 %%WWWDIR%%/public/js/jquery.cookie.js
 %%WWWDIR%%/public/js/jquery.jqplot.js
 %%WWWDIR%%/public/js/jquery.jqplot.min.js
@@ -272,6 +281,8 @@
 %%WWWDIR%%/public/js/moment-with-locales.min.js
 %%WWWDIR%%/public/js/moment.js
 %%WWWDIR%%/public/js/moment.min.js
+%%WWWDIR%%/public/js/partials/i_core.min.js.map
+%%WWWDIR%%/public/js/partials/i_gettext.min.js.map
 %%WWWDIR%%/public/js/respond.min.js
 %%WWWDIR%%/public/js/responsive.bootstrap.js
 %%WWWDIR%%/public/js/responsive.bootstrap.min.js
