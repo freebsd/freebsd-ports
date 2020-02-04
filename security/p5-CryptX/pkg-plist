@@ -90,7 +90,9 @@
 %%SITE_ARCH%%/Crypt/PK/DH.pm
 %%SITE_ARCH%%/Crypt/PK/DSA.pm
 %%SITE_ARCH%%/Crypt/PK/ECC.pm
+%%SITE_ARCH%%/Crypt/PK/Ed25519.pm
 %%SITE_ARCH%%/Crypt/PK/RSA.pm
+%%SITE_ARCH%%/Crypt/PK/X25519.pm
 %%SITE_ARCH%%/Crypt/PRNG.pm
 %%SITE_ARCH%%/Crypt/PRNG/ChaCha20.pm
 %%SITE_ARCH%%/Crypt/PRNG/Fortuna.pm
@@ -198,7 +200,9 @@
 %%PERL5_MAN3%%/Crypt::PK::DH.3.gz
 %%PERL5_MAN3%%/Crypt::PK::DSA.3.gz
 %%PERL5_MAN3%%/Crypt::PK::ECC.3.gz
+%%PERL5_MAN3%%/Crypt::PK::Ed25519.3.gz
 %%PERL5_MAN3%%/Crypt::PK::RSA.3.gz
+%%PERL5_MAN3%%/Crypt::PK::X25519.3.gz
 %%PERL5_MAN3%%/Crypt::PRNG.3.gz
 %%PERL5_MAN3%%/Crypt::PRNG::ChaCha20.3.gz
 %%PERL5_MAN3%%/Crypt::PRNG::Fortuna.3.gz
