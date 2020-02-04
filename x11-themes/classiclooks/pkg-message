@@ -6,7 +6,7 @@ environment variable:
 
 	export QT_QPA_PLATFORMTHEME=gtk2
 
-which can be done in your shell's .profile file. 
+which can be done in your shell's .profile file.
 EOM
 }
 ]
