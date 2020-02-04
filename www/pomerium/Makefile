@@ -2,7 +2,7 @@
 
 PORTNAME=	pomerium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.2
 CATEGORIES=	www
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -57,7 +57,7 @@ GH_TUPLE=	\
 		googleapis:google-cloud-go:v0.49.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gorilla:mux:v1.7.3:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:securecookie:v1.1.1:gorilla_securecookie/vendor/github.com/gorilla/securecookie \
-		grpc:grpc-go:v1.26.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.25.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-immutable-radix:v1.1.0:hashicorp_go_immutable_radix/vendor/github.com/hashicorp/go-immutable-radix \
 		hashicorp:go-msgpack:v0.5.5:hashicorp_go_msgpack/vendor/github.com/hashicorp/go-msgpack \
