@@ -51,8 +51,8 @@ TOOLS_USE=	GNOME=cairo,glib20,pango
 
 .include <bsd.port.pre.mk>
 
-.if ${CHOSEN_COMPILER_TYPE} == clang && !exists(/usr/include/omp.h)
-OPENMP_LIB_DEPENDS=libomp.so:devel/openmp
+.if ${CHOSEN_COMPILER_TYPE} == clang && !exists(/usr/include/omp.h) && ${PORT_OPTIONS:MOPENMP}
+LIB_DEPENDS+=	libomp.so:devel/openmp
 .endif
 
 post-patch:
