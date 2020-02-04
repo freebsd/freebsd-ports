@@ -1,0 +1,4 @@
+e2mmap (Exception2MessageMapper) is a helper module for easily defining
+exceptions with predefined messages.
+
+WWW: https://github.com/ruby/e2mmap
