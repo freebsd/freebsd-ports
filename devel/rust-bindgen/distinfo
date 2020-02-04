@@ -1,6 +1,6 @@
-TIMESTAMP = 1579772489
-SHA256 (rust/crates/bindgen-0.52.0.tar.gz) = f1c85344eb535a31b62f0af37be84441ba9e7f0f4111eb0530f43d15e513fe57
-SIZE (rust/crates/bindgen-0.52.0.tar.gz) = 189797
+TIMESTAMP = 1580682853
+SHA256 (rust/crates/bindgen-0.53.0.tar.gz) = 4cb4969a64504090d6de8522f7f02b5f88e0f0ae4ab193b24a94b0ee954d5a06
+SIZE (rust/crates/bindgen-0.53.0.tar.gz) = 191071
 SHA256 (rust/crates/aho-corasick-0.7.6.tar.gz) = 58fb5e95d83b38284460a5fda7d6470aa0b8844d283a0b614b8535e880800d2d
 SIZE (rust/crates/aho-corasick-0.7.6.tar.gz) = 108953
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -87,5 +87,3 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SHA256 (rust/crates/wincolor-1.0.2.tar.gz) = 96f5016b18804d24db43cebf3c77269e7569b8954a8464501c216cc5e070eaa9
 SIZE (rust/crates/wincolor-1.0.2.tar.gz) = 4821
-SHA256 (d4e4a996e84a52b13bd4e6de52e08e34710dbe19.patch) = 02e043379c32e6a8951de318bafe19d9822792c6684c487006a6a00f963088dd
-SIZE (d4e4a996e84a52b13bd4e6de52e08e34710dbe19.patch) = 1356
