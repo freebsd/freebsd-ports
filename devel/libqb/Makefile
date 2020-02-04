@@ -4,6 +4,7 @@
 PORTNAME=		libqb
 PORTVERSION=		1.0.5
 DISTVERSIONPREFIX=	v
+PORTREVISION=		1
 CATEGORIES=		devel
 
 MAINTAINER=		egypcio@FreeBSD.org
@@ -19,14 +20,16 @@ GROUPS=			haclient
 QB_SOCKET_DIR?=		/var/run/qb
 PLIST_SUB+=		QB_SOCKET_DIR=${QB_SOCKET_DIR}
 
-USES=			autoreconf gmake libtool pathfix pkgconfig tar:xz
+USES=			autoreconf gmake libtool pathfix pkgconfig
 USE_BINUTILS=		yes
 USE_LDCONFIG=		yes
 USE_GITHUB=		yes
 GH_ACCOUNT=		ClusterLabs
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-socket-dir=${QB_SOCKET_DIR}
+CONFIGURE_ARGS=		--with-socket-dir=${QB_SOCKET_DIR} \
+			PACKAGE_STRING="${PORTNAME} ${PORTVERSION}" \
+			PACKAGE_VERSION=${PORTVERSION}
 LDFLAGS+=		-B${LOCALBASE}/bin
 PATHFIX_MAKEFILEIN=	Makefile.am
 
