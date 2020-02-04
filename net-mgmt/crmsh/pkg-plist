@@ -192,6 +192,7 @@ bin/crm
 %%DATADIR%%/tests/cibtests/004.exp.xml
 %%DATADIR%%/tests/cibtests/004.input
 %%DATADIR%%/tests/cibtests/shadow.base
+%%DATADIR%%/tests/containerized-regression-tests.sh
 %%DATADIR%%/tests/crm-interface
 %%DATADIR%%/tests/defaults
 %%DATADIR%%/tests/descriptions
@@ -201,6 +202,8 @@ bin/crm
 %%DATADIR%%/tests/profile-history.sh
 %%DATADIR%%/tests/regression.sh
 %%DATADIR%%/tests/run
+%%DATADIR%%/tests/run-in-container.sh
+%%DATADIR%%/tests/run-in-travis.sh
 %%DATADIR%%/tests/testcases/acl
 %%DATADIR%%/tests/testcases/acl.excl
 %%DATADIR%%/tests/testcases/acl.exp
@@ -215,7 +218,7 @@ bin/crm
 %%DATADIR%%/tests/testcases/confbasic-xml
 %%DATADIR%%/tests/testcases/confbasic-xml.exp
 %%DATADIR%%/tests/testcases/confbasic.exp
-%%DATADIR%%/tests/testcases/configbasic-xml.filter
+%%DATADIR%%/tests/testcases/confbasic-xml.filter
 %%DATADIR%%/tests/testcases/delete
 %%DATADIR%%/tests/testcases/delete.exp
 %%DATADIR%%/tests/testcases/edit
@@ -242,6 +245,7 @@ bin/crm
 %%DATADIR%%/tests/testcases/rset
 %%DATADIR%%/tests/testcases/rset-xml
 %%DATADIR%%/tests/testcases/rset-xml.exp
+%%DATADIR%%/tests/testcases/rset-xml.filter
 %%DATADIR%%/tests/testcases/rset.exp
 %%DATADIR%%/tests/testcases/scripts
 %%DATADIR%%/tests/testcases/scripts.exp
