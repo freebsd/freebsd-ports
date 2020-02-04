@@ -3,7 +3,7 @@
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	6.4.43
+DISTVERSION=	6.4.110
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-php-71
@@ -19,7 +19,9 @@ RESTRICTED=	Free for personal use only
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	mysqli session mbstring pcre xml
+USE_PHP=	ctype curl dom fileinfo filter hash intl json mbstring \
+		mysqli openssl pcre pdo pdo_mysql phar session \
+		simplexml soap tokenizer xml xmlreader xmlwriter zip zlib
 SHEBANG_FILES=	groupoffice \
 		groupofficecli.php \
 		modules/postfixadmin/scripts/vacation.pl \
