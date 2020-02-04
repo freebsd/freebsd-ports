@@ -1,4 +1,6 @@
+bin/opensense
 bin/opensim-cmd
+bin/opensim-install-command-line.sh
 %%ETCDIR%%_buildinfo.txt
 include/OpenSim/Actuators/ActiveForceLengthCurve.h
 include/OpenSim/Actuators/BodyActuator.h
@@ -59,6 +61,7 @@ include/OpenSim/Common/Adapters.h
 include/OpenSim/Common/Array.h
 include/OpenSim/Common/ArrayPtrs.h
 include/OpenSim/Common/CSVFileAdapter.h
+include/OpenSim/Common/CommonUtilities.h
 include/OpenSim/Common/Component.h
 include/OpenSim/Common/ComponentList.h
 include/OpenSim/Common/ComponentOutput.h
@@ -133,6 +136,7 @@ include/OpenSim/Common/SmoothSegmentedFunction.h
 include/OpenSim/Common/SmoothSegmentedFunctionFactory.h
 include/OpenSim/Common/StateVector.h
 include/OpenSim/Common/StepFunction.h
+include/OpenSim/Common/Stopwatch.h
 include/OpenSim/Common/Storage.h
 include/OpenSim/Common/StorageFactory.h
 include/OpenSim/Common/StorageInterface.h
@@ -251,7 +255,8 @@ include/OpenSim/Simulation/Model/Umberger2010MuscleMetabolicsProbe.h
 include/OpenSim/Simulation/MomentArmSolver.h
 include/OpenSim/Simulation/OpenSense/ExperimentalFrame.h
 include/OpenSim/Simulation/OpenSense/ExperimentalMarker.h
-include/OpenSim/Simulation/OpenSense/InverseKinematicsStudy.h
+include/OpenSim/Simulation/OpenSense/IMUInverseKinematicsTool.h
+include/OpenSim/Simulation/OpenSense/IMUPlacer.h
 include/OpenSim/Simulation/OpenSense/OpenSenseUtilities.h
 include/OpenSim/Simulation/OrientationsReference.h
 include/OpenSim/Simulation/Reference.h
@@ -592,6 +597,8 @@ lib/libosimTools.so
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/IKTask.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/IKTaskSet.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/IMUDataReader.java
+%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/IMUInverseKinematicsTool.java
+%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/IMUPlacer.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/IO.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/IOError.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/IncorrectMetaDataLength.java
@@ -624,7 +631,6 @@ lib/libosimTools.so
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/InverseDynamicsSolver.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/InverseDynamicsTool.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/InverseKinematicsSolver.java
-%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/InverseKinematicsStudy.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/InverseKinematicsTool.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/InverseRotation.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/IteratorRangeStatesTrajectoryIterator.java
@@ -858,6 +864,7 @@ lib/libosimTools.so
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_SimTK__Matrix_T_SimTK__UnitVecT_double_1_t_t.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_SimTK__MobilizedBody.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_SimTK__MultibodySystem.java
+%%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_SimTK__Quaternion_T_SimTK__Real_t.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_SimTK__Rotation_T_SimTK__Real_t.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_SimTK__RowVectorView_T_SimTK__UnitVecT_double_1_t_t.java
 %%JAVA%%%%DATADIR%%/java/org/opensim/modeling/SWIGTYPE_p_SimTK__RowVectorView_T_SimTK__VecT_2_SimTK__Vec3_1_t_t.java
