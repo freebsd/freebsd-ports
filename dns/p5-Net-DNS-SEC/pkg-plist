@@ -1,5 +1,6 @@
 %%SITE_ARCH%%/Net/DNS/SEC.pm
 %%SITE_ARCH%%/Net/DNS/SEC/DSA.pm
+%%SITE_ARCH%%/Net/DNS/SEC/Digest.pm
 %%SITE_ARCH%%/Net/DNS/SEC/ECCGOST.pm
 %%SITE_ARCH%%/Net/DNS/SEC/ECDSA.pm
 %%SITE_ARCH%%/Net/DNS/SEC/EdDSA.pm
@@ -10,6 +11,7 @@
 %%SITE_ARCH%%/auto/Net/DNS/SEC/SEC.so
 %%PERL5_MAN3%%/Net::DNS::SEC.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::DSA.3.gz
+%%PERL5_MAN3%%/Net::DNS::SEC::Digest.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::ECCGOST.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::ECDSA.3.gz
 %%PERL5_MAN3%%/Net::DNS::SEC::EdDSA.3.gz
