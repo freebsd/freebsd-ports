@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
-USES=		gmake localbase
+USES=		compiler:c++11-lang gmake localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeremysalwen
 GH_PROJECT=	So-synth-LV2
