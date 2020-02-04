@@ -77,7 +77,6 @@
     SUBDIR += cl-lml
     SUBDIR += cl-lml-sbcl
     SUBDIR += clearsilver
-    SUBDIR += clearsilver-python
     SUBDIR += cliqz
     SUBDIR += closure-compiler
     SUBDIR += cntlm
