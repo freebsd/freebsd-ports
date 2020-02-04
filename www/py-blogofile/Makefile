@@ -14,6 +14,9 @@ COMMENT=	Static website compiler and blog engine
 
 LICENSE=	MIT
 
+DEPRECATED=	Deprecated by upstream
+EXPIRATION_DATE=	2020-03-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR} \
