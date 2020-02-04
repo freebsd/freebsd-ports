@@ -42,6 +42,7 @@
     SUBDIR += bareos-webui
     SUBDIR += bareos16-webui
     SUBDIR += bareos17-webui
+    SUBDIR += bareos18-webui
     SUBDIR += bkmrkconv
     SUBDIR += blastbeat
     SUBDIR += bluefish
