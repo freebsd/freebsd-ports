@@ -4,15 +4,13 @@
 PORTNAME=	nedit
 PORTVERSION=	5.7
 CATEGORIES=	editors
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source
+MASTER_SITES=	LOCAL/swills
 DISTFILES=	nedit-${PORTVERSION}-src.tar.gz \
 		nedit.app-defaults
 EXTRACT_ONLY=	nedit-${PORTVERSION}-src.tar.gz
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	X11/Motif GUI text editor for programs and plain text files
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv1
 
