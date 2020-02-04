@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.w3.org/TR/2001/REC-${PORTNAME}-${RECDATE}/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	W3C's Modularization of XHTML DTDs and docs
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
@@ -20,8 +20,9 @@ RECDATE=	20010410
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 SUB_FILES=	catalog.xml
-NO_MTREE=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
+NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${RECDATE}
 
 dir_DTD=	share/xml/dtd/xhtml-modularization
