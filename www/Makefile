@@ -1426,7 +1426,6 @@
     SUBDIR += py-biscuits
     SUBDIR += py-bjoern
     SUBDIR += py-bleach
-    SUBDIR += py-blogofile
     SUBDIR += py-bokeh
     SUBDIR += py-boto3
     SUBDIR += py-bottle

@@ -14193,3 +14193,4 @@ www/py-plonetheme.classic||2020-02-03|Has expired: Outdated version of plone 4.3
 www/py-plonetheme.sunburst||2020-02-03|Has expired: Outdated version of plone 4.3 (legacy), uses EOLed python27
 www/trytond28_google_maps||2020-02-03|Has expired: Outdated, uses EOLed python27
 archivers/rubygem-rubyzip12|archivers/rubygem-rubyzip|2020-02-03|Has expired: use archivers/rubyge-rubyzip instead
+www/py-blogofile||2020-02-04|Has expired: Outdated, uses EOLed python27
