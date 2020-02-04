@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.8-9488 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g32df80962
+DISTVERSION=	0.0.8-9495 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g1759d6d90
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -27,7 +27,7 @@ GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-27-g9220f5e:hidapi/3rdparty/hidapi \
 		RPCS3:llvm:9fb67ecaea74:llvm/llvm \
 		Cyan4973:xxHash:v0.6.5:xxHash/3rdparty/xxHash \
-		FNA-XNA:FAudio:20.01:FAudio/3rdparty/FAudio \
+		FNA-XNA:FAudio:20.02:FAudio/3rdparty/FAudio \
 		jbeder:yaml-cpp:yaml-cpp-0.6.2-23-geca9cfd:yamlcpp/3rdparty/yaml-cpp \
 		kobalicek:asmjit:fc251c9:asmjit/asmjit \
 		KhronosGroup:glslang:7.13.3496:glslang/Vulkan/glslang \
