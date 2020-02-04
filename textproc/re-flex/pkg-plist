@@ -20,4 +20,5 @@ include/reflex/unicode.h
 include/reflex/utf8.h
 lib/libreflex.a
 lib/libreflexmin.a
+%%DATADIR%%/lex.vim
 man/man1/reflex.1.gz
