@@ -11,12 +11,20 @@ bin/timelimit
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/LinuxAll.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/SelfTest.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/WindowsAllDrives.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.example.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-gfapi.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ovirt.conf.sample
+%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-rados.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCatalog.conf.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupGFAPI.conf.sample
+%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupRados.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreFiles.conf.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreGFAPI.conf.sample
+%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreRados.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-bareos-fd.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.example.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/restore-ldap.conf.example.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-ovirt.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/restore-ldap.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/jobdefs/DefaultJob.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/messages/Daemon.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/messages/Standard.conf.sample
@@ -28,13 +36,15 @@ bin/timelimit
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/schedule/WeeklyCycle.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/schedule/WeeklyCycleAfterBackup.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/File.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/NULL.conf.example.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Tape.conf.example.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Gluster.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/NULL.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Tape.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-regress.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/autochanger-0.conf.example.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/autochanger-0.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/FileStorage.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/NULL.conf.example.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/tapedrive-0.conf.example.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/GlusterStorage.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/NULL.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/tapedrive-0.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-dir.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-mon.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/messages/Standard.conf.sample
@@ -44,6 +54,8 @@ etc/logrotate.d/bareos-dir
 lib/bareos/backends/libbareoscats-%%DBTYPE%%.so
 lib/bareos/backends/libbareossd-fifo.so
 lib/bareos/backends/libbareossd-gentape.so
+%%GFAPI%%lib/bareos/backends/libbareossd-gfapi.so
+%%RADOS%%lib/bareos/backends/libbareossd-rados.so
 lib/bareos/backends/libbareossd-tape.so
 %%PYTHON%%lib/bareos/plugins/BareosDirPluginBaseclass.py
 %%PYTHON%%lib/bareos/plugins/BareosDirWrapper.py
@@ -82,6 +94,7 @@ lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2001_2002.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2002_2003.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2003_2004.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2004_2171.sql
+lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2171_2192.sql
 %%PGSQL%%lib/bareos/scripts/ddl/updates/%%DBTYPE%%.bee.1017_2004.sql
 lib/bareos/scripts/ddl/versions.map
 lib/bareos/scripts/delete_catalog_backup
@@ -96,20 +109,21 @@ lib/bareos/scripts/mtx-changer
 lib/bareos/scripts/query.sql
 lib/bareos/scripts/update_bareos_tables
 lib/libbareoscats.so
-lib/libbareoscats.so.18
+lib/libbareoscats.so.19
 lib/libbareoscats.so.%%LIB_VERSION%%
 %%NDMP%%lib/libbareosndmp.so
-%%NDMP%%lib/libbareosndmp.so.18
+%%NDMP%%lib/libbareosndmp.so.19
 %%NDMP%%lib/libbareosndmp.so.%%LIB_VERSION%%
 lib/libbareossd.so
 lib/libbareossql.so
-lib/libbareossql.so.18
+lib/libbareossql.so.19
 lib/libbareossql.so.%%LIB_VERSION%%
 man/man1/bareos-tray-monitor.1.gz
 man/man1/bregex.1.gz
 man/man1/bsmtp.1.gz
 man/man1/bwild.1.gz
 man/man8/bareos-dbcheck.8.gz
+man/man8/bareos-dbcopy.8.gz
 man/man8/bareos-dir.8.gz
 man/man8/bareos-sd.8.gz
 man/man8/bcopy.8.gz
@@ -121,6 +135,7 @@ man/man8/bscrypto.8.gz
 man/man8/btape.8.gz
 man/man8/btraceback.8.gz
 sbin/bareos-dbcheck
+sbin/bareos-dbcopy
 sbin/bareos-dir
 sbin/bareos-sd
 sbin/bcopy

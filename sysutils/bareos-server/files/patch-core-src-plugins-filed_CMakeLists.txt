@@ -1,10 +1,10 @@
---- core/src/plugins/filed/CMakeLists.txt	2019-12-12 12:04:14.000000000 -0500
-+++ core/src/plugins/filed/CMakeLists.txt	2019-12-28 16:26:47.855833000 -0500
-@@ -100,18 +100,18 @@
-    INSTALL(TARGETS test-plugin-fd DESTINATION ${plugindir} COMPONENT filedaemon)
+--- core/src/plugins/filed/CMakeLists.txt	2020-01-31 11:21:18.000000000 -0500
++++ core/src/plugins/filed/CMakeLists.txt	2020-01-31 15:54:40.841485000 -0500
+@@ -100,24 +100,26 @@
+   install(TARGETS test-plugin-fd DESTINATION ${plugindir} COMPONENT filedaemon)
  endif()
  
--set (PYFILES
+-set(PYFILES
 -    bareos-fd.py.template
 -    bareos-fd-local-fileset.py
 -    bareos-fd-mock-test.py
@@ -14,9 +14,13 @@
 -    bareos_fd_consts.py
 -    bareos-fd-ldap.py
 -    BareosFdPluginLDAP.py
--    )
-+if (python)
-+   set (PYFILES
+-    bareos-fd-ovirt.py
+-    BareosFdPluginOvirt.py
+-    bareos-fd-percona-xtrabackup.py
+-    BareosFdPluginPerconaXtraBackup.py
+-)
++if(python)
++   set(PYFILES
 +       bareos-fd.py.template
 +       bareos-fd-local-fileset.py
 +       bareos-fd-mock-test.py
@@ -26,10 +30,20 @@
 +       bareos_fd_consts.py
 +       bareos-fd-ldap.py
 +       BareosFdPluginLDAP.py
-+       )
++       bareos-fd-ovirt.py
++       BareosFdPluginOvirt.py
++       bareos-fd-percona-xtrabackup.py
++       BareosFdPluginPerconaXtraBackup.py
++   )
  
--INSTALL(FILES ${PYFILES} DESTINATION ${plugindir} COMPONENT filedaemon)
--
--
-+   INSTALL(FILES ${PYFILES} DESTINATION ${plugindir} COMPONENT filedaemon)
+-install(
+-  FILES ${PYFILES}
+-  DESTINATION ${plugindir}
+-  COMPONENT filedaemon
+-)
++   install(
++     FILES ${PYFILES}
++     DESTINATION ${plugindir}
++     COMPONENT filedaemon
++   )
 +endif()
