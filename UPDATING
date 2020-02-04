@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200204:
+  AFFECTS: users of editors/vim
+  AUTHOR: adamw@FreeBSD.org
+
+  The PYTHON2 and PYTHON3 options have been turned into a single PYTHON
+  option that uses whichever python you've set as default. However,
+  this means that you cannot have both python2 and python3 support at
+  the same time.
+
 20200126:
   AFFECTS: users of multimedia/gstreamer1-plugins[-bad]
   AUTHOR: kwm@freebsd.org
