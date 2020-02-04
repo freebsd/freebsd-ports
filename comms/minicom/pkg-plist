@@ -1,13 +1,8 @@
-@owner uucp
-@group dialer
-@mode 4511
 bin/minicom
-@owner
-@group
-@mode
 bin/xminicom
 bin/runscript
 bin/ascii-xfr
+@dir %%ETCDIR%%
 man/man1/minicom.1.gz
 man/man1/runscript.1.gz
 man/man1/ascii-xfr.1.gz
@@ -30,7 +25,6 @@ man/man1/xminicom.1.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/minicom.mo
-@dir(uucp,,) etc/minicom
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

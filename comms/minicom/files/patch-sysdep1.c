@@ -1,5 +1,5 @@
---- src/sysdep1.c.orig	2009-12-12 16:47:47.000000000 +0100
-+++ src/sysdep1.c	2011-12-28 16:07:59.000000000 +0100
+--- src/sysdep1.c.orig	2009-12-12 15:47:47 UTC
++++ src/sysdep1.c
 @@ -65,13 +65,13 @@ static void m_setrts(int fd)
    if (portfd_is_socket)
      return;

@@ -1,5 +1,5 @@
---- src/script.c.orig	2013-10-29 12:07:42.000000000 +0100
-+++ src/script.c	2014-01-02 20:30:55.000000000 +0100
+--- src/script.c.orig	2013-10-29 11:07:42 UTC
++++ src/script.c
 @@ -32,6 +32,7 @@
  #include <config.h>
  #endif
