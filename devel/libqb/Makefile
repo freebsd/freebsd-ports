@@ -7,7 +7,7 @@ PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		https://github.com/ClusterLabs/libqb/releases/download/v${PORTVERSION}/
 
-MAINTAINER=		dpejesh@yahoo.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		High performance logging, tracing, ipc, and polling library
 
 LICENSE=		LGPL21
