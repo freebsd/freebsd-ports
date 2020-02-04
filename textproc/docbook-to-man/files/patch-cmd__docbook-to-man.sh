@@ -1,5 +1,5 @@
---- cmd/docbook-to-man.sh.orig	Mon Jun 17 05:50:30 1996
-+++ cmd/docbook-to-man.sh	Fri Oct  5 18:18:22 2001
+--- cmd/docbook-to-man.sh.orig	1996-06-17 03:50:30 UTC
++++ cmd/docbook-to-man.sh
 @@ -40,9 +40,9 @@
  # ***** change the following paths if your installation of nsgmls and / or
  # ***** DocBook isn't into the default places.
@@ -13,7 +13,7 @@
  
  
  # ***** modify the following line (to "=false") if you're not using the
-@@ -51,19 +51,16 @@
+@@ -51,19 +51,16 @@ DOCBOOK=$SGMLS/Davenport/dtd
  doElanPSInclude=true
  
  
@@ -35,7 +35,7 @@
  
  error=false
  
-@@ -159,17 +156,8 @@
+@@ -159,17 +156,8 @@ cat >> /tmp/dtm.$$.psinc <<\!
  .ds f4\"
  !
  

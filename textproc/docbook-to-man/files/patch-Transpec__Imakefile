@@ -1,5 +1,5 @@
---- Transpec/Imakefile.orig	Mon Jun 17 05:50:28 1996
-+++ Transpec/Imakefile	Fri Oct  5 18:20:17 2001
+--- Transpec/Imakefile.orig	1996-06-17 03:50:28 UTC
++++ Transpec/Imakefile
 @@ -1,5 +1,6 @@
 -ROOT =		/usr/local
 -TPTLIB =	$(ROOT)/lib/tpt
