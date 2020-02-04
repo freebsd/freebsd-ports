@@ -1333,6 +1333,7 @@
 %%WWWDIR%%/core/lib/Drupal/Core/Config/UnmetDependenciesException.php
 %%WWWDIR%%/core/lib/Drupal/Core/Config/UnsupportedDataTypeConfigException.php
 %%WWWDIR%%/core/lib/Drupal/Core/Controller/ArgumentResolver/Psr7RequestValueResolver.php
+%%WWWDIR%%/core/lib/Drupal/Core/Controller/ArgumentResolver/RawParameterValueResolver.php
 %%WWWDIR%%/core/lib/Drupal/Core/Controller/ArgumentResolver/RouteMatchValueResolver.php
 %%WWWDIR%%/core/lib/Drupal/Core/Controller/ControllerBase.php
 %%WWWDIR%%/core/lib/Drupal/Core/Controller/ControllerResolver.php
@@ -6770,6 +6771,7 @@
 %%WWWDIR%%/core/modules/media/tests/src/FunctionalJavascript/MediaTypeCreationTest.php
 %%WWWDIR%%/core/modules/media/tests/src/FunctionalJavascript/MediaUiJavascriptTest.php
 %%WWWDIR%%/core/modules/media/tests/src/FunctionalJavascript/MediaViewsWizardTest.php
+%%WWWDIR%%/core/modules/media/tests/src/Kernel/EditorMediaDialogTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Kernel/MediaAccessControlHandlerTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Kernel/MediaCreationTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Kernel/MediaEmbedFilterDisabledIntegrationsTest.php
@@ -7030,6 +7032,7 @@
 %%WWWDIR%%/core/modules/migrate/src/Audit/AuditorInterface.php
 %%WWWDIR%%/core/modules/migrate/src/Audit/HighestIdInterface.php
 %%WWWDIR%%/core/modules/migrate/src/Audit/IdAuditor.php
+%%WWWDIR%%/core/modules/migrate/src/EntityFieldDefinitionTrait.php
 %%WWWDIR%%/core/modules/migrate/src/Event/EventBase.php
 %%WWWDIR%%/core/modules/migrate/src/Event/ImportAwareInterface.php
 %%WWWDIR%%/core/modules/migrate/src/Event/MigrateEvents.php
@@ -7241,6 +7244,7 @@
 %%WWWDIR%%/core/modules/migrate/tests/src/Unit/process/CallbackTest.php
 %%WWWDIR%%/core/modules/migrate/tests/src/Unit/process/ConcatTest.php
 %%WWWDIR%%/core/modules/migrate/tests/src/Unit/process/DedupeEntityTest.php
+%%WWWDIR%%/core/modules/migrate/tests/src/Unit/process/DefaultValueTest.php
 %%WWWDIR%%/core/modules/migrate/tests/src/Unit/process/ExplodeTest.php
 %%WWWDIR%%/core/modules/migrate/tests/src/Unit/process/ExtractTest.php
 %%WWWDIR%%/core/modules/migrate/tests/src/Unit/process/FileCopyTest.php
@@ -7413,6 +7417,7 @@
 %%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/MigrateUpgradeTestBase.php
 %%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/MultilingualReviewPageTestBase.php
 %%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/NoMultilingualReviewPageTestBase.php
+%%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/d6/IdConflictTest.php
 %%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/d6/MultilingualReviewPageTest.php
 %%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/d6/NoMultilingualReviewPageTest.php
 %%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/d6/NoMultilingualTest.php
@@ -7424,6 +7429,7 @@
 %%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/d6/files/core/tests/fixtures/files/image-test.jpg
 %%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/d6/files/core/tests/fixtures/files/image-test.png
 %%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/d6/files/tmp/some-temp-file.jpg
+%%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/d7/IdConflictTest.php
 %%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/d7/MultilingualReviewPageTest.php
 %%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/d7/NoMultilingualTest.php
 %%WWWDIR%%/core/modules/migrate_drupal_ui/tests/src/Functional/d7/Upgrade7Test.php
@@ -8900,6 +8906,7 @@
 %%WWWDIR%%/core/modules/system/src/MachineNameController.php
 %%WWWDIR%%/core/modules/system/src/MenuAccessControlHandler.php
 %%WWWDIR%%/core/modules/system/src/MenuInterface.php
+%%WWWDIR%%/core/modules/system/src/MenuStorage.php
 %%WWWDIR%%/core/modules/system/src/PathBasedBreadcrumbBuilder.php
 %%WWWDIR%%/core/modules/system/src/PathProcessor/PathProcessorFiles.php
 %%WWWDIR%%/core/modules/system/src/PhpStorage/MockPhpStorage.php
@@ -9359,6 +9366,8 @@
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Plugin/Validation/Constraint/EntityTestEntityLevelValidator.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Plugin/Validation/Constraint/FieldWidgetConstraint.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Plugin/Validation/Constraint/FieldWidgetConstraintValidator.php
+%%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Plugin/Validation/Constraint/TestValidatedReferenceConstraint.php
+%%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Plugin/Validation/Constraint/TestValidatedReferenceConstraintValidator.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/Routing/EntityTestRoutes.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test/src/TypedData/ComputedString.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test/tests/src/Functional/Hal/EntityTestBundleHalJsonAnonTest.php
@@ -10163,6 +10172,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Installer/InstallerDependenciesResolutionTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Installer/UninstallKernelTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Mail/MailTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Kernel/Menu/MenuStorageTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/MenuAccessControlHandlerTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Migrate/d6/MigrateDateFormatTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Migrate/d6/MigrateMenuTest.php
@@ -10757,6 +10767,15 @@
 %%WWWDIR%%/core/modules/update/tests/modules/bbb_update_test/bbb_update_test.info.yml
 %%WWWDIR%%/core/modules/update/tests/modules/ccc_update_test/ccc_update_test.info.yml
 %%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.1_0.xml
+%%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.1_1-alpha1.xml
+%%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.1_1-beta1.xml
+%%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.1_1.xml
+%%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.1_2-alpha1.xml
+%%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.1_2-beta1.xml
+%%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.1_2.xml
+%%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.2_0-alpha1.xml
+%%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.2_0-beta1.xml
+%%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.2_0.xml
 %%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.no-releases.xml
 %%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.sec.8.x-1.1_8.x-1.2.xml
 %%WWWDIR%%/core/modules/update/tests/modules/update_test/aaa_update_test.sec.8.x-1.2.xml
@@ -13096,15 +13115,17 @@
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Routing/RouteCachingLanguageTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Routing/RouteCachingNonPathLanguageNegotiationTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Theme/BartikTest.php
+%%WWWDIR%%/core/tests/Drupal/FunctionalTests/Theme/ClaroLayoutBuilderTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Theme/ClaroTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Theme/ClassyTest.php
+%%WWWDIR%%/core/tests/Drupal/FunctionalTests/Theme/SevenLayoutBuilderTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Update/UpdatePathTestBase.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Update/UpdatePathTestBaseTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/UserHelpersTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/AssertConfigTrait.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/AssertContentTrait.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/AssertLegacyTrait.php
-%%WWWDIR%%/core/tests/Drupal/KernelTests/Component/Utility/SafeMarkupKernelTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Component/Render/FormattableMarkupKernelTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Config/DefaultConfigTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Config/TypedConfigTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/ConfigFormTestBase.php
@@ -14460,6 +14481,8 @@
 %%WWWDIR%%/core/themes/claro/css/theme/install-page.pcss.css
 %%WWWDIR%%/core/themes/claro/css/theme/maintenance-page.css
 %%WWWDIR%%/core/themes/claro/css/theme/maintenance-page.pcss.css
+%%WWWDIR%%/core/themes/claro/css/theme/media-library.css
+%%WWWDIR%%/core/themes/claro/css/theme/media-library.pcss.css
 %%WWWDIR%%/core/themes/claro/css/theme/views_ui.admin.theme.css
 %%WWWDIR%%/core/themes/claro/css/theme/views_ui.admin.theme.pcss.css
 %%WWWDIR%%/core/themes/claro/images/core/0074bd/chevron-left.svg
@@ -14569,6 +14592,11 @@
 %%WWWDIR%%/core/themes/claro/templates/form/input.html.twig
 %%WWWDIR%%/core/themes/claro/templates/install-page.html.twig
 %%WWWDIR%%/core/themes/claro/templates/maintenance-page.html.twig
+%%WWWDIR%%/core/themes/claro/templates/media-library/details--media-library-add-form-selected-media.html.twig
+%%WWWDIR%%/core/themes/claro/templates/media-library/fieldset--media-library-widget.html.twig
+%%WWWDIR%%/core/themes/claro/templates/media-library/item-list--media-library-add-form-media-list.html.twig
+%%WWWDIR%%/core/themes/claro/templates/media-library/views-view--media-library.html.twig
+%%WWWDIR%%/core/themes/claro/templates/media-library/views-view-unformatted--media-library.html.twig
 %%WWWDIR%%/core/themes/claro/templates/menu-local-tasks.html.twig
 %%WWWDIR%%/core/themes/claro/templates/misc/status-messages.html.twig
 %%WWWDIR%%/core/themes/claro/templates/navigation/details--vertical-tabs.html.twig
