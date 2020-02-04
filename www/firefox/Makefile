@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	72.0.2
-PORTREVISION=	2
+DISTVERSION=	73.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
@@ -14,7 +13,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.24:devel/nspr \
-		nss>=3.48:security/nss \
+		nss>=3.49.2:security/nss \
 		icu>=64.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=2.6.4:print/harfbuzz \
