@@ -3,6 +3,7 @@
 
 PORTNAME=	minicom
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	https://fossies.org/linux/misc/
 
