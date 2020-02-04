@@ -1,7 +1,7 @@
-TIMESTAMP = 1566566354
-SHA256 (elazarl-go-bindata-assetfs-g20180223-38087fe_GH0.tar.gz) = b08df214d8cc9e4004fc399414cbe18de80f666a38ad49d79c34f7378e2f13c8
-SIZE (elazarl-go-bindata-assetfs-g20180223-38087fe_GH0.tar.gz) = 3988
-SHA256 (golang-net-ca1201d_GH0.tar.gz) = d70d188cea7e5c254eac97d3a63e6b959b18c159cb0393cd38e01277fe377eff
-SIZE (golang-net-ca1201d_GH0.tar.gz) = 1099085
-SHA256 (golang-sys-51ab0e2_GH0.tar.gz) = dc0fffb69ff5a4e83b3bf3d4817b8cacfa85f36ab93855030e3ce8937cc89b88
-SIZE (golang-sys-51ab0e2_GH0.tar.gz) = 1454786
+TIMESTAMP = 1580822201
+SHA256 (elazarl-go-bindata-assetfs-g20191027-d0111fe_GH0.tar.gz) = 5e72d7f42d6d822c457d18f35d8aa5aca1e6d774de44d1d885c2daf43ae96b00
+SIZE (elazarl-go-bindata-assetfs-g20191027-d0111fe_GH0.tar.gz) = 3985
+SHA256 (golang-net-1617124_GH0.tar.gz) = 53415e94931047ae5ce63ed227c0e20e9ed27e8ec2bac8d2cae587914b3ab859
+SIZE (golang-net-1617124_GH0.tar.gz) = 1172284
+SHA256 (golang-sys-d101bd2_GH0.tar.gz) = 1c40216bb4b72e5cf04619bc3b9ec0f66861977afdacd83d6193318843e1f4bd
+SIZE (golang-sys-d101bd2_GH0.tar.gz) = 1536730
