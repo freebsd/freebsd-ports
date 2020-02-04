@@ -1,15 +1,6 @@
---- go/base/Config.php.orig	2019-04-08 07:57:41.914244000 +0200
-+++ go/base/Config.php	2019-04-08 09:52:10.501481000 +0200
-@@ -22,7 +22,7 @@
-  * This class holds the main configuration options of Group-Office
-  * Don't modify this file. The values defined here are just default values.
-  * They are overwritten by the configuration options in /config.php or
-- * /etc/groupoffice/{HOSTNAME}/config.php
-+ * /usr/local/usr/local/etc//groupoffice/{HOSTNAME}/config.php
-  *
-  * To edit these options use install.php.
-  *
-@@ -760,21 +760,21 @@ var $billing_clear_payment_method_on_duplicate = true;
+--- go/base/Config.php.orig	2020-01-30 15:07:35.000000000 +0100
++++ go/base/Config.php	2020-02-03 08:46:09.904940000 +0100
+@@ -760,7 +760,7 @@
  	 * @var     StringHelper
  	 * @access  public
  	 */
@@ -18,23 +9,24 @@
  
  	/**
  	 * Command to unpack ZIP archive
- 	 * @var     StringHelper
- 	 * @access  public
- 	 */
--	var $cmd_unzip = '/usr/bin/unzip';
-+	var $cmd_unzip = '/usr/local/bin/unzip';
- 
- 	/**
- 	 * Command to control TAR archives
+@@ -774,7 +774,7 @@
  	 * @var     StringHelper
  	 * @access  public
  	 */
 -	var $cmd_tar = '/bin/tar';
-+	var $cmd_tar = '/usr/local/bin/tar';
++	var $cmd_tar = '/usr/bin/tar';
  
  	/**
  	 * Command to set system passwords. Used by passwd.users.class.inc.
-@@ -790,7 +790,7 @@ var $billing_clear_payment_method_on_duplicate = true;
+@@ -783,14 +783,14 @@
+ 	 * @var     StringHelper
+ 	 * @access  public
+ 	 */
+-	var $cmd_chpasswd = '/usr/sbin/chpasswd';
++	var $cmd_chpasswd = '/usr/bin/passwd';
+ 
+ 	/**
+ 	 * Command to SUDO
  	 * @var     StringHelper
  	 * @access  public
  	 */
@@ -43,7 +35,7 @@
  
  	/**
  	 * Command to convert xml to wbxml
-@@ -798,7 +798,7 @@ var $billing_clear_payment_method_on_duplicate = true;
+@@ -798,7 +798,7 @@
  	 * @var     StringHelper
  	 * @access  public
  	 */
@@ -52,7 +44,7 @@
  
  	/**
  	 * Command to convert wbxml to xml
-@@ -806,7 +806,7 @@ var $billing_clear_payment_method_on_duplicate = true;
+@@ -806,7 +806,7 @@
  	 * @var     StringHelper
  	 * @access  public
  	 */
@@ -61,7 +53,7 @@
  
  	/**
  	 * Command to unpack winmail.dat files
-@@ -814,7 +814,7 @@ var $billing_clear_payment_method_on_duplicate = true;
+@@ -814,7 +814,7 @@
  	 * @var     StringHelper
  	 * @access  public
  	 */
@@ -70,21 +62,3 @@
  
  	/**
  	 * Command to execute the php command line interface
-@@ -822,7 +822,7 @@ var $billing_clear_payment_method_on_duplicate = true;
- 	 * @var     StringHelper
- 	 * @access  public
- 	 */
--	var $cmd_php = 'php';
-+	var $cmd_php = '/usr/local/bin/php';
- 
- 
- 	/**
-@@ -1343,7 +1343,7 @@ var $billing_clear_payment_method_on_duplicate = true;
- 	}
- 	
- 	private function getGlobalConfig() {
--		$globalConfigFile = '/etc/groupoffice/globalconfig.inc.php';
-+		$globalConfigFile = '/usr/local/usr/local/etc/groupoffice/globalconfig.inc.php';
- 		try {
- 			if (file_exists($globalConfigFile)) {
- 				require($globalConfigFile);
