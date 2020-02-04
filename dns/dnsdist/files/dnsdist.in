@@ -3,12 +3,25 @@
 # $FreeBSD$
 #
 # PROVIDE: dnsdist
-# REQUIRE: NETWORKING DAEMON
+# REQUIRE: DAEMON NETWORKING
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable dnsdist:
 #
 # dnsdist_enable="YES"
+#
+# Multiple profiles are supported with
+#
+# dnsdist_profiles="name1 name2"
+# dnsdist_name1_enable="YES"
+# dnsdist_name1_config="/path/to/config1"
+# dnsdist_name2_enable="YES"
+# dnsdist_name2_config="/path/to/config2"
+#
+# This script does't validate uid/gid per profile (yet)
+# It still uses the default or definition of
+# dnsdist_priv_user and/or dnsdist_priv_group
+#
 
 . /etc/rc.subr
 
@@ -18,14 +31,67 @@ rcvar=dnsdist_enable
 
 load_rc_config ${name}
 
+: ${dnsdist_enable:=NO}
+: ${dnsdist_config:=%%ETCDIR%%/dnsdist.conf}
 : ${dnsdist_priv_user:=_dnsdist}
 : ${dnsdist_priv_group:=_dnsdist}
-: ${dnsdist_enable:=NO}
 
-pidfile=/var/run/${name}.pid
-
+pidfile="/var/run/${name}.pid"
+required_files=${dnsdist_config}
+actual_command="%%PREFIX%%/sbin/${name} -C ${dnsdist_config} -u ${dnsdist_priv_user} -g ${dnsdist_priv_group} --supervised"
 command=/usr/sbin/daemon
-actual_command=/usr/local/sbin/${name}
-command_args="-c -f -r -P ${pidfile} ${actual_command} -u ${dnsdist_priv_user} -g ${dnsdist_priv_group} --supervised"
+command_args="-c -f -r -P ${pidfile} -- ${actual_command}"
+
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ "x${dnsdist_profiles}" != "x" ]; then
+		eval dnsdist_config="\${dnsdist_${profile}_config:-%%ETCDIR%%/dnsdist-${profile}.conf}"
+		if [ "x${dnsdist_config}" = "x" ]; then
+			echo "You must define a configuration file (dnsdist_${profile}_config)" >&2
+			exit 1
+		fi
+		eval dnsdist_enable="\${dnsdist_${profile}_enable:-${dnsdist_enable}}"
+		pidfile="/var/run/${name}-${profile}.pid"
+		required_files="${dnsdist_config}"
+		actual_command="%%PREFIX%%/sbin/${name} -C ${dnsdist_config} -u ${dnsdist_priv_user} -g ${dnsdist_priv_group} --supervised"
+		command_args="-c -f -r -P ${pidfile} -- ${actual_command}"
+	else
+		echo "$0: extra argument ignored" >&2
+	fi
+else
+	if [ "x${dnsdist_profiles}" != "x" -a "x$1" != "x" ]; then
+		for profile in ${dnsdist_profiles}; do
+			eval _enable="\${dnsdist_${profile}_enable}"
+			case "x${_enable:-${dnsdist_enable}}" in
+			x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+				continue
+				;;
+			x[Yy][Ee][Ss])
+				;;
+			*)
+				if test -z "$_enable"; then
+					_var=dnsdist_enable
+				else
+					_var=dnsdist_"${profile}"_enable
+				fi
+				echo "Bad value" \
+					"'${_enable:-${dnsdist_enable}}'" \
+					"for ${_var}. " \
+					"Profile ${profile} skipped." >&2
+				continue
+				;;
+			esac
+			echo "===> dnsdist profile: ${profile}" >&2
+			%%PREFIX%%/etc/rc.d/dnsdist $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+		fi
+		done
+		exit 0
+	fi
+fi
 
 run_rc_command "$1"
