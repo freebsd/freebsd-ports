@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	re-flex
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -26,5 +26,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/reflex
 	(cd ${WRKSRC}/include/reflex && \
 	 ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/include/reflex)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lex.vim ${STAGEDIR}${DATADIR}/lex.vim
 
 .include <bsd.port.mk>
