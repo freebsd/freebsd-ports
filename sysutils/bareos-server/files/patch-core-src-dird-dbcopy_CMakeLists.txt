@@ -1,0 +1,12 @@
+--- core/src/dird/dbcopy/CMakeLists.txt	2020-02-01 12:39:35.841314000 -0500
++++ core/src/dird/dbcopy/CMakeLists.txt	2020-02-01 12:39:55.280473000 -0500
+@@ -11,6 +11,9 @@
+       bareossql
+       $<$<BOOL:HAVE_PAM>:${PAM_LIBRARIES}>
+       ${LMDB_LIBS}
++      ${OPENSSL_LIBRARIES}
++      ${PTHREAD_LIBRARIES}
++      ${JANSSON_LIBRARIES}
+   )
+ 
+ install(TARGETS

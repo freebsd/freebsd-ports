@@ -10,7 +10,7 @@ LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5 \
 
 CONFLICTS=	bacula*-bat-* bareos16-traymonitor-*
 
-USES=		pkgconfig gettext-runtime desktop-file-utils qt:5
+USES=		desktop-file-utils gettext-runtime pkgconfig qt:5
 USE_QT=		buildtools_build qmake_build uitools_build gui core
 WITH_BAT=	yes
 
@@ -22,6 +22,7 @@ MASTERDIR=	${.CURDIR}/../../sysutils/bareos-server
 CMAKE_ARGS+=		-Dtraymonitor=yes \
 			-Dbuild-dird=no \
 			-Dbuild-stored=no \
-			-Dclient-only=yes
+			-Dclient-only=yes \
+			-Dnls=ON
 
 .include "${MASTERDIR}/Makefile"

@@ -1,0 +1,13 @@
+--- core/src/plugins/stored/CMakeLists.txt	2020-02-01 12:41:50.658146000 -0500
++++ core/src/plugins/stored/CMakeLists.txt	2020-02-01 12:43:09.372433000 -0500
+@@ -27,6 +27,10 @@
+     ${PROJECT_SOURCE_DIR}/src/win32/plugins/python/lib/${WINDOWS_BITS}
+   )
+   add_definitions(-DMS_WIN${WINDOWS_BITS})
++else()
++  include_directories(
++    ${PROJECT_SOURCE_DIR}/src/fastlz/include
++  )
+ endif()
+ 
+ add_library(autoxflate-sd MODULE autoxflate-sd.cc)

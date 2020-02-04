@@ -2,7 +2,7 @@
 
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	18.2.7
+DISTVERSION=	19.2.5
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -14,12 +14,12 @@ COMMENT?=	Backup archiving recovery open sourced (server)
 LICENSE=	AGPLv3 LGPL3
 LICENSE_COMB=	multi
 
-CONFLICTS?=	bacula17*-server-* bareos16-server-*
+CONFLICTS?=	bacula18*-server bacula17*-server-* bareos16-server-*
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
 
-USES+=		cmake:insource compiler:c++11-lang pkgconfig readline:port \
+USES+=		cmake compiler:c++11-lang localbase pkgconfig readline:port \
 		shebangfix
 USE_GITHUB=	yes
 
@@ -45,11 +45,16 @@ NDMP_DESC=		Enable build of NDMP support
 SCSICRYPTO_DESC=	Build LTO AME crypto plugin
 
 .if ${PKGNAMESUFFIX} == "-server"
+OPTIONS_GROUP=  BACKENDS
+OPTIONS_GROUP_BACKENDS= GFAPI RADOS
 OPTIONS_DEFINE=		MTX PYTHON NDMP NLS SCSICRYPTO
 OPTIONS_DEFAULT+=	PGSQL SCSICRYPTO
 OPTIONS_SINGLE_DATABASE=	SQLITE3 MYSQL PGSQL
 OPTIONS_SINGLE+=		DATABASE
+BACKENDS_DESC= 		Storage backends
 DATABASE_DESC=		Database support
+GFAPI_DESC=	GFAPI backend support
+RADOS_DESC=	RADOS backend support
 
 NDMP_CMAKE_ON=	-Dndmp=ON
 NDMP_CMAKE_OFF=	-Dndmp=OFF
@@ -104,7 +109,7 @@ CMAKE_ARGS+=	-Dtcp-wrappers=ON \
 		-Dsbin-perm=755 \
 		-Ddb_user=bareos \
 		-Dbaseport=9101 \
-		-Dpiddir=/var/run/bareos \
+		-Dpiddir=/var/run/bareos
 
 .if defined(WITH_CLIENT_ONLY)
 LMDB_CMAKE_ON=	-Dlmdb=ON
@@ -140,6 +145,10 @@ SUB_LIST=	BAREOS_USER=${BAREOS_USER} \
 
 NLS_USES=		gettext
 NLS_CMAKE_ON=		-Dnls=ON
+GFAPI_CMAKE_ON=		-Dgfapi=ON
+GFAPI_LIB_DEPENDS=	libglusterfs.so:net/glusterfs
+RADOS_CMAKE_ON=		-Drados=ON
+RADOS_LIB_DEPENDS=	librados.so:net/ceph14
 
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
@@ -192,9 +201,9 @@ MP1+=	bsmtp.1 bregex.1 bwild.1 bareos-tray-monitor.1
 MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
-	@${REINPLACE_CMD}  '42d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD}  '69,70d' ${WRKSRC}/CMakeLists.txt
 .if ${PKGNAMESUFFIX} == "-server"
-	@${REINPLACE_CMD}  '25d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
+	@${REINPLACE_CMD}  '24d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif
 
 post-extract:
