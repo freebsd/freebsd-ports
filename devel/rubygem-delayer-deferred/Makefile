@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	delayer-deferred
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
