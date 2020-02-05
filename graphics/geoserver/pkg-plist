@@ -756,7 +756,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/jt-warp-%%JT%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jt-zonal-%%JT%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jt-zonalstats-1.5.0.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/jts-core-%%GWC%%.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/jts-core-1.16.1.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/log4j-1.2.17.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/mail-1.4.jar
