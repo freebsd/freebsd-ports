@@ -2066,6 +2066,7 @@
     SUBDIR += rubygem-railties5
     SUBDIR += rubygem-railties50
     SUBDIR += rubygem-railties52
+    SUBDIR += rubygem-railties60
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
