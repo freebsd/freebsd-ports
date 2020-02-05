@@ -1,5 +1,3 @@
-TIMESTAMP = 1576875998
-SHA256 (ical-2.3.1.tar.gz) = eeb7c6b8a8a36e9fe4cc5fb30dc9bb504e84d11b24fa295870e149fd89f71abd
-SIZE (ical-2.3.1.tar.gz) = 264576
-SHA256 (ical-2.3.1-upvar.patch) = 7b74f6f8011847e0cb1a0691674c0f89fe96b4296cd8891cf66867dc1627c0a0
-SIZE (ical-2.3.1-upvar.patch) = 4533
+TIMESTAMP = 1577134445
+SHA256 (ical-3.0.4.tar.gz) = 8d88bdf46fef7593308abc8b0cfb9e12e4cb08b1e5c95d0b43afd38375c5ae5c
+SIZE (ical-3.0.4.tar.gz) = 510640
