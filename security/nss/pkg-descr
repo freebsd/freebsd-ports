@@ -4,4 +4,4 @@ Applications built with NSS can support SSL v2 and v3, TLS, PKCS #5, PKCS #7,
 PKCS #11, PKCS #12, S/MIME, X.509 v3 certificates, and other security
 standards.
 
-WWW: http://www.mozilla.org/projects/security/pki/nss/
+WWW: https://developer.mozilla.org/docs/Mozilla/Projects/NSS
