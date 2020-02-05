@@ -14198,3 +14198,6 @@ www/clearsilver-python||2020-02-04|Has expired: Unmaintained, uses EOLed python2
 x11-toolkits/py-sexy||2020-02-04|Has expired: Unmaintained, uses EOLed python27
 x11-themes/xfce-evolution|x11-themes/classiclooks|2020-02-04|Project renamed
 math/mandelbulber2|graphics/mandelbulber|2020-02-04|Remove duplicate port
+devel/rubygem-web-console-rails5|devel/rubygem-web-console3-rails5|2020-02-05|Rename to avoid confusion with rubygem-web-console 4.x
+devel/rubygem-web-console-rails50|devel/rubygem-web-console3-rails50|2020-02-05|Rename to avoid confusion with rubygem-web-console 4.x
+devel/rubygem-web-console-rails52|devel/rubygem-web-console3-rails52|2020-02-05|Rename to avoid confusion with rubygem-web-console 4.x
