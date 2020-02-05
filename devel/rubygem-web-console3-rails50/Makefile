@@ -4,7 +4,7 @@ PORTNAME=	web-console
 PORTVERSION=	3.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
-PKGNAMESUFFIX=	-rails50
+PKGNAMESUFFIX=	3-rails50
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Debugging tool for your Ruby on Rails applications
@@ -21,5 +21,8 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+# web-console 4.0.0+ requires Rails 6.0.0+
+PORTSCOUT=	limit:^3\.
 
 .include <bsd.port.mk>
