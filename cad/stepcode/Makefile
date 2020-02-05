@@ -12,7 +12,8 @@ COMMENT=	Generates C++ and Python from ISO10303 files
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to configure: Schema scan for 15926-0002-lifecycle_integration.exp exited with error code 1
+BROKEN_FreeBSD_11_powerpc64=	fails to configure: Schema scan for 15926-0002-lifecycle_integration.exp exited with error code 1
+BROKEN_FreeBSD_12_powerpc64=	fails to configure: Schema scan for 15926-0002-lifecycle_integration.exp exited with error code 1
 
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
