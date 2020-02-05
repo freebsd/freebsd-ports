@@ -1,3 +1,5 @@
 TIMESTAMP = 1573579354
 SHA256 (DCurrent-openbor-7082-5428eec8_GH0.tar.gz) = 17eee53f51e4db36baf6b4a8a2f3300c0fd2ee6af742eb8fac4bee3dacfa6274
 SIZE (DCurrent-openbor-7082-5428eec8_GH0.tar.gz) = 26904474
+SHA256 (731d96887795.patch) = 355c50f2562f091015b306e4eb34a7c1f9ea8c64d32e9ba36aed2d46aac85548
+SIZE (731d96887795.patch) = 1291
