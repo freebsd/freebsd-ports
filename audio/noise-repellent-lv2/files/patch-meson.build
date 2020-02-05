@@ -1,0 +1,20 @@
+--- meson.build.orig	2020-01-07 01:30:53 UTC
++++ meson.build
+@@ -25,8 +25,8 @@ current_os = build_machine.system()
+ current_arch = build_machine.cpu_family()
+ cflags = []
+ 
+-# Add x86_64 optimization where appropriate (not for ARM)
+-if current_arch != 'aarch64'
++# Add x86_64 optimization where appropriate
++if current_arch == 'x86' or current_arch == 'x86_64'
+     cflags += ['-msse','-msse2','-mfpmath=sse']
+ endif
+ 
+@@ -82,4 +82,4 @@ nrepel_ttl = custom_target('nrepel_ttl',
+ if sord_validate.found()
+ 	test('LV2 validation', sord_validate,
+ 		args : [run_command('find','./lv2 -name "*.ttl"').stdout(), run_command('find','. -name "*.ttl"').stdout()])
+-endif
+\ No newline at end of file
++endif
