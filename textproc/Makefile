@@ -1627,6 +1627,7 @@
     SUBDIR += rubygem-sassc-rails-rails5
     SUBDIR += rubygem-sassc-rails-rails50
     SUBDIR += rubygem-sassc-rails-rails52
+    SUBDIR += rubygem-sassc-rails-rails60
     SUBDIR += rubygem-sax-machine
     SUBDIR += rubygem-scss_lint
     SUBDIR += rubygem-shell2html
