@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.11.50.g20191211
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 PKGNAMESUFFIX?=	-sbruno
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -131,7 +131,6 @@ PLIST_SUB+=	SOFTMMU=""
 PLIST_SUB+=	STATIC=""
 .endif
 
-SSP_CFLAGS?=	-fstack-protector # XXX -strong crashes qemu-user-static
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CFLAGS+=	-Wno-address-of-packed-member
