@@ -6497,10 +6497,10 @@
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-warden
     SUBDIR += rubygem-wdm
-    SUBDIR += rubygem-web-console-rails5
     SUBDIR += rubygem-web-console-rails52
     SUBDIR += rubygem-web-console-rails60
     SUBDIR += rubygem-web-console2
+    SUBDIR += rubygem-web-console3-rails5
     SUBDIR += rubygem-web-console3-rails50
     SUBDIR += rubygem-webby
     SUBDIR += rubygem-webfinger
