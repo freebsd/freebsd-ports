@@ -2,7 +2,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-user-static-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -47,7 +47,6 @@ PLIST_SUB+=	64BIT="@comment "
 .endif
 CONFIGURE_ARGS+=	--target-list=${QEMU_TARGETS:ts,}
 
-SSP_CFLAGS?=	-fstack-protector # XXX -strong crashes qemu-user-static
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CFLAGS+=	-Wno-address-of-packed-member
