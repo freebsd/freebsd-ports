@@ -3,7 +3,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.56.3
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -35,7 +35,6 @@ CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--with-pcre=system \
 		--disable-fam
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=
-SSP_CFLAGS?=	-fstack-protector # XXX -strong crashes qemu-user-static
 INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	*/*.pl
