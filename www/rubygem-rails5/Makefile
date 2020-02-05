@@ -3,7 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	5.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	5
@@ -48,7 +48,7 @@ RUN_DEPENDS=	rubygem-actioncable5>=${PORTVERSION}:www/rubygem-actioncable5 \
 		rubygem-turbolinks>=5:www/rubygem-turbolinks \
 		rubygem-turbolinks-source>=5.0.0:www/rubygem-turbolinks-source \
 		rubygem-uglifier>=3.2.0:www/rubygem-uglifier \
-		rubygem-web-console-rails5>=3.5.0:devel/rubygem-web-console-rails5
+		rubygem-web-console3-rails5>=3.5.0:devel/rubygem-web-console3-rails5
 
 USES=		cpe gem
 USE_RUBY=	yes
