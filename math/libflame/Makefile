@@ -11,7 +11,7 @@ COMMENT=	FLAME dense linear algebra library
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc
 ONLY_FOR_ARCHS_REASON=	make system does not support other architectures yet
 
 BUILD_DEPENDS=	bash:shells/bash
