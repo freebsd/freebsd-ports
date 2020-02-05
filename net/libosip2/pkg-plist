@@ -43,10 +43,10 @@ include/osipparser2/osip_uri.h
 include/osipparser2/sdp_message.h
 lib/libosip2.a
 lib/libosip2.so
-lib/libosip2.so.12
-lib/libosip2.so.12.0.0
+lib/libosip2.so.11
+lib/libosip2.so.11.1.0
 lib/libosipparser2.a
 lib/libosipparser2.so
-lib/libosipparser2.so.12
-lib/libosipparser2.so.12.0.0
+lib/libosipparser2.so.11
+lib/libosipparser2.so.11.1.0
 libdata/pkgconfig/libosip2.pc
