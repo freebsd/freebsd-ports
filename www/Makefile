@@ -1854,6 +1854,7 @@
     SUBDIR += rubygem-actioncable5
     SUBDIR += rubygem-actioncable50
     SUBDIR += rubygem-actioncable52
+    SUBDIR += rubygem-actioncable60
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-actionpack5
     SUBDIR += rubygem-actionpack50
