@@ -14197,3 +14197,4 @@ www/py-blogofile||2020-02-04|Has expired: Outdated, uses EOLed python27
 www/clearsilver-python||2020-02-04|Has expired: Unmaintained, uses EOLed python27
 x11-toolkits/py-sexy||2020-02-04|Has expired: Unmaintained, uses EOLed python27
 x11-themes/xfce-evolution|x11-themes/classiclooks|2020-02-04|Project renamed
+math/mandelbulber2|graphics/mandelbulber|2020-02-04|Remove duplicate port
