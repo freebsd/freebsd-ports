@@ -2752,6 +2752,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl-ntlm.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl-scram-rfc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl-scram-rfc.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl-scram-sha256.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl-scram-sha256.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/secrets.el.gz
@@ -2948,6 +2950,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rcompile.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/s-region.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/s-region.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sb-image.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sb-image.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sregex.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sregex.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/starttls.el.gz
@@ -3512,8 +3516,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/savehist.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/saveplace.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/saveplace.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/sb-image.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/sb-image.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/scroll-all.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/scroll-all.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/scroll-bar.el.gz
@@ -4003,7 +4005,6 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/ftcrfont.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/ftfont.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/ftfont.h
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/ftxfont.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/getpagesize.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/gfilenotify.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/globals.h
