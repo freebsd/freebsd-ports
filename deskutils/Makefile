@@ -136,6 +136,7 @@
     SUBDIR += korganizer
     SUBDIR += kruler
     SUBDIR += ktimetracker
+    SUBDIR += kuserfeedback
     SUBDIR += latte-dock
     SUBDIR += libkdepim
     SUBDIR += libopensync-plugin-vformat-devel
