@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arp-scan
-PORTVERSION=	1.9
+PORTVERSION=	1.9.7
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
