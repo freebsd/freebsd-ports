@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	packit
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -13,14 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnet.so:net/libnet
 
-USES=		autoreconf
+USES=		autoreconf localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	eribertomota
 
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	sbin/packit \
 		man/man8/packit.8.gz
