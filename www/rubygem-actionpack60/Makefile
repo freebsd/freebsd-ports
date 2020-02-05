@@ -1,0 +1,32 @@
+# Created by: Jonathan Weiss (<jw@innerewut.de>)
+# $FreeBSD$
+
+PORTNAME=	actionpack
+PORTVERSION=	6.0.2.1
+CATEGORIES=	www rubygems
+MASTER_SITES=	RG
+PKGNAMESUFFIX=	60
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Action Controller and Action View of Rails MVC Framework
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
+
+BROKEN_RUBY24=	yes
+
+RUN_DEPENDS=	rubygem-actionview60>=${PORTVERSION}:devel/rubygem-actionview60 \
+		rubygem-activesupport60>=${PORTVERSION}:devel/rubygem-activesupport60 \
+		rubygem-rack>=2.0.8,3<3,3:www/rubygem-rack \
+		rubygem-rack-test>=0.6.3:www/rubygem-rack-test \
+		rubygem-rails-dom-testing-rails60>=2.0<3:textproc/rubygem-rails-dom-testing-rails60 \
+		rubygem-rails-html-sanitizer>=1.2.0<2:textproc/rubygem-rails-html-sanitizer
+
+USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
+
+PORTSCOUT=	limit:^6\.0\.
+
+.include <bsd.port.mk>
