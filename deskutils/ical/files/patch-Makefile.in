@@ -1,34 +1,11 @@
---- Makefile.in.orig	1997-06-04 16:09:59 UTC
+--- Makefile.in.orig	2019-04-16 08:17:38 UTC
 +++ Makefile.in
-@@ -14,10 +14,10 @@
-  CONFIGURE_IN = @MFILES_IN@
-  CONFFILES    = $(srcdir)/configure.in
+@@ -404,7 +404,7 @@ app_DATA = ical.desktop
+ ical_SOURCES = cal_tcl.C dateeditor.C dispatch.C ical.C ical_tcl.C \
+ 	       item_tcl.C object.C time_tcl.C main.C
  
--       BINDIR = $(exec_prefix)/bin
--       LIBDIR = $(prefix)/lib
-+       BINDIR = $(STAGEDIR)$(exec_prefix)/bin
-+       LIBDIR = $(STAGEDIR)$(prefix)/lib
-       ILIBDIR = $(LIBDIR)/ical/v@ICAL_VERSION@
--       MANDIR = $(prefix)/man
-+       MANDIR = $(STAGEDIR)$(prefix)/man
+-ical_CPPFLAGS = -DICALLIBDIR='"$(icallibdir)"' -I$(srcdir)/calendar -I$(srcdir)/types -I$(srcdir)/time @TK_XINCLUDES@
++ical_CPPFLAGS = -DICALLIBDIR='"$(icallibdir)"' -I$(srcdir)/calendar -I$(srcdir)/types -I$(srcdir)/time @TCL_INCLUDE_SPEC@ @TK_INCLUDE_SPEC@ @TK_XINCLUDES@
+ ical_LDADD = libcalendar.a libtime.a libtypes.a \
+ 	     @TK_LIB_SPEC@ @TCL_LIB_SPEC@ @TK_LIBS@
  
-            CC = @CC@
-           CXX = @CXX@
-@@ -59,14 +59,12 @@
- # Tiny bundled executable uses shared versions of tcl/tk libraries
-  TINY_BLIBS = $(LIBS)
- 
--       OPTF = -O
--
--   CXXFLAGS = $(OPTF)
-     CXXINCS = -I. -I$(srcdir) -I$(srcdir)/calendar \
-               -I$(srcdir)/types -I$(srcdir)/time \
--              $(X_CFLAGS) -I@TCL_INCDIR@ -I@TK_INCDIR@
-+	      -I$(prefix)/include \
-+              $(X_CFLAGS) -I@TCL_INCDIR@ -I@TK_INCDIR@ \
- 
--     CFLAGS = $(OPTF) -I. -I$(srcdir) $(X_CFLAGS)
-+     CFLAGS += -I. -I$(srcdir) $(X_CFLAGS)
- 
- OBJS = cal_tcl.o dateeditor.o dispatch.o ical.o ical_tcl.o \
-        item_tcl.o object.o time_tcl.o @LIBOBJS@
