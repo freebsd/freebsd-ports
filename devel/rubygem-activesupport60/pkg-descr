@@ -1,0 +1,7 @@
+Active Support is a collection of utility classes and standard library
+extensions that were found useful for the Rails framework. These additions
+reside in this package so they can be loaded as needed in Ruby projects outside
+of Rails.
+
+WWW: https://rubyonrails.org/
+WWW: https://github.com/rails/rails/tree/master/activesupport
