@@ -1,35 +1,29 @@
 # Created by: Jean-Sébastien Pédron <dumbbell@FreeBSD.org>
 # $FreeBSD$
 
-PORTVERSION=	1.42.0.${NIGHTLY_DATE:C,-,,g}
+PORTVERSION=	1.43.0.${NIGHTLY_DATE:C,-,,g}
 # Always set PORTREVISION explicitly as otherwise it is inherited from lang/rust
 PORTREVISION=	0
 PKGNAMESUFFIX=	-nightly
 DISTNAME=	rustc-nightly-src
 
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	upstream does not provide bootstraps for other architectures
+
+CONFLICTS_INSTALL=	rust
+
 MASTERDIR=	${.CURDIR}/../rust
 PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
-CONFLICTS_INSTALL=	rust
-
-# Which source to pull:
-#   https://static.rust-lang.org/dist/${NIGHTLY_DATE}/rustc-nightly-src.tar.gz
-#   https://static.rust-lang.org/dist/channel-rust-nightly.toml
-NIGHTLY_DATE=			2020-01-24
-NIGHTLY_SUBDIR=			${NIGHTLY_DATE}/
+# Get latest from top level 'date' key in
+# https://static.rust-lang.org/dist/channel-rust-nightly.toml
+NIGHTLY_DATE=	2020-02-05
 
 # See WRKSRC/src/stage0.txt for this date
-# XXX: Keep on nightly after 2020-01-24 for 13.0 i386 until beta has
-# https://github.com/rust-lang/rust/commit/de388032555b697d1b0ef197241886ab90ac39b2
-BOOTSTRAPS_DATE=		${NIGHTLY_DATE}
-RUST_BOOTSTRAP_VERSION=		nightly
-CARGO_BOOTSTRAP_VERSION=	nightly
-
-CARGO_VENDOR_DIR=	${WRKSRC}/vendor
-
-# Other bootstraps aren't provided by upstream yet
-ONLY_FOR_ARCHS=			amd64 i386
+BOOTSTRAPS_DATE=		2020-01-30
+RUST_BOOTSTRAP_VERSION=		beta
+CARGO_BOOTSTRAP_VERSION=	beta
 
 post-configure:
 # Don't abort if optional tools fail to build
