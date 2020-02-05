@@ -895,6 +895,7 @@
     SUBDIR += rubygem-activemodel5
     SUBDIR += rubygem-activemodel50
     SUBDIR += rubygem-activemodel52
+    SUBDIR += rubygem-activemodel60
     SUBDIR += rubygem-activerecord-explain-analyze
     SUBDIR += rubygem-activerecord-import
     SUBDIR += rubygem-activerecord-jdbc-adapter
