@@ -5409,6 +5409,7 @@
     SUBDIR += rubygem-activesupport5
     SUBDIR += rubygem-activesupport50
     SUBDIR += rubygem-activesupport52
+    SUBDIR += rubygem-activesupport60
     SUBDIR += rubygem-airborne
     SUBDIR += rubygem-akismet
     SUBDIR += rubygem-algebrick
