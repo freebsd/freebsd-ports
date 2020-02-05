@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	matomo
-DISTVERSION=	3.11.0
-PORTREVISION=	1
+DISTVERSION=	3.13.1
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://builds.matomo.org/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
@@ -17,9 +17,9 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 USES=		cpe shebangfix php:flavors
-USE_PHP=	bcmath bz2 ctype curl dom fileinfo filter gd hash iconv intl json \
+USE_PHP=	ctype curl dom fileinfo filter gd hash iconv intl json \
 		mbstring mcrypt memcache mysqli openssl pcre pdo posix readline session \
-		simplexml soap sockets sqlite3 tidy tokenizer xml opcache zip zlib
+		simplexml soap sockets sqlite3 tidy tokenizer xml opcache zlib
 
 WRKSRC=		${WRKDIR}/piwik
 
