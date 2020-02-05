@@ -582,6 +582,7 @@
     SUBDIR += rspamd
     SUBDIR += rspamd-devel
     SUBDIR += rss2email3
+    SUBDIR += rubygem-actionmailbox60
     SUBDIR += rubygem-actionmailer4
     SUBDIR += rubygem-actionmailer5
     SUBDIR += rubygem-actionmailer50
