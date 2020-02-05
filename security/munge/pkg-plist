@@ -27,7 +27,9 @@ man/man3/munge_enum_str_to_int.3.gz
 man/man3/munge_strerror.3.gz
 man/man7/munge.7.gz
 man/man8/munged.8.gz
+man/man8/mungekey.8.gz
 sbin/munged
+sbin/mungekey
 @dir %%ETCDIR%%
 @dir(,,711) /var/lib/munge
 @dir /var/lib
