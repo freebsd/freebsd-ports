@@ -8,6 +8,13 @@ PORTREVISION=	0
 .endif
 CATEGORIES=	games
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+.if ${PORTVERSION} < 3971
+PATCHFILES+=	794ba23189a3.patch:-p2
+.elif ${PORTVERSION} < 7084
+PATCHFILES+=	731d96887795.patch:-p2
+.endif
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	2D side scrolling engine for beat 'em ups, shooters, and more #'
 
