@@ -1,7 +1,7 @@
-TIMESTAMP = 1556991938
-SHA256 (edumips64-1.2.5.jar) = 39b678a7960babb24dec099aa48d685f074e5d431189e4550bf1f4e489e41b3b
-SIZE (edumips64-1.2.5.jar) = 1409951
-SHA256 (edumips64-1.2.5-manual-en.pdf) = 036a3e4735a0b8627f67f3210d3cb57b24d9ead89d494008327f1534a453af3f
-SIZE (edumips64-1.2.5-manual-en.pdf) = 174302
-SHA256 (edumips64-1.2.5-manual-it.pdf) = 3dce8209143fefe0a08f2aea1970612da7fc50cb96cff172ed8ff83eaefc4e74
-SIZE (edumips64-1.2.5-manual-it.pdf) = 180608
+TIMESTAMP = 1580573034
+SHA256 (edumips64-1.2.6.jar) = aafe69a73a8f131647c9ce4579eee248f4714cdce943d5973ccbadc74c8fdda8
+SIZE (edumips64-1.2.6.jar) = 1069275
+SHA256 (edumips64-1.2.6-en.pdf) = b8f2407d00f089010b64d8b517bd19407cf51865ee125d56e7876a7f0ae69b65
+SIZE (edumips64-1.2.6-en.pdf) = 174736
+SHA256 (edumips64-1.2.6-it.pdf) = 4de032279f87fee9689350181368c4e0217e3f3ad59700e7a8c714f051140842
+SIZE (edumips64-1.2.6-it.pdf) = 181047
