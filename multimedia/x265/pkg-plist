@@ -1,6 +1,9 @@
 bin/x265
+include/hdr10plus.h
 include/x265.h
 include/x265_config.h
+lib/libhdr10plus.a
+lib/libhdr10plus.so
 lib/libx265.a
 lib/libx265.so
 lib/libx265.so.179
