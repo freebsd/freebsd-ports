@@ -12,8 +12,6 @@ COMMENT=	C++ linear algebra library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_powerpc64=	Does not build
-
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libopenblas.so:math/openblas \
 		libarpack.so:math/arpack-ng \
