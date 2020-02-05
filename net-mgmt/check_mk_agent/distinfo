@@ -1,3 +1,7 @@
-TIMESTAMP = 1567764056
-SHA256 (check-mk-raw-1.5.0p21.cre.tar.gz) = 270f5422adbbda151edf102bdd8665ff1b5ee96b2aec04a899114a5238381869
-SIZE (check-mk-raw-1.5.0p21.cre.tar.gz) = 386037040
+TIMESTAMP = 1580893908
+SHA256 (check_mk_agent-1.6.0.p8/check_mk_agent.freebsd) = a42dafe70c19eb29305c31725dc6b00ca8d160329adcf3b28a6fb2f2c85393e6
+SIZE (check_mk_agent-1.6.0.p8/check_mk_agent.freebsd) = 16073
+SHA256 (check_mk_agent-1.6.0.p8/README.FreeBSD) = 01094a2197ca0a3a43ac16098c0f800d2ee808db2fd9a2f133f4bad04062ec5f
+SIZE (check_mk_agent-1.6.0.p8/README.FreeBSD) = 1349
+SHA256 (check_mk_agent-1.6.0.p8/COPYING) = fbaab079995bef694ef8451f0f763b91b44e5b57b8e2a487d2a240b395187a7f
+SIZE (check_mk_agent-1.6.0.p8/COPYING) = 15174
