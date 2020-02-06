@@ -1,0 +1,5 @@
+HiPlot is a lightweight interactive visualization tool to help AI researchers
+discover correlations and patterns in high-dimensional data using parallel plots
+and other graphical ways to represent information.
+
+WWW: https://github.com/facebookresearch/hiplot
