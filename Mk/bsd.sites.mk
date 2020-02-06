@@ -1207,8 +1207,8 @@ MASTER_SITE_KERNEL_ORG+= \
 
 .if !defined(IGNORE_MASTER_SITE_ZI)
 MASTER_SITE_ZI+= \
-	https://mirrors.rit.edu/zi/ \
-	https://blackened.zi0r.com/mirrors/ \
+	https://mirrors.rit.edu/zi/%SUBDIR%/ \
+	https://www.zi0r.com/mirrors/%SUBDIR%/ \
 	${MASTER_SITE_LOCAL:S/%SUBDIR%/zi/}
 .endif
 
