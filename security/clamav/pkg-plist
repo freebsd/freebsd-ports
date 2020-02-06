@@ -2,9 +2,6 @@
 %%JSON%%man/man1/clamsubmit.1.gz
 %%MILTER%%@sample etc/clamav-milter.conf.sample
 %%MILTER%%sbin/clamav-milter
-%%NO_MSPACK%%lib/libclammspack.so
-%%NO_MSPACK%%lib/libclammspack.so.0
-%%NO_MSPACK%%lib/libclammspack.so.0.1.0
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Installation-Unix.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/Installation-Unix/Steps-Debian-Ubuntu.html
