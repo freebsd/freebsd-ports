@@ -1,1 +1,6 @@
-BDelta is an advanced delta creator, patcher, and library.
+BDelta is a sophisticated sequence matching library bundled with a delta
+creator and patch tool.  This code is being used in production systems.
+Recent releases should be stable, fast, and accurate.  Note that there
+is currently a 4GB file size limitation.
+
+WWW: https://github.com/jjwhitney/BDelta
