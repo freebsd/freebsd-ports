@@ -1,4 +1,0 @@
-BTreeFolder2 is a Zope product that acts like a Zope2 OFS folder
-but can store many more items.
-
-WWW: https://pypi.org/project/Products.BTreeFolder2/

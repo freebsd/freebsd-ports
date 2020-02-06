@@ -1436,7 +1436,6 @@
     SUBDIR += py-cheroot
     SUBDIR += py-cherrypy
     SUBDIR += py-clientform
-    SUBDIR += py-collective.templateengines
     SUBDIR += py-cookies
     SUBDIR += py-crossplane
     SUBDIR += py-css-parser

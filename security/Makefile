@@ -832,9 +832,7 @@
     SUBDIR += pwman3
     SUBDIR += pwned-check
     SUBDIR += pxytest
-    SUBDIR += py-AccessControl
     SUBDIR += py-PF
-    SUBDIR += py-Products.PluggableAuthService
     SUBDIR += py-RestrictedPython
     SUBDIR += py-SecretStorage
     SUBDIR += py-YubiOTP

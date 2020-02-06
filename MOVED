@@ -14201,3 +14201,40 @@ math/mandelbulber2|graphics/mandelbulber|2020-02-04|Remove duplicate port
 devel/rubygem-web-console-rails5|devel/rubygem-web-console3-rails5|2020-02-05|Rename to avoid confusion with rubygem-web-console 4.x
 devel/rubygem-web-console-rails50|devel/rubygem-web-console3-rails50|2020-02-05|Rename to avoid confusion with rubygem-web-console 4.x
 devel/rubygem-web-console-rails52|devel/rubygem-web-console3-rails52|2020-02-05|Rename to avoid confusion with rubygem-web-console 4.x
+devel/py-DocumentTemplate||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Missing||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-MultiMapping||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Persistence||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.BTreeFolder2||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.CMFActionIcons||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.CMFCalendar||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.CMFCore||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.CMFDefault||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.CMFDiffTool||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.CMFDynamicViewFTI||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.CMFEditions||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.CMFFormController||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.CMFPlacefulWorkflow||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.CMFQuickInstallerTool||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.CMFUid||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.DCWorkflow||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.ExtendedPathIndex||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.ExternalMethod||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.GenericSetup||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.LDAPMultiPlugins||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.MIMETools||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.MimetypesRegistry||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.OFSP||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.PluginRegistry||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.PythonScripts||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.StandardCacheManagers||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.ZCTextIndex||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.ZCatalog||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Products.ZSQLMethods||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-Record||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-initgroups||2020-02-06|Has expired: Outdated, uses EOLed python27
+devel/py-zExceptions||2020-02-06|Has expired: Outdated, uses EOLed python27
+mail/py-Products.MailHost||2020-02-06|Has expired: Outdated, uses EOLed python27
+security/py-AccessControl||2020-02-06|Has expired: Outdated, uses EOLed python27
+security/py-Products.PluggableAuthService||2020-02-06|Has expired: Outdated, uses EOLed python27
+www/py-collective.templateengines||2020-02-06|Has expired: Outdated, uses EOLed python27

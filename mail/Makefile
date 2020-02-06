@@ -497,7 +497,6 @@
     SUBDIR += prepflog
     SUBDIR += procmail
     SUBDIR += proxsmtp
-    SUBDIR += py-Products.MailHost
     SUBDIR += py-Products.SecureMailHost
     SUBDIR += py-afew
     SUBDIR += py-aiosmtpd
