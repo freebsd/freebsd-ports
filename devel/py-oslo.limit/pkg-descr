@@ -1,0 +1,5 @@
+Oslo.limit is the limit enforcement library to assist with quota calculation. It
+aims to provide support for quota enforcement across all OpenStack services.
+
+WWW: https://docs.openstack.org/oslo.limit/latest/
+WWW: https://github.com/openstack/oslo.limit
