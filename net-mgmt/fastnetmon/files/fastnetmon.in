@@ -19,10 +19,12 @@ rcvar=fastnetmon_enable
 load_rc_config "$name"
 
 : ${fastnetmon_enable:=NO}
-: ${fastnetmon_user:=fastnetmon}
+: ${fastnetmon_conf:=%%ETCDIR%%/$name.conf}
 : ${fastnetmon_flags:=--daemonize}
+: ${fastnetmon_user:=fastnetmon}
 
 command=%%PREFIX%%/bin/fastnetmon
+command_args="--configuration_file ${fastnetmon_conf} ${fastnetmon_flags}"
 pidfile=/var/run/fastnetmon/$name.pid
 
 run_rc_command "$1"
