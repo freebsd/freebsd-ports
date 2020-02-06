@@ -1,19 +1,24 @@
 bin/rancid-cvs
 bin/rancid-run
 etc/periodic/hourly/200.rancid
+@sample %%ETCDIR%%/lg.conf.sample
+@sample %%ETCDIR%%/rancid.conf.sample
+%%ETCDIR%%/rancid.types.base
 lib/rancid/acos.pm
 lib/rancid/aeos.pm
 lib/rancid/arbor.pm
 lib/rancid/arcos.pm
+lib/rancid/bigip.pm
 lib/rancid/ciscowlc.pm
 %%COMWARE%%lib/rancid/cmw.pm
-lib/rancid/bigip.pm
 lib/rancid/dell.pm
+lib/rancid/dnos10.pm
+lib/rancid/dnos9.pm
 lib/rancid/edgemax.pm
 lib/rancid/edgerouter.pm
 lib/rancid/exos.pm
-lib/rancid/foundry.pm
 lib/rancid/fortigate.pm
+lib/rancid/foundry.pm
 lib/rancid/fss2.pm
 lib/rancid/fxos.pm
 lib/rancid/ios.pm
@@ -24,31 +29,31 @@ lib/rancid/junos.pm
 lib/rancid/mrv.pm
 lib/rancid/nxos.pm
 lib/rancid/panos.pm
-lib/rancid/rbt.pm
 lib/rancid/rancid.pm
+lib/rancid/rbt.pm
+lib/rancid/smc.pm
 lib/rancid/sros.pm
 lib/rancid/vrp.pm
 lib/rancid/wavesvros.pm
 libexec/rancid/a10login
+libexec/rancid/agmrancid
 libexec/rancid/alogin
 libexec/rancid/anlogin
 libexec/rancid/arancid
 libexec/rancid/avologin
 libexec/rancid/avorancid
-libexec/rancid/agmrancid
 libexec/rancid/blogin
 libexec/rancid/brancid
 libexec/rancid/brlogin
 libexec/rancid/cat5rancid
 libexec/rancid/clogin
-libexec/rancid/control_rancid
 %%COMWARE%%libexec/rancid/cmwlogin
+libexec/rancid/control_rancid
 libexec/rancid/csblogin
 libexec/rancid/cssrancid
 libexec/rancid/dllogin
 libexec/rancid/elogin
 libexec/rancid/erancid
-libexec/rancid/f10rancid
 libexec/rancid/f5rancid
 libexec/rancid/flogin
 libexec/rancid/fnlogin
@@ -71,8 +76,8 @@ libexec/rancid/noklogin
 libexec/rancid/nrancid
 libexec/rancid/nslogin
 libexec/rancid/nsrancid
-libexec/rancid/par
 libexec/rancid/panlogin
+libexec/rancid/par
 libexec/rancid/plogin
 libexec/rancid/rancid
 libexec/rancid/rancid-cvs
@@ -83,7 +88,6 @@ libexec/rancid/rivlogin
 libexec/rancid/rivrancid
 libexec/rancid/rrancid
 libexec/rancid/rtftpcopy
-libexec/rancid/srancid
 libexec/rancid/tlogin
 libexec/rancid/trancid
 libexec/rancid/ulogin
@@ -95,9 +99,7 @@ libexec/rancid/zrancid
 man/man1/agmrancid.1.gz
 man/man1/alogin.1.gz
 man/man1/anlogin.1.gz
-man/man1/anrancid.1.gz
 man/man1/arancid.1.gz
-man/man1/arrancid.1.gz
 man/man1/avologin.1.gz
 man/man1/avorancid.1.gz
 man/man1/blogin.1.gz
@@ -110,7 +112,6 @@ man/man1/cssrancid.1.gz
 man/man1/dllogin.1.gz
 man/man1/elogin.1.gz
 man/man1/erancid.1.gz
-man/man1/f10rancid.1.gz
 man/man1/f5rancid.1.gz
 man/man1/flogin.1.gz
 man/man1/fnlogin.1.gz
@@ -130,10 +131,8 @@ man/man1/noklogin.1.gz
 man/man1/nrancid.1.gz
 man/man1/nslogin.1.gz
 man/man1/nsrancid.1.gz
-man/man1/nxrancid.1.gz
 man/man1/panlogin.1.gz
 man/man1/plogin.1.gz
-man/man1/prancid.1.gz
 man/man1/rancid-cvs.1.gz
 man/man1/rancid-par.1.gz
 man/man1/rancid-run.1.gz
@@ -142,7 +141,6 @@ man/man1/rancid_intro.1.gz
 man/man1/rivlogin.1.gz
 man/man1/rivrancid.1.gz
 man/man1/rrancid.1.gz
-man/man1/srancid.1.gz
 man/man1/tlogin.1.gz
 man/man1/trancid.1.gz
 man/man1/ulogin.1.gz
@@ -158,9 +156,6 @@ man/man5/rancid.conf.5.gz
 man/man5/rancid.types.base.5.gz
 man/man5/rancid.types.conf.5.gz
 man/man5/router.db.5.gz
-%%ETCDIR%%/rancid.types.base
-@sample %%ETCDIR%%/lg.conf.sample
-@sample %%ETCDIR%%/rancid.conf.sample
 %%DATADIR%%/CHANGES
 %%DATADIR%%/COPYING
 %%DATADIR%%/FAQ
