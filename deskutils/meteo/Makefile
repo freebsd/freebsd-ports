@@ -10,9 +10,6 @@ COMMENT=	Weather forecast application using OpenWeatherMap API
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Old, uses EOLed python27
-EXPIRATION_DATE=	2020-03-02
-
 BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 		valac:lang/vala
 LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
