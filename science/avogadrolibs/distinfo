@@ -1,6 +1,6 @@
-TIMESTAMP = 1556960433
-SHA256 (OpenChemistry-avogadrolibs-1.92.1_GH0.tar.gz) = 9a387b1c5673640b48aa955c4a38019ed399b6839bd53d92e456f9929f235078
-SIZE (OpenChemistry-avogadrolibs-1.92.1_GH0.tar.gz) = 2706612
+TIMESTAMP = 1580961317
+SHA256 (OpenChemistry-avogadrolibs-1.93.0_GH0.tar.gz) = 01fea1f3b21c69091c60739616f86123db92f445e4c9ca53f1dec09624aceab4
+SIZE (OpenChemistry-avogadrolibs-1.93.0_GH0.tar.gz) = 2735862
 SHA256 (cf9d82575796d5fcabb153bdebde26843d81d83e.patch) = 54fdbab45cc8942e7f0e6dd47c451e3cad56a29b0224f385aee37b608bae8a99
 SIZE (cf9d82575796d5fcabb153bdebde26843d81d83e.patch) = 2665
 SHA256 (ea813f683cdd9865994c0ba94a24325e04b9f8fb.patch) = 6aea4b7e1163060db942f98b3d550e35f183233124db1b7f4d47c19038b02e75
