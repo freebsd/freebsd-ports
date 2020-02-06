@@ -1,0 +1,5 @@
+Ruby GetText Package is Native Language Support Library and Tools
+which modeled after GNU GetText package, but the API is simpler than
+that of GNU GetText.
+
+WWW: https://ruby-gettext.github.io/
