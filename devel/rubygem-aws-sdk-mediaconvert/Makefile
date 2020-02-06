@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-mediaconvert
-PORTVERSION=	1.41.0
+PORTVERSION=	1.42.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
