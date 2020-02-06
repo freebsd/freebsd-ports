@@ -9,12 +9,3 @@
      url='https://github.com/googlefonts/fontbakery/',
      description='Well designed Font QA tool, written in Python 3',
      long_description=readme,
-@@ -72,7 +72,7 @@ setup(
-         'ufolint',
- 
-     ],
--    extras_requires={
-+    extras_require={
-         'docs': [
-             'sphinx >= 1.4',
-             'sphinx_rtd_theme',
