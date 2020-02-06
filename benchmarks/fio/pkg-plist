@@ -15,8 +15,10 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/e4defrag.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/e4defrag2.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/enospc-pressure.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exitwhat.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/falloc.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filecreate-ioengine.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filestat-ioengine.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fio-rand-RW.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fio-rand-read.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fio-rand-write.fio
