@@ -1,37 +1,51 @@
 # $FreeBSD$
 
 PORTNAME=	libappindicator
-PORTVERSION=	12.10.0
-PORTREVISION=	2
+PORTVERSION=	${MAJOR_VER}.${SNAPSHOT_VER:S/.//g}.${PATCH_VER:S/ubuntu//}
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
+MASTER_SITES=	http://archive.ubuntu.com/ubuntu/pool/main/liba/${PORTNAME}/
+DISTNAME=	${PORTNAME}_${MAJOR_VER}+${SNAPSHOT_VER}.orig
 
-MAINTAINER=	swills@FreeBSD.org
+PATCH_SITES=		${MASTER_SITES}
+PATCHFILES=		${PORTNAME}_${MAJOR_VER}+${SNAPSHOT_VER}-${PATCH_VER}.diff.gz
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	tagattie@yandex.com
 COMMENT=	KSNI App Indicator library
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Old, uses EOLed python27
-EXPIRATION_DATE=	2020-03-02
+BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common \
+		gtkdocize:textproc/gtk-doc
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libdbusmenu-gtk3.so:devel/libdbusmenu
 
-LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu \
-		libindicator3.so:devel/libindicator \
-		libdbus-glib-1.so:devel/dbus-glib
-
-USES=		gmake gnome libtool pkgconfig python:2.7
+USES=		autoreconf:build gmake gnome libtool pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	gtk30 pygtk2
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 
-OPTIONS_DEFINE=	VAPI
+OPTIONS_DEFINE=		VAPI
 OPTIONS_DEFAULT=	VAPI
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
 VAPI_BUILD_DEPENDS=	vala>=0:lang/vala
-VAPI_CONFIGURE_ENV_OFF=	ac_cv_path_VALA_API_GEN= ac_cv_path_VALAC=
-VAPI_VARS=	EXTRA_PATCHES+=${PATCHDIR}/extra-patch-bindings-vala-examples-Makefile.in
+VAPI_CONFIGURE_ENV_OFF=	ac_cv_path_VALA_API_GEN= \
+			ac_cv_path_VALAC=
+VAPI_VARS=		EXTRA_PATCHES+=${PATCHDIR}/extra-patch-bindings_vala_examples_Makefile.am
+
+NO_WRKSUBDIR=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gtk=3
+CONFIGURE_ARGS=	--enable-gtk-doc \
+		--with-gtk=3
+INSTALL_TARGET=	install-strip
+
+MAJOR_VER=	12.10.1
+SNAPSHOT_VER=	18.04.20180322.1
+PATCH_VER=	0ubuntu5
+
+pre-configure:
+	cd ${WRKSRC} && ${SETENV} NOCONFIGURE=yes ${SH} ./autogen.sh
 
 .include <bsd.port.mk>

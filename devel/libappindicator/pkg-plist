@@ -14,13 +14,15 @@ share/gtk-doc/html/libappindicator/api-index-full.html
 share/gtk-doc/html/libappindicator/ch01.html
 share/gtk-doc/html/libappindicator/home.png
 share/gtk-doc/html/libappindicator/index.html
-share/gtk-doc/html/libappindicator/index.sgml
+share/gtk-doc/html/libappindicator/left-insensitive.png
 share/gtk-doc/html/libappindicator/left.png
 share/gtk-doc/html/libappindicator/libappindicator-app-indicator.html
 share/gtk-doc/html/libappindicator/libappindicator.devhelp2
 share/gtk-doc/html/libappindicator/object-tree.html
+share/gtk-doc/html/libappindicator/right-insensitive.png
 share/gtk-doc/html/libappindicator/right.png
 share/gtk-doc/html/libappindicator/style.css
+share/gtk-doc/html/libappindicator/up-insensitive.png
 share/gtk-doc/html/libappindicator/up.png
 %%VAPI%%share/vala/vapi/appindicator3-0.1.deps
 %%VAPI%%share/vala/vapi/appindicator3-0.1.vapi
