@@ -13,8 +13,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Ubiquitous network routing analysis tool
 
-BROKEN=		unfetchable
-
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	.
