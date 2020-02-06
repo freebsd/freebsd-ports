@@ -2,8 +2,7 @@
 
 PORTNAME=	rx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
-PORTREVISION=	1
+DISTVERSION=	0.4.0
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-editor
 
@@ -37,6 +36,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		block-0.1.6 \
 		bumpalo-2.6.0 \
 		byteorder-1.3.2 \
+		c2-chacha-0.2.3 \
 		cc-1.0.40 \
 		cfg-if-0.1.9 \
 		chrono-0.4.10 \
@@ -59,13 +59,13 @@ CARGO_CRATES=	adler32-1.0.3 \
 		dirs-sys-0.3.4 \
 		failure-0.1.5 \
 		failure_derive-0.1.5 \
-		ffi-0.0.2 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		fuchsia-cprng-0.1.1 \
 		fxhash-0.2.1 \
 		gcc-0.3.55 \
 		generic-array-0.12.3 \
+		getrandom-0.1.14 \
 		gfx-auxil-0.1.0 \
 		gfx-backend-dx11-0.4.1 \
 		gfx-backend-dx12-0.4.1 \
@@ -104,12 +104,17 @@ CARGO_CRATES=	adler32-1.0.3 \
 		pico-args-0.3.0 \
 		pkg-config-0.3.15 \
 		png-0.15.0 \
+		ppv-lite86-0.2.6 \
 		proc-macro2-0.4.30 \
 		proc-macro2-1.0.1 \
 		quote-0.6.13 \
 		quote-1.0.2 \
+		rand-0.7.3 \
+		rand_chacha-0.2.1 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
 		rand_os-0.1.3 \
 		range-alloc-0.1.0 \
 		raw-window-handle-0.3.3 \
@@ -117,6 +122,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		redox_syscall-0.1.56 \
 		redox_users-0.3.1 \
 		relevant-0.4.2 \
+		remove_dir_all-0.5.2 \
 		rendy-descriptor-0.5.0 \
 		rendy-memory-0.5.0 \
 		rgx-0.7.1 \
@@ -138,12 +144,14 @@ CARGO_CRATES=	adler32-1.0.3 \
 		syn-0.15.44 \
 		syn-1.0.3 \
 		synstructure-0.10.2 \
+		tempfile-3.1.0 \
 		time-0.1.42 \
 		toml-0.5.5 \
 		typenum-1.11.2 \
 		unicode-xid-0.1.0 \
 		unicode-xid-0.2.0 \
 		vec_map-0.8.1 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.56 \
 		wasm-bindgen-backend-0.2.56 \
 		wasm-bindgen-macro-0.2.56 \
