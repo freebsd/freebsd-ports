@@ -10,6 +10,7 @@ include/KPim/KItinerary/Datatypes
 include/KPim/KItinerary/DocumentUtil
 include/KPim/KItinerary/Event
 include/KPim/KItinerary/Extractor
+include/KPim/KItinerary/ExtractorCapabilities
 include/KPim/KItinerary/ExtractorEngine
 include/KPim/KItinerary/ExtractorFilter
 include/KPim/KItinerary/ExtractorInput
@@ -52,6 +53,7 @@ include/KPim/kitinerary/datatypes.h
 include/KPim/kitinerary/documentutil.h
 include/KPim/kitinerary/event.h
 include/KPim/kitinerary/extractor.h
+include/KPim/kitinerary/extractorcapabilities.h
 include/KPim/kitinerary/extractorengine.h
 include/KPim/kitinerary/extractorfilter.h
 include/KPim/kitinerary/extractorinput.h
@@ -101,6 +103,7 @@ share/locale/es/LC_MESSAGES/kitinerary.mo
 share/locale/fi/LC_MESSAGES/kitinerary.mo
 share/locale/fr/LC_MESSAGES/kitinerary.mo
 share/locale/gl/LC_MESSAGES/kitinerary.mo
+share/locale/ia/LC_MESSAGES/kitinerary.mo
 share/locale/it/LC_MESSAGES/kitinerary.mo
 share/locale/ja/LC_MESSAGES/kitinerary.mo
 share/locale/ko/LC_MESSAGES/kitinerary.mo

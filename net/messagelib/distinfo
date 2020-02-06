@@ -1,5 +1,5 @@
-TIMESTAMP = 1579387483
-SHA256 (KDE/applications/19.12.1/messagelib-19.12.1.tar.xz) = d2514ac31f78235340353701f735a15f69d99374a55566ec7702a3a5ddd23d05
-SIZE (KDE/applications/19.12.1/messagelib-19.12.1.tar.xz) = 10464964
-SHA256 (KDE/applications/19.12.1/991eb9c20286bdce2458d7dbc17765dd7b0d7b38.patch) = 71c15d0f47cf39911cfad20625e4a67a0b938e0a94c71a7dee0626c419b105f9
-SIZE (KDE/applications/19.12.1/991eb9c20286bdce2458d7dbc17765dd7b0d7b38.patch) = 2869
+TIMESTAMP = 1580852964
+SHA256 (KDE/applications/19.12.2/messagelib-19.12.2.tar.xz) = 0dddb4b7fd9759fa6984d57ab1ff10b5c6a253f42a92bb15bbbf5a48fa403f7c
+SIZE (KDE/applications/19.12.2/messagelib-19.12.2.tar.xz) = 10459732
+SHA256 (KDE/applications/19.12.2/991eb9c20286bdce2458d7dbc17765dd7b0d7b38.patch) = 71c15d0f47cf39911cfad20625e4a67a0b938e0a94c71a7dee0626c419b105f9
+SIZE (KDE/applications/19.12.2/991eb9c20286bdce2458d7dbc17765dd7b0d7b38.patch) = 2869
