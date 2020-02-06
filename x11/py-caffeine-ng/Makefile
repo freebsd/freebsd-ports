@@ -15,9 +15,6 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENCE
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/LGPL
 
-DEPRECATED=	Old, uses EOLed python27
-EXPIRATION_DATE=	2020-03-02
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
 		libnotify.so:devel/libnotify
