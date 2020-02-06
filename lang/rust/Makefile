@@ -233,6 +233,11 @@ post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/bin -exec ${FILE} -i {} + | ${AWK} -F: \
 		'/executable|sharedlib/ { print $$1 }' | ${XARGS} ${STRIP_CMD}
 
+post-install-SOURCES-on:
+# Silence stage-qa warnings by sanitizing permissions on sources
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/rustlib/src -type f -exec ${CHMOD} \
+		${SHAREMODE} {} +
+
 # Note that make test does not work when rust is already installed.
 do-test:
 	@cd ${WRKSRC} && \
