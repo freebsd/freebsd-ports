@@ -12,7 +12,7 @@ DISTNAME=	pygobject-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Common files for the Python bindings for GObject
+COMMENT?=	Common files for the Python bindings for GObject
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
