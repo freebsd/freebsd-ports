@@ -3,7 +3,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	7.6.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	databases geography
 MASTER_SITES=	https://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -98,7 +98,7 @@ LAS_DESC=		Enable LiDAR modules
 PDAL_DESC=		Enable points cloud data modules
 DB_DESC=		Database support
 NLS_CONFIGURE_WITH=	nls
-NLS_USES=		gettext	
+NLS_USES=		gettext
 LAS_CONFIGURE_ON=	--with-liblas=yes
 LAS_LIB_DEPENDS=	liblas.so:devel/liblas \
 			libboost_program_options.so:devel/boost-libs \
@@ -190,10 +190,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/etc/${i}
 .endfor
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/etc/lister/*
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/lib/libgrass_*.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/tools/g.echo
 	${LN} -sf ${PORTNAME}${VER} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
-	${LN} -s ${PORTNAME}${VER} \
-		${STAGEDIR}${PREFIX}/${PORTNAME}-${PORTVERSION}
 .include <bsd.port.mk>

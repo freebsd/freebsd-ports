@@ -1,0 +1,13 @@
+--- cmake/FindGRASS.cmake.orig	2020-01-30 11:41:47 UTC
++++ cmake/FindGRASS.cmake
+@@ -161,9 +161,7 @@ IF (UNIX)
+   IF (GRASS_FIND_VERSION EQUAL 7)
+     IF (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+         FOREACH (VERSION_MINOR 0 1 2 3 4 5 6)
+-            FOREACH (VERSION_BUILD 0 1 2 3 4 5 6)
+-                LIST (APPEND GRASS_PATHS /usr/local/grass-${GRASS_FIND_VERSION}.${VERSION_MINOR}.${VERSION_BUILD})
+-            ENDFOREACH (VERSION_BUILD)
++            LIST (APPEND GRASS_PATHS /usr/local/grass${GRASS_FIND_VERSION}${VERSION_MINOR})
+         ENDFOREACH(VERSION_MINOR)
+     ELSE (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+         FOREACH (PATH /usr/lib64 /usr/lib)

@@ -1,4 +1,3 @@
-grass-%%VERSION%%
 bin/grass%%MAJVER%%
 bin/grass%%VER%%
 %%GRASS_INST_DIR%%/AUTHORS
