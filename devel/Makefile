@@ -4664,6 +4664,7 @@
     SUBDIR += py-oslo.config
     SUBDIR += py-oslo.context
     SUBDIR += py-oslo.db
+    SUBDIR += py-oslo.db6
     SUBDIR += py-oslo.i18n
     SUBDIR += py-oslo.log
     SUBDIR += py-oslo.messaging

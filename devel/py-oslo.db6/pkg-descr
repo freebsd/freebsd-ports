@@ -1,0 +1,5 @@
+The oslo db (database) handling library, provides database connectivity to
+different database backends and various other helper utils.
+
+WWW: https://docs.openstack.org/oslo.db/latest/
+WWW: https://github.com/openstack/oslo.db
