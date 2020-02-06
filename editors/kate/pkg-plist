@@ -37,17 +37,20 @@ share/applications/org.kde.kate.desktop
 share/applications/org.kde.kwrite.desktop
 share/icons/hicolor/128x128/apps/kate.png
 share/icons/hicolor/128x128/apps/kwrite.png
+share/icons/hicolor/150x150/apps/kate.png
 share/icons/hicolor/16x16/apps/kate.png
 share/icons/hicolor/16x16/apps/kwrite.png
 share/icons/hicolor/22x22/apps/kate.png
 share/icons/hicolor/22x22/apps/kwrite.png
+share/icons/hicolor/310x310/apps/kate.png
 share/icons/hicolor/32x32/apps/kate.png
 share/icons/hicolor/32x32/apps/kwrite.png
+share/icons/hicolor/44x44/apps/kate.png
 share/icons/hicolor/48x48/apps/kate.png
 share/icons/hicolor/48x48/apps/kwrite.png
 share/icons/hicolor/64x64/apps/kate.png
 share/icons/hicolor/64x64/apps/kwrite.png
-share/icons/hicolor/scalable/apps/kate.svgz
+share/icons/hicolor/scalable/apps/kate.svg
 share/icons/hicolor/scalable/apps/kwrite.svgz
 share/kateproject/kateproject.example
 share/katexmltools/html4-loose.dtd.xml
@@ -169,6 +172,7 @@ share/locale/ca@valencia/LC_MESSAGES/kate.mo
 share/locale/ca@valencia/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/ca@valencia/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katefiletree.mo
 share/locale/ca@valencia/LC_MESSAGES/kategdbplugin.mo
@@ -184,6 +188,7 @@ share/locale/ca@valencia/LC_MESSAGES/katexmlcheck.mo
 share/locale/ca@valencia/LC_MESSAGES/katexmltools.mo
 share/locale/ca@valencia/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/kwrite.mo
+share/locale/ca@valencia/LC_MESSAGES/lspclient.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/ca@valencia/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/cs/LC_MESSAGES/kate-ctags-plugin.mo

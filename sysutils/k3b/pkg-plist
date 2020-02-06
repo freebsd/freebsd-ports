@@ -413,6 +413,9 @@ share/locale/hu/LC_MESSAGES/k3b.mo
 share/locale/hu/LC_MESSAGES/kio_videodvd.mo
 share/locale/hu/LC_MESSAGES/libk3b.mo
 share/locale/hu/LC_MESSAGES/libk3bdevice.mo
+share/locale/ia/LC_MESSAGES/k3b.mo
+share/locale/ia/LC_MESSAGES/libk3b.mo
+share/locale/ia/LC_MESSAGES/libk3bdevice.mo
 share/locale/id/LC_MESSAGES/kio_videodvd.mo
 share/locale/is/LC_MESSAGES/k3b.mo
 share/locale/is/LC_MESSAGES/kio_videodvd.mo
