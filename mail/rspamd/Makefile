@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -86,7 +85,6 @@ post-install:
 	${RM} ${STAGEDIR}/${ETCDIR}/rspamd.systemd.conf
 	${RM} ${STAGEDIR}/${ETCDIR}/rspamd.sysvinit.conf
 	# No examples installed by the port
-	${RMDIR} ${STAGEDIR}/${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/rspamd.newsyslog.conf.sample ${STAGEDIR}${ETCDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${LN} -s ${ETCDIR}/rspamd.newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
