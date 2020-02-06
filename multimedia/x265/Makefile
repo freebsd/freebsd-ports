@@ -70,10 +70,9 @@ CMAKE_ARGS+=	-DMAIN12:BOOL=true
 .endif
 
 .if "${DEFAULT_DEPTH}" != "HI8P"
-CMAKE_ARGS+=	-DHIGH_BIT_DEPTH:BOOL=true
+CMAKE_ARGS+=   -DHIGH_BIT_DEPTH:BOOL=true
 .endif
 
-CFLAGS+=	${OTHER_DEPTHS:C/HI([0-9]+)P/-DLINKED_\1BIT/}
 CMAKE_OTHER_ARGS=${CMAKE_ARGS:C/.*-D_END_CUSTOM_OPTIONS=1 +//W}
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -81,26 +80,41 @@ CFLAGS:=	${CFLAGS:N-O*} -O0 -g
 .endif
 
 .for b in ${OTHER_DEPTHS:C/HI([0-9]+)P/\1/}
-EXTRA_LINK_FLAGS+=${WRKSRC:H}/$bbit/libx265.a
+EXTRA_LINK_FLAGS+=-L${WRKSRC:H}/$bbit
+
+.if ${ARCH} == i386 && $b != 8
+ASSEMBLY=false
+.else
+ASSEMBLY=true
+.endif
+
 pre-build::
 	@${ECHO_MSG} "---> Building the $b-bit library ---"
 	${MKDIR} ${WRKSRC:H}/$bbit
 	${CMAKE_BIN} -S ${WRKSRC} -B ${WRKSRC:H}/$bbit \
 		${CMAKE_OTHER_ARGS} ${b:C/1./-DHIGH_BIT_DEPTH:BOOL=true/} \
-		-DMAIN$b:BOOL=true \
+		-DMAIN$b:BOOL=true -DENABLE_ASSEMBLY:BOOL=${ASSEMBLY} \
 		-DEXPORT_C_API:BOOL=false -DENABLE_CLI=false
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC:H}/$bbit ${MAKE_ARGS}
+	${LN} ${WRKSRC:H}/$bbit/libx265.a ${WRKSRC:H}/$bbit/libx265_$bbit.a
 	${ECHO_MSG} "---> Built the $b-bit library ---"
 .endfor
 
 .if "${EXTRA_LINK_FLAGS}"
-CMAKE_ARGS+=	-DEXTRA_LINK_FLAGS=${EXTRA_LINK_FLAGS:Q}
+CMAKE_ARGS+=	-DEXTRA_LINK_FLAGS:STRING="${EXTRA_LINK_FLAGS}"
+CMAKE_ARGS+=	-DEXTRA_LIB="${OTHER_DEPTHS:C/HI([0-9]+)P/x265_\1bit/:C/ /;/gW}"
+CMAKE_ARGS+=	${OTHER_DEPTHS:C/HI([0-9]+)P/-DLINKED_\1BIT:BOOL=true/}
+.endif
+
+CMAKE_ARGS+=	-DENABLE_SHARED:BOOL=true
+
+.if ${ARCH} == i386 && ${DEFAULT_DEPTH} != "HI8P"
+CMAKE_ARGS+=	-DENABLE_ASSEMBLY:BOOL=false
+.else
+do-test:
+	${WRKDIR}/.build/test/TestBench
 .endif
 
 CMAKE_ARGS+=	-D_END_CUSTOM_OPTIONS=1
-CMAKE_ARGS+=	-DENABLE_SHARED:BOOL=true
-
-do-test:
-	${WRKDIR}/.build/test/TestBench
 
 .include <bsd.port.mk>
