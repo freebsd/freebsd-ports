@@ -1,0 +1,9 @@
+Common code for writing OpenStack upgrade checks
+
+This project contains the common code necessary for writing upgrade checks in
+OpenStack projects. It includes a module (oslo_upgradecheck.upgradecheck) for
+the common code as well as an example (oslo_upgradecheck.__main__) of
+integrating that code into a project.
+
+WWW: https://docs.openstack.org/oslo.upgradecheck/latest/
+WWW: https://github.com/openstack/oslo.upgradecheck

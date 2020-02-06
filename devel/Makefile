@@ -4676,6 +4676,7 @@
     SUBDIR += py-oslo.rootwrap
     SUBDIR += py-oslo.serialization
     SUBDIR += py-oslo.service
+    SUBDIR += py-oslo.upgradecheck
     SUBDIR += py-oslo.utils
     SUBDIR += py-oslo.versionedobjects
     SUBDIR += py-oslo.vmware
