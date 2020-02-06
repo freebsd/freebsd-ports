@@ -4,7 +4,7 @@
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	3
 
-COMMENT=	Python 2 bindings for GObject
+COMMENT=	Python ${PYTHON_VER} bindings for GObject
 
 SLAVE_PORT=	python
 
