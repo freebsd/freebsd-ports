@@ -5,3 +5,5 @@ This package does not contain anything by itself -- it is a
 purpose is to require dependencies so users can install this package only
 and have all the Documentation Project stuff pulled in by the port/package
 dependency mechanism.
+
+WWW: https://www.freebsd.org/docproj
