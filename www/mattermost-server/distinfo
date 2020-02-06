@@ -1,3 +1,3 @@
-TIMESTAMP = 1568703660
-SHA256 (mattermost-mattermost-server-v5.15.0_GH0.tar.gz) = 57f8902e9aefd63d43087f0a18be7873d095b5e84ebe3bde72eceb9692ef28d7
-SIZE (mattermost-mattermost-server-v5.15.0_GH0.tar.gz) = 16078125
+TIMESTAMP = 1579700739
+SHA256 (mattermost-mattermost-server-v5.19.1_GH0.tar.gz) = ee53ce46ebfde9ac91a679b539de8b589f87f8cfddc3e996350cd46e5ea3f1cb
+SIZE (mattermost-mattermost-server-v5.19.1_GH0.tar.gz) = 16589601

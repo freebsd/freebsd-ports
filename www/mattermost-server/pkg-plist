@@ -1,4 +1,5 @@
 bin/mattermostd
+etc/mattermost/config.json.sample
 %%WWWDIR%%/fonts/OFL.txt
 %%WWWDIR%%/fonts/nunito-bold.ttf
 %%WWWDIR%%/i18n/de.json
@@ -36,5 +37,6 @@ bin/mattermostd
 %%WWWDIR%%/templates/reset_body.html
 %%WWWDIR%%/templates/signin_change_body.html
 %%WWWDIR%%/templates/unsupported_browser.html
+%%WWWDIR%%/templates/unsupported_browser.js
 %%WWWDIR%%/templates/verify_body.html
 %%WWWDIR%%/templates/welcome_body.html
