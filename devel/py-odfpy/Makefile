@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	odfpy
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://opendocumentfellowship.com/files/
