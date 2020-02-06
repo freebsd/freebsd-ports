@@ -14239,3 +14239,4 @@ security/py-AccessControl||2020-02-06|Has expired: Outdated, uses EOLed python27
 security/py-Products.PluggableAuthService||2020-02-06|Has expired: Outdated, uses EOLed python27
 www/py-collective.templateengines||2020-02-06|Has expired: Outdated, uses EOLed python27
 www/zope213||2020-02-06|Has expired: Outdated, uses EOLed python27
+misc/py-glance||2020-02-06|Has expired: Outdated, uses EOLed python27

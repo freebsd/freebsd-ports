@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-For installation instructions please refer to the related wiki page:
-
-- https://wiki.freebsd.org/Ports/misc/py-glance
-EOM
-}
-]

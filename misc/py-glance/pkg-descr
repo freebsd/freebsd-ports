@@ -1,5 +1,0 @@
-The Glance project provides services for discovering, registering, and
-retrieving virtual machine images. Glance has a RESTful API that allows
-querying of VM image metadata as well as retrieval of the actual image.
-
-WWW: https://docs.openstack.org/glance/latest/
