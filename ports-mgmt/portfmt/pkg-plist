@@ -13,8 +13,10 @@ lib/portfmt/plugin.output.unknown-targets.so
 lib/portfmt/plugin.output.unknown-variables.so
 lib/portfmt/plugin.output.variable-value.so
 lib/portfmt/plugin.refactor.collapse-adjacent-variables.so
-lib/portfmt/plugin.refactor.depup-tokens.so
+lib/portfmt/plugin.refactor.dedup-tokens.so
+lib/portfmt/plugin.refactor.remove-consecutive-empty-lines.so
 lib/portfmt/plugin.refactor.sanitize-append-modifier.so
+lib/portfmt/plugin.refactor.sanitize-comments.so
 lib/portfmt/plugin.refactor.sanitize-eol-comments.so
 man/man1/portclippy.1.gz
 man/man1/portedit.1.gz
