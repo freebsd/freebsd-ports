@@ -1,6 +1,11 @@
---- electron/atom/browser/api/atom_api_web_contents.cc.orig	2019-12-11 16:30:56 UTC
+--- electron/atom/browser/api/atom_api_web_contents.cc.orig	2019-12-17 00:40:10 UTC
 +++ electron/atom/browser/api/atom_api_web_contents.cc
-@@ -108,7 +108,7 @@
+@@ -104,11 +104,11 @@
+ #include "ui/base/cocoa/defaults_utils.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
@@ -18,3 +23,12 @@
    // Update font settings.
    static const base::NoDestructor<gfx::FontRenderParams> params(
        gfx::GetFontRenderParams(gfx::FontRenderParamsQuery(), nullptr));
+@@ -438,7 +438,7 @@ void WebContents::InitWithSessionAndOptions(
+   base::TimeDelta interval;
+   if (ui::TextInsertionCaretBlinkPeriod(&interval))
+     prefs->caret_blink_interval = interval;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+   views::LinuxUI* linux_ui = views::LinuxUI::instance();
+   if (linux_ui)
+     prefs->caret_blink_interval = linux_ui->GetCursorBlinkInterval();

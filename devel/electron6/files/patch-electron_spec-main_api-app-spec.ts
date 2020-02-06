@@ -1,4 +1,4 @@
---- electron/spec-main/api-app-spec.ts.orig	2019-11-05 00:13:02 UTC
+--- electron/spec-main/api-app-spec.ts.orig	2019-12-17 00:40:10 UTC
 +++ electron/spec-main/api-app-spec.ts
 @@ -112,7 +112,7 @@ describe('app module', () => {
    describe('app.getLocaleCountryCode()', () => {
@@ -72,3 +72,12 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo)
          const basicInfo = await getGPUInfo('basic')
+@@ -1095,7 +1095,7 @@ describe('app module', () => {
+     const socketPath = process.platform === 'win32' ? '\\\\.\\pipe\\electron-mixed-sandbox' : '/tmp/electron-mixed-sandbox'
+ 
+     beforeEach(function (done) {
+-      if (process.platform === 'linux' && (process.arch === 'arm64' || process.arch === 'arm')) {
++      if ((process.platform === 'linux' || process.platform === 'freebsd') && (process.arch === 'arm64' || process.arch === 'arm')) {
+         // Our ARM tests are run on VSTS rather than CircleCI, and the Docker
+         // setup on VSTS disallows syscalls that Chrome requires for setting up
+         // sandboxing.

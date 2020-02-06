@@ -1,11 +1,11 @@
---- electron/chromium_src/chrome/browser/process_singleton_posix.cc.orig	2019-09-11 17:30:11 UTC
+--- electron/chromium_src/chrome/browser/process_singleton_posix.cc.orig	2019-12-17 00:40:10 UTC
 +++ electron/chromium_src/chrome/browser/process_singleton_posix.cc
 @@ -95,7 +95,7 @@
  #include "net/base/network_interfaces.h"
  #include "ui/base/l10n/l10n_util.h"
  
 -#if defined(TOOLKIT_VIEWS) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(TOOLKIT_VIEWS) && (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
++#if defined(TOOLKIT_VIEWS) && ((defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD))
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
