@@ -2400,6 +2400,5 @@
     SUBDIR += zenphoto
     SUBDIR += zerowait-httpd
     SUBDIR += zola
-    SUBDIR += zope213
 
 .include <bsd.port.subdir.mk>
