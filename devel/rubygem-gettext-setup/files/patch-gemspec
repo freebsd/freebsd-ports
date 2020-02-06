@@ -1,11 +1,13 @@
---- gettext-setup.gemspec.orig	2020-01-10 17:48:35 UTC
+--- gettext-setup.gemspec.orig	2020-02-06 14:08:27 UTC
 +++ gettext-setup.gemspec
-@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+@@ -23,8 +23,8 @@ Gem::Specification.new do |s|
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
 -      s.add_runtime_dependency(%q<fast_gettext>.freeze, ["~> 1.1.0"])
+-      s.add_runtime_dependency(%q<gettext>.freeze, [">= 3.0.2", "< 3.3.0"])
 +      s.add_runtime_dependency(%q<fast_gettext>.freeze, ["~> 1.1"])
-       s.add_runtime_dependency(%q<gettext>.freeze, [">= 3.0.2", "< 3.3.0"])
++      s.add_runtime_dependency(%q<gettext>.freeze, [">= 3.0.2"])
        s.add_runtime_dependency(%q<locale>.freeze, [">= 0"])
        s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
+       s.add_development_dependency(%q<rake>.freeze, [">= 0"])
