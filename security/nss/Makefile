@@ -3,6 +3,7 @@
 
 PORTNAME=	nss
 PORTVERSION=	3.49.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
@@ -85,13 +86,13 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e 's|"nspr.h"|<nspr.h>|'
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/nss/nss ${STAGEDIR}${PREFIX}/lib/nss
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/nss ${STAGEDIR}${PREFIX}/lib
 	${FIND} ${DIST}/public/nss -type l \
-		-exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/include/nss/nss \;
+		-exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/include/nss \;
 	${INSTALL_LIB} ${BINS}/lib/*.so \
-		${STAGEDIR}${PREFIX}/lib/nss
+		${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_DATA} ${BINS}/lib/libcrmf.a \
-		${STAGEDIR}${PREFIX}/lib/nss
+		${STAGEDIR}${PREFIX}/lib/
 .for bin in ${INSTALL_BINS}
 	${INSTALL_PROGRAM} ${BINS}/bin/${bin} \
 		${STAGEDIR}${PREFIX}/bin

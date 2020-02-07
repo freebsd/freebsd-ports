@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200207:
+  AFFECTS: users of security/nss
+  AUTHOR: lwhsu@FreeBSD.org
+
+  NSS header files and libraries have been moved from ${PREFIX}/include/nss/nss
+  and ${PREFIX}/lib/nss to ${PREFIX}/include/nss and ${PREFIX}/lib
+
 20200204:
   AFFECTS: users of editors/vim
   AUTHOR: adamw@FreeBSD.org
