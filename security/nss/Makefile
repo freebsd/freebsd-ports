@@ -3,7 +3,7 @@
 
 PORTNAME=	nss
 PORTVERSION=	3.49.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
@@ -17,11 +17,11 @@ LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libsqlite3.so:databases/sqlite3
 TEST_DEPENDS=	bash:shells/bash
 
+USES=		cpe gmake perl5
+
 WRKSRC_SUBDIR=	nss
 
-MAKE_JOBS_UNSAFE=	yes
-USE_LDCONFIG=	${PREFIX}/lib/nss
-USES=		cpe gmake perl5
+USE_LDCONFIG=	yes
 CPE_VENDOR=	mozilla
 CPE_PRODUCT=	network_security_services
 USE_PERL5=	build
