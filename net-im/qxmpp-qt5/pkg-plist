@@ -1,6 +1,10 @@
 include/qxmpp/QXmppArchiveIq.h
 include/qxmpp/QXmppArchiveManager.h
 include/qxmpp/QXmppBindIq.h
+include/qxmpp/QXmppBitsOfBinaryContentId.h
+include/qxmpp/QXmppBitsOfBinaryData.h
+include/qxmpp/QXmppBitsOfBinaryDataList.h
+include/qxmpp/QXmppBitsOfBinaryIq.h
 include/qxmpp/QXmppBookmarkManager.h
 include/qxmpp/QXmppBookmarkSet.h
 include/qxmpp/QXmppByteStreamIq.h
@@ -40,7 +44,9 @@ include/qxmpp/QXmppPasswordChecker.h
 include/qxmpp/QXmppPingIq.h
 include/qxmpp/QXmppPresence.h
 include/qxmpp/QXmppPubSubIq.h
+include/qxmpp/QXmppPubSubItem.h
 include/qxmpp/QXmppRegisterIq.h
+include/qxmpp/QXmppRegistrationManager.h
 include/qxmpp/QXmppRemoteMethod.h
 include/qxmpp/QXmppResultSet.h
 include/qxmpp/QXmppRosterIq.h
@@ -56,6 +62,7 @@ include/qxmpp/QXmppServerPlugin.h
 include/qxmpp/QXmppSessionIq.h
 include/qxmpp/QXmppSocks.h
 include/qxmpp/QXmppStanza.h
+include/qxmpp/QXmppStartTlsPacket.h
 include/qxmpp/QXmppStream.h
 include/qxmpp/QXmppStreamFeatures.h
 include/qxmpp/QXmppStun.h
@@ -67,11 +74,11 @@ include/qxmpp/QXmppVCardIq.h
 include/qxmpp/QXmppVCardManager.h
 include/qxmpp/QXmppVersionIq.h
 include/qxmpp/QXmppVersionManager.h
-lib/cmake/qxmpp/QXmpp-release.cmake
+lib/cmake/qxmpp/QXmpp-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/qxmpp/QXmpp.cmake
 lib/cmake/qxmpp/QXmppConfig.cmake
 lib/cmake/qxmpp/QXmppConfigVersion.cmake
 lib/libqxmpp.so
-lib/libqxmpp.so.2
 lib/libqxmpp.so.%%VERSION%%
+lib/libqxmpp.so.3
 libdata/pkgconfig/qxmpp.pc
