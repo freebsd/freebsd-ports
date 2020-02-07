@@ -131,6 +131,9 @@ MAKE_ENV+=	USE_CLANG=true
 CONFIGURE_ARGS+=	--disable-warnings-as-errors \
 			--disable-dtrace
 .endif
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+CONFIGURE_ARGS+=	--disable-precompiled-headers
+.endif
 .if ${ARCH} != amd64
 CONFIGURE_ARGS+=	--enable-aot=no
 .endif
