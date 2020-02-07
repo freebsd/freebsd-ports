@@ -1,6 +1,6 @@
---- Makefile.orig	2018-05-09 02:36:21 UTC
-+++ Makefile
-@@ -12,7 +12,7 @@ SHAREDIR ?= $(PREFIX)/share
+--- Makefile.orig	2019-12-24 22:21:59.865317000 +0100
++++ Makefile	2019-12-24 22:24:39.962172000 +0100
+@@ -12,7 +12,7 @@
  PYTHON ?= /usr/bin/env python
  
  # set SYSCONFDIR to /etc if PREFIX=/usr or PREFIX=/usr/local
@@ -9,7 +9,7 @@
  
  # set markdown input format to "markdown-smart" for pandoc version 2 and to "markdown" for pandoc prior to version 2
  MARKDOWN = $(shell if [ `pandoc -v | head -n1 | cut -d" " -f2 | head -c1` = "2" ]; then echo markdown-smart; else echo markdown; fi)
-@@ -23,11 +23,11 @@ install: youtube-dl youtube-dl.1 youtube
+@@ -23,11 +23,11 @@
  	install -d $(DESTDIR)$(MANDIR)/man1
  	install -m 644 youtube-dl.1 $(DESTDIR)$(MANDIR)/man1
  	install -d $(DESTDIR)$(SYSCONFDIR)/bash_completion.d
@@ -24,15 +24,24 @@
  
  codetest:
  	flake8 .
-@@ -87,11 +87,6 @@ supportedsites:
+@@ -65,7 +65,7 @@
+ 	done
+ 	touch -t 200001010101 zip/youtube_dl/*.py zip/youtube_dl/*/*.py
+ 	mv zip/youtube_dl/__main__.py zip/
+-	cd zip ; zip -q ../youtube-dl youtube_dl/*.py youtube_dl/*/*.py __main__.py
++	cd zip ; bsdtar -a -cf ../youtube-dl.zip youtube_dl/*.py youtube_dl/*/*.py __main__.py
+ 	rm -rf zip
+ 	echo '#!$(PYTHON)' > youtube-dl
+ 	cat youtube-dl.zip >> youtube-dl
+@@ -90,11 +90,6 @@
+ 
  README.txt: README.md
  	pandoc -f $(MARKDOWN) -t plain README.md -o README.txt
- 
+-
 -youtube-dl.1: README.md
 -	$(PYTHON) devscripts/prepare_manpage.py youtube-dl.1.temp.md
 -	pandoc -s -f $(MARKDOWN) -t man youtube-dl.1.temp.md -o youtube-dl.1
 -	rm -f youtube-dl.1.temp.md
--
+ 
  youtube-dl.bash-completion: youtube_dl/*.py youtube_dl/*/*.py devscripts/bash-completion.in
  	$(PYTHON) devscripts/bash-completion.py
- 
