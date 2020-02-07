@@ -18,10 +18,9 @@ COMMENT=	H.265/High Efficiency Video Coding (HEVC) format
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC:H}/COPYING
 
-.for a in amd64 i386 aarch64 armv6 armv7
-BUILD_DEPENDS_$a=	nasm:devel/nasm
-.endfor
 BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
+BUILD_DEPENDS_amd64=	nasm:devel/nasm
+BUILD_DEPENDS_i386=	nasm:devel/nasm
 
 USES=		cmake compiler:c++14-lang pathfix
 
