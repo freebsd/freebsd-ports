@@ -1,0 +1,11 @@
+--- heartbeat/iSCSILogicalUnit.in.orig	2020-02-07 12:35:45 UTC
++++ heartbeat/iSCSILogicalUnit.in
+@@ -56,7 +56,7 @@ OCF_RESKEY_scsi_id_default="${OCF_RESOURCE_INSTANCE:0:
+ : ${OCF_RESKEY_scsi_id=${OCF_RESKEY_scsi_id_default}}
+ # To have a reasonably unique default SCSI SN, use the first 8 bytes
+ # of an MD5 hash of of $OCF_RESOURCE_INSTANCE
+-sn=`echo -n "${OCF_RESOURCE_INSTANCE}" | md5sum | sed -e 's/ .*//'`
++sn=`echo -n "${OCF_RESOURCE_INSTANCE}" | md5 | sed -e 's/ .*//'`
+ OCF_RESKEY_scsi_sn_default=${sn:0:8}
+ : ${OCF_RESKEY_scsi_sn=${OCF_RESKEY_scsi_sn_default}}
+ OCF_RESKEY_allowed_initiators_default=""

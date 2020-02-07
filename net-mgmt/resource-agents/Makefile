@@ -53,10 +53,6 @@ post-patch:
 	  ${WRKSRC}/rgmanager/src/resources/utils/config-utils.sh.in \
 	  ${WRKSRC}/rgmanager/src/resources/ASEHAagent.sh.in
 
-post-configure:
-	${REINPLACE_CMD} 's|md5sum|md5|g' \
-	  ${WRKSRC}/heartbeat/iSCSILogicalUnit
-
 post-install:
 	${RM} ${STAGEDIR}/${LOCALBASE}/resource-agents.conf
 
