@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	g20191217
-PORTREVISION=	1
+PORTVERSION=	g20200205
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
 		LOCAL/dmgk:bootstrap
@@ -33,7 +32,7 @@ USES=		shebangfix tar:xz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
-GH_TAGNAME=	a5bfd9da1d1b24f326399b6b75558ded14514f23
+GH_TAGNAME=	a068054af141c01df5a4519844f4b77273605f4e
 
 SHEBANG_FILES=	misc/wasm/go_js_wasm_exec \
 		src/net/http/cgi/testdata/test.cgi
