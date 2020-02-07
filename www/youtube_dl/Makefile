@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2019.11.28
+PORTVERSION=	2020.01.24
 CATEGORIES=	www
 MASTER_SITES=	https://yt-dl.org/downloads/${PORTVERSION}/
 DISTNAME=	youtube-dl-${PORTVERSION}
@@ -11,8 +11,6 @@ COMMENT=	Program for downloading videos from YouTube.com
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BUILD_DEPENDS=	zip:archivers/zip
 
 USES=		gmake python
 
