@@ -1,5 +1,5 @@
 Desktop automation utility for Linux and X11 written in Python 3.
-Allows you to Configure keystroke to trigger phrases or scripts 
+Allows you to Configure keystroke to trigger phrases or scripts
 written in Python.
 
-WWW: https://github.com/autokey-py3/autokey
+WWW: https://github.com/autokey/autokey
