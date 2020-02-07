@@ -1,0 +1,14 @@
+JDIFF is a program that outputs the differences between two binary files,
+either in binary format or human readable format (detailed or summarized).
+JPTCH can then be used to reconstruct the second file from the first file.
+
+Possible applications include incremental backups, synchronising files
+between two computers over a slow network, and others.
+
+JDIFF tries to find a minimal set of differences between two files using
+a heuristic algorithm with constant space and linear time complexity.
+This means that accuracy is traded over speed.  JDIFF will therefore, in
+general, not always find the smallest set of differences, but will try
+to be fast and will use a fixed amount of memory.
+
+WWW: http://jojodiff.sourceforge.net/
