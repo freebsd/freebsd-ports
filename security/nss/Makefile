@@ -19,6 +19,8 @@ TEST_DEPENDS=	bash:shells/bash
 
 USES=		cpe gmake perl5
 
+MAKE_JOBS_UNSAFE=	yes
+
 WRKSRC_SUBDIR=	nss
 
 USE_LDCONFIG=	yes
