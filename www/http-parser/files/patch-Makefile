@@ -10,13 +10,13 @@
  CFLAGS_LIB = $(CFLAGS_FAST) -fPIC
  
 @@ -137,8 +137,8 @@ install: library
- 	ln -s $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(SOLIBNAME).$(SOEXT)
+ 	ln -sf $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(SOLIBNAME).$(SOEXT)
  
  install-strip: library
 -	$(INSTALL) -D  http_parser.h $(DESTDIR)$(INCLUDEDIR)/http_parser.h
 -	$(INSTALL) -D -s $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(LIBNAME)
 +	$(INSTALL) http_parser.h $(DESTDIR)$(INCLUDEDIR)
 +	$(INSTALL) $(STRIP) $(LIBNAME) $(DESTDIR)$(LIBDIR)
- 	ln -s $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(SONAME)
- 	ln -s $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(SOLIBNAME).$(SOEXT)
+ 	ln -sf $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(SONAME)
+ 	ln -sf $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(SOLIBNAME).$(SOEXT)
  
