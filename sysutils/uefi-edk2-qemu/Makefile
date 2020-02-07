@@ -68,7 +68,7 @@ post-patch:
 	${LN} -sf ${LOCALBASE}/bin/gcc-ar${GCC_DEFAULT} ${BUILD_WRKSRC}/BaseTools/Bin/FreeBSD-${MACHINE}/gcc-ar
 	${LN} -sf ${LOCALBASE}/bin/gcc-nm${GCC_DEFAULT} ${BUILD_WRKSRC}/BaseTools/Bin/FreeBSD-${MACHINE}/gcc-nm
 	${LN} -sf ${LOCALBASE}/bin/objcopy ${BUILD_WRKSRC}/BaseTools/Bin/FreeBSD-${MACHINE}/objcopy
-	${LN} -sf ${LOCALBASE}/bin/python2.7 ${BUILD_WRKSRC}/BaseTools/Bin/FreeBSD-${MACHINE}/python
+	${LN} -sf ${PYTHON_CMD} ${BUILD_WRKSRC}/BaseTools/Bin/FreeBSD-${MACHINE}/python
 	${LN} -sf ${LOCALBASE}/bin/nasm ${BUILD_WRKSRC}/BaseTools/Bin/FreeBSD-${MACHINE}/nasm
 
 do-build:
