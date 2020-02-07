@@ -132,6 +132,7 @@ CARGO_CRATES=	aes-0.3.2 \
 		impl-codec-0.4.2 \
 		impl-rlp-0.2.1 \
 		impl-serde-0.2.3 \
+		impl-trait-for-tuples-0.1.3 \
 		indexmap-1.3.0 \
 		integer-encoding-1.0.5 \
 		interleaved-ordered-0.1.1 \
@@ -156,9 +157,9 @@ CARGO_CRATES=	aes-0.3.2 \
 		keccak-hash-0.4.0 \
 		keccak-hasher-0.15.0 \
 		kernel32-sys-0.2.2 \
-		kvdb-0.2.0 \
-		kvdb-memorydb-0.2.0 \
-		kvdb-rocksdb-0.3.0 \
+		kvdb-0.3.1 \
+		kvdb-memorydb-0.3.1 \
+		kvdb-rocksdb-0.4.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.0 \
 		libc-0.2.65 \
@@ -219,6 +220,8 @@ CARGO_CRATES=	aes-0.3.2 \
 		parity-snappy-sys-0.1.2 \
 		parity-tokio-ipc-0.4.0 \
 		parity-util-mem-0.3.0 \
+		parity-util-mem-0.4.2 \
+		parity-util-mem-derive-0.1.0 \
 		parity-wasm-0.31.3 \
 		parity-wordlist-1.3.0 \
 		parking_lot-0.6.4 \
@@ -246,7 +249,7 @@ CARGO_CRATES=	aes-0.3.2 \
 		proc-macro-crate-0.1.4 \
 		proc-macro-hack-0.5.9 \
 		proc-macro2-0.4.20 \
-		proc-macro2-1.0.1 \
+		proc-macro2-1.0.8 \
 		pwasm-utils-0.6.1 \
 		quick-error-1.2.2 \
 		quote-0.6.8 \
@@ -332,7 +335,7 @@ CARGO_CRATES=	aes-0.3.2 \
 		subtle-1.0.0 \
 		subtle-2.1.0 \
 		syn-0.15.26 \
-		syn-1.0.5 \
+		syn-1.0.14 \
 		synstructure-0.10.1 \
 		synstructure-0.12.3 \
 		target_info-0.1.0 \
