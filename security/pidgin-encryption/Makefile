@@ -3,7 +3,7 @@
 
 PORTNAME=	pidgin
 PORTVERSION=	3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}-encrypt/Releases/${PORTVERSION}
 PKGNAMESUFFIX=	-encryption
@@ -21,8 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--with-nspr-includes=${LOCALBASE}/include/nspr	\
 		--with-nspr-libs=${LOCALBASE}/lib	\
-		--with-nss-includes=${LOCALBASE}/include/nss/nss \
-		--with-nss-libs=${LOCALBASE}/lib/nss
+		--with-nss-includes=${LOCALBASE}/include/nss \
+		--with-nss-libs=${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
