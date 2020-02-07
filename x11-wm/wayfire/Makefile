@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	3D wayland compositor
+COMMENT=	3D Wayland compositor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
