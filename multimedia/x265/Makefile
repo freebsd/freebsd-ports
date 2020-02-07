@@ -53,8 +53,7 @@ VMAF_DESC=	Per frame and aggregate VMAF score
 
 OPTIONS_SUB=	yes
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DENABLE_PIC=on -DENABLE_TESTS=on	\
-		-DENABLE_HDR10_PLUS:BOOL=true
+CMAKE_ARGS=	-DENABLE_TESTS=on -DENABLE_HDR10_PLUS:BOOL=true
 LDFLAGS_i386=	-Wl,-znotext
 EXTRACT_AFTER_ARGS+=	--exclude compat
 PATCH_WRKSRC=	${WRKSRC:H}
@@ -116,5 +115,6 @@ do-test:
 .endif
 
 CMAKE_ARGS+=	-D_END_CUSTOM_OPTIONS=1
+CMAKE_ARGS+=	-DENABLE_PIC:BOOL=true
 
 .include <bsd.port.mk>
