@@ -1,4 +1,4 @@
-TIMESTAMP = 1580459883
+TIMESTAMP = 1581022516
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (DataDog-dd-trace-go-v1.7.0_GH0.tar.gz) = d81bd47683ef9cbd228691b077373d3e15ca5fa5b9e7919099c4e87779040e84
@@ -31,8 +31,8 @@ SHA256 (golang-net-d28f0bde5980_GH0.tar.gz) = 40f4d37b315f4a6867ab5beadf4d73f93b
 SIZE (golang-net-d28f0bde5980_GH0.tar.gz) = 1097062
 SHA256 (golang-protobuf-v1.3.2_GH0.tar.gz) = c9cda622857a17cf0877c5ba76688a931883e505f40744c9495638b6e3da1f65
 SIZE (golang-protobuf-v1.3.2_GH0.tar.gz) = 312285
-SHA256 (golang-sys-fde4db37ae7a_GH0.tar.gz) = b6aab4e92d5d8fe85ca0dd229bfb75c91290951a3bf3b95087459e5a4eae86a4
-SIZE (golang-sys-fde4db37ae7a_GH0.tar.gz) = 1455218
+SHA256 (golang-sys-d101bd2416d5_GH0.tar.gz) = c1de80d233d3df630ed34bf80cbb3f186199e7b5218726abe0234520c8eddb8b
+SIZE (golang-sys-d101bd2416d5_GH0.tar.gz) = 1537146
 SHA256 (golang-text-v0.3.0_GH0.tar.gz) = 8f4c9a048345befc7beccd09267737ee1f55c7b35e5ff80f344ec9e0aa90febb
 SIZE (golang-text-v0.3.0_GH0.tar.gz) = 6102619
 SHA256 (golang-tools-6e04913cbbac_GH0.tar.gz) = 76c1e182745c99749e4b6b46cf8486244ab2aa9be689f41d827d67a4221977c1
