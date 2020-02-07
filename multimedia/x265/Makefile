@@ -18,9 +18,10 @@ COMMENT=	H.265/High Efficiency Video Coding (HEVC) format
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC:H}/COPYING
 
+.for a in amd64 i386 aarch64 armv6 armv7
+BUILD_DEPENDS_$a=	nasm:devel/nasm
+.endfor
 BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
-BUILD_DEPENDS_amd64=	nasm:devel/nasm
-BUILD_DEPENDS_i386=	nasm:devel/nasm
 
 USES=		cmake compiler:c++14-lang pathfix
 
@@ -81,7 +82,7 @@ CFLAGS:=	${CFLAGS:N-O*} -O0 -g
 .for b in ${OTHER_DEPTHS:C/HI([0-9]+)P/\1/}
 EXTRA_LINK_FLAGS+=-L${WRKSRC:H}/$bbit
 
-.if ${ARCH} == i386 && $b != 8
+.if ${ARCH} == i386 && $b != 8 || ! ${BUILD_DEPENDS:Mnasm*}
 ASSEMBLY=false
 .else
 ASSEMBLY=true
@@ -107,9 +108,10 @@ CMAKE_ARGS+=	${OTHER_DEPTHS:C/HI([0-9]+)P/-DLINKED_\1BIT:BOOL=true/}
 
 CMAKE_ARGS+=	-DENABLE_SHARED:BOOL=true
 
-.if ${ARCH} == i386 && ${DEFAULT_DEPTH} != "HI8P"
+.if ${ARCH} == i386 && ${DEFAULT_DEPTH} != "HI8P" || ! ${BUILD_DEPENDS:Mnasm*}
 CMAKE_ARGS+=	-DENABLE_ASSEMBLY:BOOL=false
 .else
+CMAKE_ARGS+=	-DENABLE_ASSEMBLY:BOOL=true
 do-test:
 	${WRKDIR}/.build/test/TestBench
 .endif
