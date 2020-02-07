@@ -14023,6 +14023,7 @@ www/py-dj21-drf-yasg||2020-01-31|Has expired: Django 2.1 is now End-of-Life (Sin
 www/sogo3|www/sogo4|2020-01-31|Has expired: Deprecated, replaced by www/sogo4
 www/py-dj21-djangorestframework|www/py-dj22-djangorestframework|2020-01-31|Removed, part of expired Django 2.1
 www/py-django21|www/py-django22|2020-01-31|Has expired: Django 2.1 is now End-of-Life (Since December 2 2019). Switch to Django 2.2+ as soon as possible
+sysutils/uefi-edk2-bhyve-devel|sysutils/uefi-edk2-bhyve|2020-02-02|Moved to sysutils/uefi-edk2-bhyve
 devel/py-Products.ATContentTypes||2020-02-03|Has expired: Outdated version of plone 4.3 (legacy), uses EOLed python27
 devel/py-Products.ATReferenceBrowserWidget||2020-02-03|Has expired: Outdated version of plone 4.3 (legacy), uses EOLed python27
 devel/py-Products.Archetypes||2020-02-03|Has expired: Outdated version of plone 4.3 (legacy), uses EOLed python27
