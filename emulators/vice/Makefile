@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	3.3
-PORTREVISION=	5
+PORTVERSION=	3.4
 CATEGORIES=	emulators
 MASTER_SITES=	SF/vice-emu/releases
 
@@ -12,9 +11,7 @@ COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
-		mkfontscale:x11-fonts/mkfontscale \
-		xa65:devel/xa65
+BUILD_DEPENDS=	xa65:devel/xa65
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libgif.so:graphics/giflib \
 		libportaudio.so:audio/portaudio \
@@ -38,6 +35,7 @@ HAS_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 CONFIGURE_ARGS+=	--enable-ipv6 \
 			--enable-external-ffmpeg \
+			--enable-x64 \
 			--mandir="${PREFIX}/man" \
 			--infodir="${PREFIX}/${INFO_PATH}" \
 			--localedir="${LOCALBASE}/share/locale" \
@@ -87,7 +85,7 @@ __pmlinks1!=	${ECHO_CMD} '${LMLINKS:S/    / /}' | ${AWK} \
 .if ${PORT_OPTIONS:MGTK3UI}
 USES+=		gnome gl
 USE_GNOME+=	gtk30 vte3 cairo gdkpixbuf2 pango
-USE_GL+=	glu gl
+USE_GL+=	glu gl glew
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -100,11 +98,6 @@ pre-configure:
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in
 .endif
-
-pre-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vice/fonts
-	${INSTALL_DATA} ${WRKSRC}/data/fonts/vice-cbm.bdf \
-		${STAGEDIR}${PREFIX}/lib/vice/fonts/
 
 pre-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
