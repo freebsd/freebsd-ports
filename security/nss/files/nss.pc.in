@@ -1,6 +1,6 @@
 prefix=%%PREFIX%%
 exec_prefix=%%PREFIX%%
-libdir=%%PREFIX%%/lib/nss
+libdir=%%PREFIX%%/lib
 includedir=%%PREFIX%%/include
 
 Name: NSS
@@ -8,4 +8,4 @@ Description: Mozilla Network Security Services
 Version: %%PORTVERSION%%
 Requires: nspr
 Libs: -L${libdir} -lnss3 -lsmime3 -lssl3 -lnssutil3
-Cflags: -I${includedir}/nss -I${includedir}/nss/nss
+Cflags: -I${includedir} -I${includedir}/nss

@@ -101,10 +101,10 @@ if test -z "$exec_prefix"; then
     exec_prefix=$prefix
 fi
 if test -z "$includedir"; then
-    includedir=$prefix/include/nss
+    includedir=$prefix/include
 fi
 if test -z "$libdir"; then
-    libdir=$prefix/lib/nss
+    libdir=$prefix/lib
 fi
 
 if test "$echo_prefix" = "yes"; then
@@ -142,5 +142,4 @@ if test "$echo_libs" = "yes"; then
 	libdirs="$libdirs -lnssutil3"
       fi
       echo $libdirs
-fi      
-
+fi
