@@ -25,14 +25,32 @@ load_rc_config $name
 
 start_precmd=ntimed_prestart
 pidfile=/var/run/ntimed.pid
-procname="/usr/local/sbin/ntimed-client"
+ntimed_cmd="/usr/local/sbin/ntimed-client"
 command=/usr/sbin/daemon
-command_args=" -p ${pidfile} ${procname} ${ntimed_flags}"
+
+can_run_nonroot()
+{
+        # Try to set up the the MAC ntpd policy so ntimed can run with reduced
+        # privileges.  Detect whether MAC is compiled into the kernel, load
+        # the policy module if not already present, then check whether the
+        # policy has been disabled via tunable or sysctl.
+        [ -n "$(sysctl -qn security.mac.version)" ] || return 1
+        sysctl -qn security.mac.ntpd >/dev/null || kldload -qn mac_ntpd || return 1
+        [ "$(sysctl -qn security.mac.ntpd.enabled)" == "1" ] || return 1
+}
 
 ntimed_prestart()
 {
-	# Have to empty rc_flags so they don't get passed to daemon(8)
-	rc_flags=""
+        # Have to empty rc_flags so they don't get passed to daemon(8)
+        rc_flags=""
+
+        if can_run_nonroot; then
+            _ntimed_user="ntpd"
+        else
+            _ntimed_user="root"
+        fi
+
+        command_args=" -r -P ${pidfile} -u ${_ntimed_user} ${ntimed_cmd} ${ntimed_flags}"
 }
 
 run_rc_command "$1"
