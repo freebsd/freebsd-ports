@@ -1,5 +1,4 @@
-Bible Retrieval System (BRS) consists of a textual database of the
-Authorized ("King James") Version of the Old and New Testaments, a set
-of libraries for finding and retrieving text, and a program ("bible")
-which uses the libraries to retrieve Bible passages given references
-on the command line or from standard input.
+Textual database of the Authorized ("King James") Version of the Old
+and New Testaments with concordance, and a program ("bible") to
+retrieve and browse passages from the command line. Also includes a
+random verse program.

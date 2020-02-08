@@ -2,23 +2,50 @@
 # $FreeBSD$
 
 PORTNAME=	brs
-PORTVERSION=	4.03
+PORTVERSION=	4.30
 CATEGORIES=	misc
-MASTER_SITES=	http://www.unknown.nu/ports/
-DISTFILES=	bible.data.tar.bz2 bible.tar.bz2
-DIST_SUBDIR=	brs
+MASTER_SITES=	${MASTER_SITE_DEBIAN:C|/%SUBDIR%/|/pool/main/${DISTNAME:C/^(.).*$/\1/}/${DISTNAME:C/_.*//}/|}
+DISTNAME=	bible-kjv_${DISTVERSION}
 
-MAINTAINER=	user@unknown.nu
+MAINTAINER=	andrew@tao11.riddles.org.uk
 COMMENT=	Interactive King James Bible
 
-USES=		tar:bzip2
-NO_WRKSUBDIR=	yes
-ALL_TARGET=
-CFLAGS+=	-Wno-error=return-type
+LICENSE=	GPLv2+
 
-post-patch:
-	${REINPLACE_CMD} 's=%%PREFIX%%=${PREFIX}=g' \
-		${WRKSRC}/brl.c ${WRKSRC}/bible.1
-	${REINPLACE_CMD} '/chown.*/d' ${WRKSRC}/Makefile
+USES=		readline shebangfix perl5
+USE_PERL5=	build
+
+# Upstream makefile does unsafe things with recursive sub-makes for
+# building its build tools. Parallel build randomly fails.
+MAKE_JOBS_UNSAFE=yes
+
+WRKSRC=		${WRKDIR}/${DISTNAME:C/_.*//}
+
+# makeindex2 asks for bash, but contains no shell construct more
+# complex than an if...then, so use sh instead.
+
+bash_CMD=	/bin/sh
+SHEBANG_FILES=	makeindex2 makeconc.pl
+
+# We don't really need all the warning options that the port uses.
+PORT_CFLAGS=	-DDESTLIB=\\\"${DATADIR}\\\"
+
+MAKE_ARGS=	DEST="${PREFIX}" \
+		CFLAGS="${CPPFLAGS} ${CFLAGS} ${PORT_CFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
+
+post-build:
+	${REINPLACE_CMD} 's=/usr/=${PREFIX}/=g' ${WRKSRC}/bible.1
+	cd ${WRKSRC} && \
+		${CC} ${CPPFLAGS} ${CFLAGS} -o randverse debian/randverse.c
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bible ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/randverse ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bible.data ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bible.data.conc ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/bible.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/debian/randverse.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
