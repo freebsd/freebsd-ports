@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libpng16.so:graphics/png
 RUN_DEPENDS=	fldigi:comms/fldigi
 
-USES=		gmake jpeg pkgconfig xorg
+USES=		compiler:c++11-lang gmake jpeg pkgconfig xorg
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 
 GNU_CONFIGURE=	yes
