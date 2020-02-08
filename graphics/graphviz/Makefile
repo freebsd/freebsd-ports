@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	graphviz
-PORTVERSION=	2.42.2
-PORTREVISION=	5
+PORTVERSION=	2.42.3
 CATEGORIES=	graphics tk
-MASTER_SITES=	https://gitlab.com/graphviz/graphviz/-/archive/${PORTVERSION}/
+MASTER_SITES=	https://www2.graphviz.org/Packages/stable/portable_source/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
