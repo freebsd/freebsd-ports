@@ -2,7 +2,7 @@
 
 PORTNAME=	snooze
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3
+DISTVERSION=	0.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -13,7 +13,9 @@ LICENSE=	CC0-1.0
 USE_GITHUB=	yes
 GH_ACCOUNT=	leahneukirchen
 
-MAKE_ARGS=	CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" MANDIR="${PREFIX}/man"
+MAKE_ARGS=	CFLAGS="${CFLAGS}" \
+		MANDIR="${PREFIX}/man" \
+		PREFIX="${PREFIX}"
 
 PLIST_FILES=	bin/snooze \
 		man/man1/snooze.1.gz
@@ -26,6 +28,7 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README.md \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
