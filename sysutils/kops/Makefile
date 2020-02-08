@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kops
-PORTVERSION=	1.15.0
+PORTVERSION=	1.15.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -71,7 +71,7 @@ GH_TUPLE=	\
 		golang:net:cdfb69ac37fc:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:9f3314589c9a:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.2.0:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:fead79001313:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
 		golang:text:e6919f6577db:golang_text/vendor/golang.org/x/text \
 		golang:time:fbb02b2291d2:golang_time/vendor/golang.org/x/time \
 		golang:tools:ab21143f2384:golang_tools/vendor/golang.org/x/tools \
