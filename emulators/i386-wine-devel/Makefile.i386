@@ -3,7 +3,7 @@
 
 PKGNAMEPREFIX=	i386-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT?=	32-bit Microsoft Windows compatibility environment for 64-bit FreeBSD
 
 # Use the wine port to do most of the heavy lifting
