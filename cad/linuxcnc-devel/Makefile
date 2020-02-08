@@ -10,6 +10,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Open Source CNC machine controller
 
+BROKEN=		wrong depends
 DEPRECATED=	Broken, uses EOLed python27
 EXPIRATION_DATE=	2020-02-19
 
