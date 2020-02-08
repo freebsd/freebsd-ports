@@ -11,6 +11,8 @@ COMMENT=	EiskaltDC++ Direct Connect client daemon
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to link
+
 LIB_DEPENDS=	libeiskaltdcpp.so:net-p2p/eiskaltdcpp-lib
 
 MASTERDIR=	${.CURDIR}/../eiskaltdcpp-lib
