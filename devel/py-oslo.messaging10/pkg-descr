@@ -1,0 +1,5 @@
+The Oslo messaging API supports RPC and notifications over a number of
+different messaging transports.
+
+WWW: https://docs.openstack.org/oslo.messaging/latest/
+WWW: https://github.com/openstack/oslo.messaging
