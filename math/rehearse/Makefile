@@ -11,6 +11,8 @@ COMMENT=	Algebraic modeling library in C++ for linear optimization solvers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		depends on conflicting ports
+
 LIB_DEPENDS=	libClp.so:math/clp \
 		libOsi.so:math/osi
 
