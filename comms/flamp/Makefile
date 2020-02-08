@@ -3,7 +3,7 @@
 PORTNAME=	flamp
 DISTVERSION=	2.2.05
 CATEGORIES=	comms hamradio
-MASTER_SITES=	https://iweb.dl.sourceforge.net/project/fldigi/flamp/
+MASTER_SITES=	SF/fldigi/flamp/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Program for the Amateur Multicast Protocol
