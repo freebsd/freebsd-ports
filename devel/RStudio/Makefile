@@ -23,6 +23,7 @@ COMMENT=	Integrated development environment (IDE) for R
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
 BROKEN_i386=	[ERROR] Line 101: Failed to resolve 'org.rstudio.studio.client.workbench.views.vcs.common.diff.LineActionButtonRenderer.GrayResources' via deferred binding
 
 BUILD_DEPENDS=	ant:devel/apache-ant \
