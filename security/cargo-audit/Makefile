@@ -2,8 +2,7 @@
 
 PORTNAME=	cargo-audit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
-PORTREVISION=	1
+DISTVERSION=	0.11.2
 CATEGORIES=	security
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -21,7 +20,7 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	RustSec
 
-CARGO_CRATES=	abscissa_core-0.5.1 \
+CARGO_CRATES=	abscissa_core-0.5.2 \
 		abscissa_derive-0.5.0 \
 		aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
@@ -130,6 +129,7 @@ CARGO_CRATES=	abscissa_core-0.5.1 \
 		once_cell-1.3.1 \
 		openssl-0.10.26 \
 		openssl-probe-0.1.2 \
+		openssl-src-111.6.1+1.1.1d \
 		openssl-sys-0.9.53 \
 		owning_ref-0.4.0 \
 		percent-encoding-2.1.0 \
@@ -158,7 +158,7 @@ CARGO_CRATES=	abscissa_core-0.5.1 \
 		reqwest-0.10.1 \
 		rust-argon2-0.7.0 \
 		rustc-demangle-0.1.16 \
-		rustsec-0.17.1 \
+		rustsec-0.18.0 \
 		rustversion-1.0.1 \
 		ryu-1.0.2 \
 		schannel-0.1.16 \
@@ -170,7 +170,7 @@ CARGO_CRATES=	abscissa_core-0.5.1 \
 		semver-parser-0.9.0 \
 		serde-1.0.104 \
 		serde_derive-1.0.104 \
-		serde_json-1.0.45 \
+		serde_json-1.0.46 \
 		serde_urlencoded-0.6.1 \
 		signal-hook-0.1.12 \
 		signal-hook-registry-1.2.0 \
@@ -190,8 +190,8 @@ CARGO_CRATES=	abscissa_core-0.5.1 \
 		tempfile-3.1.0 \
 		termcolor-1.1.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.9 \
-		thiserror-impl-1.0.9 \
+		thiserror-1.0.10 \
+		thiserror-impl-1.0.10 \
 		thread_local-1.0.1 \
 		time-0.1.42 \
 		tokio-0.2.10 \
