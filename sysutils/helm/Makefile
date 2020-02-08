@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	helm
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -147,7 +147,7 @@ GH_TUPLE=	\
 
 GO_PKGNAME=	k8s.io/helm
 GO_BUILDFLAGS=	-ldflags="-X helm.sh/helm/v3/internal/version.version=v${PORTVERSION} \
-		-X helm.sh/helm/v3/internal/version.gitCommit=19e47ee3283ae98139d98460de796c1be1e3975f"
+		-X helm.sh/helm/v3/internal/version.gitCommit=ac925eb7279f4a6955df663a0128044a8a6b7593"
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	${GO_TARGET:C/.\/cmd/bin/}
