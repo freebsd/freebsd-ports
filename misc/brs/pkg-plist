@@ -1,4 +1,6 @@
 bin/bible
+bin/randverse
 man/man1/bible.1.gz
+man/man1/randverse.1.gz
 %%DATADIR%%/bible.data
 %%DATADIR%%/bible.data.conc
