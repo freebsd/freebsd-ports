@@ -13,13 +13,11 @@ COMMENT=	Library for handling compressed RTF documents
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+USES=		libtool
+
 CONFIGURE_ARGS=	--disable-python-bindings
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool
-
-post-patch:
-	@${REINPLACE_CMD} -e '/VISIBILITY=/ s| -fvisibility=hidden||' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tests/fromrtf ${STAGEDIR}${PREFIX}/bin/fromrtf

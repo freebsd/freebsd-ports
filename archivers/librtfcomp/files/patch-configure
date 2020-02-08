@@ -1,0 +1,11 @@
+--- configure.orig	2013-07-25 13:05:57 UTC
++++ configure
+@@ -11253,7 +11253,7 @@ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+ 
+ if test x"$have_gccvisibility" = x"yes"; then
+-	VISIBILITY="-DHAVE_GCCVISIBILITY -fvisibility=hidden"
++	VISIBILITY="-DHAVE_GCCVISIBILITY"
+ fi
+ 
+ 
