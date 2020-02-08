@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	boolector
-DISTVERSION=	3.1.0
+DISTVERSION=	3.2.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,8 +21,11 @@ GH_ACCOUNT=	Boolector
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
-do-test: # tests assume that python-3.6 is installed # some tests fail: https://github.com/Boolector/boolector/issues/53
-	@${REINPLACE_CMD} 's|#!/usr/bin/env python2|#!${LOCALBASE}/bin/python3.6|' ${WRKSRC}/contrib/btorcheckmodel.py
+do-test: # tests assume that python-3.7 and bash are installed
+	@${FIND} ${WRKDIR} -name "*.py" \
+		| ${XARGS} ${REINPLACE_CMD} -e 's|#!/usr/bin/env python$$|#!${LOCALBASE}/bin/python3.7| ; s|#!/usr/bin/env python3$$|#!${LOCALBASE}/bin/python3.7|'
+	@${FIND} ${WRKDIR} -name "*.sh" \
+		| ${XARGS} ${REINPLACE_CMD} 's|#!/bin/bash$$|#!${LOCALBASE}/bin/bash|'
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
