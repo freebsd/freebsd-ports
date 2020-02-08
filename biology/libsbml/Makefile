@@ -39,7 +39,6 @@ RUBY_BINARY_ALIAS=	swig=swig3.0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; /$${DOCUMENTATION_FILES}/ s|^|#|' ${WRKSRC}/CMakeLists.txt
-#		-e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig|'
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
