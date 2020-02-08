@@ -8,6 +8,8 @@ PKGNAMEPREFIX=	erlang-
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	SMPP library for Erlang
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	erlc:lang/erlang \
 		txt2tags:textproc/txt2tags
 RUN_DEPENDS=	erl:lang/erlang \
