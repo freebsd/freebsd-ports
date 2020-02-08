@@ -131,6 +131,7 @@ share/osinfo/os/centos.org/centos-6.8.xml
 share/osinfo/os/centos.org/centos-6.9.xml
 share/osinfo/os/centos.org/centos-7.0.xml
 share/osinfo/os/centos.org/centos-8.xml
+share/osinfo/os/centos.org/centos-stream-8.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.0.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.1.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.2.xml
@@ -662,6 +663,7 @@ share/osinfo/os/suse.com/sled-12.1.xml
 share/osinfo/os/suse.com/sled-12.2.xml
 share/osinfo/os/suse.com/sled-12.3.xml
 share/osinfo/os/suse.com/sled-12.4.xml
+share/osinfo/os/suse.com/sled-12.5.xml
 share/osinfo/os/suse.com/sled-12.xml
 share/osinfo/os/suse.com/sled-9.xml
 share/osinfo/os/suse.com/sles-10.1.xml
@@ -679,11 +681,14 @@ share/osinfo/os/suse.com/sles-12.1.xml
 share/osinfo/os/suse.com/sles-12.2.xml
 share/osinfo/os/suse.com/sles-12.3.xml
 share/osinfo/os/suse.com/sles-12.4.xml
+share/osinfo/os/suse.com/sles-12.5.xml
 share/osinfo/os/suse.com/sles-12.xml
 share/osinfo/os/suse.com/sles-9.xml
 share/osinfo/os/system76.com/popos-17.10.xml
 share/osinfo/os/system76.com/popos-18.04.xml
 share/osinfo/os/system76.com/popos-18.10.xml
+share/osinfo/os/system76.com/popos-19.04.xml
+share/osinfo/os/system76.com/popos-19.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-10.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-10.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-11.04.xml
