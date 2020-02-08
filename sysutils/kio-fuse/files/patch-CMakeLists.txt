@@ -1,6 +1,20 @@
---- CMakeLists.txt.orig	2020-01-12 09:41:08 UTC
+--- CMakeLists.txt.orig	2019-12-21 15:13:04 UTC
 +++ CMakeLists.txt
-@@ -58,7 +58,9 @@ target_compile_definitions(kio-fuse PRIVATE FUSE_USE_V
+@@ -22,6 +22,7 @@ include(ECMQtDeclareLoggingCategory)
+ include(ECMSetupVersion)
+ 
+ find_package(PkgConfig REQUIRED)
++find_package(Boost)
+ find_package(Qt5 ${Qt5_MIN_VERSION} COMPONENTS Core REQUIRED)
+ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+ 	CoreAddons
+@@ -53,12 +54,14 @@ ecm_qt_declare_logging_category(KIOFUSE_SOURCES
+ 	DEFAULT_SEVERITY Warning)
+ 
+ add_executable(kio-fuse ${KIOFUSE_SOURCES})
+-target_include_directories(kio-fuse PRIVATE ${FUSE3_INCLUDE_DIRS})
++target_include_directories(kio-fuse PRIVATE ${FUSE3_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+ target_compile_definitions(kio-fuse PRIVATE FUSE_USE_VERSION=31 ${FUSE3_CFLAGS_OTHER})
  target_link_options(kio-fuse PRIVATE ${FUSE3_LDFLAGS})
  target_link_libraries(kio-fuse PRIVATE Qt5::Core KF5::KIOCore ${FUSE3_LIBRARIES})
  install(TARGETS kio-fuse DESTINATION ${KDE_INSTALL_FULL_LIBEXECDIR})
