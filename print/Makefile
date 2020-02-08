@@ -17,6 +17,7 @@
     SUBDIR += bibcursed
     SUBDIR += biblio-py
     SUBDIR += bibview
+    SUBDIR += brlaser
     SUBDIR += c2ps
     SUBDIR += catdvi
     SUBDIR += cdlabelgen
