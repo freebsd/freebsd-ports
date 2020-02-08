@@ -8,6 +8,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python interface to the Gamin file monitoring system
 
+BROKEN=		fails to build
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-08
+
 MASTERDIR=	${.CURDIR}/../gamin
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
