@@ -38,6 +38,7 @@
 %%DATADIR%%/TangutSources.txt
 %%DATADIR%%/USourceData.txt
 %%DATADIR%%/USourceGlyphs.pdf
+%%DATADIR%%/USourceRSChart.pdf
 %%DATADIR%%/UnicodeData.txt
 %%HAN%%%%DATADIR%%/Unihan.zip
 %%HAN%%%%DATADIR%%/Unihan_DictionaryIndices.txt
