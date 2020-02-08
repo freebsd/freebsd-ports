@@ -48,6 +48,7 @@
     SUBDIR += flcluster
     SUBDIR += fldigi
     SUBDIR += fllog
+    SUBDIR += flmsg
     SUBDIR += flrig
     SUBDIR += flwrap
     SUBDIR += freedv
