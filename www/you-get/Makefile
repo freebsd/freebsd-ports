@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	you-get
-PORTVERSION=	0.4.1388
+PORTVERSION=	0.4.1403
 CATEGORIES=	www
 MASTER_SITES=	CHEESESHOP
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		python:3.4+
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes
