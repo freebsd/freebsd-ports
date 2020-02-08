@@ -3,7 +3,7 @@
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	2.4.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/9363a4a1e121344ae98f22b55fb28623cf0f6038/panels/datetime/data/:tzpng
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -33,10 +33,10 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libclutter-gst-2.0.so:multimedia/clutter-gst \
 		libcinnamon-menu-3.so:x11/cinnamon-menus \
 		libgjs.so:lang/gjs
-RUN_DEPENDS=	py*-dbus>=0:devel/py-dbus \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
 		cinnamon-settings-daemon>=0:sysutils/cinnamon-settings-daemon \
 		ca_root_nss>=0:security/ca_root_nss \
-		py*-lxml>=0:devel/py-lxml
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		autoreconf gettext gmake gnome libtool pathfix \
 		python:2.7 pkgconfig xorg
