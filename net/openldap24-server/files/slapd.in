@@ -112,7 +112,7 @@ start_precmd()
   esac
   echo -n "Performing sanity check on slap configuration: "
 
-  if ${command} -Tt >/dev/null 2>&1; then
+  if ${command} -Tt -u >/dev/null 2>&1; then
     echo "OK"
   else
     echo "FAILED"
