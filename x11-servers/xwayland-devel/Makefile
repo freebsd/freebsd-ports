@@ -27,7 +27,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 
 CONFLICTS_INSTALL=	${PORTNAME}
 
-USES=		gl meson pkgconfig xorg
+USES=		compiler:c11 gl meson pkgconfig xorg
 USE_GITLAB=	yes
 USE_GL=		gbm gl
 USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
