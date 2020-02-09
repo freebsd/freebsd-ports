@@ -5,12 +5,12 @@
  #endif
  
 -#if defined(__powerpc__) || defined(__ppc__)
-+#if (defined(__powerpc__) || defined(__ppc__)) && !defined(__clang__)
++#if (defined(__powerpc__) || defined(__ppc__)) && defined(__GLIBC__)
  #include <sys/platform/ppc.h>
 +
  #endif
  
-+#if (defined(__powerpc__) || defined(__ppc__)) && defined(__clang__) && defined(__FreeBSD__)
++#if (defined(__powerpc__) || defined(__ppc__)) && defined(__FreeBSD__)
 +#include <sys/types.h>
 +#include <sys/sysctl.h>
 +#endif
