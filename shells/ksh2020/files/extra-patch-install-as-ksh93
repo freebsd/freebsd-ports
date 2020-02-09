@@ -1,0 +1,25 @@
+--- src/cmd/ksh93/meson.build.orig	2020-01-30 18:34:35.000000000 -0800
++++ src/cmd/ksh93/meson.build	2020-01-30 20:47:13.410465000 -0800
+@@ -26,7 +26,7 @@
+                  dependencies: [libm_dep, libexecinfo_dep, libdl_dep, libsocket_dep, libnsl_dep],
+                  install: get_option('default_library') == 'shared')
+ 
+-ksh93_exe = executable('ksh', ['sh/pmain.c'], c_args: shared_c_args,
++ksh93_exe = executable('ksh93', ['sh/pmain.c'], c_args: shared_c_args,
+     include_directories: [configuration_incdir, ksh93_incdir],
+     link_with: [libksh, libast, libcmd, libdll],
+     dependencies: [libm_dep, libexecinfo_dep, libdl_dep],
+@@ -34,11 +34,11 @@
+ 
+ # Create a symlink for a restricted version of the ksh shell.
+ create_rksh_symlink = find_program(source_dir + '/scripts/create_rksh_symlink')
+-rksh93_exe = custom_target('rksh', input: ksh93_exe, output: 'rksh', build_by_default: true,
++rksh93_exe = custom_target('rksh', input: ksh93_exe, output: 'rksh93', build_by_default: true,
+     install: true, install_mode: 'rwxr-xr-x', install_dir: install_prefix + '/bin',
+     command: [create_rksh_symlink, '@INPUT@'])
+ 
+-shcomp_exe = executable('shcomp', ['sh/shcomp.c'], c_args: shared_c_args,
++shcomp_exe = executable('shcomp93', ['sh/shcomp.c'], c_args: shared_c_args,
+     include_directories: [configuration_incdir, ksh93_incdir],
+     link_with: [libksh, libast, libcmd, libdll],
+     dependencies: [libm_dep, libexecinfo_dep, libdl_dep, libsocket_dep, libnsl_dep],
