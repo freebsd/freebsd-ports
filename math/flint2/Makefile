@@ -4,17 +4,15 @@ PORTNAME=	flint2
 DISTVERSION=	g20190210
 CATEGORIES=	math
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	a143883797f27f853332adbee09b76f48b5fbfaf.patch:-p1 \
+		1266c04004a846221491cb005fc8ba45cd3c75f4.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast library for number theory
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_aarch64=		fails to compile: invokes x86 assembler
-BROKEN_armv6=		fails to compile: invokes x86 assembler
-BROKEN_armv7=		fails to compile: invokes x86 assembler
-BROKEN_mips=		fails to compile: invokes x86 assembler
-BROKEN_mips64=		fails to compile: invokes x86 assembler
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
