@@ -3,6 +3,7 @@
 PORTNAME=	ghq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -31,7 +32,7 @@ GH_TUPLE=	Songmu:gitconfig:v0.0.3:songmu_gitconfig/vendor/github.com/Songmu/gitc
 		urfave:cli:v2.1.1:urfave_cli/vendor/github.com/urfave/cli/v2
 
 PLIST_FILES=	bin/ghq \
-		etc/bash-completion.d/_ghq \
+		etc/bash_completion.d/_ghq \
 		share/zsh/site-functions/_ghq
 
 OPTIONS_DEFINE=		MANPAGES
@@ -44,9 +45,9 @@ post-build-MANPAGES-on:
 	cd ${WRKSRC} && asciidoctor -b manpage -d manpage -o ghq.1 README.adoc
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash-completion.d
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/misc/bash/_ghq \
-		${STAGEDIR}${PREFIX}/etc/bash-completion.d
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/misc/zsh/_ghq \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
