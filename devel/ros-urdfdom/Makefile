@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros-urdfdom
-DISTVERSION=	1.0.3
-PORTREVISION=	1
+DISTVERSION=	1.0.4
 CATEGORIES=	devel
 
 MAINTAINER=	trueos@norwegianrockcat.com
