@@ -3,7 +3,7 @@
 PORTNAME=	zola
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -344,7 +344,7 @@ CARGO_CRATES=	actix-codec-0.1.2 \
 		yaml-rust-0.4.3
 
 PLIST_FILES=	bin/zola \
-		etc/bash-completion.d/zola.bash \
+		etc/bash_completion.d/zola.bash \
 		share/fish/completions/zola.fish \
 		share/zsh/site-functions/_zola
 PORTDOCS=	*
@@ -353,11 +353,11 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/zola
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash-completion.d \
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/fish/completions \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/completions/zola.bash \
-		${STAGEDIR}${PREFIX}/etc/bash-completion.d
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/completions/zola.fish \
 		${STAGEDIR}${PREFIX}/share/fish/completions
 	${INSTALL_DATA} ${WRKSRC}/completions/_zola \
