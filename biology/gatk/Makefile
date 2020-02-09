@@ -2,6 +2,7 @@
 
 PORTNAME=	gatk
 DISTVERSION=	4.1.4.1
+PORTREVISION=	1
 CATEGORIES=	biology java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -11,7 +12,7 @@ COMMENT=	Variant discovery in high-throughput sequencing data
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BUILD_DEPENDS=	gradle5:devel/gradle5
+BUILD_DEPENDS=	gradle:devel/gradle
 
 USES=		gettext-runtime
 USE_GITHUB=	yes
@@ -23,7 +24,7 @@ SUB_LIST=	PORTVERSION=${PORTVERSION} JAVA=${JAVA}
 
 NO_ARCH=	yes
 
-DEPS_CACHE_DIR=	/tmp # should be ${WRKDIR}, but workaround for the gradle bug that dependency cache is not relocable: https://github.com/gradle/gradle/issues/1338
+DEPS_CACHE_DIR=	${WRKDIR}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		${JAVAJARDIR}/GenomeAnalysisTK-${PORTVERSION}.jar
@@ -52,7 +53,7 @@ post-extract: # need a separate extract step because the cache is in /tmp, and n
 
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle5 \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle \
 		--gradle-user-home ${DEPS_CACHE_DIR}/gradle-${PORTNAME} --project-cache-dir ${DEPS_CACHE_DIR}/gradle-${PORTNAME} \
 		${GRADLE_ARGS} --build-cache localJar
 
