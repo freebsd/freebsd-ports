@@ -3,7 +3,7 @@
 
 PORTNAME=	higan
 PORTVERSION=	106
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators games
 MASTER_SITES=	http://download.byuu.org/ \
 		http://www.cyberbotx.com/higan/
@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}-source
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Nintendo multi-system emulator
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
