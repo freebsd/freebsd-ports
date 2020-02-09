@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcups.so:print/cups \
 		libcupsimage.so:print/cups
 
-USES=		cmake:insource,noninja
+USES=		cmake:insource,noninja compiler:c++11-lang
 
 USE_GITHUB=	yes
 
