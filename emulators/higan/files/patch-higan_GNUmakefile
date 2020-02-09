@@ -1,0 +1,10 @@
+--- higan/GNUmakefile.orig	2020-02-08 23:13:45 UTC
++++ higan/GNUmakefile
+@@ -26,7 +26,6 @@ else ifneq ($(filter $(platform),linux bsd),)
+   flags += -fopenmp
+   link += -fopenmp
+   ifeq ($(binary),application)
+-    flags += -march=native
+     link += -Wl,-export-dynamic
+     link += -lX11 -lXext
+   else ifeq ($(binary),library)
