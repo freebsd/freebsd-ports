@@ -15,6 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/wayland-protocols.pc:graphics/wayl
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libinput.so:x11/libinput
 
+CONFLICTS_INSTALL=	${PORTNAME}-devel
+
 MASTERDIR=	${.CURDIR}/../xorg-server
 DESCR=		${.CURDIR}/pkg-descr
 DISTINFO_FILE=	${.CURDIR}/distinfo
