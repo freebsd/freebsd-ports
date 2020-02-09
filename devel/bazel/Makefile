@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bazel
-DISTVERSION=	2.0.0
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	devel java
 MASTER_SITES=	https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=	bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -23,9 +22,9 @@ BROKEN_FreeBSD_12_powerpc64=	fails to compile: Action failed to execute: java.io
 BUILD_DEPENDS=	bash:shells/bash \
 		zip:archivers/zip
 
-CONFLICTS_INSTALL=	bazel029
-
 USES=		python:3.3+ shebangfix zip:infozip
+
+CONFLICTS_INSTALL=	bazel029
 
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
