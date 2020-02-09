@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dri \
-		wayland-protocols>=1.18:graphics/wayland-protocols
+		wayland-protocols-devel>=1.18:graphics/wayland-protocols-devel
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy \
 		libwayland-client.so:graphics/wayland
