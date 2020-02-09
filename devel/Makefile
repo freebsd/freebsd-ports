@@ -4147,6 +4147,7 @@
     SUBDIR += py-azure-multiapi-storage
     SUBDIR += py-azure-storage-blob
     SUBDIR += py-azure-storage-common
+    SUBDIR += py-b2sdk
     SUBDIR += py-babel
     SUBDIR += py-babelfish
     SUBDIR += py-backcall
