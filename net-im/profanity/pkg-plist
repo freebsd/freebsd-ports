@@ -10,6 +10,7 @@ man/man1/profanity.1.gz
 %%DATADIR%%/themes/boothj5
 %%DATADIR%%/themes/boothj5_laptop
 %%DATADIR%%/themes/boothj5_slack
+%%DATADIR%%/themes/gruvbox
 %%DATADIR%%/themes/hacker
 %%DATADIR%%/themes/headache
 %%DATADIR%%/themes/joker
@@ -23,5 +24,7 @@ man/man1/profanity.1.gz
 %%DATADIR%%/themes/mono
 %%DATADIR%%/themes/original_bright
 %%DATADIR%%/themes/simple
+%%DATADIR%%/themes/solarized-dark
+%%DATADIR%%/themes/solarized-light
 %%DATADIR%%/icons/proIcon.png
 %%DATADIR%%/icons/proIconMsg.png

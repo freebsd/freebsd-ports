@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	profanity
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	net-im
 
 MAINTAINER=	arved@FreeBSD.org
@@ -30,7 +29,8 @@ GH_PROJECT=	profanity
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-otr --enable-python-plugins --enable-c-plugins \
-		--enable-pgp --enable-icons=no --with-xscreensaver=no \
+		--enable-pgp --enable-icons-and-clipboard=no \
+		--with-xscreensaver=no \
 		--enable-omemo
 CONFIGURE_ENV=	LIBS="${CFLAGS} -lcrypto"
 INSTALL_TARGET=	install-strip
