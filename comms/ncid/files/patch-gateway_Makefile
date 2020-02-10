@@ -1,0 +1,11 @@
+--- gateway/Makefile.orig	2020-02-10 15:16:04 UTC
++++ gateway/Makefile
+@@ -27,7 +27,7 @@ prefix      = /usr
+ prefix2     =
+ prefix3     =
+ 
+-BASH    = /bin/bash
++BASH	    = /usr/local/bin/bash
+ 
+ BIN         = $(prefix)/bin
+ SBIN        = $(prefix)/sbin

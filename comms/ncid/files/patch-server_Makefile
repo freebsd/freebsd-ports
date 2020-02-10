@@ -1,0 +1,11 @@
+--- server/Makefile.orig	2020-02-10 15:16:13 UTC
++++ server/Makefile
+@@ -23,7 +23,7 @@ prefix3      =
+ settag       = __NONE__
+ setname      = __NONE__
+ 
+-BASH         = /bin/bash
++BASH         = /usr/local/bin/bash
+ 
+ BIN          = $(prefix)/bin
+ SBIN         = $(prefix)/sbin
