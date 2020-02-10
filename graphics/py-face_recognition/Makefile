@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	face_recognition
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	graphics python devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,5 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.0:devel/py-click@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
