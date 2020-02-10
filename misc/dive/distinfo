@@ -1,6 +1,6 @@
-TIMESTAMP = 1577864246
-SHA256 (wagoodman-dive-v0.9.1_GH0.tar.gz) = 33f34c3d49494facffe043c551cf100d714e7acc2ce7739260fb3879e4732dec
-SIZE (wagoodman-dive-v0.9.1_GH0.tar.gz) = 2858272
+TIMESTAMP = 1581319792
+SHA256 (wagoodman-dive-v0.9.2_GH0.tar.gz) = 1f84bf3d2ba04986827ff5b1a66920f030f7b4788c927c5e152ff5bcf49f9770
+SIZE (wagoodman-dive-v0.9.2_GH0.tar.gz) = 2866842
 SHA256 (Microsoft-go-winio-v0.4.14_GH0.tar.gz) = 379082e49fb22dfdd9a0ff57f8a6d6d7e97ba30fdc0159ef2f38dc4caa79fd8e
 SIZE (Microsoft-go-winio-v0.4.14_GH0.tar.gz) = 118053
 SHA256 (cespare-xxhash-v1.1.0_GH0.tar.gz) = 9418be390574092f0ca989b9ae2f5450270ead8125a635a100850b28c8c9c495
