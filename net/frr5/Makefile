@@ -2,8 +2,8 @@
 
 PORTNAME=	frr
 PORTVERSION=	5.0.2
-PORTREVISION=	2
 DISTVERSIONPREFIX=	frr-
+PORTREVISION=	3
 CATEGORIES=	net
 PKGNAMESUFFIX=	5
 
@@ -13,13 +13,14 @@ COMMENT=	IP routing protocol suite including BGP, IS-IS, OSPF and RIP
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
+		makeinfo python:2.7,build readline
+
 BUILD_DEPENDS=	gawk:lang/gawk
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 CONFLICTS=	openbgpd openospfd zebra quagga frr6 frr7
 
-USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
-		makeinfo python:2.7,build readline
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
