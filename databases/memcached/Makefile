@@ -45,6 +45,8 @@ OPTIONS_EXCLUDE_i386=		DTRACE
 OPTIONS_EXCLUDE_aarch64=	DTRACE
 OPTIONS_EXCLUDE_armv6=		DTRACE
 OPTIONS_EXCLUDE_armv7=		DTRACE
+# /tmp/conftest-4d18ad.s:2: Error: unknown pseudo-op: `.abiversion'
+OPTIONS_EXCLUDE_powerpc64=	DTRACE
 
 DTRACE_DESC=	Enable dtrace probes
 SASL_DESC=	Enable SASL Authentication
