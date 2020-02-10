@@ -7,7 +7,7 @@ CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	-daemon
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	EiskaltDC++ Direct Connect client daemon
+COMMENT=	EiskaltDC++ client daemon
 
 LICENSE=	GPLv3
 
