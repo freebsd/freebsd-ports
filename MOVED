@@ -14241,3 +14241,4 @@ www/py-collective.templateengines||2020-02-06|Has expired: Outdated, uses EOLed 
 www/zope213||2020-02-06|Has expired: Outdated, uses EOLed python27
 misc/py-glance||2020-02-06|Has expired: Outdated, uses EOLed python27
 devel/py-memory_profiler|devel/py-memory-profiler|2020-02-08|Rename to match upstream naming
+graphics/wayland-protocols-devel|graphics/wayland-protocols|2020-02-10|Merged into master port

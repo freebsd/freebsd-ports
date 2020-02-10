@@ -1,20 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	wayland-protocols
-PORTVERSION?=	1.17
-PORTREVISION?=	0
+PORTVERSION=	1.18
 CATEGORIES=	graphics wayland
 MASTER_SITES=	https://wayland.freedesktop.org/releases/
 
-MAINTAINER?=	x11@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Wayland protocols
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	wayland-scanner:graphics/wayland
-
-CONFLICTS_INSTALL?=	${PORTNAME}-devel
 
 USES=		tar:xz
 NO_ARCH=	yes
