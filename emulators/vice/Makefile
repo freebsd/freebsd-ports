@@ -98,6 +98,13 @@ pre-configure:
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in
 .endif
+.if ${ARCH} == "i386"
+	${REINPLACE_CMD} \
+		-e 's|^@HAVE_BSD_FREE_FALSE@|@HAVE_BSD_FREE2_TRUE@|' \
+		-e 's|^@HAVE_BSD_FREE_TRUE@|@HAVE_BSD_FREE_FALSE@|' \
+		-e 's|^@HAVE_BSD_FREE2_TRUE@|@HAVE_BSD_FREE_TRUE@|' \
+		${WRKSRC}/src/Makefile.in
+.endif
 
 pre-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
