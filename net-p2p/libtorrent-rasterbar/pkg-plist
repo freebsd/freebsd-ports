@@ -35,6 +35,7 @@ include/libtorrent/aux_/io.hpp
 include/libtorrent/aux_/ip_notifier.hpp
 include/libtorrent/aux_/listen_socket_handle.hpp
 include/libtorrent/aux_/lsd.hpp
+include/libtorrent/aux_/keepalive.hpp
 include/libtorrent/aux_/merkle.hpp
 include/libtorrent/aux_/noexcept_movable.hpp
 include/libtorrent/aux_/numeric_cast.hpp
@@ -248,7 +249,7 @@ lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarConfigVersion.cmake
 lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets.cmake
 lib/libtorrent-rasterbar.so
-lib/libtorrent-rasterbar.so.1.2.3
+lib/libtorrent-rasterbar.so.1.2.4
 lib/libtorrent-rasterbar.so.%%SHLIB_VER%%
 libdata/pkgconfig/libtorrent-rasterbar.pc
 share/cmake/Modules/FindLibtorrentRasterbar.cmake
