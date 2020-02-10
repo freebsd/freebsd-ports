@@ -3,6 +3,7 @@
 
 PORTNAME=	bird
 DISTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 PKGNAMESUFFIX=	2
