@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 
-# PROVIDE: frr
+# PROVIDE: frr dynamicrouting
 # REQUIRE: netif routing
 # KEYWORD: nojailvnet shutdown
 
