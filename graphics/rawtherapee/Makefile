@@ -192,7 +192,7 @@ post-install:
 		  /usr/bin/time ${SETENV} ${_env} ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli \
 			-o "$$TMP" -q -s -Y -tz -c ${TESTIMAGES} ; echo $$? >&3 ; \
 		fi ; \
-		ls -Rlbai "${TESTIMAGES}" "$${TMP}"; \
+		ls -Rlbai "${TESTIMAGES}" "$${TMP}" || :; \
 	${PRINTF} "%s" "$$expect" >&4 ) 3>${WRKDIR}/selftest.exitcodes 4>${WRKDIR}/selftest.expect ; \
 	${PRINTF} "$$(cat ${WRKDIR}/selftest.expect)" | cmp - ${WRKDIR}/selftest.exitcodes || { ${ECHO_CMD} '===> !!! SELF-TEST FAILED !!! <===' ; exit 1 ; }
 
