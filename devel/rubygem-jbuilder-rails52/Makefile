@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jbuilder
-PORTVERSION=	2.9.1
+PORTVERSION=	2.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails52
@@ -13,7 +13,7 @@ COMMENT=	Create JSON structures via a Builder-style DSL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport52>=4.2.0:devel/rubygem-activesupport52
+RUN_DEPENDS=	rubygem-activesupport52>=5.0.0:devel/rubygem-activesupport52
 
 USES=		gem
 USE_RUBY=	yes
