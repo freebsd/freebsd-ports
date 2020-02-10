@@ -22,6 +22,7 @@ include/guacamole/plugin-constants.h
 include/guacamole/plugin.h
 include/guacamole/pool-types.h
 include/guacamole/pool.h
+include/guacamole/protocol-constants.h
 include/guacamole/protocol-types.h
 include/guacamole/protocol.h
 include/guacamole/socket-constants.h
@@ -31,6 +32,7 @@ include/guacamole/socket-types.h
 include/guacamole/socket.h
 include/guacamole/stream-types.h
 include/guacamole/stream.h
+include/guacamole/string.h
 include/guacamole/timestamp-types.h
 include/guacamole/timestamp.h
 include/guacamole/unicode.h
@@ -38,10 +40,12 @@ include/guacamole/user-constants.h
 include/guacamole/user-fntypes.h
 include/guacamole/user-types.h
 include/guacamole/user.h
-%%RDP%%lib/freerdp/guacai-client.so
-%%RDP%%lib/freerdp/guacdr-client.so
-%%RDP%%lib/freerdp/guacsnd-client.so
-%%RDP%%lib/freerdp/guacsvc-client.so
+%%RDP%%lib/freerdp2/libguac-common-svc-client.so
+%%RDP%%lib/freerdp2/libguacai-client.so
+%%KUBERNETES%%lib/libguac-client-kubernetes.a
+%%KUBERNETES%%lib/libguac-client-kubernetes.so
+%%KUBERNETES%%lib/libguac-client-kubernetes.so.0
+%%KUBERNETES%%lib/libguac-client-kubernetes.so.0.0.0
 %%RDP%%lib/libguac-client-rdp.a
 %%RDP%%lib/libguac-client-rdp.so
 %%RDP%%lib/libguac-client-rdp.so.0
@@ -56,8 +60,8 @@ include/guacamole/user.h
 %%VNC%%lib/libguac-client-vnc.so.0.0.0
 lib/libguac.a
 lib/libguac.so
-lib/libguac.so.16
-lib/libguac.so.16.0.0
+lib/libguac.so.17
+lib/libguac.so.17.0.0
 %%GUACENC%%man/man1/guacenc.1.gz
 %%GUACLOG%%man/man1/guaclog.1.gz
 man/man5/guacd.conf.5.gz
