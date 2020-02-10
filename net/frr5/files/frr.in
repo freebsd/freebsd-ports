@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 
-# PROVIDE: frr
+# PROVIDE: frr dynamicrouting
 # REQUIRE: netif routing
 # KEYWORD: nojailvnet shutdown
 
@@ -92,12 +92,16 @@ do_cmd()
 	frr_cmd=$1
 	for daemon in ${frr_daemons}; do
 	    command=%%PREFIX%%/sbin/${daemon}
-	    required_files=%%ETCDIR%%/${daemon}.conf
+	    if checkyesno frr_vtysh_boot; then
+                required_files=%%ETCDIR%%/frr.conf
+	    else
+	        required_files=%%ETCDIR%%/${daemon}.conf
+	    fi
 	    pidfile=/var/run/frr/${daemon}.pid
 	    if [ ${frr_cmd} = "restart" ] || [ ${frr_cmd} = "start" ]; then
 		check_config
 	    fi
-	    if [ ${frr_cmd} = "start" ] && ! [ -f ${required_files} ]; then
+	    if [ ${frr_cmd} = "start" ] && ! [ -f ${required_files} ] && ! checkyesno frr_vtysh_boot; then
 			continue
 	    fi
 	    if [ ${frr_cmd} = "stop" ] && [ -z $(check_process ${command}) ]; then
