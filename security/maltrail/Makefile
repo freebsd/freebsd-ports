@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	maltrail
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	security python
 
 MAINTAINER=	m.muenz@gmail.com
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pcapy>=0:net/py-pcapy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		python:2.7,run
+USES=		python:run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stamparm
