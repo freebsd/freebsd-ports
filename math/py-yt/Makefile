@@ -3,7 +3,7 @@
 
 PORTNAME=	yt
 DISTVERSION=	3.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ USES=		dos2unix localbase python
 USE_PYTHON=	distutils cython autoplist concurrent
 
 OPTIONS_DEFINE=	EMBREE
-OPTIONS_DEFAULT=	EMBREE
+#OPTIONS_DEFAULT=	EMBREE
 EMBREE_DESC=	Embree ray-tracing engine support
 
 EMBREE_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyembree>0:graphics/py-pyembree@${PY_FLAVOR}

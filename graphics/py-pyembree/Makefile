@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python wrapper for Embree
 
+BROKEN=		outdated version, incompatible with Embree 3 API
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
