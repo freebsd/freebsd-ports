@@ -34,6 +34,7 @@
     SUBDIR += freebsd-8k-wallpapers
     SUBDIR += freebsd-8k-wallpapers-kde
     SUBDIR += fvwm-themes
+    SUBDIR += gnome-icons-gartoon-redux
     SUBDIR += gnome-backgrounds
     SUBDIR += gnome-icon-theme-symbolic
     SUBDIR += gnome-icons
