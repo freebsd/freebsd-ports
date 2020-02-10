@@ -200,6 +200,7 @@
     SUBDIR += crlibm
     SUBDIR += cryptominisat
     SUBDIR += csdp
+    SUBDIR += ctl-sat
     SUBDIR += curv
     SUBDIR += cvc3
     SUBDIR += cvc4
