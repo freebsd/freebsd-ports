@@ -7,7 +7,10 @@ share/icons/hicolor/128x128/apps/rawtherapee.png
 share/icons/hicolor/16x16/apps/rawtherapee.png
 share/icons/hicolor/24x24/apps/rawtherapee.png
 share/icons/hicolor/256x256/apps/rawtherapee.png
+share/icons/hicolor/32x32/apps/rawtherapee.png
+share/icons/hicolor/64x64/apps/rawtherapee.png
 share/icons/hicolor/48x48/apps/rawtherapee.png
+share/icons/hicolor/scalable/apps/rawtherapee.svg
 share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/AboutThisBuild.txt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
@@ -33,6 +36,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Canon EOS 7D Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 7D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS D60.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS RP.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS-1D Mark III.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G10.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G12.dcp
@@ -46,7 +50,10 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/FUJIFILM X-Pro2.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-S1.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-T1.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-T2.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-T10.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-T20.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-T30.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X100S.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X100T.dcp
 %%DATADIR%%/dcpprofiles/Leaf Aptus 75.dcp
@@ -92,18 +99,22 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Panasonic DMC-G5.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GH1.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GH2.dcp
+%%DATADIR%%/dcpprofiles/Panasonic DMC-GX7.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GX85.dcp
 %%DATADIR%%/dcpprofiles/PENTAX K-5 II.dcp
 %%DATADIR%%/dcpprofiles/PENTAX K-5.dcp
 %%DATADIR%%/dcpprofiles/Pentax K-r.dcp
 %%DATADIR%%/dcpprofiles/PENTAX K10D.dcp
 %%DATADIR%%/dcpprofiles/Pentax K200D.dcp
+%%DATADIR%%/dcpprofiles/RICOH GR III.dcp
 %%DATADIR%%/dcpprofiles/RICOH PENTAX K-1.dcp
 %%DATADIR%%/dcpprofiles/RICOH PENTAX K-3.dcp
 %%DATADIR%%/dcpprofiles/SONY DSLR-A580.dcp
 %%DATADIR%%/dcpprofiles/Sony DSLR-A700.dcp
 %%DATADIR%%/dcpprofiles/Sony DSLR-A900.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-6000.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-6300.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-6500.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7M2.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7M3.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7RM3.dcp
@@ -367,6 +378,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/images/preferences.svg
 %%DATADIR%%/images/profile-filled.svg
 %%DATADIR%%/images/profile-partial.svg
+%%DATADIR%%/images/questionmark.svg
 %%DATADIR%%/images/rawtherapee-logo-128.png
 %%DATADIR%%/images/rawtherapee-logo-16.png
 %%DATADIR%%/images/rawtherapee-logo-24.png
@@ -400,6 +412,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/images/saved-no-small.svg
 %%DATADIR%%/images/saved-yes-small.svg
 %%DATADIR%%/images/splash.svg
+%%DATADIR%%/images/splash_template.svg
 %%DATADIR%%/images/square-toggle-black-off-narrow.svg
 %%DATADIR%%/images/square-toggle-black-on-narrow.svg
 %%DATADIR%%/images/square-toggle-blue-off-narrow.svg
@@ -497,6 +510,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/languages/README
 %%DATADIR%%/languages/Russian
 %%DATADIR%%/languages/Serbian (Cyrilic Characters)
+%%DATADIR%%/languages/Slovenian
 %%DATADIR%%/languages/Swedish
 %%DATADIR%%/options
 %%DATADIR%%/profiles/Auto-Matched Curve - ISO High.pp3
