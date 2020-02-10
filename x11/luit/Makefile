@@ -2,6 +2,7 @@
 
 PORTNAME=	luit
 PORTVERSION=	20190106
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.invisible-island.net/luit/
 
@@ -12,6 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/share/fonts/encodings/encodings.dir:x11-fonts/encodings
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		iconv localbase:ldflags tar:tgz pkgconfig xorg
 USE_XORG=	ice x11 xt
