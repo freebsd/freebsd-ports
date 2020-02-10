@@ -22,7 +22,7 @@ LIB_DEPENDS=	libdmlc.so:devel/dmlc-core \
 		libomp.so:devel/openmp \
 		libopenblas.so:math/openblas
 
-USES=		cmake localbase:ldflags
+USES=		cmake compiler:c++11-lang localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
 GH_PROJECT=	incubator-mxnet
