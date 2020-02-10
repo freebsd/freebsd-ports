@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncid
-PORTVERSION=	1.10.1
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	comms
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -19,16 +18,22 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c11 gmake perl5 tk shebangfix
+USE_GCC=	yes
 
-SHEBANG_FILES=	extensions/*.sh \
+SHEBANG_FILES=	client/ncid.sh \
+		desktop/xml \
+		doc/mk* \
+		extensions/*.sh \
 		gateway/*.pl gateway/*.sh \
 		logrotate/*.sh \
+		man/mk-pdf \
 		modules/*.sh \
 		setup/*.sh \
 		tools/*.pl tools/*.sh
 
 ALL_TARGET=	local
-MAKE_ARGS=	WISH=${WISH} TCLSH=${TCLSH}
+MAKE_ARGS=	WISH=${WISH} TCLSH=${TCLSH} \
+		CC=${CC} HOSTCC=${CC} AR=${AR}
 INSTALL_TARGET=	freebsd-install
 
 SUB_FILES=	pkg-message
@@ -118,10 +123,13 @@ ncid2ncid ncidd obi2ncid rn2ncid sip2ncid wc2ncid xdmf2ncid yac2ncid
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/recordings
 	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/FreeBSD/README.FreeBSD ${STAGEDIR}${DOCSDIR}
-.for l in README.recordings CallingDeposit.pvf CannotBeCompleted.pvf DisconnectedNotInService.pvf NotInService.pvf
+	${INSTALL_DATA} ${WRKSRC}/FreeBSD/README-FreeBSD ${STAGEDIR}${DOCSDIR}
+.for l in README-recordings CallingDeposit.pvf CannotBeCompleted.pvf DisconnectedNotInService.pvf NotInService.pvf
 	${INSTALL_DATA} ${WRKSRC}/recordings/${l} ${STAGEDIR}${DOCSDIR}/recordings
 .endfor
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/bin/cidupdate
 
 post-install-LOGROTATE-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/ncid/sys

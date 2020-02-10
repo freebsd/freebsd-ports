@@ -47,6 +47,7 @@ man/man1/cidalias.1.gz
 man/man1/cidcall.1.gz
 man/man1/cidupdate.1.gz
 man/man1/email2ncid.1.gz
+man/man1/get-areacodes-list.1.gz
 man/man1/get-fcc-list.1.gz
 man/man1/hangup-calls.1.gz
 man/man1/hangup-closed-skel.1.gz
@@ -112,6 +113,7 @@ sbin/sip2ncid
 %%PORTDOCS%%%%DOCSDIR%%/Devices.md
 %%PORTDOCS%%%%DOCSDIR%%/Extensions.md
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.md
+%%PORTDOCS%%%%DOCSDIR%%/FakeNum.md
 %%PORTDOCS%%%%DOCSDIR%%/FCCData.md
 %%PORTDOCS%%%%DOCSDIR%%/GPL.md
 %%PORTDOCS%%%%DOCSDIR%%/Gateways.md
@@ -134,7 +136,7 @@ sbin/sip2ncid
 %%PORTDOCS%%%%DOCSDIR%%/NCID-SDK.md
 %%PORTDOCS%%%%DOCSDIR%%/NCID-UserManual.md
 %%PORTDOCS%%%%DOCSDIR%%/Obtain.md
-%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%%%DOCSDIR%%/README-FreeBSD
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes.md
 %%PORTDOCS%%%%DOCSDIR%%/TODO.md
 %%PORTDOCS%%%%DOCSDIR%%/Tools.md
@@ -145,7 +147,7 @@ sbin/sip2ncid
 %%PORTDOCS%%%%DOCSDIR%%/recordings/CannotBeCompleted.pvf
 %%PORTDOCS%%%%DOCSDIR%%/recordings/DisconnectedNotInService.pvf
 %%PORTDOCS%%%%DOCSDIR%%/recordings/NotInService.pvf
-%%PORTDOCS%%%%DOCSDIR%%/recordings/README.recordings
+%%PORTDOCS%%%%DOCSDIR%%/recordings/README-recordings
 %%DATADIR%%/extensions/hangup-calls
 %%DATADIR%%/extensions/hangup-closed-skel
 %%DATADIR%%/extensions/hangup-combo-skel
