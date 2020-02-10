@@ -4950,6 +4950,7 @@
     SUBDIR += py-roxlib
     SUBDIR += py-rply
     SUBDIR += py-rq
+    SUBDIR += py-rq-scheduler
     SUBDIR += py-rtree
     SUBDIR += py-rtslib-fb
     SUBDIR += py-ruamel.ordereddict
