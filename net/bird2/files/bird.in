@@ -2,7 +2,7 @@
 
 # $FreeBSD$
 #
-# PROVIDE: bird
+# PROVIDE: bird dynamicrouting
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
