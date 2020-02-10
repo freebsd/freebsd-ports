@@ -1,0 +1,10 @@
+CTL-SAT is a CTL (Computation Tree Logic) SAT solver. The user may test
+satisfiability of a CTL formula may by providing it as a command-line argument
+to the ctl-sat program, e.g.:
+
+  ctl-sat "~( (A(pUq) ^ AG(q->r) ^ AG(r->EXr)) -> EFEGr )"
+
+The worst-case time complexity is O((2^n)^3) for this SAT solver, while the
+worst-case space complexity is O((2^n)^2).
+
+WWW: https://github.com/nicolaprezza/CTLSAT

@@ -1,0 +1,38 @@
+--- Makefile.orig	2015-01-07 10:27:59 UTC
++++ Makefile
+@@ -2,26 +2,15 @@
+ 
+ SOURCE=\
+ formulas/AllTomorrow.cpp \
+-formulas/AllTomorrow.h \
+ formulas/AllUntil.cpp \
+-formulas/AllUntil.h \
+ formulas/Atom.cpp \
+-formulas/Atom.h \
+ formulas/Conjunction.cpp \
+-formulas/Conjunction.h \
+ formulas/ExistsTomorrow.cpp \
+-formulas/ExistsTomorrow.h \
+ formulas/ExistsUntil.cpp \
+-formulas/ExistsUntil.h \
+ formulas/Formula.cpp \
+-formulas/Formula.h \
+ formulas/Negation.cpp \
+-formulas/Negation.h \
+ parser/CTLParser.cpp \
+-parser/CTLParser.h \
+ tableau/Tableau.cpp \
+-tableau/Tableau.h \
+-common.h \
+ main.cpp \
+ 
+ 
+@@ -33,7 +22,7 @@ all: $(BINARY)
+ 
+ $(BINARY): $(SOURCE)
+ 
+-	g++ -march=native -mtune=generic -O3 $(SOURCE) -o $(BINARY)
++	$(CXX) $(CXXFLAGS) $(SOURCE) -o $(BINARY)
+ 
+ clean:
+ 
