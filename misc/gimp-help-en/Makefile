@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gimp-help
-PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTVERSION=	2.10.0
 CATEGORIES?=	misc graphics
 MASTER_SITES=	http://gimp.mirrors.hoobly.com/pub/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/grafik/%SUBDIR%/ \
@@ -17,13 +16,10 @@ COMMENT?=	GIMP User Manual in English
 
 LICENSE=	GFDL
 
-DEPRECATED=	Outdated, uses EOLed python27
-EXPIRATION_DATE=	2020-02-08
-
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:textproc/py-libxml2@${PY_FLAVOR} \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl
 
-USES=		gettext-tools gmake gnome perl5 pkgconfig python:2.7 shebangfix \
+USES=		gettext-tools gmake gnome perl5 pkgconfig python shebangfix \
 		tar:bzip2
 USE_GNOME=	libxslt:build
 USE_PERL5=	build
