@@ -794,6 +794,7 @@
     SUBDIR += py-djvulibre
     SUBDIR += py-editobj
     SUBDIR += py-exifread
+    SUBDIR += py-face_recognition
     SUBDIR += py-face_recognition_models
     SUBDIR += py-fiona
     SUBDIR += py-freeimagepy
