@@ -1,2 +1,3 @@
-SHA256 (auth-ldap-2.0.4.0.s1379.tar.xz) = 8d35eb540482d8d2bf36d0d310241b69633691f28477867ecee28c76912476cc
-SIZE (auth-ldap-2.0.4.0.s1379.tar.xz) = 163724
+TIMESTAMP = 1581341930
+SHA256 (threerings-openvpn-auth-ldap-2.0.4-auth-ldap-2.0.4_GH0.tar.gz) = 81f600cdc88adb2258f57df1ed2d87f0afa945f66cbf8897ad50e76f42509168
+SIZE (threerings-openvpn-auth-ldap-2.0.4-auth-ldap-2.0.4_GH0.tar.gz) = 209800
