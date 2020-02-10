@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiplot
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,9 +21,5 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
-
-post-patch:
-	@${MKDIR} ${WRKSRC}/requirements
-	@${CP} ${FILESDIR}/dev.txt ${FILESDIR}/main.txt ${WRKSRC}/requirements
 
 .include <bsd.port.mk>
