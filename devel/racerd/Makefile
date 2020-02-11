@@ -14,6 +14,8 @@ COMMENT=	Rust semantic analysis server powered by Racer
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Old, unmaintained, and fails to build with Rust 1.41.0 or newer; use rls from lang/rust instead
+EXPIRATION_DATE=	2020-02-25
 BROKEN=		fails to build with Rust 1.41.0
 
 USES=		cargo
