@@ -14,9 +14,11 @@ man/man1/sarg.1.gz
 %%PHP%%etc/sarg/sarg-php/COPYING
 %%PHP%%etc/sarg/sarg-php/INSTALL
 %%PHP%%etc/sarg/sarg-php/LANGUAGES
-%%PHP%%etc/sarg/sarg-php/language.php
+%%PHP%%etc/sarg/sarg-php/config.php.inc
 %%PHP%%etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.mo
 %%PHP%%etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.po
+%%PHP%%etc/sarg/sarg-php/locale/es/LC_MESSAGES/messages.mo
+%%PHP%%etc/sarg/sarg-php/locale/es/LC_MESSAGES/messages.po
 %%PHP%%etc/sarg/sarg-php/locale/fr/LC_MESSAGES/messages.mo
 %%PHP%%etc/sarg/sarg-php/locale/fr/LC_MESSAGES/messages.po
 %%PHP%%etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES/messages.mo
@@ -29,6 +31,9 @@ man/man1/sarg.1.gz
 %%PHP%%etc/sarg/sarg-php/sarg-squidguard-block2.php
 %%PHP%%etc/sarg/sarg-php/style.php
 %%PHP%%etc/sarg/sarg-php/translate.this
+%%PHP%%etc/sarg/sarg-php/update-mo.sh
+%%PHP%%etc/sarg/sarg-php/update-po.sh
+%%PHP%%etc/sarg/sarg-php/url_validator.php.inc
 etc/sarg/user_limit_block
 %%NLS%%share/locale/bg/LC_MESSAGES/sarg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/sarg.mo

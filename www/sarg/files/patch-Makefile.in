@@ -1,24 +1,25 @@
---- Makefile.in.orig	2015-04-12 14:38:36 UTC
+--- Makefile.in.orig	2017-01-30 12:56:22 UTC
 +++ Makefile.in
-@@ -27,11 +27,11 @@ DEFS        = $(IBINDIR) $(ISYSCONFDIR) 
- LIBS        = @LIBS@ -lm
+@@ -27,12 +27,12 @@ DEFS        = $(IBINDIR) $(ISYSCONFDIR) $(IFONTDIR) $(
+ LIBS        = @LIBS@ @LIBINTL@ -lm
  SRCDIR      = .
  VPATH       = .
 -INSTALL     = cp
 +INSTALL     = @INSTALL@ -m 644 -S
  XSL_MAN_STYLESHEET=@XSL_MAN_STYLESHEET@
  XSL_HTML_STYLESHEET=@XSL_HTML_STYLESHEET@
+ EXEEXT      = @EXEEXT@
  
 -INSTALL_PROGRAM = $(INSTALL)
 +INSTALL_PROGRAM = @INSTALL@ -m 755 -S -s
  
  SRCS = util.c log.c report.c topuser.c email.c sort.c html.c \
-        index.c getconf.c usage.c decomp.c ip2name.c ip2name_dns.c \
-@@ -93,14 +93,11 @@ install: all install-po
+    index.c getconf.c usage.c decomp.c ip2name.c ip2name_dns.c \
+@@ -111,14 +111,11 @@ install: all install-po
  		mkdir -p $(DESTDIR)$(IMAGEDIR); \
  	fi
- 	$(INSTALL_PROGRAM) sarg $(DESTDIR)$(bindir)/sarg
--	chmod 755 $(DESTDIR)$(bindir)/sarg
+ 	$(INSTALL_PROGRAM) sarg$(EXEEXT) $(DESTDIR)$(bindir)/sarg$(EXEEXT);
+-	chmod 755 $(DESTDIR)$(bindir)/sarg$(EXEEXT);
 -	$(INSTALL_PROGRAM) sarg.1 $(DESTDIR)$(man1dir)/sarg.1
 -	chmod 755 $(DESTDIR)$(man1dir)/sarg.1
 +	$(INSTALL) sarg.1 $(DESTDIR)$(man1dir)/sarg.1
