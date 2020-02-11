@@ -86,6 +86,8 @@ usr/lib/libglapi.so.0
 usr/lib/libglapi.so.0.0.0
 usr/lib/libglut.so.3
 usr/lib/libglut.so.3.10.0
+usr/lib/libvulkan_intel.so
+usr/lib/libvulkan_radeon.so
 usr/lib/libxatracker.so.2
 usr/lib/libxatracker.so.2.4.0
 usr/lib/vdpau/libvdpau_nouveau.so.1
@@ -213,5 +215,7 @@ usr/lib64/vdpau/libvdpau_radeonsi.so.1.0.0
 %%PORTDOCS%%usr/share/doc/llvm-private-7.0.1/LICENSE.TXT
 usr/share/drirc.d/00-mesa-defaults.conf
 usr/share/glvnd/egl_vendor.d/50_mesa.json
+usr/share/vulkan/icd.d/intel_icd.i686.json
 usr/share/vulkan/icd.d/intel_icd.x86_64.json
+usr/share/vulkan/icd.d/radeon_icd.i686.json
 usr/share/vulkan/icd.d/radeon_icd.x86_64.json
