@@ -3,6 +3,7 @@
 
 PORTNAME=	libxslt
 DISTVERSION=	1.1.34
+PORTREVISION=	1
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	http://xmlsoft.org/sources/ \
 		https://mirror.umd.edu/xbmc/build-deps/sources/
