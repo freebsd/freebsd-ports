@@ -897,9 +897,6 @@
     SUBDIR += gwenhywfar-gtk3
     SUBDIR += gwenhywfar-qt5
     SUBDIR += gzstream
-    SUBDIR += hachoir-core
-    SUBDIR += hachoir-parser
-    SUBDIR += hachoir-regex
     SUBDIR += hadoop
     SUBDIR += hadoop2
     SUBDIR += hapy
