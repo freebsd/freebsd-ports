@@ -10,28 +10,29 @@ COMMENT=	Diablo I engine for modern operating systems
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/share/fonts/CharisSIL/CharisSIL-B.ttf:x11-fonts/charis
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+MY_DEPENDS=	${LOCALBASE}/share/fonts/CharisSIL/CharisSIL-B.ttf:x11-fonts/charis
+BUILD_DEPENDS=	${MY_DEPENDS}
 LIB_DEPENDS=	libsodium.so:security/libsodium
+RUN_DEPENDS=	${MY_DEPENDS}
 
 USES=		cmake compiler:c++11-lang dos2unix sdl
-USE_SDL=	mixer2 sdl2 ttf2
-USE_GITHUB=	yes
-
-GH_ACCOUNT=	diasurgical
 DOS2UNIX_GLOB=	*.c *.h CMakeLists.txt
-INSTALLS_ICONS=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	diasurgical
+USE_SDL=	mixer2 sdl2 ttf2
 
-CXXFLAGS+=	-DTTF_FONT_PATH=\\\"${LOCALBASE}/share/fonts/CharisSIL/CharisSIL-B.ttf\\\"
-CMAKE_ARGS+=	-D CMAKE_INSTALL_BINDIR:PATH=${BINDIR} \
-		-D CMAKE_INSTALL_SHAREDIR:PATH=${PREFIX}/share \
-		-D GIT_TAG=${PORTVERSION}
+CMAKE_ARGS+=	-D \
+		CMAKE_INSTALL_BINDIR:PATH=${BINDIR} \
+		CMAKE_INSTALL_SHAREDIR:PATH=${PREFIX}/share \
+		GIT_TAG=${PORTVERSION}
 
 .if defined(WITH_DEBUG)
-CMAKE_ARGS+=	-D NIGHTLY_BUILD:BOOL=ON
+CMAKE_ON=	NIGHTLY_BUILD
 .else
-CMAKE_ARGS+=	-D BINARY_RELEASE:BOOL=ON
+CMAKE_ON=	BINARY_RELEASE
 .endif
+
+CXXFLAGS+=	-DTTF_FONT_PATH=\\\"${LOCALBASE}/share/fonts/CharisSIL/CharisSIL-B.ttf\\\"
 
 PLIST_FILES=	bin/devilutionx \
 		share/applications/devilutionx.desktop \
