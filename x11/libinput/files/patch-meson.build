@@ -1,6 +1,6 @@
---- meson.build.orig	2019-01-21 01:28:48 UTC
+--- meson.build.orig	2020-02-03 05:25:43 UTC
 +++ meson.build
-@@ -145,6 +145,8 @@ endif
+@@ -152,6 +152,8 @@ endif
  
  ############ udev bits ############
  
@@ -9,21 +9,12 @@
  executable('libinput-device-group',
  	   'udev/libinput-device-group.c',
  	   dependencies : [dep_udev, dep_libwacom],
-@@ -182,6 +184,8 @@ litest_model_quirks_file = configure_file(input : 'ude
- 					  install : false,
- 					  configuration : litest_udev_rules_config)
- 
-+endif
+@@ -192,6 +194,8 @@ litest_groups_rules_file = configure_file(input : 'ude
+ litest_fuzz_override_file = configure_file(input : 'udev/90-libinput-fuzz-override.rules.in',
+ 					   output : '90-libinput-fuzz-override-litest.rules',
+ 					   configuration : litest_udev_rules_config)
 +
- ############ libepoll-shim (BSD) ############
++endif
  
- if cc.has_header_symbol('sys/epoll.h', 'epoll_create1', prefix : prefix)
-@@ -634,7 +638,7 @@ executable('test-build-std-gnuc90',
- 	   'test/build-pedantic.c',
- 	   dependencies : [dep_udev],
- 	   include_directories : [includes_src, includes_include],
--	   c_args : ['-std=gnu90', '-Werror'],
-+	   c_args : ['-std=gnu89', '-Werror'],
- 	   install : false)
- # test for linking with the minimal linker flags
- executable('test-build-linker',
+ ############ Check for leftover udev rules ########
+ 

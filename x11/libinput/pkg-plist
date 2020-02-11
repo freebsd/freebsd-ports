@@ -6,6 +6,7 @@ lib/libinput.so.10.13.0
 libdata/pkgconfig/libinput.pc
 libexec/libinput/libinput-debug-events
 %%DEBUG_GUI%%libexec/libinput/libinput-debug-gui
+libexec/libinput/libinput-debug-tablet
 libexec/libinput/libinput-list-devices
 libexec/libinput/libinput-measure
 libexec/libinput/libinput-measure-fuzz
@@ -17,6 +18,7 @@ libexec/libinput/libinput-record
 libexec/libinput/libinput-replay
 man/man1/libinput-debug-events.1.gz
 %%DEBUG_GUI%%man/man1/libinput-debug-gui.1.gz
+man/man1/libinput-debug-tablet.1.gz
 man/man1/libinput-list-devices.1.gz
 man/man1/libinput-measure-fuzz.1.gz
 man/man1/libinput-measure-touch-size.1.gz
@@ -35,12 +37,12 @@ man/man1/libinput.1.gz
 %%DATADIR%%/30-vendor-aiptek.quirks
 %%DATADIR%%/30-vendor-alps.quirks
 %%DATADIR%%/30-vendor-contour.quirks
-%%DATADIR%%/30-vendor-cyapa.quirks
+%%DATADIR%%/30-vendor-cypress.quirks
 %%DATADIR%%/30-vendor-elantech.quirks
-%%DATADIR%%/30-vendor-huion.quirks
 %%DATADIR%%/30-vendor-ibm.quirks
 %%DATADIR%%/30-vendor-kensington.quirks
 %%DATADIR%%/30-vendor-logitech.quirks
+%%DATADIR%%/30-vendor-madcatz.quirks
 %%DATADIR%%/30-vendor-microsoft.quirks
 %%DATADIR%%/30-vendor-razer.quirks
 %%DATADIR%%/30-vendor-synaptics.quirks
@@ -56,3 +58,5 @@ man/man1/libinput.1.gz
 %%DATADIR%%/50-system-hp.quirks
 %%DATADIR%%/50-system-lenovo.quirks
 %%DATADIR%%/50-system-system76.quirks
+%%DATADIR%%/50-system-toshiba.quirks
+share/zsh/site-functions/_libinput
