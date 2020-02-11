@@ -1,7 +1,7 @@
-TIMESTAMP = 1482090447
-SHA256 (centos/sqlite-3.7.17-8.el7.i686.rpm) = bee2874e940b42f11a2557b5c76427e3122f62aa78b98fcec957bf6edfe8a400
-SIZE (centos/sqlite-3.7.17-8.el7.i686.rpm) = 405904
-SHA256 (centos/sqlite-3.7.17-8.el7.x86_64.rpm) = ff0820355c33fc536511e51271fa14aa5ed3ae5984535349231f6506d7cd071c
-SIZE (centos/sqlite-3.7.17-8.el7.x86_64.rpm) = 402932
-SHA256 (centos/sqlite-3.7.17-8.el7.src.rpm) = d9a3d6e632ab757c1d214e25a3446207011df09a4195261653b6c82f8f8ee190
-SIZE (centos/sqlite-3.7.17-8.el7.src.rpm) = 9048219
+TIMESTAMP = 1581427438
+SHA256 (centos/sqlite-3.7.17-8.el7_7.1.i686.rpm) = 23aba566842009e5b1de0da13d18652ba0df4250af61b62d2c0cd1109f1c75d1
+SIZE (centos/sqlite-3.7.17-8.el7_7.1.i686.rpm) = 406104
+SHA256 (centos/sqlite-3.7.17-8.el7_7.1.x86_64.rpm) = 93ffb0eb1e297c35cee76add2e583efb990da702684bbfaa6b159494d135d99c
+SIZE (centos/sqlite-3.7.17-8.el7_7.1.x86_64.rpm) = 403100
+SHA256 (centos/sqlite-3.7.17-8.el7_7.1.src.rpm) = d490052987332d5ac1a765245aa0b634b17928f3d48dd301680ba47dc1f69828
+SIZE (centos/sqlite-3.7.17-8.el7_7.1.src.rpm) = 9049764
