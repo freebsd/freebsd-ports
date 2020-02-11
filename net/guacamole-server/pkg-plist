@@ -67,3 +67,4 @@ lib/libguac.so.17.0.0
 man/man5/guacd.conf.5.gz
 man/man8/guacd.8.gz
 sbin/guacd
+@dir(%%GUACD_USER%%,%%GUACD_GROUP%%,) %%GUACD_HOME%%

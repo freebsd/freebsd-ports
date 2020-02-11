@@ -10,6 +10,8 @@
 #
 # guacd_enable (bool):		Set to "NO" by default.
 #				Set it to "YES" to enable guacd.
+# guacd_home (str):		Home directory for guacd to use
+#				Default to "%%GUACD_HOME%%" created by the port
 # guacd_user (str):		User to run guacd as
 #				Default to "%%GUACD_USER%%" created by the port
 # guacd_group (str):		Group to run guacd as
@@ -24,9 +26,12 @@ rcvar=${name}_enable
 load_rc_config ${name}
 
 : ${guacd_enable:="NO"}
+: ${guacd_home:="%%GUACD_HOME%%"}
 : ${guacd_user:="%%GUACD_USER%%"}
 : ${guacd_group:="%%GUACD_GROUP%%"}
 : ${guacd_pidfile:="/var/run/${name}/${name}.pid"}
+
+guacd_env="$guacd_env HOME=$guacd_home"
 
 command=%%PREFIX%%/sbin/guacd
 pidfile=${guacd_pidfile}
