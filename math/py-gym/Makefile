@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gym
-PORTVERSION=	0.15.4
+PORTVERSION=	0.15.6
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=1.2.0:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PY_ENUM34} \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pyglet12>=1.2.0<1.3.3:graphics/py-pyglet12@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyglet>=1.4.0<1.5.1:graphics/py-pyglet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
@@ -25,8 +25,5 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|, 'opencv-python'||" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
