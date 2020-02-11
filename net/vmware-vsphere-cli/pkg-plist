@@ -125,8 +125,6 @@ bin/vmware-cmd
 %%SITE_PERL%%/WSMan/Stubs/VMware_MemberOfCollection.pm
 %%SITE_PERL%%/WSMan/Stubs/VMware_MediaPresent.pm
 %%SITE_PERL%%/WSMan/Stubs/VMware_LogicalIdentity.pm
-%%SITE_PERL%%/WSMan/Stubs/VMware_LatchedHealthState.pm
-%%SITE_PERL%%/WSMan/Stubs/VMware_LatchedHealthAssociation.pm
 %%SITE_PERL%%/WSMan/Stubs/VMware_KernelModuleService.pm
 %%SITE_PERL%%/WSMan/Stubs/VMware_KernelIPv6ProtocolEndpoint.pm
 %%SITE_PERL%%/WSMan/Stubs/VMware_KernelIPv4ProtocolEndpoint.pm
