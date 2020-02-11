@@ -1,7 +1,10 @@
---- tools/clang/tools/extra/clang-doc/tool/CMakeLists.txt.orig	2019-02-02 19:08:19 UTC
+--- tools/clang/tools/extra/clang-doc/tool/CMakeLists.txt.orig	2020-01-30 15:29:37 UTC
 +++ tools/clang/tools/extra/clang-doc/tool/CMakeLists.txt
-@@ -15,3 +15,4 @@ target_link_libraries(clang-doc
-   clangToolingCore
+@@ -18,6 +18,7 @@ target_link_libraries(clang-doc
+   clangDoc
    )
-   
+ 
 +install(TARGETS clang-doc RUNTIME DESTINATION bin)
+ install(FILES ../assets/clang-doc-default-stylesheet.css
+   DESTINATION share/clang
+   COMPONENT clang-doc)
