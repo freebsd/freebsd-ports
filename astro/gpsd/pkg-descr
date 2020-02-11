@@ -8,4 +8,4 @@ access to GPSes without contention or loss of data. Also,
 gpsd responds to queries with a format that is substantially
 easier to parse than the NMEA 0183 emitted by most GPSes.
 
-WWW: http://catb.org/gpsd/
+WWW: https://gpsd.gitlab.io/gpsd/index.html
