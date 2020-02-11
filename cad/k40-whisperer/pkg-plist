@@ -9,6 +9,7 @@ bin/%%WHISPERER_COMMAND%%
 %%DATADIR%%/UL.png
 %%DATADIR%%/UR.png
 %%DATADIR%%/bezmisc.py
+%%DATADIR%%/convex_hull.py
 %%DATADIR%%/cspsubdiv.py
 %%DATADIR%%/cubicsuperpath.py
 %%DATADIR%%/down.png
