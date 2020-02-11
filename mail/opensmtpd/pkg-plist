@@ -1,6 +1,7 @@
 @sample etc/mail/smtpd.conf.sample
 bin/smtp
 libexec/opensmtpd/encrypt
+libexec/opensmtpd/lockspool
 libexec/opensmtpd/mail.lmtp
 libexec/opensmtpd/mail.local
 libexec/opensmtpd/mail.maildir
