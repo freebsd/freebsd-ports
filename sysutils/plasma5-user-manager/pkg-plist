@@ -24,6 +24,7 @@ share/kservices5/user_manager.desktop
 %%DATADIR%%/avatars/konqui/Teacher Konqi.png
 %%DATADIR%%/avatars/konqui/Virtual Reality Konqi.png
 share/locale/ar/LC_MESSAGES/user_manager.mo
+share/locale/ast/LC_MESSAGES/user_manager.mo
 share/locale/bg/LC_MESSAGES/user_manager.mo
 share/locale/bs/LC_MESSAGES/user_manager.mo
 share/locale/ca/LC_MESSAGES/user_manager.mo
@@ -64,6 +65,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/user_manager.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/user_manager.mo
 share/locale/sr@latin/LC_MESSAGES/user_manager.mo
 share/locale/sv/LC_MESSAGES/user_manager.mo
+share/locale/tg/LC_MESSAGES/user_manager.mo
 share/locale/tr/LC_MESSAGES/user_manager.mo
 share/locale/ug/LC_MESSAGES/user_manager.mo
 share/locale/uk/LC_MESSAGES/user_manager.mo

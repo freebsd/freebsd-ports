@@ -82,6 +82,7 @@ share/locale/ar/LC_MESSAGES/kcmusb.mo
 share/locale/ar/LC_MESSAGES/kcmview1394.mo
 share/locale/ar/LC_MESSAGES/kinfocenter.mo
 share/locale/ast/LC_MESSAGES/kcm-about-distro.mo
+share/locale/ast/LC_MESSAGES/kcmusb.mo
 share/locale/ast/LC_MESSAGES/kinfocenter.mo
 share/locale/be/LC_MESSAGES/kcminfo.mo
 share/locale/be/LC_MESSAGES/kcmopengl.mo
@@ -866,6 +867,7 @@ share/locale/te/LC_MESSAGES/kcmusb.mo
 share/locale/te/LC_MESSAGES/kcmview1394.mo
 share/locale/te/LC_MESSAGES/kinfocenter.mo
 share/locale/tg/LC_MESSAGES/kcm_memory.mo
+share/locale/tg/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/tg/LC_MESSAGES/kcm_pci.mo
 share/locale/tg/LC_MESSAGES/kcmdevinfo.mo
 share/locale/tg/LC_MESSAGES/kcminfo.mo

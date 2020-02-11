@@ -4,6 +4,7 @@ etc/ksysguarddrc
 %%PCAP%%lib/libexec/ksysguard/ksgrd_network_helper
 lib/libkdeinit5_ksysguard.so
 %%PCAP%%%%QT_PLUGINDIR%%/ksysguard/process/ksysguard_plugin_network.so
+%%QT_PLUGINDIR%%/ksysguard/process/ksysguard_plugin_nvidia.so
 share/applications/org.kde.ksysguard.desktop
 share/doc/HTML/ca/ksysguard/index.cache.bz2
 share/doc/HTML/ca/ksysguard/index.docbook

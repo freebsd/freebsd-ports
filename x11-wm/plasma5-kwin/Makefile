@@ -27,8 +27,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		Xwayland:x11-servers/xwayland
 RUN_DEPENDS=	Xwayland:x11-servers/xwayland
 
-USES=		cmake compiler:c++11-lib cpe gettext gl kde:5 pkgconfig qt:5 \
-		tar:xz xorg
+USES=		cmake compiler:c++11-lib cpe gettext gl kde:5 pkgconfig python:3.5+,run \
+		qt:5 shebangfix tar:xz xorg
 USE_GL=		egl
 USE_KDE=	activities activities attica auth breeze codecs \
 		completion config configwidgets coreaddons crash decoration \
@@ -42,6 +42,7 @@ USE_QT=		concurrent core dbus declarative gui multimedia network script \
 		buildtools_build qmake_build \
 		quickcontrols2_run virtualkeyboard_run
 USE_XORG=	ice sm x11 xcb xext xi
+SHEBANG_FILES=	kconf_update/kwin-5.18-move-animspeed.py
 
 post-patch:
 	${REINPLACE_CMD} '/sysmacros.h/d' \

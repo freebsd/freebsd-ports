@@ -13,6 +13,7 @@ share/kservices5/plasma-applet-org.kde.milou.desktop
 share/kservicetypes5/miloupreviewplugin.desktop
 share/locale/ar/LC_MESSAGES/milou.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.milou.mo
+share/locale/ast/LC_MESSAGES/milou.mo
 share/locale/bs/LC_MESSAGES/milou.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/ca/LC_MESSAGES/milou.mo
@@ -55,6 +56,8 @@ share/locale/ko/LC_MESSAGES/milou.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/lt/LC_MESSAGES/milou.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.milou.mo
+share/locale/ml/LC_MESSAGES/milou.mo
+share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/nb/LC_MESSAGES/milou.mo
 share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/nds/LC_MESSAGES/milou.mo
@@ -89,6 +92,7 @@ share/locale/sr@latin/LC_MESSAGES/milou.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/sv/LC_MESSAGES/milou.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.milou.mo
+share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/tr/LC_MESSAGES/milou.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.milou.mo
 share/locale/uk/LC_MESSAGES/milou.mo

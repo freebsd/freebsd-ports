@@ -34,6 +34,7 @@ share/doc/HTML/sv/systemsettings/index.cache.bz2
 share/doc/HTML/sv/systemsettings/index.docbook
 share/doc/HTML/uk/systemsettings/index.cache.bz2
 share/doc/HTML/uk/systemsettings/index.docbook
+share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/images/plasma-logo.svg
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/CategoriesPage.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/IntroIcon.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/SubCategoryPage.qml

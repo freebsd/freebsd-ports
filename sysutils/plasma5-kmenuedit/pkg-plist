@@ -1,4 +1,5 @@
 bin/kmenuedit
+lib/kconf_update_bin/kmenuedit_globalaccel
 lib/libkdeinit5_kmenuedit.so
 share/applications/org.kde.kmenuedit.desktop
 share/doc/HTML/ca/kmenuedit/done.png

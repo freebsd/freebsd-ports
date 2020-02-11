@@ -36,6 +36,7 @@ share/kgamma/pics/midgrey.png
 share/kgamma/pics/rgbscale.png
 share/kservices5/kgamma.desktop
 share/locale/ar/LC_MESSAGES/kcmkgamma.mo
+share/locale/ast/LC_MESSAGES/kcmkgamma.mo
 share/locale/be/LC_MESSAGES/kcmkgamma.mo
 share/locale/bg/LC_MESSAGES/kcmkgamma.mo
 share/locale/br/LC_MESSAGES/kcmkgamma.mo
