@@ -22,6 +22,8 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+POST_PLIST=	trim-jaraco-namespace
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3000
@@ -33,8 +35,6 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}more-itertools>=2.7:devel/py-more-itertools
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}more-itertools5>=2.7:devel/py-more-itertools5@${PY_FLAVOR}
 .endif
-
-POST_PLIST=	trim-jaraco-namespace
 
 post-install:
 	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/jaraco/__init__.py*
