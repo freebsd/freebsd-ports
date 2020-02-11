@@ -10,6 +10,8 @@
 #
 # opendnssec_enable="YES"
 
+ODS_CONTROL=%%PREFIX%%/sbin/ods-control
+
 . /etc/rc.subr
 
 name=opendnssec
@@ -21,13 +23,34 @@ opendnssec_enable=${opendnssec_enable:-"NO"}
 
 start_cmd="${name}_run start"
 stop_cmd="${name}_run stop"
-extra_commands="reload ksm hsm signer enforcer"
-
-procname=${opendnssec_procname}
+restart_cmd="${name}_restart"
+status_cmd="${name}_status"
+reload_cmd="${name}_reload"
+extra_commands="reload status"
 
 opendnssec_run()
 {
-    %%PREFIX%%/sbin/ods-control $1
+    $ODS_CONTROL $1
+}
+
+opendnssec_restart()
+{
+    $ODS_CONTROL stop
+    $ODS_CONTROL start
+}
+
+opendnssec_reload()
+{
+    echo "OpenDNSSEC reloading:"
+    echo -n "  Signer  : "; $ODS_CONTROL signer reload
+    echo -n "  Enforcer: "; $ODS_CONTROL enforcer reload
+}
+
+opendnssec_status()
+{
+    echo "OpenDNSSEC status:"
+    echo -n "  Signer  : "; $ODS_CONTROL signer running
+    echo -n "  Enforcer: "; $ODS_CONTROL enforcer running
 }
 
 run_rc_command "$1"
