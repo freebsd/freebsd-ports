@@ -3,8 +3,8 @@
 PORTNAME=	aom
 DISTVERSIONPREFIX=	v
 # XXX Switch to release after https://bugs.chromium.org/p/aomedia/issues/detail?id=2545
-DISTVERSION=	1.0.0-3059
-DISTVERSIONSUFFIX=	-gfc038664e
+DISTVERSION=	1.0.0-3067
+DISTVERSIONSUFFIX=	-ga543df590
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
