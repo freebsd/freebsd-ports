@@ -21,8 +21,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '/jaraco.apt/d; /yg.lockfile/d' ${WRKSRC}/setup.cfg
+POST_PLIST=	trim-jaraco-namespace
 
 .include <bsd.port.pre.mk>
 
@@ -30,7 +29,8 @@ post-patch:
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}contextlib2>=0:devel/py-contextlib2@${PY_FLAVOR}
 .endif
 
-POST_PLIST=	trim-jaraco-namespace
+post-patch:
+	@${REINPLACE_CMD} -e '/jaraco.apt/d; /yg.lockfile/d' ${WRKSRC}/setup.cfg
 
 post-install:
 	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/jaraco/__init__.py*
