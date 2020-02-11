@@ -1,3 +1,3 @@
-TIMESTAMP = 1507756423
-SHA256 (hidapi-0.7.99.post21.tar.gz) = e0be1aa6566979266a8fc845ab0e18613f4918cf2c977fe67050f5dc7e2a9a97
-SIZE (hidapi-0.7.99.post21.tar.gz) = 51377
+TIMESTAMP = 1581440004
+SHA256 (hidapi-0.9.0.post2.tar.gz) = a71dd3c153cb6bb2b73d2612b5ab262830d78c6428f33f0c06818749e64c9320
+SIZE (hidapi-0.9.0.post2.tar.gz) = 55619
