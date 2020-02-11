@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	waybar
-DISTVERSION=	0.9.0
-PORTREVISION=	1
+DISTVERSION=	0.9.1
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -27,7 +26,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	spdlog>0:devel/spdlog \
 		wayland-protocols>0:graphics/wayland-protocols
-LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp \
+LIB_DEPENDS=	libtz.so:devel/date \
+		libjsoncpp.so:devel/jsoncpp \
 		libfmt.so:devel/libfmt \
 		libwayland-client.so:graphics/wayland
 
@@ -40,6 +40,13 @@ CPPFLAGS+=	-D_WITH_GETLINE # XXX Remove after FreeBSD 11 EOL
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/xdg/${PORTNAME}/config \
 		etc/xdg/${PORTNAME}/style.css
+
+# XXX Add pkg-config support to devel/date
+.if exists(${.CURDIR}/files/date.pc.in)
+CONFIGURE_ENV+=	PKG_CONFIG_PATH="${WRKDIR}"
+SUB_FILES+=	date.pc
+post-patch:	apply-slist
+.endif
 
 OPTIONS_DEFINE=	DBUS GLS MANPAGES MPD PULSEAUDIO UDEV
 OPTIONS_DEFAULT=DBUS GLS MANPAGES MPD PULSEAUDIO UDEV
