@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: btpd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add btpd_enable="YES" to /etc/rc.conf to enable btpd
+#
+# btpd_enable (bool): Set to "YES" to enable btpd
+#
+# btpd_flags (str):   Additional flags for btpd
+#
+# btpd_user (str):    Username to run btpd under
+
+. /etc/rc.subr
+
+name=btpd
+desc="BTPD bittorrent daemon startup script"
+rcvar=btpd_enable
+
+load_rc_config "${name}"
+
+start_precmd=btpd_prestart
+
+btpd_enable=${btpd_enable:-NO}
+btpd_program=${btpd_program:-"%%PREFIX%%/bin/${name}"}
+btpd_user=${btpd_user:-}
+
+btpd_prestart()
+{
+	if [ -n "${btpd_user}" ]; then
+		err 3 "btpd: btpd_user unset.  Set it to an existing user and try again."
+	fi
+
+	BTPD_HOME=$( /usr/sbin/pw usershow -7 -n "${btpd_user}" | /usr/bin/cut -d: -f6 )
+	export BTPD_HOME
+}
+
+
+run_rc_command "$1"
