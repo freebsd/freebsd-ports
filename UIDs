@@ -278,7 +278,7 @@ smfs:*:326:326::0:0:SMFSAV Owner:/nonexistent:/usr/sbin/nologin
 orthanc:*:330:330::0:0:Orthanc Daemon:/nonexistent:/usr/sbin/nologin
 # free: 331
 # free: 332
-# free: 333
+honeytrap:*:333:333::0:0:HoneyTrap Daemon:/nonexistent:/usr/sbin/nologin
 # free: 334
 # free: 335
 _pma:*:336:80::0:0:phpMyAdmin Owner:/nonexistent:/usr/sbin/nologin
