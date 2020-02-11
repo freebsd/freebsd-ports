@@ -1,7 +1,0 @@
-Hachoir is the french name for a mincer: a tool used by butchers to cut
-meat. Hachoir is also a tool written for hackers to cut file or any
-binary stream. A file is split in a tree of fields where the smallest
-field can be just a bit. There are various field types: integer, string,
-bits, padding, sub file, etc.
-
-WWW: http://bitbucket.org/haypo/hachoir/wiki/hachoir-core

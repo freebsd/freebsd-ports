@@ -14242,3 +14242,10 @@ www/zope213||2020-02-06|Has expired: Outdated, uses EOLed python27
 misc/py-glance||2020-02-06|Has expired: Outdated, uses EOLed python27
 devel/py-memory_profiler|devel/py-memory-profiler|2020-02-08|Rename to match upstream naming
 graphics/wayland-protocols-devel|graphics/wayland-protocols|2020-02-10|Merged into master port
+devel/hachoir-core||2020-02-11|Has expired: Outdated, uses EOLed python27
+devel/hachoir-parser||2020-02-11|Has expired: Outdated, uses EOLed python27
+devel/hachoir-regex||2020-02-11|Has expired: Outdated, uses EOLed python27
+sysutils/hachoir-metadata||2020-02-11|Has expired: Outdated, uses EOLed python27
+sysutils/hachoir-subfile||2020-02-11|Has expired: Outdated, uses EOLed python27
+sysutils/hachoir-urwid||2020-02-11|Has expired: Outdated, uses EOLed python27
+sysutils/hachoir-wx||2020-02-11|Has expired: Outdated, uses EOLed python27
