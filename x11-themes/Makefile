@@ -34,7 +34,6 @@
     SUBDIR += freebsd-8k-wallpapers
     SUBDIR += freebsd-8k-wallpapers-kde
     SUBDIR += fvwm-themes
-    SUBDIR += gnome-icons-gartoon-redux
     SUBDIR += gnome-backgrounds
     SUBDIR += gnome-icon-theme-symbolic
     SUBDIR += gnome-icons
@@ -44,6 +43,7 @@
     SUBDIR += gnome-icons-dropline-nou
     SUBDIR += gnome-icons-elementary
     SUBDIR += gnome-icons-faenza
+    SUBDIR += gnome-icons-gartoon-redux
     SUBDIR += gnome-icons-gentoo-test
     SUBDIR += gnome-icons-gion
     SUBDIR += gnome-icons-iris
