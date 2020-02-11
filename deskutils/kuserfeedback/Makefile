@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 BUILD_DEPENDS=	phpunit:devel/phpunit6@${PHP_FLAVOR}
 RUN_DEPENDS=	phpunit:devel/phpunit6@${PHP_FLAVOR}
 
-USES=		bison cmake kde:5 php qt:5 tar:xz
+USES=		bison cmake compiler:c++11-lang kde:5 php qt:5 tar:xz
 USE_KDE=	ecm
 USE_QT=		charts core declarative gui network printsupport svg widgets \
 		buildtools_build help_build qdoc_build qmake_build
