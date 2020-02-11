@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	el
-PORTVERSION=	1.9.5.4
+PORTVERSION=	1.9.5.6
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:games/el-data
 
 USES=		compiler:c++11-lang gl gmake gnome iconv openal:al,alut sdl xorg
 USE_GNOME=	libxml2
-USE_SDL=	sdl net image
+USE_SDL=	sdl2 net2 image2
 USE_GL=		gl
 USE_XORG=	x11
 USE_GITHUB=	yes
