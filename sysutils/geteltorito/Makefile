@@ -5,16 +5,15 @@ PORTNAME=	geteltorito
 PORTVERSION=	0.6
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/
+MASTER_SITES=	https://userpages.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/geteltorito/
 DISTFILES=	${PORTNAME}.pl
 EXTRACT_ONLY=
 
 MAINTAINER=	valerio.daelli@gmail.com
 COMMENT=	El Torito image extractor
 
-BROKEN=		unfetchable
-
 NO_BUILD=	yes
+NO_ARCH=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	run
 
