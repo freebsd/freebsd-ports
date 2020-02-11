@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	k40-whisperer
-DISTVERSION=	0.37
+DISTVERSION=	0.43
 CATEGORIES=	cad python
 MASTER_SITES=	http://www.scorchworks.com/K40whisperer/
 DISTNAME=	K40_Whisperer-${DISTVERSION}_src
@@ -19,35 +19,32 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 USES=		python:run,-3.7 shebangfix zip
 SHEBANG_FILES=	*.py
 
+DESKTOP_ENTRIES=	"K40 Whisperer" \
+			"${COMMENT}" \
+			"${DATADIR}/scorchworks.ico" \
+			"${_WHISPERER_COMMAND}" \
+			"Development;Art;Engineering;VectorGraphics;" \
+			false
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-DESKTOP_ENTRIES=	"K40 Whisperer" "${COMMENT}" \
-			"${DATADIR}/scorchworks.ico" "${WHISPERER_COMMAND}" \
-			"Development;Art;Engineering;VectorGraphics;" false
-
-PLIST_SUB=	WHISPERER_COMMAND=${WHISPERER_COMMAND}
-SUB_FILES=	pkg-message ${WHISPERER_COMMAND}
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} WHISPERER_COMMAND=${WHISPERER_COMMAND}
+SUB_FILES=	${_WHISPERER_COMMAND} pkg-message
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
+		WHISPERER_COMMAND=${_WHISPERER_COMMAND}
+PLIST_SUB=	WHISPERER_COMMAND=${_WHISPERER_COMMAND}
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS=		Change_Log.txt \
-		README_Linux.txt \
-		README_MacOS.md
-NON_DATA_FILES=	${DOCS} \
-		${LICENSE_FILE:S,${WRKSRC}/,,} \
-		build_exe.bat \
-		py2exe_setup.py \
-		requirements.txt
-WHISPERER_COMMAND=	${PORTNAME}
+_DOCS=			Change_Log.txt README_Linux.txt README_MacOS.md
+_NON_DATA_FILES=	${_DOCS} ${LICENSE_FILE:S,${WRKSRC}/,,} build_exe.bat \
+			py2exe_setup.py requirements.txt
+_WHISPERER_COMMAND=	${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${WHISPERER_COMMAND} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${_WHISPERER_COMMAND} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . \
-		${STAGEDIR}${DATADIR} "${NON_DATA_FILES:S,^,! -name &,}")
+		${STAGEDIR}${DATADIR} "${_NON_DATA_FILES:S,^,! -name &,}")
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
