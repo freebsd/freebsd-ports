@@ -1,6 +1,6 @@
 --- libhttpd.c.orig	2003-12-25 20:06:05.000000000 +0100
 +++ libhttpd.c	2005-01-09 00:26:04.867255248 +0100
-@@ -2207,6 +2207,12 @@
+@@ -2207,6 +2207,18 @@
  		if ( strcasecmp( cp, "keep-alive" ) == 0 )
  		    hc->keep_alive = 1;
  		}
@@ -8,6 +8,12 @@
 +		{ // Use real IP if available 
 +		cp = &buf[16];
 +		cp += strspn( cp, " \t" );
++#ifdef USE_IPV6
++		if (strchr(cp, '.') == NULL)
++		    inet_pton( AF_INET6, cp,
++			&(hc->client_addr.sa_in6.sin6_addr) );
++		else
++#endif
 +		inet_aton( cp, &(hc->client_addr.sa_in.sin_addr) );
 +	        }
  #ifdef LOG_UNKNOWN_HEADERS
