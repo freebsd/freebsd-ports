@@ -1,4 +1,3 @@
-SHA256 (brs/bible.data.tar.bz2) = f20aa348df82a2511748719d85c95d3abe39ef8bc5f73a1d6a02bae2286d8de0
-SIZE (brs/bible.data.tar.bz2) = 2438121
-SHA256 (brs/bible.tar.bz2) = 31ee6b18b5f969500e6798cda63f82a22dcc76d47cba26d20939a100d376ed6f
-SIZE (brs/bible.tar.bz2) = 153375
+TIMESTAMP = 1580855102
+SHA256 (bible-kjv_4.30.tar.gz) = 138ca15baedcfaccc99da3663a6bcfdc493fabf4aa90554e056a2a829778f4a0
+SIZE (bible-kjv_4.30.tar.gz) = 1412282
