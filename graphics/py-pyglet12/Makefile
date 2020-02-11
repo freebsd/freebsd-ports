@@ -14,6 +14,9 @@ COMMENT=	Cross-platform windowing and multimedia library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use graphics/py-pyglet instead
+EXPIRATION_DATE=2020-02-29
+
 USES=		python
 USE_PYTHON=	autoplist distutils
 
