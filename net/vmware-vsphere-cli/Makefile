@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		vmware-vsphere-cli
-PORTVERSION=		6.5.0
-PORTREVISION=		1
+PORTVERSION=		6.7.0
 CATEGORIES=		net perl5
 MASTER_SITES=		#http://communities.vmware.com/community/vmtn/developer/downloads
 DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386
@@ -22,7 +21,23 @@ RUN_DEPENDS=		p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
 			p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
 			p5-UUID>=0:devel/p5-UUID \
 			p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
-			p5-SOAP-Lite>=0:net/p5-SOAP-Lite
+			p5-SOAP-Lite>=0:net/p5-SOAP-Lite \
+			p5-Text-Template>0:textproc/p5-Text-Template \
+			p5-Time-Piece>0:devel/p5-Time-Piece \
+			p5-Path-Class>0:devel/p5-Path-Class \
+			p5-version>0:devel/p5-version \
+			p5-Data-Dumper>0:devel/p5-Data-Dumper \
+			p5-HTML-Parser>0:www/p5-HTML-Parser \
+			p5-XML-SAX>0:textproc/p5-XML-SAX \
+			p5-XML-NamespaceSupport>0:textproc/p5-XML-NamespaceSupport \
+			p5-XML-LibXML>0:textproc/p5-XML-LibXML \
+			p5-libwww>0:www/p5-libwww \
+			p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
+			p5-Socket6>0:net/p5-Socket6 \
+			p5-IO-Socket-INET6>0:net/p5-IO-Socket-INET6 \
+			p5-Net-INET6Glue>0:net/p5-Net-INET6Glue \
+			p5-Net-HTTP>0:net/p5-Net-HTTP
+
 
 USES=			perl5 shebangfix
 USE_PERL5=		configure
@@ -31,7 +46,7 @@ NO_CDROM=		May not be redistributed.  Must accept license to download.
 NO_PACKAGE=		May not be redistributed.  Must accept license to download.
 SHEBANG_FILES=		apps/general/* apps/host/* apps/performance/* apps/session/* apps/vm/* bin/*
 
-DISTREL=		4566394
+DISTREL=		8156551
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +55,7 @@ DISTFILE_INSTRUCTIONS=\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n\
 Please visit http://communities.vmware.com/community/vmtn/developer/forums/vsphere_sdk_perl\n\
 and choose Download.  Then, login using a VMware account and accept the license agreement.\n\
-Choose the download for vSphere SDK for Perl - 32-bit Linux Installer (even if you are not on i386)\n\n\
+Choose the download for VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386.tar.gz (even if you are not on i386)\n\n\
 After the download has completed, please place ${DISTNAME}${EXTRACT_SUFX} in\n\
 ${DISTDIR}, then restart the build.\n\n
 .endif
