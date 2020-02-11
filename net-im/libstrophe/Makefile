@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libstrophe
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	net-im
 
 MAINTAINER=	arved@FreeBSD.org
