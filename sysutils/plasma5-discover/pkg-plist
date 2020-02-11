@@ -20,6 +20,8 @@ share/kxmlgui5/plasmadiscover/plasmadiscoverui.rc
 share/locale/ar/LC_MESSAGES/libdiscover.mo
 share/locale/ar/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/ar/LC_MESSAGES/plasma-discover.mo
+share/locale/ast/LC_MESSAGES/plasma-discover-notifier.mo
+share/locale/ast/LC_MESSAGES/plasma-discover.mo
 share/locale/bg/LC_MESSAGES/libdiscover.mo
 share/locale/bs/LC_MESSAGES/libdiscover.mo
 share/locale/bs/LC_MESSAGES/plasma-discover.mo
@@ -90,6 +92,9 @@ share/locale/ko/LC_MESSAGES/plasma-discover.mo
 share/locale/lt/LC_MESSAGES/libdiscover.mo
 share/locale/lt/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/lt/LC_MESSAGES/plasma-discover.mo
+share/locale/ml/LC_MESSAGES/libdiscover.mo
+share/locale/ml/LC_MESSAGES/plasma-discover-notifier.mo
+share/locale/ml/LC_MESSAGES/plasma-discover.mo
 share/locale/mr/LC_MESSAGES/libdiscover.mo
 share/locale/mr/LC_MESSAGES/plasma-discover.mo
 share/locale/nb/LC_MESSAGES/libdiscover.mo
@@ -143,6 +148,8 @@ share/locale/sv/LC_MESSAGES/libdiscover.mo
 share/locale/sv/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/sv/LC_MESSAGES/plasma-discover.mo
 share/locale/tg/LC_MESSAGES/libdiscover.mo
+share/locale/tg/LC_MESSAGES/plasma-discover-notifier.mo
+share/locale/tg/LC_MESSAGES/plasma-discover.mo
 share/locale/tr/LC_MESSAGES/libdiscover.mo
 share/locale/tr/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/tr/LC_MESSAGES/plasma-discover.mo

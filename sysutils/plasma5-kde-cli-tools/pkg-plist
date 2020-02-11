@@ -29,6 +29,7 @@ man/sr/man1/kdesu.1.gz
 man/sr@latin/man1/kdesu.1.gz
 man/sv/man1/kdesu.1.gz
 man/uk/man1/kdesu.1.gz
+share/applications/org.kde.keditfiletype.desktop
 share/doc/HTML/ca/kcontrol5/filetypes/index.cache.bz2
 share/doc/HTML/ca/kcontrol5/filetypes/index.docbook
 share/doc/HTML/ca/kdesu/index.cache.bz2
@@ -99,6 +100,7 @@ share/locale/ar/LC_MESSAGES/kioclient5.mo
 share/locale/ar/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/ar/LC_MESSAGES/kstart5.mo
 share/locale/ar/LC_MESSAGES/ktraderclient5.mo
+share/locale/ast/LC_MESSAGES/kdesu5.mo
 share/locale/be/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/be/LC_MESSAGES/kcmshell5.mo
 share/locale/be/LC_MESSAGES/kdesu5.mo
@@ -219,6 +221,7 @@ share/locale/es/LC_MESSAGES/kioclient5.mo
 share/locale/es/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/es/LC_MESSAGES/kstart5.mo
 share/locale/es/LC_MESSAGES/ktraderclient5.mo
+share/locale/et/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/et/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/et/LC_MESSAGES/kcmshell5.mo
 share/locale/et/LC_MESSAGES/kdesu5.mo

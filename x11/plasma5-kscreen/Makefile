@@ -12,7 +12,7 @@ USES=		cmake compiler:c++11-lang cpe gettext kde:5 qt:5 \
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons ecm \
 		globalaccel i18n kdeclarative libkscreen package plasma-framework \
 		service widgetsaddons xmlgui
-USE_QT=		core dbus declarative gui network testlib widgets xml \
+USE_QT=		core dbus declarative gui network sensors testlib widgets xml \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>
