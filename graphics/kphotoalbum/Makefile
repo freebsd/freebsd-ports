@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kphotoalbum
-DISTVERSION=	5.5
-PORTREVISION=	1
+DISTVERSION=	5.6
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	KDE
@@ -20,7 +19,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils jpeg kde:5 \
 		pkgconfig qt:5 shebangfix tar:xz
 USE_KDE=	archive auth codecs completion config \
 		configwidgets coreaddons ecm i18n \
-		iconthemes jobwidgets kio marble service \
+		iconthemes jobwidgets kio marble purpose service \
 		sonnet textwidgets widgetsaddons xmlgui
 USE_QT=		concurrent core dbus declarative gui location network phonon4 \
 		printsupport sql webchannel webengine widgets xml \
