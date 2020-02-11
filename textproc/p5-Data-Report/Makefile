@@ -2,25 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Report
-PORTVERSION=	0.10
-PORTREVISION=	2
+PORTVERSION=	1.001
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Data::Report - Framework for flexible reporting
+COMMENT=	Framework for flexible reporting
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-COMMON_DEPENDS=	p5-HTML-Parser>0:www/p5-HTML-Parser \
-		p5-Text-CSV_XS>0:textproc/p5-Text-CSV_XS
-BUILD_DEPENDS=	${COMMON_DEPENDS}
-RUN_DEPENDS=	${COMMON_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-Text-CSV_XS>=1.00:textproc/p5-Text-CSV_XS
+
+USES=		perl5
+USE_PERL5=	configure
 
 NO_ARCH=	yes
-USES=		perl5
-USE_PERL5=	modbuild
 
 .include <bsd.port.mk>
