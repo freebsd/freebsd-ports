@@ -1,0 +1,7 @@
+os-win is a Windows / Hyper-V library for OpenStack projects.
+
+This library contains Windows / Hyper-V specific code commonly used in OpenStack
+projects. The library can be used in any other OpenStack projects where it is
+needed.
+
+WWW: https://github.com/openstack/os-win
