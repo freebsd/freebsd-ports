@@ -9,8 +9,8 @@ PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.msi
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Mono .NET implementation for Wine development branch (HTML support)
+MAINTAINER=	gerald@FreeBSD.org
+COMMENT=	Mono .NET implementation for Wine development branch
 
 LICENSE=	MIT GPLv2 LGPL20
 LICENSE_COMB=	multi
