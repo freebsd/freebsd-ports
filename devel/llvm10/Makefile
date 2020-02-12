@@ -129,8 +129,8 @@ LLD_LINK_DESC=		Link ld.lld as ld to clang uses it
 LLD_LINK_IMPLIES=	LLD
 LLDB_BUILD_DEPENDS=	swig3.0:devel/swig30 \
 			${PY_ENUM34}
-LLDB_CMAKE_ON=		-DLUA_INCLUDE_DIR=/usr/local/include/lua${LUA_VER_STR} \
-			-DLUA_LIBRARY=/usr/local/lib/liblua-${LUA_VER}.so
+LLDB_CMAKE_ON=		-DLUA_INCLUDE_DIR=${LOCALBASE}/include/lua${LUA_VER_STR} \
+			-DLUA_LIBRARY=${LOCALBASE}/lib/liblua-${LUA_VER}.so
 LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
 LLDB_EXTRA_PATCHES=	${PATCHDIR}/lldb
