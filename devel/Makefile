@@ -774,6 +774,7 @@
     SUBDIR += gettext-tools
     SUBDIR += gflags
     SUBDIR += ghidra
+    SUBDIR += gh
     SUBDIR += ghq
     SUBDIR += ghub
     SUBDIR += gindent
