@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_cognitiveservices_qnamakerruntime
-PORTVERSION=	0.17.0
+PORTVERSION=	0.17.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
