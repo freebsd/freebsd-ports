@@ -1213,6 +1213,7 @@
     SUBDIR += py-QDarkStyle
     SUBDIR += py-Tempita
     SUBDIR += py-acora
+    SUBDIR += py-aeidon
     SUBDIR += py-agate
     SUBDIR += py-agate-dbf
     SUBDIR += py-agate-excel
