@@ -1,6 +1,0 @@
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/dhcpd.conf
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/install.cfg
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/loader.rc
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/pkgmaker.sh
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/post
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/pre

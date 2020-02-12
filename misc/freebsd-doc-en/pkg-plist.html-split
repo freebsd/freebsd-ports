@@ -843,7 +843,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-understanding.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-understanding.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-troubleshooting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/zfs-advanced.html
@@ -1055,7 +1055,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-xorg-cat.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-xorg.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-zip.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-zope.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-autotools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-databases.html
