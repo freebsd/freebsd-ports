@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinot
-PORTVERSION=	1.09
-PORTREVISION=	22
+PORTVERSION=	1.10
 CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -24,7 +23,7 @@ LIB_DEPENDS=	libxapian.so:databases/xapian-core		\
 		libnotify.so:devel/libnotify			\
 		libexif.so:graphics/libexif			\
 		libexiv2.so:graphics/exiv2			\
-		libgmime-2.4.so:mail/gmime24			\
+		libgmime-2.6.so:mail/gmime26			\
 		libtag.so:audio/taglib				\
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	update-mime-database:misc/shared-mime-info	\
@@ -38,7 +37,6 @@ RUN_DEPENDS=	update-mime-database:misc/shared-mime-info	\
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FabriceColin
-GH_TAGNAME=	c14d6d5
 
 USES=		compiler:c++11-lang autoreconf gettext gnome libarchive \
 		libtool pkgconfig python shebangfix sqlite:3 ssl xorg
@@ -69,7 +67,7 @@ INSTALLS_ICONS=	yes
 DOCS=		AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
 LM2FIX=		textcat_conf.txt textcat3_conf.txt textcat31_conf.txt textcat32_conf.txt
-SHR2FIX=	Core/pinot-search.1 README
+SHR2FIX=	Core/pinot-search.1
 UL2FIX=		Utils/xdgmime/xdgmime.c
 
 post-extract:
@@ -90,8 +88,6 @@ pre-configure:
 		${UL2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|'	\
 		${SHR2FIX:S|^|${WRKSRC}/|}
-	${REINPLACE_CMD} -e 's|Icon=pinot.png|Icon=pinot|g' \
-		${WRKSRC}/*.desktop
 
 post-install:
 	${TOUCH} ${STAGEDIR}${DATADIR}/stopwords/.empty_file
