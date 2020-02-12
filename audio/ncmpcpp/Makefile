@@ -19,13 +19,13 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libboost_filesystem.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
-USES=		compiler:c++14-lang gnome iconv libtool localbase ncurses:port \
+USES=		compiler:c++14-lang gnome iconv libtool localbase ncurses \
 		pkgconfig readline tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 CPPFLAGS+=	-DU_USING_ICU_NAMESPACE=1
 LDFLAGS+=	-lpthread
-CONFIGURE_ENV=	BOOST_LIB_SUFFIX=""
+CONFIGURE_ENV=	BOOST_LIB_SUFFIX="" ncursesw_CFLAGS="-L${NCURSESLIB}" ncursesw_LIBS="-lncursesw"
 
 OPTIONS_DEFINE=	CLOCK DOCS OUTPUTS TAGLIB UTF8 VISUALIZER
 OPTIONS_DEFAULT=	CLOCK OUTPUTS TAGLIB UTF8 VISUALIZER
