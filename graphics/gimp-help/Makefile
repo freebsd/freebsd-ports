@@ -12,6 +12,10 @@ COMMENT=	Meta port for the GIMP User Manual
 
 LICENSE=	GFDL
 
+BROKEN=		fails to build
+DEPRECATED=	Broken
+EXPIRATION_DATE=	2020-02-27
+
 USES=		metaport
 
 LANG_ALL_HTML=	ca da de el en en_GB es fr it ja ko nl nn \
