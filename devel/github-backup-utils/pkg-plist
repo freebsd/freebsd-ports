@@ -14,7 +14,8 @@ bin/ghe-restore
 %%DATADIR%%/ghe-backup-mysql-audit-log
 %%DATADIR%%/ghe-backup-pages
 %%DATADIR%%/ghe-backup-redis
-%%DATADIR%%/ghe-backup-repositories
+%%DATADIR%%/ghe-backup-repositories-gitbackups
+%%DATADIR%%/ghe-backup-repositories-rsync
 %%DATADIR%%/ghe-backup-settings
 %%DATADIR%%/ghe-backup-storage
 %%DATADIR%%/ghe-backup-store-version
