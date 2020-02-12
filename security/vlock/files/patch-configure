@@ -1,6 +1,6 @@
---- configure.orig	2008-05-18 11:10:54.000000000 +0200
-+++ configure	2011-06-23 08:20:00.811018722 +0200
-@@ -219,12 +219,12 @@
+--- configure.orig	2011-09-18 15:22:35 UTC
++++ configure
+@@ -219,12 +219,12 @@ set_defaults() {
    SCRIPTDIR="\$(LIBDIR)/vlock/scripts"
    MODULEDIR="\$(LIBDIR)/vlock/modules"
  
