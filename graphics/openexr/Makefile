@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openexr
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	graphics devel
 MASTER_SITES=	LOCAL/mandree/:test
 DISTFILES=	${PORTNAME}-2.2.0-comp_dwa-test-images.tar.xz:test
@@ -19,7 +19,7 @@ USES=		cmake compiler:c++14-lang libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_TUPLE=	AcademySoftwareFoundation:openexr:v2.4.0
+GH_TUPLE=	AcademySoftwareFoundation:openexr:v${PORTVERSION}
 
 CPPFLAGS+=	-I. -I../IlmImf
 # must be linked with -l{thr|pthread} explicitly
@@ -71,9 +71,6 @@ post-install:
 	${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/lib/libIlmImf-${MAJORVER}.so.${VER} \
 		${STAGEDIR}${PREFIX}/lib/libIlmImfUtil-${MAJORVER}.so.${VER}
-.for i in libIlmImf libIlmImfUtil
-	${LN} -s ${i}-${MAJORVER}.so.${VER} ${STAGEDIR}${PREFIX}/lib/${i}.so
-.endfor
 
 post-install-EXAMPLES-on:
 	${MV} \
