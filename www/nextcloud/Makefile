@@ -14,8 +14,7 @@ LICENSE=	AGPLv3
 USES=		cpe gettext-runtime php:flavors,web tar:bzip2
 USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv json \
 		mbstring pdo posix session simplexml xml xmlreader xmlwriter \
-		xsl wddx zip zlib
-IGNORE_WITH_PHP=	74
+		xsl zip zlib
 
 NEXTCLOUD_USERNAME?=	${WWWOWN}
 NEXTCLOUD_GROUPNAME?=	${WWWGRP}
