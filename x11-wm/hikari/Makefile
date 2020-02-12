@@ -1,67 +1,46 @@
 # $FreeBSD$
 
 PORTNAME=	hikari
-DISTVERSION=	0.1.3
-PORTREVISION=	1
+DISTVERSION=	1.0.0-alpha3
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://acmelabs.space/~raichoo/
 
-MAINTAINER=	alex@xanderio.de
-COMMENT=	Stacking window manager with tiling capabilities
+MAINTAINER=	ports@xanderio.de
+COMMENT=	Stacking Wayland compositor with tiling capabilities
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxcb-ewmh.so:x11/xcb-util-wm \
-		libxcb-icccm.so:x11/xcb-util-wm \
-		libxcb-keysyms.so:x11/xcb-util-keysyms
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		wayland-protocols>=1.14:graphics/wayland-protocols \
+		wlroots>=0.9.0<0.11.0:x11-toolkits/wlroots
+LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
+		libinput.so:x11/libinput \
+		libucl.so:textproc/libucl \
+		libwayland-server.so:graphics/wayland \
+		libwlroots.so:x11-toolkits/wlroots \
+		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c11 localbase:ldflags xorg
-USE_XORG=	x11 xcb
+USES=		gnome pkgconfig xorg
+USE_GNOME=	cairo glib20 pango
+USE_XORG=	pixman
+ALL_TARGET=	${WITH_DEBUG:Ddebug}
+PLIST_FILES=	"${MAYBE_SUID}bin/${PORTNAME}" \
+		"${MAYBE_SUID}bin/${PORTNAME}-unlocker"
+PORTEXAMPLES=	${PORTNAME}.conf
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		EXAMPLES SUID X11
+OPTIONS_DEFAULT=	SUID
 
-NO_WRKSUBDIR=	yes
+SUID_DESC=	setuid bit on binaries (required for DRM and PAM)
 
-SUB_FILES=	hikari.desktop
-SUB_LIST=	COMMENT="${COMMENT}"
-PLIST_FILES=	bin/hikari \
-		man/man1/hikari.1.gz \
-		share/xsessions/hikari.desktop
-PORTDATA=	config.def.h
-PORTDOCS=	README.md
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_DEBUG)
-ALL_TARGET=	debug
-.else
-ALL_TARGET=	hikari
-.endif
-
-pre-everything::
-	@${ECHO_MSG} "You can build hikari with your own config.h using the HIKARI_CONF knob:"
-	@${ECHO_MSG} "make HIKARI_CONF=/path/to/hikari/config.h install clean"
-	@${ECHO_MSG} "Note: Pre-${PORTVERSION} config.h files may not work."
-
-post-patch:
-.if defined(HIKARI_CONF)
-	@${ECHO_MSG} "Creating config.h from ${HIKARI_CONF}"
-	@${LN} -sf ${HIKARI_CONF} ${WRKSRC}/config.h
-.else
-	@${LN} -sf ${WRKSRC}/config.def.h ${WRKSRC}/config.h
-.endif
+SUID_VARS=	MAYBE_SUID="@(,,4755) "
+X11_MAKE_ARGS=	WITH_XWAYLAND=yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hikari ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/hikari.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDATA} ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xsessions
-	${INSTALL_DATA} ${WRKDIR}/hikari.desktop ${STAGEDIR}${PREFIX}/share/xsessions
+	${INSTALL_PROGRAM} ${WRKSRC}/hikari-unlocker ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/example_hikari.conf ${STAGEDIR}${EXAMPLESDIR}/hikari.conf
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
