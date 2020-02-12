@@ -8,6 +8,10 @@ COMMENT=	GIMP User Manual in Italian
 
 LICENSE=	GFDL
 
+BROKEN=		fails to build
+DEPRECATED=	Broken
+EXPIRATION_DATE=	2020-02-27
+
 MASTERDIR=	${.CURDIR}/../gimp-help-en
 
 DOCLANG=	it
