@@ -1,7 +1,10 @@
 include/libepoll-shim/sys/epoll.h
+include/libepoll-shim/sys/eventfd.h
 include/libepoll-shim/sys/signalfd.h
 include/libepoll-shim/sys/timerfd.h
-lib/libepoll-shim.a
+lib/cmake/epoll-shim/epoll-shim-config.cmake
+lib/cmake/epoll-shim/epoll-shim-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/epoll-shim/epoll-shim-targets.cmake
 lib/libepoll-shim.so
 lib/libepoll-shim.so.0
 libdata/pkgconfig/epoll-shim.pc

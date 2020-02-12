@@ -1,1 +1,5 @@
-epoll shim implemented using kevent.
+epoll-shim is a small library that implements epoll on top of kqueue. It
+has been successfully used to port libinput, libevdev, Wayland and more
+software to FreeBSD.
+
+WWW: https://github.com/jiixyj/epoll-shim
