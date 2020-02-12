@@ -1,3 +1,3 @@
-TIMESTAMP = 1572797581
-SHA256 (nats-io-nats-streaming-server-v0.16.2_GH0.tar.gz) = af39a9269bba110dc61cfa1bf6114efdba79e88ecd31639be43e5ca724afdf58
-SIZE (nats-io-nats-streaming-server-v0.16.2_GH0.tar.gz) = 2679268
+TIMESTAMP = 1581515884
+SHA256 (nats-io-nats-streaming-server-v0.17.0_GH0.tar.gz) = 6db2233ebf2788d08134170f30310ce5c330056b6cbc75dde7821b9d1d34c74f
+SIZE (nats-io-nats-streaming-server-v0.17.0_GH0.tar.gz) = 2782279
