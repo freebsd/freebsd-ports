@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilmbase
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -19,7 +19,7 @@ USES=		cmake compiler:c++14-lang pkgconfig libtool
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_TUPLE=	AcademySoftwareFoundation:openexr:v2.4.0
+GH_TUPLE=	AcademySoftwareFoundation:openexr:v${PORTVERSION}
 WRKSRC_SUBDIR=	IlmBase
 
 PORTDOCS=	README.md

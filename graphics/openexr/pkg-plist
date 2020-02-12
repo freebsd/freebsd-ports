@@ -70,7 +70,6 @@ include/OpenEXR/ImfLineOrder.h
 include/OpenEXR/ImfLineOrderAttribute.h
 include/OpenEXR/ImfLut.h
 include/OpenEXR/ImfMatrixAttribute.h
-include/OpenEXR/ImfMisc.h
 include/OpenEXR/ImfMultiPartInputFile.h
 include/OpenEXR/ImfMultiPartOutputFile.h
 include/OpenEXR/ImfMultiView.h
