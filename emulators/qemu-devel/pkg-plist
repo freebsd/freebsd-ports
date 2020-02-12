@@ -53,6 +53,7 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/QEMU,tcx.bin
 %%DATADIR%%/QEMU,cgthree.bin
 %%DATADIR%%/bios-256k.bin
+%%DATADIR%%/bios-microvm.bin
 %%DATADIR%%/bios.bin
 %%DATADIR%%/canyonlands.dtb
 %%DATADIR%%/edk2-aarch64-code.fd
@@ -102,7 +103,6 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/s390-ccw.img
 %%DATADIR%%/s390-netboot.img
 %%DATADIR%%/slof.bin
-%%DATADIR%%/spapr-rtas.bin
 %%DATADIR%%/u-boot-sam460-20100605.bin
 %%DATADIR%%/vgabios.bin
 %%DATADIR%%/vgabios-ati.bin
