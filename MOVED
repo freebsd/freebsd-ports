@@ -14249,3 +14249,4 @@ sysutils/hachoir-metadata||2020-02-11|Has expired: Outdated, uses EOLed python27
 sysutils/hachoir-subfile||2020-02-11|Has expired: Outdated, uses EOLed python27
 sysutils/hachoir-urwid||2020-02-11|Has expired: Outdated, uses EOLed python27
 sysutils/hachoir-wx||2020-02-11|Has expired: Outdated, uses EOLed python27
+net/py-xmlrpc||2020-02-12|Has expired: Unmaintained, uses EOLed python27
