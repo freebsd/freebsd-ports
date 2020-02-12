@@ -1,13 +1,11 @@
-Remove VirtualTerminal.cpp from the sources that need to be built.
-See also 'patch-src_daemon_Display.cpp'.
-
---- src/daemon/CMakeLists.txt.orig	2017-12-05 16:00:16 UTC
+--- src/daemon/CMakeLists.txt.orig	2019-03-13 09:22:35 UTC
 +++ src/daemon/CMakeLists.txt
-@@ -29,7 +29,6 @@ set(DAEMON_SOURCES
+@@ -29,7 +29,7 @@ set(DAEMON_SOURCES
      SeatManager.cpp
      SignalHandler.cpp
      SocketServer.cpp
 -    VirtualTerminal.cpp
++    VirtualTerminal_FreeBSD.cpp
  )
  
  qt5_add_dbus_adaptor(DAEMON_SOURCES "${CMAKE_SOURCE_DIR}/data/interfaces/org.freedesktop.DisplayManager.xml"          "DisplayManager.h" SDDM::DisplayManager)

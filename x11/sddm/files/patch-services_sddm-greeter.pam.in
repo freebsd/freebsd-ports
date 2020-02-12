@@ -1,5 +1,5 @@
---- services/sddm-greeter.pam.orig	2017-12-05 16:00:16 UTC
-+++ services/sddm-greeter.pam
+--- services/sddm-greeter.pam.in.orig	2019-03-13 09:22:35 UTC
++++ services/sddm-greeter.pam.in
 @@ -1,8 +1,5 @@
  #%PAM-1.0
  
@@ -9,11 +9,10 @@
  # Always let the greeter start without authentication
  auth		required pam_permit.so
  
-@@ -13,6 +10,4 @@ account		required pam_permit.so
+@@ -13,5 +10,4 @@ account		required pam_permit.so
  password	required pam_deny.so
  
  # Setup session
 -session		required pam_unix.so
---session		optional pam_systemd.so
---session		optional pam_elogind.so
+-session		optional @LOGIND_PAM_MODULE@
 +session		required pam_permit.so

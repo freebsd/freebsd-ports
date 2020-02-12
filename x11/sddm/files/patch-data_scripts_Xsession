@@ -8,14 +8,10 @@ Also use dbus-run-session so libdbus doesn't have to autolauch the session bus
 daemon on first use.  Autolaunched dbus daemons tend to linger and may only
 exit if the X server exits.
 
---- data/scripts/Xsession.orig	2017-12-05 16:00:16 UTC
+--- data/scripts/Xsession.orig	2019-03-13 09:22:35 UTC
 +++ data/scripts/Xsession
-@@ -94,8 +94,8 @@ if [ -f "$USERXSESSION" ]; then
-   . "$USERXSESSION"
- fi
- 
--if [ -z "$@" ]; then
-+if [ -z "$1" ]; then
+@@ -98,5 +98,5 @@ fi
+ if [ -z "$*" ]; then
      exec xmessage -center -buttons OK:0 -default OK "Sorry, $DESKTOP_SESSION is no valid session."
  else
 -    exec $@

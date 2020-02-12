@@ -1,10 +1,8 @@
---- src/helper/HelperApp.cpp.orig	2017-12-05 16:00:16 UTC
+--- src/helper/HelperApp.cpp.orig	2019-03-13 09:22:35 UTC
 +++ src/helper/HelperApp.cpp
-@@ -33,8 +33,11 @@
- #include <iostream>
- #include <unistd.h>
+@@ -35,7 +35,9 @@
  #include <sys/socket.h>
-+#include <sys/time.h>
+ #include <sys/time.h>
  
 +#if defined(Q_OS_LINUX)
  #include <utmp.h>
@@ -12,7 +10,7 @@
  #include <utmpx.h>
  #include <QByteArray>
  
-@@ -301,12 +304,20 @@ namespace SDDM {
+@@ -302,12 +304,20 @@ namespace SDDM {
  
          // append to failed login database btmp
          if (!authSuccessful) {
@@ -33,7 +31,7 @@
          }
      }
  
-@@ -342,8 +353,12 @@ namespace SDDM {
+@@ -343,8 +353,12 @@ namespace SDDM {
              qWarning() << "Failed to write utmpx: " << strerror(errno);
          endutxent();
  
