@@ -5257,6 +5257,7 @@ share/plasma/shells/org.kde.plasma.desktop/contents/explorer/WidgetExplorer.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/layout.js
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js
+share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js
 share/plasma/shells/org.kde.plasma.desktop/contents/views/Desktop.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/views/Panel.qml
 share/plasma/shells/org.kde.plasma.desktop/metadata.desktop
