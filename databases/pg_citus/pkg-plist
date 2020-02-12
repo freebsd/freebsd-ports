@@ -1,5 +1,8 @@
 include/postgresql/server/citus_version.h
+include/postgresql/server/distributed/adaptive_executor.h
+include/postgresql/server/distributed/argutils.h
 include/postgresql/server/distributed/backend_data.h
+include/postgresql/server/distributed/cancel_utils.h
 include/postgresql/server/distributed/citus_acquire_lock.h
 include/postgresql/server/distributed/citus_clauses.h
 include/postgresql/server/distributed/citus_custom_scan.h
@@ -9,8 +12,10 @@ include/postgresql/server/distributed/citus_ruleutils.h
 include/postgresql/server/distributed/colocation_utils.h
 include/postgresql/server/distributed/commands.h
 include/postgresql/server/distributed/connection_management.h
+include/postgresql/server/distributed/cte_inline.h
 include/postgresql/server/distributed/deparse_shard_query.h
 include/postgresql/server/distributed/deparser.h
+include/postgresql/server/distributed/directed_acyclic_graph_execution.h
 include/postgresql/server/distributed/distributed_deadlock_detection.h
 include/postgresql/server/distributed/distributed_execution_locks.h
 include/postgresql/server/distributed/distributed_planner.h
@@ -49,12 +54,14 @@ include/postgresql/server/distributed/multi_progress.h
 include/postgresql/server/distributed/multi_resowner.h
 include/postgresql/server/distributed/multi_router_planner.h
 include/postgresql/server/distributed/multi_server_executor.h
+include/postgresql/server/distributed/multi_task_tracker_executor.h
 include/postgresql/server/distributed/pg_dist_colocation.h
 include/postgresql/server/distributed/pg_dist_local_group.h
 include/postgresql/server/distributed/pg_dist_node.h
 include/postgresql/server/distributed/pg_dist_node_metadata.h
 include/postgresql/server/distributed/pg_dist_partition.h
 include/postgresql/server/distributed/pg_dist_placement.h
+include/postgresql/server/distributed/pg_dist_rebalance_strategy.h
 include/postgresql/server/distributed/pg_dist_shard.h
 include/postgresql/server/distributed/pg_dist_transaction.h
 include/postgresql/server/distributed/placement_access.h
@@ -70,6 +77,7 @@ include/postgresql/server/distributed/relation_restriction_equivalence.h
 include/postgresql/server/distributed/relay_utility.h
 include/postgresql/server/distributed/remote_commands.h
 include/postgresql/server/distributed/remote_transaction.h
+include/postgresql/server/distributed/repartition_join_execution.h
 include/postgresql/server/distributed/resource_lock.h
 include/postgresql/server/distributed/run_from_same_connection.h
 include/postgresql/server/distributed/shard_pruning.h
@@ -149,4 +157,6 @@ share/postgresql/extension/citus--8.2-4--8.3-1.sql
 share/postgresql/extension/citus--8.3-1--9.0-1.sql
 share/postgresql/extension/citus--9.0-1--9.0-2.sql
 share/postgresql/extension/citus--9.0-2--9.1-1.sql
+share/postgresql/extension/citus--9.1-1--9.2-1.sql
+share/postgresql/extension/citus--9.2-1--9.2-2.sql
 share/postgresql/extension/citus.control
