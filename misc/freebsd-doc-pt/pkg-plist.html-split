@@ -502,6 +502,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems-linux.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-blacklistd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-concepts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-ipf.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-ipfw.html

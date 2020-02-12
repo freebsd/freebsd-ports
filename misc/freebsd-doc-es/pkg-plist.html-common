@@ -2,6 +2,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/fdp-es/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/docbook.css
@@ -10,6 +11,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-head.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-releng3.png

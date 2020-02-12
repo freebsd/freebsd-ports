@@ -25,6 +25,13 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/fdp-es/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/fdp-es/sintaxis.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/fdp-es/voluntarios-fdp-es.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/filtering-bridges-contributors.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/filtering-bridges-enabling.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/filtering-bridges-finalprep.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/filtering-bridges-how.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/filtering-bridges-ipfirewall.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/ar01s02.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/ar01s03.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/ar01s04.html
@@ -86,6 +93,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/working-with-diffs.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/pr-lifecycle.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/pr-states.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/pr-types.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/references.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/pr-guidelines/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-followup.html

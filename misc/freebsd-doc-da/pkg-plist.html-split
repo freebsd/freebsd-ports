@@ -7,9 +7,3 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/solution.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/trademarks.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/bootstrap-config.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/custom-postinst-package.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/install-setup.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/server-config.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/pxe/trademarks.html
