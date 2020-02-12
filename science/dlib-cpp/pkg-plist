@@ -72,6 +72,8 @@ include/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/check_if_neon_available.cmake
 include/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/find_blas.cmake
+include/dlib/cmake_utils/find_libjpeg.cmake
+include/dlib/cmake_utils/find_libpng.cmake
 include/dlib/cmake_utils/set_compiler_specific_options.cmake
 include/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
 include/dlib/cmake_utils/use_cpp_11.cmake
@@ -209,10 +211,10 @@ include/dlib/entropy_encoder_model/entropy_encoder_model_kernel_c.h
 include/dlib/error.h
 include/dlib/external/cblas/cblas.h
 include/dlib/external/cblas/cblas_f77.h
-include/dlib/external/libjpeg/jchuff.h
+include/dlib/external/libjpeg/cderror.h
+include/dlib/external/libjpeg/cdjpeg.h
 include/dlib/external/libjpeg/jconfig.h
 include/dlib/external/libjpeg/jdct.h
-include/dlib/external/libjpeg/jdhuff.h
 include/dlib/external/libjpeg/jerror.h
 include/dlib/external/libjpeg/jinclude.h
 include/dlib/external/libjpeg/jmemsys.h
@@ -220,6 +222,7 @@ include/dlib/external/libjpeg/jmorecfg.h
 include/dlib/external/libjpeg/jpegint.h
 include/dlib/external/libjpeg/jpeglib.h
 include/dlib/external/libjpeg/jversion.h
+include/dlib/external/libjpeg/transupp.h
 include/dlib/external/libpng/png.h
 include/dlib/external/libpng/pngconf.h
 include/dlib/external/libpng/pngdebug.h
@@ -1033,6 +1036,8 @@ libdata/pkgconfig/dlib-1.pc
 @dir include/dlib/cmake_utils/test_for_cpp11
 @dir include/dlib/cmake_utils/test_for_cuda
 @dir include/dlib/cmake_utils/test_for_cudnn
+@dir include/dlib/cmake_utils/test_for_libjpeg
+@dir include/dlib/cmake_utils/test_for_libpng
 @dir include/dlib/cmake_utils/test_for_neon
 @dir include/dlib/cmake_utils/test_for_sse4
 @dir include/dlib/external/libpng/arm
