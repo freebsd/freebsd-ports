@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gqrx
-PORTVERSION=	2.12.0
+PORTVERSION=	2.12.1
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
