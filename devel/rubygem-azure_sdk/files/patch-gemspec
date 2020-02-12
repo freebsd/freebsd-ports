@@ -1,14 +1,5 @@
---- azure_sdk.gemspec.orig	2020-02-03 16:32:11 UTC
+--- azure_sdk.gemspec.orig	2020-02-12 15:42:48 UTC
 +++ azure_sdk.gemspec
-@@ -148,7 +148,7 @@ Gem::Specification.new do |s|
-       s.add_runtime_dependency(%q<azure_cognitiveservices_luisauthoring>.freeze, ["~> 0.18.0"])
-       s.add_runtime_dependency(%q<azure_cognitiveservices_newssearch>.freeze, ["~> 0.18.1"])
-       s.add_runtime_dependency(%q<azure_cognitiveservices_personalizer>.freeze, ["~> 0.17.0"])
--      s.add_runtime_dependency(%q<azure_cognitiveservices_qnamaker>.freeze, ["~> 0.17.2"])
-+      s.add_runtime_dependency(%q<azure_cognitiveservices_qnamaker>.freeze, ["~> 0.17", ">= 0.17.2"])
-       s.add_runtime_dependency(%q<azure_cognitiveservices_qnamakerruntime>.freeze, ["~> 0.17.0"])
-       s.add_runtime_dependency(%q<azure_cognitiveservices_spellcheck>.freeze, ["~> 0.18.1"])
-       s.add_runtime_dependency(%q<azure_cognitiveservices_textanalytics>.freeze, ["~> 0.17.3"])
 @@ -159,7 +159,7 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<azure_graph_rbac>.freeze, ["~> 0.17.1"])
        s.add_runtime_dependency(%q<azure_key_vault>.freeze, ["~> 0.17.3"])
