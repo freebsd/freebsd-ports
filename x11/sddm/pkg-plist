@@ -8,7 +8,6 @@ man/man1/sddm.1.gz
 man/man1/sddm-greeter.1.gz
 man/man5/sddm.conf.5.gz
 man/man5/sddm-state.conf.5.gz
-@sample etc/sddm.conf.sample
 %%QT_QMLDIR%%/SddmComponents/Background.qml
 %%QT_QMLDIR%%/SddmComponents/Button.qml
 %%QT_QMLDIR%%/SddmComponents/Clock.qml
@@ -150,6 +149,7 @@ libexec/sddm-helper
 %%DATADIR%%/themes/maya/screenshots/hi_IN.png
 %%DATADIR%%/themes/maya/theme.conf
 %%DATADIR%%/translations/ar.qm
+%%DATADIR%%/translations/bn.qm
 %%DATADIR%%/translations/ca.qm
 %%DATADIR%%/translations/cs.qm
 %%DATADIR%%/translations/da.qm
@@ -160,6 +160,7 @@ libexec/sddm-helper
 %%DATADIR%%/translations/fr.qm
 %%DATADIR%%/translations/hi_IN.qm
 %%DATADIR%%/translations/hu.qm
+%%DATADIR%%/translations/is.qm
 %%DATADIR%%/translations/it.qm
 %%DATADIR%%/translations/ja.qm
 %%DATADIR%%/translations/kk.qm

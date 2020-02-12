@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sddm
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	8
 CATEGORIES=	x11
 
 MAINTAINER=	kde@FreeBSD.org
@@ -40,20 +39,15 @@ SUB_FILES=	xinitrc.desktop
 USERS=		sddm
 GROUPS=		sddm
 
-# There are multiple patches that apply to Display.cpp,
-# fixing CVE-2018-14345 and backported from 0.18.
-EXTRA_PATCHES=	${PATCHDIR}/git-patch-147cec38d ${PATCHDIR}/git-patch-b02b00559
-
 post-patch:
 	@${REINPLACE_CMD} -e 's#/etc/X11#${LOCALBASE}/etc/X11#' \
 		-e 's#/usr/bin/#${LOCALBASE}/bin/#g' \
 		-e 's#/usr/share/#${LOCALBASE}/share/#' \
 		${WRKSRC}/data/scripts/Xsession \
 		${WRKSRC}/src/common/Configuration.h
+	@${CP} ${PATCHDIR}/VirtualTerminal_FreeBSD.cpp ${WRKSRC}/src/daemon
 
 post-install:
-	${MV} ${STAGEDIR}${PREFIX}/etc/sddm.conf \
-		${STAGEDIR}${PREFIX}/etc/sddm.conf.sample
 # Install xsession.desktop to launch .xinitrc via sddm.
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xsessions
 	${INSTALL_DATA} ${WRKDIR}/xinitrc.desktop ${STAGEDIR}${PREFIX}/share/xsessions
