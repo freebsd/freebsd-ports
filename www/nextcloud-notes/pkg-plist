@@ -206,6 +206,7 @@
 %%WWWDIR%%/lib/Db/Meta.php
 %%WWWDIR%%/lib/Db/MetaMapper.php
 %%WWWDIR%%/lib/Db/Note.php
+%%WWWDIR%%/lib/Service/InsufficientStorageException.php
 %%WWWDIR%%/lib/Service/MetaService.php
 %%WWWDIR%%/lib/Service/NoteDoesNotExistException.php
 %%WWWDIR%%/lib/Service/NoteUtil.php
