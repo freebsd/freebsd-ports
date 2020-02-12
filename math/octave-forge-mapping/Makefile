@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-mapping
-PORTVERSION=	1.2.1
-PORTREVISION=	12
+PORTVERSION=	1.4.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -19,6 +18,9 @@ OCTSRC=		${DISTNAME}
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# nada
+
+RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:math/octave-forge-io
+RUN_DEPENDS+=	${TARBALLS_DIR}/geometry.tar.gz:math/octave-forge-geometry
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
