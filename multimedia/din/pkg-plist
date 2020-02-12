@@ -391,6 +391,8 @@ share/applications/din.desktop
 %%DATADIR%%/factory/morph_target.crv
 %%DATADIR%%/factory/morse-code.ed
 %%DATADIR%%/factory/morse-code.help.tcl
+%%DATADIR%%/factory/noiser.crv
+%%DATADIR%%/factory/noiser.ed
 %%DATADIR%%/factory/notation.help.tcl
 %%DATADIR%%/factory/note-distance.help.tcl
 %%DATADIR%%/factory/num-octaves.help.tcl
@@ -467,7 +469,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/spiraler_sin.ed
 %%DATADIR%%/factory/start-end.help.tcl
 %%DATADIR%%/factory/start-end.patch.tcl
-%%DATADIR%%/factory/swav.crv
 %%DATADIR%%/factory/tuning.help.tcl
 %%DATADIR%%/factory/velocity.crv
 %%DATADIR%%/factory/velocity.ed
