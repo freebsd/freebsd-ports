@@ -2,34 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	libepoll-shim
-PORTVERSION=	0.0.20190311
+PORTVERSION=	0.0.20200212
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	epoll shim implemented using kevent
+COMMENT=	Small epoll implementation using kqueue
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cmake compiler:c11
+USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	epoll-shim
-GH_TAGNAME=	1d1135384395dbf38eea00680ca28ead04f8dce2
+GH_TAGNAME=	07e2a80
 
-USE_LDCONFIG=	yes
+do-test:
+	# Exclude certain tests in resource restricted environments
+	@(if [ `ulimit -n` -lt 20100 ]; then \
+	    ${ECHO} "Skipping test perf-many-fds.perf_many_fds__perf"; \
+	    SKIP_TESTS="-E ^(perf-many-fds.perf_many_fds__perf"; \
+	    if [ `ulimit -n` -lt 1100 ]; then \
+	        ${ECHO} "Skipping test timerfd-test.timerfd__many_timers"; \
+	        SKIP_TESTS=$$SKIP_TESTS"|timerfd-test.timerfd__many_timers"; \
+	    fi; \
+	    SKIP_TESTS=$$SKIP_TESTS")$$"; \
+	fi; \
+	cd ${TEST_WRKSRC} && \
+	${SETENV} ${TEST_ENV} ctest -C ${CMAKE_BUILD_TYPE} $$SKIP_TESTS)
 
-USES=		compiler uidfix
-MAKE_ARGS=	WITHOUT_PROFILE=yes
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' ${WRKSRC}/Makefile
-.if "${CHOSEN_COMPILER_TYPE}" == "gcc"
-	@${REINPLACE_CMD} -e 's|Wno-missing-variable-declarations|Wno-missing-declarations|' \
-		-e 's|-Wno-thread-safety-analysis||' ${WRKSRC}/Makefile
-.endif
-
-pre-install:
-	@${MKDIR} ${STAGEDIR}/${PREFIX}/include/libepoll-shim/sys
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
