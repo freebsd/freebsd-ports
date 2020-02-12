@@ -32,9 +32,7 @@ command_args="--key-file=${munged_keyfile}"
 munged_stop()
 {
 	if [ -f "${pidfile}" ]; then
-		kill -9 `cat ${pidfile}`
-		sleep 1 # wait a little bit
-		rm -f /var/run/munge/*
+		kill `cat ${pidfile}`
 	fi
 
 }
