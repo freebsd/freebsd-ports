@@ -112,6 +112,8 @@ include/liveMedia/H265VideoRTPSource.hh
 include/liveMedia/H265VideoStreamDiscreteFramer.hh
 include/liveMedia/H265VideoStreamFramer.hh
 include/liveMedia/HLSSegmenter.hh
+include/liveMedia/HMAC_SHA1.hh
+include/liveMedia/HMAC_hash.hh
 include/liveMedia/InputFile.hh
 include/liveMedia/JPEG2000VideoRTPSink.hh
 include/liveMedia/JPEG2000VideoRTPSource.hh
@@ -119,6 +121,7 @@ include/liveMedia/JPEGVideoRTPSink.hh
 include/liveMedia/JPEGVideoRTPSource.hh
 include/liveMedia/JPEGVideoSource.hh
 include/liveMedia/Locale.hh
+include/liveMedia/MIKEY.hh
 include/liveMedia/MP3ADU.hh
 include/liveMedia/MP3ADURTPSink.hh
 include/liveMedia/MP3ADURTPSource.hh
@@ -191,6 +194,7 @@ include/liveMedia/RTSPServerSupportingHTTPStreaming.hh
 include/liveMedia/RawVideoRTPSink.hh
 include/liveMedia/RawVideoRTPSource.hh
 include/liveMedia/SIPClient.hh
+include/liveMedia/SRTPCryptographicContext.hh
 include/liveMedia/ServerMediaSession.hh
 include/liveMedia/SimpleRTPSink.hh
 include/liveMedia/SimpleRTPSource.hh
