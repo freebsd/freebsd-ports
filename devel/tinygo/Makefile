@@ -2,12 +2,8 @@
 
 PORTNAME=	tinygo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
+DISTVERSION=	0.12.0
 CATEGORIES=	devel
-
-# https://github.com/tinygo-org/tinygo/pull/810
-PATCH_SITES=	https://github.com/dmgk/tinygo/commit/
-PATCHFILES=	88c85403cc01650ca8a2b9a69ee8c68231ec0e54.patch:-p1
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Go compiler for small places
@@ -31,14 +27,16 @@ GH_TUPLE=	\
 		google:shlex:c34317bd91bf:google_shlex/vendor/github.com/google/shlex \
 		marcinbor85:gohex:7a43cd876e46:marcinbor85_gohex/vendor/github.com/marcinbor85/gohex \
 		bugst:go-serial:5f7892a7bb45:bugst_go_serial/vendor/go.bug.st/serial.v1 \
-		tinygo-org:go-llvm:b2db3df3f257:tinygo_go_llvm/vendor/tinygo.org/x/go-llvm
+		tinygo-org:go-llvm:1ff21df33566:tinygo_go_llvm/vendor/tinygo.org/x/go-llvm
 
 # Device files and runtime are distributed as submodules
-GH_TUPLE+=	NordicSemiconductor:nrfx:3ab39a9d457b:nrfx/lib/nrfx \
+GH_TUPLE+=	\
 		ARM-software:CMSIS:9fe411cef1ce:cmsis/lib/CMSIS \
+		CraneStation:wasi-libc:a280fead2ae7:wasi_libc/lib/wasi-libc \
+		NordicSemiconductor:nrfx:3ab39a9d457b:nrfx/lib/nrfx \
 		avr-rust:avr-mcu:6624554c02b2:avr/lib/avr \
-		tinygo-org:cmsis-svd:7d9b4167010f:cmsis_svd/lib/cmsis-svd \
-		llvm-mirror:compiler-rt:5bc79797e1f9:compiler_rt/lib/compiler-rt
+		llvm-mirror:compiler-rt:5bc79797e1f9:compiler_rt/lib/compiler-rt \
+		tinygo-org:cmsis-svd:7d9b4167010f:cmsis_svd/lib/cmsis-svd
 
 # Bundled LLVM
 GH_TUPLE+=	llvm:llvm-project:llvmorg-9.0.1:llvm/llvm-project

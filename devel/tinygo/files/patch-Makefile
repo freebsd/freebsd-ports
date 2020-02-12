@@ -1,6 +1,19 @@
---- Makefile.orig	2020-01-12 12:25:35 UTC
+--- Makefile.orig	2020-01-30 23:01:47 UTC
 +++ Makefile
-@@ -18,7 +18,7 @@ MD5SUM = md5sum
+@@ -8,9 +8,9 @@ CLANG_SRC ?= llvm-project/clang
+ LLD_SRC ?= llvm-project/lld
+ 
+ # Default tool selection.
+-CLANG ?= clang-9
+-LLVM_AR ?= llvm-ar-9
+-LLVM_NM ?= llvm-nm-9
++CLANG ?= $(CURDIR)/llvm-build/bin/clang-9
++LLVM_AR ?= $(CURDIR)/llvm-build/bin/llvm-ar
++LLVM_NM ?= $(CURDIR)/llvm-build/bin/llvm-nm
+ 
+ # Go binary and GOROOT to select
+ GO ?= go
+@@ -23,7 +23,7 @@ MD5SUM = md5sum
  TINYGO ?= tinygo
  
  # Use CCACHE for LLVM if possible
@@ -9,7 +22,7 @@
      LLVM_OPTION += '-DLLVM_CCACHE_BUILD=ON'
  endif
  
-@@ -99,13 +99,13 @@ fmt-check:
+@@ -104,13 +104,13 @@ fmt-check:
  gen-device: gen-device-avr gen-device-nrf gen-device-sam gen-device-sifive gen-device-stm32
  
  gen-device-avr:
@@ -25,20 +38,27 @@
  
  gen-device-nrf: build/gen-device-svd
  	./build/gen-device-svd -source=https://github.com/NordicSemiconductor/nrfx/tree/master/mdk lib/nrfx/mdk/ src/device/nrf/
-@@ -142,10 +142,10 @@ $(LLVM_BUILDDIR): $(LLVM_BUILDDIR)/build.ninja
+@@ -148,16 +148,16 @@ $(LLVM_BUILDDIR): $(LLVM_BUILDDIR)/build.ninja
+ .PHONY: wasi-libc
+ wasi-libc: lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a
+ lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a:
+-	cd lib/wasi-libc && make -j4 WASM_CC=$(CLANG) WASM_AR=$(LLVM_AR) WASM_NM=$(LLVM_NM)
++	cd lib/wasi-libc && gmake WASM_CC=$(CLANG) WASM_AR=$(LLVM_AR) WASM_NM=$(LLVM_NM)
+ 
+ 
  # Build the Go compiler.
  tinygo:
  	@if [ ! -f "$(LLVM_BUILDDIR)/bin/llvm-config" ]; then echo "Fetch and build LLVM first by running:"; echo "  make llvm-source"; echo "  make $(LLVM_BUILDDIR)"; exit 1; fi
 -	CGO_CPPFLAGS="$(CGO_CPPFLAGS)" CGO_CXXFLAGS="$(CGO_CXXFLAGS)" CGO_LDFLAGS="$(CGO_LDFLAGS)" $(GO) build -o build/tinygo$(EXE) -tags byollvm .
 +	CGO_CPPFLAGS="$(CGO_CPPFLAGS)" CGO_CXXFLAGS="$(CGO_CXXFLAGS)" CGO_LDFLAGS="$(CGO_LDFLAGS)" $(GO) build -o build/tinygo$(EXE) -tags byollvm -mod=vendor .
  
- test:
+ test: wasi-libc
 -	CGO_CPPFLAGS="$(CGO_CPPFLAGS)" CGO_CXXFLAGS="$(CGO_CXXFLAGS)" CGO_LDFLAGS="$(CGO_LDFLAGS)" $(GO) test -v -tags byollvm ./cgo ./compileopts ./interp ./transform .
 +	CGO_CPPFLAGS="$(CGO_CPPFLAGS)" CGO_CXXFLAGS="$(CGO_CXXFLAGS)" CGO_LDFLAGS="$(CGO_LDFLAGS)" $(GO) test -v -tags byollvm -mod=vendor ./cgo ./compileopts ./interp ./transform .
  
  tinygo-test:
  	cd tests/tinygotest && tinygo test
-@@ -280,4 +280,3 @@ release: tinygo gen-device
+@@ -302,4 +302,3 @@ release: tinygo gen-device wasi-libc
  	./build/tinygo build-builtins -target=armv6m-none-eabi  -o build/release/tinygo/pkg/armv6m-none-eabi/compiler-rt.a
  	./build/tinygo build-builtins -target=armv7m-none-eabi  -o build/release/tinygo/pkg/armv7m-none-eabi/compiler-rt.a
  	./build/tinygo build-builtins -target=armv7em-none-eabi -o build/release/tinygo/pkg/armv7em-none-eabi/compiler-rt.a
