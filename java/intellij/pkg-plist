@@ -172,7 +172,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/jcip-annotations-1.0.jar
 %%DATADIR%%/lib/jdkAnnotations.jar
 %%DATADIR%%/lib/jdom.jar
-%%DATADIR%%/lib/jediterm-pty-2.22.jar
+%%DATADIR%%/lib/jediterm-pty-2.24.jar
 %%DATADIR%%/lib/jetCheck-0.2.1.jar
 %%DATADIR%%/lib/jing-20030619.jar
 %%DATADIR%%/lib/jna-platform.jar
