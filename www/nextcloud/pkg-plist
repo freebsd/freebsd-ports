@@ -4233,6 +4233,8 @@
 %%WWWDIR%%/apps-pkg/accessibility/l10n/sq.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/sr.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/sr.json
+%%WWWDIR%%/apps-pkg/accessibility/l10n/sr@latin.js
+%%WWWDIR%%/apps-pkg/accessibility/l10n/sr@latin.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/sv.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/sv.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/tr.js
@@ -4954,6 +4956,8 @@
 %%WWWDIR%%/apps-pkg/dav/l10n/sv.json
 %%WWWDIR%%/apps-pkg/dav/l10n/tr.js
 %%WWWDIR%%/apps-pkg/dav/l10n/tr.json
+%%WWWDIR%%/apps-pkg/dav/l10n/uk.js
+%%WWWDIR%%/apps-pkg/dav/l10n/uk.json
 %%WWWDIR%%/apps-pkg/dav/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/dav/l10n/zh_CN.json
 %%WWWDIR%%/apps-pkg/dav/l10n/zh_TW.js
@@ -8530,6 +8534,7 @@
 %%WWWDIR%%/apps-pkg/notifications/appinfo/info.xml
 %%WWWDIR%%/apps-pkg/notifications/appinfo/routes.php
 %%WWWDIR%%/apps-pkg/notifications/appinfo/signature.json
+%%WWWDIR%%/apps-pkg/notifications/composer.json
 %%WWWDIR%%/apps-pkg/notifications/css/styles.scss
 %%WWWDIR%%/apps-pkg/notifications/docs/admin-notifications.md
 %%WWWDIR%%/apps-pkg/notifications/docs/notification-workflow.md
@@ -8806,6 +8811,8 @@
 %%WWWDIR%%/apps-pkg/oauth2/l10n/et_EE.json
 %%WWWDIR%%/apps-pkg/oauth2/l10n/eu.js
 %%WWWDIR%%/apps-pkg/oauth2/l10n/eu.json
+%%WWWDIR%%/apps-pkg/oauth2/l10n/fa.js
+%%WWWDIR%%/apps-pkg/oauth2/l10n/fa.json
 %%WWWDIR%%/apps-pkg/oauth2/l10n/fi.js
 %%WWWDIR%%/apps-pkg/oauth2/l10n/fi.json
 %%WWWDIR%%/apps-pkg/oauth2/l10n/fr.js
@@ -9079,6 +9086,7 @@
 %%WWWDIR%%/apps-pkg/photos/appinfo/routes.php
 %%WWWDIR%%/apps-pkg/photos/appinfo/signature.json
 %%WWWDIR%%/apps-pkg/photos/babel.config.js
+%%WWWDIR%%/apps-pkg/photos/composer.json
 %%WWWDIR%%/apps-pkg/photos/css/icons.scss
 %%WWWDIR%%/apps-pkg/photos/img/app.svg
 %%WWWDIR%%/apps-pkg/photos/img/photos.svg
@@ -9768,12 +9776,6 @@
 %%WWWDIR%%/apps-pkg/settings/js/usersettings.js
 %%WWWDIR%%/apps-pkg/settings/js/vue-0.js
 %%WWWDIR%%/apps-pkg/settings/js/vue-0.js.map
-%%WWWDIR%%/apps-pkg/settings/js/vue-1.js
-%%WWWDIR%%/apps-pkg/settings/js/vue-1.js.map
-%%WWWDIR%%/apps-pkg/settings/js/vue-2.js
-%%WWWDIR%%/apps-pkg/settings/js/vue-2.js.map
-%%WWWDIR%%/apps-pkg/settings/js/vue-3.js
-%%WWWDIR%%/apps-pkg/settings/js/vue-3.js.map
 %%WWWDIR%%/apps-pkg/settings/js/vue-4.js
 %%WWWDIR%%/apps-pkg/settings/js/vue-4.js.map
 %%WWWDIR%%/apps-pkg/settings/js/vue-5.js
@@ -10037,6 +10039,8 @@
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/es_UY.json
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/et_EE.js
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/et_EE.json
+%%WWWDIR%%/apps-pkg/sharebymail/l10n/fa.js
+%%WWWDIR%%/apps-pkg/sharebymail/l10n/fa.json
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/fi.js
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/fi.json
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/fr.js
@@ -11130,6 +11134,7 @@
 %%WWWDIR%%/apps-pkg/text/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/text/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/text/lib/AppInfo/Application.php
+%%WWWDIR%%/apps-pkg/text/lib/Command/ResetDocument.php
 %%WWWDIR%%/apps-pkg/text/lib/Controller/DirectSessionController.php
 %%WWWDIR%%/apps-pkg/text/lib/Controller/NavigationController.php
 %%WWWDIR%%/apps-pkg/text/lib/Controller/PublicSessionController.php
@@ -11402,6 +11407,8 @@
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/ka_GE.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/ko.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/ko.json
+%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/lt_LT.js
+%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/lt_LT.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/lv.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/lv.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/mk.js
@@ -12037,6 +12044,7 @@
 %%WWWDIR%%/apps-pkg/viewer/appinfo/info.xml
 %%WWWDIR%%/apps-pkg/viewer/appinfo/signature.json
 %%WWWDIR%%/apps-pkg/viewer/babel.config.js
+%%WWWDIR%%/apps-pkg/viewer/composer.json
 %%WWWDIR%%/apps-pkg/viewer/img/app.svg
 %%WWWDIR%%/apps-pkg/viewer/js/viewer.js
 %%WWWDIR%%/apps-pkg/viewer/js/viewer.js.map
@@ -12295,6 +12303,7 @@
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/workflowengine/lib/AppInfo/Application.php
+%%WWWDIR%%/apps-pkg/workflowengine/lib/BackgroundJobs/Rotate.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Check/AbstractStringCheck.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Check/FileMimeType.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Check/FileName.php
@@ -12312,10 +12321,12 @@
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Controller/RequestTime.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Controller/UserWorkflowsController.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Entity/File.php
+%%WWWDIR%%/apps-pkg/workflowengine/lib/Helper/LogContext.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Helper/ScopeContext.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Manager.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Migration/PopulateNewlyIntroducedDatabaseFields.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Migration/Version2000Date20190808074233.php
+%%WWWDIR%%/apps-pkg/workflowengine/lib/Service/Logger.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Service/RuleMatcher.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Settings/ASettings.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Settings/Admin.php
@@ -13768,6 +13779,7 @@
 %%WWWDIR%%/lib/private/App/AppStore/Bundles/EducationBundle.php
 %%WWWDIR%%/lib/private/App/AppStore/Bundles/EnterpriseBundle.php
 %%WWWDIR%%/lib/private/App/AppStore/Bundles/GroupwareBundle.php
+%%WWWDIR%%/lib/private/App/AppStore/Bundles/HubBundle.php
 %%WWWDIR%%/lib/private/App/AppStore/Bundles/SocialSharingBundle.php
 %%WWWDIR%%/lib/private/App/AppStore/Fetcher/AppFetcher.php
 %%WWWDIR%%/lib/private/App/AppStore/Fetcher/CategoryFetcher.php
@@ -14749,6 +14761,7 @@
 %%WWWDIR%%/lib/public/Lock/LockedException.php
 %%WWWDIR%%/lib/public/Lock/ManuallyLockedException.php
 %%WWWDIR%%/lib/public/Lockdown/ILockdownManager.php
+%%WWWDIR%%/lib/public/Log/IDataLogger.php
 %%WWWDIR%%/lib/public/Log/IFileBased.php
 %%WWWDIR%%/lib/public/Log/ILogFactory.php
 %%WWWDIR%%/lib/public/Log/IWriter.php
