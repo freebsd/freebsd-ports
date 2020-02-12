@@ -14,15 +14,6 @@
  #  define utmp		utmpx
  #  define getutent	getutxent
  #  define getutid	getutxid
-@@ -507,7 +509,7 @@
-  */
- 
- #ifndef TERMCAP_BUFSIZE
--# define TERMCAP_BUFSIZE 2048
-+# define TERMCAP_BUFSIZE 1023
- #endif
- 
- #ifndef MAXPATHLEN
 @@ -524,6 +526,6 @@
  /* Changing those you won't be able to attach to your old sessions
   * when changing those values in official tree don't forget to bump
