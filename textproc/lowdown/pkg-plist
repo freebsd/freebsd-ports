@@ -10,6 +10,7 @@ share/man/man3/lowdown_doc_free.3.gz
 share/man/man3/lowdown_doc_new.3.gz
 share/man/man3/lowdown_doc_parse.3.gz
 share/man/man3/lowdown_errstr.3.gz
+share/man/man3/lowdown_errstr.3.gz
 share/man/man3/lowdown_file.3.gz
 share/man/man3/lowdown_file_diff.3.gz
 share/man/man3/lowdown_html_free.3.gz
