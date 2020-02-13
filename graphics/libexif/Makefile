@@ -3,11 +3,11 @@
 
 PORTNAME=	libexif
 PORTVERSION=	0.6.21
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	marius@nuenneri.ch
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Library to read digital camera file meta-data
 
 LICENSE=	LGPL21

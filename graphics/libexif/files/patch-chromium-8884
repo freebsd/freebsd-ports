@@ -1,0 +1,24 @@
+https://github.com/libexif/libexif/commit/a0c04d9cb6ab0c41a6458def9f892754e84160a0.patch
+From a0c04d9cb6ab0c41a6458def9f892754e84160a0 Mon Sep 17 00:00:00 2001
+From: Marcus Meissner <marcus@jet.franken.de>
+Date: Sat, 15 Jun 2019 18:40:48 +0200
+Subject: [PATCH] fixed a buffer overread (OSS-Fuzz)
+ https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=8884
+
+---
+ libexif/olympus/exif-mnote-data-olympus.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git libexif/olympus/exif-mnote-data-olympus.c libexif/olympus/exif-mnote-data-olympus.c
+index dac7f5b..669e4ec 100644
+--- libexif/olympus/exif-mnote-data-olympus.c
++++ libexif/olympus/exif-mnote-data-olympus.c
+@@ -344,7 +344,7 @@ exif_mnote_data_olympus_load (ExifMnoteData *en,
+ 
+ 	case nikonV2:
+ 		o2 += 6;
+-		if (o2 >= buf_size) return;
++		if (o2 + 8 >= buf_size) return;
+ 		exif_log (en->log, EXIF_LOG_CODE_DEBUG, "ExifMnoteDataOlympus",
+ 			"Parsing Nikon maker note v2 (0x%02x, %02x, %02x, "
+ 			"%02x, %02x, %02x, %02x, %02x)...",
