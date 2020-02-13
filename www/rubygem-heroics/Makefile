@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	heroics
-PORTVERSION=	0.0.25
+PORTVERSION=	0.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -20,9 +20,9 @@ RUN_DEPENDS=	rubygem-erubis>=2.0<3:www/rubygem-erubis \
 USES=		gem
 USE_RUBY=	yes
 
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/heroics-generate \
 		bin/heroku-api
-
-NO_ARCH=	yes
 
 .include <bsd.port.mk>
