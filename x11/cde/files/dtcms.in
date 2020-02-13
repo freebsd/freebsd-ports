@@ -20,9 +20,9 @@ load_rc_config $name
 
 : ${dtcms_enable:=NO}
 
-command=/usr/sbin/daemon
-command_args="-P $pidfile %%PREFIX%%/dt/bin/rpc.cmsd"
 start_precmd="force_depend rpcbind || exit 1"
 pidfile=/var/run/dtcms.pid
+command=/usr/sbin/daemon
+command_args="-P $pidfile %%PREFIX%%/dt/bin/rpc.cmsd"
 
 run_rc_command $1

@@ -20,10 +20,10 @@ load_rc_config $name
 
 : ${dtspc_enable:=NO}
 
-command=/usr/sbin/daemon
-command_args="-P $pidfile %%PREFIX%%/dt/bin/dtspcd"
 start_precmd="force_depend rpcbind || exit 1 && ln -sf %%PREFIX%%/dt /usr/dt && ln -sf %%PREFIX%%/etc/dt /etc/dt"
 stop_postcmd="[ -L /usr/dt -a -L /etc/dt ] && rm /usr/dt /etc/dt"
 pidfile=/var/run/dtspc.pid
+command=/usr/sbin/daemon
+command_args="-P $pidfile %%PREFIX%%/dt/bin/dtspcd"
 
 run_rc_command $1

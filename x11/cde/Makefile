@@ -2,6 +2,7 @@
 
 PORTNAME=	cde
 DISTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 
@@ -12,6 +13,7 @@ LICENSE=	LGPL21
 
 BROKEN_mips64=		fails to build: ./config/imake/imake: No such file or directory
 BROKEN_powerpc64=	fails to build: ./config/imake/imake: No such file or directory
+BROKEN_FreeBSD_13=	fails to build: flex scanner jammed
 
 BUILD_DEPENDS=	ksh93:shells/ksh93			\
 		bdftopcf:x11-fonts/bdftopcf		\
