@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	avro
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.2
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
