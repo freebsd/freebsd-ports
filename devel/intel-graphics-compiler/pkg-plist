@@ -79,7 +79,6 @@ include/igc/ocl_igc_interface/ocl_translation_output.h
 include/igc/ocl_igc_interface/platform.h
 include/igc/ocl_igc_interface/platform_helper.h
 include/igc/ocl_igc_shared/device_enqueue/DeviceEnqueueInternalTypes.h
-include/igc/ocl_igc_shared/device_enqueue/device_enqueue_internal_types.h
 include/igc/ocl_igc_shared/executable_format/patch_g10.h
 include/igc/ocl_igc_shared/executable_format/patch_g7.h
 include/igc/ocl_igc_shared/executable_format/patch_g75.h
