@@ -30,7 +30,7 @@ MAKE_ENV=	LIBRARY_PATH="${LOCALBASE}/lib" \
 		FREEBL_LOWHASH=1 \
 		NSS_DISABLE_GTESTS=1 \
 		NSS_USE_SYSTEM_SQLITE=1
-CFLAGS+=	-I${LOCALBASE}/include/nspr
+CFLAGS+=	-I${LOCALBASE}/include/nspr -Wno-error=unused-function
 
 SUB_FILES=	nss-config nss.pc
 SUB_LIST=	PORTVERSION=${PORTVERSION}
