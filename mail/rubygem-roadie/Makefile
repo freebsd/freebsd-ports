@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	roadie
-PORTVERSION=	3.5.1
+PORTVERSION=	4.0.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
