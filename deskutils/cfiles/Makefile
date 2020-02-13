@@ -3,7 +3,7 @@
 PORTNAME=	cfiles
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,12 +18,12 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/w3m/w3mimgdisplay:www/w3m-img \
 		fzf:textproc/fzf \
 		pdftoppm:graphics/poppler-utils
 
-USES=		ncurses:port pkgconfig shebangfix
+USES=		shebangfix
 SHEBANG_FILES=	scripts/*
 USE_GITHUB=	yes
 GH_ACCOUNT=	mananapr
 
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC=${CC} NCURSES_CFLAGS=-I/usr/include NCURSES_LIBS=/usr/lib/libncursesw.so
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz \
