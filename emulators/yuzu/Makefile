@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yuzu
-PORTVERSION=	s20200201
+PORTVERSION=	s20200212
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	2916c1bc2
+GH_TAGNAME=	8f8dda2d5
 GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
@@ -52,6 +52,7 @@ GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 USES=		cmake compiler:c++17-lang iconv localbase:ldflags \
 		python:build sdl
 USE_SDL=	sdl2
+CXXFLAGS+=	-Wno-narrowing # https://github.com/yuzu-emu/yuzu/issues/3407
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test
 
