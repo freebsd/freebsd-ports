@@ -1,0 +1,11 @@
+--- doc/ref/gh.texi.orig	2010-12-13 17:24:39 UTC
++++ doc/ref/gh.texi
+@@ -995,8 +995,6 @@ These correspond to the Scheme @code{(co
+ 
+ @deftypefun SCM gh_car (SCM @var{obj})
+ @deftypefunx SCM gh_cdr (SCM @var{obj})
+-@dots{}
+-
+ @deftypefunx SCM gh_c[ad][ad][ad][ad]r (SCM @var{obj})
+ These correspond to the Scheme @code{(caadar ls)} procedures etc @dots{}
+ @end deftypefun
