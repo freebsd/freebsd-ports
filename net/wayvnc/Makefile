@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wayvnc
-PORTVERSION=	s20200129
+PORTVERSION=	s20200212
 CATEGORIES=	net
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,7 +22,8 @@ USE_XORG=	pixman
 USE_GL=		egl glesv2
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	any1
-GH_TAGNAME=	908ba0f
+GH_TAGNAME=	d1212af
 PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
 
 .include <bsd.port.mk>
