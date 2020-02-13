@@ -1,0 +1,105 @@
+CMake Warning at 3rdparty/qt5.cmake:3 (find_package):
+  Could not find a configuration file for package "Qt5" that is compatible
+  with requested version "5.14".
+
+  The following configuration files were considered but not accepted:
+
+    /usr/local/lib/cmake/Qt5/Qt5Config.cmake, version: 5.13.2
+
+--- 3rdparty/qt5.cmake.orig	2020-02-10 21:39:39 UTC
++++ 3rdparty/qt5.cmake
+@@ -1,11 +1,11 @@
+ add_library(3rdparty_qt5 INTERFACE)
+ 
+-find_package(Qt5 5.14 CONFIG COMPONENTS Widgets Network Qml Concurrent)
++find_package(Qt5 5.13 CONFIG COMPONENTS Widgets Network Qml Concurrent)
+ if(WIN32)
+-	find_package(Qt5 5.14 COMPONENTS WinExtras REQUIRED)
++	find_package(Qt5 5.13 COMPONENTS WinExtras REQUIRED)
+ 	target_link_libraries(3rdparty_qt5 INTERFACE Qt5::Widgets Qt5::WinExtras Qt5::Network Qt5::Qml Qt5::Concurrent)
+ else()
+-	find_package(Qt5 5.14 COMPONENTS DBus Gui)
++	find_package(Qt5 5.13 COMPONENTS DBus Gui)
+ 	if(Qt5DBus_FOUND)
+ 		target_link_libraries(3rdparty_qt5 INTERFACE Qt5::Widgets Qt5::DBus Qt5::Network Qt5::Qml Qt5::Concurrent)
+ 		target_compile_definitions(3rdparty_qt5 INTERFACE -DHAVE_QTDBUS)
+--- rpcs3/main.cpp.orig	2020-02-10 21:39:39 UTC
++++ rpcs3/main.cpp
+@@ -137,13 +137,19 @@ QCoreApplication* createApplication(int& argc, char* a
+ 		const auto i_hdpi_2 = (argc > (i_hdpi + 1)) ? (i_hdpi + 1) : 0;
+ 		const auto high_dpi_setting = (i_hdpi_2 && !strcmp(cmp_str.c_str(), argv[i_hdpi_2])) ? "0" : "1";
+ 
++#if (QT_VERSION < QT_VERSION_CHECK(5,14,0))
++		// Set QT_AUTO_SCREEN_SCALE_FACTOR from environment. Defaults to cli argument, which defaults to 1.
++		use_high_dpi = "1" == qEnvironmentVariable("QT_AUTO_SCREEN_SCALE_FACTOR", high_dpi_setting);
++#else
+ 		// Set QT_ENABLE_HIGHDPI_SCALING from environment. Defaults to cli argument, which defaults to 1.
+ 		use_high_dpi = "1" == qEnvironmentVariable("QT_ENABLE_HIGHDPI_SCALING", high_dpi_setting);
++#endif
+ 	}
+ 
+ 	// AA_EnableHighDpiScaling has to be set before creating a QApplication
+ 	QApplication::setAttribute(use_high_dpi ? Qt::AA_EnableHighDpiScaling : Qt::AA_DisableHighDpiScaling);
+ 
++#if (QT_VERSION >= QT_VERSION_CHECK(5,14,0))
+ 	if (use_high_dpi)
+ 	{
+ 		// Set QT_SCALE_FACTOR_ROUNDING_POLICY from environment. Defaults to cli argument, which defaults to RoundPreferFloor.
+@@ -195,6 +201,7 @@ QCoreApplication* createApplication(int& argc, char* a
+ 		}
+ 		QApplication::setHighDpiScaleFactorRoundingPolicy(rounding_val);
+ 	}
++#endif
+ 
+ 	return new gui_application(argc, argv);
+ }
+@@ -236,7 +243,9 @@ int main(int argc, char** argv)
+ 	parser.addOption(QCommandLineOption(arg_headless, "Run RPCS3 in headless mode."));
+ 	parser.addOption(QCommandLineOption(arg_no_gui, "Run RPCS3 without its GUI."));
+ 	parser.addOption(QCommandLineOption(arg_high_dpi, "Enables Qt High Dpi Scaling.", "enabled", "1"));
++#if (QT_VERSION >= QT_VERSION_CHECK(5,14,0))
+ 	parser.addOption(QCommandLineOption(arg_rounding, "Sets the Qt::HighDpiScaleFactorRoundingPolicy for values like 150% zoom.", "rounding", "4"));
++#endif
+ 	parser.addOption(QCommandLineOption(arg_styles, "Lists the available styles."));
+ 	parser.addOption(QCommandLineOption(arg_style, "Loads a custom style.", "style", ""));
+ 	parser.addOption(QCommandLineOption(arg_stylesheet, "Loads a custom stylesheet.", "path", ""));
+--- rpcs3/rpcs3qt/emu_settings.cpp.orig	2020-02-10 21:39:39 UTC
++++ rpcs3/rpcs3qt/emu_settings.cpp
+@@ -505,7 +505,11 @@ void emu_settings::EnhanceSpinBox(QSpinBox* spinbox, S
+ 	spinbox->setRange(min, max);
+ 	spinbox->setValue(val);
+ 
++#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+ 	connect(spinbox, &QSpinBox::textChanged, [=, this](const QString&/* text*/)
++#else
++	connect(spinbox, QOverload<const QString &>::of(&QSpinBox::valueChanged), [=, this](const QString&/* value*/)
++#endif
+ 	{
+ 		SetSetting(type, sstr(spinbox->cleanText()));
+ 	});
+@@ -547,7 +551,11 @@ void emu_settings::EnhanceDoubleSpinBox(QDoubleSpinBox
+ 	spinbox->setRange(min, max);
+ 	spinbox->setValue(val);
+ 
++#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+ 	connect(spinbox, &QDoubleSpinBox::textChanged, [=, this](const QString&/* text*/)
++#else
++	connect(spinbox, QOverload<const QString &>::of(&QDoubleSpinBox::valueChanged), [=, this](const QString&/* value*/)
++#endif
+ 	{
+ 		SetSetting(type, sstr(spinbox->cleanText()));
+ 	});
+--- rpcs3/rpcs3qt/qt_utils.h.orig	2020-02-10 21:39:39 UTC
++++ rpcs3/rpcs3qt/qt_utils.h
+@@ -16,7 +16,11 @@ namespace gui
+ 		template<typename T>
+ 		static QSet<T> list_to_set(const QList<T>& list)
+ 		{
++#if QT_VERSION >= QT_VERSION_CHECK(5,14,0)
+ 			return QSet<T>(list.begin(), list.end());
++#else
++			return QSet<T>::fromList(list);
++#endif
+ 		}
+ 
+ 		// Creates a frame geometry rectangle with given width height that's centered inside the origin,
