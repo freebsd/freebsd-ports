@@ -13,6 +13,7 @@ COMMENT=	Compression program similar to gzip or bzip2
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_PREFIX=${STAGEDIR}${PREFIX}
 
 PLIST_FILES=	bin/rzip man/man1/rzip.1.gz
 
