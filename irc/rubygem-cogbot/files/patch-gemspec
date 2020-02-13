@@ -14,7 +14,7 @@
 +      s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.8"])
        s.add_runtime_dependency(%q<daemons>.freeze, ["~> 1.2.4"])
 -      s.add_runtime_dependency(%q<twitter>.freeze, ["~> 6.1.0"])
-+      s.add_runtime_dependency(%q<twitter>.freeze, ["~> 6.1"])
++      s.add_runtime_dependency(%q<twitter>.freeze, [">= 6.1.0"])
        s.add_runtime_dependency(%q<json>.freeze, ["~> 2.1.0"])
 -      s.add_runtime_dependency(%q<yajl-ruby>.freeze, ["~> 1.3.0"])
 +      s.add_runtime_dependency(%q<yajl-ruby>.freeze, ["~> 1.3"])
