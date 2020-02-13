@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bastille
-PORTVERSION=	0.5.20191128
+PORTVERSION=	0.6.20200202
 CATEGORIES=	sysutils
 
 MAINTAINER=	christer.edwards@gmail.com
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bastillebsd
-GH_TAGNAME=	29565b2
+GH_TAGNAME=	7b706f8
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -27,6 +27,8 @@ post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/${DATADIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
-	${INSTALL_DATA} ${WRKSRC}/${ETCDIR}/bastille.conf ${STAGEDIR}${ETCDIR}/bastille.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/${PREFIX}/share/man/man1/bastille.1.gz \
+		${STAGEDIR}${PREFIX}/man/man1/bastille.1.gz
+	${INSTALL_DATA} ${WRKSRC}/${ETCDIR}/bastille.conf.sample ${STAGEDIR}${ETCDIR}/bastille.conf
 
 .include <bsd.port.mk>
