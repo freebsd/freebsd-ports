@@ -8475,6 +8475,7 @@
 %%WWWDIR%%/db/post_migrate/20200114113341_patch_prometheus_services_for_shared_cluster_applications.rb
 %%WWWDIR%%/db/post_migrate/20200123155929_remove_invalid_jira_data.rb
 %%WWWDIR%%/db/post_migrate/20200127090233_remove_invalid_issue_tracker_data.rb
+%%WWWDIR%%/db/post_migrate/20200204113223_schedule_recalculate_project_authorizations.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/doc/README.md
@@ -11288,6 +11289,7 @@
 %%WWWDIR%%/lib/gitlab/background_migration/populate_untracked_uploads_dependencies.rb
 %%WWWDIR%%/lib/gitlab/background_migration/prepare_untracked_uploads.rb
 %%WWWDIR%%/lib/gitlab/background_migration/prune_orphaned_geo_events.rb
+%%WWWDIR%%/lib/gitlab/background_migration/recalculate_project_authorizations.rb
 %%WWWDIR%%/lib/gitlab/background_migration/remove_restricted_todos.rb
 %%WWWDIR%%/lib/gitlab/background_migration/reset_merge_status.rb
 %%WWWDIR%%/lib/gitlab/background_migration/set_confidential_note_events_on_services.rb
@@ -15397,6 +15399,7 @@
 %%WWWDIR%%/spec/factories/personal_access_tokens.rb
 %%WWWDIR%%/spec/factories/pool_repositories.rb
 %%WWWDIR%%/spec/factories/programming_languages.rb
+%%WWWDIR%%/spec/factories/project_authorizations.rb
 %%WWWDIR%%/spec/factories/project_auto_devops.rb
 %%WWWDIR%%/spec/factories/project_custom_attributes.rb
 %%WWWDIR%%/spec/factories/project_daily_statistics.rb
@@ -17949,6 +17952,7 @@
 %%WWWDIR%%/spec/lib/gitlab/background_migration/populate_untracked_uploads_dependencies/untracked_file_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/populate_untracked_uploads_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/prepare_untracked_uploads_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/background_migration/recalculate_project_authorizations_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/remove_restricted_todos_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/reset_merge_status_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/schedule_calculate_wiki_sizes_spec.rb
@@ -19028,6 +19032,7 @@
 %%WWWDIR%%/spec/migrations/schedule_merge_request_assignees_migration_progress_check_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_pages_metadata_migration_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_populate_merge_request_assignees_table_spec.rb
+%%WWWDIR%%/spec/migrations/schedule_recalculate_project_authorizations_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_runners_token_encryption_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_set_confidential_note_events_on_webhooks_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_stages_index_migration_spec.rb
