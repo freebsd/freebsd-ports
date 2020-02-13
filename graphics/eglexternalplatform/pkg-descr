@@ -1,0 +1,10 @@
+This is a work-in-progress specification of the EGL External Platform
+interface for writing EGL platforms and their interactions with modern
+window systems on top of existing low-level EGL platform
+implementations. This keeps window system implementation specifics out
+of EGL drivers by using application-facing EGL functions.
+
+Examples of low-level EGL platforms are EGL_EXT_platform_device or
+EGL_KHR_platform_gbm.
+
+WWW: https://github.com/NVIDIA/eglexternalplatform
