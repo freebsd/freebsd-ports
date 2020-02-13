@@ -1,6 +1,6 @@
---- Makefile.orig	2019-02-04 13:46:44 UTC
+--- Makefile.orig	2020-02-11 21:06:54 UTC
 +++ Makefile
-@@ -37,7 +37,7 @@ INCLUDEDIR ?= include
+@@ -42,7 +42,7 @@ INCLUDEDIR ?= include
  CC ?= gcc
  AR ?= ar
  MKDIR =	mkdir -p
@@ -9,19 +9,3 @@
  VALGRIND = valgrind --leak-check=full --track-origins=yes
  
  VERSION_FLAGS = -DVERSION_MAJOR=$(VERSION_MAJOR) \
-@@ -154,13 +154,14 @@ clean:
- 	rm -rf build/
- 
- install: $(BUILDDIR)/$(LIB_SH_MAJ) $(BUILDDIR)/$(LIB_STATIC) $(BUILDDIR)/$(LIB_PKGCON)
--	$(INSTALL) $(BUILDDIR)/$(LIB_SH_MAJ) $(DESTDIR)$(PREFIX)/$(LIBDIR)/$(LIB_SH_VER)
-+	$(INSTALL) -s $(BUILDDIR)/$(LIB_SH_MAJ) $(DESTDIR)$(PREFIX)/$(LIBDIR)/$(LIB_SH_VER)
- 	(cd $(DESTDIR)$(PREFIX)/$(LIBDIR) && { ln -s -f $(LIB_SH_VER) $(LIB_SH_MAJ) || { rm -f $(LIB_SH_MAJ) && ln -s $(LIB_SH_VER) $(LIB_SH_MAJ); }; })
- 	(cd $(DESTDIR)$(PREFIX)/$(LIBDIR) && { ln -s -f $(LIB_SH_VER) $(LIB_SHARED) || { rm -f $(LIB_SHARED) && ln -s $(LIB_SH_VER) $(LIB_SHARED); }; })
- 	$(INSTALL) $(BUILDDIR)/$(LIB_STATIC) $(DESTDIR)$(PREFIX)/$(LIBDIR)/$(LIB_STATIC)
- 	chmod 644 $(DESTDIR)$(PREFIX)/$(LIBDIR)/$(LIB_STATIC)
- 	$(INSTALL) -d $(DESTDIR)$(PREFIX)/$(INCLUDEDIR)/cyaml
- 	$(INSTALL) -m 644 include/cyaml/* $(DESTDIR)$(PREFIX)/$(INCLUDEDIR)/cyaml
-+	$(INSTALL) -d $(DESTDIR)$(PREFIX)/$(LIBDIR)/pkgconfig
- 	$(INSTALL) -m 644 $(BUILDDIR)/$(LIB_PKGCON) $(DESTDIR)$(PREFIX)/$(LIBDIR)/pkgconfig/$(LIB_PKGCON)
- 
- examples: $(BUILDDIR)/planner $(BUILDDIR)/numerical
