@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.8-9528 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g54da9ac7e
+DISTVERSION=	0.0.8-9576 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g78c49e733
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,12 +25,12 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-27-g9220f5e:hidapi/3rdparty/hidapi \
-		RPCS3:llvm:9fb67ecaea74:llvm/llvm \
+		RPCS3:llvm:1394b1ccc8cf:llvm/llvm \
 		Cyan4973:xxHash:v0.6.5:xxHash/3rdparty/xxHash \
 		FNA-XNA:FAudio:20.02:FAudio/3rdparty/FAudio \
 		jbeder:yaml-cpp:yaml-cpp-0.6.2-23-geca9cfd:yamlcpp/3rdparty/yaml-cpp \
 		kobalicek:asmjit:fc251c9:asmjit/asmjit \
-		KhronosGroup:glslang:7.13.3496:glslang/Vulkan/glslang \
+		KhronosGroup:glslang:8.13.3559-55-gae594356:glslang/Vulkan/glslang \
 		tcbrindle:span:9d7559a:span/3rdparty/span \
 		USCiLab:cereal:v1.2.0:cereal/3rdparty/cereal \
 		zeux:pugixml:v1.9-51-g8bf806c:pugixml/3rdparty/pugixml
@@ -53,7 +53,7 @@ LLD_UNSAFE=	yes # XXX ports/219089
 .if make(makesum) || (!exists(/usr/include/c++/v1/charconv) && exists(/usr/lib/libc++.so))
 MASTER_SITES+=	https://releases.llvm.org/${LLVM_VER}/:libcxx
 DISTFILES+=	libcxx-${LLVM_VER}.src.tar.xz:libcxx
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-no-cotire
+CMAKE_OFF+=	USE_COTIRE
 CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx-${LLVM_VER}.src/include
 LLVM_VER=	8.0.0 # same as FreeBSD 11.3
 .endif
