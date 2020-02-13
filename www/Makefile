@@ -1454,7 +1454,6 @@
     SUBDIR += py-dj22-django-formset-js-improved
     SUBDIR += py-dj22-django-jquery-js
     SUBDIR += py-dj22-django-js-asset
-    SUBDIR += py-dj22-django-jsonfield2
     SUBDIR += py-dj22-django-model-utils
     SUBDIR += py-dj22-django-mptt
     SUBDIR += py-dj22-django-prometheus
@@ -1468,6 +1467,7 @@
     SUBDIR += py-dj22-djangoql
     SUBDIR += py-dj22-djangorestframework
     SUBDIR += py-dj22-drf-yasg
+    SUBDIR += py-dj22-jsonfield2
     SUBDIR += py-dj22-swapper
     SUBDIR += py-django
     SUBDIR += py-django-allauth
