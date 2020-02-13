@@ -46,6 +46,12 @@ MESON_ARGS=	-Dxwayland=true \
 		-Ddefault_font_path=${NONEXISTENT}
 PLIST_FILES=	bin/Xwayland
 
+OPTIONS_DEFINE=	NVIDIA
+
+NVIDIA_DESC=		EGLStream support for glamor on Xwayland
+NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
+NVIDIA_MESON_TRUE=	xwayland_eglstream
+
 do-install:
 # Wayland compositors only use the binary
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/hw/xwayland/Xwayland \
