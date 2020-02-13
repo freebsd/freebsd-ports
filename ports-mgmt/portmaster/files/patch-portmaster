@@ -221,14 +221,7 @@
  	--*)			echo "Illegal option $var" ; echo ''
  				echo "===>>> Try $progname --help"; exit 1 ;;
  	*)			newopts="$newopts $var" ;;
-@@ -722,13 +753,13 @@ while getopts 'BCDFGHKLPRabde:fghilm:nop:r:stvwx:y' CO
- 	h)	usage 0 ;;
- 	i)	INTERACTIVE_UPDATE=iopt; ARGS="-i $ARGS" ;;
- 	l)	LIST=lopt ;;
--	m)	export PM_MAKE_ARGS=$OPTARG	# For 'make checksum'
-+	m)	export PM_MAKE_ARGS="$PM_MAKE_ARGS $OPTARG"	# For 'make checksum'
- 		ARGS="-m $PM_MAKE_ARGS $ARGS" ;;
- 	n)	NO_ACTION=nopt; ARGS="-n $ARGS" ;;
+@@ -728,7 +759,7 @@ while getopts 'BCDFGHKLPRabde:fghilm:nop:r:stvwx:y' CO
  	o)	REPLACE_ORIGIN=oopt ;; # -o should take a parameter and $OPTARG should be assigned here
  	p)	fail 'The -p option has been deprecated' ;;
  	r)	PM_URB=ropt
