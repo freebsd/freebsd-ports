@@ -1517,7 +1517,6 @@
     SUBDIR += py-django-js-asset
     SUBDIR += py-django-json-rpc
     SUBDIR += py-django-jsonfield
-    SUBDIR += py-django-jsonfield2
     SUBDIR += py-django-ldapdb
     SUBDIR += py-django-libsass
     SUBDIR += py-django-markdownx
@@ -1674,6 +1673,7 @@
     SUBDIR += py-internetarchive
     SUBDIR += py-jonpy
     SUBDIR += py-jsonfield
+    SUBDIR += py-jsonfield2
     SUBDIR += py-kallithea
     SUBDIR += py-lektor
     SUBDIR += py-lesscpy

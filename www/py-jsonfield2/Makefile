@@ -4,7 +4,7 @@
 PORTNAME=	jsonfield2
 PORTVERSION=	3.0.3
 CATEGORIES=	www python
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}django-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reusable Django field to store validated JSON in your model
@@ -18,6 +18,8 @@ USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj22-jsonfield2
 
 # jsonfield2 3.1.0+ requires Django 2.2+
 PORTSCOUT=	limit:^3\.0\.
