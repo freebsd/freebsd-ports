@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/libexif/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	marius@nuenneri.ch
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	GTK+ widgets to display/edit EXIF tags
 
 LICENSE=	LGPL21
