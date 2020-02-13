@@ -2,7 +2,7 @@
 
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.2
+DISTVERSION=	0.5.4
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -51,20 +51,38 @@ GO_BUILDFLAGS=	-ldflags "\
 		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/command.Version=${BUILD_VERSION} \
 		-X github.com/${GH_ACCOUNT}/${GH_PROJECT}/command.BuildDate=${BUILD_DATE}"
 
-BUILD_HASH=	739b0af
-BUILD_VERSION=	${DISTVERSIONFULL}-${BUILD_HASH}
+BUILD_VERSION=	${DISTVERSION}
 BUILD_DATE=	$$(date +%Y-%m-%d)
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		etc/bash_completion.d/${PORTNAME}.bash \
+		share/fish/completions/${PORTNAME}.fish \
+		share/zsh/site_functions/_${PORTNAME}
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
+
+post-build:
+.for shell in bash zsh fish
+	${WRKDIR}/bin/${PORTNAME} completion -s ${shell} > ${WRKSRC}/${shell}
+.endfor
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${WRKSRC}/bash \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}.bash
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
+	${INSTALL_DATA} ${WRKSRC}/fish \
+		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site_functions
+	${INSTALL_DATA} ${WRKSRC}/zsh \
+		${STAGEDIR}${PREFIX}/share/zsh/site_functions/_${PORTNAME}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 do-test:
-	cd ${GO_WRKSRC} && ${SETENV} ${GO_ENV} ${GO_CMD} test ./...
+	@cd ${GO_WRKSRC} && ${SETENV} ${GO_ENV} ${GO_CMD} test ./...
 
 .include <bsd.port.mk>
