@@ -10,6 +10,7 @@ include/lttoolbox-%%APVER%%/lttoolbox/att_compiler.h
 include/lttoolbox-%%APVER%%/lttoolbox/buffer.h
 include/lttoolbox-%%APVER%%/lttoolbox/compiler.h
 include/lttoolbox-%%APVER%%/lttoolbox/compression.h
+include/lttoolbox-%%APVER%%/lttoolbox/deserialiser.h
 include/lttoolbox-%%APVER%%/lttoolbox/entry_token.h
 include/lttoolbox-%%APVER%%/lttoolbox/exception.h
 include/lttoolbox-%%APVER%%/lttoolbox/expander.h
@@ -23,15 +24,17 @@ include/lttoolbox-%%APVER%%/lttoolbox/my_stdio.h
 include/lttoolbox-%%APVER%%/lttoolbox/node.h
 include/lttoolbox-%%APVER%%/lttoolbox/pattern_list.h
 include/lttoolbox-%%APVER%%/lttoolbox/regexp_compiler.h
+include/lttoolbox-%%APVER%%/lttoolbox/serialiser.h
 include/lttoolbox-%%APVER%%/lttoolbox/sorted_vector.h
 include/lttoolbox-%%APVER%%/lttoolbox/state.h
+include/lttoolbox-%%APVER%%/lttoolbox/string_to_wostream.h
 include/lttoolbox-%%APVER%%/lttoolbox/tmx_compiler.h
 include/lttoolbox-%%APVER%%/lttoolbox/trans_exe.h
 include/lttoolbox-%%APVER%%/lttoolbox/transducer.h
 include/lttoolbox-%%APVER%%/lttoolbox/xml_parse_util.h
 libdata/pkgconfig/lttoolbox.pc
-lib/liblttoolbox3-%%APVER%%.so.0
-lib/liblttoolbox3-%%APVER%%.so.0.0.0
+lib/liblttoolbox3-%%APVER%%.so.1
+lib/liblttoolbox3-%%APVER%%.so.1.0.0
 lib/liblttoolbox3.a
 lib/liblttoolbox3.so
 %%DATADIR%%/acx.rng
