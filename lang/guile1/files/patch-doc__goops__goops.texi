@@ -1,0 +1,19 @@
+--- doc/goops/goops.texi.orig	2010-12-13 17:24:39 UTC
++++ doc/goops/goops.texi
+@@ -1,6 +1,7 @@
+ \input texinfo
+ @c -*-texinfo-*-
+ @c %**start of header
++@documentencoding ISO-8859-1
+ @setfilename goops.info
+ @settitle Goops Manual
+ @set goops
+@@ -131,7 +132,7 @@ info (goops.info) and texinfo format.
+ @end menu
+ 
+ @node Running GOOPS, Methods, Getting Started, Getting Started
+-@subsection Running GOOPS
++@section Running GOOPS
+ 
+ @enumerate
+ @item

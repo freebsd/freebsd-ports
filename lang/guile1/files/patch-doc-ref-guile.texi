@@ -1,0 +1,10 @@
+--- doc/ref/guile.texi.orig	2010-12-13 17:25:01 UTC
++++ doc/ref/guile.texi
+@@ -1,6 +1,7 @@
+ \input texinfo
+ @c -*-texinfo-*-
+ @c %**start of header
++@documentencoding ISO-8859-1
+ @setfilename guile.info
+ @settitle Guile Reference Manual
+ @set guile

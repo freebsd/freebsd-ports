@@ -125,6 +125,7 @@
     SUBDIR += groovy
     SUBDIR += gscheme
     SUBDIR += guile
+    SUBDIR += guile1
     SUBDIR += guile2
     SUBDIR += harbour
     SUBDIR += haskell-mode.el
