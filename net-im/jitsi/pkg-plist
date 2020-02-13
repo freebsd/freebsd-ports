@@ -8,9 +8,6 @@ lib/jitsi/lib/logging.properties
 lib/jitsi/lib/native/libhid.so
 lib/jitsi/lib/native/libhwaddressretriever.so
 lib/jitsi/lib/native/libjdic_misc.so
-lib/jitsi/lib/native/libjnopus.so
-lib/jitsi/lib/native/libjnpulseaudio.so
-lib/jitsi/lib/native/libjnvideo4linux2.so
 lib/jitsi/sc-bundles/accountinfo.jar
 lib/jitsi/sc-bundles/addrbook.jar
 lib/jitsi/sc-bundles/advancedconfig.jar
@@ -18,6 +15,7 @@ lib/jitsi/sc-bundles/aimaccregwizz.jar
 lib/jitsi/sc-bundles/argdelegation-service.jar
 lib/jitsi/sc-bundles/argdelegation.jar
 lib/jitsi/sc-bundles/bccontrib.jar
+lib/jitsi/sc-bundles/bcpkix.jar
 lib/jitsi/sc-bundles/bouncycastle.jar
 lib/jitsi/sc-bundles/branding.jar
 lib/jitsi/sc-bundles/browserlauncher.jar
@@ -41,10 +39,12 @@ lib/jitsi/sc-bundles/demuxcontactsource.jar
 lib/jitsi/sc-bundles/desktoputil.jar
 lib/jitsi/sc-bundles/dns.jar
 lib/jitsi/sc-bundles/dnsconfig.jar
+lib/jitsi/sc-bundles/dnsjava.jar
+lib/jitsi/sc-bundles/dnssecjava.jar
 lib/jitsi/sc-bundles/dnsservice.jar
-lib/jitsi/sc-bundles/facebookaccregwizz.jar
 lib/jitsi/sc-bundles/fileaccess.jar
 lib/jitsi/sc-bundles/filehistory.jar
+lib/jitsi/sc-bundles/fmj.jar
 lib/jitsi/sc-bundles/generalconfig.jar
 lib/jitsi/sc-bundles/globaldisplaydetails.jar
 lib/jitsi/sc-bundles/globalproxyconfig.jar
@@ -60,6 +60,7 @@ lib/jitsi/sc-bundles/hsqldb.jar
 lib/jitsi/sc-bundles/httpclient.jar
 lib/jitsi/sc-bundles/httpcore.jar
 lib/jitsi/sc-bundles/httputil.jar
+lib/jitsi/sc-bundles/ice4j.jar
 lib/jitsi/sc-bundles/icqaccregwizz.jar
 lib/jitsi/sc-bundles/ippiaccregwizz.jar
 lib/jitsi/sc-bundles/iptelaccregwizz.jar
@@ -67,10 +68,14 @@ lib/jitsi/sc-bundles/irc-api-1.0.jar
 lib/jitsi/sc-bundles/irc-commands.jar
 lib/jitsi/sc-bundles/ircaccregwizz.jar
 lib/jitsi/sc-bundles/jabberaccregwizz.jar
-lib/jitsi/sc-bundles/jfontchooserlib.jar
+lib/jitsi/sc-bundles/jain-sip-ri.jar
+lib/jitsi/sc-bundles/java-sdp-nist-bridge.jar
+lib/jitsi/sc-bundles/jitsi-gpl-dependencies.jar
+lib/jitsi/sc-bundles/jitsi-lgpl-dependencies.jar
 lib/jitsi/sc-bundles/jmdnslib.jar
 lib/jitsi/sc-bundles/jmork.jar
-lib/jitsi/sc-bundles/jnalib.jar
+lib/jitsi/sc-bundles/jna-platform.jar
+lib/jitsi/sc-bundles/jna.jar
 lib/jitsi/sc-bundles/json.jar
 lib/jitsi/sc-bundles/keybindingChooser.jar
 lib/jitsi/sc-bundles/keybindings.jar
@@ -91,6 +96,7 @@ lib/jitsi/sc-bundles/otr.jar
 lib/jitsi/sc-bundles/packetlogging.jar
 lib/jitsi/sc-bundles/phonenumbercontactsource.jar
 lib/jitsi/sc-bundles/phonenumbers.jar
+lib/jitsi/sc-bundles/plugin-blf.jar
 lib/jitsi/sc-bundles/plugin-certconfig.jar
 lib/jitsi/sc-bundles/plugin-contactsourceconfig.jar
 lib/jitsi/sc-bundles/plugin-ldap.jar
@@ -105,7 +111,6 @@ lib/jitsi/sc-bundles/protocol-jabber.jar
 lib/jitsi/sc-bundles/protocol-media.jar
 lib/jitsi/sc-bundles/protocol-mock.jar
 lib/jitsi/sc-bundles/protocol-sip.jar
-lib/jitsi/sc-bundles/protocol-yahoo.jar
 lib/jitsi/sc-bundles/protocol.jar
 lib/jitsi/sc-bundles/provdisc-dhcp.jar
 lib/jitsi/sc-bundles/provdisc-mdns.jar
@@ -128,9 +133,11 @@ lib/jitsi/sc-bundles/replacement.jar
 lib/jitsi/sc-bundles/resourcemanager.jar
 lib/jitsi/sc-bundles/sc-launcher.jar
 lib/jitsi/sc-bundles/sdes4j.jar
+lib/jitsi/sc-bundles/sdp-api.jar
 lib/jitsi/sc-bundles/securityconfig.jar
 lib/jitsi/sc-bundles/shutdown-timeout.jar
 lib/jitsi/sc-bundles/simpleaccreg.jar
+lib/jitsi/sc-bundles/sip-api.jar
 lib/jitsi/sc-bundles/sipaccregwizz.jar
 lib/jitsi/sc-bundles/skinmanager.jar
 lib/jitsi/sc-bundles/slf4j-api.jar
@@ -149,7 +156,9 @@ lib/jitsi/sc-bundles/updateservice.jar
 lib/jitsi/sc-bundles/usersearch.jar
 lib/jitsi/sc-bundles/util.jar
 lib/jitsi/sc-bundles/version-impl.jar
-lib/jitsi/sc-bundles/yahooaccregwizz.jar
+lib/jitsi/sc-bundles/weupnp.jar
 lib/jitsi/sc-bundles/zrtp4j.jar
+libdata/ldconfig/jitsi
 man/man1/jitsi.1.gz
+share/applications/jitsi.desktop
 share/pixmaps/jitsi.png
