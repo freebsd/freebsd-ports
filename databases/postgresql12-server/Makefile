@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	12.1
+DISTVERSION?=	12.2
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
@@ -92,8 +92,9 @@ TZDATA_DESC=	Use internal timezone database
 XML_DESC=	Build with XML data type
 
 .if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
-OPTIONS_DEFINE+=LLVM
-LLVM_DESC=	Build with support for JIT-compiling expressions
+OPTIONS_DEFINE+=	LLVM
+LLVM_DESC=		Build with support for JIT-compiling expressions
+OPTIONS_DEFAULT+=	LLVM
 .endif
 
 .if ${DISTVERSION:C/([0-9]*).*/\1/} < 10
