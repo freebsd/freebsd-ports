@@ -16,6 +16,7 @@ LIB_DEPENDS=	libwayland-server.so:graphics/wayland
 USES=		gl meson pkgconfig
 USE_GITHUB=	yes
 USE_GL=		egl
+USE_LDCONFIG=	yes
 GH_ACCOUNT=	NVIDIA
 
 post-patch:
