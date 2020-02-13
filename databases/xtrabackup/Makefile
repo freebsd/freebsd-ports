@@ -9,7 +9,7 @@ MASTER_SITES=	https://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-${
 DISTFILES=	percona-${PORTNAME}-${PORTVERSION}.tar.gz:xtrabackup \
 		boost_1_59_0.tar.bz2:boost
 
-MAINTAINER=	samm@freebsd.org
+MAINTAINER=	samm@FreeBSD.org
 COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
 
 LICENSE=	GPLv2

@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.67
 CATEGORIES=	security
 
-MAINTAINER=	samm@freebsd.org
+MAINTAINER=	samm@FreeBSD.org
 COMMENT=	CLI tool for automatically acquiring certificates from ACME servers
 
 LICENSE=	MIT

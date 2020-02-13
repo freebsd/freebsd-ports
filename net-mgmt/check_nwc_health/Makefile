@@ -5,7 +5,7 @@ PORTVERSION=	7.10.1.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://labs.consol.de/assets/downloads/nagios/
 
-MAINTAINER=	leres@freebsd.org
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Nagios plugin to monitor network equipment via SNMP
 
 LICENSE=	GPLv2
