@@ -4,6 +4,7 @@
 PORTNAME=	duplicity
 PORTVERSION=	0.8.10
 DISTVERSIONSUFFIX=	fin1558
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://code.launchpad.net/duplicity/0.8-series/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-devel
@@ -33,11 +34,13 @@ SHEBANG_FILES=	bin/duplicity bin/rdiffdir
 
 PORTDOCS=	CHANGELOG COPYING README README-REPO README-LOG
 
-OPTIONS_DEFINE=		DOCS FTP FTPS GDOCS GIO NLS S3
+OPTIONS_DEFINE=		B2 DOCS FTP FTPS GDOCS GIO NLS S3
 OPTIONS_GROUP=		GPG
 OPTIONS_SINGLE=		GPG
 OPTIONS_SINGLE_GPG=	GNUPG GNUPG2
-OPTIONS_DEFAULT=	FTP FTPS GNUPG2 S3
+OPTIONS_DEFAULT=	B2 FTP FTPS GNUPG2 S3
+
+B2_DESC=		Backblaze B2 backend
 FTP_DESC=		FTP backend
 FTPS_DESC=		FTPS backend
 GDOCS_DESC=		Google Docs backend
@@ -47,6 +50,7 @@ GNUPG_DESC=		Use GnuPG 1
 GNUPG2_DESC=		Use GnuPG 2
 S3_DESC=		Amazon S3 backend
 
+B2_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}b2sdk>=0.1.8:devel/py-b2sdk@${PY_FLAVOR}
 FTP_RUN_DEPENDS=	ncftp>=3.2.2:ftp/ncftp3
 FTPS_RUN_DEPENDS=	lftp>=3.7.15:ftp/lftp
 GDOCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydrive>0:devel/py-pydrive@${PY_FLAVOR}
@@ -82,6 +86,9 @@ post-patch-GDOCS-off:
 
 post-patch-GIO-off:
 	@${RM} ${WRKSRC}/${PORTNAME}/backends/giobackend.py
+
+post-patch-B2-off:
+	@${RM} ${WRKSRC}/${PORTNAME}/backends/b2backend.py
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/duplicity/_librsync.so
