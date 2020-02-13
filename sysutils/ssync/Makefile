@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://linuxfocus.org/~guido/
 
-MAINTAINER=	samm@freebsd.org
+MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Minimalistic tool for keeping filesystems in synchronization
 
 USES=		gmake

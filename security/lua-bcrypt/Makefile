@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	mdw@freebsd.org
+MAINTAINER=	mdw@FreeBSD.org
 COMMENT=	Library providing OpenBSD's bcrypt hash function for Lua
 
 LICENSE=	ISCL

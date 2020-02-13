@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	https://busybox.net/downloads/
 
-MAINTAINER=	samm@freebsd.org
+MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Set of common utilities built as single binary
 
 LICENSE=	GPLv2

@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.quicklz.com/
 DISTNAME=	qpress-11-source
 
-MAINTAINER=	samm@freebsd.org
+MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Portable file archiver using QuickLZ
 
 LICENSE=	GPLv2

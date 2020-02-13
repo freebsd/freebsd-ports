@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.inatech.eu/inadyn/ \
 		LOCAL/dhn
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
-MAINTAINER=	samm@freebsd.org
+MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Dynamic DNS update client
 
 USES=		dos2unix gmake zip

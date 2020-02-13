@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	samm@freebsd.org
+MAINTAINER=	samm@FreeBSD.org
 COMMENT=	S.M.A.R.T. disk monitoring tools
 
 LICENSE=	GPLv2+
