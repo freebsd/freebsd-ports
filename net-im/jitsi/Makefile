@@ -2,15 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	jitsi
-PORTVERSION=	2.8.5426
+PORTVERSION=	2.10.5550
 PORTREVISION=	0
 CATEGORIES=	net-im java
-MASTER_SITES=	http://aetos.it.teithe.gr/~tzabal/ports/jitsi/
-
-MAINTAINER=	tzabal@it.teithe.gr
+MASTER_SITES=	https://download.jitsi.org/jitsi/src/
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 COMMENT=	Open source IM and VoIP application
-
-BROKEN=		unfetchable
 
 LICENSE=	LGPL21
 
