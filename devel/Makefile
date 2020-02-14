@@ -5298,7 +5298,6 @@
     SUBDIR += quilt
     SUBDIR += rabs
     SUBDIR += racer
-    SUBDIR += racerd
     SUBDIR += radare2
     SUBDIR += radian
     SUBDIR += ragel
