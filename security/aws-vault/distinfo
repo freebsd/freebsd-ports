@@ -1,6 +1,6 @@
-TIMESTAMP = 1581426954
-SHA256 (99designs-aws-vault-v5.2.1_GH0.tar.gz) = 64807f1a6a7fe92a4383e6a99137be4f9970c6c71da6e0aa971256e482075fd4
-SIZE (99designs-aws-vault-v5.2.1_GH0.tar.gz) = 38546
+TIMESTAMP = 1581684043
+SHA256 (99designs-aws-vault-v5.3.0_GH0.tar.gz) = b573da516e1e2fe913f8d0f135e5aba1707ebea2f1aacf16f2c46f60dc0cc927
+SIZE (99designs-aws-vault-v5.3.0_GH0.tar.gz) = 38898
 SHA256 (99designs-go-keychain-8e49817e8af4_GH0.tar.gz) = 2ef17b0e33b0e57081c3ef6996d429a2439926546e6a0e8a727a3e9b8c76a587
 SIZE (99designs-go-keychain-8e49817e8af4_GH0.tar.gz) = 2337378
 SHA256 (99designs-keyring-v1.1.4_GH0.tar.gz) = 94248c2d78ed1c16596242e3b2ccd6042b67325782e3670ff1f3cc068698df24
