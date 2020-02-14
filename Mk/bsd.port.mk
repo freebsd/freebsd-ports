@@ -42,8 +42,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # OPSYS			- Portability clause.  This is the operating system the
 #				  makefile is being used on.  Automatically set to
 #				  "FreeBSD," "NetBSD," or "OpenBSD" as appropriate.
-# OSREL			- The release version (numeric) of the operating system.
-# OSVERSION		- The value of __FreeBSD_version.
+# OSREL			- The release version of the operating system as a text
+#				  string (e.g., "12.1").
+# OSVERSION		- The operating system version as a comparable integer;
+#				  the value of __FreeBSD_version (e.g., 1201000).
 #
 # This is the beginning of the list of all variables that need to be
 # defined in a port, listed in order that they should be included
