@@ -3,7 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	5.2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	52
@@ -24,6 +24,7 @@ RUN_DEPENDS=	rubygem-actioncable52>=${PORTVERSION}:www/rubygem-actioncable52 \
 		rubygem-activesupport52>=${PORTVERSION}:devel/rubygem-activesupport52 \
 		rubygem-bundler>=1.3.0:sysutils/rubygem-bundler \
 		rubygem-railties52>=${PORTVERSION}:www/rubygem-railties52 \
+		rubygem-sprockets-rails-rails52>=2.0.0:devel/rubygem-sprockets-rails-rails52 \
 		rubygem-bootsnap>=1.1.0:devel/rubygem-bootsnap \
 		rubygem-byebug>=0:devel/rubygem-byebug \
 		rubygem-capybara>=2.15:devel/rubygem-capybara \
