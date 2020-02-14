@@ -14252,3 +14252,4 @@ sysutils/hachoir-wx||2020-02-11|Has expired: Outdated, uses EOLed python27
 net/py-xmlrpc||2020-02-12|Has expired: Unmaintained, uses EOLed python27
 www/py-django-jsonfield2|www/py-jsonfield2|2020-02-13|Rename to match upstream naming
 www/py-dj22-django-jsonfield2|www/py-dj22-jsonfield2|2020-02-13|Rename to match upstream naming
+devel/go-godef||2020-02-14|Removed
