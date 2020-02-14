@@ -14253,3 +14253,4 @@ net/py-xmlrpc||2020-02-12|Has expired: Unmaintained, uses EOLed python27
 www/py-django-jsonfield2|www/py-jsonfield2|2020-02-13|Rename to match upstream naming
 www/py-dj22-django-jsonfield2|www/py-dj22-jsonfield2|2020-02-13|Rename to match upstream naming
 devel/go-godef||2020-02-14|Removed
+devel/racerd||2020-02-14|Has expired: Old, unmaintained, and fails to build with Rust 1.41.0 or newer; use rls from lang/rust instead
