@@ -46,6 +46,8 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-docs.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-parsing.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/list.fig
+%%PORTDOCS%%%%DOCSDIR%%/internals/listener-states.fig
+%%PORTDOCS%%%%DOCSDIR%%/internals/listener-states.png
 %%PORTDOCS%%%%DOCSDIR%%/internals/lua_socket.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/lua_socket.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/naming.txt
