@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	antibody
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	shells
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -28,9 +27,9 @@ GH_TUPLE=	alecthomas:kingpin:v2.2.6:kingpin/vendor/gopkg.in/alecthomas/kingpin.v
 		alecthomas:units:f65c72e:units/vendor/github.com/alecthomas/units \
 		caarlos0:gohome:75f08ebc:gohome/vendor/github.com/caarlos0/gohome \
 		getantibody:folder:v1.0.0:folder/vendor/github.com/getantibody/folder \
-		golang:crypto:34f6963:crypto/vendor/golang.org/x/crypto \
-		golang:net:d98b1b4:net/vendor/golang.org/x/net \
-		golang:sync:1d60e4:sync/vendor/golang.org/x/sync \
-		golang:sys:33540a1f6037:sys/vendor/golang.org/x/sys
+		golang:crypto:86ce3c:crypto/vendor/golang.org/x/crypto \
+		golang:net:eb5bcb:net/vendor/golang.org/x/net \
+		golang:sync:cd5d95:sync/vendor/golang.org/x/sync \
+		golang:sys:12a6c2:sys/vendor/golang.org/x/sys
 
 .include <bsd.port.mk>
