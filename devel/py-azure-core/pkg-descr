@@ -1,0 +1,4 @@
+Azure core library defines basic exceptions and shared modules those are needed
+when you use client libraries.
+
+WWW: https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/core/azure-core
