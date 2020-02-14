@@ -6,7 +6,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpad.net/libvterm/trunk/v0.1/+download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	aaron.kaufman@pm.me
 COMMENT=	Implementation of a VT220/xterm/ECMA-48 terminal emulator
 
 LICENSE=	MIT
