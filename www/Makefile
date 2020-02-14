@@ -1385,7 +1385,6 @@
     SUBDIR += piwigo
     SUBDIR += planet
     SUBDIR += plasma5-plasma-browser-integration
-    SUBDIR += plexwatchweb
     SUBDIR += plugger
     SUBDIR += pmwiki
     SUBDIR += pnews
