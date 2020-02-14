@@ -522,6 +522,7 @@
     SUBDIR += vifm
     SUBDIR += visp
     SUBDIR += viz
+    SUBDIR += vxl
     SUBDIR += whichman
     SUBDIR += window
     SUBDIR += with
