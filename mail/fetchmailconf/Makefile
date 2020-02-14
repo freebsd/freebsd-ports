@@ -6,6 +6,7 @@ DISTNAME=	fetchmail-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Python-based GUI to configure fetchmail
 
+BROKEN=		unfetchable
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=244130 has an update to get it
 # compatible to Python 3.
 
