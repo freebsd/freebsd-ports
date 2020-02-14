@@ -9,9 +9,6 @@ CATEGORIES=	misc science
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ libraries for computer vision and image understanding
 
-LICENSE=	MPL20
-xLICENSE_FILE=	${WRKSRC}/../LICENSE
-
 LIB_DEPENDS=	libpng16.so:graphics/png \
 		libtiff.so:graphics/tiff
 
