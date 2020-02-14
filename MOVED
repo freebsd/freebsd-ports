@@ -14255,3 +14255,4 @@ www/py-dj22-django-jsonfield2|www/py-dj22-jsonfield2|2020-02-13|Rename to match 
 devel/go-godef||2020-02-14|Removed
 devel/racerd||2020-02-14|Has expired: Old, unmaintained, and fails to build with Rust 1.41.0 or newer; use rls from lang/rust instead
 www/plexwatchweb||2020-02-14|Removed
+multimedia/plexwatch||2020-02-14|Removed

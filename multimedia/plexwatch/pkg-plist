@@ -1,3 +1,0 @@
-%%ETCDIR%%/config.pl-dist
-sbin/plexWatch.pl
-@dir %%DATADIR%%
