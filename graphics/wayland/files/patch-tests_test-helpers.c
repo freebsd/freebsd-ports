@@ -1,4 +1,4 @@
---- tests/test-helpers.c.orig	2018-08-24 18:04:36 UTC
+--- tests/test-helpers.c.orig	2020-02-11 23:46:03 UTC
 +++ tests/test-helpers.c
 @@ -25,6 +25,12 @@
  
@@ -13,7 +13,7 @@
  #include <assert.h>
  #include <errno.h>
  #include <dirent.h>
-@@ -40,6 +46,16 @@
+@@ -41,6 +47,16 @@
  
  #include "test-runner.h"
  
@@ -30,7 +30,7 @@
  int
  count_open_fds(void)
  {
-@@ -47,8 +63,8 @@ count_open_fds(void)
+@@ -48,8 +64,8 @@ count_open_fds(void)
  	struct dirent *ent;
  	int count = 0;
  
@@ -41,7 +41,7 @@
  
  	errno = 0;
  	while ((ent = readdir(dir))) {
-@@ -57,7 +73,7 @@ count_open_fds(void)
+@@ -58,7 +74,7 @@ count_open_fds(void)
  			continue;
  		count++;
  	}

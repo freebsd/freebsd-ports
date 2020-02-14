@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wayland
-PORTVERSION=	1.17.0
+PORTVERSION=	1.18.0
 CATEGORIES=	graphics wayland
 MASTER_SITES=	https://wayland.freedesktop.org/releases/
 
@@ -23,7 +23,7 @@ USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-documentation
-CONFIGURE_ENV=	ac_cv_func_posix_fallocate=no # EINVAL for many FS on 12.0
+CONFIGURE_ENV=	ac_cv_func_posix_fallocate=no # EINVAL on ZFS since FreeBSD 12.0
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
