@@ -5,7 +5,7 @@ PORTNAME?=	fetchmail
 PORTVERSION=	6.4.1
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	SF/${PORTNAME}/branch_6.4/
+MASTER_SITES=	SF/fetchmail/branch_6.4/
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT?=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
