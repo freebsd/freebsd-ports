@@ -3,7 +3,7 @@
 
 PORTNAME=	t
 PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-geokit>=1.9<2:graphics/rubygem-geokit \
 		rubygem-htmlentities>=4.3<5:textproc/rubygem-htmlentities \
 		rubygem-launchy>=2.4<3:devel/rubygem-launchy \
 		rubygem-oauth>=0.5.1<0.6:net/rubygem-oauth \
-		rubygem-retryable>=2.0:devel/rubygem-retryable \
+		rubygem-retryable>=3.0<4:devel/rubygem-retryable \
 		rubygem-thor>=0.19.1<2:devel/rubygem-thor \
 		rubygem-twitter>=6.0:net/rubygem-twitter
 
