@@ -463,6 +463,7 @@
     SUBDIR += deforaos-libsystem
     SUBDIR += deheader
     SUBDIR += delta
+    SUBDIR += delve
     SUBDIR += dep
     SUBDIR += deployer
     SUBDIR += derelict-sdl2
