@@ -6,9 +6,8 @@ DISTNAME=	fetchmail-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Python-based GUI to configure fetchmail
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken, uses EOLed python27
-EXPIRATION_DATE=	2020-02-19
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=244130 has an update to get it
+# compatible to Python 3.
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
@@ -27,7 +26,7 @@ NO_ARCH=	yes
 
 GNU_CONFIGURE=	yes
 
-TARGET=		fetchmailconf
+ALL_TARGET=	fetchmailconf
 INSTALL_TARGET=	install-data-am install-nodist_binSCRIPTS install-man
 
 post-install:
