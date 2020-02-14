@@ -64,12 +64,12 @@ CONFIGURE_ARGS+=--debug
 
 .if ${PORT_OPTIONS:MDEVKIT}
 PLIST_FILES+=	include/nxt_unit_field.h \
-		include/nxt_unit.h \
 		include/nxt_unit_request.h \
 		include/nxt_unit_response.h \
 		include/nxt_unit_sptr.h \
 		include/nxt_unit_typedefs.h \
 		include/nxt_unit_websocket.h \
+		include/nxt_unit.h \
 		include/nxt_version.h \
 		include/nxt_websocket_header.h \
 		lib/libunit.a
