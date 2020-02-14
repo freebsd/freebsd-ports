@@ -3,14 +3,17 @@
 
 PORTNAME=	guile-www
 PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www devel scheme
 MASTER_SITES=	GNU/guile
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Guile modules for WWW interaction
 
-RUN_DEPENDS=	guile:lang/guile
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	guile:lang/guile1
 
 GNU_CONFIGURE=	yes
 INFO=		guile-www
