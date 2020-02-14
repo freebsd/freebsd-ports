@@ -315,7 +315,6 @@
     SUBDIR += pitivi
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
-    SUBDIR += plexwatch
     SUBDIR += podcastdl
     SUBDIR += poe
     SUBDIR += ppm2fli
