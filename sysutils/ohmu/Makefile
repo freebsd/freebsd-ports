@@ -6,7 +6,7 @@ PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to view space usage in your terminal
 
 LICENSE=	MIT
