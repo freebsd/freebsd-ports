@@ -41,9 +41,23 @@ ${p}_DESC=			'${p:tl}' provider
 ${p}_CONFIGURE_ENABLE=		${p:tl}
 .endfor
 
+SED_WRAP_CLOSE=	{ \
+		i\\\n \
+		\#ifdef SHIM_SYS_SHIM_HELPERS\\\n \
+		\#undef close\\\n \
+		\#endif\n \
+		a\\\n \
+		\#ifdef SHIM_SYS_SHIM_HELPERS\\\n \
+		\#define close epoll_shim_close\\\n \
+		\#endif\n \
+		}
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.[ch]" -and -exec ${GREP} -q '<asm/types\.h>' {} \; -print | ${XARGS} ${REINPLACE_CMD} 's|<asm/types\.h>|<sys/types.h>|'
 	@${FIND} ${WRKSRC} -name "*.[ch]" -and -exec ${GREP} -q '<malloc\.h>' {} \; -print | ${XARGS} ${REINPLACE_CMD} 's|<malloc\.h>|<stdlib.h>|'
 	@${FIND} ${WRKSRC} -name "*.[ch]" -and -exec ${GREP} -q '<alloca\.h>' {} \; -print | ${XARGS} ${REINPLACE_CMD} 's|<alloca\.h>|<stdlib.h>|'
+	@${GREP} -Flr --include='*.c' '.close' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} $$'/\\.close/${SED_WRAP_CLOSE}'
+	@${REINPLACE_CMD} $$'/fi_ops.*close/${SED_WRAP_CLOSE}' ${WRKSRC}/src/fabric.c
+	@${REINPLACE_CMD} $$'/[*>]close/${SED_WRAP_CLOSE}' ${WRKSRC}/include/rdma/fabric.h
 
 .include <bsd.port.mk>
