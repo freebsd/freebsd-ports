@@ -1510,7 +1510,6 @@
     SUBDIR += rubygem-elasticsearch-model6
     SUBDIR += rubygem-elasticsearch-persistence
     SUBDIR += rubygem-elasticsearch-rails
-    SUBDIR += rubygem-elasticsearch-rails019
     SUBDIR += rubygem-elasticsearch-rails6
     SUBDIR += rubygem-elasticsearch-transport
     SUBDIR += rubygem-elasticsearch-transport503
