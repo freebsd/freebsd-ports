@@ -127,6 +127,7 @@ include/geogram1/geogram/numerics/predicates/dot_compare_3d.h
 include/geogram1/geogram/numerics/predicates/orient2d.h
 include/geogram1/geogram/numerics/predicates/orient3d.h
 include/geogram1/geogram/numerics/predicates/orient4d.h
+include/geogram1/geogram/numerics/predicates/side_for_boolean.h
 include/geogram1/geogram/numerics/predicates/side1.h
 include/geogram1/geogram/numerics/predicates/side2.h
 include/geogram1/geogram/numerics/predicates/side3.h
@@ -275,17 +276,6 @@ include/geogram1/geogram_gfx/GLUP/shaders/fullscreen/blur_fragment_shader.h
 include/geogram1/geogram_gfx/GLUP/shaders/fullscreen/depth_dependent_blur_fragment_shader.h
 include/geogram1/geogram_gfx/GLUP/shaders/fullscreen/unsharp_masking_fragment_shader.h
 include/geogram1/geogram_gfx/GLUP/shaders/fullscreen/vertex_shader.h
-include/geogram1/geogram_gfx/third_party/ImGui/OLD/glup_compat.h
-include/geogram1/geogram_gfx/third_party/ImGui/OLD/imconfig.h
-include/geogram1/geogram_gfx/third_party/ImGui/OLD/imgui.h
-include/geogram1/geogram_gfx/third_party/ImGui/OLD/imgui_impl_android.h
-include/geogram1/geogram_gfx/third_party/ImGui/OLD/imgui_impl_glfw.h
-include/geogram1/geogram_gfx/third_party/ImGui/OLD/imgui_impl_opengl3.h
-include/geogram1/geogram_gfx/third_party/ImGui/OLD/imgui_impl_win32.h
-include/geogram1/geogram_gfx/third_party/ImGui/OLD/imgui_internal.h
-include/geogram1/geogram_gfx/third_party/ImGui/OLD/imstb_rectpack.h
-include/geogram1/geogram_gfx/third_party/ImGui/OLD/imstb_textedit.h
-include/geogram1/geogram_gfx/third_party/ImGui/OLD/imstb_truetype.h
 include/geogram1/geogram_gfx/ImGui_ext/icon_font.h
 include/geogram1/geogram_gfx/ImGui_ext/imgui_ext.h
 include/geogram1/geogram_gfx/api/defs.h
@@ -331,17 +321,16 @@ include/geogram1/geogram_gfx/third_party/imgui_fonts/fa_regular.h
 include/geogram1/geogram_gfx/third_party/imgui_fonts/fa_solid.h
 include/geogram1/geogram_gfx/third_party/imgui_fonts/roboto_medium.h
 include/geogram1/geogram_gfx/third_party/imgui_lua_bindings/imgui_iterator.h
-include/geogram1/geogram_gfx/third_party/quicktext/glQuickText.h
 lib/cmake/modules/FindGeogram.cmake
 lib/libgeogram.so
 lib/libgeogram.so.1
-lib/libgeogram.so.1.7.3
+lib/libgeogram.so.1.7.4
 lib/libgeogram_gfx.so
 lib/libgeogram_gfx.so.1
-lib/libgeogram_gfx.so.1.7.3
+lib/libgeogram_gfx.so.1.7.4
 lib/libgeogram_num_3rdparty.so
 lib/libgeogram_num_3rdparty.so.1
-lib/libgeogram_num_3rdparty.so.1.7.3
+lib/libgeogram_num_3rdparty.so.1.7.4
 libdata/pkgconfig/geogram1.pc
 libdata/pkgconfig/geogram_gfx1.pc
 @dir include/geogram1/geogram_gfx/gui/colormaps
