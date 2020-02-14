@@ -14259,3 +14259,4 @@ multimedia/plexwatch||2020-02-14|Removed
 textproc/rubygem-elasticsearch-model019|textproc/rubygem-elasticsearch-model|2020-02-14|Obsolete, use textproc/rubygem-elasticsearch-model instead
 textproc/rubygem-elasticsearch-rails019|textproc/rubygem-elasticsearch-rails|2020-02-14|Obsolete, use textproc/rubygem-elasticsearch-rails instead
 textproc/rubygem-elasticsearch503|textproc/rubygem-elasticsearch|2020-02-14|Obsolete, use textproc/rubygem-elasticsearch instead
+textproc/rubygem-elasticsearch-api503|textproc/rubygem-elasticsearch-api|2020-02-14|Obsolete, use textproc/rubygem-elasticsearch-api instead
