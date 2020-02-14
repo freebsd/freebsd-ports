@@ -1473,7 +1473,6 @@
     SUBDIR += rubygem-asciidoctor-diagram
     SUBDIR += rubygem-asciidoctor-include-ext
     SUBDIR += rubygem-asciidoctor-plantuml
-    SUBDIR += rubygem-asciidoctor-plantuml009
     SUBDIR += rubygem-autoprefixer-rails
     SUBDIR += rubygem-babel-source
     SUBDIR += rubygem-babel-transpiler
