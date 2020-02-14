@@ -1,4 +1,4 @@
---- tests/test-runner.c.orig	2019-03-21 00:55:25 UTC
+--- tests/test-runner.c.orig	2020-02-11 23:46:03 UTC
 +++ tests/test-runner.c
 @@ -25,6 +25,12 @@
  
@@ -102,9 +102,9 @@
 +#ifdef HAVE_WAITID
 +		if (waitid(P_PID, 0, &info, WEXITED)) {
  			stderr_set_color(RED);
- 			fprintf(stderr, "waitid failed: %m\n");
- 			stderr_reset_color();
-@@ -367,6 +393,25 @@ int main(int argc, char *argv[])
+ 			fprintf(stderr, "waitid failed: %s\n",
+ 				strerror(errno));
+@@ -368,6 +394,25 @@ int main(int argc, char *argv[])
  
  			break;
  		}
