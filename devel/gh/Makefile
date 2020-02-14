@@ -2,7 +2,7 @@
 
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.4
+DISTVERSION=	0.5.5
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -63,7 +63,7 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
 
 post-build:
-.for shell in bash zsh fish
+.for shell in bash fish zsh 
 	${WRKDIR}/bin/${PORTNAME} completion -s ${shell} > ${WRKSRC}/${shell}
 .endfor
 
