@@ -5,7 +5,7 @@ PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance load generator for TCP and WebSocket servers
 
 LICENSE=	BSD2CLAUSE
