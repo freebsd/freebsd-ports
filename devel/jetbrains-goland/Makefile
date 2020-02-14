@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	goland
-PORTVERSION=	2019.3.1
+PORTVERSION=	2019.3.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
@@ -15,7 +15,8 @@ LICENSE_NAME=	Subscription license agreement for business and organizations
 LICENSE_TEXT=	See: https://www.jetbrains.com/store/license.html
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier
+RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
+		delve>0:devel/delve
 
 USES=		python:run shebangfix
 
@@ -44,6 +45,7 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
 		"! -name *\.so ! -name *\.dll ! -name *\.dylib ! -name *\.pdb ! -name *\.sh")
 	@(cd ${WRKSRC} && ${COPYTREE_BIN} . ${STAGEDIR}${DATADIR} "-name *\.sh")
+	@${LN} -sf ${PREFIX}/bin/dlv ${STAGEDIR}${DATADIR}/plugins/go/lib/dlv/linux/dlv
 	${INSTALL_SCRIPT} ${WRKDIR}/goland ${STAGEDIR}${PREFIX}/bin/goland
 	${INSTALL_MAN} ${FILESDIR}/goland.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/goland.desktop ${STAGEDIR}${PREFIX}/share/applications/
