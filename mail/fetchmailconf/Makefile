@@ -6,8 +6,6 @@ DISTNAME=	fetchmail-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Python-based GUI to configure fetchmail
 
-BROKEN=		unfetchable
-
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
@@ -25,7 +23,7 @@ NO_ARCH=	yes
 
 GNU_CONFIGURE=	yes
 
-TARGET=		fetchmailconf
+ALL_TARGET=	fetchmailconf
 INSTALL_TARGET=	install-data-am install-nodist_binSCRIPTS install-man
 
 post-install:

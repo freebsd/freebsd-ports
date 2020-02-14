@@ -1,7 +1,0 @@
-TIMESTAMP = 1546191531
-SHA256 (fetchmail-6.3.26.tar.xz) = 79b4c54cdbaf02c1a9a691d9948fcb1a77a1591a813e904283a8b614b757e850
-SIZE (fetchmail-6.3.26.tar.xz) = 1283816
-SHA256 (9b8b634.patch) = b0a9f7e28e7e6a5a16669832ad7a7a7dca47b435ce446ef10bd0421deea4a848
-SIZE (9b8b634.patch) = 1023
-SHA256 (fetchmail-6.3.26-ssl-backport.patch) = a34b1a6becf731e2ef029a1c5ee3a82a7bbb1e2487b6f3be15bbb4e7dc8b500d
-SIZE (fetchmail-6.3.26-ssl-backport.patch) = 31596
