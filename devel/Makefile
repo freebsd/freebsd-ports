@@ -4076,6 +4076,7 @@
     SUBDIR += py-aws-sam-translator
     SUBDIR += py-aws-xray-sdk
     SUBDIR += py-azure-batch
+    SUBDIR += py-azure-core
     SUBDIR += py-azure-cosmos
     SUBDIR += py-azure-datalake-store
     SUBDIR += py-azure-functions-devops-build
