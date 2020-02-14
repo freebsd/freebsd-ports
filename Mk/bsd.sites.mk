@@ -1039,7 +1039,7 @@ MASTER_SITE_SAVANNAH+= \
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
 .for p in https http
 MASTER_SITE_SOURCEFORGE+= ${p}://downloads.sourceforge.net/project/%SUBDIR%/
-.for m in cytranet excellmedia freefr jaist kent nchc \
+.for m in excellmedia freefr jaist kent nchc \
 	netcologne netix superb-dca2 superb-sea2 ufpr vorboss
 MASTER_SITE_SOURCEFORGE+= ${p}://${m}.dl.sourceforge.net/project/%SUBDIR%/
 .endfor
