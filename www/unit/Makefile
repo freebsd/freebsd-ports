@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=--control=unix:${UNIT_SOCK}
 .endif
 
 post-build-DEVKIT-on:
-	@cd ${WRKSRC} && ${GMAKE} build/libunit.a
+	@cd ${WRKSRC} && ${MAKE} build/libunit.a
 
 .if !target(post-install)
 post-install:
@@ -102,7 +102,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules
 
 post-install-DEVKIT-on:
-	${GMAKE} -C ${WRKSRC} libunit-install DESTDIR=${STAGEDIR}
+	${MAKE} -C ${WRKSRC} libunit-install DESTDIR=${STAGEDIR}
 .endif
 
 .include <bsd.port.mk>
