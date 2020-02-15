@@ -2,7 +2,7 @@
 
 PORTNAME=	subfinder
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.1
+DISTVERSION=	2.3.2
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +22,7 @@ GH_TUPLE=	\
 		golang:net:5ee1b9f4859a:golang_net/vendor/golang.org/x/net \
 		golang:sys:ce4227a45e2e:golang_sys/vendor/golang.org/x/sys \
 		json-iterator:go:v1.1.8:json_iterator_go/vendor/github.com/json-iterator/go \
+		lib:pq:9eb3fc8:pq/vendor/github.com/lib/pq \
 		logrusorgru:aurora:21d75270181e:logrusorgru_aurora/vendor/github.com/logrusorgru/aurora \
 		m-mizutani:urlscan-go:v1.0.0:m_mizutani_urlscan_go/vendor/github.com/m-mizutani/urlscan-go \
 		miekg:dns:v1.1.22:miekg_dns/vendor/github.com/miekg/dns \
