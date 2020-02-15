@@ -17,7 +17,8 @@ LIB_DEPENDS=	libossp-uuid.so:misc/ossp-uuid \
 
 CONFLICTS_BUILD=pulseaudio-*+jack_* ffmpeg-*+jack_*
 
-USES=		autoreconf gnome jpeg libtool localbase pkgconfig shebangfix
+USES=		autoreconf compiler:c11 gnome jpeg libtool localbase pkgconfig \
+		shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
