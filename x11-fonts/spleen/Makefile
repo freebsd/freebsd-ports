@@ -23,17 +23,17 @@ OPTIONS_EXCLUDE=	VT
 .endif
 OPTIONS_SUB=		yes
 
-TYPE_DESC=		Font type
-VT_DESC=		Install vt(4) fonts
-X11_DESC=		Install Xorg bitmap fonts
+TYPE_DESC=	Font type
+VT_DESC=	Install vt(4) fonts
+X11_DESC=	Install Xorg bitmap fonts
 
 # vtfontcvt is broken with large fonts, so use Dmitry Wagin's
 # improved version from https://bugs.freebsd.org/205707 that
 # doesn't have this problem.
 VT_BUILD_DEPENDS=	vtfontcvt-ng:x11-fonts/vtfontcvt-ng
 
-X11_USES_OFF=		fonts:none
-X11_USES=		fonts
+X11_USES_OFF=	fonts:none
+X11_USES=	fonts
 
 do-build:
 	@${DO_NADA}
