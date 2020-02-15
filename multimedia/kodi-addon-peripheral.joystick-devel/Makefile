@@ -4,7 +4,7 @@
 PORTNAME=	peripheral.joystick
 PORTVERSION=	1.4.8
 DISTVERSIONSUFFIX=	-Leia
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	kodi-addon-
 PKGNAMESUFFIX=	-devel
@@ -15,10 +15,10 @@ COMMENT=	Joystick support for Kodi
 LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/joystick.h:devel/evdev-proto \
-		kodi-devel>=19.0.a20200115:multimedia/kodi-devel
+		kodi-devel>=19.0.a20200215:multimedia/kodi-devel
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libudev.so:devel/libudev-devd
-RUN_DEPENDS=	kodi-devel>=19.0.a20200115:multimedia/kodi-devel
+RUN_DEPENDS=	kodi-devel>=19.0.a20200215:multimedia/kodi-devel
 
 USES=		cmake localbase
 USE_GITHUB=	yes
