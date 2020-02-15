@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spleen
-DISTVERSION=	1.5.0
+DISTVERSION=	1.7.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/fcambus/spleen/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-font
@@ -59,6 +59,7 @@ do-install-VT-on:
 do-install-X11-on:
 	${INSTALL_DATA} ${WRKSRC}/fonts.alias-spleen \
 		${STAGEDIR}${FONTSDIR}/fonts.alias
-	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.otf ${WRKSRC}/*.pcf.gz \
+		${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
