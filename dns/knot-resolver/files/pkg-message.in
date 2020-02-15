@@ -1,6 +1,7 @@
 [
 { type: install
   message: <<EOM
+
   Please consult the documentation:
    - man kresd
    - https://knot-resolver.readthedocs.io/
