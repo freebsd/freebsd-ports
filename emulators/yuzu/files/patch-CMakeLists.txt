@@ -1,28 +1,26 @@
 yuzu (Qt) currently needs SDL for input
 
---- CMakeLists.txt.orig	2019-06-28 18:03:38 UTC
+--- CMakeLists.txt.orig	2020-02-14 19:40:20 UTC
 +++ CMakeLists.txt
-@@ -145,15 +145,15 @@ if (ENABLE_SDL2)
+@@ -157,13 +157,16 @@ if (ENABLE_SDL2)
+         target_include_directories(SDL2 INTERFACE "${SDL2_INCLUDE_DIR}")
      else()
          find_package(SDL2 REQUIRED)
-     endif()
+-        include_directories(${SDL2_INCLUDE_DIRS})
 -
--    if (SDL2_FOUND)
--        # TODO(yuriks): Make FindSDL2.cmake export an IMPORTED library instead
 -        add_library(SDL2 INTERFACE)
--        target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARY}")
--        target_include_directories(SDL2 INTERFACE "${SDL2_INCLUDE_DIR}")
--    endif()
+-        target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARIES}")
+     endif()
  else()
 -    set(SDL2_FOUND NO)
 +    find_package(SDL2)
 +endif()
 +
 +if (SDL2_FOUND)
-+  # TODO(yuriks): Make FindSDL2.cmake export an IMPORTED library instead
-+  add_library(SDL2 INTERFACE)
-+  target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARY}")
-+  target_include_directories(SDL2 INTERFACE "${SDL2_INCLUDE_DIR}")
++    include_directories(${SDL2_INCLUDE_DIRS})
++
++    add_library(SDL2 INTERFACE)
++    target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARIES}")
  endif()
  
  # If unicorn isn't found, msvc -> download bundled unicorn; everyone else -> build external
