@@ -27,4 +27,12 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+PLIST_SUB+=	X86=""
+.else
+PLIST_SUB+=	X86="@comment "
+.endif
+
+.include <bsd.port.post.mk>

@@ -498,8 +498,8 @@ include/vxl/core/vil/vil_image_view.hxx
 include/vxl/core/vil/vil_image_view_base.h
 include/vxl/core/vil/vil_load.h
 include/vxl/core/vil/vil_math.h
-include/vxl/core/vil/vil_math_sse.h
-include/vxl/core/vil/vil_math_sse.hxx
+%%X86%%include/vxl/core/vil/vil_math_sse.h
+%%X86%%include/vxl/core/vil/vil_math_sse.hxx
 include/vxl/core/vil/vil_memory_chunk.h
 include/vxl/core/vil/vil_memory_image.h
 include/vxl/core/vil/vil_na.h
