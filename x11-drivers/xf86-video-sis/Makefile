@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-video-sis
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
