@@ -1,0 +1,215 @@
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/go.mod vendor/github.com/influxdata/go-syslog/go.mod
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/go.mod	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/go.mod	2020-02-15 18:40:40.692307000 +0100
+@@ -1,4 +1,4 @@
+-module github.com/influxdata/go-syslog/v2
++module github.com/influxdata/go-syslog
+ 
+ require (
+ 	github.com/davecgh/go-spew v1.1.1
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/nontransparent/example_test.go vendor/github.com/influxdata/go-syslog/nontransparent/example_test.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/nontransparent/example_test.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/nontransparent/example_test.go	2020-02-15 18:40:40.693360000 +0100
+@@ -6,7 +6,7 @@
+ 	"math/rand"
+ 	"strings"
+ 
+-	"github.com/influxdata/go-syslog/v2"
++	"github.com/influxdata/go-syslog"
+ 	"time"
+ )
+ 
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/nontransparent/parser.go vendor/github.com/influxdata/go-syslog/nontransparent/parser.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/nontransparent/parser.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/nontransparent/parser.go	2020-02-15 18:40:40.693634000 +0100
+@@ -1,11 +1,10 @@
+ package nontransparent
+ 
+ import (
+-	"io"
+-
+-	syslog "github.com/influxdata/go-syslog/v2"
+-	"github.com/influxdata/go-syslog/v2/rfc5424"
++	syslog "github.com/influxdata/go-syslog"
++	"github.com/influxdata/go-syslog/rfc5424"
+ 	parser "github.com/leodido/ragel-machinery/parser"
++	"io"
+ )
+ 
+ const nontransparentStart int = 1
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/nontransparent/parser.go.rl vendor/github.com/influxdata/go-syslog/nontransparent/parser.go.rl
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/nontransparent/parser.go.rl	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/nontransparent/parser.go.rl	2020-02-15 18:40:40.693886000 +0100
+@@ -2,10 +2,9 @@
+ 
+ import (
+     "io"
+-    
+     parser "github.com/leodido/ragel-machinery/parser"
+-    syslog "github.com/influxdata/go-syslog/v2"
+-    "github.com/influxdata/go-syslog/v2/rfc5424"
++    syslog "github.com/influxdata/go-syslog"
++    "github.com/influxdata/go-syslog/rfc5424"
+ )
+ 
+ %%{
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/nontransparent/parser_test.go vendor/github.com/influxdata/go-syslog/nontransparent/parser_test.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/nontransparent/parser_test.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/nontransparent/parser_test.go	2020-02-15 18:40:40.694164000 +0100
+@@ -6,8 +6,8 @@
+ 	"strings"
+ 	"testing"
+ 
+-	"github.com/influxdata/go-syslog/v2"
+-	"github.com/influxdata/go-syslog/v2/rfc5424"
++	"github.com/influxdata/go-syslog"
++	"github.com/influxdata/go-syslog/rfc5424"
+ 	"github.com/leodido/ragel-machinery"
+ 	"github.com/stretchr/testify/assert"
+ )
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/octetcounting/example_test.go vendor/github.com/influxdata/go-syslog/octetcounting/example_test.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/octetcounting/example_test.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/octetcounting/example_test.go	2020-02-15 18:40:40.695279000 +0100
+@@ -1,12 +1,12 @@
+ package octetcounting
+ 
+ import (
++	"github.com/influxdata/go-syslog"
+ 	"io"
+ 	"strings"
+ 	"time"
+ 
+ 	"github.com/davecgh/go-spew/spew"
+-	syslog "github.com/influxdata/go-syslog/v2"
+ )
+ 
+ func output(out interface{}) {
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/octetcounting/parser.go vendor/github.com/influxdata/go-syslog/octetcounting/parser.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/octetcounting/parser.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/octetcounting/parser.go	2020-02-15 18:40:40.695564000 +0100
+@@ -4,8 +4,8 @@
+ 	"fmt"
+ 	"io"
+ 
+-	syslog "github.com/influxdata/go-syslog/v2"
+-	"github.com/influxdata/go-syslog/v2/rfc5424"
++	"github.com/influxdata/go-syslog"
++	"github.com/influxdata/go-syslog/rfc5424"
+ )
+ 
+ // parser is capable to parse the input stream following octetcounting.
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/octetcounting/parser_test.go vendor/github.com/influxdata/go-syslog/octetcounting/parser_test.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/octetcounting/parser_test.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/octetcounting/parser_test.go	2020-02-15 18:40:40.695829000 +0100
+@@ -7,8 +7,8 @@
+ 	"testing"
+ 	"time"
+ 
+-	syslog "github.com/influxdata/go-syslog/v2"
+-	"github.com/influxdata/go-syslog/v2/rfc5424"
++	"github.com/influxdata/go-syslog"
++	"github.com/influxdata/go-syslog/rfc5424"
+ 	"github.com/stretchr/testify/assert"
+ )
+ 
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/builder_test.go vendor/github.com/influxdata/go-syslog/rfc5424/builder_test.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/builder_test.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/rfc5424/builder_test.go	2020-02-15 18:40:40.699575000 +0100
+@@ -4,7 +4,7 @@
+ 	"testing"
+ 	"time"
+ 
+-	"github.com/influxdata/go-syslog/v2"
++	"github.com/influxdata/go-syslog"
+ 	"github.com/stretchr/testify/assert"
+ )
+ 
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/machine.go vendor/github.com/influxdata/go-syslog/rfc5424/machine.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/machine.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/rfc5424/machine.go	2020-02-15 18:40:40.700928000 +0100
+@@ -2,9 +2,8 @@
+ 
+ import (
+ 	"fmt"
++	"github.com/influxdata/go-syslog"
+ 	"time"
+-
+-	syslog "github.com/influxdata/go-syslog/v2"
+ )
+ 
+ var (
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/machine.go.rl vendor/github.com/influxdata/go-syslog/rfc5424/machine.go.rl
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/machine.go.rl	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/rfc5424/machine.go.rl	2020-02-15 18:40:40.701193000 +0100
+@@ -3,8 +3,7 @@
+ import (
+ 	"time"
+ 	"fmt"
+-	
+-	syslog "github.com/influxdata/go-syslog/v2"
++	"github.com/influxdata/go-syslog"
+ )
+ 
+ var (
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/machine_test.go vendor/github.com/influxdata/go-syslog/rfc5424/machine_test.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/machine_test.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/rfc5424/machine_test.go	2020-02-15 18:40:40.701595000 +0100
+@@ -7,7 +7,7 @@
+ 	"testing"
+ 	"time"
+ 
+-	"github.com/influxdata/go-syslog/v2"
++	"github.com/influxdata/go-syslog"
+ 	"github.com/stretchr/testify/assert"
+ )
+ 
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/options.go vendor/github.com/influxdata/go-syslog/rfc5424/options.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/options.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/rfc5424/options.go	2020-02-15 18:40:40.701848000 +0100
+@@ -1,7 +1,7 @@
+ package rfc5424
+ 
+ import (
+-	syslog "github.com/influxdata/go-syslog/v2"
++	"github.com/influxdata/go-syslog"
+ )
+ 
+ // WithBestEffort enables the best effort mode.
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/parser.go vendor/github.com/influxdata/go-syslog/rfc5424/parser.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/parser.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/rfc5424/parser.go	2020-02-15 18:40:40.702096000 +0100
+@@ -1,9 +1,8 @@
+ package rfc5424
+ 
+ import (
++	"github.com/influxdata/go-syslog"
+ 	"sync"
+-
+-	syslog "github.com/influxdata/go-syslog/v2"
+ )
+ 
+ // parser represent a RFC5424 parser with mutex capabilities.
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/parser_test.go vendor/github.com/influxdata/go-syslog/rfc5424/parser_test.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/parser_test.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/rfc5424/parser_test.go	2020-02-15 18:40:40.702338000 +0100
+@@ -3,7 +3,7 @@
+ import (
+ 	"testing"
+ 
+-	"github.com/influxdata/go-syslog/v2"
++	"github.com/influxdata/go-syslog"
+ 	"github.com/stretchr/testify/assert"
+ )
+ 
+diff -urN /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/performance_test.go vendor/github.com/influxdata/go-syslog/rfc5424/performance_test.go
+--- /usr/local/poudriere/data/.m/120-amd64-default/ref/wrkdirs/usr/ports/net-mgmt/telegraf/work/telegraf-1.13.3/vendor/github.com/influxdata/go-syslog/rfc5424/performance_test.go	2019-03-05 01:20:04.000000000 +0100
++++ vendor/github.com/influxdata/go-syslog/rfc5424/performance_test.go	2020-02-15 18:40:40.702589000 +0100
+@@ -1,7 +1,7 @@
+ package rfc5424
+ 
+ import (
+-	"github.com/influxdata/go-syslog/v2"
++	"github.com/influxdata/go-syslog"
+ 	"testing"
+ )
+ 

@@ -57,8 +57,8 @@ telegraf_prestart()
 telegraf_start()
 {
     echo "Starting ${name}"
-    /usr/sbin/daemon -cr -P ${pidfile} -u ${telegraf_user} \
-        %%PREFIX%%/bin/${name} ${telegraf_options} >> ${logfile} 2>&1
+    /usr/sbin/daemon -fcr -P ${pidfile} -u ${telegraf_user} -o ${logfile} \
+        %%PREFIX%%/bin/${name} ${telegraf_options}
 }
 
 telegraf_stop()
