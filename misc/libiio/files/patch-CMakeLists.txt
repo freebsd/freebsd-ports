@@ -1,9 +1,18 @@
---- CMakeLists.txt.orig	2019-02-09 19:52:30 UTC
+--- CMakeLists.txt.orig	2020-02-14 09:59:16 UTC
 +++ CMakeLists.txt
-@@ -310,7 +310,7 @@ endif()
- #set(SETUP_PY ${CMAKE_CURRENT_SOURCE_DIR}/bindings/python/setup.py)
- #configure_file(python/setup.py.in ${SETUP_PY} @ONLY)
- 
+@@ -260,7 +260,7 @@ if(WITH_NETWORK_BACKEND)
+ 		set(HAVE_AVAHI ON)
+ 		set(AVAHI_LIBRARIES ${AVAHI_CLIENT_LIBRARIES} ${AVAHI_COMMON_LIBRARIES})
+ 		set(LIBS_TO_LINK ${LIBS_TO_LINK} ${AVAHI_LIBRARIES})
+-		set(AVAHI_SERVICE_INSTALL_DIR /etc/avahi/services/ CACHE PATH "default install path for Avahi service files")
++		set(AVAHI_SERVICE_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/etc/avahi/services/ CACHE PATH "default install path for Avahi service files")
+ 	else()
+ 		message(STATUS "Building without Avahi (zeroconf) support")
+ 	endif()
+@@ -338,7 +338,7 @@ endif()
+ option(CSHARP_BINDINGS "Install C# bindings" OFF)
+ option(PYTHON_BINDINGS "Install Python bindings" OFF)
+ option(MATLAB_BINDINGS "Build MATLAB bindings" OFF)
 -add_subdirectory(bindings)
 +#add_subdirectory(bindings)
  
