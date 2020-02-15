@@ -4,4 +4,4 @@ formats, and produces compression ratios that are usually about 25-30% better
 than bzip2, and decompression speeds that are about twice as fast. The
 disadvantages are higher CPU and RAM requirements for compression.
 
-WWW: http://www.7-zip.org/sdk.html
+WWW: https://www.7-zip.org/sdk.html
