@@ -16,6 +16,7 @@ include/fcl/broadphase/broadphase_interval_tree-inl.h
 include/fcl/broadphase/broadphase_interval_tree.h
 include/fcl/broadphase/broadphase_spatialhash-inl.h
 include/fcl/broadphase/broadphase_spatialhash.h
+include/fcl/broadphase/default_broadphase_callbacks.h
 include/fcl/broadphase/detail/hierarchy_tree-inl.h
 include/fcl/broadphase/detail/hierarchy_tree.h
 include/fcl/broadphase/detail/hierarchy_tree_array-inl.h
@@ -205,6 +206,7 @@ include/fcl/narrowphase/detail/convexity_based_algorithm/simplex.h
 include/fcl/narrowphase/detail/convexity_based_algorithm/support.h
 include/fcl/narrowphase/detail/distance_func_matrix-inl.h
 include/fcl/narrowphase/detail/distance_func_matrix.h
+include/fcl/narrowphase/detail/failed_at_this_configuration.h
 include/fcl/narrowphase/detail/gjk_solver_indep-inl.h
 include/fcl/narrowphase/detail/gjk_solver_indep.h
 include/fcl/narrowphase/detail/gjk_solver_libccd-inl.h
@@ -316,3 +318,4 @@ lib/libfcl.so
 lib/libfcl.so.0.6
 lib/libfcl.so.0.6.0
 libdata/pkgconfig/fcl.pc
+%%DATADIR%%/package.xml
