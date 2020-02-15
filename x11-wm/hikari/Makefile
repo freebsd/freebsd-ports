@@ -21,7 +21,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwlroots.so:x11-toolkits/wlroots \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		gnome pkgconfig xorg
+USES=		compiler:c11 gnome pkgconfig xorg
 USE_GNOME=	cairo glib20 pango
 USE_XORG=	pixman
 ALL_TARGET=	${WITH_DEBUG:Ddebug}
