@@ -2,8 +2,8 @@ include/mp++/concepts.hpp
 include/mp++/config.hpp
 include/mp++/detail/fwd_decl.hpp
 include/mp++/detail/gmp.hpp
+include/mp++/detail/integer_literals.hpp
 include/mp++/detail/mpfr.hpp
-include/mp++/detail/quadmath.hpp
 include/mp++/detail/type_traits.hpp
 include/mp++/detail/utils.hpp
 include/mp++/detail/visibility.hpp
@@ -23,5 +23,5 @@ lib/cmake/mp++/mp++-config.cmake
 lib/cmake/mp++/mp++_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mp++/mp++_export.cmake
 lib/libmp++.so
-lib/libmp++.so.3
-lib/libmp++.so.3.0
+lib/libmp++.so.4
+lib/libmp++.so.4.0
