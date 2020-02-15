@@ -11,8 +11,8 @@ COMMENT=	DRM modules for the linuxkpi-based KMS components (development version)
 LICENSE=	BSD2CLAUSE MIT GPLv2
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64
-ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64, i386 and powerpc64
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64
+ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64, arm64, i386 and powerpc64
 
 RUN_DEPENDS=	gpu-firmware-kmod>=g20180319:graphics/gpu-firmware-kmod
 
@@ -59,7 +59,7 @@ PLIST_SUB+=	VBOXVIDEO=""
 .  else
 PLIST_SUB+=	VBOXVIDEO="@comment "
 .  endif
-.elif ${ARCH} == "powerpc64"
+.elif ${ARCH} == "aarch64" || ${ARCH} == "powerpc64"
 PLIST_SUB+=	AMDGPU=""
 PLIST_SUB+=	AMDKFD="@comment " 
 PLIST_SUB+=	I915="@comment "
