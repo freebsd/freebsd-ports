@@ -40,7 +40,7 @@ GALLIUM_DRIVERS=	""
 .endif
 VULKAN_DRIVERS=		#
 
-.if ${ARCH} == amd64 || ${ARCH} == i386 \
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 \
  || ${ARCH} == powerpc || ${ARCH} == powerpc64
 DRI_DRIVERS+=		RADEON R200
 GALLIUM_DRIVERS+=	R300 R600 RADEONSI
