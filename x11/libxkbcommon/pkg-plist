@@ -4,11 +4,9 @@ include/xkbcommon/xkbcommon-compose.h
 include/xkbcommon/xkbcommon-keysyms.h
 include/xkbcommon/xkbcommon-names.h
 include/xkbcommon/xkbcommon-x11.h
-lib/libxkbcommon.a
 lib/libxkbcommon.so
 lib/libxkbcommon.so.0
 lib/libxkbcommon.so.0.0.0
-lib/libxkbcommon-x11.a
 lib/libxkbcommon-x11.so
 lib/libxkbcommon-x11.so.0
 lib/libxkbcommon-x11.so.0.0.0
