@@ -5,12 +5,10 @@ PORTNAME=	rplay
 PORTVERSION=	3.3.2
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://rplay.doit.org/dist/
+MASTER_SITES=	http://ponce.cc/slackware/sources/repo/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network audio player
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
