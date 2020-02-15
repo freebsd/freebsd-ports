@@ -76,6 +76,7 @@ include/moab/NestedRefine.hpp
 include/moab/NestedRefineTemplates.hpp
 include/moab/OrientedBox.hpp
 include/moab/OrientedBoxTreeTool.hpp
+include/moab/ParCommGraph.hpp
 %%MPI%%include/moab/ParallelComm.hpp
 %%MPI%%include/moab/ParallelData.hpp
 %%MPI%%include/moab/ParallelMergeMesh.hpp
@@ -122,12 +123,13 @@ include/moab/verdict/VerdictWrapper.hpp
 lib/cmake/MOAB/MOABConfig.cmake
 lib/cmake/MOAB/MOABTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/MOAB/MOABTargets.cmake
+lib/cmake/MOAB/ResolveCompilerPaths.cmake
 lib/iMesh-Defs.inc
 lib/libMOAB.so
 lib/libMOAB.so.5
-lib/libMOAB.so.5.0.0
+lib/libMOAB.so.5.1.0
 lib/libiMesh.so
 lib/libiMesh.so.5
-lib/libiMesh.so.5.0.0
+lib/libiMesh.so.5.1.0
 %%MPI%%lib/libmbcoupler.so
 lib/moab.make
