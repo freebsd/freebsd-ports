@@ -47,13 +47,16 @@ CONFLICTS_INSTALL?=	rust-nightly
 PLIST_FILES=	lib/rustlib/components \
 		lib/rustlib/rust-installer-version
 
-OPTIONS_DEFINE=	DOCS GDB SOURCES
+OPTIONS_DEFINE=	DOCS GDB SOURCES WASM
 GDB_DESC=	Install ports gdb (necessary for debugging rust programs)
 SOURCES_DESC=	Install source files
+WASM_DESC=	Build the WebAssembly target (wasm32-unknown-unknown)
 
 DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 DOCS_VARS=		_RUST_BUILD_DOCS=true
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
+WASM_VARS_OFF=		_RUST_BUILD_WASM=false
+WASM_VARS=		_RUST_BUILD_WASM=true
 
 # See WRKSRC/src/stage0.txt for the date and version values.
 BOOTSTRAPS_DATE?=		2020-01-11
@@ -148,6 +151,9 @@ do-configure:
 	@${ECHO_CMD} 'python="${PYTHON_CMD}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'docs=${_RUST_BUILD_DOCS}' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose=2' >> ${WRKSRC}/config.toml
+.if ${PORT_OPTIONS:MWASM}
+	@${ECHO_CMD} 'target=["${_RUST_TARGET}","wasm32-unknown-unknown"]' >> ${WRKSRC}/config.toml
+.endif
 	@${ECHO_CMD} '[install]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'prefix="${PREFIX}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'sysconfdir="${PREFIX}/etc"' >> ${WRKSRC}/config.toml
@@ -155,6 +161,7 @@ do-configure:
 	@${ECHO_CMD} 'channel="${PKGNAMESUFFIX:Ustable:S/^-//}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'lld=${_RUST_BUILD_WASM}' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
 .if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
 	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml
