@@ -165,7 +165,7 @@ POST_BUILD_DIST_TARGETS=	electron_dist_zip electron_chromedriver_zip electron_mk
 YARN_TIMESTAMP=	1576819964
 
 PLIST_SUB=	ELECTRON_VER=${ELECTRON_VER} \
-		PKGNAMESUFFIX=${PKGNAMESUFFIX}
+		ELECTRON_VER_MAJOR=${ELECTRON_VER_MAJOR}
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>

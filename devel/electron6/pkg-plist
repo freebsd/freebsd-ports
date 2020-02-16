@@ -1,4 +1,4 @@
-bin/electron%%PKGNAMESUFFIX%%
+bin/electron%%ELECTRON_VER_MAJOR%%
 %%DATADIR%%/LICENSE
 %%DATADIR%%/LICENSES.chromium.html
 %%DATADIR%%/chrome_100_percent.pak
