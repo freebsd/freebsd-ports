@@ -1,6 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=ROX
-Comment=This session logs you into the ROX Desktop
-Exec=%%PREFIX%%/bin/rox-session
-Type=Application

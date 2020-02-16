@@ -14261,3 +14261,20 @@ textproc/rubygem-elasticsearch503|textproc/rubygem-elasticsearch|2020-02-14|Obso
 textproc/rubygem-elasticsearch-api503|textproc/rubygem-elasticsearch-api|2020-02-14|Obsolete, use textproc/rubygem-elasticsearch-api instead
 textproc/rubygem-elasticsearch-transport503|textproc/rubygem-elasticsearch-transport|2020-02-14|Obselete, use textproc/rubygem-elasticsearch-transport instead
 textproc/rubygem-asciidoctor-plantuml009|textproc/rubygem-asciidoctor-plantuml|2020-02-14|Obsolete, use textproc/rubygem-asciidoctor-plantuml instead
+archivers/rox-archive||2020-02-16|Has expired: Old, uses EOLed python27
+databases/ldb|databases/ldb14|2020-02-16|Has expired: Old version, uses EOLed python27
+databases/ldb12|databases/ldb14|2020-02-16|Has expired: Old version, uses EOLed python27
+databases/ldb13|databases/ldb14|2020-02-16|Has expired: Old version, uses EOLed python27
+databases/tdb1|databases/tdb|2020-02-16|Has expired: Old version, uses EOLed python27
+deskutils/rox-memo||2020-02-16|Has expired: Old, uses EOLed python27
+devel/py-roxlib||2020-02-16|Has expired: Old, uses EOLed python27
+devel/talloc1|devel/talloc|2020-02-16|Has expired: Old version, uses EOLed python27
+devel/tevent1|devel/tevent|2020-02-16|Has expired: Old version, uses EOLed python27
+editors/rox-edit||2020-02-16|Has expired: Old, uses EOLed python27
+graphics/ocre||2020-02-16|Has expired: unfetchable, author not reachable, seems discontinued
+math/py-basemap||2020-02-16|Has expired: Deprecated upstream
+multimedia/rox-videothumbnail||2020-02-16|Has expired: Old, uses EOLed python27
+security/morphis||2020-02-16|Has expired: Fails to build with recent versions of python, upstream git repository is gone
+x11/rox-wallpaper||2020-02-16|Has expired: Old, uses EOLed python27
+x11-fm/rox-mime-editor||2020-02-16|Has expired: Old, uses EOLed python27
+x11-fm/rox-session||2020-02-16|Has expired: Old, uses EOLed python27

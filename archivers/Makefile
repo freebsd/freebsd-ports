@@ -193,7 +193,6 @@
     SUBDIR += qpress
     SUBDIR += quazip
     SUBDIR += rar
-    SUBDIR += rox-archive
     SUBDIR += rpm2cpio
     SUBDIR += rpm4
     SUBDIR += rubygem-archive-tar-minitar

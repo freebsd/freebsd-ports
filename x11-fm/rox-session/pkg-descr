@@ -1,6 +1,0 @@
-ROX-Session is a simple session manager.
-It loads, runs any programs you asked it to, and then quits when you run it
-a second time (thus ending your session). It does not display any windows
-until you ask it to quit.
-
-WWW: http://rox.sourceforge.net/desktop/

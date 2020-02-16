@@ -555,7 +555,6 @@
     SUBDIR += ocaml-images
     SUBDIR += ocaml-lablgl
     SUBDIR += ocrad
-    SUBDIR += ocre
     SUBDIR += ogre3d
     SUBDIR += ogre3d19
     SUBDIR += oidn

@@ -127,9 +127,6 @@
     SUBDIR += kexi
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
-    SUBDIR += ldb
-    SUBDIR += ldb12
-    SUBDIR += ldb13
     SUBDIR += ldb14
     SUBDIR += ldb15
     SUBDIR += leo_center
@@ -1029,7 +1026,6 @@
     SUBDIR += tcl-lmdb
     SUBDIR += tcl-sqlite3
     SUBDIR += tdb
-    SUBDIR += tdb1
     SUBDIR += tdbc
     SUBDIR += tile38
     SUBDIR += tiledb

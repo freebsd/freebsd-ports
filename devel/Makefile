@@ -4950,7 +4950,6 @@
     SUBDIR += py-robotremoteserver
     SUBDIR += py-rope
     SUBDIR += py-rose
-    SUBDIR += py-roxlib
     SUBDIR += py-rply
     SUBDIR += py-rq
     SUBDIR += py-rq-scheduler
@@ -6611,7 +6610,6 @@
     SUBDIR += tablist
     SUBDIR += tailor
     SUBDIR += talloc
-    SUBDIR += talloc1
     SUBDIR += tass64
     SUBDIR += tbb
     SUBDIR += tcl-memchan
@@ -6636,7 +6634,6 @@
     SUBDIR += termcolor
     SUBDIR += terminality
     SUBDIR += tevent
-    SUBDIR += tevent1
     SUBDIR += tex-kpathsea
     SUBDIR += tex-libtexlua
     SUBDIR += tex-libtexluajit
