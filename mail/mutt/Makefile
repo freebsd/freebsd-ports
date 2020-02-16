@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-DISTVERSION=	1.13.3
+DISTVERSION=	1.13.4
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
