@@ -21,4 +21,6 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj22-jsonfield
+
 .include <bsd.port.mk>
