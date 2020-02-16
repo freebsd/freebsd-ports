@@ -17,6 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		gettext gmake gnome pkgconfig
+USE_CSTD=	c99
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GNU_CONFIGURE=	yes
 
