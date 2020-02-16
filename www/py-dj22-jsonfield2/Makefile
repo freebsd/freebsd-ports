@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	jsonfield2
-PORTVERSION=	3.1.0
+PORTVERSION=	4.0.0
 CATEGORIES=	www python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj22-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,8 +21,5 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}jsonfield2
-
-GH_ACCOUNT=	rpkilby
-USE_GITHUB=	yes
 
 .include <bsd.port.mk>
