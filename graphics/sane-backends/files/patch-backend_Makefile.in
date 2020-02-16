@@ -1,0 +1,38 @@
+--- backend/Makefile.in.orig	2020-02-03 08:54:00 UTC
++++ backend/Makefile.in
+@@ -1645,7 +1645,7 @@ AM_V_at = $(am__v_at_@AM_V@)
+ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+ am__v_at_0 = @
+ am__v_at_1 = 
+-DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/include/sane
++DEFAULT_INCLUDES = -I$(top_builddir)/include/sane -I$(top_builddir)/include -I.@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__maybe_remake_depfiles = depfiles
+ am__depfiles_remade = ./$(DEPDIR)/libabaton_la-abaton.Plo \
+@@ -3270,7 +3270,7 @@ libsane_la_LDFLAGS = $(DIST_LIBS_LDFLAGS)
+ libsane_la_LIBADD = $(COMMON_LIBS) $(PRELOADABLE_BACKENDS_ENABLED) libdll_preload.la sane_strstatus.lo ../sanei/sanei_init_debug.lo ../sanei/sanei_constrain_value.lo ../sanei/sanei_config.lo $(PRELOADABLE_BACKENDS_LIBS) $(DL_LIBS) $(XML_LIBS)
+ 
+ # WARNING: Automake is getting this wrong so have to do it ourselves.
+-libsane_la_DEPENDENCIES = $(COMMON_LIBS) $(PRELOADABLE_BACKENDS_ENABLED) libdll_preload.la sane_strstatus.lo ../sanei/sanei_init_debug.lo ../sanei/sanei_constrain_value.lo ../sanei/sanei_config.lo $(PRELOADABLE_BACKENDS_DEPS)
++libsane_la_DEPENDENCIES = ../lib/liblib.la $(PRELOADABLE_BACKENDS_ENABLED) libdll_preload.la sane_strstatus.lo ../sanei/sanei_init_debug.lo ../sanei/sanei_constrain_value.lo ../sanei/sanei_config.lo $(PRELOADABLE_BACKENDS_DEPS)
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
+@@ -7174,7 +7174,7 @@ install-becfg: becfg
+ 	@# installed library in $(sanelibdir) to $(sanelibdir)/libsane.*.
+ 	@# Having two libsane's can cause issues so get rid of it.
+ 	-rm -f $(DESTDIR)$(sanelibdir)/libsane.*
+-	test -z "$(configdir)" || $(MKDIR_P) "$(DESTDIR)$(configdir)"
++	test -z "$(configdir)/dist" || $(MKDIR_P) "$(DESTDIR)$(configdir)/dist"
+ 	test -z "$(configdir)/dll.d" || $(MKDIR_P) "$(DESTDIR)$(configdir)/dll.d"
+ 	@list="$(BACKEND_CONFS_ENABLED) saned.conf dll.conf"; for cfg in $$list; do \
+ 	  if test ! -r $${cfg}; then continue; fi; \
+@@ -7182,7 +7182,7 @@ install-becfg: becfg
+ 	  echo NOT overwriting $${cfg} in $(configdir)...; \
+ 	  else \
+ 	  echo installing $${cfg} in $(configdir)/$${cfg}...; \
+-	  $(INSTALL_DATA) $${cfg} $(DESTDIR)$(configdir)/$${cfg} \
++	  $(INSTALL_DATA) $${cfg} $(DESTDIR)$(configdir)/dist/$${cfg} \
+ 	  || exit 1; \
+ 	  fi; \
+ 	  done
