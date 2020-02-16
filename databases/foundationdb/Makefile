@@ -3,7 +3,7 @@
 
 PORTNAME=	foundationdb
 PORTVERSION=	6.1.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libeio.so:devel/libeio
 
-USES=		compiler:c++14-lang gmake mono python:build shebangfix
+USES=		compiler:c++14-lang gmake mono:build python:build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple
 USE_RC_SUBR=	foundationdb
