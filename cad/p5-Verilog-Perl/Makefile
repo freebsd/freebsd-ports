@@ -10,7 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	otacilio.neto@bsd.com.br
 COMMENT=	Building point for Verilog support in the Perl language
 
-LICENSE=	LGPL3
+LICENSE=	ART20 LGPL3
+LICENSE_COMB=	dual
+LICENSE_FILE_ART20=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	flex>=2.5.35:textproc/flex
 
@@ -21,7 +23,7 @@ CONFIGURE_ENV=	CXX=${CXX}\
 		CC=${CC}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Verilog/Parser/*.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Verilog/Preproc/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Verilog/Parser/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Verilog/Preproc/*.so
 
 .include <bsd.port.mk>
