@@ -3,7 +3,7 @@
 
 PORTNAME=	horizon
 PORTVERSION=	13.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	https://tarballs.openstack.org/horizon/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,7 +34,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}osprofiler>=1.4.0:devel/py-osprofiler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymongo>=3.0.2:databases/pymongo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyscss>=1.3.4:textproc/py-pyscss@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-cinderclient>=3.3.0:net/py-python-cinderclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-glanceclient>=2.8.0:net/py-python-glanceclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=3.8.0:net/py-python-keystoneclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-neutronclient>=6.3.0:net/py-python-neutronclient@${PY_FLAVOR} \
@@ -91,9 +90,11 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3600
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}oslo.policy2>=1.30.0:devel/py-oslo.policy2@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}oslo.policy2>=1.30.0:devel/py-oslo.policy2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-cinderclient5>=3.3.0:net/py-python-cinderclient5@${PY_FLAVOR}
 .else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}oslo.policy>=1.30.0:devel/py-oslo.policy@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}oslo.policy>=1.30.0:devel/py-oslo.policy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-cinderclient>=3.3.0:net/py-python-cinderclient@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
