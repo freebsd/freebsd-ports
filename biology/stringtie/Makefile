@@ -1,20 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	stringtie
-DISTVERSION=	1.3.4d
+DISTVERSION=	2.1.1
 CATEGORIES=	biology
 MASTER_SITES=	http://ccb.jhu.edu/software/stringtie/dl/
 
-MAINTAINER=	mzaki@niid.go.jp
+MAINTAINER=	mzaki@e-mail.ne.jp
 COMMENT=	Transcript assembly and quantification for RNA-seq
 
-LICENSE=	ART20 MIT
-LICENSE_COMB=	multi
-LICENSE_FILE_ART20=	${WRKSRC}/LICENSE
-LICENSE_FILE_MIT=	${WRKSRC}/samtools-0.1.18/COPYING
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+TEST_DEPENDS=	bash:shells/bash \
+		curl:ftp/curl
 
 USES=		gmake
 ALL_TARGET=	release
+TEST_TARGET=	test
 
 PLIST_FILES=	bin/stringtie
 

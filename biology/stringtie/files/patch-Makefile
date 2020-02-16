@@ -1,55 +1,15 @@
---- Makefile.orig	2018-03-06 16:29:49 UTC
+--- Makefile.orig	2020-01-26 03:31:12 UTC
 +++ Makefile
-@@ -6,12 +6,12 @@ GDIR      :=./gclib
- 
- INCDIRS   := -I. -I${GDIR} -I${BAM}
- 
--CC        := g++
-+CXX       ?= g++
- 
- BASEFLAGS := -Wall -Wextra ${INCDIRS} -fsigned-char -D_FILE_OFFSET_BITS=64 \
- -D_LARGEFILE_SOURCE -fno-strict-aliasing -fno-exceptions -fno-rtti
- 
--LINKER    := g++
-+LINKER    = ${CXX}
- 
- LDFLAGS   := -g -L${BAM} $(LDFLAGS)
- 
-@@ -22,13 +22,13 @@ ifneq (,$(findstring nothreads,$(MAKECMD
+@@ -20,7 +20,7 @@ ifeq "$(GCCVER8)" "1"
+   BASEFLAGS += -Wno-class-memaccess
  endif
  
- #detect MinGW (Windows environment)
--ifneq (,$(findstring mingw,$(shell ${CC} -dumpmachine)))
-+ifneq (,$(findstring mingw,$(shell ${CXX} -dumpmachine)))
-  WINDOWS=1
- endif
+-LINKER  := $(if $(LINKER),$(LINKER),g++)
++LINKER  := $(if $(LINKER),$(LINKER),$(CXX))
  
- # MinGW32 GCC 4.5 link problem fix
- #ifdef WINDOWS
--ifneq (,$(findstring 4.5.,$(shell g++ -dumpversion)))
-+ifneq (,$(findstring 4.5.,$(shell ${CXX} -dumpversion)))
-  STATIC_CLIB=1
- endif
- #endif
-@@ -63,7 +63,7 @@ endif
- ifneq (,$(filter %release %static, $(MAKECMDGOALS)))
-   # -- release build
-   RELEASE_BUILD=1
--  CFLAGS := -DNDEBUG -g $(BASEFLAGS) $(CFLAGS) -O3
-+  CFLAGS := -DNDEBUG -g $(BASEFLAGS) $(CFLAGS)
- else
-   ifneq (,$(filter %memcheck %memdebug, $(MAKECMDGOALS)))
-      #use sanitizer in gcc 4.9+
-@@ -122,7 +122,7 @@ endif
+ LDFLAGS := $(if $(LDFLAGS),$(LDFLAGS),-g)
  
- 
- %.o : %.cpp
--	${CC} ${CFLAGS} -c $< -o $@
-+	${CXX} ${CFLAGS} -c $< -o $@
- 
- OBJS += rlink.o tablemaker.o tmerge.o
- 
-@@ -137,7 +137,7 @@ rlink.o : rlink.h tablemaker.h $(GDIR)/G
+@@ -151,7 +151,7 @@ rlink.o : rlink.h tablemaker.h $(GDIR)/G
  tmerge.o : rlink.h tmerge.h
  tablemaker.o : tablemaker.h rlink.h
  ${BAM}/libbam.a: 
@@ -58,7 +18,7 @@
  stringtie: ${BAM}/libbam.a $(OBJS) stringtie.o
  	${LINKER} ${LDFLAGS} -o $@ ${filter-out %.a %.so, $^} ${LIBS}
  	@echo
-@@ -151,6 +151,6 @@ clean:
+@@ -167,6 +167,6 @@ clean:
  	${RM} stringtie${EXE} stringtie.o*  $(OBJS)
  	${RM} core.*
  allclean cleanAll cleanall:
