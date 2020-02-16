@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-DNS-Resolver-Mock
-PORTVERSION=	1.20171219
+PORTVERSION=	1.20200214
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,9 +16,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
+
+USES=		perl5
+USE_PERL5=	configure
 
 NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5
 
 .include <bsd.port.mk>
