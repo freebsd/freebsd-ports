@@ -2,7 +2,7 @@
 
 PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -38,7 +38,8 @@ USE_KDE=	activities activities-stats archive attica auth baloo \
 		plasma-workspace runner service solid \
 		sonnet textwidgets unitconversion wallet \
 		widgetsaddons windowsystem xmlgui
-USE_KDE+=	drkonqi_run infocenter_run kde-cli-tools_run kmenuedit_run ksysguard_run \
+USE_KDE+=	drkonqi_run infocenter_run kde-cli-tools_run kmenuedit_run \
+		kquickcharts_run ksysguard_run \
 		polkit-kde-agent-1_run systemsettings_run
 USE_QT=		concurrent core dbus declarative gui network phonon4 printsupport \
 		sql svg widgets x11extras xml \
