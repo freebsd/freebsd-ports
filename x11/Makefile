@@ -278,7 +278,6 @@
     SUBDIR += rofi
     SUBDIR += rofi-calc
     SUBDIR += rofi-pass
-    SUBDIR += rox-wallpaper
     SUBDIR += roxbg
     SUBDIR += roxterm
     SUBDIR += rsibreak

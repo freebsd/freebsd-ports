@@ -359,7 +359,6 @@
     SUBDIR += recmpeg
     SUBDIR += recordmydesktop
     SUBDIR += replex
-    SUBDIR += rox-videothumbnail
     SUBDIR += rtmpdump
     SUBDIR += rubygem-av
     SUBDIR += rubygem-clutter-gstreamer
