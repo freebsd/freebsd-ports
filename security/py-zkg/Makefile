@@ -2,7 +2,7 @@
 
 PORTNAME=	zkg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.7
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GitPython>=2.1.8:devel/py-gitpython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}btest>=0:devel/py-btest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}btest>=0.61:devel/py-btest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configparser>=0:devel/py-configparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semantic_version>=0:devel/py-semantic_version@${PY_FLAVOR} \
 		git:devel/git
