@@ -40,7 +40,7 @@ MANUF_RUN_DEPENDS=	${LOCALBASE}/share/wireshark/manuf:net/wireshark
 MATPLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 P0F_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/p0f.fp:net-mgmt/p0f
 PYCRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR}
-PYX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyX>0:graphics/py-PyX@${PY_FLAVOR}
+PYX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyx>0:graphics/py-pyx@${PY_FLAVOR}
 QUESO_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/queso.conf.sample:net/queso
 SOX_RUN_DEPENDS=	${LOCALBASE}/bin/sox:audio/sox
 
