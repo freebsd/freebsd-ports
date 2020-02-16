@@ -16,6 +16,8 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	irtlab
 
+PORTSCOUT=	limit:^\d.*
+
 .for f in multidump multiplay rtpdump rtpplay rtpsend rtptrans
 PLIST_FILES+=	bin/${f}
 PLIST_FILES+=	man/man1/${f}.1.gz
