@@ -6,5 +6,3 @@ lib/cmake/gmic/GmicTargets.cmake
 lib/libgmic.so
 lib/libgmic.so.1
 man/man1/gmic.1.gz
-%%PLUGINS%%libexec/gimp/2.2/plug-ins/gmic_film_cluts.gmz
-%%PLUGINS%%libexec/gimp/2.2/plug-ins/gmic_gimp_gtk
