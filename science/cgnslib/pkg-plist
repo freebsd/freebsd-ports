@@ -23,7 +23,6 @@
 %%TOOLS%%bin/cgnstools/plotwish
 %%TOOLS%%bin/cgnstools/tecplot_to_cgns
 %%TOOLS%%bin/cgnstools/tetgen_to_cgns
-%%TOOLS%%bin/cgnstools/update_ngon
 %%TOOLS%%bin/cgnstools/vgrid_to_cgns
 %%TOOLS%%bin/cgnsview
 %%TOOLS%%bin/unitconv
@@ -46,7 +45,7 @@ include/cgnswin_f.h
 lib/libcgns.a
 lib/libcgns.so
 lib/libcgns.so.3
-lib/libcgns.so.3.4
+lib/libcgns.so.3.4.1
 %%TOOLS%%share/cgnstools/aflr3.tcl
 %%TOOLS%%share/cgnstools/balloon.tcl
 %%TOOLS%%share/cgnstools/cgns-icon.xbm
