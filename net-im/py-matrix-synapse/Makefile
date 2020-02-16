@@ -3,8 +3,7 @@
 
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.2
-PORTREVISION=	1
+DISTVERSION=	1.10.0
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5.1:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}frozendict>=1:devel/py-frozendict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unpaddedbase64>=1.1.0:devel/py-unpaddedbase64@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}canonicaljson>=1.1.3:devel/py-canonicaljson@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}signedjson>=1.0.0:security/py-signedjson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}signedjson>=1.1.0:security/py-signedjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pynacl>=1.2.1:security/py-pynacl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>=2.5:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}service_identity>=18.1.0:security/py-service_identity@${PY_FLAVOR} \
