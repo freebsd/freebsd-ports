@@ -3,13 +3,13 @@
 
 PORTNAME=	glance-store
 PORTVERSION=	0.23.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	glance_store-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Image Service Store Library
 
 LICENSE=	APACHE20
@@ -43,8 +43,7 @@ OPTIONS_DEFAULT=	CINDER VMWARE
 CINDER_DESC=	Storage backend for OpenStack Cinder storage nodes
 VMWARE_DESC=	Storage backend for VMware Datastore
 
-CINDER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-cinderclient>=3.3.0:net/py-python-cinderclient@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}os-brick>=2.3.4:devel/py-os-brick@${PY_FLAVOR} \
+CINDER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}os-brick>=2.3.4:devel/py-os-brick@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}oslo.rootwrap>=5.8.0:devel/py-oslo.rootwrap@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}oslo.privsep>=1.23.0:devel/py-oslo.privsep@${PY_FLAVOR}
 VMWARE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oslo.vmware>=2.17.0:devel/py-oslo.vmware@${PY_FLAVOR}
@@ -57,4 +56,14 @@ post-patch:
 		${WRKSRC}/glance_store/_drivers/vmware_datastore.py \
 		${WRKSRC}/glance_store/tests/unit/test_cinder_store.py
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MCINDER}
+.if ${PYTHON_REL} < 3600
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}python-cinderclient5>=3.3.0:net/py-python-cinderclient5@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}python-cinderclient>=3.3.0:net/py-python-cinderclient@${PY_FLAVOR}
+.endif
+.endif
+
+.include <bsd.port.post.mk>
