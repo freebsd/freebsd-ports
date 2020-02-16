@@ -2,6 +2,7 @@
 
 PORTNAME=	foundationdb-devel
 DISTVERSION=	7.0.0.a.20190823
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libeio.so:devel/libeio
 
-USES=		compiler:c++17-lang cmake mono python:build shebangfix ssl
+USES=		compiler:c++17-lang cmake mono:build python:build shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	wolfspider
 GH_PROJECT=	foundationdb
