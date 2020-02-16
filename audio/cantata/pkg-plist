@@ -12,11 +12,13 @@ share/applications/cantata.desktop
 %%NLS%%%%DATADIR%%/translations/cantata_de.qm
 %%NLS%%%%DATADIR%%/translations/cantata_en_GB.qm
 %%NLS%%%%DATADIR%%/translations/cantata_es.qm
+%%NLS%%%%DATADIR%%/translations/cantata_fi.qm
 %%NLS%%%%DATADIR%%/translations/cantata_fr.qm
 %%NLS%%%%DATADIR%%/translations/cantata_hu.qm
 %%NLS%%%%DATADIR%%/translations/cantata_it.qm
 %%NLS%%%%DATADIR%%/translations/cantata_ja.qm
 %%NLS%%%%DATADIR%%/translations/cantata_ko.qm
+%%NLS%%%%DATADIR%%/translations/cantata_nl.qm
 %%NLS%%%%DATADIR%%/translations/cantata_pl.qm
 %%NLS%%%%DATADIR%%/translations/cantata_pt_BR.qm
 %%NLS%%%%DATADIR%%/translations/cantata_ru.qm
