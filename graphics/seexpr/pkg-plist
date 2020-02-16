@@ -65,6 +65,7 @@ lib/libSeExpr2.so.2.0
 lib/libSeExpr2Editor.so
 lib/libSeExpr2Editor.so.2.0
 lib/libSeExpr2Editor.so.3
+libdata/pkgconfig/seexpr2.pc
 share/SeExpr2/demos/imageSynth/examples/111.se
 share/SeExpr2/demos/imageSynth/examples/fbm.se
 share/SeExpr2/demos/imageSynth/examples/noise.se
@@ -105,7 +106,11 @@ share/SeExpr2/utils/eval
 share/SeExpr2/utils/listVar
 share/cmake/SeExpr2/seexpr2-config.cmake
 share/cmake/SeExpr2/seexpr2-version.cmake
-share/pkgconfig/seexpr2.pc
 share/test/SeExpr2/BlockTests
 share/test/SeExpr2/VarBlockExample
 share/test/SeExpr2/dirtSimple
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/SeExpr2/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/SeExpr2/expreditor2.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/SeExprPy/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/SeExprPy/core.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/SeExprPy/utils.py
