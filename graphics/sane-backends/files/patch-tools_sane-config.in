@@ -1,0 +1,11 @@
+--- tools/sane-config.in.orig	2020-02-02 11:58:09 UTC
++++ tools/sane-config.in
+@@ -11,7 +11,7 @@ prefix="@prefix@"
+ exec_prefix="@exec_prefix@"
+ 
+ # using our installed *.pc only - neither default nor user paths
+-export PKG_CONFIG_LIBDIR="@libdir@/pkgconfig"
++export PKG_CONFIG_LIBDIR="@prefix@/libdata/pkgconfig"
+ export PKG_CONFIG_PATH=""
+ 
+ pkgconfig_package=sane-backends
