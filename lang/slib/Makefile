@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slib
-PORTVERSION=	3b5
-PORTREVISION=	1
+PORTVERSION=	3b6
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
