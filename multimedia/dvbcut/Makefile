@@ -38,6 +38,8 @@ CXXFLAGS+=	-I${LOCALBASE}/include \
 QMAKE_SOURCE_PATH=${WRKSRC}/src
 QMAKE_ARGS=	LRELEASE="${LRELEASE}"
 
+PORTSCOUT=	limit:^[^-]*$$
+
 post-build:
 		@${SED} -e 's;@prefix@;${PREFIX};' \
 			< ${WRKSRC}/dvbcut.desktop.in \
