@@ -74,6 +74,7 @@ share/applications/freeciv-server.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.fcdb
 %%PORTDOCS%%%%DOCSDIR%%/README.governor
 %%PORTDOCS%%%%DOCSDIR%%/README.graphics
+%%PORTDOCS%%%%DOCSDIR%%/README.modpack_installer
 %%PORTDOCS%%%%DOCSDIR%%/README.msys2
 %%PORTDOCS%%%%DOCSDIR%%/README.nations
 %%PORTDOCS%%%%DOCSDIR%%/README.packaging
