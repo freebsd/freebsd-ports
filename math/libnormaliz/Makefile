@@ -2,8 +2,7 @@
 
 PORTNAME=		libnormaliz
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.8.3
-PORTREVISION=		1
+DISTVERSION=		3.8.4
 CATEGORIES=		math
 
 MAINTAINER=	salvadore@FreeBSD.org
@@ -12,8 +11,7 @@ COMMENT=	Computations in affin monoids, vector configurations etc
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/dynamic_bitset.hpp:devel/boost-libs \
-		${LOCALBASE}/include/gmpxx.h:math/gmp
+BUILD_DEPENDS=	${LOCALBASE}/include/gmpxx.h:math/gmp
 
 USES=		autoreconf compiler:c++11-lang gmake libtool
 USE_GITHUB=	yes
@@ -33,10 +31,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=		COCOA DOCS FLINT OPENMP
 COCOA_DESC=		Link with libcocoa.a (might cause circular dependency)
 COCOA_BUILD_DEPENDS=	${LOCALBASE}/lib/libcocoa.a:math/cocoalib
-COCOA_CONFIGURE_ENABLE=	nmzintegrate
+COCOA_CONFIGURE_WITH=	cocoalib
 FLINT_DESC=		Link with libflint.so
 FLINT_BUILD_DEPENDS=	${LOCALBASE}/lib/libflint.so:math/flint2
-FLINT_CONFIGURE_ENABLE=	flint
+FLINT_CONFIGURE_WITH=	flint
 FLINT_LDFLAGS=		-lpthread
 OPENMP_BUILD_DEPENDS=	${LOCALBASE}/lib/libomp.so:devel/openmp
 OPENMP_CONFIGURE_ENABLE=	openmp
