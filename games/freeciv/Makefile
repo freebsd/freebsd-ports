@@ -43,12 +43,14 @@ DB_DESC=	Database support
 UI_DESC=	GUI clients
 
 GTK2_USES=	gnome sdl
-GTK2_USE=	GNOME=gdkpixbuf2,glib20,gtk20,pango SDL=mixer2
+GTK2_USE=	GNOME=gdkpixbuf2,glib20,gtk20,pango \
+		SDL=mixer2
 GTK2_VARS=	_FREECIV_CLIENT+=gtk2 \
 		_FREECIV_MP+=gtk2
 
 GTK3_USES=	gnome sdl
-GTK3_USE=	GNOME=cairo,gdkpixbuf2,glib20,gtk30,pango SDL=mixer2
+GTK3_USE=	GNOME=cairo,gdkpixbuf2,glib20,gtk30,pango \
+		SDL=mixer2
 GTK3_VARS=	_FREECIV_CLIENT+=gtk3 \
 		_FREECIV_MP+=gtk3
 
@@ -66,7 +68,8 @@ PGSQL_CONFIGURE_ON=	--with-postgres-prefix=${LOCALBASE}
 PGSQL_VARS=		_FREECIV_DB+=postgres
 
 QT5_USES=		qt:5 sdl
-QT5_USE=		QT=core,gui,widgets,buildtools_build SDL=mixer2
+QT5_USE=		QT=core,gui,widgets,buildtools_build \
+			SDL=mixer2
 QT5_CONFIGURE_ON=	--with-qt5-includes=${LOCALBASE}/${QT_INCDIR_REL} \
 			--with-qt5-libs=${LOCALBASE}/${QT_LIBDIR_REL}
 QT5_CONFIGURE_ENABLE=	ruledit
