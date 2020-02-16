@@ -66,6 +66,7 @@
 %%DATADIR%%/html4each.scm
 %%DATADIR%%/htmlform.scm
 %%DATADIR%%/http-cgi.scm
+%%DATADIR%%/iso8601.scm
 %%DATADIR%%/jscheme.init
 %%DATADIR%%/kawa.init
 %%DATADIR%%/limit.scm
