@@ -2,10 +2,10 @@
 
 PORTNAME=	libopenshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.3-595
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-ga1158ee
+DISTVERSION=	0.2.4-29
+DISTVERSIONSUFFIX=	-g9bb5d93
 CATEGORIES=	multimedia
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	OpenShot Video Library
@@ -24,7 +24,7 @@ USES=		cmake compiler:c++11-lang pkgconfig python:3.5+ qt:5
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
-USE_PYTHON=	noflavors
+USE_PYTHON=	flavors
 USE_QT=		core gui network multimedia widgets qmake_build buildtools_build
 
 CMAKE_ON=	USE_SYSTEM_JSONCPP DISABLE_BUNDLED_JSONCPP\
@@ -32,6 +32,7 @@ CMAKE_ON=	USE_SYSTEM_JSONCPP DISABLE_BUNDLED_JSONCPP\
 		CMAKE_DISABLE_FIND_PACKAGE_Doxygen\
 		CMAKE_DISABLE_FIND_PACKAGE_RESVG\
 		CMAKE_DISABLE_FIND_PACKAGE_Ruby
+CMAKE_OFF=	ENABLE_COVERAGE
 CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_ImageMagick:BOOL=ON
 OPTIONS_DEFAULT=	FFMPEG
 OPTIONS_RADIO=	IMAGEMAGICK
@@ -48,7 +49,7 @@ IMAGEMAGICK7_CMAKE_ON=	-DCMAKE_DISABLE_FIND_PACKAGE_ImageMagick:BOOL=NO
 LIBAV_LIB_DEPENDS=	libavformat.so:multimedia/libav
 
 .if !exists(/usr/lib/libomp.so)
-LIB_DEPENDS+=	libomp.so:devel/openmp
+IGNORE=		openmp of base system is required
 .endif
 
 .include <bsd.port.mk>
