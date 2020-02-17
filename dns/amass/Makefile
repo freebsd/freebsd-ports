@@ -2,7 +2,7 @@
 
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.3
+DISTVERSION=	3.4.4
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,14 +44,14 @@ GH_TUPLE=	\
 		gobwas:ws:v1.0.2:gobwas_ws/vendor/github.com/gobwas/ws \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:ecb85df21340:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:1d94cc7ab1c6:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:16171245cfb2:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:d101bd2416d5:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:12a6c2dcc1e4:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		golang:tools:61798d64f025:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:5916a50871fb:golang_tools/vendor/golang.org/x/tools \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		hidal-go:hidalgo:42e03f3b5eaa:hidal_go_hidalgo/vendor/github.com/hidal-go/hidalgo \
@@ -70,7 +70,7 @@ GH_TUPLE=	\
 		prometheus:client_golang:v1.4.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.9.1:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:v0.0.8:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		prometheus:procfs:v0.0.9:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		rogpeppe:go-internal:v1.5.2:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:cobra:v0.0.5:spf13_cobra/vendor/github.com/spf13/cobra \
