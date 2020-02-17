@@ -3,7 +3,7 @@
 
 PORTNAME=	tomcat
 PORTVERSION=	9.0.30
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/([0-9])(.*)/\1/}/v${PORTVERSION}/bin
 PKGNAMESUFFIX=	9
@@ -52,36 +52,21 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/logs
 	@${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/endorsed
-	${CP} -R ${WRKSRC}/* ${STAGEDIR}${TOMCAT_HOME}
+	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${TOMCAT_HOME}
 
 post-install:
 	@${RM} ${STAGEDIR}${TOMCAT_HOME}/bin/*.bat
-	(cd ${STAGEDIR}${TOMCAT_HOME}/conf &&\
-		for f in $$(find . -type f); do ${MV} $$f $$f.sample; done)
+	@(cd ${STAGEDIR}${TOMCAT_HOME}/conf &&\
+		for f in $$(find . -type f -not -name '*.xsd'); do ${MV} $$f $$f.sample; done)
 
 post-install-HOST_MANAGER-on:
-	(cd ${STAGEDIR}${TOMCAT_HOME}/webapps &&\
+	@(cd ${STAGEDIR}${TOMCAT_HOME}/webapps &&\
 		for f in host-manager/META-INF/context.xml host-manager/WEB-INF/web.xml; do \
 			${MV} $$f $$f.sample; done)
 
-post-install-HOST_MANAGER-off:
-	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/host-manager
-
 post-install-MANAGER-on:
-	(cd ${STAGEDIR}${TOMCAT_HOME}/webapps &&\
+	@(cd ${STAGEDIR}${TOMCAT_HOME}/webapps &&\
 		for f in manager/META-INF/context.xml manager/WEB-INF/web.xml; do \
 			${MV} $$f $$f.sample; done)
-
-post-install-MANAGER-off:
-	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/manager
-
-post-install-DOCS-off:
-	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/docs
-
-post-install-EXAMPLES-off:
-	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/examples
-
-post-install-ROOT-off:
-	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/ROOT
 
 .include <bsd.port.mk>
