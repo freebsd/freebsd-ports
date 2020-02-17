@@ -1,3 +1,5 @@
-TIMESTAMP = 1529777973
+TIMESTAMP = 1581935565
 SHA256 (wallix-awless-v0.1.11_GH0.tar.gz) = 1a78636face8753cb983a5e4c1e3bfc9e1940e7eb932aa01fe2cbded46fd4292
 SIZE (wallix-awless-v0.1.11_GH0.tar.gz) = 11725608
+SHA256 (golang-sys-33540a1f6037_GH0.tar.gz) = 09ebdf007413c2eaddce123137443d08d1848be410c58896e772f0481ec385d5
+SIZE (golang-sys-33540a1f6037_GH0.tar.gz) = 1497659
