@@ -1,8 +1,8 @@
 Add the override-cache-ttl feature.
 
---- bin/named/config.c.orig	2020-02-11 10:42:52 UTC
+--- bin/named/config.c.orig	2020-02-16 17:41:30 UTC
 +++ bin/named/config.c
-@@ -178,6 +178,7 @@ options {\n\
+@@ -177,6 +177,7 @@ options {\n\
  	notify-source *;\n\
  	notify-source-v6 *;\n\
  	nsec3-test-zone no;\n\
@@ -10,9 +10,9 @@ Add the override-cache-ttl feature.
  	provide-ixfr true;\n\
  	qname-minimization relaxed;\n\
  	query-source address *;\n\
---- bin/named/server.c.orig	2020-02-11 10:42:52 UTC
+--- bin/named/server.c.orig	2020-02-16 17:41:30 UTC
 +++ bin/named/server.c
-@@ -4303,6 +4303,11 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
+@@ -4323,6 +4323,11 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
  	}
  
  	obj = NULL;
@@ -24,19 +24,19 @@ Add the override-cache-ttl feature.
  	result = named_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
  	view->maxcachettl = cfg_obj_asduration(obj);
---- lib/dns/include/dns/view.h.orig	2020-02-11 10:42:52 UTC
+--- lib/dns/include/dns/view.h.orig	2020-02-16 17:41:30 UTC
 +++ lib/dns/include/dns/view.h
 @@ -152,6 +152,7 @@ struct dns_view {
- 	bool				requestnsid;
- 	bool				sendcookie;
- 	dns_ttl_t			maxcachettl;
-+	dns_ttl_t			overridecachettl;
- 	dns_ttl_t			maxncachettl;
- 	dns_ttl_t			mincachettl;
- 	dns_ttl_t			minncachettl;
---- lib/dns/resolver.c.orig	2020-02-11 10:42:52 UTC
+ 	bool		      requestnsid;
+ 	bool		      sendcookie;
+ 	dns_ttl_t	      maxcachettl;
++	dns_ttl_t	      overridecachettl;
+ 	dns_ttl_t	      maxncachettl;
+ 	dns_ttl_t	      mincachettl;
+ 	dns_ttl_t	      minncachettl;
+--- lib/dns/resolver.c.orig	2020-02-16 17:41:30 UTC
 +++ lib/dns/resolver.c
-@@ -6032,6 +6032,12 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_adb
+@@ -6233,6 +6233,12 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_adb
  		}
  
  		/*
@@ -49,10 +49,10 @@ Add the override-cache-ttl feature.
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl) {
---- lib/isccfg/namedconf.c.orig	2020-02-11 10:42:52 UTC
+--- lib/isccfg/namedconf.c.orig	2020-02-16 17:41:30 UTC
 +++ lib/isccfg/namedconf.c
-@@ -2003,6 +2003,7 @@ view_clauses[] = {
- #endif
+@@ -1990,6 +1990,7 @@ static cfg_clausedef_t view_clauses[] = {
+ #endif /* ifdef HAVE_LMDB */
  	{ "max-acache-size", &cfg_type_sizenodefault, CFG_CLAUSEFLAG_OBSOLETE },
  	{ "max-cache-size", &cfg_type_sizeorpercent, 0 },
 +	{ "override-cache-ttl", &cfg_type_duration, 0 },
