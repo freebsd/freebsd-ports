@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	visp
-DISTVERSION=	3.2.0
-PORTREVISION=	7
+DISTVERSION=	3.3.0
 CATEGORIES=	misc
 MASTER_SITES=	http://gforge.inria.fr/frs/download.php/latestfile/475/
 
@@ -18,6 +17,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libflann.so:math/flann \
 		libgsl.so:math/gsl \
 		liblapack.so:math/lapack \
+		libopenblas.so:math/openblas \
 		libopencv_core.so:graphics/opencv-core \
 		libopencv_videoio.so:graphics/opencv \
 		libpcl_common.so:graphics/pcl-pointclouds \
@@ -30,7 +30,7 @@ USE_GNOME=	libxml2
 USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	BUILD_EXAMPLES BUILD_TUTORIALS BUILD_TESTS BUILD_DEMOS
+CMAKE_OFF=	WITH_QBDEVICE BUILD_EXAMPLES BUILD_TUTORIALS BUILD_TESTS BUILD_DEMOS
 
 OPTIONS_DEFINE=		OGRE
 

@@ -1,17 +1,8 @@
 https://github.com/lagadic/visp/issues/423
 
---- CMakeLists.txt.orig	2019-01-23 14:54:34 UTC
+--- CMakeLists.txt.orig	2020-02-14 13:41:31 UTC
 +++ CMakeLists.txt
-@@ -553,6 +553,8 @@ if(NOT USE_CXX11 AND CXX11_FOUND)
-   endif()
- endif()
- 
-+set(CMAKE_CXX_STANDARD 14) # see https://github.com/lagadic/visp/issues/690
-+
- VP_OPTION(USE_SOWIN       SOWIN       ""    "Include Coin/SoWin support"   "" OFF IF (WIN32 AND USE_COIN3D) AND NOT WINRT AND NOT IOS)
- # Check for SoQt 1.6.0 linked to Qt5 or older version with SOQT
- VP_OPTION(USE_SOQT        "SoQt;SOQT" QUIET "Include Coin/SoQt support"    "" OFF IF USE_COIN3D AND NOT WINRT AND NOT IOS)
-@@ -751,7 +753,7 @@ if(UNIX AND NOT ANDROID)
+@@ -817,7 +817,7 @@ if(UNIX AND NOT ANDROID)
      )
      install(FILES
        ${VISP_BINARY_DIR}/doc/man/man1/visp-config.1.gz
