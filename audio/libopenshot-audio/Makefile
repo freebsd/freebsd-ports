@@ -2,8 +2,8 @@
 
 PORTNAME=	libopenshot-audio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.8-100
-DISTVERSIONSUFFIX=	-g006fd01
+DISTVERSION=	0.1.9-6
+DISTVERSIONSUFFIX=	-g836e49f
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	tatsuki_makino@hotmail.com
@@ -21,7 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
 
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Doxygen\
-		CMAKE_DISABLE_FIND_PACKAGE_ImageMagick\
 		CMAKE_DISABLE_FIND_PACKAGE_PythonInterp
 
 .include <bsd.port.mk>
