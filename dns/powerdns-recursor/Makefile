@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursor
-DISTVERSION=	4.2.0
-PORTREVISION=	2
+DISTVERSION=	4.2.1
 CATEGORIES=	dns
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -41,7 +40,7 @@ OPTIONS_DEFAULT=	SETUID
 LUAJIT_DESC=	Use LuaJIT instead of Lua
 SETUID_DESC=	Run as pdns_recursor user
 
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit-openresty
 LUAJIT_USES_OFF=	lua
 LUAJIT_CONFIGURE_ON=	--with-lua=luajit
 
