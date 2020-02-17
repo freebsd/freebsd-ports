@@ -9,7 +9,7 @@ MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v4.
 		https://commondatastorage.googleapis.com/chromium-browser-official/:chromium_official \
 		https://commondatastorage.googleapis.com/chromium-nodejs/:chromium_node \
 		https://commondatastorage.googleapis.com/chromium-fonts/:chromium_testfonts
-PKGNAMESUFFIX=	${ELECTRON_VER:C/^([0-9]+)\..+$$/\1/}
+PKGNAMESUFFIX=	${ELECTRON_VER_MAJOR}
 DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}:chromium \
 		chromium-${CHROMIUM_OFFICIAL_VER}${EXTRACT_SUFX}:chromium_official \
 		${CHROMIUM_NODE_MODULES_HASH}:chromium_node \
@@ -64,7 +64,6 @@ GH_TUPLE=	electron:node:8bc5d171a0873c0ba49f9433798bc8b67399788c:node
 		# yaml:pyyaml:3.12:pyyaml \
 		# kennethreitz:requests:e4d59bedfd3c7f4f254f4f5d036587bcd8152458:requests
 
-#ELECTRON_VER=	4.2.12
 # Official chromium version containing "gn" which is known to work
 CHROMIUM_OFFICIAL_VER=	76.0.3809.132
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
@@ -156,7 +155,7 @@ POST_BUILD_DIST_TARGETS=	electron_dist_zip electron_chromedriver_zip electron_mk
 NPM_TIMESTAMP=	1573298347
 
 PLIST_SUB=	ELECTRON_VER=${ELECTRON_VER} \
-		PKGNAMESUFFIX=${PKGNAMESUFFIX}
+		ELECTRON_VER_MAJOR=${ELECTRON_VER_MAJOR}
 
 .include "Makefile.version"
 .include "Makefile.tests"
