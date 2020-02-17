@@ -1630,6 +1630,7 @@
     SUBDIR += py-formalchemy
     SUBDIR += py-formencode
     SUBDIR += py-frappe-bench
+    SUBDIR += py-freenit
     SUBDIR += py-frozen-flask
     SUBDIR += py-funkload
     SUBDIR += py-gandi.cli
