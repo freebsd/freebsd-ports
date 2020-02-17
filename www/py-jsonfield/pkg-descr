@@ -5,4 +5,4 @@ add the field to one of your models.
 This port is not a duplicate of www/py-django-jsonfield, both ports have
 distinct but upstreams.
 
-WWW: https://github.com/rpkilby/django-jsonfield
+WWW: https://github.com/rpkilby/jsonfield
