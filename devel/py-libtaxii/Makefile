@@ -4,6 +4,7 @@
 PORTNAME=	libtaxii
 PORTVERSION=	1.1.116
 CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,12 +17,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.4.1:devel/py-dateutil@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}lxml>=2.2.3:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR}
 
-USES=		python
+USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	TAXIIProject
 
 .include <bsd.port.mk>
