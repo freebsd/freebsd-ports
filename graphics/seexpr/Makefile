@@ -25,11 +25,12 @@ USE_QT=		buildtools_build qmake_build core gui opengl widgets
 
 MAKE_JOBS_UNSAFE=	yes	# https://github.com/wdas/seexpr/issues/40
 
-# XXX: fix the build errors and convert to OPTIONs
-CMAKE_ARGS=	-DENABLE_LLVM_BACKEND:BOOL=FALSE
-
-OPTIONS_DEFINE=	PYTHON
+OPTIONS_DEFINE=	LLVM PYTHON
 OPTIONS_SUB=	yes
+
+LLVM_DESC=		Build with LLVM ${LLVM_DEFAULT:C/.$$//} backend
+LLVM_LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_DEFAULT}
+LLVM_CMAKE_OFF=		-DENABLE_LLVM_BACKEND:BOOL=FALSE
 
 PYTHON_LIB_DEPENDS=	${PY_BOOST}
 PYTHON_USES=		pyqt:5 python
