@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libudev-devd
-PORTVERSION=	0.4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.1
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -13,12 +14,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
-GH_TAGNAME=	fbe5a0b
 
-USES=		autoreconf gmake libtool localbase pathfix pkgconfig
+USES=		localbase meson pkgconfig
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	include/libudev.h \
 		lib/libudev.so \
