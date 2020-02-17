@@ -1,0 +1,4 @@
+The Elasticsearch::Rails library is a companion for the the elasticsearch-model
+library, providing features suitable for Ruby on Rails applications.
+
+WWW: https://github.com/elastic/elasticsearch-rails/tree/master/elasticsearch-rails
