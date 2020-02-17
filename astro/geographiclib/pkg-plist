@@ -61,7 +61,7 @@ lib/cmake/GeographicLib/geographiclib-targets.cmake
 lib/libGeographic.a
 lib/libGeographic.so
 lib/libGeographic.so.19
-lib/libGeographic.so.19.0.0
+lib/libGeographic.so.19.0.1
 lib/node_modules/geographiclib/LICENSE.txt
 lib/node_modules/geographiclib/README.md
 lib/node_modules/geographiclib/geographiclib.js
@@ -148,6 +148,8 @@ sbin/geographiclib-get-magnetic
 %%MAGNETIC_WMM2015%%%%DATADIR%%/magnetic/wmm2015.wmm.cof
 %%MAGNETIC_WMM2015V2%%%%DATADIR%%/magnetic/wmm2015v2.wmm
 %%MAGNETIC_WMM2015V2%%%%DATADIR%%/magnetic/wmm2015v2.wmm.cof
+%%MAGNETIC_WMM2020%%%%DATADIR%%/magnetic/wmm2020.wmm
+%%MAGNETIC_WMM2020%%%%DATADIR%%/magnetic/wmm2020.wmm.cof
 share/matlab/geographiclib-legacy/Contents.m
 share/matlab/geographiclib-legacy/geocentricforward.m
 share/matlab/geographiclib-legacy/geocentricreverse.m

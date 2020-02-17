@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	geographiclib
-DISTVERSION=	1.50
+DISTVERSION=	1.50.1
 CATEGORIES=	astro
 MASTER_SITES=	SF/geographiclib/distrib\
 		SF/geographiclib/distrib/archive\
 		SF/geographiclib:geoids,gravity,magnetic
-DISTNAME=	GeographicLib-${DISTVERSION}${DISTVERSIONSUFFIX}
+DISTNAME=	GeographicLib-${DISTVERSIONFULL}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}	#
 DIST_SUBDIR=	GeographicLib
 
@@ -18,7 +18,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cmake compiler:c++14-lang python:env
-WRKSRC=		${WRKDIR}/GeographicLib-${DISTVERSION}
 PORTDOCS=	*
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DGEOGRAPHICLIB_DATA:STRING=${DATADIR:Q}\
@@ -29,10 +28,11 @@ CMAKE_ARGS=	-DGEOGRAPHICLIB_DATA:STRING=${DATADIR:Q}\
 OPTIONS_DEFINE=	DOCS DOXYGEN PERL
 OPTIONS_DEFAULT=	DOXYGEN PERL\
 			GEOID_EGM96_5 GRAVITY_EGM96 GRAVITY_WGS84\
-			MAGNETIC_WMM2015V2 MAGNETIC_IGRF12
+			MAGNETIC_WMM2020 MAGNETIC_IGRF12
 PERL_DESC=	Build documentation with pod2man and pod2html
 OPTIONS_GROUP=	DATASETS
 OPTIONS_SUB=	yes
+DATASETS_DESC=	geoid datasets, gravity models and magnetic field models
 DOXYGEN_CMAKE_BOOL=	GEOGRAPHICLIB_DOCUMENTATION
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen\
 			sphinx-build:textproc/py-sphinx
@@ -44,7 +44,8 @@ PERL_BUILD_DEPENDS=	nroff:textproc/groff
 GEOID_NAMES=		egm84-30 egm84-15 egm96-15 egm96-5\
 			egm2008-5 egm2008-2_5 egm2008-1
 GRAVITY_NAMES=		egm84 egm96 egm2008 wgs84 grs80
-MAGNETIC_NAMES=		wmm2010 wmm2015 wmm2015v2 igrf11 igrf12\
+MAGNETIC_NAMES=		wmm2010 wmm2015 wmm2015v2 wmm2020\
+			igrf11 igrf12\
 			emm2010 emm2015 emm2017
 DEPRECATED_NAMES=	wmm2015
 
@@ -70,7 +71,6 @@ MAGNETIC_${n:C/[^0-9A-Z_a-z]/_/g:tu}_DISTFILES=	magnetic-distrib/${n}.tar.bz2:ma
 MAKESUM_OPTIONS_DEFAULT+=	MAGNETIC_${n:C/[^0-9A-Z_a-z]/_/g:tu}
 .endfor
 
-# Memorandum: use "make fetch makesum" to makesum all distfiles.
 .ifmake makesum || distclean
 OPTIONS_DEFAULT=	${MAKESUM_OPTIONS_DEFAULT}
 .endif

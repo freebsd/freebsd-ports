@@ -1,6 +1,6 @@
-TIMESTAMP = 1569492000
-SHA256 (GeographicLib/GeographicLib-1.50.tar.gz) = 2ac8888094d21ba48adb433c4bb569937497b39733e96c080b5ce278e2587622
-SIZE (GeographicLib/GeographicLib-1.50.tar.gz) = 2463958
+TIMESTAMP = 1581822000
+SHA256 (GeographicLib/GeographicLib-1.50.1.tar.gz) = d1765009e068b8cc5e76957e5d6be45ce6cff08c4aad8e5995e84a28354385f1
+SIZE (GeographicLib/GeographicLib-1.50.1.tar.gz) = 2463854
 SHA256 (GeographicLib/geoids-distrib/egm2008-1.tar.bz2) = bdb382d0be7ece9142450eacc24b7b7f0889ee3e0ba4f535b04ec383f94c0fb5
 SIZE (GeographicLib/geoids-distrib/egm2008-1.tar.bz2) = 162388303
 SHA256 (GeographicLib/geoids-distrib/egm2008-2_5.tar.bz2) = d602e13446a4a4a23f39aecfe6a2a0760a1bc6c1b497482c2ebc9f7d513be699
@@ -41,3 +41,5 @@ SHA256 (GeographicLib/magnetic-distrib/wmm2015.tar.bz2) = 4c3fddb09955bbb556a955
 SIZE (GeographicLib/magnetic-distrib/wmm2015.tar.bz2) = 1425
 SHA256 (GeographicLib/magnetic-distrib/wmm2015v2.tar.bz2) = fda5e84ee803644c8695637f66ca2b278657633de6f83573eb988713d643a419
 SIZE (GeographicLib/magnetic-distrib/wmm2015v2.tar.bz2) = 1448
+SHA256 (GeographicLib/magnetic-distrib/wmm2020.tar.bz2) = 0a33e726b88f9aac390d5a64ba2b4e5aa4533dd98699955bc9f23278df3b5a52
+SIZE (GeographicLib/magnetic-distrib/wmm2020.tar.bz2) = 1434
