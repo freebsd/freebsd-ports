@@ -57,15 +57,6 @@
  
  
  #------------------------------------------------------------------------------
-@@ -373,7 +376,7 @@
- # files are defaulted in the OS/Makefile-Default file, but can be overridden in
- # local OS-specific make files.
- 
--EXIM_MONITOR=eximon.bin
-+# EXIM_MONITOR=eximon.bin
- 
- 
- #------------------------------------------------------------------------------
 @@ -454,6 +457,7 @@
  
  
