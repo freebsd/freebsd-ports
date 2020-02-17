@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xen
-PORTVERSION=	4.12.1
+PORTVERSION=	4.13.0
 PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=		cpe gmake python:2.7,build
+USES=		cpe gmake python:build
 
 # Ports build environment has ARCH=amd64 set which disables Xen automatic arch
 # detection, but amd64 is not a valid arch for Xen. Hardcode x86_64 on the
@@ -24,19 +24,6 @@ NO_MTREE=	yes
 STRIP=		#
 PLIST_FILES=	/boot/xen \
 		lib/debug/boot/xen.debug
-
-# LLD 8 changed the behaviour re the placement of orphaned sections, which
-# produces a non-bootable Xen kernel:
-#
-# https://bugs.llvm.org/show_bug.cgi?id=42327
-#
-# Backport the fixes from upstream
-EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-linker-add-a-reloc-section-to-ELF-linker-script.patch:-p1 \
-		${PATCHDIR}/0003-xen-link-handle-.init.rodata.cst-sections-in-the-lin.patch:-p1 \
-		${PATCHDIR}/0004-x86-check-for-multiboot-1-2-header-presence.patch:-p1
-
-# Fix for Intel foreign mapping issues.
-EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-ept-pass-correct-level-to-p2m_entry_modify.patch:-p1
 
 .include <bsd.port.options.mk>
 
