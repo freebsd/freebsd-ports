@@ -1,0 +1,10 @@
+--- MANIFEST.in.orig	2020-02-11 18:24:52 UTC
++++ MANIFEST.in
+@@ -9,4 +9,5 @@ recursive-include xdg *
+ global-exclude *__pycache__*
+ global-exclude *pyc
+ global-exclude .idea
+-global-exclude .git
+\ No newline at end of file
++global-exclude .git
++global-exclude *.orig
