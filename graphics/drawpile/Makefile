@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Drawpile
-DISTVERSION=	2.1.16
+DISTVERSION=	2.1.17
 CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
