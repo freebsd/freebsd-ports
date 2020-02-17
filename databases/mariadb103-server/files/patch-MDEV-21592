@@ -6,7 +6,7 @@
  
 +#ifdef __FreeBSD__
 +#include <security/pam_appl.h>
-+#elif
++#else
  #include <security/pam_ext.h>
 +#endif
  #include <security/pam_modules.h>
