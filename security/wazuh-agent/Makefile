@@ -2,9 +2,9 @@
 
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.10.2
+DISTVERSION=	3.11.3
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/3.10/
+MASTER_SITES=	https://packages.wazuh.com/deps/3.11/
 PKGNAMESUFFIX=	-agent
 DISTFILES=	cJSON.tar.gz src_cpython.tar.gz curl.tar.gz libdb.tar.gz libffi.tar.gz \
 		libyaml.tar.gz openssl.tar.gz procps.tar.gz sqlite.tar.gz  zlib.tar.gz \
@@ -53,11 +53,6 @@ post-extract:
 			exit 1; \
 		fi; \
 	done
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' \
-		${WRKSRC}/src/external/openssl/Makefile \
-		${WRKSRC}/src/external/openssl/configdata.pm
 
 do-build:
 	@cd ${WRKSRC}/src && ${GMAKE} TARGET=agent
