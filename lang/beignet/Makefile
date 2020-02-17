@@ -14,6 +14,9 @@ COMMENT=	Legacy OpenCL implementation for Intel HD (Gen7 to Gen9.5)
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Deprecated upstream, use lang/intel-compute-runtime
+EXPIRATION_DATE=	2020-04-02
+
 BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
