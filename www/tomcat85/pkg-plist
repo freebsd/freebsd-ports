@@ -60,11 +60,11 @@
 @sample %%T%%/conf/catalina.properties.sample
 @sample %%T%%/conf/context.xml.sample
 @sample %%T%%/conf/jaspic-providers.xml.sample
-@sample %%T%%/conf/jaspic-providers.xsd.sample
+%%T%%/conf/jaspic-providers.xsd
 @sample %%T%%/conf/logging.properties.sample
 @sample %%T%%/conf/server.xml.sample
 @sample %%T%%/conf/tomcat-users.xml.sample
-@sample %%T%%/conf/tomcat-users.xsd.sample
+%%T%%/conf/tomcat-users.xsd
 @sample %%T%%/conf/web.xml.sample
 %%T%%/temp/safeToDelete.tmp
 %%DOCS%%%%T%%/webapps/docs/BUILDING.txt
