@@ -1,4 +1,4 @@
---- setup.py.orig	2019-11-11 07:57:57 UTC
+--- setup.py.orig	2020-02-10 04:29:35 UTC
 +++ setup.py
 @@ -68,7 +68,7 @@ os_files = [
      # AppStream metadata
