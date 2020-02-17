@@ -4,7 +4,7 @@
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	1.10.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -14,7 +14,6 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
-		libtinfo.so:devel/ncurses \
 		libImath.so:graphics/ilmbase \
 		libIlmImf.so:graphics/openexr \
 		libOpenImageIO.so:graphics/openimageio \
