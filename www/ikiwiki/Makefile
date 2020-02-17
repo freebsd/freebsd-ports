@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-DISTVERSION=	3.20190228
+DISTVERSION=	3.20200202.3
 CATEGORIES=	www
 MASTER_SITES=	DEBIAN_POOL \
 		LOCAL/mat/${PORTNAME}
@@ -14,54 +14,56 @@ COMMENT=	Wiki compiler
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
-		p5-Locale-gettext>=0:devel/p5-Locale-gettext \
-		p5-CGI-FormBuilder>=0:www/p5-CGI-FormBuilder \
+BUILD_DEPENDS=	p5-CGI-FormBuilder>=0:www/p5-CGI-FormBuilder \
 		p5-CGI-Session>=0:www/p5-CGI-Session \
-		p5-TimeDate>=0:devel/p5-TimeDate \
+		p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-HTML-Scrubber>=0:www/p5-HTML-Scrubber \
 		p5-HTML-Template>=0:www/p5-HTML-Template \
+		p5-Locale-gettext>=0:devel/p5-Locale-gettext \
 		p5-Mail-Sendmail>=0:mail/p5-Mail-Sendmail \
 		p5-Text-Markdown>=0:textproc/p5-Text-Markdown \
+		p5-TimeDate>=0:devel/p5-TimeDate \
 		p5-URI>=0:net/p5-URI \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple \
-		p5-YAML>=0:textproc/p5-YAML \
-		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML
+		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML \
+		p5-YAML>=0:textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		p5-Authen-Passphrase>=0:security/p5-Authen-Passphrase \
 		p5-File-MimeInfo>=0:devel/p5-File-MimeInfo \
+		p5-LWPx-ParanoidAgent>=0:www/p5-LWPx-ParanoidAgent \
 		p5-RPC-XML>=0:net/p5-RPC-XML \
-		p5-XML-Feed>=0:textproc/p5-XML-Feed \
-		p5-Authen-Passphrase>=0:security/p5-Authen-Passphrase
+		p5-XML-Feed>=0:textproc/p5-XML-Feed
 
-USES=		gettext perl5 gmake cpe python shebangfix
+USES=		cpe gettext gmake perl5 python shebangfix
 USE_PERL5=	configure
 
-NO_ARCH=	yes
-CONFIGURE_ARGS=	PERL=${PERL} FULLPERL=${PERL}
+SHEBANG_FILES=	plugins/*
+
+CONFIGURE_ARGS=	FULLPERL=${PERL} \
+		PERL=${PERL}
 MAKE_ENV=	SYSCONFDIR=${ETCDIR} \
 		W3M_CGI_BIN=${PREFIX}/libexec/w3m/cgi-bin
-WRKSRC=		${WRKDIR}/IkiWiki-${PORTVERSION}
-
-OPTIONS_DEFINE=	PO4A SEARCH W3M DOCS EXAMPLES MULTI
-OPTIONS_DEFAULT=	PO4A SEARCH MULTI
-OPTIONS_SUB=
-
-PO4A_DESC=	Install translated underlays
-SEARCH_DESC=	Install search backend
-W3M_DESC=	Install w3m CGI wrapper
-MULTI_DESC=	Install Text::MultiMarkdown
-
-PO4A_RUN_DEPENDS=	po4a>=0.39:textproc/po4a
-PO4A_BUILD_DEPENDS=	po4a>=0.39:textproc/po4a
-SEARCH_RUN_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
-		p5-Search-Xapian>=0:databases/p5-Search-Xapian \
-		${LOCALBASE}/www/xapian-omega/cgi-bin/omega:www/xapian-omega
-MULTI_RUN_DEPENDS=	p5-Text-MultiMarkdown>=0:textproc/p5-Text-MultiMarkdown
+NO_ARCH=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 PORTDOCS=	CHANGELOG NEWS README
 PORTEXAMPLES=	*
 
-SHEBANG_FILES=	plugins/*
+OPTIONS_DEFINE=		DOCS EXAMPLES MULTI PO4A SEARCH W3M
+OPTIONS_DEFAULT=	MULTI PO4A SEARCH
+OPTIONS_SUB=
+
+MULTI_DESC=	Install Text::MultiMarkdown
+PO4A_DESC=	Install translated underlays
+SEARCH_DESC=	Install search backend
+W3M_DESC=	Install w3m CGI wrapper
+
+MULTI_RUN_DEPENDS=	p5-Text-MultiMarkdown>=0:textproc/p5-Text-MultiMarkdown
+PO4A_BUILD_DEPENDS=	po4a>=0.39:textproc/po4a
+PO4A_RUN_DEPENDS=	po4a>=0.39:textproc/po4a
+SEARCH_RUN_DEPENDS=	${LOCALBASE}/www/xapian-omega/cgi-bin/omega:www/xapian-omega \
+			p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+			p5-Search-Xapian>=0:databases/p5-Search-Xapian
 
 post-patch:
 	@${REINPLACE_CMD} -i '' \
