@@ -1,0 +1,7 @@
+FreeBSD driver for I2C HID touchscreens (and may be other devices)
+
+A complete discussion about how to use this tool can be found at:
+
+https://larastechlab.blogspot.com/2020/01/i2c-touchpads-on-freebsd-130-current.html
+
+WWW: https://github.com/wulf7/iichid
