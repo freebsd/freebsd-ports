@@ -1,5 +1,14 @@
---- ruby/Gemfile.orig	2019-11-22 14:21:07 UTC
+--- ruby/Gemfile.orig	2020-02-01 09:18:38 UTC
 +++ ruby/Gemfile
+@@ -16,7 +16,7 @@ gem 'faraday', '~> 0.12'
+ gem 'rbtrace', require: false
+ 
+ # Labkit provides observability functionality
+-gem 'gitlab-labkit', '~> 0.5.0'
++gem 'gitlab-labkit', '~> 0.8.0'
+ 
+ # Detects the open source license the repository includes
+ # This version needs to be in sync with GitLab CE/EE
 @@ -24,17 +24,3 @@ gem 'licensee', '~> 8.9.0'
  
  gem 'google-protobuf', '~> 3.8.0'
@@ -14,7 +23,7 @@
 -
 -  # gitlab-shell spec gems
 -  gem 'listen', '~> 0.5.0'
--  gem 'simplecov', '~> 0.9.0', require: false
+-  gem 'simplecov', '~> 0.17.1', require: false
 -  gem 'vcr', '~> 4.0.0'
 -  gem 'webmock', '~> 3.4.0'
 -end
