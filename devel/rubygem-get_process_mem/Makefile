@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	get_process_mem
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,9 +10,11 @@ COMMENT=	Get memory usage of a process in Ruby
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
+RUN_DEPENDS=	rubygem-ffi>=1.0<2:devel/rubygem-ffi
 
 USE_RUBY=	yes
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
