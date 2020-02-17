@@ -1,34 +1,16 @@
---- src/CMakeLists.txt.orig	2019-12-19 13:04:31 UTC
+--- src/CMakeLists.txt.orig	2020-02-10 17:52:00 UTC
 +++ src/CMakeLists.txt
-@@ -358,6 +358,11 @@ if (TARGET cppzmq)
+@@ -364,7 +364,13 @@ if (TARGET RESVG::resvg)
+   set(CMAKE_SWIG_FLAGS "-DUSE_RESVG=1")
  endif()
- 
  
 +find_library(EXECINFO_LIBRARY NAMES execinfo)
 +if(NOT EXECINFO_LIBRARY)
 +	message(FATAL_ERROR "${EXECINFO_LIBRARY}")
 +endif(NOT EXECINFO_LIBRARY)
-+
  ###############  LINK LIBRARY  #################
++target_link_libraries(openshot PUBLIC ${EXECINFO_LIBRARY})
++
  # Link remaining dependency libraries
  target_link_libraries(openshot PUBLIC
-@@ -396,9 +401,11 @@ target_compile_definitions(openshot-example PRIVATE
- 
- # Link test executable to the new library
- target_link_libraries(openshot-example openshot)
-+target_link_libraries(openshot-example ${EXECINFO_LIBRARY})
- 
- add_executable(openshot-html-test examples/ExampleHtml.cpp)
- target_link_libraries(openshot-html-test openshot Qt5::Gui)
-+target_link_libraries(openshot-html-test ${EXECINFO_LIBRARY})
- 
- ############### PLAYER EXECUTABLE ################
- # Create test executable
-@@ -406,6 +413,7 @@ add_executable(openshot-player Qt/demo/main.cpp)
- 
- # Link test executable to the new library
- target_link_libraries(openshot-player openshot)
-+target_link_libraries(openshot-player ${EXECINFO_LIBRARY})
- 
- ############### TEST BLACKMAGIC CAPTURE APP ################
- IF (BLACKMAGIC_FOUND)
+ 	${LIBOPENSHOT_AUDIO_LIBRARIES}
