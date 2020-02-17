@@ -98,7 +98,7 @@ MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.92.3
+EXIM_VERSION=	4.93
 SA_EXIM_VERSION=4.2
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 
@@ -250,7 +250,7 @@ SEDLIST+=	-e 's,^\# (DISABLE_DNSSEC=),\1,'
 
 .if ${PORT_OPTIONS:MDMARC}
 SEDLIST+= -e 's,XX_DMARC_LIBS_XX,-L${LOCALBASE}/lib -lopendmarc,' \
-		-e 's,^\# (EXPERIMENTAL_DMARC=),\1,'
+		-e 's,^\# (SUPPORT_DMARC=),\1,'
 .else
 SEDLIST+= -e 's,XX_DMARC_LIBS_XX,,'
 .endif
@@ -268,14 +268,16 @@ SEDLIST+=	-e 's,^\# (EXIM_MONITOR=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MTLS}
-SEDLIST+=	-e 's,^\# (SUPPORT_TLS=),\1,'
 .if ! ${PORT_OPTIONS:MGNUTLS}
 USES+=		ssl
+SEDLIST+=	-e 's,^\# (USE_OPENSSL=),\1,'
 SEDLIST+=	-e 's,^\# (TLS_LIBS=.*-lssl[[:space:]]),\1,'
 .else
 SEDLIST+=	-e 's,^\# (USE_GNUTLS=),\1,'
 SEDLIST+=	-e 's,^\# (TLS_LIBS=.*-lgnutls[[:space:]]),\1,'
 .endif
+.else # TLS support
+SEDLIST+=	-e 's,^\# (DISABLE_TLS=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MEMBEDDED_PERL}
