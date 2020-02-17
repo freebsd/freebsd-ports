@@ -1,11 +1,18 @@
---- CMakeLists.txt.orig	2019-10-24 07:05:50 UTC
+--- CMakeLists.txt.orig	2020-02-08 23:21:29 UTC
 +++ CMakeLists.txt
-@@ -192,7 +192,7 @@ if(UNIX AND NOT APPLE)
+@@ -192,8 +192,14 @@ if(UNIX AND NOT APPLE)
        INTERFACE_INCLUDE_DIRECTORIES ${ALSA_INCLUDE_DIR}
        INTERFACE_LINK_LIBRARIES ${ALSA_LIBRARIES})
    endif()
 -  target_compile_definitions(openshot-audio PUBLIC LINUX)
 +  #target_compile_definitions(openshot-audio PUBLIC LINUX)
    target_link_libraries(openshot-audio PUBLIC ALSA::ALSA)
++
++	find_library(EXECINFO_LIBRARY NAMES execinfo)
++	if(NOT EXECINFO_LIBRARY)
++		message(FATAL_ERROR "${EXECINFO_LIBRARY}")
++	endif(NOT EXECINFO_LIBRARY)
++	target_link_libraries(openshot-audio PUBLIC ${EXECINFO_LIBRARY})
  endif()
  
+ # ZLIB -- uses IMPORTED target ZLIB::ZLIB which has existed since CMake 3.1

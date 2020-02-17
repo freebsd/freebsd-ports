@@ -324,8 +324,8 @@ include/libopenshot-audio/juce_events/native/juce_win32_WinRTWrapper.h
 include/libopenshot-audio/juce_events/timers/juce_MultiTimer.h
 include/libopenshot-audio/juce_events/timers/juce_Timer.h
 lib/libopenshot-audio.so
-lib/libopenshot-audio.so.0.1.8
-lib/libopenshot-audio.so.6
+lib/libopenshot-audio.so.0.1.9
+lib/libopenshot-audio.so.7
 man/man1/openshot-audio-test-sound.1.gz
 @dir include/libopenshot-audio/juce_audio_devices/native/java/app/com/roli/juce
 @dir include/libopenshot-audio/juce_core/native/java/app/com/roli/juce
