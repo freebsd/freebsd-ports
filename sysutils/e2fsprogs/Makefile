@@ -3,7 +3,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.45.5
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -15,8 +15,6 @@ LICENSE?=	GPLv2+
 LICENSE_FILE?=	${WRKSRC}/NOTICE
 .endif
 LICENSE_DISTFILES_GPLv2+ =	${DISTNAME}${EXTRACT_SUFX}
-
-PORTSCOUT=	ignore	# cannot handle the version in the directory
 
 USES=		cpe gmake makeinfo pkgconfig tar:xz
 CPE_VENDOR=	e2fsprogs_project
@@ -46,6 +44,8 @@ CONFIGURE_ENV?=	LIBS='-Wl,--as-needed ${LIBS} -lexecinfo -lelf'
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
 MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
+
+PORTSCOUT=	ignore	# cannot handle the version in the directory
 
 .if !defined(MASTERDIR)
 INSTALL_TARGET=		install install-libs
