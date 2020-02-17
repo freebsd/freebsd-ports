@@ -4,6 +4,7 @@
 PORTNAME=	netdata
 PORTVERSION=	1.19.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	mmokhi@FreeBSD.org
@@ -88,6 +89,8 @@ post-patch:
 	    ${PATCH_WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|g' \
 	    ${PATCH_WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|%%PYTHON%%|${PYTHON_CMD}|g' \
+	    ${PATCH_WRKSRC}/collectors/python.d.plugin/python.d.plugin.in
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
