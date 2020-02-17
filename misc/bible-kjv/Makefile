@@ -1,10 +1,10 @@
 # Created by: Kim Scarborough <user@unknown.nu>
 # $FreeBSD$
 
-PORTNAME=	brs
+PORTNAME=	bible-kjv
 PORTVERSION=	4.30
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_DEBIAN:C|/%SUBDIR%/|/pool/main/${DISTNAME:C/^(.).*$/\1/}/${DISTNAME:C/_.*//}/|}
+MASTER_SITES=	DEBIAN
 DISTNAME=	bible-kjv_${DISTVERSION}
 
 MAINTAINER=	andrew@tao11.riddles.org.uk
@@ -19,7 +19,7 @@ USE_PERL5=	build
 # building its build tools. Parallel build randomly fails.
 MAKE_JOBS_UNSAFE=yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME:C/_.*//}
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 # makeindex2 asks for bash, but contains no shell construct more
 # complex than an if...then, so use sh instead.
