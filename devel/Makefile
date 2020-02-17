@@ -4848,6 +4848,7 @@
     SUBDIR += py-pytest-fixture-config
     SUBDIR += py-pytest-flake8
     SUBDIR += py-pytest-flakes
+    SUBDIR += py-pytest-flask
     SUBDIR += py-pytest-forked
     SUBDIR += py-pytest-helpers-namespace
     SUBDIR += py-pytest-isort

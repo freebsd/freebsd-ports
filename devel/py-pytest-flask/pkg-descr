@@ -1,0 +1,4 @@
+An extension of pytest test runner which provides a set of useful tools to
+simplify testing and development of the Flask extensions and applications.
+
+WWW: https://github.com/pytest-dev/pytest-flask
