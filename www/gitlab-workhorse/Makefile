@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab-workhorse
 PORTVERSION=	8.20.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -43,7 +44,7 @@ GH_TUPLE=	\
 		golang:lint:d0100b6bd8b3:golang_lint/vendor/golang.org/x/lint \
 		golang:net:d28f0bde5980:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:fde4db37ae7a:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:d101bd2416d5:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
 		golang:tools:6e04913cbbac:golang_tools/vendor/golang.org/x/tools \
 		gomodule:redigo:v2.0.0:gomodule_redigo/vendor/github.com/gomodule/redigo \
