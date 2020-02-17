@@ -14279,3 +14279,4 @@ x11/rox-wallpaper||2020-02-16|Has expired: Old, uses EOLed python27
 x11-fm/rox-mime-editor||2020-02-16|Has expired: Old, uses EOLed python27
 x11-fm/rox-session||2020-02-16|Has expired: Old, uses EOLed python27
 graphics/py-PyX|graphics/py-pyx|2020-02-16|Use lowercase port name
+misc/brs|misc/bible-kjv|2020-02-17|Match upstream name (successor to brs)
