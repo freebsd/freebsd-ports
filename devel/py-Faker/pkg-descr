@@ -6,4 +6,4 @@ data taken from a production service, Faker is for you.
 Faker is heavily inspired by PHP's [Faker][php-faker], Perl's
 [Data::Faker][perl-faker], and by ruby's [Faker][ruby-faker].
 
-WWW: https://pypi.org/project/Faker/
+WWW: https://github.com/joke2k/faker
