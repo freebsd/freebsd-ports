@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-shell
-PORTVERSION=	10.3.0
+PORTVERSION=	11.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -19,7 +19,7 @@ ALL_TARGET=	build
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT=	24156ea1e31c1cac2471b57217e683de8dccbd46
+GL_COMMIT=	a7b6307397c0bf5414a102052042d405c3b40162
 
 BUILD_DEPENDS=	rubygem-bundler1=1.17.3:sysutils/rubygem-bundler1
 
