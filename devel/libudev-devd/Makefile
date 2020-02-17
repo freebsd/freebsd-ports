@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 
-USES=		localbase meson pkgconfig
+USES=		compiler:c11 localbase meson pkgconfig
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/libudev.h \
