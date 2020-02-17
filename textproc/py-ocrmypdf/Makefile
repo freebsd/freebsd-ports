@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocrmypdf
-DISTVERSION=	9.3.0
+DISTVERSION=	9.6.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,8 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.9.1:devel/py-cffi@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.4.1:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-helpers-namespace>=2019.1.8:devel/py-pytest-helpers-namespace@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=1.29.0:devel/py-pytest-xdist@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cov>=2.6.1:devel/py-pytest-cov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pdf2>=1.26.0:print/py-pdf2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>=2.8.0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xmp-toolkit>=2.0.1:textproc/py-python-xmp-toolkit@${PY_FLAVOR}
 
 USES=		ghostscript:run python:3.6+ shebangfix
@@ -73,8 +72,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/completion/ocrmypdf.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/
 
 do-test:
+	# Skip some checks as they yield wrong results if run with the root account
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -m pytest -rs -v \
 	       	-n ${MAKE_JOBS_NUMBER} -k ' \
-		not test_dev_null'
+		not test_dev_null \
+		and not test_input_file_not_readable \
+		and not test_chmod'
 
 .include <bsd.port.mk>
