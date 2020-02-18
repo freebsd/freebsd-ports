@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=		nginx-ultimate-bad-bot-blocker
+DISTVERSIONPREFIX=	V
 DISTVERSION=		4.2020.02.1988
-DISTFILES=		V${PORTVERSION}${EXTRACT_SUFX}
 PORTREVISION=		0
 CATEGORIES=		www security
-MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Nginx bad bot and other things blocker
@@ -15,10 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	gsed:textproc/gsed
 
-USE_GITHUB=	nodefault
+USE_GITHUB=	yes
 
 GH_ACCOUNT=	mitchellkrogza
-GH_PROJECT=	${PORTNAME}
 
 NO_ARCH=	yes
 NO_BUILD=	yes
