@@ -11,6 +11,9 @@ COMMENT=	Open source MSX emulator
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-03-19
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \

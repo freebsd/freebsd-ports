@@ -13,6 +13,9 @@ COMMENT=	Interactive Gtkmm/Gnomecanvasmm widget
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-03-19
+
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libgvc.so:graphics/graphviz \
 		libgnomecanvasmm-2.6.so:graphics/libgnomecanvasmm26 \

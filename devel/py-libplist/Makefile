@@ -7,6 +7,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for libplist
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-03-19
+
 LIB_DEPENDS=	libplist.so:${MASTER_PORT}
 
 PORTSCOUT=	ignore:1

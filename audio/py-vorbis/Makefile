@@ -15,6 +15,9 @@ COMMENT=	Object-oriented Python bindings for the vorbis library
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-03-19
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:audio/py-ogg@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:audio/py-ogg@${PY_FLAVOR}
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis
