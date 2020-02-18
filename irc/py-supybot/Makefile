@@ -15,6 +15,9 @@ COMMENT=	Supybot - A Superb Python IRC bot
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-03-19
+
 USES=		python:2.7 tar:bzip2
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGVERSION=	0.83.1+darcs

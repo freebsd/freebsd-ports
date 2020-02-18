@@ -14,6 +14,9 @@ COMMENT=	Python bindings to the LT XML toolkit
 
 LICENSE=	GPLv2 # only `GPL' is mentioned, assuming v2
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-03-19
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ltxml12/lt-safe.h:textproc/ltxml
 RUN_DEPENDS=	${LOCALBASE}/include/ltxml12/lt-safe.h:textproc/ltxml
 

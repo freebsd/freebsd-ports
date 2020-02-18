@@ -15,6 +15,9 @@ COMMENT=	Python interface to DJB's constant database library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-03-19
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 

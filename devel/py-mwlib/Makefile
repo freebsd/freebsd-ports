@@ -12,6 +12,9 @@ COMMENT=	Python's MediaWiki Parser and Utility Library
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-03-19
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apipkg>=1.2:devel/py-apipkg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bottle>=0.10:www/py-bottle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${PY_FLAVOR} \

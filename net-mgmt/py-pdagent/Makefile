@@ -13,6 +13,9 @@ COMMENT=	PagerDuty Agent software
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-03-19
+
 USES=		python:2.7 shebangfix
 USE_PYTHON=	flavors
 USE_RC_SUBR=	pdagentd
