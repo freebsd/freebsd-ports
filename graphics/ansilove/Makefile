@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansilove
-PORTVERSION=	4.0.7
+PORTVERSION=	4.1.0
 CATEGORIES=	graphics textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 USES=		cmake
 TEST_TARGET=	test
 
-PORTDOCS=	AUTHORS ChangeLog README.md THANKS TODO
+PORTDOCS=	AUTHORS ChangeLog README.md THANKS
 PORTEXAMPLES=	*
 
 PLIST_FILES=	bin/ansilove \
