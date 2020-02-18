@@ -1,15 +1,14 @@
---- Makefile.orig	2019-12-08 14:26:28 UTC
+--- Makefile.orig	2020-02-17 08:37:09 UTC
 +++ Makefile
-@@ -1,7 +1,7 @@
- #! /usr/bin/make
+@@ -192,6 +192,7 @@ ALL_PROGRAMS =
  
- # Extract version from git, or if we're from a zipfile, use dirname
--VERSION=$(shell git describe --always --dirty=-modded --abbrev=7 2>/dev/null || pwd | sed -n 's,.*/clightning-\(v[0-9.rc]*\)$$,\1,p')
-+VERSION=$(shell git describe --always --dirty=-modded --abbrev=7 2>/dev/null || pwd | sed -n 's|.*/c\{0,1\}lightning-v\{0,1\}\([0-9a-f.rc]*\)$$|\1|gp')
+ CPPFLAGS += -DBINTOPKGLIBEXECDIR="\"$(shell sh tools/rel.sh $(bindir) $(pkglibexecdir))\""
+ CFLAGS = $(CPPFLAGS) $(CWARNFLAGS) $(CDEBUGFLAGS) $(COPTFLAGS) -I $(CCANDIR) $(EXTERNAL_INCLUDE_FLAGS) -I . -I/usr/local/include $(FEATURES) $(COVFLAGS) $(DEV_CFLAGS) -DSHACHAIN_BITS=48 -DJSMN_PARENT_LINKS $(PIE_CFLAGS) $(COMPAT_CFLAGS) -DBUILD_ELEMENTS=1
++unexport CFLAGS
  
- ifeq ($(VERSION),)
- $(error "ERROR: git is required for generating version information")
-@@ -453,7 +453,7 @@ pkglibexecdir = $(libexecdir)/$(PKGNAME)
+ # We can get configurator to run a different compile cmd to cross-configure.
+ CONFIGURATOR_CC := $(CC)
+@@ -457,7 +458,7 @@ pkglibexecdir = $(libexecdir)/$(PKGNAME)
  plugindir = $(pkglibexecdir)/plugins
  datadir = $(PREFIX)/share
  docdir = $(datadir)/doc/$(PKGNAME)
@@ -18,7 +17,7 @@
  man1dir = $(mandir)/man1
  man5dir = $(mandir)/man5
  man7dir = $(mandir)/man7
-@@ -462,7 +462,11 @@ man8dir = $(mandir)/man8
+@@ -466,7 +467,11 @@ man8dir = $(mandir)/man8
  # Commands
  MKDIR_P = mkdir -p
  INSTALL = install
