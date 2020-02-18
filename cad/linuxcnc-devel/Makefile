@@ -10,7 +10,6 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Open Source CNC machine controller
 
-BROKEN=		wrong depends
 DEPRECATED=	Broken, uses EOLed python27
 EXPIRATION_DATE=	2020-02-19
 
@@ -28,7 +27,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		bwidget>=1.4:x11-toolkits/bwidget \
 		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:x11-toolkits/py-vte \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:x11-toolkits/py-gtkglext \
-		${LOCALBASE}/lib/Img/libtkimg1.4.7.so:graphics/libimg
+		${LOCALBASE}/lib/Img/libtkimg1.4.9.so:graphics/libimg
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_PACKAGE=	Licensing conflict between LinuxCNC (GPL2) and readline (GPL3)
