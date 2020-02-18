@@ -1,6 +1,6 @@
---- src/cpp/diagnostics/CMakeLists.txt.orig	2019-09-19 13:59:21 UTC
+--- src/cpp/diagnostics/CMakeLists.txt.orig	2020-01-23 23:30:24 UTC
 +++ src/cpp/diagnostics/CMakeLists.txt
-@@ -62,6 +62,7 @@ endif()
+@@ -57,6 +57,7 @@ add_stripped_executable(diagnostics
  # set link dependencies
  target_link_libraries(diagnostics
     rstudio-core

@@ -1,4 +1,4 @@
---- src/cpp/session/session-config.h.in.orig	2019-10-25 22:16:29 UTC
+--- src/cpp/session/session-config.h.in.orig	2020-01-23 23:30:24 UTC
 +++ src/cpp/session/session-config.h.in
 @@ -13,11 +13,11 @@
   *
@@ -14,4 +14,4 @@
 +#define RSTUDIO_BUILD_ID "FreeBSD-port-version-${FREEBSD_RSTUDIO_VERSION}"
  #define RSTUDIO_BUILD_DATE "${CPACK_BUILD_DATE}"
  #define RSTUDIO_COPYRIGHT_YEAR "${CPACK_COPYRIGHT_YEAR}"
- #cmakedefine RSTUDIO_SERVER
+ #define RSTUDIO_PACKAGE_OS "Unknown OS"

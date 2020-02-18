@@ -1,6 +1,6 @@
---- src/cpp/session/SessionHttpMethods.cpp.orig	2017-11-16 21:40:37 UTC
+--- src/cpp/session/SessionHttpMethods.cpp.orig	2020-01-23 23:30:24 UTC
 +++ src/cpp/session/SessionHttpMethods.cpp
-@@ -326,7 +326,7 @@ std::string clientVersion()
+@@ -397,7 +397,7 @@ std::string clientVersion()
        return std::string();
  
     // clientVersion is the git revision hash

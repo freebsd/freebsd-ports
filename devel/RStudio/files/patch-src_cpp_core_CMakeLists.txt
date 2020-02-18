@@ -1,6 +1,6 @@
---- src/cpp/core/CMakeLists.txt.orig	2019-02-16 02:00:24 UTC
+--- src/cpp/core/CMakeLists.txt.orig	2020-01-23 23:30:24 UTC
 +++ src/cpp/core/CMakeLists.txt
-@@ -156,12 +156,14 @@ if (UNIX)
+@@ -152,12 +152,14 @@ if (UNIX)
     # platform introspection
     check_symbol_exists(SA_NOCLDWAIT "signal.h" HAVE_SA_NOCLDWAIT)
     check_symbol_exists(SO_PEERCRED "sys/socket.h" HAVE_SO_PEERCRED)
