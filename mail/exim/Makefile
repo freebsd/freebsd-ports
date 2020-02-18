@@ -96,6 +96,7 @@ IGNORE=	you cannot enable DANE without DNSSEC support or without TLS support
 MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 		SF/sa-exim/sa-exim/${SA_EXIM_VERSION}:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
+EXTRA_PATCHES+=	files/extra-patch-Local-sa-exim.c
 .endif
 
 EXIM_VERSION=	4.93
@@ -550,6 +551,7 @@ pre-everything::
 post-extract:
 .if ${PORT_OPTIONS:MSA_EXIM}
 	@cd ${WRKDIR} && ${TAR} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/sa-exim-${SA_EXIM_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
+	@@${CP} ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.c ${WRKSRC}/Local
 .endif
 
 do-configure:
@@ -571,7 +573,6 @@ do-configure:
 		${WRKSRC}/OS/Makefile-Default
 	@${REINPLACE_CMD} -E -e 's/^(LOCAL_SCAN_SOURCE=).*/\1Local\/sa-exim.c/' \
 		${WRKSRC}/OS/Makefile-Default
-	@${CP} ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.c ${WRKSRC}/Local
 	@{ \
 	    ${ECHO_CMD} "char *version=\"${SA_EXIM_VERSION}\";"; \
 	    ${ECHO_CMD} "#define SPAMC_LOCATION		\"${LOCALBASE}/bin/spamc\""; \
