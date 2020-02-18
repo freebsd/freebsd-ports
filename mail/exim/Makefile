@@ -213,8 +213,8 @@ SEDLIST+=	-e 's,^\# (EXPERIMENTAL_CERTNAMES=),\1,'
 SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DSN=),\1,'
 .endif
 
-.if ${PORT_OPTIONS:MDANE}
-SEDLIST+=	-e 's,^\# (SUPPORT_DANE=),\1,'
+.if !${PORT_OPTIONS:MDANE}
+SEDLIST+=	-e 's,^(SUPPORT_DANE=),\#\1,'
 .endif
 
 .if ${PORT_OPTIONS:MARC}
