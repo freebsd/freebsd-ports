@@ -37,12 +37,17 @@ PLIST_FILES=	@sample\ etc/pound.cfg.sample \
 		man/man8/poundctl.8.gz
 PORTDOCS=	README FAQ CHANGELOG
 
-OPTIONS_DEFINE=	DOCS PCRE
+OPTIONS_DEFINE=	DOCS DSAPARAM PCRE
 OPTIONS_DEFAULT=PCRE
+DSAPARAM_DESC=	Generate DH parameters without using "safe" primes
 
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 PCRE_USES=	localbase
 PCRE_CONFIGURE_ENABLE=	pcreposix
+
+post-patch-DSAPARAM-on:
+	@${REINPLACE_CMD} -e '/openssl dhparam/s,-5,-dsaparam,' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.cfg \
