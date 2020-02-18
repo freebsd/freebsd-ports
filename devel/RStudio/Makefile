@@ -1,21 +1,19 @@
 # $FreeBSD$
 
 # This port opens too many files during build, more than the default setting.
-# Its build is known to succeed with MAX_FILES_RStudio=4096 in poudriere.conf when ports-mgmt/poudriere-devel is used.
+# Its build is known to succeed with MAX_FILES_RStudio=4096 in poudriere.conf
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.5033
+DISTVERSION=	1.2.5033-2752
+DISTVERSIONSUFFIX=	-g29e90c87a2
 CATEGORIES=	devel math java
-MASTER_SITES=	https://s3.amazonaws.com/rstudio-dictionaries/:dictionaries \
+MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
 DISTFILES=	core-dictionaries.zip:dictionaries \
 		gin-${GIN_VERSION}.zip:buildtools \
 		gwt-${GWT_VERSION}.zip:buildtools \
-		mathjax-26.zip:buildtools
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	33c2c42d40ad.patch:-p1
+		mathjax-27.zip:buildtools
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Integrated development environment (IDE) for R
@@ -23,21 +21,21 @@ COMMENT=	Integrated development environment (IDE) for R
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build
 BROKEN_i386=	[ERROR] Line 101: Failed to resolve 'org.rstudio.studio.client.workbench.views.vcs.common.diff.LineActionButtonRenderer.GrayResources' via deferred binding
 
 BUILD_DEPENDS=	ant:devel/apache-ant \
 		${LOCALBASE}/include/sys/sysinfo.h:devel/libsysinfo \
-		pandoc:textproc/hs-pandoc
+		pandoc:textproc/hs-pandoc \
+		R-cran-rstudioapi>0:devel/R-cran-rstudioapi
 LIB_DEPENDS=	libR.so:math/R \
 		libboost_thread.so:devel/boost-libs \
 		libinotify.so:devel/libinotify \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake desktop-file-utils fortran pkgconfig qt:5 shared-mime-info ssl
+USES=		cmake desktop-file-utils fortran localbase:ldflags pkgconfig qt:5 shared-mime-info ssl
 USE_QT=		core dbus declarative gui location network opengl printsupport sensors \
 		sql svg webchannel webengine webkit widgets xml xmlpatterns buildtools_build qmake_build
-USE_JAVA=	yes
+USE_JAVA=	13
 JAVA_BUILD=	yes
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tl}
@@ -54,6 +52,7 @@ CMAKE_ARGS+=	-DRSTUDIO_BOOST_SIGNALS_VERSION=2
 CMAKE_ARGS+=	-DFREEBSD_PORT_VERSION:STRING=${DISTVERSION}
 MAKE_ENV=	HOME=${WRKDIR} \
 		JAVA_HOME=${JAVA_HOME} \
+		PATH=${JAVA_HOME}/bin:${PATH} \
 		ANT_OPTS="-Duser.home=${WRKDIR}"
 
 GWT_VERSION=	2.8.1
@@ -63,7 +62,7 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/dependencies/common/dictionaries && ${MV} ${WRKDIR}/en_* ${WRKSRC}/dependencies/common/dictionaries/
 	@${MV} ${WRKDIR}/mathjax-* ${WRKSRC}/dependencies/common/
 	@${MKDIR} ${WRKSRC}/src/gwt/lib/gwt && ${MV} ${WRKDIR}/gwt-${GWT_VERSION} ${WRKSRC}/src/gwt/lib/gwt/${GWT_VERSION}
-	@${MKDIR} ${WRKSRC}/src/gwt/lib/gin/${GIN_VERSION} && ${MV} ${WRKDIR}/*.jar ${WRKDIR}/javadoc ${WRKSRC}/src/gwt/lib/gin/${GIN_VERSION}/
+	@${MKDIR} ${WRKSRC}/src/gwt/lib/gin/${GIN_VERSION} && ${MV} ${WRKDIR}/*.jar ${WRKSRC}/src/gwt/lib/gin/${GIN_VERSION}/
 
 post-patch:
 	@${REINPLACE_CMD} -e ' \

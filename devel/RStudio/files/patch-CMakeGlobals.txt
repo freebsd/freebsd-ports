@@ -1,6 +1,6 @@
---- CMakeGlobals.txt.orig	2019-09-19 13:59:21 UTC
+--- CMakeGlobals.txt.orig	2020-01-23 23:30:24 UTC
 +++ CMakeGlobals.txt
-@@ -82,7 +82,7 @@ endif()
+@@ -84,7 +84,7 @@ endif()
  
  # record git revision hash (cache it since we don't use this in development
  # mode and we don't want it to force rebuilds there)
@@ -9,7 +9,7 @@
     find_program(GIT_EXECUTABLE git)
     if(GIT_EXECUTABLE)
        execute_process(
-@@ -93,6 +93,7 @@ if(NOT RSTUDIO_SESSION_WIN32 AND NOT RSTUDIO_GIT_REVIS
+@@ -95,6 +95,7 @@ if(NOT RSTUDIO_SESSION_WIN32 AND NOT RSTUDIO_GIT_REVIS
        SET(RSTUDIO_GIT_REVISION_HASH "${RSTUDIO_GIT_REVISION_HASH}" CACHE STRING "Git Revision Hash")
     endif()
  endif()

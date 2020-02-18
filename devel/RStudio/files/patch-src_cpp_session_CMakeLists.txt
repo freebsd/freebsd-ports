@@ -1,8 +1,8 @@
---- src/cpp/session/CMakeLists.txt.orig	2019-09-19 13:59:21 UTC
+--- src/cpp/session/CMakeLists.txt.orig	2020-01-23 23:30:24 UTC
 +++ src/cpp/session/CMakeLists.txt
-@@ -25,9 +25,9 @@ endif()
- if(NOT EXISTS "${RSTUDIO_DEPENDENCIES_DIR}/common/mathjax-26")
-   message(FATAL_ERROR "Mathjax 2.6 not found (re-run install-dependencies script to install)")
+@@ -25,32 +25,32 @@ endif()
+ if(NOT EXISTS "${RSTUDIO_DEPENDENCIES_DIR}/common/mathjax-27")
+   message(FATAL_ERROR "Mathjax 2.7 not found (re-run install-dependencies script to install)")
  endif()
 -if(NOT EXISTS "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc")
 -  message(FATAL_ERROR "pandoc not found (re-run install-dependencies script to install)")
@@ -11,10 +11,19 @@
 +#  message(FATAL_ERROR "pandoc not found (re-run install-dependencies script to install)")
 +#endif()
  
- # we often install embedded versions of these packages but don't do so currently
- 
-@@ -39,19 +39,19 @@ endif()
- # endif()
+ # verify embedded packages are available
+-foreach(PKG ${RSTUDIO_EMBEDDED_PACKAGES})
+-   file(GLOB PKG_FILES "${RSTUDIO_DEPENDENCIES_DIR}/common/${PKG}*.tar.gz")
+-   if(NOT PKG_FILES)
+-      message(FATAL_ERROR "${PKG} package not found (re-run install-dependencies script to install)")
+-   endif()
+-endforeach()
++#foreach(PKG ${RSTUDIO_EMBEDDED_PACKAGES})
++#   file(GLOB PKG_FILES "${RSTUDIO_DEPENDENCIES_DIR}/common/${PKG}*.tar.gz")
++#   if(NOT PKG_FILES)
++#      message(FATAL_ERROR "${PKG} package not found (re-run install-dependencies script to install)")
++#   endif()
++#endforeach()
  
  # verify libclang is installed (Windows only)
 -if(WIN32)
@@ -45,9 +54,9 @@
  # include files
  file(GLOB_RECURSE SESSION_HEADER_FILES "*.h*")
  
-@@ -366,6 +366,9 @@ endif()
+@@ -390,6 +390,9 @@ endif()
  # define executable
- add_executable(rsession ${SESSION_SOURCE_FILES} ${SESSION_HEADER_FILES})
+ add_stripped_executable(rsession ${SESSION_SOURCE_FILES} ${SESSION_HEADER_FILES})
  
 +# additional libraries
 +target_link_libraries(rsession -L${FREEBSD_LIBDIR} -linotify -lprocstat)
@@ -55,9 +64,9 @@
  # skip libR RPATH at development time
  if(RSTUDIO_DEVELOPMENT OR RSTUDIO_RUN_IN_PLACE)
     set_target_properties(rsession PROPERTIES SKIP_BUILD_RPATH TRUE)
-@@ -497,11 +500,11 @@ if (NOT RSTUDIO_SESSION_WIN32)
-       set(PANDOC_VERSION "2.3.1" CACHE INTERNAL "Pandoc version")
-    endif()
+@@ -518,11 +521,11 @@ if (NOT RSTUDIO_SESSION_WIN32)
+    # install pandoc
+    set(PANDOC_VERSION "2.7.3" CACHE INTERNAL "Pandoc version")
  
 -   set(PANDOC_BIN "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc/${PANDOC_VERSION}")
 -   file(GLOB PANDOC_FILES "${PANDOC_BIN}/pandoc*")
@@ -70,5 +79,5 @@
 +   #        PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
 +   #        DESTINATION  ${RSTUDIO_INSTALL_BIN}/pandoc)
  
-    # install rmarkdown package
-    # file(GLOB RMARKDOWN_PACKAGE "${RSTUDIO_DEPENDENCIES_DIR}/common/rmarkdown*.tar.gz")
+    # install embedded packages
+    foreach(PKG ${RSTUDIO_EMBEDDED_PACKAGES})

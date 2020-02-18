@@ -1,6 +1,6 @@
---- src/cpp/session/postback/CMakeLists.txt.orig	2018-05-31 21:11:21 UTC
+--- src/cpp/session/postback/CMakeLists.txt.orig	2020-01-23 23:30:24 UTC
 +++ src/cpp/session/postback/CMakeLists.txt
-@@ -43,6 +43,7 @@ endif()
+@@ -36,6 +36,7 @@ add_executable(rpostback ${POSTBACK_SOURCE_FILES} ${PO
  # set link dependencies
  target_link_libraries(rpostback
     rstudio-core

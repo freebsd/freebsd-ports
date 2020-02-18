@@ -1,12 +1,12 @@
---- src/cpp/server/CMakeLists.txt.orig	2017-11-16 21:40:37 UTC
+--- src/cpp/server/CMakeLists.txt.orig	2020-01-23 23:30:24 UTC
 +++ src/cpp/server/CMakeLists.txt
-@@ -124,6 +124,9 @@ include_directories(
+@@ -156,6 +156,9 @@ include_directories(
  # define executable
- add_executable(rserver ${SERVER_SOURCE_FILES} ${SERVER_HEADER_FILES})
+ add_stripped_executable(rserver ${SERVER_SOURCE_FILES} ${SERVER_HEADER_FILES})
  
 +# additional libraries
 +target_link_libraries(rserver -L${FREEBSD_LIBDIR} -linotify)
 +
- # add origin rpath for suse/sles
- if(RSTUDIO_PACKAGE_VARIANT STREQUAL "SLES")
-    set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+ # set link dependencies
+ target_link_libraries(rserver
+    rstudio-core
