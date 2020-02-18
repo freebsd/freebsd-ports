@@ -1,16 +1,17 @@
 @sample(%%U%%,%%G%%,0400) etc/lightningd-bitcoin.conf.sample
 bin/lightning-cli
 bin/lightningd
-libexec/c-lightning/plugins/fundchannel
-libexec/c-lightning/plugins/autoclean
-libexec/c-lightning/plugins/pay
-libexec/c-lightning/lightning_connectd
 libexec/c-lightning/lightning_channeld
-libexec/c-lightning/lightning_hsmd
 libexec/c-lightning/lightning_closingd
+libexec/c-lightning/lightning_connectd
 libexec/c-lightning/lightning_gossipd
-libexec/c-lightning/lightning_openingd
+libexec/c-lightning/lightning_hsmd
 libexec/c-lightning/lightning_onchaind
+libexec/c-lightning/lightning_openingd
+libexec/c-lightning/plugins/autoclean
+libexec/c-lightning/plugins/bcli
+libexec/c-lightning/plugins/fundchannel
+libexec/c-lightning/plugins/pay
 man/man1/lightning-cli.1.gz
 man/man5/lightningd-config.5.gz
 man/man7/lightning-autocleaninvoice.7.gz
@@ -22,6 +23,7 @@ man/man7/lightning-createonion.7.gz
 man/man7/lightning-decodepay.7.gz
 man/man7/lightning-delexpiredinvoice.7.gz
 man/man7/lightning-delinvoice.7.gz
+man/man7/lightning-dev-sendcustommsg.7.gz
 man/man7/lightning-disconnect.7.gz
 man/man7/lightning-fundchannel.7.gz
 man/man7/lightning-fundchannel_cancel.7.gz
@@ -47,6 +49,7 @@ man/man7/lightning-txdiscard.7.gz
 man/man7/lightning-txprepare.7.gz
 man/man7/lightning-txsend.7.gz
 man/man7/lightning-waitanyinvoice.7.gz
+man/man7/lightning-waitblockheight.7.gz
 man/man7/lightning-waitinvoice.7.gz
 man/man7/lightning-waitsendpay.7.gz
 man/man7/lightning-withdraw.7.gz
