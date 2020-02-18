@@ -447,6 +447,7 @@
     SUBDIR += nginx-lite
     SUBDIR += nginx-naxsi
     SUBDIR += nginx-prometheus-exporter
+    SUBDIR += nginx-ultimate-bad-bot-blocker
     SUBDIR += nginx-vts-exporter
     SUBDIR += nibbleblog
     SUBDIR += nift

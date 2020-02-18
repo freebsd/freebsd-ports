@@ -1,0 +1,79 @@
+--- update-ngxblocker
++++ update-ngxblocker
+@@ -148,6 +148,8 @@ update_paths() {
+ 	# updates hard coded bots.d path in globalblacklist.conf
+ 	local blacklist=$1 include_paths= dir= x=
+ 
++	case ${OS} in
++	Linux)
+ 	if ! grep "$BOTS_DIR" $blacklist 1>/dev/null; then
+ 		if [ -d $BOTS_DIR ]; then
+ 			printf "${BOLDGREEN}Updating bots.d path${RESET}: ${BOLDWHITE}$BOTS_DIR => $blacklist${RESET}\n"
+@@ -163,6 +165,12 @@ update_paths() {
+ 			update_paths $blacklist
+ 		fi
+ 	fi
++	;;
++	*BSD)
++		printf "${BOLDGREEN}Updating bots.d path${RESET}\n"
++		/usr/bin/sed -i -e 's:include .*nginx/:include :g' ${BOTS_DIR}/* ${CONF_DIR}/*
++		;;
++	esac
+ }
+ 
+ sanitize_path() {
+@@ -319,11 +327,39 @@ get_options() {
+ 	INSTALL_INC="$INSTALLER -b $BOTS_DIR -c $CONF_DIR -x"
+ }
+ 
++nginx_check_status() {
++	local pidof_path=$(find_binary pidof)
++
++	case ${OS} in
++	Linux)
++		$pidof_path nginx 1>/dev/null
++		return $?
++		;;
++	FreeBSD)
++		/usr/sbin/service nginx status | /usr/bin/grep -q running
++		return $?
++		;;
++	esac
++}
++
++nginx_reload() {
++	local nginx_path=$(find_binary nginx)
++
++	case ${OS} in
++	Linux)
++		$nginx_path -s reload 2>&1 >/dev/null
++		return $?
++		;;
++	FreeBSD)
++		/usr/sbin/service nginx reload >/dev/null 2>&1
++		return $?
++		;;
++	esac
++}
++
+ main() {
+ 	local REPO=https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master
+ 	local file=globalblacklist.conf remote_dir=conf.d url= output= update= status= tmp= retval=
+-	local nginx_path=$(find_binary nginx)
+-	local pidof_path=$(find_binary pidof)
+ 
+ 	# require root
+ 	if [ "$(id -u)" != "0" ]; then
+@@ -370,9 +406,10 @@ main() {
+ 		if [ $retval = 0 ]; then
+ 
+ 			# use full paths to workaround crontabs without $PATH configured
+-			if $pidof_path nginx 1>/dev/null; then
++			nginx_check_status
++			if [ $? -eq 0 ]; then
+ 
+-				$nginx_path -s reload 2>&1 >/dev/null
++				nginx_reload
+ 
+ 				if [ $? = 0 ]; then
+ 					status="${BOLDGREEN}[OK]${RESET}"

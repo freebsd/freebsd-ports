@@ -1,0 +1,6 @@
+The "Ultimate Nginx Bad Bot" blocker, handles also user-agent, spam referrer,
+adware, malware, ransomware, clickjacking, click directing, SEO companies
+bad IPs, Wordpress theme detectors and fake Googlebots. It includes an
+anti DDoS system and nginx rate limiting.
+
+WWW: https://github.com/mitchellkrogza/nginx-ultimate-bad-blocker/

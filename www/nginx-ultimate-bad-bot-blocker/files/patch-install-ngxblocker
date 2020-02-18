@@ -1,0 +1,30 @@
+--- install-ngxblocker
++++ install-ngxblocker
+@@ -36,6 +36,7 @@ CONF_DIR=/etc/nginx/conf.d
+ BOTS_DIR=/etc/nginx/bots.d
+ SCRIPT_DIR=/usr/local/sbin
+ REPO=https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master
++SKIP_SCRIPTS=true
+ 
+ ####### end user configuration ##########################
+ OS=$(uname -s)
+@@ -341,11 +342,15 @@ main() {
+ 	check_config $CONF_DIR $BOTS_DIR $SCRIPT_DIR
+ 	download_files conf.d $CONF_DIR $CONF_FILES
+ 	download_files bots.d $BOTS_DIR $BOT_FILES
+-	download_files / $SCRIPT_DIR $SCRIPT_FILES
++	if [ "$SKIP_SCRIPTS" = "false" ]; then
++		download_files / $SCRIPT_DIR $SCRIPT_FILES
+ 
+-	# ensures scripts are executable
+-	if [ "$DRY_RUN" = "N" ]; then
+-		set_mode 700 $SCRIPT_DIR $SCRIPT_FILES
++		# ensures scripts are executable
++		if [ "$DRY_RUN" = "N" ]; then
++			set_mode 700 $SCRIPT_DIR $SCRIPT_FILES
++		fi
++	else
++		printf "\n** FreeBSD specific ** | not updating scripts, please use the package management for this.\n\n"
+ 	fi
+ }
+ 
