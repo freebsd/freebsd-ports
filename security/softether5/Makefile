@@ -8,8 +8,8 @@ PKGNAMESUFFIX=	5
 DIST_SUBDIR=	${PORTNAME}
 
 # Some patches are managed in my GitHub fork
-PATCH_SITES=	https://github.com/metalefty/${GH_ACCOUNT}/commit/
-PATCHFILES=	7a7bed1.patch:-p1 501135e.patch:-p1 13f0ec3.patch:-p1
+PATCH_SITES=	https://github.com/metalefty/${GH_PROJECT}/commit/
+PATCHFILES=	7dcfce9.patch:-p1 5832425.patch:-p1 9093f9e.patch:-p1
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	SoftEther VPN 5 (Developer Edition)
@@ -38,7 +38,7 @@ OPTIONS_DEFINE=	DOCS UNLOCK
 #  - Source IP address control list function
 #  - syslog transfer function
 UNLOCK_DESC=	Unlock regional lockout (JP and CN)
-UNLOCK_PATCHFILES=	940a202.patch:-p1
+UNLOCK_PATCHFILES=	d41c3ae.patch:-p1
 
 PORTDOCS=	DISCLAIMER.md WARNING.TXT
 CONFLICTS_INSTALL=	softether-4.[0-9]* softether-devel-4.[0-9]*
