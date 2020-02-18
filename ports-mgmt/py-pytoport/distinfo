@@ -1,3 +1,3 @@
-TIMESTAMP = 1463315915
-SHA256 (freebsd-pytoport-v0.4.1_GH0.tar.gz) = 025f9c3c5dbb8261ec5930f0ab1bc1229d32e6fc4b5d3c28ebe311ec34322f4d
-SIZE (freebsd-pytoport-v0.4.1_GH0.tar.gz) = 6008
+TIMESTAMP = 1582055543
+SHA256 (freebsd-pytoport-v0.4.1-4-g08c2a0f_GH0.tar.gz) = 6e86cb276051749683771116910cf34c6d6b0644947e68eb46b43ca056ac499f
+SIZE (freebsd-pytoport-v0.4.1-4-g08c2a0f_GH0.tar.gz) = 6030
