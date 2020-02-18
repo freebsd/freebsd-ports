@@ -19,9 +19,13 @@ include/cutelyst2-qt5/Cutelyst/Plugins/Authentication/credentialhttp.h
 include/cutelyst2-qt5/Cutelyst/Plugins/Authentication/credentialpassword.h
 include/cutelyst2-qt5/Cutelyst/Plugins/Authentication/htpasswd.h
 include/cutelyst2-qt5/Cutelyst/Plugins/Authentication/minimal.h
+include/cutelyst2-qt5/Cutelyst/Plugins/CSRFProtection/CSRFProtection
+include/cutelyst2-qt5/Cutelyst/Plugins/CSRFProtection/csrfprotection.h
 include/cutelyst2-qt5/Cutelyst/Plugins/Session/Session
 include/cutelyst2-qt5/Cutelyst/Plugins/Session/session.h
 include/cutelyst2-qt5/Cutelyst/Plugins/Session/sessionstorefile.h
+include/cutelyst2-qt5/Cutelyst/Plugins/StaticCompressed/StaticCompressed
+include/cutelyst2-qt5/Cutelyst/Plugins/StaticCompressed/staticcompressed.h
 include/cutelyst2-qt5/Cutelyst/Plugins/StaticSimple/StaticSimple
 include/cutelyst2-qt5/Cutelyst/Plugins/StaticSimple/staticsimple.h
 include/cutelyst2-qt5/Cutelyst/Plugins/StatusMessage
@@ -46,6 +50,7 @@ include/cutelyst2-qt5/Cutelyst/Plugins/Utils/validatoralphanum.h
 include/cutelyst2-qt5/Cutelyst/Plugins/Utils/validatorbefore.h
 include/cutelyst2-qt5/Cutelyst/Plugins/Utils/validatorbetween.h
 include/cutelyst2-qt5/Cutelyst/Plugins/Utils/validatorboolean.h
+include/cutelyst2-qt5/Cutelyst/Plugins/Utils/validatorcharnotallowed.h
 include/cutelyst2-qt5/Cutelyst/Plugins/Utils/validatorconfirmed.h
 include/cutelyst2-qt5/Cutelyst/Plugins/Utils/validatordate.h
 include/cutelyst2-qt5/Cutelyst/Plugins/Utils/validatordatetime.h
@@ -121,9 +126,15 @@ lib/libCutelyst2Qt5.so.%%SOVER%%
 lib/libCutelyst2Qt5Authentication.so
 lib/libCutelyst2Qt5Authentication.so.2
 lib/libCutelyst2Qt5Authentication.so.%%SOVER%%
+lib/libCutelyst2Qt5CSRFProtection.so
+lib/libCutelyst2Qt5CSRFProtection.so.2
+lib/libCutelyst2Qt5CSRFProtection.so.%%SOVER%%
 lib/libCutelyst2Qt5Session.so
 lib/libCutelyst2Qt5Session.so.2
 lib/libCutelyst2Qt5Session.so.%%SOVER%%
+lib/libCutelyst2Qt5StaticCompressed.so
+lib/libCutelyst2Qt5StaticCompressed.so.2
+lib/libCutelyst2Qt5StaticCompressed.so.%%SOVER%%
 lib/libCutelyst2Qt5StaticSimple.so
 lib/libCutelyst2Qt5StaticSimple.so.2
 lib/libCutelyst2Qt5StaticSimple.so.%%SOVER%%
@@ -152,8 +163,10 @@ lib/libCutelyst2Qt5Wsgi.so
 lib/libCutelyst2Qt5Wsgi.so.2
 lib/libCutelyst2Qt5Wsgi.so.%%SOVER%%
 libdata/pkgconfig/Cutelyst2Qt5Authentication.pc
+libdata/pkgconfig/Cutelyst2Qt5CSRFProtection.pc
 libdata/pkgconfig/Cutelyst2Qt5Core.pc
 libdata/pkgconfig/Cutelyst2Qt5Session.pc
+libdata/pkgconfig/Cutelyst2Qt5StaticCompressed.pc
 libdata/pkgconfig/Cutelyst2Qt5StaticSimple.pc
 libdata/pkgconfig/Cutelyst2Qt5StatusMessage.pc
 libdata/pkgconfig/Cutelyst2Qt5UserAgent.pc
@@ -165,6 +178,7 @@ libdata/pkgconfig/Cutelyst2Qt5ViewJSON.pc
 libdata/pkgconfig/Cutelyst2Qt5WSGI.pc
 man/man1/cutelyst-wsgi2.1.gz
 man/man1/cutelyst2.1.gz
+man/man5/Cutelyst2Qt5CSRFProtection.5.gz
 man/man5/Cutelyst2Qt5Session.5.gz
 %%DATADIR%%2/translations/cutelystcmd.de.qm
 %%DATADIR%%2/translations/cutelystcore.de.qm
