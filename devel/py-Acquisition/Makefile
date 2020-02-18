@@ -13,6 +13,9 @@ COMMENT=	Allows to obtain attributes from the containment hierarchy
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-18
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ExtensionClass>=4.1.1:devel/py-ExtensionClass@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${PY_FLAVOR}
 

@@ -12,6 +12,9 @@ COMMENT=	Generic content migration framework for Plone
 
 LICENSE=	LGPL20
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-18
+
 NO_ARCH=	yes
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils

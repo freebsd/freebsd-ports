@@ -14,6 +14,9 @@ COMMENT=	General logging facility
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Old, uses EOLed python27
+EXPIRATION_DATE=	2020-03-18
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>=0:devel/py-zconfig@${PY_FLAVOR}
 
 NO_ARCH=	yes
