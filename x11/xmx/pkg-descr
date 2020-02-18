@@ -1,4 +1,3 @@
-
 XMX is an X protocol multiplexor.  It is a standalone utility for displaying
 an X Windows session on multiple displays.  XMX takes advantage of the
 networked nature of the X Window System by tapping the communication link
@@ -18,3 +17,5 @@ them to maintain a visual look-alike of the master server's display.
 
 This software was developed at Brown University for use in our electronic
 classroom.  Some version of it has been in use here since 1988.
+
+http://cs.brown.edu/software/xmx/
