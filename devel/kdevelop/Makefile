@@ -12,8 +12,10 @@ DIST_SUBDIR=	KDE/kdevelop
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plugin extensible IDE for C/C++ and other languages
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2+ LGPL20+
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	kdev-pg-qt:devel/kdevelop-pg-qt \
 		llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
