@@ -2,4 +2,16 @@ include/ansilove.h
 lib/libansilove.so
 lib/libansilove.so.1
 lib/libansilove.so.%%PORTVERSION%%
+man/man3/ansilove_ansi.3.gz
+man/man3/ansilove_artworx.3.gz
+man/man3/ansilove_binary.3.gz
+man/man3/ansilove_clean.3.gz
+man/man3/ansilove_error.3.gz
+man/man3/ansilove_icedraw.3.gz
+man/man3/ansilove_init.3.gz
+man/man3/ansilove_loadfile.3.gz
+man/man3/ansilove_pcboard.3.gz
+man/man3/ansilove_savefile.3.gz
+man/man3/ansilove_tundra.3.gz
+man/man3/ansilove_xbin.3.gz
 man/man3/libansilove.3.gz
