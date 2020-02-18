@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rclone-browser
-DISTVERSION=	1.7.0
+DISTVERSION=	1.8.0
 CATEGORIES=	net
 
 MAINTAINER=	woodsb02@FreeBSD.org
