@@ -2,7 +2,7 @@
 
 PORTNAME=	cutelyst
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.0
+DISTVERSION=	2.10.0
 CATEGORIES=	www
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -18,6 +18,8 @@ USE_QT=		qmake_build buildtools_build linguisttools_build \
 		core network sql
 
 CMAKE_ARGS=	-DBUILD_ALL=OFF \
+		-DPLUGIN_CSRFPROTECTION=ON \
+		-DPLUGIN_STATICCOMPRESSED=ON \
 		-DBUILD_TESTS=OFF \
 		-DMANDIR:PATH=man \
 		-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=TRUE
