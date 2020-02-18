@@ -1,6 +1,6 @@
 Encrypt/decrypt using ssh keys
 
 A command line tool (cli) for creating encrypted files "vaults"
-using ssh rsa keys for encrypt/decrypt. 
+using ssh rsa keys for encrypt/decrypt.
 
 WWW: https://ssh-vault.com/
