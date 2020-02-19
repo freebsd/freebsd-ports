@@ -54,6 +54,8 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/audio_notch/ui.qml
 %%DATADIR%%/qml/filters/audio_pan/meta.qml
 %%DATADIR%%/qml/filters/audio_pan/ui.qml
+%%DATADIR%%/qml/filters/audio_pitch/meta.qml
+%%DATADIR%%/qml/filters/audio_pitch/ui.qml
 %%DATADIR%%/qml/filters/audio_reverb/meta.qml
 %%DATADIR%%/qml/filters/audio_reverb/ui.qml
 %%DATADIR%%/qml/filters/audio_swapchannels/meta.qml
@@ -175,6 +177,10 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/opacity/ui.qml
 %%DATADIR%%/qml/filters/posterize/meta.qml
 %%DATADIR%%/qml/filters/posterize/ui.qml
+%%DATADIR%%/qml/filters/rectangle/meta.qml
+%%DATADIR%%/qml/filters/rectangle/rectangle.qml
+%%DATADIR%%/qml/filters/rectangle/ui.qml
+%%DATADIR%%/qml/filters/rectangle/vui.qml
 %%DATADIR%%/qml/filters/rgbsplit0r/meta.qml
 %%DATADIR%%/qml/filters/rgbsplit0r/ui.qml
 %%DATADIR%%/qml/filters/rotate/meta.qml
@@ -335,6 +341,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/views/timeline/TrackHead.qml
 %%DATADIR%%/qml/views/timeline/ZoomSlider.qml
 %%DATADIR%%/qml/views/timeline/timeline.qml
+%%DATADIR%%/translations/shotcut_ar.qm
 %%DATADIR%%/translations/shotcut_gl.qm
 %%DATADIR%%/translations/shotcut_nn.qm
 %%DATADIR%%/translations/shotcut_sv.qm
@@ -368,3 +375,5 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%NLS%%%%DATADIR%%/translations/shotcut_uk.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_zh_CN.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_zh_TW.qm
+
+
