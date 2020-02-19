@@ -1,0 +1,18 @@
+--- clients/ksu/Makefile.in.orig	2014-01-15 16:44:15.000000000 -0800
++++ clients/ksu/Makefile.in	2014-05-05 20:51:51.925985974 -0700
+@@ -1,6 +1,6 @@
+ mydir=clients$(S)ksu
+ BUILDTOP=$(REL)..$(S)..
+-DEFINES = -DGET_TGT_VIA_PASSWD -DPRINC_LOOK_AHEAD -DCMD_PATH='"/usr/local/sbin /usr/local/bin /sbin /bin /usr/sbin /usr/bin"'
++DEFINES = -DGET_TGT_VIA_PASSWD -DPRINC_LOOK_AHEAD -DCMD_PATH='"/usr/bin /bin /usr/sbin /sbin"' -DDEBUG
+ 
+ KSU_LIBS=@KSU_LIBS@
+ 
+@@ -30,6 +30,6 @@
+ 
+ install::
+ 	-for f in ksu; do \
+-	  $(INSTALL_SETUID) $$f \
++	  $(INSTALL_PROGRAM) $$f \
+ 		$(DESTDIR)$(CLIENT_BINDIR)/`echo $$f|sed '$(transform)'`; \
+ 	done
