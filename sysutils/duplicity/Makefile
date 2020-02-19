@@ -3,6 +3,7 @@
 
 PORTNAME=	duplicity
 PORTVERSION=	0.7.19
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.7-series/${PORTVERSION}/+download/
 
@@ -27,7 +28,7 @@ SHEBANG_FILES=	bin/duplicity bin/rdiffdir
 
 PORTDOCS=	CHANGELOG COPYING README README-REPO README-LOG
 
-OPTIONS_DEFINE=		DOCS FTP FTPS GDOCS GIO NLS S3
+OPTIONS_DEFINE=		DOCS FTP FTPS GDOCS NLS S3
 OPTIONS_GROUP=		GPG
 OPTIONS_SINGLE=		GPG
 OPTIONS_SINGLE_GPG=	GNUPG GNUPG2
@@ -35,7 +36,6 @@ OPTIONS_DEFAULT=	FTP FTPS GNUPG2 S3
 FTP_DESC=		FTP backend
 FTPS_DESC=		FTPS backend
 GDOCS_DESC=		Google Docs backend
-GIO_DESC=		GIO backend
 GPG_DESC=		GnuPG support
 GNUPG_DESC=		Use GnuPG 1
 GNUPG2_DESC=		Use GnuPG 2
@@ -44,15 +44,13 @@ S3_DESC=		Amazon S3 backend
 FTP_RUN_DEPENDS=	ncftp>=3.2.2:ftp/ncftp3
 FTPS_RUN_DEPENDS=	lftp>=3.7.15:ftp/lftp
 GDOCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:devel/py-gdata@${PY_FLAVOR}
-GIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject>0:devel/py-gobject@${PY_FLAVOR} \
-					dbus>0:devel/dbus
 GNUPG_RUN_DEPENDS=	gnupg1>=1.4.7:security/gnupg1
 GNUPG2_RUN_DEPENDS=	gpg2:security/gnupg
 NLS_USES=		gettext
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto>=1.6b:devel/py-boto@${PY_FLAVOR}
 
 post-patch:
-.for f in cfbackend _cf_cloudfiles _cf_pyrax
+.for f in cfbackend _cf_cloudfiles _cf_pyrax giobackend
 	@${RM} ${WRKSRC}/${PORTNAME}/backends/${f}.py
 .endfor
 
@@ -73,9 +71,6 @@ post-patch-S3-off:
 
 post-patch-GDOCS-off:
 	@${RM} ${WRKSRC}/${PORTNAME}/backends/gdocsbackend.py
-
-post-patch-GIO-off:
-	@${RM} ${WRKSRC}/${PORTNAME}/backends/giobackend.py
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python2.7/site-packages/duplicity/_librsync.so
