@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	solidity
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ethereum/solidity/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -33,7 +33,10 @@ CMAKE_ARGS+=	-DUSE_LD_GOLD=OFF -DTESTS=OFF \
 		-DJSONCPP_INCLUDE_DIR:STRING="${LOCALBASE}/include/jsoncpp" \
 		-DJSONCPP_LIB_DIR:STRING="${LOCALBASE}/lib"
 
-PLIST_FILES=	bin/solc
+PLIST_FILES=	bin/solc \
+		bin/solidity-upgrade \
+		bin/yul-phaser
+
 
 pre-patch:
 		@${CP} ${FILESDIR}/jsoncpp.cmake ${WRKSRC}/cmake/
