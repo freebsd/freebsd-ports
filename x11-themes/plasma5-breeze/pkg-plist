@@ -58,6 +58,8 @@ share/icons/Breeze_Snow/cursors/ew-resize
 share/icons/Breeze_Snow/cursors/fcf21c00b30f7e3f83fe0dfd12e71cff
 share/icons/Breeze_Snow/cursors/fleur
 share/icons/Breeze_Snow/cursors/forbidden
+share/icons/Breeze_Snow/cursors/grab
+share/icons/Breeze_Snow/cursors/grabbing
 share/icons/Breeze_Snow/cursors/h_double_arrow
 share/icons/Breeze_Snow/cursors/half-busy
 share/icons/Breeze_Snow/cursors/hand1
@@ -171,6 +173,8 @@ share/icons/breeze_cursors/cursors/ew-resize
 share/icons/breeze_cursors/cursors/fcf21c00b30f7e3f83fe0dfd12e71cff
 share/icons/breeze_cursors/cursors/fleur
 share/icons/breeze_cursors/cursors/forbidden
+share/icons/breeze_cursors/cursors/grab
+share/icons/breeze_cursors/cursors/grabbing
 share/icons/breeze_cursors/cursors/h_double_arrow
 share/icons/breeze_cursors/cursors/half-busy
 share/icons/breeze_cursors/cursors/hand1
