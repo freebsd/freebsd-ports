@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libjack.so:audio/jack
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 
-USES=		python:-2.7 localbase
+USES=		python:2.7 localbase
 USE_PYTHON=	distutils autoplist
 
 post-patch:

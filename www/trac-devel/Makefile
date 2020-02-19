@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \
 
 CONFLICTS_INSTALL=	trac
 
-USES=		python:-2.7 shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	trac/tests/functional/better_twill.py trac/tests/functional/tester.py \
 		trac/tests/functional/testenv.py trac/tests/functional/compat.py \
 		trac/tests/functional/__init__.py contrib/emailfilter.py \

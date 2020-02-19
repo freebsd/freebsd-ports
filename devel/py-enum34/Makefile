@@ -12,7 +12,7 @@ COMMENT=	Python 3.4 Enum backported to 3.3, 3.2, 3.1, 2.7
 
 LICENSE=	BSD3CLAUSE
 
-USES?=		python:-3.3
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 OPTIONS_DEFINE=	DOCS
 

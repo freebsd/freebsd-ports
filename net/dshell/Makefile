@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}pypcap>0:net/py-pypcap@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		python:-2.7 shebangfix
+USES=		python:2.7 shebangfix
 USE_GITHUB=	yes
 
 NO_ARCH=	yes

@@ -12,7 +12,7 @@ COMMENT=	Backported, durable, and portable I/O selectors for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:-3.3
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

@@ -12,7 +12,7 @@ COMMENT=	Quick display of FreeBSD port descriptions
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${PY_FLAVOR}
 
-USES=		python:-2.7 shebangfix zip
+USES=		python:2.7 shebangfix zip
 SHEBANG_FILES=	*.py
 NO_BUILD=	yes
 

@@ -11,7 +11,7 @@ COMMENT=	Python 3.4 Enum dummy no-op package
 
 LICENSE=	MIT
 
-USES=		python:-3.3
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

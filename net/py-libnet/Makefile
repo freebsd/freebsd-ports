@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libnet.so:net/libnet
 
-USES=		python:-2.7
+USES=		python:2.7
 USE_PYTHON=	autoplist concurrent distutils
 
 OPTIONS_DEFINE=	EXAMPLES

@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ploy>=1.0.0:sysutils/py-ploy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fabric1>=1.4.0,1:devel/py-fabric1@${PY_FLAVOR}
 
-USES=		python:-2.7 zip
+USES=		python:2.7 zip
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

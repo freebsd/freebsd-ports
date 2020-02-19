@@ -12,7 +12,7 @@ COMMENT=	Backport of recent additions to the 'collections.abc' module
 
 LICENSE=	PSFL
 
-USES=		python:-3.4
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

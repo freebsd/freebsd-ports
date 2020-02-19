@@ -13,7 +13,7 @@ LICENSE=	PSFL
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:-3.3
+USES=		python:2.7
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 

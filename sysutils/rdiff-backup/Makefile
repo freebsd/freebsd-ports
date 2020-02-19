@@ -20,7 +20,7 @@ CONFLICTS=	rdiff-backup-devel-[0-9]* rdiff-backup-1.0*
 
 PORTSCOUT=	limitw:1,even
 
-USES=		python:-2.7
+USES=		python:2.7
 USE_PYTHON=	distutils
 USE_LDCONFIG=	yes
 
