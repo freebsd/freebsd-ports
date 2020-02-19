@@ -2,7 +2,7 @@
 
 PORTNAME=	libftdi1
 PORTVERSION=	1.4
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
@@ -43,7 +43,7 @@ CMAKE_ARGS+=	-DEXAMPLES:BOOL=false
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USES+=		python:2.7
+USES+=		python
 CMAKE_ARGS+=	-DPYTHON_BINDINGS:BOOL=true \
 		-DDOCUMENTATION:BOOL=false
 BUILD_DEPENDS+=	swig3.0:devel/swig30
