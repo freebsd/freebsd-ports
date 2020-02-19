@@ -2992,6 +2992,7 @@ share/locale/nl/LC_MESSAGES/plasmashellprivateplugin.mo
 share/locale/nl/LC_MESSAGES/soliduiserver5.mo
 share/locale/nl/LC_MESSAGES/systemmonitor.mo
 share/locale/nn/LC_MESSAGES/freespacenotifier.mo
+share/locale/nn/LC_MESSAGES/kcm_feedback.mo
 share/locale/nn/LC_MESSAGES/kcm_translations.mo
 share/locale/nn/LC_MESSAGES/kcminit.mo
 share/locale/nn/LC_MESSAGES/kholidays_calendar_plugin.mo
