@@ -11,8 +11,6 @@ COMMENT=	Maildirs extension for Mu4e
 
 LICENSE=	GPLv3
 
-BROKEN=		mu4e-maildirs-extension.el:517:1:Error: Invalid function: (func-or-shortcut)
-
 BUILD_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>0:devel/dash.el@${EMACS_FLAVOR} \
 		mu4e${EMACS_PKGNAMESUFFIX}>0:mail/mu4e@${EMACS_FLAVOR}
 RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>0:devel/dash.el@${EMACS_FLAVOR} \
@@ -33,7 +31,13 @@ OPTIONS_DEFINE=	DOCS
 
 do-build:
 	cd ${WRKSRC} && ${EMACS_CMD} --batch \
-	    -f batch-byte-compile mu4e-maildirs-extension.el && \
+	    --eval "(provide 'mu4e)" \
+	    --eval "(defvar mu4e~main-buffer-name \"tests\")" \
+	    --eval "(defvar mu4e-mu-binary \"mu\")" \
+	    --eval "(require 'cl)" \
+	    -l dash.el \
+	    -l mu4e-maildirs-extension.el \
+	    --eval "(byte-compile-file \"mu4e-maildirs-extension.el\")" && \
 	    ${GZIP_CMD} mu4e-maildirs-extension.el
 
 do-install:
