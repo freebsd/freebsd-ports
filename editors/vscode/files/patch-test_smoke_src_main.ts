@@ -1,6 +1,6 @@
---- test/smoke/src/main.ts.orig	2019-12-10 21:16:00 UTC
+--- test/smoke/src/main.ts.orig	2020-02-05 19:39:53 UTC
 +++ test/smoke/src/main.ts
-@@ -96,7 +96,7 @@ function getDevElectronPath(): string {
+@@ -95,7 +95,7 @@ function getDevElectronPath(): string {
  	switch (process.platform) {
  		case 'darwin':
  			return path.join(buildPath, 'electron', `${product.nameLong}.app`, 'Contents', 'MacOS', 'Electron');
@@ -9,7 +9,7 @@
  			return path.join(buildPath, 'electron', `${product.applicationName}`);
  		case 'win32':
  			return path.join(buildPath, 'electron', `${product.nameShort}.exe`);
-@@ -109,7 +109,7 @@ function getBuildElectronPath(root: string): string {
+@@ -108,7 +108,7 @@ function getBuildElectronPath(root: string): string {
  	switch (process.platform) {
  		case 'darwin':
  			return path.join(root, 'Contents', 'MacOS', 'Electron');
