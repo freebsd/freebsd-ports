@@ -25,7 +25,7 @@ Example crontab entry for /etc/cron.d/nginx-bad-bot-blocker:
 ---snip---
 #
 SHELL=/bin/sh
-PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:%%PREFIX%%/sbin
+PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:%%PREFIX%%/bin:%%PREFIX%%/sbin
 
 # See crontab(5) for field format.
 53	10	*	*	*	root	%%PREFIX%%/sbin/update-ngxblocker -q

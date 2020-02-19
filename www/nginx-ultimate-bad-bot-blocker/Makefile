@@ -3,7 +3,7 @@
 PORTNAME=		nginx-ultimate-bad-bot-blocker
 DISTVERSIONPREFIX=	V
 DISTVERSION=		4.2020.02.1988
-PORTREVISION=		0
+PORTREVISION=		1
 CATEGORIES=		www security
 
 MAINTAINER=	netchild@FreeBSD.org
@@ -12,7 +12,9 @@ COMMENT=	Nginx bad bot and other things blocker
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	gsed:textproc/gsed
+RUN_DEPENDS=	curl:ftp/curl \
+		gsed:textproc/gsed \
+		wget:ftp/wget
 
 USE_GITHUB=	yes
 
