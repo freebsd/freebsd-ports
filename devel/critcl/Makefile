@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	critcl
-PORTVERSION=	3.1.17
-PORTREVISION=	2
+PORTVERSION=	3.1.18.1
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -23,7 +23,7 @@ GH_ACCOUNT=	andreas-kupries
 
 TEST_TARGET=	test
 
-PLIST_SUB+=	VER=${PORTVERSION} \
+PLIST_SUB+=	VER=${PORTVERSION:R} \
 		ARCH=${ARCH:C/arm.*/arm/:S/i386/ix86/:S/aarch64/arm/:S/mips64/mips/:S/powerpc64/powerpc/}
 PORTDOCS=	*
 
