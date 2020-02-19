@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	GNU/gnucobol
 DISTNAME=	gnucobol-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-source COBOL compiler
 
 LICENSE=	GPLv3 LGPL3
