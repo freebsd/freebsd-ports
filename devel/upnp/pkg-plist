@@ -22,7 +22,6 @@ include/upnp/ithread.h
 include/upnp/ixml.h
 include/upnp/ixmldebug.h
 include/upnp/list.h
-include/upnp/poison.h
 include/upnp/upnp.h
 include/upnp/upnpconfig.h
 %%DEBUG%%include/upnp/upnpdebug.h
@@ -33,7 +32,7 @@ lib/libixml.so.11
 lib/libixml.so.11.0.0
 lib/libupnp.a
 lib/libupnp.so
-lib/libupnp.so.15
-lib/libupnp.so.15.0.1
+lib/libupnp.so.16
+lib/libupnp.so.16.0.0
 libdata/pkgconfig/libupnp.pc
 %%PORTDOCS%%%%DOCSDIR%%/UPnP_Programming_Guide.pdf
