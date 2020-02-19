@@ -3,7 +3,7 @@
 
 PORTNAME=	libgpod
 PORTVERSION=	0.8.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -20,13 +20,14 @@ USES=		compiler:c++11-lang gettext gmake gnome libtool localbase \
 		pathfix pkgconfig sqlite:3 tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-udev --without-hal \
+		--without-python \
 		--with-html-dir="${DOCSDIR:H}"
 USE_CSTD=	gnu89
 USE_GNOME=	gdkpixbuf2 gtk20 intltool libxml2
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS IMOBILE PYTHON MONO
+OPTIONS_DEFINE=	DOCS IMOBILE MONO
 OPTIONS_DEFAULT=IMOBILE
 OPTIONS_EXCLUDE?=	MONO
 OPTIONS_SUB=	yes
@@ -38,14 +39,6 @@ IMOBILE_CONFIGURE_WITH=	libimobiledevice
 
 MONO_USE=		GNOME=gtksharp20
 MONO_CONFIGURE_WITH=	mono
-
-PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30 \
-			${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR}
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR}
-PYTHON_USE=		GNOME=pygobject
-PYTHON_USES=		python:2.7
-PYTHON_CONFIGURE_ENV=	SWIG="${LOCALBASE}/bin/swig3.0"
-PYTHON_CONFIGURE_WITH=	python
 
 PORTDOCS=	ChangeLog NEWS README*
 
