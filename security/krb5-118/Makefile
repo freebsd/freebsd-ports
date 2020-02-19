@@ -26,7 +26,7 @@ USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
-USES=			cpe gmake localbase perl5 libtool:build \
+USES=			compiler:c++11-lang cpe gmake localbase perl5 libtool:build \
 			gssapi:bootstrap,mit pkgconfig ssl \
 			gettext-runtime
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
