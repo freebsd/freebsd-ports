@@ -22,13 +22,13 @@ CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[3-6]-[0-9]* \
 CONFLICTS_BUILD=	boringssl-*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
-USE_PERL5=		build
-USE_LDCONFIG=		yes
+USES=			compiler:c++11-lang cpe gmake gettext-runtime \
+			gssapi:bootstrap,mit libtool:build localbase \
+			perl5 pkgconfig ssl
 USE_CSTD=		gnu99
+USE_LDCONFIG=		yes
+USE_PERL5=		build
 GNU_CONFIGURE=		yes
-USES=			compiler:c++11-lang cpe gmake localbase perl5 libtool:build \
-			gssapi:bootstrap,mit pkgconfig ssl \
-			gettext-runtime
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
 			--disable-rpath --localstatedir="${PREFIX}/var" \
 			--runstatedir="${PREFIX}/var/run"
