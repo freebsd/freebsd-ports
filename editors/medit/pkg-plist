@@ -238,11 +238,3 @@ share/icons/hicolor/icon-theme.cache
 %%DATADIR%%/lua/_moo/os.lua
 %%DATADIR%%/lua/_moo/path.lua
 %%DATADIR%%/menu.xml
-%%PYTHON%%%%DATADIR%%/plugins/python.ini
-%%PYTHON%%%%DATADIR%%/plugins/python.py
-%%PYTHON%%%%DATADIR%%/plugins/terminal.ini
-%%PYTHON%%%%DATADIR%%/plugins/terminal.py
-%%PYTHON%%%%DATADIR%%/python/insert_date_and_time.py
-%%PYTHON%%%%DATADIR%%/python/medit/__init__.py
-%%PYTHON%%%%DATADIR%%/python/medit/runpython.py
-%%PYTHON%%%%DATADIR%%/python/pyconsole.py

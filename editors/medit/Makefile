@@ -3,7 +3,7 @@
 
 PORTNAME=	medit
 PORTVERSION=	1.2.92
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	SF/mooedit/${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	-editor
@@ -17,6 +17,7 @@ LICENSE=	LGPL21
 USES=		compiler:c++11-lang gmake gnome localbase pkgconfig \
 		python:2.7,build tar:bzip2
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-python
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 
@@ -24,15 +25,12 @@ DATADIR=	${PREFIX}/share/${PORTNAME}-1
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-1
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS NLS PYTHON
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext-tools
 NLS_USE=	GNOME=intltool
 NLS_CONFIGURE_OFF=	--disable-nls
-
-PYTHON_USE=	GNOME=pygtk2
-PYTHON_CONFIGURE_OFF=	--without-python
 
 post-patch:
 	@${REINPLACE_CMD} -e '/append_12 = -ldl/d' ${WRKSRC}/moo/Makefile.in
