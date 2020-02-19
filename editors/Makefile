@@ -10,6 +10,7 @@
     SUBDIR += aewan
     SUBDIR += apel
     SUBDIR += asedit
+    SUBDIR += atom
     SUBDIR += beav
     SUBDIR += biew
     SUBDIR += bitedit

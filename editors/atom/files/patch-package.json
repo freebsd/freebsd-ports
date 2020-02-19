@@ -1,0 +1,11 @@
+--- package.json.orig	2019-12-29 05:23:50 UTC
++++ package.json
+@@ -74,7 +74,7 @@
+     "incompatible-packages": "file:packages/incompatible-packages",
+     "jasmine-json": "~0.0",
+     "jasmine-reporters": "1.1.0",
+-    "jasmine-tagged": "^1.1.4",
++    "jasmine-tagged": "file:../jasmine-tagged",
+     "key-path-helpers": "^0.4.0",
+     "keybinding-resolver": "https://www.atom.io/api/packages/keybinding-resolver/versions/0.39.0/tarball",
+     "language-c": "https://www.atom.io/api/packages/language-c/versions/0.60.18/tarball",
