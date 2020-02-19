@@ -593,13 +593,13 @@ build-plist:
 	    -e 's|\([^0-9]\)${LLVM_MAJOR}\([^0-9]\)|\1%%LLVM_MAJOR%%\2|' \
 	    | ${SORT} >> ${PLIST}.tmp
 	${AWK} '{ \
-	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(omp.h|ompt.h|${EXTRAS_PATTERN}|libclang_rt|${PYCLANG_PATTERN})/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(${OPENMP_PATTERN}|${EXTRAS_PATTERN}|libclang_rt|${PYCLANG_PATTERN})/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
 	    if ($$0 ~ /(bin\/(ld|lld|wasm-ld))|liblld[^b]|\/lld\// && $$0 !~ /(lldb)/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
-	    if ($$0 ~ /(lib.*omp|omp.h|ompt.h)/) {printf "%%%%OPENMP%%%%"} \
+	    if ($$0 ~ /(${OPENMP_PATTERN})/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /(LLVMgold)/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 ~ /${PYCLANG_PATTERN}/) {printf "%%%%PYCLANG%%%%"} \
 	    if ($$0 !~ /(libclang_rt)/ && $$0 !~ /(${BE_PATTERN})$$/) {print}}' ${PLIST}.tmp >> ${PLIST}

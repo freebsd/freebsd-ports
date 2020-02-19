@@ -2848,7 +2848,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%GOLD%%llvm%%LLVM_SUFFIX%%/lib/LLVMgold.so
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_builtin_vars.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_cmath.h
-%%CLANG%%%%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_complex_builtins.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_complex_builtins.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_device_functions.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_intrinsics.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_libdevice_declares.h
@@ -2904,7 +2904,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/clzerointrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/cpuid.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/cuda_wrappers/algorithm
-%%CLANG%%%%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/cuda_wrappers/complex
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/cuda_wrappers/complex
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/cuda_wrappers/new
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/emmintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/enqcmdintrin.h
@@ -2932,7 +2932,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/msa.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/mwaitxintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/nmmintrin.h
-%%CLANG%%%%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/omp-tools.h
+%%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/omp-tools.h
 %%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/omp.h
 %%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/ompt.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/opencl-c-base.h
@@ -2987,11 +2987,11 @@ llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/AddLLVMDefinitions.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/AddOCaml.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/AddSphinxTarget.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/CheckAtomic.cmake
-%%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/CheckCompilerVersion.cmake
+llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/CheckCompilerVersion.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/CheckLinkerFlag.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/ChooseMSVCCRT.cmake
-%%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/CrossCompile.cmake
-%%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/DetermineGCCCompatible.cmake
+llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/CrossCompile.cmake
+llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/DetermineGCCCompatible.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindLibpfm.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindOCaml.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindSphinx.cmake
@@ -3080,8 +3080,8 @@ llvm%%LLVM_SUFFIX%%/lib/libLTO.so
 llvm%%LLVM_SUFFIX%%/lib/libLTO.so.%%LLVM_MAJOR%%git
 llvm%%LLVM_SUFFIX%%/lib/libRemarks.so
 llvm%%LLVM_SUFFIX%%/lib/libRemarks.so.%%LLVM_MAJOR%%git
-llvm%%LLVM_SUFFIX%%/lib/libarcher.so
-llvm%%LLVM_SUFFIX%%/lib/libarcher_static.a
+%%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/libarcher.so
+%%OPENMP%%llvm%%LLVM_SUFFIX%%/lib/libarcher_static.a
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang-cpp.so
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang-cpp.so.%%LLVM_MAJOR%%git
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang.so
