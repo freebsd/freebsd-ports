@@ -2,7 +2,7 @@
 
 PORTNAME=	rav1e
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 PORTREVISION?=	0
 CATEGORIES=	multimedia
 
@@ -32,7 +32,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		atty-0.2.14 \
 		autocfg-0.1.7 \
 		autocfg-1.0.0 \
-		backtrace-0.3.43 \
+		backtrace-0.3.44 \
 		backtrace-sys-0.1.32 \
 		better-panic-0.2.0 \
 		bindgen-0.51.1 \
@@ -40,8 +40,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		bitflags-1.2.1 \
 		bitstream-io-0.8.4 \
 		bstr-0.2.11 \
-		bumpalo-3.1.2 \
-		byteorder-1.3.2 \
+		bumpalo-3.2.0 \
+		byteorder-1.3.4 \
 		c2-chacha-0.2.3 \
 		cast-0.2.3 \
 		cc-1.0.50 \
@@ -61,7 +61,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		crossbeam-queue-0.2.1 \
 		crossbeam-utils-0.7.0 \
 		csv-1.1.3 \
-		csv-core-0.1.6 \
+		csv-core-0.1.10 \
 		ctor-0.1.12 \
 		dav1d-sys-0.3.0 \
 		deflate-0.7.20 \
@@ -76,7 +76,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		getrandom-0.1.14 \
 		glob-0.3.0 \
 		heck-0.3.1 \
-		hermit-abi-0.1.6 \
+		hermit-abi-0.1.7 \
 		humantime-1.3.0 \
 		image-0.22.5 \
 		inflate-0.4.5 \
@@ -90,7 +90,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		libc-0.2.66 \
 		libloading-0.5.2 \
 		log-0.4.8 \
-		memchr-2.3.0 \
+		memchr-2.3.2 \
 		memoffset-0.5.3 \
 		metadeps-1.1.2 \
 		nasm-rs-0.1.7 \
@@ -112,8 +112,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		png-0.15.3 \
 		ppv-lite86-0.2.6 \
 		pretty_assertions-0.6.1 \
-		proc-macro-error-0.4.8 \
-		proc-macro-error-attr-0.4.8 \
+		proc-macro-error-0.4.9 \
+		proc-macro-error-attr-0.4.9 \
 		proc-macro-hack-0.5.11 \
 		proc-macro2-1.0.8 \
 		quick-error-1.2.3 \
@@ -133,18 +133,18 @@ CARGO_CRATES=	adler32-1.0.4 \
 		rust_hawktracer_proc_macro-0.4.1 \
 		rust_hawktracer_sys-0.4.2 \
 		rustc-demangle-0.1.16 \
-		rustc-hash-1.0.1 \
+		rustc-hash-1.1.0 \
 		rustc_version-0.2.3 \
 		rustversion-1.0.2 \
 		ryu-1.0.2 \
 		same-file-1.0.6 \
-		scan_fmt-0.2.4 \
-		scopeguard-1.0.0 \
+		scan_fmt-0.2.5 \
+		scopeguard-1.1.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		serde-1.0.104 \
 		serde_derive-1.0.104 \
-		serde_json-1.0.46 \
+		serde_json-1.0.48 \
 		shlex-0.1.1 \
 		signal-hook-0.1.13 \
 		signal-hook-registry-1.2.0 \
