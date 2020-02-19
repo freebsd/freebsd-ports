@@ -25,8 +25,6 @@ libdata/pkgconfig/zbar.pc
 %%V4L%%man/man1/zbarcam.1.gz
 %%V6%%man/man1/zbarimg.1.gz
 %%V7%%man/man1/zbarimg.1.gz
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/zbar.so
-%%PYTHON%%%%GTK2%%%%PYTHON_SITELIBDIR%%/zbarpygtk.so
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
