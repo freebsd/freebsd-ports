@@ -14,7 +14,7 @@ LICENSE=	PSFL
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>0:devel/py-backports@${PY_FLAVOR}
 
-USES=		python:-3.4
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 POST_PLIST=	trim-backports-namespace

@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dns>=2.0:dns/py-dns@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lockfile>=0.2:devel/py-lockfile@${PY_FLAVOR}
 
-USES=		python:-2.7
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 USE_RC_SUBR=	pyspamd
 

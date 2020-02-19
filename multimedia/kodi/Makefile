@@ -62,7 +62,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		autoreconf:build compiler:c++11-lib gettext gmake gnome iconv \
-		jpeg libtool pkgconfig python:-2.7 ssl
+		jpeg libtool pkgconfig python:2.7 ssl
 
 KODI_ARCH_i386=	x86
 KODI_ARCH_amd64=x86_64

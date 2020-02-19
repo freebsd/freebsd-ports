@@ -21,7 +21,7 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libjansson.so:devel/jansson
 
 USES=		autoreconf compiler:c11 gnome libtool localbase mysql:client \
-		pathfix pgsql pkgconfig python:-2.7 shebangfix ssl
+		pathfix pgsql pkgconfig python:2.7 shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 USE_GNOME=	glib20

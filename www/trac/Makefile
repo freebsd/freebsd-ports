@@ -23,7 +23,7 @@ CONFLICTS_INSTALL=	trac-devel
 
 PORTSCOUT=	limit:^1\.2\.[0-9]*
 
-USES=		python:-2.7 shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	trac/tests/functional/better_twill.py trac/tests/functional/tester.py \
 		trac/tests/functional/testenv.py trac/tests/functional/compat.py \
 		trac/tests/functional/__init__.py contrib/emailfilter.py \

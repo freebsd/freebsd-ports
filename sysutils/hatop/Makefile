@@ -14,7 +14,7 @@ LICENSE=	GPLv3+
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/haproxy:net/haproxy
 
-USES=		python:2.7+ shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	bin/hatop
 NO_BUILD=	yes
 NO_ARCH=	yes

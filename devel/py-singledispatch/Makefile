@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		python:-3.3
+USES=		python:2.7
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes

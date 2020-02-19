@@ -96,7 +96,7 @@ PLIST_FILES=		include/ldb_version.h \
 			${PKGCONFIGDIR}/ldb.pc
 
 .if defined(NO_PYTHON)
-USES+=			python:2.7+,build,test
+USES+=			python:build,test
 CONFIGURE_ARGS+=	--disable-python
 .else
 USES+=			python:3.4+

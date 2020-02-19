@@ -12,7 +12,7 @@ COMMENT=	Type Hints for Python
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:-3.4
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

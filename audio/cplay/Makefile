@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	hukka
 
-USES=		gettext gmake python:-2.7 shebangfix
+USES=		gettext gmake python:2.7 shebangfix
 SHEBANG_FILES=	${WRKSRC}/cplay cnq
 
 MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}"

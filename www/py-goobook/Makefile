@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oauth2client>=1.4.12:security/py-oauth2clien
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.9.1:www/py-httplib2@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:-2.7
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 PLIST_FILES=	man/man1/goobook.1.gz
 

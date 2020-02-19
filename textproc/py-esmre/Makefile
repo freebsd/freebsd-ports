@@ -13,7 +13,7 @@ COMMENT=	Regular expression accelerator in Python
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:-2.7
+USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
 post-install:

@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 		bash:shells/bash
 
 USES=		autoreconf gnome iconv libarchive libtool localbase \
-		pathfix pkgconfig python:-2.7 shebangfix sqlite ssl
+		pathfix pkgconfig python:2.7 shebangfix sqlite ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_PROJECT=	seafile

@@ -22,7 +22,7 @@ NO_ARCH=	yes
 PORTSCOUT=	ignore:1
 SVN_REVISION=	15146
 
-USES=		python:-2.7
+USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 # Maintainter targets below this point
