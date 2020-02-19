@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vscode
-DISTVERSION=	1.41.1
+DISTVERSION=	1.42.1
 CATEGORIES=	editors
 MASTER_SITES=	https://nodejs.org/dist/v${NODE_VER}/:node_headers \
 		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
@@ -64,7 +64,7 @@ USES=		desktop-file-utils gl gmake gnome jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	26076a4de974ead31f97692a0d32f90d735645c0
+SOURCE_COMMIT_HASH=	c47d83b293181d9be64f27ff093689e8e7aed054
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -75,6 +75,7 @@ USE_GNOME=	atk cairo pango gdkpixbuf2 gtk30 libxml2 libxslt
 
 USE_LDCONFIG=	${DATADIR}
 
+# See ${WRKSRC}/remote/.yarnrc for NODE_VER
 NODE_VER=	12.4.0
 
 SHEBANG_REGEX=	./(extensions|resources|scripts|src)/.*\.sh$$
@@ -84,6 +85,7 @@ DATADIR=	${PREFIX}/share/code-oss
 TMPDIR=		${WRKDIR}
 
 MAKE_ENV+=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
+		ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
 		PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 \
 		XDG_CACHE_HOME=${WRKDIR}/.cache
 
@@ -211,6 +213,7 @@ do-install:
 	${RM} -r ${STAGEDIR}${DATADIR}/node_headers
 	${RM} -r ${STAGEDIR}${DATADIR}/resources/completions
 	${RLN} ${STAGEDIR}${DATADIR}/bin/code-oss ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/wrapper.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 pre-test:
 	# setup electron dependency for unit tests
@@ -233,7 +236,7 @@ make-yarn-cache:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		yarn --frozen-lockfile --ignore-scripts
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		yarn postinstall --frozen-lockfile --ignore-scripts
+		yarn postinstall --frozen-lockfile
 	cd ${WRKDIR} && ${TAR} -czf \
 		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} yarn-offline-cache
 
