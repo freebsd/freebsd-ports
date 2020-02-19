@@ -3,7 +3,7 @@ Columnar (ORC) format for its data layout. ORC improves upon the RCFile format
 developed at Facebook, and brings the following benefits:
 	- Compression: Reduces in-memory and on-disk data size by 2-4x. Can be
 	  extended to support different codecs.
-	- Column projections: Only reads column data relevant to the query. 
+	- Column projections: Only reads column data relevant to the query.
 	  Improves performance for I/O bound queries.
 	- Skip indexes: Stores min/max statistics for row groups, and uses them
 	  to skip over unrelated rows.
