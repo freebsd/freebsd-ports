@@ -1,0 +1,20 @@
+--- script/build.orig	2019-10-21 17:33:40 UTC
++++ script/build
+@@ -68,7 +68,7 @@ process.env.ELECTRON_VERSION = CONFIG.appMetadata.elec
+ let binariesPromise = Promise.resolve()
+ 
+ if (!argv.existingBinaries) {
+-  checkChromedriverVersion()
++  // checkChromedriverVersion()
+   cleanOutputDirectory()
+   copyAssets()
+   transpilePackagesWithCustomTranspilerPaths()
+@@ -88,7 +88,7 @@ if (!argv.existingBinaries) {
+ if (!argv.generateApiDocs) {
+   binariesPromise
+     .then(packageApplication)
+-    .then(packagedAppPath => generateStartupSnapshot(packagedAppPath).then(() => packagedAppPath))
++    // .then(packagedAppPath => generateStartupSnapshot(packagedAppPath).then(() => packagedAppPath))
+     .then(packagedAppPath => {
+       switch (process.platform) {
+         case 'darwin': {
