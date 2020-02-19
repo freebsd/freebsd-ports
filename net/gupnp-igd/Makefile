@@ -3,7 +3,7 @@
 
 PORTNAME=	gupnp-igd
 PORTVERSION=	0.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -19,21 +19,13 @@ LIB_DEPENDS=	libgssdp-1.2.so:net/gssdp \
 		libgupnp-1.2.so:net/gupnp
 RUN_DEPENDS=	gupnp>=0.18:net/gupnp
 
-OPTIONS_DEFINE=	PYTHON
-OPTIONS_DEFAULT=PYTHON
-OPTIONS_SUB=	yes
-
 USES=		compiler:c11 gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 
-CONFIGURE_ARGS=	--enable-introspection=yes
+CONFIGURE_ARGS=	--enable-introspection=yes --disable-python
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-PYTHON_CONFIGURE_ENABLE=python
-PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject>=2.12.0:devel/py-gobject@${PY_FLAVOR}
-PYTHON_USES=		python:2.7
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gssdp-1.0|gssdp-1.2|; s|gupnp-1.0|gupnp-1.2|' ${WRKSRC}/configure ${WRKSRC}/gupnp-igd-1.0.pc.in ${WRKSRC}/libgupnp-igd/Makefile.in ${WRKSRC}/libgupnp-igd/GUPnPIgd-1.0.gir

@@ -4,11 +4,6 @@ lib/libgupnp-igd-1.0.a
 lib/libgupnp-igd-1.0.so
 lib/libgupnp-igd-1.0.so.4
 lib/libgupnp-igd-1.0.so.4.2.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/__init__.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/__init__.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/igd.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/igd.so
 lib/girepository-1.0/GUPnPIgd-1.0.typelib
 libdata/pkgconfig/gupnp-igd-1.0.pc
 share/gir-1.0/GUPnPIgd-1.0.gir
