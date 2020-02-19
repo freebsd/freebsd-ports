@@ -1,3 +1,3 @@
-TIMESTAMP = 1536052906
-SHA256 (citusdata-cstore_fdw-v1.6.2_GH0.tar.gz) = 35aabbc5a1608024e6aa038d06035e90d587e805eb706eb80652eb8547783491
-SIZE (citusdata-cstore_fdw-v1.6.2_GH0.tar.gz) = 92241
+TIMESTAMP = 1582106798
+SHA256 (citusdata-cstore_fdw-v1.7.0_GH0.tar.gz) = bd8a06654b483d27b48d8196cf6baac0c7828b431b49ac097923ac0c54a1c38c
+SIZE (citusdata-cstore_fdw-v1.7.0_GH0.tar.gz) = 93313
