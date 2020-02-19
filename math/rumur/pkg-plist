@@ -1,5 +1,5 @@
+bin/murphi2xml
 bin/rumur
-bin/rumur-ast-dump
 bin/rumur-run
 include/rumur/Boolean.h
 include/rumur/Decl.h
@@ -28,6 +28,6 @@ include/rumur/stack.hh
 include/rumur/traverse.h
 include/rumur/validate.h
 lib/librumur.so
-man/man1/rumur-ast-dump.1.gz
+man/man1/murphi2xml.1.gz
 man/man1/rumur-run.1.gz
 man/man1/rumur.1.gz
