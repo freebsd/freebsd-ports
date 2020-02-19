@@ -193,6 +193,7 @@ include/KF5/KIOWidgets/KIO/PasteJob
 include/KF5/KIOWidgets/KIO/PixmapLoader
 include/KF5/KIOWidgets/KIO/PreviewJob
 include/KF5/KIOWidgets/KIO/RenameDialog
+include/KF5/KIOWidgets/KIO/RenameFileDialog
 include/KF5/KIOWidgets/KIO/SkipDialog
 include/KF5/KIOWidgets/KIO/SslUi
 include/KF5/KIOWidgets/KIO/ThumbCreator
@@ -231,6 +232,7 @@ include/KF5/KIOWidgets/kio/pastejob.h
 include/KF5/KIOWidgets/kio/pixmaploader.h
 include/KF5/KIOWidgets/kio/previewjob.h
 include/KF5/KIOWidgets/kio/renamedialog.h
+include/KF5/KIOWidgets/kio/renamefiledialog.h
 include/KF5/KIOWidgets/kio/skipdialog.h
 include/KF5/KIOWidgets/kio/sslui.h
 include/KF5/KIOWidgets/kio/thumbcreator.h

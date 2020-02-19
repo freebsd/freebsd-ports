@@ -327,6 +327,7 @@ share/locale/id/LC_MESSAGES/purpose_saveas.mo
 share/locale/id/LC_MESSAGES/purpose_twitter.mo
 share/locale/id/LC_MESSAGES/purpose_youtube.mo
 share/locale/it/LC_MESSAGES/libpurpose_quick.mo
+share/locale/it/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/it/LC_MESSAGES/purpose-fileitemaction.mo
 share/locale/it/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/it/LC_MESSAGES/purpose_email.mo

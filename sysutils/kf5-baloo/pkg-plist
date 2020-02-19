@@ -11,6 +11,7 @@ include/KF5/Baloo/Baloo/Query
 include/KF5/Baloo/Baloo/QueryRunnable
 include/KF5/Baloo/Baloo/ResultIterator
 include/KF5/Baloo/Baloo/TagListJob
+include/KF5/Baloo/baloo/baloosettings.h
 include/KF5/Baloo/baloo/core_export.h
 include/KF5/Baloo/baloo/file.h
 include/KF5/Baloo/baloo/filemonitor.h

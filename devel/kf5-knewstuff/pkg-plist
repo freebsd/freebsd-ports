@@ -12,6 +12,7 @@ include/KF5/KNewStuff3/KNSCore/Cache
 include/KF5/KNewStuff3/KNSCore/DownloadManager
 include/KF5/KNewStuff3/KNSCore/Engine
 include/KF5/KNewStuff3/KNSCore/EntryInternal
+include/KF5/KNewStuff3/KNSCore/EntryWrapper
 include/KF5/KNewStuff3/KNSCore/ErrorCode
 include/KF5/KNewStuff3/KNSCore/Installation
 include/KF5/KNewStuff3/KNSCore/ItemsModel
@@ -38,6 +39,7 @@ include/KF5/KNewStuff3/knscore/cache.h
 include/KF5/KNewStuff3/knscore/downloadmanager.h
 include/KF5/KNewStuff3/knscore/engine.h
 include/KF5/KNewStuff3/knscore/entryinternal.h
+include/KF5/KNewStuff3/knscore/entrywrapper.h
 include/KF5/KNewStuff3/knscore/errorcode.h
 include/KF5/KNewStuff3/knscore/installation.h
 include/KF5/KNewStuff3/knscore/itemsmodel.h
