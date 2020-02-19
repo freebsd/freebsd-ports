@@ -3,7 +3,7 @@
 
 PORTNAME=	libtomoe-gtk
 PORTVERSION=	0.6.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	japanese
 MASTER_SITES=	SF/tomoe/tomoe-gtk/tomoe-gtk-${PORTVERSION}
 DISTNAME=	tomoe-gtk-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -14,7 +14,8 @@ COMMENT=	TOMOE GTK+ library
 LIB_DEPENDS=	libtomoe.so:japanese/tomoe
 
 GNU_CONFIGURE=	yes
-USES=		gmake gnome libtool pathfix pkgconfig python:2.7,build
+CONFIGURE_ARGS=	--with-python=no
+USES=		gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
@@ -29,14 +30,5 @@ PLIST_SUB+=	GUCHARMAP="@comment "
 #LIB_DEPENDS+=	libgucharmap.so:deskutils/gucharmap
 #PLIST_SUB+=	GUCHARMAP=""
 #.endif
-
-.if exists(${LOCALBASE}/libdata/pkgconfig/pytomoe.pc)
-CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S;python;;} \
-		pyexecdir=${PYTHON_SITELIBDIR}
-PLIST_SUB+=	PYTHON=""
-.else
-CONFIGURE_ARGS+=--with-python=no
-PLIST_SUB+=	PYTHON="@comment "
-.endif
 
 .include <bsd.port.mk>

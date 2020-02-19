@@ -1,5 +1,4 @@
 etc/tomoe/config
-%%PYTHON%%include/tomoe/pytomoe-utils.h
 include/tomoe/tomoe-candidate.h
 include/tomoe/tomoe-char.h
 include/tomoe/tomoe-config.h
@@ -18,8 +17,6 @@ lib/libtomoe.a
 lib/libtomoe.so
 lib/libtomoe.so.0
 lib/libtomoe.so.0.1.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/tomoe.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/tomoe.so
 %%EST%%lib/tomoe/module/dict/est.a
 %%EST%%lib/tomoe/module/dict/est.so
 %%MYSQL%%lib/tomoe/module/dict/mysql.a
@@ -32,7 +29,6 @@ lib/tomoe/module/dict/xml.a
 lib/tomoe/module/dict/xml.so
 lib/tomoe/module/recognizer/simple.a
 lib/tomoe/module/recognizer/simple.so
-%%PYTHON%%libdata/pkgconfig/pytomoe.pc
 libdata/pkgconfig/tomoe.pc
 share/gtk-doc/html/tomoe/TomoeCandidate.html
 share/gtk-doc/html/tomoe/TomoeChar.html
@@ -58,7 +54,6 @@ share/gtk-doc/html/tomoe/tomoe.html
 share/gtk-doc/html/tomoe/up.png
 share/locale/ja/LC_MESSAGES/tomoe.mo
 share/tomoe/dict.dtd
-%%PYTHON%%share/tomoe/python/tomoe.defs
 share/tomoe/recognizer/handwriting-ja.xml
 share/tomoe/recognizer/handwriting-zh_CN.xml
 share/tomoe/xml2est.rb

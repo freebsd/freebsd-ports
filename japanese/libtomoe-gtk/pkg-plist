@@ -16,8 +16,6 @@ lib/libtomoe-gtk.a
 lib/libtomoe-gtk.so
 lib/libtomoe-gtk.so.0
 lib/libtomoe-gtk.so.0.1.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/gtk-2.0/tomoegtk.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/gtk-2.0/tomoegtk.so
 libdata/pkgconfig/tomoe-gtk.pc
 share/tomoe-gtk/tomoe-data-view.png
 share/tomoe-gtk/tomoe-dictionary.png
