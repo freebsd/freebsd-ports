@@ -327,6 +327,7 @@ man/man3/hdb_open.3.gz
 man/man3/hdb_password.3.gz
 man/man3/hdb_remove.3.gz
 man/man3/hdb_rename.3.gz
+man/man3/hdb_set_sync.3.gz
 man/man3/hdb_store.3.gz
 man/man3/hdb_unlock.3.gz
 man/man3/heim_ntlm_build_ntlm1_master.3.gz
@@ -995,6 +996,7 @@ man/man3/krb5_principal_get_num_comp.3.gz
 man/man3/krb5_principal_get_realm.3.gz
 man/man3/krb5_principal_get_type.3.gz
 man/man3/krb5_principal_intro.3.gz
+man/man3/krb5_principal_is_anonymous.3.gz
 man/man3/krb5_principal_is_gss_hostbased_service.3.gz
 man/man3/krb5_principal_is_krbtgt.3.gz
 man/man3/krb5_principal_is_lkdc.3.gz
