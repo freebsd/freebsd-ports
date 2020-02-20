@@ -1,4 +1,5 @@
 %%SITE_ARCH%%/Alien/wxWidgets.pm
+%%SITE_ARCH%%/Alien/wxWidgets/Config/gtk_3_0_4_uni_gcc_3_4.pm
 %%SITE_ARCH%%/Alien/wxWidgets/Utility.pm
 %%PERL5_MAN3%%/Alien::wxWidgets.3.gz
 %%PERL5_MAN3%%/Alien::wxWidgets::Utility.3.gz
