@@ -221,3 +221,6 @@ include/ensmallen_bits/utility/arma_traits.hpp
 include/ensmallen_bits/wn_grad/wn_grad.hpp
 include/ensmallen_bits/wn_grad/wn_grad_impl.hpp
 include/ensmallen_bits/wn_grad/wn_grad_update.hpp
+lib/cmake/ensmallen/ensmallen-config-version.cmake
+lib/cmake/ensmallen/ensmallen-config.cmake
+lib/cmake/ensmallen/ensmallen-targets.cmake
