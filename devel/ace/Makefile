@@ -17,6 +17,7 @@ LICENSE_NAME=	ACE
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		fails to build
 BROKEN_powerpc=		Does not compile on ${ARCH}
 BROKEN_sparc64=		Does not compile on ${ARCH}
 
