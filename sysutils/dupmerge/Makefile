@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Searches for files with equal content
 
 USES=		zip
