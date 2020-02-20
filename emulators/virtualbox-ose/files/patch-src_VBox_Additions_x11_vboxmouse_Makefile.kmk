@@ -13,7 +13,7 @@
 +  vboxmouse_drv_system_TEMPLATE = VBOXGUESTR3XORGMOD
 +  vboxmouse_drv_system_DEFS := $(vboxmouse_drv_70_DEFS) NO_ANSIC
 +  vboxmouse_drv_system_INCS := \
-+	$(vboxmouse_xorg_INCS) \
++	/usr/local/include/pixman-1 \
 +	/usr/local/include/xorg \
 +	$(PATH_SUB_CURRENT)
 +  vboxmouse_drv_system_SOURCES = \

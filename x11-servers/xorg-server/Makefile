@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	xorg-server
-PORTVERSION?=	1.18.4
-PORTREVISION?=	13
+PORTVERSION?=	1.20.7
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -22,14 +22,24 @@ SLAVE_PORT?=	no
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	SUID
 OPTIONS_RADIO=	CONF
-OPTIONS_RADIO_CONF=	DEVD HAL UDEV
-DEVD_DESC=	Use devd for autoconfiguration of input devices
-HAL_DESC=	Use hald for autoconfiguration of input devices
-UDEV_DESC=	Use udev via libudev-devd for autoconfiguration of input devices
-SUID_DESC=	Install the Xorg server with setuid bit set
-OPTIONS_DEFAULT=DEVD SUID
+OPTIONS_RADIO_CONF=	DEVD UDEV
+OPTIONS_DEFAULT=	SUID
+OPTIONS_DEFAULT_FreeBSD_11=	DEVD
+OPTIONS_DEFAULT_FreeBSD_12=	UDEV
+OPTIONS_DEFAULT_FreeBSD_13=	UDEV
+OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${OPSYS}_${OSREL:R}}
 
-OPTIONS_EXCLUDE_sparc64=	HAL
+SUID_DESC=	Install setuid wrapper to allow startx as non-root
+CONF_DESC=	Backend to use for input device configuration
+DEVD_DESC=	Use devd for autoconfiguration of input devices
+UDEV_DESC=	Use udev via libudev-devd for autoconfiguration of input devices
+
+DEVD_CONFIGURE_ENABLE=	config-devd
+SUID_CONFIGURE_ENABLE=	suid-wrapper
+SUID_CONFIGURE_ON=	--libexecdir=${PREFIX}/bin	# set SUID_WRAPPER_DIR
+UDEV_CONFIGURE_ENABLE=	config-udev
+UDEV_CONFIGURE_ON=	--disable-config-udev-kms
+UDEV_LIB_DEPENDS=	libudev.so:devel/libudev-devd
 
 .include <bsd.port.options.mk>
 
@@ -46,15 +56,14 @@ DEFAULT_FONTPATH_LIST= \
 DEFAULT_FONTPATH_CMD=${ECHO_CMD} ${DEFAULT_FONTPATH_LIST} | ${TR} ' ' ,
 PLIST_SUB+=	FONTPATHD="${FONTPATHD:S,^${PREFIX}/,,}"
 
-USES=		gmake gl libtool perl5 ssl tar:bzip2 xorg xorg-cat:xserver
+USES=		gl gmake perl5 ssl xorg xorg-cat:xserver
 USE_PERL5=	build
 USE_GL+=	gl
-USE_XORG+=	pixman xau xdmcp xfont xkbfile xorgproto xshmfence xtrans
+USE_XORG+=	pixman xau xdmcp xfont2 xkbfile xorgproto xshmfence xtrans
 CONFIGURE_ARGS+=--without-doxygen --without-xmlto --without-fop \
 		--with-default-font-path="$$(${DEFAULT_FONTPATH_CMD})" \
-		--localstatedir=/var --with-shared-memory-dir=/tmp \
-		--disable-config-udev-kms --disable-systemd-logind \
-		--without-dtrace --enable-glamor
+		--without-dtrace --with-shared-memory-dir=/tmp \
+		--disable-install-setuid --disable-unit-tests
 INSTALL_TARGET=	install-strip
 
 .if ${SLAVE_PORT} == "no" || ${PORTNAME} == "xephyr" || ${PORTNAME} == "xwayland"
@@ -71,9 +80,9 @@ CONFIGURE_ARGS+=--disable-dmx --disable-xephyr --disable-xnest --disable-xvfb \
 		--disable-xwayland --enable-xcsecurity
 SUB_FILES=	pkg-install pkg-deinstall
 .else
-CONFIGURE_ARGS+=--disable-xorg
-# for slave ports we need to overwrite PLIST, so it doesn't overwrite
-# PLIST_FILES, with the masterport plist.
+CONFIGURE_ARGS+=	--disable-xorg
+OPTIONS_EXCLUDE=	DEVD UDEV SUID
+# Set PLIST for slave ports so they only need to set PLIST_FILES
 PLIST=		${.CURDIR}/pkg-plist
 .endif
 
@@ -86,23 +95,6 @@ PLIST=		${.CURDIR}/pkg-plist
 CONFIGURE_ENV=	SHA1_LIB="-L/usr/lib -lcrypto" SHA1_CFLAGS="-I/usr/include"
 .endif
 
-.if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	libhal.so:sysutils/hal
-CONFIGURE_ARGS+=	--enable-config-hal
-.else
-CONFIGURE_ARGS+=	--disable-config-hal
-.endif
-
-.if ${PORT_OPTIONS:MUDEV}
-LIB_DEPENDS+=	libudev.so:devel/libudev-devd
-CONFIGURE_ARGS+= --enable-config-udev
-.else
-CONFIGURE_ARGS+= --disable-config-udev
-.endif
-
-# We handle Xorg setuid in the plist. This allows to build xorg-server as a user.
-CONFIGURE_ARGS+=--disable-install-setuid
-
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
@@ -113,42 +105,21 @@ PLIST_SUB+=	SPARC64=""
 PLIST_SUB+=	SPARC64="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MSUID}
-pre-everything::
-	@${ECHO_MSG} "By default, the X Server installs as a set-user-id root binary. When run by"
-	@${ECHO_MSG} "a normal user, it checks arguments and environment as done in the x11/wrapper"
-	@${ECHO_MSG} "port before handling them normally.  If you are concerned about the security"
-	@${ECHO_MSG} "of this, but still want to run an X Server (for example using xdm/kdm/gdm,"
-	@${ECHO_MSG} "which will still run the server as root), you can cancel the build and set"
-	@${ECHO_MSG} "xorg-server_UNSET=SUID in /etc/make.conf."
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \
 		${WRKSRC}/configure
-# build libglx.so but don't install it yet. which is done in pre-install.
-	@${REINPLACE_CMD} -e 's|@GLX_TRUE@GLXMODS =|@GLX_BOGUS@GLXMODS =|g' \
-		-e 's|^LTLIBRARIES = |LTLIBRARIES = libglx.la |g' \
-		${WRKSRC}/hw/xfree86/dixmods/Makefile.in
-
-post-configure:
-.if ${PORT_OPTIONS:MDEVD}
-	@${REINPLACE_CMD} -e 's|config\.c|config.c devd.c|g' \
-		-e 's|config\.lo|config.lo devd.lo|g' \
-		${WRKSRC}/config/Makefile
-	@${REINPLACE_CMD} -e 's|^/\* #undef CONFIG_UDEV \*/|#define CONFIG_DEVD 1|' \
-		${WRKSRC}/include/dix-config.h
-.endif
 
 .if ${SLAVE_PORT} == "no"
 post-install:
-# The .xorg dir because else the xorg-server might not load the correct
-# libglx module.
+# Avoid conflict with nvidia-driver, move libglx.so into .xorg directory
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/.xorg
-	${INSTALL_LIB} ${WRKSRC}/hw/xfree86/dixmods/.libs/libglx.so \
+	${MV} ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/libglx.so \
 		${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/.xorg/
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/X11/xorg.conf.d
 	@${MKDIR} ${STAGEDIR}${FONTPATHD}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/X11/xorg.conf.d
+	@${INSTALL_DATA} ${FILESDIR}/20-evdev-kbd.conf \
+		${STAGEDIR}${PREFIX}/share/X11/xorg.conf.d
 .endif # ! SLAVE_PORT
 
 .include <bsd.port.post.mk>

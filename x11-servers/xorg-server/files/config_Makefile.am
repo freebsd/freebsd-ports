@@ -1,0 +1,16 @@
+* Build the devd config backend if activated
+*
+--- config/Makefile.am.orig	2017-03-16 05:24:43 UTC
++++ config/Makefile.am
+@@ -4,6 +4,11 @@ noinst_LTLIBRARIES = libconfig.la
+ libconfig_la_SOURCES = config.c config-backends.h
+ libconfig_la_LIBADD =
+ 
++if CONFIG_DEVD
++libconfig_la_SOURCES += devd.c
++libconfig_la_LIBADD += -lusbhid
++endif
++
+ if NEED_DBUS
+ AM_CFLAGS += $(DBUS_CFLAGS)
+ libconfig_la_SOURCES += dbus-core.c

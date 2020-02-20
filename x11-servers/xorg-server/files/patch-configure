@@ -1,6 +1,41 @@
---- configure.orig	2016-07-19 17:27:31 UTC
+* generated from patched configure.ac; revise and regen instead of editing
+*
+* Plumb the devd config backend into configure
+*
+* define USE_DEV_IO for ARM platforms
+*
+* Only run pkg-config for udev if it is not disabled to prevent over-linking
+*
+* Automatically use systemd/logind only on Linux
+*
+--- configure.orig	2017-03-15 18:05:39 UTC
 +++ configure
-@@ -23168,9 +23168,14 @@ $as_echo "#define USE_ALPHA_PIO 1" >>con
+@@ -1032,6 +1032,8 @@ CONFIG_UDEV_FALSE
+ CONFIG_UDEV_TRUE
+ UDEV_LIBS
+ UDEV_CFLAGS
++CONFIG_DEVD_FALSE
++CONFIG_DEVD_TRUE
+ HAVE_SYSTEMD_DAEMON_FALSE
+ HAVE_SYSTEMD_DAEMON_TRUE
+ SYSTEMD_DAEMON_LIBS
+@@ -1367,6 +1369,7 @@ enable_tslib
+ enable_dbe
+ enable_xf86bigfont
+ enable_dpms
++enable_config_devd
+ enable_config_udev
+ enable_config_udev_kms
+ enable_config_hal
+@@ -2191,6 +2194,7 @@ Optional Features:
+   --disable-dbe           Build DBE extension (default: enabled)
+   --enable-xf86bigfont    Build XF86 Big Font extension (default: disabled)
+   --disable-dpms          Build DPMS extension (default: enabled)
++  --enable-config-devd    Build devd support (default: auto)
+   --enable-config-udev    Build udev support (default: auto)
+   --enable-config-udev-kms
+                           Build udev kms support (default: auto)
+@@ -23280,9 +23284,13 @@ $as_echo "#define USE_ALPHA_PIO 1" >>con
  	esac
  	GLX_ARCH_DEFINES="-D__GLX_ALIGN64 -mieee"
  	;;
@@ -9,19 +44,122 @@
  	ARM_VIDEO=yes
  	DEFAULT_INT10="stub"
 +	case $host_os in
-+		*freebsd*)
-+			$as_echo "#define USE_DEV_IO 1" >>confdefs.h
-+		 ;;
++		*freebsd*)	$as_echo "#define USE_DEV_IO 1" >>confdefs.h
++ ;;
 +	esac
  	;;
    i*86)
  	I386_VIDEO=yes
-@@ -26057,7 +26062,7 @@ fi
- case "x$XTRANS_SEND_FDS" in
- xauto)
- 	case "$host_os" in
--	linux*|solaris*)
-+	linux*|solaris*|freebsd*|dragonfly*|openbsd*)
- 		XTRANS_SEND_FDS=yes
- 		;;
- 	*)
+@@ -24053,6 +24061,13 @@ else
+   DPMSExtension=yes
+ fi
+ 
++# Check whether --enable-config-devd was given.
++if test "${enable_config_devd+set}" = set; then :
++  enableval=$enable_config_devd; CONFIG_DEVD=$enableval
++else
++  CONFIG_DEVD=auto
++fi
++
+ # Check whether --enable-config-udev was given.
+ if test "${enable_config_udev+set}" = set; then :
+   enableval=$enable_config_udev; CONFIG_UDEV=$enableval
+@@ -25813,6 +25828,31 @@ if test "x$CONFIG_UDEV" = xyes && test "
+ 	as_fn_error $? "Hotplugging through both libudev and hal not allowed" "$LINENO" 5
+ fi
+ 
++if test "x$CONFIG_DEVD" = xauto; then
++	case $host_os in
++		*freebsd*)
++			CONFIG_DEVD=yes
++			;;
++		*)
++			CONFIG_DEVD=no
++			;;
++	esac
++fi
++ if test "x$CONFIG_DEVD" = xyes; then
++  CONFIG_DEVD_TRUE=
++  CONFIG_DEVD_FALSE='#'
++else
++  CONFIG_DEVD_TRUE='#'
++  CONFIG_DEVD_FALSE=
++fi
++
++if test "x$CONFIG_DEVD" = xyes; then
++
++$as_echo "#define CONFIG_DEVD 1" >>confdefs.h
++
++fi
++
++if test "x$CONFIG_UDEV" != xno; then
+ 
+ pkg_failed=no
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for UDEV" >&5
+@@ -25884,11 +25924,12 @@ else
+ $as_echo "yes" >&6; }
+ 	HAVE_LIBUDEV=yes
+ fi
+-if test "x$CONFIG_UDEV" = xauto; then
+-	CONFIG_UDEV="$HAVE_LIBUDEV"
++	if test "x$CONFIG_UDEV" = xauto; then
++		CONFIG_UDEV="$HAVE_LIBUDEV"
+ 
+ $as_echo "#define HAVE_LIBUDEV 1" >>confdefs.h
+ 
++	fi
+ fi
+  if test "x$CONFIG_UDEV" = xyes; then
+   CONFIG_UDEV_TRUE=
+@@ -26132,7 +26173,14 @@ fi
+ 
+ if test "x$SYSTEMD_LOGIND" = xauto; then
+         if test "x$HAVE_DBUS" = xyes -a "x$CONFIG_UDEV" = xyes ; then
+-                SYSTEMD_LOGIND=yes
++            case $host_os in
++                *linux*)
++                        SYSTEMD_LOGIND=yes
++                        ;;
++                *)
++                        SYSTEMD_LOGIND=no
++                        ;;
++            esac
+         else
+                 SYSTEMD_LOGIND=no
+         fi
+@@ -32849,17 +32897,17 @@ DIX_CFLAGS="-DHAVE_DIX_CONFIG_H $XSERVER
+ ac_config_commands="$ac_config_commands sdksyms"
+ 
+ 
+-if test "x$CONFIG_HAL" = xno && test "x$CONFIG_UDEV" = xno; then
++if test "x$CONFIG_HAL" = xno && test "x$CONFIG_UDEV" = xno && test "x$CONFIG_DEVD" = xno; then
+     { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING:
+-             ***********************************************
+-             Neither HAL nor udev backend will be enabled.
++             *****************************************************
++             Neither HAL, devd, nor udev backend will be enabled.
+              Input device hotplugging will not be available!
+-             ***********************************************" >&5
++             *****************************************************" >&5
+ $as_echo "$as_me: WARNING:
+-             ***********************************************
+-             Neither HAL nor udev backend will be enabled.
++             *****************************************************
++             Neither HAL, devd, nor udev backend will be enabled.
+              Input device hotplugging will not be available!
+-             ***********************************************" >&2;}
++             *****************************************************" >&2;}
+ fi
+ 
+ ac_config_files="$ac_config_files Makefile glx/Makefile include/Makefile composite/Makefile damageext/Makefile dbe/Makefile dix/Makefile doc/Makefile doc/dtrace/Makefile man/Makefile fb/Makefile glamor/Makefile record/Makefile config/Makefile mi/Makefile miext/Makefile miext/sync/Makefile miext/damage/Makefile miext/shadow/Makefile miext/rootless/Makefile os/Makefile pseudoramiX/Makefile randr/Makefile render/Makefile xkb/Makefile Xext/Makefile Xi/Makefile xfixes/Makefile exa/Makefile dri3/Makefile present/Makefile hw/Makefile hw/xfree86/Makefile hw/xfree86/Xorg.sh hw/xfree86/common/Makefile hw/xfree86/common/xf86Build.h hw/xfree86/ddc/Makefile hw/xfree86/dixmods/Makefile hw/xfree86/doc/Makefile hw/xfree86/dri/Makefile hw/xfree86/dri2/Makefile hw/xfree86/dri2/pci_ids/Makefile hw/xfree86/drivers/Makefile hw/xfree86/drivers/modesetting/Makefile hw/xfree86/exa/Makefile hw/xfree86/exa/man/Makefile hw/xfree86/fbdevhw/Makefile hw/xfree86/fbdevhw/man/Makefile hw/xfree86/glamor_egl/Makefile hw/xfree86/i2c/Makefile hw/xfree86/int10/Makefile hw/xfree86/loader/Makefile hw/xfree86/man/Makefile hw/xfree86/modes/Makefile hw/xfree86/os-support/Makefile hw/xfree86/os-support/bsd/Makefile hw/xfree86/os-support/bus/Makefile hw/xfree86/os-support/hurd/Makefile hw/xfree86/os-support/misc/Makefile hw/xfree86/os-support/linux/Makefile hw/xfree86/os-support/solaris/Makefile hw/xfree86/os-support/stub/Makefile hw/xfree86/parser/Makefile hw/xfree86/ramdac/Makefile hw/xfree86/shadowfb/Makefile hw/xfree86/vbe/Makefile hw/xfree86/vgahw/Makefile hw/xfree86/x86emu/Makefile hw/xfree86/utils/Makefile hw/xfree86/utils/man/Makefile hw/xfree86/utils/cvt/Makefile hw/xfree86/utils/gtf/Makefile hw/dmx/config/Makefile hw/dmx/config/man/Makefile hw/dmx/doc/Makefile hw/dmx/doxygen/doxygen.conf hw/dmx/doxygen/Makefile hw/dmx/examples/Makefile hw/dmx/input/Makefile hw/dmx/glxProxy/Makefile hw/dmx/Makefile hw/dmx/man/Makefile hw/vfb/Makefile hw/vfb/man/Makefile hw/xnest/Makefile hw/xnest/man/Makefile hw/xwin/Makefile hw/xwin/dri/Makefile hw/xwin/glx/Makefile hw/xwin/man/Makefile hw/xwin/winclipboard/Makefile hw/xquartz/Makefile hw/xquartz/GL/Makefile hw/xquartz/bundle/Makefile hw/xquartz/man/Makefile hw/xquartz/mach-startup/Makefile hw/xquartz/pbproxy/Makefile hw/xquartz/xpr/Makefile hw/kdrive/Makefile hw/kdrive/ephyr/Makefile hw/kdrive/ephyr/man/Makefile hw/kdrive/fake/Makefile hw/kdrive/fbdev/Makefile hw/kdrive/linux/Makefile hw/kdrive/src/Makefile hw/xwayland/Makefile test/Makefile test/xi1/Makefile test/xi2/Makefile xserver.ent xorg-server.pc"
+@@ -33122,6 +33170,10 @@ if test -z "${HAVE_SYSTEMD_DAEMON_TRUE}"
+   as_fn_error $? "conditional \"HAVE_SYSTEMD_DAEMON\" was never defined.
+ Usually this means the macro was only invoked conditionally." "$LINENO" 5
+ fi
++if test -z "${CONFIG_DEVD_TRUE}" && test -z "${CONFIG_DEVD_FALSE}"; then
++  as_fn_error $? "conditional \"CONFIG_DEVD\" was never defined.
++Usually this means the macro was only invoked conditionally." "$LINENO" 5
++fi
+ if test -z "${CONFIG_UDEV_TRUE}" && test -z "${CONFIG_UDEV_FALSE}"; then
+   as_fn_error $? "conditional \"CONFIG_UDEV\" was never defined.
+ Usually this means the macro was only invoked conditionally." "$LINENO" 5
