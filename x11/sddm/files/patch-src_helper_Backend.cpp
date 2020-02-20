@@ -1,5 +1,5 @@
---- src/helper/Backend.cpp.orig	2019-03-13 09:22:35 UTC
-+++ src/helper/Backend.cpp
+--- src/helper/Backend.cpp.orig	2019-03-13 10:22:35.000000000 +0100
++++ src/helper/Backend.cpp	2020-02-16 16:39:53.134892000 +0100
 @@ -29,6 +29,10 @@
  #include <QtCore/QProcessEnvironment>
  
@@ -11,7 +11,7 @@
  
  namespace SDDM {
      Backend::Backend(HelperApp* parent)
-@@ -70,6 +74,19 @@ namespace SDDM {
+@@ -70,6 +74,26 @@
                          .arg(mainConfig.X11.UserAuthFile.get());
                  env.insert(QStringLiteral("XAUTHORITY"), value);
              }
@@ -24,6 +24,13 @@
 +	    if ((lc = login_getpwclass(pw)) != 0) {
 +		setclassenvironment(lc, pw, 1);		/* path variables */
 +		setclassenvironment(lc, pw, 0);		/* non-path variables */
++		login_close(lc);
++		if ((lc = login_getuserclass(pw)) != NULL) {
++		    setclassenvironment(lc, pw, 1);
++		    setclassenvironment(lc, pw, 0);
++		}
++		if (lc != NULL)
++		    login_close(lc);
 +		/* copy all environment variables that are now set */
 +		env.insert(QProcessEnvironment::systemEnvironment());
 +	    }
