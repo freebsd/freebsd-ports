@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 
-# PROVIDE: bgpd
+# PROVIDE: bgpd dynamicrouting
 # REQUIRE: LOGIN abi
 # BEFORE:  securelevel
 # KEYWORD: shutdown
