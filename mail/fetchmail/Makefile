@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME?=	fetchmail
-PORTVERSION=	6.4.1
-PORTREVISION=	1
+PORTVERSION=	6.4.2
 CATEGORIES=	mail
+# The next line is inherited by the fetchmailconf slave port,
+# do NOT replace fetchmail by ${PORTNAME}
 MASTER_SITES=	SF/fetchmail/branch_6.4/
 
 MAINTAINER=	chalpin@cs.wisc.edu
@@ -71,7 +72,7 @@ PATCH_STRIP=	-p1
 
 .if empty(MASTERDIR)
 post-build:
-	${MAKE_CMD} -C ${WRKSRC} check ; { r=$$? ; ( set -x ; cat "${WRKSRC}/test-suite.log" ) ; exit $$r ; }
+	${MAKE_CMD} -C ${WRKSRC} check ; { r=$$? ; ( set -x ; ${CAT} "${WRKSRC}/test-suite.log" ) ; exit $$r ; }
 
 post-install:
 	${INSTALL} -d ${STAGEDIR}/var/run/fetchmail
