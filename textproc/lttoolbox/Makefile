@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
-USES=		autoreconf libtool pathfix pkgconfig
+USES=		autoreconf compiler:c++14-lang libtool pathfix pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
