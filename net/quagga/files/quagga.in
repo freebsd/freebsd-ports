@@ -3,8 +3,8 @@
 # $FreeBSD$
 #
 
-# PROVIDE: quagga
-# REQUIRE: netif routing 
+# PROVIDE: quagga dynamicrouting
+# REQUIRE: netif routing
 # KEYWORD: nojail shutdown
 
 # Add the following line to /etc/rc.conf to enable quagga:
