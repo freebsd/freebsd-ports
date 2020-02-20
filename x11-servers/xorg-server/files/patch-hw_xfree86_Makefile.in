@@ -1,0 +1,14 @@
+* Don't overwrite Xorg binary with Xorg.sh when SUID_WRAPPER_DIR == bindir
+* Instead, relink bin/X to Xorg.wrap rather than to Xorg (which isn't Xorg.sh)
+*
+--- hw/xfree86/Makefile.in.orig	2017-03-16 05:24:43 UTC
++++ hw/xfree86/Makefile.in
+@@ -1156,7 +1156,7 @@ install-exec-hook:
+ @INSTALL_SETUID_TRUE@	chmod u+s $(DESTDIR)$(bindir)/Xorg
+ @SUID_WRAPPER_TRUE@	$(MKDIR_P) $(DESTDIR)$(SUID_WRAPPER_DIR)
+ @SUID_WRAPPER_TRUE@	mv $(DESTDIR)$(bindir)/Xorg $(DESTDIR)$(SUID_WRAPPER_DIR)/Xorg
+-@SUID_WRAPPER_TRUE@	${INSTALL} -m 755 Xorg.sh $(DESTDIR)$(bindir)/Xorg
++@SUID_WRAPPER_TRUE@	(test ! -f $(DESTDIR)$(bindir)/Xorg && ${INSTALL} -m 755 Xorg.sh $(DESTDIR)$(bindir)/Xorg || cd $(DESTDIR)$(bindir) && rm -f X && $(LN_S) Xorg.wrap$(EXEEXT) X)
+ @SUID_WRAPPER_TRUE@	-chown 0 $(DESTDIR)$(SUID_WRAPPER_DIR)/Xorg.wrap && chmod u+s $(DESTDIR)$(SUID_WRAPPER_DIR)/Xorg.wrap
+ 
+ uninstall-local:

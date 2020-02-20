@@ -1,0 +1,14 @@
+* Add a define which will be toggled by configure when devd backend is activated
+*
+--- include/dix-config.h.in.orig	2017-03-15 18:05:25 UTC
++++ include/dix-config.h.in
+@@ -433,6 +433,9 @@
+ /* Support D-Bus */
+ #undef HAVE_DBUS
+ 
++/* Use devd for input hotplug */
++#undef CONFIG_DEVD
++
+ /* Use libudev for input hotplug */
+ #undef CONFIG_UDEV
+ 

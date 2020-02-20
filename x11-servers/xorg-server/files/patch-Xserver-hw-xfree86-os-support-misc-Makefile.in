@@ -1,6 +1,6 @@
 --- hw/xfree86/os-support/misc/Makefile.in.orig	2015-09-23 10:21:18.470900000 +0200
 +++ hw/xfree86/os-support/misc/Makefile.in	2015-09-23 10:22:34.979974000 +0200
-@@ -530,7 +530,8 @@
+@@ -543,7 +543,8 @@
  
  #AM_LDFLAGS = -r
  AM_CPPFLAGS = $(XORG_INCS)

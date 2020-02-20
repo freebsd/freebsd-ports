@@ -1,4 +1,6 @@
---- config/config.c.orig	2016-07-19 17:07:29 UTC
+* Call the devd config backend functions if activated
+*
+--- config/config.c.orig	2017-03-15 18:05:25 UTC
 +++ config/config.c
 @@ -55,6 +55,9 @@ config_init(void)
  #elif defined(CONFIG_WSCONS)

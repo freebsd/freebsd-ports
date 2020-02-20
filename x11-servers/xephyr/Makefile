@@ -16,8 +16,6 @@ MASTERDIR=	${.CURDIR}/../xorg-server
 DESCR=		${.CURDIR}/pkg-descr
 
 SLAVE_PORT=	yes
-OPTIONS_EXCLUDE=DEVD HAL SUID UDEV
-
 USE_XORG=	x11 xcb
 
 CONFIGURE_ARGS+=--enable-xephyr --disable-dmx --disable-xnest --disable-xvfb \

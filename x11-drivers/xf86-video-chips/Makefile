@@ -2,6 +2,7 @@
 
 PORTNAME=	xf86-video-chips
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

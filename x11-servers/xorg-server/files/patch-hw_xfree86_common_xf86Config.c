@@ -1,12 +1,14 @@
---- hw/xfree86/common/xf86Config.c.orig	2016-07-19 17:14:30 UTC
+* Select the devd config backend if it is activated
+*
+--- hw/xfree86/common/xf86Config.c.orig	2017-03-15 18:05:25 UTC
 +++ hw/xfree86/common/xf86Config.c
-@@ -1410,13 +1410,16 @@ checkCoreInputDevices(serverLayoutPtr se
+@@ -1375,13 +1375,16 @@ checkCoreInputDevices(serverLayoutPtr se
      }
  
      if (!xf86Info.forceInputDevices && !(foundPointer && foundKeyboard)) {
 -#if defined(CONFIG_HAL) || defined(CONFIG_UDEV) || defined(CONFIG_WSCONS)
 +#if defined(CONFIG_HAL) || defined(CONFIG_UDEV) || defined(CONFIG_WSCONS) || \
-+		defined(CONFIG_DEVD)
++	defined(CONFIG_DEVD)
          const char *config_backend;
  
  #if defined(CONFIG_HAL)

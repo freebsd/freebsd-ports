@@ -1,0 +1,100 @@
+* generated from patched Makefile.am; revise and regen instead of editing
+*
+* Build the devd config backend if activated
+*
+--- config/Makefile.in.orig	2017-03-16 05:24:43 UTC
++++ config/Makefile.in
+@@ -89,16 +89,18 @@ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-@NEED_DBUS_TRUE@am__append_1 = $(DBUS_CFLAGS)
+-@NEED_DBUS_TRUE@am__append_2 = dbus-core.c
+-@NEED_DBUS_TRUE@am__append_3 = $(DBUS_LIBS)
+-@CONFIG_UDEV_TRUE@am__append_4 = $(UDEV_CFLAGS)
+-@CONFIG_UDEV_TRUE@am__append_5 = udev.c
+-@CONFIG_UDEV_TRUE@am__append_6 = $(UDEV_LIBS)
+-@CONFIG_HAL_TRUE@@CONFIG_UDEV_FALSE@am__append_7 = $(HAL_CFLAGS)
+-@CONFIG_HAL_TRUE@@CONFIG_UDEV_FALSE@am__append_8 = hal.c
+-@CONFIG_HAL_TRUE@@CONFIG_UDEV_FALSE@am__append_9 = $(HAL_LIBS)
+-@CONFIG_HAL_FALSE@@CONFIG_UDEV_FALSE@@CONFIG_WSCONS_TRUE@am__append_10 = wscons.c
++@CONFIG_DEVD_TRUE@am__append_1 = devd.c
++@CONFIG_DEVD_TRUE@am__append_2 = -lusbhid
++@NEED_DBUS_TRUE@am__append_3 = $(DBUS_CFLAGS)
++@NEED_DBUS_TRUE@am__append_4 = dbus-core.c
++@NEED_DBUS_TRUE@am__append_5 = $(DBUS_LIBS)
++@CONFIG_UDEV_TRUE@am__append_6 = $(UDEV_CFLAGS)
++@CONFIG_UDEV_TRUE@am__append_7 = udev.c
++@CONFIG_UDEV_TRUE@am__append_8 = $(UDEV_LIBS)
++@CONFIG_HAL_TRUE@@CONFIG_UDEV_FALSE@am__append_9 = $(HAL_CFLAGS)
++@CONFIG_HAL_TRUE@@CONFIG_UDEV_FALSE@am__append_10 = hal.c
++@CONFIG_HAL_TRUE@@CONFIG_UDEV_FALSE@am__append_11 = $(HAL_LIBS)
++@CONFIG_HAL_FALSE@@CONFIG_UDEV_FALSE@@CONFIG_WSCONS_TRUE@am__append_12 = wscons.c
+ subdir = config
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ac_define_dir.m4 \
+@@ -126,16 +128,18 @@ am__DEPENDENCIES_1 =
+ @CONFIG_UDEV_TRUE@am__DEPENDENCIES_3 = $(am__DEPENDENCIES_1)
+ @CONFIG_HAL_TRUE@@CONFIG_UDEV_FALSE@am__DEPENDENCIES_4 =  \
+ @CONFIG_HAL_TRUE@@CONFIG_UDEV_FALSE@	$(am__DEPENDENCIES_1)
+-libconfig_la_DEPENDENCIES = $(am__DEPENDENCIES_2) \
+-	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_4)
+-am__libconfig_la_SOURCES_DIST = config.c config-backends.h dbus-core.c \
+-	udev.c hal.c wscons.c
+-@NEED_DBUS_TRUE@am__objects_1 = dbus-core.lo
+-@CONFIG_UDEV_TRUE@am__objects_2 = udev.lo
+-@CONFIG_HAL_TRUE@@CONFIG_UDEV_FALSE@am__objects_3 = hal.lo
+-@CONFIG_HAL_FALSE@@CONFIG_UDEV_FALSE@@CONFIG_WSCONS_TRUE@am__objects_4 = wscons.lo
++libconfig_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
++	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_3) \
++	$(am__DEPENDENCIES_4)
++am__libconfig_la_SOURCES_DIST = config.c config-backends.h devd.c \
++	dbus-core.c udev.c hal.c wscons.c
++@CONFIG_DEVD_TRUE@am__objects_1 = devd.lo
++@NEED_DBUS_TRUE@am__objects_2 = dbus-core.lo
++@CONFIG_UDEV_TRUE@am__objects_3 = udev.lo
++@CONFIG_HAL_TRUE@@CONFIG_UDEV_FALSE@am__objects_4 = hal.lo
++@CONFIG_HAL_FALSE@@CONFIG_UDEV_FALSE@@CONFIG_WSCONS_TRUE@am__objects_5 = wscons.lo
+ am_libconfig_la_OBJECTS = config.lo $(am__objects_1) $(am__objects_2) \
+-	$(am__objects_3) $(am__objects_4)
++	$(am__objects_3) $(am__objects_4) $(am__objects_5)
+ libconfig_la_OBJECTS = $(am_libconfig_la_OBJECTS)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+@@ -157,7 +161,7 @@ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__maybe_remake_depfiles = depfiles
+ am__depfiles_remade = ./$(DEPDIR)/config.Plo ./$(DEPDIR)/dbus-core.Plo \
+-	./$(DEPDIR)/hal.Plo ./$(DEPDIR)/udev.Plo \
++	./$(DEPDIR)/devd.Plo ./$(DEPDIR)/hal.Plo ./$(DEPDIR)/udev.Plo \
+ 	./$(DEPDIR)/wscons.Plo
+ am__mv = mv -f
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+@@ -593,12 +597,14 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-AM_CFLAGS = $(DIX_CFLAGS) $(am__append_1) $(am__append_4) \
+-	$(am__append_7)
++AM_CFLAGS = $(DIX_CFLAGS) $(am__append_3) $(am__append_6) \
++	$(am__append_9)
+ noinst_LTLIBRARIES = libconfig.la
+-libconfig_la_SOURCES = config.c config-backends.h $(am__append_2) \
+-	$(am__append_5) $(am__append_8) $(am__append_10)
+-libconfig_la_LIBADD = $(am__append_3) $(am__append_6) $(am__append_9)
++libconfig_la_SOURCES = config.c config-backends.h $(am__append_1) \
++	$(am__append_4) $(am__append_7) $(am__append_10) \
++	$(am__append_12)
++libconfig_la_LIBADD = $(am__append_2) $(am__append_5) $(am__append_8) \
++	$(am__append_11)
+ @CONFIG_UDEV_TRUE@@XORG_TRUE@xorgconfddir = $(datadir)/X11/$(XF86CONFIGDIR)
+ @CONFIG_UDEV_TRUE@@XORG_TRUE@xorgconfd_DATA = 10-quirks.conf
+ EXTRA_DIST = x11-input.fdi fdi2iclass.py 10-quirks.conf
+@@ -658,6 +664,7 @@ distclean-compile:
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/config.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dbus-core.Plo@am__quote@ # am--include-marker
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/devd.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hal.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/udev.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wscons.Plo@am__quote@ # am--include-marker

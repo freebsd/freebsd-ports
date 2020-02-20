@@ -3,6 +3,7 @@
 
 PORTNAME=	xf86-video-scfb
 PORTVERSION=	0.0.5
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
