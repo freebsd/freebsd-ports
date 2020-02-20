@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200220:
+  AFFECTS: users of x11-servers/xorg-server
+  AUTHOR: zeising@FreeBSD.org
+
+  x11-servers/xorg-server has been updated to 1.20.7.
+
+  With this update, xorg-server has switched from using the devd backend to
+  the udev backend for device configuration on FreeBSD 12 and 13.  If you have
+  issues with input devices, please see the install message for details.
+
+  The HAL backend option has been completely removed, as it was deprecated.
+
 20200207:
   AFFECTS: users of security/nss
   AUTHOR: lwhsu@FreeBSD.org
