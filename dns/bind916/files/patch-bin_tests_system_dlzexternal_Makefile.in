@@ -1,0 +1,13 @@
+BIND9 seems to be abusing LDFLAGS here, and it breaks our linker.
+
+--- bin/tests/system/dlzexternal/Makefile.in.orig	2019-06-28 12:33:29 UTC
++++ bin/tests/system/dlzexternal/Makefile.in
+@@ -35,7 +35,7 @@ OBJS =
+ @BIND9_MAKE_RULES@
+ 
+ CFLAGS =	@CFLAGS@ @SO_CFLAGS@
+-SO_LDFLAGS =	@LDFLAGS@ @SO_LDFLAGS@
++SO_LDFLAGS =	@SO_LDFLAGS@
+ 
+ driver.@SO@: ${SO_OBJS}
+ 	${LIBTOOL_MODE_LINK} @SO_LD@ ${SO_LDFLAGS} -o $@ driver.@O@

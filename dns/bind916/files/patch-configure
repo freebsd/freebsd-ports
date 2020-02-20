@@ -1,0 +1,92 @@
+Fixup gssapi and db detection.
+
+--- configure.orig	2020-02-12 20:03:44 UTC
++++ configure
+@@ -17436,27 +17436,9 @@ done
+ 		# problems start to show up.
+ 		saved_libs="$LIBS"
+ 		for TRY_LIBS in \
+-		    "-lgssapi_krb5" \
+-		    "-lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err" \
+-		    "-lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err -lresolv" \
+-		    "-lgssapi" \
+-		    "-lgssapi -lkrb5 -ldes -lcrypt -lasn1 -lroken -lcom_err" \
+-		    "-lgssapi -lkrb5 -lcrypt -lasn1 -lroken -lcom_err" \
+-		    "-lgssapi -lkrb5 -lgssapi_krb5 -lcrypt -lasn1 -lroken -lcom_err" \
+-		    "-lgssapi -lkrb5 -lhx509 -lcrypt -lasn1 -lroken -lcom_err" \
+-		    "-lgss -lkrb5"
++		    "$($KRB5CONFIG gssapi --libs)"; \
+ 		do
+-		    # Note that this does not include $saved_libs, because
+-		    # on FreeBSD machines this configure script has added
+-		    # -L/usr/local/lib to LIBS, which can make the
+-		    # -lgssapi_krb5 test succeed with shared libraries even
+-		    # when you are trying to build with KTH in /usr/lib.
+-		    if test "/usr" = "$use_gssapi"
+-		    then
+-			    LIBS="$TRY_LIBS $ISC_OPENSSL_LIBS"
+-		    else
+-			    LIBS="-L$use_gssapi/lib $TRY_LIBS $ISC_OPENSSL_LIBS"
+-		    fi
++		    LIBS="$TRY_LIBS"
+ 		    { $as_echo "$as_me:${as_lineno-$LINENO}: checking linking as $TRY_LIBS" >&5
+ $as_echo_n "checking linking as $TRY_LIBS... " >&6; }
+ 		    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -17499,47 +17481,7 @@ $as_echo "no" >&6; } ;;
+ 		no) as_fn_error $? "could not determine proper GSSAPI linkage" "$LINENO" 5 ;;
+ 		esac
+ 
+-		#
+-		# XXXDCL Major kludge.  Tries to cope with KTH in /usr/lib
+-		# but MIT in /usr/local/lib and trying to build with KTH.
+-		# /usr/local/lib can end up earlier on the link lines.
+-		# Like most kludges, this one is not only inelegant it
+-		# is also likely to be the wrong thing to do at least as
+-		# many times as it is the right thing.  Something better
+-		# needs to be done.
+-		#
+-		if test "/usr" = "$use_gssapi" -a \
+-			-f /usr/local/lib/libkrb5.a; then
+-		    FIX_KTH_VS_MIT=yes
+-		fi
+-
+-		case "$FIX_KTH_VS_MIT" in
+-		yes)
+-		    case "$enable_static_linking" in
+-		    yes) gssapi_lib_suffix=".a"  ;;
+-		    *)   gssapi_lib_suffix=".so" ;;
+-		    esac
+-
+-		    for lib in $LIBS; do
+-			case $lib in
+-			-L*)
+-			    ;;
+-			-l*)
+-			    new_lib=`echo $lib |
+-				     sed -e s%^-l%$use_gssapi/lib/lib% \
+-					 -e s%$%$gssapi_lib_suffix%`
+-			    NEW_LIBS="$NEW_LIBS $new_lib"
+-			    ;;
+-			*)
+-			   as_fn_error $? "KTH vs MIT Kerberos confusion!" "$LINENO" 5
+-			    ;;
+-			esac
+-		    done
+-		    LIBS="$NEW_LIBS"
+-		    ;;
+-		esac
+-
+-		DST_GSSAPI_INC="-I$use_gssapi/include"
++		DST_GSSAPI_INC="$($KRB5CONFIG gssapi --cflags)"
+ 		DNS_GSSAPI_LIBS="$LIBS"
+ 
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: using GSSAPI from $use_gssapi/lib and $use_gssapi/include" >&5
+@@ -23046,7 +22988,7 @@ $as_echo "" >&6; }
+ 			# Check other locations for includes.
+ 			# Order is important (sigh).
+ 
+-			bdb_incdirs="/db53 /db51 /db48 /db47 /db46 /db45 /db44 /db43 /db42 /db41 /db4 /db"
++			bdb_incdirs="/db6 /db5 /db48"
+ 			# include a blank element first
+ 			for d in "" $bdb_incdirs
+ 			do
