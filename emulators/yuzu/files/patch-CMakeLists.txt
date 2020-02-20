@@ -1,13 +1,19 @@
 yuzu (Qt) currently needs SDL for input
 
---- CMakeLists.txt.orig	2020-02-14 19:40:20 UTC
+--- CMakeLists.txt.orig	2020-02-19 21:13:50 UTC
 +++ CMakeLists.txt
-@@ -157,13 +157,16 @@ if (ENABLE_SDL2)
+@@ -157,19 +157,21 @@ if (ENABLE_SDL2)
          target_include_directories(SDL2 INTERFACE "${SDL2_INCLUDE_DIR}")
      else()
          find_package(SDL2 REQUIRED)
--        include_directories(${SDL2_INCLUDE_DIRS})
 -
+-        # Some installations don't set SDL2_LIBRARIES
+-        if("${SDL2_LIBRARIES}" STREQUAL "")
+-            message(WARNING "SDL2_LIBRARIES wasn't set, manually setting to SDL2::SDL2")
+-            set(SDL2_LIBRARIES "SDL2::SDL2")
+-        endif()
+-
+-        include_directories(${SDL2_INCLUDE_DIRS})
 -        add_library(SDL2 INTERFACE)
 -        target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARIES}")
      endif()
@@ -17,8 +23,13 @@ yuzu (Qt) currently needs SDL for input
 +endif()
 +
 +if (SDL2_FOUND)
-+    include_directories(${SDL2_INCLUDE_DIRS})
++    # Some installations don't set SDL2_LIBRARIES
++    if("${SDL2_LIBRARIES}" STREQUAL "")
++        message(WARNING "SDL2_LIBRARIES wasn't set, manually setting to SDL2::SDL2")
++        set(SDL2_LIBRARIES "SDL2::SDL2")
++    endif()
 +
++    include_directories(${SDL2_INCLUDE_DIRS})
 +    add_library(SDL2 INTERFACE)
 +    target_link_libraries(SDL2 INTERFACE "${SDL2_LIBRARIES}")
  endif()
