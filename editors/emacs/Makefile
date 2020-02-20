@@ -113,15 +113,15 @@ OPTIONS_RADIO_SOUND=		ALSA OSS
 OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
 .if ${FLAVOR:U} == nox
 OPTIONS_EXCLUDE=		ALSA CAIRO DBUS FCITXPATCH GCONF GFILE GIF \
-				GSETTINGS GTK2 GTK3 JPEG LCMS2 M17N MAGICK MOTIF\
-				OSS OTF PNG SCROLLBARS SVG TIFF XAW XAW3D XFT \
-				XIM XPM XWIDGETS
+				GSETTINGS GTK2 GTK3 JPEG LCMS2 M17N MAGICK \
+				MOTIF OSS OTF PNG SCROLLBARS SVG TIFF XAW XAW3D \
+				XFT XIM XPM XWIDGETS
 .endif
 OPTIONS_SUB=			YES
 
 ACL_DESC=		Access control list support
 CAIRO_DESC=		Experimental Cairo library support [implies PNG, XFT]
-FCITXPATCH_DESC=	Patch to workaround issue with Fcitx input method
+FCITXPATCH_DESC=	Patch to pass C-Space to Fcitx input method
 FILENOTIFY_DESC=	File notification support
 GFILE_DESC=		File notification via gfile
 GRAPHICS_DESC=		Graphics support
@@ -211,7 +211,8 @@ XFT_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 XFT_USE=			XORG=xft,xrender
 XFT_CONFIGURE_WITH=		xft
 XIM_CONFIGURE_WITH=		xim
-XML_USES=			gnome # portlint complains, but use for nox
+# keep XML_USES=gnome, because nox flavor does not have USES=gnome
+XML_USES=			gnome
 XML_USE=			GNOME=libxml2
 XML_CONFIGURE_WITH=		xml2
 XPM_USE=			XORG=xpm
