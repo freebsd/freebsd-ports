@@ -1,0 +1,18 @@
+Heimer is a desktop application for creating mind maps and other
+suitable diagrams.  It is written in Qt.
+
+Features:
+- Easy-to-use UI
+- Very fast
+- Zoom in/out/fit
+- Zoom with mouse wheel
+- Save/load in XML-based .ALZ-files
+- Export to PNG images
+- Quickly add node text and edge labels
+- Nice animations
+- Full undo/redo
+- Adjustable grid
+- Translations in English, Finnish, French, Italian
+- Forever 100% free
+
+WWW: https://github.com/juzzlin/Heimer
