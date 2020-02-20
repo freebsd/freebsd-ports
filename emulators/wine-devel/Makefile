@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	5.1
-PORTREVISION=	1
+DISTVERSION=	5.2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -27,8 +26,7 @@ LIB_DEPENDS=	libFAudio.so:audio/faudio \
 
 USES=		bison desktop-file-utils gmake localbase shebangfix tar:xz
 
-CONFLICTS_INSTALL=	wine-[0-9]* wine-staging-[0-9]* i386-wine-[0-9]* \
-			i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*
+CONFLICTS_INSTALL=	wine-[0-9]* i386-wine-[0-9]* i386-wine-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose \
@@ -56,7 +54,7 @@ SHEBANG_FILES=	tools/make_requests tools/winemaker/winemaker \
 
 SUB_FILES=	pkg-message
 
-PORTDATA=	l_intl.nls wine.inf
+PORTDATA=	wine.inf
 
 OPTIONS_DEFINE=	CUPS DOCS DOSBOX GCC GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL STAGING V4L VKD3D VULKAN WINEMAKER X11 GECKO MONO
 OPTIONS_DEFAULT=GCC GNUTLS X11
