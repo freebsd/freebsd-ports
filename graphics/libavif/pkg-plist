@@ -7,4 +7,4 @@ lib/cmake/libavif/libavif-config-version.cmake
 lib/cmake/libavif/libavif-config.cmake
 lib/libavif.so
 lib/libavif.so.0
-lib/libavif.so.0.1.5
+lib/libavif.so.0.1.6
