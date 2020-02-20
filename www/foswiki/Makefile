@@ -64,7 +64,7 @@ post-patch:
 	@cd ${WRKSRC} && \
 		${REINPLACE_CMD} -i "" \
 		-e "s|^#[[:space:]]*\(.*\)/home/httpd/foswiki|\1${WWWDIR}|g" \
-		-e "s|^#[[:space:]]*\(.*\)\(\= \'/foswiki/\)|\1\2|g" \
+		-e "s|^#[[:space:]]*\(.*\)\(= '/foswiki/\)|\1\2|g" \
 		-e "s|/bin/grep|/usr/bin/grep|g" \
 		lib/Foswiki.spec
 	@cd ${WRKSRC} && \
