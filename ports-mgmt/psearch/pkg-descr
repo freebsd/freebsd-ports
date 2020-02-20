@@ -4,4 +4,4 @@ It allows you to use regular expressions, and has support for searching
 the long description (pkg-descr files), as well as inverse matches that
 allow filtering of ports.
 
-WWW: http://www.maxlor.com/freebsd-scripts.shtml
+WWW: https://github.com/maxlor/psearch
