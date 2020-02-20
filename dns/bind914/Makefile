@@ -29,6 +29,9 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	End of life, please migrate to a newer version of BIND9
+EXPIRATION_DATE=	2020-04-30
+
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 .if !defined(BIND_TOOLS_SLAVE)
 RUN_DEPENDS=	bind-tools>0:dns/bind-tools
@@ -36,7 +39,7 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 
 USES=	compiler:c11 cpe libedit pkgconfig ssl
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.14.10
+ISCVERSION=	9.14.11
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
