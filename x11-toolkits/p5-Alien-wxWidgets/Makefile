@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--wxWidgets-build=0 --wxWidgets-unicode=1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/wx-config/${WX_CONFIG:T}/' ${WRKSRC}/Build.PL
-	@${REINPLACE_CMD} -e "s/\'wx-config/\'${WX_CONFIG:T}/" -e "s/lc_r/lpthread/" \
+	@${REINPLACE_CMD} -e "s/'wx-config/'${WX_CONFIG:T}/" -e "s/lc_r/lpthread/" \
 		${WRKSRC}/inc/My/Build/Any_wx_config.pm
 
 post-install:
