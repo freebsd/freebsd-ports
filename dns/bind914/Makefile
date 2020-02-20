@@ -3,28 +3,14 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
-.if defined(BIND_TOOLS_SLAVE)
-# dns/bind-tools here
 PORTREVISION=	0
-.else
-# dns/bind914 here
-PORTREVISION=	0
-.endif
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
-.if defined(BIND_TOOLS_SLAVE)
-PKGNAMESUFFIX=	-tools
-.else
 PKGNAMESUFFIX=	914
-.endif
 DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
-.if defined(BIND_TOOLS_SLAVE)
-COMMENT=	Command line tools from BIND: delv, dig, host, nslookup...
-.else
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
-.endif
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
@@ -33,9 +19,7 @@ DEPRECATED=	End of life, please migrate to a newer version of BIND9
 EXPIRATION_DATE=	2020-04-30
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
-.if !defined(BIND_TOOLS_SLAVE)
 RUN_DEPENDS=	bind-tools>0:dns/bind-tools
-.endif
 
 USES=	compiler:c11 cpe libedit pkgconfig ssl
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
@@ -53,13 +37,10 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-readline="-L${LOCALBASE}/lib -ledit" \
 		--with-dlopen=yes \
 		--with-openssl=${OPENSSLBASE} \
+		--without-python \
 		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
-.if defined(BIND_TOOLS_SLAVE)
-CONFIGURE_ARGS+=	--disable-shared
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-bind-tools
-.else
 USE_RC_SUBR=	named
 SUB_FILES=	pkg-message named.conf
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-no-bind-tools
@@ -67,14 +48,13 @@ EXTRA_PATCHES=	${PATCHDIR}/extrapatch-no-bind-tools
 PORTDOCS=	*
 
 CONFLICTS=	bind911 bind912 bind13 bind916 bind9-devel
-.endif	# BIND_TOOLS_SLAVE
 
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFAULT=	DLZ_FILESYSTEM GSSAPI_NONE IDN JSON \
-			LMDB PYTHON SIGCHASE TCP_FASTOPEN
+			LMDB SIGCHASE TCP_FASTOPEN
 OPTIONS_DEFINE=		DNSTAP DOCS FIXED_RRSET IDN JSON LARGE_FILE \
-			LMDB MINCACHE PORTREVISION PYTHON QUERYTRACE \
+			LMDB MINCACHE PORTREVISION QUERYTRACE \
 			SIGCHASE START_LATE TCP_FASTOPEN TUNING_LARGE GEOIP
 
 OPTIONS_RADIO=	CRYPTO
@@ -86,14 +66,6 @@ OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 
 OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
-
-.if defined(BIND_TOOLS_SLAVE)
-OPTIONS_EXCLUDE=	DOCS ${OPTIONS_GROUP_DLZ} \
-			MINCACHE PORTREVISION QUERYTRACE LMDB DNSTAP \
-			START_LATE TUNING_LARGE TCP_FASTOPEN GEOIP
-.else
-OPTIONS_EXCLUDE=	PYTHON
-.endif	# BIND_TOOLS_SLAVE
 
 OPTIONS_SUB=	yes
 
@@ -116,7 +88,6 @@ LMDB_DESC=		Use LMDB for zone management
 MINCACHE_DESC=		Use the mincachettl patch
 NATIVE_PKCS11_DESC=	Use PKCS\#11 native API (**READ HELP**)
 PORTREVISION_DESC=	Show PORTREVISION in the version string
-PYTHON_DESC=		Build with Python utilities
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
 START_LATE_DESC=	Start BIND late in the boot process (see help)
@@ -179,11 +150,6 @@ MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 
 NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
 
-PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply@${PY_FLAVOR}
-PYTHON_CONFIGURE_WITH=	python=${PYTHON_CMD}
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply@${PY_FLAVOR}
-PYTHON_USES=	python
-
 QUERYTRACE_CONFIGURE_ENABLE=	querytrace
 
 SIGCHASE_CONFIGURE_ON=	STD_CDEFINES="-DDIG_SIGCHASE=1"
@@ -227,7 +193,6 @@ post-patch:
 		${WRKSRC}/bin/${FILE}
 .endfor
 
-.if !defined(BIND_TOOLS_SLAVE)
 .  if ${PORTREVISION:N0}
 post-patch-PORTREVISION-on:
 	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
@@ -256,11 +221,5 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES* ${WRKSRC}/HISTORY.md \
 		${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-.else
-
-# Can't use USE_PYTHON=autoplist
-post-install-PYTHON-on:
-	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -type f | ${SED} -e 's|${STAGEDIR}||' >> ${TMPPLIST}
-.endif	# BIND_TOOLS_SLAVE
 
 .include <bsd.port.post.mk>
