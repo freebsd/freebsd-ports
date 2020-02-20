@@ -14,9 +14,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/lib/IO/Socket/SSL.pod
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Net-SSLeay>=1.59:security/p5-Net-SSLeay \
 		p5-Mozilla-CA>=20130114:www/p5-Mozilla-CA
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5 shebangfix
