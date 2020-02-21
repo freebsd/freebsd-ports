@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-DISTVERSION=	2.7
+DISTVERSION=	2.7.1
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
