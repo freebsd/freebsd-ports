@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	cfr
-DISTVERSION=	0.148
+DISTVERSION=	0.149
 CATEGORIES=	devel java
-MASTER_SITES=	https://www.benf.org/other/cfr/ \
-		http://www.benf.org/other/cfr/
+MASTER_SITES=	http://www.benf.org/other/cfr/ \
+		https://www.benf.org/other/cfr/ \
+		https://github.com/leibnitz27/cfr/releases/download/${DISTVERSION}/
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
