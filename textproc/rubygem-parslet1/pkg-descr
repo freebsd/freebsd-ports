@@ -1,0 +1,12 @@
+Parslet is a small Ruby library for constructing parsers in the PEG (Parsing
+Expression Grammar) fashion.
+
+Parslet makes developing complex parsers easy. It does so by
+- providing the best error reporting possible
+- not generating reams of code for you to debug
+
+Parslet takes the long way around to make your job easier. It allows for
+incremental language construction. Often, you start out small, implementing the
+atoms of your language first; parslet takes pride in making this possible.
+
+WWW: https://kschiess.github.io/parslet/
