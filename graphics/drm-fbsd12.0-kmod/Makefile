@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drm-fbsd12.0-kmod
-PORTVERSION=	4.16.g20200115
+PORTVERSION=	4.16.g20200221
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -28,7 +28,7 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-drm
-GH_TAGNAME=	f3206bf
+GH_TAGNAME=	99da0ba
 
 .include <bsd.port.options.mk>
 
