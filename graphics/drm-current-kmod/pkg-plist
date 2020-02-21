@@ -1753,7 +1753,6 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/resource_ext.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/sched/clock.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/sched/signal.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/shmem_fs.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/stat.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/stddef.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/suspend.h
@@ -1828,6 +1827,7 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/llist.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/mem_encrypt.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/mempolicy.h
+%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/mm_types.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/mmu_context.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/mmu_notifier.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/mod_devicetable.h
@@ -1863,6 +1863,7 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/sched.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/sched/mm.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/seqlock.h
+%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/shmem_fs.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/shrinker.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/sort.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/statfs.h
