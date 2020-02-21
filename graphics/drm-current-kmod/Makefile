@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drm-current-kmod
-PORTVERSION=	4.16.g20200115
+PORTVERSION=	4.16.g20200221
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -34,11 +34,11 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-drm
-GH_TAGNAME=	d7cd400
+GH_TAGNAME=	ea88121
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300029
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300052
 IGNORE=		not supported on older CURRENT, no kernel support
 .endif
 .if ${OPSYS} != FreeBSD
