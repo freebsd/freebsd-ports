@@ -1,0 +1,5 @@
+PartD provides key-value byte store with appendable values. It stores key-value
+pairs. Values are raw bytes. We append on old values. PartD excels at shuffling
+operations.
+
+WWW: https://github.com/dask/partd
