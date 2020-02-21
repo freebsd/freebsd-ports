@@ -38,7 +38,6 @@
 @sample %%ETCDIR%%/lists/bannedsearchoveridelist.sample
 @sample %%ETCDIR%%/lists/bannedsiteiplist.sample
 @sample %%ETCDIR%%/lists/bannedsitelist.sample
-@sample %%ETCDIR%%/lists/bannedsitelistwithbypass.sample
 @sample %%ETCDIR%%/lists/bannedsslsiteiplist.sample
 @sample %%ETCDIR%%/lists/bannedsslsitelist.sample
 @sample %%ETCDIR%%/lists/bannedurllist.sample
@@ -48,13 +47,14 @@
 %%SCANNERS%%@sample %%ETCDIR%%/lists/contentscanners/exceptionvirussiteiplist.sample
 %%SCANNERS%%@sample %%ETCDIR%%/lists/contentscanners/exceptionvirussitelist.sample
 %%SCANNERS%%@sample %%ETCDIR%%/lists/contentscanners/exceptionvirusurllist.sample
+@sample %%ETCDIR%%/lists/domainsnobypass.sample
 @sample %%ETCDIR%%/lists/embededreferersiteiplist.sample
 @sample %%ETCDIR%%/lists/embededreferersitelist.sample
 @sample %%ETCDIR%%/lists/embededrefererurllist.sample
 @sample %%ETCDIR%%/lists/exceptionclientlist.sample
 @sample %%ETCDIR%%/lists/exceptionextensionlist.sample
-@sample %%ETCDIR%%/lists/exceptionfilesitelist.sample
 @sample %%ETCDIR%%/lists/exceptionfilesiteiplist.sample
+@sample %%ETCDIR%%/lists/exceptionfilesitelist.sample
 @sample %%ETCDIR%%/lists/exceptionfileurllist.sample
 @sample %%ETCDIR%%/lists/exceptioniplist.sample
 @sample %%ETCDIR%%/lists/exceptionmimetypelist.sample
@@ -72,6 +72,7 @@
 @sample %%ETCDIR%%/lists/greysslsitelist.sample
 @sample %%ETCDIR%%/lists/greyurllist.sample
 @sample %%ETCDIR%%/lists/headerregexplist.sample
+@sample %%ETCDIR%%/lists/ipnobypass.sample
 @sample %%ETCDIR%%/lists/localbannedsearchlist.sample
 @sample %%ETCDIR%%/lists/localbannedsiteiplist.sample
 @sample %%ETCDIR%%/lists/localbannedsitelist.sample
@@ -90,6 +91,9 @@
 @sample %%ETCDIR%%/lists/logsiteiplist.sample
 @sample %%ETCDIR%%/lists/logsitelist.sample
 @sample %%ETCDIR%%/lists/logurllist.sample
+@sample %%ETCDIR%%/lists/newbannedphraselist.sample
+@sample %%ETCDIR%%/lists/newexceptionphraselist.sample
+@sample %%ETCDIR%%/lists/newweightedphraselist.sample
 @sample %%ETCDIR%%/lists/nocheckcertsiteiplist.sample
 @sample %%ETCDIR%%/lists/nocheckcertsitelist.sample
 %%ETCDIR%%/lists/phraselists/badwords/weighted_dutch
@@ -99,15 +103,26 @@
 %%ETCDIR%%/lists/phraselists/badwords/weighted_spanish
 %%ETCDIR%%/lists/phraselists/chat/weighted
 %%ETCDIR%%/lists/phraselists/chat/weighted_italian
+%%ETCDIR%%/lists/phraselists/chinesebig5/pornography/weighted
+%%ETCDIR%%/lists/phraselists/chinesegb2312/pornography/weighted
 %%ETCDIR%%/lists/phraselists/conspiracy/weighted
+%%ETCDIR%%/lists/phraselists/danish/goodphrases/weighted_general
+%%ETCDIR%%/lists/phraselists/danish/pornography/weighted
 %%ETCDIR%%/lists/phraselists/domainsforsale/weighted
 %%ETCDIR%%/lists/phraselists/drugadvocacy/weighted
+%%ETCDIR%%/lists/phraselists/dutch/badwords/weighted
+%%ETCDIR%%/lists/phraselists/dutch/goodphrases/weighted_general
+%%ETCDIR%%/lists/phraselists/dutch/pornography/weighted
 %%ETCDIR%%/lists/phraselists/forums/weighted
+%%ETCDIR%%/lists/phraselists/french/badwords/weighted
+%%ETCDIR%%/lists/phraselists/french/pornography/weighted
 %%ETCDIR%%/lists/phraselists/gambling/banned
 %%ETCDIR%%/lists/phraselists/gambling/banned_portuguese
 %%ETCDIR%%/lists/phraselists/gambling/weighted
 %%ETCDIR%%/lists/phraselists/gambling/weighted_portuguese
 %%ETCDIR%%/lists/phraselists/games/weighted
+%%ETCDIR%%/lists/phraselists/german/badwords/weighted
+%%ETCDIR%%/lists/phraselists/german/pornography/weighted
 %%ETCDIR%%/lists/phraselists/goodphrases/exception
 %%ETCDIR%%/lists/phraselists/goodphrases/exception_email
 %%ETCDIR%%/lists/phraselists/goodphrases/weighted_general
@@ -128,14 +143,23 @@
 %%ETCDIR%%/lists/phraselists/intolerance/banned_portuguese
 %%ETCDIR%%/lists/phraselists/intolerance/weighted
 %%ETCDIR%%/lists/phraselists/intolerance/weighted_portuguese
+%%ETCDIR%%/lists/phraselists/italian/badwords/weighted
+%%ETCDIR%%/lists/phraselists/italian/chat/weighted
+%%ETCDIR%%/lists/phraselists/italian/pornography/weighted
+%%ETCDIR%%/lists/phraselists/japanese/pornography/weighted
 %%ETCDIR%%/lists/phraselists/legaldrugs/weighted
+%%ETCDIR%%/lists/phraselists/malay/goodphrases/weighted_general
+%%ETCDIR%%/lists/phraselists/malay/pornography/weighted
 %%ETCDIR%%/lists/phraselists/malware/weighted
 %%ETCDIR%%/lists/phraselists/music/weighted
 %%ETCDIR%%/lists/phraselists/news/weighted
+%%ETCDIR%%/lists/phraselists/norwegian/pornography/weighted
 %%ETCDIR%%/lists/phraselists/nudism/weighted
 %%ETCDIR%%/lists/phraselists/peer2peer/weighted
 %%ETCDIR%%/lists/phraselists/personals/weighted
 %%ETCDIR%%/lists/phraselists/personals/weighted_portuguese
+%%ETCDIR%%/lists/phraselists/polish/goodphrases/weighted_general
+%%ETCDIR%%/lists/phraselists/polish/pornography/weighted
 %%ETCDIR%%/lists/phraselists/pornography/banned
 %%ETCDIR%%/lists/phraselists/pornography/banned_portuguese
 %%ETCDIR%%/lists/phraselists/pornography/weighted
@@ -154,13 +178,53 @@
 %%ETCDIR%%/lists/phraselists/pornography/weighted_russian_utf8
 %%ETCDIR%%/lists/phraselists/pornography/weighted_spanish
 %%ETCDIR%%/lists/phraselists/pornography/weighted_swedish
+%%ETCDIR%%/lists/phraselists/portuguese/badwords/weighted
+%%ETCDIR%%/lists/phraselists/portuguese/gambling/banned
+%%ETCDIR%%/lists/phraselists/portuguese/gambling/weighted
+%%ETCDIR%%/lists/phraselists/portuguese/goodphrases/weighted_general
+%%ETCDIR%%/lists/phraselists/portuguese/gore/weighted
+%%ETCDIR%%/lists/phraselists/portuguese/illegaldrugs/weighted
+%%ETCDIR%%/lists/phraselists/portuguese/intolerance/banned
+%%ETCDIR%%/lists/phraselists/portuguese/intolerance/weighted
+%%ETCDIR%%/lists/phraselists/portuguese/personals/banned
+%%ETCDIR%%/lists/phraselists/portuguese/personals/weighted
+%%ETCDIR%%/lists/phraselists/portuguese/pornography/weighted
+%%ETCDIR%%/lists/phraselists/portuguese/violence/weighted
+%%ETCDIR%%/lists/phraselists/portuguese/weapons/weighted
 %%ETCDIR%%/lists/phraselists/proxies/weighted
 %%ETCDIR%%/lists/phraselists/rta/banned
+%%ETCDIR%%/lists/phraselists/russian-1251/pornography/weighted
+%%ETCDIR%%/lists/phraselists/russian-koi8-r/pornography/weighted
 %%ETCDIR%%/lists/phraselists/safelabel/banned
 %%ETCDIR%%/lists/phraselists/secretsocieties/weighted
+%%ETCDIR%%/lists/phraselists/spanish/badwords/weighted
+%%ETCDIR%%/lists/phraselists/spanish/pornography/weighted
 %%ETCDIR%%/lists/phraselists/sport/weighted
+%%ETCDIR%%/lists/phraselists/swedish/goodphrases/weighted_general
+%%ETCDIR%%/lists/phraselists/swedish/pornography/weighted
 %%ETCDIR%%/lists/phraselists/translation/weighted
 %%ETCDIR%%/lists/phraselists/travel/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/badwords/banned
+%%ETCDIR%%/lists/phraselists/ukenglish/badwords/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/chat/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/drugadvocacy/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/gambling/banned
+%%ETCDIR%%/lists/phraselists/ukenglish/gambling/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/games/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/goodphrases/exception_email
+%%ETCDIR%%/lists/phraselists/ukenglish/goodphrases/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/goodphrases/weighted_news
+%%ETCDIR%%/lists/phraselists/ukenglish/gore/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/illegaldrugs/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/intolerance/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/nudism/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/personals/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/pornography/banned
+%%ETCDIR%%/lists/phraselists/ukenglish/pornography/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/proxies/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/violence/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/warezhacking/weighted
+%%ETCDIR%%/lists/phraselists/ukenglish/weapons/weighted
 %%ETCDIR%%/lists/phraselists/upstreamfilter/weighted
 %%ETCDIR%%/lists/phraselists/violence/weighted
 %%ETCDIR%%/lists/phraselists/violence/weighted_portuguese
@@ -173,6 +237,7 @@
 @sample %%ETCDIR%%/lists/refererexceptionurllist.sample
 @sample %%ETCDIR%%/lists/searchregexplist.sample
 @sample %%ETCDIR%%/lists/sslsiteregexplist.sample
+@sample %%ETCDIR%%/lists/urlnobypass.sample
 @sample %%ETCDIR%%/lists/urlredirectregexplist.sample
 @sample %%ETCDIR%%/lists/urlregexplist.sample
 @sample %%ETCDIR%%/lists/weightedphraselist.sample
