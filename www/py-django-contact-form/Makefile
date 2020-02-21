@@ -21,6 +21,9 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+# django-contact-form 1.8+ requires Django 2.2+
+PORTSCOUT=	limit:^1\.7\.
+
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} runtests.py
 
