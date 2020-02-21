@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hikari
-DISTVERSION=	1.0.0-alpha3
+DISTVERSION=	1.0.0-alpha4
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://acmelabs.space/~raichoo/
 
@@ -30,7 +30,7 @@ PLIST_FILES=	"${MAYBE_SUID}bin/${PORTNAME}" \
 PORTEXAMPLES=	${PORTNAME}.conf
 
 OPTIONS_DEFINE=		EXAMPLES SUID X11
-OPTIONS_DEFAULT=	SUID
+OPTIONS_DEFAULT=	SUID X11
 
 SUID_DESC=	setuid bit on binaries (required for DRM and PAM)
 
