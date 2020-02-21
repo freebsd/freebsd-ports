@@ -168,17 +168,17 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
  
  // Linux, Android
  #define MY_EXTERN_C    extern "C"
---- IGC/GenISAIntrinsics/GenIntrinsics.h.orig	2019-11-27 01:05:20 UTC
+--- IGC/GenISAIntrinsics/GenIntrinsics.h.orig	2020-02-10 06:06:31 UTC
 +++ IGC/GenISAIntrinsics/GenIntrinsics.h
-@@ -59,7 +59,7 @@ namespace GenISAIntrinsic {
-   /// using iAny, fAny, vAny, or iPTRAny).  For a declaration of an overloaded
-   /// intrinsic, Tys must provide exactly one type for each overloaded type in
-   /// the intrinsic.
+@@ -67,7 +67,7 @@ namespace GenISAIntrinsic {
+   /// Thus the type array should two elements:
+   ///    Type Ts[2]{int2, int2}: to resolve to the first instance.
+   ///    Type Ts[2]{int4, int4}: to resolve to the second.
 -#if defined(ANDROID) || defined(__linux__)
 +#if defined(__GNUC__)
-   __attribute__ ((visibility ("default"))) Function *getDeclaration(Module *M, ID id, ArrayRef<Type*> Tys = None);
+   __attribute__ ((visibility ("default"))) Function *getDeclaration(Module *M, ID id, ArrayRef<Type*> OverloadedTys = None);
  #else
-   Function *getDeclaration(Module *M, ID id, ArrayRef<Type*> Tys = None);
+   Function *getDeclaration(Module *M, ID id, ArrayRef<Type*> OverloadedTys = None);
 --- IGC/OCLFE/igd_fcl_mcl/source/clang_tb.cpp.orig	2019-11-27 01:05:20 UTC
 +++ IGC/OCLFE/igd_fcl_mcl/source/clang_tb.cpp
 @@ -65,9 +65,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
