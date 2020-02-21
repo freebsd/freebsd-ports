@@ -3,7 +3,7 @@ bin/ghci
 bin/ghc-pkg
 bin/runhaskell
 bin/runghc
-%%DOCS%%bin/haddock-ghc-%%GHC_VERSION%%
+bin/haddock-ghc-%%GHC_VERSION%%
 bin/hp2ps
 bin/hpc
 bin/hsc2hs
