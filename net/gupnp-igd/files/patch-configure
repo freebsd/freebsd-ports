@@ -1,0 +1,61 @@
+--- configure.orig	2017-11-20 16:27:28 UTC
++++ configure
+@@ -13055,12 +13055,12 @@ if test -n "$LIBGUPNP_CFLAGS"; then
+     pkg_cv_LIBGUPNP_CFLAGS="$LIBGUPNP_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.0 gupnp-1.0 >= 0.18 gthread-2.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.0 gupnp-1.0 >= 0.18 gthread-2.0") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.2 gupnp-1.2 >= 0.18 gthread-2.0\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.2 gupnp-1.2 >= 0.18 gthread-2.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBGUPNP_CFLAGS=`$PKG_CONFIG --cflags "glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.0 gupnp-1.0 >= 0.18 gthread-2.0" 2>/dev/null`
++  pkg_cv_LIBGUPNP_CFLAGS=`$PKG_CONFIG --cflags "glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.2 gupnp-1.2 >= 0.18 gthread-2.0" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -13072,12 +13072,12 @@ if test -n "$LIBGUPNP_LIBS"; then
+     pkg_cv_LIBGUPNP_LIBS="$LIBGUPNP_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.0 gupnp-1.0 >= 0.18 gthread-2.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.0 gupnp-1.0 >= 0.18 gthread-2.0") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.2 gupnp-1.2 >= 0.18 gthread-2.0\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.2 gupnp-1.2 >= 0.18 gthread-2.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBGUPNP_LIBS=`$PKG_CONFIG --libs "glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.0 gupnp-1.0 >= 0.18 gthread-2.0" 2>/dev/null`
++  pkg_cv_LIBGUPNP_LIBS=`$PKG_CONFIG --libs "glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.2 gupnp-1.2 >= 0.18 gthread-2.0" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -13098,14 +13098,14 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        LIBGUPNP_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.0 gupnp-1.0 >= 0.18 gthread-2.0" 2>&1`
++	        LIBGUPNP_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.2 gupnp-1.2 >= 0.18 gthread-2.0" 2>&1`
+         else
+-	        LIBGUPNP_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.0 gupnp-1.0 >= 0.18 gthread-2.0" 2>&1`
++	        LIBGUPNP_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.2 gupnp-1.2 >= 0.18 gthread-2.0" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$LIBGUPNP_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements (glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.0 gupnp-1.0 >= 0.18 gthread-2.0) were not met:
++	as_fn_error $? "Package requirements (glib-2.0 >= 2.26 gobject-2.0 >= 2.26 gssdp-1.2 gupnp-1.2 >= 0.18 gthread-2.0) were not met:
+ 
+ $LIBGUPNP_PKG_ERRORS
+ 
+@@ -13655,8 +13655,6 @@ fi
+ 
+ 
+ if test "x$found_introspection" = "xyes"; then
+-   INTROSPECTION_TYPELIBDIR=`$PKG_CONFIG --variable=typelibdir --define-variable="libdir=${libdir}" gobject-introspection-1.0`
+-   INTROSPECTION_GIRDIR=`$PKG_CONFIG --variable=girdir --define-variable="datadir=${datadir}" gobject-introspection-1.0`
+ 
+ 
+ fi

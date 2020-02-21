@@ -1,0 +1,11 @@
+--- gupnp-igd-1.0.pc.in.orig	2009-05-04 22:40:53 UTC
++++ gupnp-igd-1.0.pc.in
+@@ -5,7 +5,7 @@ includedir=@includedir@
+ 
+ Name: gupnp-igd-1.0
+ Description: GUPnP Simple IGD library
+-Requires: gupnp-1.0
++Requires: gupnp-1.2
+ Version: @VERSION@
+ Libs: -L${libdir} -lgupnp-igd-1.0
+ Cflags: -I${includedir}/gupnp-igd-1.0
