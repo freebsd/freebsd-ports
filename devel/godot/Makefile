@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	godot
-DISTVERSION=	3.1.2
+DISTVERSION=	3.2
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel games
 
@@ -32,7 +32,6 @@ MAKE_ARGS+=		platform=x11 builtin_libpng=False \
 			builtin_openssl=False verbose=True
 MAKE_ARGS+=		${MAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
 MAKE_ARGS_clang=	use_llvm=True
-CXXFLAGS+=		-DRTAUDIO_ENABLED
 CXXFLAGS_i386=		${CXXFLAGS_i386_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_i386_gcc=	-march=i586
 
@@ -47,15 +46,16 @@ OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
 AUDIO_DESC=		Audio support
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_MAKE_ARGS=		alsa=True
-EXAMPLES_GH_PROJECT=	godot-demo-projects:DEMOS
-# master at 13/12
-EXAMPLES_GH_TAGNAME=	c34a2b423bcb:DEMOS
+# master at 31/1
+EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:a5b8cd11d992:DEMOS
 EXAMPLES_PORTEXAMPLES=	*
 # mono support doesn't build at present
-MONO_USES=		mono:nuget
+MONO_BUILD_DEPENDS=	msbuild:devel/msbuild
+MONO_LIB_DEPENDS=	libinotify.so:devel/libinotify
+MONO_GH_TUPLE=		mono:nuget-binary:ebedbf8:NUGT/nuget-binary
+MONO_MAKE_ARGS=		module_mono_enabled=yes mono_glue=True
+MONO_USES=		gettext-runtime mono:nuget
 NUGET_DEPENDS=		DotNet.Glob=2.1.1
-MONO_MAKE_ARGS=		module_mono_enabled=True mono_glue=True NUGET_PATH=${NUGET_EXE}
-MONO_MAKE_ENV=		NUGET_PATH=${NUGET_EXE}
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_MAKE_ARGS=	pulseaudio=True
 TOOLS_DESC=		Include development tools (IDE)
@@ -79,7 +79,7 @@ PLIST_FILES=		bin/${GODOTFILE}
 .if ${ARCH} != aarch64 && ${ARCH} != amd64 && ${ARCH} != i386 && ${ARCH} != armv6 && ${ARCH} != armv7
 # use system libvpx on archs that break with built-in
 LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
-MAKE_ARGS+=		builtin_libvpx=False
+MAKE_ARGS+=	builtin_libvpx=False
 .endif
 
 post-patch:
@@ -91,7 +91,7 @@ post-patch:
 pre-build-MONO-on: makenuget
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g} \
-		target=release_debug tools=True mono_glue=False)
+		target=release_debug tools=True platform=server mono_glue=False)
 	@(cd ${WRKSRC} && ${FIND} ${WRKSRC}/bin -name 'godot*' -exec {} \
 		--generate-mono-glue modules/mono/glue \; && \
 		${FIND} ${WRKSRC}/bin -name 'godot*' -delete)
