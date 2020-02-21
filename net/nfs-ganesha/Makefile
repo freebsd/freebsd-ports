@@ -6,7 +6,7 @@ DISTVERSION=	2.7.0
 PORTREVISION=	5
 CATEGORIES=	net
 
-MAINTAINER=	fatih@gandi.net
+MAINTAINER=	freebsd@gandi.net
 COMMENT=	NFS fileserver that runs in user mode
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
