@@ -1,6 +1,5 @@
 bin/dns-sd
 bin/mDNSClientPosix
-bin/mDNSIdentify
 bin/mDNSNetMonitor
 bin/mDNSProxyResponderPosix
 bin/mDNSResponderPosix
