@@ -3,7 +3,7 @@
 
 PORTNAME=	protobuf
 PORTVERSION=	3.11.4
-DISTVERSIONPREFIX=	all-
+DISTVERSIONPREFIX=	cpp-
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/protocolbuffers/protobuf/releases/download/v${PORTVERSION}/
