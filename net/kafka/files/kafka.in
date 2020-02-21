@@ -9,21 +9,21 @@
 #
 # Additional variables you can define are:
 #
-# kafka_user:		Username to run Kafka
-#			Default: %%USERS%%
-# kafka_config:		Configuration file to run Kafka
-#			Default: %%ETCDIR%%/server.properties
-# kafka_log4j_profile:	Profile for Kafka logging
-#			Default: %%ETCDIR%%/log4j.properties
-# kafka_log_dir:	Directory to store Kafka logs
-#			Default: %%KAFKA_LOGDIR%%
-# kafka_java_opts:	Options passed to JVM to start Kafka
-#			Default: None
-# kafka_pidfile:	Full path of the Kafka process PID file
-#			Default: /var/run/kafka.pid
+# kafka_user:				Username to run Kafka
+#					Default: %%KAFKA_USER%%
+# kafka_config:				Configuration file to run Kafka
+#					Default: %%ETCDIR%%/server.properties
+# kafka_log4j_config:			Configuration file for Kafka logging
+#					Default: %%ETCDIR%%/log4j.properties
+# kafka_log_dir:			Directory to store Kafka logs
+#					Default: %%KAFKA_LOGDIR%%
+# kafka_java_opts:			Options passed to JVM to start Kafka
+#					Default: None
+# kafka_pidfile:			Full path of the Kafka process PID file
+#					Default: /var/run/kafka.pid
 # kafka_syslog_output_enable:		Set to enable syslog output.
 #					Default: YES
-# kafka_syslog_output_priority: 	Set syslog priority if syslog enabled.
+# kafka_syslog_output_priority:		Set syslog priority if syslog enabled.
 #					Default: info
 # kafka_syslog_output_facility:		Set syslog facility if syslog enabled.
 #					Default: daemon
@@ -36,13 +36,20 @@ rcvar=kafka_enable
 load_rc_config "${name}"
 
 : ${kafka_enable:=NO}
-: ${kafka_user:=%%USERS%%}
+: ${kafka_user:=%%KAFKA_USER%%}
 : ${kafka_config:=%%ETCDIR%%/server.properties}
-: ${kafka_log4j_profile:=%%ETCDIR%%/log4j.properties}
+: ${kafka_log4j_config:=%%ETCDIR%%/log4j.properties}
 : ${kafka_log_dir:=%%KAFKA_LOGDIR%%}
-: ${kafka_java_opts:=}
 : ${kafka_pidfile:=/var/run/kafka.pid}
 : ${kafka_syslog_output_enable:="YES"}
+
+_kafka_user=${kafka_user}
+unset kafka_user
+
+# backwards compatibility
+if [ -n "${kafka_log4j_profile}" ]; then
+	kafka_log4j_config="${kafka_log4j_profile#file:}"
+fi
 
 if checkyesno kafka_syslog_output_enable; then
 	kafka_syslog_output_flags="-T ${name}"
@@ -54,19 +61,17 @@ if checkyesno kafka_syslog_output_enable; then
 	fi
 fi
 
-JAVA=%%JAVA%%
-
+JAVA="%%JAVA%%"
 CLASSPATH=":%%DATADIR%%/libs/*"
 
-kafka_log_opts="-Dkafka.logs.dir=${kafka_log_dir} -Dlog4j.configuration=file:${kafka_log4j_profile}"
-kafka_main="${kafka_java_opts} ${kafka_log_opts} -cp ${CLASSPATH} kafka.Kafka ${kafka_config}"
-pidfile=${kafka_pidfile}
+kafka_class="kafka.Kafka"
+kafka_log_opts="-Dkafka.logs.dir=${kafka_log_dir} -Dlog4j.configuration=file:${kafka_log4j_config}"
+kafka_main="${kafka_java_opts} ${kafka_log_opts} -cp ${CLASSPATH} ${kafka_class} ${kafka_config}"
+pidfile="${kafka_pidfile}"
 required_dirs="${kafka_log_dir}"
-required_files="${kafka_config} ${kafka_log4j_profile}"
-
+required_files="${kafka_config} ${kafka_log4j_config}"
 
 command="/usr/sbin/daemon"
-command_args="-f ${kafka_syslog_output_flags} -P ${pidfile} -u ${kafka_user} -t ${name} ${JAVA} ${kafka_main}"
-unset kafka_user
+command_args="-f ${kafka_syslog_output_flags} -P ${pidfile} -u ${_kafka_user} -t ${name} ${JAVA} ${kafka_main}"
 
 run_rc_command "$1"
