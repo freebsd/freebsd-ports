@@ -82,6 +82,7 @@ man/man1/pandoc.1.gz
 %%DATADIR%%/data/pptx/ppt/theme/theme2.xml
 %%DATADIR%%/data/pptx/ppt/viewProps.xml
 %%DATADIR%%/data/sample.lua
+%%DATADIR%%/data/templates/article.jats_publishing
 %%DATADIR%%/data/templates/default.asciidoc
 %%DATADIR%%/data/templates/default.asciidoctor
 %%DATADIR%%/data/templates/default.commonmark
@@ -92,11 +93,14 @@ man/man1/pandoc.1.gz
 %%DATADIR%%/data/templates/default.dzslides
 %%DATADIR%%/data/templates/default.epub2
 %%DATADIR%%/data/templates/default.epub3
+%%DATADIR%%/data/templates/default.jats_archiving
+%%DATADIR%%/data/templates/default.jats_articleauthoring
+%%DATADIR%%/data/templates/default.jats_publishing
+%%DATADIR%%/data/templates/default.jira
 %%DATADIR%%/data/templates/default.haddock
 %%DATADIR%%/data/templates/default.html4
 %%DATADIR%%/data/templates/default.html5
 %%DATADIR%%/data/templates/default.icml
-%%DATADIR%%/data/templates/default.jats
 %%DATADIR%%/data/templates/default.latex
 %%DATADIR%%/data/templates/default.man
 %%DATADIR%%/data/templates/default.markdown
@@ -118,6 +122,7 @@ man/man1/pandoc.1.gz
 %%DATADIR%%/data/templates/default.textile
 %%DATADIR%%/data/templates/default.xwiki
 %%DATADIR%%/data/templates/default.zimwiki
+%%DATADIR%%/data/templates/styles.html
 %%DATADIR%%/data/translations/am.yaml
 %%DATADIR%%/data/translations/ar.yaml
 %%DATADIR%%/data/translations/bg.yaml
