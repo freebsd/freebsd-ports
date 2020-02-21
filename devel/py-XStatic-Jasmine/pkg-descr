@@ -1,7 +1,9 @@
-This port is the static file package for jasmine JavaScript library
-that provides a DOM-less simple JavaScript testing framework.
+Jasmine JavaScript library packaged for setuptools (easy_install) / pip.
 
-It uses the XStatic packaging standard, aimed to bring an ability to
-install javascript libraries via easy_install or pip utility.
+This package is intended to be used by **any** project that needs these files.
 
-WWW: https://pypi.org/project/XStatic-Jasmine/
+It intentionally does **not** provide any extra code except some metadata
+**nor** has any extra requirements. You MAY use some minimal support code from
+the XStatic base package, if you like.
+
+WWW: https://github.com/openstack/xstatic-jasmine
