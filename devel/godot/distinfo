@@ -1,5 +1,9 @@
-TIMESTAMP = 1576224754
-SHA256 (godotengine-godot-3.1.2-stable_GH0.tar.gz) = be2ed8d3f0dc6dd0a19e1fe562b2cc4de7d562d5f67ac6bf3dd67b4a1c69b218
-SIZE (godotengine-godot-3.1.2-stable_GH0.tar.gz) = 20494543
-SHA256 (godotengine-godot-demo-projects-c34a2b423bcb_GH0.tar.gz) = ee90199bafbb386b47d529ff5688b6c425c069d51523dfe2d6d1ae03e55a6ff3
-SIZE (godotengine-godot-demo-projects-c34a2b423bcb_GH0.tar.gz) = 150108502
+TIMESTAMP = 1580957729
+SHA256 (dotnet.glob.2.1.1.nupkg) = 8fa01b1928a9c4b70a4803226dcd2ec942474daf2876b80e35a0380d72f8fc1a
+SIZE (dotnet.glob.2.1.1.nupkg) = 73782
+SHA256 (godotengine-godot-3.2-stable_GH0.tar.gz) = 39c6768875b07ffb9df6e4fdd77d943dba2c8c0b4dcd83eafeae9426fc77f57d
+SIZE (godotengine-godot-3.2-stable_GH0.tar.gz) = 22031196
+SHA256 (godotengine-godot-demo-projects-a5b8cd11d992_GH0.tar.gz) = 17644c74ddb2bd597589ae61a9b55d2e856d0950a0467fc8e624c8ecc2db5b74
+SIZE (godotengine-godot-demo-projects-a5b8cd11d992_GH0.tar.gz) = 150744236
+SHA256 (mono-nuget-binary-ebedbf8_GH0.tar.gz) = a0362e65a381c99f222ce141012f5a0663b4a4ae22f27f638198f7414464bf1a
+SIZE (mono-nuget-binary-ebedbf8_GH0.tar.gz) = 2778322
