@@ -1,17 +1,17 @@
---- mDNSPosix/Makefile.orig	2016-04-24 15:07:24 UTC
+--- mDNSPosix/Makefile.orig	2020-01-31 03:01:55 UTC
 +++ mDNSPosix/Makefile
-@@ -54,8 +54,8 @@ COREDIR = ../mDNSCore
- SHAREDDIR ?= ../mDNSShared
- JDK = /usr/jdk
+@@ -62,8 +62,8 @@ else ifeq ($(SYSTEM), Linux)
+   os=linux
+ endif
  
--CC = @cc
--BISON = @bison
-+CC ?= @cc
-+BISON = @yacc
- FLEX = @flex
- ST = @strip
- LD = ld -shared
-@@ -121,9 +121,9 @@ else
+-CC = cc
+-BISON = bison
++CC ?= cc
++BISON = yacc
+ FLEX = flex
+ ST = strip
+ LD = ld
+@@ -144,9 +144,9 @@ else
  
  ifeq ($(os),freebsd)
  # If not already defined, set LOCALBASE to /usr/local
@@ -24,73 +24,77 @@
  # FreeBSD 4 requires threaded code to be compiled and linked using the "-pthread" option,
  # and requires that the "-lpthread" link option NOT be used
  # This appies only to FreeBSD -- "man cc" on FreeBSD says:
-@@ -185,12 +185,7 @@ CFLAGS_OS += -DHAVE_IPV6=0
- endif
+@@ -211,11 +211,12 @@ endif
  endif
  
--# If directory /usr/share/man exists, then we install man pages into that, else /usr/man
+ # If directory /usr/share/man exists, then we install man pages into that, else /usr/man
 -ifeq ($(wildcard /usr/share/man), /usr/share/man)
 -MANPATH := /usr/share/man
 -else
 -MANPATH := /usr/man
 -endif
++#ifeq ($(wildcard /usr/share/man), /usr/share/man)
++#MANPATH := /usr/share/man
++#else
++#MANPATH := /usr/man
++#endif
 +MANPATH := $(DESTDIR)$(MAN_PATH)
  
  # If directories /etc/init.d/rc*.d exist, then we install into that (Suse)
  ifeq ($(wildcard /etc/init.d/rc2.d/), /etc/init.d/rc2.d/)
-@@ -219,7 +214,7 @@ CFLAGS = $(CFLAGS_COMMON) $(CFLAGS_OS) $
+@@ -244,7 +245,7 @@ MDNSCFLAGS = $(CFLAGS) $(CFLAGS_COMMON) $(CFLAGS_OS) $
  
- all: setup Daemon libdns_sd Clients SAClient SAResponder SAProxyResponder Identify NetMonitor $(OPTIONALTARG)
+ all: setup Daemon libdns_sd Clients SAClient SAResponder SAProxyResponder NetMonitor $(OPTIONALTARG)
  
 -install: setup InstalledStartup InstalledDaemon InstalledLib InstalledManPages InstalledClients $(OPTINSTALL)
 +install: setup InstalledDaemon InstalledLib InstalledManPages InstalledClients $(OPTINSTALL)
  
  # 'setup' sets up the build directory structure the way we want
  setup:
-@@ -259,13 +254,13 @@ libdns_sd: setup $(BUILDDIR)/libdns_sd.$
+@@ -286,13 +287,13 @@ libdns_sd: setup $(BUILDDIR)/libdns_sd.$(LDSUFFIX)
  CLIENTLIBOBJS = $(OBJDIR)/dnssd_clientlib.c.so.o $(OBJDIR)/dnssd_clientstub.c.so.o $(OBJDIR)/dnssd_ipc.c.so.o
  
  $(BUILDDIR)/libdns_sd.$(LDSUFFIX): $(CLIENTLIBOBJS)
--	@$(LD) $(LINKOPTS) -o $@ $+
-+	@$(CC) $(LINKOPTS) -shared -Wl,-soname=libdns_sd.$(LDSUFFIX).$(LIBVERS) -o $@ $+
- 	@$(STRIP) $@
+-	$(LD) $(SOOPTS) $(LINKOPTS) -o $@ $+
++	$(CC) $(SOOPTS) $(LINKOPTS) -Wl,-soname=libdns_sd.$(LDSUFFIX).$(LIBVERS) -o $@ $+
+ 	$(STRIP) $@
  
 -Clients: setup libdns_sd ../Clients/build/dns-sd
-+Clients: ../Clients/build/dns-sd
++Clients: setup ../Clients/build/dns-sd
  	@echo "Clients done"
  
--../Clients/build/dns-sd:
-+../Clients/build/dns-sd: setup libdns_sd
- 	@$(MAKE) -C ../Clients
+-../Clients/build/dns-sd: ../Clients/dns-sd.c
++../Clients/build/dns-sd: setup libdns_sd ../Clients/dns-sd.c
+ 	$(MAKE) -C ../Clients DEBUG=$(DEBUG) SUPMAKE_CFLAGS="$(MDNSCFLAGS)"
  
  # nss_mdns target builds the Name Service Switch module
-@@ -273,7 +268,7 @@ nss_mdns: setup $(BUILDDIR)/$(NSSLIBFILE
+@@ -300,7 +301,7 @@ nss_mdns: setup $(BUILDDIR)/$(NSSLIBFILE)
  	@echo "Name Service Switch module done"
  
  $(BUILDDIR)/$(NSSLIBFILE): $(CLIENTLIBOBJS) $(OBJDIR)/nss_mdns.c.so.o
--	@$(LD) $(LINKOPTS) -o $@ $+
-+	@$(CC) $(LINKOPTS) -shared -Wl,-soname=$(NSSLINKNAME) -o $@ $+
- 	@$(STRIP) $@
+-	$(LD) $(SOOPTS) $(LINKOPTS) -o $@ $+
++	$(CC) $(SOOPTS) $(LINKOPTS) -Wl,-soname=$(NSSLINKNAME) -o $@ $+
+ 	$(STRIP) $@
  
  #############################################################################
-@@ -298,14 +293,12 @@ InstalledNSS: $(NSSINSTPATH)/$(NSSLINKNA
+@@ -325,14 +326,12 @@ InstalledNSS: $(NSSINSTPATH)/$(NSSLINKNAME) /etc/nss_m
  	@echo $+ " installed"
  
  # Note: If daemon already installed, we make sure it's stopped before overwriting it
 -$(INSTBASE)/sbin/mdnsd: $(BUILDDIR)/mdnsd $(STARTUPSCRIPTDIR)/$(STARTUPSCRIPTNAME)
--	@if test -x $@; then $(STARTUPSCRIPTDIR)/$(STARTUPSCRIPTNAME) stop; fi
+-	if test -x $@; then $(STARTUPSCRIPTDIR)/$(STARTUPSCRIPTNAME) stop; fi
 +$(INSTBASE)/sbin/mdnsd: $(BUILDDIR)/mdnsd
  	$(CP) $< $@
--	@$(STARTUPSCRIPTDIR)/$(STARTUPSCRIPTNAME) start
+-	$(STARTUPSCRIPTDIR)/$(STARTUPSCRIPTNAME) start
  
  $(INSTBASE)/lib/libdns_sd.$(LDSUFFIX).$(LIBVERS): $(BUILDDIR)/libdns_sd.$(LDSUFFIX)
  	$(CP) $< $@
 -	$(LN) $@ $(INSTBASE)/lib/libdns_sd.$(LDSUFFIX)
 +	$(LN) $(notdir $@) $(INSTBASE)/lib/libdns_sd.$(LDSUFFIX)
  ifdef LDCONFIG
-     # -m means 'merge into existing database', -R means 'rescan directories'
+ 	# -m means 'merge into existing database', -R means 'rescan directories'
  	$(LDCONFIG) -mR
-@@ -338,7 +331,7 @@ $(MANPATH)/man8/%.8: %.8
+@@ -365,7 +364,7 @@ $(MANPATH)/man8/%.8: %.8
  	cp $< $@
  	chmod 444 $@
  
@@ -99,12 +103,12 @@
  	cp $< $@
  	chmod 444 $@
  
-@@ -491,6 +484,8 @@ $(OBJDIR)/NetMonitor.c.o:            $(C
+@@ -509,6 +508,8 @@ $(OBJDIR)/NetMonitor.c.o:            $(COREDIR)/mDNS.c
+ 
  $(BUILDDIR)/dnsextd:                 $(DNSEXTDOBJ) $(OBJDIR)/dnsextd.c.threadsafe.o
  	$(CC) $+ -o $@ $(LINKOPTS) $(LINKOPTS_PTHREAD)
- 
-+$(OBJDIR)/dnsextd_lexer.l.o:         $(OBJDIR)/dnsextd_parser.y.o
 +
++$(OBJDIR)/dnsextd_lexer.l.o:         $(OBJDIR)/dnsextd_parser.y.o
+ 
  #############################################################################
  
- # Implicit rules
