@@ -1573,6 +1573,7 @@
     SUBDIR += rubygem-org-ruby
     SUBDIR += rubygem-ox
     SUBDIR += rubygem-parslet
+    SUBDIR += rubygem-parslet1
     SUBDIR += rubygem-phone
     SUBDIR += rubygem-pretty-xml
     SUBDIR += rubygem-psych
