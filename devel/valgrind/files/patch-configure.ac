@@ -1,23 +1,21 @@
 --- configure.ac.orig	2016-01-13 19:20:20 UTC
 +++ configure.ac
-@@ -145,7 +145,19 @@
-      notclang-5.*)
+@@ -136,16 +136,10 @@
+ AM_CONDITIONAL(COMPILER_IS_CLANG, test $is_clang = clang)
+ 
+ case "${is_clang}-${gcc_version}" in
+-     notclang-3.*)
++     notclang-[[3-9]].*|notclang-[[1-9]][[0-9]]*)
  	AC_MSG_RESULT([ok (${gcc_version})])
  	;;
+-     notclang-4.*)
+-	AC_MSG_RESULT([ok (${gcc_version})])
+-	;;
+-     notclang-5.*)
+-	AC_MSG_RESULT([ok (${gcc_version})])
+-	;;
 -     clang-2.9|clang-3.*|clang-4.*)
-+     notclang-6.*)
-+	AC_MSG_RESULT([ok (${gcc_version})])
-+	;;
-+     notclang-7.*)
-+	AC_MSG_RESULT([ok (${gcc_version})])
-+	;;
-+     notclang-8.*)
-+	AC_MSG_RESULT([ok (${gcc_version})])
-+	;;
-+     notclang-9.*)
-+	AC_MSG_RESULT([ok (${gcc_version})])
-+	;;
-+     clang-2.9|clang-[[3-9]].*)
++     clang-2.9|clang-[[3-9]].*|clang-[[1-9]][[0-9]]*)
  	AC_MSG_RESULT([ok (clang-${gcc_version})])
  	;;
       *)
