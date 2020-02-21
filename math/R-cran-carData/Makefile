@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	carData
-DISTVERSION=	3.0-2
-PORTREVISION=	2
+DISTVERSION=	3.0-3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Companion to Applied Regression Data Sets
 
 LICENSE=	GPLv2+
