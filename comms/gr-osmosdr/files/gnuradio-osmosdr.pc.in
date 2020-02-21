@@ -1,0 +1,15 @@
+prefix=%%PREFIX%%
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: gnuradio-osmosdr
+Description: GNU Radio block for various radio hardware
+URL: http://sdr.osmocom.org/trac/wiki/GrOsmoSDR
+Version: v%%VERSION%%
+Requires: gnuradio-runtime gnuradio-blocks
+Requires.private: 
+Conflicts:
+Cflags: -I${includedir}
+Libs: -L${libdir} -lgnuradio-osmosdr
+Libs.private: -L${libdir}
