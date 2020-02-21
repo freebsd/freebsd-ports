@@ -1,11 +1,61 @@
---- CMakeLists.txt.orig	2019-12-27 18:44:46 UTC
+--- CMakeLists.txt.orig	2020-01-30 18:15:11 UTC
 +++ CMakeLists.txt
-@@ -183,7 +183,7 @@ set(COMPILEFLAGS "-Wall -Werror -O3 -DPALISADE_VERSION
- set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COMPILEFLAGS}")
- set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILEFLAGS}")
+@@ -185,7 +185,7 @@ set(CXXCOMPILEFLAGS "-Wall -Werror -O3 -DPALISADE_VERS
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CCOMPILEFLAGS}")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CXXCOMPILEFLAGS}")
  
 -find_package (Git REQUIRED)
 +find_package (Git)
  
  find_package (Doxygen QUIET COMPONENTS dot)
  if (DOXYGEN_FOUND)
+@@ -262,7 +262,7 @@ else()
+ 	set_target_properties(gmp PROPERTIES IMPORTED_LOCATION ${GMPLIBFILE})
+ endif()
+ 
+-if("${WITH_NTL}" STREQUAL "Y")
++if(FALSE AND "${WITH_NTL}" STREQUAL "Y")
+ 	install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/third-party/lib/ DESTINATION lib
+ 		FILES_MATCHING PATTERN "libgmp.*" )
+ 	# also copies the gmp dll file
+@@ -389,15 +389,15 @@ if("${WITH_TCM}" STREQUAL "Y")
+ endif()
+ 
+ if("${WITH_NTL}" STREQUAL "Y")
+-	set(THIRDPARTYLIBS "${THIRDPARTYLIBS}" PUBLIC ntl PUBLIC gmp )
+-	set(THIRDPARTYSTATICLIBS "${THIRDPARTYSTATICLIBS}" PUBLIC ntl PUBLIC gmp )
++	#set(THIRDPARTYLIBS "${THIRDPARTYLIBS}" PUBLIC ntl PUBLIC gmp )
++	#set(THIRDPARTYSTATICLIBS "${THIRDPARTYSTATICLIBS}" PUBLIC ntl PUBLIC gmp )
+ 	add_definitions(-DWITH_NTL)
+ else()
+ 	set(THIRDPARTYLIBS "${THIRDPARTYLIBS}" "${QUADMATHLIB}")
+ 	set(THIRDPARTYSTATICLIBS "${THIRDPARTYSTATICLIBS}" "${QUADMATHLIB}")
+ endif()
+ 
+-if("${WITH_NTL}" STREQUAL "Y" OR "${WITH_TCM}" STREQUAL "Y")
++if(FALSE AND "${WITH_NTL}" STREQUAL "Y" OR "${WITH_TCM}" STREQUAL "Y")
+ 	install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/third-party/include/ DESTINATION include/palisade)
+ endif()
+ 
+@@ -406,7 +406,7 @@ set(BINDEMODATAPATH ${CMAKE_CURRENT_BINARY_DIR}/demoDa
+ 
+ # copies demoData folder from the root of the repo to build/demoData if the folder does not exist
+ # also checks whether NTL and GMP have been installed if the user chose to use NTL by setting WITH_NTL=Y
+-if("${WITH_NTL}" STREQUAL "Y")
++if(FALSE AND "${WITH_NTL}" STREQUAL "Y")
+ add_custom_target(third-party ALL
+  COMMAND [ ! -f  ${GMPLIBFILE} ] && echo ***ERROR*** Be sure to run \"make gmp_unpack\" and \"make gmp_all\" || [ ! -f  ${NTLLIBFILE} ] && echo ***ERROR*** Be sure to run \"make ntl_unpack\" and \"make ntl_all\" || echo "-- NTL/GMP is already installed"
+  COMMAND [ ! -d ${BINDEMODATAPATH} ] && cp -R ${DEMODATAPATH} ${BINDEMODATAPATH} && echo "-- Copied demoData files" || echo "-- demoData folder already exists"
+@@ -438,9 +438,11 @@ endif()
+ set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Enable testing of the benchmark library." FORCE)
+ set(BENCHMARK_ENABLE_INSTALL OFF CACHE BOOL "Enable installation of benchmark. (Projects embedding benchmark may want to turn this OFF.)" FORCE)
+ set(BENCHMARK_ENABLE_GTEST_TESTS OFF CACHE BOOL "Enable building the unit tests which depend on gtest" FORCE)
+-add_subdirectory(third-party/google-benchmark EXCLUDE_FROM_ALL)
++#add_subdirectory(third-party/google-benchmark EXCLUDE_FROM_ALL)
+ 
++if (BUILD_TESTING)
+ add_subdirectory(benchmark)
++endif()
+ 
+ ## clobber cleans AND cleans the third-party stuff
+ add_custom_target( clobber DEPENDS gmp_clobber ntl_clobber

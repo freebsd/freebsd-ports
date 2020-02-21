@@ -3,10 +3,11 @@
 PORTNAME=	palisade
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	PALISADE lattice cryptography library
+COMMENT=	PALISADE lattice cryptography library for Fully Homomorphic Encryption
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.md
@@ -15,6 +16,7 @@ BROKEN_i386=	fails to build: a declaration of 'Mul128' must be available
 BROKEN_powerpc64=	fails to build: math/native_int/binint.h:510:11: error: Architecture not supported for MultD()
 
 BUILD_DEPENDS=	autoconf:devel/autoconf # possibly a mistake in the project
+LIB_DEPENDS=	libntl.so:math/ntl
 
 USES=		cmake:noninja compiler:c++11-lang localbase
 USE_GITLAB=	yes
@@ -26,10 +28,12 @@ GH_TUPLE=	\
 		google:benchmark:daff5fea:benchmark/third-party/google-benchmark \
 		google:googletest:8b4817e3:google_test/third-party/google-test \
 		gperftools:gperftools:c1d546d7:gperftools/third-party/gperftools
-USE_GCC=	any # clang fails: fatal error: 'quadmath.h' file not found
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_UNITTESTS
+CMAKE_ARGS=	-DWITH_NTL=Y
+
+LDFLAGS+=	${LOCALBASE}/lib/libntl.so # libntl is optional in palisade but is necessary in FreeBSD because is has an equivalent of quadmath.h that is missing in FreeBSD. -DWITH_NTL should be added by users to the compiler command lines.
 
 CXXFLAGS+=	-I${WRKSRC}/third-party/google-test/googletest
 
