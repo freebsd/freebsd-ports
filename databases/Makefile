@@ -789,6 +789,7 @@
     SUBDIR += py-mysql2pgsql
     SUBDIR += py-mysqlclient
     SUBDIR += py-oursql
+    SUBDIR += py-partd
     SUBDIR += py-peewee
     SUBDIR += py-peewee_migrate
     SUBDIR += py-pg8000
