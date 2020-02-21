@@ -38,8 +38,8 @@ frame #5: 0x000000080104b4e5 libigdrcl.so`NEO::DrmMemoryManager::DrmMemoryManage
    60       }
    61   }
 
---- runtime/os_interface/linux/drm_memory_manager.cpp.orig	2020-01-15 11:27:15 UTC
-+++ runtime/os_interface/linux/drm_memory_manager.cpp
+--- core/os_interface/linux/drm_memory_manager.cpp.orig	2020-02-14 10:58:18 UTC
++++ core/os_interface/linux/drm_memory_manager.cpp
 @@ -141,7 +141,17 @@ NEO::BufferObject *DrmMemoryManager::allocUserptr(uint
      userptr.flags = static_cast<uint32_t>(flags);
  

@@ -1,4 +1,8 @@
-Add missing includes in various places.
+Adjust includes in various places.
+
+core/os_interface/linux/drm_neo.cpp:21:10: fatal error: 'linux/limits.h' file not found
+#include <linux/limits.h>
+         ^~~~~~~~~~~~~~~~
 
 runtime/tbx/tbx_sockets_imp.cpp:74:51: error: use of undeclared identifier 'IPPROTO_TCP'
         m_socket = ::socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
@@ -11,6 +15,20 @@ runtime/tbx/tbx_sockets_imp.cpp:107:9: error: unknown type name 'sockaddr_in'; d
 struct sockaddr {
        ^
 
+--- core/os_interface/linux/drm_neo.cpp.orig	2020-02-14 10:58:18 UTC
++++ core/os_interface/linux/drm_neo.cpp
+@@ -15,10 +15,10 @@
+ #include "core/os_interface/linux/sys_calls.h"
+ #include "core/utilities/directory.h"
+ 
++#include <climits>
+ #include <cstdio>
+ #include <cstring>
+ #include <fstream>
+-#include <linux/limits.h>
+ 
+ namespace NEO {
+ 
 --- runtime/tbx/tbx_sockets_imp.cpp.orig	2019-11-22 15:41:47 UTC
 +++ runtime/tbx/tbx_sockets_imp.cpp
 @@ -18,6 +18,7 @@ typedef int socklen_t;
