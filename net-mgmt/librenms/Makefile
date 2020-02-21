@@ -3,7 +3,7 @@
 
 PORTNAME=	librenms
 PORTVERSION=	1.56
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -30,7 +30,9 @@ RUN_DEPENDS+=	rrdtool:databases/rrdtool \
 		bash:shells/bash \
 		sudo:security/sudo
 
-USE_PHP=	ctype curl filter gd hash json ldap mbstring mysqli openssl pdo pdo_mysql phar posix session simplexml snmp tokenizer xml zip
+USE_PHP=	ctype curl dom fileinfo filter gd hash json ldap mbstring \
+		mysqli openssl pdo pdo_mysql phar posix session simplexml \
+		snmp tokenizer xml xmlwriter zip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	librenms
