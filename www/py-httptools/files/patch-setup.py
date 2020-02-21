@@ -1,12 +1,11 @@
---- setup.py.orig	2019-02-25 19:55:33 UTC
+--- setup.py.orig	2020-02-08 00:30:40 UTC
 +++ setup.py
-@@ -26,8 +26,7 @@ setup(
-     packages=['httptools', 'httptools.parser'],
-     ext_modules=[
-         Extension("httptools.parser.parser",
--                  ["httptools/parser/parser.c",
--                   "vendor/http-parser/http_parser.c"],
-+                  ["httptools/parser/parser.c"],
-                   extra_compile_args=['-O2'])
-     ],
-     provides=['httptools'],
+@@ -44,7 +44,7 @@ class httptools_build_ext(build_ext):
+             return
+ 
+         super().initialize_options()
+-        self.use_system_http_parser = False
++        self.use_system_http_parser = True
+         self.cython_always = False
+         self.cython_annotate = None
+         self.cython_directives = None
