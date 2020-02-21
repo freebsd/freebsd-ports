@@ -1,52 +1,5 @@
-bin/HYPHYMP
-lib/hyphy/ChartAddIns/Approximate_CDF
-lib/hyphy/ChartAddIns/Column Operations
-lib/hyphy/ChartAddIns/Complex Select Cells By Value
-lib/hyphy/ChartAddIns/Contigency Table
-lib/hyphy/ChartAddIns/Covariance
-lib/hyphy/ChartAddIns/DBAddIns/DescriptiveStats.bf
-lib/hyphy/ChartAddIns/DBAddIns/FromSQLFlatFile.bf
-lib/hyphy/ChartAddIns/DBAddIns/HY_DBW_TemplateList
-lib/hyphy/ChartAddIns/DBAddIns/ToChartWindow.bf
-lib/hyphy/ChartAddIns/DBAddIns/ToConsole.bf
-lib/hyphy/ChartAddIns/DBAddIns/ToFastaFile.bf
-lib/hyphy/ChartAddIns/DBAddIns/ToFastaFileFromPandit.bf
-lib/hyphy/ChartAddIns/DBAddIns/ToFrontierFastaFile.bf
-lib/hyphy/ChartAddIns/DBAddIns/ToSQLFlatFile.bf
-lib/hyphy/ChartAddIns/DBAddIns/ToTabFile.bf
-lib/hyphy/ChartAddIns/Descriptive Statistics
-lib/hyphy/ChartAddIns/Distribution Moments
-lib/hyphy/ChartAddIns/DistributionAddIns/Event Posteriors
-lib/hyphy/ChartAddIns/DistributionAddIns/Includes/posteriors.ibf
-lib/hyphy/ChartAddIns/DistributionAddIns/Most Likely Class Assignment
-lib/hyphy/ChartAddIns/DistributionAddIns/Posterior Distribution
-lib/hyphy/ChartAddIns/DistributionAddIns/Posterior Moments
-lib/hyphy/ChartAddIns/DistributionAddIns/Prior Moments
-lib/hyphy/ChartAddIns/Gaussian Penalty Clustering
-lib/hyphy/ChartAddIns/Goodness of Fit
-lib/hyphy/ChartAddIns/Histogram
-lib/hyphy/ChartAddIns/K-Mean Clustering
-lib/hyphy/ChartAddIns/KH Resampler
-lib/hyphy/ChartAddIns/Linear Fit
-lib/hyphy/ChartAddIns/Mean Profile Plot
-lib/hyphy/ChartAddIns/Median Profile Plot
-lib/hyphy/ChartAddIns/Poisson Mixture Fit
-lib/hyphy/ChartAddIns/Populate Cells
-lib/hyphy/ChartAddIns/Profile Mean Clustering
-lib/hyphy/ChartAddIns/Running Sum
-lib/hyphy/ChartAddIns/Samplers/lhc.bf
-lib/hyphy/ChartAddIns/Samplers/sir.bf
-lib/hyphy/ChartAddIns/Samplers/srs.ibf
-lib/hyphy/ChartAddIns/Select Cells By Index
-lib/hyphy/ChartAddIns/Select Cells By Value
-lib/hyphy/ChartAddIns/SingleColumn
-lib/hyphy/ChartAddIns/Sort
-lib/hyphy/DatapanelAddIns/Character Plot
-lib/hyphy/DatapanelAddIns/Character Plot Two
-lib/hyphy/DatapanelAddIns/Compare Subsets
-lib/hyphy/DatapanelAddIns/Sequence Plot
-lib/hyphy/DatapanelAddIns/TBD/Character Plot By Sequence
-lib/hyphy/DatapanelAddIns/ibfs/char_colors.def
+bin/hyphy
+lib/hyphy/TemplateBatchFiles/simpleBootstrap.bf
 lib/hyphy/GeneticCodes/Alt_Yeast_Nuclear.cod
 lib/hyphy/GeneticCodes/Ascidian_mtDNA.cod
 lib/hyphy/GeneticCodes/Blepharisma_Nuclear.cod
@@ -121,24 +74,16 @@ lib/hyphy/TemplateBatchFiles/2RatesAnalyses/discreteGeneratorNoPS.bf
 lib/hyphy/TemplateBatchFiles/2RatesAnalyses/gamma1.def
 lib/hyphy/TemplateBatchFiles/2RatesAnalyses/gamma2+Inv.def
 lib/hyphy/TemplateBatchFiles/2RatesAnalyses/gamma2.def
-lib/hyphy/TemplateBatchFiles/454.bf
 lib/hyphy/TemplateBatchFiles/AAModelComparison.bf
 lib/hyphy/TemplateBatchFiles/AddABias.ibf
 lib/hyphy/TemplateBatchFiles/AnalyzeCodonData.bf
-lib/hyphy/TemplateBatchFiles/AnalyzeCodonDataMPI.bf
 lib/hyphy/TemplateBatchFiles/AnalyzeDiNucData.bf
 lib/hyphy/TemplateBatchFiles/AnalyzeNucDataFreq.bf
-lib/hyphy/TemplateBatchFiles/AnalyzeNucDataFreq2.bf
 lib/hyphy/TemplateBatchFiles/AnalyzeNucProtData.bf
-lib/hyphy/TemplateBatchFiles/AnalyzeNucProtData2.bf
 lib/hyphy/TemplateBatchFiles/BGM.bf
-lib/hyphy/TemplateBatchFiles/BS2007.bf
-lib/hyphy/TemplateBatchFiles/BUSTED-SRV.bf
 lib/hyphy/TemplateBatchFiles/BivariateCodonRateAnalysis.bf
-lib/hyphy/TemplateBatchFiles/BranchClassDNDS.bf
 lib/hyphy/TemplateBatchFiles/BranchSiteREL.bf
 lib/hyphy/TemplateBatchFiles/BranchSiteRELMultiModel.bf
-lib/hyphy/TemplateBatchFiles/BranchSwap.bf
 lib/hyphy/TemplateBatchFiles/CleanGaps.bf
 lib/hyphy/TemplateBatchFiles/CleanStopCodons.bf
 lib/hyphy/TemplateBatchFiles/ClusterAnalysis.bf
@@ -146,15 +91,8 @@ lib/hyphy/TemplateBatchFiles/ClusterByDistanceRange.bf
 lib/hyphy/TemplateBatchFiles/CodonBivariateRateProcessor.bf
 lib/hyphy/TemplateBatchFiles/CodonModelCompare.bf
 lib/hyphy/TemplateBatchFiles/CodonToProtein.bf
-lib/hyphy/TemplateBatchFiles/CodonUsageBias.bf
-lib/hyphy/TemplateBatchFiles/CompareSelectivePressure.bf
-lib/hyphy/TemplateBatchFiles/CompareSelectivePressureIVL.bf
 lib/hyphy/TemplateBatchFiles/ConvertDataFile.bf
-lib/hyphy/TemplateBatchFiles/DatedTipsMolecularClock.bf
-lib/hyphy/TemplateBatchFiles/DirectionalREL.bf
-lib/hyphy/TemplateBatchFiles/DirectionalREL_MF.bf
 lib/hyphy/TemplateBatchFiles/DistanceMatrix.bf
-lib/hyphy/TemplateBatchFiles/DistanceMatrix_Splits.bf
 lib/hyphy/TemplateBatchFiles/Distances/CodonTools.def
 lib/hyphy/TemplateBatchFiles/Distances/CodonTools2.def
 lib/hyphy/TemplateBatchFiles/Distances/CodonToolsMain.def
@@ -178,47 +116,34 @@ lib/hyphy/TemplateBatchFiles/Distances/p_Distance_binary
 lib/hyphy/TemplateBatchFiles/Distances/p_Distance_codon
 lib/hyphy/TemplateBatchFiles/F_ST.bf
 lib/hyphy/TemplateBatchFiles/FitnessAAModels.bf
-lib/hyphy/TemplateBatchFiles/GADatedClock.bf
-lib/hyphy/TemplateBatchFiles/GADatedClock.ibf
-lib/hyphy/TemplateBatchFiles/GADatedClockProcessor.bf
-lib/hyphy/TemplateBatchFiles/GADatedClockProcessorM.bf
 lib/hyphy/TemplateBatchFiles/GARD.bf
-lib/hyphy/TemplateBatchFiles/GARDProcessor.bf
-lib/hyphy/TemplateBatchFiles/GARD_GA_CHC.ibf
-lib/hyphy/TemplateBatchFiles/GARecomb.bf
 lib/hyphy/TemplateBatchFiles/GA_CHC.ibf
 lib/hyphy/TemplateBatchFiles/GA_CHC_Binary.ibf
-lib/hyphy/TemplateBatchFiles/GA_CHC_kernel.ibf
 lib/hyphy/TemplateBatchFiles/GUI/crayolaColors.def
 lib/hyphy/TemplateBatchFiles/Gateaux.bf
-lib/hyphy/TemplateBatchFiles/Gateaux2.bf
 lib/hyphy/TemplateBatchFiles/GateauxMR.bf
 lib/hyphy/TemplateBatchFiles/KHTest.bf
-lib/hyphy/TemplateBatchFiles/Kernel_PCA.bf
-lib/hyphy/TemplateBatchFiles/Kernel_k_means.bf
-lib/hyphy/TemplateBatchFiles/Kernel_support.ibf
 lib/hyphy/TemplateBatchFiles/LEISR.bf
 lib/hyphy/TemplateBatchFiles/LHT.bf
 lib/hyphy/TemplateBatchFiles/LRTRecombTest.bf
 lib/hyphy/TemplateBatchFiles/LZ_Complexity.bf
-lib/hyphy/TemplateBatchFiles/LocalBranchSiteTest.bf
 lib/hyphy/TemplateBatchFiles/LocalMolClock.bf
-lib/hyphy/TemplateBatchFiles/MEDS.bf
-lib/hyphy/TemplateBatchFiles/MEME_mf.bf
-lib/hyphy/TemplateBatchFiles/MFPSreader.def
-lib/hyphy/TemplateBatchFiles/MFPositiveSelection.bf
-lib/hyphy/TemplateBatchFiles/MFPositiveSelectionPooled.bf
 lib/hyphy/TemplateBatchFiles/MGvsGY.bf
-lib/hyphy/TemplateBatchFiles/MaxChi2.bf
 lib/hyphy/TemplateBatchFiles/MergeSequences.bf
 lib/hyphy/TemplateBatchFiles/MergeSites.bf
-lib/hyphy/TemplateBatchFiles/ModelSelectorAAProcessor.bf
-lib/hyphy/TemplateBatchFiles/ModelSelectorBranch.bf
-lib/hyphy/TemplateBatchFiles/ModelSelectorCodon.bf
-lib/hyphy/TemplateBatchFiles/ModelSelectorCodon.ibf
-lib/hyphy/TemplateBatchFiles/ModelSelectorCodonProcessor.bf
-lib/hyphy/TemplateBatchFiles/ModelSelectorRNA.bf
-lib/hyphy/TemplateBatchFiles/ModelSelectorRNA_1.bf
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/BranchAPriori.bf
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/CountSubstitutions.bf
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/EffectOfTopology.bf
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/ErrorEstimates.bf
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/LRT.bf
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/LocalvsGlobal.bf
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/NeutralExpectation.bf
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/NucleotideBiases.bf
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/Phylohandbook.bf
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/WhatsInTheMean.bf
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/dSdN.bf
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/datasets/Drosophilia_adh.nex
+lib/hyphy/TemplateBatchFiles/Miscellaneous/phylohandbook/datasets/H5N1_HA_5.nex
 lib/hyphy/TemplateBatchFiles/ModelTest.bf
 lib/hyphy/TemplateBatchFiles/MolClockAllRoots.bf
 lib/hyphy/TemplateBatchFiles/MolecularClock.bf
@@ -228,31 +153,25 @@ lib/hyphy/TemplateBatchFiles/NucModelCompare.bf
 lib/hyphy/TemplateBatchFiles/PARRIS.bf
 lib/hyphy/TemplateBatchFiles/PairwiseRelativeRate.bf
 lib/hyphy/TemplateBatchFiles/PairwiseRelativeRatio.bf
-lib/hyphy/TemplateBatchFiles/PairwiseSiteDiversity.bf
 lib/hyphy/TemplateBatchFiles/PartitionDataFile.bf
-lib/hyphy/TemplateBatchFiles/PartitionRateComparison.bf
-lib/hyphy/TemplateBatchFiles/Phylohandbook.bf
-lib/hyphy/TemplateBatchFiles/Plato.bf
-lib/hyphy/TemplateBatchFiles/PositiveSelectionLI.bf
+lib/hyphy/TemplateBatchFiles/ProteinAnalyses/ProteinGTRFit.bf
+lib/hyphy/TemplateBatchFiles/ProteinAnalyses/ProteinGTRFit_helper.ibf
 lib/hyphy/TemplateBatchFiles/ProteinAnalyses/README_relative_prot_rates.md
+lib/hyphy/TemplateBatchFiles/ProteinAnalyses/plusF_helper.ibf
 lib/hyphy/TemplateBatchFiles/ProteinAnalyses/relative_prot_rates.bf
-lib/hyphy/TemplateBatchFiles/QuickSelectionDetection-MEME-internal.bf
-lib/hyphy/TemplateBatchFiles/Deprecated/QuickSelectionDetection.bf
-lib/hyphy/TemplateBatchFiles/QuickSelectionDetectionMF.bf
-lib/hyphy/TemplateBatchFiles/RateClassCounter.bf
 lib/hyphy/TemplateBatchFiles/ReduceDataSetMatrix.bf
 lib/hyphy/TemplateBatchFiles/RelativeRate.bf
-lib/hyphy/TemplateBatchFiles/RelativeRateL.bf
 lib/hyphy/TemplateBatchFiles/RelativeRatio.bf
 lib/hyphy/TemplateBatchFiles/SGASimProcessor.bf
 lib/hyphy/TemplateBatchFiles/SGEmulator.bf
 lib/hyphy/TemplateBatchFiles/SGEmulator_MF.bf
 lib/hyphy/TemplateBatchFiles/SGIvL.bf
-lib/hyphy/TemplateBatchFiles/SSRatesTest.bf
-lib/hyphy/TemplateBatchFiles/SampleProcessor.bf
+lib/hyphy/TemplateBatchFiles/SM-2019.bf
+lib/hyphy/TemplateBatchFiles/Samplers/lhc-ErrorEst.bf
 lib/hyphy/TemplateBatchFiles/Samplers/lhc.bf
 lib/hyphy/TemplateBatchFiles/Samplers/lhc_supp.ibf
 lib/hyphy/TemplateBatchFiles/Samplers/sir.bf
+lib/hyphy/TemplateBatchFiles/Samplers/srs-ErrorEst.ibf
 lib/hyphy/TemplateBatchFiles/Samplers/srs.ibf
 lib/hyphy/TemplateBatchFiles/SandNSAmbigs.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/BUSTED.bf
@@ -261,47 +180,29 @@ lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FADE.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FEL-contrast.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FEL.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FUBAR.bf
+lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FitMultiModel.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/MEME.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/RELAX-Groups.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/RELAX-SRV.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/RELAX.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/SLAC.bf
-lib/hyphy/TemplateBatchFiles/SelectionAnalyses/Simulators/BUSTED.bf
-lib/hyphy/TemplateBatchFiles/SelectionAnalyses/Simulators/FADE.bf
-lib/hyphy/TemplateBatchFiles/SelectionAnalyses/aBSREL-NS.bf
+lib/hyphy/TemplateBatchFiles/SelectionAnalyses/SingleOmega.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/aBSREL.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/modules/grid_compute.ibf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/modules/io_functions.ibf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/modules/selection_lib.ibf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/modules/shared-load-file.bf
-lib/hyphy/TemplateBatchFiles/SelectionAnalyses/testers/FitModel.bf
 lib/hyphy/TemplateBatchFiles/SelectionLRT.bf
 lib/hyphy/TemplateBatchFiles/SeqAlignShared.ibf
-lib/hyphy/TemplateBatchFiles/SeqAlignment.bf
 lib/hyphy/TemplateBatchFiles/SeqAlignmentCodon.bf
 lib/hyphy/TemplateBatchFiles/SeqAlignmentCodonShared.ibf
-lib/hyphy/TemplateBatchFiles/SeqAlignmentNuc.bf
 lib/hyphy/TemplateBatchFiles/SeqAlignmentNucShared.ibf
-lib/hyphy/TemplateBatchFiles/SeqAlignmentProt.bf
-lib/hyphy/TemplateBatchFiles/SeqAlignmentTop75.bf
 lib/hyphy/TemplateBatchFiles/SequentialAddition.bf
 lib/hyphy/TemplateBatchFiles/SequentialAddition.ibf
 lib/hyphy/TemplateBatchFiles/SimilarityPlot.bf
 lib/hyphy/TemplateBatchFiles/SimmondsAI.bf
-lib/hyphy/TemplateBatchFiles/SimpleMutationCounter.bf
-lib/hyphy/TemplateBatchFiles/SingleBreakpointRecomb-2.bf
 lib/hyphy/TemplateBatchFiles/SingleBreakpointRecomb.bf
-lib/hyphy/TemplateBatchFiles/SiteRates.bf
-lib/hyphy/TemplateBatchFiles/SiteRates2.bf
-lib/hyphy/TemplateBatchFiles/SlatkinMaddison-2parts.bf
-lib/hyphy/TemplateBatchFiles/SlatkinMaddison.bf
-lib/hyphy/TemplateBatchFiles/SlidingNucWindow.bf
 lib/hyphy/TemplateBatchFiles/SlidingWindowAnalysis.bf
-lib/hyphy/TemplateBatchFiles/SplitSequencesByPattern.bf
-lib/hyphy/TemplateBatchFiles/StarDecomposition.bf
-lib/hyphy/TemplateBatchFiles/StrandGRMTest.bf
-lib/hyphy/TemplateBatchFiles/StripStopCodons.bf
-lib/hyphy/TemplateBatchFiles/SubtreeSelectionComparison.bf
 lib/hyphy/TemplateBatchFiles/TemplateModels/190
 lib/hyphy/TemplateBatchFiles/TemplateModels/BranchSiteTemplate.mdl
 lib/hyphy/TemplateBatchFiles/TemplateModels/CF3x4.bf
@@ -442,12 +343,10 @@ lib/hyphy/TemplateBatchFiles/Utility/ReadDelimitedFiles.bf
 lib/hyphy/TemplateBatchFiles/Utility/TreeFunctions.bf
 lib/hyphy/TemplateBatchFiles/Utility/WriteDelimitedFiles.bf
 lib/hyphy/TemplateBatchFiles/WANC.bf
-lib/hyphy/TemplateBatchFiles/WebUpdate.bf
 lib/hyphy/TemplateBatchFiles/YangNielsenBranchSite2005.bf
 lib/hyphy/TemplateBatchFiles/_BMS_Aux.ibf
 lib/hyphy/TemplateBatchFiles/_CMS_Aux.ibf
 lib/hyphy/TemplateBatchFiles/_MFReader_.ibf
-lib/hyphy/TemplateBatchFiles/_MSCOneStep.ibf
 lib/hyphy/TemplateBatchFiles/_tipDater.ibf
 lib/hyphy/TemplateBatchFiles/bayesgraph.ibf
 lib/hyphy/TemplateBatchFiles/binomial.ibf
@@ -455,11 +354,8 @@ lib/hyphy/TemplateBatchFiles/branchSwappingFunctions.bf
 lib/hyphy/TemplateBatchFiles/categoryEcho.bf
 lib/hyphy/TemplateBatchFiles/chooseDistanceFormula.def
 lib/hyphy/TemplateBatchFiles/dNdSBivariateRateAnalysis.bf
-lib/hyphy/TemplateBatchFiles/dNdSBivariateRateAnalysis_CompareDS.bf
 lib/hyphy/TemplateBatchFiles/dNdSDistributionComparison.bf
-lib/hyphy/TemplateBatchFiles/dNdSDistributionComparisonPartitions.bf
 lib/hyphy/TemplateBatchFiles/dNdSRateAnalysis.bf
-lib/hyphy/TemplateBatchFiles/dNdSRateAnalysis_MF.bf
 lib/hyphy/TemplateBatchFiles/dNdSResultProcessor.bf
 lib/hyphy/TemplateBatchFiles/dSdNTreeTools.ibf
 lib/hyphy/TemplateBatchFiles/distanceMethodNPBootstrap.bf
@@ -477,7 +373,9 @@ lib/hyphy/TemplateBatchFiles/libv3/convenience/math.bf
 lib/hyphy/TemplateBatchFiles/libv3/convenience/matrix.bf
 lib/hyphy/TemplateBatchFiles/libv3/convenience/random.bf
 lib/hyphy/TemplateBatchFiles/libv3/convenience/regexp.bf
+lib/hyphy/TemplateBatchFiles/libv3/function-loader.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/DNA.bf
+lib/hyphy/TemplateBatchFiles/libv3/models/DNA/GTR-MutSel.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/DNA/GTR.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/DNA/HKY85.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/DNA/JC69.bf
@@ -488,6 +386,7 @@ lib/hyphy/TemplateBatchFiles/libv3/models/codon.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/codon/BS_REL.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/codon/MG_REV.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/codon/MG_REV_MH.bf
+lib/hyphy/TemplateBatchFiles/libv3/models/codon/MG_REV_TRIP.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/frequencies.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/model_functions.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/parameters.bf
@@ -507,6 +406,7 @@ lib/hyphy/TemplateBatchFiles/libv3/stats.bf
 lib/hyphy/TemplateBatchFiles/libv3/tasks/alignments.bf
 lib/hyphy/TemplateBatchFiles/libv3/tasks/ancestral.bf
 lib/hyphy/TemplateBatchFiles/libv3/tasks/bayesgraph.ibf
+lib/hyphy/TemplateBatchFiles/libv3/tasks/distances.bf
 lib/hyphy/TemplateBatchFiles/libv3/tasks/estimators.bf
 lib/hyphy/TemplateBatchFiles/libv3/tasks/genetic_code.bf
 lib/hyphy/TemplateBatchFiles/libv3/tasks/mpi.bf
@@ -515,19 +415,7 @@ lib/hyphy/TemplateBatchFiles/molclockBootstrap.bf
 lib/hyphy/TemplateBatchFiles/pairwiseDistanceEstimator.ibf
 lib/hyphy/TemplateBatchFiles/pairwiseDistanceEstimatorCounter.ibf
 lib/hyphy/TemplateBatchFiles/partitionSequences.ibf
-lib/hyphy/TemplateBatchFiles/post_ancestors.bf
-lib/hyphy/TemplateBatchFiles/post_counting.bf
-lib/hyphy/TemplateBatchFiles/post_covariance.bf
-lib/hyphy/TemplateBatchFiles/post_dNdS.bf
-lib/hyphy/TemplateBatchFiles/post_lfprofile.bf
-lib/hyphy/TemplateBatchFiles/post_npbs.bf
-lib/hyphy/TemplateBatchFiles/post_pbs.bf
-lib/hyphy/TemplateBatchFiles/post_sampler.bf
-lib/hyphy/TemplateBatchFiles/post_saveResults.bf
-lib/hyphy/TemplateBatchFiles/post_sns.bf
-lib/hyphy/TemplateBatchFiles/post_variance.bf
-lib/hyphy/TemplateBatchFiles/post_viewResults.bf
-lib/hyphy/TemplateBatchFiles/postprocessors.lst
+lib/hyphy/TemplateBatchFiles/posteriors.ibf
 lib/hyphy/TemplateBatchFiles/qndhelper1.ibf
 lib/hyphy/TemplateBatchFiles/qndhelper1_mf.ibf
 lib/hyphy/TemplateBatchFiles/qndhelper2.ibf
@@ -536,60 +424,10 @@ lib/hyphy/TemplateBatchFiles/qndhelper3.ibf
 lib/hyphy/TemplateBatchFiles/qndhelper4.ibf
 lib/hyphy/TemplateBatchFiles/queryTree.bf
 lib/hyphy/TemplateBatchFiles/readIndexFile.bf
+lib/hyphy/TemplateBatchFiles/relative_nucleotide_rates.bf
 lib/hyphy/TemplateBatchFiles/relrateBootstrap.bf
-lib/hyphy/TemplateBatchFiles/relrateBootstrapL.bf
 lib/hyphy/TemplateBatchFiles/relratioBootstrap.bf
 lib/hyphy/TemplateBatchFiles/selectModelParameters.bf
-lib/hyphy/TemplateBatchFiles/simpleBootstrap.bf
-lib/hyphy/TopologyInference/Exhaustive_Search
-lib/hyphy/TopologyInference/Neighbor_Joining
-lib/hyphy/TopologyInference/Sequential_Addition
-lib/hyphy/TopologyInference/Star_Decomposition
-lib/hyphy/TopologyInference/Support/branchSwappingFunctions.bf
-lib/hyphy/TopologyInference/Support/doNNISwap.bf
-lib/hyphy/TopologyInference/Support/doSPRSwap.bf
-lib/hyphy/TreeAddIns/Splits
-lib/hyphy/TreeAddIns/Tree Statistics
-lib/hyphy/UserAddins/AAContent
-lib/hyphy/UserAddins/BatchFileByURL
-lib/hyphy/UserAddins/BranchLengthCI
-lib/hyphy/UserAddins/CodonMutationToTreeMapper
-lib/hyphy/UserAddins/CountSubstitutions
-lib/hyphy/UserAddins/ExportLikelihoodFunction
-lib/hyphy/UserAddins/GenBankSequences
-lib/hyphy/UserAddins/Includes/ChooseALF.ibf
-lib/hyphy/UserAddins/Includes/MappersHelp.ibf
-lib/hyphy/UserAddins/Includes/MappersHelpAA.ibf
-lib/hyphy/UserAddins/LRT
-lib/hyphy/UserAddins/ListUserFunctions
-lib/hyphy/UserAddins/MapSubstitutions
-lib/hyphy/UserAddins/MeanPairwiseDivergence
-lib/hyphy/UserAddins/MeanPairwiseDivergenceSubset
-lib/hyphy/UserAddins/ModelCounter
-lib/hyphy/UserAddins/OldAddins/AAMutationCounter
-lib/hyphy/UserAddins/OldAddins/CodonMutationToTreeMapper.bf
-lib/hyphy/UserAddins/OldAddins/ColorPSTree
-lib/hyphy/UserAddins/OldAddins/ConvergentAndParallel
-lib/hyphy/UserAddins/OldAddins/CopyBranchLengths
-lib/hyphy/UserAddins/OldAddins/DashPSTree
-lib/hyphy/UserAddins/OldAddins/ExpsPerDirection
-lib/hyphy/UserAddins/OldAddins/FilterAssignments
-lib/hyphy/UserAddins/OldAddins/InferredAASubstitutionsCounter
-lib/hyphy/UserAddins/OldAddins/LocaldNdS
-lib/hyphy/UserAddins/OldAddins/ModelFitSummary
-lib/hyphy/UserAddins/OldAddins/ModelFitSummaryAA
-lib/hyphy/UserAddins/OldAddins/Multiclass DN DS inference
-lib/hyphy/UserAddins/OldAddins/PartitionBranchesByClasses
-lib/hyphy/UserAddins/OldAddins/PredictivePosteriorP
-lib/hyphy/UserAddins/OldAddins/RNARateMatrix
-lib/hyphy/UserAddins/OldAddins/SimulateAndTabDN_DS
-lib/hyphy/UserAddins/OldAddins/SimulateFromLF
-lib/hyphy/UserAddins/OldAddins/TreeLengthConstraint
-lib/hyphy/UserAddins/OldAddins/dNanddSTrees.bf
-lib/hyphy/UserAddins/OldAddins/dS and dN factors
-lib/hyphy/UserAddins/RecombinationProcessor.bf
-lib/hyphy/UserAddins/SimulateFromLF
-lib/hyphy/UserAddins/Tidbits
 lib/hyphy/data/brown.nuc
 lib/hyphy/data/integrase_BDA.nex
 lib/hyphy/data/p51.aa
