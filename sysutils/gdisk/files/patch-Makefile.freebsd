@@ -1,5 +1,5 @@
---- Makefile.freebsd	2011-09-11 00:51:13.000000000 +0000
-+++ Makefile.freebsd	2015-01-22 02:35:12.000000000 -0700
+--- Makefile.freebsd.orig	2020-02-17 22:34:11 UTC
++++ Makefile.freebsd
 @@ -1,8 +1,8 @@
 -CC=gcc
 -CXX=g++
@@ -12,7 +12,7 @@
  LDFLAGS+=
  LIB_NAMES=crc32 support guid gptpart mbrpart basicmbr mbr gpt bsd parttypes attributes diskio diskio-unix
  MBR_LIBS=support diskio diskio-unix basicmbr mbrpart
-@@ -15,18 +15,18 @@
+@@ -15,18 +15,18 @@ all:	gdisk cgdisk sgdisk fixparts
  
  gdisk:	$(LIB_OBJS) gdisk.o gpttext.o
  #	$(CXX) $(LIB_OBJS) gdisk.o gpttext.o -L/usr/local/lib $(LDFLAGS) -licuio -luuid -o gdisk
