@@ -44,21 +44,13 @@ PLIST_SUB+=	AMDGPU=""
 PLIST_SUB+=	AMDKFD="@comment "
 PLIST_SUB+=	I915=""
 PLIST_SUB+=	VMWGFX=""
-.  if ${OSVERSION} >= 1300033
 PLIST_SUB+=	VBOXVIDEO=""
-.  else
-PLIST_SUB+=	VBOXVIDEO="@comment "
-.  endif
 .elif ${ARCH} == "i386"
 PLIST_SUB+=	AMDGPU="@comment "
 PLIST_SUB+=	AMDKFD="@comment "
 PLIST_SUB+=	I915=""
 PLIST_SUB+=	VMWGFX=""
-.  if ${OSVERSION} >= 1300033
 PLIST_SUB+=	VBOXVIDEO=""
-.  else
-PLIST_SUB+=	VBOXVIDEO="@comment "
-.  endif
 .elif ${ARCH} == "aarch64" || ${ARCH} == "powerpc64"
 PLIST_SUB+=	AMDGPU=""
 PLIST_SUB+=	AMDKFD="@comment " 
@@ -69,6 +61,7 @@ PLIST_SUB+=	VMWGFX="@comment "
 PLIST_SUB+=	AMDGPU="@comment "
 PLIST_SUB+=	AMDKFD="@comment "
 PLIST_SUB+=	I915="@comment "
+PLIST_SUB+=	VBOXVIDEO="@comment "
 PLIST_SUB+=	VMWGFX="@comment "
 .endif
 
