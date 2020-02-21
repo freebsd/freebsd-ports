@@ -3,7 +3,7 @@
 
 PORTNAME=		openvpn
 DISTVERSION=		2.4.8
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/
@@ -29,22 +29,27 @@ CONFIGURE_ENV+=		ac_cv_prog_CMAKE= CMAKE=
 # let OpenVPN's configure script pick up the requisite libraries,
 # but do not break the plugin build if an older version is installed
 CPPFLAGS+=		-I${WRKSRC}/include -I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
+LDFLAGS+=		-L${LOCALBASE}/lib -Wl,--as-needed
 
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
 CPPFLAGS+=		-DPLUGIN_LIBDIR=\\\"${PREFIX}/lib/openvpn/plugins\\\"
 
 OPTIONS_DEFINE=		PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME \
-			TEST LZ4 LZO SMALL TUNNELBLICK
+			TEST LZ4 LZO SMALL TUNNELBLICK ASYNC_PUSH
 OPTIONS_DEFAULT=	EASYRSA OPENSSL TEST LZ4 LZO
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	OPENSSL MBEDTLS
+ASYNC_PUSH_DESC=	Enable async-push support
 PKCS11_DESC=		Use security/pkcs11-helper (OpenSSL only)
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
 MBEDTLS_DESC=		SSL/TLS via mbedTLS (lacks TLS v1.3)
 TUNNELBLICK_DESC=	Tunnelblick XOR scramble patch (READ HELP!)
 X509ALTUSERNAME_DESC=	Enable --x509-username-field (OpenSSL only)
 SMALL_DESC=		Build a smaller executable with fewer features
+
+ASYNC_PUSH_CONFIGURE_ENABLE=	async-push
+ASYNC_PUSH_LIB_DEPENDS=	libinotify.so:devel/libinotify
+ASYNC_PUSH_LIBS=	-linotify
 
 EASYRSA_RUN_DEPENDS=	easy-rsa>=0:security/easy-rsa
 
