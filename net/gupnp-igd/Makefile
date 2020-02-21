@@ -22,13 +22,9 @@ RUN_DEPENDS=	gupnp>=0.18:net/gupnp
 USES=		compiler:c11 gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 
-CONFIGURE_ARGS=	--enable-introspection=yes --disable-python
+CONFIGURE_ARGS=	--disable-python --enable-introspection=yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|gssdp-1.0|gssdp-1.2|; s|gupnp-1.0|gupnp-1.2|' ${WRKSRC}/configure ${WRKSRC}/gupnp-igd-1.0.pc.in ${WRKSRC}/libgupnp-igd/Makefile.in ${WRKSRC}/libgupnp-igd/GUPnPIgd-1.0.gir
-	@${REINPLACE_CMD} -e '/ --define-variable=/d' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
