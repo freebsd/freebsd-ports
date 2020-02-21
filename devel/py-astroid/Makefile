@@ -2,6 +2,7 @@
 
 PORTNAME=	astroid
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lazy-object-proxy>=1.4<1.5:devel/py-lazy-obj
 		${PYTHON_PKGNAMEPREFIX}six>=1.12<2:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typed-ast>=1.4.0<1.5:devel/py-typed-ast@${PY_FLAVOR} \
 		${PY_TYPING} \
-		${PYTHON_PKGNAMEPREFIX}wrapt>=1.11<1.12:devel/py-wrapt@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wrapt>=1.11<1.13:devel/py-wrapt@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.5+
