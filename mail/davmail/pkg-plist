@@ -23,6 +23,8 @@ share/applications/davmail.desktop
 %%DATADIR%%/DavMail.app/Contents/Java/log4j-1.2.16.jar
 %%DATADIR%%/DavMail.app/Contents/Java/slf4j-api-1.7.25.jar
 %%DATADIR%%/DavMail.app/Contents/Java/slf4j-log4j12-1.7.25.jar
+%%DATADIR%%/lib/sonarqube-ant-task-2.7.0.1612.jar
+%%DATADIR%%/DavMail.app/Contents/Java/sonarqube-ant-task-2.7.0.1612.jar
 %%DATADIR%%/DavMail.app/Contents/Java/stax-api-1.0.1.jar
 %%DATADIR%%/DavMail.app/Contents/Java/stax2-api-3.1.1.jar
 %%DATADIR%%/DavMail.app/Contents/Java/woodstox-core-5.1.0.jar
@@ -77,6 +79,7 @@ share/applications/davmail.desktop
 %%DATADIR%%/web/WEB-INF/lib/log4j-1.2.16.jar
 %%DATADIR%%/web/WEB-INF/lib/slf4j-api-1.7.25.jar
 %%DATADIR%%/web/WEB-INF/lib/slf4j-log4j12-1.7.25.jar
+%%DATADIR%%/web/WEB-INF/lib/sonarqube-ant-task-2.7.0.1612.jar
 %%DATADIR%%/web/WEB-INF/lib/stax-api-1.0.1.jar
 %%DATADIR%%/web/WEB-INF/lib/stax2-api-3.1.1.jar
 %%DATADIR%%/web/WEB-INF/lib/woodstox-core-5.1.0.jar
