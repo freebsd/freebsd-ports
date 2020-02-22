@@ -19,8 +19,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	mongo:databases/mongodb34 \
 		p5-Mojolicious>=5.40:www/p5-Mojolicious
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
