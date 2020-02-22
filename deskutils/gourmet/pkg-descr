@@ -1,6 +1,0 @@
-Gourmet Recipe Manager is a recipe-organizer for GNOME that generates shopping
-lists and allows rapid searching of recipes. It imports mealmaster & mastercook
-files and exports webpages & other formats.
-Gourmet uses Python, Gtk+ and SQLAlchemy.
-
-WWW: http://thinkle.github.com/gourmet/

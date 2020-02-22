@@ -1,8 +1,0 @@
-This is a port for Wikimedia Commons, or MediaWiki similar installations
-power users, to allow bulk images upload to a wiki from the command line.
-
-  * commons-csv-creator allows to get metadata from images Exif tags
-  * commons-upload allows to upload in batch images to Wikimedia Commons
-    or MediaWiki site
-
-WWW: https://bitbucket.org/dereckson/commons-utilities

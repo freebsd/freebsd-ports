@@ -1,8 +1,0 @@
---- scripts/hal-histogram.orig	2016-06-25 02:19:12 UTC
-+++ scripts/hal-histogram
-@@ -1,4 +1,4 @@
--#!/usr/bin/wish
-+#!/usr/bin/env wish8.6
- 
- # For usage: hal-histogram --help
- 

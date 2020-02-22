@@ -1,8 +1,0 @@
---- scripts/sim_pin.orig	2016-06-25 02:19:12 UTC
-+++ scripts/sim_pin
-@@ -1,4 +1,4 @@
--#!/usr/bin/wish
-+#!/usr/bin/env wish8.6
- 
- if [catch {package require Hal} msg] {
-   puts "\nProblem: $msg"

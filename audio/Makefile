@@ -108,7 +108,6 @@
     SUBDIR += deadbeef-spectrogram-plugin
     SUBDIR += deadbeef-vu-meter-plugin
     SUBDIR += deadbeef-waveform-seekbar-plugin
-    SUBDIR += decibel-audio-player
     SUBDIR += dekagen
     SUBDIR += denemo
     SUBDIR += discid
@@ -740,7 +739,6 @@
     SUBDIR += sonic-visualiser
     SUBDIR += sorcer-lv2
     SUBDIR += sound-juicer
-    SUBDIR += soundconverter
     SUBDIR += soundgrab
     SUBDIR += soundkonverter
     SUBDIR += soundtouch

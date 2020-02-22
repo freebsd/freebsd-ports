@@ -301,7 +301,6 @@
     SUBDIR += galaxyhack
     SUBDIR += garden-of-coloured-lights
     SUBDIR += gbrainy
-    SUBDIR += gcompris
     SUBDIR += gcompris-qt
     SUBDIR += gemdropx
     SUBDIR += gemrb

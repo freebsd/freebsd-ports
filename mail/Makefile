@@ -519,9 +519,7 @@
     SUBDIR += py-pyzmail
     SUBDIR += py-spambayes
     SUBDIR += py-validate_email
-    SUBDIR += py-zope.sendmail
     SUBDIR += pymsgauth
-    SUBDIR += pysieved
     SUBDIR += pyzor
     SUBDIR += qconfirm
     SUBDIR += qmail

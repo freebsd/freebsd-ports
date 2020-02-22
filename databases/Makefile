@@ -188,7 +188,6 @@
     SUBDIR += mdcached
     SUBDIR += memcached
     SUBDIR += memcacheq
-    SUBDIR += monetdb
     SUBDIR += mongodb34
     SUBDIR += mongodb34-tools
     SUBDIR += mongodb36
@@ -761,7 +760,6 @@
     SUBDIR += py-cassandra-driver
     SUBDIR += py-cdb
     SUBDIR += py-couchdb
-    SUBDIR += py-cql
     SUBDIR += py-dbf
     SUBDIR += py-dbutils
     SUBDIR += py-django-transaction-hooks
@@ -1053,6 +1051,5 @@
     SUBDIR += xrootd
     SUBDIR += xtrabackup
     SUBDIR += zabbix3-libzbxpgsql
-    SUBDIR += zodb3
 
 .include <bsd.port.subdir.mk>

@@ -1,8 +1,0 @@
---- src/po/git-merge-po.orig	2016-06-25 02:19:12 UTC
-+++ src/po/git-merge-po
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/local/bin/bash
- #
- # Custom Git merge driver - merges PO files using msgcat(1)
- #

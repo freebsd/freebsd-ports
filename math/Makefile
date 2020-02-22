@@ -485,7 +485,6 @@
     SUBDIR += octave-forge-zenity
     SUBDIR += octave-forge-zeromq
     SUBDIR += octomap
-    SUBDIR += ogdf
     SUBDIR += oleo
     SUBDIR += openblas
     SUBDIR += openfst
@@ -798,7 +797,6 @@
     SUBDIR += py-ufl
     SUBDIR += py-uncertainties
     SUBDIR += py-vincenty
-    SUBDIR += py-viper
     SUBDIR += py-yt
     SUBDIR += py-z3-solver
     SUBDIR += qalculate

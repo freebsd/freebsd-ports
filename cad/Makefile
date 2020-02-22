@@ -67,7 +67,6 @@
     SUBDIR += libredwg
     SUBDIR += librepcb
     SUBDIR += linux-eagle5
-    SUBDIR += linuxcnc-devel
     SUBDIR += logisim
     SUBDIR += magic
     SUBDIR += meshdev

@@ -97,7 +97,6 @@
     SUBDIR += colord
     SUBDIR += colord-gtk
     SUBDIR += comical
-    SUBDIR += commons-utilities
     SUBDIR += compupic
     SUBDIR += converseen
     SUBDIR += cosmoplayer
@@ -788,7 +787,6 @@
     SUBDIR += py-cairocffi
     SUBDIR += py-cairosvg
     SUBDIR += py-cartopy
-    SUBDIR += py-chart
     SUBDIR += py-colour
     SUBDIR += py-descartes
     SUBDIR += py-django-easy-thumbnails

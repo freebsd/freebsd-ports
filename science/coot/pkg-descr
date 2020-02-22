@@ -1,9 +1,0 @@
-Coot is for macromolecular model building, model completion and validation,
-particularly suitable for protein modelling using X-ray data.
-
-Coot displays maps and models and allows model manipulations such as
-idealization, real space refinement, manual rotation/translation, rigid-body
-fitting, ligand search, solvation, mutations, rotamers, Ramachandran plots,
-skeletonization, non-crystallographic symmetry and more.
-
-WWW: https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/

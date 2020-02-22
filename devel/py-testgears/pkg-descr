@@ -1,7 +1,0 @@
-TestGears provides automatic discovery of unittest.TestCases and
-the ability to run tests that are written as simple functions.
-It generates a standard unittest.TestSuite for use with any of
-the standard frontends, and provides a distutils command to run
-tests with zero configuration.
-
-WWW: http://www.turbogears.com/testgears/

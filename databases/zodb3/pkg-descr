@@ -1,6 +1,0 @@
-The ZODB package is a Python object persistence system.
-It provides the Z Object Database separately from Zope so
-it can be used in non-Zope related Python applications to
-provide transparent object-oriented persistency.
-
-WWW: http://www.zodb.org/

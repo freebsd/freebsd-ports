@@ -15,7 +15,6 @@
     SUBDIR += fidogate4
     SUBDIR += golded+
     SUBDIR += gup
-    SUBDIR += hellanzb
     SUBDIR += husky
     SUBDIR += husky-areafix
     SUBDIR += husky-fidoconf

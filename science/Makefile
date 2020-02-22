@@ -55,7 +55,6 @@
     SUBDIR += code_saturne
     SUBDIR += colt
     SUBDIR += coordgenlibs
-    SUBDIR += coot
     SUBDIR += cp2k
     SUBDIR += cp2k-data
     SUBDIR += crf++
@@ -226,7 +225,6 @@
     SUBDIR += py-OpenFermion
     SUBDIR += py-PyFR
     SUBDIR += py-PyQuante
-    SUBDIR += py-ScientificPython
     SUBDIR += py-SimpleSpectral
     SUBDIR += py-abipy
     SUBDIR += py-asdf
