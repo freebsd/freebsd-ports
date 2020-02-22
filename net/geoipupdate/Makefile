@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoipupdate
-PORTVERSION=	4.1.5
-PORTREVISION=	1
+PORTVERSION=	4.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
@@ -25,10 +24,10 @@ MAKE_ENV+=	GOPATH=${WRKSRC} \
 		CONFFILE=${PREFIX}/etc/GeoIP.conf \
 		DATADIR=${PREFIX}/share/GeoIP
 
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
+GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}/v4
 # Not needed: go-spew, pretty, testify
 GH_TUPLE=	gofrs:flock:v0.7.1:flock/src/github.com/gofrs/flock \
-		pkg:errors:v0.8.1:pkg/src/github.com/pkg/errors \
+		pkg:errors:v0.9.1:pkg/src/github.com/pkg/errors \
 		spf13:pflag:v1.0.5:pflag/src/github.com/spf13/pflag
 
 OPTIONS_DEFINE=	DOCS MANPAGES
