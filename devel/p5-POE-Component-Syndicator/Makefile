@@ -3,7 +3,7 @@
 
 PORTNAME=	POE-Component-Syndicator
 PORTVERSION=	0.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HINRIK
@@ -16,11 +16,12 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-POE>=1.311:devel/p5-POE \
-		p5-Object-Pluggable>=1.29:devel/p5-Object-Pluggable \
-		p5-Test-Simple>=0:devel/p5-Test-Simple
+RUN_DEPENDS=	p5-Object-Pluggable>=1.29:devel/p5-Object-Pluggable \
+		p5-POE>=1.311:devel/p5-POE
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
