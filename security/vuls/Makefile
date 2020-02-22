@@ -3,6 +3,7 @@
 PORTNAME=	vuls
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.6.1
+PORTREVISION=		1
 CATEGORIES=	security
 
 MAINTAINER=	iscandr@gmail.com
@@ -44,7 +45,7 @@ GH_TUPLE+=	golang:crypto:3d3f9f4:crypto/vendor/golang.org/x/crypto
 GH_TUPLE+=	golang:net:adae6a3:golangnet/vendor/golang.org/x/net
 GH_TUPLE+=	golang:protobuf:aa810b6:protobuf/vendor/github.com/golang/protobuf
 GH_TUPLE+=	golang:sync:42b3178:sync/vendor/golang.org/x/sync
-GH_TUPLE+=	golang:sys:66b7b13:sys/vendor/golang.org/x/sys
+GH_TUPLE+=	golang:sys:33540a1f6037:sys/vendor/golang.org/x/sys
 GH_TUPLE+=	golang:text:f21a4df:golangtext/vendor/golang.org/x/text
 GH_TUPLE+=	google:go-genproto:b5d4398:gogenproto/vendor/google.golang.org/genproto
 GH_TUPLE+=	google:google-api-go-client:83a9d30:googleapigoclient/vendor/google.golang.org/api
