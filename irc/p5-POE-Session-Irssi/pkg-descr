@@ -2,4 +2,4 @@ This POE::Session subclass helps you integrate POE and Irssi scripting. It
 connects the signals and commands handlers you define as POE events with the
 Irssi machinery.
 
-WWW: https://metacpan.org/module/POE::Session::Irssi
+WWW: https://metacpan.org/release/POE-Session-Irssi
