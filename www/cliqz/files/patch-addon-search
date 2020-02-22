@@ -1,0 +1,51 @@
+https://github.com/mozilla/addons/issues/708
+https://github.com/mozilla/addons-frontend/issues/4610
+
+Taken from www/firefox
+
+--- mozilla-release/browser/app/profile/firefox.js.orig	2020-02-19 14:20:43 UTC
++++ mozilla-release/browser/app/profile/firefox.js
+@@ -37,8 +37,8 @@ pref("extensions.webextOptionalPermissionPrompts", tru
+ // Preferences for AMO integration
+ pref("extensions.getAddons.cache.enabled", true);
+ pref("extensions.getAddons.get.url", "https://services.addons.mozilla.org/api/v3/addons/search/?guid=%IDS%&lang=%LOCALE%");
+-pref("extensions.getAddons.search.browseURL", "https://addons.mozilla.org/%LOCALE%/firefox/search?q=%TERMS%&platform=%OS%&appver=%VERSION%");
+-pref("extensions.webservice.discoverURL", "https://discovery.addons.mozilla.org/%LOCALE%/firefox/discovery/pane/%VERSION%/%OS%/%COMPATIBILITY_MODE%");
++pref("extensions.getAddons.search.browseURL", "https://addons.mozilla.org/%LOCALE%/firefox/search?q=%TERMS%&platform=Linux&appver=%VERSION%");
++pref("extensions.webservice.discoverURL", "https://discovery.addons.mozilla.org/%LOCALE%/firefox/discovery/pane/%VERSION%/Linux/%COMPATIBILITY_MODE%");
+ pref("extensions.getAddons.link.url", "https://addons.mozilla.org/%LOCALE%/firefox/");
+ pref("extensions.getAddons.langpacks.url", "https://services.addons.mozilla.org/api/v3/addons/language-tools/?app=firefox&type=language&appversion=%VERSION%");
+ pref("extensions.getAddons.discovery.api_url", "https://services.addons.mozilla.org/api/v4/discovery/?lang=%LOCALE%&edition=%DISTRIBUTION%");
+@@ -174,8 +174,8 @@ pref("app.update.url", "https://updatecheck.cliqz.com/
+ //  .. etc ..
+ //
+ pref("extensions.update.enabled", true);
+-pref("extensions.update.url", "https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&status=%ITEM_STATUS%&appID=%APP_ID%&appVersion=%APP_VERSION%&appOS=%APP_OS%&appABI=%APP_ABI%&locale=%APP_LOCALE%&currentAppVersion=%CURRENT_APP_VERSION%&updateType=%UPDATE_TYPE%&compatMode=%COMPATIBILITY_MODE%");
+-pref("extensions.update.background.url", "https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&status=%ITEM_STATUS%&appID=%APP_ID%&appVersion=%APP_VERSION%&appOS=%APP_OS%&appABI=%APP_ABI%&locale=%APP_LOCALE%&currentAppVersion=%CURRENT_APP_VERSION%&updateType=%UPDATE_TYPE%&compatMode=%COMPATIBILITY_MODE%");
++pref("extensions.update.url", "https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&status=%ITEM_STATUS%&appID=%APP_ID%&appVersion=%APP_VERSION%&appOS=Linux&appABI=%APP_ABI%&locale=%APP_LOCALE%&currentAppVersion=%CURRENT_APP_VERSION%&updateType=%UPDATE_TYPE%&compatMode=%COMPATIBILITY_MODE%");
++pref("extensions.update.background.url", "https://versioncheck-bg.addons.mozilla.org/update/VersionCheck.php?reqVersion=%REQ_VERSION%&id=%ITEM_ID%&version=%ITEM_VERSION%&maxAppVersion=%ITEM_MAXAPPVERSION%&status=%ITEM_STATUS%&appID=%APP_ID%&appVersion=%APP_VERSION%&appOS=Linux&appABI=%APP_ABI%&locale=%APP_LOCALE%&currentAppVersion=%CURRENT_APP_VERSION%&updateType=%UPDATE_TYPE%&compatMode=%COMPATIBILITY_MODE%");
+ #if MOZ_UPDATE_CHANNEL == beta
+ // CLIQZ-SPECIAL: force addons update in every 30 min on beta
+ pref("extensions.update.interval", 1800);
+--- mozilla-release/toolkit/mozapps/extensions/internal/AddonRepository.jsm.orig	2020-02-19 14:20:43 UTC
++++ mozilla-release/toolkit/mozapps/extensions/internal/AddonRepository.jsm
+@@ -586,7 +586,7 @@ var AddonRepository = {
+       addon.version = String(aEntry.current_version.version);
+       if (Array.isArray(aEntry.current_version.files)) {
+         for (let file of aEntry.current_version.files) {
+-          if (file.platform == "all" || file.platform == PLATFORM) {
++          if (file.platform == "all" || file.platform == "linux" || file.platform == PLATFORM) {
+             if (file.url) {
+               addon.sourceURI = NetUtil.newURI(file.url);
+             }
+--- mozilla-release/toolkit/mozapps/extensions/internal/XPIDatabase.jsm.orig	2020-02-19 14:20:43 UTC
++++ mozilla-release/toolkit/mozapps/extensions/internal/XPIDatabase.jsm
+@@ -484,7 +484,7 @@ class AddonInternal {
+     // Something is causing errors in here
+     try {
+       for (let platform of this.targetPlatforms) {
+-        if (platform.os == Services.appinfo.OS) {
++        if (platform.os == "Linux" || platform.os == Services.appinfo.OS) {
+           if (platform.abi) {
+             needsABI = true;
+             if (platform.abi === abi) {

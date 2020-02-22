@@ -2,7 +2,6 @@ bin/cliqz
 lib/cliqz/application.ini
 lib/cliqz/browser/adult-domains.bin
 lib/cliqz/browser/blocklist.xml
-lib/cliqz/browser/chrome.manifest
 lib/cliqz/browser/chrome/icons/default/default128.png
 lib/cliqz/browser/chrome/icons/default/default16.png
 lib/cliqz/browser/chrome/icons/default/default32.png
@@ -12,7 +11,6 @@ lib/cliqz/browser/features/cliqz@cliqz.com.xpi
 lib/cliqz/browser/features/gdprtool@cliqz.com.xpi
 lib/cliqz/browser/features/https-everywhere@cliqz.com.xpi
 lib/cliqz/browser/omni.ja
-lib/cliqz/chrome.manifest
 lib/cliqz/cliqz
 lib/cliqz/cliqz-bin
 lib/cliqz/cliqz.cfg
@@ -32,8 +30,6 @@ lib/cliqz/libmozsqlite3.so
 lib/cliqz/libnspr4.so
 lib/cliqz/libnss3.so
 lib/cliqz/libnssckbi.so
-lib/cliqz/libnssdbm3.chk
-lib/cliqz/libnssdbm3.so
 lib/cliqz/libnssutil3.so
 lib/cliqz/libplc4.so
 lib/cliqz/libplds4.so

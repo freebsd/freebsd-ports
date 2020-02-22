@@ -1,6 +1,6 @@
---- mozilla-release/config/rules.mk.orig	2019-11-13 13:22:25 UTC
+--- mozilla-release/config/rules.mk.orig	2020-02-19 14:20:43 UTC
 +++ mozilla-release/config/rules.mk
-@@ -960,20 +960,20 @@ $(EXTENSIONS_PATH):
+@@ -914,27 +914,27 @@ $(EXTENSIONS_PATH):
  CLIQZ_XPI_PATH = $(EXTENSIONS_PATH)/cliqz@cliqz.com.xpi
  $(CLIQZ_XPI_PATH): $(EXTENSIONS_PATH)
  	echo CLIQZ_XPI_PATH in `pwd`
@@ -24,3 +24,11 @@
  endif
  
  DAT_XPI_PATH = $(EXTENSIONS_PATH)/dat@cliqz.com.xpi
+ $(DAT_XPI_PATH): $(EXTENSIONS_PATH)
+ ifdef DAT_EXT_URL
+ 	echo DAT_XPI_PATH in `pwd`
+-	wget --output-document $(DAT_XPI_PATH) $(DAT_EXT_URL)
++#	wget --output-document $(DAT_XPI_PATH) $(DAT_EXT_URL)
+ endif
+ 
+ CLIQZ_CFG = $(DIST_RESPATH)/cliqz.cfg
