@@ -4,4 +4,4 @@ Try::Tiny but with some modifications to boost execution speed.
 Consider Try::Catch a stripped Try::Tiny version with no blessing and no usage
 of Sub::Name.
 
-WWW: https://metacpan.org/pod/Try::Catch
+WWW: https://metacpan.org/release/Try-Catch
