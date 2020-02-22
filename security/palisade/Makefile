@@ -3,7 +3,7 @@
 PORTNAME=	palisade
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,6 +36,11 @@ CMAKE_ARGS=	-DWITH_NTL=Y
 LDFLAGS+=	${LOCALBASE}/lib/libntl.so # libntl is optional in palisade but is necessary in FreeBSD because is has an equivalent of quadmath.h that is missing in FreeBSD. -DWITH_NTL should be added by users to the compiler command lines.
 
 CXXFLAGS+=	-I${WRKSRC}/third-party/google-test/googletest
+
+OPTIONS_DEFINE=		OPENMP
+OPTIONS_DEFAULT=	OPENMP
+
+OPENMP_CMAKE_BOOL=	USE_OpenMP
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
