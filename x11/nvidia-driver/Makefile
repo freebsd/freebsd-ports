@@ -10,9 +10,9 @@
 # slave ports instead (`x11/nvidia-driver-340' or `x11/nvidia-driver-304').
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	440.31
+DISTVERSION?=	440.59
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -249,6 +249,9 @@ post-install: .SILENT
 .if ${NVVERSION} < 415.013
 	${REINPLACE_CMD} -e '/libnvidia-egl-wayland\.so/d ; \
 		/10_nvidia_wayland\.json/d' ${TMPPLIST}
+.endif
+.if ${NVVERSION} < 440.036
+	${REINPLACE_CMD} -e '/lib32\//d' ${TMPPLIST}
 .endif
 # Rename some libraries and install a libmap file to resolve conflict with
 # Mesa libraries.
