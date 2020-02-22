@@ -1,0 +1,6 @@
+go.d.plugin is a netdata external plugin.
+It is an orchestrator for data collection modules written in go.
+It runs as an independent process ps fax shows it.
+It is started and stopped automatically by netdata.
+
+WWW: https://github.com/netdata/go.d.plugin
