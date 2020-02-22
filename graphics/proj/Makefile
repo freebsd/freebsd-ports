@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	proj
-PORTVERSION=	6.1.1
+PORTVERSION=	6.3.1
 PORTEPOCH=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/proj/
@@ -15,14 +15,14 @@ COMMENT=	Cartographic Projections library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	proj5-5.[0-9]*.[0-9]*
-
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 USES=		compiler:c++11-lang gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+
+CONFLICTS_INSTALL=	proj5-5.[0-9]*.[0-9]*
 
 DATUM_GRID_FILES=	proj-datumgrid-1.8.zip \
 			proj-datumgrid-europe-1.3.zip \
