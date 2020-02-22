@@ -1477,6 +1477,7 @@
     SUBDIR += tshark
     SUBDIR += tshark-lite
     SUBDIR += tsocks
+    SUBDIR += tunneller
     SUBDIR += turnserver
     SUBDIR += twitux
     SUBDIR += u6rd
