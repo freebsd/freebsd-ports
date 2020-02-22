@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	lumina
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 PORTEPOCH=	3
 CATEGORIES=	x11
 
-MAINTAINER=	jt@ixsystems.com
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Lumina Desktop Environment (meta-port)
 
 LICENSE=	BSD3CLAUSE
