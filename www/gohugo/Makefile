@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.64.1
+DISTVERSION=	0.65.2
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -28,7 +28,7 @@ GH_TUPLE=	\
 		aws:aws-sdk-go:v1.27.1:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		bep:debounce:v1.2.0:bep_debounce/vendor/github.com/bep/debounce \
 		bep:gitmap:v1.1.1:bep_gitmap/vendor/github.com/bep/gitmap \
-		bep:go-tocss:v0.6.0:bep_go_tocss/vendor/github.com/bep/go-tocss \
+		bep:golibsass:v0.5.0:bep_golibsass/vendor/github.com/bep/golibsass \
 		bep:tmc:v0.5.1:bep_tmc/vendor/github.com/bep/tmc \
 		census-instrumentation:opencensus-go:v0.22.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cpuguy83:go-md2man:v1.0.10:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man \
@@ -100,8 +100,7 @@ GH_TUPLE=	\
 		tdewolff:minify:v2.6.1:tdewolff_minify/vendor/github.com/tdewolff/minify/v2 \
 		tdewolff:parse:v2.3.14:tdewolff_parse/vendor/github.com/tdewolff/parse/v2 \
 		uber-go:atomic:v1.4.0:uber_go_atomic/vendor/go.uber.org/atomic \
-		wellington:go-libsass:c63644206701:wellington_go_libsass/vendor/github.com/wellington/go-libsass \
-		yuin:goldmark-highlighting:78f32c8dd6d5:yuin_goldmark_highlighting/vendor/github.com/yuin/goldmark-highlighting \
+		yuin:goldmark-highlighting:d1af22c1126f:yuin_goldmark_highlighting/vendor/github.com/yuin/goldmark-highlighting \
 		yuin:goldmark:v1.1.22:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 GO_BUILDFLAGS=	-ldflags="\
@@ -132,7 +131,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		c327e75d05b232c675acb11a35cb79cb34933d01
+COMMIT_ID=		c1eb62512446fd80ff5e4c0f45c8614788595e0e
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
