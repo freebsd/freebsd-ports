@@ -1,6 +1,6 @@
---- src/lib/cp/complete.c	Wed Jun 19 05:55:38 1991
-+++ src/lib/cp/complete.c	Sat Mar 17 11:51:56 2007
-@@ -445,14 +445,14 @@
+--- src/lib/cp/complete.c.orig	1991-06-19 03:55:38 UTC
++++ src/lib/cp/complete.c
+@@ -445,14 +445,14 @@ cp_ccon(on)
      ison = on;
  
      if (ison == true) {

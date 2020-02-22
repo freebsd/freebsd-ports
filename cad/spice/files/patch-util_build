@@ -1,6 +1,6 @@
---- util/build.orig	Thu Jul 29 03:46:39 1993
-+++ util/build	Thu Jul 17 00:47:50 2003
-@@ -96,7 +96,7 @@
+--- util/build.orig	1993-07-29 08:46:39 UTC
++++ util/build
+@@ -96,7 +96,7 @@ DIR4=`basename ${TOP3}`
  
  TMP_LEADER="${TMP_DIR}/buildl$$"
  TMP_TRAILER="${TMP_DIR}/buildt$$"

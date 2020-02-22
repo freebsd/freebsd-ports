@@ -1,6 +1,6 @@
---- src/lib/dev/bjt/makedefs~	Fri May 31 23:16:08 1991
-+++ src/lib/dev/bjt/makedefs	Mon Dec  8 14:16:57 2003
-@@ -14,6 +14,8 @@
+--- src/lib/dev/bjt/makedefs.orig	1991-05-31 21:16:08 UTC
++++ src/lib/dev/bjt/makedefs
+@@ -14,6 +14,8 @@ COBJS		= bjt.o bjtacld.o bjtask.o bjtconv.o bjtdel.o b
  		  bjtsacl.o bjtsetup.o bjtsload.o bjtsprt.o bjtsset.o \
  		  bjtsupd.o bjttemp.o bjttrunc.o 
  
