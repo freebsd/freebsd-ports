@@ -1,6 +1,5 @@
-This class is used by the ResourcePool internally to create
-Net::LDAP connections. Its called by the corresponding
-ResourcePool::Factory::Net::LDAP object which passes the
-parameters needed to establish the Net::LDAP connection.
+This class is used by the ResourcePool internally to create Net::LDAP
+connections. Its called by the corresponding ResourcePool::Factory::Net::LDAP
+object which passes the parameters needed to establish the Net::LDAP connection.
 
 WWW: https://metacpan.org/release/ResourcePool-Resource-Net-LDAP
