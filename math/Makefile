@@ -365,7 +365,6 @@
     SUBDIR += mbasecalc
     SUBDIR += mcsim
     SUBDIR += metis
-    SUBDIR += metis4
     SUBDIR += mfem
     SUBDIR += mingw32-libgmp
     SUBDIR += minisat
@@ -384,7 +383,6 @@
     SUBDIR += mtrxmath
     SUBDIR += multichoose
     SUBDIR += mumps
-    SUBDIR += mumps4
     SUBDIR += muparser
     SUBDIR += nanoflann
     SUBDIR += naturalmath
