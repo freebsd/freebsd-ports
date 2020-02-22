@@ -1,0 +1,7 @@
+The Datadog Python Library is a collection of tools suitable for inclusion in
+existing Python projects or for the development of standalone scripts. It
+provides an abstraction on top of Datadog's raw HTTP interface and the Agent's
+DogStatsD metrics aggregation server, to interact with Datadog and efficiently
+report events and metrics.
+
+WWW: https://github.com/DataDog/datadogpy
