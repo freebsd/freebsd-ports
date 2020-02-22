@@ -3,10 +3,10 @@
 
 PORTNAME=	lumina-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.6.0
 CATEGORIES=	x11
 
-MAINTAINER=	jt@ixsystems.com
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Lumina Desktop Environment
 
 LICENSE=	BSD3CLAUSE
@@ -41,15 +41,15 @@ OPTIONS_SUB=		yes
 MULTIMEDIA_DESC=	Install multimedia support backend (gstreamer)
 TRUEOS_DESC=		Use the TrueOS system interface settings.
 
-WRKSRC_SUBDIR=	src-qt5/core
-
-CONFLICTS_INSTALL=	lumina-1.2.*
-
 TRUEOS_QMAKE_ON=	DEFAULT_SETTINGS=TrueOS
 
 MULTIMEDIA_RUN_DEPENDS=	gstreamer1-plugins-core>=0:multimedia/gstreamer1-plugins-core
 
 NLS_USE=	QT=linguist_build
 NLS_QMAKE_ON=	CONFIG+=WITH_I18N
+
+WRKSRC_SUBDIR=	src-qt5/core
+
+CONFLICTS_INSTALL=	lumina-1.2.*
 
 .include <bsd.port.mk>

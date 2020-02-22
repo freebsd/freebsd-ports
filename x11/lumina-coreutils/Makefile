@@ -3,10 +3,10 @@
 
 PORTNAME=	lumina-coreutils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.6.0
 CATEGORIES=	x11
 
-MAINTAINER=	jt@ixsystems.com
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Lumina Desktop Environment
 
 LICENSE=	BSD3CLAUSE
@@ -25,11 +25,11 @@ GH_PROJECT=	lumina
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=	yes
 
+NLS_USE=	QT=linguist_build
+NLS_QMAKE_ON=	CONFIG+=WITH_I18N
+
 WRKSRC_SUBDIR=	src-qt5/core-utils
 
 CONFLICTS_INSTALL=	lumina-1.2.*
-
-NLS_USE=	QT=linguist_build
-NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
 .include <bsd.port.mk>

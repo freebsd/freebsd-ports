@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	lumina-calculator
-DISTVERSION=	1.5.0
+DISTVERSION=	1.6.0
 CATEGORIES=	deskutils
 
-MAINTAINER=	ken@project-trident.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Scientific calculator from the Lumina Desktop
 
 LICENSE=	BSD3CLAUSE
@@ -21,11 +21,11 @@ GH_TAGNAME=	ccb792fc713aa7163fffd37fc20c83ffe9ca7523
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
 
+NLS_USE=	qt=linguist_build
+NLS_QMAKE_ON=	CONFIG+=WITH_I18N
+
 CONFLICTS_INSTALL=	lumina-1.2.*
 
 WRKSRC_SUBDIR=	src-qt5
-
-NLS_USE=	qt=linguist_build
-NLS_QMAKE_ON=	CONFIG+=WITH_I18N
 
 .include <bsd.port.mk>

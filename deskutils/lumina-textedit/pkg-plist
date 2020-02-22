@@ -68,6 +68,7 @@ share/applications/lumina-textedit.desktop
 share/lumina-desktop/syntax_rules/cpp.syntax
 share/lumina-desktop/syntax_rules/go.syntax
 share/lumina-desktop/syntax_rules/html.syntax
+share/lumina-desktop/syntax_rules/java.syntax
 share/lumina-desktop/syntax_rules/javascript.syntax
 share/lumina-desktop/syntax_rules/json.syntax
 share/lumina-desktop/syntax_rules/md.syntax
