@@ -1,0 +1,36 @@
+--- src/lib/libast/features/mmap.orig	2020-02-08 10:39:38.000000000 -0800
++++ src/lib/libast/features/mmap	2020-02-08 20:49:37.791733000 -0800
+@@ -16,14 +16,7 @@
+ 
+ 	#define Failed(file)	(remove(file),1)
+ 
+-	int
+-	#if _STD_
+-	main(int argc, char** argv)
+-	#else
+-	main(argc,argv)
+-	int     argc;
+-	char**  argv;
+-	#endif
++	int main(int argc, char** argv)
+ 	{
+ 		caddr_t		mm;
+ 		char		*t, *u, *f;
+@@ -326,17 +319,12 @@
+ cat{
+ 
+ 	/* some systems get it wrong but escape concise detection */
+-	#ifndef _NO_MMAP
+ 	#if __CYGWIN__
+ 	#define _NO_MMAP	1
+ 	#endif
+-	#endif
+ 
+ 	#if _NO_MMAP
+ 	#undef	_lib_mmap
+ 	#undef	_lib_mmap64
+-	#undef	_mmap_anon
+-	#undef	_mmap_devzero
+-	#undef	_mmap_worthy
+ 	#endif
+ }end
