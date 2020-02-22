@@ -7,18 +7,23 @@ PORTREVISION=	0
 CATEGORIES=	net-im java
 MASTER_SITES=	https://download.jitsi.org/jitsi/src/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source IM and VoIP application
 
 LICENSE=	LGPL21
 
+BROKEN=		fails to start, missing requirement osgi.native
+ONLY_FOR_ARCHS=	i386 amd64
+
 USES=		zip
 USE_JAVA=	yes
 USE_ANT=	yes
+USE_XORG=	x11
 MAKE_ARGS=	rebuild
 USE_LDCONFIG=	${PREFIX}/lib/jitsi/lib/native
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-ONLY_FOR_ARCHS=	i386 amd64
 
 DESKTOP_ENTRIES="Jitsi" \
 		"VoIP and Instant Messenger" \
