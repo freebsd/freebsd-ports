@@ -1,0 +1,31 @@
+Disable STL wrappers in some places to help libc++ 9
+
+Taken from www/firefox
+
+diff --git config/external/rlbox/moz.build config/external/rlbox/moz.build
+index d216e62cad861..391bbdf566b88 100644
+--- mozilla-release/config/external/rlbox/moz.build
++++ mozilla-release/config/external/rlbox/moz.build
+@@ -26,4 +26,7 @@ SOURCES += [
+     'rlbox_thread_locals.cpp'
+ ]
+ 
++# bug 1594027
++DisableStlWrapping()
++
+ FINAL_LIBRARY = 'xul'
+\ No newline at end of file
+diff --git gfx/graphite2/src/moz.build gfx/graphite2/src/moz.build
+index 447cd861126a3..8a4fcd814e6fb 100755
+--- mozilla-release/gfx/graphite2/src/moz.build
++++ mozilla-release/gfx/graphite2/src/moz.build
+@@ -69,6 +69,9 @@ if CONFIG['MOZ_WASM_SANDBOXING_GRAPHITE']:
+ # thebes
+ DefineAndWasmDefine('GRAPHITE2_STATIC', True)
+ 
++# bug 1594027
++DisableStlWrapping()
++
+ # We allow warnings for third-party code that can be updated from upstream.
+ AllowCompilerWarnings()
+ 
