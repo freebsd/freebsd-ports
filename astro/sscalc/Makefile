@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	astro
 MASTER_SITES=	https://opsec.eu/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Sunrise and sunset time calculator
 
 OPTIONS_DEFINE=	DOCS
