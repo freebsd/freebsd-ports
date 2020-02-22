@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	7.5.2
+PORTVERSION=	7.6.0
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/
 PKGNAMESUFFIX=	7
@@ -33,6 +33,7 @@ SHEBANG_FILES=	bin/elasticsearch \
 		bin/elasticsearch-cli \
 		bin/elasticsearch-croneval \
 		bin/elasticsearch-env \
+		bin/elasticsearch-env-from-file \
 		bin/elasticsearch-keystore \
 		bin/elasticsearch-migrate \
 		bin/elasticsearch-node \
@@ -62,6 +63,7 @@ BINS=		elasticsearch \
 		elasticsearch-cli \
 		elasticsearch-croneval \
 		elasticsearch-env \
+		elasticsearch-env-from-file \
 		elasticsearch-keystore \
 		elasticsearch-migrate \
 		elasticsearch-node \
