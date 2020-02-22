@@ -3,6 +3,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/vice-emu/releases
 
@@ -36,6 +37,7 @@ MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 CONFIGURE_ARGS+=	--enable-ipv6 \
 			--enable-external-ffmpeg \
 			--enable-x64 \
+			--disable-realdevice \
 			--mandir="${PREFIX}/man" \
 			--infodir="${PREFIX}/${INFO_PATH}" \
 			--localedir="${LOCALBASE}/share/locale" \
@@ -97,13 +99,6 @@ pre-configure:
 		${WRKSRC}/man/vice.1
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in
-.endif
-.if ${ARCH} == "i386"
-	${REINPLACE_CMD} \
-		-e 's|^@HAVE_BSD_FREE_FALSE@|@HAVE_BSD_FREE2_TRUE@|' \
-		-e 's|^@HAVE_BSD_FREE_TRUE@|@HAVE_BSD_FREE_FALSE@|' \
-		-e 's|^@HAVE_BSD_FREE2_TRUE@|@HAVE_BSD_FREE_TRUE@|' \
-		${WRKSRC}/src/Makefile.in
 .endif
 
 pre-install-DOCS-on:
