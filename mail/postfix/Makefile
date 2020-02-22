@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	3.4.8
+DISTVERSION=	3.4.9
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail
@@ -80,9 +80,10 @@ SASLKMIT_DESC=	If your SASL req. MIT Kerberos5, select this
 HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
 	scache.8.html tlsmgr.8.html
 
-STRIP_LIBEXEC=	anvil bounce cleanup discard dnsblog error flush lmtp local master \
-		nqmgr oqmgr pickup pipe postscreen proxymap qmgr qmqpd scache showq \
-		smtp smtpd spawn tlsmgr tlsproxy trivial-rewrite verify virtual
+STRIP_LIBEXEC=	anvil bounce cleanup discard dnsblog error flush lmtp local \
+		master nqmgr oqmgr pickup pipe postlogd postscreen proxymap \
+		qmgr qmqpd scache showq smtp smtpd spawn tlsmgr tlsproxy \
+		trivial-rewrite verify virtual
 
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
