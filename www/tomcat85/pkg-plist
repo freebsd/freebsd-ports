@@ -72,6 +72,7 @@
 %%DOCS%%%%T%%/webapps/docs/RUNNING.txt
 %%DOCS%%%%T%%/webapps/docs/WEB-INF/web.xml
 %%DOCS%%%%T%%/webapps/docs/aio.html
+%%DOCS%%%%T%%/webapps/docs/annotationapi/index.html
 %%DOCS%%%%T%%/webapps/docs/api/index.html
 %%DOCS%%%%T%%/webapps/docs/appdev/build.xml.txt
 %%DOCS%%%%T%%/webapps/docs/appdev/deployment.html
