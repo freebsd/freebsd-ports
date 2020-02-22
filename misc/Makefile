@@ -92,7 +92,6 @@
     SUBDIR += excel-writer
     SUBDIR += exercism
     SUBDIR += explosions
-    SUBDIR += fbless
     SUBDIR += felis
     SUBDIR += figlet
     SUBDIR += figlet-fonts
@@ -426,7 +425,6 @@
     SUBDIR += py-tvm
     SUBDIR += py-xgboost
     SUBDIR += py-yolk
-    SUBDIR += pylize
     SUBDIR += pyobd
     SUBDIR += qbrew
     SUBDIR += qlas

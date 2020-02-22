@@ -1,7 +1,0 @@
-pyNotifier is a notifier/event scheduler abstraction written in python.
-
-It implements notification mechanisms for socket events (read or write)
-and timers. Additionally external event dispatchers may be called during
-an idle period.
-
-WWW: http://www.bitkipper.net/Package/pynotifier

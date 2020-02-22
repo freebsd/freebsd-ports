@@ -1,6 +1,0 @@
-This plug-in adds a watchlist for wikis and tickets.
-Every logged-in user can watch any wikis and ticket.
-The watchlist is provided under [/watchlist] which
-is also added to the main navigation bar.
-
-WWW: http://trac-hacks.org/wiki/WatchlistPlugin

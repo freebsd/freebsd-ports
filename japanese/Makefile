@@ -261,7 +261,6 @@
     SUBDIR += suicavalue
     SUBDIR += t2ps
     SUBDIR += tdiary
-    SUBDIR += tegaki-recognize
     SUBDIR += tegaki-zinnia-japanese
     SUBDIR += tex-ptex
     SUBDIR += tgif

@@ -1,7 +1,0 @@
-TIMESTAMP = 1554259683
-SHA256 (coot/coot-0.8.9.2.tar.gz) = f24ed258e43ea31452b54c62649c071aa15f356d077dce0dab94eb04f27a6625
-SIZE (coot/coot-0.8.9.2.tar.gz) = 19635513
-SHA256 (coot/refmac-monomer-library.tar.gz) = 03562eec612103a48bd114cfe0d171943e88f94b84610d16d542cda138e5f36b
-SIZE (coot/refmac-monomer-library.tar.gz) = 37439851
-SHA256 (coot/reference-structures.tar.gz) = 44db38506f0f90c097d4855ad81a82a36b49cd1e3ffe7d6ee4728b15109e281a
-SIZE (coot/reference-structures.tar.gz) = 6728787

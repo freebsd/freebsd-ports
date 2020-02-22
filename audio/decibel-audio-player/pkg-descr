@@ -1,9 +1,0 @@
-Decibel audio player is a very fast GTK+ audio player
-with an emphasis on being very clean and user friendly.
-
-* Utilizes the GStreamer plugins system
-* Lighter footprint than most audio players
-* Follows the Gnome Human Interface Guidelines
-* Has quite a few plugins of it's own
-
-WWW: http://decibel.silent-blade.org/

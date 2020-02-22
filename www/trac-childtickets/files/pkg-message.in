@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-See plugin homepage http://trac-hacks.org/wiki/ChildTicketsPlugin for
-more information about post install configuration.
-EOM
-}
-]

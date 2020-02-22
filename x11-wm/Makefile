@@ -107,7 +107,6 @@
     SUBDIR += rubygem-uh-wm
     SUBDIR += sawfish
     SUBDIR += selectwm
-    SUBDIR += simple-ccsm
     SUBDIR += skippy-xd
     SUBDIR += spectrwm
     SUBDIR += stumpwm
