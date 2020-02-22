@@ -25,7 +25,7 @@ include/proj_symbol_rename.h
 lib/libproj.a
 lib/libproj.so
 lib/libproj.so.15
-lib/libproj.so.15.1.1
+lib/libproj.so.15.3.1
 libdata/pkgconfig/proj.pc
 man/man1/cct.1.gz
 man/man1/cs2cs.1.gz
@@ -175,6 +175,7 @@ man/man3/pj_init.3.gz
 %%DATADIR%%/ohhpgn.gsb
 %%DATADIR%%/okhpgn.gsb
 %%DATADIR%%/pahpgn.gsb
+%%DATADIR%%/projjson.schema.json
 %%DATADIR%%/prvi
 %%DATADIR%%/pvhpgn.gsb
 %%DATADIR%%/schpgn.gsb
