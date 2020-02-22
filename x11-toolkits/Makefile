@@ -172,7 +172,6 @@
     SUBDIR += py-SquareMap
     SUBDIR += py-easygui
     SUBDIR += py-fltk
-    SUBDIR += py-gnome2
     SUBDIR += py-gtk2
     SUBDIR += py-gtkglext
     SUBDIR += py-gtksourceview
