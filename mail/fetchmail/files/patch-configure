@@ -5,12 +5,12 @@
  extern "C"
  #endif
 -char krb5_des_string_to_key ();
-+char krb5int_des_string_to_key ();
++char krb5int_des_init_state ();
  int
  main ()
  {
 -return krb5_des_string_to_key ();
-+return krb5int_des_string_to_key ();
++return krb5int_des_init_state ();
    ;
    return 0;
  }
@@ -19,12 +19,12 @@
  extern "C"
  #endif
 -char krb5_des_string_to_key ();
-+char krb5int_des_string_to_key ();
++char krb5int_des_init_state ();
  int
  main ()
  {
 -return krb5_des_string_to_key ();
-+return krb5int_des_string_to_key ();
++return krb5int_des_init_state ();
    ;
    return 0;
  }
