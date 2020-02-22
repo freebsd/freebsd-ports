@@ -369,6 +369,7 @@
     SUBDIR += nextcloud-passman
     SUBDIR += nextcloud-twofactor_totp
     SUBDIR += nextcloud-twofactor_u2f
+    SUBDIR += nflib
     SUBDIR += ngrok
     SUBDIR += nikto
     SUBDIR += nist-kat

@@ -1,0 +1,8 @@
+NFLlib is an efficient and open-source C++ library dedicated to ideal lattice
+cryptography. It is specialized in polynomial rings quotiented by a cyclotomic
+polynomial whose degree is a power of two. The library combines algorithmic
+optimizations (Chinese Remainder Theorem, optimized Number Theoretic Transform)
+together with programming optimization techniques (SSE and AVX2 specializations,
+C++ expression templates, etc.)
+
+WWW: https://github.com/quarkslab/NFLlib

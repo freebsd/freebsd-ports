@@ -1,0 +1,26 @@
+# $FreeBSD$
+
+PORTNAME=	nflib
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.0-23
+DISTVERSIONSUFFIX=	-g5cf40ed
+CATEGORIES=	security math
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	NTT-based fast lattice cryptography library
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT_LICENSE.txt
+
+LIB_DEPENDS=	libmpfr.so:math/mpfr \
+		libgmp.so:math/gmp
+
+USES=		cmake compiler:c++11-lang localbase
+USE_GITHUB=	yes
+GH_ACCOUNT=	quarkslab
+GH_PROJECT=	NFLlib
+USE_LDCONFIG=	yes
+
+TEST_TARGET=	test
+
+.include <bsd.port.mk>
