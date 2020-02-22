@@ -158,7 +158,5 @@ lib/jitsi/sc-bundles/util.jar
 lib/jitsi/sc-bundles/version-impl.jar
 lib/jitsi/sc-bundles/weupnp.jar
 lib/jitsi/sc-bundles/zrtp4j.jar
-libdata/ldconfig/jitsi
 man/man1/jitsi.1.gz
-share/applications/jitsi.desktop
 share/pixmaps/jitsi.png
