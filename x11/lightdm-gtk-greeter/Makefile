@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lightdm-gtk-greeter
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	x11
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 

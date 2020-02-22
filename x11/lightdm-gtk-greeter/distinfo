@@ -1,3 +1,3 @@
-TIMESTAMP = 1549276461
-SHA256 (lightdm-gtk-greeter-2.0.6.tar.gz) = 255cf4039ab2536020ca8714bdc98300c8f71719183bbb5b18ef96f43c2e3ade
-SIZE (lightdm-gtk-greeter-2.0.6.tar.gz) = 575668
+TIMESTAMP = 1582348929
+SHA256 (lightdm-gtk-greeter-2.0.7.tar.gz) = bae293f21286e93113ee7965a3a8734bbee6b94f3c74d8723dcae13dda60fcbc
+SIZE (lightdm-gtk-greeter-2.0.7.tar.gz) = 580726
