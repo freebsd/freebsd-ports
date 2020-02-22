@@ -1,6 +1,2 @@
-%%PERL5_MAN3%%/ResourcePool::Factory::Net::LDAP.3.gz
-%%PERL5_MAN3%%/ResourcePool::Resource::Net::LDAP.3.gz
 %%SITE_PERL%%/ResourcePool/Factory/Net/LDAP.pm
-%%SITE_PERL%%/ResourcePool/Factory/Net/LDAP.pod
 %%SITE_PERL%%/ResourcePool/Resource/Net/LDAP.pm
-%%SITE_PERL%%/ResourcePool/Resource/Net/LDAP.pod
