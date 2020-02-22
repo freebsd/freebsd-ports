@@ -1,7 +1,7 @@
-%%SITE_PERL%%/DBIx/Class/MooseColumns/Meta/Role/Attribute/DBICColumn/Inflated.pm
-%%SITE_PERL%%/DBIx/Class/MooseColumns/Meta/Role/Attribute/DBICColumn.pm
-%%SITE_PERL%%/DBIx/Class/MooseColumns/Meta/Role/Attribute.pm
 %%SITE_PERL%%/DBIx/Class/MooseColumns.pm
+%%SITE_PERL%%/DBIx/Class/MooseColumns/Meta/Role/Attribute.pm
+%%SITE_PERL%%/DBIx/Class/MooseColumns/Meta/Role/Attribute/DBICColumn.pm
+%%SITE_PERL%%/DBIx/Class/MooseColumns/Meta/Role/Attribute/DBICColumn/Inflated.pm
 %%PERL5_MAN3%%/DBIx::Class::MooseColumns.3.gz
 %%PERL5_MAN3%%/DBIx::Class::MooseColumns::Meta::Role::Attribute.3.gz
 %%PERL5_MAN3%%/DBIx::Class::MooseColumns::Meta::Role::Attribute::DBICColumn.3.gz
