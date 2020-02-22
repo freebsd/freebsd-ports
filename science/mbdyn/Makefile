@@ -52,7 +52,7 @@ GOTOBLAS_USES=	blaslapack:gotoblas
 METIS_CONFIGURE_ON=	--with-metis=yes
 METIS_CONFIGURE_OFF=	--with-metis=no
 METIS_CPPFLAGS=		-I${LOCALBASE}/include/metis
-METIS_LIB_DEPENDS=	libmetis.so:math/metis4
+METIS_LIB_DEPENDS=	libmetis.so:math/metis
 
 REFERENCE_CONFIGURE_ON=	--with-blas=blas
 REFERENCE_USES=	blaslapack:netlib
