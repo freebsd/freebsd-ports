@@ -82,18 +82,17 @@ _GCC_ORLATER:=	true
 
 . endif # ${USE_GCC} == any
 
-# Initialize _GCC_FOUND${v}.  In parallel, check if USE_GCC points to a
-# valid version to begin with.
+# See whether we have the specific version requested installed already
+# and save that into _GCC_FOUND.  In parallel, check if USE_GCC refers
+# to a valid version to begin with.
 .for v in ${GCCVERSIONS}
-. if exists(${LOCALBASE}/bin/gcc${_GCCVERSION_${v}_V:S/.//})
-_GCC_FOUND${v}=	port
-. elif ${OSVERSION} < ${_GCCVERSION_${v}_R}
-.  if exists(/usr/bin/gcc)
-_GCC_FOUND${v}=	base
-.  endif
-. endif
 . if ${_USE_GCC}==${_GCCVERSION_${v}_V}
 _GCCVERSION_OKAY=	true
+.  if exists(${LOCALBASE}/bin/gcc${_GCCVERSION_${v}_V:S/.//})
+_GCC_FOUND:=		${_USE_GCC}
+.  elif ${OSVERSION} < ${_GCCVERSION_${v}_R} && exists(/usr/bin/gcc)
+_GCC_FOUND:=		${_USE_GCC}
+.  endif
 . endif
 .endfor
 
@@ -102,31 +101,9 @@ IGNORE=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
 .endif
 
 # If the GCC package defined in USE_GCC does not exist, but a later
-# version is allowed (for example 4.7+), see if there is a later.
-# First check if the base installed version is good enough, otherwise
-# get the first available version.
-#
+# version is allowed (for example 8+), go and use the default.
 .if defined(_GCC_ORLATER)
-. for v in ${GCCVERSIONS}
-.  if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
-_GCC_MIN1:=	true
-.  endif
-.  if defined(_GCC_MIN1) && defined(_GCC_FOUND${v}) && ${_GCC_FOUND${v}}=="base" && !defined(_GCC_FOUND)
-_GCC_FOUND:=	${_GCCVERSION_${v}_V}
-.  endif
-. endfor
-. for v in ${GCCVERSIONS}
-.  if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
-_GCC_MIN2:=	true
-.  endif
-.  if defined(_GCC_MIN2) && defined(_GCC_FOUND${v}) && !defined(_GCC_FOUND)
-_GCC_FOUND:=	${_GCCVERSION_${v}_V}
-.  endif
-. endfor
-
-. if defined(_GCC_FOUND)
-_USE_GCC:=	${_GCC_FOUND}
-. elif ${_USE_GCC} < ${GCC_DEFAULT}
+. if !defined(_GCC_FOUND) && ${_USE_GCC} < ${GCC_DEFAULT}
 _USE_GCC:=	${GCC_DEFAULT}
 . endif
 .endif # defined(_GCC_ORLATER)
@@ -198,11 +175,7 @@ test-gcc:
 .endif
 .for v in ${GCCVERSIONS}
 	@echo -n "GCC version: ${_GCCVERSION_${v}_V} "
-.if defined(_GCC_FOUND${v})
-	@echo -n "(${_GCC_FOUND${v}}) "
-.endif
 	@echo "- OSVERSION up to ${_GCCVERSION_${v}_R}"
-#	@echo ${v} - ${_GCC_FOUND${v}} - up to ${_GCCVERSION_${v}_R} - ${_GCCVERSION_${v}_V}
 .endfor
 	@echo Using GCC version ${_USE_GCC}
 .endif
