@@ -6,13 +6,10 @@ DISTVERSION=	1.0b7
 PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	print www perl5
-MASTER_SITES=	http://user.it.uu.se/~jan/ \
-		http://fossies.org/unix/www/
+MASTER_SITES=	LOCAL/hrs
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	HTML to PostScript converter
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -31,8 +28,8 @@ PLIST_FILES=	bin/html2ps \
 		etc/html2psrc \
 		man/man1/html2ps.1.gz \
 		man/man5/html2psrc.5.gz \
-		%%DATADIR%%/html2ps.html \
-		%%DATADIR%%/hyphen.tex
+		${DATADIR_REL}/html2ps.html \
+		${DATADIR_REL}/hyphen.tex
 
 post-patch:
 	@${REINPLACE_CMD} -e \
