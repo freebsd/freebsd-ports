@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipython
-PORTVERSION=	5.8.0
-PORTREVISION=	4
+PORTVERSION=	5.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,10 +26,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=0:misc/py-pexpect@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 USE_GCC=	yes # To be removed - Needed as a work-around for numpy, see PR ports/188114
+
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	EXAMPLES
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	EXAMPLES
+
+PORTSCOUT=	limit:^5\.
 
 .include <bsd.port.pre.mk>
 
