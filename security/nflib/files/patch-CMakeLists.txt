@@ -1,0 +1,9 @@
+--- CMakeLists.txt.orig	2020-02-22 22:31:07 UTC
++++ CMakeLists.txt
+@@ -64,4 +64,6 @@ install(FILES ${NFLLIB_HDRS_3} DESTINATION include/nfl
+ install(FILES ${NFLLIB_HDRS_4} DESTINATION include/nfl/opt/arch)
+ install(FILES ${NFLLIB_PRNG_HDRS} DESTINATION include/nfl/prng)
+ 
++if (BUILD_TESTING)
+ add_subdirectory(tests)
++endif()
