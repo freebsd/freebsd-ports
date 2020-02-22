@@ -3,6 +3,7 @@
 PORTNAME=	acmetool
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.67
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	samm@FreeBSD.org
@@ -34,7 +35,7 @@ GH_TUPLE=	alecthomas:template:a0175ee:template/vendor/github.com/alecthomas/temp
 		shiena:ansicolor:a422bbe:ansicolor/vendor/github.com/shiena/ansicolor \
 		golang:crypto:91a49db:crypto/vendor/golang.org/x/crypto \
 		golang:net:22ae77b:net/vendor/golang.org/x/net \
-		golang:sys:dd2ff4a:sys/vendor/golang.org/x/sys \
+		golang:sys:33540a1f6037:sys/vendor/golang.org/x/sys \
 		golang:text:b7ef84a:text/vendor/golang.org/x/text \
 		alecthomas:kingpin:947dcec:kingpin/vendor/gopkg.in/alecthomas/kingpin.v2 \
 		cheggaaa:pb:72b9643:pb/vendor/gopkg.in/cheggaaa/pb.v1 \
