@@ -32,6 +32,7 @@
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/OrderByMagic.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Page.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Prefetch.pm
+%%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/RemoveColumns.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/ResultsExist.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Rows.pm
 %%SITE_PERL%%/DBIx/Class/Helper/ResultSet/Shortcut/Search.pm
@@ -103,6 +104,7 @@
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::OrderByMagic.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::Page.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::Prefetch.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::RemoveColumns.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::ResultsExist.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::Rows.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Helper::ResultSet::Shortcut::Search.3.gz
