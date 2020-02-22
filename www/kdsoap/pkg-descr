@@ -1,0 +1,7 @@
+KD Soap is a Qt-based client-side and server-side SOAP component.
+
+It can be used to create client applications for web services and also provides the means to create web services without the need for any further component such as a dedicated web server.
+
+KD Soap targets C++ programmers who use Qt in their applications.
+
+WWW: https://github.com/KDAB/KDSoap
