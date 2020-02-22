@@ -1,0 +1,4 @@
+ValidatesTimeliness provides complete validation of dates, times and datetimes
+for Rails 5.x and ActiveModel.
+
+WWW: https://github.com/adzap/validates_timeliness
