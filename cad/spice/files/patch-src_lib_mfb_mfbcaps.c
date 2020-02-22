@@ -1,6 +1,6 @@
---- src/lib/mfb/mfbcaps.c.orig	1991-04-01 22:32:50.000000000 +0000
-+++ src/lib/mfb/mfbcaps.c	2011-06-24 19:53:27.000000000 +0000
-@@ -26,6 +26,7 @@
+--- src/lib/mfb/mfbcaps.c.orig	1991-04-01 22:32:50 UTC
++++ src/lib/mfb/mfbcaps.c
+@@ -26,6 +26,7 @@ Author: -C- 1982 Giles Billingsley
  #include "spice.h"
  #include "mfb.h"
  #include <ctype.h>
@@ -8,7 +8,7 @@
  #include "suffix.h"
  
  
-@@ -43,9 +44,9 @@
+@@ -43,9 +44,9 @@ static int hopcount;       /* detect infinite loops in
  
  FILE   *POpen();
  char   *strcpy();

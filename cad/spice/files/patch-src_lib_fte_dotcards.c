@@ -1,6 +1,6 @@
---- src/lib/fte/dotcards.c.orig	1993-07-30 13:44:28.000000000 +0900
-+++ src/lib/fte/dotcards.c	2013-05-01 05:07:55.000000000 +0900
-@@ -405,11 +405,17 @@
+--- src/lib/fte/dotcards.c.orig	1993-07-30 04:44:28 UTC
++++ src/lib/fte/dotcards.c
+@@ -405,11 +405,17 @@ fixem(string)
      char *string;
  {
      char buf[BSIZE_SP], *s, *t, *ss = string;
@@ -18,7 +18,7 @@
          for (t = s; *t && (*t != ')'); t++)
              ;
          *t = '\0';
-@@ -589,6 +595,10 @@
+@@ -589,6 +595,10 @@ gettoks(s)
  
  	if (c)
  	    *c = 0;

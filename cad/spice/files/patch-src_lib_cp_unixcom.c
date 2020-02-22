@@ -1,6 +1,6 @@
---- src/lib/cp/unixcom.c.orig	2011-06-24 16:24:35.000000000 +0000
-+++ src/lib/cp/unixcom.c	2011-06-24 16:30:47.000000000 +0000
-@@ -6,6 +6,7 @@
+--- src/lib/cp/unixcom.c.orig	1993-04-14 01:15:50 UTC
++++ src/lib/cp/unixcom.c
+@@ -6,6 +6,7 @@ Author: 1985 Wayne A. Christopher, U. C. Berkeley CAD 
  /*
   * Routines to do execution of unix commands.
   */

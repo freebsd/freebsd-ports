@@ -1,6 +1,6 @@
---- src/lib/cp/lexical.c.orig	2013-05-01 05:15:32.000000000 +0900
-+++ src/lib/cp/lexical.c	2013-05-01 05:16:36.000000000 +0900
-@@ -145,7 +145,7 @@
+--- src/lib/cp/lexical.c.orig	1993-04-06 00:48:45 UTC
++++ src/lib/cp/lexical.c
+@@ -145,7 +145,7 @@ gotchar:
          switch (c) {
  	case ' ':
  	case '\t':
