@@ -1,9 +1,8 @@
-pyliblo is a Python wrapper for the liblo OSC library. It
-supports almost the complete functionality of liblo, allowing
-you to send and receive OSC messages using a nice and simple
-Python API.
+pyliblo is a Python wrapper for the liblo OSC library. It supports almost the
+complete functionality of liblo, allowing you to send and receive OSC messages
+using a nice and simple Python API.
 
-Also included are the command line utilities send_osc and
-dump_osc.
+Also included are the command line utilities send_osc and dump_osc.
 
 WWW: http://das.nasophon.de/pyliblo/
+WWW: https://github.com/dsacre/pyliblo
