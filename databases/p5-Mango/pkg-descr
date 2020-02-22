@@ -9,4 +9,4 @@ generate data types that are not available natively in Perl. All connections
 will be reset automatically if a new process has been forked, this allows
 multiple processes to share the same Mango object safely.
 
-WWW: https://metacpan.org/pod/Mango
+WWW: https://metacpan.org/release/Mango
