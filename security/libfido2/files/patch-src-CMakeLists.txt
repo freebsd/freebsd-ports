@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2019-11-28 11:38:08 UTC
++++ src/CMakeLists.txt
+@@ -41,7 +41,7 @@ elseif(APPLE)
+ 	list(APPEND COMPAT_SOURCES hid_osx.c)
+ elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ 	list(APPEND COMPAT_SOURCES hid_linux.c)
+-elseif(CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" OR CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+ 	list(APPEND COMPAT_SOURCES hid_openbsd.c)
+ endif()
+ 
