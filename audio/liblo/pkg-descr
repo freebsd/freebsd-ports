@@ -1,8 +1,7 @@
 liblo is a lightweight library that provides an easy to use implementation of
-the Open Sound Control protocol for POSIX systems. For more information about
-the Open Sound Control protocol, please see:
-
-  - http://www.cnmat.berkeley.edu/OpenSoundControl/
-  - http://www.opensoundcontrol.org/
+the OSC protocol. For more information about the OSC protocol, please see:
+- http://www.cnmat.berkeley.edu/OpenSoundControl/
+- http://www.opensoundcontrol.org/
 
 WWW: http://liblo.sourceforge.net/
+WWW: https://github.com/radarsat1/liblo
