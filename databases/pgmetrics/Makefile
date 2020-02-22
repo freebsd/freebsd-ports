@@ -4,6 +4,7 @@
 PORTNAME=	pgmetrics
 PORTVERSION=	1.7.1
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -22,7 +23,7 @@ GH_TUPLE=	dustin:go-humanize:bb3d318650d4:go_humanize/vendor/github.com/dustin/g
 		rapidloop:pq:40e32c5:pq/vendor/github.com/rapidloop/pq \
 		xdg-go:stringprep:v1.0.0:stringprepgo/vendor/github.com/xdg-go/stringprep \
 		xdg:stringprep:v1.0.0:stringprepxdg/vendor/github.com/xdg/stringprep \
-		golang:sys:37707fdb30a5:sys/vendor/golang.org/x/sys \
+		golang:sys:33540a1f6037:sys/vendor/golang.org/x/sys \
 		golang:crypto:432090b8f568:crypto/vendor/golang.org/x/crypto \
 		golang:text:v0.3.0:text/vendor/golang.org/x/text
 
