@@ -77,6 +77,7 @@ CONFIGURE_ARGS+=	--disable-shared
 EXTRA_PATCHES=		${PATCHDIR}/extrapatch-bind-tools
 .else
 USE_RC_SUBR=		named
+# XXX: remove the big warning about it being a development version from pkg-message
 SUB_FILES=		named.conf pkg-message
 EXTRA_PATCHES=		${PATCHDIR}/extrapatch-no-bind-tools
 
