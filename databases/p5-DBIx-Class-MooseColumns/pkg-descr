@@ -6,4 +6,4 @@ Class::Accessor::Grouped-generated accessor methods under the hood) with the
 Moose-generated accessor methods so that you can use more of the wonderful
 powers of Moose (eg. type constraints, triggers, ...).
 
-WWW: https://metacpan.org/pod/DBIx::Class::MooseColumns
+WWW: https://metacpan.org/release/DBIx-Class-MooseColumns
