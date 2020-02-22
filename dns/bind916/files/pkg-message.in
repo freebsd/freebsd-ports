@@ -19,11 +19,4 @@ And then restarting syslogd with: service syslogd restart
 EOT
   type: install
 }
-{
-  message: <<EOT
-+------------------------------------------------------------+
-|THIS IS A DEVELOPMENT VERSION OF BIND, IT WILL EAT YOUR DATA|
-+------------------------------------------------------------+
-EOT
-}
 ]
