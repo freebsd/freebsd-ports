@@ -1,4 +1,4 @@
 When you load this module, any regex in the same lexical scope will be visually
 (and interactively) debugged as it matches.
 
-WWW: https://metacpan.org/pod/Regexp::Debugger
+WWW: https://metacpan.org/release/Regexp-Debugger
