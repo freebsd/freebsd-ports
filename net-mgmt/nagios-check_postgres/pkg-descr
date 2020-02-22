@@ -6,4 +6,4 @@ against one or more Postgres databases. It uses the psql program to
 gather the information, and outputs the results in one of three
 formats: Nagios, MRTG, or simple.
 
-WWW: http://bucardo.org/wiki/Check_postgres
+WWW: https://bucardo.org/check_postgres/
