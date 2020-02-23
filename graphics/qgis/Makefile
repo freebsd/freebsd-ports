@@ -153,9 +153,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"-mllvm -inline-threshold=128"|"-O1"|g' \
 		${WRKSRC}/src/core/CMakeLists.txt
 .endif
-# Build failure with txt2tags > 3 (dropped --css-sugar & --css-inside)
-# https://github.com/qgis/QGIS/issues/33516
-	@${REINPLACE_CMD} -e 's|--css-sugar --css-inside||' ${WRKSRC}/doc/INSTALL.t2t ${WRKSRC}/doc/news.t2t
 
 pre-configure:
 	${MKDIR} ${CONFIGURE_WRKSRC}/bin && ${LN} -s ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/bin/python3
