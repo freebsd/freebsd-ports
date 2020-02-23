@@ -1,6 +1,6 @@
---- kpasswd/Makefile.in.orig	2017-06-10 19:27:47 UTC
+--- kpasswd/Makefile.in.orig	2020-02-23 12:16:33 UTC
 +++ kpasswd/Makefile.in
-@@ -155,9 +155,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
+@@ -155,9 +155,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(l
  PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noinst_PROGRAMS)
  am_kpasswd_OBJECTS = kpasswd.$(OBJEXT)
  kpasswd_OBJECTS = $(am_kpasswd_OBJECTS)
@@ -29,7 +29,7 @@
  	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
  	$(am__DEPENDENCIES_1)
  am_kpasswdd_OBJECTS = kpasswdd.$(OBJEXT)
-@@ -176,6 +184,8 @@ am__DEPENDENCIES_2 = $(top_builddir)/lib
+@@ -176,6 +184,8 @@ am__DEPENDENCIES_2 = $(top_builddir)/lib/krb5/libkrb5.
  	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
  	$(am__DEPENDENCIES_1)
  kpasswdd_DEPENDENCIES = $(top_builddir)/lib/kadm5/libkadm5srv.la \
@@ -38,7 +38,7 @@
  	$(top_builddir)/lib/hdb/libhdb.la $(am__DEPENDENCIES_2) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -533,6 +543,8 @@ kpasswdd_SOURCES = kpasswdd.c kpasswd_lo
+@@ -532,6 +542,8 @@ kpasswdd_SOURCES = kpasswdd.c kpasswd_locl.h
  kpasswdd_LDADD = \
  	$(top_builddir)/lib/kadm5/libkadm5srv.la \
  	$(top_builddir)/lib/hdb/libhdb.la \

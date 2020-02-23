@@ -1,6 +1,6 @@
---- appl/test/Makefile.in.orig	2017-06-10 19:27:47 UTC
+--- appl/test/Makefile.in.orig	2020-02-23 12:16:33 UTC
 +++ appl/test/Makefile.in
-@@ -170,11 +170,15 @@ am_gssapi_server_OBJECTS = gssapi_server
+@@ -170,11 +170,15 @@ am_gssapi_server_OBJECTS = gssapi_server.$(OBJEXT) \
  	gss_common.$(OBJEXT) common.$(OBJEXT)
  gssapi_server_OBJECTS = $(am_gssapi_server_OBJECTS)
  gssapi_server_DEPENDENCIES = $(top_builddir)/lib/gssapi/libgssapi.la \
@@ -16,7 +16,7 @@
  	$(am__DEPENDENCIES_2)
  am_nt_gss_client_OBJECTS = nt_gss_client.$(OBJEXT) \
  	nt_gss_common.$(OBJEXT) common.$(OBJEXT)
-@@ -187,26 +191,42 @@ am__DEPENDENCIES_4 = $(am__DEPENDENCIES_
+@@ -187,26 +191,42 @@ am__DEPENDENCIES_4 = $(am__DEPENDENCIES_3)
  nt_gss_server_DEPENDENCIES = $(am__DEPENDENCIES_4)
  am_tcp_client_OBJECTS = tcp_client.$(OBJEXT) common.$(OBJEXT)
  tcp_client_OBJECTS = $(am_tcp_client_OBJECTS)
@@ -63,7 +63,7 @@
  	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
  	$(am__DEPENDENCIES_1)
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -546,9 +566,13 @@ http_client_SOURCES = http_client.c gss_
+@@ -545,9 +565,13 @@ http_client_SOURCES = http_client.c gss_common.c commo
  
  uu_server_SOURCES = uu_server.c common.c test_locl.h
  uu_client_SOURCES = uu_client.c common.c test_locl.h

@@ -1,6 +1,6 @@
---- kadmin/Makefile.in.orig	2017-06-10 19:27:47 UTC
+--- kadmin/Makefile.in.orig	2020-02-23 12:16:33 UTC
 +++ kadmin/Makefile.in
-@@ -166,6 +166,8 @@ am__DEPENDENCIES_2 = $(top_builddir)/lib
+@@ -166,6 +166,8 @@ am__DEPENDENCIES_2 = $(top_builddir)/lib/hdb/libhdb.la
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
  add_random_users_DEPENDENCIES =  \
  	$(top_builddir)/lib/kadm5/libkadm5clnt.la \
@@ -9,7 +9,7 @@
  	$(top_builddir)/lib/kadm5/libkadm5srv.la $(am__DEPENDENCIES_2) \
  	$(am__DEPENDENCIES_1)
  AM_V_lt = $(am__v_lt_@AM_V@)
-@@ -181,6 +183,8 @@ dist_kadmin_OBJECTS = ank.$(OBJEXT) add_
+@@ -181,6 +183,8 @@ dist_kadmin_OBJECTS = ank.$(OBJEXT) add_enctype.$(OBJE
  nodist_kadmin_OBJECTS = kadmin-commands.$(OBJEXT)
  kadmin_OBJECTS = $(dist_kadmin_OBJECTS) $(nodist_kadmin_OBJECTS)
  kadmin_DEPENDENCIES = $(top_builddir)/lib/kadm5/libkadm5clnt.la \
@@ -18,7 +18,7 @@
  	$(top_builddir)/lib/kadm5/libkadm5srv.la \
  	$(top_builddir)/lib/sl/libsl.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1)
-@@ -188,6 +192,8 @@ am_kadmind_OBJECTS = rpc.$(OBJEXT) serve
+@@ -188,6 +192,8 @@ am_kadmind_OBJECTS = rpc.$(OBJEXT) server.$(OBJEXT) ka
  	kadm_conn.$(OBJEXT)
  kadmind_OBJECTS = $(am_kadmind_OBJECTS)
  kadmind_DEPENDENCIES = $(top_builddir)/lib/kadm5/libkadm5srv.la \
@@ -27,7 +27,7 @@
  	../lib/gssapi/libgssapi.la $(am__DEPENDENCIES_2) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
  am_test_util_OBJECTS = test_util.$(OBJEXT) util.$(OBJEXT)
-@@ -771,6 +777,8 @@ LDADD_common = \
+@@ -770,6 +776,8 @@ LDADD_common = \
  
  kadmind_LDADD = $(top_builddir)/lib/kadm5/libkadm5srv.la \
  	../lib/gssapi/libgssapi.la \
@@ -36,7 +36,7 @@
  	$(LDADD_common) \
  	$(LIB_pidfile) \
  	$(LIB_dlopen)
-@@ -778,6 +786,8 @@ kadmind_LDADD = $(top_builddir)/lib/kadm
+@@ -777,6 +785,8 @@ kadmind_LDADD = $(top_builddir)/lib/kadm5/libkadm5srv.
  kadmin_LDADD = \
  	$(top_builddir)/lib/kadm5/libkadm5clnt.la \
  	$(top_builddir)/lib/kadm5/libkadm5srv.la \
@@ -45,7 +45,7 @@
  	$(top_builddir)/lib/sl/libsl.la \
  	$(LIB_readline) \
  	$(LDADD_common) \
-@@ -786,6 +796,8 @@ kadmin_LDADD = \
+@@ -785,6 +795,8 @@ kadmin_LDADD = \
  add_random_users_LDADD = \
  	$(top_builddir)/lib/kadm5/libkadm5clnt.la \
  	$(top_builddir)/lib/kadm5/libkadm5srv.la \

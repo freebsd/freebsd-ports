@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	2017-06-10 19:27:47 UTC
+--- doc/Makefile.in.orig	2020-02-23 12:16:33 UTC
 +++ doc/Makefile.in
-@@ -502,7 +502,7 @@ texi_subst = sed -e 's,[@]dbdir[@],$(loc
+@@ -501,7 +501,7 @@ texi_subst = sed -e 's,[@]dbdir[@],$(localstatedir),g'
  	-e 's,[@]dbtype[@],$(db_type),g' \
  	-e 's,[@]PACKAGE_VERSION[@],$(PACKAGE_VERSION),g'
  
@@ -9,7 +9,7 @@
  heimdal_TEXINFOS = \
  	ack.texi \
  	apps.texi \
-@@ -525,7 +525,6 @@ EXTRA_DIST = \
+@@ -524,7 +524,6 @@ EXTRA_DIST = \
  	footer.html \
  	gssapi.din \
  	hdb.din \
@@ -17,7 +17,7 @@
  	header.html \
  	heimdal.css \
  	base.din \
-@@ -543,7 +542,6 @@ EXTRA_DIST = \
+@@ -542,7 +541,6 @@ EXTRA_DIST = \
  	vars.tin
  
  CLEANFILES = \
@@ -25,7 +25,7 @@
  	base.dxy* \
  	hx509.dxy* \
  	hdb.dxy* \
-@@ -1200,11 +1198,6 @@ distdir-in-tree: $(DISTFILES) $(INFO_DEP
+@@ -1199,11 +1197,6 @@ distdir-in-tree: $(DISTFILES) $(INFO_DEPS)
  	  fi ; \
  	done
  
@@ -37,7 +37,7 @@
  hdb.dxy: hdb.din Makefile
  	$(dxy_subst) < $(srcdir)/hdb.din > hdb.dxy.tmp
  	chmod +x hdb.dxy.tmp
-@@ -1245,7 +1238,7 @@ vars.texi: vars.tin Makefile
+@@ -1244,7 +1237,7 @@ vars.texi: vars.tin Makefile
  	chmod +x vars.texi.tmp
  	mv vars.texi.tmp vars.texi
  

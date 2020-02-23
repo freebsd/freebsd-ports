@@ -1,6 +1,6 @@
---- lib/kadm5/Makefile.in.orig	2017-06-10 19:27:47 UTC
+--- lib/kadm5/Makefile.in.orig	2020-02-23 12:16:33 UTC
 +++ lib/kadm5/Makefile.in
-@@ -253,6 +253,8 @@ iprop_log_OBJECTS = $(dist_iprop_log_OBJ
+@@ -253,6 +253,8 @@ iprop_log_OBJECTS = $(dist_iprop_log_OBJECTS) \
  iprop_log_DEPENDENCIES = libkadm5srv.la \
  	$(top_builddir)/lib/hdb/libhdb.la \
  	$(top_builddir)/lib/krb5/libkrb5.la \
@@ -9,7 +9,7 @@
  	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
  	$(top_builddir)/lib/sl/libsl.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -262,10 +264,14 @@ iprop_log_DEPENDENCIES = libkadm5srv.la 
+@@ -262,10 +264,14 @@ iprop_log_DEPENDENCIES = libkadm5srv.la \
  am_ipropd_master_OBJECTS = ipropd_master.$(OBJEXT) \
  	ipropd_common.$(OBJEXT)
  ipropd_master_OBJECTS = $(am_ipropd_master_OBJECTS)
@@ -25,7 +25,7 @@
  	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -274,10 +280,14 @@ ipropd_master_DEPENDENCIES = libkadm5srv
+@@ -274,10 +280,14 @@ ipropd_master_DEPENDENCIES = libkadm5srv.la \
  am_ipropd_slave_OBJECTS = ipropd_slave.$(OBJEXT) \
  	ipropd_common.$(OBJEXT)
  ipropd_slave_OBJECTS = $(am_ipropd_slave_OBJECTS)
@@ -41,7 +41,7 @@
  	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -285,10 +295,14 @@ ipropd_slave_DEPENDENCIES = libkadm5srv.
+@@ -285,10 +295,14 @@ ipropd_slave_DEPENDENCIES = libkadm5srv.la \
  	$(am__DEPENDENCIES_1)
  test_pw_quality_SOURCES = test_pw_quality.c
  test_pw_quality_OBJECTS = test_pw_quality.$(OBJEXT)
@@ -57,7 +57,7 @@
  	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -731,6 +745,8 @@ LDADD = \
+@@ -730,6 +744,8 @@ LDADD = \
  
  iprop_log_LDADD = \
  	libkadm5srv.la \
@@ -66,7 +66,7 @@
  	$(top_builddir)/lib/hdb/libhdb.la \
  	$(top_builddir)/lib/krb5/libkrb5.la \
  	$(top_builddir)/lib/asn1/libasn1.la \
-@@ -1167,7 +1183,7 @@ libkadm5srv_la-get_princs_s.lo: get_prin
+@@ -1166,7 +1182,7 @@ libkadm5srv_la-get_princs_s.lo: get_princs_s.c
  @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libkadm5srv_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libkadm5srv_la-get_princs_s.lo `test -f 'get_princs_s.c' || echo '$(srcdir)/'`get_princs_s.c
  
  libkadm5srv_la-get_s.lo: get_s.c

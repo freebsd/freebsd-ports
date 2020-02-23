@@ -1,6 +1,6 @@
---- lib/hdb/Makefile.in.orig	2017-06-10 19:27:47 UTC
+--- lib/hdb/Makefile.in.orig	2020-02-23 12:16:33 UTC
 +++ lib/hdb/Makefile.in
-@@ -225,26 +225,46 @@ libhdb_la_LINK = $(LIBTOOL) $(AM_V_lt) -
+@@ -225,26 +225,46 @@ libhdb_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_L
  PROGRAMS = $(noinst_PROGRAMS)
  test_dbinfo_SOURCES = test_dbinfo.c
  test_dbinfo_OBJECTS = test_dbinfo.$(OBJEXT)
@@ -51,7 +51,7 @@
  	../asn1/libasn1.la $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -575,7 +595,8 @@ heim_verbose_0 = @echo "  GEN    "$@;
+@@ -574,7 +594,8 @@ heim_verbose_0 = @echo "  GEN    "$@;
  BUILT_SOURCES = \
  	$(gen_files_hdb:.x=.c)	\
  	hdb_err.c \
