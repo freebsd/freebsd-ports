@@ -2,8 +2,7 @@
 
 PORTNAME=	gn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1600
-PORTREVISION=	1
+DISTVERSION=	1714
 CATEGORIES=	devel
 
 MAINTAINER=	o.hushchenkov@gmail.com
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS_INSTALL=	chromium-gn
 
-USES=		alias compiler:c++14-lang ninja python:build shebangfix
+USES=		alias compiler:c++17-lang ninja python:build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	cglogic # mirror
 SHEBANG_FILES=	${CONFIGURE_SCRIPT}
@@ -29,7 +28,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} 's/"python"/"${PYTHON_CMD:T}"/' \
-		${WRKSRC}/tools/gn/exec_process_unittest.cc
+		${WRKSRC}/src/gn/exec_process_unittest.cc
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

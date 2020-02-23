@@ -1,8 +1,8 @@
 - .git/ is missing in archive, so use version from environment
 
---- build/gen.py.orig	2019-05-30 09:42:43 UTC
+--- build/gen.py.orig	2020-02-22 10:07:32 UTC
 +++ build/gen.py
-@@ -117,24 +117,15 @@ def main(argv):
+@@ -124,25 +124,16 @@ def main(argv):
  
  
  def GenerateLastCommitPosition(host, header):
@@ -20,12 +20,13 @@
  #ifndef OUT_LAST_COMMIT_POSITION_H_
  #define OUT_LAST_COMMIT_POSITION_H_
  
+ #define LAST_COMMIT_POSITION_NUM %s
 -#define LAST_COMMIT_POSITION "%s (%s)"
 +#define LAST_COMMIT_POSITION "%s"
  
  #endif  // OUT_LAST_COMMIT_POSITION_H_
--''' % (mo.group(1), mo.group(2))
-+''' % (os.environ['GN_VERSION'])
+-''' % (mo.group(1), mo.group(1), mo.group(2))
++''' % (os.environ['GN_VERSION'], os.environ['GN_VERSION'])
  
    # Only write/touch this file if the commit position has changed.
    old_contents = ''
