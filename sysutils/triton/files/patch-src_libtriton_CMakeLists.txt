@@ -1,0 +1,42 @@
+--- src/libtriton/CMakeLists.txt.orig	2019-09-30 08:16:44 UTC
++++ src/libtriton/CMakeLists.txt
+@@ -50,7 +50,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR ${CMAKE_CXX_COMPILER_ID
+ endif()
+ 
+ # 32-bits
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+     if(${ARCHITECTURE} STREQUAL "i386")
+         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32")
+     endif()
+@@ -150,9 +150,9 @@ endif()
+ 
+ # Triton have to generate a syscalls table from the kernel source
+ # This following code tries to find the unistd_64.h or unistd_32.h header depending on the architecture.
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+-    FILE(GLOB_RECURSE syscalls32_table_files /usr/include/*unistd_32.h)
+-    FILE(GLOB_RECURSE syscalls64_table_files /usr/include/*unistd_64.h)
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++    FILE(GLOB_RECURSE syscalls32_table_files /usr/include/unistd.h)
++    FILE(GLOB_RECURSE syscalls64_table_files /usr/include/unistd.h)
+ endif()
+ 
+ macro(find_osx_syscall path)
+@@ -197,7 +197,7 @@ macro(gen_syscall bits)
+ endmacro()
+ 
+ # Note: Windows ?!
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+     gen_syscall(64)
+ else()
+     add_custom_target(gen-syscall64
+@@ -206,7 +206,7 @@ else()
+ endif()
+ 
+ # Syscall 32 is only available for linux users
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+     gen_syscall(32)
+ else()
+     add_custom_target(gen-syscall32
