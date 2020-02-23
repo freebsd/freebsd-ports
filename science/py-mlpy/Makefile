@@ -13,6 +13,9 @@ COMMENT=	High performance Python package for predictive modeling
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	libgsl.so:math/gsl

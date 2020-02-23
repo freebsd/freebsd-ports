@@ -13,6 +13,9 @@ COMMENT=	Minimal symbolic manipulation python package written in C++
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		compiler:c++11-lang fortran python:-3.6 # fortran because otherwise "import numpy" fails with wrong libgcc_s.so message

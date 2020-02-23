@@ -12,6 +12,9 @@ COMMENT=	Python Knowledge Engine
 
 LICENSE=	MIT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=2.3:devel/py-ply@${PY_FLAVOR}
 
 USES=		python:2.7 zip

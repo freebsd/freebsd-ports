@@ -12,6 +12,9 @@ COMMENT=	CDMI on OpenStack Swift implementation
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}swift>0:databases/py-swift@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>0:www/py-webob@${PY_FLAVOR}
 

@@ -14,6 +14,9 @@ COMMENT=	Fast, accurate python geohashing library
 LICENSE=	APACHE20 MIT BSD3CLAUSE
 LICENSE_COMB=	multi
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 

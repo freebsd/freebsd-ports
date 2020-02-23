@@ -13,6 +13,9 @@ COMMENT=	Plugin for ploy to provision Amazon EC2 instances
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ploy>=1.0.0:sysutils/py-ploy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto>=2.0:devel/py-boto@${PY_FLAVOR} \

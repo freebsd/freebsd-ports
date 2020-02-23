@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Python interface to Hadoop
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/yarn:devel/hadoop2
 RUN_DEPENDS=	${LOCALBASE}/bin/yarn:devel/hadoop2
 

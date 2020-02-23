@@ -14,6 +14,9 @@ COMMENT=	Python bindings for MeCab
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	dual
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libmecab.so:japanese/mecab
 

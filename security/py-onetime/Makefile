@@ -14,6 +14,9 @@ COMMENT=	Encryption program that uses the one-time pad algorithm
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7 shebangfix
 SHEBANG_FILES=	onetime
 

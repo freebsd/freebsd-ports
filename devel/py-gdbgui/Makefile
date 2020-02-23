@@ -11,6 +11,9 @@ COMMENT=	Browser-based frontend/gui for GDB
 LICENSE=	CC-BY-NC-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.12.2:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Compress>=1.4.0:www/py-flask-compress@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-SocketIO>=2.9.0:www/py-flask-socketio@${PY_FLAVOR} \

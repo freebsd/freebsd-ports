@@ -11,6 +11,9 @@ COMMENT=	Use an IMAP server (like gmail) as normal storage
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fusefs>=0.2:devel/py-fusefs@${PY_FLAVOR}
 
 USES=		fuse python:2.7

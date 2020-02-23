@@ -15,6 +15,9 @@ COMMENT=	Python bindings for EFL and Elementary
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus@${PY_FLAVOR}
 LIB_DEPENDS=	libefl.so:devel/efl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus@${PY_FLAVOR}

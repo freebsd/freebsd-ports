@@ -16,6 +16,9 @@ LICENSE_NAME=	Fog Creek Software
 LICENSE_FILE=	${WRKSRC}/PKG-INFO
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0.9.1:www/py-requests@${PY_FLAVOR}
 
 USES=		python:2.7 zip

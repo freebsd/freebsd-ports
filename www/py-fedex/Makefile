@@ -12,6 +12,9 @@ COMMENT=	Light wrapper around Fedex's Web Services SOAP API using suds
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}suds>=0:net/py-suds@${PY_FLAVOR}
 
 NO_ARCH=	yes

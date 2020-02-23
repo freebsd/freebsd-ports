@@ -13,6 +13,9 @@ COMMENT=	Backport of pythondialog to Python 2
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 

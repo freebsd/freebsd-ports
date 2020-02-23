@@ -13,6 +13,9 @@ COMMENT=	Python wrapper for devel/mtbl
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libmtbl.so:devel/mtbl
 
 USES=		pkgconfig python:-3.6 shebangfix uniquefiles:dirs

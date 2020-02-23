@@ -12,6 +12,9 @@ COMMENT=	Curl statistics made simple
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	curl:ftp/curl
 
 USES=		python:2.7

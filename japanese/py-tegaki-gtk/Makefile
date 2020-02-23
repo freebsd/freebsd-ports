@@ -14,6 +14,9 @@ COMMENT=	Tegaki PyGTK interface
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libzinnia.so:japanese/zinnia
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/tegaki/engine.py:japanese/py-tegaki@${PY_FLAVOR}
 

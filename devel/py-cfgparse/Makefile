@@ -13,6 +13,9 @@ COMMENT=	Python module for parsing configuration files
 
 LICENSE=	MIT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		dos2unix python:2.7 zip
 DOS2UNIX_FILES=	cfgparse.py
 USE_PYTHON=	autoplist distutils

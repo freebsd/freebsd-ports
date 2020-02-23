@@ -14,6 +14,9 @@ COMMENT=	Simulates the life of a true AI
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYGAME} \
 		${PYNUMPY}
 

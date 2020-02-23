@@ -13,6 +13,9 @@ COMMENT=		Converts STL models to POV-Ray meshes or PostScript/PDF images
 
 LICENSE=		BSD2CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=		${PYNUMPY}
 
 USES=			zip python:2.7

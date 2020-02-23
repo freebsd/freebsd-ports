@@ -11,6 +11,9 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	SIP connection manager based around the Sofia-SIP library
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libsofia-sip-ua-glib.so:net/sofia-sip \
 		libtelepathy-glib.so:net-im/telepathy-glib

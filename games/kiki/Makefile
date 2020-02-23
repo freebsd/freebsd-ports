@@ -11,6 +11,9 @@ EXTRACT_SUFX=	-src.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Kiki the nanobot is a 3-D puzzle game
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BUILD_DEPENDS=	swig3.0:devel/swig30
 
 USES=		compiler dos2unix gl gmake python:2.7 sdl

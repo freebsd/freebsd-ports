@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	Pure Python HyperEstraier library
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		python:2.7
 USE_PYTHON=	distutils

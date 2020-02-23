@@ -12,6 +12,9 @@ COMMENT=	Library for high-quality scientific data visualization
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \

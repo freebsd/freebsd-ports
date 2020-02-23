@@ -13,6 +13,9 @@ COMMENT=	MySQL bindings for python
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		compiler:c11 mysql python:2.7
 USE_PYTHON=	autoplist distutils
 

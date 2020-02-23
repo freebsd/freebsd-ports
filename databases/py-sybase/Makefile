@@ -14,6 +14,9 @@ COMMENT=	Python Database API interface to the Sybase RDBMS
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libct.so:databases/freetds
 
 USES=		python:2.7

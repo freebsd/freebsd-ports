@@ -13,6 +13,9 @@ COMMENT=	Python bindings for ssdeep
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libfuzzy.so:security/ssdeep
 
 USES=		python:2.7

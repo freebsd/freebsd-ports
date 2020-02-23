@@ -10,6 +10,9 @@ COMMENT=	Pure Python Implementation of a Finite State Machine
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	oozie
 GH_PROJECT=	python-fsm

@@ -12,6 +12,9 @@ COMMENT=	Professional quality illustration program
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/GPLv3.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libMagickCore-6.so:graphics/ImageMagick6
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR}

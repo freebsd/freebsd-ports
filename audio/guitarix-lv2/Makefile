@@ -13,6 +13,9 @@ COMMENT=	Virtual versatile amplification for Jack and set of LV2 plugins
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		faust:audio/faust \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \

@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	fbsd@grid.einherjar.de
 COMMENT=	Python bindings for Internationalized Domain Name toolkit 2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libidnkitlite.so:dns/idnkit2
 
 USES=		python:2.7 tar:bzip2

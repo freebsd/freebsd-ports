@@ -12,6 +12,9 @@ COMMENT=	Play cute bunnies jumping on each other's heads #'
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		compiler:c11 gettext-tools gmake sdl shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/menu/jumpnbump_menu.py.pre
 USE_SDL=	sdl2 mixer2 net2

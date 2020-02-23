@@ -14,6 +14,9 @@ COMMENT=	Python interface to dialog(3)
 
 LICENSE=	LGPL20
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	cdialog:devel/cdialog
 
 USES=		python:2.7 tar:bzip2

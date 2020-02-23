@@ -12,6 +12,9 @@ COMMENT=	Locally hosted web-browser based mail client
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/AGPLv3.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pgpdump>=0:security/py-pgpdump@${PY_FLAVOR} \

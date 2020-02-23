@@ -12,6 +12,9 @@ COMMENT=	Pure-Python module for managing OpenBSD Packet Filter
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USE_GITHUB=	yes
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist

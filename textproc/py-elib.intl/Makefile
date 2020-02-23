@@ -11,6 +11,9 @@ COMMENT=	Enhanced internationalization services for Python modules
 
 LICENSE=	LGPL3
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 GH_ACCOUNT=	dieterv
 GH_TAGNAME=	d09997c
 USE_GITHUB=	yes

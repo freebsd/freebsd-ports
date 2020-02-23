@@ -14,6 +14,9 @@ COMMENT=	C++ code generator for calling Java from C++/Python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BROKEN_armv6=		fails to link: /nxb-bin/usr/bin/ld: cannot find -ljava
 BROKEN_armv7=		fails to link: /nxb-bin/usr/bin/ld: cannot find -ljava
 BROKEN_powerpc64=	fails to link: /usr/bin/ld: cannot find -ljava
