@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2019-08-02 11:28:31 UTC
++++ Makefile.in
+@@ -1474,7 +1474,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = lib po gl src examples tests doc gltests
++SUBDIRS = lib gl examples tests doc gltests # po src
+ EXTRA_DIST = cfg.mk maint.mk .clcopying
+ ACLOCAL_AMFLAGS = -I m4
+ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --disable-obsolete --with-gssapi-impl=no

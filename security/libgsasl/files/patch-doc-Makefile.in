@@ -1,0 +1,36 @@
+--- doc/Makefile.in.orig	2020-01-17 05:17:36 UTC
++++ doc/Makefile.in
+@@ -288,13 +288,13 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
+ am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V@)
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
+-INFO_DEPS = $(srcdir)/gsasl.info
++INFO_DEPS = 
+ TEXINFO_TEX = $(top_srcdir)/lib/build-aux/texinfo.tex
+ am__TEXINFO_TEX_DIR = $(top_srcdir)/lib/build-aux
+ DVIS = gsasl.dvi
+ PDFS = gsasl.pdf
+ PSS = gsasl.ps
+-HTMLS = gsasl.html
++HTMLS = 
+ TEXINFOS = gsasl.texi
+ TEXI2PDF = $(TEXI2DVI) --pdf --batch
+ MAKEINFOHTML = $(MAKEINFO) --html
+@@ -1552,7 +1552,7 @@ top_srcdir = @top_srcdir@
+ SUBDIRS = cyclo $(am__append_1)
+ EXTRA_DIST = gdoc \
+ 	controlflow.dia controlflow2.dia abstraction.dia \
+-	gsasl.html gsasl.ps gsasl.pdf texinfo.css \
++	texinfo.css \
+ 	doxygen/Doxyfile.in doxygen/gdoc2doxygen
+ 
+ info_TEXINFOS = gsasl.texi
+@@ -1577,7 +1577,7 @@ TEXI2DVI = texi2dvi $(AM_MAKEINFOFLAGS)
+ AM_MAKEINFOHTMLFLAGS = $(AM_MAKEINFOFLAGS) \
+ 	--no-split --number-sections --css-include=texinfo.css
+ 
+-dist_man_MANS = gsasl.1 $(gdoc_MANS)
++dist_man_MANS = $(gdoc_MANS)
+ MAINTAINERCLEANFILES = $(dist_man_MANS)
+ gdoc_MANS = man/gsasl_base64_to.3 man/gsasl_base64_from.3 \
+ 	man/gsasl_callback_set.3 man/gsasl_callback.3 \
