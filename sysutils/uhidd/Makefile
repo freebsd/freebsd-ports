@@ -19,7 +19,7 @@ PATCHFILES+=	dd1279592b04.patch:-p1
 PATCHFILES+=	498422ccef03.patch:-p1
 PATCHFILES+=	7022ca4d1a1b.patch:-p1
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userland USB HID device driver using libusb20
 
 LICENSE=	BSD2CLAUSE
