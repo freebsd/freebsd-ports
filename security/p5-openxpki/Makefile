@@ -4,6 +4,7 @@
 PORTNAME=	openxpki
 PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
@@ -84,13 +85,18 @@ CONFLICTS=	p5-openxpki-client-[0-9]* \
 
 USES=		gmake perl5 ssl
 USE_GITHUB=	yes
+GH_PROJECT=	openxpki-config:conf
+conf_VERSION=	3.2
+GH_TAGNAME=	${DISTVERSIONPREFIX}${conf_VERSION}:conf
+
 USE_PERL5=	configure
 USE_RC_SUBR=	openxpki
 SUB_FILES=	pkg-message
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-WRKSRC_SUBDIR=	core/server
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC_SUBDIR=	core/server/
 
 USERS=		openxpki
 GROUPS=		openxpki
@@ -100,6 +106,9 @@ OPTIONS_DEFINE=	GRAPHVIZ DOCS EXAMPLES
 GRAPHVIZ_DESC=	With graphical visualization of workflows?
 GRAPHVIZ_RUN_DEPENDS=	dot:graphics/graphviz \
 			imgsize:graphics/p5-Image-Size
+
+post-extract:
+	@${MV} ${WRKSRC_conf}/* ${WRKSRC}/../../config/
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|..ENV{PERL} .vergen --format version.|"${PORTVERSION}"|g' ${WRKSRC}/Makefile.PL
