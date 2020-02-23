@@ -1306,6 +1306,7 @@
     SUBDIR += tracker-miners
     SUBDIR += tree
     SUBDIR += tren
+    SUBDIR += triton
     SUBDIR += trueos-libqt5
     SUBDIR += ts
     SUBDIR += tss
