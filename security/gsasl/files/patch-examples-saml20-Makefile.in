@@ -1,0 +1,28 @@
+--- examples/saml20/Makefile.in.orig	2020-01-17 06:03:59 UTC
++++ examples/saml20/Makefile.in
+@@ -220,7 +220,6 @@ gsasl_saml20_request_OBJECTS = gsasl-saml20-request.$(
+ gsasl_saml20_request_LDADD = $(LDADD)
+ am__DEPENDENCIES_1 =
+ gsasl_saml20_request_DEPENDENCIES =  \
+-	$(top_builddir)/lib/src/libgsasl.la \
+ 	$(top_builddir)/gl/libgl.la $(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+@@ -229,7 +228,7 @@ am__v_lt_1 = 
+ smtp_server_saml20_SOURCES = smtp-server-saml20.c
+ smtp_server_saml20_OBJECTS = smtp-server-saml20.$(OBJEXT)
+ smtp_server_saml20_LDADD = $(LDADD)
+-smtp_server_saml20_DEPENDENCIES = $(top_builddir)/lib/src/libgsasl.la \
++smtp_server_saml20_DEPENDENCIES = \
+ 	$(top_builddir)/gl/libgl.la $(am__DEPENDENCIES_1)
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
+@@ -1448,7 +1447,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/gl -I$(top_builddir)/gl 
+ 	$(LASSO_CFLAGS)
+ 
+ AM_LDFLAGS = -no-install
+-LDADD = $(top_builddir)/lib/src/libgsasl.la $(top_builddir)/gl/libgl.la \
++LDADD = -lgsasl $(top_builddir)/gl/libgl.la \
+ 	$(LASSO_LIBS)
+ 
+ EXTRA_DIST = README gsasl-saml20-sp.php sp-metadata.xml sp-key.pem \
