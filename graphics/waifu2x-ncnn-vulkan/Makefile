@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	waifu2x-ncnn-vulkan
-DISTVERSION=	20200222
+DISTVERSION=	20200223
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
