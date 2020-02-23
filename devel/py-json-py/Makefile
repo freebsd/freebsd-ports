@@ -13,6 +13,9 @@ COMMENT=	Python implementation of a JSON (http//:json.org) reader/writer
 
 LICENSE=	LGPL20
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 NO_WRKSUBDIR=	yes
 
 USES=		python:2.7 zip

@@ -10,6 +10,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME IM client based around telepathy
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		ca_root_nss>=0:security/ca_root_nss \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \

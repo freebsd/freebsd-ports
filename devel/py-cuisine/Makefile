@@ -13,6 +13,9 @@ COMMENT=	Chef-like functionality for Fabric
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fabric1>=1.7,1:devel/py-fabric1@${PY_FLAVOR}
 
 USES=		python:2.7

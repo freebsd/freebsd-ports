@@ -14,6 +14,9 @@ COMMENT=	Python extension for the Libnet packet injection library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libnet.so:net/libnet
 
 USES=		python:2.7

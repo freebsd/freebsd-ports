@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	craig001@lerwick.hopto.org
 COMMENT=	Python client for the BulkSMS.co.uk HTTP API
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=			python:2.7
 USE_PYTHON=		distutils
 PYDISTUTILS_PKGNAME=	BulkSMS

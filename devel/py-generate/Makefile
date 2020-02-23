@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	darcy@druid.net
 COMMENT=	Python module to implement generate
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7 tar:tgz
 USE_PYTHON=	distutils autoplist
 

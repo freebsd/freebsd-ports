@@ -11,6 +11,9 @@ COMMENT=	Blitz++ Multi-Dimensional Array Library for C++
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		cmake:noninja libtool localbase python:2.7,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	blitzpp

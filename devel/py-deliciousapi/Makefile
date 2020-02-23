@@ -15,6 +15,9 @@ COMMENT=	Unofficial Python API for retrieving data from Delicious.com
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=1.7:devel/py-simplejson@${PY_FLAVOR}
 

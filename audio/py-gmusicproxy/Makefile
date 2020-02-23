@@ -13,6 +13,9 @@ COMMENT=	Proxy for streaming Google Play Music using any media-player
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.3.0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gmusicapi>=10.1.0:audio/py-gmusicapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=-0.10.4:net/py-netifaces@${PY_FLAVOR} \

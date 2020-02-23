@@ -16,6 +16,9 @@ COMMENT=	High-quality circular representations of taxonomic, phylogenetic trees
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7 shebangfix
 SHEBANG_GLOB=	*.py
 

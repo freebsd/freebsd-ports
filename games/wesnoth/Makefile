@@ -15,6 +15,9 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libvorbisfile.so:audio/libvorbis \
 		libboost_thread.so:devel/boost-libs \

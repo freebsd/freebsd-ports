@@ -13,6 +13,9 @@ EXTRACT_SUFX=		.tbz
 MAINTAINER=		ports2@dclg.ca
 COMMENT=		Python interface to kqueue(2) and kevent(2) system calls
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7 tar:bzip2
 FILES=		kqsyscallmodule.so KQueue.py KQueue.pyc
 PLIST_FILES=	${FILES:S+^+%%PYTHON_SITELIBDIR%%/+g}

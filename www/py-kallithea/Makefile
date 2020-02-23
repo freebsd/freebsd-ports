@@ -14,6 +14,9 @@ COMMENT=	Fast and powerful management tool for Mercurial and Git
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PasteScript>=1.6.3:www/py-pastescript@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}waitress>=0.8.8:www/py-waitress@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.0.8:www/py-webob@${PY_FLAVOR} \

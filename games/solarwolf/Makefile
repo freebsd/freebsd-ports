@@ -13,6 +13,9 @@ COMMENT=	Action/arcade game originally based of SolarFox on the Atari 2600
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/lgpl.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYGAME}
 
 USES=		python:2.7 shebangfix

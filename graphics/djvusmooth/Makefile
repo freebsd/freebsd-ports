@@ -10,6 +10,9 @@ COMMENT=	Graphical editor for DjVu
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml

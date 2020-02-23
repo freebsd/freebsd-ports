@@ -15,6 +15,9 @@ COMMENT=	Python module to fetch information on audio CDs from CDDB
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist pythonprefix
 

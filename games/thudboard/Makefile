@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.million.nl/file/
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	The Discworld Boardgame Board
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
 NO_WRKSUBDIR=	yes

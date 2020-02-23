@@ -13,6 +13,9 @@ COMMENT=	Implements the JSON-RPC 2.0 proposed specification in pure Python
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 

@@ -12,6 +12,9 @@ DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sergio@softshark.org
 COMMENT=	The eGenix mx Extensions - EXPERIMENTAL Package
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BUILD_DEPENDS=	${LOCALBASE}/include/gmp.h:math/gmp
 #RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/BeeBase/BeeBase.py:lang/py-mx-base@${PY_FLAVOR}
 

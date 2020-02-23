@@ -14,6 +14,9 @@ COMMENT=	Python interface to the Akismet API
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7 zip
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	akismet

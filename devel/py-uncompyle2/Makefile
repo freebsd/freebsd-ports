@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	py-
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Decompiler for Python's .pyc and .pyo files
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Mysterie
 GH_TAGNAME=	3956a5a

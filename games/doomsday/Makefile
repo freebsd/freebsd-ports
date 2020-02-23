@@ -11,6 +11,9 @@ COMMENT=	Enhanced Doom, Heretic, and Hexen source port
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libassimp.so:multimedia/assimp \
 		libfluidsynth.so:audio/fluidsynth

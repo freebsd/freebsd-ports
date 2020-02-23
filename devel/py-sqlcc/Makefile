@@ -12,6 +12,9 @@ COMMENT=	Python SQL Command Composer
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pythk>=0:devel/pythk@${PY_FLAVOR}
 
 USES=		python:2.7

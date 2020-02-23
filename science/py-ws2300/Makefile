@@ -14,6 +14,9 @@ COMMENT=	Driver for the LaCrosse WS-2300 weather station
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/agpl-3.0.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7
 USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes

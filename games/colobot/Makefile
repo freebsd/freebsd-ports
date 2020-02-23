@@ -15,6 +15,9 @@ COMMENT=	Educational game aiming to teach programming to kids
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libsndfile.so:audio/libsndfile \
 		libvorbis.so:audio/libvorbis \

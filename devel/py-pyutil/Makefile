@@ -12,6 +12,9 @@ COMMENT=	Collection of mature utilities for Python programmers
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.1.0:devel/py-simplejson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zbase32>=1.0:converters/zbase32@${PY_FLAVOR}
 

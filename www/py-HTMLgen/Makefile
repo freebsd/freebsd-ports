@@ -14,6 +14,9 @@ DISTNAME=	HTMLgen
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python library for the generation of HTML documents
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7 shebangfix
 USE_PYTHON=	flavors
 NO_BUILD=	yes

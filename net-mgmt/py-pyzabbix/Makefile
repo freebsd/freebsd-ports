@@ -12,6 +12,9 @@ COMMENT=	Zabbix API Python Library
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.0:www/py-requests@${PY_FLAVOR}
 
 USES=		python:2.7

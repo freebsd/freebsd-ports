@@ -13,6 +13,9 @@ COMMENT=	Quantum chemistry in Python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python:2.7

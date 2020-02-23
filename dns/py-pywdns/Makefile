@@ -12,6 +12,9 @@ COMMENT=	Python wrapper for dns/wdns
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libwdns.so:dns/wdns
 
 USES=		pkgconfig python:2.7

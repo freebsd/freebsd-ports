@@ -12,6 +12,9 @@ COMMENT=	Python binding for libpoly
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libpoly.so:math/libpoly
 
 USES=		cmake localbase:ldflags python:2.7

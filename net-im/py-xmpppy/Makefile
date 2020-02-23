@@ -14,6 +14,9 @@ COMMENT=	Python library that provides easy scripting with Jabber
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=1.7.1:dns/py-dnspython@${PY_FLAVOR}
 
 USES=		python:2.7 shebangfix

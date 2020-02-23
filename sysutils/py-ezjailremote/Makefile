@@ -12,6 +12,9 @@ COMMENT=	Remote control and convenience wrapper for ezjail
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	ezjail-admin:sysutils/ezjail \
 		${PYTHON_PKGNAMEPREFIX}fabric1>0:devel/py-fabric1@${PY_FLAVOR}
 

@@ -14,6 +14,9 @@ COMMENT=	Peer-to-peer network game engine
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 DIST_SUBDIR=	python
 USES=		python:2.7
 USE_PYTHON=	distutils

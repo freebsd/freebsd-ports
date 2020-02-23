@@ -11,6 +11,9 @@ DISTNAME=	NZMATH-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Number theory oriented calculation system
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	NZMATH

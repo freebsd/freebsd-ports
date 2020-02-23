@@ -12,6 +12,9 @@ COMMENT=	LV2 plugin for using Bauer stereophonic-to-binaural DSP library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		lvtk>0:audio/lvtk
 LIB_DEPENDS=	libbs2b.so:audio/libbs2b

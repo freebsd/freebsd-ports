@@ -11,6 +11,9 @@ COMMENT=	Python NSCA (Nagios Service Check Acceptor) library
 
 LICENSE=	MPL11
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 OPTIONS_DEFINE=	AES 3DES
 
 AES_DESC=	Provide AES encryption

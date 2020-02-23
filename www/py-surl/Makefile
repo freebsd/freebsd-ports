@@ -14,6 +14,9 @@ COMMENT=	URL shortening command line application
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7 tar:bzip2
 USE_PYTHON=	distutils
 

@@ -17,6 +17,9 @@ COMMENT=	Monsterz - arcade puzzle game
 LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYGAME}
 
 USES=		python:2.7 shebangfix
