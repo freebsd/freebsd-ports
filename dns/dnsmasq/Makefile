@@ -91,9 +91,6 @@ USE_RC_SUBR=	dnsmasq
 
 LDFLAGS+=	-L${LOCALBASE}/lib ${_intllibs} ${ICONV_LIB}
 
-post-patch:
-	${REINPLACE_CMD} -e 's/lua5\.1/lua-${LUA_VER}/' ${WRKSRC}/Makefile
-
 pre-configure: pretty-print-config
 .if ${PORT_OPTIONS:MIDN}
 .if empty(PORT_OPTIONS:MNLS)
