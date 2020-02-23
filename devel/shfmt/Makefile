@@ -2,7 +2,7 @@
 
 PORTNAME=	shfmt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.1
+DISTVERSION=	3.0.2
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -26,11 +26,7 @@ GH_TUPLE=	go-errgo:errgo:v2.1.0:go_errgo_errgo/vendor/gopkg.in/errgo.v2 \
 		pkg:diff:531926345625:pkg_diff/vendor/github.com/pkg/diff \
 		rogpeppe:go-internal:v1.5.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal
 GO_TARGET=	./cmd/shfmt
+GO_TESTTARGET=	./cmd/shfmt
 PLIST_FILES=	bin/shfmt
-
-do-test:
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} test ${GO_BUILDFLAGS} \
-		./cmd/shfmt
 
 .include <bsd.port.mk>
