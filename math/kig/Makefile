@@ -22,4 +22,8 @@ SHEBANG_FILES=	pykig/pykig.py
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+	${REINPLACE_CMD} '/Python_ADDITIONAL_VERSIONS/s|2.7|${PYTHON_VER};2.7|' \
+		${WRKSRC}/cmake/modules/FindBoostPython.cmake
+
 .include <bsd.port.mk>
