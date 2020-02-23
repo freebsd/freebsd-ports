@@ -3,8 +3,8 @@ bin/termit
 @sample etc/xdg/termit/rc.lua.sample
 @sample etc/xdg/termit/utils.lua.sample
 man/man1/termit.1.gz
-share/appdata/termit.appdata.xml
 share/applications/termit.desktop
+share/metainfo/termit.metainfo.xml
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/lua_api.txt
 %%PORTDOCS%%%%DOCSDIR%%/rc.lua.example

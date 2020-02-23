@@ -1,6 +1,6 @@
---- src/lua_conf.c.orig	2016-07-12 17:38:44 UTC
+--- src/lua_conf.c.orig	2020-02-17 06:02:21 UTC
 +++ src/lua_conf.c
-@@ -340,9 +340,9 @@ static gchar** termit_system_path()
+@@ -344,9 +344,9 @@ static gchar** termit_system_path()
      const gchar *configSystem = g_getenv("XDG_CONFIG_DIRS");
      gchar* xdgConfigDirs = NULL;
      if (configSystem) {
