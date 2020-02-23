@@ -25,6 +25,7 @@
     SUBDIR += bible-kjv
     SUBDIR += bibletime
     SUBDIR += biblical-curse
+    SUBDIR += biblesync
     SUBDIR += binclock
     SUBDIR += biosfont-demos
     SUBDIR += birthday
