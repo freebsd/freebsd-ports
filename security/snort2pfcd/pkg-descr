@@ -1,5 +1,5 @@
 Analyzes snort alert output and blocks ip addresses using pf for a specified
-period of time. A whitelist is specified in CIDR format to exclude local and 
+period of time. A whitelist is specified in CIDR format to exclude local and
 trusted ip address from being blocked.
 
 WWW: https://github.com/onestsam/snort2pfcd
