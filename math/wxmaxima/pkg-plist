@@ -95,6 +95,7 @@ share/wxMaxima/sqrtCells.wxm
 share/wxMaxima/subCells.wxm
 share/wxMaxima/subsupCells.wxm
 share/wxMaxima/sumCells.wxm
+share/wxMaxima/threadtest.wxm
 share/wxMaxima/unicode.wxm
 share/wxMaxima/unicode_specialchars.wxm
 share/wxMaxima/weirdLabels.wxm
