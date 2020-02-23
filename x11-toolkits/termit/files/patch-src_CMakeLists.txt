@@ -1,21 +1,21 @@
---- src/CMakeLists.txt.orig	2016-07-12 17:38:44 UTC
+--- src/CMakeLists.txt.orig	2020-02-17 06:02:21 UTC
 +++ src/CMakeLists.txt
 @@ -27,11 +27,11 @@ ENDIF(NOT VTE_FOUND)
  
  SET(LUA_VERSION "" CACHE STRING "Lua version")
  IF(LUA_VERSION STREQUAL "")
 -    IF(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
--       pkg_search_module(LUA REQUIRED lua53 lua52)
+-       pkg_search_module(LUA REQUIRED lua53)
 -    ELSE(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
 +    IF(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
-+       pkg_search_module(LUA REQUIRED lua53 lua-5.2)
++       pkg_search_module(LUA REQUIRED lua>=5.3 lua-5.3)
 +    ELSE(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
-        pkg_search_module(LUA REQUIRED lua>=5.2 lua5.3 lua5.2)
+        pkg_search_module(LUA REQUIRED lua>=5.3 lua5.3)
 -    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
 +    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
  ELSE(LUA_VERSION STREQUAL "")
    pkg_search_module(LUA REQUIRED
-     lua=${LUA_VERSION} lua5.3=${LUA_VERSION} lua5.2=${LUA_VERSION})
+     lua=${LUA_VERSION} lua5.3=${LUA_VERSION})
 @@ -43,9 +43,9 @@ ENDIF(NOT LUA_FOUND)
  INCLUDE(Sources.cmake)
  
@@ -28,13 +28,13 @@
  FOREACH(cflag ${VTE_CFLAGS} ${GTK_CFLAGS} ${LUA_CFLAGS})
    SET(TERMIT_CFLAGS "${TERMIT_CFLAGS} ${cflag}")
  ENDFOREACH(cflag)
-@@ -64,11 +64,11 @@ SET_SOURCE_FILES_PROPERTIES(${TERMIT_SRC
+@@ -64,11 +64,11 @@ SET_SOURCE_FILES_PROPERTIES(${TERMIT_SRCS} PROPERTIES 
  
  ADD_EXECUTABLE(${TARGET} ${TERMIT_SRCS})
  
 -IF(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
 +IF(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
-     SET(TERMIT_LDFLAGS"-llua5.2")
+     SET(TERMIT_LDFLAGS"-llua5.3")
 -ELSE(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
 +ELSE(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
      SET(TERMIT_LDFLAGS "-ldl -lm")

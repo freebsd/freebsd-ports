@@ -1,4 +1,4 @@
---- doc/CMakeLists.txt.orig	2016-07-12 17:38:44 UTC
+--- doc/CMakeLists.txt.orig	2020-02-17 06:02:21 UTC
 +++ doc/CMakeLists.txt
 @@ -13,10 +13,10 @@
  # You should have received a copy of the GNU General Public License
@@ -11,5 +11,5 @@
 -INSTALL(FILES termit.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1)
 +INSTALL(FILES termit.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
  INSTALL(FILES termit.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
- INSTALL(FILES termit.appdata.xml DESTINATION ${CMAKE_INSTALL_PREFIX}/share/appdata)
+ INSTALL(FILES termit.metainfo.xml DESTINATION ${CMAKE_INSTALL_PREFIX}/share/metainfo)
  
