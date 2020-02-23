@@ -75,7 +75,7 @@ lib/kvirc/%%VER%%/modules/libkviuserlist.so
 lib/kvirc/%%VER%%/modules/libkviwindow.so
 lib/libkvilib.so
 lib/libkvilib.so.5
-lib/libkvilib.so.5.0.0
+lib/libkvilib.so.5.0.1
 man/de/man1/kvirc.1.gz
 man/fr/man1/kvirc.1.gz
 man/it/man1/kvirc.1.gz
@@ -848,7 +848,7 @@ share/kvirc/%%VER%%/help/en/doc_widget_alphabetic_y.html
 share/kvirc/%%VER%%/help/en/doc_widget_alphabetic_z.html
 share/kvirc/%%VER%%/help/en/doc_widget_index_all.html
 share/kvirc/%%VER%%/help/en/doc_window_naming_conventions.html
-share/kvirc/%%VER%%/help/en/documentation.5.0.0.tag
+share/kvirc/%%VER%%/help/en/documentation.5.0.1.tag
 share/kvirc/%%VER%%/help/en/event_onaccelkeypressed.html
 share/kvirc/%%VER%%/help/en/event_onaccount.html
 share/kvirc/%%VER%%/help/en/event_onaction.html
