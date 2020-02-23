@@ -14384,7 +14384,6 @@ www/trac-watchlist||2020-02-22|Has expired: Broken, uses EOLed python27
 www/twill||2020-02-22|Has expired: Broken, uses EOLed python27
 x11/wbarconf||2020-02-22|Has expired: Broken, uses EOLed python27
 x11-wm/simple-ccsm||2020-02-22|Has expired: Broken, uses EOLed python27
-math/mumps4|math/mumps|2020-02-22|Removed, uses expired math/metis4
 math/metis4|math/metis|2020-02-22|Has expired: EOL: use math/metis instead
 multimedia/cinelerra-gg||2020-02-22|Has expired: Broken, uses EOLed python27
 x11-toolkits/py-gnome2||2020-02-22|Has expired: Broken, uses EOLed python27
