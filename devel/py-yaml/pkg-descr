@@ -1,6 +1,6 @@
 PyYAML is a YAML parser and emitter for the Python programming language.
 
-PyYAML features :
+PyYAML features:
    * a complete YAML 1.1 parser. In particular, PyYAML can parse all examples
      from the specification. The parsing algorithm is simple enough to be a
      reference for YAML parser implementors.
@@ -13,4 +13,4 @@ PyYAML features :
      API is provided.
    * relatively sensible error messages.
 
-WWW: http://pyyaml.org
+WWW: https://pyyaml.org/
