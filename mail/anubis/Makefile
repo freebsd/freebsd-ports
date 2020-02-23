@@ -3,7 +3,7 @@
 
 PORTNAME=	anubis
 PORTVERSION=	4.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	mail
 MASTER_SITES=	GNU
 
@@ -61,7 +61,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 GNUTLS_CONFIGURE_WITH=	gnutls
 
 GSASL_DESC=		GSASL support (required for databases)
-GSASL_LIB_DEPENDS=	libgsasl.so:security/gsasl
+GSASL_LIB_DEPENDS=	libgsasl.so:security/libgsasl
 GSASL_CONFIGURE_WITH=	gsasl
 
 GUILE_LIB_DEPENDS=	libltdl.so:devel/libltdl \
