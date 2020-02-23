@@ -12,6 +12,7 @@ include/iowow/iwlog.h
 include/iowow/iwp.h
 include/iowow/iwpool.h
 include/iowow/iwrdb.h
+include/iowow/iwstree.h
 include/iowow/iwth.h
 include/iowow/iwutils.h
 include/iowow/iwuuid.h
