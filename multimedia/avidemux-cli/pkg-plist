@@ -1,4 +1,5 @@
 bin/avidemux3_cli
-include/avidemux/2.6/cli/config.h
+include/avidemux/2.7/cli/config.h
+include/avidemux/2.7/cli/ADM_UIs/ADM_UI_Cli6_export.h
 lib/libADM_UI_Cli6.so
 lib/libADM_render6_cli.so
