@@ -1,0 +1,59 @@
+--- examples/Makefile.in.orig	2020-01-17 06:03:59 UTC
++++ examples/Makefile.in
+@@ -222,7 +222,7 @@ PROGRAMS = $(noinst_PROGRAMS)
+ client_SOURCES = client.c
+ client_OBJECTS = client.$(OBJEXT)
+ client_LDADD = $(LDADD)
+-client_DEPENDENCIES = $(top_builddir)/lib/src/libgsasl.la \
++client_DEPENDENCIES = \
+ 	$(top_builddir)/gl/libgl.la
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+@@ -231,32 +231,32 @@ am__v_lt_1 = 
+ client_callback_SOURCES = client-callback.c
+ client_callback_OBJECTS = client-callback.$(OBJEXT)
+ client_callback_LDADD = $(LDADD)
+-client_callback_DEPENDENCIES = $(top_builddir)/lib/src/libgsasl.la \
++client_callback_DEPENDENCIES = \
+ 	$(top_builddir)/gl/libgl.la
+ client_mech_SOURCES = client-mech.c
+ client_mech_OBJECTS = client-mech.$(OBJEXT)
+ client_mech_LDADD = $(LDADD)
+-client_mech_DEPENDENCIES = $(top_builddir)/lib/src/libgsasl.la \
++client_mech_DEPENDENCIES = \
+ 	$(top_builddir)/gl/libgl.la
+ client_serverfirst_SOURCES = client-serverfirst.c
+ client_serverfirst_OBJECTS = client-serverfirst.$(OBJEXT)
+ client_serverfirst_LDADD = $(LDADD)
+-client_serverfirst_DEPENDENCIES = $(top_builddir)/lib/src/libgsasl.la \
++client_serverfirst_DEPENDENCIES = \
+ 	$(top_builddir)/gl/libgl.la
+ client_xmpp_saml20_SOURCES = client-xmpp-saml20.c
+ client_xmpp_saml20_OBJECTS = client-xmpp-saml20.$(OBJEXT)
+ client_xmpp_saml20_LDADD = $(LDADD)
+-client_xmpp_saml20_DEPENDENCIES = $(top_builddir)/lib/src/libgsasl.la \
++client_xmpp_saml20_DEPENDENCIES = \
+ 	$(top_builddir)/gl/libgl.la
+ server_xmpp_saml20_SOURCES = server-xmpp-saml20.c
+ server_xmpp_saml20_OBJECTS = server-xmpp-saml20.$(OBJEXT)
+ server_xmpp_saml20_LDADD = $(LDADD)
+-server_xmpp_saml20_DEPENDENCIES = $(top_builddir)/lib/src/libgsasl.la \
++server_xmpp_saml20_DEPENDENCIES = \
+ 	$(top_builddir)/gl/libgl.la
+ smtp_server_SOURCES = smtp-server.c
+ smtp_server_OBJECTS = smtp-server.$(OBJEXT)
+ smtp_server_LDADD = $(LDADD)
+-smtp_server_DEPENDENCIES = $(top_builddir)/lib/src/libgsasl.la \
++smtp_server_DEPENDENCIES = \
+ 	$(top_builddir)/gl/libgl.la
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
+@@ -1522,7 +1522,7 @@ AM_CFLAGS = $(WERROR_CFLAGS) $(WARN_CFLAGS)
+ AM_CPPFLAGS = -I$(top_srcdir)/gl -I$(top_builddir)/gl \
+ 	-I$(top_srcdir)/lib/src -I$(top_builddir)/lib/src
+ 
+-LDADD = $(top_builddir)/lib/src/libgsasl.la $(top_builddir)/gl/libgl.la
++LDADD = -lgsasl $(top_builddir)/gl/libgl.la
+ EXTRA_DIST = README
+ all: all-recursive
+ 

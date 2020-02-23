@@ -1,7 +1,7 @@
 GNU SASL is an implementation of the Simple Authentication and Security Layer
 framework and a few common SASL mechanisms.
 
-GNU SASL consists of a library (libgsasl), a command line utility (gsasl) to
+GNU SASL consists of a library (libgsasl), a command-line utility (gsasl) to
 access the library from the shell, and a manual. The library includes support
 for the framework (with authentication functions and application data privacy
 and integrity functions) and at least partial support for the ANONYMOUS,
@@ -12,5 +12,9 @@ The library is easily ported because it does not do network communication by
 itself, but rather leaves it up to the calling application. The library is
 flexible with regards to the authorization infrastructure used, as it utilizes a
 callback into the application to decide whether a user is authorized or not.
+
+GNU SASL has been split into 2 ports:
+- security/gsasl: the command-line utility
+- security/libgsasl: the library
 
 WWW: https://www.gnu.org/software/gsasl/
