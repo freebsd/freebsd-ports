@@ -1,2 +1,4 @@
 This package contains the X.Org xf86-video-scfb driver.
 Framebuffer access via FreeBSD syscons.
+
+WWW: https://github.com/rayddteam/xf86-video-scfb
