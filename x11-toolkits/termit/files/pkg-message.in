@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Please see the change in the 'require' lines at the top of the file
+%%DOCSDIR%%/rc.lua.example.
+This may affect any scripts where similar constructs have been used.
+If these changes are not made (i.e. the return values added) any scripts using
+these values will fail.
+-------------------------------------------------------------------------------
+
+
