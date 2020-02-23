@@ -1,10 +1,12 @@
 include/entt/config/config.h
 include/entt/config/version.h
 include/entt/core/algorithm.hpp
+include/entt/core/attribute.h
 include/entt/core/family.hpp
 include/entt/core/hashed_string.hpp
 include/entt/core/ident.hpp
 include/entt/core/monostate.hpp
+include/entt/core/type_info.hpp
 include/entt/core/type_traits.hpp
 include/entt/core/utility.hpp
 include/entt/entity/actor.hpp
@@ -18,7 +20,6 @@ include/entt/entity/runtime_view.hpp
 include/entt/entity/snapshot.hpp
 include/entt/entity/sparse_set.hpp
 include/entt/entity/storage.hpp
-include/entt/entity/utility.hpp
 include/entt/entity/view.hpp
 include/entt/entt.hpp
 include/entt/fwd.hpp
