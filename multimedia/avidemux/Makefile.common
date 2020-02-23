@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-AVIDEMUX_VERSION=	2.6.11
+AVIDEMUX_VERSION=	2.7.4
 MASTER_SITES=	\
 		SF/avidemux/avidemux/${PORTVERSION}
 DISTNAME=	avidemux_${PORTVERSION}
@@ -8,7 +8,7 @@ DISTNAME=	avidemux_${PORTVERSION}
 BUILD_DEPENDS+=	yasm:devel/yasm \
 		bash:shells/bash
 LIB_DEPENDS+=	libmad.so:audio/libmad \
-		libdca.so:multimedia/libdca \
+		libpulse.so:audio/pulseaudio \
 		libpng.so:graphics/png
 
 LICENSE=	GPLv2
@@ -17,14 +17,14 @@ USE_GNOME=	libxml2
 
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME:C/-.*//}/options
 
-USES=		cmake:noninja pkgconfig iconv gmake gnome compiler:features sqlite
+USES=		cmake:noninja pkgconfig iconv gmake compiler:features sqlite
 USES+=		dos2unix
 DOS2UNIX_FILES=	cmake/admCheckMiscLibs.cmake \
 		avidemux_core/ADM_coreVideoCodec/include/ADM_coreVideoCodec6_export.h \
 		avidemux_core/ADM_coreVideoCodec/include/ADM_ffmp43.h
 CMAKE_ARGS+=	-DGNUMAKE_EXECUTABLE=gmake
 CMAKE_ARGS+=	-DAVIDEMUX_PACKAGER=none
-CMAKE_ARGS+=	-DQT5:BOOL=OFF
+CMAKE_ARGS+=	-DGTK:BOOL=OFF
 CMAKE_ARGS+=	-DESD:BOOL=OFF
 CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
@@ -35,16 +35,21 @@ CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 
 OPTIONS_DEFINE=	CLI FREETYPE FONTCONFIG OSS JACK \
-		PULSEAUDIO XVIDEO FAAC FRIBIDI OPUS TWOLAME \
-		FAAD X264 X265 VPX XVID SDL AMR VORBIS NLS LAME VAAPI VDPAU
+		XVIDEO FAAC FRIBIDI OPUS TWOLAME \
+		FAAD X264 X265 VPX XVID AMR VORBIS NLS LAME VAAPI VDPAU \
+		DCA FDK QT5 TINYPY VAPOURSYNTH
 OPTIONS_DEFAULT=	FREETYPE FONTCONFIG OSS XVIDEO VPX XVID \
-			SDL FAAD VDPAU VORBIS
+			FAAD VDPAU VORBIS DCA FDK QT5 TINYPY VAPOURSYNTH
+
 OPTIONS_SUB=	yes
 CLI_DESC=	Build CLI tool
+FDK_DESC=	FDK AAC codec support
+TINYPY_DESC=	Python scripting support via TinyPy
+VAPOURSYNTH_DESC=	VapourSynth video manipulation support
 
-FRIBIDI_CMAKE_OFF=	-DFRIDIBI:BOOL=OFF
+FRIBIDI_CMAKE_OFF=	-DFRIBIDI:BOOL=OFF
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
-OPUS_CMAKE_OFF=		-DOPUS:BOOL=OFF
+OPUS_CMAKE_OFF=		-DOPUS:BOOL=OFF -DOPUS_ENCODER:BOOL=OFF
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 TWOLAME_CMAKE_OFF=	-DTWOLAME:BOOL=OFF
 TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
@@ -57,10 +62,8 @@ OPTIONS_DEFAULT+=	LAME FAAC AMR X264
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-PLIST_SUB+=	NLS=""
 .else
 CMAKE_ARGS+=	-DNO_NLS:BOOL=ON
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top
@@ -76,22 +79,24 @@ CMAKE_ARGS+=	-DLIBEXECINFO_LIBRARY_DIR=-lexecinfo
 # We haven't ALSA(Never) & Aften(Yet) on FreeBSD
 CMAKE_ARGS+=	-DARTS:BOOL=OFF -DALSA:BOOL=OFF -DAFTEN:BOOL=OFF
 
-.if empty(PORT_OPTIONS:MGTK3)
+.if empty(PORT_OPTIONS:MQT5)
 CMAKE_ARGS+=	-DX11:BOOL=OFF
 .else
 USE_GNOME+=	libxslt
 .endif
 
-.if ${PORT_OPTIONS:MGTK3}
-USE_GNOME+=	gnomeprefix gtk30
-PLIST_SUB+=	GTK=""
+.if ${PORT_OPTIONS:MQT5}
+USES+=		desktop-file-utils gl qt:5 xorg
+USE_GL=		gl glu
+USE_QT=		core gui network widgets \
+		qmake_build buildtools_build linguist_build
+USE_XORG=	x11
+CMAKE_ARGS+=	-DENABLE_QT5:BOOL=ON
+PLIST_SUB+=	QT5=""
 .else
-CMAKE_ARGS+=	-DGTK:BOOL=OFF
-PLIST_SUB+=	GTK="@comment "
-.endif
-
 CMAKE_ARGS+=	-DQT4:BOOL=OFF
-PLIST_SUB+=	QT4="@comment "
+PLIST_SUB+=	QT5="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MCLI}
 PLIST_SUB+=	CLI=""
@@ -100,9 +105,9 @@ PLIST_SUB+=	CLI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOSS}
-CMAKE_ARGS+=	-DOSS_SUPPORT:BOOL=ON
+CMAKE_ARGS+=	-DOSS:BOOL=ON -DOSS_SUPPORT:BOOL=ON
 .else
-CMAKE_ARGS+=	-DOSS_SUPPORT:BOOL=OFF
+CMAKE_ARGS+=	-DOSS:BOOL=OFF -DOSS_SUPPORT:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
@@ -113,20 +118,18 @@ CMAKE_ARGS+=	-DJACK:BOOL=OFF
 PLIST_SUB+=	JACK="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:audio/pulseaudio
-PLIST_SUB+=	PULSE=""
+.if ${PORT_OPTIONS:MFDK}
+LIB_DEPENDS+=	libfdk-aac.so:audio/fdk-aac
+PLIST_SUB+=	FDK=""
 .else
-CMAKE_ARGS+=	-DPULSEAUDIOSIMPLE:BOOL=OFF
-PLIST_SUB+=	PULSE="@comment "
+CMAKE_ARGS+=	-DFDK_AAC:BOOL=OFF
+PLIST_SUB+=	FDK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=	libfreetype.so:print/freetype2
-PLIST_SUB+=	FREETYPE=""
 .else
 CMAKE_ARGS+=	-DFREETYPE2:BOOL=OFF
-PLIST_SUB+=	FREETYPE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFONTCONFIG}
@@ -185,10 +188,8 @@ PLIST_SUB+=	X265="@comment "
 
 .if ${PORT_OPTIONS:MVPX}
 LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
-PLIST_SUB+=	VPX=""
 .else
 CMAKE_ARGS+=	-DVPXDEC:BOOL=OFF
-PLIST_SUB+=	VPX="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXVID}
@@ -199,13 +200,27 @@ CMAKE_ARGS+=	-DXVID:BOOL=OFF
 PLIST_SUB+=	XVID="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MSDL}
-USES+=		sdl
-USE_SDL=	sdl
-PLIST_SUB+=	SDL=""
+.if ${PORT_OPTIONS:MTINYPY}
+PLIST_SUB+=	TINYPY=""
 .else
-CMAKE_ARGS+=	-DSDL:BOOL=OFF
-PLIST_SUB+=	SDL="@comment "
+CMAKE_ARGS+=	-DTINYPY:BOOL=OFF
+PLIST_SUB+=	TINYPY="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MDCA}
+LIB_DEPENDS+=	libdca.so:multimedia/libdca
+PLIST_SUB+=	DCA=""
+.else
+CMAKE_ARGS+=	-DLIBDCA:BOOL=OFF
+PLIST_SUB+=	DCA="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MVAPOURSYNTH}
+LIB_DEPENDS+=	libvapoursynth.so:multimedia/vapoursynth
+PLIST_SUB+=	VAPOURSYNTH=""
+.else
+CMAKE_ARGS+=	-DVAPOURSYNTH:BOOL=OFF
+PLIST_SUB+=	VAPOURSYNTH="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVAAPI}

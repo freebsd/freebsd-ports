@@ -6,7 +6,6 @@
 
 PORTNAME=	avidemux
 PORTVERSION=	${AVIDEMUX_VERSION}
-PORTREVISION=	15
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -14,28 +13,8 @@ COMMENT=	Simple GUI based video editor
 
 .include "${.CURDIR}/Makefile.common"
 
-.if ${PORT_OPTIONS:MGTK2}
-PLIST_FILES+=	${DATADIR}/${PORTNAME}.png
-.endif
-
-.if ${PORT_OPTIONS:MGTK2}
-PLIST_FILES+=	${DESKTOPDIR}/${PORTNAME}.desktop
-.endif
-
 CMAKE_SOURCE_PATH=	${WRKSRC}/avidemux_core
 
 post-configure: post-configure-common
-
-post-install:
-.if ${PORT_OPTIONS:MGTK3}
-	@${MKDIR} "${STAGEDIR}${DATADIR}"
-	${INSTALL_DATA} "${WRKSRC}/avidemux_icon.png" "${STAGEDIR}${DATADIR}/${PORTNAME}.png"
-.if ${PORT_OPTIONS:MGTK3}
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%DATADIR%%|${DATADIR}|g" \
-	    -e "s|%%NAME%%|${PORTNAME}|g" -e "s|%%API%%|gtk|g" \
-	    < ${FILESDIR}/avidemux2.desktop.in > ${WRKDIR}/${PORTNAME}.desktop
-	${INSTALL_DATA} "${WRKDIR}/${PORTNAME}.desktop" "${STAGEDIR}${DESKTOPDIR}"
-.endif
-.endif
 
 .include <bsd.port.post.mk>
