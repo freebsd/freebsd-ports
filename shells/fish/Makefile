@@ -3,6 +3,7 @@
 
 PORTNAME=	fish
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/fish-shell/fish-shell/releases/download/${PORTVERSION}/
 
@@ -32,6 +33,7 @@ OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS+=	doxygen:devel/doxygen
 MANPAGES_BUILD_DEPENDS+=	doxygen:devel/doxygen
+MANPAGES_USES=		groff:run
 NLS_USES=		gettext
 NLS_CMAKE_BOOL=		WITH_GETTEXT
 
