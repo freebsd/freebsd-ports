@@ -1,0 +1,23 @@
+--- libseq/Makefile.orig	2011-05-10 12:56:39 UTC
++++ libseq/Makefile
+@@ -7,13 +7,18 @@ all: libmpiseq
+ 
+ include ../Makefile.inc
+ 
+-libmpiseq: libmpiseq$(PLAT)$(LIBEXT)
++libmpiseq: libmpiseq$(PLAT)$(LIBEXT) libmpiseq$(PLAT).so.@SOVER@
+ 
+ libmpiseq$(PLAT)$(LIBEXT): mpi.o mpic.o elapse.o
+-	$(AR)$@ mpi.o mpic.o elapse.o
++	$(AR) $@ mpi.o mpic.o elapse.o
+ 	$(RANLIB) $@
++
++libmpiseq$(PLAT).so.@SOVER@: mpi.o mpic.o elapse.o
++	$(FC) -shared ${.ALLSRC} -Wl,-soname,libmpiseq$(PLAT).so.@SOVER@ -o libmpiseq$(PLAT).so.@SOVER@ -Wl,-z,defs
++
+ .f.o:
+ 	$(FC) $(OPTF)              -c $*.f $(OUTF)$*.o
++
+ .c.o:
+ 	$(CC) $(OPTC) $(CDEFS) -I. -c $*.c $(OUTC)$*.o
+ 
