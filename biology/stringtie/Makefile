@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 ALL_TARGET=	release
 TEST_TARGET=	test
 
