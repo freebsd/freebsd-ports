@@ -1,3 +1,5 @@
-TIMESTAMP = 1484716274
+TIMESTAMP = 1582450070
 SHA256 (xorg/driver/xf86-video-savage-2.3.9.tar.bz2) = 2c93c4db1f71e725dda0caee5821253129d4b52d7aa0fd720593e7769bceec86
 SIZE (xorg/driver/xf86-video-savage-2.3.9.tar.bz2) = 433686
+SHA256 (xorg/driver/0ece556daa8a88771b669d8104396abd9166d2d0.diff) = 9b1d526ac05cd1ea1165c204c23e7a5707ea2b1c7ea88171ca6af556fa791f57
+SIZE (xorg/driver/0ece556daa8a88771b669d8104396abd9166d2d0.diff) = 1118
