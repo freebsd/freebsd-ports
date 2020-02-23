@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.alsa-project.org/pub/utils/ \
 		GENTOO
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ALSA compatibility utils
 
 LICENSE=	GPLv2+
