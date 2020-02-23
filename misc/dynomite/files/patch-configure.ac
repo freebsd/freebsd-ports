@@ -1,0 +1,11 @@
+--- configure.ac.orig	2020-02-23 01:10:45 UTC
++++ configure.ac
+@@ -4,7 +4,7 @@ m4_ifndef([m4_esyscmd_s], [m4_define([m4_esyscmd_s], [
+ 
+ # Define the bug reporting address and package version
+ m4_define([DN_BUGS], [dynomite@netflix.com])
+-m4_define([DN_VERSION_STRING], m4_esyscmd_s([git describe --dirty --always --tags]))
++m4_define([DN_VERSION_STRING], [n/a])
+ 
+ # Initialize autoconf
+ AC_PREREQ([2.63])
