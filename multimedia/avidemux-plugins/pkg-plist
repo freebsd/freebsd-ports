@@ -101,7 +101,7 @@ lib/ADM_plugins6/autoScripts/lib/ADM_image.py
 %%FAAC%%lib/ADM_plugins6/audioEncoders/libADM_ae_faac.so
 %%FAAD%%lib/ADM_plugins6/audioDecoder/libADM_ad_faad.so
 %%JACK%%lib/ADM_plugins6/audioDevices/libADM_av_jack.so
-lib/ADM_plugins6/audioDevices/libADM_av_pulseAudioSimple.so
+%%PULSEAUDIO%%lib/ADM_plugins6/audioDevices/libADM_av_pulseAudioSimple.so
 %%XVID%%lib/ADM_plugins6/videoEncoders/libADM_ve_xvid4.so
 %%VORBIS%%lib/ADM_plugins6/audioEncoders/libADM_ae_vorbis.so
 %%AMRNB%%lib/ADM_plugins6/audioDecoder/libADM_ad_opencore_amrnb.so
