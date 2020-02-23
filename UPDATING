@@ -27,6 +27,11 @@ you update your ports collection, before attempting any port upgrades.
 
   The HAL backend option has been completely removed, as it was deprecated.
 
+  If you have problems with input devices, ensure that both x11/libinput and
+  x11-drivers/xf86-input-libinput are installed.  They are installed in the
+  default configuration, but if you have a custom configuration, they might not
+  be.
+
 20200207:
   AFFECTS: users of security/nss
   AUTHOR: lwhsu@FreeBSD.org
