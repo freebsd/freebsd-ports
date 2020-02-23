@@ -1,6 +1,6 @@
---- lib/gssapi/Makefile.in.orig	2017-06-10 19:27:47 UTC
+--- lib/gssapi/Makefile.in.orig	2020-02-23 12:16:33 UTC
 +++ lib/gssapi/Makefile.in
-@@ -304,8 +304,14 @@ test_acquire_cred_DEPENDENCIES = libgssa
+@@ -304,8 +304,14 @@ test_acquire_cred_DEPENDENCIES = libgssapi.la \
  	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1)
  am_test_add_store_cred_OBJECTS = test_add_store_cred.$(OBJEXT)
  test_add_store_cred_OBJECTS = $(am_test_add_store_cred_OBJECTS)
@@ -58,7 +58,7 @@
  	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1)
  test_names_SOURCES = test_names.c
  test_names_OBJECTS = test_names.$(OBJEXT)
-@@ -337,8 +363,10 @@ test_ntlm_OBJECTS = $(am_test_ntlm_OBJEC
+@@ -337,8 +363,10 @@ test_ntlm_OBJECTS = $(am_test_ntlm_OBJECTS)
  am__DEPENDENCIES_2 = libgssapi.la $(top_builddir)/lib/krb5/libkrb5.la \
  	$(am__DEPENDENCIES_1)
  test_ntlm_DEPENDENCIES = $(top_builddir)/lib/ntlm/libheimntlm.la \
@@ -70,7 +70,7 @@
  test_oid_OBJECTS = test_oid.$(OBJEXT)
  test_oid_LDADD = $(LDADD)
  test_oid_DEPENDENCIES = libgssapi.la \
-@@ -1104,6 +1132,9 @@ test_acquire_cred_SOURCES = test_acquire
+@@ -1103,6 +1131,9 @@ test_acquire_cred_SOURCES = test_acquire_cred.c test_c
  test_add_store_cred_SOURCES = test_add_store_cred.c
  test_ntlm_LDADD = \
  	$(top_builddir)/lib/ntlm/libheimntlm.la \
@@ -80,7 +80,7 @@
  	$(LDADD)
  
  LDADD = libgssapi.la \
-@@ -1117,6 +1148,9 @@ nodist_gsstool_SOURCES = gss-commands.c 
+@@ -1116,6 +1147,9 @@ nodist_gsstool_SOURCES = gss-commands.c gss-commands.h
  gsstool_LDADD = libgssapi.la \
  	$(top_builddir)/lib/sl/libsl.la \
  	$(top_builddir)/lib/krb5/libkrb5.la \

@@ -1,6 +1,6 @@
---- lib/hx509/Makefile.in.orig	2017-06-10 19:27:47 UTC
+--- lib/hx509/Makefile.in.orig	2020-02-23 12:16:33 UTC
 +++ lib/hx509/Makefile.in
-@@ -860,7 +860,9 @@ hxtool_LDADD = \
+@@ -859,7 +859,9 @@ hxtool_LDADD = \
  	libhx509.la \
  	$(top_builddir)/lib/asn1/libasn1.la \
  	$(LIB_hcrypto) \

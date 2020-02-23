@@ -1,6 +1,6 @@
---- kdc/Makefile.in.orig	2017-06-10 19:27:47 UTC
+--- kdc/Makefile.in.orig	2020-02-23 12:16:33 UTC
 +++ kdc/Makefile.in
-@@ -213,6 +213,8 @@ PROGRAMS = $(bin_PROGRAMS) $(libexec_PRO
+@@ -213,6 +213,8 @@ PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noins
  am_digest_service_OBJECTS = digest-service.$(OBJEXT)
  digest_service_OBJECTS = $(am_digest_service_OBJECTS)
  am__DEPENDENCIES_2 = $(top_builddir)/lib/hdb/libhdb.la \
@@ -9,7 +9,7 @@
  	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
  	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -224,6 +226,8 @@ digest_service_DEPENDENCIES = libkdc.la 
+@@ -224,6 +226,8 @@ digest_service_DEPENDENCIES = libkdc.la \
  am_hprop_OBJECTS = hprop.$(OBJEXT) mit_dump.$(OBJEXT)
  hprop_OBJECTS = $(am_hprop_OBJECTS)
  hprop_DEPENDENCIES = $(top_builddir)/lib/hdb/libhdb.la \
@@ -18,7 +18,7 @@
  	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -232,6 +236,8 @@ hprop_DEPENDENCIES = $(top_builddir)/lib
+@@ -232,6 +236,8 @@ hprop_DEPENDENCIES = $(top_builddir)/lib/hdb/libhdb.la
  am_hpropd_OBJECTS = hpropd.$(OBJEXT)
  hpropd_OBJECTS = $(am_hpropd_OBJECTS)
  hpropd_DEPENDENCIES = $(top_builddir)/lib/hdb/libhdb.la \
@@ -27,7 +27,7 @@
  	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -241,6 +247,8 @@ am_kdc_OBJECTS = kdc-connect.$(OBJEXT) k
+@@ -241,6 +247,8 @@ am_kdc_OBJECTS = kdc-connect.$(OBJEXT) kdc-config.$(OB
  	kdc-announce.$(OBJEXT) kdc-main.$(OBJEXT)
  kdc_OBJECTS = $(am_kdc_OBJECTS)
  kdc_DEPENDENCIES = libkdc.la $(am__DEPENDENCIES_2) \
@@ -36,7 +36,7 @@
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
  kdc_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(kdc_CFLAGS) $(CFLAGS) \
-@@ -248,23 +256,35 @@ kdc_LINK = $(LIBTOOL) $(AM_V_lt) --tag=C
+@@ -248,23 +256,35 @@ kdc_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOL
  kdc_replay_SOURCES = kdc-replay.c
  kdc_replay_OBJECTS = kdc-replay.$(OBJEXT)
  kdc_replay_DEPENDENCIES = libkdc.la $(am__DEPENDENCIES_2) \
@@ -74,7 +74,7 @@
  	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
  	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -637,6 +657,8 @@ libkdc_la_LDFLAGS = -version-info 2:0:0 
+@@ -636,6 +656,8 @@ libkdc_la_LDFLAGS = -version-info 2:0:0 $(am__append_1
  hprop_LDADD = \
  	$(top_builddir)/lib/hdb/libhdb.la \
  	$(top_builddir)/lib/krb5/libkrb5.la \
@@ -83,7 +83,7 @@
  	$(LIB_kdb)  \
  	$(LIB_hcrypto) \
  	$(top_builddir)/lib/asn1/libasn1.la \
-@@ -646,6 +668,8 @@ hprop_LDADD = \
+@@ -645,6 +667,8 @@ hprop_LDADD = \
  hpropd_LDADD = \
  	$(top_builddir)/lib/hdb/libhdb.la \
  	$(top_builddir)/lib/krb5/libkrb5.la \
@@ -92,7 +92,7 @@
  	$(LIB_kdb)  \
  	$(LIB_hcrypto) \
  	$(top_builddir)/lib/asn1/libasn1.la \
-@@ -672,17 +696,24 @@ LDADD = $(top_builddir)/lib/hdb/libhdb.l
+@@ -671,17 +695,24 @@ LDADD = $(top_builddir)/lib/hdb/libhdb.la \
  	$(LIB_roken) \
  	$(DB3LIB) $(DB1LIB) $(LMDBLIB) $(NDBMLIB)
  

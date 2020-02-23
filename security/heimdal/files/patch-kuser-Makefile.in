@@ -1,6 +1,6 @@
---- kuser/Makefile.in.orig	2017-06-10 19:27:47 UTC
+--- kuser/Makefile.in.orig	2020-02-23 12:16:33 UTC
 +++ kuser/Makefile.in
-@@ -157,9 +157,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" 
+@@ -157,9 +157,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(l
  PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noinst_PROGRAMS)
  generate_requests_SOURCES = generate-requests.c
  generate_requests_OBJECTS = generate-requests.$(OBJEXT)
@@ -15,7 +15,7 @@
  	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
  	$(am__DEPENDENCIES_1)
  AM_V_lt = $(am__v_lt_@AM_V@)
-@@ -184,8 +188,12 @@ heimtools_DEPENDENCIES = $(top_builddir)
+@@ -184,8 +188,12 @@ heimtools_DEPENDENCIES = $(top_builddir)/lib/sl/libsl.
  	$(am__DEPENDENCIES_4) $(am__DEPENDENCIES_1)
  kdecode_ticket_SOURCES = kdecode_ticket.c
  kdecode_ticket_OBJECTS = kdecode_ticket.$(OBJEXT)
@@ -72,7 +72,7 @@
  	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
  	$(am__DEPENDENCIES_1)
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -584,6 +605,8 @@ man_MANS = \
+@@ -583,6 +604,8 @@ man_MANS = \
  
  kinit_LDADD = \
  	$(afs_lib) \
@@ -81,7 +81,7 @@
  	$(top_builddir)/lib/krb5/libkrb5.la \
  	$(top_builddir)/lib/ntlm/libheimntlm.la \
  	$(LIB_hcrypto) \
-@@ -605,6 +628,8 @@ nodist_kdigest_SOURCES = kdigest-command
+@@ -604,6 +627,8 @@ nodist_kdigest_SOURCES = kdigest-commands.c
  kdigest_LDADD = \
  	$(top_builddir)/lib/ntlm/libheimntlm.la \
  	$(top_builddir)/lib/krb5/libkrb5.la \

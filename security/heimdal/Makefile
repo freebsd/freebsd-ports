@@ -18,13 +18,14 @@ CONFLICTS=	krb4-[0-9]* krb5-[0-9]* krb5-maint-[0-9]* srp-[0-9]* \
 USES=		gettext-runtime gssapi:bootstrap,heimdal libtool pathfix \
 		pkgconfig readline makeinfo ssl
 USE_LDCONFIG=	${GSSAPILIBDIR}
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \
 		ac_cv_header_db_h=no \
 		ac_cv_header_db3_db_h=no \
 		ac_cv_header_db4_db_h=no \
 		ac_cv_header_db5_db_h=no \
-		ac_cv_header_db5_h=no \
+		ac_cv_header_db6_db_h=no \
 		ac_cv_prog_COMPILE_ET=${WRKSRC}/lib/com_err/compile_et
 CONFIGURE_ARGS=	--with-berkeley-db \
 		--with-libintl \

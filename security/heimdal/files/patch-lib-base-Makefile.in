@@ -1,4 +1,4 @@
---- lib/base/Makefile.in.orig	2017-06-10 19:27:47 UTC
+--- lib/base/Makefile.in.orig	2020-02-23 12:16:33 UTC
 +++ lib/base/Makefile.in
 @@ -222,11 +222,11 @@ depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
@@ -14,7 +14,7 @@
  AM_V_CC = $(am__v_CC_@AM_V@)
  am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
  am__v_CC_0 = @echo "  CC      " $@;
-@@ -706,7 +706,7 @@ heim_verbose_0 = @echo "  GEN    "$@;
+@@ -705,7 +705,7 @@ heim_verbose_0 = @echo "  GEN    "$@;
  IMPLEMENT_TLS = $(am__append_1)
  lib_LTLIBRARIES = libheimbase.la
  libheimbase_la_LDFLAGS = -version-info 1:0:0 $(am__append_3)

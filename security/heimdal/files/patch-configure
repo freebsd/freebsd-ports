@@ -1,6 +1,6 @@
---- configure.orig	2017-04-11 21:56:39 UTC
+--- configure.orig	2019-06-07 06:23:13 UTC
 +++ configure
-@@ -16128,7 +16128,7 @@ case "$host" in
+@@ -16103,7 +16103,7 @@ case "$host" in
      ;;
  *-*-freebsd*)
  	native_pthread_support=yes
@@ -9,7 +9,7 @@
  	;;
  *-*-openbsd*)
  	native_pthread_support=yes
-@@ -16364,7 +16364,7 @@ if ${ac_cv_funclib_db_create+:} false; t
+@@ -16339,7 +16339,7 @@ if ${ac_cv_funclib_db_create+:} false; then :
    $as_echo_n "(cached) " >&6
  else
  
@@ -18,7 +18,7 @@
  	ac_save_LIBS="$LIBS"
  	for ac_lib in "" $dbheader db-5 db5 db4 db3 db; do
  		case "$ac_lib" in
-@@ -16937,6 +16937,9 @@ esac
+@@ -16912,6 +16912,9 @@ esac
  
  $as_echo "#define HAVE_NDBM 1" >>confdefs.h
        have_ndbm=yes
@@ -28,7 +28,7 @@
      else
  
        $as_unset ac_cv_func_dbm_firstkey
-@@ -28688,7 +28691,7 @@ fi
+@@ -28663,7 +28666,7 @@ fi
  
  krb_cv_compile_et="no"
  krb_cv_com_err_need_r=""

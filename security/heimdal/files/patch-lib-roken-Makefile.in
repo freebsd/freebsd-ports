@@ -1,4 +1,4 @@
---- lib/roken/Makefile.in.orig	2017-06-10 19:27:47 UTC
+--- lib/roken/Makefile.in.orig	2020-02-23 12:16:33 UTC
 +++ lib/roken/Makefile.in
 @@ -194,8 +194,7 @@ am__uninstall_files_from_dir = { \
           $(am__cd) "$$dir" && rm -f $$files; }; \
@@ -20,7 +20,7 @@
  am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
  # Read a list of newline-separated strings from the standard input,
  # and print each of them once, without duplicates.  Input order is
-@@ -2275,7 +2273,7 @@ check: $(BUILT_SOURCES)
+@@ -2274,7 +2272,7 @@ check: $(BUILT_SOURCES)
  all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(MANS) $(HEADERS) \
  		all-local
  installdirs:
@@ -29,7 +29,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: $(BUILT_SOURCES)
-@@ -2339,8 +2337,7 @@ info: info-am
+@@ -2338,8 +2336,7 @@ info: info-am
  info-am:
  
  install-data-am: install-dist_includeHEADERS install-man \
