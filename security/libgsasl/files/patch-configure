@@ -1,0 +1,20 @@
+--- configure.orig	2019-08-02 11:28:29 UTC
++++ configure
+@@ -46537,7 +46537,7 @@ export WARN_CFLAGS
+ subdirs="$subdirs lib"
+ 
+ 
+-ac_config_files="$ac_config_files Makefile doc/Makefile doc/cyclo/Makefile doc/doxygen/Doxyfile doc/reference/Makefile doc/reference/version.xml examples/Makefile examples/openid20/Makefile examples/saml20/Makefile gl/Makefile gltests/Makefile po/Makefile.in src/Makefile tests/Makefile"
++ac_config_files="$ac_config_files Makefile doc/Makefile doc/cyclo/Makefile doc/doxygen/Doxyfile doc/reference/Makefile doc/reference/version.xml examples/Makefile examples/openid20/Makefile examples/saml20/Makefile gl/Makefile gltests/Makefile tests/Makefile"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -47720,8 +47720,6 @@ do
+     "examples/saml20/Makefile") CONFIG_FILES="$CONFIG_FILES examples/saml20/Makefile" ;;
+     "gl/Makefile") CONFIG_FILES="$CONFIG_FILES gl/Makefile" ;;
+     "gltests/Makefile") CONFIG_FILES="$CONFIG_FILES gltests/Makefile" ;;
+-    "po/Makefile.in") CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
+-    "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+     "tests/Makefile") CONFIG_FILES="$CONFIG_FILES tests/Makefile" ;;
+ 
+   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
