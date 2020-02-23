@@ -2,8 +2,7 @@
 
 PORTNAME=	ghostwriter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
-PORTREVISION=	1
+DISTVERSION=	1.8.1
 CATEGORIES=	editors
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -22,8 +21,5 @@ USE_QT=		core gui svg webchannel webengine widgets buildtools_build \
 
 # cf. PR 224488
 LDFLAGS+=	-Wl,--as-needed
-
-post-patch:
-	@${REINPLACE_CMD} 's,share/man/,man/,' ${WRKSRC}/ghostwriter.pro
 
 .include <bsd.port.mk>
