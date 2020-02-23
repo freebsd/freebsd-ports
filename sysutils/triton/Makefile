@@ -15,7 +15,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 LIB_DEPENDS=	libcapstone.so:devel/capstone4 \
 		libz3.so:math/z3
 
-USES=		cmake python:build shebangfix
+USES=		cmake compiler:c++11-lang python:build shebangfix
 SHEBANG_FILES=	src/scripts/extract_syscall.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	JonathanSalwan
