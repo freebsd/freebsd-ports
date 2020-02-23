@@ -2,32 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	viewnior
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	6
 CATEGORIES=	graphics
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ed.arrakis@gmail.com
 COMMENT=	Fast and simple image viewer
 
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
-USES=		autoreconf compiler:c++11-lang desktop-file-utils gettext-tools \
-		gmake gnome libtool pkgconfig
+USES=		desktop-file-utils gettext-tools gnome meson ninja pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hellosiyan
 GH_PROJECT=	Viewnior
 
-USE_GNOME=	glib20 gtk20 gdkpixbuf2 intltool intlhack
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+USE_GNOME=	gdkpixbuf2 glib20 gtk20 intlhack intltool
 INSTALLS_ICONS=	yes
 
-PORTDOCS=	AUTHORS NEWS README
+PORTDOCS=	AUTHORS NEWS README.md
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

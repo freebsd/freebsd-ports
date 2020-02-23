@@ -1,5 +1,6 @@
 bin/viewnior
 man/man1/viewnior.1.gz
+share/appdata/viewnior.appdata.xml
 share/applications/viewnior.desktop
 share/icons/hicolor/16x16/apps/viewnior.png
 share/icons/hicolor/22x22/apps/viewnior.png
@@ -16,6 +17,7 @@ share/icons/hicolor/scalable/apps/viewnior.svg
 %%NLS%%share/locale/da/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/de/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/el/LC_MESSAGES/viewnior.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/es/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/viewnior.mo
@@ -37,6 +39,7 @@ share/icons/hicolor/scalable/apps/viewnior.svg
 %%NLS%%share/locale/tr/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/viewnior.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/viewnior.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/viewnior.mo
 %%DATADIR%%/pixmaps/object-flip-horizontal.png
 %%DATADIR%%/pixmaps/object-flip-vertical.png
 %%DATADIR%%/pixmaps/object-rotate-left.png
