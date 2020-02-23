@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=		moosefs3
-PORTVERSION=		3.0.109
+PORTVERSION=		3.0.111
 PORTREVISION=		1
 CATEGORIES=		sysutils
 MASTER_SITES=		http://ppa.moosefs.com/src/
 PKGNAMESUFFIX?=		-master
-DISTNAME=		moosefs-${PORTVERSION}-1
+DISTNAME=		moosefs-${PORTVERSION}-${PORTREVISION}
 
-MAINTAINER=		freebsd@moosefs.com
+MAINTAINER=		freebsd@moosefs.pro
 COMMENT?=		Fault-tolerant distributed filesystem
 
 LICENSE=		GPLv2
