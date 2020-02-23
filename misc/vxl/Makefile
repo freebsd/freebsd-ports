@@ -31,8 +31,10 @@ do-test:
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 PLIST_SUB+=	X86=""
+CMAKE_ON+=	VIL_CONFIG_ENABLE_SSE2_ROUNDING # the automatic SSE2 test fails on i386: Performing Try-Run Test VXL_HAS_SSE2_HARDWARE_SUPPORT - Test Compilation Failed
 .else
 PLIST_SUB+=	X86="@comment "
+CMAKE_OFF+=	VIL_CONFIG_ENABLE_SSE2_ROUNDING
 .endif
 
 .include <bsd.port.post.mk>
