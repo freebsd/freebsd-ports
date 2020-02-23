@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.alsa-project.org/pub/lib/ \
 		GENTOO
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ALSA compatibility library
 
 LICENSE=	LGPL21+
