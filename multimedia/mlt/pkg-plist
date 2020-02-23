@@ -80,6 +80,7 @@ lib/mlt/libmltsdl2.so
 lib/mlt/libmltvideostab.so
 %%VIDSTAB%%lib/mlt/libmltvidstab.so
 lib/mlt/libmltvmfx.so
+lib/mlt/libmltvorbis.so
 lib/mlt/libmltxine.so
 lib/mlt/libmltxml.so
 libdata/pkgconfig/mlt++.pc
@@ -396,6 +397,11 @@ man/man1/melt.1.gz
 %%SWFDEC%%%%DATADIR%%/swfdec/producer_swfdec.yml
 %%VIDSTAB%%%%DATADIR%%/vid.stab/filter_deshake.yml
 %%VIDSTAB%%%%DATADIR%%/vid.stab/filter_vidstab.yml
+%%FREI0R%%%%DATADIR%%/frei0r/resolution_scale.yml
+%%DATADIR%%/presets/consumer/avformat/ALAC
+%%DATADIR%%/presets/consumer/avformat/FLAC
+%%DATADIR%%/presets/consumer/avformat/intermediate/DNxHR-HQ
+%%DATADIR%%/presets/consumer/avformat/intermediate/ProRes HQ
 %%DATADIR%%/videostab/filter_videostab.yml
 %%DATADIR%%/videostab/filter_videostab2.yml
 %%DATADIR%%/vmfx/filter_chroma.yml
@@ -403,6 +409,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/vmfx/filter_mono.yml
 %%DATADIR%%/vmfx/filter_shape.yml
 %%DATADIR%%/vmfx/producer_pgm.yml
+%%DATADIR%%/vorbis/producer_vorbis.yml
 %%DATADIR%%/xml/consumer_xml.yml
 %%DATADIR%%/xml/mlt-xml.dtd
 %%DATADIR%%/xml/producer_xml-nogl.yml
