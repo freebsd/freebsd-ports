@@ -1,15 +1,18 @@
---- src/Makefile.in.orig	2019-01-26 06:00:37 UTC
+--- src/Makefile.in.orig	2019-04-12 05:38:20 UTC
 +++ src/Makefile.in
-@@ -607,9 +607,9 @@ top_srcdir = @top_srcdir@
+@@ -607,11 +607,11 @@ top_srcdir = @top_srcdir@
  AM_CPPFLAGS = -I$(top_srcdir) $(GLIB_CFLAGS) $(GTK_CFLAGS) \
  	$(LIBGSF_CFLAGS) $(GTK_MAC_CFLAGS) $(GOFFICE_CFLAGS) \
  	-DLOCALEDIR="\"$(localedir)\"" \
 -	-DPIXMAPS_DIR="\"$(datadir)/pixmaps/@PACKAGE@\"" \
 -	-DLOGO_PATH="\"$(datadir)/pixmaps/@PACKAGE@/grisbi-logo.png\"" \
 -	-DDATA_PATH="\"$(datadir)/@PACKAGE@\"" \
-+	-DPIXMAPS_DIR="\"$(pkgdatadir)/pixmaps/@PACKAGE@\"" \
-+	-DLOGO_PATH="\"$(datadir)/pixmaps/grisbi-logo.png\"" \
-+	-DDATA_PATH="\"$(datadir)/pkgdatadir\"" \
++	-DPIXMAPS_DIR="\"$(pkgdatadir)/pixmaps/\"" \
++	-DLOGO_PATH="\"$(pkgdatadir)/pixmaps/grisbi-logo.png\"" \
++	-DDATA_PATH="\"$(pkgdatadir)\"" \
  	-DHELP_PATH="\"$(docdir)\"" \
- 	-DUI_DIR="\"$(datadir)/@PACKAGE@/ui\"" $(am__append_5)
+-	-DUI_DIR="\"$(datadir)/@PACKAGE@/ui\"" $(am__append_5)
++	-DUI_DIR="\"$(pkgdatadir)/ui\"" $(am__append_5)
  noinst_LTLIBRARIES = libgrisbi.la
+ grisbi_LDADD = libgrisbi.la $(GRISBI_LIBS) $(GTK_MAC_LIBS) \
+ 	$(ZLIB_LIBS) $(GTK_LIBS) $(GLIB_LIBS) $(am__append_6)
