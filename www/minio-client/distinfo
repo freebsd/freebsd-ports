@@ -1,4 +1,4 @@
-TIMESTAMP = 1578338326
+TIMESTAMP = 1580656828
 SHA256 (minio-mc-2020.01.03.20.33.14-RELEASE.2020-01-03T20-33-14Z_GH0.tar.gz) = bb76741e2bc88f805af6d7764aed4b06d55aae68a6a34fd1b9e3bd89c8980d23
 SIZE (minio-mc-2020.01.03.20.33.14-RELEASE.2020-01-03T20-33-14Z_GH0.tar.gz) = 348931
 SHA256 (StackExchange-wmi-cbe66965904d_GH0.tar.gz) = 14dbc4af6952acdb1b941d002cd36fd2299aa6b3144cbcbddbb032c47f816da5
@@ -79,5 +79,5 @@ SHA256 (rjeczalik-notify-v0.9.2_GH0.tar.gz) = 840f2c523ed6023eca8c04456f5d9748c4
 SIZE (rjeczalik-notify-v0.9.2_GH0.tar.gz) = 56851
 SHA256 (secure-io-sio-go-v0.3.0_GH0.tar.gz) = 36effba2f27efdcd190725417e094fda16b89199c64ad8947020c1215de19d37
 SIZE (secure-io-sio-go-v0.3.0_GH0.tar.gz) = 21831
-SHA256 (shirou-gopsutil-v2.18.12_GH0.tar.gz) = 70e291291c1e2363c1b8d7656c394cbfc8a67c93eb95a861abdcd7644562afba
-SIZE (shirou-gopsutil-v2.18.12_GH0.tar.gz) = 117507
+SHA256 (shirou-gopsutil-v2.20.1_GH0.tar.gz) = f2afad4c7b4be33bafb78e577fd90dfbf46a63eafad480623aead5dd73eec315
+SIZE (shirou-gopsutil-v2.20.1_GH0.tar.gz) = 133895
