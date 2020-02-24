@@ -13,6 +13,8 @@ COMMENT=	X.Org ati display driver
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not build with xorg-server 1.20.7
+
 # No Radeon kernel driver on non-x86 and PC98.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc64
 ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86
