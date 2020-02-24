@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=		zkt
-DISTVERSION=		1.1.2
-PORTREVISION=		3
+DISTVERSION=		1.1.4
 CATEGORIES=		dns
 MASTER_SITES=		http://www.hznet.de/dns/zkt/
 
-MAINTAINER=		frank@harz2014.behrens.de
+MAINTAINER=		frank@harz.behrens.de
 COMMENT=		Tool to manage keys and signatures for DNSSEC-zones
 
 LICENSE=		BSD3CLAUSE
