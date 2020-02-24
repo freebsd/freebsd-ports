@@ -15,6 +15,7 @@ man/man1/scriptindex.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/cgiparams.html
 %%PORTDOCS%%%%DOCSDIR%%/encodings.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/newformat.html
 %%PORTDOCS%%%%DOCSDIR%%/omegascript.html
 %%PORTDOCS%%%%DOCSDIR%%/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/quickstart.html
