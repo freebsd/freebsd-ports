@@ -13,7 +13,7 @@ COMMENT=	Embed static files into a Go executable
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
 
 USES=		go
 USE_GITHUB=	yes
