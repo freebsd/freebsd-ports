@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	ShellCheck
-DISTVERSION=	0.6.0
-PORTREVISION=	4
+DISTVERSION=	0.7.0
 CATEGORIES=	devel haskell
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Shell script analysis tool
 
 LICENSE=	GPLv3
@@ -13,14 +12,33 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cabal
 
-USE_CABAL=	QuickCheck-2.12.6.1_1 aeson-1.4.2.0_1 attoparsec-0.13.2.2 \
-		base-compat-0.10.5 dlist-0.8.0.5 erf-2.0.0.0 hashable-1.2.7.0_1 \
-		integer-logarithms-1.0.2.2 primitive-0.6.4.0_1 random-1.1_1 \
-		regex-base-0.93.2 regex-tdfa-1.2.3.1 scientific-0.3.6.2 \
-		tagged-0.8.6 tf-random-0.5 th-abstraction-0.2.10.0 \
-		time-locale-compat-0.1.1.5 unordered-containers-0.2.10.0 \
-		uuid-types-1.0.3_1 vector-0.12.0.2
+USE_CABAL=	aeson-1.4.6.0 \
+		attoparsec-0.13.2.3 \
+		base-compat-0.11.1 \
+		base-orphans-0.8.2 \
+		Diff-0.4.0 \
+		dlist-0.8.0.7 \
+		hashable-1.3.0.0 \
+		integer-logarithms-1.0.3 \
+		primitive-0.7.0.0 \
+		QuickCheck-2.13.2 \
+		random-1.1 \
+		regex-base-0.94.0.0 \
+		regex-tdfa-1.3.1.0 \
+		scientific-0.3.6.2 \
+		splitmix-0.0.3 \
+		tagged-0.8.6 \
+		th-abstraction-0.3.2.0 \
+		time-compat-1.9.2.2 \
+		unordered-containers-0.2.10.0_1 \
+		uuid-types-1.0.3_2 \
+		vector-0.12.1.2
 
 EXECUTABLES=	shellcheck
+PLIST_FILES=	share/man/man1/shellcheck.1.gz
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/shellcheck.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
