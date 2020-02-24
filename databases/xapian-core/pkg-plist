@@ -55,7 +55,7 @@ lib/cmake/xapian/xapian-config-version.cmake
 lib/cmake/xapian/xapian-config.cmake
 lib/libxapian.so
 lib/libxapian.so.30
-lib/libxapian.so.30.10.0
+lib/libxapian.so.30.10.1
 libdata/pkgconfig/xapian-core.pc
 man/man1/copydatabase.1.gz
 man/man1/quest.1.gz
@@ -361,7 +361,6 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/folderclosed.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/folderopen.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions.html
-%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_b.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_c.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_d.html
@@ -370,7 +369,6 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_eval.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_f.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func.html
-%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func_b.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func_c.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func_d.html
@@ -392,6 +390,7 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func_u.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func_v.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func_w.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func_~.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_g.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_i.html
@@ -410,6 +409,7 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_v.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_w.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_~.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/geospatial_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/globals.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/globals_defs.html
