@@ -17,11 +17,13 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 		p5-DBI>=0:databases/p5-DBI \
-		p5-POE-Component-IRC>=6.22:irc/p5-POE-Component-IRC \
-		p5-Moose>=0:devel/p5-Moose
+		p5-Moose>=0:devel/p5-Moose \
+		p5-POE-Component-IRC>=6.22:irc/p5-POE-Component-IRC
 TEST_DEPENDS=	p5-Test-MockObject>=0:devel/p5-Test-MockObject
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
