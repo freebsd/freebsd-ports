@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libepoll-shim
-PORTVERSION=	0.0.20200212
+PORTVERSION=	0.0.20200223
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -16,7 +16,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	epoll-shim
-GH_TAGNAME=	07e2a80
+GH_TAGNAME=	ae12186
 
 do-test:
 	# Exclude certain tests in resource restricted environments
