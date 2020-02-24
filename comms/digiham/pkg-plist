@@ -1,0 +1,10 @@
+bin/rrc_filter
+bin/dc_block
+bin/gfsk_demodulator
+bin/dmr_decoder
+bin/ysf_decoder
+bin/mbe_synthesizer
+bin/digitalvoice_filter
+bin/fsk_demodulator
+bin/pocsag_decoder
+%%EXAMPLESDIR%%/dmr-decoder.sh
