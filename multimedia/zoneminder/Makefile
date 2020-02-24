@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneminder
-PORTVERSION=	1.32.3
-PORTREVISION=	5
+PORTVERSION=	1.34.3
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
@@ -10,7 +9,7 @@ COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
@@ -34,6 +33,8 @@ LIB_DEPENDS=	libx264.so:multimedia/libx264 \
 RUN_DEPENDS=	${ZM_DEPENDS} \
 		sudo:security/sudo \
 		p5-Device-SerialPort>=0:comms/p5-Device-SerialPort \
+		p5-Crypt-Eksblowfish>=0:security/p5-Crypt-Eksblowfish \
+		p5-Data-Entropy>=0:security/p5-Data-Entropy \
 		zip:archivers/zip
 
 USES=		cmake:insource,noninja jpeg mysql perl5 php shebangfix ssl
@@ -42,9 +43,7 @@ GH_PROJECT=	zoneminder
 GH_TUPLE=	zoneminder:crud:0bd63fb:crud \
 		zoneminder:CakePHP-Enum-Behavior:ea90c0c:crud_plugin
 USE_RC_SUBR=	zoneminder
-USE_PHP=	json pdo_mysql session gd sockets ctype opcache
-
-CONFLICTS_INSTALL=	zoneminder-h264
+USE_PHP=	json pdo_mysql session gd sockets ctype opcache openssl hash
 
 OPTIONS_DEFINE=	NLS V4L DOCS
 OPTIONS_SUB=	yes
@@ -69,9 +68,10 @@ SHEBANG_FILES=	scripts/zmaudit.pl.in \
 		scripts/zmvideo.pl.in \
 		scripts/zmwatch.pl.in \
 		scripts/zmx10.pl.in \
-		scripts/zmonvif-probe.pl.in
+		scripts/zmonvif-probe.pl.in \
+		scripts/zmrecover.pl.in
 
-PORTDOCS=	AUTHORS BUGS ChangeLog INSTALL NEWS README.FreeBSD TODO
+PORTDOCS=	README.FreeBSD
 
 CMAKE_ARGS+=	-DZM_PERL_MM_PARMS=INSTALLDIRS=site \
 		-DZM_CONFIG_DIR=${PREFIX}/etc \
@@ -90,6 +90,10 @@ CMAKE_ARGS+=	-DZM_PERL_MM_PARMS=INSTALLDIRS=site \
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200000
+    EXTRA_PATCHES=	${PATCHDIR}/extra-patch-CMakeLists.txt
+.endif
+
 RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -100,7 +104,6 @@ post-extract:
 	${CP} ${FILESDIR}/README.FreeBSD ${WRKSRC}
 	${CP} ${FILESDIR}/README.FreeBSD ${PKGMESSAGE}
 	${REINPLACE_CMD} -e 's|/dev/shm|/tmp|g' ${WRKSRC}/scripts/ZoneMinder/lib/ZoneMinder/ConfigData.pm.in
-#	${REINPLACE_CMD} -e 's|E_ALL|E_ALL^E_NOTICE|g' ${WRKSRC}/web/index.php
 
 post-patch:
 # Avoid conflict with C++20 <version> by adding .txt suffix

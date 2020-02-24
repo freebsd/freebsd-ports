@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2020-01-28 17:16:34.156808000 +0000
++++ CMakeLists.txt
+@@ -104,6 +104,9 @@
+     ENDIF(ZM_SYSTEM_PROC MATCHES "^arm")
+ ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
+ 
++# FreeBSD 12 contains own bcrypt implementation
++add_definitions(-D__SKIP_GNU)
++
+ # Modules that we need:
+ include (GNUInstallDirs)
+ include (CheckIncludeFile)
