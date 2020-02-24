@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	cmogstored
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://bogomips.org/cmogstored/files/
+MASTER_SITES=	http://yhbt.net/cmogstored/files/
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Alternative mogstored implementation for MogileFS
