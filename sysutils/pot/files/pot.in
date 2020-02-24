@@ -8,6 +8,7 @@
 
 . /etc/rc.subr
 
+PATH=$PATH:/usr/local/bin
 name="pot"
 desc="Pot containers"
 procname="pot"
