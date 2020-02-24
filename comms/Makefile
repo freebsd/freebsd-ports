@@ -34,6 +34,7 @@
     SUBDIR += deforaos-phone
     SUBDIR += dfu-programmer
     SUBDIR += dfu-util
+    SUBDIR += digiham
     SUBDIR += direwolf
     SUBDIR += dsd
     SUBDIR += dump1090
