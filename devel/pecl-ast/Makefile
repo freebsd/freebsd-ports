@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ast
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
