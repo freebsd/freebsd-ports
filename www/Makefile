@@ -299,6 +299,7 @@
     SUBDIR += lightsquid
     SUBDIR += lighttpd
     SUBDIR += lighttpd-mod_h264_streaming
+    SUBDIR += limesurvey
     SUBDIR += linkcheck
     SUBDIR += linklint
     SUBDIR += links
