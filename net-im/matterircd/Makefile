@@ -12,7 +12,7 @@ COMMENT=	IRC bridge for Mattermost and Slack
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 
 USES=		go:modules
 
