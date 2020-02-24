@@ -5,7 +5,7 @@
 
 PORTNAME=	ripgrep
 DISTVERSION=	11.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -94,7 +94,6 @@ CARGO_ENV=	RIPGREP_OUTDIR=${RIPGREP_OUTDIR}
 PLIST_FILES=	bin/rg \
 		etc/bash_completion.d/rg.bash \
 		man/man1/rg.1.gz \
-		share/fish/completions/rg.fish \
 		share/zsh/site-functions/_rg
 
 PORTDOCS=	CHANGELOG.md FAQ.md GUIDE.md
@@ -126,9 +125,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
 	${INSTALL_DATA} ${RIPGREP_OUTDIR}/rg.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions/
-	${INSTALL_DATA} ${RIPGREP_OUTDIR}/rg.fish \
-		${STAGEDIR}${PREFIX}/share/fish/completions/
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/complete/_rg \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/
