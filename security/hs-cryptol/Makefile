@@ -47,6 +47,4 @@ USE_CABAL=	\
 		transformers-base-0.4.5.2 \
 		transformers-compat-0.6.5
 
-EXECUTABLES=	${PORTNAME}
-
 .include <bsd.port.mk>
