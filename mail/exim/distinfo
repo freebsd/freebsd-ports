@@ -1,5 +1,5 @@
-TIMESTAMP = 1581947251
+TIMESTAMP = 1582043253
 SHA256 (exim/exim-4.93.tar.bz2) = 22c432c0585ef605c52bc796042c4823e961f58a7e6ad1486252e203bf4c9276
 SIZE (exim/exim-4.93.tar.bz2) = 1972841
-SHA256 (exim/sa-exim-4.2.tar.gz) = 72e0a735547f18b05785e6c58a71d24623858f0f5234a5dc0e24cb453999e99a
-SIZE (exim/sa-exim-4.2.tar.gz) = 66575
+SHA256 (exim/sa-exim-4.2.1.tar.gz) = 24d4bf7b0fdddaea11f132981cebb6a86a4ab20ef54111a8ebd481b421c6e2c1
+SIZE (exim/sa-exim-4.2.1.tar.gz) = 68933
