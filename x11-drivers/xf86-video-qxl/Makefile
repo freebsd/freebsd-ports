@@ -10,6 +10,8 @@ COMMENT=	X.Org X server -- QXL display driver
 
 LICENSE=	MIT
 
+BROKEN=		does not build with xorg-server 1.20.7
+
 BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libspice-server.so:devel/libspice-server
