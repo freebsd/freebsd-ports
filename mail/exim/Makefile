@@ -48,7 +48,7 @@ BDB_USES=	bdb
 DMARC_LIB_DEPENDS=	libopendmarc.so:mail/opendmarc
 EMBEDDED_PERL_USE=	perl5=run,build
 EXIMON_USES=	xorg
-EXIMON_USE=	xorg=x11,xaw,xt
+EXIMON_USE=	xorg=x11,xaw,xext,xmu,xt
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 ICONV_USES=	iconv:lib,build
 INTERNATIONAL_LIB_DEPENDS=	libidn.so:dns/libidn
