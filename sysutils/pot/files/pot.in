@@ -8,7 +8,7 @@
 
 . /etc/rc.subr
 
-PATH=$PATH:/usr/local/bin
+PATH=$PATH:%%PREFIX%%/bin
 name="pot"
 desc="Pot containers"
 procname="pot"
@@ -41,10 +41,10 @@ pot_deprecated_stop()
 pot_start()
 {
 	local _pname _dyn_pot_list _start
-	_dyn_pot_list=$(/usr/local/bin/pot ls -q)
+	_dyn_pot_list=$(%%PREFIX%%/bin/pot ls -q)
 	for _pname in $_dyn_pot_list ; do
-		if _start=$( /usr/local/bin/pot get-attr -p "$_pname" -A start-at-boot -q ) && [ "$_start" = "YES" ]; then
-			/usr/local/bin/pot start "$_pname"
+		if _start=$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A start-at-boot -q ) && [ "$_start" = "YES" ]; then
+			%%PREFIX%%/bin/pot start "$_pname"
 		fi
 	done
 }
@@ -52,10 +52,10 @@ pot_start()
 pot_stop()
 {
 	local _pname _dyn_pot_list _start
-	_dyn_pot_list=$(/usr/local/bin/pot ls -q)
+	_dyn_pot_list=$(%%PREFIX%%/bin/pot ls -q)
 	for _pname in $_dyn_pot_list ; do
-		if _start=$( /usr/local/bin/pot get-attr -p "$_pname" -A start-at-boot -q ) && [ "$_start" = "YES" ]; then
-			/usr/local/bin/pot stop "$_pname"
+		if _start=$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A start-at-boot -q ) && [ "$_start" = "YES" ]; then
+			%%PREFIX%%/bin/pot stop "$_pname"
 		fi
 	done
 }
@@ -73,8 +73,8 @@ pot_status()
 {
 	local _pname _dyn_pot_list _start
 	for _pname in $_dyn_pot_list ; do
-		if _start=$( /usr/local/bin/pot get-attr -p "$_pname" -A start-at-boot -q ) && [ "$_start" = "YES" ]; then
-			if /usr/local/bin/pot info -qrp "$_pname" ; then
+		if _start=$( %%PREFIX%%/bin/pot get-attr -p "$_pname" -A start-at-boot -q ) && [ "$_start" = "YES" ]; then
+			if %%PREFIX%%/bin/pot info -qrp "$_pname" ; then
 				echo "pot $_pname is up and running"
 			else
 				echo "pot $_pname is not running"
