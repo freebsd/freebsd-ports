@@ -1,0 +1,36 @@
+--- src/meson.build.orig	2020-02-11 23:46:03 UTC
++++ src/meson.build
+@@ -71,7 +71,7 @@ if get_option('libraries')
+ 			'connection.c',
+ 			'wayland-os.c'
+ 		],
+-		dependencies: [ ffi_dep, ]
++		dependencies: [ epoll_dep, ffi_dep, ]
+ 	)
+ 
+ 	wayland_private_dep = declare_dependency(
+@@ -145,6 +145,7 @@ if get_option('libraries')
+ 		],
+ 		version: '0.1.0',
+ 		dependencies: [
++			epoll_dep,
+ 			ffi_dep,
+ 			wayland_private_dep,
+ 			wayland_util_dep,
+@@ -158,7 +159,7 @@ if get_option('libraries')
+ 	wayland_server_dep = declare_dependency(
+ 		link_with: wayland_server,
+ 		include_directories: [ root_inc, include_directories('.') ],
+-		dependencies: [ ffi_dep, mathlib_dep, threads_dep ],
++		dependencies: [ epoll_dep, ffi_dep, mathlib_dep, threads_dep ],
+ 		sources: [
+ 			wayland_server_protocol_core_h,
+ 			wayland_server_protocol_h
+@@ -187,6 +188,7 @@ if get_option('libraries')
+ 		],
+ 		version: '0.3.0',
+ 		dependencies: [
++			epoll_dep,
+ 			ffi_dep,
+ 			wayland_private_dep,
+ 			wayland_util_dep,

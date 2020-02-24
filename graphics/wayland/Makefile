@@ -7,6 +7,9 @@ PORTREVISION=	1
 CATEGORIES=	graphics wayland
 MASTER_SITES=	https://wayland.freedesktop.org/releases/
 
+PATCH_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES+=	0fc00fff3015.patch:-p1 # https://gitlab.freedesktop.org/wayland/wayland/merge_requests/60
+
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Wayland composite "server"
 
@@ -19,12 +22,13 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 
 CFLAGS+=	"-I${LOCALBASE}/include/libepoll-shim"
 
-USES=		autoreconf gmake gnome libtool localbase pathfix pkgconfig tar:xz
+USES=		meson pkgconfig tar:xz
 USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-documentation
-CONFIGURE_ENV=	ac_cv_func_posix_fallocate=no # EINVAL on ZFS since FreeBSD 12.0
-INSTALL_TARGET=	install-strip
+MESON_ARGS=	-Ddocumentation=false
+
+post-patch:
+# posix_fallocate returns EINVAL on ZFS since FreeBSD 12.0
+	@${REINPLACE_CMD} '/posix_fallocate/d' ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>

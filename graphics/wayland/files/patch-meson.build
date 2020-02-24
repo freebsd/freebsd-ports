@@ -1,0 +1,33 @@
+--- meson.build.orig	2020-02-11 23:46:03 UTC
++++ meson.build
+@@ -26,7 +26,14 @@ add_project_arguments(
+ 	language: 'c'
+ )
+ 
+-foreach h: [ 'sys/prctl.h' ]
++have_headers = [
++	'signal.h',
++	'sys/epoll.h',
++	'sys/prctl.h',
++	'sys/ucred.h',
++]
++
++foreach h: have_headers
+ 	config_h.set('HAVE_' + h.underscorify().to_upper(), cc.has_header(h))
+ endforeach
+ 
+@@ -37,12 +44,14 @@ have_funcs = [
+ 	'prctl',
+ 	'memfd_create',
+ 	'strndup',
++	'waitid',
+ ]
+ foreach f: have_funcs
+ 	config_h.set('HAVE_' + f.underscorify().to_upper(), cc.has_function(f))
+ endforeach
+ 
+ if get_option('libraries')
++	epoll_dep = dependency('epoll-shim', required: false)
+ 	ffi_dep = dependency('libffi')
+ 
+ 	decls = [
