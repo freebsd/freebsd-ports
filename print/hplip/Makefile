@@ -23,7 +23,7 @@ CONFLICTS_INSTALL=	hpijs-[0-9]*
 
 INSTALL_TARGET=	install-strip
 USES=		dos2unix gnome jpeg libtool pkgconfig python shebangfix
-USE_GNOME=	pygobject
+USE_GNOME=	pygobject3
 USE_LDCONFIG=	yes
 SHEBANG_GLOB=	*.py hpps pstotiff
 DOS2UNIX_FILES=	scan/sane/orblite.c
