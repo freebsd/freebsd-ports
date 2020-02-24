@@ -17,7 +17,7 @@ CONFLICTS_INSTALL=	avahi-libdns openmdns
 
 OPTIONS_DEFINE=	IPV6
 
-USES=		cpe gmake
+USES=		compiler:c11 cpe gmake
 
 ALL_TARGET=	all dnsextd
 BUILD_WRKSRC=	${WRKSRC}/mDNSPosix
