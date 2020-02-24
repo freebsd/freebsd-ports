@@ -1,8 +1,10 @@
-A simple OpenCL application that enumerates all possible platform and
-device properties. Inspired by AMD's program of the same name, it is
-coded in pure C99 and it tries to output all possible information,
-including that provided by platform-specific extensions, and not to
-crash on platform-unsupported properties (e.g. 1.2 properties on 1.1
-platforms).
+clinfo is a simple command-line application that enumerates all possible
+(known) properties of the OpenCL platform and devices available on the
+system.
+
+Inspired by AMD's program of the same name, it is coded in pure C and it
+tries to output all possible information, including those provided by
+platform-specific extensions, trying not to crash on unsupported
+properties (e.g. 1.2 properties on 1.1 platforms).
 
 WWW: https://github.com/Oblomov/clinfo

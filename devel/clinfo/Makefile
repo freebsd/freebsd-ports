@@ -2,11 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	clinfo
-PORTVERSION=	2.1.16.01.12
+PORTVERSION=	2.2.18.04.06
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	OpenCL info program like glxinfo is for libGL
+COMMENT=	Print information about all available OpenCL platforms/devices
+
+LICENSE=	CC0-1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
@@ -14,18 +17,10 @@ LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
 USE_GITHUB=	yes
 GH_ACCOUNT=	Oblomov
 
-USES=		gmake
+USES=		localbase:ldflags
+MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}"
 ALL_TARGET=	#
 PLIST_FILES=	bin/clinfo \
 		man/man1/clinfo.1.gz
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-Wall|-Wall -I${LOCALBASE}/include|g; \
-		s|-lOpenCL|-lOpenCL -L${LOCALBASE}/lib|g' \
-		${WRKSRC}/Makefile
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/clinfo ${STAGEDIR}${PREFIX}/bin/
-	@${INSTALL_MAN}	${WRKSRC}/man/clinfo.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
