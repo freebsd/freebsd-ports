@@ -24,6 +24,8 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+# django-redis 4.11.0+ requires Python 3.5+
+# py-django-redis is required by www/py-django-prometheus
 PORTSCOUT=	limit:^4\.10\.
 
 do-test:
