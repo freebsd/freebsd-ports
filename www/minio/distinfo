@@ -1,4 +1,4 @@
-TIMESTAMP = 1578352174
+TIMESTAMP = 1580641370
 SHA256 (minio-minio-2020.01.03.19.12.21-RELEASE.2020-01-03T19-12-21Z_GH0.tar.gz) = 5676c40de64503c99b48e7738caa5b82c1239b93c76d3319ee11c5b6d37b07ff
 SIZE (minio-minio-2020.01.03.19.12.21-RELEASE.2020-01-03T19-12-21Z_GH0.tar.gz) = 7148848
 SHA256 (Azure-azure-pipeline-go-v0.2.1_GH0.tar.gz) = 97738fe9fe1c5bab41b89fc97cef08537e53cd3f38f5686e3853d2aecb20133d
@@ -239,8 +239,8 @@ SHA256 (ryanuber-go-glob-v1.0.0_GH0.tar.gz) = 4e2b03027a6de87825fcf450a728c86b83
 SIZE (ryanuber-go-glob-v1.0.0_GH0.tar.gz) = 2969
 SHA256 (secure-io-sio-go-v0.3.0_GH0.tar.gz) = 36effba2f27efdcd190725417e094fda16b89199c64ad8947020c1215de19d37
 SIZE (secure-io-sio-go-v0.3.0_GH0.tar.gz) = 21831
-SHA256 (shirou-gopsutil-v2.18.12_GH0.tar.gz) = 70e291291c1e2363c1b8d7656c394cbfc8a67c93eb95a861abdcd7644562afba
-SIZE (shirou-gopsutil-v2.18.12_GH0.tar.gz) = 117507
+SHA256 (shirou-gopsutil-v2.20.1_GH0.tar.gz) = f2afad4c7b4be33bafb78e577fd90dfbf46a63eafad480623aead5dd73eec315
+SIZE (shirou-gopsutil-v2.20.1_GH0.tar.gz) = 133895
 SHA256 (sirupsen-logrus-v1.4.2_GH0.tar.gz) = 67f2ddf467b7e63d2d2529d227946a331e245aeef7e2e4521ae82647b5ef84d9
 SIZE (sirupsen-logrus-v1.4.2_GH0.tar.gz) = 41373
 SHA256 (skyrings-skyring-common-d1c0bb1cbd5e_GH0.tar.gz) = b73144652cfd3fbbd49ce8ed26e781ef8c4f735bbfd6f038b6e14ed5b62181e4
