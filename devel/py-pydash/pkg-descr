@@ -1,0 +1,8 @@
+The kitchen sink of Python utility libraries for doing "stuff" in a
+functional way. Based on the Lo-Dash Javascript library.
+
+Looking for a library that is more memory efficient and better suited for
+large datasets? Check out fnc! It's built around generators and iteration
+and has iteratee-first function signatures.
+
+WWW: https://pypi.org/pypi/pydash/
