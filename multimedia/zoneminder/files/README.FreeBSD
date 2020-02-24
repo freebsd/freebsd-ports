@@ -175,16 +175,10 @@ Upgrades
 3. Start ZoneMinder
 	service zoneminder start
 
-Upgrading from www/zoneminder 1.30.x or www/zoneminder-h264
+Upgrading from www/zoneminder 1.32.x
 =====================================================
 
 Before proceeding to upgrade sequence listed above,
 
 1. Connect to mysql server with root and issue
 	set global log_bin_trust_function_creators=1;
-
-2. Add write access to www user to /usr/local/etc/zoneminder/zmcustom.conf
-
-3. Take notice, that default monitor files are not under ${WWWDIR} anymore.
-	Old setup will work, but as security concideration it is recommended to
-	move them to /var/db/zoneminder (default) or to any place not under www root.
