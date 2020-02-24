@@ -3,6 +3,7 @@
 
 PORTNAME=	pot
 PORTVERSION=	0.10.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
