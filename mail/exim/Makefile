@@ -97,11 +97,12 @@ IGNORE=	you cannot enable DANE without DNSSEC support or without TLS support
 MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 		SF/sa-exim/sa-exim/${SA_EXIM_VERSION}:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
-EXTRA_PATCHES+=	${FILESDIR}/files/extra-patch-Local-sa-exim.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Local-sa-exim.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Local-sa-exim.conf
 .endif
 
 EXIM_VERSION=	4.93
-SA_EXIM_VERSION=4.2
+SA_EXIM_VERSION=4.2.1
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 
 .if !defined(EXIMON_ONLY)
@@ -553,6 +554,7 @@ post-extract:
 .if ${PORT_OPTIONS:MSA_EXIM}
 	@cd ${WRKDIR} && ${TAR} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/sa-exim-${SA_EXIM_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
 	@@${CP} ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.c ${WRKSRC}/Local
+	@@${CP} ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.conf ${WRKSRC}/Local
 .endif
 
 do-configure:
@@ -580,7 +582,7 @@ do-configure:
 	    ${ECHO_CMD} "#define SPAMASSASSIN_CONF	\"${PREFIX}/etc/exim/sa-exim.conf\""; \
 	} > ${WRKSRC}/Local/sa-exim.h
 	@${REINPLACE_CMD} -e 's,/usr/bin/spamc,${LOCALBASE}/bin/spamc,' \
-	    ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.conf
+	    ${WRKSRC}/Local/sa-exim.conf
 .endif
 	@${REINPLACE_CMD} -E -e 's/XX_STRIPCMD_XX/${STRIP_CMD:S,/,\/,g}/' \
 		${WRKSRC}/OS/Makefile-FreeBSD
@@ -622,7 +624,7 @@ post-install:
 .endfor
 .endif
 .if ${PORT_OPTIONS:MSA_EXIM}
-	${INSTALL_DATA} ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.conf \
+	${INSTALL_DATA} ${WRKSRC}/Local/sa-exim.conf \
 		${STAGEDIR}${PREFIX}/etc/exim/sa-exim.conf.sample
 .endif
 
