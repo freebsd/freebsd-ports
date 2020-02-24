@@ -4,6 +4,7 @@
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
 DISTVERSION=	14.2.7
+PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	14
 
@@ -19,12 +20,11 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	\
 	bash:shells/bash \
 	git:devel/git \
+	gperf:devel/gperf \
 	yasm:devel/yasm \
 	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
-	gperf:devel/gperf \
 	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops \
-	${LOCALBASE}/bin/ld:devel/binutils \
-	npm:www/npm
+	${LOCALBASE}/bin/ld:devel/binutils
 LIB_DEPENDS=	\
 	${PY_BOOST} \
 	libboost_thread.so:devel/boost-libs \
@@ -42,10 +42,10 @@ LIB_DEPENDS=	\
 	librabbitmq.so:net/rabbitmq-c
 RUN_DEPENDS=	\
 	bash:shells/bash \
-	${LOCALBASE}/bin/getopt:misc/getopt \
-	xml:textproc/xmlstarlet \
-	jq:textproc/jq \
 	flock:sysutils/flock \
+	jq:textproc/jq \
+	xml:textproc/xmlstarlet \
+	${LOCALBASE}/bin/getopt:misc/getopt \
 	${LOCALBASE}/sbin/smartctl:sysutils/smartmontools \
 	${PYTHON_PKGNAMEPREFIX}grpcio>=0:devel/py-grpcio@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}prettytable>=0:devel/py-prettytable@${PY_FLAVOR} \
@@ -62,8 +62,8 @@ RUN_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}routes>=0:www/py-routes@${PY_FLAVOR}
 
-USES=		cmake:noninja dos2unix fuse gettext-runtime gmake pkgconfig python:3.7 \
-		shebangfix ssl
+USES=		cmake:noninja dos2unix fuse gettext-runtime gmake ncurses \
+		pkgconfig python:3.7+ shebangfix ssl
 USE_PYTHON=	cython
 USE_OPENLDAP=	yes
 USE_GITHUB=	yes
@@ -89,11 +89,12 @@ GH_TUPLE+=	ceph:xxHash:1f40c65:xxHash/src/xxHash
 GH_TUPLE+=	facebook:zstd:f4340f4:zstd/src/zstd
 
 CMAKE_BUILD_TYPE=	Release
-CMAKE_ON=	WITH_SYSTEM_BOOST WITH_FUSE WITH_SYSTEM_NPM
-CMAKE_OFF=	WITH_BOOST_CONTEXT WITH_LTTNG WITH_BABELTRACE WITH_KRBD WITH_XFS \
-		WITH_SPDK WITH_RDMA WITH_LIBCEPHFS WITH_CEPHFS \
-		WITH_MGR_DASHBOARD_FRONTEND
-CMAKE_ARGS=	-D WITH_PYTHON2=OFF -D WITH_PYTHON3=3.7 -DMGR_PYTHON_VERSION=3.7 \
+CMAKE_ON=	WITH_SYSTEM_BOOST WITH_BOOST_CONTEXT WITH_FUSE WITH_PYTHON3
+CMAKE_OFF=	WITH_LTTNG WITH_BABELTRACE WITH_KRBD WITH_XFS \
+		WITH_SPDK WITH_RDMA WITH_RADOSGW_BEAST_FRONTEND \
+		WITH_MGR_DASHBOARD_FRONTEND WITH_SYSTEM_NPM \
+		WITH_LIBCEPHFS WITH_CEPHFS WITH_PYTHON2
+CMAKE_ARGS=	-D MGR_PYTHON_VERSION=${PYTHON_VER} \
 		-D CEPH_MAN_DIR:STRING=man
 
 SHEBANG_FILES=	src/rbdmap src/ceph-post-file.in src/rbd-replay-many \
