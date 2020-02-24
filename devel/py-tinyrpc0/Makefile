@@ -20,7 +20,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-# tinyrpc 1.0.0+ requires python 3.0+
+# tinyrpc 1.0.0+ requires Python 3.0+
 PORTSCOUT=	limit:^0\.
 
 OPTIONS_DEFINE=	GEVENT HTTPCLIENT WEBSOCKET WSGI ZEROMQ
