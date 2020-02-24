@@ -8,7 +8,7 @@ libexec/opensmtpd/mail.maildir
 libexec/opensmtpd/mail.mboxfile
 libexec/opensmtpd/mail.mda
 %%TABLE_DB%%libexec/opensmtpd/makemap
-@(,,2555) sbin/smtpctl
+@(,_smtpq,2555) sbin/smtpctl
 sbin/smtpd
 man/man1/smtp.1.gz
 man/man5/aliases.5.gz

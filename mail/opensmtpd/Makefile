@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd
-PORTVERSION=	6.6.3
+PORTVERSION=	6.6.4
 DISTVERSIONSUFFIX=	p1
 PORTEPOCH=	1
 PORTREVISION=	0
@@ -52,7 +52,10 @@ TABLE_DB_CONFIGURE_WITH=	table-db
 
 CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
 			--with-libevent=${LOCALBASE} \
-			--sysconfdir=${PREFIX}/etc/mail/
+			--sysconfdir=${PREFIX}/etc/mail/ \
+			--with-user-smtpd=_smtpd \
+			--with-user-queue=_smtpq \
+			--with-group-queue=_smtpq
 
 .include <bsd.port.pre.mk>
 
