@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		mapserver
-PORTVERSION=		7.4.1
-PORTREVISION=	2
+PORTVERSION=		7.4.3
 CATEGORIES=		graphics www geography
 MASTER_SITES=		https://download.osgeo.org/mapserver/
 
