@@ -3,7 +3,7 @@
 PORTNAME=	deluge
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1.3.15
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net-p2p python
 PKGNAMESUFFIX=	-cli
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0.18:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mako>=0.2.5:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}service_identity>=0:security/py-service_identity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
 
 USES=		gettext python:2.7
 USE_PYTHON=	autoplist distutils

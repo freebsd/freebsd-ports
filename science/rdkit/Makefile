@@ -3,7 +3,7 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
 DISTVERSION=	2018_09_3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -42,7 +42,6 @@ PYTHON_BUILD_DEPENDS=	${PYNUMPY}
 PYTHON_LIB_DEPENDS=	${PY_BOOST}
 PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${PY_FLAVOR}
 
 PORTDOCS=	*
@@ -55,6 +54,14 @@ PLIST_SUB+=	LITTLE_ENDIAN=""
 PLIST_SUB+=	LITTLE_ENDIAN="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3500
+PYTHON_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
+.else
+PYTHON_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
+.endif
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/External/rapidjson-1.1.0
 	@cd ${WRKSRC}/External/rapidjson-1.1.0 && ${LN} -s ${LOCALBASE}/include/rapidjson include
@@ -63,4 +70,4 @@ post-stage: # https://github.com/rdkit/rdkit/issues/2094
 	#@${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake
 	#@${MV} ${STAGEDIR}${PREFIX}/lib/*.cmake ${STAGEDIR}${PREFIX}/lib/cmake
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.19.12
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -53,7 +54,6 @@ FAX_CONFIGURE_ENABLE=	fax-build
 
 SCAN_DESC=		Scanning support
 SCAN_LIB_DEPENDS=	libsane.so:graphics/sane-backends
-SCAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 SCAN_CONFIGURE_ENABLE=	scan-build
 
 SNMP_DESC=		Network/JetDirect support
@@ -80,6 +80,16 @@ CONFIGURE_ARGS+=	--disable-qt5
 
 .if ${PORT_OPTIONS:MX11} && ! ${PORT_OPTIONS:MQT5}
 BROKEN=			The X11 option requires the QT5 option
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MSCAN}
+.if ${PYTHON_REL} < 3500
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
+.endif
 .endif
 
 post-patch:
@@ -143,4 +153,4 @@ post-install-SCAN-on:
 	${MV} ${STAGEDIR}${PREFIX}/etc/sane.d/dll.conf \
 		${STAGEDIR}${PREFIX}/etc/sane.d/dll.d/hpaio
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

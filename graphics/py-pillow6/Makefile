@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pillow
-PORTVERSION=	7.0.0
+PORTVERSION=	6.2.2
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	6
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Fork of the Python Imaging Library (PIL)
@@ -17,15 +18,15 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 
-# Python 3.5+
-USES=		cpe python:3.5+
+# Python 2.7,3.5+
+USES=		cpe python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 
 GH_ACCOUNT=	python-${PORTNAME}
 GH_PROJECT=	${PORTNAME:C/p/P/}
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pillow6
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pillow
 
 OPTIONS_DEFINE=		FREETYPE JPEG JPEG2000 LCMS OLE PNG TIFF TKINTER WEBP
 OPTIONS_DEFAULT=	FREETYPE JPEG JPEG2000 LCMS OLE PNG TIFF TKINTER WEBP

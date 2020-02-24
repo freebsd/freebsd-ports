@@ -3,6 +3,7 @@
 
 PORTNAME=	mwlib
 PORTVERSION=	0.15.19
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apipkg>=1.2:devel/py-apipkg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lockfile>=0.8:devel/py-lockfile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}timelib>=0.2:devel/py-timelib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdf>=1.12:print/py-pdf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}py>=1.4.0:devel/py-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qserve>=0:devel/py-qserve@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}roman>=0:math/py-roman@${PY_FLAVOR} \

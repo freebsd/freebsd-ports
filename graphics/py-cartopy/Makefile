@@ -3,7 +3,7 @@
 
 PORTNAME=	cartopy
 PORTVERSION=	0.17.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,11 +36,19 @@ OWS_DESC=	OGC Web Service support
 PLOTTING_DESC=	Plotting support
 
 EPSG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyepsg>=0:graphics/py-pyepsg@${PY_FLAVOR}
-OWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}OWSLib>=0.8.11:graphics/py-OWSLib@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pillow>=1.7.8:graphics/py-pillow@${PY_FLAVOR}
+OWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}OWSLib>=0.8.11:graphics/py-OWSLib@${PY_FLAVOR}
 PLOTTING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdal>=1.10.0:graphics/py-gdal@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.1:math/py-matplotlib@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pillow>=1.7.8:graphics/py-pillow@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}scipy>=0.10:science/py-scipy@${PY_FLAVOR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3500
+OWS_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>=1.7.8:graphics/py-pillow6@${PY_FLAVOR}
+PLOTTING_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>=1.7.8:graphics/py-pillow6@${PY_FLAVOR}
+.else
+OWS_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>=1.7.8:graphics/py-pillow@${PY_FLAVOR}
+PLOTTING_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>=1.7.8:graphics/py-pillow@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

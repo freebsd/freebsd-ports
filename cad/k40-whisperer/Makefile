@@ -2,6 +2,7 @@
 
 PORTNAME=	k40-whisperer
 DISTVERSION=	0.43
+PORTREVISION=	1
 CATEGORIES=	cad python
 MASTER_SITES=	http://www.scorchworks.com/K40whisperer/
 DISTNAME=	K40_Whisperer-${DISTVERSION}_src
@@ -13,7 +14,6 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}usb>0:devel/py-usb@${PY_FLAVOR}
 
 USES=		python:run,-3.7 shebangfix zip
@@ -39,6 +39,14 @@ _NON_DATA_FILES=	${_DOCS} ${LICENSE_FILE:S,${WRKSRC}/,,} build_exe.bat \
 			py2exe_setup.py requirements.txt
 _WHISPERER_COMMAND=	${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3500
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${_WHISPERER_COMMAND} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -47,4 +55,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${_DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

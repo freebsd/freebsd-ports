@@ -3,7 +3,7 @@
 
 PORTNAME=	pythonsudoku
 PORTVERSION=	0.13
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/Python%20Sudoku/${PORTVERSION}/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -23,7 +23,7 @@ EXPIRATION_DATE=	2020-03-01
 
 LIB_DEPENDS+=	libcups.so:print/cups
 RUN_DEPENDS=	${PYGAME} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow6>=0:graphics/py-pillow6@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=0:print/py-reportlab@${PY_FLAVOR}
 
 USES=		gnome python:2.7 tar:bzip2

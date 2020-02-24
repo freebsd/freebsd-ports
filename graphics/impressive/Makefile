@@ -3,7 +3,7 @@
 
 PORTNAME=	impressive
 PORTVERSION=	0.12.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python
 MASTER_SITES=	SF/${PORTNAME}/Impressive/${PORTVERSION}/
 DISTNAME=	Impressive-${PORTVERSION}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL@${PY_FLAVOR} \
 		${PYGAME} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
 
 USES=		python:2.7 sdl shebangfix
 USE_SDL=	sdl
