@@ -1,5 +1,7 @@
-TIMESTAMP = 1574493142
+TIMESTAMP = 1580572312
 SHA256 (oragono-oragono-v1.2.0_GH0.tar.gz) = 6a03eb807cf85f06b4a3130fea940562323db77facd5ee2734b885ef5cb3e9dc
 SIZE (oragono-oragono-v1.2.0_GH0.tar.gz) = 587735
 SHA256 (oragono-oragono-vendor-1deff6c_GH0.tar.gz) = 42b00f6ca9f6ff8811772d2abfeb2ecff6c5221e3d3d08e93c56d86b6b67c086
 SIZE (oragono-oragono-vendor-1deff6c_GH0.tar.gz) = 3755752
+SHA256 (golang-sys-fead79001313_GH0.tar.gz) = c8e102db152c51438f426a92b338f924827b960e75bd9d871ae9438135366073
+SIZE (golang-sys-fead79001313_GH0.tar.gz) = 1258330
