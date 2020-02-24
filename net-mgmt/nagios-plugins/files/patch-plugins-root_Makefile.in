@@ -11,11 +11,15 @@ Make sure we don't `chown root`, it will fail.
  	echo " chmod $(setuid_root_mode) $(DESTDIR)$(libexecdir)/$$p"; \
  	chmod $(setuid_root_mode) $(DESTDIR)$(libexecdir)/$$p; \
  	done
-@@ -1815,7 +1813,6 @@ install-exec-local: $(noinst_PROGRAMS)
+@@ -1814,10 +1812,7 @@ install-exec-local: $(noinst_PROGRAMS)
+ 	@TMPFILE=$(DESTDIR)$(libexecdir)/.setuid-$$$$; \
  	rm -f $$TMPFILE; \
  	echo > $$TMPFILE; \
- 	can_create_suid_root_executable=no; \
+-	can_create_suid_root_executable=no; \
 -	chown root $$TMPFILE > /dev/null 2>&1 \
- 	  && chmod $(setuid_root_mode) $$TMPFILE > /dev/null 2>&1 \
- 	  && can_create_suid_root_executable=yes; \
+-	  && chmod $(setuid_root_mode) $$TMPFILE > /dev/null 2>&1 \
+-	  && can_create_suid_root_executable=yes; \
++	can_create_suid_root_executable=yes; \
  	rm -f $$TMPFILE; \
+ 	if test $$can_create_suid_root_executable = yes; then \
+ 	  $(INSTALL_SUID); \
