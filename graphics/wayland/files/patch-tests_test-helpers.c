@@ -1,19 +1,15 @@
 --- tests/test-helpers.c.orig	2020-02-11 23:46:03 UTC
 +++ tests/test-helpers.c
-@@ -25,6 +25,12 @@
+@@ -25,6 +25,8 @@
  
  #include "config.h"
  
 +#include "../config.h"
 +
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
-+
  #include <assert.h>
  #include <errno.h>
  #include <dirent.h>
-@@ -41,6 +47,16 @@
+@@ -41,6 +43,16 @@
  
  #include "test-runner.h"
  
@@ -30,7 +26,7 @@
  int
  count_open_fds(void)
  {
-@@ -48,8 +64,8 @@ count_open_fds(void)
+@@ -48,8 +60,8 @@ count_open_fds(void)
  	struct dirent *ent;
  	int count = 0;
  
@@ -41,7 +37,7 @@
  
  	errno = 0;
  	while ((ent = readdir(dir))) {
-@@ -58,7 +74,7 @@ count_open_fds(void)
+@@ -58,7 +70,7 @@ count_open_fds(void)
  			continue;
  		count++;
  	}

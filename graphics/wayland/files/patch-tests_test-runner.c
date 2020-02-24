@@ -1,19 +1,15 @@
 --- tests/test-runner.c.orig	2020-02-11 23:46:03 UTC
 +++ tests/test-runner.c
-@@ -25,6 +25,12 @@
+@@ -25,6 +25,8 @@
  
  #define _GNU_SOURCE
  
 +#include "../config.h"
 +
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
-+
  #include <unistd.h>
  #include <stdio.h>
  #include <stdlib.h>
-@@ -37,13 +43,23 @@
+@@ -37,13 +39,23 @@
  #include <errno.h>
  #include <limits.h>
  #include <sys/ptrace.h>
@@ -37,7 +33,7 @@
  /* when set to 1, check if tests are not leaking opened files.
   * It is turned on by default. It can be turned off by
   * WAYLAND_TEST_NO_LEAK_CHECK environment variable. */
-@@ -51,7 +67,7 @@ int fd_leak_check_enabled;
+@@ -51,7 +63,7 @@ int fd_leak_check_enabled;
  
  /* when this var is set to 0, every call to test_set_timeout() is
   * suppressed - handy when debugging the test. Can be set by
@@ -46,7 +42,7 @@
  static int timeouts_enabled = 1;
  
  /* set to one if the output goes to the terminal */
-@@ -239,6 +255,8 @@ is_debugger_attached(void)
+@@ -239,6 +251,8 @@ is_debugger_attached(void)
  		return 0;
  	}
  
@@ -55,7 +51,7 @@
  	pid = fork();
  	if (pid == -1) {
  		perror("fork");
-@@ -259,13 +277,14 @@ is_debugger_attached(void)
+@@ -259,13 +273,14 @@ is_debugger_attached(void)
  			_exit(1);
  		if (!waitpid(-1, NULL, 0))
  			_exit(1);
@@ -71,7 +67,7 @@
  		rc = prctl(PR_SET_PTRACER, pid);
  		if (rc != 0 && errno != EINVAL) {
  			/* An error prevents us from telling if a debugger is attached.
-@@ -275,7 +294,9 @@ is_debugger_attached(void)
+@@ -275,7 +290,9 @@ is_debugger_attached(void)
  			 */
  			perror("prctl");
  			write(pipefd[1], "-", 1);
@@ -82,7 +78,7 @@
  			/* Signal to client that parent is ready by passing '+' */
  			write(pipefd[1], "+", 1);
  		}
-@@ -293,7 +314,11 @@ int main(int argc, char *argv[])
+@@ -293,7 +310,11 @@ int main(int argc, char *argv[])
  	const struct test *t;
  	pid_t pid;
  	int total, pass;
@@ -94,7 +90,7 @@
  
  	if (isatty(fileno(stderr)))
  		is_atty = 1;
-@@ -336,7 +361,8 @@ int main(int argc, char *argv[])
+@@ -336,7 +357,8 @@ int main(int argc, char *argv[])
  		if (pid == 0)
  			run_test(t); /* never returns */
  
@@ -104,7 +100,7 @@
  			stderr_set_color(RED);
  			fprintf(stderr, "waitid failed: %s\n",
  				strerror(errno));
-@@ -368,6 +394,25 @@ int main(int argc, char *argv[])
+@@ -368,6 +390,25 @@ int main(int argc, char *argv[])
  
  			break;
  		}
