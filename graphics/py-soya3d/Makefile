@@ -17,7 +17,7 @@ COMMENT=	Very high level 3D engine for Python
 DEPRECATED=	Unmaintained, uses EOLed python27
 EXPIRATION_DATE=	2020-03-19
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
 LIB_DEPENDS=	libode.so:devel/ode \
 		libcal3d.so:graphics/cal3d \
 		libfreetype.so:print/freetype2

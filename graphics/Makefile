@@ -830,6 +830,7 @@
     SUBDIR += py-openimageio
     SUBDIR += py-photocollage
     SUBDIR += py-pillow
+    SUBDIR += py-pillow6
     SUBDIR += py-pivy
     SUBDIR += py-plotly
     SUBDIR += py-png

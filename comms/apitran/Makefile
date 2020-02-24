@@ -2,7 +2,7 @@
 
 PORTNAME=	apitran
 PORTVERSION=	g20180926
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms astro hamradio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYNUMPY} \
 		sox:audio/sox \
 		display:graphics/ImageMagick6
@@ -29,6 +28,14 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 SHEBANG_FILES=	apitran
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3500
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/apitran ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -40,4 +47,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Examples/$f ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

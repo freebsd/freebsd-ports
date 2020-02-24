@@ -4,6 +4,7 @@ PORTNAME=	seahub
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAHUB_VER}
 DISTVERSIONSUFFIX=	-pro
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -30,7 +31,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-core>=1.7.0:security/py-social-auth-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow6>=0:graphics/py-pillow6@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode@${PY_FLAVOR} \
 		${PY_FUTURES}

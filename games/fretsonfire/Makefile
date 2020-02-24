@@ -3,7 +3,7 @@
 
 PORTNAME=	fretsonfire
 PORTVERSION=	1.3.110
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games python
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME_UCASE}-${PORTVERSION}
@@ -18,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/copying.txt
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYGAME} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 		${LOCALBASE}/share/${PORTNAME}/default.ttf:games/fretsonfire-data
 
 USES=		dos2unix python
@@ -38,6 +37,14 @@ OPTIONS_DEFINE=	DOCS
 
 PORTNAME_UCASE=	FretsOnFire
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3500
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>=0:graphics/py-pillow6@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
+.endif
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${FOF_DIR}/${PORTNAME_UCASE}
 	@cd ${WRKSRC}/src && \
@@ -53,4 +60,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}/README
 	${INSTALL_DATA} ${WRKSRC}/install.txt ${STAGEDIR}${DOCSDIR}/INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

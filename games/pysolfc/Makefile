@@ -2,6 +2,7 @@
 
 PORTNAME=	pysolfc
 DISTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/${PYSOLFCDIR} \
 		SF/${PORTNAME}/PySolFC-Cardsets/${CARDSETDIR}:cardsets
@@ -15,8 +16,7 @@ COMMENT=	Solitaire game, written in Python and the successor of PySol
 LICENSE=	GPLv2+ GPLv3+ MIT PCW PD UCP UCJ ULG
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}random2>=0:math/py-random2@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}random2>=0:math/py-random2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
@@ -74,6 +74,14 @@ PYSOLFCDIST=	${PYSOLFCDIR}${EXTRACT_SUFX}
 CARDSETDIR=	PySolFC-Cardsets-2.0
 CARDSETDIST=	${CARDSETDIR}.tar.bz2
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3500
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
+.endif
+
 post-patch:
 	@${MV} ${WRKSRC}/pysol.py ${WRKSRC}/pysolfc
 	@${REINPLACE_CMD} -e 's|pysol.py|pysolfc|' ${WRKSRC}/setup.py
@@ -96,4 +104,4 @@ post-install:
 	(cd ${WRKDIR}/${CARDSETDIR} && \
 		${FIND} . -type f | ${SED} -e 's|^./|${DATADIR_REL}/|' >> ${TMPPLIST})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

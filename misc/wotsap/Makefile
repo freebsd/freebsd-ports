@@ -3,7 +3,7 @@
 
 PORTNAME=	wotsap
 PORTVERSION=	0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lysator.liu.se/~jc/wotsap/download/
 EXTRACT_SUFX=	.tgz
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Web of trust statistics and pathfinder
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
 
 USES=		python:2.7,run shebangfix
 NO_BUILD=	yes
