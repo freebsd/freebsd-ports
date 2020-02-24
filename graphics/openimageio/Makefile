@@ -3,8 +3,7 @@
 
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	2.0.10
-PORTREVISION=	7
+DISTVERSION=	2.1.11.2
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -14,9 +13,11 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/tsl/robin_map.h:devel/robin-map
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libheif.so:graphics/libheif \
 		libImath.so:graphics/ilmbase \
 		libIlmImf.so:graphics/openexr \
 		libpng.so:graphics/png \
+		libsquish.so:graphics/squish \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp \
 		libhdf5.so:science/hdf5
@@ -30,7 +31,8 @@ GH_PROJECT=	oiio
 CONFLICTS=	fbm-[0-9]*
 
 CMAKE_ARGS=	USE_CPP:STRING=11
-CMAKE_OFF=	BUILDSTATIC INSTALL_FONTS LINKSTATIC NOTHREADS STOP_ON_WARNING USE_OPENSSL
+CMAKE_OFF=	BUILDSTATIC INSTALL_FONTS LINKSTATIC NOTHREADS \
+		STOP_ON_WARNING USE_OPENSSL
 
 OPTIONS_DEFINE=		DICOM DOCS FFMPEG FREETYPE GIF IMAGEVIEWER OCIO \
 			OPENCV OPENJPEG RAW TBB TEST TOOLS VDB
@@ -90,7 +92,9 @@ VDB_DESC=		OpenVDB support
 VDB_CMAKE_BOOL=		USE_OPENVDB
 VDB_LIB_DEPENDS=	libopenvdb.so:misc/openvdb
 
-PLIST_SUB+=		LIBVERS=${PORTVERSION}
+# DISTVERSION has an extra digit which isn't in the lib name
+# for LIBVERS we want the first three digits
+PLIST_SUB+=	LIBVERS=${DISTVERSION:C/([0-9]*)\.([0-9]*)\.([0-9]*)(.*)/\1.\2.\3/}
 
 .include <bsd.port.options.mk>
 
@@ -107,16 +111,16 @@ CMAKE_ARGS+=	-DPYTHON_VERSION:STRING=${PYTHON_VER} \
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	${INSTALL_LIB} ${BUILD_WRKSRC}/src/python/OpenImageIO.so ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_LIB} ${BUILD_WRKSRC}/lib/python/site-packages/OpenImageIO.so ${STAGEDIR}${PYTHON_SITELIBDIR}
 .else # SLAVE_PORT == no
 USE_LDCONFIG=	yes
 CMAKE_ON+=	DOIIO_BUILD_TOOLS
 CMAKE_OFF+=	USE_PYTHON
 
 post-install:
-	${LN} -sf libOpenImageIO.so.2.0 \
+	${LN} -sf libOpenImageIO.so.2.1 \
 		${STAGEDIR}${PREFIX}/lib/libOpenImageIO.so.2
-	${LN} -sf libOpenImageIO_Util.so.2.0 \
+	${LN} -sf libOpenImageIO_Util.so.2.1 \
 		${STAGEDIR}${PREFIX}/lib/libOpenImageIO_Util.so.2
 
 do-test-TEST-on:
