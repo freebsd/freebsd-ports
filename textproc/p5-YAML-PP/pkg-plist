@@ -22,6 +22,7 @@ bin/yamlpp5-parse-emit
 %%SITE_PERL%%/YAML/PP/Schema/Binary.pm
 %%SITE_PERL%%/YAML/PP/Schema/Core.pm
 %%SITE_PERL%%/YAML/PP/Schema/Failsafe.pm
+%%SITE_PERL%%/YAML/PP/Schema/Include.pm
 %%SITE_PERL%%/YAML/PP/Schema/JSON.pm
 %%SITE_PERL%%/YAML/PP/Schema/Merge.pm
 %%SITE_PERL%%/YAML/PP/Schema/Perl.pm
@@ -41,6 +42,7 @@ bin/yamlpp5-parse-emit
 %%PERL5_MAN3%%/YAML::PP::Schema::Binary.3.gz
 %%PERL5_MAN3%%/YAML::PP::Schema::Core.3.gz
 %%PERL5_MAN3%%/YAML::PP::Schema::Failsafe.3.gz
+%%PERL5_MAN3%%/YAML::PP::Schema::Include.3.gz
 %%PERL5_MAN3%%/YAML::PP::Schema::JSON.3.gz
 %%PERL5_MAN3%%/YAML::PP::Schema::Merge.3.gz
 %%PERL5_MAN3%%/YAML::PP::Schema::Perl.3.gz
