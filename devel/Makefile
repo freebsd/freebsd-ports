@@ -4659,6 +4659,7 @@
     SUBDIR += py-os-win
     SUBDIR += py-os-win4
     SUBDIR += py-osc-lib
+    SUBDIR += py-osc-lib1
     SUBDIR += py-oslo.cache
     SUBDIR += py-oslo.concurrency
     SUBDIR += py-oslo.config
