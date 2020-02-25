@@ -56,7 +56,7 @@ DEFAULT_FONTPATH_LIST= \
 DEFAULT_FONTPATH_CMD=${ECHO_CMD} ${DEFAULT_FONTPATH_LIST} | ${TR} ' ' ,
 PLIST_SUB+=	FONTPATHD="${FONTPATHD:S,^${PREFIX}/,,}"
 
-USES=		gl gmake perl5 ssl xorg xorg-cat:xserver
+USES=		compiler:c11 gl gmake perl5 ssl xorg xorg-cat:xserver
 USE_PERL5=	build
 USE_GL+=	gl
 USE_XORG+=	pixman xau xdmcp xfont2 xkbfile xorgproto xshmfence xtrans
