@@ -97,6 +97,7 @@ lib/gegl-%%GEGL_VER%%/jpg-save.so
 %%CAIRO%%lib/gegl-%%GEGL_VER%%/npd.so
 lib/gegl-%%GEGL_VER%%/npy-save.so
 %%CAIRO%%lib/gegl-%%GEGL_VER%%/path.so
+%%POPPLER%%lib/gegl-%%GEGL_VER%%/pdf-load.so
 %%PIXBUF%%lib/gegl-%%GEGL_VER%%/pixbuf-load.so
 %%PIXBUF%%lib/gegl-%%GEGL_VER%%/pixbuf-save.so
 lib/gegl-%%GEGL_VER%%/png-load.so
@@ -122,7 +123,7 @@ lib/gegl-%%GEGL_VER%%/transformops.so
 lib/girepository-1.0/Gegl-%%GEGL_VER%%.typelib
 lib/libgegl-%%GEGL_VER%%.so
 lib/libgegl-%%GEGL_VER%%.so.0
-lib/libgegl-%%GEGL_VER%%.so.0.%%GEGL_MINOR%%.1
+lib/libgegl-%%GEGL_VER%%.so.%%GEGL_SHLIB%%
 lib/libgegl-npd-%%GEGL_VER%%.so
 lib/libgegl-sc-%%GEGL_VER%%.so
 libdata/pkgconfig/gegl-%%GEGL_VER%%.pc
@@ -145,8 +146,8 @@ share/locale/it/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ko/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/lv/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/mr/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
-share/locale/ne/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/nb/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
+share/locale/ne/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/oc/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/pl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/pt_BR/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
