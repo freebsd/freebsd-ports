@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.13.7
+PORTVERSION=	1.14
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://golang.org/dl/
@@ -17,9 +17,7 @@ BUILD_DEPENDS=	go14>=1.4:lang/go14
 
 USES=		shebangfix
 SHEBANG_LANG=	sh perl
-SHEBANG_FILES=	misc/benchcmp \
-		misc/nacl/go_nacl_*_exec \
-		misc/wasm/go_js_wasm_exec \
+SHEBANG_FILES=	misc/wasm/go_js_wasm_exec \
 		src/net/http/cgi/testdata/test.cgi
 SHEBANG_GLOB=	*.bash *.pl *.sh
 
