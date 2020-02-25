@@ -1,0 +1,6 @@
+pythondialog is a Python wrapper for the UNIX dialog utility originally
+written by Savio Lam and later rewritten by Thomas E. Dickey.  Its purpose
+is to provide an easy to use, pythonic and as complete as possible
+interface to dialog from Python code.
+
+WWW: http://pythondialog.sourceforge.net/

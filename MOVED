@@ -14385,3 +14385,4 @@ x11-wm/simple-ccsm||2020-02-22|Has expired: Broken, uses EOLed python27
 math/metis4|math/metis|2020-02-22|Has expired: EOL: use math/metis instead
 multimedia/cinelerra-gg||2020-02-22|Has expired: Broken, uses EOLed python27
 x11-toolkits/py-gnome2||2020-02-22|Has expired: Broken, uses EOLed python27
+devel/py-dialog3|devel/py-pythondialog|2020-02-25|Renamed to reflect PyPI name
