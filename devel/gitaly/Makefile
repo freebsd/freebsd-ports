@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	1.83.0
+DISTVERSION=	12.8.1
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -12,12 +12,12 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # define dependencies that are required for build and run under MY_DEPENDS
-MY_DEPENDS=	git>=2.21:devel/git \
+MY_DEPENDS=	git>=2.22:devel/git \
 		rubygem-bundler>=1.17.3:sysutils/rubygem-bundler \
 		rubygem-rugged>=0.28<1.0:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.5<8.0:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.7.0<1.8.0:textproc/rubygem-gitlab-markup \
-		rubygem-activesupport52>=5.2.3<5.3.0:devel/rubygem-activesupport52 \
+		rubygem-activesupport60>=6.0.2.1<6.1:devel/rubygem-activesupport60 \
 		rubygem-rdoc>=6.1<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.7<4.2.8.0:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.2<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
@@ -25,7 +25,7 @@ MY_DEPENDS=	git>=2.21:devel/git \
 		rubygem-sentry-raven29>=2.9.0<2.10.0:devel/rubygem-sentry-raven29 \
 		rubygem-faraday>=0.12<1.0:www/rubygem-faraday \
 		rubygem-rbtrace>0:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.8.0<0.9.0:devel/rubygem-gitlab-labkit \
+		rubygem-gitlab-labkit>=0.9.1<0.10.0:devel/rubygem-gitlab-labkit \
 		rubygem-licensee8>=8.9.0<8.10.0:devel/rubygem-licensee8 \
 		rubygem-google-protobuf38>=3.8.0<3.9.0:devel/rubygem-google-protobuf38
 BUILD_DEPENDS=	gem:devel/ruby-gems \
@@ -41,7 +41,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	f63adf19271e150a338eb90479b7afeb94340ed9
+GL_COMMIT=	61393768996e58bd5df436526cb46d5612ead584
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -57,7 +57,7 @@ GH_TUPLE=	\
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		getsentry:sentry-go:v0.3.0:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
 		go-gorp:gorp:v1.7.2:go_gorp_gorp/vendor/gopkg.in/gorp.v1 \
-		go-yaml:yaml:v2.2.5:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:net:3b0461eec859:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
