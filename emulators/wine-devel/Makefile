@@ -98,6 +98,14 @@ MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 OPENAL_CONFIGURE_WITH=	openal
 OPENAL_USES=		openal
 
+STAGING_MASTER_SITES=	https://github.com/wine-staging/wine-staging/archive/:staging
+COMP_DIST=	v${DISTVERSION}.tar.gz
+STAGING_DISTFILES=	${COMP_DIST}:staging
+STAGING_EXTRACT_DEPENDS=	bash:shells/bash \
+				git:devel/git \
+				autoconf>0:devel/autoconf
+STAGING_LIB_DEPENDS=	libtxc_dxtn.so:graphics/s2tc
+
 V4L_CONFIGURE_WITH=	v4l2
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
@@ -146,20 +154,9 @@ post-patch:
 PLIST_SUB+=		WINE32="" WINE64="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MSTAGING}
-MASTER_SITES+=	https://github.com/wine-staging/wine-staging/archive/:cho
-COMP_DIST=	v${DISTVERSION}.tar.gz
-DISTFILES+=	${COMP_DIST}:cho
-
-EXTRACT_DEPENDS=bash:shells/bash \
-		git:devel/git \
-		autoconf>0:devel/autoconf
-LIB_DEPENDS+=	libtxc_dxtn.so:graphics/s2tc
-
-post-extract: fix-shebang
+post-extract-STAGING-on: fix-shebang
 	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${COMP_DIST} --strip-components 1
 	cd ${WRKSRC} && bash ./patches/patchinstall.sh --backend=patch DESTDIR=${WRKSRC} --all
-.endif
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} depend
