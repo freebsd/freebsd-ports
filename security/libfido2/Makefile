@@ -3,6 +3,7 @@
 
 PORTNAME=	libfido2
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://developers.yubico.com/libfido2/Releases/
 
