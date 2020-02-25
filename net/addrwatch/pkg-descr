@@ -1,0 +1,11 @@
+addrwatch is a similar software to arpwatch. It main purpose is to
+monitor network and log ethernet/ip pairings.
+
+To simply try out addrwatch start it without any arguments. When
+started without arguments it will open first non loopback interface and
+start logging events to the console without writing anything to disk.
+All discovered ethernet/ip address pairings will be printed to stdout.
+All debug, warning, and err messages will be sent to syslog and printed
+to stderr.
+
+WWW: https://github.com/fln/addrwatch

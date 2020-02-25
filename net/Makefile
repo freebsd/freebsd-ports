@@ -10,6 +10,7 @@
     SUBDIR += Sockets
     SUBDIR += activemq
     SUBDIR += adasockets
+    SUBDIR += addrwatch
     SUBDIR += afpfs-ng
     SUBDIR += aget
     SUBDIR += akonadi-calendar
