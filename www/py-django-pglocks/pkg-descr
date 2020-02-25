@@ -1,0 +1,5 @@
+This package provides a useful context manager via Django to manage PostgreSQL
+advisory locks, which are application-level locks that are acquired and
+released purely by the client of the database.
+
+WWW: https://github.com/Xof/django-pglocks
