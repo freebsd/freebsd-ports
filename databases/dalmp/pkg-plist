@@ -66,6 +66,8 @@
 %%DATADIR%%/docs/examples/basic.rst
 %%DATADIR%%/docs/index.rst
 %%DATADIR%%/docs/issues.rst
+%%DATADIR%%/docs/navicat.jpg
+%%DATADIR%%/docs/navicat.rst
 %%DATADIR%%/docs/prepared_statements.rst
 %%DATADIR%%/docs/queue.rst
 %%DATADIR%%/docs/queue/QueueInterface.rst
