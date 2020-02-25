@@ -9,6 +9,7 @@
 %%PLUGINDIR_REL%%/localization/ca_ES.inc
 %%PLUGINDIR_REL%%/localization/cs_CZ.inc
 %%PLUGINDIR_REL%%/localization/de_DE.inc
+%%PLUGINDIR_REL%%/localization/el_GR.inc
 %%PLUGINDIR_REL%%/localization/en_US.inc
 %%PLUGINDIR_REL%%/localization/es_ES.inc
 %%PLUGINDIR_REL%%/localization/fr_FR.inc
@@ -24,13 +25,14 @@
 %%PLUGINDIR_REL%%/localization/uk_UA.inc
 %%PLUGINDIR_REL%%/node_modules/roundcube/index.js
 %%PLUGINDIR_REL%%/node_modules/roundcube/package.json
+%%PLUGINDIR_REL%%/skins/classic/includes/toolbar.html
 %%PLUGINDIR_REL%%/skins/classic/tb_label.css
 %%PLUGINDIR_REL%%/skins/classic/thunderbird_32.png
-%%PLUGINDIR_REL%%/skins/default/tb_label.css
-%%PLUGINDIR_REL%%/skins/default/thunderbird_32.png
+%%PLUGINDIR_REL%%/skins/elastic/includes/toolbar.html
+%%PLUGINDIR_REL%%/skins/elastic/tb_label.css
+%%PLUGINDIR_REL%%/skins/larry/includes/toolbar.html
 %%PLUGINDIR_REL%%/skins/larry/tb_label.css
 %%PLUGINDIR_REL%%/skins/larry/thunderbird_24.png
 %%PLUGINDIR_REL%%/skins/larry/thunderbird_32.png
 %%PLUGINDIR_REL%%/tb_label.js
-%%PLUGINDIR_REL%%/tb_label_contextmenu.js
 %%PLUGINDIR_REL%%/thunderbird_labels.php
