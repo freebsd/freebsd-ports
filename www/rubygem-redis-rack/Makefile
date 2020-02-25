@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis-rack
-DISTVERSION=	2.0.5
+DISTVERSION=	2.1.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Redis Store for Rack
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-rack>=1.5,3<3,3:www/rubygem-rack \
+RUN_DEPENDS=	rubygem-rack>=2.0.8,3<3,3:www/rubygem-rack \
 		rubygem-redis-store>=1.2<2:devel/rubygem-redis-store
 
 USES=		gem
