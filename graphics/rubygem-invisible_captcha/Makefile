@@ -3,6 +3,7 @@
 
 PORTNAME=	invisible_captcha
 PORTVERSION=	0.12.2
+PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Unobtrusive CAPTCHA for ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rails52>=3.2.0:www/rubygem-rails52
+RUN_DEPENDS=	rubygem-rails60>=3.2.0:www/rubygem-rails60
 
 USES=		gem
 USE_RUBY=	yes
