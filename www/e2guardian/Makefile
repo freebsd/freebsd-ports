@@ -4,6 +4,7 @@
 PORTNAME=	e2guardian
 PORTVERSION=	5.3.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	marcellocoutinho@gmail.com
@@ -73,10 +74,7 @@ PLIST_SUB+=	SCANNERS=""
 PLIST_SUB+=	SCANNERS="@comment "
 .endif
 
-SUB_FILES=	pkg-message pkg-install
-
-pre-configure:
-	@cd ${WRKSRC} && ${SH} ${WRKSRC}/autogen.sh
+SUB_FILES=	pkg-message
 
 post-install:
 	@${FIND} ${STAGEDIR}${ETCDIR} -type f \
@@ -99,4 +97,5 @@ post-install:
 		${STAGEDIR}${ETCDIR}/lists/contentscanners/
 	@${MV} ${STAGEDIR}${ETCDIR}/lists/exceptionvirussiteiplist.sample \
 		${STAGEDIR}${ETCDIR}/lists/contentscanners/
+
 .include <bsd.port.mk>
