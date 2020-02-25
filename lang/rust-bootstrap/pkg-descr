@@ -1,0 +1,7 @@
+Rust is an open-source systems programming language that runs blazingly
+fast, prevents almost all crashes, and eliminates data races.
+
+This port creates the required bootstrap compilers for building the
+next version of lang/rust.
+
+WWW: https://www.rust-lang.org/

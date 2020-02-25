@@ -317,6 +317,7 @@
     SUBDIR += ruby27
     SUBDIR += runawk
     SUBDIR += rust
+    SUBDIR += rust-bootstrap
     SUBDIR += rust-nightly
     SUBDIR += sagittarius-scheme
     SUBDIR += sather-specification
