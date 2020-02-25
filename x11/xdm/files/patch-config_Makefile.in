@@ -1,0 +1,13 @@
+--- config/Makefile.in.orig	2019-03-02 22:06:24 UTC
++++ config/Makefile.in
+@@ -391,8 +391,8 @@ EXTRA_DIST = Xservers.ws.in Xservers.fs \
+ @USE_XPM_FALSE@XPM_SED_FLAGS = -e '/ifdef XPM/,/endif \/\* XPM \*\//d'
+ 
+ # Defines used when sed'ing config files to replace settings in the files
+-@USE_XPM_TRUE@XPM_SED_FLAGS = -e '/ifdef XPM/d' -e '/endif \/\* XPM \
+-@USE_XPM_TRUE@	\*\//d' -e 's|BITMAPDIR|$(XDM_PIXMAPDIR)|' -e \
++@USE_XPM_TRUE@XPM_SED_FLAGS = -e '/ifdef XPM/d' -e '/endif \/\* XPM \*\//d' \
++@USE_XPM_TRUE@	-e 's|BITMAPDIR|$(XDM_PIXMAPDIR)|' -e \
+ @USE_XPM_TRUE@	's|XDM_PIXMAP|$(XDM_PIXMAP)|' -e \
+ @USE_XPM_TRUE@	's|XDM_BWPIXMAP|$(XDM_BWPIXMAP)|'
+ 
