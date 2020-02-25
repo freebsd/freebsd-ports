@@ -11,7 +11,6 @@
 %%DATADIR%%/ruby/gitlab-shell/.gitlab-ci.yml
 %%DATADIR%%/ruby/gitlab-shell/CHANGELOG
 %%DATADIR%%/ruby/gitlab-shell/CONTRIBUTING.md
-%%DATADIR%%/ruby/gitlab-shell/Gemfile
 %%DATADIR%%/ruby/gitlab-shell/LICENSE
 %%DATADIR%%/ruby/gitlab-shell/README.md
 %%DATADIR%%/ruby/gitlab-shell/README.orig.md
@@ -84,9 +83,9 @@
 %%DATADIR%%/ruby/lib/gitaly_server.rb
 %%DATADIR%%/ruby/lib/gitaly_server/blob_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/client.rb
-%%DATADIR%%/ruby/lib/gitaly_server/commit_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/conflicts_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/exception_sanitizer_interceptor.rb
+%%DATADIR%%/ruby/lib/gitaly_server/feature_flags.rb
 %%DATADIR%%/ruby/lib/gitaly_server/health_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/operations_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/ref_service.rb
@@ -185,6 +184,7 @@
 %%DATADIR%%/ruby/spec/gitaly/remote_service_spec.rb
 %%DATADIR%%/ruby/spec/gitaly/repository_service_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/exception_sanitizer_interceptor_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitaly_server/feature_flags_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/rugged_interceptor_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/utils_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/sentry/url_sanitizer_spec.rb

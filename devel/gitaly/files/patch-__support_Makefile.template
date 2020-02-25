@@ -1,4 +1,4 @@
---- _support/Makefile.template.orig	2019-09-29 09:26:06 UTC
+--- _support/Makefile.template.orig	2020-02-21 15:02:16 UTC
 +++ _support/Makefile.template
 @@ -8,7 +8,7 @@
  # These variables may be overridden at runtime by top-level make
@@ -9,7 +9,7 @@
  ASSEMBLY_ROOT ?= {{ .BuildDir }}/assembly
  BUILD_TAGS := tracer_static tracer_static_jaeger
  
-@@ -55,8 +55,8 @@ build: ../.ruby-bundle
+@@ -56,8 +56,8 @@ build: ../.ruby-bundle
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ../.ruby-bundle:  {{ .GitalyRubyDir }}/Gemfile.lock  {{ .GitalyRubyDir }}/Gemfile
