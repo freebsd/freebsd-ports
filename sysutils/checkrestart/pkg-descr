@@ -1,0 +1,4 @@
+Find processes using stale binaries or shared libraries that may need
+restarting after an upgrade.
+
+WWW: http://github.com/Freaky/checkrestart
