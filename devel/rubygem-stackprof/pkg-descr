@@ -1,0 +1,4 @@
+Stackprof is a fast sampling profiler for ruby code, with cpu,
+wallclock and object allocation samplers.
+
+WWW: http://github.com/tmm1/stackprof
