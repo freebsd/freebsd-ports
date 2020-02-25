@@ -1,0 +1,15 @@
+This is a temporary hack of mine to unbreak the build; I'm working with
+upstream. -- Gerald
+
+--- UTC
+--- gcc/value-prof.c.orig	2020-02-23 22:32:16.000000000 +0000
++++ gcc/value-prof.c	2020-02-24 11:02:12.664189000 +0000
+@@ -266,7 +266,7 @@
+ 	  if (hist->hvalue.counters)
+ 	    {
+ 	      fprintf (dump_file, " all: %" PRId64 "%s, values: ",
+-		       abs ((int64_t) hist->hvalue.counters[0]),
++		       ((int64_t) hist->hvalue.counters[0]),
+ 		       hist->hvalue.counters[0] < 0
+ 		       ? " (values missing)": "");
+ 	      for (unsigned i = 0; i < GCOV_TOPN_VALUES; i++)
