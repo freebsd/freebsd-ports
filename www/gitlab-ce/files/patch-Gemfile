@@ -1,14 +1,14 @@
---- Gemfile.orig	2020-01-31 21:59:11 UTC
+--- Gemfile.orig	2020-02-21 15:14:12 UTC
 +++ Gemfile
 @@ -1,6 +1,6 @@
  source 'https://rubygems.org'
  
--gem 'rails', '5.2.3'
-+gem 'rails', '5.2.4.1'
+-gem 'rails', '6.0.2'
++gem 'rails', '6.0.2.1'
  
  gem 'bootsnap', '~> 1.4'
  
-@@ -93,7 +93,6 @@ gem 'graphql', '~> 1.9.11'
+@@ -93,7 +93,6 @@ gem 'graphql', '~> 1.9.12'
  # https://gitlab.com/gitlab-org/gitlab/issues/31747
  gem 'graphiql-rails', '~> 1.4.10'
  gem 'apollo_upload_server', '~> 2.0.0.beta3'
@@ -20,8 +20,8 @@
  gem 'asciidoctor', '~> 2.0.10'
  gem 'asciidoctor-include-ext', '~> 0.3.1', require: false
  gem 'asciidoctor-plantuml', '0.0.10'
--gem 'rouge', '~> 3.11.0'
-+gem 'rouge', '~> 3.11'
+-gem 'rouge', '~> 3.15.0'
++gem 'rouge', '~> 3.15'
  gem 'truncato', '~> 0.7.11'
  gem 'bootstrap_form', '~> 4.2.0'
  gem 'nokogiri', '~> 1.10.5'
@@ -34,7 +34,7 @@
  
  # Jira integration
  gem 'jira-ruby', '~> 1.7'
-@@ -329,94 +328,6 @@ group :metrics do
+@@ -329,92 +328,6 @@ group :metrics do
    # Prometheus
    gem 'prometheus-client-mmap', '~> 0.10.0'
    gem 'raindrops', '~> 0.18'
@@ -58,7 +58,7 @@
 -group :development, :test do
 -  gem 'bullet', '~> 6.0.2', require: !!ENV['ENABLE_BULLET']
 -  gem 'pry-byebug', '~> 3.5.1', platform: :mri
--  gem 'pry-rails', '~> 0.3.4'
+-  gem 'pry-rails', '~> 0.3.9'
 -
 -  gem 'awesome_print', require: false
 -
@@ -89,8 +89,6 @@
 -  gem 'benchmark-ips', '~> 2.3.0', require: false
 -
 -  gem 'knapsack', '~> 1.17'
--
--  gem 'stackprof', '~> 0.2.13', require: false
 -
 -  gem 'simple_po_parser', '~> 1.1.2', require: false
 -
