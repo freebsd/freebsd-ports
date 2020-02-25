@@ -1,0 +1,15 @@
+This program writes short movies with your Canon DSLR camera directly to the
+computer.  The camera must have Live View feature to work; supported models
+include Canon EOS 450D, Canon EOS 1000D, Canon 40D, Canon 50D, Canon 5D Mark
+II, Canon 1Ds Mark III.  The program offers preview, Av, Tv, and WB control.
+While some newer models provide video recording natively, this program can
+be useful if your camera does not have this option.
+
+Video will be recorded using MJPEG codec, with no sound, roughly at 22 FPS
+(depends on your hardware: camera and computer).  Image size is also camera
+dependent: 848x560 for 450D; 1024x680 for 40D, 50D, and top models; 768x512
+for 1000D.  Resulting file is simply a collection of Live View frames stored
+sequentially without any compression in AVI container (expect file size to
+be quite large).
+
+WWW: https://sourceforge.net/projects/eos-movrec/
