@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libmbe.so:comms/mbelib
 
 USES=		cmake
+USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	jketterl
 GH_PROJECT=	digiham
