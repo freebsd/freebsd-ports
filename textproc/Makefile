@@ -1432,6 +1432,7 @@
     SUBDIR += re-flex
     SUBDIR += re_graph
     SUBDIR += redet
+    SUBDIR += redisearch
     SUBDIR += redland
     SUBDIR += redland-bindings
     SUBDIR += refdb
