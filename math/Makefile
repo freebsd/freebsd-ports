@@ -108,6 +108,7 @@
     SUBDIR += R-cran-spdep
     SUBDIR += R-cran-sspir
     SUBDIR += R-cran-stabledist
+    SUBDIR += R-cran-statmod
     SUBDIR += R-cran-survey
     SUBDIR += R-cran-truncnorm
     SUBDIR += R-cran-units
