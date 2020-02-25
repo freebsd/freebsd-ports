@@ -3,6 +3,7 @@
 
 PORTNAME=	mime-construct
 PORTVERSION=	1.11
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.argon.org/~roderick/
 
