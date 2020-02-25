@@ -1,6 +1,6 @@
---- lib/ip_util.c
+--- lib/ip_util.c.orig	2015-01-19 16:18:26 UTC
 +++ lib/ip_util.c
-@@ -350,6 +350,36 @@
+@@ -348,6 +348,36 @@ uint32_t rc_own_bind_ipaddress(rc_handle *rh)
  }
  
  /*

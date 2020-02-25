@@ -1,2 +1,3 @@
-SHA256 (freeradius-client-1.1.6.tar.bz2) = a3c9522ed6d9bc795794595a8f3eebada868ea11a0c046637500faf257f9688f
-SIZE (freeradius-client-1.1.6.tar.bz2) = 297916
+TIMESTAMP = 1582553895
+SHA256 (freeradius-client-1.1.7.tar.gz) = eada2861b8f4928e3ac6b5bbfe11e92cd6cdcacfce40cae1085e77c1b6add0e9
+SIZE (freeradius-client-1.1.7.tar.gz) = 433141

@@ -1,26 +1,22 @@
---- configure
+--- configure.orig	2015-01-19 16:18:26 UTC
 +++ configure
-@@ -19728,23 +19728,6 @@
+@@ -12503,19 +12503,6 @@ fi
  gethostbyaddrrstyle=""
- echo "$as_me:$LINENO: checking gethostbyaddr_r() syntax" >&5
- echo $ECHO_N "checking gethostbyaddr_r() syntax... $ECHO_C" >&6
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking gethostbyaddr_r() syntax" >&5
+ $as_echo_n "checking gethostbyaddr_r() syntax... " >&6; }
 -case "$host" in
 -*-freebsd*)
 -
--cat >>confdefs.h <<\_ACEOF
--#define GETHOSTBYADDR_R
--_ACEOF
+-$as_echo "#define GETHOSTBYADDR_R /**/" >>confdefs.h
 -
 -
--cat >>confdefs.h <<\_ACEOF
--#define GETHOSTBYADDRRSTYLE_BSD
--_ACEOF
+-$as_echo "#define GETHOSTBYADDRRSTYLE_BSD /**/" >>confdefs.h
 -
 -        gethostbyaddrrstyle=BSD
--        { echo "$as_me:$LINENO: WARNING: FreeBSD overridden to BSD-style" >&5
--echo "$as_me: WARNING: FreeBSD overridden to BSD-style" >&2;}
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: FreeBSD overridden to BSD-style" >&5
+-$as_echo "$as_me: WARNING: FreeBSD overridden to BSD-style" >&2;}
 -        ;;
 -esac
  if test "x$gethostbyaddrrstyle" = "x"; then
-         cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
+         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */

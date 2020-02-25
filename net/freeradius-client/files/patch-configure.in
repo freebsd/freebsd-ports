@@ -1,6 +1,6 @@
---- configure.in
+--- configure.in.orig	2015-01-19 16:18:26 UTC
 +++ configure.in
-@@ -66,14 +66,6 @@
+@@ -66,14 +66,6 @@ dnl     http://h30097.www3.hp.com/docs/base_doc/DOCUME
  dnl We need #stdio.h to define NULL on FreeBSD (at least)
  gethostbyaddrrstyle=""
  AC_MSG_CHECKING([gethostbyaddr_r() syntax])
