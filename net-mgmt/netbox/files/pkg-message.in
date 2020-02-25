@@ -81,4 +81,81 @@ cables to enable filtering by site/rack. This migration may take several
 minutes to complete on installations with tens of thousands of cables defined.
 EOD
 }
+{ type: upgrade
+  maximum_version: 2.7.7
+  message: <<EOD
+1. Removal of the Topology Maps feature
+
+The deprecated topology maps feature has been removed.  Please replicate any
+required data to another source before upgrading NetBox to v2.7.7, as any
+existing topology maps will be deleted.
+
+
+2. Changed REDIS database configuration settings
+
+The REDIS database configuration parameters were splitted up in two discrete
+subsections named "webhooks" and "caching".  This requires modification of the
+REDIS parameter in configuration.py as follows: 
+
+Old Redis sample configuration:
+
+REDIS = {
+    'HOST': 'localhost',
+    'PORT': 6379,
+    'PASSWORD': '',
+    'DATABASE': 0,
+    'CACHE_DATABASE': 1,
+    'DEFAULT_TIMEOUT': 300,
+    'SSL': False,
+}
+
+New Redis sample configuration:
+
+REDIS = {
+    'webhooks': {
+        'HOST': 'redis.example.com',
+        'PORT': 1234,
+        'PASSWORD': 'foobar',
+        'DATABASE': 0,
+        'DEFAULT_TIMEOUT': 300,
+        'SSL': False,
+    },
+    'caching': {
+        'HOST': 'localhost',
+        'PORT': 6379,
+        'PASSWORD': '',
+        'DATABASE': 1,
+        'DEFAULT_TIMEOUT': 300,
+        'SSL': False,
+    }
+}
+
+Note that the CACHE_DATABASE parameter has been removed and the connection
+settings have been duplicated for both "webhooks" and "caching".  This allows
+one to make use of separate Redis instances if desired.  It is fine to use the
+same Redis service for both functions, although the database identifiers should
+be different.
+
+
+3. Removal of the WEBHOOKS_ENABLED configuration parameter
+
+As django-rq is now a required library, NetBox assumes that the RQ worker
+process is running and the WEBHOOKS_ENABLED configuration parameter is no
+longer used.  Please ensure that both the NetBox WSGI service and the RQ worker
+process are running on all production installations.
+
+
+4. Fixed natural orderding of interfaces
+
+The 2.7.7 release contains a bug fix regarding the natural ordering of
+interfaces.  If any interfaces appear unordered, run the following management
+command to recalculate their naturalized values after the usual upgrading steps
+(database migrations, collect static files, etc.) were issued:
+
+# cd %%DATADIR%%
+# python%%PYTHON_VER%% manage.py renaturalize dcim.Interface
+
+EOD
+}
+]
 ]
