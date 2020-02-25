@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ora2pg
-PORTVERSION=	19.1
-PORTREVISION=	2
+PORTVERSION=	20.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Oracle to PostgreSQL database schema converter
 
 LICENSE=	GPLv3
