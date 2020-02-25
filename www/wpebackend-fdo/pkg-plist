@@ -7,5 +7,5 @@ include/wpe-fdo-1.0/wpe/view-backend-exportable-egl.h
 include/wpe-fdo-1.0/wpe/view-backend-exportable.h
 lib/libWPEBackend-fdo-1.0.so
 lib/libWPEBackend-fdo-1.0.so.1
-lib/libWPEBackend-fdo-1.0.so.1.4.1
+lib/libWPEBackend-fdo-1.0.so.1.4.2
 libdata/pkgconfig/wpebackend-fdo-1.0.pc
