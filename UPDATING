@@ -5,6 +5,65 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200225:
+  AFFECTS: users of net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  1. Removal of the Topology Maps feature
+
+  The deprecated topology maps feature has been removed.  Please replicate
+  any required data to another source before upgrading NetBox to v2.7.7, as
+  any existing topology maps will be deleted.
+
+
+  2. Changed REDIS database configuration settings
+
+  The REDIS database configuration parameters were splitted up in two
+  discrete subsections named "webhooks" and "caching" with the 2.7 release.
+  This requires modification of the REDIS parameter in configuration.py as
+  follows:
+
+  Old Redis sample configuration:
+
+  REDIS = {
+    'HOST': 'localhost',
+    'PORT': 6379,
+    'PASSWORD': '',
+    'DATABASE': 0,
+    'CACHE_DATABASE': 1,
+    'DEFAULT_TIMEOUT': 300,
+    'SSL': False,
+  }
+
+  New Redis sample configuration:
+
+  REDIS = {
+    'webhooks': {
+        'HOST': 'redis.example.com',
+        'PORT': 1234,
+        'PASSWORD': 'foobar',
+        'DATABASE': 0,
+        'DEFAULT_TIMEOUT': 300,
+        'SSL': False,
+    },
+    'caching': {
+        'HOST': 'localhost',
+        'PORT': 6379,
+        'PASSWORD': '',
+        'DATABASE': 1,
+        'DEFAULT_TIMEOUT': 300,
+        'SSL': False,
+    }
+  }
+
+  Note that the CACHE_DATABASE parameter has been removed and the connection
+  settings have been duplicated for both webhooks and caching.  This allows
+  one to make use of separate Redis instances if desired.  It is fine to use
+  the same Redis service for both functions, although the database
+  identifiers should be different.
+
+  Please also check the pkg-message and the changelogs for further info.
+
 20200223:
   AFFECTS: users of security/gsasl
   AUTHOR: hrs@FreeBSD.org
