@@ -1,5 +1,5 @@
 bin/sysctlview
-man/man1/sysctlview.1.gz
+share/man/man1/sysctlview.1.gz
 share/icons/hicolor/16x16/apps/sysctlview.png
 share/icons/hicolor/192x192/apps/sysctlview.png
 share/icons/hicolor/22x22/apps/sysctlview.png
