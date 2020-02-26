@@ -1,0 +1,4 @@
+This project aims at being a specs-conforming and strict parser and writer for
+TOML files. The library currently supports version 0.4.0 of the specs.
+
+WWW: https://github.com/avakar/pytoml
