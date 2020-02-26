@@ -1936,7 +1936,6 @@
     SUBDIR += rubygem-gollum-rugged_adapter
     SUBDIR += rubygem-gon-rails5
     SUBDIR += rubygem-gon-rails50
-    SUBDIR += rubygem-gon-rails52
     SUBDIR += rubygem-gon-rails60
     SUBDIR += rubygem-hackpad-cli
     SUBDIR += rubygem-haml
