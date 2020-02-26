@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	josm
-PORTVERSION=	15806
+PORTVERSION=	15927
 CATEGORIES=	astro java
 MASTER_SITES=	http://josm.openstreetmap.de/download/ \
 		http://mirror.amdmi3.ru/distfiles/
