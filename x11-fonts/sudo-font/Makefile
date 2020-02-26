@@ -2,10 +2,11 @@
 
 PORTNAME=	sudo-font
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.41
+DISTVERSION=	0.42
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/jenskutilek/sudo-font/raw/${DISTVERSIONFULL}/dist/
 DISTNAME=	sudo
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Font for programmers and command line users
