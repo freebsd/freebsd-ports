@@ -3,6 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
+PORTREVISION?=	3
 CATEGORIES=	mail
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
@@ -105,6 +106,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Local-sa-exim.conf
 EXIM_VERSION=	4.93.0.4
 SA_EXIM_VERSION=4.2.1
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
+EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name '74_*.patch'`
 
 .if !defined(EXIMON_ONLY)
 PLIST_SUB+=	EXIM=""

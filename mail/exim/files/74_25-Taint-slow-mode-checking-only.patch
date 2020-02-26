@@ -1,0 +1,127 @@
+From 69b2f92c0b5da548eaafe4813319f4647fa9c19a Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Thu, 30 Jan 2020 11:38:30 +0000
+Subject: [PATCH 25/25] Taint: slow-mode checking only
+
+(cherry-picked from 4381d60bc9)
+---
+ doc/ChangeLog | 10 +++-------
+ src/functions.h   |  5 +----
+ src/store.c       | 43 -------------------------------------------
+ 3 files changed, 4 insertions(+), 54 deletions(-)
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 508b8fa49..be7ec2a8e 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -59,13 +59,9 @@ JH/21 Bug 2501: Fix init call in the heimdal authenticator.  Previously it
+       buffer was in use at the time.  Change to a compile-time increase in the
+       buffer size, when this authenticator is compiled into exim.
+ 
+-JH/22 Taint checking: move to a hybrid approach for checking.  Previously, one
+-      of two ways was used, depending on a build-time flag.  The fast method
+-      relied on assumptions about the OS and libc malloc, which were known to
+-      not hold for the BSD-derived platforms, and discovered to not hold for
+-      32-bit Linux either.  In fact the glibc documentation describes cases
+-      where these assumptions do not hold.  The new implementation tests for
+-      the situation arising and actively switches over from fast to safe mode.
++JH/22 Taint-checking: move to safe-mode taint checking on all platforms.  The
++      previous fast-mode was untenable in the face of glibs using mmap to
++      support larger malloc requests.
+ 
+ 
+ Exim version 4.93
+diff --git src/functions.h src/functions.h
+index 0b5905562..af633851b 100644
+--- src/functions.h
++++ src/functions.h
+@@ -616,10 +616,7 @@ return FALSE;
+ 
+ #else
+ extern BOOL is_tainted_fn(const void *);
+-extern void * tainted_base, * tainted_top;
+-
+-return f.taint_check_slow
+-  ? is_tainted_fn(p) : p >= tainted_base && p < tainted_top;
++return is_tainted_fn(p);
+ #endif
+ }
+ 
+diff --git src/store.c src/store.c
+index 6118ef28d..c81744a7b 100644
+--- src/store.c
++++ src/store.c
+@@ -102,13 +102,6 @@ static storeblock *current_block[NPOOLS];
+ static void *next_yield[NPOOLS];
+ static int yield_length[NPOOLS] = { -1, -1, -1,  -1, -1, -1 };
+ 
+-/* The limits of the tainted pools.  Tracking these on new allocations enables
+-a fast is_tainted implementation. We assume the kernel only allocates mmaps using
+-one side or the other of data+heap, not both. */
+-
+-void * tainted_base = (void *)-1;
+-void * tainted_top = (void *)0;
+-
+ /* pool_malloc holds the amount of memory used by the store pools; this goes up
+ and down as store is reset or released. nonpool_malloc is the total got by
+ malloc from other calls; this doesn't go down because it is just freed by
+@@ -200,30 +193,6 @@ log_write(0, LOG_MAIN|LOG_PANIC_DIE, "Taint mismatch, %s: %s %d\n",
+ 	msg, func, line);
+ }
+ 
+-static void
+-use_slow_taint_check(void)
+-{
+-#ifndef COMPILE_UTILITY
+-DEBUG(D_any) debug_printf("switching to slow-mode taint checking\n");
+-#endif
+-f.taint_check_slow = TRUE;
+-}
+-
+-static void
+-verify_all_untainted(void)
+-{
+-for (int pool = 0; pool < POOL_TAINT_BASE; pool++)
+-  for (storeblock * b = chainbase[pool]; b; b = b->next)
+-    {
+-    uschar * bc = US b + ALIGNED_SIZEOF_STOREBLOCK;
+-    if (is_tainted(bc))
+-      {
+-      use_slow_taint_check();
+-      return;
+-      }
+-    }
+-}
+-
+ 
+ 
+ /*************************************************
+@@ -814,10 +783,6 @@ if (!(yield = mmap(NULL, (size_t)size,
+   log_write(0, LOG_MAIN|LOG_PANIC_DIE, "failed to mmap %d bytes of memory: "
+     "called from line %d of %s", size, line, func);
+ 
+-if (yield < tainted_base) tainted_base = yield;
+-if ((top = US yield + size) > tainted_top) tainted_top = top;
+-if (!f.taint_check_slow) use_slow_taint_check();
+-
+ return store_alloc_tail(yield, size, func, line, US"Mmap");
+ }
+ 
+@@ -848,14 +813,6 @@ if (!(yield = malloc((size_t)size)))
+   log_write(0, LOG_MAIN|LOG_PANIC_DIE, "failed to malloc %d bytes of memory: "
+     "called from line %d in %s", size, linenumber, func);
+ 
+-/* If malloc ever returns apparently tainted memory, which glibc
+-malloc will as it uses mmap for larger requests, we must switch to
+-the slower checking for tainting (checking an address against all
+-the tainted pool block spans, rather than just the mmap span) */
+-
+-if (!f.taint_check_slow && is_tainted(yield))
+-  use_slow_taint_check();
+-
+ return store_alloc_tail(yield, size, func, linenumber, US"Malloc");
+ }
+ 
+-- 
+2.24.1
+
