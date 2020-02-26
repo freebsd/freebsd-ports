@@ -169,6 +169,7 @@
     SUBDIR += noto-sc
     SUBDIR += noto-tc
     SUBDIR += nucleus
+    SUBDIR += office-code-pro
     SUBDIR += ohsnap
     SUBDIR += oldschool-pc-fonts
     SUBDIR += open-sans
