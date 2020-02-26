@@ -13,7 +13,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
-USES=		desktop-file-utils gettext-tools gnome meson ninja pkgconfig
+USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
+		meson ninja pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hellosiyan
