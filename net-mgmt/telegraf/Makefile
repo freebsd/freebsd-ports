@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.13.3
+DISTVERSION=	1.13.4
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -123,7 +123,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		prometheus:common:7600349:common/vendor/github.com/prometheus/common \
 		prometheus:procfs:ae68e2d:procfs/vendor/github.com/prometheus/procfs \
 		rcrowley:go-metrics:e2704e1:go_metrics/vendor/github.com/rcrowley/go-metrics \
-		safchain:ethtool:ef7e7c9:ethtool/vendor/github.com/safchain/ethtool \
+		safchain:ethtool:f459e2d:ethtool/vendor/github.com/safchain/ethtool \
 		samuel:go-zookeeper:c4fab1a:go_zookeeper/vendor/github.com/samuel/go-zookeeper \
 		satori:go.uuid:b2ce238:go0uuid/vendor/github.com/satori/go.uuid \
 		shirou:gopsutil:v2.19.11:gopsutil/vendor/github.com/shirou/gopsutil \
@@ -132,7 +132,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		soniah:gosnmp:v1.22.0:gosnmp/vendor/github.com/soniah/gosnmp \
 		streadway:amqp:e5adc2a:amqp/vendor/github.com/streadway/amqp \
 		stretchr:objx:v0.1.1:objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.2.2:testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.5.1:testify/vendor/github.com/stretchr/testify \
 		tidwall:gjson:v1.3.0:gjson/vendor/github.com/tidwall/gjson \
 		tidwall:match:1731857:match/vendor/github.com/tidwall/match \
 		tidwall:pretty:v1.0.0:pretty/vendor/github.com/tidwall/pretty \
