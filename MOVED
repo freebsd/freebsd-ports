@@ -14390,3 +14390,4 @@ devel/rubygem-health_check26-rails5|devel/rubygem-health_check26-rails60|2020-02
 devel/rubygem-health_check26-rails52|devel/rubygem-health_check26-rails60|2020-02-26|Obsolete, please use devel/rubygem-health_check26-rails60 instead
 www/rubygem-webpack-rails-rails52|www/rubygem-webpack-rails-rails60|2020-02-26|Obsolete, please use www/rubygem-webpack-rails-rails60 instead
 security/rubygem-doorkeeper43|security/rubygem-doorkeeper|2020-02-26|Obsolete, please use security/rubygem-doorkeeper instead
+www/rubygem-gon-rails52|www/rubygem-gon-rails60|2020-02-26|Obsolete, please use www/rubygem-gon-rails60 instead
