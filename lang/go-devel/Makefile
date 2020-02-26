@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	g20200205
-PORTREVISION=	1
+PORTVERSION=	g20200225
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
 		LOCAL/dmgk:bootstrap
@@ -33,7 +32,7 @@ USES=		shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
-GH_TAGNAME=	a068054af141c01df5a4519844f4b77273605f4e
+GH_TAGNAME=	20a838ab94178c55bc4dc23ddc332fce8545a493
 
 SHEBANG_FILES=	misc/wasm/go_js_wasm_exec \
 		src/net/http/cgi/testdata/test.cgi
@@ -73,7 +72,7 @@ IGNORE=	aarch64 support requires FreeBSD 12.0 or newer
 post-patch:
 	@${REINPLACE_CMD} -e 's|^if ulimit -T|false \&\& &|' ${WRKSRC}/src/run.bash
 	# Needed only for untagged releases
-	${ECHO_CMD} "devel +${GH_TAGNAME}" > ${WRKSRC}/VERSION
+	# ${ECHO_CMD} "devel +${GH_TAGNAME}" > ${WRKSRC}/VERSION
 
 pre-build:
 	# Check that the running kernel has COMPAT_FREEBSD11 required by lang/go{,-devel} post-ino64
