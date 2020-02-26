@@ -20,12 +20,12 @@ LIB_DEPENDS=	libarc.so:archivers/libarc \
 RUN_DEPENDS=	eawpats>0:audio/eawpats
 .endif
 
-USES=		gmake tar:bzip2
+USES=		gmake localbase tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	SHLD="${CC} -shared"
 
-CPPFLAGS+=	-I${LOCALBASE}/include/libarc -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--export-dynamic
+CPPFLAGS+=	-I${LOCALBASE}/include/libarc
+LDFLAGS+=	-Wl,--export-dynamic
 
 PLIST_SUB+=	TIMID_LIBDIR="${TIMID_LIBDIR}" EUCJP_LOCALE="${EUCJP_LOCALE}"
 
