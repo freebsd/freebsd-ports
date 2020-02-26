@@ -103,7 +103,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/jaxen-1.2.0.jar
 %%DATADIR%%/lib/jbcrypt-1.0.0.jar
 %%DATADIR%%/lib/jdom.jar
-%%DATADIR%%/lib/jediterm-pty-2.22.jar
+%%DATADIR%%/lib/jediterm-pty-2.24.jar
 %%DATADIR%%/lib/jetCheck-0.2.1.jar
 %%DATADIR%%/lib/jettison-1.4.0.jar
 %%DATADIR%%/lib/jing-20030619.jar
@@ -260,7 +260,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/DatabaseTools/lib/dekaf-single-2.0.0.390.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/jdbc-console.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/resources_en.jar
-%%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-193.7.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-193.15.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
 %%DATADIR%%/plugins/Docker/lib/Docker-agent-api-rt.jar
 %%DATADIR%%/plugins/Docker/lib/Docker-compose.jar
