@@ -18,7 +18,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-stflags
 GNU_CONFIGURE=	yes
 
-PORTSCOUT=	skipv:0.02.04beta
+PORTSCOUT=	ignore:1
 
 post-patch:
 	@${REINPLACE_CMD} '/INSTALL/ s|prefix)|DESTDIR)$$(&|' \
