@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libredwg
-PORTVERSION=	0.10
+PORTVERSION=	0.10.1
 CATEGORIES=	cad devel
 MASTER_SITES=	GNU
 
@@ -28,7 +28,7 @@ PSLIB_LIB_DEPENDS=	libps.so:print/pslib
 # XXX: shall `localbase' be put on global USES, it would require explicit
 # PSLIB_CONFIGURE_ENV_OFF=	ac_cv_lib_ps_PS_open_file=no
 PSLIB_USES=		localbase
-PSLIB_PLIST_FILES=	bin/dwg2ps
+PSLIB_PLIST_FILES=	bin/dwg2ps man/man1/dwg2ps.1.gz
 
 PYTHON_CONFIGURE_OFF=	--disable-python
 

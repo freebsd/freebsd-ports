@@ -15,7 +15,6 @@ lib/libredwg.so.0.0.10
 libdata/pkgconfig/libredwg.pc
 man/man1/dwg2SVG.1.gz
 man/man1/dwg2dxf.1.gz
-man/man1/dwg2ps.1.gz
 man/man1/dwgbmp.1.gz
 man/man1/dwggrep.1.gz
 man/man1/dwglayers.1.gz
