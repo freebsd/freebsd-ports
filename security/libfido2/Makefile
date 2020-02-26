@@ -21,6 +21,8 @@ USES=		cmake compiler pkgconfig ssl
 CFLAGS+=	-D_WITH_GETLINE -DUSE_HIDAPI
 LDFLAGS+=	-lcrypto -lusbhid
 
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
