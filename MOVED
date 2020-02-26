@@ -14387,3 +14387,5 @@ multimedia/cinelerra-gg||2020-02-22|Has expired: Broken, uses EOLed python27
 x11-toolkits/py-gnome2||2020-02-22|Has expired: Broken, uses EOLed python27
 devel/py-dialog3|devel/py-pythondialog|2020-02-25|Renamed to reflect PyPI name
 devel/rubygem-health_check26-rails5|devel/rubygem-health_check26-rails60|2020-02-26|Obsolete, please use devel/rubygem-health_check26-rails60 instead
+devel/rubygem-health_check26-rails52|devel/rubygem-health_check26-rails60|2020-02-26|Obsolete, please use devel/rubygem-health_check26
+-rails60 instead
