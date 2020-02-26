@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 
-USES=		cmake dos2unix pkgconfig qt:5 tar:bzip2
+USES=		cmake compiler:c++11-lang dos2unix pkgconfig qt:5 tar:bzip2
 DOS2UNIX_FILES=	main.cpp
 USE_QT=		buildtools_build qmake_build core gui widgets
 
