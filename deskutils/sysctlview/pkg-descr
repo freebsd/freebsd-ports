@@ -1,3 +1,6 @@
-sysctlview is a gtk frontend for the sysctl mib.
+The sysctlview utility is a graphical sysctl MIB explorer,
+each object represents a parameter of the kernel.
+The sysctlview explorer shows the properties of an object
+and can get or set its value.
 
 WWW: https://gitlab.com/alfix/sysctlview/
