@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-02-26 22:07:21 UTC
++++ Makefile
+@@ -2,7 +2,7 @@
+ # quark - simple web server
+ .POSIX:
+ 
+-include config.mk
++#include config.mk
+ 
+ COMPONENTS = util sock http resp
+ 
