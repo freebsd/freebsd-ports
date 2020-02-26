@@ -42,8 +42,6 @@ lib/libtestshade.so
 lib/libtestshade.so.1.10
 lib/libtestshade.so.%%LIBVERS%%
 lib/osl.imageio.so
-lib/osl.imageio.so.1.10
-lib/osl.imageio.so.%%LIBVERS%%
 %%DATADIR%%/shaders/MaterialX/mx_absval_color.osl
 %%DATADIR%%/shaders/MaterialX/mx_absval_color.oso
 %%DATADIR%%/shaders/MaterialX/mx_absval_color2.osl
