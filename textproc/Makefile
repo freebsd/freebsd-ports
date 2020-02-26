@@ -1344,6 +1344,7 @@
     SUBDIR += py-python-slugify
     SUBDIR += py-python-xmp-toolkit
     SUBDIR += py-pytidylib
+    SUBDIR += py-pytoml
     SUBDIR += py-pyx12
     SUBDIR += py-qrcode
     SUBDIR += py-qt5-xml
