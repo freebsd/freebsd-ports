@@ -1,0 +1,34 @@
+From dfb8f72b2237627b26767d1e803e8ed95ad659d2 Mon Sep 17 00:00:00 2001
+From: Wolfgang Breyha <wbreyha@gmx.net>
+Date: Tue, 7 Jan 2020 13:03:18 +0000
+Subject: [PATCH 19/21] SPF: fix result for case of only non-spf TXT RRs.  Bug
+ 2499
+
+(cherry picked from commit 67794d2b830fc580f87b0635718d95e32b467be1)
+---
+ src/spf.c              |  7 ++++++-
+ test/scripts/4600-SPF/4601 | 17 ++++++++---------
+ test/stdout/4601           | 11 ++++++-----
+ 3 files changed, 20 insertions(+), 15 deletions(-)
+
+diff --git src/spf.c src/spf.c
+index 8ead817b9..12b756b46 100644
+--- src/spf.c
++++ src/spf.c
+@@ -139,7 +139,12 @@ for (dns_record * rr = dns_next_rr(dnsa, &dnss, RESET_ANSWERS); rr;
+     srr.rr[found++] = (void *) s;
+     }
+ 
+-srr.num_rr = found;
++/* Did we filter out all TXT RRs? Return NO_DATA instead of SUCCESS with
++empty ANSWER section. */
++
++if (!(srr.num_rr = found))
++  srr.herrno = NO_DATA;
++
+ /* spfrr->rr must have been malloc()d for this */
+ SPF_dns_rr_dup(&spfrr, &srr);
+ return spfrr;
+-- 
+2.24.1
+

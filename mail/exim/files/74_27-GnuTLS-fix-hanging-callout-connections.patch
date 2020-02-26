@@ -1,0 +1,70 @@
+From 26b045604bd574a6d93868ed437c08503c67d289 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Thu, 13 Feb 2020 16:52:52 +0000
+Subject: [PATCH 27/27] GnuTLS: fix hanging callout connections
+
+Broken-by: 925ac8e4f1
+Cherry-picked from: bd95ffc2ba
+---
+ doc/ChangeLog |  5 +++++
+ src/tls-gnu.c     | 11 +++++++----
+ 2 files changed, 12 insertions(+), 4 deletions(-)
+
+diff --git doc/ChangeLog doc/ChangeLog
+index 97fe878dc..d9833c8e1 100644
+--- doc/ChangeLog
++++ doc/ChangeLog
+@@ -69,6 +69,11 @@ JH/24 Bug 2524: fix the cyrus_sasl auth driver gssapi usage.  A previous fix
+       block of data.  Investigation showed the copy to actually be needless, the
+       data being length-specified.
+ 
++JH/25 Fix use of concurrent TLS connections under GnuTLS.  When a callout was
++      done during a receiving connection, and both used TLS, global info was
++      used rather than per-connection info for tracking the state of data
++      queued for transmission.  This could result in a connection hang.
++
+ 
+ Exim version 4.93
+ -----------------
+diff --git src/tls-gnu.c src/tls-gnu.c
+index fc426a251..574dcafd9 100644
+--- src/tls-gnu.c
++++ src/tls-gnu.c
+@@ -181,6 +181,10 @@ typedef struct exim_gnutls_state {
+   BOOL			peer_dane_verified;
+   BOOL			trigger_sni_changes;
+   BOOL			have_set_peerdn;
++#ifdef SUPPORT_CORK
++  BOOL			corked:1;
++#endif
++
+   const struct host_item *host;		/* NULL if server */
+   gnutls_x509_crt_t	peercert;
+   uschar		*peerdn;
+@@ -3309,9 +3313,8 @@ ssize_t outbytes;
+ size_t left = len;
+ exim_gnutls_state_st * state = ct_ctx ? ct_ctx : &state_server;
+ #ifdef SUPPORT_CORK
+-static BOOL corked = FALSE;
+ 
+-if (more && !corked) gnutls_record_cork(state->session);
++if (more && !state->corked) gnutls_record_cork(state->session);
+ #endif
+ 
+ DEBUG(D_tls) debug_printf("%s(%p, " SIZE_T_FMT "%s)\n", __FUNCTION__,
+@@ -3352,10 +3355,10 @@ if (len > INT_MAX)
+   }
+ 
+ #ifdef SUPPORT_CORK
+-if (more != corked)
++if (more != state->corked)
+   {
+   if (!more) (void) gnutls_record_uncork(state->session, 0);
+-  corked = more;
++  state->corked = more;
+   }
+ #endif
+ 
+-- 
+2.24.1
+
