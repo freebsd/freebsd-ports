@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	libwacom
-PORTVERSION=	0.32
 DISTVERSIONPREFIX=libwacom-
-PORTREVISION=	1
+DISTVERSION=	1.2
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	c70cb56f1670.patch:-p1 # https://github.com/linuxwacom/libwacom/pull/216
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Adds tablet support to libinput
@@ -13,13 +15,12 @@ COMMENT=	Adds tablet support to libinput
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libgudev-1.0.so:devel/libgudev
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxwacom
 
-USES=		autoreconf gettext-runtime gmake gnome libtool localbase \
+USES=		autoreconf gettext-runtime gmake gnome libtool \
 		pkgconfig pathfix tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
