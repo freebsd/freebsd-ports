@@ -1,6 +1,5 @@
 bin/libwacom-list-local-devices
 include/libwacom-1.0/libwacom/libwacom.h
-lib/libwacom.a
 lib/libwacom.so
 lib/libwacom.so.2
 lib/libwacom.so.2.6.1

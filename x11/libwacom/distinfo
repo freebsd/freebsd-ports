@@ -1,5 +1,5 @@
 TIMESTAMP = 1577051129
 SHA256 (linuxwacom-libwacom-libwacom-1.2_GH0.tar.gz) = 102fd9c8a9ae30d76003ed58df0fb349625d49697c7c7c4e1aacf85d58039f9f
 SIZE (linuxwacom-libwacom-libwacom-1.2_GH0.tar.gz) = 110520
-SHA256 (c70cb56f1670.patch) = b4699568234c4ba6696ebcd8b3a56b950285bc9db4b03fb68c31c6e1aea20d1b
-SIZE (c70cb56f1670.patch) = 820
+SHA256 (bb3aa6bd57c3.patch) = 1537641da75342469e1160b586e8790c4387ed989186dec00b5f45779b6b831b
+SIZE (bb3aa6bd57c3.patch) = 3896
