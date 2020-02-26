@@ -4,6 +4,7 @@
 PORTNAME=	libwacom
 PORTVERSION=	0.32
 DISTVERSIONPREFIX=libwacom-
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -26,6 +27,7 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-printf "%P\\n"/-print0 | xargs -0 basename/' ${WRKSRC}/data/Makefile.am
+	@${REINPLACE_CMD} -e 's/-printf "%P\\n"/-print0 | xargs -0 basename/' \
+		${WRKSRC}/data/Makefile.am ${WRKSRC}/data/layouts/Makefile.am
 
 .include <bsd.port.mk>
