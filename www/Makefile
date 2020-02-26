@@ -2144,7 +2144,6 @@
     SUBDIR += rubygem-wasabi
     SUBDIR += rubygem-webdrivers
     SUBDIR += rubygem-webmock
-    SUBDIR += rubygem-webpack-rails-rails52
     SUBDIR += rubygem-webpack-rails-rails60
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
