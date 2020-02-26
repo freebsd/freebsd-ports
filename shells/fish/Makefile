@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fish
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.1.0
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/fish-shell/fish-shell/releases/download/${PORTVERSION}/
 
@@ -31,9 +30,9 @@ OPTIONS_DEFAULT=	MANPAGES DOCS NLS
 OPTIONS_DEFINE=	MANPAGES DOCS NLS
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS+=	doxygen:devel/doxygen
-MANPAGES_BUILD_DEPENDS+=	doxygen:devel/doxygen
-MANPAGES_USES=		groff:run
+MAKE_JOBS_UNSAFE=yes	# sphinx stuff seems to be racy
+DOCS_BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
+MANPAGES_BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
 NLS_USES=		gettext
 NLS_CMAKE_BOOL=		WITH_GETTEXT
 
