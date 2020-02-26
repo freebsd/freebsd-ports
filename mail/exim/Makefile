@@ -106,7 +106,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Local-sa-exim.conf
 EXIM_VERSION=	4.93.0.4
 SA_EXIM_VERSION=4.2.1
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
-EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name '74_*.patch'`
+EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name '74_*.patch'|${SORT} -h`
 
 .if !defined(EXIMON_ONLY)
 PLIST_SUB+=	EXIM=""
