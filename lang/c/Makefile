@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	c
-PORTVERSION=	0.11
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.11
 CATEGORIES=	lang
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to compile and run C programs like a shell script
 
 LICENSE=	MIT
@@ -14,9 +14,10 @@ RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ryanmjacobs
-NO_BUILD=	yes
-
 SHEBANG_FILES=	c
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
