@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	poi
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 CATEGORIES=	textproc devel java
 MASTER_SITES=	APACHE/${PORTNAME}/release/bin
 PKGNAMEPREFIX=	apache-
@@ -20,7 +20,7 @@ CPE_VENDOR=	apache
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
-RELEASE_DATE=	20191023
+RELEASE_DATE=	20200217
 JARNAMES=	examples excelant scratchpad ooxml ooxml-schemas
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
