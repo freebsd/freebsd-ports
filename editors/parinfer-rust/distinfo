@@ -1,4 +1,4 @@
-TIMESTAMP = 1578199850
+TIMESTAMP = 1582486536
 SHA256 (rust/crates/aho-corasick-0.7.3.tar.gz) = e6f484ae0c99fec2e858eb6134949117399f222608d84cadb3f58c1f97c2364c
 SIZE (rust/crates/aho-corasick-0.7.3.tar.gz) = 55093
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -177,5 +177,5 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SHA256 (rust/crates/wincolor-1.0.1.tar.gz) = 561ed901ae465d6185fa7864d63fbd5720d0ef718366c9a4dc83cf6170d7e9ba
 SIZE (rust/crates/wincolor-1.0.1.tar.gz) = 4737
-SHA256 (eraserhd-parinfer-rust-v0.4.2_GH0.tar.gz) = 5eba5ea5c6536fdbdab74187a6b277b31bcc3018b98bea1221b9360b9547134f
-SIZE (eraserhd-parinfer-rust-v0.4.2_GH0.tar.gz) = 288256
+SHA256 (eraserhd-parinfer-rust-v0.4.3_GH0.tar.gz) = 752fd8eaa8c0c314c69b6be3415fbc4103f5ef9d1ad01a8b792545bfaff2d201
+SIZE (eraserhd-parinfer-rust-v0.4.3_GH0.tar.gz) = 288013
