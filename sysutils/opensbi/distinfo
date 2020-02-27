@@ -1,3 +1,3 @@
-TIMESTAMP = 1571500133
-SHA256 (riscv-opensbi-v0.5_GH0.tar.gz) = bc82f1e63663cafb7976b324d8a01263510cfd816063dc89e0ccffb9763fb1dd
-SIZE (riscv-opensbi-v0.5_GH0.tar.gz) = 138745
+TIMESTAMP = 1582555902
+SHA256 (riscv-opensbi-v0.6_GH0.tar.gz) = 46a93afd5465eba094ddba40015e754bf09f9e80e0702c00013d6bdb3ecd0a72
+SIZE (riscv-opensbi-v0.6_GH0.tar.gz) = 148351
