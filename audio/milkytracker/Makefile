@@ -14,8 +14,8 @@ LICENSE=	GPLv3+ BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 
-BROKEN_powerpc=		Does not build on powerpc
-BROKEN_powerpc64=	Does not build on powerpc64
+BROKEN_powerpc=		Does not build on powerpc: src/ppui/fastfill.h:42:15: error: invalid operand for instruction
+BROKEN_powerpc64=	Does not build on powerpc64: src/ppui/fastfill.h:42:15: error: invalid operand for instruction
 
 LIB_DEPENDS=	liblhasa.so:archivers/lhasa \
 		libzzip.so:devel/zziplib \
