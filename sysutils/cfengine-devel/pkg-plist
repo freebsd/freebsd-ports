@@ -2,6 +2,7 @@ bin/cf-agent
 bin/cf-check
 bin/cf-execd
 bin/cf-key
+bin/cf-keycrypt
 bin/cf-monitord
 bin/cf-net
 bin/cf-promises
