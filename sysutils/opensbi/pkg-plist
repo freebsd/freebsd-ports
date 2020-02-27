@@ -6,7 +6,6 @@ include/sbi/riscv_encoding.h
 include/sbi/riscv_fp.h
 include/sbi/riscv_io.h
 include/sbi/riscv_locks.h
-include/sbi/riscv_unpriv.h
 include/sbi/sbi_bitops.h
 include/sbi/sbi_bits.h
 include/sbi/sbi_console.h
@@ -17,9 +16,11 @@ include/sbi/sbi_emulate_csr.h
 include/sbi/sbi_error.h
 include/sbi/sbi_fifo.h
 include/sbi/sbi_hart.h
+include/sbi/sbi_hfence.h
 include/sbi/sbi_illegal_insn.h
 include/sbi/sbi_init.h
 include/sbi/sbi_ipi.h
+include/sbi/sbi_list.h
 include/sbi/sbi_misaligned_ldst.h
 include/sbi/sbi_platform.h
 include/sbi/sbi_scratch.h
@@ -29,11 +30,13 @@ include/sbi/sbi_timer.h
 include/sbi/sbi_tlb.h
 include/sbi/sbi_trap.h
 include/sbi/sbi_types.h
+include/sbi/sbi_unpriv.h
 include/sbi/sbi_version.h
 include/sbi_utils/irqchip/plic.h
 include/sbi_utils/serial/sifive-uart.h
 include/sbi_utils/serial/uart8250.h
 include/sbi_utils/sys/clint.h
+include/sbi_utils/sys/htif.h
 lib/libsbi.a
 lib/libsbiutils.a
 %%QEMU_VIRT%%%%DATADIR%%/platform/qemu/virt/firmware/fw_dynamic.bin
@@ -54,3 +57,10 @@ lib/libsbiutils.a
 %%SIFIVE_FU540%%%%DATADIR%%/platform/sifive/fu540/firmware/payloads/test.bin
 %%SIFIVE_FU540%%%%DATADIR%%/platform/sifive/fu540/firmware/payloads/test.elf
 %%SIFIVE_FU540%%%%DATADIR%%/platform/sifive/fu540/lib/libplatsbi.a
+%%SPIKE%%%%DATADIR%%/platform/spike/firmware/fw_jump.bin
+%%SPIKE%%%%DATADIR%%/platform/spike/firmware/fw_jump.elf
+%%SPIKE%%%%DATADIR%%/platform/spike/firmware/fw_payload.bin
+%%SPIKE%%%%DATADIR%%/platform/spike/firmware/fw_payload.elf
+%%SPIKE%%%%DATADIR%%/platform/spike/firmware/payloads/test.bin
+%%SPIKE%%%%DATADIR%%/platform/spike/firmware/payloads/test.elf
+%%SPIKE%%%%DATADIR%%/platform/spike/lib/libplatsbi.a
