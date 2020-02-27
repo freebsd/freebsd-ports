@@ -2,7 +2,7 @@
 
 PORTNAME=	lazygit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.4
+DISTVERSION=	0.15.5
 CATEGORIES=	devel
 
 MAINTAINER=	meta@FreeBSD.org
@@ -33,7 +33,7 @@ GH_TUPLE=	\
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		integrii:flaggy:v1.4.0:integrii_flaggy/vendor/github.com/integrii/flaggy \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
-		jesseduffield:gocui:57fdcf23edc5:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
+		jesseduffield:gocui:5024a02682ed:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
 		jesseduffield:pty:v1.2.1:jesseduffield_pty/vendor/github.com/jesseduffield/pty \
 		jesseduffield:termbox-go:1d31d1faa3c9:jesseduffield_termbox_go/vendor/github.com/jesseduffield/termbox-go \
 		kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
