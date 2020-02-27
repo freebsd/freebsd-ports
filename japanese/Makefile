@@ -217,6 +217,7 @@
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += prn
+    SUBDIR += py-jaconv
     SUBDIR += py-mecab
     SUBDIR += py-tegaki
     SUBDIR += py-tegaki-gtk
