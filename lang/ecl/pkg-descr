@@ -3,4 +3,4 @@ language as described in the X3J13 ANSI specification, featuring CLOS
 (Common-Lisp Object System), conditions, loops, etc, plus a translator
 to C, which can produce standalone executables.
 
-WWW: https://sourceforge.net/projects/ecls/
+WWW: https://common-lisp.net/project/ecl/main.html
