@@ -85,6 +85,7 @@ share/wxMaxima/matrixCells.wxm
 share/wxMaxima/multiplication.wxm
 share/wxMaxima/nonsenseConstructs.wxm
 share/wxMaxima/parenthesisCells.wxm
+share/wxMaxima/presubsupcells.wxm
 share/wxMaxima/printf_continuationLines.wxm
 share/wxMaxima/printf_equations.wxm
 share/wxMaxima/printf_simple.wxm
