@@ -2,30 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	sxiv
-PORTVERSION=	25
 DISTVERSIONPREFIX=	v
+DISTVERSION=	26
 CATEGORIES=	graphics
 
-MAINTAINER=	solene@bsd.zplay.eu
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Lightweight image viewer
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libexif.so:graphics/libexif \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libgif.so:graphics/giflib \
-		libImlib2.so:graphics/imlib2
+		libImlib2.so:graphics/imlib2 \
+		libinotify.so:devel/libinotify
 
-USES=		gmake localbase:ldflags pkgconfig xorg
+USES=		desktop-file-utils gmake localbase:ldflags pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	muennich
 USE_XORG=	x11 xft
 
-PLIST_FILES=	bin/sxiv \
-		man/man1/sxiv.1.gz \
-		share/sxiv/exec/image-info \
-		share/sxiv/exec/key-handler
+MAKE_ARGS=	PREFIX=${PREFIX}
+MAKE_ENV=	LDLIBS=-linotify
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sxiv
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} -C ${WRKSRC}/icon install
+	${INSTALL_DATA} ${WRKSRC}/sxiv.desktop ${STAGEDIR}${DESKTOPDIR}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sxiv
 
 .include <bsd.port.mk>
