@@ -1,7 +1,15 @@
-radcli is a library for writing RADIUS clients. It aims to allow writing
-a RADIUS-aware application in less than 50 lines of code. It is based on the
-freeradius-client library, but legacy code has been removed; IPv6 support,
-pkg-config, TLS/DTLS, and API documentation have been added. It remains
-source compatible with radiusclient-ng and freeradius-client.
+The radcli library is a library for writing RADIUS Clients. The library's
+approach is to allow writing RADIUS-aware application in less than 50 lines of C
+code.
+
+The freeradius-client library was undocumented, had too much legacy code
+centered around radlogin, a tool which is of no significance today, was
+IPv4-only and had no releases for several years.
+
+This library addresses these shortcomings, adds package management via
+pkg-config, adds support for TCP, TLS and DTLS, provides documentation of the
+API, and will include any new features for the task. It is provided as a shared
+library in case it is useful to other projects as well, and is also made source
+compatible with radiusclient-ng and freeradius-client.
 
 WWW: https://radcli.github.io/radcli/
