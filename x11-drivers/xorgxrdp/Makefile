@@ -3,7 +3,7 @@
 PORTNAME=	xorgxrdp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
 DIST_SUBDIR=	xrdp
 
@@ -27,10 +27,21 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-I${LOCALBASE}/include
-LIBS=		-I${LOCALBASE}/lib
+LIBS=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=	XRDP_CFLAGS=-I${WRKSRC_xrdp}/common
 
-OPTIONS_DEFINE=	DEBUG
+OPTIONS_DEFINE=	DEBUG DRI3
+OPTIONS_DEFAULT=	DRI3
+
+DRI3_DESC=	DRI3/Glamor OpenGL Support
+DRI3_CONFIGURE_ENABLE=	glamor
+DRI3_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDRI3}
+SUB_FILES=	pkg-message
+.endif
 
 post-patch-DEBUG-on:
 	${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|#define LOG_LEVEL [0-9]*|#define LOG_LEVEL 20|'
@@ -38,4 +49,4 @@ post-patch-DEBUG-on:
 pre-configure:
 	@cd ${WRKSRC} && ./bootstrap
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

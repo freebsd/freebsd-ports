@@ -1,0 +1,39 @@
+[
+{ type: install
+  message: <<EOM
+
+xorgxrdp supports hardware acceleration as well as usual xorg-server.
+To configure hardware acceleration, follow the following steps.
+
+1. Install drm-kmod
+    # pkg install drm-kmod
+
+2. Configure to load kernel module (either one of the following)
+    # sysrc kld_list="/boot/modules/i915kms.ko"
+    # sysrc kld_list="/boot/modules/amdgpu.ko"
+    # sysrc kld_list="/boot/modules/radeonkms.ko"
+
+3. Ensure users who login via xrdp are member of the "video" group
+    # pw groupmod video -m username|| pw groupmod wheel -m username
+
+4. Edit /etc/X11/xrdp/xorg.conf to fit your environment
+   "/dev/dri/renderD128" might be different depending on your environment.
+
+   Find the following line and change it to the actual path.
+    Option "DRMDevice" "/dev/dri/renderD128"
+
+5. Restart your system and login via xrdp
+
+See also the Wiki page for detailed instructions:
+  https://wiki.freebsd.org/Graphics#Hardware_Support
+
+
+If hardware acceleration is properly configured, you will see logs like the
+following in ~/.local/share/xorg/Xorg.10.log. 10 can be replaced with display
+number.
+
+    "glamor X acceleration enabled on Mesa DRI Intel(R) Ivybridge Desktop"
+
+EOM
+}
+]
