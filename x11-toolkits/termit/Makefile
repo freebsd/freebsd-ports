@@ -15,6 +15,7 @@ LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libgnutls.so:security/gnutls
 
 USES=		cmake gnome lua:53+ pkgconfig xorg
+USE_CSTD=	c99
 USE_XORG=	x11
 USE_GNOME=	cairo gdkpixbuf2 gtk30 vte3
 
