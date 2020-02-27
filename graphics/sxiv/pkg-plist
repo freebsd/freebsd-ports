@@ -1,0 +1,10 @@
+bin/sxiv
+share/applications/sxiv.desktop
+share/icons/hicolor/128x128/apps/sxiv.png
+share/icons/hicolor/16x16/apps/sxiv.png
+share/icons/hicolor/32x32/apps/sxiv.png
+share/icons/hicolor/48x48/apps/sxiv.png
+share/icons/hicolor/64x64/apps/sxiv.png
+share/man/man1/sxiv.1.gz
+share/sxiv/exec/image-info
+share/sxiv/exec/key-handler
