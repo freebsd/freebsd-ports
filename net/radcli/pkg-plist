@@ -1,7 +1,7 @@
-@sample %%ETCDIR%%/radiusclient-tls.conf.sample
-@sample %%ETCDIR%%/radiusclient.conf.sample
-@sample %%ETCDIR%%/servers-tls.sample
-@sample %%ETCDIR%%/servers.sample
+@sample etc/radcli/radiusclient-tls.conf.sample
+@sample etc/radcli/radiusclient.conf.sample
+@sample etc/radcli/servers-tls.sample
+@sample etc/radcli/servers.sample
 include/radcli/radcli.h
 include/radcli/version.h
 lib/libradcli.a
