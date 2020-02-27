@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bfs
-DISTVERSION=	1.5.2
+DISTVERSION=	1.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -20,10 +20,9 @@ GH_ACCOUNT=	tavianator
 SHEBANG_FILES=	tests.sh tests/*.sh
 TEST_TARGET=	check
 PLIST_FILES=	bin/bfs \
-		man/man1/bfs.1.gz
+		share/man/man1/bfs.1.gz
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bfs ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/bfs.1 ${STAGEDIR}${MANPREFIX}/man/man1
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bfs
 
 .include <bsd.port.mk>
