@@ -1,10 +1,10 @@
 bin/stagit
 bin/stagit-index
-man/man1/stagit-index.1.gz
-man/man1/stagit.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_create.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_post-receive.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/favicon.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/logo.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/style.css
+share/man/man1/stagit-index.1.gz
+share/man/man1/stagit.1.gz
