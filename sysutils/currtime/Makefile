@@ -5,7 +5,7 @@ PORTVERSION=	0.2.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced command-line operated real time clock
 
 LICENSE=	BSD2CLAUSE
