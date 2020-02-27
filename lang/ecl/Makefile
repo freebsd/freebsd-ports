@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ecl
-PORTVERSION=	15.3.7
-PORTREVISION=	5
+PORTVERSION=	16.1.3
 CATEGORIES=	lang lisp
-MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/15.3/
+MASTER_SITES=	https://common-lisp.net/project/ecl/static/files/release/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	ANSI Common Lisp implementation
@@ -27,11 +26,10 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	ASDF CLX DFFI SOCKETS THREADS
+OPTIONS_DEFINE=	ASDF DFFI SOCKETS THREADS X11
 OPTIONS_DEFAULT=ASDF DFFI SOCKETS THREADS
 
 ASDF_DESC=	Enable ASDF building facility
-CLX_DESC=	Enable X11 interface
 SOCKETS_DESC=	Enable socket interface
 DFFI_DESC=	Dynamic foreign-function support
 
@@ -41,10 +39,10 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 ASDF_CONFIGURE_ON=	--with-asdf=yes
 ASDF_CONFIGURE_OFF=	--with-asdf=no
 
-CLX_USES=		xorg
-CLX_USE=		XORG=x11
-CLX_CONFIGURE_ON=	--with-clx=yes
-CLX_CONFIGURE_OFF=	--with-clx=no
+X11_USES=		xorg
+X11_USE=		XORG=x11
+X11_CONFIGURE_ON=	--with-x=yes
+X11_CONFIGURE_OFF=	--with-x=no
 
 SOCKETS_CONFIGURE_ON=	--with-tcp=yes
 SOCKETS_CONFIGURE_OFF=	--with-tcp=no
@@ -64,5 +62,6 @@ post-patch-THREADS-on:
 
 post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/include/ecl/gc/private
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libecl.so.${PORTVERSION}
 
 .include <bsd.port.mk>
