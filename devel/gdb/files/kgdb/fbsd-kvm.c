@@ -331,6 +331,28 @@ fbsd_kvm_target_open (const char *args, int from_tty)
 	discard_cleanups(old_chain);
 	unpush_target(&fbsd_kvm_ops);
 
+#ifdef HAVE_KVM_DISP
+	/* Relocate kernel objfile if needed. */
+	if (symfile_objfile &&
+	    (bfd_get_file_flags(symfile_objfile->obfd) &
+	      (EXEC_P | DYNAMIC)) != 0) {
+		struct section_offsets *new_offsets;
+		int i;
+		CORE_ADDR displacement;
+
+		displacement = kvm_kerndisp(nkvm);
+		if (displacement != 0) {
+			new_offsets = XALLOCAVEC (struct section_offsets,
+				symfile_objfile->num_sections);
+
+			for (i = 0; i < symfile_objfile->num_sections; i++)
+				new_offsets->offsets[i] = displacement;
+
+			objfile_relocate(symfile_objfile, new_offsets);
+		}
+	}
+#endif
+
 	/*
 	 * Determine the first address in KVA.  Newer kernels export
 	 * VM_MAXUSER_ADDRESS and the first kernel address can be

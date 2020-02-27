@@ -199,13 +199,16 @@ index 5614cc3386..b9acc63c3f 100644
  
  # All the .deps files to include.
 diff --git gdb/config.in gdb/config.in
-index ea907d2b56..ee9146fd4e 100644
+index ea907d2b56..1019e448c5 100644
 --- gdb/config.in
 +++ gdb/config.in
-@@ -219,6 +219,9 @@
+@@ -219,6 +219,12 @@
  /* Define to 1 if your system has the kinfo_getvmmap function. */
  #undef HAVE_KINFO_GETVMMAP
  
++/* Define to 1 if your system has the kvm_kerndisp function. */
++#undef HAVE_KVM_DISP
++
 +/* Define to 1 if your system has the kvm_open2 function. */
 +#undef HAVE_KVM_OPEN2
 +
@@ -213,17 +216,17 @@ index ea907d2b56..ee9146fd4e 100644
  #undef HAVE_LANGINFO_CODESET
  
 diff --git gdb/configure gdb/configure
-index 854837c50a..1f2da364cf 100755
+index 854837c50a..df64effa90 100755
 --- gdb/configure
 +++ gdb/configure
-@@ -8107,6 +8107,66 @@ $as_echo "#define HAVE_KINFO_GETFILE 1" >>confdefs.h
+@@ -8107,6 +8107,126 @@ $as_echo "#define HAVE_KINFO_GETFILE 1" >>confdefs.h
  fi
  
  
 +# kgdb needs kvm_open2 for cross-debugging
 +{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing kvm_open2" >&5
 +$as_echo_n "checking for library containing kvm_open2... " >&6; }
-+if test "${ac_cv_search_kvm_open2+set}" = set; then :
++if ${ac_cv_search_kvm_open2+:} false; then :
 +  $as_echo_n "(cached) " >&6
 +else
 +  ac_func_search_save_LIBS=$LIBS
@@ -257,11 +260,11 @@ index 854837c50a..1f2da364cf 100755
 +fi
 +rm -f core conftest.err conftest.$ac_objext \
 +    conftest$ac_exeext
-+  if test "${ac_cv_search_kvm_open2+set}" = set; then :
++  if ${ac_cv_search_kvm_open2+:} false; then :
 +  break
 +fi
 +done
-+if test "${ac_cv_search_kvm_open2+set}" = set; then :
++if ${ac_cv_search_kvm_open2+:} false; then :
 +
 +else
 +  ac_cv_search_kvm_open2=no
@@ -280,14 +283,74 @@ index 854837c50a..1f2da364cf 100755
 +fi
 +
 +
++# kgdb needs kvm_kerndisp for relocatable kernels
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for library containing kvm_kerndisp" >&5
++$as_echo_n "checking for library containing kvm_kerndisp... " >&6; }
++if ${ac_cv_search_kvm_kerndisp+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_func_search_save_LIBS=$LIBS
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char kvm_kerndisp ();
++int
++main ()
++{
++return kvm_kerndisp ();
++  ;
++  return 0;
++}
++_ACEOF
++for ac_lib in '' kvm; do
++  if test -z "$ac_lib"; then
++    ac_res="none required"
++  else
++    ac_res=-l$ac_lib
++    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++  fi
++  if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_search_kvm_kerndisp=$ac_res
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext
++  if ${ac_cv_search_kvm_kerndisp+:} false; then :
++  break
++fi
++done
++if ${ac_cv_search_kvm_kerndisp+:} false; then :
++
++else
++  ac_cv_search_kvm_kerndisp=no
++fi
++rm conftest.$ac_ext
++LIBS=$ac_func_search_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_search_kvm_kerndisp" >&5
++$as_echo "$ac_cv_search_kvm_kerndisp" >&6; }
++ac_res=$ac_cv_search_kvm_kerndisp
++if test "$ac_res" != no; then :
++  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
++
++$as_echo "#define HAVE_KVM_DISP 1" >>confdefs.h
++
++fi
++
++
  
        if test "X$prefix" = "XNONE"; then
      acl_final_prefix="$ac_default_prefix"
 diff --git gdb/configure.ac gdb/configure.ac
-index 1527585839..37e8ce54b0 100644
+index 1527585839..7ff0361e69 100644
 --- gdb/configure.ac
 +++ gdb/configure.ac
-@@ -511,6 +511,11 @@ AC_SEARCH_LIBS(kinfo_getfile, util util-freebsd,
+@@ -511,6 +511,16 @@ AC_SEARCH_LIBS(kinfo_getfile, util util-freebsd,
    [AC_DEFINE(HAVE_KINFO_GETFILE, 1,
              [Define to 1 if your system has the kinfo_getfile function. ])])
  
@@ -295,6 +358,11 @@ index 1527585839..37e8ce54b0 100644
 +AC_SEARCH_LIBS(kvm_open2, kvm,
 +  [AC_DEFINE(HAVE_KVM_OPEN2, 1,
 +            [Define to 1 if your system has the kvm_open2 function. ])])
++
++# kgdb needs kvm_kerndisp for relocatable kernels
++AC_SEARCH_LIBS(kvm_kerndisp, kvm,
++  [AC_DEFINE(HAVE_KVM_DISP, 1,
++            [Define to 1 if your system has the kvm_kerndisp function. ])])
 +
  AM_ICONV
  
