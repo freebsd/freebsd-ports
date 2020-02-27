@@ -4,4 +4,4 @@ This is an actively maintained fork of Chris (defunkt) Wanstrath's gem colored
 This fork comes with a slightly spruced up syntax, some additional features,
 and a test suite written in RSpec.
 
-WWW: http://rubygems.org/gems/colored2
+WWW: https://rubygems.org/gems/colored2
