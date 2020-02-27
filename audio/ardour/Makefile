@@ -13,7 +13,7 @@ COMMENT=	Multichannel digital audio workstation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build
+BROKEN_powerpc64=	Does not build: KeyError: 'soundtouch'
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libaubio.so:audio/aubio \
