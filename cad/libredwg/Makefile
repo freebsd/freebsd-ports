@@ -3,6 +3,7 @@
 
 PORTNAME=	libredwg
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	cad devel
 MASTER_SITES=	GNU
 
@@ -20,14 +21,18 @@ TEST_TARGET=	check
 INFO=		LibreDWG
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
-OPTIONS_DEFINE=	DOCS PSLIB PYTHON
-OPTIONS_DEFAULT=	PSLIB
+OPTIONS_DEFINE=	DOCS PCRE PSLIB PYTHON
+OPTIONS_DEFAULT=	PCRE PSLIB
+PCRE_DESC=	Regular expressions support in dwggrep
 PSLIB_DESC=	PostScript export support (dwg2ps)
 
+PCRE_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+PCRE_USES=		localbase
+PCRE_CONFIGURE_ENV_OFF=	ac_cv_lib_pcre2_8_pcre2_config_8=no
+
 PSLIB_LIB_DEPENDS=	libps.so:print/pslib
-# XXX: shall `localbase' be put on global USES, it would require explicit
-# PSLIB_CONFIGURE_ENV_OFF=	ac_cv_lib_ps_PS_open_file=no
 PSLIB_USES=		localbase
+PSLIB_CONFIGURE_ENV_OFF=	ac_cv_lib_ps_PS_open_file=no
 PSLIB_PLIST_FILES=	bin/dwg2ps man/man1/dwg2ps.1.gz
 
 PYTHON_CONFIGURE_OFF=	--disable-python
