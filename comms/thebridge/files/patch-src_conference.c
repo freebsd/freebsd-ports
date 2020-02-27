@@ -1,5 +1,5 @@
---- src/conference.c.orig	2013-01-03 21:44:25.000000000 -0500
-+++ src/conference.c	2013-01-03 21:44:51.000000000 -0500
+--- src/conference.c.orig	2012-12-09 19:21:01 UTC
++++ src/conference.c
 @@ -784,7 +784,7 @@
  #include "ilink.h"
  #include "sf.h"
