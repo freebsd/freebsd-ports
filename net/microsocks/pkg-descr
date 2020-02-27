@@ -1,5 +1,4 @@
-MicroSocks is a SOCKS5 service that you can run on your remote boxes
-to tunnel connections through them, if for some reason SSH does not
-cut it for you.
+MicroSocks is a SOCKS5 service that you can run on your remote boxes to tunnel
+connections through them, if for some reason SSH doesn't cut it for you.
 
 WWW: https://github.com/rofl0r/microsocks
