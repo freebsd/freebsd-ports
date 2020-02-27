@@ -1,6 +1,6 @@
---- configure.in.orig	2013-01-03 19:17:41.000000000 -0500
-+++ configure.in	2013-01-03 19:18:21.000000000 -0500
-@@ -84,5 +84,5 @@
+--- configure.in.orig	2012-12-10 05:57:10 UTC
++++ configure.in
+@@ -84,5 +84,5 @@ AC_DEFINE_UNQUOTED(OUR_HOST,"${host}",
  [Set to a text string describing your operating system and hardware])
  
  AC_OUTPUT(Makefile src/Makefile common/Makefile inc/Makefile tbdcmd/Makefile 

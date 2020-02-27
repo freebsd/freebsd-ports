@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-12-10 01:05:20.000000000 -0500
-+++ Makefile.in	2013-01-03 20:39:17.000000000 -0500
-@@ -253,7 +253,7 @@
+--- Makefile.in.orig	2012-12-10 06:05:20 UTC
++++ Makefile.in
+@@ -253,7 +253,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
