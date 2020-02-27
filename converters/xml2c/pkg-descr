@@ -1,4 +1,8 @@
-xml2c reads in an XML file and produces equivalent C source code,
-suitable for #including in your program.
+xml2c reads in an XML file and produces equivalent C source code, suitable for
+#including in your program. The C version is probably easier deal with in your
+code. You don't have to read and parse the XML file and then look for the nodes
+you want; instead you just loop through a bunch of structs. Or maybe you just
+don't want to distribute extra files with your app, and would rather build them
+into the executable.
 
-WWW: http://www.acme.com/software/xml2c/
+WWW: https://acme.com/software/xml2c/
