@@ -10,4 +10,4 @@ be configured to use BSD's /etc/termcap file instead.  This has
 been approved by the old 4.4BSD curses maintainer as the official
 4.4BSD curses successor.
 
-WWW: http://invisible-island.net/ncurses/ncurses.html
+WWW: https://invisible-island.net/ncurses/
