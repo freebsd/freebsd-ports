@@ -1,0 +1,53 @@
+--- meson.build.orig	2020-02-20 14:33:31 UTC
++++ meson.build
+@@ -221,6 +221,10 @@ epoll_shim_dep = (build_machine.system() == 'freebsd'
+     ? dependency('epoll-shim', required: true)
+     : dependency('', required: false))
+ 
++if build_machine.system() == 'freebsd'
++  epoll_shim_dep = dependency('epoll-shim', required: true)
++endif
++
+ subdir('spa')
+ subdir('src')
+ 
+--- spa/plugins/alsa/meson.build.orig	2020-02-20 14:33:31 UTC
++++ spa/plugins/alsa/meson.build
+@@ -10,6 +10,6 @@ spa_alsa_sources = ['alsa.c',
+ spa_alsa = shared_library('spa-alsa',
+                            spa_alsa_sources,
+                            include_directories : [spa_inc],
+-                           dependencies : [ alsa_dep, libudev_dep, mathlib, ],
++                           dependencies : [ alsa_dep, libudev_dep, mathlib, epoll_shim_dep],
+                            install : true,
+                            install_dir : join_paths(spa_plugindir, 'alsa'))
+--- spa/plugins/audiotestsrc/meson.build.orig	2020-02-20 14:33:31 UTC
++++ spa/plugins/audiotestsrc/meson.build
+@@ -3,6 +3,6 @@ audiotestsrc_sources = ['audiotestsrc.c', 'plugin.c']
+ audiotestsrclib = shared_library('spa-audiotestsrc',
+                           audiotestsrc_sources,
+                           include_directories : [spa_inc],
+-                          dependencies : [mathlib, ],
++                          dependencies : [mathlib, epoll_shim_dep],
+                           install : true,
+                           install_dir : join_paths(spa_plugindir, 'audiotestsrc'))
+--- src/modules/meson.build.orig	2020-02-20 14:33:31 UTC
++++ src/modules/meson.build
+@@ -29,7 +29,7 @@ pipewire_module_rtkit = shared_library('pipewire-modul
+   include_directories : [configinc, spa_inc],
+   install : true,
+   install_dir : modules_install_dir,
+-  dependencies : [dbus_dep, mathlib, dl_lib, pipewire_dep],
++  dependencies : [dbus_dep, mathlib, dl_lib, pipewire_dep, epoll_shim_dep],
+ )
+ endif
+ 
+@@ -42,7 +42,7 @@ pipewire_module_client_node = shared_library('pipewire
+   include_directories : [configinc, spa_inc],
+   install : true,
+   install_dir : modules_install_dir,
+-  dependencies : [mathlib, dl_lib, pipewire_dep],
++  dependencies : [mathlib, dl_lib, pipewire_dep, epoll_shim_dep],
+ )
+ 
+ pipewire_module_link_factory = shared_library('pipewire-module-link-factory',

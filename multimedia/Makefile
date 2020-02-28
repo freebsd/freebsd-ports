@@ -312,6 +312,7 @@
     SUBDIR += phonon-vlc
     SUBDIR += photofilmstrip
     SUBDIR += php-pHash
+    SUBDIR += pipewire
     SUBDIR += pitivi
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
