@@ -2,8 +2,7 @@
 
 PORTNAME=	spotify-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
-PORTREVISION=	1
+DISTVERSION=	0.15.0
 CATEGORIES=	audio
 
 MAINTAINER=	vulcan@wired.sh
@@ -25,7 +24,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		arrayvec-0.5.1 \
 		atty-0.2.13 \
 		autocfg-0.1.7 \
-		backtrace-0.3.43 \
+		backtrace-0.3.44 \
 		backtrace-sys-0.1.32 \
 		base64-0.10.1 \
 		base64-0.11.0 \
@@ -50,7 +49,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		core-foundation-sys-0.6.2 \
 		crossbeam-utils-0.6.6 \
 		crossterm-0.14.2 \
-		crossterm-0.15.0 \
+		crossterm-0.16.0 \
 		crossterm_winapi-0.5.1 \
 		crossterm_winapi-0.6.1 \
 		darling-0.9.0 \
@@ -176,7 +175,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		security-framework-sys-0.3.3 \
 		serde-1.0.104 \
 		serde_derive-1.0.104 \
-		serde_json-1.0.47 \
+		serde_json-1.0.48 \
 		serde_urlencoded-0.6.1 \
 		serde_yaml-0.8.11 \
 		signal-hook-0.1.13 \
