@@ -54,3 +54,4 @@ man/man8/pkg.8.gz
 sbin/pkg
 sbin/pkg-static
 share/zsh/site-functions/_pkg
+@dir lib/compat/pkg
