@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	6cord
-DISTVERSION=	9.5
-PORTREVISION=	2
+DISTVERSION=	9.6
 CATEGORIES=	net-im
 
 MAINTAINER=	vulcan@wired.sh
@@ -66,9 +65,11 @@ GH_TUPLE=	BurntSushi:freetype-go:b763ddbfe298:burntsushi_freetype_go/vendor/gith
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	diamondburned
-GL_COMMIT=	0e534fe84bf5430d99309e50b213002ae545a8a1
+GL_COMMIT=	ba5dcdd139d35078f31d957e4fb43f88528a32f5
 GL_TUPLE=	diamondburned:go-w3m:1b390b8a3d1fd142bcaf77a949223cb36ef84cbc:diamondburned_go_w3m/vendor/gitlab.com/diamondburned/go-w3m \
 		diamondburned:ueberzug-go:7c15a5f63b064530b92411f2850d0fc7fe9059ea:diamondburned_ueberzug_go/vendor/gitlab.com/diamondburned/ueberzug-go
+
+GO_BUILDFLAGS=	-tags nokeyring
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME}
@@ -82,12 +83,10 @@ EXAMPLES_DESC=	Install example ${PORTNAME} configuration file
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} \
-		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} \
-		${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
