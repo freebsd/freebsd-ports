@@ -8,7 +8,7 @@ CATEGORIES=	databases devel
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNATS, the GNU Problem Report Management System
 
 BROKEN_mips=		Does not build: error: conflicting types for yy_scan_string
