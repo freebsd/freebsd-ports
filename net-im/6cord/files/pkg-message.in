@@ -17,12 +17,9 @@ and plain-text password. You will no longer need to provide the '-t' (token), 'u
 (username) or '-p' (password) flag when starting 6cord, depending on the values
 you provided in the configuration.
 
-Alternatively, you can use the GNOME keyring (if applicable to you) and the token
-will be stored securely. This can be used by running 6cord without any arguments.
-
 For more information, read the full help-page by running:
 
-6cord -t
+6cord -h
 
 Or by going to the repo at:
 

@@ -1,4 +1,4 @@
-TIMESTAMP = 1575641662
+TIMESTAMP = 1582825526
 SHA256 (BurntSushi-freetype-go-b763ddbfe298_GH0.tar.gz) = 0c24b0d8afa6970de8a4550e71d0facb6bf29d0a5bda5e8ca471436d3b82e20e
 SIZE (BurntSushi-freetype-go-b763ddbfe298_GH0.tar.gz) = 397398
 SHA256 (BurntSushi-graphics-go-b43f31a4a966_GH0.tar.gz) = c56fddcf47ce0ceb235ed4c197440767ff0ef22d5ca2e36286c277b51ce472c1
@@ -97,8 +97,8 @@ SHA256 (valyala-fasttemplate-v1.1.0_GH0.tar.gz) = 5f337a17ad5ac414c4ac4779860a49
 SIZE (valyala-fasttemplate-v1.1.0_GH0.tar.gz) = 7229
 SHA256 (zalando-go-keyring-62750a1ff80d_GH0.tar.gz) = e1742255abd0a1f1852e5e8076fdc2bf3d5775b6335f208fe76968190c44a3e8
 SIZE (zalando-go-keyring-62750a1ff80d_GH0.tar.gz) = 9516
-SHA256 (diamondburned-6cord-0e534fe84bf5430d99309e50b213002ae545a8a1_GL0.tar.gz) = 17862c172b6c10daac4ae01e0732b94a0ce42acbe124a5ea06286e5ea53e9364
-SIZE (diamondburned-6cord-0e534fe84bf5430d99309e50b213002ae545a8a1_GL0.tar.gz) = 546923
+SHA256 (diamondburned-6cord-ba5dcdd139d35078f31d957e4fb43f88528a32f5_GL0.tar.gz) = 7d60ba2d2d7620c158ae2527957ea8fecaa44210af218aed9bb6dc5612c47538
+SIZE (diamondburned-6cord-ba5dcdd139d35078f31d957e4fb43f88528a32f5_GL0.tar.gz) = 547086
 SHA256 (diamondburned-go-w3m-1b390b8a3d1fd142bcaf77a949223cb36ef84cbc_GL0.tar.gz) = a6954be27d42948b778e6dd292d15b3c37f48add69046f4015d5c336fcf4f076
 SIZE (diamondburned-go-w3m-1b390b8a3d1fd142bcaf77a949223cb36ef84cbc_GL0.tar.gz) = 538561
 SHA256 (diamondburned-ueberzug-go-7c15a5f63b064530b92411f2850d0fc7fe9059ea_GL0.tar.gz) = dcf62f5f0a8c3e68e3f197d0781a8c35644f996c5f9dd90a4f3f429874ca2607
