@@ -2,7 +2,7 @@
 
 PORTNAME=	wlroots
 DISTVERSION=	0.10.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -22,7 +22,8 @@ LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libwayland-egl.so:graphics/wayland \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	libudev-devd>=0.4.1:devel/libudev-devd
+RUN_DEPENDS=	libudev-devd>=0.4.1:devel/libudev-devd \
+		mesa-dri>0:graphics/mesa-dri
 
 USES=		compiler:c11 gl meson pkgconfig xorg
 USE_GITHUB=	yes
