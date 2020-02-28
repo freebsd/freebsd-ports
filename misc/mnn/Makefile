@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mnn
-DISTVERSION=	0.2.1.7
-PORTREVISION=	1
+DISTVERSION=	0.2.1.8
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,6 +32,9 @@ CXXFLAGS+=	-fPIC
 CMAKE_ARGS+=	-DMNN_USE_AVX:BOOL=OFF \
 		-DMNN_USE_SSE:BOOL=OFF
 .endif
+
+pre-build: # https://github.com/alibaba/MNN/issues/648
+	@cd ${WRKSRC}/schema && ./generate.sh
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
