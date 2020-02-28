@@ -4,6 +4,7 @@
 PORTNAME=	code_saturne
 PORTVERSION=	6.0.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	science parallel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -59,8 +60,6 @@ PARMETIS_CONFIGURE_ON=	--with-metis-include="${LOCALBASE}/include/parmetis"	\
 			--with-metis-lib="${LOCALBASE}/lib/parmetis"
 PARMETIS_CONFIGURE_ENV=	LIBS=-lexecinfo
 
-CGNS2FIX=	preprocessor/pre-post/ecs_pre_cgns.c src/fvm/fvm_to_cgns.c
-
 TEST_TARGET=	check
 
 .if defined(PACKAGE_BUILDING)
@@ -102,9 +101,6 @@ pre-configure:
 		-o ${WRKSRC}/src/mei/mei_parser.c ${WRKSRC}/src/mei/mei_parser.y
 	${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|'	\
 		${WRKSRC}/Makefile.am
-.for f in ${CGNS2FIX}
-	${REINPLACE_CMD} -e 's|3400|3402|' ${WRKSRC}/${f}
-.endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
