@@ -3,4 +3,4 @@ This is a variant of the Flex fast lexical scanner. Flex was written in the earl
 it conforms to ANSI C. It includes other improvements, but remains compatible with
 Paxson's 2.5.4 release (as well as POSIX lex). See the NEWS file for details.
 
-WWW: http://invisible-island.net/reflex/reflex.html
+WWW: https://invisible-island.net/reflex/
