@@ -3,4 +3,4 @@ version delegates to LuaSocket the TCP connection establishment between the
 client and server. Then LuaSec uses this connection to start a secure TLS/SSL
 session.
 
-WWW: http://www.inf.puc-rio.br/~brunoos/luasec/
+WWW: https://github.com/brunoos/luasec
