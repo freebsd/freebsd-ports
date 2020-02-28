@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cgnslib
-PORTVERSION=	3.4.1
+PORTVERSION=	4.0.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	science
@@ -50,7 +50,7 @@ TOOLS_CMAKE_ON=		-DTCL_INCLUDE_PATH:STRING="${TCL_INCLUDEDIR}" \
 			-DTK_INCLUDE_PATH:STRING="${TK_INCLUDEDIR}"
 
 post-install:
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libcgns.so.${PORTVERSION} \
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libcgns.so.${PORTVERSION:R} \
 		${STAGEDIR}${PREFIX}/lib/libcgns.so.${PORTVERSION:R:R}
 
 .include <bsd.port.mk>
