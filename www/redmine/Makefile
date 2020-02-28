@@ -13,6 +13,10 @@ COMMENT=	Flexible project management web application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+DEPRECATED=	EOLed upstream
+# Remove the port before 2020Q3
+EXPIRATION_DATE=	2020-06-25
+
 RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-rails4>=4.2.11.1:www/rubygem-rails4 \
 		rubygem-jquery-rails>=3.1.4:www/rubygem-jquery-rails \
