@@ -3,6 +3,7 @@
 
 PORTNAME=	cloudflare
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Ruby wrapper for the Cloudflare API
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-async-rest>=0.10.0<0.11:www/rubygem-async-rest
+RUN_DEPENDS=	rubygem-async-rest>=0.10.0<1:www/rubygem-async-rest
 
 USES=		gem
 USE_RUBY=	yes
