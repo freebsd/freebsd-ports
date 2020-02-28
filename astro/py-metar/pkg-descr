@@ -8,5 +8,4 @@ temperature, peak wind and sea-level pressure groups. No other regional
 conventions are formally supported, but a large number of variant formats found
 in international reports are accepted.
 
-WWW: https://pypi.org/project/metar/
 WWW: https://github.com/python-metar/python-metar
