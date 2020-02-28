@@ -4,5 +4,4 @@ supports ACID transactions, high availability of reads and writes, strong
 consistency for reads and ancestor queries, and eventual consistency for all
 other queries.
 
-WWW: https://github.com/googleapis/google-cloud-python
-WWW: https://github.com/googleapis/google-cloud-python/tree/master/datastore
+WWW: https://github.com/googleapis/python-datastore
