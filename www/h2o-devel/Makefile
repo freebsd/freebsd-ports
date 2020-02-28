@@ -15,7 +15,8 @@ LICENSE_COMB=	multi
 
 BROKEN_armv6=		fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
 BROKEN_armv7=		fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
-BROKEN_powerpc64=	fails to link: unrecognized option '-Wl,-rpath=/usr/local/lib/gcc6'
+BROKEN_FreeBSD_11_powerpc64=	fails to link on powerpc64 elfv1: unrecognized option '-Wl,-rpath=/usr/local/lib/gcc6'
+BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: unrecognized option '-Wl,-rpath=/usr/local/lib/gcc6'
 
 LIB_DEPENDS=	libuv.so:devel/libuv
 
