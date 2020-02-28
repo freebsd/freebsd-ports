@@ -7,4 +7,4 @@ to as the AWK book.)  mawk conforms to the Posix 1003.2 (draft 11.3) definition
 of the AWK language which contains a few features not described in the AWK
 book, and mawk provides a small number of extensions.
 
-WWW: http://invisible-island.net/mawk
+WWW: https://invisible-island.net/mawk/
