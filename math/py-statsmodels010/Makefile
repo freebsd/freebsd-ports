@@ -23,9 +23,6 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent cython distutils
 
-PORTDOCS=	README.rst README_l1.txt
-PORTEXAMPLES=	*
-
 PORTSCOUT=	limit:^0\.10\.
 
 SHEBANG_GLOB=	*.py
