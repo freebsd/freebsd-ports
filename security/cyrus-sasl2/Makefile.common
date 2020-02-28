@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES+=		gmake
 USE_LDCONFIG=	yes
+USES+=		ssl
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc \
@@ -72,10 +73,6 @@ PLIST_FILES+=	lib/sasl2/lib${CYRUS_BUILD_TARGET}.a \
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ! ${PORT_OPTIONS:MSSL}
-OPENSSLBASE=	/usr
-.endif
 
 .if ${OPENSSLBASE} == /usr
 CONFIGURE_ARGS+=--with-openssl=yes
