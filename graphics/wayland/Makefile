@@ -3,7 +3,7 @@
 
 PORTNAME=	wayland
 PORTVERSION=	1.18.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics wayland
 MASTER_SITES=	https://wayland.freedesktop.org/releases/
 
