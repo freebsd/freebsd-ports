@@ -1,0 +1,40 @@
+--- configure.src.orig	2019-12-06 10:29:10 UTC
++++ configure.src
+@@ -49,7 +49,7 @@ skip_applications=
+ while test $# != 0; do
+     case $1 in
+ 	-srcdir=* | --srcdir=*)
+-	    user_srcdir=`expr "$1" : '[^=]*=\(.*\)'`
++	    user_srcdir=`expr -- "$1" : '[^=]*=\(.*\)'`
+ 	    if test "$ERL_TOP" != ""; then
+ 		echo "WARNING: Overriding ERL_TOP with $user_srcdir" 1>&2
+ 		echo "" 1>&2
+@@ -89,7 +89,7 @@ while test $# != 0; do
+ 	    echo "" 1>&2
+ 	    ;;
+ 	-cache-file=* | --cache-file=* )
+-	    static_cache=`expr "$1" : '[^=]*=\(.*\)'`
++	    static_cache=`expr -- "$1" : '[^=]*=\(.*\)'`
+ 	    if test "$static_cache" != "/dev/null"; then
+ 		echo "WARNING: Only using config cache file '$static_cache' as static cache" 1>&2
+ 		echo "" 1>&2
+@@ -126,8 +126,8 @@ while test $# != 0; do
+ 		mXY_build=
+ 	    fi;;
+ 	CFLAGS=* | LDFLAGS=*)
+-	    flgs_var=`expr "$1" : '\([^=]*\)=.*'`
+-	    flgs_val=`expr "$1" : '[^=]*=\(.*\)'`
++	    flgs_var=`expr -- "$1" : '\([^=]*\)=.*'`
++	    flgs_val=`expr -- "$1" : '[^=]*=\(.*\)'`
+ 	    eval $flgs_var=\$flgs_val
+ 	    ;;
+ 	--help=r* | -help=r*)
+@@ -137,7 +137,7 @@ while test $# != 0; do
+         *)
+ 	    case $1 in
+ 		--without-*)
+-		    skip_app=`expr "$1" : '--without-\(.*\)'`
++		    skip_app=`expr -- "$1" : '--without-\(.*\)'`
+ 		    if test -d "lib/$skip_app"; then
+ 			skip_applications="$skip_applications $skip_app"
+ 		    fi;;
