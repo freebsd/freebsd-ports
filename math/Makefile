@@ -339,6 +339,7 @@
     SUBDIR += libpoly
     SUBDIR += libqalculate
     SUBDIR += libranlip
+    SUBDIR += librdata
     SUBDIR += librsb
     SUBDIR += libtommath
     SUBDIR += libtsnnls
