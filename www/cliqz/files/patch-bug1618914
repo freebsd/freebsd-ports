@@ -1,0 +1,34 @@
+[Wayland] Fall back to ftruncate if posix_fallocate isn't supported by filesystem.
+
+diff --git widget/gtk/WindowSurfaceWayland.cpp widget/gtk/WindowSurfaceWayland.cpp
+index 9a73326399bd5..9e42a7f1c5d18 100644
+--- mozilla-release/widget/gtk/WindowSurfaceWayland.cpp
++++ mozilla-release/widget/gtk/WindowSurfaceWayland.cpp
+@@ -235,23 +235,24 @@
+ #ifdef HAVE_POSIX_FALLOCATE
+   do {
+     ret = posix_fallocate(fd, 0, aSize);
+   } while (ret == EINTR);
+-  if (ret != 0) {
++  if (ret == 0) {
++    return fd;
++  } else if (ret != EINVAL && ret != EOPNOTSUPP) {
+     close(fd);
+     MOZ_CRASH_UNSAFE_PRINTF(
+         "posix_fallocate() fails on %s size %d error code %d\n", filename,
+         aSize, ret);
+   }
+-#else
++#endif
+   do {
+     ret = ftruncate(fd, aSize);
+   } while (ret < 0 && errno == EINTR);
+   if (ret < 0) {
+     close(fd);
+     MOZ_CRASH_UNSAFE_PRINTF("ftruncate() fails on %s size %d error code %d\n",
+                             filename, aSize, ret);
+   }
+-#endif
+ 
+   return fd;
+ }
