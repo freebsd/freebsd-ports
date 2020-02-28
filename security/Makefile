@@ -962,6 +962,7 @@
     SUBDIR += py-python-pam
     SUBDIR += py-python-registry
     SUBDIR += py-python3-openid
+    SUBDIR += py-python3-saml
     SUBDIR += py-pywinrm
     SUBDIR += py-rekall
     SUBDIR += py-rekall-core
