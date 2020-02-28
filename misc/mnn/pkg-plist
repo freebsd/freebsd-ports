@@ -1,5 +1,6 @@
 include/MNN/AutoTime.hpp
 include/MNN/ErrorCode.hpp
+include/MNN/expr/Executor.hpp
 include/MNN/HalideRuntime.h
 include/MNN/ImageProcess.hpp
 include/MNN/Interpreter.hpp
