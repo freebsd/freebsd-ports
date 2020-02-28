@@ -1,0 +1,5 @@
+Add SAML support to your Python software using this library. Forget those
+complicated libraries and use the open source library provided and supported by
+OneLogin Inc.
+
+WWW: https://github.com/onelogin/python3-saml
