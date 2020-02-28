@@ -1,13 +1,11 @@
---- Gemfile.orig	2019-10-19 09:33:33 UTC
+--- Gemfile.orig	2020-02-25 14:28:07 UTC
 +++ Gemfile
-@@ -2,9 +2,9 @@ source 'https://rubygems.org'
- 
+@@ -3,8 +3,8 @@ source 'https://rubygems.org'
  gem "bundler", ">= 1.5.0"
  
--gem "rails", "5.2.3"
+ gem "rails", "5.2.4.1"
 -gem "rouge", "~> 3.3.0"
 -gem "request_store", "1.0.5"
-+gem "rails", "5.2.4.1"
 +gem "rouge", "~> 3.12.0"
 +gem "request_store", ">= 1.0.5"
  gem "mini_mime", "~> 1.0.1"
@@ -84,7 +82,7 @@
 -
 -group :test do
 -  gem "rails-dom-testing"
--  gem "mocha"
+-  gem 'mocha', '>= 1.4.0'
 -  gem "simplecov", "~> 0.14.1", :require => false
 -  # For running system tests
 -  gem 'puma', '~> 3.7'
