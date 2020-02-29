@@ -1,5 +1,0 @@
-The ZeroMQ module is a wrapper of the 0MQ message passing library for Perl.
-It's a thin wrapper around the C API. Please read http://zeromq.org for more
-details on ZeroMQ.
-
-WWW: https://metacpan.org/release/ZeroMQ
