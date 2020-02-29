@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zsh-syntax-highlighting
-DISTVERSION=	0.6.0-243
-DISTVERSIONSUFFIX=	-g82cf252
+DISTVERSION=	0.7.1
 PORTEPOCH=	1
 CATEGORIES=	shells
 
@@ -14,11 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 
 RUN_DEPENDS=	zsh>=5.4:shells/zsh
 
-NO_ARCH=	yes
-NO_BUILD=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	zsh-users
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
