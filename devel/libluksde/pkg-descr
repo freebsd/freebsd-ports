@@ -1,0 +1,3 @@
+Library and tools to access LUKS Disk Encryption encrypted volumes.
+
+WWW: https://github.com/libyal/libluksde
