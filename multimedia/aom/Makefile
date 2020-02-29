@@ -5,6 +5,7 @@ DISTVERSIONPREFIX=	v
 # XXX Switch to release after https://bugs.chromium.org/p/aomedia/issues/detail?id=2545
 DISTVERSION=	1.0.0-3149
 DISTVERSIONSUFFIX=	-gb43603d76
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -28,7 +29,7 @@ CMAKE_OFF=	ENABLE_DOCS ENABLE_TESTS
 OPTIONS_DEFINE=	VMAF
 
 VMAF_DESC=		Encoding tuning for VMAF
-VMAF_BUILD_DEPENDS=	${LOCALBASE}/lib/libvmaf.a:multimedia/vmaf
+VMAF_LIB_DEPENDS=	libvmaf.so:multimedia/vmaf
 VMAF_USES=		localbase:ldflags
 VMAF_CMAKE_ON=		-DCONFIG_TUNE_VMAF:STRING=1
 

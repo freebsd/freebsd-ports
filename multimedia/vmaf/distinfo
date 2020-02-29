@@ -1,3 +1,5 @@
-TIMESTAMP = 1567967754
-SHA256 (Netflix-vmaf-v1.3.15_GH0.tar.gz) = 43bbb484102c4d976da4a10d896fb9a11838c8aa809e9c017d5b3edb225b528d
-SIZE (Netflix-vmaf-v1.3.15_GH0.tar.gz) = 68124392
+TIMESTAMP = 1582903763
+SHA256 (Netflix-vmaf-v1.5.1_GH0.tar.gz) = 9267b40223ac8d67fb6b99726ce7ed3925b9843f18ad5aa8ffbe2fe873e45cbe
+SIZE (Netflix-vmaf-v1.5.1_GH0.tar.gz) = 69737692
+SHA256 (16e2321c3bf9.patch) = 75c4605c4764326b7d442f8df7511228f5a9ba2ca35cfcbd4fc34c02d747f702
+SIZE (16e2321c3bf9.patch) = 1101
