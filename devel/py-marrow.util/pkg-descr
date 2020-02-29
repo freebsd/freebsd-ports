@@ -1,0 +1,15 @@
+Marrow Utilities Collection
+
+This package contains many commonly reimplemented utility classes and functions
+covering the following major areas:
+ - attribute, partial/subset, case-insensitive, and multi-value dicts
+ - py3k source compatibility (without using 2to3)
+ - string to rich datatype conversion of bools, simple arrays, and complex
+   keyword/tag parsing
+ - rich OOP helpers: nested list flattening, a NoDefault implementation,
+   dot-notation object loading, and a LRU cache
+ - path manipulation
+ - UTC, universal time constants, english to numerical month and DotW
+   conversion, and date field range constants
+
+WWW: https://github.com/marrow/util
