@@ -3,7 +3,7 @@
 
 PORTNAME=	x265
 PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265/downloads/ \
 		https://downloads.videolan.org/pub/videolan/x265/ \
@@ -39,7 +39,7 @@ OPTIMIZED_FLAGS_VARS=	CFLAGS+=-O3
 SVTHEVC_LIB_DEPENDS=	libSvtHevcEnc.so:multimedia/svt-hevc
 SVTHEVC_CMAKE_BOOL=	ENABLE_SVT_HEVC
 SVTHEVC_CMAKE_ON=	-DSVT_HEVC_INCLUDE_DIR:PATH="${LOCALBASE}/include/svt-hevc"
-VMAF_BUILD_DEPENDS=	${LOCALBASE}/lib/libvmaf.a:multimedia/vmaf
+VMAF_LIB_DEPENDS=	libvmaf.so:multimedia/vmaf
 VMAF_USES=		localbase:ldflags
 VMAF_CMAKE_BOOL=	ENABLE_LIBVMAF
 

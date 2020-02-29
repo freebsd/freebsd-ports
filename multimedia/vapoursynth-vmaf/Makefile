@@ -2,6 +2,7 @@
 
 PORTNAME=	vmaf
 DISTVERSION=	r6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	vapoursynth-
 
@@ -11,8 +12,8 @@ COMMENT=	Video Multi-Method Assessment Fusion plugin for VapourSynth
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vapoursynth/VSHelper.h:multimedia/vapoursynth \
-		${LOCALBASE}/lib/libvmaf.a:multimedia/vmaf
+BUILD_DEPENDS=	${LOCALBASE}/include/vapoursynth/VSHelper.h:multimedia/vapoursynth
+LIB_DEPENDS=	libvmaf.so:multimedia/vmaf
 
 USES=		compiler:c++17-lang meson pkgconfig
 USE_GITHUB=	yes
