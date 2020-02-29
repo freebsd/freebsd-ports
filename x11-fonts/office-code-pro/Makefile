@@ -22,7 +22,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Fonts/*/TTF/*.ttf ${STAGEDIR}${FONTSDIR}
 
-	cd ${STAGEDIR}/${PREFIX} && \
-		${FIND} ${FONTSDIR:S|^${PREFIX}/||} -type f >> ${TMPPLIST}
-
 .include <bsd.port.mk>
