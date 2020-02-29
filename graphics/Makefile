@@ -845,7 +845,6 @@
     SUBDIR += py-pyganim
     SUBDIR += py-pygeoapi
     SUBDIR += py-pyglet
-    SUBDIR += py-pyglet12
     SUBDIR += py-pygooglechart
     SUBDIR += py-pygraphviz
     SUBDIR += py-pyinsane2
