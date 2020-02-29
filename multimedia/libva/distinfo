@@ -1,6 +1,12 @@
 TIMESTAMP = 1579259667
 SHA256 (intel-libva-2.6.1_GH0.tar.gz) = 965f581e096508ece26ea9bef8bd769e93f9d1fe6840e309cc925cfef35ad13f
 SIZE (intel-libva-2.6.1_GH0.tar.gz) = 228850
+SHA256 (7eec6f8ffb39.patch) = 588258fbdcd26d12094eaf1d797535b9beeeac3f3e7c621d0f4d63af3e46c3e0
+SIZE (7eec6f8ffb39.patch) = 2760
+SHA256 (04acc7860feb.patch) = 8dd3a11b2ff799c6bbd8d0d3f551afa1c6eecedd8ad053d2a7ec0743ed93ed2b
+SIZE (04acc7860feb.patch) = 911
+SHA256 (48f446b32a4f.patch) = 4c87a23a78ec0a07e046aa7cd8b7906ef00ee60a7e1dfb0f74cff913f9dda276
+SIZE (48f446b32a4f.patch) = 1456
 SHA256 (c2a431cc3cab.patch) = d749a839b168529d2c424ffa78bd8859eebd831a5dfd50e8cdd1fc760907a232
 SIZE (c2a431cc3cab.patch) = 835
 SHA256 (5cfcd31635b1.patch) = 16344b56bf7e4bbc8a572183adbfd346d92d54d70a87dc6f30bae2ee946ccc84
