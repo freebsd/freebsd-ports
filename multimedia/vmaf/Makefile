@@ -6,7 +6,7 @@ DISTVERSION=	1.5.1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	16e2321c3bf9.patch:-p2 # https://github.com/Netflix/vmaf/pull/511
+PATCHFILES+=	ea25229433f7.patch:-p2
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Perceptual video quality assessment based on multi-method fusion
