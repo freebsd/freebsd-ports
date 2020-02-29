@@ -1240,6 +1240,7 @@
     SUBDIR += liblouis
     SUBDIR += liblpm
     SUBDIR += libltdl
+    SUBDIR += libluksde
     SUBDIR += liblxqt
     SUBDIR += libmaa
     SUBDIR += libmatheval
