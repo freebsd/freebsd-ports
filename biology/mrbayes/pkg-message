@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+If MrBayes core dumps with "illegal hardware instruction (core dumped) mb", then
+it should be built on the target system.
+EOM
+}
+]

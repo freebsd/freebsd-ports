@@ -1,0 +1,15 @@
+bin/mb
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/MBDating.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Manual_MrBayes_v3.2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/hym.nex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/avian_ovomucoids.nex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/codon.nex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cynmix.nex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/finch.nex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hymfossil.nex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/primates.nex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/replicase.nex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sceloporus.nex

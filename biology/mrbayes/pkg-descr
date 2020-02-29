@@ -8,4 +8,4 @@ impossible to calculate analytically; instead, MrBayes uses a simulation
 technique called Markov chain Monte Carlo (or MCMC) to approximate the
 posterior probabilities of trees.
 
-WWW: http://mrbayes.csit.fsu.edu/
+WWW: http://nbisweden.github.io/MrBayes/
