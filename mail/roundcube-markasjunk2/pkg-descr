@@ -1,8 +1,0 @@
-This plugin adds "mark as spam" or "mark as not spam" button to the message
-menu.  When not in the Junk mailbox, messages are moved into the Junk mailbox
-and marked as read.  When in the Junk mailbox, the buttons are changed to "mark
-as not spam" or "this message is not spam" and the message is moved to the
-Inbox.  The learning driver allows you to perform additional processing on each
-message marked as spam/ham.
-
-WWW: https://github.com/JohnDoh/Roundcube-Plugin-Mark-as-Junk-2
