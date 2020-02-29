@@ -1,6 +1,6 @@
-TIMESTAMP = 1582390153
-SHA256 (netdata-go.d.plugin-v0.15.0_GH0.tar.gz) = 5bc89dfe527545bb5b8086aac5e9856b49e8db1690aae46d20582902efe33fe4
-SIZE (netdata-go.d.plugin-v0.15.0_GH0.tar.gz) = 453540
+TIMESTAMP = 1582982258
+SHA256 (netdata-go.d.plugin-v0.16.0_GH0.tar.gz) = 4c63407d67af8863ab7879932a9049c8b3b3e6cd5aa4d1fc4c671d3405dc97d6
+SIZE (netdata-go.d.plugin-v0.16.0_GH0.tar.gz) = 475514
 SHA256 (Wing924-ltsv-v0.3.1_GH0.tar.gz) = b20c4ed0b836044bd59bbf5ecde4afc1b6eda3879652e8485e42ea5f7db8c087
 SIZE (Wing924-ltsv-v0.3.1_GH0.tar.gz) = 10327
 SHA256 (axiomhq-hyperloglog-a4c4c47bc57f_GH0.tar.gz) = 44eaed28df5f20bbd66e5f0599013ba2a9ab7ff04877e36808fdac729293297a
