@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-mgmt-keyvault
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msrest>=0.5.0:net-mgmt/py-msrest@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}msrestazure>=0.4.32:net-mgmt/py-msrestazure@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-common>=1.1:www/py-azure-common@${PY_FLAVOR}
 
-USES=		azurepy python zip
+USES=		azurepy python:3.5+ zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
