@@ -22,6 +22,7 @@ CPE_VENDOR=	nlnetlabs
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-dane-ta-usage \
 			--with-ssl=${OPENSSLBASE}
+MAKE_JOBS_UNSAFE=	yes
 
 .if ! (defined(BUILD_PYLDNS) || defined(BUILD_P5PERL))
 OPTIONS_DEFINE=		DOXYGEN DRILL EXAMPLES
