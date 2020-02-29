@@ -38,6 +38,7 @@ USES=		cpe gettext gmake gnome libtool localbase:ldflags perl5 \
 		pkgconfig python shebangfix iconv
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+USE_PYTHON=	py3kplist
 HAS_CONFIGURE=	yes
 # Set ARCH=x86_64 in order to overwrite the environment ARCH=amd64
 MAKE_ARGS=	clang=y ARCH=x86_64
