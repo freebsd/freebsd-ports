@@ -567,11 +567,9 @@
     SUBDIR += roundcube-html5_notifier
     SUBDIR += roundcube-identity_smtp
     SUBDIR += roundcube-login_info
-    SUBDIR += roundcube-markasjunk2
     SUBDIR += roundcube-mobilecube
     SUBDIR += roundcube-mvision2
     SUBDIR += roundcube-sauserprefs
-    SUBDIR += roundcube-sieverules
     SUBDIR += roundcube-thunderbird_labels
     SUBDIR += roundcube-umich
     SUBDIR += roundcube-veximaccountadmin
