@@ -189,6 +189,7 @@
     SUBDIR += py-wxPython28
     SUBDIR += py-wxPython28-common
     SUBDIR += py-wxPython30
+    SUBDIR += py-wxPython40
     SUBDIR += py-xlib
     SUBDIR += pypy-tkinter
     SUBDIR += qml-box2d

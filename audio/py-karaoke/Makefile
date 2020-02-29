@@ -3,7 +3,7 @@
 
 PORTNAME=	karaoke
 PORTVERSION=	0.7.5
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	audio python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +27,7 @@ SHEBANG_FILES=	install/pykaraoke_mini install/pykar install/pykaraoke \
 		install/pycdg install/pympg
 USE_SDL=	sdl
 USE_XORG=	x11 xau xcb xdmcp
-USE_WX=		3.0+
+USE_WX=		2.8+
 WX_COMPS=	python:lib
 
 USE_PYTHON=	distutils autoplist

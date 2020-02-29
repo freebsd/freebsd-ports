@@ -3,7 +3,7 @@
 
 PORTNAME=	mayavi
 PORTVERSION=	4.5.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +33,7 @@ RUN_DEPENDS=	vtk6>=6.1.0_8:math/vtk6 \
 
 USES=		python:2.7 shebangfix tar:bzip2
 USE_PYTHON=	autoplist distutils
-USE_WX=		2.8+
+USE_WX=		3.0+
 WX_COMPS=	python:run
 SHEBANG_FILES=	mayavi/tests/csv_files/csv_2_py
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	djvusmooth
 DISTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,10 +18,11 @@ BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
 RUN_DEPENDS=	djvulibre>0:graphics/djvulibre \
-		${PYTHON_PKGNAMEPREFIX}python-djvulibre>0:graphics/py-djvulibre@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wxPython30>0:x11-toolkits/py-wxPython30@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}python-djvulibre>0:graphics/py-djvulibre@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext-tools python:2.7
+USE_WX=		3.0
+WX_COMPS=	python:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	jwilk
 USE_PYTHON=	distutils autoplist noflavors
