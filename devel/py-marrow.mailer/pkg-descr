@@ -1,0 +1,12 @@
+Marrow Mailer is a Python library to ease sending emails from your application.
+
+By using Marrow Mailer you can:
+ - Easily construct plain text and HTML emails.
+ - Improve the testability of your e-mail deliveries.
+ - Use different mail delivery management strategies; e.g. immediate, deferred,
+   or even multi-server.
+ - Deliver e-mail through a number of alternative transports including SMTP,
+   Amazon SES, sendmail, or even via direct on-disk mbox/maildir.
+ - Multiple simultaneous configurations for more targeted delivery.
+
+WWW: https://github.com/marrow/mailer
