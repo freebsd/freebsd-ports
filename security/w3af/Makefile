@@ -6,11 +6,14 @@ PORTVERSION=	1.6.49
 PORTREVISION=	9
 CATEGORIES=	security python www
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web Application Attack and Audit Framework
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/GPL
+
+DEPRECATED=	Uses deprecated version of Python
+EXPIRATION_DATE=2020-03-29
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson@${PY_FLAVOR} \
