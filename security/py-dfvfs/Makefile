@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfvfs
-PORTVERSION=	20200121
+PORTVERSION=	20200211
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -20,6 +20,7 @@ RUN_DEPENDS=	libbde>=a:devel/libbde \
 		libfsntfs>=e:devel/libfsntfs \
 		libfvde>=0:sysutils/libfvde \
 		libfwnt>=e:devel/libfwnt \
+		libluksde>=e:devel/libluksde \
 		libqcow>=a:devel/libqcow \
 		libsigscan>=e:devel/libsigscan \
 		libsmdev>=a:devel/libsmdev \
