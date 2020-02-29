@@ -18,15 +18,12 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 
-# Python 2.7,3.5+
-USES=		cpe python
+USES=		cpe python:2.7
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 
 GH_ACCOUNT=	python-${PORTNAME}
 GH_PROJECT=	${PORTNAME:C/p/P/}
-
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pillow
 
 OPTIONS_DEFINE=		FREETYPE JPEG JPEG2000 LCMS OLE PNG TIFF TKINTER WEBP
 OPTIONS_DEFAULT=	FREETYPE JPEG JPEG2000 LCMS OLE PNG TIFF TKINTER WEBP
