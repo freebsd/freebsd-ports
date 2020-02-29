@@ -1,8 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	chamfer
-DISTVERSION=	s20200115
+DISTVERSION=	s20200225
 CATEGORIES=	x11-wm
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	e0af2b0d73ab.patch:-p1 # https://github.com/jaelpark/chamferwm/pull/16
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tiling X11 window manager with Vulkan compositor
@@ -31,7 +34,7 @@ USE_GITHUB=	yes
 USE_XORG=	xcb
 GH_ACCOUNT=	jaelpark
 GH_PROJECT=	${PORTNAME}wm
-GH_TAGNAME=	99ed237
+GH_TAGNAME=	18739f3
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
