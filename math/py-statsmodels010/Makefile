@@ -23,6 +23,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent cython distutils
 
+# statsmodels 0.11.0+ requires Python 3.5+
 PORTSCOUT=	limit:^0\.10\.
 
 SHEBANG_GLOB=	*.py
