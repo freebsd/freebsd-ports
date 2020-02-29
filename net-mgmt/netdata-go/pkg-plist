@@ -1,4 +1,3 @@
-libexec/netdata/plugins.d/god.plugin
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/activemq.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/apache.conf.sample
@@ -35,8 +34,10 @@ libexec/netdata/plugins.d/god.plugin
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/tengine.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/unbound.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/vcsa.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/vernemq.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/vsphere.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/web_log.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/wmi.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/x509check.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/zookeeper.conf.sample
+libexec/netdata/plugins.d/god.plugin
