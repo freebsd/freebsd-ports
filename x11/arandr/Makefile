@@ -2,35 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	arandr
-PORTVERSION=	0.1.9
+PORTVERSION=	0.1.10
 CATEGORIES=	x11 deskutils
-MASTER_SITES=	http://christian.amsuess.com/tools/arandr/files/ \
-		LOCAL/sbz
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Another XRandR GUI
 
 LICENSE=	GPLv3
-
-DEPRECATED=	Old, uses EOLed python27
-EXPIRATION_DATE=	2020-03-15
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0.6:textproc/py-docutils@${PY_FLAVOR}
-RUN_DEPENDS=	xrandr>0:x11/xrandr \
-		${PYTHON_PKGNAMEPREFIX}gtk2>0:x11-toolkits/py-gtk2@${PY_FLAVOR}
+RUN_DEPENDS=	xrandr>0:x11/xrandr
 
-OPTIONS_DEFINE=	DOCS
+USES=		gettext gnome python
+USE_GITLAB=	yes
+GL_COMMIT=	43faec00c0feca3f00b0acbae048de14f02c6d21
+USE_GNOME=	pygobject3
+USE_PYTHON=	distutils noflavors
 
-USE_PYTHON=	distutils
-USES+=		gettext desktop-file-utils python:2.7
+NO_ARCH=	yes
 
 PORTDOCS=	ChangeLog NEWS README TODO
 
-post-patch:
-	${REINPLACE_CMD} -i '' 's#share/man#man#' ${WRKSRC}/${PYSETUP}
+OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
