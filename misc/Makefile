@@ -41,6 +41,7 @@
     SUBDIR += cheat
     SUBDIR += chef
     SUBDIR += chmlib
+    SUBDIR += chrono
     SUBDIR += cinnamon-translations
     SUBDIR += cldr-emoji-annotation
     SUBDIR += clex
