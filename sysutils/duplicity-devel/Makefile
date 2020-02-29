@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	duplicity
-PORTVERSION=	0.8.10
-DISTVERSIONSUFFIX=	fin1558
-PORTREVISION=	2
+PORTVERSION=	0.8.11
+DISTVERSIONSUFFIX=	.1596
 CATEGORIES=	sysutils
 MASTER_SITES=	https://code.launchpad.net/duplicity/0.8-series/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-devel
@@ -33,6 +32,8 @@ CONFLICTS_INSTALL=	duplicity
 SHEBANG_FILES=	bin/duplicity bin/rdiffdir
 
 PORTDOCS=	CHANGELOG COPYING README README-REPO README-LOG
+
+POST_PLIST=	trim-duplicity-testing
 
 OPTIONS_DEFINE=		B2 DOCS FTP FTPS GDOCS NLS S3
 OPTIONS_GROUP=		GPG
@@ -90,5 +91,8 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|g} ${STAGEDIR}${DOCSDIR}
+
+trim-duplicity-testing:
+	@${REINPLACE_CMD} '/\/testing\//d' ${TMPPLIST}
 
 .include <bsd.port.mk>
