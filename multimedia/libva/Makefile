@@ -2,9 +2,12 @@
 
 PORTNAME=	libva
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	04acc7860feb.patch:-p1
+PATCHFILES+=	48f446b32a4f.patch:-p1
 PATCHFILES+=	c2a431cc3cab.patch:-p1 # https://github.com/intel/libva/pull/292
 PATCHFILES+=	5cfcd31635b1.patch:-p1 # https://github.com/intel/libva/pull/292
 PATCHFILES+=	f601fc614d8d.patch:-p1 # https://github.com/intel/libva/pull/363
