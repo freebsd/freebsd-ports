@@ -14395,3 +14395,5 @@ databases/rubygem-peek-pg-rails52|databases/rubygem-peek-pg-rails5|2020-02-29|Ob
 devel/py-rwt|devel/py-pip-run|2020-02-29|Has expired: Superseded by devel/py-pip-run
 graphics/py-pyglet12|graphics/py-pyglet|2020-02-29|Has expired: Use graphics/py-pyglet instead
 net/p5-ZeroMQ||2020-02-29|Has expired: Deprecated by upstream
+mail/roundcube-sieverules||2020-02-29|Included in mail/roundcube
+mail/roundcube-markasjunk2||2020-02-29|Included in mail/roundcube
