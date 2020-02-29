@@ -1,6 +1,5 @@
-pysparklines is a unicode sparkline generation library.
-Python clone of https://github.com/holman/spark
-Takes series data via stdin, command line, or API and prints a sparkline 
-representation. Output is always UTF-8 encoded.
+pysparklines is a unicode sparkline generation library.  Python clone of
+https://github.com/holman/spark. Takes series data via stdin, command line, or
+API and prints a sparkline representation. Output is always UTF-8 encoded.
 
 WWW: https://github.com/RedKrieg/pysparklines
