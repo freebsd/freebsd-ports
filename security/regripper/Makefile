@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	regripper
-PORTVERSION=	2.8.20200104
+PORTVERSION=	2.8.20200220
 CATEGORIES=	security
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	p5-Parse-Win32Registry>=0:devel/p5-Parse-Win32Registry
 USE_GITHUB=	yes
 GH_ACCOUNT=	keydet89
 GH_PROJECT=	RegRipper2.8
-GH_TAGNAME=	ca7a5e8
+GH_TAGNAME=	ee874d5
 
 NO_ARCH=	yes
 NO_BUILD=	yes
