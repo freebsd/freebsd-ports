@@ -3,13 +3,15 @@
 
 PORTNAME=	playonbsd
 PORTVERSION=	4.2.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators games
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Easily install and run Windows software for use with Wine
 
 LICENSE=	GPLv3
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 RUN_DEPENDS=	7z:archivers/p7zip \
 		bash:shells/bash \
@@ -23,21 +25,22 @@ RUN_DEPENDS=	7z:archivers/p7zip \
 		wget:ftp/wget \
 		icotool:graphics/icoutils
 
-OPTIONS_DEFINE=	GECKO MONO
-OPTIONS_DEFAULT=	GECKO MONO
-GECKO_DESC=	Wine-gecko HTML rendering support
-MONO_RUN_DEPENDS=	wine-mono>=4.5.6:emulators/wine-mono
-GECKO_RUN_DEPENDS=	wine-gecko>=2.21:emulators/wine-gecko
-
-ONLY_FOR_ARCHS=	amd64 i386
-
-USES=		python:2.7,run perl5
+USES=		python:2.7,run perl5 shebangfix
 USE_WX=		3.0
 WX_COMPS=	python:run
+SHEBANG_GLOB=	*.py
+SHEBANG_FILES=	bash/expert/* lib/*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PlayOnLinux
 GH_PROJECT=	POL-POM-4
+
+OPTIONS_DEFINE=	GECKO MONO NLS
+OPTIONS_DEFAULT=	GECKO MONO
+GECKO_DESC=	Wine-gecko HTML rendering support
+MONO_RUN_DEPENDS=	wine-mono>=4.5.6:emulators/wine-mono
+GECKO_RUN_DEPENDS=	wine-gecko>=2.21:emulators/wine-gecko
+NLS_USES=	gettext
 
 .include <bsd.port.pre.mk>
 
