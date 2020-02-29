@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200229:
+  AFFECTS: users of textproc/apache-solr
+  AUTHOR: mfechner@FreeBSD.org
+
+  Apache-solr switched to the supported java LTS version 11.
+  Make sure you update the following files accordingly:
+  /usr/local/etc/solr.in.sh (see /usr/local/etc/solr.in.sh.sample)
+  /usr/local/etc/javavm_opts.conf (JAVA_HOME=/usr/local/openjdk11/)
+
 20200225:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache-solr
-PORTVERSION=	8.2.0
+PORTVERSION=	8.4.1
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/lucene/solr/${PORTVERSION}
 DISTNAME=	solr-${PORTVERSION}
@@ -14,11 +14,9 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	bash:shells/bash
 
-CONFLICTS_INSTALL=	apache-solr3-* apache-solr-4* apache-solr-5*
-
 USES=		cpe tar:tgz
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	11+
 JAVA_RUN=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
