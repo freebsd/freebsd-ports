@@ -1,7 +1,3 @@
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/securecookie.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/sessions.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cookieauth.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/application.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/coolmagic/helpers.py
