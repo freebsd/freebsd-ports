@@ -1,8 +1,8 @@
 # Do not bundle libunicorn.so
 
---- setup.py.orig	2019-10-08 02:44:50 UTC
+--- setup.py.orig	2020-02-15 00:22:32 UTC
 +++ setup.py
-@@ -268,11 +268,4 @@ setup(
+@@ -266,11 +266,4 @@ setup(
          'Programming Language :: Python :: 3',
      ],
      requires=['ctypes'],

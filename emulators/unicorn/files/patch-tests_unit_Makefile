@@ -1,10 +1,11 @@
---- tests/unit/Makefile.orig	2019-10-08 02:44:50 UTC
+--- tests/unit/Makefile.orig	2020-02-15 00:22:32 UTC
 +++ tests/unit/Makefile
-@@ -1,7 +1,7 @@
+@@ -1,8 +1,7 @@
  CFLAGS += -Wall -Werror -Wno-unused-function -g
  CFLAGS += -D__USE_MINGW_ANSI_STDIO=1
  CFLAGS += -L ../../ -I ../../include
 -CFLAGS += -L ../../cmocka/src -I ../../cmocka/include
+-CFLAGS += -L /usr/local/lib -I /usr/local/include
 +CFLAGS += -L $(LOCALBASE)/lib -I $(LOCALBASE)/include
  ASFLAGS += --32
  OBJCOPY = objcopy
