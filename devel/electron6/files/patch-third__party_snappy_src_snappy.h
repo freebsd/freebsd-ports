@@ -1,4 +1,4 @@
---- third_party/snappy/src/snappy.h.orig	2020-01-22 18:43:16 UTC
+--- third_party/snappy/src/snappy.h.orig	2019-09-10 10:46:35 UTC
 +++ third_party/snappy/src/snappy.h
 @@ -73,7 +73,7 @@ namespace snappy {
    // Original contents of *output are lost.
