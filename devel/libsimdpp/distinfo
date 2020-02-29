@@ -1,5 +1,3 @@
-TIMESTAMP = 1540875161
-SHA256 (p12tic-libsimdpp-v2.1_GH0.tar.gz) = b0e986b20bef77cd17004dd02db0c1ad9fab9c70d4e99594a9db1ee6a345be93
-SIZE (p12tic-libsimdpp-v2.1_GH0.tar.gz) = 401750
-SHA256 (e71d2ca2d445db627308167cd551d4934af5f4af.patch) = 1fd040dfd913d4710a337a399ec1dc1c3e1b0de7e9e9e8f296464ebb4087f75d
-SIZE (e71d2ca2d445db627308167cd551d4934af5f4af.patch) = 770
+TIMESTAMP = 1583002383
+SHA256 (p12tic-libsimdpp-v2.1-400-g9dac213d_GH0.tar.gz) = 9023999b109ed24a429bc1eb400a715822f5d6917af01a16060daac26f318ecb
+SIZE (p12tic-libsimdpp-v2.1-400-g9dac213d_GH0.tar.gz) = 401705
