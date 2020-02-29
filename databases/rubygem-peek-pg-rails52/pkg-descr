@@ -1,7 +1,0 @@
-Take a peek into the Postgres queries made during your application's requests.
-
-Things this peek view provides:
-- Total number of Postgres queries called during the request
-- The duration of the queries made during the request
-
-WWW: https://github.com/peek/peek-pg

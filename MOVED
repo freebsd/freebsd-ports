@@ -14391,3 +14391,4 @@ devel/rubygem-health_check26-rails52|devel/rubygem-health_check26-rails60|2020-0
 www/rubygem-webpack-rails-rails52|www/rubygem-webpack-rails-rails60|2020-02-26|Obsolete, please use www/rubygem-webpack-rails-rails60 instead
 security/rubygem-doorkeeper43|security/rubygem-doorkeeper|2020-02-26|Obsolete, please use security/rubygem-doorkeeper instead
 www/rubygem-gon-rails52|www/rubygem-gon-rails60|2020-02-26|Obsolete, please use www/rubygem-gon-rails60 instead
+databases/rubygem-peek-pg-rails52|databases/rubygem-peek-pg-rails5|2020-02-29|Obsolete by gitlab-ce upgrade, use databases/rubygem-peek-pg-rails5 instead
