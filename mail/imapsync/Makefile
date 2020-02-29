@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imapsync
-PORTVERSION=	1.882
+PORTVERSION=	1.945
 DISTVERSIONPREFIX=	imapsync-
 CATEGORIES=	mail perl5
 
@@ -14,16 +14,23 @@ LICENSE_NAME=	NO LIMIT PUBLIC LICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	p5-Mail-IMAPClient>0:mail/p5-Mail-IMAPClient \
-		p5-Term-ReadKey>0:devel/p5-Term-ReadKey \
+RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
+		p5-Crypt-OpenSSL-RSA>0:security/p5-Crypt-OpenSSL-RSA \
+		p5-Data-Uniqid>0:devel/p5-Data-Uniqid \
+		p5-File-Copy-Recursive>0:devel/p5-File-Copy-Recursive \
+		p5-File-Tail>0:devel/p5-File-Tail \
+		p5-IO-Socket-INET6>0:net/p5-IO-Socket-INET6 \
+		p5-IO-Socket-SSL>0:security/p5-IO-Socket-SSL \
 		p5-IO-Tee>0:devel/p5-IO-Tee \
+		p5-JSON-WebToken>0:www/p5-JSON-WebToken \
+		p5-Mail-IMAPClient>0:mail/p5-Mail-IMAPClient \
 		p5-Readonly>0:devel/p5-Readonly \
 		p5-Regexp-Common>0:textproc/p5-Regexp-Common \
-		p5-IO-Socket-SSL>0:security/p5-IO-Socket-SSL \
-		p5-Unicode-String>0:converters/p5-Unicode-String \
-		p5-File-Copy-Recursive>0:devel/p5-File-Copy-Recursive \
 		p5-Sys-MemInfo>0:devel/p5-Sys-MemInfo \
-		p5-IO-Socket-INET6>0:net/p5-IO-Socket-INET6
+		p5-Term-ReadKey>0:devel/p5-Term-ReadKey \
+		p5-Test-MockObject>0:devel/p5-Test-MockObject \
+		p5-Unicode-String>0:converters/p5-Unicode-String \
+		p5-libwww>=0:www/p5-libwww
 
 USES=		cpe perl5 tar:tgz shebangfix
 SHEBANG_FILES=	${PORTNAME}
