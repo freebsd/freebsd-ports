@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	arpack-ng
-DISTVERSION=	3.6.3
-PORTREVISION=	4
+DISTVERSION=	3.7.0-49
+DISTVERSIONSUFFIX=	-g35bffac
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,9 +12,10 @@ COMMENT=	Revised Argand library for solving large-scale eigenvalue problems
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libmpich.so:net/mpich # MPI is incremental: it adds the libparpack.so lib, it is a candidate for a sub-package
 
-USES=		autoreconf:build fortran libtool
+USES=		autoreconf fortran libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	opencollab
 GNU_CONFIGURE=	yes
@@ -26,6 +27,8 @@ CONFIGURE_ARGS=	--with-blas="${BLAS}" \
 LDFLAGS+=	-L${LOCALBASE}/lib
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
+
+CONFIGURE_SHELL=	${LOCALBASE}/bin/bash # https://github.com/opencollab/arpack-ng/issues/252
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
