@@ -26,6 +26,12 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	D
+D_DESC=		Blackd HTTP server
+
+D_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.3.2:www/py-aiohttp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiohttp_cors>=0:www/py-aiohttp_cors@${PY_FLAVOR}
+
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
