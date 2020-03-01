@@ -312,10 +312,12 @@ include/fcl/narrowphase/distance_request.h
 include/fcl/narrowphase/distance_result-inl.h
 include/fcl/narrowphase/distance_result.h
 include/fcl/narrowphase/gjk_solver_type.h
-lib/cmake/fcl/fclConfig-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/fcl/fclConfig.cmake
+lib/cmake/fcl/fcl-config-version.cmake
+lib/cmake/fcl/fcl-config.cmake
+lib/cmake/fcl/fcl-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/fcl/fcl-targets.cmake
 lib/libfcl.so
 lib/libfcl.so.0.6
-lib/libfcl.so.0.6.0
+lib/libfcl.so.0.6.1
 libdata/pkgconfig/fcl.pc
 %%DATADIR%%/package.xml
