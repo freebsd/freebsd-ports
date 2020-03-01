@@ -5893,6 +5893,9 @@ lib/python%%XYDOT%%/test/test_importlib/__pycache__/abc.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_importlib/__pycache__/fixtures.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_importlib/__pycache__/fixtures.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_importlib/__pycache__/fixtures.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_importlib/__pycache__/stubs.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_importlib/__pycache__/stubs.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_importlib/__pycache__/stubs.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_importlib/__pycache__/test_abc.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_importlib/__pycache__/test_abc.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_importlib/__pycache__/test_abc.cpython-%%XY%%.pyc
@@ -6160,6 +6163,7 @@ lib/python%%XYDOT%%/test/test_importlib/source/test_file_loader.py
 lib/python%%XYDOT%%/test/test_importlib/source/test_finder.py
 lib/python%%XYDOT%%/test/test_importlib/source/test_path_hook.py
 lib/python%%XYDOT%%/test/test_importlib/source/test_source_encoding.py
+lib/python%%XYDOT%%/test/test_importlib/stubs.py
 lib/python%%XYDOT%%/test/test_importlib/test_abc.py
 lib/python%%XYDOT%%/test/test_importlib/test_api.py
 lib/python%%XYDOT%%/test/test_importlib/test_lazy.py
