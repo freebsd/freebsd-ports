@@ -3,7 +3,7 @@
 
 PORTNAME=	playonbsd
 PORTVERSION=	4.2.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators games
 
 MAINTAINER=	se@FreeBSD.org
@@ -38,8 +38,8 @@ GH_PROJECT=	POL-POM-4
 OPTIONS_DEFINE=	GECKO MONO NLS
 OPTIONS_DEFAULT=	GECKO MONO
 GECKO_DESC=	Wine-gecko HTML rendering support
-MONO_RUN_DEPENDS=	wine-mono>=4.5.6:emulators/wine-mono
-GECKO_RUN_DEPENDS=	wine-gecko>=2.21:emulators/wine-gecko
+MONO_RUN_DEPENDS=	wine-mono>=4.9.4:emulators/wine-mono
+GECKO_RUN_DEPENDS=	wine-gecko>=2.47.1:emulators/wine-gecko
 NLS_USES=	gettext
 
 .include <bsd.port.pre.mk>
