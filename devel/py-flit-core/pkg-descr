@@ -1,0 +1,4 @@
+flit_core provides a PEP 517 build backend for packages using Flit. The only
+public interface is the API specified by PEP 517, at flit_core.buildapi.
+
+WWW: https://github.com/takluyver/flit/tree/master/flit_core
