@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
 SLAVEDIRS=	databases/mysql80-client
 USES=		bison:build cmake:noninja compiler:c++14-lang cpe \
-		libedit localbase ncurses perl5 pkgconfig shebangfix ssl
+		groff:run libedit localbase ncurses perl5 pkgconfig shebangfix ssl
 
 USE_PERL5=	run
 
