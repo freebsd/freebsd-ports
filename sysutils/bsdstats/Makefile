@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	bsdstats
-PORTVERSION=	6.0
-PORTREVISION=	2
+PORTVERSION=	6.2
 CATEGORIES=	sysutils
 DISTFILES=
 
-MAINTAINER=	yuri@FreeBSD.org
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Monthly script for reporting anonymous statistics about your machine
 
 LICENSE=	BSD4CLAUSE
