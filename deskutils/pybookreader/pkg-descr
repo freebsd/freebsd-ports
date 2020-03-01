@@ -1,5 +1,0 @@
-PyBookReader is a program for reading e-books, primarily positioned
-for reading fictionbook2 formatted e-books.
-It uses py-GTK2 as it's GUI toolkit.
-
-WWW: http://pybookreader.narod.ru/

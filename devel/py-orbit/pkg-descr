@@ -1,9 +1,0 @@
-To paraphrase the README:
-
-This is a Python language binding for the ORBit2 CORBA implementation.
-It aims to take advantage of new features found in ORBit2 to make
-language bindings more efficient.  This includes:
-  - Use of ORBit2 type libraries to generate stubs
-  - use of the ORBit_small_invoke_stub() call for operation
-    invocation, which allows for short circuited invocation on local
-    objects.

@@ -133,7 +133,6 @@
     SUBDIR += djvusmooth
     SUBDIR += dmtx-utils
     SUBDIR += drawpile
-    SUBDIR += driconf
     SUBDIR += drm-current-kmod
     SUBDIR += drm-devel-kmod
     SUBDIR += drm-fbsd11.2-kmod
@@ -242,7 +241,6 @@
     SUBDIR += gimp-beautify-plugin
     SUBDIR += gimp-data-extras
     SUBDIR += gimp-gmic-plugin
-    SUBDIR += gimp-help
     SUBDIR += gimp-lensfun-plugin
     SUBDIR += gimp-lqr-plugin
     SUBDIR += gimp-refocus-plugin
@@ -546,7 +544,6 @@
     SUBDIR += mypaint
     SUBDIR += mypaint-brushes
     SUBDIR += nanosvg
-    SUBDIR += nathive
     SUBDIR += netpbm
     SUBDIR += nip2
     SUBDIR += nomacs
@@ -807,7 +804,6 @@
     SUBDIR += py-gizeh
     SUBDIR += py-glewpy
     SUBDIR += py-glfw
-    SUBDIR += py-goocanvas
     SUBDIR += py-gphoto2
     SUBDIR += py-graph-core
     SUBDIR += py-graphviz
@@ -822,7 +818,6 @@
     SUBDIR += py-leather
     SUBDIR += py-mapclassify
     SUBDIR += py-mayavi
-    SUBDIR += py-mcomix
     SUBDIR += py-ming
     SUBDIR += py-mpl-scatter-density
     SUBDIR += py-nwdiag
@@ -1022,7 +1017,6 @@
     SUBDIR += tweeny
     SUBDIR += ufraw
     SUBDIR += uniconvertor
-    SUBDIR += uniconvw
     SUBDIR += unpaper
     SUBDIR += urho3d
     SUBDIR += urt

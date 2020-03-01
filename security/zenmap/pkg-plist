@@ -1,8 +1,0 @@
-bin/ndiff
-bin/zenmap-root
-%%PYTHON_SITELIBDIR%%/ndiff.py
-%%PYTHON_SITELIBDIR%%/ndiff.pyc
-%%PYTHON_SITELIBDIR%%/ndiff.pyo
-man/man1/ndiff.1.gz
-man/man1/zenmap.1.gz
-share/pixmaps/zenmap.png

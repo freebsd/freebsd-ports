@@ -109,7 +109,6 @@
     SUBDIR += gawk
     SUBDIR += gd
     SUBDIR += gedy
-    SUBDIR += gimp-help
     SUBDIR += groff
     SUBDIR += gskk
     SUBDIR += gsuica

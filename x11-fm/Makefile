@@ -25,7 +25,6 @@
     SUBDIR += qtfm
     SUBDIR += rodent
     SUBDIR += rox-filer
-    SUBDIR += sunflower
     SUBDIR += sushi
     SUBDIR += tdfsb
     SUBDIR += thunar

@@ -49,7 +49,6 @@
     SUBDIR += jad
     SUBDIR += jai
     SUBDIR += jakarta-oro
-    SUBDIR += jakarta-regexp
     SUBDIR += jasmin
     SUBDIR += jattach
     SUBDIR += java-cup

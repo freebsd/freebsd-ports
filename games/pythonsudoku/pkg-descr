@@ -1,5 +1,0 @@
-Python Sudoku is a text and graphical program (gtk interface) to create or
-resolve sudokus. It can also print a sudoku (1 or 4 sudokus in each page)
-and write an image (png, jpeg, etc) with a sudoku.
-
-WWW: http://pythonsudoku.sourceforge.net/
