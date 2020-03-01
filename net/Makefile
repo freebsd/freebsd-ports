@@ -435,6 +435,7 @@
     SUBDIR += mailcommon
     SUBDIR += mailimporter
     SUBDIR += malo-firmware-kmod
+    SUBDIR += mcjoin
     SUBDIR += mdns-repeater
     SUBDIR += measurement-kit
     SUBDIR += mediastreamer

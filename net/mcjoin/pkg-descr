@@ -1,0 +1,12 @@
+mcjoin is a very simple and easy-to-use tool to test IPv4 and IPv6
+multicast. It features:
+
+    *   an optional multicast generator (server)
+    *   an end device that can act as a data sink (client)
+    *   supports joining one or more groups:
+        *   ASM (*,G) support
+        *   SSM (S,G) support
+    *   IPv4
+    *   IPv6
+
+WWW: https://github.com/troglobit/mcjoin

@@ -1,0 +1,163 @@
+commit 27657e27db1704fd258139a57ad3312003a6cef9
+Author: Ryan Libby <rlibby@FreeBSD.org>
+Date:   Sun Nov 24 21:33:49 2019 -0800
+
+    Build and run on FreeBSD
+    
+    An assortment of small changes to build and run on FreeBSD.  FreeBSD:
+     - Doesn't have IP_PKTINFO, but does have IP_RECVDSTADDR.
+     - Doesn't have IP_MULTICAST_ALL (and doesn't need to disable it).
+     - Is sensitive about the claimed size of the sockaddr, and has
+       sockaddrs with builtin len fields.
+     - Doesn't export s6_addr32.
+
+--- configure.ac.orig	2019-04-04 07:57:50 UTC
++++ configure.ac
+@@ -10,4 +10,9 @@ AC_PROG_INSTALL
+ 
+ AC_HEADER_STDC
+ 
++AC_CHECK_MEMBERS([struct sockaddr_storage.ss_len], , ,
++[
++#include <sys/socket.h>
++])
++
+ AC_OUTPUT
+--- mcjoin.c.orig	2019-04-04 07:57:50 UTC
++++ mcjoin.c
+@@ -123,6 +123,18 @@ static const char *convert_address(inet_addr_t *ss, ch
+ 	return inet_ntop(AF_INET, &sin->sin_addr, buf, len);
+ }
+ 
++static socklen_t ss_get_len(const struct sockaddr_storage *ss)
++{
++
++#ifdef AF_INET6
++	if (ss->ss_family == AF_INET6)
++		return sizeof(struct sockaddr_in6);
++#endif
++	if (ss->ss_family == AF_INET)
++		return sizeof(struct sockaddr_in);
++	return 0;
++}
++
+ static int alloc_socket(inet_addr_t group)
+ {
+ 	int sd, val, proto;
+@@ -148,15 +160,22 @@ static int alloc_socket(inet_addr_t group)
+ 	if (setsockopt(sd, SOL_SOCKET, SO_REUSEADDR, &val, sizeof(val)))
+ 		ERROR("Failed enabling SO_REUSEADDR: %s", strerror(errno));
+ 
++#if defined(IP_PKTINFO) || !defined(IP_RECVDSTADDR)
+ 	if (setsockopt(sd, SOL_IP, IP_PKTINFO, &val, sizeof(val)))
+ 		ERROR("Failed enabling IP_PKTINFO: %s", strerror(errno));
++#elif defined(IP_RECVDSTADDR)
++	if (setsockopt(sd, IPPROTO_IP, IP_RECVDSTADDR, &val, sizeof(val)))
++		ERROR("Failed enabling IP_RECVDSTADDR: %s", strerror(errno));
++#endif
+ 
+ 	val = 0;
++#ifdef IP_MULTICAST_ALL
+ 	if (setsockopt(sd, proto, IP_MULTICAST_ALL, &val, sizeof(val)))
+ 		ERROR("Failed disabling IP_MULTICAST_ALL: %s", strerror(errno));
++#endif
+ 
+-	if (bind(sd, (struct sockaddr *)&group, sizeof(group))) {
+-		ERROR("Faild binding to socket: %s", strerror(errno));
++	if (bind(sd, (struct sockaddr *)&group, ss_get_len(&group))) {
++		ERROR("Failed binding to socket: %s", strerror(errno));
+ 		close(sd);
+ 		return -1;
+ 	}
+@@ -266,7 +285,7 @@ static void send_mcast(int signo)
+ 
+ 	for (i = 0; i < group_num; i++) {
+ 		struct sockaddr *dest = (struct sockaddr *)&groups[i].grp;
+-		socklen_t len = sizeof(groups[i].grp);
++		socklen_t len = ss_get_len(&groups[i].grp);
+ 
+ 		snprintf(buf, sizeof(buf), "%s%u, MC group %s ... count: %u", MAGIC_KEY, getpid(), groups[i].group, counter++);
+ 		DEBUG("Sending packet on signal %d, msg: %s", signo, buf);
+@@ -275,15 +294,21 @@ static void send_mcast(int signo)
+ 	}
+ }
+ 
+-struct in_pktinfo *find_pktinfo(struct msghdr *msgh)
++struct in_addr *find_dstaddr(struct msghdr *msgh)
+ {
+ 	struct cmsghdr *cmsg;
+ 
+ 	for (cmsg = CMSG_FIRSTHDR(msgh); cmsg; cmsg = CMSG_NXTHDR(msgh, cmsg)) {
+-		if (cmsg->cmsg_level != SOL_IP || cmsg->cmsg_type != IP_PKTINFO)
+-			continue;
+-
+-		return (struct in_pktinfo *)CMSG_DATA(cmsg);
++#if defined(IP_PKTINFO) || !defined(IP_RECVDSTADDR)
++		if (cmsg->cmsg_level == IPPROTO_IP &&
++		    cmsg->cmsg_type == IP_PKTINFO)
++			return &((struct in_pktinfo *)CMSG_DATA(cmsg))->
++			    ipi_addr;
++#elif defined(IP_RECVDSTADDR)
++		if (cmsg->cmsg_level == IPPROTO_IP &&
++		    cmsg->cmsg_type == IP_RECVDSTADDR)
++			return (struct in_addr *)CMSG_DATA(cmsg);
++#endif
+ 	}
+ 
+ 	return NULL;
+@@ -314,7 +339,7 @@ static void progress(void)
+ static ssize_t recv_mcast(int id)
+ {
+ 	struct sockaddr_storage src;
+-	struct in_pktinfo *ipi;
++	struct in_addr *dstaddr;
+ 	struct msghdr msgh;
+ 	struct iovec iov[1];
+ 	ssize_t bytes;
+@@ -336,8 +361,8 @@ static ssize_t recv_mcast(int id)
+ 	if (bytes < 0)
+ 		return -1;
+ 
+-	ipi = find_pktinfo(&msgh);
+-	if (ipi) {
++	dstaddr = find_dstaddr(&msgh);
++	if (dstaddr) {
+ 		char *ptr;
+ 		int pid = 0;
+ 
+@@ -348,7 +373,7 @@ static ssize_t recv_mcast(int id)
+ 
+ 		DEBUG("Count %5zu, our PID %d, sender PID %d, group %s msg: %s", groups[id].count, getpid(), pid, groups[id].group, buf);
+ 		if (pid != getpid()) {
+-			char *dst = inet_ntoa(ipi->ipi_addr);
++			char *dst = inet_ntoa(*dstaddr);
+ 
+ 			if (strcmp(dst, groups[id].group)) {
+ 				ERROR("Packet for group %s received on wrong socket, expected group %s.", dst, groups[id].group);
+@@ -658,9 +683,11 @@ int main(int argc, char *argv[])
+ 			/* Next group ... */
+ #ifdef AF_INET6
+ 			if (strchr(group, ':')) {
+-				step = ntohl(sin6->sin6_addr.s6_addr32[3]);
+-				step++;
+-				sin6->sin6_addr.s6_addr32[3] = htonl(step);
++				memcpy(&step, &sin6->sin6_addr.s6_addr[12],
++				    sizeof(step));
++				step = htonl(ntohl(step) + 1);
++				memcpy(&sin6->sin6_addr.s6_addr[12], &step,
++				    sizeof(step));
+ 				len = sizeof(*sin6);
+ 			} else
+ #endif
+@@ -706,6 +733,11 @@ int main(int argc, char *argv[])
+ 				src->sin_port   = htons(port);
+ 			}
+ 		}
++#ifdef HAVE_STRUCT_SOCKADDR_STORAGE_SS_LEN
++		groups[i].grp.ss_len = ss_get_len(&groups[i].grp);
++		if (groups[i].source)
++			groups[i].src.ss_len = ss_get_len(&groups[i].src);
++#endif
+ 	}
+ 
+ 	/*
