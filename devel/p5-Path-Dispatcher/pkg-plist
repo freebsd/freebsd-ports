@@ -28,6 +28,7 @@
 %%PERL5_MAN3%%/Path::Dispatcher::Rule.3.gz
 %%PERL5_MAN3%%/Path::Dispatcher::Rule::Alternation.3.gz
 %%PERL5_MAN3%%/Path::Dispatcher::Rule::Always.3.gz
+%%PERL5_MAN3%%/Path::Dispatcher::Rule::Chain.3.gz
 %%PERL5_MAN3%%/Path::Dispatcher::Rule::CodeRef.3.gz
 %%PERL5_MAN3%%/Path::Dispatcher::Rule::Dispatch.3.gz
 %%PERL5_MAN3%%/Path::Dispatcher::Rule::Empty.3.gz
