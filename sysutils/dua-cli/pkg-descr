@@ -1,0 +1,9 @@
+Command-line tool for viewing the usage of disk
+space in a given directory on the terminal, or
+with an interactive mode for easy navigation.
+
+It's parallel by default and will max out your
+SSD, providing relevant information as fast as
+possible.
+
+WWW: https://github.com/Byron/dua-cli
