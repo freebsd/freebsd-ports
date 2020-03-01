@@ -56,7 +56,7 @@ include/ibus-1.0/ibusxml.h
 %%GTK3%%lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 lib/libibus-1.0.so
 lib/libibus-1.0.so.5
-lib/libibus-1.0.so.5.0.520
+lib/libibus-1.0.so.5.0.522
 libdata/pkgconfig/ibus-1.0.pc
 %%GTK3%%libexec/ibus-extension-gtk3
 %%GTK3%%libexec/ibus-ui-gtk3
@@ -234,6 +234,8 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%DATADIR%%/setup/main.pyc
 %%DATADIR%%/setup/main.pyo
 %%DATADIR%%/setup/setup.ui
+%%NLS%%share/gettext/its/ibus.its
+%%NLS%%share/gettext/its/ibus.loc
 share/icons/hicolor/16x16/apps/ibus-keyboard.png
 share/icons/hicolor/22x22/apps/ibus-keyboard.png
 share/icons/hicolor/24x24/apps/ibus-keyboard.png
@@ -264,6 +266,7 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%NLS%%share/locale/hi/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/ia/LC_MESSAGES/ibus10.mo
+%%NLS%%share/locale/id/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/it/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/ibus10.mo
@@ -277,6 +280,7 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%NLS%%share/locale/or/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/ibus10.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/ibus10.mo
@@ -286,6 +290,7 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%NLS%%share/locale/ta/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/te/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/tg/LC_MESSAGES/ibus10.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/ibus10.mo
