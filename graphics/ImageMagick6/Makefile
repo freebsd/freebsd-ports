@@ -4,8 +4,8 @@ PORTNAME=	ImageMagick
 DISTVERSION=	6.9.10-90
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
-MASTER_SITES=	http://www.imagemagick.org/download/ \
-		http://www.imagemagick.org/download/legacy/ \
+MASTER_SITES=	https://www.imagemagick.org/download/ \
+		https://www.imagemagick.org/download/releases/ \
 		http://servingzone.com/mirrors/ImageMagick/ \
 		http://mirror.checkdomain.de/imagemagick/ \
 		http://imagemagick.spd.co.il/ \
