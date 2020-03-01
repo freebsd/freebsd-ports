@@ -22,6 +22,8 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.70:www/p5-Catalyst-Runtime \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 post-extract:
 	@${REINPLACE_CMD} -i '' '/test_requires/d' ${WRKSRC}/Makefile.PL
 
