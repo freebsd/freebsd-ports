@@ -12,6 +12,9 @@ MASTER_SITES=	http://www.freedesktop.org/software/farstream/releases/farsight2/ 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of GStreamer modules and libraries for videoconferencing
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 LIB_DEPENDS=	libnice.so:net-im/libnice
 RUN_DEPENDS=	libnice-gst010>=0:net-im/libnice-gst010
 
