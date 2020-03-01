@@ -1,52 +1,30 @@
---- Makefile.orig	2019-04-17 02:40:25 UTC
+--- Makefile.orig	2020-03-01 15:16:08 UTC
 +++ Makefile
-@@ -21,8 +21,9 @@
- # Makefile for bowtie, bowtie2-build, bowtie2-inspect
- #
- 
--prefix := /usr/local
--bindir := $(prefix)/bin
-+# Use PREFIX (upper case) provided by many package managers
-+PREFIX ?= /usr/local
-+bindir := $(PREFIX)/bin
- 
- LDLIBS := -lz
- GCC_PREFIX := $(shell dirname `which gcc`)
-@@ -30,8 +31,9 @@ GCC_SUFFIX :=
- CC ?= $(GCC_PREFIX)/gcc$(GCC_SUFFIX)
- CPP ?= $(GCC_PREFIX)/g++$(GCC_SUFFIX)
- CXX ?= $(CPP)
--CXXFLAGS += -std=c++98
--ifeq (aarch64,$(shell uname -m))
-+# long long is unsupported in c++98
-+# CXXFLAGS += -std=c++98
-+ifeq (aarch64,$(shell uname -p))
- 	CXXFLAGS += -fopenmp-simd
- 	CPPFLAGS += -Ithird_party/simde
- endif
-@@ -198,13 +200,13 @@ SEARCH_FRAGMENTS := $(wildcard search_*_phase*.c)
- VERSION := $(shell cat VERSION)
+@@ -200,22 +200,22 @@ endif
  
  BITS := 32
+ SSE_FLAG := -msse2
 -ifeq (x86_64,$(shell uname -m))
 +ifeq (x86_64,$(shell uname -p))
- 	BITS := 64
- endif
--ifeq (amd64,$(shell uname -m))
-+ifeq (amd64,$(shell uname -p))
- 	BITS := 64
- endif
--ifeq (aarch64,$(shell uname -m))
-+ifeq (aarch64,$(shell uname -p))
- 	BITS := 64
- endif
- # msys will always be 32 bit so look at the cpu arch instead.
-@@ -219,7 +221,7 @@ endif
- 
- SSE_FLAG := -msse2
- M64_FLAG := -m64
--ifeq (aarch64,$(shell uname -m))
-+ifeq (aarch64,$(shell uname -p))
- 	SSE_FLAG =
- 	M64_FLAG =
- endif
+   BITS := 64
+-else ifeq (amd64,$(shell uname -m))
++else ifeq (amd64,$(shell uname -p))
+   BITS := 64
+-else ifeq (aarch64,$(shell uname -m))
++else ifeq (aarch64,$(shell uname -p))
+   BITS := 64
+   SSE_FLAG :=
+   CXXFLAGS := -fopenmp-simd
+   CPPFLAGS := -Ithird_party/simde
+-else ifeq (s390x,$(shell uname -m))
++else ifeq (s390x,$(shell uname -p))
+   BITS := 64
+   SSE_FLAG :=
+   CXXFLAGS := -fopenmp-simd
+   CPPFLAGS := -Ithird_party/simde
+   SANITIZER_FLAGS :=
+-else ifeq (ppc64le,$(shell uname -m))
++else ifeq (ppc64le,$(shell uname -p))
+   BITS := 64
+   SSE_FLAG :=
+   CXXFLAGS := -fopenmp-simd
