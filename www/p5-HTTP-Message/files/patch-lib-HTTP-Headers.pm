@@ -5,7 +5,7 @@
  
      Carp::croak("Illegal field name '$field'")
 -        if rindex($field, ':') > 1 || !length($field);
-+	if ( $field !~ /^X-Meta/ && rindex($field, ':') > 1) || !length($field);
++        if ( $field !~ /^X-Meta/ && rindex($field, ':') > 1) || !length($field);
  
      unless ($field =~ /^:/) {
  	$field =~ tr/_/-/ if $TRANSLATE_UNDERSCORE;
