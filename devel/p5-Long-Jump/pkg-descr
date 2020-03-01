@@ -1,0 +1,9 @@
+Long::Jump essentially provides a multi-level return. You can mark a spot with
+setjump() and then unwind the stack back to that point from any nested stack
+frame by name using longjump(). You can also provide a list of return values.
+
+This is not quite a match for C's long jump, but it is "close enough". It is
+safer than C's jump in that it only lets you escape frames by going up the
+stack, you cannot jump in other ways.
+
+WWW: https://metacpan.org/release/Long-Jump

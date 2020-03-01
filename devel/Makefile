@@ -2658,6 +2658,7 @@
     SUBDIR += p5-Log-TraceMessages
     SUBDIR += p5-Log-ger
     SUBDIR += p5-Logfile-Rotate
+    SUBDIR += p5-Long-Jump
     SUBDIR += p5-Luka
     SUBDIR += p5-Lvalue
     SUBDIR += p5-MCE
