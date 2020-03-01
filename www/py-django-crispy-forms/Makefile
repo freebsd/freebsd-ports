@@ -23,4 +23,7 @@ NO_ARCH=	yes
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj21-django-crispy-forms \
 			${PYTHON_PKGNAMEPREFIX}dj22-django-crispy-forms
 
+# django-crispy-forms 1.9.0+ requires Django 2.2+
+PORTSCOUT=	limit:^1\.8\.
+
 .include <bsd.port.mk>
