@@ -13,6 +13,9 @@ COMMENT=	Personal full text search package, based on Xapian
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 RUN_DEPENDS=	unrar:archivers/unrar \

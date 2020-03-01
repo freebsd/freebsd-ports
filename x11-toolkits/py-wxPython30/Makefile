@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	30
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	GUI toolkit for the Python programming language
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 DIST_SUBDIR=	python
 
 WRKSRC_SUBDIR=	wxPython
