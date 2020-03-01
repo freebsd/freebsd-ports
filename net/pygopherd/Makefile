@@ -12,6 +12,9 @@ COMMENT=	Multiprotocol Information Server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-03-31
+
 USES=		python:2.7
 USE_PYTHON=	distutils
 
