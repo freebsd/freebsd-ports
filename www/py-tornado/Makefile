@@ -14,10 +14,11 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PY_FUTURES}
 
-CONFLICTS=	py[0-9]*-tornado[46]-*
-
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}tornado4 \
+			${PYTHON_PKGNAMEPREFIX}tornado6
 
 .include <bsd.port.pre.mk>
 
