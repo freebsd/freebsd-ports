@@ -37,8 +37,6 @@ LIBPCI_FILES=	include/pci/config.h \
 
 post-patch:
 	@${LN} -s . ${WRKSRC}/lib/pci
-	@${REINPLACE_CMD} -e '/^CC=/d; /^CFLAGS=/ s|=|+=|; /^IDSDIR=/ s|$$|/pciids|; /^OPT=/d; /^PREFIX=/d' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|^#include "|&pci/|' ${WRKSRC}/lib/pci.h
 
 do-configure:
 	@cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} lib/config.h

@@ -1,0 +1,31 @@
+--- Makefile.orig	2020-01-25 19:42:39 UTC
++++ Makefile
+@@ -1,8 +1,8 @@
+ # Makefile for The PCI Utilities
+ # (c) 1998--2020 Martin Mares <mj@ucw.cz>
+ 
+-OPT=-O2
+-CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
++# OPT=-O2
++CFLAGS+=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
+ 
+ VERSION=3.6.4
+ DATE=2020-01-25
+@@ -32,7 +32,7 @@ HWDB=
+ ABI_VERSION=.3
+ 
+ # Installation directories
+-PREFIX=/usr/local
++# PREFIX=/usr/local
+ SBINDIR=$(PREFIX)/sbin
+ SHAREDIR=$(PREFIX)/share
+ IDSDIR=$(SHAREDIR)
+@@ -45,7 +45,7 @@ PKGCFDIR=$(LIBDIR)/pkgconfig
+ INSTALL=install
+ DIRINSTALL=install -d
+ STRIP=-s
+-CC=$(CROSS_COMPILE)gcc
++# CC=$(CROSS_COMPILE)gcc
+ AR=$(CROSS_COMPILE)ar
+ RANLIB=$(CROSS_COMPILE)ranlib
+ 
