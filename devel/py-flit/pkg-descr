@@ -1,0 +1,4 @@
+Flit is a simple way to put Python packages and modules on PyPI. It tries to
+require less thought about packaging and help you avoid common mistakes.
+
+WWW: https://github.com/takluyver/flit
