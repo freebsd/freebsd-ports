@@ -13,7 +13,7 @@ include/lo/lo_throw.h
 include/lo/lo_types.h
 lib/liblo.so
 lib/liblo.so.7
-lib/liblo.so.7.4.0
+lib/liblo.so.7.4.1
 libdata/pkgconfig/liblo.pc
 %%DOXYGEN%%share/man/man3/liblo.3.gz
 %%DOXYGEN%%share/man/man3/liblocpp.3.gz
