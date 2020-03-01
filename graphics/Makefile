@@ -66,6 +66,7 @@
     SUBDIR += barbecue
     SUBDIR += barcode
     SUBDIR += batik
+    SUBDIR += birdfont
     SUBDIR += bitmap
     SUBDIR += blend2d
     SUBDIR += blender
