@@ -3478,9 +3478,9 @@ lib/python%%XYDOT%%/test/__pycache__/dataclass_module_2.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/dataclass_module_2_str.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/dataclass_module_2_str.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/dataclass_module_2_str.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/test/__pycache__/dataclass_textanno.cpython-37.opt-1.pyc
-lib/python%%XYDOT%%/test/__pycache__/dataclass_textanno.cpython-37.opt-2.pyc
-lib/python%%XYDOT%%/test/__pycache__/dataclass_textanno.cpython-37.pyc
+lib/python%%XYDOT%%/test/__pycache__/dataclass_textanno.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/dataclass_textanno.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/dataclass_textanno.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/datetimetester.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/datetimetester.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/datetimetester.cpython-%%XY%%.pyc
