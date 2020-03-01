@@ -18,10 +18,10 @@ CONFLICTS=	py[0-9]*-tornado-* py[0-9]*-tornado4-*
 USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
-post-build:
-	@${FIND} ${WRKSRC}/build -name speedups.so -exec ${STRIP_CMD} {} \;
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/tornado/speedups.so
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m tornado.test.runtests
 
 .include <bsd.port.mk>
