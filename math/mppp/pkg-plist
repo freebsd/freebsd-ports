@@ -4,6 +4,9 @@ include/mp++/detail/fwd_decl.hpp
 include/mp++/detail/gmp.hpp
 include/mp++/detail/integer_literals.hpp
 include/mp++/detail/mpfr.hpp
+include/mp++/detail/rational_literals.hpp
+include/mp++/detail/real128_literal.hpp
+include/mp++/detail/real_literals.hpp
 include/mp++/detail/type_traits.hpp
 include/mp++/detail/utils.hpp
 include/mp++/detail/visibility.hpp
@@ -17,11 +20,10 @@ include/mp++/real128.hpp
 include/mp++/type_name.hpp
 lib/cmake/mp++/FindGMP.cmake
 lib/cmake/mp++/FindMPFR.cmake
-lib/cmake/mp++/FindQuadmath.cmake
 lib/cmake/mp++/mp++-config-version.cmake
 lib/cmake/mp++/mp++-config.cmake
 lib/cmake/mp++/mp++_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mp++/mp++_export.cmake
 lib/libmp++.so
-lib/libmp++.so.4
-lib/libmp++.so.4.0
+lib/libmp++.so.5
+lib/libmp++.so.5.0
