@@ -14450,3 +14450,5 @@ x11-fm/sunflower||2020-03-01|Has expired: Old, uses EOLed python27
 x11-toolkits/hippo-canvas||2020-03-01|Has expired: Old, uses EOLed python27
 x11-toolkits/py-kiwi-gtk||2020-03-01|Has expired: Old, uses EOLed python27
 x11-toolkits/py-vte||2020-03-01|Has expired: Old, uses EOLed python27
+irc/gseen.mod||2020-03-01|Removed, unmaintained and does not build with irc/eggdrop
+irc/eggdrop16|irc/eggdrop|2020-03-01|Has expired: Outdated, use irc/eggdrop instead

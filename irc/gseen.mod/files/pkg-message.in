@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Please add the line source %%PREFIX%%/etc/gseen.conf at the end of
-your eggdrop config file and .rehash your bot
-EOM
-}
-]
