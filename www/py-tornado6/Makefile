@@ -13,10 +13,11 @@ COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20
 
-CONFLICTS=	py[0-9]*-tornado-* py[0-9]*-tornado4-*
-
 USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}tornado \
+			${PYTHON_PKGNAMEPREFIX}tornado4
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/tornado/speedups.so
