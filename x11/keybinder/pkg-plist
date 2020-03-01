@@ -5,10 +5,6 @@ lib/libkeybinder.so.0
 lib/libkeybinder.so.0.1.0
 %%LUA%%%%LUA_MODLIBDIR%%/keybinder.so
 libdata/pkgconfig/keybinder.pc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/__init__.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/__init__.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/_keybinder.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.lua

@@ -2,7 +2,7 @@
 
 PORTNAME=	keybinder
 PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
@@ -19,11 +19,11 @@ USES=		autoreconf gmake gnome libtool pathfix pkgconfig xorg
 USE_GNOME=	gtk20 introspection:build
 USE_XORG=	x11 xext xrender
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-python
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	EXAMPLES DOCS LUA PYTHON
-OPTIONS_DEFAULT=	PYTHON
+OPTIONS_DEFINE=	EXAMPLES DOCS LUA
 OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
@@ -34,10 +34,6 @@ LUA_DESC=		Lua bindings
 LUA_USES=		lua:51
 LUA_CONFIGURE_ON=	--with-lua-includes=${LUA_INCDIR}
 LUA_CONFIGURE_OFF=	--disable-lua
-
-PYTHON_USES=		python:2.7
-PYTHON_USE=		gnome=pygtk2
-PYTHON_CONFIGURE_OFF=	--disable-python
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -E '/GTK_DOC_CHECK|docs/d' ${WRKSRC}/configure.ac

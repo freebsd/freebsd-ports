@@ -5,7 +5,6 @@ The port provides the following:
 
   - A C library, libkeybinder
   - Lua bindings, lua-keybinder (off by default)
-  - Python bindings, python-keybinder
   - Example programs in C, Lua, Python, and Vala
 
 WWW: https://github.com/engla/keybinder
