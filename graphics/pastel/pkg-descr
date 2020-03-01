@@ -1,0 +1,7 @@
+Command-line tool to generate, analyze, convert
+and manipulate colors. It supports many different
+color formats and color spaces like RGB (sRGB),
+HSL, CIELAB, CIELCh as well as ANSI 8-bit and
+24-bit representations.
+
+WWW: https://github.com/sharkdp/pastel
