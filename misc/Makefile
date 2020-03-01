@@ -543,6 +543,7 @@
     SUBDIR += xfce4-wm-themes
     SUBDIR += xgas
     SUBDIR += xgboost
+    SUBDIR += xiphos
     SUBDIR += xless
     SUBDIR += xosd
     SUBDIR += xtail
