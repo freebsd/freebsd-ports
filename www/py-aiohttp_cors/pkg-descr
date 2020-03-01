@@ -1,0 +1,4 @@
+aiohttp_cors library implements Cross Origin Resource Sharing (CORS) support for
+aiohttp asyncio-powered asynchronous HTTP server.
+
+WWW: https://github.com/aio-libs/aiohttp-cors
