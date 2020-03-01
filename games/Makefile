@@ -531,7 +531,6 @@
     SUBDIR += maelstrom
     SUBDIR += magiccube4d
     SUBDIR += magicmaze
-    SUBDIR += magicor
     SUBDIR += mahjong
     SUBDIR += maitretarot
     SUBDIR += manaplus
@@ -621,7 +620,6 @@
     SUBDIR += oonsoo
     SUBDIR += open-adventure
     SUBDIR += openage
-    SUBDIR += openalchemist
     SUBDIR += openarena
     SUBDIR += openarena-data
     SUBDIR += openarena-oax
@@ -725,7 +723,6 @@
     SUBDIR += pyfa
     SUBDIR += pysolfc
     SUBDIR += pyspacewar
-    SUBDIR += pythonsudoku
     SUBDIR += q2p
     SUBDIR += q2pro
     SUBDIR += q3cellshading

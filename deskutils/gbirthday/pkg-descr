@@ -1,8 +1,0 @@
-GBirthday is a birthday reminder application that helps you to remember
-your Evolution, Thunderbird, Sunbird contacts' birthdays or from a MySQL
-Server or a CSV File.
-It puts an icon on notification area which will blink when there is any
-of your contacts' birthday today. You can also check if there is any of
-your contacs' birthday on next days.
-
-WWW: http://gbirthday.sourceforge.net/

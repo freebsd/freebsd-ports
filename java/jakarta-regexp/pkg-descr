@@ -1,8 +1,0 @@
-A 100% Pure Java Regular Expression package by Jonathan Locke.
-
-As of 2011-04-17, the Regexp project is retired.
-
-Users are encouraged to use similar features in newer Java versions, such as
-java.util.regexp.
-
-WWW: http://jakarta.apache.org/regexp/

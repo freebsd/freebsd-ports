@@ -10,7 +10,6 @@
     SUBDIR += emkatic
     SUBDIR += eric6
     SUBDIR += gd
-    SUBDIR += gimp-help
     SUBDIR += hunspell
     SUBDIR += hyphen
     SUBDIR += koi2koi

@@ -218,7 +218,6 @@
     SUBDIR += puff
     SUBDIR += py-editorconfig
     SUBDIR += py-pynvim
-    SUBDIR += py-room
     SUBDIR += quilter
     SUBDIR += rubygem-neovim
     SUBDIR += scite

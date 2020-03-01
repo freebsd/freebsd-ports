@@ -7,7 +7,6 @@
     SUBDIR += aster
     SUBDIR += fortune-mod-zarathoustra
     SUBDIR += geonext
-    SUBDIR += gimp-help
     SUBDIR += homard
     SUBDIR += hunspell
     SUBDIR += hyphen

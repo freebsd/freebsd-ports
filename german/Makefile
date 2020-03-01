@@ -12,7 +12,6 @@
     SUBDIR += dtaus
     SUBDIR += eric6
     SUBDIR += geonext
-    SUBDIR += gimp-help
     SUBDIR += hunspell
     SUBDIR += hyphen
     SUBDIR += jdictionary-eng-ger

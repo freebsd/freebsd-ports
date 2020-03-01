@@ -1,4 +1,0 @@
-%%PYTHON_SITELIBDIR%%/gtk-2.0/vtemodule.a
-%%PYTHON_SITELIBDIR%%/gtk-2.0/vtemodule.so
-libdata/pkgconfig/pyvte.pc
-share/pygtk/2.0/defs/vte.defs
