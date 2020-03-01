@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rx
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,6 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reactive Extensions (Rx) for Python
 
 LICENSE=	MIT
-
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
