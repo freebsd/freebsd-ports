@@ -27,7 +27,7 @@ SHEBANG_FILES=	install/pykaraoke_mini install/pykar install/pykaraoke \
 		install/pycdg install/pympg
 USE_SDL=	sdl
 USE_XORG=	x11 xau xcb xdmcp
-USE_WX=		2.8+
+USE_WX=		2.8
 WX_COMPS=	python:lib
 
 USE_PYTHON=	distutils autoplist
