@@ -10,11 +10,13 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple CAPTCHA written in Ruby
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-rmagick>=2.9.2:graphics/rubygem-rmagick
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
