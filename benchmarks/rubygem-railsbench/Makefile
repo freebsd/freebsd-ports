@@ -13,15 +13,16 @@ COMMENT=	Scripts designed for benchmarking of Rails applications
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/railsbench
 
 OPTIONS_DEFINE=	GRUFF
 GRUFF_DESC=	Plotting of perf data support using gruff
 
-GRUFF_RUN_DEPENDS=	rubygem-gruff>=0.2.8:graphics/rubygem-gruff
+GRUFF_RUN_DEPENDS=	rubygem-gruff>=0:graphics/rubygem-gruff
 
 .include <bsd.port.mk>
