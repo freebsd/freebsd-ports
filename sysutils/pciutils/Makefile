@@ -29,9 +29,6 @@ PLIST_FILES=	bin/lspci \
 		share/man/man8/lspci.8.gz \
 		share/man/man8/setpci.8.gz
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^CC=/d; /^CFLAGS=/ s|=|+=|; /^IDSDIR=/ s|$$|/pciids|; /^OPT=/d; /^PREFIX=/d; s| lib/$$(PCILIB)||' ${WRKSRC}/Makefile
-
 do-configure:
 	${CP} ${LOCALBASE}/include/pci/config.h ${WRKSRC}/lib/config.h
 	${CP} ${LOCALBASE}/share/libpci/config.mk ${WRKSRC}/lib/config.mk

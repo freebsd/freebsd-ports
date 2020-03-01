@@ -1,0 +1,64 @@
+--- Makefile.orig	2020-01-25 19:42:39 UTC
++++ Makefile
+@@ -1,8 +1,8 @@
+ # Makefile for The PCI Utilities
+ # (c) 1998--2020 Martin Mares <mj@ucw.cz>
+ 
+-OPT=-O2
+-CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
++# OPT=-O2
++CFLAGS+=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
+ 
+ VERSION=3.6.4
+ DATE=2020-01-25
+@@ -32,10 +32,10 @@ HWDB=
+ ABI_VERSION=.3
+ 
+ # Installation directories
+-PREFIX=/usr/local
++# PREFIX=/usr/local
+ SBINDIR=$(PREFIX)/sbin
+ SHAREDIR=$(PREFIX)/share
+-IDSDIR=$(SHAREDIR)
++IDSDIR=$(SHAREDIR)/pciids
+ MANDIR:=$(shell if [ -d $(PREFIX)/share/man ] ; then echo $(PREFIX)/share/man ; else echo $(PREFIX)/man ; fi)
+ INCDIR=$(PREFIX)/include
+ LIBDIR=$(PREFIX)/lib
+@@ -45,7 +45,7 @@ PKGCFDIR=$(LIBDIR)/pkgconfig
+ INSTALL=install
+ DIRINSTALL=install -d
+ STRIP=-s
+-CC=$(CROSS_COMPILE)gcc
++# CC=$(CROSS_COMPILE)gcc
+ AR=$(CROSS_COMPILE)ar
+ RANLIB=$(CROSS_COMPILE)ranlib
+ 
+@@ -59,7 +59,7 @@ PCIINC_INS=lib/config.h lib/header.h lib/pci.h lib/typ
+ 
+ export
+ 
+-all: lib/$(PCILIB) lspci setpci example lspci.8 setpci.8 pcilib.7 pci.ids.5 update-pciids update-pciids.8 $(PCI_IDS)
++all: lspci setpci example lspci.8 setpci.8 pcilib.7 pci.ids.5 update-pciids update-pciids.8 $(PCI_IDS)
+ 
+ lib/$(PCILIB): $(PCIINC) force
+ 	$(MAKE) -C lib all
+@@ -69,8 +69,8 @@ force:
+ lib/config.h lib/config.mk:
+ 	cd lib && ./configure
+ 
+-lspci: lspci.o ls-vpd.o ls-caps.o ls-caps-vendor.o ls-ecaps.o ls-kernel.o ls-tree.o ls-map.o common.o lib/$(PCILIB)
+-setpci: setpci.o common.o lib/$(PCILIB)
++lspci: lspci.o ls-vpd.o ls-caps.o ls-caps-vendor.o ls-ecaps.o ls-kernel.o ls-tree.o ls-map.o common.o
++setpci: setpci.o common.o
+ 
+ LSPCIINC=lspci.h pciutils.h $(PCIINC)
+ lspci.o: lspci.c $(LSPCIINC)
+@@ -92,7 +92,7 @@ update-pciids: update-pciids.sh
+ 	chmod +x $@
+ 
+ # The example of use of libpci
+-example: example.o lib/$(PCILIB)
++example: example.o
+ example.o: example.c $(PCIINC)
+ 
+ %: %.o
