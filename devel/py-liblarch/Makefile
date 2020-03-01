@@ -13,6 +13,9 @@ COMMENT=	Python library to easily handle data structures
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		gnome python:2.7
 USE_GITHUB=	yes
 USE_GNOME=	pygobject

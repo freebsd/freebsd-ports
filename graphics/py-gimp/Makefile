@@ -9,6 +9,9 @@ PKGNAMESUFFIX=
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GIMP python plugin
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 GIMP_SLAVE=	pygimp
 
 USES=		python:2.7
