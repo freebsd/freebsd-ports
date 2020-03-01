@@ -13,6 +13,9 @@ COMMENT=	Python DB-API 2.0 compliant interface to PostgreSQL
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mx-base>0:lang/py-mx-base@${PY_FLAVOR}
 
 USES=		pgsql python:2.7

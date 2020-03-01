@@ -17,6 +17,9 @@ LICENSE_NAME=	EGENIX.COM Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 USES=		python:2.7
 USE_PYTHON=	distutils
 PYDISTUTILS_PKGNAME=	egenix-mx-base

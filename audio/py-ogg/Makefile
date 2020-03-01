@@ -14,6 +14,9 @@ COMMENT=	Object-oriented Python bindings for the ogg library
 
 LICENSE=	LGPL20
 
+DEPRECATED=	Unmaintained, uses EOLed python27
+EXPIRATION_DATE=	2020-03-31
+
 LIB_DEPENDS=	libogg.so:audio/libogg
 
 USES=		python:2.7
