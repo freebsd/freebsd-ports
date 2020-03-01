@@ -13,10 +13,11 @@ COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20
 
-CONFLICTS=	py[0-9]*-tornado-* py[0-9]*-tornado6-*
-
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}tornado \
+			${PYTHON_PKGNAMEPREFIX}tornado6
 
 .include <bsd.port.pre.mk>
 
