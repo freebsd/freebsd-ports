@@ -2,6 +2,7 @@
 
 PORTNAME=	plasma
 DISTVERSION=	g20180708
+PORTREVISION=	1
 CATEGORIES=	devel python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash \
 		binutils>=2:devel/binutils \
-		capstone>=3:devel/capstone3
+		capstone4>=3:devel/capstone4
 RUN_DEPENDS=	binutils>=2:devel/binutils \
 		${PYTHON_PKGNAMEPREFIX}capstone>=3:devel/py-capstone@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
