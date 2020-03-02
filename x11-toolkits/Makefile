@@ -174,7 +174,6 @@
     SUBDIR += py-gtk2
     SUBDIR += py-gtkglext
     SUBDIR += py-gtksourceview
-    SUBDIR += py-kivy
     SUBDIR += py-qt5-gui
     SUBDIR += py-qt5-quick
     SUBDIR += py-qt5-quickwidgets
