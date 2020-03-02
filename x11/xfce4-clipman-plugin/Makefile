@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-clipman-plugin
-PORTVERSION=	1.4.3
-PORTREVISION=	2
+PORTVERSION=	1.4.4
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
