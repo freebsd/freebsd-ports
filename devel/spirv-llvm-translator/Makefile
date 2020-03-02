@@ -2,7 +2,7 @@
 
 PORTNAME=	spirv-llvm-translator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0.0-1
+DISTVERSION=	9.0.1-1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
