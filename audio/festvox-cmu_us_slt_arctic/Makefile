@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.speech.cs.cmu.edu/cmu_arctic/packed/
 DISTNAME=	${VOICE}-${PORTVERSION}-release
 DIST_SUBDIR=	festival
 
-MAINTAINER=	mike.d.ft402@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	CMU US English female voice for festival
 
 LICENSE=	MIT-variant

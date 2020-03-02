@@ -5,7 +5,7 @@ PORTVERSION=	3.4.1
 PORTREVISION=	1
 CATEGORIES=	math
 
-MAINTAINER=	mike.d.ft402@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nonequispaced fast Fourier transform
 
 LICENSE=	GPLv2
