@@ -14452,3 +14452,8 @@ x11-toolkits/py-kiwi-gtk||2020-03-01|Has expired: Old, uses EOLed python27
 x11-toolkits/py-vte||2020-03-01|Has expired: Old, uses EOLed python27
 irc/gseen.mod||2020-03-01|Removed, unmaintained and does not build with irc/eggdrop
 irc/eggdrop16|irc/eggdrop|2020-03-01|Has expired: Outdated, use irc/eggdrop instead
+mail/rubygem-roadie-rails|mail/rubygem-roadie-rails-rails4|2020-03-02|Renamed to match rubygem name convention
+mail/rubygem-roadie-rails52|mail/rubygem-roadie-rails-rails52|2020-03-02|Renamed to match rubygem name convention
+textproc/rubygem-actionpack-xml_parser|textproc/rubygem-actionpack-xml_parser-rails5|2020-03-02|Renamed to match rubygem name convention
+textproc/rubygem-actionpack-xml_parser1|textproc/rubygem-actionpack-xml_parser1-rails4|2020-03-02|Renamed to match rubygem name convention
+textproc/rubygem-actionpack-xml_parser52|textproc/rubygem-actionpack-xml_parser-rails52|2020-03-02|Renamed to match rubygem name convention

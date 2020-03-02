@@ -3,9 +3,10 @@
 
 PORTNAME=	actionpack-xml_parser
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
-PKGNAMESUFFIX=	1
+PKGNAMESUFFIX=	1-rails4
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XML parameters parser for Action Pack
