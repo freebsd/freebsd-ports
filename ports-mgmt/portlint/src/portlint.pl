@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.498 2019/09/04 15:03:38 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.505 2020/03/02 22:19:11 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 18;
-my $micro = 10;
+my $micro = 11;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -160,7 +160,7 @@ my @varlist =  qw(
 	ALLFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS GNU_CONFIGURE
 	CONFIGURE_ARGS MASTER_SITE_SUBDIR LICENSE LICENSE_COMB NO_STAGE
 	DEVELOPER SUB_FILES SHEBANG_LANG MASTER_SITES_SUBDIRS FLAVORS
-	USE_PYTHON LICENSE_PERMS
+	USE_PYTHON LICENSE_PERMS USE_PYQT
 );
 
 my %makevar;
@@ -306,6 +306,8 @@ foreach my $i (@checker) {
 		}
 	}
 }
+
+checkpatches(<$makevar{FILESDIR}/patch-*>);
 
 if ($committer) {
 	sub find_proc {
@@ -895,10 +897,11 @@ sub checkplist {
 				"accordingly.") unless ($check_xxxdir_ok{$3} eq $1);
 		}
 
-		if ($_ =~ m#share/man/#) {
-			&perror("FATAL", $file, $., "Man pages must be installed into ".
-				"``man'' not ``share/man''.");
-		}
+		# It is now recommended for manpages to be installed under share/man.
+		#if ($_ =~ m#share/man/#) {
+		#	&perror("FATAL", $file, $., "Man pages must be installed into ".
+		#		"``man'' not ``share/man''.");
+		#}
 
 		if ($_ =~ m#man/([^/]+/)?man[1-9ln]/([^\.]+\.[1-9ln])(\.gz)?$#) {
 			if (!$3) {
@@ -1033,6 +1036,26 @@ sub checklastline {
 	}
 
 	close(IN);
+}
+
+sub checkpatches {
+	my (@patchfiles) = @_;
+	my @patched_files;
+	foreach my $file (@patchfiles) {
+		open(IN, "< $file") || return 0;
+		while (<IN>) {
+			if ($_ =~ /^\+\+\+\s(.*?)\s.*/) {
+				#if($1 ~~ @patched_files) {
+				if (grep {$_ eq $1} @patched_files) {
+					&perror("WARN", $file, -1, "$1 patched multiple times");
+				}
+				else {
+					push(@patched_files, $1);
+				}
+
+			}
+		}
+	}
 }
 
 sub checkpatch {
@@ -1741,6 +1764,10 @@ sub checkmakefile {
 	foreach my $i ((@opt, @aopt, @aropt)) {
 		# skip global options
 		next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11' or $i eq 'DEBUG');
+		my $odescr = &get_makevar("${i}_DESC");
+		if (!$odescr) {
+			&perror("FATAL", $file, -1, "OPTION $i does not have a description (${i}_DESC).");
+		}
 		if (!grep(/^$i$/, (@mopt, @popt))) {
 			if ($whole !~ /\n${i}_($m)(_\w+)?(.)?=[^\n]+/ and $whole !~ /\n[-\w]+-${i}-(on|off):\n/) {
 				if (!$slaveport) {
@@ -2332,7 +2359,7 @@ xargs xmkmf
 	#
 	# whole file: USES=pyqt:5
 	#
-	if ($makevar{USES} =~ /\bpyqt:5/ && $whole !~ /^USE_PYQT[?:]?=\s(.*)$/m) {
+	if ($makevar{USES} =~ /\bpyqt:5/ && $whole !~ /^USE_PYQT[?:]?=\s(.*)$/m  && $makevar{USE_PYQT} eq '') {
 		&perror("WARN", $file, -1, "When USES=pyqt:5 is defined, you must also define ".
 			"USE_PYQT=xxxx");
 	}
@@ -2591,7 +2618,8 @@ xargs xmkmf
 	$tmp = $rawwhole;
 	$tmp =~ s/\\\n/ /g;
 	# keep comment, blank line, comment in the same section
-	$tmp =~ s/(#.*\n)\n+(#.*)/$1$2/g;
+	# XXX: Take this out since it breaks some commenting; see PR240359.
+	#$tmp =~ s/(#.*\n)\n+(#.*)/$1$2/g;
 	@sections = split(/\n\n+/, $tmp);
 	for ($i = 0; $i <= $#sections; $i++) {
 		if ($sections[$i] !~ /\n$/) {
@@ -3855,10 +3883,8 @@ sub urlcheck {
 	}
 }
 
-# GNOME wants INSTALL_ICONS, but Qt-based applications, including KDE, don't.
-# Be pessimistic: everything needs it unless we know it doesn't.
 sub needs_installs_icons {
-	return $makevar{USE_QT5} eq '' && $makevar{USE_QT} eq ''
+	return $makevar{USES} =~ /gnome/
 }
 
 sub TRUE {1;}
