@@ -2,6 +2,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.13.99.2
+PORTREVISION=	1
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 PKGNAMESUFFIX=	-devel
@@ -10,6 +11,8 @@ MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
+
+FORBIDDEN=	creates a package with bad ABI
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
