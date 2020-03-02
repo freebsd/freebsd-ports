@@ -1,0 +1,22 @@
+You can use ropper to look at information about files in different
+file formats and you can find ROP and JOP gadgets to build chains for
+different architectures. Ropper supports ELF, MachO and the PE file
+format. Other files can be opened in RAW format. The following
+architectures are supported:
+
+- x86 / x86_64
+- Mips / Mips64
+- ARM (also Thumb Mode)/ ARM64
+- PowerPC / PowerPC64
+
+Ropper is inspired by ROPgadget, but should be more than a gadgets
+finder. So it is possible to show information about a binary like
+header, segments, sections etc. Furthermore it is possible to edit the
+binaries and edit the header fields, but currently this is not fully
+implemented and in a experimental state. For disassembly ropper uses
+the awesome Capstone Framework.
+
+Now you can generate rop chain automatically (auto-roper) for execve
+and mprotect syscall.
+
+WWW: https://scoding.de/ropper/
