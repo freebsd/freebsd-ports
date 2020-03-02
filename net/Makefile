@@ -156,6 +156,7 @@
     SUBDIR += fb
     SUBDIR += fiche
     SUBDIR += file2pcap
+    SUBDIR += findomain
     SUBDIR += findmtu
     SUBDIR += flent
     SUBDIR += flower
