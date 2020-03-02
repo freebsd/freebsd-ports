@@ -969,6 +969,7 @@
     SUBDIR += py-rekall_lib
     SUBDIR += py-requests-credssp
     SUBDIR += py-requests-kerberos
+    SUBDIR += py-ropper
     SUBDIR += py-rsa
     SUBDIR += py-safe
     SUBDIR += py-scp
