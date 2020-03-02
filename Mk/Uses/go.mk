@@ -179,7 +179,7 @@ _MODULES2TUPLE_CMD=	modules2tuple
 gomod-vendor: patch
 	@if type ${GO_CMD} > /dev/null 2>&1; then \
 		if type ${_MODULES2TUPLE_CMD} > /dev/null 2>&1; then \
-			cd ${WRKSRC}; ${GO_CMD} mod vendor; \
+			cd ${WRKSRC}; ${SETENV} GOPATH=${WRKDIR}/.gopath GOFLAGS=-modcacherw ${GO_CMD} mod vendor; \
 			[ -r vendor/modules.txt ] && ${_MODULES2TUPLE_CMD} vendor/modules.txt; \
 		else \
 			${ECHO_MSG} "===> Please install \"ports-mgmt/modules2tuple\""; \
