@@ -1503,6 +1503,7 @@
     SUBDIR += mercurialeclipse
     SUBDIR += mergify
     SUBDIR += meson
+    SUBDIR += microsoft-gsl
     SUBDIR += mill
     SUBDIR += mimalloc
     SUBDIR += mime
