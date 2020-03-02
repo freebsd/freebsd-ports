@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-themes gnome
 PKGNAMEPREFIX=	gnome-icons-
 
-MAINTAINER=	mike.d.ft402@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flat but complex icon theme for freedesktop environments
 
 LICENSE=	CC-BY-SA-4.0
