@@ -14457,3 +14457,4 @@ mail/rubygem-roadie-rails52|mail/rubygem-roadie-rails-rails52|2020-03-02|Renamed
 textproc/rubygem-actionpack-xml_parser|textproc/rubygem-actionpack-xml_parser-rails5|2020-03-02|Renamed to match rubygem name convention
 textproc/rubygem-actionpack-xml_parser1|textproc/rubygem-actionpack-xml_parser1-rails4|2020-03-02|Renamed to match rubygem name convention
 textproc/rubygem-actionpack-xml_parser52|textproc/rubygem-actionpack-xml_parser-rails52|2020-03-02|Renamed to match rubygem name convention
+x11-toolkits/py-kivy||2020-03-02|Has expired: Old, uses EOLed python27
