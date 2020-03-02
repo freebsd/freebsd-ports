@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	R
-DISTVERSION=	3.6.2
-PORTREVISION=	1
+DISTVERSION=	3.6.3
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -54,7 +53,7 @@ OPTIONS_SUB=		YES
 
 ATLAS_DESC=		ATLAS BLAS implementation
 CAIROPANGO_DESC=	Cairo graphics device and Pango multi-language text
-FLANG_DESC=		Use experimental flang instead of default Fortran compiler
+FLANG_DESC=		Use experimental flang Fortran compiler
 GHOSTSCRIPT_DESC=	Graphics device for bitmap files via Ghostscript
 JPEG_DESC=		JPEG graphics device
 LDOUBLE_DESC=		Long double data type
@@ -129,25 +128,8 @@ _LIBVER=	${PORTVERSION:R}
 
 .include <bsd.port.options.mk>
 
-# libomp is provided by
-#  - LLVM, which gets pulled in with FLANG
-#  - gcc
-#
-# So, *must* only depend on devel/openmp when
-#   - the OPENMP knob is on
-#   - FLANG is off (guaranteed to be off for all archs except amd64)
-#   - clang is the C compiler.
-#
-# But, we cannot modify LIB_DEPENDS after CHOSEN_COMPILER_TYPE is defined, so
-# for now, limit the OPENMP knob for i386 and amd64 where clang is the default
-# compiler.
-#
-# This will be moot after 12.1 when openmp will be in base.
 .if ! ${PORT_OPTIONS:MFLANG}
 USES+=		fortran
-.if ${PORT_OPTIONS:MOPENMP}
-LIB_DEPENDS+=	libomp.so:devel/openmp
-.endif
 .endif
 
 post-patch:
