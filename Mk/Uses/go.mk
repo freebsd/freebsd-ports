@@ -114,10 +114,7 @@ GO_ENV+=	GOPATH="${WRKDIR}" \
 		GOBIN=""
 .endif
 
-# Tentatively enable package building for Go ports on aarch64 to catch regressions early.
-# Can be removed after go1.14 is officially released in Jan 2020 and lang/go is updated to 1.14
-GO_PORT_aarch64=	lang/go-devel
-GO_PORT?=	${GO_PORT_${ARCH}:Ulang/go}
+GO_PORT?=	lang/go
 
 BUILD_DEPENDS+=	${GO_CMD}:${GO_PORT}
 .if ${go_ARGS:Mrun}
