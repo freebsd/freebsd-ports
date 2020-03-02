@@ -3,7 +3,7 @@
 
 PORTNAME=	timidity++
 PORTVERSION=	2.14.0
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES+=	audio
 MASTER_SITES=	SF/timidity/TiMidity%2B%2B/TiMidity%2B%2B-${PORTVERSION}
 DISTNAME=	TiMidity++-${PORTVERSION}
@@ -13,9 +13,9 @@ COMMENT?=	Software MIDI player
 
 LICENSE=	GPLv2+
 
+LIB_DEPENDS=	libarc.so:archivers/libarc
 .if !defined(PKGNAMESUFFIX)
-LIB_DEPENDS=	libarc.so:archivers/libarc \
-		libvorbis.so:audio/libvorbis \
+LIB_DEPENDS+=	libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg
 RUN_DEPENDS=	eawpats>0:audio/eawpats
 .endif
