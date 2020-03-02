@@ -2,7 +2,7 @@
 
 PORTNAME=	opencl-clang
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0.0
+DISTVERSION=	9.0.1
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
