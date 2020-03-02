@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enchant
-PORTVERSION=	2.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ OPTIONS_SUB=	yes
 OPTIONS_EXCLUDE=	WX
 .endif
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils py3kplist
 NO_ARCH=	yes
 
