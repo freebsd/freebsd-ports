@@ -573,6 +573,7 @@
     SUBDIR += p5-Crypt-SKey
     SUBDIR += p5-Crypt-SMIME
     SUBDIR += p5-Crypt-SSLeay
+    SUBDIR += p5-Crypt-SSSS
     SUBDIR += p5-Crypt-Salt
     SUBDIR += p5-Crypt-SaltedHash
     SUBDIR += p5-Crypt-Serpent
