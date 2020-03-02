@@ -33,8 +33,14 @@ include/wine/svcctl.idl
 include/wine/msvcrt/assert.h
 include/wine/msvcrt/conio.h
 include/wine/msvcrt/corecrt.h
+include/wine/msvcrt/corecrt_startup.h
 include/wine/msvcrt/corecrt_stdio_config.h
+include/wine/msvcrt/corecrt_wctype.h
+include/wine/msvcrt/corecrt_wio.h
 include/wine/msvcrt/corecrt_wstdio.h
+include/wine/msvcrt/corecrt_wstdlib.h
+include/wine/msvcrt/corecrt_wstring.h
+include/wine/msvcrt/corecrt_wtime.h
 include/wine/msvcrt/crtdbg.h
 include/wine/msvcrt/crtdefs.h
 include/wine/msvcrt/ctype.h
@@ -318,6 +324,8 @@ include/wine/windows/dmdls.h
 include/wine/windows/dmerror.h
 include/wine/windows/dmksctrl.h
 include/wine/windows/dmo.h
+include/wine/windows/dmodshow.h
+include/wine/windows/dmodshow.idl
 include/wine/windows/dmoreg.h
 include/wine/windows/dmort.h
 include/wine/windows/dmplugin.h
@@ -1029,6 +1037,7 @@ lib/libwine.so.1
 lib/wine/acledit.dll.so
 lib/wine/aclui.dll.so
 lib/wine/activeds.dll.so
+lib/wine/activeds.tlb.so
 lib/wine/actxprxy.dll.so
 lib/wine/adsldp.dll.so
 lib/wine/adsldpc.dll.so
@@ -1482,6 +1491,7 @@ lib/wine/extrac32.exe.so
 lib/wine/fakedlls/acledit.dll
 lib/wine/fakedlls/aclui.dll
 lib/wine/fakedlls/activeds.dll
+lib/wine/fakedlls/activeds.tlb
 lib/wine/fakedlls/actxprxy.dll
 lib/wine/fakedlls/adsldp.dll
 lib/wine/fakedlls/adsldpc.dll
@@ -2175,6 +2185,7 @@ lib/wine/fakedlls/progman.exe
 lib/wine/fakedlls/propsys.dll
 lib/wine/fakedlls/psapi.dll
 lib/wine/fakedlls/pstorec.dll
+lib/wine/fakedlls/qasf.dll
 lib/wine/fakedlls/qcap.dll
 lib/wine/fakedlls/qedit.dll
 lib/wine/fakedlls/qmgr.dll
@@ -2880,6 +2891,7 @@ lib/wine/progman.exe.so
 lib/wine/propsys.dll.so
 lib/wine/psapi.dll.so
 lib/wine/pstorec.dll.so
+lib/wine/qasf.dll.so
 lib/wine/qcap.dll.so
 lib/wine/qedit.dll.so
 lib/wine/qmgr.dll.so
@@ -3237,6 +3249,11 @@ share/applications/wine.desktop
 %%DATADIR%%/nls/c_949.nls
 %%DATADIR%%/nls/c_950.nls
 %%DATADIR%%/nls/l_intl.nls
+%%DATADIR%%/nls/normidna.nls
+%%DATADIR%%/nls/normnfc.nls
+%%DATADIR%%/nls/normnfd.nls
+%%DATADIR%%/nls/normnfkc.nls
+%%DATADIR%%/nls/normnfkd.nls
 %%DATADIR%%/winebus.inf
 %%DATADIR%%/winehid.inf
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
