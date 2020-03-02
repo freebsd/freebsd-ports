@@ -3,6 +3,7 @@
 PORTNAME=	sandsifter
 PORTVERSION=	1.04
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	rene@FreeBSD.org
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=Designed for x86
 
-BUILD_DEPENDS=	${LOCALBASE}/include/capstone/capstone.h:devel/capstone3
+BUILD_DEPENDS=	${LOCALBASE}/include/capstone/capstone.h:devel/capstone4
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}capstone>0:devel/py-capstone@${PY_FLAVOR}
 
 USES=		gmake python:2.7 localbase shebangfix
