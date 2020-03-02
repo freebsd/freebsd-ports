@@ -1,3 +1,5 @@
-TIMESTAMP = 1468159734
-SHA256 (aquynh-capstone-4.0-d99cbc3_GH0.tar.gz) = 5ead3bcb7941e344016d181ac4180ff901b40deec31c207ced4c243f38217227
-SIZE (aquynh-capstone-4.0-d99cbc3_GH0.tar.gz) = 2817325
+TIMESTAMP = 1582069780
+SHA256 (aquynh-capstone-4.0.1_GH0.tar.gz) = 79bbea8dbe466bd7d051e037db5961fdb34f67c9fac5c3471dd105cfb1e05dc7
+SIZE (aquynh-capstone-4.0.1_GH0.tar.gz) = 3434276
+SHA256 (046846b2ea189142482754c13ee0ed54cb4f4e5b.patch) = ba7e8eb2bafaea0050168a6b418e7b65593cf4852df6dfca74ad6b49e8ee56f3
+SIZE (046846b2ea189142482754c13ee0ed54cb4f4e5b.patch) = 692
