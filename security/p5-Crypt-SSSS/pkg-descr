@@ -1,0 +1,6 @@
+Crypt::SSSS module implements Shamir's Secret Sharing System, that is,
+it breaks the secret data into multiple shares which can be distributed
+among multiple parties, so that only when the parties bring together
+their respective shares can the secret be reconstructed.
+
+WWW: https://metacpan.org/release/Crypt-SSSS
