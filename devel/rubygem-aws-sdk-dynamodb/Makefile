@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-dynamodb
-PORTVERSION=	1.43.0
+PORTVERSION=	1.44.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
