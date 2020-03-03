@@ -1,0 +1,4 @@
+PyVEX provides an interface that translates binary code into the VEX
+intermediate represenation (IR).
+
+WWW: https://github.com/angr/pyvex
