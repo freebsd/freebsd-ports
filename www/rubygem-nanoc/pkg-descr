@@ -3,4 +3,4 @@ It operates on local files, and therefore does not run on the server.
 nanoc "compiles" the local source files into HTML (usually), by evaluating
 eRuby, Markdown, etc.
 
-WWW: http://nanoc.ws/
+WWW: https://nanoc.ws/
