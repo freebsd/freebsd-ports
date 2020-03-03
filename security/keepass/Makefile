@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	keepass
-PORTVERSION=	2.43
+PORTVERSION=	2.44
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/KeePass%202.x/${PORTVERSION}
 DISTNAME=	KeePass-${PORTVERSION}-Source
 
-MAINTAINER=	woodsb02@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight and easy-to-use password manager
 
 LICENSE=	GPLv2+
