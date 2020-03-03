@@ -1,4 +1,4 @@
---- config.php.default.orig	2018-08-04 20:07:12 UTC
+--- config.php.default.orig	2020-03-02 04:03:32 UTC
 +++ config.php.default
 @@ -2,15 +2,20 @@
  
@@ -22,3 +22,26 @@
  
  ### This should *only* be set if you want to *force* a particular hostname/port
  ### It will prevent the web interface being usable form any other hostname
+@@ -49,3 +54,22 @@ $config['enable_billing'] = 1;
+ 
+ # Enable the in-built services support (Nagios plugins)
+ $config['show_services'] = 1;
++
++# These paths are supplied by the FreeBSD port and correct those found in
++# the code.
++
++$config['snmpwalk']       = '/usr/local/bin/snmpwalk';
++$config['snmpget']        = '/usr/local/bin/snmpget';
++$config['snmpbulkwalk']   = '/usr/local/bin/snmpbulkwalk';
++$config['snmptranslate']  = '/usr/local/bin/snmptranslate';
++
++$config['ping']           = '/sbin/ping';
++$config['mtr']            = '/usr/local/bin/mtr';
++$config['nmap']           = '/usr/local/bin/nmap';
++
++$config['nagios_plugins'] = '/usr/local/libexec/nagios';
++$config['ipmitool']       = '/usr/local/bin/ipmitool';
++$config['virsh']          = '/usr/local/bin/virsh';
++$config['dot']            = '/usr/local/bin/dot';
++$config['sfdp']           = '/usr/local/bin/sfdp';
++$config['nfdump']         = '/usr/local/bin/nfdump';

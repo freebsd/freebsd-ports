@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.56
-PORTREVISION=	2
+PORTVERSION=	1.61
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -19,7 +18,7 @@ USES=		python${PY_MYSQL} shebangfix
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-RELEASE_TIMESTAMP=	1569841625
+RELEASE_TIMESTAMP=	1583121812
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
@@ -32,7 +31,7 @@ RUN_DEPENDS+=	rrdtool:databases/rrdtool \
 
 USE_PHP=	ctype curl dom fileinfo filter gd hash json ldap mbstring \
 		mysqli openssl pdo pdo_mysql phar posix session simplexml \
-		snmp tokenizer xml xmlwriter zip
+		snmp sockets tokenizer xml xmlwriter zip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	librenms
@@ -42,9 +41,8 @@ WWW_USER=	www
 
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES X11
-OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER WMIC
-APACHEMOD_DESC=	Use PHP with Apache 2.2+ module
+OPTIONS_DEFINE=	FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES X11
+OPTIONS_DEFAULT=	 FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER WMIC
 FPING_DESC=	Enable fping support ping monitoring
 IPMITOOL_DESC=	Enable support for monitoring hardware IPMI
 MYSQLD_DESC=	Use local MySQL server
@@ -108,7 +106,8 @@ SCRIPT_FILES=	daily.sh lnms
 ROOT_DIRS=	LibreNMS app bootstrap config contrib database doc html includes licenses logs mibs misc resources routes scripts sql-schema storage tests
 
 # these are directories which require a generic @DIR entry in pkg-plist
-OTHER_DIRS=	storage/app/public \
+OTHER_DIRS=	html/js/lang \
+		storage/app/public \
 		storage/debugbar \
 		storage/framework/cache/data \
 		storage/framework/testing \
@@ -130,9 +129,6 @@ DOCS=		AUTHORS.md CHANGELOG.md CONTRIBUTING.md LICENSE.txt README.md
 PORTDOCS=	*
 PORTEXAMPLES=	snmp.conf.example snmpd.conf.example
 NO_ARCH=	yes
-
-APACHEMOD_USES=		php:mod
-APACHEMOD_USES_OFF=	php:web
 
 post-patch:
 	@${REINPLACE_CMD}    's|%%PORTNAME%%|${PORTNAME}|g'                   ${WRKSRC}/config.php.default
