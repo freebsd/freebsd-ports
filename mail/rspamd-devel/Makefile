@@ -59,7 +59,6 @@ USE_GITHUB=	yes
 GH_TAGNAME=	2939a82
 
 DEBUG_FLAGS=	-g -O0
-WITH_DEBUG=	yes
 
 USE_RC_SUBR=	rspamd
 
