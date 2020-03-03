@@ -1435,6 +1435,7 @@
     SUBDIR += py-bottle-cork
     SUBDIR += py-branca
     SUBDIR += py-cachecontrol
+    SUBDIR += py-cachelib
     SUBDIR += py-caldav
     SUBDIR += py-cheroot
     SUBDIR += py-cherrypy

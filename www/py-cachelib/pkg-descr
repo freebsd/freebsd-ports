@@ -1,0 +1,7 @@
+A collection of cache libraries in the same API interface.
+
+Extracted from werkzeug. https://palletsprojects.com/p/werkzeug/
+
+Maintained by Pallets Team, licensed under BSD.
+
+WWW: https://pypi.org/project/cachelib/
