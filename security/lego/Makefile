@@ -2,7 +2,7 @@
 
 PORTNAME=	lego
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0
+DISTVERSION=	3.4.0
 CATEGORIES=	security
 
 MAINTAINER=	matt@matthoran.com
@@ -38,7 +38,7 @@ GH_TUPLE=	\
 		akamai:AkamaiOPEN-edgegrid-golang:v0.9.0:akamai_akamaiopen_edgegrid_golang/vendor/github.com/akamai/AkamaiOPEN-edgegrid-golang \
 		aliyun:alibaba-cloud-sdk-go:07798873deee:aliyun_alibaba_cloud_sdk_go/vendor/github.com/aliyun/alibaba-cloud-sdk-go \
 		aws:aws-sdk-go:v1.23.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
-		cenkalti:backoff:v3.0.0:cenkalti_backoff/vendor/github.com/cenkalti/backoff/v3 \
+		cenkalti:backoff:v4.0.0:cenkalti_backoff/vendor/github.com/cenkalti/backoff/v4 \
 		census-ecosystem:opencensus-go-exporter-ocagent:v0.4.12:census_ecosystem_opencensus_go_exporter_ocagent/vendor/contrib.go.opencensus.io/exporter/ocagent \
 		census-instrumentation:opencensus-go:v0.22.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		census-instrumentation:opencensus-proto:v0.2.0:census_instrumentation_opencensus_proto/vendor/github.com/census-instrumentation/opencensus-proto \
@@ -46,7 +46,6 @@ GH_TUPLE=	\
 		cpu:goacmedns:v0.0.1:cpu_goacmedns/vendor/github.com/cpu/goacmedns \
 		cpuguy83:go-md2man:f79a8a8ca69d:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		decker502:dnspod-go:v0.2.0:decker502_dnspod_go/vendor/github.com/decker502/dnspod-go \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		dimchansky:utfbom:v1.1.0:dimchansky_utfbom/vendor/github.com/dimchansky/utfbom \
 		dnsimple:dnsimple-go:v0.30.0:dnsimple_dnsimple_go/vendor/github.com/dnsimple/dnsimple-go \
@@ -91,7 +90,7 @@ GH_TUPLE=	\
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		namedotcom:go:08470befbe04:namedotcom_go/vendor/github.com/namedotcom/go \
 		nrdcg:auroradns:v1.0.0:nrdcg_auroradns/vendor/github.com/nrdcg/auroradns \
-		nrdcg:dnspod-go:v0.3.0:nrdcg_dnspod_go/vendor/github.com/nrdcg/dnspod-go \
+		nrdcg:dnspod-go:v0.4.0:nrdcg_dnspod_go/vendor/github.com/nrdcg/dnspod-go \
 		nrdcg:goinwx:v0.6.1:nrdcg_goinwx/vendor/github.com/nrdcg/goinwx \
 		nrdcg:namesilo:v0.2.1:nrdcg_namesilo/vendor/github.com/nrdcg/namesilo \
 		ns1:ns1-go:b51389932cbc:ns1_ns1_go/vendor/gopkg.in/ns1/ns1-go.v2 \
