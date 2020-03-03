@@ -20,7 +20,6 @@ OPTIONS_DEFINE=	\
 		DOCS		\
 		FREEBSD_TEMPLATE\
 		GPG_AGENT \
-		MAINTAINER_DEBUG\
 		NLS		\
 		SASL		\
 		SERF		\
@@ -33,7 +32,6 @@ OPTIONS_DEFAULT=FREEBSD_TEMPLATE SERF TOOLS
 
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
 GPG_AGENT_DESC=		Enable GPG agent password store
-MAINTAINER_DEBUG_DESC=	Build debug version
 SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
 STATIC_DESC=		Build static version (no shared libs)
 SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)

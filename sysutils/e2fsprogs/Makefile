@@ -65,7 +65,7 @@ ALLTESTS_DESC=	Run most self-tests (needs more RAM/disk space)
 PARALLELTESTS_DESC=	Parallelize self-tests (needs more disk space)
 SLOWTESTS_DESC=	Enable slow tests that are skipped by default
 BASHTESTS_DESC=	Enable tests that require the GNU bash shell
-LIBUNWIND_DESC=	Backtrace with libunwind (do set WITH_DEBUG=yes!)
+LIBUNWIND_DESC=	Backtrace with libunwind (do set WITH_DEBUG_PORTS+=${PKGORIGIN}!)
 
 FUSEFS_CONFIGURE_ENABLE=	fuse2fs
 

@@ -56,8 +56,7 @@ LDFLAGS_i386+=	-Wl,-z,notext
 # Extra build options for debugging
 # =================================
 
-.if ${PORT_OPTIONS:MDEBUG}
-WITH_DEBUG=	yes
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=3
 .endif
 

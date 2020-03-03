@@ -15,7 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_TAGNAME=	93c4c82e
 
-WITH_DEBUG=	yes
 CFLAGS+=	-O0 -g -Wno-error
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
 HAS_CONFIGURE=	yes
