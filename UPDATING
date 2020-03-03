@@ -5,6 +5,54 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200303:
+  AFFECTS: users of net-mgmt/librenms
+  AUTHOR: dvl@FreeBSD.org
+
+  1. Apache / mod_php options removed
+
+  The APACHEMOD option has been removed. LibreNMS can be used
+  with other webservers, not just Apache. In other to simplify
+  the port, the option was removed.
+
+  Now you manually install the webserver of your preference.
+
+  If upgrading from LibreNMS < 1.61, you can do this to
+  prevent 'pkg autoremove' from uninstalling Apache / mod_php:
+
+  $ sudo pkg set -A 0 apache24 mod_php74
+  Mark apache24-2.4.41 as not automatically installed? [y/N]: y
+  Mark mod_php74-7.4.3 as not automatically installed? [y/N]: y
+
+  Adjust mod_php74 to suit the version of mod_php you have.
+
+  2. include/defaults.inc.php is gone
+
+  The file include/defaults.inc.php is no longer distributed by
+  the upstream project. The FreeBSD port patched this file to
+  correct the paths to common tools such as ping, snmpwalk, etc.
+
+  These values previously adjusted by the port must now be specified
+  in config.php. New installs will have this automatically, but existing
+  installs must be updated manually. These are the entries you should
+  add if upgrading from LibreNMS < 1.61:
+
+  $config['snmpwalk']       = '/usr/local/bin/snmpwalk';
+  $config['snmpget']        = '/usr/local/bin/snmpget';
+  $config['snmpbulkwalk']   = '/usr/local/bin/snmpbulkwalk';
+  $config['snmptranslate']  = '/usr/local/bin/snmptranslate';
+
+  $config['ping']           = '/sbin/ping';
+  $config['mtr']            = '/usr/local/bin/mtr';
+  $config['nmap']           = '/usr/local/bin/nmap';
+
+  $config['nagios_plugins'] = '/usr/local/libexec/nagios';
+  $config['ipmitool']       = '/usr/local/bin/ipmitool';
+  $config['virsh']          = '/usr/local/bin/virsh';
+  $config['dot']            = '/usr/local/bin/dot';
+  $config['sfdp']           = '/usr/local/bin/sfdp';
+  $config['nfdump']         = '/usr/local/bin/nfdump';
+
 20200229:
   AFFECTS: users of textproc/apache-solr
   AUTHOR: mfechner@FreeBSD.org
