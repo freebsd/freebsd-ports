@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.32.5
+PORTVERSION=	1.32.6
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	132${PHP_PKGNAMESUFFIX}
@@ -11,6 +11,9 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Wiki engine used by Wikipedia
 
 LICENSE=	GPLv2
+
+DEPRECATED=	EOLed upstream
+EXPIRATION_DATE=2020-06-03
 
 CONFLICTS=	mediawiki131-[0-9]* mediawiki13[34]-[0-9]*
 
