@@ -12,6 +12,7 @@ bin/sg_compare_and_write
 bin/sg_decode_sense
 bin/sg_format
 bin/sg_get_config
+bin/sg_get_elem_status
 bin/sg_get_lba_status
 bin/sg_ident
 bin/sg_inq
@@ -71,10 +72,10 @@ include/scsi/sg_pr2serr.h
 include/scsi/sg_pt.h
 include/scsi/sg_pt_nvme.h
 include/scsi/sg_unaligned.h
+lib/libsgutils2-1.45.so.2
+lib/libsgutils2-1.45.so.2.0.0
 lib/libsgutils2.a
 lib/libsgutils2.so
-lib/libsgutils2.so.2
-lib/libsgutils2.so.2.0.0
 man/man8/scsi_mandat.8.gz
 man/man8/scsi_readcap.8.gz
 man/man8/scsi_ready.8.gz
@@ -88,6 +89,7 @@ man/man8/sg_compare_and_write.8.gz
 man/man8/sg_decode_sense.8.gz
 man/man8/sg_format.8.gz
 man/man8/sg_get_config.8.gz
+man/man8/sg_get_elem_status.8.gz
 man/man8/sg_get_lba_status.8.gz
 man/man8/sg_ident.8.gz
 man/man8/sg_inq.8.gz
@@ -137,4 +139,3 @@ man/man8/sg_write_same.8.gz
 man/man8/sg_write_verify.8.gz
 man/man8/sg_write_x.8.gz
 man/man8/sg_zone.8.gz
-@dir include/scsi
