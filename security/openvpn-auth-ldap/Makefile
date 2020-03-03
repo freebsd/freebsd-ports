@@ -3,6 +3,7 @@
 
 PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.4
+DISTVERSIONPREFIX=	auth-ldap-
 CATEGORIES=	security net-vpn
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -31,7 +32,6 @@ CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	threerings
 GH_PROJECT=	openvpn-auth-ldap
-GH_TAGNAME=	auth-ldap-${PORTVERSION}
 
 PORTDOCS=	README
 PORTEXAMPLES=	auth-ldap.conf

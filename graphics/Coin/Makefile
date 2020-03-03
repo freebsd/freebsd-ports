@@ -3,6 +3,7 @@
 
 PORTNAME=	Coin
 PORTVERSION=	4.0.0
+DISTVERSIONPREFIX=	Coin-
 CATEGORIES=	graphics
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -15,10 +16,9 @@ LIB_DEPENDS=	libsimage.so:graphics/simage
 
 USES=		gl openal:al libtool pathfix xorg
 
-USE_GITHUB=     yes
+USE_GITHUB=	yes
 GH_ACCOUNT=	coin3d
 GH_PROJECT=	coin
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 USE_GL=		gl
 USE_XORG=	ice sm x11 xext xt

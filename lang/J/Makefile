@@ -2,6 +2,8 @@
 
 PORTNAME=	J
 PORTVERSION=	${JVERSION:S/^j//:S/-release//}
+DISTVERSIONPREFIX=	j
+DISTVERSIONSUFFIX=	-release
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang math
@@ -28,7 +30,6 @@ SUB_FILES=	jconsole profile.ijs
 USE_GITHUB=	yes
 GH_ACCOUNT=	jsoftware
 GH_PROJECT=	jsource
-GH_TAGNAME=	${JVERSION}
 
 # J is released with ports-unfriendly versioning
 JVERSION=	j807-release

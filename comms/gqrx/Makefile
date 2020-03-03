@@ -3,6 +3,7 @@
 
 PORTNAME=	gqrx
 PORTVERSION=	2.12.1
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
@@ -31,7 +32,6 @@ USES=		gl pkgconfig qmake qt:5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	csete
-GH_TAGNAME=	v${PORTVERSION:S/.0$//}
 USE_GL=		gl
 USE_QT=		buildtools_build core gui svg network widgets
 

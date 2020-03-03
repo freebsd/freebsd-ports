@@ -24,7 +24,6 @@ USE_GITHUB=	yes # tests not shipped with sdist
 USE_PYTHON=	autoplist concurrent distutils
 
 GH_ACCOUNT=	klen
-GH_TAGNAME=	${PORTVERSION}
 TEST_ENV=	PYTHONPATH=${WRKSRC}/src
 
 NO_ARCH=	yes

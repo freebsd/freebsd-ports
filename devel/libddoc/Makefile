@@ -18,9 +18,6 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dlang-community
-# Note that beta.1 is a perfectly acceptable version, this is not required at
-# all.
-GH_TAGNAME=	${DISTVERSIONFULL:S/beta/beta./}
 
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
