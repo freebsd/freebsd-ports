@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gym
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	OpenAI toolkit for developing and comparing your reinforcement learning
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=1.2.0:devel/py-cloudpickle@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=1.3.0:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PY_ENUM34} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyglet>=1.4.0<1.5.1:graphics/py-pyglet@${PY_FLAVOR} \
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=1.2.0:devel/py-cloudpickle@${PY
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
