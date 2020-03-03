@@ -14,14 +14,6 @@ libdata/pkgconfig/librsvg-2.0.pc
 man/man1/rsvg-convert.1.gz
 share/doc/rsvg-2.0/RsvgHandle.html
 share/doc/rsvg-2.0/annotation-glossary.html
-share/doc/rsvg-2.0/api-index-2-14.html
-share/doc/rsvg-2.0/api-index-2-22.html
-share/doc/rsvg-2.0/api-index-2-32.html
-share/doc/rsvg-2.0/api-index-2-36.html
-share/doc/rsvg-2.0/api-index-2-4.html
-share/doc/rsvg-2.0/api-index-2-8.html
-share/doc/rsvg-2.0/api-index-2-9.html
-share/doc/rsvg-2.0/api-index-deprecated.html
 share/doc/rsvg-2.0/api-index-full.html
 share/doc/rsvg-2.0/home.png
 share/doc/rsvg-2.0/index.html
