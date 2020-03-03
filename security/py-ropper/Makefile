@@ -3,6 +3,7 @@
 PORTNAME=	ropper
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13.5
+PORTREVISION=	1
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,7 +21,7 @@ USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	sashs
 GH_PROJECT=	Ropper
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
