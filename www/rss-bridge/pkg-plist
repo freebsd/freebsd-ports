@@ -20,6 +20,7 @@
 %%WWWDIR%%/bridges/AsahiShimbunAJWBridge.php
 %%WWWDIR%%/bridges/AskfmBridge.php
 %%WWWDIR%%/bridges/AtmoNouvelleAquitaineBridge.php
+%%WWWDIR%%/bridges/AtmoOccitanieBridge.php
 %%WWWDIR%%/bridges/AutoJMBridge.php
 %%WWWDIR%%/bridges/BAEBridge.php
 %%WWWDIR%%/bridges/BadDragonBridge.php
@@ -52,6 +53,7 @@
 %%WWWDIR%%/bridges/DansTonChatBridge.php
 %%WWWDIR%%/bridges/DarkReadingBridge.php
 %%WWWDIR%%/bridges/DauphineLibereBridge.php
+%%WWWDIR%%/bridges/DaveRamseyBlogBridge.php
 %%WWWDIR%%/bridges/DavesTrailerPageBridge.php
 %%WWWDIR%%/bridges/DealabsBridge.php
 %%WWWDIR%%/bridges/DerpibooruBridge.php
@@ -62,6 +64,7 @@
 %%WWWDIR%%/bridges/DiceBridge.php
 %%WWWDIR%%/bridges/DilbertBridge.php
 %%WWWDIR%%/bridges/DiscogsBridge.php
+%%WWWDIR%%/bridges/DonnonsBridge.php
 %%WWWDIR%%/bridges/DownDetectorBridge.php
 %%WWWDIR%%/bridges/DribbbleBridge.php
 %%WWWDIR%%/bridges/DuckDuckGoBridge.php
@@ -84,7 +87,9 @@
 %%WWWDIR%%/bridges/FierPandaBridge.php
 %%WWWDIR%%/bridges/FilterBridge.php
 %%WWWDIR%%/bridges/FindACrewBridge.php
+%%WWWDIR%%/bridges/FirstLookMediaTechBridge.php
 %%WWWDIR%%/bridges/FlickrBridge.php
+%%WWWDIR%%/bridges/FolhaDeSaoPauloBridge.php
 %%WWWDIR%%/bridges/FootitoBridge.php
 %%WWWDIR%%/bridges/ForGifsBridge.php
 %%WWWDIR%%/bridges/FourchanBridge.php
@@ -158,6 +163,7 @@
 %%WWWDIR%%/bridges/NasaApodBridge.php
 %%WWWDIR%%/bridges/NationalGeographicBridge.php
 %%WWWDIR%%/bridges/NeuviemeArtBridge.php
+%%WWWDIR%%/bridges/NewOnNetflixBridge.php
 %%WWWDIR%%/bridges/NextInpactBridge.php
 %%WWWDIR%%/bridges/NextgovBridge.php
 %%WWWDIR%%/bridges/NiceMatinBridge.php
@@ -173,12 +179,14 @@
 %%WWWDIR%%/bridges/ParuVenduImmoBridge.php
 %%WWWDIR%%/bridges/PatreonBridge.php
 %%WWWDIR%%/bridges/PcGamerBridge.php
+%%WWWDIR%%/bridges/PhoronixBridge.php
 %%WWWDIR%%/bridges/PickyWallpapersBridge.php
 %%WWWDIR%%/bridges/PikabuBridge.php
 %%WWWDIR%%/bridges/PinterestBridge.php
 %%WWWDIR%%/bridges/PirateCommunityBridge.php
 %%WWWDIR%%/bridges/PixivBridge.php
 %%WWWDIR%%/bridges/PlantUMLReleasesBridge.php
+%%WWWDIR%%/bridges/PornhubBridge.php
 %%WWWDIR%%/bridges/QPlayBridge.php
 %%WWWDIR%%/bridges/RTBFBridge.php
 %%WWWDIR%%/bridges/RadioMelodieBridge.php
@@ -186,8 +194,8 @@
 %%WWWDIR%%/bridges/RedditBridge.php
 %%WWWDIR%%/bridges/Releases3DSBridge.php
 %%WWWDIR%%/bridges/ReporterreBridge.php
-%%WWWDIR%%/bridges/RevolutBridge.php
 %%WWWDIR%%/bridges/RoadAndTrackBridge.php
+%%WWWDIR%%/bridges/RoosterTeethBridge.php
 %%WWWDIR%%/bridges/Rue89Bridge.php
 %%WWWDIR%%/bridges/Rule34Bridge.php
 %%WWWDIR%%/bridges/Rule34pahealBridge.php
@@ -195,6 +203,7 @@
 %%WWWDIR%%/bridges/SafebooruBridge.php
 %%WWWDIR%%/bridges/ScmbBridge.php
 %%WWWDIR%%/bridges/ScoopItBridge.php
+%%WWWDIR%%/bridges/ScribdBridge.php
 %%WWWDIR%%/bridges/SensCritiqueBridge.php
 %%WWWDIR%%/bridges/ShanaprojectBridge.php
 %%WWWDIR%%/bridges/Shimmie2Bridge.php
@@ -220,6 +229,8 @@
 %%WWWDIR%%/bridges/TheWhiteboardBridge.php
 %%WWWDIR%%/bridges/TheYeteeBridge.php
 %%WWWDIR%%/bridges/ThingiverseBridge.php
+%%WWWDIR%%/bridges/TinyLetterBridge.php
+%%WWWDIR%%/bridges/TorrentGalaxyBridge.php
 %%WWWDIR%%/bridges/TrelloBridge.php
 %%WWWDIR%%/bridges/TwitchBridge.php
 %%WWWDIR%%/bridges/TwitterBridge.php
