@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-lightsail
-PORTVERSION=	1.28.0
+PORTVERSION=	1.28.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
