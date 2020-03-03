@@ -23,6 +23,7 @@ SRCS+=	usb_libusb.cpp
 .PATH: ${.CURDIR}/../base
 SRCS+=	errors_unix.cpp
 SRCS+=	file.cpp
+SRCS+=	liblog_symbols.cpp
 SRCS+=	logging.cpp
 SRCS+=	mapped_file.cpp
 SRCS+=	parsenetaddress.cpp
@@ -57,14 +58,10 @@ SRCS+=	sockets_unix.cpp
 # DragonFly, NetBSD, OpenBSD
 CPPFLAGS.sockets.cpp+=	-o ${.TARGET}
 
-# required by base and libutils
-.PATH:	${.CURDIR}/../liblog
-SRCS+=	fake_log_device.cpp
-SRCS+=	fake_writer.cpp
-SRCS+=	logger_lock.cpp
-SRCS+=	logger_name.cpp
-SRCS+=	logger_write.cpp
-SRCS+=	logprint.cpp
+# required by base and zip_archive
+.PATH: ${.CURDIR}/../liblog
+SRCS+= logger_write.cpp
+SRCS+= ../liblog/properties.cpp
 
 # required by fastboot
 .PATH:	${.CURDIR}/../libsparse
@@ -84,8 +81,6 @@ CPPFLAGS+=	-Doff64_t=off_t
 CPPFLAGS+=	-Dftruncate64=ftruncate
 CPPFLAGS+=	-Dlseek64=lseek
 CPPFLAGS+=	-Dmmap64=mmap
-CPPFLAGS+=	-Dpread64=pread
-CPPFLAGS+=	-DFAKE_LOG_DEVICE=1
 CPPFLAGS+=	-I${.CURDIR}
 CPPFLAGS+=	-I${.CURDIR}/../include
 CPPFLAGS+=	-I${.CURDIR}/../avb

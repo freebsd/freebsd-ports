@@ -21,6 +21,7 @@ SRCS+= sysdeps_unix.cpp
 SRCS+= transport.cpp
 SRCS+= transport_local.cpp
 SRCS+= transport_usb.cpp
+SRCS+= types.cpp
 
 TEST_SRCS+= adb_io_test.cpp
 TEST_SRCS+= adb_listeners_test.cpp
@@ -61,6 +62,7 @@ SRCS+= network.cpp
 .PATH: ${.CURDIR}/../base
 SRCS+= chrono_utils.cpp
 SRCS+= file.cpp
+SRCS+= liblog_symbols.cpp
 SRCS+= logging.cpp
 SRCS+= parsenetaddress.cpp
 SRCS+= stringprintf.cpp
@@ -91,6 +93,11 @@ SRCS+= ../libcutils/sockets.cpp
 SRCS+= threads.cpp
 # DragonFly, NetBSD, OpenBSD
 CPPFLAGS.sockets.cpp+= -o ${.TARGET}
+
+# required by base
+.PATH: ${.CURDIR}/../liblog
+SRCS+= logger_write.cpp
+SRCS+= ../liblog/properties.cpp
 
 CPPFLAGS+= -DPLATFORM_TOOLS_VERSION="\"${VERSION:U0.0.0}\""
 CPPFLAGS+= -DADB_HOST=1

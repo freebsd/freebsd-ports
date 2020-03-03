@@ -1,7 +1,7 @@
-TIMESTAMP = 1571358141
-SHA256 (aosp-mirror-platform_system_core-platform-tools-29.0.5_GH0.tar.gz) = a89ed6195862578acc01092e8ca390cd7578725bca9eed77b6b730f334b4c255
-SIZE (aosp-mirror-platform_system_core-platform-tools-29.0.5_GH0.tar.gz) = 68752941
+TIMESTAMP = 1581453885
+SHA256 (aosp-mirror-platform_system_core-platform-tools-29.0.6_GH0.tar.gz) = 3d1898c1ad19f63641090576c60588ab761132b42b306ff4979d30723187d562
+SIZE (aosp-mirror-platform_system_core-platform-tools-29.0.6_GH0.tar.gz) = 72302409
 SHA256 (mbrubeck-android-completion-c1b0656_GH0.tar.gz) = ca3311ba47a5edd56c929ac9aae57c02c2c3f1636519c5f67abb00b6e3ecd75c
 SIZE (mbrubeck-android-completion-c1b0656_GH0.tar.gz) = 5967
-SHA256 (aosp-mirror-platform_development-platform-tools-29.0.5_GH0.tar.gz) = 6975dbe199d76f375a4da5b945be1e389611906420f40b3c5c961a33929d2443
-SIZE (aosp-mirror-platform_development-platform-tools-29.0.5_GH0.tar.gz) = 63881721
+SHA256 (aosp-mirror-platform_development-platform-tools-29.0.6_GH0.tar.gz) = 5560f767082834183e31af0fca9e121996e5e16aac67ce10f9321c4146809a0a
+SIZE (aosp-mirror-platform_development-platform-tools-29.0.6_GH0.tar.gz) = 63959966
