@@ -1,0 +1,28 @@
+--- pyvex_c/Makefile.orig	2019-04-16 21:08:49 UTC
++++ pyvex_c/Makefile
+@@ -4,6 +4,11 @@ ifeq ($(UNAME), Darwin)
+ 	STATIC_LIBRARY_FILE=libpyvex.a
+ 	LDFLAGS=-Wl,-install_name,$(LIBRARY_FILE)
+ endif
++ifeq ($(UNAME), FreeBSD)
++	LIBRARY_FILE=libpyvex.so
++	STATIC_LIBRARY_FILE=libpyvex.a
++	LDFLAGS=-Wl,-soname,$(LIBRARY_FILE) %%LDFLAGS%%
++endif
+ ifeq ($(UNAME), Linux)
+ 	LIBRARY_FILE=libpyvex.so
+ 	STATIC_LIBRARY_FILE=libpyvex.a
+@@ -27,10 +32,10 @@ sp +=
+ qs = $(subst ?,$(sp),$1)
+ sq = $(subst $(sp),?,$1)
+ 
+-CC=gcc
+-AR=ar
++CC?=gcc
++AR?=ar
+ INCFLAGS=-I "$(VEX_INCLUDE_PATH)"
+-CFLAGS=-g -O2 -Wall -shared -fPIC -std=c99 $(INCFLAGS)
++CFLAGS=-g %%CFLAGS%% -Wall -shared -fPIC $(INCFLAGS)
+ 
+ OBJECTS=pyvex.o logging.o analysis.o postprocess.o
+ HEADERS=pyvex.h

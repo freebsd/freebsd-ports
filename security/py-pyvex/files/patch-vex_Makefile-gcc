@@ -1,0 +1,11 @@
+--- vex/Makefile-gcc.orig	2020-03-02 17:34:06 UTC
++++ vex/Makefile-gcc
+@@ -44,7 +44,7 @@ CFLAGS := -Ipub -Ipriv \
+ ifeq ($(DEBUG),1)
+ CFLAGS += -g
+ else
+-CFLAGS += -O2
++#CFLAGS += -O2
+ endif
+ 
+ # These are a separate set of defines that compile for parallel environments
