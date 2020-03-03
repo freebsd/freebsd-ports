@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	byobu
-PORTVERSION=	5.130
+PORTVERSION=	5.133
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
