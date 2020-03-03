@@ -14,7 +14,7 @@
      test_paths= ;; #(
    yes) :
 -    test_paths="/usr/local/liblua /usr/local/lua /usr/local /opt/liblua /opt/lua /opt /usr" ;; #(
-+    test_paths="%%PREFIX%%/include/luajit-2.0" ;; #(
++    test_paths="%%PREFIX%%/include/luajit-2.1" ;; #(
    *) :
      test_paths="${with_lua}" ;;
  esac
