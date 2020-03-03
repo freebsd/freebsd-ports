@@ -1,3 +1,3 @@
-TIMESTAMP = 1577781665
-SHA256 (rubygem/aws-sdk-comprehendmedical-1.12.0.gem) = 51b30d01a18e670840cf31cfeb0f6ec08559dd953f47996da3db277cb588ac0a
-SIZE (rubygem/aws-sdk-comprehendmedical-1.12.0.gem) = 23040
+TIMESTAMP = 1583257502
+SHA256 (rubygem/aws-sdk-comprehendmedical-1.13.0.gem) = a20306511ef7999c4634541e62e458a02e64bece3bfa301a8fd98d4caad12cc3
+SIZE (rubygem/aws-sdk-comprehendmedical-1.13.0.gem) = 23552
