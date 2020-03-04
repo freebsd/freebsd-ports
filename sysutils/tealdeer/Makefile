@@ -182,9 +182,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		ws2_32-sys-0.2.1 \
 		xattr-0.2.2 \
 		xdg-2.2.0
-CARGO_BUILD_ARGS=	--no-default-features
-CARGO_INSTALL_ARGS=	--no-default-features
-CARGO_TEST_ARGS=	--no-default-features
+CARGO_FEATURES=	--no-default-features
 
 PLIST_FILES=	bin/tldr \
 		etc/bash_completion.d/tldr.bash \
