@@ -4,6 +4,7 @@
 
 PORTNAME=	adonthell
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}
@@ -18,12 +19,13 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis
 
-USES=		gettext gmake localbase pkgconfig python:2.7 sdl
+USES=		gettext gmake localbase pkgconfig python sdl
 USE_SDL=	mixer2 ttf2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-py-debug --disable-pyc \
-		--with-python=${PYTHON_CMD} \
-		--with-py-libs="-lpython${PYTHON_VER}"
+CONFIGURE_ARGS=	--disable-py-debug \
+		--disable-pyc \
+		--with-py-libs="$$(${PYTHON_CMD}-config --ldflags)" \
+		--with-python=${PYTHON_CMD}
 
 PLIST_DIRS=	${DATADIR}/games
 PLIST_FILES=	bin/adonthell \
