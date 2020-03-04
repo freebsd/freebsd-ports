@@ -1484,6 +1484,7 @@
     SUBDIR += twitux
     SUBDIR += u6rd
     SUBDIR += ucarp
+    SUBDIR += udpbroadcastrelay
     SUBDIR += udptunnel
     SUBDIR += udpxy
     SUBDIR += udt
