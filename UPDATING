@@ -148,6 +148,28 @@ you update your ports collection, before attempting any port upgrades.
   default configuration, but if you have a custom configuration, they might not
   be.
 
+20200210:
+  AFFECTS: users of net-im/prosody
+  AUTHOR: thomas@beingboiled.info
+
+  Prosody's pid file and data directory have moved to a new location.
+  If you are upgrading from a version with the pid file and data
+  directory in /usr/local/var/lib/prosody please perform these steps:
+
+    # stop Prosody
+    pkill -F /usr/local/var/lib/prosody/prosody.pid
+
+    # copy the data directory
+    cp -a /usr/local/var/lib/prosody /var/db/prosody
+    rm -f /var/db/prosody/prosody.pid
+
+  Make sure your prosody config has the following option set:
+
+    pidfile = "/var/run/prosody/prosody.pid"
+
+  Then start Prosody again. Everything should be working as before and
+  the /usr/local/var/lib/prosody directory can now be removed.
+
 20200207:
   AFFECTS: users of security/nss
   AUTHOR: lwhsu@FreeBSD.org

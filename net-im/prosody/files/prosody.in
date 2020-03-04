@@ -15,32 +15,22 @@
 . /etc/rc.subr
 
 name="prosody"
-rcvar=prosody_enable
+rcvar="prosody_enable"
 command="%%PREFIX%%/bin/prosodyctl"
 
 load_rc_config $name
 
 prosody_enable=${prosody_enable:-"NO"}
-pidfile=${prosody_pidfile:-"%%PREFIX%%/var/lib/prosody/prosody.pid"}
+pidfile=${prosody_pidfile:-"/var/run/prosody/prosody.pid"}
 
-extra_commands="reload status"
-
-start_cmd="prosody_start"
+extra_commands="reload"
+start_cmd="prosody_cmd start"
 stop_cmd="prosody_cmd stop"
 reload_cmd="prosody_cmd reload"
-restart_cmd="$stop_cmd; $start_cmd"
+restart_cmd="prosody_cmd restart"
 status_cmd="prosody_cmd status"
 
-prosody_start()
-{
-	config="%%PREFIX%%/etc/prosody/prosody.cfg.lua"
-	if grep -q '^daemonize[[:blank:]]*=[[:blank:]]*false' $config; then
-		# Prosody's not going to daemonize on its own, use daemon(8)
-		daemon $command start
-	else
-		$command start
-	fi
-}
+export PATH="%%PREFIX%%/bin:$PATH"
 
 prosody_cmd()
 {

@@ -1,6 +1,6 @@
---- GNUmakefile.orig	2018-12-01 14:51:46.042219000 +0000
-+++ GNUmakefile	2018-12-01 14:52:30.212140000 +0000
-@@ -6,7 +6,7 @@
+--- GNUmakefile.orig	2020-01-02 09:49:37 UTC
++++ GNUmakefile
+@@ -6,7 +6,7 @@ CONFIG = $(DESTDIR)$(SYSCONFDIR)
  MODULES = $(DESTDIR)$(LIBDIR)/prosody/modules
  SOURCE = $(DESTDIR)$(LIBDIR)/prosody
  DATA = $(DESTDIR)$(DATADIR)
@@ -9,7 +9,7 @@
  
  INSTALLEDSOURCE = $(LIBDIR)/prosody
  INSTALLEDCONFIG = $(SYSCONFDIR)
-@@ -57,7 +57,7 @@
+@@ -57,9 +57,10 @@ install: prosody.install prosodyctl.install prosody.cf
  	$(INSTALL_DATA) plugins/mod_mam/*.lua $(MODULES)/mod_mam
  	$(INSTALL_DATA) certs/* $(CONFIG)/certs
  	$(INSTALL_DATA) man/prosodyctl.man $(MAN)/man1/prosodyctl.1
@@ -17,4 +17,7 @@
 +	$(INSTALL_DATA) prosody.cfg.lua.install $(CONFIG)/prosody.cfg.lua.sample
  	-test -f prosody.version && $(INSTALL_DATA) prosody.version $(SOURCE)/prosody.version
  	$(MAKE) install -C util-src
++	$(MAKE) install -C tools/migration
  
+ clean:
+ 	rm -f prosody.install

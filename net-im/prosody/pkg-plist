@@ -1,13 +1,8 @@
 bin/prosody
 bin/prosodyctl
-%%ETCDIR%%/certs/GNUmakefile
-%%ETCDIR%%/certs/example.com.crt
-%%ETCDIR%%/certs/example.com.key
-%%ETCDIR%%/certs/localhost.cnf
-%%ETCDIR%%/certs/localhost.crt
-%%ETCDIR%%/certs/localhost.key
-%%ETCDIR%%/certs/makefile
-%%ETCDIR%%/certs/openssl.cnf
+bin/prosody-migrator
+@dir %%ETCDIR%%/certs
+@sample %%ETCDIR%%/migrator.cfg.lua.sample
 @sample %%ETCDIR%%/prosody.cfg.lua.sample
 %%LUA_LIBDIR%%/prosody/core/certmanager.lua
 %%LUA_LIBDIR%%/prosody/core/configmanager.lua
@@ -23,6 +18,10 @@ bin/prosodyctl
 %%LUA_LIBDIR%%/prosody/core/statsmanager.lua
 %%LUA_LIBDIR%%/prosody/core/storagemanager.lua
 %%LUA_LIBDIR%%/prosody/core/usermanager.lua
+%%LUA_LIBDIR%%/prosody/migrator/jabberd14.lua
+%%LUA_LIBDIR%%/prosody/migrator/mtools.lua
+%%LUA_LIBDIR%%/prosody/migrator/prosody_files.lua
+%%LUA_LIBDIR%%/prosody/migrator/prosody_sql.lua
 %%LUA_LIBDIR%%/prosody/modules/adhoc/adhoc.%%LUA_LIBDIR%%.lua
 %%LUA_LIBDIR%%/prosody/modules/adhoc/mod_adhoc.lua
 %%LUA_LIBDIR%%/prosody/modules/mod_admin_adhoc.lua
@@ -144,6 +143,7 @@ bin/prosodyctl
 %%LUA_LIBDIR%%/prosody/util/cache.lua
 %%LUA_LIBDIR%%/prosody/util/caps.lua
 %%LUA_LIBDIR%%/prosody/util/compat.so
+%%LUA_LIBDIR%%/prosody/util/crand.so
 %%LUA_LIBDIR%%/prosody/util/dataforms.lua
 %%LUA_LIBDIR%%/prosody/util/datamanager.lua
 %%LUA_LIBDIR%%/prosody/util/datetime.lua
@@ -216,4 +216,5 @@ bin/prosodyctl
 %%LUA_LIBDIR%%/prosody/util/xmppstream.lua
 %%LUA_LIBDIR%%/prosody/util/xpcall.lua
 man/man1/prosodyctl.1.gz
-@dir(%%PROSODY_USER%%,%%PROSODY_GROUP%%,) var/%%LUA_LIBDIR%%/prosody
+@dir(%%PROSODY_USER%%,%%PROSODY_GROUP%%,) /var/db/prosody
+@dir(%%PROSODY_USER%%,%%PROSODY_GROUP%%,) /var/run/prosody
