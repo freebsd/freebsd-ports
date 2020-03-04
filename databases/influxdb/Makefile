@@ -3,6 +3,7 @@
 PORTNAME=	influxdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.9
+PORTREVISION=	1
 CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -11,7 +12,7 @@ COMMENT=	Open-source distributed time series database
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 ONLY_FOR_ARCHS_REASON=	depends on go which is not supported in this architecture
 
 USES=		go
@@ -59,7 +60,7 @@ GH_TUPLE=	BurntSushi:toml:a368813:BurntSushi_toml/vendor/github.com/BurntSushi/t
 		golang:protobuf:v1.1.0:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:d9eb7a3:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:1d60e46:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:ac767d6:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:fead79001313:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
 		golang:time:fbb02b2:golang_time/vendor/golang.org/x/time \
 		golang:tools:45ff765:golang_tools/vendor/golang.org/x/tools \
