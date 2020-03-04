@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	heimer
-DISTVERSION=	1.15.0
+DISTVERSION=	1.15.1
 CATEGORIES=	graphics
 
 MAINTAINER=	tobik@FreeBSD.org
