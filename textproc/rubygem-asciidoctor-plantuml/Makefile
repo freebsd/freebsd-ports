@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asciidoctor-plantuml
-PORTVERSION=	0.0.10
+PORTVERSION=	0.0.11
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
