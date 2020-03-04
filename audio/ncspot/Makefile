@@ -395,10 +395,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		x11-clipboard-0.3.3 \
 		xcb-0.8.2 \
 		xi-unicode-0.2.0
-CARGO_FEATURES=		cursive/pancurses-backend
-CARGO_BUILD_ARGS=	--no-default-features
-CARGO_INSTALL_ARGS=	--no-default-features
-CARGO_TEST_ARGS=	--no-default-features
+CARGO_FEATURES=		--no-default-features cursive/pancurses-backend
 
 PLIST_FILES=	bin/ncspot
 PORTDOCS=	README.md

@@ -360,10 +360,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		ws2_32-sys-0.2.1 \
 		xdg-2.2.0
-
-CARGO_BUILD_ARGS=	--no-default-features
-CARGO_INSTALL_ARGS=	--no-default-features
-CARGO_TEST_ARGS=	--no-default-features
+CARGO_FEATURES=	--no-default-features
 
 PLIST_FILES=	bin/spotifyd \
 		"@sample etc/spotifyd.conf.sample"
