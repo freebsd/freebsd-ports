@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
