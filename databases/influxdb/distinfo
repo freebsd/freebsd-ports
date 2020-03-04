@@ -1,4 +1,4 @@
-TIMESTAMP = 1573860219
+TIMESTAMP = 1580813141
 SHA256 (influxdata-influxdb-v1.7.9_GH0.tar.gz) = fad5107985395353a584978f6c0ad1fbd4f41ea71bdc9cf55a006cc9a88d2b61
 SIZE (influxdata-influxdb-v1.7.9_GH0.tar.gz) = 11862438
 SHA256 (BurntSushi-toml-a368813_GH0.tar.gz) = 68dc067c4105cd20a642ddf1f4acaada7474c1b58e5b249d4bd9b0d7e8edebc2
@@ -75,8 +75,8 @@ SHA256 (golang-snappy-d9eb7a3_GH0.tar.gz) = 857fd1a142bc62ed05610c9daec12c6f6e4f
 SIZE (golang-snappy-d9eb7a3_GH0.tar.gz) = 62041
 SHA256 (golang-sync-1d60e46_GH0.tar.gz) = 526fab48f250f45ec22dbfd2700df629871ea8aeb8289a49c58f4fc606a7a5e5
 SIZE (golang-sync-1d60e46_GH0.tar.gz) = 16327
-SHA256 (golang-sys-ac767d6_GH0.tar.gz) = 8cfe5e75d7d145302d18a41938c0c0c18d82644de0a753b7b503efe3071258dd
-SIZE (golang-sys-ac767d6_GH0.tar.gz) = 980197
+SHA256 (golang-sys-fead79001313_GH0.tar.gz) = c8e102db152c51438f426a92b338f924827b960e75bd9d871ae9438135366073
+SIZE (golang-sys-fead79001313_GH0.tar.gz) = 1258330
 SHA256 (golang-text-v0.3.0_GH0.tar.gz) = 8f4c9a048345befc7beccd09267737ee1f55c7b35e5ff80f344ec9e0aa90febb
 SIZE (golang-text-v0.3.0_GH0.tar.gz) = 6102619
 SHA256 (golang-time-fbb02b2_GH0.tar.gz) = c4c2bca52ea28e83e6f73862ea65c34e2abdb7e0c53f88f69603384fe6041ebc
