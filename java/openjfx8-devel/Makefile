@@ -17,6 +17,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=	2020-11-30
 ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	apache-ant>0:devel/apache-ant \
