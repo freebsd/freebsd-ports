@@ -3,10 +3,10 @@
 
 PORTNAME=	pygopherd
 PORTVERSION=	2.0.18.4
-DISTVERSIONPREFIX=	debian/
 CATEGORIES=	net python
+DISTVERSIONPREFIX=	debian/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Multiprotocol Information Server
 
 LICENSE=	GPLv2
@@ -34,6 +34,6 @@ post-patch:
 	@${MV} ${WRKSRC}/conf/pygopherd.conf ${WRKSRC}/conf/pygopherd.conf.sample
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/pygopherd.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/pygopherd.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
