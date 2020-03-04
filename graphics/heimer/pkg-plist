@@ -1,4 +1,8 @@
 bin/heimer
+@comment include/argengine.hpp
+@comment include/simple_logger.hpp
+@comment lib/libArgengine.a
+@comment lib/libSimpleLogger.a
 share/applications/heimer.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Company.alz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Family.alz
