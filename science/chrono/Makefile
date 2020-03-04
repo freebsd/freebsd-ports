@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chrono
-DISTVERSION=	5.0.0
+DISTVERSION=	5.0.1
 CATEGORIES=	science devel
 PKGNAMESUFFIX=	-physics-simulation-engine
 
