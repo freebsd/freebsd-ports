@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.80rc1
-PORTREVISION=	3
+DISTVERSION=	2.81rc1
+PORTREVISION=	0
 PORTEPOCH=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
@@ -15,9 +15,9 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
 LICENSE=	GPLv2
 
-CONFLICTS_INSTALL=dnsmasq-2*
+USES=		cpe shebangfix tar:xz
 
-IGNORE=		use dns/dnsmasq, which is newer
+CONFLICTS_INSTALL=dnsmasq-2*
 
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 
@@ -38,7 +38,6 @@ IDN_DESC=	IDN: Int'l Domain Names WITHOUT full NLS
 IPSET_DESC=	Dynamic firewall management of resolved names (needs PF)
 LUA_DESC=	Support lease-change scripts written in Lua
 DNSSEC_DESC=	Enable DNSSEC caching and validation
-USES=		cpe shebangfix tar:xz
 SHEBANG_FILES=	contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl \
 		contrib/dnslist/dnslist.pl
 CPE_VENDOR=	thekelleys
@@ -95,9 +94,6 @@ USE_RC_SUBR=	dnsmasq
 .include <bsd.port.pre.mk>
 
 LDFLAGS+=	-L${LOCALBASE}/lib ${_intllibs} ${ICONV_LIB}
-
-post-patch:
-	${REINPLACE_CMD} -e "s/lua5\.1/lua-${LUA_VER}/" ${WRKSRC}/Makefile
 
 pre-configure: pretty-print-config
 .if ${PORT_OPTIONS:MIDN}
