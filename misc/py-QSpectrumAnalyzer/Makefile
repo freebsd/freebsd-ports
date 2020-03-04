@@ -2,7 +2,7 @@
 
 PORTNAME=	QSpectrumAnalyzer
 DISTVERSION=	2.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc hamradio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,7 +34,7 @@ post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME:tl} ${STAGEDIR}${PREFIX}/bin/${PORTNAME:tl}.shadow
 	@(echo "#!/bin/sh"; \
 	  echo ""; \
-	  echo "LD_PRELOAD=${PREFIX}/lib/gcc6/libgcc_s.so ${PREFIX}/bin/${PORTNAME:tl}.shadow \"$$@\"" \
+	  echo "LD_PRELOAD=${PREFIX}/lib/gcc9/libgcc_s.so ${PREFIX}/bin/${PORTNAME:tl}.shadow \"$$@\"" \
 	) > ${STAGEDIR}${PREFIX}/bin/${PORTNAME:tl}
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${PORTNAME:tl}
 
