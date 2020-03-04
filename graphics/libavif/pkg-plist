@@ -1,10 +1,10 @@
 bin/avifdec
 bin/avifenc
 include/avif/avif.h
-include/avif/internal.h
 lib/cmake/libavif/libavif-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libavif/libavif-config-version.cmake
 lib/cmake/libavif/libavif-config.cmake
 lib/libavif.so
 lib/libavif.so.0
-lib/libavif.so.0.1.6
+lib/libavif.so.1.0.0
+libdata/pkgconfig/libavif.pc
