@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gatk
-DISTVERSION=	4.1.4.1
-PORTREVISION=	1
+DISTVERSION=	4.1.5.0
 CATEGORIES=	biology java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -28,6 +27,8 @@ DEPS_CACHE_DIR=	${WRKDIR}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		${JAVAJARDIR}/GenomeAnalysisTK-${PORTVERSION}.jar
+
+# TODO additionally fetch git-lfs files: https://github.com/broadinstitute/gatk/issues/6395
 
 # to rebuild the deps archive:
 #   1. set DEV_UPDATE_MODE=yes
