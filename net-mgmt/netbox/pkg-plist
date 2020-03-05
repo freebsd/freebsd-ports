@@ -307,6 +307,7 @@
 %%DATADIR%%/extras/migrations/0035_deterministic_ordering.py
 %%DATADIR%%/extras/migrations/0036_contenttype_filters_to_q_objects.py
 %%DATADIR%%/extras/migrations/0037_configcontexts_clusters.py
+%%DATADIR%%/extras/migrations/0038_webhook_template_support.py
 %%DATADIR%%/extras/migrations/__init__.py
 %%DATADIR%%/extras/models.py
 %%DATADIR%%/extras/querysets.py
@@ -1295,6 +1296,7 @@
 %%DATADIR%%/templates/dcim/inc/poweroutlet.html
 %%DATADIR%%/templates/dcim/inc/powerport.html
 %%DATADIR%%/templates/dcim/inc/rack_elevation.html
+%%DATADIR%%/templates/dcim/inc/rack_elevation_header.html
 %%DATADIR%%/templates/dcim/inc/rearport.html
 %%DATADIR%%/templates/dcim/interface.html
 %%DATADIR%%/templates/dcim/interface_connections_list.html
