@@ -8,7 +8,7 @@ CATEGORIES=	deskutils gnustep
 MASTER_SITES=	GNUSTEP/usr-apps
 PKGNAMESUFFIX=	-gwmetadata${PKGNAMESUFFIX2}
 
-MAINTAINER=	theraven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GWMetadata for GNUstep workspace manager
 
 LICENSE=	GPLv2

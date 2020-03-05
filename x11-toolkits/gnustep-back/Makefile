@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	back-
 DISTVERSION=	0_27_0
 CATEGORIES=	x11-toolkits gnustep
 
-MAINTAINER=	theraven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep GUI backend
 
 LICENSE_COMB=	multi

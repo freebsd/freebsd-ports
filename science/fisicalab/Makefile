@@ -6,7 +6,7 @@ PORTREVISION=	11
 CATEGORIES=	science gnustep
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	theraven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Physics simulation program for educational use
 
 LICENSE=	GPLv3

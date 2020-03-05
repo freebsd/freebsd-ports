@@ -8,7 +8,7 @@ CATEGORIES=	mail gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	Addresses-${PORTVERSION}
 
-MAINTAINER=	theraven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Versatile addressbook for GNUstep
 
 LICENSE=	LGPL21

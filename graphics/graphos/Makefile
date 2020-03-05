@@ -7,7 +7,7 @@ CATEGORIES=	graphics gnustep
 MASTER_SITES=	SAVANNAH/gap
 DISTNAME=	Graphos-${PORTVERSION}
 
-MAINTAINER=	theraven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector drawing application centered around bezier paths
 
 LICENSE=	GPLv2
