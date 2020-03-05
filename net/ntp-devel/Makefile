@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-dev-${PORTVERSION:S/P/p/:S/r/-RC/:S/b/-beta/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
+FORBIDDEN=	See http://support.ntp.org/bin/view/Main/SecurityNotice#March_2020_ntp_4_2_8p14_NTP_Rele
+
 LIB_DEPENDS=	libevent.so:devel/libevent
 
 CONFLICTS=	ntp-[0-9].* openntpd-*
