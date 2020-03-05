@@ -21,8 +21,9 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libxmlbird.so:textproc/libxmlbird
 
-USES=		gettext-tools gnome pkgconfig python:3.7+,build \
-		shared-mime-info shebangfix sqlite:3 tar:xz
+USES=		compiler:c++11-lang gettext-tools gnome pkgconfig \
+		python:3.7+,build shared-mime-info shebangfix sqlite:3 \
+		tar:xz
 USE_GNOME=	cairo glib20 gtk30
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
