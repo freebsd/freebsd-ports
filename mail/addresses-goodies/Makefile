@@ -8,7 +8,7 @@ MASTER_SITES=	SAVANNAH/gap
 PKGNAMESUFFIX=	-goodies${PKGNAMESUFFIX2}
 DISTNAME=	Addresses-${PORTVERSION}
 
-MAINTAINER=	theraven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Goodies for addressbook for GNUstep
 
 LICENSE=	LGPL21

@@ -7,7 +7,7 @@ DISTVERSION=	0_27_0
 PORTREVISION=	3
 CATEGORIES=	x11-toolkits gnustep
 
-MAINTAINER=	theraven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep GUI library
 
 LICENSE=	GPLv3 LGPL3

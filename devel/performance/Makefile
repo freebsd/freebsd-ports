@@ -7,7 +7,7 @@ CATEGORIES=	devel gnustep
 MASTER_SITES=	GNUSTEP/libs
 DISTNAME=	Performance-${PORTVERSION}
 
-MAINTAINER=	theraven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Help improve the performance of GNUstep applications
 
 LICENSE=	LGPL3

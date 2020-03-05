@@ -8,7 +8,7 @@ CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://twilightedge.com/downloads/
 DISTNAME=	PikoPixel.Sources.${DISTVERSION}
 
-MAINTAINER=	theraven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for drawing and editing pixel-art images
 
 LICENSE=	AGPLv3

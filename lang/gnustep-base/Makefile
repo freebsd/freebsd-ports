@@ -7,7 +7,7 @@ DISTVERSION=	1_26_0
 PORTREVISION=	3
 CATEGORIES=	lang devel gnustep
 
-MAINTAINER=	theraven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep Foundation library
 
 LICENSE=	GPLv3 LGPL3

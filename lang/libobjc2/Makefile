@@ -6,7 +6,7 @@ PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	lang devel gnustep
 
-MAINTAINER=	theraven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement Objective-C runtime supporting modern Objective-C features
 
 LICENSE=	MIT
