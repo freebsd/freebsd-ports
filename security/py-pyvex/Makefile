@@ -15,6 +15,9 @@ LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/vex/LICENSE.GPL
 LICENSE_FILE_GPLv3=	${WRKSRC}/pyvex_c/LICENSE
 
+ONLY_FOR_ARCHS=		aarch64 amd64 armv7 i386
+ONLY_FOR_ARCHS_REASON=	pyvex_c/pyvex.c does not support this architecture (see line 170)
+
 BUILD_DEPENDS=	${_MY_DEPENDS}
 RUN_DEPENDS=	${_MY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}archinfo>0:devel/py-archinfo@${PY_FLAVOR} \
