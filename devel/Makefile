@@ -4594,6 +4594,7 @@
     SUBDIR += py-meliae
     SUBDIR += py-memory-profiler
     SUBDIR += py-microversion_parse
+    SUBDIR += py-minidump
     SUBDIR += py-minimongo
     SUBDIR += py-minio
     SUBDIR += py-mock

@@ -1,0 +1,13 @@
+Python library to parse and read Microsoft minidump file format. Can create
+minidumps on Windows machines using the windows API (implemented with ctypes).
+
+This module is primarily intended to be used as a library, however for the sake
+of demonstrating its capabilities there is a command line tool implemented
+called minidump. This tool has the following modes of operation:
+
+- Console, for one-shot parsing and information retrieval.
+- Shell, where a user may use an interactive command shell to get all info
+  (modules, threads, exceptions etc) and browse the virtual memory of the
+  process dumped (read/read int/read uint/move/peek/tell)
+
+WWW: https://github.com/skelsec/minidump
