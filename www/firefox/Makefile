@@ -2,26 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	73.0.1
-PORTREVISION=	2
+DISTVERSION=	74.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.24:devel/nspr \
-		nss>=3.49.2:security/nss \
+BUILD_DEPENDS=	nspr>=4.25:devel/nspr \
+		nss>=3.50:security/nss \
 		icu>=64.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=2.6.4:print/harfbuzz \
 		graphite2>=1.3.13:graphics/graphite2 \
 		png>=1.6.35:graphics/png \
 		libvpx>=1.5.0:multimedia/libvpx \
-		sqlite3>=3.30.1:databases/sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
 		nasm:devel/nasm \
@@ -29,7 +27,7 @@ BUILD_DEPENDS=	nspr>=4.24:devel/nspr \
 
 USE_GECKO=	gecko
 CONFLICTS_INSTALL=	firefox-esr
-USE_MOZILLA=	-vpx
+USE_MOZILLA=	-sqlite -vpx
 
 USES=		tar:xz
 
