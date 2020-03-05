@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netbeans
-DISTVERSION=	11.1
+DISTVERSION=	11.3
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE/netbeans/netbeans/${PORTVERSION}/
 DISTNAME=	netbeans-${DISTVERSION}-bin
