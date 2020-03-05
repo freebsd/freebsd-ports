@@ -9,6 +9,8 @@ CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	bb3aa6bd57c3.patch:-p1 # https://github.com/linuxwacom/libwacom/pull/217
+PATCHFILES+=	a97e09fd2da9.patch:-p1 # required to avoid patch conflict
+PATCHFILES+=	c94f60920a22.patch:-p1 # https://github.com/linuxwacom/libwacom/pull/219
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Adds tablet support to libinput

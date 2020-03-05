@@ -3,3 +3,7 @@ SHA256 (linuxwacom-libwacom-libwacom-1.2_GH0.tar.gz) = 102fd9c8a9ae30d76003ed58d
 SIZE (linuxwacom-libwacom-libwacom-1.2_GH0.tar.gz) = 110520
 SHA256 (bb3aa6bd57c3.patch) = 1537641da75342469e1160b586e8790c4387ed989186dec00b5f45779b6b831b
 SIZE (bb3aa6bd57c3.patch) = 3896
+SHA256 (a97e09fd2da9.patch) = 5c8e1002c768ecad4c87b619ba5ee647498ebae13a2f211d1a60339867336f14
+SIZE (a97e09fd2da9.patch) = 1435
+SHA256 (c94f60920a22.patch) = 18d933a95aeb7603a2c284da5051b75c96dd9e581735c3185165688ca0f9740c
+SIZE (c94f60920a22.patch) = 1674
