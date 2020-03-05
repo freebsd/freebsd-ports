@@ -1,9 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	acalc
-PORTVERSION=	0.22
-PORTREVISION=	1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	0.3
 CATEGORIES=	math
 
 MAINTAINER=	andrey.nik.ponomarenko@gmail.com
