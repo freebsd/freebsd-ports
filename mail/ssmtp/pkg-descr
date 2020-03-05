@@ -7,4 +7,4 @@ WARNING: the above is all it does; it does not receive mail, expand
 aliases or manage a queue. That belongs on a mail hub with a system
 administrator.
 
-WWW: http://packages.debian.org/stable/mail/ssmtp
+WWW: https://packages.qa.debian.org/s/ssmtp.html
