@@ -1,6 +1,6 @@
-TIMESTAMP = 1581872902
-SHA256 (helm-helm-v3.1.0_GH0.tar.gz) = 46799de982807cd3e215c82f844f2a41c96c6c360d097797872517d03bceaeae
-SIZE (helm-helm-v3.1.0_GH0.tar.gz) = 529944
+TIMESTAMP = 1582488376
+SHA256 (helm-helm-v3.1.1_GH0.tar.gz) = d3e4920f58ceec28bb3916e0c453427273f63db701a354701663cc149e63ea28
+SIZE (helm-helm-v3.1.1_GH0.tar.gz) = 530397
 SHA256 (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = ee1ebe2efef498be1c558bf71e143289db2d21e2d42592503ad2d4a989006821
 SIZE (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = 20946
 SHA256 (Azure-go-autorest-v13.3.1_GH0.tar.gz) = a06207e78072d15979e384d310a10b45a89c4351d0779dcb91d082c96e065a8e
