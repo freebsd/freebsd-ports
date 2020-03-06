@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/zlib/arm_features.c.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/third_party/zlib/arm_features.c.orig	2019-10-21 10:14:54 UTC
 +++ src/3rdparty/chromium/third_party/zlib/arm_features.c
-@@ -8,83 +8,30 @@
+@@ -8,83 +8,36 @@
  
  #include "zutil.h"
  
@@ -29,9 +29,7 @@
  static void init_arm_features(void)
  {
 -    uint64_t flag_crc32 = 0, flag_pmull = 0, capabilities = 0;
-+#if defined (__aarch64__)
-+    uint64_t id_aa64isar0;
- 
+-
 -#if defined(ARMV8_OS_ANDROID)
 -    flag_crc32 = ANDROID_CPU_ARM_FEATURE_CRC32;
 -    flag_pmull = ANDROID_CPU_ARM_FEATURE_PMULL;
@@ -49,16 +47,23 @@
 -        flag_pmull = HWCAP2_PMULL;
 -        capabilities = getauxval(AT_HWCAP2);
 -    #endif
--#endif
--
++#if defined (__aarch64__)
++#ifndef ID_AA64ISAR0_AES_VAL
++#define ID_AA64ISAR0_AES_VAL ID_AA64ISAR0_AES
+ #endif
++#ifndef ID_AA64ISAR0_CRC32_VAL
++#define ID_AA64ISAR0_CRC32_VAL ID_AA64ISAR0_CRC32
++#endif
++    uint64_t id_aa64isar0;
+ 
 -    if (capabilities & flag_crc32)
 -        arm_cpu_enable_crc32 = 1;
 -
 -    if (capabilities & flag_pmull)
-+    id_aa64isar0 = READ_SPECIALREG(ID_AA64ISAR0_EL1);
-+    if (ID_AA64ISAR0_AES(id_aa64isar0) == ID_AA64ISAR0_AES_PMULL)
++    id_aa64isar0 = READ_SPECIALREG(id_aa64isar0_el1);
++    if (ID_AA64ISAR0_AES_VAL(id_aa64isar0) == ID_AA64ISAR0_AES_PMULL)
          arm_cpu_enable_pmull = 1;
-+    if (ID_AA64ISAR0_CRC32(id_aa64isar0) == ID_AA64ISAR0_CRC32_BASE)
++    if (ID_AA64ISAR0_CRC32_VAL(id_aa64isar0) == ID_AA64ISAR0_CRC32_BASE)
 +        arm_cpu_enable_crc32 = 1;
 +#endif
  }
