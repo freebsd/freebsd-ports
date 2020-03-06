@@ -62,6 +62,7 @@ share/kservices5/ar.protocol
 share/kservices5/bookmarks.protocol
 share/kservices5/bzip.protocol
 share/kservices5/bzip2.protocol
+share/kservices5/cifs.protocol
 share/kservices5/comicbookthumbnail.desktop
 share/kservices5/directorythumbnail.desktop
 share/kservices5/djvuthumbnail.desktop

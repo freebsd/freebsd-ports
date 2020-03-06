@@ -42,6 +42,8 @@ share/icons/hicolor/16x16/apps/kate.png
 share/icons/hicolor/16x16/apps/kwrite.png
 share/icons/hicolor/22x22/apps/kate.png
 share/icons/hicolor/22x22/apps/kwrite.png
+share/icons/hicolor/256x256/apps/kate.png
+share/icons/hicolor/512x512/apps/kate.png
 share/icons/hicolor/310x310/apps/kate.png
 share/icons/hicolor/32x32/apps/kate.png
 share/icons/hicolor/32x32/apps/kwrite.png
@@ -222,6 +224,7 @@ share/locale/da/LC_MESSAGES/kate.mo
 share/locale/da/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/da/LC_MESSAGES/katebuild-plugin.mo
 share/locale/da/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/da/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/da/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/da/LC_MESSAGES/katefiletree.mo
 share/locale/da/LC_MESSAGES/kategdbplugin.mo
@@ -237,6 +240,7 @@ share/locale/da/LC_MESSAGES/katexmlcheck.mo
 share/locale/da/LC_MESSAGES/katexmltools.mo
 share/locale/da/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/da/LC_MESSAGES/kwrite.mo
+share/locale/da/LC_MESSAGES/lspclient.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/da/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/de/LC_MESSAGES/kate-ctags-plugin.mo
