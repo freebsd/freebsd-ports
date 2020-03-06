@@ -5,7 +5,7 @@ PORTNAME=	Net_Portscan
 PORTVERSION=	1.0.3
 CATEGORIES=	security pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Provides an API for scanning ports
 
 NO_ARCH=	yes
