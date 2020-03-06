@@ -11,8 +11,11 @@ EOM
 }
 { type: upgrade
   message: <<EOM
-Remember to run mysql_upgrade the first time you start the MySQL server
-after an upgrade from an earlier version.
+As of MySQL 8.0.16, the MySQL server performs the upgrade tasks previously
+handled by mysql_upgrade. Consequently, mysql_upgrade is unneeded and is
+deprecated as of that version, and will be removed in a future MySQL version.
+Because mysql_upgrade no longer performs upgrade tasks,
+it exits with status 0 unconditionally. 
 EOM
 }
 ]
