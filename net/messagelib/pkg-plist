@@ -490,7 +490,6 @@ lib/libKF5WebEngineViewer.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_MessageCore.pri
 %%QT_MKSPECDIR%%/modules/qt_MessageList.pri
 %%QT_MKSPECDIR%%/modules/qt_MessageViewer.pri
-%%QT_MKSPECDIR%%/modules/qt_MimeTreeParser.pri
 %%QT_MKSPECDIR%%/modules/qt_TemplateParser.pri
 %%QT_MKSPECDIR%%/modules/qt_WebEngineViewer.pri
 %%QT_PLUGINDIR%%/messageviewer/grantlee/5.0/messageviewer_grantlee_extension.so
