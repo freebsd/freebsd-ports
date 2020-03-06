@@ -3,7 +3,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	3.0.4
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -107,8 +107,6 @@ post-patch:
 .if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -i "" -e 's|900044|${OSVERSION}|g' \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.as
-	@${REINPLACE_CMD} -i "" -e 's|197|477|g' \
-		${WRKSRC}/rtl/freebsd/sysnr.inc
 .else
 	@${REINPLACE_CMD} -i "" -e 's|400000|${DFLYVERSION}|g' \
 		${WRKSRC}/rtl/dragonfly/${FPC_ARCH}/*.as
@@ -185,7 +183,7 @@ do-install:
 		"${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}" \
 		"${STAGEDIR}${PREFIX}/etc"
 	@${REINPLACE_CMD} -i "" -e 's|${STAGEDIR}||' \
-		-e 's|^-Fl/usr/local/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt4;${LOCALBASE}/lib/qt5|g' \
+		-e 's|^#-Fl/lib;/usr/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt5|g' \
 		${STAGEDIR}${PREFIX}/etc/fpc.cfg.sample
 
 .else
