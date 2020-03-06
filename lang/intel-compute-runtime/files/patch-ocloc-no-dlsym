@@ -1,0 +1,34 @@
+Regressed by https://github.com/intel/compute-runtime/commit/beab60f62634
+
+FAILED: bin/built_ins/x64/gen12lp/copy_buffer_rect_Gen12LPlp.spv bin/built_ins/x64/gen12lp/copy_buffer_rect_Gen12LPlp.bin bin/built_ins/x64/gen12lp/copy_buffer_rect_Gen12LPlp.cpp bin/built_ins/x64/gen12lp/copy_buffer_rect_Gen12LPlp.gen
+cd shared/source/built_ins/kernels && LD_LIBRARY_PATH=bin bin/ocloc -q -file copy_buffer_rect.builtin_kernel -device tgllp -64 -out_dir bin/built_ins/x64/gen12lp -cpp_file -options -cl-kernel-arg-info
+Error! Couldn't find OclocInvoke function.
+Error! Ocloc Library couldn't be loaded.
+
+--- shared/offline_compiler/source/ocloc_wrapper.cpp.orig	2020-02-28 16:16:42 UTC
++++ shared/offline_compiler/source/ocloc_wrapper.cpp
+@@ -5,6 +5,7 @@
+  *
+  */
+ 
++#include "ocloc_api.h"
+ #include "ocloc_wrapper.h"
+ 
+ #include "shared/source/os_interface/os_library.h"
+@@ -43,14 +44,8 @@ struct OclocWrapper::Impl {
+         OclocLibrary ocloc;
+         std::string oclocLibName = "";
+         ocloc.library.reset(NEO::OsLibrary::load(oclocLibName));
+-        if (nullptr == (ocloc.invoke = reinterpret_cast<pOclocInvoke>(ocloc.library->getProcAddress("oclocInvoke")))) {
+-            std::cout << "Error! Couldn't find OclocInvoke function.\n";
+-            return;
+-        }
+-        if (nullptr == (ocloc.freeOutput = reinterpret_cast<pOclocFreeOutput>(ocloc.library->getProcAddress("oclocFreeOutput")))) {
+-            std::cout << "Error! Couldn't find OclocFreeOutput function.\n";
+-            return;
+-        }
++        ocloc.invoke = oclocInvoke;
++        ocloc.freeOutput = oclocFreeOutput;
+         this->oclocLib = std::move(ocloc);
+     }
+ };

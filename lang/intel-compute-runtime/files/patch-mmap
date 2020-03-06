@@ -9,11 +9,11 @@ core/os_interface/linux/os_memory_linux.cpp:17:99: error:
   ...mmapWrapper(0, sizeToReserve, PROT_NONE, MAP_PRIVATE | MAP_ANONYMOUS | MAP_NORESERVE | MAP_HUGETLB, -1...
                                                                                             ^
 
---- core/os_interface/linux/os_memory_linux.cpp.orig	2019-11-22 15:41:47 UTC
-+++ core/os_interface/linux/os_memory_linux.cpp
+--- shared/source/os_interface/linux/os_memory_linux.cpp.orig	2020-02-28 16:16:42 UTC
++++ shared/source/os_interface/linux/os_memory_linux.cpp
 @@ -7,6 +7,17 @@
  
- #include "core/os_interface/linux/os_memory_linux.h"
+ #include "shared/source/os_interface/linux/os_memory_linux.h"
  
 +#ifdef MAP_ALIGNED_SUPER
 +#define MAP_HUGETLB MAP_ALIGNED_SUPER // FreeBSD

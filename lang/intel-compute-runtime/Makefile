@@ -1,9 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	compute-runtime
-DISTVERSION=	20.08.15750
+DISTVERSION=	20.09.15980
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	612f47ced386.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	OpenCL implementation for Intel HD 5000 (Gen8) or newer
@@ -25,7 +28,8 @@ CMAKE_ON=	SKIP_UNIT_TESTS
 CMAKE_ARGS=	-DNEO_DRIVER_VERSION:STRING="${DISTVERSIONFULL}"
 PLIST_FILES=	etc/OpenCL/vendors/intel.icd \
 		bin/ocloc \
-		lib/intel-opencl/libigdrcl.so
+		lib/intel-opencl/libigdrcl.so \
+		lib/intel-opencl/libocloc.so
 
 post-patch:
 	@${REINPLACE_CMD} -e '/-Werror/d' \

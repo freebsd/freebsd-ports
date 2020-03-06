@@ -5,8 +5,8 @@ core/os_interface/linux/os_library_linux.cpp:35:49: error: 'RTLD_DEEPBIND' was n
    35 |         constexpr auto dlopenFlag = RTLD_LAZY | RTLD_DEEPBIND;
       |                                                 ^~~~~~~~~~~~~
 
---- core/os_interface/linux/os_library_linux.cpp.orig	2019-11-29 14:23:34 UTC
-+++ core/os_interface/linux/os_library_linux.cpp
+--- shared/source/os_interface/linux/os_library_linux.cpp.orig	2020-02-28 16:16:42 UTC
++++ shared/source/os_interface/linux/os_library_linux.cpp
 @@ -29,7 +29,7 @@ OsLibrary::OsLibrary(const std::string &name) {
      if (name.empty()) {
          this->handle = dlopen(0, RTLD_LAZY);

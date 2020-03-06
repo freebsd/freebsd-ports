@@ -3,9 +3,9 @@
   $ clinfo | fgrep clock
     Max clock frequency                             0MHz
 
---- core/os_interface/linux/drm_neo.cpp.orig	2020-01-23 10:09:13 UTC
-+++ core/os_interface/linux/drm_neo.cpp
-@@ -18,6 +18,11 @@
+--- shared/source/os_interface/linux/drm_neo.cpp.orig	2020-03-06 21:12:07 UTC
++++ shared/source/os_interface/linux/drm_neo.cpp
+@@ -22,6 +22,11 @@
  #include <cstring>
  #include <fstream>
  
@@ -17,7 +17,7 @@
  namespace NEO {
  
  const char *Drm::sysFsDefaultGpuPath = "/drm/card0";
-@@ -68,6 +73,16 @@ int Drm::getEnabledPooledEu(int &enabled) {
+@@ -106,6 +111,16 @@ int Drm::getEnabledPooledEu(int &enabled) {
  
  int Drm::getMaxGpuFrequency(int &maxGpuFrequency) {
      maxGpuFrequency = 0;
@@ -34,7 +34,7 @@
      int deviceID = 0;
      int ret = getDeviceID(deviceID);
      if (ret != 0) {
-@@ -89,6 +104,7 @@ int Drm::getMaxGpuFrequency(int &maxGpuFrequency) {
+@@ -127,6 +142,7 @@ int Drm::getMaxGpuFrequency(int &maxGpuFrequency) {
  
      ifs >> maxGpuFrequency;
      ifs.close();

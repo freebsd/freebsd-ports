@@ -4,8 +4,8 @@ core/utilities/clflush.cpp:16:5: error: '_mm_clflush' needs target feature sse2
     _mm_clflush(ptr);
     ^
 
---- core/utilities/cpuintrinsics.cpp.orig	2020-01-23 10:09:13 UTC
-+++ core/utilities/cpuintrinsics.cpp
+--- shared/source/utilities/cpuintrinsics.cpp.orig	2020-02-28 16:16:42 UTC
++++ shared/source/utilities/cpuintrinsics.cpp
 @@ -12,6 +12,9 @@
  namespace NEO {
  namespace CpuIntrinsics {
