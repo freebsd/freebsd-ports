@@ -1,4 +1,4 @@
-udbproadcastrelay is a USB multicast relayer. Its intended use is to
+udpbroadcastrelay is a UDP multicast relayer. Its intended use is to
 rebroadbcast udp packets on a specific port across interfaces, be those
 interfaces physical or VLAN.
 
