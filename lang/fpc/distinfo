@@ -1,9 +1,9 @@
-TIMESTAMP = 1577757794
+TIMESTAMP = 1582397737
 SHA256 (freepascal/fpc-3.0.4.source.tar.gz) = 69b3b7667b72b6759cf27226df5eb54112ce3515ff5efb79d95ac14bac742845
 SIZE (freepascal/fpc-3.0.4.source.tar.gz) = 40347617
-SHA256 (freepascal/ppc386-3.0.4-freebsd.tar.gz) = e8ee85613149a40f887fe7f0ad46604fb93b52989d7212dfe7bb909bdab63859
-SIZE (freepascal/ppc386-3.0.4-freebsd.tar.gz) = 1121658
-SHA256 (freepascal/ppcx64-3.0.4-freebsd.tar.gz) = ba021dd49afedf554f9c3dddeb5b81c2728836ca95848625f80dbe5dd3c7b2d8
-SIZE (freepascal/ppcx64-3.0.4-freebsd.tar.gz) = 1198609
+SHA256 (freepascal/ppc386-3.0.4-freebsd.tar.gz) = 3f5fa4b24abde00a1dcfe7e28938e8b7bf908c7d6633182521916e2191ae867d
+SIZE (freepascal/ppc386-3.0.4-freebsd.tar.gz) = 1121653
+SHA256 (freepascal/ppcx64-3.0.4-freebsd.tar.gz) = fb57c418ec374ed99cd7914a4daa5fc6afccfbf41595a886c361e3fef8bbdbb3
+SIZE (freepascal/ppcx64-3.0.4-freebsd.tar.gz) = 1198576
 SHA256 (freepascal/fpc-3.0.4.man.tar.gz) = bc5357fc6e56d77eeeb5d820023f7f721f5febcc684837f296a598c6c772b26c
 SIZE (freepascal/fpc-3.0.4.man.tar.gz) = 47294

@@ -2,7 +2,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	3.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=.source
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/ \
