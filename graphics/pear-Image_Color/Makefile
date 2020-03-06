@@ -5,7 +5,7 @@ PORTNAME=	Image_Color
 PORTVERSION=	1.0.4
 CATEGORIES=	graphics www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR::Image_Color manages and handles color data and conversions
 
 USE_PHP=	gd
