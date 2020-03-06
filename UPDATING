@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200306
+  AFFECTS: users of databases/mysql80-server
+  AUTHOR: joneum@FreeBSD.org
+
+  As of MySQL 8.0.16, the MySQL server performs the upgrade tasks previously
+  handled by mysql_upgrade. Consequently, mysql_upgrade is unneeded and is
+  deprecated as of that version, and will be removed in a future MySQL version.
+  Because mysql_upgrade no longer performs upgrade tasks,
+  it exits with status 0 unconditionally.
+
 20200303:
   AFFECTS: users of net-mgmt/librenms
   AUTHOR: dvl@FreeBSD.org
