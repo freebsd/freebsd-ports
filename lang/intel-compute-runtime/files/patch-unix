@@ -13,8 +13,8 @@ core/elf/writer.cpp:76:5: error:
     memcpy_s(curSectionHeader, sizeof(SElf64SectionHeader),
     ^
 
---- core/helpers/string.h.orig	2019-11-22 15:41:47 UTC
-+++ core/helpers/string.h
+--- shared/source/helpers/string.h.orig	2020-02-28 16:16:42 UTC
++++ shared/source/helpers/string.h
 @@ -10,7 +10,7 @@
  #include <memory>
  #include <type_traits>

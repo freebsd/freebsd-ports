@@ -9,8 +9,8 @@ runtime/os_interface/linux/os_time_linux.cpp:138:24: error:
     if (resolutionFunc(CLOCK_MONOTONIC_RAW, &ts)) {
                        ^
 
---- core/os_interface/linux/os_time_linux.cpp.orig	2020-01-23 10:09:13 UTC
-+++ core/os_interface/linux/os_time_linux.cpp
+--- shared/source/os_interface/linux/os_time_linux.cpp.orig	2020-02-28 16:16:42 UTC
++++ shared/source/os_interface/linux/os_time_linux.cpp
 @@ -14,6 +14,10 @@
  
  #include <time.h>

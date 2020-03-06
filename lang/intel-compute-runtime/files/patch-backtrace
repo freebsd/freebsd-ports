@@ -12,8 +12,8 @@ ld: error: undefined symbol: backtrace_symbols
 >>> referenced by safety_caller_linux.cpp
 >>>               CMakeFiles/ocloc.dir/utilities/linux/safety_caller_linux.cpp.o:(SafetyGuardLinux::sigAction(int, __siginfo*, void*))
 
---- offline_compiler/utilities/linux/safety_guard_linux.h.orig	2019-11-22 15:41:47 UTC
-+++ offline_compiler/utilities/linux/safety_guard_linux.h
+--- shared/offline_compiler/source/utilities/linux/safety_guard_linux.h.orig	2020-02-28 16:16:42 UTC
++++ shared/offline_compiler/source/utilities/linux/safety_guard_linux.h
 @@ -33,7 +33,7 @@ class SafetyGuardLinux {
          char **callstack;
          int backtraceSize = 0;
@@ -23,15 +23,16 @@ ld: error: undefined symbol: backtrace_symbols
          callstack = backtrace_symbols(addresses, backtraceSize);
  
          for (int i = 0; i < backtraceSize; ++i) {
---- offline_compiler/CMakeLists.txt.orig	2019-11-29 14:23:34 UTC
-+++ offline_compiler/CMakeLists.txt
-@@ -124,6 +124,9 @@ endif()
- 
+--- shared/offline_compiler/source/CMakeLists.txt.orig	2020-02-28 16:16:42 UTC
++++ shared/offline_compiler/source/CMakeLists.txt
+@@ -161,6 +161,10 @@ endif()
  if(UNIX)
+   target_link_libraries(ocloc_lib dl pthread)
    target_link_libraries(ocloc dl pthread)
 +  if(CMAKE_SYSTEM_NAME MATCHES "DragonFly|FreeBSD|NetBSD|OpenBSD")
++    target_link_libraries(ocloc_lib execinfo)
 +    target_link_libraries(ocloc execinfo)
 +  endif()
  endif()
  
- target_link_libraries(ocloc elflib)
+ set(CLOC_LIB_SRCS_LIB ${CLOC_LIB_SRCS_LIB} PARENT_SCOPE)
