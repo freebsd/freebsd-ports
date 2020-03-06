@@ -1,0 +1,22 @@
+pySMT is a library for SMT formulae manipulation and solving, which makes
+working with Satisfiability Modulo Theory simple.
+
+Among others, the user can:
+
+- Define formulae in a solver independent way in a simple and inutitive way,
+- Write ad-hoc simplifiers and operators,
+- Dump your problems in the SMT-Lib format,
+- Solve them using one of the native solvers, or by wrapping any SMT-Lib
+  complaint solver.
+
+pySMT provides methods to define a formula in Linear Real Arithmetic (LRA),
+Real Difference Logic (RDL), their combination (LIRA), Equalities and
+Uninterpreted Functions (EUF), Bit-Vectors (BV), and Arrays (A). The following
+solvers are supported through native APIs: MathSAT, Z3, CVC4, Yices, CUDD,
+PicoSAT, and Boolector. Additionally, you can use any SMT-LIB 2 compliant
+solver.
+
+PySMT assumes that the python bindings for the SMT Solver are installed and
+accessible from your PYTHONPATH.
+
+WWW: http://www.pysmt.org

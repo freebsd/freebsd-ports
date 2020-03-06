@@ -685,6 +685,7 @@
     SUBDIR += py-PuLP
     SUBDIR += py-PyMetis
     SUBDIR += py-PySCIPOpt
+    SUBDIR += py-PySMT
     SUBDIR += py-PyWavelets
     SUBDIR += py-Pyomo
     SUBDIR += py-algopy
