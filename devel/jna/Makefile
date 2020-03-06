@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jna
-PORTVERSION=	4.5.2
+PORTVERSION=	5.5.0
 CATEGORIES=	devel java
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,8 +10,8 @@ COMMENT=	Java access to native shared libraries
 LICENSE=	LGPL21+ APACHE20
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE.LGPL
-LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.AL
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/LGPL2.1
+LICENSE_FILE_APACHE20=	${WRKSRC}/AL2.0
 
 BROKEN_armv6=		fails to compile: build.xml: compilation failed
 BROKEN_armv7=		fails to compile: build.xml: compilation failed
@@ -19,7 +19,7 @@ BROKEN_armv7=		fails to compile: build.xml: compilation failed
 USES=		autoreconf:build gmake libtool xorg
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	8
+JAVA_VERSION=	8+
 USE_XORG=	x11 xt
 MAKE_ARGS=	-DCC="${CC}" -DLD="${LD}"
 MAKE_ENV=	ANT_OPTS=-Drelease -DARCH=${ANT_ARCH}
