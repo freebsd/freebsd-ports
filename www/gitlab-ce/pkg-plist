@@ -5599,6 +5599,7 @@
 %%WWWDIR%%/app/services/groups/destroy_service.rb
 %%WWWDIR%%/app/services/groups/group_links/create_service.rb
 %%WWWDIR%%/app/services/groups/group_links/destroy_service.rb
+%%WWWDIR%%/app/services/groups/group_links/update_service.rb
 %%WWWDIR%%/app/services/groups/import_export/export_service.rb
 %%WWWDIR%%/app/services/groups/import_export/import_service.rb
 %%WWWDIR%%/app/services/groups/nested_create_service.rb
@@ -8564,6 +8565,7 @@
 %%WWWDIR%%/db/migrate/20200210135504_remove_packages_deprecated_dependencies.rb
 %%WWWDIR%%/db/migrate/20200210184410_create_operations_strategies_table.rb
 %%WWWDIR%%/db/migrate/20200210184420_create_operations_scopes_table.rb
+%%WWWDIR%%/db/migrate/20200214085940_clean_grafana_url.rb
 %%WWWDIR%%/db/optional_migrations/composite_primary_keys.rb
 %%WWWDIR%%/db/post_migrate/20180104131052_schedule_set_confidential_note_events_on_webhooks.rb
 %%WWWDIR%%/db/post_migrate/20180119121225_remove_redundant_pipeline_stages.rb
@@ -8738,6 +8740,7 @@
 %%WWWDIR%%/db/post_migrate/20200130145430_reschedule_migrate_issue_trackers_data.rb
 %%WWWDIR%%/db/post_migrate/20200203104214_services_remove_temporary_index_on_project_id.rb
 %%WWWDIR%%/db/post_migrate/20200204113223_schedule_recalculate_project_authorizations.rb
+%%WWWDIR%%/db/post_migrate/20200204113224_schedule_recalculate_project_authorizations_second_run.rb
 %%WWWDIR%%/db/post_migrate/20200206091544_migrate_create_commit_signature_worker_sidekiq_queue.rb
 %%WWWDIR%%/db/post_migrate/20200206135203_udpate_index_ci_builds_on_name_for_security_products.rb
 %%WWWDIR%%/db/post_migrate/20200207184023_add_temporary_index_to_promotion_notes.rb
@@ -10617,6 +10620,8 @@
 %%WWWDIR%%/doc/user/project/integrations/img/emails_on_push_service.png
 %%WWWDIR%%/doc/user/project/integrations/img/embed_metrics.png
 %%WWWDIR%%/doc/user/project/integrations/img/embed_metrics_issue_template.png
+%%WWWDIR%%/doc/user/project/integrations/img/embedded_metrics_markdown_v12_8.png
+%%WWWDIR%%/doc/user/project/integrations/img/embedded_metrics_rendered_v12_8.png
 %%WWWDIR%%/doc/user/project/integrations/img/generate_link_to_chart.png
 %%WWWDIR%%/doc/user/project/integrations/img/github_configuration.png
 %%WWWDIR%%/doc/user/project/integrations/img/github_status_check_pipeline_update.png
@@ -11684,6 +11689,7 @@
 %%WWWDIR%%/lib/gitlab/asciidoc/html5_converter.rb
 %%WWWDIR%%/lib/gitlab/asciidoc/include_processor.rb
 %%WWWDIR%%/lib/gitlab/asciidoc/syntax_highlighter/html_pipeline_adapter.rb
+%%WWWDIR%%/lib/gitlab/asset_proxy.rb
 %%WWWDIR%%/lib/gitlab/audit_json_logger.rb
 %%WWWDIR%%/lib/gitlab/auth.rb
 %%WWWDIR%%/lib/gitlab/auth/activity.rb
@@ -11782,6 +11788,7 @@
 %%WWWDIR%%/lib/gitlab/background_migration/prepare_untracked_uploads.rb
 %%WWWDIR%%/lib/gitlab/background_migration/prune_orphaned_geo_events.rb
 %%WWWDIR%%/lib/gitlab/background_migration/recalculate_project_authorizations.rb
+%%WWWDIR%%/lib/gitlab/background_migration/recalculate_project_authorizations_with_min_max_user_id.rb
 %%WWWDIR%%/lib/gitlab/background_migration/remove_restricted_todos.rb
 %%WWWDIR%%/lib/gitlab/background_migration/reset_merge_status.rb
 %%WWWDIR%%/lib/gitlab/background_migration/set_confidential_note_events_on_services.rb
@@ -16107,6 +16114,7 @@
 %%WWWDIR%%/spec/features/discussion_comments/snippets_spec.rb
 %%WWWDIR%%/spec/features/display_system_header_and_footer_bar_spec.rb
 %%WWWDIR%%/spec/features/error_pages_spec.rb
+%%WWWDIR%%/spec/features/error_tracking/user_searches_sentry_errors_spec.rb
 %%WWWDIR%%/spec/features/error_tracking/user_sees_error_details_spec.rb
 %%WWWDIR%%/spec/features/error_tracking/user_sees_error_index_spec.rb
 %%WWWDIR%%/spec/features/expand_collapse_diffs_spec.rb
@@ -17044,6 +17052,7 @@
 %%WWWDIR%%/spec/fixtures/safe_zip/valid-simple.zip
 %%WWWDIR%%/spec/fixtures/safe_zip/valid-symlinks-first.zip
 %%WWWDIR%%/spec/fixtures/sanitized.svg
+%%WWWDIR%%/spec/fixtures/sentry/error_list_search_response.json
 %%WWWDIR%%/spec/fixtures/sentry/global_integration_link_sample_response.json
 %%WWWDIR%%/spec/fixtures/sentry/issue_latest_event_no_stack_sample_response.json
 %%WWWDIR%%/spec/fixtures/sentry/issue_latest_event_sample_response.json
@@ -17714,6 +17723,7 @@
 %%WWWDIR%%/spec/frontend/vue_shared/components/expand_button_spec.js
 %%WWWDIR%%/spec/frontend/vue_shared/components/file_icon_spec.js
 %%WWWDIR%%/spec/frontend/vue_shared/components/file_row_header_spec.js
+%%WWWDIR%%/spec/frontend/vue_shared/components/file_row_spec.js
 %%WWWDIR%%/spec/frontend/vue_shared/components/file_tree_spec.js
 %%WWWDIR%%/spec/frontend/vue_shared/components/gl_modal_vuex_spec.js
 %%WWWDIR%%/spec/frontend/vue_shared/components/gl_toggle_vuex_spec.js
@@ -18383,7 +18393,6 @@
 %%WWWDIR%%/spec/javascripts/vue_shared/components/dropdown/mock_data.js
 %%WWWDIR%%/spec/javascripts/vue_shared/components/file_finder/index_spec.js
 %%WWWDIR%%/spec/javascripts/vue_shared/components/file_finder/item_spec.js
-%%WWWDIR%%/spec/javascripts/vue_shared/components/file_row_spec.js
 %%WWWDIR%%/spec/javascripts/vue_shared/components/filtered_search_dropdown_spec.js
 %%WWWDIR%%/spec/javascripts/vue_shared/components/gl_countdown_spec.js
 %%WWWDIR%%/spec/javascripts/vue_shared/components/header_ci_component_spec.js
@@ -18572,6 +18581,7 @@
 %%WWWDIR%%/spec/lib/gitlab/application_rate_limiter_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/asciidoc/include_processor_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/asciidoc_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/asset_proxy_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/auth/activity_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/auth/auth_finders_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/auth/blocked_user_tracker_spec.rb
@@ -18629,6 +18639,7 @@
 %%WWWDIR%%/spec/lib/gitlab/background_migration/populate_untracked_uploads_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/prepare_untracked_uploads_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/recalculate_project_authorizations_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/background_migration/recalculate_project_authorizations_with_min_max_user_id_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/remove_restricted_todos_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/reset_merge_status_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/schedule_calculate_wiki_sizes_spec.rb
@@ -18947,6 +18958,7 @@
 %%WWWDIR%%/spec/lib/gitlab/database_importers/self_monitoring/project/create_service_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/database_importers/self_monitoring/project/delete_service_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/database_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/dependency_linker/base_linker_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/dependency_linker/cargo_toml_linker_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/dependency_linker/cartfile_linker_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/dependency_linker/composer_json_linker_spec.rb
@@ -19684,6 +19696,7 @@
 %%WWWDIR%%/spec/migrations/change_default_value_for_dsa_key_restriction_spec.rb
 %%WWWDIR%%/spec/migrations/change_outbound_local_requests_whitelist_default_spec.rb
 %%WWWDIR%%/spec/migrations/change_packages_size_defaults_in_project_statistics_spec.rb
+%%WWWDIR%%/spec/migrations/clean_grafana_url_spec.rb
 %%WWWDIR%%/spec/migrations/clean_up_noteable_id_for_notes_on_commits_spec.rb
 %%WWWDIR%%/spec/migrations/cleanup_build_stage_migration_spec.rb
 %%WWWDIR%%/spec/migrations/cleanup_environments_external_url_spec.rb
@@ -19746,6 +19759,7 @@
 %%WWWDIR%%/spec/migrations/schedule_merge_request_assignees_migration_progress_check_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_pages_metadata_migration_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_populate_merge_request_assignees_table_spec.rb
+%%WWWDIR%%/spec/migrations/schedule_recalculate_project_authorizations_second_run_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_recalculate_project_authorizations_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_runners_token_encryption_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_set_confidential_note_events_on_webhooks_spec.rb
@@ -20719,6 +20733,7 @@
 %%WWWDIR%%/spec/services/groups/destroy_service_spec.rb
 %%WWWDIR%%/spec/services/groups/group_links/create_service_spec.rb
 %%WWWDIR%%/spec/services/groups/group_links/destroy_service_spec.rb
+%%WWWDIR%%/spec/services/groups/group_links/update_service_spec.rb
 %%WWWDIR%%/spec/services/groups/import_export/export_service_spec.rb
 %%WWWDIR%%/spec/services/groups/import_export/import_service_spec.rb
 %%WWWDIR%%/spec/services/groups/nested_create_service_spec.rb
