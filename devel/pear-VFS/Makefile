@@ -5,7 +5,7 @@ PORTNAME=	VFS
 PORTVERSION=	0.3.0
 CATEGORIES=	devel pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR Virtual File System API
 
 BUILD_DEPENDS=	${PEARDIR}/Log/null.php:sysutils/pear-Log@${PHP_FLAVOR}

@@ -4,7 +4,7 @@ PORTNAME=	Date_Holidays_Discordian
 PORTVERSION=	0.1.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Driver based class to calculate Discordian holidays
 
 LICENSE=	PHP301

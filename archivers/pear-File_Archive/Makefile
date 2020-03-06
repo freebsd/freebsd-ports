@@ -5,7 +5,7 @@ PORTNAME=	File_Archive
 PORTVERSION=	1.5.5
 CATEGORIES=	archivers www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to manipulate tar, gz, tgz, bz2, tbz, zip, ar (deb) files
 
 LICENSE=	LGPL3

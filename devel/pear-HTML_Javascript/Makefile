@@ -5,7 +5,7 @@ PORTNAME=	HTML_Javascript
 PORTVERSION=	1.1.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Provides an interface for creating simple JS scripts
 
 LICENSE=	PHP30

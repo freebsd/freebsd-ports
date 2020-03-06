@@ -5,7 +5,7 @@ PORTNAME=	XML_Query2XML
 PORTVERSION=	1.7.2
 CATEGORIES=	databases pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class transform SQL queries into XML data
 
 LICENSE=	LGPL21

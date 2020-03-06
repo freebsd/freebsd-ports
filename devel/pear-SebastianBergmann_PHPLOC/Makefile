@@ -6,7 +6,7 @@ DISTVERSION=	4.0.1
 CATEGORIES=	devel pear
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}SebastianBergmann_
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Tool for quickly measuring the size of a PHP project
 
 LICENSE=	BSD3CLAUSE

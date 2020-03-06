@@ -5,7 +5,7 @@ PORTNAME=	PHP_TokenStream
 PORTVERSION=	1.4.11
 CATEGORIES=	devel pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Wrapper around PHP tokenizer extension
 
 LICENSE=	BSD3CLAUSE

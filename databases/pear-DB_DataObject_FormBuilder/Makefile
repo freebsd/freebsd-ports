@@ -5,7 +5,7 @@ PORTNAME=	DB_DataObject_FormBuilder
 PORTVERSION=	1.0.2
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Automatically build HTML_QuickForm objects using DB_DataObject
 
 LICENSE=	LGPL3

@@ -6,7 +6,7 @@ PORTVERSION=	1.6.7
 CATEGORIES=	archivers pear
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Handles LZF de/compression
 
 LICENSE=	PHP301

@@ -6,7 +6,7 @@ PORTVERSION=	0.3.3
 CATEGORIES=	devel pear
 DISTNAME=	Weakref-${PORTVERSION}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PECL Weakref extension
 
 LICENSE=	PHP301

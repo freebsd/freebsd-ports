@@ -5,7 +5,7 @@ PORTNAME=	I18N
 PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR internationalization package
 
 LICENSE=	PHP30
