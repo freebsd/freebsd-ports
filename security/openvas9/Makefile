@@ -3,11 +3,11 @@
 
 PORTNAME=	openvas9
 PORTVERSION=	9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	openvas 8 vulnerability scanner (metaport)
+COMMENT=	openvas 9 vulnerability scanner (metaport)
 
 USES=		metaport
 
