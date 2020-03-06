@@ -86,6 +86,7 @@ share/icons/hicolor/72x72/apps/Nextcloud_warn_shared.png
 share/nautilus-python/extensions/syncstate-Nextcloud.py
 share/nemo-python/extensions/syncstate-Nextcloud.py
 share/nextcloud/i18n/client_TW.qm
+share/nextcloud/i18n/client_af.qm
 share/nextcloud/i18n/client_bg.qm
 share/nextcloud/i18n/client_ca.qm
 share/nextcloud/i18n/client_cs.qm
