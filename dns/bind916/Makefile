@@ -8,7 +8,7 @@ PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 PORTREVISION=	0
 .else
 # dns/bind916 here
-PORTREVISION=	1
+PORTREVISION=	2
 .endif
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
@@ -65,7 +65,8 @@ EXTRA_PATCHES=		${PATCHDIR}/extrapatch-bind-tools
 .else
 USE_RC_SUBR=		named
 SUB_FILES=		named.conf pkg-message
-EXTRA_PATCHES=		${PATCHDIR}/extrapatch-no-bind-tools
+EXTRA_PATCHES=		${PATCHDIR}/extrapatch-no-bind-tools \
+			${PATCHDIR}/bind-v9.16.0-tcp_quota_fix.patch:-p1
 
 PORTDOCS=	*
 
