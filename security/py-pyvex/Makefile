@@ -1,10 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	pyvex
-PORTVERSION=	8.20.1.7
+DISTVERSION=	8.20.1.7
+PORTREVISION=	1
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Python interface to libVEX and VEX IR
@@ -20,12 +22,16 @@ ONLY_FOR_ARCHS_REASON=	pyvex_c/pyvex.c does not support this architecture (see l
 
 BUILD_DEPENDS=	${_MY_DEPENDS}
 RUN_DEPENDS=	${_MY_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}archinfo>0:devel/py-archinfo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}archinfo==${DISTVERSION}:devel/py-archinfo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}bitstring>0:devel/py-bitstring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycparser>0:devel/py-pycparser@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
 USES=		gmake localbase python:3.5+
 USE_CSTD=	c99
+USE_GITHUB=	nodefault
+GH_TUPLE=	angr:${PORTNAME}:4fa68d58618a7635b281c9d06263c75fb9bf357f:tests
 USE_PYTHON=	autoplist distutils
 
 MAKE_ENV=	EXTRA_CFLAGS="${CFLAGS}"
@@ -41,5 +47,11 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/lib/lib${PORTNAME}.so
+
+pre-test:
+	@${LN} -Fs ${WRKSRC_tests}/tests ${WRKSRC}/tests
+
+do-test:
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} nosetests-${PYTHON_VER} tests/*)
 
 .include <bsd.port.mk>
