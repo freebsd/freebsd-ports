@@ -10,5 +10,5 @@ reduce the logging overhead a few clock cycles if they are dormant
 to external programs, allowing you to enable and collect debugging
 messages remotely.
 
-WWW: http://www.arg0.net/rlog
+WWW: https://www.arg0.net/rlog
 WWW: https://github.com/anastmag/rlog

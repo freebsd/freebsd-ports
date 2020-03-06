@@ -9,8 +9,8 @@ CATEGORIES=	devel
 MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Flexible message logging facility for C++
 
-LICENSE=	LGPL21 LGPL3
-LICENSE_COMB=	dual
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	anastmag
