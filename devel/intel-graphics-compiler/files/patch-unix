@@ -157,6 +157,17 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
      #include "elf.h"
  #endif
  
+--- IGC/AdaptorOCL/DriverInfoOCL.hpp.orig	2020-02-22 05:52:18 UTC
++++ IGC/AdaptorOCL/DriverInfoOCL.hpp
+@@ -71,7 +71,7 @@ namespace TC
+         bool supportsStatelessSpacePrivateMemory() const override { return true; }
+ 
+         bool NeedFP64(PRODUCT_FAMILY productFamily) const override {
+-#if defined(__linux__)
++#if !defined(__APPLE__) && !defined(_WIN32)
+           if (IGC_IS_FLAG_ENABLED(EnableDPEmulation)) {
+               return true;
+           }
 --- IGC/AdaptorOCL/OCL/sp/gtpin_igc_ocl.h.orig	2019-11-27 01:05:20 UTC
 +++ IGC/AdaptorOCL/OCL/sp/gtpin_igc_ocl.h
 @@ -38,7 +38,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
