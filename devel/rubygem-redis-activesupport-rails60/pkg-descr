@@ -1,0 +1,3 @@
+Redis store for ActiveSupport::Cache
+
+WWW: http://redis-store.org/redis-activesupport
