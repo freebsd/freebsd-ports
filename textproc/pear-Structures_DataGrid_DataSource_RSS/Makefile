@@ -5,7 +5,7 @@ PORTNAME=	Structures_DataGrid_DataSource_RSS
 PORTVERSION=	0.1.1
 CATEGORIES=	textproc databases www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	DataSource driver using RSS files
 
 BROKEN=		unfetchable
