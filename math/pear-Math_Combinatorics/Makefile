@@ -6,7 +6,7 @@ PORTVERSION=	1.0.0
 PORTEPOCH=	1
 CATEGORIES=	math pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Package that produces combinations and permutations
 
 USES=		pear

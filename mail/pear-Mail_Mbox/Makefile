@@ -5,7 +5,7 @@ PORTNAME=	Mail_Mbox
 PORTVERSION=	0.6.3
 CATEGORIES=	mail www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR Read and modify Unix MBOXes
 
 USES=		pear
