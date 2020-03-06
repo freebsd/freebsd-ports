@@ -94,7 +94,8 @@ XML_DESC=	Build with XML data type
 .if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
 OPTIONS_DEFINE+=	LLVM
 LLVM_DESC=		Build with support for JIT-compiling expressions
-OPTIONS_DEFAULT+=	LLVM
+OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${CHOSEN_COMPILER_TYPE}}
+OPTIONS_DEFAULT_clang=	LLVM
 .endif
 
 .if ${DISTVERSION:C/([0-9]*).*/\1/} < 10
@@ -173,6 +174,8 @@ SUB_LIST+=		PG_GROUP=${PG_GROUP} \
 
 .if ${ARCH} == "i386"
 USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler
 .endif
 
 .if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
