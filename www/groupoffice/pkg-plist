@@ -1196,7 +1196,6 @@
 %%WWWDIR%%/go/modules/community/notes/views/extjs3/themes/default/style.css
 %%WWWDIR%%/go/modules/community/serverclient/Module.php
 %%WWWDIR%%/go/modules/community/serverclient/controller/Serverclient.php
-%%WWWDIR%%/go/modules/community/serverclient/controller/Serverclient.php.bak
 %%WWWDIR%%/go/modules/community/serverclient/install/install.txt
 %%WWWDIR%%/go/modules/community/serverclient/install/noautoinstall
 %%WWWDIR%%/go/modules/community/serverclient/language/bg.php
@@ -2067,6 +2066,7 @@
 %%WWWDIR%%/modules/email/model/AccountSort.php
 %%WWWDIR%%/modules/email/model/Alias.php
 %%WWWDIR%%/modules/email/model/ComposerMessage.php
+%%WWWDIR%%/modules/email/model/ContactMailTime.php
 %%WWWDIR%%/modules/email/model/DefaultTemplate.php
 %%WWWDIR%%/modules/email/model/DefaultTemplateForAccount.php
 %%WWWDIR%%/modules/email/model/Filter.php
@@ -3912,7 +3912,7 @@
 %%WWWDIR%%/modules/timeregistration2/scripts.txt
 %%WWWDIR%%/modules/timeregistration2/themes/Default/images/timeregistration2.png
 %%WWWDIR%%/modules/timeregistration2/themes/Default/style.css
-%%WWWDIR%%/modules/timeregistration2/themes/ExtJS/style.css
+%%WWWDIR%%/modules/timeregistration2/views/Extjs3/CopyEntryDialog.js
 %%WWWDIR%%/modules/timeregistration2/views/Extjs3/EmployeeDialog.js
 %%WWWDIR%%/modules/timeregistration2/views/Extjs3/EmployeeGrid.js
 %%WWWDIR%%/modules/timeregistration2/views/Extjs3/MainPanel.js
