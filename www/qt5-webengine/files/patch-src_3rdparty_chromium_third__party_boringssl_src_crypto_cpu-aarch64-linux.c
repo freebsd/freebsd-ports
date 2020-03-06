@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/boringssl/src/crypto/cpu-aarch64-linux.c.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/third_party/boringssl/src/crypto/cpu-aarch64-linux.c.orig	2019-10-21 10:14:54 UTC
 +++ src/3rdparty/chromium/third_party/boringssl/src/crypto/cpu-aarch64-linux.c
-@@ -14,49 +14,35 @@
+@@ -14,49 +14,47 @@
  
  #include <openssl/cpu.h>
  
@@ -17,12 +17,9 @@
 -
  extern uint32_t OPENSSL_armcap_P;
  
-+#include <sys/types.h>
-+#include <machine/armreg.h>
-+
- void OPENSSL_cpuid_setup(void) {
+-void OPENSSL_cpuid_setup(void) {
 -  unsigned long hwcap = getauxval(AT_HWCAP);
-+  uint64_t id_aa64isar0;
++#include <machine/armreg.h>
  
 -  // See /usr/include/asm/hwcap.h on an aarch64 installation for the source of
 -  // these values.
@@ -31,30 +28,45 @@
 -  static const unsigned long kPMULL = 1 << 4;
 -  static const unsigned long kSHA1 = 1 << 5;
 -  static const unsigned long kSHA256 = 1 << 6;
-+  id_aa64isar0 = READ_SPECIALREG(ID_AA64ISAR0_EL1);
++#ifndef ID_AA64ISAR0_AES_VAL
++#define ID_AA64ISAR0_AES_VAL ID_AA64ISAR0_AES
++#endif
++#ifndef ID_AA64ISAR0_AES_VAL
++#define ID_AA64ISAR0_AES_VAL ID_AA64ISAR0_AES
++#endif
++#ifndef ID_AA64ISAR0_SHA1_VAL
++#define ID_AA64ISAR0_SHA1_VAL ID_AA64ISAR0_SHA1
++#endif
++#ifndef ID_AA64ISAR0_SHA2_VAL
++#define ID_AA64ISAR0_SHA2_VAL ID_AA64ISAR0_SHA2
++#endif
  
 -  if ((hwcap & kNEON) == 0) {
 -    // Matching OpenSSL, if NEON is missing, don't report other features
 -    // either.
 -    return;
 -  }
--
++void OPENSSL_cpuid_setup(void) {
++  uint64_t id_aa64isar0;
+ 
++  id_aa64isar0 = READ_SPECIALREG(id_aa64isar0_el1);
++
    OPENSSL_armcap_P |= ARMV7_NEON;
  
 -  if (hwcap & kAES) {
-+  if (ID_AA64ISAR0_AES(id_aa64isar0) == ID_AA64ISAR0_AES_BASE) {
++  if (ID_AA64ISAR0_AES_VAL(id_aa64isar0) >= ID_AA64ISAR0_AES_BASE) {
      OPENSSL_armcap_P |= ARMV8_AES;
    }
 -  if (hwcap & kPMULL) {
-+  if (ID_AA64ISAR0_AES(id_aa64isar0) == ID_AA64ISAR0_AES_PMULL) {
++  if (ID_AA64ISAR0_AES_VAL(id_aa64isar0) == ID_AA64ISAR0_AES_PMULL) {
      OPENSSL_armcap_P |= ARMV8_PMULL;
    }
 -  if (hwcap & kSHA1) {
-+  if (ID_AA64ISAR0_SHA1(id_aa64isar0) == ID_AA64ISAR0_SHA1_BASE) {
++  if (ID_AA64ISAR0_SHA1_VAL(id_aa64isar0) == ID_AA64ISAR0_SHA1_BASE) {
      OPENSSL_armcap_P |= ARMV8_SHA1;
    }
 -  if (hwcap & kSHA256) {
-+  if(ID_AA64ISAR0_SHA2(id_aa64isar0) == ID_AA64ISAR0_SHA2_BASE) {
++  if(ID_AA64ISAR0_SHA2_VAL(id_aa64isar0) >= ID_AA64ISAR0_SHA2_BASE) {
      OPENSSL_armcap_P |= ARMV8_SHA256;
    }
  }
