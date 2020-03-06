@@ -5,7 +5,7 @@ PORTNAME=	leveldb
 PORTVERSION=	0.2.1
 CATEGORIES=	databases
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	This extension is a PHP binding for Google LevelDB
 
 LICENSE=	PHP301

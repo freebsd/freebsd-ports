@@ -5,7 +5,7 @@ PORTNAME=	HTML_QuickForm_Livesearch
 PORTVERSION=	0.4.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Element for PEAR::HTML_QuickForm to enable a suggest search
 
 LICENSE=	PHP30

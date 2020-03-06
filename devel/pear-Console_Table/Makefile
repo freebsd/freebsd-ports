@@ -5,7 +5,7 @@ PORTNAME=	Console_Table
 DISTVERSION=	1.3.1
 CATEGORIES=	devel pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP class that makes it easy to build console style tables
 
 LICENSE=	BSD3CLAUSE

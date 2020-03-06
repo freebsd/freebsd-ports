@@ -6,7 +6,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Code browser that augments the code with information
 
 BROKEN=		unfetchable

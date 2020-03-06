@@ -5,7 +5,7 @@ PORTNAME=	FSM
 PORTVERSION=	1.4.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR Finite State Machine
 
 LICENSE=	MIT

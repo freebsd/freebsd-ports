@@ -4,7 +4,7 @@ PORTNAME=	Date_Holidays_PHPdotNet
 PORTVERSION=	0.1.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Driver based class to calculate birthdays of members of PHP.net
 
 LICENSE=	PHP301

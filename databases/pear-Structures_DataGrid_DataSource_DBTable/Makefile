@@ -5,7 +5,7 @@ PORTNAME=	Structures_DataGrid_DataSource_DBTable
 PORTVERSION=	0.1.7
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	DataSource driver using PEAR::DB_Table
 
 BROKEN=		unfetchable

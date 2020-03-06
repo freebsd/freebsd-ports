@@ -5,7 +5,7 @@ PORTNAME=	Structures_DataGrid_DataSource_DB
 PORTVERSION=	0.1.1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	DB datasource driver for pear-Structures_DataGrid
 
 LICENSE=	BSD2CLAUSE
