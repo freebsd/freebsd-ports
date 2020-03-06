@@ -5,7 +5,7 @@ PORTNAME=	Structures_DataGrid_DataSource_XML
 PORTVERSION=	0.2.0
 CATEGORIES=	textproc databases www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	DataSource driver using XML files
 
 BROKEN=		unfetchable

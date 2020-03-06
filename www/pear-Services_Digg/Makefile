@@ -6,7 +6,7 @@ PORTVERSION=	0.4.7
 PORTREVISION=	1
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP interface to Digg's API
 
 USES=		pear php
