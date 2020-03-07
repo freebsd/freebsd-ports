@@ -281,7 +281,6 @@
     SUBDIR += roxterm
     SUBDIR += rsibreak
     SUBDIR += rubygem-gnome
-    SUBDIR += run_scaled
     SUBDIR += rxvt
     SUBDIR += rxvt-unicode
     SUBDIR += sakura
@@ -466,7 +465,6 @@
     SUBDIR += xorg-minimal
     SUBDIR += xorgproto
     SUBDIR += xpr
-    SUBDIR += xpra
     SUBDIR += xprintidle
     SUBDIR += xprompt
     SUBDIR += xprop

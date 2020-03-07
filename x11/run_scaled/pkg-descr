@@ -1,4 +1,0 @@
-run_scaled is a Bash script that simplifies scaling graphical X applications on
-HiDPI displays (using Xpra).
-
-WWW: https://github.com/kaueraal/run_scaled
