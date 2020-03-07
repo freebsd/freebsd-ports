@@ -7,7 +7,7 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://components.ez.no/get/
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}${PEAR_CHANNEL}_
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Base package that all ezc components packages rely on
 
 LICENSE=	BSD3CLAUSE

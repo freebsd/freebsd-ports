@@ -5,7 +5,7 @@ PORTNAME=	Date
 PORTVERSION=	1.4.7
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR Date and Time Zone Classes
 
 LICENSE=	BSD2CLAUSE

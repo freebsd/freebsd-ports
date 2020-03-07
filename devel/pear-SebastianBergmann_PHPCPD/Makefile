@@ -6,7 +6,7 @@ DISTVERSION=	2.0.0
 CATEGORIES=	devel pear
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}SebastianBergmann_
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Copy/Paste Detector (CPD) for PHP code
 
 LICENSE=	BSD3CLAUSE

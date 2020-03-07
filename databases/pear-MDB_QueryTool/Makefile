@@ -5,7 +5,7 @@ PORTNAME=	MDB_QueryTool
 PORTVERSION=	1.2.3
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR OO-interface for easily retrieving and modifying data in a DB
 
 LICENSE=	BSD2CLAUSE

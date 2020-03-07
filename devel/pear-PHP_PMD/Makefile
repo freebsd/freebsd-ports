@@ -6,7 +6,7 @@ PORTVERSION=	1.5.0
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pear.phpmd.org/get/
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP Mess Detector
 
 BROKEN=		unfetchable

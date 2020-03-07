@@ -5,7 +5,7 @@ PORTNAME=	DB_ldap
 PORTVERSION=	1.2.1
 CATEGORIES=	databases net pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR DB compliant interface to LDAP servers
 
 LICENSE=	LGPL3

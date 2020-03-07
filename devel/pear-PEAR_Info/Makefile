@@ -6,7 +6,7 @@ PORTVERSION=	1.9.2
 PORTREVISION=	2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Show Information about your PEAR install and its packages
 
 LICENSE=	PHP301

@@ -9,7 +9,7 @@ MASTER_SITES=	http://mirror.bsdproject.de/ \
 	LOCAL/joneum
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR framework for PHP
 
 LICENSE=	PHP301

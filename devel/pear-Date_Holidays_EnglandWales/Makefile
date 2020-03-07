@@ -4,7 +4,7 @@ PORTNAME=	Date_Holidays_EnglandWales
 PORTVERSION=	0.1.5
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in England and Wales
 
 LICENSE=	PHP301

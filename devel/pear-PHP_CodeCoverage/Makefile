@@ -5,7 +5,7 @@ PORTNAME=	PHP_CodeCoverage
 DISTVERSION=	5.2.2
 CATEGORIES=	devel pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Library that provides PHP code coverage information
 
 LICENSE=	BSD3CLAUSE

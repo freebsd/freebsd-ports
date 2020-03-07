@@ -5,7 +5,7 @@ PORTNAME=	HTML_Template_Sigma
 PORTVERSION=	1.3.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR template API
 
 LICENSE=	PHP301

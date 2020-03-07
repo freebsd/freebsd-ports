@@ -6,7 +6,7 @@ PORTVERSION=	1.9.3
 PORTEPOCH=	1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR Database Abstraction Layer
 
 LICENSE=	PHP301

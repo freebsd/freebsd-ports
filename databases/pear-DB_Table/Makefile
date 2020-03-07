@@ -7,7 +7,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR object-oriented interface to a database table
 
 LICENSE=	BSD2CLAUSE

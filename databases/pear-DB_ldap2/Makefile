@@ -6,7 +6,7 @@ PORTVERSION=	0.5.1
 PORTREVISION=	1
 CATEGORIES=	databases net pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR DB compliant interface to LDAP v2 and v3 database
 
 LICENSE=	LGPL3

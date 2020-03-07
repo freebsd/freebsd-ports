@@ -5,7 +5,7 @@ PORTNAME=	System_Command
 PORTVERSION=	1.0.8
 CATEGORIES=	devel pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR command line execution interface
 
 USES=		pear
