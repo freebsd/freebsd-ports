@@ -1,0 +1,10 @@
+Simple but efficient cli utility tool to manipulate
+JSON data. Offering a powerful way to select one or
+multiple elements from a source JSON and apply various
+actions on the selected elements at once, e.g. wrap
+selected elements into a new JSON, filter in/out,
+sort elements, update elements, insert new elements,
+remove, copy, move, compare, transform, swap around
+and many other operations.
+
+WWW: https://github.com/ldn-softdev/jtc
