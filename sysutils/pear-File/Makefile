@@ -6,7 +6,7 @@ PORTVERSION=	1.4.1
 PORTEPOCH=	2
 CATEGORIES=	sysutils www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR common file and directory routines
 
 USES=		pear php
