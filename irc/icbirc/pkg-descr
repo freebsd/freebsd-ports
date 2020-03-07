@@ -6,4 +6,4 @@ Commands from the IRC client are translated to ICB commands and forwarded
 to the ICB server. Messages from the ICB server are translated to IRC
 messages and forwarded to the IRC client.
 
-WWW: http://www.benzedrine.cx/icbirc.html
+WWW: http://www.benzedrine.ch/icbirc.html
