@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	adol-c
-DISTVERSION=	2.6.3
-PORTREVISION=	6
+DISTVERSION=	2.7.2
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/${PORTNAME:tu}/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
