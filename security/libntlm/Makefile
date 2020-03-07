@@ -6,7 +6,7 @@ PORTVERSION=	1.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.nongnu.org/libntlm/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library that implement Microsoft's NTLM authentication
 
 LICENSE=	LGPL21+
