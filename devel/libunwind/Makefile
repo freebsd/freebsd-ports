@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 DISTNAME=	${PORTNAME}-1.2.1
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic stack unwinding library
 
 LICENSE=	MIT
