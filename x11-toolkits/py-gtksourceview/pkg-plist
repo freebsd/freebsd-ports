@@ -1,4 +1,0 @@
-%%PYTHON_SITELIBDIR%%/gtksourceview2.la
-%%PYTHON_SITELIBDIR%%/gtksourceview2.so
-libdata/pkgconfig/pygtksourceview-2.0.pc
-share/pygtk/2.0/defs/gtksourceview2.defs
