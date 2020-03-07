@@ -92,4 +92,4 @@ lib/libngs-adapt-c++.a
 lib/libngs-c++.a
 lib/libngs-sdk.so
 lib/libngs-sdk.so.2
-lib/libngs-sdk.so.2.10.2
+lib/libngs-sdk.so.2.10.4
