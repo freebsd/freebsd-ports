@@ -700,6 +700,7 @@
     SUBDIR += py-bottleneck
     SUBDIR += py-cdecimal
     SUBDIR += py-chaospy
+    SUBDIR += py-claripy
     SUBDIR += py-cma
     SUBDIR += py-colormath
     SUBDIR += py-cryptominisat
