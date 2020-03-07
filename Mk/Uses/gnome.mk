@@ -82,7 +82,7 @@ _USE_GNOME_ALL+= atk cairo \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt \
 		orbit2 pango pangox-compat pygobject pygtk2 \
-		pygtksourceview vte
+		vte
 
 # GNOME 3 components
 _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
@@ -345,10 +345,6 @@ gnomesharp20_USE_GNOME_IMPL=	gnomevfs2 gtkhtml3 gtksharp20 librsvg2 vte
 
 libgnomekbd_LIB_DEPENDS=	libgnomekbd.so:x11/libgnomekbd
 libgnomekbd_USE_GNOME_IMPL=	gtk30 libxml2
-
-pygtksourceview_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygtksourceview-2.0.pc:x11-toolkits/py-gtksourceview
-pygtksourceview_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygtksourceview-2.0.pc:x11-toolkits/py-gtksourceview
-pygtksourceview_USE_GNOME_IMPL=	gtksourceview2 pygtk2
 
 gvfs_BUILD_DEPENDS=	gvfs>=0:devel/gvfs
 gvfs_RUN_DEPENDS=	gvfs>=0:devel/gvfs
