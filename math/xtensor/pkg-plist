@@ -44,6 +44,7 @@ include/xtensor/xoptional_assembly_storage.hpp
 include/xtensor/xpad.hpp
 include/xtensor/xrandom.hpp
 include/xtensor/xreducer.hpp
+include/xtensor/xrepeat.hpp
 include/xtensor/xscalar.hpp
 include/xtensor/xsemantic.hpp
 include/xtensor/xshape.hpp
