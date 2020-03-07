@@ -5,7 +5,7 @@ PORTNAME=	Net_SmartIRC
 PORTVERSION=	1.1.14
 CATEGORIES=	irc www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class for communication with IRC networks
 
 LICENSE=	LGPL21

@@ -6,7 +6,7 @@ PORTVERSION=	1.5.2
 PORTEPOCH=	1
 CATEGORIES=	net news pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR implementation of the NNTP protocol
 
 LICENSE=	W3C

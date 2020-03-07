@@ -5,7 +5,7 @@ PORTNAME=	Net_Server
 PORTVERSION=	1.0.3
 CATEGORIES=	net pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Generic server class
 
 USES=		pear php
