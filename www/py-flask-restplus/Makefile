@@ -25,9 +25,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>0:devel/py-tzlocal@${PY_FLAVOR}
 #missing ports for tests:devel/py-pytest-benchmark, devel/py-pytest-profiling, devel/py-pytest-faker
 
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
-PY_ENUM34=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	noirbizarre
