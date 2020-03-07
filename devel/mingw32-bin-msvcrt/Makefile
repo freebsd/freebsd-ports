@@ -12,7 +12,7 @@ DISTFILES=	mingwrt-${RUNTIMEVERSION}-mingw32-dev.tar.lzma:runtime \
 		w32api-${APIVERSION}-mingw32-dev.tar.lzma:api
 DIST_SUBDIR=	mingw
 
-MAINTAINER=	cyberbotx@cyberbotx.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Headers and Libraries for Windows cross-development
 
 CONFLICTS=	mingw-bin-msvcrt-[0-9]*
