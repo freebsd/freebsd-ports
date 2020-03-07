@@ -23,4 +23,7 @@ USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
 
+# incompatible with finance/electrum
+PORTSCOUT=	skipv:0.18.4
+
 .include <bsd.port.mk>
