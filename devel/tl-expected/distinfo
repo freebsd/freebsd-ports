@@ -1,0 +1,5 @@
+TIMESTAMP = 1583119531
+SHA256 (TartanLlama-expected-v1.0.0_GH0.tar.gz) = 8f5124085a124113e75e3890b4e923e3a4de5b26a973b891b3deb40e19c03cee
+SIZE (TartanLlama-expected-v1.0.0_GH0.tar.gz) = 102672
+SHA256 (TartanLlama-tl-cmake-284c6a3_GH0.tar.gz) = cc69510c3aeb0ce1e4b86e0a04156c630bff5bf6ae2f47593d40cca89daf8369
+SIZE (TartanLlama-tl-cmake-284c6a3_GH0.tar.gz) = 755
