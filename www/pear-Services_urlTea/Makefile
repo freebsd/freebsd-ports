@@ -5,7 +5,7 @@ PORTNAME=	Services_urlTea
 PORTVERSION=	0.1.0
 CATEGORIES=	www pear
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP interface to urlTea's API
 
 USES=		pear php

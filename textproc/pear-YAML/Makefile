@@ -7,7 +7,7 @@ CATEGORIES=	textproc www pear
 MASTER_SITES=	http://pear.symfony-project.com/get/
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	The Symfony YAML Component
 
 USES=	pear
