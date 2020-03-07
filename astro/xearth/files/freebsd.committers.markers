@@ -226,6 +226,7 @@
  53.65,		-6.67,		"peadar"	align=above	# Navan, Co. Meath, Ireland
 -9.603815,	-35.724911,	"lippe"				# Maceio, AL, Brazil
 -19.917,	-43.933,	"jmelo"				# Belo Horizonte, MG, Brazil
+-22.81,         -47.06,         "alfredo"                       # Cidade Universitaria, Rio de Janeiro, Brasil
 -15.8,		-47.9,		"lioux"				# Brasilia, DF, Brazil
 -20.950,	-47.917,	"garga"				# Limeira, SP, Brazil
 -15.789297,	-47.931097,	"dcs"				# Brasilia, DF, Brazil
@@ -267,7 +268,6 @@
  43.37,		-79.79,		"hoek"				# Burlington, ON, Canada
  43.22,		-79.86,		"allanjude"			# Hamilton, ON, Canada
  40.441667,	-80,		"rvb"				# Pittsburgh, PA, US
- 43.55,		-80.25,		"rmacklem"			# Guelph, ON, Canada
  37.23,		-80.41,		"mikeh"				# Blacksburg, VA, USA
  43.48,		-80.54,		"emaste"			# (CORE) Waterloo, ON, Canada
  36.294167,	-82.4725,	"jsa"				# Jonesborough, TN, USA
@@ -315,6 +315,7 @@
  33.83,		-118.22,	"                trevor,"	# Dominguez, CA, USA
  34.11,		-118.29,	"         kris,"		# Los Angeles, CA, USA
  46.070,	-118.324,	"brooks"			# Walla Walla, WA, USA
+ 52.8,          -119.3,         "rmacklem"			# Valemount, BC, Canada
  35.383,	-120.659,	"jgh"				# San Luis Obispo, CA, USA
  39.25,		-121.02,	"truckman"			# Nevada City, CA, USA
  37.104,	-121.606,	"jpaetzel"			# San Martin, CA, USA
@@ -322,6 +323,7 @@
  37.4014,	-121.9265,	"weongyo"			# San Jose, CA, USA
  37.40,		-121.94,	"alfred"			# Santa Clara, CA, USA
  37.75573,	-121.947116,	"peter"				# (CORE) San Ramon, CA, USA
+ 37.96,         -121.98,        "jhb"                           # Concord, CA, USA
  37.359394,	-121.992,	"cjc"				# Santa Clara, CA, USA
  37.4,		-122.0,		"asami"				# Santa Clara, CA, USA
  37.3583,	-122.0154,	"stas"				# Sunnyvale, CA, USA
