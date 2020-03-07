@@ -2,7 +2,7 @@
 
 PORTNAME=	cle
 DISTVERSION=	8.20.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}minidump>0:devel/py-minidump@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pefile>0:devel/py-pefile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyvex==${DISTVERSION}}:security/py-pyvex@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyvex==${DISTVERSION}:security/py-pyvex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2.0:devel/py-sortedcontainers@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
@@ -31,10 +31,10 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 pre-test:
-	@${LN} -s ${WRKSRC_tests}/tests ${WRKSRC}/tests
-	@${LN} -s ${WRKSRC_binaries} ${WRKDIR}/binaries
+	@${LN} -Fs ${WRKSRC_tests}/tests ${WRKSRC}/tests
+	@${LN} -Fs ${WRKSRC_binaries} ${WRKDIR}/binaries
 
 do-test:
-	@(cd ${TEST_WRKSRC} && nosetests-${PYTHON_VER} tests/*)
+	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} nosetests-${PYTHON_VER} tests/*)
 
 .include <bsd.port.mk>
