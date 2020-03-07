@@ -1,8 +1,0 @@
-bin/font-manager
-bin/font-sampler
-lib/font-manager/fontutils.so
-share/applications/font-manager.desktop
-share/applications/font-sampler.desktop
-%%NLS%%share/locale/it/LC_MESSAGES/font-manager.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/font-manager.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/font-manager.mo
