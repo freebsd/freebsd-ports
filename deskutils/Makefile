@@ -216,7 +216,6 @@
     SUBDIR += spice-gtk
     SUBDIR += sugarcrm
     SUBDIR += synapse
-    SUBDIR += syncthing-gtk
     SUBDIR += syncthingtray
     SUBDIR += sysctlview
     SUBDIR += systempreferences

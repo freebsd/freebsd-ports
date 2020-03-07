@@ -1807,7 +1807,6 @@
     SUBDIR += py-wsgidav
     SUBDIR += py-yarl
     SUBDIR += pyblosxom
-    SUBDIR += pycarddav
     SUBDIR += pyjamas
     SUBDIR += qdecoder
     SUBDIR += qhttpengine
