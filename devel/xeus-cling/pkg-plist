@@ -17,7 +17,7 @@ lib/cmake/xeus-cling/xeus-clingTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/xeus-cling/xeus-clingTargets.cmake
 lib/libxeus-cling.so
 lib/libxeus-cling.so.0
-lib/libxeus-cling.so.0.5.1
+lib/libxeus-cling.so.0.8.1
 share/jupyter/kernels/xcpp11/kernel.json
 share/jupyter/kernels/xcpp11/logo-32x32.png
 share/jupyter/kernels/xcpp11/logo-64x64.png
