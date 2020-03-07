@@ -153,7 +153,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/intellij-dvcs.jar
 %%DATADIR%%/lib/intellij-test-discovery-agent-1.0.508.jar
 %%DATADIR%%/lib/intellij-xml.jar
-%%DATADIR%%/lib/ion-java-1.5.0-1.jar
+%%DATADIR%%/lib/ion-java-1.5.2-2.jar
 %%DATADIR%%/lib/isorelax-20030108.jar
 %%DATADIR%%/lib/istack-commons-runtime-3.0.7.jar
 %%DATADIR%%/lib/j2objc-annotations-1.1.jar
@@ -175,7 +175,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/jcip-annotations-1.0.jar
 %%DATADIR%%/lib/jdkAnnotations.jar
 %%DATADIR%%/lib/jdom.jar
-%%DATADIR%%/lib/jediterm-pty-2.22.jar
+%%DATADIR%%/lib/jediterm-pty-2.24.jar
 %%DATADIR%%/lib/jetCheck-0.2.1.jar
 %%DATADIR%%/lib/jettison-1.4.0.jar
 %%DATADIR%%/lib/jing-20030619.jar
@@ -289,6 +289,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/stax-ex-1.8.jar
 %%DATADIR%%/lib/streamex-0.6.8.jar
 %%DATADIR%%/lib/swingx-core-1.6.2-2.jar
+%%DATADIR%%/lib/tips-intellij-idea-193.9.jar
 %%DATADIR%%/lib/trang-core.jar
 %%DATADIR%%/lib/trilead-ssh2-build-217-jenkins-14.jar
 %%DATADIR%%/lib/trove4j.jar
@@ -372,6 +373,7 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/DatabaseTools/lib/dekaf-single-2.0.0.390.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/jdbc-console.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/resources_en.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/tips-database-plugin-193.15.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
 %%DATADIR%%/plugins/Docker/lib/Docker-agent-api-rt.jar
 %%DATADIR%%/plugins/Docker/lib/Docker-compose.jar
@@ -676,6 +678,7 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/src/typings/js-lanuage-api.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/languageService/eslint/tsconfig.json
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar
+%%DATADIR%%/plugins/JavaScriptLanguage/lib/completion-ranking-js-0.0.1.jar
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/javascript-openapi.jar
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/js-test-common.jar
 %%DATADIR%%/plugins/JavaScriptLanguage/lib/resources_en.jar
