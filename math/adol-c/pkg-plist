@@ -1,3 +1,4 @@
+include/adolc/adolc_fatalerror.h
 include/adolc/adalloc.h
 include/adolc/adolc.h
 include/adolc/adolc_openmp.h
@@ -5,6 +6,8 @@ include/adolc/adolc_sparse.h
 include/adolc/adouble.h
 include/adolc/adoublecuda.h
 include/adolc/adtl.h
+include/adolc/adtl_hov.h
+include/adolc/adtl_indo.h
 include/adolc/adutils.h
 include/adolc/adutilsc.h
 include/adolc/advector.h
@@ -14,6 +17,7 @@ include/adolc/drivers/drivers.h
 include/adolc/drivers/odedrivers.h
 include/adolc/drivers/psdrivers.h
 include/adolc/drivers/taylor.h
+include/adolc/edfclasses.h
 include/adolc/externfcts.h
 include/adolc/externfcts2.h
 include/adolc/fixpoint.h
@@ -33,5 +37,5 @@ include/adolc/tapedoc/tapedoc.h
 include/adolc/taping.h
 lib/libadolc.so
 lib/libadolc.so.2
-lib/libadolc.so.2.1.0
+lib/libadolc.so.2.2.0
 libdata/pkgconfig/adolc.pc
