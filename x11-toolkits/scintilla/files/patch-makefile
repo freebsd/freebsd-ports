@@ -1,49 +1,48 @@
---- makefile.orig	2019-04-16 20:34:45 UTC
+--- makefile.orig	2020-01-02 00:45:04 UTC
 +++ makefile
-@@ -11,9 +11,7 @@
- srcdir ?= .
+@@ -16,8 +16,6 @@ basedir = $(srcdir)/..
  
+ WARNINGS = -Wpedantic -Wall
  ifdef CLANG
 -CXX = clang++
- CXXWARNFLAGS = -Wall -pedantic -Wno-deprecated-register -Wno-missing-braces
 -CC = clang
- # Can choose aspect to sanitize: address and undefined can simply change SANITIZE but for
- # thread also need to create Position Independent Executable -> search online documentation
- SANITIZE = address
-@@ -49,7 +47,12 @@ DEL = del /q
- COMPLIB=$(srcdir)\..\bin\scintilla.a
+ WARNINGS += -Wno-deprecated-register
+ ifdef windir
+ # Turn off some warnings that occur when Clang is being used on Windows where it
+@@ -58,7 +56,12 @@ DEL = del /q
  else
  DEL = rm -f
--COMPLIB=$(srcdir)/../bin/scintilla.a
+ endif
+-COMPLIB=$(basedir)/bin/scintilla.a
 +COMPLIB_NAME=libscintilla.so
 +COMPLIB_SONAME=$(COMPLIB_NAME).$(MAJOR)
 +COMPLIB=$(COMPLIB_SONAME).$(AGE).$(REVISION)
 +LEXRLIB_NAME=libscintilla_lexers.so
 +LEXRLIB_SONAME=$(LEXRLIB_NAME).$(MAJOR)
 +LEXRLIB=$(LEXRLIB_SONAME).$(AGE).$(REVISION)
- endif
  
- vpath %.h $(srcdir) $(srcdir)/../src $(srcdir)/../include $(srcdir)/../lexlib
-@@ -87,7 +90,7 @@ CXXTFLAGS:=--std=gnu++17 $(CTFLAGS) $(REFLAGS)
- CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
+ vpath %.h $(srcdir) $(basedir)/src $(basedir)/include $(basedir)/lexlib
+ vpath %.c $(srcdir)
+@@ -81,7 +84,7 @@ CXX_ALL_FLAGS =$(DEFINES) $(INCLUDES) $(CXX_BASE_FLAGS
+ CONFIG_FLAGS:=$(shell pkg-config --cflags $(GTK_VERSION))
  MARSHALLER=scintilla-marshal.o
  
 -all: $(COMPLIB)
 +all: $(COMPLIB) $(LEXRLIB)
  
  clean:
- 	$(DEL) *.o $(COMPLIB) *.plist
-@@ -119,9 +122,11 @@ $(COMPLIB): Accessor.o CharacterSet.o DefaultLexer.o L
- 	PropSetSimple.o PlatGTK.o \
- 	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o ScintillaGTKAccessible.o CellBuffer.o CharacterCategory.o ViewStyle.o \
- 	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o UniqueString.o XPM.o \
--	$(MARSHALLER) $(LEXOBJS)
+ 	$(DEL) *.o $(call normalize,$(COMPLIB)) *.plist
+@@ -158,9 +161,11 @@ GTK_OBJS = \
+ 	ScintillaGTK.o \
+ 	ScintillaGTKAccessible.o
+ 
+-$(COMPLIB): $(SRC_OBJS) $(LEXLIB_OBJS) $(GTK_OBJS) $(MARSHALLER) $(LEX_OBJS)
 -	$(AR) $(ARFLAGS) $@ $^
 -	$(RANLIB) $@
-+	$(MARSHALLER)
++$(COMPLIB): $(SRC_OBJS) $(GTK_OBJS) $(MARSHALLER)
 +	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared -Wl,-soname,$(COMPLIB_SONAME) -o $@ $^ -Wl,--as-needed $(CONFIGLIBS)
 +
-+$(LEXRLIB): $(LEXOBJS)
++$(LEXRLIB): $(LEXLIB_OBJS) $(LEX_OBJS)
 +	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared -Wl,-soname,$(LEXRLIB_SONAME) -o $@ $^ -Wl,--as-needed $(CONFIGLIBS)
  
  # Automatically generate header dependencies with "make deps"

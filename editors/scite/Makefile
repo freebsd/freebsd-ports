@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scite
-DISTVERSION=	4.2.3
+DISTVERSION=	4.3.0
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -25,11 +25,18 @@ OPTIONS_DEFINE=	DOCS
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 MAKEFILE=	makefile
+MAKE_ARGS=	GTK3=1
 
 PORTDATA=	*.properties
 PORTDOCS=	*.html *.jpg *.png
+
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+MAKE_ARGS+=	CLANG=1
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -Os||g' ${WRKSRC}/makefile
@@ -44,4 +51,4 @@ do-install:
 	(cd ${WRKSRC}/../src && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})
 	(cd ${WRKSRC}/../doc && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
