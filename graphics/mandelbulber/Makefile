@@ -3,6 +3,7 @@
 
 PORTNAME=	mandelbulber
 DISTVERSION=	2.20
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -36,8 +37,6 @@ OPTIONS_DEFINE=	OPENCL OPENMP DOCS
 OPTIONS_EXCLUDE=	OPENMP  # not properly supported yet
 
 OPENCL_BUILD_DEPENDS=	opencl>=0:devel/opencl
-
-OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
 
 post-patch-OPENMP-off:
 	@${REINPLACE_CMD} -e 's|-fopenmp||' \

@@ -3,7 +3,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -102,18 +102,6 @@ WEBP_CMAKE_OFF=		-DUSE_WEBP:BOOL=OFF
 .if "${WITH_CCACHE_BUILD}" == "yes" && !defined(NO_CCACHE)
 CMAKE_ARGS+=	-DCMAKE_C_COMPILER_LAUNCHER=${CCACHE_BIN} \
 		-DCMAKE_CXX_COMPILER_LAUNCHER=${CCACHE_BIN}
-.endif
-
-# Base clang may not support OpenMP, use ports clang:
-.if ${ARCH} == amd64 && ${CHOSEN_COMPILER_TYPE} == clang
-LLVM_VER=	${LLVM_DEFAULT}
-BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
-
-CPP=		clang-cpp${LLVM_VER}
-CC=		clang${LLVM_VER}
-CXX=		clang++${LLVM_VER}
-
-LIB_DEPENDS+=	libomp.so:devel/llvm${LLVM_VER}
 .endif
 
 .if defined(WITH_DEBUG)

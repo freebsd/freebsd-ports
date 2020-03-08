@@ -2,7 +2,7 @@
 
 PORTNAME=	phono3py
 DISTVERSION=	1.13.3.27
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,14 +18,12 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}phonopy>=1.13.2:science/py-phonopy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
-		${LOCALBASE}/include/lapacke.h:math/lapacke \
-		openmp>0:devel/openmp
+		${LOCALBASE}/include/lapacke.h:math/lapacke
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}phonopy>=1.13.2:science/py-phonopy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
-		openmp>0:devel/openmp
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
 USES=		blaslapack:openblas localbase python
 USE_PYTHON=	distutils cython autoplist

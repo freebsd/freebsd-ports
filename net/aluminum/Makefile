@@ -3,6 +3,7 @@
 PORTNAME=	Aluminum
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,14 +19,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
 USE_LDCONFIG=	yes
 
-CONFLICTS_BUILD=	openmp # because OpenMP detection is broken in cmake even with port clang, see bug#234050
-LDFLAGS+=	-lexecinfo \
-		${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libomp.so # see above
-
-# OpenMP detection is broken with base clang, see bug#223678
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CPP=		clang-cpp${LLVM_DEFAULT}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
+LDFLAGS+=	-lexecinfo
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 
 PORTNAME=	pdf2djvu
 PORTVERSION=	0.9.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	converters
 MASTER_SITES=	https://github.com/jwilk/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -44,7 +44,6 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
 
 MULTITHREADING_CONFIGURE_ENABLE=openmp
-MULTITHREADING_LIB_DEPENDS=	libomp.so:devel/openmp
 
 XMP_CONFIGURE_ENABLE=	xmp
 XMP_LIB_DEPENDS=	libexiv2.so:graphics/exiv2

@@ -3,6 +3,7 @@
 PORTNAME=	mkl-dnn
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +26,6 @@ OPTIONS_DEFINE=		OPENMP
 OPTIONS_DEFAULT=	OPENMP
 
 OPENMP_CMAKE_BOOL=	USE_OPENMP
-OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
 OPENMP_BROKEN_OFF=	still requires omp.h, see https://github.com/intel/mkl-dnn/issues/581
 
 CXXFLAGS_amd64=	-msse4.1

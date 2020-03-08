@@ -13,11 +13,9 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
-		openblas>0:math/openblas \
-		openmp>0:devel/openmp
+		openblas>0:math/openblas
 RUN_DEPENDS=	boost-libs>0:devel/boost-libs \
-		openblas>0:math/openblas \
-		openmp>0:devel/openmp
+		openblas>0:math/openblas
 
 USES=		cmake compiler:c++14-lang fortran localbase:ldflags
 NO_ARCH=	yes

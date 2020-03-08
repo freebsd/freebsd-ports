@@ -18,11 +18,4 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
-.include <bsd.port.pre.mk>
-
-# XXX Drop after FreeBSD 12.0 EOL
-.if ${CHOSEN_COMPILER_TYPE} == clang && !exists(/usr/include/omp.h)
-LIB_DEPENDS+=	libomp.so:devel/openmp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -2,6 +2,7 @@
 
 PORTNAME=	PyFR
 DISTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	http://www.pyfr.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,8 +33,7 @@ PARALLEL_DESC=		Parallelization backends to install
 
 OPENCL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyopencl>0:devel/py-pyopencl@${PY_FLAVOR} \
 			clblas>0:math/clblas
-OPENMP_RUN_DEPENDS=	openmp>0:devel/openmp \
-			libxsmm>0:math/libxsmm
+OPENMP_RUN_DEPENDS=	libxsmm>0:math/libxsmm
 
 pre-build: # patch in pre-build to make the patch less error-prone (it has %%LOCALBASE%%)
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/pyfr/backends/openmp/compiler.py

@@ -2,7 +2,7 @@
 
 PORTNAME=	openmx
 DISTVERSION=	3.8.5 # the 18June12 patch upgrades 3.8 -> 3.8.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 MASTER_SITES=	http://www.openmx-square.org/ \
 		http://www.openmx-square.org/bugfixed/18June12/:patch
@@ -23,8 +23,7 @@ BROKEN_i386=	undefined reference to `__atomic_load', see bug#229605 and https://
 LIB_DEPENDS=	libblas.so:math/blas \
 		libfftw3.so:math/fftw3 \
 		liblapack.so:math/lapack \
-		libmpich.so:net/mpich \
-		libiomp5.so:devel/openmp
+		libmpich.so:net/mpich
 
 USES=		dos2unix fortran gmake localbase:ldflags
 DOS2UNIX_FILES=	openmx_common.h

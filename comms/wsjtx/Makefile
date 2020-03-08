@@ -2,6 +2,7 @@
 
 PORTNAME=	wsjtx
 DISTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
@@ -18,8 +19,7 @@ BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		${LOCALBASE}/share/xsl/docbook:textproc/docbook-xsl
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
-		libxslt.so:textproc/libxslt \
-		libomp.so:devel/openmp
+		libxslt.so:textproc/libxslt
 
 USES=		cmake compiler:c++11-lib fortran gl \
 		makeinfo pkgconfig qt:5 tar:tgz

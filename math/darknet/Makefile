@@ -4,6 +4,7 @@ PORTNAME=	darknet
 DISTVERSIONPREFIX=	darknet_yolo_v
 DISTVERSION=	3-446
 DISTVERSIONSUFFIX=	-gf2fc239
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math # machine-learning
 
@@ -12,8 +13,6 @@ COMMENT=	Open source neural networks in C
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-LIB_DEPENDS=	libomp.so:devel/openmp
 
 USES=		cmake compiler:c11
 USE_GITHUB=	yes

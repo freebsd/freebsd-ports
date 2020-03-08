@@ -50,8 +50,4 @@ IMAGEMAGICK7_CMAKE_ON=	-DCMAKE_DISABLE_FIND_PACKAGE_ImageMagick:BOOL=NO
 LIBAV_DESC=		${FFMPEG_DESC:S/FFmpeg/Libav/}
 LIBAV_LIB_DEPENDS=	libavformat.so:multimedia/libav
 
-.if !exists(/usr/lib/libomp.so)
-IGNORE=		openmp of base system is required
-.endif
-
 .include <bsd.port.mk>

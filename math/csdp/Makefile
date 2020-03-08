@@ -31,14 +31,7 @@ PLIST_FILES=	bin/complement \
 		bin/rand_graph \
 		bin/theta
 
-.include <bsd.port.pre.mk>
-
-# XXX Drop after FreeBSD 12.0 EOL
-.if !exists(/usr/include/omp.h)
-LIB_DEPENDS+=	libomp.so:devel/openmp
-.endif
-
 post-stage:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

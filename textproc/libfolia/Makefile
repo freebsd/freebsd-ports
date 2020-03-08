@@ -3,7 +3,7 @@
 PORTNAME=	libfolia
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.15
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 LIB_DEPENDS=	libicui18n.so:devel/icu \
-		libomp.so:devel/openmp \
 		libticcutils.so:devel/ticcutils
 
 USES=		autoreconf compiler:c++11-lang gmake gnome libtool pkgconfig

@@ -3,6 +3,7 @@
 
 PORTNAME=	blender
 DISTVERSION=	2.82
+PORTREVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -135,7 +136,6 @@ OPENIMAGEDN_ONLY_FOR_ARCHS=	amd64
 OPENIMAGEDN_ONLY_FOR_ARCHS_REASON=	oidn only supports amd64
 # openmp usually works on amd64
 OPENMP_CMAKE_BOOL=		WITH_OPENMP
-OPENMP_LIB_DEPENDS=		libomp.so:devel/openmp
 OPENSUBDIV_CMAKE_BOOL=		WITH_OPENSUBDIV
 OPENSUBDIV_LIB_DEPENDS=		libosdCPU.so:graphics/opensubdiv
 OPENVDB_CMAKE_BOOL=		WITH_OPENVDB WITH_OPENVDB_BLOSC
