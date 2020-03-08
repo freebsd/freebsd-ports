@@ -116,9 +116,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		xattr-0.2.2 \
 		xdg-2.2.0 \
 		zip-0.5.4
-CARGO_BUILD_ARGS=	--no-default-features
-CARGO_INSTALL_ARGS=	--no-default-features
-CARGO_TEST_ARGS=	--no-default-features
+CARGO_FEATURES=	--no-default-features
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
