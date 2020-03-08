@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-DISTVERSION=	1.2.2
+DISTVERSIONPREFIX=	libtorrent-
+DISTVERSION=	1_2_4
 CATEGORIES=	net-p2p python
-MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-${PORTVERSION:S/./_/g}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,14 +13,15 @@ COMMENT=	Python bindings for libtorrent-rasterbar
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../COPYING
 
-BROKEN=		Doesn't install anything since the last major release: https://github.com/arvidn/libtorrent/issues/4204
-
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		${PY_BOOST}
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}-libtorrent-rasterbar11
 
 USES=		compiler:c11 iconv localbase python
+USE_GITHUB=	yes
+GH_ACCOUNT=	arvidn
+GH_PROJECT=	libtorrent
 USE_PYTHON=	distutils autoplist
 
 CFLAGS+=	-DTORRENT_DISABLE_LOGGING # undefined symbol: https://github.com/arvidn/libtorrent/issues/3331
@@ -31,5 +32,8 @@ WRKSRC_SUBDIR=	bindings/python
 # ensure python paths are correctly identified
 CONFIGURE_ENV=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}" \
 		PYTHON_VERSION="${PYTHON_VERSION}"
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/libtorrent.so
 
 .include <bsd.port.mk>
