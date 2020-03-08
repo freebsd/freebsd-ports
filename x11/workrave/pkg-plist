@@ -4,7 +4,6 @@ lib/libworkrave-private-1.0.a
 lib/libworkrave-private-1.0.so
 lib/libworkrave-private-1.0.so.0
 lib/libworkrave-private-1.0.so.0.0.0
-share/appdata/workrave.appdata.xml
 share/applications/workrave.desktop
 %%DBUS%%share/dbus-1/services/org.workrave.Workrave.service
 share/gir-1.0/Workrave-1.0.gir
@@ -53,6 +52,7 @@ share/locale/tr/LC_MESSAGES/workrave.mo
 share/locale/uk/LC_MESSAGES/workrave.mo
 share/locale/zh_CN/LC_MESSAGES/workrave.mo
 share/locale/zh_TW/LC_MESSAGES/workrave.mo
+share/metainfo/workrave.appdata.xml
 share/sounds/workrave/default/break-ignored.wav
 share/sounds/workrave/default/break-prelude.wav
 share/sounds/workrave/default/daily-limit.wav

@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	workrave
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1_10_16
-PORTREVISION=	6
+PORTVERSION=	1.10.34
 CATEGORIES=	x11
+MASTER_SITES=	https://github.com/rcaelers/workrave/releases/download/v${PORTVERSION:S/./_/g}/
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	RSI prevention tool
@@ -14,26 +13,22 @@ LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libgdome.so:textproc/gdome2
 
-USES=		autoreconf:build compiler:c++11-lang gettext gmake gnome \
-		libtool localbase pathfix pkgconfig xorg
+USES=		compiler:c++11-lang gettext gmake gnome libtool localbase \
+		pkgconfig xorg
 USE_CXXSTD=	c++11
-USE_XORG=	ice xorgproto sm x11 xext xmu xscrnsaver xtst
-USE_GNOME=	intltool intlhack introspection gtkmm30
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gsettings \
-		--disable-pulse \
-		--disable-gconf \
-		--disable-mate \
-		--disable-gnome2 \
-		--disable-gnome3 \
-		--disable-xfce \
-		--disable-indicator
+USE_GNOME=	gtkmm30 intlhack intltool introspection:build
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
+USE_XORG=	ice sm x11 xext xmu xorgproto xscrnsaver xtst
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	rcaelers
-
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-gconf \
+		--disable-gnome3 \
+		--disable-gsettings \
+		--disable-indicator \
+		--disable-mate \
+		--disable-pulse \
+		--disable-xfce
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		DBUS DISTRIBUTION GSTREAMER
@@ -42,26 +37,14 @@ OPTIONS_SUB=		yes
 
 DISTRIBUTION_DESC=	Build with networking support
 
-DBUS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>0:devel/py-cheetah@${PY_FLAVOR}
+DBUS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
+			boost-libs>0:devel/boost-libs
+DBUS_USES=		python:3.5+,build
 DBUS_CONFIGURE_ENABLE=	dbus
-DBUS_USES=	python:2.7
 
 DISTRIBUTION_CONFIGURE_ENABLE=	distribution
 
-GSTREAMER_LIB_DEPENDS=	libgstreamer-1.0.so:multimedia/gstreamer1
+GSTREAMER_USE=			GSTREAMER1=good
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer
-GSTREAMER_USE=		gstreamer1=good
-
-# Remove gnome-shell cinnamon subdirs from build, so it doesn't install
-# unused files
-post-patch:
-	@${REINPLACE_CMD} -e 's| gnome-shell cinnamon | |' \
-		${WRKSRC}/frontend/applets/Makefile.am
-
-# Run bundled autogen.sh instead of relying on USES=autoreconf which
-# leads to errors like
-# config.status: error: po/Makefile.in.in was not created by intltoolize.
-pre-configure:
-	@cd ${WRKSRC} && ./autogen.sh
 
 .include <bsd.port.mk>
