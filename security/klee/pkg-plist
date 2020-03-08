@@ -2,6 +2,7 @@ bin/gen-bout
 bin/gen-random-bout
 bin/kleaver
 bin/klee
+bin/klee-replay
 bin/klee-stats
 bin/ktest-tool
 include/klee/klee.h
