@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	878.70.2
+PORTVERSION=	1096.0.2
 CATEGORIES=	dns net
 MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
 PKGNAMESUFFIX=	_nss
