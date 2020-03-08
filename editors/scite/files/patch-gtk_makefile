@@ -1,33 +1,31 @@
---- gtk/makefile.orig	2019-06-07 22:35:09 UTC
+--- gtk/makefile.orig	2020-01-02 00:45:08 UTC
 +++ gtk/makefile
-@@ -12,8 +12,8 @@ ifdef CLANG
+@@ -18,8 +18,6 @@ ifdef CLANG
  # thread also need to create Position Independent Executable -> search online documentation
  SANITIZE = address
  #SANITIZE = undefined
--CXX = clang++ -fsanitize=$(SANITIZE) -Wno-deprecated-register
--CC = clang -fsanitize=$(SANITIZE)
-+CXX = $(CXX) -fsanitize=$(SANITIZE) -Wno-deprecated-register
-+CC = $(CC) -fsanitize=$(SANITIZE)
- CCWARNINGS = -Wno-empty-body -Wno-string-plus-int
- else
- MISLEADING=-Wno-misleading-indentation
-@@ -29,7 +29,7 @@ endif
- CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
- CONFIGLIB:=$(shell pkg-config --libs $(GTKVERSION) gthread-2.0 gmodule-no-export-2.0)
- CONFIGTHREADS:=
--gnomeprefix:=$(shell pkg-config --variable=prefix $(GTKVERSION) 2>/dev/null)
+-CXX = clang++
+-CC = clang
+ BASE_FLAGS += -fsanitize=$(SANITIZE)
+ WARNINGS += -Wno-deprecated-register
+ WARNINGS += -Wno-empty-body
+@@ -33,7 +31,7 @@ GTK_VERSION = $(if $(GTK3),gtk+-3.0,gtk+-2.0)
+ # For the Gnome desktop stuff to work, prefix must point to where Gnome thinks it is.
+ CONFIGFLAGS:=$(shell pkg-config --cflags $(GTK_VERSION))
+ CONFIGLIB:=$(shell pkg-config --libs $(GTK_VERSION) gthread-2.0 gmodule-no-export-2.0)
+-gnomeprefix:=$(shell pkg-config --variable=prefix $(GTK_VERSION) 2>/dev/null)
 +gnomeprefix:=$(PREFIX)
  ifndef prefix
  ifdef gnomeprefix
    prefix=$(gnomeprefix)
-@@ -125,8 +125,9 @@ FilePath.o EditorConfig.o SciTEBase.o FileWorker.o Coo
- ExportHTML.o ExportPDF.o ExportRTF.o ExportTEX.o ExportXML.o \
- MatchMarker.o StringHelpers.o \
- PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
--	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
--	$(CXX) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script $(srcdir)/lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) $(LDLIBS) -lm -lstdc++
-+	JobQueue.o GTKMutex.o IFaceTable.o $(LUA_OBJS)
-+	$(CXX) -rdynamic -Wl,--version-script $(srcdir)/lua.vers -DGTK $(CXXFLAGS) $^ -o $@ \
+@@ -141,8 +139,9 @@ SRC_OBJS = \
+ 	StyleWriter.o \
+ 	Utf8_16.o
+ 
+-$(PROG): SciTEGTK.o GUIGTK.o Widget.o GTKMutex.o DirectorExtension.o $(SRC_OBJS) $(COMPLIB) $(LUA_OBJS)
+-	$(CXX) $(BASE_FLAGS) -rdynamic -Wl,--as-needed -Wl,--version-script $(srcdir)/lua.vers $^ -o $@ $(CONFIGLIB) $(LIBS) $(LDLIBS)
++$(PROG): SciTEGTK.o GUIGTK.o Widget.o GTKMutex.o DirectorExtension.o $(SRC_OBJS) $(LUA_OBJS)
++	$(CXX) $(BASE_FLAGS) -rdynamic -Wl,--version-script $(srcdir)/lua.vers $(CXXFLAGS) $^ -o $@ \
 +	$(LDFLAGS) -lscintilla -lscintilla_lexers -Wl,--as-needed $(CONFIGLIB)
  
  # Automatically generate header dependencies with "make deps"

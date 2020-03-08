@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scintilla
-DISTVERSION=	4.2.3
+DISTVERSION=	4.3.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	scite${PORTVERSION:S/.//g}
@@ -20,17 +20,21 @@ USES=		compiler:c++17-lang gmake gnome iconv pkgconfig tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk30
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 CFLAGS+=	-DPIC ${PICFLAG}
 
-MAJOR=		2
+MAJOR=		3
 AGE=		0
 REVISION=	0
-MAKE_ARGS=	MAJOR="${MAJOR}" AGE="${AGE}" REVISION="${REVISION}"
+MAKE_ARGS=	MAJOR="${MAJOR}" AGE="${AGE}" REVISION="${REVISION}" GTK3=1
 PLIST_SUB=	MAJOR="${MAJOR}" AGE="${AGE}" REVISION="${REVISION}"
 
 .include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+MAKE_ARGS+=	CLANG=1
+.endif
 
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
