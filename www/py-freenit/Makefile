@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	freenit
-PORTVERSION=	0.0.19
+PORTVERSION=	0.0.26
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,6 +32,6 @@ TEST_ENV=	PYTHONPATH=${WRKSRC}/src
 NO_ARCH=	yes
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs -o addopts=
+	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest --ignore=freenit/project/ -v -rs -o addopts=
 
 .include <bsd.port.mk>
