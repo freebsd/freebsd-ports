@@ -10,6 +10,7 @@ OPTIONS_DEFINE=		\
 	COLLADA		\
 	COMPOSITOR 	\
 	CYCLES 		\
+	CYCLESEMBR	\
 	CYCLESOSL 	\
 	DDS 		\
 	DRACO		\
@@ -34,12 +35,14 @@ OPTIONS_DEFINE=		\
 	OPENCOLORIO 	\
 	OPENEXR 	\
 	OPENIMAGEIO	\
+	OPENIMAGEDN	\
 	OPENMP 		\
 	OPENSUBDIV	\
 	OPENVDB		\
 	RAYOPTIMIZATION	\
 	SDL		\
 	SNDFILE		\
+	TBB		\
 	TIFF		\
 	XINPUT		\
 	XF86VMODE
@@ -49,13 +52,11 @@ OPTIONS_DEFAULT=	\
 	ALEMBIC_HDF5	\
 	AVI		\
 	BULLET		\
-	CAMERATRACK	\
 	CINEON		\
 	COLLADA		\
 	COMPOSITOR	\
 	CYCLES		\
 	DDS		\
-	DRACO		\
 	FFMPEG 		\
 	FFTW3		\
 	FRAMESERVER	\
@@ -78,9 +79,12 @@ OPTIONS_DEFAULT=	\
 	OPENVDB		\
 	RAYOPTIMIZATION	\
 	SDL		\
+	TBB		\
 	TIFF		\
 	XINPUT		\
 	XF86VMODE
+
+OPTIONS_DEFAULT_amd64=	CAMERATRACK CYCLESEMBR OPENIMAGEDN
 
 ALEMBIC_DESC=		Enable Alembic file support
 ALEMBIC_HDF5_DESC=	Enable Alembic hdf5 file support
@@ -91,9 +95,10 @@ CAMERATRACK_DESC=	Camera tracking support
 COLLADA_DESC=		Enable read/write support for COLLADA files
 COMPOSITOR_DESC=	Use the tile-based nodal compositor
 CYCLES_DESC=		Cycles render engine support
+CYCLESEMBR_DESC=	Embree support (amd64 only)
 CYCLESOSL_DESC=		Shading support for the cycles render engine
 DDS_DESC=		DDS graphics format support
-# this is required to supoprt gltf import/export
+# this is required to support gltf import/export
 DRACO_DESC=		Install draco python module
 FFTW3_DESC=		Use fftw for smoke and audio effects
 FRAMESERVER_DESC=	Image FrameServer support for rendering
@@ -111,9 +116,11 @@ MOD_REMESH_DESC=	Remesh modifier support
 MOD_SMOKE_DESC=		Smoke simulation support
 OPENCOLORIO_DESC=	OpenColorIO-based color management support
 OPENIMAGEIO_DESC=	OpenImageIO image processing support
+OPENIMAGEDN_DESC=	OpenImageDenoise support
 OPENSUBDIV_DESC=	Use the OpenSubDiv library for surface subdivision
 OPENVDB_DESC=		Use openVDB library for volumetric data
 RAYOPTIMIZATION_DESC=	Enable SSE optimizatons for raytracing
 SDL_DESC=		Audio and Joystick support using SDL
+TBB_DESC=		Enable use of Intel's tbb
 XINPUT_DESC=		X11 Xinput (tablet) support
 XF86VMODE_DESC=		X11 video mode switching support
