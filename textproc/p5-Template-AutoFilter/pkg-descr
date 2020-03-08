@@ -1,0 +1,6 @@
+Template::AutoFilter is a subclass of Template::Toolkit which loads a specific
+Parser that is subclassed from Template::Parser. It adds a filter instruction
+to each interpolation token found in templates loaded by the TT engine. Tokens
+that already have a filter instruction are left unchanged.
+
+WWW: https://metacpan.org/release/Template-AutoFilter
