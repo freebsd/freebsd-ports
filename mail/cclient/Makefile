@@ -3,7 +3,7 @@
 
 PORTNAME=	cclient
 PORTVERSION=	2007f
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
