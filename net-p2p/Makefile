@@ -45,7 +45,6 @@
     SUBDIR += libswift
     SUBDIR += libtorrent
     SUBDIR += libtorrent-rasterbar
-    SUBDIR += libtorrent-rasterbar11
     SUBDIR += lidarr
     SUBDIR += linuxdcpp
     SUBDIR += litecoin
