@@ -1,0 +1,13 @@
+--- jdk/make/java/npt/Makefile.orig	2020-03-01 18:39:54.449760000 -0800
++++ jdk/make/java/npt/Makefile	2020-03-01 18:46:01.524983000 -0800
+@@ -77,8 +77,8 @@
+ # Add location of iconv headers
+ ifeq ($(PLATFORM), bsd)
+   ifneq ($(OS_NAME), netbsd)
+-    CPPFLAGS += -I$(PACKAGE_PATH)/include
+-    OTHER_LDLIBS += -L$(PACKAGE_PATH)/lib -liconv
++    CPPFLAGS += %%ICONV_CPPFLAGS%%
++    OTHER_LDLIBS += %%ICONV_LDFLAGS%%
+   endif
+ endif
+ 
