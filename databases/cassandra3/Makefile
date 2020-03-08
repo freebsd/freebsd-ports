@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cassandra
-DISTVERSION=	3.11.5
+DISTVERSION=	3.11.6
 CATEGORIES=	databases java
 MASTER_SITES=	APACHE/cassandra/${PORTVERSION}:apache \
 		LOCAL/yuri:repo
