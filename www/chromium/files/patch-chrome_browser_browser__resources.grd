@@ -1,7 +1,7 @@
---- chrome/browser/browser_resources.grd.orig	2019-12-16 21:51:23 UTC
+--- chrome/browser/browser_resources.grd.orig	2020-03-03 18:53:51 UTC
 +++ chrome/browser/browser_resources.grd
-@@ -108,7 +108,7 @@
-         <include name="IDR_DISCARDS_SORTED_TABLE_BEHAVIOR_HTML" file="resources\discards\sorted_table_behavior.html" compress="gzip" allowexternalscript="true" type="BINDATA" />
+@@ -54,7 +54,7 @@
+         <include name="IDR_DISCARDS_MOJO_PUBLIC_BASE_PROCESS_ID_MOJOM_LITE_JS" file="${root_gen_dir}\mojo\public\mojom\base\process_id.mojom-lite.js" compress="gzip" use_base_dir="false" type="BINDATA" />
          <include name="IDR_DISCARDS_SORTED_TABLE_BEHAVIOR_JS" file="resources\discards\sorted_table_behavior.js" compress="gzip" type="BINDATA" />
        </if>
 -      <if expr="is_win or is_macosx or (is_linux and not is_chromeos)">
@@ -9,7 +9,7 @@
          <include name="IDR_BROWSER_SWITCH_APP_JS" file="${root_gen_dir}\chrome\browser\resources\browser_switch\app.js" compress="gzip" use_base_dir="false" type="BINDATA" />
          <include name="IDR_BROWSER_SWITCH_PROXY_JS" file="resources\browser_switch\browser_switch_proxy.js" compress="gzip" type="BINDATA" />
          <include name="IDR_BROWSER_SWITCH_HTML" file="resources\browser_switch\browser_switch.html" compress="gzip" allowexternalscript="true" type="BINDATA" />
-@@ -550,7 +550,7 @@
+@@ -457,7 +457,7 @@
          <include name="IDR_IME_WINDOW_CLOSE_H" file="resources\input_ime\ime_window_close_hover.png" type="BINDATA" />
        </if>
        <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" compress="gzip" />

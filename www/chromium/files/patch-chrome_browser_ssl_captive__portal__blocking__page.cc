@@ -1,6 +1,6 @@
---- chrome/browser/ssl/captive_portal_blocking_page.cc.orig	2019-06-04 18:55:18 UTC
+--- chrome/browser/ssl/captive_portal_blocking_page.cc.orig	2020-03-03 18:53:52 UTC
 +++ chrome/browser/ssl/captive_portal_blocking_page.cc
-@@ -124,7 +124,7 @@ std::string CaptivePortalBlockingPage::GetWiFiSSID() c
+@@ -135,7 +135,7 @@ std::string CaptivePortalBlockingPage::GetWiFiSSID() c
    wifi_service->GetConnectedNetworkSSID(&ssid, &error);
    if (!error.empty())
      return std::string();

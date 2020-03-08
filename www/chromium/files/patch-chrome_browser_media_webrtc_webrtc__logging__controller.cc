@@ -7,7 +7,7 @@
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "content/public/browser/child_process_security_policy.h"
- #include "storage/browser/fileapi/isolated_context.h"
+ #include "storage/browser/file_system/isolated_context.h"
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  

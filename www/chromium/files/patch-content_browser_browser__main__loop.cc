@@ -1,6 +1,6 @@
---- content/browser/browser_main_loop.cc.orig	2019-12-16 21:51:26 UTC
+--- content/browser/browser_main_loop.cc.orig	2020-03-03 18:53:54 UTC
 +++ content/browser/browser_main_loop.cc
-@@ -247,6 +247,13 @@
+@@ -248,6 +248,13 @@
  #include "mojo/public/cpp/bindings/lib/test_random_mojo_delays.h"
  #endif
  
@@ -14,7 +14,7 @@
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -582,6 +589,11 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -603,6 +610,11 @@ int BrowserMainLoop::EarlyInitialization() {
    // by now since a thread to start the ServiceManager has been created
    // before the browser main loop starts.
    DCHECK(SandboxHostLinux::GetInstance()->IsInitialized());
@@ -26,7 +26,7 @@
  #endif
  
  #if defined(USE_X11)
-@@ -627,7 +639,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -648,7 +660,7 @@ int BrowserMainLoop::EarlyInitialization() {
    }
  #endif  // !defined(OS_MACOSX)
  
@@ -35,7 +35,7 @@
      defined(OS_ANDROID)
    // We use quite a few file descriptors for our IPC as well as disk the disk
    // cache,and the default limit on the Mac is low (256), so bump it up.
-@@ -637,7 +649,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -658,7 +670,7 @@ int BrowserMainLoop::EarlyInitialization() {
    // users can easily hit this limit with many open tabs. Bump up the limit to
    // an arbitrarily high number. See https://crbug.com/539567
    base::IncreaseFdLimitTo(8192);

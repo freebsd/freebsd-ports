@@ -1,6 +1,6 @@
---- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2019-12-16 21:51:23 UTC
+--- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2020-03-03 18:53:51 UTC
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -113,7 +113,7 @@
+@@ -117,7 +117,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -9,10 +9,10 @@
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
  
-@@ -352,11 +352,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
-     prefs::kSafeBrowsingSendFilesForMalwareCheck,
-     base::Value::Type::INTEGER
-   },
+@@ -357,11 +357,11 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+   { key::kWebComponentsV0Enabled,
+     prefs::kWebComponentsV0Enabled,
+     base::Value::Type::BOOLEAN },
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    { key::kAuthNegotiateDelegateByKdcPolicy,
@@ -23,16 +23,16 @@
  #if defined(OS_POSIX)
    { key::kNtlmV2Enabled,
      prefs::kNtlmV2Enabled,
-@@ -1141,7 +1141,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1147,7 +1147,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+     prefs::kExternalProtocolDialogShowAlwaysOpenCheckbox,
      base::Value::Type::BOOLEAN },
- 
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
 -    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
 +    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    { key::kAlternativeBrowserPath,
      browser_switcher::prefs::kAlternativeBrowserPath,
      base::Value::Type::STRING },
-@@ -1205,7 +1205,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1208,7 +1208,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      browser_switcher::prefs::kChromeParameters,
      base::Value::Type::LIST },
  #endif

@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.h.orig	2019-10-21 19:06:29 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2020-03-03 18:53:53 UTC
 +++ components/feature_engagement/public/feature_constants.h
 @@ -17,7 +17,7 @@ extern const base::Feature kIPHDemoMode;
  // A feature to ensure all arrays can contain at least one feature.
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS)
  extern const base::Feature kIPHFocusModeFeature;
  extern const base::Feature kIPHGlobalMediaControlsFeature;
-@@ -28,7 +28,7 @@ extern const base::Feature kIPHBookmarkFeature;
+@@ -29,7 +29,7 @@ extern const base::Feature kIPHBookmarkFeature;
  extern const base::Feature kIPHIncognitoWindowFeature;
  extern const base::Feature kIPHNewTabFeature;
  #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IPH)

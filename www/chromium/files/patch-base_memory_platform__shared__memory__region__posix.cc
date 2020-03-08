@@ -1,6 +1,6 @@
---- base/memory/platform_shared_memory_region_posix.cc.orig	2019-09-16 12:05:39 UTC
+--- base/memory/platform_shared_memory_region_posix.cc.orig	2020-03-03 18:52:59 UTC
 +++ base/memory/platform_shared_memory_region_posix.cc
-@@ -76,7 +76,7 @@ FDPair ScopedFDPair::get() const {
+@@ -75,7 +75,7 @@ FDPair ScopedFDPair::get() const {
    return {fd.get(), readonly_fd.get()};
  }
  
@@ -9,7 +9,7 @@
  // static
  ScopedFD PlatformSharedMemoryRegion::ExecutableRegion::CreateFD(size_t size) {
    PlatformSharedMemoryRegion region =
-@@ -85,7 +85,7 @@ ScopedFD PlatformSharedMemoryRegion::ExecutableRegion:
+@@ -84,7 +84,7 @@ ScopedFD PlatformSharedMemoryRegion::ExecutableRegion:
      return region.PassPlatformHandle().fd;
    return ScopedFD();
  }
@@ -18,7 +18,7 @@
  
  // static
  PlatformSharedMemoryRegion PlatformSharedMemoryRegion::Take(
-@@ -224,7 +224,7 @@ bool PlatformSharedMemoryRegion::MapAtInternal(off_t o
+@@ -209,7 +209,7 @@ bool PlatformSharedMemoryRegion::MapAtInternal(off_t o
  // static
  PlatformSharedMemoryRegion PlatformSharedMemoryRegion::Create(Mode mode,
                                                                size_t size
@@ -27,7 +27,7 @@
                                                                ,
                                                                bool executable
  #endif
-@@ -255,7 +255,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
+@@ -240,7 +240,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
    // flag.
    FilePath directory;
    if (!GetShmemTempDir(

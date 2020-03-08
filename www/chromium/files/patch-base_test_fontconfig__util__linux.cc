@@ -1,6 +1,6 @@
 --- base/test/fontconfig_util_linux.cc.orig	2019-04-30 22:22:28 UTC
 +++ base/test/fontconfig_util_linux.cc
-@@ -6,24 +6,397 @@
+@@ -6,22 +6,397 @@
  
  #include <fontconfig/fontconfig.h>
  
@@ -386,8 +386,6 @@
 +        kFontsConfTemplate, {font_cache.value(), test_fonts.value()}, nullptr);
  
 -  std::unique_ptr<Environment> env(Environment::Create());
--  // TODO(thomasanderson): This still stat()'s the real /etc/fonts/fonts.conf.
--  // Prevent fontconfig from doing this.
 -  CHECK(env->SetVar("FONTCONFIG_SYSROOT", dir_module.value().c_str()));
 +    // Write the data to a different file and then atomically rename it to
 +    // fonts.conf.  This avoids the file being in a bad state when different

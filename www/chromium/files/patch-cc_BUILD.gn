@@ -1,6 +1,6 @@
---- cc/BUILD.gn.orig	2019-12-16 21:51:21 UTC
+--- cc/BUILD.gn.orig	2020-03-03 18:53:47 UTC
 +++ cc/BUILD.gn
-@@ -576,7 +576,7 @@ cc_test_static_library("test_support") {
+@@ -578,7 +578,7 @@ cc_test_static_library("test_support") {
    if (enable_vulkan) {
      deps += [ "//gpu/vulkan/init" ]
    }
@@ -9,7 +9,7 @@
      data_deps = [
        "//third_party/mesa_headers",
      ]
-@@ -780,9 +780,6 @@ cc_test("cc_unittests") {
+@@ -783,9 +783,6 @@ cc_test("cc_unittests") {
      "//ui/gfx/geometry",
      "//ui/gl",
      "//ui/gl:test_support",

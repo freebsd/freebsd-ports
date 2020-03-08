@@ -1,4 +1,4 @@
---- ui/gl/gl_bindings_autogen_glx.cc.orig	2019-03-11 22:01:19 UTC
+--- ui/gl/gl_bindings_autogen_glx.cc.orig	2020-03-03 18:53:32 UTC
 +++ ui/gl/gl_bindings_autogen_glx.cc
 @@ -115,6 +115,8 @@ void DriverGLX::InitializeExtensionBindings() {
  
@@ -32,7 +32,7 @@
  void GLXApiBase::glXGetSelectedEventFn(Display* dpy,
                                         GLXDrawable drawable,
                                         unsigned long* mask) {
-@@ -646,6 +657,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
+@@ -647,6 +658,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
    return glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
  }
  
@@ -44,7 +44,7 @@
  void TraceGLXApi::glXGetSelectedEventFn(Display* dpy,
                                          GLXDrawable drawable,
                                          unsigned long* mask) {
-@@ -1068,6 +1084,14 @@ bool DebugGLXApi::glXGetMscRateOMLFn(Display* dpy,
+@@ -1068,6 +1084,14 @@ bool LogGLXApi::glXGetMscRateOMLFn(Display* dpy,
                   << static_cast<const void*>(denominator) << ")");
    bool result =
        glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
@@ -52,7 +52,7 @@
 +  return result;
 +}
 +
-+__GLXextFuncPtr DebugGLXApi::glXGetProcAddressARBFn(const GLubyte* procName) {
++__GLXextFuncPtr LogGLXApi::glXGetProcAddressARBFn(const GLubyte* procName) {
 +  GL_SERVICE_LOG("glXGetProcAddressARB"
 +                 << "(" << static_cast<const void*>(procName) << ")");
 +  __GLXextFuncPtr result = glx_api_->glXGetProcAddressARBFn(procName);

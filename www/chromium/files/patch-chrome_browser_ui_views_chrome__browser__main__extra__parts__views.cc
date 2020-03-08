@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig	2019-10-21 19:06:24 UTC
+--- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig	2020-03-03 18:53:02 UTC
 +++ chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
-@@ -36,7 +36,7 @@
+@@ -33,7 +33,7 @@
  #include "ui/wm/core/wm_state.h"
  #endif  // defined(USE_AURA)
  
@@ -9,7 +9,7 @@
  #include <sys/stat.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -46,7 +46,7 @@
+@@ -43,7 +43,7 @@
  #include "chrome/grit/generated_resources.h"
  #include "content/public/common/content_switches.h"
  #include "ui/base/l10n/l10n_util.h"
@@ -18,7 +18,7 @@
  
  // This connector is used in ui_devtools's TracingAgent to hook up with the
  // tracing service.
-@@ -109,7 +109,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+@@ -105,7 +105,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
          devtools_server_->tracing_agent());
    }
  
@@ -27,7 +27,7 @@
    // On the Linux desktop, we want to prevent the user from logging in as root,
    // so that we don't destroy the profile. Now that we have some minimal ui
    // initialized, check to see if we're running as root and bail if we are.
-@@ -140,7 +140,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+@@ -136,7 +136,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
    base::RunLoop().RunUntilIdle();
  
    exit(EXIT_FAILURE);

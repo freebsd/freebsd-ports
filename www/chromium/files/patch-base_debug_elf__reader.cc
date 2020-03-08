@@ -1,18 +1,18 @@
---- base/debug/elf_reader.cc.orig	2019-06-04 18:55:15 UTC
+--- base/debug/elf_reader.cc.orig	2020-03-03 18:52:59 UTC
 +++ base/debug/elf_reader.cc
-@@ -83,6 +83,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
-         reinterpret_cast<const Nhdr*>(elf_base + header.p_vaddr);
+@@ -98,6 +98,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
      bool found = false;
-     while (current_note < section_end) {
+     while (current_section < section_end) {
+       current_note = reinterpret_cast<const Nhdr*>(current_section);
 +#if !defined(OS_BSD)
        if (current_note->n_type == NT_GNU_BUILD_ID) {
-         const char* note_name =
-             reinterpret_cast<const char*>(current_note) + sizeof(Nhdr);
-@@ -92,6 +93,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
+         StringPiece note_name(current_section + sizeof(Nhdr),
+                               current_note->n_namesz);
+@@ -107,6 +108,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
            break;
          }
        }
 +#endif
  
-       current_note = reinterpret_cast<const Nhdr*>(
-           reinterpret_cast<const char*>(current_note) + sizeof(Nhdr) +
+       size_t section_size = bits::Align(current_note->n_namesz, 4) +
+                             bits::Align(current_note->n_descsz, 4) +

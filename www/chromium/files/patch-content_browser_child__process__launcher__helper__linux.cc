@@ -1,4 +1,4 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2019-03-11 22:00:57 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2020-03-03 18:53:54 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
 @@ -17,7 +17,9 @@
  #include "content/public/common/sandboxed_process_launcher_delegate.h"
@@ -10,7 +10,7 @@
  #include "services/service_manager/zygote/host/zygote_communication_linux.h"
  #include "services/service_manager/zygote/host/zygote_host_impl_linux.h"
  
-@@ -69,6 +71,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -68,6 +70,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      int* launch_result) {
    *is_synchronous_launch = true;
  
@@ -18,7 +18,7 @@
    service_manager::ZygoteHandle zygote_handle =
        base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote)
            ? nullptr
-@@ -82,7 +85,6 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -81,7 +84,6 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
          GetProcessType());
      *launch_result = LAUNCH_RESULT_SUCCESS;
  
@@ -26,7 +26,7 @@
      if (handle) {
        // This is just a starting score for a renderer or extension (the
        // only types of processes that will be started this way).  It will
-@@ -93,13 +95,13 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -92,13 +94,13 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
        service_manager::ZygoteHostImpl::GetInstance()->AdjustRendererOOMScore(
            handle, kLowestRendererOomScore);
      }
@@ -41,7 +41,7 @@
  
    Process process;
    process.process = base::LaunchProcess(*command_line(), options);
-@@ -117,10 +119,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
+@@ -116,10 +118,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead) {
    ChildProcessTerminationInfo info;
@@ -56,7 +56,7 @@
      info.status = base::GetKnownDeadTerminationStatus(process.process.Handle(),
                                                        &info.exit_code);
    } else {
-@@ -144,13 +150,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
+@@ -143,13 +149,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
    DCHECK(CurrentlyOnProcessLauncherTaskRunner());
    process.process.Terminate(service_manager::RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.

@@ -1,6 +1,6 @@
---- services/tracing/public/cpp/perfetto/trace_event_data_source.cc.orig	2019-12-17 19:52:52 UTC
+--- services/tracing/public/cpp/perfetto/trace_event_data_source.cc.orig	2020-03-03 18:53:56 UTC
 +++ services/tracing/public/cpp/perfetto/trace_event_data_source.cc
-@@ -102,7 +102,7 @@ void WriteMetadataProto(ChromeMetadataPacket* metadata
+@@ -101,7 +101,7 @@ void WriteMetadataProto(ChromeMetadataPacket* metadata
  #endif  // defined(OS_ANDROID) && defined(OFFICIAL_BUILD)
  }
  

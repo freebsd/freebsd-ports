@@ -1,6 +1,6 @@
---- mojo/public/c/system/thunks.cc.orig	2019-04-30 22:22:53 UTC
+--- mojo/public/c/system/thunks.cc.orig	2020-03-03 18:53:10 UTC
 +++ mojo/public/c/system/thunks.cc
-@@ -16,7 +16,7 @@
+@@ -15,7 +15,7 @@
  #include "build/build_config.h"
  #include "mojo/public/c/system/core.h"
  
@@ -9,16 +9,7 @@
  #include "base/environment.h"
  #include "base/files/file_path.h"
  #include "base/optional.h"
-@@ -28,7 +28,7 @@ namespace {
- 
- typedef void (*MojoGetSystemThunksFunction)(MojoSystemThunks* thunks);
- 
--#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
- PROTECTED_MEMORY_SECTION
- base::ProtectedMemory<MojoGetSystemThunksFunction> g_get_thunks;
- #endif
-@@ -65,7 +65,7 @@ namespace mojo {
+@@ -58,7 +58,7 @@ namespace mojo {
  class CoreLibraryInitializer {
   public:
    CoreLibraryInitializer(const MojoInitializeOptions* options) {
@@ -27,7 +18,7 @@
      bool application_provided_path = false;
      base::Optional<base::FilePath> library_path;
      if (options && options->struct_size >= sizeof(*options) &&
-@@ -84,7 +84,7 @@ class CoreLibraryInitializer {
+@@ -77,7 +77,7 @@ class CoreLibraryInitializer {
  
      if (!library_path) {
        // Default to looking for the library in the current working directory.
@@ -36,9 +27,9 @@
        const base::FilePath::CharType kDefaultLibraryPathValue[] =
            FILE_PATH_LITERAL("./libmojo_core.so");
  #elif defined(OS_WIN)
-@@ -138,16 +138,16 @@ class CoreLibraryInitializer {
+@@ -127,16 +127,16 @@ class CoreLibraryInitializer {
  
-     CHECK_GT(g_thunks->size, 0u)
+     CHECK_GT(g_thunks.size, 0u)
          << "Invalid mojo_core library: " << library_path->value();
 -#else   // defined(OS_CHROMEOS) || defined(OS_LINUX)
 +#else   // defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)

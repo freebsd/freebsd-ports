@@ -1,7 +1,7 @@
---- base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2019-07-24 18:58:01 UTC
+--- base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2020-03-03 18:52:59 UTC
 +++ base/allocator/allocator_shim_default_dispatch_to_glibc.cc
-@@ -5,18 +5,28 @@
- #include "base/allocator/allocator_shim.h"
+@@ -6,18 +6,28 @@
+ #include "base/compiler_specific.h"
  
  #include <dlfcn.h>
 -#include <malloc.h>
@@ -36,7 +36,7 @@
  }  // extern "C"
  
  namespace {
-@@ -24,32 +34,32 @@ namespace {
+@@ -25,32 +35,32 @@ namespace {
  using base::allocator::AllocatorDispatch;
  
  void* GlibcMalloc(const AllocatorDispatch*, size_t size, void* context) {
@@ -73,4 +73,4 @@
 +  __free(address);
  }
  
- size_t GlibcGetSizeEstimate(const AllocatorDispatch*,
+ NO_SANITIZE("cfi-icall")

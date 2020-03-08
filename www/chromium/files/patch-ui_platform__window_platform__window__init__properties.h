@@ -1,8 +1,17 @@
---- ui/platform_window/platform_window_init_properties.h.orig	2019-10-30 16:37:28 UTC
+--- ui/platform_window/platform_window_init_properties.h.orig	2020-03-03 18:54:07 UTC
 +++ ui/platform_window/platform_window_init_properties.h
-@@ -73,7 +73,7 @@ struct PlatformWindowInitProperties {
-   bool remove_standard_frame = false;
-   std::string workspace;
+@@ -41,7 +41,7 @@ enum class PlatformWindowOpacity {
+ 
+ class WorkspaceExtensionDelegate;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ class X11ExtensionDelegate;
+ #endif
+ 
+@@ -82,7 +82,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
+ 
+   WorkspaceExtensionDelegate* workspace_extension_delegate = nullptr;
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

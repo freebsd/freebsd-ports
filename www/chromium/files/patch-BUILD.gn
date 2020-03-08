@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2019-12-16 21:51:21 UTC
+--- BUILD.gn.orig	2020-03-03 18:53:46 UTC
 +++ BUILD.gn
 @@ -411,7 +411,7 @@ group("gn_all") {
      ]
@@ -57,7 +57,7 @@
      ]
      if (is_desktop_linux && use_ozone) {
        deps += [ "//chrome/browser/vr/testapp:vr_testapp" ]
-@@ -905,7 +894,6 @@ if (is_chromeos) {
+@@ -918,7 +907,6 @@ if (is_chromeos) {
        "//ppapi/examples/video_decode",
        "//sandbox/linux:chrome_sandbox",
        "//sandbox/linux:sandbox_linux_unittests",
@@ -65,7 +65,7 @@
  
        # Blocked on https://github.com/catapult-project/catapult/issues/2297
        #"//third_party/catapult/telemetry:bitmaptools",
-@@ -1076,7 +1064,7 @@ if (!is_ios) {
+@@ -1069,7 +1057,7 @@ if (!is_ios) {
        ]
      }
  
@@ -74,7 +74,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1085,7 +1073,7 @@ if (!is_ios) {
+@@ -1078,7 +1066,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -83,7 +83,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1227,9 +1215,6 @@ group("chromium_builder_perf") {
+@@ -1220,9 +1208,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

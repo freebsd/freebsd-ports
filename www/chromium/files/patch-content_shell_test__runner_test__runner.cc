@@ -1,4 +1,4 @@
---- content/shell/test_runner/test_runner.cc.orig	2019-12-16 21:51:26 UTC
+--- content/shell/test_runner/test_runner.cc.orig	2020-03-03 18:53:54 UTC
 +++ content/shell/test_runner/test_runner.cc
 @@ -64,7 +64,7 @@
  #include "ui/gfx/geometry/size.h"
@@ -9,7 +9,7 @@
  #include "third_party/blink/public/platform/web_font_render_style.h"
  #endif
  
-@@ -1514,7 +1514,7 @@ void TestRunner::Reset() {
+@@ -1507,7 +1507,7 @@ void TestRunner::Reset() {
    drag_image_.reset();
  
    blink::WebSecurityPolicy::ClearOriginAccessList();
@@ -18,7 +18,7 @@
    blink::WebFontRenderStyle::SetSubpixelPositioning(false);
  #endif
  
-@@ -2088,7 +2088,7 @@ void TestRunner::AddOriginAccessAllowListEntry(
+@@ -2081,7 +2081,7 @@ void TestRunner::AddOriginAccessAllowListEntry(
  }
  
  void TestRunner::SetTextSubpixelPositioning(bool value) {

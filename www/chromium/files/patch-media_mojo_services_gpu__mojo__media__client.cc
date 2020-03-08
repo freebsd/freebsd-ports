@@ -1,4 +1,4 @@
---- media/mojo/services/gpu_mojo_media_client.cc.orig	2019-12-16 21:51:27 UTC
+--- media/mojo/services/gpu_mojo_media_client.cc.orig	2020-03-03 18:53:55 UTC
 +++ media/mojo/services/gpu_mojo_media_client.cc
 @@ -65,7 +65,7 @@ namespace media {
  namespace {
@@ -9,7 +9,7 @@
  gpu::CommandBufferStub* GetCommandBufferStub(
      scoped_refptr<base::SingleThreadTaskRunner> gpu_task_runner,
      base::WeakPtr<MediaGpuChannelManager> media_gpu_channel_manager,
-@@ -265,7 +265,7 @@ std::unique_ptr<VideoDecoder> GpuMojoMediaClient::Crea
+@@ -266,7 +266,7 @@ std::unique_ptr<VideoDecoder> GpuMojoMediaClient::Crea
                                  command_buffer_id->route_id));
        }
  

@@ -1,6 +1,6 @@
---- chrome/browser/plugins/plugin_info_host_impl.cc.orig	2019-10-21 19:06:22 UTC
+--- chrome/browser/plugins/plugin_info_host_impl.cc.orig	2020-03-03 18:53:01 UTC
 +++ chrome/browser/plugins/plugin_info_host_impl.cc
-@@ -383,7 +383,7 @@ void PluginInfoHostImpl::ComponentPluginLookupDone(
+@@ -382,7 +382,7 @@ void PluginInfoHostImpl::ComponentPluginLookupDone(
      std::unique_ptr<component_updater::ComponentInfo> cus_plugin_info) {
    if (cus_plugin_info) {
      output->status = chrome::mojom::PluginStatus::kComponentUpdateRequired;

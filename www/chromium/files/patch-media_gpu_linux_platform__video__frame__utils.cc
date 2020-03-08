@@ -1,6 +1,6 @@
---- media/gpu/linux/platform_video_frame_utils.cc.orig	2019-12-16 21:51:27 UTC
+--- media/gpu/linux/platform_video_frame_utils.cc.orig	2020-03-03 18:53:55 UTC
 +++ media/gpu/linux/platform_video_frame_utils.cc
-@@ -19,16 +19,16 @@
+@@ -20,16 +20,16 @@
  #include "ui/gfx/linux/native_pixmap_dmabuf.h"
  #include "ui/gfx/native_pixmap.h"
  
@@ -20,7 +20,7 @@
  
  scoped_refptr<VideoFrame> CreateVideoFrameGpu(
      gpu::GpuMemoryBufferFactory* factory,
-@@ -92,7 +92,7 @@ scoped_refptr<VideoFrame> CreateVideoFrameGpu(
+@@ -93,7 +93,7 @@ scoped_refptr<VideoFrame> CreateVideoFrameGpu(
                       gpu::kPlatformVideoFramePoolClientId));
    return frame;
  }
@@ -29,7 +29,7 @@
  
  }  // namespace
  
-@@ -104,11 +104,11 @@ scoped_refptr<VideoFrame> CreatePlatformVideoFrame(
+@@ -105,11 +105,11 @@ scoped_refptr<VideoFrame> CreatePlatformVideoFrame(
      const gfx::Size& natural_size,
      base::TimeDelta timestamp,
      gfx::BufferUsage buffer_usage) {

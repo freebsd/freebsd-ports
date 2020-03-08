@@ -1,6 +1,6 @@
---- third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp.orig	2019-09-09 21:57:02 UTC
+--- third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp.orig	2020-03-03 18:55:29 UTC
 +++ third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
-@@ -148,7 +148,7 @@ EGLDisplay GetDisplay(EGLNativeDisplayType display_id)
+@@ -153,7 +153,7 @@ EGLDisplay EGLAPIENTRY GetDisplay(EGLNativeDisplayType
  		// FIXME: Check if display_id is the default display
  	}
  
@@ -9,7 +9,7 @@
  		#if defined(USE_X11)
  		if(!libX11)
  		#endif  // Non X11 linux is headless only
-@@ -207,7 +207,7 @@ const char *QueryString(EGLDisplay dpy, EGLint name)
+@@ -216,7 +216,7 @@ const char *EGLAPIENTRY QueryString(EGLDisplay dpy, EG
  	{
  		return success(
  			"EGL_KHR_client_get_all_proc_addresses "
@@ -18,7 +18,7 @@
  			"EGL_KHR_platform_gbm "
  #endif
  #if defined(USE_X11)
-@@ -1243,7 +1243,7 @@ EGLDisplay GetPlatformDisplay(EGLenum platform, void *
+@@ -1298,7 +1298,7 @@ EGLDisplay EGLAPIENTRY GetPlatformDisplay(EGLenum plat
  {
  	TRACE("(EGLenum platform = 0x%X, void *native_display = %p, const EGLAttrib *attrib_list = %p)", platform, native_display, attrib_list);
  

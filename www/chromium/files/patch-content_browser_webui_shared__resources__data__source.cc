@@ -1,6 +1,6 @@
---- content/browser/webui/shared_resources_data_source.cc.orig	2019-12-16 21:51:26 UTC
+--- content/browser/webui/shared_resources_data_source.cc.orig	2020-03-03 18:53:54 UTC
 +++ content/browser/webui/shared_resources_data_source.cc
-@@ -126,12 +126,12 @@ const std::map<int, std::string> CreateMojoResourceIdT
+@@ -127,12 +127,12 @@ const std::map<int, std::string> CreateMojoResourceIdT
           "mojo/mojo/public/mojom/base/string16.mojom.html"},
          {IDR_MOJO_STRING16_MOJOM_LITE_JS,
           "mojo/mojo/public/mojom/base/string16.mojom-lite.js"},

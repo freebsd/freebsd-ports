@@ -1,6 +1,6 @@
---- third_party/skia/src/ports/SkOSFile_stdio.cpp.orig	2019-03-11 22:08:28 UTC
+--- third_party/skia/src/ports/SkOSFile_stdio.cpp.orig	2020-03-03 18:55:29 UTC
 +++ third_party/skia/src/ports/SkOSFile_stdio.cpp
-@@ -129,7 +129,7 @@ void sk_fflush(FILE* f) {
+@@ -132,7 +132,7 @@ void sk_fflush(FILE* f) {
  
  void sk_fsync(FILE* f) {
  #if !defined(_WIN32) && !defined(SK_BUILD_FOR_ANDROID) && !defined(__UCLIBC__) \

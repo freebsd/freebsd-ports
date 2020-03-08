@@ -1,9 +1,9 @@
 --- chrome/common/extensions/api/api_sources.gni.orig	2019-12-16 21:51:24 UTC
 +++ chrome/common/extensions/api/api_sources.gni
-@@ -110,7 +110,7 @@ if (is_chromeos) {
-     "wallpaper.json",
-     "wallpaper_private.json",
-   ]
+@@ -113,7 +113,7 @@ if (is_chromeos) {
+   if (use_cups) {
+     schema_sources_ += [ "printing.idl" ]
+   }
 -} else if (is_linux || is_win) {
 +} else if (is_linux || is_bsd || is_win) {
    schema_sources_ += [ "input_ime.json" ]
