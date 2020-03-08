@@ -1,0 +1,6 @@
+Command-line utility to find files with a
+highly relaxed SQL-like syntax, whilst
+supporting a number of different complex
+queries.
+
+WWW: https://github.com/jhspetersson/fselect
