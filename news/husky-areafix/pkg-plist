@@ -5,4 +5,5 @@ include/areafix/query.h
 include/areafix/version.h
 lib/libareafix.a
 lib/libareafix.so
-lib/libareafix.so.1
+lib/libareafix.so.1.9
+lib/libareafix.so.1.9.0

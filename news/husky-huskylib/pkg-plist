@@ -43,5 +43,6 @@ include/huskylib/vixie.h
 include/huskylib/xstr.h
 lib/libhusky.a
 lib/libhusky.so
-lib/libhusky.so.1
+lib/libhusky.so.1.9
+lib/libhusky.so.1.9.0
 %%PORTDOCS%%man/man1/gnmsgid.1.gz

@@ -1,6 +1,6 @@
---- fidoconf/man/Makefile.orig	2009-03-22 21:04:17.000000000 +0000
-+++ fidoconf/man/Makefile	2013-03-25 00:12:55.000000000 +0000
-@@ -20,7 +20,7 @@ MAN1DIR   = $(DESTDIR)$(MANDIR)$(DIRSEP)
+--- fidoconf/man/Makefile.orig	2020-01-16 21:50:04 UTC
++++ fidoconf/man/Makefile
+@@ -20,7 +20,7 @@ MAN1DIR   = $(DESTDIR)$(MANDIR)$(DIRSEP)man1
  
  all:
  
@@ -9,12 +9,3 @@
  
  copy:
  	$(MKDIR) $(MKDIROPT) $(MAN1DIR)
-@@ -28,7 +28,7 @@ copy:
- 
- link:
- 	cd $(MAN1DIR)$(DIRSEP); \
--	for f in $(FCONF2ALIASES) ; do $(LN) -s fconf2.1 $$f ; done
-+	for f in $(FCONF2ALIASES) ; $(LN) -s fconf2.1 $$f ; done
- 
- clean:
- 

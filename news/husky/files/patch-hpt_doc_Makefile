@@ -1,5 +1,5 @@
---- hpt/doc/Makefile.orig	2009-03-23 12:44:57.000000000 +0000
-+++ hpt/doc/Makefile	2014-08-02 23:05:26.007741567 +0000
+--- hpt/doc/Makefile.orig	2020-01-16 21:50:04 UTC
++++ hpt/doc/Makefile
 @@ -64,7 +64,6 @@ install: info html dvi
  ifdef INFODIR
  	-$(MKDIR) $(MKDIROPT) $(DESTDIR)$(INFODIR)

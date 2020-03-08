@@ -9,4 +9,5 @@ include/smapi/msgapi.h
 include/smapi/old_msg.h
 lib/libsmapi.a
 lib/libsmapi.so
-lib/libsmapi.so.2
+lib/libsmapi.so.2.5
+lib/libsmapi.so.2.5.0

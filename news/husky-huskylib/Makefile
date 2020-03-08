@@ -4,7 +4,9 @@ PORTNAME=	husky-huskylib
 
 COMMENT=	Husky generic FTN library
 
-INSTALL_TARGET= install install-man
+LICENSE=	LGPL21
+
+INSTALL_TARGET=	install install-man
 USE_LDCONFIG=	yes
 
 MASTERDIR=	${.CURDIR}/../husky

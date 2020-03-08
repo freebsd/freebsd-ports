@@ -1,72 +1,19 @@
---- fidoconf/Makefile.orig	2012-08-22 06:00:53.000000000 +0000
-+++ fidoconf/Makefile	2013-12-22 22:45:05.795932476 +0000
-@@ -67,16 +67,14 @@ else
- include make/fn_long.inc
+--- fidoconf/Makefile.orig	2020-02-05 22:47:47 UTC
++++ fidoconf/Makefile
+@@ -59,6 +59,8 @@ ifeq ($(OSTYPE), UNIX)
+   DLLPREFIX=lib
  endif
- include make/makefile.inc
--include makefile.in2
- TARGETLIB = $(LIBPREFIX)$(LIBNAME)$(LIBSUFFIX)$(_LIB)
- TARGETDLL = $(DLLPREFIX)$(LIBNAME)$(DLLSUFFIX)$(_DLL)
--LIBS=-lhusky
  
++TARGET = $(TARGETDLL).$(VER)
++
+ default: all
+ 
+ ifeq ($(SHORTNAMES), 1)
+@@ -75,7 +77,6 @@ LIBS=-lhusky
  progs: commonprogs
  
  ifeq ($(DYNLIBS), 1)
-   TARGET = $(TARGETDLL)
--  all: commonlibs $(TARGETDLL).$(VER)
-+  all: commonlibs $(TARGETDLL).$(VERMAJOR)
+-  TARGET = $(TARGETDLL)
+   all: commonlibs $(TARGETDLL).$(VER)
  	$(MAKE) progs
  	(cd doc && $(MAKE) all)
- else
-@@ -86,21 +84,24 @@ else
- 	(cd doc && $(MAKE) all)
- endif
- 
-+include makefile.in2
-+LIBS=-lhusky
- 
- ifeq (~$(MKSHARED)~, ~ld~)
--$(TARGETDLL).$(VER): $(LOBJS)
--	$(LD) $(LFLAGS) $(EXENAMEFLAG) $(TARGETDLL).$(VER) $(LOBJS) $(LIBS)
-+$(TARGETDLL).$(VERMAJOR): $(LOBJS)
-+	$(LD) $(LFLAGS) $(EXENAMEFLAG) $(TARGETDLL).$(VERMAJOR) $(LOBJS) $(LIBS)
- else
--$(TARGETDLL).$(VER): $(LOBJS)
--	$(CC) $(LFLAGS) -shared -Wl,-soname,$(TARGETDLL).$(VERH) \
--	-o $(TARGETDLL).$(VER) $(LOBJS) $(LIBS)
-+$(TARGETDLL).$(VERMAJOR): $(LOBJS)
-+	$(CC) $(LFLAGS) -shared -Wl,-soname,$(TARGETDLL).$(VERMAJOR) \
-+	-o $(TARGETDLL).$(VERMAJOR) $(LOBJS) $(LIBS)
- endif
--	$(LN) $(LNOPT) $(TARGETDLL).$(VER) $(TARGETDLL).$(VERH) ;\
--	$(LN) $(LNOPT) $(TARGETDLL).$(VER) $(TARGETDLL)
-+
-+$(TARGETDLL): $(TARGETDLL).$(VERMAJOR)
-+	$(LN) $(LNOPT) $(TARGETDLL).$(VERMAJOR) $(TARGETDLL)
- 
- 
- clean: commonclean
--	-$(RM) $(RMOPT) $(TARGETDLL).$(VERH)
-+	-$(RM) $(RMOPT) $(TARGETDLL).$(VERMAJOR)
- 	-$(RM) $(RMOPT) $(TARGETDLL)
- 	(cd doc && $(MAKE) clean)
- 
-@@ -110,15 +111,13 @@ distclean: commondistclean
- 
- 
- ifeq ($(DYNLIBS), 1)
--instdyn: $(TARGETLIB) $(TARGETDLL).$(VER)
-+instdyn: $(TARGETLIB) $(TARGETDLL).$(VERMAJOR)
- 	-$(MKDIR) $(MKDIROPT) $(DESTDIR)$(LIBDIR)
--	$(INSTALL) $(ILOPT) $(TARGETDLL).$(VER) $(DESTDIR)$(LIBDIR)
--	-$(RM) $(RMOPT) $(DESTDIR)$(LIBDIR)$(DIRSEP)$(TARGETDLL).$(VERH)
-+	$(INSTALL) $(ILOPT) $(TARGETDLL).$(VERMAJOR) $(DESTDIR)$(LIBDIR)
- 	-$(RM) $(RMOPT) $(DESTDIR)$(LIBDIR)$(DIRSEP)$(TARGETDLL)
- # Removed path from symlinks.
- 	cd $(DESTDIR)$(LIBDIR) ;\
--	$(LN) $(LNOPT) $(TARGETDLL).$(VER) $(TARGETDLL).$(VERH) ;\
--	$(LN) $(LNOPT) $(TARGETDLL).$(VER) $(TARGETDLL)
-+	$(LN) $(LNOPT) $(TARGETDLL).$(VERMAJOR) $(TARGETDLL)
- ifneq (~$(LDCONFIG)~, ~~)
- 	$(LDCONFIG)
- endif
