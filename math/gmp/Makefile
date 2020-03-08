@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmp
-PORTVERSION=	6.1.2
-PORTREVISION=	1
+PORTVERSION=	6.2.0
 CATEGORIES=	math devel
 MASTER_SITES=	GNU
 
@@ -12,17 +11,18 @@ COMMENT=	Free library for arbitrary precision arithmetic
 
 LICENSE=	LGPL3
 
+USES=		libtool makeinfo tar:xz
+
 OPTIONS_DEFINE=	CPU_OPTS
 CPU_OPTS_DESC=	Enable assembly optimizations for your CPU
 
-USES=		libtool makeinfo tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--infodir=${PREFIX}/${INFO_PATH} \
 		--mandir=${PREFIX}/man \
 		--enable-cxx
-MAKE_JOBS_UNSAFE=yes
+
 USE_LDCONFIG=	yes
 
 INFO=		gmp
@@ -31,6 +31,10 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH:Mmips*}
+MAKE_JOBS_UNSAFE=yes
+.endif
 
 .if ! ${PORT_OPTIONS:MCPU_OPTS}
 CONFIGURE_ARGS+=--build=${CONFIGURE_TARGET}
