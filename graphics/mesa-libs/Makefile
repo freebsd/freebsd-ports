@@ -3,7 +3,7 @@
 
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
