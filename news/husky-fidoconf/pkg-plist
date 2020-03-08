@@ -24,7 +24,8 @@ include/fidoconf/stat.h
 include/fidoconf/version.h
 lib/libfidoconfig.a
 lib/libfidoconfig.so
-lib/libfidoconfig.so.1
+lib/libfidoconfig.so.1.9
+lib/libfidoconfig.so.1.9.0
 man/man1/dumpfcfg.1.gz
 man/man1/fconf2.1.gz
 man/man1/fconf2aquaed.1.gz

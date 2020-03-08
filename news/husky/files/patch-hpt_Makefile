@@ -1,5 +1,5 @@
---- hpt/Makefile.orig	2010-01-19 22:43:29.000000000 +0000
-+++ hpt/Makefile	2013-04-13 19:28:49.000000000 +0000
+--- hpt/Makefile.orig	2020-01-16 21:50:04 UTC
++++ hpt/Makefile
 @@ -33,6 +33,7 @@ endif
  ifeq ($(PERL), 1)
    CFLAGS += -DDO_PERL `perl -MExtUtils::Embed -e ccopts`
@@ -8,7 +8,7 @@
    PERLOBJ = perl$(_OBJ)
  endif
  
-@@ -61,10 +62,10 @@ all: commonall hpt.1.gz hptlink.1.gz hpt
+@@ -61,10 +62,10 @@ all: commonall hpt.1.gz hptlink.1.gz hpttree.1.gz txt2
  endif
  
  doc:

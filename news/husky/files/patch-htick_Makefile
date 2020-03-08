@@ -1,5 +1,5 @@
---- htick/Makefile.orig	2010-04-20 19:10:55.000000000 +0000
-+++ htick/Makefile	2014-08-02 22:22:28.572741488 +0000
+--- htick/Makefile.orig	2020-01-16 21:50:04 UTC
++++ htick/Makefile
 @@ -45,6 +45,12 @@ CDEFS=-D$(OSTYPE) $(ADDCDEFS)
  
  all: $(OBJS) htick$(EXE)

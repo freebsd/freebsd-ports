@@ -4,15 +4,18 @@ PORTNAME=	husky-fidoconf
 
 COMMENT=	Husky FTN configuration library
 
-LIB_DEPENDS=	libsmapi.so:news/husky-smapi
+LICENSE=	LGPL20
+
+LIB_DEPENDS=	libsmapi.so:news/husky-smapi \
+		libhusky.so:news/husky-huskylib
 
 USES+=		perl5 shebangfix
-SHEBANG_FILES=	util/fconf2areasbbs.pl util/fconf2na.pl util/sq2fc.pl
-USE_LDCONFIG=   yes
+SHEBANG_FILES=	fidoconf/util/fconf2areasbbs.pl fidoconf/util/fconf2na.pl fidoconf/util/sq2fc.pl
+USE_LDCONFIG=	yes
 INSTALL_TARGET=	install install-man
 
-MASTERDIR=      ${.CURDIR}/../husky
-COMPONENT_SUBDIR=       fidoconf
+MASTERDIR=	${.CURDIR}/../husky
+COMPONENT_SUBDIR=fidoconf
 
 # Settings below are required to handle texi output (html, INFO page)
 USES+=		makeinfo
@@ -25,7 +28,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e 's^/path/to/config^${PREFIX}/etc/fido/config^' \
-		${WRKSRC}/man/linkedto.1
+		${BUILD_WRKSRC}/man/linkedto.1
 
 post-install:
 	${LN} -sf fconf2.1 ${STAGEDIR}${PREFIX}/man/man1/fconf2aquaed.1
