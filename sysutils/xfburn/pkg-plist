@@ -1,7 +1,6 @@
 bin/xfburn
 man/man1/xfburn.1.gz
 share/Thunar/sendto/thunar-sendto-xfburn.desktop
-share/appdata/xfburn.appdata.xml
 share/applications/xfburn.desktop
 share/icons/hicolor/16x16/stock/media/stock_xfburn-audio-cd.png
 share/icons/hicolor/16x16/stock/media/stock_xfburn-blank-cdrw.png
@@ -90,6 +89,7 @@ share/icons/hicolor/scalable/stock/media/stock_xfburn.svg
 %%NLS%%share/locale/ru/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/si/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfburn.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfburn.mo
@@ -103,5 +103,7 @@ share/icons/hicolor/scalable/stock/media/stock_xfburn.svg
 %%NLS%%share/locale/vi/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfburn.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfburn.mo
+share/metainfo/org.xfce.xfburn.appdata.xml
+%%DATADIR%%/xfburn-popup-menus.ui
 %%DATADIR%%/xfburn-toolbars.ui
 %%DATADIR%%/xfburn.ui
