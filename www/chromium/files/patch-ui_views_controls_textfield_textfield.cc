@@ -1,4 +1,4 @@
---- ui/views/controls/textfield/textfield.cc.orig	2019-10-21 19:07:29 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2020-03-03 18:54:07 UTC
 +++ ui/views/controls/textfield/textfield.cc
 @@ -60,7 +60,7 @@
  #include "base/win/win_util.h"
@@ -62,7 +62,7 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -2170,7 +2170,7 @@ bool Textfield::PasteSelectionClipboard() {
+@@ -2173,7 +2173,7 @@ bool Textfield::PasteSelectionClipboard() {
  }
  
  void Textfield::UpdateSelectionClipboard() {

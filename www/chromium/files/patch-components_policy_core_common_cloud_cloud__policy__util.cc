@@ -1,4 +1,4 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2019-12-16 21:51:25 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2020-03-03 18:53:06 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -16,7 +16,7 @@
  #include <wincred.h>
@@ -9,8 +9,8 @@
  #include <pwd.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -28,7 +28,7 @@
- #include <sys/sysctl.h>
+@@ -31,7 +31,7 @@
+ #import <SystemConfiguration/SCDynamicStoreCopySpecific.h>
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
@@ -18,7 +18,7 @@
  #include <limits.h>  // For HOST_NAME_MAX
  #endif
  
-@@ -57,7 +57,7 @@
+@@ -60,7 +60,7 @@
  #include "base/system/sys_info.h"
  #endif
  
@@ -27,7 +27,7 @@
  #include "base/system/sys_info.h"
  #endif
  
-@@ -66,11 +66,24 @@ namespace policy {
+@@ -69,11 +69,24 @@ namespace policy {
  namespace em = enterprise_management;
  
  std::string GetMachineName() {
@@ -51,9 +51,9 @@
 +  }
 +  return std::string();
  #elif defined(OS_MACOSX)
-   // Do not use NSHost currentHost, as it's very slow. http://crbug.com/138570
-   SCDynamicStoreContext context = {0, NULL, NULL, NULL};
-@@ -116,7 +129,7 @@ std::string GetMachineName() {
+ // TODO(crbug.com/1024115): Find a different replacement for -[NSHost
+ // currentHost] on iOS.
+@@ -123,7 +136,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
@@ -62,7 +62,7 @@
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -139,7 +152,7 @@ std::string GetOSArchitecture() {
+@@ -146,7 +159,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

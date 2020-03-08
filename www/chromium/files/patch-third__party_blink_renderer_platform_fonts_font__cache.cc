@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2019-09-09 21:55:26 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2020-03-03 18:53:14 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.cc
 @@ -76,7 +76,7 @@ static const char kColorEmojiLocale[] = "und-Zsye";
  
@@ -13,8 +13,8 @@
  FontPlatformData* FontCache::SystemFontPlatformData(
      const FontDescription& font_description) {
    const AtomicString& family = FontCache::SystemFontFamily();
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
    if (family.IsEmpty() || family == font_family_names::kSystemUi)
      return nullptr;
  #else

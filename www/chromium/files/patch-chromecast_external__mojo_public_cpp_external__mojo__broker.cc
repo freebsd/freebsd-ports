@@ -1,4 +1,4 @@
---- chromecast/external_mojo/public/cpp/external_mojo_broker.cc.orig	2019-12-17 19:25:44 UTC
+--- chromecast/external_mojo/public/cpp/external_mojo_broker.cc.orig	2020-03-03 18:53:04 UTC
 +++ chromecast/external_mojo/public/cpp/external_mojo_broker.cc
 @@ -7,7 +7,7 @@
  #include <map>
@@ -9,7 +9,7 @@
  #include <sys/stat.h>
  #endif
  
-@@ -398,7 +398,7 @@ ExternalMojoBroker::ExternalMojoBroker(const std::stri
+@@ -393,7 +393,7 @@ ExternalMojoBroker::ExternalMojoBroker(const std::stri
        named_channel.TakeServerEndpoint();
    DCHECK(server_endpoint.is_valid());
  

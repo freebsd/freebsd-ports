@@ -1,6 +1,6 @@
---- components/policy/tools/generate_policy_source.py.orig	2019-12-16 21:51:25 UTC
+--- components/policy/tools/generate_policy_source.py.orig	2020-03-03 18:53:54 UTC
 +++ components/policy/tools/generate_policy_source.py
-@@ -96,6 +96,7 @@ class PolicyDetails:
+@@ -97,6 +97,7 @@ class PolicyDetails:
            'chrome.linux',
            'chrome.mac',
            'chrome.fuchsia',
@@ -8,7 +8,7 @@
            'chrome.*',
            'chrome.win7',
        ]:
-@@ -118,7 +119,7 @@ class PolicyDetails:
+@@ -119,7 +120,7 @@ class PolicyDetails:
        if platform.startswith('chrome.'):
          platform_sub = platform[7:]
          if platform_sub == '*':

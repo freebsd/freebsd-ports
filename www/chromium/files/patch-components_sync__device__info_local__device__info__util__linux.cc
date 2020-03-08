@@ -1,6 +1,14 @@
---- components/sync_device_info/local_device_info_util_linux.cc.orig	2019-12-16 21:50:47 UTC
+--- components/sync_device_info/local_device_info_util_linux.cc.orig	2020-03-03 18:53:06 UTC
 +++ components/sync_device_info/local_device_info_util_linux.cc
-@@ -36,6 +36,23 @@ std::string GetChromeOSDeviceNameFromType() {
+@@ -8,6 +8,7 @@
+ #include <string>
+ 
+ #include "base/linux_util.h"
++#include "build/build_config.h"
+ 
+ #if defined(OS_CHROMEOS)
+ #include "chromeos/constants/devicetype.h"
+@@ -36,6 +37,23 @@ std::string GetChromeOSDeviceNameFromType() {
  std::string GetPersonalizableDeviceNameInternal() {
  #if defined(OS_CHROMEOS)
    return GetChromeOSDeviceNameFromType();

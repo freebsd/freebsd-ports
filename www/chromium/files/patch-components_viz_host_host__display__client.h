@@ -1,6 +1,6 @@
---- components/viz/host/host_display_client.h.orig	2019-12-17 19:29:39 UTC
+--- components/viz/host/host_display_client.h.orig	2020-03-03 18:53:07 UTC
 +++ components/viz/host/host_display_client.h
-@@ -42,7 +42,7 @@ class VIZ_HOST_EXPORT HostDisplayClient : public mojom
+@@ -43,7 +43,7 @@ class VIZ_HOST_EXPORT HostDisplayClient : public mojom
        mojo::PendingReceiver<mojom::LayeredWindowUpdater> receiver) override;
  #endif
  

@@ -1,4 +1,4 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2019-12-16 21:51:27 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2020-03-03 18:53:55 UTC
 +++ pdf/pdfium/pdfium_engine.cc
 @@ -52,7 +52,7 @@
  #include "ui/gfx/geometry/rect.h"
@@ -27,7 +27,7 @@
    // PreviewModeClient does not know its pp::Instance.
    SetLastInstance(client_->GetPluginInstance());
  #endif
-@@ -867,7 +867,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
+@@ -878,7 +878,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
  
    KillFormFocus();
  
@@ -36,7 +36,7 @@
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -2798,7 +2798,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -2832,7 +2832,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK(image_data);
  
    last_progressive_start_time_ = base::Time::Now();
@@ -45,7 +45,7 @@
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -3292,7 +3292,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3326,7 +3326,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form(), FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

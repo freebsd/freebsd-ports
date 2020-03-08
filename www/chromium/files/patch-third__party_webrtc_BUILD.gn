@@ -1,6 +1,6 @@
---- third_party/webrtc/BUILD.gn.orig	2019-09-09 21:57:03 UTC
+--- third_party/webrtc/BUILD.gn.orig	2020-03-03 18:55:30 UTC
 +++ third_party/webrtc/BUILD.gn
-@@ -160,6 +160,9 @@ config("common_inherited_config") {
+@@ -170,6 +170,9 @@ config("common_inherited_config") {
    if (is_linux) {
      defines += [ "WEBRTC_LINUX" ]
    }

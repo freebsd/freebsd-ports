@@ -1,4 +1,4 @@
---- components/os_crypt/os_crypt.h.orig	2019-03-11 22:00:56 UTC
+--- components/os_crypt/os_crypt.h.orig	2020-03-03 18:53:53 UTC
 +++ components/os_crypt/os_crypt.h
 @@ -15,9 +15,9 @@
  #include "base/strings/string16.h"
@@ -10,7 +10,7 @@
 -#endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#endif  // (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  
- #if defined(OS_MACOSX) && !defined(OS_IOS)
+ #if defined(OS_WIN) || (defined(OS_MACOSX) && !defined(OS_IOS))
  class PrefRegistrySimple;
 @@ -34,13 +34,13 @@ struct Config;
  // true for Linux, if a password management tool is available.
@@ -29,7 +29,7 @@
    // On Linux returns true iff the real secret key (not hardcoded one) is
    // available. On MacOS returns true if Keychain is available (for mock
    // Keychain it returns true if not using locked Keychain, false if using
-@@ -112,7 +112,7 @@ class OSCrypt {
+@@ -131,7 +131,7 @@ class OSCrypt {
    DISALLOW_IMPLICIT_CONSTRUCTORS(OSCrypt);
  };
  
@@ -38,7 +38,7 @@
  // For unit testing purposes, inject methods to be used.
  // |get_key_storage_mock| provides the desired |KeyStorage| implementation.
  // If the provider returns |nullptr|, a hardcoded password will be used.
-@@ -127,6 +127,6 @@ void UseMockKeyStorageForTesting(
+@@ -146,6 +146,6 @@ void UseMockKeyStorageForTesting(
  // Clears any caching and most lazy initialisations performed by the production
  // code. Should be used after any test which required a password.
  COMPONENT_EXPORT(OS_CRYPT) void ClearCacheForTesting();

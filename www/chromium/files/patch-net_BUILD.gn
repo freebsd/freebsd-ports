@@ -1,6 +1,6 @@
---- net/BUILD.gn.orig	2019-12-16 21:51:27 UTC
+--- net/BUILD.gn.orig	2020-03-03 18:53:55 UTC
 +++ net/BUILD.gn
-@@ -105,7 +105,7 @@ net_configs = [
+@@ -103,7 +103,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -9,7 +9,25 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1938,7 +1938,7 @@ component("net") {
+@@ -1834,6 +1834,17 @@ component("net") {
+       ]
+     }
+ 
++    if (is_bsd) {
++      sources -= [
++        "base/address_tracker_linux.cc",
++        "base/address_tracker_linux.h",
++        "base/network_change_notifier_linux.cc",
++        "base/network_change_notifier_linux.h",
++        "base/network_interfaces_linux.cc",
++        "base/network_interfaces_linux.h",
++      ]
++    }
++
+     if (is_mac) {
+       sources += [
+         "base/network_notification_thread_mac.cc",
+@@ -1960,7 +1971,7 @@ component("net") {
        }
      }
  
@@ -18,7 +36,7 @@
        sources += [
          "base/network_change_notifier_posix.cc",
          "base/network_change_notifier_posix.h",
-@@ -1971,7 +1971,7 @@ component("net") {
+@@ -1991,7 +2002,7 @@ component("net") {
      }
  
      # Use getifaddrs() on POSIX platforms, except Linux and Android.
@@ -27,20 +45,3 @@
        sources += [
          "base/network_interfaces_getifaddrs.cc",
          "base/network_interfaces_getifaddrs.h",
-@@ -2065,6 +2065,16 @@ component("net") {
-       ]
- 
-       sources -= [ "disk_cache/blockfile/file_posix.cc" ]
-+    }
-+
-+    if (is_bsd) {
-+      sources -= [
-+         "base/address_tracker_linux.cc",
-+         "base/address_tracker_linux.h",
-+         "base/network_change_notifier_linux.cc",
-+         "base/network_change_notifier_linux.h",
-+         "base/network_interfaces_linux.cc",
-+      ]
-     }
- 
-     if (is_ios || is_mac) {

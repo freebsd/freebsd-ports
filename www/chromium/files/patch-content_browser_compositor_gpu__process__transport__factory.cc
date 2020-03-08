@@ -1,6 +1,6 @@
---- content/browser/compositor/gpu_process_transport_factory.cc.orig	2019-12-17 19:32:45 UTC
+--- content/browser/compositor/gpu_process_transport_factory.cc.orig	2020-03-03 18:53:54 UTC
 +++ content/browser/compositor/gpu_process_transport_factory.cc
-@@ -114,7 +114,7 @@ viz::FrameSinkManagerImpl* GetFrameSinkManager() {
+@@ -115,7 +115,7 @@ viz::FrameSinkManagerImpl* GetFrameSinkManager() {
    return content::BrowserMainLoop::GetInstance()->GetFrameSinkManager();
  }
  

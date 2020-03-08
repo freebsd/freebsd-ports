@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	79.0.3945.130
+PORTVERSION=	80.0.3987.132
 CATEGORIES?=	www java
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/cpm/chromium/:fonts
@@ -119,7 +119,6 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_bundled_fontconfig=false \
 		use_custom_libcxx=false \
 		use_gnome_keyring=false \
-		use_jumbo_build=true \
 		use_lld=true \
 		use_sysroot=false \
 		use_system_freetype=true \
@@ -160,10 +159,10 @@ ALSA_VARS_OFF=		GN_ARGS+=use_alsa=false
 
 CODECS_VARS=		GN_ARGS+=ffmpeg_branding="Chrome" \
 			GN_ARGS+=proprietary_codecs=true \
-			GN_ARGS+=enable_hevc_demuxing=true
+			GN_ARGS+=enable_platform_hevc=true
 CODECS_VARS_OFF=	GN_ARGS+=ffmpeg_branding="Chromium" \
 			GN_ARGS+=proprietary_codecs=false \
-			GN_ARGS+=enable_hevc_demuxing=false
+			GN_ARGS+=enable_platform_hevc=false
 
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_VARS=		GN_ARGS+=use_cups=true
@@ -259,7 +258,7 @@ pre-configure:
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		ffmpeg flac freetype harfbuzz-ng libdrm libusb libwebp libxml libxslt openh264 opus snappy yasm || ${FALSE}
+		ffmpeg flac fontconfig freetype harfbuzz-ng libdrm libpng libwebp libxml libxslt openh264 opus snappy yasm || ${FALSE}
 .endif
 
 do-configure:
@@ -301,7 +300,10 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/*.png ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/*.pak ${STAGEDIR}${DATADIR}
-.for d in protoc icudtl.dat mksnapshot natives_blob.bin snapshot_blob.bin v8_context_snapshot.bin
+.for d in protoc mksnapshot
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/${d} ${STAGEDIR}${DATADIR}
+.endfor
+.for d in icudtl.dat snapshot_blob.bin v8_context_snapshot.bin
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${d} ${STAGEDIR}${DATADIR}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chrome \

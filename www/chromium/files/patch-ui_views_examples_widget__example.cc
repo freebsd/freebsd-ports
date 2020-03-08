@@ -1,6 +1,6 @@
---- ui/views/examples/widget_example.cc.orig	2019-09-09 21:55:47 UTC
+--- ui/views/examples/widget_example.cc.orig	2020-03-03 18:54:07 UTC
 +++ ui/views/examples/widget_example.cc
-@@ -79,7 +79,7 @@ void WidgetExample::CreateExampleView(View* container)
+@@ -70,7 +70,7 @@ void WidgetExample::CreateExampleView(View* container)
    BuildButton(container, "Popup widget", POPUP);
    BuildButton(container, "Dialog widget", DIALOG);
    BuildButton(container, "Modal Dialog", MODAL_DIALOG);

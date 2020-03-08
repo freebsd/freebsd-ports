@@ -1,6 +1,6 @@
---- content/browser/scheduler/responsiveness/jank_monitor.cc.orig	2019-10-21 19:06:32 UTC
+--- content/browser/scheduler/responsiveness/jank_monitor.cc.orig	2020-03-03 18:53:54 UTC
 +++ content/browser/scheduler/responsiveness/jank_monitor.cc
-@@ -293,7 +293,7 @@ void JankMonitor::ThreadExecutionState::DidRunTaskOrEv
+@@ -321,7 +321,7 @@ void JankMonitor::ThreadExecutionState::DidRunTaskOrEv
      // in context menus, among others). Simply ignore the mismatches for now.
      // See https://crbug.com/929813 for the details of why the mismatch
      // happens.

@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main.cc.orig	2019-12-16 21:51:23 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2020-03-03 18:53:51 UTC
 +++ chrome/browser/chrome_browser_main.cc
-@@ -220,9 +220,9 @@
+@@ -223,9 +223,9 @@
  #include "components/arc/metrics/stability_metrics_manager.h"
  #endif  // defined(OS_CHROMEOS)
  
@@ -12,7 +12,7 @@
  
  #if defined(OS_LINUX)
  #include "components/crash/content/app/breakpad_linux.h"
-@@ -260,7 +260,7 @@
+@@ -264,7 +264,7 @@
  #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -21,7 +21,7 @@
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #include "chrome/browser/profiles/profile_activity_metrics_recorder.h"
  #endif
-@@ -1071,7 +1071,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1073,7 +1073,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
        AddFirstRunNewTabs(browser_creator_.get(), master_prefs_->new_tabs);
      }
  
@@ -30,7 +30,7 @@
      // Create directory for user-level Native Messaging manifest files. This
      // makes it less likely that the directory will be created by third-party
      // software with incorrect owner or permission. See crbug.com/725513 .
-@@ -1080,7 +1080,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1082,7 +1082,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
                                   &user_native_messaging_dir));
      if (!base::PathExists(user_native_messaging_dir))
        base::CreateDirectory(user_native_messaging_dir);
@@ -39,7 +39,7 @@
    }
  #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
-@@ -1119,7 +1119,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1121,7 +1121,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
    }
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
