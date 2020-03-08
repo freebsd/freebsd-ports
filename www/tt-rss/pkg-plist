@@ -59,17 +59,6 @@
 @mode 0400
 @sample %%WWWDIR%%/config.php.sample
 @mode
-%%WWWDIR%%/css/cdm.less
-%%WWWDIR%%/css/default.css
-%%WWWDIR%%/css/default.css.map
-%%WWWDIR%%/css/default.less
-%%WWWDIR%%/css/defines.less
-%%WWWDIR%%/css/dijit_basic.less
-%%WWWDIR%%/css/dijit_light.less
-%%WWWDIR%%/css/prefs.less
-%%WWWDIR%%/css/tt-rss.less
-%%WWWDIR%%/css/utility.less
-%%WWWDIR%%/css/zoom.less
 %%WWWDIR%%/errors.php
 %%WWWDIR%%/feed-icons/.empty
 %%WWWDIR%%/feed-icons/index.html
@@ -97,6 +86,7 @@
 %%WWWDIR%%/js/AppBase.js
 %%WWWDIR%%/js/Article.js
 %%WWWDIR%%/js/form/ComboButton.js
+%%WWWDIR%%/js/form/ValidationTextArea.js
 %%WWWDIR%%/js/CommonDialogs.js
 %%WWWDIR%%/js/CommonFilters.js
 %%WWWDIR%%/js/FeedStoreModel.js
@@ -2345,12 +2335,15 @@
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_darklegacy.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_dilbert.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_explosm.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_gocomics.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_gocomics_farside.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_pa.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_pvp.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_tfd.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_twp.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_whomp.php
 %%WWWDIR%%/plugins/af_comics/init.php
+%%WWWDIR%%/plugins/af_readability/init.js
 %%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Configuration.php
 %%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMAttr.php
 %%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMCdataSection.php
@@ -2713,9 +2706,22 @@
 %%WWWDIR%%/themes/compact.css
 %%WWWDIR%%/themes/compact.css.map
 %%WWWDIR%%/themes/compact.less
+%%WWWDIR%%/themes/compact_base.less
+%%WWWDIR%%/themes/compact_night.css
+%%WWWDIR%%/themes/compact_night.css.map
+%%WWWDIR%%/themes/compact_night.less
 %%WWWDIR%%/themes/light.css
 %%WWWDIR%%/themes/light.css.map
 %%WWWDIR%%/themes/light.less
+%%WWWDIR%%/themes/light/cdm.less
+%%WWWDIR%%/themes/light/defines.less
+%%WWWDIR%%/themes/light/dijit_basic.less
+%%WWWDIR%%/themes/light/dijit_light.less
+%%WWWDIR%%/themes/light/light_base.less
+%%WWWDIR%%/themes/light/prefs.less
+%%WWWDIR%%/themes/light/tt-rss.less
+%%WWWDIR%%/themes/light/utility.less
+%%WWWDIR%%/themes/light/zoom.less
 %%WWWDIR%%/themes/night.css
 %%WWWDIR%%/themes/night.css.map
 %%WWWDIR%%/themes/night.less
@@ -3126,7 +3132,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/images
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/icons
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/feed-icons
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/css
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/classes/pref
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/classes/logger
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/classes/handler
