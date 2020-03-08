@@ -3,6 +3,7 @@
 PORTNAME=	ghub
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -12,12 +13,8 @@ COMMENT=	Minuscule client library for the Github API
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.14.1:devel/dash.el@${EMACS_FLAVOR} \
-		graphql.el${EMACS_PKGNAMESUFFIX}>=0.1.1:devel/graphql.el@${EMACS_FLAVOR} \
-		treepy.el${EMACS_PKGNAMESUFFIX}>=0.1.1:devel/treepy.el@${EMACS_FLAVOR}
-RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.14.1:devel/dash.el@${EMACS_FLAVOR} \
-		graphql.el${EMACS_PKGNAMESUFFIX}>=0.1.1:devel/graphql.el@${EMACS_FLAVOR} \
-		treepy.el${EMACS_PKGNAMESUFFIX}>=0.1.1:devel/treepy.el@${EMACS_FLAVOR}
+BUILD_DEPENDS=	treepy.el${EMACS_PKGNAMESUFFIX}>=0.1.1:devel/treepy.el@${EMACS_FLAVOR}
+RUN_DEPENDS=	treepy.el${EMACS_PKGNAMESUFFIX}>=0.1.1:devel/treepy.el@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
