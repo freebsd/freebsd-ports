@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-arc-themes
-PORTVERSION=	20190330
-PORTREVISION=	1
+DISTVERSION=	20190917
 CATEGORIES=	x11-themes
 
 MAINTAINER=	mail_me@riseup.net
@@ -21,7 +20,7 @@ RUN_DEPENDS=	gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
 USES=		autoreconf gmake gnome pkgconfig
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	NicoHood
+GH_ACCOUNT=	arc-design
 GH_PROJECT=	arc-theme
 
 GNU_CONFIGURE=	yes
