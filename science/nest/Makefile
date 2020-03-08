@@ -3,6 +3,7 @@
 PORTNAME=	nest
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.20.0
+PORTREVISION=	1
 CATEGORIES=	science biology # NEST is used in neuroscience
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=	https://github.com/nest/nest-simulator/issues/1205
 
 LIB_DEPENDS=	libgsl.so:math/gsl \
-		libltdl.so:devel/libltdl \
-		libomp.so:devel/openmp
+		libltdl.so:devel/libltdl
 
 USES=		cmake compiler:c++11-lang ncurses pkgconfig readline
 USE_GITHUB=	yes

@@ -2,7 +2,7 @@
 
 PORTNAME=	HipMCL
 DISTVERSION=	g20180814
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
@@ -13,8 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libCombBLAS.so:math/combblas \
-		libmpi.so:net/mpich \
-		libomp.so:devel/openmp
+		libmpi.so:net/mpich
 RUN_DEPENDS=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so.1:lang/gcc${GCC_DEFAULT} # because of the link flags induced by mpich
 
 USES=		cmake compiler:c++14-lang dos2unix localbase:ldflags

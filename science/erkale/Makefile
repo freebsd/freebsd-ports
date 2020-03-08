@@ -2,7 +2,7 @@
 
 PORTNAME=	erkale
 DISTVERSION=	g20200110
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,7 +44,6 @@ CMAKE_OFF=	USE_OPENMP
 .else # parallel
 CMAKE_ON+=	USE_OPENMP
 SUFFIX=		_omp
-LIB_DEPENDS+=	libomp.so:devel/llvm${LLVM_DEFAULT}
 .endif
 
 OPTIONS_SINGLE=		LINALG
@@ -60,13 +59,6 @@ NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
 OPENBLAS_USES=		blaslapack:openblas
 OPENBLAS_CMAKE_ON=	-DLAPACK_LIBRARIES:STRING=-lopenblas -DBLAS_LIBRARIES:STRING=-lopenblas
 OPENBLAS_LIB_DEPENDS=	libopenblas.so:math/openblas
-
-# use clang from ports because cmake can't find OpenMP with base clang, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=223678
-# have the same compiler for both serial and parallel flavors so that performance numbers can be compared
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CPP=		clang-cpp${LLVM_DEFAULT}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
 
 .if ${FLAVOR} == parallel
 post-install:

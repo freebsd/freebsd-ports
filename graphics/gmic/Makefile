@@ -2,7 +2,7 @@
 
 PORTNAME=	gmic
 DISTVERSION=	2.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://gmic.eu/files/source/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -41,17 +41,9 @@ OPTIONS_DEFAULT=	OPENMP X11
 OPTIONS_SUB=		yes
 
 OPENMP_CMAKE_BOOL=	ENABLE_OPENMP
-OPENMP_LIB_DEPENDS=	libgomp.so:devel/openmp
 
 X11_CMAKE_BOOL=		ENABLE_X
 X11_USES=		xorg
 X11_USE=		XORG=ice,sm,x11,xext
 
-.include <bsd.port.pre.mk>
-
-# XXX Drop after FreeBSD 12.0 EOL
-.if ${CHOSEN_COMPILER_TYPE} == clang && !exists(/usr/include/omp.h)
-LIB_DEPENDS+=	libomp.so:devel/openmp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

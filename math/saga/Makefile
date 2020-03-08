@@ -3,7 +3,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	7.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -56,10 +56,6 @@ OPENMP_DESC=	Enable Multiprocessing (only amd64 and i386)
 VIGRA_DESC=	Enable 'Vision with Generic Algorithms' Library
 
 OPENMP_CONFIGURE_ENABLE=	openmp
-OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
-OPENMP_LDFLAGS=		-L${LOCALBASE}/lib -lm
-# Use OpenMP from lang/llvm${LLVM_DEFAULT}
-OPENMP_LDFLAGS+=	-L${LOCALBASE}/llvm${LLVM_DEFAULT}/lib -lomp
 PGSQL_CONFIGURE_WITH=	pg
 PGSQL_USES=		pgsql
 VIGRA_BUILD_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:graphics/vigra

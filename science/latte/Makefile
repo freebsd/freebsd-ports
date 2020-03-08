@@ -3,7 +3,7 @@
 PORTNAME=	latte
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +32,6 @@ DBCSR_LIB_DEPENDS=	libdbcsr.so:math/dbcsr
 DBCSR_BROKEN=		see https://github.com/lanl/LATTE/issues/92
 
 OPENMP_CMAKE_BOOL=	OPENMP
-OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
 
 MPI_CMAKE_BOOL=		DO_MPI
 MPI_LIB_DEPENDS=	libmpi.so:net/openmpi

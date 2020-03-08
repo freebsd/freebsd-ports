@@ -9,7 +9,7 @@
 -LIB= -L/opt/intel/mkl/lib -mkl=parallel -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -lpthread -lifcore -lmpi -lmpi_f90 -lmpi_f77
 +CC = mpicc $(CFLAGS) -fopenmp
 +FC = mpif90 $(FFLAGS) -fopenmp
-+LIB= $(LDFLAGS) -lpthread -llapack -lblas -lgfortran -lfftw3 -liomp5
++LIB= $(LDFLAGS) -lpthread -llapack -lblas -lgfortran -lfftw3 -lomp
  
  
  

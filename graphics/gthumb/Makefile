@@ -4,7 +4,7 @@
 
 PORTNAME=	gthumb
 PORTVERSION=	3.6.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,7 +22,6 @@ LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 		libjson-glib-1.0.so:devel/json-glib \
 		liblcms2.so:graphics/lcms2 \
 		liboauth.so:net/liboauth \
-		libomp.so:devel/openmp \
 		libpng.so:graphics/png \
 		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff

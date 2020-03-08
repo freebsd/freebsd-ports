@@ -2,6 +2,7 @@
 
 PORTNAME=	ensmallen
 DISTVERSION=	2.11.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://ensmallen.org/files/
 
@@ -11,10 +12,8 @@ COMMENT=	Flexible C++ library for efficient mathematical optimization
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/include/armadillo_bits/config.hpp:math/armadillo \
-		openmp>0:devel/openmp
-RUN_DEPENDS=	${LOCALBASE}/include/armadillo_bits/config.hpp:math/armadillo \
-		openmp>0:devel/openmp
+BUILD_DEPENDS=	${LOCALBASE}/include/armadillo_bits/config.hpp:math/armadillo
+RUN_DEPENDS=	${LOCALBASE}/include/armadillo_bits/config.hpp:math/armadillo
 
 USES=		cmake localbase
 CMAKE_OFF=	BUILD_TESTS

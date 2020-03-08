@@ -3,6 +3,7 @@
 PORTNAME=	opennn
 DISTVERSION=	0.1-86
 DISTVERSIONSUFFIX=	-g449b346
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,8 +28,6 @@ MPI_CMAKE_BOOL=		__OPENNN_MPI__
 MPI_BROKEN=		https://github.com/Artelnics/OpenNN/issues/86
 
 OPENMP_CMAKE_BOOL=	__OPENNN_OMP__
-OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
-OPENMP_USES=		localbase:ldflags
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME} && ${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}

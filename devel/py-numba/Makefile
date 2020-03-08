@@ -3,6 +3,7 @@
 
 PORTNAME=	numba
 DISTVERSION=	0.47.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +15,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>1.11,1:math/py-numpy@${PY_FLAVOR}
-LIB_DEPENDS=	libomp.so:devel/openmp \
-		libtbb.so:devel/tbb
+LIB_DEPENDS=	libtbb.so:devel/tbb
 RUN_DEPENDS=	${PY_ENUM34} \
 		${PYTHON_PKGNAMEPREFIX}llvmlite>=0.31.0:devel/py-llvmlite@${PY_FLAVOR}
 py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}singledispatch>0:devel/py-singledispatch@${PY_FLAVOR} \

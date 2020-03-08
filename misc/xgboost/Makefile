@@ -25,8 +25,6 @@ LDFLAGS+=	${LOCALBASE}/lib/libdmlc.so -lexecinfo
 OPTIONS_DEFINE=		OPENMP
 
 OPENMP_CMAKE_BOOL=	USE_OPENMP
-OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
-OPENMP_BROKEN=		error: unsupported argument 'libomp  -I/usr/local/include -L/usr/local/lib' to option 'fopenmp='
 
 post-patch: # https://github.com/dmlc/rabit/issues/131
 	@${FIND} ${WRKSRC} -name "*.h" -o -name "*.cc" | ${XARGS} ${REINPLACE_CMD} -i '' -e 's| _assert(| _xassert(|; s| _assert)| _xassert)|'

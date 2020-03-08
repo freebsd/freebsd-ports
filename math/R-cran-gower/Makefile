@@ -3,6 +3,7 @@
 
 PORTNAME=	gower
 DISTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -15,7 +16,5 @@ USES=		cran:auto-plist,compiles
 
 OPTIONS_DEFINE=	OPENMP
 OPTIONS_DEFAULT=	OPENMP
-
-OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
 
 .include <bsd.port.mk>
