@@ -69,6 +69,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/NodesDiscovered.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/OrphanedDevices.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/PollerPerformance.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/PortMacs.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/PortUtilization.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/PortVLANMismatch.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Virtual/SlowDevices.pm
@@ -108,6 +109,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/SSHCollector/Platform/Linux.pm
 %%SITE_PERL%%/App/Netdisco/SSHCollector/Platform/NXOS.pm
 %%SITE_PERL%%/App/Netdisco/SSHCollector/Platform/PaloAlto.pm
+%%SITE_PERL%%/App/Netdisco/SSHCollector/Platform/VOSS.pm
 %%SITE_PERL%%/App/Netdisco/Transport/SNMP.pm
 %%SITE_PERL%%/App/Netdisco/Transport/SSH.pm
 %%SITE_PERL%%/App/Netdisco/Util/DNS.pm
@@ -561,6 +563,7 @@ bin/netdisco-web-fg
 %%PERL5_MAN3%%/App::Netdisco::SSHCollector::Platform::Linux.3.gz
 %%PERL5_MAN3%%/App::Netdisco::SSHCollector::Platform::NXOS.3.gz
 %%PERL5_MAN3%%/App::Netdisco::SSHCollector::Platform::PaloAlto.3.gz
+%%PERL5_MAN3%%/App::Netdisco::SSHCollector::Platform::VOSS.3.gz
 %%PERL5_MAN3%%/App::Netdisco::Transport::SNMP.3.gz
 %%PERL5_MAN3%%/App::Netdisco::Transport::SSH.3.gz
 %%PERL5_MAN3%%/App::Netdisco::Util::DNS.3.gz
@@ -586,3 +589,4 @@ bin/netdisco-web-fg
 @owner netdisco
 @mode 0750
 %%ETCDIR%%/perl5/bin/localenv
+@dir %%ETCDIR%%/perl5
