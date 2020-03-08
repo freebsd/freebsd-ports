@@ -11,6 +11,9 @@ COMMENT=	Implanting and checking checksums within an ISO9660 image
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libpopt.so:devel/popt
 
 USES=		gmake python:2.7

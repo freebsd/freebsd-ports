@@ -13,6 +13,9 @@ COMMENT=	GUI Viewer for Python profiling runs
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}SquareMap>0:x11-toolkits/py-SquareMap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}meliae>0:devel/py-meliae@${PY_FLAVOR}
 

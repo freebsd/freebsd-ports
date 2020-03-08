@@ -12,6 +12,9 @@ COMMENT=	EXtensible Open Router Platform
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libpcap.so.1:net/libpcap	# avoid base libpcap
 

@@ -9,6 +9,9 @@ CATEGORIES=	science python
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Clock-driven simulator for spiking neural networks
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.4.1,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.7.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=0.90.1:math/py-matplotlib@${PY_FLAVOR}

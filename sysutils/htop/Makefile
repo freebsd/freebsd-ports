@@ -12,6 +12,9 @@ COMMENT=	Better top(1) - interactive process viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		autoreconf libtool localbase ncurses pkgconfig python:2.7,build shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-unicode

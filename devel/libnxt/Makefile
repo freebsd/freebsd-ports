@@ -8,6 +8,9 @@ MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/co
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lego NXT library
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 SUB_FILES=	pkg-message
 USES=		python:2.7,build scons shebangfix
 USE_LDCONFIG=	yes

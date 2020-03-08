@@ -13,6 +13,9 @@ COMMENT=	GUI Logitech Harmony configuration tool
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libconcord>=0:comms/py-libconcord@${PY_FLAVOR}
 
 USES=		desktop-file-utils gmake tar:bzip2 python:2.7 shebangfix

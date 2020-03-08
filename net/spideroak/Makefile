@@ -17,6 +17,9 @@ LICENSE_NAME=	Terms Of Use
 LICENSE_TEXT=	http://spideroak.com/terms_of_use
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

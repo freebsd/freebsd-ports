@@ -13,6 +13,9 @@ COMMENT=	Python utilities for console mail clients (eg. mutt)
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7
 
 CONFLICTS=	zh-wenju-[0-9]* talkfilters-[0-9]* reed-[0-9]*

@@ -13,6 +13,9 @@ COMMENT=	Migrates changesets between version control systems
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync
 
 USES=		python:2.7

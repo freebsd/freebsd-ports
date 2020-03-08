@@ -15,6 +15,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/src/GNU_GPL_v2
 LICENSE_FILE_LGPL20+ =	${WRKSRC}/src/GNU_LGPL_v2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:graphics/sk1libs@${PY_FLAVOR}
 
 USES=		python:2.7

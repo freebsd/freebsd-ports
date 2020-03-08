@@ -14,6 +14,9 @@ COMMENT=	Programming and around-programming text editor
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		compiler:c++11-lang gmake gnome localbase pkgconfig \
 		python:2.7,build tar:bzip2
 GNU_CONFIGURE=	yes

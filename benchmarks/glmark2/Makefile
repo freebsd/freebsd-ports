@@ -12,6 +12,9 @@ COMMENT=	Benchmark for OpenGL (ES) 2.0
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gl jpeg localbase:ldflags pkgconfig python:2.7,build waf

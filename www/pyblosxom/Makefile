@@ -12,6 +12,9 @@ COMMENT=	Lightweight weblog system
 
 LICENSE=	MIT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7 shebangfix
 USE_PYTHON=	distutils
 SHEBANG_FILES=	Pyblosxom/data/pyblosxom.cgi

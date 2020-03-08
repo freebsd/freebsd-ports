@@ -9,6 +9,9 @@ CATEGORIES=	net
 MAINTAINER=	freebsd@gandi.net
 COMMENT=	NFS fileserver that runs in user mode
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
 RUN_DEPENDS=	nfs-ganesha-kmod>0:net/nfs-ganesha-kmod \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR} \

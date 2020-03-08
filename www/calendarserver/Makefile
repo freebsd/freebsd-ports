@@ -12,6 +12,9 @@ COMMENT=	Calendar and Contacts Server from Apple (RFC 4791, RFC 6352)
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	memcached:databases/memcached \
 		${PYTHON_PKGNAMEPREFIX}calendar>=2.1:devel/py-calendar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyGreSQL>=5.0:databases/py-PyGreSQL@${PY_FLAVOR} \

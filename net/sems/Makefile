@@ -11,6 +11,9 @@ COMMENT=	SIP Express Media Server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libopus.so:audio/opus \
 		libcodec2.so:audio/codec2 \
 		libevent.so:devel/libevent \

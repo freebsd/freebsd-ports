@@ -7,6 +7,9 @@ CATEGORIES=	lang kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Language interpreters to enable in-process scripting with Kross
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		cmake compiler:c++11-lang gettext kde:5 python:2.7 qt:5 tar:xz
 USE_KDE=	ecm kross
 USE_QT=		core gui script widgets xml \

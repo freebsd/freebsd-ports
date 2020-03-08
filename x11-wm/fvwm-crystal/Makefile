@@ -11,6 +11,9 @@ COMMENT=	Easy, eye-candy, light, and powerful window manager for X11
 
 LICENSE=	GPLv3+
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	fvwm>=2.5:x11-wm/fvwm2 \
 		bash:shells/bash
 

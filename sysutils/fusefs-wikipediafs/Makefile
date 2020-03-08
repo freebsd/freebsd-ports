@@ -13,6 +13,9 @@ COMMENT=	Mount mediawikis
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fusefs>=0.2:devel/py-fusefs@${PY_FLAVOR}
 
 USES=		fuse python:2.7

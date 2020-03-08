@@ -12,6 +12,9 @@ COMMENT=	Build tool alternative to make with internet access and CVS support
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes

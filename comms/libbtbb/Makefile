@@ -12,6 +12,9 @@ COMMENT=	Bluetooth Baseband Library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${PYNUMPY}
 
 USES=		cmake \

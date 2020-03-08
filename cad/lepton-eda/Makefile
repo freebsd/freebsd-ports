@@ -10,6 +10,9 @@ COMMENT=	Lepton Electronic Design Automation
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgc-threaded.so:devel/boehm-gc-threaded \

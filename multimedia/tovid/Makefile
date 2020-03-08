@@ -13,6 +13,9 @@ COMMENT=	Suite of tools for making DVD video disks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	txt2tags:textproc/txt2tags
 LIB_DEPENDS=	libTix8.4.3.so:x11-toolkits/tix
 RUN_DEPENDS=	mplayer:multimedia/mplayer \

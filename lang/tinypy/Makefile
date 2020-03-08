@@ -13,6 +13,9 @@ LICENSE=	MIT PSFL
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 GH_ACCOUNT=	philhassey
 
 USES=		python:2.7,build

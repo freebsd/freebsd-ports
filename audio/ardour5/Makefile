@@ -16,6 +16,9 @@ COMMENT=	Multichannel digital audio workstation
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2 itstool>2.0.0:textproc/itstool
 LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libsord-0.so:devel/sord \

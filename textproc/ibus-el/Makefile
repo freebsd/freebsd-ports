@@ -13,6 +13,9 @@ COMMENT=	IBus client for GNU Emacs
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	ibus-daemon:textproc/ibus \
 		${PYTHON_SITELIBDIR}/Xlib/X.py:x11-toolkits/py-xlib@${PY_FLAVOR}
 

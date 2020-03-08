@@ -10,6 +10,9 @@ COMMENT=	Shell environment to limited sets of commands to users
 
 LICENSE=	GPLv3+
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 GH_ACCOUNT=	ghantoos
 GH_PROJECT=	lshell
 GH_TAGNAME=	279d7ab

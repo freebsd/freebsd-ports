@@ -15,6 +15,9 @@ COMMENT=	New C++ interface for PostgreSQL
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 CONFLICTS=	postgresql-libpqxx-2.* postgresql-libpqxx-[4-9].* \
 		postgresql-libpqxx4-4.*
 PORTSCOUT=	limit:^3\.

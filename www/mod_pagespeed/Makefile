@@ -16,6 +16,9 @@ COMMENT=	Apache module for rewriting web pages to reduce latency
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl \
 		closure-compiler:www/closure-compiler \

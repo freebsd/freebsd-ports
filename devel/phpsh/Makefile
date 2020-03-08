@@ -14,6 +14,9 @@ COMMENT=	Interactive shell for PHP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		php:cli python:2.7 tar:bzip2
 USE_PYTHON=	distutils autoplist
 USE_PHP=	pcre posix tokenizer

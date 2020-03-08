@@ -15,6 +15,9 @@ COMMENT=	Text mode menu- and window-driven IM interface
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		iconv gmake ncurses perl5 pkgconfig python:2.7,run shebangfix ssl

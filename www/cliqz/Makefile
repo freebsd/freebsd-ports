@@ -20,6 +20,9 @@ COMMENT=	Secure browser (Mozilla based) with built-in quick search
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 FETCH_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \

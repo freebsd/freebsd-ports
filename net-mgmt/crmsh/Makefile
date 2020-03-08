@@ -11,6 +11,9 @@ COMMENT=		Command-line interface for High-Availability cluster management
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 # Set the build/run depends on setuptools instead of adding distutils to USE_PYTHON
 # because the crmsh build uses autotools which then calls setup.py.
 BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}

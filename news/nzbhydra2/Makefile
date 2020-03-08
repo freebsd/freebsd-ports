@@ -12,6 +12,9 @@ COMMENT=	Usenet meta search
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 ONLY_FOR_ARCHS=	amd64
 
 USES=		python:2.7 shebangfix zip

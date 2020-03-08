@@ -13,6 +13,9 @@ COMMENT=		Open SIP Server
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
 			libxmlrpc.so:net/xmlrpc-c \
 			libpcre.so:devel/pcre \

@@ -16,6 +16,9 @@ COMMENT=	Apache module that embeds the Python interpreter within the server
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 CONFLICTS_INSTALL=	ap2[24]-mod_python3[^5]*
 
 USES=		apache:2.2+ cpe python:2.7 tar:tgz

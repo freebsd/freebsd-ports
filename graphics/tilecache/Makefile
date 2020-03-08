@@ -13,6 +13,9 @@ COMMENT=	Python-based WMS-C/TMS server
 LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flup6>0:www/py-flup6@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Paste>0:www/py-paste@${PY_FLAVOR}
 

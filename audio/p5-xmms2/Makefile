@@ -8,6 +8,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Perl Bindings for XMMS2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS+=	libxmmsclient.so:audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2

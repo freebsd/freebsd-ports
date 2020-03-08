@@ -14,6 +14,9 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 ## later versions have sqlite3 backend, which is recommended for local storages
 ## with large amount of emails
 ## (add additional variable to use in {BUILD|RUN}_DEPENDS per porter's hb 5.8.2)

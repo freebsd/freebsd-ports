@@ -13,6 +13,9 @@ COMMENT=	System Security Services Daemon
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libtalloc.so:devel/talloc \
 		libtevent.so:devel/tevent \

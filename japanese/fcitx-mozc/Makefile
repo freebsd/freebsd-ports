@@ -4,6 +4,9 @@
 PKGNAMEPREFIX=	ja-fcitx-
 
 COMMENT=	Mozc engine for Fcitx
+
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
 DATADIR=	${PREFIX}/share/fcitx/${PORTNAME}
 
 MASTERDIR=	${.CURDIR}/../../japanese/mozc-server

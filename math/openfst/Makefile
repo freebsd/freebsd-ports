@@ -12,6 +12,9 @@ COMMENT=	Library for working with weighted finite-state transducers (FSTs)
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		compiler:c++11-lib libtool python:2.7
 USE_LDCONFIG=	${LOCALBASE}/lib/fst
 GNU_CONFIGURE=	yes

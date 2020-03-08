@@ -7,6 +7,9 @@ CATEGORIES=	devel
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Python to Go source code transcompiler and runtime
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BROKEN_i386=	constant 2147762812 overflows int
 
 USE_GITHUB=	yes

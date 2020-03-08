@@ -13,6 +13,9 @@ COMMENT=	GTK2 client for the XMMS2 music player
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/valac:lang/vala
 LIB_DEPENDS=	libxmmsclient.so:audio/xmms2 \
 		libgee-0.8.so:devel/libgee

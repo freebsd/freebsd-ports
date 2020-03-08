@@ -14,6 +14,9 @@ LICENSE_FILE_ART20=		${WRKSRC}/LICENSE
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/COPYRIGHT
 LICENSE_FILE_LGPL3+ =		${WRKSRC}/COPYING.LESSER
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		autoreconf compiler gmake libtool pathfix python:2.7
 USE_LDCONFIG=	yes
 

@@ -14,6 +14,9 @@ COMMENT=	Apache Portability Library
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 NO_PACKAGE=	Developer only package

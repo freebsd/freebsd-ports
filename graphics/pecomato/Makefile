@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.mollux.org/projects/pecomato/download/sources/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line picture metadata processor
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		gmake python:2.7,build
 
 MAKEFILE=	Makefile.unix

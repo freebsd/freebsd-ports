@@ -5,6 +5,9 @@ PKGNAMEPREFIX=	ja-uim-
 
 COMMENT=	Mozc engine for uim
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 MASTERDIR=	${.CURDIR}/../../japanese/mozc-server
 FILESDIR=	${.CURDIR}/files
 DATADIR=	${PREFIX}/share/uim

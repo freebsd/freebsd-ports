@@ -12,6 +12,9 @@ COMMENT=	3D point cloud processing software
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BROKEN_aarch64=		fails to compile: mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 
 USES=		cmake compiler:c++11-lang localbase:ldflags qt:5

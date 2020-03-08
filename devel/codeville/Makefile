@@ -12,6 +12,9 @@ COMMENT=	Anarchic control version system without unnecessary re-merges
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7 tar:xz
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
