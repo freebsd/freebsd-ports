@@ -1,9 +1,9 @@
 bin/openshot-qt
-%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.0.dev1-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.0.dev1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.0.dev1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.0.dev1-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.0.dev1-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev2-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev2-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev2-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev2-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/openshot_qt-2.5.1.dev2-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/openshot_qt/__init__.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -1202,6 +1202,7 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/language/OpenShot.ta.qm
 %%PYTHON_SITELIBDIR%%/openshot_qt/language/OpenShot.te.qm
 %%PYTHON_SITELIBDIR%%/openshot_qt/language/OpenShot.th.qm
+%%PYTHON_SITELIBDIR%%/openshot_qt/language/OpenShot.ti.qm
 %%PYTHON_SITELIBDIR%%/openshot_qt/language/OpenShot.tl.qm
 %%PYTHON_SITELIBDIR%%/openshot_qt/language/OpenShot.tr.qm
 %%PYTHON_SITELIBDIR%%/openshot_qt/language/OpenShot.tt.qm
