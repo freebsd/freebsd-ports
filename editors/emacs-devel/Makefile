@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-DISTVERSION=	28.0.50.20200214
+DISTVERSION=	28.0.50.20200308
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -28,7 +28,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	2e81e57
+GH_TAGNAME=	0a3f8da
 .if ${FLAVOR:U} != nox
 USES+=		desktop-file-utils gnome xorg
 INSTALLS_ICONS=	yes
@@ -85,9 +85,9 @@ OPTIONS_DEFINE=			ACL DBUS GCONF GNUTLS GSETTINGS HARFBUZZ JSON \
 				LCMS2 M17N MAILUTILS MODULES OTF SCROLLBARS \
 				SOURCES THREADS XFT XIM XML XWIDGETS
 OPTIONS_DEFAULT=		ACL CAIRO DBUS GIF GNUTLS GSETTINGS GTK3 \
-				HARFBUZZ JPEG JSON KQUEUE LCMS2 M17N MAGICK \
-				MAILUTILS MODULES OSS OTF PNG SCROLLBARS \
-				SOURCES SVG THREADS TIFF XFT XIM XML XPM
+				HARFBUZZ JPEG JSON KQUEUE LCMS2 M17N MAILUTILS \
+				MODULES OSS OTF PNG SCROLLBARS SOURCES SVG \
+				THREADS TIFF XFT XIM XML XPM
 OPTIONS_GROUP=			GRAPHICS
 OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF XPM
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
@@ -112,6 +112,7 @@ HARFBUZZ_DESC=		HarfBuzz for text shaping
 KQUEUE_DESC=		File notification via kqueue
 #LTO_DESC=		Enable link-time optimization
 M17N_DESC=		M17N support for text-shaping [implies XFT]
+MAGICK_DESC=		ImageMagick image processing support (deprecated)
 MAILUTILS_DESC=		Mail framework via GNU Mailutils
 MODULES_DESC=		Dynamic modules support
 OTF_DESC=		Opentype fonts [implies XFT]
@@ -206,11 +207,6 @@ XWIDGETS_USE=			XORG=xcomposite
 XWIDGETS_CONFIGURE_WITH=	xwidgets
 
 .include <bsd.port.options.mk>
-
-# has graphics/ImageMagick been compiled with OPENMP?
-.if ${PORT_OPTIONS:MMAGICK} && ${:!${GREP} -sc " \-fopenmp " ${LOCALBASE}/libdata/pkgconfig/ImageMagick.pc || true!} == "1"
-USES+=		compiler:openmp
-.endif
 
 .if !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MGTK3} && !${PORT_OPTIONS:MMOTIF} \
 	&& !${PORT_OPTIONS:MXAW} && !${PORT_OPTIONS:MXAW3D}
