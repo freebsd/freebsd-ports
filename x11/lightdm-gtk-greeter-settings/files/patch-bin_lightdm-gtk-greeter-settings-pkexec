@@ -1,0 +1,18 @@
+--- bin/lightdm-gtk-greeter-settings-pkexec.orig	2017-09-19 09:52:09 UTC
++++ bin/lightdm-gtk-greeter-settings-pkexec
+@@ -1,13 +1,5 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+-APP_PATH="/usr/bin/lightdm-gtk-greeter-settings"
+-
+-# Check for "socket" argument
+-for i in "$@"; do
+-  if [[ "$i" == "-s="* ]] || [[ "$i" == "--socket-id="* ]]; then
+-    pkexec "${APP_PATH}" "$@" || "${APP_PATH}" "$@"
+-    exit $?
+-  fi
+-done
++APP_PATH="%%PREFIX%%/bin/lightdm-gtk-greeter-settings"
+ 
+ pkexec "${APP_PATH}" "$@"
