@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200308
+  AFFECTS: users of graphics/mesa-libs and legacy graphics drivers
+  AUTHOR: zeising@FreeBSD.org
+
+  The mesa OpenGL library (graphics/mesa-libs) has been switched to use DRI3
+  by default, instead of the older DRI2 interface.  This might cause regressions
+  when using the legacy graphics drivers, either through
+  graphics/drm-legacy-kmod or the graphics drivers in base.
+  
+  If you experience issues when running OpenGL applications it is possible
+  to force the use of DRI2 by setting the LIBGL_DRI3_DISABLE environment
+  variable to 1 before starting any OpenGL application.  The easiest way to
+  do this is by adding it to either your shell startup files or .xinitrc.
+
 20200306
   AFFECTS: users of databases/mysql80-server
   AUTHOR: joneum@FreeBSD.org
