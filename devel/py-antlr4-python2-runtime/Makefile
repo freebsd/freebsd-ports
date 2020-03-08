@@ -11,6 +11,9 @@ COMMENT=	ANother Tool for Language Recognition (python2 runtime)
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses EoL python27, please use devel/antlr4-python3-runtime instead
+EXPIRATION_DATE=	2020-03-25
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
