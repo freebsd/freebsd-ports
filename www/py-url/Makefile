@@ -12,6 +12,9 @@ COMMENT=	URL parsing, sanitizing and normalizing
 
 LICENSE=	MIT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python:-3.6
