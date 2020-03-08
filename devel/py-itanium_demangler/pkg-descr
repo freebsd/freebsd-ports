@@ -1,0 +1,11 @@
+The Python Itanium Demangler is a pure Python parser for the Itanium C++ ABI
+symbol mangling language. Note that MSVC mangling language is not supported.
+
+This demangler generates an abstract syntax tree from mangled symbols, which
+can be used for directly extracting type information, as opposed to having
+to interpret the C++ source code corresponding to the demangled symbol.
+
+There is also a built-in AST stringifier, so the demangler can be used
+as a replacement for c++filt or for formatting backtraces.
+
+WWW: https://github.com/whitequark/python-itanium_demangler
