@@ -14,6 +14,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/apache-2.0.LICENSE
 LICENSE_FILE_CC0-1.0=	${WRKSRC}/cc0-1.0.LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nltk>=3.2:textproc/py-nltk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}url>=0.1.4:www/py-url@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fingerprints>=0.5.4:textproc/py-fingerprints@${PY_FLAVOR} \

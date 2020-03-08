@@ -13,6 +13,9 @@ COMMENT=	TCP stream/UDP/IP payload 'grep' utility
 
 LICENSE=	BSD4CLAUSE  # actually 3, but advertising clause is there
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pynids>=0:net/pynids@${PY_FLAVOR}
 
 USES=		python:2.7 shebangfix

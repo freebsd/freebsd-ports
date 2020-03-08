@@ -13,6 +13,9 @@ COMMENT=	Small tail workalike that performs output coloring
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7,run shebangfix tar:tgz
 
 SHEBANG_FILES=	${WRKSRC}/${PORTNAME}

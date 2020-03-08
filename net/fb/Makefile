@@ -11,6 +11,9 @@ COMMENT=	Client for paste.xinu.at
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyliblzma>0:archivers/py-pyliblzma@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycurl>0:ftp/py-pycurl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}

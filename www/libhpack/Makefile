@@ -15,6 +15,9 @@ COMMENT=	Implementation of HPACK (Header compression for HTTP/2.0)
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BROKEN_armv6=	fails to compile: Can't define TIME_MAX #'
 BROKEN_armv7=	fails to compile: Can't define TIME_MAX #'
 

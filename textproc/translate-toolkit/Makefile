@@ -11,6 +11,9 @@ COMMENT=	Converts between many translation formats
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	bash:shells/bash \
 		iso-codes>=1.3:misc/iso-codes \

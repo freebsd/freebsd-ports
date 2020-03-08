@@ -12,6 +12,9 @@ COMMENT=	Graphical client for the Gale instant messaging system
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw@${PY_FLAVOR}
 
 USES=		python:2.7 ssl

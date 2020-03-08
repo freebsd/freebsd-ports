@@ -12,6 +12,9 @@ COMMENT=	Library that provides the red-black balanced tree algorithm
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -15,6 +15,9 @@ COMMENT=	Comprehensive desktop publishing program (development version)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libboost_thread.so:devel/boost-libs \
 		libhunspell-1.7.so:textproc/hunspell \

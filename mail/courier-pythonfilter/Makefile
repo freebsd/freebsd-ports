@@ -10,6 +10,9 @@ MASTER_SITES=	http://phantom.dragonsdawn.net/~gordon/courier-patches/courier-pyt
 MAINTAINER=	bsd@dino.sk
 COMMENT=	Framework for courier filter development in python
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	courier-config:mail/courier
 
 USES=		python:2.7

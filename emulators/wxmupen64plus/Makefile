@@ -15,6 +15,9 @@ COMMENT=	Mupen64Plus 2.0 GUI frontend written using wxWidgets
 LICENSE=	GPLv2+ LGPL3+ CC-BY-SA-3.0 PD
 LICENSE_COMB=	multi
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
 RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-audio-sdl.so:emulators/mupen64plus-audio-sdl \

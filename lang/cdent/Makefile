@@ -10,6 +10,9 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Portable Module Programming Language
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/yaml/__init__.py:devel/py-yaml@${PY_FLAVOR}
 
 USES=		python:2.7

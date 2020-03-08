@@ -10,6 +10,9 @@ COMMENT=	Test for SMTP user enumeration,internal spoofing, and relay
 
 LICENSE=	MIT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7 shebangfix
 
 USE_GITHUB=	yes

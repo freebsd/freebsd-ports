@@ -10,6 +10,9 @@ COMMENT=	Web-interface based binary newsgrabber in python, with nzb support
 LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2+ ISCL MIT PSFL
 LICENSE_COMB=	multi
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	cheetah:devel/py-cheetah@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:devel/py-utils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}

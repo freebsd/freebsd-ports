@@ -13,6 +13,9 @@ COMMENT=	Web frontend for Seafile
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=0:www/py-django111@${PY_FLAVOR}
 
 RUN_DEPENDS=	bash:shells/bash \

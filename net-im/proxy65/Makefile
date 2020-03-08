@@ -10,6 +10,9 @@ COMMENT=	XEP-0065 SOCKS5 Bytestreams external component for Jabber
 
 LICENSE=	MIT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}

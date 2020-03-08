@@ -13,6 +13,9 @@ COMMENT=	Open source digital jukebox
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	mplayer:multimedia/mplayer \
 		mencoder:multimedia/mencoder \
 		aumix:audio/aumix \

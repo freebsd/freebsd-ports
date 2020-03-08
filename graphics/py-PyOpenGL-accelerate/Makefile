@@ -14,6 +14,9 @@ COMMENT=	OpenGL acceleration code for PyOpenGL
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 

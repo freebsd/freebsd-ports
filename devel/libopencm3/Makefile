@@ -10,6 +10,9 @@ COMMENT=	LGPLv3 Cortex-M0/M3/M4 runtime library
 
 LICENSE=	LGPL3
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${LOCALBASE}/gcc-arm-embedded-${TOOLCHAIN_FULL_VERSION}/bin/arm-none-eabi-gcc:devel/gcc-arm-embedded
 
 USE_GITHUB=	yes

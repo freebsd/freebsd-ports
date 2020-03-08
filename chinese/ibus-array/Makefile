@@ -10,6 +10,9 @@ COMMENT=	Array 30 input method for IBus
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	ibus-daemon:textproc/ibus
 RUN_DEPENDS=	ibus-daemon:textproc/ibus
 

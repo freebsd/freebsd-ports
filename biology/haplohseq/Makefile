@@ -11,6 +11,9 @@ COMMENT=	Identify regions of allelic imbalance
 
 LICENSE=	MIT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 RUN_DEPENDS=	R-cran-optparse>0:devel/R-cran-optparse
 

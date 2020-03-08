@@ -14,6 +14,9 @@ COMMENT=	Postgresql.conf tuning tips based on hardware and load type
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7,run shebangfix
 SHEBANG_FILES=	${PORTNAME}
 NO_BUILD=	yes

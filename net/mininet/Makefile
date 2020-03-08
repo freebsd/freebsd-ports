@@ -12,6 +12,9 @@ COMMENT=	Emulator for rapid prototyping of software defined networks
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	help2man>=0:misc/help2man
 RUN_DEPENDS=	iperf>=0:benchmarks/iperf \
 		openvswitch>=0:net/openvswitch \

@@ -13,6 +13,9 @@ COMMENT=	Python binding for Subversion
 LICENSE=	APACHE11
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libneon.so:www/neon \
 		libexpat.so:textproc/expat2

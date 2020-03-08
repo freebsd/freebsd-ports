@@ -12,6 +12,9 @@ COMMENT=	Issue-Tracking System for Knowledge Workers
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		cpe gettext python:2.7
 CPE_VENDOR=	roundup-tracker
 USE_PYTHON=	distutils

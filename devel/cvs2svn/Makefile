@@ -11,6 +11,9 @@ MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/49543/ \
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	CVS to Subversion Repository Converter
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm@${PY_FLAVOR} \
 		cvs:devel/cvs

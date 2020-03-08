@@ -12,6 +12,9 @@ COMMENT=	POP3/IMAP4 mail retriever with Maildir and command delivery
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7
 USE_PYTHON=	distutils
 

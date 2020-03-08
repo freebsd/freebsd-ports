@@ -14,6 +14,9 @@ COMMENT=	Web Offer One File, an ad-hoc single file webserver
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7,run shebangfix
 SHEBANG_FILES=	${DISTFILES}
 NO_BUILD=	yes

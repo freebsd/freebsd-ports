@@ -9,6 +9,9 @@ COMMENT=	WebP image loader plugin for GdkPixbuf2
 
 LICENSE=	LGPL20+
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libwebp.so:graphics/webp
 
 USES=		gnome perl5 pkgconfig python:2.7,build waf

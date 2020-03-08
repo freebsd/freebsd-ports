@@ -13,6 +13,9 @@ COMMENT=	Python bindings for the compizconfig library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	\
 	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz \
 	${LOCALBASE}/libdata/pkgconfig/libcompizconfig.pc:x11-wm/libcompizconfig \

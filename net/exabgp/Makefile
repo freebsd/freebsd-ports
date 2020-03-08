@@ -14,6 +14,9 @@ COMMENT=	BGP engine and route injector
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PY_IPADDRESS}
 
 USES=		python:2.7

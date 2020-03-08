@@ -13,6 +13,9 @@ COMMENT=	FLExible Network Tester
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	fping>0:net/fping \
 		iperf>0:benchmarks/iperf \
 		netperf>0:benchmarks/netperf

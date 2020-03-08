@@ -11,6 +11,9 @@ DISTNAME=	Pyjamas-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Port of Google Web Toolkit to Python
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 # install/require some libraries in sys.prefix
 USES=		python:2.7 shebangfix
 SHEBANG_FILES=	examples/dynamictable/testjsonservice.py \

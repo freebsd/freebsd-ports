@@ -11,6 +11,9 @@ COMMENT=	FreeBSD Automated Release Bot
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>=0:devel/py-zconfig@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>=0:devel/py-zconfig@${PY_FLAVOR}
 

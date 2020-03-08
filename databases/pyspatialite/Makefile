@@ -15,6 +15,9 @@ COMMENT=	DB-API 2.0 interface for SQLite 3.x with Spatialite
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libspatialite.so:databases/spatialite \
 		libgeos_c.so:graphics/geos \
 		libproj.so:graphics/proj \

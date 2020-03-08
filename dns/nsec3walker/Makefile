@@ -9,6 +9,9 @@ MASTER_SITES=	https://dnscurve.org/
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Walk NSEC3 secured DNSSEC zones
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${PY_FLAVOR} \
 		dig:dns/bind-tools
 

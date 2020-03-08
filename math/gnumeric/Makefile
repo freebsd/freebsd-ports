@@ -13,6 +13,9 @@ COMMENT=	GNOME spreadsheet program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		ginstall:sysutils/coreutils
 LIB_DEPENDS=	libgoffice-0.10.so:devel/goffice \

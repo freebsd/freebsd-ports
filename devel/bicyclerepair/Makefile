@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MAINTAINER=	mwm@mired.org
 COMMENT=	Python refactoring tool
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7
 USE_PYTHON=	distutils
 

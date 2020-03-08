@@ -11,6 +11,9 @@ COMMENT=	Ebook management application
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
 		libwmflite.so:graphics/libwmf \

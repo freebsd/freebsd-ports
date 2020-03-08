@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.freebsdcluster.org/~mich/software/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Quick display of FreeBSD port descriptions
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${PY_FLAVOR}
 
 USES=		python:2.7 shebangfix zip

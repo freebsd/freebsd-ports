@@ -14,6 +14,9 @@ COMMENT=	Creates movies out of your pictures
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 RUN_DEPENDS=	mencoder:multimedia/mencoder \
 		mplayer:multimedia/mplayer

@@ -11,6 +11,9 @@ COMMENT=	Highly-scalable, low-latency language server for C/C++/Objective-C
 
 LICENSE=	MIT
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_DEFAULT}
 

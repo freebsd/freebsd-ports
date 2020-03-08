@@ -10,6 +10,9 @@ CATEGORIES=	mail python
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Script for cleaning up mails in Maildir folders based on arival date
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graph-core>=${PORTVERSION}:graphics/py-graph-core@${PY_FLAVOR}
 
 USES=		python:2.7 shebangfix

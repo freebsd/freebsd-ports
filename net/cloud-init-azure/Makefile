@@ -14,6 +14,9 @@ COMMENT=	Init scripts for use on cloud images
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	dmidecode>0:sysutils/dmidecode \
 		e2fsprogs>0:sysutils/e2fsprogs \
 		${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto@${PY_FLAVOR} \

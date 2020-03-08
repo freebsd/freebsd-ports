@@ -12,6 +12,9 @@ COMMENT=	GUI for Mercurial VCS
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	hg:devel/mercurial
 RUN_DEPENDS=	hg:devel/mercurial \
 		${PYTHON_PKGNAMEPREFIX}iniparse>=0.4:devel/py-iniparse@${PY_FLAVOR} \

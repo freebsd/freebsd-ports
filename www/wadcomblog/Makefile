@@ -10,6 +10,9 @@ MASTER_SITES=	http://laffaye.free.fr/distfiles/ \
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Simple open-source static blog engine written in Python
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7
 USE_PYTHON=	distutils
 OPTIONS_DEFINE=	DOCS EXAMPLES

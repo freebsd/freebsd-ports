@@ -12,6 +12,9 @@ COMMENT=	Text-based front end for Dynamips development version
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.4.0:devel/py-configobj@${PY_FLAVOR} \
 		dynamips:emulators/dynamips-community
 

@@ -15,6 +15,9 @@ LICENSE_NAME=	TundraWare license
 LICENSE_FILE=	${WRKSRC}/waccess-license.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell no-auto-accept
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7,run shebangfix
 SHEBANG_FILES=	waccess
 NO_ARCH=	yes

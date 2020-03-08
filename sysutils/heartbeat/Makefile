@@ -16,6 +16,9 @@ COMMENT=	Subsystem for High-Availability Clustering
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libgnutls.so:security/gnutls \
 		libnet.so:net/libnet \

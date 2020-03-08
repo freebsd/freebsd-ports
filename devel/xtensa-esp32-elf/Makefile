@@ -38,6 +38,9 @@ COMMENT=	Espressif ESP32 toolchain
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BROKEN_armv6=		fails to build: failed in step 'Installing pass-2 core C gcc compiler'
 BROKEN_armv7=		fails to build: failed in step 'Installing pass-2 core C gcc compiler'
 BROKEN_powerpc64=	fails to build: [ERROR] collect2: error: ld returned 1 exit status

@@ -15,6 +15,9 @@ LICENSE_NAME=	TundraWare license
 LICENSE_FILE=	${WRKSRC}/tsshbatch-license.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell no-auto-accept
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:security/py-paramiko@${PY_FLAVOR}
 
 USES=		python:2.7,run shebangfix

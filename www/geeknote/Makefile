@@ -11,6 +11,9 @@ COMMENT=	Command line client for Evernote
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}evernote>=1.17:www/py-evernote@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html2text2018>0:textproc/py-html2text2018@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10@${PY_FLAVOR} \

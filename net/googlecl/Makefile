@@ -12,6 +12,9 @@ COMMENT=	Command line tools for the Google Data APIs
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/License
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>0:devel/py-gdata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oauth2client>0:security/py-oauth2client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httplib2>0:www/py-httplib2@${PY_FLAVOR}

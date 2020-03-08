@@ -15,6 +15,9 @@ COMMENT=	Terminal status monitor for Tor
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USE_PYTHON=	distutils
 USES=		python:2.7 shebangfix tar:bzip2
 SHEBANG_FILES=	src/resources/torrcOverride/override.py

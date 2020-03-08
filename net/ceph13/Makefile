@@ -13,6 +13,9 @@ COMMENT=	Ceph delivers object, block, and file storage in a unified system
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	dual
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 # even though i386 will build, it is not really advised.
 ONLY_FOR_ARCHS=	amd64
 

@@ -14,6 +14,9 @@ COMMENT=	Local/remote mirroring+incremental backup
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 LIB_DEPENDS=	librsync.so:net/librsync2
 
 CONFLICTS=	rdiff-backup-devel-[0-9]* rdiff-backup-1.0*

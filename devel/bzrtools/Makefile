@@ -12,6 +12,9 @@ COMMENT=	Extensions to devel/bzr
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	bzr:devel/bzr
 
 OPTIONS_DEFINE=	GRAPHVIZ RSYNC

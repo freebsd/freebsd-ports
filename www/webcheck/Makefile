@@ -13,6 +13,9 @@ COMMENT=	View structure of a web site, get a list of problems like broken links
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 USES=		python:2.7 shebangfix
 SHEBANG_FILES=	webcheck.py
 NO_BUILD=	yes

@@ -12,6 +12,9 @@ COMMENT=	Open source solution for stenography
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlib>=0:x11-toolkits/py-xlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}serial>=0:comms/py-serial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lockfile>=0:devel/py-lockfile@${PY_FLAVOR}

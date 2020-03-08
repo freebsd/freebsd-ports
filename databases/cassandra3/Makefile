@@ -16,6 +16,9 @@ COMMENT=	Highly scalable distributed database
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 RUN_DEPENDS=	snappyjava>=0:archivers/snappy-java
 
 USES=		python:2.7
