@@ -1,0 +1,13 @@
+--- jdk/make/java/instrument/Makefile.orig	2020-03-01 17:52:15.797379000 -0800
++++ jdk/make/java/instrument/Makefile	2020-03-01 18:45:55.324964000 -0800
+@@ -117,8 +117,8 @@
+     LDFLAGS += -Wl,--no-whole-archive
+     ifneq ($(OS_NAME), netbsd)
+ # Use CPPFLAGS instead of OTHER_INCLUDES to force this last
+-      CPPFLAGS += -I$(PACKAGE_PATH)/include
+-      OTHER_LDLIBS += -L$(PACKAGE_PATH)/lib -liconv
++      CPPFLAGS += %%ICONV_CPPFLAGS%%
++      OTHER_LDLIBS += %%ICONV_LDFLAGS%%
+     endif
+   endif
+ 

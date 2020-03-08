@@ -2,49 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk
-PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
+PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER}.${BSD_JDK_VERSION}
 PORTEPOCH=	1
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
-		http://download.java.net/jaxp/1.4.5/:jaxp \
-		http://icedtea.classpath.org/download/drops/:jaxp \
-		http://download.java.net/glassfish/components/jax-ws/openjdk/jdk7/:jaxws \
-		http://icedtea.classpath.org/download/drops/:jaxws \
-		https://java.net/downloads/jax-ws/JDK7/:jaf \
-		http://icedtea.classpath.org/download/drops/:jaf \
-		APACHE/ant/binaries/:ant
-PATCH_SITES=	LOCAL/glewis/openjdk7
-DISTFILES=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
-		${ANT_DISTFILE}${EXTRACT_SUFX}:ant
-EXTRACT_ONLY=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
-		${ANT_DISTFILE}${EXTRACT_SUFX}
-PATCHFILES=	patch-7u45-b30.xz \
-		patch-7u51-b30.xz \
-		patch-7u55-b31.xz \
-		patch-7u60-b30.xz \
-		patch-7u65-b31.xz \
-		patch-7u71-b14.xz \
-		patch-7u76-b31.xz \
-		patch-7u80-b32.xz \
-		patch-7u85-b02.xz \
-		patch-7u91-b02.xz \
-		patch-7u95-b00.xz \
-		patch-7u101-b00.xz \
-		patch-7u111-b01.xz \
-		patch-7u121-b00.xz \
-		patch-7u131-b00.xz \
-		patch-7u141-b02.xz \
-		patch-7u151-b01.xz \
-		patch-7u161-b01.xz
+MASTER_SITES=	APACHE/ant/binaries/:ant
+DISTFILES=	${ANT_DISTFILE}${EXTRACT_SUFX}:ant
 
-MAINTAINER?=	glewis@FreeBSD.org
-COMMENT?=	Java Development Kit 7
+MAINTAINER=	glewis@FreeBSD.org
+COMMENT=	Java Development Kit 7
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_GITHUB=	yes
+GH_ACCOUNT=	battleblow
+GH_PROJECT=	jdk7u
+GH_TAGNAME=	jdk${JDK_MAJOR_VERSION}u${JDK_UPDATE_VERSION}-b${JDK_BUILD_NUMBER}.${BSD_JDK_VERSION}
 
-USES=		compiler dos2unix iconv gmake zip
+USES=		compiler dos2unix iconv gmake
 # Even when not building with X11 support, openjdk7 requires Xrender, X11, and
 # Xt headers.
 X11_BUILD_DEPENDS_OFF+=	${LOCALBASE}/libdata/pkgconfig/x11.pc:x11/libX11
@@ -78,16 +52,15 @@ JAVAVMS_COMMENT+=	JRE
 INSTALLDIR=	${PREFIX}/${PORTNAME}${JDK_MAJOR_VERSION}-jre
 .endif
 
-PORT_MINOR_VERSION=	161
-PORT_BUILD_NUMBER=	01
 JDK_MAJOR_VERSION=	7
-JDK_MINOR_VERSION=	40
-JDK_BUILD_NUMBER=	43
-JDK_BUILD_DATE=		26_aug_2013
-JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
+JDK_UPDATE_VERSION=	251
+JDK_BUILD_NUMBER=	02
+BSD_JDK_VERSION=	1
 
-# Use our own version of ant to avoid circular dependencies
-ANT_VERSION=		1.9.7
+# Use our own version of ant because
+# a) this allows us to avoid circular dependencies
+# b) ant 10.x requires jdk 8+
+ANT_VERSION=		1.9.14
 ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
 
 LIB_DEPENDS+=	libasound.so:audio/alsa-lib \
@@ -130,9 +103,9 @@ MAKE_ENV+=	JAVA_HOME="" \
 		SKIP_DEBUG_BUILD="true" \
 		ZIP_DEBUGINFO_FILES=0 \
 		ENABLE_FULL_DEBUG_SYMBOLS=0 \
-		PTHREAD_LIBS="-lpthread" \
+		PTHREAD_LIBS="-pthread" \
 		MILESTONE="fcs" \
-		JDK_MICRO_VERSION="0_${PORT_MINOR_VERSION}" \
+		JDK_MICRO_VERSION="0_${JDK_UPDATE_VERSION}" \
 		BUILD_NUMBER="b${PORT_BUILD_NUMBER}"
 
 MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${MAKE_JOBS_NUMBER}
@@ -173,20 +146,21 @@ MAKE_ENV+=	USE_PRECOMPILED_HEADER=0
 .endif
 
 .if empty(ICONV_LIB)
-MAKE_ENV+=	EXTRA_CFLAGS=-DLIBICONV_PLUG
+ICONV_CPPFLAGS= -DLIBICONV_PLUG
+.else
+ICONV_CPPFLAGS= -I${LOCALBASE}/include
+ICONV_LDFLAGS=  -L${LOCALBASE}/lib ${ICONV_LIB}
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
 		${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp \
-		${WRKSRC}/jdk/src/share/classes/sun/print/PSPrinterJob.java
-.if empty(ICONV_LIB)
-	@${REINPLACE_CMD} 's| -liconv||' \
-		${WRKSRC}/Makefile \
+		${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java
+	@${REINPLACE_CMD} -e 's|%%ICONV_CPPFLAGS%%|${ICONV_CPPFLAGS}|' \
+		-e 's|%%ICONV_LDFLAGS%%|${ICONV_LDFLAGS}|' \
 		${WRKSRC}/jdk/make/sun/splashscreen/Makefile \
 		${WRKSRC}/jdk/make/java/npt/Makefile \
 		${WRKSRC}/jdk/make/java/instrument/Makefile
-.endif
 
 .if ${PORT_OPTIONS:MTZUPDATE}
 pre-install:

@@ -1,0 +1,13 @@
+--- jdk/make/sun/splashscreen/Makefile.orig	2020-03-01 18:41:52.052960000 -0800
++++ jdk/make/sun/splashscreen/Makefile	2020-03-01 18:46:07.203955000 -0800
+@@ -93,8 +93,8 @@
+     ifeq ($(OS_NAME), netbsd)
+       OTHER_LDLIBS += -Wl,-R$(OPENWIN_LIB)
+     else
+-      CPPFLAGS += -I$(PACKAGE_PATH)/include
+-      OTHER_LDLIBS += -L$(PACKAGE_PATH)/lib -liconv
++      CPPFLAGS += %%ICONV_CPPFLAGS%%
++      OTHER_LDLIBS += %%ICONV_LDFLAGS%%
+     endif
+     CPPFLAGS += -I$(OPENWIN_HOME)/include -I$(OPENWIN_HOME)/include/X11/extensions
+     OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext $(LIBM) -lpthread
