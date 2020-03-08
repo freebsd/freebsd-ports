@@ -2,6 +2,7 @@
 
 PORTNAME=	claripy
 DISTVERSION=	8.20.1.7
+PORTREVISION=	1
 CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>0:devel/py-cachetools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PySMT>0:math/py-PySMT@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysmt>0:math/py-pysmt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}z3-solver>4.8.5.0:math/py-z3-solver@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		z3>4.8.5.0:math/z3
