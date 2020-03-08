@@ -53,7 +53,7 @@ GFLAGS_CMAKE_BOOL=	GFLAGS
 OPENMP_USES=		compiler:openmp
 OPENMP_CMAKE_BOOL=	OPENMP
 .if !exists(/usr/include/omp.h)
-# XXX ports/199603 + ports/210337
+# XXX ports/199603: LLVM openmp in base doesn't support aarch64, armv6, armv7 yet
 OPENMP_VARS=		OPENMP=gcc-
 .endif
 
