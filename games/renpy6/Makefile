@@ -10,6 +10,9 @@ MASTERDIR=	${.CURDIR}/../renpy
 PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-08-15
+
 PORTSCOUT=	limit:^6\.18\.*
 
 BUILD_DEPENDS=	${PYGAME}
