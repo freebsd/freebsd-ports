@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hastmon
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	trociny@FreeBSD.org
