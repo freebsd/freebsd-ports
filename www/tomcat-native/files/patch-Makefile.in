@@ -23,7 +23,7 @@
 -	$(APR_MKDIR) $(DESTDIR)$(includedir) $(DESTDIR)$(libdir)/pkgconfig \
 -		     $(DESTDIR)$(libdir) $(DESTDIR)$(bindir)
 -	$(INSTALL_DATA) tcnative.pc $(DESTDIR)$(libdir)/pkgconfig/$(TCNATIVE_PCFILE)
--	$(INSTALL_DATA) include/*.h $(DESTDIR)$(includedir)
+-	$(INSTALL_DATA) $(srcdir)/include/*.h $(DESTDIR)$(includedir)
 -	list='$(INSTALL_SUBDIRS)'; for i in $$list; do \
 -		( cd $$i ; $(MAKE) DESTDIR=$(DESTDIR) install ); \
 -	done

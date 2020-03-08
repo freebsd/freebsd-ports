@@ -1,6 +1,17 @@
---- src/ssl.c.orig	2017-01-23 08:26:47 UTC
+--- src/ssl.c.orig	2019-06-26 11:12:00 UTC
 +++ src/ssl.c
-@@ -428,6 +428,8 @@ static unsigned long ssl_thread_id(void)
+@@ -24,6 +24,10 @@
+ #include <sys/syscall.h>
+ #endif
+ 
++#ifdef __FreeBSD__
++#include <pthread_np.h>
++#endif
++
+ #ifdef HAVE_OPENSSL
+ #include "ssl_private.h"
+ 
+@@ -472,6 +476,8 @@ static unsigned long ssl_thread_id(void)
      uint64_t tid;
      pthread_threadid_np(NULL, &tid);
      return (unsigned long)tid;
