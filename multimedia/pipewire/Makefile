@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pipewire
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
