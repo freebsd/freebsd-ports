@@ -14473,3 +14473,4 @@ devel/py-hgsubversion||2020-03-08|Has expired: Unmaintained, uses EOLed python27
 devel/py-gamin||2020-03-08|Has expired: Old, uses EOLed python27
 math/py-PySMT|math/py-pysmt|2020-03-08|Rename as recommended by the Python team
 net-p2p/py-libtorrent-rasterbar11|net-p2p/py-libtorrent-rasterbar|2020-03-08|net-p2p/py-libtorrent-rasterbar now isn't broken
+net-p2p/libtorrent-rasterbar11|net-p2p/libtorrent-rasterbar|2020-03-08|net-p2p/libtorrent-rasterbar11 is not used
