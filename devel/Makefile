@@ -4480,6 +4480,7 @@
     SUBDIR += py-iso8601
     SUBDIR += py-isodate
     SUBDIR += py-isort
+    SUBDIR += py-itanium_demangler
     SUBDIR += py-iterpipes
     SUBDIR += py-itypes
     SUBDIR += py-jaraco
