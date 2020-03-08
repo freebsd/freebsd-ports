@@ -1,4 +1,4 @@
---- build.xml.orig	2019-10-24 16:42:10 UTC
+--- build.xml.orig	2020-02-10 22:55:14 UTC
 +++ build.xml
 @@ -23,6 +23,7 @@
      <property file="build.properties" />
@@ -7,8 +7,8 @@
 +    <property name="pycmd" value="python"/>
  
      <!-- default version and SCM information -->
-     <property name="base.version" value="3.11.5"/>
-@@ -78,14 +79,14 @@
+     <property name="base.version" value="3.11.6"/>
+@@ -80,14 +81,14 @@
      <condition property="version" value="${base.version}">
        <isset property="release"/>
      </condition>
@@ -25,7 +25,7 @@
      <property name="maven-ant-tasks.url"
                value="https://repo.maven.apache.org/maven2/org/apache/maven/maven-ant-tasks" />
      <!-- details of how and which Maven repository we publish to -->
-@@ -244,8 +245,7 @@
+@@ -246,8 +247,7 @@
          <artifact:dependencies pathId="wikitext.classpath">
              <dependency groupId="com.datastax.wikitext" artifactId="wikitext-core-ant" version="1.3"/>
              <dependency groupId="org.fusesource.wikitext" artifactId="textile-core" version="1.3"/>
@@ -35,7 +35,7 @@
          </artifact:dependencies>
          <taskdef classpathref="wikitext.classpath" resource="wikitexttasks.properties" />
          <wikitext-to-html markupLanguage="Textile">
-@@ -258,6 +258,7 @@
+@@ -260,6 +260,7 @@
      <target name="gen-doc" depends="maven-ant-tasks-init" description="Generate documentation">
          <exec executable="make" osfamily="unix" dir="${doc.dir}">
              <arg value="html"/>
@@ -43,7 +43,7 @@
          </exec>
          <exec executable="cmd" osfamily="dos" dir="${doc.dir}">
              <arg value="/c"/>
-@@ -300,10 +301,6 @@
+@@ -302,10 +303,6 @@
              description="Initialize Maven ANT Tasks">
        <typedef uri="antlib:org.apache.maven.artifact.ant" classpathref="maven-ant-tasks.classpath" />
  
@@ -54,7 +54,7 @@
        <macrodef name="install">
          <attribute name="pomFile"/>
          <attribute name="file"/>
-@@ -682,16 +679,14 @@
+@@ -695,16 +692,14 @@
                               filesetId="build-dependency-jars"
                               cacheDependencyRefs="true"
                               dependencyRefsBuildFile="${build.dir}/build-dependencies.xml">
@@ -73,7 +73,7 @@
        </artifact:dependencies>
        <copy todir="${build.dir.lib}/jars">
            <fileset refid="build-dependency-jars"/>
-@@ -704,7 +699,7 @@
+@@ -717,7 +712,7 @@
        <!-- code coverage tools -->
        <artifact:dependencies pomRefId="coverage-deps-pom"
                               filesetId="coverage-dependency-jars">
@@ -82,7 +82,7 @@
        </artifact:dependencies>
        <copy todir="${build.dir.lib}/jars">
            <fileset refid="coverage-dependency-jars"/>
-@@ -725,8 +720,7 @@
+@@ -738,8 +733,7 @@
                               sourcesFilesetId="test-dependency-sources"
                               cacheDependencyRefs="true"
                               dependencyRefsBuildFile="${build.dir}/test-dependencies.xml">
@@ -92,7 +92,7 @@
        </artifact:dependencies>
        <copy todir="${test.lib}/jars">
          <fileset refid="test-dependency-jars"/>
-@@ -1021,6 +1015,88 @@
+@@ -1034,6 +1028,88 @@
        </jar>
      </target>
  
@@ -181,7 +181,7 @@
      <!-- creates release tarballs -->
      <target name="artifacts" depends="jar,javadoc,gen-doc"
              description="Create Cassandra release artifacts">
-@@ -1771,8 +1847,8 @@
+@@ -1776,8 +1852,8 @@
      <exec executable="nproc" outputproperty="cores.count" os="Linux,SunOS,Solaris" failifexecutionfails="false">
        <arg value="--all"/>
      </exec>
@@ -192,7 +192,7 @@
        <arg value="-n"/>
        <arg value="hw.ncpu"/>
      </exec>
-@@ -1792,6 +1868,11 @@
+@@ -1797,6 +1873,11 @@
      <exec executable="sysctl" outputproperty="mem.size" os="Mac,Mac OS X,Darwin" failifexecutionfails="false">
        <arg value="-n"/>
        <arg value="hw.memsize"/>
