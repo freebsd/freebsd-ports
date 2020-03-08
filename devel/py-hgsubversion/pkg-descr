@@ -1,9 +1,0 @@
-hgsubversion is an extension for Mercurial that allows using Mercurial
-as a Subversion client.
-
-At this point, hgsubversion is usable by users reasonably familiar with
-Mercurial as a VCS. It's not recommended to dive into hgsubversion as an
-introduction to Mercurial, since hgsubversion "bends the rules" a little
-and violates some of the typical assumptions of early Mercurial users.
-
-WWW: https://bitbucket.org/durin42/hgsubversion
