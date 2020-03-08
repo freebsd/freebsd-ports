@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	PySMT
+PORTNAME=	pysmt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
 CATEGORIES=	math python
@@ -18,9 +18,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 # Supported Python versions: 2.7,3.5+
 USES=		python
 USE_GITHUB=	yes
-GH_ACCOUNT=	pysmt
-GH_PROJECT=	pysmt
 USE_PYTHON=	autoplist concurrent distutils
+PYDISTUTILS_PKGNAME=	PySMT
 
 NO_ARCH=	yes
 
