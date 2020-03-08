@@ -17,12 +17,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-CONFLICTS_INSTALL=	imlib2-webp
-
+USES=		libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig tar:bzip2
 
 CONFIGURE_ARGS=	--enable-visibility-hiding --disable-static \
 		--with-zlib --with-bzip2
@@ -30,37 +28,33 @@ CONFIGURE_ENV=	ac_cv_lib_dl_dlopen=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	JPEG PNG TIFF GIF ID3 X11 WEBP
-OPTIONS_DEFAULT=	JPEG PNG TIFF GIF ID3 X11 WEBP
+CONFLICTS_INSTALL=	imlib2-webp
+
+OPTIONS_DEFINE=		GIF ID3 JPEG PNG TIFF WEBP X11
+OPTIONS_DEFAULT=	GIF ID3 JPEG PNG TIFF WEBP X11
 OPTIONS_SUB=	yes
 
-X11_USES=		xorg
-X11_USE=		XORG=x11,sm,xcb,xext
-X11_CONFIGURE_ON=	--with-x --with-x-shm-fd
-X11_CONFIGURE_OFF=	--without-x --without-x-shm-fd
-
-JPEG_USES=		jpeg
-JPEG_CONFIGURE_ON=	--with-jpeg
-JPEG_CONFIGURE_OFF=	--without-jpeg
-
-PNG_LIB_DEPENDS=	libpng.so:graphics/png
-PNG_CONFIGURE_ON=	--with-png
-PNG_CONFIGURE_OFF=	--without-png
-
-TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
-TIFF_CONFIGURE_ON=	--with-tiff
-TIFF_CONFIGURE_OFF=	--without-tiff
-
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
-GIF_CONFIGURE_ON=	--with-gif
-GIF_CONFIGURE_OFF=	--without-gif
+GIF_CONFIGURE_WITH=	gif
 
 ID3_LIB_DEPENDS=	libid3tag.so:audio/libid3tag
-ID3_CONFIGURE_ON=	--with-id3
-ID3_CONFIGURE_OFF=	--without-id3
+ID3_CONFIGURE_WITH=	id3
+
+JPEG_USES=		jpeg
+JPEG_CONFIGURE_WITH=	jpeg
+
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_CONFIGURE_WITH=	png
+
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+TIFF_CONFIGURE_WITH=	tiff
 
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CONFIGURE_WITH=	webp
+
+X11_USES=		xorg
+X11_USE=		XORG=x11,sm,xcb,xext
+X11_CONFIGURE_WITH=	x x-shm-fd
 
 .include <bsd.port.options.mk>
 
