@@ -73,7 +73,7 @@ include/libopenshot/effects/Saturation.h
 include/libopenshot/effects/Shift.h
 include/libopenshot/effects/Wave.h
 lib/libopenshot.so
-lib/libopenshot.so.0.2.4
-lib/libopenshot.so.18
+lib/libopenshot.so.0.2.5
+lib/libopenshot.so.19
 %%PYTHON_SITELIBDIR%%/_openshot.so
 %%PYTHON_SITELIBDIR%%/openshot.py
