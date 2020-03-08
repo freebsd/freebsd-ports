@@ -1746,6 +1746,7 @@
     SUBDIR += texi2html
     SUBDIR += texi2mdoc
     SUBDIR += textogif
+    SUBDIR += textql
     SUBDIR += the_silver_searcher
     SUBDIR += ti-hunspell
     SUBDIR += tidyp
