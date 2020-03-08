@@ -723,7 +723,6 @@
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
-    SUBDIR += shout-idjc
     SUBDIR += sidplay
     SUBDIR += sidplay2
     SUBDIR += sidplayer
