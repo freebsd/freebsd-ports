@@ -11,6 +11,9 @@ COMMENT=	Emacs lisp library for GraphQL web services
 
 LICENSE=	GPLv3+
 
+DEPRECATED=	No longer required by anything
+EXPIRATION_DATE=	2020-05-31
+
 USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	vermiculus
