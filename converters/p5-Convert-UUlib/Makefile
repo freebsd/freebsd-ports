@@ -22,6 +22,7 @@ BUILD_DEPENDS=	p5-Canary-Stability>=0:devel/p5-Canary-Stability \
 RUN_DEPENDS=	p5-common-sense>=3.74:devel/p5-common-sense
 
 USES=		perl5
+USE_CSTD=	c99
 USE_PERL5=	configure
 
 post-install:
