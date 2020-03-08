@@ -183,6 +183,7 @@
     SUBDIR += libxshmfence
     SUBDIR += lightdm
     SUBDIR += lightdm-gtk-greeter
+    SUBDIR += lightdm-gtk-greeter-settings
     SUBDIR += lilyterm
     SUBDIR += linux-c7-libxkbcommon
     SUBDIR += linux-c7-pixman
