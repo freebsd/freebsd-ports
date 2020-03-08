@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imlib2
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.1
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	SF/enlightenment/imlib2-src/${PORTVERSION}
@@ -17,6 +17,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
+CONFLICTS_INSTALL=	imlib2-webp
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -28,8 +30,8 @@ CONFIGURE_ENV=	ac_cv_lib_dl_dlopen=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	JPEG PNG TIFF GIF ID3 X11
-OPTIONS_DEFAULT=	JPEG PNG TIFF GIF ID3 X11
+OPTIONS_DEFINE=	JPEG PNG TIFF GIF ID3 X11 WEBP
+OPTIONS_DEFAULT=	JPEG PNG TIFF GIF ID3 X11 WEBP
 OPTIONS_SUB=	yes
 
 X11_USES=		xorg
@@ -57,6 +59,9 @@ ID3_LIB_DEPENDS=	libid3tag.so:audio/libid3tag
 ID3_CONFIGURE_ON=	--with-id3
 ID3_CONFIGURE_OFF=	--without-id3
 
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
+WEBP_CONFIGURE_WITH=	webp
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386" && !empty(MACHINE_CPU:Mmmx)
@@ -70,11 +75,5 @@ CONFIGURE_ARGS+=	--enable-amd64
 .else
 CONFIGURE_ARGS+=	--disable-amd64
 .endif
-
-post-patch-X11-off:
-	@${REINPLACE_CMD} -e '/MY_LIBS =/s/-lXext -lX11//' \
-		${WRKSRC}/src/lib/Makefile.in
-	@${REINPLACE_CMD} -e '/#ifndef X_DISPLAY_MISSING/,/#endif/ d' \
-		${WRKSRC}/src/lib/Imlib2.h
 
 .include <bsd.port.mk>
