@@ -9,38 +9,6 @@
  endif
  endif
  endif
---- pr/tests/Makefile.in.orig	2019-10-15 14:21:38 UTC
-+++ pr/tests/Makefile.in
-@@ -442,17 +442,18 @@ endif
- ALWAYS:
- 
- runtests:: $(PROGS) ALWAYS
--	@$(ECHO) "\nNSPR Test Results - $(OBJDIR)\n"
--	@$(ECHO) "BEGIN\t\t\t`date`"
--	@$(ECHO) "NSPR_TEST_LOGFILE\t$(LOGFILE)\n"
--	@$(ECHO) "Test\t\t\tResult\n"
-+	@$(ECHO) "NSPR Test Results - $(OBJDIR)"
-+	@$(ECHO) "BEGIN			`date`"
-+	@$(ECHO) "Test			Result"
- 	@cd $(OBJDIR); for i in $(PROGRAMS); do					\
--	$(ECHO) "$$i\c";										\
--	./$$i >> $(LOGFILE) 2>&1 ;								\
-+	printf "$$i";										\
-+	./$$i > $$i.output 2>&1;								\
- 	if  [ 0 = $$? ] ; then									\
--		$(ECHO) "\t\t\tPassed";								\
--	else													\
--		$(ECHO) "\t\t\tFAILED";								\
--	fi;														\
-+		$(ECHO) "			Passed";					\
-+		rm $$i.output;									\
-+	else											\
-+		$(ECHO) "			FAILED";					\
-+		cat $$i.output;									\
-+	fi;											\
- 	done
--	@$(ECHO) "\nEND\t\t`date`\n"
-+	@$(ECHO) "END		`date`"
 --- pr/tests/cleanup.c.orig	2019-10-15 14:21:38 UTC
 +++ pr/tests/cleanup.c
 @@ -15,7 +15,7 @@
@@ -1042,51 +1010,9 @@
              programName, writesMin, writesTot * 1000 / durationTot, writesMax);
  
      PR_DestroyCondVar(cv);
---- pr/tests/runtests.sh.orig	2019-08-19 14:12:12 UTC
-+++ pr/tests/runtests.sh
-@@ -56,9 +56,6 @@ fi
- # Tests not run (but should)
- #
- 
--#forktest (failed on IRIX)
--#nbconn - fails on some platforms 
--#poll_er - fails on some platforms? limited use?
- #prpoll -  the bad-FD test needs to be moved to a different test
- #sleep	-  specific to OS/2
- 
-@@ -91,6 +88,7 @@ exit
- fdcach
- fileio
- foreign
-+forktest
- formattm
- fsync
- gethost
-@@ -98,7 +96,6 @@ getproto
- i2l
- initclk
- inrval
--instrumt
- intrio
- intrupt
- io_timeout
-@@ -119,6 +116,7 @@ logger
- many_cv
- multiwait
- nameshm1
-+nbconn
- nblayer
- nonblock
- ntioto
-@@ -135,6 +133,7 @@ perf
- pipeping
- pipeping2
- pipeself
-+poll_er
- poll_nm
- poll_to
- pollable
-@@ -207,7 +206,7 @@ OBJDIR=`basename $PWD`
+--- pr/tests/runtests.sh.orig	2020-01-31 20:37:50.000000000 +0000
++++ pr/tests/runtests.sh	2020-02-01 22:39:16.320853988 +0000
+@@ -226,7 +226,7 @@ OBJDIR=`basename $PWD`
  printf "\nNSPR Test Results - $OBJDIR\n\n"
  printf "BEGIN\t\t\t`date`\n"
  printf "NSPR_TEST_LOGFILE\t${LOGFILE}\n\n"
@@ -1095,11 +1021,11 @@
  if [ $OS_PLATFORM = "Windows_95" ] || [ $OS_PLATFORM = "Windows_98" ] || [ $OS_PLATFORM = "Windows_NT" ] || [ $OS_PLATFORM = "OS/2" ] ; then
  	for prog in $TESTS
  	do
-@@ -225,10 +224,8 @@ if [ $OS_PLATFORM = "Windows_95" ] || [ $OS_PLATFORM =
+@@ -244,10 +244,8 @@ if [ $OS_PLATFORM = "Windows_95" ] || [ $OS_PLATFORM =
  else
  	for prog in $TESTS
  	do
--		printf "$prog"
+-		printf "$prog (`date +%T`)"
 -		printf "\nBEGIN TEST: $prog\n\n" >> ${LOGFILE} 2>&1
 -		export test_rval
 -		./$prog >> ${LOGFILE} 2>&1 &
@@ -1108,7 +1034,7 @@
  		test_pid=$!
  		sleep_pid=0
  		if test -n "$TEST_TIMEOUT" && test "$TEST_TIMEOUT" -gt 0
-@@ -243,28 +240,11 @@ else
+@@ -262,9 +260,9 @@ else
  			printf "\t\t\tPassed\n";
  		else
  			printf "\t\t\tFAILED\n";
@@ -1119,28 +1045,9 @@
  	done
  fi;
  
- printf "END\t\t\t`date`\n"
- exit $rval
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
---- pr/tests/sel_spd.c.orig	2019-10-15 14:21:38 UTC
+--- pr/tests/sel_spd.c.orig	2020-01-31 20:37:50 UTC
 +++ pr/tests/sel_spd.c
-@@ -15,23 +15,26 @@
+@@ -15,6 +15,9 @@
  #include <stdio.h>
  #include <errno.h>
  #include <string.h>
@@ -1148,7 +1055,10 @@
 +#   include <unistd.h>  /* getopt(3) */
 +#endif
  
- #define PORT_BASE 19000
+ #ifdef DEBUG
+ #define PORT_INC_DO +100
+@@ -30,19 +33,19 @@
+ #define PORT_BASE 19000 PORT_INC_DO PORT_INC_3264
  
  typedef struct timer_slot_t {
 -    unsigned long d_connect;
@@ -1177,16 +1087,16 @@
  
  static int verbose=0;
  static PRMonitor *exit_cv;
-@@ -88,7 +91,7 @@ _server_thread(void *arg_id)
+@@ -98,7 +101,7 @@ _server_thread(void *arg_id)
+ {
      void _client_thread(void *);
-     PRThread *thread;
      int *id =  (int *)arg_id;
 -    PRFileDesc *sock;
 +    PRFileDesc *sock = NULL;
      PRSocketOptionData sockopt;
      PRNetAddr sa;
      PRFileDesc * newsock;
-@@ -467,12 +470,12 @@ void
+@@ -476,12 +479,12 @@ void
  tally_results(int verbose)
  {
      int index;
