@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dovecot-pigeonhole
-PORTVERSION=	0.5.9
-PORTREVISION=	2
+PORTVERSION=	0.5.10
 CATEGORIES=	mail
 MASTER_SITES=	http://pigeonhole.dovecot.org/releases/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
@@ -20,7 +19,6 @@ DOVECOTVERSION=	2.3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
-		--without-dovecot-install-dirs \
 		--docdir=${DOCSDIR} \
 		--with-dovecot="${LOCALBASE}/lib/dovecot"
 LDFLAGS+=	-L${LOCALBASE}/lib
