@@ -36,7 +36,7 @@ you update your ports collection, before attempting any port upgrades.
   1. Apache / mod_php options removed
 
   The APACHEMOD option has been removed. LibreNMS can be used
-  with other webservers, not just Apache. In other to simplify
+  with other webservers, not just Apache. In order to simplify
   the port, the option was removed.
 
   Now you manually install the webserver of your preference.
