@@ -89,10 +89,10 @@ sbin/%%APP_NAME%%.sh
 %%APP_HOME%%/lib/annotations/asm-commons-7.2.jar
 %%APP_HOME%%/lib/annotations/asm-tree-7.2.jar
 %%APP_HOME%%/lib/annotations/javax.annotation-api-1.3.jar
-%%APP_HOME%%/lib/apache-jsp/org.eclipse.jdt.ecj-3.17.0.jar
+%%APP_HOME%%/lib/apache-jsp/org.eclipse.jdt.ecj-3.19.0.jar
 %%APP_HOME%%/lib/apache-jsp/org.eclipse.jetty.apache-jsp-%%PORTVERSION%%.%%JDVDATE%%.jar
-%%APP_HOME%%/lib/apache-jsp/org.mortbay.jasper.apache-el-8.5.40.jar
-%%APP_HOME%%/lib/apache-jsp/org.mortbay.jasper.apache-jsp-8.5.40.jar
+%%APP_HOME%%/lib/apache-jsp/org.mortbay.jasper.apache-el-8.5.49.jar
+%%APP_HOME%%/lib/apache-jsp/org.mortbay.jasper.apache-jsp-8.5.49.jar
 %%APP_HOME%%/lib/apache-jstl/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar
 %%APP_HOME%%/lib/apache-jstl/org.apache.taglibs.taglibs-standard-spec-1.2.5.jar
 %%APP_HOME%%/lib/ext/.donotdelete
@@ -141,7 +141,7 @@ sbin/%%APP_NAME%%.sh
 %%APP_HOME%%/lib/jetty-xml-%%PORTVERSION%%.%%JDVDATE%%.jar
 %%APP_HOME%%/lib/mail/javax.mail.glassfish-1.4.1.v201005082020.jar
 %%APP_HOME%%/lib/servlet-api-3.1.jar
-%%APP_HOME%%/lib/setuid/jetty-setuid-java-1.0.3.jar
+%%APP_HOME%%/lib/setuid/jetty-setuid-java-1.0.4.jar
 %%APP_HOME%%/lib/spring/jetty-spring-%%PORTVERSION%%.%%JDVDATE%%.jar
 %%APP_HOME%%/lib/transactions/javax.transaction-api-1.3.jar
 %%APP_HOME%%/lib/websocket/javax-websocket-client-impl-%%PORTVERSION%%.%%JDVDATE%%.jar
@@ -186,6 +186,8 @@ sbin/%%APP_NAME%%.sh
 %%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_222.mod
 %%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_231.mod
 %%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_232.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_241.mod
+%%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_242.mod
 %%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_25.mod
 %%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_31.mod
 %%APP_HOME%%/modules/alpn-impl/alpn-1.8.0_40.mod
