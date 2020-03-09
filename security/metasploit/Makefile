@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	5.0.64
+PORTVERSION=	5.0.79
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -26,8 +26,8 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=3.0.10_2:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.3.83:security/rubygem-metasploit-payloads \
-		rubygem-metasploit_payloads-mettle>=0.5.16:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit-payloads>=1.3.85:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_payloads-mettle>=0.5.19:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
@@ -43,7 +43,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-patch_finder>=0:devel/rubygem-patch_finder \
 		rubygem-thin>=0:www/rubygem-thin \
 		rubygem-sinatra1>=0:www/rubygem-sinatra1 \
-		rubygem-warden>=0:devel/rubygem-warden\
+		rubygem-warden127>=0:devel/rubygem-warden127 \
 		rubygem-em-http-request>=0:www/rubygem-em-http-request \
 		rubygem-tzinfo-data>=0:devel/rubygem-tzinfo-data \
 		rubygem-sshkey>=0:security/rubygem-sshkey \
@@ -86,6 +86,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-xdr>=0:converters/rubygem-xdr \
 		rubygem-faker>=0:devel/rubygem-faker \
 		rubygem-concurrent-ruby>=0:devel/rubygem-concurrent-ruby \
+		rubygem-hrr_rb_ssh>=0:security/rubygem-hrr_rb_ssh \
 		rubygem-aws-sdk-s3>=0:devel/rubygem-aws-sdk-s3 \
 		rubygem-aws-sdk-ec2>=0:devel/rubygem-aws-sdk-ec2 \
 		rubygem-aws-sdk-iam>=0:devel/rubygem-aws-sdk-iam \
@@ -110,20 +111,29 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		data/exploits/CVE-2017-7494/install-deps.sh \
 		docker/entrypoint.sh \
 		external/source/shellcode/windows/build.sh \
+		external/source/shellcode/windows/x64/build.py \
+		external/source/shellcode/windows/x86/build.py \
+		external/source/shellcode/windows/x86/src/hash.py \
 		external/source/msfJavaToolkit/compile.sh \
 		external/source/msfJavaToolkit/testKeytool.rb \
 		external/source/msfJavaToolkit/testCompilation.rb \
 		external/source/metsvc/test.rb \
 		docker/bin/msfvenom \
 		docker/bin/msfconsole \
+		modules/auxiliary/admin/teradata/teradata_odbc_sql.py \
 		modules/auxiliary/dos/http/slowloris.py \
 		modules/auxiliary/dos/tcp/claymore_dos.py \
+		modules/auxiliary/gather/get_user_spns.py \
 		modules/auxiliary/gather/office365userenum.py \
+		modules/auxiliary/scanner/http/onion_omega2_login.py \
 		modules/auxiliary/scanner/smb/impacket/dcomexec.py \
 		modules/auxiliary/scanner/smb/impacket/secretsdump.py \
 		modules/auxiliary/scanner/smb/impacket/wmiexec.py \
 		modules/auxiliary/scanner/ssl/bleichenbacher_oracle.py \
+		modules/auxiliary/scanner/teradata/teradata_odbc_login.py \
 		modules/auxiliary/scanner/wproxy/att_open_proxy.py \
+		modules/exploits/linux/smtp/haraka.py \
+		modules/exploits/windows/smb/ms17_010_eternalblue_win8.py \
 		tools/dev/import-dev-keys.sh \
 		tools/dev/sign-dev-keys.sh \
 		tools/hardware/killerbee_msfrelay.py \
