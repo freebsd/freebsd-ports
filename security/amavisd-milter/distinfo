@@ -1,2 +1,3 @@
-SHA256 (amavisd-milter-1.6.0.tar.gz) = c195750d42df41f4642a26b020fec1ba5752a997bcb366c70cd384bc560a98cd
-SIZE (amavisd-milter-1.6.0.tar.gz) = 187994
+TIMESTAMP = 1583702709
+SHA256 (amavisd-milter-1.7.0.tar.gz) = db096daf18302fc27c8aa9a5b44d4e454dc202dd913a54fbb1e0c7769e377008
+SIZE (amavisd-milter-1.7.0.tar.gz) = 192688

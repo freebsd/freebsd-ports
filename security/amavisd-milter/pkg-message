@@ -1,9 +1,10 @@
 [
 { type: install
   message: <<EOM
- your browser to http://amavisd-milter.sourceforge.net
+To configure amavisd-milter, sendmail and amavisd-new point
+your browser to http://github.com/prehor/amavisd-milter
 
- Enable amavisd-milter in /etc/rc.conf with the following line:
+Enable amavisd-milter in /etc/rc.conf with the following line:
 
 	amavisd_milter_enable="YES"
 EOM
