@@ -7,7 +7,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	science
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multiphysical simulation software
 
 LICENSE=	GPLv2
