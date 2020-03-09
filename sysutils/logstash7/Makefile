@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logstash
-PORTVERSION=	7.6.0
+PORTVERSION=	7.6.1
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
 PKGNAMESUFFIX=	7
