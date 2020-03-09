@@ -1,3 +1,3 @@
-TIMESTAMP = 1573999227
-SHA256 (python-swiftclient-3.8.1.tar.gz) = 3a013303643f77a99befa05582dfb93671e1fba1aed9f4a517418129700aedb8
-SIZE (python-swiftclient-3.8.1.tar.gz) = 191278
+TIMESTAMP = 1583747535
+SHA256 (python-swiftclient-3.9.0.tar.gz) = 4f2097492e4c76e948882fc859bfa033ade09bed72f8e6b328e34a3467d9a377
+SIZE (python-swiftclient-3.9.0.tar.gz) = 193323
