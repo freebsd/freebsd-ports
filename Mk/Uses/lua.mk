@@ -5,7 +5,7 @@
 # MAINTAINER: ports@FreeBSD.org
 # Usage:
 #
-# USES+=	lua:[version]
+# USES+=	lua[:version]
 #
 .if !defined(_INCLUDE_USES_LUA_MK)
 _INCLUDE_USES_LUA_MK=	yes
