@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=	8.3.1
-PORTREVISION=	1
+PORTVERSION=	9.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -19,7 +18,7 @@ NOT_FOR_ARCHS=	sparc64
 LIB_DEPENDS=	libmpfr.so:math/mpfr
 TEST_DEPENDS=	runtest:misc/dejagnu
 
-USES=		compiler:c++11-lang cpe gmake libtool pkgconfig tar:xz
+USES=		compiler:c++11-lang cpe gmake libtool makeinfo pkgconfig tar:xz
 USE_PYTHON=	flavors py3kplist
 
 TEST_TARGET=	check
@@ -34,20 +33,12 @@ CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		${ICONV_CONFIGURE_ARG} \
 		--with-expat=yes --with-libexpat-prefix=${LOCALBASE} \
 		--without-libunwind-ia64 --with-system-zlib
+CONFIGURE_OUTSOURCE=	yes
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
 CFLAGS+=	-Wno-unknown-warning-option
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
-EXTRA_PATCHES=	${FILESDIR}/commit-1163a4b7a3 \
-		${FILESDIR}/commit-dd6876c91c \
-		${FILESDIR}/commit-6e056c8178 \
-		${FILESDIR}/commit-36c53a0262 \
-		${FILESDIR}/commit-ef0bd2046f \
-		${FILESDIR}/commit-945f3901b5 \
-		${FILESDIR}/commit-f5424cfa7e \
-		${FILESDIR}/commit-ce25aa57a3 \
-		${FILESDIR}/commit-8399425f5f
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${PORTVERSION:S/.//g}
@@ -118,10 +109,6 @@ PLIST_SUB+=	LIBCXX=""
 PLIST_SUB+=	LIBCXX="@comment "
 .endif
 
-.if ! ${PORT_OPTIONS:MBUNDLED_READLINE}
-EXCLUDE+=	readline
-.endif
-
 .if ! ${PORT_OPTIONS:MBUNDLED_ZLIB}
 EXCLUDE+=	zlib
 .endif
@@ -143,15 +130,15 @@ post-patch-KGDB-on:
 	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extrapatch-kgdb
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/gdb/gdb \
 		${STAGEDIR}${PREFIX}/bin/gdb${VER}
 	${INSTALL_MAN} ${WRKSRC}/gdb/doc/gdb.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/gdb${VER}.1
-	(cd ${WRKSRC}/gdb/data-directory ; \
+	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-syscalls )
 
 do-install-KGDB-on:
-	${INSTALL_PROGRAM} ${WRKSRC}/gdb/kgdb \
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/gdb/kgdb \
 		${STAGEDIR}${PREFIX}/bin/kgdb${VER}
 	${INSTALL_MAN} ${FILESDIR}/kgdb/kgdb.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/kgdb${VER}.1
@@ -168,8 +155,9 @@ do-install-GDB_LINK-on:
 .endif
 
 do-install-PYTHON-on:
-	(cd ${WRKSRC}/gdb; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
-	(cd ${WRKSRC}/gdb/data-directory ; \
+	(cd ${INSTALL_WRKSRC}/gdb ; \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
+	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
 	@(cd ${STAGEDIR}${PREFIX}/share/gdb/python && \
 		${PYTHON_CMD} -m compileall .)
@@ -186,8 +174,9 @@ do-install-PYTHON-on:
 .endif
 
 do-install-GUILE-on:
-	(cd ${WRKSRC}/gdb; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-guile )
-	(cd ${WRKSRC}/gdb/data-directory ; \
+	(cd ${INSTALL_WRKSRC}/gdb ; \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-guile )
+	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-guile )
 
 .include <bsd.port.post.mk>

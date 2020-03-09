@@ -1,5 +1,5 @@
---- gdb/gnulib/import/stddef.in.h.orig 2017-09-14 09:28:17 UTC
-+++ gdb/gnulib/import/stddef.in.h
+--- gnulib/import/stddef.in.h.orig	2020-02-08 04:50:14.000000000 -0800
++++ gnulib/import/stddef.in.h	2020-02-27 10:09:59.859133000 -0800
 @@ -84,7 +84,7 @@
  /* Some platforms lack max_align_t.  The check for _GCC_MAX_ALIGN_T is
     a hack in case the configure-time test was done with g++ even though

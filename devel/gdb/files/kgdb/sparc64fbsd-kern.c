@@ -28,6 +28,7 @@
 __FBSDID("$FreeBSD$");
 
 #include "defs.h"
+#include "gdbarch.h"
 #include "gdbcore.h"
 #include "osabi.h"
 #include "regcache.h"
