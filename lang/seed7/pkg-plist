@@ -6,6 +6,7 @@ lib/seed7/bin/s7_data.a
 lib/seed7/bin/s7_draw.a
 lib/seed7/bin/seed7_05.a
 lib/seed7/lib/aes.s7i
+lib/seed7/lib/ar.s7i
 lib/seed7/lib/arc4.s7i
 lib/seed7/lib/array.s7i
 lib/seed7/lib/asn1.s7i
@@ -85,10 +86,12 @@ lib/seed7/lib/comp/type.s7i
 lib/seed7/lib/comp/ut8_act.s7i
 lib/seed7/lib/complex.s7i
 lib/seed7/lib/console.s7i
+lib/seed7/lib/cpio.s7i
 lib/seed7/lib/crc32.s7i
 lib/seed7/lib/cronos16.s7i
 lib/seed7/lib/cronos27.s7i
 lib/seed7/lib/csv.s7i
+lib/seed7/lib/db_prop.s7i
 lib/seed7/lib/deflate.s7i
 lib/seed7/lib/des.s7i
 lib/seed7/lib/dialog.s7i
@@ -104,6 +107,7 @@ lib/seed7/lib/environment.s7i
 lib/seed7/lib/external_file.s7i
 lib/seed7/lib/field.s7i
 lib/seed7/lib/file.s7i
+lib/seed7/lib/filebits.s7i
 lib/seed7/lib/filesys.s7i
 lib/seed7/lib/float.s7i
 lib/seed7/lib/font.s7i
@@ -165,6 +169,7 @@ lib/seed7/lib/rational.s7i
 lib/seed7/lib/ref_list.s7i
 lib/seed7/lib/reference.s7i
 lib/seed7/lib/reverse.s7i
+lib/seed7/lib/rpm.s7i
 lib/seed7/lib/scanfile.s7i
 lib/seed7/lib/scanstri.s7i
 lib/seed7/lib/seed7_05.s7i
@@ -191,6 +196,7 @@ lib/seed7/lib/strifile.s7i
 lib/seed7/lib/string.s7i
 lib/seed7/lib/stritext.s7i
 lib/seed7/lib/struct.s7i
+lib/seed7/lib/subfile.s7i
 lib/seed7/lib/subrange.s7i
 lib/seed7/lib/syntax.s7i
 lib/seed7/lib/tar_cmds.s7i
