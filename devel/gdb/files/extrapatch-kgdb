@@ -1,18 +1,8 @@
 diff --git gdb/Makefile.in gdb/Makefile.in
-index 5614cc3386..b9acc63c3f 100644
+index c3e074b21f..8d026a98cb 100644
 --- gdb/Makefile.in
 +++ gdb/Makefile.in
-@@ -230,7 +230,8 @@ INCGNU = -I$(srcdir)/gnulib/import -I$(GNULIB_BUILDDIR)/import
- 
- # Generated headers in the gnulib directory.  These must be listed
- # so that they are generated before other files are compiled.
--GNULIB_H = $(GNULIB_BUILDDIR)/import/string.h @GNULIB_STDINT_H@
-+GNULIB_H = $(GNULIB_BUILDDIR)/import/string.h \
-+	$(GNULIB_BUILDDIR)/import/alloca.h @GNULIB_STDINT_H@
- 
- #
- # CLI sub directory definitons
-@@ -632,6 +633,7 @@ TARGET_OBS = @TARGET_OBS@
+@@ -648,6 +648,7 @@ TARGET_OBS = @TARGET_OBS@
  # All target-dependent objects files that require 64-bit CORE_ADDR
  # (used with --enable-targets=all --enable-64-bit-bfd).
  ALL_64_TARGET_OBS = \
@@ -20,7 +10,7 @@ index 5614cc3386..b9acc63c3f 100644
  	aarch64-fbsd-tdep.o \
  	aarch64-linux-tdep.o \
  	aarch64-newlib-tdep.o \
-@@ -646,6 +648,7 @@ ALL_64_TARGET_OBS = \
+@@ -662,6 +663,7 @@ ALL_64_TARGET_OBS = \
  	amd64-darwin-tdep.o \
  	amd64-dicos-tdep.o \
  	amd64-fbsd-tdep.o \
@@ -28,7 +18,7 @@ index 5614cc3386..b9acc63c3f 100644
  	amd64-linux-tdep.o \
  	amd64-nbsd-tdep.o \
  	amd64-obsd-tdep.o \
-@@ -660,6 +663,7 @@ ALL_64_TARGET_OBS = \
+@@ -676,6 +678,7 @@ ALL_64_TARGET_OBS = \
  	ia64-vms-tdep.o \
  	mips64-obsd-tdep.o \
  	sparc64-fbsd-tdep.o \
@@ -36,7 +26,7 @@ index 5614cc3386..b9acc63c3f 100644
  	sparc64-linux-tdep.o \
  	sparc64-nbsd-tdep.o \
  	sparc64-obsd-tdep.o \
-@@ -676,6 +680,7 @@ ALL_TARGET_OBS = \
+@@ -694,6 +697,7 @@ ALL_TARGET_OBS = \
  	arch/ppc-linux-common.o \
  	arch/riscv.o \
  	arm-bsd-tdep.o \
@@ -44,7 +34,7 @@ index 5614cc3386..b9acc63c3f 100644
  	arm-fbsd-tdep.o \
  	arm-linux-tdep.o \
  	arm-nbsd-tdep.o \
-@@ -693,6 +698,8 @@ ALL_TARGET_OBS = \
+@@ -711,6 +715,8 @@ ALL_TARGET_OBS = \
  	csky-linux-tdep.o \
  	csky-tdep.o \
  	dicos-tdep.o \
@@ -53,7 +43,7 @@ index 5614cc3386..b9acc63c3f 100644
  	fbsd-tdep.o \
  	frv-linux-tdep.o \
  	frv-tdep.o \
-@@ -709,6 +716,7 @@ ALL_TARGET_OBS = \
+@@ -727,6 +733,7 @@ ALL_TARGET_OBS = \
  	i386-darwin-tdep.o \
  	i386-dicos-tdep.o \
  	i386-fbsd-tdep.o \
@@ -61,7 +51,7 @@ index 5614cc3386..b9acc63c3f 100644
  	i386-gnu-tdep.o \
  	i386-go32-tdep.o \
  	i386-linux-tdep.o \
-@@ -732,6 +740,7 @@ ALL_TARGET_OBS = \
+@@ -750,6 +757,7 @@ ALL_TARGET_OBS = \
  	mep-tdep.o \
  	microblaze-linux-tdep.o \
  	microblaze-tdep.o \
@@ -69,7 +59,7 @@ index 5614cc3386..b9acc63c3f 100644
  	mips-fbsd-tdep.o \
  	mips-linux-tdep.o \
  	mips-nbsd-tdep.o \
-@@ -750,6 +759,7 @@ ALL_TARGET_OBS = \
+@@ -768,6 +776,7 @@ ALL_TARGET_OBS = \
  	or1k-linux-tdep.o \
  	or1k-tdep.o \
  	ppc-fbsd-tdep.o \
@@ -77,7 +67,7 @@ index 5614cc3386..b9acc63c3f 100644
  	ppc-linux-tdep.o \
  	ppc-nbsd-tdep.o \
  	ppc-obsd-tdep.o \
-@@ -757,6 +767,7 @@ ALL_TARGET_OBS = \
+@@ -775,6 +784,7 @@ ALL_TARGET_OBS = \
  	ppc-sysv-tdep.o \
  	ppc64-tdep.o \
  	ravenscar-thread.o \
@@ -85,7 +75,7 @@ index 5614cc3386..b9acc63c3f 100644
  	riscv-fbsd-tdep.o \
  	riscv-linux-tdep.o \
  	riscv-tdep.o \
-@@ -1629,7 +1640,7 @@ generated_files = \
+@@ -1648,7 +1658,7 @@ generated_files = \
  # Flags needed to compile Python code
  PYTHON_CFLAGS = @PYTHON_CFLAGS@
  
@@ -94,7 +84,7 @@ index 5614cc3386..b9acc63c3f 100644
  	@$(MAKE) $(FLAGS_TO_PASS) DO=all "DODIRS=`echo $(SUBDIRS) | sed 's/testsuite//'`" subdir_do
  
  # Rule for compiling .c files in the top-level gdb directory.
-@@ -1894,6 +1905,12 @@ ifneq ($(CODESIGN_CERT),)
+@@ -1913,6 +1923,12 @@ ifneq ($(CODESIGN_CERT),)
  	$(ECHO_SIGN) $(CODESIGN) -s $(CODESIGN_CERT) gdb$(EXEEXT)
  endif
  
@@ -105,9 +95,9 @@ index 5614cc3386..b9acc63c3f 100644
 +		$(TDEPLIBS) $(TUI_LIBRARY) $(CLIBS) $(LOADLIBES)
 +
  # Convenience rule to handle recursion.
- $(LIBGNU) $(GNULIB_H): all-lib
- all-lib: $(GNULIB_BUILDDIR)/Makefile
-@@ -1940,6 +1957,7 @@ clean mostlyclean: $(CONFIG_CLEAN)
+ .PHONY: all-data-directory
+ all-data-directory: data-directory/Makefile
+@@ -1953,6 +1969,7 @@ clean mostlyclean: $(CONFIG_CLEAN)
  	rm -f init.c stamp-init version.c stamp-version
  	rm -f gdb$(EXEEXT) core make.log
  	rm -f gdb[0-9]$(EXEEXT)
@@ -115,15 +105,15 @@ index 5614cc3386..b9acc63c3f 100644
  	rm -f test-cp-name-parser$(EXEEXT)
  	rm -f xml-builtin.c stamp-xml
  	rm -f $(DEPDIR)/*
-@@ -2154,6 +2172,7 @@ force_update:
- MAKEOVERRIDES =
+@@ -2152,6 +2169,7 @@ MAKEOVERRIDES =
  
  ALLDEPFILES = \
+ 	aarch32-tdep.c \
 +	aarch64-fbsd-kern.c \
  	aarch64-fbsd-nat.c \
  	aarch64-fbsd-tdep.c \
  	aarch64-linux-nat.c \
-@@ -2173,6 +2192,7 @@ ALLDEPFILES = \
+@@ -2171,6 +2189,7 @@ ALLDEPFILES = \
  	amd64-bsd-nat.c \
  	amd64-darwin-tdep.c \
  	amd64-dicos-tdep.c \
@@ -131,7 +121,7 @@ index 5614cc3386..b9acc63c3f 100644
  	amd64-fbsd-nat.c \
  	amd64-fbsd-tdep.c \
  	amd64-linux-nat.c \
-@@ -2187,6 +2207,7 @@ ALLDEPFILES = \
+@@ -2185,6 +2204,7 @@ ALLDEPFILES = \
  	arc-tdep.c \
  	arm.c \
  	arm-bsd-tdep.c \
@@ -139,7 +129,7 @@ index 5614cc3386..b9acc63c3f 100644
  	arm-fbsd-nat.c \
  	arm-fbsd-tdep.c \
  	arm-get-next-pcs.c \
-@@ -2207,6 +2228,9 @@ ALLDEPFILES = \
+@@ -2205,6 +2225,9 @@ ALLDEPFILES = \
  	csky-tdep.c \
  	darwin-nat.c \
  	dicos-tdep.c \
@@ -149,7 +139,7 @@ index 5614cc3386..b9acc63c3f 100644
  	fbsd-nat.c \
  	fbsd-tdep.c \
  	fork-child.c \
-@@ -2228,6 +2252,7 @@ ALLDEPFILES = \
+@@ -2226,6 +2249,7 @@ ALLDEPFILES = \
  	i386-darwin-nat.c \
  	i386-darwin-tdep.c \
  	i386-dicos-tdep.c \
@@ -157,7 +147,7 @@ index 5614cc3386..b9acc63c3f 100644
  	i386-fbsd-nat.c \
  	i386-fbsd-tdep.c \
  	i386-gnu-nat.c \
-@@ -2264,6 +2289,7 @@ ALLDEPFILES = \
+@@ -2262,6 +2286,7 @@ ALLDEPFILES = \
  	microblaze-linux-tdep.c \
  	microblaze-tdep.c \
  	mingw-hdep.c \
@@ -165,7 +155,7 @@ index 5614cc3386..b9acc63c3f 100644
  	mips-fbsd-nat.c \
  	mips-fbsd-tdep.c \
  	mips-linux-nat.c \
-@@ -2283,6 +2309,7 @@ ALLDEPFILES = \
+@@ -2281,6 +2306,7 @@ ALLDEPFILES = \
  	obsd-nat.c \
  	obsd-tdep.c \
  	posix-hdep.c \
@@ -173,7 +163,7 @@ index 5614cc3386..b9acc63c3f 100644
  	ppc-fbsd-nat.c \
  	ppc-fbsd-tdep.c \
  	ppc-linux-nat.c \
-@@ -2297,6 +2324,7 @@ ALLDEPFILES = \
+@@ -2295,6 +2321,7 @@ ALLDEPFILES = \
  	procfs.c \
  	ravenscar-thread.c \
  	remote-sim.c \
@@ -181,7 +171,7 @@ index 5614cc3386..b9acc63c3f 100644
  	riscv-fbsd-nat.c \
  	riscv-fbsd-tdep.c \
  	riscv-linux-nat.c \
-@@ -2333,6 +2361,7 @@ ALLDEPFILES = \
+@@ -2330,6 +2357,7 @@ ALLDEPFILES = \
  	sparc-sol2-nat.c \
  	sparc-sol2-tdep.c \
  	sparc-tdep.c \
@@ -189,7 +179,7 @@ index 5614cc3386..b9acc63c3f 100644
  	sparc64-fbsd-nat.c \
  	sparc64-fbsd-tdep.c \
  	sparc64-linux-nat.c \
-@@ -2596,7 +2625,7 @@ endif
+@@ -2588,7 +2616,7 @@ endif
  
  # A list of all the objects we might care about in this build, for
  # dependency tracking.
@@ -199,10 +189,10 @@ index 5614cc3386..b9acc63c3f 100644
  
  # All the .deps files to include.
 diff --git gdb/config.in gdb/config.in
-index ea907d2b56..1019e448c5 100644
+index cb886ba8e1..b8a937f6de 100644
 --- gdb/config.in
 +++ gdb/config.in
-@@ -219,6 +219,12 @@
+@@ -218,6 +218,12 @@
  /* Define to 1 if your system has the kinfo_getvmmap function. */
  #undef HAVE_KINFO_GETVMMAP
  
@@ -216,10 +206,10 @@ index ea907d2b56..1019e448c5 100644
  #undef HAVE_LANGINFO_CODESET
  
 diff --git gdb/configure gdb/configure
-index 854837c50a..df64effa90 100755
+index b572d414ca..12e08354cc 100755
 --- gdb/configure
 +++ gdb/configure
-@@ -8107,6 +8107,126 @@ $as_echo "#define HAVE_KINFO_GETFILE 1" >>confdefs.h
+@@ -8064,6 +8064,126 @@ $as_echo "#define HAVE_KINFO_GETFILE 1" >>confdefs.h
  fi
  
  
@@ -347,10 +337,10 @@ index 854837c50a..df64effa90 100755
        if test "X$prefix" = "XNONE"; then
      acl_final_prefix="$ac_default_prefix"
 diff --git gdb/configure.ac gdb/configure.ac
-index 1527585839..7ff0361e69 100644
+index ca0da7980c..39dc6a3559 100644
 --- gdb/configure.ac
 +++ gdb/configure.ac
-@@ -511,6 +511,16 @@ AC_SEARCH_LIBS(kinfo_getfile, util util-freebsd,
+@@ -485,6 +485,16 @@ AC_SEARCH_LIBS(kinfo_getfile, util util-freebsd,
    [AC_DEFINE(HAVE_KINFO_GETFILE, 1,
              [Define to 1 if your system has the kinfo_getfile function. ])])
  
@@ -368,7 +358,7 @@ index 1527585839..7ff0361e69 100644
  
  # GDB may fork/exec the iconv program to get the list of supported character
 diff --git gdb/configure.nat gdb/configure.nat
-index 64ee101d83..f32e6328e0 100644
+index fb4522f579..a5059ff37d 100644
 --- gdb/configure.nat
 +++ gdb/configure.nat
 @@ -63,7 +63,8 @@ case ${gdb_host} in
@@ -382,10 +372,10 @@ index 64ee101d83..f32e6328e0 100644
  	LOADLIBES='-lkvm'
  	;;
 diff --git gdb/configure.tgt gdb/configure.tgt
-index 27f122ad04..5fa0d0179e 100644
+index caa42be1c0..45668ccaed 100644
 --- gdb/configure.tgt
 +++ gdb/configure.tgt
-@@ -98,7 +98,7 @@ esac
+@@ -101,7 +101,7 @@ esac
  
  case "${targ}" in
  *-*-freebsd* | *-*-kfreebsd*-gnu)
@@ -394,7 +384,7 @@ index 27f122ad04..5fa0d0179e 100644
  *-*-netbsd* | *-*-knetbsd*-gnu)
  	os_obs="nbsd-tdep.o solib-svr4.o";;
  *-*-openbsd*)
-@@ -115,7 +115,7 @@ aarch64*-*-elf | aarch64*-*-rtems*)
+@@ -118,7 +118,7 @@ aarch64*-*-elf | aarch64*-*-rtems*)
  
  aarch64*-*-freebsd*)
  	# Target: FreeBSD/aarch64
@@ -403,7 +393,7 @@ index 27f122ad04..5fa0d0179e 100644
  	;;
  
  aarch64*-*-linux*)
-@@ -168,7 +168,7 @@ arm*-*-linux*)
+@@ -171,7 +171,7 @@ arm*-*-linux*)
  	;;
  arm*-*-freebsd*)
  	# Target: FreeBSD/arm
@@ -412,7 +402,7 @@ index 27f122ad04..5fa0d0179e 100644
  	;;
  arm*-*-netbsd* | arm*-*-knetbsd*-gnu)
  	# Target: NetBSD/arm
-@@ -267,7 +267,11 @@ i[34567]86-*-dicos*)
+@@ -270,7 +270,11 @@ i[34567]86-*-dicos*)
  	;;
  i[34567]86-*-freebsd* | i[34567]86-*-kfreebsd*-gnu)
  	# Target: FreeBSD/i386
@@ -425,7 +415,7 @@ index 27f122ad04..5fa0d0179e 100644
  	;;
  i[34567]86-*-netbsd* | i[34567]86-*-knetbsd*-gnu)
  	# Target: NetBSD/i386
-@@ -421,7 +425,7 @@ mips*-*-netbsd* | mips*-*-knetbsd*-gnu)
+@@ -424,7 +428,7 @@ mips*-*-netbsd* | mips*-*-knetbsd*-gnu)
  	;;
  mips*-*-freebsd*)
  	# Target: MIPS running FreeBSD
@@ -434,7 +424,7 @@ index 27f122ad04..5fa0d0179e 100644
  	gdb_sim=../sim/mips/libsim.a
  	;;
  mips64*-*-openbsd*)
-@@ -488,7 +492,7 @@ or1k-*-* | or1knd-*-*)
+@@ -491,7 +495,7 @@ or1k-*-* | or1knd-*-*)
  powerpc*-*-freebsd*)
  	# Target: FreeBSD/powerpc
  	gdb_target_obs="rs6000-tdep.o ppc-sysv-tdep.o ppc64-tdep.o \
@@ -443,7 +433,7 @@ index 27f122ad04..5fa0d0179e 100644
  			ravenscar-thread.o ppc-ravenscar-thread.o"
  	;;
  
-@@ -543,7 +547,7 @@ s390*-*-linux*)
+@@ -545,7 +549,7 @@ s390*-*-linux*)
  
  riscv*-*-freebsd*)
  	# Target: FreeBSD/riscv
@@ -452,7 +442,7 @@ index 27f122ad04..5fa0d0179e 100644
  	;;
  
  riscv*-*-linux*)
-@@ -622,6 +626,7 @@ sparc64-*-linux*)
+@@ -624,6 +628,7 @@ sparc64-*-linux*)
  sparc*-*-freebsd* | sparc*-*-kfreebsd*-gnu)
  	# Target: FreeBSD/sparc64
  	gdb_target_obs="sparc-tdep.o sparc64-tdep.o sparc64-fbsd-tdep.o \
@@ -460,7 +450,7 @@ index 27f122ad04..5fa0d0179e 100644
  			ravenscar-thread.o sparc-ravenscar-thread.o"
  	;;
  sparc-*-netbsd* | sparc-*-knetbsd*-gnu)
-@@ -749,8 +754,8 @@ x86_64-*-linux*)
+@@ -745,8 +750,8 @@ x86_64-*-linux*)
  	;;
  x86_64-*-freebsd* | x86_64-*-kfreebsd*-gnu)
  	# Target: FreeBSD/amd64
@@ -472,10 +462,10 @@ index 27f122ad04..5fa0d0179e 100644
  x86_64-*-mingw* | x86_64-*-cygwin*)
          # Target: MingW/amd64
 diff --git gdb/defs.h gdb/defs.h
-index a44e186907..c4bfd42073 100644
+index 567f214b81..abbaa1f950 100644
 --- gdb/defs.h
 +++ gdb/defs.h
-@@ -484,6 +484,7 @@ enum gdb_osabi
+@@ -481,6 +481,7 @@ enum gdb_osabi
    GDB_OSABI_SOLARIS,
    GDB_OSABI_LINUX,
    GDB_OSABI_FREEBSD,
@@ -483,20 +473,8 @@ index a44e186907..c4bfd42073 100644
    GDB_OSABI_NETBSD,
    GDB_OSABI_OPENBSD,
    GDB_OSABI_WINCE,
-diff --git gdb/gnulib/configure gdb/gnulib/configure
-index 340c622cb3..bf0c4dd5d9 100644
---- gdb/gnulib/configure
-+++ gdb/gnulib/configure
-@@ -18579,6 +18579,7 @@ else
-       case "$host_os" in
-                 # Guess all is fine on glibc systems.
-         *-gnu*) gl_cv_func_gettimeofday_clobber="guessing no" ;;
-+        freebsd*) gl_cv_func_gettimeofday_clobber="guessing no" ;;
-                 # If we don't know, assume the worst.
-         *)      gl_cv_func_gettimeofday_clobber="guessing yes" ;;
-       esac
 diff --git gdb/osabi.c gdb/osabi.c
-index 5d4bbcdff8..a982b22624 100644
+index dec1bddc4c..06c514167e 100644
 --- gdb/osabi.c
 +++ gdb/osabi.c
 @@ -66,6 +66,7 @@ static const struct osabi_names gdb_osabi_names[] =
@@ -508,10 +486,10 @@ index 5d4bbcdff8..a982b22624 100644
    { "OpenBSD", NULL },
    { "WindowsCE", NULL },
 diff --git gdb/regcache.c gdb/regcache.c
-index 6e3eee9663..49ca1e1535 100644
+index 1580359cd4..50ff8d4039 100644
 --- gdb/regcache.c
 +++ gdb/regcache.c
-@@ -1003,6 +1003,22 @@ reg_buffer::raw_supply_zeroed (int regnum)
+@@ -996,6 +996,22 @@ reg_buffer::raw_supply_zeroed (int regnum)
    m_register_status[regnum] = REG_VALID;
  }
  
@@ -531,14 +509,14 @@ index 6e3eee9663..49ca1e1535 100644
 +  m_register_status[regnum] = REG_VALID;
 +}
 +
- /* See common/common-regcache.h.  */
+ /* See gdbsupport/common-regcache.h.  */
  
  void
 diff --git gdb/regcache.h gdb/regcache.h
-index 2b703ea4a4..d06e001957 100644
+index e2935eea74..83654be825 100644
 --- gdb/regcache.h
 +++ gdb/regcache.h
-@@ -224,6 +224,8 @@ public:
+@@ -226,6 +226,8 @@ public:
       only LEN, without editing the rest of the register.  */
    void raw_supply_part (int regnum, int offset, int len, const gdb_byte *in);
  
@@ -547,3 +525,16 @@ index 2b703ea4a4..d06e001957 100644
    void invalidate (int regnum);
  
    virtual ~reg_buffer () = default;
+diff --git gnulib/configure gnulib/configure
+index 7c74371e8f..396467f68d 100644
+--- gnulib/configure
++++ gnulib/configure
+@@ -20267,6 +20267,8 @@ else
+       case "$host_os" in
+                 # Guess all is fine on glibc systems.
+         *-gnu*) gl_cv_func_gettimeofday_clobber="guessing no" ;;
++                # Guess all is fine on FreeBSD.
++        freebsd*) gl_cv_func_gettimeofday_clobber="guessing no" ;;
+                 # If we don't know, assume the worst.
+         *)      gl_cv_func_gettimeofday_clobber="guessing yes" ;;
+       esac
