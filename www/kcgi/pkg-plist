@@ -8,6 +8,11 @@ lib/libkcgihtml.a
 lib/libkcgijson.a
 lib/libkcgiregress.a
 lib/libkcgixml.a
+libdata/pkgconfig/kcgi-html.pc
+libdata/pkgconfig/kcgi-json.pc
+libdata/pkgconfig/kcgi-regress.pc
+libdata/pkgconfig/kcgi-xml.pc
+libdata/pkgconfig/kcgi.pc
 man/man3/kcgi.3.gz
 man/man3/kcgi_buf_write.3.gz
 man/man3/kcgi_strerror.3.gz
