@@ -77,13 +77,13 @@ include/coin/ClpConstraintAmpl.hpp
 include/coin/OsiCbcSolverInterface.hpp
 lib/libCbc.so
 lib/libCbc.so.3
-lib/libCbc.so.3.10.4
+lib/libCbc.so.3.10.5
 lib/libCbcSolver.so
 lib/libCbcSolver.so.3
-lib/libCbcSolver.so.3.10.4
+lib/libCbcSolver.so.3.10.5
 lib/libOsiCbc.so
 lib/libOsiCbc.so.3
-lib/libOsiCbc.so.3.10.4
+lib/libOsiCbc.so.3.10.5
 libdata/pkgconfig/cbc.pc
 libdata/pkgconfig/osi-cbc.pc
 share/coin/doc/Cbc/AUTHORS
