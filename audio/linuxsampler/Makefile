@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgig.so:audio/libgig \
 		libsndfile.so:audio/libsndfile \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		bison gmake libtool pathfix pkgconfig sqlite:3 tar:bzip2
+USES=		bison:wrapper gmake libtool pathfix pkgconfig sqlite:3 tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	HAVE_UNIX98=1
 USE_LDCONFIG=	${PREFIX}/lib/linuxsampler
