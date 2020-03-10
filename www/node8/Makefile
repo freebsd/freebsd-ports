@@ -13,6 +13,8 @@ COMMENT=	V8 JavaScript for client and server (8.x LTS)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Node.js 8.x has reached end-of-life, see https://github.com/nodejs/Release
+EXPIRATION_DATE=	2019-12-31
 BROKEN_SSL=		libressl libressl-devel
 BROKEN_SSL_REASON=	Node.js 8.x LTS requires OpenSSL >= 1.0.2 or the BUNDLED_SSL option enabled
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64
