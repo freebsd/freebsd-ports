@@ -1,9 +1,21 @@
---- deps/v8/src/base/platform/platform-freebsd.cc.orig	2019-08-06 20:46:24 UTC
+--- deps/v8/src/base/platform/platform-freebsd.cc.orig	2020-01-07 22:07:49 UTC
 +++ deps/v8/src/base/platform/platform-freebsd.cc
-@@ -86,6 +86,48 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
+@@ -81,8 +81,8 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
+             lib_name = std::string(path);
+           }
+           result.push_back(SharedLibraryAddress(
+-              lib_name, reinterpret_cast<uintptr_t>(map->kve_start),
+-              reinterpret_cast<uintptr_t>(map->kve_end)));
++              lib_name, static_cast<uintptr_t>(map->kve_start),
++              static_cast<uintptr_t>(map->kve_end)));
+         }
+ 
+         start += ssize;
+@@ -93,6 +93,48 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
+ }
  
  void OS::SignalCodeMovingGC() {}
- 
++
 +#ifdef __arm__
 +
 +bool OS::ArmUsingHardFloat() {
@@ -45,7 +57,6 @@
 +}
 +
 +#endif // def __arm__
-+
+ 
  void OS::AdjustSchedulingParams() {}
  
- }  // namespace base
