@@ -18,7 +18,7 @@ LICENSE_COMB=	multi
 NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64
 NOT_FOR_ARCHS_REASON=	needs code written to specify rounding control mechanism in Boost.Numeric.Interval
 
-USES=		bison cmake compiler:c++11-lang
+USES=		bison:alias cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	Gecode
 USE_LDCONFIG=	yes
