@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# This wrappers allows to deals build system calling bison with certain long option
+# and messing with arguments orders
+
+case " $@ " in
+*" --version "*) echo "bison (GNU bison 3.5.2)" ; exit 0 ;;
+esac
+
+for arg; do
+	case "$arg" in
+	*.y) inputfile="$arg" ;;
+	--verbose|-v) ;; # ignore
+	*) args="$args $arg" ;;
+	esac
+done
+exec byacc -L $args $inputfile

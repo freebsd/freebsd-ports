@@ -26,6 +26,8 @@ BUILD_DEPENDS+=	${_BISON_DEPENDS}
 RUN_DEPENDS+=	${_BISON_DEPENDS}
 .elif ${bison_ARGS} == "alias"
 BINARY_ALIAS+=	bison=byacc
+.elif ${bison_ARGS} == "wrapper"
+BINARY_WRAPPERS+=	bison
 .else
 IGNORE=	USES=bison - invalid args: [${bison_ARGS}] specified
 .endif
