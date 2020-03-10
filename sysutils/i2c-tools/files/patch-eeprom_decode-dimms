@@ -28,18 +28,6 @@
  	printl("Refresh Rate", ddr2_refresh_rate($bytes->[12]));
  
  	my @burst;
-@@ -1289,8 +1292,9 @@
- 	printl("DLL-Off Mode supported?", ($bytes->[30] & 128) ? "Yes" : "No");
- 	printl("Operating temperature range", sprintf "0-%d degrees C",
- 		($bytes->[31] & 1) ? 95 : 85);
--	printl("Refresh Rate in extended temp range",
--		($bytes->[31] & 2) ? "2X" : "1X");
-+	printl_cond($bytes->[31] & 1,
-+		    "Refresh Rate in extended temp range",
-+		    ($bytes->[31] & 2) ? "1X" : "2X");
- 	printl("Auto Self-Refresh?", ($bytes->[31] & 4) ? "Yes" : "No");
- 	printl("On-Die Thermal Sensor readout?",
- 		($bytes->[31] & 8) ? "Yes" : "No");
 @@ -1624,6 +1628,28 @@
  	}
  }
@@ -140,7 +128,7 @@
  }
  
  if ($opt_html && !$opt_bodyonly) {
-@@ -1777,61 +1804,20 @@
+@@ -1777,65 +1804,20 @@
  Jean Delvare, Trent Piepho and others');
  
  
@@ -165,7 +153,9 @@
 -	my (@dirs, $dir, $opened, $file, @files);
 -
 -	if ($use_sysfs) {
--		@dirs = ('/sys/bus/i2c/drivers/eeprom', '/sys/bus/i2c/drivers/at24');
+-		@dirs = ('/sys/bus/i2c/drivers/eeprom',
+-			 '/sys/bus/i2c/drivers/at24',
+-			 '/sys/bus/i2c/drivers/ee1004');	# DDR4
 -	} else {
 -		@dirs = ('/proc/sys/dev/sensors');
 -	}
@@ -183,7 +173,9 @@
 -				# or spd (driver at24)
 -				my $attr = sysfs_device_attribute("$dir/$file", "name");
 -				next unless defined $attr &&
--					    ($attr eq "eeprom" || $attr eq "spd");
+-					    ($attr eq "eeprom" ||
+-					     $attr eq "spd" ||
+-					     $attr eq "ee1004");	# DDR4
 -			} else {
 -				next unless $file =~ /^eeprom-/;
 -			}
@@ -214,11 +206,11 @@
  
  # @dimm is a list of hashes. There's one hash for each EEPROM we found.
 @@ -2022,7 +2008,7 @@
+ 	if ($opt_side_by_side) {
  		print "\n\n";
  	} else {
- 		print "<b><u>" if $opt_html;
--		printl2("\n\nDecoding EEPROM", $dimm[$current]->{file});
-+		printl2("\n\nDecoding EEPROM", $dimm[$current]->{eeprom});
- 		print "</u></b>" if $opt_html;
+-		printl2("\n\nDecoding EEPROM", $dimm[$current]->{file},
++		printl2("\n\nDecoding EEPROM", $dimm[$current]->{eeprom},
+ 			"text-decoration: underline; font-weight: bold;");
  	}
  	print "<table border=1>\n" if $opt_html;

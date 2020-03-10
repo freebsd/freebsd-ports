@@ -4,4 +4,4 @@ helpers, EEPROM decoding scripts, EEPROM programming tools, and a python
 module for SMBus access.
 Only DIMM SPD decoding tool is ported at the moment.
 
-WWW: http://www.lm-sensors.org/wiki/I2CTools
+WWW: https://i2c.wiki.kernel.org/index.php/I2C_Tools
