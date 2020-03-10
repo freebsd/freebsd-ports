@@ -843,6 +843,7 @@
     SUBDIR += py-YubiOTP
     SUBDIR += py-acme
     SUBDIR += py-acme-tiny
+    SUBDIR += py-ailment
     SUBDIR += py-argon2-cffi
     SUBDIR += py-artifacts
     SUBDIR += py-asyncssh
