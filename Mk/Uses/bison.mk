@@ -4,7 +4,12 @@
 #
 # Feature:	bison
 # Usage:	USES=bison or USES=bison:ARGS
-# Valid ARGS:	build (default, implicit), run, both
+# Valid ARGS:	build (default, implicit), run, both, alias, wrappers
+#
+# 'alias'	will automatically create a BINARY_ALIAS to use base
+#		byacc invoked as bison
+# 'wrapper'	will automatically create BINARY_WRAPPER to use base
+#		byacc with a wrapper to mimic a bit more bison
 #
 # MAINTAINER: portmgr@FreeBSD.org
 
