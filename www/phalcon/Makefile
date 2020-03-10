@@ -12,19 +12,18 @@ COMMENT=	Phalcon PHP Framework written in C-language
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
+
+USES=		localbase php:ext
+USE_PHP=	hash:build json:build pdo:build
+IGNORE_WITH_PHP=74
+USE_GITHUB=	yes
+GH_PROJECT=	c${PORTNAME}
 
 CONFLICTS_INSTALL=	${PKGNAMEPREFIX}phalcon4
 
-USES=		php:ext
-USE_PHP=	hash:build json:build pdo:build
-IGNORE_WITH_PHP=	74
+PORTSCOUT=	limit:^3\.
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	phalcon
-GH_PROJECT=	c${PORTNAME}
-
-CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-phalcon
 
 .include <bsd.port.pre.mk>
