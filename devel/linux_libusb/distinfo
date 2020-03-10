@@ -1,2 +1,3 @@
-SHA256 (linux_libusb-11.0r261448.tar.bz2) = e1013ccd0181e00a55bb786be54d125b71462492442122350d820b98fef97f81
-SIZE (linux_libusb-11.0r261448.tar.bz2) = 45739
+TIMESTAMP = 1583857275
+SHA256 (linux_libusb-13.0r358841.tar.bz2) = 0114a83eb21889ff54e1f2f551296ef584e7fe1a8d468ade6ec1bc017937deb7
+SIZE (linux_libusb-13.0r358841.tar.bz2) = 69877
