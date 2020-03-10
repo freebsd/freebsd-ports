@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgcab-1.0.so:archivers/gcab \
 		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		bison gmake gnome libtool pkgconfig shebangfix tar:xz
+USES=		bison:alias gmake gnome libtool pkgconfig shebangfix tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 libxml2
 GNU_CONFIGURE=	yes
