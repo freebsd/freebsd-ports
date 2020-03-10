@@ -10,14 +10,11 @@ MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CMU Sphinx Speech recognition system base
 
-USES=		bison gmake pathfix libtool
+USES=		bison:alias gmake pathfix libtool localbase
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-python --without-lapack
 CONFIGURE_ENV+=	HAVE_DOXYGEN=no
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		OSVERSION=${OSVERSION}
