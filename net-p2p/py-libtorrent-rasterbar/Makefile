@@ -3,7 +3,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	libtorrent-
-DISTVERSION=	1_2_4
+DISTVERSION=	1_2_5
 CATEGORIES=	net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/../../COPYING
 
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		${PY_BOOST}
-
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}-libtorrent-rasterbar11
 
 USES=		compiler:c11 iconv localbase python
 USE_GITHUB=	yes
