@@ -1,12 +1,13 @@
-Elmer is an open source multiphysical simulation software mainly
-developed by CSC - IT Center for Science (CSC). Elmer development was
-started 1995 in collaboration with Finnish Universities, research institutes
-and industry. After it's open source publication in 2005, the use and
-development of Elmer has become international.
+Elmer runs multiphysical simulations, using the finite element method
+to solve predefined or user-specified partial differential equations.
+There are models for structural mechanics, fluid dynamics, acoustics,
+heat transfer, and electromagnetism in both two and three dimensions.
+New solvers can be added as separate modules linked into the program.
 
-Elmer includes physical models of fluid dynamics, structural mechanics,
-electromagnetics, heat transfer and acoustics, for example. These are
-described by partial differential equations which Elmer solves by the
-Finite Element Method (FEM).
+While Elmer is powerful, it is not for the faint of heart. New users
+can expect to spend days or weeks honing their skills in one domain.
+
+This port is a development version of Elmer, which may or may not be
+better suited to your needs than the latest official release.
 
 WWW: https://www.csc.fi/web/elmer
