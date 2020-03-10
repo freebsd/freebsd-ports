@@ -10,7 +10,7 @@ COMMENT=	CLIgen is a Command-Line Interface generator
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		bison gmake
+USES=		bison:alias gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	olofhagsand
