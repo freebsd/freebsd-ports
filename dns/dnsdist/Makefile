@@ -21,7 +21,7 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libre2.so:devel/re2 \
 		libsodium.so:security/libsodium
 
-USES=		bison compiler:c++14-lang cpe gmake libedit libtool localbase \
+USES=		bison:alias compiler:c++14-lang cpe gmake libedit libtool localbase \
 		pkgconfig tar:bz2
 USE_RC_SUBR=	dnsdist
 
