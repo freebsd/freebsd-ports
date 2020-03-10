@@ -1,10 +1,10 @@
---- elmergrid/src/CMakeLists.txt.orig	2018-12-19 09:34:45 UTC
+--- elmergrid/src/CMakeLists.txt.orig	2020-03-06 10:30:22 UTC
 +++ elmergrid/src/CMakeLists.txt
 @@ -12,19 +12,13 @@ IF(CMAKE_CROSSCOMPILING)
    ENDIF()
  ENDIF()
  
--# Dont install metis
+-# Don't install metis
 -SET(METIS_INSTALL FALSE CACHE BOOL "")
 -ADD_SUBDIRECTORY(metis-5.1.0)
 -
@@ -20,12 +20,3 @@
  INCLUDE_DIRECTORIES(${CMAKE_BINARY_DIR}/elmergrid/src)
  
  ADD_DEFINITIONS(-DDISABLE_MATC)
-@@ -33,7 +27,7 @@ ADD_EXECUTABLE(ElmerGrid ${elmergrid_SRCS})
- 
- TARGET_LINK_LIBRARIES(ElmerGrid metis m)
- IF(NOT(WIN32))
--  SET_TARGET_PROPERTIES(ElmerGrid PROPERTIES INSTALL_RPATH ${ELMERSOLVER_RPATH_STRING})
-+  SET_TARGET_PROPERTIES(ElmerGrid PROPERTIES INSTALL_RPATH "${ELMERSOLVER_RPATH_STRING}")
- ENDIF()
- 
- INSTALL(TARGETS ElmerGrid RUNTIME DESTINATION "bin")
