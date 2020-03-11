@@ -1,2 +1,21 @@
 bin/semaphore
 @sample %%ETCDIR%%/semaphore_config.json.sample
+%%DATADIR%%/v0.0.0.sql
+%%DATADIR%%/v0.1.0.sql
+%%DATADIR%%/v1.0.0.sql
+%%DATADIR%%/v1.1.0.sql
+%%DATADIR%%/v1.2.0.sql
+%%DATADIR%%/v1.3.0.sql
+%%DATADIR%%/v1.4.0.sql
+%%DATADIR%%/v1.5.0.sql
+%%DATADIR%%/v1.6.0.sql
+%%DATADIR%%/v1.7.0.sql
+%%DATADIR%%/v1.8.0.sql
+%%DATADIR%%/v1.9.0.sql
+%%DATADIR%%/v2.2.1.sql
+%%DATADIR%%/v2.3.0.sql
+%%DATADIR%%/v2.3.1.sql
+%%DATADIR%%/v2.3.2.sql
+%%DATADIR%%/v2.4.0.sql
+%%DATADIR%%/v2.5.0.sql
+
