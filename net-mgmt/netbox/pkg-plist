@@ -15,6 +15,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/administration/replicating-netbox.md
 %%PORTDOCS%%%%DOCSDIR%%/api/authentication.md
 %%PORTDOCS%%%%DOCSDIR%%/api/examples.md
+%%PORTDOCS%%%%DOCSDIR%%/api/filtering.md
 %%PORTDOCS%%%%DOCSDIR%%/api/overview.md
 %%PORTDOCS%%%%DOCSDIR%%/api/working-with-secrets.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/index.md
@@ -38,11 +39,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/development/utility-views.md
 %%PORTDOCS%%%%DOCSDIR%%/index.md
 %%PORTDOCS%%%%DOCSDIR%%/installation/1-postgresql.md
-%%PORTDOCS%%%%DOCSDIR%%/installation/2-netbox.md
-%%PORTDOCS%%%%DOCSDIR%%/installation/3-http-daemon.md
-%%PORTDOCS%%%%DOCSDIR%%/installation/4-ldap.md
+%%PORTDOCS%%%%DOCSDIR%%/installation/2-redis.md
+%%PORTDOCS%%%%DOCSDIR%%/installation/3-netbox.md
+%%PORTDOCS%%%%DOCSDIR%%/installation/4-http-daemon.md
+%%PORTDOCS%%%%DOCSDIR%%/installation/5-ldap.md
 %%PORTDOCS%%%%DOCSDIR%%/installation/index.md
-%%PORTDOCS%%%%DOCSDIR%%/installation/migrating-to-python3.md
 %%PORTDOCS%%%%DOCSDIR%%/installation/migrating-to-systemd.md
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrading.md
 %%PORTDOCS%%%%DOCSDIR%%/media/installation/netbox_ui_admin.png
@@ -103,6 +104,7 @@
 %%DATADIR%%/circuits/migrations/0017_circuittype_description.py
 %%DATADIR%%/circuits/migrations/__init__.py
 %%DATADIR%%/circuits/models.py
+%%DATADIR%%/circuits/querysets.py
 %%DATADIR%%/circuits/signals.py
 %%DATADIR%%/circuits/tables.py
 %%DATADIR%%/circuits/tests/__init__.py
@@ -203,7 +205,6 @@
 %%DATADIR%%/dcim/migrations/0069_deprecate_nullablecharfield.py
 %%DATADIR%%/dcim/migrations/0070_custom_tag_models.py
 %%DATADIR%%/dcim/migrations/0071_device_components_add_description.py
-%%DATADIR%%/dcim/migrations/0071_device_components_add_description_squashed_0088_powerfeed_available_power.py
 %%DATADIR%%/dcim/migrations/0072_powerfeeds.py
 %%DATADIR%%/dcim/migrations/0073_interface_form_factor_to_type.py
 %%DATADIR%%/dcim/migrations/0074_increase_field_length_platform_name_slug.py
@@ -232,6 +233,7 @@
 %%DATADIR%%/dcim/migrations/0096_interface_ordering.py
 %%DATADIR%%/dcim/migrations/0097_interfacetemplate_type_other.py
 %%DATADIR%%/dcim/migrations/0098_devicetype_images.py
+%%DATADIR%%/dcim/migrations/0099_powerfeed_negative_voltage.py
 %%DATADIR%%/dcim/migrations/__init__.py
 %%DATADIR%%/dcim/models/__init__.py
 %%DATADIR%%/dcim/models/device_component_templates.py
