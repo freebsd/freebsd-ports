@@ -1344,8 +1344,8 @@
 %%DATADIR%%/common/properties/ExtendedPictographic.txt
 %%DATADIR%%/common/properties/labels.txt
 %%DATADIR%%/common/properties/scriptMetadata.txt
-%%DATADIR%%/common/properties/segments/GraphemeBreakTest-12.0.0mod.html
-%%DATADIR%%/common/properties/segments/GraphemeBreakTest-12.0.0mod.txt
+%%DATADIR%%/common/properties/segments/GraphemeBreakTest.html
+%%DATADIR%%/common/properties/segments/GraphemeBreakTest.txt
 %%DATADIR%%/common/properties/segments/readme.txt
 %%DATADIR%%/common/rbnf/af.xml
 %%DATADIR%%/common/rbnf/ak.xml
