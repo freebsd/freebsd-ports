@@ -1,0 +1,56 @@
+--- SConstruct.orig	2020-02-08 06:51:40 UTC
++++ SConstruct
+@@ -1267,32 +1267,32 @@ else:
+             config.env['aiogps'] = True
+
+         # check for pyserial
+-        try:
+-            imp.find_module('serial')
+-            announce("Python module serial (pyserial) found.")
+-        except ImportError:
+-            # no pycairo, don't build xgps, xgpsspeed
+-            announce("WARNING: Python module serial (pyserial) not found.")
+-            config.env['xgps'] = False
++        #try:
++        #    imp.find_module('serial')
++        #    announce("Python module serial (pyserial) found.")
++        #except ImportError:
++        #    # no pycairo, don't build xgps, xgpsspeed
++        #    announce("WARNING: Python module serial (pyserial) not found.")
++        #    config.env['xgps'] = False
+
+         if config.env['xgps']:
+             # check for pycairo
+-            try:
+-                imp.find_module('cairo')
+-                announce("Python module cairo (pycairo) found.")
+-            except ImportError:
+-                # no pycairo, don't build xgps, xgpsspeed
+-                announce("WARNING: Python module cairo (pycairo) not found.")
+-                config.env['xgps'] = False
++            #try:
++            #    imp.find_module('cairo')
++            #    announce("Python module cairo (pycairo) found.")
++            #except ImportError:
++            #    # no pycairo, don't build xgps, xgpsspeed
++            #    announce("WARNING: Python module cairo (pycairo) not found.")
++            #    config.env['xgps'] = False
+
+             # check for pygobject
+-            try:
+-                imp.find_module('gi')
+-                announce("Python module gi (pygobject) found.")
+-            except ImportError:
+-                # no pygobject, don't build xgps, xgpsspeed
+-                announce("WARNING: Python module gi (pygobject) not found.")
+-                config.env['xgps'] = False
++            #try:
++            #    imp.find_module('gi')
++            #    announce("Python module gi (pygobject) found.")
++            #except ImportError:
++            #    # no pygobject, don't build xgps, xgpsspeed
++            #    announce("WARNING: Python module gi (pygobject) not found.")
++            #    config.env['xgps'] = False
+
+             if not config.CheckPKG('gtk+-3.0'):
+                 config.env['xgps'] = False

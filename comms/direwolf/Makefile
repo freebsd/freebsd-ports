@@ -2,6 +2,7 @@
 
 PORTNAME=	direwolf
 DISTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
