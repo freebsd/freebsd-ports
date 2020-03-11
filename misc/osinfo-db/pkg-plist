@@ -139,6 +139,7 @@ share/osinfo/os/cirros-cloud.net/cirros-0.3.3.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.4.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.3.5.xml
 share/osinfo/os/cirros-cloud.net/cirros-0.4.0.xml
+share/osinfo/os/clearlinux.org/clearlinux-rolling.xml
 share/osinfo/os/debian.org/debian-1.1.xml
 share/osinfo/os/debian.org/debian-1.2.xml
 share/osinfo/os/debian.org/debian-1.3.xml
@@ -580,6 +581,7 @@ share/osinfo/os/redhat.com/rhel-7.7.xml
 share/osinfo/os/redhat.com/rhel-8-unknown.xml
 share/osinfo/os/redhat.com/rhel-8.0.xml
 share/osinfo/os/redhat.com/rhel-8.1.xml
+share/osinfo/os/redhat.com/rhel-8.2.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
@@ -709,6 +711,7 @@ share/osinfo/os/ubuntu.com/ubuntu-18.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-18.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-19.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-19.10.xml
+share/osinfo/os/ubuntu.com/ubuntu-20.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
