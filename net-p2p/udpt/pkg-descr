@@ -1,0 +1,7 @@
+UDPT is a lightweight UDP torrent tracker for Unix-like systems.
+
+The main difference of this version of UDPT to an original is the
+ability to run this torrent tracker inside a local network and act
+as both local and remote network torrent tracker/announcer.
+
+WWW: https://github.com/troydm/udpt
