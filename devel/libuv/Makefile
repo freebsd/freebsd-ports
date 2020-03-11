@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libuv
-PORTVERSION=	1.34.2
+PORTVERSION=	1.35.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -13,8 +13,6 @@ LICENSE=	NODE
 LICENSE_NAME=	NODE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-TEST_DEPENDS=	gyp:devel/py-gyp
 
 USE_GITHUB=	yes
 
