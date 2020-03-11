@@ -9,7 +9,7 @@
  #include <cstddef>
  #include <cstdint>
  
-@@ -16,30 +14,19 @@
+@@ -16,30 +14,25 @@
  
  #if HAVE_ARM64_CRC32C
  
@@ -19,12 +19,18 @@
 -// getauxval() is not available on Android until API level 20. Link it as a weak
 -// symbol.
 -extern "C" unsigned long getauxval(unsigned long type) __attribute__((weak));
--
++#include <sys/types.h>
++#include <machine/armreg.h>
+ 
 -#define AT_HWCAP 16
 -#endif  // HAVE_STRONG_GETAUXVAL || HAVE_WEAK_GETAUXVAL
--
-+#include <machine/armreg.h>
-+#include <sys/types.h>
++#ifndef ID_AA64ISAR0_AES_VAL
++#define ID_AA64ISAR0_AES_VAL ID_AA64ISAR0_AES
++#endif
++#ifndef ID_AA64ISAR0_CRC32_VAL
++#define ID_AA64ISAR0_CRC32_VAL ID_AA64ISAR0_CRC32
++#endif
+ 
  namespace crc32c {
  
 -inline bool CanUseArm64Linux() {
@@ -42,11 +48,9 @@
 +  inline bool CanUseArm64Linux() {
 +    uint64_t id_aa64isar0;
 +  
-+    id_aa64isar0 = READ_SPECIALREG(ID_AA64ISAR0_EL1);
-+    if ((ID_AA64ISAR0_AES(id_aa64isar0) == ID_AA64ISAR0_AES_PMULL) && \
-+       (ID_AA64ISAR0_CRC32(id_aa64isar0) == ID_AA64ISAR0_CRC32_BASE))
-+      return true;
-+    return false;
++    id_aa64isar0 = READ_SPECIALREG(id_aa64isar0_el1);
++    return ((ID_AA64ISAR0_AES_VAL(id_aa64isar0) == ID_AA64ISAR0_AES_PMULL) &&
++      (ID_AA64ISAR0_CRC32_VAL(id_aa64isar0) == ID_AA64ISAR0_CRC32_BASE));
 +  }
  
  }  // namespace crc32c
