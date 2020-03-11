@@ -754,6 +754,7 @@ share/locale/ca/LC_MESSAGES/plasmashellprivateplugin.mo
 share/locale/ca/LC_MESSAGES/soliduiserver5.mo
 share/locale/ca/LC_MESSAGES/systemmonitor.mo
 share/locale/ca@valencia/LC_MESSAGES/freespacenotifier.mo
+share/locale/ca@valencia/LC_MESSAGES/kcm_feedback.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_translations.mo
 share/locale/ca@valencia/LC_MESSAGES/kcminit.mo
 share/locale/ca@valencia/LC_MESSAGES/kholidays_calendar_plugin.mo
@@ -790,6 +791,7 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_devicenotifications.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_dict.mo
+share/locale/ca@valencia/LC_MESSAGES/plasma_engine_hotplug.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_engine_notifications.mo

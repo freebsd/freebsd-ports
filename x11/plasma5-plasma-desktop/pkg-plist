@@ -508,6 +508,8 @@ share/doc/HTML/it/kcontrol/keys/index.cache.bz2
 share/doc/HTML/it/kcontrol/keys/index.docbook
 share/doc/HTML/it/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/it/kcontrol/mouse/index.docbook
+share/doc/HTML/it/kcontrol/notifications/index.cache.bz2
+share/doc/HTML/it/kcontrol/notifications/index.docbook
 share/doc/HTML/it/kcontrol/paths/index.cache.bz2
 share/doc/HTML/it/kcontrol/paths/index.docbook
 share/doc/HTML/it/kcontrol/solid-actions/index.cache.bz2
@@ -1574,6 +1576,7 @@ share/locale/ca@valencia/LC_MESSAGES/kcmsmserver.mo
 share/locale/ca@valencia/LC_MESSAGES/kfontinst.mo
 share/locale/ca@valencia/LC_MESSAGES/knetattach5.mo
 share/locale/ca@valencia/LC_MESSAGES/krdb.mo
+share/locale/ca@valencia/LC_MESSAGES/org.kde.plasma.emojier.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.kimpanel.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.panel.mo
