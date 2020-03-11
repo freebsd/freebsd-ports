@@ -175,8 +175,8 @@ post-install:
 
 check-wine-devel-vs-staging:
 	@${GREP} %%STAGING%% pkg-plist | while read f; do \
-	  f=`echo $$f | ${SED} -e 's/%%STAGING%%//'`; \
-	  if [ -f "$$STAGEDIR/$$PREFIX/$$f" ]; then \
+	  f=`echo $$f | ${SED} -e 's:%%STAGING%%::' -e "s:%%DATADIR%%:${DATADIR}:"`; \
+	  if [ -f "$$STAGEDIR/$$PREFIX/$$f" ] || [ -f "$$STAGEDIR/$$f" ]; then \
 	    ${PRINTF} "%s no longer contingent on %%STAGING%%?\n" "$$f"; \
 	  fi \
 	done
