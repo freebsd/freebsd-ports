@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	3.7.4
+PORTVERSION=	3.7.5
 CATEGORIES=	www
 MASTER_SITES=	SF/moodle/Moodle/stable37/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 CONFLICTS=	moodle35-3.5.[0-9]* moodle36-3.6.[0-9]* moodle38-3.8.[0-9]*
 
 USES=		cpe php:flavors tar:tgz
-USE_PHP=	ctype curl dom fileinfo gd hash iconv intl json mbstring \
+USE_PHP=	ctype curl dom fileinfo filter gd hash iconv intl json mbstring \
 		opcache openssl pcre session simplexml soap spl tokenizer \
 		xml xmlreader xmlrpc zip zlib
 WRKSRC=		${WRKDIR}/moodle
