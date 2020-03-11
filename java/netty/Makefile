@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netty
-PORTVERSION=	4.1.46
+PORTVERSION=	4.1.47
 DISTVERSIONSUFFIX=	.Final
 CATEGORIES=	java devel
 MASTER_SITES=	http://dl.bintray.com/netty/downloads/
