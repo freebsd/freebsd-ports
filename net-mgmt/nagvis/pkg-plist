@@ -282,6 +282,7 @@
 %%WWWDIR%%/share/frontend/nagvis-js/images/leaflet/marker-icon-2x.png
 %%WWWDIR%%/share/frontend/nagvis-js/images/leaflet/marker-icon.png
 %%WWWDIR%%/share/frontend/nagvis-js/images/leaflet/marker-shadow.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/nicedit/nicEditIcons-latest.gif
 %%WWWDIR%%/share/frontend/nagvis-js/index.php
 %%WWWDIR%%/share/frontend/nagvis-js/js/Element.js
 %%WWWDIR%%/share/frontend/nagvis-js/js/ElementBox.js
@@ -297,6 +298,7 @@
 %%WWWDIR%%/share/frontend/nagvis-js/js/ExtJSColor.js
 %%WWWDIR%%/share/frontend/nagvis-js/js/ExtLeaflet-src.js
 %%WWWDIR%%/share/frontend/nagvis-js/js/ExtLeaflet.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/ExtNicEdit.js
 %%WWWDIR%%/share/frontend/nagvis-js/js/ExtStacktrace.js
 %%WWWDIR%%/share/frontend/nagvis-js/js/ExtWzJsGraphics.js
 %%WWWDIR%%/share/frontend/nagvis-js/js/NagVisAggr.js
