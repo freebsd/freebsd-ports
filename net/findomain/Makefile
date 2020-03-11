@@ -2,6 +2,7 @@
 
 PORTNAME=	findomain
 DISTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	net security
 
 MAINTAINER=	vulcan@wired.sh
@@ -10,11 +11,9 @@ COMMENT=	Cross-platform subdomain enumerator
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo gmake perl5 ssl:build
-
+USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Edu4rdSHL
-USE_PERL5=	build
 
 CARGO_CRATES=	ansi_term-0.11.0 \
 		anyhow-1.0.26 \
@@ -110,7 +109,6 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		opaque-debug-0.2.3 \
 		openssl-0.10.28 \
 		openssl-probe-0.1.2 \
-		openssl-src-111.6.1+1.1.1d \
 		openssl-sys-0.9.54 \
 		parking_lot-0.10.0 \
 		parking_lot_core-0.7.0 \
