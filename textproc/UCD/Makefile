@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	UCD
-PORTVERSION=	12.1.0
+PORTVERSION=	13.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.unicode.org/Public/zipped/${PORTVERSION}/:src\
 		ftp://www.unicode.org/Public/zipped/${PORTVERSION}/:src	\
