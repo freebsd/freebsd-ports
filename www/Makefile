@@ -32,6 +32,7 @@
     SUBDIR += archiva
     SUBDIR += aria2
     SUBDIR += asql
+    SUBDIR += authelia
     SUBDIR += awffull
     SUBDIR += aws
     SUBDIR += aws-demos
