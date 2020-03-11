@@ -61,6 +61,9 @@
 %%DATADIR%%/auxiliary/WordBreakProperty.txt
 %%DATADIR%%/auxiliary/WordBreakTest.html
 %%DATADIR%%/auxiliary/WordBreakTest.txt
+%%DATADIR%%/emoji/ReadMe.txt
+%%DATADIR%%/emoji/emoji-data.txt
+%%DATADIR%%/emoji/emoji-variation-sequences.txt
 %%DATADIR%%/extracted/DerivedBidiClass.txt
 %%DATADIR%%/extracted/DerivedBinaryProperties.txt
 %%DATADIR%%/extracted/DerivedCombiningClass.txt
