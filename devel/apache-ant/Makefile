@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache-ant
-DISTVERSION=	1.10.6
+DISTVERSION=	1.10.7
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/ant/binaries/:bin \
 		LOCAL/hq:man
@@ -15,13 +15,14 @@ COMMENT=	Java- and XML-based build tool, conceptually similar to make
 
 LICENSE=	APACHE20
 
+USES=		tar:bzip2
+USE_JAVA=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 ANT_DISTFILE=	${PORTNAME}-${DISTVERSION}-bin.tar.bz2
 MANPAGE_DISTFILE=	${PORTNAME}-manpage-${MANPAGE_VERSION}.tgz
 MANPAGE_VERSION=	20030908
-USES=		tar:bzip2
-USE_JAVA=	yes
 
 NO_ARCH=	yes
 NO_BUILD=	yes
