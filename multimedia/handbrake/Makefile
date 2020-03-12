@@ -124,6 +124,8 @@ post-extract: .SILENT
 # for powerpc64.
 # picked from multimedia/ffmpeg/files/patch-libswscale_ppc_swscale__altivec.c
 	${CP} ${FILESDIR}/P02-freebsd-ppc-libswscale.patch ${WRKSRC}/contrib/ffmpeg
+# fix pkgconfig directory name for meson build
+	${CP} ${FILESDIR}/A01-src-meson-build.patch ${WRKSRC}/contrib/libdav1d
 
 post-install-X11-on:
 	${LN} -sf ghb ${STAGEDIR}${PREFIX}/bin/HandBrake
