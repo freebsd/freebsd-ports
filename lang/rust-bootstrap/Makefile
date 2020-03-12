@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	1.41.1
+PORTVERSION=	1.42.0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:rust \
 		LOCAL/tobik:armbase \
@@ -139,6 +139,7 @@ do-configure:
 	@${ECHO_CMD} '[rust]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'channel="stable"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'deny-warnings=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'link-shared=false' >> ${WRKSRC}/config.toml
 .if ${FLAVOR} == powerpc64_elfv1
