@@ -9,7 +9,7 @@ include/libyang/user_types.h
 include/libyang/xml.h
 lib/libyang.so
 lib/libyang.so.1
-lib/libyang.so.1.2.2
+lib/libyang.so.1.6.7
 lib/libyang/extensions/metadata.so
 lib/libyang/extensions/nacm.so
 lib/libyang/extensions/yangdata.so
