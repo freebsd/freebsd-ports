@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: kibana
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=kibana
+rcvar=kibana_enable
+
+load_rc_config $name
+
+: ${kibana_enable:="NO"}
+: ${kibana_config:="%%ETCDIR%%/kibana.yml"}
+: ${kibana_user:="www"}
+: ${kibana_group:="www"}
+: ${kibana_log:="/var/log/kibana.log"}
+
+export BABEL_DISABLE_CACHE=1
+export NODE_ENV=production
+# ml and reporting modules not supported on FreeBSD
+export XPACK_ML_ENABLED=false
+export XPACK_REPORTING_ENABLED=false
+
+required_files="${kibana_config}"
+pidfile="/var/run/${name}/${name}.pid"
+start_precmd="kibana_precmd"
+procname="%%LOCALBASE%%/bin/node"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} --no-warnings %%WWWDIR%%/src/cli serve --config ${kibana_config} --log-file ${kibana_log}"
+
+kibana_precmd()
+{
+	if [ ! -d $(dirname ${pidfile}) ]; then
+		install -d -o ${kibana_user} -g ${kibana_group} $(dirname ${pidfile})
+	fi
+
+	if [ ! -f ${kibana_log} ]; then
+		install -o ${kibana_user} -g ${kibana_group} -m 640 /dev/null ${kibana_log}
+	fi
+
+	if [ ! -d %%WWWDIR%%/optimize ]; then
+		install -d -o ${kibana_user} -g ${kibana_group} %%WWWDIR%%/optimize
+	else
+		# We may have installed a plugin as root which will cause files in here
+		# to be owned by root:wheel. Fix with a chown.
+		chown -R ${kibana_user}:${kibana_group} %%WWWDIR%%/optimize
+	fi
+}
+
+run_rc_command "$1"

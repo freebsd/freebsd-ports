@@ -322,6 +322,7 @@
     SUBDIR += kf5-sonnet
     SUBDIR += kf5-syntax-highlighting
     SUBDIR += kibana6
+    SUBDIR += kibana7
     SUBDIR += kiss-templates
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
