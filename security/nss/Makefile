@@ -57,7 +57,7 @@ BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
 .endif
 
 .if ${ARCH} == powerpc64
-USES+=		compiler:c++11-lang # -mcrypto -mvsx
+USE_GCC=	yes
 .else
 MAKE_ENV+=	NSS_DISABLE_ALTIVEC=1
 .endif
