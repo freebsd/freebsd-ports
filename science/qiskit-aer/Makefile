@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	spdlog>0:devel/spdlog
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libopenblas.so:math/openblas
-BUILD_DEPENDS=	spdlog>0:devel/spdlog
+RUN_DEPENDS=	spdlog>0:devel/spdlog
 
 USES=		cmake
 USE_GITHUB=	yes
