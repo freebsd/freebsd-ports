@@ -22,17 +22,21 @@ To configure hardware acceleration, follow the following steps.
    Find the following line and change it to the actual path.
     Option "DRMDevice" "/dev/dri/renderD128"
 
+   Chenge "0" to "1" of the following line.
+    Option "DRI3" "0"
+
 5. Restart your system and login via xrdp
 
 See also the Wiki page for detailed instructions:
   https://wiki.freebsd.org/Graphics#Hardware_Support
 
 
-If hardware acceleration is properly configured, you will see logs like the
-following in ~/.local/share/xorg/Xorg.10.log. 10 can be replaced with display
-number.
+If hardware acceleration is properly configured, you will see logs like both
+of the following in ~/.local/share/xorg/Xorg.10.log. 10 can be replaced with
+display number.
 
     "glamor X acceleration enabled on Mesa DRI Intel(R) Ivybridge Desktop"
+    "rdpScreenInit: rdpDri3Init ok"
 
 EOM
 }
