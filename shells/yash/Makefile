@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	yash
-DISTVERSION=	2.48
+DISTVERSION=	2.49
 CATEGORIES=	shells
-MASTER_SITES=	OSDN/yash/70439
+MASTER_SITES=	OSDN/yash/71638
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	POSIX-compliant command line shell
