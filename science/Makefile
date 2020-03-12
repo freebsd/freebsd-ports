@@ -291,6 +291,7 @@
     SUBDIR += pynn
     SUBDIR += qbox
     SUBDIR += qcl
+    SUBDIR += qiskit-aer
     SUBDIR += qmcpack
     SUBDIR += quantum-espresso
     SUBDIR += quantum-espresso-pseudopotentials
