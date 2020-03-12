@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	matterhorn
-PORTVERSION=	50200.6.0
+PORTVERSION=	50200.7.0
 CATEGORIES=	net-im
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,8 +15,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	matterhorn-chat
 GH_PROJECT=	matterhorn
 
-USE_CABAL=	aeson-1.4.5.0 \
-		ansi-terminal-0.10.1 \
+USE_CABAL=	Cabal-2.4.1.0_2 \
+		HTTP-4000.3.14 \
+		Hclip-3.0.0.4 \
+		QuickCheck-2.13.2 \
+		SHA-1.6.4.4 \
+		StateVar-1.2 \
+		aeson-1.4.5.0 \
+		ansi-terminal-0.10.3 \
 		asn1-encoding-0.9.6_1 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.3 \
@@ -31,15 +37,14 @@ USE_CABAL=	aeson-1.4.5.0 \
 		blaze-builder-0.4.1.0 \
 		blaze-html-0.9.1.2 \
 		blaze-markup-0.8.2.3 \
-		brick-0.50 \
+		brick-0.52 \
 		brick-skylighting-0.3 \
 		bytestring-builder-0.10.8.2.0 \
-		Cabal-2.4.1.0_2 \
 		case-insensitive-1.2.1.0 \
 		cereal-0.5.8.1 \
 		cheapskate-0.1.1.1_1 \
 		colour-2.3.5 \
-		config-ini-0.2.4.0 \
+		config-ini-0.2.4.0_1 \
 		connection-0.3.1_1 \
 		containers-0.6.2.1 \
 		contravariant-1.5.2 \
@@ -63,17 +68,15 @@ USE_CABAL=	aeson-1.4.5.0 \
 		happy-1.19.12 \
 		hashable-1.2.7.0_1 \
 		haskell-lexer-1.0.2 \
-		Hclip-3.0.0.4 \
 		hourglass-0.2.12 \
 		hsc2hs-0.68.6 \
-		HTTP-4000.3.14 \
 		http-media-0.8.0.0_2 \
 		hxt-9.3.1.18 \
 		hxt-charproperties-9.4.0.0 \
 		hxt-regex-xmlschema-9.2.0.3_1 \
 		hxt-unicode-9.0.2.4 \
-		integer-logarithms-1.0.3_1 \
-		mattermost-api-50200.3.0 \
+		integer-logarithms-1.0.3_2 \
+		mattermost-api-50200.4.0 \
 		megaparsec-7.0.5 \
 		memory-0.15.0_1 \
 		microlens-0.4.10_1 \
@@ -92,9 +95,8 @@ USE_CABAL=	aeson-1.4.5.0 \
 		parser-combinators-1.2.0 \
 		pem-0.2.4 \
 		pretty-show-1.9.5 \
-		primitive-0.7.0.0 \
+		primitive-0.7.0.0_1 \
 		process-1.6.6.0_1 \
-		QuickCheck-2.13.2 \
 		random-1.1_1 \
 		regex-base-0.94.0.0 \
 		regex-pcre-builtin-0.95.1.1.8.43 \
@@ -102,24 +104,22 @@ USE_CABAL=	aeson-1.4.5.0 \
 		safe-0.3.17 \
 		scientific-0.3.6.2 \
 		semigroups-0.18.5_1 \
-		SHA-1.6.4.4 \
 		skylighting-core-0.8.2.3 \
 		socks-0.6.1 \
 		split-0.2.3.3_2 \
-		splitmix-0.0.3 \
-		StateVar-1.2 \
+		splitmix-0.0.3_1 \
 		stm-2.5.0.0_1 \
 		stm-delay-0.1.1.1 \
 		streaming-commons-0.2.1.1 \
 		strict-0.3.2 \
 		syb-0.7.1 \
-		tagged-0.8.6_1 \
+		tagged-0.8.6_2 \
 		tagsoup-0.14.8 \
 		temporary-1.3 \
 		text-1.2.4.0 \
 		text-zipper-0.10.1 \
 		th-abstraction-0.2.11.0 \
-		time-compat-1.9.2.2_1 \
+		time-compat-1.9.2.2_2 \
 		timezone-olson-0.1.9 \
 		timezone-series-0.1.9 \
 		tls-1.5.2 \
@@ -132,7 +132,7 @@ USE_CABAL=	aeson-1.4.5.0 \
 		uuid-1.3.13_3 \
 		uuid-types-1.0.3_2 \
 		vector-0.12.0.3_2 \
-		vty-5.26 \
+		vty-5.28 \
 		websockets-0.12.5.3 \
 		word-wrap-0.4.1_1 \
 		x509-1.7.5_1 \
