@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
-COMMENT=	Python implementation of the  JSON RPC 2.0 protocol
+COMMENT=	Python implementation of the JSON RPC 2.0 protocol
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
