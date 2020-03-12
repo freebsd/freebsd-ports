@@ -1,0 +1,24 @@
+--- native/Makefile.orig	2020-03-02 20:56:13 UTC
++++ native/Makefile
+@@ -2,15 +2,18 @@ UNAME := $(shell uname)
+ ifeq ($(UNAME), Darwin)
+ 	LIB_ANGR_NATIVE=angr_native.dylib
+ endif
++ifeq ($(UNAME), FreeBSD)
++	LIB_ANGR_NATIVE=angr_native.so
++endif
+ ifeq ($(UNAME), Linux)
+ 	LIB_ANGR_NATIVE=angr_native.so
+ endif
+ 
+-CC := gcc
+-C++C := g++
++CC := %%CC%%
++C++C := %%CXX%%
+ CFLAGS := -I "${UNICORN_INCLUDE_PATH}" -I "${PYVEX_INCLUDE_PATH}" \
+ 	-L "${UNICORN_LIB_PATH}" -L "${PYVEX_LIB_PATH}" \
+-	-O3 -fPIC -std=c++11
++	%%CFLAGS%% %%LDFLAGS%% %%LIBS%% -fPIC -std=c++11
+ ifneq ($(DEBUG), )
+ 	CFLAGS := $(CFLAGS) -O0 -g
+ endif
