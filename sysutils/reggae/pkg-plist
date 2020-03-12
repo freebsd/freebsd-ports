@@ -2,12 +2,14 @@ bin/reggae
 %%ETCDIR%%.conf.sample
 man/man1/reggae-ansible.1.gz
 man/man1/reggae-chef.1.gz
+man/man1/reggae-init.1.gz
 man/man1/reggae-project.1.gz
 man/man1/reggae-provision.1.gz
 man/man1/reggae-puppet.1.gz
 man/man1/reggae-register.1.gz
 man/man1/reggae-salt.1.gz
 man/man1/reggae-service.1.gz
+man/man1/reggae-shell.1.gz
 man/man1/reggae.1.gz
 %%DATADIR%%/cbsd-profile/jail-freebsd-reggae.conf
 %%DATADIR%%/cbsd-profile/skel/etc/crontab
@@ -18,7 +20,6 @@ man/man1/reggae.1.gz
 %%DATADIR%%/cbsd-profile/skel/etc/master.passwd
 %%DATADIR%%/cbsd-profile/skel/etc/motd
 %%DATADIR%%/cbsd-profile/skel/etc/passwd
-%%DATADIR%%/cbsd-profile/skel/etc/pkg/FreeBSD.conf
 %%DATADIR%%/cbsd-profile/skel/etc/pwd.db
 %%DATADIR%%/cbsd-profile/skel/etc/rc.conf
 %%DATADIR%%/cbsd-profile/skel/etc/spwd.db
@@ -34,13 +35,13 @@ man/man1/reggae.1.gz
 %%DATADIR%%/cbsd-profile/skel/usr/home/provision/.rhosts
 %%DATADIR%%/cbsd-profile/skel/usr/home/provision/.shrc
 %%DATADIR%%/cbsd-profile/skel/usr/local/etc/sudoers
+%%DATADIR%%/cbsd-profile/system/facts.d/reggae_ip
 %%DATADIR%%/cbsd-profile/system/master_poststart.d/placeholder
 %%DATADIR%%/cbsd-profile/system/master_poststop.d/deregister.sh
 %%DATADIR%%/cbsd-profile/system/master_poststop.d/placeholder
 %%DATADIR%%/cbsd-profile/system/master_prestart.d/placeholder
 %%DATADIR%%/cbsd-profile/system/master_prestart.d/register.sh
 %%DATADIR%%/cbsd-profile/system/master_prestop.d/placeholder
-%%DATADIR%%/cbsd-profile/system/placeholder
 %%DATADIR%%/cbsd-profile/system/remove.d/placeholder
 %%DATADIR%%/cbsd-profile/system/start.d/placeholder
 %%DATADIR%%/cbsd-profile/system/stop.d/placeholder
