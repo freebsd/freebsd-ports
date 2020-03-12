@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 
 USES=		tar:xz
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 PLIST=		${PKGDIR}/pkg-plist.${ARCH}
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
