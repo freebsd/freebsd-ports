@@ -79,6 +79,7 @@ EXTRAS_COMMANDS= \
 		clang-change-namespace \
 		clang-doc \
 		clang-include-fixer \
+		clang-move \
 		clang-query \
 		clang-reorder-fields \
 		clang-tidy \

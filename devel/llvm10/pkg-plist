@@ -74,6 +74,7 @@ bin/sancov%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-change-namespace%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-doc%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-include-fixer%%LLVM_SUFFIX%%
+%%EXTRAS%%bin/clang-move%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-query%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-reorder-fields%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-tidy%%LLVM_SUFFIX%%
@@ -131,7 +132,7 @@ llvm%%LLVM_SUFFIX%%/bin/bugpoint
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-format
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-import-test
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/clang-include-fixer
-%%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-move
+%%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/clang-move
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-offload-bundler
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-offload-wrapper
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/clang-query
