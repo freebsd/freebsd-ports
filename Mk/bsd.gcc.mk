@@ -10,7 +10,7 @@
 # It uses the canonical version of GCC defined in bsd.default-versions.mk.
 #
 # USE_GCC=any is similar, except that it also accepts the old GCC 4.2-
-# based system compiler in older versions of FreeBSD.
+# based system compiler where still present.
 # 
 # If your port needs a specific (minimum) version of GCC, you can easily
 # specify that with a USE_GCC= statement.  Unless absolutely necessary
@@ -33,8 +33,7 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
 # All GCC versions supported by the ports framework.  Keep them in
 # ascending order and in sync with the table below. 
-# When adding a version, please keep the comment in
-# Mk/bsd.default-versions.mk in sync.
+# When updating this, keep Mk/bsd.default-versions.mk in sync.
 GCCVERSIONS=	040200 040800 070000 080000 090000
 
 # The first field is the OSVERSION in which it disappeared from the base.
@@ -173,10 +172,6 @@ test-gcc:
 .else
 	@echo Port cannot use later versions.
 .endif
-.for v in ${GCCVERSIONS}
-	@echo -n "GCC version: ${_GCCVERSION_${v}_V} "
-	@echo "- OSVERSION up to ${_GCCVERSION_${v}_R}"
-.endfor
 	@echo Using GCC version ${_USE_GCC}
 .endif
 	@echo CC=${CC} - CXX=${CXX} - CPP=${CPP}
