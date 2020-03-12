@@ -15,6 +15,7 @@ include/frr/compiler.h
 include/frr/csv.h
 include/frr/db.h
 include/frr/debug.h
+include/frr/defaults.h
 include/frr/distribute.h
 include/frr/eigrpd/eigrp_dump.h
 include/frr/eigrpd/eigrp_topology.h
@@ -41,6 +42,7 @@ include/frr/jhash.h
 include/frr/json.h
 include/frr/keychain.h
 include/frr/lib_errors.h
+include/frr/lib_vty.h
 include/frr/libfrr.h
 include/frr/libospf.h
 include/frr/linklist.h
@@ -48,7 +50,6 @@ include/frr/log.h
 include/frr/log_vty.h
 include/frr/md5.h
 include/frr/memory.h
-include/frr/memory_vty.h
 include/frr/mlag.h
 include/frr/module.h
 include/frr/monotime.h
@@ -174,6 +175,7 @@ share/yang/frr-ripd.yang
 share/yang/frr-ripngd.yang
 share/yang/frr-route-types.yang
 share/yang/frr-test-module.yang
+share/yang/ietf-routing-types.yang
 %%ETCDIR%%/babeld.conf.sample
 %%ETCDIR%%/bfdd.conf.sample
 %%ETCDIR%%/bgpd.conf.sample
