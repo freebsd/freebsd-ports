@@ -12,6 +12,7 @@
     SUBDIR += anydesk
     SUBDIR += appwrapper
     SUBDIR += aspostit
+    SUBDIR += ausweisapp2
     SUBDIR += autocutsel
     SUBDIR += baobab
     SUBDIR += basket

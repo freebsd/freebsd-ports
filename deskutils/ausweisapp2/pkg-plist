@@ -1,0 +1,7 @@
+bin/AusweisApp2
+share/ausweisapp2/AusweisApp2/AusweisApp2.rcc
+share/ausweisapp2/AusweisApp2/config.json
+share/ausweisapp2/AusweisApp2/npa.svg
+share/ausweisapp2/AusweisApp2/translations/ausweisapp2_de.qm
+share/applications/com.governikus.ausweisapp2.desktop
+share/metainfo/com.governikus.ausweisapp2.metainfo.xml
