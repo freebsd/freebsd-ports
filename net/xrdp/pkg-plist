@@ -11,6 +11,14 @@ lib/librfxencode.so
 lib/librfxencode.so.0.0.0
 lib/librfxencode.a
 lib/librfxencode.so.0
+include/ms-erref.h
+include/ms-fscc.h
+include/ms-rdpbcgr.h
+include/ms-rdpefs.h
+include/ms-rdpegdi.h
+include/ms-rdpele.h
+include/ms-rdperp.h
+include/ms-smb2.h
 include/painter.h
 include/rfxcodec_common.h
 include/rfxcodec_decode.h
