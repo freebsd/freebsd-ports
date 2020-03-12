@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Munin/Common/Config.pm
+%%SITE_PERL%%/Munin/Common/Daemon.pm
 %%SITE_PERL%%/Munin/Common/Defaults.pm
 %%SITE_PERL%%/Munin/Common/DictFile.pm
 %%SITE_PERL%%/Munin/Common/SyncDictFile.pm
@@ -7,6 +8,7 @@
 %%SITE_PERL%%/Munin/Common/TLSServer.pm
 %%SITE_PERL%%/Munin/Common/Timeout.pm
 man/man3/Munin::Common::Config.3.gz
+man/man3/Munin::Common::Daemon.3.gz
 man/man3/Munin::Common::Defaults.3.gz
 man/man3/Munin::Common::TLS.3.gz
 man/man3/Munin::Common::TLSClient.3.gz
