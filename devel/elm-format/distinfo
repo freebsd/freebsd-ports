@@ -1,6 +1,6 @@
-TIMESTAMP = 1565381463
-SHA256 (cabal/elm-format-0.8.2.tar.gz) = ea18693e226e3ab920f372cb701b9b6fc09e23626b784e22d0f4a8a468de459e
-SIZE (cabal/elm-format-0.8.2.tar.gz) = 341522
+TIMESTAMP = 1583778091
+SHA256 (cabal/elm-format-0.8.3.tar.gz) = 6bef1e7bf5d8781d30ad3b98a33ce4a550da7e80dbae8b9b80b6a28a7b1a6ba9
+SIZE (cabal/elm-format-0.8.3.tar.gz) = 342385
 SHA256 (cabal/Cabal-2.4.1.0/Cabal-2.4.1.0.tar.gz) = 736a902da9fb2c826e75e9f7b4b591983bf58a6a62c8cae9866f6a9d5ace3594
 SIZE (cabal/Cabal-2.4.1.0/Cabal-2.4.1.0.tar.gz) = 744637
 SHA256 (cabal/Cabal-2.4.1.0/revision/1.cabal) = 56c858cf85e8756a94aaf930f2be4c2eaee623f067e7c55394194d3741147ab7
@@ -85,5 +85,5 @@ SHA256 (cabal/unordered-containers-0.2.10.0/unordered-containers-0.2.10.0.tar.gz
 SIZE (cabal/unordered-containers-0.2.10.0/unordered-containers-0.2.10.0.tar.gz) = 44733
 SHA256 (cabal/unordered-containers-0.2.10.0/revision/1.cabal) = 5e9b095a9283d9e2f064fec73a81a6b6ea0b7fda3f219a8175785d2d2a3de204
 SIZE (cabal/unordered-containers-0.2.10.0/revision/1.cabal) = 5199
-SHA256 (cabal/avh4-elm-format-0.8.2_GH0.tar.gz) = ea18693e226e3ab920f372cb701b9b6fc09e23626b784e22d0f4a8a468de459e
-SIZE (cabal/avh4-elm-format-0.8.2_GH0.tar.gz) = 341522
+SHA256 (cabal/avh4-elm-format-0.8.3_GH0.tar.gz) = 6bef1e7bf5d8781d30ad3b98a33ce4a550da7e80dbae8b9b80b6a28a7b1a6ba9
+SIZE (cabal/avh4-elm-format-0.8.3_GH0.tar.gz) = 342385
