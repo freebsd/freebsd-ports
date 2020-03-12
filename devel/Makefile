@@ -4068,6 +4068,7 @@
     SUBDIR += py-atomicwrites
     SUBDIR += py-atpublic
     SUBDIR += py-attrs
+    SUBDIR += py-autoflake
     SUBDIR += py-automaton
     SUBDIR += py-avro
     SUBDIR += py-aws-sam-translator
