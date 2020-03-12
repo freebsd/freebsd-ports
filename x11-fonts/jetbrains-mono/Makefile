@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jetbrains-mono
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/JetBrains/JetBrainsMono/releases/download/v${PORTVERSION}/
 DISTNAME=	JetBrainsMono-${DISTVERSION}
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 USES=		fonts zip
 
-WRKSRC=	${WRKDIR}/JetBrainsMono-${PORTVERSION}-Source
+WRKSRC=	${WRKDIR}/JetBrainsMono-${PORTVERSION}
 
 NO_ARCH=	yes
 NO_BUILD=	yes
