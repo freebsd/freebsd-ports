@@ -22,12 +22,12 @@ ONLY_FOR_ARCHS_REASON=	pyvex_c/pyvex.c does not support this architecture (see l
 
 BUILD_DEPENDS=	${_MY_DEPENDS}
 RUN_DEPENDS=	${_MY_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}archinfo==${DISTVERSION}:devel/py-archinfo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}archinfo>=${DISTVERSION}:devel/py-archinfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bitstring>0:devel/py-bitstring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycparser>0:devel/py-pycparser@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}angr==${DISTVERSION}:security/py-angr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}angr>=${DISTVERSION}:security/py-angr@${PY_FLAVOR} \
 		z3>=0:math/z3
 
 USES=		gmake localbase python:3.5+
