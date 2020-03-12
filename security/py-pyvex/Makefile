@@ -26,12 +26,15 @@ RUN_DEPENDS=	${_MY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}bitstring>0:devel/py-bitstring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycparser>0:devel/py-pycparser@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}angr==${DISTVERSION}:security/py-angr@${PY_FLAVOR} \
+		z3>=0:math/z3
 
 USES=		gmake localbase python:3.5+
 USE_CSTD=	c99
 USE_GITHUB=	nodefault
-GH_TUPLE=	angr:${PORTNAME}:4fa68d58618a7635b281c9d06263c75fb9bf357f:tests
+GH_TUPLE=	angr:${PORTNAME}:4fa68d58618a7635b281c9d06263c75fb9bf357f:tests \
+		angr:binaries:f2de6d7a0474d22130ffadd042327536a6fda114:binaries
 USE_PYTHON=	autoplist distutils
 
 MAKE_ENV=	EXTRA_CFLAGS="${CFLAGS}"
@@ -50,6 +53,7 @@ post-install:
 
 pre-test:
 	@${LN} -Fs ${WRKSRC_tests}/tests ${WRKSRC}/tests
+	@${LN} -Fs ${WRKSRC_binaries} ${WRKDIR}/binaries
 
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} nosetests-${PYTHON_VER} tests/*)
