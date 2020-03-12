@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.65.3
+DISTVERSION=	0.67.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -99,7 +99,6 @@ GH_TUPLE=	\
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		tdewolff:minify:v2.6.1:tdewolff_minify/vendor/github.com/tdewolff/minify/v2 \
 		tdewolff:parse:v2.3.14:tdewolff_parse/vendor/github.com/tdewolff/parse/v2 \
-		uber-go:atomic:v1.4.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		yuin:goldmark-highlighting:d1af22c1126f:yuin_goldmark_highlighting/vendor/github.com/yuin/goldmark-highlighting \
 		yuin:goldmark:v1.1.22:yuin_goldmark/vendor/github.com/yuin/goldmark
 
@@ -131,7 +130,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		211ba42a95a6e24e0f8798fe15bde4b8a8394483
+COMMIT_ID=		7f1da3efcd49c7fc5cf4a9714913a9f87e07e529
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
