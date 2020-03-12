@@ -1,5 +1,5 @@
-TIMESTAMP = 1580625401
-SHA256 (netron-3.8.5-node_modules.tgz) = ff8af43a1c1e6ff21533b78bbc9e6da2700d627a1c746f1646b3fd436ea5b7e1
-SIZE (netron-3.8.5-node_modules.tgz) = 51779193
-SHA256 (lutzroeder-netron-v3.8.5_GH0.tar.gz) = 078a52bd83882f9eaab0e877efa400fa82c827e0d407b2842fc564682df00fc1
-SIZE (lutzroeder-netron-v3.8.5_GH0.tar.gz) = 2201882
+TIMESTAMP = 1584047119
+SHA256 (netron-3.9.8-node_modules.tgz) = 4bbce26277bb196b9625b5f4f67bb0381d64b8c8676050af770335a470ed84bc
+SIZE (netron-3.9.8-node_modules.tgz) = 50537691
+SHA256 (lutzroeder-netron-v3.9.8_GH0.tar.gz) = 11c86b633a0cf7a94a2646e611a95d60f328f3d05c51cfcde1623499e1e44d58
+SIZE (lutzroeder-netron-v3.9.8_GH0.tar.gz) = 2218460

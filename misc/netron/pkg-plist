@@ -39,7 +39,6 @@ bin/netron
 %%PYTHON_SITELIBDIR%%/netron/flux-metadata.json
 %%PYTHON_SITELIBDIR%%/netron/flux.js
 %%PYTHON_SITELIBDIR%%/netron/gzip.js
-%%PYTHON_SITELIBDIR%%/netron/handlebars.min.js
 %%PYTHON_SITELIBDIR%%/netron/hdf5.js
 %%PYTHON_SITELIBDIR%%/netron/icon.png
 %%PYTHON_SITELIBDIR%%/netron/index.html
@@ -90,6 +89,5 @@ bin/netron
 %%PYTHON_SITELIBDIR%%/netron/view-grapher.js
 %%PYTHON_SITELIBDIR%%/netron/view-sidebar.css
 %%PYTHON_SITELIBDIR%%/netron/view-sidebar.js
-%%PYTHON_SITELIBDIR%%/netron/view.css
 %%PYTHON_SITELIBDIR%%/netron/view.js
 %%PYTHON_SITELIBDIR%%/netron/zip.js
