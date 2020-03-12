@@ -51,6 +51,8 @@ bin/kvantumpreview
 %%DATADIR%%/KvMojave/KvMojave.svg
 %%DATADIR%%/KvMojaveLight/KvMojaveLight.kvconfig
 %%DATADIR%%/KvMojaveLight/KvMojaveLight.svg
+%%DATADIR%%/KvMojaveMixed/KvMojaveMixed.kvconfig
+%%DATADIR%%/KvMojaveMixed/KvMojaveMixed.svg
 %%DATADIR%%/KvOxygen/KvOxygen.kvconfig
 %%DATADIR%%/KvOxygen/KvOxygen.svg
 %%DATADIR%%/KvRoughGlass/KvRoughGlass.kvconfig
@@ -89,6 +91,7 @@ share/color-schemes/KvGnomish.colors
 share/color-schemes/KvGray.colors
 share/color-schemes/KvMojave.colors
 share/color-schemes/KvMojaveLight.colors
+share/color-schemes/KvMojaveMixed.colors
 share/color-schemes/KvOxygen.colors
 share/color-schemes/KvRoughGlass.colors
 share/color-schemes/KvSimplicity.colors
@@ -107,6 +110,7 @@ share/kvantummanager/translations/kvantummanager_es.qm
 share/kvantummanager/translations/kvantummanager_et.qm
 share/kvantummanager/translations/kvantummanager_fi.qm
 share/kvantummanager/translations/kvantummanager_fr.qm
+share/kvantummanager/translations/kvantummanager_hu.qm
 share/kvantummanager/translations/kvantummanager_id.qm
 share/kvantummanager/translations/kvantummanager_it.qm
 share/kvantummanager/translations/kvantummanager_ja.qm
@@ -115,7 +119,9 @@ share/kvantummanager/translations/kvantummanager_nb_NO.qm
 share/kvantummanager/translations/kvantummanager_nl.qm
 share/kvantummanager/translations/kvantummanager_pl.qm
 share/kvantummanager/translations/kvantummanager_pt_BR.qm
+share/kvantummanager/translations/kvantummanager_ru.qm
 share/kvantummanager/translations/kvantummanager_sk_SK.qm
+share/kvantummanager/translations/kvantummanager_zh_Hans.qm
 share/kvantumpreview/translations/kvantumpreview_cs.qm
 share/kvantumpreview/translations/kvantumpreview_cy.qm
 share/kvantumpreview/translations/kvantumpreview_de.qm
@@ -123,6 +129,7 @@ share/kvantumpreview/translations/kvantumpreview_eo.qm
 share/kvantumpreview/translations/kvantumpreview_es.qm
 share/kvantumpreview/translations/kvantumpreview_fi.qm
 share/kvantumpreview/translations/kvantumpreview_fr.qm
+share/kvantumpreview/translations/kvantumpreview_hu.qm
 share/kvantumpreview/translations/kvantumpreview_id.qm
 share/kvantumpreview/translations/kvantumpreview_ja.qm
 share/kvantumpreview/translations/kvantumpreview_lt.qm
