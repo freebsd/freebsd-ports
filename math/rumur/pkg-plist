@@ -1,3 +1,4 @@
+bin/murphi2c
 bin/murphi2xml
 bin/rumur
 bin/rumur-run
@@ -28,6 +29,7 @@ include/rumur/stack.hh
 include/rumur/traverse.h
 include/rumur/validate.h
 lib/librumur.so
+man/man1/murphi2c.1.gz
 man/man1/murphi2xml.1.gz
 man/man1/rumur-run.1.gz
 man/man1/rumur.1.gz
