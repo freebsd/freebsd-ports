@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MASTERDIR=	${.CURDIR}/../../lang/php74
@@ -12,7 +13,5 @@ USE_CXXSTD=	gnu++11
 CPPFLAGS+=	-DU_USING_ICU_NAMESPACE=1
 
 TEST_TARGET=    test
-
-PORTREVISION=	1
 
 .include "${MASTERDIR}/Makefile"
