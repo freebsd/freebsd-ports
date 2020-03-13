@@ -1,0 +1,11 @@
+--- tools/perf/chrome_telemetry_build/BUILD.gn.orig	2019-12-12 12:41:31 UTC
++++ tools/perf/chrome_telemetry_build/BUILD.gn
+@@ -43,7 +43,7 @@ group("telemetry_chrome_test") {
+     data_deps += [ "//chrome:reorder_imports" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
+   }
+ 

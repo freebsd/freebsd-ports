@@ -1,0 +1,11 @@
+--- ui/gfx/BUILD.gn.orig	2019-12-12 12:41:33 UTC
++++ ui/gfx/BUILD.gn
+@@ -573,7 +573,7 @@ jumbo_source_set("memory_buffer_sources") {
+     deps += [ "//build/config/linux/libdrm" ]
+   }
+ 
+-  if (is_linux || is_android) {
++  if ((is_linux || is_android) && !is_bsd) {
+     deps += [ "//third_party/libsync" ]
+   }
+ 

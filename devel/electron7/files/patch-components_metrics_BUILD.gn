@@ -1,0 +1,14 @@
+--- components/metrics/BUILD.gn.orig	2019-12-12 12:39:30 UTC
++++ components/metrics/BUILD.gn
+@@ -164,6 +164,11 @@ jumbo_static_library("metrics") {
+   if (is_fuchsia) {
+     sources += [ "drive_metrics_provider_fuchsia.cc" ]
+   }
++  
++  if (is_bsd) {
++    sources -= [ "system_memory_stats_recorder_linux.cc" ]
++  }
++
+ }
+ 
+ # The component metrics provider is a separate target because it depends upon

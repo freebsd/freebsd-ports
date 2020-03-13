@@ -1,0 +1,15 @@
+--- content/common/BUILD.gn.orig	2019-12-12 12:39:40 UTC
++++ content/common/BUILD.gn
+@@ -367,6 +367,12 @@ source_set("common") {
+     libs += [ "android" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "sandbox_init_linux.cc",
++    ]
++  }
++
+   if (is_debug && !is_component_build && enable_plugins) {
+     # Content depends on the PPAPI message logging stuff; if this isn't here,
+     # some unit test binaries won't compile. This only worked in release mode

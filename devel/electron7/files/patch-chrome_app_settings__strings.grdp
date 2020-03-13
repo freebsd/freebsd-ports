@@ -1,0 +1,20 @@
+--- chrome/app/settings_strings.grdp.orig	2019-12-12 12:39:06 UTC
++++ chrome/app/settings_strings.grdp
+@@ -757,7 +757,7 @@
+       Themes
+     </message>
+   </if>
+-  <if expr="is_linux and not chromeos">
++  <if expr="is_posix and not chromeos">
+     <message name="IDS_SETTINGS_SYSTEM_THEME" desc="Text of the label describing the system (GTK+) browser theme on Linux">
+       GTK+
+     </message>
+@@ -771,7 +771,7 @@
+       Use Classic
+     </message>
+   </if>
+-  <if expr="not is_linux or chromeos">
++  <if expr="not is_posix or chromeos">
+     <message name="IDS_SETTINGS_RESET_TO_DEFAULT_THEME" desc="Name of the control which resets the browser theme back to the default theme.">
+       Reset to default
+     </message>
