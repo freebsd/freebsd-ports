@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli-core
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}adal>=1.2:net-mgmt/py-adal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.20.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.30.0:devel/py-wheel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-resource>=4.0:devel/py-azure-mgmt-resource@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-resource>=8.0.1:devel/py-azure-mgmt-resource@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}antlr4-python3-runtime>=0:devel/py-antlr4-python3-runtime@${PY_FLAVOR} \
 		${PY_ENUM34} \
 		${PY_FUTURES}
