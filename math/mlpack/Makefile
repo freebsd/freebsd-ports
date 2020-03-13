@@ -1,23 +1,27 @@
 # $FreeBSD$
 
 PORTNAME=	mlpack
-DISTVERSION=	3.0.1
-PORTREVISION=	10
+DISTVERSION=	3.2.2
 CATEGORIES=	math
-MASTER_SITES=	http://mlpack.org/files/
+MASTER_SITES=	https://mlpack.org/files/
 
 MAINTAINER=	robert.ayrapetyan@gmail.com
 COMMENT=	Fast, flexible machine learning library
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	ensmallen>0:math/ensmallen \
+		${LOCALBASE}/include/stb/stb_image.h:devel/stb
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libboost_unit_test_framework.so:devel/boost-libs \
 		libboost_serialization.so:devel/boost-libs \
 		libarmadillo.so:math/armadillo
 
-USES=		cmake compiler:c++14-lang
+USES=		cmake compiler:c++14-lang pkgconfig
 CMAKE_ARGS+=	-DBUILD_TESTS:BOOL=false -DBUILD_CLI_EXECUTABLES=false -DBUILD_PYTHON_BINDINGS=false
 USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DSTB_IMAGE_INCLUDE_DIR=${LOCALBASE}/include/stb
+CMAKE_OFF=	BUILD_PYTHON_BINDINGS BUILD_TESTS
 
 .include <bsd.port.mk>
