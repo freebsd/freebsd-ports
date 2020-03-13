@@ -26,7 +26,7 @@ _CCVERSION!=	${CC} --version
 _OBJC_CCVERSION_${_CC_hash}=	${_CCVERSION}
 PORTS_ENV_VARS+=	_OBJC_CCVERSION_${_CC_hash}
 .endif
-COMPILER_VERSION=	${_CCVERSION:M[0-9].[0-9]*:tW:C/([0-9]).([0-9]).*/\1\2/g}
+COMPILER_VERSION=	${_CCVERSION:M[0-9]*.[0-9]*:[1]:C/([0-9]+)\.([0-9]+)\..*/\1\2/}
 .if ${_CCVERSION:Mclang}
 COMPILER_TYPE=	clang
 .else
@@ -48,7 +48,7 @@ _OBJC_ALTCCVERSION_${_CC_hash}=	${_ALTCCVERSION}
 PORTS_ENV_VARS+=		_OBJC_ALTCCVERSION_${_CC_hash}
 .endif
 
-ALT_COMPILER_VERSION=	${_ALTCCVERSION:M[0-9].[0-9]*:tW:C/([0-9]).([0-9]).*/\1\2/g}
+ALT_COMPILER_VERSION=	${_ALTCCVERSION:M[0-9]*.[0-9]*:[1]:C/([0-9]+)\.([0-9]+)\..*/\1\2/}
 .if ${_ALTCCVERSION:Mclang}
 ALT_COMPILER_TYPE=	clang
 .elif !empty(_ALTCCVERSION)
