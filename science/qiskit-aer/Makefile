@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libopenblas.so:math/openblas
 RUN_DEPENDS=	spdlog>0:devel/spdlog
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	Qiskit
 
