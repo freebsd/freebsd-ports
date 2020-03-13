@@ -27,7 +27,7 @@ PLIST_FILES=	bin/irb \
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_DATA} ${WRKSRC}/man/irb.1
+	${INSTALL_DATA} ${WRKSRC}/man/irb.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .elif ${RUBY_VER} == 2.6
 # WIP: irb wrapper script is installed by ruby port so far, see bug 241554, 237833
 post-install:
