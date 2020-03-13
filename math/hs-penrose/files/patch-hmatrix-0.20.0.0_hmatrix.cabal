@@ -1,0 +1,10 @@
+--- hmatrix-0.20.0.0/hmatrix.cabal.orig	2001-09-09 01:46:40 UTC
++++ hmatrix-0.20.0.0/hmatrix.cabal
+@@ -127,6 +127,7 @@ library
+         if !flag(disable-default-paths)
+             extra-lib-dirs: /usr/local/lib
+             include-dirs: /usr/local/include
++        extra-lib-dirs: /usr/local/lib/gcc9
+         extra-libraries: gfortran
+ 
+     if os(windows)
