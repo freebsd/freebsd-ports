@@ -65,6 +65,7 @@
 %%WWW%%www/nginx-dist/50x.html
 %%WWW%%@postexec chmod a-w %D/www/nginx-dist
 %%WWW%%@postunexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
+%%NJS%%sbin/njs
 sbin/nginx
 share/vim/vimfiles/ftdetect/nginx.vim
 share/vim/vimfiles/ftplugin/nginx.vim
