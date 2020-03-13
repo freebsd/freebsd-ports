@@ -2,7 +2,7 @@
 
 PORTNAME=	libcyaml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ PLIST_FILES=	include/cyaml/cyaml.h \
 		lib/libcyaml.a \
 		lib/libcyaml.so \
 		lib/libcyaml.so.1 \
-		lib/libcyaml.so.1.0.1 \
+		lib/libcyaml.so.1.0.2 \
 		libdata/pkgconfig/libcyaml.pc
 
 post-stage:
