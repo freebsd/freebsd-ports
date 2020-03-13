@@ -2,7 +2,7 @@
 
 PORTNAME=	intel-graphics-compiler
 DISTVERSIONPREFIX=	igc-
-DISTVERSION=	1.0.3445
+DISTVERSION=	1.0.3471
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
