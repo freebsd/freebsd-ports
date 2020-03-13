@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x42-plugins
-DISTVERSION=	20181103 # the version is published here: http://gareus.org/misc/x42-plugins.php
-PORTREVISION=	1
+DISTVERSION=	20200114 # the version is published here: http://gareus.org/misc/x42-plugins.php
 CATEGORIES=	audio
 MASTER_SITES=	http://gareus.org/misc/x42-plugins/
 PKGNAMESUFFIX=	-lv2
