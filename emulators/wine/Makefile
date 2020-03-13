@@ -119,7 +119,11 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			liblcms2.so:graphics/lcms2 \
 			libpng.so:graphics/png
 
+# Include this only if it has not been already included by the
+# i386-wine slave port.
+.ifndef PKGNAMEPREFIX
 .include <bsd.port.pre.mk>
+.endif
 
 .if ${ARCH} == amd64
 # Wine is composed of three parts:
@@ -160,4 +164,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${STAGEDIR}${DOCSDIR}/README.winedbg
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${STAGEDIR}${DOCSDIR}/README.winedump
 
+.ifndef PKGNAMEPREFIX
 .include <bsd.port.post.mk>
+.endif

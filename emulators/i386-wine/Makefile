@@ -5,12 +5,6 @@
 #  - i386 specific port to be slave to ${PORTSDIR}/emulators/wine
 #  - amd64 specific port to be normal port (based on binary package)
 
-.if !defined(ARCH)
-ARCH!=		uname -p
-.endif
+ONLY_FOR_ARCHS=	i386 amd64
 
-.if ${ARCH} == i386
-.include "${.CURDIR}/Makefile.i386"
-.else
-.include "${.CURDIR}/Makefile.inc"
-.endif
+.include <bsd.port.mk>
