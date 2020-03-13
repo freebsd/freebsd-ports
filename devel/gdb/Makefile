@@ -70,7 +70,6 @@ OPTIONS_SUB=	yes
 BUNDLED_READLINE_CONFIGURE_OFF=	--with-system-readline
 DEBUG_CFLAGS=		-g
 GUILE_CONFIGURE_WITH=	guile
-GUILE_USES=		pkgconfig
 GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 GUILE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-guile22
 NLS_USES=	gettext-runtime
