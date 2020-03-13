@@ -13,4 +13,6 @@ CPPFLAGS+=	-DU_USING_ICU_NAMESPACE=1
 
 TEST_TARGET=    test
 
+PORTREVISION=	1
+
 .include "${MASTERDIR}/Makefile"
