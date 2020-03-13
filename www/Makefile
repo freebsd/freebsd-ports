@@ -17,6 +17,7 @@
     SUBDIR += Stikked
     SUBDIR += UniversalFeedCreator
     SUBDIR += ach
+    SUBDIR += adguardhome
     SUBDIR += adzap
     SUBDIR += alef-webfont
     SUBDIR += amphetadesk
