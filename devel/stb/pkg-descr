@@ -1,0 +1,10 @@
+single-file public domain (or MIT licensed) libraries for C/C++.
+
+Noteworthy:
+* image loader: stb_image.h
+* image writer: stb_image_write.h
+* image resizer: stb_image_resize.h
+* font text rasterizer: stb_truetype.h
+* typesafe containers: stb_ds.h
+
+WWW: https://github.com/nothings/stb
