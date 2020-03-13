@@ -4,10 +4,11 @@
 Some of the standard commands are provided as separate ports for ease
 of upgrading:
 
-	devel/ruby-gems:	gem - RubyGems package manager
-	devel/rubygem-irb:	irb - Interactive Ruby
-	devel/rubygem-rake:	rake - Ruby Make
-	devel/rubygem-rdoc:	rdoc - Ruby Documentation System
+	devel/ruby-gems:		gem - RubyGems package manager
+	devel/rubygem-irb:		irb - Interactive Ruby
+	devel/rubygem-rake:		rake - Ruby Make
+	devel/rubygem-rdoc:		rdoc - Ruby Documentation System
+	sysutils/rubygem-bundler:	bundler - Tool that manages gem dependencies for ruby applications
 
 And some of the standard libraries are provided as separate ports
 since they require extra dependencies:
