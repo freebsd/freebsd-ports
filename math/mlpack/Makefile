@@ -2,6 +2,7 @@
 
 PORTNAME=	mlpack
 DISTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://mlpack.org/files/
 
@@ -18,10 +19,9 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libarmadillo.so:math/armadillo
 
 USES=		cmake compiler:c++14-lang pkgconfig
-CMAKE_ARGS+=	-DBUILD_TESTS:BOOL=false -DBUILD_CLI_EXECUTABLES=false -DBUILD_PYTHON_BINDINGS=false
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DSTB_IMAGE_INCLUDE_DIR=${LOCALBASE}/include/stb
-CMAKE_OFF=	BUILD_PYTHON_BINDINGS BUILD_TESTS
+CMAKE_OFF=	BUILD_PYTHON_BINDINGS BUILD_TESTS BUILD_CLI_EXECUTABLES
 
 .include <bsd.port.mk>
