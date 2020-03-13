@@ -1,7 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	penrose
-DISTVERSION=	0.1.1.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1-737
+DISTVERSIONSUFFIX=	-gb336c8d
 CATEGORIES=	math haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,6 +16,7 @@ BUILD_DEPENDS=	hs-network==2.8.0.1:net/hs-network
 LIB_DEPENDS=	libgfortran.so:lang/gcc${GCC_DEFAULT}
 
 USES=		blaslapack cabal
+USE_GITHUB=	yes
 USE_CABAL=	\
 		MonadRandom-0.5.1.2 \
 		SHA-1.6.4.4 \
@@ -129,8 +132,5 @@ USE_CABAL=	\
 		word8-0.1.3 \
 		x509-1.7.5_1 \
 		zlib-0.6.2.1
-
-post-patch: # https://github.com/penrose/penrose/issues/320
-	@(${ECHO} "Usage:" ; ${ECHO} "  x") > ${WRKSRC}/USAGE.txt
 
 .include <bsd.port.mk>
