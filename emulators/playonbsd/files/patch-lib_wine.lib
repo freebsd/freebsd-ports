@@ -56,8 +56,8 @@
 +		ln -s /usr/local/lib "$WINEDIR/$WINEVERSION/lib"
 +	fi
 +	mkdir -p "$WINEDIR/$WINEVERSION/share"
-+	ln -s /usr/local/share/wine/gecko/*.msi "$WINEDIR/$WINEVERSION/share/wine/gecko/" #wine_gecko-$WINEVERSION-$ARCH.msi"
-+	ln -s /usr/local/share/wine/mono/*.msi "$WINEDIR/$WINEVERSION/share/wine/mono/" #wine_mono-$WINEVERSION-$ARCH.msi"
++	ln -s /usr/local/share/wine/gecko/*.msi "$WINEDIR/$WINEVERSION/share/wine/gecko/" #wine-gecko-$WINEVERSION-$ARCH.msi"
++	ln -s /usr/local/share/wine/mono/*.msi "$WINEDIR/$WINEVERSION/share/wine/mono/" #wine-mono-$WINEVERSION-$ARCH.msi"
 +}
  POL_Wine_InstallVersion()
  {
