@@ -13,6 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
+.if exists(/usr/lib/clang/10.0.0) && ${CXX} == c++
+BROKEN=		https://github.com/intel/intel-graphics-compiler/issues/126
+.endif
 
 LIB_DEPENDS=	libopencl-clang.so:devel/opencl-clang
 
