@@ -31,8 +31,6 @@ EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 				--exclude libdata/ldconfig32/${PKGNAMEPREFIX}${PORTNAME} \
 				-s '|/usr/local|${STAGEDIR}${PREFIX}|gs'
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	wine only runs on x86 architecture
 SLAVEDIR?=	${.CURDIR}
 PKGINSTALL=	${SLAVEDIR}/files/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
@@ -46,9 +44,6 @@ GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine-gecko-2.47.1-x86.msi:emulators/wine-gec
 MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.9.4.msi:emulators/wine-mono
 
 PORTSCOUT=	limitw:1,even
-
-# Included for OPSYS and OSVERSION
-.include <bsd.port.pre.mk>
 
 .for osrel in 11 12 13
 .if ${OSREL:C/\..*//} == ${osrel}
@@ -86,5 +81,3 @@ port-update:
 	${SED} -e '2,$${' -e '/^TIMESTAMP/d' -e '}' distinfo~ > ${SLAVEDIR}/distinfo
 	python ${FILESDIR}/mergeplist.py ${SLAVEDIR}/pkg-plist.* > ${PLIST}
 	${RM} ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
-
-.include <bsd.port.post.mk>
