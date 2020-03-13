@@ -3,7 +3,7 @@
 
 PORTNAME=	freerdp
 DISTVERSION=	2.0.0-rc4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net comms
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

@@ -3,7 +3,7 @@
 
 PORTNAME=	postfix
 DISTVERSION=	3.5-20200126
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
