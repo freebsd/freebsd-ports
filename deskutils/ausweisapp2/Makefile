@@ -17,7 +17,7 @@ BUILD_DEPENDS=	pcsc-lite>0:devel/pcsc-lite
 LIB_DEPENDS=	libhttp_parser.so:www/http-parser \
 		libpcsclite.so:devel/pcsc-lite
 
-USES=		cmake pkgconfig qmake qt:5 ssl
+USES=		cmake compiler:c++17-lang pkgconfig qmake qt:5 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Governikus
 GH_PROJECT=	AusweisApp2
