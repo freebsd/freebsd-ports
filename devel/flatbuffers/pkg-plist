@@ -21,4 +21,4 @@ lib/cmake/flatbuffers/FlatcTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/flatbuffers/FlatcTargets.cmake
 lib/libflatbuffers.so
 lib/libflatbuffers.so.1
-lib/libflatbuffers.so.1.11.0
+lib/libflatbuffers.so.1.12.0
