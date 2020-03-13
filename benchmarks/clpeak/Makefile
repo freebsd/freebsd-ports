@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clpeak
-PORTVERSION=	1.0g20170524
+DISTVERSION=	1.1.0-rc2
 CATEGORIES=	benchmarks
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -13,23 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
-RUN_DEPENDS=	opencl>=0:devel/opencl
 
-ONLY_FOR_ARCHS=	amd64
-
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	krrishnarraj
-GH_TAGNAME=	75c8746
-
 USE_LDCONFIG=	yes
-USES=		cmake:insource gl
-USE_GL=		gl
-
-CXXFLAGS+=	-std=c++11
-
 PLIST_FILES=	bin/clpeak
 
-do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/clpeak ${STAGEDIR}${PREFIX}/bin/clpeak
+post-patch:
+	@${REINPLACE_CMD} '/install.*LICENSE/d' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
