@@ -3,6 +3,7 @@
 
 PORTNAME=	wxmaxima
 PORTVERSION=	20.02.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	Version-
 CATEGORIES=	math
 
@@ -18,6 +19,7 @@ USES=		cmake desktop-file-utils shared-mime-info
 USE_WX=		3.0
 USE_GITHUB=	yes
 GH_ACCOUNT=	wxMaxima-Developers
+GH_TAGNAME=	68fead0
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
 WX_COMPS=	wx

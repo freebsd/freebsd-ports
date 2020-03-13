@@ -1,11 +1,11 @@
---- data/CMakeLists.txt.orig	2019-01-22 09:48:06 UTC
+--- data/CMakeLists.txt.orig	2020-03-12 16:44:38 UTC
 +++ data/CMakeLists.txt
-@@ -22,7 +22,7 @@ else()
-     install(FILES ${DATAFILES}                                                                   DESTINATION share/wxMaxima)
+@@ -23,7 +23,7 @@ else()
+     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/wxmaxima.1.in ${CMAKE_CURRENT_BINARY_DIR}/wxmaxima.1)
      install(FILES ${PIXMAPS}                                                                     DESTINATION share/pixmaps)
      install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/wxmaxima                                           DESTINATION share/bash-completion/completions)
--    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/wxmaxima.1                                         DESTINATION share/man/man1)
-+    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/wxmaxima.1                                         DESTINATION man/man1)
+-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/wxmaxima.1                                         DESTINATION share/man/man1)
++    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/wxmaxima.1                                         DESTINATION man/man1)
      install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/io.github.wxmaxima_developers.wxMaxima.appdata.xml DESTINATION share/metainfo)
      install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/io.github.wxmaxima_developers.wxMaxima.desktop     DESTINATION share/applications)
      install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/x-wxmathml.xml                                     DESTINATION share/mime/packages)
