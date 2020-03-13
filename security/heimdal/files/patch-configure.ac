@@ -1,0 +1,10 @@
+--- configure.ac.orig	2020-03-13 05:39:55.805336000 +0900
++++ configure.ac	2020-03-13 05:40:40.329535000 +0900
+@@ -153,6 +153,7 @@
+ if test "$enable_kx509" != no ;then
+ 	AC_DEFINE([KX509], 1, [Define to enable kx509.])
+ fi
++AM_CONDITIONAL(KX509, test "$enable_kx509" != no)
+ 
+ dnl Need to test if pkg-config exists
+ PKG_PROG_PKG_CONFIG

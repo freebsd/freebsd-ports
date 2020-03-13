@@ -1,6 +1,32 @@
---- configure.orig	2019-06-07 06:23:13 UTC
-+++ configure
-@@ -16103,7 +16103,7 @@ case "$host" in
+--- configure.orig	2019-06-07 15:23:13.000000000 +0900
++++ configure	2020-03-13 05:46:04.140343000 +0900
+@@ -792,6 +792,8 @@
+ PKG_CONFIG
+ PKINIT_FALSE
+ PKINIT_TRUE
++KX509_FALSE
++KX509_TRUE
+ OPENLDAP_MODULE_FALSE
+ OPENLDAP_MODULE_TRUE
+ LIB_openldap
+@@ -15041,9 +15043,15 @@
+ $as_echo "#define KX509 1" >>confdefs.h
+ 
+ fi
++ if test "$enable_kx509" != no; then
++  KX509_TRUE=
++  KX509_FALSE='#'
++else
++  KX509_TRUE='#'
++  KX509_FALSE=
++fi
+ 
+ 
+-
+ if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+ 	if test -n "$ac_tool_prefix"; then
+   # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
+@@ -16103,7 +16111,7 @@
      ;;
  *-*-freebsd*)
  	native_pthread_support=yes
@@ -9,7 +35,7 @@
  	;;
  *-*-openbsd*)
  	native_pthread_support=yes
-@@ -16339,7 +16339,7 @@ if ${ac_cv_funclib_db_create+:} false; then :
+@@ -16339,7 +16347,7 @@
    $as_echo_n "(cached) " >&6
  else
  
@@ -18,7 +44,7 @@
  	ac_save_LIBS="$LIBS"
  	for ac_lib in "" $dbheader db-5 db5 db4 db3 db; do
  		case "$ac_lib" in
-@@ -16912,6 +16912,9 @@ esac
+@@ -16912,6 +16920,9 @@
  
  $as_echo "#define HAVE_NDBM 1" >>confdefs.h
        have_ndbm=yes
@@ -28,7 +54,7 @@
      else
  
        $as_unset ac_cv_func_dbm_firstkey
-@@ -28663,7 +28666,7 @@ fi
+@@ -28663,7 +28674,7 @@
  
  krb_cv_compile_et="no"
  krb_cv_com_err_need_r=""
@@ -37,3 +63,14 @@
  if test "${COMPILE_ET}" != "no"; then
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether compile_et has the features we need" >&5
+@@ -29176,6 +29187,10 @@
+ fi
+ if test -z "${PKINIT_TRUE}" && test -z "${PKINIT_FALSE}"; then
+   as_fn_error $? "conditional \"PKINIT\" was never defined.
++Usually this means the macro was only invoked conditionally." "$LINENO" 5
++fi
++if test -z "${KX509_TRUE}" && test -z "${KX509_FALSE}"; then
++  as_fn_error $? "conditional \"KX509\" was never defined.
+ Usually this means the macro was only invoked conditionally." "$LINENO" 5
+ fi
+ if test -z "${HAVE_CAPNG_TRUE}" && test -z "${HAVE_CAPNG_FALSE}"; then
