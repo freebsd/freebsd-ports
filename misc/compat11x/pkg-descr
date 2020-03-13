@@ -1,4 +1,4 @@
-This package allows you to install the compat10x libraries on your
+This package allows you to install the compat11x libraries on your
 system, so you can use legacy binaries that depend on them.
 
 Ports usage example:
