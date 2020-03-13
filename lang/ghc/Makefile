@@ -86,7 +86,7 @@ ONLY_FOR_ARCHS+=	aarch64 armv6 armv7 powerpc64
 .include <bsd.port.pre.mk>
 
 # This version of ncurses is needed by bootstrap compiler
-.if ${OSVERSION} > 1300078 && empty(PORT_OPTIONS:MBOOT)
+.if ${OSVERSION} > 1300078 && empty(PORT_OPTIONS:MBOOT) && ${ARCH} != powerpc64
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
 .endif
 
@@ -102,7 +102,7 @@ LLVM_VERSION=		60
 CONFIGURE_ARGS+=	--enable-dtrace=0
 .endif
 
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == amd64 || ${ARCH} == i386 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv2)
 BOOT_GHC_VERSION=	8.6.5
 .else
 BOOT_GHC_VERSION=	8.6.3
