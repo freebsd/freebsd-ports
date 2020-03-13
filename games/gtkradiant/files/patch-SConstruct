@@ -33,6 +33,15 @@
  
  # OS
  OS = commands.getoutput('uname')
+@@ -140,7 +132,7 @@
+ ver_cc = GetGCCVersion(CC)
+ ver_cxx = GetGCCVersion(CXX)
+ 
+-if ( ver_cc is None or ver_cxx is None or ver_cc[0] < '3' or ver_cxx[0] < '3' or ver_cc != ver_cxx ):
++if ( ver_cc is None or ver_cxx is None or ver_cc[0] < 3 or ver_cxx[0] < 3 or ver_cc != ver_cxx ):
+   print 'Compiler version check failed - need gcc 3.x or later:'
+   print 'CC: %s %s\nCXX: %s %s' % ( CC, repr(ver_cc), CXX, repr(ver_cxx) )
+   Exit(1)
 @@ -172,8 +164,8 @@
  # common flags
  warningFlags = '-W -Wall -Wcast-align -Wcast-qual -Wno-unused-parameter '
