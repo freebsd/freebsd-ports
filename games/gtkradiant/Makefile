@@ -16,14 +16,11 @@ COMMENT=	Map editor for FPS games, by id Software and Loki Software
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
-
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libmhash.so:security/mhash \
 		libpng.so:graphics/png
 
-USES=		compiler:c++11-lang gnome pkgconfig python:2.7,build scons zip
+USES=		compiler:c++11-lang gnome pkgconfig python:build scons zip
 USE_GNOME=	gtk20 libxml2
 MAKE_ARGS=	${MAKE_ENV} BUILD=release
 SSP_UNSAFE=	yes
