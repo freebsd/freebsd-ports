@@ -1,0 +1,11 @@
+--- chrome/common/extensions/api/api_sources.gni.orig	2019-12-12 12:39:19 UTC
++++ chrome/common/extensions/api/api_sources.gni
+@@ -109,7 +109,7 @@ if (is_chromeos) {
+     "wallpaper.json",
+     "wallpaper_private.json",
+   ]
+-} else if (is_linux || is_win) {
++} else if (is_linux || is_bsd || is_win) {
+   schema_sources_ += [ "input_ime.json" ]
+ }
+ 

@@ -1,0 +1,11 @@
+--- services/service_manager/sandbox/BUILD.gn.orig	2019-12-12 12:39:57 UTC
++++ services/service_manager/sandbox/BUILD.gn
+@@ -28,7 +28,7 @@ component("sandbox") {
+     "//base",
+     "//sandbox:common",
+   ]
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [
+       "linux/bpf_audio_policy_linux.cc",
+       "linux/bpf_audio_policy_linux.h",

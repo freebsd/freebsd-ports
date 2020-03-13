@@ -1,0 +1,13 @@
+--- chrome/common/BUILD.gn.orig	2019-12-12 12:39:19 UTC
++++ chrome/common/BUILD.gn
+@@ -293,6 +293,10 @@ static_library("common") {
+     public_deps += [ "//ppapi/shared_impl" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [ "component_flash_hint_file_linux.cc" ]
++  }
++
+   if (enable_extensions) {
+     sources += [
+       "cast_messages.cc",

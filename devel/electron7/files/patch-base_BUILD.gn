@@ -1,0 +1,67 @@
+--- base/BUILD.gn.orig	2019-12-12 12:38:58 UTC
++++ base/BUILD.gn
+@@ -1266,7 +1266,7 @@ jumbo_component("base") {
+   # Needed for <atomic> if using newer C++ library than sysroot, except if
+   # building inside the cros_sdk environment - use host_toolchain as a
+   # more robust check for this.
+-  if (!use_sysroot && (is_android || (is_linux && !is_chromecast)) &&
++  if (!use_sysroot && (is_android || (is_linux && !is_chromecast) && !is_clang) &&
+       host_toolchain != "//build/toolchain/cros:host") {
+     libs += [ "atomic" ]
+   }
+@@ -1292,7 +1292,7 @@ jumbo_component("base") {
+         "allocator/allocator_shim_override_glibc_weak_symbols.h",
+       ]
+       deps += [ "//base/allocator:tcmalloc" ]
+-    } else if (is_linux && use_allocator == "none") {
++    } else if ((is_linux && !is_bsd) && use_allocator == "none") {
+       sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
+     } else if (is_android && use_allocator == "none") {
+       sources += [
+@@ -1893,6 +1893,33 @@ jumbo_component("base") {
+     }
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "files/file_path_watcher_linux.cc",
++      "files/file_util_linux.cc",
++      "process/memory_linux.cc",
++      "process/process_handle_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_metrics_linux.cc",
++      "system/sys_info_linux.cc"
++    ]
++    sources += [
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "files/file_path_watcher_stub.cc",
++      "process/memory_stubs.cc",
++      "process/process_handle_freebsd.cc",
++      "process/process_iterator_freebsd.cc",
++      "process/process_metrics_freebsd.cc",
++      "system/sys_info_freebsd.cc",
++    ]
++    libs = [
++      "execinfo", # logging.cc
++      "kvm",      # process_metrics_freebsd
++      "util"      # process_metrics_freebsd
++    ]
++  }
++
+   # iOS
+   if (is_ios) {
+     set_sources_assignment_filter([])
+@@ -3041,6 +3068,12 @@ test("base_unittests") {
+     ]
+     set_sources_assignment_filter(sources_assignment_filter)
+   }
++
++  if (is_bsd) {
++    sources -= [
++      "debug/proc_maps_linux_unittest.cc",
++    ]
++  } 
+ 
+   if (is_win) {
+     deps += [ "//base:scoped_handle_test_dll" ]
