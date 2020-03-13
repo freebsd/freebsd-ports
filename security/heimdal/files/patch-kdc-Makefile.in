@@ -1,6 +1,6 @@
---- kdc/Makefile.in.orig	2020-03-13 04:21:16.723517000 +0900
-+++ kdc/Makefile.in	2020-03-13 04:31:33.004672000 +0900
-@@ -199,7 +199,8 @@
+--- kdc/Makefile.in.orig	2020-03-13 17:12:43 UTC
++++ kdc/Makefile.in
+@@ -199,7 +199,8 @@ libkdc_la_DEPENDENCIES = $(LIB_pkinit) \
  	$(am__DEPENDENCIES_1)
  am_libkdc_la_OBJECTS = default_config.lo set_dbinfo.lo digest.lo \
  	fast.lo kerberos5.lo krb5tgs.lo pkinit.lo pkinit-ec.lo log.lo \
@@ -10,7 +10,7 @@
  libkdc_la_OBJECTS = $(am_libkdc_la_OBJECTS)
  AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
-@@ -213,6 +214,8 @@
+@@ -213,6 +214,8 @@ PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noins
  am_digest_service_OBJECTS = digest-service.$(OBJEXT)
  digest_service_OBJECTS = $(am_digest_service_OBJECTS)
  am__DEPENDENCIES_2 = $(top_builddir)/lib/hdb/libhdb.la \
@@ -19,7 +19,7 @@
  	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
  	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -224,6 +227,8 @@
+@@ -224,6 +227,8 @@ digest_service_DEPENDENCIES = libkdc.la \
  am_hprop_OBJECTS = hprop.$(OBJEXT) mit_dump.$(OBJEXT)
  hprop_OBJECTS = $(am_hprop_OBJECTS)
  hprop_DEPENDENCIES = $(top_builddir)/lib/hdb/libhdb.la \
@@ -28,7 +28,7 @@
  	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -232,6 +237,8 @@
+@@ -232,6 +237,8 @@ hprop_DEPENDENCIES = $(top_builddir)/lib/hdb/libhdb.la
  am_hpropd_OBJECTS = hpropd.$(OBJEXT)
  hpropd_OBJECTS = $(am_hpropd_OBJECTS)
  hpropd_DEPENDENCIES = $(top_builddir)/lib/hdb/libhdb.la \
@@ -37,7 +37,7 @@
  	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(top_builddir)/lib/asn1/libasn1.la \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -241,6 +248,8 @@
+@@ -241,6 +248,8 @@ am_kdc_OBJECTS = kdc-connect.$(OBJEXT) kdc-config.$(OB
  	kdc-announce.$(OBJEXT) kdc-main.$(OBJEXT)
  kdc_OBJECTS = $(am_kdc_OBJECTS)
  kdc_DEPENDENCIES = libkdc.la $(am__DEPENDENCIES_2) \
@@ -46,7 +46,7 @@
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
  kdc_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(kdc_CFLAGS) $(CFLAGS) \
-@@ -248,23 +257,35 @@
+@@ -248,23 +257,35 @@ kdc_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOL
  kdc_replay_SOURCES = kdc-replay.c
  kdc_replay_OBJECTS = kdc-replay.$(OBJEXT)
  kdc_replay_DEPENDENCIES = libkdc.la $(am__DEPENDENCIES_2) \
@@ -84,7 +84,7 @@
  	$(top_builddir)/lib/krb5/libkrb5.la $(am__DEPENDENCIES_1) \
  	$(top_builddir)/lib/asn1/libasn1.la $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -622,11 +643,13 @@
+@@ -622,11 +643,13 @@ libkdc_la_SOURCES = \
  	pkinit-ec.c		\
  	log.c			\
  	misc.c			\
@@ -99,7 +99,7 @@
  KDC_PROTOS = $(srcdir)/kdc-protos.h $(srcdir)/kdc-private.h
  ALL_OBJECTS = $(kdc_OBJECTS) $(kdc_replay_OBJECTS) \
  	$(kdc_tester_OBJECTS) $(libkdc_la_OBJECTS) \
-@@ -636,6 +659,8 @@
+@@ -636,6 +659,8 @@ libkdc_la_LDFLAGS = -version-info 2:0:0 $(am__append_1
  hprop_LDADD = \
  	$(top_builddir)/lib/hdb/libhdb.la \
  	$(top_builddir)/lib/krb5/libkrb5.la \
@@ -108,7 +108,7 @@
  	$(LIB_kdb)  \
  	$(LIB_hcrypto) \
  	$(top_builddir)/lib/asn1/libasn1.la \
-@@ -645,6 +670,8 @@
+@@ -645,6 +670,8 @@ hprop_LDADD = \
  hpropd_LDADD = \
  	$(top_builddir)/lib/hdb/libhdb.la \
  	$(top_builddir)/lib/krb5/libkrb5.la \
@@ -117,7 +117,7 @@
  	$(LIB_kdb)  \
  	$(LIB_hcrypto) \
  	$(top_builddir)/lib/asn1/libasn1.la \
-@@ -671,17 +698,24 @@
+@@ -671,17 +698,24 @@ LDADD = $(top_builddir)/lib/hdb/libhdb.la \
  	$(LIB_roken) \
  	$(DB3LIB) $(DB1LIB) $(LMDBLIB) $(NDBMLIB)
  

@@ -1,6 +1,6 @@
---- kdc/Makefile.am.orig	2016-12-20 23:23:06.000000000 +0900
-+++ kdc/Makefile.am	2020-03-13 04:31:52.289449000 +0900
-@@ -47,10 +47,13 @@
+--- kdc/Makefile.am.orig	2016-12-20 14:23:06 UTC
++++ kdc/Makefile.am
+@@ -47,10 +47,13 @@ libkdc_la_SOURCES = 		\
  	pkinit-ec.c		\
  	log.c			\
  	misc.c			\
