@@ -1,6 +1,6 @@
---- Resource/Init/cidfmap.orig	2015-03-30 08:21:24 UTC
+--- Resource/Init/cidfmap.orig	2020-03-12 12:26:37 UTC
 +++ Resource/Init/cidfmap
-@@ -29,6 +29,67 @@
+@@ -37,6 +37,67 @@
  %   /ShinGo-Bold   /HeiseiKakuGo-W5 ;
  %   /Ryumin-Medium << /FileType /TrueType /Path (H:/AuxFiles/Fonts/BATANG.TTC) /SubfontID 3 /CSI [(Japan1) 2] >> ;
  %   /Ryumin-Medium << /FileType /TrueType /Path (windir) getenv not {(c:/windows)}if (/Fonts/BATANG.TTC)concatstrings /SubfontID 3 /CSI [(Japan1) 2] >> ;
