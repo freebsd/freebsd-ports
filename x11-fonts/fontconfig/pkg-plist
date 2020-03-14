@@ -82,6 +82,6 @@ man/man1/fc-validate.1.gz
 man/man5/fonts-conf.5.gz
 share/gettext/its/fontconfig.its
 share/gettext/its/fontconfig.loc
-share/locale/zh_CN/LC_MESSAGES/fontconfig-conf.mo
-share/locale/zh_CN/LC_MESSAGES/fontconfig.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/fontconfig-conf.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/fontconfig.mo
 @dir /var/db/fontconfig
