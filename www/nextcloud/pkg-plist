@@ -5035,6 +5035,7 @@
 %%WWWDIR%%/apps-pkg/dav/lib/CalDAV/Search/Xml/Filter/SearchTermFilter.php
 %%WWWDIR%%/apps-pkg/dav/lib/CalDAV/Search/Xml/Request/CalendarSearchReport.php
 %%WWWDIR%%/apps-pkg/dav/lib/CalDAV/WebcalCaching/Plugin.php
+%%WWWDIR%%/apps-pkg/dav/lib/CalDAV/WebcalCaching/RefreshWebcalService.php
 %%WWWDIR%%/apps-pkg/dav/lib/Capabilities.php
 %%WWWDIR%%/apps-pkg/dav/lib/CardDAV/AddressBook.php
 %%WWWDIR%%/apps-pkg/dav/lib/CardDAV/AddressBookImpl.php
@@ -8551,6 +8552,7 @@
 %%WWWDIR%%/apps-pkg/notifications/img/notifications.svg
 %%WWWDIR%%/apps-pkg/notifications/js/notifications.js
 %%WWWDIR%%/apps-pkg/notifications/js/notifications.js.map
+%%WWWDIR%%/apps-pkg/notifications/.eslintignore
 %%WWWDIR%%/apps-pkg/notifications/l10n/af.js
 %%WWWDIR%%/apps-pkg/notifications/l10n/af.json
 %%WWWDIR%%/apps-pkg/notifications/l10n/ar.js
@@ -12942,6 +12944,9 @@
 %%WWWDIR%%/core/doc/user/_images/files_versioning.png
 %%WWWDIR%%/core/doc/user/_images/gallery-1.png
 %%WWWDIR%%/core/doc/user/_images/gallery-2.png
+%%WWWDIR%%/core/doc/user/_images/gnome-online-accounts.png
+%%WWWDIR%%/core/doc/user/_images/goa-add-nextcloud-account.png
+%%WWWDIR%%/core/doc/user/_images/goa-nextcloud-select.png
 %%WWWDIR%%/core/doc/user/_images/hidden_files.png
 %%WWWDIR%%/core/doc/user/_images/korganizer_credentials.png
 %%WWWDIR%%/core/doc/user/_images/korganizer_resource_choice.png
@@ -12994,6 +12999,7 @@
 %%WWWDIR%%/core/doc/user/_sources/pim/contacts.rst.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/index.rst.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/sync_android.rst.txt
+%%WWWDIR%%/core/doc/user/_sources/pim/sync_gnome.rst.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/sync_ios.rst.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/sync_kde.rst.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/sync_osx.rst.txt
@@ -13104,6 +13110,7 @@
 %%WWWDIR%%/core/doc/user/pim/contacts.html
 %%WWWDIR%%/core/doc/user/pim/index.html
 %%WWWDIR%%/core/doc/user/pim/sync_android.html
+%%WWWDIR%%/core/doc/user/pim/sync_gnome.html
 %%WWWDIR%%/core/doc/user/pim/sync_ios.html
 %%WWWDIR%%/core/doc/user/pim/sync_kde.html
 %%WWWDIR%%/core/doc/user/pim/sync_osx.html
