@@ -32,10 +32,6 @@ SUB_FILES=	pkg-message
 DESKTOP_ENTRIES="GVolWheel" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "GTK;AudioVideo;Audio;Mixer;" true
 
-post-patch:
-	${REINPLACE_CMD} -e 's|linux/soundcard|sys/soundcard|g' \
-		${WRKSRC}/src/callbacks.c ${WRKSRC}/src/actions.c
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
