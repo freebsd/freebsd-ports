@@ -1,0 +1,592 @@
+# Fix the build issue with --enable-static
+# https://cgit.freedesktop.org/fontconfig/commit/?id=8208f99fa1676c42bfd8d74de3e9dac5366c150c
+# Fix the issue that '~' wasn't extracted to the proper homedir
+# https://cgit.freedesktop.org/fontconfig/commit/?id=806fd4c2c5164d66d978b0a4c579c157e5cbe766
+# Add more prefix support in <dir> element
+# https://cgit.freedesktop.org/fontconfig/commit/?id=1aa8b700c3f09a31c78e7834e0db373f80b5e226
+# Update fonts.dtd for last commit
+# https://cgit.freedesktop.org/fontconfig/commit/?id=67b4090321c0ec3cf3dc96f6d3cd7b9d03af0f25
+# add missing the case of prefix="default" as documented
+# https://cgit.freedesktop.org/fontconfig/commit/?id=e4788c5a96e0f384ad5702ad8096b0e144613895
+# Do not update mtime when removing .uuid file
+# https://cgit.freedesktop.org/fontconfig/commit/?id=ff5b49be2be0922f0fb6b9daf08f64a88d2fae6b
+# Do not try updating mtime when unlink was failed
+# https://cgit.freedesktop.org/fontconfig/commit/?id=5f5ec5676c61b9773026a9335c9b0dfa73a73353
+# Do not remove UUID file when a scanned directory is empty
+# https://cgit.freedesktop.org/fontconfig/commit/?id=5f12f564f8748deaa603adb7a4b8f616b6390ad4
+# Fix name-table language code mapping for Mongolian
+# https://cgit.freedesktop.org/fontconfig/commit/?id=f7036d589bffe353c1982b881afae6ec0a2ef200
+# Use FC_PATH_MAX instead of PATH_MAX
+# https://cgit.freedesktop.org/fontconfig/commit/?id=648e0cf3d5a53efeab93b24ae37490427d05229d
+# Fix FcFontList doesn't return a font with FC_COLOR=true
+# https://cgit.freedesktop.org/fontconfig/commit/?id=9d5149ac41e18ab67404ddba41d7ef7e71839ebc
+# Fix a dereference of a null pointer
+# https://cgit.freedesktop.org/fontconfig/commit/?id=b047e299546ac3abb79cf0bac3c67f5c2dfc7fb6
+# Fix a crash with invalid matrix element
+# https://cgit.freedesktop.org/fontconfig/commit/?id=699d6e4d8415a5d94483ea81fdf277964a33b8f1
+# src/fccache.c: Fix define for HAVE_POSIX_FADVISE
+# https://cgit.freedesktop.org/fontconfig/commit/?id=586e35450e9ca7c1dc647ceb9d75ac8ed08c5c16
+# Reset errno to do error handling properly
+# https://cgit.freedesktop.org/fontconfig/commit/?id=97fa77d27facc6a31486fdca5b3b853c591f792c
+# fc-validate: returns an error code when missing some glyphs
+# https://cgit.freedesktop.org/fontconfig/commit/?id=c336b8471877371f0190ba06f7547c54e2b890ba
+# Fix endianness on generating MD5 cache name
+# https://cgit.freedesktop.org/fontconfig/commit/?id=66b0af41b81c5f0db1a8f952beaaada95e221d14
+# Fix a typo on masking face id
+# https://cgit.freedesktop.org/fontconfig/commit/?id=c0dc76268bb278c4bd123afbfb3409be64d0ed75
+# Fix the linear interpolation during weight mapping
+# https://cgit.freedesktop.org/fontconfig/commit/?id=f2d4291d12ca1a2146d90da32a399fffff3e8227
+# Fix a crash when running with FC_DEBUG=256
+# https://cgit.freedesktop.org/fontconfig/commit/?id=322131f4330f972820fd903959999af9360120c0
+# Fix a typo
+# https://cgit.freedesktop.org/fontconfig/commit/?id=a57f22bf6d93ad4079a6ae01fa00456921dc73e1
+# Improve the performance a bit
+# https://cgit.freedesktop.org/fontconfig/commit/?id=cb3e6ff4d7628b6eb1dd8f78737de5c387aaf2e1
+# Add English name first into a cache
+# https://cgit.freedesktop.org/fontconfig/commit/?id=2960391699ab3b417a17a0a2ac29e97e9c3d3c99
+# Fix a memory leak in FcFreeTypeQuery*()
+# https://cgit.freedesktop.org/fontconfig/commit/?id=e2f9f28aed1470a07c33a57940d68b6a3cbe235b
+
+Excluding changes for the following files: .gitlab-ci.yml, doc/fcstring.fncs,
+test/Makefile.am, test/test-bz106632.c, test/test-issue107.c, test/test-issue110.c
+
+--- fc-validate/fc-validate.c.orig	2018-06-05 10:36:38 UTC
++++ fc-validate/fc-validate.c
+@@ -197,6 +197,7 @@ main (int argc, char **argv)
+ 		{
+ 		    FcChar32 ucs4, pos, map[FC_CHARSET_MAP_SIZE];
+ 
++		    err = 1;
+ 		    printf (_("%s:%d Missing %d glyph(s) to satisfy the coverage for %s language\n"),
+ 			    argv[i], index, count, lang);
+ 
+--- fontconfig/fontconfig.h.orig	2018-08-30 08:20:15 UTC
++++ fontconfig/fontconfig.h
+@@ -1077,6 +1077,10 @@ FcUtf16Len (const FcChar8   *string,
+ 	    int		    *wchar);
+ 
+ FcPublic FcChar8 *
++FcStrBuildFilename (const FcChar8 *path,
++		    ...);
++
++FcPublic FcChar8 *
+ FcStrDirname (const FcChar8 *file);
+ 
+ FcPublic FcChar8 *
+--- fonts.dtd.orig	2016-12-02 03:22:19 UTC
++++ fonts.dtd
+@@ -13,14 +13,18 @@
+ -->
+ <!ELEMENT dir (#PCDATA)>
+ <!ATTLIST dir
+-	  prefix    CDATA       "default"
+-	  xml:space (default|preserve) 'preserve'>
++	  prefix    (default|xdg|relative|cwd)    "default"
++	  xml:space (default|preserve)            'preserve'>
+ 
+ <!--
+     Define the per-user file that holds cache font information.
+ 
+     If the filename begins with '~', it is replaced with the users
+     home directory path.
++
++    If 'prefix' is 'default' or 'cwd', then the current working directory will be added prior to the value.
++    If 'prefix' is 'xdg', then the value in the $XDG_DATA_HOME will be added prior to the value.
++    If 'prefix' is 'relative', then the path of curent file will be added prior to the value.
+ -->
+ <!ELEMENT cache (#PCDATA)>
+ <!ATTLIST cache xml:space (default|preserve) 'preserve'>
+--- src/fccache.c.orig	2018-07-19 07:05:17 UTC
++++ src/fccache.c
+@@ -155,17 +155,42 @@ FcDirCacheDeleteUUID (const FcChar8  *di
+ 		      FcConfig       *config)
+ {
+     const FcChar8 *sysroot = FcConfigGetSysRoot (config);
+-    FcChar8 *target;
++    FcChar8 *target, *d;
+     FcBool ret = FcTrue;
++    struct stat statb;
++    struct timeval times[2];
+ 
+     if (sysroot)
+-	target = FcStrBuildFilename (sysroot, dir, ".uuid", NULL);
++	d = FcStrBuildFilename (sysroot, dir, NULL);
+     else
+-	target = FcStrBuildFilename (dir, ".uuid", NULL);
+-
++	d = FcStrBuildFilename (dir, NULL);
++    if (FcStat (d, &statb) != 0)
++    {
++	ret = FcFalse;
++	goto bail;
++    }
++    target = FcStrBuildFilename (d, ".uuid", NULL);
+     ret = unlink ((char *) target) == 0;
+-    FcHashTableRemove (config->uuid_table, target);
+-    FcStrFree(target);
++    if (ret)
++    {
++	times[0].tv_sec = statb.st_atime;
++	times[1].tv_sec = statb.st_mtime;
++#ifdef HAVE_STRUCT_STAT_ST_MTIM
++	times[0].tv_usec = statb.st_atim.tv_nsec / 1000;
++	times[1].tv_usec = statb.st_mtim.tv_nsec / 1000;
++#else
++	times[0].tv_usec = 0;
++	times[1].tv_usec = 0;
++#endif
++	if (utimes ((const char *) d, times) != 0)
++	{
++	    fprintf (stderr, "Unable to revert mtime: %s\n", d);
++	}
++	FcHashTableRemove (config->uuid_table, target);
++    }
++    FcStrFree (target);
++bail:
++    FcStrFree (d);
+ 
+     return ret;
+ }
+@@ -685,15 +710,18 @@ FcCacheRemoveUnlocked (FcCache *cache)
+     while (fcCacheMaxLevel > 0 && fcCacheChains[fcCacheMaxLevel - 1] == NULL)
+ 	fcCacheMaxLevel--;
+ 
+-    allocated = s->allocated;
+-    while (allocated)
++    if (s)
+     {
+-	/* First element in allocated chunk is the free list */
+-	next = *(void **)allocated;
+-	free (allocated);
+-	allocated = next;
++	allocated = s->allocated;
++	while (allocated)
++	{
++	    /* First element in allocated chunk is the free list */
++	    next = *(void **)allocated;
++	    free (allocated);
++	    allocated = next;
++	}
++	free (s);
+     }
+-    free (s);
+ }
+ 
+ static FcCache *
+@@ -948,7 +976,7 @@ FcDirCacheMapFd (FcConfig *config, int f
+     {
+ #if defined(HAVE_MMAP) || defined(__CYGWIN__)
+ 	cache = mmap (0, fd_stat->st_size, PROT_READ, MAP_SHARED, fd, 0);
+-#if (HAVE_POSIX_FADVISE) && defined(POSIX_FADV_WILLNEED)
++#if defined(HAVE_POSIX_FADVISE) && defined(POSIX_FADV_WILLNEED)
+ 	posix_fadvise (fd, 0, fd_stat->st_size, POSIX_FADV_WILLNEED);
+ #endif
+ 	if (cache == MAP_FAILED)
+@@ -1079,6 +1107,7 @@ FcDirChecksum (struct stat *statb)
+     source_date_epoch = getenv("SOURCE_DATE_EPOCH");
+     if (source_date_epoch)
+     {
++	errno = 0;
+ 	epoch = strtoull(source_date_epoch, &endptr, 10);
+ 
+ 	if (endptr == source_date_epoch)
+@@ -1685,7 +1714,7 @@ FcCacheNumFont args1(const FcCache *c)
+  * will fill a supplied 16-byte array with the digest.
+  */
+ 
+-#ifndef HIGHFIRST
++#ifndef WORDS_BIGENDIAN
+ #define byteReverse(buf, len)	/* Nothing */
+ #else
+ /*
+--- src/fccfg.c.orig	2018-07-19 07:53:00 UTC
++++ src/fccfg.c
+@@ -821,25 +821,25 @@ FcConfigCompareValue (const FcValue	*lef
+ 		break;
+ 	    case FcOpContains:
+ 	    case FcOpListing:
+-		ret = left.u.b == right.u.b || left.u.b == FcDontCare;
++		ret = left.u.b == right.u.b || left.u.b >= FcDontCare;
+ 		break;
+ 	    case FcOpNotEqual:
+ 		ret = left.u.b != right.u.b;
+ 		break;
+ 	    case FcOpNotContains:
+-		ret = !(left.u.b == right.u.b || left.u.b == FcDontCare);
++		ret = !(left.u.b == right.u.b || left.u.b >= FcDontCare);
+ 		break;
+ 	    case FcOpLess:
+-		ret = left.u.b != right.u.b && right.u.b == FcDontCare;
++		ret = left.u.b != right.u.b && right.u.b >= FcDontCare;
+ 		break;
+ 	    case FcOpLessEqual:
+-		ret = left.u.b == right.u.b || right.u.b == FcDontCare;
++		ret = left.u.b == right.u.b || right.u.b >= FcDontCare;
+ 		break;
+ 	    case FcOpMore:
+-		ret = left.u.b != right.u.b && left.u.b == FcDontCare;
++		ret = left.u.b != right.u.b && left.u.b >= FcDontCare;
+ 		break;
+ 	    case FcOpMoreEqual:
+-		ret = left.u.b == right.u.b || left.u.b == FcDontCare;
++		ret = left.u.b == right.u.b || left.u.b >= FcDontCare;
+ 		break;
+ 	    default:
+ 		break;
+@@ -2207,17 +2207,19 @@ FcConfigFilename (const FcChar8 *url)
+ 	else
+ 	    file = 0;
+     }
+-
+-    path = FcConfigGetPath ();
+-    if (!path)
+-	return NULL;
+-    for (p = path; *p; p++)
++    else
+     {
+-	file = FcConfigFileExists (*p, url);
+-	if (file)
+-	    break;
++	path = FcConfigGetPath ();
++	if (!path)
++	    return NULL;
++	for (p = path; *p; p++)
++	{
++	    file = FcConfigFileExists (*p, url);
++	    if (file)
++		break;
++	}
++	FcConfigFreePath (path);
+     }
+-    FcConfigFreePath (path);
+     return file;
+ }
+ 
+@@ -2231,7 +2233,7 @@ FcConfigRealFilename (FcConfig		*config,
+ 
+     if (n)
+     {
+-	FcChar8 buf[PATH_MAX];
++	FcChar8 buf[FC_PATH_MAX];
+ 	ssize_t len;
+ 
+ 	if (sysroot)
+--- src/fcdir.c.orig	2018-07-19 03:14:39 UTC
++++ src/fcdir.c
+@@ -421,13 +421,6 @@ FcDirCacheRead (const FcChar8 *dir, FcBo
+     /* Not using existing cache file, construct new cache */
+     if (!cache)
+ 	cache = FcDirCacheScan (dir, config);
+-    if (cache)
+-    {
+-	FcFontSet *fs = FcCacheSet (cache);
+-
+-	if (cache->dirs_count == 0 && (!fs || fs->nfont == 0))
+-	    FcDirCacheDeleteUUID (dir, config);
+-    }
+ 
+     return cache;
+ }
+--- src/fcfreetype.c.orig	2018-08-01 06:41:28 UTC
++++ src/fcfreetype.c
+@@ -193,9 +193,9 @@ static const FcFtLanguage   fcFtLanguage
+  {  TT_PLATFORM_MACINTOSH,	TT_MAC_LANGID_KIRGHIZ,		    "ky" },
+  {  TT_PLATFORM_MACINTOSH,	TT_MAC_LANGID_TAJIKI,		    "tg" },
+  {  TT_PLATFORM_MACINTOSH,	TT_MAC_LANGID_TURKMEN,		    "tk" },
+- {  TT_PLATFORM_MACINTOSH,	TT_MAC_LANGID_MONGOLIAN,	    "mo" },
+- {  TT_PLATFORM_MACINTOSH,	TT_MAC_LANGID_MONGOLIAN_MONGOLIAN_SCRIPT,"mo" },
+- {  TT_PLATFORM_MACINTOSH,	TT_MAC_LANGID_MONGOLIAN_CYRILLIC_SCRIPT, "mo" },
++ {  TT_PLATFORM_MACINTOSH,	TT_MAC_LANGID_MONGOLIAN,	    "mn" },
++ {  TT_PLATFORM_MACINTOSH,	TT_MAC_LANGID_MONGOLIAN_MONGOLIAN_SCRIPT,"mn" },
++ {  TT_PLATFORM_MACINTOSH,	TT_MAC_LANGID_MONGOLIAN_CYRILLIC_SCRIPT, "mn" },
+  {  TT_PLATFORM_MACINTOSH,	TT_MAC_LANGID_PASHTO,		    "ps" },
+  {  TT_PLATFORM_MACINTOSH,	TT_MAC_LANGID_KURDISH,		    "ku" },
+  {  TT_PLATFORM_MACINTOSH,	TT_MAC_LANGID_KASHMIRI,		    "ks" },
+@@ -1101,15 +1101,22 @@ FcGetPixelSize (FT_Face face, int i)
+ }
+ 
+ static FcBool
+-FcStringInPatternElement (FcPattern *pat, const char *elt, FcChar8 *string)
++FcStringInPatternElement (FcPattern *pat, FcObject obj, const FcChar8 *string)
+ {
+-    int	    e;
+-    FcChar8 *old;
+-    for (e = 0; FcPatternGetString (pat, elt, e, &old) == FcResultMatch; e++)
+-	if (!FcStrCmpIgnoreBlanksAndCase (old, string))
+-	{
++    FcPatternIter iter;
++    FcValueListPtr l;
++
++    FcPatternIterStart (pat, &iter);
++    if (!FcPatternFindObjectIter (pat, &iter, obj))
++	return FcFalse;
++    for (l = FcPatternIterGetValues (pat, &iter); l; l = FcValueListNext (l))
++    {
++	FcValue v = FcValueCanonicalize (&l->value);
++	if (v.type != FcTypeString)
++	    break;
++	if (!FcStrCmpIgnoreBlanksAndCase (v.u.s, string))
+ 	    return FcTrue;
+-	}
++    }
+     return FcFalse;
+ }
+ 
+@@ -1145,6 +1152,23 @@ typedef struct
+   unsigned int idx;
+ } FcNameMapping;
+ 
++static FcBool
++_is_english(int platform, int language)
++{
++    FcBool ret = FcFalse;
++
++    switch (platform)
++    {
++    case TT_PLATFORM_MACINTOSH:
++	ret = language == TT_MAC_LANGID_ENGLISH;
++	break;
++    case TT_PLATFORM_MICROSOFT:
++	ret = language == TT_MS_LANGID_ENGLISH_UNITED_STATES;
++	break;
++    }
++    return ret;
++}
++
+ static int
+ name_mapping_cmp (const void *pa, const void *pb)
+ {
+@@ -1154,7 +1178,7 @@ name_mapping_cmp (const void *pa, const 
+   if (a->platform_id != b->platform_id) return (int) a->platform_id - (int) b->platform_id;
+   if (a->name_id != b->name_id) return (int) a->name_id - (int) b->name_id;
+   if (a->encoding_id != b->encoding_id) return (int) a->encoding_id - (int) b->encoding_id;
+-  if (a->language_id != b->language_id) return (int) a->language_id - (int) b->language_id;
++  if (a->language_id != b->language_id) return _is_english(a->platform_id, a->language_id) ? -1 : _is_english(b->platform_id, b->language_id) ? 1 : (int) a->language_id - (int) b->language_id;
+   if (a->idx != b->idx) return (int) a->idx - (int) b->idx;
+ 
+   return 0;
+@@ -1455,10 +1479,10 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 	    FT_SfntName sname;
+ 	    int nameidx;
+ 	    const FcChar8	*lang;
+-	    const char	*elt = 0, *eltlang = 0;
+ 	    int		*np = 0, *nlangp = 0;
+ 	    size_t		len;
+ 	    int nameid, lookupid;
++	    FcObject obj = FC_INVALID_OBJECT, objlang = FC_INVALID_OBJECT;
+ 
+ 	    nameid = lookupid = nameid_order[n];
+ 
+@@ -1494,8 +1518,8 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 				sname.name_id, sname.platform_id,
+ 				sname.encoding_id, sname.language_id);
+ 
+-		    elt = FC_FAMILY;
+-		    eltlang = FC_FAMILYLANG;
++		    obj = FC_FAMILY_OBJECT;
++		    objlang = FC_FAMILYLANG_OBJECT;
+ 		    np = &nfamily;
+ 		    nlangp = &nfamily_lang;
+ 		    break;
+@@ -1506,8 +1530,8 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 				sname.name_id, sname.platform_id,
+ 				sname.encoding_id, sname.language_id);
+ 
+-		    elt = FC_FULLNAME;
+-		    eltlang = FC_FULLNAMELANG;
++		    obj = FC_FULLNAME_OBJECT;
++		    objlang = FC_FULLNAMELANG_OBJECT;
+ 		    np = &nfullname;
+ 		    nlangp = &nfullname_lang;
+ 		    break;
+@@ -1521,8 +1545,8 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 				sname.name_id, sname.platform_id,
+ 				sname.encoding_id, sname.language_id);
+ 
+-		    elt = FC_STYLE;
+-		    eltlang = FC_STYLELANG;
++		    obj = FC_STYLE_OBJECT;
++		    objlang = FC_STYLELANG_OBJECT;
+ 		    np = &nstyle;
+ 		    nlangp = &nstyle_lang;
+ 		    break;
+@@ -1538,7 +1562,7 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 		    }
+ 		    break;
+ 		}
+-		if (elt)
++		if (obj != FC_INVALID_OBJECT)
+ 		{
+ 		    FcChar8		*utf8, *pp;
+ 
+@@ -1546,7 +1570,7 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 		    lang = FcSfntNameLanguage (&sname);
+ 
+ 		    if (FcDebug () & FC_DBG_SCANV)
+-			printf ("%s\n", utf8);
++			printf ("%s\n", utf8 ? (char *)utf8 : "(null)");
+ 
+ 		    if (!utf8)
+ 			continue;
+@@ -1562,14 +1586,14 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 			pp--;
+ 		    *pp = 0;
+ 
+-		    if (FcStringInPatternElement (pat, elt, utf8))
++		    if (FcStringInPatternElement (pat, obj, utf8))
+ 		    {
+ 			free (utf8);
+ 			continue;
+ 		    }
+ 
+ 		    /* add new element */
+-		    if (!FcPatternAddString (pat, elt, utf8))
++		    if (!FcPatternObjectAddString (pat, obj, utf8))
+ 		    {
+ 			free (utf8);
+ 			goto bail1;
+@@ -1580,11 +1604,11 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 			/* pad lang list with 'und' to line up with elt */
+ 			while (*nlangp < *np)
+ 			{
+-			    if (!FcPatternAddString (pat, eltlang, (FcChar8 *) "und"))
++			    if (!FcPatternObjectAddString (pat, objlang, (FcChar8 *) "und"))
+ 				goto bail1;
+ 			    ++*nlangp;
+ 			}
+-			if (!FcPatternAddString (pat, eltlang, lang))
++			if (!FcPatternObjectAddString (pat, objlang, lang))
+ 			    goto bail1;
+ 			++*nlangp;
+ 		    }
+@@ -1606,7 +1630,7 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 	    printf ("using FreeType family \"%s\"\n", face->family_name);
+ 	if (!FcPatternAddString (pat, FC_FAMILY, (FcChar8 *) face->family_name))
+ 	    goto bail1;
+-	if (!FcPatternAddString (pat, FC_STYLELANG, (FcChar8 *) "en"))
++	if (!FcPatternAddString (pat, FC_FAMILYLANG, (FcChar8 *) "en"))
+ 	    goto bail1;
+ 	++nfamily;
+     }
+@@ -2097,9 +2121,14 @@ FcFreeTypeQueryFaceInternal (const FT_Fa
+ 	free (foundry_);
+ 
+     if (master)
+-      {
+-	/* TODO: How to free master?! */
+-      }
++    {
++#ifdef HAVE_FT_DONE_MM_VAR
++	if (face->glyph)
++	    FT_Done_MM_Var (face->glyph->library, master);
++#else
++	free (master);
++#endif
++    }
+ 
+     return pat;
+ 
+@@ -2135,7 +2164,7 @@ FcFreeTypeQuery(const FcChar8	*file,
+     if (FT_Init_FreeType (&ftLibrary))
+ 	return NULL;
+ 
+-    if (FT_New_Face (ftLibrary, (char *) file, id & 0x7FFFFFFFF, &face))
++    if (FT_New_Face (ftLibrary, (char *) file, id & 0x7FFFFFFF, &face))
+ 	goto bail;
+ 
+     if (count)
+--- src/fcint.h.orig	2018-07-19 03:14:39 UTC
++++ src/fcint.h
+@@ -1283,10 +1283,6 @@ FcPrivate FcBool
+ FcStrIsAbsoluteFilename (const FcChar8 *s);
+ 
+ FcPrivate FcChar8 *
+-FcStrBuildFilename (const FcChar8 *path,
+-		    ...);
+-
+-FcPrivate FcChar8 *
+ FcStrLastSlash (const FcChar8  *path);
+ 
+ FcPrivate FcChar32
+--- src/fcweight.c.orig	2018-06-05 10:36:38 UTC
++++ src/fcweight.c
+@@ -46,7 +46,7 @@ static double lerp(double x, int x1, int
+   int dx = x2 - x1;
+   int dy = y2 - y1;
+   assert (dx > 0 && dy >= 0 && x1 <= x && x <= x2);
+-  return y1 + (dy*(x-x1) + dx/2) / dx;
++  return y1 + (x-x1) * dy / dx;
+ }
+ 
+ double
+--- src/fcxml.c.orig	2018-07-26 02:57:07 UTC
++++ src/fcxml.c
+@@ -1480,6 +1480,11 @@ FcParseMatrix (FcConfigParse *parse)
+     m.xy = FcPopExpr (parse);
+     m.xx = FcPopExpr (parse);
+ 
++    if (!m.yy || !m.yx || !m.xy || !m.xx)
++    {
++	FcConfigMessage (parse, FcSevereWarning, "Missing values in matrix element");
++	return;
++    }
+     if (FcPopExpr (parse))
+       FcConfigMessage (parse, FcSevereError, "wrong number of matrix elements");
+     else
+@@ -2073,16 +2078,36 @@ FcParseDir (FcConfigParse *parse)
+ #endif
+ 
+     attr = FcConfigGetAttribute (parse, "prefix");
+-    if (attr && FcStrCmp (attr, (const FcChar8 *)"xdg") == 0)
++    data = FcStrBufDoneStatic (&parse->pstack->str);
++    if (attr)
+     {
+-	prefix = FcConfigXdgDataHome ();
+-	/* home directory might be disabled.
+-	 * simply ignore this element.
+-	 */
+-	if (!prefix)
+-	    goto bail;
++	if (FcStrCmp (attr, (const FcChar8 *)"xdg") == 0)
++	{
++	    prefix = FcConfigXdgDataHome ();
++	    /* home directory might be disabled.
++	     * simply ignore this element.
++	     */
++	    if (!prefix)
++		goto bail;
++	}
++	else if (FcStrCmp (attr, (const FcChar8 *)"default") == 0 || FcStrCmp (attr, (const FcChar8 *)"cwd") == 0)
++	{
++	}
++	else if (FcStrCmp (attr, (const FcChar8 *)"relative") == 0)
++	{
++	    prefix = FcStrDirname (parse->name);
++	    if (!prefix)
++		goto bail;
++	}
+     }
+-    data = FcStrBufDoneStatic (&parse->pstack->str);
++#ifndef _WIN32
++    /* For Win32, check this later for dealing with special cases */
++    else
++    {
++	if (!FcStrIsAbsoluteFilename (data) && data[0] != '~')
++	    FcConfigMessage (parse, FcSevereWarning, "Use of ambiguous <dir> element. please add prefix=\"cwd\" if current behavior is desired.");
++    }
++#endif
+     if (!data)
+     {
+ 	FcConfigMessage (parse, FcSevereError, "out of memory");
+@@ -2153,6 +2178,11 @@ FcParseDir (FcConfigParse *parse)
+ 	    strcat ((char *) data, "\\");
+ 	strcat ((char *) data, "fonts");
+     }
++    else if (!attr)
++    {
++	if (!FcStrIsAbsoluteFilename (data) && data[0] != '~')
++	    FcConfigMessage (parse, FcSevereWarning, "Use of ambiguous <dir> element. please add prefix=\"cwd\" if current behavior is desired.");
++    }
+ #endif
+     if (strlen ((char *) data) == 0)
+ 	FcConfigMessage (parse, FcSevereWarning, "empty font directory name ignored");
