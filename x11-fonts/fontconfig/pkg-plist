@@ -1,5 +1,6 @@
 bin/fc-cache
 bin/fc-cat
+bin/fc-conflist
 bin/fc-list
 bin/fc-match
 bin/fc-pattern
@@ -67,10 +68,11 @@ include/fontconfig/fontconfig.h
 lib/libfontconfig.a
 lib/libfontconfig.so
 lib/libfontconfig.so.1
-lib/libfontconfig.so.1.10.1
+lib/libfontconfig.so.1.12.0
 libdata/pkgconfig/fontconfig.pc
 man/man1/fc-cache.1.gz
 man/man1/fc-cat.1.gz
+man/man1/fc-conflist.1.gz
 man/man1/fc-list.1.gz
 man/man1/fc-match.1.gz
 man/man1/fc-pattern.1.gz
@@ -78,4 +80,8 @@ man/man1/fc-query.1.gz
 man/man1/fc-scan.1.gz
 man/man1/fc-validate.1.gz
 man/man5/fonts-conf.5.gz
+share/gettext/its/fontconfig.its
+share/gettext/its/fontconfig.loc
+share/locale/zh_CN/LC_MESSAGES/fontconfig-conf.mo
+share/locale/zh_CN/LC_MESSAGES/fontconfig.mo
 @dir /var/db/fontconfig

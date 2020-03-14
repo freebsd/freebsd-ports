@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.12.6
+PORTVERSION=	2.13.1
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
@@ -19,7 +19,8 @@ USES=		gperf tar:bzip2
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libexpat.so:textproc/expat2
+		libexpat.so:textproc/expat2 \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 USES+=		cpe gmake libtool pathfix pkgconfig
 CPE_VENDOR=	fontconfig_project
