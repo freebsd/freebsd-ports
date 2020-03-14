@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2020-03-14 18:22:22 UTC
++++ CMakeLists.txt
+@@ -25,7 +25,9 @@ dune_project()
+ 
+ add_subdirectory(cmake/modules)
+ add_subdirectory(dune)
++if (FREEBSD_INSTALL_DOCS)
+ add_subdirectory(doc)
++endif()
+ add_subdirectory(lib)
+ 
+ # finalize the dune project, e.g. generating config.h etc.

@@ -216,6 +216,7 @@
     SUBDIR += dune-common
     SUBDIR += dune-geometry
     SUBDIR += dune-grid
+    SUBDIR += dune-istl
     SUBDIR += dune-uggrid
     SUBDIR += e
     SUBDIR += ecos
