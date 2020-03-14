@@ -5,6 +5,8 @@
 #  - i386 specific port to be slave to ${PORTSDIR}/emulators/wine
 #  - amd64 specific port to be normal port (based on binary package)
 
+CATEGORIES=	emulators
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.mk>
