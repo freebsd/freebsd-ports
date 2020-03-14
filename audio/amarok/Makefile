@@ -40,6 +40,8 @@ USE_KDE=	archive auth attica bookmarks codecs config configwidgets \
 USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes
 
+CONFIGURE_ENV=	MYSQL_DIR=${LOCALBASE}
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	kde
 GH_TAGNAME=	0aa6ae0c77
@@ -85,8 +87,6 @@ QTWEBENGINE_USE=	qt=webengine
 QTWEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngine
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
-		${WRKSRC}/cmake/modules/FindMySQL.cmake
 	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
 		${WRKSRC}/cmake/modules/FindLoudmouth.cmake
 
