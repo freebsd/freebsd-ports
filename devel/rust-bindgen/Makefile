@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bindgen
-DISTVERSION=	0.53.1
-PORTREVISION=	2
+DISTVERSION=	0.53.2
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 PKGNAMEPREFIX=	rust-
@@ -26,9 +25,9 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		bitflags-1.2.0 \
 		byteorder-1.3.2 \
 		cc-1.0.45 \
-		cexpr-0.3.6 \
+		cexpr-0.4.0 \
 		cfg-if-0.1.10 \
-		clang-sys-0.28.1 \
+		clang-sys-0.29.0 \
 		clap-2.33.0 \
 		diff-0.1.11 \
 		env_logger-0.7.0 \
@@ -36,11 +35,11 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		humantime-1.3.0 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
-		libc-0.2.62 \
+		libc-0.2.66 \
 		libloading-0.5.2 \
 		log-0.4.8 \
 		memchr-2.2.1 \
-		nom-4.2.3 \
+		nom-5.1.1 \
 		peeking_take_while-0.1.2 \
 		proc-macro2-1.0.4 \
 		quick-error-1.2.2 \
@@ -56,7 +55,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		unicode-width-0.1.6 \
 		unicode-xid-0.2.0 \
 		vec_map-0.8.1 \
-		version_check-0.1.5 \
+		version_check-0.9.1 \
 		which-3.0.0 \
 		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
