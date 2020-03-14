@@ -1,5 +1,14 @@
-KDE Connect is a project that aims to communicate all your devices.
-For example, with KDE Connect you can receive your phone notifications on your
-computer, or just use your phone as a remote control for your desktop.
+KDE Connect is a project that enables all your devices to communicate with each
+other. Here are a few things KDE Connect can do:
+
+  *  Receive your phone notifications on your desktop computer and reply to messages
+  *  Control music playing on your desktop from your phone
+  *  Use your phone as a remote control for your desktop
+  *  Run predefined commands on your PC from connected devices.
+  *  Check your phones battery level from the desktop
+  *  Ring your phone to help finding it
+  *  Share files and links between devices
+  *  Browse your phone from the desktop
+  *  Control the desktop's volume from the phone
 
 WWW: https://community.kde.org/KDEConnect
