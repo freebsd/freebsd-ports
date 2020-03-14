@@ -35,10 +35,6 @@ GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 GTK2_CONFIGURE_ENABLE=	gui
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-ldl||g' ${WRKSRC}/admin/libiodbc.pc.in
-
 post-install:
 	@${MKDIR} ${STAGEDIR}/${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/odbc*.ini.sample ${STAGEDIR}/${ETCDIR}
