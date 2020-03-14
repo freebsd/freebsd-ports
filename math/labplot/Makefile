@@ -3,7 +3,7 @@
 
 PORTNAME=	labplot
 PORTVERSION=	2.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
@@ -13,7 +13,10 @@ COMMENT=	Data plotting and function analysis tool by KDE
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgsl.so:math/gsl
+LIB_DEPENDS=	libgsl.so:math/gsl \
+		liblz4.so:archivers/liblz4 \
+		libspectre.so:print/libspectre \
+		libsz.so:science/szip
 
 USES=		bison cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 \
 		shared-mime-info tar:xz
@@ -36,6 +39,7 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 CANTOR_DESC=		Build with Cantor support
 CANTOR_CMAKE_BOOL=	ENABLE_CANTOR
 CANTOR_LIB_DEPENDS=	libcantorlibs.so:math/cantor \
+			libpoppler.so:graphics/poppler \
 			libpoppler-qt5.so:graphics/poppler-qt5
 FITS_DESC=		Flexible Image Transport System Data Format (FITS) Library
 FITS_CMAKE_BOOL=	ENABLE_FITS
