@@ -1,0 +1,10 @@
+dune-typetree is a module of the DUNE Numerics framework for solving partial
+differential equations (PDEs) with grid-based methods.
+
+dune-typetree is a template library for constructing and operating on statically
+typed trees of objects. It is based around the idea of defining loosely coupled,
+componentized algorithms. Component lookup happens through tag dispatch, making
+it very easy to extend and / or modify existing algorithms as well as
+constructing new algorithms for existing types of tree nodes.
+
+WWW: https://www.dune-project.org/
