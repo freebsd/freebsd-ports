@@ -1,0 +1,9 @@
+dune-localfunctions is a module of the DUNE Numerics framework for solving
+partial differential equations (PDEs) with grid-based methods.
+
+dune-localfunctions provides interface and implementation for shape functions
+defined on the DUNE reference elements. In addition to the shape function,
+interpolation operators and special keys are provided which can be used to
+assemble global function spaces on finite-element grids.
+
+WWW: https://www.dune-project.org/
