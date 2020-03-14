@@ -25,7 +25,6 @@ if [ ! -x ${QTCHOOSER} ] ; then
 fi
 
 remove_links() {
-	echo "Removing qtchooser links"
 	for file in $(find -L ${BINDIR} -maxdepth 1 -samefile ${QTCHOOSER}) ; do
 		if [ ! -L ${file} ] ; then
 			continue
@@ -42,28 +41,23 @@ remove_links() {
 			fi
 		done
 		if [ ${found} -eq 0 ] ; then
-			echo "    ${file}"
 			rm ${file}
 		fi
 	done
-	echo "done"
 }
 
 create_links() {
-	echo "Creating qtchooser links"
 	for version in ${VERSIONS} ; do
 		version_bin_dir=${PREFIX}/lib/qt${version}/bin
 		if [ -d ${version_bin_dir} ] ; then
 			for file in $(find ${version_bin_dir} -type f -maxdepth 1) ; do
 				target=${BINDIR}/$(basename ${file})
 				if [ ! -L ${target} -a ! -f ${target} ] ; then
-					echo "    ${target}"
 					ln -s ${QTCHOOSER} ${target}
 				fi
 			done
 		fi
 	done
-	echo "done"
 }
 
 remove_links
