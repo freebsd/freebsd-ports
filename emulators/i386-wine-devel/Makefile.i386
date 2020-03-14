@@ -1,11 +1,6 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
 # $FreeBSD$
 
-PKGNAMEPREFIX=	i386-
-
-MAINTAINER=	salvadore@FreeBSD.org
-COMMENT?=	32-bit Microsoft Windows compatibility environment for 64-bit FreeBSD
-
 # Use the wine port to do most of the heavy lifting
 SLAVEDIR?=	${.CURDIR}
 MASTERDIR=	${SLAVEDIR}/../wine-devel
