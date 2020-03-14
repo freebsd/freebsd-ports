@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	diffoscope
-PORTVERSION=	108
+PORTVERSION=	136
 PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
@@ -28,6 +28,6 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test --pytest-args="-rsx -l -vv"
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=
 
 .include <bsd.port.mk>
