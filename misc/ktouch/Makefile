@@ -2,7 +2,7 @@
 
 PORTNAME=	ktouch
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +12,7 @@ RUN_DEPENDS=	kqtquickcharts>=${KDE_APPLICATIONS_VERSION}:graphics/kqtquickcharts
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons doctools \
-		ecm i18n itemviews kcmutils kdeclarative kio newstuff package \
+		ecm i18n iconthemes itemviews kcmutils kdeclarative kio newstuff package \
 		parts service sonnet texteditor textwidgets widgetsaddons \
 		windowsystem xmlgui
 USE_QT=		core dbus declarative gui network quickcontrols2 script sql \
