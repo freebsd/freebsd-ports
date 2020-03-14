@@ -214,6 +214,7 @@
     SUBDIR += drgeo
     SUBDIR += dsdp
     SUBDIR += dune-common
+    SUBDIR += dune-geometry
     SUBDIR += e
     SUBDIR += ecos
     SUBDIR += edenmath

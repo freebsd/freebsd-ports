@@ -1,0 +1,8 @@
+dune-geometry is a module of the DUNE Numerics framework for solving partial
+differential equations (PDEs) with grid-based methods.
+
+dune-geometry includes everything related to the DUNE reference elements. This
+includes the reference elements themselves, mappings on the reference elements
+(geometries), and quadratures.
+
+WWW: https://www.dune-project.org/
