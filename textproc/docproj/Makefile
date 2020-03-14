@@ -3,7 +3,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
@@ -53,7 +53,7 @@ GROFF_RUN_DEPENDS=	${LOCALBASE}/bin/groff:textproc/groff
 IGOR_RUN_DEPENDS=	igor:textproc/igor
 JING_RUN_DEPENDS=	jing:textproc/jing
 SVN_RUN_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion
-TRANSLATOR_RUN_DEPENDS=	itstool:textproc/itstool22 \
+TRANSLATOR_RUN_DEPENDS=	itstool:textproc/itstool \
 			msgcat:devel/gettext-tools
 
 _FONTS=		${LOCALBASE}/share/fonts/dejavu/DejaVuSansMono.ttf:x11-fonts/dejavu \
