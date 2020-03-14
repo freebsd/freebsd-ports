@@ -16,8 +16,4 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	lib/${PORTNAME}.a include/${PORTNAME}/config.h include/${PORTNAME}/endian.h \
 		include/${PORTNAME}/${PORTNAME}.h include/${PORTNAME}/config.vc.h
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/install: libaiff.a/install:/' \
-	${WRKSRC}/${MAKEFILE}.in
-
 .include <bsd.port.mk>
