@@ -1,5 +1,3 @@
-TIMESTAMP = 1582657612
-SHA256 (jaelpark-chamferwm-s20200225-18739f3_GH0.tar.gz) = 26681978886d986003abb73b8bdbcfc158dc0ccc85e8b6034905a891a7ea82db
-SIZE (jaelpark-chamferwm-s20200225-18739f3_GH0.tar.gz) = 137977
-SHA256 (e0af2b0d73ab.patch) = 5fb83ba9d38379794573d04fa1bdde7c586d74b2ca8b56e369581521c8a8cac1
-SIZE (e0af2b0d73ab.patch) = 2707
+TIMESTAMP = 1583872799
+SHA256 (jaelpark-chamferwm-s20200310-52da45a_GH0.tar.gz) = 739f1908b86fc75ae8df035ded0780299dbbaa98484902c0eae84512d45454fb
+SIZE (jaelpark-chamferwm-s20200310-52da45a_GH0.tar.gz) = 138503
