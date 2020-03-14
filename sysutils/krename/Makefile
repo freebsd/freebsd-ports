@@ -2,7 +2,7 @@
 
 PORTNAME=	krename
 PORTVERSION=	5.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
@@ -21,7 +21,7 @@ USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash i18n iconthemes itemviews jobwidgets \
 		js kio service solid widgetsaddons xmlgui
-USE_QT=		core dbus gui network xml widgets \
+USE_QT=		concurrent core dbus gui network xml widgets \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>

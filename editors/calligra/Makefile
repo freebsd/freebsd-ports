@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra
 DISTVERSION=	3.1.0
-PORTREVISION=	32
+PORTREVISION=	33
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -47,7 +47,7 @@ USE_KDE=	akonadicontacts activities archive auth bookmarks codecs completion \
 		texteditor textwidgets threadweaver unitconversion wallet \
 		widgetsaddons windowsystem xmlgui \
 		calendarcore okular
-USE_QT=		buildtools_build core dbus declarative gui network opengl \
+USE_QT=		buildtools_build concurrent core dbus declarative gui network opengl \
 		phonon4 printsupport qmake_build \
 		script sql svg testlib webkit widgets x11extras xml
 USE_XORG=	ice sm x11 xext

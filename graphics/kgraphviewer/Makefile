@@ -2,7 +2,7 @@
 
 PORTNAME=	kgraphviewer
 DISTVERSION=	2.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics kde
 MASTER_SITES=   KDE/stable/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=    KDE/${PORTNAME}
@@ -21,7 +21,7 @@ USE_KDE=	auth codecs completion config configwidgets \
 		coreaddons i18n iconthemes jobwidgets kio parts service \
 		sonnet textwidgets widgetsaddons xmlgui \
 		ecm_build
-USE_QT=		core dbus gui network printsupport svg widgets xml \
+USE_QT=		concurrent core dbus gui network printsupport svg widgets xml \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>

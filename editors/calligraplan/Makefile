@@ -2,6 +2,7 @@
 
 PORTNAME=	calligraplan
 DISTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/calligra/${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -19,7 +20,7 @@ USE_KDE=	activities akonadi archive auth bookmarks codecs completion config \
 		notifications parts service solid sonnet textwidgets wallet \
 		widgetsaddons windowsystem xmlgui \
 		akonadicontacts calendarcore contacts
-USE_QT=		core dbus gui network printsupport widgets x11extras xml \
+USE_QT=		concurrent core dbus gui network printsupport widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xext
 

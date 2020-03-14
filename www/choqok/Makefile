@@ -2,7 +2,7 @@
 
 PORTNAME=	choqok
 DISTVERSION=	1.6.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R}/src
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -25,8 +25,8 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		notifyconfig parts service solid sonnet textwidgets wallet \
 		widgetsaddons xmlgui \
 		kded_run
-USE_QT=		core dbus gui network widgets xml \
-		buildtools_build qmake_build 
+USE_QT=		concurrent core dbus gui network widgets xml \
+		buildtools_build qmake_build
 
 USE_LDCONFIG=	yes
 
