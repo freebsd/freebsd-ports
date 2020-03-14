@@ -50,7 +50,4 @@ NETCDF_DESC=		Build with NetCDF support
 NETCDF_CMAKE_BOOL=	ENABLE_NETCDF
 NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
-post-patch:
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
-
 .include <bsd.port.mk>
