@@ -22,8 +22,6 @@ CXXFLAGS+=	-O3 -fomit-frame-pointer
 WRKSRC=		${WRKDIR}/noise
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -e 's|include lib:|include:|g' \
 		${WRKSRC}/Makefile
 
