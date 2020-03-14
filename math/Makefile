@@ -213,6 +213,7 @@
     SUBDIR += djbfft
     SUBDIR += drgeo
     SUBDIR += dsdp
+    SUBDIR += dune-common
     SUBDIR += e
     SUBDIR += ecos
     SUBDIR += edenmath
