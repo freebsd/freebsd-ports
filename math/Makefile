@@ -213,6 +213,7 @@
     SUBDIR += djbfft
     SUBDIR += drgeo
     SUBDIR += dsdp
+    SUBDIR += dune-alugrid
     SUBDIR += dune-common
     SUBDIR += dune-geometry
     SUBDIR += dune-grid
