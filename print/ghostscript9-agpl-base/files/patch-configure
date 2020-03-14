@@ -1,17 +1,17 @@
---- configure.orig	2018-09-03 08:51:26 UTC
+--- configure.orig	2020-03-12 12:27:23 UTC
 +++ configure
-@@ -4357,8 +4357,8 @@ else
+@@ -4523,8 +4523,8 @@ case $host in
          ;;
-         *BSD)
+         *bsd*)
          if test $ac_cv_c_compiler_gnu = yes; then
--            CC_OPT_FLAGS_TO_TRY="-O2"
+-            CC_OPT_FLAGS_TO_TRY="-O2 -DNDEBUG"
 -            CC_DBG_FLAGS_TO_TRY="-gdwarf-2 -g3 -O0"
 +            CC_OPT_FLAGS_TO_TRY=""
 +            CC_DBG_FLAGS_TO_TRY=""
          fi
          ;;
-         Darwin*)
-@@ -5143,7 +5143,7 @@ if test "${enable_threadsafe+set}" = set; then :
+         *-darwin*)
+@@ -5358,7 +5358,7 @@ if test "${enable_threadsafe+set}" = set; then :
  fi
  
  if test x$enable_threadsafe = xyes ; then
@@ -20,24 +20,7 @@
  fi
  
  
-@@ -5805,7 +5805,6 @@ if ${ac_cv_lib_dl_dlopen+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-ldl  $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -5838,7 +5837,7 @@ $as_echo "$ac_cv_lib_dl_dlopen" >&6; }
- if test "x$ac_cv_lib_dl_dlopen" = xyes; then :
-   ac_fn_c_check_header_mongrel "$LINENO" "dlfcn.h" "ac_cv_header_dlfcn_h" "$ac_includes_default"
- if test "x$ac_cv_header_dlfcn_h" = xyes; then :
--  GCFLAGS="$GCFLAGS -DHAVE_LIBDL=1";LIBS="-ldl $LIBS"
-+  GCFLAGS="$GCFLAGS -DHAVE_LIBDL=1";
- fi
- 
- 
-@@ -10041,42 +10040,42 @@ if test x$enable_threadsafe = xyes; then
+@@ -10682,42 +10682,42 @@ if test x$enable_threadsafe = xyes; then
  
    for ntsdev in $NTS_DEVS ; do
      NTS_EXCLUDES="$(echo \"$P_DEVS0{@:0}\" | grep -o $ntsdev) $NTS_EXCLUDES"
@@ -88,17 +71,17 @@
    done
  
    NTS_EXCLUDES=`echo "$NTS_EXCLUDES" | tr " " "\n" | sort | uniq | tr "\n" " "`
-@@ -10251,7 +10250,12 @@ if test "${enable_dynamic+set}" = set; then :
-       DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
+@@ -10968,7 +10968,12 @@ if test "${enable_dynamic+set}" = set; then :
+         DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
        ;;
-       *BSD)
--      DYNAMIC_DEVS="\$(GLOBJDIR)/X11.so"
-+      INSTALL_SHARED="install-shared"
-+      if test "x$X_DEVS" != x; then
-+              DYNAMIC_DEVS="\$(GLOBJDIR)/X11.so"
-+      else
-+              DYNAMIC_DEVS=""
-+      fi
-       DYNAMIC_FLAGS="-DGS_DEVS_SHARED -DGS_DEVS_SHARED_DIR=\\\"\$(gssharedir)\\\""
-       X11_DEVS=""
-       OPT_CFLAGS="$DYNAMIC_CFLAGS $OPT_CFLAGS"
+       *bsd*)
+-        DYNAMIC_DEVS="\$(GLOBJDIR)/X11.so"
++        INSTALL_SHARED="install-shared"
++        if test "x$X_DEVS" != x; then
++                DYNAMIC_DEVS="\$(GLOBJDIR)/X11.so"
++        else
++                DYNAMIC_DEVS=""
++        fi
+         DYNAMIC_FLAGS="-DGS_DEVS_SHARED -DGS_DEVS_SHARED_DIR=\\\"\$(gssharedir)\\\""
+         X11_DEVS=""
+         OPT_CFLAGS="$DYNAMIC_CFLAGS $OPT_CFLAGS"

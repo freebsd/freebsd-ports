@@ -1,0 +1,15 @@
+--- Resource/Init/gs_statd.ps.orig	2020-03-12 12:26:37 UTC
++++ Resource/Init/gs_statd.ps
+@@ -125,6 +125,12 @@ statusdict begin
+         % Japanese postcard size, 100mm x 148mm
+  /hagaki {283 420 //.setpagesize stopped { pop pop /hagaki $error /errorname get signalerror } if } bind def
+         % U.S. ANSI/ASME Y14.1 paper sizes
++ /postcard {284 419 //.setpagesize exec} bind def
++ /dbl_postcard {419 568 //.setpagesize exec} bind def
++ /Executive {522 756 //.setpagesize exec} bind def
++ /jenv_you4 {298 666 //.setpagesize exec} bind def
++ /jenv_you2 {324 460 //.setpagesize exec} bind def
++ /jenv_kaku2 {682 942 //.setpagesize exec} bind def
+  /ANSI_A  //letter def
+  /ANSI_B  //11x17  def
+  /tabloid //11x17  def

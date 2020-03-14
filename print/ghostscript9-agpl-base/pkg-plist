@@ -339,6 +339,7 @@ share/color/icc/ghostscript/srgb.icc
 %%DATADIR%%/lib/mkcidfm.ps
 %%DATADIR%%/lib/necp2x.upp
 %%DATADIR%%/lib/necp2x6.upp
+%%DATADIR%%/lib/pdf_info.ps
 %%DATADIR%%/lib/pdf2dsc.ps
 %%DATADIR%%/lib/pf2afm.ps
 %%DATADIR%%/lib/pfbtopfa.ps
