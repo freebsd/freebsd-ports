@@ -5,7 +5,7 @@
          << QStringLiteral("-o") << QStringLiteral("reconnect")
          << QStringLiteral("-o") << QStringLiteral("ServerAliveInterval=30")
 -        << QStringLiteral("-o") << QStringLiteral("password_stdin")
-+        << QStringLiteral("-o") << QStringLiteral("ssh_command=sshpass -p ") + np.get<QString>("password").toLatin1() + (" ssh")
++        << QStringLiteral("-o") << QStringLiteral("ssh_command=sshpass -p %1 %2").arg(np.get<QString>(QStringLiteral("password")), QStringLiteral("ssh"))
          ;
  
      m_proc->setProgram(program, arguments);
