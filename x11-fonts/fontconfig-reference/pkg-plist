@@ -42,6 +42,9 @@ man/man3/FcConfigBuildFonts.3.gz
 man/man3/FcConfigCreate.3.gz
 man/man3/FcConfigDestroy.3.gz
 man/man3/FcConfigEnableHome.3.gz
+man/man3/FcConfigFileInfoIterGet.3.gz
+man/man3/FcConfigFileInfoIterInit.3.gz
+man/man3/FcConfigFileInfoIterNext.3.gz
 man/man3/FcConfigFilename.3.gz
 man/man3/FcConfigGetBlanks.3.gz
 man/man3/FcConfigGetCache.3.gz
@@ -65,6 +68,8 @@ man/man3/FcConfigSubstituteWithPat.3.gz
 man/man3/FcConfigUptoDate.3.gz
 man/man3/FcDefaultSubstitute.3.gz
 man/man3/FcDirCacheClean.3.gz
+man/man3/FcDirCacheCreateUUID.3.gz
+man/man3/FcDirCacheDeleteUUID.3.gz
 man/man3/FcDirCacheLoad.3.gz
 man/man3/FcDirCacheLoadFile.3.gz
 man/man3/FcDirCacheRead.3.gz
@@ -93,6 +98,7 @@ man/man3/FcFreeTypeCharIndex.3.gz
 man/man3/FcFreeTypeCharSet.3.gz
 man/man3/FcFreeTypeCharSetAndSpacing.3.gz
 man/man3/FcFreeTypeQuery.3.gz
+man/man3/FcFreeTypeQueryAll.3.gz
 man/man3/FcFreeTypeQueryFace.3.gz
 man/man3/FcGetDefaultLangs.3.gz
 man/man3/FcGetLangs.3.gz
@@ -150,11 +156,20 @@ man/man3/FcPatternDuplicate.3.gz
 man/man3/FcPatternEqual.3.gz
 man/man3/FcPatternEqualSubset.3.gz
 man/man3/FcPatternFilter.3.gz
+man/man3/FcPatternFindIter.3.gz
 man/man3/FcPatternFormat.3.gz
 man/man3/FcPatternGet-Type.3.gz
 man/man3/FcPatternGet.3.gz
 man/man3/FcPatternGetWithBinding.3.gz
 man/man3/FcPatternHash.3.gz
+man/man3/FcPatternIterEqual.3.gz
+man/man3/FcPatternIterGetObject.3.gz
+man/man3/FcPatternIterGetValue.3.gz
+man/man3/FcPatternIterIsValid.3.gz
+man/man3/FcPatternIterNext.3.gz
+man/man3/FcPatternIterStart.3.gz
+man/man3/FcPatternIterValueCount.3.gz
+man/man3/FcPatternObjectCount.3.gz
 man/man3/FcPatternPrint.3.gz
 man/man3/FcPatternReference.3.gz
 man/man3/FcPatternRemove.3.gz
@@ -196,4 +211,6 @@ man/man3/FcValueEqual.3.gz
 man/man3/FcValuePrint.3.gz
 man/man3/FcValueSave.3.gz
 man/man3/FcWeightFromOpenType.3.gz
+man/man3/FcWeightFromOpenTypeDouble.3.gz
 man/man3/FcWeightToOpenType.3.gz
+man/man3/FcWeightToOpenTypeDouble.3.gz
