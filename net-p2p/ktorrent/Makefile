@@ -2,6 +2,7 @@
 
 PORTNAME=	ktorrent
 DISTVERSION=	5.1.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
 
@@ -23,7 +24,7 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		notifyconfig parts plotting service \
 		solid sonnet syndication textwidgets widgetsaddons \
 		windowsystem xmlgui
-USE_QT=		core dbus gui network phonon4 script webkit widgets xml \
+USE_QT=		concurrent core dbus gui network phonon4 script webkit widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	WORKSPACE

@@ -3,7 +3,7 @@
 
 PORTNAME=	konversation
 PORTVERSION=	1.7.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
 
@@ -23,7 +23,7 @@ USE_KDE=	archive auth bookmarks codecs completion config \
 		jobwidgets kio notifications notifyconfig parts service solid \
 		sonnet textwidgets wallet widgetsaddons windowsystem xmlgui \
 		init_run
-USE_QT=		core dbus gui network phonon4 widgets xml \
+USE_QT=		concurrent core dbus gui network phonon4 widgets xml \
 		buildtools_build qmake_build
 
 SHEBANG_FILES=	data/scripts/bug \
