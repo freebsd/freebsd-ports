@@ -1,9 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	pynvim
-PORTVERSION=	0.3.2
+DISTVERSION=	0.4.0
 CATEGORIES=	editors python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/neovim/pynvim/commit/
+PATCHFILES=	f04853121de564ac03b981a984595ea33331ad3e.patch:-p1
 
 MAINTAINER=	tm@NetBSD.org
 COMMENT=	Python client and plugin host for Neovim
