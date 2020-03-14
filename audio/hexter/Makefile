@@ -25,9 +25,6 @@ PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-finline-limit=5000||' ${WRKSRC}/configure
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dssi/hexter.so
 
