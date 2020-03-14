@@ -36,7 +36,9 @@ include/wine/msvcrt/corecrt.h
 include/wine/msvcrt/corecrt_startup.h
 include/wine/msvcrt/corecrt_stdio_config.h
 include/wine/msvcrt/corecrt_wctype.h
+include/wine/msvcrt/corecrt_wdirect.h
 include/wine/msvcrt/corecrt_wio.h
+include/wine/msvcrt/corecrt_wprocess.h
 include/wine/msvcrt/corecrt_wstdio.h
 include/wine/msvcrt/corecrt_wstdlib.h
 include/wine/msvcrt/corecrt_wstring.h
@@ -988,6 +990,8 @@ include/wine/windows/wtypes.idl
 include/wine/windows/wuapi.h
 include/wine/windows/wuapi.idl
 include/wine/windows/x3daudio.h
+%%STAGING%%include/wine/windows/xact3.h
+%%STAGING%%include/wine/windows/xact3.idl
 include/wine/windows/xact3wb.h
 include/wine/windows/xapo.h
 include/wine/windows/xapo.idl
@@ -2335,6 +2339,7 @@ lib/wine/fakedlls/webservices.dll
 lib/wine/fakedlls/wer.dll
 lib/wine/fakedlls/wevtapi.dll
 lib/wine/fakedlls/wevtutil.exe
+lib/wine/fakedlls/whoami.exe
 lib/wine/fakedlls/wiaservc.dll
 lib/wine/fakedlls/wimgapi.dll
 %%STAGING%%%%WINE32%%lib/wine/fakedlls/win32k.sys
@@ -2422,6 +2427,14 @@ lib/wine/fakedlls/wusa.exe
 %%OPENAL%%lib/wine/fakedlls/x3daudio1_5.dll
 %%OPENAL%%lib/wine/fakedlls/x3daudio1_6.dll
 %%OPENAL%%lib/wine/fakedlls/x3daudio1_7.dll
+%%STAGING%%lib/wine/fakedlls/xactengine3_0.dll
+%%STAGING%%lib/wine/fakedlls/xactengine3_1.dll
+%%STAGING%%lib/wine/fakedlls/xactengine3_2.dll
+%%STAGING%%lib/wine/fakedlls/xactengine3_3.dll
+%%STAGING%%lib/wine/fakedlls/xactengine3_4.dll
+%%STAGING%%lib/wine/fakedlls/xactengine3_5.dll
+%%STAGING%%lib/wine/fakedlls/xactengine3_6.dll
+%%STAGING%%lib/wine/fakedlls/xactengine3_7.dll
 %%OPENAL%%lib/wine/fakedlls/xapofx1_1.dll
 %%OPENAL%%lib/wine/fakedlls/xapofx1_2.dll
 %%OPENAL%%lib/wine/fakedlls/xapofx1_3.dll
@@ -3041,6 +3054,7 @@ lib/wine/webservices.dll.so
 lib/wine/wer.dll.so
 lib/wine/wevtapi.dll.so
 lib/wine/wevtutil.exe.so
+lib/wine/whoami.exe.so
 lib/wine/wiaservc.dll.so
 lib/wine/wimgapi.dll.so
 %%STAGING%%%%WINE32%%lib/wine/win32k.sys.so
@@ -3128,6 +3142,14 @@ lib/wine/wusa.exe.so
 %%OPENAL%%lib/wine/x3daudio1_5.dll.so
 %%OPENAL%%lib/wine/x3daudio1_6.dll.so
 %%OPENAL%%lib/wine/x3daudio1_7.dll.so
+%%STAGING%%lib/wine/xactengine3_0.dll.so
+%%STAGING%%lib/wine/xactengine3_1.dll.so
+%%STAGING%%lib/wine/xactengine3_2.dll.so
+%%STAGING%%lib/wine/xactengine3_3.dll.so
+%%STAGING%%lib/wine/xactengine3_4.dll.so
+%%STAGING%%lib/wine/xactengine3_5.dll.so
+%%STAGING%%lib/wine/xactengine3_6.dll.so
+%%STAGING%%lib/wine/xactengine3_7.dll.so
 %%OPENAL%%lib/wine/xapofx1_1.dll.so
 %%OPENAL%%lib/wine/xapofx1_2.dll.so
 %%OPENAL%%lib/wine/xapofx1_3.dll.so
