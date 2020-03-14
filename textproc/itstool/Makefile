@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/textproc/itstool/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	itstool
-PORTVERSION=	2.0.5
-PORTREVISION=	2
+PORTVERSION=	2.0.6
 CATEGORIES=	textproc
 MASTER_SITES=	http://files.itstool.org/itstool/
 
@@ -20,6 +19,8 @@ USES=		python tar:bzip2
 GNU_CONFIGURE=	yes
 
 CONFLICTS_INSTALL=	itstool22
+
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PYTHON@|${PYTHON_CMD}|g' \
