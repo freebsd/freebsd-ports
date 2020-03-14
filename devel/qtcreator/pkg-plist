@@ -250,8 +250,6 @@ share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
 %%DATADIR%%/qml-type-descriptions/qtmobility-systeminfo.qmltypes
 %%DATADIR%%/qml-type-descriptions/qtmultimediakit.qmltypes
 %%DATADIR%%/qml-type-descriptions/qtwebkit.qmltypes
-%%DATADIR%%/qml/qmlpuppet/commands/change3dviewcommand.cpp
-%%DATADIR%%/qml/qmlpuppet/commands/change3dviewcommand.h
 %%DATADIR%%/qml/qmlpuppet/commands/changeauxiliarycommand.cpp
 %%DATADIR%%/qml/qmlpuppet/commands/changeauxiliarycommand.h
 %%DATADIR%%/qml/qmlpuppet/commands/changebindingscommand.cpp
@@ -285,6 +283,8 @@ share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
 %%DATADIR%%/qml/qmlpuppet/commands/debugoutputcommand.h
 %%DATADIR%%/qml/qmlpuppet/commands/drop3dlibraryitemcommand.cpp
 %%DATADIR%%/qml/qmlpuppet/commands/drop3dlibraryitemcommand.h
+%%DATADIR%%/qml/qmlpuppet/commands/enable3dviewcommand.cpp
+%%DATADIR%%/qml/qmlpuppet/commands/enable3dviewcommand.h
 %%DATADIR%%/qml/qmlpuppet/commands/endpuppetcommand.cpp
 %%DATADIR%%/qml/qmlpuppet/commands/endpuppetcommand.h
 %%DATADIR%%/qml/qmlpuppet/commands/informationchangedcommand.cpp
@@ -293,6 +293,8 @@ share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
 %%DATADIR%%/qml/qmlpuppet/commands/pixmapchangedcommand.h
 %%DATADIR%%/qml/qmlpuppet/commands/puppetalivecommand.cpp
 %%DATADIR%%/qml/qmlpuppet/commands/puppetalivecommand.h
+%%DATADIR%%/qml/qmlpuppet/commands/puppettocreatorcommand.cpp
+%%DATADIR%%/qml/qmlpuppet/commands/puppettocreatorcommand.h
 %%DATADIR%%/qml/qmlpuppet/commands/removeinstancescommand.cpp
 %%DATADIR%%/qml/qmlpuppet/commands/removeinstancescommand.h
 %%DATADIR%%/qml/qmlpuppet/commands/removepropertiescommand.cpp
@@ -307,8 +309,12 @@ share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
 %%DATADIR%%/qml/qmlpuppet/commands/synchronizecommand.h
 %%DATADIR%%/qml/qmlpuppet/commands/tokencommand.cpp
 %%DATADIR%%/qml/qmlpuppet/commands/tokencommand.h
+%%DATADIR%%/qml/qmlpuppet/commands/update3dviewstatecommand.cpp
+%%DATADIR%%/qml/qmlpuppet/commands/update3dviewstatecommand.h
 %%DATADIR%%/qml/qmlpuppet/commands/valueschangedcommand.cpp
 %%DATADIR%%/qml/qmlpuppet/commands/valueschangedcommand.h
+%%DATADIR%%/qml/qmlpuppet/commands/view3dclosedcommand.cpp
+%%DATADIR%%/qml/qmlpuppet/commands/view3dclosedcommand.h
 %%DATADIR%%/qml/qmlpuppet/container/addimportcontainer.cpp
 %%DATADIR%%/qml/qmlpuppet/container/addimportcontainer.h
 %%DATADIR%%/qml/qmlpuppet/container/container.pri
