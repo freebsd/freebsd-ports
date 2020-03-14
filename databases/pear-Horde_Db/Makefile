@@ -2,6 +2,7 @@
 
 PORTNAME=	Horde_Db
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	horde@FreeBSD.org
