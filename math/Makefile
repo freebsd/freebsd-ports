@@ -219,6 +219,7 @@
     SUBDIR += dune-grid
     SUBDIR += dune-istl
     SUBDIR += dune-localfunctions
+    SUBDIR += dune-typetree
     SUBDIR += dune-uggrid
     SUBDIR += e
     SUBDIR += ecos
