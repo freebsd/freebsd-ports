@@ -215,6 +215,7 @@
     SUBDIR += dsdp
     SUBDIR += dune-common
     SUBDIR += dune-geometry
+    SUBDIR += dune-uggrid
     SUBDIR += e
     SUBDIR += ecos
     SUBDIR += edenmath
