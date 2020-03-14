@@ -13,6 +13,9 @@ COMMENT=	Make XML documents translatable through po files
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Uses deprecated version of python, use textproc/itstool instead
+EXPIRATION_DATE=2020-04-14
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${PY_FLAVOR}
 
