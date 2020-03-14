@@ -27,6 +27,7 @@ CFLAGS_aarch64=	-fPIC
 CFLAGS_amd64=	-fPIC
 CFLAGS_i386=	-fPIC
 CFLAGS_powerpc=	-fPIC
+CFLAGS_powerpc64=	-fPIC
 CFLAGS_sparc64=	-fPIC
 
 # Fix the build for i386 when WITH_LLD_IS_LD is set
