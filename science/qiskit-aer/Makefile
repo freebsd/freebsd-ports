@@ -10,6 +10,8 @@ COMMENT=	Simulator for quantum circuits, including noise models
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	undefined reference to `__atomic_load'
+
 BUILD_DEPENDS=	spdlog>0:devel/spdlog
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libopenblas.so:math/openblas
