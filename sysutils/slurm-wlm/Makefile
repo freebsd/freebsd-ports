@@ -2,6 +2,7 @@
 
 PORTNAME=	slurm
 DISTVERSION=	19.05.5
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -106,6 +107,7 @@ pre-configure:
 		${WRKSRC}/doc/man/man5/slurm.conf.5
 
 	@${REINPLACE_CMD} -e 's|"/proc|"/compat/linux/proc|g' \
+		-e 's|(/proc)|(/compat/linux/proc)|g' \
 		${WRKSRC}/src/slurmd/slurmstepd/req.c \
 		${WRKSRC}/src/slurmd/slurmstepd/pdebug.c \
 		${WRKSRC}/src/slurmd/common/xcpuinfo.c \
