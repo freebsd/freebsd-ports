@@ -1,0 +1,8 @@
+dune-functions is a module of the DUNE Numerics framework for solving
+partial differential equations (PDEs) with grid-based methods.
+
+dune-functions provides an abstraction layer for global finite element
+functions. Its two main concepts are functions implemented as callable
+objects, and bases of finite element spaces.
+
+WWW: https://www.dune-project.org/
