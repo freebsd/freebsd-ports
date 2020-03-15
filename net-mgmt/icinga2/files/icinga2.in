@@ -84,24 +84,6 @@ reload_precmd() {
   fi
 }
 
-icinga2_checkfib () {
-	echo "Checkfib called"
-	exit 1
-	if command -v check_namevarlist > /dev/null 2>&1; then
-		check_namevarlist fib && return 0
-	fi
-	
-	$SYSCTL net.fibs >/dev/null 2>&1 || return 0
-	
-	icinga2_fib=${icinga2_fib:-"NONE"}
-	if [ "x$icinga2_fib" != "xNONE" ]
-	then 
-		command="/usr/sbin/setfib -F ${icinga2_fib} ${command}"
-	else
-		return 0
-	fi
-}
-
 start_precmd() {
   # Create necessary directories / change ownership
   # While this is also done through pkg-plist, /var might be on a ramdisk,
