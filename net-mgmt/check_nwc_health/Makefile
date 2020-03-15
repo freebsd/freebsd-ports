@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	check_nwc_health
-PORTVERSION=	7.10.1.5
+PORTVERSION=	7.10.1.8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://labs.consol.de/assets/downloads/nagios/
 
