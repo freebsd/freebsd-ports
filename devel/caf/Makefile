@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	caf
-PORTVERSION=	0.17.3
+PORTVERSION=	0.17.4
 CATEGORIES=	devel
 
 MAINTAINER=	leres@FreeBSD.org
