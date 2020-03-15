@@ -1,0 +1,5 @@
+TIMESTAMP = 1584290431
+SHA256 (ikona-1.0.tar.xz) = 9bd2b0898fd6b56fb3a267f2254751b75bd4da6d697122bdfbc9d4d2b4d722b3
+SIZE (ikona-1.0.tar.xz) = 1041940
+SHA256 (ikona-1.0.cargo.vendor.tar.xz) = 6a10abc76ed33385392867b4aa53b89a1c1f8609492d05db7ce794fc696941fb
+SIZE (ikona-1.0.cargo.vendor.tar.xz) = 16102888
