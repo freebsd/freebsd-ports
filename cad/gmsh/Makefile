@@ -4,7 +4,8 @@
 PORTNAME=	gmsh
 DISTVERSION=	4.5.4
 CATEGORIES=	cad
-MASTER_SITES=	http://gmsh.info/src/
+MASTER_SITES=	LOCAL/wen \
+		http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 DIST_SUBDIR=	gmsh
 
