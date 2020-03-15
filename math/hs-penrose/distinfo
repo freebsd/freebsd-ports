@@ -1,4 +1,4 @@
-TIMESTAMP = 1584070002
+TIMESTAMP = 1584292612
 SHA256 (cabal/penrose-0.1.737.tar.gz) = 83caeed913b229b12c23d9de594ec09c7041e9481ec6de66759b4e6ca725846f
 SIZE (cabal/penrose-0.1.737.tar.gz) = 37014128
 SHA256 (cabal/MonadRandom-0.5.1.2/MonadRandom-0.5.1.2.tar.gz) = 776f0e69ddea30c9e819f1cd75249377b7fc6f7c8181b90e72ec9c7bc7e33448
@@ -277,5 +277,5 @@ SHA256 (cabal/x509-1.7.5/revision/1.cabal) = 01185a9a17bee4e89287d9e32bfaa673133
 SIZE (cabal/x509-1.7.5/revision/1.cabal) = 2305
 SHA256 (cabal/zlib-0.6.2.1/zlib-0.6.2.1.tar.gz) = f0f810ff173560b60392db448455c0513b3239f48e43cb494b3733aa559621d0
 SIZE (cabal/zlib-0.6.2.1/zlib-0.6.2.1.tar.gz) = 143424
-SHA256 (cabal/penrose-penrose-v0.1-737-gb336c8d_GH0.tar.gz) = 36bba91fdca6a44edbe5bb06a90876763e4721409532a34761fcc4d6e86e3bb4
-SIZE (cabal/penrose-penrose-v0.1-737-gb336c8d_GH0.tar.gz) = 16580608
+SHA256 (cabal/penrose-penrose-v0.1-737-gb336c8d_GH0.tar.gz) = 83caeed913b229b12c23d9de594ec09c7041e9481ec6de66759b4e6ca725846f
+SIZE (cabal/penrose-penrose-v0.1-737-gb336c8d_GH0.tar.gz) = 37014128
