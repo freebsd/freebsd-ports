@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vscode
-DISTVERSION=	1.42.1
-PORTREVISION=	1
+DISTVERSION=	1.43.0
 CATEGORIES=	editors
 MASTER_SITES=	https://nodejs.org/dist/v${NODE_VER}/:node_headers \
 		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
@@ -10,9 +9,6 @@ DISTFILES=	node-v${NODE_VER}-headers${EXTRACT_SUFX}:node_headers \
 		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
 		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} \
-		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	tagattie@yandex.com
 COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
@@ -65,7 +61,7 @@ USES=		desktop-file-utils gl gmake gnome jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	c47d83b293181d9be64f27ff093689e8e7aed054
+SOURCE_COMMIT_HASH=	78a4c91400152c0f27ba4d363eb56d2835f9903a
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -90,7 +86,7 @@ MAKE_ENV+=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
 		PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 \
 		XDG_CACHE_HOME=${WRKDIR}/.cache
 
-ELECTRON_DIR=	${.CURDIR}/../../devel/electron6
+ELECTRON_DIR=	${.CURDIR}/../../devel/electron7
 .include	"${ELECTRON_DIR}/Makefile.version"
 
 pre-everything::
@@ -102,19 +98,6 @@ pre-everything::
 	@${ECHO_MSG} "MAX_FILES_${PORTNAME}=4096"
 	@${ECHO_MSG} ""
 
-post-extract:
-	# setup node headers for node-gyp
-	${MKDIR} ${WRKDIR}/.cache/node-gyp/${NODE_VER}
-	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/node-v${NODE_VER}-headers${EXTRACT_SUFX} \
-		--strip-components 1 -C ${WRKDIR}/.cache/node-gyp/${NODE_VER}
-	${ECHO_CMD} 9 > ${WRKDIR}/.cache/node-gyp/${NODE_VER}/installVersion
-	# setup electron download cache for UI smoke tests
-	# ${MKDIR} ${WRKDIR}/.cache/electron
-	# ${SED} -e 's/freebsd${OSREL:R}/freebsd/' ${DISTDIR}/${DIST_SUBDIR}/SHASUMS256.txt > \
-	# 	${WRKDIR}/.cache/electron/SHASUMS256.txt-${ELECTRON_VER}
-	# ${CP} ${DISTDIR}/${DIST_SUBDIR}/electron-v${ELECTRON_VER}-freebsd${OSREL:R}-x64.zip \
-	# 	${WRKDIR}/.cache/electron/electron-v${ELECTRON_VER}-freebsd-x64.zip
-
 post-patch:
 	# force use of electron version matching port one
 	${REINPLACE_CMD} -E 's|^(target ").*(")$$|\1${ELECTRON_VER}\2|' \
@@ -122,6 +105,8 @@ post-patch:
 	# setup yarnrc for using local node headers
 	${ECHO_CMD} 'nodedir "${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers"' >> \
 		${WRKSRC}/.yarnrc
+	${ECHO_CMD} 'nodedir "${WRKDIR}/node-v${NODE_VER}"' >> \
+		${WRKSRC}/remote/.yarnrc
 	# setup yarnrc for offline node_modules installation
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-offline-cache"' >> \
 		${WRKSRC}/.yarnrc
