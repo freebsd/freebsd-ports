@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/base/bytes.h.orig	2019-07-07 13:34:35 UTC
-+++ Telegram/SourceFiles/base/bytes.h
-@@ -137,7 +137,7 @@ template <
+--- Telegram/lib_base/base/bytes.h.orig	2020-01-29 09:41:30 UTC
++++ Telegram/lib_base/base/bytes.h
+@@ -136,7 +136,7 @@ template <
  vector concatenate(Args &&...args) {
  	const auto size = details::spansLength(args...);
  	auto result = vector(size);
@@ -9,7 +9,7 @@
  	return result;
  }
  
-@@ -149,7 +149,7 @@ vector concatenate(SpanRange args) {
+@@ -148,7 +148,7 @@ vector concatenate(SpanRange args) {
  		size += bytes::make_span(arg).size();
  	}
  	auto result = vector(size);
