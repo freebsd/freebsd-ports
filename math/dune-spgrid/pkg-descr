@@ -1,0 +1,6 @@
+dune-spgrid is a module of the DUNE Numerics framework for solving partial
+differential equations (PDEs) with grid-based methods.
+
+dune-spgrid module provides a structured, parallel grid: SPGrid.
+
+WWW: https://www.dune-project.org/
