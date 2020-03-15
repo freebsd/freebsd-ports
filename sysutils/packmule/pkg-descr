@@ -1,0 +1,6 @@
+Packmule automates the process of loading custom software into a
+FreeBSD installation image. The user creates a "packing" list
+which is either installed alongside the base system, or added to
+the live CD.
+
+WWW: http://badland.io/packmule.md
