@@ -1,0 +1,9 @@
+dune-pdelab is a module of the DUNE Numerics framework for solving
+partial differential equations (PDEs) with grid-based methods.
+
+PDELab is a PDE solver toolbox. The main intention is to provide a good set of
+high-level abstractions to allow for a reasonably quick development of
+simulation codes, while at the same time offering the flexibility to implement
+new numerical methods and optimize for specific simulation scenarios.
+
+WWW: https://www.dune-project.org/
