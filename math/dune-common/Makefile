@@ -31,9 +31,9 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS=	latex:print/tex-formats
 DOCS_CMAKE_BOOL=	FREEBSD_INSTALL_DOCS
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
+			latex:print/tex-formats \
 			sphinx-build:textproc/py-sphinx
 
 PORTDOCS=	*
