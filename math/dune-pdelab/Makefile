@@ -32,7 +32,6 @@ USES=		cmake compiler:c++17-lang fortran pkgconfig
 USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 
-GL_ACCOUNT=	core
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	pdelab
 GL_COMMIT=	52b45c1640bf42a1f7f4180f578158999a7178d2
