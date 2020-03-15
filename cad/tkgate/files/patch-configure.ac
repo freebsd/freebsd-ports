@@ -9,19 +9,19 @@
  # Tcl/Tk version we will try to use (from most favored to least favored)
  #
 -TKGATE_TCLTK_VERSIONS="8.6 8.5 8.4 8.3"
-+TKGATE_TCLTK_VERSIONS="8.6"
++TKGATE_TCLTK_VERSIONS="%%TCL_VER%%"
  
  #
  # Directories to search for include files
  #
 -TKGATE_INCDIRS="/usr/X11R6/include /usr/X11/include /pkgs/include /usr/local/include /usr/openwin/include /usr/X/include /usr/include /sw/include /opt/local/include"
-+TKGATE_INCDIRS="/usr/local/include /usr/local/include/tcl8.6"
++TKGATE_INCDIRS="%%LOCALBASE%%/include %%TCL_INCLUDEDIR%%"
  
  #
  # Directories to search for library files
  #
 -TKGATE_LIBDIRS="/usr/X11R6/lib /usr/X11/lib /pkgs/lib /usr/local/lib /usr/lib /sw/lib /opt/local/lib /usr/local/lib/tcl /usr/lib64"
-+TKGATE_LIBDIRS="/usr/local/lib"
++TKGATE_LIBDIRS="%%LOCALBASE%%/lib"
  
  #
  # Libraries we may need if available.
