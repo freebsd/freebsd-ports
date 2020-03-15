@@ -1,0 +1,7 @@
+bin/ctmconv
+bin/ctmviewer
+include/openctm.h
+include/openctmpp.h
+lib/libopenctm.so
+man/man1/ctmconv.1.gz
+man/man1/ctmviewer.1.gz

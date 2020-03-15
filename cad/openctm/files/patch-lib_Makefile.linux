@@ -1,0 +1,32 @@
+--- lib/Makefile.linux.orig	2020-03-15 00:27:35 UTC
++++ lib/Makefile.linux
+@@ -27,9 +27,9 @@
+ ###############################################################################
+ 
+ LZMADIR = liblzma
+-CC = gcc
+-CFLAGS = -O3 -W -Wall -c -fPIC -DOPENCTM_BUILD -I$(LZMADIR) -DLZMA_PREFIX_CTM -std=c99 -pedantic
+-CFLAGS_LZMA = -O3 -W -Wall -c -fPIC -DLZMA_PREFIX_CTM -std=c99 -pedantic
++CC ?= cc
++CFLAGS_CTM = -DOPENCTM_BUILD -I$(LZMADIR) -DLZMA_PREFIX_CTM -std=c99 -pedantic
++CFLAGS_LZMA = -DLZMA_PREFIX_CTM -std=c99 -pedantic
+ RM = rm -f
+ DEPEND = $(CPP) -MM
+ 
+@@ -67,13 +67,13 @@ clean:
+ 	$(RM) $(DYNAMICLIB) $(OBJS) $(LZMA_OBJS)
+ 
+ $(DYNAMICLIB): $(OBJS) $(LZMA_OBJS)
+-	gcc -shared -s -Wl,-soname,$@ -o $@ $(OBJS) $(LZMA_OBJS) -lm
++	$(CC) -shared -s -Wl,-soname,$@ -o $@ $(OBJS) $(LZMA_OBJS) -lm
+ 
+ %.o: %.c
+-	$(CC) $(CFLAGS) $<
++	$(CC) -c -fPIC $(CFLAGS_CTM) $(CFLAGS_LZMA) $<
+ 
+ %.o: $(LZMADIR)/%.c
+-	$(CC) $(CFLAGS_LZMA) $<
++	$(CC) -c -fPIC $(CFLAGS) $(CFLAGS_LZMA) $<
+ 
+ depend:
+ 	$(DEPEND) $(SRCS) $(LZMA_SRCS) > make.depend

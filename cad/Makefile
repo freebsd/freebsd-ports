@@ -74,6 +74,7 @@
     SUBDIR += ngspice_rework
     SUBDIR += nvc
     SUBDIR += opencascade
+    SUBDIR += openctm
     SUBDIR += openscad
     SUBDIR += openscad-devel
     SUBDIR += openvsp

@@ -1,0 +1,60 @@
+--- Makefile.linux.orig	2020-03-15 00:26:34 UTC
++++ Makefile.linux
+@@ -29,37 +29,41 @@
+ .phony: default all openctm toolset documentation install clean
+ 
+ default: openctm toolset
++all: openctm
+ all: openctm toolset documentation
+ 
+ clean:
+ 	cd lib && $(MAKE) -f Makefile.linux clean && cd ..
+ 	cd tools && $(MAKE) -f Makefile.linux clean && cd ..
+-	cd doc && $(MAKE) -f Makefile.linux clean && cd ..
++#	cd doc && $(MAKE) -f Makefile.linux clean && cd ..
+ 
+ openctm:
+-	cd lib && $(MAKE) -f Makefile.linux -j2 && cd ..
++	cd lib && $(MAKE) -f Makefile.linux && cd ..
+ 
+ toolset:
+-	cd tools && $(MAKE) -f Makefile.linux -j2 && cd ..
++	cd tools && $(MAKE) -f Makefile.linux && cd ..
+ 
+ documentation:
+-	cd doc && $(MAKE) -f Makefile.linux -j2 && cd ..
++#	cd doc && $(MAKE) -f Makefile.linux && cd ..
+ 
+ 
+ # Installation settings
+-LIBDIR  = /usr/lib/
+-INCDIR  = /usr/local/include/
+-BINDIR  = /usr/local/bin/
+-MAN1DIR = /usr/local/share/man/man1/
++PREFIX		= %%LOCALBASE%%
++STAGEDIR	= %%STAGEDIR%%
++
++LIBDIR  = $(PREFIX)/lib/
++INCDIR  = $(PREFIX)/include/
++BINDIR  = $(PREFIX)/bin/
++MAN1DIR = $(PREFIX)/man/man1/
+ CP = cp
+ MKDIR = mkdir -p
+ 
+ install:
+-	$(CP) lib/libopenctm.so $(LIBDIR)
+-	$(CP) lib/openctm.h $(INCDIR)
+-	$(CP) lib/openctmpp.h $(INCDIR)
+-	$(CP) tools/ctmconv $(BINDIR)
+-	$(CP) tools/ctmviewer $(BINDIR)
+-	$(MKDIR) $(MAN1DIR)
+-	$(CP) doc/ctmconv.1 $(MAN1DIR)
+-	$(CP) doc/ctmviewer.1 $(MAN1DIR)
++	$(CP) lib/libopenctm.so $(STAGEDIR)/$(LIBDIR)
++	$(CP) lib/openctm.h $(STAGEDIR)/$(INCDIR)
++	$(CP) lib/openctmpp.h $(STAGEDIR)/$(INCDIR)
++	$(CP) tools/ctmconv $(STAGEDIR)/$(BINDIR)
++	$(CP) tools/ctmviewer $(STAGEDIR)/$(BINDIR)
++	$(MKDIR) $(STAGEDIR)/$(MAN1DIR)
++	$(CP) doc/ctmconv.1 $(STAGEDIR)/$(MAN1DIR)
++	$(CP) doc/ctmviewer.1 $(STAGEDIR)/$(MAN1DIR)
