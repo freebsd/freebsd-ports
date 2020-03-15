@@ -1227,7 +1227,7 @@
     SUBDIR += super
     SUBDIR += suricata
     SUBDIR += suricata5
-    SUBDIR += swatch
+    SUBDIR += swatchdog
     SUBDIR += switzerland
     SUBDIR += symbion-sslproxy
     SUBDIR += tclsasl

@@ -1,9 +1,0 @@
-bin/swatch
-%%SITE_PERL%%/Swatch/Actions.pm
-%%SITE_PERL%%/Swatch/Threshold.pm
-%%SITE_PERL%%/Swatch/Throttle.pm
-%%SITE_PERL%%/auto/Swatch/Actions/autosplit.ix
-%%PERL5_MAN3%%/Swatch::Actions.3.gz
-%%PERL5_MAN3%%/Swatch::Threshold.3.gz
-%%PERL5_MAN3%%/Swatch::Throttle.3.gz
-%%PERL5_MAN1%%/swatch.1.gz
