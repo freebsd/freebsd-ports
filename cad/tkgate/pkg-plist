@@ -1403,7 +1403,6 @@ share/pixmaps/tkgate.xpm
 %%DATADIR%%/scripts/tkgate.tcl
 %%DATADIR%%/scripts/toolbar.tcl
 %%DATADIR%%/scripts/tree.tcl
-%%DATADIR%%/scripts/tree.tcl.bak
 %%DATADIR%%/scripts/undo.tcl
 %%DATADIR%%/scripts/vpd.tcl
 %%DATADIR%%/scripts/wizard.tcl
