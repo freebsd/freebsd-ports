@@ -128,8 +128,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's/OSVERSION/${OSVERSION}/g' \
 		${APR_WRKDIR}/configure
-	@${REINPLACE_CMD} -e '/recursive:/s/$$/ .MAKE/' \
-		${APR_WRKDIR}/build/apr_rules.mk.in
 
 do-configure:
 	@${ECHO_MSG} "# ===> ${.TARGET} apr-${APR_VERSION}"
