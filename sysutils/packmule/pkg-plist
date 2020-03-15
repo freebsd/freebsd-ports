@@ -1,0 +1,8 @@
+bin/packmule
+man/man1/packmule.1.gz
+packmule/mkiso/amd64/mkisoimages.sh
+packmule/mkiso/i386/mkisoimages.sh
+packmule/mkiso/powerpc/mkisoimages.sh
+packmule/make-memstick/amd64/make-memstick.sh
+packmule/make-memstick/i386/make-memstick.sh
+packmule/make-memstick/powerpc/make-memstick.sh
