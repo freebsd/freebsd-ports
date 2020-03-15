@@ -341,6 +341,7 @@
     SUBDIR += ida
     SUBDIR += iec16022
     SUBDIR += iiview
+    SUBDIR += ikona
     SUBDIR += ilmbase
     SUBDIR += imageindex
     SUBDIR += imageviewer
