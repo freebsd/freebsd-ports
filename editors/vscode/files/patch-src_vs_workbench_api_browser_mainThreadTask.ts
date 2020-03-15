@@ -1,4 +1,4 @@
---- src/vs/workbench/api/browser/mainThreadTask.ts.orig	2020-02-05 19:39:53 UTC
+--- src/vs/workbench/api/browser/mainThreadTask.ts.orig	2020-03-09 16:22:02 UTC
 +++ src/vs/workbench/api/browser/mainThreadTask.ts
 @@ -592,7 +592,7 @@ export class MainThreadTask implements MainThreadTaskS
  			case 'darwin':

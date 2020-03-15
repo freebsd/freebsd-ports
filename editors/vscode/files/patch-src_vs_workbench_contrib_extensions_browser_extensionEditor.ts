@@ -1,4 +1,4 @@
---- src/vs/workbench/contrib/extensions/browser/extensionEditor.ts.orig	2019-12-10 21:16:00 UTC
+--- src/vs/workbench/contrib/extensions/browser/extensionEditor.ts.orig	2020-03-09 16:22:02 UTC
 +++ src/vs/workbench/contrib/extensions/browser/extensionEditor.ts
 @@ -1361,7 +1361,8 @@ export class ExtensionEditor extends BaseEditor {
  
