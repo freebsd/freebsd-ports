@@ -32,8 +32,8 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1201000
-IGNORE=	requires FreeBSD versions 12.1+, this system is running ${OSREL}
+.if ${OSREL} < 12.1
+IGNORE=	requires FreeBSD versions 12.1+, this system is running ${OSVERSION}
 .endif
 
 .include <bsd.port.post.mk>

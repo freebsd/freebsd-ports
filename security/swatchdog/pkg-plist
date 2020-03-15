@@ -1,0 +1,9 @@
+bin/swatchdog
+%%SITE_PERL%%/Swatchdog/Actions.pm
+%%SITE_PERL%%/Swatchdog/Threshold.pm
+%%SITE_PERL%%/Swatchdog/Throttle.pm
+%%SITE_PERL%%/auto/Swatchdog/Actions/autosplit.ix
+%%PERL5_MAN1%%/swatchdog.1.gz
+%%PERL5_MAN3%%/Swatchdog::Actions.3.gz
+%%PERL5_MAN3%%/Swatchdog::Threshold.3.gz
+%%PERL5_MAN3%%/Swatchdog::Throttle.3.gz

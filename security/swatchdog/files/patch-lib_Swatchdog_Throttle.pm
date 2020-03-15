@@ -1,6 +1,6 @@
---- lib/Swatch/Throttle.pm.orig	2010-01-16 00:54:35.478307464 +0900
-+++ lib/Swatch/Throttle.pm	2010-01-16 00:58:31.814303601 +0900
-@@ -95,6 +95,7 @@
+--- lib/Swatchdog/Throttle.pm.orig	2015-09-29 16:39:26 UTC
++++ lib/Swatchdog/Throttle.pm
+@@ -95,6 +95,7 @@ sub throttle {
  	      @_
  	     );
  
@@ -8,7 +8,7 @@
    my @dmyhms;
    my $key;
    my $cur_rec;
-@@ -134,30 +135,61 @@
+@@ -134,30 +135,61 @@ sub throttle {
      $rec->{FIRST} = [ @dmyhms ];
      $rec->{LAST} = [ @dmyhms ];
      $rec->{HOLD_DHMS} = $opts{HOLD_DHMS} if defined $opts{HOLD_DHMS};

@@ -1,0 +1,10 @@
+swatchdog - the Simple WATCHdog formerly known as swatch.
+
+Swatchdog was originally written to actively monitor messages as they are
+written to a log file via the UNIX syslog utility.  For a simple
+demonstration type "perl swatchdog --examine=FILENAME" with FILENAME being
+the file that you would like to see the contents of.  All this example will
+do is demonstrate the different text modes that are available with to the
+echo action.
+
+WWW: http://swatch.sourceforge.net/

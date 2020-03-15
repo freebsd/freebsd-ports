@@ -1,7 +1,0 @@
-SWATCH - The Simple WATCHer and filter
-
-Swatch is designed to  monitor  system  activity.   Swatch
-requires a configuration file which contains pattern(s) to
-look for and action(s) to do when each pattern is found.
-
-WWW: http://swatch.sourceforge.net/

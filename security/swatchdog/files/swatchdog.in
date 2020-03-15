@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: swatchdog
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# To enable multiple instances of swatchdog, add lines like below to
+# /etc/rc.conf.
+#
+# swatchdog_enable="YES"
+# swatchdog_rules="1 2 3"
+# swatchdog_1_flags="--config-file=/rc --tail-file=/log --daemon --pid-file=/pid"
+# swatchdog_1_user="nobody"
+# swatchdog_1_chdir="/var/tmp"
+# swatchdog_1_pidfile="/pid"
+# swatchdog_2_flags="blah, blah"
+# swatchdog_3_flags="blah, blah"
+
+. /etc/rc.subr
+
+name=swatchdog
+rcvar=swatchdog_enable
+
+load_rc_config ${name}
+
+# set some defaults
+: ${swatchdog_enable:="NO"}
+
+command=%%PREFIX%%/bin/swatchdog
+
+if [ -n "${swatchdog_rules}" ]; then
+    for i in ${swatchdog_rules}; do
+	eval swatchdog_flags=\$swatchdog_${i}_flags
+	len=`echo "0${command} ${swatchdog_flags} (perl)0" | wc -c`
+	if [ $len -ge 255 ];then
+	   procname=%%LOCALBASE%%/bin/perl
+	fi
+	eval swatchdog_user=\$swatchdog_${i}_user
+	eval swatchdog_chdir=\$swatchdog_${i}_chdir
+	eval pidfile=\$swatchdog_${i}_pidfile
+	run_rc_command "$1"
+    done
+fi

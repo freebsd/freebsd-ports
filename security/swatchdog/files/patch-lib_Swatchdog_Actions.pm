@@ -1,6 +1,6 @@
---- lib/Swatch/Actions.pm.orig	2010-05-19 15:46:19.000000000 -0300
-+++ lib/Swatch/Actions.pm	2010-05-19 15:47:15.000000000 -0300
-@@ -96,7 +96,7 @@
+--- lib/Swatchdog/Actions.pm.orig	2015-09-29 16:39:26 UTC
++++ lib/Swatchdog/Actions.pm
+@@ -96,7 +96,7 @@ sub exec_command {
  
   EXECFORK: {
      if ($exec_pid = fork) {
