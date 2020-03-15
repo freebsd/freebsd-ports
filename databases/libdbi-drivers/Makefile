@@ -48,8 +48,6 @@ SQLITE3_CONFIGURE_WITH=	sqlite3
 SQLITE3_PLIST_FILES=	lib/dbd/libdbdsqlite3.so
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O20|${CFLAGS}|g' \
-		-e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${TOUCH} ${WRKSRC}/drivers/*/dbd_*/*
 
 .include <bsd.port.mk>
