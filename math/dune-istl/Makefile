@@ -3,6 +3,7 @@
 PORTNAME=	dune-istl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.0rc2
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	dune-common>0:math/dune-common \
 		vc>0:devel/vc
+RUN_DEPENDS=	dune-common>0:math/dune-common
 
 USES=		cmake compiler:c++17-lang fortran pkgconfig
 USE_GITLAB=	yes
