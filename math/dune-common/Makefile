@@ -21,7 +21,6 @@ SHEBANG_FILES=	bin/dune-ctest
 USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 
-GL_ACCOUNT=	core
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	core
 GL_COMMIT=	c5321673af09725a411bdd81aa2be5cfaf8bf9a6

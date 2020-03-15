@@ -24,7 +24,6 @@ RUN_DEPENDS=	${DUNE_DEPENDS}
 USES=		cmake compiler:c++17-lang fortran pkgconfig
 USE_GITLAB=	yes
 
-GL_ACCOUNT=	core
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	staging
 GL_COMMIT=	715a380912eb6d14f06a4d758f4d1255bda25c95

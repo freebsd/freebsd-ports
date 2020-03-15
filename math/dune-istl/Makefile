@@ -19,7 +19,6 @@ RUN_DEPENDS=	dune-common>0:math/dune-common
 USES=		cmake compiler:c++17-lang fortran pkgconfig
 USE_GITLAB=	yes
 
-GL_ACCOUNT=	core
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	core
 GL_COMMIT=	37d19468f560f49b0ec6aff167075a52fc9eade3
