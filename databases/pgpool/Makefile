@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgpool
-PORTVERSION=	3.4.25
+PORTVERSION=	3.4.26
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 DISTNAME=	${PORTNAME}-II-${PORTVERSION}
@@ -13,9 +13,13 @@ COMMENT=	Connection pool server for PostgreSQL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limit:^3.4.[0-9]*
+DEPRECATED=	Reached EOL at 2019-10-31, please use pgpool-II-35 or higher
+EXPIRATION_DATE=	2020-03-31
 
 USES=		gmake libtool pgsql:9.3+
+
+PORTSCOUT=	limit:^3.4.[0-9]*
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
