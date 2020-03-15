@@ -1,0 +1,13 @@
+--- cmake/external/qt/CMakeLists.txt.orig	2020-02-18 08:27:33 UTC
++++ cmake/external/qt/CMakeLists.txt
+@@ -10,8 +10,10 @@ add_library(desktop-app::external_qt ALIAS external_qt
+ if (LINUX)
+     if (NOT build_linux32)
+         target_compile_definitions(external_qt INTERFACE Q_OS_LINUX64)
++        target_compile_definitions(external_qt INTERFACE Q_OS_FREEBSD)
+     else()
+         target_compile_definitions(external_qt INTERFACE Q_OS_LINUX32)
++        target_compile_definitions(external_qt INTERFACE Q_OS_FREEBSD)
+     endif()
+ endif()
+ 
