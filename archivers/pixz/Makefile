@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	pixz
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.6
+DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
-MASTER_SITES=	SF/pixz
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Parallel, indexing version of XZ
@@ -12,12 +11,13 @@ COMMENT=	Parallel, indexing version of XZ
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-SUB_FILES=	Makefile
-PLIST_FILES=	bin/${PORTNAME} man/man1/pixz.1.gz
-USES=		uidfix libarchive
+BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 
-post-extract: apply-slist
-	${INSTALL_DATA} ${WRKDIR}/Makefile ${WRKSRC}
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.1 ${WRKSRC}
+USES=		autoreconf libarchive pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	vasi
+
+GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/${PORTNAME} man/man1/pixz.1.gz
 
 .include <bsd.port.mk>
