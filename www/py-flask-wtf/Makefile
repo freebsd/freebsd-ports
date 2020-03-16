@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Flask-WTF
-PORTVERSION=	0.14.2
+PORTVERSION=	0.14.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,14 +17,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>0:www/py-flask@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Babel>0:devel/py-flask-babel@${PY_FLAVOR}
 
-OPTIONS_DEFINE=		TESTS
-TESTS_DESC=		Install test suite dependencies
-TESTS_BUILD_DEPENDS=	${RUN_DEPENDS} \
-			${TEST_DEPENDS}
-
-NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
