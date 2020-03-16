@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200316:
+  AFFECTS: users of net-im/slack-term
+  AUTHOR: dmgk@FreeBSD.org
+
+  The config file location was changed from ~/.slack-term to
+  ~/.config/slack-term/config, please move your existing config file
+  accordingly.
+
 20200308
   AFFECTS: users of graphics/mesa-libs and legacy graphics drivers
   AUTHOR: zeising@FreeBSD.org

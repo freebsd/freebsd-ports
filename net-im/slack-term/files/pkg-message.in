@@ -3,14 +3,14 @@
   message: <<EOM
 To do the initial %%PORTNAME%% configuration, get a Slack token from
 https://api.slack.com/custom-integrations/legacy-tokens and create
-~/.slack-term with the following format:
+~/.config/slack-term/config with the following format:
 
 {
     "slack_token": "yourslacktokenhere"
 }
 
-See %%DOCSDIR%%/README.md or the online documentation
-for more configuration options.
+See %%DOCSDIR%%/README.md or the online documentation for more configuration
+options.
 EOM
 }
 ]
