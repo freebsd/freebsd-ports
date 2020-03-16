@@ -17,16 +17,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	gsed:textproc/gsed
 RUN_DEPENDS=	lsof:sysutils/lsof
 
-USES=		bison gettext ghostscript:build gmake groff iconv libtool localbase
+USES=		bison gettext ghostscript:build gmake groff iconv libtool:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_linux_kd_h=no
 USE_LDCONFIG=	yes
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+
 PATCHLEVEL=	D012
 
 OPTIONS_DEFINE=	DOCS
-
-BINARY_ALIAS=	sed=gsed
 
 .include <bsd.port.pre.mk>
 
@@ -36,6 +37,11 @@ CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv=no
 CONFIGURE_ARGS+=ac_cv_func_iconv_open=yes ac_cv_func_iconv_close=yes \
 		ac_cv_lib_iconv_iconv=yes
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|$$(libdir)/pkgconfig|$$(libdir)/../libdata/pkgconfig|g ; \
+		 s|\([[:blank:]]\)sed|\1gsed|g' ${WRKSRC}/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libexplain.so
