@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		webkit
-DISTVERSION=		5.212.0-alpha3
-PORTREVISION=		6
+DISTVERSION=		5.212.0-alpha4
 CATEGORIES=		www
 MASTER_SITES=		https://github.com/qt${PORTNAME}/qt${PORTNAME}/releases/download/${DISTNAME}/
 PKGNAMEPREFIX=		qt5-
@@ -19,7 +18,7 @@ LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 			libwoff2dec.so:devel/woff2
 
 USES=			bison cmake compiler:c++11-lang gnome gperf jpeg \
-			pathfix perl5 pkgconfig python:2.7,build qt:5 sqlite:3 \
+			pathfix perl5 pkgconfig python:3.5+,build qt:5 sqlite:3 \
 			tar:xz xorg
 USE_GNOME=		glib20 libxml2 libxslt
 USE_PERL5=		build
@@ -57,5 +56,7 @@ GSTREAMER_LIB_DEPENDS=	libgstapp-1.0.so:multimedia/gstreamer1-plugins \
 			libgstbase-1.0.so:multimedia/gstreamer1
 GSTREAMER_USE=		GSTREAMER1=core
 GSTREAMER_CMAKE_OFF=	-DUSE_GSTREAMER:BOOL=OFF
+
+BINARY_ALIAS=		python3=${PYTHON_CMD}
 
 .include <bsd.port.mk>
