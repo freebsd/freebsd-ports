@@ -3,6 +3,7 @@
 
 PORTNAME=	telepathy-qt
 DISTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMESUFFIX=	5
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libtelepathy-farstream.so:net-im/telepathy-farstream \
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:devel/py-dbus@${PY_FLAVOR}
 
 USES=		cmake compiler:c++11-lang gettext gnome localbase:ldflags pathfix \
-		pkgconfig python:2.7,build qt:5
+		pkgconfig python:3.5+,build qt:5
 USE_GNOME=	glib20 libxslt:build
 USE_GSTREAMER=	yes
 USE_LDCONFIG=	yes
