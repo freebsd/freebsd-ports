@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uni
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -17,8 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	arp242
 
 GO_PKGNAME=	arp242.net/uni
-GH_TUPLE=	golang:sys:bd437916bb0e:golang_sys/vendor/golang.org/x/sys	\
-		google:go-cmp:v0.3.1:google_go_cmp/vendor/github.com/google/go-cmp
+GH_TUPLE=	golang:sys:bd437916bb0e:golang_sys/vendor/golang.org/x/sys
 #GO_BUILDFLAGS=	-ldflags "-X main.version=${PORTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
