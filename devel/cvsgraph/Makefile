@@ -28,9 +28,6 @@ MORE_EXAMPLES=	README.Automatic_documentation checkoutlist commit_action.sh \
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-pre-patch:
-	@${REINPLACE_CMD} -e "s:/home/bertho/tmp/cvstest:/home/ncvs:g" ${WRKSRC}/cvsgraph.conf
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/cvsgraph.conf ${STAGEDIR}${PREFIX}/etc/cvsgraph.conf.sample
