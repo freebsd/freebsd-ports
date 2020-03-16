@@ -8,6 +8,7 @@ etc/zfs/vdev_id.conf.multipath.example
 etc/zfs/vdev_id.conf.sas_direct.example
 etc/zfs/vdev_id.conf.sas_switch.example
 etc/zfs/vdev_id.conf.scsi.example
+etc/zfs/zfs-functions
 etc/zfs/zpool.d/ata_err
 etc/zfs/zpool.d/cmd_to
 etc/zfs/zpool.d/defect
@@ -507,6 +508,7 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/bin/threadsappend
 %%TESTS%%share/zfs/zfs-tests/callbacks/zfs_dbgmsg.ksh
 %%TESTS%%share/zfs/zfs-tests/callbacks/zfs_dmesg.ksh
+%%TESTS%%share/zfs/zfs-tests/callbacks/zfs_failsafe.ksh
 %%TESTS%%share/zfs/zfs-tests/callbacks/zfs_mmp.ksh
 %%TESTS%%share/zfs/zfs-tests/include/blkdev.shlib
 %%TESTS%%share/zfs/zfs-tests/include/commands.cfg
@@ -878,7 +880,7 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_009_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_010_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_011_neg.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_012_neg.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_012_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_all_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_all_fail.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_all_mountpoints.ksh
@@ -1433,6 +1435,9 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_wait/zpool_wait_no_activity.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_wait/zpool_wait_remove.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_wait/zpool_wait_remove_cancel.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_wait/zpool_wait_trim_basic.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_wait/zpool_wait_trim_cancel.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_wait/zpool_wait_trim_flag.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_wait/zpool_wait_usage.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_user/misc/arc_summary_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_user/misc/arc_summary_002_neg.ksh
