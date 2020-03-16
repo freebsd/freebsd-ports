@@ -3,6 +3,7 @@
 
 PORTNAME=	unit
 PORTVERSION=	1.16.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://unit.nginx.org/download/
 
@@ -48,16 +49,25 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--modules=libexec/unit/modules \
 		--pid=${UNIT_PIDFILE} \
 		--state=libexec/unit \
-		--tmp=${UNIT_TMPDIR}
+		--tmp=${UNIT_TMPDIR} \
+		--user=${WWWOWN} --group=${WWWGRP}
 
-PLIST_FILES?=	sbin/unitd
+USERS?=	${WWWOWN}
+GROUPS?=${WWWGRP}
+
+ALL_TARGET=
+
 PLIST_DIRS?=	libexec/unit/modules \
 		libexec/unit
+PLIST_FILES?=	sbin/unitd
 
 USE_RC_SUBR?=	unitd
 SUB_LIST=	PREFIX=${PREFIX} \
 		UNIT_PIDFILE=${UNIT_PIDFILE} \
-		UNIT_SOCK=${UNIT_SOCK}
+		UNIT_SOCK=${UNIT_SOCK} \
+		UNIT_TMPDIR=${UNIT_TMPDIR} \
+		WWWOWN=${WWWOWN} \
+		WWWGRP=${WWWGRP}
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--debug
