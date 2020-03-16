@@ -19,7 +19,4 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
-post-patch:
-	@${REINPLACE_CMD} -e 's:(libdir)/lib:(libdir):' ${WRKSRC}/Makefile.in
-
 .include <bsd.port.mk>
