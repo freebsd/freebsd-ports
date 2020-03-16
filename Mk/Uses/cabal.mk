@@ -141,7 +141,7 @@ make-use-cabal-revs:
 cabal-post-extract:
 .    for package in ${_use_cabal}
 .      if ${package:C/[^_]*//:S/_//} != ""
-		cp ${DISTDIR}/${DIST_SUBDIR}/${package:C/_[0-9]+//}/revision/${package:C/[^_]*//:S/_//}.cabal `find ${WRKDIR}/${package:C/_[0-9]+//} -name *.cabal -depth 1`
+		cp ${DISTDIR}/${DIST_SUBDIR}/${package:C/_[0-9]+//}/revision/${package:C/[^_]*//:S/_//}.cabal `find ${WRKDIR}/${package:C/_[0-9]+//} -name '*.cabal' -depth 1`
 .      endif
 	cd ${WRKDIR} && \
 		mv ${package:C/_[0-9]+//} ${WRKSRC}/
