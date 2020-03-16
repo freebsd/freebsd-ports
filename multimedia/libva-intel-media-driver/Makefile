@@ -2,22 +2,20 @@
 
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
-DISTVERSION=	19.4.0
-PORTREVISION=	4
+DISTVERSION=	20.1.pre4
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	c203c89a9695.patch:-p1 12b7fcded6c7.patch:-p1
-PATCHFILES+=	12a0cac7047b.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	83338cf44f05.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	2e1b34f259d6.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	c15003c2c732.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	b83b1334f869.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	5dffdeded8bc.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	04890b2f9a59.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	b585f7586dde.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	38d37bff5a68.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	f337957afed6.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	1c790ebf5006.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	63d607335723.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	ad51a4ed50d1.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	ffc5e189592b.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	783fb8d1c8a9.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	a5e441477420.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	199db8d44462.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	718ae1db9724.patch:-p1 # https://github.com/intel/media-driver/pull/819
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VAAPI driver for Intel HD 5000 (Gen8) or newer
@@ -30,7 +28,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
 
 BUILD_DEPENDS=	gmmlib>=19.3.1:multimedia/gmmlib \
-		libva>=2.6.0:multimedia/libva
+		libva>=2.6.1_1:multimedia/libva
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
 		libigdgmm.so:multimedia/gmmlib \
 		libva.so:multimedia/libva
