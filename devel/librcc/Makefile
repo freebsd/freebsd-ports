@@ -75,8 +75,4 @@ pre-everything::
 .endif
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
-		${WRKSRC}/external/rccexternal.c
-
 .include <bsd.port.post.mk>
