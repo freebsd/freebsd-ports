@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	veroroute
-DISTVERSIONPREFIX=	V
-DISTVERSION=	185
-DISTVERSIONSUFFIX=	_Src
+PORTVERSION=	1.86
+PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/
-DISTNAME=	VeroRoute_${DISTVERSIONFULL}
+DISTNAME=	VeroRoute_V${PORTVERSION:S/.//}_Src
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PCB (printed circuit board) design software
@@ -19,10 +18,5 @@ USE_QT=		core gui network widgets buildtools_build
 
 WRKSRC=		${WRKDIR}/VeroRoute
 WRKSRC_SUBDIR=	Src
-
-PLIST_FILES=	bin/${PORTNAME}
-
-do-install: # https://sourceforge.net/p/veroroute/tickets/17/
-	${INSTALL_PROGRAM} ${WRKSRC}/../${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
