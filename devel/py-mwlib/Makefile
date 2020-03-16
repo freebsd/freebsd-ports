@@ -44,11 +44,6 @@ USE_RC_SUBR=	mwqserve nserve nslave postman
 
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's|lockfile==|lockfile>=|' \
-		${WRKSRC}/setup.py
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/mwlib/_uscan.so
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/mwlib/templ/*.so
