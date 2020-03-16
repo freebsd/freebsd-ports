@@ -2,6 +2,7 @@
 
 PORTNAME=	libvdpau
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		localbase meson pkgconfig xorg
 USE_GITLAB=	yes
-USE_XORG=	xext xorgproto
+USE_XORG=	x11 xext xorgproto
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	vdpau
