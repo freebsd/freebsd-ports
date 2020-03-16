@@ -21,9 +21,20 @@ rcvar=unitd_enable
 
 command="%%PREFIX%%/sbin/unitd"
 start_precmd=start_precmd
+_tmpprefix="%%UNIT_TMPDIR%%"
+
+unitd_checktmpdir()
+{
+    if [ ! -d ${_tmpprefix} ] ; then
+        install -d -o %%WWWOWN%% -g %%WWWGRP%% -m 755 ${_tmpprefix}
+    else
+        chown -R %%WWWOWN%%:%%WWWGRP%% ${_tmpprefix}
+    fi
+}
 
 start_precmd()
 {
+    unitd_checktmpdir
     rm -f %%UNIT_SOCK%%
 }
 
