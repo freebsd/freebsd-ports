@@ -24,6 +24,7 @@ lib/cmake/xeus/xeusConfig.cmake
 lib/cmake/xeus/xeusConfigVersion.cmake
 lib/cmake/xeus/xeusTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/xeus/xeusTargets.cmake
+lib/libxeus.a
 lib/libxeus.so
 lib/libxeus.so.1
 lib/libxeus.so.1.0.0
