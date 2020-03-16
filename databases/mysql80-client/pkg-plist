@@ -12,7 +12,7 @@ bin/mysqlpump
 bin/mysqlshow
 bin/mysqlslap
 bin/perror
-bin/zlib_decompress
+@comment bin/zlib_decompress
 include/mysql/base64.h
 include/mysql/big_endian.h
 include/mysql/c_string_less.h
