@@ -77,7 +77,9 @@ INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
-.if ${LLVM_DEFAULT:S,-devel,990,} >= 90
+.if ${ARCH} == powerpc64
+LLVM_DEFAULT=	90
+.elif ${LLVM_DEFAULT:S,-devel,990,} >= 90
 LLVM_DEFAULT=	80
 .endif
 
