@@ -14480,3 +14480,4 @@ www/node8|www/node10|2020-03-10|Has expired: Node.js 8.x has reached end-of-life
 www/npm-node8|www/npm-node10|2020-03-10|Removed, slave of www/node8
 www/yarn-node8|www/yarn-node10|2020-03-10|Removed, slave of www/node8
 security/swatch|security/swatchdog|2020-03-15|Rename to match upstream naming
+lang/go14||2020-03-17|Unused in the ports tree
