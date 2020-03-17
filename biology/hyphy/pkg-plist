@@ -180,7 +180,6 @@ lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FADE.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FEL-contrast.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FEL.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FUBAR.bf
-lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FitMultiModel.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/MEME.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/RELAX-Groups.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/RELAX-SRV.bf
