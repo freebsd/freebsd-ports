@@ -25,7 +25,7 @@ GNU_CONFIGURE=		yes
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu89
-CONFIGURE_ARGS?=	--enable-shared --with-krb5=${PREFIX}/bin/krb5-config
+CONFIGURE_ARGS?=	--enable-shared --with-krb5=${KRB5_HOME}
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc
 MAKE_ARGS=		INSTALL="${INSTALL}"
 PATCH_DIST_STRIP=	-p1
@@ -48,13 +48,6 @@ KRB5_PORT_RUN_DEPENDS=		kinit:security/krb5
 KRB5_DOC_BUILD_DEPENDS+=	texi2dvi:print/texinfo \
 			dvips:print/dvipsk-tetex
 KRB5_DOC_INFO=			krb5-admin krb5-install krb5-user
-
-.if defined(KRB5_HOME)
-PREFIX=			${KRB5_HOME}
-.if ${KRB5_HOME} != ${LOCALBASE}
-BROKEN=			LIB_DEPENDS when using KRB5_HOME is broken
-.endif
-.endif
 
 CFLAGS+=		-I${PREFIX}/include
 LDFLAGS+=		-L${PREFIX}/lib
