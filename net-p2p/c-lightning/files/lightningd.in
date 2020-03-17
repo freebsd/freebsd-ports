@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 # PROVIDE: lightningd
-# REQUIRE: LOGIN cleanvar
+# REQUIRE: LOGIN bitcoind cleanvar
 # KEYWORD: shutdown
 
 # Add the following to %%LOCALBASE%%/etc/rc.conf.d/lightningd to influence
@@ -30,6 +30,7 @@ load_rc_config ${name}
 : ${lightningd_network:="bitcoin"}
 : ${lightningd_conf:="%%PREFIX%%/etc/${name}-${lightningd_network}.conf"}
 
+start_precmd="lightningd_start_precmd"
 pidfile="${lightningd_base_dir}/lightningd-${lightningd_network}.pid"
 command="%%PREFIX%%/bin/lightningd"
 command_args=""
@@ -49,5 +50,44 @@ if [ -e "${lightningd_conf}" ] ; then
 fi
 
 command_args="${command_args} ${lightningd_extra_args}"
+
+check_bitcoind_ready()
+{
+    bitcoin-cli \
+        -rpcconnect=${bitcoin_addr}${bitcoin_port:+":"}${bitcoin_port} \
+        -rpcuser=${bitcoin_user} \
+        -stdinrpcpass \
+        echo itworks <<PASS
+${bitcoin_pass}
+PASS
+}
+
+lightningd_start_precmd()
+{
+    # Wait for bitcoind to be fully operational. lightningd would quit (refuse
+    # to start) if it can't talk to bitcoind via its RPC.
+    bitcoin_addr="`grep ^bitcoin-rpcconnect= "${lightningd_conf}" |cut -f 2- -d =`"
+    bitcoin_port="`grep ^bitcoin-rpcport= "${lightningd_conf}" |cut -f 2- -d =`"
+    bitcoin_user="`grep ^bitcoin-rpcuser= "${lightningd_conf}" |cut -f 2- -d =`"
+    bitcoin_pass="`grep ^bitcoin-rpcpassword= "${lightningd_conf}" |cut -f 2- -d =`"
+
+    i=20
+    while : ; do
+        if [ $i -eq 0 ] ; then
+            # Show errors from last attempt.
+            if ! check_bitcoind_ready ; then
+                echo "Failed: bitcoind did not start serving RPC, starting lightningd anyway"
+            fi
+            break
+        else
+            if check_bitcoind_ready > /dev/null 2>&1; then
+                break
+            fi
+        fi
+        echo "Waiting for bitcoind to start serving RPC, lightningd cannot start without it $i"
+        sleep 1
+        i=$((i - 1))
+    done
+}
 
 run_rc_command "$1"
