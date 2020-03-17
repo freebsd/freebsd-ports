@@ -3,6 +3,7 @@
 PORTNAME=	electron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER:S/-beta./.b/}
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v7.1.5/:chromium \
 		https://commondatastorage.googleapis.com/chromium-browser-official/:chromium_official \
