@@ -92,7 +92,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/libgit2
 EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
 .endif
 
-.if ${ARCH} == powerpc64 && ${PPC_ABI} == ELFv1
+.if ${ARCH} == powerpc64
 # The bootstrap is hardcoded to use gcc9
 # but we can build with a newer or older compiler as provided by USE_GCC=yes
 BUILD_DEPENDS+=	gcc9:lang/gcc9
