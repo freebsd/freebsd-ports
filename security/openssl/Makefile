@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	1.1.1d
+PORTVERSION=	1.1.1e
 PORTEPOCH=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
@@ -33,8 +33,8 @@ MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive CNF_LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	LIBRPATH="${PREFIX}/lib" GREP_OPTIONS=
 
 OPTIONS_GROUP=		CIPHERS HASHES OPTIMIZE PROTOCOLS
-OPTIONS_GROUP_CIPHERS=	ARIA DES GOST IDEA SM2 SM3 SM4 RC2 RC4 RC5
-OPTIONS_GROUP_HASHES=	MD2 MD4 MDC2 RMD160
+OPTIONS_GROUP_CIPHERS=	ARIA DES GOST IDEA SM4 RC2 RC4 RC5 WEAK-SSL-CIPHERS
+OPTIONS_GROUP_HASHES=	MD2 MD4 MDC2 RMD160 SM2 SM3
 OPTIONS_GROUP_OPTIMIZE=	ASM SSE2 THREADS
 OPTIONS_DEFINE_i386=	I386
 OPTIONS_GROUP_PROTOCOLS=NEXTPROTONEG SCTP SSL3 TLS1 TLS1_1 TLS1_2
@@ -79,9 +79,9 @@ RMD160_DESC=	RIPEMD-160
 RFC3779_DESC=	RFC3779 support (BGP)
 SCTP_DESC=	SCTP (Stream Control Transmission)
 SHARED_DESC=	Build shared libraries
-SM2_DESC=	SM2 (Chinese standard)
-SM3_DESC=	SM3 (Chinese standard)
-SM4_DESC=	SM4 (Chinese standard)
+SM2_DESC=	SM2 Elliptic Curve DH (Chinese standard)
+SM3_DESC=	SM3 256bit (Chinese standard)
+SM4_DESC=	SM4 128bit (Chinese standard)
 SSE2_DESC=	Runtime SSE2 detection
 SSL3_DESC=	SSLv3 (unsafe)
 TLS1_DESC=	TLSv1.0 (requires TLS1_1, TLS1_2)
@@ -90,7 +90,7 @@ TLS1_2_DESC=	TLSv1.2
 ZLIB_DESC=	zlib compression support
 
 # Upstream default disabled options
-.for _option in md2 rc5 sctp ssl3 zlib
+.for _option in md2 rc5 sctp ssl3 zlib weak-ssl-ciphers
 ${_option:tu}_CONFIGURE_ON=	enable-${_option}
 .endfor
 
