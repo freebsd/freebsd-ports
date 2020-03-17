@@ -19,7 +19,8 @@ LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 BUILD_DEPENDS=	pnglite>0:graphics/pnglite \
 		tinyxml>0:textproc/tinyxml
 
-USES=		tar:bz2 dos2unix gmake jpeg gettext-runtime gl gnome pkgconfig
+USES=		compiler:c++11-lang dos2unix gettext-runtime gl gmake \
+		gnome jpeg pkgconfig tar:bz2
 USE_GL=		gl glu glew glut
 USE_GNOME=	gtk20 pango atk cairo gdkpixbuf2 glib20
 MAKEFILE=	Makefile.linux
