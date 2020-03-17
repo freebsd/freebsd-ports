@@ -1,4 +1,4 @@
-TIMESTAMP = 1582009617
+TIMESTAMP = 1584465209
 SHA256 (ElementsProject-lightning-v0.8.1_GH0.tar.gz) = fee0ddaa23c4d143f5ce1d2c2c5a219891d69e0eca0ac636b2a42bf19cb42ede
 SIZE (ElementsProject-lightning-v0.8.1_GH0.tar.gz) = 2683725
 SHA256 (ElementsProject-libwally-core-release_0.7.5_GH0.tar.gz) = e37b30be66dff973ad979d176f0d8e87331304769214522a0782bbbb79c18ec6
@@ -7,3 +7,5 @@ SHA256 (ianlancetaylor-libbacktrace-5a99ff7fed66b8e_GH0.tar.gz) = 2aad59f02cb008
 SIZE (ianlancetaylor-libbacktrace-5a99ff7fed66b8e_GH0.tar.gz) = 509368
 SHA256 (zserge-jsmn-v1.0.0_GH0.tar.gz) = 5b1f46312cf205e6a0923a0656893bde9e022c76d06d980958fa8dbf79f0ea06
 SIZE (zserge-jsmn-v1.0.0_GH0.tar.gz) = 11035
+SHA256 (67fdc507.patch) = f46d701ee9b3de11af3ed031834e553eb49baaeffee25f677270dbf99321821e
+SIZE (67fdc507.patch) = 2265

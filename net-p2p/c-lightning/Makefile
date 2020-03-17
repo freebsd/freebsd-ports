@@ -4,11 +4,15 @@
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
 #PKGNAMESUFFIX=	-git-f8d8348c
 CATEGORIES=	net-p2p finance
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	67fdc507.patch:-p1 # https://github.com/ElementsProject/lightning/pull/3594
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Lightning Network implementation in C
