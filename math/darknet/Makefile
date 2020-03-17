@@ -1,9 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	darknet
-DISTVERSIONPREFIX=	darknet_yolo_v
-DISTVERSION=	3_optimal-30
-DISTVERSIONSUFFIX=	-g92e6e8e
+PORTVERSION=	3.20200315 # the upstream doesn't maintain a meaningful versioning schema, so have to use a date here
 PORTEPOCH=	1
 CATEGORIES=	math # machine-learning
 
@@ -16,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlexeyAB
+GH_TAGNAME=	92e6e8e
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	ENABLE_CUDA ENABLE_CUDNN ENABLE_CUDNN_HALF ENABLE_VCPKG_INTEGRATION
