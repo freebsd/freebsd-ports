@@ -77,11 +77,6 @@ TERM?=		vt100	# Default value needed for tput in jail or tinderbox
 CONFIGURE_ARGS+=	--disable-openmp
 .endif
 
-.if ${OPSYS} == FreeBSD && ((${OSREL:R} == 12 && ${OSVERSION} < 1200506)	\
-			|| (${OSREL:R} == 11 && ${OSVERSION} < 346296))
-BROKEN=	at least openmp 8.0.0 final release is needed
-.endif
-
 .if ${PORT_OPTIONS:MDOCS}
 USE_TEX=	tex:build
 BUILD_DEPENDS+=	fig2dev:print/transfig		\
@@ -108,6 +103,6 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
