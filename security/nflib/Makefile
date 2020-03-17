@@ -13,7 +13,7 @@ COMMENT=	NTT-based fast lattice cryptography library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT_LICENSE.txt
 
-ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	unconditionally includes amd64 assembler code
 
 LIB_DEPENDS=	libmpfr.so:math/mpfr \
