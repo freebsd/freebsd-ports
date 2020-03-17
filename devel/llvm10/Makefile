@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	10.0.0rc3
-PORTREVISION=	1
+DISTVERSION=	10.0.0rc4
+PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
 		https://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
@@ -65,10 +65,12 @@ CFLAGS+=	-DNDEBUG
 CXXFLAGS+=	-DNDEBUG
 
 OPTIONS_DEFINE=	BE_AMDGPU CLANG DOCS EXTRAS LIT LLD LLD_LINK LLDB PYCLANG
+OPTIONS_DEFINE_aarch64=	OPENMP
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
 OPTIONS_DEFINE_powerpc64=	OPENMP
 OPTIONS_DEFAULT=	BE_AMDGPU BE_STANDARD CLANG EXTRAS LIT LLD LLD_LINK LLDB PYCLANG
+OPTIONS_DEFAULT_aarch64=	OPENMP
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
 OPTIONS_DEFAULT_powerpc64=	OPENMP
@@ -450,6 +452,13 @@ post-extract-LLDB-on:
 	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
 
 post-extract-OPENMP-on:
+	# FreeBSD/aarch64 needs same va_list handling as Linux/aarch64
+	# see https://reviews.freebsd.org/D21167
+	${REINPLACE_CMD} -e 's/KMP_ARCH_AARCH64) && KMP_OS_LINUX/KMP_ARCH_AARCH64)/' \
+	    ${WRKSRC_openmp}/runtime/src/kmp.h \
+	    ${WRKSRC_openmp}/runtime/src/kmp_csupport.cpp \
+	    ${WRKSRC_openmp}/runtime/src/kmp_runtime.cpp \
+	    ${WRKSRC_openmp}/runtime/src/kmp_gsupport.cpp
 	${MV} ${WRKSRC_openmp} ${PATCH_WRKSRC}/projects/openmp
 
 post-patch:
