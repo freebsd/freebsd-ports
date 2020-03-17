@@ -1,0 +1,20 @@
+Shift indentation to avoid the "misleading indentation" warning
+from LLVM10. I admit, that the original author's intent escapes
+me here, so I cannot tell, if we have an actual bug remaining
+in this code.
+
+	-mi
+
+--- fpx/ptil_fpx.cpp	2013-09-02 11:45:00.000000000 -0400
++++ fpx/ptil_fpx.cpp	2020-03-17 18:11:00.425447000 -0400
+@@ -1200,7 +1200,7 @@
+           pixelsSpace = tmpPixelSpace;
+         }
+-        imageParam->GetContrast( &contrastValue);
+-        Contrast( contrastValue, pixelsSpace, pixels, width * height);
+-      }
++      imageParam->GetContrast( &contrastValue);
++      Contrast( contrastValue, pixelsSpace, pixels, width * height);
++    }
+   } 
+ 
