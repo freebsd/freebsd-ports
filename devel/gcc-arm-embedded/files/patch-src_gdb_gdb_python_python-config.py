@@ -1,6 +1,6 @@
---- src/gdb/gdb/python/python-config.py.orig	2019-01-22 16:22:04.766003000 +0300
-+++ src/gdb/gdb/python/python-config.py	2019-01-22 16:22:38.796302000 +0300
-@@ -58,7 +58,7 @@
+--- src/gdb/gdb/python/python-config.py.orig	2018-05-04 21:32:36 UTC
++++ src/gdb/gdb/python/python-config.py
+@@ -58,7 +58,7 @@ for opt in opt_flags:
          print (to_unix_path(' '.join(flags)))
  
      elif opt in ('--libs', '--ldflags'):

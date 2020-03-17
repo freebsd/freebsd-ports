@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcc-arm-embedded
-PORTVERSION=	8.2.20181220
-PORTREVISION=	1
+PORTVERSION=	9.2.20191106
+#PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/8-2018q4/
+MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
@@ -45,8 +45,8 @@ GNU_CONFIGURE=	yes
 PATCH_WRKSRC=	${WRKDIR}/${ORIGINAL_PACKAGE_NAME}
 BUILD_WRKSRC=	${WRKDIR}
 
-GCC_VERSION=		8.2.1
-FULL_VERSION=		8-2018-q4-major
+GCC_VERSION=		9.2.1
+FULL_VERSION=		9-2019-q4-major
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
 
