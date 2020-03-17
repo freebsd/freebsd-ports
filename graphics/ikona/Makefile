@@ -16,7 +16,8 @@ LICENSE_FILE=		${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=		rustc:lang/${RUST_DEFAULT}
 
-USES=			cmake:noninja desktop-file-utils gmake gnome kde:5 pkgconfig qt:5 tar:xz
+USES=			cmake:noninja compiler:c++11-lang desktop-file-utils \
+			gmake gnome iconv kde:5 pkgconfig qt:5 tar:xz
 USE_GNOME=		cairo gdkpixbuf2 glib20 libxml2 pango
 USE_KDE=		auth codecs config configwidgets coreaddons i18n \
 			kirigami2 widgetsaddons
