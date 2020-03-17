@@ -15,5 +15,6 @@ RUN_DEPENDS=	rubygem-httparty>0:www/rubygem-httparty
 
 USE_RUBY=	yes
 USES=		gem
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
