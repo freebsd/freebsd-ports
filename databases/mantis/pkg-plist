@@ -190,6 +190,7 @@
 %%WWWDIR%%/core/commands/TagDetachCommand.php
 %%WWWDIR%%/core/commands/UserCreateCommand.php
 %%WWWDIR%%/core/commands/UserDeleteCommand.php
+%%WWWDIR%%/core/commands/UserResetPasswordCommand.php
 %%WWWDIR%%/core/commands/VersionAddCommand.php
 %%WWWDIR%%/core/compress_api.php
 %%WWWDIR%%/core/config_api.php
@@ -1984,7 +1985,6 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/README.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/UPGRADING.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/composer.json
-%%WWWDIR%%/vendor/guzzlehttp/guzzle/phpstan.neon.dist
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Client.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/ClientInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php
