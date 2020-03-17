@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	leiningen
-PORTVERSION=	2.9.2
+PORTVERSION=	2.9.3
 CATEGORIES=	devel lisp java
 MASTER_SITES=	https://github.com/technomancy/leiningen/releases/download/${PORTVERSION}/:standalone
 DISTFILES=	leiningen-${PORTVERSION}-standalone.zip:standalone
