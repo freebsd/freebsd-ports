@@ -119,7 +119,6 @@
     SUBDIR += gnustep-base
     SUBDIR += go
     SUBDIR += go-devel
-    SUBDIR += go14
     SUBDIR += gomacro
     SUBDIR += gravity
     SUBDIR += groovy
