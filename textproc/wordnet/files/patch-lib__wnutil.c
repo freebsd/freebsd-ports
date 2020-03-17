@@ -1,5 +1,5 @@
 --- lib/wnutil.c	Fri May  6 13:17:39 2005
-+++ lib/wnutil.c	Wed Dec 21 16:04:36 2005
++++ lib/wnutil.c	Mon Mar 16 22:52:04 2020
 @@ -15,5 +15,6 @@
  #ifdef __unix__
  #ifndef __MACH__
@@ -40,8 +40,25 @@
 -	assert(wnrelease);
 +    if ((env = getenv("WNDBVERSION"))) {
 +	wnrelease = env;	/* set release */
-     }
      openerr = do_init();
+
+@@ -90,8 +89,12 @@
+     if (OpenDB) {
+ 	for (i = 1; i < NUMPARTS + 1; i++) {
+-	    if (datafps[i] != NULL)
+-		fclose(datafps[i]); datafps[i] = NULL;
+-	    if (indexfps[i] != NULL)
+-		fclose(indexfps[i]); indexfps[i] = NULL;
++	    if (datafps[i] != NULL) {
++		fclose(datafps[i]);
++		datafps[i] = NULL;
++	    }
++	    if (indexfps[i] != NULL) {
++		fclose(indexfps[i]);
++		indexfps[i] = NULL;
++	    }
+ 	}
+ 	if (sensefp != NULL) {
 @@ -248,4 +246,20 @@
  }
  
