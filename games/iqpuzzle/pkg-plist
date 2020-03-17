@@ -119,6 +119,10 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/animals/bird.png
 %%DATADIR%%/boards/animals/boar.conf
 %%DATADIR%%/boards/animals/boar.png
+%%DATADIR%%/boards/animals/brachiosaurus.conf
+%%DATADIR%%/boards/animals/brachiosaurus.png
+%%DATADIR%%/boards/animals/bug.conf
+%%DATADIR%%/boards/animals/bug.png
 %%DATADIR%%/boards/animals/bull.conf
 %%DATADIR%%/boards/animals/bull.png
 %%DATADIR%%/boards/animals/butterfly.conf
@@ -135,6 +139,8 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/animals/cat3.png
 %%DATADIR%%/boards/animals/chameleon.conf
 %%DATADIR%%/boards/animals/chameleon.png
+%%DATADIR%%/boards/animals/chameleon2.conf
+%%DATADIR%%/boards/animals/chameleon2.png
 %%DATADIR%%/boards/animals/chick.conf
 %%DATADIR%%/boards/animals/chick.png
 %%DATADIR%%/boards/animals/chicken.conf
@@ -151,6 +157,8 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/animals/deer.png
 %%DATADIR%%/boards/animals/deer2.conf
 %%DATADIR%%/boards/animals/deer2.png
+%%DATADIR%%/boards/animals/deer3.conf
+%%DATADIR%%/boards/animals/deer3.png
 %%DATADIR%%/boards/animals/dog.conf
 %%DATADIR%%/boards/animals/dog.png
 %%DATADIR%%/boards/animals/dog2.conf
@@ -159,6 +167,8 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/animals/dog3.png
 %%DATADIR%%/boards/animals/dog4.conf
 %%DATADIR%%/boards/animals/dog4.png
+%%DATADIR%%/boards/animals/dolphin.conf
+%%DATADIR%%/boards/animals/dolphin.png
 %%DATADIR%%/boards/animals/dromedary.conf
 %%DATADIR%%/boards/animals/dromedary.png
 %%DATADIR%%/boards/animals/duck.conf
@@ -177,6 +187,10 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/animals/elephant2.png
 %%DATADIR%%/boards/animals/elephant3.conf
 %%DATADIR%%/boards/animals/elephant3.png
+%%DATADIR%%/boards/animals/elephant4.conf
+%%DATADIR%%/boards/animals/elephant4.png
+%%DATADIR%%/boards/animals/elephant5.conf
+%%DATADIR%%/boards/animals/elephant5.png
 %%DATADIR%%/boards/animals/fish.conf
 %%DATADIR%%/boards/animals/fish.png
 %%DATADIR%%/boards/animals/fish2.conf
@@ -187,6 +201,8 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/animals/frog.png
 %%DATADIR%%/boards/animals/giraffe.conf
 %%DATADIR%%/boards/animals/giraffe.png
+%%DATADIR%%/boards/animals/giraffe2.conf
+%%DATADIR%%/boards/animals/giraffe2.png
 %%DATADIR%%/boards/animals/goose.conf
 %%DATADIR%%/boards/animals/goose.png
 %%DATADIR%%/boards/animals/hedgehog.conf
@@ -203,6 +219,8 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/animals/lobster.png
 %%DATADIR%%/boards/animals/monkey.conf
 %%DATADIR%%/boards/animals/monkey.png
+%%DATADIR%%/boards/animals/nessie.conf
+%%DATADIR%%/boards/animals/nessie.png
 %%DATADIR%%/boards/animals/ostrich.conf
 %%DATADIR%%/boards/animals/ostrich.png
 %%DATADIR%%/boards/animals/ostrich2.conf
@@ -211,6 +229,8 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/animals/ostrich3.png
 %%DATADIR%%/boards/animals/ostrich4.conf
 %%DATADIR%%/boards/animals/ostrich4.png
+%%DATADIR%%/boards/animals/ostrich5.conf
+%%DATADIR%%/boards/animals/ostrich5.png
 %%DATADIR%%/boards/animals/parrot.conf
 %%DATADIR%%/boards/animals/parrot.png
 %%DATADIR%%/boards/animals/parrot2.conf
@@ -231,10 +251,14 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/animals/snake.png
 %%DATADIR%%/boards/animals/squirrel.conf
 %%DATADIR%%/boards/animals/squirrel.png
+%%DATADIR%%/boards/animals/stegosaurus.conf
+%%DATADIR%%/boards/animals/stegosaurus.png
 %%DATADIR%%/boards/animals/swan.conf
 %%DATADIR%%/boards/animals/swan.png
 %%DATADIR%%/boards/animals/swan2.conf
 %%DATADIR%%/boards/animals/swan2.png
+%%DATADIR%%/boards/animals/swan3.conf
+%%DATADIR%%/boards/animals/swan3.png
 %%DATADIR%%/boards/animals/terrier.conf
 %%DATADIR%%/boards/animals/terrier.png
 %%DATADIR%%/boards/animals/turtle.conf
@@ -245,6 +269,8 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/animals/turtle3.png
 %%DATADIR%%/boards/animals/tyrannosaurus.conf
 %%DATADIR%%/boards/animals/tyrannosaurus.png
+%%DATADIR%%/boards/animals/tyrannosaurus2.conf
+%%DATADIR%%/boards/animals/tyrannosaurus2.png
 %%DATADIR%%/boards/animals/whale.conf
 %%DATADIR%%/boards/animals/whale.png
 %%DATADIR%%/boards/chess/bishop.conf
@@ -291,6 +317,8 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/items/arrow3.png
 %%DATADIR%%/boards/items/bomb.conf
 %%DATADIR%%/boards/items/bomb.png
+%%DATADIR%%/boards/items/car.conf
+%%DATADIR%%/boards/items/car.png
 %%DATADIR%%/boards/items/coffee.conf
 %%DATADIR%%/boards/items/coffee.png
 %%DATADIR%%/boards/items/crescent.conf
@@ -307,6 +335,8 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/items/flowerpot.png
 %%DATADIR%%/boards/items/hammer.conf
 %%DATADIR%%/boards/items/hammer.png
+%%DATADIR%%/boards/items/helicopter.conf
+%%DATADIR%%/boards/items/helicopter.png
 %%DATADIR%%/boards/items/house.conf
 %%DATADIR%%/boards/items/house.png
 %%DATADIR%%/boards/items/house2.conf
@@ -333,6 +363,8 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/items/rocket.png
 %%DATADIR%%/boards/items/sailboat.conf
 %%DATADIR%%/boards/items/sailboat.png
+%%DATADIR%%/boards/items/ship.conf
+%%DATADIR%%/boards/items/ship.png
 %%DATADIR%%/boards/items/shovel.conf
 %%DATADIR%%/boards/items/shovel.png
 %%DATADIR%%/boards/items/skull.conf
@@ -349,6 +381,8 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/items/telephone.png
 %%DATADIR%%/boards/items/trophy.conf
 %%DATADIR%%/boards/items/trophy.png
+%%DATADIR%%/boards/items/truck.conf
+%%DATADIR%%/boards/items/truck.png
 %%DATADIR%%/boards/items/umbrella.conf
 %%DATADIR%%/boards/items/umbrella.png
 %%DATADIR%%/boards/misc/misc_001.conf
@@ -455,6 +489,12 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/non_pento_pieces/non_pento_011.png
 %%DATADIR%%/boards/non_pento_pieces/non_pento_012.conf
 %%DATADIR%%/boards/non_pento_pieces/non_pento_012.png
+%%DATADIR%%/boards/non_pento_pieces/non_pento_013.conf
+%%DATADIR%%/boards/non_pento_pieces/non_pento_013.png
+%%DATADIR%%/boards/non_pento_pieces/non_pento_014.conf
+%%DATADIR%%/boards/non_pento_pieces/non_pento_014.png
+%%DATADIR%%/boards/non_pento_pieces/non_pento_015.conf
+%%DATADIR%%/boards/non_pento_pieces/non_pento_015.png
 %%DATADIR%%/boards/oddities/oddity_001.conf
 %%DATADIR%%/boards/oddities/oddity_001.png
 %%DATADIR%%/boards/oddities/oddity_002.conf
@@ -615,6 +655,8 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/rectangles/rectangle_038.png
 %%DATADIR%%/boards/rectangles/rectangle_039.conf
 %%DATADIR%%/boards/rectangles/rectangle_039.png
+%%DATADIR%%/boards/rectangles/rectangle_040.conf
+%%DATADIR%%/boards/rectangles/rectangle_040.png
 share/metainfo/iqpuzzle.appdata.xml
 share/pixmaps/iqpuzzle.xpm
 share/pixmaps/iqpuzzle_64x64.png
