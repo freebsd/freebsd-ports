@@ -1,6 +1,6 @@
---- src/gdb/gdb/dtrace-probe.c.orig	2018-01-23 21:30:27.712651000 +0300
-+++ src/gdb/gdb/dtrace-probe.c	2018-01-23 21:30:46.183643000 +0300
-@@ -77,6 +77,8 @@
+--- src/gdb/gdb/dtrace-probe.c.orig	2019-10-26 00:03:38 UTC
++++ src/gdb/gdb/dtrace-probe.c
+@@ -77,6 +77,8 @@ struct dtrace_probe_enabler
  class dtrace_static_probe_ops : public static_probe_ops
  {
  public:

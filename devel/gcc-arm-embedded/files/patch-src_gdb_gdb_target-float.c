@@ -1,6 +1,6 @@
---- src/gdb/gdb/target-float.c.orig	2019-01-22 18:39:51.598469000 +0300
-+++ src/gdb/gdb/target-float.c	2019-01-22 18:40:20.405163000 +0300
-@@ -1155,7 +1155,9 @@
+--- src/gdb/gdb/target-float.c.orig	2019-10-26 00:03:38 UTC
++++ src/gdb/gdb/target-float.c
+@@ -1153,7 +1153,9 @@ host_float_ops<T>::compare (const gdb_byte *x, const s
  
  #ifdef HAVE_LIBMPFR
  

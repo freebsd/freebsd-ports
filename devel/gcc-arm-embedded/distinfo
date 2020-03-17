@@ -1,3 +1,3 @@
-TIMESTAMP = 1548162393
-SHA256 (gcc-arm-none-eabi-8-2018-q4-major-src.tar.bz2) = bc228325dbbfaf643f2ee5d19e01d8b1873fcb9c31781b5e1355d40a68704ce7
-SIZE (gcc-arm-none-eabi-8-2018-q4-major-src.tar.bz2) = 176155267
+TIMESTAMP = 1584452890
+SHA256 (gcc-arm-none-eabi-9-2019-q4-major-src.tar.bz2) = f162a655f222319f75862d7aba9ff8a4a86f752392e4f3c5d9ef2ee8bc13be58
+SIZE (gcc-arm-none-eabi-9-2019-q4-major-src.tar.bz2) = 179527455

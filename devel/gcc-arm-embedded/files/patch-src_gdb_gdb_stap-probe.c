@@ -1,6 +1,6 @@
---- src/gdb/gdb/stap-probe.c.orig	2018-01-23 18:50:38.886661000 +0300
-+++ src/gdb/gdb/stap-probe.c	2018-01-23 18:51:08.013663000 +0300
-@@ -102,6 +102,8 @@
+--- src/gdb/gdb/stap-probe.c.orig	2019-10-30 01:03:58 UTC
++++ src/gdb/gdb/stap-probe.c
+@@ -102,6 +102,8 @@ struct stap_probe_arg
  class stap_static_probe_ops : public static_probe_ops
  {
  public:
