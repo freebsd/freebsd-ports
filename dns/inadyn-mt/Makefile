@@ -32,8 +32,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" \
-		${WRKSRC}/man/inadyn-mt.8 ${WRKSRC}/readme.html \
-		${WRKSRC}/src/dyndns.h
+		${WRKSRC}/readme.html ${WRKSRC}/src/dyndns.h
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s,INSTALL_PREFIX=.*,,g" ${WRKSRC}/configure.ac
