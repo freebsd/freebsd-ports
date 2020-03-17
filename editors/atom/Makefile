@@ -2,7 +2,7 @@
 
 PORTNAME=	atom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.44.0
+DISTVERSION=	1.45.0
 CATEGORIES=	editors
 MASTER_SITES=	https://nodejs.org/dist/v${APM_NODE_VER}/:node \
 		https://github.com/tagattie/FreeBSD-Atom/releases/download/v1.42.0/:jasmine_tagged \
@@ -60,6 +60,7 @@ USES=		desktop-file-utils gl gnome jpeg localbase:ldflags pkgconfig \
 USE_GITHUB=	yes
 
 .include "${.CURDIR}/../../devel/electron4/Makefile.version"
+# See ${WRKSRC}/apm/node_modules/atom-package-manager/BUNDLED_NODE_VERSION for APM_NODE_VER
 APM_NODE_VER=	10.2.1
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
@@ -228,7 +229,7 @@ make-apm-cache:
 	cd ${WRKDIR} && ${RM} -r .atom
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		ATOM_RESOURCE_PATH=${WRKSRC} \
-		npm_config_target=${ELECTON_VER} \
+		npm_config_target=${ELECTRON_VER} \
 		npm_config_ignore_scripts=true \
 		${WRKSRC}/apm/node_modules/atom-package-manager/bin/apm install
 	cd ${WRKSRC}/node_modules && \
@@ -237,7 +238,7 @@ make-apm-cache:
 			${ECHO_CMD} "Installing modules for $${p}"; \
 			cd ${WRKSRC}/node_modules/$${p} && ${SETENV} ${MAKE_ENV} \
 				ATOM_RESOURCE_PATH=${WRKSRC} \
-				npm_config_target=${ELECTON_VER} \
+				npm_config_target=${ELECTRON_VER} \
 				npm_config_ignore_scripts=true \
 				${WRKSRC}/apm/node_modules/atom-package-manager/bin/apm install; \
 		done
