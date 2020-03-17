@@ -1,3 +1,3 @@
-TIMESTAMP = 1548427311
-SHA256 (libopencm3-libopencm3-0.0.20190111-ff96643_GH0.tar.gz) = e02cd87c37dfe1551ce337039bfc49acb660214efb0f54a372e68c4c8cf0b50f
-SIZE (libopencm3-libopencm3-0.0.20190111-ff96643_GH0.tar.gz) = 767050
+TIMESTAMP = 1584470732
+SHA256 (libopencm3-libopencm3-0.0.20200310-89074d6_GH0.tar.gz) = 2d80efe14d5c14cb9f61d467c032de3a257f15bd63e72363209855faad4d78e6
+SIZE (libopencm3-libopencm3-0.0.20200310-89074d6_GH0.tar.gz) = 836978

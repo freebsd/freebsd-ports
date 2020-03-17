@@ -1,17 +1,16 @@
---- Makefile.orig	2016-04-12 01:57:55.000000000 +0300
-+++ Makefile	2016-04-22 15:20:16.000000000 +0300
-@@ -17,12 +17,19 @@
+--- Makefile.orig	2020-03-10 13:16:26.000000000 +0300
++++ Makefile	2020-03-17 21:51:02.930996000 +0300
+@@ -17,11 +17,19 @@
  ## along with this library.  If not, see <http://www.gnu.org/licenses/>.
  ##
  
--PREFIX		?= arm-none-eabi
--#PREFIX		?= arm-elf
+-PREFIX		?= arm-none-eabi-
 +TARGET		?= arm-none-eabi
-+#TARGET		?= arm-elf
  
  STYLECHECK      := scripts/checkpatch.pl
  STYLECHECKFLAGS := --no-tree -f --terse --mailback
  
++
 +DESTDIR		?= /usr/local
 +
 +INCDIR		:= $(DESTDIR)/$(TARGET)/include
@@ -19,12 +18,21 @@
 +SHAREDIR	:= $(DESTDIR)/$(TARGET)/share/libopencm3/scripts
 +INSTALL		:= install
 +
- space:=
- space+=
- SRCLIBDIR:= $(subst $(space),\$(space),$(realpath lib))
-@@ -64,6 +71,18 @@ $(LIB_DIRS): $(IRQ_DEFN_FILES:=.genhdr)
+ TARGETS ?=	stm32/f0 stm32/f1 stm32/f2 stm32/f3 stm32/f4 stm32/f7 \
+ 		stm32/l0 stm32/l1 stm32/l4 \
+ 		stm32/g0 \
+@@ -66,7 +74,7 @@
+ $(LIB_DIRS): $(IRQ_DEFN_FILES:=.genhdr)
+ 	$(Q)$(RM) .stamp_failure_$(subst /,_,$@)
+ 	@printf "  BUILD   $@\n";
+-	$(Q)$(MAKE) --directory=$@ PREFIX="$(PREFIX)" || \
++	$(Q)$(MAKE) --directory=$@ PREFIX="$(TARGET)-" || \
+ 		echo "Failure building: $@: code: $$?" > .stamp_failure_$(subst /,_,$@)
+ 
  lib: $(LIB_DIRS)
- 	$(Q)true
+@@ -76,6 +84,18 @@
+ 	done;
+ 	$(Q)[ -f .stamp_failure_tld ] && cat .stamp_failure_tld && exit 1 || true;
  
 +install: lib
 +	@printf "  INSTALL headers\n"
@@ -39,11 +47,11 @@
 +	$(Q)$(INSTALL) -m 0644 lib/*.ld $(LIBDIR)
 +
  html doc:
- 	$(Q)$(MAKE) -C doc html
+ 	$(Q)$(MAKE) -C doc html TARGETS="$(TARGETS)"
  
-@@ -106,4 +125,4 @@ genlinktests: $(LDTESTS:.data=.ldtest)
+@@ -121,4 +141,4 @@
  	fi;
  
  
--.PHONY: build lib $(LIB_DIRS) doc clean generatedheaders cleanheaders stylecheck genlinktests
+-.PHONY: build lib $(LIB_DIRS) doc clean generatedheaders cleanheaders stylecheck genlinktests genlinktests.clean
 +.PHONY: build lib $(LIB_DIRS) install doc clean generatedheaders cleanheaders stylecheck genlinktests
