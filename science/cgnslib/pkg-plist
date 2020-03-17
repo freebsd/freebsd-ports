@@ -46,7 +46,7 @@ include/cgnswin_f.h
 lib/libcgns.a
 lib/libcgns.so
 lib/libcgns.so.4
-lib/libcgns.so.4.0
+lib/libcgns.so.4.1
 %%TOOLS%%share/cgnstools/aflr3.tcl
 %%TOOLS%%share/cgnstools/balloon.tcl
 %%TOOLS%%share/cgnstools/cgns-icon.xbm
