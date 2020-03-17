@@ -19,9 +19,6 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/gSTLFilt.pl bin/gfilt
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,[$$]HOME,${PREFIX}/bin," ${WRKSRC}/gfilt
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gSTLFilt.pl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/gfilt ${STAGEDIR}${PREFIX}/bin
