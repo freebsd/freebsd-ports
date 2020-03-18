@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocsinventory-ocsreports
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dgeo@centrale-marseille.fr
@@ -19,7 +19,7 @@ GH_ACCOUNT=	OCSInventory-NG
 GH_PROJECT=	OCSInventory-ocsreports
 SUB_FILES=	apache.conf pkg-message
 
-ETCDIR=		${PREFIX}/etc/OCSInventory
+ETCDIR=		${PREFIX}/etc/ocsinventory-server
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${ETCDIR}
@@ -27,5 +27,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dbconfig.inc.php ${STAGEDIR}${WWWDIR}/dbconfig.inc.php.sample
 	${INSTALL_DATA} ${WRKSRC}/backend/require/cas.config.php ${STAGEDIR}${WWWDIR}/backend/require/cas.config.php.sample
 	${INSTALL_DATA} ${WRKDIR}/apache.conf ${STAGEDIR}${ETCDIR}/ocsreports.inc.sample
+	${MKDIR} ${STAGEDIR}${DATADIR}/packages
+	${MKDIR} ${STAGEDIR}${DATADIR}/snmp
 
 .include <bsd.port.mk>
