@@ -13,7 +13,7 @@ LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		charsetfix libtool makeinfo readline
+USES=		charsetfix libtool makeinfo pkgconfig readline
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -22,7 +22,7 @@ TEST_TARGET=	check
 INFO=		rec-mode recutils
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-OPTIONS_DEFINE=	DOCS CURL GCRYPT NLS
+OPTIONS_DEFINE=	DOCS CURL GCRYPT MDB NLS
 OPTIONS_DEFAULT=	GCRYPT
 OPTIONS_SUB=	yes
 
@@ -33,6 +33,10 @@ GCRYPT_DESC=	Encryption support via GNU crypt
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libgpg-error.so:security/libgpg-error
 GCRYPT_CONFIGURE_OFF=	--disable-encryption
+
+MDB_DESC=	MS Access database (.mdb) support
+MDB_LIB_DEPENDS=	libmdb.so:databases/mdbtools
+MDB_CONFIGURE_ENV_OFF=	ac_cv_lib_mdb_mdb_init=no
 
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
