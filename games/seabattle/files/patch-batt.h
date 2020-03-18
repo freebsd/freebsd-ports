@@ -1,5 +1,5 @@
---- batt.h.orig	Wed May 14 04:58:17 1997
-+++ batt.h	Fri Feb  2 04:18:06 2001
+--- batt.h.orig	1997-05-13 19:58:17 UTC
++++ batt.h
 @@ -2,7 +2,7 @@
   * batt.h     Part of the SEABATTLE game by Vince Weaver                 *
   ************************************************************************/
@@ -9,3 +9,12 @@
  #include <stdio.h>
  #include <ctype.h>
  #include <stdlib.h>
+@@ -54,7 +54,7 @@ DATA *current_player;
+ 
+ /* binp.c */
+ void init_curses(void);              /* All the function declarations */
+-void exit_curses(void);
++void exit_curses_(void);
+ void set_color(int color,int bold);
+ void printxy(int x,int y,char *tempst);
+ void draw_opening(void);

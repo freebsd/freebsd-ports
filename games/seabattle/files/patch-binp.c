@@ -1,6 +1,15 @@
---- binp.c.orig	Wed May 14 02:51:00 1997
-+++ binp.c	Fri Feb  2 04:22:56 2001
-@@ -129,15 +129,15 @@
+--- binp.c.orig	1997-05-13 17:51:00 UTC
++++ binp.c
+@@ -42,7 +42,7 @@ void printxy(int x,int y,char *tempst)     /* Simple f
+ }
+ 
+ 
+-void exit_curses(void)                     /* Shutdown curses nicely so the */
++void exit_curses_(void)                     /* Shutdown curses nicely so the */
+ {                                          /* terminal works properly */
+    clear();
+    refresh();
+@@ -129,15 +129,15 @@ void do_sound(int which_one)               /* Plays ap
                                             /* Incomplete as of yet */
     if (which_one==1) 
        if (sound_device) 
@@ -21,3 +30,12 @@
        else beep();
  }
  
+@@ -330,7 +330,7 @@ void quit(void)                            /* Create a
+    wclear(quit_window);
+    wrefresh(quit_window);
+    delwin(quit_window);
+-   if ((ch=='Y') || (ch=='y')) {exit_curses(); exit(0); }
++   if ((ch=='Y') || (ch=='y')) {exit_curses_(); exit(0); }
+ #ifndef BROKEN_CURSES
+    redrawwin(stdscr);
+ #endif
