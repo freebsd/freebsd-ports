@@ -15,6 +15,7 @@
 %%DATADIR%%/Apache/Ocsinventory/Interface/Internals.pm
 %%DATADIR%%/Apache/Ocsinventory/Interface/Inventory.pm
 %%DATADIR%%/Apache/Ocsinventory/Interface/Ipdiscover.pm
+%%DATADIR%%/Apache/Ocsinventory/Interface/Saas.pm
 %%DATADIR%%/Apache/Ocsinventory/Interface/Snmp.pm
 %%DATADIR%%/Apache/Ocsinventory/Interface/SoftwareCategory.pm
 %%DATADIR%%/Apache/Ocsinventory/Interface/Updates.pm
