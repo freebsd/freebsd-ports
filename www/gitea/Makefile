@@ -28,6 +28,7 @@ GROUPS=		git
 
 OPTIONS_DEFINE=	BINDATA PAM SQLITE
 OPTIONS_DEFAULT=	PAM SQLITE
+OPTIONS_SUB=	yes
 
 BINDATA_DESC=	Build a single monolithic binary, with all assets included
 PAM_DESC=	Enable support for PAM
@@ -37,13 +38,6 @@ PAM_VARS=	GO_TAGS+=pam
 SQLITE_VARS=	GO_TAGS+="sqlite sqlite_unlock_notify"
 
 .include <bsd.port.options.mk>
-
-# active option removes files from plist
-.if ${PORT_OPTIONS:MBINDATA}
-PLIST_SUB+=	BINDATA="@comment "
-.else
-PLIST_SUB+=	BINDATA=""
-.endif
 
 .if ${OPSYS} == FreeBSD
 DAEMONARGS=	-S -l \$${gitea_facility} -s \$${gitea_priority} -T \$${name}
