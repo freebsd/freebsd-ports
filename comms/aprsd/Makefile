@@ -13,7 +13,8 @@ COMMENT=	Server daemon providing Internet access to APRS packet data
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	fails to link: httpserver.o:(.text+0x1074): undefined reference to `convertUpTime(int)'
+BROKEN_FreeBSD_11_powerpc64=	fails to link on powerpc64 elfv1: httpserver.o:(.text+0x1074): undefined reference to `convertUpTime(int)'
+BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: httpserver.o:(.text+0x1074): undefined reference to `convertUpTime(int)'
 
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message pkg-deinstall

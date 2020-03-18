@@ -12,7 +12,8 @@ COMMENT=	Lightweight command line video extraction tool
 
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	fails to configure: cannot find the flags to link with Boost date_time
+BROKEN_FreeBSD_11_powerpc64=	fails to configure on powerpc64 elfv1: cannot find the flags to link with Boost date_time
+BROKEN_FreeBSD_12_powerpc64=	fails to configure on powerpc64 elfv1: cannot find the flags to link with Boost date_time
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl \

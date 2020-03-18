@@ -14,7 +14,8 @@ COMMENT=	GTK-based git repository viewer (gtk2 version)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to link: gitg-branch-actions.o(.text+0x46c): unresolvable R_PPC64_REL24 relocation against symbol gitg_revision_get_subject
+BROKEN_FreeBSD_11_powerpc64=	fails to link on powerpc64 elfv1: gitg-branch-actions.o(.text+0x46c): unresolvable R_PPC64_REL24 relocation against symbol gitg_revision_get_subject
+BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: gitg-branch-actions.o(.text+0x46c): unresolvable R_PPC64_REL24 relocation against symbol gitg_revision_get_subject
 
 RUN_DEPENDS=	git:devel/git
 

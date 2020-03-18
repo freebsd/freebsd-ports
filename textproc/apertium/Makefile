@@ -12,7 +12,8 @@ COMMENT=	Toolbox to build shallow-transfer machine translation systems
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to configure: error: *** unable to locate pcrecpp library ***
+BROKEN_FreeBSD_11_powerpc64=	fails to configure on powerpc64 elfv1: *** unable to locate pcrecpp library ***
+BROKEN_FreeBSD_12_powerpc64=	fails to configure on powerpc64 elfv1: *** unable to locate pcrecpp library ***
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	liblttoolbox3.so:textproc/lttoolbox \

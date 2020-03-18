@@ -15,7 +15,8 @@ LICENSE=	APACHE20
 
 BROKEN_mips=		fails to build: error: curl/curl.h: No such file or directory
 BROKEN_mips64=		fails to build: error: curl/curl.h: No such file or directory
-BROKEN_powerpc64=	fails to build: error: curl/curl.h: No such file or directory
+BROKEN_FreeBSD_11_powerpc64=	fails to build on powerpc64 elfv1: curl/curl.h: No such file or directory
+BROKEN_FreeBSD_12_powerpc64=	fails to build on powerpc64 elfv1: curl/curl.h: No such file or directory
 
 LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libcurl.so:ftp/curl
