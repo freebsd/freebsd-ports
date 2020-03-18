@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rancid
-PORTVERSION=	3.11
+PORTVERSION=	3.12
 PORTREVISION=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
