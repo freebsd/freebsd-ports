@@ -3,13 +3,13 @@
 
 PORTNAME=	virtualenvwrapper
 PORTVERSION=	4.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	Set of extensions to virtualenv
+COMMENT=	Enhancements to virtualenv
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -33,11 +33,14 @@ DOCS_VARS=		PYDISTUTILS_BUILD_TARGET+=build_sphinx \
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} \
+	${REINPLACE_CMD} \
 		-e 's|$$(command \\which python)|${PYTHON_CMD}|1' \
 		-e 's|="virtualenv"|="virtualenv${UNIQUE_SUFFIX}"|1' \
 		-e 's|="virtualenv-clone"|="virtualenv-clone${UNIQUE_SUFFIX}"|1' \
 		${WRKSRC}/${PORTNAME}.sh
+	${REINPLACE_CMD} \
+		-e 's|which virtualenvwrapper.sh|which ${PORTNAME}.sh${UNIQUE_SUFFIX}|' \
+		${WRKSRC}/${PORTNAME}_lazy.sh
 
 post-patch-DOCS-on:
 	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_CMD} setup.py|' \
