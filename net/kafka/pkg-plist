@@ -1,4 +1,5 @@
 %%DATADIR%%/bin/connect-distributed.sh
+%%DATADIR%%/bin/connect-mirror-maker.sh
 %%DATADIR%%/bin/connect-standalone.sh
 %%DATADIR%%/bin/kafka-acls.sh
 %%DATADIR%%/bin/kafka-broker-api-versions.sh
@@ -10,6 +11,7 @@
 %%DATADIR%%/bin/kafka-delegation-tokens.sh
 %%DATADIR%%/bin/kafka-delete-records.sh
 %%DATADIR%%/bin/kafka-dump-log.sh
+%%DATADIR%%/bin/kafka-leader-election.sh
 %%DATADIR%%/bin/kafka-log-dirs.sh
 %%DATADIR%%/bin/kafka-mirror-maker.sh
 %%DATADIR%%/bin/kafka-preferred-replica-election.sh
@@ -91,14 +93,14 @@
 %%DATADIR%%/libs/lz4-java-1.6.0.jar
 %%DATADIR%%/libs/maven-artifact-3.6.1.jar
 %%DATADIR%%/libs/metrics-core-2.2.0.jar
-%%DATADIR%%/libs/netty-buffer-4.1.42.Final.jar
-%%DATADIR%%/libs/netty-codec-4.1.42.Final.jar
-%%DATADIR%%/libs/netty-common-4.1.42.Final.jar
-%%DATADIR%%/libs/netty-handler-4.1.42.Final.jar
-%%DATADIR%%/libs/netty-resolver-4.1.42.Final.jar
-%%DATADIR%%/libs/netty-transport-4.1.42.Final.jar
-%%DATADIR%%/libs/netty-transport-native-epoll-4.1.42.Final.jar
-%%DATADIR%%/libs/netty-transport-native-unix-common-4.1.42.Final.jar
+%%DATADIR%%/libs/netty-buffer-4.1.45.Final.jar
+%%DATADIR%%/libs/netty-codec-4.1.45.Final.jar
+%%DATADIR%%/libs/netty-common-4.1.45.Final.jar
+%%DATADIR%%/libs/netty-handler-4.1.45.Final.jar
+%%DATADIR%%/libs/netty-resolver-4.1.45.Final.jar
+%%DATADIR%%/libs/netty-transport-4.1.45.Final.jar
+%%DATADIR%%/libs/netty-transport-native-epoll-4.1.45.Final.jar
+%%DATADIR%%/libs/netty-transport-native-unix-common-4.1.45.Final.jar
 %%DATADIR%%/libs/osgi-resource-locator-1.0.1.jar
 %%DATADIR%%/libs/paranamer-2.8.jar
 %%DATADIR%%/libs/plexus-utils-3.2.0.jar
@@ -113,8 +115,8 @@
 %%DATADIR%%/libs/slf4j-log4j12-1.7.28.jar
 %%DATADIR%%/libs/snappy-java-1.1.7.3.jar
 %%DATADIR%%/libs/validation-api-2.0.1.Final.jar
-%%DATADIR%%/libs/zookeeper-3.5.6.jar
-%%DATADIR%%/libs/zookeeper-jute-3.5.6.jar
+%%DATADIR%%/libs/zookeeper-3.5.7.jar
+%%DATADIR%%/libs/zookeeper-jute-3.5.7.jar
 %%DATADIR%%/libs/zstd-jni-1.4.3-1.jar
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/api.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/configuration.html
@@ -128,6 +130,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/documentation/streams/developer-guide/config-streams.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/documentation/streams/developer-guide/datatypes.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/documentation/streams/developer-guide/dsl-api.html
+%%PORTDOCS%%%%DOCSDIR%%/site-docs/documentation/streams/developer-guide/dsl-topology-naming.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/documentation/streams/developer-guide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/documentation/streams/developer-guide/interactive-queries.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/documentation/streams/developer-guide/manage-topics.html
@@ -244,6 +247,7 @@
 @sample %%ETCDIR%%/connect-distributed.properties.sample
 @sample %%ETCDIR%%/connect-file-sink.properties.sample
 @sample %%ETCDIR%%/connect-file-source.properties.sample
+@sample %%ETCDIR%%/connect-mirror-maker.properties.sample
 @sample %%ETCDIR%%/connect-log4j.properties.sample
 @sample %%ETCDIR%%/connect-standalone.properties.sample
 @sample %%ETCDIR%%/consumer.properties.sample

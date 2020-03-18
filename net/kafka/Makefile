@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kafka
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}_2.12-${PORTVERSION}
@@ -29,12 +29,14 @@ USERS=		${KAFKA_USER}
 GROUPS=		${KAFKA_GROUP}
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-KAFKA_BINS=	connect-distributed.sh connect-standalone.sh kafka-acls.sh \
+KAFKA_BINS=	connect-distributed.sh connect-mirror-maker.sh \
+		connect-standalone.sh kafka-acls.sh \
 		kafka-broker-api-versions.sh kafka-configs.sh \
 		kafka-console-consumer.sh kafka-console-producer.sh \
 		kafka-consumer-groups.sh kafka-consumer-perf-test.sh \
 		kafka-delegation-tokens.sh kafka-delete-records.sh \
-		kafka-dump-log.sh kafka-log-dirs.sh kafka-mirror-maker.sh \
+		kafka-dump-log.sh kafka-leader-election.sh \
+		kafka-log-dirs.sh kafka-mirror-maker.sh \
 		kafka-preferred-replica-election.sh kafka-producer-perf-test.sh \
 		kafka-reassign-partitions.sh kafka-replica-verification.sh \
 		kafka-run-class.sh kafka-server-start.sh kafka-server-stop.sh \
@@ -44,7 +46,8 @@ KAFKA_BINS=	connect-distributed.sh connect-standalone.sh kafka-acls.sh \
 KAFKA_CONFIGS=	connect-console-sink.properties \
 		connect-console-source.properties \
 		connect-distributed.properties connect-file-sink.properties \
-		connect-file-source.properties connect-log4j.properties \
+		connect-file-source.properties connect-mirror-maker.properties \
+		connect-log4j.properties \
 		connect-standalone.properties consumer.properties \
 		log4j.properties producer.properties server.properties \
 		tools-log4j.properties trogdor.conf
@@ -82,7 +85,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${KAFKA_LOGDIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}/bin
 .for f in ${KAFKA_BINS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${DATADIR}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${DATADIR}/bin/
 .endfor
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} libs ${STAGEDIR}${DATADIR} "-not ( \
 		-name kafka_*-javadoc\.jar -or -name kafka_*-scaladoc\.jar -or \
