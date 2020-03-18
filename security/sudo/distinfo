@@ -1,3 +1,3 @@
-TIMESTAMP = 1580422559
-SHA256 (sudo-1.8.31.tar.gz) = 7ea8d97a3cee4c844e0887ea7a1bd80eb54cc98fd77966776cb1a80653ad454f
-SIZE (sudo-1.8.31.tar.gz) = 3350674
+TIMESTAMP = 1584533326
+SHA256 (sudo-1.8.31p1.tar.gz) = c73cfdfbc1c5cc259fcc3a355e1bacfed99c5580daeadec9704a24cd5e6d15d8
+SIZE (sudo-1.8.31p1.tar.gz) = 3351312
