@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc-arm-embedded
 PORTVERSION=	9.2.20191106
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
@@ -33,7 +33,7 @@ SYMLINK_DESC=	Make version-independent symlink ${LOCALBASE}/${PORTNAME}
 
 PDF_USE=		TEX=base:build,tex:build,dvipsk:build
 PDF_BUILD_DEPENDS=	texi2dvi:print/texinfo
-PYGDB_USES=		python:2.7
+PYGDB_USES=		python
 
 OPTIONS_SUB=		yes
 
