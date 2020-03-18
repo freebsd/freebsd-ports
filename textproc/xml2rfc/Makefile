@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml2rfc
-PORTVERSION=	2.27.0
+PORTVERSION=	2.40.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/xml2rfc2/cli/
 
