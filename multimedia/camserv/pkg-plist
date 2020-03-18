@@ -24,10 +24,10 @@ lib/camserv/libvideo_basic.a
 lib/camserv/libvideo_basic.so
 lib/camserv/libvideo_basic.so.0
 lib/camserv/libvideo_basic.so.0.0.0
-lib/camserv/libvideo_fbsd_bttv.a
-lib/camserv/libvideo_fbsd_bttv.so
-lib/camserv/libvideo_fbsd_bttv.so.0
-lib/camserv/libvideo_fbsd_bttv.so.0.0.0
+%%BKTR%%lib/camserv/libvideo_fbsd_bttv.a
+%%BKTR%%lib/camserv/libvideo_fbsd_bttv.so
+%%BKTR%%lib/camserv/libvideo_fbsd_bttv.so.0
+%%BKTR%%lib/camserv/libvideo_fbsd_bttv.so.0.0.0
 %%V4L%%lib/camserv/libvideo_v4l.a
 %%V4L%%lib/camserv/libvideo_v4l.so
 %%V4L%%lib/camserv/libvideo_v4l.so.0

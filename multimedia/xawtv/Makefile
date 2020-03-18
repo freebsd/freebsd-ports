@@ -13,10 +13,18 @@ BUILD_DEPENDS=	${LOCALBASE}/share/fonts/misc/led-iso8859-1.pcf.gz:x11-fonts/tv-f
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/misc/led-iso8859-1.pcf.gz:x11-fonts/tv-fonts
 LIB_DEPENDS=	libpng.so:graphics/png
 
-OPTIONS_DEFINE=	AALIB DV QUICKTIME ZVBI
+OPTIONS_DEFINE=		AALIB BKTR DV QUICKTIME ZVBI
 OPTIONS_DEFINE_i386=	MMX
-OPTIONS_DEFAULT=	AALIB
+OPTIONS_DEFAULT=	AALIB BKTR
+.if !exists(/usr/include/dev/bktr/ioctl_bt848.h)
+OPTIONS_EXCLUDE=	BKTR
+.endif
+OPTIONS_SUB=		yes
+
+BKTR_DESC=	bktr(4) support
 ZVBI_DESC=	Enable libzvbi support
+
+BKTR_MAKE_ARGS=	HAVE_BKTR=yes
 
 USES=		gmake iconv jpeg motif ncurses perl5 tar:bzip2 pkgconfig xorg
 GNU_CONFIGURE=	yes
@@ -34,28 +42,22 @@ FILES_LIBJPEG=	console/Subdir.mk x11/Subdir.mk libng/plugins/Subdir.mk
 .if ${PORT_OPTIONS:MAALIB}
 CONFIGURE_ARGS+=--enable-aa
 LIB_DEPENDS+=	libaa.so:graphics/aalib
-PLIST_SUB+=	AA=""
 .else
 CONFIGURE_ARGS+=--disable-aa
-PLIST_SUB+=	AA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MZVBI}
 LIB_DEPENDS+=	libzvbi.so:devel/libzvbi
 CONFIGURE_ARGS+=--enable-zvbi
-PLIST_SUB+=	ZVBI=""
 .else
 CONFIGURE_ARGS+=--enable-zvbi=no
-PLIST_SUB+=	ZVBI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDV}
 LIB_DEPENDS+=	libdv.so:multimedia/libdv
 CONFIGURE_ARGS+=--enable-dv
-PLIST_SUB+=	DV=
 .else
 CONFIGURE_ARGS+=--enable-dv=no
-PLIST_SUB+=	DV="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMMX}
@@ -66,10 +68,8 @@ CFLAGS+=	-DMMX=1
 .if ${PORT_OPTIONS:MQUICKTIME}
 CONFIGURE_ARGS+=--enable-quicktime
 LIB_DEPENDS+=	libquicktime.so:multimedia/libquicktime
-PLIST_SUB+=	QT=
 .else
 CONFIGURE_ARGS+=--enable-quicktime=no
-PLIST_SUB+=	QT="@comment "
 .endif
 
 PLIST_SUB+=	X11PREFIX=${LOCALBASE}
