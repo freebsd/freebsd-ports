@@ -4,8 +4,7 @@
 ocsinventory-ng server is installed
 
 You still need to (pick one):
-* cd to %%DATADIR%% and run ./setup.sh there
-* edit files in %%ETCDIR%% and link thew to apache's
+* edit files in %%ETCDIR%% and link them to apache's
   Includes/ directory
 EOM
 }

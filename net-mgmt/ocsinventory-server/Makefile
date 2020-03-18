@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocsinventory-server
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dgeo@centrale-marseille.fr
@@ -21,6 +21,7 @@ RUN_DEPENDS=	p5-XML-Simple>=2.12:textproc/p5-XML-Simple \
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-Apache2-SOAP>=0:net/p5-Apache2-SOAP \
 		p5-Mojolicious>=0:www/p5-Mojolicious \
+		p5-Switch>=0:lang/p5-Switch \
 		p5-Plack>=0:www/p5-Plack
 
 USES=		apache:run,2.2+ mysql perl5
