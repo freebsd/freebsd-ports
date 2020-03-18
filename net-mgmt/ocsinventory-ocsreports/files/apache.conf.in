@@ -64,7 +64,7 @@ Alias /ocsreports %%WWWDIR%%
 # 
 # Alias to put Deployment package files outside Apache document root directory
 #
-<Directory %%SHAREDIR%%/packages>
+<Directory %%DATADIR%%/packages>
    <IfModule mod_authz_core.c>
      # Apache 2.4
      Require all granted
@@ -74,7 +74,7 @@ Alias /ocsreports %%WWWDIR%%
      Allow from all
    </IfModule>
 </Directory>
-Alias /ocs/packages %%SHAREDIR%%/packages
+Alias /ocs/packages %%DATADIR%%/packages
 
 
 ################################################################################
@@ -82,7 +82,7 @@ Alias /ocs/packages %%SHAREDIR%%/packages
 #
 # Alias to put Snmp custom Mibs files outside Apache document root directory
 #
-<Directory %%SHAREDIR%%/snmp>
+<Directory %%DATADIR%%/snmp>
    <IfModule mod_authz_core.c>
      # Apache 2.4
      Require all granted
@@ -92,5 +92,5 @@ Alias /ocs/packages %%SHAREDIR%%/packages
      Allow from all
    </IfModule>
 </Directory>
-Alias /ocs/snmp %%SHAREDIR%%/snmp
+Alias /ocs/snmp %%DATADIR%%/snmp
 

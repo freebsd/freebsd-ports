@@ -42,7 +42,7 @@
 %%WWWDIR%%/css/onglets.css
 %%WWWDIR%%/css/winclassic.css
 @sample %%WWWDIR%%/dbconfig.inc.php.sample
-%%WWWDIR%%/download/README
+%%WWWDIR%%/extensions/Readme.md
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/files/ocsbase.sql
 %%WWWDIR%%/files/ocsbase_new.sql
@@ -56,6 +56,13 @@
 %%WWWDIR%%/files/update/7013.sql
 %%WWWDIR%%/files/update/7014.sql
 %%WWWDIR%%/files/update/7015.sql
+%%WWWDIR%%/files/update/7016.sql
+%%WWWDIR%%/files/update/7017.sql
+%%WWWDIR%%/files/update/7018.sql
+%%WWWDIR%%/files/update/7019.sql
+%%WWWDIR%%/files/update/7020.sql
+%%WWWDIR%%/files/update/7021.sql
+%%WWWDIR%%/files/update/7022.sql
 %%WWWDIR%%/image/bootstrap-formhelpers-countries.flags.png
 %%WWWDIR%%/image/cadena_ferme.png
 %%WWWDIR%%/image/cadena_ouvert.png
@@ -444,6 +451,7 @@
 %%WWWDIR%%/plugins/computer_detail/cd_processors/cd_processors.php
 %%WWWDIR%%/plugins/computer_detail/cd_registry/cd_registry.php
 %%WWWDIR%%/plugins/computer_detail/cd_repository/cd_repository.php
+%%WWWDIR%%/plugins/computer_detail/cd_saas/cd_saas.php
 %%WWWDIR%%/plugins/computer_detail/cd_slots/cd_slots.php
 %%WWWDIR%%/plugins/computer_detail/cd_softwares/cd_softwares.php
 %%WWWDIR%%/plugins/computer_detail/cd_sounds/cd_sounds.php
@@ -556,6 +564,9 @@
 %%WWWDIR%%/plugins/main_sections/ms_export/ms_csv.php
 %%WWWDIR%%/plugins/main_sections/ms_export/ms_export_ocs.php
 %%WWWDIR%%/plugins/main_sections/ms_export/ms_soft_csv.php
+%%WWWDIR%%/plugins/main_sections/ms_extensionmanager/ms_extensionmanager.php
+%%WWWDIR%%/plugins/main_sections/ms_saas_soft/ms_saas_soft.php
+%%WWWDIR%%/plugins/main_sections/ms_soft_cat/ms_options_soft_cat.php
 %%WWWDIR%%/plugins/main_sections/ms_groups/ms_custom_groups.php
 %%WWWDIR%%/plugins/main_sections/ms_groups/ms_group_show.php
 %%WWWDIR%%/plugins/main_sections/ms_groups/ms_groups.php
@@ -572,12 +583,7 @@
 %%WWWDIR%%/plugins/main_sections/ms_multi_search/ms_custom_sup.php
 %%WWWDIR%%/plugins/main_sections/ms_multi_search/ms_custom_tag.php
 %%WWWDIR%%/plugins/main_sections/ms_multi_search/ms_multi_search.php
-%%WWWDIR%%/plugins/main_sections/ms_multi_search/ms_multi_search.php.back
 %%WWWDIR%%/plugins/main_sections/ms_plugins/functions_check.php
-%%WWWDIR%%/plugins/main_sections/ms_plugins/functions_delete.php
-%%WWWDIR%%/plugins/main_sections/ms_plugins/functions_webservices.php
-%%WWWDIR%%/plugins/main_sections/ms_plugins/ms_pluginsmanager.php
-%%WWWDIR%%/plugins/main_sections/ms_plugins/plugins.class.php
 %%WWWDIR%%/plugins/main_sections/ms_regconfig/ms_regconfig.php
 %%WWWDIR%%/plugins/main_sections/ms_regconfig/require/function_regconfig.php
 %%WWWDIR%%/plugins/main_sections/ms_repart_tag/ms_repart_tag.php
@@ -591,9 +597,6 @@
 %%WWWDIR%%/plugins/main_sections/ms_snmp/ms_snmp_detail.php
 %%WWWDIR%%/plugins/main_sections/ms_snmp/require/function_snmp.php
 %%WWWDIR%%/plugins/main_sections/ms_soft_cat/ms_soft_cat.php
-%%WWWDIR%%/plugins/main_sections/ms_stats/class/msstats.class.php
-%%WWWDIR%%/plugins/main_sections/ms_stats/class/msstatsconnexion.class.php
-%%WWWDIR%%/plugins/main_sections/ms_stats/class/msstatstop.class.php
 %%WWWDIR%%/plugins/main_sections/ms_stats/files/ms_stats_top_soft.txt
 %%WWWDIR%%/plugins/main_sections/ms_stats/ms_stats.php
 %%WWWDIR%%/plugins/main_sections/ms_teledeploy/js/package-form.js
@@ -666,6 +669,11 @@
 %%WWWDIR%%/require/config/XMLProfileSerializer.php
 %%WWWDIR%%/require/config/XMLUrlsSerializer.php
 %%WWWDIR%%/require/config/include.php
+%%WWWDIR%%/require/console/Console.php
+%%WWWDIR%%/require/extensions/ExtensionCommon.php
+%%WWWDIR%%/require/extensions/ExtensionHook.php
+%%WWWDIR%%/require/extensions/ExtensionManager.php
+%%WWWDIR%%/require/extensions/include.php
 %%WWWDIR%%/require/fichierConf.class.php
 %%WWWDIR%%/require/footer.php
 %%WWWDIR%%/require/function_admininfo.php
@@ -701,15 +709,19 @@
 %%WWWDIR%%/require/menu/TxtMenuSerializer.php
 %%WWWDIR%%/require/menu/XMLMenuSerializer.php
 %%WWWDIR%%/require/menu/include.php
+%%WWWDIR%%/require/news/News.php
 %%WWWDIR%%/require/plugin/ComputerPlugin.php
 %%WWWDIR%%/require/plugin/XMLPluginsSerializer.php
 %%WWWDIR%%/require/plugin/include.php
+%%WWWDIR%%/require/saas/Saas.php
 %%WWWDIR%%/require/search/AccountinfoSearch.php
 %%WWWDIR%%/require/search/DatabaseSearch.php
+%%WWWDIR%%/require/search/GroupSearch.php
 %%WWWDIR%%/require/search/LegacySearch.php
 %%WWWDIR%%/require/search/Search.php
 %%WWWDIR%%/require/search/TranslationSearch.php
 %%WWWDIR%%/require/softwares/SoftwareCategory.php
+%%WWWDIR%%/require/stats/Stats.php
 %%WWWDIR%%/require/table/Column.php
 %%WWWDIR%%/require/table/Columns.php
 %%WWWDIR%%/require/table/Table.php
@@ -721,14 +733,18 @@
 %%WWWDIR%%/require/tables/TableRenderer.php
 %%WWWDIR%%/require/tables/table.html.php
 %%WWWDIR%%/require/tables/tables.js
+%%WWWDIR%%/require/teledeploy/Teledeploy.php
 %%WWWDIR%%/require/views/forms.php
+%%WWWDIR%%/templates/.htaccess
 %%WWWDIR%%/templates/OCS_template.html
 %%WWWDIR%%/themes/OCS/banniere.png
 %%WWWDIR%%/themes/OCS/logo.png
 %%WWWDIR%%/themes/OCS/style.css
 %%WWWDIR%%/tools/cron_mailer.php
+%%WWWDIR%%/tools/install_plugin.py
 %%WWWDIR%%/tools/gz.php
 %%WWWDIR%%/tools/recompose_paquet.php
 %%WWWDIR%%/update.php
-%%WWWDIR%%/upload/README
 %%WWWDIR%%/var.php
+@dir %%DATADIR%%/packages
+@dir %%DATADIR%%/snmp
