@@ -30,9 +30,4 @@ INSTALL_TARGET=	install-strip
 CFLAGS+=	-mmmx
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-Wno-unused-variable||g' \
-		-e 's|-O3|${CFLAGS}|g' \
-		${WRKSRC}/libvisual/Makefile.in
-
 .include <bsd.port.post.mk>
