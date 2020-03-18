@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bleach
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,6 @@ post-extract:
 	${RM} ${WRKSRC}/bleach/_vendor/pip_install_vendor.sh
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=
 
 .include <bsd.port.mk>
