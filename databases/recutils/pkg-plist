@@ -1,4 +1,5 @@
 bin/csv2rec
+%%MDB%%bin/mdb2rec
 bin/rec2csv
 bin/recdel
 bin/recfix
@@ -13,6 +14,7 @@ lib/librec.so
 lib/librec.so.1
 lib/librec.so.1.0.0
 man/man1/csv2rec.1.gz
+%%MDB%%man/man1/mdb2rec.1.gz
 man/man1/rec2csv.1.gz
 man/man1/recdel.1.gz
 man/man1/recfix.1.gz
