@@ -1,3 +1,5 @@
-TIMESTAMP = 1510001444
+TIMESTAMP = 1580722860
 SHA256 (prometheus-prometheus-v1.8.2_GH0.tar.gz) = 7c8a9c9756790d1c4eb436bb6ebda49e2f671a6319c06a1c63d5df9eff7da0e2
 SIZE (prometheus-prometheus-v1.8.2_GH0.tar.gz) = 5238057
+SHA256 (golang-sys-fead79001313_GH0.tar.gz) = c8e102db152c51438f426a92b338f924827b960e75bd9d871ae9438135366073
+SIZE (golang-sys-fead79001313_GH0.tar.gz) = 1258330
