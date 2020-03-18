@@ -2,7 +2,7 @@
 
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
-DISTVERSION=	20.1.pre4
+DISTVERSION=	20.1.0r
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
 
@@ -51,6 +51,10 @@ TEST_CMAKE_BOOL=	MEDIA_RUN_TEST_SUITE
 TEST_TEST_TARGET=	RunULT
 
 X11_LIB_DEPENDS=	libva-x11.so:multimedia/libva
+
+post-patch:
+	@${REINPLACE_CMD} 's/$${GIT_COMMIT}/${DISTVERSIONFULL}/' \
+		${WRKSRC}/media_driver/cmake/linux/media_compile_flags_linux.cmake
 
 post-patch-X11-off:
 	@${REINPLACE_CMD} -i .nox11 '/find_package.*X11/d' \
