@@ -99,6 +99,7 @@
     SUBDIR += openjdk11
     SUBDIR += openjdk12
     SUBDIR += openjdk13
+    SUBDIR += openjdk14
     SUBDIR += openjdk7
     SUBDIR += openjdk7-jre
     SUBDIR += openjdk8
