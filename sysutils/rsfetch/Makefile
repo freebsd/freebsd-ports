@@ -2,6 +2,7 @@
 
 PORTNAME=	rsfetch
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	vulcan@wired.sh
