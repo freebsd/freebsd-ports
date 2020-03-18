@@ -13,7 +13,8 @@ COMMENT=	GNATS, the GNU Problem Report Management System
 
 BROKEN_mips=		Does not build: error: conflicting types for yy_scan_string
 BROKEN_mips64=		Does not build: error: conflicting types for yy_scan_string
-BROKEN_powerpc64=	Does not build: error: conflicting types for yy_scan_string
+BROKEN_FreeBSD_11_powerpc64=	fails to build on powerpc64 elfv1: conflicting types for yy_scan_string
+BROKEN_FreeBSD_12_powerpc64=	fails to build on powerpc64 elfv1: conflicting types for yy_scan_string
 
 GNU_CONFIGURE=	yes
 USES=		cpe gmake makeinfo

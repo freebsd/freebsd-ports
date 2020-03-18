@@ -12,10 +12,11 @@ COMMENT=	ZPU gcc compiler
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_11_powerpc64=	fails to compile on powerpc64 elfv1: libgcc2.h: conflicting types for '__structdi3'
+BROKEN_FreeBSD_12_powerpc64=	fails to compile on powerpc64 elfv1: libgcc2.h: conflicting types for '__structdi3'
+
 BUILD_DEPENDS=	${LOCALBASE}/zpu/bin/zpu-elf-as:devel/zpu-binutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-BROKEN_powerpc64=	fails to compile: libgcc2.h: conflicting types for '__structdi3'
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/toolchain
 USES=		gettext gmake makeinfo

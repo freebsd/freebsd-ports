@@ -17,6 +17,11 @@ LICENSE_NAME=	ISC License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_armv6=		fails to build: Child process terminated abnormally: Segmentation fault
+BROKEN_armv7=		fails to build: Child process terminated abnormally: Segmentation fault
+BROKEN_FreeBSD_11_powerpc64=	fails to configure on powerpc64 elfv1: checking for botan/botan.h... no
+BROKEN_FreeBSD_12_powerpc64=	fails to configure on powerpc64 elfv1: checking for botan/botan.h... no
+
 BUILD_DEPENDS=	${LOCALBASE}/include/log4cplus/logger.h:devel/log4cplus \
 		sqlite3>=3.3.9:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
@@ -25,10 +30,6 @@ LIB_DEPENDS=	libbotan-1.10.so:security/botan110 \
 		libgmp.so:math/gmp \
 		libsqlite3.so:databases/sqlite3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
-
-BROKEN_armv6 =		fails to build: Child process terminated abnormally: Segmentation fault
-BROKEN_armv7 =		fails to build: Child process terminated abnormally: Segmentation fault
-BROKEN_powerpc64=	fails to configure: checking for botan/botan.h... no
 
 USES=	compiler:c++11-lang pathfix pkgconfig libtool python:3.4+ autoreconf ssl
 USE_CSTD=	gnu99

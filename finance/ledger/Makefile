@@ -16,17 +16,17 @@ COMMENT=	John Wiegley's command line accounting program
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_FreeBSD_11_powerpc64=	fails to link on powerpc64 elfv1: ibledger.so.3: undefined reference to boost::match_results
+BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: ibledger.so.3: undefined reference to boost::match_results
+
 BUILD_DEPENDS=	${LOCALBASE}/include/utf8.h:devel/utf8cpp
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libboost_system.so:devel/boost-libs
 
-BROKEN_powerpc64=	fails to link: ibledger.so.3: undefined reference to boost::match_results
-
-USE_GITHUB=	yes
-
-USE_LDCONFIG=	yes
 USES=		cmake compiler:c++11-lib libedit
+USE_GITHUB=	yes
+USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man \
 		-DCMAKE_INCLUDE_PATH=${LOCALBASE}/include

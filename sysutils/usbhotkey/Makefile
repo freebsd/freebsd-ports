@@ -12,10 +12,11 @@ COMMENT=	Utility to remap USB keyboards under X11
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_11_powerpc64=	fails to compile on powerpc64 elfv1: ruby.h: wrong number of arguments specified for 'deprecated' attribute
+BROKEN_FreeBSD_12_powerpc64=	fails to compile on powerpc64 elfv1: ruby.h: wrong number of arguments specified for 'deprecated' attribute
+
 LIB_DEPENDS=	libhid.so:devel/libhid \
 		libXtst.so:x11/libXtst
-
-BROKEN_powerpc64=	fails to compile: ruby.h: wrong number of arguments specified for 'deprecated' attribute
 
 USES=		gmake
 USE_RUBY=	yes

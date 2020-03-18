@@ -14,7 +14,8 @@ COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 
-BROKEN_powerpc64=	fails to compile: comparison is always true due to limited range of data type
+BROKEN_FreeBSD_11_powerpc64=	fails to compile on powerpc64 elfv1: comparison is always true due to limited range of data type
+BROKEN_FreeBSD_12_powerpc64=	fails to compile on powerpc64 elfv1: comparison is always true due to limited range of data type
 
 USES=		gmake
 
