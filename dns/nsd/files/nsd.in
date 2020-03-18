@@ -44,8 +44,6 @@ command="%%PREFIX%%/sbin/${name}"
 command_args="-c ${nsd_config} -P ${pidfile}"
 extra_commands="reload"
 
-load_rc_config "${name}"
-
 if [ -n "$2" ]; then
 	profile="$2"
 	if [ "x${nsd_profiles}" != "x" ]; then
