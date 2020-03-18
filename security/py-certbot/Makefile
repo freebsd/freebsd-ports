@@ -37,7 +37,9 @@ SUB_FILES=	500.certbot
 PLIST_FILES=	etc/periodic/weekly/500.certbot
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/certbot/compat/misc.py
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/certbot/compat/misc.py \
+		${WRKSRC}/tests/cli_test.py
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/weekly
