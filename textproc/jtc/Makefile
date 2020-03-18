@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jtc
-DISTVERSION=	1.75d
+PORTVERSION=	1.75d
 CATEGORIES=	textproc
 
 MAINTAINER=	vulcan@wired.sh
