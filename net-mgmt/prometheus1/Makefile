@@ -4,7 +4,7 @@
 PORTNAME=	prometheus
 PORTVERSION=	1.8.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	1
 
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
 USE_GITHUB=	yes
+GH_TUPLE=	golang:sys:fead79001313:golang_sys/vendor/golang.org/x/sys_fead79001313
 
 GO_PKGNAME=	github.com/${PORTNAME}/${PORTNAME}
 
@@ -34,6 +35,10 @@ GO_BUILDFLAGS=	-ldflags "\
 		${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER}"
 GO_TARGET=	./cmd/prometheus \
 		./cmd/promtool
+
+post-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${MV} ${WRKSRC}/vendor/golang.org/x/sys_fead79001313 ${WRKSRC}/vendor/golang.org/x/sys
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/documentation/examples/prometheus.yml ${STAGEDIR}${LOCALBASE}/etc/prometheus.yml.sample
