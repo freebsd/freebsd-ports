@@ -1,5 +1,7 @@
 # Incorrect config file path since update to 0.29.1
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=233909
+# https://github.com/certbot/certbot/pull/6702
+# https://github.com/certbot/certbot/pull/7056
 # TODO: Upstream
 
 --- certbot/compat/misc.py.orig	2020-01-14 18:41:31 UTC
