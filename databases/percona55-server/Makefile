@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 SLAVEDIRS=	databases/percona55-client
-USES=		bison cmake:insource,noninja compiler:c11 readline shebangfix
-USE_CXXSTD=	gnu++98
+USES=		bison cmake:insource,noninja readline shebangfix
 
 CXXFLAGS+=	${CPPFLAGS}
 
@@ -50,6 +49,14 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
 .include <bsd.port.options.mk>
+
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+USES+=		compiler:gcc-c++11-lib
+USE_CXXSTD=	gnu++11
+.else
+USES+=		compiler:c11
+USE_CXXSTD=	gnu++98
+.endif
 
 .if ${PORT_OPTIONS:MOPENSSL}
 CMAKE_ARGS+=	-DWITH_SSL=system
