@@ -12,7 +12,7 @@ bin/showqt
 bin/showriff
 bin/streamer
 bin/subtitles
-%%AA%%bin/ttv
+%%AALIB%%bin/ttv
 bin/v4lctl
 bin/webcam
 bin/xawtv
@@ -20,7 +20,7 @@ bin/xawtv-remote
 lib/xawtv/bilinear.so
 lib/xawtv/conv-mjpeg.so
 lib/xawtv/cubic.so
-lib/xawtv/drv0-bsd.so
+%%BKTR%%lib/xawtv/drv0-bsd.so
 lib/xawtv/flt-disor.so
 lib/xawtv/flt-gamma.so
 lib/xawtv/flt-invert.so
@@ -29,11 +29,11 @@ lib/xawtv/linear-blend.so
 lib/xawtv/linedoubler.so
 lib/xawtv/read-avi.so
 %%DV%%lib/xawtv/read-dv.so
-%%QT%%lib/xawtv/read-qt.so
+%%QUICKTIME%%lib/xawtv/read-qt.so
 lib/xawtv/snd-oss.so
 lib/xawtv/write-avi.so
 %%DV%%lib/xawtv/write-dv.so
-%%QT%%lib/xawtv/write-qt.so
+%%QUICKTIME%%lib/xawtv/write-qt.so
 man/man1/alevtd.1.gz
 man/man1/dump-mixers.1.gz
 man/man1/fbtv.1.gz
