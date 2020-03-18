@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	deviceatlas-enterprise-c
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	net devel
 MASTER_SITES=	#
 
@@ -18,7 +18,7 @@ LICENSE_PERMS=	none
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		cmake tar:tgz
+USES=		cmake zip
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DDOCSDIR=${DOCSDIR} -DEXAMPLESDIR=${EXAMPLESDIR}
