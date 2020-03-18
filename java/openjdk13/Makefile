@@ -98,7 +98,8 @@ JDK_BUILD_TYPE=		release
 ONLY_FOR_ARCHS+=aarch64
 .endif
 
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk12
+BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk13 \
+		${LOCALBASE}/openjdk12
 
 # do we have valid native jdk installed?
 .for BJDK in ${BOOTSTRAP_JDKS}
