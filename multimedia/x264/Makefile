@@ -98,6 +98,12 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 			--extra-cflags="${CPPFLAGS} ${CFLAGS}" \
 			--extra-ldflags="${LDFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == powerpc64
+USE_GCC=	yes
+.endif
+
 post-extract-PGO-on:
 	@${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${Y4M_VIDEO_DISTFILE} \
 		>${WRKDIR}/${Y4M_VIDEO}
@@ -117,4 +123,4 @@ pre-build:
 	@(${RM} ${WRKSRC}/x264_config.h)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
