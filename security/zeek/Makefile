@@ -16,6 +16,8 @@ BROKEN_powerpc64=	Does not build: error: zero-size array 'names'
 
 USES=		bison cmake compiler:c++11-lang gettext-runtime ninja perl5 python shebangfix ssl
 
+PORTSCOUT=	limit:0,even
+
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
 CXXFLAGS+=	-std=c++11 -Wall
 
