@@ -6,13 +6,15 @@ PORTVERSION=	2.9.4
 CATEGORIES=	irc
 MASTER_SITES=	http://home.risingnet.net/download/ \
 		http://bnc.acmeshells.com/ \
-		http://www.sourcefiles.org/System/Servers/
+		http://www.sourcefiles.org/System/Servers/ \
+		https://BSDforge.com/projects/source/irc/bnc/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	douglas@t2web.com.br
 COMMENT=	Simple IRC relay proxy with support for virtual hosting
 
-BROKEN=		unfetchable
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 

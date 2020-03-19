@@ -1,11 +1,11 @@
---- Makefile.in.orig	Fri Jun 15 14:29:22 2001
-+++ Makefile.in	Fri Jun 15 14:29:40 2001
-@@ -6,7 +6,7 @@
- STRIP = strip
- CC = gcc
+--- Makefile.in.orig	2005-01-26 04:15:06 UTC
++++ Makefile.in
+@@ -2,7 +2,7 @@ LIBS=@LIBS@
+ CFLAGS=-O3 -Wall -include config.h
+ CC=@CC@
  
 -ALL: bnc mkpasswd
 +all: bnc mkpasswd
  
  mkpasswd:mkpasswd.c
- 	${CC} ${OPTS} ${COPT} ${LIBS} -o mkpasswd mkpasswd.c
+ 	${CC} ${CFLAGS} -o mkpasswd mkpasswd.c ${LIBS} 
