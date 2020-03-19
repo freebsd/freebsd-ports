@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librsvg
-PORTVERSION=	2.46.4
-PORTREVISION=	3
+PORTVERSION=	2.48.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2-rust
@@ -14,22 +13,21 @@ COMMENT=	Library for parsing and rendering SVG vector-graphic files
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	${RUST_DEFAULT}>=1.34.0:lang/${RUST_DEFAULT} \
+BUILD_DEPENDS=	${RUST_DEFAULT}>=1.39.0:lang/${RUST_DEFAULT} \
 		valac:lang/vala
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libpng.so:graphics/png \
-		libcroco-0.6.so:textproc/libcroco
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png
 
 USES=		gettext gmake gnome libtool pkgconfig tar:xz
-USE_GNOME=	cairo gdkpixbuf2 libxml2 pango gnomeprefix introspection:build
+USE_GNOME=	cairo gdkpixbuf2 gnomeprefix libxml2 pango introspection:build
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-vala \
-		--disable-Bsymbolic \
+CONFIGURE_ARGS=	--disable-Bsymbolic \
 		--disable-dependency-tracking \
-		--disable-static
+		--disable-static \
+		--enable-vala
 # Make sure it uses the Rust toolchain from ports.
 CONFIGURE_ENV=	CARGO=${LOCALBASE}/bin/cargo \
 		RUSTC=${LOCALBASE}/bin/rustc
