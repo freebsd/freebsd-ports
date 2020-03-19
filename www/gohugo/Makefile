@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.67.0
+DISTVERSION=	0.67.1
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -86,7 +86,7 @@ GH_TUPLE=	\
 		pelletier:go-toml:v1.6.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
 		rogpeppe:go-internal:v1.5.1:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
-		russross:blackfriday:a477dd164691:russross_blackfriday/vendor/github.com/russross/blackfriday \
+		russross:blackfriday:41c5fccfd6f6:russross_blackfriday/vendor/github.com/russross/blackfriday \
 		rwcarlsen:goexif:9e8deecbddbd:rwcarlsen_goexif/vendor/github.com/rwcarlsen/goexif \
 		sanity-io:litter:v1.2.0:sanity_io_litter/vendor/github.com/sanity-io/litter \
 		spf13:afero:v1.2.2:spf13_afero/vendor/github.com/spf13/afero \
@@ -130,7 +130,7 @@ PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 .include <bsd.port.pre.mk>
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=		7f1da3efcd49c7fc5cf4a9714913a9f87e07e529
+COMMIT_ID=		4f44227bd8e32056d11797add3fe4da8f8c9edb0
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
