@@ -3,7 +3,7 @@
 PORTNAME=	inputstream.adaptive
 DISTVERSION=	2.5.4
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	kodi-addon-
 PKGNAMESUFFIX=	-devel
@@ -14,9 +14,9 @@ COMMENT=	Adaptive stream support for Kodi
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
-BUILD_DEPENDS=	kodi-devel>=19.0.a20200215:multimedia/kodi-devel
+BUILD_DEPENDS=	kodi-devel>=19.0.a20200318:multimedia/kodi-devel
 LIB_DEPENDS=	libexpat.so:textproc/expat2
-RUN_DEPENDS=	kodi-devel>=19.0.a20200215:multimedia/kodi-devel
+RUN_DEPENDS=	kodi-devel>=19.0.a20200318:multimedia/kodi-devel
 
 USES=		cmake
 USE_GITHUB=	yes
