@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	subcalc
-PORTVERSION=	1.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.seccuris.com/documents/downloads/
 
 MAINTAINER=	csjp@FreeBSD.org
 COMMENT=	Advanced IP/IPv6 subnet calculation and discovery
 
-BROKEN=		unfetchable
+USE_GITHUB=     yes
+GH_ACCOUNT=     csjayp
+GH_PROJECT=     subcalc
 
 PLIST_FILES=	bin/subcalc man/man1/subcalc.1.gz
 
