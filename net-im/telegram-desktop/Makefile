@@ -1,8 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	telegram-desktop
-DISTVERSION=	1.9.14
+DISTVERSION=	1.9.21
 CATEGORIES=	net-im
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
+DISTNAME=	tdesktop-${DISTVERSION}-full
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Telegram Desktop messaging app
@@ -31,9 +33,6 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 
 USES=		cmake compiler:c++17-lang desktop-file-utils \
 		gnome pkgconfig python:3.7,build qt:5 ssl xorg
-
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
-DISTNAME=	tdesktop-${DISTVERSION}-full
 
 GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
