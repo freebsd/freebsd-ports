@@ -1,0 +1,5 @@
+*Triangle* is a python wrapper around Jonathan Richard Shewchuk's two-dimensional
+quality mesh generator and delaunay triangulator library.
+This implementation utilizes Cython_ to wrap the C API as closely as possible.
+
+WWW: https://rufat.be/triangle
