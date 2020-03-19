@@ -21,9 +21,8 @@ USE_CXXSTD=	c++98
 USE_SDL=	sdl
 USE_GL=		gl glu
 
-LLD_UNSAFE=	yes
-
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
+LDFLAGS_i386=	-Wl,-znotext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

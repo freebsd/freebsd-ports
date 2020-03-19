@@ -26,8 +26,7 @@ USE_SDL=	sdl2
 USE_XORG=	ice sm x11 xext
 
 LDFLAGS+=	-lGL # only missing for one example
-# for openal cf. PR 226980
-LLD_UNSAFE=	yes
+LDFLAGS_i386=	-Wl,-znotext
 
 CMAKE_ARGS=	-DLIB_SUFFIX:STRING=""
 

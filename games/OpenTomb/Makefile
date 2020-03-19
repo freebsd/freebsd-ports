@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 USES=		cmake:insource compiler:c++11-lang lua openal sdl
 USE_GITHUB=	yes
 USE_SDL=	sdl2
-LLD_UNSAFE=	yes
+LDFLAGS_i386=	-Wl,-znotext
 SUB_FILES=	OpenTomb
 
 post-patch:

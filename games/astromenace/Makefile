@@ -29,7 +29,7 @@ DOS2UNIX_FILES=	CMakeLists.txt src/config/config.cpp
 USE_GL=		gl glu
 USE_SDL=	sdl2
 CMAKE_ARGS=	-DDATADIR="${DATADIR}"
-LLD_UNSAFE=	yes
+LDFLAGS_i386=	-Wl,-znotext
 
 PORTDATA=	*
 PORTDOCS=	*

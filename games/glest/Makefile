@@ -23,9 +23,9 @@ USES=		autoreconf:build compiler:c++11-lang dos2unix gl localbase \
 USE_SDL=	sdl
 USE_GL=		gl glu
 USE_XORG=	x11
-LLD_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	mk/linux/configure
+LDFLAGS_i386=	-Wl,-znotext
 SUB_FILES=		glest-wrapper pkg-message
 
 JAM_CMD=		${LOCALBASE}/bin/jam -q -a -dx

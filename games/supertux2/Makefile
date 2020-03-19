@@ -28,7 +28,7 @@ USE_SDL=	sdl2 image2 ttf2
 
 CMAKE_ARGS=	-DINSTALL_SUBDIR_BIN=bin \
 		-DBUILD_SHARED_LIBS=off
-LLD_UNSAFE=	yes
+LDFLAGS_i386=	-Wl,-znotext
 
 DOS2UNIX_FILES=	external/squirrel/CMakeLists.txt \
 		external/squirrel/squirrel/sqvm.cpp

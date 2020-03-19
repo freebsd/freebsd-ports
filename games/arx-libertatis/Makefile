@@ -20,10 +20,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/foreach.hpp:devel/boost-libs
 USES=		cmake compiler:c++11-lang gl openal sdl tar:xz
 USE_SDL=	sdl
 USE_GL=		gl glew
-LLD_UNSAFE=	yes
 CMAKE_ARGS=	-DDATA_DIR=arx \
 		-DSTRICT_USE=ON \
 		-DBUILD_CRASHREPORTER=OFF
+LDFLAGS_i386=		-Wl,-znotext
 
 SUB_FILES=	pkg-message
 

@@ -35,7 +35,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_TUPLE=	colobot:colobot-data:c467bd9:data
 
-LLD_UNSAFE=	yes
+LDFLAGS_i386=	-Wl,-znotext
 
 post-extract:
 	@${MV} ${WRKDIR}/colobot-data-c467bd9/* ${WRKSRC}/data

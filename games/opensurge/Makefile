@@ -40,7 +40,8 @@ SUB_FILES=	${PORTNAME}
 DESKTOP_ENTRIES="Open Surge" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 INSTALLS_ICONS=	yes
-LLD_UNSAFE=	yes
+
+LDFLAGS_i386=	-Wl,-znotext
 
 SVN_REV=	765
 MODS_VER=	20140321

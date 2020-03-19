@@ -22,7 +22,8 @@ USES=		cmake compiler:c++11-lang gl jpeg openal:soft pkgconfig sdl tar:bzip2 xor
 USE_GL=		gl glu
 USE_SDL=	sdl
 USE_XORG=	sm
-LLD_UNSAFE=	yes
+
+LDFLAGS_i386=	-Wl,-znotext
 
 PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS

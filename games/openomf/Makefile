@@ -27,7 +27,8 @@ GH_TUPLE=	omf2097:libShadowDive:b2c34a6:shadow \
 
 USES=		cmake:insource compiler:c++11-lang gettext openal sdl
 USE_SDL=	sdl2
-LLD_UNSAFE=	yes
+
+LDFLAGS_i386=	-Wl,-znotext
 
 DESKTOP_ENTRIES="OpenOMF" "" \
 		"${PREFIX}/share/openomf/openomf_icon.png " \

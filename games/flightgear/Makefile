@@ -34,14 +34,13 @@ USES=		alias cmake:noninja compiler:c++11-lang cpe dos2unix gl jpeg \
 USE_XORG=	ice sm x11 xext xft xi xinerama xmu xt
 USE_GL=		gl glew glu glut
 
-LLD_UNSAFE=	yes
-
 DOS2UNIX_REGEX=	.*\.(c|h|cxx|cpp|hxx|hpp)
 CMAKE_ARGS+=	-DSYSTEM_SQLITE:BOOL=ON \
 		-DFG_DATA_DIR:PATH=${LOCALBASE}/share/${PORTNAME} \
 		-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man \
 		-DFGCOM_DATA_PATH:PATH=${DATADIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS_i386=	-Wl,-znotext
 
 OPTIONS_DEFINE=	DBUS QT5
 OPTIONS_DEFAULT=	DBUS QT5

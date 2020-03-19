@@ -26,7 +26,6 @@ USE_GL=		gl glu
 USE_CSTD=	gnu89
 SUB_FILES=	tome4
 
-LLD_UNSAFE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 DESKTOP_ENTRIES="ToME 4" "" "${PORTNAME}" \
@@ -35,6 +34,7 @@ DESKTOP_ENTRIES="ToME 4" "" "${PORTNAME}" \
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/t-engine4-src-${DISTVERSION}
 MAKE_ARGS+=	config=release verbose=yes ARCH="" CC=${CC} CXX=${CXX}
+LDFLAGS_i386=	-Wl,-znotext
 
 .include <bsd.port.pre.mk>
 

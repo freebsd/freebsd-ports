@@ -23,10 +23,4 @@ CONFIGURE_ARGS=	--enable-release-build --with-wx-config=wxgtk3u-3.0-config
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	amd64
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
-LDFLAGS+=	-fuse-ld=bfd
-.endif
-
 .include <bsd.port.mk>

@@ -21,7 +21,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 USE_GITHUB=	yes
 
 USES=		cmake compiler:c++14-lang python:2.7
-LLD_UNSAFE=	yes
+
+LDFLAGS_i386=	-Wl,-znotext
 
 PORTDOCS=	ChangeLog.md README.md
 PORTDATA=	*

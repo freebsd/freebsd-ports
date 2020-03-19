@@ -29,11 +29,12 @@ USE_SDL=	sdl2 image2
 
 ALPHA_VERSION=	23
 LIBS+=		-lexecinfo
-LLD_UNSAFE=	yes
 MAKE_ARGS=	DATA_DIR="${DATADIR}" GCC="${CXX}" \
 		LDFLAGS="${LDFLAGS}" RELEASE=true
 # USE_GCC adds -Wl,-rpath=${_GCC_RUNTIME} which breaks -x c++-header
 MAKE_ARGS+=	PCH= PCHINC=
+
+LDFLAGS_i386=	-Wl,-znotext
 
 DESKTOP_ENTRIES="KeeperRL" "" "" "keeper" \
 		"Game;Simulation;" false

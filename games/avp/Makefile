@@ -17,7 +17,8 @@ USES=		cmake compiler:c++11-lang gl openal sdl
 USE_GL=		gl
 USE_SDL=	sdl
 
-LLD_UNSAFE=	yes
+LDFLAGS_i386=	-Wl,-znotext
+
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:

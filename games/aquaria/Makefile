@@ -42,11 +42,6 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	bin/aquaria
 PORTDATA=	*
 
-# XXX Drop after FreeBSD 12.0 EOL
-.if exists(/usr/lib/clang/6.0.1)
-LLD_UNSAFE=	yes # XXX ports/219089
-.endif
-
 DESKTOP_ENTRIES="${GH_PROJECT}" \
 		"" \
 		"${DATADIR}/${PORTNAME}.png" \
