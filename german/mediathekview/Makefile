@@ -13,6 +13,9 @@ COMMENT=	Filme der oeff. rechtlichen Sender herunterladen und ansehen
 
 LICENSE=	GPLv3
 
+DEPRECATED=	depends on expiring java/openjfx8-devel
+EXPIRATION_DATE=	2020-11-30
+
 RUN_DEPENDS=	${LOCALBASE}/openjdk8/bin/javafxpackager:java/openjfx8-devel \
 		flvstreamer:multimedia/flvstreamer
 

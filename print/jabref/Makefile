@@ -17,6 +17,9 @@ COMMENT=	BibTeX native bibliographic reference manager
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+DEPRECATED=	depends on expiring java/openjfx8-devel
+EXPIRATION_DATE=	2020-11-30
+
 PORTSCOUT=	limit:.*[0-9]$$
 
 USE_JAVA=	yes

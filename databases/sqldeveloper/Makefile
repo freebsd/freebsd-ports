@@ -21,6 +21,9 @@ USES=		gnome zip
 LICENSE_NAME=	OTN
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror
 
+DEPRECATED=	depends on expiring java/openjfx8-devel
+EXPIRATION_DATE=	2020-11-30
+
 USE_JAVA=	yes
 INSTALLS_ICONS=	yes
 
