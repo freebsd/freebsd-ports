@@ -6,7 +6,7 @@ PORTREVISION?=	0
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	bb3decb9830b.patch:-p1 # ???
+PATCHFILES+=	bb3decb9830b.patch:-p1 # https://github.com/citra-emu/citra/pull/5137
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo 3DS emulator/debugger
