@@ -26,8 +26,8 @@ include/phonenumbers/utf/unicodetext.h
 lib/libgeocoding.a
 lib/libgeocoding.so
 lib/libgeocoding.so.8
-lib/libgeocoding.so.8.11
+lib/libgeocoding.so.8.12
 lib/libphonenumber.a
 lib/libphonenumber.so
 lib/libphonenumber.so.8
-lib/libphonenumber.so.8.11
+lib/libphonenumber.so.8.12
