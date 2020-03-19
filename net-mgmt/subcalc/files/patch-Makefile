@@ -1,13 +1,23 @@
---- Makefile.orig	2014-06-20 23:09:15.019376097 +0800
-+++ Makefile	2014-06-20 23:09:26.777375032 +0800
-@@ -15,8 +15,8 @@ subcalc:	$(OBJS)
- 	$(CC) -o $@ $(OBJS) $(LIBS)
+--- Makefile.orig	2018-06-30 14:11:02.000000000 -0700
++++ Makefile	2020-03-18 08:43:27.327184000 -0700
+@@ -13,14 +13,14 @@
+ 	$(CC) -o $@ $(OBJS) $(LIBS) $(CFLAGS)
  
  install:
+-	[ -d $(PREFIX)/bin ] || mkdir -p $(PREFIX)/bin
 -	cp subcalc $(PREFIX)/bin
--	cp subcalc.1.gz $(PREFIX)/man/man1/
+-	[ -d $(PREFIX)/share/man/man1/ ] || mkdir -p $(PREFIX)/share/man/man1/
+-	cp subcalc.1 $(PREFIX)/share/man/man1/
++	[ -d $(DESTDIR)$(PREFIX)/bin ] || mkdir -p $(DESTDIR)$(PREFIX)/bin
 +	cp subcalc $(DESTDIR)$(PREFIX)/bin
-+	cp subcalc.1.gz $(DESTDIR)$(PREFIX)/man/man1/
++	[ -d $(DESTDIR)$(PREFIX)/man/man1/ ] || mkdir -p $(DESTDIR)$(PREFIX)/man/man1/
++	cp subcalc.1 $(DESTDIR)$(PREFIX)/man/man1/
  
  deinstall:
- 	rm -f $(PREFIX)/man/man1/subcalc.1.gz
+-	rm -f $(PREFIX)/share/man/man1/subcalc.1.gz
+-	rm -f $(PREFIX)/bin/subcalc
++	rm -f $(DESTDIR)$(PREFIX)/man/man1/subcalc.1.gz
++	rm -f $(DESTDIR)$(PREFIX)/bin/subcalc
+ 
+ clean:
+ 	rm -f subcalc
