@@ -1,7 +1,7 @@
---- bncsetup.orig	Wed Mar 17 07:31:19 1999
-+++ bncsetup	Thu Mar 18 01:51:47 1999
-@@ -12,15 +12,9 @@
-   exit $1
+--- bncsetup.orig	2005-02-07 01:51:06 UTC
++++ bncsetup
+@@ -91,15 +91,9 @@ altconf()
+ 
  }
  
 -if ! [ -e ./mkpasswd ]
@@ -17,7 +17,7 @@
  CRCYS=$(cat $TMPFILE | grep '\$' | tail -1 )
  
  
-@@ -149,13 +143,13 @@
+@@ -244,13 +238,13 @@ ERRORLEVEL=$?
  
  if [ x$ERRORLEVEL = x0 ]
  then 
