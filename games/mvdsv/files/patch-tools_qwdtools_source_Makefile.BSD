@@ -1,6 +1,6 @@
---- tools/qwdtools/source/Makefile.BSD.orig	2011-10-06 07:24:17 UTC
+--- tools/qwdtools/source/Makefile.BSD.orig	2020-03-18 18:17:05 UTC
 +++ tools/qwdtools/source/Makefile.BSD
-@@ -12,24 +12,18 @@
+@@ -12,24 +12,19 @@
  #
  
  MAINDIR = ../../..
@@ -13,14 +13,15 @@
  # configure script add FORCE32BITFLAGS=-m32
  
 -DO_CFLAGS		=	${CFLAGS} -Wall -pipe -pthread -funsigned-char -DUSE_PR2 -D${BYTE_ORDER}Q__ ${FORCE32BITFLAGS}
--
++BYTE_ORDER!=	${CC} -x c -dM -E /usr/include/machine/endian.h | sed -n 's,\#define _BYTE_ORDER \(.*\),_\1__,p'
++DO_CFLAGS		=	${CFLAGS} -Wall -pipe -funsigned-char -DSERVERONLY -D${BYTE_ORDER}Q__ ${FORCE32BITFLAGS}
+ 
 -.if !defined(NOKQUEUE) && (${UNAME} == "FreeBSD" || ${UNAME} == "DragonFly")
 -DO_CFLAGS		+=	-DKQUEUE
 -.endif
 -
 -WITH_OPTIMIZED_CFLAGS = YES
-+DO_CFLAGS		=	${CFLAGS} -Wall -pipe -pthread -funsigned-char -DUSE_PR2 ${FORCE32BITFLAGS}
- 
+-
  USE_ASM=-Did386
  .if defined(WITH_OPTIMIZED_CFLAGS)
 -DO_CFLAGS		+=	-O2 -fno-strict-aliasing -ffast-math -funroll-loops
@@ -28,7 +29,7 @@
  . if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
  ASM=${USE_ASM}
  DO_CFLAGS		+=	${ASM}
-@@ -60,7 +54,7 @@ QWDTOOLS_OBJS = \
+@@ -60,7 +55,7 @@ QWDTOOLS_OBJS = \
  		${QWDTOOLS_DIR}/sync.o \
  		${QWDTOOLS_DIR}/tools.o
  
@@ -37,7 +38,7 @@
  QWDTOOLS_ASM_OBJS = \
  		${SV_DIR}/bothtoolsa.o
  .endif
-@@ -70,10 +64,10 @@ QWDTOOLS_ASM_OBJS = \
+@@ -70,10 +65,10 @@ QWDTOOLS_ASM_OBJS = \
  #############################################################################
  
  .c.o:
