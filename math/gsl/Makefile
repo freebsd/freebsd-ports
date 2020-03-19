@@ -24,14 +24,8 @@ INFO=		gsl-ref
 CORELIMIT?=	/usr/bin/limits -Sc 0
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == powerpc64
-USE_GCC=	any
-.endif
-
 check regression-test test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${CORELIMIT} ${MAKE_CMD} \
 	${MAKE_ARGS} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
