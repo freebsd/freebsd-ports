@@ -14,8 +14,8 @@ COMMENT?=	Multithreaded SQL database (server)
 LICENSE=	GPLv2
 
 SLAVEDIRS=	databases/mysql56-client
-USES=		bison:build cmake:noninja compiler:c11 compiler:c++11-lib \
-		cpe groff:run libedit localbase perl5 shebangfix ssl
+USES=		bison:build cmake:noninja cpe groff:run libedit localbase \
+		perl5 shebangfix ssl
 
 USE_PERL5=	run
 
@@ -134,6 +134,14 @@ FEDERATED_SUB_LIST_OFF+=	FEDER=""
 .endif
 
 .include <bsd.port.options.mk>
+
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+USES+=		compiler:gcc-c++11-lib
+USE_CXXSTD=	gnu++11
+.else
+USES+=		compiler:c++11-lang
+USE_CXXSTD=	gnu++98
+.endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
 SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
