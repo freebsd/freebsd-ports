@@ -12,6 +12,9 @@ COMMENT=	JavaFX Scene Builder
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	depends on expiring java/openjfx8-devel
+EXPIRATION_DATE=	2020-11-30
+
 BUILD_DEPENDS=	openjfx8-devel>0:java/openjfx8-devel
 RUN_DEPENDS=	openjfx8-devel>0:java/openjfx8-devel
 

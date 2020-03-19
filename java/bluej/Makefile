@@ -14,6 +14,9 @@ COMMENT=	Integrated Java environment designed for introductory teaching
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	depends on expiring java/openjfx8-devel
+EXPIRATION_DATE=	2020-11-30
+
 RUN_DEPENDS=	${JAVA_HOME}/bin/javafxpackager:java/openjfx8-devel
 
 NO_ARCH=	yes

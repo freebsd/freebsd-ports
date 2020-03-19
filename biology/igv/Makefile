@@ -15,6 +15,9 @@ COMMENT=	Visualization tool for genomic datasets
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+DEPRECATED=	depends on expiring java/openjfx8-devel
+EXPIRATION_DATE=	2020-11-30
+
 BUILD_DEPENDS=	openjfx8-devel>0:java/openjfx8-devel \
 		gradle4:devel/gradle4
 RUN_DEPENDS=	openjfx8-devel>0:java/openjfx8-devel
