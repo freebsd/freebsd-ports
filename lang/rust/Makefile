@@ -29,20 +29,16 @@ ONLY_FOR_ARCHS?=	aarch64 amd64 armv6 armv7 i386 powerpc64
 ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 
 BUILD_DEPENDS=	cmake:devel/cmake
-LIB_DEPENDS=	libcurl.so:ftp/curl
-.if !defined(NIGHTLY_DATE)
-LIB_DEPENDS+=	libgit2.so:devel/libgit2 \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
-.endif
 
 USES=		pkgconfig python:3.3+,build ssl tar:xz
 
-MAKE_ENV=	OPENSSL_DIR="${OPENSSLBASE}" \
+MAKE_ENV=	LIBGIT2_SYS_USE_PKG_CONFIG=1 \
+		LIBSSH2_SYS_USE_PKG_CONFIG=1 \
+		OPENSSL_DIR="${OPENSSLBASE}" \
 		RUST_BACKTRACE=1
-.if !defined(NIGHTLY_DATE)
-MAKE_ENV+=	LIBGIT2_SYS_USE_PKG_CONFIG=1 \
-		LIBSSH2_SYS_USE_PKG_CONFIG=1
-.endif
 TEST_ENV=	${MAKE_ENV} \
 		ALLOW_NONZERO_RLIMIT_CORE=1
 
