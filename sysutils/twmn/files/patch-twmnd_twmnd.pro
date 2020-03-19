@@ -6,7 +6,7 @@
  DESTDIR = ../bin/
 -QMAKE_CXXFLAGS += -Wall -Werror -pedantic -Wno-long-long
 +QMAKE_CXXFLAGS_WARN_ON -= -W
-+QMAKE_CXXFLAGS += -Wall -Werror -pedantic -Wno-long-long -Wno-error=deprecated-copy
++QMAKE_CXXFLAGS += -Wall -Werror -pedantic -Wno-long-long -Wno-error=deprecated
  
  target.path+=/usr/local/bin
  INSTALLS += target
