@@ -4595,6 +4595,7 @@
 %%WWWDIR%%/app/helpers/webpack_helper.rb
 %%WWWDIR%%/app/helpers/wiki_helper.rb
 %%WWWDIR%%/app/helpers/workhorse_helper.rb
+%%WWWDIR%%/app/helpers/x509_helper.rb
 %%WWWDIR%%/app/mailers/abuse_report_mailer.rb
 %%WWWDIR%%/app/mailers/application_mailer.rb
 %%WWWDIR%%/app/mailers/devise_mailer.rb
@@ -17959,6 +17960,7 @@
 %%WWWDIR%%/spec/helpers/version_check_helper_spec.rb
 %%WWWDIR%%/spec/helpers/visibility_level_helper_spec.rb
 %%WWWDIR%%/spec/helpers/wiki_helper_spec.rb
+%%WWWDIR%%/spec/helpers/x509_helper_spec.rb
 %%WWWDIR%%/spec/initializers/6_validations_spec.rb
 %%WWWDIR%%/spec/initializers/action_mailer_hooks_spec.rb
 %%WWWDIR%%/spec/initializers/active_record_locking_spec.rb
@@ -21215,6 +21217,7 @@
 %%WWWDIR%%/spec/support/shared_contexts/finders/merge_requests_finder_shared_contexts.rb
 %%WWWDIR%%/spec/support/shared_contexts/finders/users_finder_shared_contexts.rb
 %%WWWDIR%%/spec/support/shared_contexts/json_response_shared_context.rb
+%%WWWDIR%%/spec/support/shared_contexts/lib/gitlab/middleware/multipart_shared_contexts.rb
 %%WWWDIR%%/spec/support/shared_contexts/mailers/notify_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/merge_request_create_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/merge_request_edit_shared_context.rb
