@@ -208,6 +208,7 @@ include/isc/sockaddr.h
 include/isc/socket.h
 include/isc/stat.h
 include/isc/stats.h
+include/isc/stdatomic.h
 include/isc/stdio.h
 include/isc/stdlib.h
 include/isc/stdtime.h
@@ -268,8 +269,6 @@ include/pk11/site.h
 include/pkcs11/cryptoki.h
 include/pkcs11/eddsa.h
 include/pkcs11/pkcs11.h
-include/pkcs11/pkcs11f.h
-include/pkcs11/pkcs11t.h
 lib/libbind9.a
 lib/libdns.a
 lib/libirs.a
