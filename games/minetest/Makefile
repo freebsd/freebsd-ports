@@ -18,9 +18,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	minetest
 
 USES=		cmake compiler:c11 iconv:wchar_t
-LLD_UNSAFE=	yes
 CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
 		-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc"
+
+LDFLAGS_i386=	-Wl,-znotext
 
 PORTDATA=	*
 PORTDOCS=	*

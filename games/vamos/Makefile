@@ -29,10 +29,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_lib_freeglut_glutGetModifiers=no \
 		--disable-unit-tests
 USE_LDCONFIG=	yes
-LLD_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+LDFLAGS_i386=	-Wl,-znotext
 
 INFO=		vamos
 PORTDOCS=	*

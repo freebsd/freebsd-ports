@@ -24,10 +24,6 @@ CMAKE_ON=	ALSOFT_BACKEND_WAVE ALSOFT_UTILS
 # do not link with librt and libdl.
 LDFLAGS+=	-Wl,--as-needed
 LDFLAGS_i386=	-Wl,-z,notext
-# XXX Drop after FreeBSD 12.0 EOL
-.if exists(/usr/lib/clang/6.0.1)
-LLD_UNSAFE=	yes
-.endif
 
 PLIST_SUB=	SOVERSION=${PORTVERSION}
 

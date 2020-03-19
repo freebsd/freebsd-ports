@@ -54,7 +54,6 @@ LUA_JIT_DESC=		Use LuaJIT from lang/luajit
 LUA_JIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 OPENAL_USES=	openal
 OPENAL_CONFIGURE_WITH=	openal
-OPENAL_VARS=	LLD_UNSAFE=yes # cf. PR 226980
 SDL_MIXER_DESC=	SDL_mixer sound backend
 SDL_MIXER_CONFIGURE_WITH=	sdlmixer
 SDL2_DESC=	Use SDL2 instead of SDL

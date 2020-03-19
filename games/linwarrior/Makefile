@@ -15,8 +15,9 @@ COMMENT=	Navigate a mech through a 3D world and fire at enemies
 USES=		compiler:c++11-lang gl gmake openal:al,alut sdl
 USE_GL=		gl glu
 USE_SDL=	sdl
-LLD_UNSAFE=	yes
 USE_CXXSTD=	gnu++98
+
+LDFLAGS_i386=	-Wl,-znotext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

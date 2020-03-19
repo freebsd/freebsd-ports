@@ -35,9 +35,9 @@ USE_GL=		glew gl glu
 USE_SDL=	sdl2
 USE_XORG=	sm ice x11 xext
 USE_CXXSTD=	c++11
-LLD_UNSAFE=	yes
 
 LDFLAGS+=	-lssl -lcrypto
+LDFLAGS_i386=	-Wl,-znotext
 
 OPTIONS_DEFINE=	EDITOR DOCS VIEWER
 OPTIONS_SUB=	yes

@@ -17,7 +17,6 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libpng.so:graphics/png
 
 USES=		cmake compiler:c++11-lang lua:51 jpeg openal pkgconfig sdl
-LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	scp-fs2open
 GH_PROJECT=	fs2open.github.com
@@ -27,6 +26,8 @@ USE_SDL=	sdl2
 
 CMAKE_OFF=	ENABLE_COTIRE
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Doxygen
+
+LDFLAGS_i386=	-Wl,-znotext
 
 PLIST_FILES=	bin/fs2_open
 

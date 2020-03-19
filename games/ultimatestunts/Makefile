@@ -25,10 +25,6 @@ USE_SDL=	sdl image
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openal
 MAKE_JOBS_UNSAFE=	yes
-# XXX Drop after FreeBSD 12.0 EOL
-.if exists(/usr/lib/clang/6.0.1)
-LLD_UNSAFE=	yes
-.endif
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing

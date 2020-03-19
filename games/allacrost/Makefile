@@ -29,7 +29,7 @@ USE_CXXSTD=	c++98
 CONFIGURE_ARGS=	--datadir=${DATADIR} --enable-editor=no
 CPPFLAGS+=	-isystem${LUA_INCDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}
-LLD_UNSAFE=	yes
+LDFLAGS_i386=	-Wl,-znotext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -35,9 +35,8 @@ GH_TUPLE=	ataulien:bgfx-cmake:9a9b596:bgfxcmake/lib/bgfx-cmake \
 
 USE_XORG=	ice sm x11 xcursor xext xinerama xrandr
 USE_GL=		gl glu
-# OpenAL https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=219089
-LLD_UNSAFE=	yes
 CMAKE_ARGS+=	-DREGOTH_BUILD_WITH_SYSTEM_OPENAL:BOOL=YES
+LDFLAGS_i386=	-Wl,-znotext
 
 post-extract:
 	${MV} ${WRKSRC_bgfx}/* ${WRKSRC}/lib/bgfx-cmake/bgfx

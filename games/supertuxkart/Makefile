@@ -30,7 +30,6 @@ USES=		alias cmake compiler:c++11-lib gettext gl \
 USE_GL=		gl glu glew
 USE_SDL=	sdl
 USE_XORG=	x11 xrandr
-LLD_UNSAFE=	yes
 CMAKE_OFF=	USE_WIIUSE BUILD_RECORDER \
 		USE_SYSTEM_ENET USE_SYSTEM_SQUISH
 CMAKE_ON=	USE_SYSTEM_GLEW

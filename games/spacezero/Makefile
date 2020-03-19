@@ -17,7 +17,6 @@ LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 USES=		openal:al,alut gnome pkgconfig xorg
 USE_GNOME=	gtk20
 USE_XORG=	x11
-LLD_UNSAFE=	yes
 MAKE_ARGS=	DATADIR="${DATADIR}" \
 		INSTALL_DATA_DIR="${DATADIR}"
 ALL_TARGET=	${PORTNAME}
@@ -25,6 +24,7 @@ ALL_TARGET=	${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 LDFLAGS+=	-lX11
+LDFLAGS_i386=	-Wl,-znotext
 
 PORTDOCS=	*
 PORTDATA=	*
