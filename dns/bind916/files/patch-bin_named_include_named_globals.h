@@ -8,6 +8,6 @@ We reference the pid file as being run/named/pid everywere else.
  EXTERN const char *named_g_defaultpidfile INIT(NAMED_LOCALSTATEDIR "/run/named/"
 -								   "named.pid");
 +								   "pid");
- #else
+ #else  /* if NAMED_RUN_PID_DIR */
  EXTERN const char *named_g_defaultpidfile INIT(NAMED_LOCALSTATEDIR "/run/"
  								   "named.pid");
