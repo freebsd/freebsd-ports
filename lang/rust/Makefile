@@ -3,7 +3,7 @@
 
 PORTNAME=	rust
 PORTVERSION?=	1.42.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		LOCAL/tobik/rust:bootstrap \
@@ -82,12 +82,6 @@ _CARGO_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_B
 
 .include <bsd.port.pre.mk>
 
-.if exists(${PATCHDIR}/libgit2)
-# lang/rust-bootstrap builds the bundled libgit2 and using the patch
-# to fix runtime with system libgit2 is incompatible with it.  Keep
-# it separate.
-EXTRA_PATCHES+=	${PATCHDIR}/libgit2
-.endif
 .if exists(${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX})
 EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
 .endif

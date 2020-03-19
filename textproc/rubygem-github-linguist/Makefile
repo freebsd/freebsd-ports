@@ -2,6 +2,7 @@
 
 PORTNAME=	github-linguist
 PORTVERSION=	7.6.1
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

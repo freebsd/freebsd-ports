@@ -2,6 +2,7 @@
 
 PORTNAME=	gitfs
 DISTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	sysutils devel
 PKGNAMEPREFIX=	fusefs-
 
@@ -24,7 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PressLabs
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils concurrent optsuffix
 
 post-patch:

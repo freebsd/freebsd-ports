@@ -71,7 +71,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit.h
 lib/girepository-1.0/Ggit-1.0.typelib
 lib/libgit2-glib-1.0.so
 lib/libgit2-glib-1.0.so.0
-lib/libgit2-glib-1.0.so.0.2800.0
+lib/libgit2-glib-1.0.so.0.9900.0
 libdata/pkgconfig/libgit2-glib-1.0.pc
 share/gir-1.0/Ggit-1.0.gir
 share/vala/vapi/ggit-1.0.deps
