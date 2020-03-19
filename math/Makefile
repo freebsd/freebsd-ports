@@ -808,6 +808,7 @@
     SUBDIR += py-symcxx
     SUBDIR += py-sympy
     SUBDIR += py-theano
+    SUBDIR += py-triangle
     SUBDIR += py-ufl
     SUBDIR += py-uncertainties
     SUBDIR += py-vincenty
