@@ -8,7 +8,7 @@ PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 PORTREVISION=	0
 .else
 # dns/bind916 here
-PORTREVISION=	2
+PORTREVISION=	0
 .endif
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
@@ -41,7 +41,7 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 
 USES=		compiler:c11 cpe libedit pkgconfig ssl tar:xz
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.16.0
+ISCVERSION=	9.16.1
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -65,8 +65,7 @@ EXTRA_PATCHES=		${PATCHDIR}/extrapatch-bind-tools
 .else
 USE_RC_SUBR=		named
 SUB_FILES=		named.conf pkg-message
-EXTRA_PATCHES=		${PATCHDIR}/extrapatch-no-bind-tools \
-			${PATCHDIR}/bind-v9.16.0-tcp_quota_fix.patch:-p1
+EXTRA_PATCHES=		${PATCHDIR}/extrapatch-no-bind-tools
 
 PORTDOCS=	*
 
