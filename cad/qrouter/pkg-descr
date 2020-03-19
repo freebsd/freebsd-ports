@@ -1,0 +1,8 @@
+Qrouter is a tool to generate metal layers and vias to physically connect
+together a netlist in a VLSI fabrication technology. It is a maze router,
+otherwise known as an "over-the-cell" router or "sea-of-gates" router. That is,
+unlike a channel router, it begins with a description of placed standard cells,
+usually packed together at minimum spacing, and places metal routes over the
+standard cells.
+
+WWW: http://opencircuitdesign.com/netgen/
