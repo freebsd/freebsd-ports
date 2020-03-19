@@ -92,6 +92,7 @@
     SUBDIR += qcad
     SUBDIR += qelectrotech
     SUBDIR += qmls
+    SUBDIR += qrouter
     SUBDIR += repsnapper
     SUBDIR += rubygem-gdsii
     SUBDIR += scotch
