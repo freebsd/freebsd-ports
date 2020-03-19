@@ -1,0 +1,17 @@
+bin/inetcomp
+bin/netcomp
+bin/netgen
+bin/ntk2adl
+bin/ntk2xnf
+lib/netgen/doc/netgen.doc
+lib/netgen/ntk2adl.sh
+lib/netgen/python/consoletext.py
+lib/netgen/python/helpwindow.py
+lib/netgen/python/lvs_help.txt
+lib/netgen/python/lvs_manager.py
+lib/netgen/python/tksimpledialog.py
+lib/netgen/python/tooltip.py
+lib/netgen/python/treeviewsplit.py
+lib/netgen/spice
+lib/netgen/spice.bot
+lib/netgen/spice.top
