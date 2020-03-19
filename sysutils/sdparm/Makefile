@@ -11,6 +11,8 @@ COMMENT=	Utilities to access SCSI device parameters
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_FreeBSD_11=	Lack of NVME_STATUS_GET_SCT
+
 USE_LDCONFIG=	yes
 USES=		shebangfix tar:tgz
 GNU_CONFIGURE=	yes
