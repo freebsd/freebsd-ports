@@ -1,3 +1,7 @@
+bin/c3270
+bin/pr3287
+bin/s3270
+bin/tcl3270
 bin/x3270
 bin/x3270if
 etc/x3270/ibm_hosts
@@ -23,3 +27,5 @@ man/man1/x3270-script.man.gz
 man/man1/x3270.man.gz
 man/man1/x3270if.man.gz
 man/man5/ibm_hosts.man.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.dbcs
