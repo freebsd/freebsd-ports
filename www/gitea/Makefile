@@ -2,7 +2,7 @@
 
 PORTNAME=	gitea
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.2
+DISTVERSION=	1.11.3
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/go-gitea/gitea/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	gitea-src-${DISTVERSION}
@@ -28,6 +28,7 @@ GROUPS=		git
 
 OPTIONS_DEFINE=	BINDATA PAM SQLITE
 OPTIONS_DEFAULT=	PAM SQLITE
+OPTIONS_SUB=	yes
 
 BINDATA_DESC=	Build a single monolithic binary, with all assets included
 PAM_DESC=	Enable support for PAM
@@ -38,13 +39,6 @@ SQLITE_VARS=	GO_TAGS+="sqlite sqlite_unlock_notify"
 
 .include <bsd.port.options.mk>
 
-# active option removes files from plist
-.if ${PORT_OPTIONS:MBINDATA}
-PLIST_SUB+=	BINDATA="@comment "
-.else
-PLIST_SUB+=	BINDATA=""
-.endif
-
 .if ${OPSYS} == FreeBSD
 DAEMONARGS=	-S -l \$${gitea_facility} -s \$${gitea_priority} -T \$${name}
 .else
@@ -53,11 +47,13 @@ DAEMONARGS=	-f
 
 SUB_LIST+=	DAEMONARGS="${DAEMONARGS}"
 
+SSP_UNSAFE=	true
 # use sane defaults for path, overriden with actual PREFIX in start script
 EXTRA_LDFLAGS=	-X code.gitea.io/gitea/modules/setting.CustomPath=${PREFIX}/etc/gitea
 EXTRA_LDFLAGS+=	-X code.gitea.io/gitea/modules/setting.AppWorkPath=${PREFIX}/share/gitea
 # Default LDFLAGS are incompatible with build
-MAKE_ARGS=	GOPATH=${WRKDIR} TAGS="${GO_TAGS}" LDFLAGS="${EXTRA_LDFLAGS}"
+MAKE_ENV=	LDFLAGS="${LDFLAGS} ${EXTRA_LDFLAGS}"
+MAKE_ARGS=	GOPATH=${WRKDIR} TAGS="${GO_TAGS}"
 ALL_TARGET=	backend
 MAKE_JOBS_UNSAFE=	yes
 
