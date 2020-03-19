@@ -71,6 +71,7 @@
     SUBDIR += magic
     SUBDIR += meshdev
     SUBDIR += netgen
+    SUBDIR += netgen-lvs
     SUBDIR += ngspice_rework
     SUBDIR += nvc
     SUBDIR += opencascade

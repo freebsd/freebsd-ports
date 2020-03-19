@@ -1,0 +1,12 @@
+--- python/Makefile.orig	2020-02-24 21:24:48 UTC
++++ python/Makefile
+@@ -46,6 +46,9 @@ $(DESTDIR)${INSTALL_PYDIR}/lvs_help.txt: lvs_help.txt
+ 
+ install: install-tcl
+ 
++$(DESTDIR)${INSTALL_PYDIR}:
++	mkdir -p $(DESTDIR)${INSTALL_PYDIR}
++
+ install-tcl: $(DESTDIR)${INSTALL_PYDIR} $(DESTDIR)${INSTALL_PYDIR}/consoletext.py \
+ 	$(DESTDIR)${INSTALL_PYDIR}/helpwindow.py $(DESTDIR)${INSTALL_PYDIR}/lvs_manager.py \
+ 	$(DESTDIR)${INSTALL_PYDIR}/treeviewsplit.py $(DESTDIR)${INSTALL_PYDIR}/tksimpledialog.py \
