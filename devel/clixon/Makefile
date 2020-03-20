@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	clixon
-PORTVERSION=	4.1.0
+PORTVERSION=	4.3.3
 CATEGORIES=	devel
 
 MAINTAINER=	dcornejo@netgate.com
-COMMENT=	CLIgen is a Command-Line Interface generator
+COMMENT=	YANG-based toolchain including CLI, NETCONF and RESTCONF interfaces
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
