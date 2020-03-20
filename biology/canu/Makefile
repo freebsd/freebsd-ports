@@ -2,8 +2,7 @@
 
 PORTNAME=		canu
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.9
-PORTREVISION=		1
+DISTVERSION=		2.0
 CATEGORIES=		biology java perl5
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -41,9 +40,6 @@ pre-configure:
 		-e 's|-funroll-loops||g' \
 		-e 's|-fexpensive-optimizations||g' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} \
-		-e 's|\\$$bin/mhap-|${JAVAJARDIR}/mhap-|g' \
-		${WRKSRC}/pipelines/canu/OverlapMhap.pm
 	@${REINPLACE_CMD} \
 		-e 's|RealBin/lib|RealBin/../${SITE_PERL_REL}/canu|g' \
 		${WRKSRC}/pipelines/canu.pl
