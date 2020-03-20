@@ -282,7 +282,6 @@
     SUBDIR += roxterm
     SUBDIR += rsibreak
     SUBDIR += rubygem-gnome
-    SUBDIR += rxvt
     SUBDIR += rxvt-unicode
     SUBDIR += sakura
     SUBDIR += sbxkb

@@ -17,7 +17,6 @@
     SUBDIR += bspwm
     SUBDIR += cage
     SUBDIR += chamfer
-    SUBDIR += clementine-wm
     SUBDIR += compiz
     SUBDIR += compiz-plugins-extra
     SUBDIR += compiz-plugins-main
