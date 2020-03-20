@@ -41,9 +41,9 @@ COMMON_GDB_CONFIGURE_ARGS= \
 	 --disable-gprof \
 	 --with-libexpat \
 	 --with-libexpat-prefix=${WORLD_LIB} \
+	 --with-libiconv-prefix=${WORLD_LIB} \
 	 --with-lzma=no \
 	 --with-system-gdbinit=${INTERIM_PREFIX}/xxxx/${TARGET}/lib/gdbinit \
-	 --with-lzma=no \
 	 --with-gdb-datadir='$${prefix}/${TARGET}/share/gdb' \
 	 --with-pkgversion="${PKGVERSION}"
 
