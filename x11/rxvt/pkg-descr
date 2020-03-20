@@ -1,7 +1,0 @@
-Rxvt is an xterm replacement which uses a little less memory, and
-is suitable for use on machines with small memories. Tek4010 support
-is removed.
-
-Modifications were made by Rob Nation (nation@rocket.sanders.lockheed.com)
-to make it a little more compact, and to add and remove certain
-features.
