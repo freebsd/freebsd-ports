@@ -1,6 +1,0 @@
-Supybot is an IRC bot written in Python; its goals are primarily clarity,
-utility, and flexibility. It comes with an extensive collection of plugins
-to do most tasks people might want a bot to do, and then some; plus a
-easy framework to create your own plugins.
-
-WWW: http://www.supybot.com/

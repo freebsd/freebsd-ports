@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-You must add the required users and service accounts to the pdagent
-group to permit write access to /var/db/pdagent.
-EOM
-}
-]

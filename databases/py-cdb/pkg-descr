@@ -1,9 +1,0 @@
-python-cdb is D. J. Bernstein's constant database library adapted as a
-python extension module.
-
-cdb files are mappings of keys to values, designed for wickedly fast
-lookups and atomic updates.  This module mimics the normal cdb
-utilities (cdb(get|dump|make)) via convenient high-level Python
-objects.
-
-WWW: http://pilcrow.madison.wi.us/#pycdb
