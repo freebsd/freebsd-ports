@@ -1,6 +1,6 @@
---- configure.orig	2018-02-08 19:22:54 UTC
+--- configure.orig	2019-12-12 02:59:10 UTC
 +++ configure
-@@ -3248,10 +3248,10 @@ fi
+@@ -3261,10 +3261,10 @@ fi
  # curses probe
  if test "$curses" != "no" ; then
    if test "$mingw32" = "yes" ; then
@@ -13,3 +13,62 @@
      curses_lib_list="$($pkg_config --libs ncursesw 2>/dev/null):-lncursesw:-lcursesw"
    fi
    curses_found=no
+@@ -3381,7 +3381,7 @@ for i in $glib_modules; do
+         glib_libs=$($pkg_config --libs $i)
+         QEMU_CFLAGS="$glib_cflags $QEMU_CFLAGS"
+         LIBS="$glib_libs $LIBS"
+-        libs_qga="$glib_libs $libs_qga"
++        libs_qga="$glib_libs -lintl $libs_qga"
+     else
+         error_exit "glib-$glib_req_ver $i is required to compile QEMU"
+     fi
+@@ -5517,27 +5517,30 @@ if ( [ "$linux_user" = yes ] || [ "$bsd_user" = yes ] 
+     cat > $TMPC <<EOF
+     int main(void) { return 0; }
+ EOF
+-    textseg_ldflags="-Wl,-Ttext-segment=$textseg_addr"
++    textseg_ldflags="-Wl,--image-base=$textseg_addr"
+     if ! compile_prog "" "$textseg_ldflags"; then
+-      # In case ld does not support -Ttext-segment, edit the default linker
+-      # script via sed to set the .text start addr.  This is needed on FreeBSD
+-      # at least.
+-      if ! $ld --verbose >/dev/null 2>&1; then
+-        error_exit \
+-            "We need to link the QEMU user mode binaries at a" \
+-            "specific text address. Unfortunately your linker" \
+-            "doesn't support either the -Ttext-segment option or" \
+-            "printing the default linker script with --verbose." \
+-            "If you don't want the user mode binaries, pass the" \
+-            "--disable-user option to configure."
+-      fi
++      textseg_ldflags="-Wl,-Ttext-segment=$textseg_addr"
++      if ! compile_prog "" "$textseg_ldflags"; then
++        # In case ld does not support -Ttext-segment, edit the default linker
++        # script via sed to set the .text start addr.  This is needed on FreeBSD
++        # at least.
++        if ! $ld --verbose >/dev/null 2>&1; then
++          error_exit \
++              "We need to link the QEMU user mode binaries at a" \
++              "specific text address. Unfortunately your linker" \
++              "doesn't support either the -Ttext-segment option or" \
++              "printing the default linker script with --verbose." \
++              "If you don't want the user mode binaries, pass the" \
++              "--disable-user option to configure."
++        fi
+ 
+-      $ld --verbose | sed \
+-        -e '1,/==================================================/d' \
+-        -e '/==================================================/,$d' \
+-        -e "s/[.] = [0-9a-fx]* [+] SIZEOF_HEADERS/. = $textseg_addr + SIZEOF_HEADERS/" \
+-        -e "s/__executable_start = [0-9a-fx]*/__executable_start = $textseg_addr/" > config-host.ld
+-      textseg_ldflags="-Wl,-T../config-host.ld"
++        $ld --verbose | sed \
++          -e '1,/==================================================/d' \
++          -e '/==================================================/,$d' \
++          -e "s/[.] = [0-9a-fx]* [+] SIZEOF_HEADERS/. = $textseg_addr + SIZEOF_HEADERS/" \
++          -e "s/__executable_start = [0-9a-fx]*/__executable_start = $textseg_addr/" > config-host.ld
++        textseg_ldflags="-Wl,-T../config-host.ld"
++      fi
+     fi
+   fi
+ fi
