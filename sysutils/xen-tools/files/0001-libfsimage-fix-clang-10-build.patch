@@ -1,0 +1,52 @@
+From e54c433adf01a242bf6e9fe9378a2c83d3f8b419 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Fri, 13 Mar 2020 09:45:57 +0100
+Subject: [PATCH] libfsimage: fix clang 10 build
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+clang complains with:
+
+fsys_zfs.c:826:2: error: converting the enum constant to a boolean [-Werror,-Wint-in-bool-context]
+        VERIFY_DN_TYPE(dn, DMU_OT_PLAIN_FILE_CONTENTS);
+        ^
+/wrkdirs/usr/ports/sysutils/xen-tools/work/xen-4.13.0/tools/libfsimage/zfs/../../../tools/libfsimage/zfs/fsys_zfs.h:74:11: note: expanded from macro 'VERIFY_DN_TYPE'
+        if (type && (dnp)->dn_type != type) { \
+                 ^
+1 error generated.
+
+Fix this by not forcing an implicit conversion of the enum into a
+boolean and instead comparing with the 0 enumerator.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Acked-by: Wei Liu <wl@xen.org>
+---
+ tools/libfsimage/zfs/fsys_zfs.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/tools/libfsimage/zfs/fsys_zfs.h b/tools/libfsimage/zfs/fsys_zfs.h
+index 5cd627dbac..721972a05a 100644
+--- a/tools/libfsimage/zfs/fsys_zfs.h
++++ b/tools/libfsimage/zfs/fsys_zfs.h
+@@ -71,7 +71,7 @@ typedef	unsigned int size_t;
+  * Can only be used in functions returning non-0 for failure.
+  */
+ #define	VERIFY_DN_TYPE(dnp, type) \
+-	if (type && (dnp)->dn_type != type) { \
++	if (type != DMU_OT_NONE && (dnp)->dn_type != type) { \
+ 		return (ERR_FSYS_CORRUPT); \
+ 	}
+ 
+@@ -80,7 +80,7 @@ typedef	unsigned int size_t;
+  * Can only be used in functions returning 0 for failure.
+  */
+ #define	VERIFY_OS_TYPE(osp, type) \
+-	if (type && (osp)->os_type != type) { \
++	if (type != DMU_OST_NONE && (osp)->os_type != type) { \
+ 		errnum = ERR_FSYS_CORRUPT; \
+ 		return (0); \
+ 	}
+-- 
+2.25.0
+
