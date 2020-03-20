@@ -4,4 +4,8 @@ Using Clixon you can create CLI, RESTCONF, and NETCONF interfaces to manage a
 configuration database. It also provides the mechanism to validate and configure
 system components.
 
+clixon 4.3 is a large upgrade from earlier versions, notably it is much stricter
+about the validity of XML and api-paths. Please see the CHANGELOG that can be
+found at https://github.com/clicon/clixon/blob/release-4.3/CHANGELOG.md
+
 WWW: http://www.clicon.org/
