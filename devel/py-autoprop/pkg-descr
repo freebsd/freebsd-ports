@@ -1,0 +1,11 @@
+Properties are a feature in python that allow accessor functions (i.e. getters
+and setters) to masquerade as regular attributes. This makes it possible to
+provide transparent APIs for classes that need to cache results, lazily load
+data, maintain invariants, or react in any other way to attribute access.
+
+Unfortunately, making a property requires an annoying amount of boilerplate
+code. There are a few ways to do it, but the most common and most succinct
+requires you to decorate two functions (with two different decorators) and
+to type the name of the attribute three times:
+
+WWW: https://pypi.org/project/autoprop/
