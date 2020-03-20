@@ -1,0 +1,10 @@
+This package provides a handful of functions you can use to print debugging
+information. There are basically two things that are useful about these
+functions. First, they're only one or two letters each, so you can type
+them really quickly while debugging. Second, they append the name of the
+calling function to whatever you're printing, so you can easily see where
+each message came from (and you don't have to hunt down print statements
+once you finish debugging).
+
+WWW: https://github.com/kalekundert/debugtools
+WWW: https://pypi.org/projects/debugtools
