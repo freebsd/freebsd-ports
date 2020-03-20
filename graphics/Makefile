@@ -869,6 +869,7 @@
     SUBDIR += py-termtosvg
     SUBDIR += py-toyplot
     SUBDIR += py-traitsui
+    SUBDIR += py-vecrec
     SUBDIR += py-visvis
     SUBDIR += py-wand
     SUBDIR += py-webcolors
