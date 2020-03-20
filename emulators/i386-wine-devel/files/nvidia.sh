@@ -1,6 +1,7 @@
 #!/bin/sh
 # Copyright 2010 to 2015 David Naylor <dbn@FreeBSD.org>
 # Copyright 2012 Jan Beich <jbeich@tormail.org>
+# Copyright 2020 Lorenzo Salvadore <salvadore@FreeBSD.org>
 #       All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -74,6 +75,8 @@
 #  - remove support for old pkg_ tools
 # Version 1.16 - 2017/06/04
 #  - use https download site
+# Version 1.17 - 2020/03/02
+#  - do not do anything if nvidia-driver version >= 440.59
 
 set -e
 
@@ -167,6 +170,11 @@ echo "=> Detected nvidia-driver: ${NV}"
 
 NVIDIA=${NV}
 NV=`echo ${NV} | cut -f 1 -d _ | cut -f 1 -d ,`
+
+if [ ! "$(pkg version -t ${NV} 440.59)" == "<" ]
+then
+  terminate 0 "nvidia-driver 440.59+ already includes 32-bit drivers: nothing to do"
+fi
 
 if [ ! -f NVIDIA-FreeBSD-x86-${NV}.tar.gz ] || !(tar -tf NVIDIA-FreeBSD-x86-${NV}.tar.gz > /dev/null 2>&1)
 then
