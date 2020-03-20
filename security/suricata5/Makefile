@@ -14,6 +14,9 @@ COMMENT=	High Performance Network IDS, IPS and Security Monitoring engine(v5)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	security/suricata is already at version 5
+EXPIRATION_DATE=2020-04-20
+
 BUILD_DEPENDS=	rustc:lang/${RUST_DEFAULT} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 LIB_DEPENDS=	libjansson.so:devel/jansson \
