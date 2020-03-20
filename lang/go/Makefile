@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.14
-PORTREVISION=	2
+PORTVERSION=	1.14.1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://golang.org/dl/ \
@@ -67,7 +66,7 @@ GOARM_armv7=	7
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == aarch64 && ${OSVERSION} < 1200000
-IGNORE=	aarch64 support requires FreeBSD 12.0 or newer
+#IGNORE=	aarch64 support requires FreeBSD 12.0 or newer
 .endif
 
 post-patch:
