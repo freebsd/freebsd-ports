@@ -1,7 +1,7 @@
 diff -ru eclipse.platform.ui/bundles/org.eclipse.e4.ui.swt.gtk/pom.xml eclipse.platform.ui/bundles/org.eclipse.e4.ui.swt.gtk/pom.xml
 --- eclipse.platform.ui/bundles/org.eclipse.e4.ui.swt.gtk/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.ui/bundles/org.eclipse.e4.ui.swt.gtk/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -37,9 +37,9 @@
+@@ -33,9 +33,9 @@
            <resolver>p2</resolver>
            <environments>
              <environment>

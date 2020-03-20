@@ -14,7 +14,7 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.x
           download-size="0"
           install-size="0"
           version="0.0.0"
-@@ -355,9 +355,9 @@
+@@ -362,9 +362,9 @@
           unpack="false"/>
  
     <plugin
@@ -27,7 +27,7 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.x
           download-size="0"
           install-size="0"
           version="0.0.0"
-@@ -394,9 +394,9 @@
+@@ -401,9 +401,9 @@
           unpack="false"/>
  
     <plugin
@@ -40,7 +40,7 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.x
           download-size="0"
           install-size="0"
           version="0.0.0"
-@@ -458,9 +458,9 @@
+@@ -465,9 +465,9 @@
           unpack="false"/>
  
     <plugin

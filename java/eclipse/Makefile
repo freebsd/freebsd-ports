@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	eclipse
-PORTVERSION=	4.14
+PORTVERSION=	4.15
 CATEGORIES=	java devel
 
-# Update to git-tag on git.eclipse.org
-ECLIPSE_TAG=	R4_14
-ECLIPSE_TSTAMP=	20191220-0429
+# Update to eclipse.platform.releng.aggregator.git git-tag on git.eclipse.org
+ECLIPSE_TAG=	R4_15
+ECLIPSE_TSTAMP=	20200318-1047
 
 ECLIPSE_SUFX=	${ECLIPSE_TAG}.tar.xz
 ECLIPSE_MODULES=jdt/eclipse.jdt \
@@ -45,7 +45,7 @@ DISTFILES+=	${M:C/.*\///}-${ECLIPSE_SUFX}:${M:C/[\.\/]//g}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jonc@chen.org.nz
-COMMENT=	Eclipse IDE 2019-12
+COMMENT=	Eclipse IDE 2020-03
 
 LICENSE=	EPL
 
@@ -62,7 +62,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	daemonblade
 GH_PROJECT=	eclipse-maven-repo
 
-USE_JAVA=	8
+USE_JAVA=	11+
 
 DESKTOP_ENTRIES="Eclipse" \
 		"${COMMENT}" \

@@ -67,7 +67,7 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
    <version>1.2.300-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
-@@ -37,9 +37,9 @@
+@@ -33,9 +33,9 @@
            <resolver>p2</resolver>
            <environments>
              <environment>
@@ -79,7 +79,7 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
              </environment>
            </environments>
          </configuration>
-@@ -54,7 +54,7 @@
+@@ -50,7 +50,7 @@
          <property>
            <!-- This has to be hardcoded. Profiles are not allowed to use pom defined properties :-( -->
            <name>native</name>
@@ -88,7 +88,7 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
          </property>
        </activation>
        <build>
-@@ -67,10 +67,10 @@
+@@ -63,10 +63,10 @@
                  <phase>process-resources</phase>
                  <configuration>
                    <target>

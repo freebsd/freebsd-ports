@@ -124,7 +124,7 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library
 diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak
 --- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak	0000-00-00 00:00:00.000000000 +0000
-@@ -101,16 +101,18 @@
+@@ -103,16 +103,18 @@
  WEBKIT_OBJECTS = swt.o webkitgtk.o webkitgtk_structs.o webkitgtk_stats.o webkitgtk_custom.o
  GLX_OBJECTS = swt.o glx.o glx_structs.o glx_stats.o
  
@@ -146,7 +146,7 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library
  
  ifndef NO_STRIP
  	# -s = Remove all symbol table and relocation information from the executable.
-@@ -253,10 +255,6 @@
+@@ -255,10 +257,6 @@
  	cp $(ALL_SWT_LIBS) $(OUTPUT_DIR)
  ifeq ($(BUILD_WEBKIT2EXTENSION),yes)
  	@# Copy webextension into it's own folder, but create folder first.
@@ -174,15 +174,15 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/ecl
 diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java
 --- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java	0000-00-00 00:00:00.000000000 +0000
-@@ -157,7 +157,7 @@
+@@ -120,7 +120,7 @@
  	 * https://www.nczonline.net/blog/2009/01/05/what-determines-that-a-script-is-long-running/
  	 * https://stackoverflow.com/questions/3030024/maximum-execution-time-for-javascript
  	 */
--	static final int ASYNC_EXEC_TIMEOUT_MS = 10000; // Webkit2.
+-	static final int ASYNC_EXEC_TIMEOUT_MS = 10000;
 +	static final int ASYNC_EXEC_TIMEOUT_MS = 100; // Dirty hack for webkit issues on FreeBSD
  
- 	static boolean bug522733FirstInstanceCreated = false; //Webkit2 workaround for Bug 522733
- 
+ 	/** Workaround for bug 522733 */
+ 	static boolean bug522733FirstInstanceCreated = false;
 diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf
 --- eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000

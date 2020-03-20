@@ -6,4 +6,4 @@
 #
 # $FreeBSD$
 #
-exec %%DATADIR%%/eclipse "$@"
+JAVA_VERSION="%%JAVA_VERSION%%" exec %%DATADIR%%/eclipse "$@"
