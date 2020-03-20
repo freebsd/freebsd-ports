@@ -13,4 +13,4 @@ Features:
  - Sending arbitrary data payloads
  - Collecting return values from signal receivers
 
-WWW: http://discorporate.us/projects/Blinker/
+WWW: https://pythonhosted.org/blinker/
