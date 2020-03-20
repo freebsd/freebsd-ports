@@ -14481,3 +14481,21 @@ www/npm-node8|www/npm-node10|2020-03-10|Removed, slave of www/node8
 www/yarn-node8|www/yarn-node10|2020-03-10|Removed, slave of www/node8
 security/swatch|security/swatchdog|2020-03-15|Rename to match upstream naming
 lang/go14||2020-03-17|Unused in the ports tree
+devel/py-Products.validation||2020-03-20|Has expired: Old, uses EOLed python27
+devel/py-Acquisition||2020-03-20|Has expired: Old, uses EOLed python27
+devel/py-Products.contentmigration||2020-03-20|Has expired: Old, uses EOLed python27
+textproc/py-zope.app.locales||2020-03-20|Has expired: Old, uses EOLed python27
+devel/py-Products.LDAPUserFolder||2020-03-20|Has expired: Old, uses EOLed python27
+devel/py-zLOG||2020-03-20|Has expired: Old, uses EOLed python27
+textproc/py-ltxml||2020-03-20|Has expired: Unmaintained, uses EOLed python27
+x11-toolkits/flowcanvas||2020-03-20|Has expired: Unmaintained, uses EOLed python27
+audio/raul||2020-03-20|Has expired: Unmaintained, uses EOLed python27
+audio/py-vorbis||2020-03-20|Has expired: Unmaintained, uses EOLed python27
+databases/py-cdb||2020-03-20|Has expired: Unmaintained, uses EOLed python27
+devel/py-libplist||2020-03-20|Has expired: Unmaintained, uses EOLed python27
+devel/py-mwlib||2020-03-20|Has expired: Unmaintained, uses EOLed python27
+emulators/openmsx||2020-03-20|Has expired: Unmaintained, uses EOLed python27
+graphics/py-soya3d||2020-03-20|Has expired: Unmaintained, uses EOLed python27
+irc/py-supybot||2020-03-20|Has expired: Unmaintained, uses EOLed python27
+net-mgmt/py-pdagent||2020-03-20|Has expired: Unmaintained, uses EOLed python27
+textproc/pychm||2020-03-20|Has expired: Unmaintained, uses EOLed python27

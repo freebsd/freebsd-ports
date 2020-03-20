@@ -1287,7 +1287,6 @@
     SUBDIR += py-libxml2
     SUBDIR += py-libxslt
     SUBDIR += py-license-expression
-    SUBDIR += py-ltxml
     SUBDIR += py-m2r
     SUBDIR += py-mako
     SUBDIR += py-markdown
@@ -1416,12 +1415,10 @@
     SUBDIR += py-xml-default-dict
     SUBDIR += py-xmldiff
     SUBDIR += py-yapf
-    SUBDIR += py-zope.app.locales
     SUBDIR += py-zope.i18nmessageid
     SUBDIR += py-zope.structuredtext
     SUBDIR += py-zope.tal
     SUBDIR += py-zpt
-    SUBDIR += pychm
     SUBDIR += qprint
     SUBDIR += qrcodegen
     SUBDIR += qstardict

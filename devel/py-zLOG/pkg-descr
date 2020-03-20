@@ -1,6 +1,0 @@
-This package provides a general logging facility that, at this point,
-is just a small shim over Python's logging module. Therefore, unless
-you need to support a legacy package from the Zope 2 world, you're
-probably better off using Python's logging module.
-
-WWW: https://pypi.org/project/zLOG/

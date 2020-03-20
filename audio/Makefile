@@ -667,7 +667,6 @@
     SUBDIR += py-soundscrape
     SUBDIR += py-speechrecognition
     SUBDIR += py-tagpy
-    SUBDIR += py-vorbis
     SUBDIR += py-wavio
     SUBDIR += py-webrtcvad
     SUBDIR += py-xmms2
@@ -678,7 +677,6 @@
     SUBDIR += qsampler
     SUBDIR += qsynth
     SUBDIR += quimup
-    SUBDIR += raul
     SUBDIR += rawrec
     SUBDIR += re
     SUBDIR += rebot3
