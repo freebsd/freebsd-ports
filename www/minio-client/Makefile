@@ -2,6 +2,7 @@
 
 PORTNAME=	minio-client
 PORTVERSION=	${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	jhixson@FreeBSD.org
