@@ -12,10 +12,10 @@ you update your ports collection, before attempting any port upgrades.
   The libxkbcommon library (x11/libxkbcommon), used to handle keyboards
   in some applications, most notably kde and wayland, have been switched
   to use evdev rules by default.  Some keys, most notably arrow keys, 
-  may not work in applications using libxkbcommon, if you use
+  may not work in applications using libxkbcommon if you are using
   xf86-input-keyboard rather than xf86-input-libinput.
   If you have trouble with the keyboard keys, and if /var/log/Xorg.*.log
-  shows that the "kbd" or "keyboard" driver is beind used, you need to
+  shows that the "kbd" or "keyboard" driver is being used, you need to
   switch to legacy rules by setting the environment variable
   XKB_DEFAULT_RULES to xorg.
   This switch is make to match the default configuration on FreeBSD 12.1 and
