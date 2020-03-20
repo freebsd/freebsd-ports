@@ -35,7 +35,7 @@ load_rc_config $name
 : ${telegraf_group:="%%TELEGRAF_GROUP%%"}
 : ${telegraf_flags:="--quiet"}
 : ${telegraf_conf:="%%PREFIX%%/etc/${name}.conf"}
-: ${telegraph_confdir:=""}
+: ${telegraf_confdir:=""}
 : ${telegraf_options:="${telegraf_flags} --config=${telegraf_conf}"}
 
 if [ -n "${telegraf_confdir}" ]; then

@@ -3,6 +3,7 @@
 
 PORTNAME=	telegraf
 DISTVERSION=	1.13.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -10,7 +11,7 @@ COMMENT=	Time-series data collection
 
 LICENSE=	MIT
 
-ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 
 USES=		go
 
@@ -126,7 +127,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		safchain:ethtool:f459e2d:ethtool/vendor/github.com/safchain/ethtool \
 		samuel:go-zookeeper:c4fab1a:go_zookeeper/vendor/github.com/samuel/go-zookeeper \
 		satori:go.uuid:b2ce238:go0uuid/vendor/github.com/satori/go.uuid \
-		shirou:gopsutil:v2.19.11:gopsutil/vendor/github.com/shirou/gopsutil \
+		shirou:gopsutil:v2.20.1:gopsutil/vendor/github.com/shirou/gopsutil \
 		shirou:w32:bb4de01:w32/vendor/github.com/shirou/w32 \
 		sirupsen:logrus:v1.0.5:logrus/vendor/github.com/sirupsen/logrus \
 		soniah:gosnmp:v1.22.0:gosnmp/vendor/github.com/soniah/gosnmp \
@@ -146,10 +147,10 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/vendor/cloud.google.com
 		yuin:gopher-lua:46796da:gopher_lua/vendor/github.com/yuin/gopher-lua \
 		census-instrumentation:opencensus-go:v0.17.0:opencensus_go/vendor/go.opencensus.io \
 		golang:crypto:87dc89f:crypto/vendor/golang.org/x/crypto \
-		golang:net:a680a1e:net/vendor/golang.org/x/net \
+		golang:net:83d349e:net/vendor/golang.org/x/net \
 		golang:oauth2:d2e6202:oauth2/vendor/golang.org/x/oauth2 \
 		golang:sync:42b3178:sync/vendor/golang.org/x/sync \
-		golang:sys:51ab0e2:sys/vendor/golang.org/x/sys \
+		golang:sys:fead790:sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.0:text/vendor/golang.org/x/text \
 		googleapis:google-api-go-client:19ff876:googleapis/vendor/google.golang.org/api \
 		golang:appengine:v1.1.0:appengine/vendor/google.golang.org/appengine \
@@ -192,7 +193,8 @@ TELEGRAF_LOGDIR=/var/log/${PORTNAME}
 post-patch:
 	${CP} ${WRKSRC_gopsutil}/disk/disk_freebsd_386.go ${WRKSRC_gopsutil}/disk/disk_freebsd_arm.go
 	${CP} ${WRKSRC_gopsutil}/cpu/cpu_freebsd_386.go ${WRKSRC_gopsutil}/cpu/cpu_freebsd_arm.go
-#	${LN} -s . ${WRKSRC_go_syslog}/v2
+	${RM} -r ${SRKSRC}/vendor/github.com/miekg/dns/vendor/golang.org/x/net
+	${CP} -R ${WRKDIR}/net-83d349e/* ${WRKSRC}/vendor/github.com/miekg/dns/vendor/golang.org/x/net
 
 post-install:
 	${MKDIR} ${STAGEDIR}${TELEGRAF_LOGDIR}
