@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+If arrow keys don't work under X11 switch to legacy rules e.g.,
+
+For sh/bash/ksh/zsh run and (optionally) add into ~/.profile:
+  export XKB_DEFAULT_RULES=xorg
+
+For csh/tcsh run and (optionally) add into ~/.login:
+  setenv XKB_DEFAULT_RULES xorg
+EOM
+}
+]

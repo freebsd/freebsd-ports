@@ -2,6 +2,7 @@
 
 PORTNAME=	libxkbcommon
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://xkbcommon.org/download/
 DIST_SUBDIR=	xorg/lib
@@ -16,8 +17,7 @@ RUN_DEPENDS=	xkeyboard-config>0:x11/xkeyboard-config
 
 USES=		bison meson pkgconfig tar:xz xorg
 USE_XORG=	xcb
-MESON_ARGS=	-Ddefault-rules=xorg \
-		-Denable-docs=false \
+MESON_ARGS=	-Denable-docs=false \
 		-Denable-wayland=false \
 		-Dx-locale-root="${PREFIX}/lib/X11/locale"
 
