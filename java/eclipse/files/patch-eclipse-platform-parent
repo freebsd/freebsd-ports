@@ -5,11 +5,11 @@ diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
        'eclipiserun-repo' repository, such as for computing .api-descriptions and
        generating API Tools reports.
      -->
--    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.14-I-builds/</eclipserun-repo>
-+    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.14/</eclipserun-repo>
+-    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.15-I-builds/</eclipserun-repo>
++    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.15/</eclipserun-repo>
      
--    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.14-I-builds</comparator.repo>
-+    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.14</comparator.repo>
+-    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.15-I-builds</comparator.repo>
++    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.15</comparator.repo>
  
      <!--
        NOTE: this EMF and ECF URL must match exactly what is in the eclipse-sdk-prereqs.target file.
@@ -36,8 +36,8 @@ diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
            For maintenance streams should always be "M-builds".
            Ideally, this value would be provided by the environment, see bug 489789.
          -->
--        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.14-I-builds</eclipse-p2-repo.url>
-+        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.14</eclipse-p2-repo.url>
+-        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.15-I-builds</eclipse-p2-repo.url>
++        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.15</eclipse-p2-repo.url>
        </properties>
        <repositories>
          <repository>
