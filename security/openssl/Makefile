@@ -87,6 +87,7 @@ SSL3_DESC=	SSLv3 (unsafe)
 TLS1_DESC=	TLSv1.0 (requires TLS1_1, TLS1_2)
 TLS1_1_DESC=	TLSv1.1 (requires TLS1_2)
 TLS1_2_DESC=	TLSv1.2
+WEAK-SSL-CIPHERS_DESC=	Weak cipher support (unsafe)
 ZLIB_DESC=	zlib compression support
 
 # Upstream default disabled options
