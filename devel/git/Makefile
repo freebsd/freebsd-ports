@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-DISTVERSION=	2.25.1
+DISTVERSION=	2.25.2
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -17,6 +17,8 @@ COMMENT?=	Distributed source code management tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		autoreconf gmake iconv shebangfix ssl tar:xz
+
 CONFLICTS_INSTALL?=	git-gui-[0-9]* git-lite-[0-9]*
 
 USERS=		git_daemon
@@ -25,7 +27,6 @@ GROUPS=		git_daemon
 SUB_FILES=	pkg-message gitweb.conf
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gmake iconv shebangfix ssl tar:xz
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ARGS+=	DEVELOPER=
@@ -90,7 +91,6 @@ SEND_EMAIL_IMPLIES=	PERL
 SEND_EMAIL_RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
 			p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
-ICONV_USES=		iconv
 ICONV_MAKE_ARGS_OFF=	NO_ICONV=1
 
 CURL_MAKE_ENV=		CURLDIR=${LOCALBASE}
