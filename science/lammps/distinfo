@@ -1,3 +1,3 @@
-TIMESTAMP = 1583339620
-SHA256 (lammps-lammps-2020.03.3-stable_3Mar2020_GH0.tar.gz) = a1a2e3e763ef5baecea258732518d75775639db26e60af1634ab385ed89224d1
-SIZE (lammps-lammps-2020.03.3-stable_3Mar2020_GH0.tar.gz) = 126001870
+TIMESTAMP = 1584659808
+SHA256 (lammps-lammps-2020.03.19-patch_19Mar2020_GH0.tar.gz) = b3540778337cd751c026f02b261816996ab2cf2adcbef3612301eea67cca8b7e
+SIZE (lammps-lammps-2020.03.19-patch_19Mar2020_GH0.tar.gz) = 123617251
