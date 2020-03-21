@@ -2,6 +2,7 @@
 
 PORTNAME=	pulseaudio-qt
 DISTVERSION=	1.2
+PORTREVISION=	1
 MASTER_SITES=	KDE/stable/${PORTNAME}
 CATEGORIES=	audio kde
 
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 
 USES=		cmake compiler:c++11-lib cpe gettext kde:5 \
 		pkgconfig qt:5 shebangfix tar:xz
-USE_KDE=	coreaddons ecm doctools i18n
+USE_KDE=	ecm_build
 USE_QT=		core dbus gui \
 		buildtools_build qmake_build
 
