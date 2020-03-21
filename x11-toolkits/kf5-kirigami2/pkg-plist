@@ -12,7 +12,7 @@ lib/cmake/KF5Kirigami2/KF5Kirigami2Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5Kirigami2/KF5Kirigami2Targets.cmake
 lib/libKF5Kirigami2.so
 lib/libKF5Kirigami2.so.5
-lib/libKF5Kirigami2.so.5.67.0
+lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_Kirigami2.pri
 %%QT_QMLDIR%%/org/kde/kirigami.2/AboutPage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/AbstractApplicationHeader.qml
@@ -114,6 +114,7 @@ lib/libKF5Kirigami2.so.5.67.0
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/qmldir
 share/kdevappwizard/templates/kirigami.tar.bz2
 share/locale/ar/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/ast/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/cs/LC_MESSAGES/libkirigami2plugin_qt.qm

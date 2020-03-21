@@ -775,6 +775,9 @@ share/icons/oxygen/base/128x128/places/user-home.png
 share/icons/oxygen/base/128x128/places/user-identity.png
 share/icons/oxygen/base/128x128/places/user-trash-full.png
 share/icons/oxygen/base/128x128/places/user-trash.png
+share/icons/oxygen/base/128x128/status/data-error.png
+share/icons/oxygen/base/128x128/status/data-information.png
+share/icons/oxygen/base/128x128/status/data-warning.png
 share/icons/oxygen/base/128x128/status/dialog-error.png
 share/icons/oxygen/base/128x128/status/dialog-information.png
 share/icons/oxygen/base/128x128/status/dialog-password.png
@@ -1444,6 +1447,7 @@ share/icons/oxygen/base/16x16/actions/photos-amarok.png
 share/icons/oxygen/base/16x16/actions/player-time.png
 share/icons/oxygen/base/16x16/actions/player-volume.png
 share/icons/oxygen/base/16x16/actions/playlist-sort.png
+share/icons/oxygen/base/16x16/actions/plugins.png
 share/icons/oxygen/base/16x16/actions/polygon-add-nodes.png
 share/icons/oxygen/base/16x16/actions/polygon-merge-nodes.png
 share/icons/oxygen/base/16x16/actions/postalcode.png
@@ -2504,6 +2508,9 @@ share/icons/oxygen/base/16x16/status/battery-charging.png
 share/icons/oxygen/base/16x16/status/battery-low.png
 share/icons/oxygen/base/16x16/status/battery-missing.png
 share/icons/oxygen/base/16x16/status/cloudstatus.png
+share/icons/oxygen/base/16x16/status/data-error.png
+share/icons/oxygen/base/16x16/status/data-information.png
+share/icons/oxygen/base/16x16/status/data-warning.png
 share/icons/oxygen/base/16x16/status/dialog-error.png
 share/icons/oxygen/base/16x16/status/dialog-information.png
 share/icons/oxygen/base/16x16/status/dialog-password.png
@@ -3217,6 +3224,7 @@ share/icons/oxygen/base/22x22/actions/player-time.png
 share/icons/oxygen/base/22x22/actions/player-volume-muted.png
 share/icons/oxygen/base/22x22/actions/player-volume.png
 share/icons/oxygen/base/22x22/actions/playlist-sort.png
+share/icons/oxygen/base/22x22/actions/plugins.png
 share/icons/oxygen/base/22x22/actions/polygon-add-nodes.png
 share/icons/oxygen/base/22x22/actions/polygon-merge-nodes.png
 share/icons/oxygen/base/22x22/actions/postalcode.png
@@ -4323,6 +4331,9 @@ share/icons/oxygen/base/22x22/status/battery-charging.png
 share/icons/oxygen/base/22x22/status/battery-low.png
 share/icons/oxygen/base/22x22/status/battery-missing.png
 share/icons/oxygen/base/22x22/status/cloudstatus.png
+share/icons/oxygen/base/22x22/status/data-error.png
+share/icons/oxygen/base/22x22/status/data-information.png
+share/icons/oxygen/base/22x22/status/data-warning.png
 share/icons/oxygen/base/22x22/status/dialog-error.png
 share/icons/oxygen/base/22x22/status/dialog-information.png
 share/icons/oxygen/base/22x22/status/dialog-password.png
@@ -5381,6 +5392,7 @@ share/icons/oxygen/base/32x32/actions/page-simple.png
 share/icons/oxygen/base/32x32/actions/page-zoom.png
 share/icons/oxygen/base/32x32/actions/player-time.png
 share/icons/oxygen/base/32x32/actions/player-volume.png
+share/icons/oxygen/base/32x32/actions/plugins.png
 share/icons/oxygen/base/32x32/actions/preferences-activities.png
 share/icons/oxygen/base/32x32/actions/preflight-verifier.png
 share/icons/oxygen/base/32x32/actions/process-stop.png
@@ -6400,6 +6412,9 @@ share/icons/oxygen/base/32x32/status/battery-charging-low.png
 share/icons/oxygen/base/32x32/status/battery-charging.png
 share/icons/oxygen/base/32x32/status/battery-low.png
 share/icons/oxygen/base/32x32/status/battery-missing.png
+share/icons/oxygen/base/32x32/status/data-error.png
+share/icons/oxygen/base/32x32/status/data-information.png
+share/icons/oxygen/base/32x32/status/data-warning.png
 share/icons/oxygen/base/32x32/status/dialog-error.png
 share/icons/oxygen/base/32x32/status/dialog-information.png
 share/icons/oxygen/base/32x32/status/dialog-password.png
@@ -6851,6 +6866,7 @@ share/icons/oxygen/base/48x48/actions/office-chart-scatter.png
 share/icons/oxygen/base/48x48/actions/page-zoom.png
 share/icons/oxygen/base/48x48/actions/player-time.png
 share/icons/oxygen/base/48x48/actions/player-volume.png
+share/icons/oxygen/base/48x48/actions/plugins.png
 share/icons/oxygen/base/48x48/actions/preferences-activities.png
 share/icons/oxygen/base/48x48/actions/preflight-verifier.png
 share/icons/oxygen/base/48x48/actions/process-stop.png
@@ -7816,6 +7832,9 @@ share/icons/oxygen/base/48x48/status/battery-charging-low.png
 share/icons/oxygen/base/48x48/status/battery-charging.png
 share/icons/oxygen/base/48x48/status/battery-low.png
 share/icons/oxygen/base/48x48/status/battery-missing.png
+share/icons/oxygen/base/48x48/status/data-error.png
+share/icons/oxygen/base/48x48/status/data-information.png
+share/icons/oxygen/base/48x48/status/data-warning.png
 share/icons/oxygen/base/48x48/status/dialog-error.png
 share/icons/oxygen/base/48x48/status/dialog-information.png
 share/icons/oxygen/base/48x48/status/dialog-password.png
@@ -8652,6 +8671,9 @@ share/icons/oxygen/base/64x64/places/user-home.png
 share/icons/oxygen/base/64x64/places/user-identity.png
 share/icons/oxygen/base/64x64/places/user-trash-full.png
 share/icons/oxygen/base/64x64/places/user-trash.png
+share/icons/oxygen/base/64x64/status/data-error.png
+share/icons/oxygen/base/64x64/status/data-information.png
+share/icons/oxygen/base/64x64/status/data-warning.png
 share/icons/oxygen/base/64x64/status/dialog-error.png
 share/icons/oxygen/base/64x64/status/dialog-information.png
 share/icons/oxygen/base/64x64/status/dialog-password.png

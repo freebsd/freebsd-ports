@@ -1,5 +1,6 @@
 bin/kbuildsycoca5
 etc/xdg/menus/kf5-applications.menu
+include/KF5/KService/KApplicationTrader
 include/KF5/KService/KAutostart
 include/KF5/KService/KDBusServiceStarter
 include/KF5/KService/KMimeTypeTrader
@@ -15,6 +16,7 @@ include/KF5/KService/KSycoca
 include/KF5/KService/KSycocaEntry
 include/KF5/KService/KSycocaType
 include/KF5/KService/KToolInvocation
+include/KF5/KService/kapplicationtrader.h
 include/KF5/KService/kautostart.h
 include/KF5/KService/kdbusservicestarter.h
 include/KF5/KService/kmimetypetrader.h

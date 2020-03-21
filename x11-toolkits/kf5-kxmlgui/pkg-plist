@@ -52,6 +52,7 @@ lib/libexec/kf5/ksendbugmail
 share/locale/af/LC_MESSAGES/kxmlgui5.mo
 share/locale/ar/LC_MESSAGES/kxmlgui5.mo
 share/locale/as/LC_MESSAGES/kxmlgui5.mo
+share/locale/ast/LC_MESSAGES/kxmlgui5.mo
 share/locale/be/LC_MESSAGES/kxmlgui5.mo
 share/locale/be@latin/LC_MESSAGES/kxmlgui5.mo
 share/locale/bg/LC_MESSAGES/kxmlgui5.mo

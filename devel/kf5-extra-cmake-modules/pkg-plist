@@ -87,6 +87,7 @@ share/ECM/test-modules/test_execute_and_compare.cmake
 share/ECM/toolchain/Android.cmake
 share/ECM/toolchain/ECMAndroidDeployQt.cmake
 share/ECM/toolchain/deployment-file.json.in
+share/ECM/toolchain/deployment-file-qt514.json.in
 share/ECM/toolchain/hasMainSymbol.cmake
 share/ECM/toolchain/specifydependencies.cmake
 %%HELP%%%%DOCSDIR%%/ExtraCMakeModules.qch

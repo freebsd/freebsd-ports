@@ -78,6 +78,7 @@ share/kservices5/katepart.desktop
 share/kservicetypes5/ktexteditor.desktop
 share/kservicetypes5/ktexteditorplugin.desktop
 share/locale/af/LC_MESSAGES/ktexteditor5.mo
+share/locale/ast/LC_MESSAGES/ktexteditor5.mo
 share/locale/ar/LC_MESSAGES/ktexteditor5.mo
 share/locale/be/LC_MESSAGES/ktexteditor5.mo
 share/locale/bg/LC_MESSAGES/ktexteditor5.mo
