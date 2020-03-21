@@ -2,7 +2,7 @@
 
 PORTNAME=	skrooge
 DISTVERSION=	2.21.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -15,11 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 LIB_DEPENDS=	libofx.so:finance/libofx \
-		libqca-qt5.so:devel/qca \
 		libsqlcipher.so:databases/sqlcipher
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
-		gettext grantlee:5 kde:5 pkgconfig python:3.4+ qt:5 shared-mime-info \
+		gettext grantlee:5 kde:5 pkgconfig python:3.4+ qca qt:5 shared-mime-info \
 		shebangfix sqlite:3 tar:xz
 USE_KDE=	activities archive attica5 auth bookmarks codecs completion \
 		config configwidgets coreaddons crash dbusaddons \

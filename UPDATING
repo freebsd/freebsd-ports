@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200320
+  AFFECTS: users of devel/qca
+  AUTHOR: kde@FreeBSD.org
+
+  New versions of devel/qca stopped supporting OpenSSL < 1.1.
+  For this reason devel/qca-legacy has been added, which is
+  held back at an older version until FreeBSD 11 goes EOL.
+
+  Ports depending on devel/qca should stop adding direct LIB_DEPENDS
+  and switch to depending on it via USES=qca.
+
+  FreeBSD 11 users might want to run something like
+
+      pkg set -o devel/qca:devel/qca-legacy
+
 20200320:
   AFFECTS: users of x11/libxkbcommon
   AUTHOR: zeising@FreeBSD.org

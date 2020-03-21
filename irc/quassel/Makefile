@@ -3,7 +3,7 @@
 
 PORTNAME=	quassel
 PORTVERSION=	0.13.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -39,7 +39,7 @@ CLIENT_LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt \
 CORE_DESC=		Quassel core server (for use with client)
 CORE_CMAKE_BOOL=	WANT_CORE
 CORE_USE=		qt=script,sql
-CORE_LIB_DEPENDS=	libqca-qt5.so:devel/qca
+CORE_USES=		qca
 CORE_SUB_FILES=		pkg-message
 CORE_VARS=		use_rc_subr=quasselcore \
 			users=quasselcore \
@@ -50,7 +50,7 @@ CORE_PLIST_FILES=	bin/quasselcore
 MONO_DESC=		Quassel standalone (monolithic binary: core+client combined)
 MONO_CMAKE_BOOL=	WANT_MONO
 MONO_USE=		qt=script,sql
-MONO_LIB_DEPENDS=	libqca-qt5.so:devel/qca
+MONO_USES=		qca
 
 NLS_USE=		QT=linguisttools_build
 

@@ -4,7 +4,7 @@ PORTNAME=	amarok
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.70
 PKGVERSIONSUFFIX=	-g${GH_TAGNAME}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,13 +17,12 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libfftw3.so:math/fftw3 \
 		liblastfm5.so:audio/liblastfm-qt5 \
 		libqjson-qt5.so:devel/qjson \
-		libqca-qt5.so:devel/qca \
 		libtag.so:audio/taglib \
 		libtag-extras.so:audio/taglib-extras \
 		liblz4.so:archivers/liblz4
 
 USES=		cmake compiler:c++11-lang desktop-file-utils \
-		kde:5 mysql:client,embedded pkgconfig qt:5 shebangfix ssl xorg
+		kde:5 mysql:client,embedded pkgconfig qca qt:5 shebangfix ssl xorg
 
 USE_QT=		core concurrent declarative dbus gui location network phonon4 \
 		quickcontrols2 script scripttools sql svg webchannel \

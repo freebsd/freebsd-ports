@@ -23,13 +23,12 @@ LIB_DEPENDS=	libchm.so:misc/chmlib \
 		libqmobipocket.so:graphics/kdegraphics-mobipocket \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
-		libqca-qt5.so:devel/qca \
 		libspectre.so:print/libspectre \
 		libtiff.so:graphics/tiff \
 		libzip.so:archivers/libzip
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
-		gettext jpeg kde:5 pkgconfig qt:5 tar:xz
+		gettext jpeg kde:5 pkgconfig qca qt:5 tar:xz
 USE_KDE=	activities archive auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons ecm emoticons i18n \
 		iconthemes init itemmodels itemviews jobwidgets js \

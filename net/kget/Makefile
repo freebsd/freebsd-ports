@@ -2,6 +2,7 @@
 
 PORTNAME=	kget
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,10 +15,9 @@ LIB_DEPENDS=    libKF5Torrent.so:net-p2p/libktorrent  \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgme-cpp \
-		libqca-qt5.so:devel/qca \
 		libqgpgme.so:security/gpgme-qt5
 
-USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 \
+USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qca qt:5 \
 		shebangfix sqlite tar:xz
 
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
