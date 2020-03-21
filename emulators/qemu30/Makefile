@@ -13,6 +13,9 @@ COMMENT?=	QEMU CPU Emulator
 
 LICENSE=	GPLv2
 
+DEPRECATED=	No longer maintained by upstream
+EXPIRATION_DATE=2020-04-21
+
 LIB_DEPENDS?=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
