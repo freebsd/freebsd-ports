@@ -1,0 +1,5 @@
+bin/FAHClient
+bin/FAHCoreWrapper
+@dir(fahclient,fahclient,) %%ETCDIR%%
+@sample(fahclient,fahclient,) %%ETCDIR%%/config.xml.sample
+@dir(fahclient,fahclient,) %%FAHCLIENT_WORK_DIR%%
