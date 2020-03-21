@@ -16,4 +16,5 @@ bin/nncp-rm
 bin/nncp-stat
 bin/nncp-toss
 bin/nncp-xfer
+@dir etc/newsyslog.conf.d
 @sample etc/nncp.conf.sample etc/newsyslog.conf.d/nncp.conf
