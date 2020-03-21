@@ -28,7 +28,7 @@ LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 SUB_FILES=	pkg-message
 
-USES=		bison:build cmake:insource,noninja compiler:c++11-lib cpe libedit ncurses \
+USES=		bison:build cmake:insource,noninja cpe libedit ncurses \
 		shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh
@@ -161,6 +161,12 @@ ZMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
 SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
 .else
 SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
+.endif
+
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+USES+=	compiler:gcc-c++11-lib
+.else
+USES+=	compiler:c++11-lib
 .endif
 
 .include <bsd.port.pre.mk>
