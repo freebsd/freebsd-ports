@@ -1,4 +1,4 @@
---- configure.orig	2018-12-11 17:44:34 UTC
+--- configure.orig	2019-10-01 22:31:44 UTC
 +++ configure
 @@ -393,7 +393,7 @@ DSOSUF=".so"
  LDFLAGS_SHARED="-shared"
@@ -9,7 +9,7 @@
  datadir="\${prefix}/share"
  firmwarepath="\${prefix}/share/qemu-firmware"
  qemu_docdir="\${prefix}/share/doc/qemu"
-@@ -469,6 +469,9 @@ numa=""
+@@ -471,6 +471,9 @@ numa=""
  tcmalloc="no"
  jemalloc="no"
  replication="yes"
@@ -19,7 +19,7 @@
  vxhs=""
  bochs="yes"
  cloop="yes"
-@@ -1097,6 +1100,10 @@ for opt do
+@@ -1099,6 +1102,10 @@ for opt do
    ;;
    --enable-vnc-png) vnc_png="yes"
    ;;
@@ -30,7 +30,7 @@
    --disable-slirp) slirp="no"
    ;;
    --disable-vde) vde="no"
-@@ -2860,6 +2867,14 @@ if ! check_include "ifaddrs.h" ; then
+@@ -2862,6 +2869,14 @@ if ! check_include "ifaddrs.h" ; then
  fi
  
  ##########################################
@@ -45,7 +45,7 @@
  # VTE probe
  
  if test "$vte" != "no"; then
-@@ -4466,11 +4481,6 @@ fi
+@@ -4515,11 +4530,6 @@ fi
  if test "$docs" != "no" ; then
    if has makeinfo && has pod2man; then
      docs=yes
@@ -57,7 +57,7 @@
    fi
  fi
  
-@@ -4984,7 +4994,51 @@ if test "$debug_stack_usage" = "yes"; then
+@@ -5033,7 +5043,51 @@ if test "$debug_stack_usage" = "yes"; then
    fi
  fi
  
@@ -109,7 +109,57 @@
  ##########################################
  # check if we have open_by_handle_at
  
-@@ -6005,6 +6059,7 @@ echo "Audio drivers     $audio_drv_list"
+@@ -5922,27 +5976,30 @@ if ( [ "$linux_user" = yes ] || [ "$bsd_user" = yes ] 
+     cat > $TMPC <<EOF
+     int main(void) { return 0; }
+ EOF
+-    textseg_ldflags="-Wl,-Ttext-segment=$textseg_addr"
++    textseg_ldflags="-Wl,--image-base=$textseg_addr"
+     if ! compile_prog "" "$textseg_ldflags"; then
+-      # In case ld does not support -Ttext-segment, edit the default linker
+-      # script via sed to set the .text start addr.  This is needed on FreeBSD
+-      # at least.
+-      if ! $ld --verbose >/dev/null 2>&1; then
+-        error_exit \
+-            "We need to link the QEMU user mode binaries at a" \
+-            "specific text address. Unfortunately your linker" \
+-            "doesn't support either the -Ttext-segment option or" \
+-            "printing the default linker script with --verbose." \
+-            "If you don't want the user mode binaries, pass the" \
+-            "--disable-user option to configure."
+-      fi
++      textseg_ldflags="-Wl,-Ttext-segment=$textseg_addr"
++      if ! compile_prog "" "$textseg_ldflags"; then
++        # In case ld does not support -Ttext-segment, edit the default linker
++        # script via sed to set the .text start addr.  This is needed on FreeBSD
++        # at least.
++        if ! $ld --verbose >/dev/null 2>&1; then
++          error_exit \
++              "We need to link the QEMU user mode binaries at a" \
++              "specific text address. Unfortunately your linker" \
++              "doesn't support either the -Ttext-segment option or" \
++              "printing the default linker script with --verbose." \
++              "If you don't want the user mode binaries, pass the" \
++              "--disable-user option to configure."
++        fi
+ 
+-      $ld --verbose | sed \
+-        -e '1,/==================================================/d' \
+-        -e '/==================================================/,$d' \
+-        -e "s/[.] = [0-9a-fx]* [+] SIZEOF_HEADERS/. = $textseg_addr + SIZEOF_HEADERS/" \
+-        -e "s/__executable_start = [0-9a-fx]*/__executable_start = $textseg_addr/" > config-host.ld
+-      textseg_ldflags="-Wl,-T../config-host.ld"
++        $ld --verbose | sed \
++          -e '1,/==================================================/d' \
++          -e '/==================================================/,$d' \
++          -e "s/[.] = [0-9a-fx]* [+] SIZEOF_HEADERS/. = $textseg_addr + SIZEOF_HEADERS/" \
++          -e "s/__executable_start = [0-9a-fx]*/__executable_start = $textseg_addr/" > config-host.ld
++        textseg_ldflags="-Wl,-T../config-host.ld"
++      fi
+     fi
+   fi
+ fi
+@@ -6054,6 +6111,7 @@ echo "Audio drivers     $audio_drv_list"
  echo "Block whitelist (rw) $block_drv_rw_whitelist"
  echo "Block whitelist (ro) $block_drv_ro_whitelist"
  echo "VirtFS support    $virtfs"
@@ -117,7 +167,7 @@
  echo "Multipath support $mpath"
  echo "VNC support       $vnc"
  if test "$vnc" = "yes" ; then
-@@ -6240,6 +6295,15 @@ fi
+@@ -6289,6 +6347,15 @@ fi
  if test "$profiler" = "yes" ; then
    echo "CONFIG_PROFILER=y" >> $config_host_mak
  fi
@@ -133,7 +183,7 @@
  if test "$slirp" = "yes" ; then
    echo "CONFIG_SLIRP=y" >> $config_host_mak
    echo "CONFIG_SMBD_COMMAND=\"$smbd\"" >> $config_host_mak
-@@ -6470,6 +6534,9 @@ fi
+@@ -6519,6 +6586,9 @@ fi
  # if this macro is set.
  if test "$have_fsxattr" = "yes" ; then
      echo "HAVE_FSXATTR=y" >> $config_host_mak
