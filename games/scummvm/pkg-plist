@@ -30,7 +30,7 @@ share/pixmaps/scummvm.xpm
 %%DATADIR%%/sky.cpt
 %%DATADIR%%/supernova.dat
 %%DATADIR%%/teenagent.dat
-%%DATADIR%%/titanic.dat
+%%MP3%%%%DATADIR%%/titanic.dat
 %%DATADIR%%/tony.dat
 %%DATADIR%%/toon.dat
 %%DATADIR%%/translations.dat

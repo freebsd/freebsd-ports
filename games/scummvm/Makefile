@@ -2,9 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	scummvm
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	games emulators
 MASTER_SITES=	http://www.scummvm.org/frs/scummvm/${PORTVERSION}/
+
+PATCH_SITES=	https://github.com/scummvm/scummvm/commit/
+PATCHFILES=	8593a9e1e4e8dd1f5dfac9b1304a417df9a742e6.patch:-p1 \
+		68758a879e0c8ecc0d40962516d4e808aa4e15e5.patch:-p1
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Interpreter for several adventure games
@@ -17,7 +21,7 @@ LIB_DEPENDS=	libfaad.so:audio/faad \
 		libmpeg2.so:multimedia/libmpeg2 \
 		libtheoradec.so:multimedia/libtheora
 
-USES=		gmake gnome jpeg sdl tar:xz
+USES=		gmake gnome iconv jpeg sdl tar:xz
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl2
 INSTALLS_ICONS=	yes
@@ -35,6 +39,7 @@ LDFLAGS+=	-lpthread
 
 OPTIONS_DEFINE=		DOCS FLAC FLUIDSYNTH MP3 MT32EMU PNG SNDIO VORBIS
 OPTIONS_DEFAULT=	MP3 MT32EMU PNG VORBIS
+OPTIONS_SUB=		yes
 
 MT32EMU_DESC=	MT-32 emulator
 
@@ -42,7 +47,8 @@ VORBIS_LIB_DEPENDS=	libogg.so:audio/libogg \
 			libvorbis.so:audio/libvorbis
 VORBIS_CONFIGURE_ON=	--with-ogg-prefix=${LOCALBASE} \
 			--with-vorbis-prefix=${LOCALBASE}
-VORBIS_CONFIGURE_OFF=	--disable-vorbis
+VORBIS_CONFIGURE_OFF=	--disable-vorbis \
+			--disable-ogg
 
 MP3_LIB_DEPENDS=	libmad.so:audio/libmad
 MP3_CONFIGURE_ON=	--with-mad-prefix=${LOCALBASE}
