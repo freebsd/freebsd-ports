@@ -1,4 +1,4 @@
---- configure.orig	2019-04-14 21:25:18 UTC
+--- configure.orig	2019-04-12 03:28:28 UTC
 +++ configure
 @@ -375,6 +375,7 @@ hax="no"
  hvf="no"
@@ -209,7 +209,57 @@
          libusb="yes"
          libusb_cflags=$($pkg_config --cflags libusb-1.0)
          libusb_libs=$($pkg_config --libs libusb-1.0)
-@@ -5914,6 +6014,7 @@ echo "Audio drivers     $audio_drv_list"
+@@ -5779,27 +5879,30 @@ if ( [ "$linux_user" = yes ] || [ "$bsd_user" = yes ] 
+     cat > $TMPC <<EOF
+     int main(void) { return 0; }
+ EOF
+-    textseg_ldflags="-Wl,-Ttext-segment=$textseg_addr"
++    textseg_ldflags="-Wl,--image-base=$textseg_addr"
+     if ! compile_prog "" "$textseg_ldflags"; then
+-      # In case ld does not support -Ttext-segment, edit the default linker
+-      # script via sed to set the .text start addr.  This is needed on FreeBSD
+-      # at least.
+-      if ! $ld --verbose >/dev/null 2>&1; then
+-        error_exit \
+-            "We need to link the QEMU user mode binaries at a" \
+-            "specific text address. Unfortunately your linker" \
+-            "doesn't support either the -Ttext-segment option or" \
+-            "printing the default linker script with --verbose." \
+-            "If you don't want the user mode binaries, pass the" \
+-            "--disable-user option to configure."
+-      fi
++      textseg_ldflags="-Wl,-Ttext-segment=$textseg_addr"
++      if ! compile_prog "" "$textseg_ldflags"; then
++        # In case ld does not support -Ttext-segment, edit the default linker
++        # script via sed to set the .text start addr.  This is needed on FreeBSD
++        # at least.
++        if ! $ld --verbose >/dev/null 2>&1; then
++          error_exit \
++              "We need to link the QEMU user mode binaries at a" \
++              "specific text address. Unfortunately your linker" \
++              "doesn't support either the -Ttext-segment option or" \
++              "printing the default linker script with --verbose." \
++              "If you don't want the user mode binaries, pass the" \
++              "--disable-user option to configure."
++        fi
+ 
+-      $ld --verbose | sed \
+-        -e '1,/==================================================/d' \
+-        -e '/==================================================/,$d' \
+-        -e "s/[.] = [0-9a-fx]* [+] SIZEOF_HEADERS/. = $textseg_addr + SIZEOF_HEADERS/" \
+-        -e "s/__executable_start = [0-9a-fx]*/__executable_start = $textseg_addr/" > config-host.ld
+-      textseg_ldflags="-Wl,-T../config-host.ld"
++        $ld --verbose | sed \
++          -e '1,/==================================================/d' \
++          -e '/==================================================/,$d' \
++          -e "s/[.] = [0-9a-fx]* [+] SIZEOF_HEADERS/. = $textseg_addr + SIZEOF_HEADERS/" \
++          -e "s/__executable_start = [0-9a-fx]*/__executable_start = $textseg_addr/" > config-host.ld
++        textseg_ldflags="-Wl,-T../config-host.ld"
++      fi
+     fi
+   fi
+ fi
+@@ -5914,6 +6017,7 @@ echo "Audio drivers     $audio_drv_list"
  echo "Block whitelist (rw) $block_drv_rw_whitelist"
  echo "Block whitelist (ro) $block_drv_ro_whitelist"
  echo "VirtFS support    $virtfs"
@@ -217,7 +267,7 @@
  echo "Multipath support $mpath"
  echo "VNC support       $vnc"
  if test "$vnc" = "yes" ; then
-@@ -5949,6 +6050,7 @@ if test "$tcg" = "yes" ; then
+@@ -5949,6 +6053,7 @@ if test "$tcg" = "yes" ; then
  fi
  echo "malloc trim support $malloc_trim"
  echo "RDMA support      $rdma"
@@ -225,7 +275,7 @@
  echo "fdt support       $fdt"
  echo "membarrier        $membarrier"
  echo "preadv support    $preadv"
-@@ -6143,6 +6245,15 @@ fi
+@@ -6143,6 +6248,15 @@ fi
  if test "$profiler" = "yes" ; then
    echo "CONFIG_PROFILER=y" >> $config_host_mak
  fi
@@ -241,7 +291,7 @@
  if test "$slirp" = "yes" ; then
    echo "CONFIG_SLIRP=y" >> $config_host_mak
    echo "CONFIG_SMBD_COMMAND=\"$smbd\"" >> $config_host_mak
-@@ -6384,6 +6495,9 @@ fi
+@@ -6384,6 +6498,9 @@ fi
  if test "$have_fsxattr" = "yes" ; then
      echo "HAVE_FSXATTR=y" >> $config_host_mak
  fi
@@ -251,7 +301,7 @@
  if test "$have_copy_file_range" = "yes" ; then
      echo "HAVE_COPY_FILE_RANGE=y" >> $config_host_mak
  fi
-@@ -6703,6 +6817,10 @@ echo "CONFIG_TRACE_FILE=$trace_file" >> $config_host_m
+@@ -6703,6 +6820,10 @@ echo "CONFIG_TRACE_FILE=$trace_file" >> $config_host_m
  if test "$rdma" = "yes" ; then
    echo "CONFIG_RDMA=y" >> $config_host_mak
    echo "RDMA_LIBS=$rdma_libs" >> $config_host_mak
