@@ -2,6 +2,7 @@
 
 PORTNAME=	xournalpp
 DISTVERSION=	1.0.17
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org

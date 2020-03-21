@@ -3,7 +3,7 @@
 
 PORTNAME=	pdfviewer
 PORTVERSION=	0.0.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	print
 MASTER_SITES=	http://www.defora.org/os/download/download/4431/
 PKGNAMEPREFIX=	deforaos-

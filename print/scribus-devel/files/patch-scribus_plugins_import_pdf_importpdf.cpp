@@ -1,4 +1,4 @@
---- scribus/plugins/import/pdf/importpdf.cpp.orig	2020-01-18 17:59:00 UTC
+--- scribus/plugins/import/pdf/importpdf.cpp.orig	2020-03-15 14:15:45 UTC
 +++ scribus/plugins/import/pdf/importpdf.cpp
 @@ -75,7 +75,7 @@ PdfPlug::PdfPlug(ScribusDoc* doc, int flags)
  QImage PdfPlug::readThumbnail(const QString& fName)
@@ -54,6 +54,22 @@
  						return false;
  					}
  					pageString = optImp->getPagesString();
+@@ -839,13 +834,13 @@ bool PdfPlug::convert(const QString& fn)
+ 								if (names.isDict())
+ 								{
+ 									LinkAction *linkAction = nullptr;
+-									linkAction = LinkAction::parseAction(&names, pdfDoc->getCatalog()->getBaseURI());
++									linkAction = LinkAction::parseAction(&names, pdfDoc->getCatalog()->getBaseURI()).get();
+ 									if (linkAction)
+ 									{
+ 										LinkJavaScript *jsa = (LinkJavaScript*)linkAction;
+ 										if (jsa->isOk())
+ 										{
+-											QString script = UnicodeParsedString(jsa->getScript());
++											QString script = QString::fromStdString(jsa->getScript());
+ 											if (script.startsWith("this."))
+ 											{
+ 												script.remove(0, 5);
 @@ -908,7 +903,7 @@ bool PdfPlug::convert(const QString& fn)
  		}
  		delete pdfDoc;

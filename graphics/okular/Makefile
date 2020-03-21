@@ -2,7 +2,7 @@
 
 PORTNAME=	okular
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics kde kde-applications
 
 PATCH_SITES=	https://invent.kde.org/kde/okular/-/commit/

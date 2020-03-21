@@ -1,5 +1,167 @@
---- scribus/plugins/import/pdf/slaoutput.cpp.orig	2020-01-18 17:22:17 UTC
+--- scribus/plugins/import/pdf/slaoutput.cpp.orig	2020-03-15 14:15:45 UTC
 +++ scribus/plugins/import/pdf/slaoutput.cpp
+@@ -324,7 +324,7 @@ LinkAction* SlaOutputDev::SC_getAdditionalAction(const
+ 		{
+ 			Object actionObject = additionalActionsObject.dictLookup(key);
+ 			if (actionObject.isDict())
+-				linkAction = LinkAction::parseAction(&actionObject, pdfDoc->getCatalog()->getBaseURI());
++				linkAction = LinkAction::parseAction(&actionObject, pdfDoc->getCatalog()->getBaseURI()).get();
+ 		}
+ 	}
+ 	return linkAction;
+@@ -455,7 +455,7 @@ bool SlaOutputDev::handleLinkAnnot(Annot* annota, doub
+ 			POPPLER_CONST GooString *ndst = gto->getNamedDest();
+ 			if (ndst)
+ 			{
+-				LinkDest *dstn = pdfDoc->findDest(ndst);
++				LinkDest *dstn = pdfDoc->findDest(ndst).get();
+ 				if (dstn)
+ 				{
+ 					if (dstn->getKind() == destXYZ)
+@@ -499,7 +499,7 @@ bool SlaOutputDev::handleLinkAnnot(Annot* annota, doub
+ 			POPPLER_CONST GooString *ndst = gto->getNamedDest();
+ 			if (ndst)
+ 			{
+-				LinkDest *dstn = pdfDoc->findDest(ndst);
++				LinkDest *dstn = pdfDoc->findDest(ndst).get();
+ 				if (dstn)
+ 				{
+ 					if (dstn->getKind() == destXYZ)
+@@ -517,7 +517,7 @@ bool SlaOutputDev::handleLinkAnnot(Annot* annota, doub
+ 	{
+ 		LinkURI *gto = (LinkURI*)act;
+ 		validLink = true;
+-		fileName = UnicodeParsedString(gto->getURI());
++		fileName = QString::fromStdString(gto->getURI());
+ 	}
+ 	if (validLink)
+ 	{
+@@ -930,7 +930,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 			if (jsa->isOk())
+ 			{
+ 				ite->annotation().setActionType(1);
+-				ite->annotation().setAction(UnicodeParsedString(jsa->getScript()));
++				ite->annotation().setAction(QString::fromStdString(jsa->getScript()));
+ 			}
+ 		}
+ 		else if (Lact->getKind() == actionGoTo)
+@@ -967,7 +967,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 				POPPLER_CONST GooString *ndst = gto->getNamedDest();
+ 				if (ndst)
+ 				{
+-					LinkDest *dstn = pdfDoc->findDest(ndst);
++					LinkDest *dstn = pdfDoc->findDest(ndst).get();
+ 					if (dstn)
+ 					{
+ 						if (dstn->getKind() == destXYZ)
+@@ -1019,7 +1019,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 				POPPLER_CONST GooString *ndst = gto->getNamedDest();
+ 				if (ndst)
+ 				{
+-					LinkDest *dstn = pdfDoc->findDest(ndst);
++					LinkDest *dstn = pdfDoc->findDest(ndst).get();
+ 					if (dstn)
+ 					{
+ 						if (dstn->getKind() == destXYZ)
+@@ -1039,7 +1039,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 		else if (Lact->getKind() == actionUnknown)
+ 		{
+ 			LinkUnknown *uno = (LinkUnknown*)Lact;
+-			QString actString = UnicodeParsedString(uno->getAction());
++			QString actString = QString::fromStdString(uno->getAction());
+ 			if (actString == "ResetForm")
+ 			{
+ 				ite->annotation().setActionType(4);
+@@ -1083,7 +1083,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 		{
+ 			LinkNamed *uno = (LinkNamed*)Lact;
+ 			ite->annotation().setActionType(10);
+-			ite->annotation().setAction(UnicodeParsedString(uno->getName()));
++			ite->annotation().setAction(QString::fromStdString(uno->getName()));
+ 		}
+ 		else
+ 			qDebug() << "Found unsupported Action of type" << Lact->getKind();
+@@ -1096,7 +1096,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 			LinkJavaScript *jsa = (LinkJavaScript*)Aact;
+ 			if (jsa->isOk())
+ 			{
+-				ite->annotation().setD_act(UnicodeParsedString(jsa->getScript()));
++				ite->annotation().setD_act(QString::fromStdString(jsa->getScript()));
+ 				ite->annotation().setAAact(true);
+ 			}
+ 		}
+@@ -1110,7 +1110,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 			LinkJavaScript *jsa = (LinkJavaScript*)Aact;
+ 			if (jsa->isOk())
+ 			{
+-				ite->annotation().setE_act(UnicodeParsedString(jsa->getScript()));
++				ite->annotation().setE_act(QString::fromStdString(jsa->getScript()));
+ 				ite->annotation().setAAact(true);
+ 			}
+ 		}
+@@ -1124,7 +1124,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 			LinkJavaScript *jsa = (LinkJavaScript*)Aact;
+ 			if (jsa->isOk())
+ 			{
+-				ite->annotation().setX_act(UnicodeParsedString(jsa->getScript()));
++				ite->annotation().setX_act(QString::fromStdString(jsa->getScript()));
+ 				ite->annotation().setAAact(true);
+ 			}
+ 		}
+@@ -1138,7 +1138,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 			LinkJavaScript *jsa = (LinkJavaScript*)Aact;
+ 			if (jsa->isOk())
+ 			{
+-				ite->annotation().setFo_act(UnicodeParsedString(jsa->getScript()));
++				ite->annotation().setFo_act(QString::fromStdString(jsa->getScript()));
+ 				ite->annotation().setAAact(true);
+ 			}
+ 		}
+@@ -1152,7 +1152,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 			LinkJavaScript *jsa = (LinkJavaScript*)Aact;
+ 			if (jsa->isOk())
+ 			{
+-				ite->annotation().setBl_act(UnicodeParsedString(jsa->getScript()));
++				ite->annotation().setBl_act(QString::fromStdString(jsa->getScript()));
+ 				ite->annotation().setAAact(true);
+ 			}
+ 		}
+@@ -1166,7 +1166,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 			LinkJavaScript *jsa = (LinkJavaScript*)Aact;
+ 			if (jsa->isOk())
+ 			{
+-				ite->annotation().setC_act(UnicodeParsedString(jsa->getScript()));
++				ite->annotation().setC_act(QString::fromStdString(jsa->getScript()));
+ 				ite->annotation().setAAact(true);
+ 			}
+ 		}
+@@ -1180,7 +1180,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 			LinkJavaScript *jsa = (LinkJavaScript*)Aact;
+ 			if (jsa->isOk())
+ 			{
+-				ite->annotation().setF_act(UnicodeParsedString(jsa->getScript()));
++				ite->annotation().setF_act(QString::fromStdString(jsa->getScript()));
+ 				ite->annotation().setAAact(true);
+ 				ite->annotation().setFormat(5);
+ 			}
+@@ -1195,7 +1195,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 			LinkJavaScript *jsa = (LinkJavaScript*)Aact;
+ 			if (jsa->isOk())
+ 			{
+-				ite->annotation().setK_act(UnicodeParsedString(jsa->getScript()));
++				ite->annotation().setK_act(QString::fromStdString(jsa->getScript()));
+ 				ite->annotation().setAAact(true);
+ 				ite->annotation().setFormat(5);
+ 			}
+@@ -1210,7 +1210,7 @@ void SlaOutputDev::handleActions(PageItem* ite, AnnotW
+ 			LinkJavaScript *jsa = (LinkJavaScript*)Aact;
+ 			if (jsa->isOk())
+ 			{
+-				ite->annotation().setV_act(UnicodeParsedString(jsa->getScript()));
++				ite->annotation().setV_act(QString::fromStdString(jsa->getScript()));
+ 				ite->annotation().setAAact(true);
+ 			}
+ 		}
 @@ -1224,16 +1224,7 @@ void SlaOutputDev::startDoc(PDFDoc *doc, XRef *xrefA, 
  	catalog = catA;
  	pdfDoc = doc;

@@ -2,7 +2,7 @@
 
 PORTNAME=	yacreader
 DISTVERSION=	9.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
