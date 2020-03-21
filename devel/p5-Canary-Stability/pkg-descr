@@ -1,8 +1,8 @@
-This module is used by a guy who calls himself "schmorp" to produce
-warnings if you're using any supported version of Perl.
+Canary::Stability is a forced dependency of a number of important
+perl modules. It exists only to provide dangerous advice (such as
+instructing users to uninstall their version of Perl and install
+one from 2015), absolutely none of which should ever be followed.
 
-This port is designed to prevent these warnings, but you can set
-the "ACTIVATE" option to turn them back on. All of the instructions
-in the warnings are considered harmful and should not be followed.
-
-WWW: https://metacpan.org/release/Canary-Stability
+This port installs an empty stub. If you obtain Canary::Stability
+directly from CPAN, please do not follow any instructions it gives
+you.
