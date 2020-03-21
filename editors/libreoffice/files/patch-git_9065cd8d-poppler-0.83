@@ -7,17 +7,9 @@ Change-Id: I7a3684932b8f9c403a3368b42fa4d8039c67f1a9
 Reviewed-on: https://gerrit.libreoffice.org/84384
 Tested-by: Jenkins
 Reviewed-by: Michael Stahl <michael.stahl@cib.de>
----
- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx | 7 +++++++
- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx | 4 ++++
- sdext/source/pdfimport/xpdfwrapper/wrapper_gpl.cxx    | 4 ++++
- 3 files changed, 15 insertions(+)
-
-diff --git a/sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx b/sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
-index 26048177e87d..e9c2a407c279 100644
---- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
+--- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx.orig	2019-12-05 19:59:23 UTC
 +++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
-@@ -491,11 +491,18 @@ void PDFOutDev::writeFontFile( GfxFont* gfxFont ) const
+@@ -491,11 +491,18 @@ void PDFOutDev::writeFontFile( GfxFont* gfxFont ) cons
      gfree(pBuf);
  }
  
@@ -36,9 +28,23 @@ index 26048177e87d..e9c2a407c279 100644
          GfxSubpath* pSub  = pPath->getSubpath( i );
          const int nPoints = pSub->getNumPoints();
  
-diff --git a/sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx b/sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx
-index 02f6b59f6f15..2e7d2186f9a1 100644
---- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx
+@@ -556,7 +563,9 @@ void PDFOutDev::processLink(Link* link, Catalog*)
+     if (!(pAction && pAction->getKind() == actionURI))
+ return;
+ 
+-#if POPPLER_CHECK_VERSION(0, 72, 0)
++#if POPPLER_CHECK_VERSION(0, 86, 0)
++    const char* pURI = static_cast<LinkURI*>(pAction)->getURI().c_str();
++#elif POPPLER_CHECK_VERSION(0, 72, 0)
+     const char* pURI = static_cast<LinkURI*>(pAction)->getURI()->c_str();
+ #else
+     const char* pURI = static_cast<LinkURI*>(pAction)->getURI()->getCString();
+ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx | 7 +++++++
+ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx | 4 ++++
+ sdext/source/pdfimport/xpdfwrapper/wrapper_gpl.cxx    | 4 ++++
+ 3 files changed, 15 insertions(+)
+
+--- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx.orig	2019-12-05 19:59:23 UTC
 +++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx
 @@ -149,7 +149,11 @@ namespace pdfi
  
@@ -52,9 +58,7 @@ index 02f6b59f6f15..2e7d2186f9a1 100644
  
      public:
          explicit PDFOutDev( PDFDoc* pDoc );
-diff --git a/sdext/source/pdfimport/xpdfwrapper/wrapper_gpl.cxx b/sdext/source/pdfimport/xpdfwrapper/wrapper_gpl.cxx
-index 42178b650cdd..b1a54bd09c5f 100644
---- sdext/source/pdfimport/xpdfwrapper/wrapper_gpl.cxx
+--- sdext/source/pdfimport/xpdfwrapper/wrapper_gpl.cxx.orig	2019-12-05 19:59:23 UTC
 +++ sdext/source/pdfimport/xpdfwrapper/wrapper_gpl.cxx
 @@ -68,7 +68,11 @@ int main(int argc, char **argv)
      }
