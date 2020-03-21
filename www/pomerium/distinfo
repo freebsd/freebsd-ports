@@ -1,6 +1,6 @@
-TIMESTAMP = 1580802821
-SHA256 (pomerium-pomerium-v0.6.2_GH0.tar.gz) = d44d9fb26688049c04773a53b177f024f4f2ccbbceb3b73d4fecdd62878cd349
-SIZE (pomerium-pomerium-v0.6.2_GH0.tar.gz) = 19498105
+TIMESTAMP = 1584810773
+SHA256 (pomerium-pomerium-v0.6.3_GH0.tar.gz) = 4b8b1d9be67161ba061081d1b0141f8976c7c70c821fc945e68ab31f47c28154
+SIZE (pomerium-pomerium-v0.6.3_GH0.tar.gz) = 19498282
 SHA256 (armon-go-metrics-v0.3.0_GH0.tar.gz) = 448c93a6ef30ba432ee80e03e8188bc44575f90df5b2a74b2b03414efa80b483
 SIZE (armon-go-metrics-v0.3.0_GH0.tar.gz) = 28377
 SHA256 (beorn7-perks-v1.0.1_GH0.tar.gz) = 98db84bb0224a26094e6adba91b7ee7a1a7ace28cb648d818f8e779e6a19f825
