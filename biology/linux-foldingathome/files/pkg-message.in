@@ -1,0 +1,56 @@
+[
+{ type: install
+  message: <<EOM
+Quick start
+===========
+
+Here is a list of steps to quickly get started with Folding@home on FreeBSD:
+
+1.	Mount linprocfs(5) in /compat/linux/proc.
+
+2.	Mount linsysfs(5) in /compat/linux/sys.
+
+3.	Enable the fahclient service:
+
+		sysrc fahclient_enable="YES"
+
+4.	Start the service:
+
+		service fahclient start
+
+At this point, the daemon should be up and folding.
+
+Additional notes
+================
+
+-	The current status of folding can be inspected by running
+	the following command:
+
+		service fahclient log
+
+-       The default working directory for fahclient is %%FAHCLIENT_WORK_DIR%%.
+	In order to function properly, fahclient requires its working directory
+	to be on a partition/dataset with execute permissions on.  For example
+	if /var/db is on a ZFS dataset with exec=off, then %%FAHCLIENT_WORK_DIR%%
+	needs to have exec=on.
+
+	Note, that usually the permissions are on unless the system
+	configuration was modified by the administrator.
+
+-	The ID of the FreeBSD team is 11743. In order to join
+	the team add the following line to %%FAHCLIENT_CONFIG_XML%%:
+
+		<team value="11743"/>
+
+	The service has to be restarted to pick up the change.
+
+	Statistics for the FreeBSD team can be viewed here:
+	https://apps.foldingathome.org/teamstats/team11743.html
+
+-	More information about configuring and running the Folding@home
+	software is available on those websites:
+	-	https://foldingforum.org/
+	-	https://foldingathome.org/support/faq/
+EOM
+}
+]

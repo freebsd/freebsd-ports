@@ -186,7 +186,7 @@ prosody:*:242:
 ot-recorder:*:243:
 mastodon:*:244:
 routinator:*:245:
-# free: 246
+fahclient:*:246:fahclient
 fcron:*:247:
 # free: 248
 # free: 249

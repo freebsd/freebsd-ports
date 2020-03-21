@@ -68,6 +68,7 @@
     SUBDIR += libbigwig
     SUBDIR += libgtextutils
     SUBDIR += libsbml
+    SUBDIR += linux-foldingathome
     SUBDIR += mafft
     SUBDIR += mapm3
     SUBDIR += migrate

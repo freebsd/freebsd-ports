@@ -1,0 +1,66 @@
+#! /bin/sh -
+#
+# $FreeBSD$
+#
+# SPDX-License-Identifier: BSD-2-Clause
+#
+# Copyright (c) 2020 Mateusz Piotrowski <0mp@FreeBSD.org>
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+#     1. Redistributions of source code must retain the above copyright notice,
+#        this list of conditions and the following disclaimer.
+#     2. Redistributions in binary form must reproduce the above copyright
+#        notice, this list of conditions and the following disclaimer in the
+#        documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+
+# PROVIDE: fahclient
+# REQUIRE: DAEMON LOGIN NETWORKING linux
+
+. /etc/rc.subr
+
+name='fahclient'
+rcvar='fahclient_enable'
+
+load_rc_config 'fahclient'
+
+# Default settings.
+: "${fahclient_enable:=NO}"
+: "${fahclient_user:=fahclient}"
+: "${fahclient_chdir:=%%FAHCLIENT_WORK_DIR%%}"
+
+: "${fahclient_pidfile:=%%FAHCLIENT_WORK_DIR%%/fahclient.pid}"
+: "${fahclient_config:=%%ETCDIR%%/config.xml}"
+: "${fahclient_logfile:=%%FAHCLIENT_WORK_DIR%%/log.txt}"
+
+pidfile="${fahclient_pidfile}"
+command='%%FAHCLIENT_PROGRAM%%'
+# Some notes on the specified options:
+# - --config is necessary to point the program to the correct configuration
+#   file.
+# - --chdir is used to switch to a desired work directory. The program is going
+#   to create a lot of files in its current working directory so should not be
+#   just any directory on the system.
+# - --pid-file specifies the location for the PID file.
+# - --daemon is to detach the program from the terminal and run it
+#   in the background.
+command_args="--config ${fahclient_config} --chdir ${fahclient_chdir}"
+command_args="${command_args} --pid-file ${pidfile} --daemon"
+extra_commands="log"
+log_cmd="tail -F -- ${fahclient_logfile}"
+required_modules='linprocfs linsysfs linuxcommon'
+
+run_rc_command "$1"
