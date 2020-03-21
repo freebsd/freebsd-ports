@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	hikari
-DISTVERSION=	1.0.0-rc1
+DISTVERSION=	1.0.0-rc2
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://acmelabs.space/~raichoo/hikari/releases/
+MASTER_SITES=	https://hikari.acmelabs.space/releases/
 
 MAINTAINER=	ports@xanderio.de
 COMMENT=	Stacking Wayland compositor with tiling capabilities
