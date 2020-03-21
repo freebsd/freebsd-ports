@@ -27,10 +27,7 @@ USES=		ghostscript:run metaport perl5
 USE_PERL5=	run
 
 OPTIONS_DEFINE=		CJK DBLATEX FOP GROFF IGOR JING SVN TRANSLATOR
-OPTIONS_DEFAULT=	CJK IGOR TRANSLATOR
-.if !exists(/usr/bin/groff)
-OPTIONS_DEFAULT+=	GROFF
-.endif
+OPTIONS_DEFAULT=	CJK GROFF IGOR TRANSLATOR
 .if !exists(/usr/bin/svnlite) && !exists(/usr/bin/svn)
 OPTIONS_DEFAULT+=	SVN
 .endif
@@ -49,7 +46,7 @@ DBLATEX_RUN_DEPENDS=	dblatex:textproc/dblatex
 DBLATEX_USE=		TEX=xetex
 FOP_RUN_DEPENDS=	${_FONTS} \
 			fop:textproc/fop
-GROFF_RUN_DEPENDS=	${LOCALBASE}/bin/groff:textproc/groff
+GROFF_USES=		groff:run
 IGOR_RUN_DEPENDS=	igor:textproc/igor
 JING_RUN_DEPENDS=	jing:textproc/jing
 SVN_RUN_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion
