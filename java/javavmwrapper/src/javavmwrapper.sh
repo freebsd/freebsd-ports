@@ -506,25 +506,28 @@ setJavaHome() {
         for version in ${JAVA_VERSION}; do
             case "${version}" in
                 *7+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 7 8 9 10 11 12 13"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 7 8 9 10 11 12 13 14"
                     ;;
                 *8+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 8 9 10 11 12 13"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 8 9 10 11 12 13 14"
                     ;;
                 *9+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 9 10 11 12 13"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 9 10 11 12 13 14"
                     ;;
                 10+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 10 11 12 13"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 10 11 12 13 14"
                     ;;
                 11+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 11 12 13"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 11 12 13 14"
                     ;;
                 12+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 12 13"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 12 13 14"
                     ;;
                 13+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 13"
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 13 14"
+                    ;;
+                14+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 14"
                     ;;
                 1.7)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} 7"
