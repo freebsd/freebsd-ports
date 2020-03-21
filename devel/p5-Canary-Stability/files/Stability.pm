@@ -8,14 +8,11 @@ Canary::Stability - Stub to avoid harmful instructions
 
 =head1 PURPOSE
 
-The original Canary::Stability is a bizarre set of system checks
-that provide dangerous instructions. Among those instructions is
-never to use any Perl released after 2015, and to use a fork of
-Perl from a person who calls himself "schmorp."
-
-This stub exists only to satisfy modules (all of which are released
-by "schmorp") that list it as a dependency. It does nothing, which
-is considered far more useful than the original.
+The original Canary::Stability is a set of system checks
+that don't apply to FreeBSD, and includes potentially harmful
+recommendations. Rather than present those recommendations
+to users, we instead provide an empty stub to satisfy modules
+that list it as a dependency.
 
 =cut
 
