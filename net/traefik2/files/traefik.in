@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: traefik
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# traefik_enable (bool):	Set to NO by default.
+#				Set it to YES to enable traefik.
+# traefik_user (user):		Set user to run traefik.
+#				Default is "traefik".
+# traefik_group (group):	Set group to run traefik.
+#				Default is "traefik".
+# traefik_conf (path):		Path to traefik configuration file.
+#				Default is %%PREFIX%%/etc/traefik.toml
+# traefik_env (vars):		Set environment variables used with traefik
+#				Default is "".
+#				These are necessary for ACME (Let's Encrypt)
+#				configuration, see
+#				https://docs.traefik.io/configuration/acme/
+
+. /etc/rc.subr
+
+name=traefik
+rcvar=traefik_enable
+
+load_rc_config $name
+
+: ${traefik_enable:="NO"}
+: ${traefik_user:="traefik"}
+: ${traefik_group:="traefik"}
+: ${traefik_conf:="%%PREFIX%%/etc/traefik.toml"}
+: ${traefik_env:=""}
+
+pidfile=/var/run/traefik.pid
+procname="%%PREFIX%%/bin/traefik"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} /usr/bin/env ${traefik_env} ${procname} --configFile=${traefik_conf} ${traefik_args}"
+
+start_precmd=traefik_startprecmd
+
+traefik_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${traefik_user} -g ${traefik_group} /dev/null ${pidfile};
+        fi
+}
+
+run_rc_command "$1"

@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+Note that traefik starts as unprivileged user. Thus, it cannot
+bind to privileged ports (by default, ports below 1024) and
+will exit when configured to do so.
+
+If traefik should serve ports in the privileged range, there
+are options to achieve this:
+- Have traffic bind to an unprivileged port and use the
+  packet filter configuration to redirect requests to the
+  desired privileged port to the unprivileged port in
+  traefik's configuration file e.g. the rdr rules in pf(4).
+- The mac_portacl kernel module allows unprivileged processes
+  to bind to privileged ports.
+
+Note: If you are upgrading from traefik 1.x keep in mind that
+the configuration is not compatible.
+EOM
+}
+]
