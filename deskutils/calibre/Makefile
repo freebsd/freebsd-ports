@@ -53,6 +53,7 @@ USES=		desktop-file-utils gettext-runtime gl gnome localbase:ldflags \
 		pkgconfig pyqt:5 qt:5 shared-mime-info shebangfix \
 		ssl tar:xz xorg
 USE_RC_SUBR=	calibre
+SUB_LIST+=	PYTHON_VERSION=${PYTHON_VERSION}
 USE_PYQT=	core gui network sip svg webengine widgets xmlpatterns
 USE_QT=		buildtools_build core dbus gui qmake_build widgets
 USE_GL=		egl gl
