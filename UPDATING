@@ -18,7 +18,7 @@ you update your ports collection, before attempting any port upgrades.
   shows that the "kbd" or "keyboard" driver is being used, you need to
   switch to legacy rules by setting the environment variable
   XKB_DEFAULT_RULES to xorg.
-  This switch is make to match the default configuration on FreeBSD 12.1 and
+  This switch is made to match the default configuration on FreeBSD 12.1 and
   later, the default configuration on FreeBSD 11.3 still requres the legacy
   rules.
 
