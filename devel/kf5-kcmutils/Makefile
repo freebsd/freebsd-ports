@@ -2,11 +2,7 @@
 
 PORTNAME=	kcmutils
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
-
-PATCH_SITES=	https://github.com/KDE/kcmutils/commit/
-PATCHFILES=	ea7120ed901bf6161bb483ab73211a6491daac8f.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 utilities for working with KCModules

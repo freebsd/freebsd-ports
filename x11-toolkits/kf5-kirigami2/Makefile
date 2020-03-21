@@ -14,7 +14,4 @@ USE_QT=		core dbus declarative graphicaleffects gui linguisttools network \
 		quickcontrols2 svg testlib widgets \
 		buildtools_build qmake_build
 
-# Respin
-KDE_FRAMEWORKS_VERSION=	5.67.1
-
 .include <bsd.port.mk>

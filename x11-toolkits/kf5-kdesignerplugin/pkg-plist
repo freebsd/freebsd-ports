@@ -6,6 +6,7 @@ lib/cmake/KF5DesignerPlugin/KF5DesignerPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginTargets.cmake
 man/ca/man1/kgendesignerplugin.1.gz
 man/de/man1/kgendesignerplugin.1.gz
+man/es/man1/kgendesignerplugin.1.gz
 man/it/man1/kgendesignerplugin.1.gz
 man/man1/kgendesignerplugin.1.gz
 man/nl/man1/kgendesignerplugin.1.gz

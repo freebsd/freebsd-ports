@@ -10,9 +10,13 @@ COMMENT=	Breeze icon theme for KDE
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING-ICONS
 
-USES=		compiler:c++11-lang cmake kde:5 qt:5 tar:xz
+BUILD_DEPENDS=	bash:shells/bash
+
+USES=		compiler:c++11-lang cmake kde:5 qt:5 shebangfix tar:xz
 USE_KDE=	ecm
 USE_QT=		buildtools_build core qmake_build testlib
+
+SHEBANG_FILES=	generate-24px-versions.sh
 
 NO_ARCH=	yes
 

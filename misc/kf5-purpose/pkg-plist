@@ -50,7 +50,6 @@ lib/libexec/kf5/purposeprocess
 %%QT_QMLDIR%%/org/kde/purpose/reviewboard/qmldir
 share/accounts/services/kde/google-youtube.service
 share/accounts/services/kde/nextcloud-upload.service
-share/accounts/services/kde/twitter-microblog.service
 share/icons/hicolor/128x128/apps/phabricator-purpose.png
 share/icons/hicolor/128x128/apps/reviewboard-purpose.png
 share/icons/hicolor/16x16/actions/kipiplugin_youtube.png
@@ -60,10 +59,6 @@ share/icons/hicolor/22x22/actions/kipiplugin_youtube.png
 share/icons/hicolor/32x32/actions/kipiplugin_youtube.png
 share/icons/hicolor/48x48/actions/kipiplugin_youtube.png
 share/icons/hicolor/64x64/actions/kipiplugin_youtube.png
-share/kpackage/Purpose/Twitter/contents/code/main.js
-share/kpackage/Purpose/Twitter/contents/code/package.json
-share/kpackage/Purpose/Twitter/contents/config/config.qml
-share/kpackage/Purpose/Twitter/metadata.json
 share/locale/ar/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ar/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/ar/LC_MESSAGES/purpose_email.mo
@@ -74,7 +69,6 @@ share/locale/ar/LC_MESSAGES/purpose_nextcloud.mo
 share/locale/ar/LC_MESSAGES/purpose_pastebin.mo
 share/locale/ar/LC_MESSAGES/purpose_phabricator.mo
 share/locale/ar/LC_MESSAGES/purpose_saveas.mo
-share/locale/ar/LC_MESSAGES/purpose_twitter.mo
 share/locale/ar/LC_MESSAGES/purpose_youtube.mo
 share/locale/ast/LC_MESSAGES/purpose_email.mo
 share/locale/ast/LC_MESSAGES/purpose_kdeconnectsms.mo
@@ -95,7 +89,6 @@ share/locale/ca/LC_MESSAGES/purpose_pastebin.mo
 share/locale/ca/LC_MESSAGES/purpose_phabricator.mo
 share/locale/ca/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/ca/LC_MESSAGES/purpose_saveas.mo
-share/locale/ca/LC_MESSAGES/purpose_twitter.mo
 share/locale/ca/LC_MESSAGES/purpose_youtube.mo
 share/locale/ca@valencia/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ca@valencia/LC_MESSAGES/libpurpose_widgets.mo
@@ -110,7 +103,6 @@ share/locale/ca@valencia/LC_MESSAGES/purpose_pastebin.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose_phabricator.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose_saveas.mo
-share/locale/ca@valencia/LC_MESSAGES/purpose_twitter.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose_youtube.mo
 share/locale/cs/LC_MESSAGES/libpurpose_quick.mo
 share/locale/cs/LC_MESSAGES/libpurpose_widgets.mo
@@ -126,7 +118,6 @@ share/locale/cs/LC_MESSAGES/purpose_pastebin.mo
 share/locale/cs/LC_MESSAGES/purpose_phabricator.mo
 share/locale/cs/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/cs/LC_MESSAGES/purpose_saveas.mo
-share/locale/cs/LC_MESSAGES/purpose_twitter.mo
 share/locale/cs/LC_MESSAGES/purpose_youtube.mo
 share/locale/da/LC_MESSAGES/libpurpose_quick.mo
 share/locale/da/LC_MESSAGES/libpurpose_widgets.mo
@@ -142,7 +133,6 @@ share/locale/da/LC_MESSAGES/purpose_pastebin.mo
 share/locale/da/LC_MESSAGES/purpose_phabricator.mo
 share/locale/da/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/da/LC_MESSAGES/purpose_saveas.mo
-share/locale/da/LC_MESSAGES/purpose_twitter.mo
 share/locale/da/LC_MESSAGES/purpose_youtube.mo
 share/locale/de/LC_MESSAGES/libpurpose_quick.mo
 share/locale/de/LC_MESSAGES/libpurpose_widgets.mo
@@ -158,7 +148,6 @@ share/locale/de/LC_MESSAGES/purpose_pastebin.mo
 share/locale/de/LC_MESSAGES/purpose_phabricator.mo
 share/locale/de/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/de/LC_MESSAGES/purpose_saveas.mo
-share/locale/de/LC_MESSAGES/purpose_twitter.mo
 share/locale/de/LC_MESSAGES/purpose_youtube.mo
 share/locale/el/LC_MESSAGES/libpurpose_quick.mo
 share/locale/el/LC_MESSAGES/libpurpose_widgets.mo
@@ -181,7 +170,6 @@ share/locale/en_GB/LC_MESSAGES/purpose_pastebin.mo
 share/locale/en_GB/LC_MESSAGES/purpose_phabricator.mo
 share/locale/en_GB/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/en_GB/LC_MESSAGES/purpose_saveas.mo
-share/locale/en_GB/LC_MESSAGES/purpose_twitter.mo
 share/locale/en_GB/LC_MESSAGES/purpose_youtube.mo
 share/locale/es/LC_MESSAGES/libpurpose_quick.mo
 share/locale/es/LC_MESSAGES/libpurpose_widgets.mo
@@ -197,7 +185,6 @@ share/locale/es/LC_MESSAGES/purpose_pastebin.mo
 share/locale/es/LC_MESSAGES/purpose_phabricator.mo
 share/locale/es/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/es/LC_MESSAGES/purpose_saveas.mo
-share/locale/es/LC_MESSAGES/purpose_twitter.mo
 share/locale/es/LC_MESSAGES/purpose_youtube.mo
 share/locale/et/LC_MESSAGES/libpurpose_quick.mo
 share/locale/et/LC_MESSAGES/libpurpose_widgets.mo
@@ -213,7 +200,6 @@ share/locale/et/LC_MESSAGES/purpose_pastebin.mo
 share/locale/et/LC_MESSAGES/purpose_phabricator.mo
 share/locale/et/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/et/LC_MESSAGES/purpose_saveas.mo
-share/locale/et/LC_MESSAGES/purpose_twitter.mo
 share/locale/et/LC_MESSAGES/purpose_youtube.mo
 share/locale/eu/LC_MESSAGES/libpurpose_quick.mo
 share/locale/eu/LC_MESSAGES/libpurpose_widgets.mo
@@ -229,7 +215,6 @@ share/locale/eu/LC_MESSAGES/purpose_pastebin.mo
 share/locale/eu/LC_MESSAGES/purpose_phabricator.mo
 share/locale/eu/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/eu/LC_MESSAGES/purpose_saveas.mo
-share/locale/eu/LC_MESSAGES/purpose_twitter.mo
 share/locale/eu/LC_MESSAGES/purpose_youtube.mo
 share/locale/fi/LC_MESSAGES/libpurpose_quick.mo
 share/locale/fi/LC_MESSAGES/libpurpose_widgets.mo
@@ -245,7 +230,6 @@ share/locale/fi/LC_MESSAGES/purpose_pastebin.mo
 share/locale/fi/LC_MESSAGES/purpose_phabricator.mo
 share/locale/fi/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/fi/LC_MESSAGES/purpose_saveas.mo
-share/locale/fi/LC_MESSAGES/purpose_twitter.mo
 share/locale/fi/LC_MESSAGES/purpose_youtube.mo
 share/locale/fr/LC_MESSAGES/libpurpose_quick.mo
 share/locale/fr/LC_MESSAGES/libpurpose_widgets.mo
@@ -261,7 +245,6 @@ share/locale/fr/LC_MESSAGES/purpose_pastebin.mo
 share/locale/fr/LC_MESSAGES/purpose_phabricator.mo
 share/locale/fr/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/fr/LC_MESSAGES/purpose_saveas.mo
-share/locale/fr/LC_MESSAGES/purpose_twitter.mo
 share/locale/fr/LC_MESSAGES/purpose_youtube.mo
 share/locale/gl/LC_MESSAGES/libpurpose_quick.mo
 share/locale/gl/LC_MESSAGES/libpurpose_widgets.mo
@@ -277,7 +260,6 @@ share/locale/gl/LC_MESSAGES/purpose_pastebin.mo
 share/locale/gl/LC_MESSAGES/purpose_phabricator.mo
 share/locale/gl/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/gl/LC_MESSAGES/purpose_saveas.mo
-share/locale/gl/LC_MESSAGES/purpose_twitter.mo
 share/locale/gl/LC_MESSAGES/purpose_youtube.mo
 share/locale/hu/LC_MESSAGES/libpurpose_quick.mo
 share/locale/hu/LC_MESSAGES/libpurpose_widgets.mo
@@ -292,7 +274,6 @@ share/locale/hu/LC_MESSAGES/purpose_pastebin.mo
 share/locale/hu/LC_MESSAGES/purpose_phabricator.mo
 share/locale/hu/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/hu/LC_MESSAGES/purpose_saveas.mo
-share/locale/hu/LC_MESSAGES/purpose_twitter.mo
 share/locale/hu/LC_MESSAGES/purpose_youtube.mo
 share/locale/ia/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ia/LC_MESSAGES/libpurpose_widgets.mo
@@ -308,7 +289,6 @@ share/locale/ia/LC_MESSAGES/purpose_pastebin.mo
 share/locale/ia/LC_MESSAGES/purpose_phabricator.mo
 share/locale/ia/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/ia/LC_MESSAGES/purpose_saveas.mo
-share/locale/ia/LC_MESSAGES/purpose_twitter.mo
 share/locale/ia/LC_MESSAGES/purpose_youtube.mo
 share/locale/id/LC_MESSAGES/libpurpose_quick.mo
 share/locale/id/LC_MESSAGES/libpurpose_widgets.mo
@@ -324,7 +304,6 @@ share/locale/id/LC_MESSAGES/purpose_pastebin.mo
 share/locale/id/LC_MESSAGES/purpose_phabricator.mo
 share/locale/id/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/id/LC_MESSAGES/purpose_saveas.mo
-share/locale/id/LC_MESSAGES/purpose_twitter.mo
 share/locale/id/LC_MESSAGES/purpose_youtube.mo
 share/locale/it/LC_MESSAGES/libpurpose_quick.mo
 share/locale/it/LC_MESSAGES/libpurpose_widgets.mo
@@ -340,7 +319,6 @@ share/locale/it/LC_MESSAGES/purpose_pastebin.mo
 share/locale/it/LC_MESSAGES/purpose_phabricator.mo
 share/locale/it/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/it/LC_MESSAGES/purpose_saveas.mo
-share/locale/it/LC_MESSAGES/purpose_twitter.mo
 share/locale/it/LC_MESSAGES/purpose_youtube.mo
 share/locale/ja/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ja/LC_MESSAGES/libpurpose_widgets.mo
@@ -356,7 +334,6 @@ share/locale/ja/LC_MESSAGES/purpose_pastebin.mo
 share/locale/ja/LC_MESSAGES/purpose_phabricator.mo
 share/locale/ja/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/ja/LC_MESSAGES/purpose_saveas.mo
-share/locale/ja/LC_MESSAGES/purpose_twitter.mo
 share/locale/ja/LC_MESSAGES/purpose_youtube.mo
 share/locale/ko/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ko/LC_MESSAGES/libpurpose_widgets.mo
@@ -372,7 +349,6 @@ share/locale/ko/LC_MESSAGES/purpose_pastebin.mo
 share/locale/ko/LC_MESSAGES/purpose_phabricator.mo
 share/locale/ko/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/ko/LC_MESSAGES/purpose_saveas.mo
-share/locale/ko/LC_MESSAGES/purpose_twitter.mo
 share/locale/ko/LC_MESSAGES/purpose_youtube.mo
 share/locale/lt/LC_MESSAGES/libpurpose_quick.mo
 share/locale/lt/LC_MESSAGES/libpurpose_widgets.mo
@@ -388,7 +364,6 @@ share/locale/lt/LC_MESSAGES/purpose_pastebin.mo
 share/locale/lt/LC_MESSAGES/purpose_phabricator.mo
 share/locale/lt/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/lt/LC_MESSAGES/purpose_saveas.mo
-share/locale/lt/LC_MESSAGES/purpose_twitter.mo
 share/locale/lt/LC_MESSAGES/purpose_youtube.mo
 share/locale/ml/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ml/LC_MESSAGES/libpurpose_widgets.mo
@@ -404,7 +379,6 @@ share/locale/ml/LC_MESSAGES/purpose_pastebin.mo
 share/locale/ml/LC_MESSAGES/purpose_phabricator.mo
 share/locale/ml/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/ml/LC_MESSAGES/purpose_saveas.mo
-share/locale/ml/LC_MESSAGES/purpose_twitter.mo
 share/locale/ml/LC_MESSAGES/purpose_youtube.mo
 share/locale/nb/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/nl/LC_MESSAGES/libpurpose_quick.mo
@@ -421,7 +395,6 @@ share/locale/nl/LC_MESSAGES/purpose_pastebin.mo
 share/locale/nl/LC_MESSAGES/purpose_phabricator.mo
 share/locale/nl/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/nl/LC_MESSAGES/purpose_saveas.mo
-share/locale/nl/LC_MESSAGES/purpose_twitter.mo
 share/locale/nl/LC_MESSAGES/purpose_youtube.mo
 share/locale/nn/LC_MESSAGES/libpurpose_quick.mo
 share/locale/nn/LC_MESSAGES/libpurpose_widgets.mo
@@ -437,7 +410,6 @@ share/locale/nn/LC_MESSAGES/purpose_pastebin.mo
 share/locale/nn/LC_MESSAGES/purpose_phabricator.mo
 share/locale/nn/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/nn/LC_MESSAGES/purpose_saveas.mo
-share/locale/nn/LC_MESSAGES/purpose_twitter.mo
 share/locale/nn/LC_MESSAGES/purpose_youtube.mo
 share/locale/pl/LC_MESSAGES/libpurpose_quick.mo
 share/locale/pl/LC_MESSAGES/libpurpose_widgets.mo
@@ -453,7 +425,6 @@ share/locale/pl/LC_MESSAGES/purpose_pastebin.mo
 share/locale/pl/LC_MESSAGES/purpose_phabricator.mo
 share/locale/pl/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/pl/LC_MESSAGES/purpose_saveas.mo
-share/locale/pl/LC_MESSAGES/purpose_twitter.mo
 share/locale/pl/LC_MESSAGES/purpose_youtube.mo
 share/locale/pt/LC_MESSAGES/libpurpose_quick.mo
 share/locale/pt/LC_MESSAGES/libpurpose_widgets.mo
@@ -469,7 +440,6 @@ share/locale/pt/LC_MESSAGES/purpose_pastebin.mo
 share/locale/pt/LC_MESSAGES/purpose_phabricator.mo
 share/locale/pt/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/pt/LC_MESSAGES/purpose_saveas.mo
-share/locale/pt/LC_MESSAGES/purpose_twitter.mo
 share/locale/pt/LC_MESSAGES/purpose_youtube.mo
 share/locale/pt_BR/LC_MESSAGES/libpurpose_quick.mo
 share/locale/pt_BR/LC_MESSAGES/libpurpose_widgets.mo
@@ -485,7 +455,6 @@ share/locale/pt_BR/LC_MESSAGES/purpose_pastebin.mo
 share/locale/pt_BR/LC_MESSAGES/purpose_phabricator.mo
 share/locale/pt_BR/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/pt_BR/LC_MESSAGES/purpose_saveas.mo
-share/locale/pt_BR/LC_MESSAGES/purpose_twitter.mo
 share/locale/pt_BR/LC_MESSAGES/purpose_youtube.mo
 share/locale/ru/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ru/LC_MESSAGES/libpurpose_widgets.mo
@@ -501,7 +470,6 @@ share/locale/ru/LC_MESSAGES/purpose_pastebin.mo
 share/locale/ru/LC_MESSAGES/purpose_phabricator.mo
 share/locale/ru/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/ru/LC_MESSAGES/purpose_saveas.mo
-share/locale/ru/LC_MESSAGES/purpose_twitter.mo
 share/locale/ru/LC_MESSAGES/purpose_youtube.mo
 share/locale/sk/LC_MESSAGES/libpurpose_quick.mo
 share/locale/sk/LC_MESSAGES/libpurpose_widgets.mo
@@ -517,7 +485,6 @@ share/locale/sk/LC_MESSAGES/purpose_pastebin.mo
 share/locale/sk/LC_MESSAGES/purpose_phabricator.mo
 share/locale/sk/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/sk/LC_MESSAGES/purpose_saveas.mo
-share/locale/sk/LC_MESSAGES/purpose_twitter.mo
 share/locale/sk/LC_MESSAGES/purpose_youtube.mo
 share/locale/sv/LC_MESSAGES/libpurpose_quick.mo
 share/locale/sv/LC_MESSAGES/libpurpose_widgets.mo
@@ -533,7 +500,6 @@ share/locale/sv/LC_MESSAGES/purpose_pastebin.mo
 share/locale/sv/LC_MESSAGES/purpose_phabricator.mo
 share/locale/sv/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/sv/LC_MESSAGES/purpose_saveas.mo
-share/locale/sv/LC_MESSAGES/purpose_twitter.mo
 share/locale/sv/LC_MESSAGES/purpose_youtube.mo
 share/locale/tg/LC_MESSAGES/libpurpose_quick.mo
 share/locale/tg/LC_MESSAGES/libpurpose_widgets.mo
@@ -549,7 +515,6 @@ share/locale/tg/LC_MESSAGES/purpose_pastebin.mo
 share/locale/tg/LC_MESSAGES/purpose_phabricator.mo
 share/locale/tg/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/tg/LC_MESSAGES/purpose_saveas.mo
-share/locale/tg/LC_MESSAGES/purpose_twitter.mo
 share/locale/tg/LC_MESSAGES/purpose_youtube.mo
 share/locale/tr/LC_MESSAGES/libpurpose_quick.mo
 share/locale/tr/LC_MESSAGES/libpurpose_widgets.mo
@@ -574,7 +539,6 @@ share/locale/uk/LC_MESSAGES/purpose_pastebin.mo
 share/locale/uk/LC_MESSAGES/purpose_phabricator.mo
 share/locale/uk/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/uk/LC_MESSAGES/purpose_saveas.mo
-share/locale/uk/LC_MESSAGES/purpose_twitter.mo
 share/locale/uk/LC_MESSAGES/purpose_youtube.mo
 share/locale/zh_CN/LC_MESSAGES/libpurpose_quick.mo
 share/locale/zh_CN/LC_MESSAGES/libpurpose_widgets.mo
@@ -590,7 +554,6 @@ share/locale/zh_CN/LC_MESSAGES/purpose_pastebin.mo
 share/locale/zh_CN/LC_MESSAGES/purpose_phabricator.mo
 share/locale/zh_CN/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/zh_CN/LC_MESSAGES/purpose_saveas.mo
-share/locale/zh_CN/LC_MESSAGES/purpose_twitter.mo
 share/locale/zh_CN/LC_MESSAGES/purpose_youtube.mo
 share/locale/zh_TW/LC_MESSAGES/libpurpose_quick.mo
 share/locale/zh_TW/LC_MESSAGES/libpurpose_widgets.mo
@@ -606,7 +569,6 @@ share/locale/zh_TW/LC_MESSAGES/purpose_pastebin.mo
 share/locale/zh_TW/LC_MESSAGES/purpose_phabricator.mo
 share/locale/zh_TW/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/zh_TW/LC_MESSAGES/purpose_saveas.mo
-share/locale/zh_TW/LC_MESSAGES/purpose_twitter.mo
 share/locale/zh_TW/LC_MESSAGES/purpose_youtube.mo
 %%DATADIR%%/bluetoothplugin_config.qml
 %%DATADIR%%/kdeconnectplugin_config.qml
