@@ -2,7 +2,7 @@
 
 PORTNAME=	lsp-plugins
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.1.13
+DISTVERSION=	1.1.14
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -27,7 +27,7 @@ USE_XORG=	x11
 USE_GL=		gl
 
 BINARY_ALIAS=	g++=${CXX}
-MAKE_ARGS=	BUILD_MODULES='lv2'
+MAKE_ARGS=	BUILD_MODULES='lv2' ETC_PATH=${PREFIX}/etc
 
 OPTIONS_DEFINE=		JACK
 OPTIONS_DEFAULT=	JACK
@@ -42,5 +42,11 @@ post-patch:
 		's|exp10(|pow(10.,|'
 	@${GREP} -lR "<alloca\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<alloca\.h>|<stdlib.h>|'
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/lsp-plugins.lv2/lsp-*.so
+
+post-install-JACK-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lsp-* ${STAGEDIR}${PREFIX}/lib/lsp-plugins/lsp-*.so
 
 .include <bsd.port.mk>
