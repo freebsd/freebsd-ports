@@ -13,7 +13,4 @@ USE_KDE=	auth codecs config configwidgets coreaddons ecm iconthemes \
 USE_QT=		gui declarative network widgets xml \
 		buildtools_build core qmake_build
 
-# Respin
-KDE_FRAMEWORKS_VERSION=	5.67.1
-
 .include <bsd.port.mk>
