@@ -1,3 +1,4 @@
+etc/rc.d/rubywarden-api
 %%WWWDIR%%/.gitignore
 %%WWWDIR%%/API.md
 %%WWWDIR%%/AR-MIGRATE.md
@@ -17,6 +18,9 @@
 %%WWWDIR%%/db/migrate/20180818095054_create_attachments.rb
 %%WWWDIR%%/db/migrate/20180818201731_user_kdf_iterations.rb
 %%WWWDIR%%/db/migrate/20180818212323_add_user_kdf_type.rb
+%%WWWDIR%%/db/migrate/20190419171915_drop_attachments_url.rb
+%%WWWDIR%%/db/migrate/201905%%RUBY_SUFFIX%%014920_password_history.rb
+%%WWWDIR%%/db/migrate/20190724163354_no_null_kdf_iterations.rb
 %%WWWDIR%%/lib/app.rb
 %%WWWDIR%%/lib/attachment.rb
 %%WWWDIR%%/lib/bitwarden.rb
@@ -44,6 +48,8 @@
 %%WWWDIR%%/spec/icon_spec.rb
 %%WWWDIR%%/spec/identity_spec.rb
 %%WWWDIR%%/spec/spec_helper.rb
+%%WWWDIR%%/spec/support/factories.rb
+%%WWWDIR%%/spec/support/request_helpers.rb
 %%WWWDIR%%/spec/user_spec.rb
 %%WWWDIR%%/tools/1password_import.rb
 %%WWWDIR%%/tools/activate_totp.rb
@@ -53,4 +59,3 @@
 %%WWWDIR%%/tools/lastpass_import.rb
 %%WWWDIR%%/tools/migrate_to_ar.rb
 %%WWWDIR%%/tools/mitm.rb
-@dir(www,www,0750) %%WWWDIR%%/db

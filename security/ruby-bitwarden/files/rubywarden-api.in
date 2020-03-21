@@ -20,6 +20,7 @@ rcvar=rubywarden_api_enable
 load_rc_config ${name}
 
 : ${rubywarden_api_enable:=NO}
+: ${rubywarden_api_host:=localhost}
 : ${rubywarden_api_port:=4567}
 : ${rubywarden_api_signups:=NO}
 : ${rubywarden_api_user:=www}
@@ -29,7 +30,7 @@ load_rc_config ${name}
 pidfile="/var/run/rubywarden/${name}.pid"
 procname=%%RUBY_WITH_SUFFIX%%
 command="%%PREFIX%%/bin/rackup"
-command_args="-P ${pidfile} -p ${rubywarden_api_port} -E production config.ru 2>&1 | logger -t rubywarden &"
+command_args="-P ${pidfile} -o ${rubywarden_api_host} -p ${rubywarden_api_port} -E production config.ru 2>&1 | logger -t rubywarden &"
 start_precmd="start_precmd"
 
 start_precmd()
