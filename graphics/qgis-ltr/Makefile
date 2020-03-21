@@ -4,7 +4,7 @@
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
 DISTVERSION=	3_4_11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics geography
 PKGNAMESUFFIX=	-ltr
 
@@ -73,7 +73,6 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libhdf5.so:science/hdf5 \
 		libnetcdf.so:science/netcdf \
 		libproj.so:graphics/proj \
-		libqca-qt5.so:devel/qca \
 		libqjson-qt5.so:devel/qjson \
 		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
 		libqt5keychain.so:security/qtkeychain \
@@ -86,7 +85,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 
 ### Fortran is needed by numpy, GRASS, etc.
 USES=		bison cmake compiler:features cpe desktop-file-utils \
-		fortran gmake gnome pgsql pyqt:5 python:3.6+ qt:5 \
+		fortran gmake gnome pgsql pyqt:5 python:3.6+ qca qt:5 \
 		shebangfix sqlite:3
 USE_GNOME=	libxml2
 USE_QT=		3d buildtools_build core concurrent dbus declarative \

@@ -2,7 +2,7 @@
 
 PORTNAME=	libktorrent
 DISTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	KDE/stable/ktorrent/5.1.2/
 
@@ -15,10 +15,9 @@ COMMENT=	Torrent library from KTorrent project
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:devel/boost-libs
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libgmp.so:math/gmp \
-		libqca-qt5.so:devel/qca
+		libgmp.so:math/gmp
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qca qt:5 tar:xz
 USE_KDE=	archive completion config coreaddons crash ecm i18n \
 		jobwidgets kio service solid widgetsaddons
 USE_QT=		core gui network testlib xml \

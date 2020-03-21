@@ -3,7 +3,7 @@
 
 PORTNAME=	psi
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 
@@ -13,11 +13,10 @@ COMMENT=	Qt-based Jabber (XMPP) client
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libidn.so:dns/libidn \
-		libminizip.so:archivers/minizip \
-		libqca-qt5.so:devel/qca
+		libminizip.so:archivers/minizip
 
 USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig \
-		qt:5 tar:xz xorg
+		qca qt:5 tar:xz xorg
 USE_QT=		concurrent core dbus gui multimedia network svg widgets \
 		x11extras xml buildtools_build qmake_build imageformats_run
 USE_XORG=	ice sm x11 xcb xext xscrnsaver

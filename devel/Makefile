@@ -5227,6 +5227,7 @@
     SUBDIR += pythontidy
     SUBDIR += qbs
     SUBDIR += qca
+    SUBDIR += qca-legacy
     SUBDIR += qconf
     SUBDIR += qgit
     SUBDIR += qjson

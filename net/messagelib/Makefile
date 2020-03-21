@@ -2,7 +2,7 @@
 
 PORTNAME=	messagelib
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net kde kde-applications
 
 PATCH_SITES=	https://github.com/KDE/messagelib/commit/
@@ -18,10 +18,9 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgme-cpp \
-		libqgpgme.so:security/gpgme-qt5 \
-		libqca-qt5.so:devel/qca
+		libqgpgme.so:security/gpgme-qt5
 
-USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qca qt:5 tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons ecm i18n iconthemes imap itemmodels itemviews jobwidgets \
 		kdewebkit kio service solid sonnet syntaxhighlighting \

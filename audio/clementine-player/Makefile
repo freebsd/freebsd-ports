@@ -3,6 +3,7 @@
 
 PORTNAME=	clementine
 DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
 
@@ -16,7 +17,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libchromaprint.so:audio/chromaprint \
 		libprotobuf.so:devel/protobuf \
-		libqca-qt5.so:devel/qca \
 		libqjson-qt5.so:devel/qjson \
 		libfftw3.so:math/fftw3 \
 		libechonest5.so:audio/libechonest \
@@ -27,6 +27,7 @@ USES=		cmake \
 		desktop-file-utils \
 		gettext-tools \
 		pkgconfig \
+		qca \
 		qt:5 \
 		sqlite \
 		gl \

@@ -2,16 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	qca
-DISTVERSION=	2.3.0
+PORTVERSION=	2.2.1
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	KDE/stable/qca/${PORTVERSION}
-PKGNAMESUFFIX=	-qt5
+PKGNAMESUFFIX=	-legacy-qt5
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Cross-platform crypto API for Qt ${FLAVOR:C/qt//}
+COMMENT=	Cross-platform crypto API for Qt ${FLAVOR:C/qt//} -- for FreeBSD 11
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+CONFLICTS_INSTALL=	qca-qt5-*
 
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
@@ -51,10 +54,4 @@ TEST_CMAKE_BOOL=	BUILD_TESTS
 TEST_TEST_TARGET=	test
 TEST_USE=		QT=network,testlib
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} == base
-IGNORE=			Does not support OpenSSL < 1.1
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
