@@ -3,7 +3,7 @@
 
 PORTNAME=	megaglest
 PORTVERSION=	3.13.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 
 MAINTAINER=	monwarez@mailoo.org
@@ -15,12 +15,12 @@ LICENSE_FILE=	${WRKSRC}/docs/gnu_gpl_3.0.txt
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libftgl.so:graphics/ftgl \
+		libircclient.so:irc/libircclient \
 		libvorbis.so:audio/libvorbis \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libminiupnpc.so:net/miniupnpc
-BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:irc/libircclient \
-		${LOCALBASE}/include/miniupnpc/miniupnpc.h:net/miniupnpc
+BUILD_DEPENDS=	${LOCALBASE}/include/miniupnpc/miniupnpc.h:net/miniupnpc
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/tutorials/2_basic_tutorial/2_basic_tutorial.xml:games/megaglest-data
 
 USE_GITHUB=	yes

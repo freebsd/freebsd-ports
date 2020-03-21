@@ -3,11 +3,5 @@ include/libirc_events.h
 include/libirc_options.h
 include/libirc_rfcnumeric.h
 include/libircclient.h
-lib/libircclient.a
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/censor.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/colors.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircftp.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/irctest.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spammer.c
+lib/libircclient.so
+lib/libircclient.so.1
