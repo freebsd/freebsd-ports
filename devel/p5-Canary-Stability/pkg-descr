@@ -1,8 +1,4 @@
-Canary::Stability is a forced dependency of a number of important
-perl modules. It exists only to provide dangerous advice (such as
-instructing users to uninstall their version of Perl and install
-one from 2015), absolutely none of which should ever be followed.
-
-This port installs an empty stub. If you obtain Canary::Stability
-directly from CPAN, please do not follow any instructions it gives
-you.
+This is a stub to satisy dependencies for a number of modules.
+The original Canary::Stability contains system checks that produce
+warnings that must be ignored (and which would be harmful if
+acted upon). This stub is a no-op.
