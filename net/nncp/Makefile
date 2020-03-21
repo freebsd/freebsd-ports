@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nncp
-DISTVERSION=	5.3.0
+DISTVERSION=	5.3.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.nncpgo.org/download/
 
@@ -26,6 +26,7 @@ PORTDOCS=	AUTHORS NEWS NEWS.RU README README.RU THANKS
 OPTIONS_DEFINE=	DOCS
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${INSTALL_DATA} ${FILESDIR}/nncp.newsyslog.conf.sample ${STAGEDIR}${PREFIX}/etc/nncp.conf.sample
 
 .include <bsd.port.mk>
