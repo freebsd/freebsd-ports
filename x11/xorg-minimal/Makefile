@@ -2,7 +2,7 @@
 
 PORTNAME=	xorg
 PORTVERSION=	7.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 x11-servers
 PKGNAMESUFFIX=	-minimal
 
@@ -15,10 +15,16 @@ USES=		metaport
 VIDEO_DRIVER?=	vesa
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/Xorg:x11-servers/xorg-server \
-		${LOCALBASE}/lib/xorg/modules/input/mouse_drv.so:x11-drivers/xf86-input-mouse \
-		${LOCALBASE}/lib/xorg/modules/input/kbd_drv.so:x11-drivers/xf86-input-keyboard \
 		${LOCALBASE}/bin/xinit:x11/xinit \
 		${LOCALBASE}/bin/xauth:x11/xauth
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
+RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/input/mouse_drv.so:x11-drivers/xf86-input-mouse
+RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/input/kbd_drv.so:x11-drivers/xf86-input-keyboard
+.else
+RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/input/libinput_drv.so:x11-drivers/xf86-input-libinput
+.endif
+
 .if ${VIDEO_DRIVER} == "nvidia"
 RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/nvidia_drv.so:x11/nvidia-driver
 .elif ${VIDEO_DRIVER} == "intel"
