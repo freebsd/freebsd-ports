@@ -14,6 +14,9 @@ COMMENT=	Backup tool that uses librsync and GnuPG
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Obsolete now, use sysutils/duplicity instead
+EXPIRATION_DATE=2020-03-30
+
 LIB_DEPENDS=	librsync.so:net/librsync2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0:devel/py-fasteners@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR} \
@@ -27,7 +30,7 @@ USES=		localbase python shebangfix
 USE_PYTHON=	autoplist distutils noflavors
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	duplicity
+CONFLICTS_INSTALL=	duplicity duplicity07
 
 SHEBANG_FILES=	bin/duplicity bin/rdiffdir
 
