@@ -54,4 +54,6 @@ TEST_CMAKE_BOOL=	BUILD_TESTS
 TEST_TEST_TARGET=	test
 TEST_USE=		QT=network,testlib
 
+PORTSCOUT=		limit:^2\.2\.1
+
 .include <bsd.port.mk>
