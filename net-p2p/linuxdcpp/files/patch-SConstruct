@@ -1,6 +1,6 @@
 --- SConstruct.orig	2011-04-17 17:57:09 UTC
 +++ SConstruct
-@@ -20,7 +20,7 @@ BUILD_LOCALE_PATH = BUILD_PATH + 'locale
+@@ -20,7 +20,7 @@ BUILD_LOCALE_PATH = BUILD_PATH + 'locale/'
  BUILD_FLAGS = {
  	'common'  : ['-I#', '-D_GNU_SOURCE', '-D_LARGEFILE_SOURCE', '-D_FILE_OFFSET_BITS=64', '-D_REENTRANT'],
  	'debug'   : ['-g', '-ggdb', '-Wall', '-D_DEBUG'], 
@@ -17,19 +17,19 @@
  	BoolVariable('profile', 'Compile the program with profiling information', 0),
  	PathVariable('PREFIX', 'Compile the program with PREFIX as the root for installation', '/usr/local', PathVariable.PathIsDir),
  	('FAKE_ROOT', 'Make scons install the program under a fake root', '')
-@@ -131,7 +132,10 @@ if os.environ.has_key('CC'):
+@@ -131,14 +132,23 @@ if os.environ.has_key('CC'):
  	env['CC'] = os.environ['CC']
  
  if os.environ.has_key('CXXFLAGS'):
 -	env['CPPFLAGS'] = env['CXXFLAGS'] = os.environ['CXXFLAGS'].split()
 +	env['CXXFLAGS'] = os.environ['CXXFLAGS'].split()
-+
+ 
 +if os.environ.has_key('CPPFLAGS'):
 +	env['CPPFLAGS'] = os.environ['CPPFLAGS'].split()
- 
++
  if os.environ.has_key('LDFLAGS'):
  	env['LINKFLAGS'] = os.environ['LDFLAGS'].split()
-@@ -139,6 +143,12 @@ if os.environ.has_key('LDFLAGS'):
+ 
  if os.environ.has_key('CFLAGS'):
  	env['CFLAGS'] = os.environ['CFLAGS'].split()
  
@@ -42,7 +42,18 @@
  env['CPPDEFINES'] = [] # Initialize as a list so Append doesn't concat strings
  
  env.SConsignFile('build/sconf/.sconsign')
-@@ -256,21 +266,20 @@ if not 'install' in COMMAND_LINE_TARGETS
+@@ -185,10 +195,6 @@ conf = env.Configure(
+ 
+ if not 'install' in COMMAND_LINE_TARGETS:
+ 
+-	if not conf.CheckCXXVersion(env['CXX'], 4, 1):
+-		print 'Compiler version check failed. g++ 4.1 or later is needed'
+-		Exit(1)
+-
+ 	if not conf.CheckPKGConfig():
+ 		print '\tpkg-config not found.'
+ 		Exit(1)
+@@ -256,21 +262,20 @@ if not 'install' in COMMAND_LINE_TARGETS:
  
  	if not conf.CheckHeader('iconv.h'):
  		Exit(1)
