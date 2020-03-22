@@ -1,2 +1,4 @@
 This a fairly simple Python module, it provides only raw yEnc
 encoding/decoding with built-in crc32 calculation.
+
+WWW: https://bitbucket.org/dual75/yenc
