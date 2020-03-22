@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wireguard
-PORTVERSION=	1.0.20200206
+PORTVERSION=	1.0.20200319
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-tools/snapshot/
 DISTNAME=	wireguard-tools-${PORTVERSION}
