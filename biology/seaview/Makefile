@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seaview
-PORTVERSION=	5.0
+PORTVERSION=	5.0.2
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
