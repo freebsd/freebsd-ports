@@ -21,7 +21,7 @@ rcvar=${name}_enable
 load_rc_config $name
 
 : ${filebeat_enable:="NO"}
-: ${filebeat_config:="-path.home /var/db/beats/${name} -path.config %%PREFIX%%/etc"}
+: ${filebeat_config:="-path.home %%DATADIR%%/${name} -path.config %%PREFIX%%/etc"}
 
 # daemon
 start_precmd=filebeat_prestart
