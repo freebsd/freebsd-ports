@@ -1,6 +1,10 @@
 Revert https://github.com/WayfireWM/wf-shell/commit/6e3ac5da8d24
 until x11-toolkits/gtkmm30 is updated to 3.24 or later.
 
+../src/background/background.cpp:33:35: error: no member named 'create_surface_from_pixbuf' in namespace 'Gdk::Cairo'
+    to_image.source = Gdk::Cairo::create_surface_from_pixbuf(image,
+                      ~~~~~~~~~~~~^
+
 --- src/background/background.cpp.orig	2020-03-21 19:18:51 UTC
 +++ src/background/background.cpp
 @@ -21,19 +21,17 @@ void BackgroundDrawingArea::show_image(Glib::RefPtr<Gd
