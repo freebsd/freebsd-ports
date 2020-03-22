@@ -91,6 +91,7 @@
     SUBDIR += python-gdsii
     SUBDIR += qcad
     SUBDIR += qelectrotech
+    SUBDIR += qflow
     SUBDIR += qmls
     SUBDIR += qrouter
     SUBDIR += repsnapper

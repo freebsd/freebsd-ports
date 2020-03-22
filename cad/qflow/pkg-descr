@@ -1,0 +1,11 @@
+A digital synthesis flow is a set of tools and methods used to turn a circuit
+design written in a high-level behavioral language like verilog or VHDL into a
+physical circuit, which can either be configuration code for an FPGA target like
+a Xilinx or Altera chip, or a layout in a specific fabrication process
+technology, that would become part of a fabricated circuit chip. Several digital
+synthesis flows targeting FPGAs are available, usually from the FPGA
+manufacturers, and while they are typically not open source, they are generally
+distributed for free (presumably on the sensible assumption that more people
+will be buying more FPGA hardware).
+
+WWW: http://opencircuitdesign.com/qflow/
