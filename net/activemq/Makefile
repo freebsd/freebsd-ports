@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	activemq
-PORTVERSION=	5.15.11
+PORTVERSION=	5.15.12
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
@@ -16,44 +16,34 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe
 CPE_VENDOR=	apache
 USE_JAVA=	yes
+USE_RC_SUBR=	activemq
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-MQDB?=		/var/db/activemq
-MQUSER?=	activemq
-MQGROUP?=	${MQUSER}
-USERS=		${MQUSER}
-GROUPS=		${MQGROUP}
-
-ALL_TARGET=	${PORTNAME}
-USE_RC_SUBR=	${PORTNAME}
+USERS=		activemq
+GROUPS=		activemq
 
 PORTDATA=	*
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-SUB_LIST=	MQUSER="${MQUSER}" \
-		MQGROUP="${MQGROUP}" \
-		MQDB="${MQDB}"
-PLIST_SUB=	MQUSER="${MQUSER}" \
-		MQGROUP="${MQGROUP}" \
-		MQDB="${MQDB}"
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/bin ${STAGEDIR}${ETCDIR} ${STAGEDIR}${MQDB}
 	${RM} ${WRKSRC}/conf/log4j.properties.orig
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	cd ${WRKSRC}/conf && for f in *; do \
 		${INSTALL_DATA} ${WRKSRC}/conf/$$f ${STAGEDIR}${ETCDIR}/$$f.sample; \
 	done
+	@${MKDIR} ${STAGEDIR}${DATADIR}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/activemq* ${STAGEDIR}${DATADIR}/bin
 	${RLN} ${STAGEDIR}${DATADIR}/bin/activemq ${STAGEDIR}${PREFIX}/bin
 	${RLN} ${STAGEDIR}${DATADIR}/bin/activemq-diag ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/bin/activemq.jar ${WRKSRC}/bin/wrapper.jar \
 		${STAGEDIR}${DATADIR}/bin
-	${RLN} ${STAGEDIR}${MQDB} ${STAGEDIR}${DATADIR}/data
+	@${MKDIR} ${STAGEDIR}/var/db/activemq
+	${RLN} ${STAGEDIR}/var/db/activemq ${STAGEDIR}${DATADIR}/data
 	${RLN} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${DATADIR}/conf
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "lib webapps webapps-demo" \
 		${STAGEDIR}${DATADIR}

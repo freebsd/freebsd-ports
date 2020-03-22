@@ -35,17 +35,16 @@ load_rc_config $name
 
 # Set defaults
 : ${activemq_enable:=NO}
-: ${activemq_user:=%%MQUSER%%}
-: ${activemq_group:=%%MQGROUP%%}
+: ${activemq_user:=activemq}
+: ${activemq_group:=activemq}
 : ${activemq_classpath:=%%ETCDIR%%}
 : ${activemq_conf:=%%ETCDIR%%}
-: ${activemq_data:=%%MQDB%%}
+: ${activemq_data:=/var/db/activemq}
 : ${activemq_logs:=/var/log/activemq}
 : ${activemq_home:=%%DATADIR%%}
 : ${activemq_javargs:='-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dcom.sun.management.jmxremote'}
 : ${activemq_stop_timeout:="10"}
 : ${activemq_hostname:=`/bin/hostname`}
-
 
 pidfile=/var/run/${name}.pid
 
