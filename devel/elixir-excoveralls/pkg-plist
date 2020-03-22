@@ -27,6 +27,7 @@ lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.StopWords.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.SubApps.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Task.Util.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Travis.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Xml.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Json.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Circle.beam
@@ -39,6 +40,7 @@ lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Post.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Runner.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Semaphore.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Travis.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.Xml.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.Mix.Tasks.Coveralls.beam
 lib/elixir/lib/excoveralls/ebin/excoveralls.app
 lib/elixir/lib/excoveralls/lib/conf/coveralls.json
@@ -66,6 +68,7 @@ lib/elixir/lib/excoveralls/lib/excoveralls/stop_words.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/sub_apps.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/task/util.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/travis.ex
+lib/elixir/lib/excoveralls/lib/excoveralls/xml.ex
 lib/elixir/lib/excoveralls/lib/mix/tasks.ex
 lib/elixir/lib/excoveralls/lib/templates/html/htmlcov/_script.html.eex
 lib/elixir/lib/excoveralls/lib/templates/html/htmlcov/_style.html.eex
