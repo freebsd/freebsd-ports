@@ -1,3 +1,5 @@
-TIMESTAMP = 1577756405
-SHA256 (symless-synergy-core-1.11.0-stable_GH0.tar.gz) = c9c9eee0b33c464addfb6cebdbce89c68030dee50964ed8a2b626912da4dbc24
-SIZE (symless-synergy-core-1.11.0-stable_GH0.tar.gz) = 7593731
+TIMESTAMP = 1584896801
+SHA256 (symless-synergy-core-v1.11.1-stable_GH0.tar.gz) = 338e5fda0323f8c24259d8fc26e513bdc4f0f249bf66e9722953bb8e6311f88b
+SIZE (symless-synergy-core-v1.11.1-stable_GH0.tar.gz) = 7556850
+SHA256 (e4a2b0f95cd3a18b9772b3282fdd91561956e5e3.patch) = bd6343cf732e643c7241dca95e56e48ea32fec64d673519aff077bc74588a493
+SIZE (e4a2b0f95cd3a18b9772b3282fdd91561956e5e3.patch) = 1584

@@ -1,9 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	synergy-1
-DISTVERSION=	1.11.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.11.1
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	sysutils
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	e4a2b0f95cd3a18b9772b3282fdd91561956e5e3.patch:-p1 # https://github.com/symless/synergy-core/pull/6649/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility
