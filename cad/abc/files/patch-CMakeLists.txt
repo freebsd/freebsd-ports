@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2020-03-22 08:33:14 UTC
++++ CMakeLists.txt
+@@ -91,7 +91,7 @@ endfunction()
+ set(ABC_MAIN_SRC src/base/main/main.c)
+ list(REMOVE_ITEM ABC_SRC ${ABC_MAIN_SRC})
+ 
+-add_library(libabc EXCLUDE_FROM_ALL ${ABC_SRC})
++add_library(libabc EXCLUDE_FROM_ALL SHARED ${ABC_SRC})
+ abc_properties(libabc PUBLIC)
+ set_property(TARGET libabc PROPERTY OUTPUT_NAME abc)
+ 
+@@ -99,7 +99,7 @@ add_executable(abc ${ABC_MAIN_SRC})
+ target_link_libraries(abc PRIVATE libabc)
+ abc_properties(abc PRIVATE)
+ 
+-add_library(libabc-pic EXCLUDE_FROM_ALL ${ABC_SRC})
++add_library(libabc-pic EXCLUDE_FROM_ALL SHARED ${ABC_SRC})
+ abc_properties(libabc-pic PUBLIC)
+ set_property(TARGET libabc-pic PROPERTY POSITION_INDEPENDENT_CODE ON)
+ set_property(TARGET libabc-pic PROPERTY OUTPUT_NAME abc-pic)
