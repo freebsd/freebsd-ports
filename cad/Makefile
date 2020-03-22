@@ -39,6 +39,7 @@
     SUBDIR += gmsh
     SUBDIR += gnucap
     SUBDIR += gplcver
+    SUBDIR += graywolf
     SUBDIR += gspiceui
     SUBDIR += gtkwave
     SUBDIR += impact
