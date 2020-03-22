@@ -10,7 +10,7 @@ COMMENT=	Experimental range library for C++11/14/17
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	ericniebler
 NO_ARCH=	yes
