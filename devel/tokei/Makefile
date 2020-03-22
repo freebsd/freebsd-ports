@@ -2,8 +2,7 @@
 
 PORTNAME=	tokei
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.1.2
-PORTREVISION=	2
+DISTVERSION=	11.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -18,31 +17,35 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	XAMPPRocky
 
-CARGO_CRATES=	aho-corasick-0.7.8 \
+CARGO_CRATES=	ahash-0.3.2 \
+		aho-corasick-0.7.10 \
 		ansi_term-0.11.0 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.1 \
 		atty-0.2.14 \
-		autocfg-0.1.7 \
+		autocfg-1.0.0 \
 		base64-0.11.0 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.10 \
 		block-buffer-0.7.3 \
 		block-padding-0.1.5 \
-		bstr-0.2.11 \
+		bstr-0.2.12 \
 		byte-tools-0.3.1 \
-		bytecount-0.5.1 \
+		bytecount-0.6.0 \
 		byteorder-1.3.4 \
-		c2-chacha-0.2.3 \
 		cc-1.0.50 \
 		cfg-if-0.1.10 \
 		clap-2.33.0 \
+		cloudabi-0.0.3 \
+		const-random-0.1.8 \
+		const-random-macro-0.1.8 \
 		constant_time_eq-0.1.5 \
-		crossbeam-channel-0.4.0 \
-		crossbeam-deque-0.7.2 \
-		crossbeam-epoch-0.8.0 \
+		crossbeam-channel-0.4.2 \
+		crossbeam-deque-0.7.3 \
+		crossbeam-epoch-0.8.2 \
 		crossbeam-queue-0.2.1 \
-		crossbeam-utils-0.7.0 \
+		crossbeam-utils-0.7.2 \
+		dashmap-3.7.0 \
 		digest-0.8.1 \
 		dirs-2.0.2 \
 		dirs-sys-0.3.4 \
@@ -55,70 +58,72 @@ CARGO_CRATES=	aho-corasick-0.7.8 \
 		fnv-1.0.6 \
 		generic-array-0.12.3 \
 		getrandom-0.1.14 \
-		git2-0.11.0 \
-		globset-0.4.4 \
-		grep-matcher-0.1.3 \
-		grep-searcher-0.1.6 \
-		half-1.4.1 \
+		git2-0.13.0 \
+		globset-0.4.5 \
+		grep-matcher-0.1.4 \
+		grep-searcher-0.1.7 \
+		half-1.5.0 \
 		handlebars-3.0.1 \
-		hermit-abi-0.1.6 \
-		hex-0.4.1 \
+		hermit-abi-0.1.8 \
+		hex-0.4.2 \
 		humantime-1.3.0 \
 		idna-0.2.0 \
-		ignore-0.4.11 \
+		ignore-0.4.12 \
 		itoa-0.4.5 \
 		jobserver-0.1.21 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.66 \
-		libgit2-sys-0.10.0 \
+		libc-0.2.68 \
+		libgit2-sys-0.12.0+0.99.0 \
 		libz-sys-1.0.25 \
 		linked-hash-map-0.5.2 \
+		lock_api-0.3.3 \
 		log-0.4.8 \
 		maplit-1.0.2 \
 		matches-0.1.8 \
-		memchr-2.3.2 \
+		maybe-uninit-2.0.0 \
+		memchr-2.3.3 \
 		memmap-0.7.0 \
-		memoffset-0.5.3 \
+		memoffset-0.5.4 \
 		num_cpus-1.12.0 \
 		opaque-debug-0.2.3 \
+		parking_lot-0.10.0 \
+		parking_lot_core-0.7.0 \
 		percent-encoding-2.1.0 \
-		pest-2.1.2 \
+		pest-2.1.3 \
 		pest_derive-2.1.0 \
-		pest_generator-2.1.1 \
-		pest_meta-2.1.2 \
+		pest_generator-2.1.3 \
+		pest_meta-2.1.3 \
 		pkg-config-0.3.17 \
 		ppv-lite86-0.2.6 \
-		proc-macro2-1.0.8 \
+		proc-macro-hack-0.5.12 \
+		proc-macro2-1.0.9 \
 		quick-error-1.2.3 \
-		quote-1.0.2 \
+		quote-1.0.3 \
 		rand-0.7.3 \
-		rand_chacha-0.2.1 \
+		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
 		rayon-1.3.0 \
 		rayon-core-1.7.0 \
 		redox_syscall-0.1.56 \
 		redox_users-0.3.4 \
-		regex-1.3.4 \
-		regex-syntax-0.6.14 \
+		regex-1.3.5 \
+		regex-syntax-0.6.17 \
 		remove_dir_all-0.5.2 \
 		rust-argon2-0.7.0 \
-		rustc_version-0.2.3 \
-		ryu-1.0.2 \
+		ryu-1.0.3 \
 		same-file-1.0.6 \
-		scopeguard-1.0.0 \
-		semver-0.9.0 \
-		semver-parser-0.7.0 \
-		serde-1.0.104 \
+		scopeguard-1.1.0 \
+		serde-1.0.105 \
 		serde_cbor-0.11.1 \
-		serde_derive-1.0.104 \
+		serde_derive-1.0.105 \
 		serde_json-1.0.48 \
 		serde_yaml-0.8.11 \
 		sha-1-0.8.2 \
 		smallvec-1.2.0 \
 		strsim-0.8.0 \
-		syn-1.0.14 \
+		syn-1.0.17 \
 		tempfile-3.1.0 \
 		term_size-0.3.1 \
 		termcolor-1.1.0 \
@@ -126,7 +131,7 @@ CARGO_CRATES=	aho-corasick-0.7.8 \
 		thread_local-1.0.1 \
 		toml-0.5.6 \
 		typenum-1.11.2 \
-		ucd-trie-0.1.2 \
+		ucd-trie-0.1.3 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.12 \
 		unicode-width-0.1.7 \
