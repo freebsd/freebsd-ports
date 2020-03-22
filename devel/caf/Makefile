@@ -3,6 +3,7 @@
 
 PORTNAME=	caf
 PORTVERSION=	0.17.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	leres@FreeBSD.org
@@ -25,13 +26,13 @@ OPTIONS_DEFAULT=	TEST
 OPTIONS_SUB=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-TEST_DESC=	Build with unit tests
-STATIC_DESC=	Additionally build static version of library
-LOG_LEVEL_ERROR=	Use log level ERROR for console output
-LOG_LEVEL_WARN=	Use log level WARN for console output
-LOG_LEVEL_INFO=	Use log level INFO for console output
-LOG_LEVEL_DEBUG=	Use log level DEBUG for console output
-LOG_LEVEL_TRACE=	Use log level TRACE for console output
+LOG_LEVEL_DEBUG_DESC=	Use log level DEBUG for console output
+LOG_LEVEL_ERROR_DESC=	Use log level ERROR for console output
+LOG_LEVEL_INFO_DESC=	Use log level INFO for console output
+LOG_LEVEL_TRACE_DESC=	Use log level TRACE for console output
+LOG_LEVEL_WARN_DESC=	Use log level WARN for console output
+STATIC_DESC=		Additionally build static version of library
+TEST_DESC=		Build with unit tests
 
 TEST_TARGET=	test
 
