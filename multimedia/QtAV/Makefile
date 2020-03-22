@@ -7,6 +7,9 @@ PORTREVISION=		2
 CATEGORIES=		multimedia
 DIST_SUBDIR=		KDE
 
+PATCH_SITES=		https://github.com/wang-bin/QtAV/commit/
+PATCHFILES=		5abba7f0505e75fceabd4dd8992a7e02bb149d64.patch:-p1
+
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		Cross-platform multimedia framwork based on Qt and ffmpeg
 
