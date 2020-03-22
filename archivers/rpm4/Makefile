@@ -3,6 +3,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.15.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.rpm.org/releases/rpm-4.15.x/
 PKGNAMESUFFIX=	4
@@ -16,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libnss3.so:security/nss \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash \
+		gxargs:misc/findutils
 
 USES=		alias bdb compiler:openmp gmake iconv libarchive libtool \
 		lua:52+ pathfix pkgconfig shebangfix tar:bzip2
@@ -70,6 +72,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:\.\./\.\./bin/::' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's/ __GLIBC__.*/& || defined(__FreeBSD__)/' \
 		${WRKSRC}/system.h
+	@${REINPLACE_CMD} -e 's/\<xargs\>/gxargs/g' ${WRKSRC}/scripts/brp-python-bytecompile \
+		${WRKSRC}/scripts/brp-strip-static-archive \
+		${WRKSRC}/scripts/check-buildroot \
+		${WRKSRC}/scripts/check-rpaths \
+		${WRKSRC}/scripts/find-debuginfo.sh \
+		${WRKSRC}/scripts/vpkg-provides.sh
 
 post-install-PYTHON-off:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/rpm/pythondistdeps.py
