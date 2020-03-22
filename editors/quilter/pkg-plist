@@ -10,11 +10,11 @@ share/com.github.lainsce.quilter/highlight.js/styles/sepia.min.css
 share/com.github.lainsce.quilter/katex/katex.css
 share/com.github.lainsce.quilter/katex/katex.js
 share/com.github.lainsce.quilter/katex/render.js
+share/com.github.lainsce.quilter/mermaid/mermaid.js
 share/locale/ru/LC_MESSAGES/com.github.lainsce.quilter.mo
 share/fonts/truetype/quilt/QuiltMono.ttf
 share/fonts/truetype/quilt/QuiltVier.ttf
 share/gtksourceview-3.0/styles/quilter-dark.xml
-share/gtksourceview-3.0/styles/quilter-moon.xml
 share/gtksourceview-3.0/styles/quilter-sepia.xml
 share/gtksourceview-3.0/styles/quilter.xml
 share/icons/hicolor/128x128/apps/com.github.lainsce.quilter.svg
