@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmogstored
-PORTVERSION=	1.7.2
-PORTREVISION=	2
+PORTVERSION=	1.7.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://yhbt.net/cmogstored/files/
 
