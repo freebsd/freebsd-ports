@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wayfire
-DISTVERSION=	0.3.1
-PORTREVISION=	1
+DISTVERSION=	0.4.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,6 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		wf-config>=0.4.0<0.5.0:devel/wf-config \
 		${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
 		wayland-protocols>=1.12:graphics/wayland-protocols \
 		glm>=0.9.8:math/glm \
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c++11-lib gl gnome jpeg meson pkgconfig xorg
+USES=		compiler:c++17-lang gl gnome jpeg meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_GL=		egl glesv2
 USE_GNOME=	cairo
