@@ -13,6 +13,8 @@ COMMENT=	Core C++ library for Pacific Biosciences tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 # Meson needs BOOST_ROOT=${LOCALBASE}
