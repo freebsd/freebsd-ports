@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wf-config
-DISTVERSION=	0.3
-PORTREVISION=	2
+DISTVERSION=	0.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,12 +11,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>0:graphics/wayland-protocols
-LIB_DEPENDS=	libevdev.so:devel/libevdev \
-		libwlroots.so:x11-toolkits/wlroots
+		wayland-protocols>0:graphics/wayland-protocols \
+		glm>0:math/glm
+LIB_DEPENDS=	libevdev.so:devel/libevdev
+RUN_DEPENDS=	glm>0:math/glm
 
-USES=		compiler:c++11-lib meson pkgconfig
+USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GITHUB=	yes
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	WayfireWM
 
