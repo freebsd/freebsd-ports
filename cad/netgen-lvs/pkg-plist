@@ -1,8 +1,4 @@
-bin/inetcomp
-bin/netcomp
 bin/netgen
-bin/ntk2adl
-bin/ntk2xnf
 lib/netgen/doc/netgen.doc
 lib/netgen/ntk2adl.sh
 lib/netgen/python/consoletext.py
@@ -15,3 +11,8 @@ lib/netgen/python/treeviewsplit.py
 lib/netgen/spice
 lib/netgen/spice.bot
 lib/netgen/spice.top
+lib/netgen/tcl/console.tcl
+lib/netgen/tcl/netgen.tcl
+lib/netgen/tcl/netgenexec
+lib/netgen/tcl/tclnetgen.so
+lib/netgen/tcl/tkcon.tcl
