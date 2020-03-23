@@ -1,0 +1,6 @@
+Parameterized testing in Python sucks.
+
+parameterized fixes that. For everything. Parameterized testing for nose,
+parameterized testing for py.test, parameterized testing for unittest.
+
+WWW: https://github.com/wolever/parameterized
