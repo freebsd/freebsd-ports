@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pianod2
-PORTVERSION=	301
-PORTREVISION=	2
+PORTVERSION=	306
 CATEGORIES=	audio
 MASTER_SITES=	http://deviousfish.com/Downloads/pianod2/Devel/
 
