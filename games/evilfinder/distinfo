@@ -1,4 +1,5 @@
+TIMESTAMP = 1584940020
 SHA256 (ef.tgz) = 0e61b46c0891f7631a24a06c40988013c5581a9631eb7ed1221ff797299f0588
 SIZE (ef.tgz) = 150494
-SHA256 (evilnumbers.dat) = 6162beec29da300c610d8a8e8d879178af6814b6e80ec3ddc12cfdfc4bc330ac
-SIZE (evilnumbers.dat) = 5087
+SHA256 (evilnumbers.dat) = 7e51ec1be49f6fe2a7097a11ae80a8a863303d8c7a4be7d1df94ad1386bc00b6
+SIZE (evilnumbers.dat) = 5091

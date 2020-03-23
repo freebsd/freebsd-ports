@@ -3,9 +3,9 @@
 
 PORTNAME=	evilfinder
 PORTVERSION=	1.00
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://lcamtuf.coredump.cx/:src \
+MASTER_SITES=	https://aklv.github.io/distfiles/:src \
 	http://lcamtuf.coredump.cx/evilfinder/:numbers
 DISTFILES=	ef.tgz:src \
 	evilnumbers.dat:numbers
@@ -13,8 +13,6 @@ EXTRACT_ONLY=	ef.tgz
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Numerologically determine the evilness of things
-
-BROKEN=		unfetchable
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
