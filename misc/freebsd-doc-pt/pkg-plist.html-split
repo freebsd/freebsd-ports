@@ -449,7 +449,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-shutdown.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot-splash.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/boot.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-final-warning.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-fetching-distribution.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-hardware.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-install-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-partitioning.html
@@ -669,7 +669,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-understanding.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-understanding.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-troubleshooting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/zfs-advanced.html
@@ -881,7 +881,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-xorg-cat.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-xorg.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-zip.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-zope.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-autotools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-databases.html

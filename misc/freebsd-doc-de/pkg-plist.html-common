@@ -78,7 +78,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-final-modification-shell.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-finalconfiguration.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-keymap-10.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-keymap-loading.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-keymap-select-default.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-keymap-testing.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-mainexit.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-netinstall-files.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-netinstall-mirrorselect.png
@@ -94,7 +96,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-set-clock-local-utc.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-confirm.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-country.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-date.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-region.png
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-time.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-timezone-zone.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-disk_info.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall/bsdinstall-zfs-disk_select.png
