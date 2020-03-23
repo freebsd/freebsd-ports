@@ -1,0 +1,11 @@
+TIMESTAMP = 1582665896
+SHA256 (yory8-clipman-v1.4.0_GH0.tar.gz) = 345ff5c4bab6a7354343ddc25b3b2b3e1c2de1b8042f23633c7c7066b384dcad
+SIZE (yory8-clipman-v1.4.0_GH0.tar.gz) = 19614
+SHA256 (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 4624eae43489de8a71ea60efaf6744c581b6bd62909f7514c484c1ea0efaba5a
+SIZE (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 44383
+SHA256 (alecthomas-template-fb15b899a751_GH0.tar.gz) = 2e2a44375eca48ce941182504b5d13aa98182b9a3f64ace33bfda52208bd0f5e
+SIZE (alecthomas-template-fb15b899a751_GH0.tar.gz) = 55339
+SHA256 (alecthomas-units-f65c72e2690d_GH0.tar.gz) = ece06024b01821e013bd7158dfe8ec8cc697f586ce8d3cfaa22edde8c2f022c3
+SIZE (alecthomas-units-f65c72e2690d_GH0.tar.gz) = 4925
+SHA256 (kballard-go-shellquote-95032a82bc51_GH0.tar.gz) = dde336eb697f7f9c26cf6d1467f75b6cf559262c1b0b110d28fff29790f76bc5
+SIZE (kballard-go-shellquote-95032a82bc51_GH0.tar.gz) = 4328
