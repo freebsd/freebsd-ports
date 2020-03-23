@@ -350,6 +350,7 @@
     SUBDIR += wmutils-core
     SUBDIR += wmutils-opt
     SUBDIR += wmxss
+    SUBDIR += wofi
     SUBDIR += workrave
     SUBDIR += x11perf
     SUBDIR += x3270
