@@ -1,0 +1,44 @@
+Partially revert https://hg.sr.ht/~scoopta/wofi/rev/6343e02e2478 until
+devel/glib20 is updated to 2.60 or later.
+
+ld: error: undefined symbol: g_app_info_launch_uris_async
+>>> referenced by drun.c
+>>>               wofi@exe/modes_drun.c.o:(wofi_drun_exec)
+
+ld: error: undefined symbol: g_app_info_launch_uris_finish
+>>> referenced by drun.c
+>>>               wofi@exe/modes_drun.c.o:(launch_done)
+
+--- modes/drun.c.orig	2020-03-10 05:37:36 UTC
++++ modes/drun.c
+@@ -315,6 +315,7 @@ struct widget* wofi_drun_get_widget(void) {
+ 	return NULL;
+ }
+ 
++#if GLIB_CHECK_VERSION(2, 60, 0)
+ static void launch_done(GObject* obj, GAsyncResult* result, gpointer data) {
+ 	GError* err = NULL;
+ 	if(g_app_info_launch_uris_finish(G_APP_INFO(obj), result, &err)) {
+@@ -329,6 +330,7 @@ static void launch_done(GObject* obj, GAsyncResult* re
+ 	}
+ 	exit(1);
+ }
++#endif
+ 
+ void wofi_drun_exec(const gchar* cmd) {
+ 	GDesktopAppInfo* info = g_desktop_app_info_new_from_filename(cmd);
+@@ -338,7 +340,14 @@ void wofi_drun_exec(const gchar* cmd) {
+ 			printf("%s\n", g_app_info_get_commandline(G_APP_INFO(info)));
+ 			exit(0);
+ 		} else {
++#if GLIB_CHECK_VERSION(2, 60, 0)
+ 			g_app_info_launch_uris_async(G_APP_INFO(info), NULL, NULL, NULL, launch_done, (gchar*) cmd);
++#else
++			const char* exec = g_app_info_get_executable(G_APP_INFO(info));
++			execlp(exec, exec, NULL);
++			fprintf(stderr, "%s cannot be executed\n", exec);
++			exit(errno);
++#endif
+ 		}
+ 	} else if(strrchr(cmd, ' ') != NULL) {
+ 		char* space = strrchr(cmd, ' ');

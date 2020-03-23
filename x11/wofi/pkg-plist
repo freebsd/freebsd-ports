@@ -1,0 +1,15 @@
+bin/wofi
+include/wofi-1/config.h
+include/wofi-1/map.h
+include/wofi-1/utils.h
+include/wofi-1/wofi_api.h
+libdata/pkgconfig/wofi.pc
+man/man1/wofi.1.gz
+man/man3/wofi-api.3.gz
+man/man3/wofi-config.3.gz
+man/man3/wofi-map.3.gz
+man/man3/wofi-utils.3.gz
+man/man3/wofi.3.gz
+man/man5/wofi.5.gz
+man/man7/wofi-keys.7.gz
+man/man7/wofi.7.gz
