@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kamailio
-PORTVERSION=	5.3.1
+PORTVERSION=	5.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
@@ -82,6 +82,7 @@ LUAJIT_VARS=		EXTRA_MODULES+=app_lua
 PYTHON3_DESC=		Execute embedded Python3 scripts
 PYTHON3_IMPLIES=	KEMIX
 PYTHON3_MAKE_ARGS=	PYTHON3=${PYTHON_CMD}
+PYTHON3_USES=		gettext-runtime
 PYTHON3_VARS=		EXTRA_MODULES+=app_python3
 
 DIALPLAN_DESC=		String translations based on rules
@@ -125,7 +126,7 @@ CFG_ARGS+=	include_modules="${EXTRA_MODULES}"
 .endif
 
 post-patch:
-	${REINPLACE_CMD} '551s|$$(run_prefix)/$$(run_dir)|${KAMAILIO_RUNDIR}|' \
+	${REINPLACE_CMD} '554s|$$(run_prefix)/$$(run_dir)|${KAMAILIO_RUNDIR}|' \
 		${WRKSRC}/src/Makefile.defs
 
 post-patch-DOCS-off:
