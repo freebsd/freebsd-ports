@@ -1,4 +1,4 @@
---- e2fsck/unix.c.orig	2019-07-15 01:03:14 UTC
+--- e2fsck/unix.c.orig	2020-03-21 04:24:04 UTC
 +++ e2fsck/unix.c
 @@ -9,8 +9,6 @@
   * %End-Header%
@@ -9,15 +9,6 @@
  #include "config.h"
  #include <stdio.h>
  #ifdef HAVE_STDLIB_H
-@@ -37,7 +35,7 @@ extern int optind;
- #include <sys/ioctl.h>
- #endif
- #ifdef HAVE_MALLOC_H
--#include <malloc.h>
-+#include <stdlib.h>
- #endif
- #ifdef HAVE_SYS_TYPES_H
- #include <sys/types.h>
 @@ -602,6 +600,24 @@ static int e2fsck_update_progress(e2fsck_t ctx, int pa
  	return 0;
  }

@@ -1,0 +1,72 @@
+The patch was provided by Ted Y. Ts'o, with the final loff_t ->
+ext2_loff_t manually added by mandree@FreeBSD.org
+--------------
+
+From 3fab0b6872b74ae0efab1ebdc6318924fda5f3a5 Mon Sep 17 00:00:00 2001
+From: Theodore Ts'o <tytso@mit.edu>
+Date: Sun, 22 Mar 2020 23:30:14 -0400
+Subject: [PATCH 1/3] Use ext2_loff_t instead of loff_t
+
+The loff_t type is a glibc'ism and is not fully portable.  Use
+ext2_loff_t instead.
+
+Fixes: 382ed4a1c2b6 ("e2fsck: use proper types for variables")
+Signed-off-by: Theodore Ts'o <tytso@mit.edu>
+Reported-by: Matthias Andree <matthias.andree@gmx.de>
+---
+ lib/ext2fs/imager.c | 2 +-
+ misc/e2fuzz.c       | 9 +++++----
+ 2 files changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/lib/ext2fs/imager.c b/lib/ext2fs/imager.c
+index b3ede9a8..1aebe625 100644
+--- ./lib/ext2fs/imager.c
++++ b/lib/ext2fs/imager.c
+@@ -67,7 +67,7 @@ errcode_t ext2fs_image_inode_write(ext2_filsys fs, int fd, int flags)
+ 	blk64_t		blk;
+ 	ssize_t		actual;
+ 	errcode_t	retval;
+-	loff_t		r;
++	ext2_loff_t	r;
+ 
+ 	buf = malloc(fs->blocksize * BUF_BLOCKS);
+ 	if (!buf)
+diff --git a/misc/e2fuzz.c b/misc/e2fuzz.c
+index 7c0f776f..f22c9f32 100644
+--- ./misc/e2fuzz.c
++++ b/misc/e2fuzz.c
+@@ -33,9 +33,10 @@ static unsigned long long user_corrupt_bytes = 0;
+ static double user_corrupt_pct = 0.0;
+ 
+ #if !defined HAVE_PWRITE64 && !defined HAVE_PWRITE
+-static ssize_t my_pwrite(int fd, const void *buf, size_t count, off_t offset)
++static ssize_t my_pwrite(int fd, const void *buf, size_t count,
++			 ext2_loff_t offset)
+ {
+-	if (lseek(fd, offset, SEEK_SET) < 0)
++	if (ext2fs_llseek(fd, offset, SEEK_SET) < 0)
+ 		return 0;
+ 
+ 	return write(fd, buf, count);
+@@ -82,7 +83,7 @@ static int find_block_helper(ext2_filsys fs EXT2FS_ATTR((unused)),
+ }
+ 
+ static errcode_t find_metadata_blocks(ext2_filsys fs, ext2fs_block_bitmap bmap,
+-				      off_t *corrupt_bytes)
++				      ext2_loff_t *corrupt_bytes)
+ {
+ 	dgrp_t i;
+ 	blk64_t b, c;
+@@ -181,7 +182,7 @@ static int process_fs(const char *fsname)
+ 	int flags, fd;
+ 	ext2_filsys fs = NULL;
+ 	ext2fs_block_bitmap corrupt_map;
+-	loff_t hsize, count, off, offset, corrupt_bytes;
++	ext2_loff_t hsize, count, off, offset, corrupt_bytes;
+ 	unsigned char c;
+-	loff_t i;
++	ext2_loff_t i;
+ 
+-- 
+2.24.1
+

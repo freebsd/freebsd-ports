@@ -1,0 +1,64 @@
+From e3b002dcc43364972275fe32438af299dd6629a0 Mon Sep 17 00:00:00 2001
+From: Theodore Ts'o <tytso@mit.edu>
+Date: Sun, 22 Mar 2020 23:56:14 -0400
+Subject: [PATCH 3/3] tests: use grep -E for better portability in
+ r_inline_xattr
+
+Since r_inline_xattr is using an extended regexp, we need grep -E on
+some implementations of grep.
+
+Signed-off-by: Theodore Ts'o <tytso@mit.edu>
+---
+ tests/r_inline_xattr/expect | 4 ++--
+ tests/r_inline_xattr/script | 8 ++++----
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/tests/r_inline_xattr/expect b/tests/r_inline_xattr/expect
+index 885de59d..773db102 100644
+--- ./tests/r_inline_xattr/expect
++++ b/tests/r_inline_xattr/expect
+@@ -1,5 +1,5 @@
+ resize2fs test
+-debugfs -R ''stat file'' test.img 2>&1 | grep ''^Inode\|in inode body\|user.name (''
++debugfs -R ''stat file'' test.img 2>&1 | grep -E ''^Inode\|in inode body\|user.name \(''
+ Inode: 1550   Type: regular    Mode:  0644   Flags: 0x0
+   user.name (11) = "propervalue"
+ Exit status is 0
+@@ -8,7 +8,7 @@ Resizing the filesystem on test.img to 5120 (1k) blocks.
+ The filesystem on test.img is now 5120 (1k) blocks long.
+ 
+ Exit status is 0
+-debugfs -R ''stat file'' test.img 2>&1 | grep ''^Inode\|in inode body\|user.name (''
++debugfs -R ''stat file'' test.img 2>&1 | grep -E ''^Inode\|in inode body\|user.name \(''
+ Inode: 12   Type: regular    Mode:  0644   Flags: 0x0
+   user.name (11) = "propervalue"
+ Exit status is 0
+diff --git a/tests/r_inline_xattr/script b/tests/r_inline_xattr/script
+index 4e7dd94c..2f754e60 100644
+--- ./tests/r_inline_xattr/script
++++ b/tests/r_inline_xattr/script
+@@ -13,8 +13,8 @@ gunzip < $IMAGE > $TMPFILE
+ echo "resize2fs test" > $OUT.new
+ 
+ # Look at existing inline extended attribute
+-echo "debugfs -R ''stat file'' test.img 2>&1 | grep ''^Inode\|in inode body\|user.name (''" >> $OUT.new
+-$DEBUGFS -R "stat file" $TMPFILE 2>&1 | grep "^Inode\|in inode body\|user.name (" >> $OUT.new
++echo "debugfs -R ''stat file'' test.img 2>&1 | grep -E ''^Inode\|in inode body\|user.name \\(''" >> $OUT.new
++$DEBUGFS -R "stat file" $TMPFILE 2>&1 | grep -E "^Inode|in inode body|user.name \(" >> $OUT.new
+ status=$?
+ echo Exit status is $status >> $OUT.new
+ 
+@@ -25,8 +25,8 @@ status=$?
+ echo Exit status is $status >> $OUT.new
+ 
+ # Look at inline extended attribute in resized fs
+-echo "debugfs -R ''stat file'' test.img 2>&1 | grep ''^Inode\|in inode body\|user.name (''" >> $OUT.new
+-$DEBUGFS -R "stat file" $TMPFILE 2>&1 | grep "^Inode\|in inode body\|user.name (" >> $OUT.new
++echo "debugfs -R ''stat file'' test.img 2>&1 | grep -E ''^Inode\|in inode body\|user.name \\(''" >> $OUT.new
++$DEBUGFS -R "stat file" $TMPFILE 2>&1 | grep -E "^Inode|in inode body|user.name \(" >> $OUT.new
+ status=$?
+ echo Exit status is $status >> $OUT.new
+ 
+-- 
+2.24.1
+
