@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twofactor_totp
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
