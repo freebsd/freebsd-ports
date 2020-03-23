@@ -61,6 +61,6 @@ command_args="--config ${fahclient_config} --chdir ${fahclient_chdir}"
 command_args="${command_args} --pid-file ${pidfile} --daemon"
 extra_commands="log"
 log_cmd="tail -F -- ${fahclient_logfile}"
-required_modules='linprocfs linsysfs linuxcommon'
+required_modules='linprocfs linsysfs linux64:linux64elf'
 
 run_rc_command "$1"
