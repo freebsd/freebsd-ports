@@ -1,4 +1,4 @@
---- src/mediaunits/pandora/pandorasource.cpp.orig	2018-03-16 18:13:50 UTC
+--- src/mediaunits/pandora/pandorasource.cpp.orig	2020-03-17 17:41:28 UTC
 +++ src/mediaunits/pandora/pandorasource.cpp
 @@ -15,6 +15,7 @@
  

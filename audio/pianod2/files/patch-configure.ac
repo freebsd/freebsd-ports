@@ -1,11 +1,11 @@
---- configure.ac.orig	2018-12-07 06:39:29 UTC
+--- configure.ac.orig	2020-03-17 17:41:27 UTC
 +++ configure.ac
 @@ -19,7 +19,7 @@
  AC_PREREQ([2.68])
  AC_CONFIG_MACRO_DIRS([m4])
  AC_INIT([pianod2],
 -	m4_esyscmd([svn info svn://svn.deviousfish.com/pianod2 | grep Revision: | awk '{print $2}' | tr -d '\n']),
-+	[301],
++	[306],
  	[pianod@lists.deviousfish.com],
  	,[http://deviousfish.com/pianod2])
  AM_INIT_AUTOMAKE([foreign -Wall -Werror])
