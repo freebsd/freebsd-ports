@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	5.5.18
+PORTVERSION=	5.5.19
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	5
@@ -41,8 +41,8 @@ OPTIONS_DEFAULT=	CFACTER
 OPTIONS_RADIO=		FACTER
 OPTIONS_RADIO_FACTER=	CFACTER RFACTER
 
-RFACTER_DESC=	Use facter 2.x (written in Ruby)
-CFACTER_DESC=	Use facter 3.x (experimental rewrite in C++)
+RFACTER_DESC=	Use facter 2.x (legacy facter, written in Ruby)
+CFACTER_DESC=	Use facter 3.x (written in C++)
 
 RFACTER_BUILD_DEPENDS=	rubygem-facter>=2.0:sysutils/rubygem-facter
 RFACTER_RUN_DEPENDS=	rubygem-facter>=2.0:sysutils/rubygem-facter
