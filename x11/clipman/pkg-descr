@@ -1,0 +1,4 @@
+A basic clipboard manager for Wayland, with support for persisting
+copy buffers after an application exits.
+
+WWW: https://github.com/yory8/clipman

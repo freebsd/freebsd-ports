@@ -37,6 +37,7 @@
     SUBDIR += cinnamon-session
     SUBDIR += cl-clx
     SUBDIR += cl-clx-sbcl
+    SUBDIR += clipman
     SUBDIR += compton-conf
     SUBDIR += conlecterm
     SUBDIR += controllermap
