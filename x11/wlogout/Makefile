@@ -24,4 +24,10 @@ OPTIONS_SUB=	yes
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 
+post-patch:
+	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},g' \
+		${WRKSRC}/main.c \
+		${WRKSRC}/man/${PORTNAME}.1.scd \
+		${WRKSRC}/style.css
+
 .include <bsd.port.mk>
