@@ -1,0 +1,39 @@
+--- layout.orig	2020-03-14 05:34:47 UTC
++++ layout
+@@ -6,31 +6,31 @@
+ }
+ {
+     "label" : "hibernate",
+-    "action" : "systemctl hibernate",
++    "action" : "acpiconf -s 4",
+     "text" : "Hibernate",
+     "keybind" : "h"
+ }
+ {
+     "label" : "logout",
+-    "action" : "loginctl terminate-user $USER",
++    "action" : "kill -9 -1",
+     "text" : "Logout",
+     "keybind" : "e"
+ }
+ {
+     "label" : "shutdown",
+-    "action" : "systemctl poweroff",
++    "action" : "shutdown -p now",
+     "text" : "Shutdown",
+     "keybind" : "s"
+ }
+ {
+     "label" : "suspend",
+-    "action" : "systemctl suspend",
++    "action" : "zzz",
+     "text" : "Suspend",
+     "keybind" : "u"
+ }
+ {
+     "label" : "reboot",
+-    "action" : "systemctl reboot",
++    "action" : "shutdown -r now",
+     "text" : "Reboot",
+     "keybind" : "r"
+ }
