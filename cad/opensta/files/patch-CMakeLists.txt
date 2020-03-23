@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2020-03-16 14:40:15 UTC
++++ CMakeLists.txt
+@@ -627,7 +627,7 @@ set(STA_INCLUDE_DIRS
+ # compatibility with configure
+ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${STA_HOME}/app)
+ 
+-add_library(OpenSTA
++add_library(OpenSTA SHARED
+   ${STA_SOURCE}
+ 
+   ${STA_TCL_INIT}

@@ -1,0 +1,13 @@
+OpenSTA is a gate level static timing verifier. As a stand-alone executable it
+can be used to verify the timing of a design using standard file formats.
+
+* Verilog netlist
+* Liberty library
+* SDC timing constraints
+* SDF delay annotation
+* SPEF parasitics
+
+OpenSTA uses a TCL command interpreter to read the design, specify timing
+constraints and print timing reports.
+
+WWW: https://github.com/The-OpenROAD-Project/OpenSTA
