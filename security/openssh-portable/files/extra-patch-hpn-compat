@@ -16,12 +16,12 @@ r294563 was incomplete; re-add the client-side options as well.
 
 ------------------------------------------------------------------------
 
---- readconf.c.orig	2017-10-12 12:18:59.927293000 -0700
-+++ readconf.c	2017-10-12 12:19:45.048532000 -0700
-@@ -305,6 +305,12 @@ static struct {
- 	{ "pubkeyacceptedkeytypes", oPubkeyAcceptedKeyTypes },
+--- readconf.c.orig	2020-03-21 16:51:23.450425000 -0700
++++ readconf.c	2020-03-21 17:00:01.827757000 -0700
+@@ -310,6 +310,12 @@ static struct {
  	{ "ignoreunknown", oIgnoreUnknown },
  	{ "proxyjump", oProxyJump },
+ 	{ "securitykeyprovider", oSecurityKeyProvider },
 +	{ "hpndisabled", oDeprecated },
 +	{ "hpnbuffersize", oDeprecated },
 +	{ "tcprcvbufpoll", oDeprecated },
@@ -31,12 +31,12 @@ r294563 was incomplete; re-add the client-side options as well.
  
  	{ NULL, oBadOption }
  };
---- servconf.c.orig	2018-10-16 17:01:20.000000000 -0700
-+++ servconf.c	2018-11-10 11:32:09.835817000 -0800
-@@ -645,6 +645,10 @@ static struct {
- 	{ "exposeauthinfo", sExposeAuthInfo, SSHCFG_ALL },
+--- servconf.c.orig	2020-02-13 16:40:54.000000000 -0800
++++ servconf.c	2020-03-21 17:01:18.011062000 -0700
+@@ -695,6 +695,10 @@ static struct {
  	{ "rdomain", sRDomain, SSHCFG_ALL },
  	{ "casignaturealgorithms", sCASignatureAlgorithms, SSHCFG_ALL },
+ 	{ "securitykeyprovider", sSecurityKeyProvider, SSHCFG_GLOBAL },
 +	{ "noneenabled", sUnsupported, SSHCFG_ALL },
 +	{ "hpndisabled", sDeprecated, SSHCFG_ALL },
 +	{ "hpnbuffersize", sDeprecated, SSHCFG_ALL },
