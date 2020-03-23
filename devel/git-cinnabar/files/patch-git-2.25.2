@@ -1,0 +1,30 @@
+--- helper/notes.c.patch.orig	2020-02-05 23:41:37 UTC
++++ helper/notes.c.patch
+@@ -14,10 +14,10 @@ index 75c028b300..24089afa8a 100644
+  			if (hex_to_bytes(object_oid.hash + prefix_len, entry.path,
+  					 hashsz - prefix_len))
+  				goto handle_non_note; /* entry.path is not a SHA1 */
+-@@ -722,6 +719,7 @@ static int write_each_note_helper(struct tree_write_stack *tws,
+- struct write_each_note_data {
++@@ -720,6 +720,7 @@ struct write_each_note_data {
+  	struct tree_write_stack *root;
+- 	struct non_note *next_non_note;
++ 	struct non_note **nn_list;
++ 	struct non_note *nn_prev;
+ +	unsigned int note_mode;
+  };
+  
+@@ -41,10 +41,10 @@ index 75c028b300..24089afa8a 100644
+  {
+  	struct tree_write_stack root;
+  	struct write_each_note_data cb_data;
+-@@ -1143,6 +1142,7 @@ int write_notes_tree(struct notes_tree *t, struct object_id *result)
+- 	root.path[0] = root.path[1] = '\0';
++@@ -1178,6 +1179,7 @@ int write_notes_tree_mode(struct notes_tree *t, struct
+  	cb_data.root = &root;
+- 	cb_data.next_non_note = t->first_non_note;
++ 	cb_data.nn_list = &(t->first_non_note);
++ 	cb_data.nn_prev = NULL;
+ +	cb_data.note_mode = mode;
+  
+  	/* Write tree objects representing current notes tree */
