@@ -9,10 +9,18 @@ to the child process.
 Reviewed by:    ache
 Sponsored by:   DARPA, NAI Labs
 
-
---- session.c.orig	2019-04-17 15:52:57.000000000 -0700
-+++ session.c	2019-07-02 16:15:23.270321000 -0700
-@@ -990,6 +990,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
+--- session.c.orig	2020-02-13 16:40:54.000000000 -0800
++++ session.c	2020-03-23 14:50:01.165781000 -0700
+@@ -946,7 +946,7 @@ read_etc_default_login(char ***env, u_int *envsize, ui
+ }
+ #endif /* HAVE_ETC_DEFAULT_LOGIN */
+ 
+-#if defined(USE_PAM) || defined(HAVE_CYGWIN)
++#if defined(USE_PAM) || defined(HAVE_CYGWIN) || defined(HAVE_LOGIN_CAP)
+ static void
+ copy_environment_blacklist(char **source, char ***env, u_int *envsize,
+     const char *blacklist)
+@@ -994,6 +994,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
  	struct passwd *pw = s->pw;
  #if !defined (HAVE_LOGIN_CAP) && !defined (HAVE_CYGWIN)
  	char *path = NULL;
@@ -22,7 +30,7 @@ Sponsored by:   DARPA, NAI Labs
  #endif
  
  	/* Initialize the environment. */
-@@ -1011,6 +1014,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
+@@ -1015,6 +1018,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
  	}
  #endif
  
@@ -32,7 +40,7 @@ Sponsored by:   DARPA, NAI Labs
  #ifdef GSSAPI
  	/* Allow any GSSAPI methods that we've used to alter
  	 * the childs environment as they see fit
-@@ -1028,11 +1034,21 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
+@@ -1032,11 +1038,21 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
  	child_set_env(&env, &envsize, "LOGIN", pw->pw_name);
  #endif
  	child_set_env(&env, &envsize, "HOME", pw->pw_dir);
@@ -58,7 +66,7 @@ Sponsored by:   DARPA, NAI Labs
  #else /* HAVE_LOGIN_CAP */
  # ifndef HAVE_CYGWIN
  	/*
-@@ -1052,17 +1068,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
+@@ -1056,17 +1072,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
  # endif /* HAVE_CYGWIN */
  #endif /* HAVE_LOGIN_CAP */
  
@@ -76,7 +84,7 @@ Sponsored by:   DARPA, NAI Labs
  	if (s->term)
  		child_set_env(&env, &envsize, "TERM", s->term);
  	if (s->display)
-@@ -1365,7 +1373,7 @@ do_setusercontext(struct passwd *pw)
+@@ -1369,7 +1377,7 @@ do_setusercontext(struct passwd *pw)
  	if (platform_privileged_uidswap()) {
  #ifdef HAVE_LOGIN_CAP
  		if (setusercontext(lc, pw, pw->pw_uid,
