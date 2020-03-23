@@ -1,0 +1,11 @@
+--- src/plugins/fts-lucene/Makefile.in.orig
++++ src/plugins/fts-lucene/Makefile.in
+@@ -516,7 +516,7 @@
+ module_LTLIBRARIES = \
+ 	lib21_fts_lucene_plugin.la
+ 
+-@BUILD_FTS_STEMMER_TRUE@STEMMER_LIBS = -lstemmer
++@BUILD_FTS_STEMMER_TRUE@STEMMER_LIBS = -lclucene-contribs-lib
+ @BUILD_FTS_STEMMER_TRUE@SHOWBALL_SOURCES = Snowball.cc
+ @BUILD_FTS_EXTTEXTCAT_FALSE@@BUILD_FTS_TEXTCAT_TRUE@TEXTCAT_LIBS = -ltextcat
+ @BUILD_FTS_EXTTEXTCAT_TRUE@TEXTCAT_LIBS = $(LIBEXTTEXTCAT_LIBS)

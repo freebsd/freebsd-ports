@@ -1,0 +1,19 @@
+--- configure.orig	2020-03-05 17:36:02.000000000 +0300
++++ configure	2020-03-23 13:27:59.882228000 +0300
+@@ -28652,13 +28652,13 @@
+ 
+ 
+   if test $want_stemmer != no; then
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for sb_stemmer_new in -lstemmer" >&5
+-$as_echo_n "checking for sb_stemmer_new in -lstemmer... " >&6; }
++    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for sb_stemmer_new in -lclucene-contribs-lib" >&5
++$as_echo_n "checking for sb_stemmer_new in -lclucene-contribs-lib... " >&6; }
+ if ${ac_cv_lib_stemmer_sb_stemmer_new+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lstemmer  $LIBS"
++LIBS="-lclucene-contribs-lib  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
