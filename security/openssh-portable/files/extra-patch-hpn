@@ -387,9 +387,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  void     enable_compat13(void);
  void     enable_compat20(void);
---- work.clean/openssh-6.8p1/configure.ac	2015-03-17 00:49:20.000000000 -0500
-+++ work/openssh-6.8p1/configure.ac	2015-04-03 16:36:28.916502000 -0500
-@@ -4238,6 +4238,25 @@
+--- configure.ac.orig	2020-03-22 11:06:53.034550000 -0700
++++ configure.ac	2020-03-22 11:07:10.017487000 -0700
+@@ -4778,6 +4778,25 @@ AC_ARG_WITH([maildir],
      ]
  ) # maildir
  
@@ -415,10 +415,10 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  if test ! -z "$cross_compiling" && test "x$cross_compiling" = "xyes"; then
  	AC_MSG_WARN([cross compiling: Disabling /dev/ptmx test])
  	disable_ptmx_check=yes
-@@ -4905,6 +4924,8 @@
- echo "                  BSD Auth support: $BSD_AUTH_MSG"
- echo "              Random number source: $RAND_MSG"
+@@ -5459,6 +5478,8 @@ echo "              Random number source: $RAND_MSG"
  echo "             Privsep sandbox style: $SANDBOX_STYLE"
+ echo "                   PKCS#11 support: $enable_pkcs11"
+ echo "                  U2F/FIDO support: $enable_sk"
 +echo "                       HPN support: $HPN_MSG"
 +echo "                NONECIPHER support: $NONECIPHER_MSG"
  
@@ -1136,9 +1136,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		cleanup_exit(255); /* error already logged */
  
  	/* Put the connection into non-blocking mode. */
---- work/openssh/sshconnect2.c.orig	2018-10-16 17:01:20.000000000 -0700
-+++ work/openssh/sshconnect2.c	2018-11-12 09:06:06.338515000 -0800
-@@ -81,7 +81,13 @@
+--- sshconnect2.c.orig	2020-02-13 16:40:54.000000000 -0800
++++ sshconnect2.c	2020-03-22 11:10:01.017282000 -0700
+@@ -83,7 +83,13 @@
  extern char *client_version_string;
  extern char *server_version_string;
  extern Options options;
@@ -1152,7 +1152,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  /*
   * SSH2 key exchange
   */
-@@ -154,16 +160,18 @@ order_hostkeyalgs(char *host, struct sockaddr *hostadd
+@@ -156,10 +162,11 @@ order_hostkeyalgs(char *host, struct sockaddr *hostadd
  	return ret;
  }
  
@@ -1163,16 +1163,17 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  {
 -	char *myproposal[PROPOSAL_MAX] = { KEX_CLIENT };
  	char *s, *all_key;
- 	int r;
+ 	int r, use_known_hosts_order = 0;
  
- 	xxx_host = host;
- 	xxx_hostaddr = hostaddr;
+@@ -183,6 +190,7 @@ ssh_kex2(struct ssh *ssh, char *host, struct sockaddr 
+ 		fatal("%s: kex_assemble_namelist", __func__);
+ 	free(all_key);
  
 +	memcpy(&myproposal, &myproposal_default, sizeof(myproposal));
  	if ((s = kex_names_cat(options.kex_algorithms, "ext-info-c")) == NULL)
  		fatal("%s: kex_names_cat", __func__);
  	myproposal[PROPOSAL_KEX_ALGS] = compat_kex_proposal(s);
-@@ -422,6 +430,30 @@ ssh_userauth2(struct ssh *ssh, const char *local_user,
+@@ -435,6 +443,30 @@ ssh_userauth2(struct ssh *ssh, const char *local_user,
  
  	if (!authctxt.success)
  		fatal("Authentication failed.");
