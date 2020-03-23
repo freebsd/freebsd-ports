@@ -167,6 +167,7 @@ USES+=		pkgconfig
 
 .if ${PHP_MODNAME} == "json"
 CONFIGURE_ARGS+=--enable-json
+BUILD_DEPENDS=  re2c:devel/re2c
 .endif
 
 .if ${PHP_MODNAME} == "ldap"
