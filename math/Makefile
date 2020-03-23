@@ -202,6 +202,7 @@
     SUBDIR += cryptominisat
     SUBDIR += csdp
     SUBDIR += ctl-sat
+    SUBDIR += cudd
     SUBDIR += curv
     SUBDIR += cvc3
     SUBDIR += cvc4
