@@ -36,4 +36,3 @@ TEST_DEPENDS+=	p5-JSON-PP>=4.04:converters/p5-JSON-PP
 .endif
 
 .include <bsd.port.post.mk>
-

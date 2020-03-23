@@ -21,4 +21,3 @@ USE_QT=		concurrent core dbus declarative gui network opengl sql widgets \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>
-
