@@ -337,6 +337,7 @@
     SUBDIR += wev
     SUBDIR += wf-shell
     SUBDIR += wl-clipboard
+    SUBDIR += wlogout
     SUBDIR += wmappl
     SUBDIR += wmblob
     SUBDIR += wmbutton
