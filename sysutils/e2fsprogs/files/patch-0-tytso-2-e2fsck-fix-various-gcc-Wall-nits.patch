@@ -1,0 +1,72 @@
+From ef858c7194ff6f3dc0de162fe7bd82a8cb5e8fba Mon Sep 17 00:00:00 2001
+From: Theodore Ts'o <tytso@mit.edu>
+Date: Sun, 22 Mar 2020 23:47:12 -0400
+Subject: [PATCH 2/3] e2fsck: fix various gcc -Wall nits
+
+Signed-off-by: Theodore Ts'o <tytso@mit.edu>
+---
+ e2fsck/rehash.c | 4 ++--
+ e2fsck/unix.c   | 2 +-
+ e2fsck/util.c   | 4 ++--
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/e2fsck/rehash.c b/e2fsck/rehash.c
+index 1616d07a..30e510a6 100644
+--- ./e2fsck/rehash.c
++++ b/e2fsck/rehash.c
+@@ -109,7 +109,7 @@ static int fill_dir_block(ext2_filsys fs,
+ 			  void *priv_data)
+ {
+ 	struct fill_dir_struct	*fd = (struct fill_dir_struct *) priv_data;
+-	struct hash_entry 	*new_array, *ent;
++	struct hash_entry 	*ent;
+ 	struct ext2_dir_entry 	*dirent;
+ 	char			*dir;
+ 	unsigned int		offset, dir_offset, rec_len, name_len;
+@@ -460,7 +460,7 @@ static errcode_t copy_dir_entries(e2fsck_t ctx,
+ 	struct hash_entry 	*ent;
+ 	struct ext2_dir_entry	*dirent;
+ 	unsigned int		rec_len, prev_rec_len, left, slack, offset;
+-	int			i;
++	blk_t			i;
+ 	ext2_dirhash_t		prev_hash;
+ 	int			csum_size = 0;
+ 	struct			ext2_dir_entry_tail *t;
+diff --git a/e2fsck/unix.c b/e2fsck/unix.c
+index e71d7833..1b7ccea9 100644
+--- ./e2fsck/unix.c
++++ b/e2fsck/unix.c
+@@ -1439,7 +1439,7 @@ int main (int argc, char *argv[])
+ 		fputs("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n",
+ 		      ctx->problem_logf);
+ 		fprintf(ctx->problem_logf, "<problem_log time=\"%lu\">\n",
+-			ctx->now);
++			(unsigned long) ctx->now);
+ 		fprintf(ctx->problem_logf, "<invocation prog=\"%s\"",
+ 			argv[0]);
+ 		for (i = 1; i < argc; i++)
+diff --git a/e2fsck/util.c b/e2fsck/util.c
+index d98b8e47..8cebd95a 100644
+--- ./e2fsck/util.c
++++ b/e2fsck/util.c
+@@ -126,7 +126,7 @@ void *e2fsck_allocate_memory(e2fsck_t ctx, unsigned long size,
+ 	printf("Allocating %u bytes for %s...\n", size, description);
+ #endif
+ 	if (ext2fs_get_memzero(size, &ret)) {
+-		sprintf(buf, "Can't allocate %u bytes for %s\n",
++		sprintf(buf, "Can't allocate %lu bytes for %s\n",
+ 			size, description);
+ 		fatal_error(ctx, buf);
+ 	}
+@@ -436,7 +436,7 @@ void print_resource_track(e2fsck_t ctx, const char *desc,
+ #define kbytes(x)	(((unsigned long long)(x) + 1023) / 1024)
+ #ifdef HAVE_MALLINFO
+ 	/* don't use mallinfo() if over 2GB used, since it returns "int" */
+-	if ((char *)sbrk(0) - (char *)track->brk_start < 2ULL << 30) {
++	if ((char *)sbrk(0) - (char *)track->brk_start < 2LL << 30) {
+ 		struct mallinfo	malloc_info = mallinfo();
+ 
+ 		log_out(ctx, _("Memory used: %lluk/%lluk (%lluk/%lluk), "),
+-- 
+2.24.1
+
