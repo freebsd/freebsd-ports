@@ -93,4 +93,3 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/var/log/gitlab-shell
 
 .include <bsd.port.mk>
-

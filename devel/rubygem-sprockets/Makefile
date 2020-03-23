@@ -22,4 +22,3 @@ NO_ARCH=	yes
 PLIST_FILES=	bin/sprockets
 
 .include <bsd.port.mk>
-
