@@ -57,7 +57,7 @@ INSTALL_TARGET=		install-tools
 DOCS_INSTALL_TARGET=	install-docs
 
 # Fix build with clang 10.0 (re convert enum constant to boolean)
-EXTRA_PATCHES+= ${PATCHDIR}/0001-libfsimage-fix-clang-10-build.patch
+EXTRA_PATCHES+= ${PATCHDIR}/0001-libfsimage-fix-clang-10-build.patch:-p1
 
 .include <bsd.port.options.mk>
 
