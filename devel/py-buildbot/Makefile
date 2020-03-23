@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	buildbot
-PORTVERSION=	2.3.1
+PORTVERSION=	2.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,10 +29,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}treq>0:www/py-treq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=2.0.0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lz4>=0:archivers/py-lz4@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}buildbot-pkg>0:devel/py-buildbot-pkg@${PY_FLAVOR}
-# to be ported	${PYTHON_PKGNAMEPREFIX}pyjade>0:www/py-pyjade@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}buildbot-pkg>0:devel/py-buildbot-pkg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyjade>0:textproc/py-pyjade@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR}
 # to be ported  ${PYTHON_PKGNAMEPREFIX}moto>0:www/py-moto@${PY_FLAVOR}
-# to be ported	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parametrized@${PY_FLAVOR}
 
 USES=		python:3.5+
 USE_RC_SUBR=	buildbot
@@ -43,7 +43,7 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} PYTHON_VER=${PYTHON_VER}
 NO_ARCH=	yes
 
 do-test:
-	@cd ${WRKSRC} && TZ=UTC ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+	@cd ${WRKSRC} && PYTHONPATH=${WRKSRC} TZ=UTC ${LOCALBASE}/bin/trial-${PYTHON_VER} buildbot
 
 # Old invocation that we will probably need later
 # ${MKDIR} ${WRKDIR}/tmp

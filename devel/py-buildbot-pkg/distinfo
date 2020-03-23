@@ -1,3 +1,3 @@
-TIMESTAMP = 1559393440
-SHA256 (buildbot-pkg-2.3.1.tar.gz) = 25968ace0c62cb773ed85d4ddbe07fd5aee68f4455909243ffb3ac12608cf82e
-SIZE (buildbot-pkg-2.3.1.tar.gz) = 4754
+TIMESTAMP = 1584864993
+SHA256 (buildbot-pkg-2.7.0.tar.gz) = 6bb62e8e9df65204ce8006de190522f8304c797b061ead706abb218e7202eb0f
+SIZE (buildbot-pkg-2.7.0.tar.gz) = 4754
