@@ -2,7 +2,7 @@
 
 PORTNAME=	libxkbcommon
 PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://xkbcommon.org/download/
 DIST_SUBDIR=	xorg/lib
@@ -21,4 +21,10 @@ MESON_ARGS=	-Denable-docs=false \
 		-Denable-wayland=false \
 		-Dx-locale-root="${PREFIX}/lib/X11/locale"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1200000
+MESON_ARGS+=	-Ddefault-rules=xorg
+.endif
+
+.include <bsd.port.post.mk>
