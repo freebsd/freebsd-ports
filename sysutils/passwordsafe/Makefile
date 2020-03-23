@@ -20,7 +20,7 @@ BUILD_DEPENDS=	zip:archivers/zip
 
 CONFLICTS=	pwsafe-[0-9]*
 
-USES=		compiler:c++11-lang gmake xorg
+USES=		gmake xorg
 USE_GITHUB=	yes
 USE_WX=		3.0+
 USE_XORG=	x11 xtst
@@ -42,6 +42,14 @@ WANT_WX_VER=	3.0
 LDFLAGS=	-L${PREFIX}/lib -lqrencode
 
 ALL_TARGET=	unicoderelease
+
+.include <bsd.port.options.mk>
+
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lang
+.endif
 
 post-patch:
 .	for f in Makefile.freebsd help/Makefile.freebsd src/os/unix/Makefile \
