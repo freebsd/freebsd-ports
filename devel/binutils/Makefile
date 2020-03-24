@@ -31,7 +31,7 @@ TEST_TARGET=	check
 OPTIONS_DEFINE=	NLS RELRO STATIC
 STATIC_PREVENTS=	NLS
 
-RELRO_DESC=	enable -z relro in ELF linker by default
+RELRO_DESC=	Enable relocation memory corruption mitigation (-z relro) by default
 
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING3.LIB
