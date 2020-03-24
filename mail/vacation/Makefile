@@ -2,16 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	vacation
-PORTVERSION=	3.3.0
-PORTREVISION=	2
+PORTVERSION=	3.3.3
 CATEGORIES=	mail
 MASTER_SITES=	DEBIAN
-DISTNAME=	${PORTNAME}_${PORTVERSION}-0.4
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	mcdouga9@egr.msu.edu
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Email autoresponder, similar to vacation from sendmail
-
-BROKEN=		unfetchable
 
 PORTSCOUT=	ignore:1
 
@@ -19,7 +16,7 @@ USES=		bdb
 
 CFLAGS+=	-L${LOCALBASE}/lib
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/work
 
 PLIST_FILES=	bin/vacation man/man1/vacation.1.gz
 
