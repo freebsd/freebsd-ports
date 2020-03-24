@@ -1,5 +1,3 @@
-TIMESTAMP = 1564981897
-SHA256 (dpsnapsh.pdf) = 0a42cf4d2d11b608bfad4d9fd0acf6fa17d39b401f9507e0a8341c8b02b3a0c5
-SIZE (dpsnapsh.pdf) = 122886
-SHA256 (usnistgov-dataplot-20190426-7236db0_GH0.tar.gz) = a09916feff921436e0362a9302dd8673a9e0f3db176e4fb1ab5396b77b14ca7f
-SIZE (usnistgov-dataplot-20190426-7236db0_GH0.tar.gz) = 15253699
+TIMESTAMP = 1585038375
+SHA256 (usnistgov-dataplot-20200229-43df775f24e2d2eca94e250ec302d7a5876ea2b2_GH0.tar.gz) = 050437d94e94706e665ade582387de154f7ddd16293ff83e1ec518d97c63ae6c
+SIZE (usnistgov-dataplot-20200229-43df775f24e2d2eca94e250ec302d7a5876ea2b2_GH0.tar.gz) = 21178437
