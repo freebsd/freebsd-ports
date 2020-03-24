@@ -131,6 +131,10 @@ bin/emptyepsilon
 %%DATADIR%%/resources/gui/icons/weapon-nuke.png
 %%DATADIR%%/resources/half_sphere.obj
 %%DATADIR%%/resources/laser.wav
+%%DATADIR%%/resources/locale/en.po
+%%DATADIR%%/resources/locale/fr.po
+%%DATADIR%%/resources/locale/tutorial.en.po
+%%DATADIR%%/resources/locale/tutorial.fr.po
 %%DATADIR%%/resources/logo_full.png
 %%DATADIR%%/resources/logo_white.png
 %%DATADIR%%/resources/missile_launch.wav
@@ -260,7 +264,6 @@ bin/emptyepsilon
 %%DATADIR%%/resources/sa_62_Turkey2.ogg
 %%DATADIR%%/resources/sa_62_Turkey3.ogg
 %%DATADIR%%/resources/sa_62_Urchins.ogg
-%%DATADIR%%/resources/sansation.ttf
 %%DATADIR%%/resources/sfx/emp_explosion.wav
 %%DATADIR%%/resources/sfx/hvli_fire.wav
 %%DATADIR%%/resources/sfx/laser_fire.wav
@@ -283,6 +286,11 @@ bin/emptyepsilon
 %%DATADIR%%/scripts/comms_station_scenario_03_central_command.lua
 %%DATADIR%%/scripts/comms_supply_drop.lua
 %%DATADIR%%/scripts/factionInfo.lua
+%%DATADIR%%/scripts/locale/scenario_01_waves.en.po
+%%DATADIR%%/scripts/locale/scenario_02_beacon.en.po
+%%DATADIR%%/scripts/locale/scenario_02_beacon.fr.po
+%%DATADIR%%/scripts/locale/scenario_03_edgeofspace.en.po
+%%DATADIR%%/scripts/locale/scenario_03_edgeofspace.fr.po
 %%DATADIR%%/scripts/model_data.lua
 %%DATADIR%%/scripts/perlin_noise.lua
 %%DATADIR%%/scripts/scenario_00_basic.lua
