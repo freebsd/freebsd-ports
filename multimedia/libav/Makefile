@@ -20,8 +20,7 @@ LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
 		libvdpau.so:multimedia/libvdpau \
 		libhogweed.so:security/nettle
 
-USES=		cpe compiler:c++11-lang gmake localbase perl5 pkgconfig tar:xz \
-		xorg
+USES=		cpe gmake localbase perl5 pkgconfig tar:xz xorg
 
 USE_XORG=	x11
 USE_PERL5=	build
@@ -185,6 +184,12 @@ CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=	--extra-cflags=-m32
 LLD_UNSAFE=	yes
+.endif
+
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+USE_GCC=	yes
+.else
+USES+=	compiler:c++11-lang
 .endif
 
 # License definitions
