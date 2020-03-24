@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Business-ISSN
-PORTVERSION=	1.003
+PORTVERSION=	1.004
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,Business-ISSN,Business::ISSN,' ${WRKSRC}/${CONFIGURE_SCRIPT}
+#post-patch:
+#	@${REINPLACE_CMD} -e 's,Business-ISSN,Business::ISSN,' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
