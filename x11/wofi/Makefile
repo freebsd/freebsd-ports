@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 USES=		gnome meson pkgconfig
-USE_CSTD=	gnu99
+USE_CSTD=	gnu99 # https://lists.sr.ht/~scoopta/wofi/patches/10055
 USE_GNOME=	gdkpixbuf2 gtk30
 
 post-patch:
