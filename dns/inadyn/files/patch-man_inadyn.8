@@ -1,0 +1,29 @@
+--- man/inadyn.8.orig	2019-10-21 13:56:52 UTC
++++ man/inadyn.8
+@@ -140,7 +140,7 @@ supported more command line options, from v2.0
+ has been greatly simplified.  See
+ .Xr inadyn.conf 5
+ for details of the
+-.Pa /etc/inadyn.conf
++.Pa %%PREFIX%%/etc/inadyn.conf
+ configuration file format.
+ .Pp
+ .Bl -tag -width Ds
+@@ -207,7 +207,7 @@ is given.
+ Use
+ .Ar FILE
+ for configuration. By default
+-.Pa /etc/inadyn.conf ,
++.Pa %%PREFIX%%/etc/inadyn.conf ,
+ is used.  See
+ .Xr inadyn.conf 5
+ for examples.
+@@ -343,7 +343,7 @@ writes its process ID to
+ .Pa /var/run/inadyn.pid
+ .Sh FILES
+ .Bl -tag -width /var/cache/inadyn/freedns.afraid.org.cache -compact
+-.It Pa /etc/inadyn.conf
++.It Pa %%PREFIX%%/etc/inadyn.conf
+ .It Pa /run/inadyn.pid
+ .It Pa /var/cache/inadyn/dyndns.org.cache
+ .It Pa /var/cache/inadyn/freedns.afraid.org.cache

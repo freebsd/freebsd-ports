@@ -1,0 +1,15 @@
+@sample(inadyn,inadyn,640) etc/inadyn.conf.sample
+man/man5/inadyn.conf.5.gz
+man/man8/inadyn.8.gz
+sbin/inadyn
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dyndns.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/freedns.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/freemyip.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inadyn.conf
+@dir(inadyn,inadyn,) /var/cache/inadyn
+@dir(inadyn,inadyn,) /var/run/inadyn
