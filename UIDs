@@ -400,7 +400,7 @@ ecartis:*:450:450::0:0:Ecartis Listserver:/usr/local/ecartis:/usr/sbin/nologin
 # free: 452
 # free: 453
 # free: 454
-# free: 455
+inadyn:*:455:455::0:0:inadyn user:/nonexistent:/usr/sbin/nologin
 # free: 456
 # free: 457
 # free: 458
