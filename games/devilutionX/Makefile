@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	devilutionX
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	games
 
 MAINTAINER=	benny.goemans@gmail.com
