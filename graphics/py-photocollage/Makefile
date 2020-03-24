@@ -14,19 +14,12 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>:devel/py-six@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}six>:devel/py-six@${PY_FLAVOR} \
+		${PY_PILLOW}
 
 USES=		gettext-tools python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e ' \
@@ -39,4 +32,4 @@ post-patch:
 		${MV} $$f $$(${ECHO} $$f | ${SED} -E 's|photocollage\.([[:alpha:].]*)|photocollage-${PYTHON_VER}.\1|'); \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

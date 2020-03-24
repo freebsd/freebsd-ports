@@ -41,7 +41,7 @@ TTFFREEFONT_DESC=	More font support in reports
 
 GEXIV_LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2
 GTKSPELL_LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3
-PIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
+PIL_RUN_DEPENDS=	${PY_PILLOW}
 RCS_RUN_DEPENDS=	rcsdiff:devel/rcs
 TTFFREEFONT_RUN_DEPENDS=${LOCALBASE}/share/fonts/freefont-ttf/FreeMono.ttf:x11-fonts/freefont-ttf
 

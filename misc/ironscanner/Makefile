@@ -10,7 +10,7 @@ COMMENT=	Collect as much information as possible on image scanners
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pyinsane2>0:graphics/py-pyinsane2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 

@@ -16,7 +16,7 @@ LICENSE=	LGPL21
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-08-15
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR} \
+RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=0:print/py-reportlab@${PY_FLAVOR}
 
 USES=		python:2.7 shebangfix tar:bzip2

@@ -19,7 +19,7 @@ EXPIRATION_DATE=	2020-09-15
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL@${PY_FLAVOR} \
 		${PYGAME} \
-		${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
+		${PY_PILLOW}
 
 USES=		python:2.7 sdl shebangfix
 USE_SDL=	sdl

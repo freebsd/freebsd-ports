@@ -20,7 +20,8 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		bash:shells/bash \
 		cmake>0:devel/cmake
 LIB_DEPENDS=	libinotify.so:devel/libinotify
-RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
+RUN_DEPENDS=	${PY_PILLOW} \
+		ca_root_nss>=0:security/ca_root_nss
 
 CONFLICTS_INSTALL=	czmq-3*
 
@@ -63,14 +64,6 @@ LOCALBASE?=	/usr/local
 OPTIONS_SLAVE=	MONOLITE
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>=0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
 post-extract-MONOLITE-on:
 	${MKDIR} ${WRKSRC}/mcs/class/lib/monolite-linux
 	${MV} ${WRKDIR}/monolite-linux-${MONOLITE_VERSION}-latest ${WRKSRC}/mcs/class/lib/monolite-linux/${MONOLITE_VERSION}
@@ -99,4 +92,4 @@ post-configure:
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/mono
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -16,7 +16,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cssutils>=1.0,1:www/py-cssutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=3.4:devel/py-lxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=2.6:graphics/py-pillow@${PY_FLAVOR}
+		${PY_PILLOW}
 
 USES=		python:3.6+ tar:bzip2
 USE_PYTHON=	autoplist distutils

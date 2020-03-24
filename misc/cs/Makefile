@@ -12,6 +12,8 @@ COMMENT=	Cross Stitch software
 
 LICENSE=	GPLv2+
 
+RUN_DEPENDS=	${PY_PILLOW}
+
 NO_BUILD=	yes
 
 USES=		python:run shebangfix tar:tgz
@@ -19,15 +21,7 @@ SHEBANG_FILES=	xs.py
 
 PLIST_FILES=	bin/xs
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_SCRIPT} xs.py ${STAGEDIR}${PREFIX}/bin/xs)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

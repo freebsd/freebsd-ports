@@ -31,7 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.2<2.3:www/py-django22@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}markdown>=2.6.11:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.7.19:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycryptodome>=3.8.2:security/py-pycryptodome@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.8.4:databases/py-psycopg2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}redis>=3.3.11:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.3.1:graphics/py-svgwrite@${PY_FLAVOR} \

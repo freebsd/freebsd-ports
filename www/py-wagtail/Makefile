@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup460>=4.5.1<4.6.1:www/py-beautif
 		${PYTHON_PKGNAMEPREFIX}dj22-djangorestframework>=3.7.4<4.0:www/py-dj22-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}draftjs_exporter>=2.1.5:www/py-draftjs_exporter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.999<2:www/py-html5lib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=4.0.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2016.6:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1<3.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.11<2.0:devel/py-six@${PY_FLAVOR} \

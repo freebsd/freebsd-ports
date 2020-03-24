@@ -18,7 +18,8 @@ LICENSE_COMB=	multi
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}random2>=0:math/py-random2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
+		${PY_PILLOW}
 
 LICENSE_FILE_GPLv3+ =		${WRKSRC}/COPYING
 LICENSE_DISTFILES_GPLv3+ =	${PYSOLFCDIST}
@@ -74,14 +75,6 @@ PYSOLFCDIST=	${PYSOLFCDIR}${EXTRACT_SUFX}
 CARDSETDIR=	PySolFC-Cardsets-2.0
 CARDSETDIST=	${CARDSETDIR}.tar.bz2
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
 post-patch:
 	@${MV} ${WRKSRC}/pysol.py ${WRKSRC}/pysolfc
 	@${REINPLACE_CMD} -e 's|pysol.py|pysolfc|' ${WRKSRC}/setup.py
@@ -104,4 +97,4 @@ post-install:
 	(cd ${WRKDIR}/${CARDSETDIR} && \
 		${FIND} . -type f | ${SED} -e 's|^./|${DATADIR_REL}/|' >> ${TMPPLIST})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PY_FUTURES} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=16.8:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=4.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.5.2:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=4.3:www/py-tornado@${PY_FLAVOR}

@@ -20,7 +20,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libMagickCore-6.so:graphics/ImageMagick6
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pycups>0:print/py-pycups@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${PY_FLAVOR}
 

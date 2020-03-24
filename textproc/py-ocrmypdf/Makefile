@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.9.1:devel/py-cffi@${PY_FLAVOR} \
 LIB_DEPENDS=	liblept.so:graphics/leptonica
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.9.1:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}img2pdf>=0.3.0,<0.4:graphics/py-img2pdf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=6.2.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=3.3.0:print/py-reportlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=3.0.4,<4:textproc/py-chardet@${PY_FLAVOR} \

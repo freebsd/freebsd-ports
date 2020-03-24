@@ -17,7 +17,7 @@ EXPIRATION_DATE=	2020-09-15
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyproj>0:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webpy>0:www/webpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		${FREESANS}:x11-fonts/freefont-ttf
 

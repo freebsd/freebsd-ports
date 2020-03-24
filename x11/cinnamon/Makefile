@@ -46,7 +46,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
 		cinnamon-translations>=0:misc/cinnamon-translations \
 		cinnamon-screensaver:x11/cinnamon-screensaver \
 		nemo:x11-fm/nemo \
-		${PYTHON_PKGNAMEPREFIX}pillow6>=0:graphics/py-pillow6@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		autoreconf compiler:c11 gettext gmake gnome gl libtool \

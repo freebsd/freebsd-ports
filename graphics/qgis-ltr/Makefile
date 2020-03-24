@@ -51,7 +51,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16.1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}OWSLib>=0.17.1:graphics/py-OWSLib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>=3.1.1:devel/py-pbr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=6.0.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pip>=9.0.3:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}plotly>=3.0.2:graphics/py-plotly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.8.3:databases/py-psycopg2@${PY_FLAVOR} \

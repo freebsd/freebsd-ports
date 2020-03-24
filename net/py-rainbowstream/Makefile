@@ -22,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.5.3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyfiglet>0:misc/py-pyfiglet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twitter-tools>0:net/py-twitter-tools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR} \
+		${PY_PILLOW}
 
 # Actually 2.7,3.2-
 # Limited to -3.6 because of pyfiglet.
@@ -31,12 +32,4 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

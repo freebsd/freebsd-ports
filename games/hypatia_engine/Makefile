@@ -14,17 +14,10 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYGAME} \
 		${PYTHON_PKGNAMEPREFIX}pyganim>0:graphics/py-pyganim@${PY_FLAVOR} \
-		${PY_ENUM34}
+		${PY_ENUM34} \
+		${PY_PILLOW}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
