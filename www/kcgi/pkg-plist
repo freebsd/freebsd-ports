@@ -14,6 +14,9 @@ libdata/pkgconfig/kcgi-regress.pc
 libdata/pkgconfig/kcgi-xml.pc
 libdata/pkgconfig/kcgi.pc
 man/man3/kcgi.3.gz
+man/man3/kcgi_buf_printf.3.gz
+man/man3/kcgi_buf_putc.3.gz
+man/man3/kcgi_buf_puts.3.gz
 man/man3/kcgi_buf_write.3.gz
 man/man3/kcgi_strerror.3.gz
 man/man3/kcgi_writer_disable.3.gz
@@ -29,6 +32,9 @@ man/man3/khttp_fcgi_test.3.gz
 man/man3/khttp_free.3.gz
 man/man3/khttp_head.3.gz
 man/man3/khttp_parse.3.gz
+man/man3/khttp_printf.3.gz
+man/man3/khttp_putc.3.gz
+man/man3/khttp_puts.3.gz
 man/man3/khttp_template.3.gz
 man/man3/khttp_write.3.gz
 man/man3/khttpbasic_validate.3.gz
