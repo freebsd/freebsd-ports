@@ -6,4 +6,4 @@ external libraries (such as a compiled python module, or
 PostgreSQL's libpq library). pg8000 supports the standard
 Python DB-API version 2.0.
 
-WWW: https://github.com/mfenniak/pg8000
+WWW: https://github.com/tlocke/pg8000
