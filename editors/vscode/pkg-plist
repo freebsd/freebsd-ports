@@ -1185,6 +1185,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/typescript-language-features/language-configuration.json
 %%DATADIR%%/resources/app/extensions/typescript-language-features/node_modules/typescript-vscode-sh-plugin/LICENSE.txt
 %%DATADIR%%/resources/app/extensions/typescript-language-features/node_modules/typescript-vscode-sh-plugin/README.md
+%%DATADIR%%/resources/app/extensions/typescript-language-features/node_modules/typescript-vscode-sh-plugin/images/inspect-tokens.png
 %%DATADIR%%/resources/app/extensions/typescript-language-features/node_modules/typescript-vscode-sh-plugin/lib/constants.d.ts
 %%DATADIR%%/resources/app/extensions/typescript-language-features/node_modules/typescript-vscode-sh-plugin/lib/constants.js
 %%DATADIR%%/resources/app/extensions/typescript-language-features/node_modules/typescript-vscode-sh-plugin/lib/index.d.ts
