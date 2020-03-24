@@ -1,0 +1,16 @@
+Showkeys is a simple program to display keys being pressed on the screen.
+
+It is useful while making presentations and screencasts. The audience will be
+able to see the keys being pressed.
+
+It is similar to key-mon. Key-mon has more features than showkeys. The
+advantages of showkeys are
+
+1. Doesn't use GTK/GNOME.
+2. Uses libXosd to display keys directly onto the screen.
+3. No floating windows that always need to be on top. This is very useful if
+   you're using a tiling WM like Xmonad.
+4. Keystroke history. key-mon has this but doesn't show modifiers. showkeys
+   does this using an Emacs style key notation.
+
+WWW: https://github.com/nibrahim/showkeys

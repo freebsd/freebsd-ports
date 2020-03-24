@@ -292,6 +292,7 @@
     SUBDIR += sessreg
     SUBDIR += setlayout
     SUBDIR += setxkbmap
+    SUBDIR += showkeys
     SUBDIR += simdock
     SUBDIR += simplestroke
     SUBDIR += sisctrl
