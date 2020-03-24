@@ -1,6 +1,6 @@
-TIMESTAMP = 1584350614
-SHA256 (gohugo/gohugoio-hugo-v0.67.1_GH0.tar.gz) = e3f29dbe764a81eaef6d42bf95f0ab7ab3427ab83c9cced72f9ca4cf39753a90
-SIZE (gohugo/gohugoio-hugo-v0.67.1_GH0.tar.gz) = 32214449
+TIMESTAMP = 1584810111
+SHA256 (gohugo/gohugoio-hugo-v0.68.0_GH0.tar.gz) = c90b5abf1bc3a9313439a73a00509ab1a2be3ad41d7dcdcb8ae6fe82167fe532
+SIZE (gohugo/gohugoio-hugo-v0.68.0_GH0.tar.gz) = 32384275
 SHA256 (gohugo/Azure-azure-pipeline-go-v0.1.9_GH0.tar.gz) = 365c183602d495e67399b5a4c42a41d3ce0e7d79348dc7c9fd04324b35333b8b
 SIZE (gohugo/Azure-azure-pipeline-go-v0.1.9_GH0.tar.gz) = 15849
 SHA256 (gohugo/Azure-azure-storage-blob-go-v0.6.0_GH0.tar.gz) = 69fa9d27f51ccdd9879351bc5bd4b09544ee745ec63eb473479fac73970523ef
@@ -167,5 +167,5 @@ SHA256 (gohugo/tdewolff-parse-v2.3.14_GH0.tar.gz) = 865f6166d1e481d6afe73c7ccc4d
 SIZE (gohugo/tdewolff-parse-v2.3.14_GH0.tar.gz) = 83650
 SHA256 (gohugo/yuin-goldmark-highlighting-d1af22c1126f_GH0.tar.gz) = 973eb3f0fcfa1ac115cb67f671145ba64559520b2d3b75c57c1019c28b1e9fec
 SIZE (gohugo/yuin-goldmark-highlighting-d1af22c1126f_GH0.tar.gz) = 10649
-SHA256 (gohugo/yuin-goldmark-v1.1.22_GH0.tar.gz) = 978172a45e7bea4d126b466f67b01d2585962e53416b4604ceed5a2d454715af
-SIZE (gohugo/yuin-goldmark-v1.1.22_GH0.tar.gz) = 215397
+SHA256 (gohugo/yuin-goldmark-v1.1.25_GH0.tar.gz) = ef63f9b8ac12ec654481cd48268efd9617064197014649294c4418789443f7d7
+SIZE (gohugo/yuin-goldmark-v1.1.25_GH0.tar.gz) = 225320
