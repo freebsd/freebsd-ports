@@ -977,6 +977,7 @@
     SUBDIR += py-rsa
     SUBDIR += py-safe
     SUBDIR += py-scp
+    SUBDIR += py-scramp
     SUBDIR += py-scrypt
     SUBDIR += py-securesystemslib
     SUBDIR += py-service_identity

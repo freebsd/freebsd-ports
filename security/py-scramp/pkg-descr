@@ -1,0 +1,6 @@
+A Python implementation of the SCRAM authentication protocol defined
+by RFC 5802 and RFC 7677. Scramp supports the following mechanisms:
+  * SCRAM-SHA-256
+  * SCRAM-SHA-1
+
+WWW: https://github.com/tlocke/scramp
