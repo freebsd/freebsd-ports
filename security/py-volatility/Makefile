@@ -19,7 +19,7 @@ EXPIRATION_DATE=	2020-08-15
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distorm>=0:devel/py-distorm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow6>=0:graphics/py-pillow6@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yara>=0:security/py-yara@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:textproc/py-openpyxl@${PY_FLAVOR}

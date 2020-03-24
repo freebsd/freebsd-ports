@@ -53,6 +53,7 @@ FAX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}reportlab>=0:print/py-reportlab@${PY_FLA
 FAX_CONFIGURE_ENABLE=	fax-build
 
 SCAN_DESC=		Scanning support
+SCAN_RUN_DEPENDS=	${PY_PILLOW}
 SCAN_LIB_DEPENDS=	libsane.so:graphics/sane-backends
 SCAN_CONFIGURE_ENABLE=	scan-build
 
@@ -80,16 +81,6 @@ CONFIGURE_ARGS+=	--disable-qt5
 
 .if ${PORT_OPTIONS:MX11} && ! ${PORT_OPTIONS:MQT5}
 BROKEN=			The X11 option requires the QT5 option
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MSCAN}
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
-.endif
 .endif
 
 post-patch:
@@ -153,4 +144,4 @@ post-install-SCAN-on:
 	${MV} ${STAGEDIR}${PREFIX}/etc/sane.d/dll.conf \
 		${STAGEDIR}${PREFIX}/etc/sane.d/dll.d/hpaio
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

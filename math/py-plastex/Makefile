@@ -13,7 +13,7 @@ COMMENT=	LaTeX Document Processing Framework
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
+RUN_DEPENDS=	${PY_PILLOW}
 
 USES=		python:3.5+
 USE_PYTHON=	autoplist distutils

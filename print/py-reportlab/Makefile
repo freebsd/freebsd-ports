@@ -17,6 +17,8 @@ COMMENT=	Library to create PDF documents using the Python language
 
 LICENSE=	BSD3CLAUSE
 
+RUN_DEPENDS=	${PY_PILLOW}
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 
@@ -41,14 +43,6 @@ CJK_DESC=	Adobe CMaps
 CJK_RUN_DEPENDS=	${LOCALBASE}/share/fonts/adobe-cmaps/ac15/cid2code.txt:print/adobe-cmaps
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DISTDIR%%|${DISTDIR}|' \
 			  -e 's|%%PFBFER%%|${PFBFER}|' \
@@ -71,4 +65,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

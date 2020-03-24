@@ -22,7 +22,7 @@ EXPIRATION_DATE=	2020-09-15
 ONLY_FOR_ARCHS=	amd64 i386
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_VER}:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6:security/py-pycrypto@${PY_FLAVOR}
 
 USES=		gettext go python:2.7 shebangfix zip

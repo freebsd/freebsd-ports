@@ -14,7 +14,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}usb>0:devel/py-usb@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}usb>0:devel/py-usb@${PY_FLAVOR} \
+		${PY_PILLOW}
 
 USES=		python:run,-3.7 shebangfix zip
 SHEBANG_FILES=	*.py
@@ -39,14 +40,6 @@ _NON_DATA_FILES=	${_DOCS} ${LICENSE_FILE:S,${WRKSRC}/,,} build_exe.bat \
 			py2exe_setup.py requirements.txt
 _WHISPERER_COMMAND=	${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${_WHISPERER_COMMAND} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -55,4 +48,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${_DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

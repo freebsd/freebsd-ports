@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/legal/GPLv3
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -28,7 +28,7 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libnyan.so:lang/nyan
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 
 USES=		cmake compiler:c++17-lang gl python:3.4+ qt:5 sdl shebangfix

@@ -18,6 +18,7 @@ LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		${PY_ENUM34} \
 		${PY_FUTURES} \
+		${PY_PILLOW} \
 		${PYNUMPY}
 
 USES=		python
@@ -27,12 +28,4 @@ NO_ARCH=	yes
 
 PORTSCOUT=	limit:^2\.4\.
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

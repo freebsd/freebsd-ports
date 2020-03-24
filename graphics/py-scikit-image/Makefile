@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.9:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpydoc>=0.6:textproc/py-numpydoc@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.9:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpydoc>=0.6:textproc/py-numpydoc@${PY_FLAVOR} \
@@ -33,14 +34,6 @@ USE_PYTHON=	autoplist concurrent distutils cython cython_run
 PYDISTUTILS_BUILD_TARGET=	build build_ext
 PYDISTUTILS_BUILDARGS+=		saveopts
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>=1.7:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>=1.7:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/skimage -name "*.so" -exec ${STRIP_CMD} {} \;
 
@@ -50,4 +43,4 @@ do-test:
 	${PYTHON_CMD} selftest.py && \
 	${PYTHON_CMD} -m nose -vx Tests/test_*.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

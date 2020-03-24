@@ -14,7 +14,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY} \
+		${PY_PILLOW}
 
 USE_GITHUB=	yes
 GH_PROJECT=	pywt
@@ -25,12 +26,4 @@ USE_PYTHON=	autoplist distutils cython cython_run
 PYDISTUTILS_BUILD_TARGET=	build build_ext
 PYDISTUTILS_BUILDARGS+=		saveopts
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>=1.7:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>=1.7:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

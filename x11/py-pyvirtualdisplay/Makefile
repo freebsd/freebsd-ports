@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cog>=2.3:devel/py-cog@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paver>0:devel/py-paver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyscreenshot>0:x11/py-pyscreenshot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		xauth>0:x11/xauth
 
 USES=		python
@@ -38,12 +39,4 @@ XVNC_RUN_DEPENDS=	tightvnc>=0:net/tightvnc
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

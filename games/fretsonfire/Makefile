@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/copying.txt
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYGAME} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL@${PY_FLAVOR} \
 		${LOCALBASE}/share/${PORTNAME}/default.ttf:games/fretsonfire-data
 
@@ -37,14 +38,6 @@ OPTIONS_DEFINE=	DOCS
 
 PORTNAME_UCASE=	FretsOnFire
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>=0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${FOF_DIR}/${PORTNAME_UCASE}
 	@cd ${WRKSRC}/src && \
@@ -60,4 +53,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}/README
 	${INSTALL_DATA} ${WRKSRC}/install.txt ${STAGEDIR}${DOCSDIR}/INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

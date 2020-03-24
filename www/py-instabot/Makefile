@@ -22,19 +22,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.17.1:devel/py-future@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}responses>=0.10.5:devel/py-responses@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}schedule>=0.6.0:devel/py-schedule@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.12.0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tqdm>=4.30.0:misc/py-tqdm@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tqdm>=4.30.0:misc/py-tqdm@${PY_FLAVOR} \
+		${PY_PILLOW}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>=0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

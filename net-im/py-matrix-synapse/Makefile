@@ -30,7 +30,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5.1:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0.0.7:devel/py-pyasn1-modules@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}daemonize>=2.4.2:devel/py-daemonize@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.0:security/py-bcrypt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=4.3.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=1.4.4:devel/py-sortedcontainers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysaml2>=4.5.2:security/py-pysaml2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymacaroons>=0.13.0:security/py-pymacaroons@${PY_FLAVOR} \

@@ -19,7 +19,8 @@ ONLY_FOR_ARCHS=	amd64 i386
 LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv
 RUN_DEPENDS=	animate:graphics/ImageMagick6 \
 		gv:print/gv \
-		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
+		${PY_PILLOW}
 
 USES=		compiler:c++14-lang gettext-runtime ghostscript gl gmake ncurses perl5 python \
 		shebangfix tar:tgz
@@ -72,14 +73,6 @@ OFFSCREEN_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
 READLINE_CONFIGURE_ENABLE=	readline
 READLINE_USES=	readline:port
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow6>0:graphics/py-pillow6@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's/-lgc/-lgc-threaded/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} 's,/usr/lib/libgs.so,${LOCALBASE}/lib/libgs.so,' \
@@ -93,4 +86,4 @@ post-patch:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/asy
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:www/py-beautifulsoup@${
 		${PYTHON_PKGNAMEPREFIX}configobj>=5.0.6:devel/py-configobj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dbus>=1.1.1_1:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.9:www/py-httplib2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>=2.6.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=3.4.1_1:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		ImageMagick6>=6.9.0.4,1:graphics/ImageMagick6 \
