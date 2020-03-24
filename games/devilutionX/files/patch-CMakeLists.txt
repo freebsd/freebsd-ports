@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-12-27 15:25:22 UTC
+--- CMakeLists.txt.orig	2020-03-10 14:00:26 UTC
 +++ CMakeLists.txt
-@@ -326,7 +326,7 @@ if(WIN32)
+@@ -491,7 +491,7 @@ if(WIN32)
    endif()
  endif()
  
@@ -9,7 +9,7 @@
    # Enable POSIX extensions such as `readlink` and `ftruncate`.
    add_definitions(-D_POSIX_C_SOURCE=200809L)
  endif()
-@@ -337,8 +337,8 @@ endif()
+@@ -502,8 +502,8 @@ endif()
  
  if(NOT CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
    # Change __FILE__ to only show the path relative to the project folder
@@ -20,7 +20,7 @@
  
    if(DEBUG)
      # Note: For Valgrind suppor.
-@@ -399,3 +399,9 @@ if(APPLE)
+@@ -564,6 +564,12 @@ if(APPLE)
  
    include(CPack)
  endif()
@@ -30,3 +30,6 @@
 +install(FILES   Packaging/resources/16.png 		DESTINATION ${CMAKE_INSTALL_SHAREDIR}/icons/hicolor/16x16/apps RENAME devilutionx.png)
 +install(FILES   Packaging/resources/Diablo_32.png 	DESTINATION ${CMAKE_INSTALL_SHAREDIR}/icons/hicolor/32x32/apps RENAME devilutionx.png)
 +install(FILES   Packaging/resources/Diablo_48.png 	DESTINATION ${CMAKE_INSTALL_SHAREDIR}/icons/hicolor/48x48/apps RENAME devilutionx.png)
+ 
+ if(SWITCH)
+   set(APP_TITLE "DevilutionX")
