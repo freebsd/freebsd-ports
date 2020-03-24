@@ -17,6 +17,7 @@ BROKEN_mips64=		Fails to install: runaway process
 USES=		tar:bzip2
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/fgdata
 DATADIR=	${PREFIX}/share/flightgear
 
