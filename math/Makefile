@@ -787,8 +787,8 @@
     SUBDIR += py-pysparse
     SUBDIR += py-pystan
     SUBDIR += py-pysym
+    SUBDIR += py-python-fcl
     SUBDIR += py-python-louvain
-    SUBDIR += py-python_fcl
     SUBDIR += py-pyvtk
     SUBDIR += py-quadprog
     SUBDIR += py-random2
