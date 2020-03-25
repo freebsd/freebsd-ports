@@ -16,7 +16,7 @@ LIB_DEPENDS=	libmetis.so:math/metis \
 		libopenblas.so:math/openblas \
 		libparpack.so:math/arpack-ng
 
-USES=		cmake fortran tcl
+USES=		cmake compiler:c++11-lang fortran tcl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ElmerCSC
 GH_TAGNAME=	39f692c
