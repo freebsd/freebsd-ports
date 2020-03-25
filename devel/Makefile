@@ -1310,6 +1310,7 @@
     SUBDIR += librolegen
     SUBDIR += libruin
     SUBDIR += libs11n
+    SUBDIR += libsavitar
     SUBDIR += libscca
     SUBDIR += libsearpc
     SUBDIR += libserialport
