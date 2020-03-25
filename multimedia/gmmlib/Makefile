@@ -2,20 +2,20 @@
 
 PORTNAME=	gmmlib
 DISTVERSIONPREFIX=	intel-${PORTNAME}-
-DISTVERSION=	19.4.1
+DISTVERSION=	20.1.1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	f17dd87c7f57.patch:-p1 # https://github.com/intel/gmmlib/pull/67
-PATCHFILES+=	c1e398124a55.patch:-p1 # https://github.com/intel/gmmlib/pull/68
-PATCHFILES+=	92704b3ed362.patch:-p1 # https://github.com/intel/gmmlib/pull/68
-PATCHFILES+=	ee3afe457015.patch:-p1 # https://github.com/intel/gmmlib/pull/68
-PATCHFILES+=	3eaaa3ac097e.patch:-p1 # https://github.com/intel/gmmlib/pull/68
-PATCHFILES+=	492c1eea16ab.patch:-p1 # https://github.com/intel/gmmlib/pull/68
-PATCHFILES+=	62cbd18f9ab6.patch:-p1 # https://github.com/intel/gmmlib/pull/68
-PATCHFILES+=	4261462b0586.patch:-p1 # https://github.com/intel/gmmlib/pull/68
-PATCHFILES+=	6cb8a44dcc55.patch:-p1 # https://github.com/intel/gmmlib/pull/68
-PATCHFILES+=	9eb781d74b12.patch:-p1 # https://github.com/intel/gmmlib/pull/68
+PATCHFILES+=	7171f6d818fc.patch:-p1 # https://github.com/intel/gmmlib/pull/68
+PATCHFILES+=	6fc5091d3329.patch:-p1 # https://github.com/intel/gmmlib/pull/68
+PATCHFILES+=	a3272580cea0.patch:-p1 # https://github.com/intel/gmmlib/pull/68
+PATCHFILES+=	8b172b9ff4ea.patch:-p1 # https://github.com/intel/gmmlib/pull/68
+PATCHFILES+=	53c731fbe8be.patch:-p1 # https://github.com/intel/gmmlib/pull/68
+PATCHFILES+=	0a8db9639503.patch:-p1 # https://github.com/intel/gmmlib/pull/68
+PATCHFILES+=	a512c6b7b1a2.patch:-p1 # https://github.com/intel/gmmlib/pull/68
+PATCHFILES+=	6af9ac5b3f49.patch:-p1 # https://github.com/intel/gmmlib/pull/68
+PATCHFILES+=	7b4f7fe0fa59.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Memory Management Library
