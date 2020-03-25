@@ -349,6 +349,7 @@
     SUBDIR += libarms
     SUBDIR += libbgpdump
     SUBDIR += libcapn
+    SUBDIR += libcharon
     SUBDIR += libcmis
     SUBDIR += libcoap
     SUBDIR += libdaq
