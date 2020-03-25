@@ -4028,7 +4028,6 @@
     SUBDIR += py-akismet
     SUBDIR += py-amalgamate
     SUBDIR += py-aniso8601
-    SUBDIR += py-antlr4-python2-runtime
     SUBDIR += py-antlr4-python3-runtime
     SUBDIR += py-anyconfig
     SUBDIR += py-anyjson

@@ -14502,3 +14502,4 @@ x11/rxvt|x11/rxvt-unicode|2020-03-20|Has expired: Abandonware: stable release 2.
 x11-wm/clementine-wm||2020-03-20|Removed, unmaintained and depends on expired x11/rxvt
 net/kdsoap|www/kdsoap|2020-03-21|Already existed in the tree
 security/openssh-portable@x509||2020-03-23|Has expired: X509 long broken without known users
+devel/py-antlr4-python2-runtime|devel/antlr4-python3-runtime|2020-03-25|Has expired: Uses EoL python27, please use devel/antlr4-python3-runtime instead
