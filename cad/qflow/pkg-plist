@@ -4,11 +4,13 @@ bin/qflow
 %%DATADIR%%/bin/blif2BSpice
 %%DATADIR%%/bin/blif2Verilog
 %%DATADIR%%/bin/blifFanout
+%%DATADIR%%/bin/graywolf
 %%DATADIR%%/bin/magic
 %%DATADIR%%/bin/netgen
 %%DATADIR%%/bin/qrouter
 %%DATADIR%%/bin/rc2dly
 %%DATADIR%%/bin/spice2delay
+%%DATADIR%%/bin/sta
 %%DATADIR%%/bin/vesta
 %%DATADIR%%/bin/vlog2Cel
 %%DATADIR%%/bin/vlog2Def
