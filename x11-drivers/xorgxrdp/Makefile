@@ -3,9 +3,12 @@
 PORTNAME=	xorgxrdp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
 DIST_SUBDIR=	xrdp
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	d3cefac.patch:-p1
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	X.Org driver enabling use through an RDP session with xrdp
