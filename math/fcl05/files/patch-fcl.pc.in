@@ -1,0 +1,16 @@
+--- fcl.pc.in.orig	2016-07-20 03:11:04 UTC
++++ fcl.pc.in
+@@ -2,11 +2,11 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+ libdir=@CMAKE_INSTALL_FULL_LIBDIR@
+-includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@
++includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@/fcl05
+ 
+ Name: @PROJECT_NAME@
+ Description: @PKG_DESC@
+ Version: @FCL_VERSION@
+ Requires: @PKG_EXTERNAL_DEPS@
+-Libs: -L${libdir} -lfcl
++Libs: -L${libdir} -lfcl05
+ Cflags: @PKG_CFLAGS@ -I${includedir}

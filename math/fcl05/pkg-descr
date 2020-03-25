@@ -1,0 +1,21 @@
+This is a snapshot version of FCL at 0.5.0 mainly to support
+python-fcl otherwise please use the fcl port.
+N.B. python-fcl also needs octomap
+
+FCL is a library for performing three types of proximity queries on a pair of
+geometric models composed of triangles.
+
+It performs:
+* Collision detection: detecting whether the two models overlap, and optionally,
+  all of the triangles that overlap.
+* Distance computation: computing the minimum distance between a pair of models,
+  i.e., the distance between the closest pair of points.
+* Tolerance verification: determining whether two models are closer or farther
+  than a tolerance distance.
+* Continuous collision detection: detecting whether the two moving models
+  overlap during the movement, and optionally, the time of contact.
+* Contact information: for collision detection and continuous collision
+  detection, the contact information (including contact normals and contact
+  points) can be returned optionally.
+
+WWW: https://github.com/flexible-collision-library/fcl

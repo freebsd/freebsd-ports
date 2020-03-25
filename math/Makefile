@@ -244,6 +244,7 @@
     SUBDIR += facile
     SUBDIR += fann
     SUBDIR += fcl
+    SUBDIR += fcl05
     SUBDIR += fflas-ffpack
     SUBDIR += fftw
     SUBDIR += fftw-float
