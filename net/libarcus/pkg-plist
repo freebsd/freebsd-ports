@@ -1,0 +1,14 @@
+include/Arcus/ArcusExport.h
+include/Arcus/Error.h
+include/Arcus/MessageTypeStore.h
+include/Arcus/Socket.h
+include/Arcus/SocketListener.h
+include/Arcus/Types.h
+lib/cmake/Arcus/Arcus-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Arcus/Arcus-targets.cmake
+lib/cmake/Arcus/ArcusConfig.cmake
+lib/cmake/Arcus/ArcusConfigVersion.cmake
+lib/libArcus.so
+lib/libArcus.so.1.1.0
+lib/libArcus.so.3
+%%PYTHON_SITELIBDIR%%/Arcus.so
