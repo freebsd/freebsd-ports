@@ -1242,6 +1242,7 @@
     SUBDIR += liblxqt
     SUBDIR += libmaa
     SUBDIR += libmatheval
+    SUBDIR += libmatthew
     SUBDIR += libmba
     SUBDIR += libmill
     SUBDIR += libmimedir
