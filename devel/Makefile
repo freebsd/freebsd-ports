@@ -5073,6 +5073,7 @@
     SUBDIR += py-transaction
     SUBDIR += py-transitions
     SUBDIR += py-tree-format
+    SUBDIR += py-trimesh
     SUBDIR += py-trollius
     SUBDIR += py-ttystatus
     SUBDIR += py-tvrage
