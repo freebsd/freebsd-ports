@@ -1,0 +1,6 @@
+#! /bin/sh -
+# $FreeBSD$
+
+: "${JAVA_OPTS:=-Djava.library.path=%%LOCALBASE%%/lib/jni}"
+export JAVA_OPTS
+exec %%DATADIR%%/bin/signal-cli "$@"
