@@ -32,7 +32,7 @@ NEEDED_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-fcl>0:math/py-python_fcl@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}python-fcl>0:math/py-python-fcl@${PY_FLAVOR}
 BUILD_DEPENDS=	${NEEDED_DEPENDS}
 RUN_DEPENDS=	${NEEDED_DEPENDS}
 
