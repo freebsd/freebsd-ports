@@ -3,6 +3,7 @@
 
 PORTNAME=	inadyn
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/troglobit/inadyn/releases/download/v${PORTVERSION}/
 
