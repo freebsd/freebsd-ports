@@ -3,7 +3,7 @@
 
 PORTNAME=	simh
 PORTVERSION=	3.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/:src \
 		http://www.ml1.org.uk/distfiles/:pdf \
@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}v${PORTVERSION:R:S/.//}-${PORTVERSION:E}.zip:src \
 MAINTAINER=	bob@eager.cx
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	MIT
 
 NO_WRKSUBDIR=	yes
 
