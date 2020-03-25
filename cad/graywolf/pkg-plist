@@ -2,6 +2,7 @@ bin/graywolf
 lib/graywolf/bin/Mincut
 lib/graywolf/bin/TimberWolfMC
 lib/graywolf/bin/TimberWolfSC
+lib/graywolf/bin/flow/flow
 lib/graywolf/bin/flow/flow.noroute/macro.fdbg
 lib/graywolf/bin/flow/flow.noroute/macro.flow
 lib/graywolf/bin/flow/flow.noroute/macro.fnog
