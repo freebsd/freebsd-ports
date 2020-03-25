@@ -188,7 +188,7 @@ mastodon:*:244:
 routinator:*:245:
 fahclient:*:246:fahclient
 fcron:*:247:
-# free: 248
+signal-cli:*:248:
 # free: 249
 sems:*:250:
 # free: 251
