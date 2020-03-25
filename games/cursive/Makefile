@@ -17,9 +17,6 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/cursive \
 		man/man6/cursive.6.gz
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/games/||g' ${WRKSRC}/cursive.6
-
 do-build:
 	${CC} ${CFLAGS} -c ${WRKSRC}/cursive.c -o ${WRKSRC}/cursive.o
 	${CC} ${CFLAGS} -c ${WRKSRC}/font.c -o ${WRKSRC}/font.o
