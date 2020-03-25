@@ -1,0 +1,30 @@
+--- CMakeLists.txt.orig	2020-02-18 09:32:30 UTC
++++ CMakeLists.txt
+@@ -10,6 +10,9 @@ include(UraniumTranslationTools)
+ 
+ include(GNUInstallDirs)
+ 
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++    set(FREEBSD True)
++endif()
+ find_package(PythonInterp 3 REQUIRED)
+ 
+ # # Checks using pylint
+@@ -48,10 +51,15 @@ CREATE_TRANSLATION_TARGETS()
+ if(EXISTS /etc/debian_version)
+     install(DIRECTORY UM DESTINATION lib${LIB_SUFFIX}/python${PYTHON_VERSION_MAJOR}/dist-packages)
+ else()
+-    install(DIRECTORY UM DESTINATION lib${LIB_SUFFIX}/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/site-packages)
++      install(DIRECTORY UM DESTINATION lib${LIB_SUFFIX}/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/site-packages)
+ endif()
+-install(FILES ${CMAKE_SOURCE_DIR}/cmake/UraniumTranslationTools.cmake
++if(FREEBSD)
++  install(FILES ${CMAKE_SOURCE_DIR}/cmake/UraniumTranslationTools.cmake
++        DESTINATION share/cmake/Modules/ )
++else()
++  install(FILES ${CMAKE_SOURCE_DIR}/cmake/UraniumTranslationTools.cmake
+         DESTINATION ${CMAKE_INSTALL_DATADIR}/cmake-${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}/Modules/ )
++endif(FREEBSD)
+ install(DIRECTORY resources DESTINATION ${CMAKE_INSTALL_DATADIR}/uranium)
+ 
+ # Detect plugins to install
