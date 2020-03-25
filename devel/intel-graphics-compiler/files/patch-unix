@@ -269,17 +269,6 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
  #define LINUX_RELEASE_MODE
  #endif
  
---- inc/common/Compiler/API/ShaderInstruction.h.orig	2019-11-27 01:05:20 UTC
-+++ inc/common/Compiler/API/ShaderInstruction.h
-@@ -39,7 +39,7 @@ namespace USC
- class CShaderDebugLocationInfo;
- }
- 
--#if defined _DEBUG && !defined __linux__
-+#if defined _DEBUG && defined _WIN32
- #define USC_OPTIMIZING_COMPILER_TESTS
- #endif
- 
 --- visa/BuildCISAIRImpl.cpp.orig	2020-01-09 09:46:51 UTC
 +++ visa/BuildCISAIRImpl.cpp
 @@ -684,7 +684,6 @@ extern void CISA_delete_buffer(YY_BUFFER_STATE buf);
