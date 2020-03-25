@@ -26,6 +26,7 @@
     SUBDIR += electric
     SUBDIR += electric-ng
     SUBDIR += fasm
+    SUBDIR += fdm_materials
     SUBDIR += feappv
     SUBDIR += fidocadj
     SUBDIR += freecad
