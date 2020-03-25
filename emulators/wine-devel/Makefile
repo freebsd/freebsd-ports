@@ -130,7 +130,7 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 # Include this only if it has not been already included by the
 # i386-wine-devel slave port.
-.ifndef PKGNAMEPREFIX
+.ifndef WINE_SLAVE_BUILD
 .include <bsd.port.pre.mk>
 .endif
 
@@ -185,6 +185,6 @@ check-wine-devel-vs-staging:
 	  fi \
 	done
 
-.ifndef PKGNAMEPREFIX
+.ifndef WINE_SLAVE_BUILD
 .include <bsd.port.post.mk>
 .endif
