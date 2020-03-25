@@ -12,6 +12,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Library for Microsoft compression formats
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
