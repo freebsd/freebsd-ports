@@ -3,6 +3,7 @@
 
 PORTNAME=	openexr
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	LOCAL/mandree/:test
 DISTFILES=	${PORTNAME}-2.2.0-comp_dwa-test-images.tar.xz:test
@@ -28,21 +29,18 @@ LDFLAGS+=	-lpthread
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-DOCSRCDIR1=	${WRKSRC}/..
+DOCSRCDIR1=	${WRKSRC:H}/
 DOC_FILES1=	CHANGES.md CONTRIBUTING.md GOVERNANCE.md LICENSE.md SECURITY.md \
 		CODE_OF_CONDUCT.md CONTRIBUTORS.md README.md
 
 DOCSRCDIR2=	${WRKSRC}/doc
 DOC_FILES2=	*.odt *.pdf
 
-OPTIONS_DEFINE=		DOCS EXAMPLES LARGE_STACK
-LARGE_STACK_DESC=	Enable sys-dependent large stack optimizations
+OPTIONS_DEFINE=		DOCS EXAMPLES
 
 WRKSRC_SUBDIR=	OpenEXR
 
 OPTIONS_SUB=	yes
-
-LARGE_STACK_CONFIGURE_ENABLE=	large-stack
 
 .include <bsd.port.pre.mk>
 
@@ -79,14 +77,16 @@ post-install-EXAMPLES-on:
 
 post-install-EXAMPLES-off:
 	${RM} -R ${STAGEDIR}${PREFIX}/share/doc/OpenEXR/examples/
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc/OpenEXR 2>/dev/null || :
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR}
-	${MV} ${STAGEDIR}${DOCSDIR}/../OpenEXR/[a-df-zA-Z]* ${STAGEDIR}${DOCSDIR}
+	${MV} ${STAGEDIR}${DOCSDIR:H}/OpenEXR/[a-df-zA-Z]* ${STAGEDIR}${DOCSDIR}
 
 post-install-DOCS-off:
+	${RM} ${STAGEDIR}${DOCSDIR:H}/OpenEXR/*.pdf
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME} 2>/dev/null || :
 
 regression-test check test:
