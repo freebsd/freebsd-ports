@@ -345,6 +345,7 @@
     SUBDIR += ldapsh
     SUBDIR += leproxy
     SUBDIR += lft
+    SUBDIR += libarcus
     SUBDIR += libarms
     SUBDIR += libbgpdump
     SUBDIR += libcapn
