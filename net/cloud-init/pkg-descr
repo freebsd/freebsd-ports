@@ -1,3 +1,6 @@
-Package provides configuration and customization of cloud instance.
+Cloud-init is the industry standard multi-distribution method for cross-platform
+cloud instance initialization. It is supported across all major public cloud
+providers, provisioning systems for private cloud infrastructure, and bare-metal
+installations.
 
-WWW: https://launchpad.net/cloud-init
+WWW: https://cloud-init.io/
