@@ -5,19 +5,18 @@ PORTNAME=	mod_evasive
 PORTVERSION=	1.10.1
 PORTREVISION=	1
 CATEGORIES=	www security
-MASTER_SITES=	http://www.zdziarski.com/blog/wp-content/uploads/2010/02/
 DISTNAME=	mod_evasive_${PORTVERSION}
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Apache module to try to protect the HTTP Server from DoS/DDoS attacks
 
-BROKEN=		unfetchable
+USE_GITHUB=	yes
+GH_ACCOUNT=	jzdziarski
+GH_TAGNAME=	ad6e89f6c7d835945a7d329cc0f04adaefc3d114
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		apache:2.2+
 AP_FAST_BUILD=	yes
