@@ -2,6 +2,7 @@
 
 PORTNAME=	wlogout
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -29,5 +30,11 @@ post-patch:
 		${WRKSRC}/main.c \
 		${WRKSRC}/man/${PORTNAME}.1.scd \
 		${WRKSRC}/style.css
+
+post-install:
+# Let @sample handle default files under etc/
+	@for f in ${STAGEDIR}${ETCDIR}/*; do \
+		${MV} $$f $$f.sample; \
+	done
 
 .include <bsd.port.mk>
