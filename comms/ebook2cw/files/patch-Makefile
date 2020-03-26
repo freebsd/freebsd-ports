@@ -1,20 +1,20 @@
---- Makefile.orig	2013-01-04 09:33:04.000000000 -0500
-+++ Makefile	2013-01-16 10:16:50.000000000 -0500
+--- Makefile.orig	2013-01-04 14:33:04 UTC
++++ Makefile
 @@ -3,37 +3,26 @@
  # $Id: Makefile 547 2012-12-29 21:07:53Z dj1yfk $
  
  VERSION=0.8.2
 -DESTDIR ?= /usr
--
++DESTDIR ?= /usr/local
++CC	?= gcc
+ 
 -# Set to NO to compile without Lame/Ogg-vorbis support
 -USE_LAME?=YES
 -USE_OGG?=YES
-+DESTDIR ?= %%PREFIX%%
-+CC	?= gcc
- 
+-
  CFLAGS:=$(CFLAGS) -D DESTDIR=\"$(DESTDIR)\" -D VERSION=\"$(VERSION)\"
-+CFLAGS+= -I%%LOCALBASE%%/include -D LAME -D OGGV
-+LDFLAGS+= -L%%LOCALBASE%%/lib -lmp3lame -lvorbis -lvorbisenc -logg
++CFLAGS+= -I/usr/local/include -D LAME -D OGGV
++LDFLAGS+= -L/usr/local/lib -lmp3lame -lvorbis -lvorbisenc -logg
  
 -ifeq ($(USE_LAME), YES)
 -		CFLAGS:=$(CFLAGS) -D LAME
@@ -24,11 +24,11 @@
 -		CFLAGS:=$(CFLAGS) -D OGGV
 -		LDFLAGS:=$(LDFLAGS) -lvorbis -lvorbisenc -logg
 -endif
--
--
--all: ebook2cw
 +all: ebook2cw cgi
  
+-
+-all: ebook2cw
+-
  ebook2cw: ebook2cw.c codetables.h
 -	gcc ebook2cw.c -pedantic -Wall -lm $(LDFLAGS) $(CFLAGS) -o ebook2cw
 +	${CC} ebook2cw.c -pedantic -Wall -lm $(LDFLAGS) $(CFLAGS) -o ebook2cw
