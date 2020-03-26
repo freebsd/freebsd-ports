@@ -5,7 +5,7 @@ PORTNAME=	opensmtpd
 PORTVERSION=	6.6.4
 DISTVERSIONSUFFIX=	p1
 PORTEPOCH=	1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
 
@@ -62,6 +62,10 @@ CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
 .if ${OPSYS} == FreeBSD && \
     (${OSVERSION} < 1200084 && ${SSL_DEFAULT} == "base")
 BROKEN=		Openssl 1.0 API is EoL, upgrade to FreeBSD 12.x/13.x or add DEFAULT_VERSIONS+=ssl=[openssl|libressl*] to /etc/make.conf
+.endif
+
+.if ${OPSYS} != OpenBSD
+CONFIGURE_ARGS+=	--with-path-mbox=/var/mail
 .endif
 
 post-install-TABLE_DB-on:
