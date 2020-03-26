@@ -3,6 +3,7 @@ man/man1/qjackctl.1.gz
 man/man1/qjackctl.fr.1.gz
 share/applications/qjackctl.desktop
 share/icons/hicolor/32x32/apps/qjackctl.png
+share/icons/hicolor/scalable/apps/qjackctl.svg
 share/metainfo/qjackctl.appdata.xml
 %%DATADIR%%/translations/qjackctl_cs.qm
 %%DATADIR%%/translations/qjackctl_de.qm
