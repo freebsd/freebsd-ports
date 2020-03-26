@@ -3,6 +3,7 @@
 
 PORTNAME=	librenms
 PORTVERSION=	1.61
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -93,7 +94,7 @@ SHEBANG_FILES=	scripts/auth_test.php scripts/deploy-docs.sh scripts/github-remov
 SUB_FILES+=	pkg-message
 SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PYTHON_CMD}
 
-ROOT_FILES=	.env.example addhost.php adduser.php alerts.php artisan billing-calculate.php \
+ROOT_FILES=	addhost.php adduser.php alerts.php artisan billing-calculate.php \
 		build-base.php build.sql check-services.php composer.json \
 		composer.lock config.php.default config_to_json.php cronic daily.php \
 		delhost.php discovery-wrapper.py discovery.php dist-pollers.php irc.php \
@@ -182,7 +183,13 @@ do-install-EXAMPLES-on:
 post-install:
 	@${FIND} -s ${STAGEDIR}${WWWDIR} -type f '(' -name '*.orig' -or -name '*.bak' -or -name '.gitignore' ')' -delete
 	@${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
-	${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+
+	# we do this file separately because it needs a different chmod/chown
+	# it will eventually contains secrets
+	${INSTALL_DATA} ${WRKSRC}/.env.example ${STAGEDIR}/${WWWDIR}
+	@${ECHO_CMD} "@(root,www,0750) ${WWWDIR}/.env.example" >> ${TMPPLIST}
+
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/logs" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/bootstrap/cache" >> ${TMPPLIST}
 #	@${ECHO_CMD} "@(www,www,0775) ${WWWDIR}/daily.sh" >> ${TMPPLIST}
