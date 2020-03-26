@@ -194,7 +194,7 @@ routinator:*:245:245::0:0:Routinator 3000 Pseudo User:/nonexistent:/usr/sbin/nol
 fahclient:*:246:246::0:0:Folding@home User:/nonexistent:/usr/sbin/nologin
 fcron:*:247:247::0:0:fcron pseudo-user:/nonexistent:/usr/sbin/nologin
 signal-cli:*:248:248::0:0:Signal CLI:/nonexistent:/usr/sbin/nologin
-# free: 249
+sonarqube:*:249:249::0:0:SonarQube Server:/nonexistent:/usr/sbin/nologin
 sems:*:250:250::0:0:SIP Express Media Server:/nonexistent:/usr/sbin/nologin
 # free: 251
 # free: 252

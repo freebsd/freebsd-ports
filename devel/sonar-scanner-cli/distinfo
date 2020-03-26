@@ -1,3 +1,3 @@
-TIMESTAMP = 1484414843
-SHA256 (sonar-scanner-2.8.zip) = 0295365a7e5d4499ec6b46cb6c70f3fa127159b58b73930f675acd0897a6b350
-SIZE (sonar-scanner-2.8.zip) = 496533
+TIMESTAMP = 1584986417
+SHA256 (sonar-scanner-cli-4.3.0.2102.zip) = 8c78a2a1af24dfbc564d87ba6826795e6892d3035cb91a98c61d9e33e2b3cd46
+SIZE (sonar-scanner-cli-4.3.0.2102.zip) = 588561

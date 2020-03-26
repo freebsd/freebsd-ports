@@ -1,66 +1,74 @@
 #!/bin/sh
+#
+# $FreeBSD
+#
 
-# PROVIDE: %%SQ_RC%%
-# REQUIRE: LOGIN
+# PROVIDE: sonarqube
+# REQUIRE: NETWORKING SERVERS
 # KEYWORD: shutdown
 
 #
-# Configuration settings for %%SQ_RC%% in /etc/rc.conf:
+# Add the following line to /etc/rc.conf to enable %%APP_NAME%%:
 #
-# %%SQ_RC%%_enable (bool):
-#   Set to "NO" by default.
-#   Set it to "YES" to enable %%SQ_RC%%.
+# %%APP_NAME%%_enable="YES"
 #
 
 . /etc/rc.subr
 
-name="%%SQ_RC%%"
-rcvar=%%SQ_RC%%_enable
-extra_commands="restart status"
+name=%%APP_NAME%%
+rcvar=%%APP_NAME%%_enable
 
-load_rc_config $name
+# set defaults
 
-%%SQ_RC%%_enable="${%%SQ_RC%%_enable:-"NO"}"
+%%APP_NAME%%_enable=${%%APP_NAME%%_enable:-"NO"}
+%%APP_NAME%%_supervised=${%%APP_NAME%%_supervised:-"YES"}
+%%APP_NAME%%_user=${%%APP_NAME%%_user:-"sonarqube"}
+%%APP_NAME%%_group=${%%APP_NAME%%_group:-"sonarqube"}
+%%APP_NAME%%_parameters=${%%APP_NAME%%_parameters:-"-Xms32m -Xmx32m -Djava.net.preferIPv4Stack=true"}
+%%APP_NAME%%_logfile=${%%APP_NAME%%_logfile:-"%%LOG_DIR%%/daemon.log"}
+%%APP_NAME%%_pidpath=${%%APP_NAME%%_pidpath:-"%%PID_DIR%%"}
 
-start_precmd="%%SQ_RC%%_prestart"
-start_cmd="%%SQ_RC%%_start"
-stop_cmd="%%SQ_RC%%_stop"
-restart_cmd="%%SQ_RC%%_restart"
-status_cmd="%%SQ_RC%%_status"
+sup_pidfile=${%%APP_NAME%%_pidpath}/%%APP_NAME%%_supervisor.pid
+main_pidfile=${%%APP_NAME%%_pidpath}/%%APP_NAME%%.pid
 
-%%SQ_RC%%_prestart()
-{
-	if [ ! -f "%%SQ_LOG_DIR%%/%%SQ_LOG_FILE%%" ]; then
-		mkdir -p "%%SQ_LOG_DIR%%"
-		touch "%%SQ_LOG_DIR%%/%%SQ_LOG_FILE%%"
-		chown -R "%%SQ_USER%%:%%SQ_GROUP%%" "%%SQ_LOG_DIR%%"
-		chmod 755 "%%SQ_LOG_DIR%%"
-		chmod 640 "%%SQ_LOG_DIR%%/%%SQ_LOG_FILE%%"
-	fi
-	if [ ! -d "%%SQ_DB_DIR%%/data" ]; then
-		install -d -m 755 -o %%SQ_USER%% -g %%SQ_GROUP%% "%%SQ_DB_DIR%%/data"
-		install -d -m 755 -o %%SQ_USER%% -g %%SQ_GROUP%% "%%SQ_DB_DIR%%/temp"
-	fi
-}
+if [ ! -d %%PID_DIR%% ]; then
+	mkdir -p %%PID_DIR%%
+	chown ${%%APP_NAME%%_user}:${%%APP_NAME%%_group} %%PID_DIR%%
+fi
 
-%%SQ_RC%%_start()
-{
-	%%SQ_RUN%% start
-}
+if [ ! -d %%LOG_DIR%% ]; then
+	mkdir -p %%LOG_DIR%%
+	chown ${%%APP_NAME%%_user}:${%%APP_NAME%%_group} %%LOG_DIR%%
+fi
 
-%%SQ_RC%%_stop()
-{
-	%%SQ_RUN%% stop
-}
+if test -n "${%%APP_NAME%%_java_version}" ; then
+    JAVA_HOME=$(JAVA_VERSION="${%%APP_NAME%%_java_version}" JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
+    javaname=$(JAVA_VERSION="${%%APP_NAME%%_java_version}" JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -d= -f2)
+else
+    JAVA_HOME=$(JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
+    javaname=$(JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVAVM_PROG | cut -d= -f2)
+fi
 
-%%SQ_RC%%_restart()
-{
-	%%SQ_RUN%% restart
-}
+export JAVA_HOME
 
-%%SQ_RC%%_status()
-{
-	%%SQ_RUN%% status
-}
+jarname="%%PREFIX%%/%%APP_DIR%%/lib/sonar-application-%%JAR_VERSION%%.jar"
+command="/usr/sbin/daemon"
+required_files="%%PREFIX%%/%%APP_DIR%%/conf/sonar.properties"
+
+load_rc_config ${name}
+
+if checkyesno %%APP_NAME%%_supervised; then
+	# auto-restart on termination
+	pidfile=${sup_pidfile}
+	daemon_supervise_args="-r -P ${sup_pidfile}"
+	procname=daemon
+else
+	# no restart on termination
+	pidfile=${main_pidfile}
+	damon_supervise_args=""
+	procname=${javaname}
+fi
+
+command_args="${daemon_supervise_args} -o ${%%APP_NAME%%_logfile} -p ${main_pidfile} ${javaname} ${%%APP_NAME%%_parameters} -jar ${jarname}"
 
 run_rc_command "$1"

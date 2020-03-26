@@ -1,3 +1,13 @@
-TIMESTAMP = 1485762264
-SHA256 (sonarqube-6.2.zip) = 6bb187b8568d493131952e3b66e65940992f1a62c7962c1bf5801f6f48f1c160
-SIZE (sonarqube-6.2.zip) = 131365696
+TIMESTAMP = 1584980926
+SHA256 (sonarqube-8.2.0.32929.zip) = 6a46cc9cb29898ae6b062ef40ce72688dc8bd47dc2b68ed016eeef521268dd88
+SIZE (sonarqube-8.2.0.32929.zip) = 221945914
+SHA256 (sonar-csharp-plugin-8.5.0.15942.jar) = 5afbf966af647addde362b96fbdb901e7ec0ed5658e85b3fdd5d07c8c3f62e71
+SIZE (sonar-csharp-plugin-8.5.0.15942.jar) = 5020050
+SHA256 (sonar-java-plugin-6.2.0.21135.jar) = a26ec4299b22ff47ec45bd56af241483341d6dc815f1cf3fb24fa774f23edece
+SIZE (sonar-java-plugin-6.2.0.21135.jar) = 17071013
+SHA256 (sonar-python-plugin-2.7.0.5975.jar) = b5d32130fab1bff123d5a34154300e4842964c374ae25bd54605492ca3d19a0b
+SIZE (sonar-python-plugin-2.7.0.5975.jar) = 3142083
+SHA256 (sonar-scm-git-plugin-1.11.0.11.jar) = 7741687151514d78862fa35d59641be34df6e1f5fa4baef00cda02de0fe6be06
+SIZE (sonar-scm-git-plugin-1.11.0.11.jar) = 3800907
+SHA256 (sonar-vbnet-plugin-8.5.0.15942.jar) = 764039d1711878081ff91dd7afd063eccb5ef4dd78cd43f502f769d4a9fbc9a4
+SIZE (sonar-vbnet-plugin-8.5.0.15942.jar) = 3744062

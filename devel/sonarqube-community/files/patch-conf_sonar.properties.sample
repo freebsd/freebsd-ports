@@ -1,0 +1,31 @@
+--- conf/sonar.properties.sample.orig	2020-02-25 14:27:14 UTC
++++ conf/sonar.properties.sample
+@@ -94,7 +94,7 @@
+ #sonar.web.javaOpts=-Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError
+ 
+ # Same as previous property, but allows to not repeat all other settings like -Xmx
+-#sonar.web.javaAdditionalOpts=
++sonar.search.javaAdditionalOpts=-Dbootstrap.system_call_filter=false -server
+ 
+ # Binding IP address. For servers with more than one IP address, this property specifies which
+ # address will be used for listening on the specified ports.
+@@ -362,7 +362,7 @@
+ 
+ # Path to log files. Can be absolute or relative to installation directory.
+ # Default is <installation home>/logs
+-#sonar.path.logs=logs
++sonar.path.logs=/var/log/sonarqube
+ 
+ # Rolling policy of log files
+ #    - based on time if value starts with "time:", for example by day ("time:yyyy-MM-dd")
+@@ -403,8 +403,8 @@
+ # Paths to persistent data files (embedded database and search index) and temporary files.
+ # Can be absolute or relative to installation directory.
+ # Defaults are respectively <installation home>/data and <installation home>/temp
+-#sonar.path.data=data
+-#sonar.path.temp=temp
++sonar.path.data=/var/db/sonarqube/data
++sonar.path.temp=/var/db/sonarqube/temp
+ 
+ # Telemetry - Share anonymous SonarQube statistics
+ # By sharing anonymous SonarQube statistics, you help us understand how SonarQube is used so we can improve the product to work even better for you.

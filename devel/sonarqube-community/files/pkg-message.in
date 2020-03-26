@@ -1,17 +1,41 @@
 [
-{ type: install
-  message: <<EOM
-	Before start the SonarQube, prepare the Database and
-	the Web Server, when installing for the first time.
+{
+  message: <<EOT
+SonarQube is now installed in %%PREFIX%%/%%APP_DIR%%.
 
-	More information:
-	http://docs.sonarqube.org/display/SONAR/Installing
+Before the first start (but not if you update), you have to configure a DB in
+    %%PREFIX%%/%%APP_DIR%%/conf/sonar.properties
+A real DB server is recommended instead of the default local H2 DB. No testing
+will be done for this port to handle an update for the local H2 DB (it is
+recommended to only use the local H2 DB to evaluate this software).
 
-	When upgrading the SonarQube, follow instructions:
-	http://docs.sonarqube.org/display/SONAR/Upgrading
+Important information for the next steps:
+    https://docs.sonarqube.org/latest/requirements/requirements/
+    https://docs.sonarqube.org/latest/setup/install-server/
+    https://docs.sonarqube.org/latest/instance-administration/security/
+Note: the "wrapper" is not installed in FreeBSD, the FreeBSD daemon(8)
+      facility is used instead.
 
-	To run the SonarQube from startup, add sonarqube_enable="YES"
-	in your /etc/rc.conf
-EOM
+Per default the server is started in supervised mode, this means if it dies
+or is stopped via the admin interface (e.g. after updating/installing
+plugins), it will automatically start again.
+
+While the server is *not* running, you can switch from supervised to
+unsupervised mode via:
+    # sysrc sonarqube_supervised=NO
+
+Temporary files are saved to
+    %%TEMP_DIR%%
+and are cleaned-up at every start.
+
+Data files which are not saved to the DB are stored in
+    %%DATA_DIR%%
+
+Logfiles can be found in
+    %%LOG_DIR%%
+
+Once SonarQube is started, point your web browser to the page at
+    http://<hostname>:9000/.
+EOT
 }
 ]
