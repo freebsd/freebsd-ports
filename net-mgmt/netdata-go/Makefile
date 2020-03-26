@@ -2,7 +2,7 @@
 
 PORTNAME=	netdata-go
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.18.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	driesm.michiels@gmail.com
@@ -19,6 +19,7 @@ GH_PROJECT=	go.d.plugin
 GH_TUPLE=	Wing924:ltsv:v0.3.1:wing924_ltsv/vendor/github.com/Wing924/ltsv \
 		axiomhq:hyperloglog:a4c4c47bc57f:axiomhq_hyperloglog/vendor/github.com/axiomhq/hyperloglog \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
+		cloudflare:cfssl:v1.4.1:cloudflare_cfssl/vendor/github.com/cloudflare/cfssl \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgryski:go-metro:280f6062b5bc:dgryski_go_metro/vendor/github.com/dgryski/go-metro \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
@@ -27,6 +28,7 @@ GH_TUPLE=	Wing924:ltsv:v0.3.1:wing924_ltsv/vendor/github.com/Wing924/ltsv \
 		golang:net:83d349e8ac1a:golang_net/vendor/golang.org/x/net \
 		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
 		golang:xerrors:1b5146add898:golang_xerrors/vendor/golang.org/x/xerrors \
+		google:certificate-transparency-go:v1.0.21:google_certificate_transparency_go/vendor/github.com/google/certificate-transparency-go \
 		google:uuid:6a5e28554805:google_uuid/vendor/github.com/google/uuid \
 		jessevdk:go-flags:v1.4.0:jessevdk_go_flags/vendor/github.com/jessevdk/go-flags \
 		layeh:radius:890bc1058917:layeh_radius/vendor/layeh.com/radius \
