@@ -1,6 +1,6 @@
-TIMESTAMP = 1583419864
-SHA256 (cli-cli-v0.6.1_GH0.tar.gz) = 237b18f9e3c82caa1cb06df3ca763ad7b32dab7e9a9a6f89afe7593bc31c3290
-SIZE (cli-cli-v0.6.1_GH0.tar.gz) = 189311
+TIMESTAMP = 1585163962
+SHA256 (cli-cli-v0.6.2_GH0.tar.gz) = fc6986ea92f31788b55b677e079a8119b862b96a0838a0eb63b26145a7771389
+SIZE (cli-cli-v0.6.2_GH0.tar.gz) = 194980
 SHA256 (AlecAivazis-survey-v2.0.7_GH0.tar.gz) = 501b2246e0eb9b9ee9ffdd5d3a3c7a1fc680fbb4b0809e506ed15c2e098b8752
 SIZE (AlecAivazis-survey-v2.0.7_GH0.tar.gz) = 1351392
 SHA256 (alecthomas-chroma-34d9c7143bf5_GH0.tar.gz) = 38c3ab2f51ab7b971eeca8add6a545a29046084d53fe260d57ffc6a2c9bf1afd
