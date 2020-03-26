@@ -1,6 +1,10 @@
 bin/tilda
-share/appdata/tilda.appdata.xml
 share/applications/tilda.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/HACKING.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/TODO.md
 share/locale/bg/LC_MESSAGES/tilda.mo
 share/locale/ca/LC_MESSAGES/tilda.mo
 share/locale/cs/LC_MESSAGES/tilda.mo
@@ -12,6 +16,7 @@ share/locale/fr/LC_MESSAGES/tilda.mo
 share/locale/hu/LC_MESSAGES/tilda.mo
 share/locale/it/LC_MESSAGES/tilda.mo
 share/locale/lt/LC_MESSAGES/tilda.mo
+share/locale/nb/LC_MESSAGES/tilda.mo
 share/locale/pl/LC_MESSAGES/tilda.mo
 share/locale/pt/LC_MESSAGES/tilda.mo
 share/locale/pt_BR/LC_MESSAGES/tilda.mo
@@ -22,9 +27,5 @@ share/locale/sv/LC_MESSAGES/tilda.mo
 share/locale/tr/LC_MESSAGES/tilda.mo
 share/locale/zh_CN/LC_MESSAGES/tilda.mo
 share/locale/zh_TW/LC_MESSAGES/tilda.mo
+share/metainfo/tilda.appdata.xml
 share/pixmaps/tilda.png
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/HACKING.md
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/TODO.md
