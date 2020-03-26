@@ -10,7 +10,7 @@ DISTNAME=	sonarqube-ant-task-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	freebsd@dussan.org
+MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	SonarQube Plugin for analysis projects with an Apache Ant
 
 LICENSE=	LGPL3
