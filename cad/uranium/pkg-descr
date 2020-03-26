@@ -1,3 +1,6 @@
-Uranium is a Python framework for building 3D printing related applications.
+The Uranium framework consists of several parts, divided over several modules.
+These modules are Core, Backend, Math, Mesh, Scene, Settings and View.
+In addition, there are two toolkit-specific modules that implement a lot
+of UI bits for the applications.
 
-WWW: https://github.com/Ultimaker/uranium/wiki
+WWW: https://github.com/Ultimaker/Uranium/blob/master/docs/overview.md
