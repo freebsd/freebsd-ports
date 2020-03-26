@@ -1,2 +1,5 @@
-SHA256 (Ultimaker-CuraEngine-15.04_GH0.tar.gz) = d577e409b3e9554e7d2b886227dbbac6c9525efe34df4fc7d62e9474a2d7f965
-SIZE (Ultimaker-CuraEngine-15.04_GH0.tar.gz) = 107644
+TIMESTAMP = 1584491887
+SHA256 (Ultimaker/Ultimaker-CuraEngine-v4.5.0-19-gdbf3d79-dbf3d79_GH0.tar.gz) = da639d1ea47b61628a9df065140e11a5b4a2c0181c3d3547b00791ba48a20ac9
+SIZE (Ultimaker/Ultimaker-CuraEngine-v4.5.0-19-gdbf3d79-dbf3d79_GH0.tar.gz) = 1684086
+SHA256 (Ultimaker/nothings-stb-d5d052c_GH0.tar.gz) = ce1a6424b43287166a962827d83d98cedcd9d515e69052b17d8a7896f9fb7517
+SIZE (Ultimaker/nothings-stb-d5d052c_GH0.tar.gz) = 1358441
