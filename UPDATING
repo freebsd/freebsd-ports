@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200326:
+  AFFECTS: users of devel/sonarqube and devel/sonar-ant-task
+  AUTHOR: netchild@FreeBSD.org
+
+  The outdated port devel/sonarqube has moved to
+  devel/sonarqube-community to make it clear that it is the community
+  edition. The log and DB files are still stored in the same location.
+
+  The devel/sonar-ant-task port has moved to devel/sonarqube-ant-task
+  to match the upstream-name. The install location is renamed
+  accordingly.
+
+  At the same time the user/group of the sonarqube port changed from
+  www:www to sonarqube:sonarqube.
+
+  It is expected that nobody was using the 6.2 version from 2016
+  anymore and no change needs to be done. No analysis was done to check
+  if the old 6.2 version can be updated in-place to the 8.2 version.
+  As such if there is still someone using the old 6.2 version, you may
+  have to delete /var/log/sonarqube and /var/db/sonarqube before
+  installing the new version.
+
 20200320
   AFFECTS: users of devel/qca
   AUTHOR: kde@FreeBSD.org

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+exec /bin/sh %%PREFIX%%/%%APP_DIR%%/bin/sonar-scanner "$@"
+

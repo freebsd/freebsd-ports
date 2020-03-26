@@ -1,90 +1,149 @@
-# Created by: Dusan Vejnovic <freebsd@dussan.org>
 # $FreeBSD$
 
 PORTNAME=	sonarqube
-PORTVERSION=	6.2
-CATEGORIES=	devel www java
-MASTER_SITES=	http://sonarsource.bintray.com/Distribution/sonarqube/
+DISTVERSION=	8.2.0.32929
+PORTREVISION=	0
+CATEGORIES=	devel security www java
+MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
+		https://binaries.sonarsource.com/Distribution/sonar-csharp-plugin/:m_csharp \
+		https://binaries.sonarsource.com/Distribution/sonar-java-plugin/:m_java \
+		https://binaries.sonarsource.com/Distribution/sonar-python-plugin/:m_python \
+		https://binaries.sonarsource.com/Distribution/sonar-scm-git-plugin/:m_scmgit \
+		https://binaries.sonarsource.com/Distribution/sonar-vbnet-plugin/:m_vbnet
+PKGNAMESUFFIX=	-community
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:m_core \
+		sonar-csharp-plugin-${SONARCSHARP_VER}.jar:m_csharp \
+		sonar-java-plugin-${SONARJAVA_VER}.jar:m_java \
+		sonar-python-plugin-${SONARPYTHON_VER}.jar:m_python \
+		sonar-scm-git-plugin-${SONARSCMGIT_VER}.jar:m_scmgit \
+		sonar-vbnet-plugin-${SONARVBNET_VER}.jar:m_vbnet
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	netchild@FreeBSD.org
-COMMENT=	Platform for continuous inspection of code quality
-
-BROKEN=		unfetchable
+COMMENT=	Web-based continuous code inspection tool
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libbiconv.so:converters/iconv
-RUN_DEPENDS=	javaservicewrapper:sysutils/javaservicewrapper
+RUN_DEPENDS=	bash:shells/bash
+
+USES=		shebangfix zip
+CPE_VENDOR=	sonarsource
+USE_JAVA=	yes
+
+SHEBANG_FILES=	elasticsearch/bin/elasticsearch \
+		elasticsearch/bin/elasticsearch-env
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-
+JAVA_VERSION=	11+
+JAVA_VENDOR=	openjdk
 USE_RC_SUBR=	${PORTNAME}
-USERS=		www
-GROUPS=		www
 
-USES=		cpe dos2unix zip
-CPE_VENDOR=	sonarsource
-DOS2UNIX_GLOB=	*.properties *.conf
+APP_NAME=	${PORTNAME}
+APP_DIR=	libexec/${PORTNAME}
+LOG_DIR=	/var/log/${PORTNAME}
+PID_DIR=	/var/run/${PORTNAME}
+JAR_VERSION=	${DISTVERSION}
+DATA_DIR=	/var/db/${PORTNAME}/data
+TEMP_DIR=	/var/db/${PORTNAME}/temp
 
-USE_JAVA=	yes
+SONARCSHARP_VER=	8.5.0.15942
+SONARJAVA_VER=		6.2.0.21135
+SONARPYTHON_VER=	2.7.0.5975
+SONARSCMGIT_VER=	1.11.0.11
+SONARVBNET_VER=		8.5.0.15942
 
-SQ_FILE=	sonar.sh
-SQ_HOME=	${PREFIX}/share/${PORTNAME}
-SQ_DB_DIR=	/var/db/${PORTNAME}
-SQ_LOG_DIR=	/var/log/${PORTNAME}
-SQ_LOG_FILE=	${PORTNAME}.log
-SQ_JSW=		${PREFIX}/lib/javaservicewrapper
+USERS=		sonarqube
+GROUPS=		sonarqube
 
-SUB_LIST+=	SQ_DB_DIR=${SQ_DB_DIR} \
-			SQ_GROUP=${GROUPS} \
-			SQ_LOG_DIR=${SQ_LOG_DIR} \
-			SQ_LOG_FILE=${SQ_LOG_FILE} \
-			SQ_RC=${PORTNAME} \
-			SQ_RUN=${SQ_HOME}/bin/freebsd/${SQ_FILE} \
-			SQ_USER=${USERS}
-PLIST_SUB+=	SQ_DB_DIR=${SQ_DB_DIR} \
-			SQ_GROUP=${GROUPS} \
-			SQ_HOME=${SQ_HOME} \
-			SQ_LOG_DIR=${SQ_LOG_DIR} \
-			SQ_USER=${USERS}
+SUB_LIST=	\
+		APP_NAME=${APP_NAME} \
+		APP_DIR=${APP_DIR} \
+		JAVA_HOME=${JAVA_HOME} \
+		JAVA=${JAVA} \
+		LOG_DIR=${LOG_DIR} \
+		PID_DIR=${PID_DIR} \
+		JAR_VERSION=${JAR_VERSION} \
+		DATA_DIR=${DATA_DIR} \
+		TEMP_DIR=${TEMP_DIR}
 
-OPTIONS_RADIO=		SQL
-OPTIONS_RADIO_SQL=	MYSQL PGSQL
+SUB_FILES=	\
+		${APP_NAME} \
+		pkg-message
 
-MYSQL_USES=	mysql
-PGSQL_USES=	pgsql
+PLIST_SUB=	APP_NAME=${APP_NAME} \
+		APP_DIR=${APP_DIR} \
+		LOG_DIR=${LOG_DIR} \
+		PID_DIR=${PID_DIR} \
+		JAR_VERSION=${JAR_VERSION} \
+		DATA_DIR=${DATA_DIR} \
+		TEMP_DIR=${TEMP_DIR} \
+		SONARCSHARP_VER=${SONARCSHARP_VER} \
+		SONARJAVA_VER=${SONARJAVA_VER} \
+		SONARPYTHON_VER=${SONARPYTHON_VER} \
+		SONARSCMGIT_VER=${SONARSCMGIT_VER} \
+		SONARVBNET_VER=${SONARVBNET_VER}
+
+post-extract:
+	${RM} -r ${WRKSRC}/bin ${WRKSRC}/lib/jsw ${WRKSRC}/conf/wrapper.conf
+	${MV} ${WRKSRC}/conf/sonar.properties ${WRKSRC}/conf/sonar.properties.sample
+.for plugin in sonar-csharp-plugin \
+    sonar-java-plugin \
+    sonar-python-plugin \
+    sonar-scm-git-plugin \
+    sonar-vbnet-plugin
+	${RM} ${WRKSRC}/extensions/plugins/${plugin}-*.jar
+.endfor
+.for plugin in sonar-csharp-plugin-${SONARCSHARP_VER}.jar \
+    sonar-java-plugin-${SONARJAVA_VER}.jar \
+    sonar-python-plugin-${SONARPYTHON_VER}.jar \
+    sonar-scm-git-plugin-${SONARSCMGIT_VER}.jar \
+    sonar-vbnet-plugin-${SONARVBNET_VER}.jar
+	${CP} ${DISTDIR}/${plugin} ${WRKSRC}/extensions/plugins/
+.endfor
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%DIR%%|${SQ_HOME}|' \
-		-e 's|%%LIB%%|${SQ_JSW}|' \
-		-e 's|%%LOG%%|${SQ_LOG_DIR}/${SQ_LOG_FILE}|' \
-		-e 's|%%LOGDIR%%|${SQ_LOG_DIR}|' \
-		-e 's|%%DBDIR%%|${SQ_DB_DIR}|' \
-		-e 's|%%WRAPPER_JAR%%|${SQ_JSW}/lib/wrapper.jar|' \
-		${WRKSRC}/conf/wrapper.conf ${WRKSRC}/conf/sonar.properties
+	${REINPLACE_CMD} -e 's:%%LOG_DIR%%:${LOG_DIR}:g ; s:%%DATA_DIR%%:${DATA_DIR}:g ; s:%%TEMP_DIR%%:${TEMP_DIR}:g' ${WRKSRC}/conf/sonar.properties.sample
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${SQ_HOME}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${SQ_HOME})
-	@${MKDIR} ${STAGEDIR}${SQ_HOME}/bin/freebsd/lib
-	@${CP} ${STAGEDIR}${SQ_HOME}/bin/linux-x86-64/${SQ_FILE} \
-		${STAGEDIR}${SQ_HOME}/bin/freebsd
-	@${REINPLACE_CMD} -e 's|#RUN_AS_USER=|RUN_AS_USER=${USERS}|' \
-		-e 's|-p $$pid -o args|ww $$pid|' \
-		-e 's|=\"./wrapper\"|=\"${SQ_JSW}/bin/wrapper\"|' \
-		${STAGEDIR}${SQ_HOME}/bin/freebsd/${SQ_FILE}
-	@${MV} -f ${STAGEDIR}${SQ_HOME}/bin/freebsd/${SQ_FILE} \
-		${STAGEDIR}${SQ_HOME}/bin/freebsd/${SQ_FILE}.sample
-	@${MV} -f ${STAGEDIR}${SQ_HOME}/conf/sonar.properties \
-		${STAGEDIR}${SQ_HOME}/conf/sonar.properties.sample
-	@${MV} -f ${STAGEDIR}${SQ_HOME}/conf/wrapper.conf \
-	${STAGEDIR}${SQ_HOME}/conf/wrapper.conf.sample
-	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/linux-x86-32
-	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/linux-x86-64
-	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/macosx-universal-64
-	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/windows-x86-32
-	@${RM} -drf ${STAGEDIR}${SQ_HOME}/bin/windows-x86-64
+	${MKDIR} ${STAGEDIR}${PREFIX}/${APP_DIR}/elasticsearch/plugins
+	${MKDIR} ${STAGEDIR}${LOG_DIR} ${STAGEDIR}${PID_DIR} \
+		${STAGEDIR}${DATA_DIR} ${STAGEDIR}${TEMP_DIR}
+.for dir in conf elasticsearch extensions lib web
+	cd ${WRKSRC}; ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/${APP_DIR} "! -name *\.orig"
+.endfor
+
+gen-plist:
+	${ECHO} '@sample ${APP_DIR}/conf/sonar.properties.sample' >${PLIST}.new
+	${ECHO} '@dir(sonarqube,sonarqube,755) %%DATA_DIR%%' >>${PLIST}.new
+	${ECHO} '@dir(sonarqube,sonarqube,755) %%TEMP_DIR%%' >>${PLIST}.new
+	${ECHO} '@dir %%APP_DIR%%/elasticsearch/plugins' >>${PLIST}.new
+#	${ECHO} '@dir(sonarqube,sonarqube,755) %%APP_DIR%%/extensions' >>${PLIST}.new
+.for dir in conf elasticsearch lib web
+	${FIND} ${STAGEDIR}${PREFIX}/${APP_DIR}/${dir} -type f |  \
+	    ${SED} -e "s:${STAGEDIR}${PREFIX}/::g ; \
+		s:${JAR_VERSION}:%%JAR_VERSION%%:g ; \
+		s:\(.*elasticsearch/bin.*\):@(,,755) \1:g" | \
+	    ${GREP} -v conf/sonar.properties.sample | ${SORT} >> ${PLIST}.new
+.endfor
+	${ECHO} '@owner sonarqube' >>${PLIST}.new
+	${ECHO} '@group sonarqube' >>${PLIST}.new
+.for dir in extensions
+	${FIND} ${STAGEDIR}${PREFIX}/${APP_DIR}/${dir} -type d | \
+	    ${SED} -e "s:${STAGEDIR}${PREFIX}/:@dir(sonarqube,sonarqube,755) :g" | \
+	    ${SORT} >> ${PLIST}.new
+	${FIND} ${STAGEDIR}${PREFIX}/${APP_DIR}/${dir} -type f | \
+	    ${SED} -e "s:${STAGEDIR}${PREFIX}/::g ; \
+		s:${JAR_VERSION}:%%JAR_VERSION%%:g ; \
+		s:sonar-csharp-plugin-[0-9.]*.jar:sonar-csharp-plugin-%%SONARCSHARP_VER%%.jar:g ; \
+		s:sonar-java-plugin-[0-9.]*.jar:sonar-java-plugin-%%SONARJAVA_VER%%.jar:g ; \
+		s:sonar-python-plugin-[0-9.]*.jar:sonar-python-plugin-%%SONARPYTHON_VER%%.jar:g ; \
+		s:sonar-scm-git-plugin-[0-9.]*.jar:sonar-scm-git-plugin-%%SONARSCMGIT_VER%%.jar:g ; \
+		s:sonar-vbnet-plugin-[0-9.]*.jar:sonar-vbnet-plugin-%%SONARVBNET_VER%%.jar:g" | \
+	    ${SORT} >> ${PLIST}.new
+.endfor
+	${ECHO} '@dir(sonarqube,sonarqube,755) %%LOG_DIR%%' >> ${PLIST}.new
+	${ECHO} '@dir(sonarqube,sonarqube,755) %%PID_DIR%%' >> ${PLIST}.new
 
 .include <bsd.port.mk>

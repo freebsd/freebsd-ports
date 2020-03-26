@@ -189,7 +189,7 @@ routinator:*:245:
 fahclient:*:246:fahclient
 fcron:*:247:
 signal-cli:*:248:
-# free: 249
+sonarqube:*:249:
 sems:*:250:
 # free: 251
 # free: 252

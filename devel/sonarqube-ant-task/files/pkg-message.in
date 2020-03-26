@@ -5,11 +5,11 @@
   settings):
   - define a new sonar Ant target in your Ant build script
   - for the SonarQube target set classpath value to
-   %%DATADIR%%/sonar-ant-task.jar
+   %%DATADIR%%/sonarqube-ant-task.jar
 
 
   More information:
-  http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Ant
+  https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-ant/
 EOM
 }
 ]

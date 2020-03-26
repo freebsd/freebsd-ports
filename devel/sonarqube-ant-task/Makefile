@@ -1,12 +1,10 @@
 # Created by: Dusan Vejnovic <freebsd@dussan.org>
 # $FreeBSD$
 
-PORTNAME=	sonar-ant-task
-PORTVERSION=	2.5
+PORTNAME=	sonarqube-ant-task
+PORTVERSION=	2.7.0.1612
 CATEGORIES=	devel java
-MASTER_SITES=	https://sonarsource.bintray.com/Distribution/sonarqube-ant-task/ \
-			LOCAL/ler/sonar-ant-task
-DISTNAME=	sonarqube-ant-task-${PORTVERSION}
+MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
@@ -15,23 +13,19 @@ COMMENT=	SonarQube Plugin for analysis projects with an Apache Ant
 
 LICENSE=	LGPL3
 
+USES=		cpe
+USE_JAVA=	yes
+CPE_VENDOR=	sonarsource
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-RUN_DEPENDS+=	ant:devel/apache-ant
-
-USES=		cpe
-CPE_VENDOR=	sonarsource
-
-USE_JAVA=	yes
+RUN_DEPENDS+=	ant:devel/apache-ant \
+		sonar-scanner:devel/sonar-scanner-cli
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	${DATADIR_REL}/sonar-ant-task.jar
-
-OPTIONS_DEFINE=	SQ
-SQ_DESC=	SonarQube server support
-SQ_RUN_DEPENDS=	sonarqube>=0:devel/sonarqube
+PLIST_FILES=	${DATADIR_REL}/${PORTNAME}${EXTRACT_SUFX}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
