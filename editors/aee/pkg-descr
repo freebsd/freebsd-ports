@@ -5,7 +5,7 @@ as well as a graphical user interface under X windows (xae).
 Features include pop-up menus, cut-and-paste, journaling, and
 multiple edit buffers.
 
-aee is a superset of the "Easy Editor" (ee) that is part of the
+aee is a superset of the "Easy Editor" (ee) which is part of the
 FreeBSD base system.
 
-WWW: http://www.users.uswest.net/~hmahon/
+WWW: https://BSDforge.com/projects/editors/aee/
