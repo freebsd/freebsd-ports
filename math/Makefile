@@ -226,6 +226,7 @@
     SUBDIR += dune-typetree
     SUBDIR += dune-uggrid
     SUBDIR += e
+    SUBDIR += eclib
     SUBDIR += ecos
     SUBDIR += edenmath
     SUBDIR += eigen2
