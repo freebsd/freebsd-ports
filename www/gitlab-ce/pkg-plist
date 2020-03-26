@@ -4013,6 +4013,7 @@
 %%WWWDIR%%/app/controllers/concerns/enforces_two_factor_authentication.rb
 %%WWWDIR%%/app/controllers/concerns/group_tree.rb
 %%WWWDIR%%/app/controllers/concerns/hooks_execution.rb
+%%WWWDIR%%/app/controllers/concerns/hotlink_interceptor.rb
 %%WWWDIR%%/app/controllers/concerns/import_url_params.rb
 %%WWWDIR%%/app/controllers/concerns/initializes_current_user_mode.rb
 %%WWWDIR%%/app/controllers/concerns/internal_redirect.rb
@@ -12599,6 +12600,7 @@
 %%WWWDIR%%/lib/gitlab/hook_data/merge_request_builder.rb
 %%WWWDIR%%/lib/gitlab/hook_data/note_builder.rb
 %%WWWDIR%%/lib/gitlab/hook_data/wiki_page_builder.rb
+%%WWWDIR%%/lib/gitlab/hotlinking_detector.rb
 %%WWWDIR%%/lib/gitlab/http.rb
 %%WWWDIR%%/lib/gitlab/http_connection_adapter.rb
 %%WWWDIR%%/lib/gitlab/http_io.rb
@@ -17064,6 +17066,8 @@
 %%WWWDIR%%/spec/fixtures/sentry/repos_sample_response.json
 %%WWWDIR%%/spec/fixtures/spdx.json
 %%WWWDIR%%/spec/fixtures/ssh_host_example_key.pub
+%%WWWDIR%%/spec/fixtures/ssl_certificate.pem
+%%WWWDIR%%/spec/fixtures/ssl_key.pem
 %%WWWDIR%%/spec/fixtures/symlink_export.tar.gz
 %%WWWDIR%%/spec/fixtures/trace/ansi-sequence-and-unicode
 %%WWWDIR%%/spec/fixtures/trace/sample_trace
@@ -19204,6 +19208,7 @@
 %%WWWDIR%%/spec/lib/gitlab/hook_data/issuable_builder_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/hook_data/issue_builder_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/hook_data/merge_request_builder_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/hotlinking_detector_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/http_connection_adapter_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/http_io_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/http_spec.rb
@@ -21243,6 +21248,7 @@
 %%WWWDIR%%/spec/support/shared_examples/controllers/error_tracking_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/controllers/external_authorization_service_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/controllers/githubish_import_controller_shared_examples.rb
+%%WWWDIR%%/spec/support/shared_examples/controllers/hotlink_interceptor_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/controllers/instance_statistics_controllers_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/controllers/issuable_notes_filter_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/controllers/issuables_list_metadata_shared_examples.rb
