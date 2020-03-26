@@ -1,0 +1,11 @@
+--- scripts/xpra.orig	2019-03-19 15:05:07 UTC
++++ scripts/xpra
+@@ -17,6 +17,8 @@ except ImportError as e:
+         sys.stderr.write(" retrying with %s\n" % py_exe)
+         os.execvpe(py_exe, argv, env)
+     sys.exit(1)
++from ctypes import cdll
++cdll.LoadLibrary("%%GCC_RUNTIME%%/libgcc_s.so")
+ 
+ from xpra.platform import init, set_default_name
+ set_default_name("Xpra")

@@ -469,6 +469,7 @@
     SUBDIR += xorg-minimal
     SUBDIR += xorgproto
     SUBDIR += xpr
+    SUBDIR += xpra
     SUBDIR += xprintidle
     SUBDIR += xprompt
     SUBDIR += xprop
