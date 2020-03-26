@@ -20,6 +20,7 @@
     SUBDIR += cascade
     SUBDIR += cascade-compiler
     SUBDIR += chipvault
+    SUBDIR += cura
     SUBDIR += cura-engine
     SUBDIR += digital
     SUBDIR += dinotrace

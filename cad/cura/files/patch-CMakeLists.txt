@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2020-02-28 16:06:57 UTC
++++ CMakeLists.txt
+@@ -6,8 +6,9 @@ include(GNUInstallDirs)
+ list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+ 
+ set(URANIUM_DIR "${CMAKE_SOURCE_DIR}/../Uranium" CACHE PATH "The location of the Uranium repository")
+-set(URANIUM_SCRIPTS_DIR "${URANIUM_DIR}/scripts" CACHE PATH "The location of the scripts directory of the Uranium repository")
+-
++if(NOT DEFINED URANIUM_SCRIPTS_DIR)
++    set(URANIUM_SCRIPTS_DIR "${URANIUM_DIR}/scripts" CACHE PATH "The location of the scripts directory of the Uranium repository")
++endif()
+ # Tests
+ include(CuraTests)
+ 
+@@ -67,6 +68,9 @@ install(DIRECTORY resources
+ 
+ include(CuraPluginInstall)
+ 
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++    set(FREEBSD True)
++endif()
+ if(NOT APPLE AND NOT WIN32)
+     install(FILES cura_app.py
+             DESTINATION ${CMAKE_INSTALL_BINDIR}
