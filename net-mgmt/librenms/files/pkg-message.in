@@ -26,6 +26,8 @@ For a fresh install, you need to create an APP_KEY:
 cd %%WWWDIR%%
 cp -i .env.example .env
 
+That file will eventually contain secrets.  Make sure it is not world-readable.
+
 It is also a good idea to:
 cd %%WWWDIR%%
 ./validate
@@ -58,6 +60,9 @@ cd %%WWWDIR%%
 ./build-base.php
 
 re: https://docs.librenms.org/#General/Updating/
+
+Make sure your %%WWWDIR%%/.env file is not world-readable.
+
 EOM
 }
 ]
