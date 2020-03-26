@@ -1,0 +1,7 @@
+M4RI is a library for fast arithmetic with dense matrices over F2. The name M4RI
+comes from the first implemented algorithm: The "Method of the Four Russians"
+inversion algorithm published by Gregory Bard. This algorithm in turn is named
+after the "Method of the Four Russians" multiplication algorithm which is
+probably better referred to as Kronrod's method.
+
+WWW: https://bitbucket.org/malb/m4ri/src/master/
