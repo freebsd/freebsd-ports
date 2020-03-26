@@ -29,7 +29,7 @@ USES=		compiler:c++11-lang gl gmake gnome jpeg localbase:ldflags \
 		pkgconfig tar:xz xorg
 USE_GL=		gl glu
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 libxml2 pango pangox-compat
-USE_XORG=	x11
+USE_XORG=	ice sm x11 xmu xt
 MAKE_ENV=	BUILD=release DOWNLOAD_GAMEPACKS=no EXE=${ARCH} \
 		RADIANT_ABOUTMSG="For ${OPSYS} ${OSREL} (${ARCH})"
 
@@ -52,9 +52,8 @@ post-patch:
 		${WRKSRC}/tools/quake2/qdata/qdata.c
 	@${REINPLACE_CMD} -e 's,#ifndef WIN32,#ifdef NeXT,' \
 		${WRKSRC}/tools/quake3/q3data/q3data.c
-# Add missing checks for __FreeBSD__
-	@${FIND} ${WRKSRC}/tools -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} \
-		-e 's/__linux__/__${OPSYS}__ ) || defined ( &/'
+	@${GREP} -Rl --null __linux__ ${WRKSRC}/tools | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's,__linux__,__${OPSYS}__,'
 
 pre-install:
 # Remove a copy of GNU GPL from what we are going to install
