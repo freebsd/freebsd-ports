@@ -97,6 +97,9 @@ share/entity-map/0.1.0/lat1.2sdata
 %%DATADIR%%/LinuxDocTools.pm
 %%DATADIR%%/LinuxDocTools/BackEnd.pm
 %%DATADIR%%/LinuxDocTools/CharEnts.pm
+%%DATADIR%%/LinuxDocTools/Data/Latin1ToSgml.pm
+%%DATADIR%%/LinuxDocTools/Data/Strings_SBCS.pm
+%%DATADIR%%/LinuxDocTools/Data/Strings_UTF8.pm
 %%DATADIR%%/LinuxDocTools/FixRef.pm
 %%DATADIR%%/LinuxDocTools/Html2Html.pm
 %%DATADIR%%/LinuxDocTools/InfoUtils.pm
