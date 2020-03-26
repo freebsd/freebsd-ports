@@ -3,7 +3,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
@@ -21,7 +21,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # other supported arches are added based on GHC_VERSION below
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=			autoreconf gmake iconv:translit localbase:ldflags ncurses perl5 tar:xz
+USES=			autoreconf compiler:c11 gmake iconv:translit \
+			localbase:ldflags ncurses perl5 tar:xz
 USE_LOCALE=		en_US.UTF-8
 USE_PERL5=		build
 GNU_CONFIGURE=		yes
@@ -167,7 +168,7 @@ RUN_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
 .  endif
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == powerpc64
+.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
 USE_GCC=	yes
 
 .  if ${OSVERSION} < 1200086
