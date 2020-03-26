@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jetbrains-mono
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/JetBrains/JetBrainsMono/releases/download/v${PORTVERSION}/
 DISTNAME=	JetBrainsMono-${DISTVERSION}
