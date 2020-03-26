@@ -10,6 +10,7 @@
     SUBDIR += alegreya-sans
     SUBDIR += alfont
     SUBDIR += andika
+    SUBDIR += anomaly-mono
     SUBDIR += anonymous-pro
     SUBDIR += apl385
     SUBDIR += artwiz-aleczapka
