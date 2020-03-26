@@ -4,12 +4,11 @@ PORTNAME=	ebook2cwgui
 PORTVERSION=	0.1.2
 PORTREVISION=	4
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://fkurz.net/ham/ebook4cw/
+MASTER_SITES=	http://fkurz.net/ham/ebook2cw/ \
+		LOCAL/db
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Gui front end for ebooks2cw
-
-BROKEN=		unfetchable
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
