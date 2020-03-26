@@ -1,5 +1,4 @@
 bin/certificates
-bin/gateway
 bin/inspector
 bin/linksharing
 bin/s3-benchmark
