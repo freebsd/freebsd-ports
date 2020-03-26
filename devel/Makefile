@@ -6527,9 +6527,9 @@
     SUBDIR += snorenotify
     SUBDIR += soapui
     SUBDIR += socket_wrapper
-    SUBDIR += sonar-ant-task
     SUBDIR += sonar-scanner-cli
-    SUBDIR += sonarqube
+    SUBDIR += sonarqube-ant-task
+    SUBDIR += sonarqube-community
     SUBDIR += sope2
     SUBDIR += sope4
     SUBDIR += sord
