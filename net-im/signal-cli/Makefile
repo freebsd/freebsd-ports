@@ -3,6 +3,7 @@
 PORTNAME=	signal-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	https://raw.github.com/AsamK/maven/master/releases/org/freedesktop/dbus/dbus-java/2.7.0/:_dbus_java \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/:_jackson_annotations \
@@ -14,6 +15,9 @@ MASTER_SITES=	https://raw.github.com/AsamK/maven/master/releases/org/freedesktop
 		https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.12.1/:_okhttp \
 		https://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.15.0/:_okio \
 		https://repo.maven.apache.org/maven2/net/sourceforge/argparse4j/argparse4j/0.8.1/:_argparse4j \
+		https://repo.maven.apache.org/maven2/org/abstractj/libmatthew/debug/1.1.1/:_debug \
+		https://repo.maven.apache.org/maven2/org/abstractj/libmatthew/hexdump/0.2.1/:_hexdump \
+		https://repo.maven.apache.org/maven2/org/abstractj/libmatthew/unix/0.5.1/:_unix \
 		https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/1.64/:_bcprov_jdk15on \
 		https://repo.maven.apache.org/maven2/org/signal/signal-metadata-java/0.0.3/:_signal_metadata_java \
 		https://repo.maven.apache.org/maven2/org/threeten/threetenbp/1.3.6/:_threetenbp \
@@ -23,6 +27,8 @@ DISTFILES=	argparse4j-0.8.1.jar:_argparse4j \
 		bcprov-jdk15on-1.64.jar:_bcprov_jdk15on \
 		curve25519-java-0.5.0.jar:_curve25519_java \
 		dbus-java-2.7.0.jar:_dbus_java \
+		debug-1.1.1.jar:_debug \
+		hexdump-0.2.1.jar:_hexdump \
 		jackson-annotations-2.9.0.jar:_jackson_annotations \
 		jackson-core-2.9.9.jar:_jackson_core \
 		jackson-databind-2.9.9.2.jar:_jackson_databind \
@@ -33,7 +39,8 @@ DISTFILES=	argparse4j-0.8.1.jar:_argparse4j \
 		signal-metadata-java-0.0.3.jar:_signal_metadata_java \
 		signal-protocol-java-2.7.1.jar:_signal_protocol_java \
 		signal-service-java-2.13.9_unofficial_1.jar:_signal_service_java \
-		threetenbp-1.3.6.jar:_threetenbp
+		threetenbp-1.3.6.jar:_threetenbp \
+		unix-0.5.1.jar:_unix
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -41,10 +48,9 @@ COMMENT=	Command-line and D-Bus interface for Signal and libsignal-service-java
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/jni/libunix-java.so:devel/libmatthew \
-		asciidoc>0:textproc/asciidoc \
+BUILD_DEPENDS=	asciidoc>0:textproc/asciidoc \
 		gradle>0:devel/gradle
-RUN_DEPENDS=	${LOCALBASE}/lib/jni/libunix-java.so:devel/libmatthew
+LIB_DEPENDS=	libunix-java.so:devel/libmatthew
 
 USES=		gmake
 USE_GITHUB=	yes
@@ -92,7 +98,6 @@ do-install:
 		--exclude '*/bin/*.bat'
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/env sh|#!/bin/sh|g' \
 		${STAGEDIR}${DATADIR}/bin/${PORTNAME}
-# ${RLN} ${STAGEDIR}${DATADIR}/bin/${PORTNAME} #         ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/man/signal-cli.1 \
@@ -108,9 +113,6 @@ post-install-DBUS-on:
 
 # This target can be used by the maintainer to regenerate MASTER_SITES and
 # DISTFILES from project's build.gradle.
-#
-# Make sure not to add the following JARs from the vendored libmatthew:
-# debug-*.jar, hexdump-*.jar, and unix-*.jar.
 _get-links: extract
 	@(cd ${WRKSRC} && \
 		${_GRADLE_CMD} \
