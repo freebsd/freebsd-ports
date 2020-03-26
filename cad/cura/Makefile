@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	cad
 DIST_SUBDIR=	Ultimaker
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Slicing application for 3D printers
 
 LICENSE=	AGPLv3
