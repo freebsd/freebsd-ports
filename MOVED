@@ -14459,7 +14459,6 @@ textproc/rubygem-actionpack-xml_parser52|textproc/rubygem-actionpack-xml_parser-
 x11-toolkits/py-kivy||2020-03-02|Has expired: Old, uses EOLed python27
 lang/gcc6|lang/gcc|2020-03-07|Has expired: Unsupported by upstream. Use GCC 9 or newer instead.
 www/pycarddav|deskutils/py-khard|2020-03-07|Has expired: Deprecated by upstream, please migrate to deskutils/py-khard
-x11/xpra||2020-03-07|Has expired: Old, uses EOLed python27
 x11-wm/ccsm||2020-03-07|Has expired: Old, uses EOLed python27
 x11-toolkits/py-gtkglext||2020-03-07|Has expired: Old, uses EOLed python27
 deskutils/syncthing-gtk||2020-03-07|Has expired: Old, uses EOLed python27
