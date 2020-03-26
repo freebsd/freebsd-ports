@@ -6,7 +6,7 @@ CATEGORIES=	cad
 DIST_SUBDIR=	Ultimaker
 
 MAINTAINER=	db@FreeBSD.org
-COMMENT=	Uranium is a Python framework for building 3D printing
+COMMENT=	Python framework for 3D printing applications
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
