@@ -44,6 +44,8 @@ bin/uperf
 %%DATADIR%%/tests/test_udp.xml
 %%DATADIR%%/tests/throughput_sctp.xml
 %%DATADIR%%/tests/unknown_proto.xml
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/docs/index.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/manual.css
 %%PORTDOCS%%%%DOCSDIR%%/docs/manual.html
