@@ -1,0 +1,28 @@
+Silence Service.profiler errors on Tier3 after bug 1613390
+    
+diff --git browser/components/BrowserGlue.jsm browser/components/BrowserGlue.jsm
+index 8f86bf0584a99..2ce53c6921d15 100644
+--- browser/components/BrowserGlue.jsm
++++ browser/components/BrowserGlue.jsm
+@@ -2300,7 +2300,9 @@ BrowserGlue.prototype = {
+       ChromeUtils.idleDispatch(
+         () => {
+           if (!Services.startup.shuttingDown) {
+-            Services.profiler.AddMarker("startupIdleTask");
++            if (Services.profiler) {
++              Services.profiler.AddMarker("startupIdleTask");
++            }
+             try {
+               task.task();
+             } catch (ex) {
+@@ -2371,7 +2373,9 @@ BrowserGlue.prototype = {
+     for (let task of idleTasks) {
+       ChromeUtils.idleDispatch(() => {
+         if (!Services.startup.shuttingDown) {
+-          Services.profiler.AddMarker("startupLateIdleTask");
++          if (Services.profiler) {
++            Services.profiler.AddMarker("startupLateIdleTask");
++          }
+           try {
+             task();
+           } catch (ex) {
