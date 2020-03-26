@@ -38,9 +38,6 @@ CLUCENE_CONFIGURE_WITH=	clucene=${LOCALBASE} icu
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	curl
 
-post-patch:
-	@${REINPLACE_CMD} 's|-O3||' ${WRKSRC}/configure
-
 post-install:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install_config)
 	${MV} ${STAGEDIR}${PREFIX}/etc/sword.conf \
