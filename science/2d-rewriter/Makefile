@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	2d-rewriter
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	science
-#MASTER_SITES=	http://www.crowdeduniverse.org/distfiles/
 
 MAINTAINER=	iserikov@acm.org
 COMMENT=	Cellular automata simulator
@@ -17,12 +15,8 @@ GH_ACCOUNT=	iserikov
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-post-install:
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include <bsd.port.mk>
