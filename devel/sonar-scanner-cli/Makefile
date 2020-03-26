@@ -8,7 +8,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	https://sonarsource.bintray.com/Distribution/${PORTNAME}/
 DISTNAME=	sonar-scanner-${PORTVERSION}
 
-MAINTAINER=	freebsd@dussan.org
+MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Launcher for analyzing projects with SonarQube
 
 BROKEN=		unfetchable

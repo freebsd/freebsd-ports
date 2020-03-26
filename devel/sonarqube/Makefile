@@ -6,7 +6,7 @@ PORTVERSION=	6.2
 CATEGORIES=	devel www java
 MASTER_SITES=	http://sonarsource.bintray.com/Distribution/sonarqube/
 
-MAINTAINER=	freebsd@dussan.org
+MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Platform for continuous inspection of code quality
 
 BROKEN=		unfetchable
