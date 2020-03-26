@@ -1,7 +1,3 @@
-TIMESTAMP = 1571984167
-SHA256 (vapoursynth-vapoursynth-R48_GH0.tar.gz) = 3e98d134e16af894cf7040e4383e4ef753cafede34d5d77c42a2bb89790c50a8
-SIZE (vapoursynth-vapoursynth-R48_GH0.tar.gz) = 611523
-SHA256 (a9b657d8b014.patch) = 95e5f2ec7b3c2d4c252721ee986f4c91fe7ab12a35c3de6ce13dede6543cb9c1
-SIZE (a9b657d8b014.patch) = 2712
-SHA256 (4d4f8cbf272c.patch) = b217e1d5d0278b65a1169d386a34d7882db05652585723194496de081281381e
-SIZE (4d4f8cbf272c.patch) = 654
+TIMESTAMP = 1584473787
+SHA256 (vapoursynth-vapoursynth-R49_GH0.tar.gz) = 126d1e68d3a3e80d1e215c8a2a5dc8773f5fcac70a6c22dadc837bccb603bccd
+SIZE (vapoursynth-vapoursynth-R49_GH0.tar.gz) = 612156
