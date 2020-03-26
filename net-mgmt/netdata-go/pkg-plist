@@ -26,6 +26,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/phpfpm.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/pihole.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/portcheck.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/pulsar.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/rabbitmq.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/scaleio.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/solr.conf.sample
