@@ -9,6 +9,7 @@ include/postgresql/server/distributed/citus_custom_scan.h
 include/postgresql/server/distributed/citus_nodefuncs.h
 include/postgresql/server/distributed/citus_nodes.h
 include/postgresql/server/distributed/citus_ruleutils.h
+include/postgresql/server/distributed/citus_safe_lib.h
 include/postgresql/server/distributed/colocation_utils.h
 include/postgresql/server/distributed/commands.h
 include/postgresql/server/distributed/connection_management.h
@@ -33,6 +34,7 @@ include/postgresql/server/distributed/intermediate_result_pruning.h
 include/postgresql/server/distributed/intermediate_results.h
 include/postgresql/server/distributed/listutils.h
 include/postgresql/server/distributed/local_executor.h
+include/postgresql/server/distributed/local_multi_copy.h
 include/postgresql/server/distributed/lock_graph.h
 include/postgresql/server/distributed/log_utils.h
 include/postgresql/server/distributed/maintenanced.h
@@ -81,6 +83,7 @@ include/postgresql/server/distributed/repartition_join_execution.h
 include/postgresql/server/distributed/resource_lock.h
 include/postgresql/server/distributed/run_from_same_connection.h
 include/postgresql/server/distributed/shard_pruning.h
+include/postgresql/server/distributed/shard_utils.h
 include/postgresql/server/distributed/shardinterval_utils.h
 include/postgresql/server/distributed/shared_library_init.h
 include/postgresql/server/distributed/statistics_collection.h
@@ -159,4 +162,5 @@ share/postgresql/extension/citus--9.0-1--9.0-2.sql
 share/postgresql/extension/citus--9.0-2--9.1-1.sql
 share/postgresql/extension/citus--9.1-1--9.2-1.sql
 share/postgresql/extension/citus--9.2-1--9.2-2.sql
+share/postgresql/extension/citus--9.2-2--9.3-1.sql
 share/postgresql/extension/citus.control
