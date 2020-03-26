@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	findomain
-DISTVERSION=	1.4.2
-PORTREVISION=	2
+DISTVERSION=	1.4.3
 CATEGORIES=	net security
 
 MAINTAINER=	vulcan@wired.sh
@@ -49,8 +48,8 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		either-1.5.3 \
 		encoding_rs-0.8.22 \
 		enum-as-inner-0.3.0 \
-		failure-0.1.6 \
-		failure_derive-0.1.6 \
+		failure-0.1.7 \
+		failure_derive-0.1.7 \
 		fake-simd-0.1.2 \
 		fallible-iterator-0.2.0 \
 		fnv-1.0.6 \
@@ -70,7 +69,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		generic-array-0.12.3 \
 		generic-array-0.13.2 \
 		getrandom-0.1.14 \
-		h2-0.2.1 \
+		h2-0.2.2 \
 		heck-0.3.1 \
 		hermit-abi-0.1.6 \
 		hmac-0.7.1 \
@@ -78,7 +77,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		http-0.2.0 \
 		http-body-0.3.1 \
 		httparse-1.3.4 \
-		hyper-0.13.1 \
+		hyper-0.13.4 \
 		hyper-tls-0.4.1 \
 		idna-0.2.0 \
 		indexmap-1.3.1 \
@@ -117,12 +116,12 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		phf_shared-0.8.0 \
 		pin-project-0.4.7 \
 		pin-project-internal-0.4.7 \
-		pin-project-lite-0.1.2 \
+		pin-project-lite-0.1.4 \
 		pin-utils-0.1.0-alpha.4 \
 		pkg-config-0.3.17 \
-		postgres-0.17.1 \
+		postgres-0.17.2 \
 		postgres-protocol-0.5.0 \
-		postgres-types-0.1.0 \
+		postgres-types-0.1.1 \
 		ppv-lite86-0.2.6 \
 		proc-macro-hack-0.5.11 \
 		proc-macro-nested-0.1.3 \
@@ -137,7 +136,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		rayon-core-1.7.0 \
 		redox_syscall-0.1.56 \
 		remove_dir_all-0.5.2 \
-		reqwest-0.10.3 \
+		reqwest-0.10.4 \
 		resolv-conf-0.6.2 \
 		ring-0.16.9 \
 		rustc-demangle-0.1.16 \
@@ -151,8 +150,8 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		security-framework-sys-0.3.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.104 \
-		serde_derive-1.0.104 \
+		serde-1.0.105 \
+		serde_derive-1.0.105 \
 		serde_json-1.0.44 \
 		serde_urlencoded-0.6.1 \
 		sha2-0.8.1 \
@@ -173,10 +172,11 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		thiserror-impl-1.0.11 \
 		time-0.1.42 \
 		tokio-0.2.11 \
-		tokio-postgres-0.5.2 \
+		tokio-postgres-0.5.3 \
 		tokio-rustls-0.12.2 \
 		tokio-tls-0.3.0 \
 		tokio-util-0.2.0 \
+		tokio-util-0.3.1 \
 		tower-service-0.3.0 \
 		trust-dns-proto-0.19.3 \
 		trust-dns-resolver-0.19.3 \
