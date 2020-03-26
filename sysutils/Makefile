@@ -753,6 +753,7 @@
     SUBDIR += nsysctl
     SUBDIR += ntfy
     SUBDIR += nut
+    SUBDIR += nut-devel
     SUBDIR += nvclock
     SUBDIR += nvme-cli
     SUBDIR += nvramtool
