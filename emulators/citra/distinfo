@@ -1,6 +1,6 @@
-TIMESTAMP = 1584497733
-SHA256 (citra-emu-citra-s20200317-37384174d_GH0.tar.gz) = 3bd6257b20fc46875089b1727f18e6383e0c8f49458365d852678af4ccd061bc
-SIZE (citra-emu-citra-s20200317-37384174d_GH0.tar.gz) = 5201215
+TIMESTAMP = 1585164817
+SHA256 (citra-emu-citra-s20200325-480d3aaf1_GH0.tar.gz) = 65b77b279f4158466c8b8c685818676b6b067a6b4a6723399d57b2c5246428da
+SIZE (citra-emu-citra-s20200325-480d3aaf1_GH0.tar.gz) = 5201149
 SHA256 (citra-emu-ext-libressl-portable-7d01cb0_GH0.tar.gz) = f3fc8c9d4991b05ca1e1c8f5907ecd3ffd9724a8dccf328087b4784cda5c7db3
 SIZE (citra-emu-ext-libressl-portable-7d01cb0_GH0.tar.gz) = 1762942
 SHA256 (citra-emu-ext-soundtouch-060181e_GH0.tar.gz) = a593ab188e4feaeef8376c27b554cc413986efc777c195e44c6d3d223de9a63c
@@ -33,5 +33,3 @@ SHA256 (weidai11-cryptopp-CRYPTOPP_7_0_0-23-gf320e7d9_GH0.tar.gz) = 1d6f029b83a2
 SIZE (weidai11-cryptopp-CRYPTOPP_7_0_0-23-gf320e7d9_GH0.tar.gz) = 7209489
 SHA256 (wwylele-teakra-e6ea0ea_GH0.tar.gz) = 114851491219d09dd116e34ffce2432c3b83f8869080dcbe24e9a99850df37a3
 SIZE (wwylele-teakra-e6ea0ea_GH0.tar.gz) = 562458
-SHA256 (bb3decb9830b.patch) = 0b37c3179bb387898e307a72a3373da88ab09926de940613f7d39e7666ce02b3
-SIZE (bb3decb9830b.patch) = 2998
