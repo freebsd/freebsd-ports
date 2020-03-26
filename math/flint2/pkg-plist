@@ -11,6 +11,23 @@ include/flint/fft.h
 include/flint/fft_tuning.h
 include/flint/flint.h
 include/flint/flintxx.h
+include/flint/flintxx/default_rules.h
+include/flint/flintxx/evaluation_tools.h
+include/flint/flintxx/expression.h
+include/flint/flintxx/expression_traits.h
+include/flint/flintxx/flint_classes.h
+include/flint/flintxx/flint_exception.h
+include/flint/flintxx/forwarding.h
+include/flint/flintxx/frandxx.h
+include/flint/flintxx/ltuple.h
+include/flint/flintxx/matrix.h
+include/flint/flintxx/mp.h
+include/flint/flintxx/rules.h
+include/flint/flintxx/stdmath.h
+include/flint/flintxx/traits.h
+include/flint/flintxx/traits_fwd.h
+include/flint/flintxx/tuple.h
+include/flint/flintxx/vector.h
 include/flint/fmpq.h
 include/flint/fmpq_mat.h
 include/flint/fmpq_matxx.h
@@ -63,7 +80,6 @@ include/flint/fq_zech_mat.h
 include/flint/fq_zech_poly.h
 include/flint/fq_zech_poly_factor.h
 include/flint/fq_zech_vec.h
-include/flint/gettimeofday.h
 include/flint/gmpcompat.h
 include/flint/hashmap.h
 include/flint/long_extras.h
@@ -100,3 +116,5 @@ include/flint/templates.h
 include/flint/thread_pool.h
 include/flint/ulong_extras.h
 lib/libflint.so
+lib/libflint.so.13
+lib/libflint.so.13.5.2
