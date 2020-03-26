@@ -14503,3 +14503,5 @@ x11-wm/clementine-wm||2020-03-20|Removed, unmaintained and depends on expired x1
 net/kdsoap|www/kdsoap|2020-03-21|Already existed in the tree
 security/openssh-portable@x509||2020-03-23|Has expired: X509 long broken without known users
 devel/py-antlr4-python2-runtime|devel/antlr4-python3-runtime|2020-03-25|Has expired: Uses EoL python27, please use devel/antlr4-python3-runtime instead
+devel/sonarqube|devel/sonarqube-community|2020-03-26|Moved to make it clear that this is the community-edition
+devel/sonar-ant-task|devel/sonarqube-ant-task|2020-03-26|Moved due to name change upstream
