@@ -2,7 +2,7 @@
 
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.8.0
+DISTVERSION=	4.9.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -58,7 +58,7 @@ GH_TUPLE=	\
 		savsgio:dictpool:dcc5d0fb3336:savsgio_dictpool/vendor/github.com/savsgio/dictpool \
 		savsgio:gotils:90175b0fbe3f:savsgio_gotils/vendor/github.com/savsgio/gotils \
 		simia-tech:crypt:v0.4.2:simia_tech_crypt/vendor/github.com/simia-tech/crypt \
-		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		sirupsen:logrus:v1.5.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v0.0.6:spf13_cobra/vendor/github.com/spf13/cobra \
