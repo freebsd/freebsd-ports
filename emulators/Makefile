@@ -31,6 +31,7 @@
     SUBDIR += dynamips-community
     SUBDIR += e-uae
     SUBDIR += edumips64
+    SUBDIR += emu64
     SUBDIR += emulationstation
     SUBDIR += fceux
     SUBDIR += fmsx
