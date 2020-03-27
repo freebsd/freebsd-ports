@@ -1,0 +1,4 @@
+lib1541img is a library for creating and manipulating commodore 1541 disk
+images. It also supports compressing and extracting to/from "zipcode".
+
+WWW: https://github.com/excess-c64/lib1541img
