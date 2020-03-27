@@ -275,6 +275,7 @@
     SUBDIR += geogram
     SUBDIR += geonext
     SUBDIR += gexpr
+    SUBDIR += gf2x
     SUBDIR += gfan
     SUBDIR += gfanlib
     SUBDIR += ggobi

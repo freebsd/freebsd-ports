@@ -1,0 +1,8 @@
+gf2x is a C/C++ software package containing routines for fast arithmetic in
+GF(2)[x] (multiplication, squaring, GCD) and searching for irreducible/primitive
+trinomials.
+
+Note: this port provides either a LGPL or a GPLv3 (default) version, and you
+can make your choice with the option.
+
+WWW: http://gf2x.gforge.inria.fr/
