@@ -1,0 +1,11 @@
+--- data/themes/maya/metadata.desktop.orig	2019-03-13 09:22:35 UTC
++++ data/themes/maya/metadata.desktop
+@@ -7,7 +7,7 @@ License=CC-BY-SA
+ Type=sddm-theme
+ Version=0.1
+ Website=https://github.com/spremi
+-Screenshot=preview.png
++Screenshot=screenshots/hi_IN.png
+ MainScript=Main.qml
+ ConfigFile=theme.conf
+ TranslationsDirectory=translations
