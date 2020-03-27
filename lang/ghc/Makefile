@@ -103,12 +103,7 @@ LLVM_VERSION=		60
 CONFIGURE_ARGS+=	--enable-dtrace=0
 .endif
 
-.if ${ARCH} == amd64 || ${ARCH} == i386 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv2)
 BOOT_GHC_VERSION=	8.6.5
-.else
-BOOT_GHC_VERSION=	8.6.3
-.endif
-
 # LLVM version that bootstrap compiler uses
 BOOT_LLVM_VERSION=	60
 
@@ -168,20 +163,13 @@ RUN_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
 .  endif
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
-USE_GCC=	yes
-
-.  if ${OSVERSION} < 1200086
-IGNORE=	lang/ghc requires at least FreeBSD 12.0-RELEASE
+.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == powerpc64
+.  if ${OSVERSION} < 1201000
+IGNORE=	lang/ghc requires at least FreeBSD 12.1-RELEASE
 .  endif
 .  ifdef QEMU_EMULATING
 IGNORE=	qemu-user-static isn't able to build lang/ghc, but it builds fine on a real hardware
 .  endif
-.endif
-
-# Use binutils strip if we are using gcc, as it is faster that base one. See PR 234949
-.if defined(USE_GCC)
-CONFIGURE_ENV+=	STRIP=${LOCALBASE}/bin/strip
 .endif
 
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} GHC_LIBDIR=${GHC_LIBDIR_REL}
@@ -233,12 +221,6 @@ post-patch:
 		s|%%AR%%|${AR}|; \
 		s|%%LD%%|${LD}|' \
 		${WRKSRC}/libraries/Cabal/Cabal/Distribution/Simple/Program/Builtin.hs
-# we must use binutils:ld on arm
-.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
-	@${REINPLACE_CMD} -e 's|LD_NO_GOLD=ld|LD_NO_GOLD=${LOCALBASE}/bin/ld|' \
-		${WRKSRC}/aclocal.m4
-.endif
-
 	@${REINPLACE_CMD} -e 's/@SettingsLlcCommand@/llc${LLVM_VERSION}/' ${WRKSRC}/settings.in
 	@${REINPLACE_CMD} -e 's/@SettingsOptCommand@/opt${LLVM_VERSION}/' ${WRKSRC}/settings.in
 
