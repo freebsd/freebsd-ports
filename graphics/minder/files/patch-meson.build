@@ -1,0 +1,24 @@
+Broken with Vala 0.40:
+
+../src/exports/ExportPortableMinder.vala:72.24-72.38: error: The type name `Archive.int64_t' could not be found
+      entry.set_size( (Archive.int64_t)file_info.get_size() );
+                       ^^^^^^^^^^^^^^^
+../src/exports/ExportPortableMinder.vala:170.7-170.21: error: The type name `Archive.int64_t' could not be found
+      Archive.int64_t offset;
+      ^^^^^^^^^^^^^^^
+Compilation failed: 2 error(s), 0 warning(s)
+
+Drop after lang/vala is updated to >=0.44.
+
+--- meson.build.orig	2020-03-26 23:38:24 UTC
++++ meson.build
+@@ -41,7 +41,8 @@ endif
+ 
+ # If the libarchive version is greater than ???, add a define for cross-compile purposes
+ archive_dep = dependency('libarchive')
+-if archive_dep.version().version_compare('>=3.4.0')
++vapigen_dep = dependency('vapigen')
++if archive_dep.version().version_compare('>=3.4.0') and vapigen_dep.version().version_compare('>=0.44.0')
+   add_project_arguments(['--define=LIBARCHIVE340'], language: 'vala')
+   warning('Using LIBARCHIVE: ' + archive_dep.version())
+ endif
