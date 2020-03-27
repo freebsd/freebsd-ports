@@ -1,6 +1,8 @@
-The Lepton EDA suite provides schematic capture, netlisting, bill
-of materials generation, and many other features.  It was forked
-from the gEDA/gaf suite in late 2016.  It's in active development
-and well supported.
+Lepton EDA is a suite of free software tools for designing
+electronics. It provides schematic capture, netlisting into
+over 30 netlist formats, and many other features.
+It was forked from the gEDA/gaf suite in late 2016 by most
+of its active developers at that time.
+It's in active development and well supported.
 
 WWW: https://github.com/lepton-eda/lepton-eda

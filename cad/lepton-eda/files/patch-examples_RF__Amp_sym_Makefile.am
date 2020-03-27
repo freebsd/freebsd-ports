@@ -1,8 +1,0 @@
---- examples/RF_Amp/sym/Makefile.am.orig	2019-02-23 08:55:55 UTC
-+++ examples/RF_Amp/sym/Makefile.am
-@@ -1,4 +1,4 @@
--exampledir = $(docdir)/examples/RF_Amp/sym/
-+exampledir = $(datadir)/examples/lepton-eda/RF_Amp/sym/
- 
- example_DATA = BJT_Model.sym Q_Model.sym spice-subcircuit-IO-1.sym \
- 	     spice-subcircuit-LL-1.sym
