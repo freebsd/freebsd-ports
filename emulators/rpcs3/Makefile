@@ -50,15 +50,6 @@ CMAKE_ON=	CMAKE_SKIP_RPATH USE_SYSTEM_CURL USE_SYSTEM_FFMPEG USE_SYSTEM_LIBPNG
 CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS
 LDFLAGS+=	-Wl,--as-needed # GLU
 
-# XXX Remove after FreeBSD 11.2/12.0 reach EOL i.e., around 2020-02-01
-.if make(makesum) || (!exists(/usr/include/c++/v1/charconv) && exists(/usr/lib/libc++.so))
-MASTER_SITES+=	https://releases.llvm.org/${LLVM_VER}/:libcxx
-DISTFILES+=	libcxx-${LLVM_VER}.src.tar.xz:libcxx
-CMAKE_OFF+=	USE_COTIRE
-CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx-${LLVM_VER}.src/include
-LLVM_VER=	8.0.0 # same as FreeBSD 11.3
-.endif
-
 OPTIONS_DEFINE=	ALSA EVDEV FAUDIO LLVM PULSEAUDIO VULKAN
 OPTIONS_DEFAULT=EVDEV FAUDIO LLVM VULKAN
 
