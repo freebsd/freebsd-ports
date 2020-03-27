@@ -1,0 +1,13 @@
+--- Makefile.orig	2020-01-03 23:42:34 UTC
++++ Makefile
+@@ -10,8 +10,8 @@ else
+ 	SDL2CONFIG=sdl2-config
+ endif
+ 
+-CFLAGS=-std=c99 -O3 -Wall -Werror -g $(shell $(SDL2CONFIG) --cflags) -Iextern/include -Iextern/src
+-LDFLAGS=$(shell $(SDL2CONFIG) --libs) -lm
++CFLAGS += $(shell $(SDL2CONFIG) --cflags) -Iextern/include -Iextern/src
++LDFLAGS += $(shell $(SDL2CONFIG) --libs) -lm
+ 
+ OUTPUT=x16emu
+ 
