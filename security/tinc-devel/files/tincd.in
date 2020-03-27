@@ -30,6 +30,7 @@ command="%%PREFIX%%/sbin/tinc"
 start_cmd="tincd_start"
 stop_cmd="tincd_stop"
 reload_cmd="tincd_reload"
+status_cmd="tincd_status"
 extra_commands="reload"
 procname=${command:-tincd}
 ldconfig_command="/sbin/ldconfig"
@@ -82,6 +83,29 @@ tincd_reload()
 		do
 			echo "Sending reload to tincd for: ${cfg}"
 			$command -n $cfg reload
+		done
+	fi
+}
+tincd_status_network() {
+	if [ -n "$rc_pid" ]; then
+		echo "${name} for ${cfg} is running as pid $rc_pid."
+	else
+		echo "${name} for ${cfg} is not running."
+		return 1
+	fi
+}
+tincd_status()
+{
+	if test -z "${tincd_cfg}"
+	then
+		cfg="."
+		rc_pid=$($command pid)
+		tincd_status_network
+	else
+		for cfg in $tincd_cfg
+		do
+			rc_pid=$($command -n $cfg pid)
+			tincd_status_network
 		done
 	fi
 }

@@ -2,7 +2,7 @@
 
 PORTNAME=	tinc
 PORTVERSION=	1.1pre17
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://www.tinc-vpn.org/packages/ \
 		http://www.tinc-vpn.org/packages/
