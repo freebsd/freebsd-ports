@@ -1,0 +1,13 @@
+Peaclock is a responsive and customizable clock, timer, and stopwatch for the
+terminal.
+
+The clock output changes depending on the selected mode and view. The mode
+determines the clock value, while the view determines how that value is
+presented. The clock, timer, and stopwatch modes can be displayed with an ascii,
+digital, or binary clock view. The clock can be customized, such as changing the
+width, height, colour, padding, and margin. When in auto size mode, the clock
+becomes responsive, filling up the full size of the terminal. The clock can also
+be set to conform to a specific aspect ratio, allowing the clock to auto resize
+without becoming stretched.
+
+WWW: https://github.com/octobanana/peaclock
