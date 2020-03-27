@@ -44,7 +44,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-27-g9220f5e:hidapi/3rdparty/hidapi \
 USES=		cmake compiler:c++17-lang gl iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig python:3.4+,build qt:5 xorg
 USE_GL=		gl glew
-USE_QT=		qmake_build buildtools_build core concurrent dbus declarative gui widgets
+USE_QT=		qmake_build buildtools_build core concurrent dbus gui widgets
 USE_XORG=	x11
 CMAKE_ON=	CMAKE_SKIP_RPATH USE_SYSTEM_CURL USE_SYSTEM_FFMPEG USE_SYSTEM_LIBPNG
 CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS
