@@ -1001,7 +1001,6 @@ lib/calibre/calibre/gui2/store/stores/mobileread/models.py
 lib/calibre/calibre/gui2/store/stores/mobileread/store_dialog.py
 lib/calibre/calibre/gui2/store/stores/mobileread/store_dialog_ui.py
 lib/calibre/calibre/gui2/store/stores/nexto_plugin.py
-lib/calibre/calibre/gui2/store/stores/open_books_plugin.py
 lib/calibre/calibre/gui2/store/stores/ozon_ru_plugin.py
 lib/calibre/calibre/gui2/store/stores/pragmatic_bookshelf_plugin.py
 lib/calibre/calibre/gui2/store/stores/publio_plugin.py
