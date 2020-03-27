@@ -180,6 +180,7 @@
     SUBDIR += clblast
     SUBDIR += clfft
     SUBDIR += clingo
+    SUBDIR += cliquer
     SUBDIR += cln
     SUBDIR += cloog
     SUBDIR += clp

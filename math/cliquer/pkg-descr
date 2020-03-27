@@ -1,0 +1,10 @@
+Cliquer is a set of C routines for finding cliques in an arbitrary weighted
+graph. It uses an exact branch-and-bound algorithm developed by Patric
+Ostergard. It is designed with the aim of being efficient while still being
+flexible and easy to use.
+
+Note: this port do not use the upstream version, but the version autotoolized
+by Dima Pasechnik.
+
+WWW: https://users.aalto.fi/~pat/cliquer.html
+WWW: https://github.com/dimpase/autocliquer
