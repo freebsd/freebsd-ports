@@ -5,6 +5,10 @@ DISTVERSIONPREFIX=	intel-mediasdk-
 DISTVERSION=	19.4.0
 CATEGORIES=	multimedia
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	713312353ec3.patch:-p1
+PATCHFILES+=	19d11bf1cfd4.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hardware video decoding/encoding/filtering on Intel GPUs
 
