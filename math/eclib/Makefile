@@ -19,7 +19,7 @@ LIB_DEPENDS=	libntl.so:math/ntl		\
 USE_GITHUB=	yes
 GH_ACCOUNT=	JohnCremona
 
-USES=		autoreconf libtool localbase
+USES=		autoreconf compiler:c++11-lang libtool localbase
 
 OPTIONS_DEFINE=	DOCS
 
