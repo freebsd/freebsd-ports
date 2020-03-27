@@ -1,5 +1,5 @@
---- src/dvdread/ifo_types.h.orig	2015-06-27 19:35:59.043370000 +0200
-+++ src/dvdread/ifo_types.h	2015-06-27 19:37:10.885577000 +0200
+--- src/dvdread/ifo_types.h.orig	2020-03-04 18:57:19 UTC
++++ src/dvdread/ifo_types.h
 @@ -32,7 +32,7 @@
  
  #if defined(__GNUC__)
