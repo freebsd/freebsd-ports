@@ -1,0 +1,4 @@
+This port provides a native Java implementation of the D-Bus protocol,
+instead of being just a wrapper around the C reference implementation.
+
+WWW: https://dbus.freedesktop.org/doc/dbus-java/
