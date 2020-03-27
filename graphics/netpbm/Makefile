@@ -34,6 +34,7 @@ SHEBANG_FILES=	buildtools/makeman converter/pbm/pbmtox10bm editor/pnmflip \
 
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	BINMODE=${BINMODE} \
+		CC=${CC} \
 		DATADIR=${DATADIR} \
 		DATAMODE=${_SHAREMODE} \
 		DIRMODE=755 \
