@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>0:devel/py-sip@${PY_FLAVOR}
 
-USES=		cmake python:3.4+
+USES=		cmake compiler:c++11-lang python:3.4+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
 USE_GITHUB=	yes
