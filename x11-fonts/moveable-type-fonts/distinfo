@@ -1,3 +1,4 @@
+TIMESTAMP = 1577271988
 SHA256 (junction.zip) = cab8f3f546c49f2aae9855c252e898cb1951a50a5638080cc713d8987520b366
 SIZE (junction.zip) = 68605
 SHA256 (orbitron.zip) = 8a72c3ea92f3520ed3aea159ef57d5f32d95d9433711f08631ea00f58218bef9
@@ -6,8 +7,8 @@ SHA256 (prociono.zip) = 9d9ffa92bf9209642d847fff833e2f089ea5108f04cc7bdb2d23c3bf
 SIZE (prociono.zip) = 56365
 SHA256 (raleway.zip) = 3a364ebec39aad4559fbcc425fadf058f890133e16abcb55c626848a1676097d
 SIZE (raleway.zip) = 93456
-SHA256 (sniglet.zip) = c0ad8d2a843f8aff3b6483894f1e0917b6cdc2418260379dba69207682cfd729
-SIZE (sniglet.zip) = 29915
+SHA256 (sniglet.zip) = bcf58600cc08ff21270f55044e2d4e2d74a73a4943f96375badf9c4b1553074d
+SIZE (sniglet.zip) = 91920
 SHA256 (chunk.zip) = 15ca87bb9114aa85baf6bae3a49f0bd2da834c2236f097ec40cc35bd630909a6
 SIZE (chunk.zip) = 26725
 SHA256 (blackout.zip) = 6d9067ccc7950a7cbbd3202bbdc5db0a2126008b7d6787de76afd2638b31e8c0
