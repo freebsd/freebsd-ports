@@ -1,6 +1,6 @@
---- configure.seed.orig	2018-12-21 18:58:17 UTC
+--- configure.seed.orig	2020-03-26 13:52:23 UTC
 +++ configure.seed
-@@ -53,33 +53,8 @@ fi
+@@ -67,33 +67,8 @@ fi
  # On CentOS 6 `git rev-list HEAD --count` does not work
  #
  #
@@ -35,16 +35,34 @@
  SHORT_MACHINE=`uname -m | cut -b1-3`
  
  GIT_RELEASE="@GIT_RELEASE@"
-@@ -131,7 +106,7 @@ fi
+@@ -134,7 +109,7 @@ AC_ARG_WITH(ndpi-includes,
  PKG_CHECK_MODULES([NDPI], [libndpi >= 2.0], [
-    NDPI_INC=`echo $NDPI_CFLAGS | sed -e "s/[ ]*$//"`/libndpi
+    NDPI_INC=`echo $NDPI_CFLAGS | sed -e "s/[ ]*$//"`
     # Use static libndpi library as building against the dynamic library fails
 -   NDPI_LIB="-Wl,-Bstatic $NDPI_LIBS -Wl,-Bdynamic"
 +   NDPI_LIB="$NDPI_LIBS"
     NDPI_LIB_DEP=
     ], [
        AC_MSG_CHECKING(for nDPI source)
-@@ -530,18 +505,6 @@ GMAKE=`which gmake`
+@@ -202,8 +177,15 @@ else
+    SSL_INC="-I/usr/local/opt/openssl/include"
+    SSL_LIB="-L/usr/local/opt/openssl/lib -lssl"
+  else
+-   echo "Please install openssl-dev(el) package prerequisite"
+-   exit -1
++  dnl Workaround for FreeBSD
++  if test -f "/usr/lib/libssl.so"; then
++    AC_DEFINE_UNQUOTED(NO_SSL_DL, 1, [has openssl])
++    SSL_INC="-I/usr/include"
++    SSL_LIB="-L/usr/lib -lssl"
++  else
++    echo "Please install openssl-dev(el) package prerequisite"
++    exit -1
++  fi
+  fi
+ fi
+ 
+@@ -607,18 +589,6 @@ GMAKE=`which gmake`
  if test x$GMAKE = x
  then
  	GMAKE="make"
