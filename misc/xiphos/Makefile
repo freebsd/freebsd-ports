@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	xiphos
-DISTVERSION=	4.1.0
-PORTREVISION=	1
+DISTVERSION=	4.1.0-72
+DISTVERSIONSUFFIX=	-g9e573336
 CATEGORIES=	misc gnome
 
 MAINTAINER=	salvadore@FreeBSD.org
@@ -29,7 +29,6 @@ USES=		cmake gettext gnome pkgconfig
 USE_GCC=	yes # misc/biblesync is build with GCC.
 USE_GITHUB=	yes
 GH_ACCOUNT=	crosswire
-GH_TAGNAME=	9e57333
 USE_GNOME=	cairo gconf2 gtk30 gtkhtml4 intltool libgsf
 INSTALLS_ICONS=	yes
 
