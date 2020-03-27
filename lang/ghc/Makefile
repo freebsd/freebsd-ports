@@ -103,7 +103,11 @@ LLVM_VERSION=		60
 CONFIGURE_ARGS+=	--enable-dtrace=0
 .endif
 
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
+BOOT_GHC_VERSION=      8.6.3
+.else
 BOOT_GHC_VERSION=	8.6.5
+.endif
 # LLVM version that bootstrap compiler uses
 BOOT_LLVM_VERSION=	60
 
