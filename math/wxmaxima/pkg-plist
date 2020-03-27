@@ -1,8 +1,5 @@
 bin/wxmaxima
-man/man1/wxmaxima.1.gz
-share/metainfo/io.github.wxmaxima_developers.wxMaxima.appdata.xml
 %%DESKTOPDIR%%/io.github.wxmaxima_developers.wxMaxima.desktop
-share/bash-completion/completions/wxmaxima
 %%DOCSDIR%%/Autocomplete1.jpg
 %%DOCSDIR%%/Autocomplete2.jpg
 %%DOCSDIR%%/BatchImage.jpg
@@ -20,6 +17,9 @@ share/bash-completion/completions/wxmaxima
 %%DOCSDIR%%/wxMaxima_configuration_002.jpg
 %%DOCSDIR%%/wxMaxima_configuration_002.png
 %%DOCSDIR%%/wxmaxima.html
+share/bash-completion/completions/wxmaxima
+share/man/man1/wxmaxima.1.gz
+share/metainfo/io.github.wxmaxima_developers.wxMaxima.appdata.xml
 %%NLS%%share/locale/ca/LC_MESSAGES/wxMaxima.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wxMaxima.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wxMaxima.mo
