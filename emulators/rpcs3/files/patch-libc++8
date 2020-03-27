@@ -1,0 +1,45 @@
+Drop after FreeBSD 11.3/12.1 EOL. See https://reviews.llvm.org/rL359211
+
+rpcs3/Emu/Io/PadHandler.cpp:191:27: error: no member named 'lerp' in namespace 'std'
+                        const float pos = std::lerp(0.13f, 1.f, (mag - dzRange) / (1 - dzRange));
+                                          ~~~~~^
+rpcs3/Emu/Io/PadHandler.cpp:198:27: error: no member named 'lerp' in namespace 'std'
+                        const float pos = std::lerp(0.f, 0.13f, mag / dzRange);
+                                          ~~~~~^
+
+--- rpcs3/Emu/Io/PadHandler.h.orig	2020-03-18 15:28:46 UTC
++++ rpcs3/Emu/Io/PadHandler.h
+@@ -6,6 +6,33 @@
+ #include "pad_config_types.h"
+ #include "Utilities/types.h"
+ 
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 9000
++_LIBCPP_BEGIN_NAMESPACE_STD
++template <typename _Fp>
++constexpr
++_Fp __lerp(_Fp __a, _Fp __b, _Fp __t) noexcept {
++    if ((__a <= 0 && __b >= 0) || (__a >= 0 && __b <= 0))
++        return __t * __b + (1 - __t) * __a;
++
++    if (__t == 1) return __b;
++    const _Fp __x = __a + __t * (__b - __a);
++    if (__t > 1 == __b > __a)
++    	return __b < __x ? __x : __b;
++    else
++    	return __x < __b ? __x : __b;
++}
++
++constexpr float
++lerp(float __a, float __b, float __t)                   _NOEXCEPT { return __lerp(__a, __b, __t); }
++
++constexpr double
++lerp(double __a, double __b, double __t)                _NOEXCEPT { return __lerp(__a, __b, __t); }
++
++constexpr long double
++lerp(long double __a, long double __b, long double __t) _NOEXCEPT { return __lerp(__a, __b, __t); }
++_LIBCPP_END_NAMESPACE_STD
++#endif
++
+ struct PadDevice
+ {
+ 	pad_config* config{ nullptr };
