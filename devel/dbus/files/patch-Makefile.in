@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-03-27 09:19:12 UTC
++++ Makefile.in
+@@ -508,7 +508,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = dbus bus tools test doc
++SUBDIRS = dbus bus tools doc
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = dbus-1.pc
+ cmakeconfigdir = $(libdir)/cmake/DBus1
