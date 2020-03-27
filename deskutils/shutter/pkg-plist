@@ -766,10 +766,8 @@ share/pixmaps/shutter.png
 %%DATADIR%%/resources/system/plugins/shell/sptrim/sptrim
 %%DATADIR%%/resources/system/upload_plugins/Template.pm
 %%DATADIR%%/resources/system/upload_plugins/upload/Dropbox.pm
-%%DATADIR%%/resources/system/upload_plugins/upload/ITmages.pm
+%%DATADIR%%/resources/system/upload_plugins/upload/Gyazo.pm
 %%DATADIR%%/resources/system/upload_plugins/upload/Imgur.pm
-%%DATADIR%%/resources/system/upload_plugins/upload/Minus.pm
 %%DATADIR%%/resources/system/upload_plugins/upload/ToileLibre.pm
-%%DATADIR%%/resources/system/upload_plugins/upload/TwitPic.pm
 %%DATADIR%%/resources/system/upload_plugins/upload/vgyme.pm
 @mode
