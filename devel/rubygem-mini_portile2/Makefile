@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mini_portile2
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
