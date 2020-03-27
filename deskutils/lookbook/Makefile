@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lookbook
-DISTVERSION=	1.0.0
-PORTREVISION=	1
+DISTVERSION=	1.1.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	greg@unrelenting.technology
@@ -20,7 +19,5 @@ GH_ACCOUNT=	danrabbit
 USE_GNOME=	glib20 gtk30 gtksourceview3
 GLIB_SCHEMAS=	com.github.danrabbit.lookbook.gschema.xml
 INSTALLS_ICONS=	yes
-
-BINARY_ALIAS=	python3=${PYTHON_CMD} # for meson/post_install.py
 
 .include <bsd.port.mk>
