@@ -28,12 +28,6 @@ TEST_TARGET=	test
 PLIST_FILES=	bin/adb
 PORTDOCS=	*
 
-# XXX Remove after FreeBSD 11.2/12.0 reach EOL i.e., around 2020-02-01
-# XXX Switch to bundled libc++ to avoid error-prone reverts
-.if !exists(/usr/include/c++/v1/charconv) && exists(/usr/lib/libc++.so)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-d3d650628c8c
-.endif
-
 OPTIONS_DEFINE+=MDNSRESPONDER BASH DOCS TEST TEST_PYTHON
 OPTIONS_DEFAULT=MDNSRESPONDER
 OPTIONS_SUB=	yes
