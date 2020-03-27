@@ -31,6 +31,19 @@ libexec/mame/unidasm
 %%DATADIR%%/artwork/bgfx/chains/hq2x.png
 %%DATADIR%%/artwork/bgfx/chains/hq3x.png
 %%DATADIR%%/artwork/bgfx/chains/hq4x.png
+%%DATADIR%%/artwork/chess/README.md
+%%DATADIR%%/artwork/chess/bb.png
+%%DATADIR%%/artwork/chess/bk.png
+%%DATADIR%%/artwork/chess/bn.png
+%%DATADIR%%/artwork/chess/bp.png
+%%DATADIR%%/artwork/chess/bq.png
+%%DATADIR%%/artwork/chess/br.png
+%%DATADIR%%/artwork/chess/wb.png
+%%DATADIR%%/artwork/chess/wk.png
+%%DATADIR%%/artwork/chess/wn.png
+%%DATADIR%%/artwork/chess/wp.png
+%%DATADIR%%/artwork/chess/wq.png
+%%DATADIR%%/artwork/chess/wr.png
 %%DATADIR%%/artwork/dir.txt
 %%DATADIR%%/artwork/monochrome-chessboard.png
 %%DATADIR%%/artwork/monochrome-matrix.png
@@ -148,6 +161,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/cd32.xml
 %%DATADIR%%/hash/cdi.xml
 %%DATADIR%%/hash/cdtv.xml
+%%DATADIR%%/hash/cecflop.xml
 %%DATADIR%%/hash/cgenie_cass.xml
 %%DATADIR%%/hash/cgenie_flop_rom.xml
 %%DATADIR%%/hash/channelf.xml
@@ -182,6 +196,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/einstein.xml
 %%DATADIR%%/hash/ekara_japan.xml
 %%DATADIR%%/hash/ekara_japan_a.xml
+%%DATADIR%%/hash/ekara_japan_ac.xml
 %%DATADIR%%/hash/ekara_japan_bh.xml
 %%DATADIR%%/hash/ekara_japan_d.xml
 %%DATADIR%%/hash/ekara_japan_en.xml
@@ -274,6 +289,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/jakks_gamekey_nk.xml
 %%DATADIR%%/hash/jakks_gamekey_nm.xml
 %%DATADIR%%/hash/jakks_gamekey_sw.xml
+%%DATADIR%%/hash/jb3000_flop.xml
 %%DATADIR%%/hash/jpopira_jp.xml
 %%DATADIR%%/hash/juicebox.xml
 %%DATADIR%%/hash/jupace_cass.xml
@@ -312,6 +328,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/megaduck.xml
 %%DATADIR%%/hash/megapc.xml
 %%DATADIR%%/hash/megatech.xml
+%%DATADIR%%/hash/mephisto.xml
 %%DATADIR%%/hash/microvision.xml
 %%DATADIR%%/hash/mikro80.xml
 %%DATADIR%%/hash/mikrosha_cart.xml
@@ -337,6 +354,9 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/msx2_flop.xml
 %%DATADIR%%/hash/msx2p_flop.xml
 %%DATADIR%%/hash/msxr_flop.xml
+%%DATADIR%%/hash/mt65_cass.xml
+%%DATADIR%%/hash/mt65_rom.xml
+%%DATADIR%%/hash/mt65_snap.xml
 %%DATADIR%%/hash/mtx_cart.xml
 %%DATADIR%%/hash/mtx_cass.xml
 %%DATADIR%%/hash/mtx_flop.xml
@@ -450,6 +470,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/rwtrntcs.xml
 %%DATADIR%%/hash/rx78.xml
 %%DATADIR%%/hash/sage2.xml
+%%DATADIR%%/hash/saitek_egr.xml
 %%DATADIR%%/hash/samcoupe_cass.xml
 %%DATADIR%%/hash/samcoupe_flop.xml
 %%DATADIR%%/hash/sat_cart.xml

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mame
-PORTVERSION=	0.209
-PORTREVISION=	1
+PORTVERSION=	0.212
 CATEGORIES=	emulators
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,7 +16,8 @@ ONLY_FOR_ARCHS_REASON=	not yet ported to any arch other than x86 and powerpc64
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libpugixml.so:textproc/pugixml
 RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
 USES=		compiler:c++14-lang gl gmake jpeg pkgconfig \
@@ -45,7 +45,7 @@ MAKE_ENV=	NOWERROR=1 USE_NETWORK=1 \
 		LD="${CXX}" PYTHON="${PYTHON_CMD}" \
 		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}" \
 		TARGET="${MTARGET}" SUBTARGET="${MSUBTARGET}" FULLNAME="mame" SDL_NETWORK="pcap"
-MAKE_ARGS=	TARGETOS=freebsd VERBOSE=1 TOOLS=1
+MAKE_ARGS=	TARGETOS=freebsd VERBOSE=1 TOOLS=1 USE_SYSTEM_LIB_PUGIXML=1
 MAKEFILE=	makefile
 GENIE=		${WRKSRC}/3rdparty/genie
 PORTDOCS=	*
@@ -80,7 +80,6 @@ post-patch:
 		 s| .(ARCH)|| ; \
 		 s|FreeBSD|${OPSYS}|g' \
 		 ${WRKSRC}/makefile \
-		 ${WRKSRC}/src/devices/cpu/m68000/makefile \
 		 ${GENIE}/build/gmake.bsd/genie.make
 	@${REINPLACE_CMD} -e 's|gcc|cc|; s|g++|c++|' \
 		${GENIE}/src/tools/gcc.lua \
