@@ -450,6 +450,7 @@
     SUBDIR += date
     SUBDIR += dbus
     SUBDIR += dbus-c++
+    SUBDIR += dbus-java
     SUBDIR += dbus-glib
     SUBDIR += dbus-sharp
     SUBDIR += dbus-sharp-glib
