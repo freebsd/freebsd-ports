@@ -1,4 +1,4 @@
-TIMESTAMP = 1543966925
+TIMESTAMP = 1585315383
 SHA256 (exercism-cli-v3.0.11_GH0.tar.gz) = 544088bc562a8624e3527dd9d3ccf944dc4923b644bcdf49ef04e6d0ee48ddad
 SIZE (exercism-cli-v3.0.11_GH0.tar.gz) = 47600
 SHA256 (armon-consul-api-eb2c6b5_GH0.tar.gz) = 619d18729ecc8def1ebde61778c11999e0ee4de7767c29fb6ce35df72f0d8cfc
@@ -53,8 +53,8 @@ SHA256 (spf13-cast-v1.1.0_GH0.tar.gz) = 2758eb969dd8707c0ff165fda4191fd8811e19b0
 SIZE (spf13-cast-v1.1.0_GH0.tar.gz) = 9592
 SHA256 (spf13-cobra-b26b538_GH0.tar.gz) = 650cd92ad567a10f348c2d7b1ac5a22747d257d393efef5742498bab10490ee4
 SIZE (spf13-cobra-b26b538_GH0.tar.gz) = 100085
-SHA256 (spf13-jWalterWeatherman-0efa520_GH0.tar.gz) = 30724b69b0975bd29ee722fb46bb2ad332f0648194c40d6edddccd660db5ed9b
-SIZE (spf13-jWalterWeatherman-0efa520_GH0.tar.gz) = 6343
+SHA256 (spf13-jwalterweatherman-0efa520_GH0.tar.gz) = d1dc1d473e1cc9ebbbe25686252e8939e91215f3acabc4224e0f9a0589bbe391
+SIZE (spf13-jwalterweatherman-0efa520_GH0.tar.gz) = 6340
 SHA256 (spf13-pflag-e57e3ee_GH0.tar.gz) = 16556b4873f12211cffec75aa4d3a6332efa26e64ff0476fdbd99f672ca37d51
 SIZE (spf13-pflag-e57e3ee_GH0.tar.gz) = 38998
 SHA256 (spf13-viper-1573881_GH0.tar.gz) = 6cf333ceb868f7cd69d52966bb7bd5045b01e85a7683ba3d6e4f33b6a9ff2e98
