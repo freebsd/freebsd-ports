@@ -8,8 +8,6 @@ CATEGORIES=	misc
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CLI client for exercism.io
 
-BROKEN=		unfetchable
-
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
@@ -43,7 +41,7 @@ GH_TUPLE=	\
 		spf13:afero:9be6508:afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.1.0:cast/vendor/github.com/spf13/cast \
 		spf13:cobra:b26b538:cobra/vendor/github.com/spf13/cobra \
-		spf13:jWalterWeatherman:0efa520:jww/vendor/github.com/spf13/jwalterweatherman \
+		spf13:jwalterweatherman:0efa520:jww/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:e57e3ee:pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:1573881:viper/vendor/github.com/spf13/viper \
 		stretchr:objx:v0.1.1:objx/vendor/github.com/stretchr/objx \
