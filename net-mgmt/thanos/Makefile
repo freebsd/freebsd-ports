@@ -2,7 +2,7 @@
 
 PORTNAME=	thanos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.11.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ler@FreeBSD.org
@@ -27,12 +27,15 @@ GH_TUPLE=	\
 		Azure:go-autorest:3492b2aff503:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		NYTimes:gziphandler:v1.1.1:nytimes_gziphandler/vendor/github.com/NYTimes/gziphandler \
+		PuerkitoBio:purell:v1.1.1:puerkitobio_purell/vendor/github.com/PuerkitoBio/purell \
+		PuerkitoBio:urlesc:de5bf2ad4578:puerkitobio_urlesc/vendor/github.com/PuerkitoBio/urlesc \
 		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/gopkg.in/alecthomas/kingpin.v2 \
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:f65c72e2690d:alecthomas_units/vendor/github.com/alecthomas/units \
 		aliyun:aliyun-oss-go-sdk:v2.0.4:aliyun_aliyun_oss_go_sdk/vendor/github.com/aliyun/aliyun-oss-go-sdk \
 		armon:go-metrics:v0.3.0:armon_go_metrics/vendor/github.com/armon/go-metrics \
 		armon:go-radix:v1.0.0:armon_go_radix/vendor/github.com/armon/go-radix \
+		asaskevich:govalidator:f61b66f89f4a:asaskevich_govalidator/vendor/github.com/asaskevich/govalidator \
 		aws:aws-sdk-go:v1.25.48:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bradfitz:gomemcache:a41fca850d0b:bradfitz_gomemcache/vendor/github.com/bradfitz/gomemcache \
@@ -55,6 +58,17 @@ GH_TUPLE=	\
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-kit:kit:v0.9.0:go_kit_kit/vendor/github.com/go-kit/kit \
 		go-logfmt:logfmt:v0.4.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
+		go-openapi:analysis:v0.19.2:go_openapi_analysis/vendor/github.com/go-openapi/analysis \
+		go-openapi:errors:v0.19.2:go_openapi_errors/vendor/github.com/go-openapi/errors \
+		go-openapi:jsonpointer:v0.19.2:go_openapi_jsonpointer/vendor/github.com/go-openapi/jsonpointer \
+		go-openapi:jsonreference:v0.19.2:go_openapi_jsonreference/vendor/github.com/go-openapi/jsonreference \
+		go-openapi:loads:v0.19.2:go_openapi_loads/vendor/github.com/go-openapi/loads \
+		go-openapi:runtime:v0.19.4:go_openapi_runtime/vendor/github.com/go-openapi/runtime \
+		go-openapi:spec:v0.19.2:go_openapi_spec/vendor/github.com/go-openapi/spec \
+		go-openapi:strfmt:v0.19.2:go_openapi_strfmt/vendor/github.com/go-openapi/strfmt \
+		go-openapi:swag:v0.19.5:go_openapi_swag/vendor/github.com/go-openapi/swag \
+		go-openapi:validate:v0.19.2:go_openapi_validate/vendor/github.com/go-openapi/validate \
+		go-stack:stack:v1.8.0:go_stack_stack/vendor/github.com/go-stack/stack \
 		go-yaml:yaml:v2.2.5:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
@@ -107,16 +121,18 @@ GH_TUPLE=	\
 		lightstep:lightstep-tracer-common:bc2310a04743:lightstep_lightstep_tracer_common/vendor/github.com/lightstep/lightstep-tracer-common \
 		lightstep:lightstep-tracer-go:v0.18.0:lightstep_lightstep_tracer_go/vendor/github.com/lightstep/lightstep-tracer-go \
 		lovoo:gcloud-opentracing:v0.3.0:lovoo_gcloud_opentracing/vendor/github.com/lovoo/gcloud-opentracing \
+		mailru:easyjson:94de47d64c63:mailru_easyjson/vendor/github.com/mailru/easyjson \
 		mattn:go-ieproxy:7c0f6868bffe:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
 		mattn:go-runewidth:v0.0.6:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		miekg:dns:v1.1.22:miekg_dns/vendor/github.com/miekg/dns \
-		minio:minio-go:v6.0.44:minio_minio_go/vendor/github.com/minio/minio-go/v6 \
+		minio:minio-go:v6.0.49:minio_minio_go/vendor/github.com/minio/minio-go/v6 \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
+		mongodb:mongo-go-driver:v1.0.3:mongodb_mongo_go_driver/vendor/go.mongodb.org/mongo-driver \
 		mozillazg:go-cos:v0.13.0:mozillazg_go_cos/vendor/github.com/mozillazg/go-cos \
 		mozillazg:go-httpheader:v0.2.1:mozillazg_go_httpheader/vendor/github.com/mozillazg/go-httpheader \
 		mwitkow:go-conntrack:2f068394615f:mwitkow_go_conntrack/vendor/github.com/mwitkow/go-conntrack \
@@ -126,19 +142,18 @@ GH_TUPLE=	\
 		opentracing:basictracer-go:v1.0.0:opentracing_basictracer_go/vendor/github.com/opentracing/basictracer-go \
 		opentracing:opentracing-go:v1.1.0:opentracing_opentracing_go/vendor/github.com/opentracing/opentracing-go \
 		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		prometheus:alertmanager:v0.20.0:prometheus_alertmanager/vendor/github.com/prometheus/alertmanager \
 		prometheus:client_golang:v1.2.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.7.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.0.6:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		prometheus:prometheus:4708915ac6ef:prometheus_prometheus/vendor/github.com/prometheus/prometheus \
+		prometheus:prometheus:1e64d757f711:prometheus_prometheus/vendor/github.com/prometheus/prometheus \
 		samuel:go-zookeeper:2cc03de413da:samuel_go_zookeeper/vendor/github.com/samuel/go-zookeeper \
 		santhosh-tekuri:jsonschema:v1.2.4:santhosh_tekuri_jsonschema/vendor/github.com/santhosh-tekuri/jsonschema \
 		uber-go:atomic:v1.5.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:automaxprocs:v1.2.0:uber_go_automaxprocs/vendor/go.uber.org/automaxprocs \
 		uber:jaeger-client-go:v2.20.1:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
-		uber:jaeger-lib:v2.2.0:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib \
-
-GL_TUPLE=	https://gitlab.howett.net:go:plist:591f970eefbbeb04d7b37f334a0c4c3256e32876:go_plist/vendor/howett.net/plist
+		uber:jaeger-lib:v2.2.0:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 
 USE_GITLAB=	nodefault
 GL_SITE=	https://gitlab.howett.net
