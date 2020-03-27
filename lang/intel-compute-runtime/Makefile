@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	compute-runtime
-DISTVERSION=	20.11.16158
+DISTVERSION=	20.12.16259
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
 
@@ -31,7 +31,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/-Werror/d' \
 		-e '/FORCE_RESPONSE_FILE/d' \
 		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e '/defaults/!s,/etc",${PREFIX}&,' \
+	@${REINPLACE_CMD} -e '/OCL_ICD_VENDORDIR/s,/etc,${PREFIX}&,' \
 		${WRKSRC}/package.cmake
 
 post-install:
