@@ -1,3 +1,9 @@
-TIMESTAMP = 1576035857
-SHA256 (go-bindata-go-bindata-v3.1.2_GH0.tar.gz) = fa6e8bf0e2e2a0cee46df56c584bfc97f3efa8f97be7fe691e66224f2c1df0c4
-SIZE (go-bindata-go-bindata-v3.1.2_GH0.tar.gz) = 19674
+TIMESTAMP = 1584257647
+SHA256 (go-bindata-go-bindata-v3.1.3_GH0.tar.gz) = c9115e60995ecba15568c9f8052e77764f2b87b7b362cafd900cfc9829cba7e8
+SIZE (go-bindata-go-bindata-v3.1.3_GH0.tar.gz) = 21280
+SHA256 (golang-lint-fdd1cda4f05f_GH0.tar.gz) = d02215cdf7a8c9e1874406b0414f3799e13e235ed4de142f837f68aa69d6fd55
+SIZE (golang-lint-fdd1cda4f05f_GH0.tar.gz) = 31573
+SHA256 (golang-tools-a911d9008d1f_GH0.tar.gz) = 6609588954a2fe2db90df20ecf296b84f39de41f3f9abc5804105d213eb2cfe4
+SIZE (golang-tools-a911d9008d1f_GH0.tar.gz) = 2297513
+SHA256 (kisielk-errcheck-v1.2.0_GH0.tar.gz) = 23499a71861ce97957a0f23ddd2f03e793327faf61a5a46dc22706650e781e38
+SIZE (kisielk-errcheck-v1.2.0_GH0.tar.gz) = 15896

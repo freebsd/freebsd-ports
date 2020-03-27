@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-bindata
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -11,10 +11,12 @@ COMMENT=	Generates Go code from any file
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 
 USE_GITHUB=	yes
-GH_SUBDIR=	src/github.com/go-bindata/go-bindata
+GH_TUPLE=	golang:lint:fdd1cda4f05f:golang_lint/vendor/golang.org/x/lint \
+		golang:tools:a911d9008d1f:golang_tools/vendor/golang.org/x/tools \
+		kisielk:errcheck:v1.2.0:kisielk_errcheck/vendor/github.com/kisielk/errcheck
 
 GO_TARGET=	./go-bindata
 
