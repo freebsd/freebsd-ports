@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	net-ping
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
