@@ -163,6 +163,8 @@
     SUBDIR += wine-mono-devel
     SUBDIR += winetricks
     SUBDIR += wxmupen64plus
+    SUBDIR += x16-emulator
+    SUBDIR += x16-rom
     SUBDIR += x48
     SUBDIR += x49gp
     SUBDIR += xbraitenberg
