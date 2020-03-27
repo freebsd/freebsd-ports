@@ -21,12 +21,3 @@ compiled-in theme.
              Entry(EnableAvatars,       bool,        true,                                       _S("Enable display of custom user avatars"));
              Entry(DisableAvatarsThreshold,int,      7,                                          _S("Number of users to use as threshold\n"
                                                                                                     "above which avatars are disabled\n"
-@@ -81,7 +81,7 @@ namespace SDDM {
-         );
- 
-         Section(Users,
--            Entry(DefaultPath,         QString,     _S("/usr/local/bin:/usr/bin:/bin"),         _S("Default $PATH for logged in users"));
-+            Entry(DefaultPath,         QString,     _S("/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"),         _S("Default $PATH for logged in users"));
-             Entry(MinimumUid,          int,         UID_MIN,                                    _S("Minimum user id for displayed users"));
-             Entry(MaximumUid,          int,         UID_MAX,                                    _S("Maximum user id for displayed users"));
-             Entry(HideUsers,           QStringList, QStringList(),                              _S("Comma-separated list of users that should not be listed"));
