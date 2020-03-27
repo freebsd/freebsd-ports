@@ -1,0 +1,12 @@
+--- STPConfig.cmake.in.orig	2019-03-02 14:26:01 UTC
++++ STPConfig.cmake.in
+@@ -11,6 +11,9 @@
+ get_filename_component(STP_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+ set(STP_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+ 
++include(CMakeFindDependencyMacro)
++find_dependency(cryptominisat5)
++
+ # Our library dependencies (contains definitions for IMPORTED targets)
+ include("${STP_CMAKE_DIR}/@STP_TARGETS_FILENAME@")
+ 
