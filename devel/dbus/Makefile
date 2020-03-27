@@ -13,40 +13,41 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-PORTSCOUT=	limitw:1,even
-
 USES=		cpe gmake libtool localbase pkgconfig python:build shebangfix
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \
-		--disable-doxygen-docs \
-		--disable-selinux \
-		--disable-apparmor \
-		--disable-systemd
-INSTALL_TARGET=	install-strip
-SHEBANG_FILES=	tools/GetAllMatchRules.py
-
 CPE_VENDOR=	d-bus_project
 CPE_PRODUCT=	d-bus
-
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	dbus
+SHEBANG_FILES=	tools/GetAllMatchRules.py
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-apparmor \
+		--disable-doxygen-docs \
+		--disable-selinux \
+		--disable-systemd \
+		--with-test-socket-dir=${WRKDIR}
+
+INSTALL_TARGET=	install-strip
+
+PORTSCOUT=	limitw:1,even
 
 USERS=		messagebus
 GROUPS=		messagebus
 
-PLIST_SUB=	VERSION="1.0" GROUPS=${GROUPS}
+PLIST_SUB=	GROUPS=${GROUPS} \
+		VERSION="1.0"
 
-OPTIONS_DEFINE=	EXAMPLES MANPAGES X11
-OPTIONS_DEFAULT=MANPAGES X11
-OPTIONS_SUB=	yes
-X11_DESC=	Support X11 Desktop Environments
+OPTIONS_DEFINE=		EXAMPLES MANPAGES X11
+OPTIONS_DEFAULT=	MANPAGES X11
+OPTIONS_SUB=		yes
+X11_DESC=		Support X11 Desktop Environments
 
-MANPAGES_CONFIGURE_ENV=	XMLTO=${LOCALBASE}/bin/minixmlto
-MANPAGES_BUILD_DEPENDS=	minixmlto:textproc/minixmlto
+MANPAGES_BUILD_DEPENDS=		minixmlto:textproc/minixmlto
 MANPAGES_CONFIGURE_ENABLE=	xml-docs
-X11_USES=	xorg
-X11_USE=	xorg=ice,sm,x11
-X11_CONFIGURE_WITH=	x
+MANPAGES_CONFIGURE_ENV=		XMLTO=${LOCALBASE}/bin/minixmlto
+X11_USES=			xorg
+X11_USE=			XORG=ice,sm,x11
+X11_CONFIGURE_WITH=		x
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
