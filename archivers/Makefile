@@ -52,6 +52,7 @@
     SUBDIR += lha
     SUBDIR += lha-ac
     SUBDIR += lhasa
+    SUBDIR += lib1541img
     SUBDIR += libarc
     SUBDIR += libarchive
     SUBDIR += libcabinet
@@ -242,6 +243,7 @@
     SUBDIR += upx
     SUBDIR += urbackup-client
     SUBDIR += urbackup-server
+    SUBDIR += v1541commander
     SUBDIR += xar
     SUBDIR += xarchive
     SUBDIR += xarchiver
