@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -117,6 +117,7 @@ COMMANDS=	bugpoint \
 		llvm-exegesis \
 		llvm-extract \
 		llvm-ifs \
+		llvm-install-name-tool \
 		llvm-jitlink \
 		llvm-lib \
 		llvm-link \
@@ -264,8 +265,6 @@ post-patch:
 	    -e 's|from lit|from lit${LLVM_SUFFIX}|' \
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/llvm/utils/lit/lit.py ${WRKSRC}/llvm/utils/lit/lit/*.py
-	${REINPLACE_CMD} -e 's,/usr/local/,${LOCALBASE}/,' \
-	    ${WRKSRC}/llvm/CMakeLists.txt
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
