@@ -30,6 +30,7 @@ command="%%PREFIX%%/sbin/tincd"
 start_cmd="tincd_start"
 stop_cmd="tincd_stop"
 reload_cmd="tincd_reload"
+status_cmd="tincd_status"
 extra_commands="reload"
 procname=${command:-tincd}
 ldconfig_command="/sbin/ldconfig"
@@ -82,6 +83,30 @@ tincd_reload()
 		do
 			echo "Sending HUP to tincd for: ${cfg}"
 			$command -n $cfg --kill=HUP
+		done
+	fi
+}
+tincd_status_network() {
+	rc_pid=$(check_pidfile "$pidfile" "$_procname" "$command_interpreter")
+	if [ -n "$rc_pid" ]; then
+		echo "${name} for ${cfg} is running as pid $rc_pid."
+	else
+		echo "${name} for ${cfg} is not running."
+		return 1
+	fi
+}
+tincd_status()
+{
+	if test -z "${tincd_cfg}"
+	then
+		cfg="."
+		pidfile="/var/run/tinc.pid"
+		tincd_status_network
+	else
+		for cfg in $tincd_cfg
+		do
+			pidfile="/var/run/tinc.${cfg}.pid"
+			tincd_status_network
 		done
 	fi
 }
