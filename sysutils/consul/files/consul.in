@@ -10,18 +10,20 @@
 #
 # Additional variables you can define are:
 #
-# consul_user (string):       Set user to run consul.
-#                             Default is "%%CONSUL_USER%%".
-# consul_group (string):      Set group to run consul.
-#                             Default is "%%CONSUL_GROUP%%".
-# consul_pidfile (string):    Set full path to pid file
-#                             Default is "/var/run/consul.pid"
-# consul_configtest (string): Set to yes to enable Consul config validation
-#                             Set to NO by default
-# consul_datadir (dir):       Set dir to run consul in.
-#                             Default is "%%CONSUL_DATADIR%%"
+# consul_user (string):                Set user to run consul.
+#                                      Default is "%%CONSUL_USER%%".
+# consul_group (string):               Set group to run consul.
+#                                      Default is "%%CONSUL_GROUP%%".
+# consul_pidfile (string):             Set full path to pid file
+#                                      Default is "/var/run/consul.pid"
+# consul_configtest (string):          Set to yes to enable Consul config validation
+#                                      Set to NO by default
+# consul_datadir (dir):                Set dir to run consul in.
+#                                      Default is "%%CONSUL_DATADIR%%"
 # consul_syslog_output_enable (bool):  Set to YES to enable syslog output
 #                                      Default is "NO". See daemon(8).
+# consul_syslog_output_tag (str):      Set syslog tag if syslog enabled.
+#                                      Default is "consul". See daemon(8).
 # consul_syslog_output_priority (str): Set syslog priority if syslog enabled.
 #                                      Default is "info". See daemon(8).
 # consul_syslog_output_facility (str): Set to YES to enable syslog output
@@ -55,8 +57,11 @@ if [ -n "${consul_dir}" ]; then
 fi
 
 if checkyesno consul_syslog_output_enable; then
-        consul_syslog_output_flags="-T ${name}"
-
+        if [ -n "${consul_syslog_output_tag}" ]; then
+                consul_syslog_output_flags="-T ${consul_syslog_output_tag}"
+        else
+                consul_syslog_output_flags="-T ${name}"
+        fi
         if [ -n "${consul_syslog_output_priority}" ]; then
                 consul_syslog_output_flags="${consul_syslog_output_flags} -s ${consul_syslog_output_priority}"
         fi  
@@ -87,14 +92,14 @@ consul_start_precmd()
         fi
 
         if [ ! -d %%ETCDIR%% ]; then
-		install -d -m 0750 -o ${consul_user} -g ${consul_group} %%ETCDIR%%
-	fi
+                install -d -m 0750 -o ${consul_user} -g ${consul_group} %%ETCDIR%%
+        fi
 }
 
 consul_checkconfig()
 {
-	echo "Performing sanity check on ${name} configuration:"
-	eval ${procname} validate "%%ETCDIR%%"
+        echo "Performing sanity check on ${name} configuration:"
+        eval ${procname} validate "%%ETCDIR%%"
 }
 
 run_rc_command "$1"
