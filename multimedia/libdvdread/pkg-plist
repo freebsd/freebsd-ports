@@ -11,5 +11,5 @@ include/dvdread/version.h
 lib/libdvdread.a
 lib/libdvdread.so
 lib/libdvdread.so.7
-lib/libdvdread.so.7.0.0
+lib/libdvdread.so.7.1.0
 libdata/pkgconfig/dvdread.pc
