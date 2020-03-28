@@ -22,5 +22,5 @@ include/cbor/tags.h
 lib/libcbor.a
 lib/libcbor.so
 lib/libcbor.so.0
-lib/libcbor.so.0.0.0
+lib/libcbor.so.%%PORTVERSION%%
 libdata/pkgconfig/libcbor.pc
