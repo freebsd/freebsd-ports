@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-DNS
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 PORTEPOCH=	1
 CATEGORIES=	dns net perl5
 MASTER_SITES=	CPAN
@@ -16,18 +16,18 @@ LICENSE=	MIT
 TEST_DEPENDS=	p5-Digest-BubbleBabble>=0:security/p5-Digest-BubbleBabble \
 		p5-Test-Pod>=0:devel/p5-Test-Pod
 
+USES=		perl5
+USE_PERL5=	configure
+
+CONFIGURE_ARGS=	--no-IPv6-tests --no-online-tests
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	IDN IDN2 IPV6 SSHFP TSIG
 OPTIONS_DEFAULT=TSIG
 IDN_DESC=	International Domain Names support via Net::LibIDN
 IDN2_DESC=	International Domain Names support via Net::LibIDN2
 SSHFP_DESC=	SSH2 Fingerprint support
 TSIG_DESC=	Transaction Signature Support
-
-USES=		perl5
-USE_PERL5=	configure
-
-CONFIGURE_ARGS=	--no-IPv6-tests --no-online-tests
-NO_ARCH=	yes
 
 IDN_BUILD_DEPENDS=	p5-Net-LibIDN>=0.12:dns/p5-Net-LibIDN
 IDN_RUN_DEPENDS=	p5-Net-LibIDN>=0.12:dns/p5-Net-LibIDN
