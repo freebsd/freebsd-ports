@@ -1,6 +1,6 @@
---- Makefile.am.orig	2018-09-03 16:39:20 UTC
+--- Makefile.am.orig	2020-02-11 16:28:00 UTC
 +++ Makefile.am
-@@ -26,10 +26,10 @@ libjbig2dec_la_SOURCES = jbig2.c \
+@@ -28,10 +28,10 @@ libjbig2dec_la_SOURCES = jbig2.c \
  bin_PROGRAMS = jbig2dec
  noinst_PROGRAMS = test_sha1 test_huffman test_arith
  
@@ -12,9 +12,9 @@
 -jbig2dec_LDADD = libjbig2dec.la @LIBOBJS@ $(PNG_LIBS)
 +jbig2dec_LDADD = libjbig2dec.la @LIBOBJS@ $(PNG_LIBS) -lmd
  
- dist_man_MANS = jbig2dec.1
- 
-@@ -39,8 +39,9 @@ MAINTAINERCLEANFILES = config_types.h.in
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = jbig2dec.pc
+@@ -44,8 +44,9 @@ MAINTAINERCLEANFILES = config_types.h.in
  
  TESTS = test_sha1 test_jbig2dec.py test_huffman test_arith
  
