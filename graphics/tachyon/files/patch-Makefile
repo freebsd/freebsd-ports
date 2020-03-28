@@ -1,0 +1,11 @@
+--- Makefile.orig	2009-04-23 15:11:55 UTC
++++ Makefile
+@@ -18,6 +18,8 @@ include Make-distrib
+ COMPILEDIR=../compile
+ ARCHDIR=../compile/${ARCH}
+ OBJDIR=${ARCHDIR}/libtachyon
++LIBS=-L. -ltachyon -lm
++STRIP=strip
+ 
+ #
+ # Name of raytracing library file to create

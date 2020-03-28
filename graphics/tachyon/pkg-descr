@@ -1,0 +1,8 @@
+Tachyon is a raytracer developed by John E. Stone. Tachyon supports
+the typical ray tracer features, most of the common geometric
+primitives, shading and texturing modes, etc. It also supports less
+common features such as HDR image output, ambient occlusion lighting,
+and support for various triangle mesh and volumetric texture formats
+beneficial for molecular visualization (e.g. rendering VMD scenes).
+
+WWW: http://jedi.ks.uiuc.edu/~johns/raytracer/
