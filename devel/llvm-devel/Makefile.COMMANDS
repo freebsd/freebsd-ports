@@ -23,12 +23,14 @@ LLVM_COMMANDS=	\
 		llvm-elfabi \
 		llvm-exegesis \
 		llvm-extract \
+		llvm-gsymutil \
 		llvm-ifs \
 		llvm-install-name-tool \
 		llvm-jitlink \
 		llvm-link \
 		llvm-lipo \
 		llvm-mc \
+		llvm-ml \
 		llvm-modextract \
 		llvm-mt \
 		llvm-nm \
