@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-appmesh
-PORTVERSION=	1.19.1
+PORTVERSION=	1.20.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

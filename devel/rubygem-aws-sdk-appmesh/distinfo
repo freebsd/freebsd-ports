@@ -1,3 +1,3 @@
-TIMESTAMP = 1583257494
-SHA256 (rubygem/aws-sdk-appmesh-1.19.1.gem) = 74a6e5140ff938fd9930d56b7ee712a9383ed106325aac79cb0b0c493d5dafe4
-SIZE (rubygem/aws-sdk-appmesh-1.19.1.gem) = 43008
+TIMESTAMP = 1585076014
+SHA256 (rubygem/aws-sdk-appmesh-1.20.0.gem) = c53aa51f44c8e93057b4f848fc3dd80f46dd7493bcea8648eba763a10a8758e3
+SIZE (rubygem/aws-sdk-appmesh-1.20.0.gem) = 45056
