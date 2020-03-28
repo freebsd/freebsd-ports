@@ -39,7 +39,7 @@
 # fcgiwrap_myserver_group="mygroup"
 # fcgiwrap_myotherserver_socket="unix:/var/run/fcgiwrap.myotherserver.socket"
 # fcgiwrap_myotherserver_user="myotheruser"
-# fcgiwrap_myotherserver_grup="myothergroup"
+# fcgiwrap_myotherserver_group="myothergroup"
 # fcgiwrap_myserver_socket_mode="0775"
 # fcgiwrap_myotherserver_flags=""  # No flags for this profile.
 

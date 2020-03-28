@@ -87,7 +87,15 @@
  	char *p = url;
  	char *q;
  	int fd;
-@@ -751,6 +785,7 @@ invalid_url:
+@@ -685,6 +719,7 @@ static int setup_socket(char *url) {
+ 		struct sockaddr_in6 sa_in6;
+ 	} sa;
+ 
++    memset(&sa, 0, sizeof(sa));
+ 	if (!strncmp(p, "unix:", sizeof("unix:") - 1)) {
+ 		p += sizeof("unix:") - 1;
+ 
+@@ -751,6 +786,7 @@ invalid_url:
  		return -1;
  	}
  
@@ -95,7 +103,7 @@
  	return listen_on_fd(fd);
  }
  
-@@ -758,9 +793,10 @@ int main(int argc, char **argv)
+@@ -758,9 +794,10 @@ int main(int argc, char **argv)
  {
  	int nchildren = 1;
  	char *socket_url = NULL;
@@ -107,7 +115,7 @@
  		switch (c) {
  			case 'f':
  				stderr_to_fastcgi++;
-@@ -773,6 +809,7 @@ int main(int argc, char **argv)
+@@ -773,6 +810,7 @@ int main(int argc, char **argv)
  					"  -c <number>\t\tNumber of processes to prefork\n"
  					"  -s <socket_url>\tSocket to bind to (say -s help for help)\n"
  					"  -h\t\t\tShow this help message and exit\n"
@@ -115,7 +123,7 @@
  					"\nReport bugs to Grzegorz Nosek <"PACKAGE_BUGREPORT">.\n"
  					PACKAGE_NAME" home page: <http://nginx.localdomain.pl/wiki/FcgiWrap>\n",
  					argv[0]
-@@ -784,8 +821,14 @@ int main(int argc, char **argv)
+@@ -784,8 +822,14 @@ int main(int argc, char **argv)
  			case 's':
  				socket_url = strdup(optarg);
  				break;
@@ -131,7 +139,7 @@
  					fprintf(stderr, "Option -%c requires an argument.\n", optopt);
  				else if (isprint(optopt))
  					fprintf(stderr, "Unknown option `-%c'.\n", optopt);
-@@ -808,13 +851,24 @@ int main(int argc, char **argv)
+@@ -808,13 +852,24 @@ int main(int argc, char **argv)
  	} else
  #endif
  	if (socket_url) {
