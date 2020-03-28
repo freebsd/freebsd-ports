@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	queries
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,7 @@ COMMENT=	Simplified PostgreSQL client built upon Psycopg2
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.1:databases/py-psycopg2@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5.1<2.9:databases/py-psycopg2@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
