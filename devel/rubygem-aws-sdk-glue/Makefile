@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-glue
-PORTVERSION=	1.49.1
+PORTVERSION=	1.50.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
