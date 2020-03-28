@@ -88,7 +88,6 @@
 %%DATADIR%%/ruby/lib/gitaly_server/feature_flags.rb
 %%DATADIR%%/ruby/lib/gitaly_server/health_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/operations_service.rb
-%%DATADIR%%/ruby/lib/gitaly_server/ref_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/remote_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/repository_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/rugged_interceptor.rb
@@ -119,6 +118,7 @@
 %%DATADIR%%/ruby/lib/gitlab/git/path_helper.rb
 %%DATADIR%%/ruby/lib/gitlab/git/popen.rb
 %%DATADIR%%/ruby/lib/gitlab/git/push_options.rb
+%%DATADIR%%/ruby/lib/gitlab/git/push_results.rb
 %%DATADIR%%/ruby/lib/gitlab/git/ref.rb
 %%DATADIR%%/ruby/lib/gitlab/git/remote_mirror.rb
 %%DATADIR%%/ruby/lib/gitlab/git/remote_repository.rb
@@ -153,6 +153,9 @@
 %%DATADIR%%/ruby/proto/gitaly/diff_services_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/hook_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/hook_services_pb.rb
+%%DATADIR%%/ruby/proto/gitaly/internal_pb.rb
+%%DATADIR%%/ruby/proto/gitaly/internal_services_pb.rb
+%%DATADIR%%/ruby/proto/gitaly/lint_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/namespace_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/namespace_services_pb.rb
 %%DATADIR%%/ruby/proto/gitaly/objectpool_pb.rb
@@ -180,7 +183,6 @@
 %%DATADIR%%/ruby/spec/factories/gitaly/commit.rb
 %%DATADIR%%/ruby/spec/factories/gitaly/commit_author.rb
 %%DATADIR%%/ruby/spec/factories/sequences.rb
-%%DATADIR%%/ruby/spec/gitaly/ref_service_spec.rb
 %%DATADIR%%/ruby/spec/gitaly/remote_service_spec.rb
 %%DATADIR%%/ruby/spec/gitaly/repository_service_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/exception_sanitizer_interceptor_spec.rb
@@ -200,9 +202,11 @@
 %%DATADIR%%/ruby/spec/lib/gitlab/git/lfs_changes_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/popen_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/push_options_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/push_results_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/remote_mirror_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/remote_repository_client_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/remote_repository_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/repository_mirroring_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/repository_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/rev_list_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/ssh_auth_spec.rb
