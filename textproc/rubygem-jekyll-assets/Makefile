@@ -3,7 +3,7 @@
 
 PORTNAME=	jekyll-assets
 PORTVERSION=	3.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-activesupport5>=5.0<6:devel/rubygem-activesupport5 \
 		rubygem-fastimage>=2.0<3:graphics/rubygem-fastimage \
 		rubygem-jekyll3>=3.5<4.0:www/rubygem-jekyll3 \
 		rubygem-jekyll-sanity>=1.2<2:www/rubygem-jekyll-sanity \
-		rubygem-liquid-tag-parser>=1.0<2:textproc/rubygem-liquid-tag-parser \
+		rubygem-liquid-tag-parser1>=1.0<2:textproc/rubygem-liquid-tag-parser1 \
 		rubygem-nokogiri>=1.8<2:textproc/rubygem-nokogiri \
 		rubygem-pathutil>=0.16<1:devel/rubygem-pathutil \
 		rubygem-sprockets3>=3.3<4.1:devel/rubygem-sprockets3
