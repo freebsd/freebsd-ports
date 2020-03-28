@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
-		rubygem-rails52>=5.2.4.1:www/rubygem-rails52 \
+		rubygem-rails52>=5.2.4.2:www/rubygem-rails52 \
 		rubygem-rouge312>=3.12.0:textproc/rubygem-rouge312 \
 		rubygem-request_store>=1.0.5:devel/rubygem-request_store \
 		rubygem-mini_mime>=1.0.1:mail/rubygem-mini_mime \
