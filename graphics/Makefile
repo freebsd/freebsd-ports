@@ -545,6 +545,7 @@
     SUBDIR += mxp
     SUBDIR += mypaint
     SUBDIR += mypaint-brushes
+    SUBDIR += mypaint-brushes2
     SUBDIR += nanosvg
     SUBDIR += netpbm
     SUBDIR += nip2
