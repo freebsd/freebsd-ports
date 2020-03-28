@@ -12,7 +12,7 @@ include/libpst-4/libpst/vbuf.h
 lib/libpst.a
 lib/libpst.so
 lib/libpst.so.4
-lib/libpst.so.4.1.16
+lib/libpst.so.4.1.17
 libdata/pkgconfig/libpst.pc
 man/man1/lspst.1.gz
 man/man1/pst2dii.1.gz
