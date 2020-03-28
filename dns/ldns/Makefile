@@ -38,7 +38,7 @@ HTMLDOCS=		doc/html/*
 OPTIONS_DEFINE+=	DANETAUSAGE GOST RRTYPEAMTRELAY RRTYPEAVC RRTYPENINFO \
 			RRTYPERKEY RRTYPETA
 
-DANETAUSAGE_DESC=	Enable ta uasage, requires openssl >= 1.1.0
+DANETAUSAGE_DESC=	Enable ta usage, requires openssl >= 1.1.0
 GOST_DESC=		GOST signatures enabled, requires openssl >= 1.0.0
 RRTYPENINFO_DESC=	Enable draft RR type ninfo.
 RRTYPERKEY_DESC=	Enable draft RR type rkey.
