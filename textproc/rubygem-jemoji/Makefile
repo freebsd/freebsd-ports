@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jemoji
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
