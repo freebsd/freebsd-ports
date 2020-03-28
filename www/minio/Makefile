@@ -12,8 +12,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-03-19T21-49-00Z
-COMMIT_ID=	b1a2169dcc5b4febc4edf1f82407e28b6f695475
+GHTAG=		RELEASE.2020-03-25T07-03-04Z
+COMMIT_ID=	ef6304c5c2f0e962c4f75cf83aae6ac7b1073b5f
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.1:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:v0.8.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -77,7 +77,8 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		hashicorp:go-uuid:v1.0.1:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:golang-lru:v0.5.1:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
-		hashicorp:vault:v1.3.4:hashicorp_vault/vendor/github.com/hashicorp/vault \
+		hashicorp:vault:api/v1.0.4:hashicorp_vault_api/vendor/github.com/hashicorp/vault_api \
+		hashicorp:vault:sdk/v0.1.13:hashicorp_vault_sdk/vendor/github.com/hashicorp/vault_sdk \
 		inconshreveable:go-update:8152e7eb6ccf:inconshreveable_go_update/vendor/github.com/inconshreveable/go-update \
 		jcmturner:aescts:v1.0.1:jcmturner_aescts/vendor/gopkg.in/jcmturner/aescts.v1 \
 		jcmturner:dnsutils:v1.0.1:jcmturner_dnsutils/vendor/gopkg.in/jcmturner/dnsutils.v1 \
@@ -107,7 +108,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:hdfs:v3.0.1:minio_hdfs/vendor/github.com/minio/hdfs/v3 \
 		minio:highwayhash:v1.0.0:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:lsync:v1.0.1:minio_lsync/vendor/github.com/minio/lsync \
-		minio:minio-go:b882ba63d570:minio_minio_go/vendor/github.com/minio/minio-go/v6 \
+		minio:minio-go:097caa7760c7:minio_minio_go/vendor/github.com/minio/minio-go/v6 \
 		minio:parquet-go:a1e49702e174:minio_parquet_go/vendor/github.com/minio/parquet-go \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:simdjson-go:b17fe061ea37:minio_simdjson_go/vendor/github.com/minio/simdjson-go \
@@ -149,7 +150,9 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		tidwall:sjson:v1.0.4:tidwall_sjson/vendor/github.com/tidwall/sjson \
 		tinylib:msgp:v1.1.1:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		uber-go:atomic:v1.3.2:uber_go_atomic/vendor/go.uber.org/atomic \
-		valyala:tcplisten:ceec8f93295a:valyala_tcplisten/vendor/github.com/valyala/tcplisten
+		valyala:tcplisten:ceec8f93295a:valyala_tcplisten/vendor/github.com/valyala/tcplisten \
+		xdg:scram:7eeb5667e42c:xdg_scram/vendor/github.com/xdg/scram \
+		xdg:stringprep:v1.0.0:xdg_stringprep/vendor/github.com/xdg/stringprep
 
 GO_BUILDFLAGS=	-ldflags=' \
 		-X github.com/minio/minio/cmd.Version=${GH_TAGNAME:C/RELEASE\.//:C|(..)-(..)-(..)Z|\1:\2:\3Z|} \
@@ -165,5 +168,10 @@ GROUPS=		minio
 
 SUB_LIST=	GROUP="${GROUPS}" \
 		USER="${USERS}"
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/vendor/github.com/hashicorp/vault
+	@${MV} ${WRKSRC}/vendor/github.com/hashicorp/vault_api/api ${WRKSRC}/vendor/github.com/hashicorp/vault/api
+	@${MV} ${WRKSRC}/vendor/github.com/hashicorp/vault_sdk/sdk ${WRKSRC}/vendor/github.com/hashicorp/vault/sdk
 
 .include <bsd.port.mk>
