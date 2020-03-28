@@ -10,4 +10,4 @@ elliptic curve. The x25519 gem is a related project of this one, and implements
 the X25519 Diffie-Hellman key exchange algorithm on the Montgomery form of
 Curve25519.
 
-WWW: https://github.com/crypto-rb/ed25519
+WWW: https://github.com/RubyCrypto/ed25519
