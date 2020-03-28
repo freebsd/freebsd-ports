@@ -1,3 +1,3 @@
-TIMESTAMP = 1577145827
-SHA256 (rubygem/aws-sdk-gamelift-1.27.0.gem) = cc150accc4ceeb9fc30114d00bfd59b28ab82475d4c77e55ad28a4643972163c
-SIZE (rubygem/aws-sdk-gamelift-1.27.0.gem) = 120320
+TIMESTAMP = 1585076313
+SHA256 (rubygem/aws-sdk-gamelift-1.28.0.gem) = 1446eb983624613e5615640fec6bed55f60e7d24117aeaeca03cc80dad90b1d0
+SIZE (rubygem/aws-sdk-gamelift-1.28.0.gem) = 121856
