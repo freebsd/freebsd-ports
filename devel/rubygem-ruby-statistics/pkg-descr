@@ -1,0 +1,7 @@
+This gem is intended to accomplish the same purpose as
+jStat js library: to provide ruby with statistical capabilities
+without the need of a statistical programming language like
+R or Octave. Some functions and capabilities are an implementation
+from other authors and are referenced properly in the class/method.
+
+WWW: https://github.com/estebanz01/ruby-statistics
