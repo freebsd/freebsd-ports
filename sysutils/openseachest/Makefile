@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openseachest
-PORTVERSION=	g2020012901
+PORTVERSION=	20.02.28
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -17,7 +17,6 @@ ALL_TARGET=	release
 USE_GITHUB=	yes
 GH_ACCOUNT=	Seagate
 GH_PROJECT=	openSeaChest
-GH_TAGNAME=	625fcac
 GH_TUPLE=	Seagate:opensea-common:deae6bc:common/opensea-common \
 		Seagate:opensea-operations:f1e05ee:operations/opensea-operations \
 		Seagate:opensea-transport:16f85f2:transport/opensea-transport \
