@@ -185,7 +185,10 @@
 %%WWWDIR%%/plugins/pastefromgdocs/filter/default.js
 %%WWWDIR%%/plugins/pastefromword/filter/default.js
 %%WWWDIR%%/plugins/pastetools/filter/common.js
+%%WWWDIR%%/plugins/pastetools/filter/image.js
+%%WWWDIR%%/plugins/preview/images/pagebreak.gif
 %%WWWDIR%%/plugins/preview/preview.html
+%%WWWDIR%%/plugins/preview/styles/screen.css
 %%WWWDIR%%/plugins/scayt/CHANGELOG.md
 %%WWWDIR%%/plugins/scayt/LICENSE.md
 %%WWWDIR%%/plugins/scayt/README.md
