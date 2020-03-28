@@ -1,6 +1,6 @@
-TIMESTAMP = 1580341275
-SHA256 (Seagate-openSeaChest-vg2020012901-625fcac_GH0.tar.gz) = 812815dab8ebb6c3aa3b865196768b76fe918cf435d0eabf1a7373fbcff72753
-SIZE (Seagate-openSeaChest-vg2020012901-625fcac_GH0.tar.gz) = 655751
+TIMESTAMP = 1585400213
+SHA256 (Seagate-openSeaChest-v20.02.28_GH0.tar.gz) = b4d4fbc5d6017c5033554cfdd79706156766313d55e734d3d2c0ec955c9ebfb6
+SIZE (Seagate-openSeaChest-v20.02.28_GH0.tar.gz) = 659048
 SHA256 (Seagate-opensea-common-deae6bc_GH0.tar.gz) = 3d1c85d02e4eb1f2d7d02d3bafab76b07b24f697c0845e3cdef6995a58f98547
 SIZE (Seagate-opensea-common-deae6bc_GH0.tar.gz) = 102695
 SHA256 (Seagate-opensea-operations-f1e05ee_GH0.tar.gz) = 24d55129e9927a759f71755d76056e64852b78c2cd24d06f9c5a3353b91b302b
