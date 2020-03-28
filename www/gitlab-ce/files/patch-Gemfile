@@ -1,4 +1,4 @@
---- Gemfile.orig	2020-02-21 15:14:12 UTC
+--- Gemfile.orig	2020-03-26 12:19:15 UTC
 +++ Gemfile
 @@ -1,6 +1,6 @@
  source 'https://rubygems.org'
@@ -6,9 +6,9 @@
 -gem 'rails', '6.0.2'
 +gem 'rails', '6.0.2.1'
  
- gem 'bootsnap', '~> 1.4'
+ gem 'bootsnap', '~> 1.4.6'
  
-@@ -93,7 +93,6 @@ gem 'graphql', '~> 1.9.12'
+@@ -93,7 +93,6 @@ gem 'graphql', '~> 1.9.19'
  # https://gitlab.com/gitlab-org/gitlab/issues/31747
  gem 'graphiql-rails', '~> 1.4.10'
  gem 'apollo_upload_server', '~> 2.0.0.beta3'
@@ -16,15 +16,6 @@
  
  # Disable strong_params so that Mash does not respond to :permitted?
  gem 'hashie-forbidden_attributes'
-@@ -149,7 +148,7 @@ gem 'wikicloth', '0.8.1'
- gem 'asciidoctor', '~> 2.0.10'
- gem 'asciidoctor-include-ext', '~> 0.3.1', require: false
- gem 'asciidoctor-plantuml', '0.0.10'
--gem 'rouge', '~> 3.15.0'
-+gem 'rouge', '~> 3.15'
- gem 'truncato', '~> 0.7.11'
- gem 'bootstrap_form', '~> 4.2.0'
- gem 'nokogiri', '~> 1.10.5'
 @@ -227,7 +226,7 @@ gem 'redis-rails', '~> 5.0.2'
  gem 'discordrb-webhooks-blackst0ne', '~> 3.3', require: false
  
@@ -64,7 +55,7 @@
 -
 -  gem 'database_cleaner', '~> 1.7.0'
 -  gem 'factory_bot_rails', '~> 5.1.0'
--  gem 'rspec-rails', '~> 4.0.0.beta3'
+-  gem 'rspec-rails', '~> 4.0.0.beta4'
 -
 -  # Prevent occasions where minitest is not bundled in packaged versions of ruby (see #3826)
 -  gem 'minitest', '~> 5.11.0'
@@ -83,8 +74,8 @@
 -
 -  gem 'scss_lint', '~> 0.56.0', require: false
 -  gem 'haml_lint', '~> 0.34.0', require: false
--  gem 'simplecov', '~> 0.16.1', require: false
--  gem 'bundler-audit', '~> 0.5.0', require: false
+-  gem 'simplecov', '~> 0.18.5', require: false
+-  gem 'bundler-audit', '~> 0.6.1', require: false
 -
 -  gem 'benchmark-ips', '~> 2.3.0', require: false
 -
@@ -92,7 +83,7 @@
 -
 -  gem 'simple_po_parser', '~> 1.1.2', require: false
 -
--  gem 'timecop', '~> 0.8.0'
+-  gem 'timecop', '~> 0.9.1'
 -
 -  gem 'png_quantizator', '~> 0.2.1', require: false
 -

@@ -1,9 +1,9 @@
---- config/initializers/1_settings.rb.orig	2020-01-31 21:59:11 UTC
+--- config/initializers/1_settings.rb.orig	2020-03-26 12:19:15 UTC
 +++ config/initializers/1_settings.rb
-@@ -179,11 +179,7 @@ Settings.gitlab['email_smime'] = SmimeSignatureSetting
- Settings.gitlab['base_url'] ||= Settings.__send__(:build_base_gitlab_url)
- Settings.gitlab['url'] ||= Settings.__send__(:build_gitlab_url)
+@@ -182,11 +182,7 @@ Settings.gitlab['url'] ||= Settings.__send__(:build_gi
  Settings.gitlab['user'] ||= 'git'
+ # External configuration may cause the ssh user to differ from the GitLab user
+ Settings.gitlab['ssh_user'] ||= Settings.gitlab.user
 -Settings.gitlab['user_home'] ||= begin
 -  Etc.getpwnam(Settings.gitlab['user']).dir
 -rescue ArgumentError # no user configured
