@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ms_rest
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
-		rubygem-faraday>=0.9<1:www/rubygem-faraday \
+		rubygem-faraday>=0.9<2.0.0:www/rubygem-faraday \
 		rubygem-timeliness>=0.3.10<1:devel/rubygem-timeliness
 
 USES=		gem
