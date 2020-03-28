@@ -3,6 +3,7 @@
 
 PORTNAME=	poppler
 DISTVERSION=	0.86.1
+PORTREVISION?=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 
