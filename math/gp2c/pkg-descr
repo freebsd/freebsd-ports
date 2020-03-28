@@ -1,0 +1,9 @@
+The gp2c compiler is a package for translating GP routines into the C
+programming language, so that they can be compiled and used with the PARI system
+or the GP calculator.
+
+The main advantage of doing this is to speed up computations and to include your
+own routines within the preexisting GP ones. It may also find bugs in GP
+scripts.
+
+WWW: https://pari.math.u-bordeaux.fr/pub/pari/manuals/gp2c/gp2c.html

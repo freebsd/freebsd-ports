@@ -297,6 +297,7 @@
     SUBDIR += gnuplot-lite
     SUBDIR += gnuplot-tex-extras
     SUBDIR += gotoblas
+    SUBDIR += gp2c
     SUBDIR += grace
     SUBDIR += graphthing
     SUBDIR += gretl
@@ -666,6 +667,11 @@
     SUBDIR += p5-bignum
     SUBDIR += pantheon-calculator
     SUBDIR += pari
+    SUBDIR += pari_elldata
+    SUBDIR += pari_galdata
+    SUBDIR += pari_galpol
+    SUBDIR += pari_nftables
+    SUBDIR += pari_seadata
     SUBDIR += parmetis
     SUBDIR += parmgridgen
     SUBDIR += pdal

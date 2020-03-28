@@ -1,0 +1,13 @@
+bin/gp2c
+bin/gp2c-run
+man/man1/gp2c-run.1.gz
+man/man1/gp2c.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/gp2c.dvi
+%%PORTDOCS%%%%DOCSDIR%%/gp2c.html
+%%PORTDOCS%%%%DOCSDIR%%/gp2c.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gp2c001.png
+%%PORTDOCS%%%%DOCSDIR%%/type.dvi
+%%PORTDOCS%%%%DOCSDIR%%/type.html
+%%PORTDOCS%%%%DOCSDIR%%/type.pdf
+%%PORTDOCS%%%%DOCSDIR%%/type001.png
+%%DATADIR%%/func.dsc

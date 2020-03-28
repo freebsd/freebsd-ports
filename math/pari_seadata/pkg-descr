@@ -1,0 +1,5 @@
+This package contains modular polynomials for p < 500, for use with ellsea.
+
+These polynomials were extracted from the ECHIDNA databases.
+
+WWW: https://pari.math.u-bordeaux.fr/packages.html

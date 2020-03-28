@@ -1,0 +1,5 @@
+This packages contains a database of polynomials defining Galois extensions of
+the rationals representing all abstract groups of order up to 143 for all
+signatures (3657 groups, 7194 polynomials).
+
+WWW: https://pari.math.u-bordeaux.fr/packages.html

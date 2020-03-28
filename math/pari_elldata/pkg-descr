@@ -1,0 +1,8 @@
+This is the PARI/GP version of J. E. Cremona Elliptic Curve Data.
+
+This package contains elliptic curves defined over the rationals representing
+all isogeny classes for all conductor less than 500000. Theses data are needed
+by ellsearch, ellidentify and ellgenerators and require PARI/GP.
+
+WWW: https://pari.math.u-bordeaux.fr/packages.html
+WWW: https://github.com/JohnCremona/ecdata/
