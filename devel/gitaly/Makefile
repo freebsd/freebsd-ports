@@ -2,7 +2,7 @@
 
 PORTNAME=	gitaly
 DISTVERSION=	12.9.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -17,7 +17,7 @@ MY_DEPENDS=	git>=2.22:devel/git \
 		rubygem-rugged>=0.28<1.0:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.5<8.0:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.7.0<1.8.0:textproc/rubygem-gitlab-markup \
-		rubygem-activesupport60>=6.0.2.1<6.1:devel/rubygem-activesupport60 \
+		rubygem-activesupport60=6.0.2.2:devel/rubygem-activesupport60 \
 		rubygem-rdoc>=6.1<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.8<4.2.8.0:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.2<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \

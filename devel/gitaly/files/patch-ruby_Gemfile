@@ -1,13 +1,13 @@
---- ruby/Gemfile.orig	2020-03-26 12:14:07 UTC
+--- ruby/Gemfile.orig	2020-03-26 12:14:05 UTC
 +++ ruby/Gemfile
 @@ -6,7 +6,7 @@ gem 'bundler', '>= 1.17.3'
  gem 'rugged', '~> 0.28'
  gem 'github-linguist', '~> 7.5', require: 'linguist'
  gem 'gitlab-markup', '~> 1.7.0'
 -gem 'activesupport', '6.0.2'
-+gem 'activesupport', '6.0.2.1'
++gem 'activesupport', '6.0.2.2'
  gem 'rdoc', '~> 6.0'
- gem 'gitlab-gollum-lib', '~> 4.2.7.7', require: false
+ gem 'gitlab-gollum-lib', '~> 4.2.7.8', require: false
  gem 'gitlab-gollum-rugged_adapter', '~> 0.4.4.2', require: false
 @@ -16,7 +16,7 @@ gem 'faraday', '~> 0.12'
  gem 'rbtrace', require: false
