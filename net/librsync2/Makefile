@@ -3,12 +3,12 @@
 
 PORTNAME=	librsync
 PORTVERSION=	2.2.1
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
-DISTVERSIONPREFIX=v
 CATEGORIES=	net devel
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for delta compression of streams
 
 LICENSE=	LGPL21+
