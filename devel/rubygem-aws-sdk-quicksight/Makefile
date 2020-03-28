@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-quicksight
-PORTVERSION=	1.17.1
+PORTVERSION=	1.18.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
