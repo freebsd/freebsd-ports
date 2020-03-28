@@ -1,3 +1,3 @@
-TIMESTAMP = 1561147702
-SHA256 (py-ubjson-0.14.0.tar.gz) = f742c87bccc8653329d3f79b8b3f40d44d11d17cce7f6d7025a73c52ebf91c66
-SIZE (py-ubjson-0.14.0.tar.gz) = 47892
+TIMESTAMP = 1585064047
+SHA256 (py-ubjson-0.15.0.tar.gz) = 07d314def684fb5a80c53c59ae6a3afbce73032e1317c8808a11aced178ad8b2
+SIZE (py-ubjson-0.15.0.tar.gz) = 50111
