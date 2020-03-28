@@ -11,5 +11,5 @@ include/zdb/zdbpp.h
 lib/libzdb.a
 lib/libzdb.so
 lib/libzdb.so.12
-lib/libzdb.so.12.0.0
+lib/libzdb.so.12.0.1
 libdata/pkgconfig/zdb.pc
