@@ -1,0 +1,32 @@
+From c67dbd41f13f5302120ad40fee94ea6c7ffc2bfc Mon Sep 17 00:00:00 2001
+From: Jason Fried <me@jasonfried.info>
+Date: Wed, 5 Feb 2020 03:38:25 -0800
+Subject: [PATCH] Add some gc safety around _mysql__fetch_row (#348)
+
+Users of gc.get_referrers() could cause a SystemError to be raised if this function is running in a different python thread.
+---
+ MySQLdb/_mysql.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/MySQLdb/_mysql.c b/MySQLdb/_mysql.c
+index 13280ac..1556fda 100644
+--- MySQLdb/_mysql.c
++++ MySQLdb/_mysql.c
+@@ -1373,9 +1373,15 @@ _mysql_ResultObject_fetch_row(
+     convert_row = row_converters[how];
+     if (maxrows) {
+         if (!(r = PyTuple_New(maxrows))) goto error;
+-        rowsadded = _mysql__fetch_row(self, &r, skiprows, maxrows,
+-                convert_row);
++
++        // see: https://docs.python.org/3/library/gc.html#gc.get_referrers
++        // This function can get a reference to the tuple r, and if that
++        // code is preempted while holding a ref to r, the _PyTuple_Resize
++        // will raise a SystemError because the ref count is 2.
++        PyObject_GC_UnTrack(r);
++        rowsadded = _mysql__fetch_row(self, &r, skiprows, maxrows, convert_row);
+         if (rowsadded == -1) goto error;
++        PyObject_GC_Track(r);
+     } else {
+         if (self->use) {
+             maxrows = 1000;
