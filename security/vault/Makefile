@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vault
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -133,21 +133,21 @@ GH_TUPLE=	hashicorp:${PORTNAME}:${VAULTTAG}:DEFAULT \
 		hashicorp:raft-snapshot:8117efcc5aab:hashicorp_raft_snapshot/vendor/github.com/hashicorp/raft-snapshot \
 		hashicorp:raft:9c6bd3e3eb17:hashicorp_raft/vendor/github.com/hashicorp/raft \
 		hashicorp:serf:v0.8.3:hashicorp_serf/vendor/github.com/hashicorp/serf \
-		hashicorp:vault-plugin-auth-alicloud:93970f08f2ec:hashicorp_vault_plugin_auth_alicloud/vendor/github.com/hashicorp/vault-plugin-auth-alicloud \
-		hashicorp:vault-plugin-auth-azure:08e00d801115:hashicorp_vault_plugin_auth_azure/vendor/github.com/hashicorp/vault-plugin-auth-azure \
-		hashicorp:vault-plugin-auth-centrify:090ec2ed93ce:hashicorp_vault_plugin_auth_centrify/vendor/github.com/hashicorp/vault-plugin-auth-centrify \
-		hashicorp:vault-plugin-auth-cf:1c2205826fee:hashicorp_vault_plugin_auth_cf/vendor/github.com/hashicorp/vault-plugin-auth-cf \
-		hashicorp:vault-plugin-auth-gcp:acfd134850c2:hashicorp_vault_plugin_auth_gcp/vendor/github.com/hashicorp/vault-plugin-auth-gcp \
-		hashicorp:vault-plugin-auth-jwt:65cf93bad3f2:hashicorp_vault_plugin_auth_jwt/vendor/github.com/hashicorp/vault-plugin-auth-jwt \
-		hashicorp:vault-plugin-auth-kubernetes:2e5b0b8184e6:hashicorp_vault_plugin_auth_kubernetes/vendor/github.com/hashicorp/vault-plugin-auth-kubernetes \
-		hashicorp:vault-plugin-auth-oci:97c0c0187c5c:hashicorp_vault_plugin_auth_oci/vendor/github.com/hashicorp/vault-plugin-auth-oci \
-		hashicorp:vault-plugin-database-elasticsearch:e079e01fbb93:hashicorp_vault_plugin_database_elasticsearch/vendor/github.com/hashicorp/vault-plugin-database-elasticsearch \
-		hashicorp:vault-plugin-secrets-ad:8f4121d78b9c:hashicorp_vault_plugin_secrets_ad/vendor/github.com/hashicorp/vault-plugin-secrets-ad \
-		hashicorp:vault-plugin-secrets-alicloud:4d18bec92f56:hashicorp_vault_plugin_secrets_alicloud/vendor/github.com/hashicorp/vault-plugin-secrets-alicloud \
-		hashicorp:vault-plugin-secrets-azure:v0.5.2:hashicorp_vault_plugin_secrets_azure/vendor/github.com/hashicorp/vault-plugin-secrets-azure \
-		hashicorp:vault-plugin-secrets-gcp:3c798536d157:hashicorp_vault_plugin_secrets_gcp/vendor/github.com/hashicorp/vault-plugin-secrets-gcp \
-		hashicorp:vault-plugin-secrets-gcpkms:315cdbf5de6e:hashicorp_vault_plugin_secrets_gcpkms/vendor/github.com/hashicorp/vault-plugin-secrets-gcpkms \
-		hashicorp:vault-plugin-secrets-kv:e8cf7060a4d0:hashicorp_vault_plugin_secrets_kv/vendor/github.com/hashicorp/vault-plugin-secrets-kv \
+		hashicorp:vault-plugin-auth-alicloud:v0.5.3:hashicorp_vault_plugin_auth_alicloud/vendor/github.com/hashicorp/vault-plugin-auth-alicloud \
+		hashicorp:vault-plugin-auth-azure:v0.5.3:hashicorp_vault_plugin_auth_azure/vendor/github.com/hashicorp/vault-plugin-auth-azure \
+		hashicorp:vault-plugin-auth-centrify:v0.5.3:hashicorp_vault_plugin_auth_centrify/vendor/github.com/hashicorp/vault-plugin-auth-centrify \
+		hashicorp:vault-plugin-auth-cf:v0.5.2:hashicorp_vault_plugin_auth_cf/vendor/github.com/hashicorp/vault-plugin-auth-cf \
+		hashicorp:vault-plugin-auth-gcp:v0.5.3:hashicorp_vault_plugin_auth_gcp/vendor/github.com/hashicorp/vault-plugin-auth-gcp \
+		hashicorp:vault-plugin-auth-jwt:v0.5.3:hashicorp_vault_plugin_auth_jwt/vendor/github.com/hashicorp/vault-plugin-auth-jwt \
+		hashicorp:vault-plugin-auth-kubernetes:v0.5.3:hashicorp_vault_plugin_auth_kubernetes/vendor/github.com/hashicorp/vault-plugin-auth-kubernetes \
+		hashicorp:vault-plugin-auth-oci:v0.5.2:hashicorp_vault_plugin_auth_oci/vendor/github.com/hashicorp/vault-plugin-auth-oci \
+		hashicorp:vault-plugin-database-elasticsearch:v0.5.2:hashicorp_vault_plugin_database_elasticsearch/vendor/github.com/hashicorp/vault-plugin-database-elasticsearch \
+		hashicorp:vault-plugin-secrets-ad:v0.6.3:hashicorp_vault_plugin_secrets_ad/vendor/github.com/hashicorp/vault-plugin-secrets-ad \
+		hashicorp:vault-plugin-secrets-alicloud:v0.5.3:hashicorp_vault_plugin_secrets_alicloud/vendor/github.com/hashicorp/vault-plugin-secrets-alicloud \
+		hashicorp:vault-plugin-secrets-azure:v0.5.4:hashicorp_vault_plugin_secrets_azure/vendor/github.com/hashicorp/vault-plugin-secrets-azure \
+		hashicorp:vault-plugin-secrets-gcp:v0.5.4:hashicorp_vault_plugin_secrets_gcp/vendor/github.com/hashicorp/vault-plugin-secrets-gcp \
+		hashicorp:vault-plugin-secrets-gcpkms:v0.5.3:hashicorp_vault_plugin_secrets_gcpkms/vendor/github.com/hashicorp/vault-plugin-secrets-gcpkms \
+		hashicorp:vault-plugin-secrets-kv:v0.5.3:hashicorp_vault_plugin_secrets_kv/vendor/github.com/hashicorp/vault-plugin-secrets-kv \
 		hashicorp:yamux:2f1d1f20f75d:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
 		influxdata:influxdb:d24b7ba8c4c4:influxdata_influxdb/vendor/github.com/influxdata/influxdb \
 		jackc:pgx:v3.3.0:jackc_pgx/vendor/github.com/jackc/pgx \
@@ -237,6 +237,8 @@ GROUPS=		vault
 
 PLIST_FILES=	bin/${PORTNAME}
 SUB_FILES=	pkg-message
+
+PORTSCOUT=	limit:^(v?)[0-9]+\.[0-9]+\.[0-9]+$
 
 post-patch:
 	@${CP} ${WRKDIR}/vaultui-${PORTVERSION}/http/bindata_assetfs.go ${WRKDIR}/vault-${PORTVERSION}/http/bindata_assetfs.go
