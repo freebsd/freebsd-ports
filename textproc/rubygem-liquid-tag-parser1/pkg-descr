@@ -1,0 +1,7 @@
+Liquid Tag parser provides a robust interface to parsing your tag syntax in a
+way that makes sense, it uses Shellwords, along with escapes to allow users to
+do extremely robust arguments, giving you back a hash, that you get to play
+with. It also has the concept of argv1, deep hashes, and even defaults if you
+give them to us.
+
+WWW: https://github.com/envygeeks/liquid-tag-parser
