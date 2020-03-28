@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Usage
-PORTVERSION=	1.69
+PORTVERSION=	1.70
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,9 +16,10 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-podlators>=4:textproc/p5-podlators
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 post-patch:
 # Do not conflict with lang/perl5.*
