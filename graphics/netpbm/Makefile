@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netpbm
-DISTVERSION=	10.89.01
+DISTVERSION=	10.90.00
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/ \
 		LOCAL/tobik
@@ -50,9 +50,8 @@ TEST_TARGET=	check
 # Disable fragile tests.  tiff-flate-lzw-roundtrip's checksums are
 # different on FreeBSD so the test fails.  The resulting and
 # intermediary images look fine in spite of this.
-_DISABLE_TESTS=	all-in-place palm-roundtrip pamhue pammixmulti-identity \
-		pamtopdbimg pnmquant ppmgauss ps-alt-roundtrip \
-		tiff-flate-lzw-roundtrip
+_DISABLE_TESTS=	all-in-place palm-roundtrip pamdice pamhue pammixmulti-identity \
+		pamtopdbimg pnmquant ps-alt-roundtrip tiff-flate-lzw-roundtrip
 
 OPTIONS_DEFINE=		MANPAGES PERL STATIC SVGTOPAM X11
 OPTIONS_DEFAULT=	MANPAGES PERL
@@ -70,8 +69,8 @@ STATIC_LIB_DEPENDS_OFF=	libjasper.so:graphics/jasper \
 			libjbig.so:graphics/jbigkit \
 			libpng.so:graphics/png \
 			libtiff.so:graphics/tiff
-STATIC_USES_OFF=	jpeg
 STATIC_USES=		jpeg:build
+STATIC_USES_OFF=	jpeg
 SVGTOPAM_USES=		gnome
 SVGTOPAM_USE=		GNOME=libxml2
 SVGTOPAM_VARS_OFF=	_DISABLE_TESTS+=svgtopam
@@ -80,12 +79,9 @@ X11_USE=		XORG=x11,xau,xcb,xdmcp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|misc|share/netpbm|g' ${WRKSRC}/common.mk
-	@${REINPLACE_CMD} -e 's|$$(PKGDIR)/link|$$(PKGDIR)/lib|g' \
-		-e 's|pkg-config|false|g' \
-		${WRKSRC}/GNUmakefile ${WRKSRC}/lib/Makefile
-.for test in ${_DISABLE_TESTS}
-	@${REINPLACE_CMD} -e '/${test}/d' ${WRKSRC}/test/Test-Order
-.endfor
+	@${REINPLACE_CMD} -e 's|pkg-config|false|g' ${WRKSRC}/GNUmakefile
+	@${REINPLACE_CMD} ${_DISABLE_TESTS:@.test.@-e '/${.test.}/d'@} \
+		${WRKSRC}/test/Test-Order
 
 post-patch-STATIC-on:
 	@${REINPLACE_CMD} -e 's|$$(LD)|$$(LD) -static|g' \
