@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nevergrad
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Python toolbox for performing gradient-free optimization
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bayesian-optimization>=1.0.1:math/py-bayesian-optimization@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bayesian-optimization>=1.1.0:math/py-bayesian-optimization@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cma>=2.6.0:math/py-cma@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hiplot>=0:graphics/py-hiplot@${PY_FLAVOR} \
 		${PYNUMPY} \
