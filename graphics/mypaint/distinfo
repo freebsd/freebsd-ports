@@ -1,3 +1,5 @@
-TIMESTAMP = 1532315716
-SHA256 (mypaint-1.2.1.tar.xz) = ed2349382f6a0c583d7defae06427e97ac7d14acb77b9e2c0fc7171ddd96d3c7
-SIZE (mypaint-1.2.1.tar.xz) = 37897196
+TIMESTAMP = 1582480352
+SHA256 (mypaint-mypaint-v2.0.0_GH0.tar.gz) = 1cecdd2dfb8f4be745134b36f5f1525829bb63ecdae48171d04c6cdd7be75738
+SIZE (mypaint-mypaint-v2.0.0_GH0.tar.gz) = 10403908
+SHA256 (94c623b788462fadb3e292b918edc4e90adf4faa.patch) = 2ce7f98f8c3e16e23eac165f575499cd0384b2ed44221f46529851f6e77e9f5b
+SIZE (94c623b788462fadb3e292b918edc4e90adf4faa.patch) = 4936
