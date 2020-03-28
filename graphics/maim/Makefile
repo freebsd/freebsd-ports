@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Screenshot utility with performance improvements over scrot
 
 LICENSE=	GPLv3
