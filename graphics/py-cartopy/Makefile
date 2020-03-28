@@ -40,7 +40,7 @@ OWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}OWSLib>=0.8.11:graphics/py-OWSLib@${PY_F
 			${PY_PILLOW}
 PLOTTING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdal>=1.10.0:graphics/py-gdal@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.1:math/py-matplotlib@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}scipy>=0.10:science/py-scipy@${PY_FLAVOR} \
-			${PY_PILLOW}
+			${PY_PILLOW} \
+			${PYTHON_PKGNAMEPREFIX}scipy>=0.10:science/py-scipy@${PY_FLAVOR}
 
 .include <bsd.port.mk>
