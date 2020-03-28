@@ -1,10 +1,10 @@
-TIMESTAMP = 1579098664
-SHA256 (tdewolff-minify-v2.7.2_GH0.tar.gz) = 84c508dc0e7d3047f5aa5b7048c2bef61e3588958b3276d603a65fc84b592b00
-SIZE (tdewolff-minify-v2.7.2_GH0.tar.gz) = 2301870
+TIMESTAMP = 1585081751
+SHA256 (tdewolff-minify-v2.7.3_GH0.tar.gz) = 4215c3ad52c54c9bed88317efc95ded4dda089ec1d49ea2441372ecbbf108f58
+SIZE (tdewolff-minify-v2.7.3_GH0.tar.gz) = 2303638
 SHA256 (dustin-go-humanize-v1.0.0_GH0.tar.gz) = e4540bd50ac855143b4f2e509313079c50cf5d8774f09cc10dbca5ae9803d8ba
 SIZE (dustin-go-humanize-v1.0.0_GH0.tar.gz) = 17260
-SHA256 (fsnotify-fsnotify-v1.4.7_GH0.tar.gz) = b7530d973d0ab0e58ad8ce1b9a4b963d6f57b3d72f2f9e13d49846976361b1cd
-SIZE (fsnotify-fsnotify-v1.4.7_GH0.tar.gz) = 31139
+SHA256 (fsnotify-fsnotify-v1.4.9_GH0.tar.gz) = 4f888b1cb132026227826751d156c0a2958e7d492e5e38386cde8848ef494dcb
+SIZE (fsnotify-fsnotify-v1.4.9_GH0.tar.gz) = 31900
 SHA256 (golang-sys-a1369af_GH0.tar.gz) = 2b3534e4c43b31193b3c754b6e5296054d77bc2373161dfac69fc95c22152398
 SIZE (golang-sys-a1369af_GH0.tar.gz) = 1535410
 SHA256 (matryer-try-9ac251b_GH0.tar.gz) = 6eec844ce4fc732db6fc59a12a9bbdc75448945816eef948ce738b524ecde9ac
