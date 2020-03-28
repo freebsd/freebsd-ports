@@ -1,5 +1,4 @@
 bin/hyphy
-lib/hyphy/TemplateBatchFiles/simpleBootstrap.bf
 lib/hyphy/GeneticCodes/Alt_Yeast_Nuclear.cod
 lib/hyphy/GeneticCodes/Ascidian_mtDNA.cod
 lib/hyphy/GeneticCodes/Blepharisma_Nuclear.cod
@@ -181,6 +180,7 @@ lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FEL-contrast.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FEL.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/FUBAR.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/MEME.bf
+lib/hyphy/TemplateBatchFiles/SelectionAnalyses/PRIME.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/RELAX-Groups.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/RELAX-SRV.bf
 lib/hyphy/TemplateBatchFiles/SelectionAnalyses/RELAX.bf
@@ -385,6 +385,7 @@ lib/hyphy/TemplateBatchFiles/libv3/models/codon.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/codon/BS_REL.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/codon/MG_REV.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/codon/MG_REV_MH.bf
+lib/hyphy/TemplateBatchFiles/libv3/models/codon/MG_REV_PROPERTIES.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/codon/MG_REV_TRIP.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/frequencies.bf
 lib/hyphy/TemplateBatchFiles/libv3/models/model_functions.bf
@@ -427,6 +428,7 @@ lib/hyphy/TemplateBatchFiles/relative_nucleotide_rates.bf
 lib/hyphy/TemplateBatchFiles/relrateBootstrap.bf
 lib/hyphy/TemplateBatchFiles/relratioBootstrap.bf
 lib/hyphy/TemplateBatchFiles/selectModelParameters.bf
+lib/hyphy/TemplateBatchFiles/simpleBootstrap.bf
 lib/hyphy/data/brown.nuc
 lib/hyphy/data/integrase_BDA.nex
 lib/hyphy/data/p51.aa
