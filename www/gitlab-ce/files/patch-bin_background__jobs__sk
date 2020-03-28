@@ -1,5 +1,5 @@
---- bin/background_jobs.orig	2020-01-02 15:06:44 UTC
-+++ bin/background_jobs
+--- bin/background_jobs_sk.orig	2020-03-27 13:35:17 UTC
++++ bin/background_jobs_sk
 @@ -14,7 +14,7 @@ warn()
  
  stop()
@@ -8,8 +8,8 @@
 +  bundle exec sidekiqctl5 stop $sidekiq_pidfile >> $sidekiq_logfile 2>&1
  }
  
- killall()
-@@ -45,7 +45,7 @@ start_sidekiq()
+ restart()
+@@ -42,7 +42,7 @@ start_sidekiq()
      cmd="${cmd} ${chpst} -P"
    fi
  
@@ -17,4 +17,4 @@
 +  ${cmd} bundle exec sidekiq5 -C "${sidekiq_config}" -e $RAILS_ENV "$@"
  }
  
- load_ok()
+ case "$1" in

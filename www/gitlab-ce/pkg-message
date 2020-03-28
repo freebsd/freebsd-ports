@@ -20,7 +20,7 @@ EOM
 If you just installed an major upgrade of GitLab, for example you
 switched from 12.6.x to 12.7.x, please follow the instructions in the guide at:
 
-https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/12.7-12.8-freebsd.md
+https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/12.8-12.9-freebsd.md
 
 If you just installed an minor upgrade of GitLab please follow
 the instructions in the guide at:

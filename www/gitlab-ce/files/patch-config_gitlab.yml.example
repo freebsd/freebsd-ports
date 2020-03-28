@@ -1,6 +1,6 @@
---- config/gitlab.yml.example.orig	2020-02-21 15:14:12 UTC
+--- config/gitlab.yml.example.orig	2020-03-26 12:19:15 UTC
 +++ config/gitlab.yml.example
-@@ -930,7 +930,7 @@ production: &base
+@@ -937,7 +937,7 @@ production: &base
    # Gitaly settings
    gitaly:
      # Path to the directory containing Gitaly client executables.
@@ -9,7 +9,7 @@
      # Default Gitaly authentication token. Can be overridden per storage. Can
      # be left blank when Gitaly is running locally on a Unix socket, which
      # is the normal way to deploy Gitaly.
-@@ -948,8 +948,8 @@ production: &base
+@@ -955,8 +955,8 @@ production: &base
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.
        default:
@@ -20,7 +20,7 @@
          # gitaly_token: 'special token' # Optional: override global gitaly.token for this storage.
  
    ## Backup settings
-@@ -995,12 +995,12 @@ production: &base
+@@ -1002,12 +1002,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -36,7 +36,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -1025,7 +1025,7 @@ production: &base
+@@ -1032,7 +1032,7 @@ production: &base
    # CAUTION!
    # Use the default values unless you really know what you are doing
    git:
