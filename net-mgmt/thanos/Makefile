@@ -3,6 +3,7 @@
 PORTNAME=	thanos
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ler@FreeBSD.org
@@ -11,8 +12,8 @@ COMMENT=	Highly available Prometheus setup with long term storage capabilities
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# fails to build on i386: pkg/store/cache/cache.go:166:22: constant 9223372036854775807 overflows int
-ONLY_FOR_ARCHS=	amd64
+# fails to build on armv7/i386: pkg/store/cache/cache.go:166:22: constant 9223372036854775807 overflows int
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 USES=		go:modules
 
