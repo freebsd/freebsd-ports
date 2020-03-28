@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hdf5
-PORTVERSION=	1.12.0
+PORTVERSION=	1.10.6
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-${PORTVERSION:R}/${DISTNAME}/src/ \
 		LOCAL/sunpoet
@@ -26,13 +26,14 @@ USES=		compiler:c11 libtool localbase tar:bzip2
 
 CONFIGURE_ARGS=	--enable-hl \
 		--enable-instrument \
-		--enable-strict-format-checks \
-		--with-examplesdir=${EXAMPLESDIR}
+		--enable-strict-format-checks
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
+
+PORTEXAMPLES=	*
 
 CXX_CONFIGURE_ENABLE=	cxx
 DEBUG_CONFIGURE_OFF=	--enable-build-mode=production
@@ -50,8 +51,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/config/gnu-flags
 	@${REINPLACE_CMD} \
 		-e '/LD_LIBRARY_PATH/ s|^|#|' \
-		-e 's|EXAMPLEDIR = $$(examplesdir)|EXAMPLEDIR = $$(DESTDIR)$$(examplesdir)|' \
-		-e 's|EXAMPLETOPDIR = $$(examplesdir)|EXAMPLETOPDIR = $$(DESTDIR)$$(examplesdir)|' \
+		-e 's|/share/hdf5_examples|/${EXAMPLESDIR_REL}|' \
 		-e 's|(INSTALL)|(INSTALL_DATA)|' \
 			`${FIND} ${WRKSRC} -regex '.*/examples/Makefile.in'`
 	@${REINPLACE_CMD} -e 's|\[ -a|\[ -f|g' `${FIND} ${WRKSRC} -name \*.sh\*`
