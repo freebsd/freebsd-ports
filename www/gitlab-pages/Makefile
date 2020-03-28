@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-pages
-PORTVERSION=	1.16.0
+PORTVERSION=	1.17.0
 CATEGORIES=	www
 
 MAINTAINER=	swills@FreeBSD.org
@@ -17,7 +17,7 @@ USE_GITHUB=	nodefault
 
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-pages/tags
-GL_COMMIT=	1fe3f552049912c98063d67ca6a0c2da626cb324
+GL_COMMIT=	52b28999916a20b27c5caa6c399d871c22d146ca
 
 # Build with: make gomod-vendor
 # 43dd
