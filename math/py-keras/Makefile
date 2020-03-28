@@ -5,7 +5,7 @@ DISTVERSION=	2.3.1
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Deep learning library for Python
 
 LICENSE=	MIT

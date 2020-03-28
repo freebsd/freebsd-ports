@@ -5,7 +5,7 @@ PORTVERSION=	1.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZFS based replication and failover solution
 
 LICENSE=	bolthole

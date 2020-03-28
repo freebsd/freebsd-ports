@@ -6,7 +6,7 @@ DISTVERSION=	2.10.3
 PORTREVISION=	4
 CATEGORIES=	graphics
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D point cloud processing software
 
 LICENSE=	GPLv2+ LGPL20+
