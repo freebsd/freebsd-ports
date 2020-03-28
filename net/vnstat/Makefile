@@ -11,7 +11,7 @@ COMMENT=	Console-based network traffic monitor
 
 LICENSE=	GPLv2
 
-USES=		gmake sqlite
+USES=		sqlite
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	vnstat
