@@ -1,3 +1,3 @@
-TIMESTAMP = 1582354946
-SHA256 (datadog-0.34.1.tar.gz) = 3bd8cc3d6915c6ac74c68093068b903de3fae22b8dd3d31480bfc2092a1f51d7
-SIZE (datadog-0.34.1.tar.gz) = 324085
+TIMESTAMP = 1585063947
+SHA256 (datadog-0.35.0.tar.gz) = f4a36a8130dccd2a5e019082fd14d1ad55e8d5a74f29a0abdc5dba975e35fe62
+SIZE (datadog-0.35.0.tar.gz) = 491488
