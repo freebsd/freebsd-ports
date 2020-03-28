@@ -6,7 +6,6 @@
 %%SITE_PERL%%/Mojo/RabbitMQ/Client/Method/Publish.pm
 %%SITE_PERL%%/Mojo/RabbitMQ/Client/Publisher.pm
 %%SITE_PERL%%/auto/share/dist/Mojo-RabbitMQ-Client/amqp0-9-1.stripped.extended.xml
-%%SITE_PERL%%/auto/share/dist/Mojo-RabbitMQ-Client/fixed_amqp0-8.xml
 %%PERL5_MAN3%%/Mojo::RabbitMQ::Client.3.gz
 %%PERL5_MAN3%%/Mojo::RabbitMQ::Client::Channel.3.gz
 %%PERL5_MAN3%%/Mojo::RabbitMQ::Client::Consumer.3.gz
