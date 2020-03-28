@@ -19,7 +19,7 @@ NUT_COMMIT_DATE=	2020.02.09
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		autoreconf:build gmake libtool pkgconfig
+USES=		autoreconf:build gmake libtool pkgconfig python:build
 
 NUT_USER?=	uucp
 NUT_GROUP?=	uucp
