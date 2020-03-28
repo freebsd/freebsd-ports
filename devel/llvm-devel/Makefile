@@ -362,8 +362,6 @@ post-patch:
 	    -e 's|from lit|from lit${LLVM_SUFFIX}|' \
 	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
 	    ${WRKSRC}/llvm/utils/lit/lit.py ${WRKSRC}/llvm/utils/lit/lit/*.py
-	${REINPLACE_CMD} -e 's,/usr/local/,${LOCALBASE}/,' \
-	    ${WRKSRC}/llvm/CMakeLists.txt
 
 post-patch-CLANG-on:
 	${REINPLACE_CMD} -e 's|%%LLVM_PREFIX%%|${LLVM_PREFIX}|' \
@@ -449,6 +447,7 @@ build-plist:
 	${RM} ${PLIST} ${PLIST}.tmp
 	${ECHO_CMD} "@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<" >> ${PLIST}.tmp
 	${ECHO_CMD} "@comment Alter build-plist target and regenerate as required" >> ${PLIST}.tmp
+	${ECHO_CMD} "%%EXTRAS%%@dir llvm-devel/include/clang-tidy/plugin" >> ${PLIST}.tmp
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}${LLVM_SUFFIX} >> ${PLIST}.tmp
 .endfor
