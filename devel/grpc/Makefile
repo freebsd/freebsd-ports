@@ -8,7 +8,7 @@ PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	devel
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP/2-based RPC framework
 
 LICENSE=	BSD3CLAUSE

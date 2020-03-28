@@ -7,7 +7,7 @@ MASTER_SITES=	http://fossil.bsdsx.fr/mohawk/tarball/ \
 		http://fossil.etoilebsd.net/mohawk/tarball/
 DISTFILES=	${DISTNAME}.tar.gz?uuid=${PORTVERSION}
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and lightweight HTTP daemon
 
 LICENSE=	BSD2CLAUSE

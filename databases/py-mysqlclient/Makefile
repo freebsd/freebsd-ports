@@ -6,7 +6,7 @@ CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTVERSIONPREFIX=	v
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL database connector for Python
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.12.2
 CATEGORIES=	www
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Is an application, language, and network arch
 
 LICENSE=	BSD3CLAUSE

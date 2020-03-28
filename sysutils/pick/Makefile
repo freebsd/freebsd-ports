@@ -5,7 +5,7 @@ PORTVERSION=	3.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/mptre/pick/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for choosing one option from a set of choices with an interface
 
 LICENSE=	MIT

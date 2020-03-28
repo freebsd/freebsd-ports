@@ -6,7 +6,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	iTop-${PORTVERSION}-4463
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, web based IT Service Management tool
 
 LICENSE=	AGPLv3

@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTVERSION} \
 		https://googledrive.com/host/0B4jHEq5G7_EPWV9UeERwdGplZXc/${PORTVERSION}/
 DISTNAME=	i2psource_${PORTVERSION}
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anonymizing network
 
 LICENSE=	EULA
