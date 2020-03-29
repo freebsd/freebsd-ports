@@ -7,7 +7,7 @@ CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Display keystrokes for screencasts on Wayland
+COMMENT=	Display keystrokes for screencasts on wlroots compositors
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
