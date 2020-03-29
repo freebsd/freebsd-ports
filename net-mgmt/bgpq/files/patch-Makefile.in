@@ -1,5 +1,5 @@
---- Makefile.in.orig	2005-04-05 20:44:00.000000000 +0800
-+++ Makefile.in	2014-06-20 16:47:42.798934507 +0800
+--- Makefile.in.orig	2005-04-05 12:44:00 UTC
++++ Makefile.in
 @@ -25,8 +25,8 @@ clean:
  	@rm -f config.cache 
  
