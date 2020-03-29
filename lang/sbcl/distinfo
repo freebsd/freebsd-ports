@@ -1,8 +1,8 @@
-TIMESTAMP = 1583842796
-SHA256 (sbcl-2.0.2-source.tar.bz2) = 4864046e3b8bc0d0af7523491cf0e2be6155518864e63cf2e6f8326865fbfe1e
-SIZE (sbcl-2.0.2-source.tar.bz2) = 6489209
-SHA256 (sbcl-2.0.2-documentation-html.tar.bz2) = 6070078082e65048822654daa6726acaffb4b2ff3f12d69d2b0df2e489d8ba37
-SIZE (sbcl-2.0.2-documentation-html.tar.bz2) = 232163
+TIMESTAMP = 1585477858
+SHA256 (sbcl-2.0.3-source.tar.bz2) = b5543f123214b2023ff5fc32dfd00b6cfeabd92c8edb33ad208842c4fd642f00
+SIZE (sbcl-2.0.3-source.tar.bz2) = 6489521
+SHA256 (sbcl-2.0.3-documentation-html.tar.bz2) = c900a41786738d23d662d84275352d2ffdacbef01a5ac96e9663fdb850ee70f3
+SIZE (sbcl-2.0.3-documentation-html.tar.bz2) = 231922
 SHA256 (sbcl-1.2.7-x86-64-freebsd-binary.tar.bz2) = c61f5e777e56921d2452d0fa6b71024ccd9b99bc659676498d398b8663176492
 SIZE (sbcl-1.2.7-x86-64-freebsd-binary.tar.bz2) = 10463348
 SHA256 (sbcl-1.2.7-x86-freebsd-binary.tar.bz2) = cf68bfab780a14964d9593f5b47fa3e174cf43e95ae3e558712d218f1c37bdbe
