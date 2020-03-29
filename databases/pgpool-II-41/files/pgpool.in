@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#        
+# PROVIDE: pgpool
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# pgpool_enable (bool):         Set to NO by default.
+#                               Set it to YES to enable pgpool.
+# pgpool_conf (file):           Set location of your config.
+#                               Default is "%%PREFIX%%/etc/pgpool.conf"
+# pgpool_hba (file):           Set location of your pool hba file.
+#               Default is "%%PREFIX%%/etc/pool_hba.conf"
+# pgpool_pcp (file):           Set location of your pcp conf file.
+#               Default is "%%PREFIX%%/etc/pcp.conf"
+# pgpool_user (uid):            User ID to run as (default nobody)
+# pgpool_stop_mode (string):    Shutdown mode
+#                               Default is "smart"
+#                               Possibilities are "smart", "fast", or "immediate"
+#
+
+. /etc/rc.subr
+
+name=pgpool
+rcvar=pgpool_enable
+
+load_rc_config $name
+
+: ${pgpool_enable="NO"}
+: ${pgpool_conf="%%PREFIX%%/etc/pgpool.conf"}
+: ${pgpool_hba="%%PREFIX%%/etc/pool_hba.conf"}
+: ${pgpool_pcp="%%PREFIX%%/etc/pcp.conf"}
+: ${pgpool_user="nobody"}
+: ${pgpool_stop_mode="smart"}
+
+command="%%PREFIX%%/bin/pgpool"
+command_args="-f ${pgpool_conf} -a ${pgpool_hba} -F ${pgpool_pcp}"
+stop_cmd="${command} -m ${pgpool_stop_mode} ${command_args} stop"
+reload_cmd="${command} ${command_args} reload"
+extra_commands="reload"
+
+required_files="${pgpool_conf}"
+
+
+run_rc_command "$1"
+
