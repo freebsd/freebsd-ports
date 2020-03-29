@@ -1143,6 +1143,8 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/ecpglib6-12.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libpq5-12.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pg_config-12.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pg_dump-12.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pgscripts-12.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/psql-12.mo
 %%NLS%%share/locale/he/LC_MESSAGES/libpq5-12.mo
 %%NLS%%share/locale/he/LC_MESSAGES/pg_config-12.mo
@@ -1162,6 +1164,9 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/ko/LC_MESSAGES/ecpglib6-12.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/libpq5-12.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_config-12.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/pg_dump-12.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/pgscripts-12.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/psql-12.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/ecpg-12.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/ecpglib6-12.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pg_config-12.mo
