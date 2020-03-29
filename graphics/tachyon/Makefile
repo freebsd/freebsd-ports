@@ -9,7 +9,7 @@ MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Multiproccess ray tracing system
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/lib/tachyon/Copyright
+LICENSE_FILE=	${WRKSRC}/../Copyright
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 WRKSRC_SUBDIR=	unix
