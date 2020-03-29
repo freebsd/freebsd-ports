@@ -1,0 +1,61 @@
+From: Gerald Pfeifer <gerald@pfeifer.com>
+To: wine-devel@winehq.org, Jacek Caban <jacek@codeweavers.com>
+Date: Sat, 28 Mar 2020 16:23:58 +0100 (CET)
+Subject: [PATCH] dbghelp: Define NT_GNU_BUILD_ID regardless of whether __ELF__ is defined.
+
+[ Jacek, this materialized as a consequence of your changes 
+  over the last 14 days, between Wine 5.4 and Wine 5.5. ]
+
+In dlls/dbghelp/module.c we have unconditional code like the following:
+
+    if (note[2] == NT_GNU_BUILD_ID)
+    {
+
+NT_GNU_BUILD_ID is #defined in image_private.h, which is #included by
+module.c, alas that definition is conditional on __ELF__ *not* being
+defined:
+
+  #ifndef __ELF__
+  :
+  #ifndef NT_GNU_BUILD_ID
+  #define NT_GNU_BUILD_ID 3
+  #endif
+  #endif
+
+This causes problems on some (newer) versions of FreeBSD, where
+apparently __ELF__ is defined while NT_GNU_BUILD_ID is not (at
+least not without including sys/elf_common.h which we do not).
+
+I do not have access to the version of FreeBSD 11.3 where that
+issue was reported.  It did successfully pass on a different 
+version of FreeBSD 11.3, though.
+
+Gerald
+
+
+Signed-off-by: Gerald Pfeifer <gerald@pfeifer.com>
+---
+ dlls/dbghelp/image_private.h | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+--- UTC
+diff --git a/dlls/dbghelp/image_private.h b/dlls/dbghelp/image_private.h
+index 9be6d3ebdc..d3c154b713 100644
+--- dlls/dbghelp/image_private.h
++++ dlls/dbghelp/image_private.h
+@@ -52,10 +52,11 @@
+ #ifndef SHT_NULL
+ #define SHT_NULL        0
+ #endif
++#endif
++
+ #ifndef NT_GNU_BUILD_ID
+ #define NT_GNU_BUILD_ID 3
+ #endif
+-#endif
+ 
+ /* structure holding information while handling an ELF image
+  * allows one by one section mapping for memory savings
+-- 
+2.25.0
+
