@@ -72,4 +72,8 @@ FFMPEGTHUMBNAILER_LIB_DEPENDS=	libffmpegthumbnailer.so:multimedia/ffmpegthumbnai
 
 NLS_CONFIGURE_ENABLE=	nls
 
+pre-build:
+	# fixes threaded build
+	@cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} gq-marshal.c
+
 .include <bsd.port.mk>
