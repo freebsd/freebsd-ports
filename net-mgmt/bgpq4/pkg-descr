@@ -1,0 +1,6 @@
+bgpq4 is a lightweight access-list/prefix-list/as-path access-list generator
+for Cisco, Juniper and many other routers and routing daemons.
+
+Support for IOS-XR and Mikrotik added over net-mgmt/bgpq3
+
+WWW: https://github.com/bgp/bgpq4
