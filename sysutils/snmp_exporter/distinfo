@@ -1,3 +1,3 @@
-TIMESTAMP = 1546895895
-SHA256 (prometheus-snmp_exporter-v0.14.0_GH0.tar.gz) = e530c4e2eec4520ec8223fc70270e316032ad9d37dca92980916d0ff1b41679c
-SIZE (prometheus-snmp_exporter-v0.14.0_GH0.tar.gz) = 1458373
+TIMESTAMP = 1585331319
+SHA256 (prometheus-snmp_exporter-v0.17.0_GH0.tar.gz) = ea95aa7f09217969c8f249b368b61efb5d5fe959ce934d55360da7b39c953c12
+SIZE (prometheus-snmp_exporter-v0.17.0_GH0.tar.gz) = 746706
