@@ -1,3 +1,3 @@
-TIMESTAMP = 1569926431
-SHA256 (memcached-1.5.19.tar.gz) = 3ddcdaa2d14d215f3111a7448b79c889c57618a26e97ad989581f1880a5a4be0
-SIZE (memcached-1.5.19.tar.gz) = 517380
+TIMESTAMP = 1585423128
+SHA256 (memcached-1.6.2.tar.gz) = 06720118c40689be0b85249b3dcb23c6e6d5e3ce53893aca9faced264145168b
+SIZE (memcached-1.6.2.tar.gz) = 536527
