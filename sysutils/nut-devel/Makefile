@@ -68,6 +68,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-group=${NUT_GROUP} \
 		--with-dev
 
+BUILD_DEPENDS=	asciidoc:textproc/asciidoc
+
 .if ${PORT_OPTIONS:MCGI}
 LIB_DEPENDS+=	libgd.so:graphics/gd
 CGIDIR?=	${PREFIX}/www/cgi-bin/${PORTNAME}
@@ -173,6 +175,10 @@ CONFIGURE_ARGS+=	--with-nss
 .else
 CONFIGURE_ARGS+=	--without-openssl --without-ssl
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -i '' -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/autogen.sh
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -i '' -e 's|/usr/bin/env python|${PYTHON_CMD}|'
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
