@@ -5,9 +5,6 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 PORTREVISION=	4
 CATEGORIES=	graphics kde kde-applications
 
-PATCH_SITES=	https://invent.kde.org/kde/okular/-/commit/
-PATCHFILES=	6a93a033b4f9248b3cd4d04689b8391df754e244.patch:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE universal document viewer
 
