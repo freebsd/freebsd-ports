@@ -14,6 +14,7 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/align4-2players.rcc
 %%DATADIR%%/rcc/align4.rcc
 %%DATADIR%%/rcc/alphabet-sequence.rcc
+%%DATADIR%%/rcc/baby_tangram.rcc
 %%DATADIR%%/rcc/baby_wordprocessor.rcc
 %%DATADIR%%/rcc/babymatch.rcc
 %%DATADIR%%/rcc/babyshapes.rcc
@@ -133,6 +134,7 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/planegame.rcc
 %%DATADIR%%/rcc/play_piano.rcc
 %%DATADIR%%/rcc/play_rhythm.rcc
+%%DATADIR%%/rcc/programmingMaze.rcc
 %%DATADIR%%/rcc/railroad.rcc
 %%DATADIR%%/rcc/readingh.rcc
 %%DATADIR%%/rcc/readingv.rcc
@@ -188,6 +190,7 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/translations/gcompris_ja.qm
 %%DATADIR%%/translations/gcompris_ko.qm
 %%DATADIR%%/translations/gcompris_lv.qm
+%%DATADIR%%/translations/gcompris_mk.qm
 %%DATADIR%%/translations/gcompris_ml.qm
 %%DATADIR%%/translations/gcompris_nb.qm
 %%DATADIR%%/translations/gcompris_nl.qm
