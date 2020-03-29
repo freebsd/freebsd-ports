@@ -145,6 +145,7 @@
     SUBDIR += linuxlibertine
     SUBDIR += linuxlibertine-g
     SUBDIR += lohit
+    SUBDIR += manrope
     SUBDIR += manu-gothica
     SUBDIR += material-icons-ttf
     SUBDIR += materialdesign-ttf
