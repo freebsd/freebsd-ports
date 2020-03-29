@@ -9,7 +9,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Environment variable manager for your shell
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
 
