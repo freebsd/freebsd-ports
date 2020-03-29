@@ -10,7 +10,7 @@ COMMENT=	Library for handling commodore 1541 disk images
 
 LICENSE=	BSD2CLAUSE
 
-USES=		gmake
+USES=		compiler:c11 gmake
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME} zimk:zimk
