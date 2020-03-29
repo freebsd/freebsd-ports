@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	miniflux
-DISTVERSION=	2.0.20
+DISTVERSION=	2.0.21
 CATEGORIES=	www
 
 MAINTAINER=	krion@FreeBSD.org
