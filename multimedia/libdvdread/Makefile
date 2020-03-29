@@ -15,6 +15,7 @@ COMMENT=	Videolan version of the libdvdread project
 LICENSE=	GPLv2
 
 USES=		tar:bz2 gmake libtool pathfix pkgconfig
+USE_CSTD=	c99
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
