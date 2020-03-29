@@ -353,6 +353,7 @@
     SUBDIR += wmxss
     SUBDIR += wofi
     SUBDIR += workrave
+    SUBDIR += wshowkeys
     SUBDIR += x11perf
     SUBDIR += x3270
     SUBDIR += xaniroc

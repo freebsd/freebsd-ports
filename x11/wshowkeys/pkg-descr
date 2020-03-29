@@ -1,0 +1,4 @@
+Displays keypresses on screen on supported Wayland compositors
+(requires wlr_layer_shell_v1 support).
+
+WWW: https://git.sr.ht/~sircmpwn/wshowkeys
