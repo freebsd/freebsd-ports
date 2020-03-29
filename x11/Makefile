@@ -498,6 +498,7 @@
     SUBDIR += xtermcontrol
     SUBDIR += xtermset
     SUBDIR += xtestpicture
+    SUBDIR += xtitle
     SUBDIR += xtoolwait
     SUBDIR += xtrans
     SUBDIR += xtrlock

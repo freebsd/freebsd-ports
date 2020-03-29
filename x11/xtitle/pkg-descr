@@ -1,0 +1,7 @@
+Outputs X window titles
+
+If arguments are given, outputs the title of each arguments, otherwise outputs
+the title of the active window and continue to output it as it changes if the
+snoop mode is on.
+
+WWW: https://github.com/baskerville/xtitle
