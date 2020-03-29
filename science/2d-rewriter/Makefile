@@ -5,7 +5,7 @@ PORTNAME=	2d-rewriter
 PORTVERSION=	1.6
 CATEGORIES=	science
 
-MAINTAINER=	iserikov@acm.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cellular automata simulator
 
 USES=		imake xorg
