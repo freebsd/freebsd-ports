@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyperrogue
-PORTVERSION=	11.3a
+PORTVERSION=	11.3f
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
