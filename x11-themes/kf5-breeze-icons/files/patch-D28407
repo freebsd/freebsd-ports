@@ -1,0 +1,55 @@
+From 0b3836d04d13259df44e668bd040edb0260cf2fb Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@FreeBSD.org>
+Date: Sun, 29 Mar 2020 16:57:15 +0200
+Subject: [PATCH] Fix configure when xmllint is not present
+
+Summary:
+The breeze-validate-svg target is only generated when xmllint is found.
+breeze-generate-24px-versions cannot be added as a dependency, unless
+the target exists.
+
+Reviewers: kossebau
+
+Subscribers: kde-frameworks-devel
+
+Tags: #frameworks
+
+Differential Revision: https://phabricator.kde.org/D28407
+---
+ icons-dark/CMakeLists.txt | 4 +++-
+ icons/CMakeLists.txt      | 4 +++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git icons-dark/CMakeLists.txt icons-dark/CMakeLists.txt
+index f493c4e4..b4c812c5 100644
+--- icons-dark/CMakeLists.txt
++++ icons-dark/CMakeLists.txt
+@@ -17,7 +17,9 @@ if(NOT WIN32)
+         COMMAND ${BASH_EXE} ${CMAKE_SOURCE_DIR}/generate-24px-versions.sh ${CMAKE_CURRENT_BINARY_DIR}/generated/
+         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+     )
+-    add_dependencies(breeze-validate-svg breeze-generate-24px-versions-dark)
++    if (TARGET breeze-validate-svg)
++        add_dependencies(breeze-validate-svg breeze-generate-24px-versions-dark)
++    endif()
+     if(NOT SKIP_INSTALL_ICONS)
+         install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/generated/ DESTINATION ${BREEZE_INSTALL_DIR})
+     endif()
+diff --git icons/CMakeLists.txt icons/CMakeLists.txt
+index 7e6495d9..75f6f5f3 100644
+--- icons/CMakeLists.txt
++++ icons/CMakeLists.txt
+@@ -17,7 +17,9 @@ if(NOT WIN32)
+         COMMAND ${BASH_EXE} ${CMAKE_SOURCE_DIR}/generate-24px-versions.sh ${CMAKE_CURRENT_BINARY_DIR}/generated/
+         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+     )
+-    add_dependencies(breeze-validate-svg breeze-generate-24px-versions)
++    if (TARGET breeze-validate-svg)
++        add_dependencies(breeze-validate-svg breeze-generate-24px-versions)
++    endif()
+     if(NOT SKIP_INSTALL_ICONS)
+         install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/generated/ DESTINATION ${BREEZE_INSTALL_DIR})
+     endif()
+-- 
+2.25.2
+
