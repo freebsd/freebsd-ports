@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	5.1.1
+PORTVERSION=	5.2.1
 CATEGORIES=	databases
 
 MAINTAINER=	daniel@blodan.se
