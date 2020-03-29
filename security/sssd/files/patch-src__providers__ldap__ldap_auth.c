@@ -1,6 +1,4 @@
-diff --git src/providers/ldap/ldap_auth.c src/providers/ldap/ldap_auth.c
-index 2aacce0..e019cf7 100644
---- src/providers/ldap/ldap_auth.c
+--- src/providers/ldap/ldap_auth.c.orig	2014-09-17 13:01:37 UTC
 +++ src/providers/ldap/ldap_auth.c
 @@ -37,7 +37,6 @@
  #include <sys/time.h>
@@ -33,7 +31,7 @@ index 2aacce0..e019cf7 100644
  static errno_t add_expired_warning(struct pam_data *pd, long exp_time)
  {
      int ret;
-@@ -109,6 +124,7 @@ static errno_t check_pwexpire_kerberos(const char *expire_date, time_t now,
+@@ -109,6 +124,7 @@ static errno_t check_pwexpire_kerberos(const char *exp
          return EINVAL;
      }
  
@@ -41,7 +39,7 @@ index 2aacce0..e019cf7 100644
      expire_time = mktime(&tm);
      if (expire_time == -1) {
          DEBUG(SSSDBG_CRIT_FAILURE,
-@@ -116,12 +132,10 @@ static errno_t check_pwexpire_kerberos(const char *expire_date, time_t now,
+@@ -116,12 +132,10 @@ static errno_t check_pwexpire_kerberos(const char *exp
          return EINVAL;
      }
  
@@ -66,7 +64,7 @@ index 2aacce0..e019cf7 100644
  
      if (pd->cmd != SSS_PAM_CHAUTHTOK && pd->cmd != SSS_PAM_CHAUTHTOK_PRELIM) {
          DEBUG(SSSDBG_OP_FAILURE,
-@@ -1069,7 +1083,7 @@ static void sdap_auth4chpass_done(struct tevent_req *req)
+@@ -1069,7 +1083,7 @@ static void sdap_auth4chpass_done(struct tevent_req *r
          dp_err = DP_ERR_OFFLINE;
          break;
      default:
@@ -75,7 +73,7 @@ index 2aacce0..e019cf7 100644
      }
  
  done:
-@@ -1131,7 +1145,7 @@ static void sdap_pam_chpass_done(struct tevent_req *req)
+@@ -1131,7 +1145,7 @@ static void sdap_pam_chpass_done(struct tevent_req *re
                                                      state->sh, state->dn,
                                                      lastchanged_name);
          if (subreq == NULL) {
@@ -84,7 +82,7 @@ index 2aacce0..e019cf7 100644
              goto done;
          }
  
-@@ -1152,7 +1166,7 @@ static void sdap_lastchange_done(struct tevent_req *req)
+@@ -1152,7 +1166,7 @@ static void sdap_lastchange_done(struct tevent_req *re
  
      ret = sdap_modify_shadow_lastchange_recv(req);
      if (ret != EOK) {

@@ -1,6 +1,4 @@
-diff --git src/sss_client/sss_nss.exports src/sss_client/sss_nss.exports
-index 1eefea8..8e85a05 100644
---- src/sss_client/sss_nss.exports
+--- src/sss_client/sss_nss.exports.orig	2014-09-17 13:01:37 UTC
 +++ src/sss_client/sss_nss.exports
 @@ -3,6 +3,7 @@ EXPORTED {
  	# public functions
@@ -10,13 +8,13 @@ index 1eefea8..8e85a05 100644
  		_nss_sss_getpwnam_r;
  		_nss_sss_getpwuid_r;
  		_nss_sss_setpwent;
-@@ -14,8 +15,25 @@ EXPORTED {
+@@ -14,7 +15,24 @@ EXPORTED {
  		_nss_sss_setgrent;
  		_nss_sss_getgrent_r;
  		_nss_sss_endgrent;
 +		_nss_sss_getgroupmembership;
  		_nss_sss_initgroups_dyn;
- 
++
 +		__nss_compat_getgrnam_r;
 +		__nss_compat_getgrgid_r;
 +		__nss_compat_getgrent_r;
@@ -32,7 +30,6 @@ index 1eefea8..8e85a05 100644
 +		__nss_compat_gethostbyname;
 +		__nss_compat_gethostbyname2;
 +		__nss_compat_gethostbyaddr;
-+
+ 
  		#_nss_sss_getaliasbyname_r;
  		#_nss_sss_setaliasent;
- 		#_nss_sss_getaliasent_r;

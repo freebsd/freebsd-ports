@@ -1,6 +1,4 @@
-diff --git src/util/signal.c src/util/signal.c
-index 053457b..bb8f8be 100644
---- src/util/signal.c
+--- src/util/signal.c.orig	2014-09-17 13:01:37 UTC
 +++ src/util/signal.c
 @@ -28,45 +28,6 @@
   * @brief Signal handling
@@ -48,10 +46,11 @@ index 053457b..bb8f8be 100644
  /**
   Block sigs.
  **/
-@@ -126,21 +87,3 @@ void (*CatchSignal(int signum,void (*handler)(int )))(int)
+@@ -125,22 +86,4 @@ void (*CatchSignal(int signum,void (*handler)(int )))(
+ 	/* FIXME: need to handle sigvec and systems with broken signal() */
  	return signal(signum, handler);
  #endif
- }
+-}
 -
 -/**
 - Ignore SIGCLD via whatever means is necessary for this OS.
@@ -69,4 +68,4 @@ index 053457b..bb8f8be 100644
 -void CatchChildLeaveStatus(void)
 -{
 -	CatchSignal(SIGCLD, sig_cld_leave_status);
--}
+ }

@@ -1,8 +1,6 @@
-diff --git src/providers/ldap/sdap_access.c src/providers/ldap/sdap_access.c
-index 880735e..d349dcf 100644
---- src/providers/ldap/sdap_access.c
+--- src/providers/ldap/sdap_access.c.orig	2014-09-17 13:01:37 UTC
 +++ src/providers/ldap/sdap_access.c
-@@ -499,6 +499,7 @@ static bool nds_check_expired(const char *exp_time_str)
+@@ -499,6 +499,7 @@ static bool nds_check_expired(const char *exp_time_str
          return true;
      }
  
@@ -10,7 +8,7 @@ index 880735e..d349dcf 100644
      expire_time = mktime(&tm);
      if (expire_time == -1) {
          DEBUG(SSSDBG_CRIT_FAILURE,
-@@ -506,13 +507,11 @@ static bool nds_check_expired(const char *exp_time_str)
+@@ -506,13 +507,11 @@ static bool nds_check_expired(const char *exp_time_str
          return true;
      }
  

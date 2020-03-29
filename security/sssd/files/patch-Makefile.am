@@ -1,6 +1,4 @@
-diff --git Makefile.am Makefile.am
-index fd74d85..4a7e6ae 100644
---- Makefile.am
+--- Makefile.am.orig	2020-03-16 18:30:24 UTC
 +++ Makefile.am
 @@ -311,6 +311,7 @@ AM_CPPFLAGS = \
      $(LIBNL_CFLAGS) \
@@ -59,3 +57,12 @@ index fd74d85..4a7e6ae 100644
      $(KRB5_LIBS)
  
  proxy_child_SOURCES = \
+@@ -2333,7 +2338,7 @@ else
+ 	mkdir -p $(DESTDIR)$(initdir)
+ endif
+ 
+-install-data-hook:
++notinstall-data-hook:
+ 	rm $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2 \
+        $(DESTDIR)/$(nsslibdir)/libnss_sss.so
+ 	mv $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2.0.0 $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2

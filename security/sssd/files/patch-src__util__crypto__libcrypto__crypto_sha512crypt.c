@@ -1,6 +1,4 @@
-diff --git src/util/crypto/libcrypto/crypto_sha512crypt.c src/util/crypto/libcrypto/crypto_sha512crypt.c
-index 34547d0..6901851 100644
---- src/util/crypto/libcrypto/crypto_sha512crypt.c
+--- src/util/crypto/libcrypto/crypto_sha512crypt.c.orig	2014-09-17 13:01:37 UTC
 +++ src/util/crypto/libcrypto/crypto_sha512crypt.c
 @@ -28,6 +28,12 @@
  #include <openssl/evp.h>

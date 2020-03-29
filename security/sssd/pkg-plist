@@ -5,7 +5,6 @@ etc/dbus-1/system.d/org.freedesktop.sssd.infopipe.conf
 include/ipa_hbac.h
 include/sss_idmap.h
 include/sss_nss_idmap.h
-%%SMB%%lib/krb5/plugins/authdata/sssd_pac_plugin.so
 lib/krb5/plugins/libkrb5/sssd_krb5_locator_plugin.so
 lib/libipa_hbac.so
 lib/libipa_hbac.so.0
@@ -56,7 +55,6 @@ libexec/sssd/sss_signal
 libexec/sssd/sssd_be
 libexec/sssd/sssd_ifp
 libexec/sssd/sssd_nss
-%%SMB%%libexec/sssd/sssd_pac
 libexec/sssd/sssd_pam
 libexec/sssd/sssd_ssh
 libexec/sssd/sssd_sudo
@@ -190,7 +188,7 @@ sbin/sssd
 %%PORTDOCS%%@dir %%DOCSDIR%%/idmap_doc
 %%PORTDOCS%%@dir %%DOCSDIR%%/libsss_sudo_doc
 %%PORTDOCS%%@dir %%DOCSDIR%%/nss_idmap_doc
-@unexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi
-@unexec if [ -d /var/db/sss ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/db/sss`` to remove any additional files."; fi
-@unexec if [ -d /var/db/sss_mc ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/db/sss_mc`` to remove any additional files."; fi
-@unexec if [ -d /var/run/sss ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/run/sss`` to remove any additional files."; fi
+@postexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi
+@postexec if [ -d /var/db/sss ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/db/sss`` to remove any additional files."; fi
+@postexec if [ -d /var/db/sss_mc ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/db/sss_mc`` to remove any additional files."; fi
+@postexec if [ -d /var/run/sss ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/run/sss`` to remove any additional files."; fi

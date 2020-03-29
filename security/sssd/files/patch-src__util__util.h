@@ -1,6 +1,4 @@
-diff --git src/util/util.h src/util/util.h
-index 7a66846..5e63275 100644
---- src/util/util.h
+--- src/util/util.h.orig	2014-09-17 13:01:37 UTC
 +++ src/util/util.h
 @@ -227,8 +227,6 @@ void sig_term(int sig);
  #include <signal.h>

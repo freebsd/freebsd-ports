@@ -3,7 +3,7 @@
 
 PORTNAME=	sssd
 PORTVERSION=	1.11.7
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	security
 MASTER_SITES=	https://releases.pagure.org/SSSD/${PORTNAME}/
 
@@ -37,6 +37,12 @@ BUILD_DEPENDS=	xmlcatalog:textproc/libxml2 \
 		krb5>=1.10:security/krb5 \
 		nsupdate:dns/bind-tools
 
+USES=		autoreconf cpe gettext gmake iconv libtool pathfix pkgconfig \
+		python:2.7 shebangfix gssapi:mit
+
+USE_LDCONFIG=	yes
+USE_OPENLDAP=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-selinux=no --with-semanage=no \
 		--with-ldb-lib-dir=${LOCALBASE}/lib/shared-modules/ldb \
@@ -55,10 +61,6 @@ PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 MAKE_ENV+=	LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
 SUB_FILES=	pkg-message
 
-USE_LDCONFIG=	yes
-USE_OPENLDAP=	yes
-USES=		autoreconf cpe gettext gmake iconv libtool pathfix pkgconfig \
-		python:2.7 shebangfix gssapi:mit
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	fedoraproject
 
