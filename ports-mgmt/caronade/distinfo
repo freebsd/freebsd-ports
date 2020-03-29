@@ -1,7 +1,7 @@
-TIMESTAMP = 1571993646
-SHA256 (decke-caronade-v0.3.0_GH0.tar.gz) = 3a7159f6cb13d6227ab70b3d1cf8a842cc175350ecccf8f655d13ef0455d4426
-SIZE (decke-caronade-v0.3.0_GH0.tar.gz) = 50809
+TIMESTAMP = 1585512442
+SHA256 (decke-caronade-v0.3.1_GH0.tar.gz) = aaf95170ff26418dfd494f52b0ad29e59bb1990f96d2dec1f7206dde758c4cf9
+SIZE (decke-caronade-v0.3.1_GH0.tar.gz) = 50771
 SHA256 (NYTimes-gziphandler-v1.1.1_GH0.tar.gz) = c236c216a16e4286338e66e0947938944992f918fe827c31f8745c0be98818d2
 SIZE (NYTimes-gziphandler-v1.1.1_GH0.tar.gz) = 52107
-SHA256 (go-yaml-yaml-v2.2.4_GH0.tar.gz) = 9004c9709200d52ef6e5c69af3f71f3adb1a2b7e884ea7597f306bf54b1f007c
-SIZE (go-yaml-yaml-v2.2.4_GH0.tar.gz) = 72209
+SHA256 (go-yaml-yaml-v2.2.8_GH0.tar.gz) = 9632d0760e9a07c414f2b2b6cd453d6225e42ecea77906883b23f1f1d0546045
+SIZE (go-yaml-yaml-v2.2.8_GH0.tar.gz) = 72732
