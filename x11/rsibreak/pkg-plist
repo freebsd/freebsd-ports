@@ -63,7 +63,6 @@ share/icons/hicolor/48x48/actions/rsibreakx.png
 share/knotifications5/rsibreak.notifyrc
 share/locale/ar/LC_MESSAGES/rsibreak.mo
 share/locale/be/LC_MESSAGES/rsibreak.mo
-share/locale/bs/LC_MESSAGES/rsibreak.mo
 share/locale/ca/LC_MESSAGES/rsibreak.mo
 share/locale/ca@valencia/LC_MESSAGES/rsibreak.mo
 share/locale/cs/LC_MESSAGES/rsibreak.mo
@@ -82,7 +81,7 @@ share/locale/hi/LC_MESSAGES/rsibreak.mo
 share/locale/hne/LC_MESSAGES/rsibreak.mo
 share/locale/hr/LC_MESSAGES/rsibreak.mo
 share/locale/hu/LC_MESSAGES/rsibreak.mo
-share/locale/is/LC_MESSAGES/rsibreak.mo
+share/locale/ia/LC_MESSAGES/rsibreak.mo
 share/locale/it/LC_MESSAGES/rsibreak.mo
 share/locale/ja/LC_MESSAGES/rsibreak.mo
 share/locale/km/LC_MESSAGES/rsibreak.mo
@@ -99,7 +98,6 @@ share/locale/pt/LC_MESSAGES/rsibreak.mo
 share/locale/pt_BR/LC_MESSAGES/rsibreak.mo
 share/locale/ro/LC_MESSAGES/rsibreak.mo
 share/locale/ru/LC_MESSAGES/rsibreak.mo
-share/locale/se/LC_MESSAGES/rsibreak.mo
 share/locale/sk/LC_MESSAGES/rsibreak.mo
 share/locale/sl/LC_MESSAGES/rsibreak.mo
 share/locale/sv/LC_MESSAGES/rsibreak.mo
