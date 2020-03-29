@@ -17,13 +17,14 @@ database migrations will be executed.
 
 The following steps are required to finish the upgrade: 
 
-1. Run database migrations, collect static files, remove stale content files
-   and clear all cached data:
+1. Run database migrations, collect static files, remove stale content files,
+   delete any expired user sessions and clear all cached data:
 
 # cd %%DATADIR%%
 # python%%PYTHON_VER%% manage.py migrate
 # python%%PYTHON_VER%% manage.py collectstatic --no-input
 # python%%PYTHON_VER%% manage.py remove_stale_contenttypes --no-input
+# python%%PYTHON_VER%% manage.py clearsessions
 # python%%PYTHON_VER%% manage.py invalidate all
 
 2. Restart WSGI/httpd environment (supervisord/apache/nginx/etc.)
@@ -168,6 +169,16 @@ files) are now required after each update of NetBox.
 
 These were added to the existing update instructions which are displayed with
 each update.
+EOD
+}
+{ type: upgrade
+  maximum_version: 2.7.10
+  message: <<EOD
+Please note that another additional step (delete expired user sessions) is now
+required after each update of NetBox.
+
+That step was added to the existing update instructions which are displayed
+with each update.
 EOD
 }
 ]
