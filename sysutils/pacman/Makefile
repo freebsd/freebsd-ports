@@ -3,6 +3,7 @@
 
 PORTNAME=	pacman
 PORTVERSION=	5.1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://sources.archlinux.org/other/${PORTNAME}/ \
 		https://mirror.amdmi3.ru/distfiles/
@@ -24,7 +25,8 @@ SHEBANG_FILES=	${WRKSRC}/scripts/makepkg-template.pl.in \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-root-dir="${PACMAN_ROOT}" \
 		--localstatedir=/var
-CONFIGURE_ENV=	LIBSSL_CFLAGS="-I${OPENSSLINC}" LIBSSL_LIBS="-L${OPENSSLLIB}"
+CONFIGURE_ENV=	LIBSSL_CFLAGS="-I${OPENSSLINC}" \
+		LIBSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 USE_LDCONFIG=	yes
 BINARY_WRAPPERS=	gm4
 
@@ -50,10 +52,6 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300000
-BROKEN=		does not build (undefined reference to MD5_Final)
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|m4|gm4|' ${WRKSRC}/scripts/Makefile.in
