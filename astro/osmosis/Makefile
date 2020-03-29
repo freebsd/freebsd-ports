@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	osmosis
-PORTVERSION=	0.47
+PORTVERSION=	0.47.3
 CATEGORIES=	astro java
-MASTER_SITES=	http://bretth.dev.openstreetmap.org/osmosis-build/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://github.com/openstreetmap/osmosis/releases/download/${PORTVERSION}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Command line Java app for processing OpenStreetMap data
