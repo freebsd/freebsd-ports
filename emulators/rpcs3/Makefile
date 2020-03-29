@@ -7,7 +7,6 @@ DISTVERSIONSUFFIX=	-gf5a51599d
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	713df966dd52.patch:-p1 # https://github.com/RPCS3/rpcs3/pull/7878
 PATCHFILES+=	7a198b85b8b2.patch:-p1 # https://github.com/RPCS3/rpcs3/pull/7880
 PATCHFILES+=	f567ebcf74d1.patch:-p1 # https://github.com/RPCS3/rpcs3/pull/7882
 
