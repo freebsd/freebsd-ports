@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osc
-PORTVERSION=	0.167.2
+PORTVERSION=	0.168.2
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -11,16 +11,13 @@ COMMENT=	Command Line Interface to work with an openSUSE Build Service
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-09-15
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>0:security/py-m2crypto@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openSUSE
 
-USES=		cpe python:2.7
-USE_PYTHON=	autoplist distutils
+USES=		cpe python
+USE_PYTHON=	autoplist distutils noflavors
 PLIST_FILES=	bin/osc
 NO_ARCH=	yes
 
