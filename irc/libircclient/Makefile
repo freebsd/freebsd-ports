@@ -12,6 +12,7 @@ COMMENT=	IRC library to create IRC clients
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		compiler:c11
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
