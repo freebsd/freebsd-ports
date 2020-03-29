@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	roxterm
-PORTVERSION=	3.8.4
+PORTVERSION=	3.8.5
 CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
