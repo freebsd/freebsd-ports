@@ -12,10 +12,8 @@
 # wireguard_interfaces (str): List of interfaces to bring up/down
 #                             on start/stop. (eg: "wg0 wg1")
 #                             (default: "")
-# wireguard_impl (str):       Wireguard userspace implementation
-#                             (default: "wireguard-go")
-#                             Possible choices:
-#                                wireguard-go, boringtun
+# wireguard_env (str):        Environment variables for the userspace
+#                             implementation. (eg: "LOG_LEVEL=debug")
 
 . /etc/rc.subr
 
@@ -27,7 +25,7 @@ stop_cmd="${name}_stop"
 
 wireguard_start()
 {
-	export WG_QUICK_USERSPACE_IMPLEMENTATION=${wireguard_impl}
+	${wireguard_env:+eval export $wireguard_env}
 
 	for interface in ${wireguard_interfaces}; do
 		%%PREFIX%%/bin/wg-quick up ${interface}
@@ -45,6 +43,6 @@ load_rc_config $name
 
 : ${wireguard_enable="NO"}
 : ${wireguard_interfaces=""}
-: ${wireguard_impl="wireguard-go"}
+: ${wireguard_env=""}
 
 run_rc_command "$1"
