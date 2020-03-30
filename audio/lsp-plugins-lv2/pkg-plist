@@ -101,7 +101,7 @@
 %%JACK%%bin/lsp-plugins-trigger-mono
 %%JACK%%bin/lsp-plugins-trigger-stereo
 %%JACK%%etc/xdg/menus/applications-merged/lsp-plugins.menu
-%%JACK%%lib/lsp-plugins/lsp-plugins-jack-core-1.1.14.so
+%%JACK%%lib/lsp-plugins/lsp-plugins-jack-core-1.1.15.so
 %%JACK%%lib/lsp-plugins/lsp-plugins-r3d-glx.so
 lib/lv2/lsp-plugins.lv2/comp_delay_mono.ttl
 lib/lv2/lsp-plugins.lv2/comp_delay_stereo.ttl
@@ -311,4 +311,12 @@ lib/lv2/lsp-plugins.lv2/trigger_stereo.ttl
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_trigger_mono.desktop
 %%JACK%%share/applications/in.lsp_plug.lsp_plugins_trigger_stereo.desktop
 %%JACK%%share/desktop-directories/lsp-plugins.directory
-%%JACK%%share/icons/hicolor/scalable/apps/lsp-plugins.png
+%%JACK%%share/icons/hicolor/128x128/apps/lsp-plugins.png
+%%JACK%%share/icons/hicolor/16x16/apps/lsp-plugins.png
+%%JACK%%share/icons/hicolor/22x22/apps/lsp-plugins.png
+%%JACK%%share/icons/hicolor/24x24/apps/lsp-plugins.png
+%%JACK%%share/icons/hicolor/256x256/apps/lsp-plugins.png
+%%JACK%%share/icons/hicolor/32x32/apps/lsp-plugins.png
+%%JACK%%share/icons/hicolor/48x48/apps/lsp-plugins.png
+%%JACK%%share/icons/hicolor/64x64/apps/lsp-plugins.png
+%%JACK%%share/icons/hicolor/scalable/apps/lsp-plugins.svg
