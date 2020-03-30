@@ -2,20 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	passlib
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Python password hashing framework supporting over 30 schemes
+COMMENT=	Comprehensive password hashing framework supporting over 30 schemes
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.1:devel/py-nose@${PY_FLAVOR}
 
-# Python 2.6,3.3-3.6
+# Python 2.6,3.3-3.8
 USES=		python
 USE_PYTHON=	autoplist distutils
 
