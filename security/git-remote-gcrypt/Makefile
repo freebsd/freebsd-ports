@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-remote-gcrypt
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -11,11 +11,12 @@ COMMENT=	PGP-encrypt git remotes
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	rst2man:textproc/py-docutils
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}
 RUN_DEPENDS=	rsync:net/rsync \
 		curl:ftp/curl \
 		gpg:security/gnupg
 
+USES=		python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	spwhitton
 MAKE_ENV=	DESTDIR=${STAGEDIR}
