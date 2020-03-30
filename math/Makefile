@@ -370,6 +370,7 @@
     SUBDIR += lis
     SUBDIR += lll_spect
     SUBDIR += lp_solve
+    SUBDIR += lrcalc
     SUBDIR += lrng
     SUBDIR += lrslib
     SUBDIR += ltl

@@ -1,0 +1,11 @@
+The Littlewood-Richardson Calculator is a program designed to compute
+Littlewood-Richardson coefficients. This program is written in the C language to
+make the computation as efficient as possible. The program can compute single
+Littlewood-Richardson coefficients, products of Schur functions, or skew Schur
+functions. In addition it can compute products in the small quantum cohomology
+ring of a Grassmann variety. The software package also includes a program that
+performs fast computation of the more general multiplicative structure constants
+of Schubert polynomials.
+
+WWW: https://sites.math.rutgers.edu/~asbuch/lrcalc/
+WWW: https://bitbucket.org/asbuch/lrcalc/
