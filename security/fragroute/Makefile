@@ -3,7 +3,7 @@
 
 PORTNAME=	fragroute
 PORTVERSION=	1.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	security net
 MASTER_SITES=	http://monkey.org/~dugsong/fragroute/ \
 		PACKETSTORM/UNIX/security
