@@ -19,9 +19,11 @@
 
 name=wireguard
 rcvar=wireguard_enable
+extra_commands="reload"
 
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
+reload_cmd="${name}_reload"
 
 wireguard_start()
 {
@@ -36,6 +38,18 @@ wireguard_stop()
 {
 	for interface in ${wireguard_interfaces}; do
 		%%PREFIX%%/bin/wg-quick down ${interface}
+	done
+}
+
+wireguard_reload()
+{
+	${wireguard_env:+eval export $wireguard_env}
+
+	for interface in ${wireguard_interfaces}; do
+		tmpfile="`mktemp`"
+		%%PREFIX%%/bin/wg-quick strip ${interface} > ${tmpfile}
+		%%PREFIX%%/bin/wg syncconf ${interface} ${tmpfile}
+		rm -f ${tmpfile}
 	done
 }
 
