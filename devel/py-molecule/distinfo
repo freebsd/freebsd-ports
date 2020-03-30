@@ -1,3 +1,3 @@
-TIMESTAMP = 1563826185
-SHA256 (molecule-2.20.2.tar.gz) = 9dc29b9ef172b26532752784687faca2e868c84e2d90f0b4f018d81d76a8b30a
-SIZE (molecule-2.20.2.tar.gz) = 251623
+TIMESTAMP = 1585511014
+SHA256 (molecule-2.22.tar.gz) = d9d7621167041ae2a8eb19f1f8dc23c071cdab2cd3ca80655e2c8796b4c00e09
+SIZE (molecule-2.22.tar.gz) = 281356
