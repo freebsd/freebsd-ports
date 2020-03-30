@@ -5,7 +5,7 @@ libexec/jove/recover
 man/man1/jove.1.gz
 man/man1/teachjove.1.gz
 %%DATADIR%%/XTermresource
-%%DATADIR%%/cmds.doc
+%%EXTRADOCS%%%%DATADIR%%/cmds.doc
 %%DATADIR%%/jove.rc
 %%DATADIR%%/jove.rc.3022
 %%DATADIR%%/jove.rc.sun
