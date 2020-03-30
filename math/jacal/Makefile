@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jacal
-PORTVERSION=	1c4
-PORTREVISION=	2
+PORTVERSION=	1c7
 CATEGORIES=	math
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/
 
@@ -15,18 +14,18 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	scm:lang/scm \
 		${LOCALBASE}/share/slib/require.scm:lang/slib
 
-WRKSRC=		${WRKDIR}/jacal
+USES=		gmake makeinfo zip
 
-USES=		gmake perl5 zip
+HAS_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 NO_BUILD=	yes
 
 INFO=		jacal
 
-do-configure:
-	cd ${WRKSRC}; \
-	${FIND} . -type f -exec ${PERL} -spi -e 's|%%PREFIX%%|${PREFIX}|' {} ';'
-	cd ${WRKSRC}; \
-	./configure
+post-patch:
+	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -i '' -e 's|%%PREFIX%%|${PREFIX}|' {} \;
+	${CHMOD} +x ${WRKSRC}/configure
 
 post-install:
 	${SED} -i '' -e 's|${STAGEDIR}${PREFIX}|${PREFIX}|g' ${STAGEDIR}${PREFIX}/bin/jacal

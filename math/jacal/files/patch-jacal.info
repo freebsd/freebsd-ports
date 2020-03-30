@@ -1,14 +1,14 @@
---- ./jacal.info.orig	Mon Dec  1 04:55:18 2003
-+++ ./jacal.info	Mon Feb 14 21:46:12 2005
-@@ -213,9 +213,9 @@
+--- jacal.info.orig	2020-03-30 19:59:43 UTC
++++ jacal.info
+@@ -201,9 +201,9 @@ interactive session.
  This may involve setting up that implementation's initialization file or
- LOADing a `.init' file from the `slib' directory.  Then type:
+ LOADing a '.init' file from the 'slib' directory.  Then type:
  
 -     (slib:load "/usr/local/lib/jacal/math")
 +     (slib:load "%%PREFIX%%/lib/jacal/math")
  
--where `/usr/local/lib/jacal/' is a path to the JACAL directory.  JACAL
-+where `%%PREFIX%%/lib/jacal/' is a path to the JACAL directory.  JACAL
+-where '/usr/local/lib/jacal/' is a path to the JACAL directory.  JACAL
++where '%%PREFIX%%/lib/jacal/' is a path to the JACAL directory.  JACAL
  should then print:
  
-      JACAL version 1b4, Copyright 1989-1999, 2002 Aubrey Jaffer               |
+      JACAL version 1c7, Copyright 1989-2020 Aubrey Jaffer                     |

@@ -1,45 +1,15 @@
---- Makefile.orig	2012-03-28 01:06:27.000000000 +0600
-+++ Makefile	2012-03-28 01:06:39.000000000 +0600
-@@ -51,9 +51,6 @@
+--- Makefile.orig	2020-03-03 01:38:48 UTC
++++ Makefile
+@@ -25,7 +25,7 @@ SHELL = /bin/sh
+ INSTALL = install
+ INSTALL_PROGRAM = ${INSTALL}
+ INSTALL_DATA = ${INSTALL} -m 644
+-INSTALL_INFO = ginstall-info
++INSTALL_INFO = install-info
  
- # ./configure --distdir=${HOME}/dist/ --snapdir=${HOME}/pub/ --docdir=${HOME}/public_html/
- 
--config.status:
--	./configure
--Makefile: config.status
- include config.status
- 
- prevdocsdir = prevdocs/
-@@ -86,9 +83,6 @@
- 	mkdir -p $(DESTDIR)$(jacallibdir)
- 	mkdir -p $(DESTDIR)$(bindir)
- 	mkdir -p $(DESTDIR)$(infodir)
--	mkdir -p $(DESTDIR)$(htmldir)
--	mkdir -p $(DESTDIR)$(pdfdir)
--	mkdir -p $(DESTDIR)$(dvidir)
- 
- jacal.dvi: jacal.texi version.txi
- 	$(TEXI2DVI) -b -c $<
-@@ -142,16 +136,8 @@
- 	cd DOC/; pdflatex ratint.tex
- 	$(INSTALL_DATA) DOC/ratint.pdf $(DESTDIR)$(pdfdir)
- 
--jacal-$(VERSION).info: jacal.texi version.txi
--	$(MAKEINFO) $< --no-split -o $@
--jacal.info: jacal-$(VERSION).info
--	if [ -f $(prevdocsdir)jacal.info ];\
--	  then infobar $(prevdocsdir)jacal.info $< $@;\
--	  else cp jacal-$(VERSION).info jacal.info;fi
--$(DESTDIR)$(infodir)jacal.info:	jacal.info
--	$(INSTALL_DATA) $< $@
--	-$(INSTALL_INFO) $@ $(DESTDIR)$(infodir)dir
--	-rm $(DESTDIR)$(infodir)-jacal.info.gz
-+$(DESTDIR)$(infodir)jacal.info:        jacal.texi version.txi
-+	$(INSTALL_DATA) jacal.info $@
- install-info:	$(DESTDIR)$(infodir)jacal.info
- info:	install-info
- $(DESTDIR)$(infodir)jacal.info.gz: $(DESTDIR)$(infodir)jacal.info
-@@ -195,7 +181,6 @@
+ CHPAT = $(HOME)/bin/chpat
+ MAKEDEV = $(MAKE) -f $(HOME)/makefile.dev
+@@ -196,7 +196,6 @@ install-script: jacal.sh installdirs
  	$(INSTALL_DATA) go-scm $(DESTDIR)$(jacallibdir)go.scm
  	rm go-scm
  	echo '#! /bin/sh'			   > jacal-script

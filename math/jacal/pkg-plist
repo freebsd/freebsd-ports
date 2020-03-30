@@ -3,6 +3,7 @@ lib/jacal/COPYING
 lib/jacal/English.scm
 lib/jacal/HELP
 lib/jacal/Makefile
+lib/jacal/anti-diff.scm
 lib/jacal/builtin.scm
 lib/jacal/combin.scm
 lib/jacal/debug.scm

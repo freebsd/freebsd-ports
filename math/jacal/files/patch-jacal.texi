@@ -1,6 +1,6 @@
---- ./jacal.texi.orig	Sun Nov 30 22:29:33 2003
-+++ ./jacal.texi	Mon Feb 14 21:44:19 2005
-@@ -344,11 +344,11 @@
+--- jacal.texi.orig	2020-03-30 18:15:54 UTC
++++ jacal.texi
+@@ -266,11 +266,11 @@ This may involve setting up that implementation's init
  LOADing a @samp{.init} file from the @file{slib} directory.  Then type:
  
  @example
