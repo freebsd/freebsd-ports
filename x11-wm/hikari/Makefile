@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hikari
-DISTVERSION=	1.0.0-rc2
+DISTVERSION=	1.0.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://hikari.acmelabs.space/releases/
 
