@@ -15,7 +15,9 @@ USES=		autoreconf compiler:c11 gmake localbase ncurses pkgconfig \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	okbob
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-inotify
 
 SUB_FILES=	pkg-message
 
