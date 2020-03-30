@@ -5,5 +5,6 @@ include/janet/janetconf.h
 lib/janet/.keep
 lib/libjanet.a
 lib/libjanet.so
+libdata/pkgconfig/janet.pc
 man/man1/janet.1.gz
 man/man1/jpm.1.gz
