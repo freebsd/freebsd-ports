@@ -1,0 +1,14 @@
+This Package provides BeautifulTable class for easily printing tabular data in a
+visually appealing ASCII format to a terminal.
+
+Features included but not limited to:
+- Full customization of the look and feel of the table
+- Build the Table as you wish, By adding rows, or by columns or even mixing both
+  these approaches.
+- Full support for colors using ANSI sequences or any library of your choice. It
+  just works.
+- Plenty of predefined styles for multiple use cases and option to create custom
+  ones.
+- Support for Unicode characters.
+
+WWW: https://github.com/pri22296/beautifultable
