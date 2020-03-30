@@ -14505,3 +14505,4 @@ devel/py-antlr4-python2-runtime|devel/antlr4-python3-runtime|2020-03-25|Has expi
 devel/sonarqube|devel/sonarqube-community|2020-03-26|Moved to make it clear that this is the community-edition
 devel/sonar-ant-task|devel/sonarqube-ant-task|2020-03-26|Moved due to name change upstream
 devel/rubygem-slack-notifier1|devel/rubygem-slack-notifier|2020-03-30|Obsolete, please use devel/rubygem-slack-notifier instead
+textproc/rubygem-diffy31|textproc/rubygem-diffy|2020-03-30|Obsolete, please use textproc/rubygem-diffy instead
