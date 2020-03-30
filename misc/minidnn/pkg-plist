@@ -25,7 +25,10 @@ include/minidnn/Output/RegressionMSE.h
 include/minidnn/RNG.h
 include/minidnn/Utils/Assert.h
 include/minidnn/Utils/Convolution.h
+include/minidnn/Utils/Enum.h
+include/minidnn/Utils/Factory.h
 include/minidnn/Utils/FindMax.h
+include/minidnn/Utils/IO.h
 include/minidnn/Utils/MiniDNNStream.h
 include/minidnn/Utils/Random.h
 include/minidnn/Utils/cnpy.h
