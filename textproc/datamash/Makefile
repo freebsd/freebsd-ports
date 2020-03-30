@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	datamash
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -11,7 +11,7 @@ COMMENT=	Numeric, textual, and statistical operations on text files
 
 LICENSE=	GPLv3+
 
-USES=		gmake perl5
+USES=		gmake iconv perl5
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 USE_PERL5=	test
