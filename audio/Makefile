@@ -346,6 +346,7 @@
     SUBDIR += jalv
     SUBDIR += jalv-select
     SUBDIR += jamin
+    SUBDIR += jamulus
     SUBDIR += jid3lib
     SUBDIR += juk
     SUBDIR += juke
