@@ -1,4 +1,5 @@
 bin/xfce4-clipman
+bin/xfce4-clipman-history
 bin/xfce4-clipman-settings
 bin/xfce4-popup-clipman
 bin/xfce4-popup-clipman-actions
@@ -7,6 +8,7 @@ etc/xdg/xfce4/panel/xfce4-clipman-actions.xml
 lib/xfce4/panel/plugins/libclipman.so
 share/appdata/xfce4-clipman.appdata.xml
 share/applications/xfce4-clipman.desktop
+share/applications/xfce4-clipman-settings.desktop
 share/icons/hicolor/16x16/apps/clipman-symbolic.svg
 share/icons/hicolor/16x16/apps/xfce4-clipman-plugin.png
 share/icons/hicolor/24x24/apps/xfce4-clipman-plugin.png
