@@ -1,9 +1,9 @@
 plugins run in taint mode because the uid is changed, so the path must not
 contain writable directories.
 
---- node/sbin/munin-node.orig	2020-03-09 01:59:44 UTC
+--- node/sbin/munin-node.orig	2020-03-24 12:31:00 UTC
 +++ node/sbin/munin-node
-@@ -55,6 +55,10 @@ sub main
+@@ -53,6 +53,10 @@ sub main
          $ENV{$key} = $1;
      }
  

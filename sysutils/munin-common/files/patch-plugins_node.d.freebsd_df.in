@@ -1,8 +1,8 @@
 Ignore autofs too.
 
---- plugins/node.d.freebsd/df.in.orig	2018-06-29 00:50:01 UTC
+--- plugins/node.d.freebsd/df.in.orig	2020-03-24 12:31:00 UTC
 +++ plugins/node.d.freebsd/df.in
-@@ -24,7 +24,7 @@ if [ "$1" = "autoconf" ]; then
+@@ -22,7 +22,7 @@ if [ "$1" = "autoconf" ]; then
  	exit 0
  fi
  

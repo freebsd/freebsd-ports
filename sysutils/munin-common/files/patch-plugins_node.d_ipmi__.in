@@ -1,8 +1,8 @@
 awk works just fine here.
 
---- plugins/node.d/ipmi_.in.orig	2017-01-18 20:25:20 UTC
+--- plugins/node.d/ipmi_.in.orig	2020-03-24 12:31:00 UTC
 +++ plugins/node.d/ipmi_.in
-@@ -73,7 +73,7 @@ export CONFIG MEASURE
+@@ -76,7 +76,7 @@ export CONFIG MEASURE
  
  #### Work is done in this awk script
  
