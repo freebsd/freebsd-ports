@@ -1,93 +1,91 @@
 CARGO_CRATES=	ansi_term-0.11.0 \
-		anyhow-1.0.26 \
+		anyhow-1.0.27 \
 		atty-0.2.14 \
-		autocfg-0.1.7 \
+		autocfg-1.0.0 \
 		base64-0.11.0 \
+		base64-0.12.0 \
 		bitflags-1.2.1 \
-		byteorder-1.3.2 \
-		bytes-0.5.3 \
-		c2-chacha-0.2.3 \
-		cc-1.0.48 \
+		bumpalo-3.2.1 \
+		byteorder-1.3.4 \
+		bytes-0.5.4 \
+		cc-1.0.50 \
 		cfg-if-0.1.10 \
 		clap-2.33.0 \
-		core-foundation-0.6.4 \
-		core-foundation-sys-0.6.2 \
+		cloudabi-0.0.3 \
 		fnv-1.0.6 \
-		foreign-types-0.3.2 \
-		foreign-types-shared-0.1.1 \
 		fs_extra-1.1.0 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		futures-0.3.1 \
-		futures-channel-0.3.1 \
-		futures-core-0.3.1 \
-		futures-executor-0.3.1 \
-		futures-io-0.3.1 \
-		futures-macro-0.3.1 \
-		futures-sink-0.3.1 \
-		futures-task-0.3.1 \
-		futures-util-0.3.1 \
-		getrandom-0.1.13 \
-		h2-0.2.1 \
-		hermit-abi-0.1.6 \
-		http-0.2.0 \
+		futures-0.3.4 \
+		futures-channel-0.3.4 \
+		futures-core-0.3.4 \
+		futures-executor-0.3.4 \
+		futures-io-0.3.4 \
+		futures-macro-0.3.4 \
+		futures-sink-0.3.4 \
+		futures-task-0.3.4 \
+		futures-util-0.3.4 \
+		h2-0.2.3 \
+		hermit-abi-0.1.10 \
+		http-0.2.1 \
 		http-body-0.3.1 \
 		httparse-1.3.4 \
-		hyper-0.13.1 \
-		indexmap-1.3.0 \
+		hyper-0.13.4 \
+		indexmap-1.3.2 \
 		iovec-0.1.4 \
-		itoa-0.4.4 \
+		itoa-0.4.5 \
 		jemalloc-sys-0.3.2 \
 		jemallocator-0.3.2 \
+		js-sys-0.3.37 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.66 \
+		libc-0.2.68 \
+		lock_api-0.3.3 \
 		log-0.4.8 \
-		memchr-2.2.1 \
+		memchr-2.3.3 \
 		mio-0.6.21 \
 		miow-0.2.1 \
-		native-tls-0.2.3 \
 		net2-0.2.33 \
-		num_cpus-1.11.1 \
-		openssl-0.10.26 \
-		openssl-probe-0.1.2 \
-		openssl-sys-0.9.53 \
-		pin-project-0.4.6 \
-		pin-project-internal-0.4.6 \
-		pin-project-lite-0.1.2 \
+		num_cpus-1.12.0 \
+		parking_lot-0.10.0 \
+		parking_lot_core-0.7.0 \
+		pin-project-0.4.8 \
+		pin-project-internal-0.4.8 \
+		pin-project-lite-0.1.4 \
 		pin-utils-0.1.0-alpha.4 \
-		pkg-config-0.3.17 \
-		ppv-lite86-0.2.6 \
-		proc-macro-hack-0.5.11 \
-		proc-macro-nested-0.1.3 \
-		proc-macro2-1.0.7 \
-		quote-1.0.2 \
-		rand-0.7.2 \
-		rand_chacha-0.2.1 \
-		rand_core-0.5.1 \
-		rand_hc-0.2.0 \
+		proc-macro-hack-0.5.14 \
+		proc-macro-nested-0.1.4 \
+		proc-macro2-1.0.9 \
+		quote-1.0.3 \
 		redox_syscall-0.1.56 \
-		remove_dir_all-0.5.2 \
-		schannel-0.1.16 \
-		security-framework-0.3.4 \
-		security-framework-sys-0.3.3 \
+		ring-0.16.12 \
+		rustls-0.17.0 \
+		scopeguard-1.1.0 \
+		sct-0.6.0 \
 		slab-0.4.2 \
+		smallvec-1.2.0 \
+		spin-0.5.2 \
 		strsim-0.8.0 \
-		syn-1.0.13 \
-		tempfile-3.1.0 \
+		syn-1.0.17 \
 		textwrap-0.11.0 \
 		time-0.1.42 \
-		tokio-0.2.6 \
-		tokio-tls-0.3.0 \
+		tokio-0.2.13 \
+		tokio-rustls-0.13.0 \
 		tokio-util-0.2.0 \
 		tower-service-0.3.0 \
 		try-lock-0.2.2 \
 		unicode-width-0.1.7 \
 		unicode-xid-0.2.0 \
-		vcpkg-0.2.8 \
+		untrusted-0.7.0 \
 		vec_map-0.8.1 \
 		want-0.3.0 \
-		wasi-0.7.0 \
+		wasm-bindgen-0.2.60 \
+		wasm-bindgen-backend-0.2.60 \
+		wasm-bindgen-macro-0.2.60 \
+		wasm-bindgen-macro-support-0.2.60 \
+		wasm-bindgen-shared-0.2.60 \
+		web-sys-0.3.37 \
+		webpki-0.21.2 \
 		winapi-0.2.8 \
 		winapi-0.3.8 \
 		winapi-build-0.1.1 \
