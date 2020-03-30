@@ -3,7 +3,7 @@
 
 PORTNAME=	foldingathome
 DISTVERSION=	7.5.1-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology linux
 MASTER_SITES=	https://download.foldingathome.org/releases/public/release/fahclient/centos-6.7-64bit/v${DISTVERSION:R}/
 PKGNAMEPREFIX=	linux-
