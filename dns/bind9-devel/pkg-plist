@@ -49,8 +49,10 @@ include/dns/geoip.h
 include/dns/ipkeylist.h
 include/dns/iptable.h
 include/dns/journal.h
+include/dns/kasp.h
 include/dns/keydata.h
 include/dns/keyflags.h
+include/dns/keymgr.h
 include/dns/keytable.h
 include/dns/keyvalues.h
 include/dns/lib.h
@@ -122,6 +124,7 @@ include/irs/resconf.h
 include/irs/types.h
 include/irs/version.h
 include/isc/aes.h
+include/isc/align.h
 include/isc/app.h
 include/isc/assertions.h
 include/isc/astack.h
@@ -147,6 +150,7 @@ include/isc/file.h
 include/isc/formatcheck.h
 include/isc/fsaccess.h
 include/isc/fuzz.h
+include/isc/glob.h
 include/isc/hash.h
 include/isc/heap.h
 include/isc/hex.h
@@ -168,10 +172,12 @@ include/isc/md.h
 include/isc/mem.h
 include/isc/meminfo.h
 include/isc/mutex.h
+include/isc/mutexatomic.h
 include/isc/mutexblock.h
 include/isc/net.h
 include/isc/netaddr.h
 include/isc/netdb.h
+include/isc/netmgr.h
 include/isc/netscope.h
 include/isc/nonce.h
 include/isc/offset.h
@@ -233,6 +239,7 @@ include/isccfg/aclconf.h
 include/isccfg/cfg.h
 include/isccfg/dnsconf.h
 include/isccfg/grammar.h
+include/isccfg/kaspconf.h
 include/isccfg/log.h
 include/isccfg/namedconf.h
 include/isccfg/version.h

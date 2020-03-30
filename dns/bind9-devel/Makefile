@@ -46,15 +46,15 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 .endif
 
 # XXX: remove tar:bz2
-USES=		compiler:c11 cpe libedit pkgconfig ssl tar:bz2
+USES=		compiler:c11 cpe libedit libtool pkgconfig ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.17.0a0.2020.02.28
+ISCVERSION=	9.17.0a0.2020.03.30
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	c309fcabec0f2a2ce3cb7d064efb2b1b8903789a
+GL_COMMIT=	2df610a882d57fd95221ece4df03c04cd0f702b7
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -67,13 +67,13 @@ CONFIGURE_ARGS=	--disable-linux-caps \
 		--localstatedir=/var \
 		--sysconfdir=${ETCDIR} \
 		--with-dlopen=yes \
+		--disable-shared \
 		--with-libxml2 \
 		--with-openssl=${OPENSSLBASE} \
 		--with-readline="-L${LOCALBASE}/lib -ledit"
 ETCDIR=		${PREFIX}/etc/namedb
 
 .if defined(BIND_TOOLS_SLAVE)
-CONFIGURE_ARGS+=	--disable-shared
 EXTRA_PATCHES=		${PATCHDIR}/extrapatch-bind-tools
 .else
 USE_RC_SUBR=		named
@@ -227,8 +227,6 @@ CONFIGURE_ARGS+=	--enable-developer \
 USES+=			perl5
 USE_PERL5=		build
 BUILD_DEPENDS+=		cmocka>0:sysutils/cmocka
-.else
-CONFIGURE_ARGS+=	--disable-symtable
 .endif
 
 .include <bsd.port.pre.mk>
