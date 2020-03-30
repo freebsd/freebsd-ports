@@ -2,11 +2,9 @@
 #   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 
 PORTNAME=	gnucash
-PORTVERSION=	3.8
-PORTREVISION=	1
+PORTVERSION=	3.9
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
-DISTFILES=	${PORTNAME}-${PORTVERSION}b${EXTRACT_SUFX}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Quicken-like money and finance manager
@@ -40,7 +38,7 @@ INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DCOMPILE_GSCHEMAS=OFF \
 		-DENABLE_BINRELOC=OFF \
 		-DGNC_SHELL=/bin/sh
-SHEBANG_FILES=	common/gnc-test-env.pl libgnucash/quotes/gnc-fq-dump
+SHEBANG_FILES=	common/gnc-test-env.pl
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 GLIB_SCHEMAS=	org.gnucash.dialogs.business.gschema.xml \

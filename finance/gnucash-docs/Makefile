@@ -3,7 +3,7 @@
 #   $MCom: ports/finance/gnucash-docs/Makefile,v 1.7 2007/08/04 03:51:29 marcus Exp $
 
 PORTNAME=	gnucash-docs
-DISTVERSION=	3.8
+DISTVERSION=	3.9
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/gnucash/gnucash%20%28stable%29/${PORTVERSION}
 
