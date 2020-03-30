@@ -1,21 +1,21 @@
---- bin/solr.orig	2017-04-15 09:06:51 UTC
+--- bin/solr.orig	2020-03-30 12:29:06 UTC
 +++ bin/solr
-@@ -1757,13 +1757,12 @@ function launch_solr() {
- 	1>"$SOLR_LOGS_DIR/solr-$SOLR_PORT-console.log" 2>&1 & echo $! > "$SOLR_PID_DIR/solr-$SOLR_PORT.pid"
- 
+@@ -2236,13 +2236,12 @@ function start_solr() {
+ 	echo ""
+     fi
      # no lsof on cygwin though
--    if hash lsof 2>/dev/null ; then  # hash returns true if lsof is on the path
+-    if lsof -v 2>&1 | grep -q revision; then
        echo -n "Waiting up to $SOLR_STOP_WAIT seconds to see Solr running on port $SOLR_PORT"
        # Launch in a subshell to show the spinner
        (loops=0
        while true
        do
--        running=`lsof -PniTCP:$SOLR_PORT -sTCP:LISTEN`
-+        running=`sockstat -ls -P tcp -p $SOLR_PORT | grep LISTEN`
+-        running=$(lsof -t -PniTCP:$SOLR_PORT -sTCP:LISTEN)
++        running=$(sockstat -ls -P tcp -p $SOLR_PORT | grep LISTEN)
          if [ -z "$running" ]; then
  	  slept=$((loops * 2))
            if [ $slept -lt $SOLR_STOP_WAIT ]; then
-@@ -1781,13 +1780,6 @@ function launch_solr() {
+@@ -2260,13 +2259,6 @@ function start_solr() {
          fi
        done) &
        spinner $!
