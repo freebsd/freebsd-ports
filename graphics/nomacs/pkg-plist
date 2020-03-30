@@ -1,33 +1,63 @@
 bin/nomacs
 lib/libnomacsCore.so
 lib/libnomacsCore.so.3
-lib/libnomacsCore.so.3.6.0
-share/appdata/nomacs.appdata.xml
+lib/libnomacsCore.so.3.14.0
 share/applications/nomacs.desktop
 share/man/man1/nomacs.1.gz
-%%DATADIR%%/translations/nomacs_als.qm
-%%DATADIR%%/translations/nomacs_ar.qm
-%%DATADIR%%/translations/nomacs_az.qm
-%%DATADIR%%/translations/nomacs_bg.qm
-%%DATADIR%%/translations/nomacs_bs.qm
-%%DATADIR%%/translations/nomacs_cs.qm
-%%DATADIR%%/translations/nomacs_de.qm
-%%DATADIR%%/translations/nomacs_en.qm
-%%DATADIR%%/translations/nomacs_es.qm
-%%DATADIR%%/translations/nomacs_fr.qm
-%%DATADIR%%/translations/nomacs_hr.qm
-%%DATADIR%%/translations/nomacs_it.qm
-%%DATADIR%%/translations/nomacs_ja.qm
-%%DATADIR%%/translations/nomacs_ko.qm
-%%DATADIR%%/translations/nomacs_nl.qm
-%%DATADIR%%/translations/nomacs_pl.qm
-%%DATADIR%%/translations/nomacs_pt.qm
-%%DATADIR%%/translations/nomacs_ru.qm
-%%DATADIR%%/translations/nomacs_sk.qm
-%%DATADIR%%/translations/nomacs_sl.qm
-%%DATADIR%%/translations/nomacs_sr.qm
-%%DATADIR%%/translations/nomacs_sv.qm
-%%DATADIR%%/translations/nomacs_tr.qm
-%%DATADIR%%/translations/nomacs_uk.qm
-%%DATADIR%%/translations/nomacs_zh.qm
+share/metainfo/nomacs.appdata.xml
+%%DATADIR%%/Image Lounge/themes/Dark-Theme.css
+%%DATADIR%%/Image Lounge/themes/Light-Theme.css
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_af.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_als.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_ar.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_az.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_bg.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_br_pt.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_bs.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_ca.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_cs.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_da.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_de.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_el.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_en.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_es.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_et.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_fi.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_fr.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_he.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_hi.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_hr.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_hu.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_id.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_it.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_ja.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_ko.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_nl.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_no.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_pl.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_pt.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_ro.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_ru.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_sk.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_sl.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_sr.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_sv.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_tr.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_tw_zh.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_uk.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_vi.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_zh.qm
+%%TRANSLATIONS%%%%DATADIR%%/Image Lounge/translations/nomacs_zh_CN.qm
 share/pixmaps/nomacs.svg
+%%PLUGINS%%lib/nomacs-plugins/libaffineTransformPlugin.so
+%%PLUGINS%%lib/nomacs-plugins/libaffineTransformPlugin.so.3
+%%PLUGINS%%lib/nomacs-plugins/libaffineTransformPlugin.so.3.14.0
+%%PLUGINS%%lib/nomacs-plugins/libfakeMiniaturesPlugin.so
+%%PLUGINS%%lib/nomacs-plugins/libfakeMiniaturesPlugin.so.3
+%%PLUGINS%%lib/nomacs-plugins/libfakeMiniaturesPlugin.so.3.14.0
+%%PLUGINS%%lib/nomacs-plugins/libpageExtractionPlugin.so
+%%PLUGINS%%lib/nomacs-plugins/libpageExtractionPlugin.so.3
+%%PLUGINS%%lib/nomacs-plugins/libpageExtractionPlugin.so.3.14.0
+%%PLUGINS%%lib/nomacs-plugins/libpaintPlugin.so
+%%PLUGINS%%lib/nomacs-plugins/libpaintPlugin.so.3
+%%PLUGINS%%lib/nomacs-plugins/libpaintPlugin.so.3.14.0
