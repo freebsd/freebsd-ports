@@ -14504,3 +14504,4 @@ security/openssh-portable@x509||2020-03-23|Has expired: X509 long broken without
 devel/py-antlr4-python2-runtime|devel/antlr4-python3-runtime|2020-03-25|Has expired: Uses EoL python27, please use devel/antlr4-python3-runtime instead
 devel/sonarqube|devel/sonarqube-community|2020-03-26|Moved to make it clear that this is the community-edition
 devel/sonar-ant-task|devel/sonarqube-ant-task|2020-03-26|Moved due to name change upstream
+devel/rubygem-slack-notifier1|devel/rubygem-slack-notifier|2020-03-30|Obsolete, please use devel/rubygem-slack-notifier instead
