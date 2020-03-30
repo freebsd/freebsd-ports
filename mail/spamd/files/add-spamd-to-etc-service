@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+# ex:ts=4:sw=4:noet
+#-*- mode: makefile; tab-width: 4; -*-
+#
+# $FreeBSD$
+
+ETC_SERVICES="/etc/services"
+
+
+check_service() {
+	local SERVICE PORT PROTO COMMENT
+
+	SERVICE=$1
+	PORT=$2
+	PROTO=$3
+	COMMENT=$4
+
+	# check
+	OK=no
+	HAS_SERVICE=no
+	COUNT=1
+	for i in $(grep ^${SERVICE} ${ETC_SERVICES}); do
+		if [ ${COUNT} -eq 1 ] && [ x"${i}" = x"${SERVICE}" ]; then
+			HAS_SERVICE=yes
+			echo " already in ${ETC_SERVICES}: ${SERVICE}"
+
+		elif [ ${COUNT} -eq 2 ] && [ "${HAS_SERVICE}" = "yes" ] && \
+			[ x"${i}" = x"${PORT}/${PROTO}" ]; then
+			OK=yes
+			break
+		fi
+		COUNT=$(( ${COUNT} + 1 ))
+	done
+	# add an entry for SERVICE to /etc/services
+	if [ "${OK}" = "no" ]; then
+		echo "==> add entry \"${SERVICE} ${PORT}/${PROTO}\""
+		(
+			grep -v -e "^${SERVICE}.*${PORT}/${PROTO}" ${ETC_SERVICES}
+			echo "${SERVICE}	${PORT}/${PROTO}   # ${COMMENT}"
+		) >> ${ETC_SERVICES}.new
+		mv ${ETC_SERVICES}.new ${ETC_SERVICES}
+	fi
+}
+
+# always add service entries
+echo "Checking ${ETC_SERVICES} for missing spamd service entries"
+[ ! -f ${ETC_SERVICES} ] && echo "==> cannot find ${ETC_SERVICES} ... => exit" &&  exit 1
+check_service spamd 8025 tcp "spamd(8)"
+check_service spamd-sync 8025 udp "spamd(8) synchronisation"
+check_service spamd-cfg 8026 tcp "spamd(8) configuration"
+

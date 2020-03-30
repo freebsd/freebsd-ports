@@ -3,7 +3,10 @@
   message: <<EOM
 To enable spamd you need:
 
-1) Enable spamd in /etc/rc.conf with the following line:
+1) add required spamd entries to /etc/services, run command
+     %%PREFIX%%/sbin/add-spamd-to-etc-service
+
+2) Enable spamd in /etc/rc.conf with the following line:
    obspamd_enable="YES"
    obspamlogd_enable="YES"
 
@@ -11,11 +14,11 @@ To enable spamd you need:
    obspamlogd_pflog_if. This interface will be created and removed
    by the rc script of spamlogd.
 
-2) Configuration template is available in %%PREFIX%%/etc/spamd as
+3) Configuration template is available in %%PREFIX%%/etc/spamd as
    spamd.conf.sample file.  Copy then to spamd.conf file and
    edit to suit your needs.
 
-3) mount fdescfs to /dev/fd with the following line in /etc/fstab
+4) mount fdescfs to /dev/fd with the following line in /etc/fstab
 	fdescfs  	/dev/fd  	fdescfs rw 	0 	0
 
    Note for XEN users:
@@ -25,7 +28,7 @@ To enable spamd you need:
 	device	pf
 	device	pflog
 
-4) Add following lines to the pf.conf(5)
+5) Add following lines to the pf.conf(5)
 
   table <spamd-white> persist
   no rdr inet proto tcp from <spamd-white> to any \
@@ -35,7 +38,7 @@ To enable spamd you need:
 
 FreeBSD only features (not in OpenBSD):
   - sync for spamdb (parameter -Y)
-    See %%PREFIX%%/%%DOCSDIR%%/ for usage.
+    See %%DOCSDIR%%/ for usage.
 EOM
 }
 ]

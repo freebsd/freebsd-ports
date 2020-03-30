@@ -3,7 +3,7 @@
 
 PORTNAME=	spamd
 PORTVERSION=	4.9.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	SF/freebsdspamd/spamd
 
@@ -12,18 +12,17 @@ COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_SSL=	openssl
-
-USE_RC_SUBR?=	obspamd obspamlogd
 USES=		ssl
+USE_RC_SUBR?=	obspamd obspamlogd
 
 USERS=		_spamd
 GROUPS=		_spamd
 
 PORTDOCS=	ipfw-spamd.txt spamdb.txt
 
-PLIST_FILES=	%%ETCDIR%%/spamd.conf.sample \
+PLIST_FILES=	etc/spamd/spamd.conf.sample \
 		libexec/spamlogd \
+		sbin/add-spamd-to-etc-service \
 		sbin/spamd-setup \
 		sbin/spamdb \
 		man/man5/spamd.conf.5.gz \
@@ -58,11 +57,6 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	error: variable has incomplete type 'HMAC_CTX' (aka 'struct hmac_ctx_st')
-BROKEN_FreeBSD_13=	error: variable has incomplete type 'HMAC_CTX' (aka 'struct hmac_ctx_st')
-.endif
-
 do-install:
 .if !defined(CPANEL)
 	${INSTALL_PROGRAM} ${WRKSRC}/spamd/spamd ${STAGEDIR}${PREFIX}/libexec
@@ -82,5 +76,7 @@ do-install:
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}/
+
+	${INSTALL_SCRIPT} ${FILESDIR}/add-spamd-to-etc-service ${STAGEDIR}${PREFIX}/sbin/
 
 .include <bsd.port.post.mk>

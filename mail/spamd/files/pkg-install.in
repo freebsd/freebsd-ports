@@ -7,7 +7,6 @@
 
 SPAMDUSER=%%SPAMDUSER%%
 SPAMDGROUP=%%SPAMDGROUP%%
-FILE="/etc/services"
 
 check_db() {
 	DB=/var/db/spamd
@@ -24,48 +23,6 @@ check_db() {
 		fi
 	fi
 }
-
-check_service() {
-	local SERVICE PORT PROTO COMMENT
-
-	SERVICE=$1
-	PORT=$2
-	PROTO=$3
-	COMMENT=$4
-
-	# check
-	OK=no
-	HAS_SERVICE=no
-	COUNT=1
-	for i in $(grep ^${SERVICE} ${FILE}); do
-		if [ ${COUNT} -eq 1 ] && [ x"${i}" = x"${SERVICE}" ]; then
-			HAS_SERVICE=yes
-		elif [ ${COUNT} -eq 2 ] && [ "${HAS_SERVICE}" = "yes" ] && \
-			[ x"${i}" = x"${PORT}/${PROTO}" ]; then
-			OK=yes
-			break
-		fi
-		COUNT=$(( ${COUNT} + 1 ))
-	done
-	# add an entry for SERVICE to /etc/services
-	if [ "${OK}" = "no" ]; then
-		echo "==> add entry \"${SERVICE} ${PORT}/${PROTO}\""
-		(
-			grep -v -e "^${SERVICE}.*${PORT}/${PROTO}" ${FILE}
-			echo "${SERVICE}	${PORT}/${PROTO}   # ${COMMENT}"
-		) >> ${FILE}.new
-		mv ${FILE}.new ${FILE}
-	fi
-}
-
-# always add service entries
-if [ "$2" = "PRE-INSTALL" ]; then
-	echo "Checking ${FILE} for missing service entries"
-	[ ! -f ${FILE} ] && echo "==> cannot find ${FILE} ... => exit" &&  exit 1
-	check_service spamd 8025 tcp "spamd(8)"
-	check_service spamd-sync 8025 udp "spamd(8) synchronisation"
-	check_service spamd-cfg 8026 tcp "spamd(8) configuration"
-fi
 
 if [ "$2" = "POST-INSTALL" ]; then
 	check_db
