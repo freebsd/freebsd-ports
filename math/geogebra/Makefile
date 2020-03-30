@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geogebra
-PORTVERSION=	5.0.549.0
+PORTVERSION=	5.0.574.0
 CATEGORIES=	math java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/ \
 		https://static.geogebra.org/images/ \
