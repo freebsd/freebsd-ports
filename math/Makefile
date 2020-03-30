@@ -340,6 +340,7 @@
     SUBDIR += lapacke
     SUBDIR += laspack
     SUBDIR += latte-integrale
+    SUBDIR += lcalc
     SUBDIR += ldouble
     SUBDIR += lean
     SUBDIR += lemon

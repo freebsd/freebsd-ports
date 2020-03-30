@@ -1,0 +1,6 @@
+This program computes zeros and values of L-function.
+
+It installs the L-function c++ class library and, the command line program
+lcalc.
+
+WWW: https://github.com/agrawroh/l-calc
