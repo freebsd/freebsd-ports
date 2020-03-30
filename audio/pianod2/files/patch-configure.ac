@@ -5,7 +5,7 @@
  AC_CONFIG_MACRO_DIRS([m4])
  AC_INIT([pianod2],
 -	m4_esyscmd([svn info svn://svn.deviousfish.com/pianod2 | grep Revision: | awk '{print $2}' | tr -d '\n']),
-+	[306],
++	[307],
  	[pianod@lists.deviousfish.com],
  	,[http://deviousfish.com/pianod2])
  AM_INIT_AUTOMAKE([foreign -Wall -Werror])
