@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	liquid-tag-parser
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
