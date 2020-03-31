@@ -27,6 +27,7 @@
     SUBDIR += R-cran-NMF
     SUBDIR += R-cran-RHmm
     SUBDIR += R-cran-RSvgDevice
+    SUBDIR += R-cran-raster
     SUBDIR += R-cran-RcppArmadillo
     SUBDIR += R-cran-RcppEigen
     SUBDIR += R-cran-RcppRoll
