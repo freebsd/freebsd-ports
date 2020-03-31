@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clikit
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,4 +23,10 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 3600
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}woops>=0.2.1<0.3.0:devel/py-woops@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
