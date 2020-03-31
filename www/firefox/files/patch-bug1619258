@@ -1,0 +1,101 @@
+commit 7f9b73f61241
+Author: Martin Stransky <stransky@redhat.com>
+Date:   Wed Mar 18 07:01:27 2020 +0000
+
+    Bug 1619258 [Wayland] Enable VA-API for all formats, r=jya
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D65536
+    
+    --HG--
+    extra : moz-landing-system : lando
+---
+ dom/media/platforms/ffmpeg/FFmpegVideoDecoder.cpp | 30 ++++++++++++++---------
+ dom/media/platforms/ffmpeg/FFmpegVideoDecoder.h   |  1 +
+ 2 files changed, 20 insertions(+), 11 deletions(-)
+
+diff --git dom/media/platforms/ffmpeg/FFmpegVideoDecoder.cpp dom/media/platforms/ffmpeg/FFmpegVideoDecoder.cpp
+index 9a71a681eaef5..e0f7504574d6c 100644
+--- dom/media/platforms/ffmpeg/FFmpegVideoDecoder.cpp
++++ dom/media/platforms/ffmpeg/FFmpegVideoDecoder.cpp
+@@ -42,6 +42,9 @@ typedef int VAStatus;
+ #  define VA_STATUS_SUCCESS 0x00000000
+ #endif
+ 
++// Use some extra HW frames for potential rendering lags.
++#define EXTRA_HW_FRAMES 6
++
+ typedef mozilla::layers::Image Image;
+ typedef mozilla::layers::PlanarYCbCrImage PlanarYCbCrImage;
+ 
+@@ -135,10 +138,6 @@ VAAPIFrameHolder::~VAAPIFrameHolder() {
+ }
+ 
+ AVCodec* FFmpegVideoDecoder<LIBAV_VER>::FindVAAPICodec() {
+-  if (mCodecID != AV_CODEC_ID_H264) {
+-    return nullptr;
+-  }
+-
+   AVCodec* decoder = mLib->avcodec_find_decoder(mCodecID);
+   for (int i = 0;; i++) {
+     const AVCodecHWConfig* config = mLib->avcodec_get_hw_config(decoder, i);
+@@ -172,7 +171,6 @@ bool FFmpegVideoDecoder<LIBAV_VER>::CreateVAAPIDeviceContext() {
+ 
+ MediaResult FFmpegVideoDecoder<LIBAV_VER>::InitVAAPIDecoder() {
+   FFMPEG_LOG("Initialising VA-API FFmpeg decoder");
+-  MOZ_ASSERT(mCodecID == AV_CODEC_ID_H264);
+ 
+   if (!mLib->IsVAAPIAvailable()) {
+     FFMPEG_LOG("libva library is missing");
+@@ -282,11 +280,9 @@ RefPtr<MediaDataDecoder::InitPromise> FFmpegVideoDecoder<LIBAV_VER>::Init() {
+   MediaResult rv;
+ 
+ #ifdef MOZ_WAYLAND_USE_VAAPI
+-  if (mCodecID == AV_CODEC_ID_H264) {
+-    rv = InitVAAPIDecoder();
+-    if (NS_SUCCEEDED(rv)) {
+-      return InitPromise::CreateAndResolve(TrackInfo::kVideoTrack, __func__);
+-    }
++  rv = InitVAAPIDecoder();
++  if (NS_SUCCEEDED(rv)) {
++    return InitPromise::CreateAndResolve(TrackInfo::kVideoTrack, __func__);
+   }
+ #endif
+ 
+@@ -338,7 +334,12 @@ void FFmpegVideoDecoder<LIBAV_VER>::InitVAAPICodecContext() {
+   mCodecContext->height = mInfo.mImage.height;
+   mCodecContext->thread_count = 1;
+   mCodecContext->get_format = ChooseVAAPIPixelFormat;
+-  mCodecContext->extra_hw_frames = H264::ComputeMaxRefFrames(mInfo.mExtraData);
++  if (mCodecID == AV_CODEC_ID_H264) {
++    mCodecContext->extra_hw_frames =
++        H264::ComputeMaxRefFrames(mInfo.mExtraData);
++  } else {
++    mCodecContext->extra_hw_frames = EXTRA_HW_FRAMES;
++  }
+ }
+ #endif
+ 
+@@ -697,4 +698,11 @@ void FFmpegVideoDecoder<LIBAV_VER>::ProcessShutdown() {
+   FFmpegDataDecoder<LIBAV_VER>::ProcessShutdown();
+ }
+ 
++#ifdef MOZ_WAYLAND_USE_VAAPI
++bool FFmpegVideoDecoder<LIBAV_VER>::IsHardwareAccelerated(
++    nsACString& aFailureReason) const {
++  return !!mVAAPIDeviceContext;
++}
++#endif
++
+ }  // namespace mozilla
+diff --git dom/media/platforms/ffmpeg/FFmpegVideoDecoder.h dom/media/platforms/ffmpeg/FFmpegVideoDecoder.h
+index 6158f7bc2f6dd..670cb6203dde0 100644
+--- dom/media/platforms/ffmpeg/FFmpegVideoDecoder.h
++++ dom/media/platforms/ffmpeg/FFmpegVideoDecoder.h
+@@ -92,6 +92,7 @@ class FFmpegVideoDecoder<LIBAV_VER>
+   bool CreateVAAPIDeviceContext();
+   void InitVAAPICodecContext();
+   AVCodec* FindVAAPICodec();
++  bool IsHardwareAccelerated(nsACString& aFailureReason) const override;
+ 
+   MediaResult CreateImageVAAPI(int64_t aOffset, int64_t aPts, int64_t aDuration,
+                                MediaDataDecoder::DecodedData& aResults);
