@@ -31,7 +31,16 @@ PGSQL_CONFIGURE_WITH=	postgresql=${LOCALBASE}/bin/pg_config
 PGSQL_USES=		pgsql
 SQLITE_CONFIGURE_WITH=	sqlite=${LOCALBASE}
 SQLITE_USES=		sqlite
-SSL_CONFIGURE_ENABLE=	openssl=${OPENSSLBASE}
 SSL_USES=		ssl
+
+.include <bsd.port.options.mk> 	 
+
+.if ${PORT_OPTIONS:MSSL} 	 
+.if ${SSL_DEFAULT} == base 	 
+CONFIGURE_ARGS+=        --enable-openssl 	 
+.else 	 
+CONFIGURE_ARGS+=        --enable-openssl=${OPENSSLBASE} 	 
+.endif 	 
+.endif
 
 .include <bsd.port.mk>
