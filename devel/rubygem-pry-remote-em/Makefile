@@ -13,12 +13,12 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-eventmachine>=0:devel/rubygem-eventmachine \
 		rubygem-highline>=0:devel/rubygem-highline \
-		rubygem-pry>=0.9:devel/rubygem-pry
+		rubygem-pry>=0.9<1:devel/rubygem-pry
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-
-USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/pry-remote-em
 
