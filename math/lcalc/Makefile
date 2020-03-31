@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp	\
 #GH_PROJECT=	l-calc
 #GH_TAGNAME=	4c57471
 
-USES=		gmake localbase tar:bz2
+USES=		compiler:c++11-lang gmake localbase tar:bz2
 
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 WRKSRC_SUBDIR=	src
