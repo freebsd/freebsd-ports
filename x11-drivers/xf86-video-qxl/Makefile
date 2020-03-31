@@ -10,8 +10,7 @@ COMMENT=	X.Org X server -- QXL display driver
 
 LICENSE=	MIT
 
-BROKEN=		does not build with xorg-server 1.20.7
-DEPRECATED=	Broken, uses deprecated version of python
+DEPRECATED=	uses deprecated version of python
 EXPIRATION_DATE=	2020-09-15
 
 BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol \
