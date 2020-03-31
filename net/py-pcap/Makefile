@@ -12,6 +12,9 @@ COMMENT=	Python interface to LBL Packet Capture library (libpcap)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Broken with python3 please consider using net/py-pypcap
+EXPIRATION_DATE=2020-05-01
+
 BUILD_DEPENDS=	swig3.0:devel/swig30
 
 USES=		python
