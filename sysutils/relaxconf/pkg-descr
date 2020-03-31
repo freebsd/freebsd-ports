@@ -20,5 +20,4 @@ relaxmediabackup:	Backup your person data.
 relaxrestore:		Restore your person data.
 relaxinstaller:		Launch BSD/RelaxBSD Installer to install LiveCD.
 
-WWW: http://www.RelaxBSD.org/main/
-        http://sourceforge.net/projects/relaxbsd
+WWW: https://sourceforge.net/projects/relaxbsd/
