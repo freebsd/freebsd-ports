@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_mgmt_policy_insights
-PORTVERSION=	0.17.5
+PORTVERSION=	0.17.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
