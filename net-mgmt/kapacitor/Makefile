@@ -44,14 +44,6 @@ KAPACITORD_GROUP=	influxd
 USERS=		${KAPACITORD_USER}
 GROUPS=		${KAPACITORD_GROUP}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == "FreeBSD" && (${OSVERSION} < 1200000 || ${OSVERSION} >= 1200015)
-SUB_LIST+=	KAPACITORD_LOGCMD="daemon"
-.else
-SUB_LIST+=	KAPACITORD_LOGCMD="logger"
-.endif
-
 KAPACITORD_DBDIR=	/var/db/${PORTNAME}/
 KAPACITORD_LOGDIR=	/var/log/${PORTNAME}/
 
@@ -65,4 +57,4 @@ post-install:
 		${WRKSRC}/etc/${PORTNAME}/${PORTNAME}.conf  \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -34,18 +34,18 @@ LEGAL_TEXT=	No SaaS or Govt usage: https://github.com/zerotier/ZeroTierOne/blob/
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == "FreeBSD"
-# log output via syslog when daemon(8) supports it
-.if (${OSVERSION} < 1200000 || ${OSVERSION} >= 1200015)
+# log output via syslog
 SUB_LIST+=	ZEROTIER_SYSLOG="-s debug -T zerotier"
-.else
-SUB_LIST+=	ZEROTIER_SYSLOG=""
-.endif
 # after r347241 tun(4) and tap(4) have been merged to tuntap(4)
 .if (${OSVERSION} >= 1300028)
 SUB_LIST+=	ZEROTIER_IF_TAP="if_tuntap"
 .else
 SUB_LIST+=	ZEROTIER_IF_TAP="if_tap"
 .endif
+.else
+# we are not on FreeBSD
+SUB_LIST+=	ZEROTIER_IF_TAP="if_tap" \
+		ZEROTIER_SYSLOG=""
 .endif
 
 do-install:

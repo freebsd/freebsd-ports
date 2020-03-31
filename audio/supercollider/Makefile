@@ -13,6 +13,8 @@ COMMENT=	Programming language for real time audio synthesis
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD=	fails to compile with Clang 8 due shipped Boost 1.66 libraries. Not compatible with Boost 1.70+, either
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/intrusive/unordered_set.hpp:devel/boost-libs
 LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libavahi-common.so:net/avahi-app \
@@ -52,14 +54,6 @@ SUPERNOVA_CMAKE_BOOL=	SUPERNOVA
 
 .if ! ${ARCH} == amd64 && ! ${ARCH} == i386
 CMAKE_ARGS+=	-DSSE:BOOL=FALSE -DSSE2:BOOL=FALSE
-.endif
-
-.if ${OPSYS} == FreeBSD
-.if ${OSVERSION} < 1200000 || \
-	(${OSVERSION} >= 1200506 && ${OSVERSION} < 1300000) || \
-	${OSVERSION} >= 1300014
-BROKEN=	fails to compile with Clang 8 due shipped Boost 1.66 libraries. Not compatible with Boost 1.70+, either
-.endif
 .endif
 
 post-patch:

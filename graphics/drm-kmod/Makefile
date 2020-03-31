@@ -24,10 +24,6 @@ IGNORE=		legacy kmod not required on less than 12.0
 .else
 .if ${OSVERSION} >= 1103000 && ${OSVERSION} < 1200000
 RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-fbsd11.2-kmod
-.elif ${OSVERSION} >= 1200000 && ${OSVERSION} < 1200045
-IGNORE=		not supported on older 12, no kernel support
-.elif ${OSVERSION} >= 1200045 && ${OSVERSION} < 1200058
-RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-fbsd11.2-kmod
 .elif ${OSVERSION} >= 1200058 && ${OSVERSION} < 1300000
 RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-fbsd12.0-kmod
 .elif ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300029

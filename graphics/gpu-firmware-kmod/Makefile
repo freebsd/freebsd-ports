@@ -24,10 +24,4 @@ GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-firmware
 GH_TAGNAME=	c9eb7f3
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000 && ${OSVERSION} < 1200019
-IGNORE=		not supported on older CURRENT, no kernel support
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

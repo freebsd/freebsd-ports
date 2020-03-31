@@ -11,6 +11,7 @@ COMMENT=	Generic FreeBSD HID layer for I2C and USB devices
 LICENSE=	BSD2CLAUSE
 #LICENSE_FILE=	Not yet packaged
 
+IGNORE_FreeBSD_11=	Requires FreeBSD 12.1 or later
 ONLY_FOR_ARCHS=		aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	Requires architecture supporting ACPI
 
@@ -30,10 +31,4 @@ PLIST_FILES=	${KMODDIR}/iichid.ko
 post-patch:
 	${REINPLACE_CMD} -e '/usbhid.c/s/^/#/' ${WRKSRC}/Makefile
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1201000
-IGNORE=	requires FreeBSD versions 12.1+, this system is running ${OSREL}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

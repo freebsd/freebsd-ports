@@ -10,6 +10,9 @@ COMMENT=	Driver for Broadcom NetXtreme-C/NetXtreme-E devices
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Unsupported on all supported FreeBSD versions
+EXPIRATION_DATE=2020-06-28
+
 USES=		kmod
 BUILD_WRKSRC=	${WRKSRC}/sys/modules/bnxt
 
@@ -40,14 +43,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/share/man/man4/bnxt.4 ${STAGEDIR}${MAN4PREFIX}/man/man4/
 	${LN} -f ${STAGEDIR}${MAN4PREFIX}/man/man4/bnxt.4 ${STAGEDIR}${MAN4PREFIX}/man/man4/if_bnxt.4
 
-.include <bsd.port.pre.mk>
-
-SUPPORTED=	no
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200002 && ${OSVERSION} <= 1200014
-SUPPORTED=	yes
-.endif
-.if ${SUPPORTED} == no
-IGNORE=		not supported on this version of FreeBSD
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	gromacs
 DISTVERSION=	2020.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -18,7 +18,7 @@ BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchan
 BUILD_DEPENDS=	boost-libs>=1.44:devel/boost-libs
 LIB_DEPENDS=	libhwloc.so:devel/hwloc
 
-USES=		cmake fortran gnome perl5 pkgconfig shebangfix xorg # should be compiler:c++14-lang
+USES=		cmake compiler:c++14-lang fortran gnome perl5 pkgconfig shebangfix xorg
 SHEBANG_FILES=	admin/*.sh scripts/*.pl scripts/*.sh src/gromacs/selection/*.sh
 bash_CMD=	${SH}
 USE_GNOME=	libxml2
@@ -80,12 +80,6 @@ OPENMPI_PLIST_SUB=	SUFFIX_MPI="_mpi"
 THREAD_MPI_DESC=	Build a thread-MPI-based multithreaded version of GROMACS
 THREAD_MPI_CMAKE_BOOL=	GMX_THREAD_MPI
 THREAD_MPI_PLIST_SUB=	SUFFIX_MPI=""
-
-# build fails on 12.0 with clang-6, so force a newer compiler
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CPP=		clang-cpp${LLVM_DEFAULT}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "CMakeLists.txt" | ${XARGS} \
