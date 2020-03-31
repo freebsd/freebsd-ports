@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-statistics
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -14,13 +13,10 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 OCTSRC=		${DISTNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:math/octave-forge-io
+WRKSRC=		${WRKDIR}/${OCTSRC}/src
+GNU_CONFIGURE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-do-build:
-	@${DO_NADA}
-
-NO_ARCH=	yes
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
