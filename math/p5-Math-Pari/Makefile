@@ -31,6 +31,8 @@ LLD_UNSAFE=	yes	# lld defaults to -ztext
 PARI_WRKSRC=	${WRKDIR}/pari-2.3.5
 
 CFLAGS+=	-I${PARI_WRKSRC}/src/headers -I${PARI_WRKSRC}/build
+CFLAGS_powerpc=	-fPIC
+CFLAGS_powerpc64=	-fPIC
 
 CONFIGURE_ARGS=	parilib="-L${PARI_WRKSRC}/build -lpari" \
 		paridir=${PARI_WRKSRC}
