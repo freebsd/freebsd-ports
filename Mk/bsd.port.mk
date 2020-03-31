@@ -4334,9 +4334,8 @@ missing-packages:
 # Install missing dependencies from package
 install-missing-packages:
 	@_dirs=$$(${MISSING-DEPENDS-LIST}); \
-	if [ -n "$${_dirs}" ]; then \
-		${SU_CMD} "${PKG_BIN} install -A $$(${ECHO_CMD} "$${_dirs}" | ${SED} "s%${PORTSDIR}/%%g")"; \
-	fi
+	${ECHO_CMD} "$${_dirs}" | ${SED} "s%${PORTSDIR}/%%g" | \
+		${SU_CMD} "${XARGS} -o ${PKG_BIN} install -A"
 
 ################################################################
 # Everything after here are internal targets and really
