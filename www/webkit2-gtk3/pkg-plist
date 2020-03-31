@@ -49,6 +49,7 @@ include/webkitgtk-4.0/webkit2/WebKitFrame.h
 include/webkitgtk-4.0/webkit2/WebKitGeolocationManager.h
 include/webkitgtk-4.0/webkit2/WebKitGeolocationPermissionRequest.h
 include/webkitgtk-4.0/webkit2/WebKitHitTestResult.h
+include/webkitgtk-4.0/webkit2/WebKitInputMethodContext.h
 include/webkitgtk-4.0/webkit2/WebKitInstallMissingMediaPluginsPermissionRequest.h
 include/webkitgtk-4.0/webkit2/WebKitJavascriptResult.h
 include/webkitgtk-4.0/webkit2/WebKitMimeInfo.h
@@ -61,6 +62,7 @@ include/webkitgtk-4.0/webkit2/WebKitOptionMenu.h
 include/webkitgtk-4.0/webkit2/WebKitOptionMenuItem.h
 include/webkitgtk-4.0/webkit2/WebKitPermissionRequest.h
 include/webkitgtk-4.0/webkit2/WebKitPlugin.h
+include/webkitgtk-4.0/webkit2/WebKitPointerLockPermissionRequest.h
 include/webkitgtk-4.0/webkit2/WebKitPolicyDecision.h
 include/webkitgtk-4.0/webkit2/WebKitPrintCustomWidget.h
 include/webkitgtk-4.0/webkit2/WebKitPrintOperation.h
@@ -78,6 +80,7 @@ include/webkitgtk-4.0/webkit2/WebKitUserContent.h
 include/webkitgtk-4.0/webkit2/WebKitUserContentFilterStore.h
 include/webkitgtk-4.0/webkit2/WebKitUserContentManager.h
 include/webkitgtk-4.0/webkit2/WebKitUserMediaPermissionRequest.h
+include/webkitgtk-4.0/webkit2/WebKitUserMessage.h
 include/webkitgtk-4.0/webkit2/WebKitVersion.h
 include/webkitgtk-4.0/webkit2/WebKitWebContext.h
 include/webkitgtk-4.0/webkit2/WebKitWebEditor.h
@@ -214,10 +217,10 @@ lib/girepository-1.0/WebKit2-4.0.typelib
 lib/girepository-1.0/WebKit2WebExtension-4.0.typelib
 lib/libjavascriptcoregtk-4.0.so
 lib/libjavascriptcoregtk-4.0.so.18
-lib/libjavascriptcoregtk-4.0.so.18.14.9
+lib/libjavascriptcoregtk-4.0.so.18.16.3
 lib/libwebkit2gtk-4.0.so
 lib/libwebkit2gtk-4.0.so.37
-lib/libwebkit2gtk-4.0.so.37.39.5
+lib/libwebkit2gtk-4.0.so.37.44.2
 lib/webkit2gtk-4.0/injected-bundle/libwebkit2gtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-4.0.pc
 libdata/pkgconfig/webkit2gtk-4.0.pc
