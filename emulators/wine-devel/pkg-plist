@@ -2729,6 +2729,7 @@ lib/wine/libwsdapi.def
 lib/wine/libwsnmp32.def
 lib/wine/libwsock32.def
 lib/wine/libwtsapi32.def
+%%STAGING%%lib/wine/libx3daudio1_7.def
 lib/wine/libxinput.def
 lib/wine/libxmllite.def
 lib/wine/loadperf.dll.so
