@@ -1,0 +1,5 @@
+Start an HTTP server in R to serve static files, or dynamic documents
+that can be converted to HTML files (e.g., R Markdown) under a given
+directory.
+
+WWW: https://cran.r-project.org/web/packages/servr/
