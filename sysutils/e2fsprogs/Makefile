@@ -3,7 +3,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.45.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -138,8 +138,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extrapatch-no-sbrk
 
 # d_fallocate_blkmap appears to fail on some systems for unknown reasons.
 post-patch::
-# don't build/install libext2fs.info
-	@${REINPLACE_CMD} -e 's/ install-doc-libs$$//' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's/md5sum ([^ ]*)/printf "%s  %s\\n" $$(md5 -q \1) \1/' \
 	    -e "s/ == 0/ = 0/" -e "s/tar x$$/tar xf -/" -e "s/\<dd\>/gdd/" \
 	    ${WRKSRC}/tests/[a-z]_*/script
