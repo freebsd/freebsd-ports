@@ -12,7 +12,9 @@ COMMENT=	Constant subs with deferred value calculation
 
 LICENSE=	GPLv3
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
