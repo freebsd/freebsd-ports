@@ -1,3 +1,3 @@
-TIMESTAMP = 1580746259
-SHA256 (rubygem/azure_mgmt_event_grid-0.17.10.gem) = 25cac59579713a257a5f3d3c98c17dd6cbfeab090870ea4b57b18d3068384b34
-SIZE (rubygem/azure_mgmt_event_grid-0.17.10.gem) = 211456
+TIMESTAMP = 1585565006
+SHA256 (rubygem/azure_mgmt_event_grid-0.18.0.gem) = ae4621e4a62e4e9d18484c33ad0cdaee46d45de24fc51df1b0d23a89d900f85d
+SIZE (rubygem/azure_mgmt_event_grid-0.18.0.gem) = 236032
