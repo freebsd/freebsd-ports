@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.19.3
+PORTVERSION=	0.20.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	a5786f16b633.patch:-p1 e9deb829c069.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3D photo-realistic sky renderer (planetarium)
