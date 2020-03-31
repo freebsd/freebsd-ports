@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${DATADIR}/rom.bin:emulators/x16-rom
 
-USES=		gmake sdl
+USES=		compiler:c++11-lang gmake sdl
 
 USE_SDL=	sdl2
 USE_GITHUB=	yes
