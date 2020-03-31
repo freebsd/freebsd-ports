@@ -2003,7 +2003,7 @@ usr/lib/libBrokenLocale.a
 usr/lib/libBrokenLocale.so
 usr/lib/libanl.a
 usr/lib/libanl.so
-usr/lib/libbfd-2.27-41.base.el7_7.2.so
+usr/lib/libbfd-%%BUVERSION%%.so
 usr/lib/libbfd.a
 usr/lib/libbfd.so
 usr/lib/libbsd-compat.a
@@ -2038,7 +2038,7 @@ usr/lib/libnss_files.so
 usr/lib/libnss_hesiod.so
 usr/lib/libnss_nis.so
 usr/lib/libnss_nisplus.so
-usr/lib/libopcodes-2.27-41.base.el7_7.2.so
+usr/lib/libopcodes-%%BUVERSION%%.so
 usr/lib/libopcodes.a
 usr/lib/libopcodes.so
 usr/lib/libpthread.a

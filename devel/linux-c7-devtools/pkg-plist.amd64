@@ -2118,7 +2118,7 @@ usr/lib64/libBrokenLocale.a
 usr/lib64/libBrokenLocale.so
 usr/lib64/libanl.a
 usr/lib64/libanl.so
-usr/lib64/libbfd-2.27-41.base.el7_7.2.so
+usr/lib64/libbfd-%%BUVERSION%%.so
 usr/lib64/libbfd.a
 usr/lib64/libbfd.so
 usr/lib64/libbsd-compat.a
@@ -2153,7 +2153,7 @@ usr/lib64/libnss_files.so
 usr/lib64/libnss_hesiod.so
 usr/lib64/libnss_nis.so
 usr/lib64/libnss_nisplus.so
-usr/lib64/libopcodes-2.27-41.base.el7_7.2.so
+usr/lib64/libopcodes-%%BUVERSION%%.so
 usr/lib64/libopcodes.a
 usr/lib64/libopcodes.so
 usr/lib64/libpthread.a
