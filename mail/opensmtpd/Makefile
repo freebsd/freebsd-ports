@@ -53,6 +53,7 @@ TABLE_DB_CONFIGURE_WITH=	table-db
 CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
 			--with-libevent=${LOCALBASE} \
 			--sysconfdir=${PREFIX}/etc/mail/ \
+			--with-path-mbox=/var/mail
 			--with-user-smtpd=_smtpd \
 			--with-user-queue=_smtpq \
 			--with-group-queue=_smtpq
@@ -62,10 +63,6 @@ CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
 .if ${OPSYS} == FreeBSD && \
     (${OSVERSION} < 1200084 && ${SSL_DEFAULT} == "base")
 BROKEN=		Openssl 1.0 API is EoL, upgrade to FreeBSD 12.x/13.x or add DEFAULT_VERSIONS+=ssl=[openssl|libressl*] to /etc/make.conf
-.endif
-
-.if ${OPSYS} != OpenBSD
-CONFIGURE_ARGS+=	--with-path-mbox=/var/mail
 .endif
 
 post-install-TABLE_DB-on:
