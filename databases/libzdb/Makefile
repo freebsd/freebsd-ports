@@ -35,6 +35,7 @@ SSL_USES=		ssl
 
 .include <bsd.port.options.mk> 	 
 
+# See PR/237200 for details
 .if ${PORT_OPTIONS:MSSL} 	 
 .if ${SSL_DEFAULT} == base 	 
 CONFIGURE_ARGS+=        --enable-openssl 	 
