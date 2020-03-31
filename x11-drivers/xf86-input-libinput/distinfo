@@ -1,3 +1,3 @@
-TIMESTAMP = 1549304185
-SHA256 (xorg/driver/xf86-input-libinput-0.28.2.tar.bz2) = b8b346962c6b62b8069928c29c0db83b6f544863bf2fc6830f324de841de2820
-SIZE (xorg/driver/xf86-input-libinput-0.28.2.tar.bz2) = 377357
+TIMESTAMP = 1585667383
+SHA256 (xorg/driver/xf86-input-libinput-0.29.0.tar.bz2) = c28b56a21754b972db31798e6a4cf4dc9d69208d08f8fe41701a94def5e94bee
+SIZE (xorg/driver/xf86-input-libinput-0.29.0.tar.bz2) = 377412
