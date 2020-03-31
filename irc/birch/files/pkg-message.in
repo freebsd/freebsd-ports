@@ -1,0 +1,83 @@
+[
+{ type: install
+  message: <<EOM
+birch was successfully installed.
+
+Caveats (or limitations):
+=========================
+
+* Nick column is fixed and truncated to 10 columns wide.
+  
+  This is something fixable down the line. It merely serves to
+  simplify the alignment of messages into two columns (nick and
+  messages).
+
+* Lines are word-wrapped to a fixed 60 columns.
+
+  This is also fixable down the line though a lot more painful
+  than the nick column issue. POSIX fold is used to achieve the
+  word wrapping but doesn't take into account non-printable
+  characters and unicode.
+
+  What this means is that wrapping will always be a little _off_
+  as escape sequences, IRC formatting and unicode will throw
+  out all attempts at calculating the "visible" line length.
+
+  It's an interesting problem to solve. I've made a myriad of
+  attempts at writing a suitable function in bash though they're
+  all too slow (as expected!).
+
+* No automatic server reconnect.
+
+  This should be fairly easy to fix though I need to figure out
+  the best way of doing so.
+
+* No SSL (sadly).
+
+  The network connection is through bash's builtin /dev/tcp
+  feature which doesn't allow for SSL.
+
+Keybindings:
+============
+
+Ctrl+n - Next buffer.
+Ctrl+p - Previous buffer.
+Tab    - Completion of nicks and channels.
+
+Further, all readline keybindings are available for use. See the
+readline or bash manpages for a list of these. 
+
+Keybindings to birch may also be set via a .inputrc file. Which
+can be configured by setting `$BIRCH_INPUTRC`.
+
+(BIRCH_INPUTRC=/path/to/birch-inputrc birch)
+
+Commands:
+=========
+
+Channels
+
+/join <channel>       - Join a channel.
+/part <channel>       - Leave a channel.
+/quit                 - Quit out of birch.
+
+Messages 
+
+/msg <nick> <message> - Message a user.
+/me  <message>        - Send an action.
+
+Navigation
+
+/next                 - Next buffer.
+/prev                 - Previous buffer.
+/<num>                - Buffer by number (0 indexed).
+
+Other
+
+/nick <nick>          - Change nickname.
+/names                - Display all nicks in channel.
+/topic                - Display channel topic.
+/raw <args>           - Send a raw IRC message.
+EOM
+}
+]

@@ -1,0 +1,5 @@
+Minimal IRC client written in bash, featuring the full power of readline for
+input and keybindings, tab completion of nicks and unique (or semi-unique)
+nick colors.
+
+WWW: https://github.com/dylanaraps/birch
