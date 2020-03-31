@@ -19,14 +19,12 @@ OPTIONS_DEFINE=	DEVTOOLS
 OPTIONS_SUB=	yes
 DEVTOOLS_DESC=	Ethereum developer tools
 
-GO_TARGET=	./cmd/geth
 DEVTOOLS_VARS_OFF=	GO_TARGET=./cmd/geth
 DEVTOOLS_VARS=		GO_TARGET="./cmd/geth ./cmd/abigen ./cmd/bootnode ./cmd/evm ./cmd/rlpdump ./cmd/clef ./cmd/puppeth"
 
 CGO_LDFLAGS=	-liconv
 USE_GITHUB=	yes
 GH_ACCOUNT=	ethereum
-GH_TARGET=	geth
 GH_TUPLE=	\
 	Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 	Azure:azure-storage-blob-go:v0.7.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -97,16 +95,5 @@ GH_TUPLE=	\
 	wsddn:go-ecdh:48726bab9208:wsddn_go_ecdh/vendor/github.com/wsddn/go-ecdh
 
 TMPDIR=	${WRKDIR}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/geth ${STAGEDIR}${PREFIX}/bin
-
-do-install-DEVTOOLS-on:
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/abigen ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/bootnode ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/evm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/rlpdump ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/clef ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/puppeth ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
