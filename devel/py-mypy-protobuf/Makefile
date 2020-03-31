@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mypy-protobuf
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,6 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|, 'protoc_gen_mypy.bat'||" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e '/protoc_gen_mypy.bat/d' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
