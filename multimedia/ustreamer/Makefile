@@ -25,4 +25,6 @@ INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/ustreamer
 
+BROKEN_FreeBSD_11=	error: thread_get_name() not implemented, you can disable it using WITH_PTHREAD_NP=0
+
 .include <bsd.port.mk>
