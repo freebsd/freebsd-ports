@@ -17,6 +17,9 @@ GH_ACCOUNT=     networkupstools
 GH_TAGNAME=     e27f1f9
 NUT_COMMIT_DATE=	2020.02.09
 
+BROKEN_powerpc64=	Poudriere builds fail.
+BROKEN_powerpc=		Poudriere builds fail.
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		autoreconf:build gmake libtool pkgconfig python:build
