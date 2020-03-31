@@ -3,7 +3,7 @@
 
 PORTNAME=	Mango
 PORTVERSION=	1.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ODC
@@ -16,7 +16,7 @@ LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	mongo:databases/mongodb34 \
+RUN_DEPENDS=	mongo:databases/mongodb36 \
 		p5-Mojolicious>=5.40:www/p5-Mojolicious
 
 USES=		perl5
