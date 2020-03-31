@@ -1,3 +1,5 @@
-TIMESTAMP = 1558818522
-SHA256 (cole-trapnell-lab-cufflinks-v2.2.1-83-gb4fa050_GH0.tar.gz) = 0b26b02c080115d4262d466503bdc43db5ff5583d8122e77355782dc7cbe0522
-SIZE (cole-trapnell-lab-cufflinks-v2.2.1-83-gb4fa050_GH0.tar.gz) = 8804967
+TIMESTAMP = 1585636520
+SHA256 (cole-trapnell-lab-cufflinks-v2.2.1-89-gdc3b0cb_GH0.tar.gz) = 3947a7266b4f58a92b3944b8e205c8875a7c0ce9ea19b394ea82ff77b91999be
+SIZE (cole-trapnell-lab-cufflinks-v2.2.1-89-gdc3b0cb_GH0.tar.gz) = 8807044
+SHA256 (ea4671149f3054c773d99cea521db75bf7b0658f.patch) = d64446bab1b683dbdb51b33992694bbbc6511aa4eacd2b95812da75e090dff47
+SIZE (ea4671149f3054c773d99cea521db75bf7b0658f.patch) = 3779

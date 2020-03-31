@@ -2,10 +2,12 @@
 
 PORTNAME=	cufflinks
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.1-83
-DISTVERSIONSUFFIX=	-gb4fa050
-PORTREVISION=	2
+DISTVERSION=	2.2.1-89
+DISTVERSIONSUFFIX=	-gdc3b0cb
 CATEGORIES=	biology
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES+=	ea4671149f3054c773d99cea521db75bf7b0658f.patch:-p1 # https://github.com/cole-trapnell-lab/cufflinks/pull/127
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cufflinks assembles transcripts, estimates their abundance, etc
