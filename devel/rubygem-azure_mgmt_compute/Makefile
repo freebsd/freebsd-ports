@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_mgmt_compute
-PORTVERSION=	0.19.0
+PORTVERSION=	0.19.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
