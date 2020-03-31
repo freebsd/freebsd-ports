@@ -7,4 +7,4 @@ RFC 2229 describes the DICT client/server protocol.
 dict is a client which can access DICT servers from the command line.
 
 WWW: http://www.dict.org/
-WWW: http://sourceforge.net/projects/dict/
+WWW: https://sourceforge.net/projects/dict/

@@ -1,2 +1,3 @@
-SHA256 (dictd-1.12.1.tar.gz) = a237f6ecdc854ab10de5145ed42eaa2d9b6d51ffdc495f7daee59b05cc363656
-SIZE (dictd-1.12.1.tar.gz) = 423870
+TIMESTAMP = 1585564812
+SHA256 (dictd-1.13.0.tar.gz) = eeba51af77e87bb1b166c6bc469aad463632d40fb2bdd65e6675288d8e1a81e4
+SIZE (dictd-1.13.0.tar.gz) = 395455
