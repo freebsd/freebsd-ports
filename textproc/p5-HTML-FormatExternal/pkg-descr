@@ -1,13 +1,11 @@
 HTML-FormatExternal lets you turn HTML into plain text using one of
 the browsing/formatting programs,
 
-    elinks        http://elinks.cz/
-    html2text     http://www.mbayer.de/html2text/
-    links         http://links.twibright.com/
-    lynx          http://lynx.isc.org/
-    netrik        http://netrik.sourceforge.net/
-    vilistextum   http://bhaak.dyndns.org/vilistextum/
-    w3m           http://sourceforge.net/projects/w3m
-    zen           http://www.nocrew.org/software/zen/
+    elinks        www/elinks
+    html2text     textproc/html2text
+    links         www/links
+    lynx          www/lynx
+    netrik        www/netrik
+    w3m           www/w3m
 
 WWW: https://metacpan.org/release/HTML-FormatExternal
