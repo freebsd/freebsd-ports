@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	capybara
-PORTVERSION=	3.31.0
+PORTVERSION=	3.32.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
