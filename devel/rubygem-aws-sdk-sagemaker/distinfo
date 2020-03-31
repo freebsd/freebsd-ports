@@ -1,3 +1,3 @@
-TIMESTAMP = 1585076650
-SHA256 (rubygem/aws-sdk-sagemaker-1.52.0.gem) = 9663543b4f41ddd3f599a4ae540bd07ea500f663e1545c96680d3c4766f8d1f1
-SIZE (rubygem/aws-sdk-sagemaker-1.52.0.gem) = 233472
+TIMESTAMP = 1585564988
+SHA256 (rubygem/aws-sdk-sagemaker-1.53.0.gem) = b117d731e6f187a939022f5d225f93fc181361592cea2c39926c6e4e261ca11a
+SIZE (rubygem/aws-sdk-sagemaker-1.53.0.gem) = 235008
