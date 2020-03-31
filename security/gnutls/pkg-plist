@@ -32,7 +32,7 @@ include/gnutls/x509.h
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.26.2
+lib/libgnutls.so.30.27.0
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.28
 lib/libgnutlsxx.so.28.1.0
@@ -310,6 +310,8 @@ man/man3/gnutls_hex_decode.3.gz
 man/man3/gnutls_hex_decode2.3.gz
 man/man3/gnutls_hex_encode.3.gz
 man/man3/gnutls_hex_encode2.3.gz
+man/man3/gnutls_hkdf_expand.3.gz
+man/man3/gnutls_hkdf_extract.3.gz
 man/man3/gnutls_hmac.3.gz
 man/man3/gnutls_hmac_copy.3.gz
 man/man3/gnutls_hmac_deinit.3.gz
@@ -388,6 +390,7 @@ man/man3/gnutls_openpgp_privkey_sign_hash.3.gz
 man/man3/gnutls_openpgp_send_cert.3.gz
 man/man3/gnutls_packet_deinit.3.gz
 man/man3/gnutls_packet_get.3.gz
+man/man3/gnutls_pbkdf2.3.gz
 man/man3/gnutls_pcert_deinit.3.gz
 man/man3/gnutls_pcert_export_openpgp.3.gz
 man/man3/gnutls_pcert_export_x509.3.gz
@@ -533,6 +536,7 @@ man/man3/gnutls_pkcs_schema_get_name.3.gz
 man/man3/gnutls_pkcs_schema_get_oid.3.gz
 man/man3/gnutls_prf.3.gz
 man/man3/gnutls_prf_early.3.gz
+man/man3/gnutls_prf_hash_get.3.gz
 man/man3/gnutls_prf_raw.3.gz
 man/man3/gnutls_prf_rfc5705.3.gz
 man/man3/gnutls_priority_certificate_type_list.3.gz
@@ -609,11 +613,15 @@ man/man3/gnutls_psk_client_get_hint.3.gz
 man/man3/gnutls_psk_free_client_credentials.3.gz
 man/man3/gnutls_psk_free_server_credentials.3.gz
 man/man3/gnutls_psk_server_get_username.3.gz
+man/man3/gnutls_psk_server_get_username2.3.gz
 man/man3/gnutls_psk_set_client_credentials.3.gz
+man/man3/gnutls_psk_set_client_credentials2.3.gz
 man/man3/gnutls_psk_set_client_credentials_function.3.gz
+man/man3/gnutls_psk_set_client_credentials_function2.3.gz
 man/man3/gnutls_psk_set_params_function.3.gz
 man/man3/gnutls_psk_set_server_credentials_file.3.gz
 man/man3/gnutls_psk_set_server_credentials_function.3.gz
+man/man3/gnutls_psk_set_server_credentials_function2.3.gz
 man/man3/gnutls_psk_set_server_credentials_hint.3.gz
 man/man3/gnutls_psk_set_server_dh_params.3.gz
 man/man3/gnutls_psk_set_server_known_dh_params.3.gz
@@ -711,6 +719,7 @@ man/man3/gnutls_session_get_desc.3.gz
 man/man3/gnutls_session_get_flags.3.gz
 man/man3/gnutls_session_get_id.3.gz
 man/man3/gnutls_session_get_id2.3.gz
+man/man3/gnutls_session_get_keylog_function.3.gz
 man/man3/gnutls_session_get_master_secret.3.gz
 man/man3/gnutls_session_get_ptr.3.gz
 man/man3/gnutls_session_get_random.3.gz
@@ -720,6 +729,7 @@ man/man3/gnutls_session_key_update.3.gz
 man/man3/gnutls_session_resumption_requested.3.gz
 man/man3/gnutls_session_set_data.3.gz
 man/man3/gnutls_session_set_id.3.gz
+man/man3/gnutls_session_set_keylog_function.3.gz
 man/man3/gnutls_session_set_premaster.3.gz
 man/man3/gnutls_session_set_ptr.3.gz
 man/man3/gnutls_session_set_verify_cert.3.gz
