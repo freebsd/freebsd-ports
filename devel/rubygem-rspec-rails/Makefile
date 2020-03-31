@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspec-rails
-PORTVERSION=	3.9.1
+PORTVERSION=	4.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,13 +12,13 @@ COMMENT=	Testing framework for Rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-actionpack4>=3.0:www/rubygem-actionpack4 \
-		rubygem-activesupport4>=3.0:devel/rubygem-activesupport4 \
-		rubygem-railties4>=3.0:www/rubygem-railties4 \
-		rubygem-rspec-core>=${PORTVERSION:R}.0<3.10:devel/rubygem-rspec-core \
-		rubygem-rspec-expectations>=${PORTVERSION:R}.0<3.10:devel/rubygem-rspec-expectations \
-		rubygem-rspec-mocks>=${PORTVERSION:R}.0<3.10:devel/rubygem-rspec-mocks \
-		rubygem-rspec-support>=${PORTVERSION:R}.0<3.10:devel/rubygem-rspec-support
+RUN_DEPENDS=	rubygem-actionpack4>=4.2:www/rubygem-actionpack4 \
+		rubygem-activesupport4>=4.2:devel/rubygem-activesupport4 \
+		rubygem-railties4>=4.2:www/rubygem-railties4 \
+		rubygem-rspec-core>=3.9<4:devel/rubygem-rspec-core \
+		rubygem-rspec-expectations>=3.9<4:devel/rubygem-rspec-expectations \
+		rubygem-rspec-mocks>=3.9<4:devel/rubygem-rspec-mocks \
+		rubygem-rspec-support>=3.9<4:devel/rubygem-rspec-support
 
 USES=		gem
 USE_RUBY=	yes
