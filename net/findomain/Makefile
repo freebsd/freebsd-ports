@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	findomain
-DISTVERSION=	1.4.3
+DISTVERSION=	1.4.5
 CATEGORIES=	net security
 
 MAINTAINER=	vulcan@wired.sh
