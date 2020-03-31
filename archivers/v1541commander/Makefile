@@ -17,7 +17,7 @@ LICENSE_PERMS_STYLEFONT=	dist-mirror no-dist-sell pkg-mirror \
 
 LIB_DEPENDS=	lib1541img.so:archivers/lib1541img
 
-USES=		gmake pkgconfig qt:5 shared-mime-info
+USES=		compiler:c++11-lang gmake pkgconfig qt:5 shared-mime-info
 
 USE_QT=		core gui network widgets buildtools_build linguisttools_build
 
