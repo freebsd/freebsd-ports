@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	broot
+PORTVERSION=	0.13.5b
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.4
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -11,6 +11,7 @@ COMMENT=	Quick and easy new way to see and navigate directory trees
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libgit2.so:devel/libgit2
 RUN_DEPENDS=	git:devel/git
 
 USES=		cargo
@@ -93,7 +94,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		num-integer-0.1.41 \
 		num-traits-0.2.8 \
 		num_cpus-1.11.1 \
-		open-1.3.2 \
+		open-1.4.0 \
 		parking_lot-0.10.0 \
 		parking_lot_core-0.7.0 \
 		pathdiff-0.1.0 \
@@ -163,13 +164,20 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		ws2_32-sys-0.2.1
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
 PORTDOCS=	CHANGELOG.md README.md
 
 OPTIONS_DEFINE=	DOCS
 
+pre-build:
+	@${MV} ${WRKSRC}/man/page ${WRKSRC}/man/${PORTNAME}.1
+	@${REINPLACE_CMD} -e 's|#version|${PORTVERSION}|g' \
+		-e "s|#date|$$(date +'%Y\/%m\/%d')|g" ${WRKSRC}/man/${PORTNAME}.1
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
