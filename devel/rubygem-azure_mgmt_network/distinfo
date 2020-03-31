@@ -1,3 +1,3 @@
-TIMESTAMP = 1579306181
-SHA256 (rubygem/azure_mgmt_network-0.23.0.gem) = 6febb8b44b60527d8d50e67e994ffdfb8c0238976be05fa518c323fa263fed39
-SIZE (rubygem/azure_mgmt_network-0.23.0.gem) = 3721728
+TIMESTAMP = 1585565010
+SHA256 (rubygem/azure_mgmt_network-0.23.1.gem) = 115979bc02fa7cf8a82373e965c437fdb962023a095d57553ac0b2a6c28ccfa2
+SIZE (rubygem/azure_mgmt_network-0.23.1.gem) = 4232192
