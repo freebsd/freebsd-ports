@@ -3,6 +3,7 @@ lib/libmaa.a
 lib/libmaa.so
 lib/libmaa.so.4
 lib/libmaa.so.4.0.0
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/libmaa.600dpi.ps
