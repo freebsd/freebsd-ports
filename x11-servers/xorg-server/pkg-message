@@ -20,9 +20,6 @@ To enable evdev in such a device, run the following:
 To make it persistent across reboots, add the following to /etc/sysctl.conf:
 
 kern.evdev.rcpt_mask=6
-
-If your X session locks up after starting certain applications, rebuild this
-port with the FIXDRM option turned on.
 EOM
 }
 ]

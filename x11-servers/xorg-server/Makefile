@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	xorg-server
-PORTVERSION?=	1.20.7
-PORTREVISION?=	2
+PORTVERSION?=	1.20.8
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
