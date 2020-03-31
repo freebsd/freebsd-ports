@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt_GPG
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
