@@ -53,7 +53,7 @@ TABLE_DB_CONFIGURE_WITH=	table-db
 CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
 			--with-libevent=${LOCALBASE} \
 			--sysconfdir=${PREFIX}/etc/mail/ \
-			--with-path-mbox=/var/mail
+			--with-path-mbox=/var/mail \
 			--with-user-smtpd=_smtpd \
 			--with-user-queue=_smtpq \
 			--with-group-queue=_smtpq
