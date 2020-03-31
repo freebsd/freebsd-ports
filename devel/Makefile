@@ -450,8 +450,8 @@
     SUBDIR += date
     SUBDIR += dbus
     SUBDIR += dbus-c++
-    SUBDIR += dbus-java
     SUBDIR += dbus-glib
+    SUBDIR += dbus-java
     SUBDIR += dbus-sharp
     SUBDIR += dbus-sharp-glib
     SUBDIR += dbus-tcl
@@ -4861,7 +4861,6 @@
     SUBDIR += py-pytest-isort
     SUBDIR += py-pytest-localserver
     SUBDIR += py-pytest-mock
-    SUBDIR += py-pytest-verbose-parametrize
     SUBDIR += py-pytest-pep8
     SUBDIR += py-pytest-pycodestyle
     SUBDIR += py-pytest-relaxed
@@ -4872,6 +4871,7 @@
     SUBDIR += py-pytest-timeout
     SUBDIR += py-pytest-tornado
     SUBDIR += py-pytest-translations
+    SUBDIR += py-pytest-verbose-parametrize
     SUBDIR += py-pytest-virtualenv
     SUBDIR += py-pytest-xdist
     SUBDIR += py-pytest-xprocess

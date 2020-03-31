@@ -23,9 +23,9 @@
     SUBDIR += bdelta
     SUBDIR += bestfit
     SUBDIR += bible-kjv
+    SUBDIR += biblesync
     SUBDIR += bibletime
     SUBDIR += biblical-curse
-    SUBDIR += biblesync
     SUBDIR += binclock
     SUBDIR += biosfont-demos
     SUBDIR += birthday
