@@ -7,4 +7,4 @@ leaves in a bottom-up manner if they are similar enough.  Finally, Rainbow uses
 a greedy algorithm to locally assemble merged reads into contigs.  Both optimal
 and suboptimal assembly results are output.
 
-WWW: http://sourceforge.net/projects/bio-rainbow/
+WWW: https://sourceforge.net/projects/bio-rainbow/
