@@ -4,6 +4,7 @@
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	libtorrent-
 DISTVERSION=	1_2_5
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++14-lang iconv:wchar_t libtool pathfix pkgconfig python:2.7,test shebangfix ssl
+USES=		cmake iconv:wchar_t libtool pathfix pkgconfig python:2.7,test shebangfix ssl # compiler:c++14-lang
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 SHEBANG_FILES=	test/socks.py test/web_server.py
 USE_GITHUB=	yes
@@ -38,6 +39,13 @@ LOGGING_DESC=		Enable logging to disk
 
 EXAMPLES_CMAKE_BOOL=	build_examples
 LOGGING_CMAKE_BOOL=	logging
+
+# workaroud for the clang-10 compiler failure: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=244830
+LLVM_VER=	90
+BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
+CPP=		clang-cpp${LLVM_VER}
+CC=		clang${LLVM_VER}
+CXX=		clang++${LLVM_VER}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/include|${PREFIX}/include|' \
