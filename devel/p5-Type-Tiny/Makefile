@@ -34,16 +34,16 @@ TEST_DEPENDS=	p5-Class-InsideOut>=0:devel/p5-Class-InsideOut \
 		p5-Validation-Class>=0:devel/p5-Validation-Class \
 		p5-match-simple>=0:devel/p5-match-simple
 
-OPTIONS_DEFINE=	RECOMMENDED
-OPTIONS_DEFAULT=RECOMMENDED
-RECOMMENDED_DESC=	Recommended dependencies by upstream
-
-PORTSCOUT=	limit:^[0-9\.]*$$
-
 USES=		perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^[0-9\.]*$$
+
+OPTIONS_DEFINE=	RECOMMENDED
+OPTIONS_DEFAULT=RECOMMENDED
+RECOMMENDED_DESC=	Recommended dependencies by upstream
 
 RECOMMENDED_BUILD_DEPENDS=	p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
 				p5-Ref-Util-XS>=0.100:devel/p5-Ref-Util-XS \
