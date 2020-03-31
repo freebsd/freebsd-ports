@@ -14507,3 +14507,14 @@ devel/sonar-ant-task|devel/sonarqube-ant-task|2020-03-26|Moved due to name chang
 devel/rubygem-slack-notifier1|devel/rubygem-slack-notifier|2020-03-30|Obsolete, please use devel/rubygem-slack-notifier instead
 textproc/rubygem-diffy31|textproc/rubygem-diffy|2020-03-30|Obsolete, please use textproc/rubygem-diffy instead
 sysutils/py-crontab|sysutils/py-python-crontab|2020-03-31|Match canonical/registered (PyPI/CHEESESHOP) name
+security/w3af||2020-03-31|Has expired: Uses deprecated version of Python
+sysutils/duplicity-devel|sysutils/duplicity|2020-03-31|Has expired: Obsolete now, use sysutils/duplicity instead
+net-mgmt/tornova||2020-03-31|Has expired: Use EOL'd Python 2.7
+audio/py-ogg||2020-03-31|Has expired: Unmaintained, uses EOLed python27
+net-mgmt/onionlauncher||2020-03-31|Has expired: Use EOL'd Python 2.7
+databases/mongodb34|databases/mongodb36|2020-03-31|Has expired: EOL January 2020; See https://www.mongodb.com/support-policy
+graphics/sane-frontends||2020-03-31|Has expired: Unmaintained upstream, no consumers left
+lang/ruby24|lang/ruby26|2020-03-31|Has expired: Move to a new version (lang/ruby26 or above). Ruby 2.4 is in security maintenance phase and planned for EOL on March 31, 2020
+databases/pgpool|databases/pgpool-II-35|2020-03-31|Has expired: Reached EOL at 2019-10-31, please use pgpool-II-35 or higher
+net/pygopherd||2020-03-31|Has expired: Unmaintained, uses EOLed python27
+databases/mongodb34-tools|databases/mongodb36-tools|2020-03-31|Removed, part of expired MongoDB 3.4

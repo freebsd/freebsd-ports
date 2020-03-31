@@ -652,7 +652,6 @@
     SUBDIR += py-music21
     SUBDIR += py-musicbrainzngs
     SUBDIR += py-mutagen
-    SUBDIR += py-ogg
     SUBDIR += py-openal
     SUBDIR += py-opuslib
     SUBDIR += py-py-jack

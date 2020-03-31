@@ -213,7 +213,6 @@
     SUBDIR += ocsinventory-ocsreports
     SUBDIR += ocsinventory-server
     SUBDIR += omping
-    SUBDIR += onionlauncher
     SUBDIR += openbmp
     SUBDIR += openlldp
     SUBDIR += openvmps
@@ -375,7 +374,6 @@
     SUBDIR += tcptrack
     SUBDIR += telegraf
     SUBDIR += thanos
-    SUBDIR += tornova
     SUBDIR += torrus
     SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter

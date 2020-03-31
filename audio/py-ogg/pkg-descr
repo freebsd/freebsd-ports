@@ -1,5 +1,0 @@
-The PyOgg project provides a set of python modules for the various streaming
-formats and protocols defined by the Xiph.Org Foundation. For now, it mostly
-deals with the Ogg bitstream container and the Vorbis audio codec.
-
-WWW: http://ekyo.nerim.net/software/pyogg/

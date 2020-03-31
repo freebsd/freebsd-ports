@@ -281,7 +281,6 @@
     SUBDIR += dunst
     SUBDIR += dupd
     SUBDIR += duplicity
-    SUBDIR += duplicity-devel
     SUBDIR += duplicity07
     SUBDIR += duply
     SUBDIR += dupmerge

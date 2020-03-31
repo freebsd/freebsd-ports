@@ -1143,7 +1143,6 @@
     SUBDIR += py-zeep
     SUBDIR += py-zeroconf
     SUBDIR += py-zope.proxy
-    SUBDIR += pygopherd
     SUBDIR += pynids
     SUBDIR += pyrad
     SUBDIR += qadsl

@@ -1274,7 +1274,6 @@
     SUBDIR += vuls
     SUBDIR += vuxml
     SUBDIR += vxquery
-    SUBDIR += w3af
     SUBDIR += wapiti
     SUBDIR += wazuh-agent
     SUBDIR += webfwlog

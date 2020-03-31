@@ -1,8 +1,0 @@
-pgpool is a connection pool server for PostgreSQL. pgpool runs between
-PostgreSQL's clients(front ends) and servers(back ends). A PostgreSQL client can
-connect to pgpool as if it were a standard PostgreSQL server.
-
-pgpool caches the connection to PostgreSQL server to reduce the overhead to
-establish the connection to it.
-
-WWW: https://pgpool.net/

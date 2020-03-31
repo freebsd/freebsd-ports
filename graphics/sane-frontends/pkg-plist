@@ -1,7 +1,0 @@
-bin/scanadf
-bin/xcam
-bin/xscanimage
-man/man1/scanadf.1.gz
-man/man1/xcam.1.gz
-man/man1/xscanimage.1.gz
-share/sane/sane-style.rc

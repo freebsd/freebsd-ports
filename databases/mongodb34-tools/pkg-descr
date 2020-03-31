@@ -1,6 +1,0 @@
-Since MongoDB 3.2, the tools bsondump, mongoimport, mongoexport, mongodump,
-mongorestore, mongostat, mongofiles, mongooplog and mongotop have been placed
-in a separate package and rewritten in Go. These are useful utilities for
-managing a MongoDB instance.
-
-WWW: https://github.com/mongodb/mongo-tools
