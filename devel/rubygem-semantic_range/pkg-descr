@@ -1,0 +1,4 @@
+SemanticRange is a semver parser written in Ruby for comparison and inclusion of
+semantic versions and ranges.
+
+WWW: https://github.com/librariesio/semantic_range
