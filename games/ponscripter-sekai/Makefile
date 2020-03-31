@@ -1,16 +1,17 @@
 PORTNAME=	ponscripter-sekai
-PORTVERSION=	0.0.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
+DISTVERSION=	0.0.6-162
+DISTVERSIONSUFFIX=	-g4f887b8
 CATEGORIES=	games
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	101c68e22921.patch:-p1 4fb1180d2b54.patch:-p1 25e752f272d0.patch:-p1
+PATCHFILES+=	69068bf83653.patch:-p1 # https://github.com/sekaiproject/ponscripter-fork/pull/98
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	NScripter-like novel-game interpreter with Unicode support
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsmpeg2.so:multimedia/smpeg2 \
 		libfreetype.so:print/freetype2
@@ -31,12 +32,12 @@ CONFIGURE_ENV=	CC_VER="4.8" CC="${CC} ${CFLAGS}" CXX="${CXX} ${CXXFLAGS}" \
 		CPATH="${LOCALBASE}/include" LIBRARY_PATH="${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--prefix="${STAGEDIR}${PREFIX}" --unsupported-compiler
 LDFLAGS+=	-Wl,--as-needed
-PORTDOCS=	BUGS CHANGES MANUAL README TODO
+PORTDOCS=	BUGS CHANGES MANUAL README.md TODO
 PLIST_FILES=	bin/ponscr \
 		share/emacs/site-lisp/ponscripter-mode.el
 
-OPTIONS_DEFINE=	DOCS MANPAGES TREMOR
-OPTIONS_DEFAULT=MANPAGES ${MACHINE_CPU:Msoftfp:C/.+/TREMOR/}
+OPTIONS_DEFINE=	DOCS MANPAGES NOTIFY TREMOR
+OPTIONS_DEFAULT=MANPAGES NOTIFY ${MACHINE_CPU:Msoftfp:C/.+/TREMOR/}
 
 MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto
 MANPAGES_PLIST_FILES=\
@@ -44,6 +45,9 @@ MANPAGES_PLIST_FILES=\
 	man/man7/ponscr-ext.7.gz \
 	man/man7/ponscr-syntax.7.gz \
 	man/man7/ponscripter.7.gz
+
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
+NOTIFY_CONFIGURE_WITH=	libnotify
 
 TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
 TREMOR_CFLAGS=		-DINTEGER_OGG_VORBIS

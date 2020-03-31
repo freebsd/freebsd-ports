@@ -1,13 +1,8 @@
-Ponscripter is an interpreter for visual-novel-type games, derived from
-the NScripter design but modified significantly to improve support for
-Western languages (at the cost of diminished support for Japanese).
+Ponscripter was created as an NScripter-style visual novel game
+interpreter with an emphasis on supporting games in Western languages.
 
-Ponscripter is a fork of ONScripter-En that drops any attempt to remain
-in synch with the upstream source code, and instead concentrates on
-providing the best possible support for Western languages. It is no
-longer fully NScripter-compatible, but remains an easy target to port
-NScripter games to when localising them.
-
-This fork takes advantage of SDL2 and improves Steam integration.
+This fork is intended to provide additional features to Ponscripter
+that make it more suitable for releasing games on Steam. It, however,
+does not have qualms with breaking compatibility in minor ways.
 
 WWW: https://github.com/sekaiproject/ponscripter-fork

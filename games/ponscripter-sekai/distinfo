@@ -1,9 +1,5 @@
-TIMESTAMP = 1395987047
-SHA256 (sekaiproject-ponscripter-fork-v0.0.6_GH0.tar.gz) = b1ac4f2c01aae1ca68420ea5274307e4c6b3eb1b85272ec41c7fbf07239c48d2
-SIZE (sekaiproject-ponscripter-fork-v0.0.6_GH0.tar.gz) = 30564899
-SHA256 (101c68e22921.patch) = 604a45559988096c2441881eaff9d6ea9cfc9bcba03097609086b8b679a12635
-SIZE (101c68e22921.patch) = 2325
-SHA256 (4fb1180d2b54.patch) = 921224b2e64a0d60efc6f00598210d96a4903b735e48c181bd902da3b7c8e6f9
-SIZE (4fb1180d2b54.patch) = 1207
-SHA256 (25e752f272d0.patch) = 263bad81a88b356d3cbd2de611df994c486f7a7ce4eb831cc36882ccdc4c6992
-SIZE (25e752f272d0.patch) = 2742
+TIMESTAMP = 1585653053
+SHA256 (sekaiproject-ponscripter-fork-v0.0.6-162-g4f887b8_GH0.tar.gz) = 44fc0c3699b356c38551d4291b19cf5b81869160ebf634ea5a10d6b404493e76
+SIZE (sekaiproject-ponscripter-fork-v0.0.6-162-g4f887b8_GH0.tar.gz) = 33478357
+SHA256 (69068bf83653.patch) = ab7ace6c01bff5690c58dcf7e824d1bed5211f52e5984510c114a78d01f62de7
+SIZE (69068bf83653.patch) = 826
