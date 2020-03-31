@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libepoxy
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.4
 CATEGORIES=	graphics
-MASTER_SITES=	https://github.com/anholt/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Library to handle OpenGL function pointer management
@@ -11,7 +10,9 @@ COMMENT=	Library to handle OpenGL function pointer management
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gl localbase meson pkgconfig python:3.3+,build tar:xz xorg
+USES=		gl localbase meson pkgconfig python:3.3+,build xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	anholt
 USE_XORG=	x11
 USE_GL=		gl glesv2 egl
 USE_LDCONFIG=	yes
