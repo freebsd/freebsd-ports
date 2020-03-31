@@ -5749,6 +5749,7 @@
     SUBDIR += rubygem-azure_mgmt_storagesync
     SUBDIR += rubygem-azure_mgmt_stream_analytics
     SUBDIR += rubygem-azure_mgmt_subscriptions
+    SUBDIR += rubygem-azure_mgmt_support
     SUBDIR += rubygem-azure_mgmt_time_series_insights
     SUBDIR += rubygem-azure_mgmt_traffic_manager
     SUBDIR += rubygem-azure_mgmt_vmware_cloudsimple
