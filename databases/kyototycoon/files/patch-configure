@@ -1,0 +1,16 @@
+--- configure.orig	2020-03-19 09:12:04 UTC
++++ configure
+@@ -3389,10 +3389,10 @@ fi
+ if test "$enable_opt" != "no"
+ then
+   printf 'checking for CPU optimization availability... '
+-  if printf 'main() {}' | $CC -xc -march=native -o config.tmp - >config.tmp 2>&1
++  if printf 'main() {}' | $CC -xc -O3 -o config.tmp - >config.tmp 2>&1
+   then
+-    MYCFLAGS="-march=native $MYCFLAGS"
+-    MYCXXFLAGS="-march=native $MYCXXFLAGS"
++    MYCFLAGS="-O3 $MYCFLAGS"
++    MYCXXFLAGS="-O3 $MYCXXFLAGS"
+     printf 'yes\n'
+   else
+     printf 'no\n'
