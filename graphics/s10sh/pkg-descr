@@ -16,7 +16,7 @@ S10sh supports the following PowerShot models:
 Other models are reported to work as well: Elph S400, Digital Ixus V3, S30,
 A60, EOS-10D.
 
-With the release of libusb 0.1.3b (http://sourceforge.net/projects/libusb/),
+With the release of libusb 0.1.3b (https://sourceforge.net/projects/libusb/),
 S10sh gained USB support under FreeBSD.
 
 The original author's web page is http://www.kyuzz.org/antirez/s10sh.html
