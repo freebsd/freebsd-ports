@@ -15,7 +15,7 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # [variables that a user may define]
 #
 # RUBY_VER		- (See below)
-# RUBY_DEFAULT_VER	- Set to (e.g.) "2.4" if you want to refer to "ruby24"
+# RUBY_DEFAULT_VER	- Set to (e.g.) "2.5" if you want to refer to "ruby25"
 #			  just as "ruby".
 # RUBY_ARCH		- (See below)
 #
@@ -144,16 +144,7 @@ RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 .if defined(RUBY_VER)
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-. if ${RUBY_VER} == 2.4
-#
-# Ruby 2.4
-#
-RUBY_VERSION=		2.4.9
-RUBY_PORTREVISION=	0
-RUBY_PORTEPOCH=		1
-RUBY24=			""	# PLIST_SUB helpers
-
-. elif ${RUBY_VER} == 2.5
+. if ${RUBY_VER} == 2.5
 #
 # Ruby 2.5
 #
@@ -186,7 +177,7 @@ RUBY27=			""	# PLIST_SUB helpers
 #
 # Other versions
 #
-IGNORE=	Only ruby 2.4, 2.5, 2.6 and 2.7 are supported
+IGNORE=	Only ruby 2.5, 2.6 and 2.7 are supported
 _INVALID_RUBY_VER=	1
 . endif
 .endif # defined(RUBY_VER)
