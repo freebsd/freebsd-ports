@@ -3,7 +3,7 @@ memory drops too low, additional swap files are created. Additionally, if there
 is too much free memory, swap files are deactivated and disk space may be
 reclaimed.
 
-"Linux swapd" (http://sourceforge.net/projects/swapd/) didn't work very well,
+"Linux swapd" (https://sourceforge.net/projects/swapd/) didn't work very well,
 but the idea was good.  I started making a version that would work and
 would also be somewhat portable.  It currently compiles on Linux and FreeBSD,
 but requires `libstatgrab' (http://www.i-scream.org/libstatgrab/) to work on
