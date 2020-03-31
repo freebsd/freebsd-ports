@@ -3,7 +3,7 @@
 
 PORTNAME=	fceux
 PORTVERSION=	2.2.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	emulators
 MASTER_SITES=	SF/fceultra/Source%20Code/${PORTVERSION}%20src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -16,12 +16,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	zenity:x11/zenity
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USES=		compiler:c++0x desktop-file-utils dos2unix localbase:ldflags \
 		pkgconfig scons sdl xorg
 USE_SDL=	sdl
 USE_XORG=	x11
+USE_GNOME+=	gdkpixbuf2
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing
