@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	fetchmail
-PORTVERSION=	6.4.2
+DISTVERSION=	6.4.3-rc2
 CATEGORIES=	mail
 # The next line is inherited by the fetchmailconf slave port,
 # do NOT replace fetchmail by ${PORTNAME}
@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 .if empty(MASTERDIR)
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		cpe gmake tar:xz ssl
+USES=		cpe gmake tar:lz ssl
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}

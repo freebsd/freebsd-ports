@@ -1,0 +1,30 @@
+From 74c1a60970152d9b83e9c7eca9bda69336a0b458 Mon Sep 17 00:00:00 2001
+From: Matthias Andree <matthias.andree@gmx.de>
+Date: Mon, 30 Mar 2020 23:01:42 +0200
+Subject: [PATCH] fetchmail.man: --sslproto: document tls1.3 and tls1.3+
+ values.
+
+The code was added in 3d4a8713e = 6.4.0-beta3,
+but the documentation was missing from the manual page.
+---
+ fetchmail.man | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/fetchmail.man b/fetchmail.man
+index 111ddb2f..da6ade56 100644
+--- ./fetchmail.man
++++ b/fetchmail.man
+@@ -520,6 +520,10 @@ Since v6.4.0. Require TLS. Auto-negotiate TLSv1.1 or newer.
+ Since v6.4.0. Require TLS v1.2 exactly.
+ .IP '\fBTLS1.2+\fP'
+ Since v6.4.0. Require TLS. Auto-negotiate TLSv1.2 or newer.
++.IP \&'\fBTLS1.3\fP'
++Since v6.4.0. Require TLS v1.3 exactly.
++.IP '\fBTLS1.3+\fP'
++Since v6.4.0. Require TLS. Auto-negotiate TLSv1.3 or newer.
+ .IP "Unrecognized parameters"
+ are treated the same as '\fBauto\fP'.
+ .RE
+-- 
+2.24.1
+
