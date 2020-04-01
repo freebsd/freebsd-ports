@@ -820,6 +820,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/nn.xml
 %%DATADIR%%/data/annotationsDerived/or.xml
 %%DATADIR%%/data/annotationsDerived/pa.xml
+%%DATADIR%%/data/annotationsDerived/pcm.xml
 %%DATADIR%%/data/annotationsDerived/pl.xml
 %%DATADIR%%/data/annotationsDerived/ps.xml
 %%DATADIR%%/data/annotationsDerived/pt_PT.xml
