@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cliqz
-DISTVERSION=	1.33.0
-PORTREVISION=	4
+DISTVERSION=	1.34.0
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/cdn.cliqz.com/browser-f/APT/:amazon \
 		http://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/${CLIQZ_LAST_BUILD_ID}/:cliqz
@@ -41,7 +40,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xt.pc:x11-toolkits/libXt \
 		autoconf-2.13:devel/autoconf213 \
 		bash:shells/bash \
 		graphite2>=1.3.13:graphics/graphite2 \
-		harfbuzz>=2.6.1:print/harfbuzz \
+		harfbuzz>=2.6.4:print/harfbuzz \
 		icu>=64.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		libvorbis>=1.3.6,3:audio/libvorbis \
@@ -50,10 +49,10 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xt.pc:x11-toolkits/libXt \
 		llvm${LLVM_DEFAULT}>=0:devel/llvm${LLVM_DEFAULT} \
 		nasm:devel/nasm \
 		node:www/node \
-		nspr>=4.24:devel/nspr \
-		nss>=3.49.2:security/nss \
+		nspr>=4.25:devel/nspr \
+		nss>=3.50:security/nss \
 		png>=1.6.35:graphics/png \
-		rust-cbindgen>=0.12.0:devel/rust-cbindgen \
+		rust-cbindgen>=0.13.0:devel/rust-cbindgen \
 		sqlite3>=3.30.1:databases/sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
 		yasm:devel/yasm \
@@ -79,7 +78,7 @@ SHEBANG_FILES=	magic_build_and_package.sh
 CLIQZ_CHANNEL=		release
 # If the DISTVERSION is updated, make sure to update the last build id from
 # fetch -qo - https://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/lastbuildid
-CLIQZ_LAST_BUILD_ID=	20200219152122
+CLIQZ_LAST_BUILD_ID=	20200325191531
 CLIQZ_ICON=		${PORTNAME}.png
 CLIQZ_ICON_SRC=		${WRKSRC}/mozilla-release/browser/branding/${PORTNAME}/default48.png
 MOZ_DESKTOP=		${WRKSRC}/mozilla-release/toolkit/mozapps/installer/linux/rpm/mozilla.desktop
