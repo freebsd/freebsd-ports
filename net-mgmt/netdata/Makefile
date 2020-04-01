@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	netdata
-PORTVERSION=	1.19.0
+PORTVERSION=	1.20.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	mmokhi@FreeBSD.org
@@ -15,7 +14,9 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 RUN_DEPENDS=	bash:shells/bash \
-		curl:ftp/curl
+		curl:ftp/curl \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR}
 
 USES=		autoreconf cpe pathfix pkgconfig:both python shebangfix ssl
 
@@ -28,8 +29,8 @@ NETDATA_LOG=	/var/log/${PORTNAME}
 NETDATA_PERST=	/var/db/${PORTNAME}
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-D_WANT_VMMETER -I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-unit-tests
+CPPFLAGS+=	-D_WANT_VMMETER
 INSTALL_TARGET=	install-strip
 
 SUB_LIST=	NETDATA_CACHE=${NETDATA_CACHE} \

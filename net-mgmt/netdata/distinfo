@@ -1,3 +1,3 @@
-TIMESTAMP = 1575076612
-SHA256 (netdata-netdata-v1.19.0_GH0.tar.gz) = 007656f639d3544698af503f35550aeb4d4d5a06b81801bf5acf4ac21db68f6e
-SIZE (netdata-netdata-v1.19.0_GH0.tar.gz) = 3443251
+TIMESTAMP = 1583350154
+SHA256 (netdata-netdata-v1.20.0_GH0.tar.gz) = c739e0fa8d6d7f433c0c7c8016b763e8f70519d67f0b5e7eca9ee5318f210d90
+SIZE (netdata-netdata-v1.20.0_GH0.tar.gz) = 3598521
