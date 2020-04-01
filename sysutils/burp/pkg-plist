@@ -1,10 +1,9 @@
 bin/vss_strip
-%%ETCDIR%%/CA.cnf
-%%ETCDIR%%/burp-server.conf
-%%ETCDIR%%/burp.conf
+@sample %%ETCDIR%%/CA.cnf.sample
+@sample %%ETCDIR%%/burp-server.conf.sample
+@sample %%ETCDIR%%/burp.conf.sample
 %%ETCDIR%%/clientconfdir/incexc/example
-%%ETCDIR%%/clientconfdir/testclient
-etc/rc.d/burp
+@sample %%ETCDIR%%/clientconfdir/testclient.sample
 man/man8/bedup.8.gz
 man/man8/bsigs.8.gz
 man/man8/bsparse.8.gz

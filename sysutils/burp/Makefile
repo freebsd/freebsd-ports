@@ -3,8 +3,9 @@
 
 PORTNAME=	burp
 PORTVERSION?=	2.2.18
-PORTREVISION?=	2	#whenever PORTREVISION is increased, it must be increased for
-			#the slave port sysutils/burp-devel too
+# whenever PORTREVISION is increased,
+# sysutils/burp-devel's PKGVERSION must also increase
+PORTREVISION?=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	salvadore@FreeBSD.org
@@ -20,8 +21,8 @@ LIB_DEPENDS=	librsync.so:net/librsync2
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake libtool ncurses pkgconfig ssl
+USE_RC_SUBR=	burp
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	grke
 
 GNU_CONFIGURE=	yes
@@ -37,10 +38,15 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 OPTIONS_DEFINE=		IPV6
 IPV6_CONFIGURE_ENABLE=	ipv6
 
-post-patch:
-	${REINPLACE_CMD} "s,/usr/local,${LOCALBASE},g" ${WRKSRC}/freebsd/rc.d/burp
+CONFIG_FILES=	CA.cnf \
+		burp-server.conf \
+		burp.conf \
+		clientconfdir/testclient
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/freebsd/rc.d/burp ${STAGEDIR}${PREFIX}/etc/rc.d/burp
+.for FILE in ${CONFIG_FILES}
+	${MV} ${STAGEDIR}${ETCDIR}/${FILE} \
+		${STAGEDIR}${ETCDIR}/${FILE}.sample
+.endfor
 
 .include <bsd.port.mk>
