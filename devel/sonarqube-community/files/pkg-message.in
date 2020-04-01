@@ -1,5 +1,6 @@
 [
 {
+  type: install
   message: <<EOT
 SonarQube is now installed in %%PREFIX%%/%%APP_DIR%%.
 
