@@ -3,7 +3,7 @@
 
 PORTNAME=	dvdbackup
 PORTVERSION=	0.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -11,9 +11,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Backup content from DVD to hard disk
 
 LICENSE=	GPLv3
-
-# See: https://bugs.launchpad.net/dvdbackup/+bug/1869226
-BROKEN=		does not build with libdvdread 6.1.0
 
 LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 
