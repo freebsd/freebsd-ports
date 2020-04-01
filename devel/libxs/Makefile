@@ -13,7 +13,7 @@ COMMENT=	Open source lightweight messaging layer
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:features pathfix pkgconfig libtool
+USES=		autoreconf pathfix pkgconfig libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	crossroads-io
 USE_LDCONFIG=	yes
@@ -29,21 +29,7 @@ OPTIONS_DEFAULT=PLUGINS
 
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 36 && \
-	!${COMPILER_FEATURES:Mlibstdc++}
-# Allow declaration of map and multimap iterator with incomplete mapped type
-# by applying upstream change r231119 to a copy of our local c++ headers.
-# This fix is not needed for clang 3.4 on 9.3 which uses libstdc++.
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-map
-CPPFLAGS+=	-I${WRKSRC}/map-fix
-
-post-extract:
-	${MKDIR} ${WRKSRC}/map-fix
-	${CP} /usr/include/c++/v1/__tree /usr/include/c++/v1/map \
-		${WRKSRC}/map-fix/.
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
@@ -92,4 +78,4 @@ pre-configure:
 		${WRKSRC}/configure.ac
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
