@@ -13,6 +13,8 @@ COMMENT=	Simple replacement for dd wth standard command line flags
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+CONFLICTS_INSTALL=	rankwidth-*
+
 PLIST_FILES=	bin/rw share/man/man1/rw.1.gz
 
 post-install:
