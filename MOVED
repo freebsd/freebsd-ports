@@ -14518,3 +14518,6 @@ lang/ruby24|lang/ruby26|2020-03-31|Has expired: Move to a new version (lang/ruby
 databases/pgpool|databases/pgpool-II-35|2020-03-31|Has expired: Reached EOL at 2019-10-31, please use pgpool-II-35 or higher
 net/pygopherd||2020-03-31|Has expired: Unmaintained, uses EOLed python27
 databases/mongodb34-tools|databases/mongodb36-tools|2020-03-31|Removed, part of expired MongoDB 3.4
+databases/py-pypuppetdb03|databases/py-pypuppetdb|2020-04-01|Has expired: Use databases/py-pypuppetdb instead
+www/py-puppetboard02|www/py-puppetboard|2020-04-01|Has expired: Use www/py-puppetboard instead
+www/py-puppetboard03|www/py-puppetboard|2020-04-01|Has expired: Use www/py-puppetboard instead

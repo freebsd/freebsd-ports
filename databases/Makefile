@@ -809,7 +809,6 @@
     SUBDIR += py-pymysql
     SUBDIR += py-pyodbc
     SUBDIR += py-pypuppetdb
-    SUBDIR += py-pypuppetdb03
     SUBDIR += py-pytc
     SUBDIR += py-python-arango
     SUBDIR += py-python-memcached
