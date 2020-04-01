@@ -3,6 +3,7 @@
 PORTNAME=		PrusaSlicer
 DISTVERSIONPREFIX=	version_
 DISTVERSION=		2.1.1
+PORTREVISION=		1
 CATEGORIES=		cad
 
 MAINTAINER=	teodor@sigaev.ru

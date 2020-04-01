@@ -2,6 +2,7 @@
 
 PORTNAME=	nomacs
 PORTVERSION=	3.14.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	vidar@karlsen.tech
