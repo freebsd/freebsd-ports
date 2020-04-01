@@ -389,6 +389,7 @@ share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.fuzzyclock.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardindicator.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.konsoleprofiles.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.mediaframe.mo
+share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.nightcolorcontrol.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.notes.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.private.grouping.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.quicklaunch.mo
@@ -1085,6 +1086,7 @@ share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.fuzzyclock.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardindicator.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.konsoleprofiles.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.mediaframe.mo
+share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.nightcolorcontrol.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.notes.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.private.grouping.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.quicklaunch.mo
