@@ -640,11 +640,9 @@ PY_TYPING=
 
 .if ${PYTHON_REL} < 3400
 PY_ENUM34=	${PYTHON_PKGNAMEPREFIX}enum34>=1.1<2.0:devel/py-enum34@${PY_FLAVOR}
-PY_ENUM_COMPAT=	${PYTHON_PKGNAMEPREFIX}enum-compat>0:devel/py-enum-compat@${PY_FLAVOR}
 PY_PATHLIB=	${PYTHON_PKGNAMEPREFIX}pathlib>0:devel/py-pathlib@${PY_FLAVOR}
 .else
 PY_ENUM34=
-PY_ENUM_COMPAT=
 PY_PATHLIB=	
 .endif
 
