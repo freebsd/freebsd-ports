@@ -3,6 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
@@ -12,11 +13,13 @@ COMMENT=	Node-specific part of Munin
 
 BUILD_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build \
 		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
+		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
 		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 		p5-Net-Server>=0:net/p5-Net-Server \
 		bash:shells/bash
 RUN_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
 		p5-DateTime-HiRes>=0:devel/p5-DateTime-HiRes \
+		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
 		munin-common>=${MUNIN_VERSION}:sysutils/munin-common \
 		p5-Net-Server>=0:net/p5-Net-Server \
 		p5-List-MoreUtils>0:lang/p5-List-MoreUtils \
