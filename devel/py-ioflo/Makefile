@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ioflo
-PORTVERSION=	1.7.5
+PORTVERSION=	2.0.0
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -12,13 +12,11 @@ MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Automated Reasoning Engine and Flow Based Programming Framework
 
 LICENSE=	APACHE20
-
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
+LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-git>=1.1:devel/py-setuptools-git@${PY_FLAVOR}
 
-USES=		python:2.7 shebangfix
+USES=		python:3.7+ shebangfix
 
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
