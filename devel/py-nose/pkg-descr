@@ -5,4 +5,4 @@ nose will run tests in files or directories under the current working
 directory whose names include "test". nose also supports doctest tests
 and may optionally provide a test coverage report.
 
-WWW: http://somethingaboutorange.com/mrl/projects/nose/
+WWW: https://nose.readthedocs.io/
