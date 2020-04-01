@@ -8,6 +8,7 @@ share/X11/xkb/compat/complete
 share/X11/xkb/compat/iso9995
 share/X11/xkb/compat/japan
 share/X11/xkb/compat/ledcaps
+share/X11/xkb/compat/ledcompose
 share/X11/xkb/compat/lednum
 share/X11/xkb/compat/ledscroll
 share/X11/xkb/compat/level5
@@ -80,7 +81,6 @@ share/X11/xkb/rules/evdev
 share/X11/xkb/rules/evdev.extras.xml
 share/X11/xkb/rules/evdev.lst
 share/X11/xkb/rules/evdev.xml
-share/X11/xkb/rules/xkb.its
 share/X11/xkb/rules/xfree98
 share/X11/xkb/rules/xkb.dtd
 share/X11/xkb/rules/xorg
@@ -152,6 +152,7 @@ share/X11/xkb/symbols/is
 share/X11/xkb/symbols/it
 share/X11/xkb/symbols/jolla_vndr/sbj
 share/X11/xkb/symbols/jp
+share/X11/xkb/symbols/jv
 share/X11/xkb/symbols/ke
 share/X11/xkb/symbols/keypad
 share/X11/xkb/symbols/kg

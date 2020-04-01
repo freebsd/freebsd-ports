@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	xkeyboard-config
-PORTVERSION=	2.27
+PORTVERSION=	2.29
 CATEGORIES=	x11
-MASTER_SITES=	XORG/individual/${XORG_CAT}/${PORTNAME}
+MASTER_SITES=	XORG/individual/data/${PORTNAME}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Keyboard Configuration Database
@@ -13,11 +13,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xkbcomp:x11/xkbcomp
 
-USES=		gmake gnome localbase pathfix perl5 xorg-cat:data
+USES=		gmake gnome localbase pathfix perl5 python:3.5+,build \
+		shebangfix xorg-cat:data
 
 NO_ARCH=	yes
 USE_GNOME=	libxslt:build
 USE_PERL5=	build
+SHEBANG_FILES=	rules/merge.py \
+		rules/compat/map-variants.py
 
 CONFIGURE_ARGS=	--with-xkb-base=${PREFIX}/share/X11/xkb \
 		--with-xkb-rules-symlink=xorg
@@ -36,10 +39,6 @@ PLIST_SUB+=	NLS=""
 #CONFIGURE_ARGS+=--disable-nls
 #PLIST_SUB+=	NLS="@comment "
 #.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' -e 's|==|=|g' \
-		${WRKSRC}/rules/merge.sh
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/lib/xkb
