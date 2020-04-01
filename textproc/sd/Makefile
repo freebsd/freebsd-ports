@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sd
-DISTVERSION=	0.6.5
-PORTREVISION=	8
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.7.2
 CATEGORIES=	textproc
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -15,68 +15,80 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	chmln
 
-CARGO_CRATES=	aho-corasick-0.7.3 \
+CARGO_CRATES=	aho-corasick-0.7.10 \
 		ansi_term-0.11.0 \
-		arrayvec-0.4.10 \
-		atty-0.2.11 \
-		autocfg-0.1.2 \
-		bitflags-1.0.4 \
-		cfg-if-0.1.7 \
+		anyhow-1.0.27 \
+		assert_cmd-1.0.0 \
+		atty-0.2.14 \
+		autocfg-1.0.0 \
+		bitflags-1.2.1 \
+		cfg-if-0.1.10 \
 		clap-2.33.0 \
-		cloudabi-0.0.3 \
-		crossbeam-deque-0.6.3 \
-		crossbeam-epoch-0.7.1 \
-		crossbeam-queue-0.1.2 \
-		crossbeam-utils-0.6.5 \
-		either-1.5.2 \
-		fuchsia-cprng-0.1.1 \
+		crossbeam-deque-0.7.3 \
+		crossbeam-epoch-0.8.2 \
+		crossbeam-queue-0.2.1 \
+		crossbeam-utils-0.7.2 \
+		difference-2.0.0 \
+		doc-comment-0.3.3 \
+		either-1.5.3 \
+		escargot-0.5.0 \
+		getrandom-0.1.14 \
 		heck-0.3.1 \
-		lazy_static-1.3.0 \
-		libc-0.2.51 \
+		hermit-abi-0.1.8 \
+		itoa-0.4.5 \
+		lazy_static-1.4.0 \
+		libc-0.2.68 \
+		log-0.4.8 \
 		man-0.3.0 \
-		memchr-2.2.0 \
+		maybe-uninit-2.0.0 \
+		memchr-2.3.3 \
 		memmap-0.7.0 \
-		memoffset-0.2.1 \
-		nodrop-0.1.13 \
-		num_cpus-1.10.0 \
-		proc-macro2-0.4.27 \
-		quote-0.6.11 \
-		rand-0.6.5 \
-		rand_chacha-0.1.1 \
-		rand_core-0.3.1 \
-		rand_core-0.4.0 \
-		rand_hc-0.1.0 \
-		rand_isaac-0.1.1 \
-		rand_jitter-0.1.3 \
-		rand_os-0.1.3 \
-		rand_pcg-0.1.2 \
-		rand_xorshift-0.1.1 \
-		rayon-1.1.0 \
-		rayon-core-1.5.0 \
-		rdrand-0.4.0 \
-		redox_syscall-0.1.53 \
-		redox_termios-0.1.1 \
-		regex-1.1.7 \
-		regex-syntax-0.6.6 \
-		remove_dir_all-0.5.1 \
+		memoffset-0.5.4 \
+		num_cpus-1.12.0 \
+		ppv-lite86-0.2.6 \
+		predicates-1.0.4 \
+		predicates-core-1.0.0 \
+		predicates-tree-1.0.0 \
+		proc-macro-error-0.4.12 \
+		proc-macro-error-attr-0.4.12 \
+		proc-macro2-1.0.9 \
+		quote-1.0.3 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
+		rayon-1.3.0 \
+		rayon-core-1.7.0 \
+		redox_syscall-0.1.56 \
+		regex-1.3.6 \
+		regex-syntax-0.6.17 \
+		remove_dir_all-0.5.2 \
 		roff-0.1.0 \
-		scopeguard-0.3.3 \
+		ryu-1.0.3 \
+		scopeguard-1.1.0 \
+		serde-1.0.105 \
+		serde_derive-1.0.105 \
+		serde_json-1.0.50 \
 		strsim-0.8.0 \
-		structopt-0.2.16 \
-		structopt-derive-0.2.16 \
-		syn-0.15.30 \
-		tempfile-3.0.8 \
-		termion-1.5.1 \
+		structopt-0.3.12 \
+		structopt-derive-0.4.5 \
+		syn-1.0.17 \
+		syn-mid-0.5.0 \
+		tempfile-3.1.0 \
 		textwrap-0.11.0 \
-		thread_local-0.3.6 \
-		ucd-util-0.1.3 \
+		thiserror-1.0.14 \
+		thiserror-impl-1.0.14 \
+		thread_local-1.0.1 \
+		treeline-0.1.0 \
 		unescape-0.1.0 \
-		unicode-segmentation-1.2.1 \
-		unicode-width-0.1.5 \
-		unicode-xid-0.1.0 \
-		utf8-ranges-1.0.2 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.7 \
+		unicode-xid-0.2.0 \
 		vec_map-0.8.1 \
-		winapi-0.3.7 \
+		version_check-0.9.1 \
+		wait-timeout-0.2.0 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
