@@ -179,6 +179,7 @@
     SUBDIR += wkhtmltopdf
     SUBDIR += xdeview
     SUBDIR += xml2c
+    SUBDIR += yt
     SUBDIR += ytnef
     SUBDIR += zbase32
 
