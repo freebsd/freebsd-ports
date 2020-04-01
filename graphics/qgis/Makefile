@@ -3,8 +3,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_10_1
-PORTREVISION=	3
+DISTVERSION=	3_12_1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -144,8 +143,6 @@ PLIST_SUB=	DISTVERSION=${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|markupsafe ||g' \
-		${WRKSRC}/python/ext-libs/CMakeLists.txt
 # On i386, '-mllvm -inline-threshold=128' does not build under all circumstances
 # See bugs 242557 and 241687.
 .if ${OPSYS} == FreeBSD && ${ARCH} == "i386"
@@ -158,6 +155,7 @@ pre-configure:
 
 post-install:
 	@${RM} ${STAGEDIR}${DATADIR}/python/pytz/tzfile.py.bak
+	${FIND} ${STAGEDIR}${LOCALBASE} -name "__pycache__" | ${XARGS} ${RM} -rf
 	@${RM} /tmp/srs.db
 
 check:

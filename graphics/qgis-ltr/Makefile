@@ -3,18 +3,15 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_4_11
-PORTREVISION=	5
+DISTVERSION=	3_10_4
 CATEGORIES=	graphics geography
 PKGNAMESUFFIX=	-ltr
-
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Free and Open Source Geographic Information System
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
-		gpsbabel>=1.5.4:astro/gpsbabel \
+BUILD_DEPENDS=	gpsbabel>=1.5.4:astro/gpsbabel \
 		txt2tags:textproc/txt2tags \
 		${PYTHON_PKGNAMEPREFIX}cycler>=0.10.0:devel/py-cycler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.0:devel/py-dateutil@${PY_FLAVOR} \
@@ -24,7 +21,7 @@ BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=1.1.1:textproc/py-MarkupSafe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.2.4:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=2.0.0:devel/py-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}OWSLib>=0.17.1:graphics/py-OWSLib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}OWSLib>=0.18.0:graphics/py-OWSLib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>=3.1.1:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=9.0.3:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}plotly>=3.0.2:graphics/py-plotly@${PY_FLAVOR} \
@@ -85,16 +82,17 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 
 ### Fortran is needed by numpy, GRASS, etc.
 USES=		bison cmake compiler:features cpe desktop-file-utils \
-		fortran gmake gnome pgsql pyqt:5 python:3.6+ qca qt:5 \
+		fortran gmake gl gnome pgsql pyqt:5 python:3.6+ qca qt:5 \
 		shebangfix sqlite:3
 USE_GNOME=	libxml2
+USE_GL=		gl
 USE_QT=		3d buildtools_build core concurrent dbus declarative \
 		designer doc gamepad gui linguist_build location \
 		network printsupport qmake_build script serialport \
 		sql sql-pgsql sql-sqlite3 svg testlib uitools \
 		webengine widgets webkit xml
-USE_PYQT=	core gui network qml qscintilla2 sip sql svg xml \
-		webkit_run webkitwidgets_run
+USE_PYQT=	core gui network qml quickwidgets qscintilla2 \
+		sip sql svg webkit_run webkitwidgets_run xml
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	qgis
@@ -108,9 +106,11 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DQSCI_SIP_DIR:PATH=${PYQT_SIPDIR}/Qsci \
 		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt5/qwt6 \
 		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt6.so \
-		-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW
+		-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW \
+		-DUSE_OPENCL:BOOL=FALSE
 CMAKE_ON=	BUILD_TESTING ENABLE_TESTS WITH_3D WITH_ASTYLE \
-		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_POSTGRESQL
+		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_INTERNAL_MDAL \
+		WITH_POSTGRESQL
 CMAKE_OFF=	WITH_GLOBE WITH_QWTPOLAR
 
 .if !defined(MAINTAINER_MODE)
@@ -130,23 +130,20 @@ SERVER_DESC=		Enable QGIS server
 GRASS_BUILD_DEPENDS=	grass7:databases/grass7
 GRASS_RUN_DEPENDS=	${GRASS_BUILD_DEPENDS}
 GRASS_CMAKE_BOOL=	WITH_GRASS7
-GRASS_FORCE_MAKE_JOBS=	NO
-
 SERVER_LIB_DEPENDS=	libfcgi.so:www/fcgi
-SERVER_CMAKE_BOOL=	WITH_SERVER
+SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS WITH_QSPATIALITE
 
 PLIST_SUB=	DISTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-# make describe needs them here, after bsd.port.pre.mk
-CPP=		clang-cpp${LLVM_DEFAULT}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|markupsafe ||g' \
-		${WRKSRC}/python/ext-libs/CMakeLists.txt
+# On i386, '-mllvm -inline-threshold=128' does not build under all circumstances
+# See bugs 242557 and 241687.
+.if ${OPSYS} == FreeBSD && ${ARCH} == "i386"
+	@${REINPLACE_CMD} -e 's|"-mllvm -inline-threshold=128"|"-O1"|g' \
+		${WRKSRC}/src/core/CMakeLists.txt
+.endif
 
 pre-configure:
 	${MKDIR} ${CONFIGURE_WRKSRC}/bin && ${LN} -s ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/bin/python3

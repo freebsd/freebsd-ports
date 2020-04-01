@@ -75,6 +75,7 @@ lib/saga/libio_shapes_dxf.so
 lib/saga/libio_shapes_las.so
 lib/saga/libio_table.so
 lib/saga/libio_virtual.so
+lib/saga/libio_webservices.so
 lib/saga/libpj_georeference.so
 lib/saga/libpj_proj4.so
 lib/saga/libpointcloud_tools.so
