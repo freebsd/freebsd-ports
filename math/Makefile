@@ -399,6 +399,7 @@
     SUBDIR += moo
     SUBDIR += mpc
     SUBDIR += mpexpr
+    SUBDIR += mpfi
     SUBDIR += mpfr
     SUBDIR += mpfrc++
     SUBDIR += mpir
