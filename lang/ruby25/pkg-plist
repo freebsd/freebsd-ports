@@ -1858,6 +1858,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/de6/stringio_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/de6/stringio_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/de7/structvm__ifunc__argc.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/de7/structw__ivar__arg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/deb/udpsocket_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/deb/udpsocket_8c_a03f5d390c888d97a62f9de727fd2e7a0_icgraph.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/deb/udpsocket_8c_a03f5d390c888d97a62f9de727fd2e7a0_icgraph.md5
