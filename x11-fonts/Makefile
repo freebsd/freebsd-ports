@@ -124,6 +124,7 @@
     SUBDIR += iosevka
     SUBDIR += isabella
     SUBDIR += jetbrains-mono
+    SUBDIR += jf-openhuninn
     SUBDIR += jmk-x11-fonts
     SUBDIR += junction
     SUBDIR += junicode
