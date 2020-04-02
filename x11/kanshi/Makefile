@@ -2,8 +2,11 @@
 
 PORTNAME=	kanshi
 DISTVERSIONPREFIX=	v
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	846b72563784.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic display configuration for Wayland
