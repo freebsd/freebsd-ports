@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webpacker
-PORTVERSION=	4.2.2
+PORTVERSION=	5.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails60
@@ -12,9 +12,10 @@ COMMENT=	Use Webpack to manage app-like JavaScript modules in Rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport60>=4.2:devel/rubygem-activesupport60 \
+RUN_DEPENDS=	rubygem-activesupport60>=5.2:devel/rubygem-activesupport60 \
 		rubygem-rack-proxy>=0.6.1:www/rubygem-rack-proxy \
-		rubygem-railties60>=4.2:www/rubygem-railties60 \
+		rubygem-railties60>=5.2:www/rubygem-railties60 \
+		rubygem-semantic_range>=2.3.0:devel/rubygem-semantic_range \
 		yarn:www/yarn
 
 USES=		gem
