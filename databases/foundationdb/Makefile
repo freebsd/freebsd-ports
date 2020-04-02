@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foundationdb
-PORTVERSION=	6.1.8
+DISTVERSION=	6.1.8
 PORTREVISION=	6
 CATEGORIES=	databases
 
@@ -26,7 +26,8 @@ USE_RC_SUBR=	foundationdb
 SHEBANG_FILES=	build/csprojtom4.py build/link-wrapper.sh build/vcxprojtom4.py \
 		bindings/c/generate_asm.py
 MAKE_ENV+=	PYTHON=${PYTHON_CMD} TLS_DISABLED=yes
-CXXFLAGS+=	-Wno-varargs -Wno-implicit-int-float-conversion -DTLS_DISABLED
+CXXFLAGS+=	-Wno-varargs -DTLS_DISABLED
+CFLAGS+=	-Wno-implicit-int-float-conversion
 
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}

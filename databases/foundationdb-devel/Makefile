@@ -29,7 +29,7 @@ USE_RC_SUBR=	foundationdb
 SHEBANG_FILES=	build/csprojtom4.py build/link-wrapper.sh build/vcxprojtom4.py \
 		bindings/c/generate_asm.py
 
-CXXFLAGS+=	-Wno-implicit-int-float-conversion
+CFLAGS+=	-Wno-implicit-int-float-conversion
 
 USERS=		foundationdb
 GROUPS=		foundationdb
