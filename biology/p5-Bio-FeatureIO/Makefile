@@ -21,8 +21,9 @@ RUN_DEPENDS=	p5-BioPerl>=0:biology/p5-BioPerl \
 		p5-XML-DOM>=0:textproc/p5-XML-DOM \
 		p5-XML-DOM-XPath>=0:textproc/p5-XML-DOM-XPath
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
