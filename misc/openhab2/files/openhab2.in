@@ -52,12 +52,14 @@ export OPENHAB_HTTP_PORT="${openhab2_http_port}"
 export OPENHAB_HTTPS_PORT="${openhab2_https_port}"
 export OPENHAB_HTTP_ADDRESS="${openhab2_listen_address}"
 export OPENHAB_BACKUPS="${openhab2_backup_dir}"
-export EXTRA_JAVA_OPTS="${openhab2_java_opts}"
+export EXTRA_JAVA_OPTS="-Dsun.nio.fs.watchservice=polling ${openhab2_java_opts}"
 export OPENHAB_HOME="${openhab2_home_dir}"
 export OPENHAB_CONF="${openhab2_conf_dir}"
 export OPENHAB_RUNTIME="${openhab2_runtime_dir}"
 export OPENHAB_USERDATA="${openhab2_userdata_dir}"
 export OPENHAB_LOGDIR="${openhab2_log_dir}"
+# for UTF-8 encoding, language can be set inside openhab:
+export LC_ALL=en_US.UTF-8
 
 #command=${OPENHAB_HOME}/start.sh
 #command_args="server"
