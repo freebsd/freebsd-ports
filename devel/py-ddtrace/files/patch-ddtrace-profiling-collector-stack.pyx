@@ -1,5 +1,5 @@
---- ddtrace/profile/collector/stack.pyx.orig	2020-03-13 18:20:41 UTC
-+++ ddtrace/profile/collector/stack.pyx
+--- ddtrace/profiling/collector/stack.pyx.orig	2020-03-13 18:20:41 UTC
++++ ddtrace/profiling/collector/stack.pyx
 @@ -34,7 +34,7 @@ IF UNAME_SYSNAME == "Linux":
  
      cdef extern from "<pthread.h>":
