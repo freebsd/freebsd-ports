@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2019-05-29 03:34:08 UTC
+--- CMakeLists.txt.orig	2020-02-16 18:48:02 UTC
 +++ CMakeLists.txt
 @@ -31,6 +31,7 @@ cmake_minimum_required(VERSION 3.8)
  project(gnuradio CXX C)
@@ -8,7 +8,7 @@
  
  # Make sure our local CMake Modules path comes first
  list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules)
-@@ -64,6 +65,15 @@ set(GCC_MIN_VERSION "4.8.4")
+@@ -67,6 +68,15 @@ set(GCC_MIN_VERSION "4.8.4")
  set(CLANG_MIN_VERSION "3.4.0")
  set(APPLECLANG_MIN_VERSION "500")
  set(MSVC_MIN_VERSION "1800")
