@@ -46,6 +46,8 @@ share/pixmaps/QMapShack.png
 share/pixmaps/QMapTool.png
 share/qmaptool/translations/qmaptool_de.qm
 share/qmaptool/translations/qmaptool_es.qm
+share/qmaptool/translations/qmaptool_it.qm
+share/qmaptool/translations/qmaptool_ru.qm
 share/qmt_rgb2pct/translations/qmt_rgb2pct_de.qm
 %%DATADIR%%/translations/qmapshack_ca.qm
 %%DATADIR%%/translations/qmapshack_cs.qm
@@ -55,3 +57,7 @@ share/qmt_rgb2pct/translations/qmt_rgb2pct_de.qm
 %%DATADIR%%/translations/qmapshack_it.qm
 %%DATADIR%%/translations/qmapshack_nl.qm
 %%DATADIR%%/translations/qmapshack_ru.qm
+%%PORTDOCS%%%%DOCSDIR%%/HTML/QMSHelp.qch
+%%PORTDOCS%%%%DOCSDIR%%/HTML/QMSHelp.qhc
+%%PORTDOCS%%%%DOCSDIR%%/HTML/QMTHelp.qch
+%%PORTDOCS%%%%DOCSDIR%%/HTML/QMTHelp.qhc

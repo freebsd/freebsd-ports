@@ -1,8 +1,8 @@
---- src/qmaptool/CMakeLists.txt.orig	2019-04-08 15:33:47 UTC
+--- src/qmaptool/CMakeLists.txt.orig	2020-03-27 08:07:31 UTC
 +++ src/qmaptool/CMakeLists.txt
-@@ -247,7 +247,7 @@ target_link_libraries(${APPLICATION_NAME}
-     Qt5::Widgets
+@@ -254,7 +254,7 @@ target_link_libraries(${APPLICATION_NAME}
      Qt5::Network
+     Qt5::Help
      ${GDAL_LIBRARIES}
 -    ${PROJ4_LIBRARIES}
 +    ${PROJ4_LDFLAGS} ${PROJ4_LIBRARIES}

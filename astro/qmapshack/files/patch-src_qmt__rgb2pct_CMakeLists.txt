@@ -1,6 +1,6 @@
---- src/qmt_rgb2pct/CMakeLists.txt.orig	2019-04-08 15:33:50 UTC
+--- src/qmt_rgb2pct/CMakeLists.txt.orig	2020-03-27 08:07:31 UTC
 +++ src/qmt_rgb2pct/CMakeLists.txt
-@@ -95,7 +95,7 @@ add_executable(${APPLICATION_NAME} WIN32 ${MAININP})
+@@ -92,7 +92,7 @@ target_compile_definitions(${APPLICATION_NAME} PUBLIC
  target_link_libraries(${APPLICATION_NAME}
      Qt5::Core
      ${GDAL_LIBRARIES}

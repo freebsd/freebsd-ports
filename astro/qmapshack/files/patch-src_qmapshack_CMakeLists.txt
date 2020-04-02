@@ -1,7 +1,7 @@
---- src/qmapshack/CMakeLists.txt.orig	2019-04-08 15:33:43 UTC
+--- src/qmapshack/CMakeLists.txt.orig	2020-03-27 08:07:31 UTC
 +++ src/qmapshack/CMakeLists.txt
-@@ -891,7 +891,7 @@ target_link_libraries(${APPLICATION_NAME}
-     Qt5::Positioning
+@@ -920,7 +920,7 @@ target_link_libraries(${APPLICATION_NAME}
+     Qt5::Help
      ${DBUS_LIB}
      ${GDAL_LIBRARIES}
 -    ${PROJ4_LIBRARIES}
