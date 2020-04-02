@@ -1,0 +1,70 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ -r /etc/defaults/periodic.conf ]; then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+: "${daily_checkrestart_enable:=NO}"
+: "${daily_checkrestart_weekdays:=1234567}" # Days of the week to run, Monday=1
+: "${daily_checkrestart_users:=}"           # User names or IDs to check
+: "${daily_checkrestart_jails:=}"           # Jail names or IDs to check
+: "${daily_checkrestart_procs:=}"           # Process names or IDs to check
+
+checkrestartcmd=/usr/local/bin/checkrestart
+hflag=""
+rc=0
+
+export COLUMNS=80
+
+checkrestart() {
+    local result
+    result="$(${checkrestartcmd} ${hflag} "$@" -- ${daily_checkrestart_procs} 2>&1)"
+    if [ "$result" ]; then
+        echo "${result}"
+        rc=3
+    fi
+    hflag="-H"
+}
+
+checkrestart_each_user() {
+    if [ -n "${daily_checkrestart_users}" ]; then
+        for user in ${daily_checkrestart_users}; do
+            checkrestart -u "${user}" "$@"
+        done
+    else
+        checkrestart "$@"
+    fi
+}
+
+checkrestart_start() {
+    if [ -n "${daily_checkrestart_jails}" ]; then
+        for jail in ${daily_checkrestart_jails}; do
+            checkrestart_each_user -j "${jail}"
+        done
+    else
+        checkrestart_each_user
+    fi
+}
+
+checkday() {
+    if echo "${daily_checkrestart_weekdays}" | grep -vq '^[1-7, ]*$'; then
+        echo "daily_checkrestart_weekdays must have values 1-7"
+        exit 2
+    fi
+
+    echo "${daily_checkrestart_weekdays}" | grep -Fq "$(date +%u)"
+}
+
+case "${daily_checkrestart_enable}" in
+    [Yy][Ee][Ss])
+    if checkday; then
+        echo
+        echo 'Checking for stale processes:'
+        checkrestart_start
+    fi
+    ;;
+esac
+
+exit $rc

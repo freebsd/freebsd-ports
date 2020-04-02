@@ -1,0 +1,16 @@
+[
+{ type: install,
+  message: <<EOM
+In order to enable periodic(8) checks, set the following in /etc/periodic.conf
+
+# Required
+daily_checkrestart_enable="YES"
+
+# Optional
+daily_checkrestart_weekdays="1 4"     # only run on Monday and Thursday
+daily_checkrestart_jails="0 web"      # limit to jails 0 and web
+daily_checkrestart_users="root www"   # limit to root and www users
+daily_checkrestart_procs="smbd httpd" # limit to samba and httpd
+EOM
+}
+]
