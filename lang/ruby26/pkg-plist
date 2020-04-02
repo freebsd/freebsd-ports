@@ -1885,6 +1885,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/de6/stringio_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/de6/stringio_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/de7/structvm__ifunc__argc.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/de7/structw__ivar__arg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/de8/mjit_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/de8/mjit_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/de8/mjit_8c__incl.png
