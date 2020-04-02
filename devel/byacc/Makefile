@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	byacc
-PORTVERSION=	20191125
+PORTVERSION=	20200330
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-mirror.net/archives/byacc/ \
 		LOCAL/sunpoet
