@@ -17,6 +17,6 @@ BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
 USE_PYTHON=	autoplist distutils cython
-USES=		python:2.7+
+USES=		python
 
 .include <bsd.port.mk>
