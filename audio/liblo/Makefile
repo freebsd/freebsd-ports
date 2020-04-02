@@ -3,6 +3,7 @@
 
 PORTNAME=	liblo
 PORTVERSION=	0.31
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -17,13 +18,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-PORTDOCS=	*
-PORTEXAMPLES=	example_client \
-		example_server \
-		example_tcp_echo_server \
-		nonblocking_server_example
-
-OPTIONS_DEFINE=	DOXYGEN DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES
 OPTIONS_SUB=	yes
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
@@ -45,6 +40,6 @@ post-install-DOXYGEN-on:
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${INSTALL_SCRIPT} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/.libs/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
