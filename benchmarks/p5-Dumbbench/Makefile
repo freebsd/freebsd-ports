@@ -22,8 +22,9 @@ RUN_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Params-Util>=0:devel/p5-Params-Util \
 		p5-Statistics-CaseResampling>=0.06:math/p5-Statistics-CaseResampling
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
