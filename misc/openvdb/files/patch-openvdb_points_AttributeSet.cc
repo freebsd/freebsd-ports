@@ -1,6 +1,6 @@
---- openvdb/points/AttributeSet.cc.orig	2019-09-16 16:50:50 UTC
+--- openvdb/points/AttributeSet.cc.orig	2019-12-06 20:11:33 UTC
 +++ openvdb/points/AttributeSet.cc
-@@ -34,6 +34,7 @@
+@@ -7,6 +7,7 @@
  #include "AttributeGroup.h"
  
  #include <algorithm> // std::equal

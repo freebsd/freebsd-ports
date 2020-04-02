@@ -2,8 +2,7 @@
 
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.1.0
-PORTREVISION=	8
+DISTVERSION=	7.0.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,9 +21,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AcademySoftwareFoundation
 USE_LDCONFIG=	yes
 
+CMAKE_ARGS=	-DCONCURRENT_MALLOC="Tbbmalloc"
 CMAKE_OFF=	OPENVDB_CORE_STATIC
 
-OPTIONS_DEFINE=		PYTHON TOOLS DOCS # TOOLS should be a subpackage
+OPTIONS_DEFINE=		PYTHON TOOLS DOCS # TOOLS and PYTHON should be made into subpackages
 OPTIONS_DEFAULT=	PYTHON TOOLS
 OPTIONS_SUB=		yes
 
@@ -41,7 +41,7 @@ TOOLS_CMAKE_BOOL=	OPENVDB_BUILD_BINARIES OPENVDB_BUILD_VDB_LOD \
 TOOLS_LIB_DEPENDS=	libglfw.so:graphics/glfw \
 			libIlmImf.so:graphics/openexr
 TOOLS_USES=		gl xorg
-TOOLS_USE=		GL=gl,glu XORG=x11,xcursor,xi,xinerama,xrandr,xxf86vm
+TOOLS_USE=		GL=gl,glu XORG=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
 
 DOCS_CMAKE_BOOL=	OPENVDB_BUILD_DOCS
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen

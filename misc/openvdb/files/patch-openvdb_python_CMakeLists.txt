@@ -1,0 +1,14 @@
+--- openvdb/python/CMakeLists.txt.orig	2019-12-06 20:11:33 UTC
++++ openvdb/python/CMakeLists.txt
+@@ -104,9 +104,9 @@ elseif(${CMAKE_VERSION} VERSION_LESS 3.14)
+ else()
+   # CMake >= 3.14
+   if(USE_NUMPY)
+-    find_package(Python QUIET REQUIRED COMPONENTS Interpreter Development NumPy)
++    find_package(Python ${FREEBSD_PYTHON_VER} EXACT QUIET REQUIRED COMPONENTS Interpreter Development NumPy)
+   else()
+-    find_package(Python QUIET REQUIRED COMPONENTS Interpreter Development)
++    find_package(Python ${FREEBSD_PYTHON_VER} EXACT QUIET REQUIRED COMPONENTS Interpreter Development)
+   endif()
+ 
+   OPENVDB_CHECK_PYTHON_VERSION(${Python_VERSION} ${Python_EXECUTABLE})

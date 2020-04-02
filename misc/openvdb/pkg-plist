@@ -11,6 +11,7 @@ include/openvdb/PlatformConfig.h
 include/openvdb/Types.h
 include/openvdb/io/Archive.h
 include/openvdb/io/Compression.h
+include/openvdb/io/DelayedLoadMetadata.h
 include/openvdb/io/File.h
 include/openvdb/io/GridDescriptor.h
 include/openvdb/io/Queue.h
@@ -67,6 +68,7 @@ include/openvdb/tools/Dense.h
 include/openvdb/tools/DenseSparseTools.h
 include/openvdb/tools/Diagnostics.h
 include/openvdb/tools/Filter.h
+include/openvdb/tools/FindActiveValues.h
 include/openvdb/tools/GridOperators.h
 include/openvdb/tools/GridTransformer.h
 include/openvdb/tools/Interpolation.h
@@ -131,6 +133,7 @@ include/openvdb/version.h
 lib/cmake/OpenVDB/FindBlosc.cmake
 lib/cmake/OpenVDB/FindCppUnit.cmake
 lib/cmake/OpenVDB/FindIlmBase.cmake
+lib/cmake/OpenVDB/FindJemalloc.cmake
 lib/cmake/OpenVDB/FindLog4cplus.cmake
 lib/cmake/OpenVDB/FindOpenEXR.cmake
 lib/cmake/OpenVDB/FindOpenVDB.cmake
@@ -140,6 +143,6 @@ lib/cmake/OpenVDB/OpenVDBHoudiniSetup.cmake
 lib/cmake/OpenVDB/OpenVDBMayaSetup.cmake
 lib/cmake/OpenVDB/OpenVDBUtils.cmake
 lib/libopenvdb.so
-lib/libopenvdb.so.6.1
-lib/libopenvdb.so.6.1.0
+lib/libopenvdb.so.7.0
+lib/libopenvdb.so.7.0.0
 %%PYTHON%%%%PYTHON_LIBDIR%%/pyopenvdb.so

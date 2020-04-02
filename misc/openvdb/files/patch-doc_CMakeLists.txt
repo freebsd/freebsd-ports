@@ -1,0 +1,10 @@
+--- doc/CMakeLists.txt.orig	2019-12-06 20:11:33 UTC
++++ doc/CMakeLists.txt
+@@ -64,5 +64,5 @@ add_custom_target(doc ALL
+ )
+ 
+ # Suppress "Installing..." messages for all but one of the hundreds of generated files.
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/openvdb/doc/html/index.html DESTINATION doc/html)
+-install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/openvdb/doc/html DESTINATION doc MESSAGE_NEVER)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/openvdb/doc/html/index.html DESTINATION share/doc/openvdb)
++install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/openvdb/doc/html DESTINATION share/doc/openvdb MESSAGE_NEVER)

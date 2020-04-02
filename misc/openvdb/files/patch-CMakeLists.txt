@@ -1,20 +1,23 @@
---- CMakeLists.txt.orig	2019-05-07 20:58:35 UTC
+--- CMakeLists.txt.orig	2019-12-06 20:11:33 UTC
 +++ CMakeLists.txt
-@@ -177,7 +177,7 @@ if(NOT DISABLE_DEPENDENCY_VERSION_CHECKS)
+@@ -198,7 +198,7 @@ mark_as_advanced(
+ 
+ # @note  Blosc version is currently treated as exception which must be adhered
+ # to. The minimum version must be at least 1.5. Previous versions are incompatible.
+-set(MINIMUM_BLOSC_VERSION 1.5)
++set(MINIMUM_BLOSC_VERSION 1.15)
+ # @note  ABI always enforced so the correct deprecation messages are available.
+ # OPENVDB_USE_DEPRECATED_ABI should be used to circumvent this
+ set(MINIMUM_OPENVDB_ABI_VERSION 4)
+@@ -215,9 +215,9 @@ if(NOT DISABLE_DEPENDENCY_VERSION_CHECKS)
+   set(MINIMUM_ILMBASE_VERSION 2.2)
+   set(MINIMUM_OPENEXR_VERSION 2.2)
    set(MINIMUM_ZLIB_VERSION 1.2.7)
-   set(MINIMUM_TBB_VERSION 4.4)
+-  set(MINIMUM_TBB_VERSION 2017.0)
++  #set(MINIMUM_TBB_VERSION 2019.0) # bogus check: https://github.com/AcademySoftwareFoundation/openvdb/issues/688
  
 -  set(MINIMUM_PYTHON_VERSION 2.7)
 +  set(MINIMUM_PYTHON_VERSION ${FREEBSD_PYTHON_VER})
-   set(MINIMUM_NUMPY_VERSION 1.9.2)
+   set(MINIMUM_NUMPY_VERSION 1.12.1)
  
    set(MINIMUM_CPPUNIT_VERSION 1.10)
-@@ -271,7 +271,7 @@ if(OPENVDB_BUILD_DOCS)
-     COMMENT "Generating API documentation with Doxygen" VERBATIM
-   )
- 
--  install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/openvdb/doc/html DESTINATION docs)
-+  install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/openvdb/doc/html DESTINATION share/doc/openvdb)
- endif()
- 
- # Early exit if there's nothing to build
