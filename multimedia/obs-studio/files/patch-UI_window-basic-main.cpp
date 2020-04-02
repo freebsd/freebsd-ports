@@ -1,6 +1,6 @@
---- UI/window-basic-main.cpp.orig	2017-10-25 18:45:20 UTC
+--- UI/window-basic-main.cpp.orig	2020-03-19 16:51:06 UTC
 +++ UI/window-basic-main.cpp
-@@ -2461,6 +2461,10 @@ void OBSBasic::TimedCheckForUpdates()
+@@ -3207,6 +3207,10 @@ void OBSBasic::TimedCheckForUpdates()
  
  void OBSBasic::CheckForUpdates(bool manualUpdate)
  {
@@ -10,4 +10,4 @@
 +#endif
  #ifdef UPDATE_SPARKLE
  	trigger_sparkle_update();
- #elif ENABLE_WIN_UPDATER
+ #elif _WIN32
