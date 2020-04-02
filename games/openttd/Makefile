@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-DISTVERSION=	1.9.3
-PORTREVISION=	1
+DISTVERSION=	1.10.0
 CATEGORIES=	games
 MASTER_SITES=	https://proxy.binaries.openttd.org/openttd-releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
@@ -19,8 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 USES=		cpe gmake pkgconfig tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	STRIP="${STRIP_CMD} ${STRIP}"
-CONFIGURE_ARGS=	--prefix-dir="${PREFIX}" --data-dir="${DATADIR_REL}" \
-		--without-libtimidity
+CONFIGURE_ARGS=	--prefix-dir="${PREFIX}" --data-dir="${DATADIR_REL}"
 MAKE_ARGS=	VERBOSE=1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
@@ -28,10 +26,12 @@ CXXFLAGS=	# Set to empty as OpenTTD treats it as an addition to CFLAGS
 
 SUB_FILES=	pkg-message
 
-PORTDOCS=	HOWTO_compile_lang_files.txt README.md admin_network.txt \
+PORTDOCS=	README.md admin_network.md compiling_lang_files.md \
+		debugging_desyncs.md desync.md directory_structure.md \
 		changelog.txt elrail.svg elrail_tile.png elrail_track.png \
 		known-bugs.txt landscape.html landscape_externals.html \
-		landscape_grid.html multiplayer.txt obg_format.txt \
+		landscape_grid.html logging_and_performance_metrics.md \
+		multiplayer.md obg_format.txt \
 		obm_format.txt obs_format.txt ottd-colourtext-palette.png \
 		tileh.png
 
@@ -60,6 +60,7 @@ CONFIGURE_ARGS+=	--enable-dedicated
 CFLAGS+=	-I${LOCALBASE}/include
 USE_RC_SUBR=	${PORTNAME}
 .else
+CONFIGURE_ARGS+=	--with-sdl=sdl1
 USES+=		compiler:c++11-lib gnome sdl
 USE_CXXSTD=	gnu++11
 CXXFLAGS+=	-DU_USING_ICU_NAMESPACE=1

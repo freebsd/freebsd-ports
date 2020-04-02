@@ -31,7 +31,7 @@
  	fi
  
 -	if [ -n "$lzma_config" ]; then
--		CFLAGS="$CFLAGS -DWITH_LZMA"
+-		CFLAGS="$CFLAGS -DWITH_LIBLZMA"
 -		CFLAGS="$CFLAGS `$lzma_config --cflags | tr '\n\r' '  '`"
 -
 -		if [ "$enable_static" != "0" ]; then
@@ -44,7 +44,7 @@
 -			LIBS="$LIBS `$lzma_config --libs | tr '\n\r' '  '`"
 +			LIBS="$LIBS -llzma"
  		fi
-+		CFLAGS="$CFLAGS -DWITH_LZMA"
++		CFLAGS="$CFLAGS -DWITH_LIBLZMA"
  	fi
  
  	if [ "$with_lzo2" != "0" ]; then
@@ -56,8 +56,8 @@
 +	detect_library "$with_lzma" "lzma" "liblzma.a" "" "lzma.h"
 +}
 +
- detect_libtimidity() {
- 	detect_pkg_config "$with_libtimidity" "libtimidity" "libtimidity_config" "0.1" "1"
+ detect_fluidsynth() {
+ 	detect_library "$with_fluidsynth" "fluidsynth" "" "" "fluidsynth.h"
  }
 @@ -2756,10 +2757,6 @@ detect_pkg_config() {
  	log 1 "checking $2... found"
