@@ -234,6 +234,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/irb/color.rb
 %%RUBY_LIBDIR%%/irb/completion.rb
 %%RUBY_LIBDIR%%/irb/context.rb
+%%RUBY_LIBDIR%%/irb/easter-egg.rb
 %%RUBY_LIBDIR%%/irb/ext/change-ws.rb
 %%RUBY_LIBDIR%%/irb/ext/history.rb
 %%RUBY_LIBDIR%%/irb/ext/loader.rb
@@ -4388,6 +4389,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_aa367eedb744aa3d6d1b633b38c748ad7_icgraph.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_aa367eedb744aa3d6d1b633b38c748ad7_icgraph.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_aa367eedb744aa3d6d1b633b38c748ad7_icgraph.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_abcc559cc28feb42d9c7a63c4839c3630_icgraph.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_abcc559cc28feb42d9c7a63c4839c3630_icgraph.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_abcc559cc28feb42d9c7a63c4839c3630_icgraph.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_ac0de8c25259eee05c04b0832e54323ad_icgraph.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_ac0de8c25259eee05c04b0832e54323ad_icgraph.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_ac0de8c25259eee05c04b0832e54323ad_icgraph.png
@@ -4397,6 +4401,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_ad970161742adc804c667f94bfb5fdffc_icgraph.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_ad970161742adc804c667f94bfb5fdffc_icgraph.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_ad970161742adc804c667f94bfb5fdffc_icgraph.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_ad993bcc7ebbb50bae4fd396659eb9f01_icgraph.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_ad993bcc7ebbb50bae4fd396659eb9f01_icgraph.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_ad993bcc7ebbb50bae4fd396659eb9f01_icgraph.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_adb4792f85d32d7e3f717a1f4f69e2af3_icgraph.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_adb4792f85d32d7e3f717a1f4f69e2af3_icgraph.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/d16/gc_8c_adb4792f85d32d7e3f717a1f4f69e2af3_icgraph.png
@@ -6361,6 +6368,12 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dde/internal_8h_a74401b32f46a5a9b805409bfad77bfa6_icgraph.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dde/internal_8h_a74401b32f46a5a9b805409bfad77bfa6_icgraph.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dde/internal_8h_a74401b32f46a5a9b805409bfad77bfa6_icgraph.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dde/internal_8h_a788e91bdefb04cd57b109d5c0a00d0ba_icgraph.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dde/internal_8h_a788e91bdefb04cd57b109d5c0a00d0ba_icgraph.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dde/internal_8h_a788e91bdefb04cd57b109d5c0a00d0ba_icgraph.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dde/internal_8h_a8e7b68221273a56dcebcc3954b5478a8_icgraph.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dde/internal_8h_a8e7b68221273a56dcebcc3954b5478a8_icgraph.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dde/internal_8h_a8e7b68221273a56dcebcc3954b5478a8_icgraph.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dde/internal_8h_a8ce6fcc0f54ff57d0d5c63a671d53c1e_icgraph.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dde/internal_8h_a8ce6fcc0f54ff57d0d5c63a671d53c1e_icgraph.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dde/internal_8h_a8ce6fcc0f54ff57d0d5c63a671d53c1e_icgraph.png
@@ -12990,6 +13003,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Hash/reject%21-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Hash/reject-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Hash/replace-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Hash/ruby2_keywords_hash%3f-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Hash/ruby2_keywords_hash-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Hash/select%21-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Hash/select-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Hash/shift-i.ri
@@ -13231,6 +13246,11 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/IRB/CantChangeBinding/cdesc-CantChangeBinding.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/CantReturnToNormalMode/cdesc-CantReturnToNormalMode.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/CantShiftToMultiIrbMode/cdesc-CantShiftToMultiIrbMode.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Canvas/cdesc-Canvas.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Canvas/draw-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Canvas/line-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Canvas/line0-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Canvas/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Color/SymbolState/cdesc-SymbolState.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Color/SymbolState/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Color/SymbolState/scan_token-i.ri
@@ -13278,6 +13298,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Context/load_modules-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Context/main-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Context/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Context/newline_before_multiline_output%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Context/newline_before_multiline_output-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Context/pop_workspace-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Context/prompt_c-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/Context/prompt_i-i.ri
@@ -13503,6 +13525,10 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReidlineInputMethod/line-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReidlineInputMethod/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/ReidlineInputMethod/readable_after_eof%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/RubyModel/cdesc-RubyModel.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/RubyModel/init_ruby_model-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/RubyModel/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/RubyModel/render_frame-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/StdioInputMethod/cdesc-StdioInputMethod.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/StdioInputMethod/encoding-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/StdioInputMethod/eof%3f-i.ri
@@ -13514,6 +13540,15 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/IRB/StdioOutputMethod/print-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/UndefinedPromptMode/cdesc-UndefinedPromptMode.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/UnrecognizedSwitch/cdesc-UnrecognizedSwitch.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Vec/cdesc-Vec.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Vec/cross-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Vec/dot-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Vec/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Vec/normalize-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Vec/sub-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Vec/x-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Vec/y-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/Vec/z-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/WorkSpace/__evaluate__-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/WorkSpace/binding-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/WorkSpace/cdesc-WorkSpace.ri
@@ -13527,6 +13562,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/IRB/cdesc-IRB.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/conf-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/default_src_encoding-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/IRB/easter_egg-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/initialize_tracer-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/irb-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/IRB/irb_abort-c.ri
@@ -20338,6 +20374,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Reline/Core/dig_perfect_match_proc%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Reline/Core/emacs_editing_mode%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Reline/Core/emacs_editing_mode-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Reline/Core/encoding-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Reline/Core/filename_quote_characters%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Reline/Core/get_screen_size-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Reline/Core/inner_readline-i.ri
@@ -20361,6 +20398,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Reline/Core/vi_editing_mode-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Reline/cdesc-Reline.ri
 %%RDOC%%%%RUBY_RIDIR%%/Reline/core-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Reline/encoding_system_needs-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Reline/insert_text-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Reline/line_editor-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Resolv/DNS/Config/NXDomain/cdesc-NXDomain.ri
@@ -22392,7 +22430,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Zlib/zlib_version-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/cache.ri
 %%RDOC%%%%RUBY_RIDIR%%/fatal/cdesc-fatal.ri
-%%RDOC%%%%RUBY_RIDIR%%/lib/irb/page-ruby_logo_aa.ri
 %%RDOC%%%%RUBY_RIDIR%%/lib/racc/page-pre-setup.ri
 %%RDOC%%%%RUBY_RIDIR%%/lib/racc/rdoc/page-grammar_en_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/page-CONTRIBUTING_md.ri
@@ -22440,8 +22477,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/syntax/page-precedence_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/syntax/page-refinements_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/win32/page-README_win32.ri
-@dir include/ruby-%%RUBY_VER%%/ruby-%%RUBY_VER%%/%%RUBY_ARCH%%
-@dir %%RUBY_LIBDIR%%/racc/rdoc
 @dir %%RUBY_SITEARCHLIBDIR%%
 @dir %%RUBY_VENDORARCHLIBDIR%%
 %%NO_CAPIDOCS%%%%NO_DOCS%%%%RDOC%%@dir %%RUBY_DOCDIR%%
