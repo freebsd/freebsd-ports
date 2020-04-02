@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cli
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -19,5 +19,8 @@ BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist
+
+post-install:
+	@${ECHO_CMD} "@dir ${R_MOD_DIR}/help/figures" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
