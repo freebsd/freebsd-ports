@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	python bindings for libnotify
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-09-15
+
 OPTIONS_DEFINE=	DOCS
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify
