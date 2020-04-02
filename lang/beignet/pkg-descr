@@ -1,6 +1,0 @@
-Beignet contains the code to run OpenCL programs on Intel GPUs, which
-defines and implements host functions required to initialize the device,
-create the command queues, the kernels, and the programs and run them on
-the GPU. It also contains the compiler part of the stack.
-
-WWW: https://01.org/beignet/

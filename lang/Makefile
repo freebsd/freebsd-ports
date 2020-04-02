@@ -18,7 +18,6 @@
     SUBDIR += awka
     SUBDIR += bas2tap
     SUBDIR += basic256
-    SUBDIR += beignet
     SUBDIR += bf2c
     SUBDIR += bsh
     SUBDIR += bwbasic

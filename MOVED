@@ -14521,3 +14521,4 @@ databases/py-pypuppetdb03|databases/py-pypuppetdb|2020-04-01|Has expired: Use da
 www/py-puppetboard02|www/py-puppetboard|2020-04-01|Has expired: Use www/py-puppetboard instead
 www/py-puppetboard03|www/py-puppetboard|2020-04-01|Has expired: Use www/py-puppetboard instead
 net/librsync2|net/librsync|2020-04-02|Remove PKGNAMESUFFIX 3 years after librsync removal
+lang/beignet|lang/intel-compute-runtime|2020-04-02|Has expired: Deprecated upstream, use lang/intel-compute-runtime
