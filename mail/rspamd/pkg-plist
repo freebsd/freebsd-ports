@@ -281,6 +281,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/rules/rspamd.lua
 %%DATADIR%%/rules/subject_checks.lua
 %%DATADIR%%/www/README.md
+%%DATADIR%%/www/apple-touch-icon.png
 %%DATADIR%%/www/browserconfig.xml
 %%DATADIR%%/www/css/bootstrap.min.css
 %%DATADIR%%/www/css/d3evolution.css
