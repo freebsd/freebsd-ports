@@ -1,0 +1,4 @@
+Test2::Plugin::IOEvents turns prints to STDOUT and STDERR (including warnings)
+into proper Test2 events.
+
+WWW: https://metacpan.org/release/Test2-Plugin-IOEvents

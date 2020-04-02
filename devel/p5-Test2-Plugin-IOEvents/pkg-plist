@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Test2/Plugin/IOEvents.pm
+%%SITE_PERL%%/Test2/Plugin/IOEvents/Tie.pm
+%%PERL5_MAN3%%/Test2::Plugin::IOEvents.3.gz
+%%PERL5_MAN3%%/Test2::Plugin::IOEvents::Tie.3.gz
