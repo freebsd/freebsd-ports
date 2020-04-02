@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	opengfx
-PORTVERSION=	0.5.5
+PORTVERSION=	0.6.0
 CATEGORIES=	games
-MASTER_SITES=	http://bundles.openttdcoop.org/${PORTNAME}/releases/${PORTVERSION}/ \
-		http://m1cro.me/ports/distfiles/${PORTNAME}/releases/${PORTVERSION}/
+MASTER_SITES=	https://cdn.openttd.org/${PORTNAME}-releases/${PORTVERSION}/
+DISTFILES=	${PORTNAME}-${PORTVERSION}-all.zip
 
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Free alternative graphics for OpenTTD game engine
@@ -17,14 +17,14 @@ USES=		zip
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+DATADIR=	${PREFIX}/share/openttd/baseset/opengfx
 
 # upstream zipped a tar file, unpack it.
 post-extract:
 	@cd ${WRKDIR} && tar -xf ${PORTNAME}-${PORTVERSION}.tar
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/openttd/baseset/opengfx
-	${INSTALL_DATA} ${WRKDIR}/opengfx-${PORTVERSION}/* \
-		${STAGEDIR}${PREFIX}/share/openttd/baseset/opengfx
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
