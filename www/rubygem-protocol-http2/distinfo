@@ -1,3 +1,3 @@
-TIMESTAMP = 1585752117
-SHA256 (rubygem/protocol-http2-0.12.0.gem) = 9399e88dddf5677e2bed2d12e8804046ae13a217fcb885739b78c2f049b77a4e
-SIZE (rubygem/protocol-http2-0.12.0.gem) = 25600
+TIMESTAMP = 1585833249
+SHA256 (rubygem/protocol-http2-0.13.0.gem) = 18e2e58eabbd67c6890b3d1947c0561059036aab268054cbafe09c7c93132f35
+SIZE (rubygem/protocol-http2-0.13.0.gem) = 25600
