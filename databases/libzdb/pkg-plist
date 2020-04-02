@@ -4,12 +4,11 @@ include/zdb/Exception.h
 include/zdb/PreparedStatement.h
 include/zdb/ResultSet.h
 include/zdb/SQLException.h
-include/zdb/Thread.h
 include/zdb/URL.h
 include/zdb/zdb.h
 include/zdb/zdbpp.h
 lib/libzdb.a
 lib/libzdb.so
-lib/libzdb.so.12
-lib/libzdb.so.12.0.1
+lib/libzdb.so.13
+lib/libzdb.so.13.0.0
 libdata/pkgconfig/zdb.pc
