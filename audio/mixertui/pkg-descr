@@ -1,0 +1,6 @@
+MixerTUI is an audio mixer with a Terminal User Interface built on the FreeBSD
+sound system. It can show the current sound driver configuration, select an
+audio device to get its information, change the volume or to set it as default
+(switching easily audio from/to laptop and hdmi, headphones and speakers, etc).
+
+WWW: https://gitlab.com/alfix/mixertui/

@@ -484,6 +484,7 @@
     SUBDIR += milkytracker
     SUBDIR += mio2jack
     SUBDIR += mixer.app
+    SUBDIR += mixertui
     SUBDIR += mixmos
     SUBDIR += mixxx
     SUBDIR += mixxx21
