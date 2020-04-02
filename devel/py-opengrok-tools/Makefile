@@ -9,6 +9,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	OpenGrok tools for synchronization and mirroring
 
 LICENSE=	CDDL
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}
 
@@ -21,6 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.6.0:devel/py-jsonschema@${PY_F
 # According to the vendor, Python3 is required
 USES=		python:3.5+
 USE_PYTHON=	autoplist distutils noflavors
+NO_ARCH=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	oracle
