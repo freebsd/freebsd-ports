@@ -3,7 +3,7 @@
 
 PORTNAME=	epdfview
 PORTVERSION=	0.1.8
-PORTREVISION=	28
+PORTREVISION=	29
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	FRUGALWARE/xapps-extra/${PORTNAME} \
 		ftp://ftp.slackware.com/.1/blfs/conglomeration/${PORTNAME}/ \
