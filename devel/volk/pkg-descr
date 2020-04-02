@@ -1,0 +1,19 @@
+VOLK is a sub-project of GNU Radio. Please see http://libvolk.org for bug
+tracking, documentation, source code, and contact information about VOLK.
+
+VOLK is the Vector-Optimized Library of Kernels. It is a library that
+contains kernels of hand-written SIMD code for different mathematical
+operations. Since each SIMD architecture can be very different and no
+compiler has yet come along to handle vectorization properly or highly
+efficiently, VOLK approaches the problem differently.
+
+For each architecture or platform that a developer wishes to vectorize for,
+a new proto-kernel is added to VOLK. At runtime, VOLK will select the correct
+proto-kernel. In this way, the users of VOLK call a kernel for performing
+the operation that is platform/architecture agnostic. This allows us to
+write portable SIMD code.
+
+Bleeding edge code can be found in our git repository at
+https://www.gnuradio.org/git/volk.git/.
+
+WWW: https://github.com/gnuradio/volk
