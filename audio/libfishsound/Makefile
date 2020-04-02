@@ -18,17 +18,17 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libspeex.so:audio/speex \
 		libvorbis.so:audio/libvorbis
 
-OPTIONS_DEFINE=	DOCS DOXYGEN
+USES=		libtool pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		libtool pathfix pkgconfig
 
-PORTDOCS=	*
+OPTIONS_DEFINE=	DOCS DOXYGEN
+OPTIONS_SUB=	yes
+DOXYGEN_IMPLIES=DOCS
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOXYGEN_IMPLIES=	DOCS
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| doc||' ${WRKSRC}/Makefile.in
