@@ -1,0 +1,4 @@
+SQLAlchemy-Utils provides various utility functions, new data types and helpers
+for SQLAlchemy.
+
+WWW: https://github.com/kvesteri/sqlalchemy-utils
