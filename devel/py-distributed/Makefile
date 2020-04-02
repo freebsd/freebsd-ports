@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	distributed
-PORTVERSION=	2.12.0
+PORTVERSION=	2.13.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.6:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2.0.2:devel/py-sortedcontainers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tblib>=1.6.0:devel/py-tblib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}toolz>=0.7.4:devel/py-toolz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}toolz>=0.8.2:devel/py-toolz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zict>=0.1.3:devel/py-zict@${PY_FLAVOR}
 
 USES=		python:3.6+
