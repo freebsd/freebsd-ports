@@ -3,6 +3,7 @@
 
 PORTNAME=	libunwind
 PORTVERSION=	20170615	# This is the release date of libunwind 1.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 DISTNAME=	${PORTNAME}-1.2.1
@@ -15,16 +16,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS= aarch64 amd64 i386
 
-OPTIONS_DEFINE=	DOCS
-OPTIONS_SUB=	yes
-DOCS_CONFIGURE_ON=	ac_cv_path_LATEX2MAN=${TRUE}
-DOCS_CONFIGURE_OFF=	--disable-documentation
-
 USES=		libtool pathfix pkgconfig
-USE_LDCONFIG=	yes
+
+CONFIGURE_ARGS=	ac_cv_path_LATEX2MAN=${TRUE}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LLD_UNSAFE=	yes
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	ARCH=${ARCH:S|i386|x86|:S|amd64|x86_64|}
 
