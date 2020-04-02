@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-Cpanel-JSON-XS>=2.3310:converters/p5-Cpanel-JSON-XS
 TEST_DEPENDS=	p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Test-Without-Module>=0.17:devel/p5-Test-Without-Module
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
