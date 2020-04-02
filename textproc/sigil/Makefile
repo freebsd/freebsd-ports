@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sigil
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	textproc
 
 MAINTAINER=	jonc@chen.org.nz
@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libpcre.so:devel/pcre \
 		libhunspell-1.7.so:textproc/hunspell
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>=0.15.0:devel/dulwich@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
 		pkgconfig python:3.4+ qt:5 shebangfix

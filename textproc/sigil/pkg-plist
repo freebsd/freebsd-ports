@@ -236,6 +236,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/polyfills/MJ/jax/output/SVG/fonts/TeX/fontdata.js
 %%DATADIR%%/polyfills/MJ/jax/output/SVG/jax.js
 %%DATADIR%%/python3lib/cssreformatter.py
+%%DATADIR%%/python3lib/diffstat.py
 %%DATADIR%%/python3lib/gencheck.py
 %%DATADIR%%/python3lib/metadata_utils.py
 %%DATADIR%%/python3lib/metaproc2.py
@@ -245,7 +246,9 @@ share/pixmaps/sigil.png
 %%DATADIR%%/python3lib/opf2data.py
 %%DATADIR%%/python3lib/opf3data.py
 %%DATADIR%%/python3lib/opf_newparser.py
+%%DATADIR%%/python3lib/repomanager.py
 %%DATADIR%%/python3lib/sanitycheck.py
+%%DATADIR%%/python3lib/sdifflibparser.py
 %%DATADIR%%/python3lib/updatechecker.py
 %%DATADIR%%/python3lib/xmlprocessor.py
 %%DATADIR%%/python3lib/xmlsanitycheck.py
