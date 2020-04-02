@@ -3,6 +3,8 @@ share/applications/com.github.alecaddd.sequeler.desktop
 share/icons/hicolor/128x128/apps/com.github.alecaddd.sequeler.svg
 share/icons/hicolor/128x128@2/apps/com.github.alecaddd.sequeler.svg
 share/icons/hicolor/16x16/apps/com.github.alecaddd.sequeler.svg
+share/icons/hicolor/16x16/status/table-empty.svg
+share/icons/hicolor/16x16/status/table.svg
 share/icons/hicolor/16x16@2/apps/com.github.alecaddd.sequeler.svg
 share/icons/hicolor/24x24/apps/com.github.alecaddd.sequeler.svg
 share/icons/hicolor/24x24@2/apps/com.github.alecaddd.sequeler.svg
