@@ -1,6 +1,3 @@
-Free software library that interfaces with selected Z-Wave PC controllers,
-allowing anyone to create applications that manipulate and respond to
-devices on a Z-Wave network, without requiring in-depth knowledge of the
-Z-Wave protocol.
+Open-zwave - An open-source interface to Z-Wave networks.
 
-WWW: http://www.openzwave.net/
+WWW: https://code.google.com/p/open-zwave/

@@ -1,9 +1,9 @@
---- cpp/build/support.mk.orig	2019-08-26 02:51:02 UTC
+--- cpp/build/support.mk.orig	2020-02-10 15:58:14 UTC
 +++ cpp/build/support.mk
-@@ -46,8 +46,8 @@ VERSION_REV ?= 0
- else
- GITVERSION	:= $(shell $(GIT) --git-dir $(top_srcdir)/.git describe --long --tags --dirty 2>/dev/null | sed s/^v//)
+@@ -67,8 +67,8 @@ endif
+ 
  ifeq ($(GITVERSION),)
+ $(warning  git describe returned an empty result, setting GITVERSION to VERSION_MAJ.VERSION_MIN.-1 and VERSION_REV to 0)
 -GITVERSION	:= $(VERSION_MAJ).$(VERSION_MIN).-1
 -VERSION_REV	:= 0
 +GITVERSION	:= $(VERSION_MAJ).$(VERSION_MIN).$(VERSION_REV)
