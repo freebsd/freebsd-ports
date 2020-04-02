@@ -4,9 +4,7 @@
 PORTNAME=	librsync
 PORTVERSION=	2.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net devel
-PKGNAMESUFFIX=	2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for delta compression of streams
@@ -19,8 +17,6 @@ LIB_DEPENDS=	libpopt.so:devel/popt
 USES=		compiler:c11 cmake
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-
-CONFLICTS=	librsync-[0-9]* librsync1-[0-9]*
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librsync.so.${PORTVERSION}

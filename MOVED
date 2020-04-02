@@ -9129,7 +9129,6 @@ security/py-crits||2017-04-19|Has expired: Does not build with py-django18 see p
 www/py-cactus||2017-04-19|Removed, depends on expired Django version
 devel/py-django16-tastypie-mongoengine|devel/py-django-tastypie-mongoengine|2017-04-19|Removed, uses expired Django version
 devel/freeocl|lang/pocl|2017-04-19|Has expired: Unfetchable for more than six months (google code has gone away); use lang/pocl instead
-net/librsync|net/librsync2|2017-04-28|Unmaintained, CVE-2014-8242, use net/librsync2 instead
 devel/stormlib-ghost++||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
 devel/py-coil||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
 devel/py-cmdln||2017-04-30|Has expired: Unfetchable for more than six months (google code has gone away)
@@ -14521,3 +14520,4 @@ databases/mongodb34-tools|databases/mongodb36-tools|2020-03-31|Removed, part of 
 databases/py-pypuppetdb03|databases/py-pypuppetdb|2020-04-01|Has expired: Use databases/py-pypuppetdb instead
 www/py-puppetboard02|www/py-puppetboard|2020-04-01|Has expired: Use www/py-puppetboard instead
 www/py-puppetboard03|www/py-puppetboard|2020-04-01|Has expired: Use www/py-puppetboard instead
+net/librsync2|net/librsync|2020-04-02|Remove PKGNAMESUFFIX 3 years after librsync removal

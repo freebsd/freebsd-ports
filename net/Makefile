@@ -399,7 +399,7 @@
     SUBDIR += libproxy-python
     SUBDIR += libproxy-webkit3
     SUBDIR += librdkafka
-    SUBDIR += librsync2
+    SUBDIR += librsync
     SUBDIR += libsignal
     SUBDIR += libsocket++
     SUBDIR += libsrtp2

@@ -3,7 +3,7 @@
 
 PORTNAME=	duplicity
 PORTVERSION=	0.7.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.7-series/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	07
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 DEPRECATED=	Uses deprecated version of Python
 EXPIRATION_DATE=2020-06-20
 
-LIB_DEPENDS=	librsync.so:net/librsync2
+LIB_DEPENDS=	librsync.so:net/librsync
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0:devel/py-fasteners@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR}
