@@ -4,6 +4,7 @@
 PORTNAME=	logfury
 PORTVERSION=	0.1.2
 CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -18,7 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.10:devel/py-six@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	ppolewicz
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
