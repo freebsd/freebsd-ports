@@ -3,6 +3,7 @@
 
 PORTNAME=	go
 PORTVERSION=	1.14.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://golang.org/dl/ \
