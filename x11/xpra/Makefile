@@ -2,6 +2,7 @@
 
 PORTNAME=	xpra
 PORTVERSION=	3.0.7
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -65,7 +66,8 @@ CUPS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pycups>1:print/py-pycups@${PY_FLAVOR}
 CUPS_VARS=			XPRA_OPTIONS+=printing
 FFMPEG_VARS=			XPRA_OPTIONS+=enc_ffmpeg
 GSTREAMER_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR}
-GSTREAMER_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR}
+GSTREAMER_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR} \
+				gstreamer1-plugins-pulse>1:audio/gstreamer1-plugins-pulse
 GSTREAMER_USE=			GSTREAMER1=flac,lame,mpg123,ogg,opus,vorbis,wavpack
 GSTREAMER_VARS=			XPRA_OPTIONS+=sound
 HTML5_VARS=			XPRA_OPTIONS+=html5
