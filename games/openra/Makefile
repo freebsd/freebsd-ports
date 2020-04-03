@@ -38,9 +38,8 @@ GH_PROJECT=	OpenRA
 
 NO_ARCH=	yes
 USES=		desktop-file-utils gmake lua:51,run mono:nuget openal:soft sdl \
-		shared-mime-info shebangfix
+		shared-mime-info
 USE_SDL=	sdl2
-SHEBANG_FILES=	launch-dedicated.sh
 MAKE_ENV=	prefix="${PREFIX}" \
 		gameinstalldir="${DATADIR}"
 ALL_TARGET=	all
