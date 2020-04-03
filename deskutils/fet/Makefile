@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fet
-DISTVERSION=	5.43.0
+DISTVERSION=	5.44.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://lalescu.ro/liviu/fet/download/old/ \
