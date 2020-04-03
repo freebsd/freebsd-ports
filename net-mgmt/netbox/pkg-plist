@@ -38,6 +38,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/development/squashing-migrations.md
 %%PORTDOCS%%%%DOCSDIR%%/development/style-guide.md
 %%PORTDOCS%%%%DOCSDIR%%/development/utility-views.md
+%%PORTDOCS%%%%DOCSDIR%%/extra.css
 %%PORTDOCS%%%%DOCSDIR%%/index.md
 %%PORTDOCS%%%%DOCSDIR%%/installation/1-postgresql.md
 %%PORTDOCS%%%%DOCSDIR%%/installation/2-redis.md
@@ -314,6 +315,7 @@
 %%DATADIR%%/extras/management/commands/__init__.py
 %%DATADIR%%/extras/management/commands/nbshell.py
 %%DATADIR%%/extras/management/commands/renaturalize.py
+%%DATADIR%%/extras/management/commands/rqworker.py
 %%DATADIR%%/extras/management/commands/runreport.py
 %%DATADIR%%/extras/middleware.py
 %%DATADIR%%/extras/migrations/0001_initial.py
@@ -358,9 +360,11 @@
 %%DATADIR%%/extras/migrations/0036_contenttype_filters_to_q_objects.py
 %%DATADIR%%/extras/migrations/0037_configcontexts_clusters.py
 %%DATADIR%%/extras/migrations/0038_webhook_template_support.py
+%%DATADIR%%/extras/migrations/0039_update_features_content_types.py
 %%DATADIR%%/extras/migrations/__init__.py
 %%DATADIR%%/extras/models.py
 %%DATADIR%%/extras/querysets.py
+%%DATADIR%%/extras/registry.py
 %%DATADIR%%/extras/reports.py
 %%DATADIR%%/extras/scripts.py
 %%DATADIR%%/extras/signals.py
@@ -374,6 +378,7 @@
 %%DATADIR%%/extras/tests/test_customfields.py
 %%DATADIR%%/extras/tests/test_filters.py
 %%DATADIR%%/extras/tests/test_models.py
+%%DATADIR%%/extras/tests/test_registry.py
 %%DATADIR%%/extras/tests/test_scripts.py
 %%DATADIR%%/extras/tests/test_tags.py
 %%DATADIR%%/extras/tests/test_views.py
@@ -459,9 +464,11 @@
 %%DATADIR%%/netbox/api.py
 %%DATADIR%%/netbox/configuration.example.py
 %%DATADIR%%/netbox/forms.py
+%%DATADIR%%/netbox/releases.py
 %%DATADIR%%/netbox/settings.py
 %%DATADIR%%/netbox/tests/__init__.py
 %%DATADIR%%/netbox/tests/test_api.py
+%%DATADIR%%/netbox/tests/test_releases.py
 %%DATADIR%%/netbox/tests/test_views.py
 %%DATADIR%%/netbox/urls.py
 %%DATADIR%%/netbox/views.py
@@ -1296,6 +1303,7 @@
 %%DATADIR%%/templates/404.html
 %%DATADIR%%/templates/500.html
 %%DATADIR%%/templates/_base.html
+%%DATADIR%%/templates/admin/index.html
 %%DATADIR%%/templates/circuits/circuit.html
 %%DATADIR%%/templates/circuits/circuit_edit.html
 %%DATADIR%%/templates/circuits/circuit_terminations_swap.html
@@ -1363,6 +1371,8 @@
 %%DATADIR%%/templates/dcim/rack.html
 %%DATADIR%%/templates/dcim/rack_edit.html
 %%DATADIR%%/templates/dcim/rack_elevation_list.html
+%%DATADIR%%/templates/dcim/rackreservation.html
+%%DATADIR%%/templates/dcim/rackreservation_edit.html
 %%DATADIR%%/templates/dcim/site.html
 %%DATADIR%%/templates/dcim/site_edit.html
 %%DATADIR%%/templates/dcim/virtualchassis_add_member.html
@@ -1513,6 +1523,7 @@
 %%DATADIR%%/utilities/__init__.py
 %%DATADIR%%/utilities/api.py
 %%DATADIR%%/utilities/auth_backends.py
+%%DATADIR%%/utilities/background_tasks.py
 %%DATADIR%%/utilities/choices.py
 %%DATADIR%%/utilities/constants.py
 %%DATADIR%%/utilities/context_processors.py
