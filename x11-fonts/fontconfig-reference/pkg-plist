@@ -179,6 +179,7 @@ man/man3/FcRangeCreateInteger.3.gz
 man/man3/FcRangeDestroy.3.gz
 man/man3/FcRangeGetDouble.3.gz
 man/man3/FcStrBasename.3.gz
+man/man3/FcStrBuildFilename.3.gz
 man/man3/FcStrCmp.3.gz
 man/man3/FcStrCmpIgnoreCase.3.gz
 man/man3/FcStrCopy.3.gz

@@ -7,6 +7,8 @@ bin/fc-pattern
 bin/fc-query
 bin/fc-scan
 bin/fc-validate
+etc/fonts/conf.avail/05-reset-dirs-sample.conf
+etc/fonts/conf.avail/09-autohint-if-no-hinting.conf
 etc/fonts/conf.avail/10-autohint.conf
 etc/fonts/conf.avail/10-hinting-full.conf
 etc/fonts/conf.avail/10-hinting-medium.conf
@@ -25,6 +27,7 @@ etc/fonts/conf.avail/11-lcdfilter-light.conf
 etc/fonts/conf.avail/20-unhint-small-vera.conf
 etc/fonts/conf.avail/25-unhint-nonlatin.conf
 etc/fonts/conf.avail/30-metric-aliases.conf
+etc/fonts/conf.avail/35-lang-normalize.conf
 etc/fonts/conf.avail/40-nonlatin.conf
 etc/fonts/conf.avail/45-generic.conf
 etc/fonts/conf.avail/45-latin.conf
