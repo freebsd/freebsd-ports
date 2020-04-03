@@ -1,0 +1,16 @@
+--- cmake/CMakeLists.txt.orig	2020-04-03 13:58:20 UTC
++++ cmake/CMakeLists.txt
+@@ -62,11 +62,11 @@ if(${CMAKE_CXX_COMPILER_ID} STREQUAL "Intel")
+ endif()
+ 
+ if(${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
+-  set(CMAKE_TUNE_DEFAULT "-ffast-math -march=native")
++  set(CMAKE_TUNE_DEFAULT "-ffast-math")
+ endif()
+ 
+ if(${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
+-  set(CMAKE_TUNE_DEFAULT "-ffast-math -march=native")
++  set(CMAKE_TUNE_DEFAULT "-ffast-math")
+ endif()
+ 
+ # we require C++11
