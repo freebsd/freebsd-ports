@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200403:
+  AFFECTS: users of x11-fonts/fontconfig
+  AUTHOR: desktop@FreeBSD.org
+
+  Fontconfig 2.13.1 generated .uuid files in the fonts directory which where
+  not properly registered to the packages. To clean them up, please execute the
+  following command:
+
+  	find %%LOCALBASE%%/share/fonts -type f -name .uuid -delete
+
 20200326:
   AFFECTS: users of devel/sonarqube and devel/sonar-ant-task
   AUTHOR: netchild@FreeBSD.org

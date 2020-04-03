@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.13.1
-PORTREVISION?=	1
+PORTVERSION=	2.13.92
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.freedesktop.org/software/fontconfig/release/
+MASTER_SITES=	https://www.freedesktop.org/software/fontconfig/release/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	XML-based font configuration API for X Windows
@@ -14,13 +13,12 @@ COMMENT=	XML-based font configuration API for X Windows
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gperf tar:bzip2
+USES=		gperf tar:xz
 
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libexpat.so:textproc/expat2 \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libexpat.so:textproc/expat2
 
 USES+=		cpe gmake libtool pathfix pkgconfig
 CPE_VENDOR=	fontconfig_project

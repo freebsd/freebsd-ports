@@ -1,0 +1,15 @@
+[
+{
+        type: upgrade,
+        maximum_version: "2.13.92,1",
+        message: <<EOM
+Fontconfig 2.13.1 generated .uuid files in the fonts directory
+which where not properly registered to the packages.
+To clean them up, please execute the following command:
+
+    find %%LOCALBASE%%/share/fonts -type f -name .uuid
+
+and delete the files at your discretion.
+EOM
+}
+]
