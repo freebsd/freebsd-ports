@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml2
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,10 +10,6 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Parse XML
 
 LICENSE=	GPLv2+
-
-CRAN_DEPENDS=	R-cran-Rcpp>=0.12.12:devel/R-cran-Rcpp
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist,compiles gnome
 USE_GNOME=	libxml2
