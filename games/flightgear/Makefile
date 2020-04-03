@@ -10,7 +10,8 @@ MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	FlightGear flight simulator
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_thread.so:devel/boost-libs \
