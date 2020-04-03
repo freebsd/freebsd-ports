@@ -201,6 +201,8 @@ libexec/dwarffortress/libgraphics.so
 %%DATADIR%%/data/speech/wandering_profession_year.txt
 %%DATADIR%%/raw/graphics/example/dwarves.bmp
 %%DATADIR%%/raw/graphics/graphics_example.txt
+%%DATADIR%%/raw/interaction examples/example - bogeyman transformation.txt
+%%DATADIR%%/raw/interaction examples/example - shrine effects.txt
 %%DATADIR%%/raw/interaction examples/interaction_disturbance.txt
 %%DATADIR%%/raw/interaction examples/interaction_region.txt
 %%DATADIR%%/raw/interaction examples/interaction_secret.txt

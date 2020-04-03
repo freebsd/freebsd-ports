@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dwarffortress
-DISTVERSION=	0.44.12
-PORTREVISION=	2
+DISTVERSION=	0.47.04
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.bay12games.com/dwarves/
 PKGNAMEPREFIX=	linux-
@@ -59,7 +58,7 @@ do-install:
 		help index init initial_movies movies shader.fs shader.vs \
 		sound speech" ${STAGEDIR}${DATADIR}/data)
 	# Switch off SOUND since it doesn't work with c7
-	${REINPLACE_CMD} -e 's/SOUND:ON/SOUND:OFF/' \
+	${REINPLACE_CMD} -e 's/SOUND:YES/SOUND:NO/' \
 		${STAGEDIR}${DATADIR}/data/init/init.txt
 
 do-install-DOCS-on:
