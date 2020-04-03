@@ -154,7 +154,7 @@ lib/cmake/volk/VolkConfigVersion.cmake
 lib/cmake/volk/VolkTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/volk/VolkTargets.cmake
 lib/libvolk.so
-lib/libvolk.so.2.2
+lib/libvolk.so.2.2.1
 %%PYTHON_SITELIBDIR%%/volk_modtool/__init__.py
 %%PYTHON_SITELIBDIR%%/volk_modtool/__init__.pyc
 %%PYTHON_SITELIBDIR%%/volk_modtool/__init__.pyo
