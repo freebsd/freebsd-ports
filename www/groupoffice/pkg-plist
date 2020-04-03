@@ -588,7 +588,6 @@
 %%WWWDIR%%/go/core/views/extjs3/groups/GroupMemberWindow.js
 %%WWWDIR%%/go/core/views/extjs3/groups/GroupModuleGrid.js
 %%WWWDIR%%/go/core/views/extjs3/groups/GroupUserGrid.js
-%%WWWDIR%%/go/core/views/extjs3/groups/SelectUserGroup
 %%WWWDIR%%/go/core/views/extjs3/groups/SystemSettingsGroupGrid.js
 %%WWWDIR%%/go/core/views/extjs3/import/CsvMappingDialog.js
 %%WWWDIR%%/go/core/views/extjs3/layout/ResponsiveLayout.js
@@ -764,6 +763,7 @@
 %%WWWDIR%%/go/modules/community/addressbook/model/Date.php
 %%WWWDIR%%/go/modules/community/addressbook/model/EmailAddress.php
 %%WWWDIR%%/go/modules/community/addressbook/model/Group.php
+%%WWWDIR%%/go/modules/community/addressbook/model/Labels.php
 %%WWWDIR%%/go/modules/community/addressbook/model/PhoneNumber.php
 %%WWWDIR%%/go/modules/community/addressbook/model/Settings.php
 %%WWWDIR%%/go/modules/community/addressbook/model/Url.php
@@ -781,6 +781,7 @@
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/DuplicateDialog.js
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/EmailAddressesField.js
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/GroupDialog.js
+%%WWWDIR%%/go/modules/community/addressbook/views/extjs3/LabelsDialog.js
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/MainPanel.js
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/Module.js
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/NameField.js
@@ -3912,6 +3913,7 @@
 %%WWWDIR%%/modules/timeregistration2/scripts.txt
 %%WWWDIR%%/modules/timeregistration2/themes/Default/images/timeregistration2.png
 %%WWWDIR%%/modules/timeregistration2/themes/Default/style.css
+%%WWWDIR%%/modules/timeregistration2/views/Extjs3/ColumnView.js
 %%WWWDIR%%/modules/timeregistration2/views/Extjs3/CopyEntryDialog.js
 %%WWWDIR%%/modules/timeregistration2/views/Extjs3/EmployeeDialog.js
 %%WWWDIR%%/modules/timeregistration2/views/Extjs3/EmployeeGrid.js
@@ -7366,6 +7368,7 @@
 %%WWWDIR%%/views/Extjs3/themes/Paper/fonts/MaterialIcons-Regular.woff
 %%WWWDIR%%/views/Extjs3/themes/Paper/fonts/MaterialIcons-Regular.woff2
 %%WWWDIR%%/views/Extjs3/themes/Paper/fonts/OFL.txt
+%%WWWDIR%%/views/Extjs3/themes/Paper/htmleditor.css
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/bg/background.svg
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/bg/jigsaw.svg
 %%WWWDIR%%/views/Extjs3/themes/Paper/img/bg/office-desk.jpg
@@ -7475,6 +7478,7 @@
 %%WWWDIR%%/views/Extjs3/themes/Paper/src/_shadows.scss
 %%WWWDIR%%/views/Extjs3/themes/Paper/src/_tools.scss
 %%WWWDIR%%/views/Extjs3/themes/Paper/src/_typography.scss
+%%WWWDIR%%/views/Extjs3/themes/Paper/src/htmleditor.scss
 %%WWWDIR%%/views/Extjs3/themes/Paper/src/style-mobile.scss
 %%WWWDIR%%/views/Extjs3/themes/Paper/src/style.scss
 %%WWWDIR%%/views/Extjs3/themes/Paper/style-mobile.css
