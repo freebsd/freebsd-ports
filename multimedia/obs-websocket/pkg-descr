@@ -1,0 +1,4 @@
+WebSockets API for OBS Studio installs the plugin for multimedia/obs-studio
+that enables OBS Studio to be controlled by a Web-UI.
+
+WWW: https://github.com/Palakis/obs-websocket

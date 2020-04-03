@@ -286,6 +286,7 @@
     SUBDIR += nostt
     SUBDIR += obs-qtwebkit
     SUBDIR += obs-studio
+    SUBDIR += obs-websocket
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
     SUBDIR += ogmtools
