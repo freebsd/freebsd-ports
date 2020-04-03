@@ -23,6 +23,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} "s|LOCALBASE|${LOCALBASE}|" ${WRKSRC}/src/scim_skk_prefs.h
+	@${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/src/scim_skk_prefs.h
 
 .include <bsd.port.mk>
