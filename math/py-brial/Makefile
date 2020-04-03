@@ -1,9 +1,9 @@
 # Created by: thierry@pompo.net
 # $FreeBSD$
 
-PORTNAME=	BRiAl
+PORTNAME=	brial
 PORTVERSION=	1.2.8
-CATEGORIES=	math
+CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libbrial.so:math/brial
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BRiAl
+GH_PROJECT=	${GH_ACCOUNT}
 
 USES=		python:3.6+
 
