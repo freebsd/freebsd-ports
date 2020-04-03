@@ -12,6 +12,8 @@ COMMENT=	Export Django monitoring metrics for Prometheus.io
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Obsolete, please use www/py-django-prometheus instead
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.7:net-mgmt/py-prometheus-client@${PY_FLAVOR}
