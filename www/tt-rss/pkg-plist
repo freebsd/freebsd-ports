@@ -5,7 +5,6 @@
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README.md
 %%WWWDIR%%/api/index.php
-%%WWWDIR%%/atom-to-html.xsl
 %%WWWDIR%%/backend.php
 %%WWWDIR%%/cache/export/.empty
 %%WWWDIR%%/cache/feeds/.empty
@@ -56,6 +55,7 @@
 %%WWWDIR%%/classes/pref/users.php
 %%WWWDIR%%/classes/rpc.php
 %%WWWDIR%%/classes/rssutils.php
+%%WWWDIR%%/classes/templator.php
 @mode 0400
 @sample %%WWWDIR%%/config.php.sample
 @mode
@@ -2701,6 +2701,7 @@
 %%WWWDIR%%/templates/otp_disabled_template.txt
 %%WWWDIR%%/templates/password_change_template.txt
 %%WWWDIR%%/templates/resetpass_link_template.txt
+%%WWWDIR%%/templates.local/index.html
 %%WWWDIR%%/themes.local/.empty
 %%WWWDIR%%/themes/.empty
 %%WWWDIR%%/themes/compact.css
