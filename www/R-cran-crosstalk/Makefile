@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	crosstalk
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.1.0.1
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,12 +11,10 @@ COMMENT=	Inter-Widget Interactivity for HTML Widgets
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-htmltools>=0.3.5:textproc/R-cran-htmltools \
+CRAN_DEPENDS=	R-cran-htmltools>=0.3.6:textproc/R-cran-htmltools \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-lazyeval>0:math/R-cran-lazyeval \
-		R-cran-R6>0:devel/R-cran-R6 \
-		R-cran-shiny>=0.11:www/R-cran-shiny \
-		R-cran-ggplot2>0:graphics/R-cran-ggplot2
+		R-cran-R6>0:devel/R-cran-R6
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
