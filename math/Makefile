@@ -317,6 +317,7 @@
     SUBDIR += ideep
     SUBDIR += ignition-math
     SUBDIR += igraph
+    SUBDIR += iml
     SUBDIR += intervaltree
     SUBDIR += ipopt
     SUBDIR += ised
