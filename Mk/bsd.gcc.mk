@@ -34,52 +34,39 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 # All GCC versions supported by the ports framework.  Keep them in
 # ascending order and in sync with the table below. 
 # When updating this, keep Mk/bsd.default-versions.mk in sync.
-GCCVERSIONS=	040200 040800 070000 080000 090000
+GCCVERSIONS=	040800 070000 080000 090000
 
-# The first field is the OSVERSION in which it disappeared from the base.
-# The second field is the version as USE_GCC would use.
-GCCVERSION_040200=	9999999 4.2
-GCCVERSION_040800=	      0 4.8
-GCCVERSION_070000=	      0 7
-GCCVERSION_080000=	      0 8
-GCCVERSION_090000=	      0 9
+# The right side is the version as USE_GCC uses it.
+_GCCVERSION_040800_V=	4.8
+_GCCVERSION_070000_V=	7
+_GCCVERSION_080000_V=	8
+_GCCVERSION_090000_V=	9
 
 # No configurable parts below this. ####################################
 #
 
-.if defined(USE_GCC) && ${USE_GCC} == yes
-USE_GCC=	${GCC_DEFAULT}+
-.endif
-
-# Extract the fields from GCCVERSION_...
-.for v in ${GCCVERSIONS}
-. for j in ${GCCVERSION_${v}}
-.  if !defined(_GCCVERSION_${v}_R)
-_GCCVERSION_${v}_R=	${j}
-.  elif !defined(_GCCVERSION_${v}_V)
-_GCCVERSION_${v}_V=	${j}
-.  endif
-. endfor
-.endfor
-
 .if defined(USE_GCC) && !defined(FORCE_BASE_CC_FOR_TESTING)
 
-. if ${USE_GCC} == any
+.if ${USE_GCC} == any && exists(/usr/bin/gcc)
+CC:=		gcc
+CXX:=		g++
+. if exists(/usr/bin/gcpp)
+CPP:=		gcpp
+. else
+CPP:=		cpp
+. endif
+.else # The regular approach, not using the age-old base compiler.
 
-# Enable the clang-is-cc workaround.  Default to the last GCC imported
-# into base.
-_USE_GCC:=	4.2
-_GCC_ORLATER:=	true
-
-. else # ${USE_GCC} == any
+# Handle USE_GCC=yes and USE_GCC=any.
+.if ${USE_GCC} == yes || ${USE_GCC} == any
+USE_GCC=	${GCC_DEFAULT}+
+.endif
 
 # See if we can use a later version or exclusively the one specified.
 _USE_GCC:=	${USE_GCC:S/+//}
 .if ${USE_GCC} != ${_USE_GCC}
 _GCC_ORLATER:=	true
 .endif
-
-. endif # ${USE_GCC} == any
 
 # See whether we have the specific version requested installed already
 # and save that into _GCC_FOUND.  In parallel, check if USE_GCC refers
@@ -88,8 +75,6 @@ _GCC_ORLATER:=	true
 . if ${_USE_GCC}==${_GCCVERSION_${v}_V}
 _GCCVERSION_OKAY=	true
 .  if exists(${LOCALBASE}/bin/gcc${_GCCVERSION_${v}_V:S/.//})
-_GCC_FOUND:=		${_USE_GCC}
-.  elif ${OSVERSION} < ${_GCCVERSION_${v}_R} && exists(/usr/bin/gcc)
 _GCC_FOUND:=		${_USE_GCC}
 .  endif
 . endif
@@ -107,44 +92,25 @@ _USE_GCC:=	${GCC_DEFAULT}
 . endif
 .endif # defined(_GCC_ORLATER)
 
-.endif # defined(USE_GCC)
-
-
-.if defined(_USE_GCC)
-# A concrete version has been selected.  Determine if the installed OS 
-# features this version in the base, and if not then set proper ports
-# dependencies, CC, CXX, CPP, and flags.
-.for v in ${GCCVERSIONS}
-. if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
-.  if ${OSVERSION} > ${_GCCVERSION_${v}_R} || !exists(/usr/bin/gcc)
-V:=			${_GCCVERSION_${v}_V:S/.//}
+# A concrete version has been selected. Set proper ports dependencies,
+# CC, CXX, CPP, and flags.
+V:=			${_USE_GCC:S/.//}
 _GCC_PORT_DEPENDS:=	gcc${V}
 _GCC_PORT:=		gcc${V}
 CC:=			gcc${V}
 CXX:=			g++${V}
 CPP:=			cpp${V}
 _GCC_RUNTIME:=		${LOCALBASE}/lib/gcc${V}
-.   if ${PORTNAME} == gcc
+. if ${PORTNAME} == gcc
 # We don't want the rpath stuff while building GCC itself
 # so we do not set the FLAGS as done in the else part.
 # When building a GCC, we want the target libraries to be used and not the
 # host GCC libraries.
-.   else
+. else
 CFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 CXXFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 LDFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME} -L${_GCC_RUNTIME}
-.   endif
-.  else # Use GCC in base.
-CC:=			gcc
-CXX:=			g++
-.   if exists(/usr/bin/gcpp)
-CPP:=			gcpp
-.   else
-CPP:=			cpp
-.   endif
-.  endif # Use GCC in base.
-. endif # ${_USE_GCC} == ${_GCCVERSION_${v}_V}
-.endfor
+. endif
 .undef V
 
 # Now filter unsupported flags for CC and CXX.
@@ -158,6 +124,9 @@ RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:lang/${_GCC_PORT}
 # build leverages this as well.
 USE_BINUTILS=	yes
 .endif
+
+.endif # USE_GCC=any
+
 .endif # defined(_USE_GCC) && !defined(FORCE_BASE_CC_FOR_TESTING)
 
 
