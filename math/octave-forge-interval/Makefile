@@ -22,6 +22,12 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+USE_GCC=	yes
+.endif
+
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
