@@ -1,0 +1,12 @@
+--- lib/Alembic/AbcCoreHDF5/Tests/CMakeLists.txt.orig	2019-10-26 04:47:57 UTC
++++ lib/Alembic/AbcCoreHDF5/Tests/CMakeLists.txt
+@@ -33,7 +33,8 @@
+ ##
+ ##-*****************************************************************************
+ 
+-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/lib ${PROJECT_BINARY_DIR}/lib)
++INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/lib ${PROJECT_BINARY_DIR}/lib
++    ${HDF5_INCLUDE_DIRS})
+ 
+ SET(CXX_FILES
+     ArchiveTests.cpp

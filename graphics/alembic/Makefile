@@ -27,4 +27,7 @@ HDF5_CMAKE_ON=	-DUSE_HDF5:BOOL=ON
 PLIST_FILES=	lib/libAlembic.so.${PORTVERSION} \
 		lib/libAlembic.so.${PORTVERSION:R}
 
+do-test:
+	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}
+
 .include <bsd.port.mk>

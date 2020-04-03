@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2017-03-24 00:18:21 UTC
+--- CMakeLists.txt.orig	2019-10-26 04:47:57 UTC
 +++ CMakeLists.txt
-@@ -111,7 +111,7 @@ IF ("${CMAKE_SYSTEM_NAME}" MATCHES "Darw
+@@ -112,7 +112,7 @@ IF ("${CMAKE_SYSTEM_NAME}" MATCHES "Darwin")
  ENDIF()
  
  SET(LINUX FALSE)
@@ -9,7 +9,7 @@
      SET(LINUX TRUE)
  ENDIF()
  
-@@ -140,9 +140,6 @@ IF ("${CMAKE_BUILD_TYPE}" MATCHES "Debug
+@@ -141,9 +141,6 @@ IF ("${CMAKE_BUILD_TYPE}" MATCHES "Debug")
      ENDIF()
  ELSEIF ("${CMAKE_BUILD_TYPE}" MATCHES "Release")
      ADD_DEFINITIONS(-DNDEBUG=1 -UDEBUG)
@@ -19,3 +19,24 @@
  ENDIF()
  
  IF (NOT ${WINDOWS})
+@@ -228,14 +225,18 @@ ENDIF()
+ 
+ # IlmBase
+ INCLUDE("./cmake/AlembicIlmBase.cmake")
+-INCLUDE_DIRECTORIES(${ALEMBIC_ILMBASE_INCLUDE_DIRECTORY})
++# XXX: do not pollute global state: include directories correctly added
++# via TARGET_INCLUDE_DIRECTORIES in the `lib/Alembic/CMakeLists.txt'
++#INCLUDE_DIRECTORIES(${ALEMBIC_ILMBASE_INCLUDE_DIRECTORY})
+ 
+ # HDF5
+ IF (USE_HDF5)
+     FIND_PACKAGE(ZLIB REQUIRED)
+     SET(ALEMBIC_WITH_HDF5 "1")
+     INCLUDE("./cmake/AlembicHDF5.cmake")
+-    INCLUDE_DIRECTORIES(${HDF5_INCLUDE_DIRS})
++    # XXX: do not pollute global state: include directories correctly added
++    # via TARGET_INCLUDE_DIRECTORIES in the `lib/Alembic/CMakeLists.txt'
++    #INCLUDE_DIRECTORIES(${HDF5_INCLUDE_DIRS})
+     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DH5_USE_18_API")
+ ENDIF()
+ 
