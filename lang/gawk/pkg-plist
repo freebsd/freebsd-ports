@@ -69,6 +69,7 @@ share/awk/zerofile.awk
 %%NLS%%share/locale/ms/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gawk.mo

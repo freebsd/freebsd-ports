@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gawk
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -19,7 +19,7 @@ OPTIONS_SUB=		yes
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 MPFR_DESC?=		Support multiple-precision floating-point computation
-MPFR_LIB_DEPENDS=	libmpfr.so:math/mpfr
+MPFR_LIB_DEPENDS=	libgmp.so:math/gmp libmpfr.so:math/mpfr
 MPFR_CONFIGURE_OFF=	--without-gmp --without-mpfr
 
 INFO=		gawk gawkinet gawkworkflow
@@ -36,7 +36,5 @@ PLIST_SUB+=	VERSION=${PORTVERSION}
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/*.info
-	@${REINPLACE_CMD} -e 's/ -export-dynamic/ -Wl,--export-dynamic/' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
