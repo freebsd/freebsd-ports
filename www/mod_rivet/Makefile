@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libitcl.so:lang/itcl
 
-USES+=		apache:2.2-2.4 gmake \
+USES+=		apache:2.2-2.4 compiler:c11 gmake \
 		libtool tcl:86+,tea
 USE_LDCONFIG=	${PREFIX}/lib/rivet
 
