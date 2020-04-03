@@ -1,0 +1,22 @@
+Self Encrypting Drive utility.
+
+This allows encrypting and decrypting drives that use encryption based on
+the various TCG (Trusted Computing Group) specifications.
+
+From the web site:
+
+   The Drive Trust Alliance software (sedutil) is an Open Source (GPLv3)
+   effort to make Self Encrypting Drive technology freely available to
+   everyone. It is a combination of the two known available Open Source code
+   bases today: msed and OpalTool.
+
+   The DTA Open Source can be employed freely not only for higher security
+   applications but also for integration in embedded applications such as
+   Automotive, Aerospace, Home Automation, and everywhere where the Data
+   Leakage problem has already become obvious and where it will be obvious.
+   The storage device suppliers are already gearing to give you
+   self-encrypting storage. All you have to do is work with them.
+
+For more information:
+
+WWW: https://github.com/Drive-Trust-Alliance/sedutil
