@@ -2,7 +2,7 @@
 
 PORTNAME=	obs-studio
 DISTVERSION=	25.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -60,5 +60,8 @@ PLIST_SUB+=	LUAJIT=""
 post-patch:
 	@${REINPLACE_CMD} -e 's| 3.4)| ${PYTHON_VER})|' \
 		${WRKSRC}/cmake/Modules/FindPythonDeps.cmake
+
+post-install: # https://github.com/obsproject/obs-studio/issues/2625
+	${INSTALL_DATA} ${WRKSRC}/UI/obs-frontend-api/obs-frontend-api.h ${STAGEDIR}${PREFIX}/include/obs
 
 .include <bsd.port.post.mk>

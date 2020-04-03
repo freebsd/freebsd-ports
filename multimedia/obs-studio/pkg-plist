@@ -43,6 +43,7 @@ include/obs/obs-data.h
 include/obs/obs-defs.h
 include/obs/obs-encoder.h
 include/obs/obs-ffmpeg-compat.h
+include/obs/obs-frontend-api.h
 include/obs/obs-hotkey.h
 include/obs/obs-hotkeys.h
 include/obs/obs-interaction.h
