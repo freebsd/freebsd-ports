@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	matomo
-DISTVERSION=	3.13.1
+DISTVERSION=	3.13.4
 PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://builds.matomo.org/

@@ -573,6 +573,7 @@
 %%WWWDIR%%/core/Updates/3.12.0-b1.php
 %%WWWDIR%%/core/Updates/3.12.0-b7.php
 %%WWWDIR%%/core/Updates/3.13.1-b2.php
+%%WWWDIR%%/core/Updates/3.13.4-b1.php
 %%WWWDIR%%/core/Updates/3.5.0-b2.php
 %%WWWDIR%%/core/Updates/3.5.0-b4.php
 %%WWWDIR%%/core/Updates/3.5.0-rc2.php
@@ -4164,6 +4165,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AB.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AD.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AG.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AH.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AL.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AM.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AN.png
@@ -4177,14 +4179,18 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/BB.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/BD.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/BE.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/BH.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/BI.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/BJ.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/BK.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/BL.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/BM.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/BR.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/BS.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/BX.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/C1.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CA.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CB.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CC.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CD.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CE.png
@@ -4192,11 +4198,13 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CH.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CI.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CK.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CL.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CM.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CN.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CO.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CP.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CR.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CT.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CU.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CV.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CY.png
@@ -4703,6 +4711,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/abcsok.no.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/alexa.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/all.by.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/alohafind.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/apollo.lv.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/apollo7.de.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/arama.com.png
@@ -4728,6 +4737,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/duckduckgo.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/ecosia.org.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/eo.st.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/epicsearch.in.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/extern.peoplecheck.de.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/forestle.org.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/fr.dir.com.png
@@ -4735,6 +4745,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/friendfeed.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/gais.cs.ccu.edu.tw.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/geona.net.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/gibiru.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/go.mail.ru.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/google.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/googlesyndicatedsearch.com.png
@@ -4811,6 +4822,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/search.smartshopping.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/search.snap.do.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/search.softonic.com.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/search.start.fyi.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/search.tiscali.it.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/search.winamp.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/search.%%WWWOWN%%.ee.png
@@ -4866,6 +4878,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/%%WWWOWN%%.cuil.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/%%WWWOWN%%.dasoertliche.de.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/%%WWWOWN%%.eniro.se.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/%%WWWOWN%%.entireweb.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/%%WWWOWN%%.eurip.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/%%WWWOWN%%.euroseek.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/searchEngines/%%WWWOWN%%.everyclick.com.png
@@ -7647,12 +7660,9 @@
 %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container/ContainerInterface.php
 %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container/Exception/ContainerException.php
 %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container/Exception/NotFoundException.php
-%%WWWDIR%%/vendor/davaxi/sparkline/.codeclimate.yml
 %%WWWDIR%%/vendor/davaxi/sparkline/LICENSE
 %%WWWDIR%%/vendor/davaxi/sparkline/README.md
 %%WWWDIR%%/vendor/davaxi/sparkline/autoload.php
-%%WWWDIR%%/vendor/davaxi/sparkline/composer.travis.json
-%%WWWDIR%%/vendor/davaxi/sparkline/grumphp.yml
 %%WWWDIR%%/vendor/davaxi/sparkline/src/Sparkline.php
 %%WWWDIR%%/vendor/davaxi/sparkline/src/Sparkline/DataTrait.php
 %%WWWDIR%%/vendor/davaxi/sparkline/src/Sparkline/FormatTrait.php
