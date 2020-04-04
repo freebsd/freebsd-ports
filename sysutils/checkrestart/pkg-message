@@ -4,13 +4,33 @@
 In order to enable periodic(8) checks, set the following in /etc/periodic.conf
 
 # Required
-daily_checkrestart_enable="YES"
+security_checkrestart_enable="YES"
 
 # Optional
-daily_checkrestart_weekdays="1 4"     # only run on Monday and Thursday
-daily_checkrestart_jails="0 web"      # limit to jails 0 and web
-daily_checkrestart_users="root www"   # limit to root and www users
-daily_checkrestart_procs="smbd httpd" # limit to samba and httpd
+security_checkrestart_period="DAILY"     # or WEEKY, or MONTHLY
+security_checkrestart_jails="0 web"      # limit to jails 0 and web
+security_checkrestart_users="root www"   # limit to root and www users
+security_checkrestart_procs="smbd httpd" # limit to samba and httpd
+EOM,
+},
+{ type: upgrade,
+  maximum_version: "0.5.0_1",
+  message: <<EOM
+The periodic(8) script is now a security script.  All 'daily_checkrestart_'
+instances in /etc/periodic.conf should be changed to 'security_checkrestart_'.
+
+i.e.
+
+daily_checkrestart_enable="YES"
+
+is now:
+
+security_checkrestart_enable="YES"
+
+daily_checkrestart_weekdays is no longer supported.  The security period
+mechanism should be used instead:
+
+security_checkrestart_period="DAILY" # or WEEKLY, or MONTHLY
 EOM
 }
 ]
