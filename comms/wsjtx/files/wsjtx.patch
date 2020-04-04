@@ -56,3 +56,21 @@
  
  # build the main application
  add_executable (wsjtx MACOSX_BUNDLE
+--- wsjtx/qt_helpers.hpp.orig	2020-04-04 19:19:54.667679000 +0200
++++ wsjtx/qt_helpers.hpp	2020-04-04 19:20:37.899375000 +0200
+@@ -78,6 +78,7 @@
+   }
+ };
+ 
++#if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
+ namespace std
+ {
+   // std::hash<> specialization for QString based on the dbj2
+@@ -97,6 +98,7 @@
+     }
+   };
+ }
++#endif
+ 
+ // Register some useful Qt types with QMetaType
+ Q_DECLARE_METATYPE (QHostAddress);
