@@ -7,6 +7,9 @@ DISTVERSIONSUFFIX=	-ga554ab49
 PORTREVISION=	4
 CATEGORIES=	games
 
+PATCH_SITES=	https://github.com/SFTtech/openage/commit/
+PATCHFILES=	663b1158018d839eb5cfed63f4b228c1590c6104.patch:-p1
+
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Free engine clone of the Genie Engine
 
