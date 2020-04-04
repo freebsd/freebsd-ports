@@ -4,7 +4,7 @@
 You installed obs-websocket: a WebSockets plugin for OBS Studio.
 
 In order to use obs-websocket you most likely need to install
-this NodeJS project: https://github.com/t2t2/obs-tablet-remot
+this NodeJS project: https://github.com/t2t2/obs-tablet-remote
 
 EOM
 }

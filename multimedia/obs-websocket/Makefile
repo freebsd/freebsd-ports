@@ -6,7 +6,7 @@ DISTVERSIONSUFFIX=	-g67e89e7
 CATEGORIES=	multimedia www
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	WebSockets API for OBS Studio
+COMMENT=	OBS Studio Plugin: WebSockets API
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
