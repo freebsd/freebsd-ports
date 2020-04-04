@@ -4631,6 +4631,7 @@
     SUBDIR += py-natsort
     SUBDIR += py-natural
     SUBDIR += py-nbconvert
+    SUBDIR += py-nbdime
     SUBDIR += py-nbformat
     SUBDIR += py-nodeenv
     SUBDIR += py-nose
