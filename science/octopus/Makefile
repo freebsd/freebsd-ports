@@ -4,14 +4,10 @@ PORTNAME=	octopus
 DISTVERSION=	8.4
 PORTREVISION=	3
 CATEGORIES=	science
-MASTER_SITES=	http://www.tddft.org/programs/${PORTNAME}/download/${DISTVERSION}/
+MASTER_SITES=	http://octopus-code.org/down.php?file=${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scientific program aimed at the ab initio virtual experimentation
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 
