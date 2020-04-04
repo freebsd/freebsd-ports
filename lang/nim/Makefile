@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nim
-PORTVERSION=	1.0.6
+PORTVERSION=	1.2.0
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
@@ -12,26 +12,26 @@ COMMENT=	Nim programming language
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
-BROKEN_aarch64=		fails to compile: crt1.c: undefined reference to main
-BROKEN_armv6=		fails to compile: crt1.c: undefined reference to main
-BROKEN_armv7=		fails to compile: crt1.c: undefined reference to main
 BROKEN_mips64=		fails to build: build.sh: clang: not found
 BROKEN_sparc64=		fails to build: build.sh: clang: not found
 
-TOOLS_DESC=	Build and install nimgrep and nimsuggest
+USES=		compiler tar:xz
+
+TOOLS_DESC=	Build and install nim tools
 
 OPTIONS_DEFINE=	DOCS TOOLS
+OPTIONS_DEFAULT=	DOCS TOOLS
+
 OPTIONS_SUB=	yes
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		compiler tar:xz
 
 .include <bsd.port.pre.mk>
 
-TLIST=	nimgrep nimsuggest
+TLIST=	nimfind nimgrep nimpretty nimsuggest testament
 
 .if ${ARCH} == "powerpc64"
-.  if defined(PPC_ABI) && ${PPC_ABI} == ELFv1 
+.  if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
 EXTRA_PATCHES=	${PATCHDIR}/elfv1-patch-build.sh
 .  endif
 .endif
