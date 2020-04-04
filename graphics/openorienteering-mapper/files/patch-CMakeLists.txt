@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2019-12-05 06:33:57 UTC
+--- CMakeLists.txt.orig	2020-04-04 15:19:17 UTC
 +++ CMakeLists.txt
 @@ -66,6 +66,11 @@ option(Mapper_DEBUG_TRANSLATIONS "Debug missing transl
  # Used for some Linux distributions which do not provide the polyclipping lib.
@@ -11,32 +11,30 @@
 +
  option(Mapper_USE_GDAL   "Use the GDAL library" ON)
  
- if(CMAKE_BUILD_TYPE MATCHES Release|MinSizeRel|RelWithDebInfo)
-@@ -247,10 +252,20 @@ endif()
+ if(ANDROID)
+@@ -260,10 +265,20 @@ endif()
  
  # Subdirectories
  
--add_subdirectory("doc/manual")
--add_subdirectory("examples")
 +if (Mapper_WITH_DOCS)
-+	add_subdirectory("doc/manual")
+ add_subdirectory("doc/manual")
 +endif()
 +if (Mapper_WITH_EXAMPLES)
-+	add_subdirectory("examples")
+ add_subdirectory("examples")
 +endif()
  add_subdirectory("symbol sets")
 -add_subdirectory("translations")
 +if (Mapper_WITH_NLS)
-+	add_subdirectory("translations")
++       add_subdirectory("translations")
 +else()
-+	execute_process(COMMAND "${CMAKE_COMMAND}" -E make_directory "packaging/linux")
-+	execute_process(COMMAND "${CMAKE_COMMAND}" -E copy "${PROJECT_SOURCE_DIR}/packaging/linux/Mapper.desktop" "packaging/linux/")
-+	execute_process(COMMAND "${CMAKE_COMMAND}" -E copy "${PROJECT_SOURCE_DIR}/packaging/linux/openorienteering-mapper.xml" "packaging/linux/")
++       execute_process(COMMAND "${CMAKE_COMMAND}" -E make_directory "packaging/linux")
++       execute_process(COMMAND "${CMAKE_COMMAND}" -E copy "${PROJECT_SOURCE_DIR}/packaging/linux/Mapper.desktop" "packaging/linux/")
++       execute_process(COMMAND "${CMAKE_COMMAND}" -E copy "${PROJECT_SOURCE_DIR}/packaging/linux/openorienteering-mapper.xml" "packaging/linux/")
 +endif()
- add_subdirectory("3rd-party/qbezier")
- if(NOT ANDROID)
- 	add_subdirectory("3rd-party/qtsingleapplication")
-@@ -271,7 +286,7 @@ if(CMAKE_CROSSCOMPILING)
+ if(Mapper_WITH_COVE)
+ 	add_feature_info(Mapper_WITH_COVE "${Mapper_WITH_COVE}" "Contour line vectorization")
+ 	add_subdirectory("3rd-party/cove")
+@@ -287,7 +302,7 @@ if(CMAKE_CROSSCOMPILING)
  	add_custom_target(TEST_WARNING ALL
  	  COMMENT "Crosscompiling, skipping all tests")
  	add_dependencies(TEST_WARNING Mapper)

@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openorienteering-mapper
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	sikmir@gmail.com
@@ -18,8 +17,8 @@ LIB_DEPENDS=	libpolyclipping.so:graphics/polyclipping \
 
 USES=		cmake:noninja compiler:c++14-lang \
 		desktop-file-utils gmake qt:5 shared-mime-info
-USE_QT=		buildtools_build help qmake_build core gui \
-		network printsupport widgets
+USE_QT=		buildtools_build help qmake_build concurrent core gui \
+		network printsupport testlib widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenOrienteering
 GH_PROJECT=	mapper
