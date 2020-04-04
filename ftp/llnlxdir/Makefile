@@ -12,6 +12,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Motif FTP client with drag-and-drop file transfer
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	bin/xdir lib/X11/app-defaults/XDir man/man1/xdir.1.gz
 

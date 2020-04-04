@@ -11,6 +11,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Tool for monitoring IPv6 address usage
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT

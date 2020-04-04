@@ -13,6 +13,8 @@ COMMENT=	TensorFlow Estimator, an API to simplify machine learning programming
 LICENSE=	APACHE20
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	bash:shells/bash \
 		bazel:devel/bazel029 \

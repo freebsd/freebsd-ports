@@ -11,6 +11,8 @@ MAINTAINER=	logix@foobar.franken.de
 COMMENT=	Calculates "DNS-spam"-values for hostnames
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		perl5 tar:tgz
 

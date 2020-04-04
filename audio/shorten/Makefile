@@ -10,6 +10,8 @@ MAINTAINER=	sec@42.org
 COMMENT=	Fast and optionally lossless compression for waveform files
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 RESTRICTED=	May not be sold.  May not be distributed if modified
 
 GNU_CONFIGURE=	yes

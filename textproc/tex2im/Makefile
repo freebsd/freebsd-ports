@@ -11,6 +11,8 @@ MAINTAINER=	TsurutaniNaoki@gmail.com
 COMMENT=	Converts LaTeX formulas into high resolution pixmap graphics
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS=	convert:graphics/ImageMagick6 \
 		bash:shells/bash

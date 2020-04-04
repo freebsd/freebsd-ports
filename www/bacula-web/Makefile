@@ -11,6 +11,8 @@ MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Bacula-web provides a summarized output of Bacula jobs
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING

@@ -12,6 +12,8 @@ MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Library for XMLRPC support in Erlang
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		gmake erlang tar:tgz
 WRKSRC=		${WRKDIR}/xmlrpc-${PORTVERSION}

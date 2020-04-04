@@ -11,6 +11,8 @@ MAINTAINER=	tarkhil@over.ru
 COMMENT=	Network backup system based off of rsync
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS=	p5-Time-modules>=0:devel/p5-Time-modules \
 		p5-Time-Period>=0:devel/p5-Time-Period \

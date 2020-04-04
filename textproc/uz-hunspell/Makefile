@@ -13,6 +13,8 @@ MAINTAINER=	office@FreeBSD.org
 COMMENT=	Uzbek hunspell dictionaries
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 ALL_TARGET=	uz_UZ.dic
 NO_ARCH=	yes

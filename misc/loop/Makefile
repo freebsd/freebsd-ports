@@ -10,6 +10,8 @@ MAINTAINER=	freebsd@nesbitt.ca
 COMMENT=	Prints to stdout a series of numbers from `start' to `end'
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	bin/loop man/man1/loop.1.gz
 

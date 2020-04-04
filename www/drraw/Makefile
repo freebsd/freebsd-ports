@@ -12,6 +12,8 @@ MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Simple web-based presentation front-end for RRDtool
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS+=	rrdtool>=0:databases/rrdtool
 

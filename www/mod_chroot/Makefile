@@ -11,6 +11,8 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The mod_chroot makes running Apache in a chroot easy
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		apache:2.2+ cpe
 CPE_VENDOR=	marek_gutkowski

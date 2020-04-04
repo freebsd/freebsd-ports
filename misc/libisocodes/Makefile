@@ -10,6 +10,8 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Interaction library for iso-codes
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv3
 

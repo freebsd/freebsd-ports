@@ -9,6 +9,8 @@ MAINTAINER=	akuz84@gmail.com
 COMMENT=	This is a TACACS+ daemon from pro-bono
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	BSD3CLAUSE
 

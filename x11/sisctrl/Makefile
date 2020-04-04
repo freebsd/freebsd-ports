@@ -11,6 +11,8 @@ MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Display Control Panel for XFree86/X.org SiS driver
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		gmake gnome pkgconfig xorg
 USE_XORG=	x11 ice xxf86vm xinerama xv xrandr xext sm

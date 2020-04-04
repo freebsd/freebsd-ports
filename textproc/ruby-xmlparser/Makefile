@@ -13,6 +13,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module to access James Clark XML Parser ToolKit ("expat")
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libexpat.so:textproc/expat2

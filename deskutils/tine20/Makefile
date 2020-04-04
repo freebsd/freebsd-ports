@@ -13,6 +13,8 @@ MAINTAINER=	udo.rader@bestsolution.at
 COMMENT=	Professional Open Source Groupware and CRM
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/Date.php:devel/pear-Date@${PHP_FLAVOR}
 

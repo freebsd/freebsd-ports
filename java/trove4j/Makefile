@@ -11,6 +11,8 @@ MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High performance collections API for Java
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USE_JAVA=	yes
 NO_BUILD=	yes

@@ -11,6 +11,8 @@ MAINTAINER=	tmwalaszek@gmail.com
 COMMENT=	Toolset based on Solaris ptools functionality
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	BSD4CLAUSE
 

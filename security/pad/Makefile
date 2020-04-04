@@ -12,6 +12,8 @@ MAINTAINER=	jharris@widomaker.com
 COMMENT=	Command-line utility to encrypt files
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		tar:tgz ssl
 GNU_CONFIGURE=	yes

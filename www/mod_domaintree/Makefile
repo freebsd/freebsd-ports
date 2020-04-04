@@ -12,6 +12,8 @@ MAINTAINER=	danger@FreeBSD.org
 COMMENT=	Hostname to filesystem mapper for Apache 2
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		apache:2.2+

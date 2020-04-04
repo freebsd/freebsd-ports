@@ -11,6 +11,8 @@ MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tcl/tk irc client
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES+=		tk:run
 NO_BUILD=	yes

@@ -10,6 +10,8 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Utility similar to indent for C++ code
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

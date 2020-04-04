@@ -12,6 +12,8 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	KenLM Language Model Toolkit
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BROKEN_aarch64=		fails to compile: target architecture was not detected as supported by Double-Conversion
 

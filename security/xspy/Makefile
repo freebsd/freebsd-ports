@@ -11,6 +11,8 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	Utility for monitoring keystrokes on remote X servers
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake:notall xorg

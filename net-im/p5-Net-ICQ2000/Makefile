@@ -12,6 +12,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for ICQv7 protocol realisation
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		perl5
 USE_PERL5=	configure

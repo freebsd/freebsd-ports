@@ -15,6 +15,8 @@ MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	Headers and Libraries for DJGPP cross-development
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		zip
 MAKEFILE=	${FILESDIR}/Makefile

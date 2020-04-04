@@ -10,6 +10,8 @@ MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Utility that uses LD_PRELOAD to hide .svn directories
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		shebangfix tar:xz
 USE_LDCONFIG=	yes

@@ -11,6 +11,8 @@ MAINTAINER=	ota@j.email.ne.jp
 COMMENT=	Phantomblock generator (converts existing files to sparse files)
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 

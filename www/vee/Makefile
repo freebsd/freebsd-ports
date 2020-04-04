@@ -12,6 +12,8 @@ MAINTAINER=	estrabd@gmail.com
 COMMENT=	Tiny CLI blogging tool
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}

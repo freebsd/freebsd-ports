@@ -11,6 +11,8 @@ MAINTAINER=	anikinsl@gmail.com
 COMMENT=	Pidgin plugin for displaying new messages on screen
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	pidgin:net-im/pidgin \
 		xosd>=2.2.12:misc/xosd

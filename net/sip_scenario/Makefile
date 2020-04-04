@@ -11,6 +11,8 @@ MAINTAINER=	pi@FreeBSD.org
 COMMENT=	SIP call flow creator (HTML format)
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	APACHE20
 

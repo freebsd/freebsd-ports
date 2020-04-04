@@ -10,6 +10,8 @@ MAINTAINER=	legh@legh.ru
 COMMENT=	Wrapper to jexec with more feature in interpreting jail id
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		perl5
 NO_BUILD=	yes

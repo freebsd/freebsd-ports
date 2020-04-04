@@ -10,6 +10,8 @@ MAINTAINER=	gromnizki@unixdev.net
 COMMENT=	Remove unsafe characters from email & make xterm happy
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/tidyup-mail man/ru.KOI8-R/man1/tidyup-mail.1.gz

@@ -12,6 +12,8 @@ MAINTAINER=	jharris@widomaker.com
 COMMENT=	USA postal codes
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}

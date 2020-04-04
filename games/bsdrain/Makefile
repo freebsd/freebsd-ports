@@ -12,6 +12,8 @@ MAINTAINER=	jacob@whotookspaz.org
 COMMENT=	The original BSD rain program, ported from NetBSD
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	bin/rain \
 		man/man6/rain.6.gz

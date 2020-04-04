@@ -9,6 +9,8 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CLI client for Artifactory
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

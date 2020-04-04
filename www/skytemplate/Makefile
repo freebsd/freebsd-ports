@@ -12,6 +12,8 @@ MAINTAINER=	munggo@gmail.com
 COMMENT=	Yet another PHP compiling template engine
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		php:web
 NO_BUILD=	yes

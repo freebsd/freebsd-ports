@@ -9,6 +9,8 @@ MAINTAINER=	stdin@niklaas.eu
 COMMENT=	File system that stores all its data in the cloud
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

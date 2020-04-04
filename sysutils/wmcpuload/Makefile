@@ -11,6 +11,8 @@ MAINTAINER=	xride@FreeBSD.org
 COMMENT=	"lcd" dockapp for windowmaker, which displays the current cpuload
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		tar:bzip2 xorg
 USE_XORG=	xpm

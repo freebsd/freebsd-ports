@@ -10,6 +10,8 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Yet another uptimes.net client
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 ALL_TARGET=	bsd
 CFLAGS+=	-DCONFFILE=\\\"${STAGEDIR}${PREFIX}/etc/yaunc.conf\\\"

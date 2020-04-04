@@ -12,6 +12,8 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A toolbox for the implementation of morphological analysers
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 WRKSRC=		${WRKDIR}/${PORTNAME:tu}/src
 INSTALL_TARGET=	install maninstall libinstall

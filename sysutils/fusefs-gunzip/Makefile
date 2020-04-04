@@ -10,6 +10,8 @@ MAINTAINER=	jirnov@gmail.com
 COMMENT=	Fuse.gunzip provides transparent decompression of gzip compressed files
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 WRKSRC=		${WRKDIR}/fuse.gunzip
 USES=		fuse

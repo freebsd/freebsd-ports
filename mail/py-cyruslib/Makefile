@@ -13,6 +13,8 @@ MAINTAINER=	dimma@higis.ru
 COMMENT=	Cyrus imapd library for Python
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

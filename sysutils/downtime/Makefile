@@ -11,6 +11,8 @@ MAINTAINER=	nick@nickwithers.com
 COMMENT=	GTK-based shutdown manager using shutdown(8)
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		desktop-file-utils gnome pkgconfig shared-mime-info
 USE_GNOME=	gtk20

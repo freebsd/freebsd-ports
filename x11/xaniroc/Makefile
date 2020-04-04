@@ -13,6 +13,8 @@ MAINTAINER=	sec@42.org
 COMMENT=	Animate your root-cursor
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

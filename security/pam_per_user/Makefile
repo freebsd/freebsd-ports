@@ -11,6 +11,8 @@ MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	PAM module for per-user authentication
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		libtool
 GNU_CONFIGURE=	yes

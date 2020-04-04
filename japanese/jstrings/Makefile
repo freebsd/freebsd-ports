@@ -12,6 +12,8 @@ MAINTAINER=	ryo@aquahill.net
 COMMENT=	Japanese enhancement of strings(1) command
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 EXTRACT_DEPENDS=nkf:japanese/nkf
 

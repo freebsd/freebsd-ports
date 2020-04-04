@@ -13,6 +13,8 @@ MAINTAINER=	kevin@caomhin.demon.co.uk
 COMMENT=	Automated log file processing
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL

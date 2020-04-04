@@ -12,6 +12,8 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Verify mail address
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" RES=""
 NO_WRKSUBDIR=	yes

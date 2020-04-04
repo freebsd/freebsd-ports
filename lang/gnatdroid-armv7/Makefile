@@ -13,6 +13,8 @@ MAINTAINER?=	jamie@catflap.org
 COMMENT?=	C/Ada cross-compiler, target: Android ARMv7
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi

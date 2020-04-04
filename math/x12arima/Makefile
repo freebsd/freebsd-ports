@@ -13,6 +13,8 @@ MAINTAINER=	jh@jameshoward.us
 COMMENT=	X-12-ARIMA seasonal adjustment program
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		fortran
 NO_WRKSUBDIR=	yes

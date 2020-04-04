@@ -11,6 +11,8 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Web-based FTP client written in PHP
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/files_to_upload/LICENSE.txt

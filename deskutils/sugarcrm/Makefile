@@ -11,6 +11,8 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Web based customer relationship management suite
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		php zip
 USE_PHP=	gd mysqli session pcre xml zlib mbstring curl imap spl posix \

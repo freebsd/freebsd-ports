@@ -10,6 +10,8 @@ MAINTAINER=	sexbear@tmu.edu.tw
 COMMENT=	Sendmail Analysis Report Generator
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 GNU_CONFIGURE=	yes
 

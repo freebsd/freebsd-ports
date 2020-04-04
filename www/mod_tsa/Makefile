@@ -12,6 +12,8 @@ MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Time stamping authority (RFC 3161) module for apache
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 OPTIONS_DEFINE=	MYSQL PGSQL FIREBIRD DEBUG DEBUG_MEMORY EXAMPLES
 DEBUG_MEMORY_DESC=	Memory debug

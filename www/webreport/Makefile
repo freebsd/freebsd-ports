@@ -11,6 +11,8 @@ MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	WebReport is a web log statistics program  for web hosting sites
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 SUB_FILES=	pkg-message
 PORTDOCS=	INSTALL

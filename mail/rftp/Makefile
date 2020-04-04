@@ -10,6 +10,8 @@ MAINTAINER=	kline@thought.org
 COMMENT=	Automatically reconstruct ftpmail- or bitftp-retrieved files
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rftp ${STAGEDIR}${PREFIX}/bin

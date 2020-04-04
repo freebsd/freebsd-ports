@@ -13,6 +13,8 @@ MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	HTML to LaTeX converter, last modified 2010
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	bin/html2tex
 NO_WRKSUBDIR=	yes

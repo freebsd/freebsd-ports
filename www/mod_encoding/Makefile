@@ -12,6 +12,8 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for non-ASCII filename interoperability
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	APACHE11
 

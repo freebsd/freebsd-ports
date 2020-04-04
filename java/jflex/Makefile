@@ -15,6 +15,8 @@ MAINTAINER=	eg@fbsd.lt
 COMMENT=	The Fast Lexical Analyser Generator for Java[tm]
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
 

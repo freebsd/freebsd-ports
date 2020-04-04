@@ -13,6 +13,8 @@ MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Tool for setting the background in rox using a simple command
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:x11-fm/rox-filer
 

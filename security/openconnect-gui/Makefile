@@ -11,6 +11,8 @@ MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Graphical OpenConnect client
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

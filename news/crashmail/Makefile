@@ -11,6 +11,8 @@ MAINTAINER=	vk@vk.pp.ru
 COMMENT=	CrashMail II FTN mail tosser
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src

@@ -11,6 +11,8 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	FoneBRIDGE configuration utility
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargtable2.a:devel/argtable\
 		${LOCALBASE}/lib/libfb.a:net/libfb

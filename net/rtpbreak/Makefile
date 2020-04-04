@@ -12,6 +12,8 @@ MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
 COMMENT=	Detects, reconstructs, and analyzes any RTP session
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libnet.so:net/libnet
 

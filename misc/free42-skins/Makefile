@@ -12,6 +12,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Skins for free42, simulation of the HP-42S scientific calculator
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 

@@ -9,6 +9,8 @@ MAINTAINER=	oleksii.tsai@gmail.com
 COMMENT=	Efficient binary serialization format
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

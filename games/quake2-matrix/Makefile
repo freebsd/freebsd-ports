@@ -12,6 +12,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Matrix modification for Quake II
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		gmake tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}

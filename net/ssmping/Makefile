@@ -11,6 +11,8 @@ MAINTAINER=	dikshie@lapi.itb.ac.id
 COMMENT=	Ping for ASM and SSM
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	bin/ssmping bin/asmping bin/mcfirst sbin/ssmpingd \
 		man/man1/asmping.1.gz man/man1/mcfirst.1.gz \

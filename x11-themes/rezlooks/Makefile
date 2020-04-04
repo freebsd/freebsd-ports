@@ -12,6 +12,8 @@ MAINTAINER=	brandoncash@gmail.com
 COMMENT=	GTK+ 2.x engine based on Clearlooks
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 WRKSRC=		${WRKDIR}/rezlooks-${PORTVERSION}
 

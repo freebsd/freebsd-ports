@@ -14,6 +14,8 @@ MAINTAINER=	freebsd@intel.com
 COMMENT=	Intel(R) QSFP+ Configuration Utility
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	IPL
 LICENSE_NAME=	Intel Proprietary License

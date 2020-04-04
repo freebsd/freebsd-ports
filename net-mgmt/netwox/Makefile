@@ -14,6 +14,8 @@ MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Netwox a network testing toolbox
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	netwib-config:net/netwib
 

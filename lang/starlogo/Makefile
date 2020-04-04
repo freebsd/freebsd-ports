@@ -12,6 +12,8 @@ MAINTAINER=	java@FreeBSD.org
 COMMENT=	Specialized version of the Logo programming language written in Java
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		zip
 USE_JAVA=	yes

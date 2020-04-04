@@ -13,6 +13,8 @@ MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Network load monitor dockapp
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libdockapp.so:x11-wm/libdockapp
 

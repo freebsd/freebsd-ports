@@ -11,6 +11,8 @@ MAINTAINER=	gaod@hychen.org
 COMMENT=	Library of Limited-memory Broyden-Fletcher-Goldfarb-Shanno
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

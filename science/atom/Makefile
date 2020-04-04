@@ -15,6 +15,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Program for DFT calculations in atoms
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	ATOM_LICENSE
 LICENSE_NAME=	ATOM ACADEMIC LICENCE

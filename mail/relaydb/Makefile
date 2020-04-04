@@ -10,6 +10,8 @@ MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Spam relay database
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	bin/relaydb \
 		man/man8/relaydb.8.gz

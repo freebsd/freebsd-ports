@@ -12,6 +12,8 @@ MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Interface to fetch the Google Video Information
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

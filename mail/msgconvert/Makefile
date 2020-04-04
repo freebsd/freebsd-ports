@@ -13,6 +13,8 @@ MAINTAINER=	klammer@webonaut.com
 COMMENT=	Convert .MSG files to multipart MIME messages (mbox)
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS=	p5-OLE-Storage_Lite>=0:devel/p5-OLE-Storage_Lite \
 		p5-MIME-Tools>=0:mail/p5-MIME-Tools \

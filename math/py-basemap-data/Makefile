@@ -12,6 +12,8 @@ MAINTAINER=	mainland@apeiron.net
 COMMENT=	Map data for py-basemap
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		python
 USE_PYTHON=	distutils autoplist

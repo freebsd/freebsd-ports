@@ -12,6 +12,8 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Converts a well formed csv file to a LaTeX document
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 

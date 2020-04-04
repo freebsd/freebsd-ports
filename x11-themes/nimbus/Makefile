@@ -12,6 +12,8 @@ MAINTAINER=		kpedersen@opencde.org
 COMMENT=		GTK+ 2.x engine from the OpenSolaris project
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/icon-naming-utils.pc:x11-themes/icon-naming-utils
 

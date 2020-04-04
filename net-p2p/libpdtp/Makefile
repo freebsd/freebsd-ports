@@ -11,6 +11,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Client library for Peer Distributed Transfer Protocol (PDTP)
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	BSD3CLAUSE
 

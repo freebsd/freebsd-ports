@@ -15,6 +15,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of Milk, Mac OS X theme
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		tar:bzip2
 NO_BUILD=	yes

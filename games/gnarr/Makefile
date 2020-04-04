@@ -11,6 +11,8 @@ MAINTAINER=	daniel.ryslink@dialtelecom.cz
 COMMENT=	Program for generating battle cries
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

@@ -12,6 +12,8 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Module to allow everyone to access config files
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-LibXML>=2:textproc/p5-XML-LibXML \

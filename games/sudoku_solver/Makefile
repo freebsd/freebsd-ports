@@ -11,6 +11,8 @@ MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Sudoku Solver in C
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 

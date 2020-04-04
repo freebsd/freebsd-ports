@@ -12,6 +12,8 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Reference manual of BOUML
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/doc

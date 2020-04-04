@@ -11,6 +11,8 @@ MAINTAINER=	richard@unixguru.nl
 COMMENT=	Tool for generating statistics from tcpdump (libpcap) files
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	bin/tcpdstat
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}

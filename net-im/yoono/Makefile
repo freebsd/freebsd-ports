@@ -13,6 +13,8 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Client for Twitter and other social networks
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE_NAME=	ToU
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept

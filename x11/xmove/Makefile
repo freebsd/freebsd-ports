@@ -12,6 +12,8 @@ MAINTAINER=	sec@42.org
 COMMENT=	Pseudoserver to support mobile X11 clients
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		imake xorg
 USE_XORG=	x11

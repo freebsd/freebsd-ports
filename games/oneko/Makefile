@@ -19,6 +19,8 @@ MAINTAINER=	candy@kgc.co.jp
 COMMENT=	Cat chasing a mouse all over the screen
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	nkf:japanese/nkf
 

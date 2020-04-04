@@ -10,6 +10,8 @@ MAINTAINER=	arnej@pvv.org
 COMMENT=	Start a process detached from a terminal
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	bin/detach man/man1/detach.1.gz
 

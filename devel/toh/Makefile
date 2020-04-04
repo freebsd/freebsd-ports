@@ -10,6 +10,8 @@ MAINTAINER=	paolo@lulli.net
 COMMENT=	Text to include
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 GNU_CONFIGURE=	yes
 

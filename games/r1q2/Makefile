@@ -12,6 +12,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Enhanced Quake II client/server focusing on stability
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	sets the FPU rounding mode and precision (not available in fenv.h)

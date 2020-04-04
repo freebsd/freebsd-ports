@@ -12,6 +12,8 @@ MAINTAINER=	bob@bomar.us
 COMMENT=	Simple web based photo gallery
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS=	anytopnm:graphics/netpbm\
 		p5-Image-Info>=0:graphics/p5-Image-Info\

@@ -12,6 +12,8 @@ MAINTAINER=	kikuchan@uranus.dti.ne.jp
 COMMENT=	Open-source media server for Syabas-based media players
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 RUN_DEPENDS=	nkf:japanese/nkf

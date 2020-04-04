@@ -12,6 +12,8 @@ MAINTAINER=	m.sund@arcor.de
 COMMENT=	Portable RSS, RDF, Atom Newsfeeds reader
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt

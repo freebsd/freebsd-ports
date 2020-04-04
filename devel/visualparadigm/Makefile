@@ -10,6 +10,8 @@ MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Visual modeling tool for all kinds of UML diagrams
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	VPCEL
 LICENSE_NAME=	Visual Paradigm Community Edition License Agreement

@@ -11,6 +11,8 @@ MAINTAINER=	mwm@mired.org
 COMMENT=	X utility for binding commands to a hot key
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 WRKSRC=		${WRKDIR}/keylaunch
 USES=		perl5 gmake xorg

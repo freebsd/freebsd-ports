@@ -11,6 +11,8 @@ MAINTAINER=	marko.cupac@mimar.rs
 COMMENT=	Plugin to add msn style "toaster" popups to Pidgin
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 

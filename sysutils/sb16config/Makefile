@@ -12,6 +12,8 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Configuration utility for Granch SBNI16-SHDSL PCI modems
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile

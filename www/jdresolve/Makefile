@@ -13,6 +13,8 @@ MAINTAINER=	christophe@labouisse.org
 COMMENT=	IP addresse to hostname program for httpd log files
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}

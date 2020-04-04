@@ -10,6 +10,8 @@ MAINTAINER=	hsakai@m8.ffn.ne.jp
 COMMENT=	Insert section numbers in HTML and make a table of contents
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		perl5
 USE_PERL5=	build

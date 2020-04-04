@@ -12,6 +12,8 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Job scheduler for PostgreSQL
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		cmake:insource dos2unix pgsql
 DOS2UNIX_GLOB=	*.txt

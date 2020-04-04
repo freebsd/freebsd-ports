@@ -9,6 +9,8 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR MySQL MDB2 driver
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	BSD3CLAUSE
 

@@ -12,6 +12,8 @@ MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Official desktop client for Telegram messenger (Linux version)
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv3
 

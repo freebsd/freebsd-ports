@@ -9,6 +9,8 @@ MAINTAINER=	jonathan@FreeBSD.org
 COMMENT=	Tool to manage all your version control repos
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2+
 

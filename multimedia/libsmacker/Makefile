@@ -9,6 +9,8 @@ MAINTAINER=	kennedy.greg@gmail.com
 COMMENT=	C library for decoding .smk Smacker Video files
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes

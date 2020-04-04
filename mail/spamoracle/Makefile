@@ -11,6 +11,8 @@ MAINTAINER=	xride@FreeBSD.org
 COMMENT=	procmail spam filter written in ML using Bayesian classification
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	ocaml:lang/ocaml
 

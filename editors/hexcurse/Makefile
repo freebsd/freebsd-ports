@@ -11,6 +11,8 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Versatile ncurses-based hex editor
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		ncurses
 

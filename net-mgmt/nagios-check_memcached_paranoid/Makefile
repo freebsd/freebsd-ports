@@ -11,6 +11,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Nagios plugin for checking memcached
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 BUILD_DEPENDS=	nagios-plugins>0:${PLUGINS} \

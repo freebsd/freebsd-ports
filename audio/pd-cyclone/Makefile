@@ -12,6 +12,8 @@ MAINTAINER=	brittlehaus@gmail.com
 COMMENT=	Pd library of clones of Max/MSP 4.5 objects
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

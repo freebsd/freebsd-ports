@@ -12,6 +12,8 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	C++ wrapper library to the sockets
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

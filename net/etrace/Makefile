@@ -12,6 +12,8 @@ MAINTAINER=	dave.ryan@gmail.com
 COMMENT=	Configurable static port network tracing tool
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	BSD3CLAUSE
 

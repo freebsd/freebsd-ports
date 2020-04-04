@@ -14,6 +14,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of Mac OS X theme Aluminum Alloy (${THEME_FLAVOR} flavor)
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 TYPE?=		gtk
 THEME_FLAVOR?=	volcanic

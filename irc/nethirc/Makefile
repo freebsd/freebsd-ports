@@ -11,6 +11,8 @@ MAINTAINER=	matt_mills@btopenworld.com
 COMMENT=	Perl-based IRC client that uses Net::IRC
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	p5-POE-Component-IRC>=0:irc/p5-POE-Component-IRC \
 		p5-String-Format>=0:textproc/p5-String-Format \

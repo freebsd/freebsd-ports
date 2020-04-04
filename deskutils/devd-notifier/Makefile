@@ -12,6 +12,8 @@ COMMENT=	Daemon notifying the user about devd(8) events \
 		with libnotify
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

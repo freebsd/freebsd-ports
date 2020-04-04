@@ -11,6 +11,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Convert custom image to cross stitch design, edit stitch designs
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt

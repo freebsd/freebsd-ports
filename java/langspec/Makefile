@@ -10,6 +10,8 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	The Java Language Specification
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		zip
 NO_BUILD=	yes

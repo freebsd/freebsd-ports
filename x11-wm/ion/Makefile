@@ -11,6 +11,8 @@ MAINTAINER=	ricci@cs.utah.edu
 COMMENT=	Window manager with a text-editorish, keyboard friendly interface
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 CONFLICTS=	ion-2-*
 CONFLICTS_INSTALL=	ion-shell

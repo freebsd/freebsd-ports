@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the UNIX 6th Edition shell
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 MAKE_ENV+=	DOCDIR=${DOCSDIR} \
 		EXPDIR=${EXAMPLESDIR} \

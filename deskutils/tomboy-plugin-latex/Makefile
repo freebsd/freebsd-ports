@@ -12,6 +12,8 @@ MAINTAINER=	mono@FreeBSD.org
 COMMENT=	LaTeX math plugin for Tomboy
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	tomboy:deskutils/tomboy
 RUN_DEPENDS=	tomboy:deskutils/tomboy

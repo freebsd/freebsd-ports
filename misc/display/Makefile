@@ -11,6 +11,8 @@ MAINTAINER=	sjroz@verizon.net
 COMMENT=	Runs command repeatedly; shows output
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		ncurses
 GNU_CONFIGURE=	yes

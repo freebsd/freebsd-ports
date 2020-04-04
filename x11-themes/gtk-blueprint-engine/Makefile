@@ -13,6 +13,8 @@ MAINTAINER=	sk8harddiefast@gmail.com
 COMMENT=	Engine, and collection of icons, themes from OpenSolaris
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 

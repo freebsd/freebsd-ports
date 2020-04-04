@@ -12,6 +12,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to read and write shapefiles via shapelib
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libshp.so:devel/shapelib
 

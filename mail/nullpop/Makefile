@@ -10,6 +10,8 @@ MAINTAINER=	pankov_p@mail.ru
 COMMENT=	POP3 server that allows logins, but never returns any email
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 

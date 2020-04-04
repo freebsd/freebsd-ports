@@ -10,6 +10,8 @@ MAINTAINER=	smatsui@karashi.org
 COMMENT=	Tiny tiny httpd
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mattn

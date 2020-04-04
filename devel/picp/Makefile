@@ -10,6 +10,8 @@ MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Driver for the Microchip Picstart Plus development programmer
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	bin/picp
 

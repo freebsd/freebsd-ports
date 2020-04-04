@@ -12,6 +12,8 @@ MAINTAINER=	lyngbol@wheel.dk
 COMMENT=	A collection of SNMP command line management tools
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libgsnmp.so:net-mgmt/gsnmp
 

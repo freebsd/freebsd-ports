@@ -11,6 +11,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Library needed by syslog-ng
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		libtool
 GNU_CONFIGURE=	yes

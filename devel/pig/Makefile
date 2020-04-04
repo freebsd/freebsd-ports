@@ -22,6 +22,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		yarn:devel/hadoop2
 
 BROKEN=		tries to make outbound http connection during build phase breaking tinderbox.  Software itself does not have known issues, remove this BROKEN line and build your own package
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USE_JAVA=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src

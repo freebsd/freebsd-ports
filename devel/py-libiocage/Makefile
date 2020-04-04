@@ -9,6 +9,8 @@ MAINTAINER=	maintainers@iocage.io
 COMMENT=	Library to manage jails with iocage
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

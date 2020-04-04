@@ -12,6 +12,8 @@ MAINTAINER=	rodakay@internode.on.net
 COMMENT=	Simple Ada Components
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi

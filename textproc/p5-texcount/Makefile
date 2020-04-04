@@ -12,6 +12,8 @@ MAINTAINER=	nukama+maintainer@gmail.com
 COMMENT=	Perl module for LaTeX statistics
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 #LICENSE=	LPPL13c
 

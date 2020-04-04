@@ -15,6 +15,8 @@ MAINTAINER=	eg@fbsd.lt
 COMMENT=	Mercurial plugin for the Eclipse IDE Framework
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
 

@@ -14,6 +14,8 @@ COMMENT=	Open source IM and VoIP application
 LICENSE=	LGPL21
 
 BROKEN=		fails to start, missing requirement osgi.native
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		zip

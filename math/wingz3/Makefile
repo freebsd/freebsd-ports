@@ -18,6 +18,8 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Commercial Spreadsheet
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 NO_PACKAGE=	Commercial software with nothing to build - install from port
 

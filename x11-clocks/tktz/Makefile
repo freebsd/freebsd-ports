@@ -11,6 +11,8 @@ MAINTAINER=	gromnizki@unixdev.net
 COMMENT=	Tcl/Tk-based timezone viewer
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		tk:run
 NO_BUILD=	yes

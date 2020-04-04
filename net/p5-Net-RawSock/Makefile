@@ -11,6 +11,8 @@ MAINTAINER=	ecu@200ok.org
 COMMENT=	Net::RawSock provides a base function to send raw IP packets from Perl
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		perl5
 USE_PERL5=	configure patch

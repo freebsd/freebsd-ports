@@ -13,6 +13,8 @@ MAINTAINER=	konstantin.lepa@gmail.com
 COMMENT=	C++ XML parser library
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 

@@ -11,6 +11,8 @@ MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High-performance Prolog compiler
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 

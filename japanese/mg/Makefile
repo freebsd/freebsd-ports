@@ -12,6 +12,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Multi-line grep suitable for Japanese text
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		perl5
 USE_PERL5=	run

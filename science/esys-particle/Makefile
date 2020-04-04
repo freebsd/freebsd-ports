@@ -13,6 +13,8 @@ COMMENT=	Particle-based numerical modelling software
 LICENSE=	APACHE20
 
 BROKEN=	The upstream doesn't answer bug reports: https://bugs.launchpad.net/esys-particle/+bug/1808617
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libmpi.so:net/mpich

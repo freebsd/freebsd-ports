@@ -11,6 +11,8 @@ MAINTAINER=	java@FreeBSD.org
 COMMENT=	JDBC connection pool
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USE_JAVA=	yes
 NO_BUILD=	yes

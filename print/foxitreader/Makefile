@@ -13,6 +13,8 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Free PDF document viewer for desktop Linux
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	EULA
 LICENSE_NAME=	End-User License Agreement

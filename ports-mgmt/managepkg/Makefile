@@ -13,6 +13,8 @@ MAINTAINER=	fehlner@gmx.de
 COMMENT=	Script for maintaining ports
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 # Any ideas for a better comment?
 
 EXTRACT_CMD=	${GZCAT}

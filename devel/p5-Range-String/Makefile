@@ -12,6 +12,8 @@ MAINTAINER=	rdna@rdna.ru
 COMMENT=	Perl5 module which provides interface to string ranges
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

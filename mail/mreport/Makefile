@@ -10,6 +10,8 @@ MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	Sendmail logfile summary tool
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 ALL_TARGET=	ALL
 PLIST_FILES=	sbin/mreport man/man8/mreport.8.gz

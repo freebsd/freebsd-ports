@@ -13,6 +13,8 @@ MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Phone codes in Hungary / Magyarorszagi korzetszamok
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	share/misc/hu.phone
 NO_WRKSUBDIR=	yes

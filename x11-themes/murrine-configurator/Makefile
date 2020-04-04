@@ -11,6 +11,8 @@ MAINTAINER=	tstodgell@gmail.com
 COMMENT=	GUI gtkrc configuration tool for the Murrine GTK engine
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 		${LOCALBASE}/lib/gtk-2.0/2.10.0/engines/libmurrine.so:x11-themes/gtk-murrine-engine \

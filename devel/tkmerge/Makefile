@@ -11,6 +11,8 @@ MAINTAINER=	bob@immure.com
 COMMENT=	Tk script to aid in merging changes between two files
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/bwidget/label.tcl:x11-toolkits/bwidget
 

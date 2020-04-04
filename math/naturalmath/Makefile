@@ -11,6 +11,8 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Script to turn intuitively written math into latex
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USE_TEX=	latex:build dvipsk:build
 USES=		shebangfix perl5

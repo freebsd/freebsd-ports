@@ -12,6 +12,8 @@ MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Secure tunnels to localhost
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 # run 'ngrok credits' for details
 LICENSE=	NONE APACHE20 BSD3CLAUSE CC0-1.0 LGPL3+ MIT

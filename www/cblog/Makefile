@@ -10,6 +10,8 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple weblog in C using markdown
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:www/clearsilver
 LIB_DEPENDS=	libfcgi.so:www/fcgi \

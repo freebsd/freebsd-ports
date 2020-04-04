@@ -11,6 +11,8 @@ MAINTAINER=	hatanou@infolab.ne.jp
 COMMENT=	Create files suitable for use as swap files
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	BSD2CLAUSE
 

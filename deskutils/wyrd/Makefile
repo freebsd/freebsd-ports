@@ -11,6 +11,8 @@ MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	Text-based front-end to Remind
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 

@@ -11,6 +11,8 @@ MAINTAINER=	rdna@rdna.ru
 COMMENT=	Checks MySQL databases/tables for unused indexes
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
 		p5-DBI>=0:databases/p5-DBI \

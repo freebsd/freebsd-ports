@@ -10,6 +10,8 @@ MAINTAINER=	semprix@gmx.com
 COMMENT=	Fast way to delete entries from OpenSSH known_hosts file
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS=	bash:shells/bash
 

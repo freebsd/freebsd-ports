@@ -10,6 +10,8 @@ MAINTAINER=	smatsui@karashi.org
 COMMENT=	Communication terminal through serial and TCP/IP interfaces
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 OPTIONS_DEFINE=	DOCS JUPITER
 

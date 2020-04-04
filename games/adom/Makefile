@@ -12,6 +12,8 @@ MAINTAINER=	sr-13@mail.ru
 COMMENT=	Rogue-like advanced rpg with color support (binary port)
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	unknown
 LICENSE_NAME=	The ADOM License

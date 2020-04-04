@@ -12,6 +12,8 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Module for manipulating bibliographic records in the USMARC format
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		perl5
 USE_PERL5=	configure

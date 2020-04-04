@@ -11,6 +11,8 @@ MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Userland driver for Samsung WiMAX modems
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 

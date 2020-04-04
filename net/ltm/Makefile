@@ -10,6 +10,8 @@ MAINTAINER=	ltm-support@statseeker.com
 COMMENT=	Statseeker Real Time LAN Analyser
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 NO_BUILD=	yes
 

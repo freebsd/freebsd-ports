@@ -12,6 +12,8 @@ MAINTAINER=	kheuer@gwdg.de
 COMMENT=	Remote system monitoring utility
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	BSD4CLAUSE
 

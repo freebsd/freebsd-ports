@@ -11,6 +11,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	LISP like scripting language
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv3
 

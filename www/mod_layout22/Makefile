@@ -12,6 +12,8 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache2.2 module to wrap served pages with a header and/or footer
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 CONFLICTS=	mod_layout-3.* mod_layout-4.*
 

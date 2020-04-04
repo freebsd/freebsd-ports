@@ -13,6 +13,8 @@ MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Postal codes in Hungary / Magyarorszagi iranyitoszamok
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	share/misc/hu.zipcodes
 NO_WRKSUBDIR=	yes

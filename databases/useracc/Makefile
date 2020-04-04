@@ -12,6 +12,8 @@ MAINTAINER=	kheuer@gwdg.de
 COMMENT=	Special purpose database application
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	bin/useracc etc/rc.d/useracc.sh.sample man/man1/useracc.1.gz
 

@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-threaded functional programming language
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BROKEN_armv6=		fails to compile: operator new takes type size_t as first parameter
 BROKEN_armv7=		fails to compile: operator new takes type size_t as first parameter

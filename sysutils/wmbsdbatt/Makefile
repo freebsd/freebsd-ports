@@ -11,6 +11,8 @@ MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Dockapp for battery & temperature monitoring through ACPI
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		xorg
 USE_XORG=	x11 xpm

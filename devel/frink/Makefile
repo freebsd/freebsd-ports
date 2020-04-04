@@ -10,6 +10,8 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tcl formatter and static tester
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.2.2
 USES=		uidfix

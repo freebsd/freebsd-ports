@@ -12,6 +12,8 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Module that makes Apache 2 CVS aware
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	AFL12
 LICENSE_NAME=	Academic Free License 1.2

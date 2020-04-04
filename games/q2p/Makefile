@@ -12,6 +12,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Enhanced OpenGL-only Quake II engine
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		gmake tar:bzip2 xorg
 USE_XORG=	xxf86dga xext xxf86vm x11

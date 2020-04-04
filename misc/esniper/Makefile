@@ -14,6 +14,8 @@ COMMENT=	Lightweight console application for sniping ebay auctions
 LICENSE=	BSD2CLAUSE
 
 BROKEN=		Incompatible with eBay website changes
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 

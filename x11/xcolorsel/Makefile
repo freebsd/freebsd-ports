@@ -15,6 +15,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/01-COPYING
 
 BROKEN=		segfaults when trying to actually grab color
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 RUN_DEPENDS=	rgb>=1.0.3:x11/rgb

@@ -12,6 +12,8 @@ MAINTAINER=	chip-set@mail.ru
 COMMENT=	GTK+ tool for managing x11 cut-buffers
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 HAS_CONFIGURE=	yes
 USES=		gnome pkgconfig tar:bzip2

@@ -13,6 +13,8 @@ MAINTAINER=	kevin@caomhin.demon.co.uk
 COMMENT=	Flexible web-based resource management tool
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=	php:mod
 

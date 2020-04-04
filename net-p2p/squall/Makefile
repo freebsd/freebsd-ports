@@ -10,6 +10,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Server for the Peer Distributed Transfer Protocol (PDTP)
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		ssl
 HAS_CONFIGURE=	yes

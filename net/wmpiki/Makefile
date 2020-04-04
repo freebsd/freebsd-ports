@@ -12,6 +12,8 @@ MAINTAINER=	t.kempka@web.de
 COMMENT=	Multiping host checker dockapp
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		xorg
 USE_XORG=	xpm

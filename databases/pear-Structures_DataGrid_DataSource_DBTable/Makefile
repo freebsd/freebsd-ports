@@ -9,6 +9,8 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	DataSource driver using PEAR::DB_Table
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	BSD2CLAUSE
 

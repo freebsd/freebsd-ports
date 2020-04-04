@@ -10,6 +10,8 @@ MAINTAINER=	kline@thought.org
 COMMENT=	Checkbook balancing tool
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	GPLv2
 

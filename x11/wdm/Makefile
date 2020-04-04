@@ -18,6 +18,8 @@ MAINTAINER=	xride@FreeBSD.org
 COMMENT=	WINGs Display Manager; an xdm replacement
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libWINGs.so:x11-wm/windowmaker
 

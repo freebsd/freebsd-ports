@@ -12,6 +12,8 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Interpreter for the functional programming language Haskell 98
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BROKEN_armv6=		fails to compile: cppinput.c: invalid preprocessing directive \#!
 BROKEN_armv7=		fails to compile: cppinput.c: invalid preprocessing directive \#!

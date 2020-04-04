@@ -10,6 +10,8 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	UDP-based ping program
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -13,6 +13,8 @@ MAINTAINER=	tedm@ipinc.net
 COMMENT=	Server to allow users to change their password from within Eudora
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=

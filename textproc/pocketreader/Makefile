@@ -14,6 +14,8 @@ MAINTAINER=	simond@irrelevant.org
 COMMENT=	Siemens PocketReader
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		linux
 NO_BUILD=	yes

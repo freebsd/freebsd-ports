@@ -16,6 +16,8 @@ MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		bison compiler:nestedfct gmake tar:bzip2
 USE_CSTD=	gnu89

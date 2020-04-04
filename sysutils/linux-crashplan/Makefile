@@ -12,6 +12,8 @@ MAINTAINER=	subtil@gmail.com
 COMMENT=	Backs up data to remote servers or hard drives
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 ONLY_FOR_ARCHS=	amd64 i386
 

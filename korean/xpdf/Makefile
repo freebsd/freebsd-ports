@@ -14,6 +14,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Korean font support for xpdf
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS=	xpdf:graphics/xpdf \
 		${ADOBECMAPDIR}/ai0/CMap/Identity-H:print/adobe-cmaps \

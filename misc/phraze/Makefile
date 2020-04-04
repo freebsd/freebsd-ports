@@ -10,6 +10,8 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Converts telephone number to combinations of valid words
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USE_RUBY=	yes
 NO_BUILD=	yes

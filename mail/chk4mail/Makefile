@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quickly check multiple folders for new email
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 PLIST_FILES=	bin/chk4mail bin/chkimap \
 		man/man1/chk4mail.1.gz man/man1/chkimap.1.gz

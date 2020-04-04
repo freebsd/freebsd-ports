@@ -12,6 +12,8 @@ MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Abstract interface to is.gd, one of URL shortening sites
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

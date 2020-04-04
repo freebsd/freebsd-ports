@@ -12,6 +12,8 @@ MAINTAINER=	moggie@elasticmind.net
 COMMENT=	Highly configurable services package for use with ircd-ratbox
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USE_RC_SUBR=	ratbox-services
 

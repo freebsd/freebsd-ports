@@ -12,6 +12,8 @@ MAINTAINER=	candy@kgc.co.jp
 COMMENT=	Simple digital timer for X11
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

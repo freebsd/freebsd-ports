@@ -10,6 +10,8 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Instant terminal sharing server
 
 BROKEN=		fails to patch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libmsgpackc.so:devel/msgpack \

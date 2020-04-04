@@ -11,6 +11,8 @@ MAINTAINER=	gustavofukao@gmail.com
 COMMENT=	Front-end written in PHP to manage virtual service
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 NO_BUILD=	yes
 USE_PHP=	gettext ldap openssl pcre session

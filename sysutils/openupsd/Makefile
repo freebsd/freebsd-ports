@@ -11,6 +11,8 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	UPS daemon for some Belkin UPS's
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes

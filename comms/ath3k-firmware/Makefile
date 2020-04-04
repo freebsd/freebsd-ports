@@ -12,6 +12,8 @@ MAINTAINER=	wulf@FreeBSD.org
 COMMENT=	Atheros AR3011/AR3012 bluetooth adaptor firmwares used by ath3kfw(8)
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	ATHEROS
 LICENSE_NAME=	Atheros firmware license

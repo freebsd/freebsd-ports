@@ -11,6 +11,8 @@ MAINTAINER=	moro@remus.dti.ne.jp
 COMMENT=	Command-line interface to Paul Vixie's RBL filter
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		gmake
 GNU_CONFIGURE=	yes

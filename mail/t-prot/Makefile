@@ -12,6 +12,8 @@ MAINTAINER=	torres.g.alex@gmail.com
 COMMENT=	TOFU Protection - Display Filter for RFC822 messages
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 RUN_DEPENDS=	p5-Locale-gettext>=0:devel/p5-Locale-gettext
 

@@ -18,6 +18,8 @@ NO_BUILD=	YES
 NO_ARCH=	YES
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 RESTRICTED=	Redistribution of software prohibited by VictorOps
 
 OPTIONS_DEFINE=	QPAGE

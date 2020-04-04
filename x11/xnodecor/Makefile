@@ -12,6 +12,8 @@ MAINTAINER=	katsura@cc.osaka-kyoiku.ac.jp
 COMMENT=	Utility to set override_redirect in XWindowAttributes to True
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 NO_WRKSUBDIR=	yes
 USES=		xorg

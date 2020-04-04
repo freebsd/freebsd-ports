@@ -11,6 +11,8 @@ MAINTAINER=	freebsd@donovansbrain.co.uk
 COMMENT=	Zeroconf/Bonjour(tm) implementation
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 CONFLICTS=	avahi-[0-9]*
 

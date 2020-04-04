@@ -11,6 +11,8 @@ MAINTAINER=	atrn@zeta.org.au
 COMMENT=	Interpretive language with C's feel and high level data types
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 MAKEFILE=	Makefile.bsd
 

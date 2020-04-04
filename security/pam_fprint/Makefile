@@ -12,6 +12,8 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	PAM module offering finger print authentication using libfprint
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libfprint.so:security/libfprint
 

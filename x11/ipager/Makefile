@@ -11,6 +11,8 @@ MAINTAINER=	lme@FreeBSD.org
 COMMENT=	X11 pager program
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	MIT
 

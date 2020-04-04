@@ -11,6 +11,8 @@ MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Implementation of TclOO for Tcl 8.5
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

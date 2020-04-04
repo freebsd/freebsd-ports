@@ -11,6 +11,8 @@ MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	Selective e-mail auditing for qmail by means of qmail-queue wrapping
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 WRKSRC=		${WRKDIR}/${PORTNAME:R}
 

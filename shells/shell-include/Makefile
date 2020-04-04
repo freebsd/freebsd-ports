@@ -11,6 +11,8 @@ MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Include system for shell scripts
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 USES=		perl5 tar:tgz
 USE_PERL5=	build

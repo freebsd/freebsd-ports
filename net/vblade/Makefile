@@ -11,6 +11,8 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Virtual EtherDrive(R) blade AoE target
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 MAKE_ARGS=	PLATFORM=freebsd\
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"\

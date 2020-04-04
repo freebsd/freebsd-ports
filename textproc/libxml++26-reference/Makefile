@@ -11,6 +11,8 @@ USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 BROKEN=		fails to stage
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 DOCSDIR=	${PREFIX}/share/doc/libxml++-2.6
 

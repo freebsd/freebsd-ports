@@ -12,6 +12,8 @@ MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	The beautiful Jimmac X cursor themes
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 NO_BUILD=	yes
 

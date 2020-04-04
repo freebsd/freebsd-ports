@@ -13,6 +13,8 @@ MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		Tool for rapid development of small sites
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 BROKEN_armv6=		fails to compile: build.xml: tools/ant/lib not found
 BROKEN_armv7=		fails to compile: build.xml: tools/ant/lib not found

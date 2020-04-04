@@ -12,6 +12,8 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Command line tool to make a copy from a Video DVD
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libdvdnav.so:multimedia/libdvdnav \
 		libdvdread.so:multimedia/libdvdread

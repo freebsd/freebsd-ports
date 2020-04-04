@@ -11,6 +11,8 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Grand Central Dispatch API support library
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	APACHE20
 

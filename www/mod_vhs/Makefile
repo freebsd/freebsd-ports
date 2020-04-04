@@ -12,6 +12,8 @@ MAINTAINER=	kiwi@oav.net
 COMMENT=	Mass virtual hosting using mod_ldap or mod_dbd with Apache 2.2.x
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	APACHE11
 
