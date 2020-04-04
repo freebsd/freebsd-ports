@@ -1,0 +1,11 @@
+--- pokerth.proto.orig	2014-01-10 21:18:20 UTC
++++ pokerth.proto
+@@ -701,7 +701,7 @@ message ReportGameAckMessage {
+ 
+ message ErrorMessage {
+ 	enum ErrorReason {
+-		reserved = 0;
++		pthreserved = 0;
+ 		initVersionNotSupported = 1;
+ 		initServerFull = 2;
+ 		initAuthFailure = 3;
