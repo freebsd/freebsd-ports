@@ -2,41 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	nauty
-PORTVERSION=	2.4r2
+PORTVERSION=	2.6r12
 CATEGORIES=	math
-MASTER_SITES=	http://cs.anu.edu.au/~bdm/nauty/
+MASTER_SITES=	http://cs.anu.edu.au/~bdm/nauty/	\
+		http://pallini.di.uniroma1.it/
 DISTNAME=	${PORTNAME}${PORTVERSION:S!.!!}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brendan McKay's graph isomorphism tester
 
-LICENSE=	NAUTY
-LICENSE_NAME=	nauty license
-LICENSE_FILE=	${WRKDIR}/LICENSE
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		gmake
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
-PROGRAMS=	NRswitchg addedgeg amtog biplabg catg complg copyg \
-		countg deledgeg directg dreadnaut dretog genbg geng \
-		genrang gentourng labelg listg multig newedgeg pickg \
-		planarg shortg showg
+PROGRAMS=	addedgeg amtog biplabg catg complg converseg copyg countg	\
+		cubhamg deledgeg delptg directg dreadnaut dretodot dretog genbg	\
+		genbgL geng genquarticg genrang genspecialg gentourng gentreeg	\
+		hamheuristic labelg linegraphg listg multig newedgeg NRswitchg	\
+		pickg planarg ranlabg shortg showg subdivideg twohamg vcolg	\
+		watercluster2
 
-PORTDOCS=	nug.pdf
+PORTDOCS=	nug26.pdf
 PLIST_FILES=	${PROGRAMS:S!^!bin/!}
 
 OPTIONS_DEFINE=	DOCS
-
-post-extract:
-	@${SED} -ne '/AUTHOR/,/RIP/ {s|^\*   ||; s|  *\*$$||;p;}' \
-		< ${WRKSRC}/nauty.h > ${WRKDIR}/LICENSE
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|gcc|$${CC}| ; \
-		 s|-O4 -march=i686|$${CFLAGS}|' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 .for i in ${PROGRAMS}
