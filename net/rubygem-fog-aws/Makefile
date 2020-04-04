@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-aws
-PORTVERSION=	3.5.2
+PORTVERSION=	3.6.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -21,5 +21,8 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/bin/console ${STAGEDIR}${PREFIX}/bin/setup
 
 .include <bsd.port.mk>
