@@ -64,11 +64,11 @@ CONFIGURE_ARGS+=	--with-tls=none
 RUN_DEPENDS+=	${CERTSFILE}:security/ca_root_nss
 .endif
 
-CONFIGURE_ARGS+=	--datarootdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION} \
-			--localstatedir=/var \
-			--sysconfdir=${PREFIX}/etc/ircd-hybrid
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/${PORTNAME}-${PORTVERSION} \
+			--localstatedir=/var/${PORTNAME} \
+			--sysconfdir=${PREFIX}/etc/${PORTNAME}
 
 post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/bin/mkpasswd ${STAGEDIR}${PREFIX}/bin/ircd-hybrid-mkpasswd
+	@${MV} ${STAGEDIR}${PREFIX}/bin/mkpasswd ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-mkpasswd
 
 .include <bsd.port.mk>
