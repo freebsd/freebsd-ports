@@ -20,6 +20,7 @@ include/corvusoft/restbed/uri.hpp
 include/corvusoft/restbed/web_socket.hpp
 include/corvusoft/restbed/web_socket_message.hpp
 include/restbed
+lib/librestbed.a
 lib/librestbed.so
 lib/librestbed.so.4
-lib/librestbed.so.4.6.0
+lib/librestbed.so.4.7
