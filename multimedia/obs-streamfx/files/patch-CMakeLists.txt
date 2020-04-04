@@ -1,0 +1,32 @@
+--- CMakeLists.txt.orig	2020-04-04 06:34:32 UTC
++++ CMakeLists.txt
+@@ -88,13 +88,13 @@ else()
+ endif()
+ 
+ # Detect Architecture
+-math(EXPR BITS "8*${CMAKE_SIZEOF_VOID_P}")
+-if("${BITS}" STREQUAL "32")
+-	set(ARCH "x86")
+-	message(STATUS "StreamFX no longer supports 32-bit builds, you are on your own if you continue.")
+-else()
+-	set(ARCH "x64")
+-endif()
++#math(EXPR BITS "8*${CMAKE_SIZEOF_VOID_P}")
++#if("${BITS}" STREQUAL "32")
++#	set(ARCH "x86")
++#	message(STATUS "StreamFX no longer supports 32-bit builds, you are on your own if you continue.")
++#else()
++#	set(ARCH "x64")
++#endif()
+ 
+ # All Warnings, Extra Warnings, Pedantic
+ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+@@ -176,7 +176,7 @@ else()
+ 	set(CMAKE_PACKAGE_SUFFIX_OVERRIDE "" CACHE STRING "Override for the suffix.")
+ 
+ 	if(UNIX)
+-		set(UNIX_LOCAL_STRUCTURE TRUE CACHE BOOL "Package for a local linux install.")
++		#set(UNIX_LOCAL_STRUCTURE TRUE CACHE BOOL "Package for a local linux install.")
+ 	endif()
+ 
+ 	if(NOT ${PropertyPrefix}OBS_DOWNLOAD)

@@ -285,6 +285,7 @@
     SUBDIR += nordlicht
     SUBDIR += nostt
     SUBDIR += obs-qtwebkit
+    SUBDIR += obs-streamf
     SUBDIR += obs-studio
     SUBDIR += obs-websocket
     SUBDIR += oggvideotools
