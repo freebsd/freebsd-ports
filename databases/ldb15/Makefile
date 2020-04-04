@@ -34,8 +34,8 @@ CONFLICTS_INSTALL=	ldb-1.1.* ldb1[2-46]-1.*
 
 USES=			compiler pkgconfig waf
 USE_LDCONFIG=		yes
-WAF_CMD=		buildtools/bin/waf
-CONFIGURE_LOG=		bin/config.log
+WAF_CMD=		${BUILD_WRKSRC}/buildtools/bin/waf
+CONFIGURE_LOG=		${BUILD_WRKSRC}/bin/config.log
 
 USE_OPENLDAP=		yes
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
