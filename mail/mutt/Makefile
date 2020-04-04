@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-DISTVERSION=	1.13.4
+DISTVERSION=	1.13.5
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -48,8 +48,8 @@ OPTIONS_SUB=	yes
 
 OPTIONS_DEFINE=	AUTOCRYPT DEBUG DOCS EXAMPLES FLOCK FORCEBASE64 GPGME \
 		GREETING_PATCH HTML ICONV IDN IFDEF_PATCH LOCALES_FIX \
-		MAILBOX_MANPAGES MAILDIR_MTIME_PATCH NLS QUOTE_PATCH NNTP \
-		REVERSE_REPLY_PATCH SASL SMART_DATE SMTP URLVIEW XML
+		MAILBOX_MANPAGES MAILDIR_MTIME_PATCH NLS QUOTE_PATCH \
+		REVERSE_REPLY_PATCH SASL SMART_DATE SMTP URLVIEW
 
 OPTIONS_SINGLE=	GSSAPI HCACHE SCREEN
 OPTIONS_RADIO=	SPELL
@@ -84,11 +84,10 @@ SLANG_DESC=	SLANG support
 SMART_DATE_DESC=	Dynamic date formatting with "%@"
 SMTP_DESC=	SMTP relay support
 URLVIEW_DESC=	Use urlview for the URL selector menu
-XML_DESC=	Use XML tools for rebuilding documentation
 
 OPTIONS_DEFAULT=	AUTOCRYPT GPGME GSSAPI_NONE HCACHE_BDB HTML ICONV IDN \
 		IFDEF_PATCH LOCALES_FIX MAILBOX_MANPAGES MAILDIR_MTIME_PATCH NCURSES \
-		NLS REVERSE_REPLY_PATCH SASL SMART_DATE SMTP URLVIEW XML
+		NLS QUOTE_PATCH REVERSE_REPLY_PATCH SASL SMART_DATE SMTP URLVIEW
 
 .ifmake makesum # for optional distfiles patchfiles
 OPTIONS_OVERRIDE=	${OPTIONS_DEFINE} ${OPTIONS_DEFAULT}
@@ -173,64 +172,25 @@ GPGME_CONFIGURE_ENABLE=	gpgme
 
 SMTP_CONFIGURE_ENABLE=	smtp
 
+FORCEBASE64_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-forcebase64
+
+MAILDIR_MTIME_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-maildir-mtime
+
 GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
 
-QUOTE_PATCH_BROKEN=	QUOTE_PATCH broken on 1.13.0
 QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv \
 	patch-${VVV_PATCH_VERSION}.vvv.quote.xz:vvv
-
-NNTP_BROKEN=	NNTP_PATCH broken on 1.13.0
-NNTP_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.nntp.xz:-p1:vvv
-NNTP_EXTRA_PATCHES=	${PATCHDIR}/extra-nntp-depfiles
-NNTP_CONFIGURE_ON=	--enable-nntp
-NNTP_VARS=	XML_NEEDED=yes
-NNTP_CATEGORIES=	news
-NNTP_USES=	perl5
 
 DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 
 .include <bsd.port.options.mk>
 
 # un/comment as each VERSION is created for PORTVERSION
-VVV_PATCH_VERSION=	1.12.1
-GREETING_PATCH_VERSION=	1.13.2
-
-post-patch-NNTP-on:
-# Restore timestamps for autotools sources
-	@${TOUCH} -r ${WRKSRC}/configure.ac.orig ${WRKSRC}/configure.ac
-	@${TOUCH} -r ${WRKSRC}/Makefile.am.orig ${WRKSRC}/Makefile.am
-.if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
-.if 	defined(${PATCH_DEBUG})
-		@${ECHO} "===>  Applying ${.TARGET} extra-patch-maildir-mtime-nntp"
-.endif
-	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-mtime-nntp
-.endif
-.if ${PORT_OPTIONS:MFORCEBASE64}
-.if 	defined(PATCH_DEBUG)
-		@${ECHO} "===>  Applying ${.TARGET} extra-patch-forcebase64-nntp"
-.endif
-	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-forcebase64-nntp
-.endif
-
-post-patch-NNTP-off:
-.if ${PORT_OPTIONS:MMAILDIR_MTIME_PATCH}
-.if 	defined(PATCH_DEBUG)
-		@${ECHO} "===>  Applying ${.TARGET} extra-patch-maildir-mtime"
-.endif
-	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-mtime
-.endif
-.if ${PORT_OPTIONS:MFORCEBASE64}
-.if 	defined(PATCH_DEBUG)
-		@${ECHO} "===>  Applying ${.TARGET} extra-patch-forcebase64"
-.endif
-	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-forcebase64
-.endif
+VVV_PATCH_VERSION=	1.13.0
+GREETING_PATCH_VERSION=	1.13.4
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${MANPREFIX}/man/man5
-
-post-install-NNTP-on:
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog.nntp ${STAGEDIR}${DOCSDIR}
 
 pre-configure::
 	@${REINPLACE_CMD} -e 's,?eimdal\*),?eimdal*|\"FreeBSD heimdal\"*),' \
@@ -256,15 +216,7 @@ pre-configure-HCACHE_BDB-on:
 	@${REINPLACE_CMD} -E -e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-.if defined (XML_NEEDED) && ${PORT_OPTIONS:MXML}
-BUILD_DEPENDS+=	xsltproc:textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
-		lynx:www/lynx
-.else
 pre-build::
-	@${REINPLACE_CMD} \
-		-e '/^BUILD_DOC_TARGETS/s/=.*/=/' \
-		${WRKSRC}/doc/Makefile
-.endif
+	@${REINPLACE_CMD} -e '/^BUILD_DOC_TARGETS/s/=.*/=/' ${WRKSRC}/doc/Makefile
 
 .include <bsd.port.mk>

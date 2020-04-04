@@ -30,7 +30,6 @@ man/man5/muttrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
 %%PORTDOCS%%%%DOCSDIR%%/patch-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/smime-notes.txt
-%%NNTP%%%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.nntp
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/advancedusage.html
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/configuration.html
 %%HTML%%%%PORTDOCS%%%%DOCSDIR%%/gettingstarted.html
