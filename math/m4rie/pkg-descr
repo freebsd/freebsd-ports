@@ -1,0 +1,5 @@
+M4RIE is a library for fast arithmetic with dense matrices over GF(2^e) for
+2<=e<=16. The name stems from the fact that is relies heavily on M4RI.
+
+WWW: https://bitbucket.org/malb/m4rie/src/master/
+WWW: https://github.com/malb/m4rie

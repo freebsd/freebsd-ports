@@ -379,6 +379,7 @@
     SUBDIR += ltl
     SUBDIR += ltl2ba
     SUBDIR += m4ri
+    SUBDIR += m4rie
     SUBDIR += mate-calc
     SUBDIR += math77
     SUBDIR += mathgl
