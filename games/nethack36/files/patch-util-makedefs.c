@@ -1,5 +1,5 @@
---- util/makedefs.c.orig	2019-05-08 00:00:16.000000000 -0700
-+++ util/makedefs.c	2019-05-16 08:21:09.868001000 -0700
+--- util/makedefs.c.orig	2020-04-04 00:36:25.595499000 -0700
++++ util/makedefs.c	2020-04-04 00:42:25.126524000 -0700
 @@ -139,6 +139,7 @@
  #define MAXFNAMELEN 600
  
@@ -8,7 +8,7 @@
  
  #ifdef FILE_PREFIX
  /* if defined, a first argument not starting with - is
-@@ -272,6 +273,12 @@
+@@ -279,6 +280,12 @@
          return 1;
      }
  
@@ -21,9 +21,9 @@
  #ifdef FILE_PREFIX
      if (argc >= 2 && argv[1][0] != '-') {
          file_prefix = argv[1];
-@@ -967,9 +974,9 @@
-     }
-     Fprintf(ofp, "%s", Dont_Edit_Data);
+@@ -993,9 +1000,9 @@
+        more likely to be picked than normal but it's nothing to worry about */
+     (void) fputs(xcrypt(deflt_content), ofp);
  
 -    tfp = getfp(DATA_TEMPLATE, "grep.tmp", WRTMODE);
 +    tfp = getfp(DATA_TEMPLATE, tempfilename, WRTMODE);
@@ -33,7 +33,7 @@
  
      while ((line = fgetline(ifp)) != 0) {
          if (line[0] != '#' && line[0] != '\n')
-@@ -979,7 +986,7 @@
+@@ -1005,7 +1012,7 @@
      Fclose(ifp);
      Fclose(ofp);
  
@@ -42,7 +42,7 @@
      return;
  }
  
-@@ -2230,9 +2237,9 @@
+@@ -2291,9 +2298,9 @@
      }
      Fprintf(ofp, "%s", Dont_Edit_Data);
  
@@ -54,7 +54,7 @@
  
      while ((line = fgetline(ifp)) != 0) {
          SpinCursor(3);
-@@ -2247,7 +2254,7 @@
+@@ -2308,7 +2315,7 @@
      Fclose(ifp);
      Fclose(ofp);
  

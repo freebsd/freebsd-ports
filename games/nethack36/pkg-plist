@@ -80,11 +80,11 @@ bin/%%HACKNAME%%
 %%DATADIR%%/bigrm-3.lev
 %%DATADIR%%/bigrm-4.lev
 %%DATADIR%%/bigrm-5.lev
-%%DATADIR%%/bigrm-10.lev
 %%DATADIR%%/bigrm-6.lev
 %%DATADIR%%/bigrm-7.lev
 %%DATADIR%%/bigrm-8.lev
 %%DATADIR%%/bigrm-9.lev
+%%DATADIR%%/bigrm-10.lev
 %%DATADIR%%/bogusmon
 %%DATADIR%%/castle.lev
 %%DATADIR%%/cmdhelp
