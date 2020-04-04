@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	80.0.3987.149
-PORTREVISION=	1
+PORTVERSION=	80.0.3987.163
 CATEGORIES?=	www java
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/cpm/chromium/:fonts
