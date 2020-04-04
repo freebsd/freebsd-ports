@@ -2,7 +2,7 @@
 
 PORTNAME=	ascent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,8 +26,8 @@ do-install:
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_UNIT_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${BUILD_WRKSRC}/bin/ascent_test
+		${BUILD_WRKSRC}/unit_tests/ascent_test
 
 .include <bsd.port.mk>
