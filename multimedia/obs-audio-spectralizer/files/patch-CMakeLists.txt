@@ -9,7 +9,7 @@
          ${FFTW_LIBRARIES}
          ${spectralizer_PLATFORM_DEPS})
 +
-+include(/usr/local/lib/cmake/ObsHelpers.cmake)
++include(${CMAKE_INSTALL_PREFIX}/lib/cmake/ObsHelpers.cmake)
  
  include_directories(${FFTW_INCLUDE_DIRS})
  install_obs_plugin_with_data(spectralizer data)
