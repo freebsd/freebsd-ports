@@ -4,7 +4,7 @@ PORTNAME=	obs-audio-spectralizer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2-2
 DISTVERSIONSUFFIX=	-ga34b9b7
-CATEGORIES=	multimedia www
+CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OBS Studio Plugin: Audio visualizer
