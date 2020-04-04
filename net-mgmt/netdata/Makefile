@@ -48,7 +48,7 @@ SUB_FILES=	${PORTNAME}.conf.sample
 USERS=		netdata
 GROUPS=		netdata
 
-OPTIONS_DEFINE=		CUPS DBENGINE FREEIPMI JSON LTO
+OPTIONS_DEFINE=		CUPS DBENGINE FREEIPMI GOPLUGIN JSON LTO
 OPTIONS_SUB=		YES
 OPTIONS_DEFAULT=	DBENGINE JSON
 OPTIONS_DEFAULT_FreeBSD_12=	LTO
@@ -68,6 +68,9 @@ DBENGINE_LIB_DEPENDS=		libJudy.so:devel/judy \
 FREEIPMI_DESC=			Enable support for freeipmi
 FREEIPMI_CONFIGURE_ENABLE=	plugin-freeipmi
 FREEIPMI_LIB_DEPENDS=		libfreeipmi.so:sysutils/freeipmi
+
+GOPLUGIN_DESC=		Enable the go collector plugin
+GOPLUGIN_RUN_DEPENDS=	${LOCALBASE}/libexec/netdata/plugins.d/god.plugin:net-mgmt/netdata-go
 
 JSON_DESC=		Enable support for json
 JSON_CONFIGURE_ENABLE=	jsonc
