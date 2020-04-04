@@ -54,8 +54,7 @@ get_user_from_conf() {
 check_user_consistency() {
 	cfusr=$(get_user_from_conf)
 	if [ -z "$cfusr" -o "$cfusr" = "${netdata_user}" ] ; then return 0 ; fi
-	echo >&2 "$0: ERROR: ${netdata_conf} sets 'run as user = $cfusr', but rc.conf* sets '${netdata_user}'. Both must be consistent."
-	return 1
+	err 1 "${netdata_conf} sets 'run as user = $cfusr', but rc.conf* sets '${netdata_user}'. Both must be consistent."
 }
 
 # this is more or less a copy of /etc/rc.subr from 12.1-RELEASE
@@ -69,17 +68,16 @@ stop_cmd() {
 		return 1
 	fi
 	_prefix=
-	slave_pids=$(pgrep -P $rc_pid)
 	echo "Stopping ${name}."
-	_list="$rc_pid $slave_pids"
+	_list="$rc_pid $(pgrep -P $rc_pid)"
 	kill -TERM $_list
-	wtim=0
+	pwait -t 3 $_list 2>/dev/null
+	wtim=3
 	while :; do
 		_nlist=
 		for _j in $_list ; do
 			if kill -0 $_j 2>/dev/null ; then
-				_nlist="$_nlist $_j"
-				[ -n "$_prefix" ] && sleep 1
+				_nlist="$_nlist${_nlist:+" "}$_j"
 			fi
 		done
 		if [ -z "$_nlist" ] ; then
@@ -88,12 +86,17 @@ stop_cmd() {
 		_list=$_nlist
 		echo -n ${_prefix:-"Waiting for PIDS: "}$_list
 		_prefix=", "
+		sleep 1
 		pwait -t 2 $_list 2>/dev/null
-		wtim=$(($wtim + 3))
-		if [ $wtim -gt ${netdata_stop_maxwait} ] ; then
-			echo -n "${_prefix}SIGKILL $_list"
-			kill -KILL $_list
-			break
+		if [ $? -eq 124 ] ; then
+			wtim=$(($wtim + 3))
+			if [ $wtim -ge ${netdata_stop_maxwait} ] ; then
+				[ -n "$_prefix" ] && echo .
+				_prefix=
+				warn "${procname} has not terminated in ${netdata_stop_maxwait} s. Using SIGKILL $_list."
+				kill -KILL $_list
+				break
+			fi
 		fi
 	done
 	[ -n "$_prefix" ] && echo .
