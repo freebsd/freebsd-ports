@@ -12,6 +12,7 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python Memory Usage Analyzer
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist cython
