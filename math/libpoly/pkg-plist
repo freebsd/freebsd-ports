@@ -24,4 +24,4 @@ include/poly/variable_order.h
 include/poly/version.h
 lib/libpoly.so
 lib/libpoly.so.0
-lib/libpoly.so.0.1.7
+lib/libpoly.so.0.1.8
