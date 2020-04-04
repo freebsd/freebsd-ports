@@ -5,6 +5,9 @@ DISTVERSION=	g20191026
 PORTREVISION=	1
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/YosysHQ/nextpnr/commit/
+PATCHFILES=	b6e2159cecdf79d0d94d0e6a9dda8cef6389cac1.patch:-p1
+
 MAINTAINER=	manu@FreeBSD.org
 COMMENT=	Portable FPGA place and route tool
 
