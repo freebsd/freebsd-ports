@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.61
-PORTREVISION=	1
+PORTVERSION=	1.62.2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -19,7 +18,7 @@ USES=		python${PY_MYSQL} shebangfix
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-RELEASE_TIMESTAMP=	1583121812
+RELEASE_TIMESTAMP=	1586016242
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
