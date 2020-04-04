@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	license-acceptance
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.18
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
