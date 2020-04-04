@@ -13,7 +13,7 @@ you update your ports collection, before attempting any port upgrades.
   not properly registered to the packages. To clean them up, please execute the
   following command:
 
-  	find %%LOCALBASE%%/share/fonts -type f -name .uuid -delete
+  	find /usr/local/share/fonts -type f -name .uuid -delete
 
 20200326:
   AFFECTS: users of devel/sonarqube and devel/sonar-ant-task
