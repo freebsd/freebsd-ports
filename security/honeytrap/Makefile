@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	honeytrap
-PORTVERSION=	20200129
-DISTVERSIONPREFIX=	g
+DISTVERSION=	g20200226
 CATEGORIES=	security
 
 MAINTAINER=	remco.verhoef@dutchsec.com
@@ -12,9 +11,7 @@ LICENSE=	ART20
 
 USES=		go:modules
 USE_GITHUB=	yes
-GH_ACCOUNT=	honeytrap
-GH_PROJECT=	honeytrap
-GH_TAGNAME=	93936c1
+GH_TAGNAME=	77a150d1
 GH_TUPLE=	\
 		AndreasBriese:bbloom:28f7e881ca57:andreasbriese_bbloom/vendor/github.com/AndreasBriese/bbloom \
 		BurntSushi:toml:v0.3.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
@@ -77,7 +74,9 @@ USERS=		honeytrap
 GROUPS=		honeytrap
 USE_RC_SUBR=	honeytrap
 PLIST_FILES=	bin/honeytrap \
-		etc/honeytrap.toml
+		etc/honeytrap.toml \
+		"@dir(honeytrap,honeytrap,4744) /var/log/honeytrap" \
+		"@dir(honeytrap,honeytrap,4744) libdata/honeytrap"
 
 post-patch:
 	@${REINPLACE_CMD} -i '' '/go1.13/d' ${WRKDIR}/netstack-9ea5e4d2258f/tcpip/time_unsafe.go
@@ -85,8 +84,11 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/honeytrap ${STAGEDIR}${PREFIX}/bin/honeytrap
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
 	${INSTALL_DATA} ${FILESDIR}/etc/honeytrap.toml ${STAGEDIR}${PREFIX}/etc
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/honeytrap
+	${MKDIR} ${STAGEDIR}/var/log/honeytrap
 
 .include <bsd.port.mk>

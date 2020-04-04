@@ -11,7 +11,7 @@
 #
 # honeytrap_enable (bool):	Set to NO by default.
 #				Set it to YES to enable honeytrap.
-# honeytrap_datadir (path):	Set to %%PREFIX%%/var/lib/honeytrap
+# honeytrap_datadir (path):	Set to %%PREFIX%%/libdata/honeytrap
 #				by default.
 # honeytrap_config (path):	Set to %%PREFIX%%/etc/honeytrap.toml
 #				by default.
@@ -24,10 +24,10 @@ rcvar=honeytrap_enable
 load_rc_config $name
 
 : ${honeytrap_enable:="NO"}
-: ${honeytrap_datadir="%%PREFIX%%/var/lib/honeytrap"}
+: ${honeytrap_datadir="%%PREFIX%%/libdata/honeytrap"}
 : ${honeytrap_config="%%PREFIX%%/etc/honeytrap.toml"}
 
-start_cmd="$name_start"
+start_cmd="${name}_start"
 
 honeytrap_program="%%PREFIX%%/bin/honeytrap"
 honeytrap_flags="--data $honeytrap_datadir --config $honeytrap_config"
@@ -35,7 +35,7 @@ pidfile=/var/run/${name}.pid
 
 honeytrap_start()
 {
-	daemon -p $pidfile -u $name $honeytrap_program $honeytrap_flags
+	daemon -o /var/log/honeytrap/service.log -p $pidfile -u $name $honeytrap_program $honeytrap_flags
 }
 
-run_rc_command "$1"
+run_rc_command "$@"
