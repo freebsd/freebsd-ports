@@ -40,6 +40,8 @@ CMAKE_ARGS+=	-DUSE_SYSTEM_FREETYPE="ON" \
 		-DBUILD_PORTMIDI=OFF \
 		-DBUILD_PCH=OFF \
 		-DDOWNLOAD_SOUNDFONT=OFF
+# Musescore upcases the build type anyway
+CMAKE_BUILD_TYPE=	RELEASE
 
 # WebEngine is only available on i386/amd64, amd ppc64 starting FreeBSD 13.0.
 # If enabled on arches that don't have WebEngine, the build breaks.
