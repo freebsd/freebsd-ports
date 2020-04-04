@@ -284,6 +284,7 @@
     SUBDIR += naludump
     SUBDIR += nordlicht
     SUBDIR += nostt
+    SUBDIR += obs-ndi
     SUBDIR += obs-qtwebkit
     SUBDIR += obs-streamf
     SUBDIR += obs-studio
