@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	confget
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc
-MASTER_SITES=	https://devel.ringlet.net/files/textproc/confget/ \
-		LOCAL/sunpoet
+MASTER_SITES=	https://gitlab.com/confget/confget/-/archive/release/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read variables from INI-style configuration files
 
 LICENSE=	BSD2CLAUSE
 
-USES=		gmake tar:xz
+USES=		gmake
 
 MAKE_ENV=	CFLAGS_CONF=-DHAVE_FGETLN
 TEST_TARGET=	test
