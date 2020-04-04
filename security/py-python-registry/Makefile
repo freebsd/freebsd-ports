@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-registry
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	security devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,8 @@ COMMENT=	Read access to Windows Registry files
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-RUN_DEPENDS=	${PY_ENUM34}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enum-compat>=0:devel/py-enum-compat@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}unicodecsv>=0:devel/py-unicodecsv@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	williballenthin
