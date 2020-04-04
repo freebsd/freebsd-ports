@@ -1,0 +1,8 @@
+Sentry command line client for some generic tasks.
+It can connect to the Sentry API and manage some
+data for your projects. It's primarily used for
+managing debug information files for iOS, Android
+as well as release and source maps management for
+other platforms.
+
+WWW: https://docs.sentry.io/cli/

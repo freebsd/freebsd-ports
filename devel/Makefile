@@ -6512,6 +6512,7 @@
     SUBDIR += sdlskk
     SUBDIR += sdts++
     SUBDIR += sedsed
+    SUBDIR += sentry-cli
     SUBDIR += serd
     SUBDIR += serdisplib
     SUBDIR += sfml

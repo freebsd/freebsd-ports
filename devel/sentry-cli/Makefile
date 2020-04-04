@@ -1,0 +1,291 @@
+# $FreeBSD$
+
+PORTNAME=	sentry-cli
+DISTVERSION=	1.52.1
+CATEGORIES=	devel
+
+MAINTAINER=	vulcan@wired.sh
+COMMENT=	Command line utility to work with Sentry
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libgit2.so:devel/libgit2
+
+USES=		cargo ssl
+USE_GITHUB=	yes
+GH_ACCOUNT=	getsentry
+
+CARGO_CRATES=	adler32-1.0.4 \
+		advapi32-sys-0.2.0 \
+		ahash-0.3.2 \
+		aho-corasick-0.7.10 \
+		anylog-0.5.0 \
+		app_dirs-1.2.1 \
+		arc-swap-0.4.5 \
+		arrayref-0.3.6 \
+		arrayvec-0.5.1 \
+		atty-0.2.14 \
+		autocfg-0.1.7 \
+		autocfg-1.0.0 \
+		backoff-0.1.6 \
+		backtrace-0.3.46 \
+		backtrace-sys-0.1.35 \
+		base64-0.10.1 \
+		base64-0.11.0 \
+		bitflags-1.2.1 \
+		bitmaps-2.0.0 \
+		blake2b_simd-0.5.10 \
+		block-buffer-0.7.3 \
+		block-padding-0.1.5 \
+		brotli-sys-0.3.2 \
+		brotli2-0.3.2 \
+		bstr-0.2.12 \
+		byte-tools-0.3.1 \
+		byteorder-1.3.4 \
+		bzip2-0.3.3 \
+		bzip2-sys-0.1.8+1.0.8 \
+		cc-1.0.50 \
+		cfg-if-0.1.10 \
+		chardet-0.2.4 \
+		chrono-0.4.11 \
+		clap-2.33.0 \
+		clicolors-control-1.0.1 \
+		cloudabi-0.0.3 \
+		console-0.10.0 \
+		const-random-0.1.8 \
+		const-random-macro-0.1.8 \
+		constant_time_eq-0.1.5 \
+		crc32fast-1.2.0 \
+		crossbeam-channel-0.4.2 \
+		crossbeam-deque-0.7.3 \
+		crossbeam-epoch-0.8.2 \
+		crossbeam-queue-0.2.1 \
+		crossbeam-utils-0.7.2 \
+		csv-1.1.3 \
+		csv-core-0.1.10 \
+		curl-0.4.28 \
+		curl-sys-0.4.30+curl-7.69.1 \
+		debugid-0.7.1 \
+		digest-0.8.1 \
+		dirs-1.0.5 \
+		dirs-2.0.2 \
+		dirs-sys-0.3.4 \
+		dlv-list-0.2.2 \
+		dmsort-1.0.0 \
+		dotenv-0.15.0 \
+		either-1.5.3 \
+		elementtree-0.5.0 \
+		encode_unicode-0.3.6 \
+		encoding-0.2.33 \
+		encoding-index-japanese-1.20141219.5 \
+		encoding-index-korean-1.20141219.5 \
+		encoding-index-simpchinese-1.20141219.5 \
+		encoding-index-singlebyte-1.20141219.5 \
+		encoding-index-tradchinese-1.20141219.5 \
+		encoding_index_tests-0.1.4 \
+		failure-0.1.7 \
+		failure_derive-0.1.7 \
+		fake-simd-0.1.2 \
+		fallible-iterator-0.2.0 \
+		flate2-1.0.14 \
+		fnv-1.0.6 \
+		fuchsia-cprng-0.1.1 \
+		generic-array-0.12.3 \
+		getrandom-0.1.14 \
+		gimli-0.20.0 \
+		git2-0.13.0 \
+		glob-0.3.0 \
+		globset-0.4.5 \
+		goblin-0.2.1 \
+		hashbrown-0.7.1 \
+		hermit-abi-0.1.8 \
+		hostname-0.3.1 \
+		httpdate-0.3.2 \
+		humantime-2.0.0 \
+		idna-0.1.5 \
+		idna-0.2.0 \
+		if_chain-0.1.3 \
+		if_chain-1.0.0 \
+		ignore-0.4.13 \
+		im-14.3.0 \
+		indexmap-1.3.2 \
+		indicatif-0.14.0 \
+		instant-0.1.2 \
+		itertools-0.9.0 \
+		itoa-0.4.5 \
+		java-properties-1.2.0 \
+		jobserver-0.1.21 \
+		kernel32-sys-0.2.2 \
+		lazy_static-1.4.0 \
+		lazycell-1.2.1 \
+		libc-0.2.68 \
+		libgit2-sys-0.12.0+0.99.0 \
+		libz-sys-1.0.25 \
+		line-wrap-0.1.1 \
+		lock_api-0.3.3 \
+		log-0.4.8 \
+		mac-process-info-0.2.0 \
+		maplit-1.0.2 \
+		match_cfg-0.1.0 \
+		matches-0.1.8 \
+		maybe-uninit-2.0.0 \
+		memchr-2.3.3 \
+		memmap-0.7.0 \
+		memoffset-0.5.4 \
+		might-be-minified-0.3.0 \
+		miniz_oxide-0.3.6 \
+		new_debug_unreachable-1.0.4 \
+		num-integer-0.1.42 \
+		num-traits-0.2.11 \
+		num_cpus-1.12.0 \
+		number_prefix-0.3.0 \
+		ole32-sys-0.2.0 \
+		opaque-debug-0.2.3 \
+		open-1.4.0 \
+		openssl-probe-0.1.2 \
+		openssl-sys-0.9.54 \
+		ordered-multimap-0.2.4 \
+		osascript-0.3.0 \
+		parking_lot-0.10.0 \
+		parking_lot_core-0.7.0 \
+		pdb-0.6.0 \
+		percent-encoding-1.0.1 \
+		percent-encoding-2.1.0 \
+		pest-2.1.3 \
+		pest_derive-2.1.0 \
+		pest_generator-2.1.3 \
+		pest_meta-2.1.3 \
+		phf_shared-0.8.0 \
+		pkg-config-0.3.17 \
+		plain-0.2.3 \
+		plist-0.5.3 \
+		podio-0.1.6 \
+		ppv-lite86-0.2.6 \
+		precomputed-hash-0.1.1 \
+		prettytable-rs-0.8.0 \
+		proc-macro-hack-0.5.14 \
+		proc-macro2-0.4.30 \
+		proc-macro2-1.0.9 \
+		proguard-3.0.0 \
+		quote-0.6.13 \
+		quote-1.0.3 \
+		r2d2-0.8.8 \
+		rand-0.6.5 \
+		rand-0.7.3 \
+		rand_chacha-0.1.1 \
+		rand_chacha-0.2.2 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.1.0 \
+		rand_hc-0.2.0 \
+		rand_isaac-0.1.1 \
+		rand_jitter-0.1.4 \
+		rand_os-0.1.3 \
+		rand_pcg-0.1.2 \
+		rand_xorshift-0.1.1 \
+		rand_xoshiro-0.4.0 \
+		rayon-1.3.0 \
+		rayon-core-1.7.0 \
+		rdrand-0.4.0 \
+		redox_syscall-0.1.56 \
+		redox_users-0.3.4 \
+		regex-1.3.5 \
+		regex-automata-0.1.9 \
+		regex-syntax-0.6.17 \
+		runas-0.2.1 \
+		rust-argon2-0.7.0 \
+		rust-ini-0.15.2 \
+		rustc-demangle-0.1.16 \
+		rustc_version-0.2.3 \
+		ryu-1.0.3 \
+		safemem-0.3.3 \
+		same-file-1.0.6 \
+		schannel-0.1.18 \
+		scheduled-thread-pool-0.2.4 \
+		scopeguard-1.1.0 \
+		scroll-0.9.2 \
+		scroll-0.10.1 \
+		scroll_derive-0.9.5 \
+		scroll_derive-0.10.1 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		sentry-0.18.0 \
+		sentry-types-0.14.1 \
+		serde-1.0.105 \
+		serde_derive-1.0.105 \
+		serde_json-1.0.48 \
+		sha-1-0.8.2 \
+		sha1-0.6.0 \
+		shell32-sys-0.1.2 \
+		signal-hook-0.1.13 \
+		signal-hook-registry-1.2.0 \
+		siphasher-0.3.2 \
+		sized-chunks-0.5.3 \
+		smallvec-1.2.0 \
+		socket2-0.3.11 \
+		sourcemap-5.0.0 \
+		stable_deref_trait-1.1.1 \
+		string_cache-0.8.0 \
+		strsim-0.8.0 \
+		symbolic-7.2.0 \
+		symbolic-common-7.2.0 \
+		symbolic-debuginfo-7.2.0 \
+		symbolic-proguard-7.2.0 \
+		syn-0.15.44 \
+		syn-1.0.17 \
+		synstructure-0.12.3 \
+		term-0.5.2 \
+		term_size-0.3.1 \
+		termios-0.3.1 \
+		textwrap-0.11.0 \
+		thread_local-1.0.1 \
+		time-0.1.42 \
+		typenum-1.11.2 \
+		ucd-trie-0.1.3 \
+		uname-0.1.1 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.12 \
+		unicode-width-0.1.7 \
+		unicode-xid-0.1.0 \
+		unicode-xid-0.2.0 \
+		unix-daemonize-0.1.2 \
+		url-1.7.2 \
+		url-2.1.1 \
+		username-0.2.0 \
+		uuid-0.8.1 \
+		vcpkg-0.2.8 \
+		version_check-0.9.1 \
+		walkdir-2.3.1 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		which-3.1.1 \
+		winapi-0.2.8 \
+		winapi-0.3.8 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.3 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		xdg-2.2.0 \
+		xml-rs-0.8.0 \
+		zip-0.5.5
+CARGO_FEATURES=	--no-default-features
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	CHANGELOG.md README.md
+
+OPTIONS_DEFINE=		DOCS REPORTING
+OPTIONS_DEFAULT=	REPORTING
+
+REPORTING_DESC=	Enable crash reporting
+REPORTING_VARS=	CARGO_FEATURES+=with_crash_reporting
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>
