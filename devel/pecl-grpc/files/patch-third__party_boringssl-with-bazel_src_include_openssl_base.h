@@ -1,5 +1,5 @@
---- third_party/boringssl/include/openssl/base.h.orig	2019-12-25 21:37:18 UTC
-+++ third_party/boringssl/include/openssl/base.h
+--- third_party/boringssl-with-bazel/src/include/openssl/base.h.orig	2020-04-04 11:13:35 UTC
++++ third_party/boringssl-with-bazel/src/include/openssl/base.h
 @@ -96,9 +96,13 @@ extern "C" {
  #elif defined(__arm) || defined(__arm__) || defined(_M_ARM)
  #define OPENSSL_32_BIT
