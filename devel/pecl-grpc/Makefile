@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grpc
-PORTVERSION=	1.27.0
+PORTVERSION=	1.28.0
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
