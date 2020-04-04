@@ -1,4 +1,4 @@
---- ngs-sdk/setup/konfigure.perl.orig	2019-08-20 18:05:02 UTC
+--- ngs-sdk/setup/konfigure.perl.orig	2020-04-01 16:34:36 UTC
 +++ ngs-sdk/setup/konfigure.perl
 @@ -202,7 +202,7 @@ print "checking system type... " unless ($AUTORUN);
  my ($OS, $ARCH, $OSTYPE, $MARCH, @ARCHITECTURES) = OsArch();
@@ -20,12 +20,11 @@
  print "checking machine architecture... " unless ($AUTORUN);
  println $MARCH unless ($AUTORUN);
  unless ($MARCH =~ /x86_64/i || $MARCH =~ /i?86/i) {
-@@ -332,6 +336,16 @@ if ($OSTYPE =~ /linux/i) {
-     $EXEX = '';
+@@ -333,6 +337,16 @@ if ($OSTYPE =~ /linux/i) {
      $OSINC = 'unix';
      $TOOLS = 'gcc' unless ($TOOLS);
+     $PYTHON = 'python';
 +} elsif ($OSTYPE =~ /freebsd/i) {
-+    $BITS = '';
 +    $LPFX = 'lib';
 +    $OBJX = 'o';
 +    $LOBX = 'pic.o';
@@ -34,10 +33,11 @@
 +    $EXEX = '';
 +    $OSINC = 'unix';
 +    $TOOLS = 'clang' unless ($TOOLS);
++    $PYTHON = 'python';
  } elsif ($OSTYPE =~ /darwin/i) {
      $LPFX = 'lib';
      $OBJX = 'o';
-@@ -377,11 +391,11 @@ if ($TOOLS =~ /gcc$/) {
+@@ -379,11 +393,11 @@ if ($TOOLS =~ /gcc$/) {
  } elsif ($TOOLS eq 'clang') {
      $CPP  = 'clang++' unless ($CPP);
      $CC   = 'clang -c';
@@ -51,7 +51,7 @@
          $AR      = 'ar rc';
          $LD      = "clang $ARCH_FL";
          $LP      = "$CPP $versionMin $ARCH_FL";
-@@ -478,7 +492,7 @@ foreach my $href (DEPENDS()) {
+@@ -508,7 +522,7 @@ foreach my $href (DEPENDS()) {
              $I = $t if (-e $t);
          }
          push ( @L, File::Spec->catdir($OPT{$o}, 'lib') );
@@ -60,7 +60,7 @@
      }
      my ($i, $l) = find_lib($_, $I, @L);
      if (defined $i || $l) {
-@@ -898,8 +912,7 @@ EndText
+@@ -929,8 +943,7 @@ EndText
      L($F, "PIC     = $PIC") if ($PIC);
      if ($PKG{LNG} eq 'C') {
          if ($TOOLS =~ /clang/i) {
