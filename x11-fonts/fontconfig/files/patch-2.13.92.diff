@@ -32,6 +32,8 @@
 # https://cgit.freedesktop.org/fontconfig/commit/?id=fbc05949ef52c8a8d69233eed77f6636dffec280
 # Set exact boolean value to color property
 # https://cgit.freedesktop.org/fontconfig/commit/?id=d3bfbea7dc53aa7fa52aa9616235a23d4507da1b
+# Fix assertion in FcCacheFini() again
+# https://cgit.freedesktop.org/fontconfig/commit/?id=6f6b39780215714386606ca1c5457a7106639ff4
 
 Excluding changes for the following files: test/Makefile.am, test/run-test.sh,
 test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
@@ -279,11 +281,18 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
  		   void *closure, FcChar8 **cache_file_ret)
  {
      int		fd = -1;
-@@ -372,6 +389,8 @@ FcDirCacheProcess (FcConfig *config, con
+@@ -348,6 +365,7 @@ FcDirCacheProcess (FcConfig *config, con
+     struct stat file_stat, dir_stat;
+     FcBool	ret = FcFalse;
+     const FcChar8 *sysroot = FcConfigGetSysRoot (config);
++    struct timeval latest_mtime = (struct timeval){ 0 };
+ 
+     if (sysroot)
+ 	d = FcStrBuildFilename (sysroot, dir, NULL);
+@@ -372,6 +390,7 @@ FcDirCacheProcess (FcConfig *config, con
  #ifndef _WIN32
  	FcBool retried = FcFalse;
  #endif
-+	struct timeval latest_mtime = (struct timeval){ 0 };
 +
  	if (sysroot)
  	    cache_hashed = FcStrBuildFilename (sysroot, cache_dir, cache_base, NULL);
@@ -312,7 +321,7 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
  	}
  #ifndef _WIN32
  	else if (!retried)
-@@ -412,9 +436,12 @@ FcDirCacheProcess (FcConfig *config, con
+@@ -412,12 +436,17 @@ FcDirCacheProcess (FcConfig *config, con
  		    break;
  		goto retry;
  	    }
@@ -326,7 +335,32 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
      }
      FcStrListDone (list);
  
-@@ -998,12 +1025,31 @@ FcDirCacheUnload (FcCache *cache)
++    if (closure)
++	return !!(*((FcCache **)closure) != NULL);
+     return ret;
+ }
+ 
+@@ -765,7 +794,18 @@ FcCacheFini (void)
+     int		    i;
+ 
+     for (i = 0; i < FC_CACHE_MAX_LEVEL; i++)
+-	assert (fcCacheChains[i] == NULL);
++    {
++	if (FcDebug() & FC_DBG_CACHE)
++	{
++	    if (fcCacheChains[i] != NULL)
++	    {
++		FcCacheSkip *s = fcCacheChains[i];
++		printf("Fontconfig error: not freed %p (dir: %s, refcount %d)\n", s->cache, FcCacheDir(s->cache), s->ref.count);
++	    }
++	}
++	else
++	    assert (fcCacheChains[i] == NULL);
++    }
+     assert (fcCacheMaxLevel == 0);
+ 
+     free_lock ();
+@@ -998,12 +1038,31 @@ FcDirCacheUnload (FcCache *cache)
  }
  
  static FcBool
@@ -359,7 +393,7 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
      *((FcCache **) closure) = cache;
      return FcTrue;
  }
-@@ -1013,10 +1059,15 @@ FcDirCacheLoad (const FcChar8 *dir, FcCo
+@@ -1013,10 +1072,15 @@ FcDirCacheLoad (const FcChar8 *dir, FcCo
  {
      FcCache *cache = NULL;
  
@@ -376,7 +410,7 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
  
      return cache;
  }
-@@ -1027,13 +1078,18 @@ FcDirCacheLoadFile (const FcChar8 *cache
+@@ -1027,13 +1091,18 @@ FcDirCacheLoadFile (const FcChar8 *cache
      int	fd;
      FcCache *cache;
      struct stat	my_file_stat;
@@ -396,7 +430,7 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
      close (fd);
      return cache;
  }
-@@ -1093,7 +1149,7 @@ FcDirChecksumNano (struct stat *statb)
+@@ -1093,7 +1162,7 @@ FcDirChecksumNano (struct stat *statb)
   * the magic number and the size field
   */
  static FcBool
@@ -405,7 +439,7 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
  {
      FcBool  ret = FcTrue;
      FcCache	c;
-@@ -1127,12 +1183,16 @@ FcBool
+@@ -1127,12 +1196,16 @@ FcBool
  FcDirCacheValid (const FcChar8 *dir)
  {
      FcConfig	*config;
@@ -424,7 +458,7 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
  }
  
  /*
-@@ -1410,9 +1470,13 @@ FcDirCacheClean (const FcChar8 *cache_di
+@@ -1410,9 +1483,13 @@ FcDirCacheClean (const FcChar8 *cache_di
      FcCache	*cache;
      struct stat	target_stat;
      const FcChar8 *sysroot;
@@ -439,7 +473,7 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
      if (sysroot)
  	dir = FcStrBuildFilename (sysroot, cache_dir, NULL);
      else
-@@ -1420,7 +1484,8 @@ FcDirCacheClean (const FcChar8 *cache_di
+@@ -1420,7 +1497,8 @@ FcDirCacheClean (const FcChar8 *cache_di
      if (!dir)
      {
  	fprintf (stderr, "Fontconfig error: %s: out of memory\n", cache_dir);
@@ -449,7 +483,7 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
      }
      if (access ((char *) dir, W_OK) != 0)
      {
-@@ -1497,8 +1562,10 @@ FcDirCacheClean (const FcChar8 *cache_di
+@@ -1497,8 +1575,10 @@ FcDirCacheClean (const FcChar8 *cache_di
      }
  
      closedir (d);
@@ -461,7 +495,7 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
  
      return ret;
  }
-@@ -1940,15 +2007,20 @@ FcDirCacheCreateTagFile (const FcChar8 *
+@@ -1940,15 +2020,20 @@ FcDirCacheCreateTagFile (const FcChar8 *
  }
  
  void
@@ -485,7 +519,7 @@ test/test-bz1744377.c, test/test-crbug1004254.c, test/test-issue180.c.
  
      while ((cache_dir = FcStrListNext (list)))
      {
-@@ -1964,6 +2036,8 @@ FcCacheCreateTagFile (const FcConfig *co
+@@ -1964,6 +2049,8 @@ FcCacheCreateTagFile (const FcConfig *co
      if (d)
  	FcStrFree (d);
      FcStrListDone (list);
