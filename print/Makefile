@@ -196,6 +196,7 @@
     SUBDIR += py-stapler
     SUBDIR += py-trml2pdf
     SUBDIR += py-ttfautohint-py
+    SUBDIR += py-ufolib2
     SUBDIR += py-weasyprint
     SUBDIR += qpdf
     SUBDIR += qpdfview
