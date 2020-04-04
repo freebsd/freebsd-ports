@@ -22,11 +22,14 @@ RUN_DEPENDS=	${PY_ENUM34} \
 USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
 
-OPTIONS_DEFINE=	OPENTRACING
+OPTIONS_DEFINE=	OPENTRACING PROFILING
 OPTIONS_DEFAULT=OPENTRACING
 OPENTRACING_DESC=	OpenTracing support
+PROFILING_DESC=		Profiling support
 
 OPENTRACING_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}opentracing>=2.0.0:devel/py-opentracing@${PY_FLAVOR}
+PROFILING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}intervaltree>=0:devel/py-intervaltree@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}protobuf>=3:devel/py-protobuf@${PY_FLAVOR}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/ddtrace/vendor/*/*.so
