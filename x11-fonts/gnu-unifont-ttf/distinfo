@@ -1,7 +1,7 @@
-TIMESTAMP = 1580232635
-SHA256 (unifont-12.1.04.ttf) = 5e404613c970866884836ce1f1aa756210498b08ff132ab1d3c3eb5073c7e19d
-SIZE (unifont-12.1.04.ttf) = 12279336
-SHA256 (unifont_csur-12.1.04.ttf) = 247198ef0a75ec881db5b234edf91221cf364b66a8bf16eec83a1a2962a825d7
-SIZE (unifont_csur-12.1.04.ttf) = 1250692
-SHA256 (unifont_upper-12.1.04.ttf) = bc60d1117333e97045a45df0863ffc15a13714d64ef84e76688675b126df1c31
-SIZE (unifont_upper-12.1.04.ttf) = 1875040
+TIMESTAMP = 1585907204
+SHA256 (unifont-13.0.01.ttf) = 8f3d8b12841ad564ef649c1c302248efa8c53dd40b603c9ad1335d58e269ab78
+SIZE (unifont-13.0.01.ttf) = 12278708
+SHA256 (unifont_csur-13.0.01.ttf) = 0d09b80116163a332e39d723e9867e0f340abf3e3f8acbfa9dcabd7b977a37bd
+SIZE (unifont_csur-13.0.01.ttf) = 1250692
+SHA256 (unifont_upper-13.0.01.ttf) = 674ba01bb6c245023b47d7a846983fe0cebe6358e77d1e6764bf846411d640da
+SIZE (unifont_upper-13.0.01.ttf) = 1995544
