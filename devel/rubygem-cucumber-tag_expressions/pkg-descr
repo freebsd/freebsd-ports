@@ -1,4 +1,0 @@
-Tag Expressions provide a simple query language for tags. The simplest tag
-expression is simply a single tag.
-
-WWW: https://github.com/cucumber/tag-expressions-ruby
