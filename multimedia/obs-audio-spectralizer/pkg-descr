@@ -1,0 +1,4 @@
+Audio visualization for obs-studio using fftw, based on cli-visualizer.
+Allows for vizualisation of MPD and internal obs audio sources.
+
+WWW: https://github.com/univrsal/spectralizer
