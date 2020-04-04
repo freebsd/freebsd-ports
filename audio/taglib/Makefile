@@ -5,7 +5,7 @@ PORTNAME=	taglib
 PORTVERSION=	1.11.1
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://taglib.github.io/releases/
+MASTER_SITES=	https://taglib.github.io/releases/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for manipulating ID3 tags and Ogg comments
