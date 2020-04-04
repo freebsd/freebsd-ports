@@ -1,0 +1,5 @@
+Lupa integrates the runtimes of Lua or LuaJIT2 into CPython. It is a partial
+rewrite of LunaticPython in Cython with some additional features such as proper
+coroutine support.
+
+WWW: https://github.com/scoder/lupa

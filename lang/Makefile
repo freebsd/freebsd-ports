@@ -277,6 +277,7 @@
     SUBDIR += ptoc
     SUBDIR += purescript
     SUBDIR += py-hy
+    SUBDIR += py-lupa
     SUBDIR += py-mx-base
     SUBDIR += py-qt5-qml
     SUBDIR += py-textX
