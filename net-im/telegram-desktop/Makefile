@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegram-desktop
-DISTVERSION=	1.9.21
+DISTVERSION=	2.0.1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -29,7 +29,8 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libdbusmenu-qt5.so:devel/libdbusmenu-qt \
 		libhunspell-1.7.so:textproc/hunspell \
 		libxxhash.so:devel/xxhash \
-		libenchant-2.so:textproc/enchant2
+		libenchant-2.so:textproc/enchant2 \
+		liblz4.so:archivers/liblz4
 
 USES=		cmake compiler:c++17-lang desktop-file-utils \
 		gnome pkgconfig python:3.7,build qt:5 ssl xorg
