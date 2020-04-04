@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-05-18 21:55:29 UTC
+--- CMakeLists.txt.orig	2020-03-31 16:33:27 UTC
 +++ CMakeLists.txt
-@@ -73,7 +73,9 @@ include(CMakePackageConfigHelpers)
+@@ -92,7 +92,9 @@ include("cmake/mkldnn_compat.cmake")
  
  include("cmake/utils.cmake")
  include("cmake/options.cmake")
@@ -9,10 +9,10 @@
 +  include("cmake/OpenMP.cmake")
 +endif()
  include("cmake/TBB.cmake")
+ include("cmake/OpenCL.cmake")
  include("cmake/platform.cmake")
- include("cmake/SDL.cmake")
-@@ -87,8 +89,12 @@ enable_testing()
- include_directories(include)
+@@ -133,8 +135,12 @@ include(GNUInstallDirs)
+ include(CMakePackageConfigHelpers)
  
  add_subdirectory(src)
 -add_subdirectory(examples)
@@ -24,5 +24,5 @@
 +  add_subdirectory(tests)
 +endif()
  
- if(MKLDNN_INSTALL_MODE STREQUAL "BUNDLE")
+ if(DNNL_INSTALL_MODE STREQUAL "BUNDLE")
      install(FILES LICENSE DESTINATION ${CMAKE_INSTALL_PREFIX})
