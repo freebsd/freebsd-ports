@@ -128,6 +128,7 @@
     SUBDIR += kyototycoon
     SUBDIR += ldb14
     SUBDIR += ldb15
+    SUBDIR += ldb20
     SUBDIR += leo_center
     SUBDIR += leofs
     SUBDIR += leveldb

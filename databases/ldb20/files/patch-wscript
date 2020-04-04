@@ -1,0 +1,31 @@
+--- wscript.orig	2019-09-04 10:53:16 UTC
++++ wscript
+@@ -207,7 +207,7 @@ def build(bld):
+     if bld.env.standalone_ldb:
+         if not 'PACKAGE_VERSION' in bld.env:
+             bld.env.PACKAGE_VERSION = VERSION
+-        bld.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
++        bld.env.PKGCONFIGDIR = '%%PKGCONFIGDIR%%'
+         private_library = False
+     else:
+         private_library = True
+@@ -497,11 +497,6 @@ def build(bld):
+                          deps='cmocka ldb',
+                          install=False)
+ 
+-        bld.SAMBA_BINARY('ldb_match_test',
+-                         source='tests/ldb_match_test.c',
+-                         deps='cmocka ldb',
+-                         install=False)
+-
+         bld.SAMBA_BINARY('ldb_key_value_test',
+                          source='tests/ldb_key_value_test.c',
+                          deps='cmocka ldb ldb_tdb_err_map',
+@@ -614,7 +609,6 @@ def test(ctx):
+                  'ldb_msg_test',
+                  'ldb_tdb_kv_ops_test',
+                  'ldb_tdb_test',
+-                 'ldb_match_test',
+                  'ldb_key_value_test',
+                  # we currently don't run ldb_key_value_sub_txn_tdb_test as it
+                  # tests the nested/sub transaction handling
