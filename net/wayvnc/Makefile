@@ -3,7 +3,12 @@
 PORTNAME=	wayvnc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	net
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	720b127dee00.patch:-p1 # https://github.com/any1/wayvnc/pull/31
+PATCHFILES+=	d61007661480.patch:-p1 # https://github.com/any1/wayvnc/pull/31
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VNC server for wlroots-based compositors
