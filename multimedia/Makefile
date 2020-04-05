@@ -287,6 +287,7 @@
     SUBDIR += obs-audio-spectralizer
     SUBDIR += obs-ndi
     SUBDIR += obs-qtwebkit
+    SUBDIR += obs-scrab
     SUBDIR += obs-streamfx
     SUBDIR += obs-studio
     SUBDIR += obs-transition-matrix

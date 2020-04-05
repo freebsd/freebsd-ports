@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2020-04-05 03:14:35 UTC
++++ CMakeLists.txt
+@@ -42,10 +42,12 @@ include_directories(
+         ${QtWidgets_INCLUDES})
+ 
+ target_link_libraries(scrab
+-    libobs
++    obs
+     obs-frontend-api
+     Qt5::Core
+     Qt5::Widgets
+     ${scrab_PLATFORM_DEPS})
++
++include(${CMAKE_INSTALL_PREFIX}/lib/cmake/ObsHelpers.cmake)
+ 
+ install_obs_plugin_with_data(scrab data)
