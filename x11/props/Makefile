@@ -13,6 +13,9 @@ COMMENT=	The OpenLook props application
 
 CONFLICTS=	xview-clients-3.2.1.4.19*
 
+DEPRECATED=	64-bit unsupported
+EXPIRATION_DATE=	2020-05-05
+
 LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 MAKE_JOBS_UNSAFE=	yes

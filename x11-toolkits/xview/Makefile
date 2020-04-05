@@ -13,6 +13,9 @@ DISTNAME=	xview-3.2p1.4-19c
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	X Window-System-based Visual/Integrated Environment for Workstations
 
+DEPRECATED=	64-bit unsupported
+EXPIRATION_DATE=	2020-05-05
+
 MAKE_JOBS_UNSAFE=	yes
 
 BUILD_DEPENDS=	mkfontscale:x11-fonts/mkfontscale
