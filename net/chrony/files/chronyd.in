@@ -4,17 +4,32 @@
 #
 # PROVIDE: chronyd
 # REQUIRE: DAEMON
+# KEYWORD: nojail shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# chronyd_enable (bool):	Set it to "YES" to enable chronyd
+#				Default is "NO"
+# chronyd_config (str):		Set full path to configuration file.
+#				Default is "%%PREFIX%%/etc/chrony.conf"
+# chronyd_flags (str):		Flags passed to chronyd(8)
+#				Default is ""
 #
 
 . /etc/rc.subr
 
 name=chronyd
 rcvar=chronyd_enable
-command=%%PREFIX%%/sbin/${name}
-rc_flags="${chronyd_flags}"
 
 load_rc_config ${name}
 
-: ${chronyd_enable="NO"}
+: ${chronyd_enable:="NO"}
+: ${chronyd_config:="%%PREFIX%%/etc/chrony.conf"}
+
+command=%%PREFIX%%/sbin/${name}
+command_args="-f ${chronyd_config}"
+pidfile=/var/run/chrony/${name}.pid
+required_files=${chronyd_config}
 
 run_rc_command "$1"

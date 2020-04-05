@@ -5,3 +5,8 @@ man/man5/chrony.conf.5.gz
 man/man8/chronyd.8.gz
 sbin/chronyd
 @dir(chronyd,chronyd) /var/db/chrony
+%%HTMLDOCS%%%%DOCSDIR%%/chrony.conf.html
+%%HTMLDOCS%%%%DOCSDIR%%/chronyc.html
+%%HTMLDOCS%%%%DOCSDIR%%/chronyd.html
+%%HTMLDOCS%%%%DOCSDIR%%/faq.html
+%%HTMLDOCS%%%%DOCSDIR%%/installation.html
