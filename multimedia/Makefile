@@ -289,6 +289,7 @@
     SUBDIR += obs-qtwebkit
     SUBDIR += obs-streamfx
     SUBDIR += obs-studio
+    SUBDIR += obs-transition-matrix
     SUBDIR += obs-websocket
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
