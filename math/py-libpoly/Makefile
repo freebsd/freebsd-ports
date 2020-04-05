@@ -2,7 +2,7 @@
 
 PORTNAME=	libpoly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.7
+DISTVERSION=	0.1.8
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ EXPIRATION_DATE=	2020-08-15
 
 LIB_DEPENDS=	libpoly.so:math/libpoly
 
-USES=		cmake localbase:ldflags python:2.7
+USES=		cmake localbase:ldflags python
 USE_GITHUB=	yes
 GH_ACCOUNT=	SRI-CSL
 USE_LDCONFIG=	yes
