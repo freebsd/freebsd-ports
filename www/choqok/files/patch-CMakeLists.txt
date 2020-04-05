@@ -1,9 +1,10 @@
---- CMakeLists.txt.orig	2017-01-24 21:41:36 UTC
+--- CMakeLists.txt.orig	2020-02-05 11:49:51 UTC
 +++ CMakeLists.txt
-@@ -41,6 +41,7 @@ find_package(KF5 REQUIRED
+@@ -45,6 +45,8 @@ find_package(KF5 COMPONENTS Purpose)
+ #option(QTINDICATE_DISABLE "Disable support for notifications via indicator")
  
  find_package(Qca-qt5 REQUIRED)
- find_package(QtOAuth 2.0.1 REQUIRED)
++find_package(QtOAuth 2.0.1 REQUIRED)
 +include_directories(${QTOAUTH_INCLUDE_DIR})
  
  #if(NOT QTINDICATE_DISABLE)
