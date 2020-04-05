@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	https://download.owncloud.com/desktop/stable/
 # owncloudclient-2.6.0.13018.tar.xz
 
-MAINTAINER=	yonas@fizk.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OwnCloud Desktop Syncing Client
 
 LICENSE=	GPLv2
