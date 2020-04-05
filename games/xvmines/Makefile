@@ -10,6 +10,9 @@ MASTER_SITES=	XCONTRIB/../R5contrib
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple minesweeper game for X Window System
 
+DEPRECATED=	64-bit unsupported
+EXPIRATION_DATE=	2020-05-05
+
 LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 OPTIONS_DEFINE=	DOCS

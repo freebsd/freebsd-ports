@@ -14,6 +14,9 @@ DISTNAME=	SlingShot${PORTVERSION}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Supplemental Libraries to extend Xview
 
+DEPRECATED=	64-bit unsupported
+EXPIRATION_DATE=	2020-05-05
+
 LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/sspkg2.1

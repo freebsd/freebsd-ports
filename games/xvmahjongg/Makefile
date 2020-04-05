@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mahjongg for XView with multicolored tiles
 
+DEPRECATED=	64-bit unsupported
+EXPIRATION_DATE=	2020-05-05
+
 LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
 OPTIONS_DEFINE=	DOCS

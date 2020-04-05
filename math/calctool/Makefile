@@ -11,6 +11,9 @@ DISTNAME=	calctool-2.4pl13
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-GUI (terminal, X, XView) calculator program
 
+DEPRECATED=	64-bit unsupported
+EXPIRATION_DATE=	2020-05-05
+
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	X11 TTY XVIEW
