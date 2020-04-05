@@ -27,4 +27,6 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons \
 USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 
+PORTSCOUT=	limit:^0\.
+
 .include <bsd.port.mk>
