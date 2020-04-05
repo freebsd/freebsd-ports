@@ -179,6 +179,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/DELTCF.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DEPENDENTS.DAASE/index.KAF
 lib/fricas/target/%%HOST_ARCH%%/algebra/DEQUEUE.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DERHAM.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/DFELEM.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DFINTTLS.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DFLOAT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DFMAT.fasl
@@ -415,6 +416,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/FSAGG-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FSAGG.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FSAGG2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FSCINT.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/FSCINTA.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FSERIES.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FSFUN.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/FSINT.fasl
@@ -447,6 +449,8 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/GENEEZ.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/GENMFACT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/GENMOEBF.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/GENPGCD.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/GENUPS1.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/GENUPS2.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/GENUPS.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/GENUSER.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/GHENSEL.fasl
@@ -1236,6 +1240,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/TREE.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TRIGCAT-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TRIGCAT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TRIGMNIP.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/TRIGMNPA.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TRIMAT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TRMANIP.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/TS.fasl
@@ -1359,7 +1364,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/glosskey.text
 lib/fricas/target/%%HOST_ARCH%%/algebra/interp.daase
 lib/fricas/target/%%HOST_ARCH%%/algebra/libdb.text
 lib/fricas/target/%%HOST_ARCH%%/algebra/operation.daase
-lib/fricas/target/%%HOST_ARCH%%/bin/AXIOMsys
+lib/fricas/target/%%HOST_ARCH%%/bin/FRICASsys
 lib/fricas/target/%%HOST_ARCH%%/bin/asq
 lib/fricas/target/%%HOST_ARCH%%/bin/clef
 lib/fricas/target/%%HOST_ARCH%%/bin/fricas
