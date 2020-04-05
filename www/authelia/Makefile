@@ -2,7 +2,7 @@
 
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.9.0
+DISTVERSION=	4.11.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -61,7 +61,7 @@ GH_TUPLE=	\
 		sirupsen:logrus:v1.5.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
-		spf13:cobra:v0.0.6:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v0.0.7:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.6.2:spf13_viper/vendor/github.com/spf13/viper \
