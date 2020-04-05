@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.tuxfamily.org/chrony/
 
-MAINTAINER=	yonas@fizk.net
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	System clock synchronization client and server
 
 LICENSE=	GPLv2
