@@ -12,7 +12,7 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	XView sysadmin tool for monitoring diskfull situations
 
 DEPRECATED=	64-bit unsupported
-EXPIRATION_DATE=	2020-05-05`
+EXPIRATION_DATE=	2020-05-05
 
 LIB_DEPENDS=	libxview.so:x11-toolkits/xview
 
