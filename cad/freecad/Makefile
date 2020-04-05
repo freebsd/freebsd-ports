@@ -2,7 +2,7 @@
 
 PORTNAME=	FreeCAD
 DISTVERSION=	0.18.4
-PORTREVISION=	2
+PORTREVISION=	3
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -45,20 +45,13 @@ USE_LDCONFIG=	yes
 
 DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL
 
-# To be removed when french/med will be built against science/hdf5
-LIB_DEPENDS+=	libhdf5-18.so:science/hdf5-18
 CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
-		-DHDF5_FOUND="TRUE" -DHDF5_VERSION="1.8.17"		\
-		-DHDF5_INCLUDE_DIRS="${LOCALBASE}/include/hdf5-18"	\
-		-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include/hdf5-18"	\
-		-DCMAKE_C_FLAGS="-I${LOCALBASE}/include/hdf5-18"	\
-		-DHDF5_LIBRARIES="-lhdf5-18" -DBUILD_QT5="ON" \
+		-DBUILD_QT5="ON" \
 		-DPYTHON_LIBRARY="${PYTHONBASE}/lib/libpython${PYTHON_VER}${PYTHON_ABIVER}.so" \
 		-DPYTHON_INCLUDE_DIR="${PYTHON_INCLUDEDIR}" \
 		-DPYTHON_PACKAGES_PATH="${PYTHON_SITELIBDIR}" \
 		-DPYTHON_EXECUTABLE="${PYTHON_CMD}" \
 		-DBUILD_ASSEMBLY="OFF" -DBUILD_FLAT_MESH="ON"
-CFLAGS+=	-I${LOCALBASE}/include/hdf5-18
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 
@@ -77,13 +70,6 @@ post-patch:
 		${WRKSRC}/src/Gui/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/self\.rev/s/Unknown/${DISTVERSION:C/.*-//}/' \
 		${WRKSRC}/src/Tools/SubWCRev.py
-
-pre-configure:
-	# To be removed when french/med will be built against science/hdf5
-	@${REINPLACE_CMD} -e 's|find_package(HDF5 REQUIRED)|#find_package(HDF5 REQUIRED)|' \
-		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|<hdf5.h>|<hdf5-18/hdf5.h>|'	\
-		${WRKSRC}/src/3rdParty/salomesmesh/inc/MED_Common.hxx
 
 post-install:
 	${LN} -s ../${PORTNAME}/bin/FreeCAD ${STAGEDIR}${LOCALBASE}/bin/FreeCAD
