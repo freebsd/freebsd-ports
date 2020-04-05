@@ -1,4 +1,4 @@
-TIMESTAMP = 1583003827
+TIMESTAMP = 1585506022
 SHA256 (gochrono-chrono-v1.1.0-4-g70cda7f_GH0.tar.gz) = 9ae8abd2154a34611992d0e7830e54c086bea32ce3ecefceccd622e1a3ec880c
 SIZE (gochrono-chrono-v1.1.0-4-g70cda7f_GH0.tar.gz) = 242477
 SHA256 (SaidinWoT-timespan-a3d8e4741124_GH0.tar.gz) = 41c48a595a11c541f786520a36cb3cc9f3d17b161a0cf3115bcf7980d340702c
@@ -21,8 +21,8 @@ SHA256 (golang-net-f5e5bdd77824_GH0.tar.gz) = 6920d22802ae395e0ea45d629263cba029
 SIZE (golang-net-f5e5bdd77824_GH0.tar.gz) = 965263
 SHA256 (golang-protobuf-v1.2.0_GH0.tar.gz) = 157a148ae4e132eb169ec794b6cb43f1002780eeacaea8b0694811d1948fb1ec
 SIZE (golang-protobuf-v1.2.0_GH0.tar.gz) = 332565
-SHA256 (golang-sys-a5c9d58dba9a_GH0.tar.gz) = 3b149cf0766f60346360e8b962e8922478d532939bfd17d1d45e3b543b7b749d
-SIZE (golang-sys-a5c9d58dba9a_GH0.tar.gz) = 1118053
+SHA256 (golang-sys-fead7900131_GH0.tar.gz) = 99e6eb82a70c63baaca8ea1bd252301dc5fe509710adc790ba3b213d8cfa2160
+SIZE (golang-sys-fead7900131_GH0.tar.gz) = 1258256
 SHA256 (golang-text-v0.3.0_GH0.tar.gz) = 8f4c9a048345befc7beccd09267737ee1f55c7b35e5ff80f344ec9e0aa90febb
 SIZE (golang-text-v0.3.0_GH0.tar.gz) = 6102619
 SHA256 (gookit-color-v1.1.6_GH0.tar.gz) = 2a042f28eef50cc7d62c569f5f77e1cb49ce6efd2bd9fbadd60b3ed65ab8810b

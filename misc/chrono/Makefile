@@ -27,7 +27,7 @@ GH_TUPLE=	\
 		golang:appengine:v1.2.0:golang_appengine/vendor/google.golang.org/appengine \
 		golang:net:f5e5bdd77824:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.2.0:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:a5c9d58dba9a:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:fead7900131:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
 		gookit:color:v1.1.6:gookit_color/vendor/github.com/gookit/color \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
