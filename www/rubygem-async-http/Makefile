@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	async-http
-PORTVERSION=	0.50.11
+PORTVERSION=	0.50.12
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-async>=1.23<2:devel/rubygem-async \
 		rubygem-async-io>=1.28<2:devel/rubygem-async-io \
 		rubygem-async-pool>=0.2<1:www/rubygem-async-pool \
-		rubygem-protocol-http>=0.15.1<0.16:www/rubygem-protocol-http \
+		rubygem-protocol-http>=0.16.0<0.17:www/rubygem-protocol-http \
 		rubygem-protocol-http1>=0.10.0<0.11:www/rubygem-protocol-http1 \
 		rubygem-protocol-http2>=0.13.0<0.14:www/rubygem-protocol-http2
 
