@@ -1,6 +1,6 @@
---- src/file_api/file_cache.cc.orig	2019-04-10 20:51:55 UTC
+--- src/file_api/file_cache.cc.orig	2020-03-25 14:13:20 UTC
 +++ src/file_api/file_cache.cc
-@@ -134,7 +134,7 @@ FileContext* FileCache::add(const FileHashKey& hashKey
+@@ -133,7 +133,7 @@ FileContext* FileCache::add(const FileHashKey& hashKey
      struct timeval now;
      packet_gettimeofday(&now);
  
@@ -9,7 +9,7 @@
      timeradd(&now, &time_to_add, &new_node.cache_expire_time);
  
      new_node.file = new FileContext;
-@@ -187,7 +187,7 @@ FileContext* FileCache::find(const FileHashKey& hashKe
+@@ -183,7 +183,7 @@ FileContext* FileCache::find(const FileHashKey& hashKe
      }
  
      struct timeval next_expire_time;
@@ -18,7 +18,7 @@
      timeradd(&now, &time_to_add, &next_expire_time);
  
      //  Refresh the timer on the cache.
-@@ -314,7 +314,7 @@ bool FileCache::apply_verdict(Packet* p, FileContext* 
+@@ -311,7 +311,7 @@ bool FileCache::apply_verdict(Packet* p, FileContext* 
  
              if (!timerisset(&file_ctx->pending_expire_time))
              {
