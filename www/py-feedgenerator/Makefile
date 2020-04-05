@@ -7,7 +7,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jlaffaye@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone version of django.utils.feedgenerator
 
 LICENSE=	BSD3CLAUSE

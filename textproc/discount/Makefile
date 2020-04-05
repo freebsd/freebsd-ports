@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.6
 CATEGORIES=	textproc devel
 
-MAINTAINER=	jlaffaye@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C implementation of the Markdown markup language
 
 LICENSE=	BSD2CLAUSE

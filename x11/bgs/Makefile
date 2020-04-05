@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://s01.de/~gottox/files/bgs/ \
 		http://laffaye.free.fr/distfiles/
 
-MAINTAINER=	jlaffaye@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X11 BackGround Setter using Imlib2
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2

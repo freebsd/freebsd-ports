@@ -5,7 +5,7 @@ PORTNAME=	httperf
 PORTVERSION=	0.9.1
 CATEGORIES=	benchmarks www
 
-MAINTAINER=	jlaffaye@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for measuring webserver performance
 
 LICENSE=	GPLv2

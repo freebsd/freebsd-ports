@@ -12,7 +12,7 @@ MASTER_SITES=	https://golang.org/dl/ \
 DISTFILES=	go${PORTVERSION}.src.tar.gz \
 		go-${OPSYS:tl}-${GOARCH_${ARCH}}${GOARM_${ARCH}}-${BOOTSTRAP_TAG}.tar.xz:bootstrap
 
-MAINTAINER=	jlaffaye@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Go programming language
 
 LICENSE=	BSD3CLAUSE
