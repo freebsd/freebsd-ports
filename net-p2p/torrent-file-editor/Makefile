@@ -16,7 +16,8 @@ USE_GITHUB=	yes
 USE_QT=		buildtools_build linguisttools_build qmake_build \
 		core gui widgets
 
-CMAKE_ARGS=	-DQT5_BUILD:BOOL=ON
+CMAKE_ARGS=	-DQT5_BUILD:BOOL=ON \
+		-DENABLE_PCH:BOOL=OFF
 
 OPTIONS_DEFINE=	DONATION
 OPTIONS_DEFAULT=	DONATION
