@@ -42,7 +42,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|libdistorm64.so|${PYTHON_SITELIBDIR}/distorm3/libdistorm3.so|' \
 		${WRKSRC}/ptrace/pydistorm.py
 
-do-test: extract
+do-test:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} runtests.py)
 
 .include <bsd.port.mk>
