@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgis
-PORTVERSION=	2.5.3
-PORTREVISION=	2
+PORTVERSION=	2.5.4
 CATEGORIES=	databases geography
 MASTER_SITES=	https://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	25
@@ -19,9 +18,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libjson-c.so:devel/json-c \
 		libgdal.so:graphics/gdal
 
-CONFLICTS_INSTALL=	postgis20 postgis21 postgis22 postgis23 postgis24 postgis30
-
-USES=		alias compiler gettext gmake gnome iconv:wchar_t libtool:keepla \
+USES=		alias compiler gmake gnome iconv:wchar_t libtool:keepla \
 		localbase perl5 pkgconfig pgsql:9.4+ shebangfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -34,7 +31,7 @@ SHEBANG_FILES=	extensions/address_standardizer/*.pl raster/test/regress/*.pl \
 		utils/postgis_restore.pl.in utils/*.pl
 WANT_PGSQL=	server
 
-OPTIONS_DEFINE=	ADDRSTD LOADERGUI SFCGAL TOPOLOGY
+OPTIONS_DEFINE=	ADDRSTD LOADERGUI NLS SFCGAL TOPOLOGY
 OPTIONS_DEFAULT=ADDRSTD SFCGAL TOPOLOGY
 OPTIONS_SUB=	yes
 
@@ -43,14 +40,18 @@ TOPOLOGY_DESC=	Topology support
 SFCGAL_DESC=	Enable sfcgal
 ADDRSTD_DESC=	Enable address standardizer
 
-LOADERGUI_CONFIGURE_WITH=	gui
-LOADERGUI_USE=			GNOME=gtk20
-TOPOLOGY_CONFIGURE_WITH=	topology
-SFCGAL_LIB_DEPENDS=		libSFCGAL.so:databases/sfcgal
-SFCGAL_CONFIGURE_WITH=		sfcgal=${LOCALBASE}/bin/sfcgal-config
 ADDRSTD_CONFIGURE_WITH=		address-standardizer
 ADDRSTD_LIB_DEPENDS=		libpcre.so:devel/pcre
 ADDRSTD_VARS=			WANT_PGSQL+=contrib
+LOADERGUI_CONFIGURE_WITH=	gui
+LOADERGUI_USE=			GNOME=gtk20
+NLS_CONFIGURE_WITH=		nls
+NLS_USES=			gettext
+SFCGAL_LIB_DEPENDS=		libSFCGAL.so:databases/sfcgal
+SFCGAL_CONFIGURE_WITH=		sfcgal=${LOCALBASE}/bin/sfcgal-config
+TOPOLOGY_CONFIGURE_WITH=	topology
+
+CONFLICTS_INSTALL=	postgis20 postgis21 postgis22 postgis23 postgis24 postgis30
 
 VER=		${PORTVERSION:R}
 
