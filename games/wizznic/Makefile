@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	wizznic
-PORTVERSION=	380
-PORTREVISION=	1
+PORTVERSION=	1.1
+PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Source%20Releases/
-DISTNAME=	Wizznic_src_build_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Implementation of the arcade classic Puzznic
@@ -14,6 +12,10 @@ COMMENT=	Implementation of the arcade classic Puzznic
 LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libpng.so:graphics/png
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	DusteDdk
+GH_PROJECT=	Wizznic
 
 USES=		gmake sdl tar:bzip2
 USE_SDL=	image mixer sdl
