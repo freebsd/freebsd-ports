@@ -88,6 +88,7 @@ lib/cmake/LibObs/LibObsConfigVersion.cmake
 lib/cmake/LibObs/LibObsTarget-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibObs/LibObsTarget.cmake
 lib/cmake/ObsHelpers.cmake
+lib/cmake/ObsPluginHelpers.cmake
 lib/libobs-frontend-api.so
 lib/libobs-frontend-api.so.0
 lib/libobs-frontend-api.so.0.0
