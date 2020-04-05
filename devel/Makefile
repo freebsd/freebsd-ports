@@ -4466,6 +4466,7 @@
     SUBDIR += py-importlib-metadata
     SUBDIR += py-importlib-resources
     SUBDIR += py-incremental
+    SUBDIR += py-infinity
     SUBDIR += py-inflect
     SUBDIR += py-inflection
     SUBDIR += py-inifile
