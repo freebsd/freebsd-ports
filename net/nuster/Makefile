@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nuster
-PORTVERSION=	3.0.0.19
+PORTVERSION=	3.2.3.19
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net www
 
@@ -12,7 +12,7 @@ COMMENT=	Web caching proxy server based on haproxy
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-USES=		cpe gmake
+USES=		compiler:c++11-lang cpe gmake
 USE_RC_SUBR=	nuster
 USE_GITHUB=	yes
 GH_ACCOUNT=	jiangwenyuan
