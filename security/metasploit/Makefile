@@ -62,7 +62,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-rex-bin_tools>=0:security/rubygem-rex-bin_tools \
 		rubygem-rex-core>=0:security/rubygem-rex-core \
 		rubygem-rex-encoder>=0:security/rubygem-rex-encoder \
-		rubygem-rex-exploitation>=0:security/rubygem-rex-exploitation \
+		rubygem-rex-exploitation>=0.1.22:security/rubygem-rex-exploitation \
 		rubygem-rex-java>=0:security/rubygem-rex-java \
 		rubygem-rex-mime>=0:security/rubygem-rex-mime \
 		rubygem-rex-nop>=0:security/rubygem-rex-nop \
@@ -92,16 +92,6 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-aws-sdk-iam>=0:devel/rubygem-aws-sdk-iam \
 		rubygem-faye-websocket>=0:www/rubygem-faye-websocket \
 		rubygem-eventmachine>=0:devel/rubygem-eventmachine
-
-SCRIPTS=	msfconsole msfd msfdb msfrpc msfrpcd msfvenom
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	rapid7
-GH_PROJECT=	metasploit-framework
-
-NO_ARCH=	yes
-NO_ARCH_IGNORE=	template_x64_bsd.bin template_x86_bsd.bin CVE-2013-2171.bin
-STRIP=
 
 USES=		python shebangfix
 USE_RUBY=	yes
@@ -139,6 +129,14 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		tools/hardware/killerbee_msfrelay.py \
 		tools/modules/aws-aggregator-userdata.sh
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	rapid7
+GH_PROJECT=	metasploit-framework
+
+NO_ARCH=	yes
+NO_ARCH_IGNORE=	template_x64_bsd.bin template_x86_bsd.bin CVE-2013-2171.bin
+STRIP=
+
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
 		/rb-readline/d' \
@@ -157,7 +155,7 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${PAX} -rw . ${STAGEDIR}${DATADIR}
-.for f in ${SCRIPTS}
+.for f in msfd msfdb msfrpc msfrpcd msfvenom
 	${RLN} ${STAGEDIR}${DATADIR}/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
