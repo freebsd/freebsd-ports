@@ -17,7 +17,10 @@ LIB_DEPENDS=	libtbb.so:devel/tbb \
 		libnlopt.so:math/nlopt \
 		libwx_gtk3u_core-3.1.so:x11-toolkits/wxgtk31 \
 		libcurl.so:ftp/curl \
-		libexpat.so:textproc/expat2
+		libexpat.so:textproc/expat2 \
+		libopenvdb.so:misc/openvdb \
+		libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr
 BUILD_DEPENDS=	cereal>=1.2.2:devel/cereal \
 		eigen>=3.3:math/eigen3 \
 		googletest>=1.7:devel/googletest \
