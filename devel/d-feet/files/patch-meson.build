@@ -1,0 +1,16 @@
+--- meson.build.orig	2020-04-03 15:27:27 UTC
++++ meson.build
+@@ -19,11 +19,11 @@ df_namespace = 'org.gnome.dfeet'
+ 
+ gnome = import('gnome')
+ i18n = import('i18n')
+-python = import('python').find_installation('python3')
++python = import('python').find_installation('%%PYTHON_VERSION%%')
+ 
+ # FIXME: workaround for missing path method
+ #        https://github.com/mesonbuild/meson/pull/4616
+-python_path = find_program('python3').path()
++python_path = '%%PYTHON_CMD%%'
+ 
+ source_root = meson.current_source_dir()
+ 
