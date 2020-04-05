@@ -4,14 +4,10 @@
 PORTNAME=	shuf
 PORTVERSION=	1.8
 CATEGORIES=	sysutils
-MASTER_SITES=	https://devio.us/~bcallah/shuf/
+MASTER_SITES=	LOCAL/swills
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Randomly permute input lines
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	ISCL
 
