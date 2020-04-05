@@ -244,6 +244,7 @@
     SUBDIR += lxdvdrip
     SUBDIR += m2tstoavi
     SUBDIR += m2vrequantiser
+    SUBDIR += makemkv
     SUBDIR += mediainfo
     SUBDIR += mencoder
     SUBDIR += mimms

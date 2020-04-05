@@ -1,0 +1,12 @@
+bin/makemkvcon
+lib/makemkv/libdriveio.so.0
+lib/makemkv/libmakemkv.so.1
+lib/makemkv/libmmbd.so.0
+lib/makemkv/libstdc++.so.6
+man/man1/makemkvcon.1.gz
+sbin/update-makemkv-drives
+share/MakeMKV/appdata.tar
+share/MakeMKV/blues.jar
+share/MakeMKV/blues.policy
+@postexec update-makemkv-drives
+@preunexec rm -fr %%LINUXBASE%%/etc/makemkv

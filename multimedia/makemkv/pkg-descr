@@ -1,0 +1,45 @@
+Video converter reading from DVD and Bluray
+
+MakeMKV is your one-click solution to convert video that you own into free and
+patents-unencumbered format that can be played everywhere. MakeMKV is a format
+converter, otherwise called "transcoder". It converts the video clips from
+proprietary (and usually encrypted) disc into a set of MKV files, preserving
+most information but not changing it in any way. The MKV format can store
+multiple video/audio tracks with all meta-information and preserve chapters.
+There are many players that can play MKV files nearly on all platforms, and
+there are tools to convert MKV files to many formats, including DVD and Blu-ray
+discs.
+
+* Reads DVD and Blu-ray discs
+* Reads Blu-ray discs protected with latest versions of AACS and BD+
+* Preserves all video and audio tracks, including HD audio
+* Preserves chapters information
+* Preserves all meta-information (track language, audio type)
+* Fast conversion - converts as fast as your drive can read data.
+* No additional software is required for conversion or decryption.
+* Functionality to open DVD discs is free and will always stay free.
+* All features (including Blu-ray decryption and processing) are free during
+  BETA.
+
+Known issues on FreeBSD:
+
+* Only the commandline interface works, so there is no GUI in this port. The
+  port includes a small manpage to get you started using makemkvcon.
+* makemkvcon always crashes on exit (after completing its job), so be aware
+  this might leave core files on your system.
+* To find optical drives, makemkvcon uses some entries from Linux' sysfs that
+  aren't present on FreeBSD. A script `update-makemkv-drives` is included with
+  the port that fakes these entries. It is run automatically on installation,
+  but if the system's configuration changes, it must be run manually again by
+  root.
+
+Requirements:
+
+* A custom FreeBSD kernel with sg devices (Linux' "scsi generic" interface) is
+  required to use makemkvcon. To build such a kernel, add "device sg" to your
+  kernel configuration and follow the instructions at
+  https://www.freebsd.org/doc/handbook/kernelconfig-building.html
+* Make sure you have the "linux" kernel module loaded. On amd64, "linux64" is
+  also required.
+
+WWW: https://www.makemkv.com

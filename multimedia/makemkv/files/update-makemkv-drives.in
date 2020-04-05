@@ -1,0 +1,58 @@
+#!/bin/sh
+
+trap 'rm -fr $TMPFIFODIR' EXIT
+TMPFIFODIR=$(mktemp -d)
+mkfifo $TMPFIFODIR/campipe
+
+SGDEVS=
+
+rm -fr %%LINUXBASE%%/etc/makemkv/devices
+rm -fr %%LINUXBASE%%/etc/makemkv/drivers
+
+camcontrol devlist | grep -E '[(,]cd[0-9]+[,)]' > $TMPFIFODIR/campipe &
+while read line
+do
+	SCBUS=`echo $line | grep -Eo 'scbus[0-9]+' | sed -e 's:scbus::'`
+	TARGET=`echo $line | grep -Eo 'target [0-9]+' | sed -e 's:target ::'`
+	LUN=`echo $line | grep -Eo 'lun [0-9]+' | sed -e 's:lun ::'`
+	SGDEV=`echo $line | grep -Eo '(.*)' | grep -Eo 'sg[0-9]+'`
+	if [ -n "$SCBUS" -a -n "$TARGET" -a -n "$LUN" ]; then
+		if [ -z "$SGDEV" ]; then
+			cat <<EOF
+Optical drive without 'sg' device found! Make sure your kernel supports
+sg devices. To build a kernel with sg devices, you must add the following
+to your kernel configuration:
+
+device		sg
+
+Refer to
+<https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/kernelconfig-building.html>
+for building a custom kernel.
+
+When finished, re-run this script (update-makemkv-drives).
+EOF
+			exit 1
+		fi
+		SGDEVS="$SGDEVS /dev/$SGDEV"
+		LOC=$SCBUS:0:$TARGET:$LUN
+		mkdir -p %%LINUXBASE%%/etc/makemkv/devices/$LOC/scsi_generic/$SGDEV
+		mkdir -p %%LINUXBASE%%/etc/makemkv/drivers/sr
+		ln -s ../../devices/$LOC %%LINUXBASE%%/etc/makemkv/drivers/sr/$LOC
+		echo 5 >%%LINUXBASE%%/etc/makemkv/devices/$LOC/type
+	fi
+done < $TMPFIFODIR/campipe
+
+if [ -z "$SGDEVS" ]; then
+	cat <<EOF
+No usable optical drives found. Make sure your drive (/dev/cd*) is available.
+Check the output of "camcontrol devlist".
+
+When finished, re-run this script (update-makemkv-drives).
+EOF
+	exit 1
+fi
+
+echo devices linked: $SGDEVS.
+
+echo "When your configuration changes, re-run this script (update-makemkv-drives)."
+

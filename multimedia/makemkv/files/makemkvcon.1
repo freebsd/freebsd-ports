@@ -1,0 +1,103 @@
+.Dd May 20, 2019
+.Dt MAKEMKVCON 1
+.Os
+.Sh NAME
+.Nm makemkvcon
+.Nd read video from DVD or Bluray disc and convert to mkv format
+.Sh SYNOPSIS
+.Nm
+.Op Fl -minlength= Ns Ar seconds
+.Cm info
+.Ar source_spec
+.Nm
+.Op Fl -minlength= Ns Ar seconds
+.Cm mkv
+.Ar source_spec
+.Ar title_spec
+.Pa target_directory
+.Sh DESCRIPTION
+The
+.Nm
+utility shows information about a video disc in an optical drive, the
+.Cm mkv
+subcommand also converts selected titles from the disc to
+.Sy .mkv
+files in a given location.
+.sp
+The arguments are as follows:
+.Bl -tag -width Ds
+.It Fl -minlength= Ns Ar seconds
+Only consider video titles with a minimal length of
+.Ar seconds . No If you use the
+.Cm mkv
+subcommand after the
+.Cm info
+subcommand, make sure to pass the same value for
+.Ar seconds ,
+as filtering out titles with a smaller length happens before
+numbering the titles.
+.It Ar source_spec
+Read video disc from the given source.
+Use
+.Dq disc:0
+here to have
+.Nm
+read from the first video disc it can find.
+.It Ar title_spec
+Determines which titles to read.
+This can be either a whole number from
+.Sy 0
+to
+.Sy n-1
+for a disc with
+.Sy n
+titles to read exactly one title, or the string
+.Dq all
+to read all titles found.
+.It Ar target_directory
+The path where to store the converted
+.Sy .mkv
+files.
+.El
+.Sh FILES
+.Bl -tag -width Ds
+.It Pa ~/.MakeMKV/settings.conf
+You may put a license key in this file in the following format:
+.Dl app_Key = Qq XXXXXXXXXXXXXXXX...
+You can either buy a license or use the key, that is freely available
+as long as MakeMKV is in beta from
+.Lk https://www.makemkv.com/forum/ .
+.El
+.Sh EXAMPLES
+.Bd -literal -offset indent
+% makemkvcon mkv disc:0 0 .
+.Ed
+.sp
+This command reads the first title from the first disc it can find and stores
+a converted
+.Sy .mkv
+file in the current directory.
+.Sh SEE ALSO
+This manpage only describes the most commonly used options.
+A more complete documentation is available online at
+.Lk https://www.makemkv.com/developers/usage.txt
+.sp
+For some examples what you can put in your configuration file, see
+.Lk http://wiki.indie-it.com/wiki/MakeMKV
+.Sh BUGS
+On
+.Fx Ns ,
+.Nm
+crashes with a signal 11 (segmentation fault) after finishing its job.
+Be aware this might leave a
+.Sy .core
+file on your file system.
+.Sh KNOWN ISSUES
+To find optical drives,
+.Nm
+uses some entries from Linux' sysfs that aren't present on
+.Fx .
+A script `update-makemkv-drives` is included to fake these entries and is run
+automatically on installation.
+If your system's configuration changes, you must run this script as root
+manually, so new or changed drives can be found.

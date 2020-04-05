@@ -25,6 +25,7 @@
 #
 # Dist			Port			Why
 # ------------------------------------------------------------------------------
+makemkv-*       multimedia/makemkv      MAKEMKV licenses don't allow 't allow distributing the package as it contains a modified version of the makemkvcon binary
 *-for-1.4.tgz	net/dgd-lpmud			May not be used for monetary gain
 *_MegaCLI.zip		sysutils/megacli	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/lookup/License.aspx
 26410-800.zip		audio/libaacplus	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
