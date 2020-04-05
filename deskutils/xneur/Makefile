@@ -2,26 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	xneur
-PORTVERSION=	0.17.0
+PORTVERSION=	0.20.0
 DISTVERSIONSUFFIX=.orig
-PORTREVISION=	7
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/~andrew-crew-kuznetsov/+archive/xneur-stable/+files/
 DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mizhka@gmail.com
 COMMENT=	Auto keyboard switcher
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	intltool-update:textproc/intltool
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libpcre.so:devel/pcre
 
 USES=		compiler:nestedfct gnome iconv libtool localbase pathfix \
-		pkgconfig
+		pkgconfig xorg
+USE_GNOME=	gtk20
+
+USE_XORG=	xtst
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static --libdir=${PREFIX}/lib/xneur
+CONFIGURE_ARGS=	--disable-static --libdir=${PREFIX}/lib/xneur --with-gtk=gtk2
 CFLAGS_mips=	-fnested-functions
 CFLAGS_mips64=	-fnested-functions
 CFLAGS_powerpc=	-fnested-functions

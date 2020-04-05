@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	2015-06-22 10:21:10 UTC
+--- etc/Makefile.in.orig	2019-08-14 14:23:32 UTC
 +++ etc/Makefile.in
-@@ -259,7 +259,7 @@ top_builddir = @top_builddir@
+@@ -330,7 +330,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  xneurrcdir = $(sysconfdir)/xneur
  xneurrc_DATA = \
