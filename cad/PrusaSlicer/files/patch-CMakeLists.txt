@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2020-03-21 10:55:51 UTC
++++ CMakeLists.txt
+@@ -3,6 +3,8 @@ project(PrusaSlicer)
+ 
+ include("version.inc")
+ include(GNUInstallDirs)
++include_directories(BEFORE SYSTEM "%%WRKSRC%%/CGAL/include")
++add_compile_options(-DNDEBUG)
+ 
+ set(SLIC3R_RESOURCES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/resources")
+ file(TO_NATIVE_PATH "${SLIC3R_RESOURCES_DIR}" SLIC3R_RESOURCES_DIR_WIN)
