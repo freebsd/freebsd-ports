@@ -181,4 +181,16 @@ That step was added to the existing update instructions which are displayed
 with each update.
 EOD
 }
+{ type: upgrade
+  maximum_version: 2.7.11
+  message: <<EOD
+The "webhooks" REDIS configuration section has been renamed to "tasks".  Please
+update your configuration as support for the old name will be removed in a
+future release.
+
+Also the sample rc script got some new default values and improvements, e.g.
+the possibility to add extra arguments or to use a configuration file instead
+of using rc variables.
+EOD
+}
 ]
