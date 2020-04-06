@@ -11,16 +11,13 @@ COMMENT=	Enhanced Doom, Heretic, and Hexen source port
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-08-15
-
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libassimp.so:multimedia/assimp \
 		libfluidsynth.so:audio/fluidsynth
 RUN_DEPENDS=	timidity:audio/timidity
 
 USES=		cmake compiler:c++11-lib gl localbase:ldflags ncurses ninja openal pkgconfig \
-		python:2.7,build qt:5 sdl xorg
+		python:3.5+,build qt:5 sdl xorg
 
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
