@@ -28,8 +28,7 @@ load_rc_config ${name}
 : ${chronyd_config:="%%PREFIX%%/etc/chrony.conf"}
 
 command=%%PREFIX%%/sbin/${name}
-command_args="-f ${chronyd_config}"
-pidfile=/var/run/chrony/${name}.pid
-required_files=${chronyd_config}
+command_args="-f \"${chronyd_config}\""
+required_files="${chronyd_config}"
 
 run_rc_command "$1"
