@@ -32,9 +32,6 @@ PYTHON_DESC=	Enable python plugin
 PYTHON_USES=	pkgconfig python:3.6+
 PYTHON_QMAKE_OFF=	DISABLE_PYTHON_PLUGIN=yes
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.pro" -exec ${REINPLACE_CMD} -e 's|share/man|man|' {} \;
-
 post-patch-PYTHON-on:
 	@${REINPLACE_CMD} -e 's|python3|python-${PYTHON_VER}|' \
 		${WRKSRC}/src/plugins/python/find_python.pri
