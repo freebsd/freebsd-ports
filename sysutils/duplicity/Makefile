@@ -65,7 +65,7 @@ post-patch:
 .endfor
 
 post-patch-NLS-off:
-	@${REINPLACE_CMD} -e '55,63d' \
+	@${REINPLACE_CMD} -e '105,129d' \
 		${WRKSRC}/setup.py
 
 post-patch-FTP-off:
