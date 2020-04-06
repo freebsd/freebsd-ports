@@ -17,6 +17,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext gmake gnome localbase pkgconfig \
 		shared-mime-info
+USE_CSTD=	c99
 USE_GNOME=	cairo gtk30 intltool
 INSTALLS_ICONS=	yes
 
