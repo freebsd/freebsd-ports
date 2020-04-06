@@ -88,6 +88,7 @@
     SUBDIR += colly
     SUBDIR += coppermine
     SUBDIR += cplanet
+    SUBDIR += cpp-httplib
     SUBDIR += cpr
     SUBDIR += crawl
     SUBDIR += crp

@@ -1,0 +1,4 @@
+A C++11 single-file header-only cross platform HTTP/HTTPS library.
+It's extremely easy to setup. Just include httplib.h file in your code!
+
+WWW: https://github.com/yhirose/cpp-httplib
