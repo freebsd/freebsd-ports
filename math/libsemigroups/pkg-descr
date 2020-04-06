@@ -1,0 +1,11 @@
+libsemigroups is a C++11 library containing implementations of several
+algorithms for computing finite and finitely presented semigroups.
+Namely:
+
+ - the Froidure-Pin algorithm for computing finite semigroups;
+ - the Todd-Coxeter algorithm for finitely presented semigroups and monoids;
+ - the Knuth-Bendix algorithm for finitely presented semigroups and monoids;
+ - the Schreier-Sims algorithm for permutation groups.
+
+WWW: https://libsemigroups.readthedocs.io/en/latest/
+WWW: https://github.com/libsemigroups/libsemigroups

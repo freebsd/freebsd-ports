@@ -1,0 +1,8 @@
+High Performance Combinatorics in C++ using vector instructions.
+
+SSE and AVX instruction sets allows for very fast manipulation of combinatorial
+objects such as transformations, permutations, boolean matrices of small size.
+The goal of this project is to implement various new algorithms and benchmark
+them on various compiler and architecture.
+
+WWW: https://github.com/hivert/HPCombi

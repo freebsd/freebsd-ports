@@ -310,6 +310,7 @@
     SUBDIR += hexcalc
     SUBDIR += hipmcl
     SUBDIR += hmat-oss
+    SUBDIR += hpcombi
     SUBDIR += hpipm
     SUBDIR += hs-Agda
     SUBDIR += hs-penrose
@@ -360,6 +361,7 @@
     SUBDIR += libpgmath
     SUBDIR += libpoly
     SUBDIR += libqalculate
+    SUBDIR += libsemigroups
     SUBDIR += libranlip
     SUBDIR += librdata
     SUBDIR += librsb
