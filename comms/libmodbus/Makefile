@@ -2,8 +2,9 @@
 
 PORTNAME=	libmodbus
 PORTVERSION=	3.1.6
+PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	http://libmodbus.org/site_media/build/
+MASTER_SITES=	https://libmodbus.org/releases/
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Modbus library
@@ -14,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 BUILD_DEPENDS=	a2x:textproc/asciidoc \
 		xmlto:textproc/xmlto
 
+USES=		gmake libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS

@@ -19,6 +19,7 @@ man/man3/modbus_get_float_cdab.3.gz
 man/man3/modbus_get_float_dcba.3.gz
 man/man3/modbus_get_header_length.3.gz
 man/man3/modbus_get_response_timeout.3.gz
+man/man3/modbus_get_slave.3.gz
 man/man3/modbus_get_socket.3.gz
 man/man3/modbus_mapping_free.3.gz
 man/man3/modbus_mapping_new.3.gz
