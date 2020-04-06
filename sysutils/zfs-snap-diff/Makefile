@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	zfs-snap-diff
-PORTVERSION=	0.0.10
-PORTREVISION=	1
+PORTVERSION=	1.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	ben.lavery@hashbang0.com
@@ -11,11 +11,17 @@ COMMENT=	View ZFS snapshot differences via a web browser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	j-keck
-GH_TUPLE=	sergi:go-diff:97b2266:sergi_go_diff/vendor/github.com/sergi/go-diff
+GH_TUPLE=	j-keck:go-diff:v1.0.0:j_keck_go_diff/vendor/github.com/j-keck/go-diff \
+		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
+		j-keck:plog:v0.7.0:j_keck_plog/vendor/github.com/j-keck/plog
 
 PLIST_FILES=	bin/zfs-snap-diff
+
+GO_BUILDFLAGS=	-ldflags="-X main.version=${DISTVERSIONPREFIX}${PORTVERSION}"
+
+GO_TARGET=	./cmd/zfs-snap-diff
 
 .include <bsd.port.mk>
