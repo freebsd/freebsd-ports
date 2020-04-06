@@ -1025,6 +1025,7 @@
     SUBDIR += jsoncpp
     SUBDIR += jsonnet
     SUBDIR += jsonrpc-glib
+    SUBDIR += jucipp
     SUBDIR += judy
     SUBDIR += jwasm
     SUBDIR += k8048
