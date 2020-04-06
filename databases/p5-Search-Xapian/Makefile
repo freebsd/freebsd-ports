@@ -20,8 +20,6 @@ TEST_DEPENDS=	p5-Devel-Leak>=0:devel/p5-Devel-Leak \
 		p5-Test-Pod>=1.14:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage
 
-PORTSCOUT=	limit:^1\.2\.
-
 USES=		perl5
 USE_PERL5=	configure
 
