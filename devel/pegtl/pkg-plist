@@ -4,7 +4,6 @@ include/tao/pegtl/analysis/counted.hpp
 include/tao/pegtl/analysis/generic.hpp
 include/tao/pegtl/analysis/grammar_info.hpp
 include/tao/pegtl/analysis/insert_guard.hpp
-include/tao/pegtl/analysis/insert_rules.hpp
 include/tao/pegtl/analysis/rule_info.hpp
 include/tao/pegtl/analysis/rule_type.hpp
 include/tao/pegtl/analyze.hpp
@@ -141,7 +140,6 @@ include/tao/pegtl/internal/rep_min_max.hpp
 include/tao/pegtl/internal/rep_opt.hpp
 include/tao/pegtl/internal/require.hpp
 include/tao/pegtl/internal/result_on_found.hpp
-include/tao/pegtl/internal/rule_conjunction.hpp
 include/tao/pegtl/internal/rules.hpp
 include/tao/pegtl/internal/seq.hpp
 include/tao/pegtl/internal/skip_control.hpp
