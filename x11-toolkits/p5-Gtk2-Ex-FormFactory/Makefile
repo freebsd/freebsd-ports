@@ -3,7 +3,7 @@
 
 PORTNAME=	Gtk2-Ex-FormFactory
 PORTVERSION=	0.67
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Makes building complex GUI more easy
 
-BUILD_DEPENDS=	p5-Glib2>=1.00:devel/p5-Glib2 \
+BUILD_DEPENDS=	p5-Glib>=1.00:devel/p5-Glib \
 		p5-Gtk2>=1.060:x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Ex-Simple-List>=0:x11-toolkits/p5-Gtk2-Ex-Simple-List
-RUN_DEPENDS=	p5-Glib2>=1.00:devel/p5-Glib2 \
+RUN_DEPENDS=	p5-Glib>=1.00:devel/p5-Glib \
 		p5-Gtk2>=1.060:x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Ex-Simple-List>=0:x11-toolkits/p5-Gtk2-Ex-Simple-List
 

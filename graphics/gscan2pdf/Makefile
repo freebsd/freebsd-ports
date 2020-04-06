@@ -3,6 +3,7 @@
 
 PORTNAME=	gscan2pdf
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -12,7 +13,7 @@ COMMENT=	Produce PDF from scanned documents
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	p5-Config-General>=2.40:devel/p5-Config-General \
-		p5-Glib2>=1.210:devel/p5-Glib2 \
+		p5-Glib>=1.210:devel/p5-Glib \
 		p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
 		p5-Log-Log4perl>0:devel/p5-Log-Log4perl \
 		p5-Readonly>0:devel/p5-Readonly \
@@ -37,7 +38,7 @@ RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 		p5-Data-UUID>=1.220:devel/p5-Data-UUID \
 		p5-Date-Calc>=6.4:devel/p5-Date-Calc \
 		p5-Config-General>=2.40:devel/p5-Config-General \
-		p5-Glib2>=1.210:devel/p5-Glib2 \
+		p5-Glib>=1.210:devel/p5-Glib \
 		p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
 		p5-Log-Log4perl>0:devel/p5-Log-Log4perl \
 		p5-Readonly>0:devel/p5-Readonly \

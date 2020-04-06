@@ -3,7 +3,7 @@
 
 PORTNAME=	GStreamer
 PORTVERSION=	0.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	SF/gtk2-perl/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Set of Perl5 bindings for gstreamer
 
-BUILD_DEPENDS=	p5-Glib2>=1.101:devel/p5-Glib2 \
+BUILD_DEPENDS=	p5-Glib>=1.101:devel/p5-Glib \
 		p5-ExtUtils-Depends>=0.205:devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1.07:devel/p5-ExtUtils-PkgConfig
-RUN_DEPENDS=	p5-Glib2>=1.101:devel/p5-Glib2 \
+RUN_DEPENDS=	p5-Glib>=1.101:devel/p5-Glib \
 		p5-ExtUtils-Depends>=0.205:devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1.07:devel/p5-ExtUtils-PkgConfig
 

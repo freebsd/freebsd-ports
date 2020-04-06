@@ -3,6 +3,7 @@
 
 PORTNAME=	Glib-Object-Introspection
 PORTVERSION=	0.048
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.300:devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1:devel/p5-ExtUtils-PkgConfig \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	libffi.so:devel/libffi
-RUN_DEPENDS=	p5-Glib2>=1.320:devel/p5-Glib2
+RUN_DEPENDS=	p5-Glib>=1.320:devel/p5-Glib
 TEST_DEPENDS=	p5-Cairo-GObject>=0:devel/p5-Cairo-GObject
 
 OPTIONS_DEFINE=	TEST

@@ -3,7 +3,7 @@
 
 PORTNAME=	Goo-Canvas
 PORTVERSION=	0.06
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,13 +16,13 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	p5-Cairo>=0:graphics/p5-Cairo \
 		p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1:devel/p5-ExtUtils-PkgConfig \
-		p5-Glib2>=0:devel/p5-Glib2 \
+		p5-Glib>=0:devel/p5-Glib \
 		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 LIB_DEPENDS=	libgoocanvas.so:graphics/goocanvas \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	p5-Cairo>=0:graphics/p5-Cairo \
-		p5-Glib2>=0:devel/p5-Glib2 \
+		p5-Glib>=0:devel/p5-Glib \
 		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
 USES=		gnome perl5 xorg

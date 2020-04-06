@@ -3,7 +3,7 @@
 
 PORTNAME=	POE-Loop-Glib
 PORTVERSION=	0.038
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:APOCAL
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-POE>=1.288:devel/p5-POE \
-		p5-Glib2>=1.222:devel/p5-Glib2
+		p5-Glib>=1.222:devel/p5-Glib
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	examples/gtk2_counter.pl

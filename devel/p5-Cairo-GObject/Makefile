@@ -3,6 +3,7 @@
 
 PORTNAME=	Cairo-GObject
 PORTVERSION=	1.005
+PORTREVISION=	1
 CATEGORIES=	devel graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:XAOC
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.200:devel/p5-ExtUtils-Depends \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	cairo>=1.10.0:graphics/cairo \
 		p5-Cairo>=1.080:graphics/p5-Cairo \
-		p5-Glib2>=1.224:devel/p5-Glib2
+		p5-Glib>=1.224:devel/p5-Glib
 
 USES=		perl5
 USE_PERL5=	configure
