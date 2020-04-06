@@ -8822,6 +8822,7 @@
 %%WWWDIR%%/db/migrate/20200311165635_create_project_export_jobs.rb
 %%WWWDIR%%/db/migrate/20200312163407_add_index_on_id_and_service_desk_enabled_to_projects.rb
 %%WWWDIR%%/db/migrate/20200313123934_add_index_on_user_id_type_source_type_ldap_and_created_at_to_members.rb
+%%WWWDIR%%/db/migrate/20200325152327_add_seat_link_enabled_to_application_settings.rb
 %%WWWDIR%%/db/optional_migrations/composite_primary_keys.rb
 %%WWWDIR%%/db/post_migrate/20180104131052_schedule_set_confidential_note_events_on_webhooks.rb
 %%WWWDIR%%/db/post_migrate/20180119121225_remove_redundant_pipeline_stages.rb
@@ -9032,6 +9033,7 @@
 %%WWWDIR%%/db/post_migrate/20200304211738_remove_file_type_from_packages_package_files.rb
 %%WWWDIR%%/db/post_migrate/20200310075115_schedule_link_lfs_objects_projects.rb
 %%WWWDIR%%/db/post_migrate/20200310135818_remove_temporary_promoted_notes_index.rb
+%%WWWDIR%%/db/post_migrate/20200311192351_add_index_on_noteable_type_and_noteable_id_to_sent_notifications.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/doc/.vale/gitlab/Contractions.yml
@@ -10225,6 +10227,7 @@
 %%WWWDIR%%/doc/topics/autodevops/img/staging_enabled.png
 %%WWWDIR%%/doc/topics/autodevops/index.md
 %%WWWDIR%%/doc/topics/autodevops/quick_start_guide.md
+%%WWWDIR%%/doc/topics/autodevops/upgrading_postgresql.md
 %%WWWDIR%%/doc/topics/git/how_to_install_git/index.md
 %%WWWDIR%%/doc/topics/git/index.md
 %%WWWDIR%%/doc/topics/git/migrate_to_git_lfs/index.md
@@ -10536,6 +10539,9 @@
 %%WWWDIR%%/doc/user/analytics/code_review_analytics.md
 %%WWWDIR%%/doc/user/analytics/cycle_analytics.md
 %%WWWDIR%%/doc/user/analytics/img/code_review_analytics_v12_8.png
+%%WWWDIR%%/doc/user/analytics/img/label_based_stage_vsm_v12_9.png
+%%WWWDIR%%/doc/user/analytics/img/new_vsm_stage_v12_9.png
+%%WWWDIR%%/doc/user/analytics/img/vsm_stage_list_v12_9.png
 %%WWWDIR%%/doc/user/analytics/index.md
 %%WWWDIR%%/doc/user/analytics/productivity_analytics.md
 %%WWWDIR%%/doc/user/analytics/value_stream_analytics.md

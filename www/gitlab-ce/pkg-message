@@ -6,7 +6,7 @@ Gitlab was installed successfully.
 You now need to set up the various components of Gitlab, so please
 follow the instructions in the guide at:
 
-https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/install/12.8-freebsd.md
+https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/install/12.9-freebsd.md
 EOM
   type: install
 }
