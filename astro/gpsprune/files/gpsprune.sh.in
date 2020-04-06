@@ -2,7 +2,4 @@
 #
 # $FreeBSD$
 
-JAVA="%%LOCALBASE%%/bin/java"
-JARPATH="%%JAVALIBDIR%%"
-
-exec "${JAVA}" -jar "${JARPATH}/%%JARNAME%%" "$@"
+exec "%%JAVA%%" -jar "%%JAVALIBDIR%%/%%JARNAME%%" "$@"
