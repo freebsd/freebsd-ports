@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cinder
-PORTVERSION=	12.0.6
+PORTVERSION=	12.0.7
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -73,34 +73,32 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 USE_RC_SUBR=	cinder-api cinder-scheduler cinder-volume
 
 USERS=		cinder
 GROUPS=		cinder
 
-NO_ARCH=	yes
 SUB_LIST=	PYTHON_VER=${PYTHON_VER}
 
 CONFLICTS_INSTALL=	py??-cinder-*
 
 PORTSCOUT=	skipv:2015.1.4
 
-OPTIONS_GROUP=		MISC
-OPTIONS_GROUP_MISC=	MEMCACHED MONGODB
-OPTIONS_RADIO=		DB
+OPTIONS_DEFINE=	MEMCACHED MONGODB
+OPTIONS_RADIO=	DB
 OPTIONS_RADIO_DB=	MYSQL PGSQL
-
-MEMCACHED_DESC=		memcached support
-MONGODB_DESC=		MongoDB support (used for messaging services)
-MYSQL_DESC=		MySQL/MariaDB support
-PGSQL_DESC=		PostgreSQL support
+MEMCACHED_DESC=	Memcached support
+MONGODB_DESC=	MongoDB support (used for messaging services)
+MYSQL_DESC=	MySQL/MariaDB support
+PGSQL_DESC=	PostgreSQL support
 
 MEMCACHED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>=1.56:databases/py-python-memcached@${PY_FLAVOR}
 MONGODB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=3.0.2:databases/pymongo@${PY_FLAVOR}
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymysql>=0:databases/py-pymysql@${PY_FLAVOR}
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=0:databases/py-psycopg2@${PY_FLAVOR}
 
-MY_CONFFILES=	api-paste.ini rootwrap.conf rootwrap.d/volume.filters
 MY_REGEX=	(/etc/)(ceph|nova|pki|ssl)
 
 post-patch:
@@ -116,7 +114,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/rootwrap.d
-.for f in ${MY_CONFFILES} cinder.conf
+.for f in api-paste.ini cinder.conf rootwrap.conf rootwrap.d/volume.filters
 	${INSTALL_DATA} ${WRKSRC}/etc/cinder/$f ${STAGEDIR}${ETCDIR}/$f.sample
 .endfor
 
