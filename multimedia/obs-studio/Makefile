@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	obs-studio
-DISTVERSION=	25.0.3
+DISTVERSION=	25.0.4
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	e1de4e8a50b5e50f69214d3a4fd39b4b9b03e050.patch:-p1
+PATCHFILES=	e1de4e8a50b5e50f69214d3a4fd39b4b9b03e050.patch:-p1 # obs-studio-25.0.3-fix-compiler-warnings.patch
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
@@ -63,7 +63,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| 3.4)| ${PYTHON_VER})|' \
 		${WRKSRC}/cmake/Modules/FindPythonDeps.cmake
 
-post-install: # https://github.com/obsproject/obs-studio/issues/2625
+post-install:
+	# https://github.com/obsproject/obs-studio/issues/2625
 	${INSTALL_DATA} ${WRKSRC}/UI/obs-frontend-api/obs-frontend-api.h ${STAGEDIR}${PREFIX}/include/obs
+	# https://github.com/obsproject/obs-studio/issues/2647 (only for multimedia/obs-audio-spectralizer, should be removed later)
+	${INSTALL_DATA} ${WRKSRC}/cmake/Modules/ObsHelpers.cmake ${STAGEDIR}${PREFIX}/lib/cmake
+	${INSTALL_DATA} ${WRKSRC}/cmake/external/ObsPluginHelpers.cmake ${STAGEDIR}${PREFIX}/lib/cmake
 
 .include <bsd.port.post.mk>
