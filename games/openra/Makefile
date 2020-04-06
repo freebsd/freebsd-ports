@@ -55,11 +55,6 @@ INSTALL_TARGET=	install install-man-page \
 		install-linux-mime install-linux-shortcuts
 PORTDATA=	*
 
-OPTIONS_DEFINE=	TEST
-
-TEST_MAKE_ENV=	HOME="${WRKDIR}"
-TEST_ALL_TARGET=test
-
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's/ -verbosity:m//' \
@@ -70,5 +65,10 @@ post-patch:
 	${SED} 's/@LIBLUA51@/liblua-${LUA_VER}.so/' \
 		${WRKSRC}/thirdparty/Eluant.dll.config.in \
 		>${WRKSRC}/Eluant.dll.config
+
+do-test:
+	@(cd ${TEST_WRKSRC} && mono \
+		${NUGET_PACKAGEDIR}/NUnit.ConsoleRunner/tools/nunit3-console.exe \
+		--noresult OpenRA.Test.nunit)
 
 .include <bsd.port.mk>
