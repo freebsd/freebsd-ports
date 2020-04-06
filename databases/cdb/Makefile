@@ -6,7 +6,7 @@ PORTVERSION=	0.75
 CATEGORIES=	databases
 MASTER_SITES=	http://cr.yp.to/cdb/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Fast lookup database library & utilities
 
 ALL_TARGET=	it

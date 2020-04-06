@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	SAMBA/tridge/dbench
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Simulation of the Ziff-Davis netbench benchmark
 
 LICENSE=	GPLv3

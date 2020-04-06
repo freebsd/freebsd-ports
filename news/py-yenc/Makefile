@@ -7,7 +7,7 @@ CATEGORIES=	news python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Decoding module for yenc for Python written in C
 
 LICENSE=	LGPL21+

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/whatmask/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Convert between common subnet mask notations
 
 LICENSE=	GPLv2

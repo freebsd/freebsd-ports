@@ -7,7 +7,7 @@ PORTREVISION=	12
 CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Lightweight command line video extraction tool
 
 LICENSE=	GPLv3

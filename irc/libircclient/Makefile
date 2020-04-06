@@ -6,7 +6,7 @@ DISTVERSION=	1.10
 CATEGORIES=	irc devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	IRC library to create IRC clients
 
 LICENSE=	LGPL3+

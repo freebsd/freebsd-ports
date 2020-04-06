@@ -7,7 +7,7 @@ DISTVERSION=	2_3_0
 PORTREVISION=	1
 CATEGORIES=	print
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Haru Free PDF Library
 
 LIB_DEPENDS=	libpng.so:graphics/png
