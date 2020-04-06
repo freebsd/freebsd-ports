@@ -3,7 +3,7 @@
 
 PORTNAME=		moosefs3
 PORTVERSION=		3.0.112
-PORTREVISION=		0
+PORTREVISION=		1
 CATEGORIES=		sysutils
 MASTER_SITES=		http://ppa.moosefs.com/src/
 PKGNAMESUFFIX?=		-master
