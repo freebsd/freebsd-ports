@@ -2,7 +2,7 @@
 
 PORTNAME=	traefik2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.8
+DISTVERSION=	2.2.0
 DISTVERSIONSUFFIX=	-vendor
 CATEGORIES=	net
 
@@ -22,8 +22,9 @@ GH_SUBDIR=	src/github.com/containous/traefik
 USE_RC_SUBR=	traefik
 
 GO_BUILDFLAGS=	-ldflags "-s -w \
-		-X github.com/containous/traefik/version.Version=${DISTVERSION} \
-		-X github.com/containous/traefik/version.BuildDate=`date -u '+%Y-%m-%d_%I:%M:%S%p'`"
+		-X github.com/containous/traefik/v2/pkg/version.Version=${DISTVERSION} \
+		-X github.com/containous/traefik/v2/pkg/version.Codename=chevrotin \
+		-X github.com/containous/traefik/v2/pkg/version.BuildDate=`date -u '+%Y-%m-%d_%I:%M:%S%p'`"
 GO_TARGET=	./cmd/traefik
 CGO_ENABLED=	0
 
