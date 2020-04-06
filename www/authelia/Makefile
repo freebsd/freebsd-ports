@@ -2,7 +2,7 @@
 
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.11.0
+DISTVERSION=	4.12.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +29,7 @@ GH_TUPLE=	\
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-asn1-ber:asn1-ber:v1.3.1:go_asn1_ber_asn1_ber/vendor/github.com/go-asn1-ber/asn1-ber \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
-		go-ldap:ldap:v3.1.7:go_ldap_ldap/vendor/github.com/go-ldap/ldap/v3 \
+		go-ldap:ldap:v3.1.8:go_ldap_ldap/vendor/github.com/go-ldap/ldap/v3 \
 		go-redis:redis:v6.15.2:go_redis_redis/vendor/github.com/go-redis/redis \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-stack:stack:v1.8.0:go_stack_stack/vendor/github.com/go-stack/stack \
