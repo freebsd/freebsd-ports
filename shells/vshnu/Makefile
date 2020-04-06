@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vshnu
-PORTVERSION=	1.0305
-PORTREVISION=	1
+PORTVERSION=	1.0500
 CATEGORIES=	shells perl5
 MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/${PORTNAME}/
 
