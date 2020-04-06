@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	obs-studio
-DISTVERSION=	25.0.3
-PORTREVISION=	2
+DISTVERSION=	25.0.4
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	e1de4e8a50b5e50f69214d3a4fd39b4b9b03e050.patch:-p1
+PATCHFILES=	e1de4e8a50b5e50f69214d3a4fd39b4b9b03e050.patch:-p1 # obs-studio-25.0.3-fix-compiler-warnings.patch
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
