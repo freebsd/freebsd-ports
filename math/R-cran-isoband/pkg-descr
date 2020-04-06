@@ -1,0 +1,5 @@
+A fast C++ implementation to generate contour lines (isolines) and
+contour polygons (isobands) from regularly spaced grids containing
+elevation data.
+
+WWW: https://cran.r-project.org/web/packages/isoband/

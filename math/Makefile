@@ -17,6 +17,7 @@
     SUBDIR += R-cran-DoE.base
     SUBDIR += R-cran-Formula
     SUBDIR += R-cran-FrF2
+    SUBDIR += R-cran-isoband
     SUBDIR += R-cran-KFAS
     SUBDIR += R-cran-LearnBayes
     SUBDIR += R-cran-MCMCpack
