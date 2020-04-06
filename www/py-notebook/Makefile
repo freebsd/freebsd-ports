@@ -2,6 +2,7 @@
 
 PORTNAME=	notebook
 PORTVERSION=	6.0.3
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipykernel>=0:devel/py-ipykernel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipykernel5>=0:devel/py-ipykernel5@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython_genutils>=0:devel/py-ipython_genutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter_client>=5.3.4:devel/py-jupyter_client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter_core>=4.6.1:devel/py-jupyter_core@${PY_FLAVOR} \

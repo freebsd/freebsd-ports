@@ -13,6 +13,9 @@ COMMENT=	IPython Kernel for Jupyter
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
+DEPRECATED=	Old version, use devel/py-ipykernel5 instead
+EXPIRATION_DATE=2020-05-06
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython5>=4.0.0:devel/ipython5@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter_client>=0:devel/py-jupyter_client@${PY_FLAVOR} \
