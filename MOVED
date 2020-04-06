@@ -10059,6 +10059,7 @@ textproc/elasticsearch-plugin-migration||2018-04-09|ElasticSearch 1.x End of Lif
 textproc/elasticsearch-plugin-sql||2018-04-09|ElasticSearch 1.x End of Life
 textproc/elasticsearch-river-rabbitmq||2018-04-09|ElasticSearch 1.x End of Life
 devel/libkgapi|devel/libkgapi-kde4|2018-04-11|Make room for KDE updates
+devel/py-boto3|www/py-boto3|2018-04-12|Remove duplicate port (see r467174)
 finance/libalkimia|finance/alkimia-qt4|2018-04-13|Project renamed
 security/py-zxcvbn-python|security/py-zxcvbn|2018-04-13|Renamed upstream
 devel/py-libusb115|devel/py-libusb1|2018-04-14|Unused and unmaintained upstream
