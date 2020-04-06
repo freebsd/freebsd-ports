@@ -11,6 +11,7 @@ MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Convert between common subnet mask notations
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	DOCS
