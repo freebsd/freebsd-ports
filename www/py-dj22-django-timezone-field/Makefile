@@ -12,6 +12,8 @@ COMMENT=	Provides database and form fields for pytz timezone objects for Django
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Obsolete, please use www/py-django-timezone-field instead
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.2:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 
@@ -19,7 +21,6 @@ USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=		yes
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-timezone-field \
-			${PYTHON_PKGNAMEPREFIX}dj21-django-timezone-field
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-timezone-field
 
 .include <bsd.port.mk>
