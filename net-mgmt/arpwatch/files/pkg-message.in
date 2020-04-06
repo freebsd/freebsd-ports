@@ -1,15 +1,13 @@
 [
 { type: install
   message: <<EOM
-You can update the ethercodes.dat file executing the following steps:
+You can create an ethercodes.dat file by running this script:
 
-    cd %%PREFIX%%/arpwatch
-    fetch http://standards-oui.ieee.org/oui/oui.csv
-    ./massagevendor oui.csv > ethercodes.dat
-    rm oui.csv
+    %%PREFIX%%/arpwatch/update-ethercodes
 
-You might also want to disable the ETHERCODES option when building
-to avoid clobbering ethercodes.dat on update or reinstall.
+Here's a example crontab entry to update it every night:
+
+    00 0 * * * root sleep `jot -r 1 0 600` ; %%PREFIX%%/arpwatch/update-ethercodes
 
 The -m flag is deprecated. If you are using the -m watcher flag,
 please switch to -w.

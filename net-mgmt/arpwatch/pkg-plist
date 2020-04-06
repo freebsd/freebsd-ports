@@ -2,10 +2,10 @@ arpwatch/arp2ethers
 arpwatch/d.awk
 arpwatch/duplicates.awk
 arpwatch/e.awk
-%%ETHERCODES%%arpwatch/ethercodes.dat
 arpwatch/euppertolower.awk
 arpwatch/massagevendor
 arpwatch/p.awk
+arpwatch/update-ethercodes
 etc/rc.d/arpwatch
 man/man8/arpsnmp.8.gz
 man/man8/arpwatch.8.gz
