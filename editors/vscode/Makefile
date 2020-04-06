@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vscode
-DISTVERSION=	1.43.1
-PORTREVISION=	1
+DISTVERSION=	1.43.2
 CATEGORIES=	editors
 MASTER_SITES=	https://nodejs.org/dist/v${NODE_VER}/:node_headers \
 		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
