@@ -23,6 +23,13 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	AIOREDIS LUA
+AIOREDIS_DESC=	Asyncio redis support
+LUA_DESC=	Lua support
+
+AIOREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioredis>=0:databases/py-aioredis@${PY_FLAVOR}
+LUA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lupa>=0:lang/py-lupa@${PY_FLAVOR}
+
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} test_fakeredis.py
 
