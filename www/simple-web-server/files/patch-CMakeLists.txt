@@ -1,0 +1,33 @@
+--- CMakeLists.txt.orig	2019-08-05 07:18:27 UTC
++++ CMakeLists.txt
+@@ -61,20 +61,20 @@ endif()
+ 
+ # If Simple-Web-Server is not a sub-project:
+ if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
+-    add_executable(http_examples http_examples.cpp)
+-    target_link_libraries(http_examples simple-web-server)
++    #add_executable(http_examples http_examples.cpp)
++    #target_link_libraries(http_examples simple-web-server)
+ 
+-    find_package(Boost 1.53.0 COMPONENTS system thread filesystem REQUIRED)
+-    target_link_libraries(http_examples ${Boost_LIBRARIES})
+-    target_include_directories(http_examples PRIVATE ${Boost_INCLUDE_DIR})
++    #find_package(Boost 1.53.0 COMPONENTS system thread filesystem REQUIRED)
++    #target_link_libraries(http_examples ${Boost_LIBRARIES})
++    #target_include_directories(http_examples PRIVATE ${Boost_INCLUDE_DIR})
+     if(OPENSSL_FOUND)
+-        add_executable(https_examples https_examples.cpp)
+-        target_link_libraries(https_examples simple-web-server)
+-        target_link_libraries(https_examples ${Boost_LIBRARIES})
+-        target_include_directories(https_examples PRIVATE ${Boost_INCLUDE_DIR})
++        #add_executable(https_examples https_examples.cpp)
++        #target_link_libraries(https_examples simple-web-server)
++        #target_link_libraries(https_examples ${Boost_LIBRARIES})
++        #target_include_directories(https_examples PRIVATE ${Boost_INCLUDE_DIR})
+     endif()
+ 
+-    set(BUILD_TESTING ON)
++    #set(BUILD_TESTING ON)
+ 
+     install(FILES asio_compatibility.hpp server_http.hpp client_http.hpp server_https.hpp client_https.hpp crypto.hpp utility.hpp status_code.hpp mutex.hpp DESTINATION include/simple-web-server)
+ endif()

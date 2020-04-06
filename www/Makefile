@@ -2169,6 +2169,7 @@
     SUBDIR += shellinabox
     SUBDIR += shttpd
     SUBDIR += silicon
+    SUBDIR += simple-web-server
     SUBDIR += sitecopy
     SUBDIR += skytemplate
     SUBDIR += slowcgi
