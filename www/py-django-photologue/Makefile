@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-photologue
-PORTVERSION=	3.8.1
-PORTREVISION=	2
+PORTVERSION=	3.11
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,14 +12,14 @@ COMMENT=	Powerful image management and gallery application for Django
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.11:www/py-django111@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-sortedm2m>=1.5.0:www/py-django-sortedm2m@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-sortedm2m>=3.0.0:www/py-django-sortedm2m@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ExifRead>=2.1.2:graphics/py-exifread@${PY_FLAVOR} \
 		${PY_PILLOW}
 
-NO_ARCH=	yes
-USES=		python
+USES=		python:3.6+ # Required as www/py-django-sortedm2m needs Python 3.6+
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
