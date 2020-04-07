@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	openmdns
-DISTVERSION=	0.7-10
-DISTVERSIONSUFFIX=	-gb1c3540
+DISTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,19 +18,15 @@ CONFLICTS_INSTALL=	mDNSResponder # sbin/mdnsd
 
 USES=		localbase uidfix
 USE_RC_SUBR=	mdnsd
-USE_LDCONFIG=	yes
-# Add SHLIB_MAJOR=0 and drop @comment if the library is desired
-MAKE_ENV=	LDADD="${LIBS}" NO_PROFILE=1
+MAKE_ENV=	LDADD="${LIBS}"
 MAKE_ARGS=	BINDIR="${PREFIX}/sbin" \
-		LIBDIR="${PREFIX}/lib" \
 		MANDIR="${PREFIX}/share/man/man"
 CFLAGS+=	-D__dead=__dead2
 LDFLAGS+=	-Wl,--as-needed # -lutil
-LIBS+=		-lmdns -lopenbsd
+LIBS+=		-lopenbsd
 SUB_LIST=	COMMENT="${COMMENT}"
 PLIST_FILES=	sbin/mdnsctl \
 		sbin/mdnsd \
-		"@comment lib/libmdns.a" \
 		share/man/man8/mdnsctl.8.gz \
 		share/man/man8/mdnsd.8.gz
 PORTDOCS=	*
@@ -52,6 +48,6 @@ post-patch:
 
 post-install-DOCS-on:
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
