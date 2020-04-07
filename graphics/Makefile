@@ -1020,6 +1020,7 @@
     SUBDIR += tkpng
     SUBDIR += togl
     SUBDIR += ttygif
+    SUBDIR += ttyplot
     SUBDIR += tumble
     SUBDIR += tweeny
     SUBDIR += ufraw

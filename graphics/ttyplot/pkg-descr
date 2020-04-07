@@ -1,0 +1,10 @@
+ttyplot is a realtime plotting utility for terminal with data input from stdin.
+
+It takes data from standard input / UNIX pipeline, most commonly some tool like
+ping, snmpget, netstat, ifconfig, sar, vmstat, etc., and plots in text mode on
+a terminal in real time.
+
+It supports rate calculation for counters and up to two graphs on a single
+display using reverse video for the second line.
+
+WWW: https://github.com/tenox7/ttyplot
