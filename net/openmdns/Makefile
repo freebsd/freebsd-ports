@@ -5,7 +5,7 @@ DISTVERSION=	0.7
 PORTREVISION=	1
 CATEGORIES=	net
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multicast DNS and Service Discovery daemon
 
 LICENSE=	ISCL

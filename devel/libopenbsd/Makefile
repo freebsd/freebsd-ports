@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	LOCAL/jbeich \
 		https://svn.freebsd.org/base/head/lib/${PORTNAME}/:svn
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	imsg and ohash routines from OpenBSD libutil
 
 LICENSE=	ISCL
