@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Net/Address/Ethernet.pm
+%%SITE_PERL%%/Net/Address/get_address.pl
 %%PERL5_MAN3%%/Net::Address::Ethernet.3.gz

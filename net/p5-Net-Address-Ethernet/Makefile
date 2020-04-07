@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Address-Ethernet
-PORTVERSION=	1.126
+PORTVERSION=	1.129
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,12 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Env-Path>=0:devel/p5-Env-Path \
-		p5-Net-Ifconfig-Wrapper>=0:net/p5-Net-Ifconfig-Wrapper \
+RUN_DEPENDS=	p5-Net-Ifconfig-Wrapper>=0:net/p5-Net-Ifconfig-Wrapper \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
