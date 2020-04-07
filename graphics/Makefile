@@ -322,6 +322,7 @@
     SUBDIR += gtkam
     SUBDIR += gts
     SUBDIR += guetzli
+    SUBDIR += guile-cairo
     SUBDIR += guilib
     SUBDIR += gwenview
     SUBDIR += hdr_tools

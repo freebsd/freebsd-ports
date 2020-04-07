@@ -1,0 +1,3 @@
+Guile-Cairo wraps the Cairo graphics library for Guile Scheme.
+
+WWW: http://www.nongnu.org/guile-cairo/

@@ -1,0 +1,12 @@
+include/guile-cairo/guile-cairo-enum-types.h
+include/guile-cairo/guile-cairo-smob-types.h
+include/guile-cairo/guile-cairo-vector-types.h
+include/guile-cairo/guile-cairo.h
+lib/libguile-cairo.so
+lib/libguile-cairo.so.0
+lib/libguile-cairo.so.0.0.0
+libdata/pkgconfig/guile-cairo.pc
+share/guile/site/cairo.scm
+share/guile/site/cairo/cairo-procedures.txt
+share/guile/site/cairo/config.scm
+share/guile/site/cairo/vector-types.scm
