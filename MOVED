@@ -14524,3 +14524,4 @@ net/librsync2|net/librsync|2020-04-02|Remove PKGNAMESUFFIX 3 years after librsyn
 lang/beignet|lang/intel-compute-runtime|2020-04-02|Has expired: Deprecated upstream, use lang/intel-compute-runtime
 devel/rubygem-cucumber-tag_expressions|devel/rubygem-cucumber-tag-expressions|2020-04-04|Renamed by upstream
 devel/p5-Glib2|devel/p5-Glib|2020-04-07|Rename to match our p5- port naming
+devel/jucipp|editors/jucipp|2020-04-07|Remove duplicate
