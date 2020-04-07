@@ -19,6 +19,7 @@ LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		tar:bz2 gmake libtool pathfix pkgconfig
+USE_CSTD=	c99
 USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
