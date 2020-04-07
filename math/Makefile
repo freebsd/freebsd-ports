@@ -17,7 +17,6 @@
     SUBDIR += R-cran-DoE.base
     SUBDIR += R-cran-Formula
     SUBDIR += R-cran-FrF2
-    SUBDIR += R-cran-isoband
     SUBDIR += R-cran-KFAS
     SUBDIR += R-cran-LearnBayes
     SUBDIR += R-cran-MCMCpack
@@ -69,6 +68,7 @@
     SUBDIR += R-cran-inline
     SUBDIR += R-cran-ipred
     SUBDIR += R-cran-irlba
+    SUBDIR += R-cran-isoband
     SUBDIR += R-cran-labeling
     SUBDIR += R-cran-lava
     SUBDIR += R-cran-lazyeval
@@ -362,10 +362,10 @@
     SUBDIR += libpgmath
     SUBDIR += libpoly
     SUBDIR += libqalculate
-    SUBDIR += libsemigroups
     SUBDIR += libranlip
     SUBDIR += librdata
     SUBDIR += librsb
+    SUBDIR += libsemigroups
     SUBDIR += libtommath
     SUBDIR += libtsnnls
     SUBDIR += libxls
