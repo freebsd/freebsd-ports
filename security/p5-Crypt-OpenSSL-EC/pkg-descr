@@ -3,4 +3,4 @@ Curve) library. Some OO Calls are supported.
 
 Most of the functions described in openssl/ec.h are supported.
 
-WWW: https://metacpan.org/pod/Crypt::OpenSSL::EC
+WWW: https://metacpan.org/release/Crypt-OpenSSL-EC
