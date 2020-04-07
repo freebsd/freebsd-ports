@@ -34,7 +34,6 @@ USES=		cmake gettext shebangfix python:3.4+ desktop-file-utils shared-mime-info
 CMAKE_ARGS+=	-DURANIUM_SCRIPTS_DIR:STRING="${LOCALBASE}/share/uranium/scripts"
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
-USE_GITHUB=	yes
 GH_TAGNAME=	7c70ace
 NO_ARCH=	yes
 

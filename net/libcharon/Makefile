@@ -16,7 +16,6 @@ STRIP=
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
-USE_GITHUB=	yes
 GH_TAGNAME=	bfd36d0
 
 NO_ARCH=	yes

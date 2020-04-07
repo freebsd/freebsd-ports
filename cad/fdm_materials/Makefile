@@ -15,7 +15,6 @@ USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
-USE_GITHUB=	yes
 GH_TAGNAME=	c54199e
 NO_ARCH=	yes
 STRIP=

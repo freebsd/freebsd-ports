@@ -12,8 +12,6 @@ COMMENT=	Intuitive, easy to use open source scan program
 
 LICENSE=	GPLv2+
 
-PORTSCOUT=	ignore:v4.0.71
-
 LIB_DEPENDS=	libpaper.so:print/libpaper \
 		libsane.so:graphics/sane-backends \
 		libtiff.so:graphics/tiff
