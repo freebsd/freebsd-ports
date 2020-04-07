@@ -1,0 +1,17 @@
+major/minor/makedev aren't used, so drop Linux-specific header.
+
+In file included from level_zero/tools/source/sysman/linux/os_sysman_imp.h:12:
+level_zero/tools/source/sysman/linux/fs_access.h:19:10: fatal error: 'sys/sysmacros.h' file not found
+#include <sys/sysmacros.h>
+         ^~~~~~~~~~~~~~~~~
+
+--- level_zero/tools/source/sysman/linux/fs_access.h.orig	2020-03-27 09:53:58 UTC
++++ level_zero/tools/source/sysman/linux/fs_access.h
+@@ -16,7 +16,6 @@
+ #include <sstream>
+ #include <string>
+ #include <sys/stat.h>
+-#include <sys/sysmacros.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+ #include <vector>

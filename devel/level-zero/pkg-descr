@@ -1,0 +1,7 @@
+Contains the following components of oneAPI:
+
+- Copies of the Level Zero Specification API C/C++ header files
+- Level Zero Loader
+- Level Zero Validation Layer
+
+WWW: https://spec.oneapi.com/versions/latest/elements/l0/source/index.html

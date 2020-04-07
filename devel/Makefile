@@ -1092,6 +1092,7 @@
     SUBDIR += leatherman
     SUBDIR += leiningen
     SUBDIR += lemon
+    SUBDIR += level-zero
     SUBDIR += lfcbase
     SUBDIR += lfcxml
     SUBDIR += libCello

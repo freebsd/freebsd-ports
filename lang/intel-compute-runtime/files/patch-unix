@@ -1,5 +1,13 @@
 Relax Linux checks for the code works on any non-Windows platform
 
+In file included from level_zero/tools/source/pin/pin.cpp:11:
+level_zero/source/inc/ze_intel_gpu.h:34:2: error: "Unsupported OS"
+#error "Unsupported OS"
+ ^
+level_zero/api/core/ze_core_loader.cpp:29:41: error: use of undeclared identifier 'LOAD_INTEL_GPU_LIBRARY'
+        driver_ddiTable.driverLibrary = LOAD_INTEL_GPU_LIBRARY();
+                                        ^
+
 core/elf/writer.cpp:54:9: error:
       use of undeclared identifier 'memcpy_s'
         memcpy_s(data, queueFront.dataSize, queueFront.data.c_str(), queueFront.dataSize);
@@ -13,6 +21,26 @@ core/elf/writer.cpp:76:5: error:
     memcpy_s(curSectionHeader, sizeof(SElf64SectionHeader),
     ^
 
+--- level_zero/source/inc/ze_intel_gpu.h.orig	2020-03-27 09:53:58 UTC
++++ level_zero/source/inc/ze_intel_gpu.h
+@@ -12,7 +12,7 @@
+ #include <string.h>
+ 
+ ///////////////////////////////////////////////////////////////////////////////
+-#if defined(__linux__)
++#if !defined(__APPLE__) && !defined(_WIN32)
+ #include <dlfcn.h>
+ #define HMODULE void *
+ #define MAKE_VERSION() L0_PROJECT_VERSION_MAJOR "." L0_PROJECT_VERSION_MINOR
+@@ -42,7 +42,7 @@ inline bool getenv_tobool(const char *name) {
+     return (0 == strcmp("1", env));
+ }
+ 
+-#if defined(__linux__)
++#if !defined(__APPLE__) && !defined(_WIN32)
+ #define LOAD_INTEL_GPU_LIBRARY() LOAD_DRIVER_LIBRARY(MAKE_LIBRARY_NAME("ze_intel_gpu", MAKE_VERSION()))
+ #elif defined(_WIN32)
+ #if _WIN64
 --- shared/source/helpers/string.h.orig	2020-02-28 16:16:42 UTC
 +++ shared/source/helpers/string.h
 @@ -10,7 +10,7 @@
