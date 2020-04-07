@@ -20,6 +20,7 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 USE_RC_SUBR=	ping_exporter
+SUB_FILES=	pkg-message
 
 pre-build:
 	${RM} -r ${WRKSRC}/vendor/golang.org/x/net ${WRKSRC}/vendor/golang.org/x/sys
