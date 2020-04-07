@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dist-Zilla
-PORTVERSION=	6.012
+PORTVERSION=	6.014
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,9 +21,8 @@ RUN_DEPENDS=	p5-App-Cmd>=0.330:devel/p5-App-Cmd \
 		p5-Config-MVP-Reader-INI>=2.101461:devel/p5-Config-MVP-Reader-INI \
 		p5-Data-Section>=0.200002:devel/p5-Data-Section \
 		p5-DateTime>=0.44:devel/p5-DateTime \
-		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
+		p5-File-Copy-Recursive>=0.41:devel/p5-File-Copy-Recursive \
 		p5-File-Find-Rule>=0:devel/p5-File-Find-Rule \
-		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
 		p5-File-ShareDir>=0:devel/p5-File-ShareDir \
 		p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
 		p5-File-pushd>=0:devel/p5-File-pushd \
@@ -41,8 +40,7 @@ RUN_DEPENDS=	p5-App-Cmd>=0.330:devel/p5-App-Cmd \
 		p5-Params-Util>=0:devel/p5-Params-Util \
 		p5-Path-Tiny>=0.052:devel/p5-Path-Tiny \
 		p5-Perl-PrereqScanner>=1.006:devel/p5-Perl-PrereqScanner \
-		p5-Pod-Eventual>=0.091480:textproc/p5-Pod-Eventual \
-		p5-Software-License>=0.101370:misc/p5-Software-License \
+		p5-Software-License>=0.103014:misc/p5-Software-License \
 		p5-String-Formatter>=0.100680:devel/p5-String-Formatter \
 		p5-String-RewritePrefix>=0.006:textproc/p5-String-RewritePrefix \
 		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
