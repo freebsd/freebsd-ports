@@ -1,5 +1,4 @@
 bin/simsu
-man/man6/simsu.6.gz
 share/applications/simsu.desktop
 share/icons/hicolor/1024x1024/apps/simsu.png
 share/icons/hicolor/128x128/apps/simsu.png
@@ -12,6 +11,7 @@ share/icons/hicolor/48x48/apps/simsu.png
 share/icons/hicolor/512x512/apps/simsu.png
 share/icons/hicolor/64x64/apps/simsu.png
 share/icons/hicolor/scalable/apps/simsu.svg
+share/man/man6/simsu.6.gz
 share/metainfo/simsu.appdata.xml
 share/pixmaps/simsu.xpm
 %%NLS%%%%DATADIR%%/translations/simsu_bg.qm

@@ -25,10 +25,6 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|share/man|man|' ${WRKSRC}/simsu.pro
-
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e \
 		'/INSTALLS/s|qm||' ${WRKSRC}/simsu.pro
