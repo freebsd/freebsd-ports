@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sorl-thumbnail
-PORTVERSION=	12.4.1
-PORTREVISION=	2
+PORTVERSION=	12.6.3
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +13,12 @@ COMMENT=	Sorl-thumbnail provides an easy way to generate image thumbnails
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.8:www/py-django111@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+USES=		python:3.5+
+USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 PORTDOCS=	*
 
