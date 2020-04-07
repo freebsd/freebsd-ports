@@ -190,7 +190,6 @@ include/liveMedia/RTSPClient.hh
 include/liveMedia/RTSPCommon.hh
 include/liveMedia/RTSPRegisterSender.hh
 include/liveMedia/RTSPServer.hh
-include/liveMedia/RTSPServerSupportingHTTPStreaming.hh
 include/liveMedia/RawVideoRTPSink.hh
 include/liveMedia/RawVideoRTPSource.hh
 include/liveMedia/SIPClient.hh
@@ -200,7 +199,6 @@ include/liveMedia/SimpleRTPSink.hh
 include/liveMedia/SimpleRTPSource.hh
 include/liveMedia/StreamReplicator.hh
 include/liveMedia/T140TextRTPSink.hh
-include/liveMedia/TCPStreamSink.hh
 include/liveMedia/TLSState.hh
 include/liveMedia/TextRTPSink.hh
 include/liveMedia/TheoraVideoRTPSink.hh
