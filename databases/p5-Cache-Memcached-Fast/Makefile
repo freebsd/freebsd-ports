@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Cache-Memcached-Fast
-PORTVERSION=	0.25
-PORTREVISION=	1
+PORTVERSION=	0.26
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,5 +17,8 @@ USES=		perl5
 USE_PERL5=	configure
 
 MAKE_JOBS_UNSAFE=	yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Cache/Memcached/Fast/Fast.so
 
 .include <bsd.port.mk>
