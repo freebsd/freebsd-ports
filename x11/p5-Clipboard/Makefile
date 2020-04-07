@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Clipboard
-PORTVERSION=	0.22
+PORTVERSION=	0.24
 CATEGORIES=	x11 perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SHLOMIF
@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-CGI>=0:www/p5-CGI \
 		xclip:x11/xclip
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 NO_ARCH=	yes
 
