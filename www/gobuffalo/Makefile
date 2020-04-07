@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gobuffalo
-PORTVERSION=	0.16.1
+PORTVERSION=	0.16.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -50,7 +50,7 @@ GH_TUPLE=	\
 		gobuffalo:packr:v2.8.0:gobuffalo_packr/vendor/github.com/gobuffalo/packr \
 		gobuffalo:plush:v3.8.3:gobuffalo_plush/vendor/github.com/gobuffalo/plush \
 		gobuffalo:plush:v4.0.0:gobuffalo_plush_1/vendor/github.com/gobuffalo/plush/v4 \
-		gobuffalo:pop:v5.0.9:gobuffalo_pop/vendor/github.com/gobuffalo/pop/v5 \
+		gobuffalo:pop:v5.0.11:gobuffalo_pop/vendor/github.com/gobuffalo/pop/v5 \
 		gobuffalo:tags:v3.1.0:gobuffalo_tags/vendor/github.com/gobuffalo/tags/v3 \
 		gobuffalo:validate:v3.1.0:gobuffalo_validate/vendor/github.com/gobuffalo/validate/v3 \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
