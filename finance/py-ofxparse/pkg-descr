@@ -1,0 +1,12 @@
+ofxparse is a parser for Open Financial Exchange (.ofx) format files. OFX 
+files are available from almost any online banking site, so they work well if 
+you want to pull together your finances from multiple sources. Online trading 
+accounts also provide account statements in OFX files.
+
+There are three different types of OFX files, called BankAccount, 
+CreditAccount and InvestmentAccount files. This library has been tested with 
+real-world samples of all three types. If you find a file that does not work 
+with this library, please consider contributing the file so ofxparse can be 
+improved. See the Help! section below for directions on how to do this.
+
+WWW: https://pypi.org/project/ofxparse/
