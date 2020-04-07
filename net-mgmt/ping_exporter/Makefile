@@ -2,7 +2,7 @@
 
 PORTNAME=	ping_exporter
 DISTVERSION=	0.44
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	jp+ports@supplntr.io
@@ -29,5 +29,11 @@ pre-build:
 post-install:
 	${INSTALL_DATA} ${PATCHDIR}/ping_exporter.yml.sample \
 		${STAGEDIR}${PREFIX}/etc/ping_exporter.yml.sample
+	${MKDIR} ${STAGEDIR}${DATADIR}/syslog.d \
+	    	${STAGEDIR}${DATADIR}/newsyslog.conf.d
+	${INSTALL_DATA} ${PATCHDIR}/ping_exporter.syslog \
+		${STAGEDIR}${DATADIR}/syslog.d/ping_exporter.conf
+	${INSTALL_DATA} ${PATCHDIR}/ping_exporter.newsyslog \
+		${STAGEDIR}${DATADIR}/newsyslog.conf.d/ping_exporter.conf
 
 .include <bsd.port.mk>

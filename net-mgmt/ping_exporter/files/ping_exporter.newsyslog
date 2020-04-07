@@ -1,0 +1,3 @@
+# $FreeBSD$
+
+/var/log/ping_exporter.log		644  7	1000	*	J

@@ -1,2 +1,4 @@
 bin/ping_exporter
 @sample %%ETCDIR%%.yml.sample
+%%DATADIR%%/newsyslog.conf.d/ping_exporter.conf
+%%DATADIR%%/syslog.d/ping_exporter.conf

@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+ping_exporter logs via syslog.  To see examples for log rotation
+and redirecting the logs to a dedicated log file, please see
+%%DATADIR%%
+
+The syslog file would be copied to:
+/usr/local/etc/syslog.d
+
+The newsyslog file would be copied to:
+/usr/local/etc/newsyslog.conf.d
+EOM
+}
+]

@@ -21,8 +21,6 @@
 #               Default is "localhost:9427".
 # ping_exporter_config (string):        Set configuration file of ping_exporter
 #               Default is "%%PREFIX%%/etc/ping_exporter.yml".
-# ping_exporter_log_file (string):      Set log file of ping_exporter
-#               Default is "/var/log/ping_exporter.log".
 
 . /etc/rc.subr
 
@@ -37,16 +35,16 @@ load_rc_config $name
 : ${ping_exporter_group:=nobody}
 : ${ping_exporter_listen_address=localhost:9427}
 : ${ping_exporter_config="%%PREFIX%%/etc/ping_exporter.yml"}
-: ${ping_exporter_log_file=/var/log/ping_exporter.log}
 
 required_files="${ping_exporter_config}"
 pidfile=/var/run/ping_exporter.pid
 command=/usr/sbin/daemon
 procname="%%PREFIX%%/bin/ping_exporter"
-command_args="-p ${pidfile} /usr/bin/env ${procname} \
+command_args="-p ${pidfile} -t ${name} -T ${name} -S \
+    /usr/bin/env ${procname} \
     -web.listen-address ${ping_exporter_listen_address} \
     -config.path ${ping_exporter_config} \
-    ${ping_exporter_args} >> ${ping_exporter_log_file} 2>&1"
+    ${ping_exporter_args} 2>&1"
 
 start_precmd=ping_exporter_startprecmd
 
@@ -56,11 +54,6 @@ ping_exporter_startprecmd()
         install -o ${ping_exporter_user} -g ${ping_exporter_group} /dev/null ${pidfile};
     else
         chown ${ping_exporter_user}:${ping_exporter_group} ${pidfile};
-    fi
-    if [ ! -e ${ping_exporter_log_file} ]; then
-        install -o ${ping_exporter_user} -g ${ping_exporter_group} -m 640 /dev/null ${ping_exporter_log_file};
-    else
-        chown ${ping_exporter_user}:${ping_exporter_group} ${ping_exporter_log_file};
     fi
 }
 
