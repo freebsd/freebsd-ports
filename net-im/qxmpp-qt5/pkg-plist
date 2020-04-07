@@ -8,7 +8,6 @@ include/qxmpp/QXmppBitsOfBinaryIq.h
 include/qxmpp/QXmppBookmarkManager.h
 include/qxmpp/QXmppBookmarkSet.h
 include/qxmpp/QXmppByteStreamIq.h
-include/qxmpp/QXmppCallManager.h
 include/qxmpp/QXmppCarbonManager.h
 include/qxmpp/QXmppClient.h
 include/qxmpp/QXmppClientExtension.h
@@ -45,6 +44,7 @@ include/qxmpp/QXmppPingIq.h
 include/qxmpp/QXmppPresence.h
 include/qxmpp/QXmppPubSubIq.h
 include/qxmpp/QXmppPubSubItem.h
+include/qxmpp/QXmppPushEnableIq.h
 include/qxmpp/QXmppRegisterIq.h
 include/qxmpp/QXmppRegistrationManager.h
 include/qxmpp/QXmppRemoteMethod.h
@@ -53,9 +53,6 @@ include/qxmpp/QXmppRosterIq.h
 include/qxmpp/QXmppRosterManager.h
 include/qxmpp/QXmppRpcIq.h
 include/qxmpp/QXmppRpcManager.h
-include/qxmpp/QXmppRtcpPacket.h
-include/qxmpp/QXmppRtpChannel.h
-include/qxmpp/QXmppRtpPacket.h
 include/qxmpp/QXmppServer.h
 include/qxmpp/QXmppServerExtension.h
 include/qxmpp/QXmppServerPlugin.h
