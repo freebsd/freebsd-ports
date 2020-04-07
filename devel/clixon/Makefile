@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clixon
-PORTVERSION=	4.3.3
+PORTVERSION=	4.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	dcornejo@netgate.com
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libcligen.so:devel/cligen \
 		libfcgi.so:www/fcgi
-BUILD_DEPENDS=	cligen>=4.0.0:devel/cligen
+BUILD_DEPENDS=	cligen>=4.4.0:devel/cligen
 
 USES=		autoreconf bison compiler:c11 gmake
 
