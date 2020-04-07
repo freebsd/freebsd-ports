@@ -43,3 +43,4 @@ include/Lfunction/cmdline.h
 include/Lfunction/getopt.h
 include/Lfunction/mpfr_mul_d.h
 lib/libLfunction.so
+lib/libLfunction.so.0

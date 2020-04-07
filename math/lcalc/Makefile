@@ -3,6 +3,7 @@
 
 PORTNAME=	lcalc
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/misc/sage/spkg/upstream/lcalc/
 
@@ -27,5 +28,10 @@ WRKSRC_SUBDIR=	src
 USE_LDCONFIG=	yes
 
 MAKE_ENV=	MAKE=${GMAKE} STAGEDIR=${STAGEDIR}
+
+post-stage:
+	cd ${STAGEDIR}${PREFIX}/lib && ${MV} libLfunction.so libLfunction.so.0
+	${LN} -sf libLfunction.so.0 ${STAGEDIR}${PREFIX}/lib/libLfunction.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

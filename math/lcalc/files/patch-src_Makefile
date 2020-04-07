@@ -215,7 +215,7 @@
 -libLfunction.so: $(OBJ_L)
 -	g++ -$(DYN_OPTION)  -o libLfunction.so $(OBJ_L)
 +libLfunction$(LIBEXT): $(OBJ_L)
-+	$(CXX) -$(DYN_OPTION) $(CXXFLAGS) -o libLfunction$(LIBEXT) $(LDFLAGS) $(OBJ_L) $(PARI_LIBS)
++	$(CXX) -$(DYN_OPTION) $(CXXFLAGS) -o libLfunction$(LIBEXT) $(LDFLAGS) -Wl,-soname,$@ $(OBJ_L) $(PARI_LIBS)
  
  clean:
 -	rm -f *.o lcalc libLfunction.so example_programs/example
