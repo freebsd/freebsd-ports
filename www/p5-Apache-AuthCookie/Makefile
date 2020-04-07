@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Apache-AuthCookie
-PORTVERSION=	3.28
+PORTVERSION=	3.29
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +19,8 @@ RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=1.39:www/mod_perl2 \
 		p5-Class-Load>=0.03:devel/p5-Class-Load \
 		p5-Hash-MultiValue>=0:devel/p5-Hash-MultiValue \
 		p5-HTTP-Body>=0:www/p5-HTTP-Body \
+		p5-URI>=1.36:net/p5-URI \
 		p5-WWW-Form-UrlEncoded>=0:www/p5-WWW-Form-UrlEncoded
-TEST_DEPENDS=	p5-URI>=1.71:net/p5-URI
 
 USES=		apache:2.2+ perl5
 USE_PERL5=	configure
