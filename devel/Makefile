@@ -701,6 +701,7 @@
     SUBDIR += fuel
     SUBDIR += fuzzylite
     SUBDIR += fxdiv
+    SUBDIR += g-wrap
     SUBDIR += ga
     SUBDIR += gaa
     SUBDIR += gamin

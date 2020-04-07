@@ -1,0 +1,6 @@
+G-Wrap is a tool (and guile library) for generating function wrappers
+for inter-language calls. It currently only supports generating Guile
+wrappers for C functions. Other languages may be supported in the
+future, possibly on both sides.
+
+WWW: http://www.nongnu.org/g-wrap/
