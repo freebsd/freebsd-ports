@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-GitHub
-PORTVERSION=	0.95
+PORTVERSION=	0.99
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,8 +24,9 @@ RUN_DEPENDS=	p5-Cache-LRU>=0:devel/p5-Cache-LRU \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
