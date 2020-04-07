@@ -596,6 +596,7 @@
 %%CACTIDIR%%/include/content/iframe-example.html
 %%CACTIDIR%%/include/content/index.php
 %%CACTIDIR%%/include/content/php-example.html
+%%CACTIDIR%%/include/csrf.php
 %%CACTIDIR%%/include/fa/css/fontawesome.css
 %%CACTIDIR%%/include/fa/css/index.php
 %%CACTIDIR%%/include/fa/index.php
@@ -790,7 +791,6 @@
 %%CACTIDIR%%/include/js/jquery.dropdown.js
 %%CACTIDIR%%/include/js/jquery.hotkeys.js
 %%CACTIDIR%%/include/js/jquery.js
-%%CACTIDIR%%/include/js/jquery.metadata.js
 %%CACTIDIR%%/include/js/jquery.multiselect.filter.js
 %%CACTIDIR%%/include/js/jquery.multiselect.js
 %%CACTIDIR%%/include/js/jquery.sparkline.js
@@ -1149,9 +1149,10 @@
 %%CACTIDIR%%/include/vendor/cldr-to-gettext-plural-rules/tests/Get/GetTest.php
 %%CACTIDIR%%/include/vendor/cldr-to-gettext-plural-rules/tests/Rules/RulesTest.php
 %%CACTIDIR%%/include/vendor/cldr-to-gettext-plural-rules/tests/bootstrap.php
-%%CACTIDIR%%/include/vendor/csrf/LICENSE
-%%CACTIDIR%%/include/vendor/csrf/NEWS
-%%CACTIDIR%%/include/vendor/csrf/README
+%%CACTIDIR%%/include/vendor/csrf/LICENSE.txt
+%%CACTIDIR%%/include/vendor/csrf/NEWS.md
+%%CACTIDIR%%/include/vendor/csrf/README.md
+%%CACTIDIR%%/include/vendor/csrf/csrf-conf.php
 %%CACTIDIR%%/include/vendor/csrf/csrf-magic.js
 %%CACTIDIR%%/include/vendor/csrf/csrf-magic.php
 %%CACTIDIR%%/include/vendor/csrf/index.php
@@ -2239,6 +2240,7 @@
 %%CACTIDIR%%/rrdcleaner.php
 %%CACTIDIR%%/script_server.php
 %%CACTIDIR%%/scripts/3com_cable_modem.pl
+%%CACTIDIR%%/scripts/cacti_user_stats.php
 %%CACTIDIR%%/scripts/diskfree.pl
 %%CACTIDIR%%/scripts/diskfree.sh
 %%CACTIDIR%%/scripts/index.php
