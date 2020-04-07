@@ -1075,6 +1075,7 @@
     SUBDIR += py-port-for
     SUBDIR += py-portend
     SUBDIR += py-pyenet
+    SUBDIR += py-pyfixbuf
     SUBDIR += py-pygeoip
     SUBDIR += py-pyicap
     SUBDIR += py-pynamecheap
