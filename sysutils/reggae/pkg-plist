@@ -113,7 +113,9 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/master.fstab
 %%DATADIR%%/templates/mount-project.sh
 %%DATADIR%%/templates/named.conf
+%%DATADIR%%/templates/network
 %%DATADIR%%/templates/pf.conf
+%%DATADIR%%/templates/pkg.conf
 %%DATADIR%%/templates/reggae-register.sh
 %%DATADIR%%/templates/resolvconf.conf
 %%DATADIR%%/templates/setup-vm.sh
