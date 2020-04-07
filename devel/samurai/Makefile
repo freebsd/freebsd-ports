@@ -13,6 +13,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
+USES=		compiler:c11
+
 ALL_TARGET=	samu
 PLIST_FILES=	bin/samu \
 		man/man1/samu.1.gz
