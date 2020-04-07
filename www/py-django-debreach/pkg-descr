@@ -1,0 +1,10 @@
+Basic/extra mitigation against the BREACH attack for Django projects.
+
+django-debreach provides additional protection to Django's built in CSRF token
+masking by randomizing the content length of each response.
+
+This is achieved by adding a random string of between 12 and 25 characters as a
+comment to the end of the HTML content.  Note that this will only be applied to
+responses with a content type of text/html.
+
+WWW: https://github.com/lpomfrey/django-debreach
