@@ -87,6 +87,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Lists.pm
 %%SITE_ARCH%%/Prima/MDI.pm
 %%SITE_ARCH%%/Prima/Menu.pod
+%%SITE_ARCH%%/Prima/Menus.pm
 %%SITE_ARCH%%/Prima/MsgBox.pm
 %%SITE_ARCH%%/Prima/Notebooks.pm
 %%SITE_ARCH%%/Prima/Object.pod
@@ -217,6 +218,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/extlist.pl
 %%SITE_ARCH%%/Prima/examples/eyes.pl
 %%SITE_ARCH%%/Prima/examples/f_fill.pl
+%%SITE_ARCH%%/Prima/examples/fading_text.pl
 %%SITE_ARCH%%/Prima/examples/fontdlg.pl
 %%SITE_ARCH%%/Prima/examples/frames.pl
 %%SITE_ARCH%%/Prima/examples/generic.pl
@@ -283,6 +285,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/linepats.gif
 %%SITE_ARCH%%/Prima/markup.gif
 %%SITE_ARCH%%/Prima/mdi.gif
+%%SITE_ARCH%%/Prima/menu.gif
 %%SITE_ARCH%%/Prima/miterlimit.gif
 %%SITE_ARCH%%/Prima/msgbox.gif
 %%SITE_ARCH%%/Prima/noARGV.pm
@@ -375,6 +378,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Label.3.gz
 %%PERL5_MAN3%%/Prima::Lists.3.gz
 %%PERL5_MAN3%%/Prima::MDI.3.gz
+%%PERL5_MAN3%%/Prima::Menus.3.gz
 %%PERL5_MAN3%%/Prima::MsgBox.3.gz
 %%PERL5_MAN3%%/Prima::Notebooks.3.gz
 %%PERL5_MAN3%%/Prima::Outlines.3.gz
