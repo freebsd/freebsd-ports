@@ -23,6 +23,7 @@ GH_TUPLE=	go-errgo:errgo:v2.1.0:go_errgo_errgo/vendor/gopkg.in/errgo.v2 \
 		pkg:diff:531926345625:pkg_diff/vendor/github.com/pkg/diff \
 		rogpeppe:go-internal:v1.5.2:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal
 GO_TARGET=	./cmd/shfmt
+GO_BUILDFLAGS=	-ldflags="-s -w -X main.version=${DISTVERSIONFULL}"
 GO_TESTTARGET=	./cmd/shfmt
 PLIST_FILES=	bin/shfmt
 
