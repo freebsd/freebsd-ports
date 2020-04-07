@@ -1,13 +1,12 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION=	4.0.r1
-PORTREVISION=	1
+DISTVERSION=	5.5
 PORTEPOCH=	1
-MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/
+MASTER_SITES=	LOCAL/salvadore/i386-wine-devel/${DIST_SUBDIR}/
 DISTNAME=	${PKGNAME}
 EXTRACT_SUFX=	.txz
-DIST_SUBDIR=	freebsd:${OSREL:C/\..*//}:x86:64
+DIST_SUBDIR=	FreeBSD:${OSREL:C/\..*//}:amd64
 
 LICENSE=        LGPL21 LGPL3
 LICENSE_COMB=   dual
@@ -40,6 +39,7 @@ MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.9.4.msi:emulators/wine-mono-devel
 .for osrel in 11 12 13
 .if ${OSREL:C/\..*//} == ${osrel}
 PLIST_SUB+=	OSREL${osrel}=""
+PLIST_SUB+=	NOOSREL${osrel}="@comment "
 .if ${PKGNAMESUFFIX} == -devel
 PLIST_SUB+=	DEVEL=""
 PLIST_SUB+=	OSREL${osrel}-DEVEL=""
@@ -50,11 +50,12 @@ PLIST_SUB+=	OSREL${osrel}-DEVEL="@comment "
 .else
 PLIST_SUB+=	OSREL${osrel}="@comment "
 PLIST_SUB+=	OSREL${osrel}-DEVEL="@comment "
+PLIST_SUB+=	NOOSREL${osrel}=""
 .endif
 .endfor
 
-.if ${OPSYS} != FreeBSD || (!(${OSVERSION} >= 1103000 && ${OSVERSION} < 1200000) && !(${OSVERSION} >= 1200086 && ${OSVERSION} < 1300000) && !(${OSVERSION} >= 1300003 && ${OSVERSION} < 1400000))
-IGNORE=		binaries compiled for FreeBSD 11.3+, 12.0+ and -current only
+.if ${OPSYS} != FreeBSD || (!(${OSVERSION} >= 1103000 && ${OSVERSION} < 1200000) && !(${OSVERSION} >= 1201000 && ${OSVERSION} < 1300000) && !(${OSVERSION} >= 1300084 && ${OSVERSION} < 1400000))
+IGNORE=		binaries compiled for FreeBSD 11.3+, 12.1+ and 13.0-CURRENT (OSVERSION >= 1300084) only
 DISTFILES=
 .endif
 
