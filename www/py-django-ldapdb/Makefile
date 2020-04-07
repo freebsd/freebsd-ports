@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-ldapdb
-PORTVERSION=	1.0.0
+PORTVERSION=	1.4.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,11 +13,12 @@ COMMENT=	LDAP database backend for Django
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.8:www/py-django111@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ldap>=2.4.25:net/py-ldap@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ldap>=3.0:net/py-ldap@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	distutils concurrent autoplist
+
 NO_ARCH=	yes
 PORTDOCS=	README.rst
 

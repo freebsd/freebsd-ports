@@ -1,3 +1,3 @@
-TIMESTAMP = 1526299109
-SHA256 (django-ldapdb-1.0.0.tar.gz) = a3a2837a6ec9769fc76164b99b86ba2809c987e370bd8986b69018345f9ba682
-SIZE (django-ldapdb-1.0.0.tar.gz) = 16639
+TIMESTAMP = 1585603374
+SHA256 (django-ldapdb-1.4.0.tar.gz) = 36990757f26c1bd7642bbb0ed88cc1a4d8fe945dfcae6094142b9889b976e3f8
+SIZE (django-ldapdb-1.4.0.tar.gz) = 31294
