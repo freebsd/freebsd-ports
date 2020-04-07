@@ -8,7 +8,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	thomas@beingboiled.info
 COMMENT=	Simple extensible XMPP server written in Lua
 
 LICENSE=	MIT
