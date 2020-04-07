@@ -25,12 +25,12 @@ TEST_TARGET=	check
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != amd64 && ${ARCH} != i386
+.if ${ARCH} != amd64
 CONFIGURE_ARGS+=	--disable-hpcombi
 .endif
 
 pre-configure:
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == amd64
 	${REINPLACE_CMD} -e 's|$$srcdir/extern/HPCombi|${LOCALBASE}/share/HPCombi|'	\
 		${WRKSRC}/m4/ax_check_hpcombi.m4
 	${REINPLACE_CMD} -e 's|extern/HPCombi/include|${LOCALBASE}/include/HPCombi|'	\
