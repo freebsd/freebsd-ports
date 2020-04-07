@@ -15,6 +15,7 @@ LIB_DEPENDS=	libguile-2.2.so:lang/guile2				\
 BUILD_DEPENDS=	guile2>=2.2:lang/guile2
 
 USES=		gmake gnome libtool pkgconfig
+USE_CSTD=	c99
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
 
