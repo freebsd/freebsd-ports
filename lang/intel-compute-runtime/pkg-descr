@@ -1,5 +1,6 @@
-The Intel(R) Graphics Compute Runtime for OpenCL(TM) is an open source
-project to converge Intel's development efforts on OpenCL(TM) compute
-stacks supporting the GEN graphics hardware architecture.
+The Intel(R) Graphics Compute Runtime for oneAPI Level Zero and
+OpenCL(TM) Driver is an open source project providing compute API
+support (Level Zero, OpenCL) for Intel graphics hardware architectures
+(HD Graphics, Xe).
 
 WWW: https://01.org/compute-runtime
