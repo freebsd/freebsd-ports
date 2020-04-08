@@ -1,0 +1,5 @@
+TIMESTAMP = 1586353340
+SHA256 (tartley-cbeams-v1.0.0rc3-52-gda823c2_GH0.tar.gz) = 3595c99564eb6fb7ddf98b7bb2f36e699055fb3e00c160bb12aeeb3da6601bb6
+SIZE (tartley-cbeams-v1.0.0rc3-52-gda823c2_GH0.tar.gz) = 25396
+SHA256 (422477bc4c21a0e8ea95549e699edd0c94faa78d.patch) = bbb5363561ff9417e020016ad84cd5287895f7d8e5071c89872b2d9d90b7bbb7
+SIZE (422477bc4c21a0e8ea95549e699edd0c94faa78d.patch) = 714

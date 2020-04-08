@@ -717,6 +717,7 @@
     SUBDIR += puckman
     SUBDIR += pushover
     SUBDIR += pvpgn
+    SUBDIR += py-cbeams
     SUBDIR += py-fife
     SUBDIR += py-mnemosyne
     SUBDIR += py-sgflib
