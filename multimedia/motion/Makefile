@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	motion
-PORTVERSION=	4.0.1
-DISTVERSIONPREFIX=	release-
-PORTREVISION=	10
+PORTVERSION=	4.3.0
+DISTVERSIONPREFIX=	Release-
 CATEGORIES=	multimedia
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@blievers.net
 COMMENT=	Motion detection application
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-USES=		autoreconf gmake jpeg localbase pkgconfig
+LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
+
+USES=		autoreconf gmake jpeg localbase pkgconfig gettext
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Motion-Project
 USE_RC_SUBR=	${PORTNAME}
@@ -33,9 +35,8 @@ PLIST_FILES=	bin/motion \
 		man/man1/motion.1.gz \
 		"@sample ${ETCDIR}/motion.conf.sample" \
 		"@dir ${ETCDIR}/conf.d"
-PORTDOCS=	CHANGELOG CREDITS README.md README.FreeBSD \
-		motion_guide.html mask1.png normal.jpg \
-		outputmotion1.jpg outputnormal1.jpg
+PORTDOCS=	*
+
 PORTEXAMPLES=	camera1-dist.conf camera2-dist.conf \
 		camera3-dist.conf camera4-dist.conf
 
@@ -86,24 +87,21 @@ post-patch:
 		's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure.ac
 # Fix pidfile path
 	@${REINPLACE_CMD} -e \
-		's|/run/motion|/run|' ${WRKSRC}/motion-dist.conf.in
-# Fix warnings about mismatched format specifiers (Fixed upstream in dbd7282)
-	@${REINPLACE_CMD} -e \
-		's|%hd|%d|g;s|%hu|%u|g;s|%Zu|%zu|g' ${WRKSRC}/webhttpd.c ${WRKSRC}/stream.c
+		's|/run/motion|/run|' ${WRKSRC}/data/motion-dist.conf.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/motion ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/motion.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/motion ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/motion.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf.d
-	${INSTALL_DATA} ${WRKSRC}/motion-dist.conf \
+	${INSTALL_DATA} ${WRKSRC}/data/motion-dist.conf \
 		${STAGEDIR}${ETCDIR}/motion.conf.sample
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/data/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>
