@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	signedjson
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,9 @@ COMMENT=	Sign JSON with Ed25519 signatures
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}canonicaljson>=1.0.0:devel/py-canonicaljson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pynacl>=0.3.0:security/py-pynacl@${PY_FLAVOR} \
 		${PY_TYPING} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.5:devel/py-typing-extensions@${PY_FLAVOR} \
