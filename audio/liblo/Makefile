@@ -25,9 +25,8 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 .include <bsd.port.options.mk>
 
-post-patch:
 .if ${ARCH} == i386 || ${ARCH} == powerpc
-	@${REINPLACE_CMD} -e 's|deadbeef||; s|f00baa23||' ${WRKSRC}/lo/lo_macros.h
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-32bit
 .endif
 
 post-install-DOCS-on:
