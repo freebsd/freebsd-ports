@@ -2,8 +2,7 @@
 
 PORTNAME=	intel-media-sdk
 DISTVERSIONPREFIX=	intel-mediasdk-
-DISTVERSION=	20.1.pre3-19
-DISTVERSIONSUFFIX=	-g1b7d4964
+DISTVERSION=	20.1.0
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
