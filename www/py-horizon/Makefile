@@ -3,7 +3,7 @@
 
 PORTNAME=	horizon
 PORTVERSION=	13.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www python
 MASTER_SITES=	https://tarballs.openstack.org/horizon/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keystoneauth1>=3.3.0:devel/py-keystoneauth1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.7.18:net/py-netaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.concurrency>=3.25.0:devel/py-oslo.concurrency@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.config>=5.1.0:devel/py-oslo.config@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=3.15.3:devel/py-oslo.i18n@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=2.18.0:devel/py-oslo.serialization@${PY_FLAVOR} \
@@ -90,10 +89,12 @@ post-patch:
 
 .if ${PYTHON_REL} < 3600
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futurist1>=1.2.0:devel/py-futurist1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.concurrency3>=3.25.0:devel/py-oslo.concurrency3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.policy2>=1.30.0:devel/py-oslo.policy2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-cinderclient5>=3.3.0:net/py-python-cinderclient5@${PY_FLAVOR}
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futurist>=1.2.0:devel/py-futurist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.concurrency>=3.25.0:devel/py-oslo.concurrency@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.policy>=1.30.0:devel/py-oslo.policy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-cinderclient>=3.3.0:net/py-python-cinderclient@${PY_FLAVOR}
 .endif
