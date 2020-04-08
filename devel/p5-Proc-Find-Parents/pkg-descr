@@ -1,0 +1,6 @@
+Return an array containing information about parent processes of $pid up to the
+parent of all processes (usually "init"). If $pid is not mentioned, it defaults
+to $$. The immediate parent is in the first element of array, followed by its
+parent, and so on.
+
+WWW: https://metacpan.org/release/Proc-Find-Parents
