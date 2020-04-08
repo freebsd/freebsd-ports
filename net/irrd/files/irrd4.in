@@ -1,0 +1,45 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: irrd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these irrd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/irrd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+# irrd4_enable (bool):	Set to NO by default.
+#			Set it to YES to enable irrd4
+# irrd4_uid (string):	Set to irrd by default.
+# irrd4_gid (string):	Set to irrd by default.
+# irrd4_logfile (path):	Set to /var/log/irrd4.log by default.
+# irrd4_pidfile (path):	Set to /var/run/irrd4.pid by default.
+# irrd4_config (path):	Set to %%PREFIX%%/etc/irrd4.yaml by default.
+
+. /etc/rc.subr
+
+name="irrd4"
+rcvar=irrd4_enable
+command="%%PREFIX%%/bin/twistd"
+
+load_rc_config $name
+
+irrd4_enable=${irrd4_enable-"NO"}
+irrd4_uid=${irrd4_uid-"%%USERS%%"}
+irrd4_gid=${irrd4_gid-"%%GROUPS%%"}
+irrd4_logfile=${irrd4_logfile-"/var/log/irrd4.log"}
+irrd4_pidfile=${irrd4_pidfile-"/var/run/irrd4.pid"}
+irrd4_config=${irrd4_config-"%%PREFIX%%/etc/irrd4.yaml"}
+
+required_files="${irrd4_config}"
+command_interpreter="%%PYTHON_CMD%%"
+pidfile=${irrd4_pidfile}
+
+command_args="--originalname -u ${irrd4_uid} -g ${irrd4_gid} --pidfile ${pidfile} -l ${irrd4_logfile} irrd -c ${irrd4_config}"
+
+run_rc_command "$1"

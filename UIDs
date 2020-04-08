@@ -196,7 +196,7 @@ fcron:*:247:247::0:0:fcron pseudo-user:/nonexistent:/usr/sbin/nologin
 signal-cli:*:248:248::0:0:Signal CLI:/nonexistent:/usr/sbin/nologin
 sonarqube:*:249:249::0:0:SonarQube Server:/nonexistent:/usr/sbin/nologin
 sems:*:250:250::0:0:SIP Express Media Server:/nonexistent:/usr/sbin/nologin
-# free: 251
+irrd:*:251:251::0:0:irrd Daemon:/nonexistent:/usr/sbin/nologin
 # free: 252
 _adsuck:*:253:253::0:0:Adsuck ad blocking user:/nonexistent:/usr/sbin/nologin
 imds:*:254:254::0:0:Instance Metadata Service filter:/nonexistent:/usr/sbin/nologin

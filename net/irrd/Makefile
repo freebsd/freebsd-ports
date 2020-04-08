@@ -1,76 +1,73 @@
-# Created by: TAKANO Yuji <takano@net-chef.net>
+# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	irrd
-PORTVERSION=	2.3.10
+PORTVERSION=	4.0.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
-CATEGORIES=	net
+CATEGORIES=	net python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	4
 
-MAINTAINER=	ume@FreeBSD.org
-COMMENT=	Internet Routing Registry database server
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT=	Internet Routing Registry database server v4
 
-LICENSE=	BSD4CLAUSE
-LICENSE_FILE=	${WRKDIR}/${PORTNAME}-legacy-${PORTVERSION}/COPYRIGHT
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	wget:ftp/wget
+#python-gnupg==0.4.4 needs updating
+#twisted==19.2.1 needs updating
+BUILD_DEPENDS=	\
+		${PYTHON_PKGNAMEPREFIX}alembic>=1.0.10:databases/py-alembic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beautifultable>=0.7.0:devel/py-beautifultable@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dotted>=0.1.8:devel/py-dotted@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipy>=1.00:net-mgmt/py-ipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ordered-set>=3.1.1:devel/py-ordered-set@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}passlib>=1.7.1:security/py-passlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.8.2:databases/py-psycopg2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-gnupg>=0.4.3:security/py-python-gnupg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}service_identity>0:security/py-service_identity@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twisted>=18.9.0:devel/py-twisted@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ujson>=1.35:devel/py-ujson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=5.1:devel/py-yaml@${PY_FLAVOR}
+TEST_DEPENDS=	\
+		${PYTHON_PKGNAMEPREFIX}coverage>=4.5.3:devel/py-coverage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=4.4.1:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>=2.6.1:devel/py-pytest-cov@${PY_FLAVOR}
 
-WRKSRC_SUBDIR=	src
-
-IRRD_CONFDIR=	${PREFIX}/etc
-
-USES=		shebangfix
-USE_RC_SUBR=	irrd
+USES=		pgsql python:3.6+
 USE_GITHUB=	yes
+USE_PYTHON=	autoplist concurrent distutils
+USE_RC_SUBR=	irrd4
+
 GH_ACCOUNT=	irrdnet
-GH_PROJECT=	irrd-legacy
+GH_PROJECT=	${PORTNAME}
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	YACC="${YACC}"
-MAKE_JOBS_UNSAFE=	yes
-DESTDIRNAME=	STAGEDIR
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
 
-OPTIONS_DEFINE=		IPV6
-IPV6_CONFIGURE_ENABLE=	ipv6
+OPTIONS_DEFINE=	DOCS
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
 
-SHEBANG_FILES=	programs/irrdcacher/irrdcacher \
-		programs/irrdcacher/ripe2rpsl
+PLIST_FILES=	"@sample etc/${PORTNAME}${PKGNAMESUFFIX}.yaml.sample"
+NO_ARCH=	yes
 
-PLIST_FILES=	etc/irrd.conf.sample \
-		man/man8/irrd.8.gz \
-		sbin/irr_notify \
-		sbin/irr_rpsl_check \
-		sbin/irr_rpsl_submit \
-		sbin/irrd \
-		sbin/irrdcacher \
-		sbin/ripe2rpsl
+SUB_FILES=	pkg-message
+SUB_LIST=	PYTHON_CMD="${PYTHON_CMD}" \
+		PGSQL_DEFAULT=${PGSQL_DEFAULT} \
+		USERS=${USERS} \
+		GROUPS=${GROUPS}
 
-post-patch:
-	${REINPLACE_CMD} -e 's|/etc/irrd.conf|${IRRD_CONFDIR}/irrd.conf|g' \
-		${WRKSRC}/programs/IRRd/irrd.8 \
-		${WRKSRC}/programs/IRRd/main.c \
-		${WRKSRC}/programs/hdr_comm/read_conf.c \
-		${WRKSRC}/programs/irr_notify/main.c \
-		${WRKSRC}/programs/irr_rpsl_check/main.c \
-		${WRKSRC}/programs/irr_rpsl_submit/main.c \
-		${WRKSRC}/programs/irrdcacher/irrdcacher \
-		${WRKSRC}/programs/rps_dist/rpsdist.c
-	${REINPLACE_CMD} -e 's|\($$(DESTDIR)\)|$$(STAGEDIR)\1|g' \
-		-e 's|\( -m 755 \)| -s\1|g' \
-		-e 's| -o root -g bin||g' \
-		${WRKSRC}/programs/IRRd/Makefile \
-		${WRKSRC}/programs/irr_notify/Makefile \
-		${WRKSRC}/programs/irr_rpsl_check/Makefile \
-		${WRKSRC}/programs/irr_rpsl_submit/Makefile
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3700
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>=0.6:devel/py-dataclasses@${PY_FLAVOR}
+.endif
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/programs/irrdcacher/irrdcacher \
-		${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/programs/irrdcacher/ripe2rpsl \
-		${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/../samples/irrd.conf.sample \
-		${STAGEDIR}${IRRD_CONFDIR}
-	${INSTALL_DATA} ${WRKSRC}/programs/IRRd/irrd.8 \
-		${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_DATA} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/conf/default_config.yaml \
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}.yaml.sample
 
-.include <bsd.port.mk>
+do-test:
+	@(cd ${TEST_WRKSRC} && ${SETENV} pytest ${PORTNAME})
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+1. A working copy of postgresql-server and postgresql-contrib is required.
+
+2. For a fresh install the following should do:
+pkg install postgresql%%PGSQL_DEFAULT%%-server postgresql%%PGSQL_DEFAULT%%-contrib
+
+3. Change the related postgresql server configuration like the following:
+https://irrd.readthedocs.io/en/stable/admins/deployment.html#postgresql-configuration
+
+Follow the documentation to create a database
+
+4. Configure irrd accordingly following the documentation:
+https://irrd.readthedocs.io/en/stable/admins/configuration.html
+
+5. Enable irrd at startup with:
+sysrc irrd4_enable=YES
+
+6. Start the service:
+service irrd4 start
+
+7. First sync of whois database might take a long time depending on resources available
+EOM
+}
+]

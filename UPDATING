@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200408
+  AFFECTS: users of net/irrd
+  AUTHOR: bofh@FreeBSD.org
+
+  Legacy version of net/irrd has been moved to net/irrd-legacy.
+  net/irrd has been upgraded to 4.X branch. If someone wants to stick with
+  legacy version then pkg users have to do something like
+
+  # pkg set -o net/irrd:net/irrd-legacy
+
+  For portmaster users
+  # portmaster -o net/irrd-legacy net/irrd
+
+  Both of the version can be installed and used concurrently in case there is
+  a need for migration
+
 20200403:
   AFFECTS: users of x11-fonts/fontconfig
   AUTHOR: desktop@FreeBSD.org
