@@ -73,6 +73,7 @@
     SUBDIR += R-cran-lava
     SUBDIR += R-cran-lazyeval
     SUBDIR += R-cran-lme4
+    SUBDIR += R-cran-lpSolve
     SUBDIR += R-cran-magic
     SUBDIR += R-cran-maxLik
     SUBDIR += R-cran-mcmc
