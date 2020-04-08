@@ -2327,6 +2327,7 @@
     SUBDIR += unit
     SUBDIR += unit-perl
     SUBDIR += unit-php
+    SUBDIR += uwebsockets
     SUBDIR += uwsgi
     SUBDIR += uwsgitop
     SUBDIR += validator
