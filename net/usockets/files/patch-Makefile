@@ -1,0 +1,13 @@
+--- Makefile.orig	2019-12-26 21:03:09 UTC
++++ Makefile
+@@ -38,8 +38,8 @@ override LDFLAGS += uSockets.a
+ # By default we build the uSockets.a static library
+ default:
+ 	rm -f *.o
+-	$(CC) $(CFLAGS) -flto -O3 -c src/*.c src/eventing/*.c src/crypto/*.c
+-	$(AR) rvs uSockets.a *.o
++	$(CC) $(CFLAGS) -fPIC -flto -c src/*.c src/eventing/*.c src/crypto/*.c
++	$(CC) -shared -o libusockets.so *.o
+ 
+ # Builds all examples
+ .PHONY: examples
