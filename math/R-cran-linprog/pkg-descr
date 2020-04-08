@@ -1,0 +1,4 @@
+This package can be used to solve Linear Programming / Linear
+Optimization problems by using the simplex algorithm.
+
+WWW: https://cran.r-project.org/web/packages/linprog/
