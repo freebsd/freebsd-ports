@@ -1,7 +1,3 @@
-TIMESTAMP = 1583140288
-SHA256 (intel-opencl-clang-v9.0.1_GH0.tar.gz) = 058d51e88cdb018fd3016d1ee2042018bd1c3d131037d4ff2cb3f08d79a8fe6d
-SIZE (intel-opencl-clang-v9.0.1_GH0.tar.gz) = 24574
-SHA256 (29a1f0d9e4e2.patch) = 69fdd7b9b669bdd0ff75da22e8f16b0f872475e7865bb42c1358acf3ca9972a6
-SIZE (29a1f0d9e4e2.patch) = 1211
-SHA256 (b25df8a90fec.patch) = 3a52fc0bf93dc4c7accbba2327f4a70b6e5650841876b6a4224210074a6c9462
-SIZE (b25df8a90fec.patch) = 1336
+TIMESTAMP = 1586267327
+SHA256 (intel-opencl-clang-v10.0.0-1_GH0.tar.gz) = 815005b6fb7fd8fd2f08b9036035d3aa9543f5ce8464e41ef2f2ed08a816f507
+SIZE (intel-opencl-clang-v10.0.0-1_GH0.tar.gz) = 23549
