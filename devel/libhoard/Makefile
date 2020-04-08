@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libhoard
-PORTVERSION=	3.10
-PORTREVISION=	1
+PORTVERSION=	3.13
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/emeryberger/Hoard/releases/download/${PORTVERSION}/
-DISTNAME=	Hoard-${PORTVERSION}-source
+DISTNAME=	hoard-release
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, scalable, and memory-efficient allocator for MP
@@ -20,11 +19,11 @@ BROKEN_mips64=		no spin lock implementation is available for this platform
 BROKEN_powerpc64=	Does not build: Error: instruction address is not a multiple of 4
 BROKEN_sparc64=		Does not build
 
-USE_CXXSTD=	gnu++98
-USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/Hoard/src
-
+MAKEFILE=	GNUmakefile
+USES=		gmake compiler:c++14-lang
 ALL_TARGET=	freebsd
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libhoard.so lib/libhoard.so.1
 

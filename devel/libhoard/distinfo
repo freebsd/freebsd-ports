@@ -1,2 +1,3 @@
-SHA256 (Hoard-3.10-source.tar.gz) = 9776dd824d193937fa5b079f3f16611eaac54876fecff26a6aec0adb029cbca7
-SIZE (Hoard-3.10-source.tar.gz) = 253110
+TIMESTAMP = 1586388520
+SHA256 (hoard-release.tar.gz) = 56399859f95e5a91c998f665d7e56095e8c888c77b33f7d9a5c3b64356658d76
+SIZE (hoard-release.tar.gz) = 1554232
