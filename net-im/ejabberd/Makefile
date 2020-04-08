@@ -151,6 +151,8 @@ FULLXML_CONFIGURE_ENABLE=	full-xml
 SQLITE_USES=		sqlite
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=yes
 
+.include <bsd.port.pre.mk>
+
 pre-everything::
 	@if ${PKG_BIN} query %n-%v net-im/ejabberd; then \
 		${ECHO_MSG} needs to be uninstalled, before this port build could proceed. ; \
@@ -164,6 +166,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,%%PORTVERSION%%,${PORTVERSION},' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e '/vsn/s/git/"${JIFFY_VER}"/' ${WRKSRC}/deps/jiffy/src/jiffy.app.src
 	@${REINPLACE_CMD} -e '/vsn/s/0.0.1/${BASE64URL_VER}/' ${WRKSRC}/deps/base64url/src/base64url.app.src
+.if ${OSVERSION} < 1200000
+	# Disable LTO required by dependency, not available by default in < 12.x
+	@${REINPLACE_CMD} -e 's/-flto//' ${WRKSRC}/deps/jiffy/rebar.config
+.endif
 
 pre-configure:
 	cd ${WRKSRC} && ${SH} autogen.sh
@@ -192,4 +198,4 @@ post-install:
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/eimp-${EIMP_VER}/priv/bin/eimp
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/eimp-${EIMP_VER}/priv/bin/eimp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
