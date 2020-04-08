@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dblatex
-PORTVERSION=	0.3.9
-PORTREVISION=	2
+DISTVERSION=	0.3.11
+DISTVERSIONSUFFIX=	py3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -17,8 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty:pri
 RUN_DEPENDS=	xsltproc:textproc/libxslt \
 		docbook-xml>0:textproc/docbook-xml
 
-USES=		tar:bzip2 python:2.7
-USE_PYTHON=	distutils autoplist
+USES=		tar:bzip2 python:3.5+
+USE_PYTHON=	distutils autoplist noflavors
 USE_TEX=	dvipsk:run tex
 NO_ARCH=	yes
 
