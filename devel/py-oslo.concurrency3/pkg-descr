@@ -1,0 +1,6 @@
+The oslo.concurrency library has utilities for safely running multi-thread,
+multi-process applications using locking mechanisms and for running external
+processes.
+
+WWW: https://docs.openstack.org/oslo.concurrency/latest/
+WWW: https://github.com/openstack/oslo.concurrency
