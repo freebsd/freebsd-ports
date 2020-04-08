@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20200408:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  OpenSSH was upgraded to 8.2p1 on 2020-03-23.
+
+  A restart of sshd is required after upgrade due to an incompatibility
+  introduced in 8.2.
+
+  Please see https://www.openssh.com/txt/release-8.2 for upcoming
+  deprecation notices.
+
 20200408
   AFFECTS: users of net/irrd
   AUTHOR: bofh@FreeBSD.org
