@@ -14,7 +14,7 @@ COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 USE_RC_SUBR=	grafana
 
