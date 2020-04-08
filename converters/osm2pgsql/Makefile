@@ -22,7 +22,7 @@ GH_ACCOUNT=	openstreetmap
 USES=		cmake compiler:c++11-lang pgsql
 
 PLIST_FILES=	bin/osm2pgsql \
-		man/man1/osm2pgsql.1.gz
+		share/man/man1/osm2pgsql.1.gz
 
 PORTDOCS=	AUTHORS ChangeLog README.md
 PORTDATA=	*
@@ -33,9 +33,6 @@ LUAJIT_DESC=		Build with LuaJIT support
 LUAJIT_CMAKE_BOOL=	WITH_LUAJIT
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUAJIT_USES_OFF=	lua:53
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|' ${WRKSRC}/CMakeLists.txt
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
