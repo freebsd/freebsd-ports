@@ -3,7 +3,7 @@
 PORTNAME=	scancode-toolkit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -61,7 +61,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nltk>=3.2:textproc/py-nltk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zclockfile>=1.0.0:devel/py-zclockfile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}contextlib2>=0:devel/py-contextlib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tempora>=0:devel/py-tempora@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tempora1>=0:devel/py-tempora1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jaraco.timing>=0:devel/py-jaraco.timing@${PY_FLAVOR} \
 		${PY_IPADDRESS} \
 		${LOCALBASE}/bin/7z:archivers/p7zip \
