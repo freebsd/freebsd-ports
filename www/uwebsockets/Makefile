@@ -3,6 +3,7 @@
 PORTNAME=	uwebsockets
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17.3
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +12,8 @@ COMMENT=	C++ Web I/O library for the most demanding of applications
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+RUN_DEPENDS=	usockets>0:net/usockets
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	uNetworking
 GH_PROJECT=	uWebSockets
