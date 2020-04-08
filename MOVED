@@ -7498,7 +7498,6 @@ deskutils/ontv||2015-06-10|Has expired: Broken since update to gnome3
 deskutils/timer-applet||2015-06-10|Has expired: Broken since update to gnome3
 editors/scribes||2015-06-10|Has expired: Broken since update to gnome3
 games/gweled||2015-06-10|Has expired: Broken since update to gnome3
-games/py-pychess||2015-06-10|Has expired: Broken since update to gnome3
 graphics/gqview||2015-06-10|Has expired: Unmaintained upstream, preferences dialog broken, use graphics/geeqie fork
 lang/gcc47-aux||2015-06-10|Has expired: GCC 4.7 branch closed June 2014, move to lang/gcc-aux
 multimedia/arista||2015-06-10|Has expired: Broken since update to gnome3
