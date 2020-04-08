@@ -34,6 +34,7 @@ HTTP_AUTH_REQ_DESC=		Enable http_auth_request module
 HTTP_CACHE_DESC=		Enable http_cache module
 HTTP_DAV_DESC=			Enable http_webdav module
 HTTP_DAV_EXT_DESC=		3rd party webdav_ext module
+HTTP_DEGRADATION_DESC=		Enable http_degradation module
 HTTP_DESC=			Enable HTTP module
 HTTP_EVAL_DESC=			3rd party eval module
 HTTP_FANCYINDEX_DESC=		3rd party http_fancyindex module
