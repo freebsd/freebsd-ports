@@ -35,7 +35,6 @@ include/igc/cif/cif/export/muiltiversion.h
 include/igc/cif/cif/export/pimpl_base.h
 include/igc/cif/cif/export/registry.cpp
 include/igc/cif/cif/export/registry.h
-include/igc/cif/cif/helpers/error.cpp
 include/igc/cif/cif/helpers/error.h
 include/igc/cif/cif/helpers/memory.h
 include/igc/cif/cif/import/cif_main.cpp
