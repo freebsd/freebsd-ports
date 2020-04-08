@@ -3,6 +3,7 @@
 
 PORTNAME=	osprofiler
 PORTVERSION=	1.15.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.6.0:www/py-webob@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.10.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.7.13:net/py-netaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.concurrency>=3.8.0:devel/py-oslo.concurrency@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.config>=3.2.0:devel/py-oslo.config@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=0:devel/py-oslo.serialization@${PY_FLAVOR}
 
@@ -40,4 +40,12 @@ post-install-DOCS-on:
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 			"! -name .buildinfo -and ! -name objects.inv")
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3600
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}oslo.concurrency3>=3.8.0:devel/py-oslo.concurrency3@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}oslo.concurrency>=3.8.0:devel/py-oslo.concurrency@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
