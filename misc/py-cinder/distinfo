@@ -1,3 +1,3 @@
-TIMESTAMP = 1586173947
-SHA256 (cinder-12.0.7.tar.gz) = e2e97e2a67b3733cd5604d667beea3c0cc815e5b2518747ab43d95d4fba77e3e
-SIZE (cinder-12.0.7.tar.gz) = 5356714
+TIMESTAMP = 1586269358
+SHA256 (cinder-12.0.8.tar.gz) = 52b0773a080130be152819efcb50fb90bf97547237cdb0f8c1e37c2bcb0d97bf
+SIZE (cinder-12.0.8.tar.gz) = 5358840
