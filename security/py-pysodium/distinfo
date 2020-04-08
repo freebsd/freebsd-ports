@@ -1,3 +1,3 @@
-TIMESTAMP = 1579945463
-SHA256 (pysodium-0.7.4.1.tar.gz) = b1a08ed8367072560a6912c4d8f8a5b298b3e124aca8baacadd2fe13e902d6ea
-SIZE (pysodium-0.7.4.1.tar.gz) = 19871
+TIMESTAMP = 1586269362
+SHA256 (pysodium-0.7.5.tar.gz) = d70810792cc945a76bd5aa8726a49df272168acc814eb39613e7c29c47df8c6e
+SIZE (pysodium-0.7.5.tar.gz) = 19889
