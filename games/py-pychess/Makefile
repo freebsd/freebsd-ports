@@ -11,6 +11,8 @@ COMMENT=	GTK chess client written in Python
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to configure: ModuleNotFoundError: No module named 'gi'
+
 COMMON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy*>1.:databases/py-sqlalchemy13@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil*>0.:sysutils/py-psutil@${PY_FLAVOR} \
@@ -18,7 +20,7 @@ COMMON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 RUN_DEPENDS=	${COMMON_DEPENDS}
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 
-USES=		desktop-file-utils display gettext python:3.3+
+USES=		desktop-file-utils display gettext gnome python:3.3+
 USE_GSTREAMER1=	yes
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	gtksourceview3:run glib20 gtk30 librsvg2 introspection
