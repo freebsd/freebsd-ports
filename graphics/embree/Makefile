@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	embree
-PORTVERSION=	3.8.0
+PORTVERSION=	3.9.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -54,6 +53,8 @@ post-patch:
 		${WRKSRC}/common/simd/vint4_sse2.h
 	@${REINPLACE_CMD} -e 's,#else,#elif defined(MAP_HUGETLB),' \
 		${WRKSRC}/common/sys/alloc.cpp
+# Avoid "Redefining uint8/uint16/uint32/uint64 type which is part of
+# ISPC language since version 1.13" error
 	@${ECHO_CMD} > ${WRKSRC}/tutorials/common/common.isph
 
 .include <bsd.port.post.mk>
