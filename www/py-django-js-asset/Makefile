@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-js-asset
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,6 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=		yes
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj21-django-js-asset \
-			${PYTHON_PKGNAMEPREFIX}dj22-django-js-asset
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj22-django-js-asset
 
 .include <bsd.port.mk>
