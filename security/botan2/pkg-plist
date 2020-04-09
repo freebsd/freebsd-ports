@@ -318,7 +318,7 @@ include/botan-2/botan/xts.h
 include/botan-2/botan/zlib.h
 lib/libbotan-2.a
 lib/libbotan-2.so
-lib/libbotan-2.so.%%SHLIBVER%%
-lib/libbotan-2.so.%%SHLIBVER%%.%%SHLIBVER%%.%%SHLIBVERPATCH%%
+lib/libbotan-2.so.%%SOABIVER%%
+lib/libbotan-2.so.%%SOABIVER%%.%%SHLIBVER%%.%%SHLIBVERPATCH%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/botan2.py
 libdata/pkgconfig/botan-2.pc
