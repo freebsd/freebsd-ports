@@ -12,7 +12,7 @@ COMMENT=	Lightweight Open Sound Control implementation
 
 LICENSE=	LGPL21
 
-USES=		gmake libtool pathfix
+USES=		compiler:c++11-lang gmake libtool pathfix
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
