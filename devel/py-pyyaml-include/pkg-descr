@@ -1,0 +1,4 @@
+pyyaml-include provides an extending constructor of PyYAML: include YAML files
+into YAML document.
+
+WWW: https://github.com/tanbro/pyyaml-include
