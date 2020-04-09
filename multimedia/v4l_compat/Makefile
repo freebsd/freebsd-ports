@@ -8,7 +8,7 @@ COMMENT=	Video4Linux IOCTL header files
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-MASTERDIR=	${.CURDIR}/../../multimedia/libv4l
+MASTERDIR=	${.CURDIR}/../libv4l
 EXTRADIR=	${WRKSRC}/../linux
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
