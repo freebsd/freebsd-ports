@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	5.8.0
+PORTVERSION=	6.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/python/ \
 		ftp://libvirt.org/libvirt/python/
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libvirt.so:devel/libvirt
 
-USES=	pkgconfig python shebangfix
+USES=	pkgconfig python:3.6+ shebangfix
 SHEBANG_FILES=	generator.py sanitytest.py setup.py
 USE_PYTHON=	distutils autoplist
 
