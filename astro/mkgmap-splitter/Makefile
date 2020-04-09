@@ -17,6 +17,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 SUB_FILES=	${PORTNAME}.sh
+SUB_LIST=	JAVA="${JAVA}"
 
 PLIST_FILES=	bin/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	*
@@ -35,5 +36,8 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/intro.txt ${STAGEDIR}${DOCSDIR}/
+
+do-test:
+	${JAVA} -jar ${WRKSRC}/${PORTNAME}.jar --help >/dev/null 2>&1
 
 .include <bsd.port.mk>
