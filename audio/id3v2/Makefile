@@ -13,6 +13,8 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libid3.so:audio/id3lib
 
+USES=		compiler:c++11-lang
+
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/id3v2 \
