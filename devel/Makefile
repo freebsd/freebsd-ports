@@ -4740,6 +4740,7 @@
     SUBDIR += py-pinocchio
     SUBDIR += py-pip
     SUBDIR += py-pip-api
+    SUBDIR += py-pip-licenses
     SUBDIR += py-pip-run
     SUBDIR += py-pip-tools
     SUBDIR += py-pipdeptree
