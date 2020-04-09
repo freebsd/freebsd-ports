@@ -12,7 +12,7 @@
  
      for my $e (sort @syms) {
 -       if($e =~ /(OBSOLETE|^CURL_EXTERN|_LAST\z|_LASTENTRY\z)/) {
-+       if($e =~ /(OBSOLETE|^CURL_EXTERN|_LAST\z|_LASTENTRY\z|^CURLINC_)/) {
++       if($e =~ /(OBSOLETE|^CURL_EXTERN|_LAST\z|_LASTENTRY\z|^CURLINC_|WIN32|CURLOPT)/) {
            next;
         }
         my ($group) = $e =~ m/^([^_]+_)/;
