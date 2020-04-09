@@ -1,16 +1,14 @@
 # Created by: KalleDK <plexmaintainer@k-moeller.dk>
 # $FreeBSD$
 
-PORTVERSION=	1.19.1.2589
-DISTVERSIONSUFFIX=2de7f3266
-PORTREVISION=	1
+PORTVERSION=	1.19.1.2645
+DISTVERSIONSUFFIX=ccb6eb67e
+PORTREVISION=	0
 MASTER_SITES=	https://downloads.plex.tv/plex-media-server-new/${DISTVERSION}-${DISTVERSIONSUFFIX}/freebsd/
 PKGNAMESUFFIX=	-plexpass
 DISTNAME=	PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}-FreeBSD-${ARCH}
 
 MAINTAINER=	feld@FreeBSD.org
-
-BROKEN=	Upstream broke the build for FreeBSD
 
 USE_RC_SUBR=	${PORTNAME}_plexpass
 
