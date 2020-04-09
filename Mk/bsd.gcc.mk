@@ -95,7 +95,6 @@ _USE_GCC:=	${GCC_DEFAULT}
 # A concrete version has been selected. Set proper ports dependencies,
 # CC, CXX, CPP, and flags.
 V:=			${_USE_GCC:S/.//}
-_GCC_PORT_DEPENDS:=	gcc${V}
 _GCC_PORT:=		gcc${V}
 CC:=			gcc${V}
 CXX:=			g++${V}
@@ -117,11 +116,11 @@ LDFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME} -L${_GCC_RUNTIME}
 CFLAGS:=		${CFLAGS:N-mretpoline}
 CXXFLAGS:=		${CXXFLAGS:N-mretpoline}
 
-.if defined(_GCC_PORT_DEPENDS)
-BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:lang/${_GCC_PORT}
-RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:lang/${_GCC_PORT}
-# Later GCC ports already depend on binutils; make sure whatever we
-# build leverages this as well.
+.if defined(_GCC_PORT)
+BUILD_DEPENDS+=	${CC}:lang/${_GCC_PORT}
+RUN_DEPENDS+=	${CC}:lang/${_GCC_PORT}
+# GCC ports already depend on binutils; make sure whatever we build
+# leverages this as well.
 USE_BINUTILS=	yes
 .endif
 
