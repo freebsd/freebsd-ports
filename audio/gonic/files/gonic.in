@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: gonic
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=gonic
+rcvar=${name}_enable
+desc="Music streaming server"
+
+load_rc_config "${name}"
+
+# other variables:
+# gonic_scan_interval
+# gonic_music_path
+
+: ${gonic_enable:="NO"}
+: ${gonic_user:="gonic"}
+: ${gonic_group:="gonic"}
+: ${gonic_proxy_prefix:="/"}
+: ${gonic_db_path:="/var/db/gonic/gonic.db"}
+: ${gonic_listen_addr:="0.0.0.0:4747"}
+
+pidfile=/var/run/gonic.pid
+procname="%%PREFIX%%/bin/gonic"
+command="/usr/sbin/daemon"
+command_args="-cf -p ${pidfile} ${procname} ${gonic_music_path:+-music-path=${gonic_music_path}} ${gonic_proxy_prefix:+-proxy-prefix=${gonic_proxy_prefix}} ${gonic_listen_addr:+-listen-addr=${gonic_listen_addr}} ${gonic_scan_interval:+-scan-interval=${gonic_scan_interval}} ${gonic_db_path:+-db-path=${gonic_db_path}} ${gonic_args}"
+
+gonic_startprecmd()
+{
+	if [ ! -e ${pidfile} ]; then
+		install -o ${gonic_user} -g ${gonic_group} /dev/null ${pidfile};
+	fi
+}
+start_precmd=gonic_startprecmd
+run_rc_command "$1"

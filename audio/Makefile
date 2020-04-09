@@ -233,6 +233,7 @@
     SUBDIR += gnustep-cdplayer
     SUBDIR += goattracker
     SUBDIR += gogglesmm
+    SUBDIR += gonic
     SUBDIR += goobox
     SUBDIR += gqradio
     SUBDIR += gradio

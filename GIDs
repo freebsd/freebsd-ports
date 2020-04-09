@@ -192,7 +192,7 @@ signal-cli:*:248:
 sonarqube:*:249:
 sems:*:250:
 irrd:*:251:
-# free: 252
+gonic:*:252:
 _adsuck:*:253:
 imds:*:254:
 _i2pd:*:255:
