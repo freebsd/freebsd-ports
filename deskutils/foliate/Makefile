@@ -2,6 +2,7 @@
 
 PORTNAME=	foliate
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	fox@FreeBSD.org
@@ -43,5 +44,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/libexec/foliate/com.github.johnfactotum.Foliate
 	@${RLN} ${STAGEDIR}${PREFIX}/libexec/foliate/com.github.johnfactotum.Foliate \
 		${STAGEDIR}${PREFIX}/bin/foliate
+	@${REINPLACE_CMD} -e 's/Exec=com.github.johnfactotum.Foliate %F/Exec=foliate %F/g' \
+		${STAGEDIR}${PREFIX}/share/applications/com.github.johnfactotum.Foliate.desktop
 
 .include <bsd.port.mk>
