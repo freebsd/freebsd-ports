@@ -3,6 +3,6 @@ include/librsync.h
 include/librsync_export.h
 lib/librsync.so
 lib/librsync.so.2
-lib/librsync.so.2.2.1
+lib/librsync.so.%%PORTVERSION%%
 man/man1/rdiff.1.gz
 man/man3/librsync.3.gz
