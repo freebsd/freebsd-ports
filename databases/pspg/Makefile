@@ -1,12 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	pspg
-DISTVERSION=	3.0.0
+DISTVERSION=	3.0.2
 CATEGORIES=	databases
-
-# https://github.com/okbob/pspg/issues/128
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	96330321c187e6ee199ff0c41c65002e17c25f33.patch:-p1
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Tabular data pager designed to be used with psql
