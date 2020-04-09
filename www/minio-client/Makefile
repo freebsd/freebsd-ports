@@ -27,10 +27,11 @@ MC=	${PORTNAME}
 .endif
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-03-14T01-23-37Z
-COMMIT_ID=	5b5d65a142c5562e412de022a3114e83378096a5
+GHTAG=		RELEASE.2020-04-04T05-28-55Z
+COMMIT_ID=	8cae137525a4ae986a1701b7ce3a3f5f065dfa31
 GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
+		klauspost:compress:v1.10.3:klauspost_compress/vendor/github.com/klauspost/compress \
 		cheggaaa:pb:v1.0.28:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
 		coreos:etcd:v3.3.12:coreos_etcd/vendor/github.com/coreos/etcd \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
@@ -43,9 +44,9 @@ GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:crypto:1d94cc7ab1c6:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:16171245cfb2:golang_net/vendor/golang.org/x/net \
+		golang:net:d3edc99:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:12a6c2dcc1e4:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:59c9f1b:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:24fa4b261c55:google_go_genproto/vendor/google.golang.org/genproto \
 		grpc:grpc-go:v1.22.0:grpc_grpc_go/vendor/google.golang.org/grpc \
@@ -59,17 +60,18 @@ GH_TUPLE=	minio:mc:${GHTAG}:DEFAULT \
 		mattn:go-isatty:v0.0.7:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.5:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
-		minio:minio-go:097caa7760c7:minio_minio_go/vendor/github.com/minio/minio-go/v6 \
-		minio:minio:b1a2169dcc5b:minio_minio/vendor/github.com/minio/minio \
+		minio:minio-go:v6.0.52:minio_minio_go/vendor/github.com/minio/minio-go/v6 \
+		minio:minio:2155e74951bf:minio_minio/vendor/github.com/minio/minio \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
+		montanaflynn:stats:v0.5.0:montanaflynn_stats/vendor/github.com/montanaflynn/stats \
 		ncw:directio:v1.0.5:ncw_directio/vendor/github.com/ncw/directio \
 		pkg:profile:v1.3.0:pkg_profile/vendor/github.com/pkg/profile \
 		pkg:xattr:v0.4.1:pkg_xattr/vendor/github.com/pkg/xattr \
 		posener:complete:6ffe496ea953:posener_complete/vendor/github.com/posener/complete \
 		rjeczalik:notify:v0.9.2:rjeczalik_notify/vendor/github.com/rjeczalik/notify \
 		secure-io:sio-go:v0.3.0:secure_io_sio_go/vendor/github.com/secure-io/sio-go \
-		shirou:gopsutil:v2.18.12:shirou_gopsutil/vendor/github.com/shirou/gopsutil
+		shirou:gopsutil:v2.20.3:shirou_gopsutil/vendor/github.com/shirou/gopsutil
 
 PLIST_FILES=	bin/${MC}
 GO_BUILDFLAGS=	-ldflags=" \
