@@ -12,7 +12,6 @@ MASTERDIR=	${.CURDIR}/../libv4l
 EXTRADIR=	${WRKSRC}/../linux
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-LIBV4L_SLAVE=	compat
 
 BASE_HEADERS=	ivtv.h v4l2-controls.h \
 		v4l2-common.h videodev2.h

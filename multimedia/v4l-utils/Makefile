@@ -9,7 +9,6 @@ COMMENT=	Video4Linux utilities
 MASTERDIR=	${.CURDIR}/../libv4l
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-LIBV4L_SLAVE=   utils
 
 INSTALL_WRKSRC=	${WRKSRC}/utils
 

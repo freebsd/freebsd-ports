@@ -17,12 +17,10 @@ COMMENT?=	Video4Linux library
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-LIBV4L_SLAVE?=	no
-
 USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/v4l-utils-${PORTVERSION}
 
-.if ${LIBV4L_SLAVE} != compat
+.if ${PORTNAME} == v4l-utils || ${PORTNAME} == libv4l
 BUILD_DEPENDS+=	v4l_compat>=${PORTVERSION}:multimedia/v4l_compat
 
 GNU_CONFIGURE=	yes
@@ -35,7 +33,7 @@ CONFIGURE_ARGS=	--enable-libdvbv5 \
 		--without-libudev
 INSTALL_TARGET=	install-strip
 
-. if ${LIBV4L_SLAVE} == utils
+. if ${PORTNAME} == v4l-utils
 BUILD_DEPENDS+=	libv4l>=${PORTVERSION}:multimedia/libv4l
 LIB_DEPENDS+=	libargp.so:devel/argp-standalone \
 		libv4l2.so:multimedia/libv4l
@@ -64,7 +62,7 @@ post-patch:
 		s|__u16|uint16_t|g; s|__s16|int16_t|g; \
 		s|__u32|uint32_t|g; s|__s32|int32_t|g; \
 		s|__u64|uint64_t|g; s|__s64|int64_t|g'
-.if ${LIBV4L_SLAVE} == compat
+.if ${PORTNAME} == v4l_compat
 .for patch in ${HEADER_PATCHES}
 	@cd ${WRKDIR}/linux && ${PATCH} -p2 < ${FILESDIR}/${patch}
 .endfor
