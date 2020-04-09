@@ -372,9 +372,9 @@ man/man1/omniidl.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/omniNames.html
 %%PORTDOCS%%%%DOCSDIR%%/omniNames.pdf
 %%PORTDOCS%%%%DOCSDIR%%/omniORB.pdf
-%%PORTDOCS%%%%DOCSDIR%%/omniORB/contents_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/omniORB/contents_motif.svg
 %%PORTDOCS%%%%DOCSDIR%%/omniORB/index.html
-%%PORTDOCS%%%%DOCSDIR%%/omniORB/next_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/omniORB/next_motif.svg
 %%PORTDOCS%%%%DOCSDIR%%/omniORB/omniORB.css
 %%PORTDOCS%%%%DOCSDIR%%/omniORB/omniORB.html
 %%PORTDOCS%%%%DOCSDIR%%/omniORB/omniORB001.html
@@ -393,7 +393,7 @@ man/man1/omniidl.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/omniORB/omniORB014.html
 %%PORTDOCS%%%%DOCSDIR%%/omniORB/omniORB015.html
 %%PORTDOCS%%%%DOCSDIR%%/omniORB/omniORB016.html
-%%PORTDOCS%%%%DOCSDIR%%/omniORB/previous_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/omniORB/previous_motif.svg
 %%PORTDOCS%%%%DOCSDIR%%/omniidl.html
 %%PORTDOCS%%%%DOCSDIR%%/omniidl.pdf
 %%PORTDOCS%%%%DOCSDIR%%/omnithread.html

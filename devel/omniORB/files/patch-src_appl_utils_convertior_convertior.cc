@@ -1,6 +1,6 @@
---- src/appl/utils/convertior/convertior.cc.orig	2009-05-28 09:30:13 UTC
+--- src/appl/utils/convertior/convertior.cc.orig	2017-02-20 22:45:59 UTC
 +++ src/appl/utils/convertior/convertior.cc
-@@ -44,6 +44,12 @@
+@@ -42,6 +42,12 @@
  // macro called minor.
  #undef minor
  

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniORB
-DISTVERSION=	4.2.3
-PORTREVISION=	1
+DISTVERSION=	4.2.4
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}-${DISTVERSION:S/-2//}
 
@@ -19,7 +18,7 @@ USES=		compiler:c++11-lang gmake pkgconfig python tar:bzip2 \
 		shebangfix ssl
 
 CONFLICTS=	omniORB41-4.1.*
-SONUM=		3
+SONUM=		4
 PLIST_SUB+=	SONUM=${SONUM}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

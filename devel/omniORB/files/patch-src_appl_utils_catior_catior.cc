@@ -1,6 +1,6 @@
---- src/appl/utils/catior/catior.cc.orig	2013-10-29 18:17:16 UTC
+--- src/appl/utils/catior/catior.cc.orig	2017-02-20 22:45:59 UTC
 +++ src/appl/utils/catior/catior.cc
-@@ -55,6 +55,12 @@
+@@ -53,6 +53,12 @@
  // macro called minor.
  #undef minor
  
