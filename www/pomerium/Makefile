@@ -2,7 +2,7 @@
 
 PORTNAME=	pomerium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	www
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -44,7 +44,7 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:0ec3e9974c59:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:baeed622b8d8:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mock:v1.4.3:golang_mock/vendor/github.com/golang/mock \
 		golang:net:6afb5195e5aa:golang_net/vendor/golang.org/x/net \
