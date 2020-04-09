@@ -356,9 +356,9 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/omniORB/ziop_idl.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/python.py
 %%PYTHON_SITELIBDIR%%/omniidl_be/python.pyc
-%%PORTDOCS%%%%DOCSDIR%%/html/contents_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/contents_motif.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/next_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/next_motif.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy.css
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy.html
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy001.html
@@ -374,7 +374,7 @@ include/omniORBpy.h
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy011.html
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy012.html
 %%PORTDOCS%%%%DOCSDIR%%/html/omniORBpy013.html
-%%PORTDOCS%%%%DOCSDIR%%/html/previous_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/previous_motif.svg
 %%PORTDOCS%%%%DOCSDIR%%/omniORBpy.pdf
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniORBpy.bib
 %%PORTDOCS%%%%DOCSDIR%%/tex/omniORBpy.tex
@@ -412,10 +412,6 @@ include/omniORBpy.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/pserver.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/tclient.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/tserver.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tictactoe/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tictactoe/gameClient.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tictactoe/gameServer.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tictactoe/tictactoe.idl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/simple/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/simple/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/valuetype/simple/value.idl

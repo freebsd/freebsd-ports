@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniorb
-DISTVERSION=	4.2.3
-PORTREVISION=	4
+DISTVERSION=	4.2.4
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/omniORBpy/omniORBpy-${DISTVERSION:S/-2//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +29,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 PLIST_SUB=	SONUM=2
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-2//}
-OMNIORB_WRKSRC!=	cd ${.CURDIR}/../omniORB && ${MAKE} -V WRKSRC
+OMNIORB_WRKSRC=	cd ${.CURDIR}/../omniORB && ${MAKE} -V WRKSRC
 
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
@@ -39,14 +38,14 @@ SHEBANG_FILES=	examples/tests/*.py examples/poa/*.py \
 		examples/fortune/*.py examples/embed/*.py \
 		examples/valuetype/tests/*.py \
 		examples/valuetype/simple/*.py \
-		examples/ami/*.py examples/tictactoe/*.py \
+		examples/ami/*.py \
 		examples/echo/*.py
 
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} --with-omniorb=${LOCALBASE}
 
 pre-configure:
-	@cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} --quiet -pdum ${WRKSRC}
+	@cd $$(${OMNIORB_WRKSRC}) && ${FIND} idl | ${CPIO} --quiet -pdum ${WRKSRC}
 
 post-install:
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('CosNaming/__init__.py',None,'CosNaming/__init__.pyc',True)"
