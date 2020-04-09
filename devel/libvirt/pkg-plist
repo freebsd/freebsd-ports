@@ -134,6 +134,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/api/libvirt-api.xml
 %%DATADIR%%/api/libvirt-lxc-api.xml
 %%DATADIR%%/api/libvirt-qemu-api.xml
+%%DATADIR%%/cpu_map/arm_features.xml
 %%DATADIR%%/cpu_map/index.xml
 %%DATADIR%%/cpu_map/ppc64_POWER6.xml
 %%DATADIR%%/cpu_map/ppc64_POWER7.xml
@@ -147,15 +148,19 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Broadwell-noTSX-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Broadwell-noTSX.xml
 %%DATADIR%%/cpu_map/x86_Broadwell.xml
+%%DATADIR%%/cpu_map/x86_Cascadelake-Server-noTSX.xml
 %%DATADIR%%/cpu_map/x86_Cascadelake-Server.xml
 %%DATADIR%%/cpu_map/x86_Conroe.xml
+%%DATADIR%%/cpu_map/x86_Dhyana.xml
 %%DATADIR%%/cpu_map/x86_EPYC-IBPB.xml
 %%DATADIR%%/cpu_map/x86_EPYC.xml
 %%DATADIR%%/cpu_map/x86_Haswell-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Haswell-noTSX-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Haswell-noTSX.xml
 %%DATADIR%%/cpu_map/x86_Haswell.xml
+%%DATADIR%%/cpu_map/x86_Icelake-Client-noTSX.xml
 %%DATADIR%%/cpu_map/x86_Icelake-Client.xml
+%%DATADIR%%/cpu_map/x86_Icelake-Server-noTSX.xml
 %%DATADIR%%/cpu_map/x86_Icelake-Server.xml
 %%DATADIR%%/cpu_map/x86_IvyBridge-IBRS.xml
 %%DATADIR%%/cpu_map/x86_IvyBridge.xml
@@ -170,8 +175,10 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_SandyBridge-IBRS.xml
 %%DATADIR%%/cpu_map/x86_SandyBridge.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client-IBRS.xml
+%%DATADIR%%/cpu_map/x86_Skylake-Client-noTSX-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Server-IBRS.xml
+%%DATADIR%%/cpu_map/x86_Skylake-Server-noTSX-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Server.xml
 %%DATADIR%%/cpu_map/x86_Westmere-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Westmere.xml
@@ -196,6 +203,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/schemas/capability.rng
 %%DATADIR%%/schemas/cputypes.rng
 %%DATADIR%%/schemas/domain.rng
+%%DATADIR%%/schemas/domainbackup.rng
 %%DATADIR%%/schemas/domaincaps.rng
 %%DATADIR%%/schemas/domaincheckpoint.rng
 %%DATADIR%%/schemas/domaincommon.rng

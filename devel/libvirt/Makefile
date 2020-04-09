@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	5.8.0
+PORTVERSION=	6.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -14,13 +14,15 @@ LICENSE=	LGPL3
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
+		libgnutls.so:security/gnutls \
 		libxml2.so:textproc/libxml2
 BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
+		rst2html:textproc/py-docutils \
 		xsltproc:textproc/libxslt
 RUN_DEPENDS=	dnsmasq:dns/dnsmasq
 
-OPTIONS_DEFINE=	DOCS GNUTLS NLS NSS QEMU READLINE SASL LIBSSH LIBSSH2 ZFS
-OPTIONS_DEFAULT=	GNUTLS READLINE LIBSSH LIBSSH2 ZFS
+OPTIONS_DEFINE=	DOCS NLS NSS QEMU READLINE SASL LIBSSH LIBSSH2 ZFS
+OPTIONS_DEFAULT=	READLINE LIBSSH LIBSSH2 ZFS
 OPTIONS_DEFINE_amd64=	XEN
 .if exists(/usr/sbin/bhyve)
 OPTIONS_DEFINE_amd64+=	BHYVE
@@ -45,10 +47,6 @@ BHYVE_CONFIGURE_WITH=	bhyve
 QEMU_CONFIGURE_WITH=	qemu
 QEMU_RUN_DEPENDS=	dmidecode:sysutils/dmidecode \
 			qemu-io:emulators/qemu
-
-GNUTLS_CONFIGURE_ON=	--with-gnutls=${LOCALBASE}
-GNUTLS_CONFIGURE_OFF=	--without-gnutls
-GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
@@ -77,17 +75,17 @@ ZFS_CONFIGURE_WITH=	storage-zfs
 VARDIR=		/var
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--without-avahi \
+CONFIGURE_ARGS+=	\
 		--without-dbus \
 		--without-polkit \
 		--without-hal \
 		--without-udev \
 		--without-netcf \
 		--without-sysctl \
-		--without-xen \
 		--without-login-shell \
 		--without-wireshark-dissector \
 		--localstatedir=${VARDIR}
+CONFIGURE_OUTSOURCE=yes
 
 # random_data fix can be removed when 8.x is eol
 CONFIGURE_ENV=	ac_cv_type_struct_random_data=""
@@ -97,15 +95,16 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-USES=		charsetfix compiler:c++0x cpe gettext-runtime gmake libtool pathfix \
+USES=		gnome charsetfix compiler:c++0x cpe gettext-runtime gmake libtool pathfix \
 		perl5 python:build pkgconfig shebangfix tar:xz
+USE_GNOME=	glib20
 USE_RC_SUBR=	libvirtd virtlogd
 CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.5008.0
+SHLIB_VER=	0.6002.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 SHEBANG_FILES=	src/keycodemapdb/tools/keymap-gen
