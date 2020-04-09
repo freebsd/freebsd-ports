@@ -10,7 +10,7 @@ MASTER_SITES=	http://home.risingnet.net/download/ \
 		https://BSDforge.com/projects/source/irc/bnc/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	douglas@t2web.com.br
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Simple IRC relay proxy with support for virtual hosting
 
 LICENSE=	GPLv2
