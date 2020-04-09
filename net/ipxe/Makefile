@@ -17,39 +17,33 @@ USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
 USE_GCC=	yes
 USE_GITHUB=	yes
-# iPXE hasn't had a release since 2010.
-# See iPXE's FAQ at http://ipxe.org/faq
-#
-#   Q: Which version of iPXE should I use?
-#
-#   A: iPXE uses a rolling release model, in which every commit is intended
-#      to be production-ready.  You should always use the latest code.
-#
 GH_TAGNAME=	3fe683ebab29afacf224e6b0921f6329bebcdca7
 USE_PERL5=	build
-
-ALL_TARGET=	bin/ipxe.dsk bin/ipxe.lkrn bin/ipxe.pxe bin/ipxe.usb bin/undionly.kpxe
-# VMware ROMs
-ALL_TARGET+=	bin/8086100f.mrom bin/808610d3.mrom bin/10222000.rom bin/15ad07b0.rom
-MAKE_ARGS=	HOST_CC=${CC} \
-		PERL=${PERL} \
-		CC=${CC} \
-		AS=${AS} \
-		LD=${LD} \
-		SIZE=${SIZE} \
-		AR=${AR} \
-		RANLIB=${RANLIB} \
-		OBJCOPY=${OBJCOPY} \
-		NM=${NM} \
-		OBJDUMP=${OBJDUMP} \
-		ARCH=${ARCH:S/amd64/i386/} \
-		NO_WERROR=1 \
-		V=1 \
-		${IPXE_MAKE_ARGS}
-PLIST_FILES=	${ALL_TARGET:S@^bin/@${DATADIR}/@}
 SHEBANG_FILES=	util/geniso util/gensdsk
+MAKE_ARGS=	AR=${AR} \
+		ARCH=${ARCH:S/amd64/i386/} \
+		AS=${AS} \
+		CC=${CC} \
+		HOST_CC=${CC} \
+		LD=${LD} \
+		NM=${NM} \
+		NO_WERROR=1 \
+		OBJCOPY=${OBJCOPY} \
+		OBJDUMP=${OBJDUMP} \
+		PERL=${PERL} \
+		RANLIB=${RANLIB} \
+		SIZE=${SIZE} \
+		V=1
+# Append user-settable build args from make.conf
+MAKE_ARGS+=	${IPXE_MAKE_ARGS}
+ALL_TARGET=	bin/ipxe.dsk bin/ipxe.lkrn bin/ipxe.pxe bin/ipxe.usb \
+		bin/undionly.kpxe
+# VMware ROMs
+ALL_TARGET+=	bin/8086100f.mrom bin/808610d3.mrom bin/10222000.rom \
+		bin/15ad07b0.rom
 SUB_FILES=	pkg-message
 WRKSRC_SUBDIR=	src
+PLIST_FILES=	${ALL_TARGET:S@^bin/@${DATADIR}/@}
 
 # Possible options are listed in ${WRKSRC}/config/*.h and
 # http://ipxe.org/buildcfg.  Add a ! prefix to an option to undef it
@@ -65,23 +59,23 @@ _IPXE_BUILDCFG=	branding:PRODUCT_NAME="${PKGNAME} (${OPSYS} ${OSREL}/${ARCH})" \
 		general:PING_CMD \
 		general:POWEROFF_CMD
 
-OPTIONS_DEFAULT=	ISO EFI
-OPTIONS_DEFINE=		ISO EFI
+OPTIONS_DEFINE=		EFI ISO
+OPTIONS_DEFAULT=	EFI ISO
 
 EFI_DESC=	Create EFI image
 ISO_DESC=	Create bootable CD image
 
-EFI_ARCHS=	i386 ${ARCH:Mamd64:S/amd64/x86_64/}
-.for _arch in ${EFI_ARCHS}
+_EFI_ARCHS=		${ARCH:Mamd64:S/amd64/x86_64/} i386
+.for _arch in ${_EFI_ARCHS}
 EFI_PLIST_FILES+=	${DATADIR}/ipxe.efi-${_arch}
 .endfor
 
-ISO_ALL_TARGET=	bin/ipxe.iso
-ISO_BUILD_DEPENDS=	bash:shells/bash \
-		${LOCALBASE}/share/syslinux/bios/core/isolinux.bin:sysutils/syslinux \
-		mkisofs:sysutils/cdrtools
-ISO_MAKE_ARGS=	ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
-		LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
+ISO_BUILD_DEPENDS=	${LOCALBASE}/share/syslinux/bios/core/isolinux.bin:sysutils/syslinux \
+			bash:shells/bash \
+			mkisofs:sysutils/cdrtools
+ISO_MAKE_ARGS=		ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
+			LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
+ISO_ALL_TARGET=		bin/ipxe.iso
 
 .include <bsd.port.pre.mk>
 
@@ -110,7 +104,7 @@ pre-build-ISO-on:
 	${INSTALL} -m 644 ${LOCALBASE}/share/syslinux/bios/core/isolinux.bin ${WRKSRC}/isolinux.bin
 
 do-build-EFI-on:
-.for _arch in ${EFI_ARCHS}
+.for _arch in ${_EFI_ARCHS}
 	${DO_MAKE_BUILD} ARCH=${_arch} -C ${WRKSRC} bin-${_arch}-efi/ipxe.efi
 .endfor
 
@@ -119,7 +113,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${ALL_TARGET} ${STAGEDIR}${DATADIR}
 
 do-install-EFI-on:
-.for _arch in ${EFI_ARCHS}
+.for _arch in ${_EFI_ARCHS}
 	${INSTALL_DATA} ${WRKSRC}/bin-${_arch}-efi/ipxe.efi ${STAGEDIR}${DATADIR}/ipxe.efi-${_arch}
 .endfor
 
