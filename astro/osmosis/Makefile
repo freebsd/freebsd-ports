@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osmosis
-PORTVERSION=	0.47.3
+PORTVERSION=	0.47.4
 CATEGORIES=	astro java
 MASTER_SITES=	https://github.com/openstreetmap/osmosis/releases/download/${PORTVERSION}/
 
@@ -12,11 +12,11 @@ COMMENT=	Command line Java app for processing OpenStreetMap data
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
-NO_WRKSUBDIR=	yes
 USES=		tar:tgz
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
@@ -35,5 +35,12 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/changes.txt ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
+
+do-test:
+	${JAVA} \
+		-cp ${STAGEDIR}${DATADIR}/lib/default/plexus-classworlds-*.jar \
+		-Dapp.home=${STAGEDIR}${DATADIR} \
+		-Dclassworlds.conf=${STAGEDIR}${DATADIR}/config/plexus.conf \
+		org.codehaus.classworlds.Launcher
 
 .include <bsd.port.mk>
