@@ -1,4 +1,4 @@
---- Makefile.orig	2019-04-17 03:23:22 UTC
+--- Makefile.orig	2020-04-08 07:26:52 UTC
 +++ Makefile
 @@ -3,9 +3,11 @@ DIR_SRC := ./src
  DIR_OBJ := ./obj
@@ -12,7 +12,7 @@
  
  SRC := $(wildcard ${DIR_SRC}/*.cpp)
  OBJ := $(patsubst %.cpp,${DIR_OBJ}/%.o,$(notdir ${SRC}))
-@@ -15,7 +17,8 @@ TARGET := fastp
+@@ -15,13 +17,14 @@ TARGET := fastp
  BIN_TARGET := ${TARGET}
  
  CXX ?= g++
@@ -20,8 +20,16 @@
 +CXXFLAGS ?= -g -O3
 +CXXFLAGS += -std=c++11 -I${DIR_INC} $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir))
  LIBS := -lz -lpthread
- LD_FLAGS := $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(LIBS) $(LD_FLAGS)
+-LD_FLAGS := $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(LIBS) $(LD_FLAGS)
++LDFLAGS += $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(LIBS)
  
+ 
+ ${BIN_TARGET}:${OBJ}
+-	$(CXX) $(OBJ) -o $@ $(LD_FLAGS)
++	$(CXX) $(OBJ) -o $@ $(LDFLAGS)
+ 
+ ${DIR_OBJ}/%.o:${DIR_SRC}/%.cpp make_obj_dir
+ 	$(CXX) -c $< -o $@ $(CXXFLAGS)
 @@ -38,5 +41,8 @@ make_obj_dir:
  	fi
  
