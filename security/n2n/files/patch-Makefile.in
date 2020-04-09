@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-04-09 19:38:26 UTC
++++ Makefile.in
+@@ -6,7 +6,7 @@ GIT_COMMITS=@GIT_COMMITS@
+ ########
+ 
+ CC?=gcc
+-DEBUG?=-g3
++#DEBUG?=-g3
+ #OPTIMIZATION?=-O2
+ WARN?=-Wall
+ 
