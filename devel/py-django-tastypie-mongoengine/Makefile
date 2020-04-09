@@ -21,7 +21,7 @@ RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}django-tastypie>=0.9.12:www/py-django-tasty
 USE_GITHUB=		yes
 GH_ACCOUNT=		wlanslovenija
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
