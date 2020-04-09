@@ -1,3 +1,3 @@
-TIMESTAMP = 1585752043
-SHA256 (fsspec-0.7.1.tar.gz) = 442e65c9b0cbb7ef0036e6cbbc2c045e3d68a7aba4703b46cd786bba507f7fd1
-SIZE (fsspec-0.7.1.tar.gz) = 106192
+TIMESTAMP = 1586366842
+SHA256 (fsspec-0.7.2.tar.gz) = 2f74d8cb37820480d5802620f819385a162202c7d9dbafcf82bc25e5fade4fd7
+SIZE (fsspec-0.7.2.tar.gz) = 107142
