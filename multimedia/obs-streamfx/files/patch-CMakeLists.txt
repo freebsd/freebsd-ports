@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2020-04-04 06:34:32 UTC
+--- CMakeLists.txt.orig	2020-04-08 22:29:18 UTC
 +++ CMakeLists.txt
 @@ -88,13 +88,13 @@ else()
  endif()
@@ -21,7 +21,7 @@
  
  # All Warnings, Extra Warnings, Pedantic
  if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-@@ -176,7 +176,7 @@ else()
+@@ -179,7 +179,7 @@ else()
  	set(CMAKE_PACKAGE_SUFFIX_OVERRIDE "" CACHE STRING "Override for the suffix.")
  
  	if(UNIX)
@@ -30,3 +30,23 @@
  	endif()
  
  	if(NOT ${PropertyPrefix}OBS_DOWNLOAD)
+@@ -990,8 +990,8 @@ else()
+ 	else()
+ 		install(
+ 			TARGETS ${PROJECT_NAME}
+-			RUNTIME DESTINATION "./obs-plugins/${BITS}bit/" COMPONENT Runtime
+-			LIBRARY DESTINATION "./obs-plugins/${BITS}bit/" COMPONENT Runtime
++			RUNTIME DESTINATION "lib/obs-plugins" COMPONENT Runtime
++			LIBRARY DESTINATION "lib/obs-plugins" COMPONENT Runtime
+ 		)
+ 		if(MSVC)
+ 			install(
+@@ -1003,7 +1003,7 @@ else()
+ 	
+ 		install(
+ 			DIRECTORY "data/"
+-			DESTINATION "./data/obs-plugins/${PROJECT_NAME}/"
++			DESTINATION "share/obs/obs-plugins/${PROJECT_NAME}/"
+ 		)
+ 		
+ 		add_custom_target(
