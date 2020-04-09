@@ -9,6 +9,7 @@ MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Global keyboard shortcuts registration
 
 LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++14-lang kde:5 xorg lxqt pkgconfig qt:5 tar:xz
 USE_QT=		buildtools_build qmake_build core dbus gui linguisttools \
