@@ -19,6 +19,10 @@ COMMON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 RUN_DEPENDS=	${COMMON_DEPENDS}
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 
+.if defined(PACKAGE_BUILDING)
+BROKEN=		fails to install: Unable to init server: Could not connect to 127.0.0.1: Connection refused
+.endif
+
 USES=		desktop-file-utils display gettext gnome python:3.3+
 USE_GSTREAMER1=	yes
 USE_PYTHON=	distutils autoplist
