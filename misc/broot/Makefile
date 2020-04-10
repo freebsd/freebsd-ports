@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	broot
-PORTVERSION=	0.13.5b
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.13.6
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -31,6 +31,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.8 \
 		bstr-0.2.8 \
+		bumpalo-3.2.1 \
 		byteorder-1.3.2 \
 		cast-0.2.3 \
 		cc-1.0.46 \
@@ -39,8 +40,8 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		clap-2.33.0 \
 		cloudabi-0.0.3 \
 		constant_time_eq-0.1.4 \
-		criterion-0.3.0 \
-		criterion-plot-0.4.0 \
+		criterion-0.3.1 \
+		criterion-plot-0.4.1 \
 		crossbeam-0.7.2 \
 		crossbeam-channel-0.3.9 \
 		crossbeam-deque-0.7.2 \
@@ -64,7 +65,6 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		fuchsia-cprng-0.1.1 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		getrandom-0.1.13 \
 		git2-0.11.0 \
 		glob-0.3.0 \
 		hermit-abi-0.1.3 \
@@ -75,6 +75,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		itertools-0.8.2 \
 		itoa-0.4.4 \
 		jobserver-0.1.19 \
+		js-sys-0.3.37 \
 		kernel32-sys-0.2.2 \
 		lazy-regex-0.1.2 \
 		lazy_static-1.4.0 \
@@ -94,22 +95,21 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		num-integer-0.1.41 \
 		num-traits-0.2.8 \
 		num_cpus-1.11.1 \
+		oorandom-11.1.0 \
 		open-1.4.0 \
 		parking_lot-0.10.0 \
 		parking_lot_core-0.7.0 \
 		pathdiff-0.1.0 \
 		percent-encoding-2.1.0 \
 		pkg-config-0.3.17 \
+		plotters-0.2.12 \
 		proc-macro2-1.0.6 \
 		quote-1.0.2 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
-		rand_core-0.5.1 \
 		rand_os-0.1.3 \
-		rand_os-0.2.2 \
-		rand_xoshiro-0.3.1 \
-		rayon-1.2.1 \
-		rayon-core-1.6.1 \
+		rayon-1.3.0 \
+		rayon-core-1.7.0 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
 		redox_users-0.3.1 \
@@ -122,6 +122,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		ryu-1.0.2 \
 		same-file-1.0.5 \
 		scopeguard-1.0.0 \
+		secular-0.2.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		serde-1.0.102 \
@@ -153,8 +154,13 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		users-0.9.1 \
 		vcpkg-0.2.8 \
 		vec_map-0.8.1 \
-		walkdir-2.2.9 \
-		wasi-0.7.0 \
+		walkdir-2.3.1 \
+		wasm-bindgen-0.2.60 \
+		wasm-bindgen-backend-0.2.60 \
+		wasm-bindgen-macro-0.2.60 \
+		wasm-bindgen-macro-support-0.2.60 \
+		wasm-bindgen-shared-0.2.60 \
+		web-sys-0.3.37 \
 		winapi-0.2.8 \
 		winapi-0.3.8 \
 		winapi-build-0.1.1 \
@@ -172,7 +178,7 @@ OPTIONS_DEFINE=	DOCS
 
 pre-build:
 	@${MV} ${WRKSRC}/man/page ${WRKSRC}/man/${PORTNAME}.1
-	@${REINPLACE_CMD} -e 's|#version|${PORTVERSION}|g' \
+	@${REINPLACE_CMD} -e 's|#version|${DISTVERSION}|g' \
 		-e "s|#date|$$(date +'%Y\/%m\/%d')|g" ${WRKSRC}/man/${PORTNAME}.1
 
 post-install:
