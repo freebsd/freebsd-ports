@@ -416,6 +416,7 @@ share/kservices5/org.kde.skrooge-plugin-search.desktop
 share/kservices5/org.kde.skrooge-plugin-tracker.desktop
 share/kservices5/org.kde.skrooge-plugin-unit.desktop
 share/kservices5/sources/org.kde.skrooge-source-coinmarketcap.desktop
+share/kservices5/sources/org.kde.skrooge-source-cryptocompare.desktop
 share/kservices5/sources/org.kde.skrooge-source-grandtrunk.desktop
 share/kservices5/sources/org.kde.skrooge-source-msn.desktop
 share/kservices5/sources/org.kde.skrooge-source-ratesapi.desktop
@@ -880,6 +881,7 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/images/logo/yomoni.png
 %%DATADIR%%/images/splash.png
 %%DATADIR%%/skrooge-coinmarketcap.py
+%%DATADIR%%/skrooge-cryptocompare.py
 %%DATADIR%%/skrooge-ratesapi.py
 %%DATADIR%%/skrooge-sabb.py
 %%DATADIR%%/skrooge-yahoodl.py
