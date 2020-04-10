@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2020-04-10 04:02:12 UTC
++++ CMakeLists.txt
+@@ -4,8 +4,8 @@ project(daggy)
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+ set(CMAKE_PREFIX_PATH ${CONAN_QT_ROOT})
+ 
+-include(conan)
++#include(conan)
+ 
+-set(CONAN_BUILD ON)
++#set(CONAN_BUILD ON)
+ 
+ add_subdirectory(src)

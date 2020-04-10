@@ -1,0 +1,14 @@
+bin/daggy
+include/DaggyCore/CJsonDataSourcesConvertor.h
+include/DaggyCore/CLocalDataProvider.h
+include/DaggyCore/CSsh2DataProviderFabric.h
+include/DaggyCore/CYamlDataSourcesConvertor.h
+include/DaggyCore/Command.h
+include/DaggyCore/Common.h
+include/DaggyCore/DaggyCore.h
+include/DaggyCore/IDataAggregator.h
+include/DaggyCore/IDataProviderFabric.h
+include/DaggyCore/IDataSourceConvertor.h
+include/DaggyCore/Result.h
+include/DaggyCore/daggycore_export.h
+lib/libDaggyCore.so
