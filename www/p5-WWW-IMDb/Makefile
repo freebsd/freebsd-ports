@@ -5,16 +5,14 @@ PORTNAME=	IMDb
 PORTVERSION=	0.01
 PORTREVISION=	2
 CATEGORIES=	www perl5
-MASTER_SITES=	ftp://ftp.rhapsodyk.net/pub/devel/perl/
+MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 PKGNAMEPREFIX=	p5-WWW-
 DISTNAME=	IMDb-current
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Perl interface to query the Internet Movie Database(IMDb)
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
