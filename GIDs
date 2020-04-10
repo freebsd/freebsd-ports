@@ -199,7 +199,7 @@ _i2pd:*:255:
 _tor:*:256:
 _smtpd:*:257:
 _smtpq:*:258:
-# free: 259
+spiped:*:259:
 meta1s:*:260:
 meta1q:*:261:
 meta1c:*:262:meta1s

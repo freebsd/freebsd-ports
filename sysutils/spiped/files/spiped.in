@@ -10,6 +10,8 @@
 # to enable this service:
 #
 # spiped_enable:	Set to YES to enable spiped.
+# spiped_uid:		User for spiped process (default "spiped").
+# spiped_gid:		Group for spiped process (default "spiped").
 # spiped_pipes:		List of names of pipes to create.
 # spiped_pipe_X_mode:	"encrypt"/"client" or "decrypt"/"server".
 # spiped_pipe_X_source: Source address of pipe X.
@@ -25,6 +27,8 @@ rcvar=spiped_enable
 load_rc_config $name
 
 : ${spiped_enable="NO"}
+: ${spiped_uid="spiped"}
+: ${spiped_gid="spiped"}
 
 command=%%PREFIX%%/bin/${name}
 start_cmd="${name}_start"
@@ -52,7 +56,8 @@ spiped_start()
 			echo Invalid value for spiped_pipe_${P}_mode: $MODE
 			continue
 		esac
-		${command} -D $MODEFLAG -s $SOURCE -t $TARGET -k $KEY -p $PIDFILE $FLAGS
+		${command} -D $MODEFLAG -s $SOURCE -t $TARGET -k $KEY \
+		    -u ${spiped_uid}:${spiped_gid} -p $PIDFILE $FLAGS
 	done
 }
 

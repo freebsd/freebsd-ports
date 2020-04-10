@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spiped
-PORTVERSION=	1.6.0
-PORTREVISION=	4
+PORTVERSION=	1.6.1
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.tarsnap.com/spiped/
 
@@ -34,6 +33,9 @@ PLIST_FILES=	bin/spipe \
 USE_RC_SUBR=	spiped
 
 OPTIONS_DEFINE=	DOCS
+
+USERS=		spiped
+GROUPS=		spiped
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
