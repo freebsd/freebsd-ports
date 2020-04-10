@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ovirt-engine-sdk
-PORTVERSION=	4.3.0
+PORTVERSION=	4.4.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
