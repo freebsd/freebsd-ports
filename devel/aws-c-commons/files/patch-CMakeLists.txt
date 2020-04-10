@@ -1,19 +1,10 @@
---- CMakeLists.txt.orig	2019-02-12 00:14:23 UTC
+--- CMakeLists.txt.orig	2020-01-26 19:09:42 UTC
 +++ CMakeLists.txt
-@@ -106,7 +106,6 @@ if (PERFORM_HEADER_CHECK)
- endif()
+@@ -113,7 +113,6 @@ file(GLOB COMMON_SRC
  
- add_library(${CMAKE_PROJECT_NAME} ${COMMON_SRC})
--aws_set_common_properties(${CMAKE_PROJECT_NAME} NO_WEXTRA)
- aws_prepare_symbol_visibility_args(${CMAKE_PROJECT_NAME} "AWS_COMMON")
  
- #apple source already includes the definitions we want, and setting this posix source
-@@ -212,7 +211,7 @@ configure_file(${CONFIG_HEADER_TEMPLATE}
-         ${GENERATED_CONFIG_HEADER}
-         ESCAPE_QUOTES)
+ add_library(${PROJECT_NAME} ${COMMON_SRC})
+-aws_set_common_properties(${PROJECT_NAME} NO_WEXTRA)
+ aws_prepare_symbol_visibility_args(${PROJECT_NAME} "AWS_COMMON")
+ target_compile_options(${PROJECT_NAME} PUBLIC ${PLATFORM_CFLAGS})
  
--if (NOT CMAKE_CROSSCOMPILING)
-+if (NOT CMAKE_CROSSCOMPILING AND BUILD_TESTING)
-     include(CTest)
-     add_subdirectory(tests)
- endif()
