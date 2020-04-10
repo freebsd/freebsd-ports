@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuradio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.1.0-rc1
+DISTVERSION=	3.8.1.0
 CATEGORIES=	comms astro hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org

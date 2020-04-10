@@ -1929,6 +1929,8 @@ share/applications/gnuradio-grc.desktop
 %%DATADIR%%/examples/audio/test_resampler.py
 %%DATADIR%%/examples/blocks/matrix_multiplexer.grc
 %%DATADIR%%/examples/blocks/peak_detector2.grc
+%%DATADIR%%/examples/blocks/py_snippets_demo.grc
+%%DATADIR%%/examples/blocks/selector.grc
 %%DATADIR%%/examples/blocks/test_stream_mux_tags.grc
 %%DATADIR%%/examples/blocks/vector_source_with_tags.grc
 %%DATADIR%%/examples/channels/channel_tone_response.grc
@@ -2588,6 +2590,7 @@ share/applications/gnuradio-grc.desktop
 %%DATADIR%%/grc/blocks/qtgui_time_sink_x.block.yml
 %%DATADIR%%/grc/blocks/qtgui_vector_sink_f.block.yml
 %%DATADIR%%/grc/blocks/qtgui_waterfall_sink_x.block.yml
+%%DATADIR%%/grc/blocks/snippet.block.yml
 %%DATADIR%%/grc/blocks/stream.domain.yml
 %%DATADIR%%/grc/blocks/tpc_decoder_def_list.block.yml
 %%DATADIR%%/grc/blocks/tpc_encoder_def_list.block.yml
