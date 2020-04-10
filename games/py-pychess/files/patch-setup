@@ -1,0 +1,9 @@
+--- setup.py	2019-03-10 06:22:01.000000000 -0400
++++ setup.py	2020-04-05 12:09:51.478233000 -0400
+@@ -343,5 +343,4 @@
+     scripts=['pychess'],
+     options={"build_exe": build_exe_options,
+-             "bdist_msi": bdist_msi_options},
+-    executables=executables
++             "bdist_msi": bdist_msi_options}
+ )
