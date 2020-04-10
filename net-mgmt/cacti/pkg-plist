@@ -1937,6 +1937,7 @@
 %%CACTIDIR%%/include/vendor/phpmailer/get_oauth_token.php
 %%CACTIDIR%%/include/vendor/phpmailer/index.php
 %%CACTIDIR%%/include/vendor/phpmailer/language/index.php
+%%CACTIDIR%%/include/vendor/phpmailer/language/phpmailer.lang-af.php
 %%CACTIDIR%%/include/vendor/phpmailer/language/phpmailer.lang-am.php
 %%CACTIDIR%%/include/vendor/phpmailer/language/phpmailer.lang-ar.php
 %%CACTIDIR%%/include/vendor/phpmailer/language/phpmailer.lang-az.php
@@ -2096,6 +2097,7 @@
 %%CACTIDIR%%/install/upgrades/1_2_5.php
 %%CACTIDIR%%/install/upgrades/1_2_7.php
 %%CACTIDIR%%/install/upgrades/1_2_8.php
+%%CACTIDIR%%/install/upgrades/1_2_11.php
 %%CACTIDIR%%/install/upgrades/index.php
 %%CACTIDIR%%/lib/aggregate.php
 %%CACTIDIR%%/lib/api_aggregate.php
