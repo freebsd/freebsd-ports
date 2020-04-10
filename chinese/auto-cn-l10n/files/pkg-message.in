@@ -10,11 +10,11 @@ English Instructions:
 
 **************************************************************************
 
-¼òÌåÖÐÎÄËµÃ÷:
- Çë¸æËßÄúµÄÓÃ»§±È½ÏËûÃÇµÄÐÂ¾ÉÉèÖÃ,·ÅÔÚ
+ç®€ä½“ä¸­æ–‡è¯´æ˜Ž:
+ è¯·å‘Šè¯‰æ‚¨çš„ç”¨æˆ·æ¯”è¾ƒä»–ä»¬çš„æ–°æ—§è®¾ç½®,æ”¾åœ¨
  %%PREFIX%%/share/skel/zh_CN.eucCN/dot.*
 
- Èç¹ûÒÔºóÐèÒªÐÂÔöÓÃ»§,ÇëÓÃÀàËÆÒÔÏÂµÄ·½Ê½:
+ å¦‚æžœä»¥åŽéœ€è¦æ–°å¢žç”¨æˆ·,è¯·ç”¨ç±»ä¼¼ä»¥ä¸‹çš„æ–¹å¼:
     # adduser -k %%PREFIX%%/share/skel/zh_CN.eucCN
 EOM
 }
