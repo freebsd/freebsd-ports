@@ -1,3 +1,3 @@
-TIMESTAMP = 1570518033
-SHA256 (microsoft-mimalloc-v1.1.0_GH0.tar.gz) = bccf7dd6dbef7f2d35da61669eda88db3ce2bd88f8b8fb325f766e9251950e6c
-SIZE (microsoft-mimalloc-v1.1.0_GH0.tar.gz) = 525386
+TIMESTAMP = 1586472756
+SHA256 (microsoft-mimalloc-v1.6.1_GH0.tar.gz) = 7fe9b8f30cd25f8ea35dbb6539652bbf9ea44cb01865bac70a1c368f6b96c770
+SIZE (microsoft-mimalloc-v1.6.1_GH0.tar.gz) = 640743
