@@ -89,7 +89,7 @@
 %%MPIDIR%%/lib/libmca_common_ompio.la
 %%MPIDIR%%/lib/libmca_common_ompio.so
 %%MPIDIR%%/lib/libmca_common_ompio.so.41
-%%MPIDIR%%/lib/libmca_common_ompio.so.41.9.2
+%%MPIDIR%%/lib/libmca_common_ompio.so.41.9.3
 %%MPIDIR%%/lib/libmca_common_sm.la
 %%MPIDIR%%/lib/libmca_common_sm.so
 %%MPIDIR%%/lib/libmca_common_sm.so.40
@@ -117,7 +117,7 @@
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.40
-%%MPIDIR%%/lib/libopen-pal.so.40.10.5
+%%MPIDIR%%/lib/libopen-pal.so.40.10.6
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so
 %%MPIDIR%%/lib/libopen-rte.so.40
@@ -331,10 +331,6 @@
 %%MPIDIR%%/lib/pmix/mca_bfrops_v20.so
 %%MPIDIR%%/lib/pmix/mca_bfrops_v21.la
 %%MPIDIR%%/lib/pmix/mca_bfrops_v21.so
-%%MPIDIR%%/lib/pmix/mca_gds_ds12.la
-%%MPIDIR%%/lib/pmix/mca_gds_ds12.so
-%%MPIDIR%%/lib/pmix/mca_gds_ds21.la
-%%MPIDIR%%/lib/pmix/mca_gds_ds21.so
 %%MPIDIR%%/lib/pmix/mca_gds_hash.la
 %%MPIDIR%%/lib/pmix/mca_gds_hash.so
 %%MPIDIR%%/lib/pmix/mca_preg_native.la
