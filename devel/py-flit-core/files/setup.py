@@ -1,8 +1,9 @@
 from setuptools import setup, find_packages
+import flit_core
 
 setup(
     name='flit_core',
-    version='2.2.0',
+    version=flit_core.__version__,
     author='Thomas Kluyver & contributors',
     author_email='thomas@kluyver.me.uk',
     description="Flit's core machinery for building packages.",
