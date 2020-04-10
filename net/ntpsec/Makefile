@@ -20,6 +20,6 @@ PORTSCOUT=	limit:^[0-9_\.]*$$
 
 post-install: # autoplist: plist varies depending on the python version
 	@cd ${STAGEDIR}${PREFIX} && \
-		${FIND} * -type f -or -type l | ${SED} -e 's|^man/.*|&.gz|' >> ${TMPPLIST}
+		${FIND} * -type f -or -type l | ${SED} -e 's|^share/man/.*|&.gz|' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
