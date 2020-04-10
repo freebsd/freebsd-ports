@@ -2,12 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	sord
-PORTVERSION=	0.16.2
+PORTVERSION=	0.16.4
 CATEGORIES=	devel
 MASTER_SITES=	http://download.drobilla.net/
 
+PATCH_SITES=	https://github.com/drobilla/sord/commit/
+PATCHFILES=	dcf051c4c1e8.patch:-p1
+
 MAINTAINER=	beerml@sigma6audio.de
-COMMENT=	Sord is a lightweight C library for storing RDF data in memory
+COMMENT=	Lightweight C library for storing RDF data in memory
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
