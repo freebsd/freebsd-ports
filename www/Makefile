@@ -2227,6 +2227,7 @@
     SUBDIR += tivoka
     SUBDIR += tntnet
     SUBDIR += tokyopromenade
+    SUBDIR += tomcat-devel
     SUBDIR += tomcat-native
     SUBDIR += tomcat7
     SUBDIR += tomcat85
