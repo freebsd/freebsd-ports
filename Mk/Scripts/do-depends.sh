@@ -205,7 +205,7 @@ if [ $err -eq 1 ]; then
 fi
 
 if [ -n "${dp_STRICT_DEPENDS}" -a ${anynotfound} -eq 1 ]; then \
-	echo "===>   dp_STRICT_DEPENDS set - Not installing missing dependencies."
+	echo "===>   STRICT_DEPENDS set - Not installing missing dependencies."
 	echo "       This means a dependency is wrong since it was not satisfied in the ${dp_DEPTYPE} phase."
 	exit 1
 fi
