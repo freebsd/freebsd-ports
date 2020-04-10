@@ -3,7 +3,7 @@
 PORTNAME=	ntpsec
 DISTVERSIONPREFIX=	NTPsec_
 DISTVERSION=	1_1_8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,6 @@ PORTSCOUT=	limit:^[0-9_\.]*$$
 
 post-install: # autoplist: plist varies depending on the python version
 	@cd ${STAGEDIR}${PREFIX} && \
-		${MV} share/man/* man/ && \
-		${FIND} * -type f -or -type l | ${SED} -e 's|^man/.*|&.gz|' >> ${TMPPLIST}
+		${FIND} * -type f -or -type l | ${SED} -e 's|^share/man/.*|&.gz|' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
