@@ -19,7 +19,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sentriz
-GO_TARGET=	cmd/gonic cmd/gonicscan
+GO_TARGET=	./cmd/gonic ./cmd/gonicscan
 
 GH_TUPLE=	\
 		Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Masterminds/goutils \
@@ -57,15 +57,5 @@ GROUPS=	${PORTNAME}
 
 PLIST_FILES=	bin/gonic \
 		bin/gonicscan
-
-do-build:
-	(cd ${GO_WRKSRC}; \
-	${ECHO_MSG} "===>  Building gonic from cmd/gonic/main.go"; \
-	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} build ${GO_BUILDFLAGS} \
-		-o ${GO_WRKDIR_BIN}/gonic cmd/gonic/main.go ; \
-	${ECHO_MSG} "===>  Building gonicscan from cmd/gonicscan/main.go"; \
-	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} build ${GO_BUILDFLAGS} \
-		-o ${GO_WRKDIR_BIN}/gonicscan cmd/gonicscan/main.go ; \
-	)
 
 .include <bsd.port.mk>
