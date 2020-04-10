@@ -5,7 +5,7 @@ install-strip: install
 	@-${STRIP_CMD} ${DESTDIR}${BIN_PATH}/afl-clang-fast
 	@-${STRIP_CMD} ${DESTDIR}${BIN_PATH}/afl-gcc-fast
 # XXX: strip(1) trips up when stripping all things in HELPER_PATH in one go?
-	@cd ${DESTDIR}${HELPER_PATH} && for f in afl-as *.so; do ${STRIP_CMD} $${f}; done
+	@cd ${DESTDIR}${HELPER_PATH} && for f in afl-as afl-ld *.so; do ${STRIP_CMD} $${f}; done
 
 libdislocator:
 	$(MAKE) -C libdislocator CFLAGS="-I../include ${CFLAGS}"
@@ -14,10 +14,10 @@ libtokencap:
 	$(MAKE) -C libtokencap 
 
 llvm_mode:
-	$(MAKE) -C llvm_mode
+	$(MAKE) -C llvm_mode AFL_REAL_LD="$(_AFL_REAL_LD)"
 
 test_llvm_mode:
-	$(MAKE) -C llvm_mode test_build
+	$(MAKE) -C llvm_mode AFL_REAL_LD="$(_AFL_REAL_LD)" test_build
 
 gcc_plugin:
 	$(MAKE) -C gcc_plugin CC="${GCC}" CXX="${GXX}"
