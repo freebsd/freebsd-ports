@@ -36,7 +36,6 @@ include/varnish/tbl/obj_attr.h
 include/varnish/tbl/oc_exp_flags.h
 include/varnish/tbl/oc_flags.h
 include/varnish/tbl/params.h
-include/varnish/tbl/req_body.h
 include/varnish/tbl/req_flags.h
 include/varnish/tbl/sess_attr.h
 include/varnish/tbl/sess_close.h
