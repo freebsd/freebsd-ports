@@ -1,0 +1,8 @@
+U-Boot loader for QEMU
+
+To use this bootloader to boot a FreeBSD armv7 image, install emulators/qemu
+and execute it as eg:
+
+qemu-system-arm -M virt -m 512m -nographic -bios /usr/local/share/u-boot/u-boot-qemu-arm/u-boot.bin -hda FreeBSD-13.0-CURRENT-arm-armv7-GENERICSD-20200409-r359731.img
+
+For general information about U-Boot see WWW: https://www.denx.de/wiki/U-Boot
