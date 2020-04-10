@@ -7,13 +7,15 @@ CATEGORIES=		cad
 MASTER_SITES=https://github.com/CGAL/cgal/archive/releases/:cgal
 DISTFILES=CGAL-5.0.2.tar.gz:cgal
 
-MAINTAINER=	teodor@sigaev.ru
+MAINTAINER=	teodorsigaev@gmail.com
 COMMENT=	Slicing application for 3D printers
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libtbb.so:devel/tbb \
+		libboost_log.so:devel/boost-libs \
+		libHalf-2_4.so:graphics/ilmbase \
 		libnlopt.so:math/nlopt \
 		libwx_gtk3u_core-3.1.so:x11-toolkits/wxgtk31 \
 		libcurl.so:ftp/curl \
@@ -32,9 +34,10 @@ BUILD_DEPENDS=	cereal>=1.2.2:devel/cereal \
 		gmp>=6.1.2:math/gmp \
 		mpfr>=4.0.2:math/mpfr
 
-USES=		cmake gettext
+USES=		cmake gettext gl glu iconv
 
-CMAKE_ARGS+=	-DwxWidgets_CONFIG_EXECUTABLE=${LOCALBASE}/bin/wxgtk3u-3.1-config
+CMAKE_ARGS+=	-DwxWidgets_CONFIG_EXECUTABLE=${LOCALBASE}/bin/wxgtk3u-3.1-config \
+		-DCGAL_DIR=${WRKSRC}/CGAL/lib/cmake/CGAL
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 
 USE_GITHUB=	yes
@@ -45,7 +48,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's,%%WRKSRC%%,${WRKSRC},' \
 		${WRKSRC}/CMakeLists.txt
 
-pre-build:
+pre-configure:
 	cd ${WRKDIR}/cgal-releases-CGAL-5.0.2 && \
 	${CMAKE_BIN} -E remove CGALConfig-installation-dirs.cmake && \
 	${MKDIR} build && cd build && \
