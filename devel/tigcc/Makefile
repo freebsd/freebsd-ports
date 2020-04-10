@@ -5,19 +5,15 @@ PORTNAME=	tigcc
 PORTVERSION=	0.96.b8
 PORTREVISION=	10
 CATEGORIES=	devel
-MASTER_SITES=		GCC/snapshots/4.1-20060728:gcc \
-			GNU/binutils:gas \
-			http://tigcc.ticalc.org/linux/:tigcc
-DISTFILES=		gcc-core-4.1-20060728.tar.bz2:gcc \
-			binutils-2.16.1.tar.bz2:gas \
-			tigcc_src.tar.bz2:tigcc
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/:gcc LOCAL/danfe:gcc \
+		GNU/binutils:gas \
+		http://tigcc.ticalc.org/linux/:tigcc
+DISTFILES=	gcc-core-4.1-20060728.tar.bz2:gcc \
+		binutils-2.16.1.tar.bz2:gas \
+		tigcc_src.tar.bz2:tigcc
 
-MAINTAINER=	cyberbotx@cyberbotx.com
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	C compiler for the TI89, 92, and 92+ calculators
-
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 USES=		bison compiler:nestedfct gmake tar:bzip2
 USE_CSTD=	gnu89
