@@ -2,11 +2,11 @@
 
 PORTNAME=	pssh
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net sysutils
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel versions of the openssh tools
 
 LICENSE=	BSD3CLAUSE
