@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdec2-image-upload
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	net
 MASTER_SITES=	http://freebsd-ec2-dist.s3.amazonaws.com/
 
@@ -16,9 +16,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 USES=		ssl tar:tgz uidfix
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
-
-BROKEN_SSL=	libressl
-BROKEN_SSL_REASON_libressl=	needs features only available in OpenSSL
 
 # Install into ${STAGEDIR}${PREFIX}; but the build respects ${DESTDIR} so
 # all we need to give is the ${PREFIX}/bin part.
