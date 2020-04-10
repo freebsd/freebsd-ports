@@ -11,7 +11,7 @@ COMMENT=	Network Time Protocol suite, refactored
 
 LICENSE=	BSD2CLAUSE
 
-BUiD_DEPENDS=	asciidoc:textproc/asciidoc
+BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 
 USES=		bison gettext-runtime pkgconfig python shebangfix ssl waf
