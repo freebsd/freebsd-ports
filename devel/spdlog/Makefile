@@ -18,10 +18,8 @@ USES=		cmake compiler:c++11-lib pathfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gabime
-CMAKE_ON=	SPDLOG_FMT_EXTERNAL
-CMAKE_OFF=	SPDLOG_BUILD_BENCH
-
 CMAKE_ON=	SPDLOG_BUILD_SHARED SPDLOG_FMT_EXTERNAL
+CMAKE_OFF=	SPDLOG_BUILD_BENCH
 
 post-extract:
 	${RM} -r ${WRKSRC}/include/spdlog/fmt/bundled
