@@ -9766,7 +9766,6 @@ audio/hydrogen-devel|audio/hydrogen|2018-01-17|Out of date: use audio/hydrogen f
 graphics/py-rabbyt||2018-01-19|Has expired: Development ceased, no longer used in the ports
 deskutils/py-spice-gtk|deskutils/spice-gtk|2018-01-20|Old style Python bindings dropped, no difference from the master port
 lang/py-clojure|lang/py-clojure_py|2018-01-26|Rename to match PyPI naming
-www/tomcat-devel|www/tomcat9|2018-01-26|Apache Tomcat 9.0.4 is the first stable release of the 9.0.x series
 devel/rubygem-toml|textproc/rubygem-toml|2018-01-27|Move to a better category
 emulators/raine||2018-01-28|Has expired: Broken for more than 6 months
 mail/libmapi||2018-01-28|Has expired: Broken for more than 6 months
