@@ -2,7 +2,7 @@
 
 PORTNAME=	dua-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
+DISTVERSION=	2.5.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	vulcan@wired.sh
@@ -42,7 +42,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		fixedbitset-0.2.0 \
 		flume-0.7.1 \
 		heck-0.3.1 \
-		hermit-abi-0.1.8 \
+		hermit-abi-0.1.10 \
 		indexmap-1.3.2 \
 		itertools-0.8.2 \
 		itertools-0.9.0 \
@@ -60,7 +60,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		pretty_assertions-0.6.1 \
 		proc-macro-error-0.4.12 \
 		proc-macro-error-attr-0.4.12 \
-		proc-macro2-1.0.9 \
+		proc-macro2-1.0.10 \
 		quote-1.0.3 \
 		rayon-1.3.0 \
 		rayon-core-1.7.0 \
