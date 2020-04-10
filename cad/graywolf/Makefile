@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgsl.so:math/gsl
 
-USES=		cmake pkgconfig xorg
+USES=		cmake compiler:c11 pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	rubund
 USE_XORG=	ice sm x11 xext
