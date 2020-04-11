@@ -95,6 +95,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/guess.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/guess.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/guess.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/hgconfig.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/hgconfig.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/hgconfig.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/hgemail.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/hgemail.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/hgemail.pyo
@@ -146,9 +149,6 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/p4pending.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/p4pending.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/p4pending.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/pbranch.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/pbranch.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/pbranch.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/phabreview.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/phabreview.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/phabreview.pyo
@@ -248,9 +248,6 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/run.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/run.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/run.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/rupdate.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/rupdate.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/rupdate.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/serve.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/serve.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/serve.pyo

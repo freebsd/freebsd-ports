@@ -1,6 +1,6 @@
---- setup.py.orig	2016-11-03 15:31:44 UTC
+--- setup.py.orig	2020-04-08 09:44:12 UTC
 +++ setup.py
-@@ -452,7 +452,7 @@ class build(_build_orig):
+@@ -488,7 +488,7 @@ class build(_build_orig):
           lambda self: 'py2app' in self.distribution.commands),
          ('build_ui', None),
          ('build_qrc', lambda self: 'py2exe' in self.distribution.commands),
@@ -9,7 +9,7 @@
          ] + _build_orig.sub_commands
  
  class clean(_clean_orig):
-@@ -666,10 +666,10 @@ def setup_posix():
+@@ -725,10 +725,10 @@ def setup_posix():
              dirs.remove('svg')  # drop source of .ico files
          _data_files.append((os.path.join('share/pixmaps/tortoisehg', root),
                              [os.path.join(root, f) for f in files]))

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tortoisehg
-DISTVERSION=	5.1
+DISTVERSION=	5.3.2
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/tortoisehg/thg/get/
@@ -35,7 +35,7 @@ NO_ARCH=	yes
 SUB_FILES=	pkg-message
 DIST_SUBDIR=	${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}-thg-${TAGNAME}
-TAGNAME=	89b2d1787506
+TAGNAME=	0d5a8de069c5
 
 # Do not conflict with devel/mercurial, which also installs hgext3rd/__init__.py
 EXTRACT_AFTER_ARGS=	--exclude ${PORTNAME}-thg-${TAGNAME}/hgext3rd/__init__.py
