@@ -1,5 +1,4 @@
 bin/compton
-bin/compton-convgen.py
 bin/compton-trans
 bin/picom
 bin/picom-trans
