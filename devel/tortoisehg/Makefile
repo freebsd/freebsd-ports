@@ -2,6 +2,7 @@
 
 PORTNAME=	tortoisehg
 DISTVERSION=	5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/tortoisehg/thg/get/
 DISTNAME=	${DISTVERSION}

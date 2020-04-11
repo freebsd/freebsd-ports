@@ -50,7 +50,7 @@ _PYQT_VERSION=	0
 
 PYQT_MAINTAINER=	kde@FreeBSD.org
 
-MASTER_SITE_RIVERBANK=	http://www.riverbankcomputing.com/static/Downloads/%SUBDIR%/
+MASTER_SITE_RIVERBANK=	https://www.riverbankcomputing.com/static/Downloads/%SUBDIR%/
 
 # https://www.riverbankcomputing.com/static/Downloads/sip/4.19.15/sip-4.19.15.tar.gz
 MASTER_SITES_SIP=	RIVERBANK/sip/${PORTVERSION} \
@@ -59,19 +59,19 @@ MASTER_SITES_SIP=	RIVERBANK/sip/${PORTVERSION} \
 MASTER_SITES_PYQT5=	RIVERBANK/PyQt5/${PORTVERSION} \
 			SF/pyqt/PyQt5/PyQt-${PORTVERSION} \
 			GENTOO
-#https://www.riverbankcomputing.com/static/Downloads/QScintilla/QScintilla_gpl-2.11.tar.gz
+#https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.11.4/QScintilla-2.11.4.tar.gz
 MASTER_SITES_QSCI2=	RIVERBANK/QScintilla/${PORTVERSION} \
 			SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
 			GENTOO
 
-SIP_VERSION=		4.19.19
-QSCI2_VERSION=		2.11.2
+SIP_VERSION=		4.19.21
+QSCI2_VERSION=		2.11.4
 PYQT5_VERSION=		5.13.1
 
 SIP_DISTNAME=		sip-${SIP_VERSION}
 PYQT5_DISTNAME=		PyQt5_gpl-${PYQT5_VERSION}
 PYQT5_DISTINFO_FILE=	${.CURDIR:H:H}/devel/${PYQT_RELNAME}/distinfo
-QSCI2_DISTNAME=		QScintilla_gpl-${QSCI2_VERSION}
+QSCI2_DISTNAME=		QScintilla-${QSCI2_VERSION}
 PYQT5_LICENSE=		GPLv3
 
 # Keep these synchronized with OPTIONS_DEFINE in devel/py-qt5
