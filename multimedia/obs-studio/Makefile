@@ -40,7 +40,7 @@ LIB_DEPENDS_armv7=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_i386=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_powerpc=	libluajit-5.1.so:lang/luajit
 
-USES=		cmake compiler:c++11-lib gl lua pkgconfig python:3.4+ qt:5 xorg
+USES=		cmake gl lua pkgconfig python:3.4+ qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	obsproject
 USE_QT=		core gui svg widgets x11extras xml buildtools_build imageformats_run qmake_build
@@ -51,6 +51,14 @@ USE_LDCONFIG=	yes
 CMAKE_ON=	UNIX_STRUCTURE
 CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}"
 CFLAGS+=	-D_WITH_GETLINE
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lib
+.endif
 
 .include <bsd.port.pre.mk>
 
