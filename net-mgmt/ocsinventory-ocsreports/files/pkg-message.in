@@ -2,7 +2,7 @@
 { type: install
   message: <<EOM
 To configure ocsreports, you have to:
-* edit %%WWWDIR%%/dbconfig.php
+* edit %%WWWDIR%%/dbconfig.inc.php
   (and maybe backend/require/cas.config.php in the same dir)
 * edit %%ETCDIR%%/ocsreports.conf and include it in an apache
   virtualhost config

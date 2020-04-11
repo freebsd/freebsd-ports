@@ -1,8 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	ocsinventory-ocsreports
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	net-mgmt
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${PORTVERSION}/
+DISTNAME=	OCSNG_UNIX_SERVER_${PORTVERSION}
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Webconsole for OCS Inventory NG
@@ -11,15 +13,21 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:web
-USE_PHP=	mysqli pcre zlib session xml gd zip openssl mbstring soap
+USE_PHP=	curl gd mbstring mysqli openssl pcre session simplexml soap xml zip zlib
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_GITHUB=	yes
 GH_ACCOUNT=	OCSInventory-NG
 GH_PROJECT=	OCSInventory-ocsreports
 SUB_FILES=	apache.conf pkg-message
 
 ETCDIR=		${PREFIX}/etc/ocsinventory-server
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+do-extract:
+	${TAR} xf ${DISTDIR}/${DISTFILES} -C ${WRKDIR}/ --strip-components=1 \
+		--exclude ".git*" ${DISTNAME}/ocsreports
+	${MV} ${WRKDIR}/ocsreports ${WRKDIR}/${PORTNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${ETCDIR}
