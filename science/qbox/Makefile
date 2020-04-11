@@ -2,13 +2,14 @@
 
 PORTNAME=	qbox
 DISTVERSIONPREFIX=	rel
-DISTVERSION=	1_68_3
+DISTVERSION=	1_68_4
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	First-principles molecular dynamics code
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		libcurl.so:ftp/curl \
