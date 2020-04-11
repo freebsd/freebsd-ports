@@ -51,7 +51,7 @@ GH_TUPLE=	\
 		golang:crypto:0e37d00:crypto/vendor/golang.org/x/crypto \
 		golang:net:f5079bd:net/vendor/golang.org/x/net \
 		golang:oauth2:d2e6202:oauth2/vendor/golang.org/x/oauth2 \
-		golang:sys:d8f5ea2:sys/vendor/golang.org/x/sys \
+		golang:sys:fead7900131:sys/vendor/golang.org/x/sys \
 		golang:text:3bd178b:text/vendor/golang.org/x/text \
 		golang:tools:90fa682:tour/vendor/golang.org/x/tools \
 		golang:appengine:ae0ab99:appengine/vendor/google.golang.org/appengine \

@@ -1,4 +1,4 @@
-TIMESTAMP = 1585315383
+TIMESTAMP = 1585506100
 SHA256 (exercism-cli-v3.0.11_GH0.tar.gz) = 544088bc562a8624e3527dd9d3ccf944dc4923b644bcdf49ef04e6d0ee48ddad
 SIZE (exercism-cli-v3.0.11_GH0.tar.gz) = 47600
 SHA256 (armon-consul-api-eb2c6b5_GH0.tar.gz) = 619d18729ecc8def1ebde61778c11999e0ee4de7767c29fb6ce35df72f0d8cfc
@@ -73,8 +73,8 @@ SHA256 (golang-net-f5079bd_GH0.tar.gz) = f2344b7016ad61ee82642d62ac78aeb83e1d31d
 SIZE (golang-net-f5079bd_GH0.tar.gz) = 912361
 SHA256 (golang-oauth2-d2e6202_GH0.tar.gz) = ded5a113fec2b5df98d3f8ee2ba6232f898eeabfe613b361feaaaea480afb116
 SIZE (golang-oauth2-d2e6202_GH0.tar.gz) = 43160
-SHA256 (golang-sys-d8f5ea2_GH0.tar.gz) = c7f0817950489b37f350139f12526f67a6a880fd7b63c72c211e7d0abb193659
-SIZE (golang-sys-d8f5ea2_GH0.tar.gz) = 733077
+SHA256 (golang-sys-fead7900131_GH0.tar.gz) = 99e6eb82a70c63baaca8ea1bd252301dc5fe509710adc790ba3b213d8cfa2160
+SIZE (golang-sys-fead7900131_GH0.tar.gz) = 1258256
 SHA256 (golang-tools-90fa682_GH0.tar.gz) = bbca9543988c2ce6fca388475835a2faaf0754beab625ba4a914556776cbe384
 SIZE (golang-tools-90fa682_GH0.tar.gz) = 2332220
 SHA256 (golang-appengine-ae0ab99_GH0.tar.gz) = 3664bb810fa04ff695144a45fd760e24a0b57f70e42e9ea65762141e4f21f8bd
