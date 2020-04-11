@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bazel
-DISTVERSION=	2.1.0
+DISTVERSION=	3.0.0
 CATEGORIES=	devel java
 MASTER_SITES=	https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=	bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -29,7 +29,7 @@ CONFLICTS_INSTALL=	bazel029
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.
-FINALRC=	4
+FINALRC=	2
 
 SHEBANG_REGEX=	.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
 USE_JAVA=	yes
@@ -64,7 +64,7 @@ post-patch:
 	-e 's|^\(PYTHON_BIN=.*\)|if [ "%VERSION%" = "3" ] ; then PYTHON_BIN=${PYTHON_CMD}; else \1 ; fi|' \
 	${WRKSRC}/tools/python/pywrapper_template.txt
 	@${REINPLACE_CMD} \
-	-e 's|/usr/bin/env python|${PYTHON_CMD}|' \
+	-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
 	${WRKSRC}/src/main/java/com/google/devtools/build/lib/bazel/rules/python/BazelPythonSemantics.java
 
 do-build:

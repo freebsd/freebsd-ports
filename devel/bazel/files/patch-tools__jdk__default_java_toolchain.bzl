@@ -1,6 +1,6 @@
---- tools/jdk/default_java_toolchain.bzl.orig	2019-08-06 08:09:07.930962000 +0000
-+++ tools/jdk/default_java_toolchain.bzl	2019-08-06 08:16:15.674960000 +0000
-@@ -19,25 +19,6 @@
+--- tools/jdk/default_java_toolchain.bzl.orig	2020-02-14 20:56:31.911758000 +0100
++++ tools/jdk/default_java_toolchain.bzl	2020-02-14 20:57:09.531875000 +0100
+@@ -21,25 +21,6 @@
  ]
  
  JDK9_JVM_OPTS = [
@@ -26,12 +26,12 @@
  ]
  
  DEFAULT_JAVACOPTS = [
-@@ -70,7 +51,7 @@
-         "@bazel_tools//tools/jdk:jdk_compiler_jar",
-     ],
+@@ -63,7 +44,7 @@
      "javac_supports_workers": 1,
--    "jvm_opts": JDK9_JVM_OPTS,
-+    "jvm_opts": JDK8_JVM_OPTS,
+     "jvm_opts": select({
+         "@bazel_tools//src/conditions:openbsd": JDK8_JVM_OPTS,
+-        "//conditions:default": JDK9_JVM_OPTS,
++        "//conditions:default": JDK8_JVM_OPTS,
+     }),
      "misc": DEFAULT_JAVACOPTS,
-     "compatible_javacopts": COMPATIBLE_JAVACOPTS,
      "singlejar": ["@bazel_tools//tools/jdk:singlejar"],
