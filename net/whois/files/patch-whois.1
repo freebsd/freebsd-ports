@@ -1,75 +1,73 @@
---- whois.1.orig	2013-12-26 07:48:10.000000000 +0100
-+++ whois.1	2014-06-08 18:34:54.000000000 +0200
+--- whois.1.orig	2019-12-31 02:05:47 UTC
++++ whois.1
 @@ -1,8 +1,8 @@
--.TH "WHOIS" "1" "20 December 2009" "Marco d'Itri" "Debian GNU/Linux"
-+.TH "%%MWHOIST%%" "1" "20 December 2009" "Marco d'Itri" "Debian GNU/Linux"
- .SH "NAME"
+-.TH "WHOIS" "1" "2019-12-30" "Marco d'Itri" "Debian GNU/Linux"
++.TH "MWHOIS" "1" "2019-12-30" "Marco d'Itri" "Debian GNU/Linux"
+ .SH NAME
 -whois \- client for the whois directory service
-+%%MWHOIS%% \- client for the whois directory service
- .SH "SYNOPSIS"
++mwhois \- client for the whois directory service
+ .SH SYNOPSIS
 -.B whois
-+.B %%MWHOIS%%
- [\~{\~\fB\-h\fP | \fB\-\-host\fP\~}\~\fIHOST\fP\~]
- [\~{\~\fB\-p\fP | \fB\-\-port\fP\~}\~\fIPORT\fP\~]
- [\~\fB\-abBcdGHKlLmMrRx\fP\~]
-@@ -13,27 +13,27 @@
- [\~\fB\-\-verbose\fP\~]
++.B mwhois
+ [
+ .RB {\~ \-h \~|\~ \-\-host \~}
+ .I HOST
+@@ -25,25 +25,25 @@ whois \- client for the whois directory service
+ .RB [\~ \-\-verbose \~]
  .I OBJECT
  
 -.B whois
-+.B %%MWHOIS%%
++.B mwhois
  .B \-q
  .I KEYWORD
  
 -.B whois
-+.B %%MWHOIS%%
++.B mwhois
  .B \-t
  .I TYPE
  
 -.B whois
-+.B %%MWHOIS%%
++.B mwhois
  .B \-v
  .I TYPE
  
--.B whois
-+.B %%MWHOIS%%
- .B \-\-help
+-.B whois \-\-help
++.B mwhois \-\-help
  
--.B whois
-+.B %%MWHOIS%%
- .B \-\-version
+-.B whois \-\-version
++.B mwhois \-\-version
  
  .PP
- .SH "DESCRIPTION"
--\fBwhois\fP searches for an object in a \fIRFC\ 3912\fP database.
-+\fB%%MWHOIS%%\fP searches for an object in a \fIRFC\ 3912\fP database.
- 
- This version of the whois client tries to guess the right server to
- ask for the specified object. If no guess can be made it will connect
-@@ -171,7 +171,7 @@
- to be interpreted by the client should always follow the \fI\-\-\fP
+ .SH DESCRIPTION
+-.B whois
++.B mwhois
+ searches for an object in a
+ .I RFC 3912
+ database.
+@@ -243,7 +243,7 @@ which are not to be interpreted by the client must fol
  separator (which marks the beginning of the query string).
  .P
--If the \fI/etc/whois.conf\fR configuration file exists, it will be consulted
-+If the \fI%%MWHOISCONF%%\fR configuration file exists, it will be consulted
+ If the
+-.I /etc/whois.conf
++.I /usr/local/etc/mwhois.conf
+ configuration file exists, it will be consulted
  to find a server before applying the normal rules. Each line of the
  file should contain a regular expression to be matched against the query
- text and the whois server to use, separated by white space.
-@@ -186,7 +186,7 @@
+@@ -259,7 +259,7 @@ by the current system locale.
  Command line arguments will always be interpreted accordingly to the
  current system locale and converted to the IDN ASCII Compatible Encoding.
  .SH "FILES"
 -/etc/whois.conf
-+%%MWHOISCONF%%
++/usr/local/etc/mwhois.conf
  .SH "ENVIRONMENT"
  .IP LANG
- When querying \fIwhois.nic.ad.jp\fP and \fIwhois.jprs.jp\fP English text
-@@ -200,7 +200,7 @@
- of objects are located. If the variable does not exist then
- \fIwhois.arin.net\fP will be queried.
+ When querying
+@@ -280,7 +280,7 @@ of objects are located. If the variable does not exist
+ .I whois.arin.net
+ will be queried.
  .SH "SEE ALSO"
--\fBwhois.conf\fP(5)
-+\fB%%MWHOISCONF%%\fP(5)
- .PP
- \fIRFC 3912\fP: WHOIS Protocol Specification
- .PP
+-.IR whois.conf (5).
++.IR /usr/local/etc/mwhois.conf (5).
+ .P
+ .IR "RFC 3912" :
+ WHOIS Protocol Specification.

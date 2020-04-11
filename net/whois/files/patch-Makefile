@@ -1,18 +1,47 @@
---- Makefile.orig	2014-05-21 16:24:13.000000000 +0200
-+++ Makefile	2014-06-08 18:14:09.000000000 +0200
-@@ -1,6 +1,8 @@
--prefix = /usr
-+prefix = ${PREFIX}
+--- Makefile.orig	2019-12-31 02:05:47 UTC
++++ Makefile
+@@ -1,5 +1,9 @@
+ prefix = /usr
  
- CFLAGS ?= -g -O2
-+LDFLAGS += -L${LOCALBASE}/lib -lintl
-+CFLAGS += -I${LOCALBASE}/include
++ifdef PREFIX
++prefix := $(PREFIX)
++endif
++
+ ifdef DESTDIR
+ BASEDIR := $(DESTDIR)
+ endif
+@@ -72,13 +76,13 @@ endif
+ CPPFLAGS += $(DEFS) $(INCLUDES)
  
- PERL = perl
- INSTALL = install
-@@ -98,17 +100,17 @@
+ ##############################################################################
+-all: Makefile.depend whois mkpasswd pos
++all: Makefile.depend %%MWHOIS%% mkpasswd pos
  
- install-whois: whois
+ ##############################################################################
+ %.o: %.c
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $<
+ 
+-whois: $(whois_OBJECTS)
++%%MWHOIS%%: $(whois_OBJECTS)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(whois_LDADD) $(LIBS)
+ 
+ mkpasswd: $(mkpasswd_OBJECTS)
+@@ -115,37 +119,37 @@ servers_charset.h: servers_charset_list make_servers_c
+ ##############################################################################
+ afl:
+ 	-rm -f Makefile.depend
+-	DEFS=-DAFL_MODE=1 AFL_HARDEN=1 $(MAKE) whois CC=afl-gcc HAVE_ICONV=1
++	DEFS=-DAFL_MODE=1 AFL_HARDEN=1 $(MAKE) %%MWHOIS%% CC=afl-gcc HAVE_ICONV=1
+ 
+ afl-run:
+-	nice afl-fuzz -i ../afl_in -o ../afl_out -- ./whois
++	nice afl-fuzz -i ../afl_in -o ../afl_out -- ./%%MWHOIS%%
+ 
+ ##############################################################################
+ install: install-whois install-mkpasswd install-pos
+ 
+-install-whois: whois
++install-whois: %%MWHOIS%%
  	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/
 -	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man1/
 -	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man5/
@@ -21,9 +50,9 @@
 -	$(INSTALL) -m 0644 whois.conf.5 $(BASEDIR)$(prefix)/share/man/man5/
 +	$(INSTALL) -d $(BASEDIR)$(prefix)/man/man1/
 +	$(INSTALL) -d $(BASEDIR)$(prefix)/man/man5/
-+	$(INSTALL) -m 0755 whois $(BASEDIR)$(prefix)/bin/mwhois
-+	$(INSTALL) -m 0644 whois.1 $(BASEDIR)$(prefix)/man/man1/mwhois.1
-+	$(INSTALL) -m 0644 whois.conf.5 $(BASEDIR)$(prefix)/man/man5/mwhois.conf.5
++	$(INSTALL) -m 0755 %%MWHOIS%% $(BASEDIR)$(prefix)/bin/
++	$(INSTALL) -m 0644 whois.1 $(BASEDIR)$(prefix)/man/man1/%%MWHOIS%%.1
++	$(INSTALL) -m 0644 whois.conf.5 $(BASEDIR)$(prefix)/man/man5/%%MWHOIS%%.conf.5
  
  install-mkpasswd: mkpasswd
  	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/
@@ -33,5 +62,18 @@
 -	$(INSTALL) -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/share/man/man1/
 +	$(INSTALL) -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/man/man1/
  
- install-pos:
+-install-pos:
++install-pos: pos
  	cd po && $(MAKE) install
+ 
+ distclean: clean
+-	rm -f po/whois.pot
++	rm -f po/%%MWHOIS%%.pot
+ 
+ clean:
+ 	rm -f Makefile.depend as_del.h as32_del.h ip_del.h ip6_del.h \
+-		new_gtlds.h tld_serv.h servers_charset.h *.o whois mkpasswd
++		new_gtlds.h tld_serv.h servers_charset.h *.o %%MWHOIS%% mkpasswd
+ 	rm -f po/*.mo
+ 
+ pos:

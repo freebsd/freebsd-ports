@@ -1,29 +1,38 @@
---- whois.conf.5.orig	2014-01-05 20:00:36.000000000 +0100
-+++ whois.conf.5	2014-06-08 18:42:59.000000000 +0200
+--- whois.conf.5.orig	2019-12-31 02:05:47 UTC
++++ whois.conf.5
 @@ -1,10 +1,10 @@
--.TH "WHOIS.CONF" "5" "9 April 2013" "Petr PÃ­saÅ" "Debian GNU/Linux"
-+.TH "%%MWHOIST%%.CONF" "5" "9 April 2013" "Petr PÃ­saÅ" "Debian GNU/Linux"
+-.TH "WHOIS.CONF" "5" "2019-12-30" "Petr Písař" "Debian GNU/Linux"
++.TH "MWHOIS.CONF" "5" "2019-12-30" "Petr Písař" "Debian GNU/Linux"
  
- .SH "NAME"
+ .SH NAME
 -whois.conf \- alternative WHOIS servers list for whois client
-+%%MWHOIS%%.conf \- alternative WHOIS servers list for whois client
++mwhois.conf \- alternative WHOIS servers list for mwhois client
  
- .SH "SYNOPSIS"
+ .SH SYNOPSIS
 -.B /etc/whois.conf
-+.B %%MWHOISCONF%%
++.B /usr/local/etc/mwhois.conf
  
- .SH "DESCRIPTION"
+ .SH DESCRIPTION
  This file contains a list of WHOIS servers which can augment or override
-@@ -37,10 +37,10 @@
+@@ -18,7 +18,7 @@ Fields are separated by non-empty sequence of space or
+ A line starting with a hash character is a free comment and it's not
+ considered.
+ 
+-The pattern is case-insensitive extended regular expression if whois client
++The pattern is case-insensitive extended regular expression if mwhois client
+ has been compiled with POSIX regular expressions support. Otherwise, simple
+ case-insensitive suffix comparison against WHOIS object identifier is used.
+ 
+@@ -37,10 +37,10 @@ encoding (ACE) format.
  ^as645(1[2-9]|2[0-9]|3[0-4])$    whois.example.net
  
- .SH "FILES"
+ .SH FILES
 -/etc/whois.conf
-+%%MWHOISCONF%%
++/usr/local/etc/mwhois.conf
  
  .SH "SEE ALSO"
--\fBwhois\fP(1)
-+\fB%%MWHOIS%%\fP(1)
+-.IR whois (1)
++.IR mwhois (1)
  
- .SH "AUTHOR"
- This manual page was written by Petr PÃ­saÅ <\fIppisar@redhat.com\fP>
+ .SH AUTHOR
+ This manual page was written by Petr Písař
