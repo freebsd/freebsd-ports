@@ -2,7 +2,7 @@ bin/urbackupsrv
 @(,,6555) bin/urbackup_mount_helper
 @(,,6555) bin/urbackup_snapshot_helper
 @mode 0444
-share/man/man1/urbackupsrv.1.gz
+man/man1/urbackupsrv.1.gz
 @mode 0644
 @sample etc/urbackup/urbackupsrv.conf.sample
 etc/newsyslog.conf.d/urbackupsrv.conf
@@ -134,6 +134,7 @@ share/urbackup/www/js/urbackup.chash-87260f8c6691aad4825ae2025f13492d.js
 share/urbackup/www/js/urbackup.chash-88574e8b8dfb8c33420e756b0c9f6d5e.js
 share/urbackup/www/js/urbackup.chash-930d5761af9b34f8b8d30d351feed85e.js
 share/urbackup/www/js/urbackup.chash-9a2d6eaeb46201db012471777d3f0450.js
+share/urbackup/www/js/urbackup.chash-9f514a23b70249b0606d97749d1bfc92.js
 share/urbackup/www/js/urbackup.chash-ac6922133c3cbf21716f8dab68a3a712.js
 share/urbackup/www/js/urbackup.chash-ae0cb8928ce470e4e8b59e8d18aa37bd.js
 share/urbackup/www/js/urbackup.chash-cb406b0890d791e36c7542211da71a8c.js
