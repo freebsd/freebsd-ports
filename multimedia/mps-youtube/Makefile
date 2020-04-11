@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	mps-youtube
-PORTVERSION=	0.2.8
-PORTREVISION=	1
+DISTVERSION=	0.2.9.g20200313
 CATEGORIES=	multimedia
-MASTER_SITES=	CHEESESHOP
+
+USE_GITHUB=	yes
+GH_TAGNAME=	afab9fb
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Terminal based YouTube jukebox with playlist management
