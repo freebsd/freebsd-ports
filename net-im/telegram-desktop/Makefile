@@ -35,6 +35,9 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 USES=		cmake compiler:c++17-lang desktop-file-utils \
 		gnome pkgconfig python:3.7,build qt:5 ssl xorg
 
+# see Bugzilla #245452 for details
+NO_CCACHE=	yes
+
 GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
 USE_GNOME=	glib20
