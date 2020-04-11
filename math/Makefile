@@ -353,6 +353,7 @@
     SUBDIR += lemon
     SUBDIR += levmar
     SUBDIR += libRmath
+    SUBDIR += libbraiding
     SUBDIR += libccd
     SUBDIR += libflame
     SUBDIR += liblbfgs

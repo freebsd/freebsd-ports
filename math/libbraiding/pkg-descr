@@ -1,0 +1,8 @@
+This is a project to expose the functionalitis of the Braiding program as a
+shared library. The original goal is to include it as a component of SageMath,
+but it can be used in any other c++ program.
+
+It allows various computations on braid groups, such as normal forms.
+
+WWW: https://github.com/miguelmarco/libbraiding
+WWW: https://github.com/jeanluct/braidlab
