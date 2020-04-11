@@ -51,6 +51,8 @@ GCC_DEFAULT?=		9
 .endif
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
+# Allowed values: 7 8 11 12 13
+JAVA_DEFAULT?=8
 # Possible values: 0.6, 0.7, 1.0, 1.1
 JULIA_DEFAULT?=		1.0
 # Possible values: 2.0.6

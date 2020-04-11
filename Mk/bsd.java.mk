@@ -203,6 +203,7 @@ __JAVA_PORTS_ALL=	\
 					JAVA_PORT_NATIVE_OPENJDK_JDK_7  \
 					JAVA_PORT_LINUX_ORACLE_JDK_8
 _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
+			JAVA_PORT_NATIVE_OPENJDK_JDK_${JAVA_DEFAULT} \
 					${__JAVA_PORTS_ALL}
 
 # Set the name of the file that indicates that a JDK is indeed installed, as a
@@ -456,6 +457,7 @@ java-debug:
 	@${ECHO_CMD} "JAVA_BUILD=                     ${JAVA_BUILD}"
 	@${ECHO_CMD} "JAVA_RUN=                       ${JAVA_RUN}"
 	@${ECHO_CMD} "JAVA_EXTRACT=                   ${JAVA_EXTRACT}"
+	@${ECHO_CMD} "JAVA_DEFAULT=                   ${JAVA_DEFAULT}"
 	@${ECHO_CMD}
 	@${ECHO_CMD} "# JDK port dependency selection process:"
 	@${ECHO_CMD} "_JAVA_PORTS_POSSIBLE=           ${_JAVA_PORTS_POSSIBLE}"
