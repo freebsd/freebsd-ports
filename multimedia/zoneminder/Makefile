@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneminder
-PORTVERSION=	1.34.6
+PORTVERSION=	1.34.9
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru

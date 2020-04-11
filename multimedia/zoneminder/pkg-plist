@@ -184,6 +184,7 @@ share/applications/zoneminder.desktop
 %%DATADIR%%/db/zm_update-1.34.4.sql
 %%DATADIR%%/db/zm_update-1.34.5.sql
 %%DATADIR%%/db/zm_update-1.34.6.sql
+%%DATADIR%%/db/zm_update-1.34.7.sql
 %%DATADIR%%/icons/16x16/icon.xpm
 %%ETCDIR%%/01-system-paths.conf
 %%ETCDIR%%/02-multiserver.conf
