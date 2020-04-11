@@ -5,7 +5,7 @@ PORTNAME=	jrtplib
 PORTVERSION=	3.11.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://research.edm.uhasselt.be/jori/jrtplib/
+MASTER_SITES=	https://research.edm.uhasselt.be/jori/jrtplib/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Object-oriented RTP library written in C++
