@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	emscripten
-DISTVERSION=	1.39.11
+DISTVERSION=	1.39.12
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ GH_PROJECT=	emscripten
 SHEBANG_FILES=	${PYSCRIPTS} emcmake tools/emdump system/bin/sdl-config system/bin/sdl2-config third_party/websockify/run
 SHEBANG_GLOB=	*.py *.sh
 
-PYSCRIPTS=	em++ emar emcc em-config emconfigure emmake emranlib emrun emscons
+PYSCRIPTS=	em++ emar emcc emconfigure emmake emranlib emrun emscons
 
 NO_BUILD=	yes
 NO_ARCH=	yes

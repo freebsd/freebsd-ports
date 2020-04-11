@@ -1,5 +1,4 @@
 bin/em++
-bin/em-config
 bin/emar
 bin/emcc
 bin/emconfigure
@@ -16,7 +15,7 @@ lib/emscripten/cmake/Modules/Platform/Emscripten.cmake
 lib/emscripten/cmake/Modules/TestBigEndian.cmake
 lib/emscripten/em++
 lib/emscripten/em++.py
-lib/emscripten/em-config
+lib/emscripten/em-config.py
 lib/emscripten/emar
 lib/emscripten/emar.py
 lib/emscripten/embuilder.py
@@ -410,6 +409,7 @@ lib/emscripten/system/include/emscripten/bind.h
 lib/emscripten/system/include/emscripten/dom_pk_codes.h
 lib/emscripten/system/include/emscripten/em_asm.h
 lib/emscripten/system/include/emscripten/em_js.h
+lib/emscripten/system/include/emscripten/em_macros.h
 lib/emscripten/system/include/emscripten/emmalloc.h
 lib/emscripten/system/include/emscripten/emscripten.h
 lib/emscripten/system/include/emscripten/exports.h
@@ -1197,6 +1197,7 @@ lib/emscripten/system/lib/gl/webgl2.h
 lib/emscripten/system/lib/gl/webgl2_ext.h
 lib/emscripten/system/lib/html5/dom_pk_codes.c
 lib/emscripten/system/lib/html5/key_codes.c
+lib/emscripten/system/lib/jsmath.c
 lib/emscripten/system/lib/libc-sockets.symbols
 lib/emscripten/system/lib/libc/README.md
 lib/emscripten/system/lib/libc/crt1.c
@@ -2717,6 +2718,7 @@ lib/emscripten/system/lib/libunwind/src/Unwind-EHABI.cpp
 lib/emscripten/system/lib/libunwind/src/Unwind-EHABI.h
 lib/emscripten/system/lib/libunwind/src/Unwind-seh.cpp
 lib/emscripten/system/lib/libunwind/src/Unwind-sjlj.c
+lib/emscripten/system/lib/libunwind/src/Unwind-wasm.cpp
 lib/emscripten/system/lib/libunwind/src/UnwindCursor.hpp
 lib/emscripten/system/lib/libunwind/src/UnwindLevel1-gcc-ext.c
 lib/emscripten/system/lib/libunwind/src/UnwindLevel1.c
@@ -2781,9 +2783,13 @@ lib/emscripten/system/lib/symbols/asmjs/libhtml5.symbols
 lib/emscripten/system/lib/symbols/asmjs/libpthread-mt.symbols
 lib/emscripten/system/lib/symbols/asmjs/libpthread_stub.symbols
 lib/emscripten/system/lib/symbols/wasm/libal.symbols
+lib/emscripten/system/lib/symbols/wasm/libc++-except.symbols
+lib/emscripten/system/lib/symbols/wasm/libc++-mt-except.symbols
 lib/emscripten/system/lib/symbols/wasm/libc++-mt-noexcept.symbols
 lib/emscripten/system/lib/symbols/wasm/libc++-noexcept.symbols
 lib/emscripten/system/lib/symbols/wasm/libc++.symbols
+lib/emscripten/system/lib/symbols/wasm/libc++abi-except.symbols
+lib/emscripten/system/lib/symbols/wasm/libc++abi-mt-except.symbols
 lib/emscripten/system/lib/symbols/wasm/libc++abi-mt-noexcept.symbols
 lib/emscripten/system/lib/symbols/wasm/libc++abi-mt.symbols
 lib/emscripten/system/lib/symbols/wasm/libc++abi-noexcept.symbols
@@ -2820,6 +2826,8 @@ lib/emscripten/system/lib/symbols/wasm/libpthread-mt-asan.symbols
 lib/emscripten/system/lib/symbols/wasm/libpthread-mt.symbols
 lib/emscripten/system/lib/symbols/wasm/libpthread_stub-asan.symbols
 lib/emscripten/system/lib/symbols/wasm/libpthread_stub.symbols
+lib/emscripten/system/lib/symbols/wasm/libunwind-except.symbols
+lib/emscripten/system/lib/symbols/wasm/libunwind-mt-except.symbols
 lib/emscripten/system/lib/test.cpp
 lib/emscripten/system/lib/update_compiler_rt.py
 lib/emscripten/system/lib/update_libcxx.py
@@ -3123,6 +3131,7 @@ lib/emscripten/tools/debug/scan_js.py
 lib/emscripten/tools/debug/scan_ll.py
 lib/emscripten/tools/debug/stubify_ll.py
 lib/emscripten/tools/determinism_checker.py
+lib/emscripten/tools/diagnostics.py
 lib/emscripten/tools/distill_asm.py
 lib/emscripten/tools/duplicate_function_eliminator.py
 lib/emscripten/tools/eliminate-duplicate-functions.js
@@ -3237,6 +3246,7 @@ lib/emscripten/tools/find_bigfuncs.py
 lib/emscripten/tools/find_bigvars.py
 lib/emscripten/tools/gen_struct_info.py
 lib/emscripten/tools/hacky_postprocess_around_closure_limitations.py
+lib/emscripten/tools/install.py
 lib/emscripten/tools/js-optimizer.js
 lib/emscripten/tools/js_optimizer.py
 lib/emscripten/tools/jsrun.py
@@ -3302,8 +3312,8 @@ lib/emscripten/tools/ports/sdl2_ttf.py
 lib/emscripten/tools/ports/vorbis.py
 lib/emscripten/tools/ports/zlib.py
 lib/emscripten/tools/preprocessor.js
-lib/emscripten/tools/python_selector.py
 lib/emscripten/tools/response_file.py
+lib/emscripten/tools/run_python.sh
 lib/emscripten/tools/scons/site_scons/site_tools/emscripten/__init__.py
 lib/emscripten/tools/scons/site_scons/site_tools/emscripten/emscripten.py
 lib/emscripten/tools/separate_asm.py
