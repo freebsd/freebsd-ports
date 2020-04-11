@@ -4383,6 +4383,7 @@
     SUBDIR += py-fluent-logger
     SUBDIR += py-flufl.i18n
     SUBDIR += py-flufl.lock
+    SUBDIR += py-flynt
     SUBDIR += py-foolscap
     SUBDIR += py-freebsd
     SUBDIR += py-freebsd-sysctl
