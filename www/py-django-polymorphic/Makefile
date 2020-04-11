@@ -1,12 +1,11 @@
 # Created by: Kevin Golding <ports@caomhin.org>
 # $FreeBSD$
 
-PORTNAME=	django_polymorphic
-PORTVERSION=	2.0.3
+PORTNAME=	django-polymorphic
+PORTVERSION=	2.1.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	django-polymorphic-${PORTVERSION}
 
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Seamless Polymorphic Inheritance for Django Models
