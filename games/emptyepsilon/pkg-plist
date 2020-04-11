@@ -53,7 +53,6 @@ bin/emptyepsilon
 %%DATADIR%%/resources/dial_background.png
 %%DATADIR%%/resources/dial_button.png
 %%DATADIR%%/resources/electric_sphere_texture.png
-%%DATADIR%%/resources/engine.wav
 %%DATADIR%%/resources/explosion.wav
 %%DATADIR%%/resources/fire_ring.png
 %%DATADIR%%/resources/fire_sphere_texture.png
@@ -265,6 +264,8 @@ bin/emptyepsilon
 %%DATADIR%%/resources/sa_62_Turkey3.ogg
 %%DATADIR%%/resources/sa_62_Urchins.ogg
 %%DATADIR%%/resources/sfx/emp_explosion.wav
+%%DATADIR%%/resources/sfx/engine.wav
+%%DATADIR%%/resources/sfx/engine_fighter.wav
 %%DATADIR%%/resources/sfx/hvli_fire.wav
 %%DATADIR%%/resources/sfx/laser_fire.wav
 %%DATADIR%%/resources/sfx/nuke_explosion.wav
