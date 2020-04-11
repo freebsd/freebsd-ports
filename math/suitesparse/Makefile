@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	suitesparse
-DISTVERSION=	5.4.0
-PORTREVISION=	6
+PORTVERSION=	5.7.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	math
-MASTER_SITES=	http://faculty.cse.tamu.edu/davis/SuiteSparse/	\
-		https://mirror.sobukus.de/files/src/suitesparse/
-DISTNAME=	SuiteSparse-${PORTVERSION}
 
 MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	SuiteSparse is a set of packages for sparse matrices calculation
@@ -17,9 +14,12 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libmetis.so:math/metis
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	DrTimothyAldenDavis
+GH_PROJECT=	SuiteSparse
+
 USES=		cmake:insource compiler:${OPENMP}c++11-lib fortran gmake localbase:ldflags
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/SuiteSparse
 ALL_TARGET=	library # skip demos
 INSTALL_TARGET=	install # skip USES=cmake
 MAKE_ENV=	BLAS="${BLASLIB}" LAPACK="${LAPACKLIB}" \
@@ -29,7 +29,8 @@ MAKE_ENV=	BLAS="${BLASLIB}" LAPACK="${LAPACKLIB}" \
 		INSTALL="${STAGEDIR}${PREFIX}" \
 		INSTALL_DOC="${STAGEDIR}${DOCSDIR}" \
 		INSTALL_INCLUDE="${STAGEDIR}${PREFIX}/include/${PORTNAME}"
-CMAKE_ARGS=	-DCMAKE_INSTALL_INCLUDEDIR:PATH="include/${PORTNAME}"
+CMAKE_ARGS=	-DCMAKE_INSTALL_INCLUDEDIR:PATH="include/${PORTNAME}"	\
+		-DBUILD_GRB_STATIC_LIBRARY:BOOL=ON
 LDFLAGS+=	-L${WRKSRC}/lib # prevent linking with shared libs from the preinstalled older versions
 
 CONFLICTS_INSTALL=	mongoose plinkseq # bin/mongoose

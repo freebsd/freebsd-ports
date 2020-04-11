@@ -79,7 +79,7 @@ lib/libccolamd.so.2
 lib/libccolamd.so.2.9.6
 lib/libcholmod.so
 lib/libcholmod.so.3
-lib/libcholmod.so.3.0.13
+lib/libcholmod.so.3.0.14
 lib/libcolamd.so
 lib/libcolamd.so.2
 lib/libcolamd.so.2.9.6
@@ -88,8 +88,8 @@ lib/libcxsparse.so.3
 lib/libcxsparse.so.3.2.0
 lib/libgraphblas.a
 lib/libgraphblas.so
-lib/libgraphblas.so.2
-lib/libgraphblas.so.2.2.2
+lib/libgraphblas.so.3
+lib/libgraphblas.so.3.2.2
 lib/libklu.so
 lib/libklu.so.1
 lib/libklu.so.1.3.8
@@ -99,7 +99,7 @@ lib/libldl.so.2.2.6
 lib/libmongoose.a
 lib/libmongoose.so
 lib/libmongoose.so.2
-lib/libmongoose.so.2.0.3
+lib/libmongoose.so.2.0.4
 lib/librbio.so
 lib/librbio.so.2
 lib/librbio.so.2.2.6
@@ -108,10 +108,10 @@ lib/libspqr.so.2
 lib/libspqr.so.2.0.9
 lib/libsuitesparseconfig.so
 lib/libsuitesparseconfig.so.5
-lib/libsuitesparseconfig.so.5.4.0
+lib/libsuitesparseconfig.so.5.7.2
 lib/libumfpack.so
 lib/libumfpack.so.5
-lib/libumfpack.so.5.7.8
+lib/libumfpack.so.5.7.9
 %%PORTDOCS%%%%DOCSDIR%%/AMD_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/AMD_UserGuide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/BTF_README.txt
@@ -128,7 +128,7 @@ lib/libumfpack.so.5.7.8
 %%PORTDOCS%%%%DOCSDIR%%/RBIO_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/SPQR_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/SUITESPARSECONFIG_README.txt
-%%PORTDOCS%%%%DOCSDIR%%/SuiteSparse_README.txt
+%%PORTDOCS%%%%DOCSDIR%%/SuiteSparse_README.md
 %%PORTDOCS%%%%DOCSDIR%%/UMFPACK_QuickStart.pdf
 %%PORTDOCS%%%%DOCSDIR%%/UMFPACK_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/UMFPACK_UserGuide.pdf
