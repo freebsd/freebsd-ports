@@ -8,7 +8,7 @@ PORTREVISION=	11
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
-COMMENT=	Open Source Distribruted Filesystem
+COMMENT=	Open Source Distributed Filesystem
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
