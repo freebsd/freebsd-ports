@@ -136,7 +136,7 @@ case "$1" in
 esac
 shift
 
-if [ $# -ge 1 ]; then
+if [ $# -ge 1 -a "$1" != "all" ]; then
 	frr_daemons="$*"
 fi
 

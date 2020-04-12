@@ -3,6 +3,7 @@
 PORTNAME=	frr
 PORTVERSION=	7.3
 DISTVERSIONPREFIX=	frr-
+PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	7
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libyang.so:net/libyang
 
 USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
-		makeinfo python:2.7-3.6,build readline
+		makeinfo python:2.7-3.8,build readline
 
 BINARY_ALIAS=	python=${PYTHON_VERSION}
 
