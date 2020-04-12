@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	keepassxc
-DISTVERSION=	2.5.3
+DISTVERSION=	2.5.4
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/${PORTNAME}-${DISTVERSION}-src.tar.xz?dummy=/
 
