@@ -14523,3 +14523,4 @@ devel/rubygem-cucumber-tag_expressions|devel/rubygem-cucumber-tag-expressions|20
 devel/p5-Glib2|devel/p5-Glib|2020-04-07|Rename to match our p5- port naming
 devel/jucipp|editors/jucipp|2020-04-07|Remove duplicate
 www/py-django_polymorphic|www/py-django-polymorphic|2020-04-11|Match canonical/registered (PyPI/CHEESESHOP) name
+dns/dnsmasq-devel|dns/dnsmasq|2020-04-12|dnsmasq is newer than dnsmasq-devel

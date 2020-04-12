@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.80
-PORTREVISION=	4	# leave this in even if 0 to avoid PORTEPOCH bumps
+DISTVERSION=	2.81
+# Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
@@ -14,34 +15,43 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
 LICENSE=	GPLv2
 
-CONFLICTS_INSTALL=dnsmasq-devel-*
+USES=		cpe shebangfix tar:xz
+CPE_VENDOR=	thekelleys
 
-PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
+SHEBANG_FILES=	contrib/dnslist/dnslist.pl \
+		contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl
+
+MAKE_ARGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS}" \
+		COPTS="${CFLAGS}" \
+		LIBS="${LDFLAGS}" \
+		PREFIX="${PREFIX}" \
+		RPM_OPT_FLAGS="${CPPFLAGS}"
+CFLAGS+=	-Wall -Wno-unused-function -Wno-unused-parameter \
+		-Wno-unused-value -Wno-unused-variable
+CPPFLAGS+=	-I${LOCALBASE}/include
+
+CONFLICTS_INSTALL=	dnsmasq-devel-*
 
 SUB_FILES=	pkg-message
 
-CFLAGS+=	-Wall -Wno-unused-value -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function
-CPPFLAGS+=	-I${LOCALBASE}/include
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" COPTS="${CFLAGS}" LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
+PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 
-OPTIONS_DEFINE=		IPSET IPV6 DBUS LUA DNSSEC DOCS
+OPTIONS_DEFINE=		DBUS DNSSEC DOCS IPSET IPV6 LUA
 OPTIONS_DEFAULT=	DNSSEC IPSET
-OPTIONS_EXCLUDE+=	EXAMPLES
 OPTIONS_RADIO=		INTL
 OPTIONS_RADIO_INTL=	IDN NLS
-INTL_DESC=	Internationalization Support Level
-NLS_DESC=	IDN+NLS: Int'l Domain Names & National Language support
+OPTIONS_EXCLUDE+=	EXAMPLES
+
+DNSSEC_DESC=	Enable DNSSEC caching and validation (needs nettle)
 IDN_DESC=	IDN: Int'l Domain Names WITHOUT full NLS
+INTL_DESC=	Internationalization Support Level
 IPSET_DESC=	Dynamic firewall management of resolved names (needs PF)
 LUA_DESC=	Support lease-change scripts written in Lua
-DNSSEC_DESC=	Enable DNSSEC caching and validation
-USES=		cpe shebangfix tar:xz
-SHEBANG_FILES=	contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl \
-		contrib/dnslist/dnslist.pl
-CPE_VENDOR=	thekelleys
+NLS_DESC=	IDN+NLS: Int'l Domain Names & National Language support
 
-IPV6_CFLAGS_OFF=-DNO_IPV6
-IPSET_CFLAGS_OFF=-DNO_IPSET
+IPSET_CFLAGS_OFF=	-DNO_IPSET
+IPV6_CFLAGS_OFF=	-DNO_IPV6
 
 .include <bsd.port.options.mk>
 
@@ -75,14 +85,14 @@ LDFLAGS+=	`pkg-config --libs dbus-1`
 CPPFLAGS+=	-I${LUA_INCDIR}
 CFLAGS+=	-DHAVE_LUASCRIPT
 LDFLAGS+=	-L${LUA_LIBDIR} -llua-${LUA_VER}
-USES+=		lua
+USES+=		lua pkgconfig
 .endif
 
 .if ${PORT_OPTIONS:MDNSSEC}
 CFLAGS+=	-DHAVE_DNSSEC -I${LOCALBASE}/include
 USES+=		pkgconfig
-LIB_DEPENDS+=	libnettle.so:security/nettle
-LIB_DEPENDS+=	libgmp.so:math/gmp
+LIB_DEPENDS+=	libgmp.so:math/gmp \
+		libnettle.so:security/nettle
 .endif
 
 USE_RC_SUBR=	dnsmasq
@@ -90,6 +100,9 @@ USE_RC_SUBR=	dnsmasq
 .include <bsd.port.pre.mk>
 
 LDFLAGS+=	-L${LOCALBASE}/lib ${_intllibs} ${ICONV_LIB}
+
+post-patch:
+	${REINPLACE_CMD} -e '/^lua_/s/lua5\.2/lua-${LUA_VER}/' ${WRKSRC}/Makefile
 
 pre-configure: pretty-print-config
 .if ${PORT_OPTIONS:MIDN}
