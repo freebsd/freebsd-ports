@@ -1,6 +1,6 @@
---- tools/cpp/BUILD.static.freebsd.orig	2019-07-10 15:47:44.533177000 +0000
-+++ tools/cpp/BUILD.static.freebsd	2019-07-10 15:48:07.637126000 +0000
-@@ -62,11 +62,11 @@
+--- tools/cpp/BUILD.static.bsd.orig	2020-04-12 11:32:39.918302000 +0200
++++ tools/cpp/BUILD.static.bsd	2020-04-12 11:33:29.118502000 +0200
+@@ -64,11 +64,11 @@
  toolchain(
      name = "cc-toolchain-freebsd",
      exec_compatible_with = [
