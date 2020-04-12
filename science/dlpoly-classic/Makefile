@@ -2,7 +2,7 @@
 
 PORTNAME=	dlpoly
 PORTVERSION=	1.8
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	science java
 MASTER_SITES=	http://ccpforge.cse.rl.ac.uk/gf/download/frsrelease/238/2028/
 PKGNAMESUFFIX=	classic
@@ -11,24 +11,23 @@ DISTNAME=	dl_class_${PORTVERSION}
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Molecular dynamics simulation package
 
-BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
+# Later versions use 2 clause
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENCE.pdf
 
-BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpif90:net/openmpi
-RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
-
-OPTIONS_DEFINE=	GUI DOCS EXAMPLES
-OPTIONS_DEFAULT=	GUI
-GUI_DESC=	Install Java GUI
+LIB_DEPENDS=	libmpi.so:net/openmpi3
 
 USES=		fortran gmake
+
+OPTIONS_DEFINE=		GUI DOCS EXAMPLES
+OPTIONS_DEFAULT=	GUI
+GUI_DESC=		Install Java GUI
 
 SUB_FILES=	dlpoly-gui
 
 BUILD_WRKSRC=	${WRKSRC}/source
 
-MPIF90=		${LOCALBASE}/mpi/openmpi/bin/mpif90
+MPIF90=		${LOCALBASE}/mpi/openmpi3/bin/mpif90
 
 GUI_USE=		JAVA=yes
 GUI_PLIST_FILES=	bin/dlpoly-gui \
