@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bemenu
-DISTVERSION=	0.3.0
+DISTVERSION=	0.4.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -12,12 +12,12 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSE-CLIENT
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSE-LIB
 
-USES=		cmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cloudef
 USE_LDCONFIG=	yes
 
-LDFLAGS+=	-pthread -Wl,--as-needed
+MAKEFILE=	${FILESDIR}/Makefile
+MAKE_ARGS=	RENDERERS="${_BEMENU_RENDERERS}"
 PLIST_SUB=	SOVERSION=${DISTVERSION}
 
 OPTIONS_DEFAULT=	${OPTIONS_MULTI_BACKEND}
@@ -28,19 +28,19 @@ OPTIONS_SUB=		yes
 BACKEND_DESC=	Backend
 
 NCURSES_USES=		ncurses
-NCURSES_CMAKE_BOOL=	BEMENU_CURSES_RENDERER
-NCURSES_CMAKE_ON=	-DCURSES_FOUND:BOOL=yes \
-			-DCURSES_INCLUDE_DIRS:PATH="${NCURSESINC}" \
-			-DCURSES_LIBRARY:PATH="${NCURSESLIB}/libncursesw.so"
+NCURSES_MAKE_ARGS=	curses_CFLAGS="-I${NCURSESINC}" \
+			curses_LIBS="-L${NCURSESLIB} -l${NCURSES_IMPL}"
+NCURSES_VARS=		_BEMENU_RENDERERS+=curses
+WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 			libwayland-client.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
 WAYLAND_USES=		gnome pkgconfig
 WAYLAND_USE=		GNOME=cairo,glib20,pango
-WAYLAND_CMAKE_BOOL=	BEMENU_WAYLAND_RENDERER
+WAYLAND_VARS=		_BEMENU_RENDERERS+=wayland
 X11_USES=		gnome pkgconfig xorg
 X11_USE=		GNOME=cairo,glib20,pango \
 			XORG=x11,xinerama
-X11_CMAKE_BOOL=		BEMENU_X11_RENDERER
+X11_VARS=		_BEMENU_RENDERERS+=x11
 
 .include <bsd.port.mk>

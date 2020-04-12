@@ -7,5 +7,6 @@ include/bemenu.h
 lib/libbemenu.so
 lib/libbemenu.so.0
 lib/libbemenu.so.%%SOVERSION%%
-man/man1/bemenu-run.1.gz
-man/man1/bemenu.1.gz
+libdata/pkgconfig/bemenu.pc
+share/man/man1/bemenu-run.1.gz
+share/man/man1/bemenu.1.gz
