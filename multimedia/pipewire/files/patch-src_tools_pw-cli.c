@@ -1,4 +1,4 @@
---- src/tools/pw-cli.c.orig	2020-02-20 14:33:31 UTC
+--- src/tools/pw-cli.c.orig	2020-03-26 11:34:54 UTC
 +++ src/tools/pw-cli.c
 @@ -28,7 +28,9 @@
  #include <signal.h>
@@ -7,6 +7,6 @@
 +#ifndef __FreeBSD__
  #include <alloca.h>
 +#endif
+ #include <getopt.h>
  
  #include <spa/utils/result.h>
- #include <spa/debug/pod.h>

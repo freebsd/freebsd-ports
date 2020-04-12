@@ -129,7 +129,7 @@ include/spa-0.2/spa/utils/type.h
 lib/alsa-lib/libasound_module_pcm_pipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.301.0
+lib/libpipewire-0.3.so.0.302.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
