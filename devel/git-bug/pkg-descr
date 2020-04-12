@@ -1,0 +1,21 @@
+Fully featured git bug tracker that:
+
+* Is fully embeded in git: you only need
+  your git repository to have a bug tracker.
+* Is distributed: use your normal git remote
+  to collaborate, push and pull your bugs!
+* Works offline: in a plane or under the sea?
+  Keep reading and writing bugs!
+* Prevents vendor lock-in: your usual service
+  is down or went bad? You already have a full backup.
+* Is fast: listing bugs or opening them is a matter
+  of milliseconds.
+* Doesn't pollute your project: no files are added
+  in your project.
+* Integrates with your tooling: use the UI you like
+  (CLI, terminal, web) or integrate with your existing
+  tools through the CLI or the GraphQL API.
+* Bridges to other bug trackers: use bridges to import
+  and export to other trackers.
+
+WWW: https://github.com/MichaelMure/git-bug

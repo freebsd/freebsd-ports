@@ -783,6 +783,7 @@
     SUBDIR += gio-sharp
     SUBDIR += git
     SUBDIR += git-absorb
+    SUBDIR += git-bug
     SUBDIR += git-bzr-ng
     SUBDIR += git-cinnabar
     SUBDIR += git-codereview
