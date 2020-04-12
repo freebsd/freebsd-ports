@@ -10,3 +10,5 @@ man/man5/dsc.conf.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE.md
+@dir /var/lib/dsc
+@dir /var/lib

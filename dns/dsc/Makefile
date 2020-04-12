@@ -3,6 +3,7 @@
 
 PORTNAME=	dsc
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dsc/ \
 		https://dns.company/files/dsc/
@@ -16,14 +17,14 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 RUN_DEPENDS=	libpcap>=1.8.1:net/libpcap \
 		p5-Proc-PID-File>=1.28:devel/p5-Proc-PID-File \
-		p5-XML-Simple>=2.24:textproc/p5-XML-Simple \
-		dsp>=2.0.0:dns/dsp
+		p5-XML-Simple>=2.24:textproc/p5-XML-Simple
 
 USES=		gmake perl5 shebangfix
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-extra-cflags=-I${LOCALBASE}/include \
-		--with-extra-ldflags=-L${LOCALBASE}/lib
+		--with-extra-ldflags=-L${LOCALBASE}/lib \
+		--with-pid-file=/var/run/${PORTNAME}.pid
 
 SUB_FILES=	pkg-message
 SHEBANG_FILES=	cron/upload-prep.pl
@@ -41,5 +42,8 @@ post-extract:
 	    ${WRKSRC}/cron/upload-x509.sh \
 	    ${WRKSRC}/src/dsc.conf.5.in \
 	    ${WRKSRC}/src/dsc.sh
+
+post-install:
+	${MKDIR} ${STAGEDIR}/var/lib/${PORTNAME}
 
 .include <bsd.port.mk>
