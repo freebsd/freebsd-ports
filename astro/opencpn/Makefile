@@ -49,7 +49,4 @@ post-patch:
 		-e '/-mavx2/d' ${WRKSRC}/CMakeLists.txt
 .endif
 
-post-install:
-	${GZIP_CMD} ${STAGEDIR}${PREFIX}/man/man1/opencpn.1
-
 .include <bsd.port.post.mk>
