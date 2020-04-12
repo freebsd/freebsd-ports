@@ -3,7 +3,7 @@
 
 PORTNAME=	ccache
 #PORTVERSION must be set later due to depending on PORT_OPTIONS.
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ccache/ccache/releases/download/v${DISTVERSION}/ \
 		LOCAL/bdrewery
@@ -97,12 +97,16 @@ PLIST_SUB+=	CCLINKDIR="${CCLINKDIR}"
 CCACHE_COMPILERS+=	icc icpc
 .endif
 
-GNU_COMPILERS+=		34 42 43 44 45 46 47 48 49 5 6 7 8 9
-CCACHE_COMPILERS+=	cc c++ CC gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
+GNU_COMPILERS+=		34 42 43 44 45 46 47 48 49 5 6 7 8 9 10
+CCACHE_COMPILERS+=	cc c++ CC gcc g++ ${GNU_COMPILERS:S|^|gcc|} \
+			${GNU_COMPILERS:S|^|g++|} \
+			${GNU_COMPILERS:S|^|cpp|}
 
 .if ${PORT_OPTIONS:MCLANGLINK}
-CLANG_COMPILERS+=	33 34 35 36 37 38 39 40 50 60 70 80 -devel
-CCACHE_COMPILERS+=	clang clang++ ${CLANG_COMPILERS:S|^|clang|} ${CLANG_COMPILERS:S|^|clang++|}
+CLANG_COMPILERS+=	33 34 35 36 37 38 39 40 50 60 70 80 90 10 -devel
+CCACHE_COMPILERS+=	clang clang++ ${CLANG_COMPILERS:S|^|clang|} \
+			${CLANG_COMPILERS:S|^|clang++|} \
+			${CLANG_COMPILERS:S|^|cpp|}
 .endif
 
 .if ${PORT_OPTIONS:MLLVMLINK}
