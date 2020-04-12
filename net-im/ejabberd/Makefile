@@ -18,7 +18,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpng.so:graphics/png \
 		libwebp.so:graphics/webp
 
-USES=		cpe gmake pkgconfig shebangfix ssl jpeg autoreconf:build
+USES=		compiler:c11 cpe gmake pkgconfig shebangfix ssl jpeg \
+		autoreconf:build
 
 USERS=		ejabberd
 GROUPS=		${USERS}
