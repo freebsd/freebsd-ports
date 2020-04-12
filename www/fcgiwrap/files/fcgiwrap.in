@@ -79,6 +79,11 @@ fcgiwrap_postcmd() {
 			return
 			;;
 	esac
+	# Wait up to 5 seconds for the socket file
+	for i in $(seq 5); do
+		[ -e ${fcgiwrap_socket#unix:} ] && break
+		sleep 1
+	done
 	if [ -n "${fcgiwrap_socket_mode}" ]; then
 		chmod ${fcgiwrap_socket_mode} ${fcgiwrap_socket#unix:}
 	fi
