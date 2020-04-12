@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	10.19.0
+PORTVERSION=	10.20.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	10
@@ -68,7 +67,7 @@ MAKE_ENV+=	CC.host=${CC} CFLAGS.host="${CFLAGS}" \
 		LINK.host=${CXX} LDFLAGS.host="${LDFLAGS}"
 
 BUILD_DEPENDS+=	c-ares>=1.15.0:dns/c-ares\
-		libuv>=1.28.0:devel/libuv \
+		libuv>=1.34.2:devel/libuv \
 		libnghttp2>=1.39.2:www/libnghttp2
 LIB_DEPENDS+=	libcares.so:dns/c-ares\
 		libuv.so:devel/libuv \
