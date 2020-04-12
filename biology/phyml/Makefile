@@ -4,7 +4,7 @@
 PORTNAME=	phyml
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.20190909
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	biology
 
@@ -33,12 +33,12 @@ OPTIONS_RADIO_MPI=	MPICH OPENMPI
 MPICH_DESC=		Parallel processing support via MPICH
 MPICH_LIB_DEPENDS=	libmpich.so:net/mpich
 MPICH_MAKE_ARGS=	CC="${LOCALBASE}/bin/mpicc"
-OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
-OPENMPI_MAKE_ARGS=	CC="${LOCALBASE}/mpi/openmpi/bin/mpicc"
+OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi3
+OPENMPI_MAKE_ARGS=	CC="${LOCALBASE}/mpi/openmpi3/bin/mpicc"
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMPICH2} || ${PORT_OPTIONS:MOPENMPI}
+.if ${PORT_OPTIONS:MMPICH} || ${PORT_OPTIONS:MOPENMPI}
 CONFIGURE_ARGS+=	--enable-mpi
 BIN_SUFFIX=		-mpi
 .else
