@@ -2,25 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	websocketd
-DISTVERSION=	0.3.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.1
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/joewalnes/${PORTNAME}/releases/download/v${DISTVERSION}/
-DISTNAME=	${PORTNAME}-${DISTVERSION}-freebsd_${ARCH:S/i386/386/:S/x86_64/amd64/}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Access any command-line tool via a WebSocket
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS= amd64 i386
+USES=		go:modules
+USE_GITHUB=	yes
+GH_ACCOUNT=	joewalnes
+GH_TUPLE=	gorilla:websocket:v1.4.0:gorilla_websocket/vendor/github.com/gorilla/websocket
 
-NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/${PORTNAME}
-
-NO_BUILD=	yes
-USES=		zip
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
