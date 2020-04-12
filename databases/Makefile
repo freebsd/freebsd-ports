@@ -182,8 +182,6 @@
     SUBDIR += mariadb103-server
     SUBDIR += mariadb104-client
     SUBDIR += mariadb104-server
-    SUBDIR += mariadb55-client
-    SUBDIR += mariadb55-server
     SUBDIR += mdbtools
     SUBDIR += mdcached
     SUBDIR += memcached
