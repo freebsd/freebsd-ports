@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpi4py
-DISTVERSION=	3.0.0
-PORTREVISION=	3
+DISTVERSION=	3.0.3
 CATEGORIES=	net parallel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ USE_PYTHON=	distutils cython autoplist concurrent
 
 OPTIONS_DEFINE=		DOCS MANPAGES
 OPTIONS_SINGLE=		MP
-OPTIONS_SINGLE_MP=	MPICH2 OPENMPI OPENMPI2
+OPTIONS_SINGLE_MP=	MPICH2 OPENMPI
 OPTIONS_DEFAULT=	OPENMPI # the only non-failing MPI implementation
 MP_DESC=		MPI Implementation
 
@@ -26,19 +25,12 @@ MPICH2_USES=		fortran
 MPICH2_LIB_DEPENDS=	libmpich.so:net/mpich2
 MPICH2_LDFLAGS=		${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
 
-OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
-
-OPENMPI2_DESC=		${OPENMPI_DESC} 2.x
-OPENMPI2_LIB_DEPENDS=	libmpi.so:net/openmpi2
+OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi3
 
 PORTDOCS=		*
 
 do-patch-OPENMPI-on:
 	@${CP} ${FILESDIR}/mpi.cfg ${WRKSRC}/
-	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/mpi.cfg
-
-do-patch-OPENMPI2-on:
-	@${CP} ${FILESDIR}/mpi2.cfg ${WRKSRC}/mpi.cfg
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/mpi.cfg
 
 do-install-DOCS-on:
