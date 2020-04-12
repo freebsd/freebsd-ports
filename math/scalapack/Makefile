@@ -3,7 +3,7 @@
 
 PORTNAME=	scalapack
 PORTVERSION=	2.0.2
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	math
 MASTER_SITES=	NL
 DISTFILES=	scalapack-${PORTVERSION}.tgz manpages.tgz
@@ -11,15 +11,16 @@ DIST_SUBDIR=	scalapack
 EXTRACT_ONLY=	scalapack-${PORTVERSION}.tgz manpages.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The ScaLAPACK Scalable LAPACK library
+COMMENT=	ScaLAPACK Scalable LAPACK library
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	elmer-mathlibs-1*
 
-USE_LDCONFIG=	yes
 USES=		cmake:insource fortran pathfix
+
+USE_LDCONFIG=	yes
 CMAKE_ARGS_ST=	-DBUILD_STATIC_LIBS:BOOL=ON
 CMAKE_ARGS_SH=	-DBUILD_SHARED_LIBS:BOOL=ON
 CMAKE_ARGS=	${CMAKE_ARGS_ST}
@@ -32,40 +33,47 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:tu}
 SUB_FILES=	pkg-message
 PLIST_SUB=	SVERSION=${SVERSION} PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_RADIO=		LA MPI
+OPTIONS_RADIO_LA=	ATLAS BLAS
+LA_DESC=		Linear Algebra library support
+BLAS_DESC=		LAPACK blass implementation
+OPTIONS_RADIO_MPI=	MPICH OPENMPI
+OPTIONS_DEFAULT=	BLAS DOCS EXAMPLES MPICH
+
+DOCS_DISTFILES=	scalapack_install.ps scalapackqref.ps  \
+		lawn100.ps pblasqref.ps manual.ps design.ps \
+		pumma_refmanual.ps trans.ps
+
+ATLAS_LIB_DEPENDS=	libatlas.so:math/atlas
+
+BLAS_LIB_DEPENDS=	libblas.so:math/blas \
+			liblapack.so:math/lapack
+
+OPENMPI_BUILD_DEPENDS=	openmpi3>0:net/openmpi3
+OPENMPI_RUN_DEPENDS=	openmpi3>0:net/openmpi3
+OPENMPI_CMAKE_ON=	-DMPI_BASE_DIR=${LOCALBASE}/mpi/openmpi3
+
+MPICH_BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:net/mpich
+MPICH_RUN_DEPENDS=	${LOCALBASE}/bin/mpicc:net/mpich
+MPICH_CMAKE_ON=		-DMPI_BASE_DIR=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	scalapack_install.ps scalapackqref.ps  \
-		lawn100.ps pblasqref.ps manual.ps design.ps \
-		pumma_refmanual.ps trans.ps
-.endif
-
-.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
-WITH_ATLAS=		yes
-.endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	libatlas.so:math/atlas
+.if ${PORT_OPTIONS:MATLAS}
 BLAS=		-lf77blas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	libblas.so:math/blas
-LIB_DEPENDS+=	liblapack.so:math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
-.if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
-WITH_OPENMPI=	yes
-.endif
-
-.if defined(WITH_OPENMPI)
-BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
-RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
+.if ${PORT_OPTIONS:MOPENMPI}
+MPIF77=	${LOCALBASE}/mpi/openmpi3/bin/mpif77
+MPICC=	${LOCALBASE}/mpi/openmpi3/bin/mpicc
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:net/mpich
-RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:net/mpich
+MPIF77=	${LOCALBASE}/bin/mpif77
+MPICC=	${LOCALBASE}/bin/mpicc
 .endif
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
@@ -92,13 +100,6 @@ CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 .endif
 
 NOOPT=	-O0
-.if defined(WITH_OPENMPI)
-MPIF77=	${LOCALBASE}/mpi/openmpi/bin/mpif77
-MPICC=	${LOCALBASE}/mpi/openmpi/bin/mpicc
-.else
-MPIF77=	${LOCALBASE}/bin/mpif77
-MPICC=	${LOCALBASE}/bin/mpicc
-.endif
 
 # USES=fortran already forces FC to a supported fortran compiler;
 # assume mpicc points to a compatible compiler and force that, too.
