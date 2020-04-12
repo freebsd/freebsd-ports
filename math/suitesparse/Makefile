@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	DrTimothyAldenDavis
 GH_PROJECT=	SuiteSparse
 
-USES=		cmake:insource compiler:${OPENMP}c++11-lib fortran gmake localbase:ldflags
+USES=		cmake:insource fortran gmake localbase:ldflags
 USE_LDCONFIG=	yes
 ALL_TARGET=	library # skip demos
 INSTALL_TARGET=	install # skip USES=cmake
@@ -56,6 +56,16 @@ OPENMP_VARS=		OPENMP=gcc-
 TBB_DESC=		Intel threading building blocks
 TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
 TBB_MAKE_ENV=		TBB="-ltbb" SPQR_CONFIG="-DHAVE_TBB"
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386
+# See PR 230888 : Missing 64 bit atomic functions for i386
+USES+=		compiler:gcc-c++11-lib
+LDFLAGS+=	-latomic
+.else
+USES+=	compiler:${OPENMP}c++11-lib
+.endif
 
 post-extract:
 	${RM} -r ${WRKSRC}/metis-*
