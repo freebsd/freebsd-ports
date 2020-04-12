@@ -3,7 +3,7 @@
 
 PORTNAME=	imb
 PORTVERSION=	3.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	benchmarks parallel
 MASTER_SITES=	LOCAL/itetcu \
 		http://cache-www.intel.com/cd/00/00/32/71/
@@ -31,9 +31,9 @@ OPTIONS_DEFINE=	CHECK_RESULTS DOCS OPENMPI
 CHECK_RESULTS_DESC=	Check results (not valid as real benchmark data)
 CHECK_RESULTS_CFLAGS=	-DCHECK
 
-OPENMPI_BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
-OPENMPI_RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
-OPENMPI_MAKE_ENV=	MPI_HOME=${LOCALBASE}/mpi/openmpi
+OPENMPI_BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi3/lib/libmpi.so:net/openmpi3
+OPENMPI_RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi3/bin/mpirun:net/openmpi3
+OPENMPI_MAKE_ENV=	MPI_HOME=${LOCALBASE}/mpi/openmpi3
 OPENMPI_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/mpicc:net/mpich
 OPENMPI_RUN_DEPENDS_OFF=	${LOCALBASE}/bin/mpirun:net/mpich
 OPENMPI_MAKE_ENV_OFF=	MPI_HOME=${LOCALBASE}
