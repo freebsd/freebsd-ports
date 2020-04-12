@@ -127,8 +127,8 @@ lib/gretl-gtk2/vif.so
 %%GUI%%lib/gretl-gtk2/xlsx_import.so
 %%GUI%%lib/gretl-gtk2/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.32
-lib/libgretl-1.0.so.32.0.0
+lib/libgretl-1.0.so.33
+lib/libgretl-1.0.so.33.0.0
 libdata/pkgconfig/gretl.pc
 man/man1/gretl.1.gz
 %%GUI%%share/appdata/gretl.appdata.xml
@@ -363,7 +363,6 @@ man/man1/gretl.1.gz
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/get_series_example.inp
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/get_single_example.inp
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/imf_weo_dims.inp
-%%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/out
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/print_dims.inp
 %%ADDONS%%%%DATADIR%%/functions/extra/extra.gfn
 %%ADDONS%%%%DATADIR%%/functions/extra/extra.pdf
