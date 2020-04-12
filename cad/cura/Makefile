@@ -3,7 +3,8 @@
 PORTNAME=	Cura
 DISTVERSION=	4.5.0-82
 DISTVERSIONSUFFIX=	-g7c70ace
-PORTEPOCH=	2	
+PORTREVISION=	1
+PORTEPOCH=	2
 CATEGORIES=	cad
 DIST_SUBDIR=	Ultimaker
 
@@ -21,6 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt5-gui>0:x11-toolkits/py-qt5-gui@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Shapely>0:devel/py-shapely@${PY_FLAVOR} \
 		qt5-graphicaleffects>0:graphics/qt5-graphicaleffects \
+		qt5-quickcontrols>0:x11-toolkits/qt5-quickcontrols \
 		qt5-quickcontrols2>0:x11-toolkits/qt5-quickcontrols2 \
 		Uranium>0:cad/uranium \
 		libCharon>0:net/libcharon \
