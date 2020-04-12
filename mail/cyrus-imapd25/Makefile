@@ -4,8 +4,7 @@ PORTNAME=	cyrus-imapd
 PORTVERSION=	2.5.15
 #PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	https://www.cyrusimap.org/releases/ \
-		https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	25
 
 MAINTAINER=	ume@FreeBSD.org
