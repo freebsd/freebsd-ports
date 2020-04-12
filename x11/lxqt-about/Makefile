@@ -11,10 +11,11 @@ MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	About dialog of LXQt
 
 LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	cmake compiler:c++11-lang kde:5 lxqt pkgconfig tar:xz qt:5
-USE_QT=	buildtools_build qmake_build core dbus gui svg widgets \
-	x11extras xml
+USES=		cmake compiler:c++11-lang kde:5 lxqt pkgconfig tar:xz qt:5
+USE_QT=		buildtools_build qmake_build core dbus gui svg widgets \
+		x11extras xml
 USE_KDE=	windowsystem
 USE_LXQT=	buildtools lxqt
 
