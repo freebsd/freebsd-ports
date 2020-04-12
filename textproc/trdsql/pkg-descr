@@ -1,0 +1,5 @@
+Command-line tool allowing you to easily interface
+between CSV, LTSV, JSON and TBLN with SQL queries
+which can output to various formats.
+
+WWW: https://github.com/noborus/trdsql
