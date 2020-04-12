@@ -3,7 +3,7 @@
 PORTNAME=	ALPSCore
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org
@@ -28,24 +28,24 @@ CMAKE_ARGS_TEST=	-DTesting:BOOL=ON -DExtensiveTesting:BOOL=ON
 CXXFLAGS+=	-DNDEBUG # see https://github.com/ALPSCore/ALPSCore/issues/389
 LDFLAGS+=	-lexecinfo # https://github.com/ALPSCore/ALPSCore/issues/390
 
-OPTIONS_DEFINE=	DOXYGEN DOCS OPENMPI2
-OPTIONS_DEFAULT=	OPENMPI2
-OPENMPI2_DESC=	Parallel processing support via Open MPI 2.x
+OPTIONS_DEFINE=	DOXYGEN DOCS OPENMPI
+OPTIONS_DEFAULT=	OPENMPI
+OPENMPI_DESC=	Parallel processing support via Open MPI 3.x
 
 DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_CMAKE_BOOL=	Documentation
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
-OPENMPI2_CMAKE_BOOL=	ENABLE_MPI
-OPENMPI2_LIB_DEPENDS=	libmpi.so:net/openmpi2
+OPENMPI_CMAKE_BOOL=	ENABLE_MPI
+OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi3
 
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MOPENMPI2}
-CC=	${LOCALBASE}/mpi/openmpi2/bin/mpicc
-CXX=	${LOCALBASE}/mpi/openmpi2/bin/mpicxx
+.if ${PORT_OPTIONS:MOPENMPI}
+CC=	${LOCALBASE}/mpi/openmpi3/bin/mpicc
+CXX=	${LOCALBASE}/mpi/openmpi3/bin/mpicxx
 .endif
 
 post-install-DOXYGEN-on:
