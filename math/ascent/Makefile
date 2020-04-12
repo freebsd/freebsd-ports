@@ -11,7 +11,7 @@ COMMENT=	C++ simulation engine and differential equation solver
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	AnyarInc
 GH_PROJECT=	Ascent
