@@ -3,6 +3,7 @@
 
 PORTNAME=	shairport-sync
 DISTVERSION=	3.3.6
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -25,9 +26,10 @@ GH_ACCOUNT=	mikebrady
 
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS_DEFINE=	ALAC ALSA SNDIO PULSEAUDIO
+OPTIONS_DEFINE=	ALAC ALSA SNDIO PULSEAUDIO MQTT
 OPTIONS_DEFAULT=SNDIO
 ALAC_DESC=	Build with libalac support (experimental)
+MQTT_DESC=	Build with MQTT protocol support
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \
 		--with-piddir=/var/run/shairport-sync --with-avahi \
@@ -44,6 +46,9 @@ ALAC_CONFIGURE_ON=	--with-apple-alac
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ON=	--with-alsa
+
+MQTT_LIB_DEPENDS=	libmosquitto.so:net/mosquitto
+MQTT_CONFIGURE_ON=	--with-mqtt-client
 
 SNDIO_CONFIGURE_ON=	--with-sndio
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
