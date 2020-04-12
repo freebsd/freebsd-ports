@@ -13,6 +13,8 @@ COMMENT=	Slicing application for 3D printers
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		unknown USES=glu
+
 LIB_DEPENDS=	libtbb.so:devel/tbb \
 		libboost_log.so:devel/boost-libs \
 		libHalf-2_4.so:graphics/ilmbase \
