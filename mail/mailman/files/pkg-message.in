@@ -56,6 +56,24 @@ Refer to %%LOCALBASE%%/etc/namazu/namazurc.sample.
 EOM
 }
 { type: upgrade
+  message <<EOM
+==========================================
+WARNING ATTENTION DANGER ATTENTION WARNING
+==========================================
+
+mail/mailman requires proper directory permissions to run; but due to
+pkg 1.4.1 or libarchive bugs, directory permissions can not be created
+properly.
+
+If you installed mailman with pkg -I, --no-script or --no-install-scripts,
+you MUST(!) run the post-install script now, as root:
+
+env "PKG_PREFIX=%%PREFIX%%" sh \
+    %%MAILMANDIR%%/bin/FreeBSD-post-install x POST-INSTALL
+
+EOM
+}
+{ type: upgrade
   maximum_version: 2.1.18
   message <<EOM
 UPDATE INFORMATION FOR UPDATES OF 2.1.18/OLDER TO VERSION 2.1.19 AND NEWER:
