@@ -2,6 +2,7 @@
 
 PORTNAME=	aws-sdk-cpp
 PORTVERSION=	1.7.312
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -16,7 +17,7 @@ BROKEN_armv7=		fails to build: runaway process
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpulse.so:audio/pulseaudio \
-		libaws-c-common.so:devel/aws-c-commons \
+		libaws-c-common.so:devel/aws-c-common \
 		libaws-checksums.so:devel/aws-checksums \
 		libaws-c-event-stream.so:devel/aws-c-event-stream
 

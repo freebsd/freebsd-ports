@@ -201,7 +201,7 @@
     SUBDIR += avro-c
     SUBDIR += avro-cpp
     SUBDIR += awless
-    SUBDIR += aws-c-commons
+    SUBDIR += aws-c-common
     SUBDIR += aws-c-event-stream
     SUBDIR += aws-checksums
     SUBDIR += aws-sdk-cpp

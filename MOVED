@@ -14526,3 +14526,4 @@ www/py-django_polymorphic|www/py-django-polymorphic|2020-04-11|Match canonical/r
 dns/dnsmasq-devel|dns/dnsmasq|2020-04-12|dnsmasq is newer than dnsmasq-devel
 databases/mariadb55-server|databases/mariadb102-server|2020-04-12|Has expired: Upstream end-of-life 2020-04-11, switch to a newer version
 databases/mariadb55-client|databases/mariadb102-client|2020-04-12|Has expired: Upstream end-of-life 2020-04-11, switch to a newer version
+devel/aws-c-commons|devel/aws-c-common|2020-04-12|Renamed to the correct name
