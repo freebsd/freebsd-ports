@@ -8,6 +8,8 @@ CATEGORIES=	devel
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
+BROKEN=		need to specify gl component with USE_GL
+
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgeany.so:devel/geany@gtk2
 
