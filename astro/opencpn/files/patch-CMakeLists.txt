@@ -1,20 +1,20 @@
---- CMakeLists.txt.orig	2016-06-25 12:26:20 UTC
+--- CMakeLists.txt.orig	2019-03-23 01:25:59 UTC
 +++ CMakeLists.txt
-@@ -385,7 +385,7 @@ SET( wxWidgets_USE_UNICODE ON)
- SET( wxWidgets_USE_UNIVERSAL OFF)
- SET( wxWidgets_USE_STATIC OFF)
+@@ -1053,7 +1053,7 @@ IF(NOT WIN32 AND NOT APPLE AND NOT QT_ANDROID)
+     set(wxWidgets_CONFIG_OPTIONS ${wxWidgets_CONFIG_OPTIONS} --toolkit=gtk3)
+     MESSAGE(STATUS "Building against GTK3...")
+   ENDIF(GTK2_FOUND)
+-  FIND_PACKAGE(wxWidgets)
++  FIND_PACKAGE(wxWidgets COMPONENTS ${wxWidgets_USE_LIBS})
+   if (wxWidgets_FOUND)
+     message(STATUS "Found wxWidgets webview add-on")
+     add_definitions(-DOCPN_USE_WEBVIEW)
+@@ -2422,7 +2422,7 @@ IF(NOT APPLE)
+     INSTALL(FILES src/bitmaps/other_svg_src/opencpn.svg DESTINATION ${PREFIX_DATA}/icons/hicolor/scalable/apps PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ)
+     INSTALL(FILES data/opencpn.desktop DESTINATION ${PREFIX_DATA}/applications PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ )
+     INSTALL(FILES data/opencpn.appdata.xml DESTINATION ${PREFIX_DATA}/appdata PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ )
+-    INSTALL(FILES opencpn.1 DESTINATION ${PREFIX_DATA}/man/man1 PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ )
++    INSTALL(FILES opencpn.1 DESTINATION ${PREFIX_DATA}/../man/man1 PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ )
+   ENDIF(UNIX)
  
--FIND_PACKAGE(wxWidgets REQUIRED)
-+FIND_PACKAGE(wxWidgets REQUIRED COMPONENTS ${wxWidgets_USE_LIBS})
- 
- IF(MSYS)
- # this is to convert msys to windows paths, and handle the missing /usr
-@@ -1769,7 +1769,7 @@ ENDIF(UNIX)
- #   Certain older Cmake FindGTK2 modules ( e.g. cmake-2.8.0-2) do not yield all of the required link libraries
- #   So, add them manually.  These declarations may be redundant in some architectures, but do no harm.
- IF(UNIX)
--TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} dl )
-+TARGET_LINK_LIBRARIES( ${PACKAGE_NAME} execinfo  )
- ENDIF(UNIX)
- 
- IF(QT_LINUX)
+ ENDIF(NOT APPLE)
