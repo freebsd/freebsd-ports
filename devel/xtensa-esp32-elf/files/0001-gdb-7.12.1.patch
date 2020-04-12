@@ -1,0 +1,46 @@
+Derived from:
+
+    https://github.com/crosstool-ng/crosstool-ng/issues/1206
+    _PyImport_FixupBuiltin Solution patch #1206
+
+--- a/gdb/python/python.c.orig	2019-06-14 11:41:02.944671520 +0800
++++ b/gdb/python/python.c	2019-06-14 11:55:32.000000000 +0800
+@@ -1624,6 +1624,17 @@ finalize_python (void *ignore)
+ }
+ #endif
+ 
++#ifdef IS_PY3K
++/* This is called via the PyImport_AppendInittab mechanism called
++   during initialization, to make the built-in _gdb module known to
++   Python.  */
++PyMODINIT_FUNC
++init__gdb_module (void)
++{
++  return PyModule_Create (&python_GdbModuleDef);
++}
++#endif
++
+ /* Provide a prototype to silence -Wmissing-prototypes.  */
+ extern initialize_file_ftype _initialize_python;
+ 
+@@ -1743,6 +1754,9 @@ message == an error message without a st
+      remain alive for the duration of the program's execution, so
+      it is not freed after this call.  */
+   Py_SetProgramName (progname_copy);
++
++  /* Define _gdb as a built-in module.  */
++  PyImport_AppendInittab ("_gdb", init__gdb_module);
+ #else
+   Py_SetProgramName (progname);
+ #endif
+@@ -1752,9 +1766,7 @@ message == an error message without a st
+   PyEval_InitThreads ();
+ 
+ #ifdef IS_PY3K
+-  gdb_module = PyModule_Create (&python_GdbModuleDef);
+-  /* Add _gdb module to the list of known built-in modules.  */
+-  _PyImport_FixupBuiltin (gdb_module, "_gdb");
++  gdb_module = PyImport_ImportModule ("_gdb");
+ #else
+   gdb_module = Py_InitModule ("_gdb", python_GdbMethods);
+ #endif
