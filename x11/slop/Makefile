@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	slop
-PORTVERSION=	7.4
+PORTVERSION=	7.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
 CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,7 +24,7 @@ GH_ACCOUNT=	naelstrof
 PLIST_FILES=	bin/slop \
 		include/slop.hpp \
 		lib/libslopy.so \
-		lib/libslopy.so.7.4 \
+		lib/libslopy.so.${PORTVERSION} \
 		man/man1/slop.1.gz
 
 .include <bsd.port.mk>
