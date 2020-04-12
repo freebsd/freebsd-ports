@@ -2,7 +2,8 @@
 
 PORTNAME=	Quaternion
 DISTVERSION=	0.0.9.4
-DISTVERSIONSUFFIX=	d-rc
+DISTVERSIONSUFFIX=	e
+PORTREVISION=	7
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain \
 		libsecret-1.so:security/libsecret
-BUILD_DEPENDS=	libqmatrixclient>=0.5.3.1:net-im/libqmatrixclient
+BUILD_DEPENDS=	libqmatrixclient>=0.5.3.2:net-im/libqmatrixclient
 
 USES=		cmake compiler:c++17-lang gettext-runtime gnome \
 		localbase:ldflags qt:5 tar:xz

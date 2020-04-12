@@ -2,7 +2,7 @@
 
 PORTNAME=	spectral
 PORTVERSION=	603
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Glossy Matrix IM client based on Qt technologies
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	libqmatrixclient>=0.5.3.1:net-im/libqmatrixclient
+BUILD_DEPENDS=	libqmatrixclient>=0.5.3.2:net-im/libqmatrixclient
 
 USES=		compiler:c++17-lang gl pkgconfig qmake qt:5 tar:bz2
 USE_GL=		gl
