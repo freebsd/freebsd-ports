@@ -105,6 +105,7 @@ share/osinfo/os/asianux.com/asianux-7.0.xml
 share/osinfo/os/asianux.com/asianux-7.1.xml
 share/osinfo/os/asianux.com/asianux-7.2.xml
 share/osinfo/os/asianux.com/asianux-7.3.xml
+share/osinfo/os/asianux.com/asianux-8.0.xml
 share/osinfo/os/asianux.com/asianux-unknown.xml
 share/osinfo/os/centos.org/centos-5.0.xml
 share/osinfo/os/centos.org/centos-5.1.xml
@@ -578,6 +579,7 @@ share/osinfo/os/redhat.com/rhel-7.4.xml
 share/osinfo/os/redhat.com/rhel-7.5.xml
 share/osinfo/os/redhat.com/rhel-7.6.xml
 share/osinfo/os/redhat.com/rhel-7.7.xml
+share/osinfo/os/redhat.com/rhel-7.8.xml
 share/osinfo/os/redhat.com/rhel-8-unknown.xml
 share/osinfo/os/redhat.com/rhel-8.0.xml
 share/osinfo/os/redhat.com/rhel-8.1.xml
