@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-settings
-PORTVERSION=	4.14.2
+PORTVERSION=	4.14.3
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
