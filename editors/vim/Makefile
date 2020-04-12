@@ -3,6 +3,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	8.2.0491
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -95,6 +96,8 @@ CONSOLE_CONFIGURE_OFF=	--enable-xim --enable-fontset
 CONSOLE_PLIST_SUB=	GUI="@comment " DESKTOP="@comment "
 CONSOLE_VARS=		GUI=no
 
+GNOME_CONFIGURE_ENABLE=	canberra
+GNOME_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 GNOME_PLIST_SUB=	GUI="" DESKTOP=""
 GNOME_IMPLIES=		NLS
 GNOME_USE=		GNOME=gdkpixbuf2,libgnomeui XORG=ice,sm,xorgproto,x11,xpm,xt
