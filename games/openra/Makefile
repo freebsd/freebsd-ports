@@ -3,11 +3,11 @@
 PORTNAME=	openra
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	20200202
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	82ae5adc4631.patch:-p1 # https://github.com/OpenRA/OpenRA/pull/17744
+PATCHFILES+=	3abcb4772dbd.patch:-p1 # https://github.com/OpenRA/OpenRA/pull/17744
 PATCHFILES+=	f2177f57e6f4.patch:-p1 # https://github.com/OpenRA/OpenRA/pull/17744
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -31,12 +31,12 @@ NUGET_DEPENDS=	MaxMind.Db=2.6.1 \
 		NUnit.Extension.VSProjectLoader=3.8.0 \
 		NUnit3TestAdapter=3.16.1 \
 		NuGet.CommandLine=4.4.1 \
-		OpenRA-Eluant=1.0.15 \
+		OpenRA-Eluant=1.0.17 \
 		OpenRA-Freetype6=1.0.4 \
 		OpenRA-FuzzyLogicLibrary=1.0.1 \
 		OpenRA-Open.NAT=1.0.0 \
-		OpenRA-OpenAL-CS=1.0.14 \
-		OpenRA-SDL2-CS=1.0.24 \
+		OpenRA-OpenAL-CS=1.0.16 \
+		OpenRA-SDL2-CS=1.0.26 \
 		SharpZipLib=1.2.0 \
 		StyleCop.Analyzers=1.1.118 \
 		rix0rrr.BeaconLib=1.0.2
@@ -45,7 +45,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	OpenRA
 
 NO_ARCH=	yes
-USES=		desktop-file-utils gmake lua:51,run mono:nuget openal:soft sdl \
+USES=		desktop-file-utils gmake lua:51 mono:nuget openal:soft sdl \
 		shared-mime-info
 USE_SDL=	sdl2
 MAKE_ENV=	prefix="${PREFIX}" \
@@ -62,9 +62,12 @@ post-patch:
 		-e '/^VERSION/s/=.*/=	${GH_TAGNAME}/' \
 		-e '/^core:/s/$$/ version/' \
 		${WRKSRC}/Makefile
-	${SED} 's/@LIBLUA51@/liblua-${LUA_VER}.so/' \
-		${WRKSRC}/thirdparty/Eluant.dll.config.in \
-		>${WRKSRC}/Eluant.dll.config
+.if defined(PATCHFILES)
+	${CHMOD} +x ${WRKSRC}/configure-system-libraries.sh
+.endif
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \
+		-e '/target/s,$${DIR}/,,' \
+		${WRKSRC}/configure-system-libraries.sh
 
 do-test:
 	@(cd ${TEST_WRKSRC} && mono \
