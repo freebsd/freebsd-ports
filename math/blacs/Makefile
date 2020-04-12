@@ -3,7 +3,7 @@
 
 PORTNAME=	blacs
 PORTVERSION=	1.7
-PORTREVISION=	35
+PORTREVISION=	36
 CATEGORIES=	math
 MASTER_SITES=	NETLIB/blacs
 DISTNAME=	BLACS
@@ -12,33 +12,27 @@ DIST_SUBDIR=	blacs
 EXTRACT_ONLY=	mpiblacs.tgz blacstester.tgz mpiblacs-patch03.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The BLACS (Basic Linear Algebra Communication Subprograms)
+COMMENT=	BLACS (Basic Linear Algebra Communication Subprograms)
 
 SUB_FILES=	pkg-message
 USES=		fortran gmake
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_RADIO=	MPI
+OPTIONS_RADIO_MPI=	MPICH OPENMPI
+OPTIONS_DEFAULT=	DOCS MPICH
+
+DOCS_DISTFILES=	blacs_install.ps f77blacsqref.ps lawn94.ps \
+		cblacsqref.ps  mpi_prop.ps mpiblacs_issues.ps
+
+OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi3
+OPENMPI_EXTRA_PATCHES=	${FILESDIR}/Bmake.inc-openmpi.diff
+
+MPICH_LIB_DEPENDS=	libmpich.so:net/mpich2
+MPICH_EXTRA_PATCHES=	${FILESDIR}/Bmake.inc-mpich.diff
 
 .include <bsd.port.pre.mk>
-
-.if ! ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	blacs_install.ps f77blacsqref.ps lawn94.ps \
-		cblacsqref.ps  mpi_prop.ps mpiblacs_issues.ps
-.endif
-
-.if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
-WITH_OPENMPI=	yes
-.endif
-
-.if defined(WITH_OPENMPI)
-BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
-RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
-EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-openmpi.diff
-.else
-LIB_DEPENDS+=	libmpich.so:net/mpich2
-EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-mpich.diff
-.endif
 
 F77EXTRAFLAGS=	#-w -fno-globals -fugly-complex
 DEBUG_LEVEL=	0

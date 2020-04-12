@@ -1,5 +1,5 @@
---- Bmake.inc.orig	2014-08-22 23:54:21.000000000 +0200
-+++ Bmake.inc	2014-08-22 23:55:10.000000000 +0200
+--- Bmake.inc.orig     2014-08-22 23:54:21.000000000 +0200
++++ Bmake.inc  2014-08-22 23:55:10.000000000 +0200
 @@ -13,7 +13,7 @@
  #  -----------------------------
  #  The top level BLACS directory
@@ -32,7 +32,7 @@
  #  -------------------------------------
 -   MPIdir = /usr/local/mpich
 -   MPILIBdir = $(MPIdir)/lib/
-+   MPIdir = @LOCALBASE@/mpi/openmpi
++   MPIdir = @LOCALBASE@/mpi/openmpi3
 +   MPILIBdir = 
     MPIINCdir = $(MPIdir)/include
 -   MPILIB = $(MPILIBdir)/libmpich.a
@@ -40,7 +40,7 @@
  
  #  -------------------------------------
  #  All libraries required by the tester.
-@@ -86,7 +86,7 @@
+@@ -86,14 +86,14 @@
  #  The directory to find the required communication library include files, 
  #  if they are required by your system.
  #  -----------------------------------------------------------------------
@@ -49,6 +49,14 @@
  
  #  ---------------------------------------------------------------------------
  #  The Fortran 77 to C interface to be used.  If you are unsure of the correct
+ #  setting for your platform, compile and run BLACS/INSTALL/xintface.
+ #  Choices are: Add_, NoChange, UpCase, or f77IsF2C.
+ #  ---------------------------------------------------------------------------
+-   INTFACE = -Df77IsF2C
++   INTFACE = -DAdd_
+ 
+ #  ------------------------------------------------------------------------
+ #  Allows the user to vary the topologies that the BLACS default topologies
 @@ -140,7 +140,7 @@
  #  If you know that your MPI uses the same handles for fortran and C
  #  communicators, you can replace the empty macro definition below with
@@ -70,14 +78,14 @@
 -   CC             = gcc
 -   CCFLAGS        = -O4
 -   CCLOADER       = $(CC)
-+   F77            = @LOCALBASE@/mpi/openmpi/bin/mpif77
++   F77            = @LOCALBASE@/mpi/openmpi3/bin/mpif77
 +   F77NO_OPTFLAGS = @F77EXTRAFLAGS@
 +   F77FLAGS       = @FFLAGS@
-+   F77LOADER      = @LOCALBASE@/mpi/openmpi/bin/mpif77
++   F77LOADER      = @LOCALBASE@/mpi/openmpi3/bin/mpif77
 +   F77LOADFLAGS   = @FFLAGS@
-+   CC             = @LOCALBASE@/mpi/openmpi/bin/mpicc
++   CC             = @LOCALBASE@/mpi/openmpi3/bin/mpicc
 +   CCFLAGS        = @CFLAGS@
-+   CCLOADER       = @LOCALBASE@/mpi/openmpi/bin/mpicc
++   CCLOADER       = @LOCALBASE@/mpi/openmpi3/bin/mpicc
     CCLOADFLAGS    = 
 -
  #  --------------------------------------------------------------------------
