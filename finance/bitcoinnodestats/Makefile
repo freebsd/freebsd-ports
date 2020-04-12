@@ -11,6 +11,9 @@ COMMENT=	Basic Bitcoin node status and statistics web application
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=	No longer maintained and not compatible with Django 2.2+
+EXPIRATION_DATE=	2020-05-12
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=2017.3:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-bitcoinlib>=0.8.0:finance/py-python-bitcoinlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django111>=1.11.7:www/py-django111@${PY_FLAVOR} \
