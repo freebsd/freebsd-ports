@@ -2,7 +2,7 @@
 
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.13.0
+DISTVERSION=	4.13.1
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ GH_TUPLE=	\
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		duosecurity:duo_api_golang:6c680f768e74:duosecurity_duo_api_golang/vendor/github.com/duosecurity/duo_api_golang \
 		facebookgo:stack:751773369052:facebookgo_stack/vendor/github.com/facebookgo/stack \
-		fasthttp:router:v0.7.0:fasthttp_router/vendor/github.com/fasthttp/router \
+		fasthttp:router:v1.0.1:fasthttp_router/vendor/github.com/fasthttp/router \
 		fasthttp:session:v1.1.7:fasthttp_session/vendor/github.com/fasthttp/session \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-asn1-ber:asn1-ber:v1.3.1:go_asn1_ber_asn1_ber/vendor/github.com/go-asn1-ber/asn1-ber \
@@ -56,7 +56,7 @@ GH_TUPLE=	\
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.2.0:pquerna_otp/vendor/github.com/pquerna/otp \
 		savsgio:dictpool:dcc5d0fb3336:savsgio_dictpool/vendor/github.com/savsgio/dictpool \
-		savsgio:gotils:90175b0fbe3f:savsgio_gotils/vendor/github.com/savsgio/gotils \
+		savsgio:gotils:a9cc718f6a3f:savsgio_gotils/vendor/github.com/savsgio/gotils \
 		simia-tech:crypt:v0.4.2:simia_tech_crypt/vendor/github.com/simia-tech/crypt \
 		sirupsen:logrus:v1.5.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
