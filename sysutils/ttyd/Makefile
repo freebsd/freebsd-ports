@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ttyd
-PORTVERSION=	1.5.2
+DISTVERSION=	1.6.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,16 +12,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	xxd:editors/vim-console
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
+		libuv.so:devel/libuv \
 		libwebsockets.so:net/libwebsockets
 
-USES=		cmake:insource pkgconfig ssl
+USES=		cmake pkgconfig ssl
 USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	tsl0922
 
-PLIST_FILES=	bin/${PORTNAME}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ttyd ${STAGEDIR}${PREFIX}/bin
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/ttyd.1.gz
 
 .include <bsd.port.mk>
