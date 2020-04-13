@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt-glib
-PORTVERSION=	2.0.0
+PORTVERSION=	3.0.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
 
@@ -21,7 +21,7 @@ VALA_BUILD_DEPENDS=	valac:lang/vala
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection
-USES=		gettext gmake gnome libtool pathfix pkgconfig python:2.7
+USES=		gettext gmake gnome libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
 USE_GNOME=	intlhack introspection libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -12,6 +12,8 @@ include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-capabilities
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-address-pci.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-address-usb.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-address.h
+include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-capabilities-os.h
+include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-capabilities.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-channel.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-chardev-source-pty.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-chardev-source-spiceport.h

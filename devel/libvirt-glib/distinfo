@@ -1,3 +1,3 @@
-TIMESTAMP = 1539421402
-SHA256 (libvirt-glib-2.0.0.tar.gz) = 94e8c410c67501303d3b32ca8ce2c36edf898511ec4de9b7f29cd35d274b3d6a
-SIZE (libvirt-glib-2.0.0.tar.gz) = 868946
+TIMESTAMP = 1586662866
+SHA256 (libvirt-glib-3.0.0.tar.gz) = 7fff8ca9a2b723dbfd04223b1c7624251c8bf79eb57ec27362a7301b2dd9ebfe
+SIZE (libvirt-glib-3.0.0.tar.gz) = 899180
