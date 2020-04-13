@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/gpu/gpu_main.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/content/gpu/gpu_main.cc.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/chromium/content/gpu/gpu_main.cc
-@@ -77,7 +77,7 @@
+@@ -84,7 +84,7 @@
  #include "ui/gfx/x/x11_switches.h"    // nogncheck
  #endif
  
@@ -9,7 +9,7 @@
  #include "content/gpu/gpu_sandbox_hook_linux.h"
  #include "content/public/common/sandbox_init.h"
  #include "services/service_manager/sandbox/linux/sandbox_linux.h"
-@@ -110,7 +110,7 @@ namespace content {
+@@ -113,7 +113,7 @@ namespace content {
  
  namespace {
  
@@ -18,7 +18,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -171,7 +171,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -174,7 +174,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -27,7 +27,16 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -355,7 +355,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -280,7 +280,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+     main_thread_task_executor =
+         std::make_unique<base::SingleThreadTaskExecutor>(
+             gpu_preferences.message_loop_type);
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_BSD)
+ #error "Unsupported Linux platform."
+ #elif defined(OS_MACOSX)
+     // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
+@@ -388,7 +388,7 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
  
@@ -36,7 +45,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
-@@ -390,7 +390,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -423,7 +423,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
  
    return res;
  }

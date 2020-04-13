@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/cc/BUILD.gn.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/cc/BUILD.gn.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/chromium/cc/BUILD.gn
-@@ -548,7 +548,7 @@ cc_test_static_library("test_support") {
-     "//ui/gl:test_support",
-     "//ui/latency",
-   ]
+@@ -568,7 +568,7 @@ cc_test_static_library("test_support") {
+   if (enable_vulkan) {
+     deps += [ "//gpu/vulkan/init" ]
+   }
 -  if (!is_android) {
 +  if (!is_android && !is_bsd) {
      data_deps = [
        "//third_party/mesa_headers",
      ]
-@@ -746,9 +746,6 @@ cc_test("cc_unittests") {
+@@ -773,9 +773,6 @@ cc_test("cc_unittests") {
      "//ui/gfx/geometry",
      "//ui/gl",
      "//ui/gl:test_support",
@@ -17,5 +17,5 @@
 -  data_deps = [
 -    "//third_party/mesa_headers",
    ]
- }
  
+   if (enable_vulkan) {

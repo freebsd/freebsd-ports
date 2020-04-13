@@ -42,6 +42,7 @@
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineCallback
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineClientCertificateStore
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineCookieStore
+%%QT_INCDIR%%/QtWebEngineCore/QWebEngineFindTextResult
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineHttpRequest
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineNotification
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineQuotaRequest
@@ -60,6 +61,7 @@
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginecallback.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineclientcertificatestore.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginecookiestore.h
+%%QT_INCDIR%%/QtWebEngineCore/qwebenginefindtextresult.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginehttprequest.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginenotification.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginequotarequest.h
@@ -76,6 +78,7 @@
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebengineprofile_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginescriptcollection_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebengineview_p.h
+%%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qtwebenginewidgets-config_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineCertificateError
 %%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineClientCertificateSelection
 %%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineContextMenuData
@@ -106,6 +109,7 @@
 %%QT_INCDIR%%/QtWebEngineWidgets/qwebenginescriptcollection.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qwebenginesettings.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qwebengineview.h
+%%QT_INCDIR%%/QtWebEngineWidgets/qtwebenginewidgets-config.h
 %%QT_CMAKEDIR%%/Qt5Designer/Qt5Designer_QWebEngineViewPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5WebEngine/Qt5WebEngineConfig.cmake
 %%QT_CMAKEDIR%%/Qt5WebEngine/Qt5WebEngineConfigVersion.cmake

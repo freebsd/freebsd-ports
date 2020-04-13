@@ -8,6 +8,7 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-text-input-unstable-v2.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-touch-extension.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-wayland.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-wp-primary-selection-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-xdg-output-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandabstractdecoration_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandbuffer_p.h
@@ -34,6 +35,7 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandinputdeviceintegrationplugin_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandintegration_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandnativeinterface_p.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandprimaryselectionv1_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandqtkey_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandscreen_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandserverbufferintegration_p.h
@@ -47,6 +49,7 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandshmbackingstore_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandshmwindow_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandsubsurface_p.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandsurface_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandtouch_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandwindow_p.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandwindowmanagerintegration_p.h
@@ -58,6 +61,7 @@
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-text-input-unstable-v2-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-touch-extension-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-wayland-client-protocol.h
+%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-wp-primary-selection-unstable-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-xdg-output-unstable-v1-client-protocol.h
 %%QT_INCDIR%%/QtWaylandClient/QWaylandClientExtension
 %%QT_INCDIR%%/QtWaylandClient/QWaylandClientExtensionTemplate
@@ -72,8 +76,10 @@
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qtwaylandcompositor-config_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qtwaylandcompositorglobal_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-hardware-integration.h
+%%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-idle-inhibit-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-ivi-application.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-qt-key-unstable-v1.h
+%%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-qt-texture-sharing-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-qt-windowmanager.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-scaler.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-server-buffer-extension.h
@@ -82,12 +88,14 @@
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-viewporter.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-wayland.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-xdg-decoration-unstable-v1.h
+%%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-xdg-output-unstable-v1.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-xdg-shell-unstable-v5_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-xdg-shell-unstable-v6.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwayland-server-xdg-shell.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandcompositor_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandcompositorextension_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylanddestroylistener_p.h
+%%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandidleinhibitv1_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandinputmethodcontrol_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandiviapplication_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandivisurface_p.h
@@ -114,6 +122,7 @@
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandwlshell_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandwlshellintegration_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandxdgdecorationv1_p.h
+%%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandxdgoutputv1_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandxdgshell_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandxdgshellintegration_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwaylandxdgshellv5_p.h
@@ -141,8 +150,10 @@
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwlserverbufferintegrationplugin_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qwltexturesharingextension_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-hardware-integration-server-protocol.h
+%%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-idle-inhibit-unstable-v1-server-protocol.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-ivi-application-server-protocol.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-qt-key-unstable-v1-server-protocol.h
+%%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-qt-texture-sharing-unstable-v1-server-protocol.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-qt-windowmanager-server-protocol.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-scaler-server-protocol.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-server-buffer-extension-server-protocol.h
@@ -151,6 +162,7 @@
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-viewporter-server-protocol.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-wayland-server-protocol.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-xdg-decoration-unstable-v1-server-protocol.h
+%%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-xdg-output-unstable-v1-server-protocol.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-xdg-shell-server-protocol.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-xdg-shell-unstable-v5-server-protocol_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/wayland-xdg-shell-unstable-v6-server-protocol.h
@@ -161,6 +173,7 @@
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandCompositorExtensionTemplate
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandDestroyListener
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandDrag
+%%QT_INCDIR%%/QtWaylandCompositor/QWaylandIdleInhibitManagerV1
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandInputMethodControl
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandIviApplication
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandIviSurface
@@ -175,8 +188,10 @@
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandQuickExtension
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandQuickItem
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandQuickOutput
+%%QT_INCDIR%%/QtWaylandCompositor/QWaylandQuickShellIntegration
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandQuickShellSurfaceItem
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandQuickSurface
+%%QT_INCDIR%%/QtWaylandCompositor/QWaylandQuickXdgOutputV1
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandResource
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandSeat
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandShell
@@ -195,6 +210,8 @@
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandWlShell
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandWlShellSurface
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandXdgDecorationManagerV1
+%%QT_INCDIR%%/QtWaylandCompositor/QWaylandXdgOutputManagerV1
+%%QT_INCDIR%%/QtWaylandCompositor/QWaylandXdgOutputV1
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandXdgPopup
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandXdgPopupV5
 %%QT_INCDIR%%/QtWaylandCompositor/QWaylandXdgPopupV6
@@ -219,6 +236,7 @@
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylanddestroylistener.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylanddrag.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandexport.h
+%%QT_INCDIR%%/QtWaylandCompositor/qwaylandidleinhibitv1.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandinputmethodcontrol.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandiviapplication.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandivisurface.h
@@ -233,8 +251,10 @@
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandquickextension.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandquickitem.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandquickoutput.h
+%%QT_INCDIR%%/QtWaylandCompositor/qwaylandquickshellintegration.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandquickshellsurfaceitem.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandquicksurface.h
+%%QT_INCDIR%%/QtWaylandCompositor/qwaylandquickxdgoutputv1.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandresource.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandseat.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandshell.h
@@ -249,6 +269,7 @@
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandwlscaler.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandwlshell.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandxdgdecorationv1.h
+%%QT_INCDIR%%/QtWaylandCompositor/qwaylandxdgoutputv1.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandxdgshell.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandxdgshellv5.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandxdgshellv6.h
@@ -271,6 +292,7 @@
 %%QT_CMAKEDIR%%/Qt5WaylandClient/Qt5WaylandClient_QWaylandXdgShellV5IntegrationPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5WaylandClient/Qt5WaylandClient_QWaylandXdgShellV6IntegrationPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5WaylandClient/Qt5WaylandClient_ShmServerBufferPlugin.cmake
+%%QT_CMAKEDIR%%/Qt5WaylandClient/Qt5WaylandClient_VulkanServerBufferPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositorConfig.cmake
 %%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositorConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositor_DmaBufServerBufferIntegrationPlugin.cmake
@@ -281,6 +303,7 @@
 %%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositor_QWaylandXCompositeEglClientBufferIntegrationPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositor_QWaylandXCompositeGlxClientBufferIntegrationPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositor_ShmServerBufferIntegrationPlugin.cmake
+%%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositor_VulkanServerBufferIntegrationPlugin.cmake
 %%QT_BINDIR%%/qtwaylandscanner
 %%QT_LIBDIR%%/libQt5WaylandClient.prl
 %%QT_LIBDIR%%/libQt5WaylandClient.so
@@ -316,6 +339,8 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-client/libqt-plugin-wayland-egl.so.debug
 %%QT_PLUGINDIR%%/wayland-graphics-integration-client/libshm-emulation-server.so
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-client/libshm-emulation-server.so.debug
+%%QT_PLUGINDIR%%/wayland-graphics-integration-client/libvulkan-server.so
+%%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-client/libvulkan-server.so.debug
 %%QT_PLUGINDIR%%/wayland-graphics-integration-client/libxcomposite-egl.so
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-client/libxcomposite-egl.so.debug
 %%QT_PLUGINDIR%%/wayland-graphics-integration-client/libxcomposite-glx.so
@@ -330,6 +355,8 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-server/libqt-plugin-wayland-egl.so.debug
 %%QT_PLUGINDIR%%/wayland-graphics-integration-server/libshm-emulation-server.so
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-server/libshm-emulation-server.so.debug
+%%QT_PLUGINDIR%%/wayland-graphics-integration-server/libvulkan-server.so
+%%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-server/libvulkan-server.so.debug
 %%QT_PLUGINDIR%%/wayland-graphics-integration-server/libwayland-eglstream-controller.so
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-server/libwayland-eglstream-controller.so.debug
 %%QT_PLUGINDIR%%/wayland-graphics-integration-server/libxcomposite-egl.so
@@ -348,11 +375,17 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-shell-integration/libxdg-shell-v6.so.debug
 %%QT_PLUGINDIR%%/wayland-shell-integration/libxdg-shell.so
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-shell-integration/libxdg-shell.so.debug
+%%QT_QMLDIR%%/QtWayland/Client/TextureSharing/libqwaylandtexturesharing.so
+%%DEBUG%%%%QT_QMLDIR%%/QtWayland/Client/TextureSharing/libqwaylandtexturesharing.so.debug
+%%QT_QMLDIR%%/QtWayland/Client/TextureSharing/qmldir
+%%QT_QMLDIR%%/QtWayland/Compositor/TextureSharingExtension/libqwaylandtexturesharingextension.so
+%%DEBUG%%%%QT_QMLDIR%%/QtWayland/Compositor/TextureSharingExtension/libqwaylandtexturesharingextension.so.debug
+%%QT_QMLDIR%%/QtWayland/Compositor/TextureSharingExtension/qmldir
 %%DEBUG%%%%QT_QMLDIR%%/QtWayland/Compositor/WaylandCursorItem.qml
 %%DEBUG%%%%QT_QMLDIR%%/QtWayland/Compositor/WaylandOutputWindow.qml
 %%QT_QMLDIR%%/QtWayland/Compositor/libqwaylandcompositorplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/QtWayland/Compositor/libqwaylandcompositorplugin.so.debug
-%%DEBUG%%%%QT_QMLDIR%%/QtWayland/Compositor/plugins.qmltypes
-%%DEBUG%%%%QT_QMLDIR%%/QtWayland/Compositor/qmldir
+%%QT_QMLDIR%%/QtWayland/Compositor/plugins.qmltypes
+%%QT_QMLDIR%%/QtWayland/Compositor/qmldir
 libdata/pkgconfig/Qt5WaylandClient.pc
 libdata/pkgconfig/Qt5WaylandCompositor.pc

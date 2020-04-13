@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/boringssl/src/third_party/fiat/curve25519.c.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/third_party/boringssl/src/third_party/fiat/curve25519.c.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/chromium/third_party/boringssl/src/third_party/fiat/curve25519.c
-@@ -3032,9 +3032,14 @@ int ED25519_verify(const uint8_t *message, size_t mess
+@@ -1964,9 +1964,14 @@ int ED25519_verify(const uint8_t *message, size_t mess
      UINT64_C(0x1000000000000000),
    };
    for (size_t i = 3;; i--) {

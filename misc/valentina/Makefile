@@ -12,6 +12,8 @@ COMMENT=	Sewing pattern drafting tool aiming to remake the garment industry
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE_GPL.txt
 
+BROKEN=		Does not build with Qt5-5.14
+
 USES=		compiler:c++11-lang desktop-file-utils gl gmake qmake qt:5
 USE_QT=		concurrent core gui network opengl printsupport svg widgets xml xmlpatterns buildtools_build linguisttools_build testlib_build
 USE_GL=		gl

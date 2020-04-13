@@ -1,14 +1,15 @@
---- src/3rdparty/chromium/ui/base/ui_base_features.h.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/ui/base/ui_base_features.h.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/chromium/ui/base/ui_base_features.h
-@@ -43,9 +43,9 @@ UI_BASE_EXPORT extern const base::Feature kTSFImeSuppo
- UI_BASE_EXPORT bool IsUsingWMPointerForTouch();
- #endif  // defined(OS_WIN)
+@@ -59,10 +59,10 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
+ extern const base::Feature kEnableAutomaticUiAdjustmentsForTouch;
+ #endif  // defined(OS_WIN) || defined(OS_CHROMEOS)
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- UI_BASE_EXPORT extern const base::Feature kDirectManipulationStylus;
+ COMPONENT_EXPORT(UI_BASE_FEATURES)
+ extern const base::Feature kDirectManipulationStylus;
 -#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  
- // Used to have ash (Chrome OS system UI) run in its own process.
- // TODO(jamescook): Make flag only available in Chrome OS.
+ // Used to enable the new controls UI.
+ COMPONENT_EXPORT(UI_BASE_FEATURES)

@@ -66,6 +66,7 @@
 %%QT_INCDIR%%/QtGlxSupport/QtGlxSupportDepends
 %%QT_INCDIR%%/QtGlxSupport/QtGlxSupportVersion
 %%QT_INCDIR%%/QtGlxSupport/qtglxsupportversion.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/cs_tdr_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qabstractlayoutstyleinfo_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qabstracttextdocumentlayout_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qaccessiblecache_p.h
@@ -75,7 +76,13 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qblittable_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qbmphandler_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolor_p.h
-%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolorprofile_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolormatrix_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolorspace_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolortransferfunction_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolortransfertable_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolortransform_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolortrc_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolortrclut_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcoregraphics_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcosmeticstroker_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcssparser_p.h
@@ -105,6 +112,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qharfbuzzng_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qhexstring_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qhighdpiscaling_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qicc_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qicon_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qiconloader_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qimage_p.h
@@ -170,8 +178,27 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrawfont_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrbtree_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrgba64_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhi_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhi_p_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhid3d11_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhid3d11_p_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhigles2_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhigles2_p_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhimetal_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhimetal_p_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhinull_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhinull_p_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhiprofiler_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhiprofiler_p_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhivulkan_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhivulkan_p_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qrhivulkanext_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qscreen_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qsessionmanager_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshader_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshader_p_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshaderdescription_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshaderdescription_p_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshaderformat_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshadergenerator_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshadergraph_p.h
@@ -196,6 +223,8 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtextformat_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtexthtmlparser_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtextimagehandler_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtextmarkdownimporter_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtextmarkdownwriter_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtextobject_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtextodfwriter_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtexttable_p.h
@@ -288,6 +317,8 @@
 %%QT_INCDIR%%/QtGui/QClipboard
 %%QT_INCDIR%%/QtGui/QCloseEvent
 %%QT_INCDIR%%/QtGui/QColor
+%%QT_INCDIR%%/QtGui/QColorSpace
+%%QT_INCDIR%%/QtGui/QColorTransform
 %%QT_INCDIR%%/QtGui/QConicalGradient
 %%QT_INCDIR%%/QtGui/QContextMenuEvent
 %%QT_INCDIR%%/QtGui/QCursor
@@ -338,7 +369,6 @@
 %%QT_INCDIR%%/QtGui/QKeyEvent
 %%QT_INCDIR%%/QtGui/QKeySequence
 %%QT_INCDIR%%/QtGui/QLinearGradient
-%%QT_INCDIR%%/QtGui/QList
 %%QT_INCDIR%%/QtGui/QMatrix
 %%QT_INCDIR%%/QtGui/QMatrix2x2
 %%QT_INCDIR%%/QtGui/QMatrix2x3
@@ -521,6 +551,8 @@
 %%QT_INCDIR%%/QtGui/qbrush.h
 %%QT_INCDIR%%/QtGui/qclipboard.h
 %%QT_INCDIR%%/QtGui/qcolor.h
+%%QT_INCDIR%%/QtGui/qcolorspace.h
+%%QT_INCDIR%%/QtGui/qcolortransform.h
 %%QT_INCDIR%%/QtGui/qcursor.h
 %%QT_INCDIR%%/QtGui/qdesktopservices.h
 %%QT_INCDIR%%/QtGui/qdrag.h
@@ -649,6 +681,7 @@
 %%QT_INCDIR%%/QtGui/qwindow.h
 %%QT_INCDIR%%/QtGui/qwindowdefs.h
 %%QT_INCDIR%%/QtGui/qwindowdefs_win.h
+%%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/devicehandlerlist_p.h
 %%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/qevdevkeyboard_defaultmap_p.h
 %%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/qevdevkeyboardhandler_p.h
 %%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/qevdevkeyboardmanager_p.h
@@ -659,6 +692,7 @@
 %%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/qevdevtouchfilter_p.h
 %%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/qevdevtouchhandler_p.h
 %%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/qevdevtouchmanager_p.h
+%%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/qevdevutil_p.h
 %%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/qlibinputhandler_p.h
 %%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/qlibinputkeyboard_p.h
 %%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/qlibinputpointer_p.h
@@ -843,8 +877,6 @@
 %%DEBUG%%%%QT_LIBDIR%%/libQt5Gui.so.%%FULLVER%%.debug
 %%QT_LIBDIR%%/libQt5InputSupport.a
 %%QT_LIBDIR%%/libQt5InputSupport.prl
-%%QT_LIBDIR%%/libQt5XkbCommonSupport.a
-%%QT_LIBDIR%%/libQt5XkbCommonSupport.prl
 %%QT_LIBDIR%%/libQt5KmsSupport.a
 %%QT_LIBDIR%%/libQt5KmsSupport.prl
 %%QT_LIBDIR%%/libQt5LinuxAccessibilitySupport.a
@@ -865,6 +897,8 @@
 %%QT_LIBDIR%%/libQt5XcbQpa.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5XcbQpa.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQt5XcbQpa.so.%%FULLVER%%.debug
+%%QT_LIBDIR%%/libQt5XkbCommonSupport.a
+%%QT_LIBDIR%%/libQt5XkbCommonSupport.prl
 %%QT_MKSPECDIR%%/modules/qt_lib_accessibility_support_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_devicediscovery_support_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_edid_support_private.pri
@@ -890,8 +924,6 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/generic/libqbsdkeyboardplugin.so.debug
 %%QT_PLUGINDIR%%/generic/libqbsdmouseplugin.so
 %%DEBUG%%%%QT_PLUGINDIR%%/generic/libqbsdmouseplugin.so.debug
-%%QT_PLUGINDIR%%/generic/libqtuiotouchplugin.so
-%%DEBUG%%%%QT_PLUGINDIR%%/generic/libqtuiotouchplugin.so.debug
 %%QT_PLUGINDIR%%/generic/libqevdevkeyboardplugin.so
 %%DEBUG%%%%QT_PLUGINDIR%%/generic/libqevdevkeyboardplugin.so.debug
 %%QT_PLUGINDIR%%/generic/libqevdevmouseplugin.so
@@ -900,6 +932,8 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/generic/libqevdevtabletplugin.so.debug
 %%QT_PLUGINDIR%%/generic/libqevdevtouchplugin.so
 %%DEBUG%%%%QT_PLUGINDIR%%/generic/libqevdevtouchplugin.so.debug
+%%QT_PLUGINDIR%%/generic/libqtuiotouchplugin.so
+%%DEBUG%%%%QT_PLUGINDIR%%/generic/libqtuiotouchplugin.so.debug
 %%QT_PLUGINDIR%%/imageformats/libqgif.so
 %%DEBUG%%%%QT_PLUGINDIR%%/imageformats/libqgif.so.debug
 %%QT_PLUGINDIR%%/imageformats/libqico.so

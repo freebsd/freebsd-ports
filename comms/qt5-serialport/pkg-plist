@@ -1,12 +1,14 @@
 %%QT_INCDIR%%/QtSerialPort/%%FULLVER%%/QtSerialPort/private/qserialport_p.h
 %%QT_INCDIR%%/QtSerialPort/%%FULLVER%%/QtSerialPort/private/qserialportinfo_p.h
+%%QT_INCDIR%%/QtSerialPort/%%FULLVER%%/QtSerialPort/private/qtntdll_p.h
+%%QT_INCDIR%%/QtSerialPort/%%FULLVER%%/QtSerialPort/private/qtserialport-config_p.h
 %%QT_INCDIR%%/QtSerialPort/%%FULLVER%%/QtSerialPort/private/qtudev_p.h
-%%QT_INCDIR%%/QtSerialPort/%%FULLVER%%/QtSerialPort/private/qwinoverlappedionotifier_p.h
 %%QT_INCDIR%%/QtSerialPort/QSerialPort
 %%QT_INCDIR%%/QtSerialPort/QSerialPortInfo
 %%QT_INCDIR%%/QtSerialPort/QtSerialPort
 %%QT_INCDIR%%/QtSerialPort/QtSerialPortDepends
 %%QT_INCDIR%%/QtSerialPort/QtSerialPortVersion
+%%QT_INCDIR%%/QtSerialPort/qtserialport-config.h
 %%QT_INCDIR%%/QtSerialPort/qserialport.h
 %%QT_INCDIR%%/QtSerialPort/qserialportglobal.h
 %%QT_INCDIR%%/QtSerialPort/qserialportinfo.h

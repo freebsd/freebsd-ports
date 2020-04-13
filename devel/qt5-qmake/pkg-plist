@@ -5,11 +5,7 @@
 %%QT_MKSPECDIR%%/aix-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/android-clang/qmake.conf
 %%QT_MKSPECDIR%%/android-clang/qplatformdefs.h
-%%QT_MKSPECDIR%%/android-g++/qmake.conf
-%%QT_MKSPECDIR%%/android-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/aix/qplatformdefs.h
-%%QT_MKSPECDIR%%/common/android-base-head.conf
-%%QT_MKSPECDIR%%/common/android-base-tail.conf
 %%QT_MKSPECDIR%%/common/android/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/angle.conf
 %%QT_MKSPECDIR%%/common/bsd/bsd.conf
@@ -53,6 +49,8 @@
 %%QT_MKSPECDIR%%/common/qcc-base-qnx.conf
 %%QT_MKSPECDIR%%/common/qcc-base.conf
 %%QT_MKSPECDIR%%/common/qnx/qplatformdefs.h
+%%QT_MKSPECDIR%%/common/rtems-base.conf
+%%QT_MKSPECDIR%%/common/rtems/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/sanitize.conf
 %%QT_MKSPECDIR%%/common/shell-unix.conf
 %%QT_MKSPECDIR%%/common/shell-win32.conf
@@ -123,6 +121,8 @@
 %%QT_MKSPECDIR%%/devices/linux-imx6-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-imx7-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-imx7-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/devices/linux-imx8-g++/qmake.conf
+%%QT_MKSPECDIR%%/devices/linux-imx8-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-jetson-tk1-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-jetson-tk1-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-jetson-tk1-pro-g++/qmake.conf
@@ -146,6 +146,8 @@
 %%QT_MKSPECDIR%%/devices/linux-rasp-pi3-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-rasp-pi3-vc4-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-rasp-pi3-vc4-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/devices/linux-rasp-pi4-v3d-g++/qmake.conf
+%%QT_MKSPECDIR%%/devices/linux-rasp-pi4-v3d-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-rcar-h2-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-rcar-h2-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-rcar-m3-g++/qmake.conf
@@ -163,6 +165,8 @@
 %%QT_MKSPECDIR%%/dummy/qmake.conf
 %%QT_MKSPECDIR%%/features/android/android.prf
 %%QT_MKSPECDIR%%/features/android/android_deployment_settings.prf
+%%QT_MKSPECDIR%%/features/android/default_pre.prf
+%%QT_MKSPECDIR%%/features/android/resolve_config.prf
 %%QT_MKSPECDIR%%/features/android/resolve_target.prf
 %%QT_MKSPECDIR%%/features/android/sdk.prf
 %%QT_MKSPECDIR%%/features/android/spec_post.prf
@@ -180,12 +184,15 @@
 %%QT_MKSPECDIR%%/features/data/cmake/ExtraSourceIncludes.cmake.in
 %%QT_MKSPECDIR%%/features/data/cmake/Qt5BasicConfig.cmake.in
 %%QT_MKSPECDIR%%/features/data/cmake/Qt5ConfigVersion.cmake.in
+%%QT_MKSPECDIR%%/features/data/cmake/Qt5ImportPlugin.cpp.in
 %%QT_MKSPECDIR%%/features/data/cmake/Qt5PluginTarget.cmake.in
 %%QT_MKSPECDIR%%/features/data/configure.json
 %%QT_MKSPECDIR%%/features/data/dummy.cpp
 %%QT_MKSPECDIR%%/features/data/dumpvcvars.bat
 %%QT_MKSPECDIR%%/features/data/mac/objc_namespace.sh
 %%QT_MKSPECDIR%%/features/data/macros.cpp
+%%QT_MKSPECDIR%%/features/data/testserver/Dockerfile
+%%QT_MKSPECDIR%%/features/data/testserver/docker-compose-common.yml
 %%QT_MKSPECDIR%%/features/data/unix/findclasslist.pl
 %%QT_MKSPECDIR%%/features/dbusadaptors.prf
 %%QT_MKSPECDIR%%/features/dbuscommon.pri
@@ -215,6 +222,7 @@
 %%QT_MKSPECDIR%%/features/mac/default_post.prf
 %%QT_MKSPECDIR%%/features/mac/default_pre.prf
 %%QT_MKSPECDIR%%/features/mac/mac.prf
+%%QT_MKSPECDIR%%/features/mac/no_warn_empty_obj_files.prf
 %%QT_MKSPECDIR%%/features/mac/objective_c.prf
 %%QT_MKSPECDIR%%/features/mac/rez.prf
 %%QT_MKSPECDIR%%/features/mac/sdk.mk
@@ -261,6 +269,7 @@
 %%QT_MKSPECDIR%%/features/resolve_config.prf
 %%QT_MKSPECDIR%%/features/resolve_target.prf
 %%QT_MKSPECDIR%%/features/resources.prf
+%%QT_MKSPECDIR%%/features/resources_functions.prf
 %%QT_MKSPECDIR%%/features/rtti.prf
 %%QT_MKSPECDIR%%/features/rtti_off.prf
 %%QT_MKSPECDIR%%/features/sanitizer.prf
@@ -302,10 +311,13 @@
 %%QT_MKSPECDIR%%/features/unix/x11inc.prf
 %%QT_MKSPECDIR%%/features/unix/x11lib.prf
 %%QT_MKSPECDIR%%/features/unix/x11sm.prf
+%%QT_MKSPECDIR%%/features/unsupported/testserver.prf
 %%QT_MKSPECDIR%%/features/use_c_linker.prf
 %%QT_MKSPECDIR%%/features/vxworks.prf
 %%QT_MKSPECDIR%%/features/warn_off.prf
 %%QT_MKSPECDIR%%/features/warn_on.prf
+%%QT_MKSPECDIR%%/features/wasm/default_pre.prf
+%%QT_MKSPECDIR%%/features/wasm/emcc_ver.prf
 %%QT_MKSPECDIR%%/features/wasm/wasm.prf
 %%QT_MKSPECDIR%%/features/wayland-scanner.prf
 %%QT_MKSPECDIR%%/features/win32/console.prf

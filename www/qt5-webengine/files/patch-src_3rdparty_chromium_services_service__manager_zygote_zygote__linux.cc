@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/services/service_manager/zygote/zygote_linux.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/services/service_manager/zygote/zygote_linux.cc.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/chromium/services/service_manager/zygote/zygote_linux.cc
 @@ -1,6 +1,7 @@
  // Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -8,7 +8,7 @@
  
  #include "services/service_manager/zygote/zygote_linux.h"
  
-@@ -664,3 +665,4 @@ bool Zygote::HandleGetSandboxStatus(int fd, base::Pick
+@@ -657,3 +658,4 @@ bool Zygote::HandleGetSandboxStatus(int fd, base::Pick
  }
  
  }  // namespace service_manager

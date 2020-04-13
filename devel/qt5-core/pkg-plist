@@ -11,6 +11,8 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbig5codec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytearray_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytedata_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcalendarbackend_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcalendarmath_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcborvalue_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcfsocketnotifier_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcollator_p.h
@@ -55,7 +57,6 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_polling_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_win_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfinalstate_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfloat16_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfreelist_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfsfileengine_iterator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfsfileengine_p.h
@@ -66,7 +67,10 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfuturewatcher_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qgb18030codec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qglobal_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qgregoriancalendar_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qharfbuzz_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qhijricalendar_data_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qhijricalendar_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qhistorystate_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qhooks_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qiconvcodec_p.h
@@ -74,7 +78,10 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qiodevice_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qipaddress_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qisciicodec_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qislamiccivilcalendar_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qitemselectionmodel_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qjalalicalendar_data_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qjalalicalendar_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qjiscodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qjni_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qjnihelpers_p.h
@@ -82,21 +89,25 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qjson_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qjsonparser_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qjsonwriter_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qjuliancalendar_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlatincodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlibrary_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlocale_data_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlocale_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlocale_tools_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlockfile_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlocking_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlogging_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qloggingregistry_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmachparser_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmakearray_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmemory_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmetaobject_moc_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmetaobject_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmetaobjectbuilder_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmetatype_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmetatypeswitcher_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmilankoviccalendar_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmimedatabase_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmimeglobpattern_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmimemagicrule_p.h
@@ -105,7 +116,6 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmimetype_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmimetypeparser_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmutex_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmutexpool_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qnoncontiguousbytedevice_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qnumeric_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qobject_p.h
@@ -127,6 +137,8 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qresource_iterator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qresource_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qringbuffer_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qromancalendar_data_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qromancalendar_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsavefile_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qscopedpointer_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsequentialanimationgroup_p.h
@@ -174,6 +186,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowspipereader_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwindowspipewriter_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwineventnotifier_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qwinregistry_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qxmlstream_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qxmlutils_p.h
 %%QT_INCDIR%%/QtCore/QAbstractAnimation
@@ -210,6 +223,7 @@
 %%QT_INCDIR%%/QtCore/QByteArrayMatcher
 %%QT_INCDIR%%/QtCore/QByteRef
 %%QT_INCDIR%%/QtCore/QCache
+%%QT_INCDIR%%/QtCore/QCalendar
 %%QT_INCDIR%%/QtCore/QCborArray
 %%QT_INCDIR%%/QtCore/QCborError
 %%QT_INCDIR%%/QtCore/QCborMap
@@ -365,6 +379,7 @@
 %%QT_INCDIR%%/QtCore/QPauseAnimation
 %%QT_INCDIR%%/QtCore/QPersistentModelIndex
 %%QT_INCDIR%%/QtCore/QPluginLoader
+%%QT_INCDIR%%/QtCore/QPluginMetaData
 %%QT_INCDIR%%/QtCore/QPoint
 %%QT_INCDIR%%/QtCore/QPointF
 %%QT_INCDIR%%/QtCore/QPointer
@@ -378,6 +393,7 @@
 %%QT_INCDIR%%/QtCore/QReadWriteLock
 %%QT_INCDIR%%/QtCore/QRect
 %%QT_INCDIR%%/QtCore/QRectF
+%%QT_INCDIR%%/QtCore/QRecursiveMutex
 %%QT_INCDIR%%/QtCore/QRegExp
 %%QT_INCDIR%%/QtCore/QRegularExpression
 %%QT_INCDIR%%/QtCore/QRegularExpressionMatch
@@ -538,6 +554,7 @@
 %%QT_INCDIR%%/QtCore/qbytearraylist.h
 %%QT_INCDIR%%/QtCore/qbytearraymatcher.h
 %%QT_INCDIR%%/QtCore/qcache.h
+%%QT_INCDIR%%/QtCore/qcalendar.h
 %%QT_INCDIR%%/QtCore/qcborarray.h
 %%QT_INCDIR%%/QtCore/qcborcommon.h
 %%QT_INCDIR%%/QtCore/qcbormap.h
@@ -552,6 +569,7 @@
 %%QT_INCDIR%%/QtCore/qconfig-bootstrapped.h
 %%QT_INCDIR%%/QtCore/qconfig.h
 %%QT_INCDIR%%/QtCore/qcontainerfwd.h
+%%QT_INCDIR%%/QtCore/qcontainertools_impl.h
 %%QT_INCDIR%%/QtCore/qcontiguouscache.h
 %%QT_INCDIR%%/QtCore/qcoreapplication.h
 %%QT_INCDIR%%/QtCore/qcoreevent.h

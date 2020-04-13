@@ -50,6 +50,7 @@
 %%QT_L10NDIR%%/linguist_ru.qm
 %%QT_L10NDIR%%/linguist_sk.qm
 %%QT_L10NDIR%%/linguist_sl.qm
+%%QT_L10NDIR%%/linguist_sv.qm
 %%QT_L10NDIR%%/linguist_uk.qm
 %%QT_L10NDIR%%/linguist_zh_CN.qm
 %%QT_L10NDIR%%/linguist_zh_TW.qm
@@ -69,6 +70,7 @@
 %%QT_L10NDIR%%/qt_he.qm
 %%QT_L10NDIR%%/qt_help_ar.qm
 %%QT_L10NDIR%%/qt_help_bg.qm
+%%QT_L10NDIR%%/qt_help_ca.qm
 %%QT_L10NDIR%%/qt_help_cs.qm
 %%QT_L10NDIR%%/qt_help_da.qm
 %%QT_L10NDIR%%/qt_help_de.qm
@@ -125,6 +127,7 @@
 %%QT_L10NDIR%%/qtbase_uk.qm
 %%QT_L10NDIR%%/qtbase_zh_TW.qm
 %%QT_L10NDIR%%/qtconnectivity_bg.qm
+%%QT_L10NDIR%%/qtconnectivity_ca.qm
 %%QT_L10NDIR%%/qtconnectivity_da.qm
 %%QT_L10NDIR%%/qtconnectivity_de.qm
 %%QT_L10NDIR%%/qtconnectivity_en.qm
@@ -150,6 +153,7 @@
 %%QT_L10NDIR%%/qtdeclarative_sk.qm
 %%QT_L10NDIR%%/qtdeclarative_uk.qm
 %%QT_L10NDIR%%/qtlocation_bg.qm
+%%QT_L10NDIR%%/qtlocation_ca.qm
 %%QT_L10NDIR%%/qtlocation_da.qm
 %%QT_L10NDIR%%/qtlocation_de.qm
 %%QT_L10NDIR%%/qtlocation_en.qm
@@ -228,6 +232,7 @@
 %%QT_L10NDIR%%/qtserialport_pl.qm
 %%QT_L10NDIR%%/qtserialport_ru.qm
 %%QT_L10NDIR%%/qtserialport_uk.qm
+%%QT_L10NDIR%%/qtwebengine_ca.qm
 %%QT_L10NDIR%%/qtwebengine_de.qm
 %%QT_L10NDIR%%/qtwebengine_en.qm
 %%QT_L10NDIR%%/qtwebengine_es.qm
@@ -235,6 +240,7 @@
 %%QT_L10NDIR%%/qtwebengine_pl.qm
 %%QT_L10NDIR%%/qtwebengine_ru.qm
 %%QT_L10NDIR%%/qtwebengine_uk.qm
+%%QT_L10NDIR%%/qtwebsockets_ca.qm
 %%QT_L10NDIR%%/qtwebsockets_de.qm
 %%QT_L10NDIR%%/qtwebsockets_en.qm
 %%QT_L10NDIR%%/qtwebsockets_es.qm

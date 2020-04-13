@@ -1,9 +1,9 @@
---- src/3rdparty/chromium/base/debug/stack_trace.h.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/base/debug/stack_trace.h.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/chromium/base/debug/stack_trace.h
-@@ -16,6 +16,7 @@
- #include "build/build_config.h"
- 
- #if defined(OS_POSIX)
+@@ -19,6 +19,7 @@
+ #if !defined(OS_NACL)
+ #include <signal.h>
+ #endif
 +#include <sys/stdint.h>
  #include <unistd.h>
  #endif

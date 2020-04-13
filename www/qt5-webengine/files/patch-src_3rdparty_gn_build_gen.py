@@ -1,15 +1,15 @@
---- src/3rdparty/gn/build/gen.py.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/gn/build/gen.py.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/gn/build/gen.py
-@@ -44,7 +44,7 @@ class Platform(object):
+@@ -46,7 +46,7 @@ class Platform(object):
  
    @staticmethod
    def known_platforms():
--    return ['linux', 'darwin', 'msvc', 'aix', 'fuchsia']
-+    return ['linux', 'darwin', 'msvc', 'aix', 'fuchsia', 'freebsd']
+-    return ['linux', 'darwin', 'msvc', 'aix', 'fuchsia', 'openbsd']
++    return ['linux', 'darwin', 'msvc', 'aix', 'fuchsia', 'openbsd', 'freebsd']
  
    def platform(self):
      return self._platform
-@@ -67,6 +67,9 @@ class Platform(object):
+@@ -69,6 +69,9 @@ class Platform(object):
    def is_aix(self):
      return self._platform == 'aix'
  
@@ -17,9 +17,9 @@
 +    return self._platform == 'freebsd'
 +
    def is_posix(self):
-     return self._platform in ['linux', 'freebsd', 'darwin', 'aix']
+     return self._platform in ['linux', 'freebsd', 'darwin', 'aix', 'openbsd']
  
-@@ -362,6 +365,11 @@ def WriteGNNinja(path, platform, host, options):
+@@ -364,6 +367,11 @@ def WriteGNNinja(path, platform, host, options):
      elif platform.is_aix():
        cflags_cc.append('-maix64')
        ldflags.append('-maix64')

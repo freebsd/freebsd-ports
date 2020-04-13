@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/webrtc/common_audio/wav_file.cc.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/third_party/webrtc/common_audio/wav_file.cc.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/common_audio/wav_file.cc
-@@ -93,13 +93,15 @@ size_t WavReader::num_samples() const {
+@@ -102,13 +102,15 @@ size_t WavReader::num_samples() const {
  }
  
  size_t WavReader::ReadSamples(size_t num_samples, int16_t* samples) {
@@ -19,7 +19,7 @@
    // If we didn't read what was requested, ensure we've reached the EOF.
    RTC_CHECK(read == num_samples || feof(file_handle_));
    RTC_CHECK_LE(read, num_samples_remaining_);
-@@ -178,13 +180,26 @@ size_t WavWriter::num_samples() const {
+@@ -179,11 +181,25 @@ size_t WavWriter::num_samples() const {
  
  void WavWriter::WriteSamples(const int16_t* samples, size_t num_samples) {
  #ifndef WEBRTC_ARCH_LITTLE_ENDIAN
@@ -33,17 +33,16 @@
 +      isamples[j] = __builtin_bswap16(samples[i + j]);
 +    }
 +    const size_t written =
-+        fwrite(isamples, sizeof(*isamples), chunk, file_handle_);
++    fwrite(isamples, sizeof(*isamples), chunk, file_handle_);
 +    RTC_CHECK_EQ(chunk, written);
 +    num_samples_ += written;
 +    RTC_CHECK(num_samples_ >= written);  // detect size_t overflow
 +  }
 +#else
-   const size_t written =
-       fwrite(samples, sizeof(*samples), num_samples, file_handle_);
-   RTC_CHECK_EQ(num_samples, written);
-   num_samples_ += written;
-   RTC_CHECK(num_samples_ >= written);  // detect size_t overflow
++	 
+   RTC_CHECK(file_.Write(samples, sizeof(*samples) * num_samples));
+   num_samples_ += num_samples;
+   RTC_CHECK(num_samples_ >= num_samples);  // detect size_t overflow
 +#endif
  }
  

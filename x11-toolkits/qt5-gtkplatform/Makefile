@@ -2,7 +2,6 @@
 
 PORTNAME=	gtkplatform
 DISTVERSION=	0.2.2
-PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
@@ -28,6 +27,8 @@ USE_GL=		gl egl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CrimsonAS
+
+BROKEN=		Does not build with Qt 5.14
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/qt5/plugins/platforms/libqgtk.so

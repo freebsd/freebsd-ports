@@ -1,5 +1,6 @@
 %%QT_INCDIR%%/QtTextToSpeech/%%FULLVER%%/QtTextToSpeech/private/qtexttospeech_p.h
 %%QT_INCDIR%%/QtTextToSpeech/%%FULLVER%%/QtTextToSpeech/private/qvoice_p.h
+%%QT_INCDIR%%/QtTextToSpeech/%%FULLVER%%/QtTextToSpeech/private/qttexttospeech-config_p.h
 %%QT_INCDIR%%/QtTextToSpeech/QTextToSpeech
 %%QT_INCDIR%%/QtTextToSpeech/QTextToSpeechEngine
 %%QT_INCDIR%%/QtTextToSpeech/QTextToSpeechPlugin
@@ -12,6 +13,7 @@
 %%QT_INCDIR%%/QtTextToSpeech/qtexttospeechengine.h
 %%QT_INCDIR%%/QtTextToSpeech/qtexttospeechplugin.h
 %%QT_INCDIR%%/QtTextToSpeech/qttexttospeechversion.h
+%%QT_INCDIR%%/QtTextToSpeech/qttexttospeech-config.h
 %%QT_INCDIR%%/QtTextToSpeech/qvoice.h
 %%QT_CMAKEDIR%%/Qt5TextToSpeech/Qt5TextToSpeechConfig.cmake
 %%QT_CMAKEDIR%%/Qt5TextToSpeech/Qt5TextToSpeechConfigVersion.cmake

@@ -109,9 +109,9 @@
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidget_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidgetaction_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidgetanimator_p.h
-%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidgetbackingstore_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidgetitemdata_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidgetlinecontrol_p.h
+%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidgetrepaintmanager_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidgetresizehandler_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidgettextcontrol_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qwidgettextcontrol_p_p.h

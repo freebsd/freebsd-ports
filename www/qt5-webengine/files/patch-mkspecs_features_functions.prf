@@ -1,17 +1,14 @@
-Include the freebsd.pri file provided by the port, to pass FreeBSD specific
-settings to gn.
-
---- mkspecs/features/functions.prf.orig	2019-05-24 09:01:39 UTC
+--- mkspecs/features/functions.prf.orig	2019-12-03 07:18:02 UTC
 +++ mkspecs/features/functions.prf
-@@ -82,6 +82,7 @@ defineReplace(gnArgs) {
-     linux: include($$QTWEBENGINE_ROOT/src/core/config/linux.pri)
-     macos: include($$QTWEBENGINE_ROOT/src/core/config/mac_osx.pri)
-     win32: include($$QTWEBENGINE_ROOT/src/core/config/windows.pri)
-+    freebsd: include($$QTWEBENGINE_ROOT/src/core/config/freebsd.pri)
+@@ -75,6 +75,7 @@ defineReplace(gnArgs) {
+     linux: include($$QTWEBENGINE_ROOT/src/buildtools/config/linux.pri)
+     macos: include($$QTWEBENGINE_ROOT/src/buildtools/config/mac_osx.pri)
+     win32: include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)
++    freebsd: include($$QTWEBENGINE_ROOT/src/buildtools/config/freebsd.pri)
      isEmpty(gn_args): error(No gn_args found please make sure you have valid configuration.)
      return($$gn_args)
  }
-@@ -94,6 +95,7 @@ defineReplace(gnArch) {
+@@ -87,6 +88,7 @@ defineReplace(gnArch) {
      contains(qtArch, "arm64"): return(arm64)
      contains(qtArch, "mips"): return(mipsel)
      contains(qtArch, "mips64"): return(mips64el)
@@ -19,7 +16,7 @@ settings to gn.
      return(unknown)
  }
  
-@@ -101,6 +103,7 @@ defineReplace(gnOS) {
+@@ -94,6 +96,7 @@ defineReplace(gnOS) {
      macos: return(mac)
      win32: return(win)
      linux: return(linux)

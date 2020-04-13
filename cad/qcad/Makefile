@@ -56,6 +56,9 @@ CFLAGS_i386= -fPIC
 CXXFLAGS_i386= -fPIC
 
 pre-configure:
+	${MKDIR} ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-${_QT_VERSION}
+	${CP} ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-5.13.2/qt-labs-qtscriptgenerator-5.13.2.pro \
+           ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-${_QT_VERSION}/qt-labs-qtscriptgenerator-${_QT_VERSION}.pro
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
 		${WRKSRC}/src/core/RS.cpp
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\

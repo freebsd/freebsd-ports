@@ -1,14 +1,10 @@
---- src/3rdparty/chromium/components/storage_monitor/BUILD.gn.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/components/storage_monitor/BUILD.gn.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/chromium/components/storage_monitor/BUILD.gn
-@@ -65,6 +65,17 @@ static_library("storage_monitor") {
-     ]
+@@ -79,6 +79,13 @@ static_library("storage_monitor") {
+     }
    }
  
 +  if (is_bsd) {
-+    sources -= [
-+      "mtab_watcher_linux.cc",
-+      "mtab_watcher_linux.h",
-+    ]
 +    sources += [
 +      "storage_monitor_freebsd.cc",
 +      "storage_monitor_freebsd.h",
@@ -16,5 +12,5 @@
 +  }
 +
    if (use_udev) {
-     deps += [ "//device/udev_linux" ]
-   } else if (is_linux) {
+     sources += [
+       "udev_util_linux.cc",

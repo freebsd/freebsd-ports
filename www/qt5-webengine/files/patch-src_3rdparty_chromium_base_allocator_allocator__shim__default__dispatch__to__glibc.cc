@@ -1,9 +1,9 @@
---- src/3rdparty/chromium/base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/chromium/base/allocator/allocator_shim_default_dispatch_to_glibc.cc
-@@ -4,18 +4,28 @@
- 
+@@ -5,18 +5,28 @@
  #include "base/allocator/allocator_shim.h"
  
+ #include <dlfcn.h>
 -#include <malloc.h>
 +#include <stdio.h>
 +#include <stdlib.h>
@@ -22,13 +22,13 @@
 -void __libc_free(void* ptr);
 +void* __malloc(size_t size);
 +void* __calloc(size_t n, size_t size);
-+void* __realloc(void* address, size_t size);
++void* __realloc(void* address, size_t len);
 +void* __memalign(size_t alignment, size_t size) {
 +  void *ret;
 +  if (__posix_memalign(&ret, alignment, size) != 0) {
-+      return nullptr;
++    return nullptr;
 +  } else {
-+      return ret;
++    return ret;
 +  }
 +}
 +int __posix_memalign(void **ptr, size_t alignment, size_t size);
@@ -36,7 +36,7 @@
  }  // extern "C"
  
  namespace {
-@@ -23,32 +33,32 @@ namespace {
+@@ -24,32 +34,32 @@ namespace {
  using base::allocator::AllocatorDispatch;
  
  void* GlibcMalloc(const AllocatorDispatch*, size_t size, void* context) {

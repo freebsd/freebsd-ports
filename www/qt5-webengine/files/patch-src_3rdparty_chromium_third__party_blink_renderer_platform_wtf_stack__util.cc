@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.cc.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/stack_util.cc
-@@ -16,6 +16,11 @@
+@@ -17,6 +17,11 @@
  extern "C" void* __libc_stack_end;  // NOLINT
  #endif
  

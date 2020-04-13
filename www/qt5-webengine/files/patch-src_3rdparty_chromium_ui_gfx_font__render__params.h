@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/font_render_params.h.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/ui/gfx/font_render_params.h.orig	2019-11-27 21:12:25 UTC
 +++ src/3rdparty/chromium/ui/gfx/font_render_params.h
 @@ -111,13 +111,13 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
      const FontRenderParamsQuery& query,
@@ -11,8 +11,8 @@
  GFX_EXPORT void ClearFontRenderParamsCacheForTest();
  #endif
  
--#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_ANDROID) || \
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD) || \
+     defined(OS_FUCHSIA)
  // Gets the device scale factor to query the FontRenderParams.
  GFX_EXPORT float GetFontRenderParamsDeviceScaleFactor();
- 
