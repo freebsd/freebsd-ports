@@ -1,5 +1,6 @@
 [
 { type: install
+  maximum_version: 1.7.6
   message: <<EOM
 When upgrading from Gitea 1.7 or earlier, Gitea requires the addition of
 another secret to the config file in order to start up.  Either manually add

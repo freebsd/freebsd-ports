@@ -14,8 +14,7 @@ COMMENT=	Compact self-hosted Git service
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	git:devel/git \
-		git-lfs:devel/git-lfs
+RUN_DEPENDS=	git:devel/git
 
 USES=		gmake go:no_targets
 USE_RC_SUBR=	gitea
@@ -26,14 +25,16 @@ SUB_LIST+=	GITUSER=${USERS}
 USERS=		git
 GROUPS=		git
 
-OPTIONS_DEFINE=	BINDATA PAM SQLITE
-OPTIONS_DEFAULT=	PAM SQLITE
+OPTIONS_DEFINE=	BINDATA GIT_LFS PAM SQLITE
+OPTIONS_DEFAULT=	GIT_LFS PAM SQLITE
 OPTIONS_SUB=	yes
 
 BINDATA_DESC=	Build a single monolithic binary, with all assets included
+GIT_LFS_DESC=	Support for Git Large File Storage (LFS)
 PAM_DESC=	Enable support for PAM
 
 BINDATA_VARS=	GO_TAGS+=bindata
+GIT_LFS_RUN_DEPENDS=	git-lfs:devel/git-lfs
 PAM_VARS=	GO_TAGS+=pam
 SQLITE_VARS=	GO_TAGS+="sqlite sqlite_unlock_notify"
 
