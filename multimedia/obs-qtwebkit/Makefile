@@ -23,6 +23,15 @@ GH_TAGNAME=	c01aa76
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	OBS_INCLUDE=${LOCALBASE}/include OBS_LIB=${LOCALBASE}/lib
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+CFLAGS+=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lang
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/GNUmakefile
 
