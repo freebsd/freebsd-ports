@@ -2,8 +2,7 @@
 
 PORTNAME=	Carla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
-PORTREVISION=	4
+DISTVERSION=	2.1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +28,7 @@ USE_QT=		core gui widgets buildtools_build
 USE_GL=		gl
 USE_XORG=	x11
 USE_LDCONFIG=	${PREFIX}/lib/carla
-SHEBANG_FILES=	data/carla-single source/native-plugins/resources/*
+SHEBANG_FILES=	data/carla-single data/carla-bridge-lv2-modgui source/native-plugins/resources/* source/frontend/*
 
 MAKE_ARGS=	HAVE_QT4=false \
 		EXTERNAL_PLUGINS=false \
