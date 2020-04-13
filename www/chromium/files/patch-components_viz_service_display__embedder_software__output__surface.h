@@ -1,4 +1,4 @@
---- components/viz/service/display_embedder/software_output_surface.h.orig	2019-12-17 19:30:42 UTC
+--- components/viz/service/display_embedder/software_output_surface.h.orig	2020-03-16 18:40:31 UTC
 +++ components/viz/service/display_embedder/software_output_surface.h
 @@ -50,7 +50,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
        UpdateVSyncParametersCallback callback) override;
@@ -9,7 +9,7 @@
    void SetNeedsSwapSizeNotifications(
        bool needs_swap_size_notifications) override;
  #endif
-@@ -70,7 +70,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -72,7 +72,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
    std::queue<std::vector<ui::LatencyInfo>> stored_latency_info_;
    ui::LatencyTracker latency_tracker_;
  

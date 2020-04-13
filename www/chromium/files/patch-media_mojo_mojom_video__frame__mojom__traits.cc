@@ -1,4 +1,4 @@
---- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2020-03-03 18:53:55 UTC
+--- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2020-02-24 18:39:18 UTC
 +++ media/mojo/mojom/video_frame_mojom_traits.cc
 @@ -20,9 +20,9 @@
  #include "ui/gfx/mojom/buffer_types_mojom_traits.h"

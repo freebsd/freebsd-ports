@@ -1,4 +1,4 @@
---- ui/platform_window/platform_window_init_properties.h.orig	2020-03-03 18:54:07 UTC
+--- ui/platform_window/platform_window_init_properties.h.orig	2020-02-24 18:40:16 UTC
 +++ ui/platform_window/platform_window_init_properties.h
 @@ -41,7 +41,7 @@ enum class PlatformWindowOpacity {
  

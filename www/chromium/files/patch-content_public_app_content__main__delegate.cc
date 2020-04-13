@@ -1,6 +1,6 @@
---- content/public/app/content_main_delegate.cc.orig	2019-09-16 15:21:10 UTC
+--- content/public/app/content_main_delegate.cc.orig	2020-03-16 18:40:32 UTC
 +++ content/public/app/content_main_delegate.cc
-@@ -38,13 +38,13 @@ bool ContentMainDelegate::DelaySandboxInitialization(
+@@ -39,13 +39,13 @@ bool ContentMainDelegate::DelaySandboxInitialization(
    return false;
  }
  

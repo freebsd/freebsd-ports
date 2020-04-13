@@ -1,16 +1,16 @@
---- base/profiler/thread_delegate_posix.cc.orig	2020-03-03 18:53:47 UTC
+--- base/profiler/thread_delegate_posix.cc.orig	2020-04-03 04:10:36 UTC
 +++ base/profiler/thread_delegate_posix.cc
-@@ -3,6 +3,9 @@
- // found in the LICENSE file.
+@@ -9,6 +9,9 @@
+ #include "base/stl_util.h"
  
- #include <pthread.h>
-+#if defined(__FreeBSD__)
+ #include "build/build_config.h"
++#if defined(OS_FREEBSD)
 +#include <pthread_np.h>
 +#endif
  
- #include "base/process/process_handle.h"
- #include "base/profiler/thread_delegate_posix.h"
-@@ -17,12 +20,20 @@ namespace {
+ namespace base {
+ 
+@@ -17,7 +20,12 @@
  uintptr_t GetThreadStackBaseAddressImpl(
      SamplingProfilerThreadToken thread_token) {
    pthread_attr_t attr;
@@ -23,21 +23,25 @@
    // See crbug.com/617730 for limitations of this approach on Linux.
    void* address;
    size_t size;
-   pthread_attr_getstack(&attr, &address, &size);
-   const uintptr_t base_address = reinterpret_cast<uintptr_t>(address) + size;
+@@ -93,16 +103,33 @@
+   return {
+       // Return the set of callee-save registers per the i386 System V ABI
+       // section 2.2.3, plus the stack pointer.
 +#if defined(OS_FREEBSD)
-+  pthread_attr_destroy(&attr);
++      reinterpret_cast<uintptr_t*>(&thread_context->mc_ebx),
++      reinterpret_cast<uintptr_t*>(&thread_context->mc_ebp),
++      reinterpret_cast<uintptr_t*>(&thread_context->mc_esi),
++      reinterpret_cast<uintptr_t*>(&thread_context->mc_edi),
++      reinterpret_cast<uintptr_t*>(&thread_context->mc_esp),
++#else
+       reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_EBX]),
+       reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_EBP]),
+       reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_ESI]),
+       reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_EDI]),
+       reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_ESP]),
 +#endif
-   return base_address;
- }
- 
-@@ -88,11 +99,19 @@ std::vector<uintptr_t*> ThreadDelegatePosix::GetRegist
-   for (size_t i = 19; i <= 29; ++i)
-     registers.push_back(reinterpret_cast<uintptr_t*>(&thread_context->regs[i]));
-   return registers;
--#elif defined(ARCH_CPU_X86_64)  // #if defined(ARCH_CPU_ARM_FAMILY) &&
--                                // defined(ARCH_CPU_32_BITS)
-+#elif defined(ARCH_CPU_X86_64)
+   };
+ #elif defined(ARCH_CPU_X86_FAMILY) && defined(ARCH_CPU_64_BITS)
    return {
        // Return the set of callee-save registers per the x86-64 System V ABI
        // section 3.2.1, plus the stack pointer.
@@ -53,7 +57,7 @@
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_RBP]),
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_RBX]),
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_R12]),
-@@ -100,6 +119,7 @@ std::vector<uintptr_t*> ThreadDelegatePosix::GetRegist
+@@ -110,6 +137,7 @@
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_R14]),
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_R15]),
        reinterpret_cast<uintptr_t*>(&thread_context->gregs[REG_RSP]),

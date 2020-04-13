@@ -1,4 +1,4 @@
---- remoting/resources/remoting_strings.grd.orig	2020-03-03 18:53:55 UTC
+--- remoting/resources/remoting_strings.grd.orig	2020-02-03 21:53:32 UTC
 +++ remoting/resources/remoting_strings.grd
 @@ -1393,7 +1393,7 @@ If '<ph name="SERVICE_SCRIPT_NAME">$3<ex>org.chromium.
            Open Screen Recording Preferences

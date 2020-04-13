@@ -1,4 +1,4 @@
---- third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp.orig	2020-03-03 18:55:29 UTC
+--- third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp.orig	2020-02-03 21:54:55 UTC
 +++ third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
 @@ -153,7 +153,7 @@ EGLDisplay EGLAPIENTRY GetDisplay(EGLNativeDisplayType
  		// FIXME: Check if display_id is the default display

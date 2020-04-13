@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	80.0.3987.163
-PORTREVISION=	1
+PORTVERSION=	81.0.4044.92
 CATEGORIES?=	www java
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/cpm/chromium/:fonts
@@ -104,8 +103,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 # Some parts don't have use_system_* flag, and can be turned on/off by using
 # replace_gn_files.py script, some parts just turned on/off for target host
 # OS "target_os == is_bsd", like libusb, libpci.
-GN_ARGS+=	\
-		clang_use_chrome_plugins=false \
+GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_hangout_services_extension=true \
 		enable_nacl=false \
 		enable_one_click_signin=true \
@@ -157,11 +155,9 @@ ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/al
 ALSA_VARS=		GN_ARGS+=use_alsa=true
 ALSA_VARS_OFF=		GN_ARGS+=use_alsa=false
 
-CODECS_VARS=		\
-			GN_ARGS+=ffmpeg_branding="Chrome" \
+CODECS_VARS=		GN_ARGS+=ffmpeg_branding="Chrome" \
 			GN_ARGS+=proprietary_codecs=true
-CODECS_VARS_OFF=	\
-			GN_ARGS+=ffmpeg_branding="Chromium" \
+CODECS_VARS_OFF=	GN_ARGS+=ffmpeg_branding="Chromium" \
 			GN_ARGS+=proprietary_codecs=false
 
 CUPS_LIB_DEPENDS=	libcups.so:print/cups

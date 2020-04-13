@@ -1,4 +1,4 @@
---- media/base/video_frame.h.orig	2019-12-16 21:50:49 UTC
+--- media/base/video_frame.h.orig	2020-03-16 18:40:33 UTC
 +++ media/base/video_frame.h
 @@ -39,9 +39,9 @@
  #include "base/mac/scoped_cftyperef.h"
@@ -30,7 +30,7 @@
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/html/latest/driver-api/dma-buf.html) with a
    // VideoFrame. The frame will take ownership of |dmabuf_fds|, and will
-@@ -476,7 +476,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -480,7 +480,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // mailbox, the caller must wait for the included sync point.
    const gpu::MailboxHolder& mailbox_holder(size_t texture_index) const;
  

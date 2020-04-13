@@ -1,6 +1,6 @@
---- content/common/BUILD.gn.orig	2020-03-03 18:53:54 UTC
+--- content/common/BUILD.gn.orig	2020-03-16 18:40:32 UTC
 +++ content/common/BUILD.gn
-@@ -363,6 +363,12 @@ source_set("common") {
+@@ -356,6 +356,12 @@ source_set("common") {
      libs += [ "android" ]
    }
  

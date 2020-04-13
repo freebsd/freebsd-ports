@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2020-03-03 18:53:51 UTC
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2020-03-16 18:40:29 UTC
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
-@@ -708,11 +708,11 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -718,11 +718,11 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
  #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -14,7 +14,7 @@
  
  #if BUILDFLAG(ENABLE_PLUGINS)
    plugin_metrics_provider_ = new PluginMetricsProvider(local_state);
-@@ -955,7 +955,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+@@ -980,7 +980,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
    }
  #endif
  #if defined(OS_WIN) || defined(OS_MACOSX) || \

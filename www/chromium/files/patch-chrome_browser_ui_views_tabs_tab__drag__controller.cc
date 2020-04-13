@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2020-03-03 18:53:52 UTC
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2020-03-16 18:40:30 UTC
 +++ chrome/browser/ui/views/tabs/tab_drag_controller.cc
 @@ -450,7 +450,7 @@ void TabDragController::Init(TabDragContext* source_co
    //     synchronous on desktop Linux, so use that.
@@ -18,7 +18,7 @@
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -2060,7 +2060,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -2082,7 +2082,7 @@ TabDragController::Liveness TabDragController::GetLoca
      if (dragged_window)
        exclude.insert(dragged_window);
    }

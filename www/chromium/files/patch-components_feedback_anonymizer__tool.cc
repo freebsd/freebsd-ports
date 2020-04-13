@@ -1,7 +1,7 @@
---- components/feedback/anonymizer_tool.cc.orig	2019-10-21 19:06:29 UTC
+--- components/feedback/anonymizer_tool.cc.orig	2020-03-16 18:40:30 UTC
 +++ components/feedback/anonymizer_tool.cc
-@@ -14,7 +14,11 @@
- #include "base/strings/stringprintf.h"
+@@ -15,7 +15,11 @@
+ #include "base/threading/thread_restrictions.h"
  #include "content/public/browser/browser_thread.h"
  #include "net/base/ip_address.h"
 +#if defined(OS_BSD)

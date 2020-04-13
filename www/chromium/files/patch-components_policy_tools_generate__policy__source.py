@@ -1,4 +1,4 @@
---- components/policy/tools/generate_policy_source.py.orig	2020-03-03 18:53:54 UTC
+--- components/policy/tools/generate_policy_source.py.orig	2020-02-03 21:53:30 UTC
 +++ components/policy/tools/generate_policy_source.py
 @@ -97,6 +97,7 @@ class PolicyDetails:
            'chrome.linux',

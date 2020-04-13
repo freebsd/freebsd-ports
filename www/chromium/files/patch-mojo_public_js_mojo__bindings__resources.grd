@@ -1,6 +1,6 @@
---- mojo/public/js/mojo_bindings_resources.grd.orig	2019-07-24 18:58:31 UTC
+--- mojo/public/js/mojo_bindings_resources.grd.orig	2020-03-16 18:39:53 UTC
 +++ mojo/public/js/mojo_bindings_resources.grd
-@@ -60,7 +60,7 @@
+@@ -70,7 +70,7 @@
            use_base_dir="false"
            type="BINDATA"
            compress="gzip" />

@@ -1,19 +1,19 @@
---- third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h.orig	2019-09-09 21:57:03 UTC
+--- third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h.orig	2020-03-16 18:42:15 UTC
 +++ third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h
 @@ -8,15 +8,15 @@
  #define BUG_REPORT_URL "https://bugs.llvm.org/"
  
  /* Define to 1 to enable backtraces, and to 0 otherwise. */
--/* #undef ENABLE_BACKTRACES */
+-#define ENABLE_BACKTRACES 0
 +#define ENABLE_BACKTRACES 1
  
  /* Define to 1 to enable crash overrides, and to 0 otherwise. */
--/* #undef ENABLE_CRASH_OVERRIDES */
+-#define ENABLE_CRASH_OVERRIDES 0
 +#define ENABLE_CRASH_OVERRIDES 1
  
  /* Define to 1 if you have the `backtrace' function. */
 -/* #undef HAVE_BACKTRACE */
-+#define HAVE_BACKTRACE TRUE
++#define HAVE_BACKTRACE 1
  
 -/* #undef BACKTRACE_HEADER */
 +#define BACKTRACE_HEADER <execinfo.h>

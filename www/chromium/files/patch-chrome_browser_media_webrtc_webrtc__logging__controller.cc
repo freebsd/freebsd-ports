@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/webrtc_logging_controller.cc.orig	2019-10-30 15:49:45 UTC
+--- chrome/browser/media/webrtc/webrtc_logging_controller.cc.orig	2020-03-16 18:39:44 UTC
 +++ chrome/browser/media/webrtc/webrtc_logging_controller.cc
 @@ -24,10 +24,10 @@
  #include "content/public/browser/render_process_host.h"
@@ -13,7 +13,7 @@
  
  using webrtc_event_logging::WebRtcEventLogManager;
  
-@@ -267,7 +267,7 @@ void WebRtcLoggingController::StartEventLogging(
+@@ -270,7 +270,7 @@ void WebRtcLoggingController::StartEventLogging(
        web_app_id, callback);
  }
  
@@ -22,7 +22,7 @@
  void WebRtcLoggingController::GetLogsDirectory(
      const LogsDirectoryCallback& callback,
      const LogsDirectoryErrorCallback& error_callback) {
-@@ -312,7 +312,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
+@@ -315,7 +315,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
    base::SequencedTaskRunnerHandle::Get()->PostTask(
        FROM_HERE, base::BindOnce(callback, file_system.id(), registered_name));
  }

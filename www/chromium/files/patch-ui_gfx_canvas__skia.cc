@@ -1,4 +1,4 @@
---- ui/gfx/canvas_skia.cc.orig	2020-03-03 18:53:32 UTC
+--- ui/gfx/canvas_skia.cc.orig	2020-02-03 21:53:13 UTC
 +++ ui/gfx/canvas_skia.cc
 @@ -206,7 +206,7 @@ void Canvas::DrawStringRectWithFlags(const base::strin
      Range range = StripAcceleratorChars(flags, &adjusted_text);

@@ -1,4 +1,4 @@
---- ipc/ipc_channel_mojo.cc.orig	2020-03-03 18:53:09 UTC
+--- ipc/ipc_channel_mojo.cc.orig	2020-02-03 21:52:47 UTC
 +++ ipc/ipc_channel_mojo.cc
 @@ -74,10 +74,10 @@ class MojoChannelFactory : public ChannelFactory {
  };

@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2020-03-03 18:55:34 UTC
+--- v8/BUILD.gn.orig	2020-03-16 18:42:16 UTC
 +++ v8/BUILD.gn
-@@ -3561,7 +3561,7 @@ v8_component("v8_libbase") {
+@@ -3616,7 +3616,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -9,7 +9,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -3581,6 +3581,12 @@ v8_component("v8_libbase") {
+@@ -3636,6 +3636,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]
@@ -22,7 +22,7 @@
    } else if (is_android) {
      if (current_toolchain == host_toolchain) {
        libs = [
-@@ -3840,6 +3846,7 @@ if (current_toolchain == v8_snapshot_toolchain) {
+@@ -3891,6 +3897,7 @@ if (current_toolchain == v8_snapshot_toolchain) {
        "src/snapshot/mksnapshot.cc",
        "src/snapshot/snapshot-empty.cc",
      ]

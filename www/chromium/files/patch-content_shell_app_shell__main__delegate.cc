@@ -1,15 +1,6 @@
---- content/shell/app/shell_main_delegate.cc.orig	2019-12-16 21:50:48 UTC
+--- content/shell/app/shell_main_delegate.cc.orig	2020-03-16 18:40:32 UTC
 +++ content/shell/app/shell_main_delegate.cc
-@@ -170,7 +170,7 @@ bool ShellMainDelegate::BasicStartupComplete(int* exit
- 
-   v8_crashpad_support::SetUp();
- #endif
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
-   breakpad::SetFirstChanceExceptionHandler(v8::TryHandleWebAssemblyTrapPosix);
- #endif
- #if defined(OS_MACOSX)
-@@ -313,7 +313,7 @@ bool ShellMainDelegate::BasicStartupComplete(int* exit
+@@ -306,7 +306,7 @@ bool ShellMainDelegate::BasicStartupComplete(int* exit
  }
  
  void ShellMainDelegate::PreSandboxStartup() {
@@ -18,3 +9,12 @@
    // Create an instance of the CPU class to parse /proc/cpuinfo and cache
    // cpu_brand info.
    base::CPU cpu_info;
+@@ -325,7 +325,7 @@ void ShellMainDelegate::PreSandboxStartup() {
+     // Reporting for sub-processes will be initialized in ZygoteForked.
+     if (process_type != service_manager::switches::kZygoteProcess) {
+       crash_reporter::InitializeCrashpad(process_type.empty(), process_type);
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+       crash_reporter::SetFirstChanceExceptionHandler(
+           v8::TryHandleWebAssemblyTrapPosix);
+ #endif

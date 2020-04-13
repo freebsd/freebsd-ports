@@ -1,6 +1,6 @@
---- headless/lib/headless_content_main_delegate.h.orig	2019-09-16 09:51:15 UTC
+--- headless/lib/headless_content_main_delegate.h.orig	2020-03-16 18:39:51 UTC
 +++ headless/lib/headless_content_main_delegate.h
-@@ -58,7 +58,7 @@ class HEADLESS_EXPORT HeadlessContentMainDelegate
+@@ -60,7 +60,7 @@ class HEADLESS_EXPORT HeadlessContentMainDelegate
  
    HeadlessBrowserImpl* browser() const { return browser_.get(); }
  

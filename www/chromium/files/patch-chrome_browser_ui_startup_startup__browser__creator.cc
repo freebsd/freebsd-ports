@@ -1,4 +1,4 @@
---- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2020-03-03 18:53:52 UTC
+--- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2020-02-03 21:52:41 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
 @@ -82,7 +82,7 @@
  #include "chrome/browser/ui/user_manager.h"

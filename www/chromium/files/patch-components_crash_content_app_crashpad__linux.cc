@@ -1,4 +1,4 @@
---- components/crash/content/app/crashpad_linux.cc.orig	2019-12-19 16:47:28 UTC
+--- components/crash/content/app/crashpad_linux.cc.orig	2020-03-16 18:39:48 UTC
 +++ components/crash/content/app/crashpad_linux.cc
 @@ -5,7 +5,9 @@
  #include "components/crash/content/app/crashpad.h"
@@ -10,7 +10,7 @@
  
  #include <limits>
  
-@@ -66,9 +68,11 @@ void SetPtracerAtFork() {
+@@ -67,9 +69,11 @@ void SetPtracerAtFork() {
    if (!GetHandlerSocket(nullptr, &pid)) {
      return;
    }

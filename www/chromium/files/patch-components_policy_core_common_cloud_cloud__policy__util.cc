@@ -1,4 +1,4 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2020-03-03 18:53:06 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2020-02-03 21:52:44 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -16,7 +16,7 @@
  #include <wincred.h>

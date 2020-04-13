@@ -1,4 +1,4 @@
---- chrome/app/chrome_main_delegate.cc.orig	2020-03-03 18:53:48 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2020-03-16 18:40:27 UTC
 +++ chrome/app/chrome_main_delegate.cc
 @@ -100,7 +100,7 @@
  #include "chrome/app/shutdown_signal_handlers_posix.h"
@@ -9,7 +9,7 @@
  #include "components/nacl/common/nacl_paths.h"
  #include "components/nacl/zygote/nacl_fork_delegate_linux.h"
  #endif
-@@ -142,7 +142,7 @@
+@@ -142,12 +142,12 @@
  #include "v8/include/v8.h"
  #endif
  
@@ -18,6 +18,12 @@
  #include "base/environment.h"
  #endif
  
+ #if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_ANDROID) || \
+-    defined(OS_LINUX)
++    defined(OS_LINUX) || defined(OS_BSD)
+ #include "chrome/browser/policy/policy_path_parser.h"
+ #include "components/crash/content/app/crashpad.h"
+ #endif
 @@ -246,7 +246,7 @@ bool UseHooks() {
  
  #endif  // defined(OS_WIN)
@@ -88,7 +94,7 @@
    // Record the startup process creation time on supported platforms.
    startup_metric_utils::RecordStartupProcessCreationTime(
        base::Process::Current().CreationTime());
-@@ -684,7 +684,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -688,7 +688,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
      *exit_code = 0;
      return true;  // Got a --version switch; exit with a success error code.
    }
@@ -97,7 +103,7 @@
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -708,7 +708,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
+@@ -712,7 +712,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
  #if defined(OS_CHROMEOS)
    chromeos::RegisterPathProvider();
  #endif
@@ -106,7 +112,7 @@
    nacl::RegisterPathProvider();
  #endif
  
-@@ -902,7 +902,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -904,7 +904,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  #if defined(OS_WIN)
    child_process_logging::Init();
  #endif
@@ -115,7 +121,7 @@
    // Create an instance of the CPU class to parse /proc/cpuinfo and cache
    // cpu_brand info.
    base::CPU cpu_info;
-@@ -1026,7 +1026,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1028,7 +1028,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    InitializePDF();
  #endif
  
@@ -124,7 +130,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != service_manager::switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -1047,7 +1047,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1049,7 +1049,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
      }
  #endif  // defined(OS_ANDROID)
    }
@@ -133,7 +139,7 @@
  
    // After all the platform Breakpads have been initialized, store the command
    // line for crash reporting.
-@@ -1057,7 +1057,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1059,7 +1059,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  void ChromeMainDelegate::SandboxInitialized(const std::string& process_type) {
    // Note: If you are adding a new process type below, be sure to adjust the
    // AdjustLinuxOOMScore function too.
@@ -142,3 +148,12 @@
    AdjustLinuxOOMScore(process_type);
  #endif
  #if defined(OS_WIN)
+@@ -1105,7 +1105,7 @@ int ChromeMainDelegate::RunProcess(
+     // This entry is not needed on Linux, where the NaCl loader
+     // process is launched via nacl_helper instead.
+ #if BUILDFLAG(ENABLE_NACL) && !defined(CHROME_MULTIPLE_DLL_BROWSER) && \
+-    !defined(OS_LINUX)
++    !defined(OS_LINUX) && !defined(OS_BSD)
+     {switches::kNaClLoaderProcess, NaClMain},
+ #else
+     {"<invalid>", NULL},  // To avoid constant array of size 0

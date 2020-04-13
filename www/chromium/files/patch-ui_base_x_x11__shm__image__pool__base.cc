@@ -1,4 +1,4 @@
---- ui/base/x/x11_shm_image_pool_base.cc.orig	2020-03-03 18:54:06 UTC
+--- ui/base/x/x11_shm_image_pool_base.cc.orig	2020-03-16 18:40:43 UTC
 +++ ui/base/x/x11_shm_image_pool_base.cc
 @@ -16,6 +16,7 @@
  #include "base/environment.h"
@@ -7,8 +7,8 @@
 +#include "base/system/sys_info.h"
  #include "base/threading/thread_task_runner_handle.h"
  #include "build/build_config.h"
- #include "ui/events/platform/platform_event_dispatcher.h"
-@@ -43,10 +44,14 @@ constexpr float kShmResizeShrinkThreshold =
+ #include "net/base/url_util.h"
+@@ -44,10 +45,14 @@ constexpr float kShmResizeShrinkThreshold =
      1.0f / (kShmResizeThreshold * kShmResizeThreshold);
  
  std::size_t MaxShmSegmentSizeImpl() {
@@ -23,8 +23,8 @@
  }
  
  std::size_t MaxShmSegmentSize() {
-@@ -172,7 +177,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
-         shmctl(state.shminfo_.shmid, IPC_RMID, 0);
+@@ -199,7 +204,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
+         shmctl(state.shminfo_.shmid, IPC_RMID, nullptr);
          return false;
        }
 -#if defined(OS_LINUX)
@@ -32,7 +32,7 @@
        // On Linux, a shmid can still be attached after IPC_RMID if otherwise
        // kept alive.  Detach before XShmAttach to prevent a memory leak in case
        // the process dies.
-@@ -182,7 +187,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
+@@ -209,7 +214,7 @@ bool XShmImagePoolBase::Resize(const gfx::Size& pixel_
        if (!XShmAttach(display_, &state.shminfo_))
          return false;
        state.shmem_attached_to_server_ = true;

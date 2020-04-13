@@ -1,7 +1,7 @@
---- weblayer/browser/content_browser_client_impl.h.orig	2020-01-07 21:53:35 UTC
+--- weblayer/browser/content_browser_client_impl.h.orig	2020-03-16 18:40:43 UTC
 +++ weblayer/browser/content_browser_client_impl.h
-@@ -80,12 +80,12 @@ class ContentBrowserClientImpl : public content::Conte
-       base::OnceCallback<void(base::Optional<storage::QuotaSettings>)> callback)
+@@ -85,12 +85,12 @@ class ContentBrowserClientImpl : public content::Conte
+       service_manager::BinderMapWithContext<content::RenderFrameHost*>* map)
        override;
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID)

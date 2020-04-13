@@ -1,20 +1,18 @@
---- cc/BUILD.gn.orig	2020-03-03 18:53:47 UTC
+--- cc/BUILD.gn.orig	2020-03-16 18:40:27 UTC
 +++ cc/BUILD.gn
-@@ -578,7 +578,7 @@ cc_test_static_library("test_support") {
+@@ -582,7 +582,7 @@ cc_test_static_library("test_support") {
    if (enable_vulkan) {
      deps += [ "//gpu/vulkan/init" ]
    }
 -  if (!is_android) {
 +  if (!is_android && !is_bsd) {
-     data_deps = [
-       "//third_party/mesa_headers",
-     ]
-@@ -783,9 +783,6 @@ cc_test("cc_unittests") {
-     "//ui/gfx/geometry",
-     "//ui/gl",
-     "//ui/gl:test_support",
--  ]
--  data_deps = [
+     data_deps = [ "//third_party/mesa_headers" ]
+   }
+ }
+@@ -788,7 +788,6 @@ cc_test("cc_unittests") {
+   ]
+   data_deps = [
+     "//testing/buildbot/filters:cc_unittests_filters",
 -    "//third_party/mesa_headers",
    ]
  

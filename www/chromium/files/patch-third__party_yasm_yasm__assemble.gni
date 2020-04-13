@@ -1,4 +1,4 @@
---- third_party/yasm/yasm_assemble.gni.orig	2019-03-18 08:59:45 UTC
+--- third_party/yasm/yasm_assemble.gni.orig	2020-03-16 18:40:14 UTC
 +++ third_party/yasm/yasm_assemble.gni
 @@ -1,105 +1,23 @@
 -# Copyright 2014 The Chromium Authors. All rights reserved.
@@ -120,7 +120,7 @@
    action_name = "${target_name}_action"
    source_set_name = target_name
  
-@@ -114,24 +32,12 @@ template("yasm_assemble") {
+@@ -114,22 +32,12 @@ template("yasm_assemble") {
        inputs = invoker.inputs
      }
  
@@ -133,9 +133,7 @@
 -                         root_build_dir) ]
 -
 -    # Deps.
--    deps = [
--      yasm_label,
--    ]
+-    deps = [ yasm_label ]
 +    deps = []
      if (defined(invoker.deps)) {
        deps += invoker.deps
@@ -147,7 +145,7 @@
      if (defined(invoker.yasm_flags)) {
        args += invoker.yasm_flags
      }
-@@ -188,9 +94,6 @@ template("yasm_assemble") {
+@@ -184,9 +92,6 @@ template("yasm_assemble") {
      }
  
      sources = get_target_outputs(":$action_name")
@@ -155,5 +153,5 @@
 -    # Do not publicize any header to remove build dependency.
 -    public = []
  
-     deps = [
-       ":$action_name",
+     deps = [ ":$action_name" ]
+   }

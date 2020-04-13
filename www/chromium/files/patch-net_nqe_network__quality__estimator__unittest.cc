@@ -1,6 +1,6 @@
---- net/nqe/network_quality_estimator_unittest.cc.orig	2020-03-03 18:53:55 UTC
+--- net/nqe/network_quality_estimator_unittest.cc.orig	2020-03-16 18:39:54 UTC
 +++ net/nqe/network_quality_estimator_unittest.cc
-@@ -2146,7 +2146,7 @@ TEST_F(NetworkQualityEstimatorTest, TestGlobalSocketWa
+@@ -2107,7 +2107,7 @@ TEST_F(NetworkQualityEstimatorTest, TestGlobalSocketWa
  // TestTCPSocketRTT requires kernel support for tcp_info struct, and so it is
  // enabled only on certain platforms.
  // ChromeOS is disabled due to crbug.com/986904

@@ -1,6 +1,6 @@
---- chrome/browser/about_flags.cc.orig	2020-03-03 18:53:51 UTC
+--- chrome/browser/about_flags.cc.orig	2020-04-03 04:11:28 UTC
 +++ chrome/browser/about_flags.cc
-@@ -166,7 +166,7 @@
+@@ -170,7 +170,7 @@
  #include "ui/gl/gl_switches.h"
  #include "ui/native_theme/native_theme_features.h"
  
@@ -9,7 +9,7 @@
  #include "base/allocator/buildflags.h"
  #endif
  
-@@ -804,7 +804,7 @@ const FeatureEntry::Choice kMemlogSamplingRateChoices[
+@@ -834,7 +834,7 @@ const FeatureEntry::Choice kMemlogSamplingRateChoices[
       heap_profiling::kMemlogSamplingRate5MB},
  };
  
@@ -18,7 +18,16 @@
  const FeatureEntry::FeatureParam kOmniboxDocumentProviderServerScoring[] = {
      {"DocumentUseServerScore", "true"},
      {"DocumentUseClientScore", "false"},
-@@ -956,7 +956,7 @@ const FeatureEntry::FeatureVariation kOmniboxMaxURLMat
+@@ -872,7 +872,7 @@ const FeatureEntry::FeatureVariation kOmniboxDocumentP
+      base::size(kOmniboxDocumentProviderClientScoring), nullptr},
+     {"server and client scores", kOmniboxDocumentProviderServerAndClientScoring,
+      base::size(kOmniboxDocumentProviderServerAndClientScoring), nullptr}};
+-#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ 
+ const FeatureEntry::FeatureParam kOmniboxOnFocusSuggestionsParamSERP[] = {
+     {"ZeroSuggestVariant:6:*", "RemoteSendUrl"}};
+@@ -994,14 +994,14 @@ const FeatureEntry::FeatureVariation kOmniboxMaxURLMat
      {"6 matches", kOmniboxMaxURLMatches6, base::size(kOmniboxMaxURLMatches6),
       nullptr}};
  
@@ -27,7 +36,15 @@
      defined(OS_CHROMEOS)
  const FeatureEntry::FeatureParam kTranslateBubbleUITab[] = {
      {language::kTranslateUIBubbleKey, language::kTranslateUIBubbleTabValue}};
-@@ -1981,13 +1981,13 @@ const FeatureEntry kFeatureEntries[] = {
+ 
+ const FeatureEntry::FeatureVariation kTranslateBubbleUIVariations[] = {
+     {"Tab", kTranslateBubbleUITab, base::size(kTranslateBubbleUITab), nullptr}};
+-#endif  // OS_LINUX || OS_MACOSX || OS_WIN || OS_CHROMEOS
++#endif  // OS_LINUX || OS_MACOSX || OS_WIN || OS_CHROMEOS || OS_BSD
+ 
+ const FeatureEntry::FeatureParam kMarkHttpAsDangerous[] = {
+     {security_state::features::kMarkHttpAsFeatureParameterName,
+@@ -2031,13 +2031,13 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kCloudPrintXpsDescription, kOsWin,
       SINGLE_VALUE_TYPE(switches::kEnableCloudPrintXps)},
  #endif  // OS_WIN
@@ -43,7 +60,7 @@
      {"enable-webgl-draft-extensions",
       flag_descriptions::kWebglDraftExtensionsName,
       flag_descriptions::kWebglDraftExtensionsDescription, kOsAll,
-@@ -2031,14 +2031,14 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2074,14 +2074,14 @@ const FeatureEntry kFeatureEntries[] = {
                                      "OverrideTranslateTriggerInIndia")},
  #endif  // OS_ANDROID
  
@@ -60,7 +77,14 @@
  
  #if BUILDFLAG(ENABLE_NATIVE_NOTIFICATIONS) && !defined(OS_CHROMEOS)
      {"enable-native-notifications",
-@@ -2119,7 +2119,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2159,13 +2159,13 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kTerminalSystemAppSplitsDescription, kOsCrOS,
+      FEATURE_VALUE_TYPE(features::kTerminalSystemAppSplits)},
+ #endif  // OS_CHROMEOS
+-#if defined(OS_CHROMEOS) || defined(OS_LINUX)
++#if defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+ #if BUILDFLAG(USE_TCMALLOC)
+     {"dynamic-tcmalloc-tuning", flag_descriptions::kDynamicTcmallocName,
       flag_descriptions::kDynamicTcmallocDescription, kOsCrOS | kOsLinux,
       FEATURE_VALUE_TYPE(performance_manager::features::kDynamicTcmallocTuning)},
  #endif  // BUILDFLAG(USE_TCMALLOC)
@@ -69,7 +93,7 @@
  #if defined(OS_ANDROID)
      {"enable-credit-card-assist", flag_descriptions::kCreditCardAssistName,
       flag_descriptions::kCreditCardAssistDescription, kOsAndroid,
-@@ -2197,7 +2197,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2239,7 +2239,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kEnableLitePageServerPreviewsDescription, kOsAndroid,
       FEATURE_VALUE_TYPE(previews::features::kLitePageServerPreviews)},
  #endif  // OS_ANDROID
@@ -78,16 +102,16 @@
      {"enable-save-data", flag_descriptions::kEnableSaveDataName,
       flag_descriptions::kEnableSaveDataDescription, kOsCrOS,
       SINGLE_VALUE_TYPE(
-@@ -2858,7 +2858,7 @@ const FeatureEntry kFeatureEntries[] = {
-      flag_descriptions::kOmniboxExperimentalSuggestScoringDescription, kOsAll,
-      FEATURE_VALUE_TYPE(omnibox::kOmniboxExperimentalSuggestScoring)},
+@@ -2907,7 +2907,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(
+          omnibox::kHistoryQuickProviderAllowMidwordContinuations)},
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
      {"omnibox-experimental-keyword-mode",
       flag_descriptions::kOmniboxExperimentalKeywordModeName,
       flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
-@@ -2903,7 +2903,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2956,7 +2956,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kOmniboxAutocompleteTitlesName,
       flag_descriptions::kOmniboxAutocompleteTitlesDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(omnibox::kAutocompleteTitles)},
@@ -96,7 +120,7 @@
  
      {"enable-speculative-service-worker-start-on-query-input",
       flag_descriptions::kSpeculativeServiceWorkerStartOnQueryInputName,
-@@ -3136,13 +3136,13 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3182,13 +3182,13 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kClickToOpenPDFDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kClickToOpenPDFPlaceholder)},
  
@@ -111,8 +135,41 @@
 +#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  
  #if !defined(OS_ANDROID)
-     {"chrome-colors", flag_descriptions::kChromeColorsName,
-@@ -3965,13 +3965,13 @@ const FeatureEntry kFeatureEntries[] = {
+     {"ntp-confirm-suggestion-removals",
+@@ -3850,12 +3850,12 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(kClickToCallDetectionV2)},
+ #endif  // BUILDFLAG(ENABLE_CLICK_TO_CALL)
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) || \
+     defined(OS_CHROMEOS)
+     {"remote-copy-receiver", flag_descriptions::kRemoteCopyReceiverName,
+      flag_descriptions::kRemoteCopyReceiverDescription, kOsDesktop,
+      FEATURE_VALUE_TYPE(kRemoteCopyReceiver)},
+-#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
++#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) ||
+         // defined(OS_CHROMEOS)
+ 
+     {"shared-clipboard-receiver",
+@@ -3899,7 +3899,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kSharingUseDeviceInfoDescription, kOsAll,
+      FEATURE_VALUE_TYPE(kSharingUseDeviceInfo)},
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) || \
+     defined(OS_CHROMEOS)
+     {"sharing-peer-connection-receiver",
+      flag_descriptions::kSharingPeerConnectionReceiverName,
+@@ -3910,7 +3910,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kSharingPeerConnectionSenderName,
+      flag_descriptions::kSharingPeerConnectionSenderDescription, kOsDesktop,
+      FEATURE_VALUE_TYPE(kSharingPeerConnectionSender)},
+-#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
++#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) ||
+         // defined(OS_CHROMEOS)
+ 
+     {"sharing-qr-code-generator",
+@@ -3985,13 +3985,13 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(printing::features::kEnableCustomMacPaperSizes)},
  #endif
  
@@ -128,7 +185,7 @@
          // defined(OS_CHROMEOS)
  
      {"enable-audio-focus-enforcement",
-@@ -4425,12 +4425,12 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4436,7 +4436,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kEnableSyncUSSNigoriDescription, kOsAll,
       FEATURE_VALUE_TYPE(switches::kSyncUSSNigori)},
  
@@ -137,39 +194,12 @@
      {"global-media-controls", flag_descriptions::kGlobalMediaControlsName,
       flag_descriptions::kGlobalMediaControlsDescription,
       kOsWin | kOsMac | kOsLinux,
-      FEATURE_VALUE_TYPE(media::kGlobalMediaControls)},
+@@ -4453,7 +4453,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kGlobalMediaControlsPictureInPictureDescription,
+      kOsWin | kOsMac | kOsLinux | kOsCrOS,
+      FEATURE_VALUE_TYPE(media::kGlobalMediaControlsPictureInPicture)},
 -#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  
  #if BUILDFLAG(ENABLE_SPELLCHECK) && defined(OS_WIN)
      {"win-use-native-spellchecker",
-@@ -4450,12 +4450,12 @@ const FeatureEntry kFeatureEntries[] = {
-      flag_descriptions::kSafetyTipDescription, kOsAll,
-      FEATURE_VALUE_TYPE(security_state::features::kSafetyTipUI)},
- 
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
-     {"animated-avatar-button", flag_descriptions::kAnimatedAvatarButtonName,
-      flag_descriptions::kAnimatedAvatarButtonDescription,
-      kOsWin | kOsMac | kOsLinux,
-      FEATURE_VALUE_TYPE(features::kAnimatedAvatarButton)},
--#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- 
- #if defined(OS_CHROMEOS)
-     {"crostini-webui-installer", flag_descriptions::kCrostiniWebUIInstallerName,
-@@ -4587,12 +4587,12 @@ const FeatureEntry kFeatureEntries[] = {
-          chrome::android::kDarkenWebsitesCheckboxInThemesSetting)},
- #endif  // defined(OS_ANDROID)
- 
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
-     {"profile-menu-revamp", flag_descriptions::kProfileMenuRevampName,
-      flag_descriptions::kProfileMenuRevampDescription,
-      kOsWin | kOsMac | kOsLinux,
-      FEATURE_VALUE_TYPE(features::kProfileMenuRevamp)},
--#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- 
-     {"password-leak-detection", flag_descriptions::kPasswordLeakDetectionName,
-      flag_descriptions::kPasswordLeakDetectionDescription, kOsAll,

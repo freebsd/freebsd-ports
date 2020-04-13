@@ -1,6 +1,6 @@
---- ui/compositor/host/host_context_factory_private.cc.orig	2020-03-03 18:54:06 UTC
+--- ui/compositor/host/host_context_factory_private.cc.orig	2020-03-16 18:40:43 UTC
 +++ ui/compositor/host/host_context_factory_private.cc
-@@ -30,7 +30,7 @@ namespace {
+@@ -29,7 +29,7 @@ namespace {
  
  static const char* kBrowser = "Browser";
  

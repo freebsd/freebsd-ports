@@ -1,4 +1,4 @@
---- base/test/fontconfig_util_linux.cc.orig	2019-04-30 22:22:28 UTC
+--- base/test/fontconfig_util_linux.cc.orig	2020-02-03 21:52:37 UTC
 +++ base/test/fontconfig_util_linux.cc
 @@ -6,22 +6,397 @@
  

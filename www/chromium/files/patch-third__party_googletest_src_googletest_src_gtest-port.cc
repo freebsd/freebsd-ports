@@ -1,6 +1,6 @@
---- third_party/googletest/src/googletest/src/gtest-port.cc.orig	2019-04-30 22:25:52 UTC
+--- third_party/googletest/src/googletest/src/gtest-port.cc.orig	2020-03-16 18:42:08 UTC
 +++ third_party/googletest/src/googletest/src/gtest-port.cc
-@@ -63,6 +63,11 @@
+@@ -64,6 +64,11 @@
  # endif
  #endif
  
@@ -12,7 +12,7 @@
  #if GTEST_OS_QNX
  # include <devctl.h>
  # include <fcntl.h>
-@@ -137,6 +142,28 @@ size_t GetThreadCount() {
+@@ -138,6 +143,28 @@ size_t GetThreadCount() {
    } else {
      return 0;
    }

@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/external_vk_image_gl_representation.cc.orig	2020-03-03 18:53:55 UTC
+--- gpu/command_buffer/service/external_vk_image_gl_representation.cc.orig	2020-02-03 21:53:31 UTC
 +++ gpu/command_buffer/service/external_vk_image_gl_representation.cc
 @@ -179,7 +179,7 @@ GLuint ExternalVkImageGLRepresentationShared::ImportVk
  #if defined(OS_FUCHSIA)
