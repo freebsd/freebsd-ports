@@ -1,3 +1,5 @@
+[
+{type: [install, upgrade], message=<<EOD
 LENSFUN INFORMATION:
 
 This package uses lensfun to correct lens aberrations. In case
@@ -13,3 +15,6 @@ remove older cache directories.
 
 Also, after configurations have been moved to the new version's
 directory, older $HOME/.config/RawTherapee* directories may be removed.
+EOD
+},
+]
