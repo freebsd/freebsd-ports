@@ -6,11 +6,8 @@ PORTVERSION=	20140629
 CATEGORIES=	x11-themes mail
 MASTER_SITES=	http://www.claws-mail.org/themes/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Claws Mail icon themes
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/license.txt
 
 NO_ARCH=	yes
 NO_BUILD=	yes
