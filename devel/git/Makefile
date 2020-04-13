@@ -43,7 +43,7 @@ SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		contrib/fast-import/import-zips.py \
 		contrib/remote-helpers/git-remote-bzr \
 		contrib/remote-helpers/git-remote-hg \
-		contrib/credential/netrc/git-credential-netrc \
+		contrib/credential/netrc/git-credential-netrc.perl \
 		contrib/buildsystems/generate contrib/contacts/git-contacts \
 		contrib/svn-fe/svnrdump_sim.py \
 		templates/hooks--fsmonitor-watchman.sample
