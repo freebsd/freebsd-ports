@@ -2,7 +2,7 @@
 
 PORTNAME=	nnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0
+DISTVERSION=	3.1
 CATEGORIES=	misc shells
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -15,29 +15,31 @@ USES=		gmake localbase ncurses readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	jarun
 
-MAKE_ARGS=	PREFIX=${PREFIX} MANPREFIX=${PREFIX}/man \
-		LDLIBS_CURSES=-lncursesw CFLAGS_OPTIMIZATION=
-CFLAGS+=	-D_WITH_DPRINTF # enable dprintf prototype
-
-OPTIONS_DEFINE=	ATOOL DOCS EXAMPLES MEDIAINFO XDG
-OPTIONS_DEFAULT=ATOOL MEDIAINFO XDG
-
-ATOOL_DESC=	List and extract archives
-XDG_DESC=	Open files with xdg-open
-MEDIAINFO_DESC=	Show media information
-
-ATOOL_RUN_DEPENDS=	atool:archivers/atool
-MEDIAINFO_RUN_DEPENDS=	mediainfo:multimedia/mediainfo
-XDG_RUN_DEPENDS=	xdg-open:devel/xdg-utils
+MAKE_ARGS=	CFLAGS_OPTIMIZATION= \
+		LDLIBS_CURSES=-lncursesw \
+		MANPREFIX=${PREFIX}/share/man
+# enable dprintf prototype
+CFLAGS+=	-D_WITH_DPRINTF
 
 PLIST_FILES=	bin/nnn \
-		man/man1/nnn.1.gz \
 		etc/bash_completion.d/nnn-completion.bash \
 		share/fish/completions/nnn.fish \
+		share/man/man1/nnn.1.gz \
 		share/zsh/site-functions/_nnn
 
 PORTDOCS=	README.md
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=		ATOOL DOCS EXAMPLES MEDIAINFO XDG
+OPTIONS_DEFAULT=	ATOOL MEDIAINFO XDG
+
+ATOOL_DESC=	List and extract archives
+MEDIAINFO_DESC=	Show media information
+XDG_DESC=	Open files with xdg-open
+
+ATOOL_RUN_DEPENDS=	atool:archivers/atool
+MEDIAINFO_RUN_DEPENDS=	mediainfo:multimedia/mediainfo
+XDG_RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nnn
