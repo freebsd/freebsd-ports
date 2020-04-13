@@ -15,14 +15,14 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		autoreconf compiler:c++11-lang libtool pkgconfig python
+USES=		autoreconf compiler:c++11-lang libtool localbase pkgconfig \
+		python
 USE_GITHUB=	yes
 
 USE_CXXSTD=	c++11
 USE_RC_SUBR=	e2guardian
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var \
-		--with-logdir=/var/log \
+CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-piddir=/var/run
 
 OPTIONS_RADIO=	AV
@@ -43,9 +43,6 @@ DEBUG_DESC=	Enable debug build mode
 SSL_MITM_DESC=	Enable support for the SSL MITM plugin
 
 CONFDIR=	${PREFIX}/etc/e2guardian
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-CFLAGS+=	-I${LOCALBASE}/include
 
 CLISCAN_CONFIGURE_ENABLE=	commandline
 CLAMD_CONFIGURE_ENABLE=		clamd
