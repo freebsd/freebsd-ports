@@ -2,6 +2,7 @@
 
 PORTNAME=		webkit
 DISTVERSION=		5.212.0-alpha4
+PORTREVISION=	1
 CATEGORIES=		www
 MASTER_SITES=		https://github.com/qt${PORTNAME}/qt${PORTNAME}/releases/download/${DISTNAME}/
 PKGNAMEPREFIX=		qt5-
