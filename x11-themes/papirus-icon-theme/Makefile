@@ -4,7 +4,7 @@ PORTNAME=	papirus-icon-theme
 PORTVERSION=	20200301
 CATEGORIES=	x11-themes
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Papirus icon theme
 
 LICENSE=	GPLv3

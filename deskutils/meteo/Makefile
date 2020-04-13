@@ -4,7 +4,7 @@ PORTNAME=	meteo
 PORTVERSION=	0.9.8
 CATEGORIES=	deskutils
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Weather forecast application using OpenWeatherMap API
 
 LICENSE=	GPLv3+

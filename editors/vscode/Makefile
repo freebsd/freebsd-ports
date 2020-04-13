@@ -10,7 +10,7 @@ DISTFILES=	node-v${NODE_VER}-headers${EXTRACT_SUFX}:node_headers \
 		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
 
 LICENSE=	MIT

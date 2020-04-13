@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	20200320
 CATEGORIES=	x11-themes
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Material Design theme for GNOME/GTK+ based desktop environments
 
 LICENSE=	GPLv2

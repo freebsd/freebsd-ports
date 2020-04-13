@@ -4,7 +4,7 @@ PORTNAME=	plata-theme
 PORTVERSION=	0.9.6
 CATEGORIES=	x11-themes
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Gtk theme based on Material Design Refresh
 
 LICENSE=	GPLv2 CC-BY-SA-4.0

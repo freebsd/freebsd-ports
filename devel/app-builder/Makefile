@@ -6,7 +6,7 @@ DISTVERSION=	3.4.2
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Generic helper tool to build app in a distributable format
 
 LICENSE=	MIT

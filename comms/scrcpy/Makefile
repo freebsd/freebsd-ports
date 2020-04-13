@@ -8,7 +8,7 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/$
 DISTFILES=	${SERVER_FILE}:server
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Display and control your Android device
 
 LICENSE=	APACHE20

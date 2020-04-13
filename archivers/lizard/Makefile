@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0
 CATEGORIES=	archivers
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Efficient compressor with very fast decompression
 
 LICENSE=	BSD2CLAUSE GPLv2

@@ -13,7 +13,7 @@ DISTFILES=	node-v${APM_NODE_VER}${EXTRACT_SUFX}:node \
 		atom-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npm_cache \
 		atom-apm-cache-${DISTVERSION}${EXTRACT_SUFX}:npm_cache
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Hackable text editor for the 21st century
 
 LICENSE=	MIT

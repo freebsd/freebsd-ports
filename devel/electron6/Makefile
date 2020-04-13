@@ -17,7 +17,7 @@ DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}:chromium \
 		electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX}:prefetch
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
 
 LICENSE=	MIT

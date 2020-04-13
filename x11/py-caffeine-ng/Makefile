@@ -7,7 +7,7 @@ CATEGORIES=	x11 python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tagattie@yandex.com
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Tray bar app to temporarily inhibit screensaver and sleep mode
 
 LICENSE=	GPLv3+ LGPL3+
