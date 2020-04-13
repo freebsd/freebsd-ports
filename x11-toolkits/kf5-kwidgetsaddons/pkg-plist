@@ -19,6 +19,7 @@ include/KF5/KWidgetsAddons/KDualAction
 include/KF5/KWidgetsAddons/KEditListWidget
 include/KF5/KWidgetsAddons/KFontAction
 include/KF5/KWidgetsAddons/KFontChooser
+include/KF5/KWidgetsAddons/KFontChooserDialog
 include/KF5/KWidgetsAddons/KFontRequester
 include/KF5/KWidgetsAddons/KFontSizeAction
 include/KF5/KWidgetsAddons/KGradientSelector
@@ -94,6 +95,7 @@ include/KF5/KWidgetsAddons/kdualaction.h
 include/KF5/KWidgetsAddons/keditlistwidget.h
 include/KF5/KWidgetsAddons/kfontaction.h
 include/KF5/KWidgetsAddons/kfontchooser.h
+include/KF5/KWidgetsAddons/kfontchooserdialog.h
 include/KF5/KWidgetsAddons/kfontrequester.h
 include/KF5/KWidgetsAddons/kfontsizeaction.h
 include/KF5/KWidgetsAddons/kguiitem.h

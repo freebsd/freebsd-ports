@@ -19,6 +19,7 @@ include/KF5/KParts/KParts/OpenUrlEvent
 include/KF5/KParts/KParts/Part
 include/KF5/KParts/KParts/PartActivateEvent
 include/KF5/KParts/KParts/PartBase
+include/KF5/KParts/KParts/PartLoader
 include/KF5/KParts/KParts/PartManager
 include/KF5/KParts/KParts/PartSelectEvent
 include/KF5/KParts/KParts/Plugin
@@ -52,6 +53,7 @@ include/KF5/KParts/kparts/openurlevent.h
 include/KF5/KParts/kparts/part.h
 include/KF5/KParts/kparts/partactivateevent.h
 include/KF5/KParts/kparts/partbase.h
+include/KF5/KParts/kparts/partloader.h
 include/KF5/KParts/kparts/partmanager.h
 include/KF5/KParts/kparts/partselectevent.h
 include/KF5/KParts/kparts/plugin.h

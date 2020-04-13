@@ -88,6 +88,7 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/Label.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/Menu.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/MenuItem.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/Page.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/PageIndicator.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/Popup.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/ProgressBar.qml
@@ -182,10 +183,12 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/components.3/Label.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/Menu.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/MenuItem.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/Page.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/PageIndicator.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/Popup.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/ProgressBar.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/RadioButton.qml
+%%QT_QMLDIR%%/org/kde/plasma/extras/PlasmoidHeading.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/RadioDelegate.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/RadioIndicator.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/RangeSlider.qml
@@ -309,6 +312,7 @@ share/kservicetypes5/plasma-service.desktop
 share/kservicetypes5/plasma-shell.desktop
 share/kservicetypes5/plasma-wallpaper.desktop
 share/locale/ar/LC_MESSAGES/libplasma5.mo
+share/locale/ast/LC_MESSAGES/libplasma5.mo
 share/locale/bs/LC_MESSAGES/libplasma5.mo
 share/locale/ca/LC_MESSAGES/libplasma5.mo
 share/locale/ca@valencia/LC_MESSAGES/libplasma5.mo
@@ -508,8 +512,8 @@ share/plasma/desktoptheme/default/icons/start.svgz
 share/plasma/desktoptheme/default/icons/system.svgz
 share/plasma/desktoptheme/default/icons/touchpad.svgz
 share/plasma/desktoptheme/default/icons/user.svgz
-share/plasma/desktoptheme/default/icons/video.svgz
 share/plasma/desktoptheme/default/icons/video-card.svgz
+share/plasma/desktoptheme/default/icons/video.svgz
 share/plasma/desktoptheme/default/icons/view.svgz
 share/plasma/desktoptheme/default/icons/vlc.svgz
 share/plasma/desktoptheme/default/icons/wallet.svgz
@@ -549,6 +553,7 @@ share/plasma/desktoptheme/default/widgets/notes.svgz
 share/plasma/desktoptheme/default/widgets/pager.svgz
 share/plasma/desktoptheme/default/widgets/panel-background.svgz
 share/plasma/desktoptheme/default/widgets/picker.svgz
+share/plasma/desktoptheme/default/widgets/plasmoidheading.svgz
 share/plasma/desktoptheme/default/widgets/plot-background.svgz
 share/plasma/desktoptheme/default/widgets/scrollbar.svgz
 share/plasma/desktoptheme/default/widgets/scrollwidget.svgz

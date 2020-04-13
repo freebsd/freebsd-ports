@@ -16,7 +16,6 @@ include/KF5/KWayland/Client/idle.h
 include/KF5/KWayland/Client/idleinhibit.h
 include/KF5/KWayland/Client/keyboard.h
 include/KF5/KWayland/Client/keystate.h
-include/KF5/KWayland/Server/keystate_interface.h
 include/KF5/KWayland/Client/kwaylandclient_export.h
 include/KF5/KWayland/Client/output.h
 include/KF5/KWayland/Client/outputconfiguration.h
@@ -47,7 +46,6 @@ include/KF5/KWayland/Client/textinput.h
 include/KF5/KWayland/Client/touch.h
 include/KF5/KWayland/Client/xdgdecoration.h
 include/KF5/KWayland/Client/xdgforeign.h
-include/KF5/KWayland/Server/xdgdecoration_interface.h
 include/KF5/KWayland/Client/xdgoutput.h
 include/KF5/KWayland/Client/xdgshell.h
 include/KF5/KWayland/Server/appmenu_interface.h
@@ -69,6 +67,7 @@ include/KF5/KWayland/Server/global.h
 include/KF5/KWayland/Server/idle_interface.h
 include/KF5/KWayland/Server/idleinhibit_interface.h
 include/KF5/KWayland/Server/keyboard_interface.h
+include/KF5/KWayland/Server/keystate_interface.h
 include/KF5/KWayland/Server/kwaylandserver_export.h
 include/KF5/KWayland/Server/linuxdmabuf_v1_interface.h
 include/KF5/KWayland/Server/output_interface.h
@@ -95,8 +94,10 @@ include/KF5/KWayland/Server/shell_interface.h
 include/KF5/KWayland/Server/slide_interface.h
 include/KF5/KWayland/Server/subcompositor_interface.h
 include/KF5/KWayland/Server/surface_interface.h
+include/KF5/KWayland/Server/tablet_interface.h
 include/KF5/KWayland/Server/textinput_interface.h
 include/KF5/KWayland/Server/touch_interface.h
+include/KF5/KWayland/Server/xdgdecoration_interface.h
 include/KF5/KWayland/Server/xdgforeign_interface.h
 include/KF5/KWayland/Server/xdgoutput_interface.h
 include/KF5/KWayland/Server/xdgshell_interface.h

@@ -169,7 +169,11 @@ include/KF5/KIOFileWidgets/kpreviewwidgetbase.h
 include/KF5/KIOFileWidgets/krecentdirs.h
 include/KF5/KIOFileWidgets/kstatusbarofflineindicator.h
 include/KF5/KIOFileWidgets/kurlnavigator.h
+include/KF5/KIOGui/KIO/ApplicationLauncherJob
+include/KF5/KIOGui/KIO/CommandLauncherJob
 include/KF5/KIOGui/KIO/FavIconRequestJob
+include/KF5/KIOGui/kio/applicationlauncherjob.h
+include/KF5/KIOGui/kio/commandlauncherjob.h
 include/KF5/KIOGui/kio/faviconrequestjob.h
 include/KF5/KIOGui/kiogui_export.h
 include/KF5/KIOWidgets/KAbstractFileItemActionPlugin
