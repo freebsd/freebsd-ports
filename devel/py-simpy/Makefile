@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simpy
-PORTVERSION=	3.0.11
+PORTVERSION=	3.0.13
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,8 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Simulation in Python
 
 LICENSE=	LGPL21
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
