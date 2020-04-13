@@ -13,6 +13,7 @@ COMMENT=	Personal full text search package, based on Xapian
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		configure: error: --enable-python-chm is set but libchm is not found
 DEPRECATED=	Uses deprecated version of python
 EXPIRATION_DATE=	2020-08-15
 
