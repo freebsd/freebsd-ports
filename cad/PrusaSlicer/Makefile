@@ -13,8 +13,6 @@ COMMENT=	Slicing application for 3D printers
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		unknown USES=glu
-
 LIB_DEPENDS=	libtbb.so:devel/tbb \
 		libboost_log.so:devel/boost-libs \
 		libHalf-2_4.so:graphics/ilmbase \
@@ -36,14 +34,14 @@ BUILD_DEPENDS=	cereal>=1.2.2:devel/cereal \
 		gmp>=6.1.2:math/gmp \
 		mpfr>=4.0.2:math/mpfr
 
-USES=		cmake gettext gl glu iconv
+USES=		cmake gettext gl iconv
 
 CMAKE_ARGS+=	-DwxWidgets_CONFIG_EXECUTABLE=${LOCALBASE}/bin/wxgtk3u-3.1-config \
 		-DCGAL_DIR=${WRKSRC}/CGAL/lib/cmake/CGAL
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 
 USE_GITHUB=	yes
-USE_GL=		glew
+USE_GL=		glu glew
 GH_ACCOUNT=	prusa3d
 
 post-patch:
