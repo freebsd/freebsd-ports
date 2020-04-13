@@ -15,6 +15,7 @@ include/shiboken2/sbkdbg.h
 include/shiboken2/sbkenum.h
 include/shiboken2/sbkmodule.h
 include/shiboken2/sbkpython.h
+include/shiboken2/sbkstaticstrings.h
 include/shiboken2/sbkstring.h
 include/shiboken2/sbkversion.h
 include/shiboken2/shiboken.h
@@ -31,7 +32,7 @@ lib/cmake/Shiboken2-%%DISTVERSION%%/Shiboken2Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Shiboken2-%%DISTVERSION%%/Shiboken2Targets.cmake
 lib/cmake/Shiboken2-%%DISTVERSION%%/shiboken_helpers.cmake
 lib/libshiboken2%%PYVERSTR%%.so
-lib/libshiboken2%%PYVERSTR%%.so.5.13
+lib/libshiboken2%%PYVERSTR%%.so.5.14
 lib/libshiboken2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/shiboken2/__init__.py
 %%PYTHON_SITELIBDIR%%/shiboken2/_config.py
@@ -40,6 +41,7 @@ lib/libshiboken2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/backport_inspect.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/__init__.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/errorhandler.py
+%%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/importhandler.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/layout.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/shiboken2/files.dir/shibokensupport/signature/lib/enum_sig.py
@@ -54,4 +56,3 @@ lib/libshiboken2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/shiboken2_generator/_config.py
 %%PYTHON_SITELIBDIR%%/shiboken2_generator/_git_shiboken_generator_version.py
 libdata/pkgconfig/shiboken2.pc
-man/man1/shiboken2.1.gz

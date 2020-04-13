@@ -51,6 +51,7 @@ include/PySide2/pysidemetafunction.h
 include/PySide2/pysideproperty.h
 include/PySide2/pysideqflags.h
 include/PySide2/pysidesignal.h
+include/PySide2/pysidestaticstrings.h
 include/PySide2/pysideweakref.h
 include/PySide2/signalmanager.h
 lib/cmake/PySide2-%%DISTVERSION%%/PySide2Config%%PYVERSTR%%.cmake
@@ -59,7 +60,7 @@ lib/cmake/PySide2-%%DISTVERSION%%/PySide2ConfigVersion.cmake
 lib/cmake/PySide2-%%DISTVERSION%%/PySide2Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/PySide2-%%DISTVERSION%%/PySide2Targets.cmake
 lib/libpyside2%%PYVERSTR%%.so
-lib/libpyside2%%PYVERSTR%%.so.5.13
+lib/libpyside2%%PYVERSTR%%.so.5.14
 lib/libpyside2%%PYVERSTR%%.so.%%DISTVERSION%%
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/PySide2/Qt3DAnimation.so
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/PySide2/Qt3DCore.so
@@ -161,6 +162,7 @@ share/PySide2/glue/qtqml.cpp
 share/PySide2/glue/qtquick.cpp
 share/PySide2/glue/qtscript.cpp
 share/PySide2/glue/qtuitools.cpp
+share/PySide2/glue/qtwebenginewidgets.cpp
 share/PySide2/glue/qtwidgets.cpp
 share/PySide2/glue/qtxml.cpp
 share/PySide2/glue/qtxmlpatterns.cpp

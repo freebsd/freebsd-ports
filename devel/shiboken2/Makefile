@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	shiboken2
-DISTVERSION=	5.13.2
+DISTVERSION=	5.14.2
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@$
 LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_DEFAULT} \
 		libxslt.so:textproc/libxslt
 
-USES=		cmake compiler:c++11-lang gnome python qt:5 shebangfix tar:xz
+USES=		cmake compiler:c++11-lang gnome python:3.5+ qt:5 shebangfix tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
@@ -36,12 +36,7 @@ CMAKE_ARGS+=	"-DCMAKE_CXX_FLAGS=-lexecinfo" \
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}
-
-.if ${PYTHON_MAJOR_VER} >= 3
 PLIST_SUB+=	PYVERSTR=.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}
-.else
-PLIST_SUB+=	PYVERSTR=-${PYTHON_VERSION}
-.endif
 
 WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION}/sources/shiboken2
 
