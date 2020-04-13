@@ -3,7 +3,6 @@
 #
 # PROVIDE: webcamd
 # REQUIRE: FILESYSTEMS netif dbus
-# BEFORE: devd
 # KEYWORD: shutdown
 #
 # ================================================================
