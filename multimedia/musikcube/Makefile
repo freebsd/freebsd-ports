@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	musikcube
-DISTVERSION=	0.83.0
+DISTVERSION=	0.90.1
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,12 +23,9 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libtag.so:audio/taglib \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake:noninja compiler:c++14-lang ncurses ssl
+USES=		cmake:noninja compiler:c++14-lang ncurses:port pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	clangen
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} 's|COMMAND \./strip-nix\.sh|COMMAND ${WRKSRC}/strip-nix.sh|' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
