@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pgmetrics
-PORTVERSION=	1.7.1
+PORTVERSION=	1.9.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -17,15 +16,17 @@ USES=		go:modules
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	rapidloop
-GH_TUPLE=	dustin:go-humanize:bb3d318650d4:go_humanize/vendor/github.com/dustin/go-humanize \
-		howeyc:gopass:bf9dde6d0d2c:gopass/vendor/github.com/howeyc/gopass \
-		pborman:getopt:7148bc3a4c30:getopt/vendor/github.com/pborman/getopt \
-		rapidloop:pq:40e32c5:pq/vendor/github.com/rapidloop/pq \
-		xdg-go:stringprep:v1.0.0:stringprepgo/vendor/github.com/xdg-go/stringprep \
-		xdg:stringprep:v1.0.0:stringprepxdg/vendor/github.com/xdg/stringprep \
-		golang:sys:33540a1f6037:sys/vendor/golang.org/x/sys \
-		golang:crypto:432090b8f568:crypto/vendor/golang.org/x/crypto \
-		golang:text:v0.3.0:text/vendor/golang.org/x/text
+GH_TUPLE=	\
+		aws:aws-sdk-go:v1.29.29:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		dustin:go-humanize:bb3d318650d4:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
+		golang:crypto:e9b2fee46413:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sys:97732733099d:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
+		howeyc:gopass:bf9dde6d0d2c:howeyc_gopass/vendor/github.com/howeyc/gopass \
+		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
+		pborman:getopt:7148bc3a4c30:pborman_getopt/vendor/github.com/pborman/getopt \
+		rapidloop:pq:66681b501d6d:rapidloop_pq/vendor/github.com/rapidloop/pq \
+		xdg-go:stringprep:v1.0.0:xdg_go_stringprep/vendor/github.com/xdg-go/stringprep
 
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-s -w -X main.version=${PORTVERSION}"
