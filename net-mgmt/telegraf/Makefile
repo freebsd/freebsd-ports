@@ -201,12 +201,6 @@ GH_TUPLE=	\
 		wvanbergen:kazoo-go:f72d8611297a:wvanbergen_kazoo_go/vendor/github.com/wvanbergen/kazoo-go \
 		yuin:gopher-lua:46796da1b0b4:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua
 
-		# Mirrors for the following packages are not currently known, please look them up and handle these tuples manually:
-		#	::e35592f146e4:group_name/vendor/golang.zx2c4.com/wireguard/wgctrl
-		#	::v0.0.20200121:group_name/vendor/golang.zx2c4.com/wireguard
-		#	::v0.3.0:group_name/vendor/collectd.org
-
-#BUILD_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 GO_BUILDFLAGS=	-ldflags "-X main.version=${DISTVERSION}"
 GO_TARGET=	./cmd/telegraf
 
