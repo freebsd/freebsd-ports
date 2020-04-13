@@ -21,6 +21,7 @@ include/saml/saml1/core/Protocols.h
 include/saml/saml2/binding/SAML2Artifact.h
 include/saml/saml2/binding/SAML2ArtifactType0004.h
 include/saml/saml2/binding/SAML2MessageDecoder.h
+include/saml/saml2/binding/SAML2MessageEncoder.h
 include/saml/saml2/binding/SAML2SOAPClient.h
 include/saml/saml2/core/Assertions.h
 include/saml/saml2/core/Protocols.h
@@ -43,8 +44,8 @@ include/saml/util/CommonDomainCookie.h
 include/saml/util/SAMLConstants.h
 include/saml/version.h
 lib/libsaml.so
-lib/libsaml.so.10
-lib/libsaml.so.10.0.1
+lib/libsaml.so.11
+lib/libsaml.so.11.0.0
 libdata/pkgconfig/opensaml.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt

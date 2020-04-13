@@ -1,6 +1,6 @@
---- shibboleth.spec.in.orig	2018-07-10 01:17:23 UTC
-+++ shibboleth.spec.in
-@@ -69,7 +69,7 @@ BuildRequires: systemd-rpm-macros, syste
+--- shibboleth.spec.in.orig	2020-03-18 19:45:13.000000000 +0100
++++ shibboleth.spec.in	2020-04-13 23:31:22.397381000 +0200
+@@ -72,7 +72,7 @@
  %if "%{_vendor}" == "suse"
  %define pkgdocdir %{_docdir}/shibboleth
  %else
@@ -9,15 +9,17 @@
  %endif
  
  %description
-@@ -289,11 +289,6 @@ exit 0
+@@ -293,13 +293,6 @@
+ 
+ %post
  /sbin/ldconfig
- %endif
- 
--# Key ownership fix.
--if [ -f %{_sysconfdir}/shibboleth/sp-key.pem ] ; then
--	%{__chown} %{runuser}:%{runuser} %{_sysconfdir}/shibboleth/sp-key.pem %{_sysconfdir}/shibboleth/sp-cert.pem 2>/dev/null || :
--fi
 -
- # Fix ownership of log files (even on new installs, if they're left from an older one).
- %{__chown} %{runuser}:%{runuser} %{_localstatedir}/log/shibboleth/* 2>/dev/null || :
+-# Generate two keys on new installs.
+-if [ $1 -eq 1 ] ; then
+-	cd %{_sysconfdir}/shibboleth
+-	/bin/sh ./keygen.sh -b -n sp-signing -u %{runuser} -g %{runuser}
+-	/bin/sh ./keygen.sh -b -n sp-encrypt -u %{runuser} -g %{runuser}
+-fi
  
+ %if "%{_vendor}" == "redhat" || "%{_vendor}" == "amazon"
+ if [ $1 -gt 1 ] ; then
