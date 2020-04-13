@@ -1,3 +1,7 @@
-TIMESTAMP = 1502675104
-SHA256 (rhash-1.3.5-src.tar.gz) = 98e0688acae29e68c298ffbcdbb0f838864105f9b2bd8857980664435b1f1f2e
-SIZE (rhash-1.3.5-src.tar.gz) = 316867
+TIMESTAMP = 1576370852
+SHA256 (rhash-1.3.9-src.tar.gz) = 42b1006f998adb189b1f316bf1a60e3171da047a85c4aaded2d0d26c1476c9f6
+SIZE (rhash-1.3.9-src.tar.gz) = 403415
+SHA256 (rhash-1.3.9-nls.patch) = 2e60e6e34d32296f8b6d0851f5f8fe6506836dea8d560d1261424d4bc783dc50
+SIZE (rhash-1.3.9-nls.patch) = 744
+SHA256 (rhash-1.3.9-rc-segfault.patch) = 39e875cde8026fb609e1008d7afc7133474e104c5f823bd7552060d39ae7d891
+SIZE (rhash-1.3.9-rc-segfault.patch) = 9662

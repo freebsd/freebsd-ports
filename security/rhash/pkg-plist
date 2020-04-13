@@ -1,5 +1,8 @@
 bin/ed2k-link
-bin/gost-hash
+bin/edonr256-hash
+bin/edonr512-hash
+bin/gost12-256-hash
+bin/gost12-512-hash
 bin/has160-hash
 bin/magnet-link
 bin/rhash
@@ -13,8 +16,12 @@ include/rhash_torrent.h
 lib/librhash.a
 lib/librhash.so
 lib/librhash.so.0
+libdata/pkgconfig/librhash.pc
 man/man1/ed2k-link.1.gz
-man/man1/gost-hash.1.gz
+man/man1/edonr256-hash.1.gz
+man/man1/edonr512-hash.1.gz
+man/man1/gost12-256-hash.1.gz
+man/man1/gost12-512-hash.1.gz
 man/man1/has160-hash.1.gz
 man/man1/magnet-link.1.gz
 man/man1/rhash.1.gz
@@ -22,3 +29,13 @@ man/man1/sfv-hash.1.gz
 man/man1/tiger-hash.1.gz
 man/man1/tth-hash.1.gz
 man/man1/whirlpool-hash.1.gz
+%%NLS%%share/locale/ca/LC_MESSAGES/rhash.mo
+%%NLS%%share/locale/de/LC_MESSAGES/rhash.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/rhash.mo
+%%NLS%%share/locale/es/LC_MESSAGES/rhash.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/rhash.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/rhash.mo
+%%NLS%%share/locale/it/LC_MESSAGES/rhash.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/rhash.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/rhash.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/rhash.mo

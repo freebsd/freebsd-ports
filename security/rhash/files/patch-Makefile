@@ -1,32 +1,25 @@
---- Makefile.orig	2016-11-05 23:22:07 UTC
+--- Makefile.orig	2019-12-14 16:52:11 UTC
 +++ Makefile
-@@ -6,9 +6,9 @@ VERSION = 1.3.4
- PREFIX  ?= /usr/local
- CC      ?= gcc
- # using OPTFLAGS/OPTLDFLAGS for compatibilty with old scripts using this makefile
--OPTFLAGS = -O2 -DNDEBUG -fomit-frame-pointer -ffunction-sections -fdata-sections
-+OPTFLAGS = -DNDEBUG -fomit-frame-pointer -ffunction-sections -fdata-sections
- OPTLDFLAGS =
--CFLAGS = $(OPTFLAGS)
-+CFLAGS += $(OPTFLAGS)
- LDFLAGS = $(OPTLDFLAGS)
- ADDCFLAGS =
- ADDLDFLAGS =
-@@ -106,7 +106,7 @@ install-man:
+@@ -80,7 +80,7 @@ install-man:
  
  install-conf:
- 	$(INSTALL) -d $(DESTDIR)/etc
--	tr -d \\r < dist/rhashrc.sample > rc.tmp && $(INSTALL_DATA) rc.tmp $(DESTDIR)/etc/rhashrc
-+	tr -d \\r < dist/rhashrc.sample > rc.tmp && $(INSTALL_DATA) rc.tmp $(DESTDIR)$(PREFIX)/etc/rhashrc.sample
+ 	$(INSTALL) -d $(SYSCONFDIR)
+-	tr -d \\r < dist/rhashrc.sample > rc.tmp && $(INSTALL_DATA) rc.tmp $(SYSCONFDIR)/rhashrc
++	tr -d \\r < dist/rhashrc.sample > rc.tmp && $(INSTALL_DATA) rc.tmp $(SYSCONFDIR)/rhashrc.sample
  	rm -f rc.tmp
  
  # dependencies should be properly set, otherwise 'make -j<n>' can fail
-@@ -127,7 +127,7 @@ install-lib-static: $(LIBRHASH)
- 	+make -C librhash install-lib-static
+@@ -212,11 +212,11 @@ parse_cmdline.o: parse_cmdline.c parse_cmdline.h commo
+ rhash_main.o: rhash_main.c rhash_main.h calc_sums.h common_func.h file.h \
+  hash_check.h file_mask.h find_file.h hash_print.h hash_update.h \
+  parse_cmdline.h output.h win_utils.h librhash/rhash.h
+-	$(CC) -c $(CFLAGS) $< -o $@
++	$(CC) -c $(CFLAGS) $(LOCALECFLAGS) $< -o $@
  
- install-lib-shared: $(SHAREDLIB)
--	+$(MAKE) -C librhash install-lib-shared
-+	+$(MAKE) -C librhash install-lib-shared install-so-link
+ win_utils.o: win_utils.c win_utils.h common_func.h file.h parse_cmdline.h \
+  rhash_main.h
+-	$(CC) -c $(CFLAGS) $< -o $@
++	$(CC) -c $(CFLAGS) $(LOCALECFLAGS) $< -o $@
  
- $(SHAREDLIB):
- 	+make -C librhash lib-shared
+ dist/rhash.1.win.html: dist/rhash.1 dist/rhash.1.win.sed
+ 	sed -f dist/rhash.1.win.sed dist/rhash.1 | rman -fHTML -roff | \
