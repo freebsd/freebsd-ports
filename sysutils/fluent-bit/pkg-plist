@@ -7,13 +7,16 @@ include/fluent-bit/flb_api.h
 include/fluent-bit/flb_bits.h
 include/fluent-bit/flb_compat.h
 include/fluent-bit/flb_config.h
+include/fluent-bit/flb_config_map.h
 include/fluent-bit/flb_dlfcn_win32.h
+include/fluent-bit/flb_dump.h
 include/fluent-bit/flb_endian.h
 include/fluent-bit/flb_engine.h
 include/fluent-bit/flb_engine_dispatch.h
 include/fluent-bit/flb_env.h
 include/fluent-bit/flb_error.h
 include/fluent-bit/flb_filter.h
+include/fluent-bit/flb_filter_plugin.h
 include/fluent-bit/flb_gzip.h
 include/fluent-bit/flb_hash.h
 include/fluent-bit/flb_http_client.h
@@ -21,6 +24,7 @@ include/fluent-bit/flb_http_server.h
 include/fluent-bit/flb_info.h
 include/fluent-bit/flb_input.h
 include/fluent-bit/flb_input_chunk.h
+include/fluent-bit/flb_input_plugin.h
 include/fluent-bit/flb_io.h
 include/fluent-bit/flb_io_tls.h
 include/fluent-bit/flb_io_tls_rw.h
@@ -39,6 +43,7 @@ include/fluent-bit/flb_mp.h
 include/fluent-bit/flb_network.h
 include/fluent-bit/flb_oauth2.h
 include/fluent-bit/flb_output.h
+include/fluent-bit/flb_output_plugin.h
 include/fluent-bit/flb_pack.h
 include/fluent-bit/flb_parser.h
 include/fluent-bit/flb_parser_decoder.h
@@ -52,10 +57,12 @@ include/fluent-bit/flb_router.h
 include/fluent-bit/flb_scheduler.h
 include/fluent-bit/flb_sds.h
 include/fluent-bit/flb_sha512.h
+include/fluent-bit/flb_signv4.h
 include/fluent-bit/flb_slist.h
 include/fluent-bit/flb_socket.h
 include/fluent-bit/flb_sosreport.h
 include/fluent-bit/flb_sqldb.h
+include/fluent-bit/flb_stacktrace.h
 include/fluent-bit/flb_storage.h
 include/fluent-bit/flb_str.h
 include/fluent-bit/flb_strptime.h
