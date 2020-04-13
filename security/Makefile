@@ -1233,6 +1233,7 @@
     SUBDIR += swatchdog
     SUBDIR += switzerland
     SUBDIR += symbion-sslproxy
+    SUBDIR += tailscale
     SUBDIR += tclsasl
     SUBDIR += tcpcrypt
     SUBDIR += teleport
