@@ -1,4 +1,4 @@
---- content/app/content_main_runner_impl.cc.orig	2020-03-03 18:53:54 UTC
+--- content/app/content_main_runner_impl.cc.orig	2020-03-16 18:40:31 UTC
 +++ content/app/content_main_runner_impl.cc
 @@ -101,17 +101,17 @@
  #include "base/posix/global_descriptors.h"
@@ -48,7 +48,7 @@
  
  }  // namespace
  
-@@ -453,7 +453,7 @@ int RunZygote(ContentMainDelegate* delegate) {
+@@ -462,7 +462,7 @@ int RunZygote(ContentMainDelegate* delegate) {
    delegate->ZygoteStarting(&zygote_fork_delegates);
    media::InitializeMediaLibrary();
  
@@ -57,7 +57,7 @@
    PreSandboxInit();
  #endif
  
-@@ -618,11 +618,11 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -622,11 +622,11 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
                     base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  

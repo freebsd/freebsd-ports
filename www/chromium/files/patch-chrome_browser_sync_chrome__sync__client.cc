@@ -1,6 +1,6 @@
---- chrome/browser/sync/chrome_sync_client.cc.orig	2020-03-03 18:53:52 UTC
+--- chrome/browser/sync/chrome_sync_client.cc.orig	2020-03-16 18:40:29 UTC
 +++ chrome/browser/sync/chrome_sync_client.cc
-@@ -408,7 +408,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+@@ -442,7 +442,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
    }
  #endif  // defined(OS_CHROMEOS)
  
@@ -9,7 +9,7 @@
    // Dictionary sync is enabled by default.
    if (!disabled_types.Has(syncer::DICTIONARY)) {
      controllers.push_back(
-@@ -416,7 +416,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+@@ -450,7 +450,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
              syncer::DICTIONARY, model_type_store_factory,
              GetSyncableServiceForType(syncer::DICTIONARY), dump_stack));
    }

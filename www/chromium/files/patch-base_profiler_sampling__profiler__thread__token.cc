@@ -1,4 +1,4 @@
---- base/profiler/sampling_profiler_thread_token.cc.orig	2020-03-03 18:52:59 UTC
+--- base/profiler/sampling_profiler_thread_token.cc.orig	2020-02-07 10:24:19 UTC
 +++ base/profiler/sampling_profiler_thread_token.cc
 @@ -7,7 +7,7 @@
  namespace base {

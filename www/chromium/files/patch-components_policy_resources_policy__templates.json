@@ -1,15 +1,15 @@
---- components/policy/resources/policy_templates.json.orig	2020-03-03 18:53:53 UTC
+--- components/policy/resources/policy_templates.json.orig	2020-03-16 18:40:31 UTC
 +++ components/policy/resources/policy_templates.json
-@@ -1081,7 +1081,7 @@
+@@ -1088,7 +1088,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'string',
        'schema': { 'type': 'string' },
--      'supported_on': ['chrome.*:8-', 'chrome_os:11-'],
-+      'supported_on': ['chrome.*:8-', 'chrome_os:11-', 'chrome.freebsd:9-'],
+-      'supported_on': ['chrome.*:8-', 'chrome_os:11-', 'android:81-'],
++      'supported_on': ['chrome.*:8-', 'chrome_os:11-', 'android:81-', 'chrome.freebsd:9-'],
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1111,7 +1111,7 @@
+@@ -1118,7 +1118,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -18,7 +18,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1138,7 +1138,7 @@
+@@ -1145,7 +1145,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -27,7 +27,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1937,7 +1937,7 @@
+@@ -1944,7 +1944,7 @@
        'owners': ['jamiewalch@chromium.org', 'rkjnsn@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -36,7 +36,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -3780,7 +3780,7 @@
+@@ -3807,7 +3807,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -45,7 +45,7 @@
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -3834,7 +3834,7 @@
+@@ -3861,7 +3861,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -54,7 +54,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -7302,7 +7302,7 @@
+@@ -7329,7 +7329,7 @@
        'owners': ['file://src/net/cert/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -63,7 +63,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -8526,7 +8526,7 @@
+@@ -8621,7 +8621,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -72,7 +72,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -9202,7 +9202,7 @@
+@@ -9297,7 +9297,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },

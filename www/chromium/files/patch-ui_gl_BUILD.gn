@@ -1,6 +1,6 @@
---- ui/gl/BUILD.gn.orig	2020-03-03 18:54:06 UTC
+--- ui/gl/BUILD.gn.orig	2020-03-16 18:40:43 UTC
 +++ ui/gl/BUILD.gn
-@@ -232,7 +232,7 @@ jumbo_component("gl") {
+@@ -233,7 +233,7 @@ jumbo_component("gl") {
        ]
      }
  

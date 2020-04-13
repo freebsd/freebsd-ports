@@ -1,4 +1,4 @@
---- google_apis/gcm/engine/heartbeat_manager.cc.orig	2019-10-21 19:06:34 UTC
+--- google_apis/gcm/engine/heartbeat_manager.cc.orig	2020-03-16 18:39:51 UTC
 +++ google_apis/gcm/engine/heartbeat_manager.cc
 @@ -31,13 +31,13 @@ const int kMinClientHeartbeatIntervalMs = 1000 * 30;  
  // Minimum time spent sleeping before we force a new heartbeat.
@@ -17,8 +17,8 @@
  }  // namespace
  
 @@ -191,7 +191,7 @@ void HeartbeatManager::RestartTimer() {
-                           base::Bind(&HeartbeatManager::OnHeartbeatTriggered,
-                                      weak_ptr_factory_.GetWeakPtr()));
+       base::BindRepeating(&HeartbeatManager::OnHeartbeatTriggered,
+                           weak_ptr_factory_.GetWeakPtr()));
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)

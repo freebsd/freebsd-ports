@@ -1,4 +1,4 @@
---- third_party/crashpad/crashpad/build/crashpad_buildconfig.gni.orig	2020-03-03 18:54:05 UTC
+--- third_party/crashpad/crashpad/build/crashpad_buildconfig.gni.orig	2020-02-03 21:53:08 UTC
 +++ third_party/crashpad/crashpad/build/crashpad_buildconfig.gni
 @@ -38,7 +38,7 @@ if (crashpad_is_in_chromium) {
    crashpad_is_mac = is_mac

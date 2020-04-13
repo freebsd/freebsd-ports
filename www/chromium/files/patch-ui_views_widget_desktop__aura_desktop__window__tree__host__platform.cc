@@ -1,6 +1,6 @@
---- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig	2020-03-03 18:54:07 UTC
+--- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig	2020-03-16 18:40:43 UTC
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
-@@ -751,7 +751,7 @@ void DesktopWindowTreeHostPlatform::AddAdditionalInitP
+@@ -747,7 +747,7 @@ void DesktopWindowTreeHostPlatform::AddAdditionalInitP
  // DesktopWindowTreeHost:
  
  // Linux subclasses this host and adds some Linux specific bits.

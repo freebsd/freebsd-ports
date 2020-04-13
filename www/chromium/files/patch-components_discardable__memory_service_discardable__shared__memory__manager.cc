@@ -1,6 +1,6 @@
---- components/discardable_memory/service/discardable_shared_memory_manager.cc.orig	2020-03-03 18:53:53 UTC
+--- components/discardable_memory/service/discardable_shared_memory_manager.cc.orig	2020-03-16 18:40:30 UTC
 +++ components/discardable_memory/service/discardable_shared_memory_manager.cc
-@@ -32,7 +32,7 @@
+@@ -33,7 +33,7 @@
  #include "components/discardable_memory/common/discardable_shared_memory_heap.h"
  #include "mojo/public/cpp/bindings/self_owned_receiver.h"
  
@@ -9,7 +9,7 @@
  #include "base/files/file_path.h"
  #include "base/files/file_util.h"
  #include "base/metrics/histogram_macros.h"
-@@ -181,7 +181,7 @@ int64_t GetDefaultMemoryLimit() {
+@@ -182,7 +182,7 @@ int64_t GetDefaultMemoryLimit() {
      max_default_memory_limit /= 8;
  #endif
  

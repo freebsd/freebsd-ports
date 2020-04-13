@@ -1,6 +1,16 @@
---- base/debug/elf_reader.cc.orig	2020-03-03 18:52:59 UTC
+--- base/debug/elf_reader.cc.orig	2020-02-24 18:39:05 UTC
 +++ base/debug/elf_reader.cc
-@@ -98,6 +98,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
+@@ -35,7 +35,9 @@ using Nhdr = Elf64_Nhdr;
+ using Word = Elf64_Word;
+ #endif
+ 
++#if !defined(OS_BSD)
+ constexpr char kGnuNoteName[] = "GNU";
++#endif
+ 
+ // Returns a pointer to the header of the ELF binary mapped into memory,
+ // or a null pointer if the header is invalid.
+@@ -98,6 +100,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
      bool found = false;
      while (current_section < section_end) {
        current_note = reinterpret_cast<const Nhdr*>(current_section);
@@ -8,7 +18,7 @@
        if (current_note->n_type == NT_GNU_BUILD_ID) {
          StringPiece note_name(current_section + sizeof(Nhdr),
                                current_note->n_namesz);
-@@ -107,6 +108,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
+@@ -107,6 +110,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
            break;
          }
        }

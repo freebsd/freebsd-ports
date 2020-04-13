@@ -1,6 +1,6 @@
---- chrome/common/pref_names.h.orig	2020-03-03 18:53:53 UTC
+--- chrome/common/pref_names.h.orig	2020-03-16 18:40:30 UTC
 +++ chrome/common/pref_names.h
-@@ -331,7 +331,7 @@ extern const char kHistoryMenuPromoShown[];
+@@ -334,7 +334,7 @@ extern const char kHistoryMenuPromoShown[];
  extern const char kForceGoogleSafeSearch[];
  extern const char kForceYouTubeRestrict[];
  extern const char kAllowedDomainsForApps[];
@@ -9,7 +9,7 @@
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -362,7 +362,7 @@ extern const char kDefaultBrowserSettingEnabled[];
+@@ -365,7 +365,7 @@ extern const char kDefaultBrowserSettingEnabled[];
  #if defined(OS_MACOSX)
  extern const char kShowUpdatePromotionInfoBar[];
  #endif
@@ -18,7 +18,7 @@
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -527,7 +527,7 @@ extern const char kAppWindowPlacement[];
+@@ -532,7 +532,7 @@ extern const char kAppWindowPlacement[];
  extern const char kDownloadDefaultDirectory[];
  extern const char kDownloadExtensionsToOpen[];
  extern const char kDownloadDirUpgraded[];
@@ -27,7 +27,7 @@
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
-@@ -738,9 +738,9 @@ extern const char kAllowCrossOriginAuthPrompt[];
+@@ -744,9 +744,9 @@ extern const char kAllowCrossOriginAuthPrompt[];
  extern const char kGloballyScopeHTTPAuthCacheEnabled[];
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  

@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2020-03-03 18:53:14 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2020-02-03 21:52:52 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.cc
 @@ -76,7 +76,7 @@ static const char kColorEmojiLocale[] = "und-Zsye";
  

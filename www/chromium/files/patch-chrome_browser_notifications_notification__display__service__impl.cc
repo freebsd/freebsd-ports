@@ -1,6 +1,6 @@
---- chrome/browser/notifications/notification_display_service_impl.cc.orig	2020-03-03 18:53:51 UTC
+--- chrome/browser/notifications/notification_display_service_impl.cc.orig	2020-03-16 18:40:29 UTC
 +++ chrome/browser/notifications/notification_display_service_impl.cc
-@@ -34,7 +34,7 @@
+@@ -33,7 +33,7 @@
  #include "chrome/browser/notifications/notification_platform_bridge_message_center.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/send_tab_to_self/desktop_notification_handler.h"
  #endif
  
-@@ -123,7 +123,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
+@@ -122,7 +122,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
      AddNotificationHandler(NotificationHandler::Type::WEB_PERSISTENT,
                             std::make_unique<PersistentNotificationHandler>());
  

@@ -1,4 +1,4 @@
---- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig	2020-03-03 18:53:11 UTC
+--- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig	2020-02-03 21:52:49 UTC
 +++ remoting/host/it2me/it2me_native_messaging_host_main.cc
 @@ -29,12 +29,12 @@
  #include "remoting/host/switches.h"

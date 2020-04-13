@@ -1,4 +1,4 @@
---- net/proxy_resolution/proxy_resolution_service.cc.orig	2020-03-03 18:53:55 UTC
+--- net/proxy_resolution/proxy_resolution_service.cc.orig	2020-02-03 21:52:49 UTC
 +++ net/proxy_resolution/proxy_resolution_service.cc
 @@ -49,7 +49,7 @@
  #elif defined(OS_MACOSX)

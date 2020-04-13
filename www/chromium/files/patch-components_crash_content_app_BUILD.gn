@@ -1,6 +1,6 @@
---- components/crash/content/app/BUILD.gn.orig	2020-03-03 18:53:53 UTC
+--- components/crash/content/app/BUILD.gn.orig	2020-03-16 18:40:30 UTC
 +++ components/crash/content/app/BUILD.gn
-@@ -53,17 +53,20 @@ static_library("app") {
+@@ -49,17 +49,20 @@ static_library("app") {
      "crashpad_win.cc",
    ]
  
@@ -23,7 +23,7 @@
  
    defines = [ "CRASH_IMPLEMENTATION" ]
  
-@@ -75,7 +78,7 @@ static_library("app") {
+@@ -69,7 +72,7 @@ static_library("app") {
      "//build:branding_buildflags",
    ]
  
@@ -32,7 +32,7 @@
      deps += [
        "//third_party/crashpad/crashpad/client",
        "//third_party/crashpad/crashpad/util",
-@@ -101,7 +104,7 @@ static_library("app") {
+@@ -95,7 +98,7 @@ static_library("app") {
      ]
    }
  
@@ -41,12 +41,12 @@
      deps += [ "//third_party/breakpad:client" ]
    }
  
-@@ -132,7 +135,7 @@ static_library("app") {
+@@ -126,7 +129,7 @@ static_library("app") {
      libs = [ "log" ]
    }
  
 -  if (is_linux) {
 +  if (is_linux && !is_bsd) {
-     data_deps = [
-       "//third_party/crashpad/crashpad/handler:crashpad_handler",
-     ]
+     data_deps = [ "//third_party/crashpad/crashpad/handler:crashpad_handler" ]
+   }
+ }

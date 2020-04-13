@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/webrtc_event_log_uploader.cc.orig	2020-03-03 18:53:01 UTC
+--- chrome/browser/media/webrtc/webrtc_event_log_uploader.cc.orig	2020-02-03 21:52:40 UTC
 +++ chrome/browser/media/webrtc/webrtc_event_log_uploader.cc
 @@ -38,7 +38,7 @@ constexpr size_t kExpectedMimeOverheadBytes = 1000;  /
  const char kProduct[] = "Chrome";

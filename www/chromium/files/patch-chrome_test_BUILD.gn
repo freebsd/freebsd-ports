@@ -1,6 +1,6 @@
---- chrome/test/BUILD.gn.orig	2020-03-03 18:53:53 UTC
+--- chrome/test/BUILD.gn.orig	2020-03-16 18:40:30 UTC
 +++ chrome/test/BUILD.gn
-@@ -5920,7 +5920,7 @@ test("chrome_app_unittests") {
+@@ -6042,7 +6042,7 @@ test("chrome_app_unittests") {
      "//components/safe_browsing:buildflags",
      "//components/tracing",
    ]

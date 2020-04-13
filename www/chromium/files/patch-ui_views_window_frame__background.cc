@@ -1,4 +1,4 @@
---- ui/views/window/frame_background.cc.orig	2020-03-03 18:54:07 UTC
+--- ui/views/window/frame_background.cc.orig	2020-02-03 21:53:14 UTC
 +++ ui/views/window/frame_background.cc
 @@ -107,7 +107,7 @@ void FrameBackground::PaintMaximized(gfx::Canvas* canv
                                       const View* view) const {

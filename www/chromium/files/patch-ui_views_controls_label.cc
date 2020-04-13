@@ -1,4 +1,4 @@
---- ui/views/controls/label.cc.orig	2020-03-03 18:54:07 UTC
+--- ui/views/controls/label.cc.orig	2020-02-03 21:53:40 UTC
 +++ ui/views/controls/label.cc
 @@ -695,7 +695,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
      GetFocusManager()->SetFocusedView(this);

@@ -1,4 +1,4 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2020-03-03 18:53:55 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2020-03-16 18:40:33 UTC
 +++ pdf/pdfium/pdfium_engine.cc
 @@ -52,7 +52,7 @@
  #include "ui/gfx/geometry/rect.h"
@@ -36,7 +36,7 @@
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -2832,7 +2832,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -2861,7 +2861,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK(image_data);
  
    last_progressive_start_time_ = base::Time::Now();
@@ -45,7 +45,7 @@
    SetLastInstance(client_->GetPluginInstance());
  #endif
  
-@@ -3326,7 +3326,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3357,7 +3357,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form(), FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

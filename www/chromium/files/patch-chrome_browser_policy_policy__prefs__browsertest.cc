@@ -1,4 +1,4 @@
---- chrome/browser/policy/policy_prefs_browsertest.cc.orig	2020-03-03 18:53:01 UTC
+--- chrome/browser/policy/policy_prefs_browsertest.cc.orig	2020-02-03 21:52:40 UTC
 +++ chrome/browser/policy/policy_prefs_browsertest.cc
 @@ -250,6 +250,8 @@ class PolicyTestCase {
      const std::string os("chromeos");

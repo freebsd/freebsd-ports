@@ -1,4 +1,4 @@
---- third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2019-07-24 19:03:36 UTC
+--- third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2020-03-16 18:42:14 UTC
 +++ third_party/webrtc/rtc_base/physical_socket_server.cc
 @@ -51,7 +51,7 @@
  #include "rtc_base/null_socket_server.h"
@@ -36,24 +36,6 @@
      value = (value) ? IP_PMTUDISC_DO : IP_PMTUDISC_DONT;
  #endif
    }
-@@ -313,7 +313,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
- int PhysicalSocket::Send(const void* pv, size_t cb) {
-   int sent = DoSend(
-       s_, reinterpret_cast<const char*>(pv), static_cast<int>(cb),
--#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
-+#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(WEBRTC_BSD)
-       // Suppress SIGPIPE. Without this, attempting to send on a socket whose
-       // other end is closed will result in a SIGPIPE signal being raised to
-       // our process, which by default will terminate the process, which we
-@@ -342,7 +342,7 @@ int PhysicalSocket::SendTo(const void* buffer,
-   size_t len = addr.ToSockAddrStorage(&saddr);
-   int sent =
-       DoSendTo(s_, static_cast<const char*>(buffer), static_cast<int>(length),
--#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
-+#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(WEBRTC_BSD)
-                // Suppress SIGPIPE. See above for explanation.
-                MSG_NOSIGNAL,
- #else
 @@ -533,7 +533,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *slevel = IPPROTO_IP;
        *sopt = IP_DONTFRAGMENT;

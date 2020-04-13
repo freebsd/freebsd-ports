@@ -1,6 +1,6 @@
---- third_party/angle/src/libANGLE/Display.cpp.orig	2020-03-03 18:55:22 UTC
+--- third_party/angle/src/libANGLE/Display.cpp.orig	2020-03-16 18:42:05 UTC
 +++ third_party/angle/src/libANGLE/Display.cpp
-@@ -269,7 +269,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(const Attrib
+@@ -286,7 +286,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
              {
                  impl = rx::CreateVulkanWin32Display(state);
              }
