@@ -24,7 +24,7 @@ READLINE_MAKE_ARGS_OFF=	WITHOUT_READLINE=1
 
 LIBMSP430_LIB_DEPENDS=	libmsp430.so:devel/msp430-debug-stack
 
-USES=		gmake
+USES=		compiler:c11 gmake
 
 PLIST_FILES=	bin/mspdebug \
 		man/man1/mspdebug.1.gz \
