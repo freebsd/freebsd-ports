@@ -16,7 +16,7 @@ BUILD_DEPENDS=		${LOCALBASE}/lib/libfdt.so:sysutils/dtc
 USES=		bison:build compiler:c11 gmake gnome libtool makeinfo \
 		pkgconfig python:build tar:bz2 xorg
 USE_XORG=	pixman
-USE_GNOME=	glib20
+USE_GNOME=	glib20 libxml2
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--target-list=ppc64-softmmu \
