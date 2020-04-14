@@ -38,7 +38,7 @@ zeek_start() {
     fi
 }
 
-bro_stop() {
+zeek_stop() {
     if [ ! "${node}" ];
     then
         $zeekctl_program stop
