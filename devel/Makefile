@@ -6002,6 +6002,7 @@
     SUBDIR += rubygem-google-protobuf38
     SUBDIR += rubygem-googleapis-common-protos
     SUBDIR += rubygem-googleapis-common-protos-types
+    SUBDIR += rubygem-googleapis-common-protos-types104
     SUBDIR += rubygem-graf
     SUBDIR += rubygem-grape
     SUBDIR += rubygem-grape-entity
