@@ -3,6 +3,7 @@
 PORTNAME=	sysctl
 PORTVERSION=	2.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
@@ -11,18 +12,18 @@ COMMENT=	Small sysctl(3) interface for lua
 
 LICENSE=	BSD2CLAUSE
 
-USES=		lua pkgconfig
+USES=		lua:52+,module pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kAworu
 GH_PROJECT=	lua-${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-DOCSDIR=	${PREFIX}/share/doc/lua${LUA_VER_STR}/${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/lua${LUA_VER_STR}/${PORTNAME}
+DOCSDIR=	${LUA_DOCSDIR}
+EXAMPLESDIR=	${LUA_EXAMPLESDIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/5.1/${LUA_VER}/g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s/5.2/${LUA_VER}/g" ${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}

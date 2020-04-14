@@ -2,10 +2,11 @@
 
 PORTNAME=	lgi
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrew@tao11.riddles.org.uk
 COMMENT=	Lua bindings to libraries using GObject-Introspection
 
 LICENSE=	MIT
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	pavouk
 
-USES=		gmake gnome lua pkgconfig
+USES=		gmake gnome lua:module pkgconfig
 USE_GNOME=	introspection:build,run
 MAKE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}"
 MAKE_ARGS=	PREFIX="${PREFIX}" LUA_LIBDIR="${LUA_MODLIBDIR}" \

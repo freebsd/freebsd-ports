@@ -3,7 +3,7 @@
 
 PORTNAME=	bitop
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://bitop.luajit.org/download/ \
 		LOCAL/sunpoet
@@ -18,7 +18,7 @@ LICENSE=	MIT
 CFLAGS+=	-I${LUA_INCDIR}
 MAKE_ARGS=	CC=${CC} LUA=${LUA_CMD}
 TEST_TARGET=	test
-USES?=		gmake lua
+USES=		gmake lua:module
 
 PLIST_FILES=	${LUA_MODLIBDIR}/bit.so
 

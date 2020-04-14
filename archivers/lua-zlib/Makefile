@@ -3,9 +3,10 @@
 
 PORTNAME=	zlib
 PORTVERSION=	1.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	archivers
-PKGNAMEPREFIX=	lua51-
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sirl33tname@gmail.com
 COMMENT=	Simple streaming interface to zlib for the Lua Programming Language
@@ -16,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	brimworks
 GH_PROJECT=	lua-zlib
 
-USES=		lua:51
+USES=		lua:51,module
 
 ALL_TARGET=	bsd
 MAKE_ENV+=	LUAPATH="${LOCALBASE}"

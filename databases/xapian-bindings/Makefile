@@ -17,7 +17,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		metaport
 
-LUA_RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}xapian>=${PORTVERSION}:databases/lua-xapian
+LUA_RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}xapian>=${PORTVERSION}:databases/lua-xapian@${LUA_FLAVOR}
 LUA_USES=		lua:run
 PERL_RUN_DEPENDS=	p5-Xapian>=${PORTVERSION}:databases/p5-Xapian
 PHP_RUN_DEPENDS=	php-xapian>=${PORTVERSION}:databases/php-xapian

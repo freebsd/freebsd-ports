@@ -3,7 +3,7 @@
 
 PORTNAME=	iconv
 PORTVERSION=	7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	converters
 MASTER_SITES=	GHC
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -13,13 +13,11 @@ MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Iconv binding for Lua 5
 
 BROKEN=		unfetchable
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2020-05-05
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig iconv lua
+USES=		pkgconfig iconv lua:module
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ittner

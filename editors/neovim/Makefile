@@ -12,8 +12,8 @@ COMMENT=	Next-generation Vim
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	gperf:devel/gperf \
-		${LUA_MODLIBDIR}/bit.so:devel/lua-bitop \
-		${LUA_MODLIBDIR}/lpeg.so:devel/lua-lpeg
+		${LUA_MODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
+		${LUA_MODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
 LIB_DEPENDS=	libluv.so:devel/luv \
 		libmsgpackc.so:devel/msgpack \
 		libtermkey.so:devel/libtermkey \

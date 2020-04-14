@@ -14529,3 +14529,15 @@ databases/mariadb55-client|databases/mariadb102-client|2020-04-12|Has expired: U
 devel/aws-c-commons|devel/aws-c-common|2020-04-12|Renamed to the correct name
 textproc/itstool22|textproc/itstool|2020-04-14|Has expired: Uses deprecated version of python, use textproc/itstool instead
 science/ncnn|misc/ncnn|2020-04-14|Move to misc/ because ncnn isn't related to science
+archivers/lua51-zlib|archivers/lua-zlib@lua51|2020-04-14|Switched to use flavors
+audio/lua51-mpd|audio/lua-mpd@lua51|2020-04-14|Switched to use flavors
+converters/lua51-iconv|converters/lua-iconv@lua51|2020-04-14|Switched to use flavors
+devel/lua51-bitop|devel/lua-bitop@lua51|2020-04-14|Switched to use flavors
+devel/lua51-cjson|devel/lua-cjson@lua51|2020-04-14|Switched to use flavors
+devel/lua51-libevent|devel/lua-libevent@lua51|2020-04-14|Switched to use flavors
+devel/luafilesystem-51|devel/luafilesystem@lua51|2020-04-14|Switched to use flavors
+net/lualdap-51|net/lualdap@lua51|2020-04-14|Switched to use flavors
+net/luasocket-51|net/luasocket@lua51|2020-04-14|Switched to use flavors
+net/luasocket-53|net/luasocket@lua53|2020-04-14|Switched to use flavors
+security/luasec-51|security/luasec@lua51|2020-04-14|Switched to use flavors
+textproc/luaexpat-51|textproc/luaexpat@lua51|2020-04-14|Switched to use flavors

@@ -31,7 +31,7 @@ MAKE_ENV=	V=yo OPTIMIZATION=
 
 JEMALLOC_MAKE_ENV=	USE_JEMALLOC=yes
 
-LUA_USE=		lua=51
+LUA_USES=		lua:51
 LUA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.lua
 LUA_VARS=		_addflags=true
 

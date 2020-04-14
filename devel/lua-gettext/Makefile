@@ -3,7 +3,7 @@
 
 PORTNAME=	gettext
 PORTVERSION=	1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/nuclewall/bsdinstaller/${COMMIT}/src/lib/lua/gettext/ \
 		https://BSDforge.com/projects/source/devel/lua-gettext/
@@ -14,7 +14,7 @@ DIST_SUBDIR=	lua-${PORTNAME}-${COMMIT}
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Gettext binding for Lua 5
 
-USES=		gettext lua:51
+USES=		gettext lua:51,module
 
 CVER=		1.15
 LVER=		${PORTVERSION}

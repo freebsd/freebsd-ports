@@ -334,7 +334,6 @@
     SUBDIR += logcheck
     SUBDIR += lua-bcrypt
     SUBDIR += luasec
-    SUBDIR += luasec-51
     SUBDIR += lxqt-openssh-askpass
     SUBDIR += lxqt-sudo
     SUBDIR += lynis

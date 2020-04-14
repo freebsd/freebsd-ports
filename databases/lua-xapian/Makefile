@@ -4,6 +4,7 @@
 PORTNAME=	xapian
 PORTVERSION=	1.4.15
 DISTVERSIONPREFIX=	bindings-
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -24,7 +25,9 @@ OPTIONS_DEFINE=	DOCS
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c++11-lang libtool lua tar:xz
+USES=		compiler:c++11-lang libtool lua:module tar:xz
+
+DOCSDIR=	${LUA_DOCSDIR}
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--docdir=${DOCSDIR} \

@@ -2,6 +2,7 @@
 
 PORTNAME=	lpeg
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.puc-rio.br/~roberto/lpeg/ \
 		LOCAL/sunpoet
@@ -12,7 +13,7 @@ COMMENT=	PEG-based pattern-matching library for Lua
 
 LICENSE=	MIT
 
-USES=		lua
+USES=		lua:module
 
 ALL_TARGET=	linux
 MAKE_ARGS=	CC=${CC} LUADIR=${LUA_INCDIR}

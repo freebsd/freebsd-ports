@@ -462,7 +462,7 @@
     SUBDIR += lollypop
     SUBDIR += lpac
     SUBDIR += lsp-plugins-lv2
-    SUBDIR += lua51-mpd
+    SUBDIR += lua-mpd
     SUBDIR += luppp
     SUBDIR += lv2
     SUBDIR += lv2file

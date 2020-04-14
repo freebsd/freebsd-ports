@@ -4,6 +4,7 @@
 PORTNAME=	luasec
 PORTVERSION=	0.9
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
@@ -13,7 +14,7 @@ COMMENT=	Lua binding for the OpenSSL library to provide TLS/SSL communication
 LICENSE=	MIT
 
 .if !defined(SLAVE_PORT)
-USES=		lua ssl
+USES=		lua:module ssl
 .endif
 
 USE_GITHUB=	yes

@@ -13,7 +13,7 @@ COMMENT=	Powerful, efficient, lightweight, embeddable scripting language
 
 LICENSE=	MIT
 
-LUA_VER=	5.3
+USES=		lua:core,53
 USE_LDCONFIG=	yes
 
 # Overriding __MAKE_CONF makes sure that we don't re-parse
@@ -32,17 +32,9 @@ BUILD_WRKSRC=	${WRKSRC}/src
 # We put the docs for Lua proper in a lua/ subdir of the version subdir
 # so that ports for Lua modules can use the version subdir too without
 # making a mess.
-DOCSDIR=	${PREFIX}/share/doc/lua${PKGNAMESUFFIX}/lua
+DOCSDIR=	${LUA_DOCSDIR}
 PORTDOCS=	*
 BUILD_WRKDOC=	${WRKSRC}/doc
-
-LUA_PREFIX=	${PREFIX}
-
-# 2018-03-17: AG - These should match lua.mk, but we can't include that here
-LUA_CMD=	lua${PKGNAMESUFFIX}
-LUAC_CMD=	luac${PKGNAMESUFFIX}
-LUA_INCDIR=	${LUA_PREFIX}/include/lua${PKGNAMESUFFIX}
-LUA_LIBDIR=	${LUA_PREFIX}/lib
 
 LUA_LIB_STATIC=	liblua-${LUA_VER}.a
 LUA_LIB_SHARED=	liblua-${LUA_VER}.so

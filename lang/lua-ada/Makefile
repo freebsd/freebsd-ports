@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	gprbuild:devel/gprbuild
 
-USES=		ada lua
+USES=		ada lua:52
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
 GH_PROJECT=	ada-lua

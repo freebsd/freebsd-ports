@@ -1460,6 +1460,7 @@
     SUBDIR += lua-cjson
     SUBDIR += lua-gettext
     SUBDIR += lua-lgi
+    SUBDIR += lua-libevent
     SUBDIR += lua-lpeg
     SUBDIR += lua-luacheck
     SUBDIR += lua-luarocks
@@ -1472,12 +1473,8 @@
     SUBDIR += lua-stdlib-debug
     SUBDIR += lua-stdlib-normalize
     SUBDIR += lua-sysctl
-    SUBDIR += lua51-bitop
-    SUBDIR += lua51-cjson
-    SUBDIR += lua51-libevent
     SUBDIR += luabind
     SUBDIR += luafilesystem
-    SUBDIR += luafilesystem-51
     SUBDIR += luajava
     SUBDIR += lutok
     SUBDIR += luv

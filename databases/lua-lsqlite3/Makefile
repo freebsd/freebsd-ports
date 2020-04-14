@@ -3,6 +3,7 @@
 
 PORTNAME=	lsqlite3
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://Lua.SQLite.org/index.cgi/zip/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -15,30 +16,20 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${NONEXISTENT}:databases/sqlite3:patch
 
-USES=		localbase:ldflags sqlite:3 zip
+USES=		localbase:ldflags sqlite:3 zip lua:module
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-OPTIONS_SINGLE=	LUA_VERSION
-OPTIONS_SINGLE_LUA_VERSION=	LUA51 LUA52 LUA53
-OPTIONS_DEFAULT=LUA${LUA_DEFAULT:S/.//}
-
-LUA51_DESC=	Build for Lua 5.1 and LuaJIT
-LUA51_USES=	lua:51
-LUA52_DESC=	Build for Lua 5.2
-LUA52_USES=	lua:52
-LUA53_DESC=	Build for Lua 5.3
-LUA53_USES=	lua:53
 
 CFLAGS+=	-pedantic -Wall -Qunused-arguments -fPIC -DPIC\
 		-std=c99 -fno-strict-aliasing -I${LUA_INCDIR}\
 		-DLSQLITE_VERSION=\"${PORTVERSION}\"
 LDFLAGS+=	-shared -pthread -lm -L${LOCALBASE}/lib
 
-DOCSDIR=	${PREFIX}/share/doc/lua${LUA_VER_STR}/${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/lua${LUA_VER_STR}/${PORTNAME}
+DOCSDIR=	${LUA_DOCSDIR}
+EXAMPLESDIR=	${LUA_EXAMPLESDIR}
 
 pre-configure:
-	@${CP} -p `${MAKE} -V WRKSRC -C ${PORTSDIR}/databases/sqlite3`/sqlite3.[ch] ${WRKSRC}
+	@${CP} -p `${SETENV} -u FLAVOR ${MAKE} -V WRKSRC -C ${PORTSDIR}/databases/sqlite3`/sqlite3.[ch] ${WRKSRC}
 
 do-build:
 	cd ${WRKSRC} &&\

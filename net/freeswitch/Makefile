@@ -29,7 +29,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libjbig.so:graphics/jbigkit \
 		libtiff.so:graphics/tiff
 
-USES=		gmake iconv jpeg libedit libtool lua perl5 pkgconfig shebangfix ssl tar:xz
+USES=		gmake iconv jpeg libedit libtool lua:51-52 perl5 pkgconfig shebangfix ssl tar:xz
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	freeswitch
 

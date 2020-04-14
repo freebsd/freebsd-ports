@@ -4,7 +4,7 @@
 PORTNAME=	luasocket
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0-rc1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	diegonehab
 
 MAKE_ARGS=	LUAV=${LUA_VER}
-USES?=		gmake lua pkgconfig
+USES=		gmake lua:module pkgconfig
 INSTALL_TARGET=	install-unix
 
 CFLAGS+=	`pkgconf --cflags lua-${LUA_VER}` \
@@ -27,6 +27,8 @@ CFLAGS+=	`pkgconf --cflags lua-${LUA_VER}` \
 LDFLAGS+=	-shared  `pkgconf --libs lua-${LUA_VER}`
 
 OPTIONS_DEFINE=	DOCS
+
+DOCSDIR=	${LUA_DOCSDIR}
 
 post-extract:
 	@${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile

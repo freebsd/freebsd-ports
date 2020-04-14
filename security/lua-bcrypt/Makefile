@@ -3,7 +3,7 @@
 PORTNAME=	bcrypt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1-4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
@@ -12,7 +12,7 @@ COMMENT=	Library providing OpenBSD's bcrypt hash function for Lua
 
 LICENSE=	ISCL
 
-USES=		compiler:c11 gmake lua
+USES=		compiler:c11 gmake lua:module
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mikejsavage

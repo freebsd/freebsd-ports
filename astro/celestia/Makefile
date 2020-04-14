@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler:c++11-lang gettext gl gmake jpeg libtool lua pkgconfig
+USES=		compiler:c++11-lang gettext gl gmake jpeg libtool lua:52 pkgconfig
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 EXTRA_PATCHES=	${FILESDIR}/celestia-1.6.1-lua-5.2.patch:-p1 \

@@ -96,8 +96,8 @@ DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen \
 
 TRUSTANCHOR_DESC=		Trust anchor bootstrapping and stats
 TRUSTANCHOR_USES=		lua
-TRUSTANCHOR_BUILD_DEPENDS=	${LUA_PKGNAMEPREFIX}luasocket>=0:net/luasocket \
-				${LUA_PKGNAMEPREFIX}luasec>=0:security/luasec
+TRUSTANCHOR_BUILD_DEPENDS=	${LUA_PKGNAMEPREFIX}luasocket>=0:net/luasocket@${LUA_FLAVOR} \
+				${LUA_PKGNAMEPREFIX}luasec>=0:security/luasec@${LUA_FLAVOR}
 
 .include <bsd.port.options.mk>
 

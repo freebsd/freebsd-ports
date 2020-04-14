@@ -1,12 +1,12 @@
 # Created by: Sir l33tname <sirl33tname@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	lua51
+PORTNAME=	libevent
 PORTVERSION=	0.4.6
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
-PKGNAMESUFFIX=	-libevent
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sirl33tname@gmail.com
 COMMENT=	Lua libevent binding
@@ -14,9 +14,9 @@ COMMENT=	Lua libevent binding
 LICENSE=	MIT
 
 LIB_DEPENDS=	libevent.so:devel/libevent
-RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket-51
+RUN_DEPENDS=	${LUA_REFMODLIBDIR}/socket/core.so:net/luasocket@${LUA_FLAVOR}
 
-USES=		gmake pkgconfig lua:51
+USES=		gmake pkgconfig lua:51,module
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	harningt

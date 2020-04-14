@@ -13,15 +13,14 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
-LIB_DEPENDS=	liblua-5.3.so:lang/lua53 \
-		libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libtermbox.so:devel/termbox
 TEST_DEPENDS=	${LOCALBASE}/bin/gpaste:sysutils/coreutils \
 		${LOCALBASE}/bin/grep:textproc/gnugrep \
 		bash:shells/bash \
 		gfind:misc/findutils
 
-USES=		compiler:c11 gmake localbase:ldflags shebangfix
+USES=		compiler:c11 gmake localbase:ldflags shebangfix lua:53
 SHEBANG_FILES=	tests/func/*.sh tests/run.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	adsr

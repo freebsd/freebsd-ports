@@ -71,7 +71,7 @@
     SUBDIR += lizard
     SUBDIR += lrzip
     SUBDIR += lua-lzlib
-    SUBDIR += lua51-zlib
+    SUBDIR += lua-zlib
     SUBDIR += lzfse
     SUBDIR += lzip
     SUBDIR += lziprecover

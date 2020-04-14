@@ -3,6 +3,7 @@
 
 PORTNAME=	bitlib
 PORTVERSION=	24
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://luaforge.net/frs/download.php/2715/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -10,7 +11,7 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny library for bitwise operations
 
-USES=		lua
+USES=		lua:module
 
 PLIST_FILES=	%%LUA_MODLIBDIR%%/bit.so
 
