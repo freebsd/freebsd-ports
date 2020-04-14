@@ -1,3 +1,3 @@
-TIMESTAMP = 1574481561
-SHA256 (libtasn1-4.15.0.tar.gz) = dd77509fe8f5304deafbca654dc7f0ea57f5841f41ba530cff9a5bf71382739e
-SIZE (libtasn1-4.15.0.tar.gz) = 1800713
+TIMESTAMP = 1581169480
+SHA256 (libtasn1-4.16.0.tar.gz) = 0e0fb0903839117cb6e3b56e68222771bebf22ad7fc2295a0ed7d576e8d4329d
+SIZE (libtasn1-4.16.0.tar.gz) = 1812442
