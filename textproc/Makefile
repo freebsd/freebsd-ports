@@ -300,7 +300,6 @@
     SUBDIR += it-hyphen
     SUBDIR += it-mythes
     SUBDIR += itstool
-    SUBDIR += itstool22
     SUBDIR += jade
     SUBDIR += jalingo
     SUBDIR += jarnal
