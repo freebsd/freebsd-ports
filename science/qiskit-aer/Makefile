@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qiskit-aer
-DISTVERSION=	0.4.1
-PORTREVISION=	1
+DISTVERSION=	0.5.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
