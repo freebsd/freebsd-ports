@@ -34,6 +34,7 @@ GMP_CONFIGURE_ON=	--gmp
 GMP_USES=		localbase:ldflags
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
+CXXFLAGS_powerpc=	-fPIC
 LDFLAGS_i386=		-Wl,-znotext
 BUILD_WRKSRC=		${WRKSRC}/build
 INSTALL_WRKSRC=		${WRKSRC}/build
