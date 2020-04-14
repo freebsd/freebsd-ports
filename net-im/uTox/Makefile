@@ -1,13 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	uTox
-DISTVERSION=	0.17.1
+DISTVERSION=	0.17.2
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	net-im net-p2p
 MASTER_SITES=	https://github.com/uTox/uTox/releases/download/v${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/uTox/uTox/commit/
-PATCHFILES=	37271f991c590a533781b66e9036e9b66dfbbf1b.patch:-p1
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Lightweight Tox client
