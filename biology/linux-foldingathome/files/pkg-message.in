@@ -10,12 +10,17 @@ Here is a list of steps to quickly get started with Folding@home on FreeBSD:
 
 2.	Mount linsysfs(5) in /compat/linux/sys.
 
-3.	Consider setting the user name and the team ID (e.g., "11743")
-	in %%FAHCLIENT_CONFIG_XML%%.
+3.	Enable the fahclient service:
 
-4.	Enable the fahclient service:
+		sysrc fahclient_enable=YES
 
-		sysrc fahclient_enable="YES"
+4.	Consider setting the user name and the team ID:
+
+		sysrc fahclient_user=myusername
+		sysrc fahclient_team=0
+
+	Team 0 means "no team", by default fahclient joins team FreeBSD
+	(11743).
 
 5.	Start the service:
 
@@ -40,15 +45,34 @@ Additional notes
 	Note, that usually the permissions are on unless the system
 	configuration was modified by the administrator.
 
--	The ID of the FreeBSD team is 11743. In order to join the team
-	add the following line to %%FAHCLIENT_CONFIG_XML%%:
+-	By default the FreeBSD team (team id 11743) is joined.
+	This can be overridden by changing the configuration in rc.conf:
 
-		<team value="11743"/>
+		sysrc fahclient_team=0
 
 	The service has to be restarted to pick up the change.
 
 	Statistics for the FreeBSD team can be viewed here:
 	https://stats.foldingathome.org/team/11743
+
+-	Team and donor configuration values in %%FAHCLIENT_CONFIG_XML%% take
+	precedence over those configured in rc.conf using sysrc.
+
+-	It's possible to specify additional flags in rc.conf. Those take
+	precedence over what is configured in the config file, e.g., setting
+	the maximum number of cpus to be used:
+
+		sysrc fahclient_flags+=" --cpus=7"
+
+	Flags that are set this way will be overridden by settings in
+	%%FAHCLIENT_CONFIG_XML%%. You can set fahclient_extra_flags
+	to override settings in %%FAHCLIENT_CONFIG_XML%%:
+
+		sysrc fahclient_extra_flags+=" --cpus=7"
+
+-	You can check the actual configuration values applied with:
+
+		service fahclient showconfig
 
 -	More information about configuring and running the Folding@home
 	software is available on those websites:

@@ -30,6 +30,34 @@
 # PROVIDE: fahclient
 # REQUIRE: DAEMON LOGIN NETWORKING linux
 
+#
+# Add the following lines to /etc/rc.conf to enable nginx:
+# fahclient_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable fahclient.
+# fahclient_user (str):		Default: "fahclient"
+#				User to run fahclient as.
+# fahclient_chdir (str):	Default: "%%FAHCLIENT_WORK_DIR%%"
+#				Directory to chdir before starting fahclient.
+# fahclient_config (str):	Default: "%%ETCDIR%%/config.xml"
+#				Path to fahclient configuration file.
+# fahclient_donor (str):	Default: "Anonymous"
+#				Donor to attribute work units to.
+#				Settings in fahclient_config take precedence.
+# fahclient_team (str):		Default: "11743" (FreeBSD Team)
+#				Team to attribute work units to.
+#				Settings in fahclient_config take precedence.
+# fahclient_pidfile (str):	Default: "%%FAHCLIENT_WORK_DIR%%/fahclient.pid"
+#				Path to PID file.
+# fahclient_logfile (str):	Default: "%%FAHCLIENT_WORK_DIR%%/log.txt"
+#				Path to log file. Takes precedence over
+#				settings in fahclient_config.
+# fahclient_flags (str):	Default: ""
+#				Extra flags passed to start command *before*
+#				other options.
+# fahclient_extra_flags (str):	Defaults to ""
+#				Extra flags passed to start command *after*
+#				other options.
+
 . /etc/rc.subr
 
 name='fahclient'
@@ -42,6 +70,9 @@ load_rc_config 'fahclient'
 : "${fahclient_user:=fahclient}"
 : "${fahclient_chdir:=%%FAHCLIENT_WORK_DIR%%}"
 
+: "${fahclient_donor:=Anonymous}"
+: "${fahclient_team:=11743}"
+
 : "${fahclient_pidfile:=%%FAHCLIENT_WORK_DIR%%/fahclient.pid}"
 : "${fahclient_config:=%%ETCDIR%%/config.xml}"
 : "${fahclient_logfile:=%%FAHCLIENT_WORK_DIR%%/log.txt}"
@@ -49,18 +80,37 @@ load_rc_config 'fahclient'
 pidfile="${fahclient_pidfile}"
 command='%%FAHCLIENT_PROGRAM%%'
 # Some notes on the specified options:
+# - fahclient_flags are passed in before other options by the rc
+#   framework.
+# - --user sets the donor work units are attributed to (config file takes
+#   precedence).
+# - --team sets the team work units are attributed to (cfg file takes
+#   precedence).
 # - --config is necessary to point the program to the correct configuration
 #   file.
+# - --log sets the log file location (takes precedence over config file),
+#   log is special in this respect.
 # - --chdir is used to switch to a desired work directory. The program is going
 #   to create a lot of files in its current working directory so should not be
 #   just any directory on the system.
 # - --pid-file specifies the location for the PID file.
 # - --daemon is to detach the program from the terminal and run it
 #   in the background.
-command_args="--config ${fahclient_config} --chdir ${fahclient_chdir}"
-command_args="${command_args} --pid-file ${pidfile} --daemon"
-extra_commands="log"
+# - fahclient_extra_flags are passed in after all other options.
+
+command_args="${command_args} --user=${fahclient_donor}"
+command_args="${command_args} --team=${fahclient_team}"
+command_args="${command_args} --config=${fahclient_config}"
+command_args="${command_args} --log=${fahclient_logfile}"
+command_args="${command_args} --chdir=${fahclient_chdir}"
+command_args="${command_args} --pid-file=${pidfile} --daemon"
+command_args="${command_args} ${fahclient_extra_flags}"
+extra_commands="log showconfig"
 log_cmd="tail -F -- ${fahclient_logfile}"
+showconfig_cmd="${command} ${fahclient_flags} ${command_args} --print"
+if [ -n "$fahclient_user" ]; then
+	showconfig_cmd="su -m $fahclient_user -c 'sh -c \"$showconfig_cmd\"'"
+fi
 required_modules='linprocfs linsysfs linux64:linux64elf'
 
 run_rc_command "$1"
