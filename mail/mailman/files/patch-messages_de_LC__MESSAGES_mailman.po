@@ -1,0 +1,11 @@
+--- messages/de/LC_MESSAGES/mailman.po.orig	2020-04-13 17:08:14 UTC
++++ messages/de/LC_MESSAGES/mailman.po
+@@ -10792,7 +10792,7 @@ msgstr "WARNUNG: Verzeichnis existiert nicht: %(d)s"
+ 
+ #: bin/check_perms:197
+ msgid "directory must be at least 02775: %(d)s"
+-msgstr "Verzeichnisrechte müssen midestens 02775 betragen: %(d)s"
++msgstr "Verzeichnisrechte müssen mindestens 02775 betragen: %(d)s"
+ 
+ #: bin/check_perms:209
+ msgid "checking perms on %(private)s"

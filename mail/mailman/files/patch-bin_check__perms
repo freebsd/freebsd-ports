@@ -1,0 +1,30 @@
+This might be submitted upstream, had not upstream decided
+that 2.1.30 is the final release.
+
+The messages/ directory with its .mo/.po files, and the
+top installation directory, do not require group write
+permissions. 
+
+-- Matthias Andree (mandree@FreeBSD.org, 2020-04-14)
+
+--- bin/check_perms.orig	2020-04-13 17:08:14 UTC
++++ bin/check_perms
+@@ -143,6 +143,9 @@ def checkwalk(arg, dirname, names):
+         elif (os.path.commonprefix((path, mm_cfg.QUEUE_DIR))
+               == mm_cfg.QUEUE_DIR):
+             targetperms = QFILEPERMS
++        elif path == mm_cfg.PREFIX or '/messages' in path:
++            # don't require LC_MESSAGES to be group writable
++            targetperms = DIRPERMS & ~S_IWGRP & ~S_ISGID
+         else:
+             targetperms = DIRPERMS
+         octperms = oct(targetperms)
+@@ -195,7 +195,7 @@
+             if e.errno <> errno.ENOENT: raise
+             print C_('WARNING: directory does not exist: %(d)s')
+             continue
+-        if (mode & DIRPERMS) <> DIRPERMS:
++        if (mode & DIRPERMS) <> DIRPERMS and d <> mm_cfg.PREFIX:
+             STATE.ERRORS += 1
+             print C_('directory must be at least 02775: %(d)s'),
+             if STATE.FIX:
