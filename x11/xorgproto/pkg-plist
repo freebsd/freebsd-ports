@@ -131,6 +131,7 @@ libdata/pkgconfig/bigreqsproto.pc
 libdata/pkgconfig/compositeproto.pc
 libdata/pkgconfig/damageproto.pc
 libdata/pkgconfig/dmxproto.pc
+libdata/pkgconfig/dpmsproto.pc
 libdata/pkgconfig/dri2proto.pc
 libdata/pkgconfig/dri3proto.pc
 libdata/pkgconfig/fixesproto.pc
