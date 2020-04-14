@@ -63,6 +63,8 @@ TBB_MAKE_ENV=		TBB="-ltbb" SPQR_CONFIG="-DHAVE_TBB"
 # See PR 230888 : Missing 64 bit atomic functions for i386
 USES+=		compiler:gcc-c++11-lib
 LDFLAGS+=	-latomic
+.elif defined(PPC_ABI) && ${PPC_ABI} == ELFv1
+USE_GCC=	yes
 .else
 USES+=	compiler:${OPENMP}c++11-lib
 .endif
