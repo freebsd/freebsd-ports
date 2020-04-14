@@ -4,7 +4,7 @@
 PORTNAME?=	pypy
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/downloads/ http://buildbot.pypy.org/mirror/
-DISTNAME?=	${PORTNAME}2-v${DISTVERSION}-src
+DISTNAME?=	${PORTNAME}2.7-v${DISTVERSION}-src
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Fast, compliant implementation of the Python language
@@ -13,18 +13,20 @@ LICENSE=	MIT PSFL
 LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
+BROKEN_armv6=		fails to package: pypy_objspace_std.c: Crash in JIT!
+BROKEN_armv7=		fails to package: pypy_objspace_std.c: Crash in JIT!
+BROKEN_powerpc64=	fails to compile: platcheck_109.c: fatal error: linux/auxvec.h: No such file or directory
+ONLY_FOR_ARCHS?=	amd64 armv6 armv7 i386 powerpc64
+ONLY_FOR_ARCHS_REASON?=	PyPy JIT only supported on these architectures
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libffi.so:devel/libffi
 TEST_DEPENDS=	${LOCALBASE}/${PYPY_DIR}/lib_pypy/_gdbm_cffi.${PYPY_CFFI_VER}.so:databases/pypy-gdbm \
 		${LOCALBASE}/${PYPY_DIR}/lib_pypy/_sqlite3_cffi.${PYPY_CFFI_VER}.so:databases/pypy-sqlite3 \
 		${LOCALBASE}/${PYPY_DIR}/lib_pypy/_tkinter/tklib_cffi.${PYPY_CFFI_VER}.so:x11-toolkits/pypy-tkinter
 
-ONLY_FOR_ARCHS?=	amd64 armv6 armv7 i386 powerpc64
-ONLY_FOR_ARCHS_REASON?=	PyPy JIT only supported on these architectures
-
-BROKEN_armv6=		fails to package: pypy_objspace_std.c: Crash in JIT!
-BROKEN_armv7=		fails to package: pypy_objspace_std.c: Crash in JIT!
-BROKEN_powerpc64=	fails to compile: platcheck_109.c: fatal error: linux/auxvec.h: No such file or directory
+USES=		gettext-runtime gmake shebangfix ssl tar:bzip2
+USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
 
 OPTIONS_SINGLE=	TRANS
 OPTIONS_SINGLE_TRANS=	PYTHON
@@ -45,12 +47,10 @@ OPTIONS_SLAVE=	PYTHON
 .endif
 
 ALL_TARGET=	${PORTNAME}-c
-BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-pypy2.7-v${DISTVERSION}-0/testing_1
+BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-pypy2.7-v${DISTVERSION}rc4-0/testing_1
 MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE} LDSHARED="${CC} -shared"
 PACKAGE_ARGS?=	--without-gdbm --without-sqlite3 --without-tk
-USE_LDCONFIG=	${PREFIX}/${PYPY_DIR}/bin
 LLD_UNSAFE=	yes
-USES=		gettext-runtime gmake shebangfix ssl tar:bzip2
 SHEBANG_FILES?=	lib-python/2.7/plat-mac/appletrunner.py \
 		lib-python/2.7/plat-mac/bundlebuilder.py \
 		lib-python/2.7/keyword.py \
@@ -82,9 +82,10 @@ SHEBANG_FILES?=	lib-python/2.7/plat-mac/appletrunner.py \
 		lib-python/2.7/smtpd.py \
 		lib-python/2.7/quopri.py \
 		lib-python/2.7/timeit.py \
-		lib-python/2.7/smtplib.py
+		lib-python/2.7/smtplib.py \
+		lib_pypy/_cffi_ssl/tools/make_ssl_data.py
 
-python_OLD_CMD=	/usr/local/bin/python
+python_OLD_CMD=	${LOCALBASE}/bin/python
 python_CMD=	${PREFIX}/bin/${PORTNAME}
 
 .if ${PORTNAME} != pypy

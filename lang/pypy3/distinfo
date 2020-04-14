@@ -1,3 +1,3 @@
-TIMESTAMP = 1530700264
-SHA256 (pypy3-v6.0.0-src.tar.bz2) = ed8005202b46d6fc6831df1d13a4613bc40084bfa42f275068edadf8954034a3
-SIZE (pypy3-v6.0.0-src.tar.bz2) = 22648140
+TIMESTAMP = 1582589655
+SHA256 (pypy3.6-v7.3.0-src.tar.bz2) = 48d12c15fbcbcf4a32882a883195e1f922997cde78e7a16d4342b9b521eefcfa
+SIZE (pypy3.6-v7.3.0-src.tar.bz2) = 21937786

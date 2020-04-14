@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	pypy3
-DISTNAME=	${PORTNAME}-v${DISTVERSION}-src
+DISTNAME=	${PORTNAME}.6-v${DISTVERSION}-src
 
 MASTERDIR=	${.CURDIR}/../pypy
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-v${DISTVERSION:C/-.*//}-src
-BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-${PORTNAME}.5-v${DISTVERSION:C/-.*//}-0/testing_1
+WRKSRC=		${WRKDIR}/${PORTNAME}.6-v${DISTVERSION:C/-.*//}-src
+BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-${PORTNAME}.6-v${DISTVERSION:C/-.*//}rc4-0/testing_1
 
 SHEBANG_FILES=	\
 		lib-python/3/base64.py \
@@ -15,6 +15,7 @@ SHEBANG_FILES=	\
 		lib-python/3/cgi.py \
 		lib-python/3/encodings/rot_13.py \
 		lib-python/3/keyword.py \
+		lib-python/3/idlelib/pyshell.py \
 		lib-python/3/lib2to3/pgen2/token.py \
 		lib-python/3/lib2to3/tests/data/different_encoding.py \
 		lib-python/3/lib2to3/tests/data/false_encoding.py \
@@ -29,6 +30,7 @@ SHEBANG_FILES=	\
 		lib-python/3/symbol.py \
 		lib-python/3/tabnanny.py \
 		lib-python/3/tarfile.py \
+		lib-python/3/test/bisect.py \
 		lib-python/3/test/crashers/recursive_call.py \
 		lib-python/3/test/curses_tests.py \
 		lib-python/3/test/pystone.py \
@@ -52,9 +54,9 @@ SHEBANG_FILES=	\
 		lib-python/3/webbrowser.py \
 		lib_pypy/_cffi_ssl/tools/make_ssl_data.py
 
-PACKAGE_ARGS=	--without-_gdbm --without-sqlite3 --without-tk
+PACKAGE_ARGS=	--without-gdbm --without-sqlite3 --without-tk
 
-PYPY_CFFI_VER=	${PORTNAME}-${DISTVERSION:C/.[^.]+$//:S/.//}-${ARCH}-${OPSYS:tl}${OSREL:C/\..*//}
+PYPY_CFFI_VER=	${PORTNAME}6-pp${DISTVERSION:C/.[^.]+$//:S/.//}-${ARCH}-${OPSYS:tl}${OSREL:C/\..*//}
 
 pre-install:
 	${FIND} ${WRKSRC} -name '*.pyc' -delete
