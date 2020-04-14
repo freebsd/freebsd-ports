@@ -14,9 +14,9 @@ Here is a list of steps to quickly get started with Folding@home on FreeBSD:
 
 		sysrc fahclient_enable=YES
 
-4.	Consider setting the user name and the team ID:
+4.	Consider setting Folding@home donor name and team ID:
 
-		sysrc fahclient_user=myusername
+		sysrc fahclient_donor=my_fah_username
 		sysrc fahclient_team=0
 
 	Team 0 means "no team", by default fahclient joins team FreeBSD
