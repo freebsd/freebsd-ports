@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	glslangValidator:devel/glslang \
 		${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers \
 		${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader \
-		${LOCALBASE}/lib/libncnn.a:science/ncnn
+		${LOCALBASE}/lib/libncnn.a:misc/ncnn
 
 USES=		cmake compiler:${OPENMP}c++11-lib
 USE_GITHUB=	yes
