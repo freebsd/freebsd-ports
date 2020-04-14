@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.23.18.1
+PORTVERSION=	0.23.20
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/p11-glue/p11-kit/releases/download/${PORTVERSION}/
 
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--disable-nls --enable-debug=no \
 MAKE_ENV=	exampledir=${STAGEDIR}${EXAMPLESDIR}
 INSTALL_TARGET=	install-strip
 
-USES=		gmake libtool pathfix pkgconfig
+USES=		tar:xz gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 TEST_TARGET=	check
