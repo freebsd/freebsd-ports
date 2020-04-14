@@ -15,11 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 LIB_DEPENDS=	libid3.so:audio/id3lib \
 		libcurl.so:ftp/curl
 
+USES=		compiler:c11 gnome libtool localbase:ldflags pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
-USES=		gnome libtool pkgconfig tar:bzip2
 USE_GNOME=	glib20 libxml2
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 # CONFIGURE_ARGS=	--disable-static
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
