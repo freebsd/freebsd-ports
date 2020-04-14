@@ -2,7 +2,7 @@
 
 PORTNAME=	yuzu
 PORTVERSION=	s20200330
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -56,8 +56,8 @@ CXXFLAGS+=	-Wno-narrowing # https://github.com/yuzu-emu/yuzu/issues/3407
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test
 
-OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK SNDIO
-OPTIONS_DEFAULT=ALSA PULSEAUDIO JACK SNDIO
+OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK SNDIO VULKAN
+OPTIONS_DEFAULT=ALSA PULSEAUDIO JACK SNDIO VULKAN
 OPTIONS_MULTI=	GUI
 OPTIONS_MULTI_GUI=	QT5 SDL
 OPTIONS_SLAVE?=	SDL
@@ -87,6 +87,9 @@ QT5_PLIST_FILES=bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
 		share/mime/packages/${PORTNAME}.xml
+
+VULKAN_DESC=		Vulkan renderer
+VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
 post-patch:
 	@${REINPLACE_CMD} -e '/check_submodules_present()/d' \
