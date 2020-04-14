@@ -1,7 +1,9 @@
-TIMESTAMP = 1563763077
-SHA256 (gokcehan-lf-r13_GH0.tar.gz) = fe99ed9785fbdc606835139c0c52c854b32b1f1449ba83567a115b21d2e882f4
-SIZE (gokcehan-lf-r13_GH0.tar.gz) = 67064
-SHA256 (mattn-go-runewidth-703b5e6_GH0.tar.gz) = 62c40ad7642da0ad00a3d47887cc7404c09703e580d65c709b2ecb65d721e9c8
-SIZE (mattn-go-runewidth-703b5e6_GH0.tar.gz) = 19884
-SHA256 (nsf-termbox-go-288510b_GH0.tar.gz) = f4f60382dbf63d1e453110e9dd44f8517316c8be3d40f0f101a845c7aae351b1
-SIZE (nsf-termbox-go-288510b_GH0.tar.gz) = 32359
+TIMESTAMP = 1586866415
+SHA256 (gokcehan-lf-r14_GH0.tar.gz) = 5266afa808f4612733af65289024c9eb182864f6a224fdfdf58f405a30c79644
+SIZE (gokcehan-lf-r14_GH0.tar.gz) = 70231
+SHA256 (djherbis-times-v1.2.0_GH0.tar.gz) = d6740b3968043f2ac14bd6a80d69242969feec29d70a7281e1ce54cd4d667a86
+SIZE (djherbis-times-v1.2.0_GH0.tar.gz) = 6941
+SHA256 (doronbehar-termbox-go-8c9470559e05_GH0.tar.gz) = b4dd4385ed0298cebdaa4a373bbfb1e3177a88e32fa074b65d914ef5778f8c74
+SIZE (doronbehar-termbox-go-8c9470559e05_GH0.tar.gz) = 32839
+SHA256 (mattn-go-runewidth-v0.0.4_GH0.tar.gz) = 1973c2de25bc69c3786a00e8118f4d22aa0d040bdfe46c8c8c30419b23e53dfe
+SIZE (mattn-go-runewidth-v0.0.4_GH0.tar.gz) = 19827
