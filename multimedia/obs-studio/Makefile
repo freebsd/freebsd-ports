@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	obs-studio
-DISTVERSION=	25.0.5
+DISTVERSION=	25.0.6
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	e1de4e8a50b5e50f69214d3a4fd39b4b9b03e050.patch:-p1 # obs-studio-25.0.3-fix-compiler-warnings.patch
-PATCHFILES+=	9bd33f6fdebc47d17e3cc1f0122a1f784eebc507.patch:-p1 # https://github.com/obsproject/obs-studio/pull/2663 (Add FreeBSD and Dragonfly support in os_get_executable_path_ptr())
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
