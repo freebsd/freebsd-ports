@@ -74,6 +74,17 @@
   # branding
   VBOX_BRAND_LICENSE_HTML             := $(PATH_ROOT)/doc/License-gpl-2.0.html
   VBOX_BRAND_LICENSE_RTF              := $(PATH_ROOT)/doc/License-gpl-2.0.rtf
+@@ -2538,6 +2534,10 @@ ifeq ($(KBUILD_HOST),win) ## @todo can drop this now, 
+  # This isn't important (yet) on windows, so cook the result until
+  # cygwin is feeling better.
+  VBOX_GCC_VERSION := $(int-add $(int-mul 10000, 3), $(int-mul 100, 3), 3)
++else ifeq($(KBUILD_HOST,freebsd))
++ # At a minimum, we'll be building with GCC 4.2 on FreeBSD. LLVM will always
++ # pose as GCC 4.2 anyways, so this seems safe.
++ VBOX_GCC_VERSION := $(int-add $(int-mul 10000, 4), $(int-mul 100, 2), 0)
+ else
+  # This is kind of bad, the returned string needs to be re-evaluated before use.
+  # The reason for this hack is that the windows kmk_ash cannot deal with $((1+1)).
 @@ -4158,6 +4154,7 @@ ifdef VBOX_WITH_RAW_MODE
   TEMPLATE_VBoxRc_TOOL                = $(VBOX_GCC32_TOOL)
   TEMPLATE_VBoxRc_CXXFLAGS            = -fno-pie -nostdinc -g $(VBOX_GCC_pipe) $(VBOX_GCC_WERR) $(VBOX_GCC_PEDANTIC_CXX) $(VBOX_GCC32_Wno-variadic-macros) -fno-exceptions $(VBOX_GCC_GC_OPT) $(VBOX_GCC_GC_FP) -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -fno-strict-aliasing $(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_fvisibility-hidden) $(VBOX_GCC_fvisibility-inlines-hidden) -fno-rtti $(VBOX_GCC_IPRT_FMT_CHECK)
