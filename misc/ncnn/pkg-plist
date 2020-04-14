@@ -6,6 +6,8 @@ include/ncnn/cpu.h
 include/ncnn/datareader.h
 include/ncnn/gpu.h
 include/ncnn/layer.h
+include/ncnn/layer_shader_type.h
+include/ncnn/layer_shader_type_enum.h
 include/ncnn/layer_type.h
 include/ncnn/layer_type_enum.h
 include/ncnn/mat.h

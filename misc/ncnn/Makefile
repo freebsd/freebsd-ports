@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ncnn
-DISTVERSION=	20200226
-CATEGORIES=	science # machine-learning
+DISTVERSION=	20200413
+CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High-performance neural network inference framework
