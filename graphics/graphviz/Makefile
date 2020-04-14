@@ -23,7 +23,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 
 USES=		cpe pathfix shebangfix gmake bison groff pkgconfig \
 		libtool:keepla autoreconf localbase:ldflags jpeg \
-		compiler:c++11-lang tcl:build
+		tcl:build
 
 GNU_CONFIGURE=	yes
 # sincos is broken on armv6, see ports/220591
@@ -168,6 +168,12 @@ GO_CONFIGURE_ENABLE=		go
 NVTHREADS_LDFLAGS=	-lpthread
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lang
+.endif
 
 # allow the use localized gd ports in Makefile.local or slave ports.
 GD_PORT?=	graphics/gd
