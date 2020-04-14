@@ -2,7 +2,7 @@
 
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.4
+DISTVERSION=	3.5.5
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,7 +36,6 @@ GH_TUPLE=	\
 		geziyor:geziyor:cfb16fe1ee0e:geziyor_geziyor/vendor/github.com/geziyor/geziyor \
 		go-ini:ini:v1.55.0:go_ini_ini/vendor/github.com/go-ini/ini \
 		go-kit:kit:v0.10.0:go_kit_kit/vendor/github.com/go-kit/kit \
-		gobuffalo:envy:v1.9.0:gobuffalo_envy/vendor/github.com/gobuffalo/envy \
 		gobuffalo:logger:v1.0.3:gobuffalo_logger/vendor/github.com/gobuffalo/logger \
 		gobuffalo:packd:v1.0.0:gobuffalo_packd/vendor/github.com/gobuffalo/packd \
 		gobuffalo:packr:v2.8.0:gobuffalo_packr/vendor/github.com/gobuffalo/packr \
@@ -78,7 +77,6 @@ GH_TUPLE=	\
 		rakyll:statik:v0.1.7:rakyll_statik/vendor/github.com/rakyll/statik \
 		rogpeppe:go-internal:v1.5.2:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		sirupsen:logrus:v1.5.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		smartystreets:goconvey:v1.6.4:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
 		spf13:cobra:v0.0.6:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		temoto:robotstxt:v1.1.1:temoto_robotstxt/vendor/github.com/temoto/robotstxt \
