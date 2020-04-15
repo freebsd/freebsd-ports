@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-DISTVERSION=	2.25.2
+DISTVERSION=	2.26.1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -43,7 +43,7 @@ SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		contrib/fast-import/import-zips.py \
 		contrib/remote-helpers/git-remote-bzr \
 		contrib/remote-helpers/git-remote-hg \
-		contrib/credential/netrc/git-credential-netrc \
+		contrib/credential/netrc/git-credential-netrc.perl \
 		contrib/buildsystems/generate contrib/contacts/git-contacts \
 		contrib/svn-fe/svnrdump_sim.py \
 		templates/hooks--fsmonitor-watchman.sample
