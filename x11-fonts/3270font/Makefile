@@ -2,11 +2,11 @@
 
 PORTNAME=	3270font
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.3
+DISTVERSION=	2.0.4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://${PORTNAME}.s3.amazonaws.com/ \
 		https://github.com/rbanffy/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
-DISTNAME=	3270_fonts_2851f93
+DISTNAME=	3270_fonts_ece94f6
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	IBM 3270 font for the nostalgic
@@ -24,6 +24,7 @@ NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${FONTSDIR} "! -name LICENSE.txt"
+	(cd ${WRKSRC} && \
+	${COPYTREE_SHARE} . ${STAGEDIR}${FONTSDIR} "! -name LICENSE.txt")
 
 .include <bsd.port.mk>
