@@ -3,7 +3,7 @@
 
 PORTNAME=	scapy
 PORTVERSION=	2.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -66,10 +66,10 @@ post-patch:
 	@${REINPLACE_CMD} "s,share/man/man1,man/man1," ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} "s,pdflatex,pdftex," ${WRKSRC}/scapy/extlib.py
 	@${REINPLACE_CMD} "s,/usr/share/,${LOCALBASE}/share/," \
-		${WRKSRC}/scapy/data.py \
-		${WRKSRC}/scapy/modules/nmap.py \
-	       	${WRKSRC}/scapy/utils6.py
+		${WRKSRC}/scapy/modules/nmap.py
 	@${REINPLACE_CMD} "s,/etc/,${LOCALBASE}/etc/," \
 		${WRKSRC}/scapy/modules/p0f.py
+	@${REINPLACE_CMD} 's|"use" in line|"use" in line or "nhop" in line|' \
+		${WRKSRC}/scapy/arch/unix.py
 
 .include <bsd.port.post.mk>
