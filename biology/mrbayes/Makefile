@@ -4,6 +4,7 @@
 PORTNAME=	mrbayes
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.7
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	mzaki@e-mail.ne.jp
@@ -40,9 +41,9 @@ FMA_CONFIGURE_OFF=	--disable-fma
 MPICH_LIB_DEPENDS=	libmpich.so:net/mpich
 MPICH_CONFIGURE_ON=	--with-mpi
 MPICH_CONFIGURE_ENV=	CC="${LOCALBASE}/bin/mpicc"
-OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
+OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi3
 OPENMPI_CONFIGURE_ON=	--with-mpi
-OPENMPI_CONFIGURE_ENV=	CC="${LOCALBASE}/mpi/openmpi/bin/mpicc"
+OPENMPI_CONFIGURE_ENV=	CC="${LOCALBASE}/mpi/openmpi3/bin/mpicc"
 SSE_CONFIGURE_OFF=	--disable-sse
 
 .include <bsd.port.mk>
