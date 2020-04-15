@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntopng
-PORTVERSION=	4.0.d20200326
-PORTREVISION=	1
+PORTVERSION=	4.0.d20200414
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -37,7 +36,7 @@ PLIST_SUB=	NTOPNGUSER="${USERS}" NTOPNGROUP="${GROUPS}"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
-GH_TAGNAME=	6d3ebbc
+GH_TAGNAME=	e7f6b4a
 
 CPE_VENDOR=	ntop
 
@@ -50,8 +49,6 @@ NLS_USES=	gettext
 USE_RC_SUBR=	ntopng
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/configure.seed
 	@${REINPLACE_CMD} -e 's/bind(/::bind(/' \
 		${WRKSRC}/src/SyslogCollectorInterface.cpp
 	cd ${WRKSRC} && ${SH} autogen.sh
@@ -60,6 +57,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ntopng
 	${MKDIR} ${STAGEDIR}/var/db/ntopng
 	${INSTALL_SCRIPT} ${WRKDIR}/ntopng-geoip2update.sh ${STAGEDIR}${PREFIX}/bin
-	${RM} ${STAGEDIR}${DATADIR}/httpdocs/misc/ntopng-utils-manage-updates
+	${RM} ${STAGEDIR}${DATADIR}/httpdocs/misc/ntopng-utils-manage-updates \
+		${STAGEDIR}${DATADIR}/httpdocs/misc/ntopng-utils-manage-updates.in
 
 .include <bsd.port.mk>

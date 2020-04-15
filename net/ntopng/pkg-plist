@@ -1962,6 +1962,7 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/captive_portal.lua
 %%DATADIR%%/scripts/lua/change_password.lua
 %%DATADIR%%/scripts/lua/check_recording_data.lua
+%%DATADIR%%/scripts/lua/check_major_release.lua
 %%DATADIR%%/scripts/lua/check_update.lua
 %%DATADIR%%/scripts/lua/code_viewer.lua
 %%DATADIR%%/scripts/lua/container_details.lua
@@ -2029,7 +2030,6 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/get_macs_data.lua
 %%DATADIR%%/scripts/lua/get_network_data.lua
 %%DATADIR%%/scripts/lua/get_networks_data.lua
-%%DATADIR%%/scripts/lua/get_new_blog_posts.lua
 %%DATADIR%%/scripts/lua/get_num_alerts.lua
 %%DATADIR%%/scripts/lua/get_pods_data.lua
 %%DATADIR%%/scripts/lua/get_pool_data.lua
@@ -2060,7 +2060,6 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/hosts_comparison_sankey.lua
 %%DATADIR%%/scripts/lua/hosts_geomap.lua
 %%DATADIR%%/scripts/lua/hosts_stats.lua
-%%DATADIR%%/scripts/lua/hosts_treemap.lua
 %%DATADIR%%/scripts/lua/hotspot-detect.lua
 %%DATADIR%%/scripts/lua/http_servers_stats.lua
 %%DATADIR%%/scripts/lua/if_pkt_distro.lua
@@ -2275,6 +2274,7 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/traffic_extraction_data.lua
 %%DATADIR%%/scripts/lua/traffic_recording_config.lua
 %%DATADIR%%/scripts/lua/unknown_devices.lua
+%%DATADIR%%/scripts/lua/update_blog_posts.lua
 %%DATADIR%%/scripts/lua/update_prefs.lua
 %%DATADIR%%/scripts/lua/user_script_details.lua
 %%DATADIR%%/scripts/lua/user_scripts_overview.lua

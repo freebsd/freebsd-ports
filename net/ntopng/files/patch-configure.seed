@@ -1,4 +1,4 @@
---- configure.seed.orig	2020-03-26 13:52:23 UTC
+--- configure.seed.orig	2020-04-14 13:42:12 UTC
 +++ configure.seed
 @@ -67,33 +67,8 @@ fi
  # On CentOS 6 `git rev-list HEAD --count` does not work
@@ -8,17 +8,17 @@
 +#REVISION=`git log --pretty=oneline | wc -l`
  
 -if test -d "/usr/local/include"; then
--CFLAGS="${CFLAGS} -I/usr/local/include"
--CPPFLAGS="${CPPFLAGS} -I/usr/local/include"
+-  CFLAGS="${CFLAGS} -I/usr/local/include"
+-  CPPFLAGS="${CPPFLAGS} -I/usr/local/include"
 -fi
 -
 -if test -d "/usr/local/lib"; then
--LDFLAGS="${LDFLAGS} -L/usr/local/lib"
+-  LDFLAGS="${LDFLAGS} -L/usr/local/lib"
 -fi
 -
 -if test -d /opt/local/include; then :
--   CFLAGS="${CFLAGS} -I/opt/local/include"
--   CPPFLAGS="${CPPFLAGS} -I/opt/local/include"
+-  CFLAGS="${CFLAGS} -I/opt/local/include"
+-  CPPFLAGS="${CPPFLAGS} -I/opt/local/include"
 -fi
 -
 -if test -d /opt/local/lib; then :
@@ -26,58 +26,41 @@
 -fi
 -
 -if [ test -f /usr/bin/lsb_release ]; then
--   CODENAME=`/usr/bin/lsb_release -c|cut -f 2`
--   if [[ $CODENAME == "wheezy" ]]; then :
--     CPPFLAGS="${CPPFLAGS} -DOLD_NETFILTER_INTERFACE=1"
--   fi
+-  CODENAME=`/usr/bin/lsb_release -c|cut -f 2`
+-  if [[ $CODENAME == "wheezy" ]]; then :
+-    CPPFLAGS="${CPPFLAGS} -DOLD_NETFILTER_INTERFACE=1"
+-  fi
 -fi
 -
  SHORT_MACHINE=`uname -m | cut -b1-3`
  
  GIT_RELEASE="@GIT_RELEASE@"
-@@ -134,7 +109,7 @@ AC_ARG_WITH(ndpi-includes,
- PKG_CHECK_MODULES([NDPI], [libndpi >= 2.0], [
-    NDPI_INC=`echo $NDPI_CFLAGS | sed -e "s/[ ]*$//"`
-    # Use static libndpi library as building against the dynamic library fails
--   NDPI_LIB="-Wl,-Bstatic $NDPI_LIBS -Wl,-Bdynamic"
-+   NDPI_LIB="$NDPI_LIBS"
-    NDPI_LIB_DEP=
-    ], [
-       AC_MSG_CHECKING(for nDPI source)
-@@ -202,8 +177,15 @@ else
-    SSL_INC="-I/usr/local/opt/openssl/include"
-    SSL_LIB="-L/usr/local/opt/openssl/lib -lssl"
-  else
--   echo "Please install openssl-dev(el) package prerequisite"
--   exit -1
+@@ -201,6 +176,11 @@ else
+     AC_DEFINE_UNQUOTED(NO_SSL_DL, 1, [has openssl])
+     SSL_INC="-I/usr/local/opt/openssl/include"
+     SSL_LIB="-L/usr/local/opt/openssl/lib -lssl"
 +  dnl Workaround for FreeBSD
-+  if test -f "/usr/lib/libssl.so"; then
++  elif test -f "/usr/lib/libssl.so"; then
 +    AC_DEFINE_UNQUOTED(NO_SSL_DL, 1, [has openssl])
 +    SSL_INC="-I/usr/include"
 +    SSL_LIB="-L/usr/lib -lssl"
-+  else
-+    echo "Please install openssl-dev(el) package prerequisite"
-+    exit -1
-+  fi
-  fi
- fi
- 
-@@ -607,18 +589,6 @@ GMAKE=`which gmake`
- if test x$GMAKE = x
- then
- 	GMAKE="make"
+   else
+     echo "Please install openssl-dev(el) package prerequisite"
+     exit -1
+@@ -602,16 +582,6 @@ AC_DEFINE_UNQUOTED(_CRT_SECURE_NO_WARNINGS, 1, [Disabl
+ GMAKE=`which gmake`
+ if test x$GMAKE = x; then
+   GMAKE="make"
 -fi
 -
 -GIT=`which git`
--if test x$GIT = x
--then
--	AC_MSG_RESULT(FATAL ERROR: git is not installed on your host)
+-if test x$GIT = x; then
+-  AC_MSG_RESULT(FATAL ERROR: git is not installed on your host)
 -fi
 -
 -WGET=`which wget`
--if test x$WGET = x
--then
--	AC_MSG_RESULT(ERROR. wget is not installed on your host: you cannot download GeoIP data)
+-if test x$WGET = x; then
+-  AC_MSG_RESULT(ERROR. wget is not installed on your host: you cannot download GeoIP data)
  fi
  
  umask 002
