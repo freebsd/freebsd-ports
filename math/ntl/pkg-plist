@@ -115,8 +115,8 @@ include/NTL/version.h
 include/NTL/xdouble.h
 lib/libntl.a
 lib/libntl.so
-lib/libntl.so.42
-lib/libntl.so.42.0.1
+lib/libntl.so.43
+lib/libntl.so.43.0.1
 %%NTLDOCS%%/BasicThreadPool.cpp.html
 %%NTLDOCS%%/BasicThreadPool.txt
 %%NTLDOCS%%/GF2.cpp.html
