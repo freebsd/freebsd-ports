@@ -1,0 +1,17 @@
+TIMESTAMP = 1586972142
+SHA256 (surge-synthesizer-surge-release_1.6.6-58-g3dbd1be_GH0.tar.gz) = bcd54076adac3ae1d3d13e9b068b1cece0b262b0c45323fed52b69da2ee53cd9
+SIZE (surge-synthesizer-surge-release_1.6.6-58-g3dbd1be_GH0.tar.gz) = 79161919
+SHA256 (surge-synthesizer-vst3sdk-10287bc37bbb34324b8097369e2ec4eb73a51d65_GH0.tar.gz) = b1eb4d7a5fc714ebb058c77bf7250254ee310a6ffd2b77ef702a12ab4bf9ec10
+SIZE (surge-synthesizer-vst3sdk-10287bc37bbb34324b8097369e2ec4eb73a51d65_GH0.tar.gz) = 266390
+SHA256 (surge-synthesizer-vstgui-313faee9db026b1d6254c91d8650e7da58e005a5_GH0.tar.gz) = 797051fe2e28b096c9a890f10eca44440eae4da58b83227595db5bc871c1e57d
+SIZE (surge-synthesizer-vstgui-313faee9db026b1d6254c91d8650e7da58e005a5_GH0.tar.gz) = 1914445
+SHA256 (craigsapp-midifile-41e450bcd5ba1c0419f69664944434b0abf9d7ba_GH0.tar.gz) = 6723c1be730dd73ba1c2903e59a044d26b702c07bec6f567d86f1ee77ab8607e
+SIZE (craigsapp-midifile-41e450bcd5ba1c0419f69664944434b0abf9d7ba_GH0.tar.gz) = 147607
+SHA256 (steinbergmedia-vst3_base-37dbdb6ff7af29e518877f57f14050594164a0d6_GH0.tar.gz) = 1826460d36c2c6a461d29b1b8db9a142c5a621038d15e24812c46343a26dee7a
+SIZE (steinbergmedia-vst3_base-37dbdb6ff7af29e518877f57f14050594164a0d6_GH0.tar.gz) = 61067
+SHA256 (steinbergmedia-vst3_cmake-f7ae22417019aa355de6f7ec46ecf890d3c2a76f_GH0.tar.gz) = bdfba137d724c69a4ee0852a82a94008feca0d4b1e157ce8559321cdebdb0e86
+SIZE (steinbergmedia-vst3_cmake-f7ae22417019aa355de6f7ec46ecf890d3c2a76f_GH0.tar.gz) = 13355
+SHA256 (steinbergmedia-vst3_pluginterfaces-6c6bb30d18c3d5a553e55aa74afc5d146571be0a_GH0.tar.gz) = 67f97965c5080e8031192504d90df43b3225b71abf678283569b1f30d2ece3f3
+SIZE (steinbergmedia-vst3_pluginterfaces-6c6bb30d18c3d5a553e55aa74afc5d146571be0a_GH0.tar.gz) = 84830
+SHA256 (steinbergmedia-vst3_public_sdk-ced72c00d5c1365a4cca16cdbfb871be2496848b_GH0.tar.gz) = 38f589ce1a430cc3d93671e28337968b6d8998eda83216943b5546136edd3e47
+SIZE (steinbergmedia-vst3_public_sdk-ced72c00d5c1365a4cca16cdbfb871be2496848b_GH0.tar.gz) = 5861222

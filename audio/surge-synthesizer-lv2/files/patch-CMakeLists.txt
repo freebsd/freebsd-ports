@@ -1,0 +1,27 @@
+--- CMakeLists.txt.orig	2020-04-15 15:01:57 UTC
++++ CMakeLists.txt
+@@ -334,7 +334,6 @@ elseif( UNIX AND NOT APPLE )
+ 
+   set(OS_LINK_LIBRARIES
+      pthread
+-     stdc++fs
+      gcc_s
+      gcc
+      dl
+@@ -689,7 +688,7 @@ if( BUILD_LV2 )
+       WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+       COMMAND echo "Packaging up LV2 component"
+       COMMAND mkdir -p products/Surge.lv2 
+-      COMMAND cp build/libsurge-lv2.so products/Surge.lv2/Surge.so
++      COMMAND cp ../.build/libsurge-lv2.so products/Surge.lv2/Surge.so
+       COMMAND python scripts/linux/generate-lv2-ttl.py products/Surge.lv2/Surge.so 
+       )
+ 
+@@ -759,7 +758,6 @@ if( BUILD_HEADLESS )
+     target_sources( surge-headless PUBLIC src/linux/ConfigurationXml.S )
+     target_link_libraries(surge-headless
+       PRIVATE
+-      stdc++fs
+       Threads::Threads
+       )
+   endif()

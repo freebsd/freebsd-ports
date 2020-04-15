@@ -770,6 +770,7 @@
     SUBDIR += stymulator
     SUBDIR += suil
     SUBDIR += supercollider
+    SUBDIR += surge-synthesizer-lv2
     SUBDIR += sweep
     SUBDIR += swh-lv2
     SUBDIR += swhplugins
