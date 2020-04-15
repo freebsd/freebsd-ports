@@ -16,7 +16,7 @@
  #include "slurm/slurm.h"
  #include "slurm/slurm_errno.h"
  #include "src/common/log.h"
-@@ -179,6 +188,52 @@ proctrack_p_wait(uint64_t cont_id)
+@@ -179,6 +188,55 @@ proctrack_p_wait(uint64_t cont_id)
  	return SLURM_SUCCESS;
  }
  
@@ -47,7 +47,10 @@
 +	proc_list = procstat_getprocs(proc_info, KERN_PROC_PGRP, cont_id,
 +				      (unsigned int *) &pid_count);
 +	if (procstat_err)
++	{
++		err_set_file(NULL);
 +		fclose(procstat_err);
++	}
 +
 +	if (pid_count > 0) {
 +		xrecalloc(pid_array, sizeof(pid_t), pid_count);
@@ -69,7 +72,7 @@
  extern int
  proctrack_p_get_pids(uint64_t cont_id, pid_t **pids, int *npids)
  {
-@@ -241,3 +296,4 @@ fini:	*pids  = pid_array;
+@@ -241,3 +299,4 @@ fini:	*pids  = pid_array;
  	*npids = pid_count;
  	return rc;
  }
