@@ -65,7 +65,6 @@ include/kodi/platform/android/System.h
 include/kodi/tools/DllHelper.h
 include/kodi/versions.h
 include/kodi/xbmc_addon_dll.h
-include/kodi/xbmc_addon_types.h
 include/kodi/xbmc_epg_types.h
 include/kodi/xbmc_pvr_dll.h
 include/kodi/xbmc_pvr_types.h
