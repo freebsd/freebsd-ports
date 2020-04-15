@@ -2,37 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	rshim-user-space
-DISTVERSIONPREFIX=	v
-DISTVERSION=		1.0-alpha.2
-
-CATEGORIES=	sysutils
+DISTVERSIONPREFIX=	rshim-
+DISTVERSION=		2.0.3
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Userspace daemon for the Mellanox BlueField SoC
 
 LICENSE=	BSD3CLAUSE
 
+CATEGORIES=	sysutils
+
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libpci.so:devel/libpci \
 		libpciaccess.so:devel/libpciaccess
 
-USES=		gmake tar:bzip2
+USES=		autoreconf localbase gmake tar:bzip2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Mellanox
 
-OPTIONS_DEFINE=	DEBUG
-
-DEBUG_DESC=	Build with debugging support
-DEBUG_MAKE_ARGS=HAVE_DEBUG=YES
-
-PLIST_FILES=	sbin/bfrshim
-
-MAKE_ARGS+=	CC="${CC}" \
-		PREFIX="${PREFIX}" \
-		LOCALBASE="${LOCALBASE}"
-
-MAKEFILE=	Makefile.freebsd
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.options.mk>
 
