@@ -526,6 +526,7 @@
     SUBDIR += mapserver
     SUBDIR += mapyrus
     SUBDIR += megapov
+    SUBDIR += meh
     SUBDIR += mesa-demos
     SUBDIR += mesa-dri
     SUBDIR += mesa-libs

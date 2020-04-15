@@ -1,0 +1,20 @@
+meh is a small, simple, super fast image viewer using raw XLib. It is similar
+to feh, but faster and simpler.
+
+meh can use ImageMagick’s convert to view almost 200 file formats, though it is
+slower for these formats. Built in formats are JPEG, PNG, BMP, and netpbm.
+
+Features:
+- Fast
+- Tiny
+- Fast JPEG, PNG, GIF and BMP support
+- Fast netpbm support (.ppm, .pgm, .pbm, .pnm)
+- ImageMagick support by calling convert
+    - All ImageMagick formats (almost 200)
+    - This allows limited support for PDF’s and SVG’s
+- Scales images to window size
+- Preserves aspect ratio (either via EWMH hints or by padding the window)
+- XSHM Support
+- Minimal dependencies (Xlib, libjpeg, libpng, giflib)
+
+WWW: https://www.johnhawthorn.com/meh/
