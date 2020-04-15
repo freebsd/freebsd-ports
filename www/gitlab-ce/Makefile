@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	12.9.2
-PORTREVISION=	1
+PORTVERSION=	12.9.3
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # which makes maintaining this long list much easier!
 MY_DEPENDS=	git>=2.22.2:devel/git \
 	gitlab-shell>=12.0.0:devel/gitlab-shell \
-	gitlab-workhorse>=8.25.1:www/gitlab-workhorse \
+	gitlab-workhorse>=8.25.2:www/gitlab-workhorse \
 	gitaly>=${PORTVERSION}:devel/gitaly \
 	gitlab-pages>=1.17.0:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
@@ -118,7 +118,7 @@ MY_DEPENDS=	git>=2.22.2:devel/git \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
 	rubygem-diffy>=3.3<4:textproc/rubygem-diffy \
 	rubygem-diff_match_patch>=0.1.0<0.2.0:textproc/rubygem-diff_match_patch \
-	rubygem-rack20>=2.0.7<2.1.0,3:www/rubygem-rack20 \
+	rubygem-rack20>=2.0.9<2.1.0,3:www/rubygem-rack20 \
 	rubygem-unicorn>=5.4.1<5.5.0:www/rubygem-unicorn \
 	rubygem-unicorn-worker-killer>=0.4.4<0.5.0:www/rubygem-unicorn-worker-killer \
 	rubygem-gitlab-puma>=4.3.3.g.2:www/rubygem-gitlab-puma \
@@ -245,7 +245,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	ac5568eb5d8cef68ced7c70729cc47f20d0a84b9
+GL_COMMIT=	571e31b8362a6903c97c5d42f2211151941a7cd3
 
 USERS=	git
 GROUPS=	git

@@ -9003,6 +9003,7 @@
 %%WWWDIR%%/db/post_migrate/20200203104214_services_remove_temporary_index_on_project_id.rb
 %%WWWDIR%%/db/post_migrate/20200204113223_schedule_recalculate_project_authorizations.rb
 %%WWWDIR%%/db/post_migrate/20200204113224_schedule_recalculate_project_authorizations_second_run.rb
+%%WWWDIR%%/db/post_migrate/20200204113225_schedule_recalculate_project_authorizations_third_run.rb
 %%WWWDIR%%/db/post_migrate/20200206091544_migrate_create_commit_signature_worker_sidekiq_queue.rb
 %%WWWDIR%%/db/post_migrate/20200206135203_udpate_index_ci_builds_on_name_for_security_products.rb
 %%WWWDIR%%/db/post_migrate/20200207184023_add_temporary_index_to_promotion_notes.rb
@@ -20394,6 +20395,7 @@
 %%WWWDIR%%/spec/migrations/schedule_populate_merge_request_assignees_table_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_recalculate_project_authorizations_second_run_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_recalculate_project_authorizations_spec.rb
+%%WWWDIR%%/spec/migrations/schedule_recalculate_project_authorizations_third_run_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_runners_token_encryption_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_set_confidential_note_events_on_webhooks_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_stages_index_migration_spec.rb
@@ -21868,6 +21870,7 @@
 %%WWWDIR%%/spec/support/protected_branch_helpers.rb
 %%WWWDIR%%/spec/support/protected_tag_helpers.rb
 %%WWWDIR%%/spec/support/protected_tags/access_control_ce_shared_examples.rb
+%%WWWDIR%%/spec/support/rails/test_case_patch.rb
 %%WWWDIR%%/spec/support/redis.rb
 %%WWWDIR%%/spec/support/redis/redis_helpers.rb
 %%WWWDIR%%/spec/support/redis/redis_shared_examples.rb
