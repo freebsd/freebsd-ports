@@ -3,7 +3,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	6.2.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	6
@@ -114,8 +114,8 @@ CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=ON
 .endif
 
 .if ${PORT_OPTIONS:MMPI}
-LIB_DEPENDS+=	libmpi.so:net/openmpi
-CMAKE_ARGS+=	-DMPIEXEC=${LOCALBASE}/mpi/openmpi/bin/mpiexec
+LIB_DEPENDS+=	libmpi.so:net/openmpi3
+CMAKE_ARGS+=	-DMPIEXEC=${LOCALBASE}/mpi/openmpi3/bin/mpiexec
 PLIST_SUB+=	MPI=""
 .else
 PLIST_SUB+=	MPI="@comment "
