@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: sshout
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# To enable this service, add
+# sshout_enable="<bool>"	# Set to NO by default.
+#				# Set it to YES to enable sshout.
+# into /etc/rc.conf.local or /etc/rc.conf
+
+. /etc/rc.subr
+
+name=sshout
+rcvar=sshout_enable
+
+load_rc_config $name
+
+: ${sshout_enable:="NO"}
+
+sshout_user=sshout
+sshout_home="`getent passwd sshout | cut -d : -f 6`"
+[ -z "$sshout_home" ] && exit 1
+sshout_env="HOME=$sshout_home"
+sshout_chdir="$sshout_home"
+procname=%%PREFIX%%/libexec/sshoutd
+pidfile="$sshout_home/sshoutd.pid"
+command=/usr/sbin/daemon
+command_args="-f $procname"
+stop_postcmd="rm -f $pidfile"
+
+run_rc_command "$1"

@@ -210,7 +210,7 @@ meta1q:*:261:261::0:0:MeTA1 QMGR:/nonexistent:/usr/sbin/nologin
 meta1c:*:262:262::0:0:MeTA1 SMTPC:/nonexistent:/usr/sbin/nologin
 meta1m:*:263:263::0:0:MeTA1 misc:/nonexistent:/usr/sbin/nologin
 meta1:*:264:264::0:0:MeTA1 other:/nonexistent:/usr/sbin/nologin
-# free: 265
+sshout:*:265:265::0:0:Secure Shout Host Oriented Unified Talk:/var/db/sshout:/usr/local/libexec/sshoutd
 # free: 266
 # free: 267
 # free: 268

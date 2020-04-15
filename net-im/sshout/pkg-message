@@ -1,0 +1,8 @@
+#### NOTES OF SSHOUT
+In order to start sshout service you need some more configuration:
+
+# sysrc -f /etc/rc.conf sshout_enable="YES"
+
+If you installed SSHOUT for the first time, use sshoutcfg(8) to add users.
+You must have SSH server running and accepting public key authentication.
+#### END

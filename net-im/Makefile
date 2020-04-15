@@ -156,6 +156,7 @@
     SUBDIR += slack-term
     SUBDIR += spectral
     SUBDIR += ssh-chat
+    SUBDIR += sshout
     SUBDIR += talkatu
     SUBDIR += teamwords
     SUBDIR += telegram
