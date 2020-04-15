@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webcamd
-PORTVERSION=	5.3.7.1
-PORTREVISION=	2
+PORTVERSION=	5.7.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org/distfiles/
@@ -14,7 +13,6 @@ COMMENT=	Port of Linux USB webcam and DVB drivers into userspace
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	v4l_compat>=1.0.20100321:multimedia/v4l_compat
-LIB_DEPENDS=	libv4l1.so:multimedia/libv4l
 
 USES=		pkgconfig tar:bzip2 uidfix
 MAKE_ARGS=	LIBDIR="${LOCALBASE}/lib" HAVE_CUSE="YES"
