@@ -26,7 +26,6 @@ man/man1/xminicom.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/minicom.mo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/doc/Announce-1.78
 %%PORTDOCS%%%%DOCSDIR%%/doc/Announce-1.82
