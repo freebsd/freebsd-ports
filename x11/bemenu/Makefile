@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bemenu
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tobik@FreeBSD.org
