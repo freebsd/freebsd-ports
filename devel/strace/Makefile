@@ -25,6 +25,12 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	AUTHORS COPYRIGHT CREDITS ChangeLog NEWS PORTING \
 		README README-freebsd README-svr4 TODO
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1300088
+BROKEN=	Uses procfs-based process debugging
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/strace ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/strace-graph ${STAGEDIR}${PREFIX}/bin
@@ -34,4 +40,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
