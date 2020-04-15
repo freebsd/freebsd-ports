@@ -3,7 +3,7 @@
 PORTNAME=	android-tools-fastboot
 DISTVERSIONPREFIX=	platform-tools-
 DISTVERSION?=	29.0.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel sysutils
 MASTER_SITES=	https://salsa.debian.org/android-tools-team/android-tools/raw/706e754/debian/:manpage
 DISTFILES=	fastboot.1:manpage

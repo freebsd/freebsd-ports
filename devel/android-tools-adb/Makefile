@@ -3,7 +3,7 @@
 PORTNAME=	android-tools-adb
 DISTVERSIONPREFIX=	platform-tools-
 DISTVERSION?=	29.0.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel comms
 
 MAINTAINER=	jbeich@FreeBSD.org
