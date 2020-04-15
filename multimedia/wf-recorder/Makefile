@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wf-recorder
-DISTVERSION=	0.2
+DISTVERSION=	0.2.1
 CATEGORIES=	multimedia wayland
 MASTER_SITES=	https://github.com/ammen99/wf-recorder/releases/download/v${DISTVERSION}/
 
