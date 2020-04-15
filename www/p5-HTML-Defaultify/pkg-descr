@@ -3,5 +3,5 @@ other tools that fill a similar niche, this module can handle any existing
 HTML page; this approach allows a clean separation of HTML development from
 Perl program development.
 
-WWW: http://www.jmarshall.com/tools/defaultify/
+WWW: https://www.jmarshall.com/tools/defaultify/
 WWW: https://metacpan.org/release/HTML-Defaultify
