@@ -1,0 +1,7 @@
+GCTA (Genome-wide Complex Trait Analysis) was originally designed to estimate
+the proportion of phenotypic variance explained by genome- or chromosome-wide
+SNPs for complex traits (the GREML method), and has subsequently extended for
+many other analyses to better understand the genetic architecture of complex
+traits.
+
+WWW: http://cnsgenomics.com/software/gcta/index.html

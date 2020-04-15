@@ -1,0 +1,59 @@
+--- Makefile.orig	2020-04-15 01:43:44 UTC
++++ Makefile
+@@ -6,21 +6,27 @@
+ # ---------------------------------------------------------------------
+ 
+ # Directory of the target
+-OUTPUT = gcta64
++OUTPUT = gcta
+ 
+ # Compiler
+-CXX = g++
++CXX ?= g++
+ 
+ # EIGEN library
+-EIGEN_PATH = ../../../Lib/eigen
++EIGEN_PATH ?= ../../../Lib/eigen
+ 
+ # Intel MKL library
+-MKL_PATH = /opt/intel/mkl
++MKL_PATH ?= /opt/intel/mkl
+ 
+ # Compiler flags
+-CXXFLAGS = -w -O3 -m64 -static -fopenmp -I $(EIGEN_PATH) -DEIGEN_NO_DEBUG -I $(MKL_PATH)/include
+-LIB += -static -lz -Wl,--start-group  $(MKL_PATH)/lib/intel64/libmkl_intel_lp64.a $(MKL_PATH)/lib/intel64/libmkl_gnu_thread.a $(MKL_PATH)/lib/intel64/libmkl_core.a -Wl,--end-group -lpthread -lm -ldl
++CXXFLAGS ?= -w -O3 -m64 -static -fopenmp -I $(EIGEN_PATH) -DEIGEN_NO_DEBUG -I $(MKL_PATH)/include
++LDFLAGS += -lz -Wl,--start-group -lpthread -lm -ldl
+ 
++MKDIR ?=	mkdir
++DESTDIR ?=	.
++PREFIX ?=	/usr/local
++INSTALL ?=	install
++STRIP ?=	strip
++
+ HDR += CommFunc.h \
+            cdflib.h \
+            dcdflib.h \
+@@ -58,7 +64,7 @@ OBJ = $(SRC:.cpp=.o)
+ all : $(OUTPUT) 
+ 
+ $(OUTPUT) :
+-	$(CXX) $(CXXFLAGS) -o $(OUTPUT) $(OBJ) $(LIB) 
++	$(CXX) $(CXXFLAGS) -o $(OUTPUT) $(OBJ) $(LDFLAGS) 
+ 
+ $(OBJ) : $(HDR)
+ 
+@@ -69,6 +75,13 @@ $(OBJ) : $(HDR)
+ $(OUTPUT) : $(OBJ)
+ 
+ FORCE:
++
++install:
++	${MKDIR} -p ${DESTDIR}${PREFIX}/bin
++	${INSTALL} -c ${OUTPUT} ${DESTDIR}${PREFIX}/bin
++
++install-strip: install
++	${STRIP} ${DESTDIR}${PREFIX}/bin/${OUTPUT}
+ 
+ clean: 
+ 	rm -f *.o

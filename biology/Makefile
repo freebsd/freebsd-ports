@@ -43,6 +43,7 @@
     SUBDIR += freebayes
     SUBDIR += garlic
     SUBDIR += gatk
+    SUBDIR += gcta
     SUBDIR += gemma
     SUBDIR += gff2ps
     SUBDIR += gmap
