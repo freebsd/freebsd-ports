@@ -34,13 +34,7 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 # All GCC versions supported by the ports framework.  Keep them in
 # ascending order and in sync with the table below. 
 # When updating this, keep Mk/bsd.default-versions.mk in sync.
-GCCVERSIONS=	040800 070000 080000 090000
-
-# The right side is the version as USE_GCC uses it.
-_GCCVERSION_040800_V=	4.8
-_GCCVERSION_070000_V=	7
-_GCCVERSION_080000_V=	8
-_GCCVERSION_090000_V=	9
+GCCVERSIONS=	4.8 7 8 9
 
 # No configurable parts below this. ####################################
 #
@@ -72,9 +66,9 @@ _GCC_ORLATER:=	true
 # and save that into _GCC_FOUND.  In parallel, check if USE_GCC refers
 # to a valid version to begin with.
 .for v in ${GCCVERSIONS}
-. if ${_USE_GCC}==${_GCCVERSION_${v}_V}
+. if ${_USE_GCC} == ${v}
 _GCCVERSION_OKAY=	true
-.  if exists(${LOCALBASE}/bin/gcc${_GCCVERSION_${v}_V:S/.//})
+.  if exists(${LOCALBASE}/bin/gcc${v:S/.//})
 _GCC_FOUND:=		${_USE_GCC}
 .  endif
 . endif
