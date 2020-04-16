@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	edumips64
-DISTVERSION=	1.2.6
+DISTVERSION=	1.2.7.1
 CATEGORIES=	emulators java
 MASTER_SITES=	https://github.com/lupino3/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTFILES=	${DISTNAME}.jar
