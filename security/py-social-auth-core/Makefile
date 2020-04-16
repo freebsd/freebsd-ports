@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	social-auth-core
-DISTVERSION=	3.2.0
+DISTVERSION=	3.3.3
 CATEGORIES=	security www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # TODO Need to add saml support, requires porting python-saml and python3-saml.
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=2.1.1:security/py-cryptography@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=1.4:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedxml>=0.5.0:devel/py-defusedxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-jose>=3.0.0:security/py-python-jose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python${PYTHON_MAJOR_VER:M3}-openid>=2.2.5:security/py-python${PYTHON_MAJOR_VER:M3}-openid@${PY_FLAVOR} \
