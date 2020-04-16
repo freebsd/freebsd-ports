@@ -3,6 +3,7 @@
 
 PORTNAME=	nss
 PORTVERSION=	3.51.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
@@ -57,7 +58,7 @@ BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
 .endif
 
 .if ${ARCH} == powerpc64
-USE_GCC=	yes
+USES+=		compiler:c++11-lang # -mcrypto -mvsx
 .else
 MAKE_ENV+=	NSS_DISABLE_ALTIVEC=1
 .endif
