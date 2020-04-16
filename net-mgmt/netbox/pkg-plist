@@ -317,6 +317,7 @@
 %%DATADIR%%/extras/management/commands/renaturalize.py
 %%DATADIR%%/extras/management/commands/rqworker.py
 %%DATADIR%%/extras/management/commands/runreport.py
+%%DATADIR%%/extras/management/commands/webhook_receiver.py
 %%DATADIR%%/extras/middleware.py
 %%DATADIR%%/extras/migrations/0001_initial.py
 %%DATADIR%%/extras/migrations/0001_initial_squashed_0013_objectchange.py
