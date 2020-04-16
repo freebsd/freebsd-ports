@@ -2,6 +2,7 @@
 @comment %%WWWDIR%%/.github/ISSUE_TEMPLATE/Feature_request.md
 @comment %%WWWDIR%%/.github/pull_request_template.md
 @comment %%WWWDIR%%/.github/stale.yml
+@comment %%WWWDIR%%/.nextcloudignore
 @comment %%WWWDIR%%/.tx/config
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/LICENSE
@@ -21,22 +22,6 @@
 %%WWWDIR%%/css/icons.scss
 %%WWWDIR%%/css/print.scss
 %%WWWDIR%%/css/style.scss
-%%WWWDIR%%/docs/API-Nextcloud.md
-%%WWWDIR%%/docs/API.md
-%%WWWDIR%%/docs/Markdown.md
-%%WWWDIR%%/docs/Release.md
-%%WWWDIR%%/docs/User_documentation_en.md
-%%WWWDIR%%/docs/extra.css
-%%WWWDIR%%/docs/index.md
-%%WWWDIR%%/docs/resources/er-diagram.dia
-%%WWWDIR%%/docs/resources/er-diagram.jpg
-%%WWWDIR%%/docs/resources/gifs/EN_archive.gif
-%%WWWDIR%%/docs/resources/gifs/EN_create_board.gif
-%%WWWDIR%%/docs/resources/gifs/EN_create_columns.gif
-%%WWWDIR%%/docs/resources/gifs/EN_create_task.gif
-%%WWWDIR%%/docs/resources/gifs/EN_put_infos.gif
-%%WWWDIR%%/docs/resources/gifs/EN_put_infos_2.gif
-%%WWWDIR%%/docs/structure.md
 %%WWWDIR%%/img/add-white.svg
 %%WWWDIR%%/img/archive-white.svg
 %%WWWDIR%%/img/archive.svg
@@ -1074,12 +1059,17 @@
 %%WWWDIR%%/vendor/phpdocumentor/reflection-common/src/Location.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-common/src/Project.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-common/src/ProjectFactory.php
-%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/.coveralls.yml
+%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/.dependabot/config.yml
+%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/.github/workflows/push.yml
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/LICENSE
+%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/Makefile
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/README.md
-%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/appveyor.yml
+%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/composer-require-config.json
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/composer.json
-%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/easy-coding-standard.neon
+%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/phive.xml
+%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/phpcs.xml.dist
+%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/phpstan.neon
+%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/psalm.xml
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Description.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/DescriptionFactory.php
@@ -1094,11 +1084,11 @@
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Deprecated.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Example.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Factory/StaticMethod.php
-%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Factory/Strategy.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter/AlignFormatter.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter/PassthroughFormatter.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Generic.php
+%%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/InvalidTag.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Link.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Method.php
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Param.php
@@ -1121,8 +1111,8 @@
 %%WWWDIR%%/vendor/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php
 %%WWWDIR%%/vendor/phpdocumentor/type-resolver/.github/workflows/push.yml
 %%WWWDIR%%/vendor/phpdocumentor/type-resolver/LICENSE
+%%WWWDIR%%/vendor/phpdocumentor/type-resolver/Makefile
 %%WWWDIR%%/vendor/phpdocumentor/type-resolver/README.md
-%%WWWDIR%%/vendor/phpdocumentor/type-resolver/appveyor.yml
 %%WWWDIR%%/vendor/phpdocumentor/type-resolver/composer-require-config.json
 %%WWWDIR%%/vendor/phpdocumentor/type-resolver/composer.json
 %%WWWDIR%%/vendor/phpdocumentor/type-resolver/composer.lock
@@ -1137,6 +1127,7 @@
 %%WWWDIR%%/vendor/phpdocumentor/type-resolver/src/Types/Array_.php
 %%WWWDIR%%/vendor/phpdocumentor/type-resolver/src/Types/Boolean.php
 %%WWWDIR%%/vendor/phpdocumentor/type-resolver/src/Types/Callable_.php
+%%WWWDIR%%/vendor/phpdocumentor/type-resolver/src/Types/ClassString.php
 %%WWWDIR%%/vendor/phpdocumentor/type-resolver/src/Types/Collection.php
 %%WWWDIR%%/vendor/phpdocumentor/type-resolver/src/Types/Compound.php
 %%WWWDIR%%/vendor/phpdocumentor/type-resolver/src/Types/Context.php
@@ -1487,7 +1478,6 @@
 %%WWWDIR%%/vendor/phpunit/phpunit/.github/ISSUE_TEMPLATE/BACKWARD_COMPATIBILITY_BREAK.md
 %%WWWDIR%%/vendor/phpunit/phpunit/.github/ISSUE_TEMPLATE/BUG.md
 %%WWWDIR%%/vendor/phpunit/phpunit/.github/ISSUE_TEMPLATE/FEATURE_REQUEST.md
-%%WWWDIR%%/vendor/phpunit/phpunit/.github/ISSUE_TEMPLATE/SUPPORT_QUESTION.md
 %%WWWDIR%%/vendor/phpunit/phpunit/.github/PULL_REQUEST_TEMPLATE/FAILING_TEST.md
 %%WWWDIR%%/vendor/phpunit/phpunit/.github/PULL_REQUEST_TEMPLATE/FIX.md
 %%WWWDIR%%/vendor/phpunit/phpunit/.github/PULL_REQUEST_TEMPLATE/IMPROVEMENT.md
@@ -1499,7 +1489,6 @@
 %%WWWDIR%%/vendor/phpunit/phpunit/.psalm/baseline.xml
 %%WWWDIR%%/vendor/phpunit/phpunit/.psalm/config.xml
 %%WWWDIR%%/vendor/phpunit/phpunit/.psalm/static-analysis.xml
-%%WWWDIR%%/vendor/phpunit/phpunit/.travis.yml
 %%WWWDIR%%/vendor/phpunit/phpunit/ChangeLog-8.5.md
 %%WWWDIR%%/vendor/phpunit/phpunit/LICENSE
 %%WWWDIR%%/vendor/phpunit/phpunit/README.md
@@ -1735,6 +1724,7 @@
 %%WWWDIR%%/vendor/phpunit/phpunit/src/Util/TestDox/XmlResultPrinter.php
 %%WWWDIR%%/vendor/phpunit/phpunit/src/Util/TextTestListRenderer.php
 %%WWWDIR%%/vendor/phpunit/phpunit/src/Util/Type.php
+%%WWWDIR%%/vendor/phpunit/phpunit/src/Util/VersionComparisonOperator.php
 %%WWWDIR%%/vendor/phpunit/phpunit/src/Util/XdebugFilterScriptGenerator.php
 %%WWWDIR%%/vendor/phpunit/phpunit/src/Util/Xml.php
 %%WWWDIR%%/vendor/phpunit/phpunit/src/Util/XmlTestListRenderer.php
@@ -1965,6 +1955,7 @@
 %%WWWDIR%%/vendor/phpunit/phpunit/tests/_files/configuration_xinclude.xml
 %%WWWDIR%%/vendor/phpunit/phpunit/tests/_files/expectedFileFormat.txt
 %%WWWDIR%%/vendor/phpunit/phpunit/tests/_files/foo.xml
+%%WWWDIR%%/vendor/phpunit/phpunit/tests/_files/fooUppercase.xml
 %%WWWDIR%%/vendor/phpunit/phpunit/tests/_files/mock-object/AnotherClassUsingConfigurableMethods.php
 %%WWWDIR%%/vendor/phpunit/phpunit/tests/_files/mock-object/ChildClass.php
 %%WWWDIR%%/vendor/phpunit/phpunit/tests/_files/mock-object/ClassUsingConfigurableMethods.php
@@ -2137,6 +2128,7 @@
 %%WWWDIR%%/vendor/phpunit/phpunit/tests/end-to-end/mock-objects/generator/3530.phpt
 %%WWWDIR%%/vendor/phpunit/phpunit/tests/end-to-end/mock-objects/generator/3967.phpt
 %%WWWDIR%%/vendor/phpunit/phpunit/tests/end-to-end/mock-objects/generator/397.phpt
+%%WWWDIR%%/vendor/phpunit/phpunit/tests/end-to-end/mock-objects/generator/4139.phpt
 %%WWWDIR%%/vendor/phpunit/phpunit/tests/end-to-end/mock-objects/generator/abstract_class.phpt
 %%WWWDIR%%/vendor/phpunit/phpunit/tests/end-to-end/mock-objects/generator/class.phpt
 %%WWWDIR%%/vendor/phpunit/phpunit/tests/end-to-end/mock-objects/generator/class_call_parent_clone.phpt
