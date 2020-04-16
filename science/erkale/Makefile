@@ -25,7 +25,7 @@ FLAVORS=	serial parallel
 FLAVOR?=	${FLAVORS:[1]}
 serial_PKGNAMESUFFIX=	-serial
 
-USES=		cmake:noninja fortran pkgconfig
+USES=		cmake:noninja compiler:c11 fortran pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	susilehtola
 GH_TAGNAME=	ae9df2c14f0acf4eefe82c3fb351a75584159675
