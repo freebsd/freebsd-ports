@@ -1,0 +1,8 @@
+include/kImageAnnotator/KImageAnnotator.h
+include/kImageAnnotator/KImageAnnotatorExport.h
+lib/cmake/kImageAnnotator/kImageAnnotator-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/kImageAnnotator/kImageAnnotator-targets.cmake
+lib/cmake/kImageAnnotator/kImageAnnotatorConfig-version.cmake
+lib/cmake/kImageAnnotator/kImageAnnotatorConfig.cmake
+lib/libkImageAnnotator.so
+lib/libkImageAnnotator.so.0.2.1

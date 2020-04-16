@@ -380,6 +380,7 @@
     SUBDIR += kamera
     SUBDIR += kamerka
     SUBDIR += kcolorchooser
+    SUBDIR += kcolorpicker
     SUBDIR += kdegraphics
     SUBDIR += kdegraphics-mobipocket
     SUBDIR += kdegraphics-svgpart
@@ -390,6 +391,7 @@
     SUBDIR += kf5-kquickcharts
     SUBDIR += kf5-prison
     SUBDIR += kgraphviewer
+    SUBDIR += kimageannotator
     SUBDIR += kimagemapeditor
     SUBDIR += kipi-plugins
     SUBDIR += kix-kmod
