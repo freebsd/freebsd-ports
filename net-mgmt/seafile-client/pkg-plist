@@ -9,11 +9,11 @@ lib/libseafile.so
 lib/libseafile.so.0
 lib/libseafile.so.0.0.0
 %%PYTHON_SITELIBDIR%%/seafile/__init__.py
-%%PYTHON_SITELIBDIR%%/seafile/__init__.pyc
-%%PYTHON_SITELIBDIR%%/seafile/__init__.pyo
+%%PYTHON_SITELIBDIR%%/seafile/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/seafile/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/seafile/rpcclient.py
-%%PYTHON_SITELIBDIR%%/seafile/rpcclient.pyc
-%%PYTHON_SITELIBDIR%%/seafile/rpcclient.pyo
+%%PYTHON_SITELIBDIR%%/seafile/__pycache__/rpcclient.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/seafile/__pycache__/rpcclient.cpython-%%PYTHON_SUFFIX%%.pyc
 libdata/pkgconfig/libseafile.pc
 man/man1/seaf-cli.1.gz
 man/man1/seaf-daemon.1.gz
