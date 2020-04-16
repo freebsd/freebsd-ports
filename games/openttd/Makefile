@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-DISTVERSION=	1.10.0
+DISTVERSION=	1.10.1
 CATEGORIES=	games
 MASTER_SITES=	https://proxy.binaries.openttd.org/openttd-releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
