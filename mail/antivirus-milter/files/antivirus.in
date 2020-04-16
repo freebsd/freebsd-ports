@@ -1,15 +1,15 @@
 #!/bin/sh
-
+#
 # $FreeBSD$
-
+#
 # Start or stop antivirus
-
+#
 # PROVIDE: antivirus
 # REQUIRE: DAEMON
 # BEFORE: mail
 # KEYWORD: shutdown
 #
-
+#
 # Define these antivirus_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
@@ -17,31 +17,33 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
-antivirus_enable=${antivirus_enable:-"NO"}      # Enable antivirus-milter
-antivirus_pidfile=${antivirus_pidfile:-"%%ANTIVIRUS%%/run/antivirus.pid"} # Path to pidfile
-antivirus_socket=${antivirus_socket:-"%%ANTIVIRUS%%/antivirus.sock"} # Path to socket
-#antivirus_flags=${antivirus_flags:-""} # Flags to antivirus
 
 . /etc/rc.subr
 
 name="antivirus"
+desc="Antivirus Milter Daemon"
 rcvar="antivirus_enable"
+
+load_rc_config $name
+
+: ${antivirus_enable:="NO"}
+: ${antivirus_pidfile:="%%ANTIVIRUS%%/run/antivirus.pid"}
+: ${antivirus_socket:="%%ANTIVIRUS%%/antivirus.sock"}
 command="%%PREFIX%%/libexec/antivirus"
+command_args="-p local:${antivirus_socket} ${antivirus_flags}"
+pidfile="${antivirus_pidfile}"
 required_files="%%PREFIX%%/etc/antivirus.conf"
 start_precmd="antivirus_prestart"
 stop_postcmd="antivirus_poststop"
 
-antivirus_prestart() {
+antivirus_prestart()
+{
 	/bin/rm -f "${pidfile}" "${antivirus_socket}"
 }
 
-antivirus_poststop() {
+antivirus_poststop()
+{
 	/bin/rm -f "${pidfile}" "${antivirus_socket}"
 }
-
-load_rc_config $name
-
-pidfile="${antivirus_pidfile}"
-command_args="-p local:${antivirus_socket} ${antivirus_flags}"
 
 run_rc_command "$1"

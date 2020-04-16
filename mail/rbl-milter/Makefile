@@ -1,24 +1,44 @@
-# Created by: wolpert
 # $FreeBSD$
 
-PORTNAME=	rbl-milter
-PORTVERSION=	0.30
-PORTREVISION=	5
+PORTNAME=	noattach
+PORTVERSION=	1.2
+PORTREVISION=	4
 CATEGORIES=	mail
-MASTER_SITES=	http://www.gnu-darwin.org/distfiles/
+MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Milter that adds mail header warnings on mail from open-relays
+COMMENT=	Attachment filter for Sendmail Milter
 
-USES=		gmake
 GNU_CONFIGURE=	yes
+USE_RC_SUBR=	noattach
+DOCSFILES=	AUTHORS THANKS INSTALL NEWS README TODO ChangeLog
+SAMPLEFILES=	README noattach.patterns noattach.patterns.johncon
 
-USE_RC_SUBR=	rblmilter
-PLIST_FILES=	sbin/rbl-milter
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-CONFIGURE_ARGS+=	--with-sendmail=${MILTERBASE} \
-			--with-sendmail-obj=${MILTERBASE}/lib
+.include <bsd.port.pre.mk>
 
-.include "${.CURDIR}/../sendmail/bsd.milter.mk"
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
-.include <bsd.port.mk>
+CONFIGURE_ENV+=	MILTER_INCLUDES="${MILTERINC}"
+MAKE_ENV+=	MILTER_INCLUDES="${MILTERINC}"
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/noattach ${STAGEDIR}${PREFIX}/libexec/noattach
+	${INSTALL_MAN} ${WRKSRC}/noattach.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_DATA} ${WRKSRC}/examples/noattach.patterns \
+		${STAGEDIR}${PREFIX}/etc/noattach.patterns-dist
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${DOCSFILES}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
+.endfor
+
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+.for i in ${SAMPLEFILES}
+	${INSTALL_DATA} ${WRKSRC}/examples/${i} ${STAGEDIR}${EXAMPLESDIR}/
+.endfor
+
+.include <bsd.port.post.mk>

@@ -2,10 +2,10 @@
 #
 # $FreeBSD$
 #
-
 # PROVIDE: vsftpd
 # REQUIRE: DAEMON
-
+# KEYWORD: shutdown
+#
 # To enable 'vsftpd' in standalone mode, you need to edit two files.
 # 1. add the following line(s) to /etc/rc.conf to enable `vsftpd':
 #
@@ -24,12 +24,13 @@
 . /etc/rc.subr
 
 name="vsftpd"
+desc="Vsftpd FTP Server"
 rcvar="vsftpd_enable"
 
 load_rc_config "$name"
+
 : ${vsftpd_enable:="NO"}
 : ${vsftpd_config:="%%PREFIX%%/etc/$name.conf"}
-
 command="%%PREFIX%%/libexec/$name"
 required_files="${vsftpd_config}"
 start_precmd="vsftpd_check"

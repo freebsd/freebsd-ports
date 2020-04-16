@@ -19,35 +19,39 @@
 #
 # noattach_flags Flags to noattach
 
-noattach_enable=${noattach_enable:-"NO"}      # Enable noattach
-noattach_pidfile=${noattach_pidfile:-"/var/run/noattach.pid"} # Path to pidfile
-noattach_socket=${noattach_socket:-"/var/run/noattach"} # Path to socket
-
 . /etc/rc.subr
 
 name="noattach"
+desc="Noattach Milter Daemon"
 rcvar="noattach_enable"
+
+load_rc_config $name
+
+: ${noattach_enable:="NO"}
+: ${noattach_pidfile:="/var/run/noattach.pid"}
+: ${noattach_socket:="/var/run/noattach"}
 command="%%PREFIX%%/libexec/${name}"
 required_files="%%PREFIX%%/etc/noattach.patterns"
 start_precmd="noattach_prestart"
 stop_postcmd="noattach_poststop"
 reload_cmd="noattach_reload"
 extra_commands="reload"
-
-noattach_prestart() {
-	/bin/rm -f "${pidfile}" "${noattach_socket}"
-}
-
-noattach_poststop() {
-	/bin/rm -f "${pidfile}" "${noattach_socket}"
-}
-
-noattach_reload() {
-	kill -USR1 `head -1 "${pidfile}"`
-}
-
-load_rc_config $name
 pidfile="${noattach_pidfile}"
 command_args="-p local:${noattach_socket} ${noattach_flags}"
+
+noattach_prestart()
+{
+	/bin/rm -f "${pidfile}" "${noattach_socket}"
+}
+
+noattach_poststop()
+{
+	/bin/rm -f "${pidfile}" "${noattach_socket}"
+}
+
+noattach_reload()
+{
+	kill -USR1 `head -1 "${pidfile}"`
+}
 
 run_rc_command "$1"

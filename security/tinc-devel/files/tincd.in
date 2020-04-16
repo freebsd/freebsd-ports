@@ -1,10 +1,11 @@
 #!/bin/sh
-
+#
 # $FreeBSD$
 #
 # PROVIDE: tincd
 # REQUIRE: ipfilter FILESYSTEMS sysctl netif
 # BEFORE:  SERVERS routing
+# KEYWORD: shutdown
 #
 # Define these tincd_* variables in one of these files:
 #	/etc/rc.conf
@@ -20,12 +21,15 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 
-tincd_enable=${tincd_enable:-"NO"}
-
 . /etc/rc.subr
 
 name="tincd"
+desc="Tinc VPN Daemon"
 rcvar="tincd_enable"
+
+load_rc_config $name
+
+: ${tincd_enable:="NO"}
 command="%%PREFIX%%/sbin/tinc"
 start_cmd="tincd_start"
 stop_cmd="tincd_stop"
@@ -34,8 +38,6 @@ status_cmd="tincd_status"
 extra_commands="reload"
 procname=${command:-tincd}
 ldconfig_command="/sbin/ldconfig"
-
-load_rc_config $name
 
 tincd_start()
 {
@@ -51,12 +53,13 @@ tincd_start()
 			$command -n $cfg start $tincd_flags
 		done
 	fi
-# code deliberately borrowed from /etc/rc.d/netif
+	# code deliberately borrowed from /etc/rc.d/netif
 	if [ -f /etc/rc.d/ipfilter ] ; then
 		# Resync ipfilter
 		/etc/rc.d/ipfilter quietresync
 	fi
 }
+
 tincd_stop()
 {
 	if test -z "${tincd_cfg}"
@@ -72,6 +75,7 @@ tincd_stop()
 	fi
 	wait_for_pids $rc_pid
 }
+
 tincd_reload()
 {
 	if test -z "${tincd_cfg}"
@@ -86,7 +90,9 @@ tincd_reload()
 		done
 	fi
 }
-tincd_status_network() {
+
+tincd_status_network()
+{
 	if [ -n "$rc_pid" ]; then
 		echo "${name} for ${cfg} is running as pid $rc_pid."
 	else
@@ -94,6 +100,7 @@ tincd_status_network() {
 		return 1
 	fi
 }
+
 tincd_status()
 {
 	if test -z "${tincd_cfg}"
@@ -111,4 +118,3 @@ tincd_status()
 }
 
 run_rc_command "$1"
-# eof

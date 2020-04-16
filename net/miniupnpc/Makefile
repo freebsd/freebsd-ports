@@ -2,7 +2,7 @@
 
 PORTNAME=	miniupnpc
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 

@@ -15,9 +15,15 @@
 . /etc/rc.subr
 
 name=xenguest
+desc="Xen Guest Daemon"
 rcvar=xenguest_enable
 
 load_rc_config $name
+
+command="%%PREFIX%%/sbin/xe-daemon"
+pidfile=/var/run/xe-daemon.pid
+command_interpreter=/bin/sh
+command_args='-p ${pidfile} &'
 
 autoxen=`sysctl kern.vm_guest`
 autoxen="${autoxen#kern.vm_guest: }"
@@ -29,10 +35,5 @@ xen)
 	: ${xenguest_enable:=NO}
 	;;
 esac
-
-pidfile=/var/run/xe-daemon.pid
-command="%%PREFIX%%/sbin/xe-daemon"
-command_interpreter=/bin/sh
-command_args='-p ${pidfile} &'
 
 run_rc_command "$1"

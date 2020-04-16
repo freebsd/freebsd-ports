@@ -3,6 +3,7 @@
 
 PORTNAME=	milter-regex
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://www.benzedrine.ch/
 

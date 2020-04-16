@@ -2,11 +2,9 @@
 #
 # $FreeBSD$
 #
-
 # PROVIDE: iroffer
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
-
 #
 # iroffer_enable="YES"
 # iroffer_flags="<set as needed>"
@@ -21,18 +19,27 @@
 . /etc/rc.subr
 
 name="iroffer"
-rcvar=iroffer_enable
+desc="Iroffer IRC Bot"
+rcvar="iroffer_enable"
 
-# read configuration and set defaults
 load_rc_config "$name"
-: ${iroffer_enable="NO"}
-: ${iroffer_user="bot"}
-: ${iroffer_bin="iroffer"}
-: ${iroffer_dir="/home/bot/iroffer/"}
-: ${iroffer_config="${iroffer_dir}mybot.config"}
+
+: ${iroffer_enable:="NO"}
+: ${iroffer_user:="bot"}
+: ${iroffer_bin:="iroffer"}
+: ${iroffer_dir:="/home/bot/iroffer/"}
+: ${iroffer_config:="${iroffer_dir}mybot.config"}
 
 start_precmd="iroffer_checkdisk"
 restart_precmd="iroffer_checkdisk"
+required_files="${iroffer_config}"
+command="${iroffer_dir}/${iroffer_bin}"
+if [ -n "${iroffer_dir}" ]; then
+	command_args="${command_args} -w ${iroffer_dir}"
+fi
+command_args="${command_args} -u ${iroffer_user}"
+command_args="${command_args} -b ${iroffer_config}"
+pidfile="${iroffer_dir}/mybot.pid"
 
 iroffer_checkdisk()
 {
@@ -46,14 +53,4 @@ iroffer_checkdisk()
 	fi
 }
 
-required_files="${iroffer_config}"
-command="${iroffer_dir}/${iroffer_bin}"
-if [ -n "${iroffer_dir}" ]; then
-	command_args="${command_args} -w ${iroffer_dir}"
-fi
-command_args="${command_args} -u ${iroffer_user}"
-command_args="${command_args} -b ${iroffer_config}"
-pidfile="${iroffer_dir}/mybot.pid"
 run_rc_command "$1"
-
-# eof

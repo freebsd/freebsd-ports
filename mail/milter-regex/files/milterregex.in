@@ -1,16 +1,12 @@
 #!/bin/sh
 
 # $FreeBSD$
-
-# Start or stop milterregex
-
+#
 # PROVIDE: milterregex
 # REQUIRE: DAEMON
 # BEFORE: mail
 # KEYWORD: shutdown
-
-spooldir=%%SPOOLDIR%%
-
+#
 # Define these milterregex_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
@@ -20,21 +16,24 @@ spooldir=%%SPOOLDIR%%
 #
 # milterregex_flags Flags to milter-regex program
 
-[ -z "$milterregex_enable" ] && milterregex_enable="NO"	# Enable milter-regex
-
 . /etc/rc.subr
 
 name="milterregex"
+desc="RegEx Milter Daemon"
 rcvar="milterregex_enable"
+
+load_rc_config $name
+
+: ${milterregex_enable:="NO"}
 command="%%PREFIX%%/libexec/milter-regex"
-pidfile="${spooldir}/milter-regex.pid"
+pidfile="%%SPOOLDIR%%/milter-regex.pid"
 required_files="%%PREFIX%%/etc/milter-regex.conf"
 stop_postcmd="milterregex_poststop"
 command_args="-r ${pidfile}"
 
-milterregex_poststop() {
+milterregex_poststop()
+{
 	/bin/rm -f ${pidfile}
 }
 
-load_rc_config $name
 run_rc_command "$1"
