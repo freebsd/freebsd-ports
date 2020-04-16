@@ -4,7 +4,7 @@
 PORTNAME=	RetroArch
 PORTVERSION=	1.3.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
@@ -58,7 +58,7 @@ FBO_CONFIGURE_ENABLE=	fbo
 CFLAGS+=	-pthread
 LDFLAGS+=	-pthread
 LDFLAGS_i386=	-Wl,-znotext
-CONFIGURE_ARGS+=--enable-threads
+CONFIGURE_ARGS+=--enable-threads --disable-udev
 CONFIGURE_ENV+=	MAN_DIR=${MANPREFIX}/man
 
 USES=		compiler:c++11-lib gmake pkgconfig shebangfix xorg
