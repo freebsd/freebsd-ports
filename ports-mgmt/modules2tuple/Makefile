@@ -2,7 +2,7 @@
 
 PORTNAME=	modules2tuple
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.1
+DISTVERSION=	2.0.1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -15,6 +15,7 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dmgk
+GH_TUPLE=	sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff
 
 GO_BUILDFLAGS=	-ldflags="-s -w -X main.version=${PORTVERSION}"
 
