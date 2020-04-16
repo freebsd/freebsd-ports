@@ -10,7 +10,7 @@ COMMENT=	Minimal sandboxed CGI library in C
 
 LICENSE=	ISCL
 
-USES=		tar:tgz
+USES=		compiler:c11 tar:tgz
 
 OPTIONS_DEFINE=	EXAMPLES
 
