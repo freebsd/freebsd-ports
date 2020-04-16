@@ -88,6 +88,9 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/contrast/meta.qml
 %%DATADIR%%/qml/filters/contrast/meta_movit.qml
 %%DATADIR%%/qml/filters/contrast/ui.qml
+%%DATADIR%%/qml/filters/corners/meta.qml
+%%DATADIR%%/qml/filters/corners/ui.qml
+%%DATADIR%%/qml/filters/corners/vui.qml
 %%DATADIR%%/qml/filters/crop/meta.qml
 %%DATADIR%%/qml/filters/crop/meta_movit.qml
 %%DATADIR%%/qml/filters/crop/ui.qml
@@ -375,5 +378,3 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%NLS%%%%DATADIR%%/translations/shotcut_uk.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_zh_CN.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_zh_TW.qm
-
-
