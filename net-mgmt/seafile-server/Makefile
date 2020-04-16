@@ -4,7 +4,6 @@ PORTNAME=	seafile-server
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAFILE_VER}
 DISTVERSIONSUFFIX=	-server
-PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -31,7 +30,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 CONFLICTS=	seafile-[0-9]*
 
 USES=		autoreconf compiler:c11 gnome iconv libarchive libtool localbase mysql \
-		pathfix pgsql pkgconfig python:2.7 shebangfix sqlite ssl
+		pathfix pgsql pkgconfig python:3.6+ shebangfix sqlite ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 USE_GNOME=	glib20
@@ -40,7 +39,8 @@ USE_RC_SUBR=	seafile
 SHEBANG_FILES=	scripts/*.sh scripts/upgrade/*.sh *.sh scripts/build/*.py \
 		scripts/*.py scripts/upgrade/*.py tools/seafile-admin
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
+CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl \
+		-lcrypto" PKG_CONFIG_PATH="${WRKDIR}/pkgconfig"
 
 PATHFIX_MAKEFILEIN=	Makefile.am
 
@@ -63,16 +63,41 @@ FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
 
 NLS_USES=		gettext
 
+.include <bsd.port.pre.mk>
+
+_PKGCONFIGDIR=	${WRKDIR}/pkgconfig
+
 post-patch:
 # Fix P_KTHREAD r295435
 	${REINPLACE_CMD} 's/P_KTHREAD/P_KPROC/' ${WRKSRC}/lib/utils.c
-	${REINPLACE_CMD} 's/python/${PYTHON_VERSION}/' \
-		${WRKSRC}/scripts/upgrade/regenerate_secret_key.sh
-	${REINPLACE_CMD} -e 's|^INSTALL.*|INSTALLPATH="${PREFIX}/${SEAFILE_SERVER}/seafile"|' \
-			${WRKSRC}/scripts/seaf-cli-wrapper.sh
 	${REINPLACE_CMD} -E 's/stat.+\$$/stat -f %Su $$/' ${WRKSRC}/scripts/seafile.sh
 	${REINPLACE_CMD} 's/%%SEAFILE_USER%%/${USERS:[1]}/ ; s/%%SEAFILE_GROUP%%/${GROUPS:[1]}/' \
 			${WRKSRC}/scripts/setup-seafile.sh ${WRKSRC}/scripts/setup-seafile-mysql.py
+
+# Fix python hardcodings
+	${REINPLACE_CMD} 's/python3\.[0-9]/${PYTHON_VERSION}/g; s/python3 /${PYTHON_VERSION} / ; \
+			s/PYTHON=python3/PYTHON=${PYTHON_VERSION}/' \
+		${WRKSRC}/controller/seafile-controller.c ${WRKSRC}/scripts/reset-admin.sh \
+		${WRKSRC}/scripts/upgrade/upgrade_7.0_7.1.sh \
+		${WRKSRC}/scripts/seahub.sh ${WRKSRC}/scripts/setup-seafile.sh \
+		${WRKSRC}/scripts/setup-seafile-mysql.sh \
+		${WRKSRC}/scripts/setup-seafile-mysql.py
+	${REINPLACE_CMD} 's/python/${PYTHON_VERSION}/' \
+		${WRKSRC}/scripts/upgrade/regenerate_secret_key.sh
+
+	@${MKDIR} ${_PKGCONFIGDIR}
+.if ${MYSQL_FLAVOUR} == mariadb
+# If mariadb is the selected flavor, link the pc file as
+# mysqlclient so PKG_CHECK_MODULES can find it. Mariadb
+# doesn't supply this file in the same way other flavours do.
+	@${LN} -sf ${LOCALBASE}/libdata/pkgconfig/libmariadb.pc \
+		${_PKGCONFIGDIR}/mysqlclient.pc
+.elif ${SSL_DEFAULT} == base
+# Add bogus pc file to satisfy mysqlclient depend for ssl=base
+	@${PRINTF} 'Name:\nDescription:\nVersion:' \
+		>${_PKGCONFIGDIR}/openssl.pc
+.endif
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SEABIN} ${STAGEDIR}${PREFIX}/${SEALIB} \
 		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/seafile/share/doc/seafile \
@@ -107,4 +132,4 @@ makesum-all:
 
 .include "${.CURDIR}/Makefile.include"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,15 +1,15 @@
---- scripts/setup-seafile-mysql.py.orig	2018-08-19 23:40:51 UTC
+--- scripts/setup-seafile-mysql.py.orig	2020-01-19 18:47:28 UTC
 +++ scripts/setup-seafile-mysql.py
-@@ -19,6 +19,8 @@ from ConfigParser import ConfigParser
- 
- import MySQLdb
+@@ -23,6 +23,8 @@ try:
+ except ImportError:
+     pass
  
 +import pwd
 +import grp
  
- try:
-     import readline # pylint: disable=W0611
-@@ -424,8 +426,6 @@ Please choose a way to initialize seafil
+ SERVER_MANUAL_HTTP = 'https://download.seafile.com/published/seafile-manual/home.md'
+ 
+@@ -421,8 +423,6 @@ Please choose a way to initialize seafile databases:
          if not re.match(r'^[a-zA-Z0-9_\-\.]+$', host):
              raise InvalidAnswer('%s is not a valid host' % Utils.highlight(host))
  
@@ -18,7 +18,7 @@
          return host
  
      def ask_mysql_host(self):
-@@ -1209,17 +1209,23 @@ limit_request_line = 8190
+@@ -1276,17 +1276,23 @@ limit_request_line = 8190
  
  class UserManualHandler(object):
      def __init__(self):
@@ -42,17 +42,17 @@
 +            os.chown(doc_full, uid, gid)
  
  def report_config():
-     print
-@@ -1284,6 +1290,8 @@ def create_seafile_server_symlink():
+     print()
+@@ -1351,6 +1357,8 @@ def create_seafile_server_symlink():
  def set_file_perm():
-     filemode = 0600
-     dirmode = 0700
+     filemode = 0o600
+     dirmode = 0o700
 +    uid = pwd.getpwnam("%%SEAFILE_USER%%").pw_uid
 +    gid = grp.getgrnam("%%SEAFILE_GROUP%%").gr_gid
      files = [
          seahub_config.seahub_settings_py,
      ]
-@@ -1295,8 +1303,10 @@ def set_file_perm():
+@@ -1362,8 +1370,10 @@ def set_file_perm():
      ]
      for fpath in files:
          os.chmod(fpath, filemode)
@@ -63,7 +63,7 @@
  
  env_mgr = EnvManager()
  ccnet_config = CcnetConfigurator()
-@@ -1488,8 +1498,11 @@ def report_success():
+@@ -1557,8 +1567,11 @@ def report_success():
  Your seafile server configuration has been finished successfully.
  -----------------------------------------------------------------
  

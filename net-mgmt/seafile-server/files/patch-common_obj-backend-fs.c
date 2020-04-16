@@ -1,6 +1,6 @@
---- common/obj-backend-fs.c.orig	2016-10-09 09:30:49 UTC
+--- common/obj-backend-fs.c.orig	2019-12-23 10:30:49 UTC
 +++ common/obj-backend-fs.c
-@@ -101,7 +101,7 @@ obj_backend_fs_read (ObjBackend *bend,
+@@ -95,7 +95,7 @@ obj_backend_fs_read (ObjBackend *bend,
  static int
  fsync_obj_contents (int fd)
  {
@@ -9,7 +9,7 @@
      /* Some file systems may not support fsync().
       * In this case, just skip the error.
       */
-@@ -153,7 +153,7 @@ fsync_obj_contents (int fd)
+@@ -147,7 +147,7 @@ fsync_obj_contents (int fd)
  static int
  rename_and_sync (const char *tmp_path, const char *obj_path)
  {

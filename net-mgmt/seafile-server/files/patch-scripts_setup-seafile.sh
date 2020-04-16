@@ -1,15 +1,15 @@
---- scripts/setup-seafile.sh.orig	2019-08-20 19:25:53 UTC
+--- scripts/setup-seafile.sh.orig	2020-02-09 03:22:51 UTC
 +++ scripts/setup-seafile.sh
-@@ -17,6 +17,8 @@ use_existing_seafile="false"
+@@ -14,6 +14,8 @@ export SEAFILE_LD_LIBRARY_PATH=${INSTALLPATH}/seafile/
  
- server_manual_http="https://github.com/haiwen/seafile/wiki"
+ server_manual_http='https://download.seafile.com/published/seafile-manual/home.md'
  
 +os_bsd=$(uname | grep -cm1 -e BSD -e DragonFly)
 +
  function welcome () {
      echo "-----------------------------------------------------------------"
      echo "This script will guide you to config and setup your seafile server."
-@@ -343,10 +345,17 @@ fi
+@@ -330,10 +332,17 @@ fi
  }
  
  function copy_user_manuals() {
@@ -17,18 +17,18 @@
 +    if [ $os_bsd == "1" ]; then
 +        src_docs_dir=${INSTALLPATH}/seafile/share/doc/seafile/
 +    else
-+    	src_docs_dir=${INSTALLPATH}/seafile/docs/
++        src_docs_dir=${INSTALLPATH}/seafile/docs/
 +    fi
-     library_template_dir=${seafile_data_dir}/library-template
+     library_template_dir=${default_seafile_data_dir}/library-template
      mkdir -p ${library_template_dir}
      cp -f ${src_docs_dir}/*.doc ${library_template_dir}
 +    if [ $os_bsd == "1" ]; then
-+    	chown -R %%SEAFILE_USER%%:%%SEAFILE_GROUP%% "${library_template_dir}"
++        chown -R %%SEAFILE_USER%%:%%SEAFILE_GROUP%% "${library_template_dir}"
 +    fi
  }
  
  function parse_params() {
-@@ -662,7 +671,12 @@ function get_seahub_admin_passwd () {
+@@ -621,7 +630,12 @@ function get_seahub_admin_passwd () {
  echo "Creating database now, it may take one minute, please wait... "
  echo
  
@@ -42,9 +42,9 @@
  
  ccnet_group_db=${TOPDIR}/ccnet/GroupMgr/groupmgr.db
  ccnet_group_sql=${INSTALLPATH}/sql/sqlite/groupmgr.sql
-@@ -740,6 +754,14 @@ chmod 0600 "$dest_settings_py"
+@@ -699,6 +713,14 @@ chmod 0600 "$dest_settings_py"
  chmod 0700 "$default_ccnet_conf_dir"
- chmod 0700 "$seafile_data_dir"
+ chmod 0700 "$default_seafile_data_dir"
  chmod 0700 "$default_conf_dir"
 +if [ $os_bsd == "1" ]; then
 +	for file in "$dest_settings_py" "$default_ccnet_conf_dir" \
@@ -52,12 +52,12 @@
 +	"$ccnet_org_db" "$ccnet_user_db"; do
 +		chown %%SEAFILE_USER%%:%%SEAFILE_GROUP%% "$file"
 +	done
-+	chown -R %%SEAFILE_USER%%:%%SEAFILE_GROUP%% "$seafile_data_dir"
++	chown -R %%SEAFILE_USER%%:%%SEAFILE_GROUP%% "$default_seafile_data_dir"
 +fi
  
  # -------------------------------------------
  # copy user manuals to library template
-@@ -756,9 +778,17 @@ echo
+@@ -715,9 +737,17 @@ echo
  echo "-----------------------------------------------------------------"
  echo "Your seafile server configuration has been completed successfully." 
  echo "-----------------------------------------------------------------"

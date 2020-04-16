@@ -20,4 +20,18 @@ Don't forget to run update scripts after every minor and major update located in
 Patch updates (5.1.x) don't require these scripts, however do required a restarted.
 EOM
 }
+{ type: upgrade
+  message: <<EOM
+Don't forget to run update scripts after every minor and major update located in
+	%%PREFIX%%/%%SEAFILE_SERVER%%/upgrade
+
+Patch updates (5.1.x) don't require these scripts, however do required a restart.
+
+When updating from 7.0.x to 7.1.x, removing the seahub cache is required:
+rm -rf /tmp/seahub_cache/*
+
+Also consider reviewing the upgrade notes for minor and major upgrades:
+https://download.seafile.com/published/seafile-manual/upgrade/upgrade.md
+EOM
+}
 ]

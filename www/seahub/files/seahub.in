@@ -51,20 +51,19 @@ clearsessions_cmd="seahub_clearsessions"
 : ${seafile_path:="%%PREFIX%%/%%SEAFILE_SERVER%%"}
 : ${seafile_ccnet:="%%PREFIX%%/%%HAIWENDIR%%/ccnet"}
 : ${seafile_conf:="%%PREFIX%%/%%HAIWENDIR%%/conf"}
-: ${seafile_datadir:="`cat ${seafile_ccnet}/seafile.ini 2>/dev/null`"}
+: ${seafile_datadir:="%%PREFIX%%/%%HAIWENDIR%%/seafile-data"}
 : ${seafile_logdir:="%%PREFIX%%/%%HAIWENDIR%%/logs"}
 : ${seahub_host:="0.0.0.0"}
 : ${seahub_port:="8000"}
 
 manage_py=${seafile_path}/seahub/manage.py
 gunicorn_exe=%%PREFIX%%/bin/gunicorn-%%PYTHON_VER%%
-gunicorn_conf=${seafile_conf}/gunicorn.conf
+gunicorn_conf=${seafile_conf}/gunicorn.conf.py
 pidfile=%%PREFIX%%/%%HAIWENDIR%%/pids/seahub.pid
 
 command="%%PREFIX%%/bin/%%PYTHON%%"
 
 required_dirs="${seafile_ccnet} ${seafile_conf} ${seafile_datadir} ${seafile_logdir}"
-required_files="${seafile_ccnet}/seafile.ini"
 
 validate_seahub_running() {
 	if pgrep -f "${manage_py}" 2>/dev/null 1>&2; then
@@ -95,8 +94,9 @@ prepare_env() {
 	export CCNET_CONF_DIR=${seafile_ccnet}
 	export SEAFILE_CONF_DIR=${seafile_datadir}
 	export SEAFILE_CENTRAL_CONF_DIR=${seafile_conf}
-	export PYTHONPATH=${seafile_path}/seafile/lib/python2.7/site-packages:${seafile_path}/seafile/lib64/python2.7/site-packages:${seafile_path}/seahub/thirdpart:$PYTHONPATH
+	export PYTHONPATH=${seafile_path}/seafile/lib/%%PYTHON%%/site-packages:${seafile_path}/seafile/lib64/%%PYTHON%%/site-packages:${seafile_path}/seahub/thirdpart:$PYTHONPATH
 	export SEAHUB_LOG_DIR=${seafile_logdir}
+	export SEAFILE_RPC_PIPE_PATH=${seafile_path}/runtime
 
 }
 

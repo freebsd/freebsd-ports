@@ -1,4 +1,4 @@
---- lib/utils.h.orig	2016-10-09 09:30:49 UTC
+--- lib/utils.h.orig	2019-12-23 10:30:49 UTC
 +++ lib/utils.h
 @@ -10,6 +10,9 @@
  #include <windows.h>

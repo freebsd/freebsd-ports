@@ -52,7 +52,7 @@ stop_cmd="seafile_stop"
 : ${seafile_path:="%%PREFIX%%/%%SEAFILE_SERVER%%"}
 : ${seafile_ccnet:="%%PREFIX%%/%%HAIWENDIR%%/ccnet"}
 : ${seafile_conf:="%%PREFIX%%/%%HAIWENDIR%%/conf"}
-: ${seafile_datadir:="`cat ${seafile_ccnet}/seafile.ini 2>/dev/null`"}
+: ${seafile_datadir:="%%PREFIX%%/%%HAIWENDIR%%/seafile-data"}
 : ${seafile_logdir:="%%PREFIX%%/%%HAIWENDIR%%/logs"}
 : ${seafile_loglevel:="info"}
 
@@ -60,7 +60,6 @@ command="%%PREFIX%%/%%SEAFILE_SERVER%%/seafile/bin/seafile-controller"
 command_args="-c \"${seafile_ccnet}\" -d \"${seafile_datadir}\" -F \"${seafile_conf}\" -l \"${seafile_logdir}\" -g \"${seafile_loglevel}\" -G \"${seafile_loglevel}\""
 
 required_dirs="${seafile_ccnet} ${seafile_conf} ${seafile_datadir}"
-required_files="${seafile_ccnet}/seafile.ini"
 
 test_config() {
 	if ! su -m ${seafile_user} -c "${command} -t ${command_args}" ; then

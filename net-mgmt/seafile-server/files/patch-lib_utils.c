@@ -1,4 +1,4 @@
---- lib/utils.c.orig	2016-10-09 09:30:49 UTC
+--- lib/utils.c.orig	2019-12-23 10:30:49 UTC
 +++ lib/utils.c
 @@ -56,6 +56,16 @@
  
@@ -17,7 +17,7 @@
  extern int inet_pton(int af, const char *src, void *dst);
  
  
-@@ -2069,14 +2079,19 @@ wchar_from_utf8 (const char *utf8)
+@@ -2047,14 +2057,19 @@ wchar_from_utf8 (const char *utf8)
  
  #endif  /* ifdef WIN32 */
  
@@ -38,7 +38,7 @@
          return -1;
      }
  
-@@ -2100,7 +2115,8 @@ find_process_in_dirent(struct dirent *di
+@@ -2078,7 +2093,8 @@ find_process_in_dirent(struct dirent *dir, const char 
  }
  
  /* read the /proc fs to determine whether some process is running */
@@ -48,7 +48,7 @@
  {
      DIR *proc_dir = opendir("/proc");
      if (!proc_dir) {
-@@ -2125,7 +2141,8 @@ gboolean process_is_running (const char 
+@@ -2103,7 +2119,8 @@ gboolean process_is_running (const char *process_name)
      return FALSE;
  }
  
@@ -58,7 +58,7 @@
  {
      int count = 0;
      DIR *proc_dir = opendir("/proc");
-@@ -2149,6 +2166,14 @@ int count_process(const char *process_na
+@@ -2127,6 +2144,14 @@ int count_process(const char *process_name)
      return count;
  }
  
@@ -73,10 +73,13 @@
  #endif
  
  #ifdef __APPLE__
-@@ -2159,6 +2184,119 @@ gboolean process_is_running (const char 
- }
- #endif
- 
+@@ -2134,6 +2159,119 @@ gboolean process_is_running (const char *process_name)
+ {
+     //TODO
+     return FALSE;
++}
++#endif
++
 +#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +#if defined(__FreeBSD__)
 +#define PSKIP(kp) ((kp)->ki_pid == mypid ||               \
@@ -187,9 +190,6 @@
 +       return count_process_procfs(process_name);
 +   }
 +   return count_running_process_kvm(process_name);
-+}
-+#endif
-+
- char*
- ccnet_object_type_from_id (const char *object_id)
- {
+ }
+ #endif
+ 
