@@ -1,15 +1,11 @@
---- Makefile.am.orig	2015-02-16 05:30:39 UTC
+--- Makefile.am.orig	2020-02-08 21:24:39 UTC
 +++ Makefile.am
-@@ -22,8 +22,12 @@ install-data-local:
- if MACOS
+@@ -23,7 +23,7 @@ if MACOS
  	sed -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
  else
-+if BSD
-+	${SED} -i '' "s|(DESTDIR)|${PREFIX}|g" $(pcfiles)
-+else
+ if FBSD
+-	sed -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
++	${SED} -i '' -e "s|(DESTDIR)||g" $(pcfiles)
+ else
  	${SED} -i "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
  endif
-+endif
- 
- dist-hook:
- 	git log -1 > $(distdir)/latest_commit
