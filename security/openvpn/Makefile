@@ -5,7 +5,7 @@ PORTNAME=		openvpn
 DISTVERSION=		2.4.8
 # FIXME XXX check if 2.4.9 still needs ASYNC_PUSH_LIBS, see
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=244286#c6 and #c7
-PORTREVISION?=		2
+PORTREVISION?=		3
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/
