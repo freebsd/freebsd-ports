@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=0:www/py-django111@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 
-CONFLICTS_INSTALL= py*-django-mptt
+CONFLICTS_INSTALL= ${PYTHON_PKGNAMEPREFIX}-django-mptt \
+		   ${PYTHON_PKGNAMEPREFIX}-django-happenings-update
 
 USES=		python
 USE_PYTHON=	distutils autoplist
