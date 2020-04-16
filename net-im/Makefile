@@ -185,6 +185,7 @@
     SUBDIR += toxbot
     SUBDIR += toxic
     SUBDIR += toxins
+    SUBDIR += tut
     SUBDIR += twirssi
     SUBDIR += twitmail
     SUBDIR += uTox
