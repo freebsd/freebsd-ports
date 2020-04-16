@@ -28,9 +28,9 @@ libdata/pkgconfig/libccnet.pc
 %%SEAFILE_SERVER%%/seafile/bin/ccnet-init
 %%SEAFILE_SERVER%%/seafile/bin/ccnet-server
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/__init__.py
-%%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/__pycache__/__init__.cpython-37.opt-1.pyc
-%%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/__pycache__/__init__.cpython-37.pyc
-%%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/__pycache__/rpc.cpython-37.opt-1.pyc
-%%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/__pycache__/rpc.cpython-37.pyc
+%%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/__pycache__/rpc.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/__pycache__/rpc.cpython-%%PYTHON_SUFFIX%%.pyc
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/ccnet/rpc.py
 @dir(%%USERS%%,%%GROUPS%%,755) %%HAIWENDIR%%
