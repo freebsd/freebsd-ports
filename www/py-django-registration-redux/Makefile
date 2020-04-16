@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	django-registration-redux
-PORTVERSION=	2.6
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.7
 CATEGORIES=	www python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
@@ -13,16 +13,13 @@ COMMENT=	User-registration application for Django
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.11:www/py-django111@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
-USE_GITHUB=	yes
-GH_ACCOUNT=	macropin
-GH_PROJECT=	django-registration
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	pootle ${PYTHON_PKGNAMEPREFIX}django-registration
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-registration
 
 .include <bsd.port.mk>
