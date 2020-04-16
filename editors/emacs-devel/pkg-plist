@@ -3347,6 +3347,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-vars.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cfengine.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cfengine.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cl-font-lock.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cl-font-lock.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cmacexp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cmacexp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/compile.el.gz
@@ -4115,6 +4117,7 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32gui.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32heap.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32heap.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32image.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32inevt.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32inevt.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32menu.c
