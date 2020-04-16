@@ -1,22 +1,12 @@
---- Makefile.orig	2019-06-28 12:36:55 UTC
+--- Makefile.orig	2019-11-15 11:09:41 UTC
 +++ Makefile
-@@ -18,16 +18,16 @@ LDFLAGS+=$(shell $(PKG_CONFIG) x11 --libs)
- CFLAGS+=$(shell $(PKG_CONFIG) imlib2 --cflags)
- LDFLAGS+=$(shell $(PKG_CONFIG) imlib2 --libs)
+@@ -30,8 +30,7 @@ hsetroot: hsetroot.o
+ hsr-outputs: hsr-outputs.o
  
-+all: hsetroot
-+
- hsetroot: hsetroot.o outputs_xrandr.o
- 
- hsetroot.o: hsetroot.c outputs.h
- 
--outputs.o: outputs.c outputs.h
--
- outputs_xrandr.o: outputs_xrandr.c outputs.h
- 
- install: hsetroot
--	install -st /usr/local/bin/ hsetroot
+ install: hsetroot hsr-outputs
+-	install -st $(PREFIX)/bin/ hsetroot
+-	install -st $(PREFIX)/bin/ hsr-outputs
 +	$(BSD_INSTALL_PROGRAM) $^ $(DESTDIR)$(PREFIX)/bin
  
  clean:
- 	rm -f hsetroot *.o
+ 	rm -f *.o hsetroot hsr-outputs

@@ -32,7 +32,7 @@
  
 -  for (int i = 0; i < noutputs; i++) {
 +  for (i = 0; i < noutputs; i++) {
-     OutputInfo o = outputs[i];
+     XineramaScreenInfo o = outputs[i];
      printf("output %d: size(%d, %d) pos(%d, %d)\n", i, o.w, o.h, o.x, o.y);
  
 @@ -229,6 +230,20 @@ load_image(ImageMode mode, const char *arg, int alpha,
@@ -41,16 +41,16 @@
        }
 +    } else if (mode == Sane) {
 +      int newW, newH;
-+      double aspect_w = ((double) o.w) / imgW;
-+      double aspect_h = ((double) o.h) / imgH;
++      double aspect_w = ((double) o.width) / imgW;
++      double aspect_h = ((double) o.height) / imgH;
 +      if (aspect_h < aspect_w) {
 +        // image is taller
-+        newW = o.w;
++        newW = o.width;
 +        newH = (int) (imgH * aspect_w);
 +      } else {
 +        // image is wider
 +        newW = (int) (imgW * aspect_h);
-+        newH = o.h;
++        newH = o.height;
 +      }
 +      imlib_blend_image_onto_image(buffer, 0, 0, 0, imgW, imgH, 0, 0, newW, newH);
      } else {  // Center || Tile
