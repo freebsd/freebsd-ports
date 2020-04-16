@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-constance
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=0:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-picklefield>=0:www/py-django-picklefield@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django111>=1.8:www/py-django111@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 USE_GITHUB=	yes
