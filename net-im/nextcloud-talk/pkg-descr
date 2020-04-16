@@ -1,11 +1,13 @@
-The Calendar app is a user interface for Nextcloud's CalDAV server. Easily 
-sync events from various devices with your Nextcloud and edit them online.
+Chat, video & audio-conferencing using WebRTC
 
- * Integration with other Nextcloud apps! Currently Contacts - more to come.
- * WebCal Support! Want to see your favorite team’s matchdays in your 
-   calendar? No problem!
- * Attendees! Invite people to your events.
- * We're not reinventing the wheel! Based on the great davclient.js, 
-   ical.js and fullcalendar libraries.
+ * Chat integration! Nextcloud Talk comes with a simple text chat. Allowing 
+   you to share files from your Nextcloud and mentioning other participants.
+ * Private, group, public and password protected calls! Just invite somebody, a 
+   whole group or send a public link to invite to a call.
+ * Screen sharing! Share your screen with participants of your call. You just 
+   need to use Firefox version 52 (or newer), latest Edge or Chrome 49 (or
+   newer) with this Chrome extension.
+ * Integration with other Nextcloud apps like Files, Contacts and Deck. More to 
+   come.
 
-WWW: https://apps.nextcloud.com/apps/calendar
+WWW: https://nextcloud.com/talk/

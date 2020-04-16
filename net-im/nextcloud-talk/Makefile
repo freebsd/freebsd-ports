@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}/${DISTNAME}
 WRKSRC=		${WRKDIR}/spreed
 
 MAINTAINER=	brnrd@FreeBSD.org
-COMMENT=	Calendar app for Nextcloud
+COMMENT=	Online meeting app for Nextcloud
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
