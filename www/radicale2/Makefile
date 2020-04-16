@@ -11,7 +11,8 @@ DISTNAME=	Radicale-${PORTVERSION}
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Python based CalDAV/CardDAV server
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
@@ -36,8 +37,8 @@ SHEBANG_FILES=	radicale.fcgi radicale.wsgi
 SUB_LIST=	USERS="${USERS}" GROUPS="${GROUPS}" PYTHON_CMD="${PYTHON_CMD}"
 
 post-patch:
-	${REINPLACE_CMD} 's,= /etc,= ${PREFIX}/etc,g' ${WRKSRC}/config
-	${REINPLACE_CMD} 's,~/.config/radicale,${DATADIR},g' ${WRKSRC}/config
+	@${REINPLACE_CMD} 's,= /etc,= ${PREFIX}/etc,g' ${WRKSRC}/config
+	@${REINPLACE_CMD} 's,~/.config/radicale,${DATADIR},g' ${WRKSRC}/config
 
 post-install:
 	${MKDIR} ${STAGEDIR}/${ETCDIR}
