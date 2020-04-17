@@ -252,6 +252,7 @@
     SUBDIR += najitool
     SUBDIR += ncnn
     SUBDIR += netron
+    SUBDIR += ngraph
     SUBDIR += nms
     SUBDIR += nn-insight
     SUBDIR += nnn
