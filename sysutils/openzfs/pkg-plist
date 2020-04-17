@@ -125,6 +125,7 @@ include/libspl/ucred.h
 include/libspl/umem.h
 include/libspl/unistd.h
 include/libspl/zone.h
+include/libzfs/cityhash.h
 include/libzfs/libnvpair.h
 include/libzfs/libuutil.h
 include/libzfs/libuutil_common.h
@@ -146,7 +147,6 @@ include/libzfs/sys/bpobj.h
 include/libzfs/sys/bptree.h
 include/libzfs/sys/bqueue.h
 include/libzfs/sys/btree.h
-include/libzfs/sys/cityhash.h
 include/libzfs/sys/crypto/api.h
 include/libzfs/sys/crypto/common.h
 include/libzfs/sys/crypto/icp.h
@@ -422,6 +422,7 @@ man/man8/zfs-unload-key.8.gz
 man/man8/zfs-unmount.8.gz
 man/man8/zfs-upgrade.8.gz
 man/man8/zfs-userspace.8.gz
+man/man8/zfs-wait.8.gz
 man/man8/zfs.8.gz
 man/man8/zfsconcepts.8.gz
 man/man8/zfsprops.8.gz
@@ -460,6 +461,7 @@ man/man8/zpool-wait.8.gz
 man/man8/zpool.8.gz
 man/man8/zpoolconcepts.8.gz
 man/man8/zpoolprops.8.gz
+man/man8/zstream.8.gz
 man/man8/zstreamdump.8.gz
 sbin/fsck.zfs
 sbin/zdb
@@ -467,6 +469,7 @@ sbin/zfs
 sbin/zhack
 sbin/zinject
 sbin/zpool
+sbin/zstream
 sbin/zstreamdump
 sbin/ztest
 share/pkgconfig/libzfs.pc
@@ -581,8 +584,9 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cache/cache_007_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cache/cache_008_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cache/cache_009_pos.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/cache/cache_010_neg.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cache/cache_010_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cache/cache_011_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cache/cache_012_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cache/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cache/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cachefile/cachefile.cfg
@@ -925,6 +929,7 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_013_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_014_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_015_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_016_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_from_encrypted.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_raw.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_receive/zfs_receive_raw_-d.ksh
@@ -1081,6 +1086,10 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_upgrade/zfs_upgrade_005_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_upgrade/zfs_upgrade_006_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_upgrade/zfs_upgrade_007_neg.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_wait/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_wait/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_wait/zfs_wait.kshlib
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_wait/zfs_wait_deleteq.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool/zpool_001_neg.ksh
@@ -1800,6 +1809,17 @@ share/pkgconfig/libzfs_core.pc
 %%TESTS%%share/zfs/zfs-tests/tests/functional/online_offline/online_offline_002_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/online_offline/online_offline_003_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/online_offline/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/persist_l2arc/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/persist_l2arc/persist_l2arc.cfg
+%%TESTS%%share/zfs/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_002_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_003_neg.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_004_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_005_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_006_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_007_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/persist_l2arc/persist_l2arc_008_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/persist_l2arc/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/pool_checkpoint/checkpoint_after_rewind.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/pool_checkpoint/checkpoint_big_rewind.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/pool_checkpoint/checkpoint_capacity.ksh
