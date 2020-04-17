@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	less
-PORTVERSION=	530
-PORTREVISION=	1
+PORTVERSION=	551
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.greenwoodsoftware.com/less/ \
-		http://bitrote.org/distfiles/
+MASTER_SITES=	http://www.greenwoodsoftware.com/less/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Better pager utility
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe ncurses
 
