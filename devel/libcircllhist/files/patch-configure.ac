@@ -1,0 +1,26 @@
+--- configure.ac.orig	2019-10-16 20:36:24 UTC
++++ configure.ac
+@@ -31,19 +31,19 @@ AC_PATH_PROG(CTFMERGE, ctfmerge)
+ 
+ if test "x$GCC" = "xyes" ; then
+ 	C99FLAG="-std=c99"
+-	CFLAGS="$CFLAGS -g $C99FLAG"
++	CFLAGS="$CFLAGS $C99FLAG"
+ 	DEPFLAGS="-MM"
+ else
+ 	C99FLAG="-xc99=all"
+-	CFLAGS="$CFLAGS -g $C99FLAG"
++	CFLAGS="$CFLAGS $C99FLAG"
+ 	DEPFLAGS="-xM1"
+ fi
+-SHLDFLAGS="$LDFLAGS"
++SHLDFLAGS="$LDFLAGS -Wl,-soname,libcircllhist.so.0"
+ 
+ DOTSO=.so
+ 
+ if test "x$COPT" = "x" ; then
+-	COPT="-O5 -DNDEBUG"
++	COPT="-DNDEBUG"
+ fi
+ 
+ case $host in
