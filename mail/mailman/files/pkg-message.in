@@ -1,27 +1,25 @@
 [
-{ type: install
+{
   message: <<EOM
 Mailman has been installed, but requires further configuration before use!
 
-==========================================
-WARNING ATTENTION DANGER ATTENTION WARNING
-==========================================
+ATTENTION
+=========
 
-mail/mailman requires proper directory permissions to run; but due to
-pkg 1.4.1 or libarchive bugs, directory permissions can not be created
-properly.
+mail/mailman requires proper directory permissions to run and possibly
+some directories created if missing.  That cannot happen from pkg
+because that might alter your manually adjusted archive directory permissions.
 
-If you installed mailman with pkg -I, --no-script or --no-install-scripts,
-you MUST(!) run the post-install script now, as root:
+If you did just install mailman with pkg -I, --no-script or
+--no-install-scripts, you MUST(!) run the post-install script now, as root:
 
 env "PKG_PREFIX=%%PREFIX%%" sh \
     %%MAILMANDIR%%/bin/FreeBSD-post-install x POST-INSTALL
-
-==========================================
-WARNING ATTENTION DANGER ATTENTION WARNING
-==========================================
-
-You will have to configure both your MTA (mail server) and web server to
+EOM
+}
+{ type: install,
+  message <<EOM
+You also must configure both your MTA (mail server) and web server to
 integrate with Mailman.  If the port's documentation has been installed,
 extensive post-installation instructions may be found in:
 
@@ -31,10 +29,9 @@ Note (1):  - ESPECIALLY RELEVANT FOR USERS OF THE BINARY PACKAGE -
 The FreeBSD binary package is built for use with Sendmail, and it will
 not work properly with alternative MTAs such as Exim or Postfix.
   In order for Mailman to work with an alternative mailer,
-the port must be installed from source, with proper options configured.
-
-The separate poudriere port can be used to locally build a binary
-package of Mailman with non-default options.
+the port must be installed from source, with proper options configured,
+or from a package built in poudriere (which is a separate port in
+ports-mgmt) with adapted options. (poudriere options -cn mail/mailman)
 
 - FOR USERS OF A PORT BUILT FROM SOURCE -
 If you use an alternate MTA (meaning "not Sendmail"), you MUST
@@ -53,24 +50,6 @@ In order to make private archives searchable with namazu2, you need
 to copy or link %%LOCALBASE%%/libexec/namazu.cgi to
 %%MAILMANDIR%%/archives/private/<ML_name>/ and configure .namazurc.
 Refer to %%LOCALBASE%%/etc/namazu/namazurc.sample.
-EOM
-}
-{ type: upgrade
-  message <<EOM
-==========================================
-WARNING ATTENTION DANGER ATTENTION WARNING
-==========================================
-
-mail/mailman requires proper directory permissions to run; but due to
-pkg 1.4.1 or libarchive bugs, directory permissions can not be created
-properly.
-
-If you installed mailman with pkg -I, --no-script or --no-install-scripts,
-you MUST(!) run the post-install script now, as root:
-
-env "PKG_PREFIX=%%PREFIX%%" sh \
-    %%MAILMANDIR%%/bin/FreeBSD-post-install x POST-INSTALL
-
 EOM
 }
 { type: upgrade

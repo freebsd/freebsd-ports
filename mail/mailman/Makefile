@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.29
-PORTREVISION=	7
+DISTVERSION=	2.1.30
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -19,15 +19,13 @@ COMMENT=	Mailing list manager with user-friendly web front-end
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gnu-COPYING-GPL
 
-CONFLICTS=	ja-mailman-2.1.*
-
 USES=		autoreconf cpe fakeroot python:2.7 shebangfix tar:tgz
+CPE_VENDOR=	gnu
+
 USE_RC_SUBR=	mailman
 SHEBANG_FILES=	bin/msgfmt.py \
 		tests/fblast.py \
 		tests/onebounce.py
-
-CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${MAILMANDIR}
@@ -38,6 +36,8 @@ CONFIGURE_ARGS+=--with-python=${PYTHON_CMD} \
 		--with-permcheck=no \
 		--with-mailhost=localhost \
 		--with-urlhost=localhost
+
+CONFLICTS=	ja-mailman-2.1.*
 
 # The Mailman port supports a number of variables that may be tweaked at
 # build time.  Getting the values of some of them right is crucial!
@@ -85,6 +85,8 @@ MTA_DESC=	Integrate with which MTA?
 
 .include <bsd.port.options.mk>
 
+SUB_LIST+=	NLS="${PORT_OPTIONS:MNLS}"
+
 # enforce EXAMPLES option, necessary so that @sample
 # can install the newsyslog file
 .if empty(PORT_OPTIONS:MEXAMPLES)
@@ -126,11 +128,11 @@ MAIL_GID?=	_smtpd
 PKGNAMESUFFIX+=	-with-htdig
 # how to create PATCHFILES:
 #X identify what is the version of msapiro's patches corresponding to the release.
-#X fetch http://bazaar.launchpad.net/~msapiro/mailman/htdig/tarball/1781
+#X fetch http://bazaar.launchpad.net/~msapiro/mailman/htdig/tarball/1812
 #X unpack this tarball, and the original distfile
-#X diff -NEur original-unpack bazaar-unpack | xz --best -c >msapiro-htdig-1781.patch.xz
+#X diff -NEur original-unpack bazaar-unpack | xz --best -c >msapiro-htdig-1812.patch.xz
 #X upload the latter with mode 0644 or similar to freefall's public_distfiles/ directory
-_HTDIGREV=	1781
+_HTDIGREV=	1812
 PATCHFILES+=	msapiro-htdig-${_HTDIGREV}.patch.xz
 RUN_DEPENDS+=	htdig:textproc/htdig
 PLIST_SUB+=	SUB_HTDIG=""
@@ -235,5 +237,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	${ECHO} "This marker file ensures that Python's upgrade-site-packages handles ${PKGNAME}." >${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/mailman-info.txt
 	${INSTALL_SCRIPT} ${PKGINSTALL} ${STAGEDIR}${MAILMANDIR}/bin/FreeBSD-post-install
+	${FIND} ${STAGEDIR}${MAILMANDIR}/templates -type f -exec ${MV} '{}' '{}.sample' \;
 
 .include <bsd.port.mk>
