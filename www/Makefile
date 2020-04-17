@@ -318,6 +318,7 @@
     SUBDIR += lua-resty-core
     SUBDIR += lua-resty-lrucache
     SUBDIR += luakit
+    SUBDIR += luakit-devel
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += madsonic
