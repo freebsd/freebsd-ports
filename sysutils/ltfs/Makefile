@@ -18,7 +18,7 @@ LIB_DEPENDS=	libicudata.so:devel/icu \
 		libpkg.so:${PKG_ORIGIN} \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		autoreconf fuse gnome libtool:build pkgconfig ssl
+USES=		autoreconf compiler:c11 fuse gnome libtool:build pkgconfig ssl
 
 CONFIGURE_ARGS+=	--enable-icu-6x
 GH_ACCOUNT=		LinearTapeFileSystem
