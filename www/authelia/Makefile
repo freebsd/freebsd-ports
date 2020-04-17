@@ -2,7 +2,7 @@
 
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.13.1
+DISTVERSION=	4.14.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,13 +24,13 @@ GH_TUPLE=	\
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		duosecurity:duo_api_golang:6c680f768e74:duosecurity_duo_api_golang/vendor/github.com/duosecurity/duo_api_golang \
 		facebookgo:stack:751773369052:facebookgo_stack/vendor/github.com/facebookgo/stack \
-		fasthttp:router:v1.0.1:fasthttp_router/vendor/github.com/fasthttp/router \
-		fasthttp:session:v1.1.7:fasthttp_session/vendor/github.com/fasthttp/session \
+		fasthttp:router:v1.0.2:fasthttp_router/vendor/github.com/fasthttp/router \
+		fasthttp:session:v1.1.8:fasthttp_session/vendor/github.com/fasthttp/session \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-asn1-ber:asn1-ber:v1.3.1:go_asn1_ber_asn1_ber/vendor/github.com/go-asn1-ber/asn1-ber \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
-		go-ldap:ldap:v3.1.8:go_ldap_ldap/vendor/github.com/go-ldap/ldap/v3 \
-		go-redis:redis:v6.15.2:go_redis_redis/vendor/github.com/go-redis/redis \
+		go-ldap:ldap:v3.1.8:go_ldap_ldap_v3/vendor/github.com/go-ldap/ldap \
+		go-redis:redis:v7.2.0:go_redis_redis_v7/vendor/github.com/go-redis/redis/v7 \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-stack:stack:v1.8.0:go_stack_stack/vendor/github.com/go-stack/stack \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
@@ -38,7 +38,7 @@ GH_TUPLE=	\
 		golang:mock:v1.4.3:golang_mock/vendor/github.com/golang/mock \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:c5567b49c5d0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:b09406accb47:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
@@ -46,7 +46,7 @@ GH_TUPLE=	\
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		lib:pq:v1.3.0:lib_pq/vendor/github.com/lib/pq \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
-		mattn:go-sqlite3:v1.13.0:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		mattn:go-sqlite3:v2.0.3:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		mongodb:mongo-go-driver:v1.3.2:mongodb_mongo_go_driver/vendor/go.mongodb.org/mongo-driver \
 		otiai10:copy:v1.1.1:otiai10_copy/vendor/github.com/otiai10/copy \
@@ -55,8 +55,8 @@ GH_TUPLE=	\
 		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.2.0:pquerna_otp/vendor/github.com/pquerna/otp \
-		savsgio:dictpool:dcc5d0fb3336:savsgio_dictpool/vendor/github.com/savsgio/dictpool \
-		savsgio:gotils:a9cc718f6a3f:savsgio_gotils/vendor/github.com/savsgio/gotils \
+		savsgio:dictpool:215dfcb77c2c:savsgio_dictpool/vendor/github.com/savsgio/dictpool \
+		savsgio:gotils:8c468ce75cca:savsgio_gotils/vendor/github.com/savsgio/gotils \
 		simia-tech:crypt:v0.4.2:simia_tech_crypt/vendor/github.com/simia-tech/crypt \
 		sirupsen:logrus:v1.5.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
@@ -64,11 +64,11 @@ GH_TUPLE=	\
 		spf13:cobra:v0.0.7:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
-		spf13:viper:v1.6.2:spf13_viper/vendor/github.com/spf13/viper \
+		spf13:viper:v1.6.3:spf13_viper/vendor/github.com/spf13/viper \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		tebeka:selenium:v0.9.9:tebeka_selenium/vendor/github.com/tebeka/selenium \
-		tinylib:msgp:v1.1.1:tinylib_msgp/vendor/github.com/tinylib/msgp \
+		tinylib:msgp:v1.1.2:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		tstranex:u2f:v1.0.0:tstranex_u2f/vendor/github.com/tstranex/u2f \
 		valyala:bytebufferpool:v1.0.0:valyala_bytebufferpool/vendor/github.com/valyala/bytebufferpool \
 		valyala:fasthttp:v1.9.0:valyala_fasthttp/vendor/github.com/valyala/fasthttp \
