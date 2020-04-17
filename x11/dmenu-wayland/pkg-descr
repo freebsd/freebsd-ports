@@ -1,0 +1,8 @@
+dmenu-wayland is a minimalistic Wayland menu. It reads a newline separated list
+of items from stdin and shows them as a menu on the top of the screen.
+When the user selects one item or types any text and presses Enter, their choice
+is printed to stdout.
+
+dmenu-wayland is inspired by https://tools.suckless.org/dmenu
+
+WWW: https://github.com/nyyManni/dmenu-wayland

@@ -52,6 +52,7 @@
     SUBDIR += deskpaint
     SUBDIR += dmenu
     SUBDIR += dmenu2
+    SUBDIR += dmenu-wayland
     SUBDIR += docker-tray
     SUBDIR += dsbautostart
     SUBDIR += dxpc
