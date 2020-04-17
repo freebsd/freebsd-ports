@@ -55,6 +55,8 @@ CONFIGURE_ARGS+= \
 .endif
 
 .if ${PORTNAME} == libv4l
+CONFIGURE_ENV+= \
+	libudev_CFLAGS=" "
 CONFIGURE_ARGS+= \
 	--disable-v4l-utils \
 	--enable-dyn-libv4l \
