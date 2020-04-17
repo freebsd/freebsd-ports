@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	\
 	--disable-qv4l2 \
 	--disable-qvidcap \
 	--disable-nls
+BINARY_ALIAS=	sed=gsed
 INSTALL_TARGET=	install-strip
 .endif
 
@@ -68,10 +69,6 @@ post-patch:
 	@${RM} -r ${WRKDIR}/v4l-utils-${PORTVERSION}/contrib/freebsd/include/*
 # Apply webcamd patches first
 	@(cd ${WRKDIR}/webcamd-${WEBCAMDVERSION}/patches && ${SH} ./do_patch.sh)
-# Patch Makefiles to use GNU-sed
-	@${FIND} ${WRKDIR}/v4l-utils-${PORTVERSION} -type f \( -iname "Makefile*" \) | \
-		${XARGS} -n 10 ${REINPLACE_CMD} \
-			-e 's|^\([[:space:]]*\)sed |\1${LOCALBASE}/bin/gsed |'
 # Patch all source files
 	@${FIND} ${WRKDIR} -type f \( -iname "*.[ch]" -or -iname "*.cpp" -or -iname "msg2ctl.pl" \) | \
 		${XARGS} -n 10 ${REINPLACE_CMD} \
