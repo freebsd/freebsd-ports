@@ -1,0 +1,11 @@
+This port contains the Smallstep step-ca certificates component
+
+It can be used together with the Smallstep step-ca client.
+step-ca is a local CA. It can be used to create your own local PKI
+Infrastructure and includes things like e.g. the possibility to have your
+own ACME server.
+
+A private certificate authority (X.509 & SSH) & ACME server for secure
+automated certificate management, so you can use TLS everywhere & SSO for SSH.
+
+WWW: https://smallstep.com/certificates/

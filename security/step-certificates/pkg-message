@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+================================================================================
+Step Certificates requires additional configuration:
+
+The simple way is via the service start script step_ca. 
+When there is no configuration it will be created. User input is required!!!
+
+The hard way would be via the step command.
+
+Ensure to set the STEPPATH environment variable. This makes using the
+commands much simpler.
+================================================================================
+EOM
+}
+]

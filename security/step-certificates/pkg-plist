@@ -1,0 +1,20 @@
+bin/step-cloudkms-init
+sbin/step-ca
+@dir etc/step
+%%DOCSDIR%%/CONTRIBUTING.md
+%%DOCSDIR%%/GETTING_STARTED.md
+%%DOCSDIR%%/README.md
+%%DOCSDIR%%/acme.md
+%%DOCSDIR%%/database.md
+%%DOCSDIR%%/defaults.md
+%%DOCSDIR%%/docker.md
+%%DOCSDIR%%/images/connect-with-mtls-2.png
+%%DOCSDIR%%/images/oidc1.png
+%%DOCSDIR%%/images/oidc2.png
+%%DOCSDIR%%/images/oidc3.png
+%%DOCSDIR%%/images/step-ca-2-legged.gif
+%%DOCSDIR%%/images/step-ca-3-legged.gif
+%%DOCSDIR%%/kms.md
+%%DOCSDIR%%/provisioners.md
+%%DOCSDIR%%/questions.md
+%%DOCSDIR%%/revocation.md

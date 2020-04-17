@@ -1,0 +1,90 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: step-ca
+# REQUIRE: LOGIN networking
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable or customize this service:
+#
+# step_ca_enable (bool):	Set to NO by default.
+#				Set to YES to enable step_ca.
+# step_ca_user (user):		Set user to run step_ca.
+#				Default is "step"
+# step_ca_group (group):	Set group to run step_ca.
+#				Default is "step"
+# step_ca_stepdir (dir):	Set dir to run step_ca in.
+#				Default is "%%PREFIX%%/etc/step"
+# step_ca_steppath (dir):	Set dir to run hold step_ca CA information in.
+#				Default is "${step_ca_stepdir}/ca"
+# step_ca_password (path):	step_ca CA Password file path
+#				Default is "${step_ca_stepdir}/password.txt"
+
+. /etc/rc.subr
+
+name="step_ca"
+rcvar="step_ca_enable"
+
+load_rc_config $name
+: ${step_ca_enable:=no}
+: ${step_ca_user:=step}
+: ${step_ca_group:=step}
+: ${step_ca_stepdir:=%%PREFIX%%/etc/step}
+: ${step_ca_steppath:=${step_ca_stepdir}/ca}
+: ${step_ca_password:=${step_ca_stepdir}/password.txt}
+
+pidfile="/var/run/${name}.pid"
+step_ca_command="%%PREFIX%%/sbin/step-ca"
+step_ca_config="\
+	${step_ca_steppath}/config/ca.json \
+	--password-file ${step_ca_password}"
+
+command="/usr/sbin/daemon"
+command_args="-S -c \
+		-P $pidfile \
+		-t $name \
+		-T $name \
+		$step_ca_command $step_ca_config"
+
+start_precmd=step_ca_startprecmd
+start_postcmd=step_ca_postcmd
+
+step_ca_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${step_ca_user} -g ${step_ca_group} /dev/null ${pidfile};
+        fi
+
+	if [ ! -e ${step_ca_steppath} ]; then
+		echo "No configured Step CA found."
+		echo "Creating new one...."
+		export STEPPATH=${step_ca_steppath}
+		%%PREFIX%%/bin/step ca init
+		chown -R ${step_ca_user}:${step_ca_group} ${step_ca_steppath}
+	fi
+
+	if [ ! -e ${step_ca_password} ]; then
+		echo "Step CA Password file for auto-start not found"
+		echo "Creating it...."
+		install -m 600 -o ${step_ca_user} -g ${step_ca_group} /dev/null ${step_ca_password}
+		echo "Please enter the Step CA Password:"
+		stty -echo; read passwd; stty echo; echo
+		echo $passwd > ${step_ca_password}
+	fi
+
+	if [ -e ${step_ca_steppath}/config/ca.json ]; then
+		configured_port=$(sed -n -e '/"address"/ s/.*:\(.*\)".*/\1/p' ${step_ca_steppath}/config/ca.json)
+		if [ ${configured_port} -lt 1024 ]; then
+			echo "Privileged Port (${configured_port}) configured: cannot run as ${step_ca_user}"
+		fi
+	fi
+}
+
+step_ca_postcmd() {
+	sleep 2
+	run_rc_command status
+}
+
+run_rc_command "$1"
