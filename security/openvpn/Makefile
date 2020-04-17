@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		2.4.8
-# FIXME XXX check if 2.4.9 still needs ASYNC_PUSH_LIBS, see
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=244286#c6 and #c7
-PORTREVISION?=		3
+DISTVERSION=		2.4.9
+PORTREVISION?=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
-			https://build.openvpn.net/downloads/releases/
+			https://build.openvpn.net/downloads/releases/ \
+			LOCAL/mandree
 
 MAINTAINER=		mandree@FreeBSD.org
 COMMENT?=		Secure IP/Ethernet tunnel daemon
@@ -51,7 +50,6 @@ SMALL_DESC=		Build a smaller executable with fewer features
 
 ASYNC_PUSH_CONFIGURE_ENABLE=	async-push
 ASYNC_PUSH_LIB_DEPENDS=	libinotify.so:devel/libinotify
-ASYNC_PUSH_LIBS=	-linotify
 
 EASYRSA_RUN_DEPENDS=	easy-rsa>=0:security/easy-rsa
 
