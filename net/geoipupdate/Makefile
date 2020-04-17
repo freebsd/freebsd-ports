@@ -4,6 +4,7 @@
 PORTNAME=	geoipupdate
 PORTVERSION=	4.3.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net geography
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -22,7 +23,8 @@ GH_ACCOUNT=	maxmind
 
 MAKE_ENV+=	GOPATH=${WRKSRC} \
 		CONFFILE=${PREFIX}/etc/GeoIP.conf \
-		DATADIR=${PREFIX}/share/GeoIP
+		DATADIR=${PREFIX}/share/GeoIP \
+		VERSION=${DISTVERSIONFULL}
 
 GH_SUBDIR=	src/github.com/maxmind/geoipupdate/v4
 GH_TUPLE=	gofrs:flock:v0.7.1:flock/src/github.com/gofrs/flock \
