@@ -2,17 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.19.0.1
-PORTREVISION?=	2
+PORTVERSION=	0.19.1
+PORTREVISION?=	0
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://bitcoincore.org/bin/bitcoin-core-${PORTVERSION}/ \
 		LOCAL/swills:icon
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bitcoin128.png:icon
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${_DISTFILES:N*.png}
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES+=	a64e97dd476b.patch:-p1 # https://github.com/bitcoin/bitcoin/pull/17654
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
