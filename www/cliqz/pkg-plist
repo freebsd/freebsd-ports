@@ -16,10 +16,10 @@ lib/cliqz/cliqz-bin
 lib/cliqz/cliqz.cfg
 lib/cliqz/defaults/pref/channel-prefs.js
 lib/cliqz/dependentlibs.list
+lib/cliqz/fonts/TwemojiMozilla.ttf
 lib/cliqz/gmp-clearkey/0.1/libclearkey.so
 lib/cliqz/gmp-clearkey/0.1/manifest.json
 lib/cliqz/gtk2/libmozgtk.so
-lib/cliqz/libfreebl3.chk
 lib/cliqz/libfreebl3.so
 lib/cliqz/liblgpllibs.so
 lib/cliqz/libmozavcodec.so
@@ -34,7 +34,6 @@ lib/cliqz/libnssutil3.so
 lib/cliqz/libplc4.so
 lib/cliqz/libplds4.so
 lib/cliqz/libsmime3.so
-lib/cliqz/libsoftokn3.chk
 lib/cliqz/libsoftokn3.so
 lib/cliqz/libssl3.so
 lib/cliqz/libxul.so
