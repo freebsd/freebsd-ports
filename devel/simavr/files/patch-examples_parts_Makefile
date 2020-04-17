@@ -1,0 +1,12 @@
+--- examples/parts/Makefile.orig	2020-04-16 21:45:08 UTC
++++ examples/parts/Makefile
+@@ -44,9 +44,7 @@ ${target}: ${OBJ}/${target}.a
+ #
+ # Shared library (Linux only)
+ #
+-ifeq (${shell uname}, Linux)
+ ${target}: ${OBJ}/${target}.so
+-endif
+ 
+ clean: clean-${OBJ}
+ 	rm -rf *.hex *.a *.axf *.vcd .*.swo .*.swp .*.swm .*.swn *.so *.o

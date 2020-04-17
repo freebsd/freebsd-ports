@@ -1,26 +1,33 @@
---- simavr/Makefile.orig	2016-10-03 12:42:39 UTC
+--- simavr/Makefile.orig	2020-04-16 21:45:08 UTC
 +++ simavr/Makefile
-@@ -73,12 +73,9 @@ ${OBJ}/libsimavr.so		: ${OBJ}/libsimavr.
- 	ln -sf libsimavr.so.1 $@
+@@ -19,7 +19,7 @@
+ SHELL 			:= ${shell which bash}
+ SIMAVR_VERSION	:= ${shell \
+ 	git describe --abbrev=0 --tags || \
+-	echo "unknown" }
++	echo "v1.6" }
+ SIMAVR_REVISION	= 2
+ 
+ target	= run_avr
+@@ -54,9 +54,7 @@ ${OBJ}/libsimavr.a	:	${sim_o}
  
  libsimavr	: config ${OBJ}/libsimavr.a
--# shared library won't work that easily on non-linux
+ # shared library won't work that easily on non-linux
 -ifeq (${shell uname}, Linux)
- libsimavr	:	${OBJ}/libsimavr.so
+ libsimavr	: ${OBJ}/libsimavr.so
 -endif
  
--${OBJ}/${target}.elf	: ${OBJ}/${target}.o
-+${OBJ}/${target}.elf	: ${OBJ}/${target}.o | libsimavr
- 
- ${target}	: ${OBJ}/${target}.elf
- 
-@@ -108,10 +105,8 @@ install : all
- 		simavr-avr.pc >$(DESTDIR)/libdata/pkgconfig/simavr-avr.pc
- 	sed -e "s|PREFIX|${PREFIX}|g" -e "s|VERSION|${SIMAVR_VERSION}|g" \
+ ${OBJ}/${target}.elf	: libsimavr
+ ${OBJ}/${target}.elf	: ${OBJ}/${target}.o
+@@ -94,12 +92,10 @@ install : all
  		simavr.pc >$(DESTDIR)/libdata/pkgconfig/simavr.pc
+ 	sed -e "s|PREFIX|${PREFIX}|g" -e "s|VERSION|${SIMAVR_VERSION}|g" \
+ 		simavrparts.pc >$(DESTDIR)/libdata/pkgconfig/simavrparts.pc
 -ifeq (${shell uname}, Linux)
  	$(INSTALL) ${OBJ}/libsimavr.so.1 $(DESTDIR)/lib/
+ 	$(INSTALL) ../examples/parts/${OBJ}/libsimavrparts.so.1 $(DESTDIR)/lib/
  	ln -sf libsimavr.so.1 $(DESTDIR)/lib/libsimavr.so
+ 	ln -sf libsimavrparts.so.1 $(DESTDIR)/lib/libsimavrparts.so
 -endif
  	$(MKDIR) $(DESTDIR)/bin
  	$(INSTALL) ${OBJ}/${target}.elf $(DESTDIR)/bin/simavr
