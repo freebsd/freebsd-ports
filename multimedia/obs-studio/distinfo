@@ -1,7 +1,5 @@
-TIMESTAMP = 1586895221
-SHA256 (obsproject-obs-studio-25.0.6_GH0.tar.gz) = 2bf8eea8e7fefbfa3d9ba2415851928f7181a01b342755efe2a5bd2873e6c6aa
-SIZE (obsproject-obs-studio-25.0.6_GH0.tar.gz) = 8367676
+TIMESTAMP = 1587105960
+SHA256 (obsproject-obs-studio-25.0.7_GH0.tar.gz) = 93434f545602f14ffdac24d2d5e7e627e1342a15843cf5ea6c19070c46e7db16
+SIZE (obsproject-obs-studio-25.0.7_GH0.tar.gz) = 8368980
 SHA256 (e1de4e8a50b5e50f69214d3a4fd39b4b9b03e050.patch) = 3efc78daa680c40130a0dfccac0d3ef522619afb46558cd52db9e67ec41e696b
 SIZE (e1de4e8a50b5e50f69214d3a4fd39b4b9b03e050.patch) = 1239
-SHA256 (9bd33f6fdebc47d17e3cc1f0122a1f784eebc507.patch) = 994ce2a44a141c61bad29e7ddfb2c9c9ef82bc86a3df51bd186cc53ac6cc24d2
-SIZE (9bd33f6fdebc47d17e3cc1f0122a1f784eebc507.patch) = 1423

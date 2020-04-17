@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	obs-studio
-DISTVERSION=	25.0.6
+DISTVERSION=	25.0.7
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
