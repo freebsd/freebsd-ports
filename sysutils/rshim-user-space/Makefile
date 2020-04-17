@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rshim-user-space
+PORTREVISION=		1
 DISTVERSIONPREFIX=	rshim-
 DISTVERSION=		2.0.3
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libpci.so:devel/libpci \
 		libpciaccess.so:devel/libpciaccess
 
-USES=		autoreconf localbase gmake tar:bzip2
+USES=		autoreconf localbase gmake pkgconfig tar:bzip2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Mellanox
