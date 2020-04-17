@@ -1,6 +1,7 @@
 bin/dcf77pi
 bin/dcf77pi-analyze
-bin/readpin
+bin/dcf77pi-readpin
+bin/kevent-demo
 @sample %%ETCDIR%%/config.json.sample
 include/dcf77pi/bits1to14.h
 include/dcf77pi/calendar.h
