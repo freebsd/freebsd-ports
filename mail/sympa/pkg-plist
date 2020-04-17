@@ -72,6 +72,7 @@ libexec/sympa/Sympa/Request/Handler/create_list.pm
 libexec/sympa/Sympa/Request/Handler/decl.pm
 libexec/sympa/Sympa/Request/Handler/del.pm
 libexec/sympa/Sympa/Request/Handler/distribute.pm
+libexec/sympa/Sympa/Request/Handler/family_signoff.pm
 libexec/sympa/Sympa/Request/Handler/finished.pm
 libexec/sympa/Sympa/Request/Handler/get.pm
 libexec/sympa/Sympa/Request/Handler/global_remind.pm
@@ -280,6 +281,7 @@ man/man3/Sympa::Request::Handler::create_list.3Sympa.gz
 man/man3/Sympa::Request::Handler::decl.3Sympa.gz
 man/man3/Sympa::Request::Handler::del.3Sympa.gz
 man/man3/Sympa::Request::Handler::distribute.3Sympa.gz
+man/man3/Sympa::Request::Handler::family_signoff.3Sympa.gz
 man/man3/Sympa::Request::Handler::finished.3Sympa.gz
 man/man3/Sympa::Request::Handler::get.3Sympa.gz
 man/man3/Sympa::Request::Handler::global_remind.3Sympa.gz
@@ -566,6 +568,8 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/scenari/del.owner
 %%DATADIR%%/defaults/scenari/del.owner_notify
 %%DATADIR%%/defaults/scenari/del.ownerdkim
+%%DATADIR%%/defaults/scenari/family_signoff.auth
+%%DATADIR%%/defaults/scenari/family_signoff.closed
 %%DATADIR%%/defaults/scenari/global_remind.listmaster
 %%DATADIR%%/defaults/scenari/info.conceal
 %%DATADIR%%/defaults/scenari/info.open
@@ -700,8 +704,6 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/web_tt2/editfile.tt2
 %%DATADIR%%/defaults/web_tt2/editsubscriber.tt2
 %%DATADIR%%/defaults/web_tt2/error.tt2
-%%DATADIR%%/defaults/web_tt2/family_signoff.tt2
-%%DATADIR%%/defaults/web_tt2/family_signoff_request.tt2
 %%DATADIR%%/defaults/web_tt2/footer.tt2
 %%DATADIR%%/defaults/web_tt2/get_biggest_lists.tt2
 %%DATADIR%%/defaults/web_tt2/get_closed_lists.tt2
