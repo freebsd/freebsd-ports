@@ -1217,6 +1217,7 @@
     SUBDIR += sst
     SUBDIR += starttls
     SUBDIR += steghide
+    SUBDIR += step-cli
     SUBDIR += stoken
     SUBDIR += strobe
     SUBDIR += strongswan
