@@ -25,6 +25,12 @@ CONFIGURE_ARGS+=--disable-dmx --disable-xephyr --disable-xnest --disable-xvfb \
 
 PLIST_FILES=	bin/Xwayland
 
+OPTIONS_DEFINE=	NVIDIA
+
+NVIDIA_DESC=		EGLStream support for glamor on Xwayland
+NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
+NVIDIA_CONFIGURE_ENABLE=xwayland-eglstream
+
 do-install:
 	cd ${WRKSRC}/hw/xwayland; DESTDIR=${STAGEDIR} ${MAKE_CMD} install
 
