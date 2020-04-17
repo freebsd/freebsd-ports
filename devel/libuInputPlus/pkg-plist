@@ -1,0 +1,7 @@
+include/uInputPlus/CommonIncludes.hpp
+include/uInputPlus/uInput.hpp
+include/uInputPlus/uInputSetup.hpp
+lib/libuInputPlus.a
+lib/libuInputPlus.so
+lib/libuInputPlus.so.0
+lib/libuInputPlus.so.0.1.4
