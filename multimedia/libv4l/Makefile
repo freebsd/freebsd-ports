@@ -102,7 +102,7 @@ post-patch:
 			-e 's|<linux/compiler.h>|<sys/cdefs.h>|g' \
 			-e 's|<linux/errno.h>|<errno.h>|g' \
 			-e 's|<linux/ioctl.h>|<sys/ioctl.h>|g' \
-			-e 's|<linux/kernel.h>|<sys/sysinfo.h>|g' \
+			-e '/^.*\<linux\/kernel.h\>.*/d' \
 			-e 's|<linux/string.h>|<string.h>|g' \
 			-e 's|<linux/sysmacros.h>|<sys/types.h>|g' \
 			-e 's|<malloc.h>|<stdlib.h>|g' \
