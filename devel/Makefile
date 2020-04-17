@@ -1174,6 +1174,7 @@
     SUBDIR += libestr
     SUBDIR += libev
     SUBDIR += libevdev
+    SUBDIR += libevdevPlus
     SUBDIR += libevent
     SUBDIR += libevt
     SUBDIR += libevtx

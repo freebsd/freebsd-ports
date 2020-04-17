@@ -1,0 +1,8 @@
+include/evdevPlus/CommonIncludes.hpp
+include/evdevPlus/InputEvent.hpp
+include/evdevPlus/evdevPlus.hpp
+lib/libevdevPlus.a
+lib/libevdevPlus.so
+lib/libevdevPlus.so.0
+lib/libevdevPlus.so.0.1.1
+libdata/pkgconfig/evdevPlus.pc
