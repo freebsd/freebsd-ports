@@ -9,7 +9,7 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Efficient dynamic menu for wayland
 
 LICENSE=	MIT
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gnome meson pkgconfig
 
